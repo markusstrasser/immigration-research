@@ -1,0 +1,1442 @@
+[
+ {
+  "id": "bar-1613a",
+  "file": "_cache/law/usc8_1613_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1613",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1613(a)",
+  "quote": "Notwithstanding any other provision of law and except as provided in subsections (b), (c), and (d), an alien who is a qualified alien (as defined in section 1641 of this title) and who enters the United States on or after August 22, 1996, is not eligible for any Federal means-tested public benefit for a period of 5 years beginning on the date of the alien’s entry into the United States with a status within the meaning of the term “qualified alien”."
+ },
+ {
+  "id": "bar-1613c-emergency",
+  "file": "_cache/law/usc8_1613_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1613",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1613(c)(1), (c)(2)(A)",
+  "quote": "The limitation under subsection (a) shall not apply to assistance or benefits under paragraph (2)."
+ },
+ {
+  "id": "bar-1613c2A",
+  "file": "_cache/law/usc8_1613_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1613",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1613(c)(2)(A)",
+  "quote": "Medical assistance described in section 1611(b)(1)(A) of this title."
+ },
+ {
+  "id": "qa-1641b-intro",
+  "file": "_cache/law/usc8_1641_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1641",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1641(b)",
+  "quote": "For purposes of this chapter, the term “qualified alien” means an alien who, at the time the alien applies for, receives, or attempts to receive a Federal public benefit, is—"
+ },
+ {
+  "id": "qa-1641b1-lpr",
+  "file": "_cache/law/usc8_1641_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1641",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1641(b)(1)",
+  "quote": "an alien who is lawfully admitted for permanent residence under the Immigration and Nationality Act [8 U.S.C. 1101 et seq.],"
+ },
+ {
+  "id": "qa-1641b4-parole",
+  "file": "_cache/law/usc8_1641_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1641",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1641(b)(4)",
+  "quote": "an alien who is paroled into the United States under section 212(d)(5) of such Act [8 U.S.C. 1182(d)(5)] for a period of at least 1 year,"
+ },
+ {
+  "id": "doj-fmtpb-programs",
+  "file": "_cache/law/fr62_61344_doj_interim.txt",
+  "url": "https://www.govinfo.gov/link/fr/62/61344?link-type=pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "DOJ Interim Guidance, AG Order No. 2129-97, Attachment 7, 62 FR 61344 at 61414 (Nov. 17, 1997)",
+  "quote": "Under the HHS and SSA interpretations, TANF, Medicaid, and SSI are federal means-tested public benefits that are not otherwise exempted under the Act."
+ },
+ {
+  "id": "doj-pre1996-continuous",
+  "file": "_cache/law/fr62_61344_doj_interim.txt",
+  "url": "https://www.govinfo.gov/link/fr/62/61344?link-type=pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "DOJ Interim Guidance, Attachment 7, para. 1, second bullet, 62 FR 61414",
+  "quote": "If the applicant entered the United States before August 22, 1996, but obtained qualified alien status after that date, you must verify that the alien was continuously present in the United States from the latest date of entry prior to August 22, 1996, until the date he or she obtained qualified alien status. In general, any single absence from the United States of more than 30 days, or a total of aggregated absences of more than 90 days, should be considered to interrupt ‘‘continuous presence.’’"
+ },
+ {
+  "id": "doj-pre1996-eligible",
+  "file": "_cache/law/fr62_61344_doj_interim.txt",
+  "url": "https://www.govinfo.gov/link/fr/62/61344?link-type=pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "DOJ Interim Guidance, Attachment 7, para. 1, second bullet, 62 FR 61414",
+  "quote": "If the applicant can demonstrate continuous presence, he or she is eligible for all federal means-tested public benefits for which he or she satisfies all programmatic eligibility requirements."
+ },
+ {
+  "id": "doj-bar-clock",
+  "file": "_cache/law/fr62_61344_doj_interim.txt",
+  "url": "https://www.govinfo.gov/link/fr/62/61344?link-type=pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "DOJ Interim Guidance, Attachment 7, para. 2, 62 FR 61414",
+  "quote": "With certain exceptions listed below, an applicant who entered the United States on or after August 22, 1996, and has attained qualified alien status, or who entered the United States before August 22, 1996, and obtained qualified alien status after that date but did not remain continuously present in the United States from the latest date of entry prior to August 22, 1996, until obtaining such status, is ineligible for all federal means-tested public benefits during the first five years after he or she obtained qualified alien status."
+ },
+ {
+  "id": "doj-bar-clock-2",
+  "file": "_cache/law/fr62_61344_doj_interim.txt",
+  "url": "https://www.govinfo.gov/link/fr/62/61344?link-type=pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "DOJ Interim Guidance, Attachment 7, para. 2, 62 FR 61415",
+  "quote": "which he or she satisfies all programmatic eligibility requirements if five years have passed from the date the applicant attained qualified alien status."
+ },
+ {
+  "id": "ssi-1612a1",
+  "file": "_cache/law/usc8_1612_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1612",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1612(a)(1)",
+  "quote": "Notwithstanding any other provision of law and except as provided in paragraph (2), an alien who is a qualified alien (as defined in section 1641 of this title) is not eligible for any specified Federal program (as defined in paragraph (3))."
+ },
+ {
+  "id": "ssi-1612a2B-40q",
+  "file": "_cache/law/usc8_1612_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1612",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1612(a)(2)(B)",
+  "quote": "has worked 40 qualifying quarters of coverage as defined under title II of the Social Security Act [42 U.S.C. 401 et seq.] or can be credited with such qualifying quarters as provided under section 1645 of this title, and (II) in the case of any such qualifying quarter creditable for any period beginning after December 31, 1996, did not receive any Federal means-tested public benefit (as provided under section 1613 of this title) during any such period."
+ },
+ {
+  "id": "ssi-1645",
+  "file": "_cache/law/usc8_1645_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1645",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1645, lead-in and (1)-(2)",
+  "quote": "For purposes of this chapter, in determining the number of qualifying quarters of coverage under title II of the Social Security Act [42 U.S.C. 401 et seq.] an alien shall be credited with— (1) all of the qualifying quarters of coverage as defined under title II of the Social Security Act worked by a parent of such alien before the date on which the alien attains age 18, and (2) all of the qualifying quarters worked by a spouse of such alien during their marriage and the alien remains married to such spouse or such spouse is deceased."
+ },
+ {
+  "id": "ssi-1645-flush",
+  "file": "_cache/law/usc8_1645_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1645",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1645, flush text",
+  "quote": "No such qualifying quarter of coverage that is creditable under title II of the Social Security Act for any period beginning after December 31, 1996, may be credited to an alien under paragraph (1) or (2) if the parent or spouse (as the case may be) of such alien received any Federal means-tested public benefit (as provided under section 1613 of this title) during the period for which such qualifying quarter of coverage is so credited."
+ },
+ {
+  "id": "snap-1612a2L-5yr",
+  "file": "_cache/law/usc8_1612_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1612",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1612(a)(2)(L)",
+  "quote": "With respect to eligibility for benefits for the specified Federal program described in paragraph (3)(B), paragraph (1) shall not apply to any qualified alien who has resided in the United States with a status within the meaning of the term “qualified alien” for a period of 5 years or more beginning on the date of the alien’s entry into the United States."
+ },
+ {
+  "id": "snap-1612a2J-children",
+  "file": "_cache/law/usc8_1612_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1612",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1612(a)(2)(J)",
+  "quote": "With respect to eligibility for benefits for the specified Federal program described in paragraph (3)(B), paragraph (1) shall not apply to any individual who is under 18 years of age."
+ },
+ {
+  "id": "mcaid-1612b1-state-option",
+  "file": "_cache/law/usc8_1612_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1612",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1612(b)(1)",
+  "quote": "Notwithstanding any other provision of law and except as provided in section 1613 of this title and paragraph (2), a State is authorized to determine the eligibility of an alien who is a qualified alien (as defined in section 1641 of this title) for any designated Federal program (as defined in paragraph (3))."
+ },
+ {
+  "id": "mcaid-1612b2-mandatory",
+  "file": "_cache/law/usc8_1612_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1612",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1612(b)(2)(F)",
+  "quote": "An alien who is receiving benefits under the program defined in subsection (a)(3)(A) (relating to the supplemental security income program) shall be eligible for medical assistance under a State plan under title XIX of the Social Security Act (42 U.S.C. 1396 et seq.) under the same terms and conditions that apply to other recipients of benefits under the program defined in such subsection."
+ },
+ {
+  "id": "mcaid-1612b2-leadin",
+  "file": "_cache/law/usc8_1612_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1612",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1612(b)(2) (lead-in; (b)(2)(B) is the LPR-with-40-quarters group)",
+  "quote": "Qualified aliens under this paragraph shall be eligible for any designated Federal program."
+ },
+ {
+  "id": "deem-1631a",
+  "file": "_cache/law/usc8_1631_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1631",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1631(a)",
+  "quote": "Notwithstanding any other provision of law, in determining the eligibility and the amount of benefits of an alien for any Federal means-tested public benefits program (as provided under section 1613 of this title), the income and resources of the alien shall be deemed to include the following:"
+ },
+ {
+  "id": "deem-1631b",
+  "file": "_cache/law/usc8_1631_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1631",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1631(b)(1)-(2)",
+  "quote": "Subsection (a) shall apply with respect to an alien until such time as the alien— (1) achieves United States citizenship through naturalization pursuant to chapter 2 of title III of the Immigration and Nationality Act [8 U.S.C. 1421 et seq.]; or (2) (A) has worked 40 qualifying quarters of coverage as defined under title II of the Social Security Act [42 U.S.C. 401 et seq.] or can be credited with such qualifying quarters as provided under section 1645 of this title,"
+ },
+ {
+  "id": "deem-1631e-indigence",
+  "file": "_cache/law/usc8_1631_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1631",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1631(e)(1)",
+  "quote": "For an alien for whom an affidavit of support under section 213A of the Immigration and Nationality Act [8 U.S.C. 1183a] has been executed, if a determination described in paragraph (2) is made, the amount of income and resources of the sponsor or the sponsor’s spouse which shall be attributed to the sponsored alien shall not exceed the amount actually provided for a period beginning on the date of such determination and ending 12 months after such date."
+ },
+ {
+  "id": "i864-1183a-a1A",
+  "file": "_cache/law/usc8_1183a_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1183a",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1183a(a)(1)(A)",
+  "quote": "in which the sponsor agrees to provide support to maintain the sponsored alien at an annual income that is not less than 125 percent of the Federal poverty line during the period in which the affidavit is enforceable;"
+ },
+ {
+  "id": "i864-1183a-a2",
+  "file": "_cache/law/usc8_1183a_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1183a",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1183a(a)(2)",
+  "quote": "An affidavit of support shall be enforceable with respect to benefits provided for an alien before the date the alien is naturalized as a citizen of the United States, or, if earlier, the termination date provided under paragraph (3)."
+ },
+ {
+  "id": "i864-1183a-a3A",
+  "file": "_cache/law/usc8_1183a_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1183a",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1183a(a)(3)(A)",
+  "quote": "An affidavit of support is not enforceable after such time as the alien (i) has worked 40 qualifying quarters of coverage as defined under title II of the Social Security Act [42 U.S.C. 401 et seq.] or can be credited with such qualifying quarters as provided under subparagraph (B),"
+ },
+ {
+  "id": "i864-1183a-b1A",
+  "file": "_cache/law/usc8_1183a_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1183a",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1183a(b)(1)(A)",
+  "quote": "Upon notification that a sponsored alien has received any means-tested public benefit, the appropriate nongovernmental entity which provided such benefit or the appropriate entity of the Federal Government, a State, or any political subdivision of a State shall request reimbursement by the sponsor in an amount which is equal to the unreimbursed costs of such benefit."
+ },
+ {
+  "id": "ssi-poms100-A3b",
+  "file": "_cache/law/poms_si00502100.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0500502100",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS SI 00502.100 A.3.b",
+  "quote": "LPR with 40 Qualifying Quarters (QQs) of earnings. (NOTE: There is a 5-year bar to eligibility for individuals who entered the United States on 8/22/96 or later unless certain exceptions apply. See SI 00502.135); or"
+ },
+ {
+  "id": "ssi-poms135-B1-clock",
+  "file": "_cache/law/poms_si00502135.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0500502135",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS SI 00502.135 B.1",
+  "quote": "An LAPR alien who enters the U.S. on 8/22/1996 or later cannot be eligible based on having 40 QQs for a 5-year period beginning on the LAPR alien's date of entry into the U.S. as a qualified alien (see SI 00502.100A.2.a.). The 5-year period for an alien who enters the U.S. on 8/22/1996 or later and who is not in a qualified alien status (as defined in SI 00502.100A.2.) at entry, but subsequently adjusts to such a status, begins with the date of adjustment to qualified alien status."
+ },
+ {
+  "id": "ssi-poms135-B1-pre1996",
+  "file": "_cache/law/poms_si00502135.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0500502135",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS SI 00502.135 B.1, EXCEPTIONS, second bullet",
+  "quote": "entered the U.S. before 8/22/1996 and obtained qualified alien status after 8/22/1996 and has been continuously present in the U.S. (i.e., has not been outside the U.S. for a full calendar month or for 30 or more consecutive days) from the latest date of entry prior to 8/22/1996;"
+ },
+ {
+  "id": "ssi-poms135-A5-QQ",
+  "file": "_cache/law/poms_si00502135.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0500502135",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS SI 00502.135 A.5",
+  "quote": "A qualifying quarter is credit for a requisite amount of covered earnings and/or noncovered earnings assigned to a calendar quarter for the purpose of determining SSI eligibility of a LAPR alien."
+ },
+ {
+  "id": "ssi-poms135-A6-fmtpb",
+  "file": "_cache/law/poms_si00502135.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0500502135",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS SI 00502.135 A.6",
+  "quote": "The following programs are the only programs which meet the definition of a Federal means-tested public benefit: • SSI, • Medicaid, • Food Stamps, and • Temporary Assistance for Needy Families (TANF) formerly Aid to Families with Dependent Children (AFDC)."
+ },
+ {
+  "id": "ssi-poms135-D2-worked",
+  "file": "_cache/law/poms_si00502135.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0500502135",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS SI 00502.135 D.2",
+  "quote": "QQ verification is required anytime the LAPR alien alleges that they and/ or their parent(s) and/or spouse(s) (as defined in SI 00502.135A.) have worked while residing in the U.S. for an employer or been self-employed."
+ },
+ {
+  "id": "ssi-poms135-B3a-benefit-quarters",
+  "file": "_cache/law/poms_si00502135.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0500502135",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS SI 00502.135 B.3.a",
+  "quote": "QQs cannot be credited for any quarter beginning after 12/31/96, if in the quarter the LAPR alien or the worker (the LAPR alien, their parent(s) and/or spouse(s)) received a Federal means-tested public benefit as defined in SI 00502.135A."
+ },
+ {
+  "id": "ss-rs102-B1-pre2004",
+  "file": "_cache/law/poms_rs00301102.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0300301102",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS RS 00301.102 B.1, NOTE",
+  "quote": "An alien worker whose SSN was assigned before January 1, 2004 is exempt from the requirements of Section 211 of the Social Security Protection Act, even if the SSN was not work authorized."
+ },
+ {
+  "id": "ss-rs102-B4c-all-earnings",
+  "file": "_cache/law/poms_rs00301102.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0300301102",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS RS 00301.102 B.4.c",
+  "quote": "If the alien was ever issued a valid SSN for work purposes on or after January 1, 2004, then all of their covered earnings may be used to determine insured status, regardless of the alien's current or prior immigration classification and/or work authorization status."
+ },
+ {
+  "id": "ss-rs102-B4e-note",
+  "file": "_cache/law/poms_rs00301102.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0300301102",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS RS 00301.102 B.4.e, NOTE",
+  "quote": "An alien worker does not meet the work SSN requirement if they have worked in the U.S. without authorization from the U.S. immigration authority (i.e., illegally) using someone else's SSN, but never had a valid SSN card for work purposes based on their own immigration documentation and identity."
+ },
+ {
+  "id": "ss-rs102-F4-example",
+  "file": "_cache/law/poms_rs00301102.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0300301102",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS RS 00301.102 F.4 (example: SSN assigned after 1/1/2004, prior undocumented work)",
+  "quote": "Therefore, determine whether Gustav meets DIB insured status, RS 00301.120, using all of Their covered earnings, including wages and/or self-employment income earned while they worked illegally under their sibling's SSN."
+ },
+ {
+  "id": "ss-414c1",
+  "file": "_cache/law/usc42_414_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/414",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 414(c)(1)",
+  "quote": "has been assigned a social security account number that was, at the time of assignment, or at any later time, consistent with the requirements of subclause (I) or (III) of section 405(c)(2)(B)(i) of this title; or"
+ },
+ {
+  "id": "ss-402y",
+  "file": "_cache/law/usc42_402_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/402",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 402(y)",
+  "quote": "Notwithstanding any other provision of law, no monthly benefit under this subchapter shall be payable to any alien in the United States for any month during which such alien is not lawfully present in the United States as determined by the Attorney General."
+ },
+ {
+  "id": "mcare-gn800-A2",
+  "file": "_cache/law/poms_gn00303800.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0200303800",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS GN 00303.800 A.2",
+  "quote": "To be eligible for uninsured HI/SMI or for deemed insured HI, an individual must be a U.S. resident and either a U.S. citizen or a LAPR who has continuously resided in the U.S. for the 5 years immediately before the first month of eligibility."
+ },
+ {
+  "id": "mcare-gn800-A3",
+  "file": "_cache/law/poms_gn00303800.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0200303800",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS GN 00303.800 A.3",
+  "quote": "When the individual attains age 65 before acquiring LAPR status, the first month of eligibility cannot be earlier than the month in which LAPR status is acquired."
+ },
+ {
+  "id": "mcare-gn800-A4-needNot",
+  "file": "_cache/law/poms_gn00303800.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0200303800",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS GN 00303.800 A.4",
+  "quote": "In addition to establishing U.S. residency, the alien must have continuously resided in the U.S. for the 5-year period immediately preceding the month of effective enrollment (or effective filing for deemed HI). The alien need not have had LAPR status during this 5-year period."
+ },
+ {
+  "id": "mcare-gn800-A4-visitor",
+  "file": "_cache/law/poms_gn00303800.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0200303800",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS GN 00303.800 A.4",
+  "quote": "The 5-year period of U.S. residency begins the day the NH arrives in the U.S. with the intention of establishing a home. Arrival as a visitor or tourist does not begin a period of residence."
+ },
+ {
+  "id": "mcare-gn800-A4-reminder",
+  "file": "_cache/law/poms_gn00303800.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0200303800",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS GN 00303.800 A.4, REMINDER",
+  "quote": "The period of residence continues so long as the NH continues to maintain a U.S. residence, and is physically present for a significant part of the 5-year period."
+ },
+ {
+  "id": "mcare-gn800-B3a",
+  "file": "_cache/law/poms_gn00303800.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0200303800",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS GN 00303.800 B.3.a",
+  "quote": "If the I-551 shows an ADM/ADJ date or the I-151 shows a date of entry which is not 5 years earlier than the first month of eligibility and the individual alleges an earlier date of entry by which the 5-year U.S. residency period would be met, obtain evidence to determine the beginning of the U.S. residency period."
+ },
+ {
+  "id": "mcare-gn800-B4-absence",
+  "file": "_cache/law/poms_gn00303800.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0200303800",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS GN 00303.800 B.4",
+  "quote": "Do not consider a temporary visit abroad as an interruption to a period of residence in the U.S. However, if the visit is for more than 6 months, do not consider it a temporary visit in the absence of a strong showing to the contrary."
+ },
+ {
+  "id": "mcare-gn800-B4-reminder",
+  "file": "_cache/law/poms_gn00303800.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0200303800",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS GN 00303.800 B.4, REMINDER",
+  "quote": "When the alien alleges having a period of absence from the U.S. with no intent to maintain U.S. residency during that absence, the 5-year U.S. residency period begins with the date of the most recent return to the U.S. with the intention of establishing residency."
+ },
+ {
+  "id": "mcare-hi805005-note-illegal",
+  "file": "_cache/law/poms_hi00805005.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600805005",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00805.005 A.2, NOTE",
+  "quote": "The 5 years' continuous residence may begin prior to the date that the lawful admission for permanent residence is granted (e.g., where the original admission was illegal, or under color of law)."
+ },
+ {
+  "id": "mcare-hi805020-iep",
+  "file": "_cache/law/poms_hi00805020.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600805020",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00805.020 A",
+  "quote": "The IEP for such an individual begins with the first day of the 58th full month of continuous residence in the U.S. and continues for a total of 7 months."
+ },
+ {
+  "id": "mcare-hi805020-lprnotice",
+  "file": "_cache/law/poms_hi00805020.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600805020",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00805.020 A",
+  "quote": "Where the 5 year residence requirement is completed before the individual receives notice that the individual is lawfully admitted for permanent residence, the month of receipt of the permanent residence notice is the 4th month of the IEP."
+ },
+ {
+  "id": "mcare-hi801131-A2b",
+  "file": "_cache/law/poms_hi00801131.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600801131",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00801.131 A.2.b",
+  "quote": "an alien lawfully admitted for permanent residence who has resided in the U.S. continuously for the 5-year period immediately preceding the month all other requirements are met;"
+ },
+ {
+  "id": "mcare-hi801131-B",
+  "file": "_cache/law/poms_hi00801131.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600801131",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00801.131 B",
+  "quote": "An individual may not enroll in Premium-HI without an existing or simultaneous enrollment in SMI."
+ },
+ {
+  "id": "mcare-hi801131-C1",
+  "file": "_cache/law/poms_hi00801131.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600801131",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00801.131 C.1",
+  "quote": "The person first meets the citizenship/residency requirements after attains age 65;"
+ },
+ {
+  "id": "mcare-hi801133-iep",
+  "file": "_cache/law/poms_hi00801133.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600801133",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00801.133 A",
+  "quote": "The IEP for Premium-HI is generally the same as the IEP for SMI."
+ },
+ {
+  "id": "mcare-1395o-a2",
+  "file": "_cache/law/usc42_1395o_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395o",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395o(a)(2)",
+  "quote": "has attained age 65 and is a resident of the United States, and is either (A) a citizen or (B) an alien lawfully admitted for permanent residence who has resided in the United States continuously during the 5 years immediately preceding the month in which he applies for enrollment under this part,"
+ },
+ {
+  "id": "mcare-1395p-d",
+  "file": "_cache/law/usc42_1395p_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395p",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395p(d)",
+  "quote": "In the case of an individual who first satisfies paragraph (1) or (2) of section 1395o(a) of this title on or after March 1, 1966, his initial enrollment period shall begin on the first day of the third month before the month in which he first satisfies such paragraphs and shall end seven months later."
+ },
+ {
+  "id": "mcare-1395i2-a3",
+  "file": "_cache/law/usc42_1395i-2_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395i-2",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395i-2(a)(3)",
+  "quote": "is a resident of the United States, and is either (A) a citizen or (B) an alien lawfully admitted for permanent residence who has resided in the United States continuously during the 5 years immediately preceding the month in which he applies for enrollment under this section, and"
+ },
+ {
+  "id": "mcare-1395i2-d1",
+  "file": "_cache/law/usc42_1395i-2_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395i-2",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395i-2(d)(1)",
+  "quote": "Such actuarial rate shall be one-twelfth of the amount which the Secretary estimates (on an average, per capita basis) is equal to 100 percent of the benefits and administrative costs which will be payable from the Federal Hospital Insurance Trust Fund for services performed and related administrative costs incurred in the succeeding year with respect to individuals age 65 and over who will be entitled to benefits under this part during that year."
+ },
+ {
+  "id": "mcare-1395i2-d2",
+  "file": "_cache/law/usc42_1395i-2_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395i-2",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395i-2(d)(2)",
+  "quote": "Subject to paragraphs (4) and (5), the amount of an individual’s monthly premium under this section shall be equal to the monthly actuarial rate determined under paragraph (1) for that following year."
+ },
+ {
+  "id": "mcare-1395i2-d4-45pct",
+  "file": "_cache/law/usc42_1395i-2_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395i-2",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395i-2(d)(4)(A) table, last row",
+  "quote": "1998 or subsequent year 45 percent."
+ },
+ {
+  "id": "mcare-1395i2-d4B-30q",
+  "file": "_cache/law/usc42_1395i-2_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395i-2",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395i-2(d)(4)(B)(i)",
+  "quote": "had at least 30 quarters of coverage under subchapter II;"
+ },
+ {
+  "id": "prem-1395r-a1",
+  "file": "_cache/law/usc42_1395r_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395r",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395r(a)(1)",
+  "quote": "such actuarial rate shall be the amount the Secretary estimates to be necessary so that the aggregate amount for such calendar year with respect to those enrollees age 65 and older will equal one-half of the total of the benefits and administrative costs which he estimates will be payable from the Federal Supplementary Medical Insurance Trust Fund for services performed and related administrative costs incurred in such calendar year with respect to such enrollees."
+ },
+ {
+  "id": "prem-1395r-a3",
+  "file": "_cache/law/usc42_1395r_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395r",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395r(a)(3)",
+  "quote": "The Secretary, during September of each year, shall determine and promulgate a monthly premium rate for the succeeding calendar year that (except as provided in subsection (g)) is equal to 50 percent of the monthly actuarial rate for enrollees age 65 and over, determined according to paragraph (1), for that succeeding calendar year."
+ },
+ {
+  "id": "prem-trustees25-3q",
+  "file": "_cache/law/trustees_2025.txt",
+  "url": "https://www.cms.gov/oact/tr/2025",
+  "fetched": "2026-09-27",
+  "pinpoint": "2025 Medicare Trustees Report, section II.A (Highlights), p. 7",
+  "quote": "General fund transfers finance about three-quarters of SMI costs and are central to the automatic financial balance of the fund’s two accounts."
+ },
+ {
+  "id": "prem-trustees25-25pct",
+  "file": "_cache/law/trustees_2025.txt",
+  "url": "https://www.cms.gov/oact/tr/2025",
+  "fetched": "2026-09-27",
+  "pinpoint": "2025 Medicare Trustees Report, section III.C1 (Part B financial operations in 2024), p. 89",
+  "quote": "Under current law, the standard Part B premium is set at the level of about 25 percent of average expenditures for beneficiaries aged 65 and over."
+ },
+ {
+  "id": "prem-hi805001-3x",
+  "file": "_cache/law/poms_hi00805001.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600805001",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00805.001 A.3",
+  "quote": "SMI is financed through premiums paid by enrollees and money appropriated from general revenues. The general revenue contribution is about 3 times greater than the amount of premiums paid by enrollees."
+ },
+ {
+  "id": "prem-cms24-partB",
+  "file": "_cache/law/cms_2024_premiums_factsheet.txt",
+  "url": "https://www.cms.gov/newsroom/fact-sheets/2024-medicare-parts-b-premiums-and-deductibles",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS fact sheet, 2024 Medicare Parts A & B Premiums and Deductibles (Oct. 12, 2023), Part B section",
+  "quote": "The standard monthly premium for Medicare Part B enrollees will be $174.70 for 2024, an increase of $9.80 from $164.90 in 2023."
+ },
+ {
+  "id": "prem-cms24-partA",
+  "file": "_cache/law/cms_2024_premiums_factsheet.txt",
+  "url": "https://www.cms.gov/newsroom/fact-sheets/2024-medicare-parts-b-premiums-and-deductibles",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS fact sheet 2024, Part A premium section",
+  "quote": "Individuals who had at least 30 quarters of coverage or were married to someone with at least 30 quarters of coverage may buy into Part A at a reduced monthly premium rate, which will be $278 in 2024, the same amount as 2023. Certain uninsured aged individuals who have less than 30 quarters of coverage and certain individuals with disabilities who have exhausted other entitlement will pay the full premium, which will be $505 a month in 2024, a $1 decrease from 2023."
+ },
+ {
+  "id": "prem-cms25-partB",
+  "file": "_cache/law/cms_2025_premiums_factsheet.txt",
+  "url": "https://www.cms.gov/newsroom/fact-sheets/2025-medicare-parts-b-premiums-and-deductibles",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS fact sheet, 2025 Medicare Parts A & B Premiums and Deductibles, Part B section",
+  "quote": "The standard monthly premium for Medicare Part B enrollees will be $185.00 for 2025, an increase of $10.30 from $174.70 in 2024."
+ },
+ {
+  "id": "prem-cms25-partA",
+  "file": "_cache/law/cms_2025_premiums_factsheet.txt",
+  "url": "https://www.cms.gov/newsroom/fact-sheets/2025-medicare-parts-b-premiums-and-deductibles",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS fact sheet 2025, Part A premium section",
+  "quote": "Individuals who had at least 30 quarters of coverage, or were married to someone with at least 30 quarters of coverage, may buy into Part A at a reduced monthly premium rate, which will be $285 in 2025, a $7 increase from 2024. Certain uninsured aged individuals who have fewer than 30 quarters of coverage, and certain individuals with disabilities who have exhausted other entitlements, will pay the full premium, which will be $518 a month in 2025, a $13 increase from 2024."
+ },
+ {
+  "id": "msp-hi801139-medicaid",
+  "file": "_cache/law/poms_hi00801139.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600801139",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00801.139 A",
+  "quote": "States are required to provide Medicaid to “qualified Medicare beneficiaries (QMBs)”"
+ },
+ {
+  "id": "msp-hi801139-def",
+  "file": "_cache/law/poms_hi00801139.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0600801139",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 00801.139 B, NOTE",
+  "quote": "Virtually all uninsured individuals who qualify for SSI are also likely to qualify for QMB status, provided they become entitled to Premium-HI."
+ },
+ {
+  "id": "lis-hi3001020-B",
+  "file": "_cache/law/poms_hi03001020.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0603001020",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 03001.020 B",
+  "quote": "If the individual is alive and meets all of the following conditions, the individual may be eligible to receive Extra Help: • Entitled to Medicare Part A (Hospital Insurance) or Medicare Part B (Supplementary Medical Insurance), or both; • Resides in one of the 50 States or the District of Columbia; • Not incarcerated;"
+ },
+ {
+  "id": "lis-hi3001001-B",
+  "file": "_cache/law/poms_hi03001001.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0603001001",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 03001.001 B (basic Part D requirements)",
+  "quote": "Citizen of the United States or lawfully present in the United States."
+ },
+ {
+  "id": "mcare-1395q-a2C",
+  "file": "_cache/law/usc42_1395q_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395q",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395q(a)(2)(C)",
+  "quote": "in the case of an individual who first satisfies such paragraph in a month beginning on or after January 1, 2023, and who enrolls pursuant to such subsection (d) in such month in which he first satisfies such paragraph or in any subsequent month of his initial enrollment period, the first day of the month following the month in which he so enrolls, or"
+ },
+ {
+  "id": "lis-hi3001020-B-income",
+  "file": "_cache/law/poms_hi03001020.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0603001020",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS HI 03001.020 B (income condition)",
+  "quote": "Has income (including a living-with spouse’s income) that is less than 150% of the Federal Poverty Level (FPL), based on household size, see HI 03020.055;"
+ },
+ {
+  "id": "msp-cfr435406-a2ii",
+  "file": "_cache/law/cfr42_435.406_cornell.txt",
+  "url": "https://www.law.cornell.edu/cfr/text/42/435.406",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 CFR 435.406(a)(2)(ii)",
+  "quote": "The eligibility of qualified noncitizens who are subject to the 5-year bar in 8 U.S.C. 1613 is limited to the benefits described in paragraph (b) of this section."
+ },
+ {
+  "id": "mcaid-cfr435406-b",
+  "file": "_cache/law/cfr42_435.406_cornell.txt",
+  "url": "https://www.law.cornell.edu/cfr/text/42/435.406",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 CFR 435.406(b)",
+  "quote": "The agency must provide payment for the services described in § 440.255(c) of this chapter to residents of the State who otherwise meet the eligibility requirements of the State plan (except for receipt of AFDC, SSI, or State Supplementary payments) who are qualified noncitizens subject to the 5-year bar or who are non-qualified noncitizens who meet all Medicaid eligibility criteria, except non-qualified noncitizens need not present a social security number or document immigration status."
+ },
+ {
+  "id": "ssi-poms135-B1-undocumented",
+  "file": "_cache/law/poms_si00502135.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0500502135",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS SI 00502.135 B.1 NOTE",
+  "quote": "If the individual alleges entering the country prior to 8/22/1996 but DHS cannot provide the date because the records are unavailable or the individual was undocumented at entry, verify the entry date using whatever creditable evidence may be available (e.g., NUMIDENT dated prior to 8/22/1996, MBR/ SSR records, employment records, etc.)"
+ },
+ {
+  "id": "fns11-undocumented-quarters",
+  "file": "_cache/law/fns_snap_noncitizen_guidance_2011_niwap_copy.txt",
+  "url": "https://niwaplibrary.wcl.american.edu/wp-content/uploads/Non-Citizen_Guidance_063011.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "USDA FNS, SNAP: Guidance on Non-Citizen Eligibility (June 2011), Section III, p. 14",
+  "quote": "Can a non-citizen receive credit for work performed while he or she was in an undocumented status? Yes. The SSA counts quarters worked while a person is living in this country regardless of the person’s immigration status at the time the work was performed. For SNAP purposes, these quarters are counted unless they are quarters in which not enough income was earned or are quarters earned after December 31, 1996 in which the non-citizen received Federal means-tested public benefits. Therefore, a non-citizen may be eligible for SNAP who has not been in qualified alien status for 5 years if they have reached 40 qualifying quarters."
+ },
+ {
+  "id": "fns11-402-over-403",
+  "file": "_cache/law/fns_snap_noncitizen_guidance_2011_niwap_copy.txt",
+  "url": "https://niwaplibrary.wcl.american.edu/wp-content/uploads/Non-Citizen_Guidance_063011.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FNS SNAP Non-Citizen Guidance (June 2011), Section II, p. 11",
+  "quote": "On January 14, 1997, the Department of Justice issued a legal interpretation of the law stating that the more specific requirements in Section 402 of PRWORA take precedence over the general requirements in Section 403 of PRWORA."
+ },
+ {
+  "id": "fns11-402-over-403-b",
+  "file": "_cache/law/fns_snap_noncitizen_guidance_2011_niwap_copy.txt",
+  "url": "https://niwaplibrary.wcl.american.edu/wp-content/uploads/Non-Citizen_Guidance_063011.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FNS SNAP Non-Citizen Guidance (June 2011), Section II, p. 12",
+  "quote": "What this means for SNAP is that the requirements in Section 403 of PRWORA should not be substituted for the five-year requirement at Section 402 of PRWORA."
+ },
+ {
+  "id": "fns11-pre1996-no-help",
+  "file": "_cache/law/fns_snap_noncitizen_guidance_2011_niwap_copy.txt",
+  "url": "https://niwaplibrary.wcl.american.edu/wp-content/uploads/Non-Citizen_Guidance_063011.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FNS SNAP Non-Citizen Guidance (June 2011), Section II, p. 12",
+  "quote": "Consequently, to receive SNAP benefits, a non-citizen who is establishing eligibility based on the five-year requirement must have been in a qualified status for five years even if that non-citizen entered the United States before August 22, 1996."
+ },
+ {
+  "id": "fns11-clock",
+  "file": "_cache/law/fns_snap_noncitizen_guidance_2011_niwap_copy.txt",
+  "url": "https://niwaplibrary.wcl.american.edu/wp-content/uploads/Non-Citizen_Guidance_063011.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FNS SNAP Non-Citizen Guidance (June 2011), Section II, p. 10",
+  "quote": "The five-year waiting period begins on the date the non-citizen obtains status as a qualified alien or enters the U.S. in a qualifying status."
+ },
+ {
+  "id": "fns11-prior-undocumented",
+  "file": "_cache/law/fns_snap_noncitizen_guidance_2011_niwap_copy.txt",
+  "url": "https://niwaplibrary.wcl.american.edu/wp-content/uploads/Non-Citizen_Guidance_063011.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FNS SNAP Non-Citizen Guidance (June 2011), Section II, p. 11",
+  "quote": "Can a qualified alien be denied benefits based on a prior undocumented status? No. As long as the non-citizen is currently a qualified alien, then the non-citizen is potentially eligible for SNAP."
+ },
+ {
+  "id": "fns11-40q-lt5",
+  "file": "_cache/law/fns_snap_noncitizen_guidance_2011_niwap_copy.txt",
+  "url": "https://niwaplibrary.wcl.american.edu/wp-content/uploads/Non-Citizen_Guidance_063011.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FNS SNAP Non-Citizen Guidance (June 2011), Section III, p. 13",
+  "quote": "For example, LPRs who have been in the United States less than 5 years may claim 40 qualifying quarters of work by claiming quarters credited from the work of a parent earned before the applicant became 18 or from the work of a spouse to be eligible for SNAP."
+ },
+ {
+  "id": "fns11-deeming-40q",
+  "file": "_cache/law/fns_snap_noncitizen_guidance_2011_niwap_copy.txt",
+  "url": "https://niwaplibrary.wcl.american.edu/wp-content/uploads/Non-Citizen_Guidance_063011.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FNS SNAP Non-Citizen Guidance (June 2011), Section on sponsored non-citizens, p. 32",
+  "quote": "Are LPRs with credit for 40 quarters of work history subject to deeming? No. These individuals are exempt from sponsor deeming and liability rules."
+ },
+ {
+  "id": "snap-2015f-2023ed-B",
+  "file": "_cache/law/usc7_2015_2023ed_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title7/html/USCODE-2023-title7-chap51-sec2015.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "7 U.S.C. 2015(f) (2023 edition, text before P.L. 119-21)",
+  "quote": "unless he or she is (1) a resident of the United States and (2) either (A) a citizen or (B) an alien lawfully admitted for permanent residence as an immigrant as defined by sections 1101(a)(15) and 1101(a)(20) of title 8,"
+ },
+ {
+  "id": "snap-2015f-2023ed-E-parole",
+  "file": "_cache/law/usc7_2015_2023ed_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title7/html/USCODE-2023-title7-chap51-sec2015.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "7 U.S.C. 2015(f)(E) (2023 edition)",
+  "quote": "(E) an alien who is lawfully present in the United States as a result of an exercise of discretion by the Attorney General for emergent reasons or reasons deemed strictly in the public interest pursuant to section 1182(d)(5) of title 8;"
+ },
+ {
+  "id": "snap-2015f-2023ed-only",
+  "file": "_cache/law/usc7_2015_2023ed_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title7/html/USCODE-2023-title7-chap51-sec2015.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "7 U.S.C. 2015(f) (2023 edition), second sentence",
+  "quote": "No aliens other than the ones specifically described in clauses (B) through (F) of this subsection shall be eligible to participate in the supplemental nutrition assistance program as a member of any household."
+ },
+ {
+  "id": "pl119-enacted",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21, 139 Stat. 72, enactment note",
+  "quote": "July 4, 2025 - [H.R. 1]"
+ },
+ {
+  "id": "snap-pl119-10108-leadin",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §10108, 139 Stat. 85",
+  "quote": "Section 6(f) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(f)) is amended to read as follows:"
+ },
+ {
+  "id": "snap-pl119-10108-B",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §10108, new 7 U.S.C. 2015(f)(2)(B), 139 Stat. 85",
+  "quote": "(B) an alien lawfully admitted for permanent residence as an immigrant as defined by sections 101(a)(15) and 101(a)(20) of the Immigration and Nationality Act, excluding, among others, alien visitors, tourists, diplomats, and students who enter the United States temporarily with no intention of abandoning their residence in a foreign country;"
+ },
+ {
+  "id": "snap-2015-cornell-note",
+  "file": "_cache/law/usc7_2015_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/7/2015",
+  "fetched": "2026-09-27",
+  "pinpoint": "7 U.S.C. 2015, Amendments note (2025)",
+  "quote": "2025—Subsec. (f). Pub. L. 119–21, § 10108, amended subsec. (f) generally. Prior to amendment, subsec. (f) related to alien eligibility to participate in the supplemental nutrition assistance program."
+ },
+ {
+  "id": "snap-cfr273-a6ii-lead",
+  "file": "_cache/law/cfr7_273.4_cornell.txt",
+  "url": "https://www.law.cornell.edu/cfr/text/7/273.4",
+  "fetched": "2026-09-27",
+  "pinpoint": "7 CFR 273.4(a)(6)(ii)",
+  "quote": "A qualified alien, as defined in paragraph (a)(6)(i) of this section, is eligible to receive SNAP benefits and is not subject to the requirement to be in qualified status for 5 years as set forth in paragraph (a)(6)(iii) of this section, if such individual meets at least one of the criteria of this paragraph (a)(6)(ii):"
+ },
+ {
+  "id": "snap-cfr273-a6iiA",
+  "file": "_cache/law/cfr7_273.4_cornell.txt",
+  "url": "https://www.law.cornell.edu/cfr/text/7/273.4",
+  "fetched": "2026-09-27",
+  "pinpoint": "7 CFR 273.4(a)(6)(ii)(A)",
+  "quote": "An alien age 18 or older lawfully admitted for permanent residence under the INA who has 40 qualifying quarters as determined under Title II of the SSA, including qualifying quarters of work not covered by Title II of the SSA, based on the sum of: quarters the alien worked; quarters credited from the work of a parent of the alien before the alien became 18 (including quarters worked before the alien was born or adopted); and quarters credited from the work of a spouse of the alien during their marriage if they are still married or the spouse is deceased."
+ },
+ {
+  "id": "snap-cfr273-a6iii-lead",
+  "file": "_cache/law/cfr7_273.4_cornell.txt",
+  "url": "https://www.law.cornell.edu/cfr/text/7/273.4",
+  "fetched": "2026-09-27",
+  "pinpoint": "7 CFR 273.4(a)(6)(iii)",
+  "quote": "The following qualified aliens, as defined in paragraph (a)(6)(i) of this section, must be in a qualified status for 5 years before being eligible to receive SNAP benefits. The 5 years in qualified status may be either consecutive or nonconsecutive. Temporary absences of less than 6 months from the United States with no intention of abandoning U.S. residency do not terminate or interrupt the individual's period of U.S. residency."
+ },
+ {
+  "id": "snap-cfr273-a6iiiA",
+  "file": "_cache/law/cfr7_273.4_cornell.txt",
+  "url": "https://www.law.cornell.edu/cfr/text/7/273.4",
+  "fetched": "2026-09-27",
+  "pinpoint": "7 CFR 273.4(a)(6)(iii)(A)",
+  "quote": "(A) An alien age 18 or older lawfully admitted for permanent residence under the INA."
+ },
+ {
+  "id": "snap-fns25-waiting",
+  "file": "_cache/law/fns_obbb_alien_snap_memo_2025-10-31_iptp_copy.txt",
+  "url": "https://iptp-production.s3.amazonaws.com/media/documents/2025.10.31_USDA_-_SNAP_Implementation.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "USDA FNS memo, SNAP Implementation of the OBBB – Alien SNAP Eligibility (Oct. 31, 2025), p. 2",
+  "quote": "Following the OBBB, some alien groups previously eligible for SNAP are no longer eligible. Aliens continue to be subject to a 5-year waiting period, unless exempted by PRWORA."
+ },
+ {
+  "id": "snap-fns25-lpr-exempt",
+  "file": "_cache/law/fns_obbb_alien_snap_memo_2025-10-31_iptp_copy.txt",
+  "url": "https://iptp-production.s3.amazonaws.com/media/documents/2025.10.31_USDA_-_SNAP_Implementation.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FNS memo (Oct. 31, 2025), p. 2, chart, LPR row",
+  "quote": "LPRs may still be eligible for SNAP without a waiting period if they meet one or more of the following conditions: • Are under 18 years old • Have 40 qualifying work quarters • Are blind or disabled"
+ },
+ {
+  "id": "snap-fns25-effective",
+  "file": "_cache/law/fns_obbb_alien_snap_memo_2025-10-31_iptp_copy.txt",
+  "url": "https://iptp-production.s3.amazonaws.com/media/documents/2025.10.31_USDA_-_SNAP_Implementation.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FNS memo (Oct. 31, 2025), p. 3, Implementation",
+  "quote": "Section 10108 of the OBBB was effective upon enactment, July 4, 2025."
+ },
+ {
+  "id": "mcaid-1396bv1",
+  "file": "_cache/law/usc42_1396b_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1396b",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1396b(v)(1) (as amended by P.L. 119-21 §71109(a)(1))",
+  "quote": "Notwithstanding the preceding provisions of this section, except as provided in paragraphs (2), (4), and (5), no payment may be made to a State under this section for medical assistance furnished to an alien who is not lawfully admitted for permanent residence or otherwise permanently residing in the United States under color of law."
+ },
+ {
+  "id": "mcaid-1396bv2-lead",
+  "file": "_cache/law/usc42_1396b_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1396b",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1396b(v)(2)",
+  "quote": "Payment shall be made under this section for care and services that are furnished to an alien described in paragraph (1) only if—"
+ },
+ {
+  "id": "mcaid-1396bv2A",
+  "file": "_cache/law/usc42_1396b_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1396b",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1396b(v)(2)(A)",
+  "quote": "such care and services are necessary for the treatment of an emergency medical condition of the alien,"
+ },
+ {
+  "id": "mcaid-1396bv3",
+  "file": "_cache/law/usc42_1396b_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1396b",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1396b(v)(3)",
+  "quote": "For purposes of this subsection, the term “emergency medical condition” means a medical condition (including emergency labor and delivery) manifesting itself by acute symptoms of sufficient severity (including severe pain) such that the absence of immediate medical attention could reasonably be expected to result in—"
+ },
+ {
+  "id": "mcaid-pl119-71109-lead",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71109(a)(2), new 42 U.S.C. 1396b(v)(5), 139 Stat. 297",
+  "quote": "Notwithstanding the preceding paragraphs of this subsection, beginning on October 1, 2026, except as provided in paragraphs (2) and (4), in no event shall payment be made to a State under this section for medical assistance furnished to an individual unless such individual is--"
+ },
+ {
+  "id": "mcaid-pl119-71109-ii",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71109(a)(2), new 1396b(v)(5)(B)(ii), 139 Stat. 297",
+  "quote": "(ii) an alien lawfully admitted for permanent residence as an immigrant as defined by sections 101(a)(15) and 101(a)(20) of the Immigration and Nationality Act,"
+ },
+ {
+  "id": "mcaid-pl119-71110",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71110(a), new 42 U.S.C. 1396d(kk), 139 Stat. 298",
+  "quote": "Notwithstanding subsection (y) and (z), beginning on October 1, 2026, the Federal medical assistance percentage for payments for care and services described in paragraph (2) of subsection 1903(v) furnished to an alien described in paragraph (1) of such subsection shall not exceed the Federal medical assistance percentage determined under subsection (b) for such State."
+ },
+ {
+  "id": "mcaid-cms-ta-clock",
+  "file": "_cache/law/cms_immigrant_eligibility_ta.txt",
+  "url": "https://www.cms.gov/marketplace/technical-assistance-resources/immigrant-eligibility-marketplace-medicaid-chip.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS, Immigrant Eligibility for Marketplace and Medicaid and CHIP Coverage (CSG-202408, Aug. 2024), slide 'Immigrant Eligibility for Marketplace vs. Medicaid (Slide 1 of 4)'",
+  "quote": "This five-year waiting period begins when consumers receive their qualifying immigration status, not when they first enter the U.S."
+ },
+ {
+  "id": "mcaid-cms-ta-emergency",
+  "file": "_cache/law/cms_immigrant_eligibility_ta.txt",
+  "url": "https://www.cms.gov/marketplace/technical-assistance-resources/immigrant-eligibility-marketplace-medicaid-chip.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS TA (Aug. 2024), slide 'Other Medicaid and CHIP Options'",
+  "quote": "Emergency Medicaid: Medicaid provides payment for treatment of an emergency medical condition for other consumers who meet all Medicaid eligibility criteria in the state (such as income and state residency) but are not in a satisfactory immigration status or are within the 5-year waiting period."
+ },
+ {
+  "id": "ptc-36B23-c1A",
+  "file": "_cache/law/usc26_36B_2023ed_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "26 U.S.C. 36B(c)(1)(A) (2023 edition)",
+  "quote": "The term \"applicable taxpayer\" means, with respect to any taxable year, a taxpayer whose household income for the taxable year equals or exceeds 100 percent but does not exceed 400 percent of an amount equal to the poverty line for a family of the size involved."
+ },
+ {
+  "id": "ptc-36B23-c1B-i",
+  "file": "_cache/law/usc26_36B_2023ed_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "26 U.S.C. 36B(c)(1)(B)(i) (2023 edition)",
+  "quote": "a taxpayer has a household income which is not greater than 100 percent of an amount equal to the poverty line for a family of the size involved, and"
+ },
+ {
+  "id": "ptc-36B23-c1B-ii",
+  "file": "_cache/law/usc26_36B_2023ed_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "26 U.S.C. 36B(c)(1)(B)(ii) (2023 edition)",
+  "quote": "the taxpayer is an alien lawfully present in the United States, but is not eligible for the medicaid program under title XIX of the Social Security Act by reason of such alien status,"
+ },
+ {
+  "id": "ptc-36B23-c1B-flush",
+  "file": "_cache/law/usc26_36B_2023ed_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "26 U.S.C. 36B(c)(1)(B), closing text (2023 edition)",
+  "quote": "the taxpayer shall, for purposes of the credit under this section, be treated as an applicable taxpayer with a household income which is equal to 100 percent of the poverty line for a family of the size involved."
+ },
+ {
+  "id": "ptc-36B23-c1E",
+  "file": "_cache/law/usc26_36B_2023ed_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "26 U.S.C. 36B(c)(1)(E) (2023 edition)",
+  "quote": "In the case of a taxable year beginning after December 31, 2020, and before January 1, 2026, subparagraph (A) shall be applied without regard to \"but does not exceed 400 percent\"."
+ },
+ {
+  "id": "ptc-36B-e2",
+  "file": "_cache/law/usc26_36B_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/26/36B",
+  "fetched": "2026-09-27",
+  "pinpoint": "26 U.S.C. 36B(e)(2) (text for taxable years before 2027)",
+  "quote": "For purposes of this section, an individual shall be treated as lawfully present only if the individual is, and is reasonably expected to be for the entire period of enrollment for which the credit under this section is being claimed, a citizen or national of the United States or an alien lawfully present in the United States."
+ },
+ {
+  "id": "ptc-36B-c1B-repealed",
+  "file": "_cache/law/usc26_36B_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/26/36B",
+  "fetched": "2026-09-27",
+  "pinpoint": "26 U.S.C. 36B(c)(1)(B) (current)",
+  "quote": "[(B) Repealed. Pub. L. 119–21, § 71302(a), July 4, 2025, 139 Stat. 322]"
+ },
+ {
+  "id": "ptc-36B-b3Aiii",
+  "file": "_cache/law/usc26_36B_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/26/36B",
+  "fetched": "2026-09-27",
+  "pinpoint": "26 U.S.C. 36B(b)(3)(A)(iii) (current)",
+  "quote": "In the case of a taxable year beginning after December 31, 2020, and before January 1, 2026—"
+ },
+ {
+  "id": "ptc-18032-f3",
+  "file": "_cache/law/usc42_18032_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/18032",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 18032(f)(3)",
+  "quote": "If an individual is not, or is not reasonably expected to be for the entire period for which enrollment is sought, a citizen or national of the United States or an alien lawfully present in the United States, the individual shall not be treated as a qualified individual and may not be covered under a qualified health plan in the individual market that is offered through an Exchange."
+ },
+ {
+  "id": "ptc-cfr136B1-g",
+  "file": "_cache/law/cfr26_1.36B-1_cornell.txt",
+  "url": "https://www.law.cornell.edu/cfr/text/26/1.36B-1",
+  "fetched": "2026-09-27",
+  "pinpoint": "26 CFR 1.36B-1(g)",
+  "quote": "Lawfully present. Lawfully present has the same meaning as in 45 CFR 155.20."
+ },
+ {
+  "id": "ptc-cfr15520-2024jul-xref",
+  "file": "_cache/law/cfr45_155.20_ecfr_2024-07-01.txt",
+  "url": "https://www.ecfr.gov/api/versioner/v1/full/2024-07-01/title-45.xml?part=155&section=155.20",
+  "fetched": "2026-09-27",
+  "pinpoint": "45 CFR 155.20, 'Lawfully present', as in effect July 1, 2024 (eCFR point-in-time)",
+  "quote": "Lawfully present has the meaning given the term in § 152.2."
+ },
+ {
+  "id": "ptc-cfr1522-2024-c9",
+  "file": "_cache/law/cfr45_152.2_ecfr_2024-07-01.txt",
+  "url": "https://www.ecfr.gov/api/versioner/v1/full/2024-07-01/title-45.xml?part=152&section=152.2",
+  "fetched": "2026-09-27",
+  "pinpoint": "45 CFR 152.2, 'Lawfully present' (4)(iii), as in effect July 1, 2024",
+  "quote": "(iii) Aliens who have been granted employment authorization under 8 CFR 274a.12(c)(9), (10), (16), (18), (20), (22), or (24);"
+ },
+ {
+  "id": "ptc-cfr1522-2024-vii",
+  "file": "_cache/law/cfr45_152.2_ecfr_2024-07-01.txt",
+  "url": "https://www.ecfr.gov/api/versioner/v1/full/2024-07-01/title-45.xml?part=152&section=152.2",
+  "fetched": "2026-09-27",
+  "pinpoint": "45 CFR 152.2, 'Lawfully present' (4)(vii), as in effect July 1, 2024",
+  "quote": "(vii) Aliens whose visa petitions have been approved and who have a pending application for adjustment of status;"
+ },
+ {
+  "id": "ptc-cfr27412-c9",
+  "file": "_cache/law/cfr8_274a.12_cornell.txt",
+  "url": "https://www.law.cornell.edu/cfr/text/8/274a.12",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 CFR 274a.12(c)(9)",
+  "quote": "(9) An alien who has filed an application for adjustment of status to lawful permanent resident pursuant to part 245 of this chapter."
+ },
+ {
+  "id": "ptc-cfr15520-2024nov-lp",
+  "file": "_cache/law/cfr45_155.20_ecfr_2024-11-01.txt",
+  "url": "https://www.ecfr.gov/api/versioner/v1/full/2024-11-01/title-45.xml?part=155&section=155.20",
+  "fetched": "2026-09-27",
+  "pinpoint": "45 CFR 155.20, 'Lawfully present', version effective Nov. 1, 2024 (89 FR 39436)",
+  "quote": "Lawfully present means a noncitizen who—"
+ },
+ {
+  "id": "ptc-cfr15520-2024nov-lp10",
+  "file": "_cache/law/cfr45_155.20_ecfr_2024-11-01.txt",
+  "url": "https://www.ecfr.gov/api/versioner/v1/full/2024-11-01/title-45.xml?part=155&section=155.20",
+  "fetched": "2026-09-27",
+  "pinpoint": "45 CFR 155.20, 'Lawfully present' (10), version effective Nov. 1, 2024",
+  "quote": "(10) Has a pending application for adjustment of status;"
+ },
+ {
+  "id": "ptc-cfr15520-2026jul-lp10",
+  "file": "_cache/law/cfr45_155.20_ecfr_2026-07-20.txt",
+  "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-07-20/title-45.xml?part=155&section=155.20",
+  "fetched": "2026-09-27",
+  "pinpoint": "45 CFR 155.20, 'Lawfully present' (10), version effective July 20, 2026 (latest eCFR version)",
+  "quote": "(10) Has a pending application for adjustment of status;"
+ },
+ {
+  "id": "ptc-pl119-71301-B",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71301(b)(2), new 26 U.S.C. 36B(e)(2)(B), 139 Stat. 321",
+  "quote": "An individual who is an alien and lawfully present shall be treated as an eligible alien if such individual is, and is reasonably expected to be for the entire period of enrollment for which the credit under this section is being claimed--"
+ },
+ {
+  "id": "ptc-pl119-71301-Bi",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71301(b)(2), new 36B(e)(2)(B)(i), 139 Stat. 321",
+  "quote": "an alien who is lawfully admitted for permanent residence under the Immigration and Nationality Act (8 U.S.C. 1101 et seq.),"
+ },
+ {
+  "id": "ptc-pl119-71301-e",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71301(e), 139 Stat. 322",
+  "quote": "The amendments made by this section (other than the amendments made by subsection (c)) shall apply to taxable years beginning after December 31, 2026."
+ },
+ {
+  "id": "ptc-pl119-71301-c3",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71301(c)(3), 139 Stat. 322",
+  "quote": "The amendments made by this subsection shall apply with respect to plan years beginning on or after January 1, 2027."
+ },
+ {
+  "id": "ptc-pl119-71302",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71302(a)-(b), 139 Stat. 322-323 (GPO page and note markers are in the enacted-law text)",
+  "quote": "(a) In General.--Section 36B(c)(1) is amended by striking subparagraph (B). [[Page 139 STAT. 323]] (b) <<NOTE: 26 USC 36B note.>> Effective Date.--The amendments made by this section shall apply to taxable years beginning after December 31, 2025."
+ },
+ {
+  "id": "ptc-cms-faq-71302",
+  "file": "_cache/law/cms_wftca_71302_faq.txt",
+  "url": "https://www.cms.gov/files/document/wftca-section-71302-faq-final.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS CCIIO, WFTCA Section 71302: Guidance for Plan Year 2026 (released Dec. 22, 2025), p. 1",
+  "quote": "Because Section 71302 of the WFTCA removes 26 U.S.C. 36B(c)(1) subparagraph (B), individuals who are ineligible for Medicaid due to immigration status and have income below 100 percent of the FPL are no longer allowed PTC."
+ },
+ {
+  "id": "ptc-cms-faq-71302-eff",
+  "file": "_cache/law/cms_wftca_71302_faq.txt",
+  "url": "https://www.cms.gov/files/document/wftca-section-71302-faq-final.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS CCIIO 71302 guidance (Dec. 22, 2025), p. 1",
+  "quote": "Section 71302 is effective for taxable years beginning after December 31, 2025, and Exchanges are therefore required to implement this change beginning with eligibility determinations for the 2026 plan year."
+ },
+ {
+  "id": "ptc-cms-ta-sub100",
+  "file": "_cache/law/cms_immigrant_eligibility_ta.txt",
+  "url": "https://www.cms.gov/marketplace/technical-assistance-resources/immigrant-eligibility-marketplace-medicaid-chip.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS TA (Aug. 2024), slide 'Marketplace Financial Assistance Eligibility (Cont.)'",
+  "quote": "However, lawfully present immigrants who are not eligible for Medicaid because of immigration status may be eligible for financial assistance even if their household income is below 100 percent of the FPL."
+ },
+ {
+  "id": "ptc-cms-ta-ira",
+  "file": "_cache/law/cms_immigrant_eligibility_ta.txt",
+  "url": "https://www.cms.gov/marketplace/technical-assistance-resources/immigrant-eligibility-marketplace-medicaid-chip.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS TA (Aug. 2024), same slide, note",
+  "quote": "The Inflation Reduction Act, signed into law on August 16, 2022, extended these enhanced Marketplace tax credits through PY 2025."
+ },
+ {
+  "id": "ptc-rp2525-lead",
+  "file": "_cache/law/irs_revproc_2025-25.txt",
+  "url": "https://www.irs.gov/pub/irs-drop/rp-25-25.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Rev. Proc. 2025-25, section 3.01",
+  "quote": "For taxable years beginning in calendar year 2026, the Applicable Percentage Table for purposes of § 36B(b)(3)(A)(i) and § 1.36B-3(g) is:"
+ },
+ {
+  "id": "ptc-rp2525-lt133",
+  "file": "_cache/law/irs_revproc_2025-25.txt",
+  "url": "https://www.irs.gov/pub/irs-drop/rp-25-25.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Rev. Proc. 2025-25, section 3.01 table, first row",
+  "quote": "Less than 133% 2.10% 2.10%"
+ },
+ {
+  "id": "ptc-rp2525-300-400",
+  "file": "_cache/law/irs_revproc_2025-25.txt",
+  "url": "https://www.irs.gov/pub/irs-drop/rp-25-25.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Rev. Proc. 2025-25, section 3.01 table, last row",
+  "quote": "At least 300% but not more than 400% 9.96% 9.96%"
+ },
+ {
+  "id": "ptc-irsqa-a7-general",
+  "file": "_cache/law/irs_ptc_qa.txt",
+  "url": "https://www.irs.gov/affordable-care-act/individuals-and-families/questions-and-answers-on-the-premium-tax-credit",
+  "fetched": "2026-09-27",
+  "pinpoint": "IRS, Questions and answers on the Premium Tax Credit, A7 (updated Feb. 19, 2026)",
+  "quote": "In general, individuals and families may be eligible for the Premium Tax Credit if their household income for the year is at least 100 percent but no more than 400 percent of the federal poverty line for their family size."
+ },
+ {
+  "id": "ptc-irsqa-a7-temporary",
+  "file": "_cache/law/irs_ptc_qa.txt",
+  "url": "https://www.irs.gov/affordable-care-act/individuals-and-families/questions-and-answers-on-the-premium-tax-credit",
+  "fetched": "2026-09-27",
+  "pinpoint": "IRS PTC Q&A, A7 (updated Feb. 19, 2026)",
+  "quote": "For tax years 2021 through 2025, Congress temporarily expanded eligibility for the Premium Tax Credit by eliminating the requirement that a taxpayer’s household income may not be more than 400 percent of the federal poverty line."
+ },
+ {
+  "id": "ptc-irsqa-reviewed",
+  "file": "_cache/law/irs_ptc_qa.txt",
+  "url": "https://www.irs.gov/affordable-care-act/individuals-and-families/questions-and-answers-on-the-premium-tax-credit",
+  "fetched": "2026-09-27",
+  "pinpoint": "IRS PTC Q&A, page footer",
+  "quote": "Page Last Reviewed or Updated: 21-Sep-2026"
+ },
+ {
+  "id": "ptc-irsqa-a5-gov",
+  "file": "_cache/law/irs_ptc_qa.txt",
+  "url": "https://www.irs.gov/affordable-care-act/individuals-and-families/questions-and-answers-on-the-premium-tax-credit",
+  "fetched": "2026-09-27",
+  "pinpoint": "IRS PTC Q&A, A5 (updated Feb. 19, 2026)",
+  "quote": "The individual enrolled was not eligible for coverage through a government program, like Medicaid, Medicare, CHIP or TRICARE; and"
+ },
+ {
+  "id": "ptc-n1341-D",
+  "file": "_cache/law/irs_notice_2013-41.txt",
+  "url": "https://www.irs.gov/pub/irs-drop/n-13-41.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "IRS Notice 2013-41, section D (Eligibility Based on Enrollment)",
+  "quote": "An individual is eligible for minimum essential coverage under the following programs for purposes of the premium tax credit only if the individual is enrolled in the coverage."
+ },
+ {
+  "id": "ptc-n1341-D1",
+  "file": "_cache/law/irs_notice_2013-41.txt",
+  "url": "https://www.irs.gov/pub/irs-drop/n-13-41.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "IRS Notice 2013-41, section D, item 1",
+  "quote": "1. Medicare part A coverage requiring payment of premiums. Coverage offered under Medicare for which the individual must pay a premium for Medicare part A coverage under § 1818 of the Social Security Act."
+ },
+ {
+  "id": "deem-cfr273-c2",
+  "file": "_cache/law/cfr7_273.4_cornell.txt",
+  "url": "https://www.law.cornell.edu/cfr/text/7/273.4",
+  "fetched": "2026-09-27",
+  "pinpoint": "7 CFR 273.4(c)(2)",
+  "quote": "The State agency must deem the sponsor's income and resources until the alien gains U. S. citizenship, has worked or can receive credit for 40 qualifying quarters of work as described in paragraph (a)(6)(ii)(A) of this section, or the sponsor dies."
+ },
+ {
+  "id": "deem-si2220065-C",
+  "file": "_cache/law/poms_si02220065.txt",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0502220065",
+  "fetched": "2026-09-27",
+  "pinpoint": "POMS SI 02220.065 C",
+  "quote": "The sponsor, not the alien, is solely liable for repayment of all SSI benefits paid to the sponsored alien. SSA has the authority to seek repayment from the sponsor for SSI benefits paid to the sponsored alien within the last 10 years."
+ },
+ {
+  "id": "deem-gao-hl-medicaid",
+  "file": "_cache/law/gao_09_375_exa.txt",
+  "url": "https://www.gao.gov/assets/gao-09-375.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-09-375 (May 2009), Highlights",
+  "quote": "However, agencies in 20 states have not done so for Medicaid, due in part to the lack of federal guidance for Medicaid on this requirement."
+ },
+ {
+  "id": "deem-gao-hl-repay",
+  "file": "_cache/law/gao_09_375_exa.txt",
+  "url": "https://www.gao.gov/assets/gao-09-375.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-09-375, Highlights",
+  "quote": "In total, only two states have pursued sponsor repayment."
+ },
+ {
+  "id": "deem-gao-69pct",
+  "file": "_cache/law/gao_09_375_exa.txt",
+  "url": "https://www.gao.gov/assets/gao-09-375.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-09-375, pp. 10-11 (between the page 9 and page 12 footers of the extraction)",
+  "quote": "The perceived low incidence of deeming was also supported by state administering agency officials through our survey, as 69 percent indicated that cases involving sponsor deeming had seldom or never occurred in their states during the past 2 years."
+ },
+ {
+  "id": "deem-gao-fn21",
+  "file": "_cache/law/gao_09_375_exa.txt",
+  "url": "https://www.gao.gov/assets/gao-09-375.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-09-375, footnote 21",
+  "quote": "For example, if a noncitizen applies for SNAP benefits and lives with his or her sponsor, the sponsor’s income is counted as part of the applicant’s household income under general SNAP eligibility rules. The noncitizen sponsor deeming provisions do not affect the applicant’s eligibility in such cases—which are very common, according to USDA officials."
+ },
+ {
+  "id": "deem-gao-ssa-rare",
+  "file": "_cache/law/gao_09_375_exa.txt",
+  "url": "https://www.gao.gov/assets/gao-09-375.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-09-375, pp. 10-12 (between the page 9 and page 12 footers)",
+  "quote": "For example, officials from all 10 SSA regional offices reported that deeming has occurred either rarely or never since PRWORA became effective. Specifically, because the sponsor deeming policy does not apply to sponsored noncitizens credited with 40 quarters of work, and most sponsored noncitizens are only eligible for SSI if they have satisfied the 40-quarter work eligibility requirement, deeming is inevitably rare."
+ },
+ {
+  "id": "deem-gao-ssi-share",
+  "file": "_cache/law/gao_09_375_exa.txt",
+  "url": "https://www.gao.gov/assets/gao-09-375.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-09-375, pp. 10-12",
+  "quote": "For instance, less than 0.4 percent of SSI recipients were sponsored noncitizens during the years 2004 through 2007,"
+ },
+ {
+  "id": "deem-gao-repay-none",
+  "file": "_cache/law/gao_09_375_exa.txt",
+  "url": "https://www.gao.gov/assets/gao-09-375.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-09-375, pp. 23-26 (between the page 22 and page 26 footers)",
+  "quote": "Officials from only two states reported in our survey that they have pursued sponsor repayment of TANF, Medicaid, or SNAP benefits. Similarly, SSA officials told us that neither its regional nor field offices have pursued sponsor repayment of SSI benefits."
+ },
+ {
+  "id": "deem-gao-consequence",
+  "file": "_cache/law/gao_09_375_exa.txt",
+  "url": "https://www.gao.gov/assets/gao-09-375.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-09-375, Conclusions, p. 27",
+  "quote": "As a consequence, certain sponsored noncitizens may receive means-tested public benefits based on their income and assets alone, even though they have sponsors who signed legally enforceable affidavits agreeing to support them when they became permanent residents in this country."
+ },
+ {
+  "id": "deem-pres19-enforce",
+  "file": "_cache/law/pres_memo_sponsors_2019-05-23.txt",
+  "url": "https://www.govinfo.gov/content/pkg/DCPD-201900334/pdf/DCPD-201900334.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Memorandum on Enforcing the Legal Responsibilities of Sponsors of Aliens (May 23, 2019), sec. 2",
+  "quote": "Currently, agencies are not adequately enforcing these requirements."
+ },
+ {
+  "id": "deem-pres19-medicaid",
+  "file": "_cache/law/pres_memo_sponsors_2019-05-23.txt",
+  "url": "https://www.govinfo.gov/content/pkg/DCPD-201900334/pdf/DCPD-201900334.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Presidential memorandum (May 23, 2019), sec. 2",
+  "quote": "For example, the Department of Health and Human Services has not adequately issued guidance on either sponsor reimbursement or sponsor deeming for the Medicaid program."
+ },
+ {
+  "id": "deem-fns25-belief",
+  "file": "_cache/law/fns_snap_sponsors_letter_2025-03-18.txt",
+  "url": "https://fns-prod.azureedge.us/sites/default/files/resource-files/snap-sponsors-letter031825.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "USDA Under Secretary letter to SNAP State agencies (Mar. 18, 2025), p. 1",
+  "quote": "While more information is needed to ensure strict enforcement of sponsor deeming and recoupment there is strong reason to believe States are not fully deeming and recouping funds that go to sponsored aliens."
+ },
+ {
+  "id": "deem-fns25-expects",
+  "file": "_cache/law/fns_snap_sponsors_letter_2025-03-18.txt",
+  "url": "https://fns-prod.azureedge.us/sites/default/files/resource-files/snap-sponsors-letter031825.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "USDA letter (Mar. 18, 2025), p. 1",
+  "quote": "USDA expects every State agency to deem the financial resources available to the sponsor when determining whether the intending immigrant is eligible for SNAP to the fullest extent of law and to seek reimbursement from sponsors."
+ },
+ {
+  "id": "deem-uscis25-reminder",
+  "file": "_cache/law/uscis_reminder_means_tested_agencies.txt",
+  "url": "https://www.uscis.gov/sites/default/files/document/notices/Important-Reminder-for-Means-Tested-Public-Benefit-Granting-Agencies.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "USCIS, Important Reminder for Means-Tested Public Benefit Granting Agencies (Oct. 23, 2025), p. 1",
+  "quote": "USCIS is reminding agencies that provide means-tested public benefits that they are required under section 213A(b)(1)(A) of the Immigration and Nationality Act (INA) to request reimbursement from a sponsor, joint sponsor, or substitute sponsor who executed an Affidavit of Support Under Section 213A of the INA (Form I-864 or Form I-864EZ),"
+ },
+ {
+  "id": "mcare-pl119-71201-a",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71201, new SSA §1899C(a) (42 U.S.C. 1395mmm), 139 Stat. 319",
+  "quote": "Subject to subsection (b), an individual may be entitled to, or enrolled for, benefits under this title only if the individual is--"
+ },
+ {
+  "id": "mcare-pl119-71201-a2",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71201, new §1899C(a)(2), 139 Stat. 319",
+  "quote": "(2) an alien who is lawfully admitted for permanent residence under the Immigration and Nationality Act;"
+ },
+ {
+  "id": "mcare-pl119-71201-b1",
+  "file": "_cache/law/pl119_21_govinfo.txt",
+  "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+  "fetched": "2026-09-27",
+  "pinpoint": "P.L. 119-21 §71201, new §1899C(b)(1), 139 Stat. 320",
+  "quote": "In the case of an individual who is entitled to, or enrolled for, benefits under this title as of the date of the enactment of this section, subsection (a) shall apply beginning on the date that is 18 months after such date of enactment."
+ },
+ {
+  "id": "ss-1611a",
+  "file": "_cache/law/usc8_1611_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1611",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1611(a)",
+  "quote": "Notwithstanding any other provision of law and except as provided in subsection (b), an alien who is not a qualified alien (as defined in section 1641 of this title) is not eligible for any Federal public benefit (as defined in subsection (c))."
+ },
+ {
+  "id": "mcare-1611b3",
+  "file": "_cache/law/usc8_1611_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/8/1611",
+  "fetched": "2026-09-27",
+  "pinpoint": "8 U.S.C. 1611(b)(3)",
+  "quote": "Subsection (a) shall not apply to any benefit payable under title XVIII of the Social Security Act [42 U.S.C. 1395 et seq.] (relating to the medicare program) to an alien who is lawfully present in the United States as determined by the Attorney General and, with respect to benefits payable under part A of such title [42 U.S.C. 1395c et seq.], who was authorized to be employed with respect to any wages attributable to employment which are counted for purposes of eligibility for such benefits."
+ },
+ {
+  "id": "mcare-1395q-a2A",
+  "file": "_cache/law/usc42_1395q_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395q",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395q(a)(2)(A)",
+  "quote": "in the case of an individual who enrolls pursuant to subsection (d) of section 1395p of this title before the month in which he first satisfies paragraph (1) or (2) of section 1395o(a) of this title, the first day of such month,"
+ },
+ {
+  "id": "mcaid-sho26-date",
+  "file": "_cache/law/cms_sho26001_71109_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho26001.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #26-001, p. 1 (heading)",
+  "quote": "Legislation (Public Law 119-21) April 8, 2026"
+ },
+ {
+  "id": "mcaid-sho26-not-amended",
+  "file": "_cache/law/cms_sho26001_71109_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho26001.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #26-001 (Apr. 8, 2026), section on qualified noncitizens",
+  "quote": "While section 1903(v)(5) of the Act places limits on the availability of FFP for full Medicaid and CHIP benefits for certain noncitizens beginning on October 1, 2026, the WFTC legislation did not amend: the definition of qualified alien in PRWORA;"
+ },
+ {
+  "id": "mcaid-sho26-5yr",
+  "file": "_cache/law/cms_sho26001_71109_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho26001.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #26-001 (Apr. 8, 2026), same section",
+  "quote": "Therefore, on and after October 1, 2026, states must continue to apply the five-year waiting period to LPRs in accordance with 8 U.S.C. § 1613(a), unless an exception provided in 8 U.S.C. §§ 1613(b) or (d)(1) applies"
+ },
+ {
+  "id": "mcaid-sho26-40q",
+  "file": "_cache/law/cms_sho26001_71109_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho26001.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #26-001 (Apr. 8, 2026), same section",
+  "quote": "states must provide full Medicaid benefits to LPRs who have worked, or can be credited with, 40 qualifying quarters, and may elect to provide full Medicaid benefits to all LPRs"
+ },
+ {
+  "id": "mcaid-sho26-fn30",
+  "file": "_cache/law/cms_sho26001_71109_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho26001.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #26-001 (Apr. 8, 2026), footnote 30",
+  "quote": "In accordance with 8 U.S.C. § 1613, LPRs must also meet the five-year waiting period, unless an exception applies."
+ },
+ {
+  "id": "mcaid-sho26-fmap",
+  "file": "_cache/law/cms_sho26001_71109_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho26001.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #26-001 (Apr. 8, 2026), 'FMAP for Emergency Medicaid', p. 20",
+  "quote": "Therefore, beginning October 1, 2026, the FMAP for expenditures related to services provided to individuals receiving emergency Medicaid coverage (including individuals in the adult group) will be matched at the state’s regular FMAP under section 1905(b) of the Act."
+ },
+ {
+  "id": "deem-sho19-date",
+  "file": "_cache/law/cms_sho19004_sponsor_deeming_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho19004.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #19-004, p. 1 (heading)",
+  "quote": "SHO # 19-004 Re: Sponsor Deeming and Repayment for Certain Immigrants August 23, 2019"
+ },
+ {
+  "id": "deem-sho19-cease",
+  "file": "_cache/law/cms_sho19004_sponsor_deeming_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho19004.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #19-004 (Aug. 23, 2019), p. 2",
+  "quote": "The sponsor deeming rules cease to apply to a sponsored immigrant if: • The sponsored immigrant becomes a naturalized citizen; • The sponsored immigrant achieves 40 qualifying work quarters, as defined by the Social Security Act (the Act); or • The sponsor or the sponsored immigrant dies."
+ },
+ {
+  "id": "deem-sho19-emergency",
+  "file": "_cache/law/cms_sho19004_sponsor_deeming_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho19004.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #19-004, p. 2",
+  "quote": "Sponsored immigrants for whom the state is determining eligibility for Medicaid coverage of services necessary for treatment of an emergency medical condition, in accordance with section 1903(v)(3) of the Act."
+ },
+ {
+  "id": "deem-sho19-40q-at-lpr",
+  "file": "_cache/law/cms_sho19004_sponsor_deeming_exa.txt",
+  "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/sho19004.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "CMS SHO #19-004, p. 3",
+  "quote": "Some immigrants may have already been credited with 40 qualifying quarters at the time they receive LPR status;"
+ },
+ {
+  "id": "mcare-1395o-a1",
+  "file": "_cache/law/usc42_1395o_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/1395o",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 1395o(a)(1)",
+  "quote": "Every individual who— (1) is entitled to hospital insurance benefits under part A, or"
+ },
+ {
+  "id": "mcare-426a2A",
+  "file": "_cache/law/usc42_426_cornell.txt",
+  "url": "https://www.law.cornell.edu/uscode/text/42/426",
+  "fetched": "2026-09-27",
+  "pinpoint": "42 U.S.C. 426(a)(2)(A)",
+  "quote": "is entitled to monthly insurance benefits under section 402 of this title, would be entitled to those benefits except that he has not filed an application therefor"
+ },
+ {
+  "id": "ptc-irsqa-a5-dependent",
+  "file": "_cache/law/irs_ptc_qa.txt",
+  "url": "https://www.irs.gov/affordable-care-act/individuals-and-families/questions-and-answers-on-the-premium-tax-credit",
+  "fetched": "2026-09-27",
+  "pinpoint": "IRS PTC Q&A, A5 (updated Feb. 19, 2026)",
+  "quote": "Cannot be claimed as a dependent by another person; and"
+ }
+]

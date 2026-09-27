@@ -1,0 +1,157 @@
+{
+ "bar_price_per_year": {
+  "central": 7131.5934,
+  "high": 17472.0,
+  "low": 1064.66
+ },
+ "bar_price_variants": {
+  "floor_2026": {
+   "central": 2666.7433,
+   "high": 3755.8994,
+   "low": 1636.2109
+  },
+  "floor_federal": {
+   "central": 1903.2,
+   "high": 2935.9,
+   "low": 1064.66
+  },
+  "floor_full": {
+   "central": 12625.8,
+   "high": 17472.0,
+   "low": 7682.33
+  }
+ },
+ "depart": {
+  "central": {
+   "T0_recent": [
+    1.0,
+    0.0
+   ],
+   "T1_settling": [
+    0.0,
+    0.036
+   ],
+   "T2_long": [
+    0.0,
+    0.015
+   ],
+   "T3_pre1996": [
+    0.0,
+    0.015
+   ]
+  },
+  "high": {
+   "T0_recent": [
+    0.75,
+    0.05
+   ],
+   "T1_settling": [
+    0.0,
+    0.012
+   ],
+   "T2_long": [
+    0.0,
+    0.007
+   ],
+   "T3_pre1996": [
+    0.0,
+    0.007
+   ]
+  },
+  "low": {
+   "T0_recent": [
+    1.0,
+    0.0
+   ],
+   "T1_settling": [
+    0.0,
+    0.05
+   ],
+   "T2_long": [
+    0.0,
+    0.023
+   ],
+   "T3_pre1996": [
+    0.0,
+    0.023
+   ]
+  }
+ },
+ "enforcement_per_unauthorized": 564.82,
+ "gates": [
+  "new-arrival spec reproduces tail statutory profiles (atol 1e-6) and NPVs (< $0.06)"
+ ],
+ "ledger_fingerprints": {
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62",
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json": "7c76461945ef3ced2d6d41e799e042b65f9657564db8a265bdee0e306bb5e7fc"
+ },
+ "lineage_audit": "b57f283b2b938c6345a532e2f910caaf0bc1d8128edb32c16758b59a4d1b8030",
+ "medicare_weight": {
+  "central": 0.65,
+  "high": 0.55,
+  "low": 0.75
+ },
+ "onbooks": {
+  "central": 0.6,
+  "high": 0.75,
+  "low": 0.44
+ },
+ "part_a_premium": 6060.0,
+ "part_b_premium": 2096.3999999999996,
+ "pi": {
+  "central": 0.06,
+  "high": 0.14,
+  "low": 0.0
+ },
+ "ptc_inputs": "953118c71da849223809a1a365b64efc915c67c3e05b4a0608b157654378431d",
+ "tail_acs_tenure_csv": "85ddfbcfc4aa2fa33b6cb1b11188b541cdae850b26fcbb9bfa0db4677d1b95a7",
+ "tail_per_admission_csv": "3d9d6b2e63c7979ddada332f9881fa14dbab63210b2f548c98656877e8f847c0",
+ "tail_per_admission_py": "ebf9701030296c8b821d5e769d64f4b395fd3c32a61325b632526d88873555a0",
+ "types": {
+  "T0_recent": {
+   "clock": "adjuster",
+   "earn": "late",
+   "index": "since_lpr",
+   "pre1996": false,
+   "premiums": false,
+   "ptc": "off",
+   "q40": false,
+   "r": 1.0,
+   "ss": "late"
+  },
+  "T1_settling": {
+   "clock": "adjuster",
+   "earn": "late",
+   "index": "since_lpr",
+   "pre1996": false,
+   "premiums": false,
+   "ptc": "off",
+   "q40": false,
+   "r": 3.0,
+   "ss": "late"
+  },
+  "T2_long": {
+   "clock": "adjuster",
+   "earn": "late",
+   "index": "since_lpr",
+   "pre1996": false,
+   "premiums": false,
+   "ptc": "off",
+   "q40": false,
+   "r": 14.0,
+   "ss": "mid"
+  },
+  "T3_pre1996": {
+   "clock": "adjuster",
+   "earn": "late",
+   "index": "since_lpr",
+   "pre1996": true,
+   "premiums": false,
+   "ptc": "off",
+   "q40": true,
+   "r": 30.0,
+   "ss": "resident"
+  }
+ }
+}

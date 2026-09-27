@@ -1,0 +1,66 @@
+[
+ {
+  "id": "vhz-duration",
+  "file": "_cache/lit/PMC3367327.txt",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3367327/",
+  "fetched": "2026-09-28",
+  "pinpoint": "Van Hook & Zhang (2011), Popul Res Policy Rev 30(1):1-24, doi:10.1007/s11113-010-9183-0; literature review (Van Hook et al. 2006, CPS matching)",
+  "quote": "This work yielded annual emigration rates of 2.9%, with much higher emigration rates for recently arrived immigrants (5.0 and 3.6% for those with 0–4 and 5–9 years of U.S. residence, respectively) than more settled immigrants (2.0% for those with 10+ years of U.S. residence)."
+ },
+ {
+  "id": "vhz-table1-mexico",
+  "file": "_cache/lit/PMC3367327.txt",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3367327/",
+  "fetched": "2026-09-28",
+  "pinpoint": "Van Hook & Zhang (2011), Popul Res Policy Rev 30(1):1-24, doi:10.1007/s11113-010-9183-0; Table 1, annual rates of emigration 1996–2009, columns all ages / 18–34 / 35–64 / 65+",
+  "quote": "Annual rates of emigration Mexican men 4.3 7 2.1 0 Mexican women 1.6 3.8 0 4 Non-Mexican men 2.8 3.2 2.9 1.7 Non-Mexican women 2.8 3.7 2.5 2.9 All foreign-born 2.9 4.2 2.3 2.3"
+ },
+ {
+  "id": "vhz-table1-caveat",
+  "file": "_cache/lit/PMC3367327.txt",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3367327/",
+  "fetched": "2026-09-28",
+  "pinpoint": "Van Hook & Zhang (2011), Popul Res Policy Rev 30(1):1-24, doi:10.1007/s11113-010-9183-0; Results, after Table 1",
+  "quote": "Emigration is particularly high among Mexican women aged 65+, but this may not be reliable given the smaller sample sizes among elderly Mexicans."
+ },
+ {
+  "id": "vhz-residual",
+  "file": "_cache/lit/PMC3367327.txt",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3367327/",
+  "fetched": "2026-09-28",
+  "pinpoint": "Van Hook & Zhang (2011), Popul Res Policy Rev 30(1):1-24, doi:10.1007/s11113-010-9183-0; Results",
+  "quote": "Our estimates tend to be higher than most residual estimates, which generally fall around 1.0%."
+ },
+ {
+  "id": "vhz-circular",
+  "file": "_cache/lit/PMC3367327.txt",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3367327/",
+  "fetched": "2026-09-28",
+  "pinpoint": "Van Hook & Zhang (2011), Popul Res Policy Rev 30(1):1-24, doi:10.1007/s11113-010-9183-0; Results",
+  "quote": "our method measures emigration over the period of 1 year, which is more likely to capture the multiple trips home of circular migrants."
+ },
+ {
+  "id": "vhz-duration-age",
+  "file": "_cache/lit/PMC3367327.txt",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3367327/",
+  "fetched": "2026-09-28",
+  "pinpoint": "Van Hook & Zhang (2011), Popul Res Policy Rev 30(1):1-24, doi:10.1007/s11113-010-9183-0; Discussion",
+  "quote": "duration of U.S. residence was negatively associated with emigration, but these effects were much stronger and more significant among younger than older immigrants."
+ },
+ {
+  "id": "vh2024-mpi-rates",
+  "file": "_cache/lit/PMC11735039.txt",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11735039/",
+  "fetched": "2026-09-28",
+  "pinpoint": "Van Hook (2024), Popul Dev Rev 50(4):1369-1400, doi:10.1111/padr.12683; Data and methods (MPI emigration assumptions for the legally resident)",
+  "quote": "On average, the assumed emigration rate is 0.9 percent (1.2 percent for those with less than 10 years of US residence and 0.7 percent for longer term residents)."
+ },
+ {
+  "id": "vh2024-mexico-duration",
+  "file": "_cache/lit/PMC11735039.txt",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11735039/",
+  "fetched": "2026-09-28",
+  "pinpoint": "Van Hook (2024), Popul Dev Rev 50(4):1369-1400, doi:10.1111/padr.12683; Results",
+  "quote": "each had an expected duration of 29 years in unauthorized status"
+ }
+]

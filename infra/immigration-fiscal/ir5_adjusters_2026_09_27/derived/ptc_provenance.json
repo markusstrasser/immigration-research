@@ -1,0 +1,20 @@
+{
+ "age_curve": {
+  "file": "_cache/ptc/cms_state_age_curves_2017.txt",
+  "sha256_pdf": "08b09f2824b04626b93cdcb5964a6ea068fcba5bce5e38a0f0ea9f92c7f28720",
+  "url": "https://www.cms.gov/cciio/programs-and-initiatives/health-insurance-market-reforms/downloads/statespecagecrv053117.pdf"
+ },
+ "asec": {
+  "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+ },
+ "ledger_audit": {
+  "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json": "7c76461945ef3ced2d6d41e799e042b65f9657564db8a265bdee0e306bb5e7fc"
+ },
+ "mts": {
+  "infra/immigration-fiscal/ir5_adjusters_2026_09_27/_cache/ptc/mts_table5_ptc_fy2024.json": "d3f4eba0136b92f3b5ea40368f0618085effac0a3664906d74ae0b044e8150d6",
+  "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=classification_desc:eq:Refundable%20Premium%20Tax%20Credits%20and%20Cost%20Sharing%20Reductions,record_date:gte:2023-10-01,record_date:lte:2024-12-31&fields=record_date,classification_desc,current_month_net_outly_amt,current_fytd_net_outly_amt&page%5Bsize%5D=100"
+ },
+ "mts_cy2024_crosscheck": {
+  "infra/immigration-fiscal/dataset_integrity_2026_09_23/derived/spending_mts_credits.json": "d06bc724ec0bd4fb5f2189cc087ddd498e6f01b93ecba0a07fe653d9e40da05c"
+ }
+}
