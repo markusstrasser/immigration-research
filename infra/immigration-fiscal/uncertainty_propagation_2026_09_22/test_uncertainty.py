@@ -131,3 +131,49 @@ def test_later_cases_span_the_adopted_bands_at_the_payload_responses(name, lane)
     gg, school = main["responses"]["general_government"], main["responses"]["school"]
     assert set(u.general_government_response) == {gg["low"], gg["high"]}
     assert set(u.school_response) == {school["growth"], school["decline"]}
+
+
+def test_capital_case_carries_the_return_on_public_capital():
+    """sept27: each specification's capital return is the case lane's (per_spec.csv, the methods' mean), the
+    education derivatives give the K-12 and college returns, and the return's CPS part is positive."""
+    found = 0
+    for name, lane in json.loads((HERE / "later_cases.json").read_text()).items():
+        u = pd.read_csv(OUT / name / "case_uncertainty.csv")
+        if "capital_return_bn" not in u.columns:
+            continue
+        found += 1
+        per = pd.read_csv(HERE.parent / lane / "derived/per_spec.csv").groupby("spec")[
+            ["cost_bn", "capital_total_bn", "capital_k12_bn", "capital_college_bn"]].mean()
+        c = u[u.case == name].reset_index(drop=True)
+        np.testing.assert_allclose(c.net_cost_bn, per.cost_bn, atol=1e-9)
+        np.testing.assert_allclose(c.capital_return_bn, per.capital_total_bn, atol=1e-9)
+        np.testing.assert_allclose(c.capital_return_education_bn, per.capital_k12_bn + per.capital_college_bn, atol=1e-9)
+        assert (c.se_cps_capital_part_bn > 0).all() and (c.se_cps_rental_and_enterprise_part_bn > 0).all()
+    assert found >= 1
+
+
+def test_joint_case_carries_the_benefit_keys_in_the_cps_block():
+    """sept27 on (conceptual audit 2026-09-27, section A): the benefit keys' re-keying varies on the account's CPS
+    replicates. The primary CPS error is the joint one and the combined error uses it; the published append
+    (package_se.csv beside the account's combined error) stays beside it; the uncorrected frame has no benefit term."""
+    found = 0
+    for name in json.loads((HERE / "later_cases.json").read_text()):
+        u = pd.read_csv(OUT / name / "case_uncertainty.csv")
+        if "se_cps_account_keys_bn" not in u.columns:
+            continue
+        found += 1
+        other = u.se_production_term_bn ** 2 + u.se_school_correction_bn ** 2 + u.se_meps_donor_bn ** 2
+        np.testing.assert_allclose(u.se_combined_independent_bn, np.sqrt(u.se_cps_fiscal_keys_bn ** 2 + other), atol=1e-9)
+        np.testing.assert_allclose(u.se_with_benefit_keys_bn,
+                                   np.sqrt(u.se_cps_account_keys_bn ** 2 + other + u.se_benefit_keys_package_bn ** 2), atol=1e-9)
+        c, base = u[u.case == name], u[u.case != name]
+        acc, ben = c.se_cps_account_keys_bn, c.se_benefit_keys_replicate_bn
+        np.testing.assert_allclose(c.se_cps_fiscal_keys_bn ** 2, acc ** 2 + ben ** 2 + 2 * c.corr_cps_benefit_keys * acc * ben,
+                                   atol=1e-9)
+        assert (c.corr_cps_benefit_keys < 0).all() and (c.se_cps_fiscal_keys_bn < c.se_cps_independent_append_bn).all()
+        np.testing.assert_allclose(c.se_cps_factor_product_bn, c.se_cps_fiscal_keys_bn, atol=0.01)
+        assert (base.se_benefit_keys_replicate_bn == 0).all()
+        np.testing.assert_array_equal(base.se_cps_fiscal_keys_bn, base.se_cps_account_keys_bn)
+        f = pd.read_csv(OUT / name / "benefit_factors.csv")
+        np.testing.assert_allclose(f.shift_bn, f.delta_bn * f.stack_factor, rtol=1e-12)
+    assert found >= 1
