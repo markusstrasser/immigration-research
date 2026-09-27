@@ -129,6 +129,20 @@ both fill-in methods, so the moves add exactly:
       case by about +$0.2bn, under the headline's rounding; a second propagation for that would cost more than it
       corrects.
     - If the internal transfer turns out to be large (the bound is +$2.5bn), the fix comes first.
+- **A second known defect waits for the same revision: the production inputs** (conceptual audit, second
+  pass §C, ffcce20).
+  - The account reweights the Mexico-born outside California and Texas to ACS totals: naturalized × 0.856,
+    noncitizens × 0.778. The production model still uses the unweighted CPS population, 40.90m against
+    39.71m.
+  - On the account's own weights the production gain falls from $13.32bn to $11.68bn (GDP normalization,
+    the low end, specification 48). It falls from $8.79bn to $7.68bn (cash, the high end, specification
+    11).
+  - That raises the case by $1.64bn / $1.11bn, to about $323.5–388.5bn before the transfer fix.
+    `conceptual_audit_2026_09_27/probe_production.py` reproduces the published baseline exactly; the parent
+    reran it.
+  - The source had disclosed the omission and sized it at $0.2–0.3bn.
+  - The next case revision takes both fixes, about +$1.8bn / +$1.3bn together. It follows once the September 27
+    propagation is committed, so the consumer lanes move once.
 - **Beside the account, not in the range:**
   - capital at 7%: $406.3–461.6bn;
   - option A (enterprises out): $304.6–364.4bn;
