@@ -68,7 +68,9 @@ const PROFILES = {
   proportional_reference: { other: 1, delayed: 1, school: 1 },
 };
 const MAIN_PROFILE = "cbo_category_lag_non_school_full";
-function cost(m, spec, profile) {
+// The engine state of a specification under a profile. spec.line_responses ({line id: response}), when
+// present, overrides the profile's responses for those lines; later cases set per-line responses that way.
+function stateFor(m, spec, profile) {
   const pr = PROFILES[profile || MAIN_PROFILE];
   if (!pr) throw new Error("unknown profile " + profile);
   const school = pr.school === null ? spec.school : pr.school;
@@ -85,7 +87,16 @@ function cost(m, spec, profile) {
     housing_community_services: 1, economic_affairs_services: pr.delayed, recreation_culture: pr.delayed,
     [SYN.school]: spec.share * school, [SYN.college]: (1 - spec.share) * pr.other, [SYN.constants]: 1,
   };
-  return -Engine.evaluate(m, s).welfare_bn;
+  for (const [id, r] of Object.entries(spec.line_responses || {})) {
+    // The engine ignores an override for a line it does not have, so an unknown id fails here.
+    if (!m.spending.lines.some((l) => l.id === id)) throw new Error("line_responses: no spending line " + id);
+    if (!Number.isFinite(r)) throw new Error(`line_responses: ${id} is not a number`);
+    s.response_override[id] = r;
+  }
+  return s;
+}
+function cost(m, spec, profile) {
+  return -Engine.evaluate(m, stateFor(m, spec, profile)).welfare_bn;
 }
 const band = (m, profile) => span(MAIN_SPECS.map((spec) => cost(m, spec, profile)));
 
@@ -373,7 +384,7 @@ function correctionsPayload() {
 module.exports = {
   Engine, MODEL, FISCAL, HERE, ALLOCS, SYN, SYN_LINES, MEDICAID, MAIN_SPECS, PROFILES, MAIN_PROFILE, CASES, METHODS, STACKS, CENTRAL, CONSTANTS,
   BOOKING, LTSS_CENTRAL, LTSS_RANGE, gateState, gate, near, span, f2, csvRows, read, readJson, both, scale, plus,
-  cost, band, build, expand, correctionsPayload, stackShifts, stackFactor, cboShifts, row3Shifts, otaShifts, row1Shifts, medicalShifts,
+  stateFor, cost, band, build, expand, correctionsPayload, stackShifts, stackFactor, cboShifts, row3Shifts, otaShifts, row1Shifts, medicalShifts,
   educationShifts, minusT0, benefitShifts, justiceShifts, constantShifts, bookingRow, packageShifts,
   evalPackage, mean2, central, mts, schoolV, schoolLines, ltssMain, benefitSe,
 };
