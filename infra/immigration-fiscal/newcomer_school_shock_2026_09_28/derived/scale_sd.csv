@@ -1,0 +1,259 @@
+state,year,subject,grade,n,mean,sd,source_file,source_table,page
+CO,2017,ELA,3,63608,738,40,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,ELA,4,64116,743,35,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,ELA,5,63391,745,34,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,ELA,6,60841,741,31,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,ELA,7,58778,743,38,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,ELA,8,56211,742,38,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,math,3,65422,739,37,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,math,4,65009,735,33,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,math,5,63446,736,32,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,math,6,60950,733,32,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,math,7,56210,732,27,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2017,math,8,43158,722,35,_cache/sd/cde_cmas_state_summary_2017.pdf,CMAS ELA and Math (PARCC) 2016-2017 Achievement Results: Overall Results,1
+CO,2018,ELA,3,63016,739,40,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,ELA,4,64789,745,35,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,ELA,5,65359,746,34,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,ELA,6,63647,743,34,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,ELA,7,60907,744,40,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,ELA,8,58684,743,40,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,math,3,64714,739,37,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,math,4,65995,734,33,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,math,5,65516,737,34,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,math,6,63765,733,31,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,math,7,59983,733,29,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2018,math,8,49189,728,37,_cache/sd/cde_cmas_state_summary_2018.pdf,2018 CMAS English Language Arts/Literacy and Mathematics State Achievement Results: Overall Results,1
+CO,2019,ELA,3,60795,740,41,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),14
+CO,2019,ELA,4,63257,745,36,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),15
+CO,2019,ELA,5,65757,747,34,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),16
+CO,2019,ELA,6,64493,743,33,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),17
+CO,2019,ELA,7,62642,745,39,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),18
+CO,2019,ELA,8,58807,745,40,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),19
+CO,2019,math,3,62560,740,36,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),21
+CO,2019,math,4,64473,735,32,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),22
+CO,2019,math,5,65917,738,34,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),23
+CO,2019,math,6,64650,732,31,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),24
+CO,2019,math,7,62787,735,29,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),25
+CO,2019,math,8,58862,736,41,_cache/denver/cde_cmas_overall_2019.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),26
+CO,2021,ELA,3,45187,736,43,_cache/denver/cde_cmas_overall_2021.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),29
+CO,2021,ELA,5,46909,746,32,_cache/denver/cde_cmas_overall_2021.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),31
+CO,2021,ELA,7,42928,742,37,_cache/denver/cde_cmas_overall_2021.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),32
+CO,2021,math,4,46781,729,33,_cache/denver/cde_cmas_overall_2021.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),33
+CO,2021,math,6,44813,727,32,_cache/denver/cde_cmas_overall_2021.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),34
+CO,2021,math,8,39202,730,39,_cache/denver/cde_cmas_overall_2021.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),35
+CO,2022,ELA,3,55078,737,44,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),15
+CO,2022,ELA,4,55741,740,36,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),16
+CO,2022,ELA,5,57360,745,33,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),17
+CO,2022,ELA,6,55956,742,34,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),18
+CO,2022,ELA,7,55263,741,37,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),19
+CO,2022,ELA,8,52725,742,41,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),20
+CO,2022,math,3,56479,737,39,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),25
+CO,2022,math,4,56881,732,33,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),26
+CO,2022,math,5,57420,736,35,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),27
+CO,2022,math,6,55932,728,33,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),28
+CO,2022,math,7,55281,730,28,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),29
+CO,2022,math,8,52802,731,40,_cache/denver/cde_cmas_overall_2022.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),30
+CO,2023,ELA,3,55737,737,44,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),15
+CO,2023,ELA,4,55517,742,37,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),16
+CO,2023,ELA,5,56656,747,34,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),17
+CO,2023,ELA,6,55600,743,33,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),18
+CO,2023,ELA,7,53885,744,38,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),19
+CO,2023,ELA,8,51755,741,41,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),20
+CO,2023,math,3,57382,738,39,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),25
+CO,2023,math,4,56787,733,33,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),26
+CO,2023,math,5,56895,737,35,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),27
+CO,2023,math,6,55911,730,33,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),28
+CO,2023,math,7,54138,731,28,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),29
+CO,2023,math,8,52032,732,41,_cache/denver/cde_cmas_overall_2023.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),30
+CO,2024,ELA,3,54572,738,44,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),15
+CO,2024,ELA,4,55710,741,37,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),16
+CO,2024,ELA,5,55950,747,34,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),17
+CO,2024,ELA,6,54560,743,33,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),18
+CO,2024,ELA,7,53327,746,39,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),19
+CO,2024,ELA,8,50334,740,41,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),20
+CO,2024,math,3,56724,740,38,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),25
+CO,2024,math,4,57395,735,35,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),26
+CO,2024,math,5,56598,739,34,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),27
+CO,2024,math,6,55120,732,32,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),28
+CO,2024,math,7,53895,733,29,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),29
+CO,2024,math,8,50798,732,41,_cache/denver/cde_cmas_overall_2024.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),30
+CO,2025,ELA,3,56598,737,44,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),20
+CO,2025,ELA,4,55071,741,37,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),21
+CO,2025,ELA,5,56595,746,35,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),22
+CO,2025,ELA,6,54607,743,34,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),23
+CO,2025,ELA,7,53148,747,39,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),24
+CO,2025,ELA,8,50297,741,41,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),25
+CO,2025,math,3,58763,739,39,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),30
+CO,2025,math,4,56789,736,34,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),31
+CO,2025,math,5,57000,739,34,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),32
+CO,2025,math,6,55127,732,34,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),33
+CO,2025,math,7,53581,735,30,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),34
+CO,2025,math,8,50929,734,42,_cache/denver/cde_cmas_overall_2025.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),35
+CO,2026,ELA,3,54154,738,46,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),20
+CO,2026,ELA,4,56808,744,39,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),21
+CO,2026,ELA,5,55942,748,34,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),22
+CO,2026,ELA,6,54941,742,33,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),23
+CO,2026,ELA,7,52766,745,38,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),24
+CO,2026,ELA,8,49977,741,40,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),25
+CO,2026,math,3,55928,740,39,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),30
+CO,2026,math,4,58268,738,35,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),31
+CO,2026,math,5,55955,740,34,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),32
+CO,2026,math,6,55081,734,33,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),33
+CO,2026,math,7,52864,737,30,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),34
+CO,2026,math,8,50110,736,43,_cache/denver/cde_cmas_overall_2026.xlsx,sheet 'CMAS ELA and Math': Level=STATE rows (page = worksheet row),35
+IL,2023,ELA,3,128356,723.35,40.77,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.35 Subgroup Performance for ELA/L Scale Scores: Grade 3,177
+IL,2023,ELA,4,127980,734.11,37.78,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.36 Subgroup Performance for ELA/L Scale Scores: Grade 4,179
+IL,2023,ELA,5,129738,734.37,35.29,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.37 Subgroup Performance for ELA/L Scale Scores: Grade 5,181
+IL,2023,ELA,6,133179,733.46,33.18,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.38 Subgroup Performance for ELA/L Scale Scores: Grade 6,183
+IL,2023,ELA,7,134267,735.41,38.12,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.39 Subgroup Performance for ELA/L Scale Scores: Grade 7,185
+IL,2023,ELA,8,138908,738.26,37.97,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.40 Subgroup Performance for ELA/L Scale Scores: Grade 8,187
+IL,2023,math,3,128109,731.72,37.74,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.41 Subgroup Performance for Mathematics Scale Scores: Grade 3,189
+IL,2023,math,4,127833,728.98,34.50,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.42 Subgroup Performance for Mathematics Scale Scores: Grade 4,190
+IL,2023,math,5,129562,727.88,33.19,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.43 Subgroup Performance for Mathematics Scale Scores: Grade 5,191
+IL,2023,math,6,132858,725.16,32.56,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.44 Subgroup Performance for Mathematics Scale Scores: Grade 6,192
+IL,2023,math,7,133956,731.18,30.21,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.45 Subgroup Performance for Mathematics Scale Scores: Grade 7,193
+IL,2023,math,8,138558,723.86,41.04,_cache/sd/isbe_iar_techreport_2023.pdf,Table A.12.46 Subgroup Performance for Mathematics Scale Scores: Grade 8,194
+IL,2024,ELA,3,129997,727.19,42.14,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.1. Scale Score Performance by Demographic Subgroup—ELA/L Grade 3,102
+IL,2024,ELA,4,129858,734.73,38.11,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.2. Scale Score Performance by Demographic Subgroup—ELA/L Grade 4,103
+IL,2024,ELA,5,129335,736.77,36.27,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.3. Scale Score Performance by Demographic Subgroup—ELA/L Grade 5,104
+IL,2024,ELA,6,130763,742.56,33.87,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.4. Scale Score Performance by Demographic Subgroup—ELA/L Grade 6,105
+IL,2024,ELA,7,133542,742.09,34.11,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.5. Scale Score Performance by Demographic Subgroup—ELA/L Grade 7,107
+IL,2024,ELA,8,134873,744.60,38.91,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.6. Scale Score Performance by Demographic Subgroup—ELA/L Grade 8,108
+IL,2024,math,3,130057,733.52,37.02,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.7. Scale Score Performance by Demographic Subgroup—Mathematics Grade 3,109
+IL,2024,math,4,129924,730.82,33.94,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.8. Scale Score Performance by Demographic Subgroup—Mathematics Grade 4,110
+IL,2024,math,5,129432,729.66,33.77,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.9. Scale Score Performance by Demographic Subgroup—Mathematics Grade 5,110
+IL,2024,math,6,130694,728.37,31.76,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.10. Scale Score Performance by Demographic Subgroup—Mathematics Grade 6,111
+IL,2024,math,7,133394,733.81,28.81,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.11. Scale Score Performance by Demographic Subgroup—Mathematics Grade 7,111
+IL,2024,math,8,134715,727.00,40.16,_cache/sd/isbe_iar_techreport_2024.pdf,Table B.12. Scale Score Performance by Demographic Subgroup—Mathematics Grade 8,112
+IL,2025,ELA,3,132063,729.69,41.23,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.1. Scale Score Performance by Demographic Subgroup—ELA/L Grade 3,115
+IL,2025,ELA,4,130742,736.19,36.84,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.2. Scale Score Performance by Demographic Subgroup—ELA/L Grade 4,116
+IL,2025,ELA,5,130422,739.26,35.95,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.3. Scale Score Performance by Demographic Subgroup—ELA/L Grade 5,118
+IL,2025,ELA,6,129426,741.26,33.77,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.4. Scale Score Performance by Demographic Subgroup—ELA/L Grade 6,119
+IL,2025,ELA,7,130924,744.41,34.04,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.5. Scale Score Performance by Demographic Subgroup—ELA/L Grade 7,121
+IL,2025,ELA,8,134023,747.32,38.98,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.6. Scale Score Performance by Demographic Subgroup—ELA/L Grade 8,122
+IL,2025,math,3,131915,731.74,36.35,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.7. Scale Score Performance by Demographic Subgroup—Mathematics Grade 3,124
+IL,2025,math,4,130600,731.68,33.25,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.8. Scale Score Performance by Demographic Subgroup—Mathematics Grade 4,124
+IL,2025,math,5,130283,728.07,33.46,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.9. Scale Score Performance by Demographic Subgroup—Mathematics Grade 5,125
+IL,2025,math,6,129232,726.67,32.57,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.10. Scale Score Performance by Demographic Subgroup—Mathematics Grade 6,125
+IL,2025,math,7,130683,735.38,29.24,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.11. Scale Score Performance by Demographic Subgroup—Mathematics Grade 7,126
+IL,2025,math,8,133755,728.24,41.18,_cache/sd/isbe_iar_techreport_2025.pdf,Table B.12. Scale Score Performance by Demographic Subgroup—Mathematics Grade 8,126
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,ELA,3,338927,738.80,42.68,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.27 Subgroup Performance for ELA/L Scale Scores: Grade 3,359
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,ELA,4,345483,743.92,37.34,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.28 Subgroup Performance for ELA/L Scale Scores: Grade 4,361
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,ELA,5,348524,742.50,35.32,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.29 Subgroup Performance for ELA/L Scale Scores: Grade 5,363
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,ELA,6,344520,741.96,33.38,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.30 Subgroup Performance for ELA/L Scale Scores: Grade 6,365
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,ELA,7,338731,745.09,40.18,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.31 Subgroup Performance for ELA/L Scale Scores: Grade 7,367
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,ELA,8,339283,743.30,40.42,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.32 Subgroup Performance for ELA/L Scale Scores: Grade 8,369
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,math,3,348117,742.56,37.24,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.36 Subgroup Performance for Mathematics Scale Scores: Grade 3,377
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,math,4,354080,738.12,33.85,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.37 Subgroup Performance for Mathematics Scale Scores: Grade 4,378
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,math,5,355854,738.22,33.85,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.38 Subgroup Performance for Mathematics Scale Scores: Grade 5,379
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,math,6,345712,734.45,31.92,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.39 Subgroup Performance for Mathematics Scale Scores: Grade 6,380
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,math,7,323440,735.75,29.36,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.40 Subgroup Performance for Mathematics Scale Scores: Grade 7,381
+IL+BIE+DC+DoDEA+MD+NJ+NM,2018,math,8,263809,725.69,37.06,_cache/sd/isbe_parcc_techreport_2018.pdf,Table A.12.41 Subgroup Performance for Mathematics Scale Scores: Grade 8,382
+IL+BIE+DoDEA,2021,ELA,3,96928,724.36,41.06,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.42 Subgroup Performance for ELA/L Scale Scores: Grade 3,278
+IL+BIE+DoDEA,2021,ELA,4,99006,728.57,35.38,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.43 Subgroup Performance for ELA/L Scale Scores: Grade 4,280
+IL+BIE+DoDEA,2021,ELA,5,99632,731.20,34.06,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.44 Subgroup Performance for ELA/L Scale Scores: Grade 5,282
+IL+BIE+DoDEA,2021,ELA,6,98590,733.68,31.38,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.45 Subgroup Performance for ELA/L Scale Scores: Grade 6,284
+IL+BIE+DoDEA,2021,ELA,7,96950,733.47,37.42,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.46 Subgroup Performance for ELA/L Scale Scores: Grade 7,286
+IL+BIE+DoDEA,2021,ELA,8,96028,734.91,37.11,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.47 Subgroup Performance for ELA/L Scale Scores: Grade 8,288
+IL+BIE+DoDEA,2021,math,3,96011,730.93,38.66,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.50 Subgroup Performance for Mathematics Scale Scores: Grade 3,294
+IL+BIE+DoDEA,2021,math,4,97740,726.00,34.73,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.51 Subgroup Performance for Mathematics Scale Scores: Grade 4,295
+IL+BIE+DoDEA,2021,math,5,98306,726.90,33.87,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.52 Subgroup Performance for Mathematics Scale Scores: Grade 5,296
+IL+BIE+DoDEA,2021,math,6,96924,724.92,32.04,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.53 Subgroup Performance for Mathematics Scale Scores: Grade 6,297
+IL+BIE+DoDEA,2021,math,7,91315,732.06,28.12,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.54 Subgroup Performance for Mathematics Scale Scores: Grade 7,298
+IL+BIE+DoDEA,2021,math,8,92946,723.42,39.41,_cache/sd/isbe_iar_techreport_2021.pdf,Table A.12.55 Subgroup Performance for Mathematics Scale Scores: Grade 8,299
+IL+BIE+NJ+NM,2019,ELA,3,256870,738.54,42.05,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.48 Subgroup Performance for ELA/L Scale Scores: Grade 3,318
+IL+BIE+NJ+NM,2019,ELA,4,265169,742.91,38.37,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.49 Subgroup Performance for ELA/L Scale Scores: Grade 4,320
+IL+BIE+NJ+NM,2019,ELA,5,271778,744.04,36.42,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.50 Subgroup Performance for ELA/L Scale Scores: Grade 5,322
+IL+BIE+NJ+NM,2019,ELA,6,275277,743.02,34.47,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.51 Subgroup Performance for ELA/L Scale Scores: Grade 6,324
+IL+BIE+NJ+NM,2019,ELA,7,269386,746.87,41.47,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.52 Subgroup Performance for ELA/L Scale Scores: Grade 7,326
+IL+BIE+NJ+NM,2019,ELA,8,266251,746.55,42.10,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.53 Subgroup Performance for ELA/L Scale Scores: Grade 8,328
+IL+BIE+NJ+NM,2019,math,3,258807,743.16,36.43,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.57 Subgroup Performance for Mathematics Scale Scores: Grade 3,336
+IL+BIE+NJ+NM,2019,math,4,266629,739.36,34.87,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.58 Subgroup Performance for Mathematics Scale Scores: Grade 4,337
+IL+BIE+NJ+NM,2019,math,5,272714,737.90,33.04,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.59 Subgroup Performance for Mathematics Scale Scores: Grade 5,338
+IL+BIE+NJ+NM,2019,math,6,275732,732.71,32.62,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.60 Subgroup Performance for Mathematics Scale Scores: Grade 6,339
+IL+BIE+NJ+NM,2019,math,7,264960,737.26,30.54,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.61 Subgroup Performance for Mathematics Scale Scores: Grade 7,340
+IL+BIE+NJ+NM,2019,math,8,225726,728.24,38.46,_cache/sd/isbe_iar_techreport_2019.pdf,Table A.12.62 Subgroup Performance for Mathematics Scale Scores: Grade 8,341
+IL+DC+DoDEA+NJ,2022,ELA,3,229184,730.45,44.30,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.40 Subgroup Performance for ELA/L Scale Scores: Grade 3,264
+IL+DC+DoDEA+NJ,2022,ELA,4,232317,737.26,38.96,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.41 Subgroup Performance for ELA/L Scale Scores: Grade 4,266
+IL+DC+DoDEA+NJ,2022,ELA,5,237847,738.17,37.48,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.42 Subgroup Performance for ELA/L Scale Scores: Grade 5,268
+IL+DC+DoDEA+NJ,2022,ELA,6,238260,737.27,33.89,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.43 Subgroup Performance for ELA/L Scale Scores: Grade 6,270
+IL+DC+DoDEA+NJ,2022,ELA,7,245105,739.51,40.53,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.44 Subgroup Performance for ELA/L Scale Scores: Grade 7,272
+IL+DC+DoDEA+NJ,2022,ELA,8,249387,737.91,41.92,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.45 Subgroup Performance for ELA/L Scale Scores: Grade 8,274
+IL+DC+DoDEA+NJ,2022,math,3,230053,737.99,39.38,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.48 Subgroup Performance for Mathematics Scale Scores: Grade 3,280
+IL+DC+DoDEA+NJ,2022,math,4,232955,732.80,35.41,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.49 Subgroup Performance for Mathematics Scale Scores: Grade 4,281
+IL+DC+DoDEA+NJ,2022,math,5,238545,730.00,35.36,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.50 Subgroup Performance for Mathematics Scale Scores: Grade 5,282
+IL+DC+DoDEA+NJ,2022,math,6,238630,727.54,32.92,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.51 Subgroup Performance for Mathematics Scale Scores: Grade 6,283
+IL+DC+DoDEA+NJ,2022,math,7,235692,733.63,29.03,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.52 Subgroup Performance for Mathematics Scale Scores: Grade 7,284
+IL+DC+DoDEA+NJ,2022,math,8,211563,720.42,37.50,_cache/sd/isbe_iar_techreport_2022.pdf,Table A.12.53 Subgroup Performance for Mathematics Scale Scores: Grade 8,285
+NY,2018,ELA,3,182885,599.79,20.22,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.1. ELA Scale Score Distribution Summary,109
+NY,2018,ELA,4,184266,599.77,20.17,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.1. ELA Scale Score Distribution Summary,109
+NY,2018,ELA,5,177609,599.88,20.27,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.1. ELA Scale Score Distribution Summary,109
+NY,2018,ELA,6,173183,599.74,20.30,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.1. ELA Scale Score Distribution Summary,109
+NY,2018,ELA,7,161958,599.74,20.26,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.1. ELA Scale Score Distribution Summary,109
+NY,2018,ELA,8,154663,599.59,20.50,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.1. ELA Scale Score Distribution Summary,109
+NY,2018,math,3,184970,599.48,20.19,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,117
+NY,2018,math,4,186331,599.38,20.23,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,117
+NY,2018,math,5,178875,599.09,20.39,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,117
+NY,2018,math,6,173731,599.36,20.36,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,117
+NY,2018,math,7,160487,599.16,20.42,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,117
+NY,2018,math,8,116534,598.98,20.47,_cache/sd/nysed_3-8_techreport_2018.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,117
+NY,2019,ELA,3,182559,599.39,19.46,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.1. ELA Scale Score Distribution Summary,104
+NY,2019,ELA,4,186205,598.42,19.56,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.1. ELA Scale Score Distribution Summary,104
+NY,2019,ELA,5,180679,599.14,21.44,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.1. ELA Scale Score Distribution Summary,104
+NY,2019,ELA,6,179908,598.04,22.49,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.1. ELA Scale Score Distribution Summary,104
+NY,2019,ELA,7,170595,599.61,21.05,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.1. ELA Scale Score Distribution Summary,104
+NY,2019,ELA,8,156304,599.58,20.14,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.1. ELA Scale Score Distribution Summary,104
+NY,2019,math,3,184576,599.81,19.69,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,112
+NY,2019,math,4,188143,600.01,20.38,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,112
+NY,2019,math,5,181771,599.74,20.80,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,112
+NY,2019,math,6,179611,600.24,20.17,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,112
+NY,2019,math,7,168909,600.78,20.68,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,112
+NY,2019,math,8,115886,599.39,21.67,_cache/sd/nysed_3-8_techreport_2019.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,112
+NY,2022,ELA,3,165209,598.21,19.31,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.1. ELA Scale Score Distribution Summary,100
+NY,2022,ELA,4,168725,595.76,20.87,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.1. ELA Scale Score Distribution Summary,100
+NY,2022,ELA,5,165024,600.87,19.65,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.1. ELA Scale Score Distribution Summary,100
+NY,2022,ELA,6,163509,602.5,20.59,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.1. ELA Scale Score Distribution Summary,100
+NY,2022,ELA,7,159762,604.09,19.18,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.1. ELA Scale Score Distribution Summary,100
+NY,2022,ELA,8,150130,599.96,21.50,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.1. ELA Scale Score Distribution Summary,100
+NY,2022,math,3,166446,596.21,20.54,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,107
+NY,2022,math,4,169535,595.48,22.21,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,107
+NY,2022,math,5,163950,595.20,21.65,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,108
+NY,2022,math,6,160087,596.99,20.18,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,108
+NY,2022,math,7,154425,597.51,20.07,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,108
+NY,2022,math,8,97284,595.72,20.66,_cache/sd/nysed_3-8_techreport_2022.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,108
+NY,2023,ELA,3,166155,444.41,23.06,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.1. ELA Scale Score Distribution Summary,98
+NY,2023,ELA,4,166173,447.39,23.06,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.1. ELA Scale Score Distribution Summary,98
+NY,2023,ELA,5,165259,445.53,23.07,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.1. ELA Scale Score Distribution Summary,98
+NY,2023,ELA,6,165051,444.95,22.93,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.1. ELA Scale Score Distribution Summary,98
+NY,2023,ELA,7,160467,447.56,23.05,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.1. ELA Scale Score Distribution Summary,98
+NY,2023,ELA,8,152212,450.78,23.00,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.1. ELA Scale Score Distribution Summary,98
+NY,2023,math,3,169444,451.61,27.06,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,105
+NY,2023,math,4,169293,451.69,27.39,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,105
+NY,2023,math,5,167238,449.7,27.1,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,105
+NY,2023,math,6,164792,449.8,27.02,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,105
+NY,2023,math,7,158339,452.57,27.17,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,105
+NY,2023,math,8,102560,444.63,26.97,_cache/sd/nysed_3-8_techreport_2023.pdf,Table 9.9. Mathematics Scale Score Distribution Summary,105
+NY,2024,ELA,3,164461,443.27,22.17,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.1. ELA Scale Score Distribution Summary,86
+NY,2024,ELA,4,168811,444.42,22.95,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.1. ELA Scale Score Distribution Summary,86
+NY,2024,ELA,5,158765,444.11,22.99,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.1. ELA Scale Score Distribution Summary,86
+NY,2024,ELA,6,164913,443.16,22.65,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.1. ELA Scale Score Distribution Summary,86
+NY,2024,ELA,7,159902,447.62,22.82,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.1. ELA Scale Score Distribution Summary,86
+NY,2024,ELA,8,147257,449.25,24.63,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.1. ELA Scale Score Distribution Summary,86
+NY,2024,math,3,167123,451.21,26.34,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,94
+NY,2024,math,4,167995,456.15,29.27,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,94
+NY,2024,math,5,155787,451.58,27.52,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,94
+NY,2024,math,6,164601,451.37,26.87,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,94
+NY,2024,math,7,157751,457.06,29.01,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,94
+NY,2024,math,8,94063,447.18,27.79,_cache/sd/nysed_3-8_techreport_2024.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,94
+NY,2025,ELA,3,168225,450.16,22.58,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.1. ELA Scale Score Distribution Summary,85
+NY,2025,ELA,4,163567,451.18,22.32,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.1. ELA Scale Score Distribution Summary,85
+NY,2025,ELA,5,163017,450.79,22.78,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.1. ELA Scale Score Distribution Summary,85
+NY,2025,ELA,6,162321,447.93,22.75,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.1. ELA Scale Score Distribution Summary,85
+NY,2025,ELA,7,163708,448.62,22.66,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.1. ELA Scale Score Distribution Summary,85
+NY,2025,ELA,8,151464,450.09,22.58,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.1. ELA Scale Score Distribution Summary,85
+NY,2025,math,3,167949,455.70,28.46,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,93
+NY,2025,math,4,161749,457.98,27.73,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,93
+NY,2025,math,5,160121,454.65,27.06,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,93
+NY,2025,math,6,158220,452.72,26.92,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,93
+NY,2025,math,7,157998,456.56,28.14,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,93
+NY,2025,math,8,95233,448.75,27.15,_cache/sd/nysed_3-8_techreport_2025.pdf,Table 8.9. Mathematics Scale Score Distribution Summary,93

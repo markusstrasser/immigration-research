@@ -1,0 +1,1303 @@
+{
+ "checks": {
+  "cps2025_el_plus_non_el_equals_all_tested": {
+   "agree": 684,
+   "disagree": 0
+  },
+  "cps20_lep_2017": {
+   "district_el": "66204",
+   "district_total": "381349",
+   "el_label": "Bilingual",
+   "schools": 664,
+   "sum_school_el": "66204",
+   "sum_school_total": "381349"
+  },
+  "cps20_lep_2018": {
+   "district_el": "67834",
+   "district_total": "371382",
+   "el_label": "Bilingual",
+   "schools": 660,
+   "sum_school_el": "67834",
+   "sum_school_total": "371382"
+  },
+  "cps20_lep_2019": {
+   "district_el": "69282",
+   "district_total": "361314",
+   "el_label": "Bilingual",
+   "schools": 657,
+   "sum_school_el": "69282",
+   "sum_school_total": "361314"
+  },
+  "cps20_lep_2020": {
+   "district_el": "69012",
+   "district_total": "355156",
+   "el_label": "Bilingual",
+   "schools": 652,
+   "sum_school_el": "69012",
+   "sum_school_total": "355156"
+  },
+  "cps20_lep_2021": {
+   "district_el": "63313",
+   "district_total": "340658",
+   "el_label": "Bilingual",
+   "schools": 649,
+   "sum_school_el": "63313",
+   "sum_school_total": "340658"
+  },
+  "cps20_lep_2022": {
+   "district_el": "69268",
+   "district_total": "330411",
+   "el_label": "Bilingual",
+   "schools": 647,
+   "sum_school_el": "69268",
+   "sum_school_total": "330411"
+  },
+  "cps20_lep_2023": {
+   "district_el": "72029",
+   "district_total": "322106",
+   "el_label": "Bilingual",
+   "schools": 648,
+   "sum_school_el": "72029",
+   "sum_school_total": "322106"
+  },
+  "cps20_lep_2024": {
+   "district_el": "79833",
+   "district_total": "323251",
+   "el_label": "State English Learners",
+   "schools": 647,
+   "sum_school_el": "79833",
+   "sum_school_total": "323251"
+  },
+  "cps20_lep_2025": {
+   "district_el": "88807",
+   "district_total": "325305",
+   "el_label": "State English Learners",
+   "schools": 647,
+   "sum_school_el": "88807",
+   "sum_school_total": "325305"
+  },
+  "cps20_lep_vs_membership_2017": {
+   "only_in_lep_file": [],
+   "only_in_membership_file": [],
+   "total_differs": []
+  },
+  "cps20_lep_vs_membership_2018": {
+   "only_in_lep_file": [],
+   "only_in_membership_file": [],
+   "total_differs": []
+  },
+  "cps20_lep_vs_membership_2019": {
+   "only_in_lep_file": [],
+   "only_in_membership_file": [],
+   "total_differs": []
+  },
+  "cps20_lep_vs_membership_2020": {
+   "only_in_lep_file": [],
+   "only_in_membership_file": [],
+   "total_differs": []
+  },
+  "cps20_lep_vs_membership_2021": {
+   "only_in_lep_file": [],
+   "only_in_membership_file": [],
+   "total_differs": []
+  },
+  "cps20_lep_vs_membership_2022": {
+   "only_in_lep_file": [],
+   "only_in_membership_file": [],
+   "total_differs": []
+  },
+  "cps20_lep_vs_membership_2023": {
+   "only_in_lep_file": [],
+   "only_in_membership_file": [],
+   "total_differs": []
+  },
+  "cps20_lep_vs_membership_2024": {
+   "only_in_lep_file": [],
+   "only_in_membership_file": [],
+   "total_differs": []
+  },
+  "cps20_lep_vs_membership_2025": {
+   "only_in_lep_file": [],
+   "only_in_membership_file": [],
+   "total_differs": []
+  },
+  "cps_budget_fy2025": {
+   "enrollment_check_failed": [],
+   "match_rule": "budget School Name == SY2023-24 20th-day School Name, and budget 'Fall 2023 20th Day Enrollment' == 20th-day Total - PE - PK",
+   "matched_by_exact_name_and_k12_enrollment": 497,
+   "schools_with_positive_newcomer_adj": 149,
+   "sum_newcomer_adj": "3250",
+   "traditional_rows": 499,
+   "unmatched_by_name": [
+    {
+     "candidates": 0,
+     "name": "DISNEY II ES & HS",
+     "newcomer_adj": "0"
+    },
+    {
+     "candidates": 0,
+     "name": "OGDEN ES & HS",
+     "newcomer_adj": "0"
+    }
+   ]
+  },
+  "cps_iar_1524_skipped_tests": {},
+  "crosswalk_2017": {
+   "attached": 629,
+   "cps_ids": 665,
+   "isbe_schools": 630,
+   "isbe_schools_without_cps_id": 1,
+   "unmapped": 36
+  },
+  "crosswalk_2018": {
+   "attached": 633,
+   "cps_ids": 660,
+   "isbe_schools": 633,
+   "isbe_schools_without_cps_id": 0,
+   "unmapped": 27
+  },
+  "crosswalk_2019": {
+   "attached": 631,
+   "cps_ids": 657,
+   "isbe_schools": 631,
+   "isbe_schools_without_cps_id": 0,
+   "unmapped": 26
+  },
+  "crosswalk_2020": {
+   "attached": 629,
+   "cps_ids": 652,
+   "isbe_schools": 629,
+   "isbe_schools_without_cps_id": 0,
+   "unmapped": 23
+  },
+  "crosswalk_2021": {
+   "attached": 626,
+   "cps_ids": 649,
+   "isbe_schools": 626,
+   "isbe_schools_without_cps_id": 0,
+   "unmapped": 23
+  },
+  "crosswalk_2022": {
+   "attached": 624,
+   "cps_ids": 647,
+   "isbe_schools": 624,
+   "isbe_schools_without_cps_id": 0,
+   "unmapped": 23
+  },
+  "crosswalk_2023": {
+   "attached": 623,
+   "cps_ids": 648,
+   "isbe_schools": 623,
+   "isbe_schools_without_cps_id": 0,
+   "unmapped": 25
+  },
+  "crosswalk_2024": {
+   "attached": 622,
+   "cps_ids": 647,
+   "isbe_schools": 622,
+   "isbe_schools_without_cps_id": 0,
+   "unmapped": 25
+  },
+  "crosswalk_2025": {
+   "attached": 621,
+   "cps_ids": 647,
+   "isbe_schools": 621,
+   "isbe_schools_without_cps_id": 0,
+   "unmapped": 26
+  },
+  "isbe2017_assessment_school_rows": 630,
+  "isbe2018_math_el_participation_column": {
+   "header": "Math Participation Total IEP Count (2nd occurrence)",
+   "schools_checked": 331,
+   "share_pct_equals_count_over_column": "0.8671"
+  },
+  "isbe2018_parcc_sat_school_rows": 695,
+  "isbe_vs_cps_grade_levels": {
+   "2017": {
+    "exact": 5230,
+    "over_1pt": 128,
+    "within_1pt": 32
+   },
+   "2018": {
+    "exact": 4553,
+    "over_1pt": 678,
+    "within_1pt": 144
+   },
+   "2019": {
+    "exact": 3871,
+    "over_1pt": 1036,
+    "within_1pt": 523
+   },
+   "2021": {
+    "exact": 3910,
+    "over_1pt": 577,
+    "within_1pt": 76
+   },
+   "2022": {
+    "exact": 4504,
+    "over_1pt": 614,
+    "within_1pt": 320
+   },
+   "2023": {
+    "exact": 4867,
+    "over_1pt": 427,
+    "within_1pt": 156
+   },
+   "2024": {
+    "exact": 4903,
+    "over_1pt": 418,
+    "within_1pt": 139
+   }
+  },
+  "min_published_el_participation_2018": "10",
+  "min_published_el_participation_2019": "10",
+  "min_published_el_participation_2021": "10",
+  "min_published_el_participation_2022": "10",
+  "min_published_el_participation_2023": "10",
+  "non_el_derived_2018": {
+   "bounds_rows": 592,
+   "exact_rows": 660,
+   "skipped": 0
+  },
+  "non_el_derived_2019": {
+   "bounds_rows": 570,
+   "exact_rows": 674,
+   "skipped": 0
+  },
+  "non_el_derived_2021": {
+   "bounds_rows": 600,
+   "exact_rows": 602,
+   "skipped": 0
+  },
+  "non_el_derived_2022": {
+   "bounds_rows": 523,
+   "exact_rows": 709,
+   "skipped": 0
+  },
+  "non_el_derived_2023": {
+   "bounds_rows": 510,
+   "exact_rows": 718,
+   "skipped": 0
+  },
+  "profile_finance_ids_2017": {
+   "finance_ids": 655,
+   "shared_by_several_school_ids": [
+    "0",
+    "22041",
+    "24731",
+    "26921",
+    "66012"
+   ]
+  },
+  "profile_finance_ids_2018": {
+   "finance_ids": 656,
+   "shared_by_several_school_ids": [
+    "0",
+    "22041",
+    "24731",
+    "26921",
+    "66012"
+   ]
+  },
+  "profile_finance_ids_2019": {
+   "finance_ids": 647,
+   "shared_by_several_school_ids": [
+    "0",
+    "24731",
+    "26921",
+    "66012"
+   ]
+  },
+  "profile_finance_ids_2021": {
+   "finance_ids": 642,
+   "shared_by_several_school_ids": [
+    "0",
+    "24731",
+    "26921",
+    "26931"
+   ]
+  },
+  "profile_finance_ids_2022": {
+   "finance_ids": 640,
+   "shared_by_several_school_ids": [
+    "0",
+    "24731",
+    "26921",
+    "26931"
+   ]
+  },
+  "profile_finance_ids_2023": {
+   "finance_ids": 640,
+   "shared_by_several_school_ids": [
+    "0",
+    "24731",
+    "26921",
+    "26931"
+   ]
+  },
+  "profile_finance_ids_2024": {
+   "finance_ids": 644,
+   "shared_by_several_school_ids": [
+    "0",
+    "24731",
+    "26921",
+    "26931"
+   ]
+  },
+  "profile_finance_ids_2025": {
+   "finance_ids": 642,
+   "shared_by_several_school_ids": [
+    "0",
+    "24731",
+    "26921",
+    "26931"
+   ]
+  },
+  "profile_finance_ids_mapping_to_different_school_ids_across_years": {
+   "66011": [
+    "610572",
+    "610573"
+   ],
+   "66012": [
+    "610573",
+    "610601"
+   ]
+  },
+  "progress_2017": {
+   "invalid_schoolid": 0,
+   "no_url": 6,
+   "rows": 661
+  },
+  "progress_2018": {
+   "invalid_schoolid": 0,
+   "no_url": 4,
+   "rows": 661
+  },
+  "progress_2019": {
+   "invalid_schoolid": 0,
+   "no_url": 4,
+   "rows": 654
+  },
+  "progress_2022": {
+   "invalid_schoolid": 0,
+   "no_url": 4,
+   "rows": 651
+  },
+  "progress_2023": {
+   "invalid_schoolid": 2,
+   "no_url": 4,
+   "rows": 651
+  },
+  "progress_2024": {
+   "invalid_schoolid": 2,
+   "no_url": 4,
+   "rows": 650
+  },
+  "progress_2025": {
+   "invalid_schoolid": 0,
+   "no_url": 4,
+   "rows": 649
+  },
+  "staff_rosters": {
+   "2016-09-30": {
+    "file": "cps_positions/employeepositionroster_09302016.xls",
+    "rows": 38793,
+    "rows_at_mapped_schools": 32376,
+    "rows_at_shared_finance_ids": 349,
+    "rows_not_at_schools": 6068,
+    "rows_sharing_a_pos_number": 629,
+    "vacant_rows": 1660,
+    "vacant_rows_with_salary": 1660
+   },
+   "2016-12-31": {
+    "file": "cps_positions/employeepositionroster_12312016.xls",
+    "rows": 38415,
+    "rows_at_mapped_schools": 32119,
+    "rows_at_shared_finance_ids": 358,
+    "rows_not_at_schools": 5938,
+    "rows_sharing_a_pos_number": 701,
+    "vacant_rows": 1290,
+    "vacant_rows_with_salary": 1290
+   },
+   "2017-03-31": {
+    "file": "cps_positions/employeepositionroster_03312017.xls",
+    "rows": 38631,
+    "rows_at_mapped_schools": 32336,
+    "rows_at_shared_finance_ids": 356,
+    "rows_not_at_schools": 5939,
+    "rows_sharing_a_pos_number": 751,
+    "vacant_rows": 1306,
+    "vacant_rows_with_salary": 1306
+   },
+   "2017-06-30": {
+    "file": "cps_positions/employeepositionroster_06302017.xls",
+    "rows": 38589,
+    "rows_at_mapped_schools": 32253,
+    "rows_at_shared_finance_ids": 360,
+    "rows_not_at_schools": 5976,
+    "rows_sharing_a_pos_number": 710,
+    "vacant_rows": 2580,
+    "vacant_rows_with_salary": 2580
+   },
+   "2017-09-30": {
+    "file": "cps_positions/employeepositionroster_09302017.xls",
+    "rows": 38006,
+    "rows_at_mapped_schools": 31701,
+    "rows_at_shared_finance_ids": 366,
+    "rows_not_at_schools": 5939,
+    "rows_sharing_a_pos_number": 751,
+    "vacant_rows": 1797,
+    "vacant_rows_with_salary": 1797
+   },
+   "2017-12-31": {
+    "file": "cps_positions/employeepositionroster_12312017.xls",
+    "rows": 38031,
+    "rows_at_mapped_schools": 31935,
+    "rows_at_shared_finance_ids": 368,
+    "rows_not_at_schools": 5728,
+    "rows_sharing_a_pos_number": 784,
+    "vacant_rows": 1431,
+    "vacant_rows_with_salary": 1431
+   },
+   "2018-03-31": {
+    "file": "cps_positions/employeepositionroster_03312018.xls",
+    "rows": 38200,
+    "rows_at_mapped_schools": 32085,
+    "rows_at_shared_finance_ids": 373,
+    "rows_not_at_schools": 5742,
+    "rows_sharing_a_pos_number": 822,
+    "vacant_rows": 1365,
+    "vacant_rows_with_salary": 1365
+   },
+   "2018-06-30": {
+    "file": "cps_positions/employeepositionroster_06302018.xls",
+    "rows": 38169,
+    "rows_at_mapped_schools": 31999,
+    "rows_at_shared_finance_ids": 372,
+    "rows_not_at_schools": 5798,
+    "rows_sharing_a_pos_number": 776,
+    "vacant_rows": 2761,
+    "vacant_rows_with_salary": 2761
+   },
+   "2018-09-30": {
+    "file": "cps_positions/employeepositionroster_09302018.xls",
+    "rows": 38718,
+    "rows_at_mapped_schools": 32470,
+    "rows_at_shared_finance_ids": 313,
+    "rows_not_at_schools": 5935,
+    "rows_sharing_a_pos_number": 771,
+    "vacant_rows": 2019,
+    "vacant_rows_with_salary": 2019
+   },
+   "2018-12-31": {
+    "file": "cps_positions/employeepositionroster_12312018.xls",
+    "rows": 38938,
+    "rows_at_mapped_schools": 32706,
+    "rows_at_shared_finance_ids": 313,
+    "rows_not_at_schools": 5919,
+    "rows_sharing_a_pos_number": 694,
+    "vacant_rows": 1837,
+    "vacant_rows_with_salary": 1837
+   },
+   "2019-03-31": {
+    "file": "cps_positions/employeepositionroster_03312019.xls",
+    "rows": 39182,
+    "rows_at_mapped_schools": 32916,
+    "rows_at_shared_finance_ids": 317,
+    "rows_not_at_schools": 5949,
+    "rows_sharing_a_pos_number": 733,
+    "vacant_rows": 1706,
+    "vacant_rows_with_salary": 1706
+   },
+   "2019-06-30": {
+    "file": "cps_positions/employeepositionroster_06302019.xls",
+    "rows": 39181,
+    "rows_at_mapped_schools": 32871,
+    "rows_at_shared_finance_ids": 322,
+    "rows_not_at_schools": 5988,
+    "rows_sharing_a_pos_number": 728,
+    "vacant_rows": 3114,
+    "vacant_rows_with_salary": 3114
+   },
+   "2019-09-30": {
+    "file": "cps_positions/employeepositionroster_09302019.xls",
+    "rows": 39867,
+    "rows_at_mapped_schools": 33292,
+    "rows_at_shared_finance_ids": 326,
+    "rows_not_at_schools": 6249,
+    "rows_sharing_a_pos_number": 833,
+    "vacant_rows": 1967,
+    "vacant_rows_with_salary": 1967
+   },
+   "2019-12-31": {
+    "file": "cps_positions/employeepositionroster_12312019.xls",
+    "rows": 40193,
+    "rows_at_mapped_schools": 33578,
+    "rows_at_shared_finance_ids": 327,
+    "rows_not_at_schools": 6288,
+    "rows_sharing_a_pos_number": 789,
+    "vacant_rows": 1882,
+    "vacant_rows_with_salary": 1882
+   },
+   "2020-03-31": {
+    "file": "cps_positions/employeepositionroster_03312020.xls",
+    "rows": 40588,
+    "rows_at_mapped_schools": 33932,
+    "rows_at_shared_finance_ids": 331,
+    "rows_not_at_schools": 6325,
+    "rows_sharing_a_pos_number": 816,
+    "vacant_rows": 1885,
+    "vacant_rows_with_salary": 1885
+   },
+   "2020-06-30": {
+    "file": "cps_positions/employeepositionroster_06302020.xls",
+    "rows": 40476,
+    "rows_at_mapped_schools": 33825,
+    "rows_at_shared_finance_ids": 329,
+    "rows_not_at_schools": 6322,
+    "rows_sharing_a_pos_number": 631,
+    "vacant_rows": 2786,
+    "vacant_rows_with_salary": 2786
+   },
+   "2020-09-30": {
+    "file": "cps_positions/employeepositionroster_09302020.xls",
+    "rows": 40823,
+    "rows_at_mapped_schools": 33870,
+    "rows_at_shared_finance_ids": 311,
+    "rows_not_at_schools": 6642,
+    "rows_sharing_a_pos_number": 697,
+    "vacant_rows": 1934,
+    "vacant_rows_with_salary": 1934
+   },
+   "2020-12-31": {
+    "file": "cps_positions/employeepositionroster_12312020.xls",
+    "rows": 41624,
+    "rows_at_mapped_schools": 33927,
+    "rows_at_shared_finance_ids": 313,
+    "rows_not_at_schools": 7384,
+    "rows_sharing_a_pos_number": 656,
+    "vacant_rows": 2497,
+    "vacant_rows_with_salary": 2497
+   },
+   "2021-03-31": {
+    "file": "cps_positions/employeepositionroster_03312021.xls",
+    "rows": 42071,
+    "rows_at_mapped_schools": 34260,
+    "rows_at_shared_finance_ids": 314,
+    "rows_not_at_schools": 7497,
+    "rows_sharing_a_pos_number": 738,
+    "vacant_rows": 2266,
+    "vacant_rows_with_salary": 2266
+   },
+   "2021-06-30": {
+    "file": "cps_positions/employeepositionroster-06302021.xls",
+    "rows": 42039,
+    "rows_at_mapped_schools": 34226,
+    "rows_at_shared_finance_ids": 313,
+    "rows_not_at_schools": 7500,
+    "rows_sharing_a_pos_number": 632,
+    "vacant_rows": 3200,
+    "vacant_rows_with_salary": 3200
+   },
+   "2021-09-30": {
+    "file": "cps_positions/employeepositionroster-09302021.xls",
+    "rows": 43382,
+    "rows_at_mapped_schools": 34915,
+    "rows_at_shared_finance_ids": 403,
+    "rows_not_at_schools": 8064,
+    "rows_sharing_a_pos_number": 758,
+    "vacant_rows": 3206,
+    "vacant_rows_with_salary": 3206
+   },
+   "2021-12-31": {
+    "file": "cps_positions/employeepositionroster-12312021.xls",
+    "rows": 43638,
+    "rows_at_mapped_schools": 35157,
+    "rows_at_shared_finance_ids": 415,
+    "rows_not_at_schools": 8066,
+    "rows_sharing_a_pos_number": 735,
+    "vacant_rows": 2909,
+    "vacant_rows_with_salary": 2909
+   },
+   "2022-03-31": {
+    "file": "cps_positions/employeepositionroster-03312022.xls",
+    "rows": 43812,
+    "rows_at_mapped_schools": 35258,
+    "rows_at_shared_finance_ids": 419,
+    "rows_not_at_schools": 8135,
+    "rows_sharing_a_pos_number": 808,
+    "vacant_rows": 2670,
+    "vacant_rows_with_salary": 2670
+   },
+   "2022-06-30": {
+    "file": "cps_positions/employeepositionroster-06302022.xls",
+    "rows": 43710,
+    "rows_at_mapped_schools": 35148,
+    "rows_at_shared_finance_ids": 416,
+    "rows_not_at_schools": 8146,
+    "rows_sharing_a_pos_number": 622,
+    "vacant_rows": 3947,
+    "vacant_rows_with_salary": 3947
+   },
+   "2022-09-30": {
+    "file": "cps_positions/employeepositionroster_09302022.xls",
+    "rows": 44864,
+    "rows_at_mapped_schools": 35971,
+    "rows_at_shared_finance_ids": 425,
+    "rows_not_at_schools": 8468,
+    "rows_sharing_a_pos_number": 664,
+    "vacant_rows": 3215,
+    "vacant_rows_with_salary": 3215
+   },
+   "2022-12-31": {
+    "file": "cps_positions/employeepositionroster-12312022.xls",
+    "rows": 45069,
+    "rows_at_mapped_schools": 36189,
+    "rows_at_shared_finance_ids": 427,
+    "rows_not_at_schools": 8453,
+    "rows_sharing_a_pos_number": 616,
+    "vacant_rows": 3140,
+    "vacant_rows_with_salary": 3140
+   },
+   "2023-03-31": {
+    "file": "cps_positions/employeepositionroster_03312023.xls",
+    "rows": 45166,
+    "rows_at_mapped_schools": 36340,
+    "rows_at_shared_finance_ids": 434,
+    "rows_not_at_schools": 8392,
+    "rows_sharing_a_pos_number": 675,
+    "vacant_rows": 2919,
+    "vacant_rows_with_salary": 2919
+   },
+   "2023-06-30": {
+    "file": "cps_positions/employeepositionroster_06302023.xls",
+    "rows": 45070,
+    "rows_at_mapped_schools": 36237,
+    "rows_at_shared_finance_ids": 429,
+    "rows_not_at_schools": 8404,
+    "rows_sharing_a_pos_number": 416,
+    "vacant_rows": 4126,
+    "vacant_rows_with_salary": 0
+   },
+   "2023-09-30": {
+    "file": "cps_positions/employeepositionroster-09302023.xls",
+    "rows": 46299,
+    "rows_at_mapped_schools": 37317,
+    "rows_at_shared_finance_ids": 451,
+    "rows_not_at_schools": 8531,
+    "rows_sharing_a_pos_number": 603,
+    "vacant_rows": 3189,
+    "vacant_rows_with_salary": 0
+   },
+   "2023-12-31": {
+    "file": "cps_positions/employeepositionroster_12312023-3.xls",
+    "rows": 46721,
+    "rows_at_mapped_schools": 37722,
+    "rows_at_shared_finance_ids": 460,
+    "rows_not_at_schools": 8539,
+    "rows_sharing_a_pos_number": 619,
+    "vacant_rows": 3140,
+    "vacant_rows_with_salary": 0
+   },
+   "2024-03-31": {
+    "file": "cps_positions/employeepositionroster_03312024.xls",
+    "rows": 47095,
+    "rows_at_mapped_schools": 37988,
+    "rows_at_shared_finance_ids": 458,
+    "rows_not_at_schools": 8649,
+    "rows_sharing_a_pos_number": 746,
+    "vacant_rows": 3014,
+    "vacant_rows_with_salary": 0
+   },
+   "2024-06-30": {
+    "file": "cps_positions/employeepositionroster_06302024.xls",
+    "rows": 46967,
+    "rows_at_mapped_schools": 37784,
+    "rows_at_shared_finance_ids": 454,
+    "rows_not_at_schools": 8729,
+    "rows_sharing_a_pos_number": 453,
+    "vacant_rows": 5137,
+    "vacant_rows_with_salary": 0
+   },
+   "2024-09-30": {
+    "file": "cps_positions/employeepositionroster_09302024.xls",
+    "rows": 47631,
+    "rows_at_mapped_schools": 38144,
+    "rows_at_shared_finance_ids": 444,
+    "rows_not_at_schools": 9043,
+    "rows_sharing_a_pos_number": 674,
+    "vacant_rows": 3025,
+    "vacant_rows_with_salary": 0
+   },
+   "2024-12-31": {
+    "file": "cps_positions/employeepositionroster_12312024.xls",
+    "rows": 47768,
+    "rows_at_mapped_schools": 38481,
+    "rows_at_shared_finance_ids": 452,
+    "rows_not_at_schools": 8835,
+    "rows_sharing_a_pos_number": 703,
+    "vacant_rows": 2667,
+    "vacant_rows_with_salary": 0
+   },
+   "2025-03-31": {
+    "file": "cps_positions/employeepositionroster_03312025.xls",
+    "rows": 48020,
+    "rows_at_mapped_schools": 38713,
+    "rows_at_shared_finance_ids": 456,
+    "rows_not_at_schools": 8851,
+    "rows_sharing_a_pos_number": 807,
+    "vacant_rows": 2463,
+    "vacant_rows_with_salary": 0
+   },
+   "2025-06-30": {
+    "file": "cps_positions/employeepositionroster_06302025.xls",
+    "rows": 47916,
+    "rows_at_mapped_schools": 38630,
+    "rows_at_shared_finance_ids": 449,
+    "rows_not_at_schools": 8837,
+    "rows_sharing_a_pos_number": 747,
+    "vacant_rows": 3068,
+    "vacant_rows_with_salary": 0
+   }
+  },
+  "staff_rows_without_cps_school_in_year": {
+   "2019": 4,
+   "2020": 4,
+   "2021": 7,
+   "2022": 4,
+   "2023": 4,
+   "2025": 1
+  },
+  "staff_teacher_titles_counted": {
+   "Acting Head Teacher": 136,
+   "Bilingual Teacher": 75278,
+   "Class Size BIL Teacher": 7,
+   "Class Size Teacher": 22,
+   "Effective Schools Teacher": 5,
+   "Head Teacher": 869,
+   "High School Support Teacher": 276,
+   "International Bacl Teacher": 7270,
+   "Lead Teacher": 149,
+   "Literacy Intervention Teacher": 131,
+   "Part-Time Teacher": 3475,
+   "Program Option Teacher": 11669,
+   "Regular Teacher": 465908,
+   "Special Education Teacher": 154491,
+   "Teacher - Librarian": 432,
+   "Teacher - Program Facilitator": 4,
+   "Teacher-Citywide": 5
+  }
+ },
+ "cps_note_rows": [
+  "cps/demographics_lepsped_2017_10202020.xls: Note: \"Economically Disadvantaged Students\" come from families whose income is within 185 percent of the federal poverty line. The District formerly referred to these students as \"Free or Reduced Lunch Eligible Students,\" and adopted the new term after the federal government, under the Community Eligibility Provision, funded breakfasts and lunches for all students if more than 40 percent of students qualify.",
+  "cps/demographics_lepsped_2017_10202020.xls: Note: \"Bilingual\" refers to the state defintions of students who are English learners.",
+  "cps/demographics_lepsped_2017_10202020.xls: Note: The EL data set was updated on October 10, 2020 to align with the State's definition of EL.",
+  "cps/demographics_lepsped_2018_10202020.xls: Note: \"Economically Disadvantaged Students\" come from families whose income is within 185 percent of the federal poverty line. The District formerly referred to these students as \"Free or Reduced Lunch Eligible Students,\" and adopted the new term after the federal government, under the Community Eligibility Provision, funded breakfasts and lunches for all students if more than 40 percent of students qualify.",
+  "cps/demographics_lepsped_2018_10202020.xls: Note: \"Bilingual\" refers to the state defintions of students who are English learners.",
+  "cps/demographics_lepsped_2018_10202020.xls: Note: The EL data set was updated on October 10, 2020 to align with the State's definition of EL.",
+  "cps/demographics_lepsped_2019_10202020.xls: Note: \"Economically Disadvantaged Students\" come from families whose income is within 185 percent of the federal poverty line. The District formerly referred to these students as \"Free or Reduced Lunch Eligible Students,\" and adopted the new term after the federal government, under the Community Eligibility Provision, funded breakfasts and lunches for all students if more than 40 percent of students qualify.",
+  "cps/demographics_lepsped_2019_10202020.xls: Note: \"Bilingual\" refers to the state defintions of students who are English learners.",
+  "cps/demographics_lepsped_2019_10202020.xls: Note: The EL data set was updated on October 10, 2020 to align with the State's definition of EL.",
+  "cps/demographics_lepsped_2020_10202020.xls: Note: \"Economically Disadvantaged Students\" come from families whose income is within 185 percent of the federal poverty line. The District formerly referred to these students as \"Free or Reduced Lunch Eligible Students,\" and adopted the new term after the federal government, under the Community Eligibility Provision, funded breakfasts and lunches for all students if more than 40 percent of students qualify.",
+  "cps/demographics_lepsped_2020_10202020.xls: Note: \"Bilingual\" refers to the state defintions of students who are English learners.",
+  "cps/demographics_lepsped_2020_10202020.xls: Note: The EL data set was updated on October 10, 2020 to align with the State's definition of EL.",
+  "cps/demographics_lepsped_2021_v10072020.xls: Note: \"Economically Disadvantaged Students\" come from families whose income is within 185 percent of the federal poverty line. The District formerly referred to these students as \"Free or Reduced Lunch Eligible Students,\" and adopted the new term after the federal government, under the Community Eligibility Provision, funded breakfasts and lunches for all students if more than 40 percent of students qualify.",
+  "cps/demographics_lepsped_2021_v10072020.xls: Note: \"Bilingual\" refers to the state defintions of students who are English learners.",
+  "cps/demographics_lepsped_2022_v10272021.xls: Note: \"Economically Disadvantaged Students\" come from families whose income is within 185 percent of the federal poverty line. The District formerly referred to these students as \"Free or Reduced Lunch Eligible Students,\" and adopted the new term after the federal government, under the Community Eligibility Provision, funded breakfasts and lunches for all students if more than 40 percent of students qualify.",
+  "cps/demographics_lepsped_2022_v10272021.xls: Note: \"Bilingual\" refers to the state defintions of students who are English learners.",
+  "cps/demographics_lepsped_2022_v10272021.xls: There were 449 students enrolled in the Virtual Academy, however they are all attributed to their brick and mortar schools.",
+  "cps/demographics_20thday_2022_v10272021.xls: NOTE: There were 449 students enrolled in the Virtual Academy, however they are all attributed to their brick and mortar schools."
+ ],
+ "inputs_sha256": {
+  "cps/IARProficiency_SY2025_Present.xlsx": "08c07253f49ef766f3c2a72f9eb6f7294d54a1cd2bd26f47a119d0fed51ceca1",
+  "cps/demographics_20thday_2017.xls": "50181007abfaff44e01ae62bf428b224ebbd868f631481ce195a5be470a17f61",
+  "cps/demographics_20thday_2018.xls": "16dca1ee8e02f7deacb41626824de9e8771deee73da4d74048171ca22578115a",
+  "cps/demographics_20thday_2019.xls": "97d3f8e82b129d6a3b9efbf50b2a990caed4488ce518b67517398f478d36cbe7",
+  "cps/demographics_20thday_2020.xls": "819d936700e8a715ecf657d679fd1454e609e294fdc3fd39acdca7340fe95a0d",
+  "cps/demographics_20thday_2021_v10072020.xls": "dffbf2f119ca6a0e994d214e385c592c19e1f6d086ee9298e69107dc35c251b4",
+  "cps/demographics_20thday_2022_v10272021.xls": "b8fb0656fce2f77dafb3c1d62a8885d640bf75d547ba548120c7901165b309f3",
+  "cps/demographics_20thday_2023.xlsx": "3b947ec63ef7eda2db8210f77cbf88b7670f5d28be46f39063efd6068dce7f5f",
+  "cps/demographics_20thday_sy2024_finalv2.xlsx": "5bdbc38edaf2e6c1570fa8dea072336accb4447adde09c00f7382fe0692ff487",
+  "cps/demographics_20thday_sy2025_final.xlsx": "32da3946bc2d850f4b53dd1fbcb0fab10c19dc5c44de2d82f5a69c729905ee44",
+  "cps/demographics_lepiepfrm_20thday_sy2024_finalv2.xlsx": "ac07bdae4c533fe2da65b4ba23a5f2ec389d152bfe40e921b5e156ce05009b97",
+  "cps/demographics_lepiepfrm_20thday_sy2025_final.xlsx": "8bd115ea4926d8c1e54d5954e945ba9fd533ab9d359740d1279b6975f9a98fb8",
+  "cps/demographics_lepsped_2017_10202020.xls": "71633a0c83a8b19439149fb525035de4b32932146b959c9c7675d38cd2e9b731",
+  "cps/demographics_lepsped_2018_10202020.xls": "57ff89643e5ec0c449f65993073e484882965e61b0a18d47394838c9029bf69d",
+  "cps/demographics_lepsped_2019_10202020.xls": "aba97d30f7bf98de15763eb1ffe836e657f6a6a59ed7f09c1bac303998628804",
+  "cps/demographics_lepsped_2020_10202020.xls": "a2b021b670b633c783046b54b2696e7d764067f519cc66a63a7b76c1e337c7bd",
+  "cps/demographics_lepsped_2021_v10072020.xls": "1203bc30449ef6e5cc0ca400a22af0f8de2edcc368c47a21569d2de57161c9bd",
+  "cps/demographics_lepsped_2022_v10272021.xls": "1fed1b93e0dd3ff52c9625a4dbb1da1c0dcd7d5c246ad2cfa8cb47f9fa818072",
+  "cps/demographics_lepsped_20thday_2023.xlsx": "5c868580ff1de19da1e31337dd8f2353f4c1bf81c2fbd8f87dda50f997ff2200",
+  "cps/iar-parcc_2015to2024_schoollevel.xlsx": "e4de9581e60a77f2e90395854e3cea309c9cc047554a3fac165b04d27609522d",
+  "cps_budget/fy2025_budgetoverview_district_management-schools.xlsx": "699763c4390b82263f2636cd462d6dfbd895c24b30d665daf4845fb892f5448d",
+  "cps_positions/employeepositionroster-03312022.xls": "31877b2ab5066098450d5eda134a09973f07ab0d9f83b723c07d90b0db36baba",
+  "cps_positions/employeepositionroster-06302021.xls": "b8a44f77161aa92c71bd3db8ca94fbd32e4dade80903057be42e1a084d3c3cbc",
+  "cps_positions/employeepositionroster-06302022.xls": "3998411d01ee4b6479dd88521bb57f773f3cd9d1e7da05b60a107addd69798a3",
+  "cps_positions/employeepositionroster-09302021.xls": "baea346eb0a7ab6d9869e056ba511ed854f92de5f3a8b9c208b116aa6dcb69da",
+  "cps_positions/employeepositionroster-09302023.xls": "cefaf7861936ac50421b7d28c8d180a00a5846b6c769d1a832ad6679aafa8504",
+  "cps_positions/employeepositionroster-12312021.xls": "cbc41a3406050449f1a9ec01b5fb5d2cafdb05d7361d97ce77ec496506d2df20",
+  "cps_positions/employeepositionroster-12312022.xls": "8da4fa4757ad6305a5d6f7d20e9bbc91761ecaf8e2571dada23e3464cb5dc6b9",
+  "cps_positions/employeepositionroster_03312017.xls": "f5b65be97369149c0bb8a95669b1aab2423a3030d0d05992cdf2f6005a384101",
+  "cps_positions/employeepositionroster_03312018.xls": "991b5875e244d476a3cdc9b96c54612952ba389d77820b8ff0f5292598333521",
+  "cps_positions/employeepositionroster_03312019.xls": "9475c517e98913408b020717d1729a5ce9c2fa816fe6797caf94c60424bc1a10",
+  "cps_positions/employeepositionroster_03312020.xls": "58c2555c82ccb5f82518f6234ac67004a3fbebbe9f4c0ef9649f5599438fafcd",
+  "cps_positions/employeepositionroster_03312021.xls": "082fe38b2602caeaccdc57652835427608dd59960b7ca3e8b1f14ea84cbe79af",
+  "cps_positions/employeepositionroster_03312023.xls": "5fe536390c4682bd5895a785dcfdda94a93cb8335b14bf4063a7d7c7e47b6c59",
+  "cps_positions/employeepositionroster_03312024.xls": "ebb5f7af990c07eb93e6254720d5d6d4704a850f1504a3c06842346ec2d3af47",
+  "cps_positions/employeepositionroster_03312025.xls": "cec6874c03d6d5a1c4eba82eeed901cb94f9a7359af3db37d00c2ce580d8292c",
+  "cps_positions/employeepositionroster_06302017.xls": "ad0a6487b32a9b907db29b454a613a40a411b5e2775675e96f7bc727789d06f3",
+  "cps_positions/employeepositionroster_06302018.xls": "fd9424e6eea67a684114dce8637aba5a13f043b81c869fca6d18b075f46f52f7",
+  "cps_positions/employeepositionroster_06302019.xls": "db146f785e43294ce41469a60390c903e85a3d8282d09e837aa249caed2f10f5",
+  "cps_positions/employeepositionroster_06302020.xls": "947e0514057aa28efe05d68c3c4f1e49eac626bcbb00276d6a9eb59279a99913",
+  "cps_positions/employeepositionroster_06302023.xls": "6bb3cf77d4a6a897c59b4f3a4fed780875152f6d52b2a968201c97491a5ec6a7",
+  "cps_positions/employeepositionroster_06302024.xls": "ac3ffa67fadbe708c6187635649a59b927f12c74ed243f3c989ee24d1bdf696a",
+  "cps_positions/employeepositionroster_06302025.xls": "35b20ca983aed3784df7d7b9c5313748795ed1a8247e09d59912a939e90e4aaf",
+  "cps_positions/employeepositionroster_09302016.xls": "f202cd333bf5c9b8aafc56919060f7ad63634c9a1c4489268e65ed4225707b77",
+  "cps_positions/employeepositionroster_09302017.xls": "7e71d3fa54e7611e52a89d37d1fa82075d4d8bb0ea8318658be30005c391ba96",
+  "cps_positions/employeepositionroster_09302018.xls": "8addc9f9172fb51706fca04c89124df145e661fe48ba1f331c8ea0a59cdc7225",
+  "cps_positions/employeepositionroster_09302019.xls": "941eab19b079122171d0a696ed053278fbd564da24f3d753e18ac45f7e74a834",
+  "cps_positions/employeepositionroster_09302020.xls": "bba6f9454c8b24d41b417e2f18bcc82a1a37bd16f9a12eebae496f5d9ee0c2ec",
+  "cps_positions/employeepositionroster_09302022.xls": "0e97afa65ad6f00550e0597366b3818d31ffb947a9c7c861a2e56a1c4c80df4d",
+  "cps_positions/employeepositionroster_09302024.xls": "36c4515c418e533323d5239fb14e5012ba16c88619077aea4ec0a7b38ac53aca",
+  "cps_positions/employeepositionroster_12312016.xls": "a61d70e16e2679f0a6eb38a7f20751cdbb21bcd2e14e1811c0553204f0734545",
+  "cps_positions/employeepositionroster_12312017.xls": "da3f9a661fb4041fc68b6cb2bf1a454497af126b720c3541d1c2bda254ee7a7e",
+  "cps_positions/employeepositionroster_12312018.xls": "d3ac7858c0d0026d92c39cb7002688663a390f8d9d726a80e9c37c7b82ddf804",
+  "cps_positions/employeepositionroster_12312019.xls": "b00cc154999ef750bb79e40800db30e9b209e90fe4f12851539c4de415e3b9c4",
+  "cps_positions/employeepositionroster_12312020.xls": "e9447c5caeb1ee81245226ae21295c7b4ccc7267098ddf721a54777f693d6fc8",
+  "cps_positions/employeepositionroster_12312023-3.xls": "9a37b55c76dceebe7e095f2877364c96382327b59193476fd9fea1554aed8c6f",
+  "cps_positions/employeepositionroster_12312024.xls": "40b1d4bef5ff07b7e51c3f6f8d81cb34156aae09bbb35583670d3d6c2c94a0c3",
+  "isbe/2018-PARCC-SAT-Proficient.xlsx": "2f2801889cbabb6c2e5c2c255d927bceaa480b43f3a82703985d5465577b615e",
+  "isbe/2019-Report-Card-Public-Data-Set.xlsx": "071913dbc531560f24abadc80670d0a4728a33a225f9f959c9515b11429ae436",
+  "isbe/2020-Report-Card-Public-Data-Set.xlsx": "14a38185fa41565acd2a52662cbd87d485cbb7396d37f7f8e16bd79b8d79a99b",
+  "isbe/2021-RC-Pub-Data-Set.xlsx": "b0a1a4fcfa51514e7f5e15562d395367b1c36d27dd4abe2ae9b16119e4fd8864",
+  "isbe/2022-Report-Card-Public-Data-Set.xlsx": "6575e1b5bfbb8a133c763d4b93273cc75749b9bfc8289420b2ef226318e08a1d",
+  "isbe/2025-Report-Card-Public-Data-Set.xlsx": "459ac146b52bafe7ce79fd76a95a65daa68d0472cce5205fa777cde19fb58cdf",
+  "isbe/23-RC-Pub-Data-Set.xlsx": "951536d6f81cdfdebb75e41775d0d80cde37bdd81fe256a6f31e2e571b7088ba",
+  "isbe/24-RC-Pub-Data-Set.xlsx": "bab4981cd42a5355cfa8a62515b8364b981ff5e2397f4521deb0061034befa29",
+  "isbe/RC17_layout.xlsx": "1f13f3a0940aedb2121fc539ca82cb9648eb01323c34d279d3401a72b9e82a02",
+  "isbe/Report-Card-Public-Data-Set.xlsx": "35b96aa88033591d01eb220f363ebfec4582401abb6a6684d385a2528e2243ac",
+  "isbe/rc17.zip": "637d707b53d4d2a57bd6a2af15d0da1259417c70fc3dad7739c4ea9cf6186d8e",
+  "isbe/rc17_assessment.zip": "37f495b3a89721af9ee851f2bc87b3a13b0ad676f6a7595d6a5f7596827082bf",
+  "portal/profile_SY1617_8i6r-et8s.csv": "e7f935ae3a0f8b98524344eb94ec1bf52a6273188d13152bb2249c9f29cb1e61",
+  "portal/profile_SY1718_w4qj-h7bg.csv": "a35acde10ffe4aff2b8690d03c1f69d7718fd6270d99a0fc36548199cb6209c2",
+  "portal/profile_SY1819_kh4r-387c.csv": "ad49e9675308bb80228504e2f8ca8737824db9f33f7e5eefa16fe54a238e8e6d",
+  "portal/profile_SY2021_83yd-jxxw.csv": "2d839dc07c7cb0907a8f976a7909407be21ff8f25ef9e46c9b82e6f84265554c",
+  "portal/profile_SY2122_2dem-8rq7.csv": "4eba01b3dcab2bbddf0bf5142bb8081af89417d47471ea4f6ae2d9a3396f6faf",
+  "portal/profile_SY2223_9a5f-2r4p.csv": "02b46c306328150eed0c7c1210ab1198aec67e0adb4d0174ce94def9d0968b44",
+  "portal/profile_SY2324_cu4u-b4d9.csv": "3e4bb31144d359fe32a4342e28a1c65ef50f55e586e8bf1da054668ae2697c1c",
+  "portal/profile_SY2425_3dhs-m3w4.csv": "632e742e2ea8b21f6fe3cdd0a8f4a3b28b8488b688078ca015f9154acf9d7f91",
+  "portal/progress_SY1617_cp7s-7gxg.csv": "fa1ec56389d837fafc558f843c64d75f7ec5f7d3bfa8e71408cd9bdbbdf25edc",
+  "portal/progress_SY1718_wkiz-8iya.csv": "d1cee91c0362ccb9aace131f51b862e938baee8d4a823e67545759fb5eb81425",
+  "portal/progress_SY1819_dw27-rash.csv": "6100523805793470029036097a1ec9d0ffac263925b04deff62f323b7fb7435b",
+  "portal/progress_SY2122_ngix-dc87.csv": "00f1247ba5c43b558e25baba304062b4d24d832001fdeae9196ae8c4a6700068",
+  "portal/progress_SY2223_d7as-muwj.csv": "7bf4e7086269f9d74e36bb1ae360ee1298549a5853ea155c68cd5632d91cd4e2",
+  "portal/progress_SY2324_2dn2-x66j.csv": "c511d8d4a896c76654684fb6ad4f51550c56ef22e708906d94b6933b796e2276",
+  "portal/progress_SY2425_twrw-chuq.csv": "ce4079c2dbbb60d0aa0e269f59c03cd0e4b8ecfe021762c7b9f4e01d9bcae270"
+ },
+ "parsed_cells_by_source_year": {
+  "cps20_lep:2017": {
+   "blank": 90,
+   "num": 1238
+  },
+  "cps20_lep:2018": {
+   "blank": 83,
+   "num": 1237
+  },
+  "cps20_lep:2019": {
+   "blank": 71,
+   "num": 1243
+  },
+  "cps20_lep:2020": {
+   "blank": 58,
+   "num": 1246
+  },
+  "cps20_lep:2021": {
+   "blank": 61,
+   "num": 1237
+  },
+  "cps20_lep:2022": {
+   "blank": 51,
+   "num": 1243
+  },
+  "cps20_lep:2023": {
+   "num": 1296
+  },
+  "cps20_lep:2024": {
+   "num": 1294
+  },
+  "cps20_lep:2025": {
+   "num": 1294
+  },
+  "cps_budget_fy2025:2025": {
+   "num": 3992
+  },
+  "cps_iar_1524:2017": {
+   "blank": 990,
+   "num": 50770
+  },
+  "cps_iar_1524:2018": {
+   "blank": 988,
+   "num": 50412
+  },
+  "cps_iar_1524:2019": {
+   "blank": 983,
+   "num": 50321
+  },
+  "cps_iar_1524:2021": {
+   "blank": 968,
+   "num": 43320
+  },
+  "cps_iar_1524:2022": {
+   "blank": 976,
+   "num": 50336
+  },
+  "cps_iar_1524:2023": {
+   "blank": 976,
+   "num": 50432
+  },
+  "cps_iar_1524:2024": {
+   "blank": 976,
+   "num": 50528
+  },
+  "cps_iar_2025:2025": {
+   "blank": 4697,
+   "num": 66815
+  },
+  "isbe_all_tests:2018": {
+   "blank": 2480,
+   "num": 7648
+  },
+  "isbe_all_tests:2019": {
+   "blank": 2129,
+   "num": 7336
+  },
+  "isbe_all_tests:2021": {
+   "blank": 2800,
+   "num": 7216
+  },
+  "isbe_all_tests:2022": {
+   "blank": 2220,
+   "num": 7764
+  },
+  "isbe_all_tests:2023": {
+   "blank": 2184,
+   "num": 7784
+  },
+  "isbe_all_tests:2024": {
+   "blank": 224,
+   "num": 3213,
+   "sup": 1539
+  },
+  "isbe_all_tests:2025": {
+   "blank": 780,
+   "num": 4862,
+   "sup": 1810
+  },
+  "isbe_finance:2019": {
+   "blank": 24,
+   "num": 5024
+  },
+  "isbe_finance:2020": {
+   "blank": 16,
+   "num": 5016
+  },
+  "isbe_finance:2021": {
+   "blank": 16,
+   "num": 4992
+  },
+  "isbe_finance:2022": {
+   "blank": 16,
+   "num": 4976
+  },
+  "isbe_finance:2023": {
+   "blank": 16,
+   "num": 4968
+  },
+  "isbe_finance:2024": {
+   "blank": 16,
+   "num": 4960
+  },
+  "isbe_finance:2025": {
+   "blank": 16,
+   "num": 4952
+  },
+  "isbe_general:2017": {
+   "blank": 1066,
+   "num": 5864
+  },
+  "isbe_general:2018": {
+   "blank": 3510,
+   "num": 5352
+  },
+  "isbe_general:2019": {
+   "blank": 3184,
+   "num": 5650
+  },
+  "isbe_general:2020": {
+   "blank": 3891,
+   "num": 5544
+  },
+  "isbe_general:2021": {
+   "blank": 4166,
+   "num": 5224
+  },
+  "isbe_general:2022": {
+   "blank": 4021,
+   "num": 5339
+  },
+  "isbe_general:2023": {
+   "blank": 4037,
+   "num": 5308
+  },
+  "isbe_general:2024": {
+   "blank": 2508,
+   "num": 7408,
+   "sup": 658
+  },
+  "isbe_general:2025": {
+   "blank": 2518,
+   "num": 8194,
+   "sup": 1087
+  },
+  "isbe_iar_3_8:2018": {
+   "blank": 1978,
+   "num": 3086
+  },
+  "isbe_iar_3_8:2019": {
+   "blank": 1960,
+   "num": 3088
+  },
+  "isbe_iar_3_8:2021": {
+   "blank": 2090,
+   "num": 2918
+  },
+  "isbe_iar_3_8:2022": {
+   "blank": 1882,
+   "num": 3110
+  },
+  "isbe_iar_3_8:2023": {
+   "blank": 1848,
+   "num": 3136
+  },
+  "isbe_iar_3_8:2024": {
+   "blank": 224,
+   "num": 3258,
+   "sup": 1494
+  },
+  "isbe_iar_3_8:2025": {
+   "blank": 1178,
+   "num": 3293,
+   "sup": 497
+  },
+  "isbe_iar_grade:2025": {
+   "blank": 9848,
+   "num": 15558,
+   "sup": 4402
+  },
+  "isbe_levels:2017": {
+   "blank": 40400,
+   "num": 35200
+  },
+  "isbe_levels:2018": {
+   "blank": 39945,
+   "num": 36015
+  },
+  "isbe_levels:2019": {
+   "blank": 38655,
+   "num": 37065
+  },
+  "isbe_levels:2021": {
+   "blank": 46070,
+   "num": 29050
+  },
+  "isbe_levels:2022": {
+   "blank": 36910,
+   "num": 37970
+  },
+  "isbe_levels:2023": {
+   "blank": 36565,
+   "num": 38195
+  },
+  "isbe_levels:2024": {
+   "blank": 25325,
+   "num": 39160,
+   "sup": 10155
+  },
+  "isbe_parcc_sat_2018:2018": {
+   "blank": 9726,
+   "num": 19464
+  },
+  "isbe_rc17_acct:2017": {
+   "blank": 1276,
+   "num": 3764
+  },
+  "isbe_rc17_all_tests:2017": {
+   "blank": 16,
+   "num": 1244
+  }
+ },
+ "python_calamine": "0.8.2",
+ "rows": {
+  "chicago_crosswalk.csv": 5873,
+  "chicago_schools.csv": {
+   "2017": {
+    "cps_only": 36,
+    "isbe": 630
+   },
+   "2018": {
+    "cps_only": 27,
+    "isbe": 633
+   },
+   "2019": {
+    "cps_only": 26,
+    "isbe": 631
+   },
+   "2020": {
+    "cps_only": 23,
+    "isbe": 629
+   },
+   "2021": {
+    "cps_only": 23,
+    "isbe": 626
+   },
+   "2022": {
+    "cps_only": 23,
+    "isbe": 624
+   },
+   "2023": {
+    "cps_only": 25,
+    "isbe": 623
+   },
+   "2024": {
+    "cps_only": 25,
+    "isbe": 622
+   },
+   "2025": {
+    "cps_only": 26,
+    "isbe": 621
+   }
+  },
+  "chicago_scores.csv": {
+   "2017": {
+    "cps_iar_1524": 6470,
+    "isbe_levels": 7040,
+    "isbe_rc17_acct": 1888,
+    "isbe_rc17_all_tests": 1244
+   },
+   "2018": {
+    "cps_iar_1524": 6425,
+    "derived_all_minus_el": 1252,
+    "isbe_all_tests": 1912,
+    "isbe_iar_3_8": 1543,
+    "isbe_levels": 7203,
+    "isbe_parcc_sat_2018": 6488
+   },
+   "2019": {
+    "cps_iar_1524": 6413,
+    "derived_all_minus_el": 1244,
+    "isbe_all_tests": 1918,
+    "isbe_iar_3_8": 1544,
+    "isbe_levels": 7413
+   },
+   "2021": {
+    "cps_iar_1524": 5536,
+    "derived_all_minus_el": 1202,
+    "isbe_all_tests": 1804,
+    "isbe_iar_3_8": 1459,
+    "isbe_levels": 5810
+   },
+   "2022": {
+    "cps_iar_1524": 6414,
+    "derived_all_minus_el": 1232,
+    "isbe_all_tests": 1941,
+    "isbe_iar_3_8": 1555,
+    "isbe_levels": 7594
+   },
+   "2023": {
+    "cps_iar_1524": 6426,
+    "derived_all_minus_el": 1228,
+    "isbe_all_tests": 1946,
+    "isbe_iar_3_8": 1568,
+    "isbe_levels": 7639
+   },
+   "2024": {
+    "cps_iar_1524": 6438,
+    "isbe_all_tests": 2376,
+    "isbe_iar_3_8": 2376,
+    "isbe_levels": 9863
+   },
+   "2025": {
+    "cps_iar_2025": 10216,
+    "isbe_all_tests": 4294,
+    "isbe_iar_3_8": 1906,
+    "isbe_iar_grade": 10132
+   }
+  },
+  "chicago_staff_quarterly.csv": {
+   "2016-09-30": 548,
+   "2016-12-31": 549,
+   "2017-03-31": 554,
+   "2017-06-30": 554,
+   "2017-09-30": 552,
+   "2017-12-31": 554,
+   "2018-03-31": 554,
+   "2018-06-30": 554,
+   "2018-09-30": 552,
+   "2018-12-31": 552,
+   "2019-03-31": 552,
+   "2019-06-30": 552,
+   "2019-09-30": 549,
+   "2019-12-31": 550,
+   "2020-03-31": 550,
+   "2020-06-30": 550,
+   "2020-09-30": 550,
+   "2020-12-31": 549,
+   "2021-03-31": 549,
+   "2021-06-30": 551,
+   "2021-09-30": 549,
+   "2021-12-31": 549,
+   "2022-03-31": 548,
+   "2022-06-30": 548,
+   "2022-09-30": 550,
+   "2022-12-31": 550,
+   "2023-03-31": 552,
+   "2023-06-30": 553,
+   "2023-09-30": 552,
+   "2023-12-31": 552,
+   "2024-03-31": 550,
+   "2024-06-30": 550,
+   "2024-09-30": 551,
+   "2024-12-31": 550,
+   "2025-03-31": 550,
+   "2025-06-30": 550
+  }
+ },
+ "score_rows_flagged_suppressed": {
+  "2018": {
+   "derived_all_minus_el": 592
+  },
+  "2019": {
+   "derived_all_minus_el": 570
+  },
+  "2021": {
+   "derived_all_minus_el": 600
+  },
+  "2022": {
+   "derived_all_minus_el": 523
+  },
+  "2023": {
+   "derived_all_minus_el": 510
+  },
+  "2024": {
+   "isbe_all_tests": 1195,
+   "isbe_iar_3_8": 747,
+   "isbe_levels": 2031
+  },
+  "2025": {
+   "cps_iar_2025": 671,
+   "isbe_all_tests": 1512,
+   "isbe_iar_3_8": 287,
+   "isbe_iar_grade": 2504
+  }
+ }
+}

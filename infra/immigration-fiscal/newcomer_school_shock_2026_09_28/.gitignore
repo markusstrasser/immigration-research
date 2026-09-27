@@ -1,0 +1,6 @@
+_cache/
+__pycache__/
+# Outputs over 5 MB stay untracked; build_chicago.py, build_denver.py and build_nyc.py regenerate them.
+derived/chicago_scores.csv
+derived/denver_scores.csv
+derived/nyc_scores.csv

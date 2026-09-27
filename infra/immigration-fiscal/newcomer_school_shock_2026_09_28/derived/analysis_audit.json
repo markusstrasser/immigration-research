@@ -1,0 +1,1332 @@
+{
+ "base_year": 2022,
+ "chicago": {
+  "X_enroll_weighted_mean": 0.05962382505707671,
+  "X_mean": 0.062121221060343235,
+  "elementary_schools": 474,
+  "schools_with_X": 565
+ },
+ "denver": {
+  "X_enroll_weighted_mean": 0.07391344682035345,
+  "X_mean": 0.07512736477683189,
+  "corr_X_Xel": 0.6093814890802998,
+  "schools_with_X": 185
+ },
+ "inputs": {
+  "chicago_schools.csv": "f420889d032ddad8bac45a07d34901cb69ef860ac90e28b0c17e966ecfef4753",
+  "chicago_scores.csv": "1cae3fd1c112de62716d7001431eeac229f6769491fe3a6db057febca0d0082c",
+  "denver_schools.csv": "3fa4859e5835b001782549a7a9faf4c737e7d50bb5a3140895feee9e25efab17",
+  "denver_scores.csv": "9aa37ad365a26e3296e9574f26d36dba6fc19061ca47a1f235bdd5affd7f9d33",
+  "nyc_class_size.csv": "351e357d6cc4d8b91db0111e63ebf733dc9caccfadbbf7adc858d5606356fa27",
+  "nyc_schools.csv": "505c07d80bd2dd28b676898f1a30951ae76829f1340533528fb9a36277d756cd",
+  "nyc_scores.csv": "c157cd9be0f91621e522cd2e6a8150839669efc7d9914f2e7118752726baece4",
+  "scale_sd.csv": "79b40966843a9042672503049f5f71ea36ae00a3cb195f8afbdbe192367a68f2"
+ },
+ "min_enroll_base": 100,
+ "nyc": {
+  "X_enroll_weighted_mean": 0.020917798607009878,
+  "X_mean": 0.028017128263824468,
+  "corr_X_Zsam": 0.4297047722472891,
+  "sam65_n_sum": 5768.0,
+  "sam90_weighted_n_sum": 28703.0,
+  "schools_with_X": 1507
+ },
+ "peak_year": 2025,
+ "pretrend_wald": [
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_ela_pct_prof",
+   "p": 0.913784,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X_2024|unweighted",
+   "wald": 0.523119
+  },
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_ela_pct_prof",
+   "p": 0.624984,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X_2024|w_base_n",
+   "wald": 1.754055
+  },
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_ela_pct_prof",
+   "p": 0.194446,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X|unweighted",
+   "wald": 4.708298
+  },
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_ela_pct_prof",
+   "p": 0.875962,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X|w_base_n",
+   "wald": 0.688261
+  },
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_ela_pct_prof",
+   "p": 0.88763,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X|w_base_n|exact_only",
+   "wald": 0.638219
+  },
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_math_pct_prof",
+   "p": 0.761251,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X_2024|unweighted",
+   "wald": 1.165665
+  },
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_math_pct_prof",
+   "p": 0.805133,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X_2024|w_base_n",
+   "wald": 0.983962
+  },
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_math_pct_prof",
+   "p": 0.084106,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X|unweighted",
+   "wald": 6.645285
+  },
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_math_pct_prof",
+   "p": 0.727548,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X|w_base_n",
+   "wald": 1.306678
+  },
+  {
+   "block": "achievement",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "non_el_math_pct_prof",
+   "p": 0.797884,
+   "pre_years": [
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "school_rows|X|w_base_n|exact_only",
+   "wald": 1.013919
+  },
+  {
+   "block": "resources",
+   "city": "chicago",
+   "df": 5,
+   "outcome": "class_size_avg",
+   "p": 0.003942,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 17.313447
+  },
+  {
+   "block": "resources",
+   "city": "chicago",
+   "df": 5,
+   "outcome": "ln_enroll",
+   "p": 0.088694,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 9.560372
+  },
+  {
+   "block": "resources",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "ln_site_exp",
+   "p": 0.239442,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 4.212214
+  },
+  {
+   "block": "resources",
+   "city": "chicago",
+   "df": 3,
+   "outcome": "ln_site_ppe",
+   "p": 0.389381,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 3.014588
+  },
+  {
+   "block": "resources",
+   "city": "chicago",
+   "df": 5,
+   "outcome": "ln_teach_mar",
+   "p": 0.546481,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 4.02041
+  },
+  {
+   "block": "resources",
+   "city": "chicago",
+   "df": 5,
+   "outcome": "ln_teach_sep",
+   "p": 0.451209,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 4.718361
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 4,
+   "outcome": "all_ela_z",
+   "p": 0.262419,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 5.251842
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 4,
+   "outcome": "all_math_z",
+   "p": 0.022492,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 11.392227
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_ela_z",
+   "p": 0.628432,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X_2024|unweighted",
+   "wald": 0.929054
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_ela_z",
+   "p": 0.600975,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X_2024|w_base_n",
+   "wald": 1.018403
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_ela_z",
+   "p": 0.421434,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X_el|unweighted",
+   "wald": 1.728185
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_ela_z",
+   "p": 0.742003,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X_el|w_base_n",
+   "wald": 0.596805
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_ela_z",
+   "p": 0.432826,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|unweighted",
+   "wald": 1.67484
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_ela_z",
+   "p": 0.677246,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 0.779441
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_ela_z",
+   "p": 0.790867,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n|ctrl_base_x_year",
+   "wald": 0.46925
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_math_z",
+   "p": 0.116859,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X_2024|unweighted",
+   "wald": 4.29357
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_math_z",
+   "p": 0.019678,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X_2024|w_base_n",
+   "wald": 7.856539
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_math_z",
+   "p": 0.550737,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X_el|unweighted",
+   "wald": 1.192995
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_math_z",
+   "p": 0.95463,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X_el|w_base_n",
+   "wald": 0.092864
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_math_z",
+   "p": 0.204884,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|unweighted",
+   "wald": 3.170621
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_math_z",
+   "p": 0.05446,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 5.820563
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_math_z",
+   "p": 0.817018,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n|ctrl_base_x_year",
+   "wald": 0.404189
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 4,
+   "outcome": "not_el_ela_z",
+   "p": 0.200801,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 5.977951
+  },
+  {
+   "block": "achievement",
+   "city": "denver",
+   "df": 4,
+   "outcome": "not_el_math_z",
+   "p": 0.010302,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 13.208192
+  },
+  {
+   "block": "composition",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_ela_ln_n_tested",
+   "p": 0.286189,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 2.502203
+  },
+  {
+   "block": "composition",
+   "city": "denver",
+   "df": 2,
+   "outcome": "never_el_math_ln_n_tested",
+   "p": 0.430408,
+   "pre_years": [
+    2019,
+    2021
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 1.686042
+  },
+  {
+   "block": "resources",
+   "city": "denver",
+   "df": 5,
+   "outcome": "ln_enroll",
+   "p": 0.009398,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 15.236642
+  },
+  {
+   "block": "resources",
+   "city": "denver",
+   "df": 3,
+   "outcome": "ln_site_exp",
+   "p": 0.032383,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 8.77864
+  },
+  {
+   "block": "resources",
+   "city": "denver",
+   "df": 3,
+   "outcome": "ln_site_ppe",
+   "p": 0.146418,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 5.373266
+  },
+  {
+   "block": "resources",
+   "city": "denver",
+   "df": 5,
+   "outcome": "ln_teach",
+   "p": 0.0011,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 20.295243
+  },
+  {
+   "block": "resources",
+   "city": "denver",
+   "df": 5,
+   "outcome": "ptr",
+   "p": 0.025403,
+   "pre_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 12.792474
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "all_ela_z",
+   "p": 0.067367,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|unweighted",
+   "wald": 5.395187
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "all_ela_z",
+   "p": 0.072424,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 5.250435
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "all_math_z",
+   "p": 0.003747,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|unweighted",
+   "wald": 11.173343
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "all_math_z",
+   "p": 0.002623,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 11.88657
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "ever_ell_ela_z",
+   "p": 0.218502,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|unweighted",
+   "wald": 3.041924
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "ever_ell_ela_z",
+   "p": 0.271749,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 2.605754
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "ever_ell_math_z",
+   "p": 0.55292,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|unweighted",
+   "wald": 1.185084
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "ever_ell_math_z",
+   "p": 0.183688,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 3.389037
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_points",
+   "p": 0.009334,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 9.348224
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.20301,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X_2024|unweighted",
+   "wald": 3.188997
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.080615,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X_2024|w_base_n",
+   "wald": 5.036131
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.019809,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|unweighted",
+   "wald": 7.843266
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.009276,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 9.360679
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.012534,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n|ctrl_base_x_year",
+   "wald": 8.758626
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.019626,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n|district_x_year",
+   "wald": 7.861834
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.517342,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|Z_sam2|w_base_n",
+   "wald": 1.318102
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.937253,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|Z_sam2|w_base_n|district_x_year",
+   "wald": 0.129605
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.294078,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|Z_sam|unweighted",
+   "wald": 2.447817
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_z",
+   "p": 0.533326,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|Z_sam|w_base_n",
+   "wald": 1.257247
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_points",
+   "p": 0.014361,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 8.486488
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.388337,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X_2024|unweighted",
+   "wald": 1.891764
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.190871,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X_2024|w_base_n",
+   "wald": 3.312317
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.006569,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|unweighted",
+   "wald": 10.050721
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.005251,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 10.498607
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.033826,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n|ctrl_base_x_year",
+   "wald": 6.773065
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.086939,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n|district_x_year",
+   "wald": 4.885105
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.402225,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|Z_sam2|w_base_n",
+   "wald": 1.82149
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.335443,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|Z_sam2|w_base_n|district_x_year",
+   "wald": 2.184609
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.59818,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|Z_sam|unweighted",
+   "wald": 1.027727
+  },
+  {
+   "block": "achievement",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_z",
+   "p": 0.566825,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|Z_sam|w_base_n",
+   "wald": 1.135409
+  },
+  {
+   "block": "composition",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_ela_ln_n_tested",
+   "p": 0.032373,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 6.860869
+  },
+  {
+   "block": "composition",
+   "city": "nyc",
+   "df": 2,
+   "outcome": "never_ell_math_ln_n_tested",
+   "p": 0.044749,
+   "pre_years": [
+    2018,
+    2019
+   ],
+   "spec": "grade_rows|X|w_base_n",
+   "wald": 6.21338
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "k5_avg_class",
+   "p": 0.067593,
+   "pre_years": [
+    2018,
+    2019,
+    2020
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 7.139117
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "k5_avg_class",
+   "p": 0.422965,
+   "pre_years": [
+    2018,
+    2019,
+    2020
+   ],
+   "spec": "school_rows|X|w_enroll|district_x_year",
+   "wald": 2.803249
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "k5_avg_class",
+   "p": 0.101299,
+   "pre_years": [
+    2018,
+    2019,
+    2020
+   ],
+   "spec": "school_rows|Z_sam2|w_enroll",
+   "wald": 6.221908
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 4,
+   "outcome": "ln_enroll",
+   "p": 0.034845,
+   "pre_years": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 10.355623
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 4,
+   "outcome": "ln_enroll",
+   "p": 0.012368,
+   "pre_years": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll|district_x_year",
+   "wald": 12.786345
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 4,
+   "outcome": "ln_enroll",
+   "p": 0.0,
+   "pre_years": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|Z_sam2|w_enroll",
+   "wald": 53.384805
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "ln_exp",
+   "p": 0.454279,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 2.618367
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "ln_exp",
+   "p": 0.245841,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll|district_x_year",
+   "wald": 4.148771
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "ln_exp",
+   "p": 0.0,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|Z_sam2|w_enroll",
+   "wald": 46.262247
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "ln_exp_sl",
+   "p": 0.086601,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 6.578921
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "ln_exp_sl",
+   "p": 0.037439,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll|district_x_year",
+   "wald": 8.457853
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "ln_exp_sl",
+   "p": 0.0,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|Z_sam2|w_enroll",
+   "wald": 52.428586
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "ln_ppe",
+   "p": 0.009315,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 11.498396
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "ln_ppe",
+   "p": 0.004011,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll|district_x_year",
+   "wald": 13.310418
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 3,
+   "outcome": "ln_ppe",
+   "p": 0.0,
+   "pre_years": [
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|Z_sam2|w_enroll",
+   "wald": 32.384878
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 4,
+   "outcome": "ln_teach",
+   "p": 0.684666,
+   "pre_years": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 2.278611
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 4,
+   "outcome": "ln_teach",
+   "p": 0.523544,
+   "pre_years": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll|district_x_year",
+   "wald": 3.208592
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 4,
+   "outcome": "ln_teach",
+   "p": 0.0,
+   "pre_years": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|Z_sam2|w_enroll",
+   "wald": 37.43411
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 4,
+   "outcome": "ptr_own",
+   "p": 0.1295,
+   "pre_years": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll",
+   "wald": 7.123576
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 4,
+   "outcome": "ptr_own",
+   "p": 0.110519,
+   "pre_years": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|X|w_enroll|district_x_year",
+   "wald": 7.527129
+  },
+  {
+   "block": "resources",
+   "city": "nyc",
+   "df": 4,
+   "outcome": "ptr_own",
+   "p": 0.000788,
+   "pre_years": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "spec": "school_rows|Z_sam2|w_enroll",
+   "wald": 18.993576
+  }
+ ]
+}
