@@ -28,6 +28,17 @@ count/rate identities, weak-IV intervals, donor influence and calendar limits.
 adds conditional learning-loss estimates and withdraws the old $0/no-harm claim.
 Neither exercise adds an identified national dollar term.
 
+System-wide school quality, which within-school and sibling designs cannot see:
+[state NAEP](../infra/immigration-fiscal/school_systemwide_2026_09_27/RESULT.md) (ladder 248)
+shows no loss for white pupils where the Hispanic or immigrant-origin share rose (+0.087 and
+−0.019 SD per 10 points, 2003–2019). The English-learner share gives −0.035, fading with
+region-by-year effects, about $1bn of lifetime earnings per white cohort if causal. Cut
+scores, NAEP exclusion, graduation and exit exams do not move with the shares. Across
+countries, [PISA](../infra/immigration-fiscal/pisa_germany_2026_09_27/RESULT.md) (ladder 243,
+246) puts immigration at about 7–14% of German natives' 2012→2022 fall (0 to about 45%), and
+the 2015–16 asylum wave shows no native effect by 2018. A shift common to every state or
+country is outside both designs.
+
 Civil custody, criminal offenses and fiscal spending: [detention/crime measurement scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md). ACS institutional counts cannot separate immigration detention; government custody spending remains a cost, with intergovernmental payments consolidated once.
 
 Crime selection by arrival cohort ([lane](../infra/immigration-fiscal/crime_selection_cohorts_2026_09_23/RESULT.md), ladder 196): Mexico-born arrival cohorts from 1975 to 2019 do not show rising positive selection on custody. Butcher and Piehl's result covers all immigrants and is measured in percentage points. The interstate movers' advantage is their schooling. The 2000 census assigned a US birthplace to most institutionalized Mexican-origin men whose birthplace it allocated, so 2000-census immigrant institutional rates (Butcher–Piehl, Rumbaut) run low for the foreign-born. BJS prison counts confirm it: the census found fewer institutionalized noncitizens (73,395) than state and federal prisons alone held (89,676). After correction, Rumbaut's ratio of US-born to foreign-born Mexican men's rates is 2.5–3.5 instead of 8.4.
