@@ -215,7 +215,9 @@ def run(root, out):
         group="mexico_born" if gen==1 else "mexican_second_gen" if gen==2 else "mexican_third_plus_selfid"
         if gen>1:
             parent="mexico_born" if gen==2 else "mexican_second_gen" if gen==3 else "mexican_third_plus_selfid"
-            count*=fertility[parent]/2
+            # Births need a parent alive at 29 (conceptual audit 2026-09-27 section E, as in the
+            # century lane since 4e9c2e2): the founder survives from 25, later parents from birth.
+            count*=fertility[parent]/2*float(survival.lx.iloc[29]/survival.lx.iloc[25 if gen==2 else 0])
             birth=4 if gen==2 else birth+29
         start=25 if gen==1 else 0
         profile=age_vector(canonical,group)
