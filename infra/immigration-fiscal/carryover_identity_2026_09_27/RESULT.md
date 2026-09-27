@@ -323,7 +323,8 @@ indicative only. NLSY97's own G3+ pooling barely matters on BA+ (0.746). [CALCUL
 ## 5. Consumer lanes after the fix (2026-09-28)
 
 The split rule from §2 and the conceptual audit's §E (births need a living parent) now run in the four
-consumer lanes. Each step's delta is reported separately. No lane here was committed. Reruns used
+consumer lanes. Each step's delta is reported separately. No lane here was committed [2026-09-28: the
+team lead committed phases 1–2 in 4e9c2e2]. Reruns used
 `scripts/rerun_lane.py`, and for every lane the second run is byte-identical. [CALCULATION throughout]
 
 **Step 1: positive control (§E alone).** Births are multiplied by the parent's survival to 29 on the parent's
@@ -387,14 +388,87 @@ ledger files) are unchanged.
 **Other consumers.**
 - `conceptual_audit_2026_09_27/probe_sponsorship.py` now fails its assert that the original gap is
   −1,297,150.3576. That is the uncorrected value it was written to check, and its survival-halving diagnostic
-  no longer leaves counts unchanged. Not edited: it belongs to the audit lane.
+  no longer leaves counts unchanged. Not edited: it belongs to the audit lane. [2026-09-28: pinned to the
+  audited code in phase 3, below.]
 - `projection_backtest_2026_09_19/sensitivities.py` has its own copy of the lineage recurrence without §E
   survival, and it records the hash of `inputs.py`. Not fixed: it is outside this brief, and its rerun needs the
-  CPS and MEPS inputs. It is the same class of defect.
+  CPS and MEPS inputs. It is the same class of defect. [2026-09-28: fixed and rerun in phase 3, below.]
 - `number_audit_2026_09_22/recheck.py` selects the Duncan–Trejo row by prefix. It is unaffected (−$6,864
   reproduces).
 - `generation_carryover_2026_09_27` and this lane read nothing that changed in value. This lane's `verify.py`
   still passes.
+
+### Phase 3 (2026-09-28): the two consumers left open
+
+Neither lane was committed, staged or stashed. [CALCULATION throughout]
+
+**`projection_backtest_2026_09_19/sensitivities.py`.** All its inputs are local, and their hashes match the lane's
+manifest: GSS 1972–2024 release 3a, the IPUMS microdata database, the CPS ASEC 2025 zip, MEPS 2024 (h256), the
+2024 survival tables and the education age profiles. Nothing was fetched.
+- Baseline at HEAD, before the change: all 12 CSVs were identical. Only the manifest's provenance moved: four
+  upstream fingerprints, the lane's `builder.py` hash (changed in 97e1470) and the microdata path, which now
+  resolves under `sources/` with the same hash.
+- The change: each generation's count is multiplied by the parent's survival to 29 on the lane's own 2024
+  total table. The founder survives from 25 (0.99596) and later parents from birth (0.98143), the same factors
+  as `lineage.py`.
+- Rerun through `scripts/rerun_lane.py` (builder and unit tests, rc 0). Only `lineage_return_migration.csv` and
+  the manifest's hashes of it and of `sensitivities.py` change. A second run is identical, 21 of 21 files.
+
+All 96 rows of `lineage_return_migration.csv` move. The no-exit lineage NPV:
+
+| Discount | Intervals | Before | After | Move |
+|---|---:|---:|---:|---:|
+| 0% | 100 | −$1,150,003.08 | −$1,140,295.56 | +$9,707.52 |
+| 0% | 101 | −$1,166,640.36 | −$1,156,487.21 | +$10,153.14 |
+| 3% | 100 | −$318,369.84 | −$316,023.02 | +$2,346.81 |
+| 3% | 101 | −$319,235.52 | −$316,865.52 | +$2,370.00 |
+| 5% | 100 | −$185,766.22 | −$184,506.56 | +$1,259.65 |
+| 5% | 101 | −$185,892.73 | −$184,629.69 | +$1,263.04 |
+
+Exit balances move with the base. Where dependent children leave with the founder (exit years 5, 10 and 20),
+the exit gain also falls, since the branch they take holds fewer descendants. The fall is the same in both
+retained-SS arms (spread 6e-11):
+
+| Exit year | 0%, 100 / 101 intervals | 3%, 100 / 101 | 5%, 100 / 101 |
+|---|---:|---:|---:|
+| 5 | −$2,891.81 / −$3,025.50 | −$685.88 / −$692.83 | −$361.08 / −$362.09 |
+| 10 | −$2,789.73 / −$2,923.41 | −$602.80 / −$609.76 | −$288.35 / −$289.37 |
+| 20 | −$2,585.78 / −$2,719.47 | −$469.46 / −$476.42 | −$186.83 / −$187.85 |
+
+Founder-only gains, the exit-40 rows and the rows where children stay keep their change; exit = no-exit +
+change holds to 5e-10. The lane README carries the dated bracket.
+
+Citations in `research/`, not edited:
+- `immigration-projection-backtest-2026-09-19.md` l.72 quotes the 3%, 100-interval rows:
+  - the no-exit balance, −$318,370 → −$316,023;
+  - the year-10 exit balance with children leaving, −$252,957 to −$238,615 → −$251,213 to −$236,871;
+  - its improvement, $65,413–79,755 → $64,810–79,152.
+- Unchanged: the founder-only $11,804–26,146 on the same line and the 5% worsening on l.74.
+- The memo's l.7, the ladder (l.854), the INDEX (l.458) and the FAQ (l.209, l.331) cite the lane without these
+  numbers.
+
+**`conceptual_audit_2026_09_27/probe_sponsorship.py`.** The audit is a snapshot, so the probe now writes the
+lineage lane's `inputs.py` and `lineage.py` as of a72fd62, the last commit before 4e9c2e2, from git to the audit
+lane's ignored `_cache/`. It registers them under their module names before `common` imports them, and their data
+paths resolve against the lineage lane as before. Their sha256 go into the output. One added check runs the
+current lane in a fresh interpreter and asserts −1,288,162.18 at 0%. The run gives rc 0 and an empty stderr, and
+two runs print identical output.
+- Original gap: −$1,297,150.36 at 0% and −$514,635.25 at 3%. This equals the value stored at a72fd62,
+  −1,297,150.3633891935, to every printed digit. The assert's constant, −1,297,150.3576, is 0.0058 away, inside
+  its 0.01 tolerance; left as written.
+- Survival-weighted: −$1,288,162.18 and −$513,398.38. The current lane gives −1,288,162.177777483, a
+  difference of −2.3e-10.
+- The survival factors are 0.99596 and 0.98143. On the audited code, counts are again unchanged when survival
+  halves at 29, which is the audit's finding.
+- The timing channels, at 0% / 3%:
+  - delay 0: −$24,517.51 / −$12,137.95, matching the sponsored-parent lane's stored arm;
+  - delay 4: −$21,955.18 / −$10,717.35;
+  - delay 10: −$15,664.18 / −$7,046.45.
+- The calibration ratio is 1.08863.
+
+The audit README's probe bullet carries the dated bracket. The §E text lives in
+`research/immigration-conceptual-audit-2026-09-27.md` l.609–627 and still needs its "fixed in 4e9c2e2" bracket.
+No other audit probe was touched.
 
 ## Limits
 
@@ -439,7 +513,9 @@ Skipped:
   - `mexican_origin_population_total_2026_09_19/bounds_coverage_fiscal.py`;
   - `identity_loss_propagation_2026_09_27/{propagate.py,verify.py}`;
   - `lineage_sponsored_parents_2026_09_27/arms.py`;
-  - their `derived/`, `RESULT.md` and `README.md` brackets.]
+  - their `derived/`, `RESULT.md` and `README.md` brackets.
+  Phase 3 edited `projection_backtest_2026_09_19/{sensitivities.py,README.md}` and its ignored `derived/`,
+  and `conceptual_audit_2026_09_27/{probe_sponsorship.py,README.md}`.]
 
 Judgment calls:
 - The CPS G2 is not corrected, for the reason in §1.
@@ -506,3 +582,6 @@ Two full runs leave `derived/` byte-identical: the SHA-256 lists differ in nothi
   −$513,398.38); the arm 5 split rows give −$6,853 / −$292.7bn centrally; the self-ID divisor moves row 2a by
   −$472.00 and the split by +$318.88; propagation and sponsored-parent lanes rerun, second runs identical.
   [CALCULATION]
+- 2026-09-28, phase 3 (§5): the projection back-test's lineage copy takes §E; its no-exit lineage at 3% and
+  100 intervals goes from −$318,369.84 to −$316,023.02, and the second run is identical (21/21). The sponsorship
+  probe runs the audited a72fd62 code (rc 0) and checks the current lane's −1,288,162.18. [CALCULATION]

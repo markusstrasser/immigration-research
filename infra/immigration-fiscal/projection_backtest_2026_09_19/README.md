@@ -6,12 +6,12 @@ repeated cross-sections, and prices three conditional composition/exit changes.
 It does not validate a century's fiscal realization or identify admission costs.
 
 ```sh
-UV_CACHE_DIR=/private/tmp/immigration-uv-cache uv run --no-project \
+uv run --no-project \
   --with pandas --with numpy --with openpyxl --with pyreadstat --with duckdb \
   python3 infra/immigration-fiscal/projection_backtest_2026_09_19/builder.py \
   --source-root /Users/alien/Projects/immigration-research --fetch
 
-UV_CACHE_DIR=/private/tmp/immigration-uv-cache uv run --no-project \
+uv run --no-project \
   --with pandas --with numpy --with pyreadstat --with duckdb \
   python3 -m unittest discover \
   -s infra/immigration-fiscal/projection_backtest_2026_09_19 -p 'test_*.py'
@@ -66,6 +66,22 @@ Child departure removes the corresponding future branch only while G2 is under18
 adult descendants remain. Fertility, per-capita attribution and generation timing
 reuse the existing lane. The century is100 calendar intervals; a101-interval arm
 reproduces the original lane's inclusive0..100 convention for comparison.
+
+[2026-09-28: births now need a parent alive at 29, as in the lineage lane since
+4e9c2e2 (conceptual audit 2026-09-27 §E). `sensitivities.py` multiplies each
+generation's count by the parent's survival to 29 on this lane's 2024 total table:
+0.99596 from age 25 for the founder, 0.98143 from birth for later parents
+[CALCULATION: `survival_tables.csv` lx]. All 96 rows of `lineage_return_migration.csv`
+move. The no-exit lineage NPV at 100 intervals goes from −$1,150,003 to −$1,140,296
+at 0%, −$318,370 to −$316,023 at 3% and −$185,766 to −$184,507 at 5%; at 101
+intervals, from −$1,166,640, −$319,236 and −$185,893 to −$1,156,487, −$316,866 and
+−$184,630. Where dependent children leave (exit years 5–20), the exit gain falls by
+$187–3,025, equally in both retained-SS arms; at year 10 and 3% it is $64,810–79,152
+(was $65,413–79,755). Founder-only gains and every other output are unchanged
+[CALCULATION: `derived/` before and after]. A second run matched 21 of 21 files and
+the unit tests pass. The rebuild also refreshed provenance that had drifted before
+this change: four upstream fingerprints, this lane's `builder.py` hash (97e1470) and
+the microdata path, which now resolves under `sources/` with the same hash.]
 
 ## Validation
 
