@@ -1,0 +1,41 @@
+{
+  "gate_2025": {
+    "G3_Mexico_GP_observed": 2869946.00608459,
+    "G4plus_all_US_GP_observed": 2073496.89852686
+  },
+  "years": {
+    "2022": {
+      "source": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2022/asecpub22csv.zip",
+      "sha256": "7338011adefca16dae30a4469ddaf0c01cef579b607b26b4bceec749376e4ac9",
+      "rows": 152732,
+      "income_year": 2021,
+      "cpi_factor_to_2024": 1.1576521386131307,
+      "fedtax_identity": false
+    },
+    "2023": {
+      "source": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2023/asecpub23csv.zip",
+      "sha256": "d2e000250782adfbdd7f29c82b66d866591a30f0d330496698ec19f9c784ce11",
+      "rows": 146133,
+      "income_year": 2022,
+      "cpi_factor_to_2024": 1.0718730245510928,
+      "fedtax_identity": true
+    },
+    "2024": {
+      "source": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/same_year_tax_2026_09_20/_cache/asecpub24csv.zip",
+      "sha256": "cdb39cdac34bef99dd0940ab28e306f692404c2eea44d85dfd634214872a0a09",
+      "rows": 144265,
+      "income_year": 2023,
+      "cpi_factor_to_2024": 1.0294943912412784,
+      "fedtax_identity": true
+    },
+    "2025": {
+      "source": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/census/cps_asec_2025/asecpub25csv.zip",
+      "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+      "rows": 142125,
+      "income_year": 2024,
+      "cpi_factor_to_2024": 1.0,
+      "fedtax_identity": true
+    }
+  },
+  "pooling": "weights/len(years); common replicate index across years; overlapping households across adjacent ASECs are person-years, not unique persons"
+}
