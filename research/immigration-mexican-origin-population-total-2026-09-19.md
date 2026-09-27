@@ -47,3 +47,7 @@ Attrition is measured on co-resident children, reported by the household respond
 ## Sources
 
 CPS ASEC 2025 person file with 160 replicate weights; ACS 2024 1-year PUMS with 80 replicate weights; Census Bureau 2024 CPS generation table 4; CPS March 2025 technical documentation; 2020 Post-Enumeration Survey coverage tables; Duncan and Trejo 2011, 2017, 2025 (primary PDFs); 1970 Census Content Reinterview Study via Duncan and Trejo 2011 Table 2; `all_age_ledger_2026_09_17`; `unauthorized_population_size_2026_09_19`; ladder 67, 85, 123, 157.
+
+## Revisions
+
+- 2026-09-27: arm 3's premise that the fourth-plus generation identifies at the measured third-generation rate does not hold; loss of Mexican identification at birth keeps growing past G3 ([civic lane](../infra/immigration-fiscal/civic_trajectory_mexican_2026_09_27/derived/identity_loss.csv)). Re-run as labelled arms in [`identity_loss_propagation_2026_09_27`](../infra/immigration-fiscal/identity_loss_propagation_2026_09_27/RESULT.md): 42.78M becomes 44.0M with one more step (0.781) and 45.3M compounding (44.4–47.7M); the published 42–45M becomes 44.0–46.3M; the hidden share of the third-plus rises from 11.2% to 17.5–23.0%. These are [MODEL] extrapolations of a birth-stage loss. Ladder 158 bracketed.
