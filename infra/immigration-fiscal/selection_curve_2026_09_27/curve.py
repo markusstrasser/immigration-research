@@ -2,7 +2,8 @@
 """Task 5: the selection curve p_selected -> p_G1 -> p_G2 -> p_G3, and its figure.
 
 Links and their status:
-  p_sel -> p_G1   cross-origin WLS on the CPS origin table (measured, descriptive)
+  p_sel -> p_G1   cross-origin WLS on the CPS origin table, G1 who arrived at 25+ only (their
+                  schooling is not US-acquired; revision 2026-09-27; measured, descriptive)
   p_G1  -> p_G2   cross-origin WLS on the CPS origin table (measured, descriptive)
   p_G2  -> p_G3   [MODEL] cross-origin WLS on the GSS origin table (measured on mostly European
                   origins plus Mexico and Japan), applied to CPS groups; and the Borjas rule
@@ -51,7 +52,7 @@ def main() -> int:
     g = g[(g.arm == "granborn_1plus")]
 
     links = {}
-    for out, (x, y) in {"sel_g1": ("g1_p_sel", "g1_p_edu"), "g1_g2_edu": ("g1_p_edu", "g2_p_edu"),
+    for out, (x, y) in {"sel_g1": ("g1_p_sel_a25", "g1_p_edu_a25"), "g1_g2_edu": ("g1_p_edu", "g2_p_edu"),
                         "g1_g2_earn": ("g1_p_earn", "g2_p_earn")}.items():
         t = o.dropna(subset=[x, y])
         links[out] = boot(t[x].to_numpy(), t[y].to_numpy(), t.n_g2.to_numpy(float), rng)
@@ -96,7 +97,7 @@ def main() -> int:
             g3 = b3[0] + b3[1] * r[g2c]
             g3d = d3[:, 0] + d3[:, 1] * r[g2c]
             rows.append({"row": "origin", "group": name, "outcome": outcome,
-                         "p_sel": r.g1_p_sel, "p_g1": r[g1c], "p_g1_lo": np.nan, "p_g1_hi": np.nan,
+                         "p_sel": r.g1_p_sel_a25, "p_g1": r[g1c], "p_g1_lo": np.nan, "p_g1_hi": np.nan,
                          "p_g2": r[g2c], "p_g2_lo": g2hat, "p_g2_hi": np.nan,
                          "p_g3_model": g3, "p_g3_lo": ci(g3d)[0], "p_g3_hi": ci(g3d)[1],
                          "p_g3_borjas_b046": 50 + BORJAS[0] * (r[g2c] - 50),
@@ -157,17 +158,17 @@ def figure(o: pd.DataFrame, links: dict, proj: pd.DataFrame) -> None:
 
     # (b) origin selection -> G1 and G2
     ax = axes[1]
-    t = o.dropna(subset=["g1_p_sel", "g1_p_edu", "g2_p_edu"])
-    ax.scatter(t.g1_p_sel, t.g1_p_edu, s=12, color=grey, label="G1 US percentile")
-    ax.scatter(t.g1_p_sel, t.g2_p_edu, s=12, facecolor="none", edgecolor=ink, label="G2 US percentile")
+    t = o.dropna(subset=["g1_p_sel_a25", "g1_p_edu_a25", "g2_p_edu"])
+    ax.scatter(t.g1_p_sel_a25, t.g1_p_edu_a25, s=12, color=grey, label="G1 arrived 25+, US percentile")
+    ax.scatter(t.g1_p_sel_a25, t.g2_p_edu, s=12, facecolor="none", edgecolor=ink, label="G2 US percentile")
     for nm in ("India", "Mexico"):
         r = t[t.origin == nm].iloc[0]
         col = orange if nm == "Mexico" else blue
-        ax.annotate("", xy=(r.g1_p_sel, r.g2_p_edu), xytext=(r.g1_p_sel, r.g1_p_edu),
+        ax.annotate("", xy=(r.g1_p_sel_a25, r.g2_p_edu), xytext=(r.g1_p_sel_a25, r.g1_p_edu_a25),
                     arrowprops=dict(arrowstyle="->", color=col, lw=1.2))
-        ax.annotate(nm, (r.g1_p_sel, r.g1_p_edu), xytext=(-40, 0), textcoords="offset points", fontsize=8, color=col)
+        ax.annotate(nm, (r.g1_p_sel_a25, r.g1_p_edu_a25), xytext=(-40, 0), textcoords="offset points", fontsize=8, color=col)
     ax.axhline(50, color=grey, lw=0.5)
-    ax.set_xlabel("How selected: G1 mean percentile in the ORIGIN country's schooling\n"
+    ax.set_xlabel("How selected: G1 (arrived at 25+) mean percentile in the ORIGIN country's schooling\n"
                   "distribution, same birth cohort (Barro-Lee v3; WIC 2020 where absent)")
     ax.set_ylabel("Mean education percentile in the US white distribution")
     ax.set_title("(b) Selection within origin vs position in the US", fontsize=10, loc="left")

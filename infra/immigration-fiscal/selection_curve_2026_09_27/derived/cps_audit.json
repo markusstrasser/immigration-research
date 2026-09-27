@@ -13,6 +13,14 @@
     "p_edu_sex": 50.0,
     "p_earn_sex": 49.99999999999999
   },
+  "arrival_arms": {
+    "g1_n": 535983,
+    "share_arrived_25plus_weighted": 0.40526374427218365,
+    "share_arrived_under18_weighted": 0.2803132654274276,
+    "mexico_share_arrived_under18_weighted": 0.31091232936259766,
+    "mexico_share_arrived_25plus_weighted": 0.31281360965618255,
+    "yrimmig_niu": 133
+  },
   "barro_lee": {
     "sha256": "618732c5cc749f91e609a7fb7a1e1142d761c2b97510781b07754322a24218ef",
     "names_not_in_file": [

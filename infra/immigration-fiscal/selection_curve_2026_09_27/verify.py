@@ -85,6 +85,23 @@ def main() -> int:
     png = DER / "selection_curve.png"
     check("selection_curve.png", png.exists() and png.stat().st_size > 50_000)
 
+    print("[G7] arrival-age arms and nonlinearity test (audit 2026-09-27)")
+    arms = pd.read_csv(DER / "selection_arms.csv")
+    check("selection_arms: 3 arms x 2 Mexico x 5 models",
+          len(arms) == 30 and set(arms.arm) == {"all_g1", "arrived_25plus", "arrived_under18"})
+    aa = a["arrival_arms"]
+    check("arms disjoint and partial", aa["share_arrived_25plus_weighted"] + aa["share_arrived_under18_weighted"] < 1)
+    b = cc.yrimmig_bounds()
+    check("YRIMMIG bounds parsed", b[1] == (1900, 1949) and b[62] == (2024, 2026) and all(lo <= hi for lo, hi in b.values()))
+    nl = pd.read_csv(DER / "nonlinearity.csv")
+    for _, r in nl.iterrows():
+        check(f"nonlinearity {r.outcome} {r.mexico}: 10,000 draws, diff = below - above",
+              r.draws_valid >= 9_900 and abs(r.difference - (r.slope_below - r.slope_above)) < 1e-4)
+    row = nl[(nl.outcome == "education") & (nl.mexico == "with Mexico")].iloc[0]
+    check("education point difference = audit 0.374", abs(row.difference - 0.374) < 0.002, f"{row.difference:.3f}")
+    row = nl[(nl.outcome == "earnings") & (nl.mexico == "with Mexico")].iloc[0]
+    check("earnings point difference = audit 0.466", abs(row.difference - 0.466) < 0.002, f"{row.difference:.3f}")
+
     print(f"\n{'ALL PASS' if not fails else 'FAIL: ' + ', '.join(fails)}")
     return 0 if not fails else 1
 
