@@ -174,7 +174,16 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
 - **Lineage.** At the calibrated petition rate the channel adds 1.9% to the century lineage gap. A
   US-born child's petition legalizing the founder adds −$386k undiscounted against a founder who
   stays unauthorized under statutory rules. That is the priced chain from birthright citizenship to
-  a parent's green card.
+  a parent's green card. [2026-09-27, late: the 1.9% is a scenario, not an observed lifetime rate
+  (conceptual audit, second pass §D).
+  - The 0.619 naturalization probability is today's naturalized share of the eligible stock, not
+    the chance that a newly admitted founder ever naturalizes.
+  - The two petition-rate estimators share their admissions numerator, so their 9% agreement
+    (1.089) is a scale check, not validation.
+  - Timing alone moves the channel. At fixed probabilities, admitting the parent in founder-year 10
+    or 16 instead of 6 lowers it from $24.5k to $22.0k or $15.7k per founder, undiscounted.
+  - The channel can stay small under these assumptions, but its size needs cohort naturalization
+    and petition hazards, which no source here measures.]
 
 ## 5. The selection curve, and whether the Indian advantage is a tail
 
@@ -225,3 +234,4 @@ Not settled:
 - 2026-09-27, later: §4a added from entries 240–241 (late arrivals in the account; the lineage channel).
 - 2026-09-27, late: corrected after the conceptual audit (3db388d): selection within origin is measured on adult arrivals, the slope asymmetry is not significant, and identity loss grows with the parent's generation (lineage 0.888 too high for G4+).
 - 2026-09-27, late: §4 gained the IR-5 fraud-versus-cohort test (entry 242).
+- 2026-09-27, late: §4a's lineage figure is narrowed after the conceptual audit's second pass (§D): the 1.9% is a calibrated scenario, not an observed lifetime petition rate, and timing alone moves the channel. Concept affected: the sponsored-parent channel's size.

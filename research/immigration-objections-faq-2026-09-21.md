@@ -148,7 +148,11 @@ conditional on the service-response share, which is assumed and unmeasured.
 So the response share moves the result more
 than any offset listed here. Cheaper household services are worth $21.8bn a year to
 consumers, or $11.9bn net of native low-skill wage gains. That is the production gain seen from
-the spending side, so it is not added. The taxes that native women pay on the extra hours
+the spending side, so it is not added. [2026-09-27: the overlap is not demonstrated. Both calculations
+price the same labour-supply shock, so adding both would double count. But they use different
+populations, and the production gain ($8.8–13.3bn) returns almost entirely as taxes: its private part
+is about −$0.2bn. The services figure is an overlapping alternative, not reconciled with the account:
+neither added nor counted as included (conceptual audit, second pass §B).] The taxes that native women pay on the extra hours
 cheaper services let them work do add: $2.7bn a year ($1.8–5.8bn). With the net Medicaid
 saving on elder care (entry 13), the care channels add $4.1bn ($2.6–13.3bn), about 2% of the
 main case; since September 24 they are inside it (ladders 198 and 219). Cheaper construction is inside the production gain and adds nothing
@@ -529,6 +533,11 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-09-27, late (conceptual audit, second pass §B): the answer on cheaper household services no longer
+  says they are inside the production gain. The two calculations overlap but are not reconciled, so the
+  $21.8bn / $11.9bn is neither added nor counted as included. No figure changes. Concept affected: whether
+  the consumer-price benefit is inside the account.
 
 - 2026-09-27, late (generation split on the September 27 case, 8654a0c): entry 5 quotes the split on the
   September 27 case. Every generation is still a net cost; the per-adult figures rise to $9.8–10.7k (second

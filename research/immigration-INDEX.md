@@ -185,7 +185,8 @@ Benefits are priced to the same standard as the costs (evidence-symmetry rule 5)
 The first, the [care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md)
 (ladder 198), adds **$4.1bn a year** ($2.6–13.3bn) to the fiscal account: native women's hours
 taxes of $2.7bn and an elder-care Medicaid saving of $1.5bn net. Cheaper services, worth $21.8bn
-to consumers, are already inside the production gain. The second, the
+to consumers, are already inside the production gain. [2026-09-27: overlapping but not
+reconciled, so neither added nor counted as included (conceptual audit, second pass §B).] The second, the
 [construction lane](../infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md)
 (ladder 200), adds nothing. The group makes construction 0.75% cheaper, which trims other
 renters' extra rent from $34bn to $30bn a year, but that gain is already inside the production
