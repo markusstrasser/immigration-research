@@ -3,7 +3,20 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-09-26, later): $258.5–292.0bn/year.** Schools are charged at their
+**Current main case (2026-09-27): $321.8–387.4bn/year.** Four items held at zero by source classification
+or short-run budget conventions now carry their long-run cost:
+- long-run road, park and economic-administration responses: +$19.4 / +$29.6bn;
+- rental assistance at 1: +$4.5bn;
+- the return on public capital at 2% (low end) and 3% (high end), which BEA's depreciation-only lines leave
+  out: +$22.2 / +$38.3bn;
+- every government enterprise responding: their operating loss and the return on their capital,
+  +$17.2 / +$23.0bn.
+
+The low side is $295.9–363.0bn, the outer range $258.6–436.1bn, and the sign break-even 2.8–13.6%. Capital at 7%
+($406.3–461.6bn), enterprises out ($304.6–364.4bn) and land [GAP] sit beside the account
+([main-case lane](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md), [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239).
+
+**Schools case (the main case from 2026-09-26, later, to 2026-09-27): $258.5–292.0bn/year.** Schools are charged at their
 full average cost per pupil (response 1): across districts and states spending rises about 1% per
 1% more pupils. The within-district 0.836 gives the low side, $233.9–269.6bn, and the case below
 stays as the first-year budget response. The outer range is $198–324bn
@@ -351,6 +364,13 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-27, the return on public capital, long-run roads and parks, rental assistance and government
+enterprises (ladder 237–239): the main case moves from $258.5–292.0bn to $321.8–387.4bn at unchanged end
+specifications. The schools case stays reproducible as `sept26_schools`, and the first-year budget response
+stays $200.9–245.7bn. The capital return is an imputed resource cost, never a debt flow (conceptual audit 3db388d
+§1). Concept affected: which public costs respond in the complete account's main case, and the cost of public
+capital ([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)).
 
 2026-09-26, later, schools at full average cost (ladder 230): the main case moves from
 $200.9–245.7bn to $258.5–292.0bn; the $200.9–245.7bn case stays as the first-year budget response and
