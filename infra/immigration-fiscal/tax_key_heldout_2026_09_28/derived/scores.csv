@@ -1,0 +1,21 @@
+arm,irs_target_year,bins,total_variation_pp,replicate_se_pp
+key_final_calibrated,2023,19 bins,23.514130147449176,0.9748360618823511
+key_final_calibrated,2023,"15 bins, $1M and up pooled",8.444121991190228,0.7775317746236798
+key_final_calibrated,2022,19 bins,25.430409815352178,0.9750080098195735
+key_final_calibrated,2022,"15 bins, $1M and up pooled",10.306376731570227,0.7795235794774372
+key_before_cbo_gradient,2023,19 bins,24.099258822269448,0.7276816374188052
+key_before_cbo_gradient,2023,"15 bins, $1M and up pooled",18.472275072423272,0.8627289816160714
+key_before_cbo_gradient,2022,19 bins,25.593349778232145,0.7264876485156632
+key_before_cbo_gradient,2022,"15 bins, $1M and up pooled",19.912341100862964,0.8603189934990472
+key_final_calibrated_shared_rule,2023,19 bins,23.57987146347262,0.9890732310204884
+key_final_calibrated_shared_rule,2023,"15 bins, $1M and up pooled",8.509226607697373,0.7779855785976644
+key_final_calibrated_shared_rule,2022,19 bins,25.508978686783696,0.9888839987622535
+key_final_calibrated_shared_rule,2022,"15 bins, $1M and up pooled",10.38430890348544,0.7779981710633833
+key_final_calibrated_agi_in_2023_dollars,2023,19 bins,22.20130081660482,0.9377358833003279
+key_final_calibrated_agi_in_2023_dollars,2023,"15 bins, $1M and up pooled",8.669474857234503,0.759325051810019
+key_final_calibrated_agi_in_2023_dollars,2022,19 bins,23.905314859871766,0.9377219301756711
+key_final_calibrated_agi_in_2023_dollars,2022,"15 bins, $1M and up pooled",10.319463972978449,0.7593303267879483
+frozen_irs_2022,2023,19 bins,2.430256477745846,0.0
+frozen_irs_2022,2023,"15 bins, $1M and up pooled",2.376231550222843,0.0
+memo_frozen_cps_2022 (validation lane),2023,19 bins,25.202159266930614,
+memo_same_year_cps_2023 (validation lane),2023,19 bins,24.061796091087583,

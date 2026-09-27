@@ -1,0 +1,30 @@
+{
+ "line": "federal_income_tax",
+ "national_bn": 2403.242,
+ "reweighted_share": {
+  "personal": 0.047867114892088655,
+  "shared": 0.05155207902887642
+ },
+ "share_change": {
+  "irs_2022_pooled_top": {
+   "personal": 0.002204617686261158,
+   "shared": 0.0024047904195949876
+  },
+  "irs_2023_19_bins": {
+   "personal": -0.0014477369348353322,
+   "shared": 0.0008039965123392348
+  },
+  "irs_2023_pooled_from_500k": {
+   "personal": 0.001448069109945986,
+   "shared": 0.001437290217768436
+  },
+  "irs_2023_pooled_top": {
+   "personal": 0.0018641771622934303,
+   "shared": 0.0020705351523509496
+  },
+  "irs_2023_raked_with_cbo_groups": {
+   "personal": 0.0014610935314165324,
+   "shared": 0.001484062629207368
+  }
+ }
+}

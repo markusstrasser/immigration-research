@@ -1,0 +1,350 @@
+{
+ "case": "main_case_long_run_2026_09_27",
+ "profile": "long_run_non_school_full",
+ "ends": {
+  "low": 48,
+  "high": 11
+ },
+ "allocation_at_end": {
+  "low": "shared",
+  "high": "personal"
+ },
+ "methods": {
+  "b_hotdeck_union_matched": {
+   "national_bn": 2403.242,
+   "reference_scenario": "cbo_collective",
+   "allocations": {
+    "personal": {
+     "final_union_tax_bn": 102.18313379078934,
+     "final_share": 0.04251886983948738,
+     "stack_factor": 0.8882689072706234,
+     "stack_times_reweighted_bn": 102.18313379056245
+    },
+    "shared": {
+     "final_union_tax_bn": 112.39887816286722,
+     "final_share": 0.04676968784786019,
+     "stack_factor": 0.9072318464883805,
+     "stack_times_reweighted_bn": 112.39887816244014
+    }
+   },
+   "band": {
+    "low": 318.57770417909114,
+    "high": 385.1137172579758,
+    "low_spec": 48,
+    "high_spec": 11
+   },
+   "variants": {
+    "irs_2022_pooled_top": {
+     "union_tax_change_bn": {
+      "personal": 4.706252810517664,
+      "shared": 5.243158966040082
+     },
+     "band": {
+      "low": 313.33454521305106,
+      "high": 380.40746444745815,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -5.243158966040085,
+      "high": -4.70625281051764
+     }
+    },
+    "irs_2023_19_bins": {
+     "union_tax_change_bn": {
+      "personal": -3.0905204384956098,
+      "shared": 1.7529517283449514
+     },
+     "band": {
+      "low": 316.8247524507462,
+      "high": 388.2042376964714,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -1.7529517283449536,
+      "high": 3.0905204384956164
+     }
+    },
+    "irs_2023_pooled_from_500k": {
+     "union_tax_change_bn": {
+      "personal": 3.0912295410569475,
+      "shared": 3.133720523289291
+     },
+     "band": {
+      "low": 315.44398365580184,
+      "high": 382.0224877169189,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -3.1337205232892984,
+      "high": -3.0912295410569186
+     }
+    },
+    "irs_2023_pooled_top": {
+     "union_tax_change_bn": {
+      "personal": 3.9795058635427365,
+      "shared": 4.514382983269881
+     },
+     "band": {
+      "low": 314.0633211958213,
+      "high": 381.13421139443307,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -4.514382983269854,
+      "high": -3.9795058635427267
+     }
+    },
+    "irs_2023_raked_with_cbo_groups": {
+     "union_tax_change_bn": {
+      "personal": 3.119033101072416,
+      "shared": 3.235698303307499
+     },
+     "band": {
+      "low": 315.3420058757836,
+      "high": 381.99468415690336,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -3.2356983033075153,
+      "high": -3.119033101072432
+     }
+    }
+   },
+   "evaluated_union_tax_at_ends_bn": {
+    "low": {
+     "spec": 48,
+     "allocation": "shared",
+     "amount_bn": 112.39887816286722,
+     "response": 1
+    },
+    "high": {
+     "spec": 11,
+     "allocation": "personal",
+     "amount_bn": 102.18313379078934,
+     "response": 1
+    }
+   }
+  },
+  "b_matched_over_pooled": {
+   "national_bn": 2403.242,
+   "reference_scenario": "cbo_collective",
+   "allocations": {
+    "personal": {
+     "final_union_tax_bn": 100.71117908806927,
+     "final_share": 0.041906382748000105,
+     "stack_factor": 0.8754733357625702,
+     "stack_times_reweighted_bn": 100.71117908784565
+    },
+    "shared": {
+     "final_union_tax_bn": 109.95595666912338,
+     "final_share": 0.045753177028831624,
+     "stack_factor": 0.8875137121633747,
+     "stack_times_reweighted_bn": 109.95595666870558
+    }
+   },
+   "band": {
+    "low": 325.0610098016959,
+    "high": 389.62639264079166,
+    "low_spec": 48,
+    "high_spec": 11
+   },
+   "variants": {
+    "irs_2022_pooled_top": {
+     "union_tax_change_bn": {
+      "personal": 4.638458932020903,
+      "shared": 5.1292020837063
+     },
+     "band": {
+      "low": 319.9318077179896,
+      "high": 384.9879337087707,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -5.129202083706275,
+      "high": -4.638458932020967
+     }
+    },
+    "irs_2023_19_bins": {
+     "union_tax_change_bn": {
+      "personal": -3.0460012901339044,
+      "shared": 1.7148523849648143
+     },
+     "band": {
+      "low": 323.3461574167311,
+      "high": 392.6723939309255,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -1.7148523849647859,
+      "high": 3.0460012901338587
+     }
+    },
+    "irs_2023_pooled_from_500k": {
+     "union_tax_change_bn": {
+      "personal": 3.046700178026626,
+      "shared": 3.0656110070124756
+     },
+     "band": {
+      "low": 321.9953987946834,
+      "high": 386.57969246276497,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -3.0656110070124782,
+      "high": -3.046700178026697
+     }
+    },
+    "irs_2023_pooled_top": {
+     "union_tax_change_bn": {
+      "personal": 3.922180822187704,
+      "shared": 4.416265605222377
+     },
+     "band": {
+      "low": 320.64474419647354,
+      "high": 385.70421181860394,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -4.41626560522235,
+      "high": -3.922180822187727
+     }
+    },
+    "irs_2023_raked_with_cbo_groups": {
+     "union_tax_change_bn": {
+      "personal": 3.0741032259477903,
+      "shared": 3.1653723617890566
+     },
+     "band": {
+      "low": 321.89563743990686,
+      "high": 386.5522894148438,
+      "low_spec": 48,
+      "high_spec": 11
+     },
+     "change_at_case_ends_bn": {
+      "low": -3.165372361789025,
+      "high": -3.0741032259478516
+     }
+    }
+   },
+   "evaluated_union_tax_at_ends_bn": {
+    "low": {
+     "spec": 48,
+     "allocation": "shared",
+     "amount_bn": 109.95595666912338,
+     "response": 1
+    },
+    "high": {
+     "spec": 11,
+     "allocation": "personal",
+     "amount_bn": 100.71117908806927,
+     "response": 1
+    }
+   }
+  }
+ },
+ "band": {
+  "low": 321.81935699039354,
+  "high": 387.37005494938376
+ },
+ "variants": {
+  "irs_2022_pooled_top": {
+   "band": {
+    "low": 316.63317646552036,
+    "high": 382.6976990781144
+   },
+   "change_at_case_ends_bn": {
+    "low": -5.18618052487318,
+    "high": -4.672355871269303
+   },
+   "union_tax_change_at_case_ends_bn": {
+    "low": 5.1861805248731905,
+    "high": 4.672355871269284
+   },
+   "end_specs": [
+    "48/11",
+    "48/11"
+   ]
+  },
+  "irs_2023_19_bins": {
+   "band": {
+    "low": 320.0854549337387,
+    "high": 390.43831581369847
+   },
+   "change_at_case_ends_bn": {
+    "low": -1.7339020566548697,
+    "high": 3.0682608643147375
+   },
+   "union_tax_change_at_case_ends_bn": {
+    "low": 1.7339020566548828,
+    "high": -3.068260864314757
+   },
+   "end_specs": [
+    "48/11",
+    "48/11"
+   ]
+  },
+  "irs_2023_pooled_from_500k": {
+   "band": {
+    "low": 318.7196912252426,
+    "high": 384.3010900898419
+   },
+   "change_at_case_ends_bn": {
+    "low": -3.0996657651508883,
+    "high": -3.0689648595418078
+   },
+   "union_tax_change_at_case_ends_bn": {
+    "low": 3.099665765150883,
+    "high": 3.0689648595417864
+   },
+   "end_specs": [
+    "48/11",
+    "48/11"
+   ]
+  },
+  "irs_2023_pooled_top": {
+   "band": {
+    "low": 317.35403269614744,
+    "high": 383.4192116065185
+   },
+   "change_at_case_ends_bn": {
+    "low": -4.465324294246102,
+    "high": -3.9508433428652268
+   },
+   "union_tax_change_at_case_ends_bn": {
+    "low": 4.465324294246129,
+    "high": 3.9508433428652205
+   },
+   "end_specs": [
+    "48/11",
+    "48/11"
+   ]
+  },
+  "irs_2023_raked_with_cbo_groups": {
+   "band": {
+    "low": 318.6188216578453,
+    "high": 384.2734867858736
+   },
+   "change_at_case_ends_bn": {
+    "low": -3.20053533254827,
+    "high": -3.096568163510142
+   },
+   "union_tax_change_at_case_ends_bn": {
+    "low": 3.2005353325482777,
+    "high": 3.0965681635101032
+   },
+   "end_specs": [
+    "48/11",
+    "48/11"
+   ]
+  }
+ }
+}

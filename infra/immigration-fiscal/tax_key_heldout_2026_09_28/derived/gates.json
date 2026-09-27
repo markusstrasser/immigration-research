@@ -1,0 +1,57 @@
+[
+ {
+  "gate": "irs_2022_table_1_2_is_the_pinned_file",
+  "pass": true,
+  "detail": "22in12ms.xls sha256 ffc483e16aa0 (= this lane's fetch and same_year_tax_2026_09_20's lock); 19 AGI rows add to the total, 2,098,923,017 thousand"
+ },
+ {
+  "gate": "irs_2023_table_1_2_is_the_pinned_file",
+  "pass": true,
+  "detail": "23in12ms.xls sha256 549861a1c7b3 (= this lane's fetch and same_year_tax_2026_09_20's lock); 19 AGI rows add to the total, 2,108,587,001 thousand"
+ },
+ {
+  "gate": "irs_bins_are_the_same_both_years_and_the_memos",
+  "pass": true,
+  "detail": "19 bins, lower bounds 5,000 ... 10,000,000; identical to validation_fiscal_years_2026_09_28's EDGES"
+ },
+ {
+  "gate": "frozen_irs_baseline_reproduces_the_memo",
+  "pass": true,
+  "detail": "IRS 2022 shares against IRS 2023: 2.4303pp (validation lane 2.4303); its frozen CPS 2022 arm 25.2022pp and same-year CPS 2023 24.0618pp"
+ },
+ {
+  "gate": "key_is_the_accounts_federal_liability",
+  "pass": true,
+  "detail": "union share of FEDTAX_BC over the civilian universe: personal 0.053348299 (model.json 0.053348299), shared 0.057399419 (model.json 0.057399419)"
+ },
+ {
+  "gate": "bin_split_adds_to_the_key",
+  "pass": true,
+  "detail": "per-person bin amounts add to the key vector under both allocations"
+ },
+ {
+  "gate": "cbo_gradient_reproduces_the_adopted_delta",
+  "pass": true,
+  "detail": "group shares and the union's in-group shares reproduce cbo_components.csv, the reweighted share cbo_translation.csv and the change cbo_deltas.json feeds the case; personal: pi 3.1e-16, theta 1.7e-16, reweighted share 0.047867115 (4.2e-17), change -13.172611bn (1.0e-13); shared: pi 7.8e-16, theta 2.2e-16, reweighted share 0.051552079 (2.1e-17), change -14.052574bn (9.2e-13)"
+ },
+ {
+  "gate": "gdp_growth_from_the_pinned_section_1",
+  "pass": true,
+  "detail": "NIPA T1.1.5 line 1: 27,811,517 (2023) -> 29,298,013 (2024) $m, growth 5.3449%"
+ },
+ {
+  "gate": "cps_agi_top_coding_leaves_the_top_bins_empty",
+  "pass": true,
+  "detail": "largest CPS AGI $3,124,826; key bins with no tax: [0, 17, 18]; IRS 2023 puts 14.76% of income tax after credits in the empty top bins and 0.0054% in the empty bottom ones"
+ },
+ {
+  "gate": "case_union_tax_is_stack_factor_times_the_cbo_share",
+  "pass": true,
+  "detail": "per method and allocation, the case's union federal income tax = stack factor x national x CBO-reweighted share; the ends charge it at response 1; the band reproduces $321.8194-387.3701bn"
+ },
+ {
+  "gate": "engine_change_equals_minus_the_union_tax_change",
+  "pass": true,
+  "detail": "rerunning the case with the edit moves the cost at specs 48 / 11 by exactly minus the union's tax change"
+ }
+]
