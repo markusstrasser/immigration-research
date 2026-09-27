@@ -6,11 +6,14 @@
         "uv run --no-project python3 {lane}/verify.py"
 
 Each command runs from the repository root with OPENBLAS_NUM_THREADS=1; `{lane}` expands to the lane
-path. The lane's `derived/` is copied aside first. The run stops at the first nonzero exit code and
-reports FAILED without comparing anything: a failed script leaves the old outputs in place, and they
-would compare identical (the 2026-09-23 zsh `$w` trap and the 2026-09-27 missing-pyreadr trap). After
-a clean run, every file in `derived/` is compared with its copy; new, missing and changed files are
-listed. Exit 0 only when every command succeeded and every output is identical.
+path. Every file a commit of the lane would carry (tracked, or untracked and not ignored) and every
+file under its `derived/` is copied aside first. Outputs outside `derived/`, such as a nested
+`credentials/derived/` or a `design_table/*.csv`, count too: the 2026-09-28 school lane wrote to
+four places and the old `derived/`-only check would have missed three. The run stops at the first
+nonzero exit code and reports FAILED without comparing anything: a failed script leaves the old
+outputs in place, and they would compare identical (the 2026-09-23 zsh `$w` trap and the 2026-09-27
+missing-pyreadr trap). After a clean run, the same set is compared with its copy; new, missing and
+changed files are listed. Exit 0 only when every command succeeded and every output is identical.
 
 New or modified scripts in the lane that no command names are listed as NOT RUN, and the exit code is
 3. Such a script is either still being written by a worker, or missing from the reproduce list; either
@@ -47,6 +50,17 @@ def unrun_scripts(lane: Path, cmds: list[str], allowed: set[str]) -> list[str]:
     return out
 
 
+def output_files(lane: Path) -> set[Path]:
+    """Lane files a commit would carry, plus everything under derived/ (ignored files included)."""
+    r = subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z", "--", str(lane)],
+                       cwd=ROOT, capture_output=True, text=True, check=True)
+    files = {Path(p) for p in r.stdout.split("\0") if p}
+    derived = ROOT / lane / "derived"
+    if derived.is_dir():
+        files |= {p.relative_to(ROOT) for p in derived.rglob("*")}
+    return {p for p in files if (ROOT / p).is_file() and "__pycache__" not in p.parts}
+
+
 def main(argv: list[str]) -> int:
     allowed: set[str] = set()
     while "--allow-unrun" in argv:
@@ -57,12 +71,14 @@ def main(argv: list[str]) -> int:
         print(__doc__)
         return 2
     lane = Path(argv[0])
-    derived = ROOT / lane / "derived"
-    if not derived.is_dir():
-        print(f"[rerun] no derived/ in {lane}")
+    if not (ROOT / lane).is_dir():
+        print(f"[rerun] no lane directory {lane}")
         return 2
-    backup = Path(tempfile.mkdtemp(prefix="rerun_")) / "derived"
-    shutil.copytree(derived, backup)
+    before = output_files(lane)
+    backup = Path(tempfile.mkdtemp(prefix="rerun_")) / "lane"
+    for p in before:
+        (backup / p).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(ROOT / p, backup / p)
     env = dict(os.environ, OPENBLAS_NUM_THREADS="1", PYTHONDONTWRITEBYTECODE="1")
     for i, cmd in enumerate(argv[1:], 1):
         cmd = cmd.replace("{lane}", str(lane))
@@ -73,9 +89,8 @@ def main(argv: list[str]) -> int:
             print("\n".join("    " + t for t in tail))
             print(f"[rerun] FAILED at command {i}; outputs not compared (backup: {backup})")
             return 1
-    old = {p.relative_to(backup) for p in backup.rglob("*") if p.is_file()}
-    new = {p.relative_to(derived) for p in derived.rglob("*") if p.is_file()}
-    changed = sorted(str(p) for p in old & new if not filecmp.cmp(backup / p, derived / p, shallow=False))
+    old, new = before, output_files(lane)
+    changed = sorted(str(p) for p in old & new if not filecmp.cmp(backup / p, ROOT / p, shallow=False))
     added, missing = sorted(map(str, new - old)), sorted(map(str, old - new))
     for label, items in (("CHANGED", changed), ("NEW", added), ("MISSING", missing)):
         for it in items:
