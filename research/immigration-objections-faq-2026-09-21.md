@@ -85,7 +85,10 @@ changed four of these zeros.
 - Government enterprises respond: +$17.2 / +$23.0bn.
 
 Defense, existing interest and business subsidies stay at zero. The case is $322–387bn
-([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)).] Schools
+([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)).] [2026-09-28: the objection also runs the
+other way: defense might track the economy. If it did, the group's lower output would cut defense by $47.5–72.0bn a
+year. It has not: national defense was 6.0% of GDP in FY1986, 2.9% in 2000, 4.7% in 2010 and 3.2% in 2024, moving
+with threats rather than output. It stays at zero, with that bound beside (ladder 253).] Schools
 are charged at their full average cost per pupil since September 26: across 2019 districts
 spending rises 1.004% per 1% more pupils (pupil-weighted) and across states 0.973%. CBO's
 year-to-year 63–66% is kept as a first-year budget response ($201–246bn), and the within-district

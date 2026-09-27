@@ -119,7 +119,10 @@ and incidence rules, not a new survey observation proving an ethnic cost increas
 1. Direct household payroll, income, consumption and similar receipts respond
    fully. Corporate/property incidence, other-business receipts and public-asset
    income receive zero direct response; the production model handles induced
-   capital taxes. Residual personal/capital-financed tax overlap is exposed as O.
+   capital taxes. [2026-09-28: the production model carries capital taxes only at retention 1,
+   where they are zero, and housing sits outside it. Under the September 27 case's long-run rule the group's
+   owner-occupied, tenant-occupied and personal property taxes respond: −$27.2bn at both ends, a candidate
+   (ladder 253).] Residual personal/capital-financed tax overlap is exposed as O.
 2. Household benefits and ordinary government services respond fully. Defense,
    general public services, existing interest and business subsidies stay fixed.
    Subsidies accruing to included owners cannot become a net cost without counting
