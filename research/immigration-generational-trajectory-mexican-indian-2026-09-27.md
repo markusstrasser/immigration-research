@@ -1,9 +1,10 @@
 # How far selection carries: Mexican-origin and Indian-origin descendants, G1 to G4+
 
-**Verdict:** The first US-born generation closes about half of its parents' distance from the
-white mean; after that, both groups hold near their own level rather than converging to the
-US average. Across 78 origins, the G1→G2 rank slope is 0.52 on education and 0.55 on earnings
-(entry 236). For Mexican origin the G2 step is large at the bottom and small at the top. Then
+**Verdict:** Across 78 origins, the first US-born generation keeps about half of its parents'
+distance from the white mean: the G1→G2 rank slope is 0.52 on education and 0.55 on earnings
+(entry 236). India sits above that line; its G2 is at the same education percentile as its G1 (73).
+The Mexican-origin gap stalls after G2 rather than continuing to converge. The Indian G3 cell is
+too thin to say the same (+$11.8k, se 8.2k; [Indian later generations](immigration-indian-later-generation-fiscal-2026-09-21.md)). For Mexican origin the G2 step is large at the bottom and small at the top. Then
 the gap stalls: G2→G3+ carries about 0.9 of the gap on BA, earnings and the partial ledger, and
 no source shows G4+ better than G3 (entry 232). The civic record follows the same shape. Turnout
 at equal SES is −10 for G2 and −9 for G3+, and spousal endogamy falls 90 → 72 → 56%. Attachment
