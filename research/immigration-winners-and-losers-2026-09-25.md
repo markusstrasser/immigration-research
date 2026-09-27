@@ -8,6 +8,25 @@ wins exactly". [MODEL / FRAMING-SENSITIVE] Three choices shape the result:
 
 Every figure below names the choice it uses.
 
+**Update, 2026-09-28 (the September 27 case, $321.8–387.4bn; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)).** About one other
+US resident in six now comes out ahead. Pooled within households, 17.8% are ahead under tax-share
+financing and 17.0% under per-person cuts (schools case: 20.5% and 19.0%). Every choice at its least
+costly value gives 24%, and at its most costly 11%; with wages going to the earner alone, 16.9% under both.
+The fiscal channel now splits. Taxpayers carry $349.3bn at central values, 85% of it state and local and
+$44.7bn of it the return on public capital, which is never borrowed. Rental assistance and LIHEAP
+($5.1bn) fall on eligible households that go without the aid. The social net on today's residents is
+−$386.6bn, or −$1,307 per other resident. Who comes out where does not change:
+- behind: 97–99% in California and Texas, 98–99% of US-born adults with a high-school education or
+  less, 90–92% of renters, and from 83% to over 99% of each decile in the bottom half;
+- most often ahead: the top decile (31% under tax shares, 55% under per-person cuts) and landlords
+  (37–42%), whose pooled net under tax shares falls to −$701 a year (was −$227).
+
+Preferences are now an attribution under a stated proportional-replacement rule. White natives' part is
+−$0.58bn, and other recipients in the same pools, mostly in admissions, carry −$0.97bn; "with proposed"
+moves by 0.1 point. [CALCULATION: ledger lane, `--case sept27`, 62f1e5a; every old and new value in
+`infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/old_new_ledger.csv` (718 rows), 73cc30c]
+[FRAMING-SENSITIVE]
+
 **Update, 2026-09-26 (schools at full average cost, $258.5–292.0bn; [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).** About one other
 US resident in five now comes out ahead. Pooled within households, 20.5% are ahead under tax-share
 financing and 19.0% under per-person cuts (below: 23.9% and 21.4%). Every choice at its least
@@ -300,14 +319,15 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   actually share. The truth for any family lies between the two counts.
 - **Kept out of every net.**
   - The debt legacy's interest ($28.3–36.4bn) is a different object. [2026-09-26, later: $30.1–37.9bn on the
-    schools case.]
+    schools case.] [2026-09-28: $30.9–41.6bn on the September 27 case.]
   - The owners' home-value gain is a stock ($1.3–2.9tn).
   - The consumer-price and care side views overlap the wage channel.
 - **The allocation base is not a total.** The lane's allocation base, the adopted fiscal band plus
   decision 4's victims figure, mixes crime footings. The published fiscal-plus-social range stays
   $248–304bn: $247.7–298.4bn on the equal footing and $253.4–304.0bn on the custody footing
   ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)). [2026-09-26, later: on the
-  schools case $305–350bn: $305.3–344.0bn and $311.0–349.7bn (4e66adb).]
+  schools case $305–350bn: $305.3–344.0bn and $311.0–349.7bn (4e66adb).] [2026-09-28: on the September 27
+  case $363–438bn: $363.4–432.2bn and $369.2–438.0bn (73cc30c).]
 
 - **Instrument.** The analysis ran through an LLM with known dispositions on charged topics
   ([caveat](../notes/llm-bias-caveat.md)). Every figure here comes from scripts the parent re-ran
@@ -352,3 +372,8 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   $275.0bn at central values. School dilution leaves the nets, since nothing is left unfunded at a
   response of 1. Who comes out ahead and who behind is unchanged. Concept affected: the share of
   other residents ahead and the nets by cut (ladder 226).
+- 2026-09-28 (the September 27 case, [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)): the ledger runs the new case (62f1e5a). The
+  pooled share ahead falls to 17.8% / 17.0%, the person count to 16.9% / 16.9%, and taxpayers' fiscal
+  channel is $349.3bn plus $5.1bn on capped programmes. Preferences became an attribution under
+  proportional replacement. Who comes out ahead and who behind is unchanged. Concept affected: the share
+  of other residents ahead and the nets by cut (ladder 226).

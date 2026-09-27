@@ -164,7 +164,9 @@ Beside the fiscal headline, as social costs:
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
 **$248–304bn a year** at central values ($210–337bn full span) on the September 24 case
-(September 23: $248–307bn, $212–340bn). [2026-09-26, later: on the schools case **$305–350bn**
+(September 23: $248–307bn, $212–340bn). [2026-09-28: on the September 27 case **$363–438bn**
+($325–474bn full span, $8.9–10.7k per member); congestion now moves with the case (73cc30c).]
+[2026-09-26, later: on the schools case **$305–350bn**
 ($268–383bn full span); the first-year budget response stays within $0.7bn of September 24 (4e66adb).] The transfers are not added, but they run from poorer
 to richer residents: outside the budget the bottom four fifths lose $80.7bn a year and the top
 fifth gains $46.0bn. The fiscal cost is progressive if financed by tax shares and regressive if
@@ -175,7 +177,9 @@ follows every priced channel to persons. About one other resident in four or fiv
 23.9% under tax-share financing and 21.4% under per-person cuts, with households pooled; 20.1% and
 19.9% with wages going to the earner alone; 14–30% across all choices [2026-09-25: the substitution
 elasticity alone spans 19–29%; a minority ahead holds throughout, the share is conditional on
-incidence]. [2026-09-26, later: on the schools case 20.5% and 19.0% pooled, 18.4% and 18.3% to the
+incidence]. [2026-09-28: on the September 27 case 17.8% and 17.0% pooled, 16.9% to the earner,
+11–24% across all choices; taxpayers' fiscal channel $349.3bn plus $5.1bn on capped programmes (62f1e5a).]
+[2026-09-26, later: on the schools case 20.5% and 19.0% pooled, 18.4% and 18.3% to the
 earner, 12–27% across all choices; fiscal channel $275.0bn (fa1bd3a).] Nearly everyone in California
 and Texas, US-born adults with high school or less, and renters come out behind. The top income
 decile and landlords come out ahead most often. Where the state and local cost falls is the largest

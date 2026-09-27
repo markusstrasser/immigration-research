@@ -168,7 +168,9 @@ $2.0bn for Hispanic members of mixed offender groups (ladder 218). Hospitals,
 physicians and private payers bear $3.2–5.6bn of the group's unreimbursed care. Housing nets
 other residents a small gain (+$0.7–3.5bn), while their renters pay $22–58bn more to landlords.
 With road budgets fixed, the group's traffic costs other residents about $19bn a year in time
-and fuel ($8–35bn; ladder 195). Transfers like these cancel in dollars but not by income: outside the budget the bottom four
+and fuel ($8–35bn; ladder 195). [2026-09-28: that is the figure with road budgets fixed. The September 27
+case lets road spending respond in the long run and prices the remaining congestion beside the account
+at $12.0–14.0bn (73cc30c).] Transfers like these cancel in dollars but not by income: outside the budget the bottom four
 fifths of other residents lose $80.7bn a year and the top fifth gains $46.0bn (ladder 194).
 Innovation shows no patent response at the group's schooling and is not added [2026-09-28: after
 the September 26 schooling correction the patent term is positive but imprecise, +$37–57bn inside

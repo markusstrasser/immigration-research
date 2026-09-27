@@ -34,12 +34,28 @@ fifth gains $46.0bn (§4). Priced to the same standard, the benefits the account
 $4.8bn a year, or $18.7bn with the proposed scale net (§7b); with all of them the total is
 $237–289bn. [CALCULATION: lanes and commits in "Sources"]
 
+**Update, 2026-09-28 (the September 27 case, $321.8–387.4bn; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)).** Fiscal and social
+costs together come to **$363–438bn a year** at central values (full span $325–474bn), or
+$8.9–10.7k per group member, on the same pairing; with this memo's $28.9bn the low end is $361bn. The
+fiscal row has risen by $120.9bn at the low end and $141.1bn at the high end since September 24. The
+social items now move with the case: the long-run road response takes part of the group's traffic cost
+into the account, so the congestion item beside it is $14.0bn at the low end and $12.0bn at the high end
+($19bn with road budgets fixed), and the social items come to $47.3–50.6bn (schools case $52.5–57.7bn).
+Costs and benefits together are $369–437bn ($355–423bn adding the scale net), and costs alone
+$373–442bn. Two variants stay outside the total: capital at 7% gives $448–512bn, and leaving out the
+government enterprises (option A) $346–415bn. In the income split (§4) the fiscal channel is $351.0bn and
+the central total $390.8bn. §7 and the first-year budget response are unchanged. [CALCULATION:
+`infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py` →
+`sept27_propagation_2026_09_27/derived/real_costs_totals.csv`, 73cc30c;
+`distribution_weights_2026_09_23/derived/channel_by_quintile.csv`, 78766c2]
+
 **Update, 2026-09-26 (schools at full average cost, $258.5–292.0bn; [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).** Fiscal and social
 costs together come to **$305–350bn a year** at central values (full span $268–383bn), or
 $7.5–8.6k per group member, on the pairing below: decision 4's victims figure at the low end and
 the custody footing at the high end. With this memo's $28.9bn the low end is $303bn. Only the fiscal
 row moves, by the main case's change since September 24 (+$57.6bn at the low end, +$45.6bn at the
-high end); the social items do not depend on the case. Costs and benefits together are $310–349bn ($296–335bn
+high end); the social items do not depend on the case [2026-09-28: no longer so on the September 27
+case, whose long-run road response moves part of the traffic cost into the account; see the block above]. Costs and benefits together are $310–349bn ($296–335bn
 adding the scale net), and costs alone $315–354bn. In the income split (§4) the fiscal channel is
 $276.7bn and the central total $311.4bn. The first-year budget response keeps CBO's 63–66% school response
 ($200.9–245.7bn) and stays within $0.7bn of the September 24 totals: $248–303bn, full span
@@ -464,3 +480,7 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
   The corrected point scenario is positive but highly imprecise; §8 now preserves that
   uncertainty instead of implying zero innovation. Concept affected: unpriced productivity
   benefits. No dollar offset was adopted.
+- 2026-09-28 (the September 27 case, [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)): a new update block. Fiscal and social costs
+  together are $363–438bn at central values (73cc30c). The 2026-09-26 block's statement that the social
+  items do not depend on the case no longer holds: congestion moves by −$5.2bn and −$7.1bn at the ends.
+  Concept affected: the fiscal-plus-social total and the congestion item.
