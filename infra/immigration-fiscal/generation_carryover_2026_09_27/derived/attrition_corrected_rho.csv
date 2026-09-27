@@ -1,0 +1,82 @@
+source,measure,scenario,delta_source,attrition_G3,attrition_G4plus,gap_G3,gap_G4plus,rho_G3_G4plus
+CPS_ASEC_2022_2025,ba_plus,attriters_like_identifiers,,0.1119,0.1119,-9.70445351928651,-10.114946436768854,1.0422994367139309
+CPS_ASEC_2022_2025,ba_plus,attriters_like_identifiers,,0.1119,0.292,-9.70445351928651,-10.114946436768854,1.0422994367139309
+CPS_ASEC_2022_2025,ba_plus,attriters_like_identifiers,,0.2062,0.556,-9.70445351928651,-10.114946436768854,1.0422994367139309
+CPS_ASEC_2022_2025,ba_plus,attriters_like_whites,,0.1119,0.1119,-8.61852517047835,-8.98308393049442,1.0422994367139309
+CPS_ASEC_2022_2025,ba_plus,attriters_like_whites,,0.1119,0.292,-8.61852517047835,-7.161382077232348,0.8309289507864689
+CPS_ASEC_2022_2025,ba_plus,attriters_like_whites,,0.2062,0.556,-7.703395203609632,-4.49103621792537,0.5829943939291827
+CPS_ASEC_2022_2025,ba_plus,attriters_at_measured_nonidentifier_values,MASP only-Anglo vs Latino mention +0.63 [DATA: masp_2026_09_20 RESULT.md],0.1119,0.1119,-9.63395651928651,-10.044449436768854,1.0426089651391477
+CPS_ASEC_2022_2025,ba_plus,attriters_at_measured_nonidentifier_values,Pew US-born US-parents 25+ +2.54 [DATA: pew_outcomes_2026_09_20 outcomes.csv],0.1119,0.1119,-9.42022751928651,-9.830720436768853,1.0435756903580005
+CPS_ASEC_2022_2025,ba_plus,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +6.16 (n=11) [SOURCE: DP12704 Table 13 p.57],0.1119,0.1119,-9.01514951928651,-9.425642436768854,1.0455336782384095
+CPS_ASEC_2022_2025,ba_plus,attriters_at_measured_nonidentifier_values,MASP only-Anglo vs Latino mention +0.63 [DATA: masp_2026_09_20 RESULT.md],0.1119,0.292,-9.63395651928651,-9.930986436768853,1.0308315609363308
+CPS_ASEC_2022_2025,ba_plus,attriters_at_measured_nonidentifier_values,Pew US-born US-parents 25+ +2.54 [DATA: pew_outcomes_2026_09_20 outcomes.csv],0.1119,0.292,-9.42022751928651,-9.373266436768853,0.9950148674836663
+CPS_ASEC_2022_2025,ba_plus,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +6.16 (n=11) [SOURCE: DP12704 Table 13 p.57],0.1119,0.292,-9.01514951928651,-8.316226436768854,0.9224723804056252
+CPS_ASEC_2022_2025,ba_plus,attriters_at_measured_nonidentifier_values,MASP only-Anglo vs Latino mention +0.63 [DATA: masp_2026_09_20 RESULT.md],0.2062,0.556,-9.57454751928651,-9.764666436768854,1.019856699974529
+CPS_ASEC_2022_2025,ba_plus,attriters_at_measured_nonidentifier_values,Pew US-born US-parents 25+ +2.54 [DATA: pew_outcomes_2026_09_20 outcomes.csv],0.2062,0.556,-9.18070551928651,-8.702706436768853,0.9479343846163573
+CPS_ASEC_2022_2025,ba_plus,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +6.16 (n=11) [SOURCE: DP12704 Table 13 p.57],0.2062,0.556,-8.43426151928651,-6.689986436768853,0.7931917241919703
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_like_identifiers,,0.1119,0.1119,-3200.973979716746,-5340.952598616286,1.6685398358311263
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_like_identifiers,,0.1119,0.292,-3200.973979716746,-5340.952598616286,1.6685398358311263
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_like_identifiers,,0.2062,0.556,-3200.973979716746,-5340.952598616286,1.6685398358311263
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_like_whites,,0.1119,0.1119,-2842.784991386442,-4743.3000028311235,1.6685398358311263
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_like_whites,,0.1119,0.292,-2842.784991386442,-3781.3944398203303,1.3301725073397561
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_like_whites,,0.2062,0.556,-2540.933145099153,-2371.382953785631,0.933272470532905
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_at_measured_nonidentifier_values,attriters close 54.3% of the gap (DT 2017 child +0.57y / CPS 1.049y gap) [DATA: arm5_education_selectivity.csv],0.1119,0.1119,-3006.369902356892,-5016.247943326208,1.6685398358311263
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_at_measured_nonidentifier_values,attriters close 72.4% of the gap (DT 2017 adult +0.76y / CPS 1.049y gap),0.1119,0.1119,-2941.501876570274,-4908.013058229515,1.6685398358311263
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_at_measured_nonidentifier_values,attriters close 54.3% of the gap (DT 2017 child +0.57y / CPS 1.049y gap) [DATA: arm5_education_selectivity.csv],0.1119,0.292,-3006.369902356892,-4493.644650942443,1.4947078359916983
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_at_measured_nonidentifier_values,attriters close 72.4% of the gap (DT 2017 adult +0.76y / CPS 1.049y gap),0.1119,0.292,-2941.501876570274,-4211.2086683844955,1.4316525520271541
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_at_measured_nonidentifier_values,attriters close 54.3% of the gap (DT 2017 child +0.57y / CPS 1.049y gap) [DATA: arm5_education_selectivity.csv],0.2062,0.556,-2842.3737942690077,-3727.585410579791,1.3114339212159951
+CPS_ASEC_2022_2025,ledger_partial_per_adult,attriters_at_measured_nonidentifier_values,attriters close 72.4% of the gap (DT 2017 adult +0.76y / CPS 1.049y gap),0.2062,0.556,-2722.8403991197615,-3189.796347900959,1.1714958941156282
+GSS_2000_2024,ba_plus,attriters_like_identifiers,,0.1119,0.1119,-17.380369020285617,-19.03806221569884,1.0953773302211498
+GSS_2000_2024,ba_plus,attriters_like_identifiers,,0.1119,0.292,-17.380369020285617,-19.03806221569884,1.0953773302211498
+GSS_2000_2024,ba_plus,attriters_like_identifiers,,0.2062,0.556,-17.380369020285617,-19.03806221569884,1.0953773302211498
+GSS_2000_2024,ba_plus,attriters_like_whites,,0.1119,0.1119,-15.435505726915656,-16.90770305376214,1.09537733022115
+GSS_2000_2024,ba_plus,attriters_like_whites,,0.1119,0.292,-15.435505726915656,-13.478948048714779,0.8732430467251144
+GSS_2000_2024,ba_plus,attriters_like_whites,,0.2062,0.556,-13.796536928302723,-8.452899623770284,0.6126827092695772
+GSS_2000_2024,ba_plus,attriters_at_measured_nonidentifier_values,MASP only-Anglo vs Latino mention +0.63 [DATA: masp_2026_09_20 RESULT.md],0.1119,0.1119,-17.309872020285617,-18.96756521569884,1.0957657684280135
+GSS_2000_2024,ba_plus,attriters_at_measured_nonidentifier_values,Pew US-born US-parents 25+ +2.54 [DATA: pew_outcomes_2026_09_20 outcomes.csv],0.1119,0.1119,-17.096143020285616,-18.75383621569884,1.0969629929655051
+GSS_2000_2024,ba_plus,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +6.16 (n=11) [SOURCE: DP12704 Table 13 p.57],0.1119,0.1119,-16.691065020285617,-18.34875821569884,1.099316202614904
+GSS_2000_2024,ba_plus,attriters_at_measured_nonidentifier_values,MASP only-Anglo vs Latino mention +0.63 [DATA: masp_2026_09_20 RESULT.md],0.1119,0.292,-17.309872020285617,-18.85410221569884,1.0892109539344672
+GSS_2000_2024,ba_plus,attriters_at_measured_nonidentifier_values,Pew US-born US-parents 25+ +2.54 [DATA: pew_outcomes_2026_09_20 outcomes.csv],0.1119,0.292,-17.096143020285616,-18.29638221569884,1.0702052617358822
+GSS_2000_2024,ba_plus,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +6.16 (n=11) [SOURCE: DP12704 Table 13 p.57],0.1119,0.292,-16.691065020285617,-17.23934221569884,1.0328485447002256
+GSS_2000_2024,ba_plus,attriters_at_measured_nonidentifier_values,MASP only-Anglo vs Latino mention +0.63 [DATA: masp_2026_09_20 RESULT.md],0.2062,0.556,-17.25046302028562,-18.68778221569884,1.0833206154364095
+GSS_2000_2024,ba_plus,attriters_at_measured_nonidentifier_values,Pew US-born US-parents 25+ +2.54 [DATA: pew_outcomes_2026_09_20 outcomes.csv],0.2062,0.556,-16.856621020285615,-17.62582221569884,1.0456319919922001
+GSS_2000_2024,ba_plus,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +6.16 (n=11) [SOURCE: DP12704 Table 13 p.57],0.2062,0.556,-16.110177020285615,-15.61310221569884,0.9691452921987841
+GSS_2000_2024,educ_years,attriters_like_identifiers,,0.1119,0.1119,-1.0010981307828484,-1.341214303368229,1.3397430902397285
+GSS_2000_2024,educ_years,attriters_like_identifiers,,0.1119,0.292,-1.0010981307828484,-1.341214303368229,1.3397430902397285
+GSS_2000_2024,educ_years,attriters_like_identifiers,,0.2062,0.556,-1.0010981307828484,-1.341214303368229,1.3397430902397285
+GSS_2000_2024,educ_years,attriters_like_whites,,0.1119,0.1119,-0.8890752499482476,-1.1911324228213243,1.3397430902397285
+GSS_2000_2024,educ_years,attriters_like_whites,,0.1119,0.292,-0.8890752499482476,-0.9495797267847061,1.0680532686518722
+GSS_2000_2024,educ_years,attriters_like_whites,,0.2062,0.556,-0.7946716962154251,-0.5954991506954936,0.749364993784882
+GSS_2000_2024,educ_years,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +0.64 (n=11) [SOURCE: DP12704 Table 13 p.57],0.1119,0.1119,-0.9294821307828484,-1.2695983033682292,1.365920076697893
+GSS_2000_2024,educ_years,attriters_at_measured_nonidentifier_values,Duncan-Trejo 2017 G2 adults +0.76 [SOURCE: ILR Review 71(5) Table 8 via population-total lane],0.1119,0.1119,-0.9160541307828484,-1.2561703033682292,1.3712839243404993
+GSS_2000_2024,educ_years,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +0.64 (n=11) [SOURCE: DP12704 Table 13 p.57],0.1119,0.292,-0.9294821307828484,-1.1543343033682292,1.2419112376006638
+GSS_2000_2024,educ_years,attriters_at_measured_nonidentifier_values,Duncan-Trejo 2017 G2 adults +0.76 [SOURCE: ILR Review 71(5) Table 8 via population-total lane],0.1119,0.292,-0.9160541307828484,-1.1192943033682292,1.2218648066263227
+GSS_2000_2024,educ_years,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +0.64 (n=11) [SOURCE: DP12704 Table 13 p.57],0.2062,0.556,-0.8691301307828484,-0.9853743033682291,1.1337477190908989
+GSS_2000_2024,educ_years,attriters_at_measured_nonidentifier_values,Duncan-Trejo 2017 G2 adults +0.76 [SOURCE: ILR Review 71(5) Table 8 via population-total lane],0.2062,0.556,-0.8443861307828484,-0.9186543033682291,1.087955225551283
+NLSY97_published,ba_plus,attriters_like_identifiers,,0.0,0.1119,-19.36,-18.77,0.9695247933884298
+NLSY97_published,ba_plus,attriters_like_identifiers,,0.0,0.292,-19.36,-18.77,0.9695247933884298
+NLSY97_published,ba_plus,attriters_like_identifiers,,0.0,0.556,-19.36,-18.77,0.9695247933884298
+NLSY97_published,ba_plus,attriters_like_whites,,0.0,0.1119,-19.36,-16.669636999999998,0.8610349690082644
+NLSY97_published,ba_plus,attriters_like_whites,,0.0,0.292,-19.36,-13.289159999999999,0.6864235537190082
+NLSY97_published,ba_plus,attriters_like_whites,,0.0,0.556,-19.36,-8.333879999999999,0.43046900826446277
+NLSY97_published,ba_plus,attriters_at_measured_nonidentifier_values,MASP only-Anglo vs Latino mention +0.63 [DATA: masp_2026_09_20 RESULT.md],0.0,0.1119,-19.36,-18.699503,0.9658834194214876
+NLSY97_published,ba_plus,attriters_at_measured_nonidentifier_values,Pew US-born US-parents 25+ +2.54 [DATA: pew_outcomes_2026_09_20 outcomes.csv],0.0,0.1119,-19.36,-18.485774,0.9548436983471075
+NLSY97_published,ba_plus,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +6.16 (n=11) [SOURCE: DP12704 Table 13 p.57],0.0,0.1119,-19.36,-18.080696,0.9339202479338843
+NLSY97_published,ba_plus,attriters_at_measured_nonidentifier_values,MASP only-Anglo vs Latino mention +0.63 [DATA: masp_2026_09_20 RESULT.md],0.0,0.292,-19.36,-18.58604,0.9600227272727273
+NLSY97_published,ba_plus,attriters_at_measured_nonidentifier_values,Pew US-born US-parents 25+ +2.54 [DATA: pew_outcomes_2026_09_20 outcomes.csv],0.0,0.292,-19.36,-18.02832,0.931214876033058
+NLSY97_published,ba_plus,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +6.16 (n=11) [SOURCE: DP12704 Table 13 p.57],0.0,0.292,-19.36,-16.97128,0.8766157024793388
+NLSY97_published,ba_plus,attriters_at_measured_nonidentifier_values,MASP only-Anglo vs Latino mention +0.63 [DATA: masp_2026_09_20 RESULT.md],0.0,0.556,-19.36,-18.419719999999998,0.9514318181818181
+NLSY97_published,ba_plus,attriters_at_measured_nonidentifier_values,Pew US-born US-parents 25+ +2.54 [DATA: pew_outcomes_2026_09_20 outcomes.csv],0.0,0.556,-19.36,-17.35776,0.8965785123966942
+NLSY97_published,ba_plus,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +6.16 (n=11) [SOURCE: DP12704 Table 13 p.57],0.0,0.556,-19.36,-15.34504,0.7926157024793388
+NLSY97_published,educ_years,attriters_like_identifiers,,0.0,0.1119,-0.9300000000000015,-1.6900000000000013,1.8172043010752672
+NLSY97_published,educ_years,attriters_like_identifiers,,0.0,0.292,-0.9300000000000015,-1.6900000000000013,1.8172043010752672
+NLSY97_published,educ_years,attriters_like_identifiers,,0.0,0.556,-0.9300000000000015,-1.6900000000000013,1.8172043010752672
+NLSY97_published,educ_years,attriters_like_whites,,0.0,0.1119,-0.9300000000000015,-1.500889000000001,1.6138591397849447
+NLSY97_published,educ_years,attriters_like_whites,,0.0,0.292,-0.9300000000000015,-1.196520000000001,1.2865806451612893
+NLSY97_published,educ_years,attriters_like_whites,,0.0,0.556,-0.9300000000000015,-0.7503600000000005,0.8068387096774186
+NLSY97_published,educ_years,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +0.64 (n=11) [SOURCE: DP12704 Table 13 p.57],0.0,0.1119,-0.9300000000000015,-1.6183840000000014,1.7401978494623642
+NLSY97_published,educ_years,attriters_at_measured_nonidentifier_values,Duncan-Trejo 2017 G2 adults +0.76 [SOURCE: ILR Review 71(5) Table 8 via population-total lane],0.0,0.1119,-0.9300000000000015,-1.6049560000000014,1.725759139784945
+NLSY97_published,educ_years,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +0.64 (n=11) [SOURCE: DP12704 Table 13 p.57],0.0,0.292,-0.9300000000000015,-1.5031200000000013,1.616258064516128
+NLSY97_published,educ_years,attriters_at_measured_nonidentifier_values,Duncan-Trejo 2017 G2 adults +0.76 [SOURCE: ILR Review 71(5) Table 8 via population-total lane],0.0,0.292,-0.9300000000000015,-1.4680800000000014,1.5785806451612894
+NLSY97_published,educ_years,attriters_at_measured_nonidentifier_values,NLSY97 G3 cross-section +0.64 (n=11) [SOURCE: DP12704 Table 13 p.57],0.0,0.556,-0.9300000000000015,-1.3341600000000011,1.4345806451612892
+NLSY97_published,educ_years,attriters_at_measured_nonidentifier_values,Duncan-Trejo 2017 G2 adults +0.76 [SOURCE: ILR Review 71(5) Table 8 via population-total lane],0.0,0.556,-0.9300000000000015,-1.2674400000000012,1.3628387096774186
