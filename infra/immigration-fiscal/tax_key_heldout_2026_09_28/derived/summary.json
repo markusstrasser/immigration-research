@@ -1,0 +1,339 @@
+{
+ "bin_reweighting_of_the_key_before_cbo": {
+  "personal": {
+   "cbo_gradient_bn": -13.17261106025164,
+   "irs_2023_pooled_top_bn": -7.898777958875484,
+   "se_bn": 4.533882522112661
+  },
+  "shared": {
+   "cbo_gradient_bn": -14.052573918014183,
+   "irs_2023_pooled_top_bn": -7.981135553801469,
+   "se_bn": 4.7221713406877255
+  }
+ },
+ "cps_largest_agi": 3124826.0,
+ "empty_key_bins": [
+  0,
+  17,
+  18
+ ],
+ "gates_passed": 11,
+ "gdp_growth_2023_2024": 1.0534489362806063,
+ "headline": {
+  "frozen_irs_2022_vs_2023_pp": 2.430256477745846,
+  "frozen_irs_pooled_top_pp": 2.376231550222843,
+  "key_before_cbo_vs_irs_2023_19_bins_pp": 24.099258822269448,
+  "key_final_vs_irs_2023_19_bins_pp": 23.514130147449176,
+  "key_final_vs_irs_2023_pooled_top_pp": 8.444121991190228
+ },
+ "held_out_year": {
+  "irs_total_income_tax_after_credits_thousands": 2108587001.0,
+  "used": 2023,
+  "why": "SOI has not published tax year 2024 (reads/soi_availability.md); no step of the key used tax year 2023"
+ },
+ "inputs": {
+  "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+  "infra/immigration-fiscal/external_benchmarks_2026_09_24/cbo_arm.py": "a2f0159d8d8a6295da6220236ba34128c6a9b838285a5794659ec956ac7ffa74",
+  "infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_components.csv": "77541033a4355c205b0bcc7f6bd441536fc242ee052483b3282543c995a48035",
+  "infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_deltas.json": "f1b5d1536d9ddf04726203502e77f813b2e2dba39febb38f563f3b38fad4986c",
+  "infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv": "fc73f97db7e8da645e22e546cf6f637c3f059c66fb328c058689f2c1c1d1f24b",
+  "infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_translation.csv": "a1fdf9f0a6b2169a132ea5b481fa5aa4a9817e9e390db84c700abe8882896795",
+  "infra/immigration-fiscal/external_benchmarks_2026_09_24/frame.py": "c5ba5e8c7e6fceef6f4f853b8cf596ebd639b3be8cc6f8a376125831f8e5b6ad",
+  "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+  "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived/summary.json": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d",
+  "infra/immigration-fiscal/main_case_long_run_2026_09_27/package.cjs": "b4f22b35371c715771d8e53436acfc6320c214ab5abf686714020eb2c8fe2a7a",
+  "infra/immigration-fiscal/same_year_tax_2026_09_20/source_lock.json": "59854caaff7dcf9fb61e41db93bd0b97577bc23aef03304f41e5fa8e64b7aa67",
+  "infra/immigration-fiscal/tax_key_heldout_2026_09_28/_cache/22in12ms.xls": "ffc483e16aa05762c5ac6dfdbfa86250cd4db5969b1cf6db2296539601a54503",
+  "infra/immigration-fiscal/tax_key_heldout_2026_09_28/_cache/23in12ms.xls": "549861a1c7b38256abf9506a6111dcf82110266d0168199dfa465a5d61134490",
+  "infra/immigration-fiscal/tax_key_heldout_2026_09_28/_cache/acquisition.json": "4b9500ef3a94e517f31050654263715eb841389eb1ec37c07c6d863ac409c489",
+  "infra/immigration-fiscal/tax_key_heldout_2026_09_28/ends.cjs": "e49832339d03820915d2d52d014b897407bfa9f94cb8feab51d22db6c00f4293",
+  "infra/immigration-fiscal/validation_fiscal_years_2026_09_28/analysis.py": "30102aa7c50aba2b91ac312272acf110e1e4ffe0f045c6fccebdee0fa11879cb",
+  "infra/immigration-fiscal/validation_fiscal_years_2026_09_28/derived/irs_distribution.csv": "6a52ae9f4d186ff682a6942819bee7bc558418c6eecbd509276117743c910e7d",
+  "sources/immigration-fiscal/data/external/bea_nipa/Section1All_xls.xlsx": "238ba851c9a4932d91a0dedb1b3f2e6c6d37574d154a54267da18b9cb0921a19"
+ },
+ "key": {
+  "calibration": "individual_inc_tax=individual_inc_tax_gross|2022 (external_benchmarks_2026_09_24, adopted 2026-09-24)",
+  "cps": "CPS ASEC 2025 (income year 2024), FEDTAX_BC, civilian universe",
+  "final_union_tax_bn_by_method": {
+   "b_hotdeck_union_matched": {
+    "personal": 102.18313379078934,
+    "shared": 112.39887816286722
+   },
+   "b_matched_over_pooled": {
+    "personal": 100.71117908806927,
+    "shared": 109.95595666912338
+   }
+  },
+  "line": "federal_income_tax",
+  "national_bn": 2403.242,
+  "share_after_cbo": {
+   "personal": 0.047867114892088655,
+   "shared": 0.05155207902887642
+  },
+  "share_before_cbo": {
+   "personal": 0.053348298668109355,
+   "shared": 0.05739941937912549
+  },
+  "stack_factor_by_method": {
+   "b_hotdeck_union_matched": {
+    "personal": 0.8882689072706234,
+    "shared": 0.9072318464883805
+   },
+   "b_matched_over_pooled": {
+    "personal": 0.8754733357625702,
+    "shared": 0.8875137121633747
+   }
+  }
+ },
+ "lane": "tax_key_heldout_2026_09_28",
+ "main_case": {
+  "adopted_band_bn": [
+   321.81935699039354,
+   387.37005494938376
+  ],
+  "variants": {
+   "irs_2022_pooled_top": {
+    "band": {
+     "high": 382.6976990781144,
+     "low": 316.63317646552036
+    },
+    "change_at_case_ends_bn": {
+     "high": -4.672355871269303,
+     "low": -5.18618052487318
+    },
+    "end_specs": [
+     "48/11",
+     "48/11"
+    ],
+    "union_tax_change_at_case_ends_bn": {
+     "high": 4.672355871269284,
+     "low": 5.1861805248731905
+    }
+   },
+   "irs_2023_19_bins": {
+    "band": {
+     "high": 390.43831581369847,
+     "low": 320.0854549337387
+    },
+    "change_at_case_ends_bn": {
+     "high": 3.0682608643147375,
+     "low": -1.7339020566548697
+    },
+    "end_specs": [
+     "48/11",
+     "48/11"
+    ],
+    "union_tax_change_at_case_ends_bn": {
+     "high": -3.068260864314757,
+     "low": 1.7339020566548828
+    }
+   },
+   "irs_2023_pooled_from_500k": {
+    "band": {
+     "high": 384.3010900898419,
+     "low": 318.7196912252426
+    },
+    "change_at_case_ends_bn": {
+     "high": -3.0689648595418078,
+     "low": -3.0996657651508883
+    },
+    "end_specs": [
+     "48/11",
+     "48/11"
+    ],
+    "union_tax_change_at_case_ends_bn": {
+     "high": 3.0689648595417864,
+     "low": 3.099665765150883
+    }
+   },
+   "irs_2023_pooled_top": {
+    "band": {
+     "high": 383.4192116065185,
+     "low": 317.35403269614744
+    },
+    "change_at_case_ends_bn": {
+     "high": -3.9508433428652268,
+     "low": -4.465324294246102
+    },
+    "end_specs": [
+     "48/11",
+     "48/11"
+    ],
+    "union_tax_change_at_case_ends_bn": {
+     "high": 3.9508433428652205,
+     "low": 4.465324294246129
+    }
+   },
+   "irs_2023_raked_with_cbo_groups": {
+    "band": {
+     "high": 384.2734867858736,
+     "low": 318.6188216578453
+    },
+    "change_at_case_ends_bn": {
+     "high": -3.096568163510142,
+     "low": -3.20053533254827
+    },
+    "end_specs": [
+     "48/11",
+     "48/11"
+    ],
+    "union_tax_change_at_case_ends_bn": {
+     "high": 3.0965681635101032,
+     "low": 3.2005353325482777
+    }
+   }
+  }
+ },
+ "raking": {
+  "personal": {
+   "cbo_group_shares": {
+    "p81_90": 0.1252137811032802,
+    "p91_95": 0.1109036346914767,
+    "p96_99": 0.2007706088374768,
+    "q1": 0.0044936095693439,
+    "q2": 0.0233572147565782,
+    "q3": 0.0576274067924078,
+    "q4": 0.1170292344738731,
+    "top1": 0.3606045097755628
+   },
+   "group_shares_after_the_bin_step_alone": {
+    "p81_90": 0.12062475590046794,
+    "p91_95": 0.09624242396942981,
+    "p96_99": 0.16646504045959215,
+    "q1": 0.004747606637823332,
+    "q2": 0.026009356126925696,
+    "q3": 0.06540909522244956,
+    "q4": 0.12740027674561247,
+    "top1": 0.3931014449376991
+   },
+   "iterations": 180
+  },
+  "shared": {
+   "cbo_group_shares": {
+    "p81_90": 0.1252137811032802,
+    "p91_95": 0.1109036346914767,
+    "p96_99": 0.2007706088374768,
+    "q1": 0.0044936095693439,
+    "q2": 0.0233572147565782,
+    "q3": 0.0576274067924078,
+    "q4": 0.1170292344738731,
+    "top1": 0.3606045097755628
+   },
+   "group_shares_after_the_bin_step_alone": {
+    "p81_90": 0.12022357996493696,
+    "p91_95": 0.09580126835999114,
+    "p96_99": 0.16618609308145735,
+    "q1": 0.004925524208836716,
+    "q2": 0.026648642071398186,
+    "q3": 0.06619628243096434,
+    "q4": 0.1278105606729246,
+    "top1": 0.39220804920949065
+   },
+   "iterations": 179
+  }
+ },
+ "scores_pp": {
+  "frozen_irs_2022|2023|15 bins, $1M and up pooled": {
+   "se": 0.0,
+   "tv": 2.376231550222843
+  },
+  "frozen_irs_2022|2023|19 bins": {
+   "se": 0.0,
+   "tv": 2.430256477745846
+  },
+  "key_before_cbo_gradient|2022|15 bins, $1M and up pooled": {
+   "se": 0.8603189934990472,
+   "tv": 19.912341100862964
+  },
+  "key_before_cbo_gradient|2022|19 bins": {
+   "se": 0.7264876485156632,
+   "tv": 25.593349778232145
+  },
+  "key_before_cbo_gradient|2023|15 bins, $1M and up pooled": {
+   "se": 0.8627289816160714,
+   "tv": 18.472275072423272
+  },
+  "key_before_cbo_gradient|2023|19 bins": {
+   "se": 0.7276816374188052,
+   "tv": 24.099258822269448
+  },
+  "key_final_calibrated_agi_in_2023_dollars|2022|15 bins, $1M and up pooled": {
+   "se": 0.7593303267879483,
+   "tv": 10.319463972978449
+  },
+  "key_final_calibrated_agi_in_2023_dollars|2022|19 bins": {
+   "se": 0.9377219301756711,
+   "tv": 23.905314859871766
+  },
+  "key_final_calibrated_agi_in_2023_dollars|2023|15 bins, $1M and up pooled": {
+   "se": 0.759325051810019,
+   "tv": 8.669474857234503
+  },
+  "key_final_calibrated_agi_in_2023_dollars|2023|19 bins": {
+   "se": 0.9377358833003279,
+   "tv": 22.20130081660482
+  },
+  "key_final_calibrated_shared_rule|2022|15 bins, $1M and up pooled": {
+   "se": 0.7779981710633833,
+   "tv": 10.38430890348544
+  },
+  "key_final_calibrated_shared_rule|2022|19 bins": {
+   "se": 0.9888839987622535,
+   "tv": 25.508978686783696
+  },
+  "key_final_calibrated_shared_rule|2023|15 bins, $1M and up pooled": {
+   "se": 0.7779855785976644,
+   "tv": 8.509226607697373
+  },
+  "key_final_calibrated_shared_rule|2023|19 bins": {
+   "se": 0.9890732310204884,
+   "tv": 23.57987146347262
+  },
+  "key_final_calibrated|2022|15 bins, $1M and up pooled": {
+   "se": 0.7795235794774372,
+   "tv": 10.306376731570227
+  },
+  "key_final_calibrated|2022|19 bins": {
+   "se": 0.9750080098195735,
+   "tv": 25.430409815352178
+  },
+  "key_final_calibrated|2023|15 bins, $1M and up pooled": {
+   "se": 0.7775317746236798,
+   "tv": 8.444121991190228
+  },
+  "key_final_calibrated|2023|19 bins": {
+   "se": 0.9748360618823511,
+   "tv": 23.514130147449176
+  },
+  "memo_frozen_cps_2022 (validation lane)|2023|19 bins": {
+   "se": null,
+   "tv": 25.202159266930614
+  },
+  "memo_same_year_cps_2023 (validation lane)|2023|19 bins": {
+   "se": null,
+   "tv": 24.061796091087583
+  }
+ },
+ "share_change": {
+  "irs_2022_pooled_top": {
+   "personal": 0.002204617686261158,
+   "shared": 0.0024047904195949876
+  },
+  "irs_2023_19_bins": {
+   "personal": -0.0014477369348353322,
+   "shared": 0.0008039965123392348
+  },
+  "irs_2023_pooled_from_500k": {
+   "personal": 0.001448069109945986,
+   "shared": 0.001437290217768436
+  },
+  "irs_2023_pooled_top": {
+   "personal": 0.0018641771622934303,
+   "shared": 0.0020705351523509496
+  },
+  "irs_2023_raked_with_cbo_groups": {
+   "personal": 0.0014610935314165324,
+   "shared": 0.001484062629207368
+  }
+ }
+}
