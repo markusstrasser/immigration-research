@@ -1,0 +1,92 @@
+measure,contrast,value,se
+ba_plus,"advantage, anc_nonmex minus anc_id",1.3363202646159777,0.853987980800458
+ba_plus,"closing share, anc_nonmex vs anc_id",0.06709994794731688,0.04280429714858716
+ba_plus,"advantage, anc_nonmex minus mex_id_all",2.4668617201162206,0.85318422578251
+ba_plus,"closing share, anc_nonmex vs mex_id_all",0.11721334902925473,0.040383308880204714
+ba_plus,"advantage, anc_nonhisp minus anc_id",-1.4881718656846346,1.4919087048287094
+ba_plus,"closing share, anc_nonhisp vs anc_id",-0.07472479267744725,0.07491036845979349
+ba_plus,"advantage, anc_nonhisp minus mex_id_all",-0.3576304101843917,1.486886623023644
+ba_plus,"closing share, anc_nonhisp vs mex_id_all",-0.016992869016769996,0.07064639997504006
+ba_plus,"advantage, anc_otherhisp minus anc_id",2.7626013441156445,1.1046332864619033
+ba_plus,"closing share, anc_otherhisp vs anc_id",0.13871705106755816,0.05511356188509098
+ba_plus,"advantage, anc_otherhisp minus mex_id_all",3.8931427996158874,1.106087664084607
+ba_plus,"closing share, anc_otherhisp vs mex_id_all",0.18498333411676116,0.05205316294630083
+ba_plus,share not Mexican among Mexican-ancestry US-born,0.049964321700903896,0.0011530066756566995
+less_than_hs,"advantage, anc_nonmex minus anc_id",-1.9779768260831867,0.5314898008737694
+less_than_hs,"closing share, anc_nonmex vs anc_id",0.33222870191976805,0.08683600182979365
+less_than_hs,"advantage, anc_nonmex minus mex_id_all",-3.608973011558172,0.5161620990960928
+less_than_hs,"closing share, anc_nonmex vs mex_id_all",0.47582550753311514,0.0663570020317903
+less_than_hs,"advantage, anc_nonhisp minus anc_id",-2.382348506738934,1.1324544550156075
+less_than_hs,"closing share, anc_nonhisp vs anc_id",0.40014854647295384,0.18891028772280927
+less_than_hs,"advantage, anc_nonhisp minus mex_id_all",-4.013344692213919,1.1353721178704428
+less_than_hs,"closing share, anc_nonhisp vs mex_id_all",0.5291399434027717,0.14810753483458255
+less_than_hs,"advantage, anc_otherhisp minus anc_id",-1.773781646702016,0.8007493931344676
+less_than_hs,"closing share, anc_otherhisp vs anc_id",0.2979312832192582,0.13322082352968717
+less_than_hs,"advantage, anc_otherhisp minus mex_id_all",-3.4047778321770013,0.7833324679965286
+less_than_hs,"closing share, anc_otherhisp vs mex_id_all",0.4489033680342355,0.10298733805633155
+less_than_hs,share not Mexican among Mexican-ancestry US-born,0.049964321700903896,0.0011530066756566995
+educ_years,"advantage, anc_nonmex minus anc_id",0.1606838672980544,0.04822902251323982
+educ_years,"closing share, anc_nonmex vs anc_id",0.14387767597993373,0.043231656112713665
+educ_years,"advantage, anc_nonmex minus mex_id_all",0.369955311035449,0.048100868050306764
+educ_years,"closing share, anc_nonmex vs mex_id_all",0.2789840873302868,0.03637091871799056
+educ_years,"advantage, anc_nonhisp minus anc_id",0.030799073526740273,0.08269840874140981
+educ_years,"closing share, anc_nonhisp vs anc_id",0.027577747510537765,0.07411635719474484
+educ_years,"advantage, anc_nonhisp minus mex_id_all",0.24007051726413486,0.08166258591498467
+educ_years,"closing share, anc_nonhisp vs mex_id_all",0.18103768794773956,0.06185011271754461
+educ_years,"advantage, anc_otherhisp minus anc_id",0.22627166691809641,0.06594080177727052
+educ_years,"closing share, anc_otherhisp vs anc_id",0.2026055392100683,0.059015856739544896
+educ_years,"advantage, anc_otherhisp minus mex_id_all",0.435543110655491,0.06639924118568888
+educ_years,"closing share, anc_otherhisp vs mex_id_all",0.3284439865970008,0.049893209772894825
+educ_years,share not Mexican among Mexican-ancestry US-born,0.049964321700903896,0.0011530066756566995
+employed,"advantage, anc_nonmex minus anc_id",0.9043043091383538,0.9604645818434094
+employed,"closing share, anc_nonmex vs anc_id",0.2793774640655201,0.2957148223677351
+employed,"advantage, anc_nonmex minus mex_id_all",1.2860623650407206,0.9586991509136285
+employed,"closing share, anc_nonmex vs mex_id_all",0.3554020245531755,0.2641354068668347
+employed,"advantage, anc_nonhisp minus anc_id",0.018602102944370813,1.5609115853060715
+employed,"closing share, anc_nonhisp vs anc_id",0.005746968464449664,0.47992484645764855
+employed,"advantage, anc_nonhisp minus mex_id_all",0.4003601588467376,1.5471210007858127
+employed,"closing share, anc_nonhisp vs mex_id_all",0.11063912207714455,0.4237925496063645
+employed,"advantage, anc_otherhisp minus anc_id",1.351556501926325,1.1459761837700249
+employed,"closing share, anc_otherhisp vs anc_id",0.4175523927440137,0.3567675031940029
+employed,"advantage, anc_otherhisp minus mex_id_all",1.7333145578286917,1.15264274615802
+employed,"closing share, anc_otherhisp vs mex_id_all",0.47899971244419715,0.32045542473344235
+employed,share not Mexican among Mexican-ancestry US-born,0.049964321700903896,0.0011530066756566995
+earnings_worker_mean,"advantage, anc_nonmex minus anc_id",2385.503160609318,1422.168360547776
+earnings_worker_mean,"closing share, anc_nonmex vs anc_id",0.1376761566695217,0.0819672435425066
+earnings_worker_mean,"advantage, anc_nonmex minus mex_id_all",3373.7962664407023,1413.9087301898471
+earnings_worker_mean,"closing share, anc_nonmex vs mex_id_all",0.1842073602369947,0.07716453277025535
+earnings_worker_mean,"advantage, anc_nonhisp minus anc_id",1965.7486734980703,2538.135878879537
+earnings_worker_mean,"closing share, anc_nonhisp vs anc_id",0.11345058217248283,0.14610172362580492
+earnings_worker_mean,"advantage, anc_nonhisp minus mex_id_all",2954.0417793294546,2520.843676289959
+earnings_worker_mean,"closing share, anc_nonhisp vs mex_id_all",0.16128900361080456,0.13718075283834946
+earnings_worker_mean,"advantage, anc_otherhisp minus anc_id",2591.4474848436366,1618.486889563955
+earnings_worker_mean,"closing share, anc_otherhisp vs anc_id",0.14956196068633165,0.09339182601573394
+earnings_worker_mean,"advantage, anc_otherhisp minus mex_id_all",3579.740590675021,1621.4595883513166
+earnings_worker_mean,"closing share, anc_otherhisp vs mex_id_all",0.1954518033885717,0.08861936663159353
+earnings_worker_mean,share not Mexican among Mexican-ancestry US-born,0.05080053803521499,0.0012944813246538263
+wage_worker_mean,"advantage, anc_nonmex minus anc_id",1407.913899301151,1195.1574181301655
+wage_worker_mean,"closing share, anc_nonmex vs anc_id",0.08288083049274197,0.06985075154129153
+wage_worker_mean,"advantage, anc_nonmex minus mex_id_all",2349.048771605936,1157.246074421027
+wage_worker_mean,"closing share, anc_nonmex vs mex_id_all",0.1310243116266081,0.06416072867963309
+wage_worker_mean,"advantage, anc_nonhisp minus anc_id",907.3157988013118,2092.1355761572104
+wage_worker_mean,"closing share, anc_nonhisp vs anc_id",0.053411708600337726,0.12271364137999635
+wage_worker_mean,"advantage, anc_nonhisp minus mex_id_all",1848.4506711060967,2077.309958003998
+wage_worker_mean,"closing share, anc_nonhisp vs mex_id_all",0.10310214912730087,0.11522285497567139
+wage_worker_mean,"advantage, anc_otherhisp minus anc_id",1653.3560049395455,1417.639401153352
+wage_worker_mean,"closing share, anc_otherhisp vs anc_id",0.09732947366850353,0.08316934688481459
+wage_worker_mean,"advantage, anc_otherhisp minus mex_id_all",2594.4908772443305,1381.6736648444062
+wage_worker_mean,"closing share, anc_otherhisp vs mex_id_all",0.14471448414417154,0.07698472052216514
+wage_worker_mean,share not Mexican among Mexican-ancestry US-born,0.05086781002922131,0.0013337077675108309
+income_person_mean,"advantage, anc_nonmex minus anc_id",3157.9562941686454,1369.7754682613474
+income_person_mean,"closing share, anc_nonmex vs anc_id",0.17808845640834192,0.07724148876551161
+income_person_mean,"advantage, anc_nonmex minus mex_id_all",4263.650895217121,1356.3124005850743
+income_person_mean,"closing share, anc_nonmex vs mex_id_all",0.22632993777447585,0.07209694727801126
+income_person_mean,"advantage, anc_nonhisp minus anc_id",1481.1801760323651,2389.2415503307175
+income_person_mean,"closing share, anc_nonhisp vs anc_id",0.08352905063927818,0.13457863703632203
+income_person_mean,"advantage, anc_nonhisp minus mex_id_all",2586.8747770808404,2368.004876573009
+income_person_mean,"closing share, anc_nonhisp vs mex_id_all",0.13732062537855894,0.12539006740380804
+income_person_mean,"advantage, anc_otherhisp minus anc_id",4004.67632081404,1561.079554138817
+income_person_mean,"closing share, anc_otherhisp vs anc_id",0.22583802876111747,0.0881723044542169
+income_person_mean,"advantage, anc_otherhisp minus mex_id_all",5110.370921862515,1560.5336646730161
+income_person_mean,"closing share, anc_otherhisp vs mex_id_all",0.27127688480478507,0.08309197648169651
+income_person_mean,share not Mexican among Mexican-ancestry US-born,0.049964321700903896,0.0011530066756566995
