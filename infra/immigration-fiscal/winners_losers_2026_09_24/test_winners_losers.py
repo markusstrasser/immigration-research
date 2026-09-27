@@ -276,7 +276,8 @@ def test_cases_chain_and_configure(tmp_path):
         c = wl.CASES[case]
         assert c["prev"] in wl.CASES and wl.CASES[c["prev"]]["model"] != c["model"]
         assert c["consumption_proposal"] == (case == "sept24")   # inside the fiscal channel from Sept 26 on
-    assert wl.DEFAULT_CASE == "sept26_schools" and wl.CASES["sept26_schools"]["prev"] == "sept26"
+    assert wl.DEFAULT_CASE == "sept27" and wl.CASES["sept27"]["prev"] == "sept26_schools"
+    assert wl.CASES["sept26_schools"]["prev"] == "sept26"
     assert len({wl.CASES[c]["model"] for c in wl.CASES}) == len(wl.CASES)
     # sept24 reads the paths it committed with; a later case its own lane, published totals and out-dir.
     wl.configure("sept24")
@@ -291,6 +292,28 @@ def test_cases_chain_and_configure(tmp_path):
     assert wl.PATHS["specs"] == tmp_path.resolve() / "fiscal_specs.csv" and wl.DERIVED == tmp_path.resolve()
     assert wl.PINNED == {"generations": wl.GEN26S_COMMIT, "debt_corrections": wl.DEBT26S_COMMIT}
     assert wl.CASE["prev"]["debt"] == wl.DEBT26_COMMIT and wl.CASE["prev"]["base"] == wl.BASE26_COMMIT
+    assert not any(k in wl.PATHS for k in wl.CASE_PATHS)   # an earlier case reads none of September 27's inputs
+    # September 27: its pins, its main profile beside the earlier cases' one, and its own inputs.
+    wl.configure("sept27", tmp_path)
+    assert wl.PATHS["bands"] == wl.FISCAL / "main_case_long_run_2026_09_27/derived/main_case_bands.csv"
+    assert wl.PATHS["real_costs"] == wl.FISCAL / "sept27_propagation_2026_09_27/derived/real_costs_totals.csv"
+    assert wl.PINNED == {"generations": wl.GEN27_COMMIT, "debt_corrections": wl.DEBT27_COMMIT}
+    assert (wl.CASE["base"], wl.CASE["debt"]) == (wl.BASE27_COMMIT, wl.DEBT27_COMMIT)
+    assert wl.CASE["prev"]["debt"] == wl.DEBT26S_COMMIT and wl.CASE["prev"]["base"] == wl.BASE26S_COMMIT
+    assert wl.CASE["profile"] == "long_run_non_school_full" and "profile" not in wl.CASE["prev"]
+    assert all(k in wl.PATHS for k in wl.CASE_PATHS)
+    wl.configure("sept26_schools")
+    assert not any(k in wl.PATHS for k in wl.CASE_PATHS)
+
+
+def test_page_rows_follow_the_case():
+    wl.configure("sept26_schools")
+    assert wl.page_rows() == wl.PAGE
+    wl.configure("sept27")
+    ids = [r[0] for r in wl.page_rows()]
+    assert len(ids) == len(wl.PAGE) + 2 and len(set(ids)) == len(ids)
+    assert ids[ids.index("fiscal_b") + 1] == "displaced_beneficiaries"
+    assert ids[ids.index("preferences_group_part") + 1] == "preferences_group_part_others"
 
 
 def test_spm_pooling_keeps_totals_and_leaves_group_members_out():
