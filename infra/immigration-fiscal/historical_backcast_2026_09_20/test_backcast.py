@@ -1,10 +1,9 @@
-"""Permanent gates: `backcast.py --case sept24` and `--case sept26` rebuild the files committed for those
-cases byte for byte, and the default run (schools at full average cost, since 2026-09-26) rebuilds the
-derived/ files.
+"""Permanent gates: `backcast.py --case sept24`, `--case sept26` and `--case sept26_schools` rebuild the
+files committed for those cases byte for byte, and the default run (the main case of 2026-09-27) rebuilds
+the derived/ files, its case_components.cjs input included.
 
-The September 24 files are the ones committed at SEPT24_COMMIT and the September 26 files the ones
-committed at SEPT26_COMMIT, the last commits whose derived/ held each run. debt_legacy.py reads each
-case's concept columns, so they must keep their values.
+The files of each earlier case are the ones committed at its commit below, the last commit whose derived/
+held that run. debt_legacy.py reads each case's concept columns, so they must keep their values.
 
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/historical_backcast_2026_09_20/ -q --import-mode=importlib
@@ -22,8 +21,11 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 SEPT24_COMMIT = "da2b107"
 SEPT26_COMMIT = "f5b4aae"
+SCHOOLS_COMMIT = "c0297e4"
 DERIVED = "infra/immigration-fiscal/historical_backcast_2026_09_20/derived"
 NAMES = ("backcast_annual.csv", "backcast_windows.csv")
+PARTS = ("case_parts_windows.csv", "case_parts_annual.csv")
+DEFAULT_NAMES = NAMES + PARTS
 
 
 def rebuild(tmp_path: Path, *args: str) -> None:
@@ -32,16 +34,26 @@ def rebuild(tmp_path: Path, *args: str) -> None:
     assert run.returncode == 0, run.stderr[-2000:]
 
 
-@pytest.mark.parametrize("case, commit", [("sept24", SEPT24_COMMIT), ("sept26", SEPT26_COMMIT)])
+@pytest.mark.parametrize("case, commit", [("sept24", SEPT24_COMMIT), ("sept26", SEPT26_COMMIT),
+                                          ("sept26_schools", SCHOOLS_COMMIT)])
 def test_old_case_rebuilds_committed_files(tmp_path, case, commit):
     rebuild(tmp_path, "--case", case)
     committed = {n: subprocess.run(["git", "show", f"{commit}:{DERIVED}/{n}"], cwd=ROOT, capture_output=True,
                                    check=True).stdout for n in NAMES}
     differ = [n for n in NAMES if (tmp_path / n).read_bytes() != committed[n]]
     assert not differ, differ
+    assert not any((tmp_path / n).exists() for n in PARTS)
+
+
+def test_case_components_rebuild(tmp_path):
+    run = subprocess.run(["node", str(HERE / "case_components.cjs"), "--out-dir", str(tmp_path)], cwd=ROOT,
+                         capture_output=True, text=True)
+    assert run.returncode == 0, run.stdout[-2000:] + run.stderr[-2000:]
+    name = "case_components_sept27.json"
+    assert (tmp_path / name).read_bytes() == (HERE / "derived" / name).read_bytes()
 
 
 def test_default_rebuilds_derived(tmp_path):
     rebuild(tmp_path)
-    differ = [n for n in NAMES if (tmp_path / n).read_bytes() != (HERE / "derived" / n).read_bytes()]
+    differ = [n for n in DEFAULT_NAMES if (tmp_path / n).read_bytes() != (HERE / "derived" / n).read_bytes()]
     assert not differ, differ

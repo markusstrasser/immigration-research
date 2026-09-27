@@ -57,6 +57,23 @@ main case with schools at full average cost (`*_schools_full_*` concepts, from
 is one entry in `LATER_CASES`. `--case sept26` and `--case sept24` with `--out-dir DIR` reproduce
 f5b4aae and da2b107 byte for byte (`test_backcast.py`). The whole-budget rules give $2.2432–2.8382tn over 2015–2024 on the schools case, against $1.7316–2.4271tn in the one-year scenario.
 
+Since 2026-09-27 the default run (`--case sept27`) also carries back the main case of that day
+(`*_sept27_*` concepts, from `main_case_long_run_2026_09_27/`). Run `node case_components.cjs` first. It
+writes `derived/case_components_sept27.json`: at each profile's end specifications, the schools case's cost
+there (the base) and each addition. `backcast.py` carries the base with the rules above, on the schools
+case's receipts. Each addition follows its own national series times the group's population-share path:
+
+- the long-run road and park responses, NIPA 3.17 lines 5 and 8;
+- rental assistance, NIPA 3.13 line 4;
+- the enterprise surplus, NIPA 3.1 line 19;
+- the return on public capital, each component's net stock in FA Table 7.1 (the average of two yearends,
+  at a constant real rate). The enterprise components follow line 79 together.
+
+The flat rule holds every part per person. `derived/case_parts_windows.csv` gives each part's window sums,
+`derived/case_parts_annual.csv` each part by year (read by `debt_legacy_2026_09_23`, which compounds the
+cash part only).
+The capital return is an imputed resource cost, not a payment. `--case sept26_schools` reproduces c0297e4.
+
 ## Rules
 
 The ACS self-identified count is scaled by 40.897m / 38.990m to the account's
