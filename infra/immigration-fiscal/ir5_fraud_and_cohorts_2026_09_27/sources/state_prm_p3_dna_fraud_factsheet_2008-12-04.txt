@@ -1,0 +1,8 @@
+State Dept, Bureau of Population, Refugees, and Migration, Fact Sheet "Fraud in the Refugee Family Reunification (Priority Three) Program", Washington DC, December 4, 2008.
+https://2001-2009.state.gov/g/prm/refadm/rls/fs/2008/112760.htm — verbatim excerpts, read 2026-09-27 via Exa fetch (curl returned a block page).
+
+"Q: What rate of fraud did you discover? A: The rate of fraud varied among nationalities and from country to country, and is difficult to establish definitively as many individuals refused to agree to DNA testing. We were, however, only able to confirm all claimed biological relationships in fewer than 20% of cases (family units). In the remaining cases, at least one negative result (fraudulent relationship) was identified, or the individuals refused to be tested."
+"We initially tested a sample of some 500 refugees (primarily Somali and Ethiopian) in Nairobi, Kenya ... After that sample suggested high rates of fraud, we expanded testing to Ethiopia, Uganda, Ghana, Guinea, Gambia and Cote d'Ivoire. Most of the approximately 3,000 refugees tested are from Somalia, Ethiopia, and Liberia"
+"It is important to note that the initial DNA testing was limited to members of families applying for the P-3 program, and not between the applicants and the anchor relative in the United States."
+"Since October 1, 2003, some 36,000 people have arrived from Africa through the P-3 program."
+"In locations where we have no evidence of fraud -- Bangkok, Cairo, Havana, Ho Chi Minh City, Istanbul, Kathmandu, Moscow, and Vienna -- the small number of AORs that were submitted and cleared prior to March 2008 are being processed."

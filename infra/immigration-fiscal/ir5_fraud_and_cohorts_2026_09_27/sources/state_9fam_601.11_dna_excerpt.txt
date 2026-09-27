@@ -1,0 +1,13 @@
+9 FAM 601.11 (U) Visas and DNA — verbatim excerpts as read 2026-09-27 via Exa fetch of https://fam.state.gov/fam/09FAM/09FAM060111.html (CT:VISA-1276; 05-12-2021)
+
+9 FAM 601.11-1(A) a.(2): "Only accept test results reporting a 99.5 percent or greater degree of certainty with respect to paternity/maternity as sufficient to support a biological relationship between a parent and child in visa cases."
+
+9 FAM 601.11-1(B) a.(2): "DNA technology is the only non-documentary method accepted for proof of a biological relationship. However, due to the expense, complexity, and logistical delays inherent in parentage testing, genetic testing should be used only if no other credible proof (documentation, photos, etc.) of the relationship exists. ... Note that you may recommend DNA testing but may not require it."
+
+9 FAM 601.11-1(B) b.(1): "You may not request DNA testing in an attempt to disprove a relationship."
+
+9 FAM 601.11-1(C): "When USCIS does not find enough documentary evidence to approve a Form I-130 the officer may request further proof of the relationship. Much like our own standards, USCIS officers may suggest DNA testing, but they may not require it."
+
+9 FAM 601.11-1(C)(3): "CA and USCIS will use that information to help reconcile DNA collection volume reports each fiscal year."  [volume reports exist internally; none published — searched, not found]
+
+9 FAM 601.11-1(C)(4): "If a petition has been approved by USCIS, but DNA testing performed at the suggestion of post has disproven the biological relationship, return the petition to USCIS with all the supporting derogatory evidence in a consular return memorandum."

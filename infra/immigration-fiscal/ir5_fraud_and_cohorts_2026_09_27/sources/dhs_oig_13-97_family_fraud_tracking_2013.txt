@@ -1,0 +1,385 @@
+     Department of Homeland Security
+     ��������������������������
+
+
+ U.S. Citizenship and Immigration Services’ Tracking
+and Monitoring of Potentially Fraudulent Petitions and
+ Applications for Family-Based Immigration Benefits
+
+
+
+
+OIG-13-97                                    June 2013
+                         OFFICE OF INSPECTOR GENERAL
+                             Department of Homeland Security
+                            Washington, DC 20528 / www.oig.dhs.gov
+
+
+                                            June 12, 2013
+
+MEMORANDUM FOR:               The Honorable Alejandro Mayorkas
+                              Director
+                              U.S. Citizenship and Immigration Services
+
+FROM:                         Charles K. Edwards
+                              Deputy Inspector General
+
+SUBJECT:                      U.S. Citizenship and Immigration Services’ Tracking and
+                              Monitoring of Potentially Fraudulent Petitions and
+                              Applications for Family-Based Immigration Benefits
+
+Attached for your information is our final letter report, U.S. Citizenship and Immigration
+Services’ Tracking and Monitoring of Potentially Fraudulent Petitions and Applications
+for Family-Based Immigration Benefits. We incorporated the formal comments from the
+U.S. Citizenship and Immigration Services in the final report.
+
+The report contains one recommendation aimed at improving procedures to record,
+update, and monitor fraud-related information. Your office concurred with the
+recommendation. As prescribed by the Department of Homeland Security Directive
+077-01, Follow-Up and Resolution for Office of Inspector General Report
+Recommendations, within 90 days of the date of this memorandum, please provide our
+office with a written response that includes your (1) agreement or disagreement,
+(2) corrective action plan, and (3) target completion date for each recommendation.
+Also, please include responsible parties and any other supporting documentation
+necessary to inform us about the current status of the recommendation. Until your
+response is received and evaluated, the recommendations will be considered open and
+unresolved.
+
+Consistent with our responsibility under the Inspector General Act, we are providing
+copies of our report to appropriate congressional committees with oversight and
+appropriation responsibility over the Department of Homeland Security. We will post
+the report on our website for public dissemination.
+
+Major contributors to this report are Brad Mosher, Audit Manager; Chris Chamberlain,
+Auditor; Elaine Ferguson, Auditor; Richard Joyce, Auditor; Keith Lutgen, Auditor;
+Matt Noll, Auditor; Katrina Bynes, Referencer; and Kelly Herberger, Communications
+Analyst.
+
+Please call me with any questions, or your staff may contact Anne L. Richards, Assistant
+Inspector General for Audits, at (202) 254-4100.
+
+Attachment
+                                OFFICE OF INSPECTOR GENERAL
+                                      Department of Homeland Security
+
+
+   Background
+   In the Department of Homeland Security (DHS), U.S. Citizenship and Immigration
+   Services (USCIS) oversees lawful immigration to the United States. U.S. immigration law
+   grants permanent resident status to aliens who legally marry a U.S. citizen or lawful
+   permanent resident and to certain aliens who are family members of U.S. citizens or
+   lawful permanent residents. Immigration benefits may lead to the right to apply for and
+   receive Social Security and Medicare benefits and food stamps, and the opportunity to
+   sponsor alien spouses and relatives for permanent residency.
+
+   We performed this audit to determine whether USCIS recorded information about
+   adjudicated family-based petitions and applications suspected of being fraudulent
+   according to agency policy requirements and in a manner that deterred immigration
+   fraud.
+
+   U.S. citizens or lawful permanent residents who petition to sponsor a qualifying family
+   member, including a spouse, must file a PetitionfforfAlienfRelative (Form I-130) with
+   USCIS.1 USCIS officers adjudicate I-130 petitions at field offices or service centers.
+   Through the I-130 adjudication process, USCIS must validate that the petitioner is a
+   U.S. citizen or lawful permanent resident. When the petitioner is sponsoring an alien
+   spouse, the petitioner must establish that the marriage is valid. For petitioners
+   sponsoring relatives, USCIS must determine the validity of the relationship before
+   approving the I-130 petition.
+
+   Approval of an I-130 petition grants an alien immediate relative already residing in the
+   United States the ability to apply for permanent residence by filing an Applicationftof
+   RegisterfPermanentfResidenceforfAdjustfStatus (Form I-485). An alien spouse or alien
+   immediate relative who has an approved I-130 petition and is residing outside the
+   United States may apply at a U.S. embassy or consulate for an immigrant visa to live in
+   the United States. USCIS offices process all I-130 petitions and I-485 applications filed
+   concurrently.
+
+   According to USCIS policy, I-130 petitions and I-485 applications suspected of being
+   fraudulent are to be referred to the USCIS Fraud Detection and National Security
+   Directorate (FDNS) for further investigation. FDNS personnel are located in every
+   domestic USCIS service center, as well as in district, field, and asylum offices and in
+   certain overseas offices; they report to field management in field offices and service
+
+   1
+     U.S. citizens may apply for their husband or wife or their married or unmarried children. If they are at
+   least 21 years of age, they may also petition for parents, brothers, or sisters. Lawful permanent residents
+   may apply for their husband or wife and unmarried children, regardless of age.
+
+
+www.oig.dhs.gov                                         2                                           OIG-13-97
+                               OFFICE OF INSPECTOR GENERAL
+                                    Department of Homeland Security
+
+   centers. Once they complete their investigation, FDNS officers return the petition or
+   application to adjudicators with a Statement of Findings (SOF) summarizing their work
+   and identifying one of the following results: (1) Fraud Found; (2) Fraud Not Found; or
+   (3) Inconclusive. Adjudicators consider the SOF when deciding whether to grant
+   immigration benefits.
+
+   USCIS initially reviews I-130 petitions for aliens located overseas who wish to obtain a
+   visa to live in the United States. USCIS then forwards approved I-130 petitions to a
+   Department of State consular officer, who conducts an interview to determine eligibility
+   of the alien into the United States. The Department of State sends petitions that are
+   suspected of or found to be fraudulent back to a USCIS service center as consular
+   returns. USCIS policy requires that all consular returns suspected of or determined to
+   be fraudulent be returned to the originating service center and routed to FDNS for
+   investigation and creation of a case file in the FDNS-Data System (FDNS-DS) and in TECS,
+   when applicable.2 USCIS may either reaffirm or revoke petitions suspected of being
+   fraudulent. When a USCIS adjudicator reaffirms a petition, the original petition is
+   returned to Department of State with a cover letter explaining why the petition was
+   reaffirmed. When an adjudicator revokes a petition, the Department of State can no
+   longer issue a visa.
+
+   Results of Audit
+   USCIS has procedures to track and monitor documentation related to petitions and
+   applications for family-based immigration benefits suspected of being fraudulent.
+   However, once family-based immigration petitions and applications were investigated
+   and adjudicated, fraud-related data were not always recorded and updated in
+   appropriate electronic databases to ensure their accuracy, completeness, and reliability.
+   Specifically, FDNS personnel did not record in appropriate electronic databases all
+   petitions and applications denied, revoked, or rescinded because of fraud. Supervisors
+   also did not review the data entered into the databases to monitor case resolution.
+   Without accurate data and adequate supervisory review, USCIS may have limited its
+   ability to track, monitor, and identify inadmissible aliens, and to detect and deter
+   immigration benefit fraud.
+
+   USCIS procedures require FDNS personnel to record cases of identified immigration
+   fraud in TECS. USCIS uses TECS to record cases of suspected or identified immigration
+   fraud, as well as aliens inadmissible to the United States. The system is linked to DHS
+
+
+   2
+    TECS, formerly called The Treasury Enforcement Communications System, is now referred to only by its
+   acronym.
+
+
+www.oig.dhs.gov                                      3                                         OIG-13-97
+                                 OFFICE OF INSPECTOR GENERAL
+                                      Department of Homeland Security
+
+   law enforcement facilities worldwide and allows other Federal, State, and local entities
+   to access the data.
+
+   FDNS did not record all cases of identified fraud in TECS. For example, nationwide from
+   fiscal year (FY) 2008 through FY 2011, USCIS denied or revoked 2,557 family-based I-130
+   petitions for fraud. Of these petitions, 622 were associated with an FDNS finding of
+   fraud, but 302 (49 percent) did not have corresponding TECS records. In the same period,
+   at the four offices we evaluated, 6 (21 percent) of 29 family-based I-130 petitions
+   associated with an FDNS finding of fraud did not have corresponding TECS records.
+
+   For the same period, nationwide, USCIS denied or rescinded 2,961 family-based I-485
+   applications for fraud. Of these applications, 522 were associated with an FDNS finding
+   of fraud, but 247 (47 percent) did not have corresponding TECS records. A review of
+   data from the same period at the four offices we evaluated showed that 3 (11 percent)
+   of 28 family-based I-485 applications denied or rescinded for fraud had no TECS records.
+   Table 1 shows the total number of family-based I-130 petitions and I-485 applications
+   with an FDNS finding of fraud that were denied, revoked, or rescinded, as well as the
+   number and percentage of corresponding TECS records.
+
+   Table 1. TECS Records for Family-based Immigration Petitions and
+   Applications With an FDNS Finding of Fraud That Were Denied, Revoked, or Rescinded
+                                   FYs 2008–2011
+    Petition/Application Total With FDNS      TECS Record     No TECS Record
+            Type           Finding of Fraud
+                            (Fraud Found)
+       National I-130            622           320 (51.4%)      302 (48.6%)
+        Local* I-130              29           23 (79.3%)        6 (20.7%)
+
+        National I-485                   522                  275 (52.7%)   247 (47.3%)
+         Local* I-485                     28                  25 (89.3%)     3 (10.7%)
+   Source: DHS OIG analysis of USCIS data.
+   *Local refers to the four offices that we evaluated.
+
+   At the four offices we evaluated, supervisors in adjudications and FDNS units did not
+   monitor database entries to determine whether fraud cases had been properly recorded.
+
+   Conclusion
+   Not following USCIS’ established procedures to record, update, and monitor fraud-
+   related information in databases may have increased the risk that aliens committing
+
+
+
+www.oig.dhs.gov                                           4                               OIG-13-97
+                           OFFICE OF INSPECTOR GENERAL
+                               Department of Homeland Security
+
+   fraud were granted immigration benefits or given additional opportunities to apply for
+   benefits. Accurate immigration and law enforcement database records would enable
+   USCIS to improve its ability to track, monitor, and deter fraud.
+
+   Recommendation
+   We recommend that the Director, U.S. Citizenship and Immigration Services:
+
+   Clarify and enforce policies and procedures to ensure that TECS records are created and
+   updated for all identified cases of immigration benefit fraud.
+
+   Management Comments and OIG Analysis
+   Recommendation: USCIS concurred with the recommendation. Management indicated
+   that it has (1) reviewed its existing procedural guidance that governs the creation and
+   maintenance of TECS records; (2) determined that, to focus greater attention on TECS
+   policies and procedures, it will remove TECS guidance from the current Fraud Detection
+   Standard Operating Procedure and issue separate guidance on TECS; and (3) drafted the
+   enhanced TECS guidance. USCIS plans to issue the enhanced TECS guidance within 30
+   days.
+
+   OIG Analysis: USCIS’ planned corrective actions are responsive to the recommendation.
+   This recommendation will remain open and resolved until we receive documented
+   support that USCIS has issued the enhanced TECS guidance.
+
+
+
+
+www.oig.dhs.gov                               5                                   OIG-13-97
+                            OFFICE OF INSPECTOR GENERAL
+                                Department of Homeland Security
+
+
+   Appendix A
+   Objective, Scope, and Methodology
+   The Department of Homeland Security (DHS) Office of Inspector General (OIG) was
+   established by the HomelandfSecurityfActfoff2002 (Public Law 107-296) by amendment
+   to the InspectorfGeneralfActfoff1978. This is one of a series of audit, inspection, and
+   special reports prepared as part of our oversight responsibilities to promote economy,
+   efficiency, and effectiveness within the Department.
+
+   The objective of our audit was to determine whether USCIS recorded information about
+   adjudicated family-based petitions and applications suspected of being fraudulent
+   according to agency policy requirements and in a manner that deterred immigration
+   fraud. To accomplish our objective, we assessed USCIS’ efforts to process, evaluate, and
+   respond to family-based petitions and applications with suspected immigration benefit
+   fraud that were adjudicated between October 1, 2007, and September 30, 2011.
+
+   We obtained and reviewed all pertinent Federal, Departmental, and USCIS-specific
+   regulations, policies, procedures, and internal controls governing the processing and
+   adjudication of family-based petitions and applications.
+
+   We reviewed I-130 petitions and I-485 applications denied, revoked, or rescinded by
+   USCIS adjudicators between FYs 2008 and 2011 at the offices we visited. The purpose of
+   the review was to determine whether the petitions, applications, and consular returns
+   had been recorded according to established USCIS’ policies. We limited USCIS office
+   visits to Baltimore, MD; Mt. Laurel, NJ; Philadelphia, PA; Washington, DC; and the
+   Vermont Service Center in St. Albans, VT.
+
+   We relied on computer-processed USCIS data that contained information on family-
+   based petitions from FYs 2008 through 2011. We conducted a limited review through
+   physical observation of the process used to update these systems to ensure that the
+   data were sufficiently reliable for use in meeting our audit objective. In developing our
+   tests, we worked with personnel from USCIS’ Office of Performance and Quality, Office
+   of Policy and Strategy Field Operations Directorate, Service Center Operations
+   Directorate, and FDNS.
+
+   Tracking and Monitoring Test
+
+   Positive TECS matches were based on a match of both name and date of birth for the
+   petitioner, beneficiary, or applicant. Using a total of 1,838 Form I-130 and Form I-485
+   receipts with a matching FDNS-DS record, we identified instances in which at least one
+
+
+www.oig.dhs.gov                                6                                    OIG-13-97
+                           OFFICE OF INSPECTOR GENERAL
+                                Department of Homeland Security
+
+   of the subjects involved with the petition or application had a corresponding TECS
+   record. To verify the data, we checked the date of birth used to query TECS against the
+   date of birth returned with a matching name.
+
+   We interviewed USCIS officials from FDNS, Service Center Operations, Field Office
+   Operations, Office of Policy and Strategy, Office of Performance and Quality, Office of
+   Chief Counsel, and Office of General Counsel.
+
+   We conducted this performance audit between August 2011 and January 2012 pursuant
+   to the InspectorfGeneralfActfoff1978, as amended, and according to generally accepted
+   government auditing standards. Those standards require that we plan and perform the
+   audit to obtain sufficient, appropriate evidence to provide a reasonable basis for our
+   findings and conclusions based upon our audit objectives. We believe that the evidence
+   obtained provides a reasonable basis for our findings and conclusions based upon our
+   audit objectives.
+
+   We appreciate the cooperation by USCIS management and staff in providing the
+   information and access necessary to accomplish this review.
+
+
+
+
+www.oig.dhs.gov                                7                                    OIG-13-97
+                   OFFICE OF INSPECTOR GENERAL
+                      Department of Homeland Security
+
+
+   Appendix B
+   Management Comments to the Draft Letter Report
+
+
+
+
+www.oig.dhs.gov                    8                    OIG-13-97
+                  OFFICE OF INSPECTOR GENERAL
+                    Department of Homeland Security
+
+
+
+
+www.oig.dhs.gov                  9                    OIG-13-97
+                           OFFICE OF INSPECTOR GENERAL
+                               Department of Homeland Security
+
+
+Appendix 
+Report Distribution
+Department of Homeland Security
+
+Secretary
+Deputy Secretary
+Chief of Staff
+Deputy Chief of Staff
+General Counsel
+Executive Secretary
+Director, GAO/OIG Liaison Office
+Assistant Secretary for Office of Policy
+Assistant Secretary for Office of Public Affairs
+Assistant Secretary for Office of Legislative Affairs
+Acting Chief Privacy Officer
+
+U.S. Citizenship and Immigration Services
+
+USCIS Audit Liaison
+
+Office of Management and Budget
+
+Chief, Homeland Security Branch
+DHS OIG Budget Examiner
+
+Congress
+
+Congressional Oversight and Appropriations Committees, as appropriate
+
+
+
+
+www.oig.dhs.gov                               10                        OIG-13-97
+ADDITIONAL INFORMATION AND COPIES
+
+To obtain additional copies of this document, please call us at (202) 254-4100, fax your
+request to (202) 254-4305, or e-mail your request to our Office of Inspector General
+(OIG) Office of Public Affairs at: DHS-OIG.OfficePublicAffairs@oig.dhs.gov.
+
+For additional information, visit our website at: www.oig.dhs.gov, or follow us on Twitter
+at: @dhsoig.
+
+OIG HOTLINE
+
+To expedite the reporting of alleged fraud, waste, abuse or mismanagement, or any
+other kinds of criminal or noncriminal misconduct relative to Department of Homeland
+Security (DHS) programs and operations, please visit our website at www.oig.dhs.gov
+and click on the red tab titled "Hotline" to report. You will be directed to complete and
+submit an automated DHS OIG Investigative Referral Submission Form. Submission
+through our website ensures that your complaint will be promptly received and
+reviewed by DHS OIG.
+
+Should you be unable to access our website, you may submit your complaint in writing
+to: DHS Office of Inspector General, Attention: Office of Investigations Hotline, 245
+Murray Drive, SW, Building 410/Mail Stop 2600, Washington, DC, 20528; or you may
+call 1 (800) 323-8603; or fax it directly to us at (202) 254-4297.
+
+The OIG seeks to protect the identity of each writer and caller.
+
