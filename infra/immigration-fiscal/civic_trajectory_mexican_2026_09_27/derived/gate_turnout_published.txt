@@ -1,0 +1,4 @@
+CPS November turnout and registration, citizens 18+, lane vs Census P20 Table 1 (Census convention; tolerance 1 point on turnout)
+  2020: voted 66.77 vs 66.8 (-0.03); registered 72.67 vs 72.7 (-0.03); weighted citizens 231,593k  PASS  [SOURCE: https://www2.census.gov/programs-surveys/cps/tables/p20/585/table01.xlsx]
+  2022: voted 52.20 vs 52.2 (+0.00); registered 69.12 vs 69.1 (+0.02); weighted citizens 233,546k  PASS  [SOURCE: https://www2.census.gov/programs-surveys/cps/tables/p20/586/vote01_2022.xlsx]
+  2024: voted 65.35 vs 65.3 (+0.05); registered 73.62 vs 73.6 (+0.02); weighted citizens 236,138k  PASS  [SOURCE: https://www2.census.gov/programs-surveys/cps/tables/p20/587/vote01_2024.xlsx]

@@ -1,0 +1,95 @@
+source,measure,generation,n,estimate,se,adjustment,units,rate,white_rate,rho_from_previous,rho_se,rho_g1_to_g3plus
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),volunteered,G1,2699,-19.8315,0.859657,raw,points,10.9058,30.6801,,,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),volunteered,G2,1895,-15.815,1.02706,raw,points,15.055,30.6801,0.797469,0.0622666,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),volunteered,G3+,1981,-11.1639,1.11765,raw,points,19.7298,30.6801,0.705906,0.084237,0.562938
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),volunteered,G1,2699,-10.2404,0.958267,"age, sex, education, family income, year",points,10.9058,30.6801,,,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),volunteered,G2,1895,-9.11031,1.0217,"age, sex, education, family income, year",points,15.055,30.6801,0.889644,0.129942,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),volunteered,G3+,1981,-5.97653,1.05654,"age, sex, education, family income, year",points,19.7298,30.6801,0.656018,0.13734,0.583623
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),volunteered,G1,2699,-9.19659,1.03115,"age, sex, education, family income, year, state, metro",points,10.9058,30.6801,,,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),volunteered,G2,1895,-7.95136,1.12493,"age, sex, education, family income, year, state, metro",points,15.055,30.6801,0.864599,0.156077,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),volunteered,G3+,1981,-5.24061,1.11115,"age, sex, education, family income, year, state, metro",points,19.7298,30.6801,0.659083,0.167996,0.569843
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),gave_over_25,G1,2565,-27.7962,1.15383,raw,points,29.3824,57.1549,,,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),gave_over_25,G2,1805,-29.1425,1.31251,raw,points,28.0375,57.1549,1.04843,0.0642161,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),gave_over_25,G3+,1841,-18.9805,1.6313,raw,points,38.1998,57.1549,0.6513,0.0631966,0.682845
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),gave_over_25,G1,2565,-11.0813,1.30257,"age, sex, education, family income, year",points,29.3824,57.1549,,,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),gave_over_25,G2,1805,-12.2623,1.33145,"age, sex, education, family income, year",points,28.0375,57.1549,1.10658,0.177076,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),gave_over_25,G3+,1841,-7.61158,1.51693,"age, sex, education, family income, year",points,38.1998,57.1549,0.62073,0.140876,0.686885
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),gave_over_25,G1,2565,-8.58406,1.38269,"age, sex, education, family income, year, state, metro",points,29.3824,57.1549,,,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),gave_over_25,G2,1805,-9.44873,1.40041,"age, sex, education, family income, year, state, metro",points,28.0375,57.1549,1.10073,0.240937,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),gave_over_25,G3+,1841,-5.60028,1.43093,"age, sex, education, family income, year, state, metro",points,38.1998,57.1549,0.592702,0.175075,0.652405
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),veteran (men born 1956+),G1,1191,-7.89573,0.344399,raw,points,0.800768,8.68426,,,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),veteran (men born 1956+),G2,849,-3.8595,0.813906,raw,points,4.8237,8.68426,0.488809,0.105264,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),veteran (men born 1956+),G3+,815,-2.00427,1.00697,raw,points,6.69107,8.68426,0.519308,0.282959,0.253842
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),veteran (men born 1956+),G1,1191,-6.34589,0.430885,"age, sex, education, family income, year",points,0.800768,8.68426,,,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),veteran (men born 1956+),G2,849,-1.30876,0.829702,"age, sex, education, family income, year",points,4.8237,8.68426,0.206237,0.131494,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),veteran (men born 1956+),G3+,815,-0.562567,1.02402,"age, sex, education, family income, year",points,6.69107,8.68426,,,0.0886506
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),veteran (men born 1956+),G1,1191,-6.15421,0.494314,"age, sex, education, family income, year, state, metro",points,0.800768,8.68426,,,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),veteran (men born 1956+),G2,849,-0.970659,0.871844,"age, sex, education, family income, year, state, metro",points,4.8237,8.68426,0.157723,0.142232,
+CPS Sept 2021+2023 (service_by_ses_2026_09_23),veteran (men born 1956+),G3+,815,-0.759417,1.05254,"age, sex, education, family income, year, state, metro",points,6.69107,8.68426,,,0.123398
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),voted,G1,2953,-24.0515,1.11559,raw,points,42.6312,66.6628,,,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),voted,G2,5834,-23.4588,0.820606,raw,points,43.2238,66.6628,0.975357,0.0566637,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),voted,G3+,5932,-19.2843,0.900184,raw,points,47.3984,66.6628,0.82205,0.0479519,0.801792
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),voted,G1,2953,-11.5041,1.12037,"age, sex, education, family income",points,42.6312,66.6628,,,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),voted,G2,5834,-8.79626,0.77394,"age, sex, education, family income",points,43.2238,66.6628,0.76462,0.100355,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),voted,G3+,5932,-8.88936,0.837722,"age, sex, education, family income",points,47.3984,66.6628,1.01058,0.130292,0.772712
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),voted,G1,2953,-12.6778,1.12944,"age, sex, education, family income, state, metro",points,42.6312,66.6628,,,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),voted,G2,5834,-9.7925,0.813505,"age, sex, education, family income, state, metro",points,43.2238,66.6628,0.772413,0.0940887,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),voted,G3+,5932,-9.43873,0.868172,"age, sex, education, family income, state, metro",points,47.3984,66.6628,0.963873,0.119464,0.744509
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),registered,G1,2953,-21.2695,1.16239,raw,points,54.8002,76.0574,,,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),registered,G2,5834,-18.7589,0.845217,raw,points,57.3108,76.0574,0.881962,0.0624689,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),registered,G3+,5932,-15.8569,0.934974,raw,points,60.2128,76.0574,0.8453,0.0627278,0.745523
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),registered,G1,2953,-10.0424,1.14757,"age, sex, education, family income",points,54.8002,76.0574,,,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),registered,G2,5834,-7.78361,0.817566,"age, sex, education, family income",points,57.3108,76.0574,0.775075,0.120301,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),registered,G3+,5932,-8.03692,0.880057,"age, sex, education, family income",points,60.2128,76.0574,1.03254,0.156673,0.800299
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),registered,G1,2953,-10.2487,1.17574,"age, sex, education, family income, state, metro",points,54.8002,76.0574,,,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),registered,G2,5834,-7.99873,0.873444,"age, sex, education, family income, state, metro",points,57.3108,76.0574,0.780463,0.123612,
+CPS Nov 2020/2022/2024 (this lane; G1 = naturalized citizens),registered,G3+,5932,-8.09438,0.901926,"age, sex, education, family income, state, metro",points,60.2128,76.0574,1.01196,0.157878,0.789796
+"CPS ASEC 2022-2025 (this lane), married 25-54",endogamy: Mexican-origin spouse in excess of random matching within state,G1,8819,68.3754,0.502711,raw,points,90.1943,,,,
+"CPS ASEC 2022-2025 (this lane), married 25-54",endogamy: Mexican-origin spouse in excess of random matching within state,G2,3685,47.0997,1.08925,raw,points,72.3404,,0.68884,0.0167161,
+"CPS ASEC 2022-2025 (this lane), married 25-54",endogamy: Mexican-origin spouse in excess of random matching within state,G3+,3912,31.487,1.25209,raw,points,55.8667,,0.668518,0.0307527,0.460502
+"CPS ASEC 2022-2025 (this lane), married 25-54",endogamy: Mexican-origin spouse in excess of random matching within state,G1,8819,64.9843,0.589018,age_sex_educ_year,points,90.1943,,,,
+"CPS ASEC 2022-2025 (this lane), married 25-54",endogamy: Mexican-origin spouse in excess of random matching within state,G2,3685,50.2688,1.03002,age_sex_educ_year,points,72.3404,,0.773553,0.0173318,
+"CPS ASEC 2022-2025 (this lane), married 25-54",endogamy: Mexican-origin spouse in excess of random matching within state,G3+,3912,36.0905,1.23534,age_sex_educ_year,points,55.8667,,0.71795,0.0286414,0.555373
+"CPS ASEC 2022-2025 (this lane), married 25-54",endogamy: Mexican-origin spouse in excess of random matching within state,G1,8819,64.4654,0.571278,age_sex_educ_state_year,points,90.1943,,,,
+"CPS ASEC 2022-2025 (this lane), married 25-54",endogamy: Mexican-origin spouse in excess of random matching within state,G2,3685,51.2483,1.06595,age_sex_educ_state_year,points,72.3404,,0.794974,0.0179734,
+"CPS ASEC 2022-2025 (this lane), married 25-54",endogamy: Mexican-origin spouse in excess of random matching within state,G3+,3912,36.3144,1.25667,age_sex_educ_state_year,points,55.8667,,0.708597,0.0286097,0.563316
+GSS (norms_gen_2026_09_18),"civil-liberties tolerance, Stouffer 15 items (scale points)",G1,9043,-2.46581,0.256478,raw,scale,,,,,
+GSS (norms_gen_2026_09_18),"civil-liberties tolerance, Stouffer 15 items (scale points)",G3+,8957,-0.5272,0.259515,raw,scale,,,,,0.213805
+GSS (norms_gen_2026_09_18),"civil-liberties tolerance, Stouffer 15 items (scale points)",G1,9611,-1.36809,0.267747,"age, age^2, years of education, log family income, year",scale,,,,,
+GSS (norms_gen_2026_09_18),"civil-liberties tolerance, Stouffer 15 items (scale points)",G2,9611,-1.42202,0.262905,"age, age^2, years of education, log family income, year",scale,,,1.03942,0.279839,
+GSS (norms_gen_2026_09_18),"civil-liberties tolerance, Stouffer 15 items (scale points)",G3+,9611,-0.341648,0.227304,"age, age^2, years of education, log family income, year",scale,,,0.240255,0.165902,0.249726
+GSS (norms_gen_2026_09_18),confidence in 13 institutions (1-3 scale),G1,11803,0.0919472,0.018194,raw,scale,,,,,
+GSS (norms_gen_2026_09_18),confidence in 13 institutions (1-3 scale),G3+,11729,0.0315507,0.0238133,raw,scale,,,,,0.343139
+GSS (norms_gen_2026_09_18),confidence in 13 institutions (1-3 scale),G1,12595,0.125656,0.0183312,"age, age^2, years of education, log family income, year",scale,,,,,
+GSS (norms_gen_2026_09_18),confidence in 13 institutions (1-3 scale),G2,12595,0.0205561,0.0242351,"age, age^2, years of education, log family income, year",scale,,,0.16359,0.19434,
+GSS (norms_gen_2026_09_18),confidence in 13 institutions (1-3 scale),G3+,12595,0.029407,0.0215814,"age, age^2, years of education, log family income, year",scale,,,,,0.234028
+GSS (norms_gen_2026_09_18),'a great deal' of confidence in the military (share),G1,13759,-10.4443,2.57615,raw,points,,,,,
+GSS (norms_gen_2026_09_18),'a great deal' of confidence in the military (share),G3+,13645,-7.88289,2.85251,raw,points,,,,,0.754758
+GSS (norms_gen_2026_09_18),'a great deal' of confidence in the military (share),G1,14684,-15.2825,2.66392,"age, age^2, years of education, log family income, year",points,,,,,
+GSS (norms_gen_2026_09_18),'a great deal' of confidence in the military (share),G2,14684,-11.3551,3.23962,"age, age^2, years of education, log family income, year",points,,,0.743011,0.248416,
+GSS (norms_gen_2026_09_18),'a great deal' of confidence in the military (share),G3+,14684,-7.81182,2.91437,"age, age^2, years of education, log family income, year",points,,,0.687959,0.323106,0.511161
+GSS (norms_gen_2026_09_18),obedience ranked top-2 child value (share),G1,12981,24.1693,2.64177,raw,points,,,,,
+GSS (norms_gen_2026_09_18),obedience ranked top-2 child value (share),G3+,12890,5.43334,2.76734,raw,points,,,,,0.224803
+GSS (norms_gen_2026_09_18),obedience ranked top-2 child value (share),G1,13888,16.1143,2.72563,"age, age^2, years of education, log family income, year",points,,,,,
+GSS (norms_gen_2026_09_18),obedience ranked top-2 child value (share),G2,13888,2.62264,2.37498,"age, age^2, years of education, log family income, year",points,,,0.162752,0.149932,
+GSS (norms_gen_2026_09_18),obedience ranked top-2 child value (share),G3+,13888,4.44328,2.43056,"age, age^2, years of education, log family income, year",points,,,,,0.275735
+GSS (norms_gen_2026_09_18),government should reduce income differences (7-point),G1,13776,0.895851,0.108229,raw,scale,,,,,
+GSS (norms_gen_2026_09_18),government should reduce income differences (7-point),G3+,13660,0.543083,0.102476,raw,scale,,,,,0.60622
+GSS (norms_gen_2026_09_18),government should reduce income differences (7-point),G1,14711,0.58971,0.11034,"age, age^2, years of education, log family income, year",scale,,,,,
+GSS (norms_gen_2026_09_18),government should reduce income differences (7-point),G2,14711,0.579419,0.109691,"age, age^2, years of education, log family income, year",scale,,,0.982548,0.261529,
+GSS (norms_gen_2026_09_18),government should reduce income differences (7-point),G3+,14711,0.31669,0.100012,"age, age^2, years of education, log family income, year",scale,,,0.546566,0.201245,0.537027
+ANES (norms_gen_2026_09_18),political violence at least 'a little' justified (share),G1,9340,20.2524,4.71772,"age, age^2, years of education, log family income, year",points,,,,,
+ANES (norms_gen_2026_09_18),political violence at least 'a little' justified (share),G2,9340,9.50104,4.18424,"age, age^2, years of education, log family income, year",points,,,0.469132,0.233727,
+ANES (norms_gen_2026_09_18),political violence at least 'a little' justified (share),G3+,9340,13.6969,4.5565,"age, age^2, years of education, log family income, year",points,,,1.44162,0.795662,0.676309
+ACS 2022-2024 (service_by_ses_2026_09_23),"ever_active_duty, men 18_49 (ratio to US-born NH white)",US-born (G2+G3+),157635,0.786293,0.0123688,raw,ratio,5.51716,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"ever_active_duty, men 18_49 (ratio to US-born NH white)",G1,72464,0.193771,0.00768152,raw,ratio,1.35963,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"ever_active_duty, men 18_49 (ratio to US-born NH white)",G1 naturalized,16331,0.525994,0.0249672,raw,ratio,3.69073,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"ever_active_duty, women 18_49 (ratio to US-born NH white)",US-born (G2+G3+),152925,0.974763,0.0285954,raw,ratio,1.25294,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"ever_active_duty, women 18_49 (ratio to US-born NH white)",G1,65041,0.300371,0.024305,raw,ratio,0.38609,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"ever_active_duty, women 18_49 (ratio to US-born NH white)",G1 naturalized,18555,0.775378,0.084344,raw,ratio,0.996654,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"now_active_duty, men 18_24 (ratio to US-born NH white)",US-born (G2+G3+),53386,0.976802,0.0345565,raw,ratio,2.33709,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"now_active_duty, men 18_24 (ratio to US-born NH white)",G1,7496,0.187009,0.0377003,raw,ratio,0.447437,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"now_active_duty, men 18_24 (ratio to US-born NH white)",G1 naturalized,1156,0.847645,0.21663,raw,ratio,2.02807,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"now_active_duty, women 18_24 (ratio to US-born NH white)",US-born (G2+G3+),50485,1.42814,0.132864,raw,ratio,0.59742,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"now_active_duty, women 18_24 (ratio to US-born NH white)",G1,5905,0.700195,0.247838,raw,ratio,0.292906,,,,
+ACS 2022-2024 (service_by_ses_2026_09_23),"now_active_duty, women 18_24 (ratio to US-born NH white)",G1 naturalized,1072,2.91892,1.37465,raw,ratio,1.22104,,,,
