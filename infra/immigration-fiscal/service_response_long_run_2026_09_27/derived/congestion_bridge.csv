@@ -1,0 +1,7 @@
+band_end,variant,geography,kappa,highway_response,key_share,lane_cut,congestion_central_bn,factorial_min_bn,factorial_max_bn,change_vs_b1_central_bn
+low,network follows spending,uniform (account key),1,0.7325468834,0.08061009943,0.05905067711,13.99256286,2.014861875,32.04934036,-5.170148247
+low,network fixed (bound),uniform (account key),0,0.7325468834,0.08061009943,0,19.16271111,8.047943973,35.25151422,0
+low,network follows spending,local (group's population share),1,0.7325468834,0.08061009943,0.05905067711,14.69342393,2.560465446,32.63498845,-4.46928718
+high,network follows spending,uniform (account key),1,1,0.08061009943,0.08061009943,12.01805628,-0.9235617873,30.82829831,-7.144654827
+high,network fixed (bound),uniform (account key),0,1,0.08061009943,0,19.16271111,8.047943973,35.25151422,0
+high,network follows spending,local (group's population share),1,1,0.08061009943,0.08061009943,12.84776916,0.2607757698,31.58257883,-6.31494195

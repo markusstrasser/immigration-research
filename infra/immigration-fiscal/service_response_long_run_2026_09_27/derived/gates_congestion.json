@@ -1,0 +1,34 @@
+{
+ "gates": [
+  {
+   "gate": "UMR positive control passes",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "B1 central (lanes fixed) reproduces arms_summary.csv",
+   "passed": true,
+   "detail": "19.162711"
+  },
+  {
+   "gate": "B1 factorial range reproduces arms_summary.csv",
+   "passed": true,
+   "detail": "8.0479\u201335.2515"
+  },
+  {
+   "gate": "keyed proportional variant (lanes shrink by the 0.0810 key) reproduces arms_grid.csv",
+   "passed": true,
+   "detail": "11.978123"
+  },
+  {
+   "gate": "highway subfunctions are S&L and federal",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "congestion with shrinking lanes is at most the fixed-lane B1",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

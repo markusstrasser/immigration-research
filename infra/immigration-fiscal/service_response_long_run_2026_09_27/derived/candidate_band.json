@@ -1,0 +1,399 @@
+{
+ "main_case": {
+  "band_bn": [
+   258.48849537573153,
+   291.9547733238526
+  ],
+  "end_specifications": [
+   {
+    "method": "b_hotdeck_union_matched",
+    "low_end": 48,
+    "high_end": 11
+   },
+   {
+    "method": "b_matched_over_pooled",
+    "low_end": 48,
+    "high_end": 11
+   }
+  ]
+ },
+ "candidate": {
+  "band_bn": [
+   277.92899381532845,
+   321.58722264319397
+  ],
+  "rule": "64 specifications x {low, high} responses; low end = minimum at the low responses, high end = maximum at the high responses, each averaged over the two fill-in methods",
+  "end_specifications": [
+   {
+    "method": "b_hotdeck_union_matched",
+    "low_end": {
+     "index": 48,
+     "responses": "low",
+     "allocation": "shared",
+     "normalization": "gdp",
+     "share": 0.7153278156243373,
+     "school": 1,
+     "gg": 0.6000461560720316,
+     "uc": "uninsured_use_low",
+     "justice": "use"
+    },
+    "high_end": {
+     "index": 11,
+     "responses": "high",
+     "allocation": "personal",
+     "normalization": "cash",
+     "share": 0.8651608840454027,
+     "school": 1,
+     "gg": 0.8503957662020014,
+     "uc": "uninsured_use_high",
+     "justice": "use"
+    }
+   },
+   {
+    "method": "b_matched_over_pooled",
+    "low_end": {
+     "index": 48,
+     "responses": "low",
+     "allocation": "shared",
+     "normalization": "gdp",
+     "share": 0.7153278156243373,
+     "school": 1,
+     "gg": 0.6000461560720316,
+     "uc": "uninsured_use_low",
+     "justice": "use"
+    },
+    "high_end": {
+     "index": 11,
+     "responses": "high",
+     "allocation": "personal",
+     "normalization": "cash",
+     "share": 0.8651608840454027,
+     "school": 1,
+     "gg": 0.8503957662020014,
+     "uc": "uninsured_use_high",
+     "justice": "use"
+    }
+   }
+  ],
+  "line_responses": {
+   "low": {
+    "economic_affairs_services": 0.38401510917541615,
+    "recreation_culture": 0.8561746355869265
+   },
+   "high": {
+    "economic_affairs_services": 0.638645582432123,
+    "recreation_culture": 1
+   }
+  }
+ },
+ "band_at_low_responses_throughout_bn": [
+  277.92899381532845,
+  311.39527176344956
+ ],
+ "band_at_high_responses_throughout_bn": [
+  288.1209446950729,
+  321.58722264319397
+ ],
+ "move_at_fixed_specifications_bn": {
+  "low_end_spec_low_responses": 19.440498439596922,
+  "high_end_spec_high_responses": 29.63244931934139,
+  "low_end_spec_high_responses": 29.63244931934139,
+  "high_end_spec_low_responses": 19.44049843959695
+ },
+ "contributions_at_end_specifications": [
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_highways",
+   "level": "federal",
+   "subfunction": "Highways",
+   "national_bn": 1.827,
+   "response_low": 0,
+   "response_high": 1,
+   "group_amount_low_end_bn": 0.14727465164964654,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 0.14727465164964654,
+   "added_high_end_bn": 0.14727465164964654
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_air",
+   "level": "federal",
+   "subfunction": "Air",
+   "national_bn": 30.604,
+   "response_low": 0,
+   "response_high": 1,
+   "group_amount_low_end_bn": 2.4669914828055726,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 2.4669914828055726,
+   "added_high_end_bn": 2.4669914828055726
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_water",
+   "level": "federal",
+   "subfunction": "Water",
+   "national_bn": 18.209,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": 1.4678293004315344,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 1.4678293004315344,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_transit_and_railroad",
+   "level": "federal",
+   "subfunction": "Transit and railroad",
+   "national_bn": 0.094,
+   "response_low": 0,
+   "response_high": 1,
+   "group_amount_low_end_bn": 0.007577349345958825,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 0.007577349345958825,
+   "added_high_end_bn": 0.007577349345958825
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_space",
+   "level": "federal",
+   "subfunction": "Space",
+   "national_bn": 21.23,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": 1.711352410794743,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 1.711352410794743,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_general_economic_and_labor_affairs",
+   "level": "federal",
+   "subfunction": "General economic and labor affairs",
+   "national_bn": 35.431,
+   "response_low": 0,
+   "response_high": 0.8503957662020014,
+   "group_amount_low_end_bn": 2.856096432730501,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 2.856096432730501,
+   "added_high_end_bn": 2.4288123142586575
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_agriculture",
+   "level": "federal",
+   "subfunction": "Agriculture",
+   "national_bn": 17.54,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": 1.4139011439161466,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 1.4139011439161466,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_energy",
+   "level": "federal",
+   "subfunction": "Energy",
+   "national_bn": 23.406,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": 1.8867599871437473,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 1.8867599871437473,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_natural_resources",
+   "level": "federal",
+   "subfunction": "Natural resources",
+   "national_bn": 32.036,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": 2.5824251451823077,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 2.5824251451823077,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "fed_postal_service",
+   "level": "federal",
+   "subfunction": "Postal service",
+   "national_bn": -0.177,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": -0.014267987598241615,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": -0.014267987598241615,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "sl_highways",
+   "level": "state_local",
+   "subfunction": "Highways",
+   "national_bn": 201.005,
+   "response_low": 0.739205240969296,
+   "response_high": 1,
+   "group_amount_low_end_bn": 16.203033034940994,
+   "added_low_end_bn": 11.97736693902702,
+   "group_amount_high_end_bn": 16.203033034940994,
+   "added_high_end_bn": 16.203033034940994
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "sl_transit_and_railroad",
+   "level": "state_local",
+   "subfunction": "Transit and railroad",
+   "national_bn": 0,
+   "response_low": 0.739205240969296,
+   "response_high": 1,
+   "group_amount_low_end_bn": 0,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 0,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "sl_general_economic_and_labor_affairs",
+   "level": "state_local",
+   "subfunction": "General economic and labor affairs",
+   "national_bn": 29.358,
+   "response_low": 0.8503957662020014,
+   "response_high": 0.8503957662020014,
+   "group_amount_low_end_bn": 2.366551298921906,
+   "added_low_end_bn": 2.012505205103036,
+   "group_amount_high_end_bn": 2.366551298921906,
+   "added_high_end_bn": 2.012505205103036
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "sl_agriculture",
+   "level": "state_local",
+   "subfunction": "Agriculture",
+   "national_bn": 10.007,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": 0.8066652649469144,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 0.8066652649469144,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "sl_energy",
+   "level": "state_local",
+   "subfunction": "Energy",
+   "national_bn": 0,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": 0,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 0,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "sl_natural_resources",
+   "level": "state_local",
+   "subfunction": "Natural resources",
+   "national_bn": 31.99,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": 2.5787170806087527,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 2.5787170806087527,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "economic_affairs_services",
+   "id": "sl_other_commercial_activities",
+   "level": "state_local",
+   "subfunction": "Other (commercial activities)",
+   "national_bn": -0.625,
+   "response_low": 0,
+   "response_high": 0,
+   "group_amount_low_end_bn": -0.05038131214068368,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": -0.05038131214068368,
+   "added_high_end_bn": 0
+  },
+  {
+   "line": "recreation_culture",
+   "id": "fed_recreation_and_culture",
+   "level": "federal",
+   "subfunction": "Recreation and culture",
+   "national_bn": 5.43,
+   "response_low": 0,
+   "response_high": 1,
+   "group_amount_low_end_bn": 0.6362622844622744,
+   "added_low_end_bn": 0,
+   "group_amount_high_end_bn": 0.6362622844622744,
+   "added_high_end_bn": 0.6362622844622744
+  },
+  {
+   "line": "recreation_culture",
+   "id": "sl_recreation_and_culture",
+   "level": "state_local",
+   "subfunction": "Recreation and culture",
+   "national_bn": 48.901,
+   "response_low": 0.9512448441969144,
+   "response_high": 1,
+   "group_amount_low_end_bn": 5.729992996775264,
+   "added_low_end_bn": 5.450626295466897,
+   "group_amount_high_end_bn": 5.729992996775264,
+   "added_high_end_bn": 5.729992996775264
+  }
+ ],
+ "sensitivities_at_end_specifications": {
+  "marginal_r_equals_b": {
+   "label": "measured responses taken as r = b instead of the finite removal (capped responses stay 1)",
+   "delta_bn": [
+    -0.24169199384359444,
+    -0.04384812931036678
+   ]
+  },
+  "within_states_uncapped": {
+   "label": "within-state readings above 1 priced at the high end (highways 1.4225, parks 1.3759): the unpriced upside",
+   "delta_bn": [
+    0,
+    10.346790327168907
+   ]
+  },
+  "federal_fixed_at_high_end": {
+   "label": "federal subfunctions held fixed at the high end too",
+   "delta_bn": [
+    0,
+    -5.68691808252211
+   ]
+  },
+  "across_states_at_high_end": {
+   "label": "S&L highways and parks at the across-state reading at the high end (no within-state reading)",
+   "delta_bn": [
+    0,
+    -5.219816903607076
+   ]
+  },
+  "held_at_zero_at_1": {
+   "label": "every subfunction held at 0 (water, space, agriculture, energy, natural resources, postal, commercial) at 1 instead",
+   "delta_bn": [
+    12.383001033285222,
+    12.383001033285222
+   ]
+  }
+ },
+ "group_amounts_at_end_specifications_bn": {
+  "low": {
+   "economic_affairs_services": 36.4305252836798,
+   "recreation_culture": 6.366255281237539
+  },
+  "high": {
+   "economic_affairs_services": 36.4305252836798,
+   "recreation_culture": 6.366255281237539
+  }
+ }
+}

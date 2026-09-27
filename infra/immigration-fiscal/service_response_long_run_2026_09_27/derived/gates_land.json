@@ -1,0 +1,36 @@
+{
+ "gates": [
+  {
+   "gate": "gazetteer file is the fetched one",
+   "passed": true,
+   "detail": "02ef546e4c4f"
+  },
+  {
+   "gate": "every panel state has land area",
+   "passed": true,
+   "detail": "50 states, 350 rows"
+  },
+  {
+   "gate": "US land area is the gazetteer's 3.53m sq mi (50 states + DC + PR)",
+   "passed": true,
+   "detail": "3.536m sq mi"
+  },
+  {
+   "gate": "highways_nontoll: reproduces the scaling test's year-effects estimate",
+   "passed": true,
+   "detail": "0.726607"
+  },
+  {
+   "gate": "parks: reproduces the scaling test's year-effects estimate",
+   "passed": true,
+   "detail": "0.948157"
+  },
+  {
+   "gate": "admin: reproduces the scaling test's year-effects estimate",
+   "passed": true,
+   "detail": "0.824117"
+  }
+ ],
+ "corr_log_pop_log_land": 0.1982243622258399,
+ "gazetteer_sha256": "02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef"
+}

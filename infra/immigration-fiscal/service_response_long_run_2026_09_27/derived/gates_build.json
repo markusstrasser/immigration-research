@@ -1,0 +1,584 @@
+{
+ "gates": [
+  {
+   "gate": "BEA Section 3 workbook is the account's pinned vintage",
+   "passed": true,
+   "detail": "69b5c7aefb38"
+  },
+  {
+   "gate": "account line economic_affairs_services is Table 3.17 line 5",
+   "passed": true,
+   "detail": "451935"
+  },
+  {
+   "gate": "account line recreation_culture is Table 3.17 line 8",
+   "passed": true,
+   "detail": "54331"
+  },
+  {
+   "gate": "federal + state-local consumption = government, both lines",
+   "passed": true,
+   "detail": "180200+271735, 5430+48901"
+  },
+  {
+   "gate": "3.16 S&L economic affairs = consumption + social benefits + subsidies (exact)",
+   "passed": true,
+   "detail": "273825 = 271735 + 1377 + 713"
+  },
+  {
+   "gate": "S&L economic-affairs benefits are Table 3.12's employment and training (exact)",
+   "passed": true,
+   "detail": "1377"
+  },
+  {
+   "gate": "S&L economic-affairs subsidies are all transportation",
+   "passed": true,
+   "detail": "713 of 713"
+  },
+  {
+   "gate": "3.16 S&L transit and railroad equals the S&L transportation subsidy (no S&L transit consumption)",
+   "passed": true,
+   "detail": "713"
+  },
+  {
+   "gate": "S&L subfunctions miss the published level total by rounding only",
+   "passed": true,
+   "detail": "+1 ($m), put on highways"
+  },
+  {
+   "gate": "3.16 federal subfunctions add to federal economic affairs",
+   "passed": true,
+   "detail": "239536"
+  },
+  {
+   "gate": "consolidation reproduces Table 3.17's grants where published",
+   "passed": true,
+   "detail": "Space 0/0, General 7712/7713, Agriculture 1522/1522, Energy 1116/1116, Natural 8813/8813"
+  },
+  {
+   "gate": "consolidation splits the transportation grant by mode",
+   "passed": true,
+   "detail": "highways 0, air 0, water 175, transit 100 vs 276"
+  },
+  {
+   "gate": "grants by subfunction add to the published total",
+   "passed": true,
+   "detail": "19439"
+  },
+  {
+   "gate": "federal subsidies by subfunction add to the published total",
+   "passed": true,
+   "detail": "29745"
+  },
+  {
+   "gate": "the unallocated federal residual is the economic-affairs benefits plus other current transfers",
+   "passed": true,
+   "detail": "10152 = 7497 benefits + 2655 other"
+  },
+  {
+   "gate": "the other transfers are federal only (consolidated residual equals the federal one)",
+   "passed": true,
+   "detail": "consolidated 2654, federal 2655"
+  },
+  {
+   "gate": "federal subfunctions add to the published level total exactly",
+   "passed": true,
+   "detail": "180200"
+  },
+  {
+   "gate": "3.15.5 = consumption + gross investment at each level (rounding)",
+   "passed": true,
+   "detail": "federal Economic +0, state_local Economic +0, federal Recreation +0, state_local Recreation -1"
+  },
+  {
+   "gate": "assignment 2 respects investment >= 0 (general economic and labor affairs must hold at least gel_min)",
+   "passed": true,
+   "detail": "residual 10152 >= minimum 5274 ($m)"
+  },
+  {
+   "gate": "assignment 1 respects investment >= 0 (transit and railroad must take at least transit_min of the subsidy)",
+   "passed": true,
+   "detail": "subsidy 10109 >= minimum 9631 ($m)"
+  },
+  {
+   "gate": "implied gross investment is not negative in any subfunction (rounding)",
+   "passed": true,
+   "detail": "min 463 ($m)"
+  },
+  {
+   "gate": "S&L recreation current expenditure is all consumption",
+   "passed": true,
+   "detail": "48901"
+  },
+  {
+   "gate": "subfunctions add to economic_affairs_services exactly",
+   "passed": true,
+   "detail": "451935 = 451935 ($m)"
+  },
+  {
+   "gate": "subfunctions add to recreation_culture exactly",
+   "passed": true,
+   "detail": "54331 = 54331 ($m)"
+  },
+  {
+   "gate": "s is the brief's 0.120245 (40.896574m / 340.110988m)",
+   "passed": true,
+   "detail": "0.120244789"
+  },
+  {
+   "gate": "positive control: r(b) reproduces the main case's general-government high response",
+   "passed": true,
+   "detail": "r(0.842) = 0.8503957662"
+  },
+  {
+   "gate": "scaling estimates are the memo's table (0.727/1.464 highways, 0.948/1.412 parks, 0.824/0.471 administration)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "every subfunction has a rule",
+   "passed": true,
+   "detail": "19 rules, 19 rows"
+  },
+  {
+   "gate": "the preferred key's share is the same for both allocations (uncorrected model)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "blended responses lie in [0, 1]",
+   "passed": true,
+   "detail": "{\"economic_affairs_services\": {\"low\": 0.384015, \"high\": 0.638646}, \"recreation_culture\": {\"low\": 0.856175, \"high\": 1.0}}"
+  }
+ ],
+ "bea_cells": {
+  "T31200-A:41": {
+   "label": "Employment and training",
+   "series": "B1604C",
+   "million": 1377
+  },
+  "T31505-A:108": {
+   "label": "Recreation and culture",
+   "series": "W672RC",
+   "million": 63318
+  },
+  "T31505-A:52": {
+   "label": "Economic affairs",
+   "series": "W620RC",
+   "million": 257118
+  },
+  "T31505-A:54": {
+   "label": "Highways",
+   "series": "W626RC",
+   "million": 4968
+  },
+  "T31505-A:55": {
+   "label": "Air",
+   "series": "W627RC",
+   "million": 35101
+  },
+  "T31505-A:56": {
+   "label": "Water",
+   "series": "W628RC",
+   "million": 20949
+  },
+  "T31505-A:57": {
+   "label": "Transit and railroad",
+   "series": "W629RC",
+   "million": 572
+  },
+  "T31505-A:58": {
+   "label": "Space",
+   "series": "W631RC",
+   "million": 41899
+  },
+  "T31505-A:60": {
+   "label": "General economic and labor affairs",
+   "series": "W621RC",
+   "million": 40309
+  },
+  "T31505-A:61": {
+   "label": "Agriculture",
+   "series": "W622RC",
+   "million": 20071
+  },
+  "T31505-A:62": {
+   "label": "Energy",
+   "series": "W623RC",
+   "million": 45712
+  },
+  "T31505-A:63": {
+   "label": "Natural resources",
+   "series": "W624RC",
+   "million": 46007
+  },
+  "T31505-A:64": {
+   "label": "Postal service",
+   "series": "W630RC",
+   "million": 1530
+  },
+  "T31505-A:67": {
+   "label": "Recreation and culture",
+   "series": "W635RC",
+   "million": 7487
+  },
+  "T31505-A:88": {
+   "label": "Economic affairs",
+   "series": "W655RC",
+   "million": 498169
+  },
+  "T31505-A:90": {
+   "label": "Highways",
+   "series": "W661RC",
+   "million": 345038
+  },
+  "T31505-A:93": {
+   "label": "Transit and railroad",
+   "series": "W664RC",
+   "million": 33763
+  },
+  "T31505-A:95": {
+   "label": "General economic and labor affairs",
+   "series": "W656RC",
+   "million": 29821
+  },
+  "T31505-A:96": {
+   "label": "Agriculture",
+   "series": "W657RC",
+   "million": 10475
+  },
+  "T31505-A:97": {
+   "label": "Energy",
+   "series": "W658RC",
+   "million": 17776
+  },
+  "T31505-A:98": {
+   "label": "Natural resources",
+   "series": "W659RC",
+   "million": 40832
+  },
+  "T31505-A:99": {
+   "label": "Other",
+   "series": "W686RC",
+   "million": 134
+  },
+  "T31600-A:100": {
+   "label": "Other",
+   "series": "G16099",
+   "million": -625
+  },
+  "T31600-A:105": {
+   "label": "Recreation and culture",
+   "series": "G16106",
+   "million": 48901
+  },
+  "T31600-A:13": {
+   "label": "Economic affairs",
+   "series": "G16013",
+   "million": 493922
+  },
+  "T31600-A:15": {
+   "label": "Highways",
+   "series": "G16019",
+   "million": 202831
+  },
+  "T31600-A:16": {
+   "label": "Air",
+   "series": "G16020",
+   "million": 30604
+  },
+  "T31600-A:17": {
+   "label": "Water",
+   "series": "G16021",
+   "million": 18209
+  },
+  "T31600-A:18": {
+   "label": "Transit and railroad",
+   "series": "G16022",
+   "million": 10916
+  },
+  "T31600-A:19": {
+   "label": "Space",
+   "series": "G16024",
+   "million": 21230
+  },
+  "T31600-A:21": {
+   "label": "General economic and labor affairs",
+   "series": "G16014",
+   "million": 87477
+  },
+  "T31600-A:22": {
+   "label": "Agriculture",
+   "series": "G16015",
+   "million": 35368
+  },
+  "T31600-A:23": {
+   "label": "Energy",
+   "series": "G16016",
+   "million": 24063
+  },
+  "T31600-A:24": {
+   "label": "Natural resources",
+   "series": "G16017",
+   "million": 64026
+  },
+  "T31600-A:54": {
+   "label": "Economic affairs",
+   "series": "G16052",
+   "million": 239536
+  },
+  "T31600-A:56": {
+   "label": "Highways",
+   "series": "G16058",
+   "million": 1827
+  },
+  "T31600-A:57": {
+   "label": "Air",
+   "series": "G16059",
+   "million": 30604
+  },
+  "T31600-A:58": {
+   "label": "Water",
+   "series": "G16060",
+   "million": 18384
+  },
+  "T31600-A:59": {
+   "label": "Transit and railroad",
+   "series": "G16061",
+   "million": 10303
+  },
+  "T31600-A:60": {
+   "label": "Space",
+   "series": "G16063",
+   "million": 21230
+  },
+  "T31600-A:62": {
+   "label": "General economic and labor affairs",
+   "series": "G16053",
+   "million": 64454
+  },
+  "T31600-A:63": {
+   "label": "Agriculture",
+   "series": "G16054",
+   "million": 26883
+  },
+  "T31600-A:64": {
+   "label": "Energy",
+   "series": "G16055",
+   "million": 25179
+  },
+  "T31600-A:65": {
+   "label": "Natural resources",
+   "series": "G16056",
+   "million": 40849
+  },
+  "T31600-A:66": {
+   "label": "Postal service",
+   "series": "G16062",
+   "million": -177
+  },
+  "T31600-A:69": {
+   "label": "Recreation and culture",
+   "series": "G16067",
+   "million": 7004
+  },
+  "T31600-A:91": {
+   "label": "Economic affairs",
+   "series": "G16089",
+   "million": 273825
+  },
+  "T31600-A:93": {
+   "label": "Highways",
+   "series": "G16095",
+   "million": 201004
+  },
+  "T31600-A:94": {
+   "label": "Transit and railroad",
+   "series": "G16098",
+   "million": 713
+  },
+  "T31600-A:96": {
+   "label": "General economic and labor affairs",
+   "series": "G16090",
+   "million": 30735
+  },
+  "T31600-A:97": {
+   "label": "Agriculture",
+   "series": "G16091",
+   "million": 10007
+  },
+  "T31600-A:98": {
+   "label": "Energy",
+   "series": "G16092",
+   "million": 0
+  },
+  "T31600-A:99": {
+   "label": "Natural resources",
+   "series": "G16093",
+   "million": 31990
+  },
+  "T31700-A:101": {
+   "label": "Economic affairs",
+   "series": "G17100",
+   "million": 713
+  },
+  "T31700-A:102": {
+   "label": "Transportation",
+   "series": "G17102",
+   "million": 713
+  },
+  "T31700-A:103": {
+   "label": "Energy",
+   "series": "G17101",
+   "million": 0
+  },
+  "T31700-A:119": {
+   "label": "Economic affairs",
+   "series": "G17119",
+   "million": 76918
+  },
+  "T31700-A:122": {
+   "label": "Recreation and culture",
+   "series": "G17122",
+   "million": 2057
+  },
+  "T31700-A:128": {
+   "label": "Economic affairs",
+   "series": "G17128",
+   "million": 226434
+  },
+  "T31700-A:131": {
+   "label": "Recreation and culture",
+   "series": "G17131",
+   "million": 14418
+  },
+  "T31700-A:15": {
+   "label": "Economic affairs",
+   "series": "G17015",
+   "million": 180200
+  },
+  "T31700-A:18": {
+   "label": "Recreation and culture",
+   "series": "G17018",
+   "million": 5430
+  },
+  "T31700-A:24": {
+   "label": "Economic affairs",
+   "series": "G17024",
+   "million": 271735
+  },
+  "T31700-A:29": {
+   "label": "Recreation and culture",
+   "series": "G17027",
+   "million": 48901
+  },
+  "T31700-A:35": {
+   "label": "Economic affairs",
+   "series": "G17033",
+   "million": 8874
+  },
+  "T31700-A:44": {
+   "label": "Economic affairs",
+   "series": "G17042",
+   "million": 7497
+  },
+  "T31700-A:47": {
+   "label": "Recreation and culture",
+   "series": "G17045",
+   "million": 798
+  },
+  "T31700-A:5": {
+   "label": "Economic affairs",
+   "series": "G17005",
+   "million": 451935
+  },
+  "T31700-A:53": {
+   "label": "Economic affairs",
+   "series": "G17051",
+   "million": 1377
+  },
+  "T31700-A:61": {
+   "label": "Economic affairs",
+   "series": "G17059",
+   "million": 19439
+  },
+  "T31700-A:62": {
+   "label": "Transportation",
+   "series": "G17064",
+   "million": 276
+  },
+  "T31700-A:63": {
+   "label": "Space",
+   "series": "G17065",
+   "million": 0
+  },
+  "T31700-A:65": {
+   "label": "General economic and labor affairs",
+   "series": "G17060",
+   "million": 7713
+  },
+  "T31700-A:66": {
+   "label": "Agriculture",
+   "series": "G17061",
+   "million": 1522
+  },
+  "T31700-A:67": {
+   "label": "Energy",
+   "series": "G17062",
+   "million": 1116
+  },
+  "T31700-A:68": {
+   "label": "Natural resources",
+   "series": "G17063",
+   "million": 8813
+  },
+  "T31700-A:71": {
+   "label": "Recreation and culture",
+   "series": "G17068",
+   "million": 763
+  },
+  "T31700-A:8": {
+   "label": "Recreation and culture",
+   "series": "G17008",
+   "million": 54331
+  },
+  "T31700-A:80": {
+   "label": "Economic affairs",
+   "series": "G17079",
+   "million": 30459
+  },
+  "T31700-A:91": {
+   "label": "Economic affairs",
+   "series": "G17091",
+   "million": 29745
+  },
+  "T31700-A:92": {
+   "label": "Transportation",
+   "series": "G17096",
+   "million": 10109
+  },
+  "T31700-A:94": {
+   "label": "General economic and labor affairs",
+   "series": "G17092",
+   "million": 11158
+  },
+  "T31700-A:95": {
+   "label": "Agriculture",
+   "series": "G17093",
+   "million": 7821
+  },
+  "T31700-A:96": {
+   "label": "Energy",
+   "series": "LA000213",
+   "million": 657
+  },
+  "T31700-A:97": {
+   "label": "Natural resources",
+   "series": "G17095",
+   "million": 0
+  }
+ },
+ "unallocated_federal_m": 10152,
+ "gel_minimum_m": 5274,
+ "transit_subsidy_minimum_m": 9631
+}

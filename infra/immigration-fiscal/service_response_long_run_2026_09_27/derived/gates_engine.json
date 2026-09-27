@@ -1,0 +1,69 @@
+{
+ "gates": [
+  {
+   "gate": "the main case has 64 specifications",
+   "passed": true,
+   "detail": "64"
+  },
+  {
+   "gate": "the lane's cost function equals the package's cost() at every specification and method (old responses)",
+   "passed": true,
+   "detail": "exact"
+  },
+  {
+   "gate": "the band at the old responses is the adopted main case (summary.json) to 1e-6",
+   "passed": true,
+   "detail": "258.488495 / 291.954773"
+  },
+  {
+   "gate": "the old end specifications are the published ones (48 and 11)",
+   "passed": true,
+   "detail": "[[48,11],[48,11]]"
+  },
+  {
+   "gate": "split-line model = blended line responses (old)",
+   "passed": true,
+   "detail": "max |diff| 0.00e+0"
+  },
+  {
+   "gate": "split-line model = blended line responses (low)",
+   "passed": true,
+   "detail": "max |diff| 0.00e+0"
+  },
+  {
+   "gate": "split-line model = blended line responses (high)",
+   "passed": true,
+   "detail": "max |diff| 1.14e-13"
+  },
+  {
+   "gate": "package cost + response x group amount = engine (low)",
+   "passed": true,
+   "detail": "max |diff| 5.68e-14"
+  },
+  {
+   "gate": "package cost + response x group amount = engine (high)",
+   "passed": true,
+   "detail": "max |diff| 1.14e-13"
+  },
+  {
+   "gate": "cost rises with the responses at every specification (low < high)",
+   "passed": true,
+   "detail": "old < low < high"
+  },
+  {
+   "gate": "the candidate's end specifications are the main case's (48 low, 11 high)",
+   "passed": true,
+   "detail": "low 48,48, high 11,11"
+  },
+  {
+   "gate": "band move equals the move at the fixed end specifications (same end specifications)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "subfunction contributions add to the move at each end",
+   "passed": true,
+   "detail": "19.4405 / 29.6324"
+  }
+ ]
+}
