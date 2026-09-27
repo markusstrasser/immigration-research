@@ -31,6 +31,7 @@ P_CRIME_FIRSTGEN_AUDIT = FISCAL / "crime_cost_firstgen_2026_09_18/derived/audit.
 P_STATUS = FISCAL / "status_impute_2026_09_16/RESULT.md"
 P_ATTR_BOUNDS = FISCAL / "mexican_origin_population_total_2026_09_19/derived/arm3_correction_bounds.csv"
 P_ATTR_FISCAL = FISCAL / "mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication.csv"
+P_ATTR_SPLIT = FISCAL / "mexican_origin_population_total_2026_09_19/derived/arm5_generation_split.csv"
 P_PRONATAL = FISCAL / "pronatal_equivalence_2026_09_18/derived/lifetime_equivalence.csv"
 
 # Senior pricing (2026-09-26): this lane's own sourced parameters and state shares
@@ -43,7 +44,7 @@ UNCOMPENSATED_PER_UNINSURED_ALL_AGES = 1524.0
 
 ALL_PATHS = [P_ABS_PROFILES, P_ABS_LIFETIME, P_ABS_WATERFALL, P_ALLAGE_PROFILES, P_SURVIVAL,
              P_FERT, P_CRIME_STOCK, P_CRIME_FIRSTGEN, P_CRIME_FIRSTGEN_AUDIT, P_STATUS,
-             P_ATTR_BOUNDS, P_ATTR_FISCAL, P_PRONATAL, P_ABS_COMPONENTS,
+             P_ATTR_BOUNDS, P_ATTR_FISCAL, P_ATTR_SPLIT, P_PRONATAL, P_ABS_COMPONENTS,
              P_SENIOR_PRICING, P_SENIOR_STATES, P_SENIOR_MEPS]
 
 # Single-age bands, copied from ledger_absolute_2026_09_17/lifetime.py BANDS so the
@@ -369,23 +370,53 @@ def crime_rates() -> dict:
 
 
 # -------------------------------------------------------------------- attrition
-def attrition() -> dict:
-    """Third-plus identification rate and the attriter's retained share of the
-    fiscal gap, both read from the population lane."""
+ATTR_CENTRAL_BOUND = "4th-plus identifies at the measured 3rd-generation rate"
+ATTR_C3_CENTRAL = "pooled with CPS 2022-25 (central)"
+
+
+def attrition(convention: str = "generation_split", c3_source: str = ATTR_C3_CENTRAL) -> dict:
+    """Third-plus identification rate and the share of the self-identified third-plus
+    fiscal gap to white that attriters keep, read from the population lane's arm 5.
+
+    `generation_split` (central since 2026-09-28): attriters lost at the third-generation
+    rate keep 1 - C3 of the gap, later losses keep all of it (carryover_identity_2026_09_27
+    RESULT section 2). `years_convention`: every attriter keeps what the Duncan-Trejo
+    years-of-schooling share leaves, a sensitivity. Both divide by the self-identified
+    third-plus gap; until 2026-09-28 the divisor was the union's, which understated what
+    attriters keep (0.1995 instead of 0.2756 of the gap)."""
     b = pd.read_csv(P_ATTR_BOUNDS)
-    central = b[b.assumption == "4th-plus identifies at the measured 3rd-generation rate"]
+    central = b[b.assumption == ATTR_CENTRAL_BOUND]
     if len(central) != 1:
         raise ValueError("[BLOCKED] attrition central bound row not unique")
     ident = float(central.iloc[0].fourth_plus_identification_rate)
-    f = pd.read_csv(P_ATTR_FISCAL)
-    row = f[(f.population_assumption == "4th-plus identifies at the measured 3rd-generation rate")
-            & (f.attriter_characteristics.str.startswith("Duncan-Trejo selectivity"))]
-    if len(row) != 1:
-        raise ValueError("[BLOCKED] attrition fiscal row not unique")
-    row = row.iloc[0]
-    retained = float(row.attriter_gap_per_person) / float(row.gap_per_person_before)
-    return {"fourth_plus_identification_rate": ident,
+    g3_share = 1.0 - float(central.iloc[0].third_gen_identification_rate)
+    s = pd.read_csv(P_ATTR_SPLIT)
+    s = s[(s.population_assumption == ATTR_CENTRAL_BOUND) & (s.c3_source == c3_source)]
+    if len(s) != 1:
+        raise ValueError("[BLOCKED] attrition split row not unique")
+    s = s.iloc[0]
+    selfid = float(s.selfid_third_plus_gap_per_person)
+    if convention == "generation_split":
+        attr_gap = float(s.g3_rate_attriter_gap_per_person)
+        later_gap = float(s.later_loss_attriter_gap_per_person)
+        rule = {"c3": float(s.c3), "c3_se": float(s.c3_se), "c3_source": c3_source}
+    elif convention == "years_convention":
+        f = pd.read_csv(P_ATTR_FISCAL)
+        row = f[(f.population_assumption == ATTR_CENTRAL_BOUND)
+                & (f.attriter_characteristics.str.startswith("Duncan-Trejo selectivity"))]
+        if len(row) != 1:
+            raise ValueError("[BLOCKED] attrition fiscal row not unique")
+        attr_gap = later_gap = float(row.iloc[0].attriter_gap_per_person)
+        rule = {}
+    else:
+        raise ValueError(f"unknown attrition convention: {convention}")
+    return {"convention": convention,
+            "fourth_plus_identification_rate": ident,
             "attriter_share": 1.0 - ident,
-            "attriter_gap_per_person": float(row.attriter_gap_per_person),
-            "selfid_gap_per_person": float(row.gap_per_person_before),
-            "attriter_retained_share_of_gap": retained}
+            "g3_rate_share": g3_share,
+            "attriter_gap_per_person": attr_gap,
+            "selfid_gap_per_person": selfid,
+            "union_gap_per_person": float(s.union_gap_per_person_before),
+            "attriter_retained_share_of_gap": attr_gap / selfid,
+            "later_loss_retained_share_of_gap": later_gap / selfid,
+            **rule}

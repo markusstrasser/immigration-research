@@ -91,16 +91,19 @@ def founder_profile(profiles, allocation, account, status, senior_rule, penalty,
 
 def g3plus_profile(profiles, allocation, account, convergence, attr):
     """Third-plus descendants. `selfid` uses the CPS third-plus self-ID profile.
-    `attrition_mixed` blends in ethnic attriters, who by the population lane retain
-    only ~20% of the self-ID fiscal gap to white."""
+    `attrition_mixed` blends in ethnic attriters (`inputs.attrition`). Under the central
+    generation-split rule those lost at the third-generation rate keep 1 - C3 (0.22) of the
+    self-ID fiscal gap to white and later losses keep all of it, so only the G3-rate share
+    moves the profile; the years convention gives every attriter 0.28."""
     selfid = I.age_vector(profiles, "mexican_third_plus_selfid", account, allocation)
     if convergence == "selfid":
         return selfid
     white = I.age_vector(profiles, "third_plus_nh_white", account, allocation)
-    retained = attr["attriter_retained_share_of_gap"]
-    attriter = white + retained * (selfid - white)
     share = attr["attriter_share"]
-    return (1.0 - share) * selfid + share * attriter
+    g3 = min(share, attr["g3_rate_share"])
+    closed = (g3 * (1.0 - attr["attriter_retained_share_of_gap"])
+              + (share - g3) * (1.0 - attr["later_loss_retained_share_of_gap"]))
+    return selfid - closed * (selfid - white)
 
 
 # ---------------------------------------------------------------------- lineage
@@ -157,9 +160,13 @@ def lineage(profiles, tables, cfg) -> dict:
     # in calendar year 0, so that is calendar year gen_len - FOUNDER_START_AGE.
     birth = gen_len - FOUNDER_START_AGE
     parent_group = "third_plus_nh_white" if cfg["reference"] else "mexico_born"
+    # Births need a parent alive at `gen_len` (conceptual audit 2026-09-27 §E): the founder
+    # survives from FOUNDER_START_AGE, later parents from birth, on the parent's own table.
+    parent_table, parent_age = table_f, FOUNDER_START_AGE
     gen = 2
     while birth <= HORIZON:
-        n *= multiplier(tfr[parent_group], attribution)
+        lx = parent_table.lx.to_numpy()
+        n *= multiplier(tfr[parent_group], attribution) * float(lx[gen_len] / lx[parent_age])
         if cfg["reference"]:
             prof = I.age_vector(profiles, "third_plus_nh_white", acct, alloc)
             table = tables[mort["white"]]
@@ -180,6 +187,7 @@ def lineage(profiles, tables, cfg) -> dict:
         _, cn = person_stream(prof, table, birth, 0, cr["social"] - cr["corrections"])
         out[f"G{gen}"] = (n, n * f, n * cs, n * ct, n * cn, birth)
         parent_group = group
+        parent_table, parent_age = table, 0
         birth += gen_len
         gen += 1
     return out
@@ -354,6 +362,21 @@ def main() -> None:
                           "crime_social_net_corrections_undiscounted": discount(cn, 0.0, 0.0)})
     pd.DataFrame(brows).to_csv(OUT / "generation_breakdown.csv", index=False)
     print("[written] generation_breakdown.csv")
+    lx = tables["total"].lx.to_numpy()
+    persons = {r["generation"]: r["persons"] for r in brows if r["lineage"] == "mexican_lineage"}
+    g2 = central["tfr"]["mexico_born"] / 2 * lx[GEN_LEN] / lx[FOUNDER_START_AGE]
+    g3 = g2 * central["tfr"]["mexican_second_gen"] / 2 * lx[GEN_LEN] / lx[0]
+    err = max(abs(persons["G2"] - g2), abs(persons["G3"] - g3))
+    checks.append({"check": "births need a living parent at the generation length (audit §E)",
+                   "survival_founder_to_gen_len": float(lx[GEN_LEN] / lx[FOUNDER_START_AGE]),
+                   "survival_birth_to_gen_len": float(lx[GEN_LEN] / lx[0]),
+                   "max_abs_diff_persons": float(err), "pass": bool(err < 1e-12)})
+    checks.append({"check": "generation split: only the G3-rate share closes (later losses keep the gap)",
+                   "g3_rate_share": attr["g3_rate_share"], "attriter_share": attr["attriter_share"],
+                   "pass": bool(attr["later_loss_retained_share_of_gap"] == 1.0
+                                and attr["g3_rate_share"] == attr["attriter_share"])})
+    if not all(c["pass"] for c in checks[-2:]):
+        raise SystemExit(f"[BLOCKED] lineage recurrence or attrition rule check failed: {checks[-2:]}")
 
     # ------------------------------------------------------------ white reference file
     wrows = []
@@ -431,6 +454,16 @@ def main() -> None:
                                            for k, v in parts.items()}
             sens(f"senior rule: statutory bars plus priced care, {regime}, {case}",
                  {**statutory, "senior_addback": vec})
+    # Added 2026-09-28: row 2a now uses the measured generation-split rule; the
+    # years-of-schooling convention it used before (with the corrected self-ID divisor)
+    # and the CPS 2022-26 pooled C3 are kept as sensitivities.
+    attr_years = I.attrition("years_convention")
+    attr_c3_26 = I.attrition(c3_source="pooled with CPS 2022-26 (sensitivity)")
+    sens("2a G4+ mixed profile, years convention (every attriter keeps "
+         f"{attr_years['attriter_retained_share_of_gap']:.4f} of the self-ID gap)",
+         {"convergence": "attrition_mixed", "attr": attr_years})
+    sens(f"2a G4+ mixed profile, generation split with C3 {attr_c3_26['c3']} "
+         "(pooled with CPS 2022-26)", {"convergence": "attrition_mixed", "attr": attr_c3_26})
     legalised = [r["gap_lineage_fiscal"] for r in srows if r["sensitivity"].startswith("2b ")]
     by_name = {r["sensitivity"]: r["gap_lineage_fiscal"] for r in srows}
     stat_gap = by_name["senior rule: statutory bars from 65 (no cash transfers, public medical, "
@@ -459,6 +492,8 @@ def main() -> None:
             "inputs_sha256": I.manifest(),
             "fertility": fert, "unauthorized_penalty": I.unauthorized_penalty(),
             "crime_rates": crime, "attrition": attr, "checks": checks,
+            "attrition_sensitivities": {"years_convention": attr_years,
+                                        "generation_split_c3_cps_2022_26": attr_c3_26},
             "senior_pricing": pricing,
             "interpretation": ("survival-weighted period-profile lineage scenario; not a cohort "
                                "projection, not an admission-policy counterfactual, no general "

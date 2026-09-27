@@ -74,6 +74,28 @@ def main() -> int:
           f"{a.union_M:.3f} / {a.union_pes_M:.3f}")
     check("union rises monotonically as p_eff falls",
           bool((pop.sort_values("p_eff_fourth_plus").union_M.diff().dropna() <= 0).all()))
+    # Generation split: 1 - p3 of the corrected third-plus is lost at the G3 rate in every arm,
+    # the rest of the added persons later; the aggregate adds them at (1 - C3) and 1 of the
+    # self-ID gap.
+    sp = pd.read_csv(P.POP_DIR / "derived/arm5_generation_split.csv")
+    sp = sp[sp.c3_source.str.endswith("(central)")].iloc[0]
+    c3_split, gap3 = float(sp.c3), float(sp.selfid_third_plus_gap_per_person)
+    before = float(pd.read_csv(P.POP_DIR / "derived/arm5_fiscal_implication.csv")
+                   .aggregate_gap_bn_before.iloc[0]) * 1e9
+    worst_n = worst_bn = 0.0
+    for _, r in pop.iterrows():
+        g3r = min(r.added_M, (1 - p3) * r.corrected_third_plus_M)
+        worst_n = max(worst_n, abs(g3r - r.g3_rate_attriters_M),
+                      abs(r.added_M - g3r - r.later_loss_attriters_M))
+        agg = (before + 1e6 * (g3r * gap3 * (1 - c3_split) + (r.added_M - g3r) * gap3)) / 1e9
+        worst_bn = max(worst_bn, abs(agg - r.aggregate_gap_bn_after_split))
+    check("split counts: G3-rate = (1 - p3) x corrected third-plus, later = the rest",
+          worst_n < 2e-7, f"max |diff| {worst_n * 1e6:.2f} persons")
+    check("split aggregate recomputed from counts and the self-ID gap (CSV rounding only)",
+          worst_bn < 0.011, f"max |diff| ${worst_bn:.3f}bn")
+    check("arm (a) under the split is -$6,853 / -$292.7bn",
+          round(a.gap_per_person_after_split) == -6853 and round(a.aggregate_gap_bn_after_split, 1) == -292.7,
+          f"{a.gap_per_person_after_split:,.1f} / {a.aggregate_gap_bn_after_split:.2f}bn")
 
     print("[lineage]")
     lin = P.Lin()
@@ -84,7 +106,7 @@ def main() -> int:
             continue
         up, upL = lin.gap(o, rate, fn=P.L.lineage)
         cp, cpL = lin.gap(o, rate)
-        cf, _ = lin.gap({**o, "attr_for": lin.attr_for(S["a_current"])}, rate)
+        cf, _ = lin.gap({**o, "attr_for": lin.attr_for(S["a_current"], o.get("attr"))}, rate)
         same = all(np.array_equal(upL[g][1], cpL[g][1]) for g in upL) and up == cp == cf
         check(f"copy == upstream lineage(), bitwise: {name}", same)
         if srow is not None:
@@ -92,22 +114,27 @@ def main() -> int:
                   abs(up - float(stored.loc[srow, "gap_lineage_fiscal"])) < 1e-6)
     c0 = lin.gap({}, 0.0, fn=P.L.lineage)[0]
     c3 = lin.gap({}, 0.03, fn=P.L.lineage)[0]
-    check("brief centrals −1,297,150 / −514,635", round(c0) == -1297150 and round(c3) == -514635,
-          f"{c0:,.6f} / {c3:,.6f}")
+    check("centrals after audit §E −1,288,162 / −513,398 (brief: −1,297,150 / −514,635)",
+          round(c0) == -1288162 and round(c3) == -513398, f"{c0:,.6f} / {c3:,.6f}")
     poison = {k: float("nan") for k in lin.attr}
     check("central ignores the attrition inputs (NaN-poisoned attr, same gap)",
           lin.gap({"attr": poison}, 0.0, fn=P.L.lineage)[0] == c0)
 
-    # A flat schedule scales the G4+ blend linearly: new - central = (share_b/share_a)(2a - central)
-    mix = {"convergence": "attrition_mixed"}
-    g2a = lin.gap(mix, 0.0, fn=P.L.lineage)[0]
-    share_a = lin.attr["attriter_share"]
-    share_b = 1 - P.rate(S["b_one_step"], lin.attr["fourth_plus_identification_rate"], 4)
+    # Generation split: later losses keep the whole gap, so no schedule moves row 2a.
+    split_rows = lin_d[lin_d.lineage_row.str.startswith("2a G4+ attrition-corrected")]
+    check("generation split: no schedule moves row 2a (later losses close nothing)",
+          bool((split_rows.delta.abs() < 1e-6).all()), f"max |delta| ${split_rows.delta.abs().max():.2e}")
+    # Years convention: a flat schedule scales the G4+ blend linearly,
+    # new - central = (share_b/share_a)(2a - central).
+    years = {"convergence": "attrition_mixed", "attr": lin.attr_years}
+    g2a = lin.gap(years, 0.0, fn=P.L.lineage)[0]
+    share_a = lin.attr_years["attriter_share"]
+    share_b = 1 - P.rate(S["b_one_step"], lin.attr_years["fourth_plus_identification_rate"], 4)
     pred = c0 + (share_b / share_a) * (g2a - c0)
     got = float(lin_d[(lin_d.arm == "b_one_step")
-                      & (lin_d.lineage_row == "2a G4+ attrition-corrected mixed profile, 0%")].new_gap.iloc[0])
-    check("(b) on 2a equals the linear rescaling of the attrition effect", abs(pred - got) < 1e-6,
-          f"{got:,.2f} vs {pred:,.2f}")
+                      & (lin_d.lineage_row == "2a years convention (sensitivity), 0%")].new_gap.iloc[0])
+    check("years convention: (b) on 2a equals the linear rescaling of the attrition effect",
+          abs(pred - got) < 1e-6, f"{got:,.2f} vs {pred:,.2f}")
 
     print("[arms.csv]")
     check("delta = new − old on every row", bool(np.allclose(arms.new - arms.old, arms.delta, atol=1e-9)))

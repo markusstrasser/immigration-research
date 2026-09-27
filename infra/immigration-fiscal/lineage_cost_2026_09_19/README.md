@@ -66,7 +66,7 @@ diff -rq /tmp/lineage_rerun_ref derived      # must print nothing, rc 0
 | `crime_cost_2026_09_16/crime_cost_by_group.csv` | Crime cost per adult 25-64 per year, routes A1 (BJS stock, includes foreign-born) and A2 (ACS institutional stock, US-born). |
 | `crime_cost_firstgen_2026_09_18/derived/firstgen_cost_weighted.csv` + `audit.json` | Texas arrest-charge route by legal status, converted to a per-adult basis with the lane's own adult shares. |
 | `status_impute_2026_09_16/RESULT.md` | The imputed-unauthorized minus Mexico-born-pooled level difference, parsed from the lane's own table rather than retyped. |
-| `mexican_origin_population_total_2026_09_19/derived/arm3_correction_bounds.csv`, `arm5_fiscal_implication.csv` | Fourth-plus identification rate and the attriter's retained share of the fiscal gap. |
+| `mexican_origin_population_total_2026_09_19/derived/arm3_correction_bounds.csv`, `arm5_fiscal_implication.csv`, `arm5_generation_split.csv` | Fourth-plus identification rate and the share of the self-identified third-plus gap attriters keep: the measured generation split (central since 2026-09-28) and the Duncan-Trejo years convention (sensitivity). |
 | `pronatal_equivalence_2026_09_18/derived/lifetime_equivalence.csv` | Soft triangulation of a second in-repo lifetime construction. |
 
 ## Outputs
@@ -76,7 +76,7 @@ diff -rq /tmp/lineage_rerun_ref derived      # must print nothing, rc 0
 | `derived/lineage_table.csv` | 96 rows: allocation x account x founder status x fertility x attribution x discount. |
 | `derived/generation_breakdown.csv` | Central case, both lineages, persons and dollars per generation. |
 | `derived/white_reference.csv` | The reference lineage on its own, across the same grid. |
-| `derived/sensitivities.csv` | 34 named arms including the three disconfirmation arms. Three arms added 2026-09-25 cross senior eligibility with legal status; the last twelve (added 2026-09-26) price the statutory rule in four regimes and three cases. |
+| `derived/sensitivities.csv` | 36 named arms including the three disconfirmation arms. Three arms added 2026-09-25 cross senior eligibility with legal status; twelve (added 2026-09-26) price the statutory rule in four regimes and three cases; the last two (2026-09-28) carry row 2a's attrition sensitivities. |
 | `derived/senior_state_shares.csv` | `senior_states.py`: state shares by rule and age group, with replicate SEs. |
 | `derived/senior_meps_gradient.csv` | `senior_meps_gradient.py`: mean payments by coverage, group and age, and the five ratios the pricing uses. |
 | `derived/oracle_period_profiles.csv` | 768 stored-vs-recomputed NPVs. |
@@ -87,7 +87,8 @@ diff -rq /tmp/lineage_rerun_ref derived      # must print nothing, rc 0
 
 One founder aged 25 in calendar year 0. Each generation has its children when the
 parent generation reaches age `gen_len` (central 29). Persons per generation multiply
-by `multiplier(TFR, attribution)`. Each person contributes their group's age profile,
+by `multiplier(TFR, attribution)` and, since 2026-09-28, by the parent's survival to
+`gen_len` (from 25 for the founder, from birth after). Each person contributes their group's age profile,
 weighted by NVSS survival exposure `Lx / lx[start_age]`, from their birth year to
 calendar year 100 or age 100, whichever comes first. Discounting is at the calendar
 year, so the founder's arrival is time zero for both lineages.

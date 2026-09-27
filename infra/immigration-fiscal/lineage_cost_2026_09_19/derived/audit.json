@@ -1,10 +1,44 @@
 {
  "attrition": {
-  "attriter_gap_per_person": -1417.6,
-  "attriter_retained_share_of_gap": 0.19950742382661318,
+  "attriter_gap_per_person": -1153.1,
+  "attriter_retained_share_of_gap": 0.22420330151076195,
   "attriter_share": 0.1119,
+  "c3": 0.7758,
+  "c3_se": 0.6436,
+  "c3_source": "pooled with CPS 2022-25 (central)",
+  "convention": "generation_split",
   "fourth_plus_identification_rate": 0.8881,
-  "selfid_gap_per_person": -7105.5
+  "g3_rate_share": 0.1119,
+  "later_loss_retained_share_of_gap": 1.0,
+  "selfid_gap_per_person": -5143.1,
+  "union_gap_per_person": -7105.5
+ },
+ "attrition_sensitivities": {
+  "generation_split_c3_cps_2022_26": {
+   "attriter_gap_per_person": -478.3,
+   "attriter_retained_share_of_gap": 0.09299838618731893,
+   "attriter_share": 0.1119,
+   "c3": 0.907,
+   "c3_se": 0.6122,
+   "c3_source": "pooled with CPS 2022-26 (sensitivity)",
+   "convention": "generation_split",
+   "fourth_plus_identification_rate": 0.8881,
+   "g3_rate_share": 0.1119,
+   "later_loss_retained_share_of_gap": 1.0,
+   "selfid_gap_per_person": -5143.1,
+   "union_gap_per_person": -7105.5
+  },
+  "years_convention": {
+   "attriter_gap_per_person": -1417.6,
+   "attriter_retained_share_of_gap": 0.2756314285158756,
+   "attriter_share": 0.1119,
+   "convention": "years_convention",
+   "fourth_plus_identification_rate": 0.8881,
+   "g3_rate_share": 0.1119,
+   "later_loss_retained_share_of_gap": 0.2756314285158756,
+   "selfid_gap_per_person": -5143.1,
+   "union_gap_per_person": -7105.5
+  }
  },
  "checks": [
   {
@@ -31,12 +65,25 @@
    "max_abs_diff_usd": 9098.758402557403
   },
   {
+   "check": "births need a living parent at the generation length (audit \u00a7E)",
+   "max_abs_diff_persons": 1.1102230246251565e-16,
+   "pass": true,
+   "survival_birth_to_gen_len": 0.9814278125,
+   "survival_founder_to_gen_len": 0.9959586942302737
+  },
+  {
+   "attriter_share": 0.1119,
+   "check": "generation split: only the G3-rate share closes (later losses keep the gap)",
+   "g3_rate_share": 0.1119,
+   "pass": true
+  },
+  {
    "check": "priced senior rows lie between the statutory and pooled rules",
    "pass": true,
-   "pooled_gap": -1297150.3633891935,
-   "priced_max": -872557.688906672,
-   "priced_min": -1147983.2637358664,
-   "statutory_gap": -854685.5297085538
+   "pooled_gap": -1288162.177777483,
+   "priced_max": -863569.503294961,
+   "priced_min": -1138995.0781241555,
+   "statutory_gap": -845697.3440968429
   },
   {
    "check": "legalised founder is the same under every senior rule",
@@ -135,7 +182,8 @@
   "lineage_cost_2026_09_19/derived/senior_state_shares.csv": "be7d28f54b244909505ecfcdc8f3919364a17906df1dbf4591e2a17ea9e7a66b",
   "lineage_cost_2026_09_19/senior_pricing_inputs.json": "d7d1f78f7a5f944d039ecd6f60591bfd3865e0b091643e89c493fd846b5e00a1",
   "mexican_origin_population_total_2026_09_19/derived/arm3_correction_bounds.csv": "609dc69ce4a34befeb7ecd3af83b9448c4fced7f1e7939bac10f6b668716fe63",
-  "mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication.csv": "af4a05a7bdce82608223fff0e8d33fdf700be7f8fb5304a2912f18bc17f19a33",
+  "mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication.csv": "58ed4d694b679846df3e9b8ab250bf5652612b899d1df7f69172f7f8de825172",
+  "mexican_origin_population_total_2026_09_19/derived/arm5_generation_split.csv": "6b78b3b0cfe5d39d9a546921245689956b20438ea2f7d4869a017c6087dc241e",
   "pronatal_equivalence_2026_09_18/derived/lifetime_equivalence.csv": "dde6613b2d4ba8acfa5302d7c362808160ad59096799e6896fe315a462ed826b",
   "status_impute_2026_09_16/RESULT.md": "7edabaee75a171b785227a55bc69cc5ae5b00f3b753ee9e996cbc4cb55f74ef4"
  },

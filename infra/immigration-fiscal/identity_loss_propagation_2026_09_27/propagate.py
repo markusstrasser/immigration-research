@@ -6,7 +6,9 @@
    corrected third-plus count and the union (ladder 158; 42.78M central, x1.0525 PES = 45.0M).
 2. `lineage_cost_2026_09_19` (`inputs.attrition()` -> `lineage.g3plus_profile`): the G4+
    attrition-corrected mixed profile (ladder 159; arm 2a) and, by the same machinery, the
-   sponsored-parent lane (ladder 241).
+   sponsored-parent lane (ladder 241). Since 2026-09-28 arm 2a and the population lane's
+   arm 5 carry the measured generation split (only G3-rate losses close any of the gap), with
+   the Duncan-Trejo years convention kept as a sensitivity.
 
 Both upstream lanes are imported read-only. The population lane's `main()` is executed
 unmodified with its output directory pointed at `_cache/` here and, for an arm, one module
@@ -50,12 +52,17 @@ BCF = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(BCF)
 
 PES = 1.0525            # arm4 scheme B multiplier; the memo's 45.0M = central x this
-LIN_CENTRAL = (-1297150.0, -514635.0)   # brief's reported centrals, 0% and 3%
+# Lineage centrals, 0% and 3%, after audit §E (2026-09-28; the brief's were -1,297,150 / -514,635)
+LIN_CENTRAL = (-1288162.0, -513398.0)
 RHOS = (0.25, 0.5, 0.75)                # [ASSUMPTION] geometric generation mix of the 4th+ pool
 RHO_CENTRAL = 0.5
 POP_OUTPUTS = ("arm3_correction_bounds.csv", "arm3_fractional_counting.csv",
                "arm4_coverage_grid.csv", "arm5_fiscal_implication.csv",
-               "arm5_education_selectivity.csv")
+               "arm5_education_selectivity.csv", "arm5_generation_split.csv")
+# Population lane arm-5 rows: the measured generation split (central since 2026-09-28) and the
+# Duncan-Trejo years convention (sensitivity).
+SPLIT_ROW = "generation split, measured: G3-rate attriters close C3 0.7758"
+DT_ROW = "Duncan-Trejo"
 BCF_READS = ("arm3_multiplier.csv", "arm3_grandparent_counts.csv")
 
 
@@ -177,9 +184,11 @@ def lineage(profiles, tables, cfg) -> dict:
     n = 1.0
     birth = gen_len - FSA
     parent_group = "third_plus_nh_white" if cfg["reference"] else "mexico_born"
+    parent_table, parent_age = table_f, FSA   # births need a living parent (audit §E)
     gen = 2
     while birth <= L.HORIZON:
-        n *= L.multiplier(tfr[parent_group], attribution)
+        lx = parent_table.lx.to_numpy()
+        n *= L.multiplier(tfr[parent_group], attribution) * float(lx[gen_len] / lx[parent_age])
         if cfg["reference"]:
             prof = I.age_vector(profiles, "third_plus_nh_white", acct, alloc)
             table = tables[mort["white"]]
@@ -200,6 +209,7 @@ def lineage(profiles, tables, cfg) -> dict:
         _, cn = L.person_stream(prof, table, birth, 0, cr["social"] - cr["corrections"])
         out[f"G{gen}"] = (n, n * f, n * cs, n * ct, n * cn, birth)
         parent_group = group
+        parent_table, parent_age = table, 0
         birth += gen_len
         gen += 1
     return out
@@ -218,6 +228,7 @@ class Lin:
                       "descendant": crime["A1_bjs_stock"]["mexican"],
                       "white": crime["A1_bjs_stock"]["white"]}
         self.attr = I.attrition()
+        self.attr_years = I.attrition("years_convention")
         comps = I.age_components()
         barred = {(al, "expanded"): I.component_vector(comps, self.profiles, "mexico_born",
                                                        "expanded", al, I.STATUTORY_BARRED)
@@ -243,9 +254,12 @@ class Lin:
         wht = L.summarise(fn(self.profiles, self.tables, {**cfg, "reference": True}), rate, 0.0)
         return mex["lineage_fiscal"] - wht["lineage_fiscal"], mex_L
 
-    def attr_for(self, sched: dict):
-        base = self.attr["fourth_plus_identification_rate"]
-        return lambda gen: {**self.attr, "attriter_share": 1.0 - rate(sched, base, gen)}
+    def attr_for(self, sched: dict, attr: dict | None = None):
+        """Per-generation attrition inputs: the schedule sets the attriter share; under the
+        generation split only its G3-rate part closes any of the gap."""
+        attr = attr or self.attr
+        base = attr["fourth_plus_identification_rate"]
+        return lambda gen: {**attr, "attriter_share": 1.0 - rate(sched, base, gen)}
 
 
 LIN_ARMS = {
@@ -267,6 +281,11 @@ LIN_ARMS = {
         (None, {"convergence": "attrition_mixed", "legalise_year": 10}, 0.0),
     "supplementary: mixed profile from G3, 0%":
         (None, {"convergence": "attrition_mixed", "mix_from_gen": 3}, 0.0),
+    # 2026-09-28: row 2a above is the generation split; the years convention is a sensitivity
+    "2a years convention (sensitivity), 0%":
+        ("2a G4+ mixed profile, years convention (every attriter keeps 0.2756 of the self-ID gap)",
+         "years", 0.0),
+    "2a years convention (sensitivity), 3%": (None, "years", 0.03),
 }
 
 
@@ -275,6 +294,8 @@ def lin_over(lin: Lin, over) -> dict:
         return dict(lin.statutory)
     if over == "priced_2026":
         return dict(lin.priced_2026)
+    if over == "years":
+        return {"convergence": "attrition_mixed", "attr": lin.attr_years}
     return dict(over)
 
 
@@ -291,14 +312,24 @@ def main() -> int:
     for f in POP_OUTPUTS:
         if not filecmp.cmp(ref / f, POP_DIR / "derived" / f, shallow=False):
             raise SystemExit(f"[BLOCKED] population lane does not reproduce {f}")
-    print("[reproduce] population lane: 5 outputs byte-identical", flush=True)
+    print(f"[reproduce] population lane: {len(POP_OUTPUTS)} outputs byte-identical", flush=True)
     b0 = pd.read_csv(ref / "arm3_correction_bounds.csv")
     f0 = pd.read_csv(ref / "arm5_fiscal_implication.csv")
+    g0 = pd.read_csv(ref / "arm5_generation_split.csv")
     old = b0.iloc[1]                     # "4th-plus identifies at the measured 3rd-generation rate"
     if not old.assumption.startswith("4th-plus identifies at the measured"):
         raise SystemExit("[BLOCKED] arm 3 central row moved")
-    old_f5 = f0[(f0.population_assumption == old.assumption)
-                & f0.attriter_characteristics.str.startswith("Duncan-Trejo")].iloc[0]
+
+    def arm5_rows(f: pd.DataFrame, g: pd.DataFrame, assumption: str):
+        """The bound's Duncan-Trejo row, its central generation-split row and that row's split."""
+        dt = f[(f.population_assumption == assumption) & f.attriter_characteristics.str.startswith(DT_ROW)]
+        sp = f[(f.population_assumption == assumption) & f.attriter_characteristics.str.startswith(SPLIT_ROW)]
+        gs = g[(g.population_assumption == assumption) & g.c3_source.str.endswith("(central)")]
+        if not len(dt) == len(sp) == len(gs) == 1:
+            raise SystemExit(f"[BLOCKED] arm 5 rows not unique for {assumption}")
+        return dt.iloc[0], sp.iloc[0], gs.iloc[0]
+
+    old_f5, old_s5, old_g5 = arm5_rows(f0, g0, old.assumption)
 
     rows, pop_detail, sched_rows = [], [], []
     runs: dict[float, pd.Series] = {}
@@ -308,7 +339,7 @@ def main() -> int:
             pe = p_eff(s, p3, rho)
             if key == "a_current":
                 b_row = old
-                f5 = old_f5
+                f5, s5, g5 = old_f5, old_s5, old_g5
             else:
                 tag = f"{key}_rho{rho}"
                 d = run_population(tag, pe)
@@ -321,8 +352,7 @@ def main() -> int:
                 b_row = bb.iloc[2]
                 if abs(b_row.fourth_plus_identification_rate - round(pe, 4)) > 1e-12:
                     raise SystemExit("[BLOCKED] substituted rate not carried")
-                f5 = ff[(ff.population_assumption == b_row.assumption)
-                        & ff.attriter_characteristics.str.startswith("Duncan-Trejo")].iloc[0]
+                f5, s5, g5 = arm5_rows(ff, pd.read_csv(d / "arm5_generation_split.csv"), b_row.assumption)
             union = float(b_row.corrected_union)
             corr = float(b_row.corrected_third_plus)
             rec = {"arm": key, "rho": rho, "p_eff_fourth_plus": pe,
@@ -332,7 +362,11 @@ def main() -> int:
                    "hidden_share_of_third_plus": float(b_row.added) / corr,
                    "hidden_share_of_union": float(b_row.added) / union,
                    "gap_per_person_after": float(f5.gap_per_person_after),
-                   "aggregate_gap_bn_after": float(f5.aggregate_gap_bn_after)}
+                   "aggregate_gap_bn_after": float(f5.aggregate_gap_bn_after),
+                   "g3_rate_attriters_M": float(g5.g3_rate_attriters) / 1e6,
+                   "later_loss_attriters_M": float(g5.later_loss_attriters) / 1e6,
+                   "gap_per_person_after_split": float(s5.gap_per_person_after),
+                   "aggregate_gap_bn_after_split": float(s5.aggregate_gap_bn_after)}
             pop_detail.append(rec)
             if rho == RHO_CENTRAL:
                 for metric, o, n in (
@@ -345,7 +379,11 @@ def main() -> int:
                         ("gap_per_person_after (DT selectivity)", old_f5.gap_per_person_after,
                          rec["gap_per_person_after"]),
                         ("aggregate_gap_bn_after (DT selectivity)", old_f5.aggregate_gap_bn_after,
-                         rec["aggregate_gap_bn_after"])):
+                         rec["aggregate_gap_bn_after"]),
+                        ("gap_per_person_after (generation split, C3 0.7758)",
+                         old_s5.gap_per_person_after, rec["gap_per_person_after_split"]),
+                        ("aggregate_gap_bn_after (generation split, C3 0.7758)",
+                         old_s5.aggregate_gap_bn_after, rec["aggregate_gap_bn_after_split"])):
                     rows.append({"arm": key, "consumer": "population_total_arm3", "metric": metric,
                                  "old": float(o), "new": float(n), "delta": float(n) - float(o)})
         print(f"[population] {key:<22} " + "  ".join(
@@ -383,7 +421,7 @@ def main() -> int:
             o = lin_over(lin, over)
             # the supplementary row has no upstream twin: its baseline is this copy, flat schedule
             old_gap, _ = lin.gap(o, r, fn=lineage if "mix_from_gen" in o else L.lineage)
-            new_gap, LL = lin.gap({**o, "attr_for": lin.attr_for(s)}, r)
+            new_gap, LL = lin.gap({**o, "attr_for": lin.attr_for(s, o.get("attr"))}, r)
             persons = sum(v[0] for v in LL.values())
             lin_detail.append({"arm": key, "lineage_row": name, "old_gap": old_gap,
                                "new_gap": new_gap, "delta": new_gap - old_gap,
@@ -412,7 +450,8 @@ def main() -> int:
             wr = csv.DictWriter(fh, fieldnames=list(recs[0]), lineterminator="\n")
             wr.writeheader()
             for r in recs:
-                wr.writerow({k: (repr(v) if isinstance(v, float) else v) for k, v in r.items()})
+                # float() first: repr of a numpy float64 would write "np.float64(...)"
+                wr.writerow({k: (repr(float(v)) if isinstance(v, float) else v) for k, v in r.items()})
 
     w(OUT / "arms.csv", rows)
     w(OUT / "population_arms.csv", pop_detail)
@@ -421,6 +460,7 @@ def main() -> int:
     meta = {"p3_population_unrounded": p3, "p3_lineage_input": base_rate, "losses": lo,
             "arms": {k: {kk: vv for kk, vv in v.items()} for k, v in S.items()},
             "rho_central": RHO_CENTRAL, "rhos": list(RHOS), "pes_multiplier": PES,
+            "lineage_attrition": {"central": lin.attr, "years_convention": lin.attr_years},
             "checks": {"population_outputs_byte_identical": True,
                        "lineage_central": [c0, c3],
                        "poison_attr_selfid_unchanged": True,

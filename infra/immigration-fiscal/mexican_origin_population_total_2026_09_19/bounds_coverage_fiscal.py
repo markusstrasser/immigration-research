@@ -17,19 +17,25 @@ Arm 4 -- coverage.  The CPS ASEC is post-stratified to independent population
    "Undercoverage" p. 7, Table 3 Hispanic coverage ratios 0.81 male / 0.83 female]
 
 Arm 5 -- fiscal implication, using the all-age ledger's per-person and aggregate
-  gaps against third-plus non-Hispanic whites (read-only).
+  gaps against third-plus non-Hispanic whites (read-only).  Since 2026-09-28 it also
+  carries the measured generation-split rule (appended rows; the earlier rows are
+  unchanged): hidden members lost at the third-generation rate close C3 of the
+  self-identified third-plus gap, members lost later close nothing.
 
 Inputs : _cache/cps_asec2025_person_subset.parquet
          ../all_age_ledger_2026_09_17/derived/estimates.csv   (read-only)
+         ../generation_carryover_2026_09_27/summarize.py SPLIT_C3 (imported, read-only)
          derived/arm1_counts_cps.csv, derived/arm3_multiplier.csv
 Outputs: derived/arm3_correction_bounds.csv
          derived/arm3_fractional_counting.csv
          derived/arm4_coverage_grid.csv
          derived/arm5_fiscal_implication.csv
          derived/arm5_education_selectivity.csv
+         derived/arm5_generation_split.csv
 """
 from __future__ import annotations
 
+import importlib.util
 import sys
 from pathlib import Path
 
@@ -40,6 +46,16 @@ HERE = Path(__file__).resolve().parent
 CACHE = HERE / "_cache"
 DERIVED = HERE / "derived"
 LEDGER = HERE.parent / "all_age_ledger_2026_09_17" / "derived" / "estimates.csv"
+
+# C3: the share of the self-identified third-plus gap that hidden third-generation members
+# and the descendants of third-generation attriters close, pooled from CPS co-resident G3
+# adults and NLSY97 on BA+ (dollars have no G3 measurement) by carryover_identity_2026_09_27
+# (RESULT section 2). One definition, held in the carry-over lane with a drift test.
+_gc = importlib.util.spec_from_file_location(
+    "generation_carryover_summarize",
+    HERE.parent / "generation_carryover_2026_09_27" / "summarize.py")
+GC = importlib.util.module_from_spec(_gc)
+_gc.loader.exec_module(GC)
 
 MEXICO = 303
 US_AREA = (57, 60, 66, 69, 73, 78)
@@ -291,6 +307,52 @@ def main() -> int:
                 "aggregate_gap_bn_before": round(gp_tot["mexican_observed_total"] / 1e9, 2),
                 "aggregate_gap_bn_after": round(new_total / 1e9, 2),
             })
+
+    # Generation-split measured rule (2026-09-28; carryover_identity_2026_09_27 RESULT
+    # section 2). The Duncan-Trejo rows above apply a years-of-schooling share to dollars
+    # and stay as the years-convention sensitivity. Losses are sequential: 1 - p3 of the
+    # corrected third-plus is lost at the third-generation rate whatever happens later,
+    # so under a bound with p4 < p3 the rest of the added persons are later losses.
+    srows = []
+    for bound in rows:
+        added = bound["added"]
+        g3_rate = min(added, (1.0 - p3) * bound["corrected_third_plus"])
+        later = added - g3_rate
+        for c3_label, measures in GC.SPLIT_C3.items():
+            c3, c3_se = measures["ba_plus"]
+            add_total = g3_rate * g3_gap * (1.0 - c3) + later * g3_gap
+            new_pop = pop["mexican_observed_total"] + added
+            new_total = gp_tot["mexican_observed_total"] + add_total
+            frows5.append({
+                "population_assumption": bound["assumption"],
+                "attriter_characteristics": (
+                    f"generation split, measured: G3-rate attriters close C3 {c3} of the "
+                    f"self-ID gap ({c3_label}), later losses close 0"),
+                "attriters_added": round(added, 1),
+                "attriter_gap_per_person": round(add_total / added, 1),
+                "population_before": round(pop["mexican_observed_total"], 1),
+                "population_after": round(new_pop, 1),
+                "gap_per_person_before": round(gp_pp["mexican_observed_total"], 1),
+                "gap_per_person_after": round(new_total / new_pop, 1),
+                "aggregate_gap_bn_before": round(gp_tot["mexican_observed_total"] / 1e9, 2),
+                "aggregate_gap_bn_after": round(new_total / 1e9, 2),
+            })
+            srows.append({
+                "population_assumption": bound["assumption"],
+                "c3_source": c3_label, "c3": c3, "c3_se": c3_se,
+                "g3_rate_share_of_corrected_third_plus": round(1.0 - p3, 6),
+                "attriters_added": round(added, 1),
+                "g3_rate_attriters": round(g3_rate, 1),
+                "later_loss_attriters": round(later, 1),
+                "selfid_third_plus_gap_per_person": round(g3_gap, 1),
+                "g3_rate_attriter_gap_per_person": round(g3_gap * (1.0 - c3), 1),
+                "later_loss_attriter_gap_per_person": round(g3_gap, 1),
+                "union_gap_per_person_before": round(gp_pp["mexican_observed_total"], 1),
+                "gap_per_person_after": round(new_total / new_pop, 1),
+                "aggregate_gap_bn_after": round(new_total / 1e9, 2),
+            })
+    pd.DataFrame(srows).to_csv(DERIVED / "arm5_generation_split.csv", index=False,
+                               lineterminator="\n")
     f5 = pd.DataFrame(frows5)
     f5.to_csv(DERIVED / "arm5_fiscal_implication.csv", index=False)
     print("\n  per-person gap and aggregate after adding attriters:", flush=True)
