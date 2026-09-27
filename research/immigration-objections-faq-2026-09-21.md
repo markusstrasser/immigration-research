@@ -229,7 +229,13 @@ $6.7–8.6k per third-plus adult. The totals are $66–68bn and $55–71bn. In t
 second generation's total is $105–117bn, against the first's $57–78bn. Where children are counted
 decides who carries the added school cost. When they count with their parents, the Mexico-born
 carry 43–44% of it; when they count in their own generation, the second and third-plus
-generations carry 76–91%.] [CALCULATION: [adopted account by generation](immigration-adopted-account-by-generation-2026-09-25.md),
+generations carry 76–91%.] [2026-09-27: on the September 27 case, every generation is still a net
+cost at all 64 specifications. Counted with their children, a second-generation adult costs other
+residents $9.8–10.7k a year, against $13.6–16.3k per Mexico-born adult and $9.2–12.4k per third-plus
+adult. The totals are $87–95bn and $75–102bn. In their own generation the second generation's total
+is $128–153bn, against the first's $78–94bn. The four additions follow residents and pupils: counted
+with their parents, the Mexico-born carry 37% of them; counted in their own generation, the second and
+third-plus generations carry 75–78%.] [CALCULATION: [adopted account by generation](immigration-adopted-account-by-generation-2026-09-25.md),
 ladder 224]
 
 ## 6. "Comparing with whites is cherry-picking."
@@ -523,6 +529,12 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-09-27, late (generation split on the September 27 case, 8654a0c): entry 5 quotes the split on the
+  September 27 case. Every generation is still a net cost; the per-adult figures rise to $9.8–10.7k (second
+  generation), $13.6–16.3k (Mexico-born) and $9.2–12.4k (third-plus). Entries 8, 10 and the social totals
+  keep the schools case until their lanes move. Concept affected: the account's split by generation
+  (ladder 224).
 
 - 2026-09-27 (the return on public capital, long-run roads and parks, rental assistance and enterprises): the
   main case is $322–387bn (ladder 237–239,
