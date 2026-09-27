@@ -170,7 +170,10 @@ other residents a small gain (+$0.7–3.5bn), while their renters pay $22–58bn
 With road budgets fixed, the group's traffic costs other residents about $19bn a year in time
 and fuel ($8–35bn; ladder 195). Transfers like these cancel in dollars but not by income: outside the budget the bottom four
 fifths of other residents lose $80.7bn a year and the top fifth gains $46.0bn (ladder 194).
-Innovation shows no patent response at the group's schooling and is not added; institutions
+Innovation shows no patent response at the group's schooling and is not added [2026-09-28: after
+the September 26 schooling correction the patent term is positive but imprecise, +$37–57bn inside
+an interval of about ±$490bn. That is neither evidence of no effect nor a usable offset, so still
+nothing is added (ladder 201)]; institutions
 remain unpriced in both directions. [SOURCE: complete account;
 [prices and hours](immigration-consumer-price-and-native-hours-2026-09-18.md);
 [real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)]
@@ -677,3 +680,4 @@ they get more prominence.
   administrative checks show no fear-driven benefit under-reporting where the group's dollars are,
   and the CPS over-counts rather than under-counts the Mexico-born against the ACS. Concept
   affected: the reliability of survey-keyed shares.
+- 2026-09-28: entry 4's innovation sentence gained a bracket. After the September 26 schooling correction the patent term is positive and imprecise, not a null (flagged by the [adversarial audit](immigration-adversarial-audit-2026-09-28.md) §4, which corrected the same sentence in the real-costs memo). Nothing is added. Concept affected: unpriced innovation benefits.
