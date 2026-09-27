@@ -9,6 +9,10 @@ World-ledger and September 27 downstream propagation work remained in progress
 when examined. Draft instructions below are not described as completed estimates.
 [DATA: git history; [main-case result](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md)]
 
+**Later September 27:** the [expanded audit below](#second-pass-inputs-production-uncertainty-and-demography)
+covers the areas left open in the first pass. Some initial findings have since been
+corrected; the revision record distinguishes those repairs from outstanding work.
+
 **Verdict:** Yes, there are consequential flaws. The strongest concern is that
 different kinds of dollars and different counterfactuals are being passed between
 otherwise careful calculations. An imputed capital return becomes a borrowing
@@ -417,3 +421,286 @@ voting or ancestry-IV literature. Those omissions limit numerical corrections an
 new causal claims; they do not prevent the bounded findings above. The existing
 September 25 revisions were read to avoid relabeling completed corrections as new
 flaws. Active drafts are dated evidence, not a frozen release certification.
+
+## Second pass: inputs, production, uncertainty and demography
+
+**Verdict:** Three further interpretations need correction: an incomplete sampling
+error is not necessarily a lower bound; the service-price calculation does not
+establish numerical inclusion in the production benefit; and the sponsored-parent
+calibration does not identify a lifetime sponsorship probability. A small lineage
+survival inconsistency is also confirmed. Tax/benefit construction survived the
+checks without a new consequential defect. A disclosed production-input omission
+is larger than its earlier proportional approximation suggested, but still small
+relative to the annual account. [INFERENCE; diagnostics below]
+
+This pass began at `27859e1`, after the sponsored-parent outputs were committed.
+It keeps the September 27 annual account, September 26 sampling calculation and
+September 19 lineage ledger separate. Their dollars and denominators do not form
+one correction to the headline. [DATA / FRAMING-SENSITIVE]
+
+### A. Missing covariance need not increase uncertainty
+
+The earlier propagation result says to read its roughly $10.9bn sampling standard
+error as a floor because correction uncertainties are omitted. But one omitted
+correction is calculated from the **same 160 CPS replicate weights** as the account.
+Its covariance is recoverable. The
+[uncertainty probe](../infra/immigration-fiscal/conceptual_audit_2026_09_27/probe_uncertainty.py)
+reproduces all ten central administrative-benefit corrections and their SEs, and
+all 64 published September 26 schools-case CPS SEs, within `1e-8bn`.
+[DATA/CODE: [propagation](../infra/immigration-fiscal/uncertainty_propagation_2026_09_22/propagate.py),
+`adopted_cases`; [benefit producer](../infra/immigration-fiscal/admin_benefit_keys_2026_09_24/compare.py),
+`rekey`, `main`; [floor claim](../infra/immigration-fiscal/sept24_propagation_2026_09_24/RESULT.md), uncertainty section]
+
+Hold administrative inputs, ACS shares, other corrections and model choices fixed.
+Vary the central benefit-rekeying factor alongside the corresponding account
+replicate. The new signed deviation is added to the existing receipts-minus-spending
+deviation before calculating variance:
+
+`Var(account + correction) = Var(account) + Var(correction) + 2 Cov(account, correction)`.
+
+| September 26 schools case; sampling diagnostic, $bn unless stated | Result across 64 specifications |
+|---|---:|
+| Published CPS SE | 8.950–9.059 |
+| Benefit-factor/account covariance, bn² | −4.215 to −4.129 |
+| Correlation | −0.422 to −0.398 |
+| Joint first-order CPS SE | 8.541–8.665 |
+| Joint CPS SE including the factor-product interaction | 8.545–8.670 |
+| Published combined SE with benefits appended separately | 10.990–11.092 |
+| Combined SE replacing only that block with joint covariance | 10.597–10.709 |
+
+[CALCULATION: uncertainty probe; the last row retains the other published source
+variances and independence assumptions. Point estimates do not change.]
+
+The strongest defense is that the method discloses missing sources and already
+has a perfect-positive-correlation stress. That remains useful. It does not prove
+a lower bound: omitted dependent terms can reduce variance, and an envelope over
+represented source SEs does not restore an omitted within-source relationship.
+Call the result a **partial sampling approximation whose net error is unresolved**.
+These diagnostic SEs are not replacement headline intervals. [INFERENCE]
+
+The medical bridge is a related, unresolved case. The corrected key uses an
+estimated pooled ethnic ratio, with 2024 donors overlapping the old donor base.
+Scaling the old gradient by the corrected dollar level omits the derivative of
+that ratio and its covariance with the base. The pooled translator already has
+joint influence vectors: its five-line p99.5 correction has an $8.039bn SE before
+LTSS and package scaling. Adding that SE independently would also be wrong.
+Model-specification ranges do not substitute for its sampling distribution.
+[DATA/CODE: [pooled translator](../infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/translate.py),
+`main`, lines 278–311; [translation table](../infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/derived/translation_account.csv)]
+
+At this pass's inspection, the September 27 uncertainty extension was still
+pending. This finding concerns the executed September 24/26 bridge and what its
+successor must handle; it is not a claim that an unfinished September 27 run has
+published an incorrect interval. [DATA: `later_cases.json` and the propagation lane's pending-work record]
+
+### B. Similar benefit totals do not establish overlap
+
+The household-services lane says its $21.84bn gross consumer-price benefit,
+$11.94bn after netting native dropout wage gains, is already inside the production
+term. Its numerical check compares $11.94bn with $8.8–13.3bn. Two bridges fail:
+
+1. `hours_tax.py` changes the immigration shock to the Mexican-origin union but
+   retains **consumer units scaled by the native-householder share and all native
+   dropout earnings**. The wage base includes US-born target members and excludes
+   other foreign-born workers. Native-headed consumer units can contain mixed-nativity
+   households; their expenditure base is not the main account's set of remaining
+   persons, which excludes the whole target and includes everyone else.
+2. $8.8–13.3bn is **private welfare plus induced receipts, P+F**. On these fixed-hours,
+   full-capital-adjustment specifications, P alone is about −$0.16/−$0.24bn under
+   cash/GDP normalization. Falling within the P+F range is not a decomposition of
+   either P or P+F, particularly across two different models.
+
+[DATA/CODE: [service producer](../infra/immigration-fiscal/care_household_services_2026_09_23/hours_tax.py),
+lines 314–341; [overlap ruling](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md),
+Part A and overlap item 1; CALCULATION:
+[production probe](../infra/immigration-fiscal/conceptual_audit_2026_09_27/probe_production.py), published baseline]
+
+**The no-add decision remains defensible.** Both exercises capture consequences
+of labor supply, so blindly adding them could double-count. But “overlapping
+alternative calculation, not reconciled” is supported; “these exact benefits are
+already included” is not. Correct the beneficiaries, identify the producer losses
+and tax effects, and reconcile a sector-price calculation to aggregate welfare
+before declaring either an additional gain or exact containment. This audit does
+not add $21.84bn or $11.94bn to the account. [INFERENCE / RECOMMENDATION]
+
+The construction-price calculation has a stronger connection: its input costs
+come from the same factor-wage changes. Treating that price effect as a view of
+the production model is reasonable. That does not validate the distinct empirical
+household-services calculation. [DATA/CODE:
+[construction lane](../infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md);
+INFERENCE]
+
+### C. A known production-input omission is now quantified
+
+The adopted tax package reweights Mexico-born people outside California and Texas
+to ACS targets, but its production inputs retain the old CPS earnings composition.
+The source explicitly discloses this omission and approximates its size by scaling
+the production gain proportionately with a wage-key change. The CES gain depends
+on skill composition, so that shortcut is unreliable.
+[DATA: [CPS correction result](../infra/immigration-fiscal/cps_imputation_keys_2026_09_23/RESULT.md),
+limitations and unfinished items; CODE: current production import chain]
+
+Recalibrating the same two-skill CES with the **already adopted population weights**
+changes P+F from $8.791/$13.323bn to $7.683/$11.680bn under cash/GDP normalization.
+Holding every other account component fixed, that raises incumbent cost by
+**$1.107/$1.643bn**, versus the earlier rough $0.2–0.3bn approximation. With the five
+existing matched hot-deck seeds on those weights, the corresponding mean P+F is
+$7.861/$11.931bn. The latter is a sensitivity construction, not an adopted replacement
+estimator; seed spread is not a survey confidence interval.
+[CALCULATION: production probe; income year 2024, fixed hours, full private-capital adjustment,
+sigma 2, labor share 0.65; no national re-raking after the adopted row-4 reweight]
+
+This is **disclosed unfinished propagation, not a newly hidden defect**. The core
+production equations correctly subtract the opportunity income of released private
+capital and make ownership and fiscal recycling explicit. No new defect in those
+identities was established. Public-capital consistency remains the separate issue
+in section 6. [DATA/CODE:
+[production model](../infra/immigration-fiscal/matched_benefits_2026_09_19/model.py); INFERENCE]
+
+### D. Sponsored-parent calibration is a scenario, not an observed lifetime rate
+
+The new lane's conclusion invokes the rate at which Mexican citizens actually
+petition. Its 0.619 naturalization probability is calculated as today's naturalized
+stock divided by that stock plus today's eligible LPR stock. This is a cross-sectional
+share. It does not identify the probability that a newly admitted 25-year-old will
+ever naturalize, nor the distribution of waiting times. Yet the model gives that
+probability to each founder and puts naturalization five years after LPR status,
+with parent admission one year later.
+[DATA/CODE: [naturalization-share definition](../infra/immigration-fiscal/origin_attachment_mexico_2026_09_27/naturalization_share.py);
+[sponsorship arms](../infra/immigration-fiscal/lineage_sponsored_parents_2026_09_27/arms.py),
+`NAT_RATE`, `tracks`, `run_track`]
+
+The official report already cached for calibration reports median LPR duration
+before naturalization of seven years across all origins and nine for North America
+in FY2024. Those are conditional on naturalizing, not replacement Mexico-specific
+cohort probabilities. They nevertheless show why first-eligibility timing needs
+its own justification. [SOURCE: [OHSS FY2024 report, Table 8](https://ohss.dhs.gov/topics/immigration/naturalizations/annual-flow-report/fy-24-naturalizations-flow-report),
+verified in the lane's cached primary HTML; live retrieval returned 403]
+
+The lifetime parent-admission probability is a second bridge. The code correctly
+labels IR-5 admissions divided by newly eligible citizens a **steady-state flow
+ratio**, with an untested equal-hazard assumption across native and naturalized
+petitioners. The second estimator is not independent validation. Algebraically:
+
+`stock estimate / flow estimate = assumed parent exposure years / (eligible stock / eligible inflow)`.
+
+The admissions numerator cancels. Its reported agreement within 10% amounts to
+24.359 parent-life years divided by a 22.375-year stock/inflow ratio: **1.089**.
+That is a useful internal scale check, not evidence that either statistic identifies
+the new founder's lifetime risk. [CALCULATION:
+[sponsorship probe](../infra/immigration-fiscal/conceptual_audit_2026_09_27/probe_sponsorship.py);
+DATA: `derived/calibration.csv` in the sponsorship lane]
+
+The timing matters even holding both probability parameters fixed. Delay admission
+from founder-year 6 to year 10 or 16, age the parent from 60 to 64 or 70, and retain
+the lane's survival and pricing rules: the added fiscal cost (absolute channel magnitude) falls from
+$24,518 to $21,955 or $15,664 undiscounted, and from $12,138 to $10,717 or $7,046 at
+3%, per original founder. These are **conditional sensitivities**, not estimated
+corrections; delayed naturalization could also change petition probability, which
+this probe holds fixed. [CALCULATION: sponsorship probe]
+
+The lane already discloses equal hazards, recent-flow instability and later-age
+arms. Its calibrated channel can remain small under those assumptions. Narrow the
+opening conclusion accordingly. Estimating the actual channel requires linked or
+cohort-specific naturalization and petition hazards, parent age/survival, sibling
+sharing, adjustment versus new entry and return migration. The apparent precision
+of 1.9% does not identify those transitions. [INFERENCE / RECOMMENDATION]
+
+### E. Survival prices descendants but does not limit their births
+
+`lineage.py` multiplies each generation's count by TFR/2, then survival-weights
+that generation's fiscal life. It never requires the parent to survive until the
+model's single childbearing age, 29. Halving survival at age 29 in a diagnostic
+leaves every subsequent birth count unchanged. The fertility inputs are period
+rates or ratios among living women; they do not already include the missing
+parental cohort survival. [CODE/DATA:
+[lineage recurrence](../infra/immigration-fiscal/lineage_cost_2026_09_19/lineage.py), `lineage`;
+[fertility construction](../infra/immigration-fiscal/lineage_cost_2026_09_19/inputs.py), `fertility`;
+CALCULATION: sponsorship probe]
+
+Within the existing point-birth/common-life-table convention, multiply first births
+by survival from founder age 25 to 29, and later births by survival from birth to
+29. Those factors are 0.99596 and 0.98143. On the original central lineage case,
+this moves the Mexican-minus-white gap from −$1,297,150 to −$1,288,162 undiscounted
+and from −$514,635 to −$513,398 at 3%: **$8,988 and $1,237**, respectively. It reduces
+the modeled adverse gap by about 0.7% and 0.2%, with no sign change. This is a small
+internal inconsistency, not a challenge to the whole result. [CALCULATION]
+
+The broader demographic omissions are already stated: period rather than cohort
+profiles, no emigration, fixed fertility/convergence rules, and century-end
+truncation. A joint model would also condition eligibility and later transitions
+on actual residence and earnings histories. Those are outstanding modeling choices;
+this audit has not estimated their combined direction. [DATA: lineage README,
+limits; sponsored-parent RESULT, omitted work; INFERENCE]
+
+### F. Checks that did not produce a new consequential flaw
+
+The tax/benefit pass traced raw receipt and spending keys, shared versus personal
+allocation, administrative scaling, status/imputation corrections and pooled MEPS
+transport through the September 24 package into September 27. Prior nonrefundable-
+credit, premium-tax-credit, Medicare-key and LTSS problems are not newly discovered
+live defects. Unequal-person-weight allocation already has separate fixed-budget
+sensitivity work. Matching and administrative raking still do not identify the
+unobserved incomes or exact subgroup service use. [DATA/CODE: full-account builders;
+dataset-integrity audit; September 24 package and CPS correction result]
+
+One tested medical interaction was small: recomputing the ethnic ratio after the
+adopted age/nativity composition change moves the five gross medical corrections
+by a net **+$0.062bn before LTSS**, with individual signs mixed. This is not a final
+account correction. The larger public-health-services payer proxy is already
+declared and accompanied by alternatives; this pass did not identify its net bias.
+[CALCULATION:
+[medical-composition probe](../infra/immigration-fiscal/conceptual_audit_2026_09_27/probe_medical_composition.py);
+DATA: spending contract and pooled-medical translation]
+
+The fresh crime check read the current incident/victim-price construction, ethnic
+and victim-group bridges, and detention boundary. It retains the explicit
+limitations: Hispanic-to-Mexican allocation is a proxy, replacement offending is
+not modeled, and victim prices are not budget payments. The newer lane already
+removes criminal-justice costs and the nonfatal homicide-risk double count. No new
+material defect was established in that bounded review. Housing's causal estimates
+remain qualified by the September 25 instrument audit; the price/production overlap
+was inspected here, without a new causal re-estimation.
+[DATA/CODE: [victim-cost lane](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md)
+and `victim_cost.py`; [custody boundary](immigration-detention-crime-and-fiscal-scope-2026-09-20.md);
+[detention reconciliation](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md);
+construction and housing-transfer lanes]
+
+### What remains unexamined after this pass
+
+This is now a broader audit, not an exhaustive certification. It has not validated
+tax imputations against restricted administrative microdata, jointly re-estimated
+all correction errors, built an endogenous demographic projection, or repeated
+the crime/housing literature and raw-data acquisition. The medical joint derivative,
+policy-specific counterfactual and coherent public-capacity path remain substantive
+open work. No checked discrepancy supplies a defensible replacement annual headline.
+[COVERAGE / GAP]
+
+The additional checks have mixed directions: updated production inputs raise the
+annual cost, survival reduces the adverse lineage gap, and joint CPS covariance
+narrows the tested sampling component. The service and sponsorship bridges have
+no identified net correction. These are different estimands, not quantities to
+add or votes on a policy conclusion. [EVIDENCE SYMMETRY]
+
+My priority remains a coherent set of connected estimates: the same population,
+beneficiaries, history and covariance must survive each handoff. More detailed
+subgroup output is useful only to the extent those connections hold. For the next
+correction round, the recoverable CPS covariance and production reweight are
+concrete; the service-price bridge and sponsorship hazards need narrower claims
+until their different objects are reconciled. [RECOMMENDATION]
+
+## Revisions
+
+- 2026-09-27, second pass: extended coverage at the operator's request. Added
+  uncertainty, benefit-boundary and sponsorship-calibration findings, a small
+  survival recurrence diagnostic, and negative results on input construction.
+  The four additional probes reproduce their baselines before changing an input.
+- 2026-09-27, repairs observed during the follow-up: commit `2104b9e` corrected the
+  world/propagation briefs' MVPF, comparator and noncash-debt instructions;
+  `b222e28` records the Medicare residence-clock qualification; `1fd0ce2`, `d75963b`
+  and `bb3de6f` execute and integrate the arrival-age, slope and child-denominator
+  corrections. `d26a737` records internal-transfer repair as deferred, and
+  `05db980` briefs further identity-loss propagation. These narrow the live
+  issues in the first-pass snapshot; a corrected instruction or brief is not
+  verification of every downstream consumer. [DATA: verified git history;
+  [earlier adoption decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)]
