@@ -1,4 +1,4 @@
-**Verdict:** [2026-09-26, later: the script now defaults to the main case with schools at full cost (`--case sept26_schools`). The fiscal channel is $276.7bn and the central total with the social items $311.4bn; the channels outside the budget do not move. `--case sept26` gives the one-year scenario ($224.8bn, $259.5bn). `--case sept24` and `--case sept23` with `--out-dir DIR` reproduce the runs described below.] [2026-09-25: the script now defaults to the main case adopted September 24: fiscal channel $225.1bn (text below: $227.9bn), central total $259.8bn (below: $262.6bn); the channels outside the budget do not move. `distribute.py --case sept23 --out-dir DIR` reproduces the run this text describes, byte for byte (`test_distribute.py`). See `../sept24_propagation_2026_09_24/RESULT.md`.] Relative to income, every channel except tax-financed fiscal cost falls hardest on
+**Verdict:** [2026-09-27: the script now defaults to the main case of that day (`--case sept27`). The budget's fiscal channel is $351.0bn: cash financing $306.3bn plus the capital return's resource cost $44.7bn. Rental assistance and LIHEAP ($5.1bn) now fall on eligible households without the slots, $3.8bn of it on the bottom fifth. The central total with the social items is $390.8bn; the channels outside the budget do not move. `--case sept26_schools` reproduces 39b854b. See "The September 27 case" below.] [2026-09-26, later: the script now defaults to the main case with schools at full cost (`--case sept26_schools`). The fiscal channel is $276.7bn and the central total with the social items $311.4bn; the channels outside the budget do not move. `--case sept26` gives the one-year scenario ($224.8bn, $259.5bn). `--case sept24` and `--case sept23` with `--out-dir DIR` reproduce the runs described below.] [2026-09-25: the script now defaults to the main case adopted September 24: fiscal channel $225.1bn (text below: $227.9bn), central total $259.8bn (below: $262.6bn); the channels outside the budget do not move. `distribute.py --case sept23 --out-dir DIR` reproduces the run this text describes, byte for byte (`test_distribute.py`). See `../sept24_propagation_2026_09_24/RESULT.md`.] Relative to income, every channel except tax-financed fiscal cost falls hardest on
 the bottom of the income distribution. Outside the budget the channels nearly cancel in dollars
 but move money up the income scale. The bottom four fifths of other residents lose $80.7bn a year
 and the top fifth gains $46.0bn, for a net of −$34.7bn. Weighted by income, those channels are
@@ -533,6 +533,65 @@ bottom 60 percentiles lose $1,147 a person on average, and percentiles 95–100 
 average (+$3,227 in the top 1%). These are averages within each percentile; ladder 226 counts
 persons. Inputs published in bins keep their microdata key's shape inside each bin.
 [CALCULATION: `distribute.py` → `derived/channel_by_percentile.csv`]
+
+## The September 27 case (2026-09-27)
+
+`--case sept27` moves A at each band end by the case's change, +$63.33bn / +$95.42bn (long-run road and park
+responses, rental assistance at 1, government enterprises and the return on public capital); P and F do not
+move. Run `node case_ends.cjs` first: at the case's end specifications (48 low, 11 high in both fill-in methods,
+averaged) it writes the capital return and the capped programs' amounts to `derived/case_ends_sept27.json`,
+gated to the case's `summary.json` (1e-9). The run ends with "261 gates passed".
+
+**Three financing columns.** A no longer goes to the budget whole (audit §1, `research/immigration-conceptual-audit-2026-09-27.md`):
+
+| $bn a year (negative = cost) | Low-cost end | High-cost end | Middle, distributed |
+|---|---:|---:|---:|
+| Cash financing (A + F, less the capital return and the capped programs) | −286.69 | −325.82 | −306.26 |
+| Resource cost: return on public capital (federal part) | −33.80 (−0.83) | −55.69 (−1.74) | −44.74 |
+| Displaced beneficiaries: rental assistance and LIHEAP | −5.09 | −5.09 | −5.09 |
+| A + F | −325.59 | −386.60 | −356.09 |
+
+The capital return is a cost of the budgets that hold the capital, so it is financed by each convention like the
+cash part (`fiscal_cash_*`, `fiscal_resource_*`; `fiscal_*` is their sum). [CALCULATION: `derived/inputs.json`
+`financing_columns`]
+
+**Capped programs.** Rental assistance ($4.53bn) and LIHEAP ($0.56bn) are capped and rationed. Without the
+group, eligible households who now go without would take its slots, so the amount falls on them, not on the
+budget, under both conventions (`displaced_beneficiaries`, split by program in `displaced_housing_subsidies` and
+`displaced_energy_assistance`). Each eligible non-recipient household with other residents bears an equal share
+(household weight), split equally over its other-resident members. TANF-type aid (`family_and_general_assistance`,
+$12.3bn / $11.7bn in A) is a block grant that states can move to other uses, so it stays with the conventions.
+
+| Program | Proxy on the CPS ASEC 2025 household file | Rule it stands for | Eligible non-recipient households | Per household |
+|---|---|---|---:|---:|
+| Rental assistance | renter households paying cash rent (H_TENURE 2), money income below 50% of their state's median household money income (all households; state medians $55,500–113,820), neither in public housing (HPUBLIC) nor paying lower rent because a government pays part (HLORENT) | "very low income", 50% of the area's median family income adjusted for family size (24 CFR 5.603; vouchers, 982.201(b)) | 10.27m (18.6m other residents) | $441 |
+| LIHEAP | households with money income below 150% of the 2024 HHS poverty guideline for their size ($15,060 + $5,380 per extra person; Alaska and Hawaii their own, 89 FR 2961), no energy assistance (HENGAST) | the greater of 150% of poverty and 60% of the state median income (42 U.S.C. 8624(b)(2)(B)) | 17.95m (38.2m) | $31 |
+
+The account's rental key flags recipients with the same two survey items. The texts are cached in
+`_cache/capped/` (ignored); their hashes are in `inputs.json`, and a gate finds each pinned figure in them.
+
+The displaced beneficiaries sit at the bottom: Q1 −$3.83bn (0.67% of its resources), Q2 −$1.12bn, Q3 −$0.14bn,
+Q4 and Q5 about 0. Financed by tax shares the same $5.09bn would have cost Q1 $0.15bn; by per-person cuts, $1.02bn.
+At η = 1.3 the channel weighs −$28.0bn mean-normalized (equal split −$12.5bn).
+
+| SPM quintiles, $bn a year | Total | Q1 | Q2 | Q3 | Q4 | Q5 | % of resources, Q1 / Q5 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Fiscal, (a) tax shares (schools case) | −351.00 (−276.72) | −10.64 | −22.44 | −37.84 | −62.05 | −218.03 | −1.88 / −4.06 |
+| Fiscal, (b) per person | −351.00 (−276.72) | −70.20 | −70.20 | −70.20 | −70.20 | −70.20 | −12.37 / −1.31 |
+| Displaced beneficiaries (new) | −5.09 | −3.83 | −1.12 | −0.14 | −0.00 | 0.00 | −0.67 / 0.00 |
+| Central total, (a) | −390.80 (−311.42) | −37.31 | −47.11 | −60.08 | −74.29 | −172.01 | −6.58 / −3.21 |
+| Central total, (b) | −390.80 (−311.42) | −96.87 | −94.86 | −92.44 | −82.44 | −24.18 | −17.07 / −0.45 |
+
+At η = 1.3 the central total is −$531.7bn (a) and −$1,041.7bn (b) mean-normalized, −$237.6bn and −$465.5bn as
+equal-split equivalents (schools case −$445.4bn, −$847.5bn, −$199.0bn, −$378.7bn). The range variants of the
+fiscal channel carry the displaced beneficiaries at the same band end. [CALCULATION: `distribute.py` →
+`derived/channel_by_quintile.csv`, `derived/weighted_totals.csv`, `derived/ranges_weighted.csv`]
+
+Limits of the proxies: the rental proxy uses the state median household income without HUD's area medians and
+family-size adjustment, and the LIHEAP proxy omits the 60%-of-state-median alternative, which widens eligibility
+in higher-income states. Both programs target the poorest eligible households (75% of new voucher admissions
+must be extremely low income, 24 CFR 982.201(b)(2); LIHEAP may prioritize the highest energy burdens), so the
+loss probably falls lower than an equal share per eligible household [INFERENCE].
 
 ## Revisions
 

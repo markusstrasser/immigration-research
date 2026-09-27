@@ -37,6 +37,16 @@ and each case keeps the allocation at each band end (shared low, personal high),
 moves. --case sept23, sept24 or sept26 with --out-dir <dir> reproduces the files committed before
 each switch byte for byte. Every channel outside the budget is the same in every case.
 
+--case sept27 (the default since 2026-09-27) moves A again, by the long-run road and park responses, rental
+assistance, the government enterprises and the return on public capital. Two parts of its A are split out at
+each band end (node case_ends.cjs writes derived/case_ends_sept27.json; run it first):
+  - the return on public capital, an imputed resource cost of the budgets that hold the capital. It stays in the
+    fiscal channel under both conventions and is also reported alone (fiscal_resource_*, beside fiscal_cash_*);
+  - the capped programs, rental assistance and LIHEAP. Without the group their slots go to eligible households,
+    so their amount falls on eligible non-recipients (displaced_beneficiaries), not on the budget, under both
+    conventions. TANF-type aid is a block grant that states can move to other uses, so it stays with the budget.
+The range variants of the fiscal channel carry the displaced beneficiaries at the same band end.
+
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
     infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py [--case sept24 --out-dir DIR]
@@ -54,6 +64,7 @@ import re
 import sys
 import zipfile
 from pathlib import Path
+from typing import NamedTuple
 
 import numpy as np
 import pandas as pd
@@ -141,10 +152,38 @@ PATHS = dict(
     main_case24_bands=FISCAL / "main_case_2026_09_24/derived/main_case_bands.csv",
     main_case24_summary=FISCAL / "main_case_2026_09_24/derived/summary.json",
 )
-# Main cases after September 24, in adoption order: case -> (main-case lane, the lane's summary.json key
-# and band variant for the case it starts from). Adding a case is one entry here.
-LATER_CASES = {"sept26": ("main_case_2026_09_26", "adopted_2026_09_24"),
-               "sept26_schools": ("main_case_schools_full_2026_09_26", "adopted_2026_09_26")}
+
+
+class Case(NamedTuple):
+    lane: str                     # the main-case lane
+    base: str                     # the lane's summary.json key and band variant for the case it starts from
+    profile: str = "cbo_category_lag_non_school_full"   # the case's profile in main_case_bands.csv
+    ends: str | None = None       # case_ends.cjs output in derived/: capital return and capped programs at the ends
+
+
+# Main cases after September 24, in adoption order. Adding a case is one entry here.
+LATER_CASES = {"sept26": Case("main_case_2026_09_26", "adopted_2026_09_24"),
+               "sept26_schools": Case("main_case_schools_full_2026_09_26", "adopted_2026_09_26"),
+               "sept27": Case("main_case_long_run_2026_09_27", "schools_case", "long_run_non_school_full",
+                              "case_ends_sept27.json")}
+
+# Capped programs (from the September 27 case). Rental assistance and LIHEAP are capped and rationed among
+# eligible households: without the group, eligible households who now go without take its slots. Each program's
+# amount falls on its eligible non-recipients among other residents, equal per household (household weight),
+# split equally over the household's other-resident members. Proxies, on the CPS ASEC 2025 household file:
+# - rental assistance: renter households paying cash rent (H_TENURE 2) with money income below 50% of their
+#   state's median household money income (all households, household weights), neither in public housing
+#   (HPUBLIC) nor paying lower rent because a government pays part (HLORENT; the account's rental key uses the
+#   same two flags). HUD's voucher rule is "very low income": 50% of the area's median family income, adjusted
+#   for family size (24 CFR 5.603, 982.201(b)). The proxy uses the state median household income, unadjusted;
+# - LIHEAP: households with money income below 150% of the 2024 HHS poverty guideline for their size (89 FR
+#   2961; Alaska and Hawaii have their own), receiving no energy assistance (HENGAST). The statute's ceiling is
+#   the greater of 150% of poverty and 60% of the state median income (42 U.S.C. 8624(b)(2)(B)); the proxy omits
+#   the second.
+CAPPED_SOURCES = CACHE / "capped"
+POVERTY_GUIDELINE_2024 = {"contiguous": (15_060, 5_380), 2: (18_810, 6_730), 15: (17_310, 6_190)}  # 2 AK, 15 HI
+RENTAL_INCOME_LIMIT = 0.5          # of the state median household money income
+LIHEAP_POVERTY_MULTIPLE = 1.5
 GATES: dict[str, dict] = {}
 
 
@@ -340,10 +379,11 @@ def fiscal_totals(case="sept23"):
     # band end stays (shared low, personal high), so the change at each band end again moves A there.
     prev_case, prev, prev_band, prev_rebuilt = "sept24", a24, band24, rebuilt
     kept, changes = dict(adopted_2026_09_23=ado, adopted_2026_09_24=a24), dict(sept24_change=change)
-    for name, (lane, base_key) in LATER_CASES.items():
+    for name, c in LATER_CASES.items():
+        lane, base_key = c.lane, c.base
         kept.setdefault(base_key, prev)
         b = pd.read_csv(FISCAL / lane / "derived/main_case_bands.csv")
-        b = b[b.profile == "cbo_category_lag_non_school_full"].set_index("variant")
+        b = b[b.profile == c.profile].set_index("variant")
         s = json.loads((FISCAL / lane / "derived/summary.json").read_text())
         responses = json.loads((FISCAL / lane / "derived/corrections.json").read_text())["meta"]["responses"]
         if responses != s["responses"]:
@@ -362,11 +402,29 @@ def fiscal_totals(case="sept23"):
         entry = dict(A_low_cost=prev["A_low_cost"] - ch[0], A_high_cost=prev["A_high_cost"] - ch[1], band=band,
                      responses=responses, justice=ado["justice"], **changes)
         entry["A_mid"] = (entry["A_low_cost"] + entry["A_high_cost"]) / 2
+        if c.ends:
+            entry.update(case_ends(name, c, band))
         if name == case:
             out.update(adopted=entry, **kept, case=case)
             return out
         prev_case, prev, prev_band, prev_rebuilt = name, entry, band, now_rebuilt
     raise SystemExit(f"[BLOCKED] unknown case {case}")
+
+
+def case_ends(name, c, band):
+    """The case's capital return and capped programs at its band ends, from case_ends.cjs (costs, $bn)."""
+    e = json.loads((DERIVED / c.ends).read_text())
+    stale = [rel for rel, h in e["inputs"].items() if sha(FISCAL / rel) != h]
+    if (e["case"], e["lane"], e["profile"]) != (name, c.lane, c.profile) or stale:
+        raise SystemExit(f"[BLOCKED] {c.ends} is stale or for another case ({stale}); rerun node case_ends.cjs")
+    ends = [e["ends"]["low"], e["ends"]["high"]]
+    gate(f"{name}_case_ends_are_the_band", np.allclose([x["cost_bn"] for x in ends], band, rtol=0, atol=1e-9),
+         case_ends=[x["cost_bn"] for x in ends], band=band)
+    return dict(capital_return=[x["capital_return_bn"] for x in ends],
+                capital_return_by_level={lv: [x["capital_return_by_level_bn"][lv] for x in ends]
+                                         for lv in ("state_local", "federal")},
+                capped_programs={k: [x["capped_bn"][k] for x in ends] for k in e["capped_lines"]},
+                block_grant={k: [x["block_grant_bn"][k] for x in ends] for k in (e["block_grant_line"],)})
 
 
 def nest_rows():
@@ -681,6 +739,73 @@ def crime_key(d, R_money_all, rates, mode):
     return {k: np.where(old, rates[k][idx], 0.0) for k in ("violent", "serious", "simple")}, idx
 
 
+# ------------------------------------------------------------------------- capped programs
+def verify_capped_text():
+    """Positive controls for the capped programs' rules against the cached texts (when cached)."""
+    checks = {"fr_2024-00796.txt": ["$15,060", "add $5,380", "$18,810", "add $6,730", "$17,310", "add $6,190"],
+              "usc42_8624.html": ["150 percent of the poverty level", "60 percent of the State median income"],
+              "cfr24_5.603.html": ["50 percent of the median family income for the area"],
+              "cfr24_982.201.html": ["very low income"]}
+    found = {}
+    for fname, needles in checks.items():
+        path = CAPPED_SOURCES / fname
+        if not path.exists():
+            print(f"[DEGRADED] {fname} not cached; the capped-program rules are not re-verified against it")
+            continue
+        text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", path.read_text(errors="replace")))
+        missing = [n for n in needles if n not in text]
+        if missing:
+            raise SystemExit(f"[BLOCKED] {fname} lacks the pinned text {missing}")
+        found[fname] = sha(path)
+    pinned = POVERTY_GUIDELINE_2024
+    gate("capped_rules_match_texts", len(found) == len(checks) and pinned["contiguous"] == (15_060, 5_380)
+         and pinned[2] == (18_810, 6_730) and pinned[15] == (17_310, 6_190), files=len(found))
+    return found
+
+
+def capped_keys(d):
+    """Per-person keys of each capped program's eligible non-recipients: every eligible household with other
+    residents counts once (household weight), split equally over its other-resident members."""
+    with zipfile.ZipFile(PATHS["cps"]) as z:
+        h = pd.read_csv(z.open("hhpub25.csv"), usecols=["H_SEQ", "GESTFIPS", "H_TENURE", "HPUBLIC", "HLORENT",
+                                                        "HENGAST", "HTOTVAL", "H_NUMPER", "HSUP_WGT"])
+    h = h[h.H_SEQ.isin(d.PH_SEQ.unique())].set_index("H_SEQ")          # households with person records
+    codes = {"H_TENURE": {1, 2, 3}, "HPUBLIC": {0, 1, 2}, "HLORENT": {0, 1, 2}, "HENGAST": {1, 2}}
+    gate("capped_cps_codes", all(set(h[k].unique()) <= v for k, v in codes.items()) and h.GESTFIPS.nunique() == 51,
+         households=len(h), states=h.GESTFIPS.nunique())
+    hw = h.HSUP_WGT / 100
+    median = {st: float(wquantile(g.HTOTVAL.to_numpy(float), g.HSUP_WGT.to_numpy(float), 0.5))
+              for st, g in h.groupby("GESTFIPS")}
+    base, step = (np.array(v, float) for v in zip(*[POVERTY_GUIDELINE_2024.get(st, POVERTY_GUIDELINE_2024["contiguous"])
+                                                     for st in h.GESTFIPS]))
+    guideline = base + step * (h.H_NUMPER.to_numpy(float) - 1)
+    recipient = {"housing_subsidies": h.HPUBLIC.eq(1) | h.HLORENT.eq(1), "energy_assistance": h.HENGAST.eq(1)}
+    eligible = {"housing_subsidies": h.H_TENURE.eq(2) & (h.HTOTVAL < RENTAL_INCOME_LIMIT * h.GESTFIPS.map(median)),
+                "energy_assistance": h.HTOTVAL < LIHEAP_POVERTY_MULTIPLE * guideline}
+    pw, other = d.pw.to_numpy(), d.other.to_numpy()
+    keys, info = {}, {}
+    for line in eligible:
+        flag = eligible[line] & ~recipient[line]
+        on_person = d.PH_SEQ.map(flag)
+        if on_person.isna().any():
+            raise SystemExit(f"[BLOCKED] {line}: a person record without its household")
+        m = other & on_person.to_numpy(bool)
+        if np.any(pw[m] <= 0):
+            raise SystemExit(f"[BLOCKED] {line}: an eligible other resident without a person weight")
+        keys[line] = np.where(m, d.hh_frac.to_numpy() / np.where(m, pw, 1.0), 0.0)
+        with_other = flag & h.index.isin(d.PH_SEQ[other])
+        gate(f"capped_{line}_equal_per_household", np.isclose((pw * keys[line]).sum(), hw[with_other].sum(), rtol=1e-12),
+             key_sum=(pw * keys[line]).sum(), households=hw[with_other].sum())
+        info[line] = dict(eligible_non_recipient_households_m=float(hw[with_other].sum() / 1e6),
+                          other_residents_in_them_m=float(pw[m].sum() / 1e6),
+                          eligible_households_all_m=float(hw[eligible[line]].sum() / 1e6),
+                          recipient_households_all_m=float(hw[recipient[line]].sum() / 1e6))
+    info["state_median_household_income"] = dict(min=min(median.values()), max=max(median.values()),
+                                                  national=float(wquantile(h.HTOTVAL.to_numpy(float),
+                                                                           h.HSUP_WGT.to_numpy(float), 0.5)))
+    return keys, info
+
+
 # ------------------------------------------------------------------------- weights and tables
 def person_weights(d, R, eta, floor):
     """(max(y, floor) / ybar)^(-eta) for other residents; None if the floor is not positive
@@ -727,9 +852,10 @@ def by_bin(delta, d, R, nbin=5):
 def main():
     ap = argparse.ArgumentParser(description="Distribution of the account's channels among other residents.")
     ap.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept23"), default=list(LATER_CASES)[-1],
-                    help="a case after September 24 (default: the last in LATER_CASES, sept26_schools: schools at "
-                         "full average cost; sept26: CBO's one-year school response, 0.63-0.66), or an earlier "
-                         "adopted case")
+                    help="a case after September 24 (default: the last in LATER_CASES, sept27: long-run responses, "
+                         "rental assistance, government enterprises and the return on public capital; sept26_schools: "
+                         "schools at full average cost; sept26: CBO's one-year school response, 0.63-0.66), or an "
+                         "earlier adopted case")
     ap.add_argument("--out-dir", type=Path, default=DERIVED)
     args = ap.parse_args()
     out_dir = args.out_dir
@@ -739,6 +865,23 @@ def main():
     d = load_cps()
     pw, other = d.pw.to_numpy(), d.other.to_numpy()
     fiscal = fiscal_totals(args.case)
+    adopted = fiscal["adopted"]
+    # The budget's part of A. From the September 27 case the capped programs leave it for their eligible
+    # non-recipients (D, a cost at each band end), and the capital return K is also reported alone.
+    budget_mid = adopted["A_mid"]
+    capped = "capped_programs" in adopted
+    if capped:
+        capped_texts = verify_capped_text()
+        capped_key, capped_info = capped_keys(d)
+        D_end = [sum(v[j] for v in adopted["capped_programs"].values()) for j in (0, 1)]
+        D_mid = (D_end[0] + D_end[1]) / 2
+        K_mid = (adopted["capital_return"][0] + adopted["capital_return"][1]) / 2
+        budget_mid = adopted["A_mid"] + D_mid
+
+        def displaced(j=None, lines=tuple(capped_key)):
+            """Per-person loss of eligible non-recipients: at band end j, or the mean of the two ends."""
+            at = {k: (v[0] + v[1]) / 2 if j is None else v[j] for k, v in adopted["capped_programs"].items()}
+            return sum(per_person(d, capped_key[k], -at[k]) for k in lines)
     F_total, S_total = bea_totals()
     rates = ncvs_rates()
 
@@ -844,7 +987,7 @@ def main():
 
         # Central channels.
         for conv, key in keys.items():
-            ch[f"fiscal_{conv}"] = per_person(d, key, fiscal["adopted"]["A_mid"] + F_c)
+            ch[f"fiscal_{conv}"] = per_person(d, key, budget_mid + F_c)
         ch["wages"] = wage_delta(basis["below_ba"], central, True)
         ch["renters"] = -spread_cells(acs[("central", "metro_local")]["rent_cells"], R, d)
         landlord = {}
@@ -858,6 +1001,9 @@ def main():
         ch["unreimbursed_care"] = per_person(d, priv.astype(float), -unreimbursed_mid)
         ch["housing_net"] = ch["renters"] + ch["landlords"]
         central_parts = ["wages", "renters", "landlords", "crime", "unreimbursed_care"]
+        if capped:
+            ch["displaced_beneficiaries"] = displaced()
+            central_parts.append("displaced_beneficiaries")
         for conv in keys:
             ch[f"TOTAL_{conv}"] = ch[f"fiscal_{conv}"] + sum(ch[p] for p in central_parts)
 
@@ -865,11 +1011,18 @@ def main():
         # Check key for (a): the CPS tax fields (federal income tax after credits, payroll tax
         # with the employer half, state income tax), per capita within the household. They omit
         # property, sales and excise taxes.
-        ch["fiscal_a_cps_tax_fields"] = per_person(d, np.maximum(d.cps_tax_pc.to_numpy(float), 0),
-                                                   fiscal["adopted"]["A_mid"] + F_c)
+        ch["fiscal_a_cps_tax_fields"] = per_person(d, np.maximum(d.cps_tax_pc.to_numpy(float), 0), budget_mid + F_c)
         ch["wages_pretax"] = wage_delta(basis["below_ba"], central, False)
+        if capped:
+            # The three financing columns: cash financing and the resource cost (the capital return) by each
+            # convention, the displaced beneficiaries by program; fiscal = cash + resource.
+            for conv, key in keys.items():
+                ch[f"fiscal_cash_{conv}"] = per_person(d, key, budget_mid + K_mid + F_c)
+                ch[f"fiscal_resource_{conv}"] = per_person(d, key, -K_mid)
+            for k in capped_key:
+                ch[f"displaced_{k}"] = displaced(lines=(k,))
         for conv, key in keys.items():
-            ch[f"fiscal_A_only_{conv}"] = per_person(d, key, fiscal["adopted"]["A_mid"])
+            ch[f"fiscal_A_only_{conv}"] = per_person(d, key, budget_mid)
             ch[f"TOTAL_{conv}_pretax_wages"] = (ch[f"fiscal_A_only_{conv}"] + ch["wages_pretax"]
                                                 + sum(ch[p] for p in central_parts if p != "wages"))
             # Published September 20 band: fiscal A+F, the under-charged part of uncompensated
@@ -911,8 +1064,12 @@ def main():
         # Range variants: every low or every high choice, per channel, on the weighted scale.
         rng = {}
         for conv, key in keys.items():
-            rng[f"fiscal_{conv}"] = {f"A={v:.2f}": per_person(d, key, v + F_c)
-                                     for v in (fiscal["adopted"]["A_low_cost"], fiscal["adopted"]["A_high_cost"])}
+            if capped:
+                rng[f"fiscal_{conv}"] = {f"A={v:.2f}": per_person(d, key, v + D_end[j] + F_c) + displaced(j)
+                                         for j, v in enumerate((adopted["A_low_cost"], adopted["A_high_cost"]))}
+            else:
+                rng[f"fiscal_{conv}"] = {f"A={v:.2f}": per_person(d, key, v + F_c)
+                                         for v in (fiscal["adopted"]["A_low_cost"], fiscal["adopted"]["A_high_cost"])}
             # A wage scenario also moves the induced receipts; the difference from the central
             # F is financed by the same convention, so fiscal + wages stays consistent.
             rng[f"wages_{conv}"] = {lab: wage_delta(basis[s], r, True)
@@ -931,8 +1088,7 @@ def main():
         # ---- gates: splits sum back to the given totals; eta = 0 equals the unweighted sum
         a_c = arms[("central", "metro_local")]
         given = {
-            "fiscal_a": fiscal["adopted"]["A_mid"] + F_c, "fiscal_b": fiscal["adopted"]["A_mid"] + F_c,
-            "fiscal_a_cps_tax_fields": fiscal["adopted"]["A_mid"] + F_c,
+            "fiscal_a": budget_mid + F_c, "fiscal_b": budget_mid + F_c, "fiscal_a_cps_tax_fields": budget_mid + F_c,
             "wages": P_c, "renters": -a_c["other_renters_extra_rent_bn"],
             "landlords": a_c["other_renters_extra_rent_bn"] + a_c["net_other_residents_welfare_bn"],
             "housing_net": a_c["net_other_residents_welfare_bn"], "crime": -crime_custody,
@@ -944,6 +1100,13 @@ def main():
             - crime_custody - unreimbursed_mid,
         }
         given["TOTAL_b"] = given["TOTAL_a"]
+        if capped:
+            given["displaced_beneficiaries"] = -D_mid
+            for conv in keys:
+                given[f"fiscal_cash_{conv}"] = budget_mid + K_mid + F_c
+                given[f"fiscal_resource_{conv}"] = -K_mid
+            for k, v in adopted["capped_programs"].items():
+                given[f"displaced_{k}"] = -(v[0] + v[1]) / 2
         for name, tot in given.items():
             got = (pw * ch[name]).sum() / 1e9
             gate(f"sum_{measure}_{name}", np.isclose(got, tot, rtol=1e-9, atol=1e-9), split=got, given=tot)
@@ -1037,7 +1200,7 @@ def main():
         persons_p = np.bincount(p100, weights=wv, minlength=100)
         resources_p = np.bincount(p100, weights=wv * d.resources_pc.to_numpy()[other], minlength=100) / 1e9
         ybar_p = np.bincount(p100, weights=wv * R["y"][other], minlength=100) / persons_p
-        for name in PERCENTILE_CHANNELS:
+        for name in PERCENTILE_CHANNELS[:-2] + ("displaced_beneficiaries",) * capped + PERCENTILE_CHANNELS[-2:]:
             x = (pw * ch[name])[other]
             net = np.bincount(p100, weights=x, minlength=100) / 1e9
             loss = np.bincount(p100, weights=np.minimum(x, 0), minlength=100) / 1e9
@@ -1146,6 +1309,25 @@ def main():
                                         net=v["net_other_residents_welfare_bn"],
                                         owners_stock=v["other_owner_value_gain_stock_bn"])
                  for k, v in arms.items()})
+    if capped:
+        # Welfare signs (a cost is negative); cash + resource + displaced = A + F at each band end.
+        inputs["financing_columns"] = {end: dict(
+            cash_financing_bn=a + D_end[j] + adopted["capital_return"][j] + F_c,
+            resource_cost_bn=-adopted["capital_return"][j],
+            resource_cost_federal_bn=-adopted["capital_return_by_level"]["federal"][j],
+            displaced_beneficiaries_bn=-D_end[j], A_plus_F_bn=a + F_c)
+            for j, (end, a) in enumerate((("low_cost_end", adopted["A_low_cost"]), ("high_cost_end", adopted["A_high_cost"])))}
+        inputs["capped_programs"] = dict(
+            rule="rental assistance and LIHEAP fall on their eligible non-recipients among other residents, equal per "
+                 "household, under both financing conventions; TANF-type aid (a block grant) stays with the budget",
+            rental_assistance="renter households paying cash rent (H_TENURE 2), money income below 50% of the state's "
+                              "median household money income (CPS ASEC 2025), neither HPUBLIC nor HLORENT; HUD's "
+                              "very-low-income rule, 24 CFR 5.603 and 982.201(b), without its family-size adjustment",
+            liheap="households with money income below 150% of the 2024 HHS poverty guideline for their size "
+                   "(89 FR 2961), no energy assistance (HENGAST); 42 U.S.C. 8624(b)(2)(B)(i), without the 60% of "
+                   "state median income alternative",
+            amounts_at_band_ends_bn=adopted["capped_programs"], block_grant_at_band_ends_bn=adopted["block_grant"],
+            texts_sha256=capped_texts, **capped_info)
     (out_dir / "inputs.json").write_text(json.dumps(inputs, indent=1, default=float))
     (out_dir / "gates.json").write_text(json.dumps(GATES, indent=1, default=float))
     manifest = [dict(file=str(p.relative_to(HERE)), bytes=p.stat().st_size, sha256=sha(p))
