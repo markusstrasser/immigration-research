@@ -122,6 +122,13 @@ both fill-in methods, so the moves add exactly:
     subsidies received ... less the current expenses".
   - With both responding, the two offset apart from their keys (0.0752 against 0.1172). That leaves a credit to
     the group of about $0.2bn for public housing's operating subsidies, and at most $2.53bn. [INFERENCE]
+  - **This is a confirmed defect, and its fix is deferred.** The conceptual audit (§7) confirms it as a
+    conservation failure: a synthetic $1bn on both legs lowers the group's cost by $0.041–0.043bn.
+    - The fix: consolidate the transfer before keying, so one attributed amount sits on both legs.
+    - It waits for the next case revision, together with the joint road scenario. At the likely size it moves the
+      case by about +$0.2bn, under the headline's rounding; a second propagation for that would cost more than it
+      corrects.
+    - If the internal transfer turns out to be large (the bound is +$2.5bn), the fix comes first.
 - **Beside the account, not in the range:**
   - capital at 7%: $406.3–461.6bn;
   - option A (enterprises out): $304.6–364.4bn;
@@ -171,6 +178,10 @@ both fill-in methods, so the moves add exactly:
   years or more; the long-run response then falls toward the across-state 0.727.
 - **A joint road scenario.** Road operations, road capital and congestion share one response, but the range
   varies them separately (audit §6). A joint scenario could move the case's high end.
+  - It would compute operations, depreciation, return, capacity and congestion together under three cases: a
+    fixed stock, replacement adjustment and a smaller stationary network.
+  - The highway response also mixes a population removal share with a resources key. The population law gives
+    $17.9bn instead of $12.0bn at the low end. The audit calls that an alternative model, not a correction.
 - **The question changes.** The account moves from a yearly snapshot to a removal path. The first-year
   budget response then governs the first years, and capital responds with a lag.
 
