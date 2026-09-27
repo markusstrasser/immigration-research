@@ -10,16 +10,16 @@
  "by_component_at_case_ends_bn": {
   "college": {
    "2pct": [
-    2.6296255487855387,
-    2.702608855483912
+    3.703234282450358,
+    3.806014803249917
    ],
    "3pct": [
-    3.9444383231783076,
-    4.053913283225867
+    5.554851423675536,
+    5.709022204874874
    ],
    "7pct": [
-    9.203689420749386,
-    9.459130994193693
+    12.961319988576252,
+    13.321051811374709
    ]
   },
   "gps_fed": {
@@ -66,30 +66,30 @@
   },
   "health_sl": {
    "2pct": [
-    0.10694569140164911,
-    0.10694569140164911
+    0.4143149557944839,
+    0.4143149557944839
    ],
    "3pct": [
-    0.16041853710247364,
-    0.16041853710247364
+    0.6214724336917258,
+    0.6214724336917258
    ],
    "7pct": [
-    0.3743099199057719,
-    0.3743099199057719
+    1.4501023452806936,
+    1.4501023452806936
    ]
   },
   "k12": {
    "2pct": [
-    9.523149551035806,
-    9.523149551035806
+    8.652057499006602,
+    8.893664125395434
    ],
    "3pct": [
-    14.284724326553706,
-    14.284724326553706
+    12.9780862485099,
+    13.34049618809315
    ],
    "7pct": [
-    33.33102342862532,
-    33.33102342862532
+    30.28220124652311,
+    31.127824438884023
    ]
   },
   "pos_fed": {
@@ -124,16 +124,16 @@
  "by_line_at_case_ends_bn": {
   "education_services": {
    "2pct": [
-    12.152775099821344,
-    12.225758406519716
+    12.35529178145696,
+    12.699678928645351
    ],
    "3pct": [
-    18.229162649732015,
-    18.338637609779575
+    18.532937672185437,
+    19.049518392968025
    ],
    "7pct": [
-    42.534712849374706,
-    42.790154422819015
+    43.24352123509936,
+    44.448876250258735
    ]
   },
   "general_public_services": {
@@ -152,16 +152,16 @@
   },
   "health_services": {
    "2pct": [
-    0.22696694207006285,
-    0.22696694207006285
+    0.5343362064628976,
+    0.5343362064628976
    ],
    "3pct": [
-    0.3404504131050943,
-    0.3404504131050943
+    0.8015043096943464,
+    0.8015043096943464
    ],
    "7pct": [
-    0.79438429724522,
-    0.79438429724522
+    1.8701767226201418,
+    1.8701767226201418
    ]
   },
   "public_order_safety": {
@@ -181,36 +181,36 @@
  },
  "candidate_band_bn": {
   "2pct": {
-   "high": 308.35996127628334,
+   "high": 309.1412510628018,
    "high_spec": [
     11,
     11
    ],
-   "low": 273.97286037421895,
+   "low": 274.48274632024743,
    "low_spec": [
     48,
     48
    ]
   },
   "3pct": {
-   "high": 316.56255525249867,
+   "high": 317.73448993227646,
    "high_spec": [
     11,
     11
    ],
-   "low": 281.7150428734627,
+   "low": 282.4798717925054,
    "low_spec": [
     48,
     48
    ]
   },
   "7pct": {
-   "high": 349.3729311573602,
+   "high": 352.1074454101748,
    "high_spec": [
     11,
     11
    ],
-   "low": 312.6837728704377,
+   "low": 314.4683736815373,
    "low_spec": [
     48,
     48
@@ -218,12 +218,12 @@
   }
  },
  "candidate_rate_band_bn": {
-  "high": 316.56255525249867,
+  "high": 317.73448993227646,
   "high_spec": [
    11,
    11
   ],
-  "low": 273.97286037421895,
+  "low": 274.48274632024743,
   "low_spec": [
    48,
    48
@@ -260,6 +260,487 @@
    }
   }
  },
+ "college_part_of_non_k12_educational": 0.9335966773843558,
+ "enterprises": {
+  "account_line": {
+   "group_amount_bn": -5.706817709,
+   "id": "enterprise_surplus",
+   "key": "resident_population",
+   "national_bn": -47.46,
+   "response_in_every_evaluation_of_the_case": 0
+  },
+  "bands_bn": {
+   "A": {
+    "band": [
+     300.1014378877004,
+     359.83978086465515
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "D": {
+    "band": [
+     317.73747542061005,
+     383.44042830951963
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   }
+  },
+  "capital": {
+   "beas_enterprise_total_bn": 4960.3895,
+   "depreciation_2024_bn": 112.62,
+   "equipment_bn": 149.473,
+   "ipp_bn": 19.219,
+   "listed_types_bn": 4828.197105269931,
+   "listed_types_exceed_enterprise_structures_bn": 36.499605269930726,
+   "nipa_7_5_enterprise_cfc_bn": {
+    "all": 111.904,
+    "federal": 14.026,
+    "state_local": 97.878
+   },
+   "remainder_bn": 132.19239473006928,
+   "remainder_split_by_uncovered_depreciation_bn": {
+    "federal": 13.60674313697455,
+    "state_local": 18.109897304209454
+   },
+   "stock_by_component_bn": {
+    "ent_airports_sl": 595.8142303973117,
+    "ent_housing_sl": 420.402,
+    "ent_other_fed": 56.71180600256709,
+    "ent_other_sl": 75.4805887275022,
+    "ent_ports_sl": 94.43351434918577,
+    "ent_power_fed": 27.6655,
+    "ent_power_sl": 542.057,
+    "ent_sewer_sl": 1224.8960000000002,
+    "ent_tolls_sl": 501.1837272292877,
+    "ent_transit_sl": 505.7986332941459,
+    "ent_water_sl": 915.9465
+   },
+   "structures_bn": 4791.6975
+  },
+  "choice": "the operator's: option D or option A",
+  "key_consistency": {
+   "note": "the receipt keeps model.json's resident_population amount (gate enterprise_receipt_is_model_jsons_resident_share); the case's corrections (the CPS lane's stack) re-key the population-keyed spending lines but not this receipt",
+   "option_D_band_at_the_spending_key_bn": [
+    317.28729113391466,
+    382.8379890929049
+   ],
+   "population_keyed_spending_lines_the_corrections_re_key": [
+    "defense",
+    "domestic_interest",
+    "economic_affairs_services",
+    "general_public_services",
+    "health_services",
+    "housing_community_services",
+    "income_security_services",
+    "military_medical",
+    "other_federal_benefits",
+    "other_state_benefits",
+    "other_subsidies",
+    "public_order_safety",
+    "recreation_culture",
+    "ssi",
+    "transport_subsidies"
+   ],
+   "receipt_key": [
+    0.12024478948588285,
+    0.12024478948588285
+   ],
+   "spending_population_key": [
+    0.11717537467643237,
+    0.11717537467643237
+   ]
+  },
+  "nipa_1_7_5_cfc_bn": {
+   "general_government": 691.888,
+   "government": 803.792,
+   "government_enterprises": 111.904
+  },
+  "nipa_3_8_current_surplus_bn": {
+   "l1 Current surplus of government enterprises": -47.46,
+   "l10 Toll facilities": 8.843,
+   "l11 Liquor stores": 0.971,
+   "l12 Air and water terminals": 0.816,
+   "l13 Housing and urban renewal": -40.298,
+   "l14 Public transit": -66.69,
+   "l15 Other\\2\\": 28.376,
+   "l2 Federal": -1.822,
+   "l3 Postal Service": -7.096,
+   "l4 Federal Housing Administration": 3.684,
+   "l5 Tennessee Valley Authority": -1.069,
+   "l6 Other\\1\\": 2.659,
+   "l7 State and local": -45.637,
+   "l8 Water and sewerage": 12.488,
+   "l9 Gas and electricity": 9.856
+  },
+  "option_D_at_case_ends_bn": {
+   "key": [
+    0.12024478948588285,
+    0.12024478948588285
+   ],
+   "note": "2% at spec 48, 3% at spec 11",
+   "returns_by_type": {
+    "ent_airports_sl": [
+     1.4328711341363611,
+     2.1493067012045413
+    ],
+    "ent_housing_sl": [
+     1.0110229997888824,
+     1.5165344996833237
+    ],
+    "ent_other_fed": [
+     0.13638598348285813,
+     0.2045789752242872
+    ],
+    "ent_other_sl": [
+     0.18152295003618008,
+     0.2722844250542701
+    ],
+    "ent_ports_sl": [
+     0.22710276106659882,
+     0.3406541415998982
+    ],
+    "ent_power_fed": [
+     0.06653264447043385,
+     0.09979896670565076
+    ],
+    "ent_power_sl": [
+     1.303590597086984,
+     1.9553858956304762
+    ],
+    "ent_sewer_sl": [
+     2.945747233242,
+     4.418620849862999
+    ],
+    "ent_tolls_sl": [
+     1.2052946354887166,
+     1.807941953233075
+    ],
+    "ent_transit_sl": [
+     1.2163930036540367,
+     1.8245895054810548
+    ],
+    "ent_water_sl": [
+     2.2027558814566244,
+     3.304133822184936
+    ]
+   },
+   "returns_total": [
+    11.929219823909676,
+    17.89382973586451
+   ],
+   "surplus_line_move": [
+    5.706817709,
+    5.706817709
+   ]
+  },
+  "options": {
+   "A": {
+    "enterprise_component_response": 0.0,
+    "label": "enterprises out: no enterprise capital, and the enterprise_surplus receipt held at 0",
+    "receipt_responses": {
+     "enterprise_surplus": 0.0
+    }
+   },
+   "D": {
+    "enterprise_component_response": 1.0,
+    "label": "all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1",
+    "receipt_responses": {
+     "enterprise_surplus": 1.0
+    }
+   }
+  },
+  "public_housing_keys_at_case_ends": {
+   "spec11": {
+    "corrections_json_edit_bn": -3.009747152521089,
+    "enterprise_key": {
+     "b_hotdeck_union_matched": 0.12024478948588285,
+     "b_matched_over_pooled": 0.12024478948588285
+    },
+    "housing_subsidies_group_amount_bn": {
+     "b_hotdeck_union_matched": 4.4587180320618405,
+     "b_matched_over_pooled": 4.605413680895982
+    },
+    "note": "the case's corrections re-key housing_subsidies: corrections.json edits its housing_support amount by -3.0097bn, from model.json's 7.5418bn (key 0.1252), so the evaluated key is lower; the engine charges target_bn, so model.json's key is target_bn over national_bn",
+    "rental_assistance_key": {
+     "b_hotdeck_union_matched": 0.07399011022156686,
+     "b_matched_over_pooled": 0.07642444833135828
+    },
+    "return_bn": {
+     "2pct": {
+      "enterprise_key": 1.0110229997888824,
+      "rental_assistance_key": 0.6323458124476683,
+      "uncorrected_model_share": 1.0522869758582227
+     },
+     "3pct": {
+      "enterprise_key": 1.5165344996833237,
+      "rental_assistance_key": 0.9485187186715025,
+      "uncorrected_model_share": 1.578430463787334
+     },
+     "7pct": {
+      "enterprise_key": 3.538580499261089,
+      "rental_assistance_key": 2.2132103435668395,
+      "uncorrected_model_share": 3.6830044155037798
+     }
+    },
+    "uncorrected_model_amount_bn": 7.541813009,
+    "uncorrected_model_share": 0.1251524702377989
+   },
+   "spec48": {
+    "corrections_json_edit_bn": -3.009747152521089,
+    "enterprise_key": {
+     "b_hotdeck_union_matched": 0.12024478948588285,
+     "b_matched_over_pooled": 0.12024478948588285
+    },
+    "housing_subsidies_group_amount_bn": {
+     "b_hotdeck_union_matched": 4.4587180320618405,
+     "b_matched_over_pooled": 4.605413680895982
+    },
+    "note": "the case's corrections re-key housing_subsidies: corrections.json edits its housing_support amount by -3.0097bn, from model.json's 7.5418bn (key 0.1252), so the evaluated key is lower; the engine charges target_bn, so model.json's key is target_bn over national_bn",
+    "rental_assistance_key": {
+     "b_hotdeck_union_matched": 0.07399011022156686,
+     "b_matched_over_pooled": 0.07642444833135828
+    },
+    "return_bn": {
+     "2pct": {
+      "enterprise_key": 1.0110229997888824,
+      "rental_assistance_key": 0.6323458124476683,
+      "uncorrected_model_share": 1.0522869758582227
+     },
+     "3pct": {
+      "enterprise_key": 1.5165344996833237,
+      "rental_assistance_key": 0.9485187186715025,
+      "uncorrected_model_share": 1.578430463787334
+     },
+     "7pct": {
+      "enterprise_key": 3.538580499261089,
+      "rental_assistance_key": 2.2132103435668395,
+      "uncorrected_model_share": 3.6830044155037798
+     }
+    },
+    "uncorrected_model_amount_bn": 7.541813009,
+    "uncorrected_model_share": 0.1251524702377989
+   }
+  },
+  "subsidies_received": "the surplus includes subsidies received from other levels of government (MP-5), such as federal subsidies to public housing authorities (Handbook ch. 2), so under D those payments and the housing_subsidies line offset except for their different keys",
+  "surplus_before_interest": {
+   "quotes": [
+    "In calculating the current surplus, expenses include consumption of fixed capital (CFC), but neither revenue nor expenses include interest.",
+    "Interest received and paid are ignored in the calculation of the current surplus of government enterprises.",
+    "(1) Their interest payments and receipts are presented with those of general government rather than those of business;",
+    "before deducting any explicit or implicit interest charges, rent, or other property incomes payable on financial assets, land, or other natural resources required to carry out production."
+   ],
+   "reading": "the surplus is before interest and enterprises' interest sits with general government's, the account's interest row (held at 0), so charging the full return does not count interest twice",
+   "source": "BEA, Government Transactions (NIPA Methodology Paper 5, 2005); NIPA Handbook ch. 2 (December 2024)"
+  },
+  "surplus_vs_return": {
+   "air and water terminals": {
+    "charges_exceed_production_costs": true,
+    "components": "ent_airports_sl+ent_ports_sl",
+    "current_surplus_bn": 0.816,
+    "national_return_2pct_bn": 13.80495489492995,
+    "national_return_3pct_bn": 20.707432342394924,
+    "national_return_7pct_bn": 48.31734213225483,
+    "nipa_3_8_lines": "l12",
+    "option_D_at_case_ends_bn": {
+     "net": [
+      1.5618541469824796,
+      2.391841094583959
+     ],
+     "note": "2% at spec 48, 3% at spec 11",
+     "return": [
+      1.65997389520296,
+      2.4899608428044395
+     ],
+     "surplus_move": [
+      -0.0981197482204804,
+      -0.0981197482204804
+     ]
+    },
+    "stock_bn": 690.2477447464975
+   },
+   "federal (Postal Service, power)": {
+    "charges_exceed_production_costs": false,
+    "components": "ent_power_fed+ent_other_fed",
+    "current_surplus_bn": -1.822,
+    "national_return_2pct_bn": 1.6875461200513417,
+    "national_return_3pct_bn": 2.5313191800770123,
+    "national_return_7pct_bn": 5.906411420179697,
+    "nipa_3_8_lines": "l2",
+    "option_D_at_case_ends_bn": {
+     "net": [
+      0.42200463439657054,
+      0.5234639483732165
+     ],
+     "note": "2% at spec 48, 3% at spec 11",
+     "return": [
+      0.20291862795329196,
+      0.30437794192993795
+     ],
+     "surplus_move": [
+      0.21908600644327855,
+      0.21908600644327855
+     ]
+    },
+    "stock_bn": 84.37730600256708
+   },
+   "gas and electricity": {
+    "charges_exceed_production_costs": true,
+    "components": "ent_power_sl",
+    "current_surplus_bn": 9.856,
+    "national_return_2pct_bn": 10.841140000000001,
+    "national_return_3pct_bn": 16.26171,
+    "national_return_7pct_bn": 37.94399000000001,
+    "nipa_3_8_lines": "l9",
+    "option_D_at_case_ends_bn": {
+     "net": [
+      0.11845795191412267,
+      0.7702532504576147
+     ],
+     "note": "2% at spec 48, 3% at spec 11",
+     "return": [
+      1.303590597086984,
+      1.9553858956304762
+     ],
+     "surplus_move": [
+      -1.1851326451728614,
+      -1.1851326451728614
+     ]
+    },
+    "stock_bn": 542.057
+   },
+   "housing and urban renewal": {
+    "charges_exceed_production_costs": false,
+    "components": "ent_housing_sl",
+    "current_surplus_bn": -40.298,
+    "national_return_2pct_bn": 8.40804,
+    "national_return_3pct_bn": 12.61206,
+    "national_return_7pct_bn": 29.428140000000003,
+    "nipa_3_8_lines": "l13",
+    "option_D_at_case_ends_bn": {
+     "net": [
+      5.85664752649099,
+      6.362159026385431
+     ],
+     "note": "2% at spec 48, 3% at spec 11",
+     "return": [
+      1.0110229997888824,
+      1.5165344996833237
+     ],
+     "surplus_move": [
+      4.845624526702108,
+      4.845624526702108
+     ]
+    },
+    "stock_bn": 420.402
+   },
+   "liquor stores and other (lotteries, parking)": {
+    "charges_exceed_production_costs": true,
+    "components": "ent_other_sl",
+    "current_surplus_bn": 29.347,
+    "national_return_2pct_bn": 1.509611774550044,
+    "national_return_3pct_bn": 2.2644176618250658,
+    "national_return_7pct_bn": 5.283641210925154,
+    "nipa_3_8_lines": "l11+l15",
+    "option_D_at_case_ends_bn": {
+     "net": [
+      -3.347300887006024,
+      -3.256539411987934
+     ],
+     "note": "2% at spec 48, 3% at spec 11",
+     "return": [
+      0.18152295003618008,
+      0.2722844250542701
+     ],
+     "surplus_move": [
+      -3.528823837042204,
+      -3.528823837042204
+     ]
+    },
+    "stock_bn": 75.4805887275022
+   },
+   "public transit": {
+    "charges_exceed_production_costs": false,
+    "components": "ent_transit_sl",
+    "current_surplus_bn": -66.69,
+    "national_return_2pct_bn": 10.115972665882918,
+    "national_return_3pct_bn": 15.173958998824375,
+    "national_return_7pct_bn": 35.40590433059022,
+    "nipa_3_8_lines": "l14",
+    "option_D_at_case_ends_bn": {
+     "net": [
+      9.235518014467564,
+      9.843714516294582
+     ],
+     "note": "2% at spec 48, 3% at spec 11",
+     "return": [
+      1.2163930036540367,
+      1.8245895054810548
+     ],
+     "surplus_move": [
+      8.019125010813527,
+      8.019125010813527
+     ]
+    },
+    "stock_bn": 505.7986332941459
+   },
+   "toll facilities": {
+    "charges_exceed_production_costs": true,
+    "components": "ent_tolls_sl",
+    "current_surplus_bn": 8.843,
+    "national_return_2pct_bn": 10.023674544585754,
+    "national_return_3pct_bn": 15.03551181687863,
+    "national_return_7pct_bn": 35.08286090605014,
+    "nipa_3_8_lines": "l10",
+    "option_D_at_case_ends_bn": {
+     "net": [
+      0.14196996206505452,
+      0.7446172798094128
+     ],
+     "note": "2% at spec 48, 3% at spec 11",
+     "return": [
+      1.2052946354887166,
+      1.807941953233075
+     ],
+     "surplus_move": [
+      -1.063324673423662,
+      -1.063324673423662
+     ]
+    },
+    "stock_bn": 501.1837272292877
+   },
+   "water and sewerage": {
+    "charges_exceed_production_costs": true,
+    "components": "ent_water_sl+ent_sewer_sl",
+    "current_surplus_bn": 12.488,
+    "national_return_2pct_bn": 42.81685,
+    "national_return_3pct_bn": 64.22527500000001,
+    "national_return_7pct_bn": 149.85897500000002,
+    "nipa_3_8_lines": "l8",
+    "option_D_at_case_ends_bn": {
+     "net": [
+      3.6468861835989186,
+      6.2211377409482305
+     ],
+     "note": "2% at spec 48, 3% at spec 11",
+     "return": [
+      5.148503114698624,
+      7.722754672047936
+     ],
+     "surplus_move": [
+      -1.501616931099705,
+      -1.501616931099705
+     ]
+    },
+    "stock_bn": 2140.8425
+   }
+  }
+ },
  "equipment_software_shares": {
   "eq_college_sl": 0.07770783844608237,
   "eq_gps_fed": 0.19480694082740926,
@@ -269,12 +750,6 @@
   "eq_income_security_sl": 0.0344624971672374,
   "eq_pos_fed": 0.16817936851391246,
   "eq_pos_sl": 0.11339560955212939
- },
- "fee_factors": {
-  "college_component": 0.6629366353475105,
-  "federal_nondefense_sales_share_of_federal_health_max": 0.031151942548442405,
-  "health_state_local": 0.25812655301465454,
-  "higher_education_tuition": 0.6887718121207401
  },
  "gaps_at_case_ends_bn": {
   "R&D (federal nondefense): health's share at its lower bound 0.179": {
@@ -307,44 +782,224 @@
     0.6888484863002032
    ]
   },
-  "conditional per unit of response: economic affairs tax-financed structures (highways and streets; conservation and development)": {
+  "block: equipment and software (derived split): air_fed share 0.0419": {
    "2pct": [
-    8.955274202501553,
-    8.955274202501553
+    0.0,
+    0.019159108189471474
    ],
    "3pct": [
-    13.43291130375233,
-    13.43291130375233
+    0.0,
+    0.028738662284207208
    ]
   },
-  "conditional per unit of response: economic affairs transportation and power (largely fee-financed)": {
+  "block: equipment and software (derived split): hwy_fed share 0.0211": {
    "2pct": [
-    2.9039038643965416,
-    2.9039038643965416
+    0.0,
+    0.009641739762738657
    ],
    "3pct": [
-    4.3558557965948115,
-    4.3558557965948115
+    0.0,
+    0.014462609644107987
    ]
   },
-  "conditional per unit of response: recreation and culture (amusement and recreation; museums and zoos)": {
+  "block: equipment and software (derived split): hwy_sl share 0.0371": {
    "2pct": [
-    1.094214094712201,
-    1.094214094712201
+    0.015478965431224984,
+    0.02094001039674437
    ],
    "3pct": [
-    1.6413211420683014,
-    1.6413211420683014
+    0.023218448146837475,
+    0.03141001559511655
+   ]
+  },
+  "block: equipment and software (derived split): rec_fed share 0.0169": {
+   "2pct": [
+    0.0,
+    0.011226011693995102
+   ],
+   "3pct": [
+    0.0,
+    0.01683901754099265
+   ]
+  },
+  "block: equipment and software (derived split): rec_sl share 0.0219": {
+   "2pct": [
+    0.019032381594879636,
+    0.020007868332729484
+   ],
+   "3pct": [
+    0.028548572392319452,
+    0.030011802499094225
+   ]
+  },
+  "block: land at 10% of the structures charged: air_fed": {
+   "2pct": [
+    0.0,
+    0.005708162360489748
+   ],
+   "3pct": [
+    0.0,
+    0.008562243540734621
+   ]
+  },
+  "block: land at 10% of the structures charged: hwy_fed": {
+   "2pct": [
+    0.0,
+    0.008798350521950722
+   ],
+   "3pct": [
+    0.0,
+    0.013197525782926083
+   ]
+  },
+  "block: land at 10% of the structures charged: hwy_sl": {
+   "2pct": [
+    0.5230578229695455,
+    0.7075948518488271
+   ],
+   "3pct": [
+    0.7845867344543185,
+    1.061392277773241
+   ]
+  },
+  "block: land at 10% of the structures charged: rec_fed": {
+   "2pct": [
+    0.0,
+    0.009803009020331188
+   ],
+   "3pct": [
+    0.0,
+    0.01470451353049678
+   ]
+  },
+  "block: land at 10% of the structures charged: rec_sl": {
+   "2pct": [
+    0.09476148981605163,
+    0.0996184004508889
+   ],
+   "3pct": [
+    0.14214223472407747,
+    0.14942760067633337
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_airports_sl": {
+   "2pct": [
+    0.14328711341363612,
+    0.14328711341363612
+   ],
+   "3pct": [
+    0.21493067012045414,
+    0.21493067012045414
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_housing_sl": {
+   "2pct": [
+    0.10110229997888824,
+    0.10110229997888824
+   ],
+   "3pct": [
+    0.15165344996833235,
+    0.15165344996833235
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_other_fed": {
+   "2pct": [
+    0.0,
+    0.0
+   ],
+   "3pct": [
+    0.0,
+    0.0
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_other_sl": {
+   "2pct": [
+    0.0,
+    0.0
+   ],
+   "3pct": [
+    0.0,
+    0.0
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_ports_sl": {
+   "2pct": [
+    0.02271027610665988,
+    0.02271027610665988
+   ],
+   "3pct": [
+    0.03406541415998982,
+    0.03406541415998982
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_power_fed": {
+   "2pct": [
+    0.006653264447043386,
+    0.006653264447043386
+   ],
+   "3pct": [
+    0.009979896670565078,
+    0.009979896670565078
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_power_sl": {
+   "2pct": [
+    0.13035905970869843,
+    0.13035905970869843
+   ],
+   "3pct": [
+    0.19553858956304762,
+    0.19553858956304762
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_sewer_sl": {
+   "2pct": [
+    0.2945747233242,
+    0.2945747233242
+   ],
+   "3pct": [
+    0.4418620849863,
+    0.4418620849863
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_tolls_sl": {
+   "2pct": [
+    0.12052946354887167,
+    0.12052946354887167
+   ],
+   "3pct": [
+    0.18079419532330748,
+    0.18079419532330748
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_transit_sl": {
+   "2pct": [
+    0.12163930036540369,
+    0.12163930036540369
+   ],
+   "3pct": [
+    0.1824589505481055,
+    0.1824589505481055
+   ]
+  },
+  "enterprise: land at 10% of the structures charged: ent_water_sl": {
+   "2pct": [
+    0.2202755881456624,
+    0.2202755881456624
+   ],
+   "3pct": [
+    0.3304133822184936,
+    0.3304133822184936
    ]
   },
   "equipment and software (derived split): eq_college_sl share 0.0777": {
    "2pct": [
-    0.06643647417997886,
-    0.06828036924453483
+    0.09356078431092656,
+    0.09615749448491248
    ],
    "3pct": [
-    0.09965471126996828,
-    0.10242055386680224
+    0.14034117646638986,
+    0.14423624172736874
    ]
   },
   "equipment and software (derived split): eq_gps_fed share 0.1948": {
@@ -369,12 +1024,12 @@
   },
   "equipment and software (derived split): eq_health_sl share 0.2257": {
    "2pct": [
-    0.02569175292948673,
-    0.02569175292948673
+    0.09953161590480829,
+    0.09953161590480829
    ],
    "3pct": [
-    0.03853762939423009,
-    0.03853762939423009
+    0.14929742385721242,
+    0.14929742385721242
    ]
   },
   "equipment and software (derived split): eq_income_security_fed share 0.0552": {
@@ -449,12 +1104,12 @@
   },
   "land at 10% of the structures charged: college": {
    "2pct": [
-    0.26296255487855386,
-    0.2702608855483912
+    0.3703234282450358,
+    0.3806014803249917
    ],
    "3pct": [
-    0.3944438323178308,
-    0.4053913283225868
+    0.5554851423675536,
+    0.5709022204874875
    ]
   },
   "land at 10% of the structures charged: gps_fed": {
@@ -489,22 +1144,22 @@
   },
   "land at 10% of the structures charged: health_sl": {
    "2pct": [
-    0.01069456914016491,
-    0.01069456914016491
+    0.0414314955794484,
+    0.0414314955794484
    ],
    "3pct": [
-    0.016041853710247366,
-    0.016041853710247366
+    0.062147243369172586,
+    0.062147243369172586
    ]
   },
   "land at 10% of the structures charged: k12": {
    "2pct": [
-    0.931348013199648,
-    0.931348013199648
+    0.8461566752264706,
+    0.8697853970329694
    ],
    "3pct": [
-    1.3970220197994718,
-    1.3970220197994718
+    1.2692350128397059,
+    1.304678095549454
    ]
   },
   "land at 10% of the structures charged: pos_fed": {
@@ -568,52 +1223,101 @@
    ]
   }
  },
- "gates_passed": 30,
+ "gates_passed": 54,
  "group_return_bn": {
   "2pct": {
    "case_ends": [
-    15.484364998487484,
-    16.405187952430737
+    15.994250944515935,
+    17.186477738949208
    ],
-   "max_over_specs": 16.405187952430737,
-   "min_over_specs": 15.484364998487484
+   "max_over_specs": 17.186477738949208,
+   "min_over_specs": 15.994250944515935
   },
   "3pct": {
    "case_ends": [
-    23.22654749773122,
-    24.607781928646105
+    23.9913764167739,
+    25.779716608423808
    ],
-   "max_over_specs": 24.607781928646105,
-   "min_over_specs": 23.22654749773122
+   "max_over_specs": 25.779716608423808,
+   "min_over_specs": 23.9913764167739
   },
   "7pct": {
    "case_ends": [
-    54.1952774947062,
-    57.418157833507586
+    55.97987830580577,
+    60.15267208632223
    ],
-   "max_over_specs": 57.418157833507586,
-   "min_over_specs": 54.1952774947062
+   "max_over_specs": 60.15267208632223,
+   "min_over_specs": 55.97987830580577
   }
  },
  "higher_ed_auxiliary_share": 0.21058512162554843,
  "inputs": {
   "decisions/2026-09-26-main-case-schools-full-cost.md": "492ac52bb03450f721e7b07ac773b6fa605bb5b302544d02bac221cee18fdcbb",
+  "infra/immigration-fiscal/administration_response_2026_09_20/inputs.sha256.json": "24aca38d7e75435f37f88833c95e2832ee6e6bb5494694deedafd24bfdc3bd26",
   "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
   "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js": "091ca31219c678ec84ee89b7c0837f4e9d43dcefc6bd1fe47d82337956a666e0",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_highfill_wp2022_8.pdf": "4741b1465dcce4f1ccb88e29571073b9d26b38bb3b279fcf504e6105aa1d3fb9",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_highfill_wp2022_8.txt": "5419040a2942089635494c6f0bdc1e6c612b2e7ab5d94f59217224cfbcf0bfb1",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_larson_wp2015_3.pdf": "132c6cde8524c361953dcc5a6dd4590b42625b054000a54759e08a369985d047",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_larson_wp2015_3.txt": "a27119b5254424d5cbf17fe79e13d523c13325a1e82babfcf7ae2ec83ee543d3",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_mp5_government_transactions.pdf": "7ec9cddb203418a8af23c7158c8345ae4a28606e46d05bae05cdddafa7346881",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_mp5_government_transactions.txt": "480f951bcc315085f87799015c369cbba30a084e24e672f4ec51149c5149321b",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_nipa_handbook_chapter_02.pdf": "82e9efeb46ec54b2d87d2453090457863d9c0527d41ca88c01e5b5dd7a9c30b5",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_nipa_handbook_chapter_02.txt": "c6f350b409baca47aed55fa9d29f05c22e450da8895a516f98dcdb4f2e7e37a2",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_nipa_handbook_chapter_09.pdf": "16ef4259973574911060879c5c1f7d3ae0400ab841c3880f29ee67201e1e0fc4",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_nipa_handbook_chapter_09.txt": "b76ca51fb939978d0e4d5dbe43825852f71111a203f39f18479de162e8870fb8",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_wasshausen_p2011_1.pdf": "2bcfe626b0de59fae512b77ce006a89cb01796d06e929b819a5c676031faeb14",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/bea_wasshausen_p2011_1.txt": "2c258bbc32d8dbe6b33cbcb0ebf0c450a3914e881091a8742e03ba3dfbd74e06",
   "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/census_c30_definitions.html": "597db649fb4cc3cb95dfdd206b601f49fc8b0dd316986e6dcf1370afc8d61093",
-  "infra/immigration-fiscal/capital_return_services_2026_09_27/spec_lines.cjs": "5c06caa513b74f54eeb545848b4f6f4bfd717fbd734c19cf30b2aa6276674b3c",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/frb_z1_table_descriptions.pdf": "a6e5f5611cfbcc5e9c70fda98d377fe8b9da6275e3872f1b8d391d3d5b8a145a",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/frb_z1_table_descriptions.txt": "6e7c3fa7defa40dc5216cf6b27c5198d8d1d9ea61927ae1af991dc34e7917337",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/spec_lines.cjs": "047a256d1ef8c667583e3291d582792c5dcedac275dfd553e3a7ed17fd7220e4",
   "infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md": "4843072e14e9f19d9f00a10c0ba9198646e111cfbda4df542167666c3888f3cf",
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py": "98e35e814b09780c15d335ca312d1219557268558e253c3d096b7a685aaa44aa",
   "infra/immigration-fiscal/finite_response_2026_09_26/derived/r_values.json": "70c90edd6ae4b8ff7d8262756af7d49c3f982ce99de7bbdcff1355ec8251977b",
-  "infra/immigration-fiscal/main_case_2026_09_24/package.cjs": "c416f76707a83361f83a8530a3dc6e39015f25bb099fa3db9d30aa8fbe528534",
+  "infra/immigration-fiscal/local_spending_composition_2026_09_18/_cache/indunit_2012.zip": "84f9573749b2c9de7b90011b832884dbe2efb4a8b538c5c4a2753e9f6410dda8",
+  "infra/immigration-fiscal/local_spending_composition_2026_09_18/_cache/indunit_2017.zip": "1c0883be0db654f23e6386ac3d8f38b298d209b330ee832feadc73b9720e1bb5",
+  "infra/immigration-fiscal/local_spending_composition_2026_09_18/_cache/indunit_2018.zip": "6a710fc8c55b8e06090bfbe43208c213ac2b3940936f850a6e563705175d3de3",
+  "infra/immigration-fiscal/local_spending_composition_2026_09_18/_cache/indunit_2019.zip": "cceced1d67c66ca4c9f67f2d6a64f568e7d8f2a17c731f607c8da23fcdbf88da",
+  "infra/immigration-fiscal/local_spending_composition_2026_09_18/_cache/indunit_2020.zip": "0f6f1511dffbf62419f64426ac6284a5186699affbc2201a3ff7ddd3b3f428f3",
+  "infra/immigration-fiscal/local_spending_composition_2026_09_18/_cache/indunit_2021.zip": "dae63fdb3917de5195eb793c5401594c4c6dafb55ee099ca7075efcee96a7caa",
+  "infra/immigration-fiscal/local_spending_composition_2026_09_18/_cache/indunit_2022.zip": "c8de889f6b3320d3be347e3880607346d6440eda82705b26db2fa410fe6e83a5",
+  "infra/immigration-fiscal/local_spending_composition_2026_09_18/_cache/indunit_2023.zip": "42e0cc63e42d577d5777e509cc5f7bfa7fbae164770984009ca9a0df53373918",
+  "infra/immigration-fiscal/macro_closure_2026_09_19/_cache/finance_2022_us_combined.json": "7c0bb5b89236235673fd67b5709ffc2a62b2bf5afc2880e9e28e74262c94fa1d",
+  "infra/immigration-fiscal/main_case_2026_09_24/package.cjs": "be7b3a1cec727122bc1396008e5f7d2dc6fd4de71f675bdce1b312863b5f4907",
   "infra/immigration-fiscal/main_case_2026_09_26/package.cjs": "2c2f13545f4241f5a632a14d5bb543ea03034c384b103a54d7e3a986e998541a",
   "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/corrections.json": "a75e0aa13c7686ece918ba6e8633cb9e400721adbc9805db4a0b9817a17de285",
   "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/main_case_bands.csv": "396ea0bf0b59f3e388817a7d4f271524577f01a402bc82c5118b91bd28de1768",
   "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/summary.json": "864246c1da7c988040d76ed60816072036b5a89c37b8fd792b68f22a601c5ada",
   "infra/immigration-fiscal/main_case_schools_full_2026_09_26/package.cjs": "d8c5b71d3887459e232442cca458b329b8ee60885ae1ae33bb2f2910b135deb4",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/c30_state.xlsx": "8d5b848a3493f76c926ab57e006575b385862d17fdfdfae94b6edbf353186847",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/c30_stateha.xls": "482cad7ed857825a6015076c5c4c32511e73e3351474bb4df391f0bd0c349931",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/c30_stateha1.xls": "e47cd20411c8d9c06391b43d4e039491c1c2b3dfc4bc7c4129a0d5d69ce54cbd",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/c30_stateha2.xlsx": "9fdc8aa9ef83660b69f6a9d5ca89d2788f8e24db86c4ed5fedc1d008e0adeb27",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/cog_22slsstab1.xlsx": "4dd123c5ad520e33d9692f622d389a020e2d3a7e6e782763663854dd84643b9b",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/elsec19_sumtables.xls": "96807e7c1cb6b6390439f92310fc82d04df8be7e1a55d1b4c6a135ed431e76fc",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/elsec24_sumtables.xlsx": "848133174f299957653bbc7070633cf3ff23e4242695ccb628893fb8f6571154",
   "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/fa_Section7All_xls.xlsx": "e67f534560f111575d5314bab8fe4d62dd696c2e49f421eaa2fa73f25dea12ae",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/fa_TablesRegister.txt": "11fb755d9752294e02da9dc252d92a0d917ed7fd2c89810e0ad9e4c4f6e5ba17",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/fa_details_index.html": "d9e2ba82579223154178ff11441687e169268a40a51f4066e03ca9c547869f84",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/nces_d23_tabn236.10.xlsx": "be96a79b713e115b47d4b1dfc4b152cbf954fe5ee2a10f82a2b206325e07d50d",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/nipa_Section5All_xls.xlsx": "6d21a75bc8bb7e3861945652a576dd646903adcc9294ea82d3e002bb7d331885",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/nipa_Section7All_xls.xlsx": "ce107c8ce92393613c0abae38156afcfaef8ab571eedf0302dc09ca44738b9ef",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/nipa_SeriesRegister.txt": "a4ea3f149ac201679f489e5e3ea42e40dd91cacccd317694795ab5de8e542cf9",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/nipa_TablesRegister.txt": "f5395223c44332353b6397171a76ad242888c393d4698fed18ac837137c71dcc",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/omb_a4_2003.html": "ab48b0f7ec3c4bea1e11875756417948366d3cf263ba70920a37d339201fd228",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/omb_a4_2023.pdf": "f0821a142cebe58311d8fdead83a5ba841b5c421c74243f0d6bf2f3649e1d2bf",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/omb_m25_15.pdf": "a13d6af4abaa0a9436f3c329592e3315de64684be767431c67a964f84afdb630",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/treasury_real_yield_2024.csv": "d3ff00a9287ebf68fdc80e72fb2d1895a73c84b3ff2a6ca8c6d64648cb470f16",
   "infra/immigration-fiscal/school_capital_return_2026_09_26/capital_return.py": "a5f2458416db7cee4b050301a6492861c1241dfbb9f8c290cd6a96d46e00be10",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/derived/sources.csv": "ff23b8570baa7a9e1a6142d2865f7d72c57cf63cf399cbc6590173a0717c68ed",
   "infra/immigration-fiscal/school_capital_return_2026_09_26/derived/summary.json": "664df795f69fd7101c27b51f75508b977b12b4fc29c95932ec78d1106290c124",
+  "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/candidate_band.json": "21cfa28f8dcfbf9cdac9343c57b619ef83dcf138c66929930b533c0a061e9d91",
+  "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
+  "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/per_spec_costs.csv": "63fd561f84db0d8ef075cd5fb7f7d2cfe72f15d83332ac5268bae65a44d8151c",
+  "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
   "research/immigration-matched-benefits-2026-09-19.md": "9207fd0fcae475df6b63c7ef0d9c1436a4d95a1a96576fad2b354e98ba1571c7",
+  "sources/immigration-fiscal/data/external/bea_nipa/Section1All_xls.xlsx": "238ba851c9a4932d91a0dedb1b3f2e6c6d37574d154a54267da18b9cb0921a19",
   "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e"
  },
  "k12": {
@@ -633,14 +1337,58 @@
    "summary.json": false
   }
  },
+ "k12_keys_at_case_ends": {
+  "spec11": {
+   "account_key": {
+    "b_hotdeck_union_matched": 0.16325122921826465,
+    "b_matched_over_pooled": 0.16325122921826465
+   },
+   "pupil_share": 0.17480600215120404,
+   "return_bn": {
+    "2pct": {
+     "account_key": 8.893664125395434,
+     "pupil_share": 9.523149551035806
+    },
+    "3pct": {
+     "account_key": 13.34049618809315,
+     "pupil_share": 14.284724326553706
+    },
+    "7pct": {
+     "account_key": 31.127824438884023,
+     "pupil_share": 33.33102342862532
+    }
+   }
+  },
+  "spec48": {
+   "account_key": {
+    "b_hotdeck_union_matched": 0.15881632160435685,
+    "b_matched_over_pooled": 0.15881632160435685
+   },
+   "pupil_share": 0.17480600215120404,
+   "return_bn": {
+    "2pct": {
+     "account_key": 8.652057499006602,
+     "pupil_share": 9.523149551035806
+    },
+    "3pct": {
+     "account_key": 12.9780862485099,
+     "pupil_share": 14.284724326553706
+    },
+    "7pct": {
+     "account_key": 30.28220124652311,
+     "pupil_share": 33.33102342862532
+    }
+   }
+  }
+ },
  "land_per_10pct_total_at_case_ends_bn": {
   "2pct": [
-   1.5274695579448159,
-   1.6195518533391413
+   1.580376019777404,
+   1.6990667583883465
   ],
   "3pct": [
-   2.2912043369172235,
-   2.4293277800087116
+   2.370564029666106,
+   2.5486001375825196
   ]
  },
  "nipa_unallocable_over_sl_office_investment": {
@@ -680,147 +1428,999 @@
   0.1785537376215049,
   0.7942949127481698
  ],
+ "rejected_netting": {
+  "factors_it_would_apply": {
+   "health_state_local": 0.25812655301465454,
+   "higher_education_tuition": 0.6887718121207401,
+   "parks": 0.69,
+   "regular_highways": 0.96
+  },
+  "federal_nondefense_sales_share_of_federal_health_max": 0.031151942548442405,
+  "reason": "the account's lines are consumption, gross output less sales, and an enterprise's surplus is sales less costs, so the charges are credited there already; netting the return by the charge share would credit them a second time",
+  "would_remove_at_case_ends_bn": {
+   "block": [
+    0.5029837476175794,
+    0.887782473205931
+   ],
+   "core": [
+    1.380977998057654,
+    2.1161628182382586
+   ]
+  }
+ },
+ "roads_parks_block": {
+  "census_transit_share_of_transport_construction": {
+   "2012": 0.6058039116983374,
+   "2017": 0.6042157890363887,
+   "2018": 0.5630074087319074,
+   "2019": 0.5416211484152355,
+   "2020": 0.585321139858936,
+   "2021": 0.5660901480186481,
+   "2022": 0.6245699558213342,
+   "2023": 0.6256821483990411
+  },
+  "charges_over_production_costs_2017": {
+   "air": 1.54,
+   "housing": 0.13,
+   "parking": 1.73,
+   "parks": 0.31,
+   "ports": 1.41,
+   "regular_highways": 0.04,
+   "sewerage": 1.33,
+   "toll": 2.66,
+   "transit": 0.31,
+   "water": 1.25
+  },
+  "combined_bands_bn": {
+   "long-run responses + core return|2pct/3pct": {
+    "at_high_end": {
+     "block": 0.0,
+     "core": 25.779716608423808,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 0.0,
+     "core": 15.994250944515935,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     293.9232447598444,
+     347.36693925161785
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "long-run responses only (the sister lane's candidate)|": {
+    "at_high_end": {
+     "block": 0.0,
+     "core": 0.0,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 0.0,
+     "core": 0.0,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     277.92899381532845,
+     321.58722264319397
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A at one rate|2pct": {
+    "at_high_end": {
+     "block": 8.315227742024877,
+     "core": 17.186477738949208,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     300.1014378877004,
+     347.0889281241681
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A at one rate|3pct": {
+    "at_high_end": {
+     "block": 12.472841613037318,
+     "core": 25.779716608423808,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 9.267289691783958,
+     "core": 23.9913764167739,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     311.18765992388626,
+     359.83978086465515
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A at one rate|7pct": {
+    "at_high_end": {
+     "block": 29.103297097087072,
+     "core": 60.15267208632223,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 21.623675947495904,
+     "core": 55.97987830580577,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     355.53254806863015,
+     410.8431918266033
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A, across-state readings at both ends (the response lane's variant)|2pct/3pct": {
+    "at_high_end": {
+     "block": 9.568014973870376,
+     "core": 25.779716608423808,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 24.412632415734322
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     300.1014378877004,
+     351.7151373218811
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A, block variant: equipment and software added|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.594303720600834,
+     "core": 25.779716608423808,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.212704474882076,
+     "core": 15.994250944515935,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     300.13594923472647,
+     359.96124297221866
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A, block variant: toll share at its highest year|2pct/3pct": {
+    "at_high_end": {
+     "block": 11.642982509019816,
+     "core": 25.779716608423808,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 5.769235661885426,
+     "core": 15.994250944515935,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     299.6924804217298,
+     359.00992176063767
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A, block variant: toll share at its lowest year|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.83867229121216,
+     "core": 25.779716608423808,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.358475764265436,
+     "core": 15.994250944515935,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     300.2817205241098,
+     360.20561154282996
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A, high responses throughout|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.472841613037318,
+     "core": 25.779716608423808,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 8.315227742024877,
+     "core": 15.994250944515935,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "band": [
+     312.4304233816137,
+     359.83978086465515
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A, low responses throughout|2pct/3pct": {
+    "at_high_end": {
+     "block": 9.267289691783958,
+     "core": 25.779716608423808,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     300.1014378877004,
+     346.44227806365734
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option A: long-run responses + core + block|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.472841613037318,
+     "core": 25.779716608423808,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 0.0,
+     "enterprise_surplus_move": 0.0,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     300.1014378877004,
+     359.83978086465515
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D at one rate|2pct": {
+    "at_high_end": {
+     "block": 8.315227742024877,
+     "core": 17.186477738949208,
+     "enterprise_returns": 11.929219823909676,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.929219823909676,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.73747542061005,
+     364.72496565707775
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D at one rate|3pct": {
+    "at_high_end": {
+     "block": 12.472841613037318,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.89382973586451,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 9.267289691783958,
+     "core": 23.9913764167739,
+     "enterprise_returns": 17.89382973586451,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     334.7883073687508,
+     383.44042830951963
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D at one rate|7pct": {
+    "at_high_end": {
+     "block": 29.103297097087072,
+     "core": 60.15267208632223,
+     "enterprise_returns": 41.75226938368387,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 21.623675947495904,
+     "core": 55.97987830580577,
+     "enterprise_returns": 41.75226938368387,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     402.991635161314,
+     458.3022789192872
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D, across-state readings at both ends (the response lane's variant)|2pct/3pct": {
+    "at_high_end": {
+     "block": 9.568014973870376,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.89382973586451,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 24.412632415734322
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.929219823909676,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.73747542061005,
+     375.31578476674565
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D, block variant: equipment and software added|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.594303720600834,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.89382973586451,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.212704474882076,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.929219823909676,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.7719867676361,
+     383.5618904170832
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D, block variant: toll share at its highest year|2pct/3pct": {
+    "at_high_end": {
+     "block": 11.642982509019816,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.89382973586451,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 5.769235661885426,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.929219823909676,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.3285179546395,
+     382.6105692055021
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D, block variant: toll share at its lowest year|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.83867229121216,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.89382973586451,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.358475764265436,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.929219823909676,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.91775805701946,
+     383.8062589876945
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D, enterprise variant: public housing at model.json's rental key|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.472841613037318,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.95572569996852,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.970483799979018,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.7787393966794,
+     383.5023242736237
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D, enterprise variant: public housing at the rental-assistance key|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.472841613037318,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.32581395485269,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.550542636568462,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.35879823326883,
+     382.8724125285078
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D, enterprises at the spending lines' population key|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.472841613037318,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.43706494610623,
+     "enterprise_surplus_move": 5.5611432821434805,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.624709964070822,
+     "enterprise_surplus_move": 5.5611432821434805,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.28729113391466,
+     382.8379890929049
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D, high responses throughout|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.472841613037318,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.89382973586451,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 8.315227742024877,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.929219823909676,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "band": [
+     330.0664609145234,
+     383.44042830951963
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D, low responses throughout|2pct/3pct": {
+    "at_high_end": {
+     "block": 9.267289691783958,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.89382973586451,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.929219823909676,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.73747542061005,
+     370.0429255085219
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   },
+   "option D: long-run responses + core + block + enterprises|2pct/3pct": {
+    "at_high_end": {
+     "block": 12.472841613037318,
+     "core": 25.779716608423808,
+     "enterprise_returns": 17.89382973586451,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 29.63244931934139
+    },
+    "at_low_end": {
+     "block": 6.178193127855973,
+     "core": 15.994250944515935,
+     "enterprise_returns": 11.929219823909676,
+     "enterprise_surplus_move": 5.706817709,
+     "long_run_move": 19.44049843959695
+    },
+    "band": [
+     317.73747542061005,
+     383.44042830951963
+    ],
+    "end_specs": [
+     "48/48",
+     "11/11"
+    ]
+   }
+  },
+  "congestion_change_beside_the_account_bn": {
+   "high": -7.144654826946226,
+   "low": -5.170148246680148,
+   "note": "a social item from service_response_long_run_2026_09_27/derived/net_change.json (network follows spending); not in the fiscal bands"
+  },
+  "equipment_software_shares_2024": {
+   "air_fed": 0.041918805799955945,
+   "hwy_fed": 0.021095460847705805,
+   "hwy_sl": 0.037142568269345665,
+   "rec_fed": 0.016897101317818408,
+   "rec_sl": 0.0219123689072309
+  },
+  "function_investment_ratio_2024": {
+   "S&L air, water and transit": 0.824443992531105,
+   "S&L highways": 0.9719439295161525,
+   "S&L recreation": 0.8346396615107166,
+   "federal air, water and transit": 0.16357744653272846,
+   "federal highways": 0.48169372811206623,
+   "federal recreation": 0.3660670879922217
+  },
+  "keys_at_case_ends": {
+   "ea": [
+    0.08061009942509388,
+    0.08061009942509388
+   ],
+   "rc": [
+    0.11717537467076877,
+    0.11717537467076877
+   ]
+  },
+  "land_per_10pct_total_at_case_ends_bn": {
+   "2pct": [
+    0.6178193127855971,
+    0.8315227742024877
+   ],
+   "3pct": [
+    0.926728969178396,
+    1.2472841613037318
+   ]
+  },
+  "responses": {
+   "fed_air": {
+    "across_high": 0.739205240969296,
+    "high": 1.0,
+    "low": 0.0
+   },
+   "fed_highways": {
+    "across_high": 0.739205240969296,
+    "high": 1.0,
+    "low": 0.0
+   },
+   "fed_recreation_and_culture": {
+    "across_high": 0.9512448441969144,
+    "high": 1.0,
+    "low": 0.0
+   },
+   "sl_highways": {
+    "across_high": 0.739205240969296,
+    "high": 1.0,
+    "low": 0.739205240969296
+   },
+   "sl_recreation_and_culture": {
+    "across_high": 0.9512448441969144,
+    "high": 1.0,
+    "low": 0.9512448441969144
+   }
+  },
+  "return_bn": {
+   "2pct|across_high": {
+    "by_component": {
+     "air_fed": 0.04219503533177689,
+     "hwy_fed": 0.06503786817710913,
+     "hwy_sl": 5.230578229695457,
+     "rec_fed": 0.09325061788205886,
+     "rec_sl": 0.9476148981605165
+    },
+    "spec": 11,
+    "total": 6.378676649246918
+   },
+   "2pct|high": {
+    "by_component": {
+     "air_fed": 0.05708162360489748,
+     "hwy_fed": 0.08798350521950721,
+     "hwy_sl": 7.075948518488273,
+     "rec_fed": 0.09803009020331187,
+     "rec_sl": 0.9961840045088891
+    },
+    "spec": 11,
+    "total": 8.315227742024877
+   },
+   "2pct|low": {
+    "by_component": {
+     "air_fed": 0.0,
+     "hwy_fed": 0.0,
+     "hwy_sl": 5.230578229695457,
+     "rec_fed": 0.0,
+     "rec_sl": 0.9476148981605165
+    },
+    "spec": 48,
+    "total": 6.178193127855973
+   },
+   "3pct|across_high": {
+    "by_component": {
+     "air_fed": 0.06329255299766533,
+     "hwy_fed": 0.09755680226566371,
+     "hwy_sl": 7.8458673445431835,
+     "rec_fed": 0.13987592682308828,
+     "rec_sl": 1.4214223472407745
+    },
+    "spec": 11,
+    "total": 9.568014973870376
+   },
+   "3pct|high": {
+    "by_component": {
+     "air_fed": 0.08562243540734621,
+     "hwy_fed": 0.1319752578292608,
+     "hwy_sl": 10.613922777732409,
+     "rec_fed": 0.1470451353049678,
+     "rec_sl": 1.4942760067633336
+    },
+    "spec": 11,
+    "total": 12.472841613037318
+   },
+   "3pct|low": {
+    "by_component": {
+     "air_fed": 0.0,
+     "hwy_fed": 0.0,
+     "hwy_sl": 7.8458673445431835,
+     "rec_fed": 0.0,
+     "rec_sl": 1.4214223472407745
+    },
+    "spec": 48,
+    "total": 9.267289691783958
+   },
+   "7pct|across_high": {
+    "by_component": {
+     "air_fed": 0.14768262366121915,
+     "hwy_fed": 0.227632538619882,
+     "hwy_sl": 18.307023803934097,
+     "rec_fed": 0.326377162587206,
+     "rec_sl": 3.3166521435618077
+    },
+    "spec": 11,
+    "total": 22.325368272364212
+   },
+   "7pct|high": {
+    "by_component": {
+     "air_fed": 0.1997856826171412,
+     "hwy_fed": 0.3079422682682753,
+     "hwy_sl": 24.765819814708955,
+     "rec_fed": 0.34310531571159153,
+     "rec_sl": 3.486644015781112
+    },
+    "spec": 11,
+    "total": 29.103297097087072
+   },
+   "7pct|low": {
+    "by_component": {
+     "air_fed": 0.0,
+     "hwy_fed": 0.0,
+     "hwy_sl": 18.307023803934097,
+     "rec_fed": 0.0,
+     "rec_sl": 3.3166521435618077
+    },
+    "spec": 48,
+    "total": 21.623675947495904
+   }
+  },
+  "status": "conditional on service_response_long_run_2026_09_27 (proposed, not adopted); beside the core result",
+  "stock_charged_bn": {
+   "air_fed": 35.406,
+   "hwy_fed": 54.573499999999996,
+   "hwy_sl": 4388.9962727707125,
+   "rec_fed": 41.8305,
+   "rec_sl": 425.0824916531727
+  },
+  "toll_share": {
+   "by_survey_year": {
+    "2012": 0.08539899403376293,
+    "2017": 0.10763692311019422,
+    "2018": 0.17266058724719355,
+    "2019": 0.15517152367158824,
+    "2020": 0.07835215911402492,
+    "2021": 0.07551343281071773,
+    "2022": 0.08094497257175662,
+    "2023": 0.07155318287786581
+   },
+   "pooled": 0.10248778720400632
+  },
+  "transport_mode_shares": {
+   "Air": {
+    "central": 0.49814119549134606,
+    "high": 0.49814119549134606,
+    "low": 0.45321626655363567
+   },
+   "Land": {
+    "central": 0.4228820377435746,
+    "high": 0.4742139418055795,
+    "low": 0.4228820377435746
+   },
+   "Water": {
+    "central": 0.07895283686155616,
+    "high": 0.0873402090811693,
+    "low": 0.07174646742997856
+   }
+  }
+ },
  "row8_response_increment": 0.11389955590612932,
  "sanitation_share_of_sewer_investment": 0.10585971404066549,
  "variants_bn": {
   "college_by_account_school_fraction|2pct": {
    "band": [
-    273.2217788686338,
-    307.2084509968504
+    273.10325487907653,
+    307.8523243347115
    ],
    "return_case_ends": [
-    15.15687555097798,
-    14.823283666880949
+    15.53305594672698,
+    14.958722466146721
    ]
   },
   "college_by_account_school_fraction|3pct": {
    "band": [
-    280.1943686988211,
-    315.2427556359536
+    280.01658271448514,
+    316.20856564274527
    ],
    "return_case_ends": [
-    22.735313326466965,
-    22.234925500321424
+    23.29958392009047,
+    22.43808369922008
    ]
   },
   "end_2024_stocks|2pct": {
    "band": [
-    274.2522780310394,
-    308.65624043970286
+    274.7713236234514,
+    309.45153002762186
    ],
    "return_case_ends": [
-    15.763782655307846,
-    16.701467115850196
+    16.282828247719845,
+    17.49675670376924
    ]
   },
   "end_2024_stocks|3pct": {
    "band": [
-    282.13416935869327,
-    317.00697399762794
+    282.91273774731127,
+    318.1999083795065
    ],
    "return_case_ends": [
-    23.645673982961767,
-    25.052200673775292
+    24.424242371579766,
+    26.245135055653858
    ]
   },
   "equipment_and_software|2pct": {
    "band": [
-    274.52056334898106,
-    308.94855159045414
+    275.13141346811574,
+    309.83155836518836
    ],
    "return_case_ends": [
-    16.03206797324955,
-    16.993778266601566
+    16.64291809238427,
+    17.876785041335737
    ]
   },
   "equipment_and_software|3pct": {
    "band": [
-    282.53659733560585,
-    317.4454407237549
+    283.4528725143079,
+    318.76995088585625
    ],
    "return_case_ends": [
-    24.04810195987432,
-    25.49066739990235
+    24.964377138576403,
+    26.815177562003605
    ]
   },
   "higher_ed_auxiliaries_fee_financed|2pct": {
    "band": [
-    273.4725146866482,
-    307.84572886526325
+    273.75631460691955,
+    308.39465777606904
    ],
    "return_case_ends": [
-    14.984019310916677,
-    15.890955541410634
+    15.26781923118807,
+    16.439884452216447
    ]
   },
   "higher_ed_auxiliaries_fee_financed|3pct": {
    "band": [
-    280.96452434210653,
-    315.7912066359686
+    281.39022422251355,
+    316.6146000021773
    ],
    "return_case_ends": [
-    22.47602896637501,
-    23.83643331211595
+    22.901728846782103,
+    24.659826678324666
    ]
   },
-  "k12_at_account_school_key|2pct": {
+  "k12_at_pupil_share|2pct": {
    "band": [
-    273.10176832218974,
-    307.73047585064296
+    275.35383837227664,
+    309.77073648844214
    ],
    "return_case_ends": [
-    14.613272946458281,
-    15.775702526790365
+    16.865342996545138,
+    17.81596316458958
    ]
   },
-  "k12_at_account_school_key|3pct": {
+  "k12_at_pupil_share|3pct": {
    "band": [
-    280.40840479541896,
-    315.61832711403815
+    283.78650987054925,
+    318.678718070737
    ],
    "return_case_ends": [
-    21.919909419687418,
-    23.66355379018555
+    25.298014494817703,
+    26.723944746884364
    ]
   },
   "offices_at_response_1|2pct": {
    "band": [
-    275.32735310050714,
-    308.86661435532665
+    275.8372390465356,
+    309.64790414184506
    ],
    "return_case_ends": [
-    16.83885772477565,
-    16.911841031474026
+    17.3487436708041,
+    17.693130817992493
    ]
   },
   "offices_at_response_1|3pct": {
    "band": [
-    283.74678196289494,
-    317.3225348710637
+    284.5116108819376,
+    318.49446955084136
    ],
    "return_case_ends": [
-    25.258286587163475,
-    25.367761547211035
+    26.02311550620615,
+    26.539696226988738
    ]
   },
   "sl_office_at_unallocable_response|2pct": {
    "band": [
-    274.31797728873335,
-    308.70507819079774
+    274.8278632347618,
+    309.48636797731615
    ],
    "return_case_ends": [
-    15.829481913001873,
-    16.750304866945125
+    16.339367859030325,
+    17.531594653463596
    ]
   },
   "sl_office_at_unallocable_response|3pct": {
    "band": [
-    282.2327182452343,
-    317.08023062427026
+    282.99754716427697,
+    318.25216530404805
    ],
    "return_case_ends": [
-    23.744222869502806,
-    25.125457300417686
+    24.50905178854548,
+    26.29739198019539
    ]
   }
  },

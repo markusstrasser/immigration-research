@@ -30,6 +30,16 @@
   "detail": "justice keyed by use, health by health_other, general government by population at its specification's response, schools and colleges at 1, from the evaluation cost() makes"
  },
  {
+  "gate": "rental_key_is_model_json_plus_the_cases_edit",
+  "pass": true,
+  "detail": "evaluated rental assistance, mean of methods, 4.5321 = model.json 7.5418 + corrections.json -3.0097 at every specification; key 0.1252 before the edit"
+ },
+ {
+  "gate": "enterprise_receipt_is_model_jsons_resident_share",
+  "pass": true,
+  "detail": "enterprise_surplus: model.json's -5.706818bn (resident_population, key 0.120245) at every specification, with no corrections.json edit; the corrections re-key 15 population-keyed spending lines (general_public_services at 0.117175 as evaluated)"
+ },
+ {
   "gate": "response_zero_and_fixed_lines_stay_at_zero",
   "pass": true,
   "detail": "defense, domestic_interest, economic_affairs_services, recreation_culture, agricultural_subsidies, housing_subsidies, transport_subsidies, other_subsidies: response 0 at every specification"
@@ -80,6 +90,31 @@
   "detail": "S&L health net/gross 126.839/491.383 = 0.2581"
  },
  {
+  "gate": "nipa_enterprises_and_their_capital",
+  "pass": true,
+  "detail": "BEA WP2022-8: toll facilities, air and water terminals, public transit, housing and local parking are S&L enterprises; NIPA Handbook ch. 9: consumption excludes enterprises, gross investment (so the fixed-asset stock) includes them"
+ },
+ {
+  "gate": "charges_over_production_costs_from_bea_table_5",
+  "pass": true,
+  "detail": "toll 2.66; air 1.54; ports 1.41; parking 1.73; parks 0.31; regular_highways 0.04; transit 0.31; housing 0.13; sewerage 1.33; water 1.25 (2017); toll, air, ports and parking >= 1 in every year reported, sewerage and water in the last"
+ },
+ {
+  "gate": "enterprise_surplus_is_after_their_depreciation",
+  "pass": true,
+  "detail": "NIPA 1.7.5 (2024): consumption of fixed capital 4796.7 includes government enterprises' 111.9 (government 803.8 less general government 691.9, which is NIPA 3.10.5 l5); national income, net of it, holds the enterprises' current surplus -47.46 (= NIPA 1.10 l20 = 3.8 l1); NIPA 1.10: net operating surplus = private enterprises + that surplus, and GDI adds CFC beside it; Handbook ch. 9: enterprises' value added sits with business, where output less costs is net operating surplus"
+ },
+ {
+  "gate": "enterprise_surplus_line_is_nipa_3_8_held_at_zero",
+  "pass": true,
+  "detail": "the account's enterprise_surplus receipt (-47.46bn nationally, NIPA 3.8 l1; -5.707bn for the group at the resident-population key) responds at 0 in all 128 evaluations cost() makes (an indirect receipt), so no enterprise's operating result moves with the group"
+ },
+ {
+  "gate": "enterprise_surplus_is_before_interest",
+  "pass": true,
+  "detail": "BEA MP-5 (Government Transactions, 2005): expenses include CFC but neither revenue nor expenses include interest; enterprises' interest payments are presented with general government's; the surplus includes subsidies received from other levels of government. NIPA Handbook ch. 2 (December 2024): operating surplus is before any interest"
+ },
+ {
   "gate": "k12_structures_are_the_key_times_educational_structures",
   "pass": true,
   "detail": "2663.947 = 0.6748 x 3947.572"
@@ -107,7 +142,7 @@
  {
   "gate": "candidate_band_is_ordered_and_above_the_case",
   "pass": true,
-  "detail": "2pct 273.97-308.36; 3pct 281.72-316.56; 7pct 312.68-349.37"
+  "detail": "2pct 274.48-309.14; 3pct 282.48-317.73; 7pct 314.47-352.11"
  },
  {
   "gate": "rate_band_ends_keep_the_case_specifications",
@@ -123,6 +158,76 @@
   "gate": "row8_increment_from_the_case",
   "pass": true,
   "detail": "(b_all 0.962 - b_admin 0.842) x row 8 factor 0.9492 = 0.1139"
+ },
+ {
+  "gate": "long_run_responses_are_the_sister_lanes",
+  "pass": true,
+  "detail": "economic affairs (resources key) 0.3840/0.6386 and recreation (population key) 0.8562/1.0000 are the amount-weighted blends of the subfunction responses; both lines at 0 in the main case"
+ },
+ {
+  "gate": "long_run_per_spec_costs_reproduce",
+  "pass": true,
+  "detail": "the sister lane's 128 per-spec costs and moves = the case's cost + the keyed amounts of this evaluation x the blended responses (max |diff| 4.8e-10)"
+ },
+ {
+  "gate": "long_run_candidate_band_reproduces",
+  "pass": true,
+  "detail": "277.9290-321.5872 at specs 48/11; keyed amounts at the ends 36.4305 (economic affairs) and 6.3663 (recreation)"
+ },
+ {
+  "gate": "long_run_across_state_band_reproduces",
+  "pass": true,
+  "detail": "277.9290-316.3674 (the response lane's candidate 321.5872 + its across-state sensitivity -5.2198 at the high end)"
+ },
+ {
+  "gate": "congestion_change_kept_beside_the_fiscal_case",
+  "pass": true,
+  "detail": "net_change.json's account moves 19.4405/29.6324 are this lane's long-run moves at specs 48/11; its congestion change -5.17/-7.14 is a social item and stays out of the bands"
+ },
+ {
+  "gate": "census_finance_files_reproduce_the_api_anchors",
+  "pass": true,
+  "detail": "18 FY2022 national fields: charges, current operation and capital outlay for highways, airports, parking, ports, parks and transit"
+ },
+ {
+  "gate": "toll_share_from_census_construction",
+  "pass": true,
+  "detail": "toll highways' share of S&L highway construction 0.1025, pooled over FY2012 and FY2017-2023 (single years 0.0716-0.1727)"
+ },
+ {
+  "gate": "highway_and_transport_types_are_their_functions_capital",
+  "pass": true,
+  "detail": "structure investment / function gross investment 2024: S&L highways 0.972, S&L air, water and transit 0.824, S&L recreation 0.835, federal highways 0.482, federal air, water and transit 0.164, federal recreation 0.366; VIP / BEA 1993-2024: highways 0.888-1.068, transportation 0.832-1.111; nontoll highway depreciation 88.6 sits inside S&L highway consumption 201.0"
+ },
+ {
+  "gate": "transport_split_by_vip_vintages",
+  "pass": true,
+  "detail": "perpetual inventory 1209.5 vs BEA 1220.6 (delta 0.0182); pre-1993 vintages 0.212 of the stock at the 1993 mix; land (transit) 0.4229 (0.4229-0.4742), air 0.4981, water 0.0790; Census construction puts transit at 0.542-0.626"
+ },
+ {
+  "gate": "block_equipment_residuals_are_shares",
+  "pass": true,
+  "detail": "subfunction gross investment less its structures over equipment and software investment, 2024: hwy_sl 0.0371, rec_sl 0.0219, hwy_fed 0.0211, air_fed 0.0419, rec_fed 0.0169"
+ },
+ {
+  "gate": "enterprise_capital_is_beas_enterprise_total",
+  "pass": true,
+  "detail": "BEA's government enterprise fixed assets 4960.4 (equipment 149.5, structures 4791.7, IPP 19.2; 2024 average); depreciation 112.62 vs NIPA 7.5 enterprise CFC 111.904 (federal 14.026, S&L 97.878; = NIPA 1.7.5 l13); the listed types 4828.2 exceed enterprise structures by 36.5; remainder 132.2, split S&L 75.5 / federal 56.7 by uncovered depreciation 18.11 / 13.61"
+ },
+ {
+  "gate": "enterprise_surplus_groups_cover_nipa_3_8_and_the_components",
+  "pass": true,
+  "detail": "the groups' surpluses add to NIPA 3.8 l1 (-47.46) and their components to the enterprise total; their moves add to the receipt's (5.7068) and their nets to option D's pieces at specs 48 / 11"
+ },
+ {
+  "gate": "combined_candidate_keeps_the_case_specifications",
+  "pass": true,
+  "detail": "option D 317.7375-383.4404, option A 300.1014-359.8398, at specs 48/48 / 11/11; every combined row keeps ends 48 / 11 in both methods"
+ },
+ {
+  "gate": "land_sources_checked",
+  "pass": true,
+  "detail": "Larson (BEA WP2015-3): federal land $1.8tn (2009) and state-local land for Washington, DC only; Z.1 F.107: the state-local balance sheet excludes land; Wasshausen (BEA 2011): the IMAs use structures excluding land"
  },
  {
   "gate": "interest_row_held_at_zero",
@@ -148,5 +253,20 @@
   "gate": "asset_type_accounting_covers_all_government_capital",
   "pass": true,
   "detail": "types 20931.0 vs all government fixed assets 20931.8 (FAAt701 l1, 2024 average)"
+ },
+ {
+  "gate": "gaps_has_one_land_row_per_component",
+  "pass": true,
+  "detail": "24 land rows in gaps.csv for the 24 components of engine_components.json"
+ },
+ {
+  "gate": "engine_components_recompute_the_per_spec_outputs",
+  "pass": true,
+  "detail": "per_spec.csv (128 rows) and per_spec_block.csv (128 rows, enterprise columns under option D) recomputed from engine_components.json and the spec_lines.cjs evaluation alone: max |diff| 0.0e+00 and 0.0e+00; option A gives exactly 0 for the enterprise block and the receipt"
+ },
+ {
+  "gate": "engine_components_variants_reproduce_this_lanes_variants",
+  "pass": true,
+  "detail": "12 variants, applied as the build applies them (overrides, drops, adds), reproduce bands.csv's variants, the block variants and the public-housing keys under option D, at 2% and 3%, at every specification and response reading: max |diff| 3.6e-15"
  }
 ]
