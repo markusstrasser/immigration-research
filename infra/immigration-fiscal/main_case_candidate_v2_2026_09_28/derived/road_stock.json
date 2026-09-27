@@ -1,0 +1,140 @@
+{
+ "meta": {
+  "lane": "main_case_candidate_v2_2026_09_28",
+  "case": "sept28_candidate_v2",
+  "definition": "state-local nontoll highway construction (Census F44) regressed on log population across states with year effects (the scaling test's model; state-clustered SEs, t critical values with G - 1 df), refitted by the attack's probe; r = [1 - (1 - s)^b] / s",
+  "probe": "candidate_attack_2026_09_28/probe_road_stock.py",
+  "sources": {
+   "candidate_attack_2026_09_28/probe_road_stock.py": "fd1ca48a7d1fb4221ccaef056e424c3c038226ca568d6b8951195522a288664f",
+   "service_response_long_run_2026_09_27/derived/responses.json": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+   "scaling_test_2026_09_20/derived/state/panel.csv": "2a8732657eab23f486bf4abc00105bf3cfe3609a502b717ea4493f0aabad3e10",
+   "tiebout_sorting_2026_09_18/_cache/state_covariates.csv": "08e34dded7d2fa302703dbe73201a5877ac8d45475f72f2a5e08ff40be4221c4",
+   "service_response_long_run_2026_09_27/_cache/2020_Gaz_counties_national.zip": "02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef",
+   "local_spending_composition_2026_09_18/_cache/indunit_2012.zip": "84f9573749b2c9de7b90011b832884dbe2efb4a8b538c5c4a2753e9f6410dda8",
+   "local_spending_composition_2026_09_18/_cache/indunit_2017.zip": "1c0883be0db654f23e6386ac3d8f38b298d209b330ee832feadc73b9720e1bb5",
+   "local_spending_composition_2026_09_18/_cache/indunit_2018.zip": "6a710fc8c55b8e06090bfbe43208c213ac2b3940936f850a6e563705175d3de3",
+   "local_spending_composition_2026_09_18/_cache/indunit_2019.zip": "cceced1d67c66ca4c9f67f2d6a64f568e7d8f2a17c731f607c8da23fcdbf88da",
+   "local_spending_composition_2026_09_18/_cache/indunit_2020.zip": "0f6f1511dffbf62419f64426ac6284a5186699affbc2201a3ff7ddd3b3f428f3",
+   "local_spending_composition_2026_09_18/_cache/indunit_2021.zip": "dae63fdb3917de5195eb793c5401594c4c6dafb55ee099ca7075efcee96a7caa",
+   "local_spending_composition_2026_09_18/_cache/indunit_2022.zip": "c8de889f6b3320d3be347e3880607346d6440eda82705b26db2fa410fe6e83a5",
+   "local_spending_composition_2026_09_18/_cache/indunit_2023.zip": "42e0cc63e42d577d5777e509cc5f7bfa7fbae164770984009ca9a0df53373918"
+  }
+ },
+ "s": 0.12024478903339636,
+ "operations_across_states": {
+  "b": 0.726607147969056,
+  "se": 0.060518702081970556,
+  "r": 0.739205240969296
+ },
+ "construction": {
+  "year_effects": {
+   "model": "year effects",
+   "b": 0.7917783444900082,
+   "se": 0.057970364070206684,
+   "ci95": [
+    0.6752825363671542,
+    0.9082741526128622
+   ],
+   "r": 0.802205015576213,
+   "n": 350,
+   "states": 50
+  },
+  "land": {
+   "model": "+ log land",
+   "b": 0.7583351658763205,
+   "se": 0.045845890648063166,
+   "ci95": [
+    0.6662043993058379,
+    0.8504659324468032
+   ],
+   "r": 0.7699418277803356,
+   "n": 350,
+   "states": 50
+  },
+  "land_growth": {
+   "model": "+ log land + growth 2012-23",
+   "b": 0.7583638432699218,
+   "se": 0.04621386309021376,
+   "ci95": [
+    0.6654936083917473,
+    0.8512340781480963
+   ],
+   "r": 0.769969552593824,
+   "n": 350,
+   "states": 50
+  },
+  "state_year": {
+   "model": "state and year effects",
+   "b": 0.5749392261540804,
+   "se": 0.780997892890312,
+   "ci95": [
+    -0.9945347996484044,
+    2.144413251956565
+   ],
+   "r": 0.5905381404302209,
+   "n": 350,
+   "states": 50
+  }
+ },
+ "stock_responses_low_end": {
+  "construction_year_effects": 0.802205015576213,
+  "construction_land": 0.7699418277803356
+ },
+ "gates": [
+  {
+   "gate": "the probe's operations slope (E44, year effects) is the case's highways_nontoll across-state b (1e-12)",
+   "passed": true,
+   "detail": "0.726607147969"
+  },
+  {
+   "gate": "the probe's s is the case's removal share",
+   "passed": true,
+   "detail": "0.12024478903339636"
+  },
+  {
+   "gate": "r of the operations slope is the case's S&L highway response at the low end (1e-12)",
+   "passed": true,
+   "detail": "0.739205240969"
+  },
+  {
+   "gate": "the panel is the attack's: 350 rows, 50 states",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "construction, year effects: the attack's printed row",
+   "passed": true,
+   "detail": "b 0.791778 SE 0.057970 CI [0.6753, 0.9083] r 0.802205"
+  },
+  {
+   "gate": "construction, + log land: the attack's printed row",
+   "passed": true,
+   "detail": "b 0.758335 SE 0.045846 CI [0.6662, 0.8505] r 0.769942"
+  },
+  {
+   "gate": "construction, + log land + growth 2012-23: the attack's printed row",
+   "passed": true,
+   "detail": "b 0.758364 SE 0.046214 CI [0.6655, 0.8512] r 0.769970"
+  },
+  {
+   "gate": "construction, state and year effects: the attack's printed row",
+   "passed": true,
+   "detail": "b 0.574939 SE 0.780998 CI [-0.9945, 2.1444] r 0.590538"
+  },
+  {
+   "gate": "a fixed stock (response 0) lies outside every across-state interval",
+   "passed": true,
+   "detail": "year_effects 0.675, land 0.666, land_growth 0.665"
+  },
+  {
+   "gate": "construction scales above operations across states (the stock's upward case)",
+   "passed": true,
+   "detail": "r 0.8022 and 0.7699 against 0.7392"
+  },
+  {
+   "gate": "the sources did not change during the run",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

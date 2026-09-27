@@ -1,0 +1,17 @@
+case,label,cost_low_bn,cost_high_bn,outer_account_low_bn,outer_account_high_bn,outer_joint_low_bn,outer_joint_high_bn,quadrature_account_low_bn,quadrature_account_high_bn,quadrature_joint_low_bn,quadrature_joint_high_bn
+sept27_case,"the September 27 case (adopted)",321.8194,387.3701,258.6487,436.0533,258.4865,433.0242,290.9003,408.2300,290.8706,406.0077
+first_candidate,"the first candidate (c313b53)",323.6827,388.6981,260.5184,437.3750,260.3563,434.3458,292.7649,409.5565,292.7352,407.3340
+item1_tenant_key_alone,"item 1 alone",320.1281,385.6788,,,,,,,,
+item1_tenant_key_unconsolidated_alone,"item 1 without consolidating the operating subsidy (beside)",320.1281,385.6788,,,,,,,,
+item1_population_key_alone,"the first candidate's item 1 alone (beside)",322.0400,387.5907,,,,,,,,
+item2_production_row4_alone,"item 2 alone",323.4621,388.4774,,,,,,,,
+item3_tax_key_alone,"item 3 alone",318.6188,384.2735,,,,,,,,
+candidate_v2,"candidate v2: items 1-3",318.5703,383.6896,255.2947,432.4692,255.1326,429.4401,287.6310,404.5731,287.6013,402.3537
+v2_housing_capital_tenant_key,"v2 with public housing's capital at the rental key (a range variant)",318.2174,383.1603,,,,,,,,
+v2_public_pay_unchanged_workforce,"v2 with public pay, unchanged workforce (beside)",331.5189,393.3016,,,,,,,,
+v2_public_pay_counterfactual_low_share,"v2 with public pay, counterfactual low share (beside)",330.7164,391.9911,,,,,,,,
+v2_public_pay_counterfactual_high_share,"v2 with public pay, counterfactual high share (beside)",330.4961,391.6314,,,,,,,,
+v2_road_replacement,"v2, road arm at replacement, account only (beside)",313.3397,372.9437,,,,,,,,
+v2_road_fixed_stock,"v2, road arm at fixed stock, account only (beside)",308.0626,365.7149,,,,,,,,
+v2_road_construction_year_effects,"v2, road arm at construction year effects, account only (beside)",319.4658,383.6896,,,,,,,,
+v2_road_construction_land,"v2, road arm at construction land, account only (beside)",319.0072,383.6896,,,,,,,,

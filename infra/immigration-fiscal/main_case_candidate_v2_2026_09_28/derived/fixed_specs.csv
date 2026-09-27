@@ -1,0 +1,20 @@
+item,label,placement,old_spec48_bn,new_spec48_bn,change_spec48_bn,old_spec11_bn,new_spec11_bn,change_spec11_bn
+item1_tenant_key,"1. public housing's deficit keyed by its tenants, the $5.257811bn operating subsidy consolidated",in v2,321.8194,320.1281,-1.6912,387.3701,385.6788,-1.6912
+item1_tenant_key_unconsolidated,"1. the same, the operating subsidy not consolidated (under this key it moves nothing)",beside,321.8194,320.1281,-1.6912,387.3701,385.6788,-1.6912
+item1_population_key,"1. the first candidate's reading: the population key, the operating subsidy consolidated",beside,321.8194,322.0400,0.2207,387.3701,387.5907,0.2207
+item2_production_row4,"2. production on the account's row-4 weights",in v2,321.8194,323.4621,1.6427,387.3701,388.4774,1.1074
+item3_tax_key_irs_2023_raked,"3. the federal income-tax key matched to IRS 2023, raked with CBO's groups",in v2,321.8194,318.6188,-3.2005,387.3701,384.2735,-3.0966
+items_1_to_3_candidate_v2,"items 1-3 together: candidate v2",v2,321.8194,318.5703,-3.2490,387.3701,383.6896,-3.6804
+first_candidate,"the first candidate (c313b53)",reference,321.8194,323.6827,1.8634,387.3701,388.6981,1.3280
+housing_capital_tenant_key_on_sept27,"public housing's capital at the rental-assistance key, on the September 27 case",range variant,321.8194,321.4665,-0.3529,387.3701,386.8408,-0.5293
+housing_capital_tenant_key_on_v2,"public housing's capital at the rental-assistance key, on v2 (change from v2)",range variant,318.5703,318.2174,-0.3529,383.6896,383.1603,-0.5293
+public_pay_unchanged_workforce_on_v2,"public pay, unchanged workforce, on v2 (change from v2)",beside,318.5703,332.1789,13.6085,383.6896,392.6416,8.9520
+public_pay_counterfactual_low_share_on_v2,"public pay, counterfactual low share, on v2 (change from v2)",beside,318.5703,330.9590,12.3887,383.6896,391.7795,8.0899
+public_pay_counterfactual_high_share_on_v2,"public pay, counterfactual high share, on v2 (change from v2)",beside,318.5703,330.6240,12.0537,383.6896,391.5429,7.8533
+public_pay_unchanged_workforce_on_first_candidate,"public pay, unchanged workforce, on the first candidate (change from it)",beside,323.6827,337.2913,13.6085,388.6981,397.6501,8.9520
+public_pay_counterfactual_low_share_on_first_candidate,"public pay, counterfactual low share, on the first candidate (change from it)",beside,323.6827,336.0714,12.3887,388.6981,396.7880,8.0899
+public_pay_counterfactual_high_share_on_first_candidate,"public pay, counterfactual high share, on the first candidate (change from it)",beside,323.6827,335.7365,12.0537,388.6981,396.5514,7.8533
+road_replacement_on_v2,"road arm, replacement adjustment: worn road capital is not replaced (depreciation follows the response) while the stock in place keeps its return and its lanes (account only; change from v2)",beside,318.5703,313.3397,-5.2306,383.6896,372.9437,-10.7459
+road_fixed_stock_on_v2,"road arm, a fixed stock: only operations follow the response; depreciation, the capital return and lanes stay (account only; change from v2)",beside,318.5703,308.0626,-10.5077,383.6896,365.7149,-17.9748
+road_construction_year_effects_on_v2,"road arm, an upward stock: depreciation, the road capital return and lanes respond like highway construction across states (0.792, year effects) (account only; change from v2)",beside,318.5703,319.4658,0.8955,383.6896,383.6896,0.0000
+road_construction_land_on_v2,"road arm, an upward stock: depreciation, the road capital return and lanes respond like highway construction across states with a land control (0.758) (account only; change from v2)",beside,318.5703,319.0072,0.4369,383.6896,383.6896,0.0000
