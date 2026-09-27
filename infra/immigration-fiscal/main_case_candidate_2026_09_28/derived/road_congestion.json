@@ -1,0 +1,271 @@
+{
+ "meta": {
+  "lane": "main_case_candidate_2026_09_28",
+  "case": "sept28_candidate",
+  "definition": "congestion beside the account (service_response_long_run_2026_09_27/congestion.py arm(), central inputs; factorial range over its grid with three lane coefficients) with lanes cut uniformly by kappa * h * k: h the variant's highway response at the band end (S&L and federal highways weighted by national amount), k the group's key share of economic_affairs_services at the fixed end specification (48 low, 11 high; the two fill-in methods averaged)",
+  "sources": {
+   "service_response_long_run_2026_09_27/congestion.py": "f6c5e5d94149744454d16b315b2a114129b27c9b935db7332ba1dd681c9f0afe",
+   "congestion_2026_09_23/arms.py": "919cca2da97ec4859a390da7be5367629fd06ffe3197c91efc0142076dfc4531",
+   "service_response_long_run_2026_09_27/derived/congestion_bridge.csv": "85418bad0df5d3306c69dd7e1bf05e04a15bfd134bd60b658eda452105353926",
+   "service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
+   "service_response_long_run_2026_09_27/derived/responses.json": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+   "main_case_candidate_2026_09_28/package.cjs": "ed7f3dc5d8d9cb2728a3ceca6c3dffbdb86083c147c6f6a153baad0c5ebd1ca5",
+   "main_case_long_run_2026_09_27/package.cjs": "b4f22b35371c715771d8e53436acfc6320c214ab5abf686714020eb2c8fe2a7a"
+  }
+ },
+ "b1_lanes_fixed_bn": 19.162711110731056,
+ "b1_factorial_bn": [
+  8.047943973203898,
+  35.25151421805585
+ ],
+ "road_subfunctions": [
+  {
+   "id": "fed_highways",
+   "national_bn": 1.827
+  },
+  {
+   "id": "sl_highways",
+   "national_bn": 201.005
+  }
+ ],
+ "key": {
+  "low": 0.08061009942509388,
+  "high": 0.08061009942509388
+ },
+ "highway_response": {
+  "adopted": {
+   "low": 0.732546883435717,
+   "high": 1
+  },
+  "marginal_r_equals_b": {
+   "low": 0.7200622671842712,
+   "high": 1
+  },
+  "within_states_uncapped": {
+   "low": 0.732546883435717,
+   "high": 1.4225137899769427
+  },
+  "federal_fixed_at_high_end": {
+   "low": 0.732546883435717,
+   "high": 0.990992545554942
+  },
+  "across_states_at_high_end": {
+   "low": 0.732546883435717,
+   "high": 0.7392052409692961
+  },
+  "held_at_zero_at_1": {
+   "low": 0.732546883435717,
+   "high": 1
+  }
+ },
+ "rows": [
+  {
+   "variant": "adopted",
+   "reading": "low",
+   "end_specification": 48,
+   "kappa": 1.0,
+   "highway_response": 0.732546883435717,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.0590506771072958,
+   "congestion_central_bn": 13.992562864050909,
+   "factorial_min_bn": 2.014861874519615,
+   "factorial_max_bn": 32.04934035817931,
+   "change_vs_b1_central_bn": -5.170148246680148
+  },
+  {
+   "variant": "adopted",
+   "reading": "high",
+   "end_specification": 11,
+   "kappa": 1.0,
+   "highway_response": 1,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.08061009942509388,
+   "congestion_central_bn": 12.018056283784826,
+   "factorial_min_bn": -0.9235617873055267,
+   "factorial_max_bn": 30.828298311580397,
+   "change_vs_b1_central_bn": -7.14465482694623
+  },
+  {
+   "variant": "marginal_r_equals_b",
+   "reading": "low",
+   "end_specification": 48,
+   "kappa": 1.0,
+   "highway_response": 0.7200622671842712,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.05804429094998262,
+   "congestion_central_bn": 14.083543976970411,
+   "factorial_min_bn": 2.1211929640036855,
+   "factorial_max_bn": 32.105633441936156,
+   "change_vs_b1_central_bn": -5.079167133760645
+  },
+  {
+   "variant": "marginal_r_equals_b",
+   "reading": "high",
+   "end_specification": 11,
+   "kappa": 1.0,
+   "highway_response": 1,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.08061009942509388,
+   "congestion_central_bn": 12.018056283784826,
+   "factorial_min_bn": -0.9235617873055267,
+   "factorial_max_bn": 30.828298311580397,
+   "change_vs_b1_central_bn": -7.14465482694623
+  },
+  {
+   "variant": "within_states_uncapped",
+   "reading": "low",
+   "end_specification": 48,
+   "kappa": 1.0,
+   "highway_response": 0.732546883435717,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.0590506771072958,
+   "congestion_central_bn": 13.992562864050909,
+   "factorial_min_bn": 2.014861874519615,
+   "factorial_max_bn": 32.04934035817931,
+   "change_vs_b1_central_bn": -5.170148246680148
+  },
+  {
+   "variant": "within_states_uncapped",
+   "reading": "high",
+   "end_specification": 11,
+   "kappa": 1.0,
+   "highway_response": 1.4225137899769427,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.11466897804360847,
+   "congestion_central_bn": 8.793683707345645,
+   "factorial_min_bn": -8.575969707180121,
+   "factorial_max_bn": 28.83804425737986,
+   "change_vs_b1_central_bn": -10.369027403385411
+  },
+  {
+   "variant": "federal_fixed_at_high_end",
+   "reading": "low",
+   "end_specification": 48,
+   "kappa": 1.0,
+   "highway_response": 0.732546883435717,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.0590506771072958,
+   "congestion_central_bn": 13.992562864050909,
+   "factorial_min_bn": 2.014861874519615,
+   "factorial_max_bn": 32.04934035817931,
+   "change_vs_b1_central_bn": -5.170148246680148
+  },
+  {
+   "variant": "federal_fixed_at_high_end",
+   "reading": "high",
+   "end_specification": 11,
+   "kappa": 1.0,
+   "highway_response": 0.990992545554942,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.07988400762671075,
+   "congestion_central_bn": 12.08536305403074,
+   "factorial_min_bn": -0.7642394335883531,
+   "factorial_max_bn": 30.869898250441704,
+   "change_vs_b1_central_bn": -7.077348056700316
+  },
+  {
+   "variant": "across_states_at_high_end",
+   "reading": "low",
+   "end_specification": 48,
+   "kappa": 1.0,
+   "highway_response": 0.732546883435717,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.0590506771072958,
+   "congestion_central_bn": 13.992562864050909,
+   "factorial_min_bn": 2.014861874519615,
+   "factorial_max_bn": 32.04934035817931,
+   "change_vs_b1_central_bn": -5.170148246680148
+  },
+  {
+   "variant": "across_states_at_high_end",
+   "reading": "high",
+   "end_specification": 11,
+   "kappa": 1.0,
+   "highway_response": 0.7392052409692961,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.05958740797008544,
+   "congestion_central_bn": 13.94399794213005,
+   "factorial_min_bn": 1.9581015013062055,
+   "factorial_max_bn": 32.01929253872159,
+   "change_vs_b1_central_bn": -5.218713168601006
+  },
+  {
+   "variant": "held_at_zero_at_1",
+   "reading": "low",
+   "end_specification": 48,
+   "kappa": 1.0,
+   "highway_response": 0.732546883435717,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.0590506771072958,
+   "congestion_central_bn": 13.992562864050909,
+   "factorial_min_bn": 2.014861874519615,
+   "factorial_max_bn": 32.04934035817931,
+   "change_vs_b1_central_bn": -5.170148246680148
+  },
+  {
+   "variant": "held_at_zero_at_1",
+   "reading": "high",
+   "end_specification": 11,
+   "kappa": 1.0,
+   "highway_response": 1,
+   "key_share": 0.08061009942509388,
+   "lane_cut": 0.08061009942509388,
+   "congestion_central_bn": 12.018056283784826,
+   "factorial_min_bn": -0.9235617873055267,
+   "factorial_max_bn": 30.828298311580397,
+   "change_vs_b1_central_bn": -7.14465482694623
+  }
+ ],
+ "gates": [
+  {
+   "gate": "UMR positive control passes",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "B1 (lanes fixed) is net_change.json's b1_lanes_fixed_bn (1e-9)",
+   "passed": true,
+   "detail": "19.162711"
+  },
+  {
+   "gate": "bridge low / network follows spending: h, k, the lane cut, the central and the factorial range reproduce",
+   "passed": true,
+   "detail": "h 0.7325468834 k 0.0806100994 congestion 13.992563 (2.0149\u201332.0493)"
+  },
+  {
+   "gate": "bridge low / network fixed (bound): h, k, the lane cut, the central and the factorial range reproduce",
+   "passed": true,
+   "detail": "h 0.7325468834 k 0.0806100994 congestion 19.162711 (8.0479\u201335.2515)"
+  },
+  {
+   "gate": "bridge high / network follows spending: h, k, the lane cut, the central and the factorial range reproduce",
+   "passed": true,
+   "detail": "h 1.0000000000 k 0.0806100994 congestion 12.018056 (-0.9236\u201330.8283)"
+  },
+  {
+   "gate": "bridge high / network fixed (bound): h, k, the lane cut, the central and the factorial range reproduce",
+   "passed": true,
+   "detail": "h 1.0000000000 k 0.0806100994 congestion 19.162711 (8.0479\u201335.2515)"
+  },
+  {
+   "gate": "every bridge row is reproduced (2 band ends x 2 kappas)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the package's highway responses are finite and non-negative, and its keys in (0, 1)",
+   "passed": true,
+   "detail": "{\"low\": 0.08061009942509388, \"high\": 0.08061009942509388}"
+  },
+  {
+   "gate": "congestion falls as the lane cut grows (monotone in the cut)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the sources did not change during the run",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}
