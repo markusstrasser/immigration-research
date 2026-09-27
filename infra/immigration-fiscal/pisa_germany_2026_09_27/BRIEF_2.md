@@ -53,3 +53,26 @@ european countries didn't drop in pisa ... like can we deconfound?"
 - No commits, staging or stash.
 - If the turn cap nears, write what is done and the next queries first.
 - Final message: the RESULT path and at most ten lines.
+
+## Addendum (operator, 2026-09-28 01:51): exposure is lagged and cumulative
+
+> "immigrant share isn't new immigrant children ... that takes 6-15 years"
+
+PISA's immigrant share at age 15 is a stock. Its second generation descends from arrivals 15 or more years
+earlier, and its first generation includes children who arrived when young. The exposure that could affect a
+15-year-old native is their classmates across grades 1–9. Part 1 ran only the contemporaneous share change; the
+first-generation share alone gave −2.2 per 10 pp (SE 7.7).
+
+5. **Timing of exposure.** Run this after test 3, or before it if the data are quicker.
+   - **Cohort-matched primary-school exposure.** Take immigrant-background shares from TIMSS and PIRLS grade 4
+     for the same birth cohorts: PIRLS 2016 and TIMSS 2015 grade 4 are roughly the PISA 2022 cohort (born
+     2006); PIRLS 2011 and TIMSS 2011 are roughly PISA 2015–2018. Regress the natives' PISA change on the
+     change in grade-4 exposure, and on the average of the grade-4 and age-15 shares.
+   - **Recent arrivals separated from settled pupils.** In the PISA student files, age at arrival (ST021, or its
+     cycle equivalent) splits the first generation into arrivals within 5 years and earlier ones. Compare the
+     share of recent arrivals with the share of settled pupils as regressors.
+   - **Germany's 2015–16 wave.** The PISA 2022 cohort met these children from about grade 3–5, and the 2018
+     cohort only from grade 7–9. Report whether the first-generation rise (6.5% → 9.2%) sits in the 2022 cohort,
+     and what that implies for separating the wave from the pandemic.
+   - Report every slope per 10 pp with its SE and n. State which lag structure the data can and cannot
+     identify.
