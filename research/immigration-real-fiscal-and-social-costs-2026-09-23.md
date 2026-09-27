@@ -363,10 +363,15 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
 ## 8. Still unpriced
 
 - **Road congestion** is now priced (§3). Its crash, emission and pavement-wear costs are not.
-- **Innovation and automation.** Burchardi et al. find no patent response to migrants at the
-  group's schooling, so nothing is added (ladder 201). Slower mechanisation is not priced.
+- **Innovation and automation.** The transported patent-effect scenario is too imprecise to
+  supply an identified offset; this is not evidence of zero innovation. The schooling-corrected
+  arm has a positive point estimate with very wide uncertainty
+  ([source correction](../infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md), September 26).
+  No innovation term is added. Slower mechanisation is not priced.
 - **Institutions, politics and trust.** No dollar measure is defensible from held data.
-- **Amenity and culture.** Housing prices show no amenity discount (ladder 155). At matched
+- **Amenity and culture.** The modern housing exercise identifies no defensible amenity
+  dollar price; it does not establish zero amenity harm. The historical estimates reproduce
+  ([corrected source](immigration-hedonic-replay-2026-09-19.md)). At matched
   age, education and sex, creative labour per head is 0.72–0.74 of whites' (ladder 156).
 - **Remittances** are not a cost in this frame. They are the group's own income, and the
   consumption taxes they displace are already in the account's receipts.
@@ -449,3 +454,13 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
   rows do not move: $305–350bn at central values and $268–383bn full span; §7b $315–354bn costs
   only, $310–349bn with care and mobility and $296–335bn adding the scale net. The first-year
   budget response stays within $0.7bn of September 24. Concept affected: the combined totals' fiscal row.
+- 2026-09-28 (amenity interpretation): the [adversarial audit](immigration-adversarial-audit-2026-09-28.md)
+  found that §8 still said "Housing prices show no amenity discount" despite the
+  [September 19 specification-equivalence correction](../decisions/2026-09-19-require-housing-specification-equivalence.md).
+  Replaced that zero-effect reading with the source's unidentified contemporary valuation;
+  historical coefficients reproduce. Concept affected: unpriced amenity harm. No priced total changed.
+- 2026-09-28 (innovation interpretation): the same audit checked the adjacent statement
+  "find no patent response" against the source's September 26 schooling correction.
+  The corrected point scenario is positive but highly imprecise; §8 now preserves that
+  uncertainty instead of implying zero innovation. Concept affected: unpriced productivity
+  benefits. No dollar offset was adopted.
