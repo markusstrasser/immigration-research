@@ -1,0 +1,294 @@
+{
+ "all_passed": true,
+ "counts": {
+  "build": 30,
+  "engine": 13,
+  "land": 6,
+  "congestion": 6
+ },
+ "gates": {
+  "build": [
+   {
+    "gate": "BEA Section 3 workbook is the account's pinned vintage",
+    "passed": true,
+    "detail": "69b5c7aefb38"
+   },
+   {
+    "gate": "account line economic_affairs_services is Table 3.17 line 5",
+    "passed": true,
+    "detail": "451935"
+   },
+   {
+    "gate": "account line recreation_culture is Table 3.17 line 8",
+    "passed": true,
+    "detail": "54331"
+   },
+   {
+    "gate": "federal + state-local consumption = government, both lines",
+    "passed": true,
+    "detail": "180200+271735, 5430+48901"
+   },
+   {
+    "gate": "3.16 S&L economic affairs = consumption + social benefits + subsidies (exact)",
+    "passed": true,
+    "detail": "273825 = 271735 + 1377 + 713"
+   },
+   {
+    "gate": "S&L economic-affairs benefits are Table 3.12's employment and training (exact)",
+    "passed": true,
+    "detail": "1377"
+   },
+   {
+    "gate": "S&L economic-affairs subsidies are all transportation",
+    "passed": true,
+    "detail": "713 of 713"
+   },
+   {
+    "gate": "3.16 S&L transit and railroad equals the S&L transportation subsidy (no S&L transit consumption)",
+    "passed": true,
+    "detail": "713"
+   },
+   {
+    "gate": "S&L subfunctions miss the published level total by rounding only",
+    "passed": true,
+    "detail": "+1 ($m), put on highways"
+   },
+   {
+    "gate": "3.16 federal subfunctions add to federal economic affairs",
+    "passed": true,
+    "detail": "239536"
+   },
+   {
+    "gate": "consolidation reproduces Table 3.17's grants where published",
+    "passed": true,
+    "detail": "Space 0/0, General 7712/7713, Agriculture 1522/1522, Energy 1116/1116, Natural 8813/8813"
+   },
+   {
+    "gate": "consolidation splits the transportation grant by mode",
+    "passed": true,
+    "detail": "highways 0, air 0, water 175, transit 100 vs 276"
+   },
+   {
+    "gate": "grants by subfunction add to the published total",
+    "passed": true,
+    "detail": "19439"
+   },
+   {
+    "gate": "federal subsidies by subfunction add to the published total",
+    "passed": true,
+    "detail": "29745"
+   },
+   {
+    "gate": "the unallocated federal residual is the economic-affairs benefits plus other current transfers",
+    "passed": true,
+    "detail": "10152 = 7497 benefits + 2655 other"
+   },
+   {
+    "gate": "the other transfers are federal only (consolidated residual equals the federal one)",
+    "passed": true,
+    "detail": "consolidated 2654, federal 2655"
+   },
+   {
+    "gate": "federal subfunctions add to the published level total exactly",
+    "passed": true,
+    "detail": "180200"
+   },
+   {
+    "gate": "3.15.5 = consumption + gross investment at each level (rounding)",
+    "passed": true,
+    "detail": "federal Economic +0, state_local Economic +0, federal Recreation +0, state_local Recreation -1"
+   },
+   {
+    "gate": "assignment 2 respects investment >= 0 (general economic and labor affairs must hold at least gel_min)",
+    "passed": true,
+    "detail": "residual 10152 >= minimum 5274 ($m)"
+   },
+   {
+    "gate": "assignment 1 respects investment >= 0 (transit and railroad must take at least transit_min of the subsidy)",
+    "passed": true,
+    "detail": "subsidy 10109 >= minimum 9631 ($m)"
+   },
+   {
+    "gate": "implied gross investment is not negative in any subfunction (rounding)",
+    "passed": true,
+    "detail": "min 463 ($m)"
+   },
+   {
+    "gate": "S&L recreation current expenditure is all consumption",
+    "passed": true,
+    "detail": "48901"
+   },
+   {
+    "gate": "subfunctions add to economic_affairs_services exactly",
+    "passed": true,
+    "detail": "451935 = 451935 ($m)"
+   },
+   {
+    "gate": "subfunctions add to recreation_culture exactly",
+    "passed": true,
+    "detail": "54331 = 54331 ($m)"
+   },
+   {
+    "gate": "s is the brief's 0.120245 (40.896574m / 340.110988m)",
+    "passed": true,
+    "detail": "0.120244789"
+   },
+   {
+    "gate": "positive control: r(b) reproduces the main case's general-government high response",
+    "passed": true,
+    "detail": "r(0.842) = 0.8503957662"
+   },
+   {
+    "gate": "scaling estimates are the memo's table (0.727/1.464 highways, 0.948/1.412 parks, 0.824/0.471 administration)",
+    "passed": true,
+    "detail": ""
+   },
+   {
+    "gate": "every subfunction has a rule",
+    "passed": true,
+    "detail": "19 rules, 19 rows"
+   },
+   {
+    "gate": "the preferred key's share is the same for both allocations (uncorrected model)",
+    "passed": true,
+    "detail": ""
+   },
+   {
+    "gate": "blended responses lie in [0, 1]",
+    "passed": true,
+    "detail": "{\"economic_affairs_services\": {\"low\": 0.384015, \"high\": 0.638646}, \"recreation_culture\": {\"low\": 0.856175, \"high\": 1.0}}"
+   }
+  ],
+  "engine": [
+   {
+    "gate": "the main case has 64 specifications",
+    "passed": true,
+    "detail": "64"
+   },
+   {
+    "gate": "the lane's cost function equals the package's cost() at every specification and method (old responses)",
+    "passed": true,
+    "detail": "exact"
+   },
+   {
+    "gate": "the band at the old responses is the adopted main case (summary.json) to 1e-6",
+    "passed": true,
+    "detail": "258.488495 / 291.954773"
+   },
+   {
+    "gate": "the old end specifications are the published ones (48 and 11)",
+    "passed": true,
+    "detail": "[[48,11],[48,11]]"
+   },
+   {
+    "gate": "split-line model = blended line responses (old)",
+    "passed": true,
+    "detail": "max |diff| 0.00e+0"
+   },
+   {
+    "gate": "split-line model = blended line responses (low)",
+    "passed": true,
+    "detail": "max |diff| 0.00e+0"
+   },
+   {
+    "gate": "split-line model = blended line responses (high)",
+    "passed": true,
+    "detail": "max |diff| 1.14e-13"
+   },
+   {
+    "gate": "package cost + response x group amount = engine (low)",
+    "passed": true,
+    "detail": "max |diff| 5.68e-14"
+   },
+   {
+    "gate": "package cost + response x group amount = engine (high)",
+    "passed": true,
+    "detail": "max |diff| 1.14e-13"
+   },
+   {
+    "gate": "cost rises with the responses at every specification (low < high)",
+    "passed": true,
+    "detail": "old < low < high"
+   },
+   {
+    "gate": "the candidate's end specifications are the main case's (48 low, 11 high)",
+    "passed": true,
+    "detail": "low 48,48, high 11,11"
+   },
+   {
+    "gate": "band move equals the move at the fixed end specifications (same end specifications)",
+    "passed": true,
+    "detail": ""
+   },
+   {
+    "gate": "subfunction contributions add to the move at each end",
+    "passed": true,
+    "detail": "19.4405 / 29.6324"
+   }
+  ],
+  "land": [
+   {
+    "gate": "gazetteer file is the fetched one",
+    "passed": true,
+    "detail": "02ef546e4c4f"
+   },
+   {
+    "gate": "every panel state has land area",
+    "passed": true,
+    "detail": "50 states, 350 rows"
+   },
+   {
+    "gate": "US land area is the gazetteer's 3.53m sq mi (50 states + DC + PR)",
+    "passed": true,
+    "detail": "3.536m sq mi"
+   },
+   {
+    "gate": "highways_nontoll: reproduces the scaling test's year-effects estimate",
+    "passed": true,
+    "detail": "0.726607"
+   },
+   {
+    "gate": "parks: reproduces the scaling test's year-effects estimate",
+    "passed": true,
+    "detail": "0.948157"
+   },
+   {
+    "gate": "admin: reproduces the scaling test's year-effects estimate",
+    "passed": true,
+    "detail": "0.824117"
+   }
+  ],
+  "congestion": [
+   {
+    "gate": "UMR positive control passes",
+    "passed": true,
+    "detail": ""
+   },
+   {
+    "gate": "B1 central (lanes fixed) reproduces arms_summary.csv",
+    "passed": true,
+    "detail": "19.162711"
+   },
+   {
+    "gate": "B1 factorial range reproduces arms_summary.csv",
+    "passed": true,
+    "detail": "8.0479\u201335.2515"
+   },
+   {
+    "gate": "keyed proportional variant (lanes shrink by the 0.0810 key) reproduces arms_grid.csv",
+    "passed": true,
+    "detail": "11.978123"
+   },
+   {
+    "gate": "highway subfunctions are S&L and federal",
+    "passed": true,
+    "detail": ""
+   },
+   {
+    "gate": "congestion with shrinking lanes is at most the fixed-lane B1",
+    "passed": true,
+    "detail": ""
+   }
+  ]
+ }
+}

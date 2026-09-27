@@ -1,0 +1,42 @@
+{
+ "b1_lanes_fixed_bn": 19.162711110731056,
+ "b1_factorial_bn": [
+  8.047943973203898,
+  35.25151421805585
+ ],
+ "keyed_proportional_bn": 11.978122617882287,
+ "lanes_coefficient": {
+  "low": 0.028000000000000004,
+  "central": 0.066,
+  "high": 0.10400000000000001
+ },
+ "note": "net_change = the account's move at the band end's fixed specification + the change in the congestion item beside it (central inputs, network follows spending, uniform cut)",
+ "by_band_end": {
+  "low": {
+   "account_move_bn": 19.440498439596922,
+   "congestion_change_bn": -5.170148246680148,
+   "net_change_bn": 14.270350192916775,
+   "congestion_bn": 13.992562864050909,
+   "congestion_range_bn": [
+    2.014861874519616,
+    32.04934035817931
+   ],
+   "lane_cut": 0.05905067710729579,
+   "highway_response": 0.732546883435717,
+   "key_share": 0.08061009942509387
+  },
+  "high": {
+   "account_move_bn": 29.63244931934139,
+   "congestion_change_bn": -7.144654826946226,
+   "net_change_bn": 22.487794492395164,
+   "congestion_bn": 12.01805628378483,
+   "congestion_range_bn": [
+    -0.9235617873055264,
+    30.828298311580397
+   ],
+   "lane_cut": 0.08061009942509387,
+   "highway_response": 1.0,
+   "key_share": 0.08061009942509387
+  }
+ }
+}

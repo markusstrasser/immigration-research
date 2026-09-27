@@ -1,0 +1,313 @@
+{
+ "meta": {
+  "lane": "service_response_long_run_2026_09_27",
+  "s": 0.12024478903339636,
+  "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents",
+  "band_ends": [
+   "low",
+   "high"
+  ],
+  "note": "A response applies to the account's keyed amount of the line (the engine's per-line response_override). Subfunctions share their line's key, so the engine applies the amount-weighted blend (lines.*.response). Low responses apply at the candidate band's low end, high responses at its high end; engine.cjs records the end specifications in derived/candidate_band.json.",
+  "main_case_response": 0
+ },
+ "lines": {
+  "economic_affairs_services": {
+   "national_bn": 451.935,
+   "key": "resources",
+   "key_share_uncorrected": 0.081040607,
+   "main_case_response": 0,
+   "response": {
+    "low": 0.38401510917541615,
+    "high": 0.638645582432123
+   },
+   "subfunctions": [
+    {
+     "id": "fed_highways",
+     "level": "federal",
+     "subfunction": "Highways",
+     "national_bn": 1.827,
+     "share_of_line": 0.00404261674798367,
+     "response": {
+      "low": 0.0,
+      "high": 1.0
+     },
+     "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_air",
+     "level": "federal",
+     "subfunction": "Air",
+     "national_bn": 30.604,
+     "share_of_line": 0.06771770276699082,
+     "response": {
+      "low": 0.0,
+      "high": 1.0
+     },
+     "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+    },
+    {
+     "id": "fed_water",
+     "level": "federal",
+     "subfunction": "Water",
+     "national_bn": 18.209,
+     "share_of_line": 0.04029119231747928,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_transit_and_railroad",
+     "level": "federal",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0.094,
+     "share_of_line": 0.00020799451248520252,
+     "response": {
+      "low": 0.0,
+      "high": 1.0
+     },
+     "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_space",
+     "level": "federal",
+     "subfunction": "Space",
+     "national_bn": 21.23,
+     "share_of_line": 0.04697578191554095,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_general_economic_and_labor_affairs",
+     "level": "federal",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 35.431,
+     "share_of_line": 0.07839844225386393,
+     "response": {
+      "low": 0.0,
+      "high": 0.8503957662020014
+     },
+     "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+    },
+    {
+     "id": "fed_agriculture",
+     "level": "federal",
+     "subfunction": "Agriculture",
+     "national_bn": 17.54,
+     "share_of_line": 0.038810890946706936,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_energy",
+     "level": "federal",
+     "subfunction": "Energy",
+     "national_bn": 23.406,
+     "share_of_line": 0.051790633608815424,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_natural_resources",
+     "level": "federal",
+     "subfunction": "Natural resources",
+     "national_bn": 32.036,
+     "share_of_line": 0.07088630002102073,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_postal_service",
+     "level": "federal",
+     "subfunction": "Postal service",
+     "national_bn": -0.177,
+     "share_of_line": -0.00039164924159447705,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_highways",
+     "level": "state_local",
+     "subfunction": "Highways",
+     "national_bn": 201.005,
+     "share_of_line": 0.4447652870434908,
+     "response": {
+      "low": 0.739205240969296,
+      "high": 1.0
+     },
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_transit_and_railroad",
+     "level": "state_local",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0.0,
+     "share_of_line": 0.0,
+     "response": {
+      "low": 0.739205240969296,
+      "high": 1.0
+     },
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_general_economic_and_labor_affairs",
+     "level": "state_local",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 29.358,
+     "share_of_line": 0.06496066912277208,
+     "response": {
+      "low": 0.8503957662020014,
+      "high": 0.8503957662020014
+     },
+     "basis": "general government's adopted response for state-local administration at both ends"
+    },
+    {
+     "id": "sl_agriculture",
+     "level": "state_local",
+     "subfunction": "Agriculture",
+     "national_bn": 10.007,
+     "share_of_line": 0.022142564749355546,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_energy",
+     "level": "state_local",
+     "subfunction": "Energy",
+     "national_bn": 0.0,
+     "share_of_line": 0.0,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_natural_resources",
+     "level": "state_local",
+     "subfunction": "Natural resources",
+     "national_bn": 31.99,
+     "share_of_line": 0.07078451547235774,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_other_commercial_activities",
+     "level": "state_local",
+     "subfunction": "Other (commercial activities)",
+     "national_bn": -0.625,
+     "share_of_line": -0.0013829422372686338,
+     "response": {
+      "low": 0.0,
+      "high": 0.0
+     },
+     "basis": "held at 0"
+    }
+   ]
+  },
+  "recreation_culture": {
+   "national_bn": 54.331,
+   "key": "population",
+   "key_share_uncorrected": 0.121452918,
+   "main_case_response": 0,
+   "response": {
+    "low": 0.8561746355869265,
+    "high": 1.0
+   },
+   "subfunctions": [
+    {
+     "id": "fed_recreation_and_culture",
+     "level": "federal",
+     "subfunction": "Recreation and culture",
+     "national_bn": 5.43,
+     "share_of_line": 0.09994294233494688,
+     "response": {
+      "low": 0.0,
+      "high": 1.0
+     },
+     "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+    },
+    {
+     "id": "sl_recreation_and_culture",
+     "level": "state_local",
+     "subfunction": "Recreation and culture",
+     "national_bn": 48.901,
+     "share_of_line": 0.9000570576650531,
+     "response": {
+      "low": 0.9512448441969144,
+      "high": 1.0
+     },
+     "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+    }
+   ]
+  }
+ },
+ "elasticities": {
+  "highways_nontoll": {
+   "across_states": {
+    "b": 0.726607147969056,
+    "se": 0.060518702081970556,
+    "ci": [
+     0.6049902628819263,
+     0.8482240330561858
+    ],
+    "source": "scaling_test_2026_09_20/derived/state/estimates.csv highways_nontoll year_fe all"
+   },
+   "within_states": {
+    "b": 1.4643116867640407,
+    "se": 0.4878662373894834,
+    "ci": [
+     0.48390777707471977,
+     2.444715596453362
+    ],
+    "source": "scaling_test_2026_09_20/derived/state/estimates.csv highways_nontoll state_year_fe all"
+   }
+  },
+  "parks": {
+   "across_states": {
+    "b": 0.9481565916663065,
+    "se": 0.058633942978279716,
+    "ci": [
+     0.8303272718019078,
+     1.0659859115307053
+    ],
+    "source": "scaling_test_2026_09_20/derived/state/estimates.csv parks year_fe all"
+   },
+   "within_states": {
+    "b": 1.4117002831902488,
+    "se": 0.3551227214877689,
+    "ci": [
+     0.6980544559464847,
+     2.1253461104340126
+    ],
+    "source": "scaling_test_2026_09_20/derived/state/estimates.csv parks state_year_fe all"
+   }
+  },
+  "administration_general_government": {
+   "b": 0.842,
+   "source": "main_case_schools_full_2026_09_26 corrections.json meta.responses"
+  }
+ }
+}
