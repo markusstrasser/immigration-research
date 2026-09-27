@@ -68,8 +68,9 @@ const PROFILES = {
   proportional_reference: { other: 1, delayed: 1, school: 1 },
 };
 const MAIN_PROFILE = "cbo_category_lag_non_school_full";
-// The engine state of a specification under a profile. spec.line_responses ({line id: response}), when
-// present, overrides the profile's responses for those lines; later cases set per-line responses that way.
+// The engine state of a specification under a profile. spec.line_responses ({line id: response}; a receipt
+// line as "receipt:<id>"), when present, overrides the profile's responses for those lines; later cases set
+// per-line responses that way.
 function stateFor(m, spec, profile) {
   const pr = PROFILES[profile || MAIN_PROFILE];
   if (!pr) throw new Error("unknown profile " + profile);
@@ -88,8 +89,13 @@ function stateFor(m, spec, profile) {
     [SYN.school]: spec.share * school, [SYN.college]: (1 - spec.share) * pr.other, [SYN.constants]: 1,
   };
   for (const [id, r] of Object.entries(spec.line_responses || {})) {
-    // The engine ignores an override for a line it does not have, so an unknown id fails here.
-    if (!m.spending.lines.some((l) => l.id === id)) throw new Error("line_responses: no spending line " + id);
+    // The engine ignores an override for a line it does not have, so an unknown id fails here. A receipt line
+    // is named "receipt:<id>", as the engine keys its override.
+    const receipt = id.startsWith("receipt:");
+    const lineId = receipt ? id.slice("receipt:".length) : id;
+    if (!(receipt ? m.receipts.lines : m.spending.lines).some((l) => l.id === lineId)) {
+      throw new Error(`line_responses: no ${receipt ? "receipt" : "spending"} line ${lineId}`);
+    }
     if (!Number.isFinite(r)) throw new Error(`line_responses: ${id} is not a number`);
     s.response_override[id] = r;
   }
