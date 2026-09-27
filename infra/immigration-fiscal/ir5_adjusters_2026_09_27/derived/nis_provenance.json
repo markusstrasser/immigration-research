@@ -1,0 +1,8 @@
+{
+ "mexico_adjusters": 93,
+ "mexico_parents": 270,
+ "nis_zip": {
+  "sources/immigration-fiscal/data/external/icpsr_nis_2003/ICPSR_38031-V3.zip": "61a6e3d58d79f6522bfe1deda84d287aa53960d46b5e97fbee265b010b9885c1"
+ },
+ "parents": 995
+}

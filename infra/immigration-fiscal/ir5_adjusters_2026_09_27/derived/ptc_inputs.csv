@@ -1,0 +1,43 @@
+item,age,value,note
+mts_ptc_fy2024_bn,,110.195,"Treasury MTS Table 5, net outlays October 2023 to September 2024"
+ledger_us_resident_population,,340110988.0,"ledger_absolute_2026_09_17 audit.json, the denominator of its per-capita items"
+ptc_per_capita_inside_ledger_R,,324.0,"2024 dollars per person-year at every age, inside R (function 550 net of Medicaid, CHIP)"
+cps_subsidized_marketplace_persons_m,,10.1049,"CPS ASEC 2025, MRKS = 1"
+ptc_per_unit_age_factor,,7126.87,total / sum(w f(age)) over MRKS = 1
+ptc_per_covered_person,45,10291.2,2024 dollars
+ptc_per_covered_person,46,10690.31,2024 dollars
+ptc_per_covered_person,47,11139.3,2024 dollars
+ptc_per_covered_person,48,11652.44,2024 dollars
+ptc_per_covered_person,49,12158.44,2024 dollars
+ptc_per_covered_person,50,12728.59,2024 dollars
+ptc_per_covered_person,51,13291.62,2024 dollars
+ptc_per_covered_person,52,13911.65,2024 dollars
+ptc_per_covered_person,53,14538.82,2024 dollars
+ptc_per_covered_person,54,15215.87,2024 dollars
+ptc_per_covered_person,55,15892.92,2024 dollars
+ptc_per_covered_person,56,16626.99,2024 dollars
+ptc_per_covered_person,57,17368.19,2024 dollars
+ptc_per_covered_person,58,18159.27,2024 dollars
+ptc_per_covered_person,59,18551.25,2024 dollars
+ptc_per_covered_person,60,19342.33,2024 dollars
+ptc_per_covered_person,61,20026.51,2024 dollars
+ptc_per_covered_person,62,20475.5,2024 dollars
+ptc_per_covered_person,63,21038.53,2024 dollars
+ptc_per_covered_person,64,21380.62,2024 dollars
+ptc_per_covered_person,65,21380.62,2024 dollars
+ptc_per_covered_person,66,21380.62,2024 dollars
+ptc_per_covered_person,67,21380.62,2024 dollars
+ptc_per_covered_person,68,21380.62,2024 dollars
+ptc_per_covered_person,69,21380.62,2024 dollars
+mrks_rate_mexico_naturalized,45-54,0.047503,"n=424; se=0.0112 (Kish, no design)"
+mrks_rate_mexico_noncitizen,45-54,0.019792,"n=866; se=0.0054 (Kish, no design)"
+mrks_rate_all_no_employer_medicaid_medicare,45-54,0.184621,"n=3448; se=0.0078 (Kish, no design)"
+mrks_rate_mexico_naturalized,55-59,0.06731,"n=269; se=0.0164 (Kish, no design)"
+mrks_rate_mexico_noncitizen,55-59,0.030189,"n=332; se=0.0104 (Kish, no design)"
+mrks_rate_all_no_employer_medicaid_medicare,55-59,0.225793,"n=1562; se=0.0125 (Kish, no design)"
+mrks_rate_mexico_naturalized,60-64,0.062209,"n=237; se=0.0175 (Kish, no design)"
+mrks_rate_mexico_noncitizen,60-64,0.029065,"n=228; se=0.0123 (Kish, no design)"
+mrks_rate_all_no_employer_medicaid_medicare,60-64,0.261898,"n=1837; se=0.0119 (Kish, no design)"
+mrks_rate_mexico_naturalized,65-69,0.006325,"n=199; se=0.0060 (Kish, no design)"
+mrks_rate_mexico_noncitizen,65-69,0.0,"n=160; se=0.0000 (Kish, no design)"
+mrks_rate_all_no_employer_medicaid_medicare,65-69,0.015437,"n=305; se=0.0081 (Kish, no design)"

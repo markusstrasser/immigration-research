@@ -1,0 +1,35 @@
+{
+ "2019": {
+  "file": "_cache/ohss_lias/lias_fy2019_q4.xlsx",
+  "sha256": "21014db04a3b4fc40645ce0eb26fb1dec44afce14b6d5ec36037c4694404dd20",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/fy2019_q4_d_final.xlsx"
+ },
+ "2022": {
+  "file": "_cache/ohss_lias/lias_fy2022_q4.xlsx",
+  "sha256": "53afe8c09addaab829136472855b268d1e17e10a2d7709e45b5baf75485e2c2e",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/2023_0308_plcy_legal_immigration_adjustment_of_status_report_fy_2022q4_final_d_0.xlsx"
+ },
+ "2023": {
+  "file": "_cache/ohss_lias/lias_fy2023_q4.xlsx",
+  "sha256": "5748f20d8dfc43c2a516a6d6425176bd7a74626fc94e6e741f50a102f786b656",
+  "url": "https://ohss.dhs.gov/sites/default/files/2024-06/2024_0507_ohss_legal-immigration-adjustment-of-status-fy-2023q4.xlsx"
+ },
+ "2024": {
+  "file": "_cache/ohss_lias/lias_fy2024_q4.xlsx",
+  "sha256": "01f223391d8d6be67104aa34316a22492e1f17fb7005e2852a4a6c48ace6c295",
+  "url": "https://ohss.dhs.gov/sites/default/files/2025-06/2025_0624_ohss_legal-immigration-adjustment-of-status-fy-2024q4_0.xlsx"
+ },
+ "2025": {
+  "file": "_cache/ohss_lias/lias_fy2025_q4.xlsx",
+  "sha256": "7660a03f72bcbee2cf3ff14ab6b8c5fd759faf89e96659b83c6e894f070f58cc",
+  "url": "https://ohss.dhs.gov/system/files/2026-06/2026_0604_ohss_legal-immigration-adjustment-of-status-fy-2025q4.xlsx"
+ },
+ "tables_checked": {
+  "Table 1A": "PERSONS OBTAINING LAWFUL PERMANENT RESIDENT STATUS BY TYPE OF ADMISSION AND REGION AND COUNTRY OF NATIONALITY",
+  "Table 1B": "PERSONS OBTAINING LAWFUL PERMANENT RESIDENT STATUS BY TYPE AND MAJOR CLASS OF ADMISSION",
+  "Table 2": "REFUGEE ARRIVALS BY REGION AND COUNTRY OF NATIONALITY",
+  "Table 3": "PERSONS NATURALIZED BY REGION AND COUNTRY OF NATIONALITY",
+  "Table 4A": "NONIMMIGRANT ADMISSIONS",
+  "Table 4B": "NONIMMIGRANT ADMISSIONS BY CLASS OF ADMISSION"
+ }
+}

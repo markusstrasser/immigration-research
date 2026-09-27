@@ -1,0 +1,490 @@
+[
+ {
+  "id": "yb1997-t10-title",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_1997.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_1997.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY1997 Yearbook Table 10 title, PDF p.47",
+  "quote": "TABLE 10. IMMIGRANTS ADMITTED WHO WERE ADJUSTED TO PERMANENT RESIDENT STATUS BY SELECTED STATUS AT ENTRY AND REGION AND SELECTED COUNTRY OF BIRTH FISCAL YEAR 1997"
+ },
+ {
+  "id": "yb1997-t10-all",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_1997.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_1997.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY1997 Table 10, All countries row; cols: Total, visitors for business, visitors for pleasure, students, temporary workers, exchange visitors, fiances, intracompany transferees, refugees and parolees, entered without inspection, other and unknown",
+  "quote": "All countries ............ 417,659 3,997 93,548 15,993 27,805 4,273 6,377 9,953 101,566 102,549 51,598"
+ },
+ {
+  "id": "yb1997-t10-mexico",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_1997.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_1997.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY1997 Table 10, Mexico row; cols: Total, visitors for business, visitors for pleasure, students, temporary workers, exchange visitors, fiances, intracompany transferees, refugees and parolees, entered without inspection, other and unknown",
+  "quote": "Mexico ................... 94,446 245 15,202 252 234 19 245 254 987 67,943 9,065"
+ },
+ {
+  "id": "yb1998-t10-mexico",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_1998.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_1998.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY1998 Table 10, Mexico row; same column order as FY1997",
+  "quote": "Mexico .................... 76,475 111 6,268 103 204 13 136 182 318 26,037 43,103"
+ },
+ {
+  "id": "yb1999-t10-mexico",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_1999.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_1999.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY1999 Table 10, Mexico row; same column order as FY1997",
+  "quote": "Mexico ................... 64,413 83 5,807 93 214 14 168 157 42 13,908 43,927"
+ },
+ {
+  "id": "yb2000-t10-mexico",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_2000.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_2000.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2000 Table 10, Mexico row; same column order as FY1997",
+  "quote": "Mexico ................... 105,429 283 9,038 180 516 21 515 395 54 21,202 73,225"
+ },
+ {
+  "id": "yb2001-t10-mexico",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_2001.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_2001.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2001 Table 10, Mexico row; cols: Total, VB, VP, students, temp workers, fiances, ICT, refugees and parolees, entered without inspection, other visitors, unknown and not reported",
+  "quote": "Mexico ................... 142,973 351 11,818 246 863 740 633 65 1,113 37 127,107"
+ },
+ {
+  "id": "yb2002-t10-mexico",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_2002.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_2002.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2002 Table 10 (PDF p.37ff), Mexico row; cols: Total, VB, VP, students, temp workers, fiances, ICT, refugees and parolees, entered without inspection, other status at entry, unknown or not reported",
+  "quote": "Mexico ................... 166,056 346 13,472 236 1,136 774 584 75 28,385 128 120,920"
+ },
+ {
+  "id": "yb1997-t11-all",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_1997.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_1997.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY1997 Table 11, All countries row; cols: Total, new arrivals, adjustments by calendar year of entry 1996-97, 1995, 1994, 1993, 1992, 1991, 1990, 1989, 1988, 1987, before 1987, unknown",
+  "quote": "All countries .............. 798,378 380,719 89,051 106,793 41,179 22,682 19,619 19,035 18,905 17,521 15,717 7,767 30,052 29,338"
+ },
+ {
+  "id": "yb1997-t11-mexico",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_1997.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_1997.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY1997 Table 11, Mexico row; same columns as yb1997-t11-all",
+  "quote": "Mexico ........................ 146,865 52,419 15,064 7,539 5,447 5,098 5,720 7,007 7,751 8,299 7,950 3,211 12,528 8,832"
+ },
+ {
+  "id": "yb1997-t11-note",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_1997.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_1997.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY1997 Table 11 note",
+  "quote": "NOTE: The year of entry for new arrivals is the year entering as an immigrant. The year of entry for adjustments is the latest year of entry as a nonimmigrant or the latest year of entry in another temporary status."
+ },
+ {
+  "id": "yb2002-t11-mexico",
+  "file": "_cache/who/Yearbook_Immigration_Statistics_2002.txt",
+  "url": "https://ohss.dhs.gov/sites/default/files/2023-12/Yearbook_Immigration_Statistics_2002.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2002 Table 11, Mexico row; cols: Total, new arrivals, adjustments by year of entry 2001-2002, 2000, 1999, 1998, 1997, 1996, 1995, 1994, 1993, 1992, before 1992, unknown",
+  "quote": "Mexico ....................... 219,380 53,324 3,862 1,612 1,279 1,053 907 884 1,003 971 786 839 4,829 148,031"
+ },
+ {
+  "id": "jasso08-t4-parent",
+  "file": "_cache/who/iza_dp3441_jasso_2008.txt",
+  "url": "https://docs.iza.org/dp3441.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Jasso et al. 2008 (IZA DP 3441) Table 4 panel B; cols men, women, all (% with previous illegal experience), FY1996 NIS-P adults",
+  "quote": "Parent of US citizen 37.5 12.5 20.8"
+ },
+ {
+  "id": "jasso08-t4-mexico",
+  "file": "_cache/who/iza_dp3441_jasso_2008.txt",
+  "url": "https://docs.iza.org/dp3441.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Table 4 panel D",
+  "quote": "Mexico 85.3 67.2 73.7"
+ },
+ {
+  "id": "jasso08-t4-total",
+  "file": "_cache/who/iza_dp3441_jasso_2008.txt",
+  "url": "https://docs.iza.org/dp3441.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Table 4 bottom row",
+  "quote": "Total 38.7 26.1 31.7"
+ },
+ {
+  "id": "jasso08-text-parents",
+  "file": "_cache/who/iza_dp3441_jasso_2008.txt",
+  "url": "https://docs.iza.org/dp3441.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Section 4.1, p.25",
+  "quote": "Table 4 also provides evidence that previous illegal experience is strong among men who immigrate as parents of U.S. citizens and as employment principals (both 38%)"
+ },
+ {
+  "id": "jasso08-sample",
+  "file": "_cache/who/iza_dp3441_jasso_2008.txt",
+  "url": "https://docs.iza.org/dp3441.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Section 4.1, p.26",
+  "quote": "Sample sizes unfortunately do not permit a finer look within visa category and"
+ },
+ {
+  "id": "jasso08-t2-total",
+  "file": "_cache/who/iza_dp3441_jasso_2008.txt",
+  "url": "https://docs.iza.org/dp3441.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Table 2, last rows",
+  "quote": "Total (based on INS and NIS-P data, with 1 year of adjustment processing) 31.7"
+ },
+ {
+  "id": "jasso11-t4-header",
+  "file": "_cache/who/iza_dp5904_jasso_2011_p91_wide.txt",
+  "url": "https://docs.iza.org/dp5904.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Jasso 2011 (IZA DP 5904) Table 4, PDF p.91, re-extracted with widened crop",
+  "quote": "% Adjustees English Fluency"
+ },
+ {
+  "id": "jasso11-t4-parent",
+  "file": "_cache/who/iza_dp5904_jasso_2011_p91_wide.txt",
+  "url": "https://docs.iza.org/dp5904.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Table 4 row; cols % female, age men/women, schooling men/women, % adjustees men/women, English fluency men/women; NIS-2003 adults",
+  "quote": "Parent of U.S. citizen (11.9%) 66.2 65.5 62.7 8.75 6.93 25.3 33.6 20.8 19.7"
+ },
+ {
+  "id": "jasso11-t4-all",
+  "file": "_cache/who/iza_dp5904_jasso_2011_p91_wide.txt",
+  "url": "https://docs.iza.org/dp5904.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Table 4 All immigrants row",
+  "quote": "All immigrants 56.5 38.7 39.1 12.3 11.6 57.9 57.0 44.7 38.4"
+ },
+ {
+  "id": "jasso11-t11-parent",
+  "file": "_cache/who/iza_dp5904_jasso_2011_p98_wide.txt",
+  "url": "https://docs.iza.org/dp5904.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Table 11 (average years of visa processing), PDF p.98; cols new arrival principal men/women, spouse men/women, adjustee principal men/women, spouse men/women",
+  "quote": "Parent of U.S. citizen 2.65 2.38 NA NA 2.54 2.58 NA NA"
+ },
+ {
+  "id": "jasso11-illegal-total",
+  "file": "_cache/who/iza_dp5904_jasso_2011.txt",
+  "url": "https://docs.iza.org/dp5904.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Section on previous illegal experience, p.19-20",
+  "quote": "The estimate including the survey measures, which cover earlier spells of illegality, is 39.6 percent."
+ },
+ {
+  "id": "jasso11-mexico-record",
+  "file": "_cache/who/iza_dp5904_jasso_2011.txt",
+  "url": "https://docs.iza.org/dp5904.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "p.20",
+  "quote": "Including all the information based on the immigrant record yields the same top three countries: El Salvador (89.9%), Guatemala (81.5%), and Mexico (71.3%)."
+ },
+ {
+  "id": "ppic-pathways-newarrival",
+  "file": "_cache/who/ppic_CC_608JHCC.txt",
+  "url": "https://www.ppic.org/wp-content/uploads/content/pubs/cacounts/CC_608JHCC.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Hayes and Hill 2008, Table 2 (US %, US n, CA %, CA n), NIS-2003",
+  "quote": "New arrival 37.6 3,598 32.8 782"
+ },
+ {
+  "id": "ppic-pathways-ewi",
+  "file": "_cache/who/ppic_CC_608JHCC.txt",
+  "url": "https://www.ppic.org/wp-content/uploads/content/pubs/cacounts/CC_608JHCC.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Table 2",
+  "quote": "Illegal border crosser 20.1 1,456 34.5 722"
+ },
+ {
+  "id": "ppic-pathways-visa",
+  "file": "_cache/who/ppic_CC_608JHCC.txt",
+  "url": "https://www.ppic.org/wp-content/uploads/content/pubs/cacounts/CC_608JHCC.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Table 2",
+  "quote": "Visa abuser 21.5 1,742 17.5 387"
+ },
+ {
+  "id": "ppic-pathways-visitor",
+  "file": "_cache/who/ppic_CC_608JHCC.txt",
+  "url": "https://www.ppic.org/wp-content/uploads/content/pubs/cacounts/CC_608JHCC.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Table 2",
+  "quote": "Nonresident visitor 11.4 875 8.3 171"
+ },
+ {
+  "id": "pm7b2-inspected",
+  "file": "_cache/who/uscis_pm_volume-7-part-b-chapter-2.txt",
+  "url": "https://www.uscis.gov/policy-manual/volume-7-part-b-chapter-2",
+  "fetched": "2026-09-27",
+  "pinpoint": "Vol. 7, Part B, Ch. 2, A",
+  "quote": "If an alien has not been inspected and admitted or inspected and paroled before filing an adjustment application, the officer must deny the adjustment application."
+ },
+ {
+  "id": "pm7b2-pip-sparingly",
+  "file": "_cache/who/uscis_pm_volume-7-part-b-chapter-2.txt",
+  "url": "https://www.uscis.gov/policy-manual/volume-7-part-b-chapter-2",
+  "fetched": "2026-09-27",
+  "pinpoint": "Vol. 7, Part B, Ch. 2, parole in place",
+  "quote": "In general, USCIS grants parole in place only sparingly."
+ },
+ {
+  "id": "pm7b2-pip-military",
+  "file": "_cache/who/uscis_pm_volume-7-part-b-chapter-2.txt",
+  "url": "https://www.uscis.gov/policy-manual/volume-7-part-b-chapter-2",
+  "fetched": "2026-09-27",
+  "pinpoint": "Vol. 7, Part B, Ch. 2, parole in place",
+  "quote": "The fact that an alien is a spouse, child, or parent of an active duty member of the U.S. armed forces, a member in the Selected Reserve of the Ready Reserve, or someone who previously served in the U.S. armed forces or the Selected Reserve of the Ready Reserve ordinarily weighs heavily in favor of parole in place."
+ },
+ {
+  "id": "pm7b2-pip-meets",
+  "file": "_cache/who/uscis_pm_volume-7-part-b-chapter-2.txt",
+  "url": "https://www.uscis.gov/policy-manual/volume-7-part-b-chapter-2",
+  "fetched": "2026-09-27",
+  "pinpoint": "Vol. 7, Part B, Ch. 2, parole in place",
+  "quote": "If DHS grants parole before an alien files an adjustment application, the applicant meets the “inspected and paroled” requirement for adjustment."
+ },
+ {
+  "id": "pm8j3-90day-2019",
+  "file": "_cache/who/uscis_pm_volume-8-part-j-chapter-3.txt",
+  "url": "https://www.uscis.gov/policy-manual/volume-8-part-j-chapter-3",
+  "fetched": "2026-09-27",
+  "pinpoint": "Vol. 8, Part J, Ch. 3, technical update of June 05, 2019",
+  "quote": "While this \"rule\" does not apply to USCIS because it is DOS policy, USCIS is clarifying that it may also find that an applicant made a willful misrepresentation due to a status violation or conduct in the United States that is inconsistent with the applicant's prior representations, especially where the violation or conduct occurred shortly after the consular interview or admission to the United States."
+ },
+ {
+  "id": "pm8j3-90day-2021",
+  "file": "_cache/who/uscis_pm_volume-8-part-j-chapter-3.txt",
+  "url": "https://www.uscis.gov/policy-manual/volume-8-part-j-chapter-3",
+  "fetched": "2026-09-27",
+  "pinpoint": "Vol. 8, Part J, Ch. 3, technical update of July 16, 2021",
+  "quote": "This technical update to Volume 8 removes all references to the U.S. Department of State’s 90-day rule."
+ },
+ {
+  "id": "cavazos-holding",
+  "file": "_cache/who/bia_matter_of_cavazos_2750.txt",
+  "url": "https://www.justice.gov/sites/default/files/eoir/legacy/2012/08/17/2750.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "Matter of Cavazos, 17 I&N Dec. 215 (BIA 1980), headnote (2)",
+  "quote": "justment of status should as a general rule be granted in the exercise of discretion in the case of an immediate relative"
+ },
+ {
+  "id": "gao-mexico-ofo",
+  "file": "_cache/who/exa_extract_gao-26-107765.txt",
+  "url": "https://www.gao.gov/assets/gao-26-107765.pdf",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-26-107765, parole by country (Exa extract)",
+  "quote": "paroles of noncitizens from Mexico accounted for the largest portion of OFO paroles (513,763, or about 32 percent)"
+ },
+ {
+  "id": "gao-appointments",
+  "file": "_cache/who/exa_extract_gao-26-107765.txt",
+  "url": "https://www.gao.gov/products/gao-26-107765",
+  "fetched": "2026-09-27",
+  "pinpoint": "GAO-26-107765 highlights (Exa extract)",
+  "quote": "Almost all (97 percent) appointments in fiscal years 2023 and 2024 resulted in paroles."
+ },
+ {
+  "id": "house-cbpone-mexico",
+  "file": "_cache/who/exa_extract_cbpone_mexico.txt",
+  "url": "https://homeland.house.gov/2023/10/23/new-documents-obtained-by-homeland-majority-detail-shocking-abuse-of-cbp-one-app/",
+  "fetched": "2026-09-27",
+  "pinpoint": "House Homeland majority press release 2023-10-23 (Exa extract)",
+  "quote": "Out of 58,772 appointments made by Mexican nationals, 55,099 were released on parole, a rate of 93 percent."
+ },
+ {
+  "id": "cbp-dec2024",
+  "file": "_cache/who/exa_extract_cbpone_mexico.txt",
+  "url": "https://www.cbp.gov/newsroom/national-media-release/cbp-releases-december-2024-monthly-update",
+  "fetched": "2026-09-27",
+  "pinpoint": "CBP December 2024 monthly update (Exa extract)",
+  "quote": "The top nationalities processed with appointments through CBP One™ are Venezuelan, Cuban, and Mexican."
+ },
+ {
+  "id": "warren-fn5",
+  "file": "_cache/who/exa_extract_warren_2020_jmhs.txt",
+  "url": "https://journals.sagepub.com/doi/10.1177/2331502420906125",
+  "fetched": "2026-09-27",
+  "pinpoint": "Warren 2020 JMHS, footnote 5 (Exa extract)",
+  "quote": "From 2010 to 2018, an average of 155,000 undocumented residents were removed, 155,000 adjusted to LPR status, and 50,000 died."
+ },
+ {
+  "id": "warren-fn8",
+  "file": "_cache/who/exa_extract_warren_2020_jmhs.txt",
+  "url": "https://journals.sagepub.com/doi/10.1177/2331502420906125",
+  "fetched": "2026-09-27",
+  "pinpoint": "Warren 2020 JMHS, footnote 8 (Exa extract)",
+  "quote": "voluntary emigration, 145,000; removals, 105,000; adjustments to lawful status, 45,000; and deaths, 30,000."
+ },
+ {
+  "id": "t9-FY2023-new-C13",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C13",
+  "quote": "FY2023 | sheet 'Table 9 New Arrivals' | row 13 | Total | C13 = 235760"
+ },
+ {
+  "id": "t9-FY2023-new-C26",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C26",
+  "quote": "FY2023 | sheet 'Table 9 New Arrivals' | row 26 | 55 to 59 years | C26 = 22040"
+ },
+ {
+  "id": "t9-FY2023-new-C27",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C27",
+  "quote": "FY2023 | sheet 'Table 9 New Arrivals' | row 27 | 60 to 64 years | C27 = 23400"
+ },
+ {
+  "id": "t9-FY2023-new-C28",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C28",
+  "quote": "FY2023 | sheet 'Table 9 New Arrivals' | row 28 | 65 to 74 years | C28 = 32530"
+ },
+ {
+  "id": "t9-FY2023-new-C29",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C29",
+  "quote": "FY2023 | sheet 'Table 9 New Arrivals' | row 29 | 75 years and over | C29 = 10520"
+ },
+ {
+  "id": "t9-FY2023-adj-C13",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C13",
+  "quote": "FY2023 | sheet 'Table 9 Adjust' | row 13 | Total | C13 = 315830"
+ },
+ {
+  "id": "t9-FY2023-adj-C26",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C26",
+  "quote": "FY2023 | sheet 'Table 9 Adjust' | row 26 | 55 to 59 years | C26 = 20620"
+ },
+ {
+  "id": "t9-FY2023-adj-C27",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C27",
+  "quote": "FY2023 | sheet 'Table 9 Adjust' | row 27 | 60 to 64 years | C27 = 16330"
+ },
+ {
+  "id": "t9-FY2023-adj-C28",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C28",
+  "quote": "FY2023 | sheet 'Table 9 Adjust' | row 28 | 65 to 74 years | C28 = 22060"
+ },
+ {
+  "id": "t9-FY2023-adj-C29",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2023 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C29",
+  "quote": "FY2023 | sheet 'Table 9 Adjust' | row 29 | 75 years and over | C29 = 9870"
+ },
+ {
+  "id": "t9-FY2024-new-C13",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C13",
+  "quote": "FY2024 | sheet 'Table 9 New Arrivals' | row 13 | Total | C13 = 269230"
+ },
+ {
+  "id": "t9-FY2024-new-C26",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C26",
+  "quote": "FY2024 | sheet 'Table 9 New Arrivals' | row 26 | 55 to 59 years | C26 = 24150"
+ },
+ {
+  "id": "t9-FY2024-new-C27",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C27",
+  "quote": "FY2024 | sheet 'Table 9 New Arrivals' | row 27 | 60 to 64 years | C27 = 26580"
+ },
+ {
+  "id": "t9-FY2024-new-C28",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C28",
+  "quote": "FY2024 | sheet 'Table 9 New Arrivals' | row 28 | 65 to 74 years | C28 = 38230"
+ },
+ {
+  "id": "t9-FY2024-new-C29",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 New Arrivals', cell C29",
+  "quote": "FY2024 | sheet 'Table 9 New Arrivals' | row 29 | 75 years and over | C29 = 13600"
+ },
+ {
+  "id": "t9-FY2024-adj-C13",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C13",
+  "quote": "FY2024 | sheet 'Table 9 Adjust' | row 13 | Total | C13 = 403010"
+ },
+ {
+  "id": "t9-FY2024-adj-C26",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C26",
+  "quote": "FY2024 | sheet 'Table 9 Adjust' | row 26 | 55 to 59 years | C26 = 26320"
+ },
+ {
+  "id": "t9-FY2024-adj-C27",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C27",
+  "quote": "FY2024 | sheet 'Table 9 Adjust' | row 27 | 60 to 64 years | C27 = 20580"
+ },
+ {
+  "id": "t9-FY2024-adj-C28",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C28",
+  "quote": "FY2024 | sheet 'Table 9 Adjust' | row 28 | 65 to 74 years | C28 = 27240"
+ },
+ {
+  "id": "t9-FY2024-adj-C29",
+  "file": "_cache/who/ohss_expanded_t9_immediate_relatives_fy2023_fy2024.txt",
+  "url": "https://ohss.dhs.gov/topics/immigration/lawful-permanent-residents/lpr-yearbook-tables-8-11-expanded",
+  "fetched": "2026-09-27",
+  "pinpoint": "FY2024 workbook (tail lane _cache), sheet 'Table 9 Adjust', cell C29",
+  "quote": "FY2024 | sheet 'Table 9 Adjust' | row 29 | 75 years and over | C29 = 12040"
+ }
+]
