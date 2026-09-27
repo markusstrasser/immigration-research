@@ -1,0 +1,58 @@
+{
+ "g_mexico_assumed": 1.15,
+ "hendren_fig6": {
+  "crosses_one_at_quantile": 57,
+  "g_min": 0.5736,
+  "g_q1": 1.1292,
+  "g_q100": 0.7013,
+  "x_ticks_px": [
+   464.0,
+   633.0,
+   802.0,
+   970.5,
+   1139.0,
+   1308.0
+  ],
+  "y_ticks_px": [
+   332.0,
+   511.5,
+   690.5,
+   870.0
+  ]
+ },
+ "lambda_values": {
+  "1.0": 1.0,
+  "1.16": 1.16,
+  "1.25": 1.25,
+  "1.5": 1.5
+ },
+ "mexico": {
+  "mean_y": 8274.554633464095,
+  "median_y": 5902.171337203357,
+  "median_y_sqrt": 11731.914585231038,
+  "p90_y": 15578.330473807351,
+  "persons_m": 130.226218,
+  "ppp": 9.916562,
+  "remittance_households_mean_y": 6300.0640758016825,
+  "remittance_households_median_y": 4715.673839381027,
+  "remittance_households_persons_m": 5.467543,
+  "top_decile_mean_y": 27855.53395853726,
+  "unit": "per head"
+ },
+ "us_reference": {
+  "money": {
+   "floor_other_p5": 11030.865786510141,
+   "y_ref_other_mean": 84566.75320587297,
+   "y_ref_other_median": 62666.92908278391
+  },
+  "per_capita": {
+   "floor_other_p5": 6192.285714285715,
+   "y_ref_other_mean": 52256.48602606481
+  },
+  "spm": {
+   "floor_other_p5": 22151.03147116398,
+   "y_ref_other_mean": 121546.39530702695,
+   "y_ref_other_median": 92755.92960979343
+  }
+ }
+}

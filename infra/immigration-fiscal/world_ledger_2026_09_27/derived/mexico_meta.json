@@ -1,0 +1,95 @@
+{
+ "comparators": {
+  "education_per_public_student_ppp": 4538.142957232943,
+  "education_share_gdp_2022": 4.05987977981567,
+  "gdp_ppp_2024": 3378877367982.99,
+  "gov_consumption_share_gdp_2024": 11.6225557793018,
+  "health_per_capita_ppp_2023": 665.211155153854,
+  "health_share_gdp_implied": 2.5763054455874173,
+  "other_gov_consumption_per_capita_ppp": 1287.4984687337128,
+  "pensions_total_ppp_bn": 93.99250281733528,
+  "population_2024": 130861007.0,
+  "public_students_m": 30.227862,
+  "transfers_total_ppp_bn": 39.15462590526032
+ },
+ "consumption_tax": {
+  "fuel_ieps_pct_by_decile": [
+   2.0195080711069013,
+   2.027260376283086,
+   2.063806957827956,
+   2.0587214120089357,
+   2.295411960873093,
+   2.367384622710477,
+   2.511751986528632,
+   2.609099784830618,
+   2.696410233315481,
+   1.9950961766407436
+  ],
+  "fuel_ieps_revenue_mxn_m": 403583.9,
+  "gross_labor_income_share_by_decile": {
+   "1": 0.022955069774188527,
+   "2": 0.04360392743643431,
+   "3": 0.05513061095757984,
+   "4": 0.06847462882290432,
+   "5": 0.0805406639538903,
+   "6": 0.09293432698190825,
+   "7": 0.10789639961637817,
+   "8": 0.12639848746446664,
+   "9": 0.15035735758237484,
+   "10": 0.25170852740987476
+  },
+  "gross_labor_income_weighted_rate": 0.11605328970964293,
+  "gross_labor_income_weighted_rate_without_fuel": 0.09302536984099435,
+  "ieps_pct_by_decile": [
+   1.2,
+   1.3,
+   1.4,
+   1.5,
+   1.4,
+   1.4,
+   1.4,
+   1.4,
+   1.4,
+   1.0
+  ],
+  "implied_income_base_mxn_m": 17659000.117003664,
+  "import_duties_if_spread_like_iva_pct": 0.7830870056978692,
+  "import_duties_left_out_mxn_m": 137821.6,
+  "iva_pct_by_decile": [
+   6.2,
+   6.9,
+   7.2,
+   7.3,
+   7.7,
+   7.9,
+   8.2,
+   8.5,
+   8.9,
+   8.0
+  ],
+  "iva_revenue_mxn_m": 1407982.5,
+  "source": "SHCP 2026, Distribuci\u00f3n del pago de impuestos ... Resultados para el a\u00f1o 2024: IVA Tabla 2.8, IEPS Otros Gr\u00e1fica 2.10, % of autonomous income by household decile; the fuel excise from SHCP's 2024 revenue (Informaci\u00f3n de Finanzas P\u00fablicas enero-diciembre 2024, table II.3) spread by Tabla 2.9's fuel column over the incomes Tabla 2.8 implies"
+ },
+ "emovi_respondents": 17665,
+ "emovi_share_with_both_schooling": 0.9324653269176337,
+ "emovi_weighted_share_with_both_schooling": 0.9463977217674255,
+ "enigh_labor_income_gross_mxn_bn": 8410.64696749871,
+ "enigh_labor_income_mxn_bn": 7726.50138201084,
+ "enigh_persons_15plus": 101200859.0,
+ "ppp_2024": {
+  "PA.NUS.FCRF": 18.3048583333333,
+  "PA.NUS.PPP": 9.916562,
+  "PA.NUS.PRVT.PP": 10.801299
+ },
+ "withholding": {
+  "afore_mxn_bn": 44.537009713947,
+  "exempt_minimum_wage_share_of_formal": 0.1553827593670636,
+  "formal_take_home_mxn_bn": 3594.3429605288397,
+  "formal_workers_m": 18.877474,
+  "oecd_average_wage_check": {
+   "ssc": 0.014122986532301802,
+   "tax": 0.10827415839602149
+  },
+  "withheld_tax_mxn_bn": 639.569071009545
+ }
+}

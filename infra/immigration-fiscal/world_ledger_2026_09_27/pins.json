@@ -1,0 +1,5 @@
+{
+ "_note": "Inputs each case reads, as git commits, so peers' uncommitted reruns never leak in. model: the winners lane's case name; winners, distribution, generation: commits holding that case's derived files. sept27: all four pins sent by the parent on 2026-09-28 (winners round 2 at 62f1e5a).",
+ "sept26_schools": {"model": "adopted_2026_09_26_schools", "winners": "fa1bd3a", "distribution": "39b854b", "generation": "2441ac8"},
+ "sept27": {"model": "adopted_2026_09_27", "winners": "62f1e5a", "distribution": "78766c2", "generation": "8654a0c"}
+}

@@ -1,0 +1,7 @@
+cat,cat_name,enoe_employment,enoe_income_nonresponse,enoe_monthly_per_employed,enigh_employment,enigh_monthly_per_employed,ratio_enigh_to_enoe
+0,none,0.369473,0.0691517,3966.04,0.447955,3701.19,0.933221
+1,primaria_incompleta,0.457392,0.0718886,4902.37,0.552489,4982.29,1.0163
+2,primaria,0.511703,0.0893066,5674.3,0.610936,6485.09,1.14289
+3,secundaria,0.565517,0.10763,6480.59,0.629012,7719.67,1.1912
+4,preparatoria,0.620284,0.140633,6922.85,0.674904,9876.96,1.42672
+5,profesional,0.762439,0.219671,10655.3,0.796565,17807.8,1.67127
