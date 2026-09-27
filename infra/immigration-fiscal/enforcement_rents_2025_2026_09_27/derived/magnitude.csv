@@ -1,0 +1,8 @@
+scenario,description,population_change_pct,rent_pct_saiz_1,rent_pct_ladder180_3
+arrests_only,every Texas arrest Aug 2025-Jul 2026 removes one resident,-0.3404,-0.3404,-1.0213
+arrests_x4,each arrest carries four departures (Brookings employment ratio),-1.3617,-1.3617,-4.0851
+dhs_departures_by_arrest_share,"DHS's own 3M+ departures claim, annualised, allocated to Texas by its arrest share",-1.4436,-1.4436,-4.3309
+texas_over_median_state,Texas arrest rate minus the median state's (what a cross-state test sees),-0.2515,-0.2515,-0.7545
+lost_inflow_texas_v2025,"fall in Texas net international migration, V2025 year vs V2024 year",-0.5983,-0.5983,-1.7950
+lost_inflow_us_v2025,"fall in US net international migration, V2025 year vs V2024 year",-0.4330,-0.4330,-1.2990
+lost_inflow_tx_metros_v2025,"fall in net international migration, four Texas metros",-0.6763,-0.6763,-2.0290

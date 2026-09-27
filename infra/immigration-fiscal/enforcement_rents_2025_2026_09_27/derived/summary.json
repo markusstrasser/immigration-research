@@ -1,0 +1,270 @@
+{
+ "arrests_by_window": {
+  "w2526": {
+   "pr": 866,
+   "tx": 107948,
+   "us": 424460
+  },
+  "y2024": {
+   "pr": 316,
+   "tx": 29372,
+   "us": 109936
+  },
+  "y2025": {
+   "pr": 708,
+   "tx": 80644,
+   "us": 316304
+  }
+ },
+ "arrests_last_date": "2026-08-06",
+ "brookings_unmatched": [],
+ "gates_failed": [],
+ "inputs": {
+  "acs/acs1_2021_cbsa_housing.json": "01447eabd838cdcdf9205edc722cb4109a24584b2d2b6d194296f52b1bce69c4",
+  "bps/cbsa2024a.txt": "869975722087a727672622cb06a6921de6bad64c51c449daba1e52189c1e9d21",
+  "bps/cbsa2025a.txt": "11545b0971bd7d7e4e4724bf6df1fdcaee41b44fc5eb8739b86fbe080bfdcd5e",
+  "bps/ma2019a.txt": "8c81e48eab94355e5b6738e8c001a0ae9c3ecb867012edf79f6aec44f88145a1",
+  "bps/ma2020a.txt": "801c639fe4659d2843cb80d9c19a124423321388c9ad999502ea6cf6da1fdf76",
+  "bps/ma2021a.txt": "37651576222547e937895e7f6aee8ba2b2f3311ccf63f7f46368c0e68662ca6a",
+  "bps/ma2022a.txt": "f67746ba73ae053211c54a270eff83ec45a275e3fdcaa4ae9b8743e649861ff4",
+  "bps/ma2023a.txt": "41e70469eaf17cfd9b2d448c6232954fe91b5588900157d8cb197c89cacac1b0",
+  "ice/arrests-latest.parquet": "9aa0d48232805380057475c48d5953277c14307c6ddaef79b2ad28fb4d84a8a5",
+  "ice/ice-aor-county-shp.parquet": "5358da3f6c9a800f59d45172ef20c59cfe6b2f74d01d385c0ee74fd8c6a696ec",
+  "popest/NST-EST2025-ALLDATA.csv": "92188e29cb0a67dcf95afa7d6c47359409782f086478b70ea4128eb70e223ca9",
+  "popest/cbsa-est2025-alldata.csv": "bf6fad83753456413d047d1acebeb434bd067eba9d6d0be62b3f737ad1301852",
+  "popest/co-est2025-alldata.csv": "4f5a499d851e2cb48fd7a5405e5a9235453a8a66933657aacd10df0e264f35d5",
+  "web/Beyond-Arrests-Appendices.pdf": "65ab34cb3a3ac64c6fa8b0e43db9a740a212a326218aa92e2c2bc5763d985cde",
+  "web/Beyond-Arrests-Metro-Data.pdf": "34fd44e14bc8d24c63df0a1bf3bb7cce204e4810c7d2744c08269af4d550e81e",
+  "zillow/City_zori_uc_sfrcondomfr_sm_month.csv": "418a2f956748f9335b7bf00c2673616adb9fd8010e57c69c8f3757b46b6eab7d",
+  "zillow/Metro_zori_uc_sfrcondomfr_sm_month.csv": "4177880bb6a7df096024dd8bb1d725d2892dbcc4fd42a00984cbafd0b22f4c38",
+  "zillow/Metro_zori_uc_sfrcondomfr_sm_sa_month.csv": "3a12de5f779c42a50afd57a78899780853280e95231a345183f11fa78302e71e"
+ },
+ "main_A1": {
+  "clusters": 46,
+  "coef": 0.1499727301578142,
+  "n": 194,
+  "p_t_G-1": 0.36503403550648617,
+  "p_wild_webb": 0.4073,
+  "r2": 0.002713658122789453,
+  "se": 0.1638926217279945
+ },
+ "main_A2": {
+  "clusters": 46,
+  "coef": 0.1288577412236825,
+  "n": 194,
+  "p_t_G-1": 0.4074793676727927,
+  "p_wild_webb": 0.4472,
+  "r2": 0.009838665717180284,
+  "se": 0.15410532402507857
+ },
+ "main_A3": {
+  "clusters": 46,
+  "coef": -0.54505884437443,
+  "n": 194,
+  "p_t_G-1": 0.013614003651745052,
+  "p_wild_webb": 0.0603,
+  "r2": 0.23009662308994627,
+  "se": 0.21223615130364593
+ },
+ "main_A3_aor": {
+  "clusters": 25,
+  "coef": -0.2894660556322606,
+  "n": 194,
+  "p_t_G-1": 0.009931898686556145,
+  "p_wild_webb": 0.1476,
+  "r2": 0.2265857386156811,
+  "se": 0.10338508429728858
+ },
+ "main_B3": {
+  "clusters": 46,
+  "coef": -0.467054884650232,
+  "n": 194,
+  "p_t_G-1": 6.812777917469729e-05,
+  "p_wild_webb": 0.0505,
+  "r2": 0.28612384988274553,
+  "se": 0.10641752411394761
+ },
+ "main_B3jul": {
+  "clusters": 46,
+  "coef": -0.4424798848360474,
+  "n": 194,
+  "p_t_G-1": 0.000244828487107734,
+  "p_wild_webb": 0.0626,
+  "r2": 0.20176886122920457,
+  "se": 0.11105180960966239
+ },
+ "main_L1": {
+  "clusters": 46,
+  "coef": -0.8387168514258247,
+  "n": 194,
+  "p_t_G-1": 0.0004894895830634866,
+  "p_wild_webb": 0.0742,
+  "r2": 0.1280726716220153,
+  "se": 0.2231278329011394
+ },
+ "main_L3": {
+  "clusters": 46,
+  "coef": -0.4670548846502376,
+  "n": 194,
+  "p_t_G-1": 6.812777917470012e-05,
+  "p_wild_webb": 0.0444,
+  "r2": 0.3237178490080388,
+  "se": 0.10641752411394918
+ },
+ "main_N3": {
+  "clusters": 46,
+  "coef": -0.07988424856262899,
+  "n": 194,
+  "p_t_G-1": 0.026630134156730427,
+  "p_wild_webb": 0.0599,
+  "r2": 0.21683221729387492,
+  "se": 0.03485188122114025
+ },
+ "main_NP3": {
+  "clusters": 46,
+  "coef": -0.12721167466733646,
+  "n": 194,
+  "p_t_G-1": 1.2013201114111476e-05,
+  "p_wild_webb": 0.0122,
+  "r2": 0.5101771311781886,
+  "se": 0.025857613938088348
+ },
+ "main_P3": {
+  "clusters": 46,
+  "coef": -0.8770980087771797,
+  "n": 194,
+  "p_t_G-1": 0.00010991188041562404,
+  "p_wild_webb": 0.0592,
+  "r2": 0.5379917685064037,
+  "se": 0.2068994048320354
+ },
+ "main_P3_aor": {
+  "clusters": 25,
+  "coef": -0.4363146198883009,
+  "n": 194,
+  "p_t_G-1": 0.002730103246568676,
+  "p_wild_webb": 0.2201,
+  "r2": 0.5261034728758756,
+  "se": 0.13062558881189026
+ },
+ "main_PB3jul": {
+  "clusters": 46,
+  "coef": -0.8406608363828122,
+  "n": 194,
+  "p_t_G-1": 0.003825792953537333,
+  "p_wild_webb": 0.0787,
+  "r2": 0.5734641461392092,
+  "se": 0.275611895938559
+ },
+ "main_S_A_ps": {
+  "clusters": 46,
+  "coef": 0.2999070374624644,
+  "n": 388,
+  "p_t_G-1": 0.11392108555600766,
+  "p_wild_webb": 0.2651,
+  "r2": 0.42439545767659625,
+  "se": 0.18602890262165306
+ },
+ "main_S_B_ps": {
+  "clusters": 46,
+  "coef": 0.5088910254193875,
+  "n": 388,
+  "p_t_G-1": 0.0076272927935647624,
+  "p_wild_webb": 0.0489,
+  "r2": 0.46356017891808177,
+  "se": 0.1821543291832757
+ },
+ "main_S_Bjul": {
+  "clusters": 46,
+  "coef": 0.3981809515467424,
+  "n": 388,
+  "p_t_G-1": 0.06396145328390189,
+  "p_wild_webb": 0.0381,
+  "r2": 0.4278445397634467,
+  "se": 0.20965841027470064
+ },
+ "main_S_N": {
+  "clusters": 46,
+  "coef": 0.04732742610470114,
+  "n": 388,
+  "p_t_G-1": 0.25338710465289105,
+  "p_wild_webb": 0.4856,
+  "r2": 0.40746587601371453,
+  "se": 0.04090615061460863
+ },
+ "median_state_rate_w2526_per_1000": 0.8890844479077797,
+ "median_state_rate_y2025_per_1000": 0.6434253626579317,
+ "samples": {
+  "all_msa": 339,
+  "big_500k": 111,
+  "main_250k": 194
+ },
+ "source_agreement": {
+  "Apartment List": {
+   "readings": 7,
+   "within_0p15": 1,
+   "within_0p5": 3
+  },
+  "Apartments.com (CoStar)": {
+   "readings": 11,
+   "within_0p15": 0,
+   "within_0p5": 0
+  },
+  "RealPage": {
+   "readings": 1,
+   "within_0p15": 0,
+   "within_0p5": 0
+  },
+  "Realtor.com": {
+   "readings": 10,
+   "within_0p15": 0,
+   "within_0p5": 1
+  },
+  "RentCafe (Yardi)": {
+   "readings": 3,
+   "within_0p15": 0,
+   "within_0p5": 0
+  },
+  "Yardi Matrix": {
+   "readings": 5,
+   "within_0p15": 0,
+   "within_0p5": 0
+  },
+  "Zillow ZORI (this lane)": {
+   "readings": 18,
+   "within_0p15": 0,
+   "within_0p5": 0
+  },
+  "Zumper": {
+   "readings": 18,
+   "within_0p15": 0,
+   "within_0p5": 3
+  }
+ },
+ "source_exact_matches": 0,
+ "texas_arrest_rate_w2526_per_1000": 3.4042450129251756,
+ "texas_nim_2024": 354864.0,
+ "texas_nim_2025": 167475.0,
+ "texas_popchg_2025": 391243.0,
+ "texas_share_2024_mean_monthly": 0.26767352948479795,
+ "texas_share_july_2025": 0.2547447704985272,
+ "texas_share_july_2026": 0.24415880711332016,
+ "tracked_inputs": {
+  "brookings_surge_metros.csv": "db9b78e792931eec95c66fb984076f42aa8dc83b23440204b06bb0fbf2116298",
+  "index_readings.csv": "db0c7064594a7ca88919858535f73432c574c7774977d1cca18e3e66cc411f53"
+ },
+ "tx_metros_nim_2024": 298588.0,
+ "tx_metros_nim_2025": 153357.0,
+ "tx_metros_pop_2025": 21815869.0,
+ "tx_metros_zori_yoy_2026_08": {
+  "Austin, TX": -0.016654582638020443,
+  "Dallas, TX": 0.43145385890048793,
+  "Houston, TX": 0.03905804574881877,
+  "San Antonio, TX": -1.268492806331989
+ },
+ "us_arrest_rate_w2526_per_1000": 1.2393585945207632,
+ "us_nim_2024": 2734468.0,
+ "us_nim_2025": 1262202.0,
+ "zillow_match_failures": 367,
+ "zori_last_month": "2026-08"
+}

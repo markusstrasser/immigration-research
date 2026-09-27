@@ -1,0 +1,9 @@
+gradient,pp_per_arrest_per_1000,se,wild_ci_lo,wild_ci_hi
+"mechanical, Saiz elasticity 1",-0.1000,,,
+"four departures per arrest, Saiz elasticity 1",-0.4000,,,
+"mechanical, ladder 180 association",-0.3000,,,
+"four departures per arrest, ladder 180 association",-1.2000,,,
+"post's Texas figures, all attributed to Texas's extra arrests",-1.5009,,,
+"ZORI Texas metros minus other main-sample metros, per extra arrest",-1.2186,,,
+estimated S_A (dg_cal2024->dg_cal2025),0.3320,0.1913,-0.5478,1.1928
+estimated S_B (dg_aug2024->dg_aug2026),0.5202,0.1858,-0.4088,1.4306

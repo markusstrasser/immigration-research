@@ -1,0 +1,368 @@
+RegionName,SizeRank,match_how
+"Lebanon, NH",211,no-match
+"Hilo, HI",229,no-match
+"Torrington, CT",236,no-match
+"East Stroudsburg, PA",263,no-match
+"Tupelo, MS",269,no-match
+"Madera, CA",275,no-match
+"Concord, NH",285,no-match
+"London, KY",294,no-match
+"Ottawa, IL",296,no-match
+"Pottsville, PA",304,no-match
+"Eureka, CA",315,no-match
+"Carbondale, IL",321,no-match
+"Jamestown, NY",328,no-match
+"Augusta, ME",339,no-match
+"New Bern, NC",341,no-match
+"Holland, MI",347,no-match
+"Lumberton, NC",348,no-match
+"Wooster, OH",355,no-match
+"California, MD",361,no-match
+"Cookeville, TN",363,no-match
+"Roseburg, OR",366,no-match
+"Ogdensburg, NY",369,no-match
+"Bluefield, WV",371,no-match
+"Show Low, AZ",372,no-match
+"Richmond, KY",373,no-match
+"Tullahoma, TN",374,no-match
+"Whitewater, WI",375,no-match
+"LaGrange, GA",379,no-match
+"Kalispell, MT",384,no-match
+"Danville, VA",385,no-match
+"Salem, OH",388,no-match
+"Truckee, CA",389,no-match
+"Adrian, MI",393,no-match
+"Shelby, NC",394,no-match
+"Meridian, MS",397,no-match
+"Sevierville, TN",402,no-match
+"Moses Lake, WA",403,no-match
+"Ashtabula, OH",404,no-match
+"Albertville, AL",406,no-match
+"Brainerd, MN",408,no-match
+"Cumberland, MD",409,no-match
+"Ocean City, NJ",410,no-match
+"Corning, NY",413,no-match
+"New Philadelphia, OH",414,no-match
+"Sunbury, PA",415,no-match
+"Ukiah, CA",416,no-match
+"Hermiston, OR",417,no-match
+"Clarksburg, WV",418,no-match
+"Beaver Dam, WI",420,no-match
+"Pine Bluff, AR",421,no-match
+"Cullman, AL",424,no-match
+"Lufkin, TX",425,no-match
+"Zanesville, OH",426,no-match
+"New Castle, PA",427,no-match
+"Oak Harbor, WA",428,no-match
+"Orangeburg, SC",429,no-match
+"Watertown, WI",430,no-match
+"Meadville, PA",431,no-match
+"Russellville, AR",435,no-match
+"Indiana, PA",436,no-match
+"Bloomsburg, PA",439,no-match
+"Opelousas, LA",440,no-match
+"Key West, FL",442,no-match
+"Talladega, AL",443,no-match
+"Stillwater, OK",444,no-match
+"Athens, TX",446,no-match
+"Centralia, WA",447,no-match
+"Manitowoc, WI",448,no-match
+"DuBois, PA",450,no-match
+"Warsaw, IN",451,no-match
+"Plattsburgh, NY",452,no-match
+"Statesboro, GA",453,no-match
+"Wilson, NC",455,no-match
+"Glenwood Springs, CO",456,no-match
+"Seneca, SC",457,no-match
+"Chillicothe, OH",460,no-match
+"Searcy, AR",461,no-match
+"Port Angeles, WA",463,no-match
+"Auburn, NY",464,no-match
+"Huntsville, TX",465,no-match
+"Keene, NH",466,no-match
+"Heber, UT",467,no-match
+"Quincy, IL",468,no-match
+"Findlay, OH",470,no-match
+"Frankfort, KY",471,no-match
+"Danville, IL",472,no-match
+"Aberdeen, WA",473,no-match
+"Wisconsin Rapids, WI",476,no-match
+"Jefferson, GA",477,no-match
+"Kapaa, HI",478,no-match
+"Palatka, FL",479,no-match
+"Hobbs, NM",481,no-match
+"Shawnee, OK",482,no-match
+"Stevens Point, WI",485,no-match
+"Greeneville, TN",486,no-match
+"Greenwood, SC",488,no-match
+"Lake City, FL",489,no-match
+"Klamath Falls, OR",490,no-match
+"Morehead City, NC",491,no-match
+"Clearlake, CA",492,no-match
+"Alamogordo, NM",493,no-match
+"Farmington, MO",495,no-match
+"Muskogee, OK",496,no-match
+"Marion, IN",497,no-match
+"Faribault, MN",498,no-match
+"Richmond, IN",499,no-match
+"Marquette, MI",500,no-match
+"Mount Pleasant, MI",502,no-match
+"Marion, OH",504,no-match
+"Baraboo, WI",505,no-match
+"Red Bluff, CA",506,no-match
+"Jasper, AL",508,no-match
+"Roswell, NM",509,no-match
+"Shelton, WA",510,no-match
+"Dublin, GA",511,no-match
+"Nacogdoches, TX",512,no-match
+"Somerset, KY",513,no-match
+"Coos Bay, OR",514,no-match
+"Forest City, NC",515,no-match
+"Martinsville, VA",516,no-match
+"Rexburg, ID",517,no-match
+"Laconia, NH",519,no-match
+"Georgetown, SC",520,no-match
+"Athens, OH",521,no-match
+"Sanford, NC",522,no-match
+"Mount Vernon, OH",524,no-match
+"Albemarle, NC",526,no-match
+"Hutchinson, KS",527,no-match
+"Hudson, NY",528,no-match
+"Starkville, MS",529,no-match
+"Carlsbad, NM",530,no-match
+"Gillette, WY",531,no-match
+"Rutland, VT",533,no-match
+"Crossville, TN",534,no-match
+"Granbury, TX",535,no-match
+"Salina, KS",537,no-match
+"Fergus Falls, MN",539,no-match
+"Barre, VT",540,no-match
+"Oneonta, NY",542,no-match
+"Columbus, MS",543,no-match
+"Norwalk, OH",544,no-match
+"Batavia, NY",545,no-match
+"Ardmore, OK",546,no-match
+"Palestine, TX",547,no-match
+"Fort Madison, IA",548,no-match
+"Charleston, IL",549,no-match
+"Fernley, NV",550,no-match
+"Calhoun, GA",553,no-match
+"Cullowhee, NC",554,no-match
+"Kearney, NE",555,no-match
+"Fairmont, WV",556,no-match
+"Ontario, OR",557,no-match
+"Gaffney, SC",558,no-match
+"Picayune, MS",559,no-match
+"Sterling, IL",560,no-match
+"Branson, MO",561,no-match
+"Cedar City, UT",562,no-match
+"Oxford, MS",564,no-match
+"Edwards, CO",566,no-match
+"Durango, CO",567,no-match
+"Kinston, NC",568,no-match
+"Sonora, CA",569,no-match
+"Batesville, AR",571,no-match
+"Point Pleasant, WV",572,no-match
+"Elko, NV",573,no-match
+"Danville, KY",574,no-match
+"Glasgow, KY",575,no-match
+"St. Marys, GA",576,no-match
+"Boone, NC",577,no-match
+"Warrensburg, MO",578,no-match
+"Gloversville, NY",579,no-match
+"Fort Leonard Wood, MO",580,no-match
+"Elizabeth City, NC",582,no-match
+"Athens, TN",584,no-match
+"Enterprise, AL",585,no-match
+"Ashland, OH",586,dropped-duplicate-any-city
+"Scottsboro, AL",587,no-match
+"Milledgeville, GA",588,no-match
+"Kerrville, TX",589,no-match
+"Bartlesville, OK",590,no-match
+"Platteville, WI",591,no-match
+"Corsicana, TX",592,no-match
+"Greenville, OH",593,no-match
+"Rochelle, IL",594,no-match
+"Alexander City, AL",595,no-match
+"Oil City, PA",597,no-match
+"Mason City, IA",598,no-match
+"Jacksonville, TX",599,no-match
+"Pahrump, NV",601,no-match
+"Paris, TX",602,no-match
+"Winona, MN",603,no-match
+"Newport, OR",604,no-match
+"Morgan City, LA",605,no-match
+"Shelbyville, TN",606,no-match
+"Amsterdam, NY",607,no-match
+"Ozark, AL",608,no-match
+"Gardnerville Ranchos, NV",610,no-match
+"Fort Polk South, LA",611,no-match
+"Ca±on City, CO",612,no-match
+"New Castle, IN",614,no-match
+"Clovis, NM",615,no-match
+"Norfolk, NE",616,no-match
+"Ruston, LA",618,no-match
+"Sidney, OH",619,no-match
+"Pullman, WA",620,no-match
+"Del Rio, TX",622,no-match
+"Blackfoot, ID",623,no-match
+"Red Wing, MN",624,no-match
+"Nogales, AZ",625,no-match
+"Tahlequah, OK",626,no-match
+"Kendallville, IN",627,no-match
+"Montrose, CO",628,no-match
+"Cortland, NY",629,no-match
+"Mount Sterling, KY",630,no-match
+"Clinton, IA",631,no-match
+"Sandpoint, ID",632,no-match
+"Bardstown, KY",633,no-match
+"Plymouth, IN",635,no-match
+"Bemidji, MN",637,no-match
+"Burley, ID",640,no-match
+"Durant, OK",641,no-match
+"Cornelia, GA",644,no-match
+"Hillsdale, MI",645,no-match
+"Thomasville, GA",646,no-match
+"Paragould, AR",647,no-match
+"Burlington, IA",649,no-match
+"Menomonie, WI",651,no-match
+"Shawano, WI",652,no-match
+"Vicksburg, MS",653,no-match
+"Bedford, IN",654,no-match
+"Washington, NC",656,no-match
+"Freeport, IL",657,no-match
+"Rolla, MO",659,no-match
+"Coldwater, MI",660,no-match
+"Marion, NC",661,no-match
+"Huntingdon, PA",662,no-match
+"Ellensburg, WA",663,no-match
+"Ponca City, OK",664,no-match
+"Lawrenceburg, TN",665,no-match
+"Mount Pleasant, TX",667,no-match
+"Willmar, MN",668,no-match
+"Lewisburg, PA",671,no-match
+"Auburn, IN",672,no-match
+"Duncan, OK",673,no-match
+"Sedalia, MO",674,no-match
+"Henderson, NC",676,no-match
+"Aberdeen, SD",677,no-match
+"Rock Springs, WY",678,no-match
+"Garden City, KS",679,no-match
+"Stephenville, TX",680,no-match
+"El Campo, TX",685,no-match
+"Mountain Home, AR",686,no-match
+"Gainesville, TX",687,no-match
+"Blytheville, AR",689,no-match
+"McMinnville, TN",690,no-match
+"Astoria, OR",691,no-match
+"McComb, MS",694,no-match
+"Marshalltown, IA",696,no-match
+"Big Rapids, MI",697,no-match
+"Austin, MN",698,no-match
+"Selinsgrove, PA",699,no-match
+"Okeechobee, FL",701,no-match
+"Houghton, MI",702,no-match
+"Moscow, ID",703,no-match
+"Clewiston, FL",704,no-match
+"Riverton, WY",705,no-match
+"Pittsburg, KS",708,no-match
+"Alexandria, MN",711,no-match
+"Urbana, OH",712,no-match
+"Williston, ND",715,no-match
+"Sikeston, MO",717,no-match
+"Safford, AZ",718,no-match
+"Ada, OK",720,no-match
+"Brownwood, TX",721,no-match
+"Crawfordsville, IN",722,no-match
+"Newberry, SC",726,no-match
+"Lock Haven, PA",727,no-match
+"Easton, MD",729,no-match
+"Owatonna, MN",730,no-match
+"Laramie, WY",733,no-match
+"Murray, KY",734,no-match
+"Fremont, NE",735,no-match
+"Bennington, VT",736,no-match
+"Fort Dodge, IA",737,no-match
+"Sault Ste. Marie, MI",738,no-match
+"Dyersburg, TN",740,no-match
+"Kill Devil Hills, NC",744,no-match
+"Sulphur Springs, TX",745,no-match
+"Hutchinson, MN",746,no-match
+"DeRidder, LA",749,no-match
+"Bay City, TX",751,no-match
+"North Platte, NE",752,no-match
+"Pontiac, IL",754,no-match
+"Lebanon, MO",755,no-match
+"Newport, TN",756,no-match
+"Vidalia, GA",758,no-match
+"Brenham, TX",759,no-match
+"Vernal, UT",760,no-match
+"Bonham, TX",761,no-match
+"Butte, MT",764,no-match
+"Emporia, KS",767,no-match
+"Jackson, WY",768,no-match
+"Winfield, KS",769,no-match
+"Big Spring, TX",770,no-match
+"Watertown, SD",773,no-match
+"Dixon, IL",775,no-match
+"Taos, NM",777,no-match
+"Brookings, SD",778,no-match
+"Americus, GA",779,no-match
+"Columbus, NE",780,no-match
+"Lewisburg, TN",783,no-match
+"Seneca Falls, NY",784,no-match
+"Dickinson, ND",785,no-match
+"Pella, IA",786,no-match
+"Troy, AL",788,no-match
+"Brevard, NC",792,no-match
+"Martin, TN",794,no-match
+"Dayton, TN",797,no-match
+"Cambridge, MD",799,no-match
+"Paris, TN",800,no-match
+"Juneau, AK",802,no-match
+"Coffeyville, KS",803,no-match
+"Berlin, NH",805,no-match
+"Hastings, NE",807,no-match
+"Beeville, TX",808,no-match
+"Kingsville, TX",809,no-match
+"Breckenridge, CO",811,no-match
+"Albert Lea, MN",814,no-match
+"Sheridan, WY",815,no-match
+"Jesup, GA",819,no-match
+"McPherson, KS",820,no-match
+"Kirksville, MO",821,no-match
+"Washington Court House, OH",825,no-match
+"Fort Morgan, CO",827,no-match
+"Mountain Home, ID",832,no-match
+"Mineral Wells, TX",833,no-match
+"Silver City, NM",835,no-match
+"Macomb, IL",838,no-match
+"Crescent City, CA",840,no-match
+"Fredericksburg, TX",847,no-match
+"The Dalles, OR",849,no-match
+"La Grande, OR",852,no-match
+"Lexington, NE",856,no-match
+"Spearfish, SD",858,no-match
+"Fallon, NV",863,no-match
+"Altus, OK",864,no-match
+"Hailey, ID",866,no-match
+"Steamboat Springs, CO",867,no-match
+"Woodward, OK",871,no-match
+"Prineville, OR",872,no-match
+"Rockport, TX",874,no-match
+"Hood River, OR",875,no-match
+"Mitchell, SD",878,no-match
+"Wahpeton, ND",882,no-match
+"Sterling, CO",890,no-match
+"Beatrice, NE",891,no-match
+"Jamestown, ND",892,no-match
+"Pierre, SD",900,no-match
+"Port Lavaca, TX",908,no-match
+"Ruidoso, NM",913,no-match
+"Portales, NM",915,no-match
+"Los Alamos, NM",916,no-match
+"Andrews, TX",920,no-match
+"Brownsville, TN",921,no-match
+"Spirit Lake, IA",922,no-match
+"Fairfield, IA",930,no-match
+"Sweetwater, TX",933,no-match
