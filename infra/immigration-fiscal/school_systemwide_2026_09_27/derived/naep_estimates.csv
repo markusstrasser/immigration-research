@@ -1,0 +1,365 @@
+test,spec,treatment,outcome,cell,units,beta_per10,se,ci95_lo,ci95_hi,p,mde80,n_obs,n_states,years,note
+naep,placebo_pre,el,all,pooled,SD,0.0205,0.0259,-0.0316,0.0727,0.4317,0.0739,158,47,pre->2003 on 2003->2019 share change,"pre-period score change (math 2000->2003, reading 1998->2003) on the later share change"
+naep,twfe,el,all,math4,points,-1.1261,0.8257,-2.7847,0.5324,0.1787,2.3535,459,51,2003-2019,
+naep,twfe,el,all,math8,points,-1.4133,1.2919,-4.0083,1.1816,0.2792,3.6822,459,51,2003-2019,
+naep,twfe,el,all,pooled,SD,-0.0414,0.0224,-0.0864,0.0036,0.0708,0.0639,1836,51,2003-2019,
+naep,twfe,el,all,read4,points,-1.7050,0.9031,-3.5189,0.1090,0.0648,2.5740,459,51,2003-2019,
+naep,twfe,el,all,read8,points,-2.0080,1.1737,-4.3655,0.3495,0.0933,3.3453,459,51,2003-2019,
+naep,twfe,el,black,math4,points,-1.0728,0.9997,-3.0840,0.9384,0.2887,2.8526,393,48,2003-2019,
+naep,twfe,el,black,math8,points,-1.1641,1.7744,-4.7358,2.4077,0.5151,5.0651,377,47,2003-2019,
+naep,twfe,el,black,pooled,SD,-0.0261,0.0279,-0.0822,0.0301,0.3556,0.0797,1536,48,2003-2019,
+naep,twfe,el,black,read4,points,-1.1131,1.4812,-4.0929,1.8668,0.4561,4.2264,389,48,2003-2019,
+naep,twfe,el,black,read8,points,-0.2166,1.4452,-3.1274,2.6943,0.8816,4.1272,377,46,2003-2019,
+naep,twfe,el,hisp_nonel,math4,points,1.4807,1.0458,-0.6231,3.5845,0.1634,2.9839,395,48,2003-2019,
+naep,twfe,el,hisp_nonel,math8,points,4.1124,1.3382,1.4188,6.8061,0.0036,3.8199,381,47,2003-2019,
+naep,twfe,el,hisp_nonel,pooled,SD,0.0666,0.0259,0.0145,0.1186,0.0133,0.0738,1550,48,2003-2019,
+naep,twfe,el,hisp_nonel,read4,points,2.3837,1.1937,-0.0176,4.7851,0.0516,3.4060,397,48,2003-2019,
+naep,twfe,el,hisp_nonel,read8,points,2.8224,1.2862,0.2350,5.4099,0.0332,3.6699,377,48,2003-2019,
+naep,first_diff,el,nonel,pooled,SD,0.0183,0.0113,-0.0043,0.0410,0.1101,0.0321,1632,51,2003-2019,"consecutive-wave changes, cell-by-year FE"
+naep,lead,el,nonel,pooled,SD,0.0215,0.0218,-0.0224,0.0653,0.3302,0.0622,1632,51,2003-2017,"coefficient on the next wave's share, current share held fixed"
+naep,long_diff,el,nonel,math4,points,1.6593,1.4208,-1.1959,4.5144,0.2485,4.0508,51,51,2003->2019,; HC1
+naep,long_diff,el,nonel,math8,points,0.1714,1.4203,-2.6828,3.0256,0.9044,4.0495,51,51,2003->2019,; HC1
+naep,long_diff,el,nonel,pooled,SD,0.0303,0.0368,-0.0436,0.1043,0.4137,0.1049,204,51,2003->2019,
+naep,long_diff,el,nonel,read4,points,1.0064,1.7355,-2.4811,4.4939,0.5646,4.9481,51,51,2003->2019,; HC1
+naep,long_diff,el,nonel,read8,points,0.6848,1.7013,-2.7340,4.1037,0.6890,4.8506,51,51,2003->2019,; HC1
+naep,long_diff_pandemic,el,nonel,math4,points,1.9816,1.9925,-2.0224,5.9857,0.3248,5.6809,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,el,nonel,math8,points,1.0357,1.8151,-2.6119,4.6832,0.5709,5.1751,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,el,nonel,pooled,SD,0.0602,0.0275,0.0049,0.1156,0.0335,0.0785,204,51,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,el,nonel,read4,points,2.7088,1.7486,-0.8052,6.2227,0.1278,4.9855,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,el,nonel,read8,points,3.2985,1.5577,0.1683,6.4288,0.0393,4.4412,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,placebo_pre,el,nonel,pooled,SD,-0.0082,0.0259,-0.0604,0.0440,0.7534,0.0740,158,47,pre->2003 on 2003->2019 share change,"pre-period score change (math 2000->2003, reading 1998->2003) on the later share change"
+naep,twfe,el,nonel,math4,points,0.4124,0.7822,-1.1586,1.9835,0.6003,2.2293,459,51,2003-2019,
+naep,twfe,el,nonel,math8,points,1.0554,1.3418,-1.6396,3.7505,0.4352,3.8243,459,51,2003-2019,
+naep,twfe,el,nonel,pooled,SD,0.0157,0.0220,-0.0284,0.0598,0.4769,0.0626,1836,51,2003-2019,
+naep,twfe,el,nonel,read4,points,0.5241,0.8559,-1.1950,2.2432,0.5431,2.4394,459,51,2003-2019,
+naep,twfe,el,nonel,read8,points,0.5175,1.2004,-1.8936,2.9286,0.6683,3.4213,459,51,2003-2019,
+naep,twfe_no_dc,el,nonel,pooled,SD,0.0072,0.0196,-0.0321,0.0466,0.7137,0.0559,1800,50,2003-2019,excludes DC
+naep,twfe_region_year,el,nonel,pooled,SD,0.0187,0.0237,-0.0288,0.0662,0.4322,0.0674,1836,51,2003-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_state_trends,el,nonel,pooled,SD,0.0247,0.0155,-0.0065,0.0558,0.1178,0.0442,1836,51,2003-2019,adds state-by-cell linear trends
+naep,twfe_weighted,el,nonel,pooled,SD,-0.0450,0.0172,-0.0796,-0.0104,0.0119,0.0491,1824,51,2003-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,el,nonel,pooled,SD,0.0327,0.0308,-0.0291,0.0946,0.2931,0.0878,2244,51,2003-2024,pandemic waves included
+naep,first_diff,el,white,pooled,SD,-0.0072,0.0147,-0.0367,0.0224,0.6286,0.0419,1624,51,2003-2019,"consecutive-wave changes, cell-by-year FE"
+naep,lead,el,white,pooled,SD,-0.0050,0.0166,-0.0384,0.0284,0.7657,0.0474,1626,51,2003-2017,"coefficient on the next wave's share, current share held fixed"
+naep,long_diff,el,white,math4,points,-0.2403,0.9479,-2.1451,1.6646,0.8010,2.7026,51,51,2003->2019,; HC1
+naep,long_diff,el,white,math8,points,-3.0024,1.8177,-6.6571,0.6524,0.1051,5.1845,50,50,2003->2019,; HC1
+naep,long_diff,el,white,pooled,SD,-0.0284,0.0285,-0.0857,0.0290,0.3250,0.0814,202,51,2003->2019,
+naep,long_diff,el,white,read4,points,-0.6223,1.3163,-3.2675,2.0228,0.6384,3.7529,51,51,2003->2019,; HC1
+naep,long_diff,el,white,read8,points,-2.1682,1.9182,-6.0250,1.6887,0.2640,5.4712,50,50,2003->2019,; HC1
+naep,long_diff_pandemic,el,white,math4,points,2.2059,1.9983,-1.8099,6.2217,0.2750,5.6976,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,el,white,math8,points,2.8172,2.3244,-1.8539,7.4882,0.2313,6.6272,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,el,white,pooled,SD,0.0724,0.0355,0.0011,0.1436,0.0467,0.1011,204,51,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,el,white,read4,points,1.7032,2.0460,-2.4084,5.8149,0.4092,5.8335,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,el,white,read8,points,3.5744,1.7486,0.0604,7.0884,0.0463,4.9856,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,placebo_pre,el,white,pooled,SD,0.0011,0.0204,-0.0400,0.0421,0.9584,0.0582,156,47,pre->2003 on 2003->2019 share change,"pre-period score change (math 2000->2003, reading 1998->2003) on the later share change"
+naep,twfe,el,white,math4,points,-0.7879,0.6908,-2.1754,0.5997,0.2595,1.9690,459,51,2003-2019,
+naep,twfe,el,white,math8,points,-2.1423,1.0529,-4.2572,-0.0274,0.0472,3.0010,456,51,2003-2019,
+naep,twfe,el,white,pooled,SD,-0.0350,0.0176,-0.0702,0.0003,0.0519,0.0500,1830,51,2003-2019,
+naep,twfe,el,white,read4,points,-0.7823,0.7331,-2.2548,0.6903,0.2911,2.0895,459,51,2003-2019,
+naep,twfe,el,white,read8,points,-2.2511,1.1946,-4.6506,0.1484,0.0653,3.4049,456,51,2003-2019,
+naep,twfe_composition,el,white,pooled,SD,-0.0354,0.0172,-0.0700,-0.0009,0.0447,0.0491,1830,51,2003-2019,controls: % of white pupils eligible for school lunch
+naep,twfe_no_dc,el,white,pooled,SD,-0.0347,0.0178,-0.0705,0.0011,0.0572,0.0508,1800,50,2003-2019,excludes DC
+naep,twfe_region_year,el,white,pooled,SD,-0.0145,0.0213,-0.0573,0.0283,0.5003,0.0607,1830,51,2003-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_state_trends,el,white,pooled,SD,-0.0087,0.0187,-0.0463,0.0288,0.6428,0.0533,1830,51,2003-2019,adds state-by-cell linear trends
+naep,twfe_weighted,el,white,pooled,SD,-0.0803,0.0143,-0.1091,-0.0515,0.0000,0.0409,1818,51,2003-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,el,white,pooled,SD,-0.0159,0.0230,-0.0621,0.0303,0.4924,0.0655,2238,51,2003-2024,pandemic waves included
+naep,first_diff,el,white_nonel,pooled,SD,0.0027,0.0150,-0.0274,0.0327,0.8600,0.0426,1624,51,2003-2019,"consecutive-wave changes, cell-by-year FE"
+naep,lead,el,white_nonel,pooled,SD,-0.0073,0.0168,-0.0411,0.0265,0.6654,0.0480,1626,51,2003-2017,"coefficient on the next wave's share, current share held fixed"
+naep,long_diff,el,white_nonel,math4,points,-0.0072,0.9529,-1.9221,1.9078,0.9940,2.7169,51,51,2003->2019,; HC1
+naep,long_diff,el,white_nonel,math8,points,-3.0448,1.8966,-6.8582,0.7687,0.1150,5.4097,50,50,2003->2019,; HC1
+naep,long_diff,el,white_nonel,pooled,SD,-0.0224,0.0292,-0.0810,0.0362,0.4465,0.0832,202,51,2003->2019,
+naep,long_diff,el,white_nonel,read4,points,-0.2595,1.3370,-2.9463,2.4272,0.8469,3.8119,51,51,2003->2019,; HC1
+naep,long_diff,el,white_nonel,read8,points,-2.0930,1.9173,-5.9480,1.7621,0.2805,5.4686,50,50,2003->2019,; HC1
+naep,long_diff_pandemic,el,white_nonel,math4,points,2.6214,1.8996,-1.1960,6.4387,0.1739,5.4160,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,el,white_nonel,math8,points,3.1045,2.3100,-1.5376,7.7467,0.1852,6.5862,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,el,white_nonel,pooled,SD,0.0848,0.0352,0.0142,0.1555,0.0195,0.1002,204,51,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,el,white_nonel,read4,points,2.1185,2.1057,-2.1130,6.3500,0.3193,6.0036,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,el,white_nonel,read8,points,4.2740,1.6979,0.8619,7.6860,0.0151,4.8410,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,placebo_pre,el,white_nonel,pooled,SD,0.0002,0.0206,-0.0413,0.0417,0.9926,0.0588,156,47,pre->2003 on 2003->2019 share change,"pre-period score change (math 2000->2003, reading 1998->2003) on the later share change"
+naep,twfe,el,white_nonel,math4,points,-0.5930,0.7062,-2.0114,0.8254,0.4050,2.0127,459,51,2003-2019,
+naep,twfe,el,white_nonel,math8,points,-2.0024,1.1053,-4.2225,0.2177,0.0761,3.1503,456,51,2003-2019,
+naep,twfe,el,white_nonel,pooled,SD,-0.0293,0.0181,-0.0656,0.0071,0.1119,0.0516,1830,51,2003-2019,
+naep,twfe,el,white_nonel,read4,points,-0.4859,0.7269,-1.9459,0.9740,0.5069,2.0717,459,51,2003-2019,
+naep,twfe,el,white_nonel,read8,points,-2.1126,1.2339,-4.5910,0.3658,0.0931,3.5169,456,51,2003-2019,
+naep,twfe_no_dc,el,white_nonel,pooled,SD,-0.0290,0.0184,-0.0659,0.0080,0.1213,0.0524,1800,50,2003-2019,excludes DC
+naep,twfe_region_year,el,white_nonel,pooled,SD,-0.0074,0.0214,-0.0505,0.0356,0.7296,0.0610,1830,51,2003-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_state_trends,el,white_nonel,pooled,SD,-0.0002,0.0186,-0.0375,0.0371,0.9908,0.0529,1830,51,2003-2019,adds state-by-cell linear trends
+naep,twfe_weighted,el,white_nonel,pooled,SD,-0.0764,0.0155,-0.1075,-0.0453,0.0000,0.0441,1818,51,2003-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,el,white_nonel,pooled,SD,-0.0088,0.0238,-0.0566,0.0391,0.7137,0.0679,2238,51,2003-2024,pandemic waves included
+naep,twfe,el,white_p10,math4,points,-1.3922,0.7719,-2.9427,0.1582,0.0773,2.2001,459,51,2003-2019,
+naep,twfe,el,white_p10,math8,points,-3.0144,1.1815,-5.3874,-0.6413,0.0138,3.3674,456,51,2003-2019,
+naep,twfe,el,white_p10,pooled,SD,-0.0549,0.0242,-0.1034,-0.0063,0.0275,0.0689,1830,51,2003-2019,
+naep,twfe,el,white_p10,read4,points,-1.5966,1.5054,-4.6204,1.4272,0.2940,4.2908,459,51,2003-2019,
+naep,twfe,el,white_p10,read8,points,-2.9259,1.7809,-6.5028,0.6511,0.1067,5.0757,456,51,2003-2019,
+naep,twfe,el,white_p90,math4,points,-0.3836,0.8518,-2.0943,1.3272,0.6544,2.4276,459,51,2003-2019,
+naep,twfe,el,white_p90,math8,points,-1.3352,1.2143,-3.7741,1.1037,0.2768,3.4608,456,51,2003-2019,
+naep,twfe,el,white_p90,pooled,SD,-0.0205,0.0173,-0.0553,0.0143,0.2425,0.0494,1830,51,2003-2019,
+naep,twfe,el,white_p90,read4,points,-0.1176,0.5550,-1.2324,0.9972,0.8330,1.5819,459,51,2003-2019,
+naep,twfe,el,white_p90,read8,points,-1.9811,0.9226,-3.8341,-0.1281,0.0366,2.6295,456,51,2003-2019,
+naep,twfe,fb,all,math4,points,-2.1316,3.6268,-9.4162,5.1530,0.5594,10.3369,408,51,2005-2019,
+naep,twfe,fb,all,math8,points,-4.1947,3.1462,-10.5141,2.1247,0.1885,8.9673,408,51,2005-2019,
+naep,twfe,fb,all,pooled,SD,-0.1568,0.0791,-0.3156,0.0020,0.0528,0.2253,1632,51,2005-2019,
+naep,twfe,fb,all,read4,points,-8.5691,3.4861,-15.5712,-1.5671,0.0175,9.9360,408,51,2005-2019,
+naep,twfe,fb,all,read8,points,-8.8806,3.1358,-15.1790,-2.5822,0.0066,8.9375,408,51,2005-2019,
+naep,twfe,fb,black,math4,points,2.3694,5.4252,-8.5447,13.2835,0.6643,15.4800,351,48,2005-2019,
+naep,twfe,fb,black,math8,points,1.8009,4.9787,-8.2208,11.8225,0.7192,14.2118,336,47,2005-2019,
+naep,twfe,fb,black,pooled,SD,0.0429,0.1074,-0.1732,0.2590,0.6916,0.3065,1370,48,2005-2019,
+naep,twfe,fb,black,read4,points,-2.2392,5.5563,-13.4170,8.9387,0.6888,15.8540,347,48,2005-2019,
+naep,twfe,fb,black,read8,points,4.1891,4.8533,-5.5859,13.9641,0.3926,13.8595,336,46,2005-2019,
+naep,twfe,fb,hisp_nonel,math4,points,0.8095,4.0728,-7.3839,9.0029,0.8433,11.6211,356,48,2005-2019,
+naep,twfe,fb,hisp_nonel,math8,points,1.8214,5.2915,-8.8297,12.4726,0.7322,15.1045,348,47,2005-2019,
+naep,twfe,fb,hisp_nonel,pooled,SD,-0.0278,0.0998,-0.2286,0.1729,0.7814,0.2847,1407,48,2005-2019,
+naep,twfe,fb,hisp_nonel,read4,points,-6.0674,4.6663,-15.4547,3.3199,0.1998,13.3144,359,48,2005-2019,
+naep,twfe,fb,hisp_nonel,read8,points,-0.8857,5.4741,-11.8982,10.1268,0.8722,15.6196,344,48,2005-2019,
+naep,first_diff,fb,nonel,pooled,SD,0.0381,0.0282,-0.0186,0.0948,0.1829,0.0804,1428,51,2005-2019,"consecutive-wave changes, cell-by-year FE"
+naep,long_diff,fb,nonel,math4,points,-2.1788,4.6215,-11.4660,7.1084,0.6394,13.1766,51,51,2005->2019,; HC1
+naep,long_diff,fb,nonel,math8,points,-4.3217,4.5900,-13.5455,4.9022,0.3510,13.0868,51,51,2005->2019,; HC1
+naep,long_diff,fb,nonel,pooled,SD,-0.1715,0.1118,-0.3961,0.0531,0.1315,0.3188,204,51,2005->2019,
+naep,long_diff,fb,nonel,read4,points,-9.7588,5.5063,-20.8241,1.3065,0.0826,15.6993,51,51,2005->2019,; HC1
+naep,long_diff,fb,nonel,read8,points,-9.7678,4.7519,-19.3171,-0.2186,0.0452,13.5485,51,51,2005->2019,; HC1
+naep,long_diff_pandemic,fb,nonel,math4,points,-1.0168,4.3008,-9.6596,7.6260,0.8141,12.2624,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,fb,nonel,math8,points,-0.7343,5.5085,-11.8040,10.3353,0.8945,15.7056,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,fb,nonel,pooled,SD,-0.0042,0.1276,-0.2605,0.2521,0.9739,0.3636,204,51,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,fb,nonel,read4,points,0.5645,5.2894,-10.0650,11.1940,0.9154,15.0811,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,fb,nonel,read8,points,0.7191,6.9921,-13.3321,14.7703,0.9185,19.9358,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,twfe,fb,nonel,math4,points,1.0502,3.1807,-5.3384,7.4388,0.7427,9.0655,408,51,2005-2019,
+naep,twfe,fb,nonel,math8,points,-1.2541,2.8981,-7.0751,4.5669,0.6671,8.2601,408,51,2005-2019,
+naep,twfe,fb,nonel,pooled,SD,-0.0766,0.0677,-0.2125,0.0594,0.2635,0.1929,1632,51,2005-2019,
+naep,twfe,fb,nonel,read4,points,-5.4481,2.7732,-11.0182,0.1221,0.0550,7.9041,408,51,2005-2019,
+naep,twfe,fb,nonel,read8,points,-6.3398,3.2042,-12.7756,0.0959,0.0534,9.1324,408,51,2005-2019,
+naep,twfe_no_dc,fb,nonel,pooled,SD,-0.1063,0.0650,-0.2370,0.0244,0.1085,0.1854,1600,50,2005-2019,excludes DC
+naep,twfe_region_year,fb,nonel,pooled,SD,-0.0732,0.0984,-0.2708,0.1244,0.4603,0.2804,1632,51,2005-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_weighted,fb,nonel,pooled,SD,-0.1290,0.1038,-0.3374,0.0795,0.2199,0.2958,1624,51,2005-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,fb,nonel,pooled,SD,-0.0558,0.0779,-0.2123,0.1006,0.4768,0.2221,2040,51,2005-2024,pandemic waves included
+naep,first_diff,fb,white,pooled,SD,0.0288,0.0372,-0.0459,0.1035,0.4426,0.1061,1422,51,2005-2019,"consecutive-wave changes, cell-by-year FE"
+naep,long_diff,fb,white,math4,points,-2.3510,4.5710,-11.5369,6.8348,0.6093,13.0328,51,51,2005->2019,; HC1
+naep,long_diff,fb,white,math8,points,-5.2072,5.1564,-15.5693,5.1550,0.3175,14.7018,51,51,2005->2019,; HC1
+naep,long_diff,fb,white,pooled,SD,-0.1568,0.1202,-0.3981,0.0845,0.1979,0.3425,204,51,2005->2019,
+naep,long_diff,fb,white,read4,points,-5.4980,5.6123,-16.7762,5.7803,0.3321,16.0015,51,51,2005->2019,; HC1
+naep,long_diff,fb,white,read8,points,-10.6573,5.4184,-21.5459,0.2314,0.0549,15.4488,51,51,2005->2019,; HC1
+naep,long_diff_pandemic,fb,white,math4,points,2.5537,4.3350,-6.1579,11.2653,0.5585,12.3600,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,fb,white,math8,points,1.1430,7.5497,-14.0287,16.3148,0.8803,21.5256,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,fb,white,pooled,SD,-0.0024,0.1299,-0.2633,0.2585,0.9855,0.3702,204,51,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,fb,white,read4,points,0.0593,5.6244,-11.2434,11.3620,0.9916,16.0363,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,fb,white,read8,points,-4.5434,8.5606,-21.7465,12.6597,0.5980,24.4077,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,twfe,fb,white,math4,points,1.5872,3.4451,-5.3324,8.5068,0.6470,9.8189,408,51,2005-2019,
+naep,twfe,fb,white,math8,points,-5.0417,3.5843,-12.2410,2.1577,0.1657,10.2159,406,51,2005-2019,
+naep,twfe,fb,white,pooled,SD,-0.1099,0.0718,-0.2541,0.0343,0.1320,0.2046,1628,51,2005-2019,
+naep,twfe,fb,white,read4,points,-6.7076,2.4758,-11.6804,-1.7348,0.0092,7.0565,408,51,2005-2019,
+naep,twfe,fb,white,read8,points,-7.2974,3.9541,-15.2394,0.6446,0.0709,11.2697,406,51,2005-2019,
+naep,twfe_composition,fb,white,pooled,SD,-0.1277,0.0690,-0.2663,0.0110,0.0703,0.1967,1628,51,2005-2019,controls: % of white pupils eligible for school lunch
+naep,twfe_no_dc,fb,white,pooled,SD,-0.1134,0.0754,-0.2648,0.0380,0.1388,0.2149,1600,50,2005-2019,excludes DC
+naep,twfe_region_year,fb,white,pooled,SD,-0.0220,0.0951,-0.2130,0.1691,0.8184,0.2711,1628,51,2005-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_weighted,fb,white,pooled,SD,-0.2110,0.1440,-0.5002,0.0782,0.1490,0.4104,1620,51,2005-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,fb,white,pooled,SD,-0.0983,0.0816,-0.2621,0.0656,0.2340,0.2325,2036,51,2005-2024,pandemic waves included
+naep,first_diff,fb,white_nonel,pooled,SD,0.0277,0.0350,-0.0426,0.0981,0.4324,0.0998,1422,51,2005-2019,"consecutive-wave changes, cell-by-year FE"
+naep,long_diff,fb,white_nonel,math4,points,-2.1794,4.5305,-11.2839,6.9250,0.6326,12.9173,51,51,2005->2019,; HC1
+naep,long_diff,fb,white_nonel,math8,points,-5.6476,5.4826,-16.6653,5.3702,0.3080,15.6320,51,51,2005->2019,; HC1
+naep,long_diff,fb,white_nonel,pooled,SD,-0.1597,0.1204,-0.4015,0.0821,0.1907,0.3431,204,51,2005->2019,
+naep,long_diff,fb,white_nonel,read4,points,-5.7130,5.4711,-16.7075,5.2816,0.3015,15.5991,51,51,2005->2019,; HC1
+naep,long_diff,fb,white_nonel,read8,points,-10.6734,5.5168,-21.7598,0.4131,0.0588,15.7294,51,51,2005->2019,; HC1
+naep,long_diff_pandemic,fb,white_nonel,math4,points,3.7348,4.3398,-4.9864,12.4560,0.3937,12.3736,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,fb,white_nonel,math8,points,1.0951,7.6385,-14.2550,16.4452,0.8866,21.7786,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,fb,white_nonel,pooled,SD,0.0267,0.1340,-0.2424,0.2957,0.8430,0.3818,204,51,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,fb,white_nonel,read4,points,1.7244,5.4710,-9.2700,12.7187,0.7540,15.5987,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,fb,white_nonel,read8,points,-3.1264,8.7792,-20.7688,14.5160,0.7233,25.0310,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,twfe,fb,white_nonel,math4,points,1.4795,3.3132,-5.1752,8.1342,0.6571,9.4431,408,51,2005-2019,
+naep,twfe,fb,white_nonel,math8,points,-5.0829,3.6942,-12.5029,2.3371,0.1750,10.5290,406,51,2005-2019,
+naep,twfe,fb,white_nonel,pooled,SD,-0.1086,0.0715,-0.2523,0.0351,0.1353,0.2039,1628,51,2005-2019,
+naep,twfe,fb,white_nonel,read4,points,-6.6138,2.4173,-11.4691,-1.7585,0.0086,6.8897,408,51,2005-2019,
+naep,twfe,fb,white_nonel,read8,points,-7.0171,4.0198,-15.0911,1.0570,0.0870,11.4571,406,51,2005-2019,
+naep,twfe_no_dc,fb,white_nonel,pooled,SD,-0.1093,0.0753,-0.2607,0.0421,0.1532,0.2148,1600,50,2005-2019,excludes DC
+naep,twfe_region_year,fb,white_nonel,pooled,SD,-0.0229,0.0950,-0.2138,0.1679,0.8101,0.2708,1628,51,2005-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_weighted,fb,white_nonel,pooled,SD,-0.2054,0.1455,-0.4976,0.0868,0.1642,0.4146,1620,51,2005-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,fb,white_nonel,pooled,SD,-0.0881,0.0839,-0.2566,0.0805,0.2992,0.2392,2036,51,2005-2024,pandemic waves included
+naep,twfe,fb,white_p10,math4,points,2.7689,5.3603,-7.9975,13.5354,0.6077,15.2777,408,51,2005-2019,
+naep,twfe,fb,white_p10,math8,points,-8.2015,4.4060,-17.0511,0.6481,0.0686,12.5577,406,51,2005-2019,
+naep,twfe,fb,white_p10,pooled,SD,-0.1743,0.1169,-0.4091,0.0606,0.1424,0.3332,1628,51,2005-2019,
+naep,twfe,fb,white_p10,read4,points,-8.5048,5.6753,-19.9039,2.8944,0.1403,16.1755,408,51,2005-2019,
+naep,twfe,fb,white_p10,read8,points,-13.8209,6.3176,-26.5102,-1.1316,0.0334,18.0062,406,51,2005-2019,
+naep,twfe,fb,white_p90,math4,points,1.9254,2.7881,-3.6747,7.5255,0.4930,7.9466,408,51,2005-2019,
+naep,twfe,fb,white_p90,math8,points,-4.6012,2.9170,-10.4602,1.2578,0.1210,8.3140,406,51,2005-2019,
+naep,twfe,fb,white_p90,pooled,SD,-0.0629,0.0484,-0.1600,0.0343,0.1995,0.1379,1628,51,2005-2019,
+naep,twfe,fb,white_p90,read4,points,-5.0114,1.8131,-8.6531,-1.3697,0.0080,5.1676,408,51,2005-2019,
+naep,twfe,fb,white_p90,read8,points,-2.6029,3.6321,-9.8981,4.6923,0.4769,10.3519,406,51,2005-2019,
+naep,placebo_pre,hisp,all,pooled,SD,0.0157,0.0333,-0.0513,0.0827,0.6395,0.0950,154,46,pre->2003 on 2003->2019 share change,"pre-period score change (math 2000->2003, reading 1998->2003) on the later share change"
+naep,twfe,hisp,all,math4,points,1.0351,1.6917,-2.3627,4.4329,0.5434,4.8215,456,51,2003-2019,
+naep,twfe,hisp,all,math8,points,2.2196,1.4873,-0.7678,5.2070,0.1419,4.2391,456,51,2003-2019,
+naep,twfe,hisp,all,pooled,SD,0.0656,0.0348,-0.0043,0.1355,0.0654,0.0992,1824,51,2003-2019,
+naep,twfe,hisp,all,read4,points,2.5450,1.6567,-0.7827,5.8726,0.1308,4.7219,456,51,2003-2019,
+naep,twfe,hisp,all,read8,points,4.1132,1.1270,1.8495,6.3769,0.0006,3.2122,456,51,2003-2019,
+naep,twfe,hisp,black,math4,points,2.1084,2.6386,-3.1998,7.4166,0.4283,7.5289,390,48,2003-2019,
+naep,twfe,hisp,black,math8,points,1.8194,3.1416,-4.5044,8.1432,0.5653,8.9678,374,47,2003-2019,
+naep,twfe,hisp,black,pooled,SD,0.0701,0.0594,-0.0495,0.1896,0.2444,0.1696,1524,48,2003-2019,
+naep,twfe,hisp,black,read4,points,0.9539,2.7841,-4.6470,6.5548,0.7334,7.9440,386,48,2003-2019,
+naep,twfe,hisp,black,read8,points,5.4692,2.4906,0.4529,10.4855,0.0333,7.1123,374,46,2003-2019,
+naep,twfe,hisp,hisp_nonel,math4,points,0.9131,3.4708,-6.0691,7.8954,0.7936,9.9033,393,48,2003-2019,
+naep,twfe,hisp,hisp_nonel,math8,points,2.8637,2.6426,-2.4556,8.1831,0.2842,7.5434,380,47,2003-2019,
+naep,twfe,hisp,hisp_nonel,pooled,SD,0.0740,0.0677,-0.0621,0.2101,0.2798,0.1931,1545,48,2003-2019,
+naep,twfe,hisp,hisp_nonel,read4,points,4.7689,3.4477,-2.1670,11.7049,0.1731,9.8375,396,48,2003-2019,
+naep,twfe,hisp,hisp_nonel,read8,points,2.7314,2.7322,-2.7651,8.2279,0.3226,7.7959,376,48,2003-2019,
+naep,first_diff,hisp,nonel,pooled,SD,0.0520,0.0230,0.0057,0.0982,0.0284,0.0656,1616,51,2003-2019,"consecutive-wave changes, cell-by-year FE"
+naep,lead,hisp,nonel,pooled,SD,0.1520,0.0885,-0.0259,0.3298,0.0923,0.2524,1616,51,2003-2017,"coefficient on the next wave's share, current share held fixed"
+naep,long_diff,hisp,nonel,math4,points,2.9033,2.1812,-1.4823,7.2888,0.1895,6.2212,50,50,2003->2019,; HC1
+naep,long_diff,hisp,nonel,math8,points,3.9053,1.7288,0.4293,7.3813,0.0285,4.9309,50,50,2003->2019,; HC1
+naep,long_diff,hisp,nonel,pooled,SD,0.1271,0.0447,0.0372,0.2170,0.0065,0.1276,200,50,2003->2019,
+naep,long_diff,hisp,nonel,read4,points,5.7212,2.2836,1.1297,10.3128,0.0157,6.5135,50,50,2003->2019,; HC1
+naep,long_diff,hisp,nonel,read8,points,6.5217,1.2559,3.9966,9.0469,0.0000,3.5822,50,50,2003->2019,; HC1
+naep,long_diff_pandemic,hisp,nonel,math4,points,6.1130,3.1447,-0.2065,12.4325,0.0577,8.9661,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,hisp,nonel,math8,points,3.4993,3.5566,-3.6479,10.6465,0.3300,10.1405,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,hisp,nonel,pooled,SD,0.1900,0.0694,0.0505,0.3294,0.0086,0.1978,204,51,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,hisp,nonel,read4,points,10.5786,3.6639,3.2157,17.9415,0.0058,10.4464,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,hisp,nonel,read8,points,7.8705,3.0421,1.7572,13.9838,0.0127,8.6735,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,placebo_pre,hisp,nonel,pooled,SD,0.0269,0.0316,-0.0368,0.0906,0.3999,0.0903,154,46,pre->2003 on 2003->2019 share change,"pre-period score change (math 2000->2003, reading 1998->2003) on the later share change"
+naep,twfe,hisp,nonel,math4,points,1.9066,1.6279,-1.3631,5.1764,0.2471,4.6398,456,51,2003-2019,
+naep,twfe,hisp,nonel,math8,points,2.7160,1.4701,-0.2367,5.6688,0.0706,4.1900,456,51,2003-2019,
+naep,twfe,hisp,nonel,pooled,SD,0.0949,0.0335,0.0277,0.1621,0.0066,0.0954,1824,51,2003-2019,
+naep,twfe,hisp,nonel,read4,points,4.5317,1.5510,1.4166,7.6469,0.0052,4.4205,456,51,2003-2019,
+naep,twfe,hisp,nonel,read8,points,5.1070,1.1557,2.7857,7.4283,0.0001,3.2939,456,51,2003-2019,
+naep,twfe_no_dc,hisp,nonel,pooled,SD,0.0972,0.0324,0.0321,0.1623,0.0042,0.0924,1788,50,2003-2019,excludes DC
+naep,twfe_region_year,hisp,nonel,pooled,SD,0.0821,0.0374,0.0071,0.1572,0.0326,0.1065,1824,51,2003-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_state_trends,hisp,nonel,pooled,SD,-0.0433,0.0449,-0.1336,0.0470,0.3399,0.1281,1824,51,2003-2019,adds state-by-cell linear trends
+naep,twfe_weighted,hisp,nonel,pooled,SD,0.0824,0.0354,0.0114,0.1535,0.0238,0.1008,1824,51,2003-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,hisp,nonel,pooled,SD,0.1062,0.0411,0.0237,0.1887,0.0127,0.1171,2232,51,2003-2024,pandemic waves included
+naep,first_diff,hisp,white,pooled,SD,0.0510,0.0227,0.0054,0.0966,0.0292,0.0648,1608,51,2003-2019,"consecutive-wave changes, cell-by-year FE"
+naep,lead,hisp,white,pooled,SD,0.0889,0.0891,-0.0901,0.2679,0.3232,0.2540,1610,51,2003-2017,"coefficient on the next wave's share, current share held fixed"
+naep,long_diff,hisp,white,math4,points,2.2460,1.8249,-1.4233,5.9152,0.2244,5.2051,50,50,2003->2019,; HC1
+naep,long_diff,hisp,white,math8,points,3.9419,1.5811,0.7611,7.1226,0.0162,4.5114,49,49,2003->2019,; HC1
+naep,long_diff,hisp,white,pooled,SD,0.1233,0.0361,0.0508,0.1958,0.0013,0.1029,198,50,2003->2019,
+naep,long_diff,hisp,white,read4,points,5.6987,1.8094,2.0605,9.3368,0.0028,5.1609,50,50,2003->2019,; HC1
+naep,long_diff,hisp,white,read8,points,6.7147,1.2288,4.2426,9.1868,0.0000,3.5063,49,49,2003->2019,; HC1
+naep,long_diff_pandemic,hisp,white,math4,points,6.0353,2.9635,0.0800,11.9906,0.0471,8.4493,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,hisp,white,math8,points,3.4889,5.0178,-6.5948,13.5726,0.4902,14.3067,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,hisp,white,pooled,SD,0.1553,0.0692,0.0164,0.2943,0.0292,0.1972,204,51,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,hisp,white,read4,points,8.2758,4.6106,-0.9894,17.5411,0.0788,13.1455,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,hisp,white,read8,points,4.9720,3.6315,-2.3256,12.2697,0.1772,10.3539,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,placebo_pre,hisp,white,pooled,SD,0.0219,0.0304,-0.0394,0.0832,0.4753,0.0869,152,46,pre->2003 on 2003->2019 share change,"pre-period score change (math 2000->2003, reading 1998->2003) on the later share change"
+naep,twfe,hisp,white,math4,points,1.4836,1.4871,-1.5033,4.4704,0.3233,4.2384,456,51,2003-2019,
+naep,twfe,hisp,white,math8,points,2.3249,1.2557,-0.1973,4.8471,0.0700,3.5790,453,51,2003-2019,
+naep,twfe,hisp,white,pooled,SD,0.0869,0.0273,0.0321,0.1418,0.0025,0.0778,1818,51,2003-2019,
+naep,twfe,hisp,white,read4,points,4.7640,1.3053,2.1423,7.3857,0.0006,3.7202,456,51,2003-2019,
+naep,twfe,hisp,white,read8,points,4.5508,1.0784,2.3847,6.7169,0.0001,3.0737,453,51,2003-2019,
+naep,twfe_composition,hisp,white,pooled,SD,0.0838,0.0273,0.0289,0.1386,0.0035,0.0778,1818,51,2003-2019,controls: % of white pupils eligible for school lunch
+naep,twfe_no_dc,hisp,white,pooled,SD,0.0870,0.0274,0.0320,0.1419,0.0026,0.0780,1788,50,2003-2019,excludes DC
+naep,twfe_region_year,hisp,white,pooled,SD,0.0745,0.0328,0.0087,0.1403,0.0273,0.0934,1818,51,2003-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_state_trends,hisp,white,pooled,SD,-0.0013,0.0483,-0.0984,0.0957,0.9782,0.1377,1818,51,2003-2019,adds state-by-cell linear trends
+naep,twfe_weighted,hisp,white,pooled,SD,0.0932,0.0386,0.0157,0.1708,0.0195,0.1101,1818,51,2003-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,hisp,white,pooled,SD,0.0949,0.0360,0.0225,0.1673,0.0112,0.1027,2226,51,2003-2024,pandemic waves included
+naep,first_diff,hisp,white_nonel,pooled,SD,0.0539,0.0222,0.0092,0.0985,0.0190,0.0634,1608,51,2003-2019,"consecutive-wave changes, cell-by-year FE"
+naep,lead,hisp,white_nonel,pooled,SD,0.0929,0.0889,-0.0856,0.2713,0.3010,0.2533,1610,51,2003-2017,"coefficient on the next wave's share, current share held fixed"
+naep,long_diff,hisp,white_nonel,math4,points,2.5270,1.8057,-1.1037,6.1577,0.1681,5.1504,50,50,2003->2019,; HC1
+naep,long_diff,hisp,white_nonel,math8,points,4.1291,1.5641,0.9825,7.2756,0.0112,4.4628,49,49,2003->2019,; HC1
+naep,long_diff,hisp,white_nonel,pooled,SD,0.1295,0.0356,0.0579,0.2011,0.0007,0.1015,198,50,2003->2019,
+naep,long_diff,hisp,white_nonel,read4,points,6.0668,1.8023,2.4430,9.6906,0.0015,5.1406,50,50,2003->2019,; HC1
+naep,long_diff,hisp,white_nonel,read8,points,6.7803,1.2317,4.3025,9.2581,0.0000,3.5144,49,49,2003->2019,; HC1
+naep,long_diff_pandemic,hisp,white_nonel,math4,points,6.7485,2.8192,1.0830,12.4140,0.0206,8.0382,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,hisp,white_nonel,math8,points,3.9663,4.9671,-6.0155,13.9481,0.4284,14.1621,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,hisp,white_nonel,pooled,SD,0.1778,0.0665,0.0442,0.3113,0.0101,0.1895,204,51,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,hisp,white_nonel,read4,points,9.2477,4.5799,0.0441,18.4514,0.0490,13.0581,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,hisp,white_nonel,read8,points,6.1241,3.6066,-1.1236,13.3717,0.0958,10.2829,51,51,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,placebo_pre,hisp,white_nonel,pooled,SD,0.0215,0.0306,-0.0402,0.0832,0.4867,0.0875,152,46,pre->2003 on 2003->2019 share change,"pre-period score change (math 2000->2003, reading 1998->2003) on the later share change"
+naep,twfe,hisp,white_nonel,math4,points,1.7410,1.4628,-1.1972,4.6792,0.2396,4.1693,456,51,2003-2019,
+naep,twfe,hisp,white_nonel,math8,points,2.3963,1.2603,-0.1351,4.9278,0.0630,3.5921,453,51,2003-2019,
+naep,twfe,hisp,white_nonel,pooled,SD,0.0912,0.0268,0.0373,0.1450,0.0013,0.0764,1818,51,2003-2019,
+naep,twfe,hisp,white_nonel,read4,points,4.9730,1.2510,2.4604,7.4857,0.0002,3.5655,456,51,2003-2019,
+naep,twfe,hisp,white_nonel,read8,points,4.6128,1.0601,2.4836,6.7419,0.0001,3.0213,453,51,2003-2019,
+naep,twfe_no_dc,hisp,white_nonel,pooled,SD,0.0914,0.0269,0.0374,0.1454,0.0013,0.0766,1788,50,2003-2019,excludes DC
+naep,twfe_region_year,hisp,white_nonel,pooled,SD,0.0796,0.0327,0.0140,0.1452,0.0184,0.0931,1818,51,2003-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_state_trends,hisp,white_nonel,pooled,SD,-0.0019,0.0485,-0.0993,0.0956,0.9695,0.1383,1818,51,2003-2019,adds state-by-cell linear trends
+naep,twfe_weighted,hisp,white_nonel,pooled,SD,0.0937,0.0355,0.0224,0.1650,0.0110,0.1011,1818,51,2003-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,hisp,white_nonel,pooled,SD,0.1031,0.0355,0.0318,0.1744,0.0055,0.1012,2226,51,2003-2024,pandemic waves included
+naep,twfe,hisp,white_p10,math4,points,2.3843,2.0357,-1.7046,6.4732,0.2471,5.8022,456,51,2003-2019,
+naep,twfe,hisp,white_p10,math8,points,2.9641,1.4597,0.0322,5.8959,0.0476,4.1603,453,51,2003-2019,
+naep,twfe,hisp,white_p10,pooled,SD,0.1159,0.0405,0.0346,0.1972,0.0061,0.1153,1818,51,2003-2019,
+naep,twfe,hisp,white_p10,read4,points,7.1641,2.3774,2.3890,11.9393,0.0040,6.7760,456,51,2003-2019,
+naep,twfe,hisp,white_p10,read8,points,4.9151,1.8177,1.2640,8.5661,0.0093,5.1809,453,51,2003-2019,
+naep,twfe,hisp,white_p90,math4,points,0.9973,1.2716,-1.5567,3.5514,0.4365,3.6242,456,51,2003-2019,
+naep,twfe,hisp,white_p90,math8,points,1.5152,1.3289,-1.1539,4.1843,0.2596,3.7875,453,51,2003-2019,
+naep,twfe,hisp,white_p90,pooled,SD,0.0650,0.0241,0.0167,0.1134,0.0094,0.0686,1818,51,2003-2019,
+naep,twfe,hisp,white_p90,read4,points,3.1823,1.0299,1.1138,5.2509,0.0033,2.9353,456,51,2003-2019,
+naep,twfe,hisp,white_p90,read8,points,4.1300,1.1425,1.8353,6.4248,0.0007,3.2563,453,51,2003-2019,
+naep,twfe,imm,all,math4,points,-0.2609,1.6175,-3.5097,2.9879,0.8725,4.6101,354,51,2007-2019,
+naep,twfe,imm,all,math8,points,-0.6522,1.7237,-4.1143,2.8100,0.7068,4.9128,354,51,2007-2019,
+naep,twfe,imm,all,pooled,SD,-0.0340,0.0372,-0.1086,0.0406,0.3645,0.1059,1416,51,2007-2019,
+naep,twfe,imm,all,read4,points,-2.4511,1.6024,-5.6695,0.7674,0.1324,4.5670,354,51,2007-2019,
+naep,twfe,imm,all,read8,points,-1.8297,1.0938,-4.0266,0.3672,0.1006,3.1174,354,51,2007-2019,
+naep,twfe,imm,black,math4,points,2.0339,2.0070,-2.0036,6.0713,0.3161,5.7265,309,48,2007-2019,
+naep,twfe,imm,black,math8,points,0.0886,1.8810,-3.6977,3.8749,0.9626,5.3694,295,47,2007-2019,
+naep,twfe,imm,black,pooled,SD,0.0113,0.0383,-0.0657,0.0884,0.7685,0.1093,1205,48,2007-2019,
+naep,twfe,imm,black,read4,points,-1.7107,2.1394,-6.0146,2.5932,0.4280,6.1044,305,48,2007-2019,
+naep,twfe,imm,black,read8,points,0.8317,1.8762,-2.9472,4.6106,0.6597,5.3579,296,46,2007-2019,
+naep,twfe,imm,hisp_nonel,math4,points,0.3703,1.3896,-2.4252,3.1658,0.7911,3.9650,315,48,2007-2019,
+naep,twfe,imm,hisp_nonel,math8,points,-1.2849,2.0008,-5.3122,2.7425,0.5239,5.7112,311,47,2007-2019,
+naep,twfe,imm,hisp_nonel,pooled,SD,-0.0392,0.0288,-0.0971,0.0186,0.1791,0.0821,1250,48,2007-2019,
+naep,twfe,imm,hisp_nonel,read4,points,-0.5651,1.6642,-3.9130,2.7828,0.7357,4.7484,317,48,2007-2019,
+naep,twfe,imm,hisp_nonel,read8,points,-4.7470,1.6380,-8.0423,-1.4517,0.0057,4.6739,307,48,2007-2019,
+naep,first_diff,imm,nonel,pooled,SD,0.0070,0.0160,-0.0251,0.0391,0.6643,0.0456,1208,51,2007-2019,"consecutive-wave changes, cell-by-year FE"
+naep,long_diff,imm,nonel,math4,points,-0.4073,1.4427,-3.3080,2.4934,0.7789,4.1149,50,50,2007->2019,; HC1
+naep,long_diff,imm,nonel,math8,points,-1.3374,1.5407,-4.4351,1.7603,0.3897,4.3943,50,50,2007->2019,; HC1
+naep,long_diff,imm,nonel,pooled,SD,-0.0296,0.0327,-0.0954,0.0361,0.3699,0.0933,200,50,2007->2019,
+naep,long_diff,imm,nonel,read4,points,-1.6997,1.5661,-4.8485,1.4491,0.2832,4.4668,50,50,2007->2019,; HC1
+naep,long_diff,imm,nonel,read8,points,-1.0717,1.4538,-3.9948,1.8514,0.4646,4.1466,50,50,2007->2019,; HC1
+naep,long_diff_pandemic,imm,nonel,math4,points,0.9248,1.6136,-2.3195,4.1691,0.5692,4.6023,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,imm,nonel,math8,points,0.6110,1.7963,-3.0008,4.2228,0.7352,5.1236,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,imm,nonel,pooled,SD,0.0296,0.0386,-0.0480,0.1072,0.4468,0.1101,200,50,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,imm,nonel,read4,points,0.4858,1.6168,-2.7650,3.7366,0.7651,4.6115,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,imm,nonel,read8,points,2.3368,2.9279,-3.5500,8.2237,0.4287,8.3509,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,twfe,imm,nonel,math4,points,1.3004,1.5300,-1.7726,4.3734,0.3994,4.3606,354,51,2007-2019,
+naep,twfe,imm,nonel,math8,points,0.6212,1.6550,-2.7030,3.9453,0.7090,4.7170,354,51,2007-2019,
+naep,twfe,imm,nonel,pooled,SD,0.0080,0.0338,-0.0599,0.0759,0.8134,0.0963,1416,51,2007-2019,
+naep,twfe,imm,nonel,read4,points,-0.4967,1.3885,-3.2856,2.2922,0.7220,3.9575,354,51,2007-2019,
+naep,twfe,imm,nonel,read8,points,-0.4348,1.0004,-2.4441,1.5745,0.6657,2.8512,354,51,2007-2019,
+naep,twfe_no_dc,imm,nonel,pooled,SD,-0.0121,0.0280,-0.0683,0.0441,0.6676,0.0797,1388,50,2007-2019,excludes DC
+naep,twfe_region_year,imm,nonel,pooled,SD,0.0116,0.0363,-0.0614,0.0845,0.7510,0.1035,1416,51,2007-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_weighted,imm,nonel,pooled,SD,-0.0479,0.0390,-0.1262,0.0304,0.2246,0.1111,1416,51,2007-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,imm,nonel,pooled,SD,-0.0015,0.0389,-0.0796,0.0766,0.9697,0.1109,1824,51,2007-2024,pandemic waves included
+naep,first_diff,imm,white,pooled,SD,0.0006,0.0179,-0.0354,0.0365,0.9744,0.0510,1204,51,2007-2019,"consecutive-wave changes, cell-by-year FE"
+naep,long_diff,imm,white,math4,points,-0.6897,1.3817,-3.4678,2.0885,0.6200,3.9410,50,50,2007->2019,; HC1
+naep,long_diff,imm,white,math8,points,-2.0302,1.6792,-5.4083,1.3479,0.2327,4.7913,49,49,2007->2019,; HC1
+naep,long_diff,imm,white,pooled,SD,-0.0375,0.0325,-0.1029,0.0279,0.2545,0.0927,198,50,2007->2019,
+naep,long_diff,imm,white,read4,points,-1.5153,1.5019,-4.5352,1.5045,0.3181,4.2839,50,50,2007->2019,; HC1
+naep,long_diff,imm,white,read8,points,-1.4547,1.4493,-4.3704,1.4610,0.3207,4.1354,49,49,2007->2019,; HC1
+naep,long_diff_pandemic,imm,white,math4,points,3.9560,1.7377,0.4620,7.4500,0.0273,4.9565,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,imm,white,math8,points,2.0775,4.5186,-7.0077,11.1627,0.6478,12.8880,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,imm,white,pooled,SD,0.0813,0.0664,-0.0521,0.2147,0.2266,0.1893,200,50,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,imm,white,read4,points,5.0382,1.9960,1.0250,9.0514,0.0150,5.6930,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,imm,white,read8,points,0.7243,4.1679,-7.6558,9.1044,0.8628,11.8878,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,twfe,imm,white,math4,points,0.3033,1.3214,-2.3509,2.9575,0.8194,3.7663,354,51,2007-2019,
+naep,twfe,imm,white,math8,points,-1.2473,1.3956,-4.0504,1.5558,0.3757,3.9776,352,51,2007-2019,
+naep,twfe,imm,white,pooled,SD,-0.0195,0.0256,-0.0708,0.0319,0.4498,0.0728,1412,51,2007-2019,
+naep,twfe,imm,white,read4,points,-1.6943,1.0974,-3.8986,0.5100,0.1289,3.1279,354,51,2007-2019,
+naep,twfe,imm,white,read8,points,-0.4746,1.0067,-2.4966,1.5474,0.6394,2.8693,352,51,2007-2019,
+naep,twfe_composition,imm,white,pooled,SD,-0.0252,0.0259,-0.0773,0.0269,0.3355,0.0739,1412,51,2007-2019,controls: % of white pupils eligible for school lunch
+naep,twfe_no_dc,imm,white,pooled,SD,-0.0227,0.0275,-0.0779,0.0326,0.4135,0.0784,1388,50,2007-2019,excludes DC
+naep,twfe_region_year,imm,white,pooled,SD,-0.0023,0.0297,-0.0619,0.0573,0.9393,0.0846,1412,51,2007-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_weighted,imm,white,pooled,SD,-0.0675,0.0501,-0.1682,0.0332,0.1841,0.1429,1412,51,2007-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,imm,white,pooled,SD,-0.0198,0.0310,-0.0820,0.0424,0.5249,0.0882,1820,51,2007-2024,pandemic waves included
+naep,first_diff,imm,white_nonel,pooled,SD,-0.0010,0.0181,-0.0374,0.0353,0.9552,0.0516,1204,51,2007-2019,"consecutive-wave changes, cell-by-year FE"
+naep,long_diff,imm,white_nonel,math4,points,-0.2951,1.3446,-2.9986,2.4083,0.8272,3.8351,50,50,2007->2019,; HC1
+naep,long_diff,imm,white_nonel,math8,points,-2.0358,1.6504,-5.3560,1.2843,0.2235,4.7091,49,49,2007->2019,; HC1
+naep,long_diff,imm,white_nonel,pooled,SD,-0.0314,0.0316,-0.0949,0.0321,0.3255,0.0901,198,50,2007->2019,
+naep,long_diff,imm,white_nonel,read4,points,-1.1099,1.4448,-4.0149,1.7951,0.4461,4.1209,50,50,2007->2019,; HC1
+naep,long_diff,imm,white_nonel,read8,points,-1.3873,1.4745,-4.3535,1.5790,0.3516,4.2071,49,49,2007->2019,; HC1
+naep,long_diff_pandemic,imm,white_nonel,math4,points,3.9774,1.6907,0.5780,7.3768,0.0228,4.8223,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,imm,white_nonel,math8,points,1.9399,4.4295,-6.9661,10.8460,0.6634,12.6338,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,imm,white_nonel,pooled,SD,0.0840,0.0668,-0.0503,0.2182,0.2148,0.1905,200,50,2019->2024,2019->2024 score change on the 2019->2024 share change
+naep,long_diff_pandemic,imm,white_nonel,read4,points,4.9851,2.1209,0.7207,9.2495,0.0229,6.0493,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,long_diff_pandemic,imm,white_nonel,read8,points,1.2855,4.1318,-7.0221,9.5931,0.7571,11.7850,50,50,2019->2024,2019->2024 score change on the 2019->2024 share change; HC1
+naep,twfe,imm,white_nonel,math4,points,0.4306,1.2520,-2.0842,2.9454,0.7324,3.5685,354,51,2007-2019,
+naep,twfe,imm,white_nonel,math8,points,-1.1947,1.3849,-3.9764,1.5870,0.3924,3.9472,352,51,2007-2019,
+naep,twfe,imm,white_nonel,pooled,SD,-0.0174,0.0247,-0.0670,0.0321,0.4835,0.0703,1412,51,2007-2019,
+naep,twfe,imm,white_nonel,read4,points,-1.6607,1.0687,-3.8073,0.4859,0.1265,3.0460,354,51,2007-2019,
+naep,twfe,imm,white_nonel,read8,points,-0.3986,1.0273,-2.4620,1.6648,0.6997,2.9280,352,51,2007-2019,
+naep,twfe_no_dc,imm,white_nonel,pooled,SD,-0.0184,0.0269,-0.0726,0.0357,0.4971,0.0768,1388,50,2007-2019,excludes DC
+naep,twfe_region_year,imm,white_nonel,pooled,SD,-0.0000,0.0289,-0.0582,0.0581,0.9991,0.0825,1412,51,2007-2019,adds Census-region-by-cell-by-year FE
+naep,twfe_weighted,imm,white_nonel,pooled,SD,-0.0654,0.0504,-0.1666,0.0357,0.2000,0.1435,1412,51,2007-2019,weighted by CCD enrollment
+naep,twfe_with_2022_2024,imm,white_nonel,pooled,SD,-0.0157,0.0306,-0.0771,0.0457,0.6101,0.0871,1820,51,2007-2024,pandemic waves included
+naep,twfe,imm,white_p10,math4,points,-0.0013,2.3173,-4.6557,4.6531,0.9996,6.6046,354,51,2007-2019,
+naep,twfe,imm,white_p10,math8,points,-2.9645,1.7678,-6.5152,0.5861,0.0998,5.0384,352,51,2007-2019,
+naep,twfe,imm,white_p10,pooled,SD,-0.0449,0.0449,-0.1350,0.0453,0.3225,0.1279,1412,51,2007-2019,
+naep,twfe,imm,white_p10,read4,points,-1.7785,2.4041,-6.6073,3.0504,0.4629,6.8522,354,51,2007-2019,
+naep,twfe,imm,white_p10,read8,points,-2.3004,2.0647,-6.4475,1.8466,0.2705,5.8847,352,51,2007-2019,
+naep,twfe,imm,white_p90,math4,points,1.3506,1.0965,-0.8517,3.5529,0.2238,3.1251,354,51,2007-2019,
+naep,twfe,imm,white_p90,math8,points,-0.9703,1.1862,-3.3528,1.4121,0.4172,3.3807,352,51,2007-2019,
+naep,twfe,imm,white_p90,pooled,SD,0.0005,0.0187,-0.0371,0.0382,0.9772,0.0534,1412,51,2007-2019,
+naep,twfe,imm,white_p90,read4,points,-1.2102,0.9568,-3.1320,0.7116,0.2118,2.7270,354,51,2007-2019,
+naep,twfe,imm,white_p90,read8,points,0.5706,1.0368,-1.5119,2.6530,0.5845,2.9550,352,51,2007-2019,

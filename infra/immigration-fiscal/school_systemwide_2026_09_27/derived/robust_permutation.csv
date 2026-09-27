@@ -1,0 +1,4 @@
+treatment,outcome,beta_per10,perm_p_two_sided,perm_sd_per10,reps,seed,years
+el,white,-0.0350,0.0835,0.0203,2000,20260928,2003-2019
+hisp,white,0.0869,0.0115,0.0339,2000,20260928,2003-2019
+imm,white,-0.0195,0.4738,0.0271,2000,20260928,2007-2019
