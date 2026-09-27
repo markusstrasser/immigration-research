@@ -1,0 +1,80 @@
+{
+  "cps_sha256": "a510e7a9695486945fc87618b98e2f8d51f7d0d7df35f01319a70564ea8065a2",
+  "gate_ladder178": {
+    "status": "PASS",
+    "reproduced": 0.11835811869522715,
+    "published_csv": 0.1183581186952271,
+    "ladder_178": 0.1184,
+    "solver": "ok"
+  },
+  "reference_mean_pct": {
+    "p_edu": 50.000000000000014,
+    "p_earn": 50.00000000000002,
+    "p_edu_sex": 50.0,
+    "p_earn_sex": 49.99999999999999
+  },
+  "barro_lee": {
+    "sha256": "618732c5cc749f91e609a7fb7a1e1142d761c2b97510781b07754322a24218ef",
+    "names_not_in_file": [
+      "Lebanon",
+      "Nigeria",
+      "Samoa"
+    ],
+    "g1_with_selection_pct": 477911,
+    "g1_total_educ_ok": 535983
+  },
+  "multiple_regression_g2_on_g1us_and_selection": [
+    {
+      "y": "g2_p_edu",
+      "n_origins": 77,
+      "b_g1_us_edu": 0.4025015271064999,
+      "b_g1_us_edu_ci": [
+        0.2754415906199624,
+        0.52182303396297
+      ],
+      "b_origin_selection": 0.26639876296537063,
+      "b_origin_selection_ci": [
+        -0.1295103036998151,
+        0.4061447990836642
+      ]
+    },
+    {
+      "y": "g2_p_earn",
+      "n_origins": 77,
+      "b_g1_us_edu": 0.19662274223013954,
+      "b_g1_us_edu_ci": [
+        0.11611242712248752,
+        0.2627771448600865
+      ],
+      "b_origin_selection": 0.08524645101099296,
+      "b_origin_selection_ci": [
+        -0.1514948155414003,
+        0.1755556256913475
+      ]
+    }
+  ],
+  "leave_one_out": {
+    "education": {
+      "min": [
+        "Mexico",
+        0.3569238321199111
+      ],
+      "max": [
+        "Canada",
+        0.5474129605207496
+      ],
+      "full": 0.5224530349926649
+    },
+    "earnings": {
+      "min": [
+        "Mexico",
+        0.3011205407331611
+      ],
+      "max": [
+        "Canada",
+        0.5938674399051241
+      ],
+      "full": 0.5504325877260109
+    }
+  }
+}
