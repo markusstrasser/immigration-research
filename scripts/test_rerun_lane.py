@@ -68,3 +68,28 @@ def test_cache_files_are_ignored(tmp_path: Path) -> None:
     (repo / "lane" / "_cache").mkdir()
     (repo / "lane" / "_cache" / "raw.py").write_text("x = 1\n")
     assert rerun(repo).returncode == 0
+
+
+def test_changed_output_outside_derived_is_caught(tmp_path: Path) -> None:
+    # The 2026-09-28 school lane also wrote credentials/derived/ and design_table/*.csv.
+    repo = lane_repo(tmp_path)
+    (repo / "lane" / "sub" / "derived").mkdir(parents=True)
+    (repo / "lane" / "sub" / "derived" / "table.csv").write_text("a\n")
+    (repo / "lane" / "build.py").write_text("open('lane/derived/out.txt', 'w').write('1\\n')\n"
+                                            "open('lane/sub/derived/table.csv', 'w').write('b\\n')\n")
+    git(repo, "add", ".")
+    git(repo, "commit", "-q", "-m", "nested output")
+    r = rerun(repo)
+    assert r.returncode == 1, r.stdout
+    assert "CHANGED lane/sub/derived/table.csv" in r.stdout
+
+
+def test_new_committable_output_is_listed(tmp_path: Path) -> None:
+    repo = lane_repo(tmp_path)
+    (repo / "lane" / "build.py").write_text("open('lane/derived/out.txt', 'w').write('1\\n')\n"
+                                            "open('lane/extra.csv', 'w').write('x\\n')\n")
+    git(repo, "add", ".")
+    git(repo, "commit", "-q", "-m", "extra output")
+    r = rerun(repo)
+    assert r.returncode == 1, r.stdout
+    assert "NEW lane/extra.csv" in r.stdout
