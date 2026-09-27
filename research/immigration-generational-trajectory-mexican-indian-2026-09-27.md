@@ -44,8 +44,9 @@ text). [DATA: `generation_carryover_2026_09_27/derived/carryover.csv`]
 
 The partial-ledger gap for G3+ is −$6,615 per adult a year. That object is the CPS partial
 ledger (modelled taxes minus selected transfers), not the complete account. The adopted
-account's own split (entry 224) has no reference group; its absolute ratios are 0.66/0.56
-(G1→G2) and 0.88/1.16 (G2→G3+) at the low and high ends. The two must not be combined (FAQ,
+account's own split (entry 224) has no reference group; on the September 27 case its absolute
+ratios under the NAS convention are 0.72/0.65 (G1→G2) and 0.94/1.16 (G2→G3+) at the low and high
+ends (0.66/0.56 and 0.88/1.16 on the schools case). The two must not be combined (FAQ,
 "Before combining numbers").
 
 NLSY97 is the one source that separates G3 by grandparents' birthplace. It shows real progress

@@ -12,6 +12,7 @@ _cache/dp12704.pdf (sha256 5e65103e...); PDF page numbers below.
 from __future__ import annotations
 
 import csv
+import json
 import math
 from pathlib import Path
 
@@ -149,10 +150,11 @@ def carry_table(gaps):
                          denominator_stable=abs(ga) > 2 * sa,
                          note="parent generation of G3 children is G2 (born ~1950-65); of G4+ children is G3+"))
     acc = pd.read_csv(ACCOUNT)
+    case = json.loads((ACCOUNT.parent / "generation_summary.json").read_text())["case"]
     for (conv, band), s in acc.groupby(["convention", "band_end"]):
         v = s.set_index("generation").per_adult_usd
         for a, b in [("G1", "G2"), ("G2", "G3plus")]:
-            rows.append(dict(source="adopted_account_2026_09_26", frame=f"convention {conv} ({'own generation' if conv == 'a' else 'minors with parents'}), {band} end",
+            rows.append(dict(source=f"adopted_account_{case}", frame=f"convention {conv} ({'own generation' if conv == 'a' else 'minors with parents'}), {band} end",
                              measure="net_cost_to_other_residents_per_adult_usd", generation=f"{a}->{b}", n=np.nan,
                              gap_from=-v[a], gap_to=-v[b], rho=v[b] / v[a], se=np.nan, rho_p05=np.nan, rho_p95=np.nan,
                              change_in_gap=-(v[b] - v[a]), se_change=np.nan, denominator_stable=True,

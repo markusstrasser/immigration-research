@@ -148,14 +148,20 @@ flagged unstable in `derived/carryover.csv`. In that case read `change_in_gap` i
 | Partial ledger $ | CPS pop | 0.65 (0.02) | 0.90 (0.05) [G3+] | |
 | Household ledger $ | CPS both parents | | 0.39 (0.18) | 1.67 (1.00) |
 
-**Adopted account ($ net cost to other residents per adult, main case of Sept 26).** Ratios are
-read from `generation_account_2026_09_24/derived/generation_results.csv`. These are absolute costs
-measured against zero, not gaps to whites; the account has no reference group.
+**Adopted account ($ net cost to other residents per adult).** Ratios are read from
+`generation_account_2026_09_24/derived/generation_results.csv`, whose case is named in
+`generation_summary.json` and carried in the `source` column (`adopted_account_<case>`). These are
+absolute costs measured against zero, not gaps to whites; the account has no reference group.
 
 | Convention | G1→G2 | G2→G3+ |
 |---|---|---|
-| (b) minors with parents, low / high end | 0.66 / 0.56 | 0.88 / 1.16 |
-| (a) own generation, low / high end | 1.77 / 2.70 | 0.79 / 1.09 |
+| (b) minors with parents, low / high end — September 27 case (8654a0c) | 0.72 / 0.65 | 0.94 / 1.16 |
+| (a) own generation, low / high end — September 27 case | 1.78 / 2.56 | 0.86 / 1.11 |
+| (b), schools case of September 26 (the first run of this lane) | 0.66 / 0.56 | 0.88 / 1.16 |
+| (a), schools case of September 26 | 1.77 / 2.70 | 0.79 / 1.09 |
+
+[2026-09-27, 23:30: re-run on the September 27 case after the generation lane moved to it (8654a0c);
+the source label now reads the case instead of a fixed string.]
 
 Under (b), the NAS convention, the dollar ratios match the partial-ledger gap ratios: roughly
 0.6 for the first step and 0.9–1.2 for the second. Under (a), G2 carries its own children's

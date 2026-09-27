@@ -38,7 +38,7 @@ for k, exp in [("G3_Mexico_GP_observed", 2.870e6), ("G4plus_all_US_GP_observed",
 # 2. Adopted-account ratios are computed from the CSV, not retyped.
 acc = pd.read_csv(HERE.parent / "generation_account_2026_09_24/derived/generation_results.csv")
 co = pd.read_csv(D / "carryover.csv")
-aa = co[co.source.eq("adopted_account_2026_09_26")]
+aa = co[co.source.str.startswith("adopted_account_")]
 check(len(aa) == 8, "eight adopted-account ratio rows (2 conventions x 2 ends x 2 steps)")
 for r in aa.itertuples():
     conv = r.frame.split()[1]
