@@ -1,0 +1,709 @@
+survey,item,question,group,generation,n_unweighted,code,answer,weighted_share
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,445,1.0,(The term used to describe people of your heritage),0.6616
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,445,2.0,A (Latino/Hispanic),0.2914
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,445,3.0,An American,0.0272
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,445,4.0,Depends,0.0046
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,445,8.0,Don't Know,0.0094
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,445,9.0,Refused,0.0059
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,164,1.0,(The term used to describe people of your heritage),0.4037
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,164,2.0,A (Latino/Hispanic),0.2183
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,164,3.0,An American,0.3428
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,164,4.0,Depends,0.0251
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,164,8.0,Don't Know,0.0048
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,164,9.0,Refused,0.0053
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,125,1.0,(The term used to describe people of your heritage),0.3195
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,125,2.0,A (Latino/Hispanic),0.2062
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,125,3.0,An American,0.4545
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,125,4.0,Depends,0.0049
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,125,8.0,Don't Know,0.0113
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,125,9.0,Refused,0.0037
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,282,1.0,(The term used to describe people of your heritage),0.5255
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,282,2.0,A (Latino/Hispanic),0.2946
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,282,3.0,An American,0.1546
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,282,4.0,Depends,0.01
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,282,8.0,Don't Know,0.0083
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,282,9.0,Refused,0.007
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,81,1.0,(The term used to describe people of your heritage),0.479
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,81,2.0,A (Latino/Hispanic),0.0929
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,81,3.0,An American,0.3682
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,81,4.0,Depends,0.0303
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,81,8.0,Don't Know,0.0069
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,81,9.0,Refused,0.0228
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,51,1.0,(The term used to describe people of your heritage),0.187
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,51,2.0,A (Latino/Hispanic),0.2049
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,51,3.0,An American,0.5693
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,51,4.0,Depends,0.0388
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,51,8.0,Don't Know,0.0
+NSL2011,qn59,59.  People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,51,9.0,Refused,0.0
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,1st,502,1.0,"Yes, it does",0.703
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,1st,502,2.0,"No, it doesn't",0.1818
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,1st,502,8.0,Don't Know,0.1122
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,1st,502,9.0,Refused,0.0029
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,2nd,0,1.0,"Yes, it does",nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,2nd,0,2.0,"No, it doesn't",nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,2nd,0,8.0,Don't Know,nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,2nd,0,9.0,Refused,nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,3rd+,0,1.0,"Yes, it does",nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,3rd+,0,2.0,"No, it doesn't",nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,3rd+,0,8.0,Don't Know,nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",Mexican,3rd+,0,9.0,Refused,nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,1st,391,1.0,"Yes, it does",0.6331
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,1st,391,2.0,"No, it doesn't",0.2336
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,1st,391,8.0,Don't Know,0.1304
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,1st,391,9.0,Refused,0.0029
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,2nd,0,1.0,"Yes, it does",nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,2nd,0,2.0,"No, it doesn't",nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,2nd,0,8.0,Don't Know,nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,2nd,0,9.0,Refused,nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,3rd+,0,1.0,"Yes, it does",nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,3rd+,0,2.0,"No, it doesn't",nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,3rd+,0,8.0,Don't Know,nan
+NSL2012,qn78,"78. As far as you know, does (the country where you were born) allow its citizens to hold citizenship from two countries at the same time, or not?",OtherHispanic,3rd+,0,9.0,Refused,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,1st,328,1.0,Yes,0.9337
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,1st,328,2.0,No,0.0522
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,1st,328,8.0,Don't know,0.0054
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,1st,328,9.0,Refused,0.0086
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,2nd,0,1.0,Yes,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,2nd,0,2.0,No,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,2nd,0,8.0,Don't know,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,2nd,0,9.0,Refused,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,3rd+,0,1.0,Yes,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,3rd+,0,2.0,No,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,3rd+,0,8.0,Don't know,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,3rd+,0,9.0,Refused,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,1st,188,1.0,Yes,0.9398
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,1st,188,2.0,No,0.0419
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,1st,188,8.0,Don't know,0.0183
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,1st,188,9.0,Refused,0.0
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,2nd,0,1.0,Yes,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,2nd,0,2.0,No,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,2nd,0,8.0,Don't know,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,2nd,0,9.0,Refused,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,3rd+,0,1.0,Yes,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,3rd+,0,2.0,No,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,3rd+,0,8.0,Don't know,nan
+NSL2012,qn79,"79. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,3rd+,0,9.0,Refused,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,1.0,Not eligible yet,0.0616
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,2.0,Cost to naturalize too high/is currently saving,0.1107
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,3.0,Needs to learn English,0.1185
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,4.0,Has not had time to do it,0.0664
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,5.0,Has tried but has not been successful (failing the tests),0.0108
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,6.0,Does not know how to do it,0.0183
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,7.0,Afraid of taking the tests,0.0179
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,8.0,Does not want to lose country of origin citizenship,0.0
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,9.0,Intends to go back to country of origin eventually,0.0072
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,10.0,Afraid of U.S. government having personal/family information,0.0144
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,11.0,No interest,0.0154
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,12.0,Currently applying for citizenship,0.0255
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,14.0,"Not eligible (at all)/don't qualify (am here illegally, don't have any papers, amnesty laws not passed, etc.)",0.1363
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,15.0,No opportunity to apply (general),0.0323
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,16.0,Other not eligible mentions,0.071
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,17.0,Other loyal to other country mentions,0.0
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,18.0,Other apprehension mentions,0.0035
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,19.0,Don't want to deal with/undergo long/complicated process,0.0194
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,20.0,Other not taking initiative mentions,0.0166
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,21.0,Don't have all of the qualifications (general),0.02
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,22.0,Applying/waiting for green card,0.0264
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,23.0,Procrastination/laziness,0.006
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,24.0,Have not made the effort/never applied (general),0.0399
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,90.0,Not coded & not Text corrected,0.0
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,97.0,Other reason,0.077
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,98.0,Don't Know,0.0548
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,292,99.0,Refused,0.0301
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,1.0,Not eligible yet,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,2.0,Cost to naturalize too high/is currently saving,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,3.0,Needs to learn English,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,4.0,Has not had time to do it,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,5.0,Has tried but has not been successful (failing the tests),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,6.0,Does not know how to do it,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,7.0,Afraid of taking the tests,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,8.0,Does not want to lose country of origin citizenship,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,9.0,Intends to go back to country of origin eventually,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,10.0,Afraid of U.S. government having personal/family information,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,11.0,No interest,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,12.0,Currently applying for citizenship,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,14.0,"Not eligible (at all)/don't qualify (am here illegally, don't have any papers, amnesty laws not passed, etc.)",nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,15.0,No opportunity to apply (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,16.0,Other not eligible mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,17.0,Other loyal to other country mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,18.0,Other apprehension mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,19.0,Don't want to deal with/undergo long/complicated process,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,20.0,Other not taking initiative mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,21.0,Don't have all of the qualifications (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,22.0,Applying/waiting for green card,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,23.0,Procrastination/laziness,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,24.0,Have not made the effort/never applied (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,90.0,Not coded & not Text corrected,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,97.0,Other reason,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,98.0,Don't Know,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,99.0,Refused,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,1.0,Not eligible yet,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,2.0,Cost to naturalize too high/is currently saving,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,3.0,Needs to learn English,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,4.0,Has not had time to do it,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,5.0,Has tried but has not been successful (failing the tests),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,6.0,Does not know how to do it,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,7.0,Afraid of taking the tests,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,8.0,Does not want to lose country of origin citizenship,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,9.0,Intends to go back to country of origin eventually,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,10.0,Afraid of U.S. government having personal/family information,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,11.0,No interest,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,12.0,Currently applying for citizenship,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,14.0,"Not eligible (at all)/don't qualify (am here illegally, don't have any papers, amnesty laws not passed, etc.)",nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,15.0,No opportunity to apply (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,16.0,Other not eligible mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,17.0,Other loyal to other country mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,18.0,Other apprehension mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,19.0,Don't want to deal with/undergo long/complicated process,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,20.0,Other not taking initiative mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,21.0,Don't have all of the qualifications (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,22.0,Applying/waiting for green card,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,23.0,Procrastination/laziness,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,24.0,Have not made the effort/never applied (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,90.0,Not coded & not Text corrected,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,97.0,Other reason,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,98.0,Don't Know,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,99.0,Refused,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,1.0,Not eligible yet,0.1167
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,2.0,Cost to naturalize too high/is currently saving,0.1979
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,3.0,Needs to learn English,0.0879
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,4.0,Has not had time to do it,0.0647
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,5.0,Has tried but has not been successful (failing the tests),0.0026
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,6.0,Does not know how to do it,0.0106
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,7.0,Afraid of taking the tests,0.0131
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,8.0,Does not want to lose country of origin citizenship,0.0
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,9.0,Intends to go back to country of origin eventually,0.0
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,10.0,Afraid of U.S. government having personal/family information,0.0
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,11.0,No interest,0.0278
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,12.0,Currently applying for citizenship,0.0592
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,14.0,"Not eligible (at all)/don't qualify (am here illegally, don't have any papers, amnesty laws not passed, etc.)",0.0951
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,15.0,No opportunity to apply (general),0.0614
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,16.0,Other not eligible mentions,0.0228
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,17.0,Other loyal to other country mentions,0.0
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,18.0,Other apprehension mentions,0.009
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,19.0,Don't want to deal with/undergo long/complicated process,0.0058
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,20.0,Other not taking initiative mentions,0.0206
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,21.0,Don't have all of the qualifications (general),0.0026
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,22.0,Applying/waiting for green card,0.0134
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,23.0,Procrastination/laziness,0.0215
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,24.0,Have not made the effort/never applied (general),0.0124
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,90.0,Not coded & not Text corrected,0.0
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,97.0,Other reason,0.0865
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,98.0,Don't Know,0.0458
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,171,99.0,Refused,0.0225
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,1.0,Not eligible yet,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,2.0,Cost to naturalize too high/is currently saving,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,3.0,Needs to learn English,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,4.0,Has not had time to do it,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,5.0,Has tried but has not been successful (failing the tests),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,6.0,Does not know how to do it,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,7.0,Afraid of taking the tests,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,8.0,Does not want to lose country of origin citizenship,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,9.0,Intends to go back to country of origin eventually,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,10.0,Afraid of U.S. government having personal/family information,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,11.0,No interest,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,12.0,Currently applying for citizenship,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,14.0,"Not eligible (at all)/don't qualify (am here illegally, don't have any papers, amnesty laws not passed, etc.)",nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,15.0,No opportunity to apply (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,16.0,Other not eligible mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,17.0,Other loyal to other country mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,18.0,Other apprehension mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,19.0,Don't want to deal with/undergo long/complicated process,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,20.0,Other not taking initiative mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,21.0,Don't have all of the qualifications (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,22.0,Applying/waiting for green card,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,23.0,Procrastination/laziness,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,24.0,Have not made the effort/never applied (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,90.0,Not coded & not Text corrected,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,97.0,Other reason,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,98.0,Don't Know,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,99.0,Refused,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,1.0,Not eligible yet,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,2.0,Cost to naturalize too high/is currently saving,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,3.0,Needs to learn English,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,4.0,Has not had time to do it,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,5.0,Has tried but has not been successful (failing the tests),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,6.0,Does not know how to do it,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,7.0,Afraid of taking the tests,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,8.0,Does not want to lose country of origin citizenship,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,9.0,Intends to go back to country of origin eventually,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,10.0,Afraid of U.S. government having personal/family information,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,11.0,No interest,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,12.0,Currently applying for citizenship,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,14.0,"Not eligible (at all)/don't qualify (am here illegally, don't have any papers, amnesty laws not passed, etc.)",nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,15.0,No opportunity to apply (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,16.0,Other not eligible mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,17.0,Other loyal to other country mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,18.0,Other apprehension mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,19.0,Don't want to deal with/undergo long/complicated process,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,20.0,Other not taking initiative mentions,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,21.0,Don't have all of the qualifications (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,22.0,Applying/waiting for green card,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,23.0,Procrastination/laziness,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,24.0,Have not made the effort/never applied (general),nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,90.0,Not coded & not Text corrected,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,97.0,Other reason,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,98.0,Don't Know,nan
+NSL2012,qn80,80. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,99.0,Refused,nan
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,1305,1.0,The term used to describe people of your heritage,0.6994
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,1305,2.0,A (Latino/Hispanic),0.2146
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,1305,3.0,An American,0.0646
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,1305,4.0,Depends,0.0113
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,1st,1305,9.0,Don't Know/Refused,0.01
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,546,1.0,The term used to describe people of your heritage,0.4911
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,546,2.0,A (Latino/Hispanic),0.2026
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,546,3.0,An American,0.2862
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,546,4.0,Depends,0.0166
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,2nd,546,9.0,Don't Know/Refused,0.0035
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,469,1.0,The term used to describe people of your heritage,0.254
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,469,2.0,A (Latino/Hispanic),0.1947
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,469,3.0,An American,0.5255
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,469,4.0,Depends,0.024
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,Mexican,3rd+,469,9.0,Don't Know/Refused,0.0018
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,1553,1.0,The term used to describe people of your heritage,0.593
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,1553,2.0,A (Latino/Hispanic),0.2214
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,1553,3.0,An American,0.1466
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,1553,4.0,Depends,0.0257
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,1st,1553,9.0,Don't Know/Refused,0.0134
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,541,1.0,The term used to describe people of your heritage,0.4545
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,541,2.0,A (Latino/Hispanic),0.1997
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,541,3.0,An American,0.3315
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,541,4.0,Depends,0.0103
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,2nd,541,9.0,Don't Know/Refused,0.004
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,245,1.0,The term used to describe people of your heritage,0.1133
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,245,2.0,A (Latino/Hispanic),0.1443
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,245,3.0,An American,0.718
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,245,4.0,Depends,0.0152
+REL2013,Q111,111. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yourself MOST OFTEN?,OtherHispanic,3rd+,245,9.0,Don't Know/Refused,0.0093
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,1st,481,1.0,A/An (country of origin),0.7051
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,1st,481,2.0,A (Hispanic/Latino),0.2365
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,1st,481,3.0,An American,0.0388
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,1st,481,4.0,Depends,0.0045
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,1st,481,5.0,None of the above,0.0115
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,1st,481,8.0,Don't Know,0.0
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,1st,481,9.0,Refused,0.0037
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,2nd,220,1.0,A/An (country of origin),0.4023
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,2nd,220,2.0,A (Hispanic/Latino),0.2485
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,2nd,220,3.0,An American,0.2943
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,2nd,220,4.0,Depends,0.0286
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,2nd,220,5.0,None of the above,0.0224
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,2nd,220,8.0,Don't Know,0.0039
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,2nd,220,9.0,Refused,0.0
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,3rd+,157,1.0,A/An (country of origin),0.2152
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,3rd+,157,2.0,A (Hispanic/Latino),0.1818
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,3rd+,157,3.0,An American,0.5537
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,3rd+,157,4.0,Depends,0.015
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,3rd+,157,5.0,None of the above,0.0344
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,3rd+,157,8.0,Don't Know,0.0
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,Mexican,3rd+,157,9.0,Refused,0.0
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,1st,351,1.0,A/An (country of origin),0.5541
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,1st,351,2.0,A (Hispanic/Latino),0.2744
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,1st,351,3.0,An American,0.1126
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,1st,351,4.0,Depends,0.0167
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,1st,351,5.0,None of the above,0.0265
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,1st,351,8.0,Don't Know,0.015
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,1st,351,9.0,Refused,0.0006
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,2nd,124,1.0,A/An (country of origin),0.3127
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,2nd,124,2.0,A (Hispanic/Latino),0.2277
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,2nd,124,3.0,An American,0.3983
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,2nd,124,4.0,Depends,0.031
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,2nd,124,5.0,None of the above,0.0066
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,2nd,124,8.0,Don't Know,0.0237
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,2nd,124,9.0,Refused,0.0
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,3rd+,73,1.0,A/An (country of origin),0.1911
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,3rd+,73,2.0,A (Hispanic/Latino),0.2651
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,3rd+,73,3.0,An American,0.5118
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,3rd+,73,4.0,Depends,0.0052
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,3rd+,73,5.0,None of the above,0.0269
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,3rd+,73,8.0,Don't Know,0.0
+NSL2014,q50,50. People sometimes use different terms to describe themselves. In general whic,OtherHispanic,3rd+,73,9.0,Refused,0.0
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,1st,438,1.0,Term used to describe people from the country you came from,0.6922
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,1st,438,2.0,Hispanic/Latino,0.2313
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,1st,438,3.0,An American,0.0498
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,1st,438,4.0,Depends,0.0088
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,1st,438,5.0,None of the above,0.0083
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,1st,438,8.0,Don't Know,0.0089
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,1st,438,9.0,Refused,0.0007
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,2nd,217,1.0,Term used to describe people from the country you came from,0.4016
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,2nd,217,2.0,Hispanic/Latino,0.2331
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,2nd,217,3.0,An American,0.3141
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,2nd,217,4.0,Depends,0.0184
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,2nd,217,5.0,None of the above,0.0232
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,2nd,217,8.0,Don't Know,0.0022
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,2nd,217,9.0,Refused,0.0074
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,3rd+,160,1.0,Term used to describe people from the country you came from,0.2621
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,3rd+,160,2.0,Hispanic/Latino,0.1842
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,3rd+,160,3.0,An American,0.486
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,3rd+,160,4.0,Depends,0.0265
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,3rd+,160,5.0,None of the above,0.0412
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,3rd+,160,8.0,Don't Know,0.0
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,Mexican,3rd+,160,9.0,Refused,0.0
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,1st,352,1.0,Term used to describe people from the country you came from,0.5593
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,1st,352,2.0,Hispanic/Latino,0.3239
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,1st,352,3.0,An American,0.0754
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,1st,352,4.0,Depends,0.0213
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,1st,352,5.0,None of the above,0.0166
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,1st,352,8.0,Don't Know,0.0035
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,1st,352,9.0,Refused,0.0
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,2nd,147,1.0,Term used to describe people from the country you came from,0.2967
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,2nd,147,2.0,Hispanic/Latino,0.2347
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,2nd,147,3.0,An American,0.4459
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,2nd,147,4.0,Depends,0.0101
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,2nd,147,5.0,None of the above,0.0127
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,2nd,147,8.0,Don't Know,0.0
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,2nd,147,9.0,Refused,0.0
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,3rd+,77,1.0,Term used to describe people from the country you came from,0.2696
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,3rd+,77,2.0,Hispanic/Latino,0.0647
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,3rd+,77,3.0,An American,0.6613
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,3rd+,77,4.0,Depends,0.0044
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,3rd+,77,5.0,None of the above,0.0
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,3rd+,77,8.0,Don't Know,0.0
+NSL2015,q13,On another topic ... 13. People sometimes use different terms to describe themselves. In general which ONE of the following terms do you use to describe yoursel,OtherHispanic,3rd+,77,9.0,Refused,0.0
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,1st,438,1.0,Essential to your identity,0.3709
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,1st,438,2.0,Important but NOT essential,0.5061
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,1st,438,3.0,Not too important,0.0822
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,1st,438,4.0,Not at all important,0.0341
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,1st,438,5.0,Does not speak Spanish,0.0
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,1st,438,8.0,Don't Know,0.0052
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,1st,438,9.0,Refused,0.0015
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,2nd,217,1.0,Essential to your identity,0.4014
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,2nd,217,2.0,Important but NOT essential,0.4051
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,2nd,217,3.0,Not too important,0.0986
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,2nd,217,4.0,Not at all important,0.0873
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,2nd,217,5.0,Does not speak Spanish,0.0
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,2nd,217,8.0,Don't Know,0.0024
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,2nd,217,9.0,Refused,0.0053
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,3rd+,160,1.0,Essential to your identity,0.2393
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,3rd+,160,2.0,Important but NOT essential,0.5084
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,3rd+,160,3.0,Not too important,0.1706
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,3rd+,160,4.0,Not at all important,0.0703
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,3rd+,160,5.0,Does not speak Spanish,0.0
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,3rd+,160,8.0,Don't Know,0.0114
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",Mexican,3rd+,160,9.0,Refused,0.0
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,1st,352,1.0,Essential to your identity,0.4092
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,1st,352,2.0,Important but NOT essential,0.4827
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,1st,352,3.0,Not too important,0.0506
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,1st,352,4.0,Not at all important,0.0479
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,1st,352,5.0,Does not speak Spanish,0.0
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,1st,352,8.0,Don't Know,0.0067
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,1st,352,9.0,Refused,0.0029
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,2nd,147,1.0,Essential to your identity,0.4461
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,2nd,147,2.0,Important but NOT essential,0.4119
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,2nd,147,3.0,Not too important,0.0937
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,2nd,147,4.0,Not at all important,0.0453
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,2nd,147,5.0,Does not speak Spanish,0.0
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,2nd,147,8.0,Don't Know,0.003
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,2nd,147,9.0,Refused,0.0
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,3rd+,77,1.0,Essential to your identity,0.4514
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,3rd+,77,2.0,Important but NOT essential,0.232
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,3rd+,77,3.0,Not too important,0.2131
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,3rd+,77,4.0,Not at all important,0.0996
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,3rd+,77,5.0,Does not speak Spanish,0.0
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,3rd+,77,8.0,Don't Know,0.0039
+NSL2015,q16c,"16C. First Your family's ancestry or country of origin, is it essential to your identity, important but NOT essential to your identity, not too important to you",OtherHispanic,3rd+,77,9.0,Refused,0.0
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,1st,438,1.0,Very connected,0.4977
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,1st,438,2.0,Somewhat connected,0.3449
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,1st,438,3.0,Not very connected,0.0862
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,1st,438,4.0,Not at all connected,0.0512
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,1st,438,8.0,Don't Know,0.016
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,1st,438,9.0,Refused,0.0041
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,2nd,217,1.0,Very connected,0.2524
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,2nd,217,2.0,Somewhat connected,0.4337
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,2nd,217,3.0,Not very connected,0.1781
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,2nd,217,4.0,Not at all connected,0.1287
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,2nd,217,8.0,Don't Know,0.007
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,2nd,217,9.0,Refused,0.0
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,3rd+,160,1.0,Very connected,0.067
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,3rd+,160,2.0,Somewhat connected,0.2845
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,3rd+,160,3.0,Not very connected,0.2194
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,3rd+,160,4.0,Not at all connected,0.429
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,3rd+,160,8.0,Don't Know,0.0
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,Mexican,3rd+,160,9.0,Refused,0.0
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,1st,352,1.0,Very connected,0.4731
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,1st,352,2.0,Somewhat connected,0.3158
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,1st,352,3.0,Not very connected,0.1247
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,1st,352,4.0,Not at all connected,0.0685
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,1st,352,8.0,Don't Know,0.018
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,1st,352,9.0,Refused,0.0
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,2nd,147,1.0,Very connected,0.2588
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,2nd,147,2.0,Somewhat connected,0.4467
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,2nd,147,3.0,Not very connected,0.2101
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,2nd,147,4.0,Not at all connected,0.076
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,2nd,147,8.0,Don't Know,0.0084
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,2nd,147,9.0,Refused,0.0
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,3rd+,77,1.0,Very connected,0.1107
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,3rd+,77,2.0,Somewhat connected,0.4937
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,3rd+,77,3.0,Not very connected,0.1681
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,3rd+,77,4.0,Not at all connected,0.2276
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,3rd+,77,8.0,Don't Know,0.0
+NSL2015,q46,46. How connected do you feel to (Country of origin)?,OtherHispanic,3rd+,77,9.0,Refused,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,1st,438,1.0,Yes,0.8619
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,1st,438,2.0,No,0.1381
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,1st,438,8.0,Don't know,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,1st,438,9.0,Refused,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,2nd,217,1.0,Yes,0.9312
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,2nd,217,2.0,No,0.0688
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,2nd,217,8.0,Don't know,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,2nd,217,9.0,Refused,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,3rd+,160,1.0,Yes,0.6448
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,3rd+,160,2.0,No,0.3552
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,3rd+,160,8.0,Don't know,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",Mexican,3rd+,160,9.0,Refused,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,1st,352,1.0,Yes,0.7396
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,1st,352,2.0,No,0.2552
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,1st,352,8.0,Don't know,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,1st,352,9.0,Refused,0.0052
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,2nd,147,1.0,Yes,0.7449
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,2nd,147,2.0,No,0.2551
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,2nd,147,8.0,Don't know,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,2nd,147,9.0,Refused,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,3rd+,77,1.0,Yes,0.3804
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,3rd+,77,2.0,No,0.6196
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,3rd+,77,8.0,Don't know,0.0
+NSL2015,q47,"47. Have you ever been to (Country of origin), or not?",OtherHispanic,3rd+,77,9.0,Refused,0.0
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,1st,438,1.0,Often,0.6115
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,1st,438,2.0,Sometimes,0.2515
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,1st,438,3.0,Rarely,0.0799
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,1st,438,4.0,Never,0.0544
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,1st,438,8.0,Don't Know,0.0
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,1st,438,9.0,Refused,0.0026
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,2nd,217,1.0,Often,0.4003
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,2nd,217,2.0,Sometimes,0.318
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,2nd,217,3.0,Rarely,0.159
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,2nd,217,4.0,Never,0.1227
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,2nd,217,8.0,Don't Know,0.0
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,2nd,217,9.0,Refused,0.0
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,3rd+,160,1.0,Often,0.3266
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,3rd+,160,2.0,Sometimes,0.3478
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,3rd+,160,3.0,Rarely,0.1983
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,3rd+,160,4.0,Never,0.1221
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,3rd+,160,8.0,Don't Know,0.0052
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",Mexican,3rd+,160,9.0,Refused,0.0
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,1st,352,1.0,Often,0.53
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,1st,352,2.0,Sometimes,0.2504
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,1st,352,3.0,Rarely,0.1291
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,1st,352,4.0,Never,0.0871
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,1st,352,8.0,Don't Know,0.002
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,1st,352,9.0,Refused,0.0014
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,2nd,147,1.0,Often,0.4322
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,2nd,147,2.0,Sometimes,0.3052
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,2nd,147,3.0,Rarely,0.1625
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,2nd,147,4.0,Never,0.1001
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,2nd,147,8.0,Don't Know,0.0
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,2nd,147,9.0,Refused,0.0
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,3rd+,77,1.0,Often,0.2
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,3rd+,77,2.0,Sometimes,0.3651
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,3rd+,77,3.0,Rarely,0.3144
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,3rd+,77,4.0,Never,0.1206
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,3rd+,77,8.0,Don't Know,0.0
+NSL2015,q27aa,"27AA. Thinking about TODAY, how often do you Talk about your pride in being (Country of origin)?""",OtherHispanic,3rd+,77,9.0,Refused,0.0
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,1st,133,1.0,Yes,0.2155
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,1st,133,2.0,No,0.7025
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,1st,133,8.0,Don't know,0.082
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,1st,133,9.0,Refused,0.0
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,2nd,0,1.0,Yes,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,2nd,0,2.0,No,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,2nd,0,8.0,Don't know,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,2nd,0,9.0,Refused,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,3rd+,0,1.0,Yes,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,3rd+,0,2.0,No,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,3rd+,0,8.0,Don't know,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",Mexican,3rd+,0,9.0,Refused,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,1st,106,1.0,Yes,0.2482
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,1st,106,2.0,No,0.6649
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,1st,106,8.0,Don't know,0.0869
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,1st,106,9.0,Refused,0.0
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,2nd,0,1.0,Yes,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,2nd,0,2.0,No,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,2nd,0,8.0,Don't know,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,2nd,0,9.0,Refused,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,3rd+,0,1.0,Yes,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,3rd+,0,2.0,No,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,3rd+,0,8.0,Don't know,nan
+NSL2015,q64,"64. Do you intend to go back to your home country and live there later in life, or not?",OtherHispanic,3rd+,0,9.0,Refused,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,1st,265,1.0,Yes,0.9434
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,1st,265,2.0,No,0.0475
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,1st,265,8.0,Don't know,0.0049
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,1st,265,9.0,Refused,0.0042
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,2nd,0,1.0,Yes,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,2nd,0,2.0,No,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,2nd,0,8.0,Don't know,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,2nd,0,9.0,Refused,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,3rd+,0,1.0,Yes,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,3rd+,0,2.0,No,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,3rd+,0,8.0,Don't know,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",Mexican,3rd+,0,9.0,Refused,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,1st,187,1.0,Yes,0.9099
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,1st,187,2.0,No,0.0642
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,1st,187,8.0,Don't know,0.0246
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,1st,187,9.0,Refused,0.0013
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,2nd,0,1.0,Yes,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,2nd,0,2.0,No,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,2nd,0,8.0,Don't know,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,2nd,0,9.0,Refused,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,3rd+,0,1.0,Yes,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,3rd+,0,2.0,No,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,3rd+,0,8.0,Don't know,nan
+NSL2015,q59,"59. If you could, would you naturalize and become a U.S. citizen, or not?",OtherHispanic,3rd+,0,9.0,Refused,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,1.0,Needs to learn English,0.2714
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,2.0,Test difficulty/afraid of taking it,0.0486
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,3.0,Has tried but has not been successful,0.0354
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,4.0,Cost to naturalize is too high/needs to save money,0.0829
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,5.0,Process is too complicated,0.0108
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,6.0,Does not know how/needs info,0.0391
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,7.0,Has not had time to do it,0.1778
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,8.0,Have not made the effort/procrastination,0.0514
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,9.0,No interest,0.0373
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,10.0,Has never applied,0.0407
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,11.0,Currently applying,0.0379
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,12.0,Will apply soon (next year),0.0386
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,13.0,Not eligible yet/waiting for green card,0.0311
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,97.0,"Other (not in precoded response options), SPECIFY",0.06
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,98.0,Don't Know,0.021
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,1st,133,99.0,Refused,0.0161
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,1.0,Needs to learn English,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,2.0,Test difficulty/afraid of taking it,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,3.0,Has tried but has not been successful,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,4.0,Cost to naturalize is too high/needs to save money,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,5.0,Process is too complicated,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,6.0,Does not know how/needs info,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,7.0,Has not had time to do it,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,8.0,Have not made the effort/procrastination,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,9.0,No interest,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,10.0,Has never applied,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,11.0,Currently applying,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,12.0,Will apply soon (next year),nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,13.0,Not eligible yet/waiting for green card,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,97.0,"Other (not in precoded response options), SPECIFY",nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,98.0,Don't Know,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,2nd,0,99.0,Refused,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,1.0,Needs to learn English,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,2.0,Test difficulty/afraid of taking it,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,3.0,Has tried but has not been successful,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,4.0,Cost to naturalize is too high/needs to save money,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,5.0,Process is too complicated,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,6.0,Does not know how/needs info,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,7.0,Has not had time to do it,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,8.0,Have not made the effort/procrastination,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,9.0,No interest,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,10.0,Has never applied,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,11.0,Currently applying,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,12.0,Will apply soon (next year),nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,13.0,Not eligible yet/waiting for green card,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,97.0,"Other (not in precoded response options), SPECIFY",nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,98.0,Don't Know,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,Mexican,3rd+,0,99.0,Refused,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,1.0,Needs to learn English,0.2156
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,2.0,Test difficulty/afraid of taking it,0.0046
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,3.0,Has tried but has not been successful,0.008
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,4.0,Cost to naturalize is too high/needs to save money,0.1459
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,5.0,Process is too complicated,0.0
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,6.0,Does not know how/needs info,0.0418
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,7.0,Has not had time to do it,0.1191
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,8.0,Have not made the effort/procrastination,0.0137
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,9.0,No interest,0.0217
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,10.0,Has never applied,0.0
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,11.0,Currently applying,0.0384
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,12.0,Will apply soon (next year),0.0468
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,13.0,Not eligible yet/waiting for green card,0.2183
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,97.0,"Other (not in precoded response options), SPECIFY",0.1179
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,98.0,Don't Know,0.0038
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,1st,106,99.0,Refused,0.0044
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,1.0,Needs to learn English,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,2.0,Test difficulty/afraid of taking it,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,3.0,Has tried but has not been successful,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,4.0,Cost to naturalize is too high/needs to save money,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,5.0,Process is too complicated,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,6.0,Does not know how/needs info,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,7.0,Has not had time to do it,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,8.0,Have not made the effort/procrastination,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,9.0,No interest,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,10.0,Has never applied,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,11.0,Currently applying,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,12.0,Will apply soon (next year),nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,13.0,Not eligible yet/waiting for green card,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,97.0,"Other (not in precoded response options), SPECIFY",nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,98.0,Don't Know,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,2nd,0,99.0,Refused,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,1.0,Needs to learn English,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,2.0,Test difficulty/afraid of taking it,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,3.0,Has tried but has not been successful,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,4.0,Cost to naturalize is too high/needs to save money,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,5.0,Process is too complicated,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,6.0,Does not know how/needs info,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,7.0,Has not had time to do it,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,8.0,Have not made the effort/procrastination,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,9.0,No interest,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,10.0,Has never applied,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,11.0,Currently applying,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,12.0,Will apply soon (next year),nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,13.0,Not eligible yet/waiting for green card,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,97.0,"Other (not in precoded response options), SPECIFY",nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,98.0,Don't Know,nan
+NSL2015,q63,63. What is the main reason why you have not naturalized and become a U.S. citizen?,OtherHispanic,3rd+,0,99.0,Refused,nan
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,1st,465,1.0,Very closely,0.4171
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,1st,465,2.0,Fairly closely,0.2263
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,1st,465,3.0,Not too closely,0.2217
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,1st,465,4.0,Not at all closely,0.1318
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,1st,465,8.0,Don't know,0.0013
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,1st,465,9.0,Refused,0.0018
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,2nd,202,1.0,Very closely,0.224
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,2nd,202,2.0,Fairly closely,0.2099
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,2nd,202,3.0,Not too closely,0.3705
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,2nd,202,4.0,Not at all closely,0.1947
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,2nd,202,8.0,Don't know,0.0
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,2nd,202,9.0,Refused,0.001
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,3rd+,182,1.0,Very closely,0.1568
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,3rd+,182,2.0,Fairly closely,0.2697
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,3rd+,182,3.0,Not too closely,0.323
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,3rd+,182,4.0,Not at all closely,0.2505
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,3rd+,182,8.0,Don't know,0.0
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,Mexican,3rd+,182,9.0,Refused,0.0
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,1st,344,1.0,Very closely,0.3342
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,1st,344,2.0,Fairly closely,0.2101
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,1st,344,3.0,Not too closely,0.3216
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,1st,344,4.0,Not at all closely,0.1261
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,1st,344,8.0,Don't know,0.0012
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,1st,344,9.0,Refused,0.0069
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,2nd,117,1.0,Very closely,0.1931
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,2nd,117,2.0,Fairly closely,0.269
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,2nd,117,3.0,Not too closely,0.4011
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,2nd,117,4.0,Not at all closely,0.1368
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,2nd,117,8.0,Don't know,0.0
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,2nd,117,9.0,Refused,0.0
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,3rd+,103,1.0,Very closely,0.1805
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,3rd+,103,2.0,Fairly closely,0.2438
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,3rd+,103,3.0,Not too closely,0.2585
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,3rd+,103,4.0,Not at all closely,0.3059
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,3rd+,103,8.0,Don't know,0.0113
+NSL2016,qn29c,29C. How about news about ... Country of origin/your family's country of origin?,OtherHispanic,3rd+,103,9.0,Refused,0.0
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,1st,434,1.0,Better in the US,0.8567
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,1st,434,2.0,Better in (the country your parents or ancestors came from/Puerto Rico/the country you came from),0.0103
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,1st,434,3.0,Same,0.1301
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,1st,434,8.0,Don't Know,0.0029
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,1st,434,9.0,Refused,0.0
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,2nd,204,1.0,Better in the US,0.8259
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,2nd,204,2.0,Better in (the country your parents or ancestors came from/Puerto Rico/the country you came from),0.0384
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,2nd,204,3.0,Same,0.1299
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,2nd,204,8.0,Don't Know,0.0057
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,2nd,204,9.0,Refused,0.0
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,3rd+,194,1.0,Better in the US,0.8933
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,3rd+,194,2.0,Better in (the country your parents or ancestors came from/Puerto Rico/the country you came from),0.017
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,3rd+,194,3.0,Same,0.0724
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,3rd+,194,8.0,Don't Know,0.0173
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",Mexican,3rd+,194,9.0,Refused,0.0
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,1st,313,1.0,Better in the US,0.9033
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,1st,313,2.0,Better in (the country your parents or ancestors came from/Puerto Rico/the country you came from),0.005
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,1st,313,3.0,Same,0.0862
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,1st,313,8.0,Don't Know,0.0023
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,1st,313,9.0,Refused,0.0032
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,2nd,154,1.0,Better in the US,0.8693
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,2nd,154,2.0,Better in (the country your parents or ancestors came from/Puerto Rico/the country you came from),0.0185
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,2nd,154,3.0,Same,0.0854
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,2nd,154,8.0,Don't Know,0.0268
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,2nd,154,9.0,Refused,0.0
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,3rd+,88,1.0,Better in the US,0.7606
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,3rd+,88,2.0,Better in (the country your parents or ancestors came from/Puerto Rico/the country you came from),0.0251
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,3rd+,88,3.0,Same,0.1416
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,3rd+,88,8.0,Don't Know,0.0682
+NSL2018,qn21bd,"21BD. Overall would you say The opportunity to get ahead is better in the United States, better in (the country your parents or ancestors came from/Puerto Rico/",OtherHispanic,3rd+,88,9.0,Refused,0.0045
