@@ -1,0 +1,24 @@
+{
+ "acs_inputs": {
+  "late_arrival_65plus.csv": "129214bf810e5097bbfb1176349f95c302f2b19597db4322cd5bc58e8ac67b73",
+  "late_arrival_tenure.csv": "85ddfbcfc4aa2fa33b6cb1b11188b541cdae850b26fcbb9bfa0db4677d1b95a7"
+ },
+ "bar_price_per_year": {
+  "central": 7131.5934,
+  "high": 17472.0,
+  "low": 1064.66
+ },
+ "ledger_fingerprints": {
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62",
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json": "7c76461945ef3ced2d6d41e799e042b65f9657564db8a265bdee0e306bb5e7fc"
+ },
+ "lineage_audit": {
+  "infra/immigration-fiscal/lineage_cost_2026_09_19/derived/audit.json": "b57f283b2b938c6345a532e2f910caaf0bc1d8128edb32c16758b59a4d1b8030"
+ },
+ "medicare_weight": {
+  "central": 0.65,
+  "high": 0.55,
+  "low": 0.75
+ }
+}
