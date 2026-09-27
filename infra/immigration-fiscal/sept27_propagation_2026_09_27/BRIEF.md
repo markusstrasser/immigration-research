@@ -28,6 +28,26 @@ The case is the schools case ($258.4885–291.9548bn) plus four additions:
 
 The case's RESULT gives the final band (expected about $321.8–387.4bn). Read its section "For consumers" first.
 
+## Correction, 2026-09-27 21:50 (conceptual audit, `research/immigration-conceptual-audit-2026-09-27.md` §1)
+
+This correction overrides items 3, 4 and 6 below where they conflict.
+
+- **The capital return is an imputed resource cost, not a payment.** It is an opportunity cost at a chosen rate.
+  - It belongs in every annual resource-cost total: the back-cast, the distribution, the uncertainty band, the
+    generation split, the winners ledger and the real-cost totals.
+  - It never enters a borrowing or debt flow. `debt_legacy.py` compounds cash flows only; it reports the return's
+    federal share in a separate column, never compounded.
+- **Capped programs change who loses, not the budget.** Rental assistance and LIHEAP count at 1 in the annual
+  account. The loss falls on eligible households who lose slots, so their budget response is zero and nothing
+  from them accumulates into debt.
+- **Keep three columns apart** wherever a consumer reports financing: cash financing, resource cost and displaced
+  beneficiaries.
+- **A pre-existing gap, named and not repaired here.** The debt engine compounds current spending, which includes
+  depreciation, not gross investment and capital transfers. The audit's 2024 federal bridge is a national
+  diagnostic, not a group correction: current saving −$1,874.5bn against net lending −$2,106.2bn.
+- **Final case figures:** $321.82–387.37bn (f3031ab, 7e94324); sign break-even 2.8–13.6% with the enterprises
+  moving with services.
+
 ## What changes for a consumer
 
 1. **The package.** `../main_case_long_run_2026_09_27/package.cjs` has the schools package's interface plus:
