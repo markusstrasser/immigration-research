@@ -38,6 +38,13 @@ The group is the 40,896,574 Mexican-origin residents counted by the CPS. The oth
    - At β = 1 the rectangle cancels among other residents. What remains is the immigration surplus seen from the expenditure side.
    - Consistency check: in the union frame the surplus net of native low-skill wage gains is $11.9bn (JPE price arm). That sits inside P's $8.8–13.3bn, even though the two come from different models.
    - FAQ 4 is right not to add it. [INFERENCE; CALCULATION: `derived/partA_side_view_union_frame.csv`]
+   - [2026-09-27, conceptual audit second pass §B (ffcce20), verified by the parent session: the consistency
+     check does not show containment. The $8.8–13.3bn is P+F: private surplus plus induced receipts. On
+     these specifications P alone is about −$0.16/−$0.24bn
+     (`conceptual_audit_2026_09_27/probe_production.py`). `hours_tax.py` also scales consumer units by the
+     native-householder share and counts all native dropout earnings, so its population is not the
+     account's remaining residents. The no-add ruling stands, but read line 1 as "overlapping, not
+     reconciled", not "inside P".]
 2. **The private gain from the extra hours is about zero.**
    - At the margin a woman is indifferent between an hour of market work and an hour of home time. Her first-order gain is therefore the lower price of the services she buys, which is already the side view in line 1.
    - Re-optimizing her hours adds only a second-order triangle to that same surplus.

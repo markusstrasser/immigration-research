@@ -1,6 +1,11 @@
 claude-opus-5-5
 
-**Verdict:** The sponsored-parent channel is small at the rate Mexican citizens actually petition
+**Verdict:** [2026-09-27, late: the conceptual audit's second pass (§D, ffcce20), verified by the parent
+session with `conceptual_audit_2026_09_27/probe_sponsorship.py`, narrows this verdict. "The rate Mexican
+citizens actually petition" is a calibrated scenario, not an observed lifetime rate. The 0.619 is today's
+naturalized share of the eligible stock, and the two calibration estimators share their admissions numerator
+(ratio 1.089). At fixed probabilities, admitting parents in founder-year 10 or 16 lowers the channel from
+$24,518 to $21,955 or $15,664 undiscounted.] The sponsored-parent channel is small at the rate Mexican citizens actually petition
 and large only if every naturalised founder brings their parents. Calibrated on the IR-5 flow
 (p = 0.053, i.e. 0.059 parents admitted per founder who becomes an LPR), a founder who is an LPR
 on arrival and sponsors parents aged 60 moves the lineage gap from −$1,263,920 to **−$1,288,438**
