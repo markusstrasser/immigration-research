@@ -296,7 +296,9 @@ about 3.4% more than their states', so the main case would rise to **$206.6–25
 The same lane finds the audit's row 6 smaller through the engine than the audit states. Taxes and
 transfers (ladder 216): CBO's 2022 income distribution and Treasury's EITC shares by ethnicity
 corroborate most keys; the income-tax key is too flat at the top (+$13.2–14.1bn, about $4bn beyond
-audit row 3), so the main case would be **$209.2–254.8bn** (proposed; not combined with schools).
+audit row 3) [2026-09-28: scored on IRS 2023, which it never used, CBO's gradient overshoots at
+$200k–$1M; matching IRS would lower the September 27 case by $3.2bn / $3.1bn to $318.6–384.3bn,
+not adopted (ladder 249)], so the main case would be **$209.2–254.8bn** (proposed; not combined with schools).
 Benefits (ladder 217): administrative records by ethnicity show no fear-driven under-reporting of SNAP
 or Medicaid; unemployment insurance, WIC and TANF's California share are under-reported, adding
 $2.2bn (main case **$205.5–251.8bn**, proposed). SNAP's quality-control file miscodes Hispanic

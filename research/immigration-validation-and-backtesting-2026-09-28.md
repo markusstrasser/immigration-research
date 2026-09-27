@@ -217,7 +217,11 @@ The independent tax comparison is much less reassuring. Predicting the **2023 IR
 tax distribution across 19 AGI bins** with frozen 2022 CPS shares gives **25.20pp
 total-variation error**, versus **2.43pp** simply freezing 2022 IRS shares. Same-year
 CPS2023 still errs by 24.06pp. This is the released CPS tax construction before our
-later administrative calibration, not a score of the final calibrated key. It
+later administrative calibration, not a score of the final calibrated key. [2026-09-28
+(ladder 249): the final calibrated key scores 23.5pp against IRS 2023 (8.4pp with $1M+
+pooled, against 18.5pp before CBO's gradient); matching IRS with CBO's groups kept would
+raise the group's income tax by $3.2bn / $3.1bn. See the
+[held-out tax lane](../infra/immigration-fiscal/tax_key_heldout_2026_09_28/RESULT.md).] It
 exposes a distribution mismatch that close within-CPS ethnic prediction cannot
 resolve; the IRS bins do not identify Mexican-origin taxes. No proportional
 Mexican-origin correction follows from these errors. [CALCULATION / LIMIT: fiscal-year tests]
