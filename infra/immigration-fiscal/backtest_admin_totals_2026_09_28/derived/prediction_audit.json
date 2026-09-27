@@ -1,0 +1,155 @@
+{
+ "asec2024_published": {
+  "civilian_m": 331.44328600002007,
+  "flagged_m": 9.264506157982629,
+  "flagged_union_m": 4.647672520759681,
+  "persons": 144265,
+  "union_m": 39.57296694270092
+ },
+ "asec2025_adopted": {
+  "civilian_m": 335.5437221788498,
+  "flagged_m": 9.992830839426174,
+  "flagged_union_m": 4.607452947057154,
+  "gate_stack_max_abs_bn": 0.0,
+  "on_books_mexico_born_other_latin": [
+   0.5262685374807583,
+   0.5500607625284325
+  ],
+  "persons": 142125,
+  "row4_factors": {
+   "factor_natz": 0.8556255897504617,
+   "factor_noncit": 0.7781269999470055
+  },
+  "sample": {
+   "children_0_2_mex_origin": 559,
+   "children_0_2_mexico_born": 173,
+   "infants": 1240,
+   "infants_mex_origin": 150,
+   "infants_mexico_born": 41,
+   "women_15_44_mexico_born": 1064,
+   "women_15_44_union": 4264
+  },
+  "stack_arm": "row4+status_state_aware|central|audit_rules_alone",
+  "union_m": 39.712493331187886
+ },
+ "asec2025_published": {
+  "civilian_m": 336.72780300001375,
+  "flagged_m": 9.535449407481849,
+  "flagged_union_m": 4.56714438160163,
+  "gate_account_max_abs": 9.71445146547012e-17,
+  "gate_status_max_abs": 1.3877787807814457e-15,
+  "persons": 142125,
+  "sample": {
+   "children_0_2_mex_origin": 559,
+   "children_0_2_mexico_born": 173,
+   "infants": 1240,
+   "infants_mex_origin": 150,
+   "infants_mexico_born": 41,
+   "women_15_44_mexico_born": 1064,
+   "women_15_44_union": 4264
+  },
+  "union_m": 40.89657415235185
+ },
+ "birth_cells": {
+  "AZ": [
+   "AZ"
+  ],
+  "CA": [
+   "CA"
+  ],
+  "IL": [
+   "IL"
+  ],
+  "NM_NV_CO": [
+   "NM",
+   "NV",
+   "CO"
+  ],
+  "TX": [
+   "TX"
+  ],
+  "rest": [
+   "AL",
+   "AK",
+   "AR",
+   "CT",
+   "DE",
+   "DC",
+   "FL",
+   "GA",
+   "HI",
+   "ID",
+   "IN",
+   "IA",
+   "KS",
+   "KY",
+   "LA",
+   "ME",
+   "MD",
+   "MA",
+   "MI",
+   "MN",
+   "MS",
+   "MO",
+   "MT",
+   "NE",
+   "NH",
+   "NJ",
+   "NY",
+   "NC",
+   "ND",
+   "OH",
+   "OK",
+   "OR",
+   "PA",
+   "RI",
+   "SC",
+   "SD",
+   "TN",
+   "UT",
+   "VT",
+   "VA",
+   "WA",
+   "WV",
+   "WI",
+   "WY"
+  ]
+ },
+ "household_fraction": 0.9900527030312051,
+ "rules": {
+  "adopted": {
+   "actc_on_books_share": "share_configs origin central",
+   "eitc": "zeroed",
+   "flag": "combine_onbooks_lane.py::state_aware_flag (STATUS_BLIND_2024)",
+   "weights": "weight_arms row4"
+  },
+  "published": {
+   "actc_on_books_share": 0.6,
+   "eitc": "zeroed",
+   "flag": "cps_imputation_keys_2026_09_23/combine_status.py::unauthorized"
+  }
+ },
+ "sources": {
+  "asec2024": {
+   "path": "infra/immigration-fiscal/same_year_tax_2026_09_20/_cache/asecpub24csv.zip",
+   "sha256": "cdb39cdac34bef99dd0940ab28e306f692404c2eea44d85dfd634214872a0a09"
+  },
+  "asec2025": {
+   "path": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+   "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+  }
+ },
+ "stack_file": {
+  "path": "infra/immigration-fiscal/main_case_2026_09_24/derived/stack_line_deltas.json",
+  "sha256": "fa0f8520af8e51e26146843213df2830a6be4571117d0e8bc20b2c3b58b0cec7"
+ },
+ "tolerances": {
+  "births_count": 0.1,
+  "births_distribution": 0.05,
+  "material_bn": 2.0,
+  "medicaid_group_share": 0.1,
+  "medicaid_level": 0.05,
+  "medicaid_ratio": 0.1,
+  "non_ptc_bn": 110.46
+ }
+}
