@@ -41,8 +41,32 @@ const s = r.meta.s;
 const k = c.group_amounts_at_end_specifications_bn.low.economic_affairs_services / r.lines.economic_affairs_services.national_bn;
 const b = r.elasticities.highways_nontoll.across_states.b;
 const C = r.lines.economic_affairs_services.subfunctions.find(x => x.id === "sl_highways").national_bn;
+
+// Later audit: verify what the live fiscal corrections do to production.
+const enginePath = path.join(fiscal, "assumption_explorer_2026_09_21/engine.js");
+const modelPath = path.join(fiscal, "assumption_explorer_2026_09_21/derived/model.json");
+const correctionPath = path.join(fiscal, "main_case_long_run_2026_09_27/derived/corrections.json");
+inputs.push(enginePath, modelPath, correctionPath);
+const E = require(enginePath);
+const model = JSON.parse(fs.readFileSync(modelPath));
+const corrected = E.applyCorrections(model, JSON.parse(fs.readFileSync(correctionPath)));
+assert.deepStrictEqual(model.production, corrected.production,
+  "Production data changed with September 27 fiscal corrections; audit needs refresh");
+const production = {};
+for (const [name, m] of [["original", model], ["sept27_corrected", corrected]]) {
+  production[name] = {};
+  for (const normalization of ["cash", "gdp"]) {
+    const state = E.defaultState(m);
+    state.production.normalization = normalization;
+    const result = E.evaluate(m, state);
+    production[name][normalization] = {P: result.private_wtp_bn,
+      F: result.induced_receipts_bn, P_plus_F: result.production_gain_bn,
+      state: state.production};
+  }
+}
 console.log(JSON.stringify({rows, highway: {national_bn: C, population_share: s, resource_share: k,
   elasticity: b, implemented_bn: C*k*(1-(1-s)**b)/s,
   population_power_law_bn: C*(1-(1-s)**b), resource_power_law_bn: C*(1-(1-k)**b)},
+  production_unchanged_by_corrections: true, production,
   source_sha256: Object.fromEntries(inputs.map(p => [path.relative(fiscal, p),
     crypto.createHash("sha256").update(fs.readFileSync(p)).digest("hex")]))}, null, 2));
