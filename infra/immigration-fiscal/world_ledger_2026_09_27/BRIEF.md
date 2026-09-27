@@ -20,6 +20,29 @@ is the chat-level answer. Treat it as a lead to verify, not a result.
   - the cost of raising the taxes;
   - Mexico's side.
 
+## Corrections, 2026-09-27 21:50 (conceptual audit, `research/immigration-conceptual-audit-2026-09-27.md` §2–3)
+
+These override sections B and D below where they conflict.
+
+1. **MVPF is not a value per dollar spent.** The ranges quoted in B (0.65–1.04, negative to 1.20, 0.40–1.63) are
+   marginal values of public funds, V/(G+F): recipient value over net cost including fiscal feedback. Food
+   stamps' 0.62 is value over total cost for the mechanical part.
+   - Keep gross spending G, recipient value V, third-party value, fiscal feedback F and net cost in separate
+     columns, and apply only V/G to the account's gross lines.
+   - Medicaid needs Finkelstein–Hendren–Luttmer's third-party split (uncompensated care), bridged to residence in
+     the US or Mexico and to the account's uncompensated-care lines.
+2. **Every row needs the same alternative world.** The place premium E_US − E_MX already contains the equilibrium
+   wage effect.
+   - Adding the CES rows (E_US − E_US*) double counts. Decompose as (E_US − E_US*) + (E_US* − E_MX).
+   - Victim harm, schooling, health, taxes and amenities need Mexico counterparts. A missing comparator stays
+     unknown, never zero.
+3. **Descendants.** State the population convention: a controlled rearing comparison, not a no-migration history
+   (nonidentity). Give the cohort or stationary-flow argument before excluding schooling's investment value.
+4. **Finite changes.** Log utility uses log(E_US/E_MX), never the income gain times the inverse of either
+   endpoint's income.
+5. **Every row states** its beneficiary, initial state, alternative state, time window, and whether it is a
+   quantity or a transfer.
+
 ## Questions
 
 1. **What is the second generation's place premium?** The counterfactual is the same person born and raised in
