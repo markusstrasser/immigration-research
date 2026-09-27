@@ -156,6 +156,12 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
   co-resident parent, during preschool years only. The mother's earnings are an assumption.
   [SOURCE: Hu 2018 Table 3; Compton & Pollak; Productivity Commission 2016, `reads/offset_reads.md`]
 
+- **Fraud or birth cohorts? (entry 242).** The FY2019–24 doubling (34k → 63k) matches every other
+  country (+84% vs +79%); it is post-COVID processing. The level follows US births to Mexico-born
+  mothers 21 years earlier. Mexico converts births into parent green cards at a lower rate than
+  other origins, as the law predicts for parents who crossed without inspection. No parent-petition
+  fraud rate has ever been measured; a fraud wave is excluded, a steady low rate is not.
+
 ### 4a. Sponsored parents inside the annual account and the lineage (entries 240–241)
 
 - **Annual account.** Mexico-born residents who arrived at 50+ (399k; 227k now 65+) cost other residents
@@ -217,3 +223,4 @@ Not settled:
 - 2026-09-27: created from five lanes; ladder entries 232–236.
 - 2026-09-27, later: §4a added from entries 240–241 (late arrivals in the account; the lineage channel).
 - 2026-09-27, late: corrected after the conceptual audit (3db388d): selection within origin is measured on adult arrivals, the slope asymmetry is not significant, and identity loss grows with the parent's generation (lineage 0.888 too high for G4+).
+- 2026-09-27, late: §4 gained the IR-5 fraud-versus-cohort test (entry 242).
