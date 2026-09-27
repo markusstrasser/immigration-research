@@ -151,6 +151,19 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
   co-resident parent, during preschool years only. The mother's earnings are an assumption.
   [SOURCE: Hu 2018 Table 3; Compton & Pollak; Productivity Commission 2016, `reads/offset_reads.md`]
 
+### 4a. Sponsored parents inside the annual account and the lineage (entries 240–241)
+
+- **Annual account.** Mexico-born residents who arrived at 50+ (399k; 227k now 65+) cost other residents
+  $5.66–5.80bn a year on the September 27 case, 1.5–1.8% of it. Per head at 65+ they cost less than
+  Mexico-born seniors who came younger ($19.6–21.6k vs $21.7–24.3k): in a one-year account, the
+  earlier arrivals' earned Social Security outweighs the late arrivals' lower taxes. "Did not pay in"
+  shows in the lifetime view (entry 235), not the annual one. Medicare is overcharged to them by the
+  pooled keying (−$0.31bn proposed).
+- **Lineage.** At the calibrated petition rate the channel adds 1.9% to the century lineage gap. A
+  US-born child's petition legalizing the founder adds −$386k undiscounted against a founder who
+  stays unauthorized under statutory rules. That is the priced chain from birthright citizenship to
+  a parent's green card.
+
 ## 5. The selection curve, and whether the Indian advantage is a tail
 
 - **Not a tail.** Capping everyone's earnings at the white p99 keeps 92% of the India-born
@@ -192,3 +205,4 @@ Not settled:
 ## Revisions
 
 - 2026-09-27: created from five lanes; ladder entries 232–236.
+- 2026-09-27, later: §4a added from entries 240–241 (late arrivals in the account; the lineage channel).
