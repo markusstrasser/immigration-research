@@ -1,0 +1,11 @@
+survey,method,payer,q,cap,count
+MEPS2023,weighted_winsor,medicare,0.99,105279.0,
+MEPS2023,weighted_winsor,medicaid,0.99,13473.0,
+MEPS2023,weighted_winsor,medicare,0.995,145497.0,
+MEPS2023,weighted_winsor,medicaid,0.995,25130.0,
+MEPS2023,CMS_tail_mean_analogue,medicare,0.995,,25.0
+MEPS2023,CMS_tail_mean_analogue,medicaid,0.995,,25.0
+MCBS2023,weighted_winsor,medicare,0.99,146237.26,
+MCBS2023,weighted_winsor,medicaid,0.99,15796.48,
+MCBS2023,weighted_winsor,medicare,0.995,190982.57,
+MCBS2023,weighted_winsor,medicaid,0.995,26302.28,

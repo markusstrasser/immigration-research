@@ -1,0 +1,18 @@
+{
+  "label": "Retrospective leave-one-state-out point-error diagnostic",
+  "training": "All other previously validity-screened states, admin-dollar weighted shares on both sides",
+  "equation": "rho=odds(sum(A*h)/sum(A))/odds(sum(A*a)/sum(A)); prediction=h/(rho*(1-h)+h)",
+  "gates": "At least 20 valid states; positive administrative/CPS dollar totals; at least 10 raw Hispanic CPS records per valid state; pooled training and held-state shares strictly inside (0,1)",
+  "scoring": "Admin-dollar-weighted MAE, RMSE, bias in percentage points; every residual; raw vs corrected; no CI or headline correction",
+  "support_summary": "At least 30 raw Hispanic CPS records shown as a previously inspected descriptive subgroup only; all valid states remain scored",
+  "nonindependence": "Sources, estimand and outcome-based administrative screen already inspected. This is a new common-rho transport test, not the adopted BV direct substitution.",
+  "units": "States means state/DC jurisdictions. Shares of SNAP benefit dollars. QC allocates across benefit participants; CPS across SPM unit members. QC weights use its reported FYWGT*FSBEN sums, not asserted annual budget totals.",
+  "sha256": {
+    "infra/immigration-fiscal/admin_benefit_keys_2026_09_24/_cache/cps_state_replicates.npz": "3609a64330a98e77f7a18ac17691be5a732421d59440317a648a17843743367f",
+    "infra/immigration-fiscal/admin_benefit_keys_2026_09_24/derived/admin_validity.csv": "132b3aaa379534e94e3c929bd24a0b7731181efac7236466b86d2699b007ef6e",
+    "infra/immigration-fiscal/admin_benefit_keys_2026_09_24/derived/admin_snap_qc.csv": "1d61017c50a0bcf513502485208220eefe398fd85e6347ebc1895a4b7ece3384",
+    "infra/immigration-fiscal/admin_benefit_keys_2026_09_24/derived/cps_keys_state.csv": "ee4b5c5ffddc71e50ec63a5e388221a29de01244e139e2242f38d04246b3a11e",
+    "infra/immigration-fiscal/admin_benefit_keys_2026_09_24/compare.py": "71fcc4479e2b760d476b4e17a1ec112b7211014b1d3ab80fd10c9411e5071b25",
+    "infra/immigration-fiscal/validation_audit_2026_09_28/snap_loso.py": "40fbb9e190fa154f4dec8b476326620e2aac9bcfa20934594092ea1255d1355c"
+  }
+}

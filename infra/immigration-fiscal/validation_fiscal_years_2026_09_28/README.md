@@ -5,12 +5,12 @@
 Run from the main checkout so `uv --no-project` can use its dependencies. During isolated development, pass the absolute managed-worktree script path; once integrated, use:
 
 ```sh
-UV_CACHE_DIR=/private/tmp/immigration-years-uv OPENBLAS_NUM_THREADS=1 \
+OPENBLAS_NUM_THREADS=1 \
 uv run --no-project --with xlrd python3 \
   infra/immigration-fiscal/validation_fiscal_years_2026_09_28/analysis.py \
   --source-root /Users/alien/Projects/immigration-research
 
-UV_CACHE_DIR=/private/tmp/immigration-years-uv OPENBLAS_NUM_THREADS=1 \
+OPENBLAS_NUM_THREADS=1 \
 uv run --no-project python3 -m pytest \
   infra/immigration-fiscal/validation_fiscal_years_2026_09_28/test_analysis.py -q
 ```
@@ -27,6 +27,8 @@ Ignored `derived/` outputs:
 - `paired_scores.csv`: same-replicate absolute-error improvement against frozen shares.
 - `irs_distribution.csv`: all19 AGI-bin residuals for frozen CPS/IRS and same-year CPS diagnostics.
 - `audit.json`: source, script, design and output SHA256 plus source conservation/identity checks.
+
+Update 2026-09-28: these `derived/` outputs are now tracked in git.
 
 Tests cover stable-rate exact prediction, changed-rate falsification, unsupported training-cell failure, negative net-tax retention, the SDR coefficient, pandemic-specific tax identity and missing-reader failure before source work. Malformed SPM units, invalid composition codes and altered IRS sources are also rejected in actual `python -O` subprocesses; IRS year and column metadata have separate malformed-layout checks. Runtime source guards use explicit exceptions and NumPy testing functions, so optimization cannot disable them. Integrated raw-data guards cover joins, SPM totals and weighting.
 

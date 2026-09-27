@@ -5,9 +5,9 @@ prediction is mixed. See [RESULT.md](RESULT.md) and the pre-scoring [Design.md](
 From the main repository root:
 
 ```sh
-UV_CACHE_DIR=/private/tmp/immigration-audit-uv-cache uv run --no-project python3 infra/immigration-fiscal/validation_medical_2026_09_28/acquire.py
-UV_CACHE_DIR=/private/tmp/immigration-audit-uv-cache OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/validation_medical_2026_09_28/analysis.py
-UV_CACHE_DIR=/private/tmp/immigration-audit-uv-cache uv run --no-project python3 -m pytest -q -p no:cacheprovider infra/immigration-fiscal/validation_medical_2026_09_28/test_analysis.py
+uv run --no-project python3 infra/immigration-fiscal/validation_medical_2026_09_28/acquire.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/validation_medical_2026_09_28/analysis.py
+uv run --no-project python3 -m pytest -q -p no:cacheprovider infra/immigration-fiscal/validation_medical_2026_09_28/test_analysis.py
 ```
 
 In a managed worktree, run the main checkout's environment and pass the worktree
@@ -20,6 +20,7 @@ Inputs reused: pooled MEPS2016–2024 and HC-036 design from
 with `acquire.py`, which checks hashes and archive/content validity before writing.
 An input/source hash manifest is generated in `derived/audit.json`. All outputs and
 downloaded inputs are ignored; source scripts, design, report and tests are tracked.
+Update 2026-09-28: `derived/` outputs are now tracked in git; only the downloaded inputs in `_cache/` stay ignored.
 
 Guards reproduce the existing 2023 headline ratios, check 2022 codebook counts,
 preserve complete age-sex support, reject empty replicate domains, and enforce payer

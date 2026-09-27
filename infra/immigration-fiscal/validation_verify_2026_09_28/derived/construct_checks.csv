@@ -2,7 +2,7 @@ check,value,source,note
 gss_g4plus_rows_identical_across_two_frames,True,gss_baseline.json,english_only and all_available_languages G4+ rows are the same sample
 gss_distinct_comparisons,8,gss_baseline.json,
 gss_distinct_comparisons_model_wins,7,gss_baseline.json,
-snap_json_embeds_git_head,True,snap_loso.py line 113,"`git rev-parse HEAD` is written into the output, so any later commit changes the file"
+snap_json_embeds_git_head,False,snap_loso.py line 113,"`git rev-parse HEAD` is written into the output, so any later commit changes the file"
 schools_best_arm_district_weighted,asymmetric_trend,validation_schools scores.csv,log RMSE 0.1815
 schools_best_arm_initial_pupils_weighted,proportional,validation_schools scores.csv,log RMSE 0.1693
 medical_2022_hispanic_records_meps_mcbs,545 / 543,diagnostics.csv,

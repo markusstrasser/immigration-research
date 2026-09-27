@@ -1,0 +1,49 @@
+{
+  "inputs_sha256": {
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/pooled.parquet": "db5634372d3c951c19d2265e8f75ec9f58e72aaf7c42750b58b994dfca993392",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/design.py": "f122c9f6bcb3b089a74187479181adffe6cedc9b8743e1092523f27d1c8d3ca9",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/meps_pool.py": "4260b86aadb53742bbd8563f041d908eed231d277842e6a28f059fb7ddac5ced",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/fiscal_access_2026_09_20/_cache/CSPUF2023_Data.zip": "56937f1a623b77a85d5b401c1fdc00791098772c240073f70cbbbdff9db86d41",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/fiscal_access_2026_09_20/_cache/CSPUF2023_Codebook.txt": "865624a99f0cdbdca5c6903bc88c93e738046710ab1ade803abea9ca88712fed",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/validation_medical_2026_09_28/_cache/CSPUF2022_Data.zip": "d500832a0d832419f7c5ff23df56d91ee5348bc092d53f0dd7345e01fb699875",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/validation_medical_2026_09_28/_cache/CSPUF2022_Codebook.txt": "7b7da7f5f7ded9c5c424e5cd3805c4580179d20c0574348e70af052bce71655e",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/validation_medical_2026_09_28/analysis.py": "c59cae19db124067ddbef1f137aa0e94371819dbe779cdb1a13b90b2fe30ac06",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/validation_medical_2026_09_28/acquire.py": "894cce7012788fd87a182877e0ff162cb2b4291f382671159cec4ee3c8dcb2a0",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/validation_medical_2026_09_28/Design.md": "69e209fbb95f89dc5e31bb05b9a6d1f52207bed120585f1d611566d0c2fa6733",
+    "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip": "ad0edc2e34b28b90c8c89f43869f4e90338c93c97c0bfc2cad73140b96edd55a",
+    "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt": "d6c44b31306f1a8e7904d9540f06e2f18a8c0c3c66cc65a76823412dd7c4535f",
+    "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251cb.pdf": "9545a6f7f6b49740150491d2d5f8718b07f31ce206213fd8a942ad1fd06fa847",
+    "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251doc.pdf": "c96de6e7af6b2415ba1118037caaffbfc2582158b1b319ce89704ffcce0da7d5"
+  },
+  "surveys": {
+    "MEPS2023": {
+      "rows": 18919,
+      "weighted_n": 334530273.168012
+    },
+    "MCBS2023": {
+      "rows": 6920,
+      "weighted_n": 61369576.68439028
+    },
+    "MEPS2022": {
+      "rows": 22431,
+      "weighted_n": 333053242.837302
+    },
+    "MCBS2022": {
+      "rows": 6621,
+      "weighted_n": 59489208.617572516
+    }
+  },
+  "guards": [
+    "raw payer ratios reproduce prior 2023 results",
+    "MCBS2023 source SHA pinned",
+    "complete common four age-sex cells",
+    "no empty BRR replicate",
+    "MEPS PSU design preserves all sample PSUs and train-test overlap"
+  ],
+  "limitations": [
+    "tail cutoff uncertainty conditional",
+    "income concepts differ",
+    "MA payment-positive and enrollment are different proxies",
+    "2024 data previously examined; retrospective prediction only"
+  ]
+}

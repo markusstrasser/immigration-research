@@ -1,0 +1,195 @@
+{
+  "method": "Shared simplex weights across primitive budget lines; retrospective conditional donor-outcome prediction",
+  "units": "Source levels in nominal thousands by fiscal year; annual series retained, no constant-price cumulative total",
+  "source": "Pierson, Hand and Thompson (2015), doi:10.1371/journal.pone.0130119; pinned upstream S7",
+  "script_sha256": "65324a23ea2ff6d3e49e45054b27d9fc11d8c519fdaace2fcd040019f1cae13b",
+  "design_sha256": "a503844ca4827987205971707d890358a4ddf36f22e5796d7281be026451de8f",
+  "panels": [
+    {
+      "panel": "june30",
+      "donors": 28,
+      "dropped": [],
+      "input_sha256": "06ee12fb41abd2ceb9debe478bb0baf9d5982caa1af6fda7b90d661350cd0dca",
+      "preholdout_scores": [
+        {
+          "panel": "june30",
+          "weighting": "component_relative",
+          "phase": "pre_holdout",
+          "method": "joint",
+          "joint_normalized_rmse_pct": 39.747323559009246,
+          "largest_donor": "235082014",
+          "largest_weight": 0.4339666964020419,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 134817.60199083638,
+          "mean_prediction_minus_actual_thousand_nominal": -134459.27487412415,
+          "normalized_rmse_pct": 44.59121928190174,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "june30",
+          "weighting": "component_relative",
+          "phase": "pre_holdout",
+          "method": "donor_growth",
+          "joint_normalized_rmse_pct": 16.02117838125232,
+          "largest_donor": "235082014",
+          "largest_weight": 0.4339666964020419,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 22956.051982895868,
+          "mean_prediction_minus_actual_thousand_nominal": 16672.870341006103,
+          "normalized_rmse_pct": 7.592764837084272,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "june30",
+          "weighting": "component_relative",
+          "phase": "pre_holdout",
+          "method": "drop_largest",
+          "joint_normalized_rmse_pct": 44.24348411476967,
+          "largest_donor": "235082014",
+          "largest_weight": 0.4339666964020419,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 121405.0045386266,
+          "mean_prediction_minus_actual_thousand_nominal": -121166.42908367906,
+          "normalized_rmse_pct": 40.15497308482123,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "june30",
+          "weighting": "common_revenue_unit",
+          "phase": "pre_holdout",
+          "method": "joint",
+          "joint_normalized_rmse_pct": 26.646761640202566,
+          "largest_donor": "395051001",
+          "largest_weight": 0.333328964532301,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 25682.96176297947,
+          "mean_prediction_minus_actual_thousand_nominal": -25471.88122518027,
+          "normalized_rmse_pct": 8.494696262729533,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "june30",
+          "weighting": "common_revenue_unit",
+          "phase": "pre_holdout",
+          "method": "donor_growth",
+          "joint_normalized_rmse_pct": 16.02117838125232,
+          "largest_donor": "395051001",
+          "largest_weight": 0.333328964532301,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 22956.051982895868,
+          "mean_prediction_minus_actual_thousand_nominal": 16672.870341006103,
+          "normalized_rmse_pct": 7.592764837084272,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "june30",
+          "weighting": "common_revenue_unit",
+          "phase": "pre_holdout",
+          "method": "drop_largest",
+          "joint_normalized_rmse_pct": 32.23434694270849,
+          "largest_donor": "395051001",
+          "largest_weight": 0.333328964532301,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 30639.164779518393,
+          "mean_prediction_minus_actual_thousand_nominal": -26410.856270877528,
+          "normalized_rmse_pct": 10.133971344414576,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        }
+      ]
+    },
+    {
+      "panel": "full_timing_diagnostic",
+      "donors": 44,
+      "dropped": [
+        "85002601"
+      ],
+      "input_sha256": "f726cf1521054d9b592a4d2d9e5590cb5f6d1eb73b8deb57df40ce35c364c4f8",
+      "preholdout_scores": [
+        {
+          "panel": "full_timing_diagnostic",
+          "weighting": "component_relative",
+          "phase": "pre_holdout",
+          "method": "joint",
+          "joint_normalized_rmse_pct": 40.99921339267264,
+          "largest_donor": "235082014",
+          "largest_weight": 0.32873040552075616,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 137901.8791214751,
+          "mean_prediction_minus_actual_thousand_nominal": -137832.15372551695,
+          "normalized_rmse_pct": 45.61135074713737,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "full_timing_diagnostic",
+          "weighting": "component_relative",
+          "phase": "pre_holdout",
+          "method": "donor_growth",
+          "joint_normalized_rmse_pct": 16.258565041266905,
+          "largest_donor": "235082014",
+          "largest_weight": 0.32873040552075616,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 24336.8651540989,
+          "mean_prediction_minus_actual_thousand_nominal": 19985.278747261695,
+          "normalized_rmse_pct": 8.049471839695382,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "full_timing_diagnostic",
+          "weighting": "component_relative",
+          "phase": "pre_holdout",
+          "method": "drop_largest",
+          "joint_normalized_rmse_pct": 42.11473025605502,
+          "largest_donor": "235082014",
+          "largest_weight": 0.32873040552075616,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 126411.14707474223,
+          "mean_prediction_minus_actual_thousand_nominal": -126214.66826797806,
+          "normalized_rmse_pct": 41.810765772778694,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "full_timing_diagnostic",
+          "weighting": "common_revenue_unit",
+          "phase": "pre_holdout",
+          "method": "joint",
+          "joint_normalized_rmse_pct": 26.531598129847595,
+          "largest_donor": "395051001",
+          "largest_weight": 0.3255654761671403,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 25944.152769144694,
+          "mean_prediction_minus_actual_thousand_nominal": -25709.44034102555,
+          "normalized_rmse_pct": 8.581085764236656,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "full_timing_diagnostic",
+          "weighting": "common_revenue_unit",
+          "phase": "pre_holdout",
+          "method": "donor_growth",
+          "joint_normalized_rmse_pct": 16.258565041266905,
+          "largest_donor": "395051001",
+          "largest_weight": 0.3255654761671403,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 24336.8651540989,
+          "mean_prediction_minus_actual_thousand_nominal": 19985.278747261695,
+          "normalized_rmse_pct": 8.049471839695382,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        },
+        {
+          "panel": "full_timing_diagnostic",
+          "weighting": "common_revenue_unit",
+          "phase": "pre_holdout",
+          "method": "drop_largest",
+          "joint_normalized_rmse_pct": 29.652145550980585,
+          "largest_donor": "395051001",
+          "largest_weight": 0.3255654761671403,
+          "outcome": "Total_Expenditure",
+          "rmse_thousand_nominal": 30117.836184807973,
+          "mean_prediction_minus_actual_thousand_nominal": -28873.26260658239,
+          "normalized_rmse_pct": 9.961540761602118,
+          "normalizer_training_thousand_nominal": 302341.14285714284
+        }
+      ]
+    }
+  ]
+}
