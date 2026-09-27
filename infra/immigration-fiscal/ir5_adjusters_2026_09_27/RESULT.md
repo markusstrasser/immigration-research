@@ -1,3 +1,5 @@
+claude-opus-5-5
+
 **Verdict:** Under the central assumptions the operator's premise holds: a Mexican parent of a US citizen who
 adjusts inside the US costs less per admission than one who arrives new. The margin comes entirely from adjusters
 who would have stayed without the green card, and it vanishes where an unauthorized senior would draw little public
