@@ -28,7 +28,7 @@ Dollar amounts from different account vintages are not combined here.
 | National wages, administrative records | Income2023 CPS wages **$11,105.6bn** versus SSA compensation **$11,103.2bn**, a **+0.021%** difference. Income2024 comparison: **+2.25%**. | The overall wage scale is plausible. CPS wage-recipient counts are lower by 6.09%/5.27%; totals can agree while the distribution is wrong. Coverage and compensation definitions differ. |
 | School enrollment transport | Rates fitted excluding **both California and Texas** predicted their Mexican-origin pupil counts with residuals **+17k/+27k**, versus sampling SEs **69k/59k**. | A real geographic transport check. Texas other-resident pupils were underpredicted by 154k (SE69k), and administrative Hispanic counts still disagree. This checks pupil exposure, not spending avoidability. |
 | SNAP benefit allocation | California FY2024 Hispanic benefit-dollar share: **43.989% administrative QC versus 44.078% CPS**. | Useful local agreement, not proof of national ethnic accuracy. Unknown/coding problems invalidate many other states' ethnic comparisons; the administrative point estimate includes a treatment of unknown ethnicity. Hispanic is not Mexican-origin. |
-| Federal tax distribution | Income2023 modeled federal income tax before refundable credits is **13.73% below IRS**. The shortfall above $500k AGI is $489.8bn, partly offset by $200.2bn excess below it. | A failed distribution check. Applying the national discrepancy proportionally to Mexican-origin taxes is unsupported. Later income-gradient corrections address this class of discrepancy; matching the same target afterward is calibration. |
+| Federal tax distribution | Income2023 modeled federal income tax before refundable credits is **13.73% below IRS**. The shortfall above $500k AGI is $489.8bn, partly offset by $200.2bn excess below it. | A failed distribution check. Applying the national discrepancy proportionally to Mexican-origin taxes is unsupported. Later income-gradient corrections address this class of discrepancy [2026-09-28 (ladder 249): below $1M only; across all 19 bins the final key still misses IRS 2023 by 23.5pp, 8.4pp with $1M+ pooled, against 2.4pp for frozen IRS shares]; matching the same target afterward is calibration. |
 
 [DATA / CALCULATION: [matched-year taxes and survey earnings](../infra/immigration-fiscal/same_year_tax_2026_09_20/README.md),
 [2024 administrative checks](immigration-administrative-checks-2026-09-19.md),
@@ -111,7 +111,9 @@ schooling, expressed in percentage points; lower is better. [CALCULATION:
 The model adds predictive information in these three comparisons. But retaining
 the alternate frames matters: in the pre2021 English frame, second-generation
 error is **3.29pp versus 2.72pp**, so the model loses. It improves in eight of nine
-reported group/frame comparisons, which overlap and are **not nine independent
+reported group/frame comparisons [2026-09-28 (7a43e65): the fourth-plus rows of the English-only and
+all-languages frames are the same sample, so it is seven of eight distinct; the frozen baseline was
+chosen after the model's results were known, as the lane's README says], which overlap and are **not nine independent
 replications**. No survey-design uncertainty for the score difference is available.
 Mexican-origin G2 has only13 training respondents and fails the upstream cell-support
 rule in every frame; **there is no Mexican-specific pass**. Parent-link weighting
@@ -140,9 +142,13 @@ worsen geographic accuracy; a common correction needs evidence of transport.
 ## 3. Four follow-ups now executed
 
 Each lane saved its split, score and alternatives before calculating the new
-results. Most source outcomes had been inspected in earlier work, so these are
+results. [2026-09-28 (7a43e65): true of the prediction tests. The schools lane's NAEP join behind "46 of
+51" entered its design after the first prediction scores, and the medical unknown-birthplace
+sensitivity after scoring.] Most source outcomes had been inspected in earlier work, so these are
 retrospective tests. The newly acquired MCBS2022 file is a previously unused
-external measurement check. Neither label makes the entire account validated.
+external measurement check. [2026-09-28 (7a43e65): the file is new but the people partly are not.
+MCBS panels span years, and 41% of MEPS respondents aged 65+ in 2023 also answered in 2022 (46% of
+2024's in 2023).] Neither label makes the entire account validated.
 [METHOD: linked designs and results below]
 
 ### School spending, staffing and quality
@@ -243,7 +249,9 @@ training levels; it is neither a fiscal-loss percentage nor a confidence interva
 Deleting the largest donor does not rescue either fit. [CALCULATION:
 [joint Mariel test](../infra/immigration-fiscal/validation_mariel_2026_09_28/RESULT.md)]
 
-**This construction fails its own prediction check.** Accounting coherence is
+**This construction fails its own prediction check.** [2026-09-28 (7a43e65): it already misses its
+1970–76 training years by 29–34% normalized RMSE. Dade's federal revenue exceeds every donor's in 6 of 7
+of them, so the failure is one of fit.] Accounting coherence is
 necessary but insufficient. Positive post-event spending gaps remain model outputs
 with weak predictive support; they cannot validate a net causal school balance.
 A local balance would also require distinguishing outside grants from national
@@ -276,7 +284,9 @@ and designs; their estimates are not added to these validation scores. [LIMIT / 
 - The external-benchmark script's **“corroborates”** flag can mean an implied
   change no larger than $2bn, rather than a statistically close fit. This is a
   materiality rule; counting its green rows as validation successes overstates
-  the evidence. [CODE: `external_benchmarks_2026_09_24/benchmarks.py:27–35`]
+  the evidence. [2026-09-28 (7a43e65): rows without an implied effect use a second rule, an
+  external/account ratio within 0.8–1.25. Of 61 "corroborates" rows, 54 pass the $2bn rule and 7 the
+  ratio band; neither is a statistical test.] [CODE: `external_benchmarks_2026_09_24/benchmarks.py:27–35`]
 - Agreement on gross earnings or spending does not deliver the same percentage
   accuracy for a net balance obtained by subtracting large quantities. Nor do
   empirical back-tests settle whose welfare should count. [INFERENCE]
@@ -307,3 +317,4 @@ commands. No new causal coefficient or national total was adopted. [EXECUTION]
   claim. The [validation decision](../decisions/2026-09-28-component-validation-boundaries.md)
   records why predictive successes remain component-specific and why the failed
   joint Mariel construction is not carried into the fiscal account.
+- **2026-09-28, verification (7a43e65):** all 125 numbers match their lanes. Brackets qualify five readings: the tax corrections hold below $1M only (ladder 249), GSS is seven of eight distinct, design-before-scoring has two later additions, MEPS and MCBS respondents overlap across years, and the Mariel model fails in its training years. The "corroborates" rule has a second, ratio-band branch.

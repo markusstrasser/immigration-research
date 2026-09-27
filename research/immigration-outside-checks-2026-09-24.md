@@ -91,7 +91,11 @@ legal status (tax anchors) and state by status (hospital reports). The lane repr
 published receipt-key shares and 52 spending-key shares before any comparison [CALCULATION:
 `test_benchmarks.py`, 9 tests pass; the parent's re-run left all 18 derived files byte-identical].
 
-**CBO's income distribution corroborates most transfer and payroll keys.** On CBO's *Distribution of
+**CBO's income distribution corroborates most transfer and payroll keys.** [2026-09-28: "corroborates"
+means each key moves the main case by $2.1bn or less, a materiality rule rather than a statistical fit,
+and CBO's reweighting keeps the account's within-bin origin shares, so the agreement is not an
+independent replication ([validation memo](immigration-validation-and-backtesting-2026-09-28.md) §4;
+7a43e65).] On CBO's *Distribution of
 Household Income, 2022* (January 2026), the keys' income gradients for payroll taxes, federal
 excise, Social Security, Medicare, SNAP, SSI and other means-tested transfers each move the main case
 by $2.1bn or less, −$3.5bn / −$3.7bn together [SOURCE: CBO publication 61911, researcher tables;
