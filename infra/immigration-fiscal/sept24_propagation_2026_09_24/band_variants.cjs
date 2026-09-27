@@ -19,7 +19,16 @@
  *   sept24          main_case_2026_09_24 (the committed run)           -> derived/
  *   sept26          main_case_2026_09_26, the one-year scenario        -> --out-dir DIR only
  *   sept26_schools  main_case_schools_full_2026_09_26, schools at full
- *                   average cost, the main case (default)              -> ../sept26_propagation_2026_09_26/derived/
+ *                   average cost                                       -> ../sept26_propagation_2026_09_26/derived/
+ *   sept27          main_case_long_run_2026_09_27, the main case       -> ../sept27_propagation_2026_09_27/derived/
+ *                   (default)
+ * From September 27 a specification also carries its reading, the two long-run lines' responses, rental
+ * assistance, the enterprise receipt's response and the rate of the return on public capital, all from
+ * meta.responses and meta.capital_return; cost() is the package's evaluateFull() cost, the engine's cost
+ * plus the capital return keyed on the same evaluation, so a variant that moves a key moves the return
+ * with it. Two more runs of the corrected model sit beside the case, never in its band: the return at the
+ * reported 7% on every component, and option A (enterprises out), each built with the package's
+ * specsFor() switch as the case lane builds them.
  * Gates (exit 1, nothing written): every variant on the uncorrected model reproduces the September 23
  * file (1e-4, its rounding); the corrected model reproduces the adopted September 24 band (1e-9 against
  * summary.json); the payload moves raw coding and use by the same amount (1e-9). On a later case: its
@@ -27,8 +36,10 @@
  * MAIN_SPECS; the adopted variant reproduces the case's band and, on the uncorrected model,
  * uncorrected_at_adopted_responses (1e-9 against summary.json, 1e-4 against main_case_bands.csv); each
  * variant moves every specification by the same amount on the uncorrected and corrected model (1e-9).
+ * From September 27 the 7% and option A runs reproduce summary.json's beside_the_account bands (1e-9) and
+ * main_case_bands.csv's capital_return_at_7pct and enterprises_out_option_a rows (1e-4).
  *
- * Run from anywhere: node band_variants.cjs [--case sept24|sept26|sept26_schools] [--out-dir DIR]
+ * Run from anywhere: node band_variants.cjs [--case sept24|sept26|sept26_schools|sept27] [--out-dir DIR]
  *   -> DIR/band_variants.csv, DIR/band_variants.json
  */
 "use strict";
@@ -41,6 +52,8 @@ const CASES = {
   sept26: { lane: "main_case_2026_09_26", out: null },
   sept26_schools: { lane: "main_case_schools_full_2026_09_26",
     out: path.join(__dirname, "..", "sept26_propagation_2026_09_26", "derived") },
+  sept27: { lane: "main_case_long_run_2026_09_27",
+    out: path.join(__dirname, "..", "sept27_propagation_2026_09_27", "derived") },
 };
 const argv = process.argv.slice(2);
 function opt(name, dflt) {
@@ -49,7 +62,7 @@ function opt(name, dflt) {
   if (!argv[i + 1] || argv[i + 1].startsWith("--")) { console.error(`${name} needs a value`); process.exit(2); }
   return argv[i + 1];
 }
-const CASE = opt("--case", "sept26_schools");
+const CASE = opt("--case", "sept27");
 if (!CASES[CASE]) { console.error(`unknown --case ${CASE}; one of ${Object.keys(CASES).join(", ")}`); process.exit(2); }
 const OUT = opt("--out-dir", null) ? path.resolve(opt("--out-dir")) : CASES[CASE].out;
 if (!OUT) { console.error(`--case ${CASE} writes only to --out-dir DIR`); process.exit(2); }
@@ -66,6 +79,9 @@ function gate(label, ok, detail) {
   if (!ok) failures += 1;
 }
 const near = (a, b, tol) => Math.abs(a - b) < tol;
+// JSON with every object's keys sorted: specifications compare by value, whatever order built them.
+const canon = (x) => JSON.stringify(x, (k, v) => (v && typeof v === "object" && !Array.isArray(v)
+  ? Object.fromEntries(Object.keys(v).sort().map((kk) => [kk, v[kk]])) : v));
 const f4 = (b) => `${b[0].toFixed(4)}–${b[1].toFixed(4)}`;
 const sha = (rel) => crypto.createHash("sha256").update(fs.readFileSync(path.join(FISCAL, rel))).digest("hex");
 
@@ -125,16 +141,35 @@ if (LATER) {
   payload = readJson(SOURCES.case_corrections);
   summary = readJson(SOURCES.case_summary);
   const r = payload.meta.responses;
+  const cap = payload.meta.capital_return || null;   // September 27 on
   gate("the payload's meta.responses equal the case's summary.json responses", JSON.stringify(r) === JSON.stringify(summary.responses));
-  const specs = P24.MAIN_SPECS.map((s) => ({ ...s,
-    gg: s.gg === P.GG24[0] ? r.general_government.low : r.general_government.high,
-    school: s.school === P.SCHOOL24[0] ? r.school.growth : r.school.decline }));
-  gate("the specifications at meta.responses equal the package's MAIN_SPECS", JSON.stringify(specs) === JSON.stringify(P.MAIN_SPECS),
-    `general government ${r.general_government.low}/${r.general_government.high}, schools ${r.school.growth}/${r.school.decline}`);
+  const specs = P24.MAIN_SPECS.map((s) => {
+    const low = s.gg === P.GG24[0];
+    const spec = { ...s, gg: low ? r.general_government.low : r.general_government.high,
+      school: s.school === P.SCHOOL24[0] ? r.school.growth : r.school.decline };
+    if (!cap) return spec;
+    const reading = low ? "low" : "high";
+    return { ...spec, reading, rate: cap.rates[reading], long_run: r[P.LR_LINES[0]].variant, enterprises: cap.enterprises,
+      line_responses: { ...Object.fromEntries(P.LR_LINES.map((id) => [id, r[id][reading]])),
+        [P.RENTAL]: r[P.RENTAL][reading], [r[P.ENTERPRISE_LINE].override]: r[P.ENTERPRISE_LINE][reading] } };
+  });
+  gate("the specifications at meta.responses equal the package's MAIN_SPECS", canon(specs) === canon(P.MAIN_SPECS),
+    `general government ${r.general_government.low}/${r.general_government.high}, schools ${r.school.growth}/${r.school.decline}` +
+    (cap ? `; long-run lines, rental assistance, the enterprise receipt and the capital return (${cap.rates.low}/${cap.rates.high}, option ${cap.enterprises}) from meta` : ""));
   published = {};
   csvRows(SOURCES.case_bands).filter((x) => x.profile === P.MAIN_PROFILE)
     .forEach((x) => { published[x.variant] = [Number(x.cost_low_bn), Number(x.cost_high_bn)]; });
-  RUNS.push([`${CASE}_uncorrected`, MODEL, specs], [CASE, Engine.applyCorrections(MODEL, payload), specs]);
+  const corrected = Engine.applyCorrections(MODEL, payload);
+  RUNS.push([`${CASE}_uncorrected`, MODEL, specs], [CASE, corrected, specs]);
+  if (cap) {
+    // Beside the case, never in its band: the reported rate on every component, and option A. The package's
+    // own switches build their specifications (main_case.cjs runs7 and optionARuns).
+    const rate = cap.rates.reported;
+    const specs7 = P.specsFor({ rates: { low: rate, high: rate } });
+    gate(`the ${rate} specifications differ from the case's in the rate alone`,
+      canon(specs7) === canon(specs.map((s) => ({ ...s, rate }))));
+    RUNS.push([`${CASE}_capital_at_7pct`, corrected, specs7], [`${CASE}_enterprises_out_option_a`, corrected, P.specsFor({ enterprises: "A" })]);
+  }
 }
 
 const rows = [];
@@ -179,6 +214,15 @@ if (LATER) {
     gate(`${name} moves every specification by the same amount on the uncorrected and corrected ${CASE} model`, gap < 1e-9,
       `max gap ${gap.toExponential(1)}`);
   }
+  if (payload.meta.capital_return) {
+    for (const [run, key, row] of [[`${CASE}_capital_at_7pct`, "rate_7pct", "capital_return_at_7pct"],
+      [`${CASE}_enterprises_out_option_a`, "enterprises_out_option_A", "enterprises_out_option_a"]]) {
+      const b = bands[`${run}|adopted`], want = summary.beside_the_account[key].band_bn;
+      gate(`${run} reproduces ${LANE} beside_the_account.${key} (summary.json, 1e-9)`, near(b[0], want[0], 1e-9) && near(b[1], want[1], 1e-9), f4(b));
+      gate(`${run} reproduces ${LANE} main_case_bands.csv ${row} (1e-4)`,
+        near(b[0], published[row][0], 1e-4) && near(b[1], published[row][1], 1e-4), `${f4(b)} vs ${f4(published[row])}`);
+    }
+  }
 }
 
 if (failures) { console.error(`${failures} gate(s) failed; nothing written`); process.exit(1); }
@@ -193,6 +237,14 @@ if (LATER) {
       sept24: "main_case_2026_09_24 corrections at 0.59/0.84 and 0.63/0.66",
       [`${CASE}_uncorrected`]: "uncorrected model at the responses in the payload's meta.responses",
       [CASE]: `${LANE} corrections at the responses in the payload's meta.responses` } });
+  if (payload.meta.capital_return) {
+    Object.assign(meta.runs, {
+      [CASE]: `${LANE} corrections at the responses in meta.responses, plus the return on public capital in meta.capital_return (package evaluateFull)`,
+      [`${CASE}_uncorrected`]: "uncorrected model at the responses in meta.responses, plus the return on public capital keyed on its own evaluation",
+      [`${CASE}_capital_at_7pct`]: `beside the case, never in its band: the return at the reported ${payload.meta.capital_return.rates.reported} on every component (package specsFor rates)`,
+      [`${CASE}_enterprises_out_option_a`]: "beside the case, never in its band: option A, no enterprise capital and the enterprise_surplus receipt at 0 (package specsFor enterprises A)" });
+    meta.capital_return = { rates: payload.meta.capital_return.rates, enterprises: payload.meta.capital_return.enterprises };
+  }
 }
 meta.sources_sha256 = Object.fromEntries(Object.values(SOURCES).map((rel) => [rel, sha(rel)]));
 fs.writeFileSync(path.join(OUT, "band_variants.json"), JSON.stringify(meta, null, 1) + "\n");
