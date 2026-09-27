@@ -312,3 +312,17 @@ adjustment split by country (not published); the 2020 ACS 1-year PUMS (not on th
 Mexico-specific childcare labor-supply estimate (none found); SSA tables of SSI by naturalised
 former IR-5 parents (not found). `reads/offset_reads.md` is the researcher's source record;
 `_cache/` (ignored) holds raw pulls and `acs_agent_result.md`.
+
+## Revision 2026-09-27 (evening): the Medicare residence clock for adjusters
+
+A conceptual audit (3db388d, relayed by the 1c session) flagged `per_admission.py`'s docstring,
+"five years' continuous LPR residence" to buy into Medicare without 40 quarters. SSA POMS
+GN 00303.800 A.4 reads: "the alien must have continuously resided in the U.S. for the 5-year period
+immediately preceding the month of effective enrollment … The alien need not have had LAPR status
+during this 5-year period" [SOURCE: https://secure.ssa.gov/poms.nsf/lnx/0200303800, fetched
+2026-09-27]. For a new arrival, which is what `per_admission.csv` values, residence and LPR status
+start together, so no number here changes. For a parent adjusting inside the US after 5+ years of
+residence, the Medicare buy-in is available from the month of adjustment. The five-year bars on SSI
+and federal Medicaid (8 U.S.C. 1613) run from the date the person gained qualified status
+[TRAINING-DATA; not re-read]. This belongs to the adjuster (eligibility-change) variant, which is not
+computed. Ladder 235 already reads the per-admission values as upper bounds for adjusters.
