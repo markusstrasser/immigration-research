@@ -1,0 +1,74 @@
+metro,dhs_figure,source,geography,month,measure,value,abs_gap_to_dhs,url
+"Atlanta, GA",-3.20,Realtor.com,metro,2026-08,0-2 bedroom median asking rent YoY,-1.80,1.40,https://www.realtor.com/research/august-2026-rent/
+"Atlanta, GA",-3.20,Zumper,city,2026-08,one-bedroom median YoY,0.60,3.80,https://www.zumper.com/rent-research/national-rent-report
+"Atlanta, GA",-3.20,Apartments.com (CoStar),city,2026-08,average rent YoY,1.60,4.80,https://www.apartments.com/blog/apartments.com-national-rent-trends-report
+"Atlanta, GA",-3.20,Zillow ZORI (this lane),metro,2026-07,ZORI all homes YoY,2.02,5.22,derived/metro_panel.csv
+"Atlanta, GA",-3.20,Zillow ZORI (this lane),metro,2026-08,ZORI all homes YoY,2.02,5.22,derived/metro_panel.csv
+"Atlanta, GA",-3.20,Zumper,city,2026-08,two-bedroom median YoY,5.00,8.20,https://www.zumper.com/rent-research/national-rent-report
+"Austin, TX",-4.30,Apartment List,metro,2026-08,median new-lease rent YoY,-2.90,1.40,https://www.apartmentlist.com/research/national-rent-data
+"Austin, TX",-4.30,Yardi Matrix,metro,2026-08,multifamily advertised rent YoY,-2.80,1.50,https://yieldpro.com/2026/09/yardi-matrix-advertised-rents-still-moving-higher-in-august/
+"Austin, TX",-4.30,Realtor.com,metro,2026-08,0-2 bedroom median asking rent YoY,-2.50,1.80,https://www.realtor.com/research/august-2026-rent/
+"Austin, TX",-4.30,Zillow ZORI (this lane),metro,2026-07,ZORI all homes YoY,-0.93,3.37,derived/metro_panel.csv
+"Austin, TX",-4.30,Apartments.com (CoStar),city,2026-08,average rent YoY,-0.10,4.20,https://www.apartments.com/blog/apartments.com-national-rent-trends-report
+"Austin, TX",-4.30,Zillow ZORI (this lane),metro,2026-08,ZORI all homes YoY,-0.02,4.28,derived/metro_panel.csv
+"Austin, TX",-4.30,Zumper,city,2026-08,one-bedroom median YoY,-16.60,12.30,https://www.zumper.com/rent-research/national-rent-report
+"Austin, TX",-4.30,Zumper,city,2026-08,two-bedroom median YoY,-19.10,14.80,https://www.zumper.com/rent-research/national-rent-report
+"Dallas, TX",-3.00,Realtor.com,metro,2026-08,0-2 bedroom median asking rent YoY,-2.40,0.60,https://www.realtor.com/research/august-2026-rent/
+"Dallas, TX",-3.00,Apartment List,city,2026-08,median new-lease rent YoY,-1.50,1.50,https://www.apartmentlist.com/research/national-rent-data
+"Dallas, TX",-3.00,Yardi Matrix,metro,2026-08,multifamily advertised rent YoY,-1.40,1.60,https://yieldpro.com/2026/09/yardi-matrix-advertised-rents-still-moving-higher-in-august/
+"Dallas, TX",-3.00,Apartments.com (CoStar),city,2026-08,average rent YoY,-0.10,2.90,https://www.apartments.com/blog/apartments.com-national-rent-trends-report
+"Dallas, TX",-3.00,Zillow ZORI (this lane),metro,2026-07,ZORI all homes YoY,0.10,3.10,derived/metro_panel.csv
+"Dallas, TX",-3.00,Zillow ZORI (this lane),metro,2026-08,ZORI all homes YoY,0.43,3.43,derived/metro_panel.csv
+"Dallas, TX",-3.00,Zumper,city,2026-08,one-bedroom median YoY,-13.00,10.00,https://www.zumper.com/rent-research/national-rent-report
+"Dallas, TX",-3.00,Zumper,city,2026-08,two-bedroom median YoY,-13.40,10.40,https://www.zumper.com/rent-research/national-rent-report
+"Houston, TX",-3.00,Realtor.com,metro,2026-08,0-2 bedroom median asking rent YoY,-2.70,0.30,https://www.realtor.com/research/august-2026-rent/
+"Houston, TX",-3.00,Apartment List,city,2026-08,median new-lease rent YoY,-2.60,0.40,https://www.apartmentlist.com/research/national-rent-data
+"Houston, TX",-3.00,Yardi Matrix,metro,2026-08,multifamily advertised rent YoY,-1.70,1.30,https://yieldpro.com/2026/09/yardi-matrix-advertised-rents-still-moving-higher-in-august/
+"Houston, TX",-3.00,Apartments.com (CoStar),metro,2026-08,multifamily average asking rent YoY,-1.20,1.80,https://costargroup-prod.acquia.dshrp.com/press-room/2026/apartmentscom-releases-multifamily-rent-growth-report-august-2026
+"Houston, TX",-3.00,Apartments.com (CoStar),city,2026-08,average rent YoY,-1.00,2.00,https://www.apartments.com/blog/apartments.com-national-rent-trends-report
+"Houston, TX",-3.00,Zumper,city,2026-08,two-bedroom median YoY,-5.40,2.40,https://www.zumper.com/rent-research/national-rent-report
+"Houston, TX",-3.00,Zillow ZORI (this lane),metro,2026-07,ZORI all homes YoY,-0.06,2.94,derived/metro_panel.csv
+"Houston, TX",-3.00,Zillow ZORI (this lane),metro,2026-08,ZORI all homes YoY,0.04,3.04,derived/metro_panel.csv
+"Houston, TX",-3.00,Zumper,city,2026-08,one-bedroom median YoY,-14.60,11.60,https://www.zumper.com/rent-research/national-rent-report
+"Miami, FL",-2.60,Zumper,city,2026-08,one-bedroom median YoY,-2.30,0.30,https://www.zumper.com/rent-research/national-rent-report
+"Miami, FL",-2.60,Realtor.com,metro,2026-07,0-2 bedroom median asking rent YoY,-1.30,1.30,https://www.realtor.com/research/july-2026-rent/
+"Miami, FL",-2.60,Realtor.com,metro,2026-08,0-2 bedroom median asking rent YoY,-1.00,1.60,https://www.realtor.com/research/august-2026-rent/
+"Miami, FL",-2.60,Zumper,city,2026-08,two-bedroom median YoY,-4.90,2.30,https://www.zumper.com/rent-research/national-rent-report
+"Miami, FL",-2.60,Zillow ZORI (this lane),metro,2026-07,ZORI all homes YoY,1.38,3.98,derived/metro_panel.csv
+"Miami, FL",-2.60,Apartments.com (CoStar),city,2026-08,average rent YoY,1.60,4.20,https://www.apartments.com/blog/apartments.com-national-rent-trends-report
+"Miami, FL",-2.60,Zillow ZORI (this lane),metro,2026-08,ZORI all homes YoY,1.60,4.20,derived/metro_panel.csv
+"Nashville, TN",-5.30,Realtor.com,metro,2026-07,0-2 bedroom median asking rent YoY,-3.90,1.40,https://www.realtor.com/research/july-2026-rent/
+"Nashville, TN",-5.30,Apartment List,city,2026-07,median new-lease rent YoY,-3.60,1.70,https://www.apartmentlist.com/research/nashville-is-still-a-renters-market-but-it-may-be-turning-a-corner
+"Nashville, TN",-5.30,Realtor.com,metro,2026-08,0-2 bedroom median asking rent YoY,-2.90,2.40,https://www.realtor.com/research/august-2026-rent/
+"Nashville, TN",-5.30,Yardi Matrix,metro,2026-08,multifamily advertised rent YoY,-1.10,4.20,https://yieldpro.com/2026/09/yardi-matrix-advertised-rents-still-moving-higher-in-august/
+"Nashville, TN",-5.30,RentCafe (Yardi),city,2026-08,average rent all rentals YoY,-0.78,4.52,https://www.rentcafe.com/average-rent-market-trends/us/tn/nashville/
+"Nashville, TN",-5.30,Apartments.com (CoStar),city,2026-08,average rent YoY,-0.60,4.70,https://www.apartments.com/blog/apartments.com-national-rent-trends-report
+"Nashville, TN",-5.30,Zumper,city,2026-08,two-bedroom median YoY,-0.60,4.70,https://www.zumper.com/rent-research/national-rent-report
+"Nashville, TN",-5.30,Zumper,city,2026-08,one-bedroom median YoY,-10.10,4.80,https://www.zumper.com/rent-research/national-rent-report
+"Nashville, TN",-5.30,Zillow ZORI (this lane),metro,2026-07,ZORI all homes YoY,0.50,5.80,derived/metro_panel.csv
+"Nashville, TN",-5.30,Zillow ZORI (this lane),metro,2026-08,ZORI all homes YoY,0.80,6.10,derived/metro_panel.csv
+"New Orleans, LA",-8.00,Zumper,city,2026-08,two-bedroom median YoY,-8.40,0.40,https://www.zumper.com/rent-research/national-rent-report
+"New Orleans, LA",-8.00,Zumper,city,2026-08,one-bedroom median YoY,-4.70,3.30,https://www.zumper.com/rent-research/national-rent-report
+"New Orleans, LA",-8.00,RentCafe (Yardi),city,2026-06,average rent all rentals YoY,-2.52,5.48,https://www.rentcafe.com/average-rent-market-trends/us/la/new-orleans/
+"New Orleans, LA",-8.00,Zillow ZORI (this lane),metro,2026-07,ZORI all homes YoY,1.22,9.22,derived/metro_panel.csv
+"New Orleans, LA",-8.00,Zillow ZORI (this lane),metro,2026-08,ZORI all homes YoY,1.40,9.40,derived/metro_panel.csv
+"Phoenix, AZ",-4.20,Apartment List,city,2026-08,median new-lease rent YoY,-3.50,0.70,https://www.apartmentlist.com/research/national-rent-data
+"Phoenix, AZ",-4.20,Zumper,city,2026-08,two-bedroom median YoY,-3.30,0.90,https://www.zumper.com/rent-research/national-rent-report
+"Phoenix, AZ",-4.20,Realtor.com,metro,2026-08,0-2 bedroom median asking rent YoY,-3.20,1.00,https://www.realtor.com/research/august-2026-rent/
+"Phoenix, AZ",-4.20,Zumper,city,2026-08,one-bedroom median YoY,-2.50,1.70,https://www.zumper.com/rent-research/national-rent-report
+"Phoenix, AZ",-4.20,Yardi Matrix,metro,2026-08,multifamily advertised rent YoY,-1.60,2.60,https://yieldpro.com/2026/09/yardi-matrix-advertised-rents-still-moving-higher-in-august/
+"Phoenix, AZ",-4.20,Apartments.com (CoStar),metro,2026-08,multifamily average asking rent YoY,-1.20,3.00,https://costargroup-prod.acquia.dshrp.com/press-room/2026/apartmentscom-releases-multifamily-rent-growth-report-august-2026
+"Phoenix, AZ",-4.20,Apartments.com (CoStar),city,2026-08,average rent YoY,-0.70,3.50,https://www.apartments.com/blog/apartments.com-national-rent-trends-report
+"Phoenix, AZ",-4.20,Zillow ZORI (this lane),metro,2026-07,ZORI all homes YoY,0.37,4.57,derived/metro_panel.csv
+"Phoenix, AZ",-4.20,Zillow ZORI (this lane),metro,2026-08,ZORI all homes YoY,0.72,4.92,derived/metro_panel.csv
+"San Antonio, TX",-4.80,Apartment List,city,2026-08,median new-lease rent YoY,-4.90,0.10,https://www.apartmentlist.com/research/national-rent-data
+"San Antonio, TX",-4.80,Apartment List,metro,2026-08,median new-lease rent YoY,-5.10,0.30,https://www.apartmentlist.com/research/national-rent-data
+"San Antonio, TX",-4.80,Zumper,city,2026-08,two-bedroom median YoY,-4.50,0.30,https://www.zumper.com/rent-research/national-rent-report
+"San Antonio, TX",-4.80,Realtor.com,metro,2026-08,0-2 bedroom median asking rent YoY,-3.80,1.00,https://www.realtor.com/research/august-2026-rent/
+"San Antonio, TX",-4.80,RealPage,metro,2026-08,same-store effective asking rent YoY,-3.70,1.10,https://www.realpage.com/analytics/august-2026-us-data-update/
+"San Antonio, TX",-4.80,Apartments.com (CoStar),metro,2026-08,multifamily average asking rent YoY,-2.20,2.60,https://costargroup-prod.acquia.dshrp.com/press-room/2026/apartmentscom-releases-multifamily-rent-growth-report-august-2026
+"San Antonio, TX",-4.80,Zillow ZORI (this lane),metro,2026-07,ZORI all homes YoY,-1.74,3.06,derived/metro_panel.csv
+"San Antonio, TX",-4.80,Apartments.com (CoStar),city,2026-08,average rent YoY,-1.60,3.20,https://www.apartments.com/blog/apartments.com-national-rent-trends-report
+"San Antonio, TX",-4.80,RentCafe (Yardi),city,2026-07,average rent all rentals YoY,-1.59,3.21,https://www.rentcafe.com/average-rent-market-trends/us/tx/san-antonio/
+"San Antonio, TX",-4.80,Zillow ZORI (this lane),metro,2026-08,ZORI all homes YoY,-1.27,3.53,derived/metro_panel.csv
+"San Antonio, TX",-4.80,Zumper,city,2026-08,one-bedroom median YoY,-8.60,3.80,https://www.zumper.com/rent-research/national-rent-report

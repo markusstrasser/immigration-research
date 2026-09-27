@@ -1,0 +1,28 @@
+gate,ok,detail
+county_aor_coverage,True,"0 counties without an AOR, population 0"
+state_known_y2024,True,0.9111 of 109936 arrests carry a US state
+aor_known_y2024,True,0.9802 of arrests carry a mapped AOR
+state_known_y2025,True,0.9763 of 316304 arrests carry a US state
+aor_known_y2025,True,0.9980 of arrests carry a mapped AOR
+state_known_w2526,True,0.9932 of 424460 arrests carry a US state
+aor_known_w2526,True,0.9977 of arrests carry a mapped AOR
+arrests_reach_july_2026,True,July 2026 arrests 49091
+cbsa_county_state,True,0 CBSA counties lack a state
+zori_last_month,True,ZORI last month 2026-08
+zillow_cbsa_unique,True,0 Zillow metros share a CBSA: []
+"match_San Antonio, TX",True,"San Antonio, TX -> 41700"
+"match_Austin, TX",True,"Austin, TX -> 12420"
+"match_Dallas, TX",True,"Dallas, TX -> 19100"
+"match_Houston, TX",True,"Houston, TX -> 26420"
+"match_Miami, FL",True,"Miami, FL -> 33100"
+"match_Phoenix, AZ",True,"Phoenix, AZ -> 38060"
+"match_Atlanta, GA",True,"Atlanta, GA -> 12060"
+"match_Nashville, TN",True,"Nashville, TN -> 34980"
+"match_New Orleans, LA",True,"New Orleans, LA -> 35380"
+"match_Denver, CO",True,"Denver, CO -> 19740"
+main_sample_size,True,main sample N=194
+supply_coverage_main,True,0 MSAs >=250k with complete ZORI lack supply: []
+supply_by_period_coverage_main,True,0 main-sample MSAs lack a period supply measure: []
+"zori_matches_zillow_report_San Antonio, TX",True,computed -1.268 vs published -1.3
+"zori_matches_zillow_report_Nashville, TN",True,computed 0.802 vs published 0.8
+"zori_matches_zillow_report_New Orleans, LA",True,computed 1.400 vs published 1.4
