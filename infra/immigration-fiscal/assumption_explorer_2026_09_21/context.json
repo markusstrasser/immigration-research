@@ -136,7 +136,7 @@
     }
    ],
    "relation_to_headline": "inside_headline",
-   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the one-year scenario this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group.",
+   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the first-year budget response this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 2; research/immigration-complete-annual-account-2026-09-20.md § Where the coefficients come from; infra/immigration-fiscal/main_case_2026_09_23/RESULT.md; infra/immigration-fiscal/main_case_2026_09_26/RESULT.md § The responses; infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md",
    "population": "same union; the response applies to nationally assigned service budgets",
    "comparator": "full proportional-service benchmark",
@@ -301,7 +301,7 @@
     }
    ],
    "relation_to_headline": "different_object",
-   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the one-year scenario this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group.",
+   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the first-year budget response this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group.",
    "memo": "research/immigration-complete-annual-account-2026-09-20.md § Complete accounting, before any causal interpretation",
    "population": "same union",
    "comparator": "assignment convention only",
@@ -1067,7 +1067,7 @@
     }
    ],
    "relation_to_headline": "different_object",
-   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the one-year scenario this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group.",
+   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the first-year budget response this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group.",
    "memo": "research/immigration-complete-annual-account-2026-09-20.md § Complete accounting; research/immigration-objections-faq-2026-09-21.md § 6",
    "population": "40.896574m union against the 340.110988m full resident denominator",
    "comparator": "average resident of the same domestic account, per-capita-cost convention",
@@ -1597,7 +1597,7 @@
     }
    ],
    "relation_to_headline": "inside_headline",
-   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the one-year scenario this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group.",
+   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the first-year budget response this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 11; research/immigration-complete-annual-account-2026-09-20.md § Units, population and comparison",
    "population": "40.896574m resident stock, most of them US-born citizens",
    "comparator": "no reference group; a stationary comparison",
@@ -2287,10 +2287,10 @@
    "id": "headline_cbo_informed_net_cost",
    "faq_entry": null,
    "objection": null,
-   "finding": "The explorer runs the September 26 case, now the one-year scenario; the adopted main case charges schools at their full average cost ($258–292bn) and is not yet in the explorer. In the September 26 case the complete account gives $200.9–245.7bn a year of conditional net cost to other US residents. It moved from the September 24 case ($200.9–246.3bn) by two corrections that nearly cancel. Removing a group that is 12% of residents and 17.5% of pupils saves more than the marginal elasticities imply, so general government responds at 0.60–0.85 and schools at 65–68% of average cost (+$4.1 / +$3.4bn). The consumption key, corrected for saving and remittances, gives the group a larger share of consumption taxes (−$4.1bn). The September 24 case had built the dataset audit, the pooled-MEPS medical figure with long-term care by use, care and household services, shelter keying and the four outside checks into the case adopted September 23 ($203.2–249.6bn), which charges justice and uncompensated hospital care by use. The group's taxes had been overstated (+$48.7 / +$50.3bn) and so had its keyed spending (−$51.0 / −$53.6bn). As published September 20, with general government fixed and justice charged per head, it was $165.1–197.4bn. Defense, interest on existing debt and business subsidies stay at zero response.",
+   "finding": "The explorer runs the September 26 case, now the first-year budget response; the adopted main case charges schools at their full average cost ($258–292bn) and is not yet in the explorer. In the September 26 case the complete account gives $200.9–245.7bn a year of conditional net cost to other US residents. It moved from the September 24 case ($200.9–246.3bn) by two corrections that nearly cancel. Removing a group that is 12% of residents and 17.5% of pupils saves more than the marginal elasticities imply, so general government responds at 0.60–0.85 and schools at 65–68% of average cost (+$4.1 / +$3.4bn). The consumption key, corrected for saving and remittances, gives the group a larger share of consumption taxes (−$4.1bn). The September 24 case had built the dataset audit, the pooled-MEPS medical figure with long-term care by use, care and household services, shelter keying and the four outside checks into the case adopted September 23 ($203.2–249.6bn), which charges justice and uncompensated hospital care by use. The group's taxes had been overstated (+$48.7 / +$50.3bn) and so had its keyed spending (−$51.0 / −$53.6bn). As published September 20, with general government fixed and justice charged per head, it was $165.1–197.4bn. Defense, interest on existing debt and business subsidies stay at zero response.",
    "values": [
     {
-     "label": "September 26 case, the one-year scenario",
+     "label": "September 26 case, the first-year budget response",
      "value": "200.9-245.7",
      "unit": "$bn/year",
      "se": null,
@@ -2326,7 +2326,7 @@
     }
    ],
    "relation_to_headline": "inside_headline",
-   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the one-year scenario this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder 161). Since September 25 it has its own generation split, computed on the account with no reference group (ladder 224).",
+   "combining_rule": "The $201–246bn is the complete account's change for all other residents in the September 26 case, the first-year budget response this page runs (the same at rounding on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder 161). Since September 25 it has its own generation split, computed on the account with no reference group (ladder 224).",
    "memo": "decisions/2026-09-26-main-case-schools-full-cost.md; infra/immigration-fiscal/main_case_2026_09_26/RESULT.md; decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md; infra/immigration-fiscal/main_case_2026_09_24/RESULT.md; decisions/2026-09-24-main-case-audit-and-outside-checks.md; infra/immigration-fiscal/main_case_2026_09_23/RESULT.md; research/immigration-complete-annual-account-2026-09-20.md § Executed category-specific service responses",
    "population": "40.896574m observed CPS ASEC 2025 Mexican-origin civilian-household residents, all ages, schooling and observed descendants",
    "comparator": "no reference group; the change for all other US residents, other immigrants included",
@@ -2610,7 +2610,7 @@
   {
    "id": "cr_two_anchors",
    "file_line": "research/immigration-objections-faq-2026-09-21.md:19-29",
-   "text": "**The two anchors are different objects.** The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on separate partial accounts. The $258–292bn (entries 2, 4, 11) is the complete account's change for all other residents in the main case adopted September 26, which charges schools at their full average cost ($201–246bn with CBO's one-year school response, as on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder 161). Since September 25 it has its own generation split, computed on the account with no reference group (ladder 224). They agree in direction. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total."
+   "text": "**The two anchors are different objects.** The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on separate partial accounts. The $258–292bn (entries 2, 4, 11) is the complete account's change for all other residents in the main case adopted September 26, which charges schools at their full average cost ($201–246bn with CBO's first-year school response, as on September 24; $203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder 161). Since September 25 it has its own generation split, computed on the account with no reference group (ladder 224). They agree in direction. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total."
   },
   {
    "id": "cr_offsets_do_not_add",
