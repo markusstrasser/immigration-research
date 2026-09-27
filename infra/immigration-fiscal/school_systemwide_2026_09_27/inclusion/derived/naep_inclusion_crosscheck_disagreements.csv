@@ -1,0 +1,602 @@
+check,subject,grade,year,jurisdiction,field,primary,other,abs_diff,note
+tdw_vs_reportcard,mathematics,4,2003,Colorado,el_excluded_pct_all,0.7807,1.2,0.4193,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,mathematics,4,2003,Colorado,sd_excluded_pct_all,1.6087,3.2,1.5913,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,mathematics,4,2003,Connecticut,el_excluded_pct_all,1.2202,0.8,0.4202,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,mathematics,4,2003,Connecticut,sd_excluded_pct_all,3.2481,1.6,1.6481,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,mathematics,4,2003,Nebraska,el_excluded_pct_all,1.0685,0.6,0.4685,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,mathematics,4,2003,Nebraska,sd_excluded_pct_all,2.3935,2.6,0.2065,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,mathematics,4,2003,Nevada,el_excluded_pct_all,2.4776,1.0,1.4776,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,mathematics,4,2003,Nevada,sd_excluded_pct_all,2.583,1.6,0.983,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,mathematics,4,2003,New Hampshire,el_excluded_pct_all,0.6369,1.1,0.4631,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,mathematics,4,2003,New Hampshire,sd_excluded_pct_all,2.5607,2.4,0.1607,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,mathematics,4,2003,New Jersey,el_excluded_pct_all,0.9831,2.5,1.5169,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,mathematics,4,2003,New Jersey,sd_excluded_pct_all,1.6103,2.6,0.9897,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,mathematics,4,2005,North Dakota,sd_excluded_pct_all,2.251,1.69,0.561,report card (2024 appendix) vs TDW row 'North Dakota'
+tdw_vs_reportcard,mathematics,4,2017,Alabama,sd_excluded_pct_all,0.9547,0.89,0.0647,report card (2024 appendix) vs TDW row 'Alabama'
+tdw_vs_reportcard,mathematics,4,2017,Alaska,sd_excluded_pct_all,0.8358,0.90,0.0642,report card (2024 appendix) vs TDW row 'Alaska'
+tdw_vs_reportcard,mathematics,4,2017,Arkansas,sd_excluded_pct_all,1.4075,1.48,0.0725,report card (2024 appendix) vs TDW row 'Arkansas'
+tdw_vs_reportcard,mathematics,4,2017,California,el_excluded_pct_all,1.4614,1.27,0.1914,report card (2024 appendix) vs TDW row 'California'
+tdw_vs_reportcard,mathematics,4,2017,California,sd_excluded_pct_all,1.891,1.81,0.081,report card (2024 appendix) vs TDW row 'California'
+tdw_vs_reportcard,mathematics,4,2017,Colorado,sd_excluded_pct_all,0.9507,1.12,0.1693,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,mathematics,4,2017,Connecticut,el_excluded_pct_all,0.824,0.96,0.136,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,mathematics,4,2017,Connecticut,sd_excluded_pct_all,1.3835,1.52,0.1365,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,mathematics,4,2017,Delaware,sd_excluded_pct_all,1.0336,1.23,0.1964,report card (2024 appendix) vs TDW row 'Delaware'
+tdw_vs_reportcard,mathematics,4,2017,District of Columbia,el_excluded_pct_all,0.891,0.78,0.111,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,mathematics,4,2017,District of Columbia,sd_excluded_pct_all,1.2646,1.19,0.0746,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,mathematics,4,2017,DoDEA,sd_excluded_pct_all,0.5565,0.68,0.1235,report card (2024 appendix) vs TDW row 'Department of Defense Education Activity (DoDEA)'
+tdw_vs_reportcard,mathematics,4,2017,Florida,sd_excluded_pct_all,1.7779,1.71,0.0679,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,mathematics,4,2017,Georgia,sd_excluded_pct_all,1.229,1.32,0.091,report card (2024 appendix) vs TDW row 'Georgia'
+tdw_vs_reportcard,mathematics,4,2017,Hawaii,el_excluded_pct_all,1.5563,1.43,0.1263,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,mathematics,4,2017,Idaho,sd_excluded_pct_all,0.9465,1.01,0.0635,report card (2024 appendix) vs TDW row 'Idaho'
+tdw_vs_reportcard,mathematics,4,2017,Illinois,sd_excluded_pct_all,1.0567,1.12,0.0633,report card (2024 appendix) vs TDW row 'Illinois'
+tdw_vs_reportcard,mathematics,4,2017,Indiana,sd_excluded_pct_all,1.1699,1.08,0.0899,report card (2024 appendix) vs TDW row 'Indiana'
+tdw_vs_reportcard,mathematics,4,2017,Iowa,el_excluded_pct_all,0.5715,0.51,0.0615,report card (2024 appendix) vs TDW row 'Iowa'
+tdw_vs_reportcard,mathematics,4,2017,Louisiana,sd_excluded_pct_all,1.7832,1.53,0.2532,report card (2024 appendix) vs TDW row 'Louisiana'
+tdw_vs_reportcard,mathematics,4,2017,Maryland,el_excluded_pct_all,0.6713,0.74,0.0687,report card (2024 appendix) vs TDW row 'Maryland'
+tdw_vs_reportcard,mathematics,4,2017,Massachusetts,el_excluded_pct_all,0.6065,0.72,0.1135,report card (2024 appendix) vs TDW row 'Massachusetts'
+tdw_vs_reportcard,mathematics,4,2017,Michigan,sd_excluded_pct_all,2.2293,2.14,0.0893,report card (2024 appendix) vs TDW row 'Michigan'
+tdw_vs_reportcard,mathematics,4,2017,Nevada,el_excluded_pct_all,0.6646,0.75,0.0854,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,mathematics,4,2017,Nevada,sd_excluded_pct_all,1.0644,1.12,0.0556,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,mathematics,4,2017,New Hampshire,sd_excluded_pct_all,0.7853,0.91,0.1247,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,mathematics,4,2017,New Jersey,el_excluded_pct_all,0.9421,0.85,0.0921,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,mathematics,4,2017,New Jersey,sd_excluded_pct_all,0.8041,0.74,0.0641,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,mathematics,4,2017,New Mexico,sd_excluded_pct_all,1.2748,1.36,0.0852,report card (2024 appendix) vs TDW row 'New Mexico'
+tdw_vs_reportcard,mathematics,4,2017,New York,sd_excluded_pct_all,0.8531,0.78,0.0731,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,mathematics,4,2017,North Carolina,el_excluded_pct_all,0.5907,0.52,0.0707,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,mathematics,4,2017,Oregon,el_excluded_pct_all,0.6715,0.80,0.1285,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,mathematics,4,2017,Oregon,sd_excluded_pct_all,1.246,1.38,0.134,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,mathematics,4,2017,Pennsylvania,sd_excluded_pct_all,1.6374,1.82,0.1826,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,mathematics,4,2017,Rhode Island,sd_excluded_pct_all,0.9286,1.01,0.0814,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,mathematics,4,2017,South Carolina,sd_excluded_pct_all,1.004,1.06,0.056,report card (2024 appendix) vs TDW row 'South Carolina'
+tdw_vs_reportcard,mathematics,4,2017,South Dakota,sd_excluded_pct_all,1.3071,1.24,0.0671,report card (2024 appendix) vs TDW row 'South Dakota'
+tdw_vs_reportcard,mathematics,4,2017,Tennessee,sd_excluded_pct_all,1.5149,1.61,0.0951,report card (2024 appendix) vs TDW row 'Tennessee'
+tdw_vs_reportcard,mathematics,4,2017,Texas,el_excluded_pct_all,1.3836,1.31,0.0736,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,mathematics,4,2017,Texas,sd_excluded_pct_all,2.2899,2.17,0.1199,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,mathematics,4,2017,Utah,sd_excluded_pct_all,1.26,1.18,0.08,report card (2024 appendix) vs TDW row 'Utah'
+tdw_vs_reportcard,mathematics,4,2017,Vermont,sd_excluded_pct_all,0.9436,1.04,0.0964,report card (2024 appendix) vs TDW row 'Vermont'
+tdw_vs_reportcard,mathematics,4,2017,Virginia,el_excluded_pct_all,0.7662,0.71,0.0562,report card (2024 appendix) vs TDW row 'Virginia'
+tdw_vs_reportcard,mathematics,4,2017,Washington,el_excluded_pct_all,0.6835,0.89,0.2065,report card (2024 appendix) vs TDW row 'Washington'
+tdw_vs_reportcard,mathematics,4,2017,Washington,sd_excluded_pct_all,1.9608,2.02,0.0592,report card (2024 appendix) vs TDW row 'Washington'
+tdw_vs_reportcard,mathematics,4,2017,West Virginia,sd_excluded_pct_all,1.3385,1.23,0.1085,report card (2024 appendix) vs TDW row 'West Virginia'
+tdw_vs_reportcard,mathematics,4,2017,Wisconsin,sd_excluded_pct_all,1.4531,1.34,0.1131,report card (2024 appendix) vs TDW row 'Wisconsin'
+tdw_vs_reportcard,mathematics,4,2024,Puerto Rico,sd_excluded_pct_all,#,1.45,0.95,report card (2024 appendix) vs TDW row 'Puerto Rico'
+tdw_vs_reportcard,mathematics,8,2003,Colorado,sd_excluded_pct_all,1.2936,3.4,2.1064,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,mathematics,8,2003,Connecticut,sd_excluded_pct_all,3.3625,1.3,2.0625,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,mathematics,8,2003,Nebraska,el_excluded_pct_all,0.9471,0.3,0.6471,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,mathematics,8,2003,Nebraska,sd_excluded_pct_all,2.6849,3.2,0.5151,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,mathematics,8,2003,Nevada,el_excluded_pct_all,1.0422,1.4,0.3578,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,mathematics,8,2003,Nevada,sd_excluded_pct_all,1.9307,1.1,0.8307,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,mathematics,8,2003,New Hampshire,el_excluded_pct_all,#,0.9,0.4,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,mathematics,8,2003,New Hampshire,sd_excluded_pct_all,3.1916,2.7,0.4916,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,mathematics,8,2003,New Jersey,el_excluded_pct_all,1.4225,1.0,0.4225,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,mathematics,8,2003,New Jersey,sd_excluded_pct_all,1.1323,1.9,0.7677,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,mathematics,8,2005,Alaska,sd_excluded_pct_all,2.1628,3.16,0.9972,report card (2024 appendix) vs TDW row 'Alaska'
+tdw_vs_reportcard,mathematics,8,2005,North Dakota,sd_excluded_pct_all,4.1021,1.49,2.6121,report card (2024 appendix) vs TDW row 'North Dakota'
+tdw_vs_reportcard,mathematics,8,2005,Wyoming,sd_excluded_pct_all,1.5059,1.11,0.3959,report card (2024 appendix) vs TDW row 'Wyoming'
+tdw_vs_reportcard,mathematics,8,2017,Alabama,sd_excluded_pct_all,1.4651,1.38,0.0851,report card (2024 appendix) vs TDW row 'Alabama'
+tdw_vs_reportcard,mathematics,8,2017,Alaska,sd_excluded_pct_all,1.3572,1.26,0.0972,report card (2024 appendix) vs TDW row 'Alaska'
+tdw_vs_reportcard,mathematics,8,2017,Arizona,sd_excluded_pct_all,1.0088,1.16,0.1512,report card (2024 appendix) vs TDW row 'Arizona'
+tdw_vs_reportcard,mathematics,8,2017,Arkansas,el_excluded_pct_all,0.5796,0.68,0.1004,report card (2024 appendix) vs TDW row 'Arkansas'
+tdw_vs_reportcard,mathematics,8,2017,Arkansas,sd_excluded_pct_all,1.7838,2.10,0.3162,report card (2024 appendix) vs TDW row 'Arkansas'
+tdw_vs_reportcard,mathematics,8,2017,California,sd_excluded_pct_all,1.0123,1.12,0.1077,report card (2024 appendix) vs TDW row 'California'
+tdw_vs_reportcard,mathematics,8,2017,Connecticut,el_excluded_pct_all,1.2731,1.33,0.0569,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,mathematics,8,2017,Connecticut,sd_excluded_pct_all,1.1457,1.26,0.1143,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,mathematics,8,2017,Delaware,sd_excluded_pct_all,1.5786,1.43,0.1486,report card (2024 appendix) vs TDW row 'Delaware'
+tdw_vs_reportcard,mathematics,8,2017,District of Columbia,el_excluded_pct_all,1.412,1.33,0.082,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,mathematics,8,2017,District of Columbia,sd_excluded_pct_all,0.8818,0.97,0.0882,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,mathematics,8,2017,DoDEA,sd_excluded_pct_all,0.8188,0.97,0.1512,report card (2024 appendix) vs TDW row 'Department of Defense Education Activity (DoDEA)'
+tdw_vs_reportcard,mathematics,8,2017,Florida,el_excluded_pct_all,1.0923,1.17,0.0777,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,mathematics,8,2017,Florida,sd_excluded_pct_all,1.6776,1.47,0.2076,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,mathematics,8,2017,Hawaii,el_excluded_pct_all,0.8761,1.03,0.1539,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,mathematics,8,2017,Hawaii,sd_excluded_pct_all,1.8199,1.70,0.1199,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,mathematics,8,2017,Idaho,sd_excluded_pct_all,0.7442,0.82,0.0758,report card (2024 appendix) vs TDW row 'Idaho'
+tdw_vs_reportcard,mathematics,8,2017,Illinois,sd_excluded_pct_all,0.99,1.11,0.12,report card (2024 appendix) vs TDW row 'Illinois'
+tdw_vs_reportcard,mathematics,8,2017,Indiana,sd_excluded_pct_all,1.4172,1.24,0.1772,report card (2024 appendix) vs TDW row 'Indiana'
+tdw_vs_reportcard,mathematics,8,2017,Iowa,sd_excluded_pct_all,0.9354,1.00,0.0646,report card (2024 appendix) vs TDW row 'Iowa'
+tdw_vs_reportcard,mathematics,8,2017,Kansas,el_excluded_pct_all,#,0.54,0.04,report card (2024 appendix) vs TDW row 'Kansas'
+tdw_vs_reportcard,mathematics,8,2017,Kansas,sd_excluded_pct_all,1.0014,1.08,0.0786,report card (2024 appendix) vs TDW row 'Kansas'
+tdw_vs_reportcard,mathematics,8,2017,Kentucky,sd_excluded_pct_all,1.1163,1.27,0.1537,report card (2024 appendix) vs TDW row 'Kentucky'
+tdw_vs_reportcard,mathematics,8,2017,Louisiana,sd_excluded_pct_all,2.4314,2.69,0.2586,report card (2024 appendix) vs TDW row 'Louisiana'
+tdw_vs_reportcard,mathematics,8,2017,Maine,sd_excluded_pct_all,1.4468,1.53,0.0832,report card (2024 appendix) vs TDW row 'Maine'
+tdw_vs_reportcard,mathematics,8,2017,Minnesota,el_excluded_pct_all,0.6161,0.71,0.0939,report card (2024 appendix) vs TDW row 'Minnesota'
+tdw_vs_reportcard,mathematics,8,2017,Minnesota,sd_excluded_pct_all,1.9937,2.07,0.0763,report card (2024 appendix) vs TDW row 'Minnesota'
+tdw_vs_reportcard,mathematics,8,2017,Mississippi,sd_excluded_pct_all,0.8557,0.97,0.1143,report card (2024 appendix) vs TDW row 'Mississippi'
+tdw_vs_reportcard,mathematics,8,2017,Missouri,sd_excluded_pct_all,1.4033,1.33,0.0733,report card (2024 appendix) vs TDW row 'Missouri'
+tdw_vs_reportcard,mathematics,8,2017,Nebraska,sd_excluded_pct_all,1.4925,1.42,0.0725,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,mathematics,8,2017,Nevada,sd_excluded_pct_all,1.3029,1.12,0.1829,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,mathematics,8,2017,New Hampshire,sd_excluded_pct_all,0.941,0.85,0.091,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,mathematics,8,2017,New Jersey,el_excluded_pct_all,0.6899,0.81,0.1201,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,mathematics,8,2017,New Mexico,el_excluded_pct_all,0.8114,0.71,0.1014,report card (2024 appendix) vs TDW row 'New Mexico'
+tdw_vs_reportcard,mathematics,8,2017,New Mexico,sd_excluded_pct_all,1.5082,1.33,0.1782,report card (2024 appendix) vs TDW row 'New Mexico'
+tdw_vs_reportcard,mathematics,8,2017,New York,sd_excluded_pct_all,0.7801,0.84,0.0599,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,mathematics,8,2017,North Carolina,el_excluded_pct_all,0.5481,0.48,0.0681,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,mathematics,8,2017,North Carolina,sd_excluded_pct_all,1.6355,1.54,0.0955,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,mathematics,8,2017,North Dakota,sd_excluded_pct_all,1.3559,1.51,0.1541,report card (2024 appendix) vs TDW row 'North Dakota'
+tdw_vs_reportcard,mathematics,8,2017,Oregon,sd_excluded_pct_all,1.3602,1.47,0.1098,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,mathematics,8,2017,Pennsylvania,sd_excluded_pct_all,2.0285,1.96,0.0685,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,mathematics,8,2017,Rhode Island,el_excluded_pct_all,0.8107,0.95,0.1393,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,mathematics,8,2017,South Dakota,sd_excluded_pct_all,1.8388,1.70,0.1388,report card (2024 appendix) vs TDW row 'South Dakota'
+tdw_vs_reportcard,mathematics,8,2017,Tennessee,sd_excluded_pct_all,1.9783,1.74,0.2383,report card (2024 appendix) vs TDW row 'Tennessee'
+tdw_vs_reportcard,mathematics,8,2017,Texas,el_excluded_pct_all,#,0.53,0.03,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,mathematics,8,2017,Texas,sd_excluded_pct_all,1.8255,1.63,0.1955,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,mathematics,8,2017,Utah,sd_excluded_pct_all,1.0413,0.98,0.0613,report card (2024 appendix) vs TDW row 'Utah'
+tdw_vs_reportcard,mathematics,8,2017,Vermont,sd_excluded_pct_all,0.9992,0.88,0.1192,report card (2024 appendix) vs TDW row 'Vermont'
+tdw_vs_reportcard,mathematics,8,2017,Washington,sd_excluded_pct_all,1.246,1.33,0.084,report card (2024 appendix) vs TDW row 'Washington'
+tdw_vs_reportcard,mathematics,8,2017,West Virginia,sd_excluded_pct_all,2.0662,1.88,0.1862,report card (2024 appendix) vs TDW row 'West Virginia'
+tdw_vs_reportcard,mathematics,8,2017,Wyoming,sd_excluded_pct_all,0.8876,0.95,0.0624,report card (2024 appendix) vs TDW row 'Wyoming'
+tdw_vs_reportcard,reading,4,2002,Alabama,sd_excluded_pct_all,2.4565,2.0,0.4565,report card (2024 appendix) vs TDW row 'Alabama'
+tdw_vs_reportcard,reading,4,2002,Arizona,sd_excluded_pct_all,4.6269,3.9,0.7269,report card (2024 appendix) vs TDW row 'Arizona'
+tdw_vs_reportcard,reading,4,2002,Arkansas,el_excluded_pct_all,0.6802,0.9,0.2198,report card (2024 appendix) vs TDW row 'Arkansas'
+tdw_vs_reportcard,reading,4,2002,Arkansas,sd_excluded_pct_all,4.1773,3.2,0.9773,report card (2024 appendix) vs TDW row 'Arkansas'
+tdw_vs_reportcard,reading,4,2002,California,el_excluded_pct_all,3.3989,3.2,0.1989,report card (2024 appendix) vs TDW row 'California'
+tdw_vs_reportcard,reading,4,2002,California,sd_excluded_pct_all,2.8898,2.6,0.2898,report card (2024 appendix) vs TDW row 'California'
+tdw_vs_reportcard,reading,4,2002,Delaware,sd_excluded_pct_all,6.8623,5.9,0.9623,report card (2024 appendix) vs TDW row 'Delaware'
+tdw_vs_reportcard,reading,4,2002,District of Columbia,el_excluded_pct_all,3.0169,2.7,0.3169,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,reading,4,2002,District of Columbia,sd_excluded_pct_all,6.8489,5.9,0.9489,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,reading,4,2002,Florida,el_excluded_pct_all,3.1685,2.7,0.4685,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,4,2002,Florida,sd_excluded_pct_all,4.6423,4.4,0.2423,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,4,2002,Georgia,sd_excluded_pct_all,2.9903,2.8,0.1903,report card (2024 appendix) vs TDW row 'Georgia'
+tdw_vs_reportcard,reading,4,2002,Hawaii,el_excluded_pct_all,2.011,1.9,0.111,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,reading,4,2002,Hawaii,sd_excluded_pct_all,4.0795,3.2,0.8795,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,reading,4,2002,Idaho,el_excluded_pct_all,1.0436,0.8,0.2436,report card (2024 appendix) vs TDW row 'Idaho'
+tdw_vs_reportcard,reading,4,2002,Idaho,sd_excluded_pct_all,3.9417,2.6,1.3417,report card (2024 appendix) vs TDW row 'Idaho'
+tdw_vs_reportcard,reading,4,2002,Illinois,el_excluded_pct_all,3.607,3.4,0.207,report card (2024 appendix) vs TDW row 'Illinois'
+tdw_vs_reportcard,reading,4,2002,Illinois,sd_excluded_pct_all,3.9307,3.5,0.4307,report card (2024 appendix) vs TDW row 'Illinois'
+tdw_vs_reportcard,reading,4,2002,Indiana,sd_excluded_pct_all,4.2646,3.7,0.5646,report card (2024 appendix) vs TDW row 'Indiana'
+tdw_vs_reportcard,reading,4,2002,Iowa,sd_excluded_pct_all,7.3773,5.9,1.4773,report card (2024 appendix) vs TDW row 'Iowa'
+tdw_vs_reportcard,reading,4,2002,Kansas,el_excluded_pct_all,1.5281,1.4,0.1281,report card (2024 appendix) vs TDW row 'Kansas'
+tdw_vs_reportcard,reading,4,2002,Kansas,sd_excluded_pct_all,4.2807,3.3,0.9807,report card (2024 appendix) vs TDW row 'Kansas'
+tdw_vs_reportcard,reading,4,2002,Kentucky,sd_excluded_pct_all,7.7665,6.8,0.9665,report card (2024 appendix) vs TDW row 'Kentucky'
+tdw_vs_reportcard,reading,4,2002,Louisiana,el_excluded_pct_all,0.568,0.4,0.168,report card (2024 appendix) vs TDW row 'Louisiana'
+tdw_vs_reportcard,reading,4,2002,Louisiana,sd_excluded_pct_all,10.2348,6.9,3.3348,report card (2024 appendix) vs TDW row 'Louisiana'
+tdw_vs_reportcard,reading,4,2002,Maine,sd_excluded_pct_all,5.9003,5.3,0.6003,report card (2024 appendix) vs TDW row 'Maine'
+tdw_vs_reportcard,reading,4,2002,Maryland,sd_excluded_pct_all,5.7214,5.9,0.1786,report card (2024 appendix) vs TDW row 'Maryland'
+tdw_vs_reportcard,reading,4,2002,Massachusetts,el_excluded_pct_all,1.9907,2.1,0.1093,report card (2024 appendix) vs TDW row 'Massachusetts'
+tdw_vs_reportcard,reading,4,2002,Massachusetts,sd_excluded_pct_all,4.3679,3.9,0.4679,report card (2024 appendix) vs TDW row 'Massachusetts'
+tdw_vs_reportcard,reading,4,2002,Michigan,sd_excluded_pct_all,7.1056,6.0,1.1056,report card (2024 appendix) vs TDW row 'Michigan'
+tdw_vs_reportcard,reading,4,2002,Minnesota,sd_excluded_pct_all,3.7439,3.3,0.4439,report card (2024 appendix) vs TDW row 'Minnesota'
+tdw_vs_reportcard,reading,4,2002,Missouri,sd_excluded_pct_all,8.1665,6.3,1.8665,report card (2024 appendix) vs TDW row 'Missouri'
+tdw_vs_reportcard,reading,4,2002,Montana,sd_excluded_pct_all,5.3828,4.1,1.2828,report card (2024 appendix) vs TDW row 'Montana'
+tdw_vs_reportcard,reading,4,2002,Nebraska,el_excluded_pct_all,1.5904,1.3,0.2904,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,4,2002,Nebraska,sd_excluded_pct_all,4.4857,3.5,0.9857,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,4,2002,Nevada,el_excluded_pct_all,6.8264,6.0,0.8264,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,reading,4,2002,Nevada,sd_excluded_pct_all,5.257,4.8,0.457,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,reading,4,2002,New Mexico,el_excluded_pct_all,6.4407,5.6,0.8407,report card (2024 appendix) vs TDW row 'New Mexico'
+tdw_vs_reportcard,reading,4,2002,New Mexico,sd_excluded_pct_all,6.5102,5.5,1.0102,report card (2024 appendix) vs TDW row 'New Mexico'
+tdw_vs_reportcard,reading,4,2002,New York,sd_excluded_pct_all,6.1809,5.6,0.5809,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,reading,4,2002,North Carolina,el_excluded_pct_all,3.203,2.6,0.603,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,4,2002,North Carolina,sd_excluded_pct_all,10.3043,8.3,2.0043,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,4,2002,North Dakota,sd_excluded_pct_all,5.1436,4.2,0.9436,report card (2024 appendix) vs TDW row 'North Dakota'
+tdw_vs_reportcard,reading,4,2002,Ohio,el_excluded_pct_all,0.6189,0.5,0.1189,report card (2024 appendix) vs TDW row 'Ohio'
+tdw_vs_reportcard,reading,4,2002,Ohio,sd_excluded_pct_all,8.0326,7.5,0.5326,report card (2024 appendix) vs TDW row 'Ohio'
+tdw_vs_reportcard,reading,4,2002,Oklahoma,sd_excluded_pct_all,4.511,3.6,0.911,report card (2024 appendix) vs TDW row 'Oklahoma'
+tdw_vs_reportcard,reading,4,2002,Oregon,el_excluded_pct_all,4.1834,3.7,0.4834,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,4,2002,Oregon,sd_excluded_pct_all,5.1937,4.7,0.4937,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,4,2002,Pennsylvania,el_excluded_pct_all,1.0299,1.2,0.1701,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,reading,4,2002,Pennsylvania,sd_excluded_pct_all,3.7757,3.3,0.4757,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,reading,4,2002,Rhode Island,el_excluded_pct_all,3.1756,2.7,0.4756,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,4,2002,Rhode Island,sd_excluded_pct_all,3.4862,2.8,0.6862,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,4,2002,South Carolina,sd_excluded_pct_all,4.4396,4.3,0.1396,report card (2024 appendix) vs TDW row 'South Carolina'
+tdw_vs_reportcard,reading,4,2002,Tennessee,sd_excluded_pct_all,2.9719,2.7,0.2719,report card (2024 appendix) vs TDW row 'Tennessee'
+tdw_vs_reportcard,reading,4,2002,Texas,el_excluded_pct_all,5.4587,4.9,0.5587,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,reading,4,2002,Utah,el_excluded_pct_all,2.5995,2.4,0.1995,report card (2024 appendix) vs TDW row 'Utah'
+tdw_vs_reportcard,reading,4,2002,Utah,sd_excluded_pct_all,4.3865,3.5,0.8865,report card (2024 appendix) vs TDW row 'Utah'
+tdw_vs_reportcard,reading,4,2002,Virginia,el_excluded_pct_all,2.6734,2.1,0.5734,report card (2024 appendix) vs TDW row 'Virginia'
+tdw_vs_reportcard,reading,4,2002,Virginia,sd_excluded_pct_all,8.0686,6.5,1.5686,report card (2024 appendix) vs TDW row 'Virginia'
+tdw_vs_reportcard,reading,4,2002,Washington,el_excluded_pct_all,1.275,1.0,0.275,report card (2024 appendix) vs TDW row 'Washington'
+tdw_vs_reportcard,reading,4,2002,Washington,sd_excluded_pct_all,3.569,3.2,0.369,report card (2024 appendix) vs TDW row 'Washington'
+tdw_vs_reportcard,reading,4,2002,West Virginia,sd_excluded_pct_all,10.0847,7.7,2.3847,report card (2024 appendix) vs TDW row 'West Virginia'
+tdw_vs_reportcard,reading,4,2002,Wisconsin,el_excluded_pct_all,3.047,2.9,0.147,report card (2024 appendix) vs TDW row 'Wisconsin'
+tdw_vs_reportcard,reading,4,2002,Wisconsin,sd_excluded_pct_all,5.6629,5.2,0.4629,report card (2024 appendix) vs TDW row 'Wisconsin'
+tdw_vs_reportcard,reading,4,2002,Wyoming,sd_excluded_pct_all,2.4269,2.3,0.1269,report card (2024 appendix) vs TDW row 'Wyoming'
+tdw_vs_reportcard,reading,4,2003,Colorado,el_excluded_pct_all,1.8697,1.5,0.3697,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,reading,4,2003,Colorado,sd_excluded_pct_all,2.1743,3.5,1.3257,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,reading,4,2003,Connecticut,el_excluded_pct_all,1.4767,1.9,0.4233,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,reading,4,2003,Connecticut,sd_excluded_pct_all,3.5196,2.2,1.3196,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,reading,4,2003,Nebraska,el_excluded_pct_all,1.5383,0.8,0.7383,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,4,2003,Nebraska,sd_excluded_pct_all,4.1628,3.3,0.8628,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,4,2003,Nevada,el_excluded_pct_all,5.0307,2.0,3.0307,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,reading,4,2003,Nevada,sd_excluded_pct_all,4.8485,3.4,1.4485,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,reading,4,2003,New Hampshire,el_excluded_pct_all,0.8454,1.5,0.6546,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,reading,4,2003,New Hampshire,sd_excluded_pct_all,3.3137,4.1,0.7863,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,reading,4,2003,New Jersey,el_excluded_pct_all,1.9553,5.0,3.0447,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,reading,4,2003,New Jersey,sd_excluded_pct_all,3.3909,4.9,1.5091,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,reading,4,2003,Oregon,sd_excluded_pct_all,6.5016,6.4,0.1016,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,4,2005,District of Columbia,sd_excluded_pct_all,6.7449,6.68,0.0649,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,reading,4,2005,Florida,el_excluded_pct_all,2.31,2.62,0.31,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,4,2005,Florida,sd_excluded_pct_all,4.7275,3.00,1.7275,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,4,2005,Tennessee,sd_excluded_pct_all,6.9226,6.83,0.0926,report card (2024 appendix) vs TDW row 'Tennessee'
+tdw_vs_reportcard,reading,4,2017,Arizona,el_excluded_pct_all,0.6156,0.52,0.0956,report card (2024 appendix) vs TDW row 'Arizona'
+tdw_vs_reportcard,reading,4,2017,Arkansas,sd_excluded_pct_all,1.6271,1.56,0.0671,report card (2024 appendix) vs TDW row 'Arkansas'
+tdw_vs_reportcard,reading,4,2017,California,el_excluded_pct_all,1.3223,1.20,0.1223,report card (2024 appendix) vs TDW row 'California'
+tdw_vs_reportcard,reading,4,2017,Colorado,sd_excluded_pct_all,0.8992,1.03,0.1308,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,reading,4,2017,Connecticut,sd_excluded_pct_all,1.3741,1.28,0.0941,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,reading,4,2017,Delaware,sd_excluded_pct_all,1.0526,0.96,0.0926,report card (2024 appendix) vs TDW row 'Delaware'
+tdw_vs_reportcard,reading,4,2017,District of Columbia,el_excluded_pct_all,1.3542,1.16,0.1942,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,reading,4,2017,District of Columbia,sd_excluded_pct_all,1.8575,1.77,0.0875,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,reading,4,2017,DoDEA,sd_excluded_pct_all,0.9509,1.10,0.1491,report card (2024 appendix) vs TDW row 'Department of Defense Education Activity (DoDEA)'
+tdw_vs_reportcard,reading,4,2017,Florida,el_excluded_pct_all,1.8486,1.75,0.0986,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,4,2017,Florida,sd_excluded_pct_all,2.057,1.94,0.117,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,4,2017,Georgia,sd_excluded_pct_all,2.1424,2.02,0.1224,report card (2024 appendix) vs TDW row 'Georgia'
+tdw_vs_reportcard,reading,4,2017,Hawaii,el_excluded_pct_all,1.0682,0.95,0.1182,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,reading,4,2017,Hawaii,sd_excluded_pct_all,1.5151,1.66,0.1449,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,reading,4,2017,Idaho,sd_excluded_pct_all,1.4096,1.35,0.0596,report card (2024 appendix) vs TDW row 'Idaho'
+tdw_vs_reportcard,reading,4,2017,Illinois,el_excluded_pct_all,#,0.64,0.14,report card (2024 appendix) vs TDW row 'Illinois'
+tdw_vs_reportcard,reading,4,2017,Iowa,el_excluded_pct_all,#,0.54,0.04,report card (2024 appendix) vs TDW row 'Iowa'
+tdw_vs_reportcard,reading,4,2017,Louisiana,el_excluded_pct_all,0.9517,0.85,0.1017,report card (2024 appendix) vs TDW row 'Louisiana'
+tdw_vs_reportcard,reading,4,2017,Maine,sd_excluded_pct_all,1.4139,1.27,0.1439,report card (2024 appendix) vs TDW row 'Maine'
+tdw_vs_reportcard,reading,4,2017,Massachusetts,el_excluded_pct_all,1.0086,1.09,0.0814,report card (2024 appendix) vs TDW row 'Massachusetts'
+tdw_vs_reportcard,reading,4,2017,Massachusetts,sd_excluded_pct_all,2.1836,2.40,0.2164,report card (2024 appendix) vs TDW row 'Massachusetts'
+tdw_vs_reportcard,reading,4,2017,Michigan,sd_excluded_pct_all,2.1776,1.98,0.1976,report card (2024 appendix) vs TDW row 'Michigan'
+tdw_vs_reportcard,reading,4,2017,Missouri,sd_excluded_pct_all,0.8829,1.04,0.1571,report card (2024 appendix) vs TDW row 'Missouri'
+tdw_vs_reportcard,reading,4,2017,Montana,sd_excluded_pct_all,0.8703,1.07,0.1997,report card (2024 appendix) vs TDW row 'Montana'
+tdw_vs_reportcard,reading,4,2017,Nebraska,sd_excluded_pct_all,1.5296,1.61,0.0804,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,4,2017,Nevada,el_excluded_pct_all,0.8062,0.74,0.0662,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,reading,4,2017,New Hampshire,sd_excluded_pct_all,1.0348,0.95,0.0848,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,reading,4,2017,New Jersey,sd_excluded_pct_all,0.6485,0.76,0.1115,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,reading,4,2017,New Mexico,sd_excluded_pct_all,1.3808,1.47,0.0892,report card (2024 appendix) vs TDW row 'New Mexico'
+tdw_vs_reportcard,reading,4,2017,North Carolina,sd_excluded_pct_all,1.4085,1.35,0.0585,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,4,2017,Oklahoma,sd_excluded_pct_all,1.805,1.97,0.165,report card (2024 appendix) vs TDW row 'Oklahoma'
+tdw_vs_reportcard,reading,4,2017,Pennsylvania,sd_excluded_pct_all,2.0767,1.93,0.1467,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,reading,4,2017,Rhode Island,el_excluded_pct_all,1.3207,1.25,0.0707,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,4,2017,Rhode Island,sd_excluded_pct_all,1.1791,1.31,0.1309,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,4,2017,South Dakota,sd_excluded_pct_all,1.6883,1.63,0.0583,report card (2024 appendix) vs TDW row 'South Dakota'
+tdw_vs_reportcard,reading,4,2017,Texas,el_excluded_pct_all,1.6342,1.80,0.1658,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,reading,4,2017,Texas,sd_excluded_pct_all,2.2164,2.34,0.1236,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,reading,4,2017,Utah,sd_excluded_pct_all,0.9851,1.14,0.1549,report card (2024 appendix) vs TDW row 'Utah'
+tdw_vs_reportcard,reading,4,2017,Virginia,el_excluded_pct_all,1.4691,1.27,0.1991,report card (2024 appendix) vs TDW row 'Virginia'
+tdw_vs_reportcard,reading,4,2017,Washington,sd_excluded_pct_all,1.3417,1.62,0.2783,report card (2024 appendix) vs TDW row 'Washington'
+tdw_vs_reportcard,reading,4,2017,West Virginia,sd_excluded_pct_all,1.4117,1.56,0.1483,report card (2024 appendix) vs TDW row 'West Virginia'
+tdw_vs_reportcard,reading,4,2017,Wisconsin,sd_excluded_pct_all,1.0519,1.19,0.1381,report card (2024 appendix) vs TDW row 'Wisconsin'
+tdw_vs_reportcard,reading,4,2024,New York,el_excluded_pct_all,2.216406,0.86,1.356406,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,reading,4,2024,New York,sd_excluded_pct_all,2.856636,1.52,1.336636,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,reading,4,2024,North Carolina,el_excluded_pct_all,0.90544,0.58,0.32544,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,4,2024,North Carolina,sd_excluded_pct_all,1.065516,1.33,0.264484,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,4,2024,North Dakota,el_excluded_pct_all,0.684746,0.23,0.454746,report card (2024 appendix) vs TDW row 'North Dakota'
+tdw_vs_reportcard,reading,4,2024,North Dakota,sd_excluded_pct_all,2.53244,1.52,1.01244,report card (2024 appendix) vs TDW row 'North Dakota'
+tdw_vs_reportcard,reading,4,2024,Ohio,sd_excluded_pct_all,1.774551,2.03,0.255449,report card (2024 appendix) vs TDW row 'Ohio'
+tdw_vs_reportcard,reading,4,2024,Oklahoma,sd_excluded_pct_all,1.815749,1.50,0.315749,report card (2024 appendix) vs TDW row 'Oklahoma'
+tdw_vs_reportcard,reading,4,2024,Oregon,el_excluded_pct_all,0.707511,0.47,0.237511,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,4,2024,Oregon,sd_excluded_pct_all,1.212108,1.70,0.487892,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,4,2024,Pennsylvania,el_excluded_pct_all,0.787017,0.59,0.197017,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,reading,4,2024,Pennsylvania,sd_excluded_pct_all,2.4205,1.67,0.7505,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,reading,4,2024,Rhode Island,el_excluded_pct_all,0.771468,0.50,0.271468,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,4,2024,Rhode Island,sd_excluded_pct_all,1.381226,0.69,0.691226,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,4,2024,South Carolina,el_excluded_pct_all,0.922373,0.43,0.492373,report card (2024 appendix) vs TDW row 'South Carolina'
+tdw_vs_reportcard,reading,4,2024,South Dakota,sd_excluded_pct_all,1.007657,0.88,0.127657,report card (2024 appendix) vs TDW row 'South Dakota'
+tdw_vs_reportcard,reading,4,2024,Wisconsin,el_excluded_pct_all,0.533915,2.26,1.726085,report card (2024 appendix) vs TDW row 'Wisconsin'
+tdw_vs_reportcard,reading,4,2024,Wisconsin,sd_excluded_pct_all,1.168819,2.48,1.311181,report card (2024 appendix) vs TDW row 'Wisconsin'
+tdw_vs_reportcard,reading,8,2002,Alabama,sd_excluded_pct_all,2.0504,2.2,0.1496,report card (2024 appendix) vs TDW row 'Alabama'
+tdw_vs_reportcard,reading,8,2002,Arizona,sd_excluded_pct_all,3.6924,3.4,0.2924,report card (2024 appendix) vs TDW row 'Arizona'
+tdw_vs_reportcard,reading,8,2002,Arkansas,sd_excluded_pct_all,4.3871,3.4,0.9871,report card (2024 appendix) vs TDW row 'Arkansas'
+tdw_vs_reportcard,reading,8,2002,California,sd_excluded_pct_all,2.486,2.2,0.286,report card (2024 appendix) vs TDW row 'California'
+tdw_vs_reportcard,reading,8,2002,Connecticut,el_excluded_pct_all,1.6548,1.5,0.1548,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,reading,8,2002,Delaware,sd_excluded_pct_all,5.5509,4.7,0.8509,report card (2024 appendix) vs TDW row 'Delaware'
+tdw_vs_reportcard,reading,8,2002,District of Columbia,el_excluded_pct_all,2.0529,1.6,0.4529,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,reading,8,2002,District of Columbia,sd_excluded_pct_all,5.8245,5.3,0.5245,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,reading,8,2002,Florida,el_excluded_pct_all,2.4727,2.0,0.4727,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,8,2002,Florida,sd_excluded_pct_all,3.9735,3.3,0.6735,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,8,2002,Georgia,el_excluded_pct_all,1.3119,1.2,0.1119,report card (2024 appendix) vs TDW row 'Georgia'
+tdw_vs_reportcard,reading,8,2002,Georgia,sd_excluded_pct_all,3.0983,2.9,0.1983,report card (2024 appendix) vs TDW row 'Georgia'
+tdw_vs_reportcard,reading,8,2002,Hawaii,el_excluded_pct_all,2.0453,1.9,0.1453,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,reading,8,2002,Hawaii,sd_excluded_pct_all,3.5107,2.8,0.7107,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,reading,8,2002,Idaho,el_excluded_pct_all,0.9469,0.8,0.1469,report card (2024 appendix) vs TDW row 'Idaho'
+tdw_vs_reportcard,reading,8,2002,Idaho,sd_excluded_pct_all,3.2456,2.2,1.0456,report card (2024 appendix) vs TDW row 'Idaho'
+tdw_vs_reportcard,reading,8,2002,Illinois,sd_excluded_pct_all,2.7536,2.5,0.2536,report card (2024 appendix) vs TDW row 'Illinois'
+tdw_vs_reportcard,reading,8,2002,Indiana,sd_excluded_pct_all,3.707,3.0,0.707,report card (2024 appendix) vs TDW row 'Indiana'
+tdw_vs_reportcard,reading,8,2002,Kansas,el_excluded_pct_all,1.544,1.3,0.244,report card (2024 appendix) vs TDW row 'Kansas'
+tdw_vs_reportcard,reading,8,2002,Kansas,sd_excluded_pct_all,4.4013,3.4,1.0013,report card (2024 appendix) vs TDW row 'Kansas'
+tdw_vs_reportcard,reading,8,2002,Kentucky,el_excluded_pct_all,0.5161,0.4,0.1161,report card (2024 appendix) vs TDW row 'Kentucky'
+tdw_vs_reportcard,reading,8,2002,Kentucky,sd_excluded_pct_all,6.4738,5.1,1.3738,report card (2024 appendix) vs TDW row 'Kentucky'
+tdw_vs_reportcard,reading,8,2002,Louisiana,sd_excluded_pct_all,9.7172,7.0,2.7172,report card (2024 appendix) vs TDW row 'Louisiana'
+tdw_vs_reportcard,reading,8,2002,Maine,sd_excluded_pct_all,3.8493,3.1,0.7493,report card (2024 appendix) vs TDW row 'Maine'
+tdw_vs_reportcard,reading,8,2002,Maryland,el_excluded_pct_all,1.0469,0.9,0.1469,report card (2024 appendix) vs TDW row 'Maryland'
+tdw_vs_reportcard,reading,8,2002,Maryland,sd_excluded_pct_all,3.8859,3.6,0.2859,report card (2024 appendix) vs TDW row 'Maryland'
+tdw_vs_reportcard,reading,8,2002,Massachusetts,el_excluded_pct_all,2.5983,2.2,0.3983,report card (2024 appendix) vs TDW row 'Massachusetts'
+tdw_vs_reportcard,reading,8,2002,Massachusetts,sd_excluded_pct_all,4.267,3.1,1.167,report card (2024 appendix) vs TDW row 'Massachusetts'
+tdw_vs_reportcard,reading,8,2002,Michigan,sd_excluded_pct_all,6.0725,5.4,0.6725,report card (2024 appendix) vs TDW row 'Michigan'
+tdw_vs_reportcard,reading,8,2002,Minnesota,el_excluded_pct_all,1.2963,1.5,0.2037,report card (2024 appendix) vs TDW row 'Minnesota'
+tdw_vs_reportcard,reading,8,2002,Mississippi,sd_excluded_pct_all,5.1506,5.0,0.1506,report card (2024 appendix) vs TDW row 'Mississippi'
+tdw_vs_reportcard,reading,8,2002,Missouri,el_excluded_pct_all,0.5011,0.4,0.1011,report card (2024 appendix) vs TDW row 'Missouri'
+tdw_vs_reportcard,reading,8,2002,Missouri,sd_excluded_pct_all,7.4216,5.2,2.2216,report card (2024 appendix) vs TDW row 'Missouri'
+tdw_vs_reportcard,reading,8,2002,Montana,el_excluded_pct_all,0.7548,0.5,0.2548,report card (2024 appendix) vs TDW row 'Montana'
+tdw_vs_reportcard,reading,8,2002,Montana,sd_excluded_pct_all,3.7513,2.8,0.9513,report card (2024 appendix) vs TDW row 'Montana'
+tdw_vs_reportcard,reading,8,2002,Nebraska,el_excluded_pct_all,2.519,2.0,0.519,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,8,2002,Nebraska,sd_excluded_pct_all,4.9095,4.0,0.9095,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,8,2002,Nevada,el_excluded_pct_all,3.2293,2.8,0.4293,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,reading,8,2002,Nevada,sd_excluded_pct_all,4.0587,3.3,0.7587,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,reading,8,2002,New Mexico,el_excluded_pct_all,4.9404,4.0,0.9404,report card (2024 appendix) vs TDW row 'New Mexico'
+tdw_vs_reportcard,reading,8,2002,New Mexico,sd_excluded_pct_all,6.5513,5.0,1.5513,report card (2024 appendix) vs TDW row 'New Mexico'
+tdw_vs_reportcard,reading,8,2002,New York,el_excluded_pct_all,2.7956,2.6,0.1956,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,reading,8,2002,New York,sd_excluded_pct_all,7.633,5.8,1.833,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,reading,8,2002,North Carolina,el_excluded_pct_all,2.0841,1.7,0.3841,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,8,2002,North Carolina,sd_excluded_pct_all,8.1138,6.1,2.0138,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,8,2002,North Dakota,sd_excluded_pct_all,4.1193,2.5,1.6193,report card (2024 appendix) vs TDW row 'North Dakota'
+tdw_vs_reportcard,reading,8,2002,Ohio,el_excluded_pct_all,0.8205,0.6,0.2205,report card (2024 appendix) vs TDW row 'Ohio'
+tdw_vs_reportcard,reading,8,2002,Ohio,sd_excluded_pct_all,6.8036,6.1,0.7036,report card (2024 appendix) vs TDW row 'Ohio'
+tdw_vs_reportcard,reading,8,2002,Oklahoma,el_excluded_pct_all,0.7188,0.6,0.1188,report card (2024 appendix) vs TDW row 'Oklahoma'
+tdw_vs_reportcard,reading,8,2002,Oklahoma,sd_excluded_pct_all,3.6125,2.9,0.7125,report card (2024 appendix) vs TDW row 'Oklahoma'
+tdw_vs_reportcard,reading,8,2002,Oregon,el_excluded_pct_all,2.3099,1.8,0.5099,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,8,2002,Oregon,sd_excluded_pct_all,3.82,3.4,0.42,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,8,2002,Pennsylvania,sd_excluded_pct_all,2.3061,2.1,0.2061,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,reading,8,2002,Rhode Island,el_excluded_pct_all,2.0115,1.9,0.1115,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,8,2002,Rhode Island,sd_excluded_pct_all,3.5855,2.9,0.6855,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,8,2002,South Carolina,sd_excluded_pct_all,5.2825,5.1,0.1825,report card (2024 appendix) vs TDW row 'South Carolina'
+tdw_vs_reportcard,reading,8,2002,Tennessee,sd_excluded_pct_all,3.1914,2.9,0.2914,report card (2024 appendix) vs TDW row 'Tennessee'
+tdw_vs_reportcard,reading,8,2002,Texas,el_excluded_pct_all,3.1997,2.9,0.2997,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,reading,8,2002,Texas,sd_excluded_pct_all,6.191,5.7,0.491,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,reading,8,2002,Utah,el_excluded_pct_all,1.595,1.4,0.195,report card (2024 appendix) vs TDW row 'Utah'
+tdw_vs_reportcard,reading,8,2002,Utah,sd_excluded_pct_all,2.7626,2.3,0.4626,report card (2024 appendix) vs TDW row 'Utah'
+tdw_vs_reportcard,reading,8,2002,Vermont,sd_excluded_pct_all,4.4923,4.1,0.3923,report card (2024 appendix) vs TDW row 'Vermont'
+tdw_vs_reportcard,reading,8,2002,Virginia,el_excluded_pct_all,1.8314,1.6,0.2314,report card (2024 appendix) vs TDW row 'Virginia'
+tdw_vs_reportcard,reading,8,2002,Virginia,sd_excluded_pct_all,6.5313,5.6,0.9313,report card (2024 appendix) vs TDW row 'Virginia'
+tdw_vs_reportcard,reading,8,2002,Washington,sd_excluded_pct_all,2.6496,2.5,0.1496,report card (2024 appendix) vs TDW row 'Washington'
+tdw_vs_reportcard,reading,8,2002,West Virginia,sd_excluded_pct_all,9.6002,6.9,2.7002,report card (2024 appendix) vs TDW row 'West Virginia'
+tdw_vs_reportcard,reading,8,2002,Wisconsin,el_excluded_pct_all,1.8125,1.7,0.1125,report card (2024 appendix) vs TDW row 'Wisconsin'
+tdw_vs_reportcard,reading,8,2002,Wisconsin,sd_excluded_pct_all,5.4544,4.1,1.3544,report card (2024 appendix) vs TDW row 'Wisconsin'
+tdw_vs_reportcard,reading,8,2002,Wyoming,sd_excluded_pct_all,2.9602,2.6,0.3602,report card (2024 appendix) vs TDW row 'Wyoming'
+tdw_vs_reportcard,reading,8,2003,Colorado,el_excluded_pct_all,1.8073,1.0,0.8073,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,reading,8,2003,Colorado,sd_excluded_pct_all,1.8875,3.2,1.3125,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,reading,8,2003,Connecticut,el_excluded_pct_all,1.0532,1.8,0.7468,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,reading,8,2003,Connecticut,sd_excluded_pct_all,3.1537,1.9,1.2537,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,reading,8,2003,Nebraska,el_excluded_pct_all,1.5305,0.4,1.1305,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,8,2003,Nebraska,sd_excluded_pct_all,3.9893,2.8,1.1893,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,8,2003,Nevada,el_excluded_pct_all,1.9018,0.8,1.1018,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,reading,8,2003,New Hampshire,el_excluded_pct_all,#,1.5,1.0,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,reading,8,2003,New Hampshire,sd_excluded_pct_all,2.8254,4.0,1.1746,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,reading,8,2003,New Jersey,el_excluded_pct_all,0.8048,1.9,1.0952,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,reading,8,2003,West Virginia,sd_excluded_pct_all,9.0596,8.9,0.1596,report card (2024 appendix) vs TDW row 'West Virginia'
+tdw_vs_reportcard,reading,8,2005,Florida,el_excluded_pct_all,2.1989,2.37,0.1711,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,8,2005,Florida,sd_excluded_pct_all,3.3541,4.27,0.9159,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,8,2017,Alabama,sd_excluded_pct_all,1.338,1.57,0.232,report card (2024 appendix) vs TDW row 'Alabama'
+tdw_vs_reportcard,reading,8,2017,Alaska,el_excluded_pct_all,0.6328,0.69,0.0572,report card (2024 appendix) vs TDW row 'Alaska'
+tdw_vs_reportcard,reading,8,2017,Alaska,sd_excluded_pct_all,1.0369,1.17,0.1331,report card (2024 appendix) vs TDW row 'Alaska'
+tdw_vs_reportcard,reading,8,2017,Arkansas,el_excluded_pct_all,0.5855,0.52,0.0655,report card (2024 appendix) vs TDW row 'Arkansas'
+tdw_vs_reportcard,reading,8,2017,California,el_excluded_pct_all,1.4951,1.43,0.0651,report card (2024 appendix) vs TDW row 'California'
+tdw_vs_reportcard,reading,8,2017,Colorado,sd_excluded_pct_all,1.3304,1.23,0.1004,report card (2024 appendix) vs TDW row 'Colorado'
+tdw_vs_reportcard,reading,8,2017,Connecticut,el_excluded_pct_all,0.9848,1.13,0.1452,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,reading,8,2017,Connecticut,sd_excluded_pct_all,1.2462,1.32,0.0738,report card (2024 appendix) vs TDW row 'Connecticut'
+tdw_vs_reportcard,reading,8,2017,Delaware,el_excluded_pct_all,0.6451,0.57,0.0751,report card (2024 appendix) vs TDW row 'Delaware'
+tdw_vs_reportcard,reading,8,2017,Delaware,sd_excluded_pct_all,1.0445,1.15,0.1055,report card (2024 appendix) vs TDW row 'Delaware'
+tdw_vs_reportcard,reading,8,2017,District of Columbia,el_excluded_pct_all,2.2195,2.11,0.1095,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,reading,8,2017,District of Columbia,sd_excluded_pct_all,1.5054,1.31,0.1954,report card (2024 appendix) vs TDW row 'District of Columbia'
+tdw_vs_reportcard,reading,8,2017,DoDEA,sd_excluded_pct_all,0.6628,0.74,0.0772,report card (2024 appendix) vs TDW row 'Department of Defense Education Activity (DoDEA)'
+tdw_vs_reportcard,reading,8,2017,Florida,el_excluded_pct_all,0.9787,1.12,0.1413,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,8,2017,Florida,sd_excluded_pct_all,1.3411,1.40,0.0589,report card (2024 appendix) vs TDW row 'Florida'
+tdw_vs_reportcard,reading,8,2017,Georgia,el_excluded_pct_all,0.5252,0.45,0.0752,report card (2024 appendix) vs TDW row 'Georgia'
+tdw_vs_reportcard,reading,8,2017,Georgia,sd_excluded_pct_all,2.3473,2.28,0.0673,report card (2024 appendix) vs TDW row 'Georgia'
+tdw_vs_reportcard,reading,8,2017,Hawaii,sd_excluded_pct_all,1.8421,1.75,0.0921,report card (2024 appendix) vs TDW row 'Hawaii'
+tdw_vs_reportcard,reading,8,2017,Illinois,sd_excluded_pct_all,1.0676,1.00,0.0676,report card (2024 appendix) vs TDW row 'Illinois'
+tdw_vs_reportcard,reading,8,2017,Kansas,sd_excluded_pct_all,1.4701,1.34,0.1301,report card (2024 appendix) vs TDW row 'Kansas'
+tdw_vs_reportcard,reading,8,2017,Kentucky,sd_excluded_pct_all,1.9206,2.07,0.1494,report card (2024 appendix) vs TDW row 'Kentucky'
+tdw_vs_reportcard,reading,8,2017,Louisiana,el_excluded_pct_all,0.816,0.74,0.076,report card (2024 appendix) vs TDW row 'Louisiana'
+tdw_vs_reportcard,reading,8,2017,Louisiana,sd_excluded_pct_all,2.1599,2.08,0.0799,report card (2024 appendix) vs TDW row 'Louisiana'
+tdw_vs_reportcard,reading,8,2017,Maryland,el_excluded_pct_all,0.8668,0.99,0.1232,report card (2024 appendix) vs TDW row 'Maryland'
+tdw_vs_reportcard,reading,8,2017,Maryland,sd_excluded_pct_all,1.8353,1.68,0.1553,report card (2024 appendix) vs TDW row 'Maryland'
+tdw_vs_reportcard,reading,8,2017,Massachusetts,el_excluded_pct_all,1.0329,0.97,0.0629,report card (2024 appendix) vs TDW row 'Massachusetts'
+tdw_vs_reportcard,reading,8,2017,Massachusetts,sd_excluded_pct_all,1.6818,1.50,0.1818,report card (2024 appendix) vs TDW row 'Massachusetts'
+tdw_vs_reportcard,reading,8,2017,Michigan,sd_excluded_pct_all,1.9891,2.11,0.1209,report card (2024 appendix) vs TDW row 'Michigan'
+tdw_vs_reportcard,reading,8,2017,Minnesota,sd_excluded_pct_all,1.7031,1.86,0.1569,report card (2024 appendix) vs TDW row 'Minnesota'
+tdw_vs_reportcard,reading,8,2017,Mississippi,sd_excluded_pct_all,0.8345,0.70,0.1345,report card (2024 appendix) vs TDW row 'Mississippi'
+tdw_vs_reportcard,reading,8,2017,Nebraska,el_excluded_pct_all,0.8944,0.77,0.1244,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,8,2017,Nebraska,sd_excluded_pct_all,1.9086,1.97,0.0614,report card (2024 appendix) vs TDW row 'Nebraska'
+tdw_vs_reportcard,reading,8,2017,Nevada,el_excluded_pct_all,#,0.52,0.02,report card (2024 appendix) vs TDW row 'Nevada'
+tdw_vs_reportcard,reading,8,2017,New Hampshire,sd_excluded_pct_all,0.9284,1.11,0.1816,report card (2024 appendix) vs TDW row 'New Hampshire'
+tdw_vs_reportcard,reading,8,2017,New Jersey,el_excluded_pct_all,1.0946,1.01,0.0846,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,reading,8,2017,New Jersey,sd_excluded_pct_all,1.0569,0.95,0.1069,report card (2024 appendix) vs TDW row 'New Jersey'
+tdw_vs_reportcard,reading,8,2017,New Mexico,el_excluded_pct_all,1.072,0.93,0.142,report card (2024 appendix) vs TDW row 'New Mexico'
+tdw_vs_reportcard,reading,8,2017,New York,el_excluded_pct_all,1.4176,1.31,0.1076,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,reading,8,2017,North Carolina,sd_excluded_pct_all,1.4428,1.34,0.1028,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,8,2017,Oklahoma,sd_excluded_pct_all,1.5134,1.69,0.1766,report card (2024 appendix) vs TDW row 'Oklahoma'
+tdw_vs_reportcard,reading,8,2017,Oregon,sd_excluded_pct_all,1.7723,1.59,0.1823,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,8,2017,Rhode Island,sd_excluded_pct_all,1.0166,1.16,0.1434,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,8,2017,South Dakota,el_excluded_pct_all,0.8218,0.76,0.0618,report card (2024 appendix) vs TDW row 'South Dakota'
+tdw_vs_reportcard,reading,8,2017,South Dakota,sd_excluded_pct_all,1.9041,1.73,0.1741,report card (2024 appendix) vs TDW row 'South Dakota'
+tdw_vs_reportcard,reading,8,2017,Tennessee,sd_excluded_pct_all,2.6114,2.71,0.0986,report card (2024 appendix) vs TDW row 'Tennessee'
+tdw_vs_reportcard,reading,8,2017,Texas,el_excluded_pct_all,0.6588,0.80,0.1412,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,reading,8,2017,Texas,sd_excluded_pct_all,2.0628,2.13,0.0672,report card (2024 appendix) vs TDW row 'Texas'
+tdw_vs_reportcard,reading,8,2017,Utah,el_excluded_pct_all,#,0.53,0.03,report card (2024 appendix) vs TDW row 'Utah'
+tdw_vs_reportcard,reading,8,2017,Utah,sd_excluded_pct_all,1.1824,1.27,0.0876,report card (2024 appendix) vs TDW row 'Utah'
+tdw_vs_reportcard,reading,8,2017,Vermont,sd_excluded_pct_all,1.5883,1.34,0.2483,report card (2024 appendix) vs TDW row 'Vermont'
+tdw_vs_reportcard,reading,8,2017,Virginia,el_excluded_pct_all,0.9294,1.06,0.1306,report card (2024 appendix) vs TDW row 'Virginia'
+tdw_vs_reportcard,reading,8,2017,West Virginia,sd_excluded_pct_all,1.7017,1.81,0.1083,report card (2024 appendix) vs TDW row 'West Virginia'
+tdw_vs_reportcard,reading,8,2017,Wisconsin,el_excluded_pct_all,#,0.51,0.01,report card (2024 appendix) vs TDW row 'Wisconsin'
+tdw_vs_reportcard,reading,8,2017,Wyoming,sd_excluded_pct_all,1.0296,0.96,0.0696,report card (2024 appendix) vs TDW row 'Wyoming'
+tdw_vs_reportcard,reading,8,2024,New York,el_excluded_pct_all,2.352215,0.72,1.632215,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,reading,8,2024,New York,sd_excluded_pct_all,2.397338,1.60,0.797338,report card (2024 appendix) vs TDW row 'New York'
+tdw_vs_reportcard,reading,8,2024,North Carolina,el_excluded_pct_all,1.075652,0.54,0.535652,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,8,2024,North Carolina,sd_excluded_pct_all,2.062853,1.47,0.592853,report card (2024 appendix) vs TDW row 'North Carolina'
+tdw_vs_reportcard,reading,8,2024,North Dakota,el_excluded_pct_all,0.658207,0.22,0.438207,report card (2024 appendix) vs TDW row 'North Dakota'
+tdw_vs_reportcard,reading,8,2024,North Dakota,sd_excluded_pct_all,2.26269,1.37,0.89269,report card (2024 appendix) vs TDW row 'North Dakota'
+tdw_vs_reportcard,reading,8,2024,Oklahoma,el_excluded_pct_all,1.279707,0.72,0.559707,report card (2024 appendix) vs TDW row 'Oklahoma'
+tdw_vs_reportcard,reading,8,2024,Oklahoma,sd_excluded_pct_all,1.482397,2.02,0.537603,report card (2024 appendix) vs TDW row 'Oklahoma'
+tdw_vs_reportcard,reading,8,2024,Oregon,el_excluded_pct_all,0.646827,0.38,0.266827,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,8,2024,Oregon,sd_excluded_pct_all,1.457026,0.80,0.657026,report card (2024 appendix) vs TDW row 'Oregon'
+tdw_vs_reportcard,reading,8,2024,Pennsylvania,el_excluded_pct_all,0.606545,0.51,0.096545,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,reading,8,2024,Pennsylvania,sd_excluded_pct_all,2.152042,1.34,0.812042,report card (2024 appendix) vs TDW row 'Pennsylvania'
+tdw_vs_reportcard,reading,8,2024,Rhode Island,el_excluded_pct_all,1.258186,0.60,0.658186,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,8,2024,Rhode Island,sd_excluded_pct_all,1.513596,1.31,0.203596,report card (2024 appendix) vs TDW row 'Rhode Island'
+tdw_vs_reportcard,reading,8,2024,South Carolina,el_excluded_pct_all,0.793789,0.61,0.183789,report card (2024 appendix) vs TDW row 'South Carolina'
+tdw_vs_reportcard,reading,8,2024,South Carolina,sd_excluded_pct_all,1.638483,0.75,0.888483,report card (2024 appendix) vs TDW row 'South Carolina'
+tdw_vs_reportcard,reading,8,2024,South Dakota,sd_excluded_pct_all,1.461949,1.30,0.161949,report card (2024 appendix) vs TDW row 'South Dakota'
+tdw_vs_reportcard,reading,8,2024,Wisconsin,el_excluded_pct_all,0.524601,0.67,0.145399,report card (2024 appendix) vs TDW row 'Wisconsin'
+vintage_2019_vs_2024,mathematics,4,2009,Alabama,el_assessed_pct_all (permitted),2.2277,2.033459,0.194241,2024 Table A-26 (Cont-2) vs 2019 M_TableA-26-cont(2)
+vintage_2019_vs_2024,mathematics,4,2009,Delaware,el_assessed_pct_all (permitted),3.3907,2.953235,0.437465,2024 Table A-26 (Cont-2) vs 2019 M_TableA-26-cont(2)
+vintage_2019_vs_2024,mathematics,4,2009,Florida,el_assessed_pct_all (permitted),7.4296,6.952364,0.477236,2024 Table A-26 (Cont-2) vs 2019 M_TableA-26-cont(2)
+vintage_2019_vs_2024,mathematics,4,2009,Mississippi,el_assessed_pct_all (permitted),0.8144,0.519148,0.295252,2024 Table A-26 (Cont-2) vs 2019 M_TableA-26-cont(2)
+vintage_2019_vs_2024,mathematics,4,2009,New Jersey,el_assessed_pct_all (permitted),2.9195,2.642801,0.276699,2024 Table A-26 (Cont-2) vs 2019 M_TableA-26-cont(2)
+vintage_2019_vs_2024,mathematics,4,2009,New York,el_assessed_pct_all (permitted),7.2094,7.002857,0.206543,2024 Table A-26 (Cont-2) vs 2019 M_TableA-26-cont(2)
+vintage_2019_vs_2024,mathematics,4,2009,Tennessee,el_assessed_pct_all (permitted),2.2866,2.060177,0.226423,2024 Table A-26 (Cont-2) vs 2019 M_TableA-26-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,Alabama,el_assessed_pct_all (permitted),1.0991,0.893745,0.205355,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,Kentucky,el_assessed_pct_all (permitted),0.8609,0.585197,0.275703,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,Louisiana,el_assessed_pct_all (permitted),1.1175,0.644009,0.473491,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,Maryland,el_assessed_pct_all (permitted),2.1063,1.931953,0.174347,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,New Hampshire,el_assessed_pct_all (permitted),1.1139,0.669559,0.444341,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,New Jersey,el_assessed_pct_all (permitted),1.9931,1.799702,0.193398,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,New York,el_assessed_pct_all (permitted),4.4298,4.143121,0.286679,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,North Dakota,el_assessed_pct_all (permitted),0.9695,0.5724580000000001,0.3970419999999999,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,South Dakota,el_assessed_pct_all (permitted),1.3623,0.9366749999999999,0.4256250000000001,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,mathematics,8,2009,Tennessee,el_assessed_pct_all (permitted),0.793,0.658538,0.134462,2024 Table A-28 (Cont-2) vs 2019 M_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,4,1994,DoDEA,sdel_excluded_pct_all (not_permitted),—,5,0,2024 Table A-17 vs 2019 R_TableA-17
+vintage_2019_vs_2024,reading,4,1994,DoDEA,sdel_identified_pct_all (not_permitted),—,9,0,2024 Table A-17 vs 2019 R_TableA-17
+vintage_2019_vs_2024,reading,4,2009,Alaska,el_assessed_acc_pct_all (permitted),6.0329,6.031,0.0019,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Alaska,el_assessed_noacc_pct_all (permitted),2.9481,2.9472,0.0009,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Alaska,el_assessed_pct_all (permitted),8.981,8.9782,0.0028,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Alaska,el_excluded_pct_all (permitted),0.9825,0.9822,0.0003,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Alaska,el_identified_pct_all (permitted),9.9635,9.9605,0.0030,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,California,el_assessed_acc_pct_all (permitted),2.2279,2.2268,0.0011,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,California,el_assessed_noacc_pct_all (permitted),25.9957,25.9819,0.0138,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,California,el_assessed_pct_all (permitted),28.2236,28.2087,0.0149,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,California,el_excluded_pct_all (permitted),1.4518,1.4511,0.0007,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,California,el_identified_pct_all (permitted),29.6754,29.6598,0.0156,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Hawaii,el_assessed_acc_pct_all (permitted),5.5374,5.5356,0.0018,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Hawaii,el_assessed_noacc_pct_all (permitted),3.9886,3.9872,0.0014,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Hawaii,el_assessed_pct_all (permitted),9.526,9.5228,0.0032,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Hawaii,el_excluded_pct_all (permitted),0.7551,0.7548,0.0003,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Hawaii,el_identified_pct_all (permitted),10.2811,10.2777,0.0034,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Idaho,el_assessed_acc_pct_all (permitted),1.5708,1.5703,0.0005,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Idaho,el_assessed_noacc_pct_all (permitted),2.9035,2.9026,0.0009,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Idaho,el_assessed_pct_all (permitted),4.4742,4.4729,0.0013,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Idaho,el_excluded_pct_all (permitted),0.6902,0.6899,0.0003,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Idaho,el_identified_pct_all (permitted),5.1644,5.1628,0.0016,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Kansas,el_assessed_pct_all (permitted),7.5507,7.550599999999999,0.000100000000001,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Louisiana,el_assessed_acc_pct_all (permitted),1.5317,1.5312,0.0005,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Louisiana,el_assessed_noacc_pct_all (permitted),0.7517,0.7515,0.0002,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Louisiana,el_assessed_pct_all (permitted),2.2834,2.2826999999999997,0.0007000000000003,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Louisiana,el_identified_pct_all (permitted),2.4676,2.4668,0.0008,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Maryland,el_assessed_acc_pct_all (permitted),2.3504,2.3502,0.0002,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Maryland,el_assessed_noacc_pct_all (permitted),0.6052,0.6054,0.0002,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Minnesota,el_assessed_noacc_pct_all (permitted),4.5371,4.5359,0.0012,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Minnesota,el_assessed_pct_all (permitted),7.3471,7.3451,0.0020,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Minnesota,el_identified_pct_all (permitted),8.0541,8.0519,0.0022,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Montana,el_assessed_pct_all (permitted),2.4907,2.4905999999999997,0.0001000000000003,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Nation (public),el_assessed_acc_pct_all (permitted),2.6219,2.6216,0.0003,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Nation (public),el_assessed_noacc_pct_all (permitted),6.1856,6.1849,0.0007,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Nation (public),el_assessed_pct_all (permitted),8.8075,8.8065,0.0010,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Nation (public),el_excluded_pct_all (permitted),1.6968,1.6966,0.0002,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Nation (public),el_identified_pct_all (permitted),10.5043,10.5031,0.0012,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,New Mexico,el_assessed_acc_pct_all (permitted),4.5741,4.5713,0.0028,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,New Mexico,el_assessed_noacc_pct_all (permitted),7.4794,7.4748,0.0046,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,New Mexico,el_assessed_pct_all (permitted),12.0535,12.0461,0.0074,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,New Mexico,el_excluded_pct_all (permitted),4.4489,4.4462,0.0027,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Oregon,el_assessed_acc_pct_all (permitted),5.043,5.0362,0.0068,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Oregon,el_assessed_noacc_pct_all (permitted),5.6436,5.6361,0.0075,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Oregon,el_assessed_pct_all (permitted),10.6865,10.6723,0.0142,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Oregon,el_excluded_pct_all (permitted),1.1837,1.1822,0.0015,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Oregon,el_identified_pct_all (permitted),11.8703,11.8544,0.0159,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Utah,el_assessed_acc_pct_all (permitted),3.3228,3.3225,0.0003,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Utah,el_assessed_noacc_pct_all (permitted),3.1447,3.1444,0.0003,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Utah,el_assessed_pct_all (permitted),6.4674,6.4669,0.0005,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Utah,el_excluded_pct_all (permitted),2.0806,2.0804,0.0002,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Washington,el_assessed_acc_pct_all (permitted),3.0969,3.0959,0.0010,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Washington,el_assessed_noacc_pct_all (permitted),5.6239,5.6221,0.0018,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Washington,el_assessed_pct_all (permitted),8.7208,8.718,0.0028,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Washington,el_excluded_pct_all (permitted),1.3552,1.3547,0.0005,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Washington,el_identified_pct_all (permitted),10.0759,10.0727,0.0032,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Wisconsin,el_assessed_acc_pct_all (permitted),3.9296,3.9293,0.0003,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Wisconsin,el_assessed_pct_all (permitted),5.2157,5.2153,0.0004,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Wyoming,el_assessed_acc_pct_all (permitted),1.3879,1.3873,0.0006,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Wyoming,el_assessed_noacc_pct_all (permitted),1.0127,1.0123,0.0004,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Wyoming,el_assessed_pct_all (permitted),2.4006,2.3996,0.0010,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,4,2009,Wyoming,el_identified_pct_all (permitted),2.8591,2.8579,0.0012,2024 Table A-26 (Cont-2) vs 2019 R_TableA-26-cont(2)
+vintage_2019_vs_2024,reading,8,2009,California,el_assessed_acc_pct_all (permitted),2.9353,2.9339,0.0014,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,California,el_assessed_noacc_pct_all (permitted),15.6592,15.652,0.0072,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,California,el_assessed_pct_all (permitted),18.5945,18.5859,0.0086,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,California,el_excluded_pct_all (permitted),1.0148,1.0144,0.0004,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,California,el_identified_pct_all (permitted),19.6093,19.6002,0.0091,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,California,sd_assessed_acc_pct_all (permitted),4.4663,4.4646,0.0017,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,California,sd_assessed_noacc_pct_all (permitted),2.8946,2.8935,0.0011,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,California,sd_assessed_pct_all (permitted),7.3608,7.3581,0.0027,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,California,sd_identified_pct_all (permitted),9.0815,9.0781,0.0034,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Colorado,sd_assessed_acc_pct_all (permitted),6.5531,6.5506,0.0025,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Colorado,sd_assessed_noacc_pct_all (permitted),1.5231,1.5225,0.0006,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Colorado,sd_assessed_pct_all (permitted),8.0762,8.0731,0.0031,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Colorado,sd_excluded_pct_all (permitted),2.4698,2.4688,0.0010,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Colorado,sd_identified_pct_all (permitted),10.546,10.5419,0.0041,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,District of Columbia,sd_assessed_acc_pct_all (permitted),4.1968,4.1946,0.0022,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,District of Columbia,sd_assessed_noacc_pct_all (permitted),1.1954,1.1948,0.0006,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,District of Columbia,sd_assessed_pct_all (permitted),5.3922,5.3894,0.0028,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,District of Columbia,sd_excluded_pct_all (permitted),11.2153,11.2094,0.0059,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,District of Columbia,sd_identified_pct_all (permitted),16.6075,16.5988,0.0087,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,DoDEA,el_assessed_acc_pct_all (permitted),1.0585,1.0578,0.0007,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,DoDEA,el_assessed_noacc_pct_all (permitted),2.1403,2.1389,0.0014,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,DoDEA,el_assessed_pct_all (permitted),3.1987,3.1967,0.0020,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,DoDEA,el_excluded_pct_all (permitted),1.6396,1.6385,0.0011,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,DoDEA,el_identified_pct_all (permitted),4.8383,4.8352,0.0031,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,DoDEA,sd_assessed_acc_pct_all (permitted),5.2829,5.2795,0.0034,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,DoDEA,sd_assessed_pct_all (permitted),6.3038,6.299799999999999,0.004000000000001,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,DoDEA,sd_excluded_pct_all (permitted),2.4173,2.4157,0.0016,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,DoDEA,sd_identified_pct_all (permitted),8.7211,8.7155,0.0056,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Illinois,el_assessed_acc_pct_all (permitted),1.6452,1.6441,0.0011,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Illinois,el_assessed_noacc_pct_all (permitted),0.7885,0.7879,0.0006,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Illinois,el_assessed_pct_all (permitted),2.4337,2.432,0.0017,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Illinois,el_identified_pct_all (permitted),3.2007,3.1986,0.0021,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Illinois,sd_assessed_acc_pct_all (permitted),8.8269,8.8209,0.0060,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Illinois,sd_assessed_noacc_pct_all (permitted),1.8417,1.8405,0.0012,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Illinois,sd_assessed_pct_all (permitted),10.6686,10.6614,0.0072,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Illinois,sd_excluded_pct_all (permitted),3.0116,3.0096,0.0020,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Illinois,sd_identified_pct_all (permitted),13.6802,13.671,0.0092,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Louisiana,el_assessed_pct_all (permitted),0.7664,0.7662,0.0002,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Louisiana,el_identified_pct_all (permitted),0.8377,0.8374,0.0003,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Louisiana,sd_assessed_noacc_pct_all (permitted),1.8697,1.8685,0.0012,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Louisiana,sd_assessed_pct_all (permitted),13.2875,13.278500000000001,0.008999999999999,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Louisiana,sd_excluded_pct_all (permitted),1.789,1.7878,0.0012,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Louisiana,sd_identified_pct_all (permitted),15.0765,15.0663,0.0102,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Maryland,el_excluded_pct_all (permitted),2.4672,2.4674,0.0002,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Maryland,sd_assessed_acc_pct_all (permitted),3.8794,3.8796,0.0002,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Minnesota,sd_assessed_acc_pct_all (permitted),7.5496,7.5472,0.0024,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Minnesota,sd_assessed_noacc_pct_all (permitted),2.0894,2.0888,0.0006,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Minnesota,sd_assessed_pct_all (permitted),9.6391,9.636,0.0031,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Minnesota,sd_identified_pct_all (permitted),12.4489,12.445,0.0039,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Montana,el_assessed_acc_pct_all (permitted),0.6499,0.5662,0.0837,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Montana,el_assessed_noacc_pct_all (permitted),1.5791,2.4845,0.9054,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Montana,el_assessed_pct_all (permitted),2.229,2.4845,0.2555,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Nation (public),el_assessed_acc_pct_all (permitted),1.4631,1.4629,0.0002,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Nation (public),el_assessed_noacc_pct_all (permitted),3.4449,3.4445,0.0004,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Nation (public),el_excluded_pct_all (permitted),1.0401,1.0399,0.0002,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Nation (public),sd_assessed_acc_pct_all (permitted),6.9801,6.9793,0.0008,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Nation (public),sd_assessed_noacc_pct_all (permitted),2.2853,2.2851,0.0002,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Nation (public),sd_assessed_pct_all (permitted),9.2655,9.2644,0.0011,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Nation (public),sd_excluded_pct_all (permitted),3.5921,3.5917,0.0004,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Nation (public),sd_identified_pct_all (permitted),12.8576,12.8561,0.0015,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,New Mexico,sd_assessed_pct_all (permitted),8.4639,8.463799999999999,0.000100000000001,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,New York,el_assessed_acc_pct_all (permitted),2.6777,2.6773,0.0004,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,New York,el_assessed_pct_all (permitted),2.9539,2.9535,0.0004,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,New York,el_identified_pct_all (permitted),5.0949,5.0941,0.0008,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,el_assessed_acc_pct_all (permitted),1.6211,1.6193,0.0018,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,el_assessed_noacc_pct_all (permitted),3.8492,3.8449,0.0043,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,el_assessed_pct_all (permitted),5.4704,5.4642,0.0062,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,el_excluded_pct_all (permitted),0.6639,0.6632,0.0007,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,el_identified_pct_all (permitted),6.1343,6.1274,0.0069,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,sd_assessed_acc_pct_all (permitted),5.9843,5.978,0.0063,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,sd_assessed_noacc_pct_all (permitted),4.4348,4.4302,0.0046,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,sd_assessed_pct_all (permitted),10.4191,10.4082,0.0109,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,sd_excluded_pct_all (permitted),2.4031,2.4006,0.0025,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Oregon,sd_identified_pct_all (permitted),12.8222,12.8088,0.0134,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Pennsylvania,el_assessed_pct_all (permitted),1.5227,1.5228000000000002,0.0001000000000002,2024 Table A-28 (Cont-2) vs 2019 R_TableA-28-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Texas,sd_assessed_pct_all (permitted),7.2909,7.290699999999999,0.000200000000001,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2019_vs_2024,reading,8,2009,Texas,sd_identified_pct_all (permitted),11.8707,11.8705,0.0002,2024 Table A-24 (Cont-2) vs 2019 R_TableA-24-cont(2)
+vintage_2022_vs_2024,mathematics,4,2022,District of Columbia,sdel_assessed_acc_pct_all (permitted),25.47771,18,7.47771,2024 Table A-18 (Cont-5) vs 2022 Table A-18 (Cont-5)
+vintage_2022_vs_2024,mathematics,4,2022,District of Columbia,sdel_assessed_noacc_pct_all (permitted),4.42466,7,2.57534,2024 Table A-18 (Cont-5) vs 2022 Table A-18 (Cont-5)
+vintage_2022_vs_2024,mathematics,4,2022,District of Columbia,sdel_assessed_pct_all (permitted),29.90237,24,5.90237,2024 Table A-18 (Cont-5) vs 2022 Table A-18 (Cont-5)
+vintage_2022_vs_2024,mathematics,4,2022,District of Columbia,sdel_identified_pct_all (permitted),32.156141,26,6.156141,2024 Table A-18 (Cont-5) vs 2022 Table A-18 (Cont-5)
+vintage_2022_vs_2024,mathematics,8,2022,District of Columbia,sdel_assessed_acc_pct_all (permitted),25.569858,13,12.569858,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,mathematics,8,2022,District of Columbia,sdel_assessed_noacc_pct_all (permitted),1.490984,4,2.509016,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,mathematics,8,2022,District of Columbia,sdel_assessed_pct_all (permitted),27.060842,17,10.060842,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,mathematics,8,2022,District of Columbia,sdel_excluded_pct_all (permitted),2.738225,1,1.738225,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,mathematics,8,2022,District of Columbia,sdel_identified_pct_all (permitted),29.799067,18,11.799067,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,reading,4,2022,District of Columbia,sdel_assessed_acc_pct_all (permitted),23.083003,18,5.083003,2024 Table A-18 (Cont-5) vs 2022 Table A-18 (Cont-5)
+vintage_2022_vs_2024,reading,4,2022,District of Columbia,sdel_assessed_noacc_pct_all (permitted),4.877438,6,1.122562,2024 Table A-18 (Cont-5) vs 2022 Table A-18 (Cont-5)
+vintage_2022_vs_2024,reading,4,2022,District of Columbia,sdel_assessed_pct_all (permitted),27.960441,24,3.960441,2024 Table A-18 (Cont-5) vs 2022 Table A-18 (Cont-5)
+vintage_2022_vs_2024,reading,4,2022,District of Columbia,sdel_excluded_pct_all (permitted),4.169668,2,2.169668,2024 Table A-18 (Cont-5) vs 2022 Table A-18 (Cont-5)
+vintage_2022_vs_2024,reading,4,2022,District of Columbia,sdel_identified_pct_all (permitted),32.130108,26,6.130108,2024 Table A-18 (Cont-5) vs 2022 Table A-18 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,District of Columbia,el_assessed_noacc_pct_all (permitted),—,2,0,2024 Table A-28 (Cont-5) vs 2022 Table A-28 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,District of Columbia,sd_assessed_noacc_pct_all (permitted),—,1,0,2024 Table A-24 (Cont-5) vs 2022 Table A-24 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,District of Columbia,sdel_assessed_acc_pct_all (permitted),24.582884,13,11.582884,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,District of Columbia,sdel_assessed_noacc_pct_all (permitted),—,4,0,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,District of Columbia,sdel_assessed_pct_all (permitted),26.78488,16,10.78488,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,District of Columbia,sdel_excluded_pct_all (permitted),3.06587,2,1.06587,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,District of Columbia,sdel_identified_pct_all (permitted),29.850749,18,11.850749,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,DoDEA,el_assessed_noacc_pct_all (permitted),—,3,0,2024 Table A-28 (Cont-5) vs 2022 Table A-28 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,DoDEA,sd_assessed_noacc_pct_all (permitted),—,1,0,2024 Table A-24 (Cont-5) vs 2022 Table A-24 (Cont-5)
+vintage_2022_vs_2024,reading,8,2022,DoDEA,sdel_assessed_noacc_pct_all (permitted),—,4,0,2024 Table A-20 (Cont-5) vs 2022 Table A-20 (Cont-5)

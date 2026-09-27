@@ -1,0 +1,2049 @@
+year,grade,subject,state,state_label,naep_equiv,se,rel_error,flag,testing_program,series,source_table
+2005,4,mathematics,AK,Alaska,222,1.1,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,AL,Alabama,207,0.9,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,AR,Arkansas,236,1.1,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,AZ,Arizona,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,CA,California,231,0.6,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,CO,Colorado,201,1.2,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,CT,Connecticut,221,0.8,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,DC,District of Columbia,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,DE,Delaware,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,FL,Florida,230,0.8,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,GA,Georgia,215,1.0,,!,,2005-2009 comparison,findings_table3
+2005,4,mathematics,HI,Hawaii,247,1.0,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,IA,Iowa 1,219,0.8,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,ID,Idaho,207,2.2,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,IL,Illinois,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,IN,Indiana 1,225,0.7,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,KS,Kansas,218,1.6,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,KY,Kentucky,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,LA,Louisiana,223,0.9,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,MA,Massachusetts,255,0.8,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,MD,Maryland,215,1.1,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,ME,Maine,249,0.8,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,MI,Michigan 1,222,1.6,,!,,2005-2009 comparison,findings_table3
+2005,4,mathematics,MN,Minnesota,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,MO,Missouri,242,1.0,,!,,2005-2009 comparison,findings_table3
+2005,4,mathematics,MS,Mississippi,206,1.1,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,MT,Montana,220,0.6,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,NC,North Carolina,203,0.9,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,ND,North Dakota 1,224,0.8,,!,,2005-2009 comparison,findings_table3
+2005,4,mathematics,NE,Nebraska,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,NH,New Hampshire,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,NJ,New Jersey,221,1.4,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,NM,New Mexico,232,1.3,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,NV,Nevada,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,NY,New York,207,1.4,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,OH,Ohio,233,0.9,,!,,2005-2009 comparison,findings_table3
+2005,4,mathematics,OK,Oklahoma,218,0.8,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,OR,Oregon,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,PA,Pennsylvania,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,RI,Rhode Island,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,SC,South Carolina,246,1.0,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,SD,South Dakota,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,TN,Tennessee,200,1.2,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,TX,Texas,219,1.0,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,UT,Utah,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,VA,Virginia,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,VT,Vermont,,,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,WA,Washington,236,0.8,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,WI,Wisconsin 1,224,1.4,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,WV,West Virginia,215,1.1,,,,2005-2009 comparison,findings_table3
+2005,4,mathematics,WY,Wyoming,251,0.8,,!,,2005-2009 comparison,findings_table3
+2005,4,reading,AK,Alaska,182,2.8,,,,2005-2009 comparison,findings_table3
+2005,4,reading,AL,Alabama,172,2.1,,,,2005-2009 comparison,findings_table3
+2005,4,reading,AR,Arkansas,217,1.4,,,,2005-2009 comparison,findings_table3
+2005,4,reading,AZ,Arizona,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,CA,California,210,0.7,,,,2005-2009 comparison,findings_table3
+2005,4,reading,CO,Colorado,186,1.5,,,,2005-2009 comparison,findings_table3
+2005,4,reading,CT,Connecticut,212,1.1,,,,2005-2009 comparison,findings_table3
+2005,4,reading,DC,District of Columbia,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,DE,Delaware,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,FL,Florida,202,0.9,,,,2005-2009 comparison,findings_table3
+2005,4,reading,GA,Georgia,174,1.6,,!,,2005-2009 comparison,findings_table3
+2005,4,reading,HI,Hawaii,205,0.8,,,,2005-2009 comparison,findings_table3
+2005,4,reading,IA,Iowa 1,197,1.4,,,,2005-2009 comparison,findings_table3
+2005,4,reading,ID,Idaho,185,3.2,,!,,2005-2009 comparison,findings_table3
+2005,4,reading,IL,Illinois,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,IN,Indiana 1,199,1.2,,,,2005-2009 comparison,findings_table3
+2005,4,reading,KS,Kansas,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,KY,Kentucky,206,1.6,,,,2005-2009 comparison,findings_table3
+2005,4,reading,LA,Louisiana,198,1.4,,,,2005-2009 comparison,findings_table3
+2005,4,reading,MA,Massachusetts,234,0.9,,,,2005-2009 comparison,findings_table3
+2005,4,reading,MD,Maryland,187,1.5,,,,2005-2009 comparison,findings_table3
+2005,4,reading,ME,Maine,224,1.1,,,,2005-2009 comparison,findings_table3
+2005,4,reading,MI,Michigan 1,182,3.8,,!,,2005-2009 comparison,findings_table3
+2005,4,reading,MN,Minnesota,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,MO,Missouri,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,MS,Mississippi,161,2.1,,,,2005-2009 comparison,findings_table3
+2005,4,reading,MT,Montana,197,1.5,,,,2005-2009 comparison,findings_table3
+2005,4,reading,NC,North Carolina,183,1.3,,,,2005-2009 comparison,findings_table3
+2005,4,reading,ND,North Dakota 1,204,0.7,,,,2005-2009 comparison,findings_table3
+2005,4,reading,NE,Nebraska,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,NH,New Hampshire,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,NJ,New Jersey,191,1.7,,,,2005-2009 comparison,findings_table3
+2005,4,reading,NM,New Mexico,208,1.0,,,,2005-2009 comparison,findings_table3
+2005,4,reading,NV,Nevada,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,NY,New York,207,1.2,,,,2005-2009 comparison,findings_table3
+2005,4,reading,OH,Ohio,199,1.8,,,,2005-2009 comparison,findings_table3
+2005,4,reading,OK,Oklahoma,182,2.3,,,,2005-2009 comparison,findings_table3
+2005,4,reading,OR,Oregon,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,PA,Pennsylvania,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,RI,Rhode Island,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,SC,South Carolina,228,1.1,,,,2005-2009 comparison,findings_table3
+2005,4,reading,SD,South Dakota,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,TN,Tennessee,170,1.5,,,,2005-2009 comparison,findings_table3
+2005,4,reading,TX,Texas,190,1.0,,,,2005-2009 comparison,findings_table3
+2005,4,reading,UT,Utah,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,VA,Virginia,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,VT,Vermont,,,,,,2005-2009 comparison,findings_table3
+2005,4,reading,WA,Washington,197,1.9,,,,2005-2009 comparison,findings_table3
+2005,4,reading,WI,Wisconsin 1,189,1.7,,,,2005-2009 comparison,findings_table3
+2005,4,reading,WV,West Virginia,186,1.3,,!,,2005-2009 comparison,findings_table3
+2005,4,reading,WY,Wyoming,228,0.6,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,AK,Alaska,268,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,AL,Alabama,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,AR,Arkansas,288,0.7,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,AZ,Arizona,265,1.0,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,CA,California,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,CO,Colorado,258,1.7,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,CT,Connecticut,257,1.6,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,DC,District of Columbia,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,DE,Delaware,275,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,FL,Florida,269,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,GA,Georgia,255,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,HI,Hawaii,296,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,IA,Iowa 1,262,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,ID,Idaho,266,1.8,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,IL,Illinois,276,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,IN,Indiana 1,266,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,KS,Kansas,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,KY,Kentucky,285,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,LA,Louisiana,264,0.8,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,MA,Massachusetts,301,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,MD,Maryland,276,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,ME,Maine,300,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,MI,Michigan 1,269,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,MN,Minnesota,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,MO,Missouri,311,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,MS,Mississippi,262,1.4,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,MT,Montana,271,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,NC,North Carolina,247,1.5,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,ND,North Dakota 1,277,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,NE,Nebraska,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,NH,New Hampshire,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,NJ,New Jersey,273,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,NM,New Mexico,287,1.6,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,NV,Nevada,271,1.5,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,NY,New York,275,0.8,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,OH,Ohio,274,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,OK,Oklahoma,258,0.7,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,OR,Oregon,269,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,PA,Pennsylvania,272,0.6,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,RI,Rhode Island,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,SC,South Carolina,305,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,SD,South Dakota,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,TN,Tennessee,230,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,TX,Texas,272,0.6,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,UT,Utah,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,VA,Virginia,253,1.0,,!,,2005-2009 comparison,findings_table3
+2005,8,mathematics,VT,Vermont,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,WA,Washington,,,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,WI,Wisconsin 1,263,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,WV,West Virginia,253,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,mathematics,WY,Wyoming,293,1.0,,,,2005-2009 comparison,findings_table3
+2005,8,reading,AK,Alaska,230,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,reading,AL,Alabama,236,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,reading,AR,Arkansas,254,1.0,,,,2005-2009 comparison,findings_table3
+2005,8,reading,AZ,Arizona,244,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,reading,CA,California,262,0.7,,,,2005-2009 comparison,findings_table3
+2005,8,reading,CO,Colorado,229,1.9,,,,2005-2009 comparison,findings_table3
+2005,8,reading,CT,Connecticut,242,1.4,,,,2005-2009 comparison,findings_table3
+2005,8,reading,DC,District of Columbia,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,DE,Delaware,242,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,reading,FL,Florida,265,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,reading,GA,Georgia,224,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,reading,HI,Hawaii,261,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,reading,IA,Iowa 1,250,1.0,,,,2005-2009 comparison,findings_table3
+2005,8,reading,ID,Idaho,235,1.9,,,,2005-2009 comparison,findings_table3
+2005,8,reading,IL,Illinois,245,1.1,,,,2005-2009 comparison,findings_table3
+2005,8,reading,IN,Indiana 1,249,1.9,,,,2005-2009 comparison,findings_table3
+2005,8,reading,KS,Kansas,242,1.4,,!,,2005-2009 comparison,findings_table3
+2005,8,reading,KY,Kentucky,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,LA,Louisiana,251,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,reading,MA,Massachusetts,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,MD,Maryland,245,1.7,,,,2005-2009 comparison,findings_table3
+2005,8,reading,ME,Maine,275,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,reading,MI,Michigan 1,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,MN,Minnesota,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,MO,Missouri,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,MS,Mississippi,246,1.4,,,,2005-2009 comparison,findings_table3
+2005,8,reading,MT,Montana,253,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,reading,NC,North Carolina,217,1.4,,,,2005-2009 comparison,findings_table3
+2005,8,reading,ND,North Dakota 1,255,0.8,,,,2005-2009 comparison,findings_table3
+2005,8,reading,NE,Nebraska,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,NH,New Hampshire,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,NJ,New Jersey,250,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,reading,NM,New Mexico,251,1.4,,,,2005-2009 comparison,findings_table3
+2005,8,reading,NV,Nevada,253,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,reading,NY,New York,268,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,reading,OH,Ohio,241,1.6,,,,2005-2009 comparison,findings_table3
+2005,8,reading,OK,Oklahoma,244,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,reading,OR,Oregon,254,1.3,,!,,2005-2009 comparison,findings_table3
+2005,8,reading,PA,Pennsylvania,258,1.7,,,,2005-2009 comparison,findings_table3
+2005,8,reading,RI,Rhode Island,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,SC,South Carolina,276,1.2,,,,2005-2009 comparison,findings_table3
+2005,8,reading,SD,South Dakota,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,TN,Tennessee,221,1.8,,,,2005-2009 comparison,findings_table3
+2005,8,reading,TX,Texas,225,0.9,,,,2005-2009 comparison,findings_table3
+2005,8,reading,UT,Utah,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,VA,Virginia,243,1.3,,,,2005-2009 comparison,findings_table3
+2005,8,reading,VT,Vermont,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,WA,Washington,,,,,,2005-2009 comparison,findings_table3
+2005,8,reading,WI,Wisconsin 1,229,1.5,,,,2005-2009 comparison,findings_table3
+2005,8,reading,WV,West Virginia,228,1.8,,,,2005-2009 comparison,findings_table3
+2005,8,reading,WY,Wyoming,278,1.4,,,,2005-2009 comparison,findings_table3
+2007,4,mathematics,AK,Alaska,216,1.3,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,AL,Alabama,205,1.5,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,AR,Arkansas,229,0.6,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,AZ,Arizona,213,1.4,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,CA,California,226,0.7,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,CO,Colorado,201,1.6,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,CT,Connecticut,220,0.7,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,DC,District of Columbia,,,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,DE,Delaware,225,0.7,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,FL,Florida,230,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,GA,Georgia,213,0.8,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,HI,Hawaii,238,0.5,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,IA,Iowa 1,220,1.1,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,ID,Idaho,217,0.9,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,IL,Illinois,208,0.9,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,IN,Indiana 1,228,0.9,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,KS,Kansas,219,1.3,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,KY,Kentucky,229,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,LA,Louisiana,223,1.3,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,MA,Massachusetts,254,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,MD,Maryland,206,1.3,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,ME,Maine,236,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,MI,Michigan 1,204,1.6,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,MN,Minnesota,237,0.9,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,MO,Missouri,245,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,MS,Mississippi,204,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,MT,Montana,234,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,NC,North Carolina,231,0.6,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,ND,North Dakota 1,226,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,NE,Nebraska,,,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,NH,New Hampshire 1,239,1.1,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,NJ,New Jersey,220,1.1,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,NM,New Mexico,233,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,NV,Nevada,224,1.1,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,NY,New York,219,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,OH,Ohio,225,1.3,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,OK,Oklahoma,213,1.5,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,OR,Oregon,220,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,PA,Pennsylvania,223,0.9,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,RI,Rhode Island 1,236,0.7,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,SC,South Carolina,245,0.9,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,SD,South Dakota,224,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,TN,Tennessee,198,1.3,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,TX,Texas,217,0.9,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,UT,Utah,223,1.2,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,VA,Virginia,219,0.9,,!,,2005-2009 comparison,findings_table2
+2007,4,mathematics,VT,Vermont 1,239,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,WA,Washington,240,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,WI,Wisconsin 1,222,2.3,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,WV,West Virginia,217,1.3,,,,2005-2009 comparison,findings_table2
+2007,4,mathematics,WY,Wyoming,216,0.6,,!,,2005-2009 comparison,findings_table2
+2007,4,reading,AK,Alaska,183,0.9,,,,2005-2009 comparison,findings_table2
+2007,4,reading,AL,Alabama,179,1.5,,,,2005-2009 comparison,findings_table2
+2007,4,reading,AR,Arkansas,213,1.4,,,,2005-2009 comparison,findings_table2
+2007,4,reading,AZ,Arizona,198,1.4,,,,2005-2009 comparison,findings_table2
+2007,4,reading,CA,California,210,0.9,,,,2005-2009 comparison,findings_table2
+2007,4,reading,CO,Colorado,187,1.5,,,,2005-2009 comparison,findings_table2
+2007,4,reading,CT,Connecticut,213,1.6,,,,2005-2009 comparison,findings_table2
+2007,4,reading,DC,District of Columbia,,,,,,2005-2009 comparison,findings_table2
+2007,4,reading,DE,Delaware,202,0.9,,,,2005-2009 comparison,findings_table2
+2007,4,reading,FL,Florida,209,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,reading,GA,Georgia,185,1.3,,!,,2005-2009 comparison,findings_table2
+2007,4,reading,HI,Hawaii,212,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,reading,IA,Iowa 1,199,1.7,,,,2005-2009 comparison,findings_table2
+2007,4,reading,ID,Idaho,197,1.4,,,,2005-2009 comparison,findings_table2
+2007,4,reading,IL,Illinois,200,1.4,,,,2005-2009 comparison,findings_table2
+2007,4,reading,IN,Indiana 1,199,1.3,,,,2005-2009 comparison,findings_table2
+2007,4,reading,KS,Kansas,192,1.9,,,,2005-2009 comparison,findings_table2
+2007,4,reading,KY,Kentucky,205,1.6,,,,2005-2009 comparison,findings_table2
+2007,4,reading,LA,Louisiana,193,2.2,,!,,2005-2009 comparison,findings_table2
+2007,4,reading,MA,Massachusetts,232,1.2,,,,2005-2009 comparison,findings_table2
+2007,4,reading,MD,Maryland,186,1.5,,,,2005-2009 comparison,findings_table2
+2007,4,reading,ME,Maine,214,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,reading,MI,Michigan 1,178,2.5,,,,2005-2009 comparison,findings_table2
+2007,4,reading,MN,Minnesota,215,1.4,,,,2005-2009 comparison,findings_table2
+2007,4,reading,MO,Missouri,227,1.1,,,,2005-2009 comparison,findings_table2
+2007,4,reading,MS,Mississippi,163,1.3,,,,2005-2009 comparison,findings_table2
+2007,4,reading,MT,Montana,203,1.2,,,,2005-2009 comparison,findings_table2
+2007,4,reading,NC,North Carolina,183,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,reading,ND,North Dakota 1,201,1.0,,,,2005-2009 comparison,findings_table2
+2007,4,reading,NE,Nebraska,,,,,,2005-2009 comparison,findings_table2
+2007,4,reading,NH,New Hampshire 1,210,0.8,,,,2005-2009 comparison,findings_table2
+2007,4,reading,NJ,New Jersey,201,2.0,,,,2005-2009 comparison,findings_table2
+2007,4,reading,NM,New Mexico,210,0.7,,,,2005-2009 comparison,findings_table2
+2007,4,reading,NV,Nevada,207,1.1,,,,2005-2009 comparison,findings_table2
+2007,4,reading,NY,New York,209,1.4,,,,2005-2009 comparison,findings_table2
+2007,4,reading,OH,Ohio,198,2.2,,,,2005-2009 comparison,findings_table2
+2007,4,reading,OK,Oklahoma,172,3.7,,,,2005-2009 comparison,findings_table2
+2007,4,reading,OR,Oregon,186,2.1,,,,2005-2009 comparison,findings_table2
+2007,4,reading,PA,Pennsylvania,211,1.2,,,,2005-2009 comparison,findings_table2
+2007,4,reading,RI,Rhode Island 1,210,1.1,,,,2005-2009 comparison,findings_table2
+2007,4,reading,SC,South Carolina,223,1.5,,,,2005-2009 comparison,findings_table2
+2007,4,reading,SD,South Dakota,185,1.7,,,,2005-2009 comparison,findings_table2
+2007,4,reading,TN,Tennessee,175,1.7,,,,2005-2009 comparison,findings_table2
+2007,4,reading,TX,Texas,188,1.6,,!,,2005-2009 comparison,findings_table2
+2007,4,reading,UT,Utah,197,1.6,,,,2005-2009 comparison,findings_table2
+2007,4,reading,VA,Virginia,191,1.6,,!,,2005-2009 comparison,findings_table2
+2007,4,reading,VT,Vermont 1,214,1.0,,!,,2005-2009 comparison,findings_table2
+2007,4,reading,WA,Washington,203,2.1,,,,2005-2009 comparison,findings_table2
+2007,4,reading,WI,Wisconsin 1,193,2.0,,,,2005-2009 comparison,findings_table2
+2007,4,reading,WV,West Virginia,182,1.4,,,,2005-2009 comparison,findings_table2
+2007,4,reading,WY,Wyoming,204,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,AK,Alaska,265,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,AL,Alabama,253,1.9,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,AR,Arkansas,277,1.3,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,AZ,Arizona,268,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,CA,California,,,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,CO,Colorado,259,1.3,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,CT,Connecticut,252,2.0,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,DC,District of Columbia,,,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,DE,Delaware,272,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,FL,Florida,266,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,GA,Georgia,243,1.7,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,HI,Hawaii,294,0.8,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,IA,Iowa 1,264,1.5,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,ID,Idaho,265,1.6,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,IL,Illinois,251,0.8,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,IN,Indiana 1,266,1.6,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,KS,Kansas,270,1.6,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,KY,Kentucky,279,0.7,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,LA,Louisiana,267,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,MA,Massachusetts,302,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,MD,Maryland,278,1.5,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,ME,Maine,286,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,MI,Michigan 1,260,1.5,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,MN,Minnesota,286,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,MO,Missouri,289,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,MS,Mississippi,262,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,MT,Montana,281,1.7,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,NC,North Carolina,270,1.3,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,ND,North Dakota 1,279,0.8,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,NE,Nebraska,,,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,NH,New Hampshire 1,282,0.8,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,NJ,New Jersey,272,0.8,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,NM,New Mexico,285,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,NV,Nevada,267,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,NY,New York,273,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,OH,Ohio,265,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,OK,Oklahoma,249,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,OR,Oregon,262,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,PA,Pennsylvania,271,1.0,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,RI,Rhode Island 1,279,0.6,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,SC,South Carolina,312,1.4,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,SD,South Dakota,271,0.7,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,TN,Tennessee,234,2.2,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,TX,Texas,268,1.0,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,UT,Utah,256,1.4,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,VA,Virginia,259,1.6,,!,,2005-2009 comparison,findings_table2
+2007,8,mathematics,VT,Vermont 1,284,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,WA,Washington,286,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,WI,Wisconsin 1,262,1.7,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,WV,West Virginia,253,1.0,,,,2005-2009 comparison,findings_table2
+2007,8,mathematics,WY,Wyoming,279,0.8,,,,2005-2009 comparison,findings_table2
+2007,8,reading,AK,Alaska,233,1.9,,,,2005-2009 comparison,findings_table2
+2007,8,reading,AL,Alabama,234,1.5,,,,2005-2009 comparison,findings_table2
+2007,8,reading,AR,Arkansas,249,1.4,,,,2005-2009 comparison,findings_table2
+2007,8,reading,AZ,Arizona,245,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,reading,CA,California,261,0.6,,,,2005-2009 comparison,findings_table2
+2007,8,reading,CO,Colorado,230,1.4,,,,2005-2009 comparison,findings_table2
+2007,8,reading,CT,Connecticut,245,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,reading,DC,District of Columbia,,,,,,2005-2009 comparison,findings_table2
+2007,8,reading,DE,Delaware,240,1.0,,,,2005-2009 comparison,findings_table2
+2007,8,reading,FL,Florida,262,0.8,,,,2005-2009 comparison,findings_table2
+2007,8,reading,GA,Georgia,215,1.7,,,,2005-2009 comparison,findings_table2
+2007,8,reading,HI,Hawaii,245,0.7,,,,2005-2009 comparison,findings_table2
+2007,8,reading,IA,Iowa 1,252,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,reading,ID,Idaho,233,1.0,,,,2005-2009 comparison,findings_table2
+2007,8,reading,IL,Illinois,236,1.5,,!,,2005-2009 comparison,findings_table2
+2007,8,reading,IN,Indiana 1,251,0.7,,,,2005-2009 comparison,findings_table2
+2007,8,reading,KS,Kansas,241,1.0,,,,2005-2009 comparison,findings_table2
+2007,8,reading,KY,Kentucky,251,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,reading,LA,Louisiana,246,1.3,,,,2005-2009 comparison,findings_table2
+2007,8,reading,MA,Massachusetts,252,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,reading,MD,Maryland,250,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,reading,ME,Maine,261,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,reading,MI,Michigan 1,238,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,reading,MN,Minnesota,265,0.7,,,,2005-2009 comparison,findings_table2
+2007,8,reading,MO,Missouri,272,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,reading,MS,Mississippi,251,0.6,,,,2005-2009 comparison,findings_table2
+2007,8,reading,MT,Montana,250,1.5,,,,2005-2009 comparison,findings_table2
+2007,8,reading,NC,North Carolina,217,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,reading,ND,North Dakota 1,251,1.4,,,,2005-2009 comparison,findings_table2
+2007,8,reading,NE,Nebraska,,,,,,2005-2009 comparison,findings_table2
+2007,8,reading,NH,New Hampshire 1,258,1.5,,,,2005-2009 comparison,findings_table2
+2007,8,reading,NJ,New Jersey,252,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,reading,NM,New Mexico,248,1.0,,,,2005-2009 comparison,findings_table2
+2007,8,reading,NV,Nevada,247,1.0,,,,2005-2009 comparison,findings_table2
+2007,8,reading,NY,New York,260,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,reading,OH,Ohio,240,1.9,,,,2005-2009 comparison,findings_table2
+2007,8,reading,OK,Oklahoma,232,1.6,,,,2005-2009 comparison,findings_table2
+2007,8,reading,OR,Oregon,251,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,reading,PA,Pennsylvania,245,1.4,,,,2005-2009 comparison,findings_table2
+2007,8,reading,RI,Rhode Island 1,253,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,reading,SC,South Carolina,281,1.0,,,,2005-2009 comparison,findings_table2
+2007,8,reading,SD,South Dakota,249,0.9,,,,2005-2009 comparison,findings_table2
+2007,8,reading,TN,Tennessee,211,2.5,,,,2005-2009 comparison,findings_table2
+2007,8,reading,TX,Texas,222,1.1,,,,2005-2009 comparison,findings_table2
+2007,8,reading,UT,Utah,235,1.7,,,,2005-2009 comparison,findings_table2
+2007,8,reading,VA,Virginia,239,1.2,,!,,2005-2009 comparison,findings_table2
+2007,8,reading,VT,Vermont 1,263,1.4,,,,2005-2009 comparison,findings_table2
+2007,8,reading,WA,Washington,253,1.2,,,,2005-2009 comparison,findings_table2
+2007,8,reading,WI,Wisconsin 1,231,1.4,,,,2005-2009 comparison,findings_table2
+2007,8,reading,WV,West Virginia,229,1.3,,,,2005-2009 comparison,findings_table2
+2007,8,reading,WY,Wyoming,247,1.1,,,,2005-2009 comparison,findings_table2
+2009,4,mathematics,AK,Alaska,218,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,AK,Alaska,219,1.1,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,AL,Alabama,207,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,AL,Alabama,206,0.8,0.5,,,per-year report,findings_table_2009a
+2009,4,mathematics,AR,Arkansas,216,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,AR,Arkansas,216,0.9,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,AZ,Arizona,212,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,AZ,Arizona,212,1.2,0.1,,,per-year report,findings_table_2009a
+2009,4,mathematics,CA,California,220,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,CA,California,219,0.9,0.4,,,per-year report,findings_table_2009a
+2009,4,mathematics,CO,Colorado,202,1.3,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,CO,Colorado,202,1.2,0.1,,,per-year report,findings_table_2009a
+2009,4,mathematics,CT,Connecticut,214,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,CT,Connecticut,214,1.2,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,DC,District of Columbia,217,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,DC,District of Columbia,217,0.9,0.4,,,per-year report,findings_table_2009a
+2009,4,mathematics,DE,Delaware,220,0.6,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,DE,Delaware,220,0.6,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,FL,Florida,225,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,FL,Florida,225,1.0,0.4,,,per-year report,findings_table_2009a
+2009,4,mathematics,GA,Georgia,218,1.6,,!,,2005-2009 comparison,findings_table1
+2009,4,mathematics,GA,Georgia,218,1.2,0.8,!,,per-year report,findings_table_2009a
+2009,4,mathematics,HI,Hawaii,239,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,HI,Hawaii,239,0.9,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,IA,Iowa,221,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,IA,Iowa,221,1.2,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,ID,Idaho,213,1.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,ID,Idaho,213,1.9,0.5,,,per-year report,findings_table_2009a
+2009,4,mathematics,IL,Illinois,207,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,IL,Illinois,207,1.2,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,IN,Indiana,229,0.8,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,IN,Indiana,230,0.7,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,KS,Kansas,217,1.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,KS,Kansas,217,1.9,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,KY,Kentucky,223,0.7,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,KY,Kentucky,223,1.0,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,LA,Louisiana,221,0.8,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,LA,Louisiana,220,0.8,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,MA,Massachusetts,255,0.8,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,MA,Massachusetts,255,0.9,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,MD,Maryland,208,0.9,,!,,2005-2009 comparison,findings_table1
+2009,4,mathematics,MD,Maryland,208,1.1,0.9,!,,per-year report,findings_table_2009a
+2009,4,mathematics,ME,Maine,234,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,ME,Maine,235,1.4,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,MI,Michigan 1,200,1.0,,!,,2005-2009 comparison,findings_table1
+2009,4,mathematics,MI,Michigan,244,0.8,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,MN,Minnesota,233,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,MN,Minnesota,235,1.1,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,MO,Missouri,246,0.8,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,MO,Missouri,246,0.9,0.1,,,per-year report,findings_table_2009a
+2009,4,mathematics,MS,Mississippi,223,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,MS,Mississippi,223,0.9,0.4,,,per-year report,findings_table_2009a
+2009,4,mathematics,MT,Montana,235,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,MT,Montana,235,1.2,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,NC,North Carolina,220,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,NC,North Carolina,219,1.2,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,ND,North Dakota 1,225,0.9,,!,,2005-2009 comparison,findings_table1
+2009,4,mathematics,ND,North Dakota,225,0.9,0.7,!,,per-year report,findings_table_2009a
+2009,4,mathematics,NE,Nebraska,,,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,NE,Nebraska,,,,,,per-year report,findings_table_2009a
+2009,4,mathematics,NH,New Hampshire 1,237,0.8,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,NH,New Hampshire,234,0.6,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,NJ,New Jersey,231,1.5,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,NJ,New Jersey,231,1.4,0.4,,,per-year report,findings_table_2009a
+2009,4,mathematics,NM,New Mexico,236,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,NM,New Mexico,237,1.1,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,NV,Nevada,225,1.3,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,NV,Nevada,225,1.5,0.4,,,per-year report,findings_table_2009a
+2009,4,mathematics,NY,New York,207,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,NY,New York,207,1.1,0.4,,,per-year report,findings_table_2009a
+2009,4,mathematics,OH,Ohio,219,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,OH,Ohio,220,1.0,0.1,,,per-year report,findings_table_2009a
+2009,4,mathematics,OK,Oklahoma,228,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,OK,Oklahoma,227,0.5,0.4,,,per-year report,findings_table_2009a
+2009,4,mathematics,OR,Oregon,214,1.5,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,OR,Oregon,213,1.2,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,PA,Pennsylvania,218,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,PA,Pennsylvania,217,1.1,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,RI,Rhode Island 1,231,0.8,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,RI,Rhode Island,234,0.6,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,SC,South Carolina,215,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,SC,South Carolina,215,0.9,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,SD,South Dakota,224,0.8,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,SD,South Dakota,224,0.8,0.1,,,per-year report,findings_table_2009a
+2009,4,mathematics,TN,Tennessee,195,1.4,,!,,2005-2009 comparison,findings_table1
+2009,4,mathematics,TN,Tennessee,196,1.5,0.6,!,,per-year report,findings_table_2009a
+2009,4,mathematics,TX,Texas,214,0.9,,!,,2005-2009 comparison,findings_table1
+2009,4,mathematics,TX,Texas,214,1.0,0.7,!,,per-year report,findings_table_2009a
+2009,4,mathematics,UT,Utah,225,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,UT,Utah,226,1.4,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,VA,Virginia,213,1.0,,!,,2005-2009 comparison,findings_table1
+2009,4,mathematics,VA,Virginia,213,1.0,0.9,!,,per-year report,findings_table_2009a
+2009,4,mathematics,VT,Vermont 1,236,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,VT,Vermont,234,0.6,0.3,,,per-year report,findings_table_2009a
+2009,4,mathematics,WA,Washington,243,0.6,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,WA,Washington,243,0.7,0.2,,,per-year report,findings_table_2009a
+2009,4,mathematics,WI,Wisconsin 1,219,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,WI,Wisconsin,219,1.2,0.1,,,per-year report,findings_table_2009a
+2009,4,mathematics,WV,West Virginia,225,0.7,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,WV,West Virginia,226,0.8,0.4,,,per-year report,findings_table_2009a
+2009,4,mathematics,WY,Wyoming,226,0.6,,,,2005-2009 comparison,findings_table1
+2009,4,mathematics,WY,Wyoming,226,0.6,0.4,,,per-year report,findings_table_2009a
+2009,4,reading,AK,Alaska,183,1.8,,,,2005-2009 comparison,findings_table1
+2009,4,reading,AK,Alaska,185,2.1,0.3,,,per-year report,findings_table_2009a
+2009,4,reading,AL,Alabama,179,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,reading,AL,Alabama,179,1.4,0.1,,,per-year report,findings_table_2009a
+2009,4,reading,AR,Arkansas,200,1.9,,,,2005-2009 comparison,findings_table1
+2009,4,reading,AR,Arkansas,200,1.9,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,AZ,Arizona,193,0.8,,,,2005-2009 comparison,findings_table1
+2009,4,reading,AZ,Arizona,193,0.8,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,CA,California,202,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,reading,CA,California,201,0.8,0.1,,,per-year report,findings_table_2009a
+2009,4,reading,CO,Colorado,183,2.0,,,,2005-2009 comparison,findings_table1
+2009,4,reading,CO,Colorado,184,1.7,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,CT,Connecticut,208,0.6,,,,2005-2009 comparison,findings_table1
+2009,4,reading,CT,Connecticut,208,0.8,0.1,,,per-year report,findings_table_2009a
+2009,4,reading,DC,District of Columbia,205,1.5,,,,2005-2009 comparison,findings_table1
+2009,4,reading,DC,District of Columbia,205,1.4,0.5,,,per-year report,findings_table_2009a
+2009,4,reading,DE,Delaware,199,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,reading,DE,Delaware,199,1.2,0.4,,,per-year report,findings_table_2009a
+2009,4,reading,FL,Florida,206,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,reading,FL,Florida,206,1.0,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,GA,Georgia,178,1.4,,!,,2005-2009 comparison,findings_table1
+2009,4,reading,GA,Georgia,178,1.5,0.5,,,per-year report,findings_table_2009a
+2009,4,reading,HI,Hawaii,203,0.6,,,,2005-2009 comparison,findings_table1
+2009,4,reading,HI,Hawaii,203,0.7,0.1,,,per-year report,findings_table_2009a
+2009,4,reading,IA,Iowa,194,1.4,,,,2005-2009 comparison,findings_table1
+2009,4,reading,IA,Iowa,194,1.4,0.5,,,per-year report,findings_table_2009a
+2009,4,reading,ID,Idaho,186,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,reading,ID,Idaho,188,1.0,0.5,!,,per-year report,findings_table_2009a
+2009,4,reading,IL,Illinois,198,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,reading,IL,Illinois,198,1.4,0.1,,,per-year report,findings_table_2009a
+2009,4,reading,IN,Indiana,203,1.3,,,,2005-2009 comparison,findings_table1
+2009,4,reading,IN,Indiana,203,1.1,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,KS,Kansas,186,1.9,,!,,2005-2009 comparison,findings_table1
+2009,4,reading,KS,Kansas,186,1.9,0.5,!,,per-year report,findings_table_2009a
+2009,4,reading,KY,Kentucky,205,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,reading,KY,Kentucky,205,1.0,0.1,,,per-year report,findings_table_2009a
+2009,4,reading,LA,Louisiana,192,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,reading,LA,Louisiana,191,1.0,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,MA,Massachusetts,234,1.3,,,,2005-2009 comparison,findings_table1
+2009,4,reading,MA,Massachusetts,234,0.9,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,MD,Maryland,187,1.3,,!,,2005-2009 comparison,findings_table1
+2009,4,reading,MD,Maryland,187,1.3,0.6,!,,per-year report,findings_table_2009a
+2009,4,reading,ME,Maine,207,1.3,,,,2005-2009 comparison,findings_table1
+2009,4,reading,ME,Maine,208,1.7,0.4,,,per-year report,findings_table_2009a
+2009,4,reading,MI,Michigan 1,194,0.6,,,,2005-2009 comparison,findings_table1
+2009,4,reading,MI,Michigan,211,1.4,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,MN,Minnesota,204,1.5,,,,2005-2009 comparison,findings_table1
+2009,4,reading,MN,Minnesota,204,1.8,0.1,,,per-year report,findings_table_2009a
+2009,4,reading,MO,Missouri,229,0.7,,,,2005-2009 comparison,findings_table1
+2009,4,reading,MO,Missouri,229,0.7,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,MS,Mississippi,210,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,reading,MS,Mississippi,210,1.3,0.3,,,per-year report,findings_table_2009a
+2009,4,reading,MT,Montana,198,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,reading,MT,Montana,198,1.0,0.3,,,per-year report,findings_table_2009a
+2009,4,reading,NC,North Carolina,204,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,reading,NC,North Carolina,203,0.9,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,ND,North Dakota 1,203,1.7,,,,2005-2009 comparison,findings_table1
+2009,4,reading,ND,North Dakota,203,1.8,0.4,,,per-year report,findings_table_2009a
+2009,4,reading,NE,Nebraska,,,,,,2005-2009 comparison,findings_table1
+2009,4,reading,NE,Nebraska,,,,,,per-year report,findings_table_2009a
+2009,4,reading,NH,New Hampshire 1,211,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,reading,NH,New Hampshire,210,0.8,0.3,,,per-year report,findings_table_2009a
+2009,4,reading,NJ,New Jersey,221,1.3,,,,2005-2009 comparison,findings_table1
+2009,4,reading,NJ,New Jersey,221,1.3,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,NM,New Mexico,207,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,reading,NM,New Mexico,208,1.4,0.4,,,per-year report,findings_table_2009a
+2009,4,reading,NV,Nevada,202,0.9,,,,2005-2009 comparison,findings_table1
+2009,4,reading,NV,Nevada,202,1.2,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,NY,New York,200,1.1,,,,2005-2009 comparison,findings_table1
+2009,4,reading,NY,New York,200,1.2,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,OH,Ohio,192,0.8,,,,2005-2009 comparison,findings_table1
+2009,4,reading,OH,Ohio,192,1.3,0.1,,,per-year report,findings_table_2009a
+2009,4,reading,OK,Oklahoma,211,1.4,,,,2005-2009 comparison,findings_table1
+2009,4,reading,OK,Oklahoma,211,1.1,0.3,,,per-year report,findings_table_2009a
+2009,4,reading,OR,Oregon,177,1.4,,,,2005-2009 comparison,findings_table1
+2009,4,reading,OR,Oregon,175,3.0,0.4,,,per-year report,findings_table_2009a
+2009,4,reading,PA,Pennsylvania,206,1.5,,,,2005-2009 comparison,findings_table1
+2009,4,reading,PA,Pennsylvania,205,1.0,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,RI,Rhode Island 1,209,1.3,,,,2005-2009 comparison,findings_table1
+2009,4,reading,RI,Rhode Island,210,0.8,0.3,,,per-year report,findings_table_2009a
+2009,4,reading,SC,South Carolina,194,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,reading,SC,South Carolina,194,1.2,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,SD,South Dakota,199,1.4,,,,2005-2009 comparison,findings_table1
+2009,4,reading,SD,South Dakota,199,1.3,0.3,,,per-year report,findings_table_2009a
+2009,4,reading,TN,Tennessee,170,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,reading,TN,Tennessee,170,1.5,0.1,,,per-year report,findings_table_2009a
+2009,4,reading,TX,Texas,188,1.6,,!,,2005-2009 comparison,findings_table1
+2009,4,reading,TX,Texas,188,1.6,0.6,!,,per-year report,findings_table_2009a
+2009,4,reading,UT,Utah,196,1.6,,,,2005-2009 comparison,findings_table1
+2009,4,reading,UT,Utah,196,1.6,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,VA,Virginia,186,1.9,,!,,2005-2009 comparison,findings_table1
+2009,4,reading,VA,Virginia,186,2.1,0.7,!,,per-year report,findings_table_2009a
+2009,4,reading,VT,Vermont 1,214,0.8,,!,,2005-2009 comparison,findings_table1
+2009,4,reading,VT,Vermont,210,0.8,0.3,,,per-year report,findings_table_2009a
+2009,4,reading,WA,Washington,205,1.0,,,,2005-2009 comparison,findings_table1
+2009,4,reading,WA,Washington,203,0.9,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,WI,Wisconsin 1,189,1.2,,,,2005-2009 comparison,findings_table1
+2009,4,reading,WI,Wisconsin,189,1.7,0.2,,,per-year report,findings_table_2009a
+2009,4,reading,WV,West Virginia,206,1.5,,!,,2005-2009 comparison,findings_table1
+2009,4,reading,WV,West Virginia,207,1.5,0.5,!,,per-year report,findings_table_2009a
+2009,4,reading,WY,Wyoming,208,0.7,,!,,2005-2009 comparison,findings_table1
+2009,4,reading,WY,Wyoming,208,0.7,0.6,!,,per-year report,findings_table_2009a
+2009,8,mathematics,AK,Alaska,268,2.3,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,AK,Alaska,269,1.4,0.3,,,per-year report,findings_table_2009b
+2009,8,mathematics,AL,Alabama,246,1.8,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,AL,Alabama,246,2.0,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,AR,Arkansas,267,1.1,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,AR,Arkansas,267,1.1,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,AZ,Arizona,266,0.7,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,AZ,Arizona,266,0.7,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,CA,California,,,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,CA,California,,,,,,per-year report,findings_table_2009b
+2009,8,mathematics,CO,Colorado,256,1.5,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,CO,Colorado,257,1.6,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,CT,Connecticut,251,1.8,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,CT,Connecticut,251,2.4,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,DC,District of Columbia,258,1.5,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,DC,District of Columbia,258,1.8,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,DE,Delaware,269,0.7,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,DE,Delaware,270,0.9,0.3,,,per-year report,findings_table_2009b
+2009,8,mathematics,FL,Florida,266,1.2,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,FL,Florida,265,1.3,0.0,,,per-year report,findings_table_2009b
+2009,8,mathematics,GA,Georgia,247,1.3,,!,,2005-2009 comparison,findings_table1
+2009,8,mathematics,GA,Georgia,247,1.1,0.7,!,,per-year report,findings_table_2009b
+2009,8,mathematics,HI,Hawaii,286,1.3,,!,,2005-2009 comparison,findings_table1
+2009,8,mathematics,HI,Hawaii,286,1.5,0.7,!,,per-year report,findings_table_2009b
+2009,8,mathematics,IA,Iowa,263,1.2,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,IA,Iowa,263,0.9,0.3,,,per-year report,findings_table_2009b
+2009,8,mathematics,ID,Idaho,261,0.5,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,ID,Idaho,262,0.8,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,IL,Illinois,251,1.6,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,IL,Illinois,251,1.6,0.4,,,per-year report,findings_table_2009b
+2009,8,mathematics,IN,Indiana,273,1.5,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,IN,Indiana,273,1.8,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,KS,Kansas,265,1.6,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,KS,Kansas,265,1.5,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,KY,Kentucky,273,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,KY,Kentucky,273,1.1,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,LA,Louisiana,263,0.7,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,LA,Louisiana,262,0.9,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,MA,Massachusetts,300,1.2,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,MA,Massachusetts,300,0.9,0.0,,,per-year report,findings_table_2009b
+2009,8,mathematics,MD,Maryland,271,2.2,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,MD,Maryland,271,2.0,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,ME,Maine,284,0.8,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,ME,Maine,285,0.8,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,MI,Michigan 1,253,1.4,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,MI,Michigan,296,1.4,0.0,,,per-year report,findings_table_2009b
+2009,8,mathematics,MN,Minnesota,287,0.7,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,MN,Minnesota,288,1.2,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,MO,Missouri,287,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,MO,Missouri,287,0.9,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,MS,Mississippi,264,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,MS,Mississippi,264,1.3,0.3,,,per-year report,findings_table_2009b
+2009,8,mathematics,MT,Montana,285,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,MT,Montana,285,0.7,0.3,,,per-year report,findings_table_2009b
+2009,8,mathematics,NC,North Carolina,253,1.3,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,NC,North Carolina,252,1.7,0.3,,,per-year report,findings_table_2009b
+2009,8,mathematics,ND,North Dakota 1,278,0.9,,!,,2005-2009 comparison,findings_table1
+2009,8,mathematics,ND,North Dakota,279,0.7,0.6,!,,per-year report,findings_table_2009b
+2009,8,mathematics,NE,Nebraska,,,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,NE,Nebraska,,,,,,per-year report,findings_table_2009b
+2009,8,mathematics,NH,New Hampshire 1,281,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,NH,New Hampshire,279,0.7,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,NJ,New Jersey,272,1.1,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,NJ,New Jersey,272,1.8,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,NM,New Mexico,277,1.5,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,NM,New Mexico,277,1.1,0.3,,,per-year report,findings_table_2009b
+2009,8,mathematics,NV,Nevada,269,1.3,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,NV,Nevada,269,1.3,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,NY,New York,249,1.8,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,NY,New York,249,1.7,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,OH,Ohio,265,1.1,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,OH,Ohio,266,1.1,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,OK,Oklahoma,269,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,OK,Oklahoma,267,1.9,0.4,,,per-year report,findings_table_2009b
+2009,8,mathematics,OR,Oregon,266,1.1,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,OR,Oregon,265,1.3,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,PA,Pennsylvania,272,1.5,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,PA,Pennsylvania,271,1.6,0.3,,,per-year report,findings_table_2009b
+2009,8,mathematics,RI,Rhode Island 1,275,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,RI,Rhode Island,279,0.7,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,SC,South Carolina,270,1.1,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,SC,South Carolina,270,1.1,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,SD,South Dakota,271,0.5,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,SD,South Dakota,272,0.9,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,TN,Tennessee,229,2.0,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,TN,Tennessee,229,2.2,0.4,,,per-year report,findings_table_2009b
+2009,8,mathematics,TX,Texas,254,1.3,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,TX,Texas,262,1.1,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,UT,Utah,275,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,UT,Utah,276,1.5,0.2,,,per-year report,findings_table_2009b
+2009,8,mathematics,VA,Virginia,251,1.7,,!,,2005-2009 comparison,findings_table1
+2009,8,mathematics,VA,Virginia,,,,,,per-year report,findings_table_2009b
+2009,8,mathematics,VT,Vermont 1,282,0.7,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,VT,Vermont,279,0.7,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,WA,Washington,288,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,WA,Washington,288,1.0,0.0,,,per-year report,findings_table_2009b
+2009,8,mathematics,WI,Wisconsin 1,262,1.6,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,WI,Wisconsin,262,1.9,0.1,,,per-year report,findings_table_2009b
+2009,8,mathematics,WV,West Virginia,270,0.7,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,WV,West Virginia,270,0.9,0.3,,,per-year report,findings_table_2009b
+2009,8,mathematics,WY,Wyoming,278,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,mathematics,WY,Wyoming,278,1.0,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,AK,Alaska,231,1.4,,,,2005-2009 comparison,findings_table1
+2009,8,reading,AK,Alaska,232,1.6,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,AL,Alabama,234,1.5,,,,2005-2009 comparison,findings_table1
+2009,8,reading,AL,Alabama,234,1.4,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,AR,Arkansas,241,1.9,,,,2005-2009 comparison,findings_table1
+2009,8,reading,AR,Arkansas,242,2.0,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,AZ,Arizona,241,1.3,,,,2005-2009 comparison,findings_table1
+2009,8,reading,AZ,Arizona,242,1.2,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,CA,California,259,0.7,,,,2005-2009 comparison,findings_table1
+2009,8,reading,CA,California,258,1.2,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,CO,Colorado,228,1.9,,,,2005-2009 comparison,findings_table1
+2009,8,reading,CO,Colorado,229,2.7,0.0,,,per-year report,findings_table_2009b
+2009,8,reading,CT,Connecticut,243,1.9,,,,2005-2009 comparison,findings_table1
+2009,8,reading,CT,Connecticut,243,1.6,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,DC,District of Columbia,244,1.3,,,,2005-2009 comparison,findings_table1
+2009,8,reading,DC,District of Columbia,245,1.0,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,DE,Delaware,236,1.1,,,,2005-2009 comparison,findings_table1
+2009,8,reading,DE,Delaware,237,1.0,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,FL,Florida,262,0.7,,,,2005-2009 comparison,findings_table1
+2009,8,reading,FL,Florida,262,0.7,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,GA,Georgia,209,2.8,,,,2005-2009 comparison,findings_table1
+2009,8,reading,GA,Georgia,199,3.9,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,HI,Hawaii,241,0.6,,,,2005-2009 comparison,findings_table1
+2009,8,reading,HI,Hawaii,241,0.7,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,IA,Iowa,248,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,reading,IA,Iowa,248,1.3,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,ID,Idaho,218,2.4,,,,2005-2009 comparison,findings_table1
+2009,8,reading,ID,Idaho,220,2.5,0.8,!,,per-year report,findings_table_2009b
+2009,8,reading,IL,Illinois,234,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,reading,IL,Illinois,234,1.1,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,IN,Indiana,255,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,reading,IN,Indiana,255,1.2,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,KS,Kansas,236,1.4,,,,2005-2009 comparison,findings_table1
+2009,8,reading,KS,Kansas,237,1.4,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,KY,Kentucky,253,1.1,,,,2005-2009 comparison,findings_table1
+2009,8,reading,KY,Kentucky,252,1.3,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,LA,Louisiana,243,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,reading,LA,Louisiana,242,2.0,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,MA,Massachusetts,249,1.1,,,,2005-2009 comparison,findings_table1
+2009,8,reading,MA,Massachusetts,248,1.1,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,MD,Maryland,237,1.3,,,,2005-2009 comparison,findings_table1
+2009,8,reading,MD,Maryland,237,1.3,0.0,,,per-year report,findings_table_2009b
+2009,8,reading,ME,Maine,253,1.2,,!,,2005-2009 comparison,findings_table1
+2009,8,reading,ME,Maine,252,1.1,0.6,!,,per-year report,findings_table_2009b
+2009,8,reading,MI,Michigan 1,236,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,reading,MI,Michigan,262,1.3,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,MN,Minnesota,259,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,reading,MN,Minnesota,259,0.8,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,MO,Missouri,267,0.7,,,,2005-2009 comparison,findings_table1
+2009,8,reading,MO,Missouri,267,0.8,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,MS,Mississippi,254,1.4,,,,2005-2009 comparison,findings_table1
+2009,8,reading,MS,Mississippi,254,1.3,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,MT,Montana,246,1.3,,,,2005-2009 comparison,findings_table1
+2009,8,reading,MT,Montana,246,1.0,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,NC,North Carolina,246,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,reading,NC,North Carolina,245,1.1,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,ND,North Dakota 1,253,1.4,,,,2005-2009 comparison,findings_table1
+2009,8,reading,ND,North Dakota,253,1.0,0.4,,,per-year report,findings_table_2009b
+2009,8,reading,NE,Nebraska,,,,,,2005-2009 comparison,findings_table1
+2009,8,reading,NE,Nebraska,,,,,,per-year report,findings_table_2009b
+2009,8,reading,NH,New Hampshire 1,256,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,reading,NH,New Hampshire,254,0.6,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,NJ,New Jersey,244,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,reading,NJ,New Jersey,244,1.3,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,NM,New Mexico,246,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,reading,NM,New Mexico,246,0.8,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,NV,Nevada,246,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,reading,NV,Nevada,246,0.8,0.4,,,per-year report,findings_table_2009b
+2009,8,reading,NY,New York,247,1.2,,,,2005-2009 comparison,findings_table1
+2009,8,reading,NY,New York,247,1.4,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,OH,Ohio,251,1.6,,,,2005-2009 comparison,findings_table1
+2009,8,reading,OH,Ohio,252,1.3,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,OK,Oklahoma,249,1.2,,,,2005-2009 comparison,findings_table1
+2009,8,reading,OK,Oklahoma,247,1.4,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,OR,Oregon,250,1.3,,,,2005-2009 comparison,findings_table1
+2009,8,reading,OR,Oregon,250,1.2,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,PA,Pennsylvania,245,1.1,,,,2005-2009 comparison,findings_table1
+2009,8,reading,PA,Pennsylvania,244,1.2,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,RI,Rhode Island 1,252,1.4,,,,2005-2009 comparison,findings_table1
+2009,8,reading,RI,Rhode Island,254,0.6,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,SC,South Carolina,245,1.7,,,,2005-2009 comparison,findings_table1
+2009,8,reading,SC,South Carolina,245,1.8,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,SD,South Dakota,254,0.8,,,,2005-2009 comparison,findings_table1
+2009,8,reading,SD,South Dakota,254,0.7,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,TN,Tennessee,211,2.3,,,,2005-2009 comparison,findings_table1
+2009,8,reading,TN,Tennessee,211,2.3,0.4,,,per-year report,findings_table_2009b
+2009,8,reading,TX,Texas,201,3.1,,,,2005-2009 comparison,findings_table1
+2009,8,reading,TX,Texas,212,2.4,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,UT,Utah,235,1.0,,,,2005-2009 comparison,findings_table1
+2009,8,reading,UT,Utah,236,1.2,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,VA,Virginia,229,1.6,,!,,2005-2009 comparison,findings_table1
+2009,8,reading,VA,Virginia,230,1.4,0.6,!,,per-year report,findings_table_2009b
+2009,8,reading,VT,Vermont 1,259,0.9,,,,2005-2009 comparison,findings_table1
+2009,8,reading,VT,Vermont,254,0.6,0.3,,,per-year report,findings_table_2009b
+2009,8,reading,WA,Washington,253,1.2,,!,,2005-2009 comparison,findings_table1
+2009,8,reading,WA,Washington,252,1.1,0.7,!,,per-year report,findings_table_2009b
+2009,8,reading,WI,Wisconsin 1,232,1.5,,,,2005-2009 comparison,findings_table1
+2009,8,reading,WI,Wisconsin,232,1.4,0.1,,,per-year report,findings_table_2009b
+2009,8,reading,WV,West Virginia,249,1.7,,,,2005-2009 comparison,findings_table1
+2009,8,reading,WV,West Virginia,249,1.1,0.2,,,per-year report,findings_table_2009b
+2009,8,reading,WY,Wyoming,259,1.4,,,,2005-2009 comparison,findings_table1
+2009,8,reading,WY,Wyoming,259,1.4,0.3,,,per-year report,findings_table_2009b
+2011,4,mathematics,AK,Alaska,218,0.9,0.2,,,per-year report,findings_table_2011a
+2011,4,mathematics,AL,Alabama,205,2.2,1.1,!,,per-year report,findings_table_2011a
+2011,4,mathematics,AR,Arkansas,213,0.8,0.4,,,per-year report,findings_table_2011a
+2011,4,mathematics,AZ,Arizona,226,0.9,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,CA,California,217,1.5,0.7,!,,per-year report,findings_table_2011a
+2011,4,mathematics,CO,Colorado,203,2.0,0.1,,,per-year report,findings_table_2011a
+2011,4,mathematics,CT,Connecticut,212,1.2,0.1,,,per-year report,findings_table_2011a
+2011,4,mathematics,DC,District of Columbia,225,0.7,0.1,,,per-year report,findings_table_2011a
+2011,4,mathematics,DE,Delaware,231,0.8,0.4,,,per-year report,findings_table_2011a
+2011,4,mathematics,FL,Florida,224,1.0,0.5,!,,per-year report,findings_table_2011a
+2011,4,mathematics,GA,Georgia,212,1.2,0.2,,,per-year report,findings_table_2011a
+2011,4,mathematics,HI,Hawaii,233,1.1,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,IA,Iowa,220,1.2,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,ID,Idaho,213,0.9,0.7,!,,per-year report,findings_table_2011a
+2011,4,mathematics,IL,Illinois,203,1.0,0.2,,,per-year report,findings_table_2011a
+2011,4,mathematics,IN,Indiana,224,1.1,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,KS,Kansas,215,1.1,0.6,!,,per-year report,findings_table_2011a
+2011,4,mathematics,KY,Kentucky,223,1.0,0.5,!,,per-year report,findings_table_2011a
+2011,4,mathematics,LA,Louisiana,216,1.2,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,MA,Massachusetts,256,0.4,0.2,,,per-year report,findings_table_2011a
+2011,4,mathematics,MD,Maryland,207,1.0,0.4,,,per-year report,findings_table_2011a
+2011,4,mathematics,ME,Maine,237,0.5,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,MI,Michigan,245,0.8,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,MN,Minnesota,238,0.7,0.4,,,per-year report,findings_table_2011a
+2011,4,mathematics,MO,Missouri,243,1.1,0.5,!,,per-year report,findings_table_2011a
+2011,4,mathematics,MS,Mississippi,225,0.9,0.6,!,,per-year report,findings_table_2011a
+2011,4,mathematics,MT,Montana,232,1.0,0.2,,,per-year report,findings_table_2011a
+2011,4,mathematics,NC,North Carolina,219,1.0,0.4,,,per-year report,findings_table_2011a
+2011,4,mathematics,ND,North Dakota,224,0.9,0.4,,,per-year report,findings_table_2011a
+2011,4,mathematics,NE,Nebraska,228,1.4,0.4,,,per-year report,findings_table_2011a
+2011,4,mathematics,NH,New Hampshire,237,0.5,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,NJ,New Jersey,228,1.2,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,NM,New Mexico,237,0.6,0.2,,,per-year report,findings_table_2011a
+2011,4,mathematics,NV,Nevada,223,0.7,0.4,,,per-year report,findings_table_2011a
+2011,4,mathematics,NY,New York,226,1.0,0.2,,,per-year report,findings_table_2011a
+2011,4,mathematics,OH,Ohio,223,1.0,0.1,,,per-year report,findings_table_2011a
+2011,4,mathematics,OK,Oklahoma,224,0.8,0.5,!,,per-year report,findings_table_2011a
+2011,4,mathematics,OR,Oregon,224,1.1,0.6,!,,per-year report,findings_table_2011a
+2011,4,mathematics,PA,Pennsylvania,215,1.0,0.5,,,per-year report,findings_table_2011a
+2011,4,mathematics,RI,Rhode Island,237,0.5,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,SC,South Carolina,212,0.8,0.2,,,per-year report,findings_table_2011a
+2011,4,mathematics,SD,South Dakota,222,1.3,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,TN,Tennessee,244,0.9,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,TX,Texas,211,1.4,0.7,!,,per-year report,findings_table_2011a
+2011,4,mathematics,UT,Utah,223,1.0,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,VA,Virginia,211,2.0,0.6,!,,per-year report,findings_table_2011a
+2011,4,mathematics,VT,Vermont,237,0.5,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,WA,Washington,239,1.1,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,WI,Wisconsin,222,0.9,0.2,,,per-year report,findings_table_2011a
+2011,4,mathematics,WV,West Virginia,239,1.4,0.3,,,per-year report,findings_table_2011a
+2011,4,mathematics,WY,Wyoming,222,0.8,0.4,,,per-year report,findings_table_2011a
+2011,4,reading,AK,Alaska,186,1.3,0.1,,,per-year report,findings_table_2011a
+2011,4,reading,AL,Alabama,180,2.4,0.4,,,per-year report,findings_table_2011a
+2011,4,reading,AR,Arkansas,187,1.6,0.1,,,per-year report,findings_table_2011a
+2011,4,reading,AZ,Arizona,189,1.1,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,CA,California,200,1.5,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,CO,Colorado,180,1.3,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,CT,Connecticut,208,1.6,0.1,,,per-year report,findings_table_2011a
+2011,4,reading,DC,District of Columbia,207,1.0,0.1,,,per-year report,findings_table_2011a
+2011,4,reading,DE,Delaware,219,0.9,0.4,,,per-year report,findings_table_2011a
+2011,4,reading,FL,Florida,209,0.7,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,GA,Georgia,180,2.4,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,HI,Hawaii,200,1.1,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,IA,Iowa,193,1.3,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,ID,Idaho,183,1.6,0.5,,,per-year report,findings_table_2011a
+2011,4,reading,IL,Illinois,196,1.0,0.1,,,per-year report,findings_table_2011a
+2011,4,reading,IN,Indiana,191,1.1,0.1,,,per-year report,findings_table_2011a
+2011,4,reading,KS,Kansas,176,2.2,0.7,!,,per-year report,findings_table_2011a
+2011,4,reading,KY,Kentucky,205,0.9,0.5,,,per-year report,findings_table_2011a
+2011,4,reading,LA,Louisiana,190,1.3,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,MA,Massachusetts,235,1.4,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,MD,Maryland,188,1.9,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,ME,Maine,210,0.4,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,MI,Michigan,208,1.7,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,MN,Minnesota,203,1.0,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,MO,Missouri,222,1.3,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,MS,Mississippi,208,1.1,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,MT,Montana,196,0.8,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,NC,North Carolina,203,1.2,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,ND,North Dakota,205,0.7,0.4,,,per-year report,findings_table_2011a
+2011,4,reading,NE,Nebraska,200,1.3,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,NH,New Hampshire,210,0.4,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,NJ,New Jersey,224,1.0,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,NM,New Mexico,214,1.1,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,NV,Nevada,202,0.9,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,NY,New York,219,1.2,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,OH,Ohio,193,1.5,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,OK,Oklahoma,209,1.1,0.5,!,,per-year report,findings_table_2011a
+2011,4,reading,OR,Oregon,170,2.1,0.4,,,per-year report,findings_table_2011a
+2011,4,reading,PA,Pennsylvania,206,1.3,0.5,,,per-year report,findings_table_2011a
+2011,4,reading,RI,Rhode Island,210,0.4,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,SC,South Carolina,188,1.2,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,SD,South Dakota,199,1.4,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,TN,Tennessee,224,0.9,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,TX,Texas,185,1.3,0.6,!,,per-year report,findings_table_2011a
+2011,4,reading,UT,Utah,200,1.9,0.6,!,,per-year report,findings_table_2011a
+2011,4,reading,VA,Virginia,187,1.5,0.4,,,per-year report,findings_table_2011a
+2011,4,reading,VT,Vermont,210,0.4,0.3,,,per-year report,findings_table_2011a
+2011,4,reading,WA,Washington,208,1.1,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,WI,Wisconsin,188,1.1,0.2,,,per-year report,findings_table_2011a
+2011,4,reading,WV,West Virginia,219,1.3,0.4,,,per-year report,findings_table_2011a
+2011,4,reading,WY,Wyoming,193,2.1,0.6,!,,per-year report,findings_table_2011a
+2011,8,mathematics,AK,Alaska,269,1.4,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,AL,Alabama,243,1.3,0.5,,,per-year report,findings_table_2011b
+2011,8,mathematics,AR,Arkansas,269,0.9,0.0,,,per-year report,findings_table_2011b
+2011,8,mathematics,AZ,Arizona,276,0.9,0.3,,,per-year report,findings_table_2011b
+2011,8,mathematics,CA,California,,,,,,per-year report,findings_table_2011b
+2011,8,mathematics,CO,Colorado,260,0.9,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,CT,Connecticut,247,1.4,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,DC,District of Columbia,249,1.2,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,DE,Delaware,272,0.8,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,FL,Florida,262,0.7,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,GA,Georgia,239,1.6,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,HI,Hawaii,277,0.9,0.8,!,,per-year report,findings_table_2011b
+2011,8,mathematics,IA,Iowa,263,1.0,0.3,,,per-year report,findings_table_2011b
+2011,8,mathematics,ID,Idaho,259,1.2,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,IL,Illinois,245,1.7,0.5,!,,per-year report,findings_table_2011b
+2011,8,mathematics,IN,Indiana,261,1.4,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,KS,Kansas,258,1.1,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,KY,Kentucky,273,1.8,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,LA,Louisiana,263,1.4,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,MA,Massachusetts,299,0.7,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,MD,Maryland,270,1.3,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,ME,Maine,281,0.5,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,MI,Michigan,301,1.1,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,MN,Minnesota,294,0.7,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,MO,Missouri,282,1.4,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,MS,Mississippi,254,1.4,0.5,!,,per-year report,findings_table_2011b
+2011,8,mathematics,MT,Montana,282,0.9,0.3,,,per-year report,findings_table_2011b
+2011,8,mathematics,NC,North Carolina,249,1.8,0.4,,,per-year report,findings_table_2011b
+2011,8,mathematics,ND,North Dakota,276,1.2,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,NE,Nebraska,275,1.0,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,NH,New Hampshire,281,0.5,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,NJ,New Jersey,276,1.6,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,NM,New Mexico,282,0.8,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,NV,Nevada,268,1.0,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,NY,New York,271,1.2,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,OH,Ohio,267,0.8,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,OK,Oklahoma,266,1.8,0.4,,,per-year report,findings_table_2011b
+2011,8,mathematics,OR,Oregon,269,1.5,0.6,!,,per-year report,findings_table_2011b
+2011,8,mathematics,PA,Pennsylvania,262,1.7,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,RI,Rhode Island,281,0.5,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,SC,South Carolina,262,1.4,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,SD,South Dakota,268,1.3,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,TN,Tennessee,288,1.0,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,TX,Texas,263,0.9,0.4,,,per-year report,findings_table_2011b
+2011,8,mathematics,UT,Utah,267,1.1,0.2,,,per-year report,findings_table_2011b
+2011,8,mathematics,VA,Virginia,,,,,,per-year report,findings_table_2011b
+2011,8,mathematics,VT,Vermont,281,0.5,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,WA,Washington,291,1.0,0.3,,,per-year report,findings_table_2011b
+2011,8,mathematics,WI,Wisconsin,261,1.0,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,WV,West Virginia,282,0.9,0.1,,,per-year report,findings_table_2011b
+2011,8,mathematics,WY,Wyoming,272,0.5,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,AK,Alaska,229,1.1,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,AL,Alabama,235,1.2,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,AR,Arkansas,236,1.0,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,AZ,Arizona,243,1.8,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,CA,California,251,1.0,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,CO,Colorado,225,2.8,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,CT,Connecticut,243,1.9,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,DC,District of Columbia,243,0.8,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,DE,Delaware,258,0.7,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,FL,Florida,259,1.3,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,GA,Georgia,199,2.3,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,HI,Hawaii,245,1.2,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,IA,Iowa,246,0.9,0.4,,,per-year report,findings_table_2011b
+2011,8,reading,ID,Idaho,222,2.3,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,IL,Illinois,232,1.4,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,IN,Indiana,248,0.9,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,KS,Kansas,229,1.5,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,KY,Kentucky,252,1.8,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,LA,Louisiana,241,1.5,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,MA,Massachusetts,250,1.4,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,MD,Maryland,238,1.0,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,ME,Maine,248,0.6,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,MI,Michigan,260,1.1,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,MN,Minnesota,258,1.5,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,MO,Missouri,267,1.1,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,MS,Mississippi,254,1.2,0.4,,,per-year report,findings_table_2011b
+2011,8,reading,MT,Montana,244,0.9,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,NC,North Carolina,247,1.7,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,ND,North Dakota,250,1.0,0.4,,,per-year report,findings_table_2011b
+2011,8,reading,NE,Nebraska,253,1.8,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,NH,New Hampshire,248,0.6,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,NJ,New Jersey,244,1.7,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,NM,New Mexico,255,1.0,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,NV,Nevada,265,1.1,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,NY,New York,270,1.0,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,OH,Ohio,235,1.7,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,OK,Oklahoma,239,1.9,0.5,!,,per-year report,findings_table_2011b
+2011,8,reading,OR,Oregon,246,0.9,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,PA,Pennsylvania,239,2.1,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,RI,Rhode Island,248,0.6,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,SC,South Carolina,247,1.1,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,SD,South Dakota,252,0.9,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,TN,Tennessee,264,1.1,0.0,,,per-year report,findings_table_2011b
+2011,8,reading,TX,Texas,223,1.1,0.1,,,per-year report,findings_table_2011b
+2011,8,reading,UT,Utah,225,1.5,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,VA,Virginia,222,3.2,0.4,,,per-year report,findings_table_2011b
+2011,8,reading,VT,Vermont,248,0.6,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,WA,Washington,253,1.7,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,WI,Wisconsin,229,2.0,0.2,,,per-year report,findings_table_2011b
+2011,8,reading,WV,West Virginia,260,1.1,0.3,,,per-year report,findings_table_2011b
+2011,8,reading,WY,Wyoming,248,1.6,0.5,,,per-year report,findings_table_2011b
+2013,4,mathematics,AK,Alaska,215,0.8,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,AL,Alabama,207,2.1,1.0,!,,per-year report,findings_table_2013a
+2013,4,mathematics,AR,Arkansas,214,0.6,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,AZ,Arizona,229,0.8,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,CA,California,215,1.2,0.5,,,per-year report,findings_table_2013a
+2013,4,mathematics,CO,Colorado,230,0.7,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,CT,Connecticut,214,1.0,0.1,,,per-year report,findings_table_2013a
+2013,4,mathematics,DC,District of Columbia,221,1.0,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,DE,Delaware,225,0.9,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,FL,Florida,235,0.8,0.5,!,,per-year report,findings_table_2013a
+2013,4,mathematics,GA,Georgia,210,1.3,0.1,,,per-year report,findings_table_2013a
+2013,4,mathematics,HI,Hawaii,233,0.7,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,IA,Iowa,225,1.1,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,ID,Idaho,210,1.5,0.6,!,,per-year report,findings_table_2013a
+2013,4,mathematics,IL,Illinois,233,0.8,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,IN,Indiana,224,0.7,0.4,,,per-year report,findings_table_2013a
+2013,4,mathematics,KS,Kansas,224,0.8,0.5,,,per-year report,findings_table_2013a
+2013,4,mathematics,KY,Kentucky,246,0.8,0.4,,,per-year report,findings_table_2013a
+2013,4,mathematics,LA,Louisiana,216,1.1,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,MA,Massachusetts,254,0.8,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,MD,Maryland,208,0.9,0.4,,,per-year report,findings_table_2013a
+2013,4,mathematics,ME,Maine,235,0.7,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,MI,Michigan,242,0.7,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,MN,Minnesota,238,1.3,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,MO,Missouri,243,0.8,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,MS,Mississippi,218,0.9,0.5,!,,per-year report,findings_table_2013a
+2013,4,mathematics,MT,Montana,233,1.0,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,NC,North Carolina,248,0.7,0.1,,,per-year report,findings_table_2013a
+2013,4,mathematics,ND,North Dakota,225,0.5,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,NE,Nebraska,229,0.8,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,NH,New Hampshire,235,0.7,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,NJ,New Jersey,226,1.2,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,NM,New Mexico,238,0.7,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,NV,Nevada,221,1.2,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,NY,New York,251,0.7,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,OH,Ohio,218,1.4,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,OK,Oklahoma,224,1.4,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,OR,Oregon,229,1.0,0.4,,,per-year report,findings_table_2013a
+2013,4,mathematics,PA,Pennsylvania,223,1.0,0.1,,,per-year report,findings_table_2013a
+2013,4,mathematics,RI,Rhode Island,235,0.7,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,SC,South Carolina,213,1.3,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,SD,South Dakota,226,0.8,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,TN,Tennessee,241,1.0,0.4,,,per-year report,findings_table_2013a
+2013,4,mathematics,TX,Texas,256,0.8,0.5,!,,per-year report,findings_table_2013a
+2013,4,mathematics,UT,Utah,219,0.8,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,VA,Virginia,226,1.2,0.8,!,,per-year report,findings_table_2013a
+2013,4,mathematics,VT,Vermont,235,0.7,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,WA,Washington,238,0.7,0.2,,,per-year report,findings_table_2013a
+2013,4,mathematics,WI,Wisconsin,248,0.9,0.1,,,per-year report,findings_table_2013a
+2013,4,mathematics,WV,West Virginia,241,0.6,0.3,,,per-year report,findings_table_2013a
+2013,4,mathematics,WY,Wyoming,225,0.9,0.4,,,per-year report,findings_table_2013a
+2013,4,reading,AK,Alaska,186,1.5,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,AL,Alabama,177,2.0,0.0,,,per-year report,findings_table_2013a
+2013,4,reading,AR,Arkansas,181,2.0,0.4,,,per-year report,findings_table_2013a
+2013,4,reading,AZ,Arizona,187,1.3,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,CA,California,202,0.7,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,CO,Colorado,213,0.5,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,CT,Connecticut,208,1.1,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,DC,District of Columbia,205,1.1,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,DE,Delaware,206,1.1,0.3,,,per-year report,findings_table_2013a
+2013,4,reading,FL,Florida,222,0.9,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,GA,Georgia,167,1.9,0.3,,,per-year report,findings_table_2013a
+2013,4,reading,HI,Hawaii,194,0.7,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,IA,Iowa,204,1.2,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,ID,Idaho,173,2.3,0.5,!,,per-year report,findings_table_2013a
+2013,4,reading,IL,Illinois,215,1.2,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,IN,Indiana,195,1.7,0.6,!,,per-year report,findings_table_2013a
+2013,4,reading,KS,Kansas,189,2.2,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,KY,Kentucky,227,1.0,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,LA,Louisiana,184,1.8,0.4,,,per-year report,findings_table_2013a
+2013,4,reading,MA,Massachusetts,233,1.2,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,MD,Maryland,193,1.4,0.5,!,,per-year report,findings_table_2013a
+2013,4,reading,ME,Maine,211,0.6,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,MI,Michigan,205,1.4,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,MN,Minnesota,227,1.1,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,MO,Missouri,225,1.1,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,MS,Mississippi,203,1.3,0.5,,,per-year report,findings_table_2013a
+2013,4,reading,MT,Montana,193,1.7,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,NC,North Carolina,231,1.2,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,ND,North Dakota,205,1.0,0.4,,,per-year report,findings_table_2013a
+2013,4,reading,NE,Nebraska,199,1.4,0.3,,,per-year report,findings_table_2013a
+2013,4,reading,NH,New Hampshire,211,0.6,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,NJ,New Jersey,225,1.6,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,NM,New Mexico,215,1.1,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,NV,Nevada,198,1.9,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,NY,New York,243,0.8,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,OH,Ohio,168,2.6,0.3,,,per-year report,findings_table_2013a
+2013,4,reading,OK,Oklahoma,204,1.1,0.4,,,per-year report,findings_table_2013a
+2013,4,reading,OR,Oregon,196,2.1,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,PA,Pennsylvania,216,1.1,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,RI,Rhode Island,211,0.6,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,SC,South Carolina,186,1.2,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,SD,South Dakota,197,1.0,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,TN,Tennessee,223,1.1,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,TX,Texas,230,1.0,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,UT,Utah,199,1.3,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,VA,Virginia,211,0.9,0.3,,,per-year report,findings_table_2013a
+2013,4,reading,VT,Vermont,211,0.6,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,WA,Washington,209,1.6,0.2,,,per-year report,findings_table_2013a
+2013,4,reading,WI,Wisconsin,240,0.9,0.1,,,per-year report,findings_table_2013a
+2013,4,reading,WV,West Virginia,221,1.3,0.3,,,per-year report,findings_table_2013a
+2013,4,reading,WY,Wyoming,204,1.5,0.3,,,per-year report,findings_table_2013a
+2013,8,mathematics,AK,Alaska,267,1.1,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,AL,Alabama,245,1.4,0.3,,,per-year report,findings_table_2013b
+2013,8,mathematics,AR,Arkansas,266,0.9,0.0,,,per-year report,findings_table_2013b
+2013,8,mathematics,AZ,Arizona,275,1.3,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,CA,California,,,,,,per-year report,findings_table_2013b
+2013,8,mathematics,CO,Colorado,288,1.0,0.0,,,per-year report,findings_table_2013b
+2013,8,mathematics,CT,Connecticut,244,1.3,0.0,,,per-year report,findings_table_2013b
+2013,8,mathematics,DC,District of Columbia,249,1.3,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,DE,Delaware,261,1.2,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,FL,Florida,280,1.2,0.3,,,per-year report,findings_table_2013b
+2013,8,mathematics,GA,Georgia,245,1.2,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,HI,Hawaii,276,0.9,0.3,,,per-year report,findings_table_2013b
+2013,8,mathematics,IA,Iowa,265,1.1,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,ID,Idaho,258,1.3,0.3,,,per-year report,findings_table_2013b
+2013,8,mathematics,IL,Illinois,276,1.5,0.3,,,per-year report,findings_table_2013b
+2013,8,mathematics,IN,Indiana,258,1.1,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,KS,Kansas,265,1.7,0.3,,,per-year report,findings_table_2013b
+2013,8,mathematics,KY,Kentucky,286,1.3,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,LA,Louisiana,261,0.9,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,MA,Massachusetts,297,1.0,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,MD,Maryland,269,1.2,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,ME,Maine,280,0.6,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,MI,Michigan,295,0.8,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,MN,Minnesota,288,1.3,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,MO,Missouri,292,2.0,0.8,!,,per-year report,findings_table_2013b
+2013,8,mathematics,MS,Mississippi,250,2.0,0.3,,,per-year report,findings_table_2013b
+2013,8,mathematics,MT,Montana,280,1.2,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,NC,North Carolina,302,0.6,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,ND,North Dakota,273,0.9,0.4,,,per-year report,findings_table_2013b
+2013,8,mathematics,NE,Nebraska,274,1.0,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,NH,New Hampshire,280,0.6,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,NJ,New Jersey,277,1.4,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,NM,New Mexico,280,1.0,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,NV,Nevada,289,1.0,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,NY,New York,304,0.9,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,OH,Ohio,246,2.3,0.9,!,,per-year report,findings_table_2013b
+2013,8,mathematics,OK,Oklahoma,262,1.5,0.3,,,per-year report,findings_table_2013b
+2013,8,mathematics,OR,Oregon,270,1.2,0.5,,,per-year report,findings_table_2013b
+2013,8,mathematics,PA,Pennsylvania,267,1.2,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,RI,Rhode Island,280,0.6,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,SC,South Carolina,261,0.9,0.4,,,per-year report,findings_table_2013b
+2013,8,mathematics,SD,South Dakota,268,0.8,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,TN,Tennessee,286,1.9,0.6,!,,per-year report,findings_table_2013b
+2013,8,mathematics,TX,Texas,302,1.1,0.3,,,per-year report,findings_table_2013b
+2013,8,mathematics,UT,Utah,262,1.1,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,VA,Virginia,,,,,,per-year report,findings_table_2013b
+2013,8,mathematics,VT,Vermont,280,0.6,0.1,,,per-year report,findings_table_2013b
+2013,8,mathematics,WA,Washington,287,1.2,0.4,,,per-year report,findings_table_2013b
+2013,8,mathematics,WI,Wisconsin,296,0.7,0.0,,,per-year report,findings_table_2013b
+2013,8,mathematics,WV,West Virginia,281,0.8,0.2,,,per-year report,findings_table_2013b
+2013,8,mathematics,WY,Wyoming,275,0.7,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,AK,Alaska,230,1.1,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,AL,Alabama,230,1.3,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,AR,Arkansas,238,2.3,0.0,,,per-year report,findings_table_2013b
+2013,8,reading,AZ,Arizona,244,1.4,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,CA,California,256,0.9,0.0,,,per-year report,findings_table_2013b
+2013,8,reading,CO,Colorado,258,1.1,0.0,,,per-year report,findings_table_2013b
+2013,8,reading,CT,Connecticut,238,1.3,0.0,,,per-year report,findings_table_2013b
+2013,8,reading,DC,District of Columbia,244,1.4,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,DE,Delaware,246,0.8,0.0,,,per-year report,findings_table_2013b
+2013,8,reading,FL,Florida,262,0.8,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,GA,Georgia,199,3.0,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,HI,Hawaii,242,1.2,0.3,,,per-year report,findings_table_2013b
+2013,8,reading,IA,Iowa,259,1.3,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,ID,Idaho,217,1.9,0.4,,,per-year report,findings_table_2013b
+2013,8,reading,IL,Illinois,261,0.6,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,IN,Indiana,246,1.8,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,KS,Kansas,234,1.7,0.3,,,per-year report,findings_table_2013b
+2013,8,reading,KY,Kentucky,269,1.0,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,LA,Louisiana,242,1.4,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,MA,Massachusetts,250,1.0,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,MD,Maryland,244,1.1,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,ME,Maine,245,0.5,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,MI,Michigan,254,1.0,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,MN,Minnesota,271,0.9,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,MO,Missouri,267,0.7,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,MS,Mississippi,251,1.1,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,MT,Montana,243,0.8,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,NC,North Carolina,273,1.0,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,ND,North Dakota,249,1.5,0.3,,,per-year report,findings_table_2013b
+2013,8,reading,NE,Nebraska,247,0.9,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,NH,New Hampshire,245,0.5,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,NJ,New Jersey,247,1.0,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,NM,New Mexico,250,1.0,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,NV,Nevada,264,0.6,0.0,,,per-year report,findings_table_2013b
+2013,8,reading,NY,New York,282,0.7,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,OH,Ohio,219,1.9,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,OK,Oklahoma,240,1.4,0.3,,,per-year report,findings_table_2013b
+2013,8,reading,OR,Oregon,255,1.6,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,PA,Pennsylvania,248,1.0,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,RI,Rhode Island,245,0.5,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,SC,South Carolina,248,1.3,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,SD,South Dakota,252,1.4,0.3,,,per-year report,findings_table_2013b
+2013,8,reading,TN,Tennessee,269,1.0,0.0,,,per-year report,findings_table_2013b
+2013,8,reading,TX,Texas,268,1.2,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,UT,Utah,225,1.3,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,VA,Virginia,251,1.6,0.4,,,per-year report,findings_table_2013b
+2013,8,reading,VT,Vermont,245,0.5,0.2,,,per-year report,findings_table_2013b
+2013,8,reading,WA,Washington,260,0.9,0.3,,,per-year report,findings_table_2013b
+2013,8,reading,WI,Wisconsin,278,1.1,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,WV,West Virginia,260,1.1,0.1,,,per-year report,findings_table_2013b
+2013,8,reading,WY,Wyoming,252,0.6,0.4,,,per-year report,findings_table_2013b
+2015,4,mathematics,AK,Alaska,246,1.3,0.2,,,per-year report,findings_table_2015a
+2015,4,mathematics,AL,Alabama,233,1.3,0.2,,ACT,per-year report,findings_table_2015a
+2015,4,mathematics,AR,Arkansas,256,1.1,0.2,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,AZ,Arizona,246,0.8,0.1,,,per-year report,findings_table_2015a
+2015,4,mathematics,CA,California,245,0.7,0.1,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,CO,Colorado,260,1.0,0.1,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,CT,Connecticut,246,1.1,0.1,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,DC,District of Columbia,251,0.6,0.1,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,DE,Delaware,242,0.8,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,FL,Florida,239,0.6,0.2,,,per-year report,findings_table_2015a
+2015,4,mathematics,GA,Georgia,245,0.9,0.1,,,per-year report,findings_table_2015a
+2015,4,mathematics,HI,Hawaii,242,0.9,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,IA,Iowa,220,1.0,0.0,,,per-year report,findings_table_2015a
+2015,4,mathematics,ID,Idaho,245,1.2,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,IL,Illinois,257,1.4,0.1,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,IN,Indiana,238,1.2,0.3,,,per-year report,findings_table_2015a
+2015,4,mathematics,KS,Kansas,255,1.3,0.2,,,per-year report,findings_table_2015a
+2015,4,mathematics,KY,Kentucky,243,1.1,0.3,,,per-year report,findings_table_2015a
+2015,4,mathematics,LA,Louisiana 1,221,1.0,0.2,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,MA,Massachusetts,,,,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,MD,Maryland,260,1.4,0.1,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,ME,Maine,250,1.1,0.3,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,MI,Michigan,245,1.0,0.1,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,MN,Minnesota,236,0.7,0.1,,,per-year report,findings_table_2015a
+2015,4,mathematics,MO,Missouri 2,240,0.9,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,MS,Mississippi,251,1.0,0.2,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,MT,Montana,,,,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,NC,North Carolina,246,0.7,0.1,,,per-year report,findings_table_2015a
+2015,4,mathematics,ND,North Dakota,,,,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,NE,Nebraska,223,1.1,0.3,,,per-year report,findings_table_2015a
+2015,4,mathematics,NH,New Hampshire,250,1.1,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,NJ,New Jersey,254,1.0,0.2,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,NM,New Mexico,256,0.7,0.3,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,NV,Nevada,,,,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,NY,New York,243,1.0,0.2,,,per-year report,findings_table_2015a
+2015,4,mathematics,OH,Ohio 1,234,1.0,0.1,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,OK,Oklahoma,226,1.5,0.2,,,per-year report,findings_table_2015a
+2015,4,mathematics,OR,Oregon,244,1.1,0.1,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,PA,Pennsylvania,249,0.7,0.1,,,per-year report,findings_table_2015a
+2015,4,mathematics,RI,Rhode Island,257,0.8,0.1,,PARCC,per-year report,findings_table_2015a
+2015,4,mathematics,SC,South Carolina,239,0.8,0.2,,ACT,per-year report,findings_table_2015a
+2015,4,mathematics,SD,South Dakota,245,0.8,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,TN,Tennessee,243,1.6,0.4,,,per-year report,findings_table_2015a
+2015,4,mathematics,TX,Texas,230,1.4,0.3,,,per-year report,findings_table_2015a
+2015,4,mathematics,UT,Utah,244,1.2,0.2,,,per-year report,findings_table_2015a
+2015,4,mathematics,VA,Virginia,220,1.3,0.5,!,,per-year report,findings_table_2015a
+2015,4,mathematics,VT,Vermont,247,0.8,0.4,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,WA,Washington,241,0.9,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,WI,Wisconsin 2,248,0.9,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,WV,West Virginia,247,1.1,0.3,,SBAC,per-year report,findings_table_2015a
+2015,4,mathematics,WY,Wyoming,247,0.8,0.3,,,per-year report,findings_table_2015a
+2015,4,reading,AK,Alaska,229,1.5,0.1,,,per-year report,findings_table_2015a
+2015,4,reading,AL,Alabama,231,1.1,0.2,,ACT,per-year report,findings_table_2015a
+2015,4,reading,AR,Arkansas,237,1.2,0.4,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,AZ,Arizona,229,1.0,0.2,,,per-year report,findings_table_2015a
+2015,4,reading,CA,California,228,1.1,0.1,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,CO,Colorado,237,1.1,0.1,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,CT,Connecticut,227,1.6,0.1,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,DC,District of Columbia,240,1.4,0.0,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,DE,Delaware,223,0.8,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,FL,Florida,227,0.9,0.1,,,per-year report,findings_table_2015a
+2015,4,reading,GA,Georgia,236,1.1,0.0,,,per-year report,findings_table_2015a
+2015,4,reading,HI,Hawaii,221,2.0,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,IA,Iowa,204,0.9,0.1,,,per-year report,findings_table_2015a
+2015,4,reading,ID,Idaho,229,1.1,0.3,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,IL,Illinois,235,0.9,0.2,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,IN,Indiana,212,1.1,0.1,,,per-year report,findings_table_2015a
+2015,4,reading,KS,Kansas,222,1.4,0.1,,,per-year report,findings_table_2015a
+2015,4,reading,KY,Kentucky,228,0.9,0.3,,,per-year report,findings_table_2015a
+2015,4,reading,LA,Louisiana 1,193,1.8,0.2,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,MA,Massachusetts,,,,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,MD,Maryland,237,1.1,0.1,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,ME,Maine,230,1.1,0.3,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,MI,Michigan,225,1.1,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,MN,Minnesota,224,1.0,0.1,,,per-year report,findings_table_2015a
+2015,4,reading,MO,Missouri 2,220,1.4,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,MS,Mississippi,234,1.0,0.2,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,MT,Montana,,,,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,NC,North Carolina,232,0.9,0.1,,,per-year report,findings_table_2015a
+2015,4,reading,ND,North Dakota,,,,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,NE,Nebraska,198,1.7,0.3,,,per-year report,findings_table_2015a
+2015,4,reading,NH,New Hampshire,230,1.2,0.1,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,NJ,New Jersey,233,1.0,0.1,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,NM,New Mexico,237,1.1,0.4,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,NV,Nevada,,,,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,NY,New York,241,1.1,0.2,,,per-year report,findings_table_2015a
+2015,4,reading,OH,Ohio 1,208,1.9,0.2,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,OK,Oklahoma,209,1.1,0.2,,,per-year report,findings_table_2015a
+2015,4,reading,OR,Oregon,224,1.2,0.1,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,PA,Pennsylvania,224,1.4,0.0,,,per-year report,findings_table_2015a
+2015,4,reading,RI,Rhode Island,239,1.0,0.2,,PARCC,per-year report,findings_table_2015a
+2015,4,reading,SC,South Carolina,239,0.8,0.0,,ACT,per-year report,findings_table_2015a
+2015,4,reading,SD,South Dakota,229,1.0,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,TN,Tennessee,229,1.3,0.1,,,per-year report,findings_table_2015a
+2015,4,reading,TX,Texas,200,2.1,0.3,,,per-year report,findings_table_2015a
+2015,4,reading,UT,Utah,237,0.7,0.2,,,per-year report,findings_table_2015a
+2015,4,reading,VA,Virginia,206,1.7,0.3,,,per-year report,findings_table_2015a
+2015,4,reading,VT,Vermont,233,1.7,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,WA,Washington,224,1.6,0.1,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,WI,Wisconsin 2,228,1.3,0.2,,SBAC,per-year report,findings_table_2015a
+2015,4,reading,WV,West Virginia,226,1.3,0.6,!,SBAC,per-year report,findings_table_2015a
+2015,4,reading,WY,Wyoming,223,1.1,0.1,,,per-year report,findings_table_2015a
+2015,8,mathematics,AK,Alaska,304,1.2,0.2,,,per-year report,findings_table_2015b
+2015,8,mathematics,AL,Alabama,290,1.0,0.1,,ACT,per-year report,findings_table_2015b
+2015,8,mathematics,AR,Arkansas,,,,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,AZ,Arizona,299,1.4,0.2,,,per-year report,findings_table_2015b
+2015,8,mathematics,CA,California,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,CO,Colorado,,,,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,CT,Connecticut,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,DC,District of Columbia,,,,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,DE,Delaware,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,FL,Florida,,,,,,per-year report,findings_table_2015b
+2015,8,mathematics,GA,Georgia,290,1.5,0.1,,,per-year report,findings_table_2015b
+2015,8,mathematics,HI,Hawaii,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,IA,Iowa,,,,,,per-year report,findings_table_2015b
+2015,8,mathematics,ID,Idaho,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,IL,Illinois,300,0.5,0.1,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,IN,Indiana,285,1.3,0.3,,,per-year report,findings_table_2015b
+2015,8,mathematics,KS,Kansas,309,1.0,0.2,,,per-year report,findings_table_2015b
+2015,8,mathematics,KY,Kentucky,282,1.6,0.2,,,per-year report,findings_table_2015b
+2015,8,mathematics,LA,Louisiana 1,261,1.2,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,MA,Massachusetts,,,,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,MD,Maryland,300,0.5,0.1,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,ME,Maine,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,MI,Michigan,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,MN,Minnesota,289,1.3,0.2,,,per-year report,findings_table_2015b
+2015,8,mathematics,MO,Missouri,,,,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,MS,Mississippi,300,0.5,0.1,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,MT,Montana,,,,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,NC,North Carolina,296,1.4,0.1,,,per-year report,findings_table_2015b
+2015,8,mathematics,ND,North Dakota,,,,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,NE,Nebraska,272,1.1,0.1,,,per-year report,findings_table_2015b
+2015,8,mathematics,NH,New Hampshire,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,NJ,New Jersey,300,0.5,0.1,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,NM,New Mexico,300,0.5,0.1,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,NV,Nevada,,,,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,NY,New York,,,,,,per-year report,findings_table_2015b
+2015,8,mathematics,OH,Ohio 1,,,,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,OK,Oklahoma,,,,,,per-year report,findings_table_2015b
+2015,8,mathematics,OR,Oregon,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,PA,Pennsylvania,307,1.1,0.1,,,per-year report,findings_table_2015b
+2015,8,mathematics,RI,Rhode Island,,,,,PARCC,per-year report,findings_table_2015b
+2015,8,mathematics,SC,South Carolina,290,1.0,0.1,,ACT,per-year report,findings_table_2015b
+2015,8,mathematics,SD,South Dakota,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,TN,Tennessee,,,,,,per-year report,findings_table_2015b
+2015,8,mathematics,TX,Texas,,,,,,per-year report,findings_table_2015b
+2015,8,mathematics,UT,Utah,,,,,,per-year report,findings_table_2015b
+2015,8,mathematics,VA,Virginia,,,,,,per-year report,findings_table_2015b
+2015,8,mathematics,VT,Vermont,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,WA,Washington,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,WI,Wisconsin 2,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,WV,West Virginia,294,0.7,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,mathematics,WY,Wyoming,289,0.9,0.1,,,per-year report,findings_table_2015b
+2015,8,reading,AK,Alaska,282,1.1,0.1,,,per-year report,findings_table_2015b
+2015,8,reading,AL,Alabama,266,1.1,0.1,,ACT,per-year report,findings_table_2015b
+2015,8,reading,AR,Arkansas,275,0.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,AZ,Arizona,277,1.5,0.1,,,per-year report,findings_table_2015b
+2015,8,reading,CA,California,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,CO,Colorado,275,0.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,CT,Connecticut,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,DC,District of Columbia,275,0.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,DE,Delaware,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,FL,Florida,261,0.9,0.1,,,per-year report,findings_table_2015b
+2015,8,reading,GA,Georgia,273,1.0,0.1,,,per-year report,findings_table_2015b
+2015,8,reading,HI,Hawaii,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,IA,Iowa,,,,,,per-year report,findings_table_2015b
+2015,8,reading,ID,Idaho,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,IL,Illinois,275,0.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,IN,Indiana,260,1.4,0.3,,,per-year report,findings_table_2015b
+2015,8,reading,KS,Kansas,285,1.0,0.3,,,per-year report,findings_table_2015b
+2015,8,reading,KY,Kentucky,265,1.4,0.0,,,per-year report,findings_table_2015b
+2015,8,reading,LA,Louisiana 1,237,1.7,0.1,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,MA,Massachusetts,,,,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,MD,Maryland,275,0.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,ME,Maine,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,MI,Michigan,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,MN,Minnesota,268,1.4,0.1,,,per-year report,findings_table_2015b
+2015,8,reading,MO,Missouri,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,MS,Mississippi,275,0.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,MT,Montana,,,,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,NC,North Carolina,272,1.1,0.0,,,per-year report,findings_table_2015b
+2015,8,reading,ND,North Dakota,,,,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,NE,Nebraska,246,1.2,0.1,,,per-year report,findings_table_2015b
+2015,8,reading,NH,New Hampshire,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,NJ,New Jersey,275,0.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,NM,New Mexico,275,0.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,NV,Nevada,,,,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,NY,New York,278,1.0,0.2,,,per-year report,findings_table_2015b
+2015,8,reading,OH,Ohio 1,251,1.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,OK,Oklahoma,244,2.0,0.3,,,per-year report,findings_table_2015b
+2015,8,reading,OR,Oregon,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,PA,Pennsylvania,267,1.0,0.1,,,per-year report,findings_table_2015b
+2015,8,reading,RI,Rhode Island,275,0.5,0.2,,PARCC,per-year report,findings_table_2015b
+2015,8,reading,SC,South Carolina,266,1.1,0.1,,ACT,per-year report,findings_table_2015b
+2015,8,reading,SD,South Dakota,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,TN,Tennessee,265,1.5,0.1,,,per-year report,findings_table_2015b
+2015,8,reading,TX,Texas,,,,,,per-year report,findings_table_2015b
+2015,8,reading,UT,Utah,,,,,,per-year report,findings_table_2015b
+2015,8,reading,VA,Virginia,246,1.2,0.2,,,per-year report,findings_table_2015b
+2015,8,reading,VT,Vermont,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,WA,Washington,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,WI,Wisconsin 2,268,1.5,0.4,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,WV,West Virginia,266,0.8,0.2,,SBAC,per-year report,findings_table_2015b
+2015,8,reading,WY,Wyoming,270,0.7,0.0,,,per-year report,findings_table_2015b
+2017,4,mathematics,AK,Alaska,240,0.6,0.2,,,per-year report,table_2017a
+2017,4,mathematics,AL,Alabama,232,1.5,0.1,,ACT,per-year report,table_2017a
+2017,4,mathematics,AR,Arkansas,231,1.1,0.0,,ACT,per-year report,table_2017a
+2017,4,mathematics,AZ,Arizona,240,1.0,0.1,,,per-year report,table_2017a
+2017,4,mathematics,CA,California,240,0.9,0.1,,SBAC,per-year report,table_2017a
+2017,4,mathematics,CO,Colorado,255,1.1,0.2,,PARCC,per-year report,table_2017a
+2017,4,mathematics,CT,Connecticut,241,1.4,0.1,,SBAC,per-year report,table_2017a
+2017,4,mathematics,DC,District of Columbia,248,1.3,0.0,,PARCC,per-year report,table_2017a
+2017,4,mathematics,DE,Delaware,238,1.9,0.2,,SBAC,per-year report,table_2017a
+2017,4,mathematics,FL,Florida,236,1.2,0.2,,,per-year report,table_2017a
+2017,4,mathematics,GA,Georgia,241,1.0,0.1,,,per-year report,table_2017a
+2017,4,mathematics,HI,Hawaii,241,1.5,0.0,,SBAC,per-year report,table_2017a
+2017,4,mathematics,IA,Iowa,220,1.7,0.1,,,per-year report,table_2017a
+2017,4,mathematics,ID,Idaho,243,1.0,0.3,,SBAC,per-year report,table_2017a
+2017,4,mathematics,IL,Illinois,255,0.9,0.1,,PARCC,per-year report,table_2017a
+2017,4,mathematics,IN,Indiana,238,0.8,0.1,,,per-year report,table_2017a
+2017,4,mathematics,KS,Kansas,251,0.6,0.1,,,per-year report,table_2017a
+2017,4,mathematics,KY,Kentucky,243,1.1,0.3,,,per-year report,table_2017a
+2017,4,mathematics,LA,Louisiana,238,1.4,0.2,,,per-year report,table_2017a
+2017,4,mathematics,MA,Massachusetts,250,1.0,0.2,,,per-year report,table_2017a
+2017,4,mathematics,MD,Maryland,252,0.7,0.0,,PARCC,per-year report,table_2017a
+2017,4,mathematics,ME,Maine,246,1.3,0.2,,,per-year report,table_2017a
+2017,4,mathematics,MI,Michigan,245,0.9,0.1,,,per-year report,table_2017a
+2017,4,mathematics,MN,Minnesota,237,1.1,0.1,,,per-year report,table_2017a
+2017,4,mathematics,MO,Missouri,238,1.2,0.3,,,per-year report,table_2017a
+2017,4,mathematics,MS,Mississippi,246,0.7,0.2,,,per-year report,table_2017a
+2017,4,mathematics,MT,Montana,247,0.9,0.2,,SBAC,per-year report,table_2017a
+2017,4,mathematics,NC,North Carolina,242,0.7,0.1,,,per-year report,table_2017a
+2017,4,mathematics,ND,North Dakota,250,0.7,0.2,,SBAC,per-year report,table_2017a
+2017,4,mathematics,NE,Nebraska,223,1.3,0.3,,,per-year report,table_2017a
+2017,4,mathematics,NH,New Hampshire,,,,,SBAC,per-year report,table_2017a
+2017,4,mathematics,NJ,New Jersey,249,0.9,0.2,,PARCC,per-year report,table_2017a
+2017,4,mathematics,NM,New Mexico,253,0.9,0.3,,PARCC,per-year report,table_2017a
+2017,4,mathematics,NV,Nevada,242,0.9,0.2,,SBAC,per-year report,table_2017a
+2017,4,mathematics,NY,New York,243,0.7,0.2,,,per-year report,table_2017a
+2017,4,mathematics,OH,Ohio,223,0.9,0.2,,,per-year report,table_2017a
+2017,4,mathematics,OK,Oklahoma,245,0.7,0.1,,,per-year report,table_2017a
+2017,4,mathematics,OR,Oregon,240,2.0,0.1,,SBAC,per-year report,table_2017a
+2017,4,mathematics,PA,Pennsylvania,247,1.4,0.0,,,per-year report,table_2017a
+2017,4,mathematics,PR,Puerto Rico,186,0.8,0.9,!,,per-year report,table_2017a
+2017,4,mathematics,RI,Rhode Island,253,0.7,0.2,,PARCC,per-year report,table_2017a
+2017,4,mathematics,SC,South Carolina,238,0.8,0.1,,,per-year report,table_2017a
+2017,4,mathematics,SD,South Dakota,244,0.8,0.2,,SBAC,per-year report,table_2017a
+2017,4,mathematics,TN,Tennessee,245,0.9,0.1,,,per-year report,table_2017a
+2017,4,mathematics,TX,Texas,224,1.6,0.2,,,per-year report,table_2017a
+2017,4,mathematics,UT,Utah,245,0.9,0.1,,,per-year report,table_2017a
+2017,4,mathematics,VA,Virginia,221,1.2,0.3,,,per-year report,table_2017a
+2017,4,mathematics,VT,Vermont,244,0.9,0.2,,SBAC,per-year report,table_2017a
+2017,4,mathematics,WA,Washington,240,1.6,0.1,,SBAC,per-year report,table_2017a
+2017,4,mathematics,WI,Wisconsin,249,1.0,0.1,,,per-year report,table_2017a
+2017,4,mathematics,WV,West Virginia,244,1.1,0.4,,SBAC,per-year report,table_2017a
+2017,4,mathematics,WY,Wyoming,244,0.7,0.4,,,per-year report,table_2017a
+2017,4,reading,AK,Alaska,228,1.5,0.2,,,per-year report,table_2017a
+2017,4,reading,AL,Alabama,230,1.5,0.1,,ACT,per-year report,table_2017a
+2017,4,reading,AR,Arkansas,222,1.4,0.2,,ACT,per-year report,table_2017a
+2017,4,reading,AZ,Arizona,223,1.2,0.1,,,per-year report,table_2017a
+2017,4,reading,CA,California,224,1.1,0.1,,SBAC,per-year report,table_2017a
+2017,4,reading,CO,Colorado,234,1.6,0.2,,PARCC,per-year report,table_2017a
+2017,4,reading,CT,Connecticut,229,1.7,0.1,,SBAC,per-year report,table_2017a
+2017,4,reading,DC,District of Columbia,234,0.8,0.1,,PARCC,per-year report,table_2017a
+2017,4,reading,DE,Delaware,221,0.9,0.2,,SBAC,per-year report,table_2017a
+2017,4,reading,FL,Florida,226,0.7,0.1,,,per-year report,table_2017a
+2017,4,reading,GA,Georgia,231,1.5,0.0,,,per-year report,table_2017a
+2017,4,reading,HI,Hawaii,223,0.9,0.3,,SBAC,per-year report,table_2017a
+2017,4,reading,IA,Iowa,201,1.2,0.1,,,per-year report,table_2017a
+2017,4,reading,ID,Idaho,229,1.6,0.3,,SBAC,per-year report,table_2017a
+2017,4,reading,IL,Illinois,236,1.7,0.1,,PARCC,per-year report,table_2017a
+2017,4,reading,IN,Indiana,216,1.3,0.1,,,per-year report,table_2017a
+2017,4,reading,KS,Kansas,228,1.3,0.1,,,per-year report,table_2017a
+2017,4,reading,KY,Kentucky,227,1.3,0.1,,,per-year report,table_2017a
+2017,4,reading,LA,Louisiana,220,0.8,0.1,,,per-year report,table_2017a
+2017,4,reading,MA,Massachusetts,238,1.2,0.1,,,per-year report,table_2017a
+2017,4,reading,MD,Maryland,235,0.9,0.0,,PARCC,per-year report,table_2017a
+2017,4,reading,ME,Maine,225,1.7,0.1,,,per-year report,table_2017a
+2017,4,reading,MI,Michigan,229,1.1,0.0,,,per-year report,table_2017a
+2017,4,reading,MN,Minnesota,222,1.1,0.1,,,per-year report,table_2017a
+2017,4,reading,MO,Missouri,214,1.5,0.2,,,per-year report,table_2017a
+2017,4,reading,MS,Mississippi,234,1.0,0.1,,,per-year report,table_2017a
+2017,4,reading,MT,Montana,228,1.4,0.2,,SBAC,per-year report,table_2017a
+2017,4,reading,NC,North Carolina,233,0.6,0.1,,,per-year report,table_2017a
+2017,4,reading,ND,North Dakota,230,0.8,0.3,,SBAC,per-year report,table_2017a
+2017,4,reading,NE,Nebraska,224,1.3,0.1,,,per-year report,table_2017a
+2017,4,reading,NH,New Hampshire,,,,,SBAC,per-year report,table_2017a
+2017,4,reading,NJ,New Jersey,229,1.5,0.1,,PARCC,per-year report,table_2017a
+2017,4,reading,NM,New Mexico,238,2.0,0.3,,PARCC,per-year report,table_2017a
+2017,4,reading,NV,Nevada,224,1.4,0.2,,SBAC,per-year report,table_2017a
+2017,4,reading,NY,New York,234,0.9,0.3,,,per-year report,table_2017a
+2017,4,reading,OH,Ohio,217,1.0,0.1,,,per-year report,table_2017a
+2017,4,reading,OK,Oklahoma,231,1.1,0.1,,,per-year report,table_2017a
+2017,4,reading,OR,Oregon,225,1.3,0.2,,SBAC,per-year report,table_2017a
+2017,4,reading,PA,Pennsylvania,219,1.3,0.1,,,per-year report,table_2017a
+2017,4,reading,PR,Puerto Rico,,,,,,per-year report,table_2017a
+2017,4,reading,RI,Rhode Island,236,0.8,0.1,,PARCC,per-year report,table_2017a
+2017,4,reading,SC,South Carolina,228,1.9,0.1,,,per-year report,table_2017a
+2017,4,reading,SD,South Dakota,227,1.1,0.2,,SBAC,per-year report,table_2017a
+2017,4,reading,TN,Tennessee,234,1.1,0.0,,,per-year report,table_2017a
+2017,4,reading,TX,Texas,200,1.3,0.3,,,per-year report,table_2017a
+2017,4,reading,UT,Utah,238,0.9,0.2,,,per-year report,table_2017a
+2017,4,reading,VA,Virginia,201,1.8,0.2,,,per-year report,table_2017a
+2017,4,reading,VT,Vermont,232,1.0,0.2,,SBAC,per-year report,table_2017a
+2017,4,reading,WA,Washington,222,1.7,0.1,,SBAC,per-year report,table_2017a
+2017,4,reading,WI,Wisconsin,229,1.3,0.1,,,per-year report,table_2017a
+2017,4,reading,WV,West Virginia,224,1.5,0.3,,SBAC,per-year report,table_2017a
+2017,4,reading,WY,Wyoming,219,1.4,0.3,,,per-year report,table_2017a
+2017,8,mathematics,AK,Alaska,304,1.2,0.1,,,per-year report,table_2017b
+2017,8,mathematics,AL,Alabama,282,1.2,0.0,,ACT,per-year report,table_2017b
+2017,8,mathematics,AR,Arkansas,280,1.3,0.1,,ACT,per-year report,table_2017b
+2017,8,mathematics,AZ,Arizona,,,,,,per-year report,table_2017b
+2017,8,mathematics,CA,California,289,1.2,0.1,,SBAC,per-year report,table_2017b
+2017,8,mathematics,CO,Colorado,,,,,PARCC,per-year report,table_2017b
+2017,8,mathematics,CT,Connecticut,293,1.2,0.1,,SBAC,per-year report,table_2017b
+2017,8,mathematics,DC,District of Columbia,,,,,PARCC,per-year report,table_2017b
+2017,8,mathematics,DE,Delaware,287,1.4,0.1,,SBAC,per-year report,table_2017b
+2017,8,mathematics,FL,Florida,,,,,,per-year report,table_2017b
+2017,8,mathematics,GA,Georgia,,,,,,per-year report,table_2017b
+2017,8,mathematics,HI,Hawaii,288,1.5,0.1,,SBAC,per-year report,table_2017b
+2017,8,mathematics,IA,Iowa,261,0.9,0.1,,,per-year report,table_2017b
+2017,8,mathematics,ID,Idaho,296,0.7,0.2,,SBAC,per-year report,table_2017b
+2017,8,mathematics,IL,Illinois,,,,,PARCC,per-year report,table_2017b
+2017,8,mathematics,IN,Indiana,283,1.8,0.2,,,per-year report,table_2017b
+2017,8,mathematics,KS,Kansas,310,2.1,0.1,,,per-year report,table_2017b
+2017,8,mathematics,KY,Kentucky,277,1.3,0.1,,,per-year report,table_2017b
+2017,8,mathematics,LA,Louisiana,,,,,,per-year report,table_2017b
+2017,8,mathematics,MA,Massachusetts,300,1.2,0.1,,,per-year report,table_2017b
+2017,8,mathematics,MD,Maryland,,,,,PARCC,per-year report,table_2017b
+2017,8,mathematics,ME,Maine,300,1.4,0.2,,,per-year report,table_2017b
+2017,8,mathematics,MI,Michigan,294,1.4,0.1,,,per-year report,table_2017b
+2017,8,mathematics,MN,Minnesota,288,2.2,0.2,,,per-year report,table_2017b
+2017,8,mathematics,MO,Missouri,,,,,,per-year report,table_2017b
+2017,8,mathematics,MS,Mississippi,283,1.4,0.2,,,per-year report,table_2017b
+2017,8,mathematics,MT,Montana,300,0.7,0.2,,SBAC,per-year report,table_2017b
+2017,8,mathematics,NC,North Carolina,293,1.6,0.1,,,per-year report,table_2017b
+2017,8,mathematics,ND,North Dakota,304,1.4,0.4,,SBAC,per-year report,table_2017b
+2017,8,mathematics,NE,Nebraska,275,1.0,0.2,,,per-year report,table_2017b
+2017,8,mathematics,NH,New Hampshire,,,,,SBAC,per-year report,table_2017b
+2017,8,mathematics,NJ,New Jersey,,,,,PARCC,per-year report,table_2017b
+2017,8,mathematics,NM,New Mexico,,,,,PARCC,per-year report,table_2017b
+2017,8,mathematics,NV,Nevada,,,,,SBAC,per-year report,table_2017b
+2017,8,mathematics,NY,New York,,,,,,per-year report,table_2017b
+2017,8,mathematics,OH,Ohio,,,,,,per-year report,table_2017b
+2017,8,mathematics,OK,Oklahoma,301,1.2,0.2,,,per-year report,table_2017b
+2017,8,mathematics,OR,Oregon,292,1.2,0.1,,SBAC,per-year report,table_2017b
+2017,8,mathematics,PA,Pennsylvania,305,1.8,0.1,,,per-year report,table_2017b
+2017,8,mathematics,PR,Puerto Rico,261,1.8,0.7,!,,per-year report,table_2017b
+2017,8,mathematics,RI,Rhode Island,,,,,PARCC,per-year report,table_2017b
+2017,8,mathematics,SC,South Carolina,290,1.3,0.1,,,per-year report,table_2017b
+2017,8,mathematics,SD,South Dakota,295,1.1,0.3,,SBAC,per-year report,table_2017b
+2017,8,mathematics,TN,Tennessee,,,,,,per-year report,table_2017b
+2017,8,mathematics,TX,Texas,,,,,,per-year report,table_2017b
+2017,8,mathematics,UT,Utah,,,,,,per-year report,table_2017b
+2017,8,mathematics,VA,Virginia,,,,,,per-year report,table_2017b
+2017,8,mathematics,VT,Vermont,297,1.0,0.1,,SBAC,per-year report,table_2017b
+2017,8,mathematics,WA,Washington,290,1.2,0.1,,SBAC,per-year report,table_2017b
+2017,8,mathematics,WI,Wisconsin,304,1.0,0.1,,,per-year report,table_2017b
+2017,8,mathematics,WV,West Virginia,291,1.0,0.3,,SBAC,per-year report,table_2017b
+2017,8,mathematics,WY,Wyoming,290,1.2,0.3,,,per-year report,table_2017b
+2017,8,reading,AK,Alaska,271,1.1,0.1,,,per-year report,table_2017b
+2017,8,reading,AL,Alabama,263,0.7,0.1,,ACT,per-year report,table_2017b
+2017,8,reading,AR,Arkansas,257,1.0,0.1,,ACT,per-year report,table_2017b
+2017,8,reading,AZ,Arizona,279,1.2,0.1,,,per-year report,table_2017b
+2017,8,reading,CA,California,265,1.7,0.1,,SBAC,per-year report,table_2017b
+2017,8,reading,CO,Colorado,276,1.3,0.2,,PARCC,per-year report,table_2017b
+2017,8,reading,CT,Connecticut,272,0.9,0.0,,SBAC,per-year report,table_2017b
+2017,8,reading,DC,District of Columbia,269,1.0,0.1,,PARCC,per-year report,table_2017b
+2017,8,reading,DE,Delaware,263,1.4,0.1,,SBAC,per-year report,table_2017b
+2017,8,reading,FL,Florida,264,1.1,0.1,,,per-year report,table_2017b
+2017,8,reading,GA,Georgia,274,1.1,0.0,,,per-year report,table_2017b
+2017,8,reading,HI,Hawaii,267,1.1,0.2,,SBAC,per-year report,table_2017b
+2017,8,reading,IA,Iowa,247,1.3,0.1,,,per-year report,table_2017b
+2017,8,reading,ID,Idaho,271,1.1,0.3,,SBAC,per-year report,table_2017b
+2017,8,reading,IL,Illinois,280,0.9,0.3,,PARCC,per-year report,table_2017b
+2017,8,reading,IN,Indiana,264,1.4,0.1,,,per-year report,table_2017b
+2017,8,reading,KS,Kansas,290,1.6,0.0,,,per-year report,table_2017b
+2017,8,reading,KY,Kentucky,260,1.6,0.2,,,per-year report,table_2017b
+2017,8,reading,LA,Louisiana,264,1.4,0.2,,,per-year report,table_2017b
+2017,8,reading,MA,Massachusetts,279,1.9,0.1,,,per-year report,table_2017b
+2017,8,reading,MD,Maryland,280,1.1,0.1,,PARCC,per-year report,table_2017b
+2017,8,reading,ME,Maine,271,0.9,0.2,,,per-year report,table_2017b
+2017,8,reading,MI,Michigan,269,1.3,0.1,,,per-year report,table_2017b
+2017,8,reading,MN,Minnesota,265,1.1,0.1,,,per-year report,table_2017b
+2017,8,reading,MO,Missouri,260,1.0,0.2,,,per-year report,table_2017b
+2017,8,reading,MS,Mississippi,272,0.9,0.1,,,per-year report,table_2017b
+2017,8,reading,MT,Montana,272,1.0,0.2,,SBAC,per-year report,table_2017b
+2017,8,reading,NC,North Carolina,273,1.2,0.0,,,per-year report,table_2017b
+2017,8,reading,ND,North Dakota,272,1.0,0.3,,SBAC,per-year report,table_2017b
+2017,8,reading,NE,Nebraska,271,0.7,0.2,,,per-year report,table_2017b
+2017,8,reading,NH,New Hampshire,,,,,SBAC,per-year report,table_2017b
+2017,8,reading,NJ,New Jersey,270,0.9,0.1,,PARCC,per-year report,table_2017b
+2017,8,reading,NM,New Mexico,277,0.9,0.2,,PARCC,per-year report,table_2017b
+2017,8,reading,NV,Nevada,,,,,SBAC,per-year report,table_2017b
+2017,8,reading,NY,New York,272,1.5,0.6,!,,per-year report,table_2017b
+2017,8,reading,OH,Ohio,270,1.0,0.0,,,per-year report,table_2017b
+2017,8,reading,OK,Oklahoma,275,0.8,0.2,,,per-year report,table_2017b
+2017,8,reading,OR,Oregon,266,0.9,0.2,,SBAC,per-year report,table_2017b
+2017,8,reading,PA,Pennsylvania,265,1.6,0.1,,,per-year report,table_2017b
+2017,8,reading,PR,Puerto Rico,,,,,,per-year report,table_2017b
+2017,8,reading,RI,Rhode Island,280,1.2,0.2,,PARCC,per-year report,table_2017b
+2017,8,reading,SC,South Carolina,273,1.0,0.2,,,per-year report,table_2017b
+2017,8,reading,SD,South Dakota,270,0.8,0.4,,SBAC,per-year report,table_2017b
+2017,8,reading,TN,Tennessee,283,1.1,0.0,,,per-year report,table_2017b
+2017,8,reading,TX,Texas,,,,,,per-year report,table_2017b
+2017,8,reading,UT,Utah,278,0.9,0.5,,,per-year report,table_2017b
+2017,8,reading,VA,Virginia,245,1.1,0.2,,,per-year report,table_2017b
+2017,8,reading,VT,Vermont,272,1.5,0.4,,SBAC,per-year report,table_2017b
+2017,8,reading,WA,Washington,265,1.1,0.0,,SBAC,per-year report,table_2017b
+2017,8,reading,WI,Wisconsin,279,1.1,0.2,,,per-year report,table_2017b
+2017,8,reading,WV,West Virginia,266,0.8,0.3,,SBAC,per-year report,table_2017b
+2017,8,reading,WY,Wyoming,269,0.8,0.2,,,per-year report,table_2017b
+2019,4,mathematics,AK,Alaska,238,0.9,0.2,,,per-year report,table_2019a
+2019,4,mathematics,AL,Alabama,235,1.2,0.2,,,per-year report,table_2019a
+2019,4,mathematics,AR,Arkansas,234,1.0,0.0,,,per-year report,table_2019a
+2019,4,mathematics,AZ,Arizona,242,1.0,0.2,,,per-year report,table_2019a
+2019,4,mathematics,CA,California,241,0.8,0.2,,SBAC,per-year report,table_2019a
+2019,4,mathematics,CO,Colorado,257,1.0,0.1,,,per-year report,table_2019a
+2019,4,mathematics,CT,Connecticut 1,242,1.0,0.0,,SBAC,per-year report,table_2019a
+2019,4,mathematics,DC,District of Columbia,244,0.7,0.1,,PARCC,per-year report,table_2019a
+2019,4,mathematics,DE,Delaware,239,1.6,0.3,,SBAC,per-year report,table_2019a
+2019,4,mathematics,FL,Florida,236,1.2,0.2,,,per-year report,table_2019a
+2019,4,mathematics,GA,Georgia,239,0.8,0.0,,,per-year report,table_2019a
+2019,4,mathematics,HI,Hawaii,242,0.7,0.1,,SBAC,per-year report,table_2019a
+2019,4,mathematics,IA,Iowa,224,0.8,0.2,,,per-year report,table_2019a
+2019,4,mathematics,ID,Idaho,243,0.8,0.1,,SBAC,per-year report,table_2019a
+2019,4,mathematics,IL,Illinois,253,1.3,0.1,,,per-year report,table_2019a
+2019,4,mathematics,IN,Indiana,244,0.9,0.1,,,per-year report,table_2019a
+2019,4,mathematics,KS,Kansas,253,0.8,0.2,,,per-year report,table_2019a
+2019,4,mathematics,KY,Kentucky,244,0.9,0.2,,,per-year report,table_2019a
+2019,4,mathematics,LA,Louisiana,240,1.0,0.1,,PARCC,per-year report,table_2019a
+2019,4,mathematics,MA,Massachusetts,250,0.9,0.1,,,per-year report,table_2019a
+2019,4,mathematics,MD,Maryland,251,1.5,0.1,,PARCC,per-year report,table_2019a
+2019,4,mathematics,ME,Maine,250,1.1,0.1,,,per-year report,table_2019a
+2019,4,mathematics,MI,Michigan,243,0.7,0.1,,,per-year report,table_2019a
+2019,4,mathematics,MN,Minnesota,240,1.3,0.1,,,per-year report,table_2019a
+2019,4,mathematics,MO,Missouri,244,1.2,0.2,,,per-year report,table_2019a
+2019,4,mathematics,MS,Mississippi,242,1.0,0.1,,,per-year report,table_2019a
+2019,4,mathematics,MT,Montana,247,0.6,0.1,,SBAC,per-year report,table_2019a
+2019,4,mathematics,NC,North Carolina,251,1.1,0.2,,,per-year report,table_2019a
+2019,4,mathematics,ND,North Dakota,250,0.7,0.2,,,per-year report,table_2019a
+2019,4,mathematics,NE,Nebraska,245,0.7,0.1,,,per-year report,table_2019a
+2019,4,mathematics,NH,New Hampshire,,,,,,per-year report,table_2019a
+2019,4,mathematics,NJ,New Jersey,247,1.2,0.1,,,per-year report,table_2019a
+2019,4,mathematics,NM,New Mexico,250,1.5,0.2,,,per-year report,table_2019a
+2019,4,mathematics,NV,Nevada,242,1.0,0.1,,SBAC,per-year report,table_2019a
+2019,4,mathematics,NY,New York,239,1.0,0.2,,,per-year report,table_2019a
+2019,4,mathematics,OH,Ohio,223,0.9,0.1,,,per-year report,table_2019a
+2019,4,mathematics,OK,Oklahoma,245,1.1,0.2,,,per-year report,table_2019a
+2019,4,mathematics,OR,Oregon,245,1.0,0.2,,SBAC,per-year report,table_2019a
+2019,4,mathematics,PA,Pennsylvania,250,1.5,0.0,,,per-year report,table_2019a
+2019,4,mathematics,PR,Puerto Rico,180,1.1,,,,per-year report,table_2019a
+2019,4,mathematics,RI,Rhode Island,255,0.8,0.2,,,per-year report,table_2019a
+2019,4,mathematics,SC,South Carolina,238,0.8,0.1,,,per-year report,table_2019a
+2019,4,mathematics,SD,South Dakota,245,1.1,0.2,,SBAC,per-year report,table_2019a
+2019,4,mathematics,TN,Tennessee,244,1.3,0.2,,,per-year report,table_2019a
+2019,4,mathematics,TX,Texas,247,0.9,0.4,,,per-year report,table_2019a
+2019,4,mathematics,UT,Utah,246,1.2,0.2,,,per-year report,table_2019a
+2019,4,mathematics,VA,Virginia,219,1.2,0.4,,,per-year report,table_2019a
+2019,4,mathematics,VT,Vermont,243,0.9,0.4,,SBAC,per-year report,table_2019a
+2019,4,mathematics,WA,Washington,240,0.9,0.2,,SBAC,per-year report,table_2019a
+2019,4,mathematics,WI,Wisconsin,249,1.1,0.1,,,per-year report,table_2019a
+2019,4,mathematics,WV,West Virginia,238,1.1,0.1,,,per-year report,table_2019a
+2019,4,mathematics,WY,Wyoming,246,1.0,0.2,,,per-year report,table_2019a
+2019,4,reading,AK,Alaska,222,1.3,0.1,,,per-year report,table_2019a
+2019,4,reading,AL,Alabama,220,1.1,0.1,,,per-year report,table_2019a
+2019,4,reading,AR,Arkansas,225,0.9,0.1,,,per-year report,table_2019a
+2019,4,reading,AZ,Arizona,219,1.4,0.1,,,per-year report,table_2019a
+2019,4,reading,CA,California,223,1.2,0.2,,SBAC,per-year report,table_2019a
+2019,4,reading,CO,Colorado,231,1.4,0.1,,,per-year report,table_2019a
+2019,4,reading,CT,Connecticut 1,224,1.3,0.1,,SBAC,per-year report,table_2019a
+2019,4,reading,DC,District of Columbia,228,1.8,0.2,,PARCC,per-year report,table_2019a
+2019,4,reading,DE,Delaware,218,1.1,0.1,,SBAC,per-year report,table_2019a
+2019,4,reading,FL,Florida,220,1.0,0.1,,,per-year report,table_2019a
+2019,4,reading,GA,Georgia,229,1.4,0.1,,,per-year report,table_2019a
+2019,4,reading,HI,Hawaii,221,1.9,0.1,,SBAC,per-year report,table_2019a
+2019,4,reading,IA,Iowa,207,0.8,0.3,,,per-year report,table_2019a
+2019,4,reading,ID,Idaho,225,0.9,0.1,,SBAC,per-year report,table_2019a
+2019,4,reading,IL,Illinois,236,1.3,0.2,,,per-year report,table_2019a
+2019,4,reading,IN,Indiana,231,0.7,0.1,,,per-year report,table_2019a
+2019,4,reading,KS,Kansas,227,1.3,0.1,,,per-year report,table_2019a
+2019,4,reading,KY,Kentucky,222,1.3,0.1,,,per-year report,table_2019a
+2019,4,reading,LA,Louisiana,217,0.9,0.1,,PARCC,per-year report,table_2019a
+2019,4,reading,MA,Massachusetts,233,1.4,0.1,,,per-year report,table_2019a
+2019,4,reading,MD,Maryland,231,0.9,0.0,,PARCC,per-year report,table_2019a
+2019,4,reading,ME,Maine,219,1.6,0.3,,,per-year report,table_2019a
+2019,4,reading,MI,Michigan,226,0.9,0.1,,,per-year report,table_2019a
+2019,4,reading,MN,Minnesota,223,2.2,0.1,,,per-year report,table_2019a
+2019,4,reading,MO,Missouri,225,1.2,0.2,,,per-year report,table_2019a
+2019,4,reading,MS,Mississippi,222,1.0,0.1,,,per-year report,table_2019a
+2019,4,reading,MT,Montana,229,1.0,0.2,,SBAC,per-year report,table_2019a
+2019,4,reading,NC,North Carolina,232,1.4,0.0,,,per-year report,table_2019a
+2019,4,reading,ND,North Dakota,230,1.4,0.5,,,per-year report,table_2019a
+2019,4,reading,NE,Nebraska,219,0.9,0.1,,,per-year report,table_2019a
+2019,4,reading,NH,New Hampshire,,,,,,per-year report,table_2019a
+2019,4,reading,NJ,New Jersey,225,1.7,0.3,,,per-year report,table_2019a
+2019,4,reading,NM,New Mexico,231,1.7,0.3,,,per-year report,table_2019a
+2019,4,reading,NV,Nevada,222,1.2,0.0,,SBAC,per-year report,table_2019a
+2019,4,reading,NY,New York,227,1.9,,,,per-year report,table_2019a
+2019,4,reading,OH,Ohio,215,1.0,0.1,,,per-year report,table_2019a
+2019,4,reading,OK,Oklahoma,237,1.0,0.1,,,per-year report,table_2019a
+2019,4,reading,OR,Oregon,224,0.9,0.1,,SBAC,per-year report,table_2019a
+2019,4,reading,PA,Pennsylvania,213,1.1,0.0,,,per-year report,table_2019a
+2019,4,reading,PR,Puerto Rico,,,,,,per-year report,table_2019a
+2019,4,reading,RI,Rhode Island,236,1.2,0.2,,,per-year report,table_2019a
+2019,4,reading,SC,South Carolina,218,1.0,0.1,,,per-year report,table_2019a
+2019,4,reading,SD,South Dakota,226,1.3,0.2,,SBAC,per-year report,table_2019a
+2019,4,reading,TN,Tennessee,238,1.1,0.1,,,per-year report,table_2019a
+2019,4,reading,TX,Texas,226,0.9,0.3,,,per-year report,table_2019a
+2019,4,reading,UT,Utah,231,1.4,0.2,,,per-year report,table_2019a
+2019,4,reading,VA,Virginia,200,2.3,0.3,,,per-year report,table_2019a
+2019,4,reading,VT,Vermont,226,0.9,0.3,,SBAC,per-year report,table_2019a
+2019,4,reading,WA,Washington,220,1.3,0.2,,SBAC,per-year report,table_2019a
+2019,4,reading,WI,Wisconsin,232,1.0,0.0,,,per-year report,table_2019a
+2019,4,reading,WV,West Virginia,,,,,,per-year report,table_2019a
+2019,4,reading,WY,Wyoming,232,1.0,0.1,,,per-year report,table_2019a
+2019,8,mathematics,AK,Alaska,301,1.5,0.1,,,per-year report,table_2019b
+2019,8,mathematics,AL,Alabama,273,0.9,0.1,,,per-year report,table_2019b
+2019,8,mathematics,AR,Arkansas,278,0.9,0.1,,,per-year report,table_2019b
+2019,8,mathematics,AZ,Arizona,,,,,,per-year report,table_2019b
+2019,8,mathematics,CA,California,288,1.3,0.1,,SBAC,per-year report,table_2019b
+2019,8,mathematics,CO,Colorado,297,1.3,0.1,,,per-year report,table_2019b
+2019,8,mathematics,CT,Connecticut 1,293,1.3,0.1,,SBAC,per-year report,table_2019b
+2019,8,mathematics,DC,District of Columbia,,,,,PARCC,per-year report,table_2019b
+2019,8,mathematics,DE,Delaware,,,,,,per-year report,table_2019b
+2019,8,mathematics,FL,Florida,,,,,,per-year report,table_2019b
+2019,8,mathematics,GA,Georgia,,,,,,per-year report,table_2019b
+2019,8,mathematics,HI,Hawaii,287,1.2,0.2,,SBAC,per-year report,table_2019b
+2019,8,mathematics,IA,Iowa,263,1.8,0.1,,,per-year report,table_2019b
+2019,8,mathematics,ID,Idaho,294,0.9,0.2,,SBAC,per-year report,table_2019b
+2019,8,mathematics,IL,Illinois,300,2.0,0.1,,,per-year report,table_2019b
+2019,8,mathematics,IN,Indiana,298,1.1,0.1,,,per-year report,table_2019b
+2019,8,mathematics,KS,Kansas,307,1.8,0.2,,,per-year report,table_2019b
+2019,8,mathematics,KY,Kentucky,282,1.1,0.1,,,per-year report,table_2019b
+2019,8,mathematics,LA,Louisiana,,,,,PARCC,per-year report,table_2019b
+2019,8,mathematics,MA,Massachusetts,298,1.0,0.1,,,per-year report,table_2019b
+2019,8,mathematics,MD,Maryland,,,,,PARCC,per-year report,table_2019b
+2019,8,mathematics,ME,Maine,296,1.1,0.2,,,per-year report,table_2019b
+2019,8,mathematics,MI,Michigan,287,0.9,0.0,,,per-year report,table_2019b
+2019,8,mathematics,MN,Minnesota,289,1.0,0.2,,,per-year report,table_2019b
+2019,8,mathematics,MO,Missouri,,,,,,per-year report,table_2019b
+2019,8,mathematics,MS,Mississippi,280,1.3,0.2,,,per-year report,table_2019b
+2019,8,mathematics,MT,Montana,298,0.8,0.1,,SBAC,per-year report,table_2019b
+2019,8,mathematics,NC,North Carolina,,,,,,per-year report,table_2019b
+2019,8,mathematics,ND,North Dakota,291,1.5,0.4,,,per-year report,table_2019b
+2019,8,mathematics,NE,Nebraska,289,1.2,0.2,,,per-year report,table_2019b
+2019,8,mathematics,NH,New Hampshire,,,,,,per-year report,table_2019b
+2019,8,mathematics,NJ,New Jersey,,,,,,per-year report,table_2019b
+2019,8,mathematics,NM,New Mexico,,,,,,per-year report,table_2019b
+2019,8,mathematics,NV,Nevada,294,1.1,0.0,,SBAC,per-year report,table_2019b
+2019,8,mathematics,NY,New York,,,,,,per-year report,table_2019b
+2019,8,mathematics,OH,Ohio,,,,,,per-year report,table_2019b
+2019,8,mathematics,OK,Oklahoma,302,1.4,0.1,,,per-year report,table_2019b
+2019,8,mathematics,OR,Oregon,291,1.8,0.1,,SBAC,per-year report,table_2019b
+2019,8,mathematics,PA,Pennsylvania,306,1.2,0.1,,,per-year report,table_2019b
+2019,8,mathematics,PR,Puerto Rico,259,1.3,,,,per-year report,table_2019b
+2019,8,mathematics,RI,Rhode Island,305,1.5,0.1,,,per-year report,table_2019b
+2019,8,mathematics,SC,South Carolina,289,1.2,0.3,,,per-year report,table_2019b
+2019,8,mathematics,SD,South Dakota,296,1.2,0.1,,SBAC,per-year report,table_2019b
+2019,8,mathematics,TN,Tennessee,,,,,,per-year report,table_2019b
+2019,8,mathematics,TX,Texas,,,,,,per-year report,table_2019b
+2019,8,mathematics,UT,Utah,297,2.0,0.4,,,per-year report,table_2019b
+2019,8,mathematics,VA,Virginia,,,,,,per-year report,table_2019b
+2019,8,mathematics,VT,Vermont,297,1.0,0.3,,SBAC,per-year report,table_2019b
+2019,8,mathematics,WA,Washington,291,1.0,0.1,,SBAC,per-year report,table_2019b
+2019,8,mathematics,WI,Wisconsin,303,1.2,0.1,,,per-year report,table_2019b
+2019,8,mathematics,WV,West Virginia,285,1.0,0.2,,,per-year report,table_2019b
+2019,8,mathematics,WY,Wyoming,283,1.0,0.2,,,per-year report,table_2019b
+2019,8,reading,AK,Alaska,270,1.0,0.1,,,per-year report,table_2019b
+2019,8,reading,AL,Alabama,263,1.1,0.1,,,per-year report,table_2019b
+2019,8,reading,AR,Arkansas,261,1.0,0.1,,,per-year report,table_2019b
+2019,8,reading,AZ,Arizona,272,1.4,0.1,,,per-year report,table_2019b
+2019,8,reading,CA,California,262,0.9,0.1,,SBAC,per-year report,table_2019b
+2019,8,reading,CO,Colorado,272,0.8,0.1,,,per-year report,table_2019b
+2019,8,reading,CT,Connecticut 1,267,1.2,0.1,,SBAC,per-year report,table_2019b
+2019,8,reading,DC,District of Columbia,262,1.5,0.1,,PARCC,per-year report,table_2019b
+2019,8,reading,DE,Delaware,,,,,,per-year report,table_2019b
+2019,8,reading,FL,Florida,260,0.8,0.0,,,per-year report,table_2019b
+2019,8,reading,GA,Georgia,,,,,,per-year report,table_2019b
+2019,8,reading,HI,Hawaii,259,1.0,0.1,,SBAC,per-year report,table_2019b
+2019,8,reading,IA,Iowa,248,1.2,0.2,,,per-year report,table_2019b
+2019,8,reading,ID,Idaho,267,0.7,0.3,,SBAC,per-year report,table_2019b
+2019,8,reading,IL,Illinois,278,1.4,0.1,,,per-year report,table_2019b
+2019,8,reading,IN,Indiana,269,1.2,0.2,,,per-year report,table_2019b
+2019,8,reading,KS,Kansas,288,1.0,0.0,,,per-year report,table_2019b
+2019,8,reading,KY,Kentucky,254,1.1,0.2,,,per-year report,table_2019b
+2019,8,reading,LA,Louisiana,262,1.4,0.1,,PARCC,per-year report,table_2019b
+2019,8,reading,MA,Massachusetts,273,1.0,0.1,,,per-year report,table_2019b
+2019,8,reading,MD,Maryland,271,1.1,0.1,,PARCC,per-year report,table_2019b
+2019,8,reading,ME,Maine,261,1.0,0.1,,,per-year report,table_2019b
+2019,8,reading,MI,Michigan,254,1.3,0.1,,,per-year report,table_2019b
+2019,8,reading,MN,Minnesota,261,1.5,0.1,,,per-year report,table_2019b
+2019,8,reading,MO,Missouri,269,1.0,0.2,,,per-year report,table_2019b
+2019,8,reading,MS,Mississippi,272,0.9,0.0,,,per-year report,table_2019b
+2019,8,reading,MT,Montana,270,0.8,0.3,,SBAC,per-year report,table_2019b
+2019,8,reading,NC,North Carolina,271,1.0,0.0,,,per-year report,table_2019b
+2019,8,reading,ND,North Dakota,267,1.4,0.4,,,per-year report,table_2019b
+2019,8,reading,NE,Nebraska,266,1.6,0.1,,,per-year report,table_2019b
+2019,8,reading,NH,New Hampshire,,,,,,per-year report,table_2019b
+2019,8,reading,NJ,New Jersey,261,1.8,0.2,,,per-year report,table_2019b
+2019,8,reading,NM,New Mexico,273,1.3,0.1,,,per-year report,table_2019b
+2019,8,reading,NV,Nevada,264,1.6,0.1,,SBAC,per-year report,table_2019b
+2019,8,reading,NY,New York,268,1.6,,,,per-year report,table_2019b
+2019,8,reading,OH,Ohio,261,1.1,0.1,,,per-year report,table_2019b
+2019,8,reading,OK,Oklahoma,276,1.2,0.0,,,per-year report,table_2019b
+2019,8,reading,OR,Oregon,263,1.3,0.3,,SBAC,per-year report,table_2019b
+2019,8,reading,PA,Pennsylvania,260,1.1,0.0,,,per-year report,table_2019b
+2019,8,reading,PR,Puerto Rico,,,,,,per-year report,table_2019b
+2019,8,reading,RI,Rhode Island,280,0.9,0.1,,,per-year report,table_2019b
+2019,8,reading,SC,South Carolina,266,1.9,0.0,,,per-year report,table_2019b
+2019,8,reading,SD,South Dakota,265,1.0,0.2,,SBAC,per-year report,table_2019b
+2019,8,reading,TN,Tennessee,285,1.0,0.0,,,per-year report,table_2019b
+2019,8,reading,TX,Texas,,,,,,per-year report,table_2019b
+2019,8,reading,UT,Utah,277,1.6,0.1,,,per-year report,table_2019b
+2019,8,reading,VA,Virginia,236,1.8,0.3,,,per-year report,table_2019b
+2019,8,reading,VT,Vermont,270,1.4,0.3,,SBAC,per-year report,table_2019b
+2019,8,reading,WA,Washington,260,1.2,0.1,,SBAC,per-year report,table_2019b
+2019,8,reading,WI,Wisconsin,282,1.4,0.0,,,per-year report,table_2019b
+2019,8,reading,WV,West Virginia,,,,,,per-year report,table_2019b
+2019,8,reading,WY,Wyoming,257,1.1,0.2,,,per-year report,table_2019b
+2022,4,mathematics,AK,Alaska,254,1.7,0.1,,,per-year report,table_2022a
+2022,4,mathematics,AL,Alabama,245,0.7,0.1,,,per-year report,table_2022a
+2022,4,mathematics,AR,Arkansas,237,1.1,0.0,,,per-year report,table_2022a
+2022,4,mathematics,AZ,Arizona,240,1.3,0.1,,,per-year report,table_2022a
+2022,4,mathematics,CA,California,241,0.8,0.1,,SBAC,per-year report,table_2022a
+2022,4,mathematics,CO,Colorado,253,1.5,0.1,,,per-year report,table_2022a
+2022,4,mathematics,CT,Connecticut 1,240,1.1,0.1,,SBAC,per-year report,table_2022a
+2022,4,mathematics,DE,Delaware,241,1.0,0.1,,SBAC,per-year report,table_2022a
+2022,4,mathematics,FL,Florida,232,1.0,0.2,,,per-year report,table_2022a
+2022,4,mathematics,GA,Georgia,242,1.4,0.0,,,per-year report,table_2022a
+2022,4,mathematics,HI,Hawaii,242,0.9,0.0,,,per-year report,table_2022a
+2022,4,mathematics,IA,Iowa,226,1.4,0.1,,,per-year report,table_2022a
+2022,4,mathematics,ID,Idaho,241,1.0,0.2,,SBAC,per-year report,table_2022a
+2022,4,mathematics,IL,Illinois,257,1.8,0.1,,,per-year report,table_2022a
+2022,4,mathematics,IN,Indiana,244,1.4,0.1,,,per-year report,table_2022a
+2022,4,mathematics,KS,Kansas,249,1.2,0.1,,,per-year report,table_2022a
+2022,4,mathematics,KY,Kentucky,241,1.2,0.1,,,per-year report,table_2022a
+2022,4,mathematics,LA,Louisiana,241,0.9,0.1,,,per-year report,table_2022a
+2022,4,mathematics,MA,Massachusetts,249,1.4,0.2,,,per-year report,table_2022a
+2022,4,mathematics,MD,Maryland,254,1.3,0.1,,,per-year report,table_2022a
+2022,4,mathematics,ME,Maine,,,,,,per-year report,table_2022a
+2022,4,mathematics,MI,Michigan,246,1.2,0.1,,,per-year report,table_2022a
+2022,4,mathematics,MN,Minnesota,239,1.3,0.1,,,per-year report,table_2022a
+2022,4,mathematics,MO,Missouri,242,1.0,0.1,,,per-year report,table_2022a
+2022,4,mathematics,MS,Mississippi,237,1.0,0.2,,,per-year report,table_2022a
+2022,4,mathematics,MT,Montana 1,246,1.3,0.2,,SBAC,per-year report,table_2022a
+2022,4,mathematics,NC,North Carolina,249,1.4,0.1,,,per-year report,table_2022a
+2022,4,mathematics,ND,North Dakota,252,1.0,0.3,,,per-year report,table_2022a
+2022,4,mathematics,NE,Nebraska,247,1.2,0.1,,,per-year report,table_2022a
+2022,4,mathematics,NH,New Hampshire,243,0.8,0.2,,,per-year report,table_2022a
+2022,4,mathematics,NJ,New Jersey,249,1.9,0.1,,,per-year report,table_2022a
+2022,4,mathematics,NM,New Mexico,245,1.4,0.2,,,per-year report,table_2022a
+2022,4,mathematics,NV,Nevada,244,1.8,0.1,,SBAC,per-year report,table_2022a
+2022,4,mathematics,NY,New York,236,1.8,0.3,,,per-year report,table_2022a
+2022,4,mathematics,OH,Ohio,225,1.6,0.0,,,per-year report,table_2022a
+2022,4,mathematics,OK,Oklahoma,245,0.9,0.1,,,per-year report,table_2022a
+2022,4,mathematics,OR,Oregon 1,242,1.3,0.1,,SBAC,per-year report,table_2022a
+2022,4,mathematics,PA,Pennsylvania,247,1.2,0.1,,,per-year report,table_2022a
+2022,4,mathematics,PR,Puerto Rico,187,1.7,,,,per-year report,table_2022a
+2022,4,mathematics,RI,Rhode Island,250,0.9,0.1,,,per-year report,table_2022a
+2022,4,mathematics,SC,South Carolina,241,1.8,0.1,,,per-year report,table_2022a
+2022,4,mathematics,SD,South Dakota,243,0.9,0.2,,SBAC,per-year report,table_2022a
+2022,4,mathematics,TN,Tennessee,245,0.9,0.1,,,per-year report,table_2022a
+2022,4,mathematics,TX,Texas,246,1.3,0.3,,,per-year report,table_2022a
+2022,4,mathematics,UT,Utah,244,1.7,0.1,,,per-year report,table_2022a
+2022,4,mathematics,VA,Virginia,224,1.5,0.3,,,per-year report,table_2022a
+2022,4,mathematics,VT,Vermont,247,1.1,0.1,,SBAC,per-year report,table_2022a
+2022,4,mathematics,WA,Washington,240,1.2,0.1,,SBAC,per-year report,table_2022a
+2022,4,mathematics,WI,Wisconsin,246,1.1,0.1,,,per-year report,table_2022a
+2022,4,mathematics,WY,Wyoming,242,1.2,0.3,,,per-year report,table_2022a
+2022,4,reading,AK,Alaska,236,2.1,0.2,,,per-year report,table_2022a
+2022,4,reading,AL,Alabama,213,1.4,0.1,,,per-year report,table_2022a
+2022,4,reading,AR,Arkansas,229,1.0,0.2,,,per-year report,table_2022a
+2022,4,reading,AZ,Arizona,225,1.5,0.0,,,per-year report,table_2022a
+2022,4,reading,CA,California,224,1.3,0.1,,SBAC,per-year report,table_2022a
+2022,4,reading,CO,Colorado,233,1.0,0.1,,,per-year report,table_2022a
+2022,4,reading,CT,Connecticut 1,222,1.2,0.1,,SBAC,per-year report,table_2022a
+2022,4,reading,DE,Delaware,223,1.4,0.1,,SBAC,per-year report,table_2022a
+2022,4,reading,FL,Florida,221,1.0,0.1,,,per-year report,table_2022a
+2022,4,reading,GA,Georgia,232,0.9,0.0,,,per-year report,table_2022a
+2022,4,reading,HI,Hawaii,221,1.2,0.1,,,per-year report,table_2022a
+2022,4,reading,IA,Iowa,197,2.1,0.2,,,per-year report,table_2022a
+2022,4,reading,ID,Idaho,221,2.1,0.1,,SBAC,per-year report,table_2022a
+2022,4,reading,IL,Illinois,237,2.1,0.2,,,per-year report,table_2022a
+2022,4,reading,IN,Indiana,232,1.1,0.0,,,per-year report,table_2022a
+2022,4,reading,KS,Kansas,226,1.2,0.0,,,per-year report,table_2022a
+2022,4,reading,KY,Kentucky,223,1.0,0.1,,,per-year report,table_2022a
+2022,4,reading,LA,Louisiana,220,1.4,0.1,,,per-year report,table_2022a
+2022,4,reading,MA,Massachusetts,242,1.6,0.1,,,per-year report,table_2022a
+2022,4,reading,MD,Maryland,223,1.2,0.0,,,per-year report,table_2022a
+2022,4,reading,ME,Maine,,,,,,per-year report,table_2022a
+2022,4,reading,MI,Michigan,225,1.7,0.1,,,per-year report,table_2022a
+2022,4,reading,MN,Minnesota,223,1.5,0.1,,,per-year report,table_2022a
+2022,4,reading,MO,Missouri,224,1.8,0.1,,,per-year report,table_2022a
+2022,4,reading,MS,Mississippi,226,1.2,0.1,,,per-year report,table_2022a
+2022,4,reading,MT,Montana 1,228,1.0,0.1,,SBAC,per-year report,table_2022a
+2022,4,reading,NC,North Carolina,233,1.4,0.1,,,per-year report,table_2022a
+2022,4,reading,ND,North Dakota,230,1.0,0.4,,,per-year report,table_2022a
+2022,4,reading,NE,Nebraska,222,1.2,0.1,,,per-year report,table_2022a
+2022,4,reading,NH,New Hampshire,228,1.3,0.1,,,per-year report,table_2022a
+2022,4,reading,NJ,New Jersey,229,1.4,0.2,,,per-year report,table_2022a
+2022,4,reading,NM,New Mexico,222,2.0,0.1,,,per-year report,table_2022a
+2022,4,reading,NV,Nevada,222,1.5,0.1,,SBAC,per-year report,table_2022a
+2022,4,reading,NY,New York,227,1.7,0.3,,,per-year report,table_2022a
+2022,4,reading,OH,Ohio,208,2.1,0.0,,,per-year report,table_2022a
+2022,4,reading,OK,Oklahoma,240,1.7,0.1,,,per-year report,table_2022a
+2022,4,reading,OR,Oregon 1,223,2.0,0.1,,SBAC,per-year report,table_2022a
+2022,4,reading,PA,Pennsylvania,220,1.4,0.1,,,per-year report,table_2022a
+2022,4,reading,PR,Puerto Rico,,,,,,per-year report,table_2022a
+2022,4,reading,RI,Rhode Island,242,1.5,0.1,,,per-year report,table_2022a
+2022,4,reading,SC,South Carolina,218,2.1,0.1,,,per-year report,table_2022a
+2022,4,reading,SD,South Dakota,222,1.1,0.1,,SBAC,per-year report,table_2022a
+2022,4,reading,TN,Tennessee,228,1.9,0.1,,,per-year report,table_2022a
+2022,4,reading,TX,Texas,215,1.2,0.2,,,per-year report,table_2022a
+2022,4,reading,UT,Utah,233,1.2,0.1,,,per-year report,table_2022a
+2022,4,reading,VA,Virginia,193,1.7,0.1,,,per-year report,table_2022a
+2022,4,reading,VT,Vermont,228,1.9,0.1,,SBAC,per-year report,table_2022a
+2022,4,reading,WA,Washington,222,1.9,0.2,,SBAC,per-year report,table_2022a
+2022,4,reading,WI,Wisconsin,228,1.5,0.1,,,per-year report,table_2022a
+2022,4,reading,WY,Wyoming,231,1.4,0.1,,,per-year report,table_2022a
+2022,8,mathematics,AK,Alaska,315,1.3,0.1,,,per-year report,table_2022b
+2022,8,mathematics,AL,Alabama,297,1.1,0.2,,,per-year report,table_2022b
+2022,8,mathematics,AR,Arkansas,278,1.0,0.1,,,per-year report,table_2022b
+2022,8,mathematics,AZ,Arizona,296,1.7,0.2,,,per-year report,table_2022b
+2022,8,mathematics,CA,California,289,1.4,0.0,,SBAC,per-year report,table_2022b
+2022,8,mathematics,CO,Colorado,292,2.4,0.1,,,per-year report,table_2022b
+2022,8,mathematics,CT,Connecticut 1,293,1.5,0.0,,SBAC,per-year report,table_2022b
+2022,8,mathematics,DC,District of Columbia,,,,,,per-year report,table_2022b
+2022,8,mathematics,DE,Delaware,292,1.1,0.1,,SBAC,per-year report,table_2022b
+2022,8,mathematics,FL,Florida,,,,,,per-year report,table_2022b
+2022,8,mathematics,GA,Georgia,283,1.1,0.0,,,per-year report,table_2022b
+2022,8,mathematics,HI,Hawaii,289,2.0,0.2,,,per-year report,table_2022b
+2022,8,mathematics,IA,Iowa,262,1.6,0.1,,,per-year report,table_2022b
+2022,8,mathematics,ID,Idaho,296,1.2,,,SBAC,per-year report,table_2022b
+2022,8,mathematics,IL,Illinois,304,1.4,0.1,,,per-year report,table_2022b
+2022,8,mathematics,IN,Indiana,302,1.6,0.1,,,per-year report,table_2022b
+2022,8,mathematics,KS,Kansas,302,1.6,0.2,,,per-year report,table_2022b
+2022,8,mathematics,KY,Kentucky,282,1.4,0.0,,,per-year report,table_2022b
+2022,8,mathematics,LA,Louisiana,,,,,,per-year report,table_2022b
+2022,8,mathematics,MA,Massachusetts,297,1.1,0.1,,,per-year report,table_2022b
+2022,8,mathematics,MD,Maryland,,,,,,per-year report,table_2022b
+2022,8,mathematics,ME,Maine,,,,,,per-year report,table_2022b
+2022,8,mathematics,MI,Michigan,287,1.0,0.0,,,per-year report,table_2022b
+2022,8,mathematics,MN,Minnesota,290,1.2,0.1,,,per-year report,table_2022b
+2022,8,mathematics,MO,Missouri,283,1.1,0.2,,,per-year report,table_2022b
+2022,8,mathematics,MS,Mississippi,272,1.8,0.2,,,per-year report,table_2022b
+2022,8,mathematics,MT,Montana 1,299,1.4,0.3,,SBAC,per-year report,table_2022b
+2022,8,mathematics,NC,North Carolina,,,,,,per-year report,table_2022b
+2022,8,mathematics,ND,North Dakota,293,1.4,,,,per-year report,table_2022b
+2022,8,mathematics,NE,Nebraska,289,1.2,0.1,,,per-year report,table_2022b
+2022,8,mathematics,NH,New Hampshire,295,0.8,0.2,,,per-year report,table_2022b
+2022,8,mathematics,NJ,New Jersey,,,,,,per-year report,table_2022b
+2022,8,mathematics,NM,New Mexico,289,2.2,0.0,,,per-year report,table_2022b
+2022,8,mathematics,NV,Nevada,297,1.7,0.1,,SBAC,per-year report,table_2022b
+2022,8,mathematics,NY,New York,,,,,,per-year report,table_2022b
+2022,8,mathematics,OH,Ohio,,,,,,per-year report,table_2022b
+2022,8,mathematics,OK,Oklahoma,298,1.8,0.3,,,per-year report,table_2022b
+2022,8,mathematics,OR,Oregon 1,297,2.0,0.0,,SBAC,per-year report,table_2022b
+2022,8,mathematics,PA,Pennsylvania,304,1.3,0.1,,,per-year report,table_2022b
+2022,8,mathematics,PR,Puerto Rico,260,2.8,,,,per-year report,table_2022b
+2022,8,mathematics,RI,Rhode Island,303,1.0,0.0,,,per-year report,table_2022b
+2022,8,mathematics,SC,South Carolina,289,1.3,0.1,,,per-year report,table_2022b
+2022,8,mathematics,SD,South Dakota,295,1.6,0.2,,SBAC,per-year report,table_2022b
+2022,8,mathematics,TN,Tennessee,,,,,,per-year report,table_2022b
+2022,8,mathematics,TX,Texas,,,,,,per-year report,table_2022b
+2022,8,mathematics,UT,Utah,293,2.1,0.1,,,per-year report,table_2022b
+2022,8,mathematics,VA,Virginia,,,,,,per-year report,table_2022b
+2022,8,mathematics,VT,Vermont,298,1.9,0.3,,SBAC,per-year report,table_2022b
+2022,8,mathematics,WA,Washington,292,1.1,0.0,,SBAC,per-year report,table_2022b
+2022,8,mathematics,WI,Wisconsin,302,1.2,0.0,,,per-year report,table_2022b
+2022,8,mathematics,WV,West Virginia,283,1.2,0.1,,,per-year report,table_2022b
+2022,8,mathematics,WY,Wyoming,283,1.3,0.4,,,per-year report,table_2022b
+2022,8,reading,AK,Alaska,279,0.9,0.1,,,per-year report,table_2022b
+2022,8,reading,AL,Alabama,251,1.8,0.1,,,per-year report,table_2022b
+2022,8,reading,AR,Arkansas,261,1.6,0.2,,,per-year report,table_2022b
+2022,8,reading,AZ,Arizona,276,1.6,0.1,,,per-year report,table_2022b
+2022,8,reading,CA,California,265,1.5,0.0,,SBAC,per-year report,table_2022b
+2022,8,reading,CO,Colorado,271,2.1,0.1,,,per-year report,table_2022b
+2022,8,reading,CT,Connecticut 1,265,1.3,0.1,,SBAC,per-year report,table_2022b
+2022,8,reading,DC,District of Columbia,269,1.1,0.1,,,per-year report,table_2022b
+2022,8,reading,DE,Delaware,264,1.9,0.1,,SBAC,per-year report,table_2022b
+2022,8,reading,FL,Florida,265,1.4,0.1,,,per-year report,table_2022b
+2022,8,reading,GA,Georgia,271,1.3,0.0,,,per-year report,table_2022b
+2022,8,reading,HI,Hawaii,263,1.9,0.2,,,per-year report,table_2022b
+2022,8,reading,IA,Iowa,238,2.2,0.4,,,per-year report,table_2022b
+2022,8,reading,ID,Idaho,262,1.5,0.4,,SBAC,per-year report,table_2022b
+2022,8,reading,IL,Illinois,285,1.3,0.3,,,per-year report,table_2022b
+2022,8,reading,IN,Indiana,271,1.3,0.3,,,per-year report,table_2022b
+2022,8,reading,KS,Kansas,287,1.3,0.2,,,per-year report,table_2022b
+2022,8,reading,KY,Kentucky,267,1.4,0.1,,,per-year report,table_2022b
+2022,8,reading,LA,Louisiana,262,1.4,0.2,,,per-year report,table_2022b
+2022,8,reading,MA,Massachusetts,279,1.3,0.1,,,per-year report,table_2022b
+2022,8,reading,MD,Maryland,272,1.0,0.1,,,per-year report,table_2022b
+2022,8,reading,ME,Maine,,,,,,per-year report,table_2022b
+2022,8,reading,MI,Michigan,251,1.6,0.1,,,per-year report,table_2022b
+2022,8,reading,MN,Minnesota,266,1.1,0.0,,,per-year report,table_2022b
+2022,8,reading,MO,Missouri,268,1.7,0.1,,,per-year report,table_2022b
+2022,8,reading,MS,Mississippi,269,1.7,0.1,,,per-year report,table_2022b
+2022,8,reading,MT,Montana 1,269,1.0,0.4,,SBAC,per-year report,table_2022b
+2022,8,reading,NC,North Carolina,277,1.4,0.1,,,per-year report,table_2022b
+2022,8,reading,ND,North Dakota,266,1.3,,,,per-year report,table_2022b
+2022,8,reading,NE,Nebraska,266,1.2,0.2,,,per-year report,table_2022b
+2022,8,reading,NH,New Hampshire,269,1.5,0.4,,,per-year report,table_2022b
+2022,8,reading,NJ,New Jersey,271,1.5,0.2,,,per-year report,table_2022b
+2022,8,reading,NM,New Mexico,266,1.1,0.0,,,per-year report,table_2022b
+2022,8,reading,NV,Nevada,267,1.0,0.1,,SBAC,per-year report,table_2022b
+2022,8,reading,NY,New York,263,1.8,0.4,,,per-year report,table_2022b
+2022,8,reading,OH,Ohio,262,1.5,0.1,,,per-year report,table_2022b
+2022,8,reading,OK,Oklahoma,276,1.3,0.2,,,per-year report,table_2022b
+2022,8,reading,OR,Oregon 1,268,0.9,0.2,,SBAC,per-year report,table_2022b
+2022,8,reading,PA,Pennsylvania,256,1.3,0.1,,,per-year report,table_2022b
+2022,8,reading,PR,Puerto Rico,,,,,,per-year report,table_2022b
+2022,8,reading,RI,Rhode Island,283,1.2,0.1,,,per-year report,table_2022b
+2022,8,reading,SC,South Carolina,261,1.5,0.2,,,per-year report,table_2022b
+2022,8,reading,SD,South Dakota,266,1.3,0.2,,SBAC,per-year report,table_2022b
+2022,8,reading,TN,Tennessee,283,1.2,0.1,,,per-year report,table_2022b
+2022,8,reading,TX,Texas,251,1.3,0.1,,,per-year report,table_2022b
+2022,8,reading,UT,Utah,273,2.2,0.0,,,per-year report,table_2022b
+2022,8,reading,VA,Virginia,238,1.8,0.2,,,per-year report,table_2022b
+2022,8,reading,VT,Vermont,273,1.1,0.3,,SBAC,per-year report,table_2022b
+2022,8,reading,WA,Washington,263,1.7,0.1,,SBAC,per-year report,table_2022b
+2022,8,reading,WI,Wisconsin,281,0.9,0.2,,,per-year report,table_2022b
+2022,8,reading,WV,West Virginia,264,2.4,0.1,,,per-year report,table_2022b
+2022,8,reading,WY,Wyoming,256,1.2,0.2,,,per-year report,table_2022b

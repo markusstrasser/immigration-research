@@ -1,0 +1,40 @@
+test,spec,treatment,outcome,cell,units,beta_per10,se,ci95_lo,ci95_hi,p,mde80,n_obs,n_states,years,note
+cut_score,lead,el,naep_equivalent_proficient,pooled,SD,0.0477,0.0995,-0.1522,0.2477,0.6336,0.2837,1269,51,2005-2017,coefficient on the next wave's share
+cut_score,long_diff_2005_2019,el,naep_equivalent_proficient,pooled,SD,0.1331,0.1741,-0.2185,0.4847,0.4489,0.4981,126,42,2005->2019,change in the cut score on the change in the share
+cut_score,long_diff_2009_2019,el,naep_equivalent_proficient,pooled,SD,0.1158,0.1416,-0.1689,0.4004,0.4175,0.4038,174,49,2009->2019,change in the cut score on the change in the share
+cut_score,twfe,el,naep_equivalent_proficient,math4,points,1.6768,3.3705,-5.0931,8.4467,0.6210,9.6066,383,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,el,naep_equivalent_proficient,math8,points,-8.9820,6.3768,-21.7901,3.8262,0.1652,18.1748,332,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,el,naep_equivalent_proficient,pooled,SD,0.0069,0.0998,-0.1936,0.2074,0.9451,0.2845,1473,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,el,naep_equivalent_proficient,read4,points,1.1771,3.5409,-5.9350,8.2892,0.7410,10.0921,381,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,el,naep_equivalent_proficient,read8,points,2.5315,6.1356,-9.7922,14.8553,0.6817,17.4874,377,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe_2009_2019,el,naep_equivalent_proficient,pooled,SD,0.0730,0.0973,-0.1224,0.2684,0.4567,0.2773,1132,51,2009-2019,per-year reports only
+cut_score,twfe_no_flag,el,naep_equivalent_proficient,pooled,SD,-0.0312,0.1049,-0.2420,0.1796,0.7675,0.2991,1382,51,2005-2019,drops mappings NCES flags for relative error > 0.5
+cut_score,twfe_per_year_2009,el,naep_equivalent_proficient,pooled,SD,-0.0074,0.0985,-0.2052,0.1904,0.9405,0.2807,1472,51,2005-2019,2009 from the per-year report instead of the comparison series
+cut_score,twfe_region_year,el,naep_equivalent_proficient,pooled,SD,-0.0022,0.1263,-0.2558,0.2514,0.9861,0.3599,1473,51,2005-2019,adds region-by-cell-by-year FE
+cut_score,twfe_with_2022,el,naep_equivalent_proficient,pooled,SD,0.0410,0.0882,-0.1362,0.2182,0.6442,0.2514,1658,51,2005-2022,adds the 2022 mapping
+cut_score,lead,hisp,naep_equivalent_proficient,pooled,SD,-0.3930,0.3037,-1.0030,0.2171,0.2017,0.8657,1263,51,2005-2017,coefficient on the next wave's share
+cut_score,long_diff_2005_2019,hisp,naep_equivalent_proficient,pooled,SD,0.1213,0.2618,-0.4082,0.6507,0.6458,0.7498,121,40,2005->2019,change in the cut score on the change in the share
+cut_score,long_diff_2009_2019,hisp,naep_equivalent_proficient,pooled,SD,0.0869,0.2176,-0.3506,0.5244,0.6914,0.6206,174,49,2009->2019,change in the cut score on the change in the share
+cut_score,twfe,hisp,naep_equivalent_proficient,math4,points,6.1014,7.9948,-9.9566,22.1595,0.4489,22.7865,382,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,hisp,naep_equivalent_proficient,math8,points,7.9167,10.3257,-12.8230,28.6565,0.4469,29.4299,330,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,hisp,naep_equivalent_proficient,pooled,SD,0.1622,0.2127,-0.2650,0.5895,0.4492,0.6062,1467,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,hisp,naep_equivalent_proficient,read4,points,-0.2190,8.8995,-18.0942,17.6561,0.9805,25.3650,380,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,hisp,naep_equivalent_proficient,read8,points,10.2425,8.8284,-7.4899,27.9748,0.2515,25.1623,375,51,2005-2019,state-by-cell and cell-by-year FE
+cut_score,twfe_2009_2019,hisp,naep_equivalent_proficient,pooled,SD,0.1247,0.2300,-0.3372,0.5866,0.5900,0.6554,1132,51,2009-2019,per-year reports only
+cut_score,twfe_no_flag,hisp,naep_equivalent_proficient,pooled,SD,0.1759,0.2175,-0.2610,0.6128,0.4226,0.6199,1376,51,2005-2019,drops mappings NCES flags for relative error > 0.5
+cut_score,twfe_per_year_2009,hisp,naep_equivalent_proficient,pooled,SD,0.1699,0.2106,-0.2531,0.5930,0.4236,0.6003,1466,51,2005-2019,2009 from the per-year report instead of the comparison series
+cut_score,twfe_region_year,hisp,naep_equivalent_proficient,pooled,SD,0.1693,0.2127,-0.2579,0.5965,0.4297,0.6062,1467,51,2005-2019,adds region-by-cell-by-year FE
+cut_score,twfe_with_2022,hisp,naep_equivalent_proficient,pooled,SD,0.1184,0.1865,-0.2563,0.4930,0.5286,0.5316,1652,51,2005-2022,adds the 2022 mapping
+cut_score,lead,imm,naep_equivalent_proficient,pooled,SD,-0.0855,0.1057,-0.2979,0.1269,0.4227,0.3014,1107,51,2007-2017,coefficient on the next wave's share
+cut_score,long_diff_2007_2019,imm,naep_equivalent_proficient,pooled,SD,-0.1670,0.1758,-0.5208,0.1868,0.3471,0.5018,167,47,2007->2019,change in the cut score on the change in the share
+cut_score,long_diff_2009_2019,imm,naep_equivalent_proficient,pooled,SD,-0.1301,0.1714,-0.4750,0.2148,0.4517,0.4891,170,48,2009->2019,change in the cut score on the change in the share
+cut_score,twfe,imm,naep_equivalent_proficient,math4,points,-1.2562,5.5910,-12.4861,9.9737,0.8231,15.9353,345,51,2007-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,imm,naep_equivalent_proficient,math8,points,-4.3404,7.1774,-18.7566,10.0759,0.5481,20.4567,290,51,2007-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,imm,naep_equivalent_proficient,pooled,SD,-0.0619,0.1389,-0.3409,0.2171,0.6578,0.3959,1315,51,2007-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,imm,naep_equivalent_proficient,read4,points,-5.2625,5.8553,-17.0232,6.4982,0.3731,16.6885,344,51,2007-2019,state-by-cell and cell-by-year FE
+cut_score,twfe,imm,naep_equivalent_proficient,read8,points,0.8806,6.0238,-11.2186,12.9798,0.8844,17.1689,336,51,2007-2019,state-by-cell and cell-by-year FE
+cut_score,twfe_2009_2019,imm,naep_equivalent_proficient,pooled,SD,-0.0784,0.1501,-0.3799,0.2231,0.6037,0.4278,1124,51,2009-2019,per-year reports only
+cut_score,twfe_no_flag,imm,naep_equivalent_proficient,pooled,SD,-0.0475,0.1332,-0.3150,0.2200,0.7228,0.3795,1237,51,2007-2019,drops mappings NCES flags for relative error > 0.5
+cut_score,twfe_per_year_2009,imm,naep_equivalent_proficient,pooled,SD,-0.0671,0.1378,-0.3439,0.2098,0.6288,0.3929,1314,51,2007-2019,2009 from the per-year report instead of the comparison series
+cut_score,twfe_region_year,imm,naep_equivalent_proficient,pooled,SD,-0.0225,0.1470,-0.3178,0.2729,0.8792,0.4191,1315,51,2007-2019,adds region-by-cell-by-year FE
+cut_score,twfe_with_2022,imm,naep_equivalent_proficient,pooled,SD,-0.0363,0.1224,-0.2821,0.2095,0.7678,0.3488,1500,51,2007-2022,adds the 2022 mapping

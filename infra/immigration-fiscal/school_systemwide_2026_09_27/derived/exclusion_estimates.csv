@@ -1,0 +1,41 @@
+test,spec,treatment,outcome,cell,units,beta_per10,se,ci95_lo,ci95_hi,p,mde80,n_obs,n_states,years,note
+exclusion,twfe,el,el_excluded_pct_all,pooled,percentage points,0.5559,0.3070,-0.0609,1.1726,0.0762,0.8751,1836,51,2003-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,el,el_excluded_pct_all,pooled,percentage points,0.3360,0.2906,-0.2476,0.9196,0.2529,0.8281,1836,51,2003-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,el,el_excluded_pct_all,pooled,percentage points,0.4699,0.2291,0.0098,0.9300,0.0455,0.6529,2244,51,2003-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,el,el_excluded_pct_identified,pooled,percentage points,-10.6748,1.8365,-14.3653,-6.9842,0.0000,5.2362,1503,50,2003-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,el,el_excluded_pct_identified,pooled,percentage points,-7.5506,1.7728,-11.1132,-3.9879,0.0001,5.0547,1503,50,2003-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,el,el_excluded_pct_identified,pooled,percentage points,-9.5215,1.4279,-12.3911,-6.6519,0.0000,4.0713,1874,50,2003-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,el,sd_excluded_pct_all,pooled,percentage points,-0.9912,0.3845,-1.7634,-0.2190,0.0129,1.0958,1836,51,2003-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,el,sd_excluded_pct_all,pooled,percentage points,-0.4250,0.3591,-1.1464,0.2964,0.2423,1.0236,1836,51,2003-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,el,sd_excluded_pct_all,pooled,percentage points,-0.8121,0.2781,-1.3707,-0.2534,0.0052,0.7927,2244,51,2003-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,el,sdel_excluded_pct_all,pooled,percentage points,-0.6212,0.4751,-1.5754,0.3331,0.1970,1.3540,1836,51,2003-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,el,sdel_excluded_pct_all,pooled,percentage points,-0.2142,0.4523,-1.1227,0.6943,0.6379,1.2892,1836,51,2003-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,el,sdel_excluded_pct_all,pooled,percentage points,-0.5125,0.3492,-1.2140,0.1889,0.1485,0.9954,2244,51,2003-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,hisp,el_excluded_pct_all,pooled,percentage points,-1.1066,0.2506,-1.6100,-0.6032,0.0001,0.7143,1824,51,2003-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,hisp,el_excluded_pct_all,pooled,percentage points,-1.0427,0.2407,-1.5262,-0.5592,0.0001,0.6861,1824,51,2003-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,hisp,el_excluded_pct_all,pooled,percentage points,-0.5726,0.1958,-0.9658,-0.1795,0.0052,0.5579,2232,51,2003-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,hisp,el_excluded_pct_identified,pooled,percentage points,-4.7818,5.4433,-15.7204,6.1569,0.3840,15.5198,1496,50,2003-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,hisp,el_excluded_pct_identified,pooled,percentage points,-5.4938,4.6189,-14.7758,3.7882,0.2400,13.1692,1496,50,2003-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,hisp,el_excluded_pct_identified,pooled,percentage points,-6.5669,4.1175,-14.8414,1.7075,0.1172,11.7397,1867,50,2003-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,hisp,sd_excluded_pct_all,pooled,percentage points,0.2213,0.5458,-0.8751,1.3176,0.6869,1.5557,1824,51,2003-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,hisp,sd_excluded_pct_all,pooled,percentage points,0.1544,0.4956,-0.8411,1.1499,0.7567,1.4126,1824,51,2003-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,hisp,sd_excluded_pct_all,pooled,percentage points,0.1452,0.4455,-0.7496,1.0400,0.7459,1.2698,2232,51,2003-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,hisp,sdel_excluded_pct_all,pooled,percentage points,-0.4863,0.5903,-1.6720,0.6994,0.4140,1.6825,1824,51,2003-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,hisp,sdel_excluded_pct_all,pooled,percentage points,-0.5075,0.5661,-1.6446,0.6295,0.3742,1.6135,1824,51,2003-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,hisp,sdel_excluded_pct_all,pooled,percentage points,-0.2584,0.4617,-1.1857,0.6690,0.5782,1.3159,2232,51,2003-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,imm,el_excluded_pct_all,pooled,percentage points,0.2029,0.2087,-0.2163,0.6221,0.3356,0.5948,1416,51,2007-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,imm,el_excluded_pct_all,pooled,percentage points,0.0938,0.1917,-0.2913,0.4788,0.6270,0.5464,1416,51,2007-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,imm,el_excluded_pct_all,pooled,percentage points,0.3765,0.1809,0.0131,0.7398,0.0426,0.5156,1824,51,2007-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,imm,el_excluded_pct_identified,pooled,percentage points,-6.6496,3.3102,-13.3018,0.0025,0.0501,9.4381,1184,50,2007-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,imm,el_excluded_pct_identified,pooled,percentage points,-2.5374,3.4032,-9.3763,4.3015,0.4595,9.7030,1184,50,2007-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,imm,el_excluded_pct_identified,pooled,percentage points,-6.5503,2.7238,-12.0241,-1.0765,0.0200,7.7661,1555,50,2007-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,imm,sd_excluded_pct_all,pooled,percentage points,-1.7044,0.6079,-2.9255,-0.4834,0.0072,1.7327,1416,51,2007-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,imm,sd_excluded_pct_all,pooled,percentage points,-1.4288,0.6710,-2.7765,-0.0811,0.0382,1.9124,1416,51,2007-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,imm,sd_excluded_pct_all,pooled,percentage points,-1.1960,0.4217,-2.0431,-0.3489,0.0066,1.2020,1824,51,2007-2024,state-by-cell and cell-by-year FE
+exclusion,twfe,imm,sdel_excluded_pct_all,pooled,percentage points,-1.5373,0.6491,-2.8410,-0.2336,0.0218,1.8499,1416,51,2007-2019,state-by-cell and cell-by-year FE
+exclusion,twfe_region_year,imm,sdel_excluded_pct_all,pooled,percentage points,-1.3141,0.7167,-2.7537,0.1255,0.0727,2.0428,1416,51,2007-2019,adds region-by-cell-by-year FE
+exclusion,twfe_with_2022_2024,imm,sdel_excluded_pct_all,pooled,percentage points,-0.9452,0.4916,-1.9326,0.0422,0.0602,1.4011,1824,51,2007-2024,state-by-cell and cell-by-year FE
+naep_exclusion_control,twfe_ctrl_sd_excluded_pct_all,el,white,pooled,SD,-0.0210,0.0186,-0.0583,0.0164,0.2645,0.0530,1830,51,2003-2019,Test 2 white-pupil TWFE with sd_excluded_pct_all as a control
+naep_exclusion_control,twfe_ctrl_sdel_excluded_pct_all,el,white,pooled,SD,-0.0278,0.0189,-0.0658,0.0102,0.1482,0.0539,1830,51,2003-2019,Test 2 white-pupil TWFE with sdel_excluded_pct_all as a control
+naep_exclusion_control,twfe_ctrl_sd_excluded_pct_all,hisp,white,pooled,SD,0.0829,0.0263,0.0301,0.1357,0.0027,0.0749,1818,51,2003-2019,Test 2 white-pupil TWFE with sd_excluded_pct_all as a control
+naep_exclusion_control,twfe_ctrl_sdel_excluded_pct_all,hisp,white,pooled,SD,0.0929,0.0264,0.0397,0.1460,0.0010,0.0754,1818,51,2003-2019,Test 2 white-pupil TWFE with sdel_excluded_pct_all as a control

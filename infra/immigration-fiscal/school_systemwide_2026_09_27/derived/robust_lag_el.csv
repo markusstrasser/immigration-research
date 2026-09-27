@@ -1,0 +1,13 @@
+test,spec,treatment,outcome,cell,units,beta_per10,se,ci95_lo,ci95_hi,p,mde80,n_obs,n_states,years,note
+naep_lag_robust,twfe,el_ccd_k1,white,grade4,SD,-0.0702,0.0296,-0.1297,-0.0107,0.0217,0.0844,798,51,2003-2019,
+naep_lag_robust,twfe_region_year,el_ccd_k1,white,grade4,SD,-0.0705,0.0365,-0.1438,0.0028,0.0590,0.1040,798,51,2003-2019,
+naep_lag_robust,twfe_weighted,el_ccd_k1,white,grade4,SD,-0.0677,0.0298,-0.1275,-0.0079,0.0274,0.0849,798,51,2003-2019,
+naep_lag_robust,twfe_no_TX,el_ccd_k1,white,grade4,SD,-0.0728,0.0305,-0.1341,-0.0115,0.0210,0.0870,780,50,2003-2019,
+naep_lag_robust,twfe_no_CA,el_ccd_k1,white,grade4,SD,-0.0675,0.0307,-0.1292,-0.0057,0.0329,0.0876,784,50,2003-2019,
+naep_lag_robust,lead,el_ccd_k1,white,grade4,SD,-0.0037,0.0243,-0.0525,0.0452,0.8811,0.0693,696,51,2003-2017,"next wave's value of the lagged measure, current value held fixed"
+naep_lag_robust,twfe,el_g4_lag,white,grade8,SD,-0.0382,0.0272,-0.0929,0.0166,0.1675,0.0777,710,51,2007-2019,
+naep_lag_robust,twfe_region_year,el_g4_lag,white,grade8,SD,-0.0314,0.0289,-0.0894,0.0266,0.2818,0.0823,710,51,2007-2019,
+naep_lag_robust,twfe_weighted,el_g4_lag,white,grade8,SD,-0.1146,0.0368,-0.1885,-0.0407,0.0031,0.1049,710,51,2007-2019,
+naep_lag_robust,twfe_no_TX,el_g4_lag,white,grade8,SD,-0.0286,0.0272,-0.0832,0.0261,0.2983,0.0775,696,50,2007-2019,
+naep_lag_robust,twfe_no_CA,el_g4_lag,white,grade8,SD,-0.0278,0.0269,-0.0818,0.0261,0.3051,0.0766,696,50,2007-2019,
+naep_lag_robust,lead,el_g4_lag,white,grade8,SD,-0.0446,0.0155,-0.0758,-0.0134,0.0059,0.0443,608,51,2007-2017,"next wave's value of the lagged measure, current value held fixed"

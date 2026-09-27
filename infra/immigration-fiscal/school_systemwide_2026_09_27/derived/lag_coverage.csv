@@ -1,0 +1,14 @@
+measure,grade,label,waves,n_states_min_wave,n_obs
+hisp_grade_now,8,"Hispanic share of the tested grade, same year (grade-specific CCD)",2003 2005 2007 2009 2011 2013 2015 2017 2019,47,902
+hisp_g4_lag,8,"Hispanic share of the same cohort in grade 4, 4 years earlier (CCD)",2003 2005 2007 2009 2011 2013 2015 2017 2019,34,858
+hisp_allgrade_g4_lag,8,All-grade Hispanic share 4 years earlier (CCD),2003 2005 2007 2009 2011 2013 2015 2017 2019,48,902
+hisp_k_to_G,8,Cohort's mean Hispanic share over grades K-8 (grade-specific CCD),2007 2009 2011 2013 2015 2017 2019,33,650
+hisp_allgrade_k_to_G,8,Mean all-grade Hispanic share over the cohort's K-8 years (CCD),2005 2007 2009 2011 2013 2015 2017 2019,47,786
+el_g4_lag,8,"Same cohort's NAEP-identified EL share in grade 4, 4 years earlier",2007 2009 2011 2013 2015 2017 2019,50,710
+imm_g4_lag,8,"ACS immigrant-origin share of children 6-17, 4 years earlier",2011 2013 2015 2017 2019,50,506
+hisp_grade_now,4,"Hispanic share of the tested grade, same year (grade-specific CCD)",2003 2005 2007 2009 2011 2013 2015 2017 2019,48,908
+hisp_k1,4,Cohort's Hispanic share in grades K-1 (grade-specific CCD),2003 2005 2007 2009 2011 2013 2015 2017 2019,34,862
+hisp_allgrade_k1,4,All-grade Hispanic share in the cohort's K-1 years (CCD),2003 2005 2007 2009 2011 2013 2015 2017 2019,49,906
+hisp_k_to_G,4,Cohort's mean Hispanic share over grades K-4 (grade-specific CCD),2003 2005 2007 2009 2011 2013 2015 2017 2019,34,858
+el_ccd_k1,4,All-grade CCD English-learner share in the cohort's K-1 years,2003 2005 2007 2009 2011 2013 2015 2017 2019,26,798
+imm_k1,4,ACS immigrant-origin share of children 6-17 in the cohort's K-1 years,2011 2013 2015 2017 2019,50,506
