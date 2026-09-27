@@ -1,0 +1,26 @@
+check,value,source,note
+gss_g4plus_rows_identical_across_two_frames,True,gss_baseline.json,english_only and all_available_languages G4+ rows are the same sample
+gss_distinct_comparisons,8,gss_baseline.json,
+gss_distinct_comparisons_model_wins,7,gss_baseline.json,
+snap_json_embeds_git_head,True,snap_loso.py line 113,"`git rev-parse HEAD` is written into the output, so any later commit changes the file"
+schools_best_arm_district_weighted,asymmetric_trend,validation_schools scores.csv,log RMSE 0.1815
+schools_best_arm_initial_pupils_weighted,proportional,validation_schools scores.csv,log RMSE 0.1693
+medical_2022_hispanic_records_meps_mcbs,545 / 543,diagnostics.csv,
+medical_2022_hispanic_weighted_population_ratio_meps_over_mcbs,1.257693619,diagnostics.csv,"same eligibility code path in both years (analysis.py meps_frame, mcbs_frame)"
+medical_2022_white_records_meps_mcbs,3600 / 4281,diagnostics.csv,
+medical_2022_white_weighted_population_ratio_meps_over_mcbs,1.051355253,diagnostics.csv,"same eligibility code path in both years (analysis.py meps_frame, mcbs_frame)"
+medical_2023_hispanic_records_meps_mcbs,447 / 632,diagnostics.csv,
+medical_2023_hispanic_weighted_population_ratio_meps_over_mcbs,1.267369827,diagnostics.csv,"same eligibility code path in both years (analysis.py meps_frame, mcbs_frame)"
+medical_2023_white_records_meps_mcbs,3196 / 4454,diagnostics.csv,
+medical_2023_white_weighted_population_ratio_meps_over_mcbs,1.023344014,diagnostics.csv,"same eligibility code path in both years (analysis.py meps_frame, mcbs_frame)"
+mariel_in_sample_joint_nrmse_1970_1976_common_revenue_unit_donor_growth,14.35733422,june30_annual.csv,"same normalization as the holdout score, applied to the training years"
+mariel_in_sample_joint_nrmse_1970_1976_common_revenue_unit_drop_largest,33.93117443,june30_annual.csv,"same normalization as the holdout score, applied to the training years"
+mariel_in_sample_joint_nrmse_1970_1976_common_revenue_unit_joint,29.08373819,june30_annual.csv,"same normalization as the holdout score, applied to the training years"
+mariel_in_sample_joint_nrmse_1970_1976_component_relative_donor_growth,14.35733422,june30_annual.csv,"same normalization as the holdout score, applied to the training years"
+mariel_in_sample_joint_nrmse_1970_1976_component_relative_drop_largest,41.70832242,june30_annual.csv,"same normalization as the holdout score, applied to the training years"
+mariel_in_sample_joint_nrmse_1970_1976_component_relative_joint,33.73401424,june30_annual.csv,"same normalization as the holdout score, applied to the training years"
+mariel_dade_above_every_donor_years_Total_Fed_IG_Revenue,6,causal_execution_2026_09_20/mariel/work/scm-june-only-panel.csv,of 7 training years
+mariel_dade_above_every_donor_years_Total_Expenditure,0,causal_execution_2026_09_20/mariel/work/scm-june-only-panel.csv,of 7 training years
+mariel_dade_above_every_donor_years_Total_Revenue,0,causal_execution_2026_09_20/mariel/work/scm-june-only-panel.csv,of 7 training years
+benchmarks_corroborates_via_effect_le_2bn,54,external_benchmarks_2026_09_24/derived/benchmarks.csv,benchmarks.py:31-32
+benchmarks_corroborates_via_ratio_0p8_1p25,7,external_benchmarks_2026_09_24/derived/benchmarks.csv,benchmarks.py:33-35
