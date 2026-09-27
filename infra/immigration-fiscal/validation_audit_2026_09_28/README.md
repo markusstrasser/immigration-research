@@ -31,7 +31,7 @@ retrospective diagnostic without design-based uncertainty or a prospective claim
 Input and generator SHA256s are saved with the ignored derived JSON.
 
 ```sh
-UV_CACHE_DIR=/private/tmp/immigration-audit-uv-cache uv run --no-project python3 infra/immigration-fiscal/validation_audit_2026_09_28/gss_baseline.py
+uv run --no-project python3 infra/immigration-fiscal/validation_audit_2026_09_28/gss_baseline.py
 ```
 
 The primary English-only errors are model/naive 4.59/5.67pp (G2), 2.80/5.16pp
@@ -56,7 +56,7 @@ The 17-state subset with at least 30 raw Hispanic records is an additional
 descriptive score of the same predictions, not a separately refitted model.
 
 ```sh
-OPENBLAS_NUM_THREADS=1 UV_CACHE_DIR=/private/tmp/immigration-audit-uv-cache uv run --no-project python3 infra/immigration-fiscal/validation_audit_2026_09_28/snap_loso.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/validation_audit_2026_09_28/snap_loso.py
 ```
 
 | Benefit-dollar-weighted error, percentage points | Raw CPS | Pooled correction |
@@ -79,3 +79,5 @@ ethnicity is broader than the account's Mexican-origin union.
 
 The ignored outputs are `derived/snap_loso.csv` (every state and denominator),
 `.json` (summary), and `.method.json` (equation, scope and hashes).
+
+Update 2026-09-28: `derived/` is now tracked in git, and `snap_loso.json` no longer records the git HEAD (the input SHA256s in `method` remain).

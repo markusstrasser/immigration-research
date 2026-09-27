@@ -1,0 +1,119 @@
+{
+  "scope": "Retrospective GSS education diagnostic; not a fiscal forecast or prospective test.",
+  "limitations": "Model conditions on later observed parent mix; parent-link weighted; no design intervals. All source frames retained; unsupported Mexican-origin rows skipped explicitly.",
+  "input_sha256": {
+    "infra/immigration-fiscal/projection_backtest_2026_09_19/derived/gss_temporal_prediction.csv": "ffa3857f208501cd1438feadd7179c7e53a1ba9eba2014d88a4a8e66559d9237",
+    "infra/immigration-fiscal/projection_backtest_2026_09_19/derived/gss_transition_cells.csv": "d2b5d18f678895b6a9403b8c9f45c28f1ed202b94bffdba5943f6e0bd45e0fae",
+    "infra/immigration-fiscal/projection_backtest_2026_09_19/cohorts.py": "c59adbb0f80aa6d50815638001079840d288fd141b4f5519eb4ac8690fdd2709",
+    "infra/immigration-fiscal/validation_audit_2026_09_28/gss_baseline.py": "c098e1db454faad2b840aeecbb1d66f9b096d31d2dc885241345a064564cbfa5"
+  },
+  "results": [
+    {
+      "frame": "english_only",
+      "group": "all_origins_G2",
+      "model_tv_pp": 4.592547778352811,
+      "naive_tv_pp": 5.666293192773974,
+      "model_above12_error_pp": 4.592547778352807,
+      "naive_above12_error_pp": 5.6662931927739635,
+      "training_respondents": 120,
+      "heldout_respondents": 595
+    },
+    {
+      "frame": "english_only",
+      "group": "all_origins_G3",
+      "model_tv_pp": 2.798721018274119,
+      "naive_tv_pp": 5.164044706904619,
+      "model_above12_error_pp": -1.2033478884225124,
+      "naive_above12_error_pp": 4.525461435786959,
+      "training_respondents": 378,
+      "heldout_respondents": 591
+    },
+    {
+      "frame": "english_only",
+      "group": "all_origins_G4plus",
+      "model_tv_pp": 3.3861390526041477,
+      "naive_tv_pp": 9.243118694732935,
+      "model_above12_error_pp": 3.3861390526041535,
+      "naive_above12_error_pp": 9.243118694732932,
+      "training_respondents": 1299,
+      "heldout_respondents": 3226
+    },
+    {
+      "frame": "english_only_pre2021",
+      "group": "all_origins_G2",
+      "model_tv_pp": 3.2927743242185192,
+      "naive_tv_pp": 2.721468651178415,
+      "model_above12_error_pp": 2.4922180857123166,
+      "naive_above12_error_pp": 2.721468651178416,
+      "training_respondents": 120,
+      "heldout_respondents": 411
+    },
+    {
+      "frame": "english_only_pre2021",
+      "group": "all_origins_G3",
+      "model_tv_pp": 4.868056791721144,
+      "naive_tv_pp": 8.114367747614407,
+      "model_above12_error_pp": 0.7403541463667063,
+      "naive_above12_error_pp": 5.901191401888816,
+      "training_respondents": 378,
+      "heldout_respondents": 442
+    },
+    {
+      "frame": "english_only_pre2021",
+      "group": "all_origins_G4plus",
+      "model_tv_pp": 3.7316206280050586,
+      "naive_tv_pp": 8.961539961161613,
+      "model_above12_error_pp": 3.7316206280050612,
+      "naive_above12_error_pp": 8.961539961161613,
+      "training_respondents": 1299,
+      "heldout_respondents": 2302
+    },
+    {
+      "frame": "all_available_languages",
+      "group": "all_origins_G2",
+      "model_tv_pp": 3.661214215866118,
+      "naive_tv_pp": 4.513095274437787,
+      "model_above12_error_pp": 3.6612142158661154,
+      "naive_above12_error_pp": 4.513095274437784,
+      "training_respondents": 120,
+      "heldout_respondents": 605
+    },
+    {
+      "frame": "all_available_languages",
+      "group": "all_origins_G3",
+      "model_tv_pp": 2.780246369246599,
+      "naive_tv_pp": 5.10183850182134,
+      "model_above12_error_pp": -1.2318501444479657,
+      "naive_above12_error_pp": 4.470301297603596,
+      "training_respondents": 378,
+      "heldout_respondents": 592
+    },
+    {
+      "frame": "all_available_languages",
+      "group": "all_origins_G4plus",
+      "model_tv_pp": 3.3861390526041477,
+      "naive_tv_pp": 9.243118694732935,
+      "model_above12_error_pp": 3.3861390526041535,
+      "naive_above12_error_pp": 9.243118694732932,
+      "training_respondents": 1299,
+      "heldout_respondents": 3226
+    }
+  ],
+  "skipped": [
+    {
+      "frame": "english_only",
+      "group": "Mexican_family_origin_G2",
+      "reason": "insufficient_training_support"
+    },
+    {
+      "frame": "english_only_pre2021",
+      "group": "Mexican_family_origin_G2",
+      "reason": "insufficient_training_support"
+    },
+    {
+      "frame": "all_available_languages",
+      "group": "Mexican_family_origin_G2",
+      "reason": "insufficient_training_support"
+    }
+  ]
+}

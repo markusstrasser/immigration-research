@@ -73,10 +73,10 @@ removal of today's Mexican-origin resident union. [INFERENCE]
 ## Reproduction and verification
 
 ```sh
-OPENBLAS_NUM_THREADS=1 UV_CACHE_DIR=/private/tmp/immigration-validation-uv-cache \
+OPENBLAS_NUM_THREADS=1 \
 uv run --no-project --with scipy --with pandas --with numpy python3 \
   infra/immigration-fiscal/validation_mariel_2026_09_28/joint_budget.py
-OPENBLAS_NUM_THREADS=1 UV_CACHE_DIR=/private/tmp/immigration-validation-uv-cache \
+OPENBLAS_NUM_THREADS=1 \
 uv run --no-project --with scipy --with pandas --with numpy python3 -m unittest discover \
   -s infra/immigration-fiscal/validation_mariel_2026_09_28 -p 'test_*.py' -v
 ```
@@ -89,6 +89,7 @@ simplex duality gap. The full run and tests exit successfully. Source and design
 hashes are retained in `derived/summary.json`; outputs are ignored and reproducible.
 Native-First: NumPy/pandas and SciPy constrained least squares on existing pinned
 source panels; no replacement dataset or synthetic outcomes. [EXECUTION]
+Update 2026-09-28: `derived/` outputs are now tracked in git.
 
 Source: Pierson, Hand and Thompson (2015),
 [Government Finance Database](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130119),

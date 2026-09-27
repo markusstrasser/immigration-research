@@ -1,0 +1,85 @@
+{
+  "design_sha256": "8e0fff4b41239750a15b5ca80de7d7c39be98b0152e1e2ca21475a79c8ca1f5d",
+  "script_sha256": "30102aa7c50aba2b91ac312272acf110e1e4ffe0f045c6fccebdee0fa11879cb",
+  "source_hashes": {
+    "infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2022/asec2022_ddl_pub_full.pdf": "77622b19e77a24e8f5f6145fcb171ab856a2d438fda0ba1e04e7ce345b9f2428",
+    "infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2022/asecpub22csv.zip": "7338011adefca16dae30a4469ddaf0c01cef579b607b26b4bceec749376e4ac9",
+    "infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2023/asecpub23csv.zip": "d2e000250782adfbdd7f29c82b66d866591a30f0d330496698ec19f9c784ce11",
+    "infra/immigration-fiscal/same_year_tax_2026_09_20/_cache/asecpub24csv.zip": "cdb39cdac34bef99dd0940ab28e306f692404c2eea44d85dfd634214872a0a09",
+    "sources/immigration-fiscal/data/external/stage3/census/cps_asec_2025/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "infra/immigration-fiscal/same_year_tax_2026_09_20/_cache/22in12ms.xls": "ffc483e16aa05762c5ac6dfdbfa86250cd4db5969b1cf6db2296539601a54503",
+    "infra/immigration-fiscal/same_year_tax_2026_09_20/_cache/23in12ms.xls": "549861a1c7b38256abf9506a6111dcf82110266d0168199dfa465a5d61134490"
+  },
+  "survey_guards": [
+    {
+      "income_year": 2021,
+      "person_rows": 152732,
+      "civilian_rows": 152227,
+      "spm_units": 61622,
+      "minimum_cell_n": 113,
+      "all_unit_guards": true,
+      "national_own_wages_bn": 9847.753425679071,
+      "credit_identity": {
+        "nonzero_rows": 10,
+        "max_abs_nominal_dollars": 1,
+        "raw_residual_dollars": 8.0,
+        "released_fedtax_ac_retained": true
+      }
+    },
+    {
+      "income_year": 2022,
+      "person_rows": 146133,
+      "civilian_rows": 145668,
+      "spm_units": 59181,
+      "minimum_cell_n": 136,
+      "all_unit_guards": true,
+      "national_own_wages_bn": 10696.2924955995,
+      "credit_identity": {
+        "nonzero_rows": 0,
+        "max_abs_nominal_dollars": 0,
+        "raw_residual_dollars": 0.0,
+        "released_fedtax_ac_retained": true
+      }
+    },
+    {
+      "income_year": 2023,
+      "person_rows": 144265,
+      "civilian_rows": 143779,
+      "spm_units": 58711,
+      "minimum_cell_n": 127,
+      "all_unit_guards": true,
+      "national_own_wages_bn": 11105.608541028556,
+      "credit_identity": {
+        "nonzero_rows": 0,
+        "max_abs_nominal_dollars": 0,
+        "raw_residual_dollars": 0.0,
+        "released_fedtax_ac_retained": true
+      }
+    },
+    {
+      "income_year": 2024,
+      "person_rows": 142125,
+      "civilian_rows": 141649,
+      "spm_units": 58147,
+      "minimum_cell_n": 119,
+      "all_unit_guards": true,
+      "national_own_wages_bn": 11998.975703294407,
+      "credit_identity": {
+        "nonzero_rows": 0,
+        "max_abs_nominal_dollars": 0,
+        "raw_residual_dollars": 0.0,
+        "released_fedtax_ac_retained": true
+      }
+    }
+  ],
+  "output_hashes": {
+    "scores": "f7529200a8fe6585bad4067518ac0e84a2c5d8775a0a11c270f8b4172c281179",
+    "paired_scores": "9c07e5df62d858135aef0abd486e91c4be645c25e187386638e518c968259f4c",
+    "support": "9770dfc62677aa97653ab1b0912aca6c1ae3d1e44f966127d8087119507f79a6",
+    "annual_components": "4a25be418e64ddb57eebbde4956d99853a77487f08cb1628f62030d1787570a3",
+    "irs_distribution": "6a52ae9f4d186ff682a6942819bee7bc558418c6eecbd509276117743c910e7d"
+  },
+  "national_scale_predicted": false,
+  "causal_effect_validated": false,
+  "uncertainty": "Separate SDR test and training errors; sum bounds first-order SE with unknown cross-year covariance."
+}

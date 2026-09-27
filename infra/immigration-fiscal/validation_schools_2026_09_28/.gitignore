@@ -1,2 +1,3 @@
-derived/
+# Outputs over 5 MB stay untracked; validate.py regenerates them.
+derived/predictions.parquet
 __pycache__/

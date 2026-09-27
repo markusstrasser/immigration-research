@@ -131,8 +131,8 @@ separate service quality from composition and other shocks.
 Run from the main repository, substituting the script path when working in a worktree:
 
 ```sh
-OPENBLAS_NUM_THREADS=1 UV_CACHE_DIR=/private/tmp/immigration-validation-uv-cache uv run --no-project python3 infra/immigration-fiscal/validation_schools_2026_09_28/validate.py --source-root /Users/alien/Projects/immigration-research
-UV_CACHE_DIR=/private/tmp/immigration-validation-uv-cache uv run --no-project python3 -m unittest discover -s infra/immigration-fiscal/validation_schools_2026_09_28 -p 'test_*.py' -v
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/validation_schools_2026_09_28/validate.py --source-root /Users/alien/Projects/immigration-research
+uv run --no-project python3 -m unittest discover -s infra/immigration-fiscal/validation_schools_2026_09_28 -p 'test_*.py' -v
 ```
 
 Seven guard tests pass: train-year leakage, interval membership independence,

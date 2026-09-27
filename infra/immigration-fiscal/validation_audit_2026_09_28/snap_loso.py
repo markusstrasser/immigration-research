@@ -10,7 +10,6 @@ from pathlib import Path
 import ast
 import hashlib
 import json
-import subprocess
 import numpy as np
 import pandas as pd
 
@@ -110,8 +109,8 @@ def metrics(part):
     out['states_worse'] = int((part.absolute_error_change_pp > 0).sum())
     return out
 
-out = {'head': subprocess.check_output(['git', '-C', str(ROOT), 'rev-parse', 'HEAD'], text=True).strip(),
-       'method': method, 'all_valid_states': metrics(d),
+# Provenance is the input sha256s in method; a git HEAD here would change the output on every commit.
+out = {'method': method, 'all_valid_states': metrics(d),
        'at_least_30_raw_hispanic_records': metrics(d[d.cps_hisp_records >= 30]),
        'training_rho_min_max': [float(d.training_rho.min()), float(d.training_rho.max())],
        'improvement_claim': 'Descriptive prediction errors only; no statistical significance or fiscal correction.'}
