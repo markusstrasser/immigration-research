@@ -1,0 +1,282 @@
+{
+ "bea_Section7All_xls.xlsx": {
+  "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section7All_xls.xlsx",
+  "bytes": 1003641,
+  "sha256": "ce107c8ce92393613c0abae38156afcfaef8ab571eedf0302dc09ca44738b9ef"
+ },
+ "census_1999_msa_fips.txt": {
+  "url": "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1999/historical-delineation-files/99mfips.txt",
+  "bytes": 141336,
+  "sha256": "dda547e398819c4040fb2b2d07256eaee76e7504bb236b92926e12b1d28f933c"
+ },
+ "census_2020_tract_to_puma.txt": {
+  "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/2020_Census_Tract_to_2020_PUMA.txt",
+  "bytes": 1709076,
+  "sha256": "5262f460b2c8dbe86b00549e916317b1791fdc595c9af72ab18f6f6a67040531"
+ },
+ "census_2022_individual_unit_file.zip": {
+  "url": "https://www2.census.gov/programs-surveys/gov-finances/tables/2022/2022_Individual_Unit_File.zip",
+  "bytes": 9719280,
+  "sha256": "c8de889f6b3320d3be347e3880607346d6440eda82705b26db2fa410fe6e83a5"
+ },
+ "fhfa_land_prices_2024_06.xlsx": {
+  "url": "https://www.fhfa.gov/document/land-prices_2024_20_june.xlsx",
+  "bytes": 17160123,
+  "sha256": "3db67f331d609117ef52adab6068f18eb1184f821ed750af2517d03f047b618b"
+ },
+ "pl2020_tracts/01.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:01&key=<redacted>",
+  "bytes": 43111,
+  "sha256": "813b7361c8af150e82f9da297861e540987170e1ebbc4ac9250e5ed553d22af8"
+ },
+ "pl2020_tracts/02.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:02&key=<redacted>",
+  "bytes": 5335,
+  "sha256": "9ea83a464323653542c344cc82d4212f47423d702c93e314805fe62e2ef92b08"
+ },
+ "pl2020_tracts/04.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:04&key=<redacted>",
+  "bytes": 52898,
+  "sha256": "75440e55a088c4f91348226e8fb24190b5bdac58a8e8c025d0eb561db26d90ac"
+ },
+ "pl2020_tracts/05.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:05&key=<redacted>",
+  "bytes": 24714,
+  "sha256": "17060e0016699f34c472d0ff7716b74d9660fdfbb6ba263e75998c74de44483b"
+ },
+ "pl2020_tracts/06.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:06&key=<redacted>",
+  "bytes": 273727,
+  "sha256": "d2bf4ba60f7f07869d43458883a4cd5bac15a90f5039f8e9f97a2834eeac0649"
+ },
+ "pl2020_tracts/08.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:08&key=<redacted>",
+  "bytes": 43414,
+  "sha256": "2e939d7e731ce03c6f0e5fd07fb5d1166f1e12d61b31f65f18a2fccd1fc2201c"
+ },
+ "pl2020_tracts/09.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:09&key=<redacted>",
+  "bytes": 26504,
+  "sha256": "2b31267f8391665b41d76ba083671efb5223347f70aee71482c0eb4faf946aa2"
+ },
+ "pl2020_tracts/10.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:10&key=<redacted>",
+  "bytes": 7876,
+  "sha256": "47e305a9ee75adbe6e004d9dcb2e543e2f85fff6f00213a30f39ce032db7dcae"
+ },
+ "pl2020_tracts/11.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:11&key=<redacted>",
+  "bytes": 6217,
+  "sha256": "87e502c9bf814e0b7b25520d19244d834e7db65ad53647ca7beefa03e3ff1539"
+ },
+ "pl2020_tracts/12.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:12&key=<redacted>",
+  "bytes": 154626,
+  "sha256": "df58613f52c931197b2d4d976656ef81d66f45ed5c1ca61638ac7290fb9e69d2"
+ },
+ "pl2020_tracts/13.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:13&key=<redacted>",
+  "bytes": 83876,
+  "sha256": "ae9c855cdd0f5399ff113f6e063cd1619186f6bf98771abd753e0d71224b8f52"
+ },
+ "pl2020_tracts/15.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:15&key=<redacted>",
+  "bytes": 13751,
+  "sha256": "b18158251a242ff34e75b661f6a3edaa614175c0196bb2693c435716965aac4b"
+ },
+ "pl2020_tracts/16.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:16&key=<redacted>",
+  "bytes": 13714,
+  "sha256": "a16afa6bde7fb316293ca65836684deb82180eafb36010f3dcb162ccea799e07"
+ },
+ "pl2020_tracts/17.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:17&key=<redacted>",
+  "bytes": 97956,
+  "sha256": "3e0979c1c57f0b92b4b4df804333cf8278ad212c9d5e50493bdedb372b520252"
+ },
+ "pl2020_tracts/18.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:18&key=<redacted>",
+  "bytes": 50884,
+  "sha256": "3cbfecf804cfef3960beda384b28adb6d0d91101c0ebc81849fd68a99872fc51"
+ },
+ "pl2020_tracts/19.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:19&key=<redacted>",
+  "bytes": 26914,
+  "sha256": "5c9be4a0c3687877cf82e0ee1a241ff5f29d382dbdbafad39b9760927a8f0d71"
+ },
+ "pl2020_tracts/20.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:20&key=<redacted>",
+  "bytes": 24872,
+  "sha256": "47956322d385a16386008f6c1c8bfdb136661ffa269f956e4148eec18753aed3"
+ },
+ "pl2020_tracts/21.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:21&key=<redacted>",
+  "bytes": 39189,
+  "sha256": "1491f1e660194fc870dda73ff02bccb80b5b3be83bee9e983ade52a2d9456444"
+ },
+ "pl2020_tracts/22.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:22&key=<redacted>",
+  "bytes": 41599,
+  "sha256": "d92b66b87113e0dca6cb4948b8271e15f2a7d8b9223210ab6bab924e0c5f6dd4"
+ },
+ "pl2020_tracts/23.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:23&key=<redacted>",
+  "bytes": 12222,
+  "sha256": "28008a30529594da9de8f07d751914fc518a4abbe75b9cc42d5a66e047e16b7a"
+ },
+ "pl2020_tracts/24.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:24&key=<redacted>",
+  "bytes": 44235,
+  "sha256": "47c490b130fa16177a5f8786779d1098aa181b6cf64c1444951121729dc2bc89"
+ },
+ "pl2020_tracts/25.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:25&key=<redacted>",
+  "bytes": 48561,
+  "sha256": "bc6184786e78da6f1dd25fc6fb0daaa3d6019edf1458757f1760fe560300f0bf"
+ },
+ "pl2020_tracts/26.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:26&key=<redacted>",
+  "bytes": 90184,
+  "sha256": "f733caf545c997305a5d7f13e87c495642fd77639329d5c8073161136eddb21c"
+ },
+ "pl2020_tracts/27.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:27&key=<redacted>",
+  "bytes": 45166,
+  "sha256": "7d3d27ee767fca554d28e526f96cc8b334a6411485b42cc12e0113c8be17fda1"
+ },
+ "pl2020_tracts/28.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:28&key=<redacted>",
+  "bytes": 26350,
+  "sha256": "5fe07480d5ebe5ad14830c8f41e2c6c2f3246b17604d12316dac272013bd6999"
+ },
+ "pl2020_tracts/29.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:29&key=<redacted>",
+  "bytes": 49633,
+  "sha256": "411d7321cc3c7785fbf03e993dc57df1657106e37f120d925dbcd300fa577b95"
+ },
+ "pl2020_tracts/30.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:30&key=<redacted>",
+  "bytes": 9598,
+  "sha256": "52c48eded7ae9fe9c6fd71c563c9b5698d8ef85b03f52808f1fdf46df78f5f2b"
+ },
+ "pl2020_tracts/31.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:31&key=<redacted>",
+  "bytes": 16610,
+  "sha256": "733c439d1fa02519f5ce158067784fa4801a2fe05b513023da658335eedaf4bc"
+ },
+ "pl2020_tracts/32.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:32&key=<redacted>",
+  "bytes": 23380,
+  "sha256": "59779f096dfd394b54bf42f89040416ec1a4778a8a38a642bd07f086c60fc26d"
+ },
+ "pl2020_tracts/33.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:33&key=<redacted>",
+  "bytes": 10528,
+  "sha256": "6786a8b1d683f9a8dc2d96488e241ae2d2f0c017b0459f8fe76ed882d71c733c"
+ },
+ "pl2020_tracts/34.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:34&key=<redacted>",
+  "bytes": 65426,
+  "sha256": "9eba9120f7eaf3c2c5d0ecd155120d6bacb0ab62eb4cb84b56afd2f7ef29477d"
+ },
+ "pl2020_tracts/35.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:35&key=<redacted>",
+  "bytes": 18363,
+  "sha256": "7cbd81d98a7239deac0d3d276c60e16643eb56e8406a2576deedadf30816397e"
+ },
+ "pl2020_tracts/36.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:36&key=<redacted>",
+  "bytes": 161995,
+  "sha256": "c970f44e2c969c4ff07389a8a153390f080868a24f848a8f27033e70d5f4c3d2"
+ },
+ "pl2020_tracts/37.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:37&key=<redacted>",
+  "bytes": 80118,
+  "sha256": "83d7762994dfc222fa2cbccd21a64e844e0c5d6c1a02cbd8978be9deea88b2d9"
+ },
+ "pl2020_tracts/38.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:38&key=<redacted>",
+  "bytes": 6877,
+  "sha256": "7a99c2e5e3d7e40d54f6e3fd623d063552f17b0b6479aaa4ec3609331db027bb"
+ },
+ "pl2020_tracts/39.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:39&key=<redacted>",
+  "bytes": 95020,
+  "sha256": "f12cbaae30ffafb71f7d7fd782579db0f523ba1181a99a50916efe666e081563"
+ },
+ "pl2020_tracts/40.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:40&key=<redacted>",
+  "bytes": 36155,
+  "sha256": "14dcc3ff5257e4bfc6aed14535c67de2963db0bc60c99715764a1ec7c40cbb14"
+ },
+ "pl2020_tracts/41.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:41&key=<redacted>",
+  "bytes": 30039,
+  "sha256": "58f1ae3e0d39cef927f44bdd3c51b5c61c70a532f8e5b107f72fa37222225588"
+ },
+ "pl2020_tracts/42.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:42&key=<redacted>",
+  "bytes": 103290,
+  "sha256": "7edaa8b50d6c5629673937af775d66183a7b57973c43b186e5b321e53b35216c"
+ },
+ "pl2020_tracts/44.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:44&key=<redacted>",
+  "bytes": 7526,
+  "sha256": "39421ec08863289c5ce30283059f339159b246acbfe5642f45da2daeef48cd98"
+ },
+ "pl2020_tracts/45.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:45&key=<redacted>",
+  "bytes": 39690,
+  "sha256": "7f604ee215ea360df97bd0eeeef5eac058fc80229de965f3ad5e0e0cb2511f95"
+ },
+ "pl2020_tracts/46.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:46&key=<redacted>",
+  "bytes": 7297,
+  "sha256": "57f8148da2dd823e01524085bddf50c8ecae9be40f73011010b2397260b48fae"
+ },
+ "pl2020_tracts/47.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:47&key=<redacted>",
+  "bytes": 51014,
+  "sha256": "06d5b3950390736bc640bddc6bd4ba6f66f57d77a713e451d6be3e14ab785611"
+ },
+ "pl2020_tracts/48.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:48&key=<redacted>",
+  "bytes": 206842,
+  "sha256": "112bcb59a47482aac86551e7076be52e21729e238783834e13c8e9832983e928"
+ },
+ "pl2020_tracts/49.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:49&key=<redacted>",
+  "bytes": 21503,
+  "sha256": "86b6383854d7c454ed39409a925dc8baa4d083e3b8752b154205de2aa761beef"
+ },
+ "pl2020_tracts/50.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:50&key=<redacted>",
+  "bytes": 5825,
+  "sha256": "63a0d30eb2466ba6294147cba8f73fb934128f0b0aa13f6d6a5d41ae2c616ec7"
+ },
+ "pl2020_tracts/51.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:51&key=<redacted>",
+  "bytes": 65876,
+  "sha256": "38bec62abba5ed645fea98f108881f234f38acff05b16c211c077a89e9bd79c6"
+ },
+ "pl2020_tracts/53.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:53&key=<redacted>",
+  "bytes": 53510,
+  "sha256": "331af18cff9d22ccbc791e5344f874427da7c4621c7c8ca22d95978f36978387"
+ },
+ "pl2020_tracts/54.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:54&key=<redacted>",
+  "bytes": 16413,
+  "sha256": "555b688079e0449860dd5fb175afeee82e577eee67c93c8ad3162f6a568a0076"
+ },
+ "pl2020_tracts/55.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:55&key=<redacted>",
+  "bytes": 46243,
+  "sha256": "2684e893810889374e691aec28845c255faf37125549c78ef510ebc8516da840"
+ },
+ "pl2020_tracts/56.json": {
+  "url": "https://api.census.gov/data/2020/dec/pl?get=P1_001N&for=tract:*&in=state:56&key=<redacted>",
+  "bytes": 4836,
+  "sha256": "785ebe6210081f71e0a820775dbe0534552338f2cd9b2234a381caf6b439657e"
+ }
+}
