@@ -11,7 +11,7 @@ Output: derived/deconfound_covariates.csv, derived/deconfound_slopes.csv, derive
 import csv, json, math, os
 import numpy as np
 import openpyxl
-from decompose import ols, cell, share, change, write
+from decompose import ols, cell, share, change, mean, write
 from parse_tables import parse_sheet
 
 EUROPE = {"Albania", "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia",
@@ -51,6 +51,11 @@ def covariates():
         if c.startswith("Difference between PISA 2012 and PISA 2022 / Students' socio-economic status") and \
                 c.endswith("/ Non-immigrant students / Dif.") and isinstance(v, (int, float)):
             escs[clean(n)] = float(v)
+    escs15 = {}
+    for n, _, c, v in parse_sheet(wq["Table I.B1.7.8"]):
+        if c.startswith("Difference between PISA 2015 and PISA 2022 / Students' socio-economic status") and \
+                c.endswith("/ Non-immigrant students / Dif.") and isinstance(v, (int, float)):
+            escs15[clean(n)] = float(v)
     out = []
     for c, r in sorted(rows.items()):
         o = dict(country=c, section=r["section"], europe=int(c in EUROPE),
@@ -64,6 +69,20 @@ def covariates():
         g12, g22 = gdp.get((iso, "2012")), gdp.get((iso, "2022"))
         o["dlog_gdppc_12_22"] = math.log(g22 / g12) if g12 and g22 else float("nan")
         o["dnat_escs_12_22"] = escs.get(c, float("nan"))
+        # 2015 base (test 5b follow-up): share and native change 2015->2022, 2015 level, placebo 2012->2015
+        nm = c + "*" if c in STAR else c
+        for k in ("dshare_15_22", "dnat_math_15_22", "nat_math_2015", "dnat_math_12_15"):
+            o[k] = float("nan")
+        try:
+            o["dshare_15_22"] = cell("Table I.B1.7.4", nm, ["between PISA 2015 and PISA 2022", "All immigrant students"], "% dif.")
+            o["dnat_math_15_22"] = change(nm, "math", 2015, "nat")
+            o["nat_math_2015"] = mean(nm, "math", 2015, "nat")
+            o["dnat_math_12_15"] = o["nat_math_2015"] - o["nat_math_2012"]
+        except KeyError:
+            pass
+        g15 = gdp.get((iso, "2015"))
+        o["dlog_gdppc_15_22"] = math.log(g22 / g15) if g15 and g22 else float("nan")
+        o["dnat_escs_15_22"] = escs15.get(c, float("nan"))
         out.append(o)
     return out
 
@@ -105,6 +124,17 @@ def test1(cov):
             for y in ("dnat_math_12_22",) + (("dnat_reading_12_22", "dnat_science_12_22") if lab in ("share only", "joint") else ()):
                 x = fit(rows, y, xs, lab, sample, "1 covariates")
                 if x: out.append(x)
+        for lab, xs in (("2015-22 share only", ["dshare_15_22"]), ("2015-22 +2015 level", ["dshare_15_22", "nat_math_2015"]),
+                        ("2015-22 +closure total wk", ["dshare_15_22", "closure_total_wk"]),
+                        ("2015-22 +dlog GDP pc", ["dshare_15_22", "dlog_gdppc_15_22"]),
+                        ("2015-22 +native ESCS change", ["dshare_15_22", "dnat_escs_15_22"]),
+                        ("2015-22 joint", ["dshare_15_22", "nat_math_2015", "closure_total_wk", "dlog_gdppc_15_22", "dnat_escs_15_22"]),
+                        ("2015-22 joint without GDP", ["dshare_15_22", "nat_math_2015", "closure_total_wk", "dnat_escs_15_22"])):
+            x = fit(rows, "dnat_math_15_22", xs, lab, sample, "1 covariates")
+            if x: out.append(x)
+        for lab, xs in (("placebo: 2012-15 native change on 2015-22 share change", ["dshare_15_22"]),):
+            x = fit(rows, "dnat_math_12_15", xs, lab, sample, "4 pretrend")
+            if x: out.append(x)
         for lab, xs in (("2018-22 share only", ["dshare_18_22"]), ("2018-22 +closure total wk", ["dshare_18_22", "closure_total_wk"])):
             x = fit(rows, "dnat_math_18_22", xs, lab, sample, "1 covariates")
             if x: out.append(x)

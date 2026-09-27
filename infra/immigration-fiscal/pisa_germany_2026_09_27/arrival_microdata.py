@@ -17,7 +17,7 @@ COLS = ["CNT", "IMMIG", "ST021Q01TA", "W_FSTUWT"]
 
 def sav_path(zpath):
     with zipfile.ZipFile(zpath) as z:
-        name = next(n for n in z.namelist() if n.lower().endswith(".sav"))
+        name = max((n for n in z.namelist() if n.lower().endswith(".sav")), key=lambda n: z.getinfo(n).file_size)
         out = os.path.join(os.path.dirname(zpath), os.path.basename(name))
         if not os.path.exists(out) or os.path.getsize(out) != z.getinfo(name).file_size:
             with z.open(name) as src, open(out, "wb") as dst:

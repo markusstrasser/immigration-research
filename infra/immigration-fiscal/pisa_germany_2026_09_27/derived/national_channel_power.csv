@@ -1,0 +1,38 @@
+design,sees_national_channel,sample,n,unit,slope,se,mde80,germany_exposure,exposure,germany_native_change,change_window,mde80_share_of_decline,point_share,ci95_share_lo,ci95_share_hi
+"part 2 cross-country, share only (2012 base)",yes,OECD,37,per 10 pp,-7.36,4.65,13.02,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,0.489,0.276,-0.066,0.618
+"part 2 cross-country, joint (2012 base)",yes,OECD,36,per 10 pp,-1.64,4.71,13.19,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,0.495,0.062,-0.285,0.408
+"part 2 cross-country, 2015-22 share only (2015 base)",yes,OECD,37,per 10 pp,-18.47,5.58,15.62,8.869,immigrant share change 2015-22 (pp),-24.44,2015-22,0.567,0.67,0.273,1.067
+"part 2 cross-country, 2015-22 share only (2015 base, vs 2012-22 decline)",yes,OECD,37,per 10 pp,-18.47,5.58,15.62,8.869,immigrant share change 2015-22 (pp),-32.87,2012-22,0.422,0.498,0.203,0.794
+"part 2 cross-country, 2015-22 joint (2015 base)",yes,OECD,36,per 10 pp,-11.31,7.39,20.69,8.869,immigrant share change 2015-22 (pp),-24.44,2015-22,0.751,0.41,-0.115,0.936
+"part 2 cross-country, 2015-22 joint (2015 base, vs 2012-22 decline)",yes,OECD,36,per 10 pp,-11.31,7.39,20.69,8.869,immigrant share change 2015-22 (pp),-32.87,2012-22,0.558,0.305,-0.086,0.696
+"part 2 cross-country, share only (2012 base)",yes,Europe,33,per 10 pp,-6.61,4.08,11.42,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,0.429,0.248,-0.052,0.548
+"part 2 cross-country, joint (2012 base)",yes,Europe,32,per 10 pp,-1.76,3.92,10.98,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,0.412,0.066,-0.222,0.354
+"part 2 cross-country, 2015-22 share only (2015 base)",yes,Europe,35,per 10 pp,-17.03,5.26,14.73,8.869,immigrant share change 2015-22 (pp),-24.44,2015-22,0.535,0.618,0.244,0.992
+"part 2 cross-country, 2015-22 share only (2015 base, vs 2012-22 decline)",yes,Europe,35,per 10 pp,-17.03,5.26,14.73,8.869,immigrant share change 2015-22 (pp),-32.87,2012-22,0.397,0.46,0.181,0.738
+"part 2 cross-country, 2015-22 joint (2015 base)",yes,Europe,33,per 10 pp,-12.18,4.41,12.35,8.869,immigrant share change 2015-22 (pp),-24.44,2015-22,0.448,0.442,0.128,0.756
+"part 2 cross-country, 2015-22 joint (2015 base, vs 2012-22 decline)",yes,Europe,33,per 10 pp,-12.18,4.41,12.35,8.869,immigrant share change 2015-22 (pp),-32.87,2012-22,0.333,0.329,0.095,0.562
+"part 2 regional panel, country FE",no (country x cycle FE),regions,33,per 10 pp,-3.15,5.03,14.08,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,0.529,0.118,-0.252,0.488
+"cross-country without settler countries, 2012 base, share only",yes,OECD excl. AUS/CAN/NZL,34,per 10 pp,-7.13,4.81,13.47,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,0.506,0.268,-0.086,0.622
+"cross-country without settler countries, 2012 base, joint",yes,OECD excl. AUS/CAN/NZL,33,per 10 pp,-2.03,4.76,13.33,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,0.5,0.076,-0.274,0.426
+"cross-country without settler countries, 2015 base, share only",yes,OECD excl. AUS/CAN/NZL,34,per 10 pp,-18.99,5.75,16.1,8.869,immigrant share change 2015-22 (pp),-24.44,2015-22,0.584,0.689,0.28,1.098
+"cross-country without settler countries, 2015 base, joint",yes,OECD excl. AUS/CAN/NZL,33,per 10 pp,-12.43,7.59,21.25,8.869,immigrant share change 2015-22 (pp),-24.44,2015-22,0.771,0.451,-0.089,0.991
+"regional panel, country FE, excl. Canada",no (country x cycle FE),regions,23,per 10 pp,-16.5,8.23,23.04,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,0.865,0.619,0.014,1.225
+"regional panel, country FE, excl. Canada and Catalonia",no (country x cycle FE),regions,22,per 10 pp,-16.26,15.3,42.84,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,1.608,0.61,-0.515,1.736
+"regional panel, country FE, excl. Canada and Spain",no (country x cycle FE),regions,9,per 10 pp,12.56,24.95,69.86,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,2.622,-0.471,-2.307,1.364
+"regional panel, Spain only, excl. Catalonia",no (country x cycle FE),regions,13,per 10 pp,-36.55,12.88,36.06,12.337,immigrant share change 2012-22 (pp),-32.87,2012-22,1.354,1.372,0.424,2.32
+"test 1 window, asylum applicants 2015-16 + pre-trend + 2015 level",yes,Europe,28,per 1% of population,-0.11,1.79,5.01,1.434,asy_1516_pct,-1.38,2015-18,5.194,0.114,-3.522,3.75
+"test 1 window, asylum applicants 2015-16 + pre-trend + 2015 level",yes,Europe,28,per 1% of population,-0.11,1.79,5.01,1.434,asy_1516_pct,-32.87,2012-22,0.219,0.005,-0.148,0.158
+"test 1 window, positive decisions 2015-17 + pre-trend + 2015 level",yes,Europe,28,per 1% of population,0.31,4.05,11.34,1.03,pos_1517_pct,-1.38,2015-18,8.443,-0.231,-6.141,5.679
+"test 1 window, positive decisions 2015-17 + pre-trend + 2015 level",yes,Europe,28,per 1% of population,0.31,4.05,11.34,1.03,pos_1517_pct,-32.87,2012-22,0.355,-0.01,-0.259,0.239
+"test 1 window, first-gen share change + pre-trend + 2015 level",yes,OECD,36,per 10 pp,-4.02,9.35,26.18,2.717,dg1_15_18,-1.38,2015-18,5.142,0.79,-2.81,4.389
+"test 1 window, first-gen share change + pre-trend + 2015 level",yes,OECD,36,per 10 pp,-4.02,9.35,26.18,2.717,dg1_15_18,-32.87,2012-22,0.216,0.033,-0.118,0.185
+"test 1 window, first-gen share change + pre-trend + 2015 level",yes,Europe,30,per 10 pp,6.86,13.03,36.48,2.717,dg1_15_18,-1.38,2015-18,7.166,-1.347,-6.363,3.669
+"test 1 window, first-gen share change + pre-trend + 2015 level",yes,Europe,30,per 10 pp,6.86,13.03,36.48,2.717,dg1_15_18,-32.87,2012-22,0.302,-0.057,-0.268,0.154
+"lagged wave, asylum applicants 2015-16, 2018-22 + 2015-18 change + 2018 level + closures",yes,Europe,29,per 1% of population,-0.16,2.76,7.73,1.434,asy_1516_pct,-23.05,2018-22,0.481,0.01,-0.327,0.346
+"lagged wave, asylum applicants 2015-16, 2018-22 + 2015-18 change + 2018 level + closures",yes,Europe,29,per 1% of population,-0.16,2.76,7.73,1.434,asy_1516_pct,-32.87,2012-22,0.337,0.007,-0.229,0.243
+"lagged wave, asylum applicants 2015-16, 2015-22 + pre-trend + 2015 level + closures",yes,Europe,29,per 1% of population,0.19,3.44,9.63,1.434,asy_1516_pct,-24.44,2015-22,0.565,-0.011,-0.407,0.384
+"lagged wave, asylum applicants 2015-16, 2015-22 + pre-trend + 2015 level + closures",yes,Europe,29,per 1% of population,0.19,3.44,9.63,1.434,asy_1516_pct,-32.87,2012-22,0.42,-0.008,-0.302,0.286
+"lagged wave, positive decisions 2015-17, 2018-22 + 2015-18 change + 2018 level + closures",yes,Europe,29,per 1% of population,-2.46,4.43,12.4,1.03,pos_1517_pct,-23.05,2018-22,0.554,0.11,-0.278,0.498
+"lagged wave, positive decisions 2015-17, 2018-22 + 2015-18 change + 2018 level + closures",yes,Europe,29,per 1% of population,-2.46,4.43,12.4,1.03,pos_1517_pct,-32.87,2012-22,0.389,0.077,-0.195,0.349
+"lagged wave, positive decisions 2015-17, 2015-22 + pre-trend + 2015 level + closures",yes,Europe,29,per 1% of population,-1.89,6.61,18.51,1.03,pos_1517_pct,-24.44,2015-22,0.78,0.08,-0.466,0.626
+"lagged wave, positive decisions 2015-17, 2015-22 + pre-trend + 2015 level + closures",yes,Europe,29,per 1% of population,-1.89,6.61,18.51,1.03,pos_1517_pct,-32.87,2012-22,0.58,0.059,-0.347,0.465

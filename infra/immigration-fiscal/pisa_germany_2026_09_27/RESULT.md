@@ -2,7 +2,7 @@ claude-opus-5-5
 
 # Germany's PISA decline and immigration: decomposition, native trend, cross-country slope, peer-effect literature
 
-**Verdict:** Partly true for the ten-year decline, mostly false for the record 2018→2022 drop. Composition (more immigrant-background pupils, who score lower) explains 2.0–2.9 of the 25.2-point math drop in 2018→2022 (8–11%) and 6.9–8.4 of the 38.7–40.4-point drop in 2012→2022 (17–21%). Pupils with at least one German-born parent fell 23 points and 33 points over the same spans. Their 33-point decline since 2012 is the largest in the OECD, but Iceland (−32.8) and Finland (−32.6) match it with a quarter to a third of Germany's rise in immigrant share. A cross-country slope allows a system-wide spillover of roughly 0 to 16 points per 10 pp of share (math point estimate −7.4, SE 4.7). Adding the upper end to composition, immigration could account for at most about half of the ten-year decline, and plausibly about a third. It cannot account for most of the 2018→2022 collapse. **Part 2 (deconfounding, 2026-09-28):** controls for closure length, GDP, natives' ESCS and pre-trends, and a regional design with country × cycle fixed effects (−3.2 ± 5.0 per 10 pp), point to the lower end: immigration is about a quarter of the ten-year decline (21–29%). Closure length and exclusion explain none of the cross-country pattern. Ten European countries' natives did not fall significantly.
+**Verdict:** Partly true for the ten-year decline, mostly false for the record 2018→2022 drop. Composition (more immigrant-background pupils, who score lower) explains 2.0–2.9 of the 25.2-point math drop in 2018→2022 (8–11%) and 6.9–8.4 of the 38.7–40.4-point drop in 2012→2022 (17–21%). Pupils with at least one German-born parent fell 23 points and 33 points over the same spans. Their 33-point decline since 2012 is the largest in the OECD, but Iceland (−32.8) and Finland (−32.6) match it with a quarter to a third of Germany's rise in immigrant share. A cross-country slope allows a system-wide spillover of roughly 0 to 16 points per 10 pp of share (math point estimate −7.4, SE 4.7). Adding the upper end to composition, immigration could account for at most about half of the ten-year decline, and plausibly about a third. It cannot account for most of the 2018→2022 collapse. **Part 2 (deconfounding, 2026-09-28):** the result depends on the base year. On the 2012 base, controls and a regional design with country × cycle fixed effects (−3.2 ± 5.0 per 10 pp) put immigration at about a quarter (21–29%) of the ten-year fall. On the 2015 base, the cross-country slope is −17 to −18 per 10 pp (−10 to −14 with covariates, significant in Europe). Its 2012→2015 placebo is clean and Germany sits on the line, so immigration is associated with about 40–60% of the 2015→2022 fall. Closure length and exclusion explain none of it; ten European countries' natives did not fall significantly. **Part 3 (national channel, 2026-09-28):** only between-country designs can see a national channel (teachers, money or standards shifted for everyone); the regional and within-school designs cannot. The sharpest one, the 2015–16 asylum wave (Germany 1.4% of population, Austria 1.5%, Sweden 1.8%), finds no extra native decline by 2018 (−0.1 ± 1.8 per 1% of population) or by 2022 (+0.2 ± 3.4); Austria's and Sweden's natives fell 7 points over 2015→2022 against Germany's 24. No design can detect a channel worth under about a fifth of the decline. Germany's immigration share of its natives' 2012→2022 decline: point about 7–14%, interval zero to about 45%; of the all-student decline, about 23% (17–52%) including composition. Pooling Canada with Spain dilutes the regional slope (−3.2 → −16.5 per 10 pp without Canada) but not the cross-country one.
 
 Lane: `infra/immigration-fiscal/pisa_germany_2026_09_27/` · brief `BRIEF.md` (38c28ae) · 2026-09-27/28.
 Operator claim tested: "germany just had the worse PISA results since PISA was created because of immigrants."
@@ -480,3 +480,386 @@ Part-2 files:
 - `derived/regional_changes_*.csv`;
 - `derived/{exclusion_coverage,regional_panel,pretrend_inputs,grade4_exposure}.csv`;
 - `reads/{deconfound_inputs,exclusion_coverage,regional_panel,pretrend,grade4_exposure}.md`.
+
+### Test 5b: recent arrivals within about 5 years, from the student files (added 2026-09-28)
+
+- **Data.** The PISA 2015 and 2022 student files (440 MB and 682 MB) came from webfs.oecd.org by parallel range
+  requests. [`fetch_microdata.py`: the server gives about 0.2 MB/s per connection but honours byte ranges]
+  `arrival_microdata.py` computes weighted (W_FSTUWT) shares among pupils with a valid IMMIG code.
+  - First-generation pupils are split by ST021Q01TA ("How old were you when you arrived in <country of test>?",
+    codes "age 0 - 1" … "age 16"). Recent means arrived at age ≥ 10, within about 5–6 years of the test; the
+    stricter ≥ 12 band is kept too. [DATA: `derived/arrival_within5.csv`]
+  - **Validation.** The microdata shares reproduce the OECD tables exactly. Germany 2022: immigrant 25.78%, first
+    generation 9.15%; Germany 2015: 16.91% and 3.75%; Austria 2022: 26.62%. [CALCULATION against Tables I.B1.7.1/7.2]
+  - Sweden 2022 has no arrival ages (all missing) and drops out.
+  - Two runs gave identical output (shasum c29e46d2…).
+- **Germany.**
+  - Recent arrivals (age ≥ 10) went from **0.90% of pupils (2015) to 3.97% (2022)**; at age ≥ 12, from 0.74% to 1.81%.
+  - Settled immigrant-background pupils went from 16.01% to 21.81%.
+  - So 3.1 of the 8.9 pp rise is recent arrivals. [DATA: arrival_within5.csv]
+- **Regression: natives' math change 2015→2022** (OECD Table I.B1.7.20, link-error SEs), per 10 pp. [CALCULATION:
+  `deconfound.py` → `derived/deconfound_slopes.csv`, "5 timing microdata"]
+
+| Regressors | OECD (SE), n | Europe (SE), n |
+|---|---|---|
+| Total share change 2015→2022 | **−17.2 (5.6)**, 36; LOO −20.0 to −14.0 | **−18.8 (5.9)**, 34; LOO −21.8 to −16.1 |
+| Settled / recent (≥ 10) jointly | −19.7 (7.4) / −11.6 (10.2), 35 | −21.0 (8.7) / −10.5 (13.0), 28 |
+| Recent (≥ 12) only | −7.6 (13.8), 35 | −14.5 (21.0), 28 |
+
+- **This changes the picture and must be read with care.**
+  - With 2015 as the base year, the cross-country slope is twice the 2012-based −7.4 and significant at 1%.
+  - Settled pupils, not recent arrivals, carry it.
+  - Applied to Germany's +8.9 pp, it attributes about 15 of natives' 24.4-point fall since 2015.
+  - The base-year sensitivity is itself a warning: 2012→2018 gives −4.1 (6.1) and 2006→2012 gives −15.9 (6.5).
+  - The same covariates and a 2012→2015 placebo for the 2015 base follow.
+
+### Test 5c: the 2015 base, with covariates and a placebo
+
+[CALCULATION: `deconfound.py` test 1 (2015-base rows) and test 4 (placebo) → `derived/deconfound_slopes.csv`]
+
+- **Specification.** The outcome is natives' math change 2015→2022 (Table I.B1.7.20). The regressor is the share
+  change 2015→2022 (Table I.B1.7.4). Covariates follow test 1:
+  - the 2015 native level;
+  - UNESCO closure weeks;
+  - the World Bank log GDP-per-head change 2015→2022;
+  - natives' ESCS change 2015→2022 (Table I.B1.7.8).
+
+| Model, per 10 pp | OECD (SE), n | Europe (SE), n |
+|---|---|---|
+| Share only | **−18.5 (5.6)**, 37 | **−17.0 (5.3)**, 35 |
+| + 2015 level | −17.4 (5.5), 37 | −10.8 (4.0), 35 |
+| + closure weeks | −17.4 (5.4), 37 | −14.5 (4.9), 33 |
+| + Δ log GDP per head | −15.1 (5.3), 37 | −13.6 (4.7), 35 |
+| + Δ native ESCS | −16.6 (5.2), 36 | −17.2 (5.1), 35 |
+| All jointly | −11.3 (7.4), 36 | **−12.2 (4.4)**, 33 |
+| Jointly, without GDP | **−14.2 (5.4)**, 36 | **−10.1 (4.7)**, 33 |
+| Placebo: 2012→2015 native change on the 2015→2022 share change | +2.9 (5.9), 37 | +0.3 (4.5), 31 |
+
+- **Robustness.** Leave-one-out ranges stay negative throughout. Share only: OECD −21.3 to −15.5, Europe −19.2 to
+  −14.6. Europe jointly: −14.4 to −10.2. Closure weeks again add nothing (+0.1 to +0.2 per week).
+- **Germany sits on the line.** Its residual is between −1.1 and +2.0 in every 2015-base model. [CALCULATION]
+- **Placebo.** It is clean. Countries whose immigrant share rose more after 2015 did not already have different
+  native trends in 2012→2015. That argues against a 2015 mode-change or mean-reversion artefact. [CALCULATION]
+- **Why the 2012 base is weaker.** The 2012 base adds 2012→2015 share growth, and native changes then were
+  unrelated to it. Base-year sensitivity remains a caution:
+  - 2012→2022: −7.4 (4.7), about −2 with covariates;
+  - 2012→2018: −4.1 (6.1);
+  - 2015→2022: −18.5 (5.6), −10 to −14 with covariates;
+  - 2006→2012: −15.9 (6.5).
+  - The regional design (−3.2 ± 5.0) exists only on the 2012 base, because natives are not split by region in
+    2015. [INFERENCE]
+- **Germany, 2015→2022.**
+  - Natives fell 24.4 points while the share rose 8.87 pp. The 2015-base slopes (−10.1 to −18.5) attribute
+    **9–16 native points (37–67%)** to the share rise.
+  - Weighted by the 2022 native share (0.742) and added to composition over 2015→2022 (4.8–6.5 points, part 1),
+    that is about **11.5–18.7 of the 31.1-point all-pupil fall (37–60%)**. [CALCULATION]
+  - This window contains both the refugee wave and the pandemic. Germany fits the cross-country line, and closure
+    length does not explain that line.
+
+### Verdict, part 2 (revised after tests 5b–5c)
+
+- **Controls, placebo and base year.**
+  - The decade-long 2012-base tests (covariates, regional FE) put immigration at the low end: about a quarter of
+    the 2012→2022 fall.
+  - The 2015-base cross-country tests, which cover the 2015–16 wave, are larger and significant. They survive
+    covariates in Europe (−10 to −12 per 10 pp) and pass a placebo.
+  - On that base, immigration is associated with **about 40–60% of Germany's 2015→2022 fall**. Composition is
+    about a sixth to a fifth of the fall; the rest is a native decline that tracks the share rise across countries.
+- **What cannot be separated.** Cross-country data cannot tell a causal spillover from confounders that move with
+  post-2015 immigration and are not measured here: teacher shortages, the post-2015 policy mix, other refugee-era
+  shocks. The one within-country design with national shocks removed uses the 2012 base and finds no reliable
+  effect. [INFERENCE; FRAMING-SENSITIVE]
+- **Range for the operator's claim.**
+  - About a quarter of the ten-year decline on the 2012 base, controlled.
+  - Up to about half (40–60%) of the decline since 2015 on the 2015 base.
+  - Closure length and exclusion explain none of the cross-country pattern.
+- **Next query.** Regional natives in 2015 and 2018 from the student files, now cached in `_cache/microdata/`
+  (2015/2022; 2018 not fetched). That would let the fixed-effects design run on the 2015 base. [GAP]
+
+Reproduce, tests 5b–5c:
+
+```sh
+uv run --no-project python3 fetch_microdata.py      # about 20 min at webfs rates
+uv run --no-project --with pyreadstat --with pandas python3 arrival_microdata.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with numpy python3 deconfound.py
+```
+
+Two runs gave identical output: arrival_within5.csv c29e46d2…, all deconfound outputs 74565789….
+
+## Part 3: national channel
+
+Brief `BRIEF_3.md` (f437563), started 2026-09-28. Question: can any design here see a national channel of
+immigration (teachers moved to welcome classes, money shifted to newcomers, standards lowered for everyone)?
+Country × cycle fixed effects remove such channels by construction. Tests append below as they finish.
+
+Before part 3, note that tests 5b–5c above were added after part 2's commit 3589a4f. They are in the working
+tree, uncommitted. The 2015-base cross-country slope in 5c is −18.5 (5.6) per 10 pp; with covariates it is −11.3
+(7.4) for the OECD and −12.2 (4.4) for Europe. Part 3 builds on them.
+
+- Test 1: done, below (with a lagged extension through 2022)
+- Test 2: done, below
+- Test 3: done, below
+
+### Test 1: the 2015→2018 window around the asylum wave, then the same wave through 2022
+
+Script `national_channel.py`; inputs quoted in `reads/national_channel_inputs.md`; outputs
+`derived/national_channel_{data,slopes,power}.csv`. Rerun commands and the byte-identity check are under "Reproduce,
+part 3" at the end of this section.
+
+**Design.** Each European country's native change 2015→2018 is regressed on the size of the 2015–16 wave. The asylum
+measures cover the EU, EFTA, the UK and Montenegro, where Eurostat has data (n = 28–29). The wave is measured three ways:
+
+- **(a) First-time asylum applicants 2015+2016 as % of the 1 January 2015 population.** Sources are Eurostat
+  `migr_asyappctza` (applicant = FRST) and `demo_pjan`. Germany 1.43%, Austria 1.46%, Sweden 1.83%, Hungary 2.06%
+  (mostly in transit). [DATA]
+- **(a′) Positive first-instance decisions 2015–2017 as % of population.** This counts who stayed; source
+  `migr_asydcfsta`, decision = POS. Germany 1.03%, Austria 0.82%, Sweden 1.29%, Hungary 0.02%. [DATA]
+- **(b) The change in PISA's first-generation share, 2015→2018** (OECD n = 36; Europe n = 30–34). Germany +2.7 pp
+  (3.75% → 6.46%). [DATA: Table I.B1.7.2]
+
+The controls are the natives' 2012→2015 change and their 2015 level.
+
+- Natives' 2015 means come from PISA 2015 Vol I Tables I.7.15a–c. They match the 2022 Vol I trend columns within
+  0.014 points across 172 country-subject pairs. [CALCULATION]
+- **Mode flag.** Most countries moved from paper (2012) to computer (2015), so the 2012→2015 pre-trend and the 2015
+  level carry a mode effect. The OECD could not "rule out small and moderate effects of the mode of delivery"
+  [SOURCE: PISA 2015 Vol I]. Specs without the pre-trend are shown. One variant drops the countries that switched
+  from paper to computer inside the window (Albania, Georgia, Indonesia, Kazakhstan, Kosovo, Malta)
+  [INFERENCE from the two OECD lists quoted in reads].
+- **Sweden bound.** Sweden's 2018 values are bounded for its exclusion jump (5.7% → 11.1%) at −6.3 (math), −7.8
+  (reading) and −6.4 (science) points. [CALCULATION]
+
+**Math, 2015→2018.** Slopes are per 1% of population for asylum and per 10 pp for PISA shares; HC1 SE in brackets.
+[CALCULATION: `derived/national_channel_slopes.csv`]
+
+| Wave measure | Sample | n | No controls | + pre-trend + 2015 level | Leave-one-out, with controls |
+|---|---|---|---|---|---|
+| Asylum applicants 2015–16 | Europe | 29 / 28 | −1.02 (1.71) | −0.11 (1.79) | −1.82 (drop Sweden) to +0.70 (drop Germany) |
+| Same, without Hungary | Europe | 28 / 27 | −2.03 (2.30) | −0.85 (2.67) | −4.47 to +0.30 |
+| Asylum applicants under 18 | Europe | 29 / 28 | −1.76 (4.47) | +0.97 (5.25) | −6.38 to +3.49 |
+| Positive decisions 2015–17 | Europe | 29 / 28 | −2.31 (3.18) | +0.31 (4.05) | −5.05 to +2.91 |
+| First-generation share change | OECD | 36 | −7.07 (7.59) | −4.02 (9.35) | −10.39 to +0.04 |
+| First-generation share change | Europe | 34 / 30 | −10.17 (11.44) | +6.86 (13.03) | −3.64 to +16.37 |
+
+- **Other subjects** (asylum applicants, with controls): reading +1.18 (2.61) and science +1.64 (1.81) per 1% of
+  population.
+- **Sensitivities** (math, asylum with controls):
+  - Sweden unbounded: +0.69 (2.14).
+  - Every country bounded for exclusion at P10: −0.79 (1.99).
+  - Only the 2015 level as a control: −1.04 (1.72).
+  - First-generation share with controls, OECD plus Europe, mode switchers dropped (n = 41): +0.14 (8.82).
+- **Residuals** (math, asylum with controls): Germany −5.4, Austria −0.5, Sweden +8.1.
+- **Observed native change 2015→2018 in math:** Germany −1.4, Austria +2.6, Sweden +5.9 bounded (+12.2 unbounded).
+  Germany's natives fell −6.7 in reading and −2.8 in science.
+
+By 2018, two to three years after the wave, natives in the countries that took the most asylum seekers had not
+fallen more than natives elsewhere. For Germany's exposure (1.43% × −0.11), the point estimate is −0.2 points,
+with a 95% CI of −5.2 to +4.9 points. [CALCULATION]
+
+**Lagged extension (the operator's addendum: the effect takes years).** The same wave is set against natives' math
+change over 2018→2022 and 2015→2022.
+
+- 2018→2022 controls: the 2015→2018 change, the 2018 level and closure weeks.
+- 2015→2022 controls: the 2012→2015 change, the 2015 level and closure weeks.
+- n = 29–30.
+
+| Outcome (math) | Asylum applicants, per 1% | Positive decisions, per 1% | Germany's residual (asylum) |
+|---|---|---|---|
+| 2018→2022, no controls | +0.13 (2.47) | −1.80 (4.03) | −7.0 |
+| 2018→2022, with controls | −0.16 (2.76) | −2.46 (4.43) | −7.6 |
+| 2015→2022, no controls | −0.62 (3.11) | −3.43 (4.95) | −10.1 |
+| 2015→2022, with controls | +0.19 (3.44) | −1.89 (6.61) | −11.7 |
+
+- **Leave-one-out** (2015→2022, asylum, with controls): −2.77 (drop Hungary) to +1.93 (drop Germany).
+- **Other subjects, 2015→2022:** reading +1.40 (4.97), science +3.11 (3.60).
+- **Every country bounded for exclusion** (2018→2022): +0.44 (2.49).
+- **Natives' 2015→2022 change in math:** Germany −24.4, Austria −6.7, Sweden −7.3 (unbounded).
+  [DATA: Tables I.B1.7.20/7.24/7.28 via `decompose.change`]
+
+Austria and Sweden took an equal or larger wave per head. Their natives fell a quarter to a third as much as
+Germany's. Germany sits 10–12 points below the line.
+
+**What this test can and cannot see.**
+
+- **It can see national and local channels together.** It bounds the total effect of the 2015–16 wave on natives,
+  including teachers moved to welcome classes and budgets diverted to newcomers.
+- **It cannot separate the wave from other national shocks that coincided with it.** Sweden raised school funding
+  after 2015 [UNVERIFIED], and that is itself a national channel pointing the other way.
+- **Leverage is concentrated.** The wave hit four to seven countries hard, so a few countries drive the slope; the
+  leave-one-out ranges are shown.
+- **The asylum count covers all ages.** The under-18 count is noisier and gives the same answer.
+- **The windows differ in what they can see.** The 2015→2018 window catches effects that appear within three years.
+  The lagged windows share the pandemic, and closure weeks are their only pandemic control.
+- **It measures the 2015–16 wave, not all immigration.** Germany's immigrant share among 15-year-olds rose 12.3 pp
+  over 2012→2022. That includes second-generation growth and EU mobility, which the PISA-share designs cover and
+  this test does not.
+
+[GAP] IQB grade-4 native trends (2016 → 2021) would show whether primary schools that absorbed the wave fell first;
+not pulled. Next query: IQB-Bildungstrend 2021 Bericht, Kapitel Zuwanderungshintergrund, Kompetenzen ohne
+Zuwanderungshintergrund 2011/2016/2021.
+
+### Test 2: power of each design
+
+MDE is the smallest true slope detected 80% of the time at two-sided 5%, 2.80 × SE, for math.
+
+- **As a share of Germany's decline:** MDE × Germany's exposure ÷ Germany's native decline. The decline is 32.9 points
+  over 2012→2022; the table also gives the design's own window (24.4 for 2015→2022, 23.1 for 2018→2022).
+- **Germany's exposure:** a 12.3 pp share rise (2012→2022), 8.9 pp (2015→2022), 2.7 pp first-generation
+  (2015→2018), 1.43% of the population in asylum applicants, or 1.03% in positive decisions.
+
+[CALCULATION: `derived/national_channel_power.csv`]
+
+| Design | Sees a national channel? | n | SE | MDE | Share of Germany's 2012→22 decline (own window) |
+|---|---|---|---|---|---|
+| Cross-country, share only, 2012 base, OECD | yes | 37 | 4.65 | 13.0 per 10 pp | 49% |
+| Cross-country, joint, 2012 base, OECD | yes | 36 | 4.71 | 13.2 per 10 pp | 50% |
+| Cross-country, joint, 2012 base, Europe | yes | 32 | 3.92 | 11.0 per 10 pp | 41% |
+| Cross-country, share only, 2015 base, OECD | yes | 37 | 5.58 | 15.6 per 10 pp | 42% (57%) |
+| Cross-country, joint, 2015 base, OECD | yes | 36 | 7.39 | 20.7 per 10 pp | 56% (75%) |
+| Cross-country, joint, 2015 base, Europe | yes | 33 | 4.41 | 12.4 per 10 pp | 33% (45%) |
+| Regional panel, country FE | no | 33 | 5.03 | 14.1 per 10 pp | 53% |
+| Regional panel, country FE, without Canada | no | 23 | 8.23 | 23.0 per 10 pp | 87% |
+| Test 1: asylum applicants, 2015→2018 | yes | 28 | 1.79 | 5.0 per 1% | 22% (7.2 points; 5× Germany's own −1.4) |
+| Test 1: positive decisions, 2015→2018 | yes | 28 | 4.05 | 11.3 per 1% | 36% |
+| Test 1: first-generation share, 2015→2018, OECD | yes | 36 | 9.35 | 26.2 per 10 pp | 22% |
+| Lagged: asylum applicants, 2018→2022 | yes | 29 | 2.76 | 7.7 per 1% | 34% (48%) |
+| Lagged: asylum applicants, 2015→2022 | yes | 29 | 3.44 | 9.6 per 1% | 42% (56%) |
+| Lagged: positive decisions, 2015→2022 | yes | 29 | 6.61 | 18.5 per 1% | 58% (78%) |
+
+Every share-based design, national or regional, misses an effect worth a third to over half of Germany's decline
+(33–56%) more than one time in five. Dropping Canada from the regional panel raises that to 87%. The asylum-wave test is the most
+sensitive to Germany's actual exposure: it detects 7 points (22%) if the effect shows by 2018 and 14 points (42%)
+by 2022. None of the designs can reliably detect a national channel worth a fifth of the decline or less.
+
+### Test 3: verdict update
+
+**Which designs can see a national channel.**
+
+- **Cannot.** These designs measure local exposure only:
+  - The regional panel, whose country × cycle fixed effects remove it.
+  - The within-school peer studies in §5 and in the systemwide lane's EU design table
+    (`../school_systemwide_2026_09_27/design_table/design_eu.csv`).
+  - The US within-state designs.
+- **Can.** These see national and local channels together, and also any national shock that moves with
+  immigration:
+  - The cross-country first differences of parts 1–2.
+  - The asylum-wave tests above.
+
+**Germany's immigration share of its 2012→2022 native decline (32.9 points), from the designs that can see a
+national channel.** Point estimates and 95% CIs. [CALCULATION: `derived/national_channel_power.csv`]
+
+| Design | Point | 95% CI |
+|---|---|---|
+| Share only, 2012 base (OECD / Europe) | 28% / 25% | −7% to 62% / −5% to 55% |
+| Joint covariates, 2012 base (OECD / Europe) | 6% / 7% | −29% to 41% / −22% to 35% |
+| Share only, 2015 base, applied to the 2012→22 decline (OECD / Europe) | 50% / 46% | 20% to 79% / 18% to 74% |
+| Joint covariates, 2015 base, same (OECD / Europe) | 31% / 33% | −9% to 70% / 10% to 56% |
+| Asylum applicants, 2015→2018 (short-run effect only) | 0% | −15% to 16% |
+| Asylum applicants, 2015→2022, with closures | −1% | −30% to 29% |
+| Positive decisions, 2015→2022, with closures | 6% | −35% to 47% |
+
+**Summary.** The six covariate-adjusted estimates run from −1% to 33%. Their median is 7% and their mean 14%. Their
+95% upper bounds run from 29% to 70%, with a median of about 45%. [CALCULATION]
+
+My reading is a point of about 7–14% of the natives' decline and an interval from zero to about 45%.
+[INFERENCE, FRAMING-SENSITIVE: this weights the covariate-adjusted designs over the unadjusted ones]
+
+- Among the covariate-adjusted designs, only the 2015-base Europe joint model excludes zero.
+- The unadjusted share-only slopes (25–50%) mark the top of that range.
+- Part 2's "about a quarter" rested on the single-covariate 2012-base models. The asylum-wave tests pull the point
+  down.
+
+**Converted to the all-student decline** (40.4 points on valid status), using natives' weight in the mean of
+0.74–0.87 [CALCULATION]:
+
+| Part | Points | Share of the decline |
+|---|---|---|
+| Composition (part 1) | 6.9–8.4 | 17–21% |
+| Spillover onto natives at the point estimate | 1.7–2.0 | 4–5% |
+| Spillover onto natives at the upper bound | 11.0–12.8 | 27–32% |
+| **Total immigration share** | | **about 23% (17–52%)** |
+
+The spillover rows scale the natives' point (7%) and upper bound (45%) by that weight.
+
+**Two same-window designs disagree over 2015→2022.**
+
+- The PISA immigrant-share change gives −17 to −18 per 10 pp, or −10 to −14 with covariates. Germany sits on its
+  line.
+- The asylum wave gives about 0, and Germany sits 12 points below its line.
+- The share measure includes second-generation growth, EU mobility and anything else that moves with composition.
+  The asylum measure isolates the refugee inflow.
+- On the asylum measure, Austria and Sweden are Germany's closest comparisons, with the same or a larger wave per
+  head. Their natives fell 7 points; Germany's fell 24. What sets Germany apart after 2015 is therefore not the size
+  of its refugee wave. [DATA, INFERENCE]
+
+**Does pooling Canada with Spain dilute the slope that applies to Germany's 2015 arrivals?** It dilutes the regional
+slope, not the cross-country one. [CALCULATION: `derived/national_channel_slopes.csv`, P3-3 rows]
+
+- **Regional panel, country FE:**
+
+  | Sample | Slope per 10 pp (SE) | n |
+  |---|---|---|
+  | All regions | −3.2 (5.0) | 33 |
+  | Without Canada | −16.5 (8.2); leave-one-out −24.5 to −13.1 | 23 |
+  | Spain alone | −24.7 (7.6) | 14 |
+  | Spain without Catalonia | −36.6 (12.9) | 13 |
+  | Without Canada and Catalonia | −16.3 (15.3) | 22 |
+  | Without Canada and Spain | +12.6 (25.0) | 9 |
+
+  The regional slope without Canada is therefore Spain's.
+- **Spain's immigrant pupils resemble Germany's on the score gap.** The immigrant–native math gap in 2012 was −52.4
+  for Spain, −56.2 for Germany and −2.3 for Canada; in 2022 it was +11.6 for Canada. Pooling a selected-immigration
+  zero with an unselected-immigration slope does halve the regional estimate.
+- **The Spain-type slope implies a large effect, with caveats.** Applied to Germany's 12.3 pp, −16.5 per 10 pp is
+  20 points, or 62% of the decline, with a 95% CI of 1% to 123%.
+  - It is local exposure inside one country's 14 regions, so it cannot see a national channel either.
+  - Spain's immigrants are mostly Latin American and Moroccan labour migrants, not asylum seekers.
+    [TRAINING-DATA]
+  - Spain's regions run their own school systems.
+- **Cross-country, no dilution.** Dropping Australia, Canada and New Zealand moves each slope by at most 1.2 per
+  10 pp:
+
+  | Model | All OECD | Without Australia, Canada and New Zealand |
+  |---|---|---|
+  | Joint, 2012 base | −1.64 | −2.03 |
+  | Share only, 2012 base | −7.36 | −7.13 |
+  | Joint, 2015 base | −11.31 | −12.43 |
+  | Share only, 2015 base | −18.47 | −18.99 |
+
+- **The Δshare × gap interaction points the wrong way for dilution.** The slope is less negative where immigrants
+  lag natives more.
+  - 2012 base, OECD: −10.3 (5.3) per 10 pp at a zero gap and −4.1 (6.3) at Germany's gap. The interaction is −0.11
+    (0.13) per 10 pp per point of gap.
+  - 2015 base: −19.5 (7.5) at a zero gap and −13.9 (8.5) at Germany's gap.
+  - Both are imprecise.
+- **The design built on Germany's 2015 arrivals** is the asylum-wave test. It uses that inflow itself rather than a
+  pooled proxy and finds about 0 through 2022.
+
+**Verdict, part 3.** Designs that remove national shocks cannot answer the national-channel question. The designs
+that can answer it are too imprecise to exclude a channel worth up to about 45% of the natives' decline.
+
+- **The sharpest test finds nothing.** The 2015–16 asylum wave, with a pre-trend control, a clean timing and Germany's
+  own inflow, shows no native decline by 2018 and none by 2022.
+  - Its 95% bounds for Germany are ±5 points by 2018 and ±10 points by 2022.
+  - Austria and Sweden, with the same or a larger wave, lost a quarter to a third of what Germany lost.
+- **"Because of immigrants" stays partly true through composition.** Composition accounts for 17–21% of the
+  all-student decline.
+- **A national channel is not shown and not excluded.** The point estimates put it near zero for the refugee wave.
+  They put it at 6–33% of the natives' decline for all immigration, with an upper bound near 45%.
+
+[GAP]
+
+- Grade-4 native trends in Germany (IQB 2011/2016/2021) are the cohort test of a lagged primary-school channel.
+- Swedish and Austrian school-funding responses after 2015 (a national channel of the opposite sign) are
+  [UNVERIFIED].
+- The share-versus-asylum disagreement needs a decomposition of Germany's 2015→2022 share rise by origin
+  (refugee, EU and second generation). Next query: PISA 2022 student file, `COBN_S` or country of birth for
+  first-generation pupils, and `ST021` for age at arrival, crossed with IMMIG.
+
+### Reproduce, part 3
+
+```sh
+cd infra/immigration-fiscal/pisa_germany_2026_09_27
+OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with numpy python3 national_channel.py
+cat derived/national_channel_{data,slopes,power}.csv reads/national_channel_inputs.md | shasum
+```
