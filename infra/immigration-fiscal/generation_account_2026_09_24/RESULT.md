@@ -1,4 +1,200 @@
-**Verdict:** Split by generation, the main case with schools at full average cost ($258.5–292.0bn a
+**Verdict:** Split by generation, the September 27 main case ($321.8–387.4bn a year) leaves all three
+Mexican-origin generations as net costs to other US residents, at every one of its 64 specifications and
+under both ways of counting children. Counted in their own generation, the Mexico-born cost others
+$78–94bn a year ($6.4–7.7k per member), the second generation $128–153bn ($8.9–10.7k) and the third-plus
+$100–156bn ($7.0–10.9k). Counted with their parents, as the National Academies count them, they cost
+$159–191bn ($13.6–16.3k per adult), $87–95bn ($9.8–10.7k) and $75–102bn ($9.2–12.4k). The case's four
+additions (long-run road and park responses, rental assistance, the return on public capital and the
+government enterprises) add $63.3bn at the union's low end and $95.4bn at its high end. Under (a) the
+second and third-plus generations carry 75–78% of that; under (b) the Mexico-born carry 37%. The return on
+public capital, an imputed cost of the capital rather than a payment, is $8.7–11.5bn of the Mexico-born's
+figure under (a) and $33.8–55.7bn of the union's. [FRAMING-SENSITIVE] [CALCULATION: `run_generations.cjs` →
+`derived/generation_summary.json`, `change_from_sept26_schools`]
+
+## September 27 case (2026-09-27)
+
+The operator adopted the September 27 case (`main_case_long_run_2026_09_27`, $321.8194–387.3701bn; decision
+`2026-09-27-main-case-capital-return-and-long-run-responses`). It is the schools case with four additions:
+long-run responses for roads and parks (economic affairs and recreation), rental assistance at response 1,
+the return on public capital at 2% at the low end and 3% at the high end, and the government enterprises
+under option D. `derived/` holds this case (`--case sept27`, the default). `--case sept26_schools`,
+`--case sept26` and `--case sept24` with `--out-dir DIR` reproduce the three sections below byte for byte.
+Model self-report: claude-opus-5-5. Propagation report:
+[RESULT_generation.md](../sept27_propagation_2026_09_27/RESULT_generation.md).
+
+**How the split works.** Each generation's corrected model is its share of the schools-case payload (the
+split below, unchanged), followed by `rekeyEdits()` on that model. The re-key moves the generation's
+`enterprise_surplus` receipt to its own corrected population share, read from `general_public_services`'
+population cell, as the package's `modelFor()` does for the union. The generations' re-key edits add to the
+case's eight (gate). Every model is evaluated through the package's `evaluateFull()`: the engine at the
+specification's line responses, plus the capital return. Each of the return's 24 components takes its key
+from that evaluation, so a generation's own amounts split it. The 13 core, road and park components key
+off their spending lines. The 11 enterprise components key off the generation's `enterprise_surplus`
+receipt share.
+
+The ends stay the schools case's: specification 48 (shared allocation, GDP normalization, school share
+0.715, general government 0.6000, the low long-run readings with roads at 0.3840 and parks at 0.8562, 2%)
+and specification 11 (personal, cash, 0.865, 0.8504, roads at 0.6386 and parks at 1, 3%). Rental
+assistance and the enterprise receipt respond at 1 at both. As before, "low" and "high" are the union's
+range ends, not each generation's own minimum and maximum.
+
+| (a) Children in their own generation | $bn at the union's low end (shared) | $bn at the union's high end (personal) | Own range over the 64 specifications, $bn | $ per member, low / high | $ per adult, low / high |
+|---|---|---|---|---|---|
+| G1, born in Mexico | 93.8 | 78.3 | 63.5–109.6 | 7,673 / 6,408 | 8,032 / 6,708 |
+| G2, US-born, a parent born in Mexico | 127.6 | 153.0 | 127.6–153.0 | 8,901 / 10,671 | 14,311 / 17,157 |
+| G3+, US-born of US-born parents | 100.5 | 156.1 | 100.5–156.1 | 7,005 / 10,884 | 12,277 / 19,076 |
+| All three (the case) | 321.8 | 387.4 | 321.8–387.4 | 7,869 / 9,472 | 11,185 / 13,463 |
+
+| (b) Minors with their parents (NAS 2017) | $bn at the union's low end (shared) | $bn at the union's high end (personal) | Own range over the 64 specifications, $bn | $ per member, low / high | $ per adult, low / high |
+|---|---|---|---|---|---|
+| G1 | 159.0 | 190.8 | 159.0–190.8 | 9,434 / 11,320 | 13,620 / 16,343 |
+| G2 | 87.3 | 95.0 | 80.2–102.2 | 7,152 / 7,781 | 9,794 / 10,656 |
+| G3+ | 75.5 | 101.6 | 75.5–101.6 | 6,380 / 8,584 | 9,225 / 12,412 |
+
+Members and adults do not change with the case: 40.90m and 28.77m in all. [CALCULATION:
+`run_generations.cjs` → `derived/generation_results.csv`]
+
+**From the schools case to this one.** The chain runs at the fixed end specifications and follows
+`main_case.cjs`'s order and definitions for every generation (`generation_summary.json` →
+`change_from_sept26_schools`):
+- Roads and parks, and rental assistance, are each addition alone less the old settings on the re-keyed
+  model.
+- The three capital parts are the return's components on the case.
+- The re-key is the old settings on the re-keyed model less the schools case. It is exactly 0 for every
+  generation, because the receipt is still at response 0 when the re-key applies.
+- The enterprise surplus is the receipt's cost at response 1.
+
+The parts add to each generation's move within 3.6e-14bn. The union's parts equal the case's
+`change_at_fixed_specifications` part by part, and its move equals the case's `change` (+63.33 / +95.42,
+1.1e-13bn; gates).
+
+| | Schools case | Roads and parks, long run | Rental assistance | Capital, core | Capital, roads and parks | Re-key | Enterprise surplus (receipt) | Capital, enterprises | **September 27** | Change |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Union | 258.49 / 291.95 | +19.44 / +29.63 | +4.53 / +4.53 | +15.99 / +25.78 | +6.18 / +12.47 | 0.00 / 0.00 | +5.56 / +5.56 | +11.62 / +17.44 | **321.82 / 387.37** | +63.33 / +95.42 |
+| (a) G1 | 77.65 / 56.91 | +4.98 / +7.53 | +0.85 / +0.85 | +3.96 / +3.49 | +1.56 / +3.14 | 0.00 / 0.00 | +1.55 / +1.55 | +3.23 / +4.85 | **93.77 / 78.31** | +16.13 / +21.40 |
+| (a) G2 | 105.00 / 117.46 | +6.66 / +10.10 | +1.40 / +1.40 | +6.22 / +11.46 | +2.10 / +4.23 | 0.00 / 0.00 | +2.01 / +2.01 | +4.20 / +6.29 | **127.58 / 152.95** | +22.58 / +35.49 |
+| (a) G3+ | 75.84 / 117.58 | +7.80 / +12.00 | +2.28 / +2.28 | +5.82 / +10.83 | +2.52 / +5.11 | 0.00 / 0.00 | +2.01 / +2.01 | +4.20 / +6.30 | **100.47 / 156.10** | +24.62 / +38.52 |
+| (b) G1 | 135.56 / 155.38 | +6.67 / +10.03 | +1.27 / +1.27 | +6.66 / +10.90 | +2.06 / +4.15 | 0.00 / 0.00 | +2.19 / +2.19 | +4.59 / +6.88 | **159.01 / 190.80** | +23.45 / +35.42 |
+| (b) G2 | 67.90 / 66.06 | +6.07 / +9.26 | +1.26 / +1.26 | +4.87 / +7.45 | +1.93 / +3.90 | 0.00 / 0.00 | +1.71 / +1.71 | +3.57 / +5.36 | **87.31 / 95.00** | +19.41 / +28.94 |
+| (b) G3+ | 55.02 / 70.52 | +6.70 / +10.34 | +2.01 / +2.01 | +4.46 / +7.43 | +2.18 / +4.42 | 0.00 / 0.00 | +1.66 / +1.66 | +3.46 / +5.20 | **75.49 / 101.57** | +20.47 / +31.05 |
+
+Share of the change by generation, low / high:
+
+- (a) G1 25% / 22%; G2 36% / 37%; G3+ 39% / 40%
+- (b) G1 37% / 37%; G2 31% / 30%; G3+ 32% / 33%
+
+The additions fall less on the Mexico-born under (a): G1 takes 25% of the move at the low end and 22% at
+the high end, the second and third-plus generations 75–78%. G1's share of every addition is below its 30%
+of members:
+- 19% of rental assistance, by the rental key;
+- 25% of roads and parks;
+- 28% of the enterprise surplus and the enterprise return, by its receipt share;
+- 25% / 14% of the core capital return, whose school and college parts follow the pupils at the personal
+  high end.
+
+Under (b) the first generation takes 37% at both ends. [FRAMING-SENSITIVE]
+
+**The capital return and the enterprise receipt.** The return is an imputed resource cost: the
+opportunity cost of the capital at 2% / 3%, not a payment. It belongs in annual cost totals and never in a
+borrowing flow. The enterprise surplus is a receipt: the group's share of the enterprises' operating loss
+(−$47.46bn nationally, NIPA 3.1 line 19), at response 1. Its cost to others is minus its effect.
+
+| | Capital return | of which core | roads and parks | enterprises | public housing (in enterprises) | state and local | federal | Enterprise surplus, group amount | its share of −$47.46bn | cost to others | re-key's move of the amount |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Union | +33.80 / +55.69 | +15.99 / +25.78 | +6.18 / +12.47 | +11.62 / +17.44 | +0.99 / +1.48 | +32.97 / +53.95 | +0.83 / +1.74 | −5.56 / −5.56 | 0.1172 | +5.56 / +5.56 | +0.15 / +0.15 |
+| (a) G1 | +8.75 / +11.47 | +3.96 / +3.49 | +1.56 / +3.14 | +3.23 / +4.85 | +0.27 / +0.41 | +8.52 / +11.00 | +0.23 / +0.47 | −1.55 / −1.55 | 0.0326 | +1.55 / +1.55 | +0.16 / +0.16 |
+| (a) G2 | +12.51 / +21.98 | +6.22 / +11.46 | +2.10 / +4.23 | +4.20 / +6.29 | +0.36 / +0.53 | +12.21 / +21.36 | +0.30 / +0.62 | −2.01 / −2.01 | 0.0423 | +2.01 / +2.01 | −0.01 / −0.01 |
+| (a) G3+ | +12.54 / +22.24 | +5.82 / +10.83 | +2.52 / +5.11 | +4.20 / +6.30 | +0.36 / +0.53 | +12.24 / +21.59 | +0.30 / +0.65 | −2.01 / −2.01 | 0.0423 | +2.01 / +2.01 | −0.01 / −0.01 |
+| (b) G1 | +13.32 / +21.93 | +6.66 / +10.90 | +2.06 / +4.15 | +4.59 / +6.88 | +0.39 / +0.58 | +13.02 / +21.30 | +0.29 / +0.62 | −2.19 / −2.19 | 0.0462 | +2.19 / +2.19 | +0.16 / +0.16 |
+| (b) G2 | +10.38 / +16.72 | +4.87 / +7.45 | +1.93 / +3.90 | +3.57 / +5.36 | +0.30 / +0.45 | +10.11 / +16.16 | +0.27 / +0.56 | −1.71 / −1.71 | 0.0360 | +1.71 / +1.71 | −0.01 / −0.01 |
+| (b) G3+ | +10.11 / +17.05 | +4.46 / +7.43 | +2.18 / +4.42 | +3.46 / +5.20 | +0.29 / +0.44 | +9.84 / +16.49 | +0.27 / +0.56 | −1.66 / −1.66 | 0.0349 | +1.66 / +1.66 | −0.01 / −0.01 |
+
+The corrections lower the Mexico-born's population cell of `general_public_services` by $1.35bn (−9%;
+the stack's reweighting to the ACS count) and raise the second and third-plus generations' by $0.06bn
+each. The re-key therefore moves the first generation's receipt from −$1.71bn to −$1.55bn (share 0.0359 →
+0.0326), and the other two by −$0.01bn each. Its effect on the case, −$0.45bn / −$0.60bn for the union, is
+−$0.49bn / −$0.66bn for G1 and +$0.02bn / +$0.03bn for each of the others (the lane `enterprise_rekey`).
+
+| | Economic affairs (roads, transit and the rest of the line) | Recreation and culture (parks) | Re-key's effect (case less the same case at model.json's share) |
+|---|---|---|---|
+| Union | +13.99 / +23.27 | +5.45 / +6.37 | −0.45 / −0.60 |
+| (a) G1 | +3.46 / +5.76 | +1.51 / +1.77 | −0.49 / −0.66 |
+| (a) G2 | +4.69 / +7.81 | +1.97 / +2.30 | +0.02 / +0.03 |
+| (a) G3+ | +5.83 / +9.70 | +1.97 / +2.30 | +0.02 / +0.03 |
+| (b) G1 | +4.52 / +7.52 | +2.15 / +2.51 | −0.49 / −0.65 |
+| (b) G2 | +4.39 / +7.30 | +1.68 / +1.96 | +0.02 / +0.02 |
+| (b) G3+ | +5.08 / +8.45 | +1.62 / +1.90 | +0.02 / +0.02 |
+
+The union's line figures equal the case's `lines_at_end_specifications` (gate).
+
+**What else moved.** Three lanes change because lines they edit now respond (`lanes`, union under (a), $bn
+low / high):
+- The benefits lane includes a −$2.45bn correction to rental assistance (before the stack factor), which
+  had no effect while the line sat at 0. It moves from +2.15 / +2.02 to −0.02 / −0.16. Rental assistance's
+  +$4.53bn in the chain is net of it.
+- The consumption key edits cells of economic affairs, recreation and rental assistance. It moves from
+  −4.05 / −4.05 to −3.00 / −2.19.
+- The stack moves from +19.41 / +20.82 to +17.27 / +17.76.
+The medical, education and justice lanes move by $0.25bn or less. They edit lines that key the capital
+return. The new lane `enterprise_rekey` adds −0.45 / −0.60. The eight split sensitivities re-run with the
+re-key; their largest move stays $3.71bn (`fill_ins_by_imputed_dollars`).
+
+**Beside the account.** These rows stay outside the range, as in the case: without the capital return,
+option A (enterprises out) and the return at 7% on every component. Each is taken at that variant's own
+union ends, all 48 / 11. The union reproduces the case's `main_case_bands.csv` rows (gate), and the
+generations add to it.
+
+| | Without the capital return | Option A, enterprises out | Capital at 7% on every component |
+|---|---|---|---|
+| Union | 288.02 / 331.68 | 304.63 / 364.37 | 406.31 / 461.62 |
+| (a) G1 | 85.02 / 66.84 | 89.00 / 71.92 | 115.64 / 93.61 |
+| (a) G2 | 115.07 / 130.97 | 121.38 / 144.65 | 158.85 / 182.26 |
+| (a) G3+ | 87.93 / 133.87 | 94.26 / 147.80 | 131.81 / 185.76 |
+| (b) G1 | 145.70 / 168.88 | 152.23 / 181.72 | 192.30 / 220.04 |
+| (b) G2 | 76.94 / 78.28 | 82.03 / 87.93 | 113.25 / 117.29 |
+| (b) G3+ | 65.39 / 84.52 | 70.37 / 94.72 | 100.76 / 124.30 |
+
+**Ledger bridge.** The bridge now evaluates through the package's `stateFor()`. The propagation brief
+names this lane's own copy of the engine state, which would have missed the line responses. Under
+`sept27` the capital return sits inside each fiscal column, as part of the direct fiscal response.
+`ledger_comparison.csv` adds it on its own (`account_capital_return_*`). For G1 at the shared end that is
+$716 of the $7,673 per member. The September 19 ledger has no capital return. [CALCULATION:
+`compare_ledger.py`]
+
+**Inherited, not repaired here.**
+- The conceptual audit of 2026-09-27 (§7) finds that a federal housing subsidy is charged at the rental
+  key and credited inside the enterprise surplus at the population key. That favours the group, by about
+  $0.2bn for public housing's operating subsidies and at most $2.53bn. The split carries the mismatch into
+  each generation: rental assistance by its housing key, the receipt by its population share.
+- Rental assistance is a capped program. Without the group, other eligible households would take the
+  slots. The $4.53bn is their loss, not a budget change. It counts at 1 in the account, and the chain
+  keeps it as its own part.
+
+**Gates.** A `sept27` run has 58 gates. Beyond the earlier cases' checks, they add:
+- the specifications carry `meta.responses` and the rates;
+- the payload is the schools payload plus the re-key;
+- the generations' re-key edits add to the case's;
+- the uncorrected generation models need no re-key (receipt share equals population share to 1.9e-12);
+- each generation's payload gives the model `modelFor()` builds;
+- the union reproduces `per_spec.csv` (576 values, 2.3e-13bn);
+- the generations' capital return and receipt add to the union's at every specification;
+- the chain gates above, and the rows beside the account.
+
+A failed gate now writes nothing.
+
+**Reproduce** (from the repository root; steps 0-6 took about a minute on 2026-09-27):
+```
+bash infra/immigration-fiscal/generation_account_2026_09_24/run_all.sh
+node infra/immigration-fiscal/generation_account_2026_09_24/run_generations.cjs --case sept26_schools --out-dir DIR
+```
+The headline cell (a), G1, low end is 93.772592 (`generation_results.csv`).
+
+## Schools at full average cost (2026-09-26; superseded as the default 2026-09-27)
+
+[2026-09-27: `derived/` now holds the September 27 case. This section's numbers reproduce with
+`--case sept26_schools --out-dir DIR`, byte for byte against 0f22f0c.]
+
+Verdict of 2026-09-26: Split by generation, the main case with schools at full average cost ($258.5–292.0bn a
 year) leaves all three Mexican-origin generations as net costs to other US residents, at every one of
 its 64 specifications and under both ways of counting children. Counted in their own generation, the
 Mexico-born cost others $57–78bn a year ($4.7–6.4k per member), the second generation $105–117bn
@@ -10,13 +206,11 @@ Under (a) the second and third-plus generations carry 76–91% of it; under (b) 
 43–44%. [FRAMING-SENSITIVE] [CALCULATION: `run_generations.cjs` → `derived/generation_summary.json`,
 `change_from_sept26`]
 
-## Schools at full average cost (2026-09-26)
-
 At 22:39 JST the operator adopted schools at full average cost per pupil as the main case
 (`main_case_schools_full_2026_09_26`, $258.4885–291.9548bn; decision
 `2026-09-26-main-case-schools-full-cost`). It is the September 26 case (finite-removal responses, row 8
-at 0.949, the consumption key) with the school response at 1. `derived/` holds this case
-(`--case sept26_schools`, the default). `--case sept26 --out-dir DIR` reproduces the one-year scenario
+at 0.949, the consumption key) with the school response at 1. `derived/` held this case
+(`--case sept26_schools`, then the default). `--case sept26 --out-dir DIR` reproduces the one-year scenario
 below byte for byte, and `--case sept24 --out-dir DIR` reproduces the September 24 record. Model
 self-report: claude-opus-5-5. Propagation report:
 [RESULT_generation.md](../sept26_propagation_2026_09_26/RESULT_generation.md).

@@ -1,5 +1,5 @@
 {
- "case": "sept26_schools",
+ "case": "sept27",
  "responses": {
   "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
   "general_government": {
@@ -19,15 +19,254 @@
    "set_directly": true,
    "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
   },
-  "row8_factor": 0.9491629658844111
+  "row8_factor": 0.9491629658844111,
+  "economic_affairs_services": {
+   "low": 0.38401510917541615,
+   "high": 0.638645582432123,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_highways",
+     "level": "federal",
+     "subfunction": "Highways",
+     "national_bn": 1.827,
+     "share_of_line": 0.00404261674798367,
+     "low": 0,
+     "high": 1,
+     "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_air",
+     "level": "federal",
+     "subfunction": "Air",
+     "national_bn": 30.604,
+     "share_of_line": 0.06771770276699082,
+     "low": 0,
+     "high": 1,
+     "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+    },
+    {
+     "id": "fed_water",
+     "level": "federal",
+     "subfunction": "Water",
+     "national_bn": 18.209,
+     "share_of_line": 0.04029119231747928,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_transit_and_railroad",
+     "level": "federal",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0.094,
+     "share_of_line": 0.00020799451248520252,
+     "low": 0,
+     "high": 1,
+     "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_space",
+     "level": "federal",
+     "subfunction": "Space",
+     "national_bn": 21.23,
+     "share_of_line": 0.04697578191554095,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_general_economic_and_labor_affairs",
+     "level": "federal",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 35.431,
+     "share_of_line": 0.07839844225386393,
+     "low": 0,
+     "high": 0.8503957662020014,
+     "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+    },
+    {
+     "id": "fed_agriculture",
+     "level": "federal",
+     "subfunction": "Agriculture",
+     "national_bn": 17.54,
+     "share_of_line": 0.038810890946706936,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_energy",
+     "level": "federal",
+     "subfunction": "Energy",
+     "national_bn": 23.406,
+     "share_of_line": 0.051790633608815424,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_natural_resources",
+     "level": "federal",
+     "subfunction": "Natural resources",
+     "national_bn": 32.036,
+     "share_of_line": 0.07088630002102073,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_postal_service",
+     "level": "federal",
+     "subfunction": "Postal service",
+     "national_bn": -0.177,
+     "share_of_line": -0.00039164924159447705,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_highways",
+     "level": "state_local",
+     "subfunction": "Highways",
+     "national_bn": 201.005,
+     "share_of_line": 0.4447652870434908,
+     "low": 0.739205240969296,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_transit_and_railroad",
+     "level": "state_local",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0.739205240969296,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_general_economic_and_labor_affairs",
+     "level": "state_local",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 29.358,
+     "share_of_line": 0.06496066912277208,
+     "low": 0.8503957662020014,
+     "high": 0.8503957662020014,
+     "basis": "general government's adopted response for state-local administration at both ends"
+    },
+    {
+     "id": "sl_agriculture",
+     "level": "state_local",
+     "subfunction": "Agriculture",
+     "national_bn": 10.007,
+     "share_of_line": 0.022142564749355546,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_energy",
+     "level": "state_local",
+     "subfunction": "Energy",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_natural_resources",
+     "level": "state_local",
+     "subfunction": "Natural resources",
+     "national_bn": 31.99,
+     "share_of_line": 0.07078451547235774,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_other_commercial_activities",
+     "level": "state_local",
+     "subfunction": "Other (commercial activities)",
+     "national_bn": -0.625,
+     "share_of_line": -0.0013829422372686338,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "recreation_culture": {
+   "low": 0.8561746355869265,
+   "high": 1,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_recreation_and_culture",
+     "level": "federal",
+     "subfunction": "Recreation and culture",
+     "national_bn": 5.43,
+     "share_of_line": 0.09994294233494688,
+     "low": 0,
+     "high": 1,
+     "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+    },
+    {
+     "id": "sl_recreation_and_culture",
+     "level": "state_local",
+     "subfunction": "Recreation and culture",
+     "national_bn": 48.901,
+     "share_of_line": 0.9000570576650531,
+     "low": 0.9512448441969144,
+     "high": 1,
+     "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "housing_subsidies": {
+   "low": 1,
+   "high": 1,
+   "key": "housing_support",
+   "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+   "overlap_netted_bn": 0,
+   "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+   "source": "dataset_integrity_2026_09_23/spending.md item 6"
+  },
+  "enterprise_surplus": {
+   "receipt": true,
+   "override": "receipt:enterprise_surplus",
+   "low": 1,
+   "high": 1,
+   "option": "D",
+   "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+   "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+   "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+  }
  },
  "uncorrected_at_adopted_responses_bn": [
-  265.5902847237095,
-  298.67972515718577
+  332.749301570834,
+  398.30794858276886
  ],
  "adopted_main_case_bn": [
-  258.48849537573153,
-  291.9547733238526
+  321.81935699039354,
+  387.37005494938376
  ],
  "low_spec": {
   "allocation": "shared",
@@ -36,7 +275,17 @@
   "school": 1,
   "gg": 0.6000461560720316,
   "uc": "uninsured_use_low",
-  "justice": "use"
+  "justice": "use",
+  "reading": "low",
+  "rate": 0.02,
+  "long_run": "adopted",
+  "enterprises": "D",
+  "line_responses": {
+   "economic_affairs_services": 0.38401510917541615,
+   "recreation_culture": 0.8561746355869265,
+   "housing_subsidies": 1,
+   "receipt:enterprise_surplus": 1
+  }
  },
  "high_spec": {
   "allocation": "personal",
@@ -45,7 +294,17 @@
   "school": 1,
   "gg": 0.8503957662020014,
   "uc": "uninsured_use_high",
-  "justice": "use"
+  "justice": "use",
+  "reading": "high",
+  "rate": 0.03,
+  "long_run": "adopted",
+  "enterprises": "D",
+  "line_responses": {
+   "economic_affairs_services": 0.638645582432123,
+   "recreation_culture": 1,
+   "housing_subsidies": 1,
+   "receipt:enterprise_surplus": 1
+  }
  },
  "conventions": {
   "a": {
@@ -53,84 +312,84 @@
     "population": 12220781.882555904,
     "adults": 11674798.945718823,
     "cost_bn": [
-     77.64578013178742,
-     56.91269649592381
+     93.7725916369799,
+     78.312584603511
     ],
     "own_span_bn": [
-     49.29335108989216,
-     85.40637652464252
+     63.549232758483704,
+     109.61265938713113
     ],
     "per_member_usd": [
-     6353.585300677035,
-     4657.04216333013
+     7673.207208683764,
+     6408.1484602303035
     ],
     "per_adult_usd": [
-     6650.716684098471,
-     4874.833113660929
+     8032.051949928144,
+     6707.831541050085
     ],
     "uncorrected_cost_bn": [
-     72.80982686244019,
-     52.79036326607413
+     91.13852996833248,
+     76.76349103659362
     ],
     "correction_bn": [
-     4.835953269347229,
-     4.12233322984968
+     2.634061668647419,
+     1.549093566917378
     ]
    },
    "G2": {
     "population": 14333217.663520353,
     "adults": 8914882.943565348,
     "cost_bn": [
-     104.99926772641116,
-     117.45901671759002
+     127.57950286608664,
+     152.95293770801274
     ],
     "own_span_bn": [
-     104.99926772641116,
-     117.45901671759002
+     127.57950286608664,
+     152.95293770801274
     ],
     "per_member_usd": [
-     7325.589423904869,
-     8194.881252416642
+     8900.967379487356,
+     10671.221305547819
     ],
     "per_adult_usd": [
-     11777.974920265031,
-     13175.609535329959
+     14310.844424286237,
+     17157.03264712099
     ],
     "uncorrected_cost_bn": [
-     110.88355273316434,
-     124.92585842484036
+     134.29277421196326,
+     161.34481251880143
     ],
     "correction_bn": [
-     -5.884285006753174,
-     -7.466841707250339
+     -6.71327134587662,
+     -8.391874810788693
     ]
    },
    "G3plus": {
     "population": 14342574.606275609,
     "adults": 8183368.747901681,
     "cost_bn": [
-     75.84344751753163,
-     117.58306011034009
+     100.46726248732563,
+     156.10453263786107
     ],
     "own_span_bn": [
-     75.84344751753163,
-     117.58306011034009
+     100.46726248732563,
+     156.10453263786107
     ],
     "per_member_usd": [
-     5287.993934111819,
-     8198.18361334453
+     7004.827602107509,
+     10883.996557323633
     ],
     "per_adult_usd": [
-     9267.998284566958,
-     14368.539868191798
+     12277.005421891407,
+     19075.827748552605
     ],
     "uncorrected_cost_bn": [
-     81.89690512810498,
-     120.96350346627122
+     107.31799739053827,
+     160.1996450273737
     ],
     "correction_bn": [
-     -6.053457610573346,
-     -3.380443355931135
+     -6.85073490321264,
+     -4.095112389512622
     ]
    }
   },
@@ -139,84 +398,84 @@
     "population": 16855802.230826996,
     "adults": 11674798.945718823,
     "cost_bn": [
-     135.5644409991673,
-     155.38170272329594
+     159.01473072091565,
+     190.80131223806558
     ],
     "own_span_bn": [
-     135.5644409991673,
-     155.38170272329594
+     159.01473072091565,
+     190.80131223806558
     ],
     "per_member_usd": [
-     8042.597981556651,
-     9218.291754700569
+     9433.827506002597,
+     11319.622147032293
     ],
     "per_adult_usd": [
-     11611.715253467306,
-     13309.15448272236
+     13620.339969899587,
+     16343.006258624513
     ],
     "uncorrected_cost_bn": [
-     137.5328107954385,
-     157.70115758728133
+     163.65341981342155,
+     196.56631876860789
     ],
     "correction_bn": [
-     -1.9683697962712188,
-     -2.319454863985385
+     -4.638689092505899,
+     -5.765006530542308
     ]
    },
    "G2": {
     "population": 12208755.493478986,
     "adults": 8914882.943565348,
     "cost_bn": [
-     67.90496124478092,
-     66.05684360278873
+     87.31334994108622,
+     94.99840660921973
     ],
     "own_span_bn": [
-     60.92611541058263,
-     73.04828351791865
+     80.17286758805207,
+     102.23230130260343
     ],
     "per_member_usd": [
-     5561.988794111794,
-     5410.6123788023615
+     7151.699449442046,
+     7781.170378910517
     ],
     "per_adult_usd": [
-     7617.0334119522995,
-     7409.726411547304
+     9794.110645514185,
+     10656.158606971772
     ],
     "uncorrected_cost_bn": [
-     71.35944664598014,
-     69.69886125457555
+     91.43574856102146,
+     99.17486563777206
     ],
     "correction_bn": [
-     -3.4544854011992214,
-     -3.6420176517868157
+     -4.12239861993524,
+     -4.17645902855233
     ]
    },
    "G3plus": {
     "population": 11832016.428045874,
     "adults": 8183368.747901681,
     "cost_bn": [
-     55.019093131782,
-     70.51622699776932
+     75.4912763283903,
+     101.57033610209963
     ],
     "own_span_bn": [
-     55.019093131782,
-     70.51622699776932
+     75.4912763283903,
+     101.57033610209963
     ],
     "per_member_usd": [
-     4650.018318210594,
-     5959.781025203958
+     6380.25452275831,
+     8584.364019419685
     ],
     "per_adult_usd": [
-     6723.281673685985,
-     8617.016924216028
+     9224.963294944668,
+     12411.799984956506
     ],
     "uncorrected_cost_bn": [
-     56.698027282290944,
-     71.2797063153289
+     77.66013319639112,
+     102.56676417638882
     ],
     "correction_bn": [
-     -1.678934150508944,
-     -0.7634793175595718
+     -2.168856868000816,
+     -0.9964280742891845
     ]
    }
   }
@@ -226,22 +485,22 @@
    "convention": "a",
    "generation": "G1",
    "lane": "stack",
-   "low_bn": 14.516206191937869,
-   "high_bn": 17.67550189838287
+   "low_bn": 12.869979858928048,
+   "high_bn": 15.218599516817264
   },
   {
    "convention": "a",
    "generation": "G1",
    "lane": "cbo",
    "low_bn": 1.1338646060232236,
-   "high_bn": 0.9845443946010093
+   "high_bn": 0.9845443946010164
   },
   {
    "convention": "a",
    "generation": "G1",
    "lane": "ota",
    "low_bn": -0.08795828278564954,
-   "high_bn": -0.12349393208781834
+   "high_bn": -0.12349393208782544
   },
   {
    "convention": "a",
@@ -254,36 +513,36 @@
    "convention": "a",
    "generation": "G1",
    "lane": "medical",
-   "low_bn": -5.481765544860437,
-   "high_bn": -5.452054427372296
+   "low_bn": -5.579659862327063,
+   "high_bn": -5.598895903572227
   },
   {
    "convention": "a",
    "generation": "G1",
    "lane": "education",
-   "low_bn": 1.3107007173281602,
-   "high_bn": 4.802593414344145
+   "low_bn": 1.3932759326817603,
+   "high_bn": 5.260948527619391
   },
   {
    "convention": "a",
    "generation": "G1",
    "lane": "benefits",
-   "low_bn": 0.46266733849795116,
-   "high_bn": 0.6764805694821519
+   "low_bn": 0.05213086437987613,
+   "high_bn": 0.2659440953640626
   },
   {
    "convention": "a",
    "generation": "G1",
    "lane": "justice",
-   "low_bn": 0.5329883779207023,
-   "high_bn": 0.5329883779207023
+   "low_bn": 0.5411948628671013,
+   "high_bn": 0.5452981053402937
   },
   {
    "convention": "a",
    "generation": "G1",
    "lane": "constants",
    "low_bn": -2.6114582728193056,
-   "high_bn": -2.6223282891051554
+   "high_bn": -2.6223282891051696
   },
   {
    "convention": "a",
@@ -296,15 +555,22 @@
    "convention": "a",
    "generation": "G1",
    "lane": "consumption_key",
-   "low_bn": -0.9348854571512675,
-   "high_bn": -0.9348854571513243
+   "low_bn": -0.5790796586446589,
+   "high_bn": -0.30367420547992197
+  },
+  {
+   "convention": "a",
+   "generation": "G1",
+   "lane": "enterprise_rekey",
+   "low_bn": -0.4938219749118957,
+   "high_bn": -0.6608354234149658
   },
   {
    "convention": "a",
    "generation": "G2",
    "lane": "stack",
-   "low_bn": 2.6500784373952513,
-   "high_bn": -0.11354278330296097
+   "low_bn": 2.2693209865165898,
+   "high_bn": -0.5758777895715355
   },
   {
    "convention": "a",
@@ -317,7 +583,7 @@
    "convention": "a",
    "generation": "G2",
    "lane": "ota",
-   "low_bn": -0.1559013160818239,
+   "low_bn": -0.15590131608180968,
    "high_bn": -0.13910311773452122
   },
   {
@@ -331,35 +597,35 @@
    "convention": "a",
    "generation": "G2",
    "lane": "medical",
-   "low_bn": -5.263656497332221,
-   "high_bn": -5.268000317683828
+   "low_bn": -5.3030829510616115,
+   "high_bn": -5.327139998277943
   },
   {
    "convention": "a",
    "generation": "G2",
    "lane": "education",
-   "low_bn": -1.0653225446669126,
-   "high_bn": -2.7915558337523834
+   "low_bn": -1.1366316353267791,
+   "high_bn": -3.105115808666966
   },
   {
    "convention": "a",
    "generation": "G2",
    "lane": "benefits",
-   "low_bn": 0.8979739940955938,
-   "high_bn": 0.7657359596936715
+   "low_bn": 0.224044772429437,
+   "high_bn": 0.09180673802754313
   },
   {
    "convention": "a",
    "generation": "G2",
    "lane": "justice",
-   "low_bn": 0.8085302299082997,
-   "high_bn": 0.8085302299083139
+   "low_bn": 0.8209792652631336,
+   "high_bn": 0.8272037829405576
   },
   {
    "convention": "a",
    "generation": "G2",
    "lane": "constants",
-   "low_bn": -1.1004490925142107,
+   "low_bn": -1.100449092514225,
    "high_bn": -1.115909153481084
   },
   {
@@ -373,71 +639,78 @@
    "convention": "a",
    "generation": "G2",
    "lane": "consumption_key",
-   "low_bn": -1.2314873543020326,
-   "high_bn": -1.2314873543020326
+   "low_bn": -0.9293122364415467,
+   "high_bn": -0.6954187034558856
+  },
+  {
+   "convention": "a",
+   "generation": "G2",
+   "lane": "enterprise_rekey",
+   "low_bn": 0.021811724595295345,
+   "high_bn": 0.029188576026683677
   },
   {
    "convention": "a",
    "generation": "G3plus",
    "lane": "stack",
-   "low_bn": 2.244044831596497,
-   "high_bn": 3.2565864146447154
+   "low_bn": 2.127467844752772,
+   "high_bn": 3.116019972884544
   },
   {
    "convention": "a",
    "generation": "G3plus",
    "lane": "cbo",
    "low_bn": 3.0369779531353345,
-   "high_bn": 3.5358909322180097
+   "high_bn": 3.5358909322179954
   },
   {
    "convention": "a",
    "generation": "G3plus",
    "lane": "ota",
-   "low_bn": -0.11997063863016422,
-   "high_bn": -0.07915223998489296
+   "low_bn": -0.11997063863017843,
+   "high_bn": -0.07915223998486454
   },
   {
    "convention": "a",
    "generation": "G3plus",
    "lane": "row1",
-   "low_bn": -3.7194957818445857,
-   "high_bn": -0.6179633499739623
+   "low_bn": -3.7194957818446,
+   "high_bn": -0.6179633499739339
   },
   {
    "convention": "a",
    "generation": "G3plus",
    "lane": "medical",
-   "low_bn": -6.053542919829638,
-   "high_bn": -6.056806943133466
+   "low_bn": -6.085868858832782,
+   "high_bn": -6.105295851638118
   },
   {
    "convention": "a",
    "generation": "G3plus",
    "lane": "education",
-   "low_bn": 0.33952939214815103,
-   "high_bn": -1.402742541329843
+   "low_bn": 0.35878911220608245,
+   "high_bn": -1.5783809084315976
   },
   {
    "convention": "a",
    "generation": "G3plus",
    "lane": "benefits",
-   "low_bn": 0.7940054312680616,
-   "high_bn": 0.574220172792522
+   "low_bn": -0.30008496640942894,
+   "high_bn": -0.5198702248849543
   },
   {
    "convention": "a",
    "generation": "G3plus",
    "lane": "justice",
-   "low_bn": 0.6920937950133634,
-   "high_bn": 0.6920937950133919
+   "low_bn": 0.7027500448408546,
+   "high_bn": 0.7080781697546286
   },
   {
    "convention": "a",
    "generation": "G3plus",
    "lane": "constants",
    "low_bn": -1.3460926346664905,
-   "high_bn": -1.3615625574137624
+   "high_bn": -1.3615625574137482
   },
   {
    "convention": "a",
@@ -450,15 +723,22 @@
    "convention": "a",
    "generation": "G3plus",
    "lane": "consumption_key",
-   "low_bn": -1.8853495799337736,
-   "high_bn": -1.8853495799337736
+   "low_bn": -1.491375482555469,
+   "high_bn": -1.1864265039859845
+  },
+  {
+   "convention": "a",
+   "generation": "G3plus",
+   "lane": "enterprise_rekey",
+   "low_bn": 0.021825963621296296,
+   "high_bn": 0.029207630773612436
   },
   {
    "convention": "b",
    "generation": "G1",
    "lane": "stack",
-   "low_bn": 15.546583591634942,
-   "high_bn": 17.73172792483075
+   "low_bn": 13.656137328276401,
+   "high_bn": 15.001389159714506
   },
   {
    "convention": "b",
@@ -478,36 +758,36 @@
    "convention": "b",
    "generation": "G1",
    "lane": "row1",
-   "low_bn": -8.869078990545006,
+   "low_bn": -8.869078990544978,
    "high_bn": -10.34668311530487
   },
   {
    "convention": "b",
    "generation": "G1",
    "lane": "medical",
-   "low_bn": -6.293113618503298,
-   "high_bn": -6.268230294569719
+   "low_bn": -6.401974553488316,
+   "high_bn": -6.431521697047259
   },
   {
    "convention": "b",
    "generation": "G1",
    "lane": "education",
-   "low_bn": -0.8679156359164892,
-   "high_bn": -1.1082015315593878
+   "low_bn": -0.9267865519103964,
+   "high_bn": -1.255516180704518
   },
   {
    "convention": "b",
    "generation": "G1",
    "lane": "benefits",
-   "low_bn": 0.7317584480227879,
-   "high_bn": 0.7304581974660493
+   "low_bn": 0.12239715371913462,
+   "high_bn": 0.12109690316239607
   },
   {
    "convention": "b",
    "generation": "G1",
    "lane": "justice",
-   "low_bn": 0.5329883779206739,
-   "high_bn": 0.5329883779207023
+   "low_bn": 0.5411948628670871,
+   "high_bn": 0.5452981053402937
   },
   {
    "convention": "b",
@@ -527,15 +807,22 @@
    "convention": "b",
    "generation": "G1",
    "lane": "consumption_key",
-   "low_bn": -1.3600786721858071,
-   "high_bn": -1.3600786721857787
+   "low_bn": -0.884783175197839,
+   "high_bn": -0.5168887443465167
+  },
+  {
+   "convention": "b",
+   "generation": "G1",
+   "lane": "enterprise_rekey",
+   "low_bn": -0.4862818695278861,
+   "high_bn": -0.6507452107732092
   },
   {
    "convention": "b",
    "generation": "G2",
    "lane": "stack",
-   "low_bn": 1.310162156565454,
-   "high_bn": -0.13198820997799032
+   "low_bn": 1.0450916544171065,
+   "high_bn": -0.4471949808431219
   },
   {
    "convention": "b",
@@ -548,43 +835,43 @@
    "convention": "b",
    "generation": "G2",
    "lane": "ota",
-   "low_bn": -0.15225094477555956,
+   "low_bn": -0.15225094477554535,
    "high_bn": -0.13910311773452122
   },
   {
    "convention": "b",
    "generation": "G2",
    "lane": "row1",
-   "low_bn": -3.53158453129835,
-   "high_bn": -2.9118244964990367
+   "low_bn": -3.5315845312983356,
+   "high_bn": -2.9118244964990225
   },
   {
    "convention": "b",
    "generation": "G2",
    "lane": "medical",
-   "low_bn": -5.069007333771097,
-   "high_bn": -5.070850595217308
+   "low_bn": -5.103372815288282,
+   "high_bn": -5.122398817493078
   },
   {
    "convention": "b",
    "generation": "G2",
    "lane": "education",
-   "low_bn": 0.31134679558773826,
-   "high_bn": 0.8892071207248335
+   "low_bn": 0.3292415487986915,
+   "high_bn": 0.9504234512249923
   },
   {
    "convention": "b",
    "generation": "G2",
    "lane": "benefits",
-   "low_bn": 0.8708861878639311,
-   "high_bn": 0.7711418954571485
+   "low_bn": 0.26635265663811936,
+   "high_bn": 0.16660836423135095
   },
   {
    "convention": "b",
    "generation": "G2",
    "lane": "justice",
-   "low_bn": 0.8085302299083139,
-   "high_bn": 0.8085302299083139
+   "low_bn": 0.8209792652631336,
+   "high_bn": 0.8272037829405434
   },
   {
    "convention": "b",
@@ -604,21 +891,28 @@
    "convention": "b",
    "generation": "G2",
    "lane": "consumption_key",
-   "low_bn": -0.7732204036278176,
-   "high_bn": -0.7732204036278176
+   "low_bn": -0.585825993254403,
+   "high_bn": -0.44077652321749383
+  },
+  {
+   "convention": "b",
+   "generation": "G2",
+   "lane": "enterprise_rekey",
+   "low_bn": 0.018318097216138085,
+   "high_bn": 0.024513383658444354
   },
   {
    "convention": "b",
    "generation": "G3plus",
    "lane": "stack",
-   "low_bn": 2.5535837127292,
-   "high_bn": 3.2188058148719136
+   "low_bn": 2.5655397075038735,
+   "high_bn": 3.204547521259002
   },
   {
    "convention": "b",
    "generation": "G3plus",
    "lane": "cbo",
-   "low_bn": 3.868017055771311,
+   "low_bn": 3.8680170557712756,
    "high_bn": 3.6078011082754244
   },
   {
@@ -639,35 +933,35 @@
    "convention": "b",
    "generation": "G3plus",
    "lane": "medical",
-   "low_bn": -5.436844009747901,
-   "high_bn": -5.437780798402557
+   "low_bn": -5.463264303444845,
+   "high_bn": -5.477411238947951
   },
   {
    "convention": "b",
    "generation": "G3plus",
    "lane": "education",
-   "low_bn": 1.1414764051381354,
-   "high_bn": 0.8272894500964725
+   "low_bn": 1.2129784126727685,
+   "high_bn": 0.8825445400003815
   },
   {
    "convention": "b",
    "generation": "G3plus",
    "lane": "benefits",
-   "low_bn": 0.5520021279748519,
-   "high_bn": 0.5148366090451759
+   "low_bn": -0.4126591399573698,
+   "high_bn": -0.4498246588870529
   },
   {
    "convention": "b",
    "generation": "G3plus",
    "lane": "justice",
-   "low_bn": 0.6920937950134203,
-   "high_bn": 0.6920937950133919
+   "low_bn": 0.702750044840883,
+   "high_bn": 0.7080781697546144
   },
   {
    "convention": "b",
    "generation": "G3plus",
    "lane": "constants",
-   "low_bn": -1.1752795734388926,
+   "low_bn": -1.1752795734388997,
    "high_bn": -1.188041459795656
   },
   {
@@ -681,8 +975,15 @@
    "convention": "b",
    "generation": "G3plus",
    "lane": "consumption_key",
-   "low_bn": -1.9184233155735058,
-   "high_bn": -1.9184233155735058
+   "low_bn": -1.5291582091895037,
+   "high_bn": -1.2278541453577532
+  },
+  {
+   "convention": "b",
+   "generation": "G3plus",
+   "lane": "enterprise_rekey",
+   "low_bn": 0.017779485616443935,
+   "high_bn": 0.02379261050008097
   }
  ],
  "production_alternatives": {
@@ -727,270 +1028,270 @@
   "central": {
    "a": {
     "G1": [
-     77.64578013178742,
-     56.91269649592381
+     93.7725916369799,
+     78.312584603511
     ],
     "G2": [
-     104.99926772641116,
-     117.45901671759002
+     127.57950286608664,
+     152.95293770801274
     ],
     "G3plus": [
-     75.84344751753163,
-     117.58306011034009
+     100.46726248732563,
+     156.10453263786107
     ]
    },
    "b": {
     "G1": [
-     135.5644409991673,
-     155.38170272329594
+     159.01473072091565,
+     190.80131223806558
     ],
     "G2": [
-     67.90496124478092,
-     66.05684360278873
+     87.31334994108622,
+     94.99840660921973
     ],
     "G3plus": [
-     55.019093131782,
-     70.51622699776932
+     75.4912763283903,
+     101.57033610209963
     ]
    }
   },
   "benefits_to_g1": {
    "a": {
     "G1": [
-     79.33331280438681,
-     58.17537026513078
+     94.00005167542365,
+     78.11518573856233
     ],
     "G2": [
-     104.11500545204329,
-     116.74325625032137
+     127.25195068587931,
+     152.79388733490467
     ],
     "G3plus": [
-     75.04017711930011,
-     117.03614680840177
+     100.56735462908922,
+     156.46098187591787
     ]
    },
    "b": {
     "G1": [
-     136.9514188884333,
-     156.56736935777764
+     159.10075733573734,
+     190.68602759810295
     ],
     "G2": [
-     67.0608039257622,
-     65.3472399977398
+     86.97135745442587,
+     94.79096783652915
     ],
     "G3plus": [
-     54.47627256153471,
-     70.04016396833656
+     75.74724220022892,
+     101.8930595147528
     ]
    }
   },
   "benefits_to_usborn": {
    "a": {
     "G1": [
-     77.17788679610403,
-     56.19587469636981
+     93.73615034204855,
+     78.02721484470902
     ],
     "G2": [
-     105.2555256054484,
-     117.87937911320796
+     127.67125269215862,
+     153.20879205066538
     ],
     "G3plus": [
-     76.0550829741778,
-     117.87951951427615
+     100.41195395618503,
+     156.13404805401038
     ]
    },
    "b": {
     "G1": [
-     134.8194777663182,
-     154.60837057702
+     158.93138724008762,
+     190.6895998438107
     ],
     "G2": [
-     68.36347664799595,
-     66.52411301923128
+     87.51648132002212,
+     95.21029200138312
     ],
     "G3plus": [
-     55.30554096141605,
-     70.82228972760271
+     75.37148843028243,
+     101.4701631041911
     ]
    }
   },
   "justice_per_adult": {
    "a": {
     "G1": [
-     77.93793943236909,
-     57.204855796505484
+     94.06924934878683,
+     78.61149152093057
     ],
     "G2": [
-     104.82082072099392,
-     117.28056971217278
+     127.3983082910706,
+     152.7703693481973
     ],
     "G3plus": [
-     75.72973522236721,
-     117.46934781517567
+     100.35179935053475,
+     155.98819408025696
     ]
    },
    "b": {
     "G1": [
-     135.85660029974895,
-     155.6738620238776
+     159.3113884327226,
+     191.10021915548515
     ],
     "G2": [
-     67.72651423936367,
-     65.87839659737149
+     87.13215536607018,
+     94.8158382494043
     ],
     "G3plus": [
-     54.90538083661757,
-     70.40251470260489
+     75.3758131915994,
+     101.45399754449551
     ]
    }
   },
   "foster_care_by_children": {
    "a": {
     "G1": [
-     77.85818286607824,
-     57.12509923021464
+     93.98499437127072,
+     78.52498733780183
     ],
     "G2": [
-     104.89503757354022,
-     117.35478656471908
+     127.4752727132157,
+     152.8487075551418
     ],
     "G3plus": [
-     75.73527493611174,
-     117.47488752892019
+     100.35908990590573,
+     155.9963600564412
     ]
    },
    "b": {
     "G1": [
-     135.4567965475887,
-     155.27405827171737
+     158.90708626933707,
+     190.693667786487
     ],
     "G2": [
-     68.01886905856841,
-     66.17075141657622
+     87.42725775487371,
+     95.1123144230072
     ],
     "G3plus": [
-     55.01282976957309,
-     70.50996363556041
+     75.4850129661814,
+     101.56407273989072
     ]
    }
   },
   "status_rules_all_to_g1": {
    "a": {
     "G1": [
-     78.95375392438334,
-     56.281504883177604
+     95.08056542957581,
+     77.6813929907648
     ],
     "G2": [
-     103.4717865913947,
-     117.61733601756994
+     126.0520217310702,
+     153.11125700799266
     ],
     "G3plus": [
-     76.06295485995214,
-     118.05593242310637
+     100.68676982974614,
+     156.57740495062734
     ]
    },
    "b": {
     "G1": [
-     136.51086570502773,
-     154.75339466580195
+     159.9611554267761,
+     190.1730041805716
     ],
     "G2": [
-     66.51447648150346,
-     66.21388352830117
+     85.92286517780876,
+     95.15544653473216
     ],
     "G3plus": [
-     55.46315318919906,
-     70.98749512975095
+     75.93533638580736,
+     102.0416042340813
     ]
    }
   },
   "fill_ins_by_imputed_dollars": {
    "a": {
     "G1": [
-     74.37113698593174,
-     53.47568401328975
+     90.71751056387443,
+     75.23172640506037
     ],
     "G2": [
-     107.0179097606906,
-     121.16459146034515
+     129.6265156912763,
+     156.66322478978634
     ],
     "G3plus": [
-     77.09944862910775,
-     117.31449785021903
+     101.47533073524136,
+     155.47510375453805
     ]
    },
    "b": {
     "G1": [
-     132.4160982477191,
-     152.31983403443056
+     156.1620739281747,
+     188.18108198004694
     ],
     "G2": [
-     71.1262332761079,
-     69.62276202128992
+     90.46983419665317,
+     98.446381654133
     ],
     "G3plus": [
-     54.94616385190315,
-     70.01217726813353
+     75.18744886556428,
+     100.74259131520499
     ]
    }
   },
   "stack_scaling_by_union_factor": {
    "a": {
     "G1": [
-     77.83829448513164,
-     57.98656851228961
+     93.87608311872692,
+     79.35345101891394
     ],
     "G2": [
-     104.92679383833622,
-     116.82068393493243
+     127.50126303334818,
+     152.27965328662597
     ],
     "G3plus": [
-     75.72340705226229,
-     117.14752087663194
+     100.442010838317,
+     155.736950643845
     ]
    },
    "b": {
     "G1": [
-     135.93696326791317,
-     155.9130713076594
+     159.25828063872345,
+     191.20135766046104
     ],
     "G2": [
-     67.75047666071313,
-     65.69584355567748
+     87.16818084665255,
+     94.64758011638511
     ],
     "G3plus": [
-     54.80105544710398,
-     70.34585846051714
+     75.39289550501624,
+     101.52111717253885
     ]
    }
   },
   "consumption_key_by_old_key_shares": {
    "a": {
     "G1": [
-     77.47874500872642,
-     56.74566137286281
+     93.53584407698307,
+     78.02187731220539
     ],
     "G2": [
-     104.90369090985264,
-     117.3634399010315
+     127.52629867537937,
+     152.93253133081308
     ],
     "G3plus": [
-     76.10605945715118,
-     117.84567204995963
+     100.75721423802975,
+     156.41564630636637
     ]
    },
    "b": {
     "G1": [
-     135.53105658544553,
-     155.34831830957418
+     158.86783780795423,
+     190.56655999340586
     ],
     "G2": [
-     67.42453812690412,
-     65.57642048491194
+     86.9710178386637,
+     94.76296151889424
     ],
     "G3plus": [
-     55.53290066338053,
-     71.03003452936788
+     75.9805013437742,
+     102.0405334370848
     ]
    }
   }
@@ -1000,86 +1301,104 @@
  "ledger_bridge_a": {
   "G1": {
    "low": {
-    "proportional_fiscal_bn": 93.44715772758656,
-    "adopted_responses_fiscal_bn": 81.63334529107365,
+    "proportional_fiscal_bn": 106.90118272492329,
+    "adopted_responses_fiscal_bn": 99.96204839696594,
     "production_bn": -8.823518428633454,
-    "uncorrected_bn": 72.80982686244019,
-    "corrections_bn": 4.835953269347229,
-    "adopted_bn": 77.64578013178742
+    "uncorrected_bn": 91.13852996833248,
+    "corrections_bn": 2.634061668647419,
+    "adopted_bn": 93.7725916369799,
+    "proportional_capital_return_bn": 10.028435639434093,
+    "adopted_responses_capital_return_bn": 9.44467779732036,
+    "adopted_capital_return_bn": 8.748235491883275
    },
    "high": {
-    "proportional_fiscal_bn": 70.42618323867227,
-    "adopted_responses_fiscal_bn": 58.612370802159354,
+    "proportional_fiscal_bn": 86.14903299705009,
+    "adopted_responses_fiscal_bn": 82.58549857267883,
     "production_bn": -5.822007536085222,
-    "uncorrected_bn": 52.79036326607413,
-    "corrections_bn": 4.12233322984968,
-    "adopted_bn": 56.91269649592381
+    "uncorrected_bn": 76.76349103659362,
+    "corrections_bn": 1.549093566917378,
+    "adopted_bn": 78.312584603511,
+    "proportional_capital_return_bn": 12.29726040047518,
+    "adopted_responses_capital_return_bn": 12.29726040047518,
+    "adopted_capital_return_bn": 11.469825582334323
    }
   },
   "G2": {
    "low": {
-    "proportional_fiscal_bn": 127.47911391600846,
-    "adopted_responses_fiscal_bn": 113.3129348965127,
+    "proportional_fiscal_bn": 145.0688408853104,
+    "adopted_responses_fiscal_bn": 136.7221563753116,
     "production_bn": -2.429382163348366,
-    "uncorrected_bn": 110.88355273316434,
-    "corrections_bn": -5.884285006753174,
-    "adopted_bn": 104.99926772641116
+    "uncorrected_bn": 134.29277421196326,
+    "corrections_bn": -6.71327134587662,
+    "adopted_bn": 127.57950286608664,
+    "proportional_capital_return_bn": 13.230861395474548,
+    "adopted_responses_capital_return_bn": 12.529245001688443,
+    "adopted_capital_return_bn": 12.509959297622295
    },
    "high": {
-    "proportional_fiscal_bn": 140.6950126494087,
-    "adopted_responses_fiscal_bn": 126.52883362991294,
+    "proportional_fiscal_bn": 167.23942084256976,
+    "adopted_responses_fiscal_bn": 162.94778772387403,
     "production_bn": -1.6029752050725807,
-    "uncorrected_bn": 124.92585842484036,
-    "corrections_bn": -7.466841707250339,
-    "adopted_bn": 117.45901671759002
+    "uncorrected_bn": 161.34481251880143,
+    "corrections_bn": -8.391874810788693,
+    "adopted_bn": 152.95293770801274,
+    "proportional_capital_return_bn": 22.18554261933363,
+    "adopted_responses_capital_return_bn": 22.18554261933363,
+    "adopted_capital_return_bn": 21.980783809859666
    }
   },
   "G3plus": {
    "low": {
-    "proportional_fiscal_bn": 100.78039691711446,
-    "adopted_responses_fiscal_bn": 83.96660245512315,
+    "proportional_fiscal_bn": 119.50917371215486,
+    "adopted_responses_fiscal_bn": 109.38769471755644,
     "production_bn": -2.069697327018185,
-    "uncorrected_bn": 81.89690512810498,
-    "corrections_bn": -6.053457610573346,
-    "adopted_bn": 75.84344751753163
+    "uncorrected_bn": 107.31799739053827,
+    "corrections_bn": -6.85073490321264,
+    "adopted_bn": 100.46726248732563,
+    "proportional_capital_return_bn": 13.264601008770459,
+    "adopted_responses_capital_return_bn": 12.418375491499333,
+    "adopted_capital_return_bn": 12.53895924693715
    },
    "high": {
-    "proportional_fiscal_bn": 139.1429428841047,
-    "adopted_responses_fiscal_bn": 122.32914842211342,
+    "proportional_fiscal_bn": 166.81311051295745,
+    "adopted_responses_fiscal_bn": 161.56528998321588,
     "production_bn": -1.3656449558421966,
-    "uncorrected_bn": 120.96350346627122,
-    "corrections_bn": -3.380443355931135,
-    "adopted_bn": 117.58306011034009
+    "uncorrected_bn": 160.1996450273737,
+    "corrections_bn": -4.095112389512622,
+    "adopted_bn": 156.10453263786107,
+    "proportional_capital_return_bn": 22.205991842582794,
+    "adopted_responses_capital_return_bn": 22.205991842582794,
+    "adopted_capital_return_bn": 22.239013775373337
    }
   }
  },
  "allocation_swap": {
   "a": {
    "G1": {
-    "low_spec_personal_bn": 49.29335108989216,
-    "high_spec_shared_bn": 85.40637652464252
+    "low_spec_personal_bn": 63.549232758483704,
+    "high_spec_shared_bn": 109.61265938713113
    },
    "G2": {
-    "low_spec_personal_bn": 111.3681551777973,
-    "high_spec_shared_bn": 111.005451806004
+    "low_spec_personal_bn": 135.06553921032918,
+    "high_spec_shared_bn": 144.82364945714218
    },
    "G3plus": {
-    "low_spec_personal_bn": 112.0692500986623,
-    "high_spec_shared_bn": 81.27385622990495
+    "low_spec_personal_bn": 137.79123315938924,
+    "high_spec_shared_bn": 118.14807662102649
    }
   },
   "b": {
    "G1": {
-    "low_spec_personal_bn": 145.86179675383832,
-    "high_spec_shared_bn": 145.06364816106117
+    "low_spec_personal_bn": 169.57797053795275,
+    "high_spec_shared_bn": 180.0844315822817
    },
    "G2": {
-    "low_spec_personal_bn": 60.92611541058263,
-    "high_spec_shared_bn": 73.04828351791865
+    "low_spec_personal_bn": 80.17286758805207,
+    "high_spec_shared_bn": 102.23230130260343
    },
    "G3plus": {
-    "low_spec_personal_bn": 65.94284420193088,
-    "high_spec_shared_bn": 59.57375288157165
+    "low_spec_personal_bn": 86.65516700219735,
+    "high_spec_shared_bn": 90.26765258041469
    }
   }
  },
@@ -1088,12 +1407,12 @@
    "low": {
     "sept24": 56,
     "sept26": 56,
-    "case": 48
+    "sept26_schools": 48
    },
    "high": {
     "sept24": 7,
     "sept26": 7,
-    "case": 11
+    "sept26_schools": 11
    }
   },
   "union": {
@@ -1288,12 +1607,12 @@
    "low": {
     "sept24": 56,
     "sept26": 56,
-    "case": 48
+    "sept26_schools": 48
    },
    "high": {
     "sept24": 7,
     "sept26": 7,
-    "case": 11
+    "sept26_schools": 11
    }
   },
   "union": {
@@ -1441,5 +1760,531 @@
    "high": 11
   },
   "rule": "at one school response the growth and decline specifications are identical; indexOf takes the first (growth)"
+ },
+ "change_from_sept26_schools": {
+  "specifications": {
+   "low": 48,
+   "high": 11
+  },
+  "parts": [
+   "long_run_responses_bn",
+   "rental_assistance_bn",
+   "capital_core_bn",
+   "capital_block_bn",
+   "enterprise_rekey_bn",
+   "enterprise_surplus_receipt_bn",
+   "capital_enterprise_bn"
+  ],
+  "rule": "main_case.cjs change_at_fixed_specifications, per generation: the parts add to change_bn; the items after change_bn are outside the sum. The capital return is an imputed resource cost (the opportunity cost of the capital at 2% / 3%), not a payment; rental assistance is a capped program, whose slots the group takes from other eligible households; the enterprise surplus is a receipt, the group's share of the enterprises' operating loss (national -$47.46bn), at response 1",
+  "union": {
+   "low": {
+    "sept26_schools_bn": 258.4884953757316,
+    "long_run_responses_bn": 19.44049843959698,
+    "rental_assistance_bn": 4.532065856478937,
+    "capital_core_bn": 15.994250944515937,
+    "capital_block_bn": 6.178193127855972,
+    "enterprise_rekey_bn": 0,
+    "enterprise_surplus_receipt_bn": 5.5611432821434805,
+    "capital_enterprise_bn": 11.624709964070824,
+    "sept27_bn": 321.8193569903937,
+    "change_bn": 63.330861614662126,
+    "long_run_by_line_bn": {
+     "economic_affairs_services": 13.989872144130059,
+     "recreation_culture": 5.450626295466896
+    },
+    "enterprise_surplus_amount_bn": -5.5611432821434805,
+    "enterprise_surplus_share": 0.11717537467643237,
+    "enterprise_rekey_receipt_move_bn": 0.14567442685651955,
+    "capital_return_bn": 33.797154036442734,
+    "capital_by_level_bn": {
+     "state_local": 32.96969696536193,
+     "federal": 0.8274570710807956
+    },
+    "of_which_public_housing_bn": 0.9852152372944304,
+    "enterprise_rekey_against_model_json_share_bn": -0.45018428669538935
+   },
+   "high": {
+    "sept26_schools_bn": 291.95477332385275,
+    "long_run_responses_bn": 29.632449319341333,
+    "rental_assistance_bn": 4.532065856478937,
+    "capital_core_bn": 25.779716608423808,
+    "capital_block_bn": 12.472841613037316,
+    "enterprise_rekey_bn": 0,
+    "enterprise_surplus_receipt_bn": 5.5611432821434805,
+    "capital_enterprise_bn": 17.43706494610623,
+    "sept27_bn": 387.37005494938387,
+    "change_bn": 95.41528162553112,
+    "long_run_by_line_bn": {
+     "economic_affairs_services": 23.266194038103873,
+     "recreation_culture": 6.366255281237539
+    },
+    "enterprise_surplus_amount_bn": -5.5611432821434805,
+    "enterprise_surplus_share": 0.11717537467643237,
+    "enterprise_rekey_receipt_move_bn": 0.14567442685651955,
+    "capital_return_bn": 55.68962316756736,
+    "capital_by_level_bn": {
+     "state_local": 53.94987839416294,
+     "federal": 1.7397447734044158
+    },
+    "of_which_public_housing_bn": 1.4778228559416455,
+    "enterprise_rekey_against_model_json_share_bn": -0.6024392166148118
+   }
+  },
+  "a": {
+   "G1": {
+    "low": {
+     "sept26_schools_bn": 77.64578013178742,
+     "long_run_responses_bn": 4.979008421401829,
+     "rental_assistance_bn": 0.8540419697127533,
+     "capital_core_bn": 3.958991599792491,
+     "capital_block_bn": 1.5585616045580706,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 1.5455256221946139,
+     "capital_enterprise_bn": 3.2306822875327144,
+     "sept27_bn": 93.7725916369799,
+     "change_bn": 16.126811505192478,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 3.464197137241892,
+      "recreation_culture": 1.5148112841599364
+     },
+     "enterprise_surplus_amount_bn": -1.5455256221946139,
+     "enterprise_surplus_share": 0.03256480451316085,
+     "enterprise_rekey_receipt_move_bn": 0.15979507790578085,
+     "capital_return_bn": 8.748235491883275,
+     "capital_by_level_bn": {
+      "state_local": 8.521381874191489,
+      "federal": 0.22685361769178755
+     },
+     "of_which_public_housing_bn": 0.27380617893883696,
+     "enterprise_rekey_against_model_json_share_bn": -0.4938219749118957
+    },
+    "high": {
+     "sept26_schools_bn": 56.91269649592381,
+     "long_run_responses_bn": 7.5304949333455085,
+     "rental_assistance_bn": 0.8540419697127533,
+     "capital_core_bn": 3.4855337894896015,
+     "capital_block_bn": 3.13826836154565,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 1.5455256221946139,
+     "capital_enterprise_bn": 4.846023431299071,
+     "sept27_bn": 78.312584603511,
+     "change_bn": 21.399888107587188,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 5.761216539432908,
+      "recreation_culture": 1.7692783939125925
+     },
+     "enterprise_surplus_amount_bn": -1.5455256221946139,
+     "enterprise_surplus_share": 0.03256480451316085,
+     "enterprise_rekey_receipt_move_bn": 0.15979507790578085,
+     "capital_return_bn": 11.469825582334323,
+     "capital_by_level_bn": {
+      "state_local": 10.99757979367506,
+      "federal": 0.4722457886592632
+     },
+     "of_which_public_housing_bn": 0.4107092684082554,
+     "enterprise_rekey_against_model_json_share_bn": -0.6608354234149658
+    }
+   },
+   "G2": {
+    "low": {
+     "sept26_schools_bn": 104.99926772641116,
+     "long_run_responses_bn": 6.661142371963265,
+     "rental_assistance_bn": 1.4019797903588795,
+     "capital_core_bn": 6.217335602675076,
+     "capital_block_bn": 2.0969793469387152,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 2.0071536797310348,
+     "capital_enterprise_bn": 4.195644348008508,
+     "sept27_bn": 127.57950286608664,
+     "change_bn": 22.58023513967548,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 4.693876996706895,
+      "recreation_culture": 1.967265375256369
+     },
+     "enterprise_surplus_amount_bn": -2.0071536797310348,
+     "enterprise_surplus_share": 0.0422914808202915,
+     "enterprise_rekey_receipt_move_bn": -0.007058021732610165,
+     "capital_return_bn": 12.509959297622295,
+     "capital_by_level_bn": {
+      "state_local": 12.21167349746091,
+      "federal": 0.2982858001613873
+     },
+     "of_which_public_housing_bn": 0.35558846239624375,
+     "enterprise_rekey_against_model_json_share_bn": 0.021811724595323767
+    },
+    "high": {
+     "sept26_schools_bn": 117.45901671759002,
+     "long_run_responses_bn": 10.104003710473165,
+     "rental_assistance_bn": 1.4019797903588795,
+     "capital_core_bn": 11.460736082236618,
+     "capital_block_bn": 4.226581205610282,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 2.0071536797310348,
+     "capital_enterprise_bn": 6.2934665220127615,
+     "sept27_bn": 152.95293770801274,
+     "change_bn": 35.49392099042272,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 7.806265266133773,
+      "recreation_culture": 2.2977384443394135
+     },
+     "enterprise_surplus_amount_bn": -2.0071536797310348,
+     "enterprise_surplus_share": 0.0422914808202915,
+     "enterprise_rekey_receipt_move_bn": -0.007058021732610165,
+     "capital_return_bn": 21.980783809859666,
+     "capital_by_level_bn": {
+      "state_local": 21.358940887028584,
+      "federal": 0.6218429228310762
+     },
+     "of_which_public_housing_bn": 0.5333826935943656,
+     "enterprise_rekey_against_model_json_share_bn": 0.029188576026683677
+    }
+   },
+   "G3plus": {
+    "low": {
+     "sept26_schools_bn": 75.84344751753163,
+     "long_run_responses_bn": 7.800347646231728,
+     "rental_assistance_bn": 2.2760440964072473,
+     "capital_core_bn": 5.817923742048366,
+     "capital_block_bn": 2.522652176359133,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 2.0084639802178574,
+     "capital_enterprise_bn": 4.198383328529654,
+     "sept27_bn": 100.46726248732563,
+     "change_bn": 24.623814969793997,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 5.831798010181114,
+      "recreation_culture": 1.9685496360506163
+     },
+     "enterprise_surplus_amount_bn": -2.0084639802178574,
+     "enterprise_surplus_share": 0.04231908934298056,
+     "enterprise_rekey_receipt_move_bn": -0.00706262931667645,
+     "capital_return_bn": 12.53895924693715,
+     "capital_by_level_bn": {
+      "state_local": 12.236641593709528,
+      "federal": 0.30231765322762266
+     },
+     "of_which_public_housing_bn": 0.3558205959593542,
+     "enterprise_rekey_against_model_json_share_bn": 0.021825963621296296
+    },
+    "high": {
+     "sept26_schools_bn": 117.58306011034009,
+     "long_run_responses_bn": 11.997950675522503,
+     "rental_assistance_bn": 2.2760440964072473,
+     "capital_core_bn": 10.833446736697589,
+     "capital_block_bn": 5.107992045881271,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 2.0084639802178574,
+     "capital_enterprise_bn": 6.297574992794481,
+     "sept27_bn": 156.10453263786107,
+     "change_bn": 38.521472527520984,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 9.69871223253693,
+      "recreation_culture": 2.2992384429855623
+     },
+     "enterprise_surplus_amount_bn": -2.0084639802178574,
+     "enterprise_surplus_share": 0.04231908934298056,
+     "enterprise_rekey_receipt_move_bn": -0.00706262931667645,
+     "capital_return_bn": 22.239013775373337,
+     "capital_by_level_bn": {
+      "state_local": 21.59335771345926,
+      "federal": 0.6456560619140782
+     },
+     "of_which_public_housing_bn": 0.5337308939390314,
+     "enterprise_rekey_against_model_json_share_bn": 0.029207630773612436
+    }
+   }
+  },
+  "b": {
+   "G1": {
+    "low": {
+     "sept26_schools_bn": 135.5644409991673,
+     "long_run_responses_bn": 6.672013372644841,
+     "rental_assistance_bn": 1.2676586682627544,
+     "capital_core_bn": 6.663821147944237,
+     "capital_block_bn": 2.06426513501601,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 2.1947486911980403,
+     "capital_enterprise_bn": 4.587782706682471,
+     "sept27_bn": 159.01473072091565,
+     "change_bn": 23.450289721748362,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 4.520881074620498,
+      "recreation_culture": 2.1511322980243457
+     },
+     "enterprise_surplus_amount_bn": -2.1947486911980403,
+     "enterprise_surplus_share": 0.04624417806991235,
+     "enterprise_rekey_receipt_move_bn": 0.15735518703728113,
+     "capital_return_bn": 13.315868989642716,
+     "capital_by_level_bn": {
+      "state_local": 13.021829893641996,
+      "federal": 0.29403909600071937
+     },
+     "of_which_public_housing_bn": 0.38882289897894584,
+     "enterprise_rekey_against_model_json_share_bn": -0.4862818695279145
+    },
+    "high": {
+     "sept26_schools_bn": 155.38170272329594,
+     "long_run_responses_bn": 10.031052667136464,
+     "rental_assistance_bn": 1.2676586682627544,
+     "capital_core_bn": 10.896467637348175,
+     "capital_block_bn": 4.148007790800485,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 2.1947486911980403,
+     "capital_enterprise_bn": 6.881674060023706,
+     "sept27_bn": 190.80131223806558,
+     "change_bn": 35.41960951476963,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 7.5185602285468764,
+      "recreation_culture": 2.512492438589584
+     },
+     "enterprise_surplus_amount_bn": -2.1947486911980403,
+     "enterprise_surplus_share": 0.04624417806991235,
+     "enterprise_rekey_receipt_move_bn": 0.15735518703728113,
+     "capital_return_bn": 21.926149488172364,
+     "capital_by_level_bn": {
+      "state_local": 21.303889668385168,
+      "federal": 0.6222598197871972
+     },
+     "of_which_public_housing_bn": 0.5832343484684187,
+     "enterprise_rekey_against_model_json_share_bn": -0.6507452107732092
+    }
+   },
+   "G2": {
+    "low": {
+     "sept26_schools_bn": 67.90496124478092,
+     "long_run_responses_bn": 6.065607087500496,
+     "rental_assistance_bn": 1.2576154381279423,
+     "capital_core_bn": 4.869343307145321,
+     "capital_block_bn": 1.9326610825631998,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 1.7095700298256191,
+     "capital_enterprise_bn": 3.5735917511427266,
+     "sept27_bn": 87.31334994108622,
+     "change_bn": 19.408388696305295,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 4.390011461607716,
+      "recreation_culture": 1.6755956258927855
+     },
+     "enterprise_surplus_amount_bn": -1.7095700298256191,
+     "enterprise_surplus_share": 0.036021281707240185,
+     "enterprise_rekey_receipt_move_bn": -0.0059275243315453086,
+     "capital_return_bn": 10.375596140851249,
+     "capital_by_level_bn": {
+      "state_local": 10.108096590580516,
+      "federal": 0.2674995502707335
+     },
+     "of_which_public_housing_bn": 0.30286837744574374,
+     "enterprise_rekey_against_model_json_share_bn": 0.018318097216138085
+    },
+    "high": {
+     "sept26_schools_bn": 66.05684360278873,
+     "long_run_responses_bn": 9.257986620891955,
+     "rental_assistance_bn": 1.2576154381279423,
+     "capital_core_bn": 7.452516100381749,
+     "capital_block_bn": 3.903487190489642,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 1.7095700298256191,
+     "capital_enterprise_bn": 5.360387626714089,
+     "sept27_bn": 94.99840660921973,
+     "change_bn": 28.941563006430997,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 7.300914364547716,
+      "recreation_culture": 1.9570722563442071
+     },
+     "enterprise_surplus_amount_bn": -1.7095700298256191,
+     "enterprise_surplus_share": 0.036021281707240185,
+     "enterprise_rekey_receipt_move_bn": -0.0059275243315453086,
+     "capital_return_bn": 16.71639091758548,
+     "capital_by_level_bn": {
+      "state_local": 16.160488272905578,
+      "federal": 0.5559026446799038
+     },
+     "of_which_public_housing_bn": 0.45430256616861564,
+     "enterprise_rekey_against_model_json_share_bn": 0.024513383658444354
+    }
+   },
+   "G3plus": {
+    "low": {
+     "sept26_schools_bn": 55.019093131782,
+     "long_run_responses_bn": 6.702877979451479,
+     "rental_assistance_bn": 2.0067917500881975,
+     "capital_core_bn": 4.461086489426375,
+     "capital_block_bn": 2.18126691027671,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 1.6568245611198478,
+     "capital_enterprise_bn": 3.463335506245681,
+     "sept27_bn": 75.4912763283903,
+     "change_bn": 20.4721831966083,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 5.078979607901689,
+      "recreation_culture": 1.6238983715497919
+     },
+     "enterprise_surplus_amount_bn": -1.6568245611198478,
+     "enterprise_surplus_share": 0.0349099148992804,
+     "enterprise_rekey_receipt_move_bn": -0.0057532358492435876,
+     "capital_return_bn": 10.105688905948767,
+     "capital_by_level_bn": {
+      "state_local": 9.83977048113942,
+      "federal": 0.2659184248093449
+     },
+     "of_which_public_housing_bn": 0.2935239608697456,
+     "enterprise_rekey_against_model_json_share_bn": 0.017779485616486568
+    },
+    "high": {
+     "sept26_schools_bn": 70.51622699776932,
+     "long_run_responses_bn": 10.3434100313128,
+     "rental_assistance_bn": 2.0067917500881975,
+     "capital_core_bn": 7.430732870693885,
+     "capital_block_bn": 4.421346631747076,
+     "enterprise_rekey_bn": 0,
+     "enterprise_surplus_receipt_bn": 1.6568245611198478,
+     "capital_enterprise_bn": 5.195003259368522,
+     "sept27_bn": 101.57033610209963,
+     "change_bn": 31.05410910433031,
+     "long_run_by_line_bn": {
+      "economic_affairs_services": 8.446719445009021,
+      "recreation_culture": 1.8966905863037788
+     },
+     "enterprise_surplus_amount_bn": -1.6568245611198478,
+     "enterprise_surplus_share": 0.0349099148992804,
+     "enterprise_rekey_receipt_move_bn": -0.0057532358492435876,
+     "capital_return_bn": 17.04708276180948,
+     "capital_by_level_bn": {
+      "state_local": 16.485500452872163,
+      "federal": 0.561582308937317
+     },
+     "of_which_public_housing_bn": 0.44028594130461834,
+     "enterprise_rekey_against_model_json_share_bn": 0.023792610500052547
+    }
+   }
+  }
+ },
+ "beside_the_account": {
+  "without_capital_return": {
+   "options": {
+    "capital": false
+   },
+   "specifications": {
+    "low": 48,
+    "high": 11
+   },
+   "union_bn": [
+    288.02220295395097,
+    331.6804317818165
+   ],
+   "a": {
+    "G1": [
+     85.02435614509662,
+     66.84275902117668
+    ],
+    "G2": [
+     115.06954356846434,
+     130.97215389815307
+    ],
+    "G3plus": [
+     87.92830324038847,
+     133.86551886248773
+    ]
+   },
+   "b": {
+    "G1": [
+     145.69886173127293,
+     168.8751627498932
+    ],
+    "G2": [
+     76.93775380023497,
+     78.28201569163424
+    ],
+    "G3plus": [
+     65.38558742244153,
+     84.52325334029015
+    ]
+   }
+  },
+  "enterprises_out_option_a": {
+   "options": {
+    "enterprises": "A"
+   },
+   "specifications": {
+    "low": 48,
+    "high": 11
+   },
+   "union_bn": [
+    304.6335037441794,
+    364.37184672113415
+   ],
+   "a": {
+    "G1": [
+     88.99638372725256,
+     71.92103555001731
+    ],
+    "G2": [
+     121.3767048383471,
+     144.65231750626896
+    ],
+    "G3plus": [
+     94.2604151785781,
+     147.7984936648487
+    ]
+   },
+   "b": {
+    "G1": [
+     152.23219932303513,
+     181.72488948684384
+    ],
+    "G2": [
+     82.03018816011789,
+     87.92844895268001
+    ],
+    "G3plus": [
+     70.37111626102475,
+     94.71850828161128
+    ]
+   }
+  },
+  "capital_return_at_7pct": {
+   "options": {
+    "rates": {
+     "low": 0.07,
+     "high": 0.07
+    }
+   },
+   "specifications": {
+    "low": 48,
+    "high": 11
+   },
+   "union_bn": [
+    406.3122420815005,
+    461.62288583947367
+   ],
+   "a": {
+    "G1": [
+     115.64318036668809,
+     93.60568537995677
+    ],
+    "G2": [
+     158.8544011101424,
+     182.2606494544923
+    ],
+    "G3plus": [
+     131.8146606046685,
+     185.75655100502553
+    ]
+   },
+   "b": {
+    "G1": [
+     192.30440319502245,
+     220.0361782222954
+    ],
+    "G2": [
+     113.25234029321433,
+     117.28692783266703
+    ],
+    "G3plus": [
+     100.75549859326222,
+     124.29977978451228
+    ]
+   }
+  }
  }
 }

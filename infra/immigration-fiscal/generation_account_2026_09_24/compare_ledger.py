@@ -23,6 +23,9 @@ object in its own terms:
                                   September 23 case under the September 24 responses, column `sept23`
                                   in a --case sept24 run)
             adopted               plus this generation's share of the 270 correction edits
+            capital_return_*      in a --case sept27 run: the return on public capital (2% / 3%) inside the
+                                  proportional, adopted_responses (and uncorrected) and adopted columns,
+                                  which include it as part of the direct fiscal lines; the ledger has none
 The account columns come from run_generations.cjs (summary.ledger_bridge_a); nothing is converted from
 one object to the other.
 Output: ledger_comparison.csv beside the summary it reads (derived/, or --out-dir DIR for a
@@ -62,6 +65,8 @@ def main():
     ours, bridge = summary["conventions"]["a"], summary["ledger_bridge_a"]
     stem = "uncorrected" if "uncorrected_bn" in bridge["G1"]["low"] else "sept23"
     account = ["proportional", "adopted_responses", stem, "adopted"]
+    # A sept27 bridge also reports the capital return inside its fiscal columns.
+    capital = [k for k in ["proportional", "adopted_responses", "adopted"] if f"{k}_capital_return_bn" in bridge["G1"]["low"]]
     ex = profiles[profiles.account == "expanded"]
     rows, fails = [], []
     for g, group in GROUPS.items():
@@ -84,6 +89,8 @@ def main():
                        ledger_own=block.net_total.sum() / pop)
             row.update({f"account_{k}": -v * 1e9 / pop for k, v in parts.items()})
             row.update(ledger_own_bn=block.net_total.sum() / 1e9, **{f"account_{k}_bn": -v for k, v in parts.items()})
+            row.update({f"account_capital_return_{k}": -b[f"{k}_capital_return_bn"] * 1e9 / pop for k in capital})
+            row.update({f"account_capital_return_{k}_bn": -b[f"{k}_capital_return_bn"] for k in capital})
             rows.append(row)
     out = pd.DataFrame(rows)
     shared = out[out.allocation == "shared"]
@@ -95,7 +102,7 @@ def main():
     out.to_csv(out_dir / "ledger_comparison.csv", index=False, lineterminator="\n", float_format="%.6f")
     show = out.set_index(["generation", "allocation"])[
         ["ledger_published_gap", "ledger_gap_white_ages", "ledger_gap_own_ages", "ledger_white_at_own_ages",
-         "ledger_own"] + [f"account_{k}" for k in account]].T.round(0)
+         "ledger_own"] + [f"account_{k}" for k in account] + [f"account_capital_return_{k}" for k in capital]].T.round(0)
     print(show.to_string())
     print(f"  ✓ ledger read through lifetime.load_age_profiles ({len(fingerprints)} fingerprinted files)")
     print("  ✓ ledger group populations equal this lane's convention (a) populations (1e-9)")
