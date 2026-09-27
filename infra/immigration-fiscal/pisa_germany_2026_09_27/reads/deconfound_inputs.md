@@ -1,0 +1,1454 @@
+# Part-2 covariate inputs, verbatim
+
+UNESCO: `_cache/unesco_duration_school_closures.xlsx` (https://covid19.uis.unesco.org/wp-content/uploads/sites/11/2022/09/SDG-duration-of-school-closures-by-country.xlsx), sheet `database`: Country | SDG Region | Days fully closed | Days partially closed | Total (16/02/2020-30/04/2022, per sheet `codebook`).
+World Bank: `_cache/wb_gdppc_ppp_kd.json` (https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.PP.KD?date=2011:2022), GDP per capita, PPP (constant international $).
+OECD: `_cache/statlink_qmuad8.xlsx` (https://stat.link/qmuad8) Tables I.B1.7.8 (ESCS change), I.B1.7.13/7.14 (age at arrival).
+
+## Albania
+- UNESCO row: Albania | Northern America and Europe | 79 | 122 | 201
+- World Bank ALB: 2012 = 12463.518369846; 2022 = 19388.7927279351
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.332467645406723
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.030131448060274124
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Australia
+- UNESCO row: Australia | Oceania | 0 | 321 | 321
+- World Bank AUS: 2012 = 54403.8836902433; 2022 = 60029.1329190733
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.2397564798593521
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.018899140879511833
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 49.42295007100216
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 1.650202092016666
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 37.29460700664661
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 1.3272437851481846
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 13.28244292235123
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 0.9647983463569052
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 31.49560364119544
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 1.6445677294250314
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 40.30156765574115
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 1.5485370428402616
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 28.2028287030634
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 1.698330420496363
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 29.82577512250427
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 1.376140378908265
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 42.89445782409121
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 1.357190943233982
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 27.27976705340452
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 1.4286269614537366
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 40.00523552932172
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 1.4288069645124828
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 37.36368089377704
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 1.3212519022930906
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 22.63108357690125
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 1.4174226963084429
+
+## Austria
+- UNESCO row: Austria | Northern America and Europe | 108 | 165 | 273
+- World Bank AUT: 2012 = 61376.6345930428; 2022 = 65694.4591501468
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.2904169261455536
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.028149055317044258
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 27.73320077033117
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.234694440818053
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 51.98781417673549
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 2.6790057052358702
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 20.27898505293333
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 2.009075012223492
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 46.10783503097859
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 3.6617405234168157
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 41.50978227129936
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.4462185272327175
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 12.38238269772205
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.6040009000841233
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 45.86653569267462
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 2.8596547139817674
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 28.14046224975197
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 2.3098439083458713
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 25.99300205757341
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 1.8670472586526783
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 42.25454947431247
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 2.5496592810212078
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 29.99535661811751
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 2.30793130436861
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 27.75009390757003
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 2.1245749564269043
+
+## Belgium
+- UNESCO row: Belgium | Northern America and Europe | 61 | 141 | 202
+- World Bank BEL: 2012 = 56356.8251292137; 2022 = 62602.9270469765
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.1958005577325821
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.025046292692422867
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 39.68165387899757
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 1.8078905417243891
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 38.96809014597649
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 1.8858404166702034
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 21.35025597502595
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.840768619457338
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 41.31945709351672
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 2.6294692426203157
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 31.01742283729748
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 2.2015641359029736
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 27.66312006918581
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 3.393231079913248
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 37.3595973074823
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 1.7646124763594409
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 37.29062223027997
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 2.502633002685958
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 25.34978046223771
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.5748490765313328
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 33.90559023823948
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 2.592822165930108
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 34.49339464437725
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 2.2982720516444792
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 31.60101511738327
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 2.9968525442583087
+
+## Bulgaria
+- UNESCO row: Bulgaria | Northern America and Europe | 124 | 211 | 335
+- World Bank BGR: 2012 = 22618.8104278919; 2022 = 32433.6587569626
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.26104068756103516
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.04494800418615341
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 33.77002092235691
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 9.043816017671634
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 49.87143257060161
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 7.236806647989815
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 16.35854650704149
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 5.516941598260313
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Canada
+- UNESCO row: Canada | Northern America and Europe | 92 | 270 | 362
+- World Bank CAN: 2012 = 54034.7821680318; 2022 = 58583.1299860138
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.2336912304162979
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.020945347845554352
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 33.95129717863218
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 1.3209213781060434
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 36.02691531538147
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 1.1531518421375293
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 30.02178750598635
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.2290827801638178
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 37.10812681795796
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 1.7251100587785253
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 39.57649800144836
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 1.6191732781490562
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 23.31537518059369
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 1.3762974236555179
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 38.89409333435799
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 1.3122074210291903
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 37.94126749318952
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 1.2020713600346122
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 23.16463917245249
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 1.202882530712716
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 32.69418028658546
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 1.3644885572956613
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 33.77398602250349
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 1.2015276576528175
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 33.53183369091104
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 1.5224442794722814
+
+## Chile
+- UNESCO row: Chile | Latin America and the Caribbean | 95 | 391 | 486
+- World Bank CHL: 2012 = 26676.8110154019; 2022 = 29560.4513805785
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.4298611879348755
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.04791601747274399
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 12.30639291158278
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 1.997811060220293
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 35.70614002982288
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 2.581507616565576
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 51.98746705859435
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 2.9591392236168206
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 17.95146867446148
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 5.915743381346191
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 44.99101114836604
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 8.648789659774025
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 37.05752017717248
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 9.37386682388127
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 27.97217879968179
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 5.48584534779688
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 31.89851666212673
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 5.504478070689416
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 40.12930453819149
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 6.114439737142115
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 21.05991115683493
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 3.3384382293926955
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 24.6923622252873
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 3.6456176492841306
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 54.24772661787778
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 4.4795884368371786
+
+## Colombia
+- UNESCO row: Colombia | Latin America and the Caribbean | 161 | 379 | 540
+- World Bank COL: 2012 = 15279.4790008058; 2022 = 18458.7209460704
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.3359910547733307
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.058399640023708344
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 10.37704510991121
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.7801483134835117
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 30.78186932823323
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 5.721542565865559
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 58.84108556185556
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 4.891019394864997
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Costa Rica
+- UNESCO row: Costa Rica | Latin America and the Caribbean | 303 | 269 | 572
+- World Bank CRI: 2012 = 19970.6856013628; 2022 = 25290.0087466975
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | m
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | m
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 42.79428321809336
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 3.859456494921443
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 37.7429323155997
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.439973373357993
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 19.46278446630695
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 3.2184510709064944
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 62.06937369216512
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 5.240304228517384
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 25.16392762256815
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 5.046431036400952
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 12.76669868526675
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 3.9836053781430336
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 45.20334951323982
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 4.56695128502627
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 35.6638574417184
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 4.18779006312433
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 19.13279304504179
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 3.5688078659215168
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 40.38357907965045
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 3.5120694725447885
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 35.03706835296213
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 3.7035955778297915
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 24.57935256738742
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 3.360154029024471
+
+## Croatia
+- UNESCO row: Croatia | Northern America and Europe | 56 | 14 | 70
+- World Bank HRV: 2012 = 28259.1638073948; 2022 = 39863.9109377649
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.3372591733932495
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.02270088717341423
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 47.70718103919324
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 6.694023000636941
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 19.14676246528009
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 4.37417587050041
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 33.14605649552666
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 6.285775206960421
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 77.64614999206533
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 3.445335502755528
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 16.28037669850844
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 2.797613777838186
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 6.073473309426211
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.150980352121438
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 59.51870246420798
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 5.651599176724831
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 28.64810856276868
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 4.903435472623865
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 11.83318897302335
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 3.2829298952525403
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 65.73162622371056
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 5.014847056350526
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 14.07306671490011
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 3.3052913453889965
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 20.19530706138932
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 4.846595969844391
+
+## Cyprus
+- UNESCO row: Cyprus | Western Asia and Northern Africa | 93 | 100 | 193
+- World Bank CYP: 2012 = 39190.22265625; 2022 = 50840.9140625
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.35423123836517334
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.016622737050056458
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 37.05296189742457
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 1.9352688151848099
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 32.14291986618707
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 1.9787147119217379
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 30.80411823638836
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.7161079213863086
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 36.27859914649124
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 2.868692593438547
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 40.00109154911996
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 2.751932682062825
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 23.7203093043888
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.625004838784035
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 38.06808303771538
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 2.1336902549817
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 39.01834525381248
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 2.2527158995124035
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 22.91357170847214
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 1.9994946048032312
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 39.28003922123236
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 2.262028889429612
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 34.54914644612573
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 2.9336288985913033
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 26.1708143326419
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 1.8814094419178404
+
+## Czech Republic
+- UNESCO row: Czechia | Northern America and Europe | 140 | 180 | 320
+- World Bank CZE: 2012 = 39347.0492956846; 2022 = 48390.661678675
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.23449571430683136
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.023653438314795494
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 28.62876096163908
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 3.93079527975942
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 33.04605597749606
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 4.243336889929713
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 38.32518306086487
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 4.660213620121116
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 40.32210130839088
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 7.991460134822556
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 33.49650509129447
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 6.216784264228435
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 26.18139360031464
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 6.715304575670721
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 37.66331591724735
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 5.230679114270963
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 42.72310231032487
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 6.201313445420543
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 19.61358177242777
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 4.706839220280677
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 36.61534551344008
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 6.185350918876786
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 28.47136251649455
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 5.600506734583175
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 34.91329197006537
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 6.486236426520407
+
+## Denmark
+- UNESCO row: Denmark | Northern America and Europe | 59 | 185 | 244
+- World Bank DNK: 2012 = 60161.7010660256; 2022 = 69089.4692492289
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.41510093212127686
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.028507905080914497
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 39.31804725124523
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.8524863127030935
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 44.37043112950148
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.0317012571815565
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 16.31152161925327
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 2.168106550358719
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 55.89412968438798
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 3.440609059967872
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 29.90497045983215
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.1058454575629755
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 14.20089985577986
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.048925763269074
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 52.7938404602527
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 3.778491395418256
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 30.79809712116144
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 3.440693045633542
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 16.40806241858588
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.7161888516663892
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 38.96524577345702
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 3.388599209771725
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 36.77149566152729
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 4.00464538478975
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 24.26325856501569
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 3.5785793935565784
+
+## Estonia
+- UNESCO row: Estonia | Northern America and Europe | 102 | 77 | 179
+- World Bank EST: 2012 = 33765.4302075072; 2022 = 43124.6196563775
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.29881906509399414
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.025291115045547485
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 23.70739639959802
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 6.661673662819739
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 14.48025652994702
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 4.508310006066055
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 61.81234707045495
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 8.55733068989267
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 40.15391217630255
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 10.422315344864735
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 27.19766786315973
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 7.501961366730928
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 32.64841996053772
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 7.645258358569904
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 34.34010545905707
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 7.0613730440899625
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 21.68833645201968
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 6.6177827582340445
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 43.97155808892325
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 7.846099977812082
+
+## Finland
+- UNESCO row: Finland | Northern America and Europe | 58 | 172 | 230
+- World Bank FIN: 2012 = 53957.6680986279; 2022 = 57068.3056478074
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | -0.009033462963998318
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.022350838407874107
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 41.88923531492794
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.0265748097595795
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 38.21765186540964
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 1.7583280043801284
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 19.89311281966243
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.6301627770367095
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 37.23185685217537
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 3.2520095430133176
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 44.59100750016549
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.3563545442611455
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 18.17713564765914
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.2547535643821806
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 32.82032046173416
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 5.310537767756665
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 43.05770251925141
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 4.15161870345991
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 24.12197701901443
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 4.2526328564813065
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 35.64453392100257
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 3.647752151371469
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 41.81554049441247
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 4.159107715774916
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 22.53992558458496
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 3.647192312591196
+
+## France
+- UNESCO row: France | Northern America and Europe | 48 | 34 | 82
+- World Bank FRA: 2012 = 49935.6269081617; 2022 = 53673.8137406422
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.17616066336631775
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.02821243740618229
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 37.38390943996751
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.797928112072648
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 43.74234295642638
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.245214099572823
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 18.87374760360612
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 2.4902528471843914
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 46.29378589145537
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 4.691949706933856
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 29.83324926615249
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.4681730398507336
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 23.87296484239214
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 3.7079544930538892
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 37.31989898620259
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 2.7346734118369906
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 34.53928849798099
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 3.241944332754168
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 28.14081251581643
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.848282492800961
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 35.34753316854855
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 3.182913988748971
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 36.20521203690006
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 2.5627283330466493
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 28.44725479455138
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 2.7911704081383233
+
+## Germany
+- UNESCO row: Germany | Northern America and Europe | 100 | 165 | 265
+- World Bank DEU: 2012 = 58110.3768512245; 2022 = 63777.9291029299
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.038650356233119965
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.03636544570326805
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 18.76311341429063
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.2866522962040032
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 61.4573510855485
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 2.573335357174216
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 19.77953550016089
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.8401834452976265
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 60.08519522583033
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 5.514643527629062
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 31.2882478084405
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 4.6557385537958735
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 8.626556965729174
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.8742030436052564
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 55.61946560641158
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 4.724434198633679
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 24.61129039882693
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 3.365587909946504
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 19.76924399476147
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 3.9282629097520014
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 28.65977835009998
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 4.1103907302468015
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 29.18500820206537
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 3.722308295475516
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 42.15521344783465
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 3.866829156648301
+
+## Greece
+- UNESCO row: Greece | Northern America and Europe | 129 | 133 | 262
+- World Bank GRC: 2012 = 31250.2268565956; 2022 = 35828.1756641776
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.23788928985595703
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.03981219604611397
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 59.96197857024722
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 4.1585822554639655
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 23.35149527045814
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 4.660596317945044
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 16.68652615929464
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 4.867013457641514
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 68.12322496188385
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 3.064407201563408
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 24.02915682304777
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 2.8092925404538915
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 7.847618215068361
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.312690969157369
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 58.81276064239405
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 5.901306331595546
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 30.96824859421161
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 5.990511589839842
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 10.21899076339433
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.623714318076715
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 67.7301219740681
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 4.076933750304851
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 24.47435221122173
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 4.116488100313575
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 7.795525814710157
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 2.2618286861885344
+
+## Hungary
+- UNESCO row: Hungary | Northern America and Europe | 143 | 129 | 272
+- World Bank HUN: 2012 = 28179.656464434; 2022 = 40610.9711368238
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.38866126537323
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.03663886338472366
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 23.2236324859726
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 6.325310022634736
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 37.36806185421004
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 6.54902348008437
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 39.40830565981737
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 7.507854729331512
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 46.31119035310237
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 6.870318919765746
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 18.96978646763029
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 5.552251397794906
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 34.71902317926733
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 7.207190385163996
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 34.32692959591827
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 6.9118716954692765
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 15.38321306960966
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 5.47653800405277
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 50.28985733447207
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 7.9793698979186605
+
+## Iceland
+- UNESCO row: Iceland | Northern America and Europe | 0 | 43 | 43
+- World Bank ISL: 2012 = 58203.6379459536; 2022 = 66581.2441801002
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.010022541508078575
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.019161082804203033
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 44.54956057690887
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 4.641510297334069
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 43.63959679363845
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 4.702801495161902
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 11.81084262945267
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 2.7261184048736427
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 35.11442966372567
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 4.128456200405947
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 50.23154937260301
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 5.006923039422791
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 14.65402096367131
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.9431424214575554
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 35.85574199860736
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 5.433422773071264
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 58.17728296767466
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 5.40559807034609
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 5.966975033717977
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.614808407694302
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 49.54677020350576
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 4.597539109639221
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 34.7661364639805
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 4.459402796368988
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 15.68709333251373
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 2.912112745809247
+
+## Ireland
+- UNESCO row: Ireland | Northern America and Europe | 154 | 25 | 179
+- World Bank IRL: 2012 = 59303.0319813561; 2022 = 123007.47648651
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.47646626830101013
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.03668398782610893
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 40.00776060345563
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.9216901403654876
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 28.42029926106497
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 2.8378886433374313
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 31.5719401354794
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 4.442126591059353
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 27.78022765839046
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 1.9132376478622914
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 49.11095053193122
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 2.449143101718311
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 23.10882180967832
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.3777234664219056
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 40.85539881960689
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 2.5477041329721044
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 37.89646227437494
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 2.50649216416513
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 21.24813890601817
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 3.460125472587649
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 55.4211774987789
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 1.8814027429164204
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 21.02825351859684
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 1.7523481917388806
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 23.55056898262427
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 2.082409368659982
+
+## Israel
+- UNESCO row: Israel | Western Asia and Northern Africa | 114 | 115 | 229
+- World Bank ISR: 2012 = 39245.5078117687; 2022 = 48132.3637205177
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.2794966399669647
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.04164861887693405
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 45.71304538893271
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 4.4449122384849655
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 35.99714692370343
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.8782272600240235
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 18.28980768736386
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 2.642090329003389
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 62.54935838800867
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 4.4492360774384085
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 29.93429118300582
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 4.286784298372188
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 7.51635042898551
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 3.1824952323369637
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 47.62843202213548
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 5.965873137923175
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 25.24286807777734
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 2.477425034590072
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 27.12869990008718
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 5.8367010293039785
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 55.82194664384762
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 4.060020914413853
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 27.80235394282199
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 4.100301225101925
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 16.37569941333041
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 2.807188057001623
+
+## Italy
+- UNESCO row: Italy | Northern America and Europe | 93 | 170 | 263
+- World Bank ITA: 2012 = 47795.9579360541; 2022 = 52333.3274270604
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.32604026794433594
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.02593628317117691
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 52.62085562048717
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 3.6373140125584245
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 28.08413588453136
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.447381172032478
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 19.29500849498146
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 2.54242447754895
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 34.96442281120293
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 1.7460104286023754
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 44.67944989114635
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 2.0485415658367208
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 20.35612729765072
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 1.8738240675555753
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 42.26346307132012
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 3.805843563745718
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 41.87117720147288
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 3.403401552070686
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 15.865359727207
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.20285126846577
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 46.45796329427328
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 3.136944759951992
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 36.12697751351529
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 3.577428892413625
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 17.41505919221143
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 3.30836117773881
+
+## Japan
+- UNESCO row: Japan | Asia (Eastern and South-eastern) | 24 | 56 | 80
+- World Bank JPN: 2012 = 42394.9433175064; 2022 = 46819.360613609
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.22866353392601013
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.023355422541499138
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Korea
+- UNESCO row: Republic of Korea | Asia (Eastern and South-eastern) | 79 | 474 | 553
+- World Bank KOR: 2012 = 41537.6728611117; 2022 = 53228.6035655365
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.5054453015327454
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.03810339793562889
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Kosovo
+- UNESCO row: not in file
+- World Bank XKX: 2012 = 8431.66232694657; 2022 = 13022.4627441502
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | m
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | m
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Latvia
+- UNESCO row: Latvia | Northern America and Europe | 112 | 229 | 341
+- World Bank LVA: 2012 = 27496.5454583635; 2022 = 37718.7097958367
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.3246344029903412
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.03289148956537247
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 49.36098431773516
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 9.681766679524873
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 30.81005323956757
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 10.468512389569852
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 19.82896244269728
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 8.5685314231296
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 48.81101337759392
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 7.831710449360558
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 16.82466591119521
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 6.921591483905491
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 34.36432071121087
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 8.625905623846196
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 33.8507357637419
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 7.2596964234177594
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 40.31588813006967
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 8.237956005520147
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 25.83337610618843
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 6.441201521186052
+
+## Lithuania
+- UNESCO row: Lithuania | Northern America and Europe | 70 | 197 | 267
+- World Bank LTU: 2012 = 30932.0983180261; 2022 = 46642.5947251086
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.2900833487510681
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.02646566741168499
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 19.69630609123346
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 7.564652480539896
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 33.00887013780975
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 7.455227915124314
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 47.29482377095677
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 8.03796599869853
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 40.71840276412787
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 13.513410137090755
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 26.21292732285362
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 8.125280302478032
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 33.0686699130185
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 9.341208270903271
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 23.88955365671497
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 9.396353031872948
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 30.38831940750957
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 12.645005290997451
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 45.72212693577546
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 11.37927768030161
+
+## Malta
+- UNESCO row: Malta | Northern America and Europe | 129 | 16 | 145
+- World Bank MLT: 2012 = 38937.1487755674; 2022 = 56874.4339327368
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | m
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | m
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 20.36467663694369
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.7043584520076043
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 42.31258869084761
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.4599718887392306
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 37.32273467220868
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 3.5086373743127526
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 16.36919413004324
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 2.6573108582014378
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 29.81007255236187
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 3.174415639190956
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 53.82073331759489
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 3.290467768337133
+
+## Mexico
+- UNESCO row: Mexico | Latin America and the Caribbean | 374 | 194 | 568
+- World Bank MEX: 2012 = 20898.935720908; 2022 = 21391.8573698845
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.6076905131340027
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.042785659432411194
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 78.00750278243656
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 6.022434315379805
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 9.879210388293739
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.6368007648401037
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 12.11328682926968
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 5.1006918995521735
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 74.2474882330348
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 5.856695537756772
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") | †
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 17.10129799607423
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 4.589821672071477
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") | †
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 8.651213770890976
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.796187527523437
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) | †
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 87.73076942876052
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 4.56850802563411
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") | †
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 9.737830517343268
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 4.259335621755232
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") | †
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 2.53140005389621
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 1.8544700066676965
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) | †
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Moldova
+- UNESCO row: Republic of Moldova | Northern America and Europe | 112 | 0 | 112
+- World Bank MDA: 2012 = 10158.3854676883; 2022 = 15350.3120408391
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | m
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | m
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Montenegro
+- UNESCO row: not in file
+- World Bank MNE: 2012 = 19576.412051459; 2022 = 25583.3155690619
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.1476982980966568
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.01837756671011448
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 52.259949785074
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 5.792657842782313
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 25.65698030073586
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.9008213678327386
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 22.08306991419014
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 5.894396351114072
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 66.68984516305431
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 4.851563545584491
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 13.94565216322251
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.519018886840157
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 19.36450267372316
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 3.9868330973266706
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 54.0176721095696
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 5.358609372648098
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 24.96659705789269
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 4.532906241944622
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 21.01573083253771
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 3.816980713423462
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 45.46772048960456
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 4.302907002731615
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 26.50727957078675
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 3.838296829728852
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 28.02499993960868
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 3.65710273426739
+
+## Netherlands
+- UNESCO row: Netherlands | Northern America and Europe | 81 | 134 | 215
+- World Bank NLD: 2012 = 61480.8416416324; 2022 = 71324.0360229425
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.2246278077363968
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.03349057585000992
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 39.10057687113947
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 4.123672771353636
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 45.80599906514863
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.616970721155248
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 15.0934240637119
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 3.2353610047219235
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 69.34359297596855
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 5.586387933883607
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 26.28490602109416
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 5.203024040509975
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 4.371501002937281
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.070455195203511
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 53.71527609440441
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 4.764248151732154
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 36.14844654532036
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 4.961847890815686
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 10.13627736027522
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.791359855352744
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 32.73867565049071
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 5.155201833630276
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 37.42146473481107
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 4.365400874938652
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 29.83985961469822
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 4.254811885555495
+
+## New Zealand
+- UNESCO row: New Zealand | Oceania | 54 | 135 | 189
+- World Bank NZL: 2012 = 42693.4234516571; 2022 = 49842.9845334162
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.3714597225189209
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.03736889362335205
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 36.73605397482513
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.150105635010505
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 39.54320196868781
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 2.0481304600269503
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 23.72074405648705
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.5626185264522887
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 31.07079676893348
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 1.9504275248010117
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 41.33197678042863
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 2.045229674033729
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 27.59722645063788
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 1.9646516966691001
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 36.28231912873586
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 1.7932921625294351
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 40.49729384339129
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 1.8974215092121145
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 23.22038702787284
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 1.6135901184611796
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 38.19514817583272
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 1.8276625781235454
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 30.45659852023471
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 1.60572824050307
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 31.34825330393256
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 1.8075687655038102
+
+## North Macedonia
+- UNESCO row: North Macedonia | Northern America and Europe | 142 | 235 | 377
+- World Bank MKD: 2012 = 17189.9956305456; 2022 = 22822.2333994259
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | m
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | m
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 62.28652432893763
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 7.988077973030922
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 9.702905477876278
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 4.98946199877508
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 28.01057019318609
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 6.769045344954718
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Norway
+- UNESCO row: Norway | Northern America and Europe | 34 | 172 | 206
+- World Bank NOR: 2012 = 85925.8723352057; 2022 = 95109.8201605729
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.26032641530036926
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.02402646467089653
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 46.48497202564397
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.4112408803861927
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 41.85262477036916
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 2.2361024502680213
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 11.66240320398687
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.480315414506473
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 40.23342073524491
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 2.8931029159037456
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 39.67728024389312
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.3689971740218563
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 20.08929902086198
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.9535346909739317
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 32.5978091879435
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 2.8370174688112972
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 44.09352280620762
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 2.980570108938057
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 23.30866800584889
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.788993054874234
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 34.46976315426001
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 2.5469878098263616
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 43.9526033796454
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 2.542157571687604
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 21.5776334660946
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 2.0037885319949895
+
+## Poland
+- UNESCO row: Poland | Northern America and Europe | 180 | 131 | 311
+- World Bank POL: 2012 = 28952.9157305301; 2022 = 43405.0215797441
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.36324888467788696
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.034137461334466934
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 6.101801091980843
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 3.3679481739235277
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 32.70651799836271
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 7.702276867130308
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 61.19168090965644
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 7.855096450746335
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Portugal
+- UNESCO row: Portugal | Northern America and Europe | 83 | 86 | 169
+- World Bank PRT: 2012 = 34804.6333340484; 2022 = 41070.8611529744
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.5889559388160706
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.06360480189323425
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 16.72939830179099
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 1.9532981878955518
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 27.33898283766264
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 2.3013194235710057
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 55.93161886054637
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 3.0050876719891835
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 30.87065042063782
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 4.139848663660514
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 41.568954622748
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 4.28292160874194
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 27.56039495661416
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 3.9420803157970035
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 38.77602956976472
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 3.923411885351998
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 45.09657012520196
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 3.5422542812246784
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 16.12740030503334
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.4462587251509404
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 26.54175616437696
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 4.263844531776383
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 30.72350498920395
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 4.298997483274554
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 42.7347388464191
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 5.754389602141411
+
+## Romania
+- UNESCO row: Romania | Northern America and Europe | 154 | 95 | 249
+- World Bank ROU: 2012 = 26767.4556487181; 2022 = 39256.8260854977
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.38362812995910645
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.05259726569056511
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | c
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## Serbia
+- UNESCO row: Serbia | Northern America and Europe | 193 | 151 | 344
+- World Bank SRB: 2012 = 17993.8147169993; 2022 = 24651.8478183529
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.2686963975429535
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.030469683930277824
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 59.56261185364078
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 7.232223966117953
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 17.05829442510686
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 4.962793332473992
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 23.37909372125236
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 5.827599682891547
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 68.52761251983422
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 6.260793504817107
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") | †
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 25.86861265856676
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 5.938113973171648
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") | †
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 5.603774821599009
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 3.272913930197988
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) | †
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 65.12750656550604
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 5.877183032700282
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 22.34653185356666
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 4.815906579024009
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 12.5259615809273
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 4.670315317425071
+
+## Slovak Republic
+- UNESCO row: Slovakia | Northern America and Europe | 71 | 196 | 267
+- World Bank SVK: 2012 = 30894.3118010926; 2022 = 38648.9855746919
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.31286880373954773
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.035693567246198654
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 20.37597069847464
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 4.428266846504542
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 27.43807849768463
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 6.956610489680609
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 52.18595080384073
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 6.6381720480104915
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 38.13857748708384
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 10.900488291415966
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 16.72107906822256
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 6.450283989416208
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 45.1403434446936
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 10.295250857556967
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 54.22948201353994
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 9.917609329806416
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 17.40919305273376
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 7.208401376754728
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 28.3613249337263
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 9.76150925622505
+
+## Slovenia
+- UNESCO row: Slovenia | Northern America and Europe | 145 | 186 | 331
+- World Bank SVN: 2012 = 37040.7082746106; 2022 = 47058.8865960028
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.3545967936515808
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.018108392134308815
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 22.76256139014937
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.49446210559413
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 42.59765151385619
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.243624594883755
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 34.63978709599444
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 3.0187865074333273
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 28.00476128655897
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 4.9813019180391676
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 37.26125424382261
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 4.847940731026016
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 34.73398446961842
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 5.470028970314838
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 24.63609705376499
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 4.040346928482878
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 50.40855509865239
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 4.91660877795494
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 24.95534784758264
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 3.240115719495843
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 23.50640827743228
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 3.094841423875007
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 35.49006768844718
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 3.131972496160532
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 41.00352403412054
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 3.5298919030489997
+
+## Spain
+- UNESCO row: Spain | Northern America and Europe | 70 | 35 | 105
+- World Bank ESP: 2012 = 41034.0481566356; 2022 = 46733.4809780536
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.36593571305274963
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.03303980082273483
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 34.19517980445823
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 1.4638329376948889
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 34.89554748915904
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 1.7626018746730068
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 30.90927270638273
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.7043669127028376
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 32.1571545790958
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 2.1376604320083707
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 51.10194984757921
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 2.232838378448065
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 16.74089557332498
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 1.4003162939994453
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 46.08645861218506
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 2.657713342375265
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 41.34969337873385
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 2.776825764730153
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 12.56384800908109
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 1.5780056010760488
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | m
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | m
+
+## Sweden
+- UNESCO row: Sweden | Northern America and Europe | 0 | 167 | 167
+- World Bank SWE: 2012 = 56193.3287488246; 2022 = 62544.5002248644
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.13054803013801575
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.025438683107495308
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 28.67834199646384
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 1.8758661828036645
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 51.15931154846337
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 1.9750441319159566
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 20.16234645507279
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.8473415782491605
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 30.98604672071899
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 3.328575398605342
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 45.3001883820591
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.1996654683721273
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 23.7137648972219
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.6634190144730296
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 28.92514785353134
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 2.496488494789513
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 43.12088045118712
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 2.6937906842563835
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 27.95397169528153
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.529964570230587
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 30.08729417330768
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 2.3018156977251127
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 37.2707723497783
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 2.4115578391875165
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 32.64193347691403
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 2.6609609054584196
+
+## Switzerland
+- UNESCO row: Switzerland | Northern America and Europe | 41 | 4 | 45
+- World Bank CHE: 2012 = 76570.2378987121; 2022 = 85762.2829174304
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.2801385819911957
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.02507203258574009
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 36.44887000918156
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.1055895288086024
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 42.39912603012658
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 2.1819870029196604
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 21.15200396069185
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 1.4198284608250709
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 46.7158006284989
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 3.111524097338046
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 32.52025370187172
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.1384114452298135
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 20.76394566962937
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.210493716186653
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 41.49492681413705
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 2.5598243989263265
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 36.85472619658092
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 1.9732504279669139
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 21.65034698928203
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.193093998784414
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 37.14537359418365
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 2.3138001764952016
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 38.6478796580427
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 2.403208421088673
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 24.20674674777365
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 1.8645500518707712
+
+## Türkiye
+- UNESCO row: Turkey | Western Asia and Northern Africa | 196 | 149 | 345
+- World Bank TUR: 2012 = 22517.7148287875; 2022 = 33520.8111384208
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.6093373894691467
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.05521947890520096
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 15.31586898943703
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 3.942376786083292
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 57.62835909450422
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 3.140508438568346
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 27.05577191605876
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 5.309152360258301
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | c
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | c
+
+## United Kingdom
+- UNESCO row: United Kingdom of Great Britain and Northern Ireland | Northern America and Europe | 109 | 80 | 189
+- World Bank GBR: 2012 = 48099.6594401942; 2022 = 53979.7679116234
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.1482636034488678
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.030551189556717873
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 36.25102462073174
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 2.860351157085111
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 36.33179277064888
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 2.809709583227527
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 27.4171826086194
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 3.8129075029394346
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 32.39628820578406
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 3.0347819499777198
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 37.00659470300568
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.3503709952165894
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 30.59711709121026
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 4.682114475434616
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 39.77777705761059
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 2.894222784255061
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 35.4928898033789
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 2.730569140542973
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 24.7293331390105
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 3.2845161906061255
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 39.40296282548595
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 2.6503548303785616
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 35.67907322675434
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 2.4314892461255915
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 24.91796394775971
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 3.320947489582603
+
+## United States
+- UNESCO row: United States of America | Northern America and Europe | 0 | 539 | 539
+- World Bank USA: 2012 = 61142.3637034265; 2022 = 72828.7430907189
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / Dif. | 0.2043953239917755
+- Table I.B1.7.8 | Difference between PISA 2012 and PISA 2022 / Students' socio-economic status (ESCS1) / Non-immigrant students / S.E. | 0.048039212822914124
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / % | 31.58124952459616
+- Table I.B1.7.13 | At or before age 5 ("early arrivers") / S.E. | 4.409798633834667
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / % | 44.90030139903405
+- Table I.B1.7.13 | At ages 6-11 ("mid-arrivers") / S.E. | 4.188808804335465
+- Table I.B1.7.13 | After age 12 ("late arrivers") / % | 23.51844907636981
+- Table I.B1.7.13 | After age 12 ("late arrivers") / S.E. | 3.577012473965792
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / % | 52.0663171053661
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At or before age 5 ("early arrivers") / S.E. | 4.602058692258774
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / % | 36.00387403215262
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / At ages 6-11 ("mid-arrivers") / S.E. | 3.2784245756698835
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / % | 11.92980886248128
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2012 / After age 12 ("late arrivers) / S.E. | 2.2141021004858636
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / % | 51.93838987769249
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At or before age 5 ("early arrivers") / S.E. | 3.275105360166406
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / % | 29.83570437327382
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / At ages 6-11 ("mid-arrivers") / S.E. | 3.4534200770379186
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / % | 18.22590574903368
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2015 / After age 12 ("late arrivers) / S.E. | 2.2606297150654693
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / % | 35.52742914270302
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At or before age 5 ("early arrivers") / S.E. | 4.402536641250812
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / % | 33.11684425097702
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / At ages 6-11 ("mid-arrivers") / S.E. | 4.16288122485853
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / % | 31.35572660631997
+- Table I.B1.7.14 | Percentage of first-generation immigrant students who arrived at the country at or before age 5, at ages 6-11, or after age 12 / 2018 / After age 12 ("late arrivers") / S.E. | 5.986197372674695

@@ -1,0 +1,58 @@
+claude-opus-5-5
+**Verdict:** The PISA-matching measure (both parents born abroad) exists at grade 4 only in TIMSS 2015 (36 OECD/European entities, pupil report, JRR SEs; Germany 19.2%, SE 1.2); 2011 cycles and PIRLS 2016 carry only language or child-birthplace proxies, and the student-language change 2011→2015/16 is a questionnaire artefact (negative almost everywhere, Poland −5.6 pp), so no usable matched-cycle change in parental-birthplace exposure exists. Coverage (rows in derived/grade4_exposure.csv): TIMSS 2015 both-parents 36 (pupil) / 34 (parent), child born abroad 37 (pupil, SE) / 35 (parent); PIRLS 2016 child born abroad 36; language proxies PIRLS 2011 37+35, TIMSS 2011 37+23, TIMSS 2015 38+35, PIRLS 2016 37+36; changes PIRLS 2011→2016 30+30, TIMSS 2011→2015 32+20.
+
+# Grade-4 immigrant-background exposure, cohort-matched to PISA (PIRLS 2011, TIMSS 2011, TIMSS 2015, PIRLS 2016)
+
+Scope: by country (OECD + European), share of grade-4 pupils with an immigrant background; definition recorded per number. Acquisition log appended below as work proceeds.
+
+## Log
+- [PENDING] route 1: IEA international report exhibits / almanacs (timssandpirls.bc.edu)
+- [PENDING] route 2: IEA IDB home questionnaire files (account wall? size?)
+
+### 2026-09-28 access check (route 1 and 2)
+- The four IDB pages list direct download links (no login form on the page): https://timssandpirls.bc.edu/timss2015/international-database/ , https://timssandpirls.bc.edu/pirls2016/international-database/index.html , https://timssandpirls.bc.edu/pirls2011/international-database.html , https://timssandpirls.bc.edu/timss2011/international-database.html
+- `curl -sIL` sizes (HTTP 200, no redirect to a login): T15_G4_Almanacs.zip 14,474,514 B; P16_Almanacs.zip 5,008,478 B; P11_Almanacs.zip 4,407,872 B; T11_G4_Almanacs.zip 9,392,360 B; SPSS part 1 files 106-163 MB each (T15_G4 161,634,465; P16 105,848,578; P11 108,627,747; T11_G4 163,233,750). [SOURCE: curl -sIL headers 2026-09-28]
+- No account or terms click-through on either route.
+
+### Which grade-4 items exist (read from the almanac PDFs themselves, 2026-09-28)
+Grep of the context almanacs (`pdftotext -layout`) for "born", "speak", "language":
+- **PIRLS 2011** Home ("Learning to Read Survey") and Student: no birthplace item for child or parents. Only: "Did your child speak <language of the test> before he/she began school?" (HQ-03A, ASBH03A) and "How often do you speak <language of test> at home?" (SQG-03, ASBG03; categories "ALWAYS OR ALMOST ALWAYS / SOMETIMES / NEVER"). [SOURCE: P11_Almanacs.zip P11_HomeAlmanac.pdf, P11_StudentAlmanac.pdf]
+- **TIMSS 2011 grade 4** Home and Student: same as PIRLS 2011, no birthplace item. HQ-03A (ASBH03A) "Did your child speak <language of the test> before he/she began school?"; SQG-03 (ASBG03) same 3-category language item. The home questionnaire was fielded in fewer countries (23 kept rows vs 37 for the student item). [SOURCE: T11_G4_Almanacs.zip MAT/T11_G4_MAT_HomeAlmanac.pdf, StudentAlmanac.pdf]
+- **TIMSS 2015 grade 4**: the only cycle with parental birthplace. Student: "Was your mother (or stepmother or female guardian) born in <country>?" (SQG-06A, ASBG06A; Yes/No/I don't know), father (SQG-06B, ASBG06B), "Were you born in <country>?" (SQG-07, ASBG07). Home: "Was the child's father (or stepfather or male guardian) born in <country>?" (HQ-17A, ASBH17A), mother (HQ-17B, ASBH17B), "Was your child born in <country of test>?" (HQ-03A, ASBH03A), "What language did your child speak before he/she began school? <language of test>" (HQ-04a, ASBH04A, mark-all checkbox). Student language item SQG-03 now has 4 categories "Always / Almost always / Sometimes / Never". [SOURCE: T15_G4_Almanacs.zip MAT/T15_G4_MAT_HomeAlmanac.pdf, StudentAlmanac.pdf]
+- **PIRLS 2016**: child birthplace only, no parental birthplace. Home: "Was your child born in <country of test>?" (HQ-03A, ASBH03A), ASBH04A language checkbox as TIMSS 2015; Student SQG-03 4-category. [SOURCE: P16_Almanacs.zip Context Almanacs/P16_HomeAlmanac.pdf, P16_StudentAlmanac.pdf]
+
+Consequence: the PISA-matching definition (both parents born abroad) exists for TIMSS 2015 only. For 2011 the best available proxies are language items. [GAP] No 2011 grade-4 cohort measure of parental birthplace exists in either IEA study.
+
+Comparability traps across the matched cycles (these bias the 2011→2015/16 change):
+1. Student language item: 3 categories in 2011 ("ALWAYS OR ALMOST ALWAYS" merged) vs 4 in 2015/16. "Sometimes or never" is defined in both, but splitting out "Almost always" in 2015/16 plausibly pulls some former "sometimes" answers upward, which would bias the measured change DOWN. [INFERENCE]
+2. Parent language item: 2011 is a direct Yes/No per language ("Did your child speak <test language>…?"); 2015/16 is a mark-all checkbox ("What language did your child speak…? <test language>"), coded 1 marked / 2 not marked. [SOURCE: almanac headers above] Non-marking can also mean the parent marked only another box; direction of bias unknown. [INFERENCE]
+3. Home-questionnaire coverage is low and uneven: TIMSS 2015 home items "Not administered" 37.2% of Germany's sample, 56.4% Norway, 44.2% New Zealand, 53.3% Australia; England, Netherlands (father/mother items) and the United States have Valid N 0. [SOURCE: T15 HomeAlmanac, HQ-17A table, "Not Administered %" column]
+
+### Microdata route (TIMSS 2015 G4 only)
+- Ranged reads of the SPSS zips work (`accept-ranges: bytes`); zip members listed via remotezip: ASG<cty>M6.sav 1.5–11 MB, ASH<cty>M6.sav 0.04–1.2 MB compressed. Fetching only ASG+ASH for 37 OECD/European entities ≈ 100 MB, far under the 5 GB cap. TIMSS 2011 / PIRLS microdata not fetched: they carry no birthplace item, so the almanac already gives the whole published signal.
+
+### Standard errors: TIMSS 2015 changed its jackknife
+Quote, T15 User Guide (`_cache/grade4/T15_UserGuide.pdf`, ch. 4 fn. 8): "Starting with TIMSS 2015, the jackknife repeated replication method has been modified to include both replicates within each sampling zone, as described in Chapter 4 of Methods and Procedures in TIMSS 2015." The script therefore uses two replicates per JKZONE (JKREP=1 doubled/0 zeroed and the reverse) with variance ½·Σ(θr−θ)². The ½ factor and the doubling are [TRAINING-DATA] from Methods and Procedures ch. 4, not read here; the one-replicate-per-zone formula I first coded would have overstated SEs by about √2. Weight: TOTWGT. Almanac rows (other cycles) carry no SE because the almanacs print none.
+
+### Interim check (4 entities, before full fetch)
+- Microdata ASBG07 "born abroad" reproduces the almanac: Australia IDB 12.44 vs almanac 12.4; Germany 4.98 vs 5.0. [CALCULATION: acquire_grade4.py t15_microdata_rows] The build now asserts |almanac − IDB| ≤ 0.1 pp for every entity.
+- Germany TIMSS 2015 G4, both parents born abroad: 19.24% (SE 1.19, n=3155) by pupil report, 12.91% (SE 1.01, n=2354) by parent report. [CALCULATION] The gap is the home-questionnaire non-response (37.2% not administered in Germany, plus item non-response), which plausibly under-samples immigrant homes; prefer the pupil report. [INFERENCE]
+- Context from this lane: PISA 2022 Germany immigrant share 25.78%, first generation 9.15% [DATA: derived/germany_inputs.csv math,2022 share_imm 0.2578, share_g1 0.0915]. Same birth cohort at grade 4 in 2015: 19.2% both-parents-abroad, 5.0% born abroad. So roughly 6.5 pp of the 2022 stock arrived between age ~9 and 15 (2015–2022, including the 2015–16 asylum intake). [CALCULATION, cohort match approximate: TIMSS 2015 G4 pupils born ~2005/06, PISA 2022 born 2006]
+
+### Build (2026-09-28)
+- `_cache/grade4/`: four almanac zips (see sizes above), `t15_g4_spss/` 74 members (ASG+ASH for 37 entities; fetch log `missing members: []`), `T15_UserGuide.pdf`. Total ≈ 150 MB, well under 5 GB.
+- `uv run --no-project --with openpyxl --with pandas --with pyreadstat python3 acquire_grade4.py` run twice: both print "almanac-vs-IDB ASBG07 check passed for 36 entities", 636 rows, shasum `360f468bcc94c2b57504c9c8feee7ecaab0b3c65` both times (byte-identical). [CALCULATION]
+- Definitions in the `definition` column: `both_parents_born_abroad_student` (ASBG06A & ASBG06B both "No"; "I don't know" on either with no "Yes" excluded from the denominator), `both_parents_born_abroad_parent` (ASBH17A & ASBH17B), `child_born_abroad_student` (ASBG07, almanac % with IDB JRR SE), `child_born_abroad_parent` (ASBH03A), `father_/mother_born_abroad_parent` (almanac), `no_test_language_before_school_parent` (ASBH03A 2011 / ASBH04A 2015–16), `test_language_at_home_sometimes_or_never_student` (ASBG03). Cycle `2011to2015`/`2011to2016` rows are pp differences of the same definition.
+
+### Results, TIMSS 2015 grade 4, both parents born abroad (pupil report, %, JRR SE) [CALCULATION: derived/grade4_exposure.csv]
+Ontario 38.2 (1.9), Canada 31.8 (1.5), Quebec 23.1 (3.4), New Zealand 22.8 (1.3), Australia 20.7 (1.6), England 19.8 (1.9), Germany 19.2 (1.2), United States 18.7 (1.1), Sweden 17.4 (1.8), Norway (4) 14.0 (1.2), Netherlands 13.8 (1.4), Belgium (Flemish) 13.7 (0.9), Norway 13.3 (1.4), Cyprus 13.2 (1.3), France 12.5 (1.1), Ireland 11.6 (0.9), Italy 10.6 (0.7), Spain 10.1 (0.8), Northern Ireland 8.8 (1.3), Croatia 8.5 (0.7), Denmark 7.8 (0.8), Slovenia 7.4 (0.8), Portugal 6.8 (0.5), Finland 5.1 (0.7), Russia 4.8 (0.4), Serbia 4.1 (0.4), Georgia 3.7 (0.4), Czech Republic 3.5 (0.4), Turkey 3.1 (0.3), Chile 2.9 (0.5), Slovak Republic 2.8 (0.3), Hungary 2.1 (0.3), Bulgaria 1.3 (0.2), Lithuania 1.0 (0.1), Korea 0.7 (0.2), Japan 0.6 (0.1).
+
+### Caveats and gaps
+- Poland: ASBG06A, ASBG06B, ASBG07 all missing for all 4,747 pupils in ASGPOLM6.sav (not administered); no birthplace estimate. [DATA: IDB file] [GAP]
+- The student-language change rows are not usable as exposure changes: they fall in nearly every country, including near-zero-immigration Poland (PIRLS −5.6, TIMSS −5.3 pp), Italy −4.4/−4.6, Sweden −6.2/−3.7, Germany −3.1/−0.5. This is the 3→4 category switch (caveat 1 above), not declining exposure. [INFERENCE from the pattern]
+- The parent-language change rows mix a Yes/No item (2011) with a checkbox (2015/16) and move erratically (Spain TIMSS +8.8 vs PIRLS −0.6 pp for the same cohorts). Treat as unusable. [INFERENCE]
+- Pupil vs parent report of both parents abroad diverge where home non-response is high (Germany 19.2 vs 12.9). The pupil report has near-complete coverage; the "I don't know" exclusion could bias it either way. [INFERENCE]
+- [GAP] No 2011 grade-4 parental-birthplace measure anywhere in IEA data; the PISA 2015–2018 cohorts cannot be given a like-for-like grade-4 exposure. Next query if needed: national school statistics (e.g. Germany's Destatis "Migrationshintergrund" pupils by grade, IQB-Bildungstrend 2011 grade 4, which reports parental birthplace for the 2011 grade-4 cohort).
+- Cohort match approximate: TIMSS 2015 G4 pupils ≈ born 2005–06 ≈ PISA 2022 (born 2006).
+
+**Verdict:** The PISA-matching measure (both parents born abroad) exists at grade 4 only in TIMSS 2015 (36 OECD/European entities, pupil report, JRR SEs; Germany 19.2%, SE 1.2); 2011 cycles and PIRLS 2016 carry only language or child-birthplace proxies, and the student-language change 2011→2015/16 is a questionnaire artefact (negative almost everywhere, Poland −5.6 pp), so no usable matched-cycle change in parental-birthplace exposure exists. Coverage (rows in derived/grade4_exposure.csv): TIMSS 2015 both-parents 36 (pupil) / 34 (parent), child born abroad 37 (pupil, SE) / 35 (parent); PIRLS 2016 child born abroad 36; language proxies PIRLS 2011 37+35, TIMSS 2011 37+23, TIMSS 2015 38+35, PIRLS 2016 37+36; changes PIRLS 2011→2016 30+30, TIMSS 2011→2015 32+20.
