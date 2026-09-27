@@ -60,7 +60,7 @@ The pattern is the same in the first four: concessions arrive as new framing (se
 
 | # | Claim | Repo measurement | Grade |
 |---|---|---|---|
-| C1 | The economic case for much freer migration is extremely strong; "double world GDP" | Direction survives; policy-plausible magnitude is single-digit percent of world GDP (Docquier ~4%); the doubling requires identical labor and no selection, which the models' own authors disclaim (open-borders audit) | COORDINATE |
+| C1 | The economic case for much freer migration is extremely strong; "double world GDP" | Direction survives; policy-plausible magnitude is single-digit percent of world GDP (Docquier ~4%) [2026-09-27: stale. The ~4% is the 2012 draft, withdrawn as a benchmark on 2026-09-05; the published 2015 paper gives 11.5–12.5% in the medium term (7.0–17.9% across robustness cases), per the open-borders audit]; the doubling requires identical labor and no selection, which the models' own authors disclaim (open-borders audit) | COORDINATE |
 | C2 | Restrictions are not necessary to protect American workers | Average wage null adopted; the same IGM panel he would cite agreed 56% that low-skilled Americans lose; the clean shocks put the cost on employment entry (canon audit) | COORDINATE |
 | C3 | Restrictions are not necessary to protect taxpayers; keyhole solutions (welfare exclusion, fees) handle the fiscal objection | The gap is 89% tax-side and persists among the employed; legal status makes little difference in cross-section (ladder 76, 85, 119); excluding immigrants from benefits leaves most of the gap. The complete account is −$254bn with benefits already netted. A fee that closed the per-person gap would be $7,095 a year per person for life, including descendants. | HARD |
 | C4 | Immigrants commit much less crime than natives | First generation: adopted. His 24 August comparator (immigrants vs native-born Blacks) is the first generation against the worst native subgroup; US-born Mexican-origin men are 1.7–2.1× whites, and on the ACS custody measure Mexico-born men 18–39 are at the white rate with detention inside (ladder 65–66, essay §5) | COORDINATE, HARD on the comparator |
@@ -130,3 +130,9 @@ generation gaps quoted above (−$7,435, −$6,149) are an older vintage of the 
 −$7,521 and −$6,195. The "89% tax-side" composition is a different quantity from the withdrawn 89%
 state-and-local financing split. See the [complete annual account](immigration-complete-annual-account-2026-09-20.md)
 and the [objections FAQ](immigration-objections-faq-2026-09-21.md).
+
+## Revisions — September 27, 2026
+
+Row C1 cited the 2012 Docquier–Machado–Sekkat draft's ~4% as the policy-plausible magnitude. The open-borders audit
+withdrew that figure as a benchmark on 2026-09-05; the published 2015 paper reports 11.5–12.5% of world GDP in the
+medium term. The grade does not change: the direction survives and the doubling is rejected as a forecast.
