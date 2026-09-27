@@ -274,7 +274,11 @@ Notes on the table:
   residual wages, suggesting that Ro/Re = 1.03 … so that Re ≈ 2.46" [SOURCE: Clemens, Montenegro &
   Pritchett, "The Place Premium", HKS RWP09-004, sec. 3.3 and Table 8, quote verified in the corpus].
   The gain assumes the same employment and hours in both countries [INFERENCE]. The second and
-  third-plus generations have no counterfactual in Mexico, and none is invented.
+  third-plus generations have no counterfactual in Mexico, and none is invented. [2026-09-28: the
+  [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md) (ladder 250) builds
+  one for G2: the same people raised in Mexico by parents with the same schooling who stayed, a
+  $252bn premium ($241–260bn). G3+ is bounded between no premium and $253bn. On gross pay and
+  measured employment in both places, G1's premium is $263bn ($242–285bn), against $224.6bn here.]
 - **Remittances.** Mexico received $62.8bn of remittances from the United States in 2024 [SOURCE:
   Banxico SIE table CE167, US-origin receipts, revised]. The corridor carries more than the CPS
   households send at surveyed amounts ([outside checks](immigration-outside-checks-2026-09-24.md),
@@ -377,3 +381,4 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   channel is $349.3bn plus $5.1bn on capped programmes. Preferences became an attribution under
   proportional replacement. Who comes out ahead and who behind is unchanged. Concept affected: the share
   of other residents ahead and the nets by cut (ladder 226).
+- 2026-09-28: the world ledger (ladder 250, e1910ec) builds the Mexico counterfactual this memo's group frame left out for G2 and bounds it for G3+; bracketed in §5. Concept affected: the group's own gain in the world frame.

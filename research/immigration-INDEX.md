@@ -196,6 +196,15 @@ and Texas, US-born adults with high school or less, and renters come out behind.
 decile and landlords come out ahead most often. Where the state and local cost falls is the largest
 single choice: charged nationally, the share ahead falls to 13%. [2026-09-26, later: 10% on the schools case.]
 
+The [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md) (ladder 250,
+September 27 case) sets the account against the group living in Mexico. The transfer leaks in
+part: raising revenue costs payers 1.16–1.5 per dollar, and about $50bn of the $335–396bn direct
+cost buys the group nothing it values. Measured welfare weights rank the group's dollar above the
+payers', not below. At equal weights the world gains $364bn a year centrally, and the US plus the
+group comes out behind only if the group's welfare counts for less than 0.61 of other residents'
+(0.45 counting Mexico's residents). The second generation costs other residents $128–153bn a year
+against a $252bn premium over being raised in Mexico. [FRAMING-SENSITIVE]
+
 Benefits are priced to the same standard as the costs (evidence-symmetry rule 5), by four lanes.
 The first, the [care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md)
 (ladder 198), adds **$4.1bn a year** ($2.6–13.3bn) to the fiscal account: native women's hours
