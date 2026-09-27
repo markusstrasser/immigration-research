@@ -1,0 +1,225 @@
+{
+ "package": "main_case_long_run_2026_09_27/package.cjs",
+ "methods": [
+  "b_hotdeck_union_matched",
+  "b_matched_over_pooled"
+ ],
+ "ends": {
+  "low": 48,
+  "high": 11
+ },
+ "lines": {
+  "refundable_tax_credits": {
+   "amount_bn": {
+    "low": 36.33134236895243,
+    "high": 32.62802705558531
+   },
+   "national_bn": {
+    "low": 228.809,
+    "high": 228.809
+   },
+   "keys": {
+    "refundable_credits": {
+     "personal": {
+      "target_bn": 32.62802705558531,
+      "other_bn": 196.18097294441463
+     },
+     "shared": {
+      "target_bn": 36.33134236895243,
+      "other_bn": 192.47765763104758
+     }
+    },
+    "working_age": {
+     "personal": {
+      "target_bn": 28.203648085383836,
+      "other_bn": 200.60535191461616
+     },
+     "shared": {
+      "target_bn": 28.203648085383836,
+      "other_bn": 200.60535191461616
+     }
+    }
+   }
+  },
+  "ssi": {
+   "amount_bn": {
+    "low": 5.175675857246652,
+    "high": 5.094042274592522
+   },
+   "national_bn": {
+    "low": 65.134,
+    "high": 65.134
+   },
+   "keys": {
+    "all_cash": {
+     "personal": {
+      "target_bn": 2.760350361774561,
+      "other_bn": 62.37364963822544
+     },
+     "shared": {
+      "target_bn": 2.971585132221347,
+      "other_bn": 62.16241486777865
+     }
+    },
+    "population": {
+     "personal": {
+      "target_bn": 7.632100854100713,
+      "other_bn": 57.50189914589929
+     },
+     "shared": {
+      "target_bn": 7.632100854100713,
+      "other_bn": 57.50189914589929
+     }
+    },
+    "ssi": {
+     "personal": {
+      "target_bn": 5.094042274592522,
+      "other_bn": 60.039957725407476
+     },
+     "shared": {
+      "target_bn": 5.175675857246652,
+      "other_bn": 59.958324142753355
+     }
+    }
+   }
+  },
+  "social_security": {
+   "amount_bn": {
+    "low": 56.258694510398655,
+    "high": 53.02239580298783
+   },
+   "national_bn": {
+    "low": 1447.965,
+    "high": 1447.965
+   },
+   "keys": {
+    "age65plus": {
+     "personal": {
+      "target_bn": 71.59498883259373,
+      "other_bn": 1376.3700111674063
+     },
+     "shared": {
+      "target_bn": 71.59498883259373,
+      "other_bn": 1376.3700111674063
+     }
+    },
+    "social_security": {
+     "personal": {
+      "target_bn": 53.02239580298783,
+      "other_bn": 1394.9426041970123
+     },
+     "shared": {
+      "target_bn": 56.258694510398655,
+      "other_bn": 1391.7063054896014
+     }
+    }
+   }
+  },
+  "railroad_retirement": {
+   "amount_bn": {
+    "low": 0.5631056414428874,
+    "high": 0.5307128160568984
+   },
+   "national_bn": {
+    "low": 14.493,
+    "high": 14.493
+   },
+   "keys": {
+    "age65plus": {
+     "personal": {
+      "target_bn": 0.7166099819171815,
+      "other_bn": 13.77639001808282
+     },
+     "shared": {
+      "target_bn": 0.7166099819171815,
+      "other_bn": 13.77639001808282
+     }
+    },
+    "social_security": {
+     "personal": {
+      "target_bn": 0.5307128160568984,
+      "other_bn": 13.9622871839431
+     },
+     "shared": {
+      "target_bn": 0.5631056414428874,
+      "other_bn": 13.929894358557112
+     }
+    }
+   }
+  },
+  "medicaid_and_chip_other_medical": {
+   "amount_bn": {
+    "low": 117.74341665484393,
+    "high": 119.73606494840452
+   },
+   "national_bn": {
+    "low": 954.2,
+    "high": 954.2
+   },
+   "keys": {
+    "medicaid": {
+     "personal": {
+      "target_bn": 113.98846793340452,
+      "other_bn": 840.2115320665955
+     },
+     "shared": {
+      "target_bn": 114.09184064984393,
+      "other_bn": 840.1081593501561
+     }
+    },
+    "medicaid_covered": {
+     "personal": {
+      "target_bn": 190.97998578217147,
+      "other_bn": 763.2200142178285
+     },
+     "shared": {
+      "target_bn": 190.97998578217147,
+      "other_bn": 763.2200142178285
+     }
+    },
+    "uninsured_use_07_high": {
+     "personal": {
+      "target_bn": 117.49368530440452,
+      "other_bn": 836.7063146955956
+     },
+     "shared": {
+      "target_bn": 117.59705802084393,
+      "other_bn": 836.6029419791562
+     }
+    },
+    "uninsured_use_07_low": {
+     "personal": {
+      "target_bn": 116.10652900140451,
+      "other_bn": 838.0934709985955
+     },
+     "shared": {
+      "target_bn": 116.20990171784392,
+      "other_bn": 837.9900982821562
+     }
+    },
+    "uninsured_use_high": {
+     "personal": {
+      "target_bn": 119.73606494840452,
+      "other_bn": 834.4639350515955
+     },
+     "shared": {
+      "target_bn": 119.83943766484393,
+      "other_bn": 834.3605623351561
+     }
+    },
+    "uninsured_use_low": {
+     "personal": {
+      "target_bn": 117.64004393840452,
+      "other_bn": 836.5599560615955
+     },
+     "shared": {
+      "target_bn": 117.74341665484393,
+      "other_bn": 836.4565833451561
+     }
+    }
+   }
+  }
+ },
+ "cost_low_bn": 321.81935699039354,
+ "cost_high_bn": 387.37005494938376
+}

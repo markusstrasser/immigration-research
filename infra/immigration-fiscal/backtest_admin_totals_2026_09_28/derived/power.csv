@@ -1,0 +1,55 @@
+frame,check,statistic,role,rule,prediction,sampling_se,tolerance,tolerance_basis,powered_by_sampling,note
+asec2025_adopted,1_refundable_credits,delta_credits_ssn_shared,verdict,call,0,0.1032440077,0.1130831195,$2bn over the key's group dollars $22.19bn ($110.460bn x household fraction 0.99005 x share 0.2029) x (1 - share),True,
+asec2025_adopted,1_refundable_credits,delta_credits_ssn_personal,verdict,call,0,0.1063291036,0.1216474031,$2bn over the key's group dollars $20.16bn ($110.460bn x household fraction 0.99005 x share 0.1843) x (1 - share),True,
+asec2025_adopted,1_refundable_credits,delta_credits_raw_shared,baseline,call,0,0.0872331021,0.1130831195,$2bn over the key's group dollars $22.19bn ($110.460bn x household fraction 0.99005 x share 0.2029) x (1 - share),True,delta this series would score if the prediction were exact: -0.1852
+asec2025_adopted,1_refundable_credits,delta_credits_raw_personal,baseline,call,0,0.0895303201,0.1216474031,$2bn over the key's group dollars $20.16bn ($110.460bn x household fraction 0.99005 x share 0.1843) x (1 - share),True,delta this series would score if the prediction were exact: -0.1939
+asec2025_adopted,2_ssi,delta_ssi_shared,verdict,call,0,0.3313659245,0.4137992578,$2bn over the key's group dollars $5.26bn ($65.134bn x household fraction 0.99005 x share 0.0816) x (1 - share),True,
+asec2025_adopted,2_ssi,delta_ssi_personal,verdict,call,0,0.3349918758,0.4147452338,$2bn over the key's group dollars $5.25bn ($65.134bn x household fraction 0.99005 x share 0.0814) x (1 - share),True,
+asec2025_adopted,2_oasdi,delta_social_security_shared,verdict,call,0,0.1356021548,0.03363895698,$2bn over the key's group dollars $62.12bn ($1462.458bn x household fraction 0.99005 x share 0.0429) x (1 - share),False,
+asec2025_adopted,2_oasdi,delta_social_security_personal,verdict,call,0,0.139508483,0.03530509735,$2bn over the key's group dollars $59.06bn ($1462.458bn x household fraction 0.99005 x share 0.0408) x (1 - share),False,
+asec2025_published,1_refundable_credits,delta_credits_ssn_shared,secondary,call,0,0.09768122217,0.1077634073,$2bn over the key's group dollars $23.69bn ($110.460bn x household fraction 0.99005 x share 0.2166) x (1 - share),True,
+asec2025_published,1_refundable_credits,delta_credits_ssn_personal,secondary,call,0,0.1005456689,0.1140268562,$2bn over the key's group dollars $21.94bn ($110.460bn x household fraction 0.99005 x share 0.2006) x (1 - share),True,
+asec2025_published,1_refundable_credits,delta_credits_raw_shared,baseline,call,0,0.08816926007,0.1077634073,$2bn over the key's group dollars $23.69bn ($110.460bn x household fraction 0.99005 x share 0.2166) x (1 - share),True,delta this series would score if the prediction were exact: -0.0739
+asec2025_published,1_refundable_credits,delta_credits_raw_personal,baseline,call,0,0.09043130966,0.1140268562,$2bn over the key's group dollars $21.94bn ($110.460bn x household fraction 0.99005 x share 0.2006) x (1 - share),True,delta this series would score if the prediction were exact: -0.0787
+asec2025_published,2_ssi,delta_ssi_shared,secondary,call,0,0.3304372169,0.4104582715,$2bn over the key's group dollars $5.31bn ($65.134bn x household fraction 0.99005 x share 0.0823) x (1 - share),True,
+asec2025_published,2_ssi,delta_ssi_personal,secondary,call,0,0.3335482037,0.4109028734,$2bn over the key's group dollars $5.30bn ($65.134bn x household fraction 0.99005 x share 0.0822) x (1 - share),True,
+asec2025_published,2_oasdi,delta_social_security_shared,secondary,call,0,0.1354384127,0.03301525643,$2bn over the key's group dollars $63.35bn ($1462.458bn x household fraction 0.99005 x share 0.0438) x (1 - share),False,
+asec2025_published,2_oasdi,delta_social_security_personal,secondary,call,0,0.1393891042,0.03448938865,$2bn over the key's group dollars $60.52bn ($1462.458bn x household fraction 0.99005 x share 0.0418) x (1 - share),False,
+asec2024_published,1_refundable_credits,delta_credits_ssn_shared,secondary,call,0,0.09384736513,0.106957503,$2bn over the key's group dollars $23.94bn ($110.460bn x household fraction 0.99005 x share 0.2189) x (1 - share),True,
+asec2024_published,1_refundable_credits,delta_credits_ssn_personal,secondary,call,0,0.09771347982,0.112515654,$2bn over the key's group dollars $22.34bn ($110.460bn x household fraction 0.99005 x share 0.2043) x (1 - share),True,
+asec2024_published,1_refundable_credits,delta_credits_raw_shared,baseline,call,0,0.08755763546,0.106957503,$2bn over the key's group dollars $23.94bn ($110.460bn x household fraction 0.99005 x share 0.2189) x (1 - share),True,delta this series would score if the prediction were exact: -0.1026
+asec2024_published,1_refundable_credits,delta_credits_raw_personal,baseline,call,0,0.09067588864,0.112515654,$2bn over the key's group dollars $22.34bn ($110.460bn x household fraction 0.99005 x share 0.2043) x (1 - share),True,delta this series would score if the prediction were exact: -0.1054
+asec2025_adopted,3_births_mex_origin,national_share_relative,verdict,call,0.1442769063,0.07616454677,0.1,relative error of the national share,True,
+asec2025_adopted,3_births_mex_origin,national_count_relative,secondary,call,512331.1178,0.07439002806,0.1,relative error of the national count,True,
+asec2025_adopted,3_births_mex_origin,distribution_children_0_2,verdict,distribution,,0.04065929691,0.05,dissimilarity over the 6 declared cells; sampling_se is the expected dissimilarity from sampling noise alone,True,"dissimilarity to baseline 1 0.0674, to baseline 2 0.0780"
+asec2025_adopted,3_births_mex_origin,distribution_infants,secondary,distribution,,0.0747277978,0.05,dissimilarity over the 6 declared cells; sampling_se is the expected dissimilarity from sampling noise alone,False,"dissimilarity to baseline 1 0.1115, to baseline 2 0.1174"
+asec2025_adopted,3_births_mexico_born,national_share_relative,verdict,call,0.04095681166,0.1685213637,0.1,relative error of the national share,False,
+asec2025_adopted,3_births_mexico_born,national_count_relative,secondary,call,145438.7237,0.1662696818,0.1,relative error of the national count,False,
+asec2025_adopted,3_births_mexico_born,distribution_children_0_2,verdict,distribution,,0.07513767919,0.05,dissimilarity over the 6 declared cells; sampling_se is the expected dissimilarity from sampling noise alone,False,"dissimilarity to baseline 1 0.0876, to baseline 2 0.1419"
+asec2025_adopted,3_births_mexico_born,distribution_infants,secondary,distribution,,0.1270224387,0.05,dissimilarity over the 6 declared cells; sampling_se is the expected dissimilarity from sampling noise alone,False,"dissimilarity to baseline 1 0.1292, to baseline 2 0.1822"
+asec2025_adopted,3_medicaid_births_group_share,women_15_44_covered_union,verdict,call,0.1892633016,0.03396919816,0.1,relative error,True,
+asec2025_adopted,3_medicaid_paid_ratio,women_15_44_union,secondary,call,1.361868709,0.03035970187,0.1,relative error,True,
+asec2025_adopted,3_medicaid_paid_level,women_15_44_covered_2024_union,secondary,call,0.2677357659,0.009237361975,0.05,"absolute error, share of births",True,
+asec2025_adopted,3_medicaid_births_group_share,mothers_mex_origin,secondary,call,0.183831806,0.1284062088,0.1,relative error,False,
+asec2025_adopted,3_medicaid_births_group_share,infants_mex_origin,secondary,call,0.191458099,0.1251125609,0.1,relative error,False,
+asec2025_adopted,3_medicaid_paid_ratio,mothers_mex_origin,secondary,call,1.316182475,0.120630305,0.1,relative error,False,
+asec2025_adopted,3_medicaid_paid_ratio,infants_mex_origin,secondary,call,1.327018328,0.09460124534,0.1,relative error,True,
+asec2025_adopted,3_medicaid_paid_level,mothers_covered_2024_mex_origin,secondary,call,0.3601488602,0.04802427991,0.05,"absolute error, share of births",True,
+asec2025_adopted,3_medicaid_paid_level,infants_covered_now_mex_origin,secondary,call,0.4544145447,0.04832970191,0.05,"absolute error, share of births",True,
+asec2025_published,3_births_mex_origin,national_share_relative,secondary,call,0.1442769063,0.07616454677,0.1,relative error of the national share,True,
+asec2025_published,3_births_mex_origin,national_count_relative,secondary,call,512331.1178,0.07439002806,0.1,relative error of the national count,True,
+asec2025_published,3_births_mex_origin,distribution_children_0_2,secondary,distribution,,0.04068497856,0.05,dissimilarity over the 6 declared cells; sampling_se is the expected dissimilarity from sampling noise alone,True,"dissimilarity to baseline 1 0.0708, to baseline 2 0.0765"
+asec2025_published,3_births_mex_origin,distribution_infants,secondary,distribution,,0.0747277978,0.05,dissimilarity over the 6 declared cells; sampling_se is the expected dissimilarity from sampling noise alone,False,"dissimilarity to baseline 1 0.1162, to baseline 2 0.1175"
+asec2025_published,3_births_mexico_born,national_share_relative,secondary,call,0.04095681166,0.1685213637,0.1,relative error of the national share,False,
+asec2025_published,3_births_mexico_born,national_count_relative,secondary,call,145438.7237,0.1662696818,0.1,relative error of the national count,False,
+asec2025_published,3_births_mexico_born,distribution_children_0_2,secondary,distribution,,0.07531019334,0.05,dissimilarity over the 6 declared cells; sampling_se is the expected dissimilarity from sampling noise alone,False,"dissimilarity to baseline 1 0.0654, to baseline 2 0.1163"
+asec2025_published,3_births_mexico_born,distribution_infants,secondary,distribution,,0.1270224387,0.05,dissimilarity over the 6 declared cells; sampling_se is the expected dissimilarity from sampling noise alone,False,"dissimilarity to baseline 1 0.1347, to baseline 2 0.1615"
+asec2025_published,3_medicaid_births_group_share,women_15_44_covered_union,secondary,call,0.1924736612,0.03417620799,0.1,relative error,True,
+asec2025_published,3_medicaid_paid_ratio,women_15_44_union,secondary,call,1.354465611,0.03014586804,0.1,relative error,True,
+asec2025_published,3_medicaid_paid_level,women_15_44_covered_2024_union,secondary,call,0.2663672046,0.009162360056,0.05,"absolute error, share of births",True,
+asec2025_published,3_medicaid_births_group_share,mothers_mex_origin,secondary,call,0.183831806,0.1284062088,0.1,relative error,False,
+asec2025_published,3_medicaid_births_group_share,infants_mex_origin,secondary,call,0.191458099,0.1251125609,0.1,relative error,False,
+asec2025_published,3_medicaid_paid_ratio,mothers_mex_origin,secondary,call,1.316182475,0.120630305,0.1,relative error,False,
+asec2025_published,3_medicaid_paid_ratio,infants_mex_origin,secondary,call,1.327018328,0.09460124534,0.1,relative error,True,
+asec2025_published,3_medicaid_paid_level,mothers_covered_2024_mex_origin,secondary,call,0.3601488602,0.04802427991,0.05,"absolute error, share of births",True,
+asec2025_published,3_medicaid_paid_level,infants_covered_now_mex_origin,secondary,call,0.4544145447,0.04832970191,0.05,"absolute error, share of births",True,

@@ -1,0 +1,163 @@
+frame,check,quantity,value,se,note
+asec2025_adopted,group_key_share,credits_ssn_personal,0.1843043877,0.006273666047,
+asec2025_adopted,group_key_share,credits_ssn_shared,0.2028837101,0.006312570506,
+asec2025_adopted,group_key_share,credits_raw_personal,0.218306335,0.00643372132,
+asec2025_adopted,group_key_share,credits_raw_shared,0.238412259,0.006565051234,
+asec2025_adopted,group_key_share,eitc_ssn_personal,0.1759776686,0.006288319076,
+asec2025_adopted,group_key_share,eitc_ssn_shared,0.1928600824,0.006386530971,
+asec2025_adopted,group_key_share,eitc_raw_personal,0.2198848259,0.006425272564,
+asec2025_adopted,group_key_share,eitc_raw_shared,0.2388112242,0.00665818421,
+asec2025_adopted,group_key_share,actc_ssn_personal,0.1994683452,0.007321327378,
+asec2025_adopted,group_key_share,actc_ssn_shared,0.2210669105,0.007213453338,
+asec2025_adopted,group_key_share,actc_raw_personal,0.2151779561,0.007414936094,
+asec2025_adopted,group_key_share,actc_raw_shared,0.2376222898,0.007312576838,
+asec2025_adopted,group_key_share,ssi_personal,0.08140651587,0.008470545585,
+asec2025_adopted,group_key_share,ssi_shared,0.08161076322,0.008207473361,
+asec2025_adopted,group_key_share,social_security_personal,0.04078837785,0.001400651304,
+asec2025_adopted,group_key_share,social_security_shared,0.04290322149,0.001424082072,
+asec2025_adopted,group_key_share,population_personal,0.1183526638,0.001054815465,
+asec2025_adopted,group_key_share,population_shared,0.1183526638,0.001054815465,
+asec2025_adopted,3_births_count,infants_all,3551026.502,48618.3035,
+asec2025_adopted,3_births_share,infants_all,1,0,share of all infants in the frame
+asec2025_adopted,3_births_mother_present,infants_all,0.94112605,0.008945467978,
+asec2025_adopted,3_births_count,infants_mex_origin,512331.1178,38112.32623,
+asec2025_adopted,3_births_share,infants_mex_origin,0.1442769063,0.01098878517,share of all infants in the frame
+asec2025_adopted,3_births_mother_present,infants_mex_origin,0.9110779241,0.02915917821,
+asec2025_adopted,3_births_count,infants_mexico_born,145438.7237,24182.0503,
+asec2025_adopted,3_births_share,infants_mexico_born,0.04095681166,0.006902097753,share of all infants in the frame
+asec2025_adopted,3_births_mother_present,infants_mexico_born,0.9528312713,0.03268512119,
+asec2025_adopted,3_births_count,infants_mex_origin_foreign_mother,146573.2336,24599.49778,
+asec2025_adopted,3_births_share,infants_mex_origin_foreign_mother,0.04127629955,0.007008439084,share of all infants in the frame
+asec2025_adopted,3_births_mother_present,infants_mex_origin_foreign_mother,0.929407171,0.04411356472,
+asec2025_adopted,3_births_count,infants_union,588975.6401,37252.18414,
+asec2025_adopted,3_births_share,infants_union,0.1658606715,0.01065226795,share of all infants in the frame
+asec2025_adopted,3_births_mother_present,infants_union,0.9226495233,0.02589075115,
+asec2025_adopted,3_births_share,baseline_1_mex_origin,0.1389732361,0.001594422176,the group's share of women 15-44
+asec2025_adopted,3_births_share,baseline_2_mex_origin,0.1183526638,0.001054815465,the group's share of civilians
+asec2025_adopted,3_births_share,baseline_1_mexico_born,0.03015267431,0.001004446094,the group's share of women 15-44
+asec2025_adopted,3_births_share,baseline_2_mexico_born,0.0340066338,0.0006254821575,the group's share of civilians
+asec2025_adopted,3_births_count,women_15_44_union,9311197.958,107129.2921,
+asec2025_adopted,3_births_count,women_15_44_mex_origin,9100079.116,106581.5976,
+asec2025_adopted,3_births_count,women_15_44_mexico_born,2020227.257,67254.93288,
+asec2025_adopted,3_births_count,women_15_44_all,66999936.27,49985.55525,
+asec2025_adopted,3_births_count,baseline_1_mex_origin_births,493497.6443,8047.65106,all infants x the group's share of women 15-44
+asec2025_adopted,3_births_count,baseline_2_mex_origin_births,420273.4457,6311.497907,all infants x the group's share of civilians
+asec2025_adopted,3_births_count,baseline_1_mexico_born_births,107072.9456,3827.311887,all infants x the group's share of women 15-44
+asec2025_adopted,3_births_count,baseline_2_mexico_born_births,120758.4579,2709.772992,all infants x the group's share of civilians
+asec2025_adopted,3_medicaid_paid_level,mothers_covered_2024_mex_origin,0.3601488602,0.04802427991,"mothers of infants, present in the household"
+asec2025_adopted,3_medicaid_paid_level,infants_covered_now_mex_origin,0.4544145447,0.04832970191,infants' own coverage at interview
+asec2025_adopted,3_medicaid_paid_level,mothers_covered_2024_mexico_born,0.4474811596,0.08659502198,"mothers of infants, present in the household"
+asec2025_adopted,3_medicaid_paid_level,infants_covered_now_mexico_born,0.6120458461,0.08833566193,infants' own coverage at interview
+asec2025_adopted,3_medicaid_paid_level,mothers_covered_2024_all,0.2736314052,0.01552108975,"mothers of infants, present in the household"
+asec2025_adopted,3_medicaid_paid_level,infants_covered_now_all,0.3424327569,0.01707033165,infants' own coverage at interview
+asec2025_adopted,3_medicaid_paid_level,women_15_44_covered_2024_union,0.2677357659,0.009237361975,
+asec2025_adopted,3_medicaid_paid_level,women_15_44_covered_2024_mex_origin,0.268609087,0.00963229504,
+asec2025_adopted,3_medicaid_paid_level,women_15_44_covered_2024_mexico_born,0.2635041836,0.01607496863,
+asec2025_adopted,3_medicaid_paid_level,women_15_44_covered_2024_all,0.196594403,0.002967940717,
+asec2025_adopted,3_medicaid_paid_level,union_all_ages_covered_2024,0.2888971814,0.00642039214,
+asec2025_adopted,3_medicaid_paid_level,civilians_all_ages_covered_2024,0.1764975597,0.001852680165,
+asec2025_adopted,3_medicaid_paid_ratio,mothers_mex_origin,1.316182475,0.1587714934,group rate over the all-births rate from the same reading
+asec2025_adopted,3_medicaid_paid_ratio,mothers_mexico_born,1.635342841,0.3145042263,group rate over the all-births rate from the same reading
+asec2025_adopted,3_medicaid_paid_ratio,infants_mex_origin,1.327018328,0.1255375865,group rate over the all-births rate from the same reading
+asec2025_adopted,3_medicaid_paid_ratio,infants_mexico_born,1.787346081,0.2584400869,group rate over the all-births rate from the same reading
+asec2025_adopted,3_medicaid_paid_ratio,women_15_44_union,1.361868709,0.04134592801,brief's reading: union women 15-44 over all women 15-44
+asec2025_adopted,3_medicaid_paid_ratio,women_15_44_mexico_born,1.34034428,0.07974901787,
+asec2025_adopted,3_medicaid_paid_ratio,baseline_2_union_all_ages,1.636833857,0.03303583939,the group's all-age coverage over everyone's
+asec2025_adopted,3_medicaid_births_group_share,women_15_44_covered_union,0.1892633016,0.006429122597,brief's reading: the union's share of Medicaid-covered women 15-44
+asec2025_adopted,3_medicaid_births_group_share,women_15_44_covered_mexico_born,0.04041496455,0.002801507541,
+asec2025_adopted,3_medicaid_births_group_share,infants_mex_origin,0.191458099,0.02395381307,
+asec2025_adopted,3_medicaid_births_group_share,infants_mexico_born,0.07320399682,0.01634764377,
+asec2025_adopted,3_medicaid_births_group_share,mothers_mex_origin,0.183831806,0.02360514526,
+asec2025_adopted,3_medicaid_births_group_share,mothers_mexico_born,0.06781147052,0.0153221355,
+asec2025_adopted,3_medicaid_births_group_share,baseline_1_union_share_women_15_44,0.1389732361,0.001594422176,
+asec2025_adopted,3_medicaid_births_group_share,baseline_2_union_share_medicaid_covered,0.1937236471,0.004386448875,
+asec2025_published,group_key_share,credits_ssn_personal,0.200639729,0.006772491645,
+asec2025_published,group_key_share,credits_ssn_shared,0.2166367521,0.006648964609,
+asec2025_published,group_key_share,credits_raw_personal,0.230172834,0.006892133059,
+asec2025_published,group_key_share,credits_raw_shared,0.2445746723,0.006770115992,
+asec2025_published,group_key_share,eitc_ssn_personal,0.1928084912,0.00685656843,
+asec2025_published,group_key_share,eitc_ssn_shared,0.2078859627,0.006813651709,
+asec2025_published,group_key_share,eitc_raw_personal,0.2320816389,0.006887700625,
+asec2025_published,group_key_share,eitc_raw_shared,0.2451770612,0.006859227433,
+asec2025_published,group_key_share,actc_ssn_personal,0.2149238156,0.007743980882,
+asec2025_published,group_key_share,actc_ssn_shared,0.232574669,0.007435522293,
+asec2025_published,group_key_share,actc_raw_personal,0.2263846035,0.007858097348,
+asec2025_published,group_key_share,actc_raw_shared,0.2433809418,0.007517546407,
+asec2025_published,group_key_share,ssi_personal,0.08224260566,0.008501684684,
+asec2025_published,group_key_share,ssi_shared,0.08234046986,0.008232446571,
+asec2025_published,group_key_share,social_security_personal,0.04179701466,0.001469358439,
+asec2025_published,group_key_share,social_security_shared,0.04375254416,0.001490168852,
+asec2025_published,group_key_share,population_personal,0.1214529177,0.001123446585,
+asec2025_published,group_key_share,population_shared,0.1214529177,0.001123446585,
+asec2025_published,3_births_count,infants_all,3551026.502,48618.3035,
+asec2025_published,3_births_share,infants_all,1,0,share of all infants in the frame
+asec2025_published,3_births_mother_present,infants_all,0.94112605,0.008945467978,
+asec2025_published,3_births_count,infants_mex_origin,512331.1178,38112.32623,
+asec2025_published,3_births_share,infants_mex_origin,0.1442769063,0.01098878517,share of all infants in the frame
+asec2025_published,3_births_mother_present,infants_mex_origin,0.9110779241,0.02915917821,
+asec2025_published,3_births_count,infants_mexico_born,145438.7237,24182.0503,
+asec2025_published,3_births_share,infants_mexico_born,0.04095681166,0.006902097753,share of all infants in the frame
+asec2025_published,3_births_mother_present,infants_mexico_born,0.9528312713,0.03268512119,
+asec2025_published,3_births_count,infants_mex_origin_foreign_mother,146573.2336,24599.49778,
+asec2025_published,3_births_share,infants_mex_origin_foreign_mother,0.04127629955,0.007008439084,share of all infants in the frame
+asec2025_published,3_births_mother_present,infants_mex_origin_foreign_mother,0.929407171,0.04411356472,
+asec2025_published,3_births_count,infants_union,588975.6401,37252.18414,
+asec2025_published,3_births_share,infants_union,0.1658606715,0.01065226795,share of all infants in the frame
+asec2025_published,3_births_mother_present,infants_union,0.9226495233,0.02589075115,
+asec2025_published,3_births_share,baseline_1_mex_origin,0.1421030254,0.001653543059,the group's share of women 15-44
+asec2025_published,3_births_share,baseline_2_mex_origin,0.1214529177,0.001123446585,the group's share of civilians
+asec2025_published,3_births_share,baseline_1_mexico_born,0.03367802101,0.00115306184,the group's share of women 15-44
+asec2025_published,3_births_share,baseline_2_mexico_born,0.03740348493,0.0007540170641,the group's share of civilians
+asec2025_published,3_births_count,women_15_44_union,9555627.878,110968.2285,
+asec2025_published,3_births_count,women_15_44_mex_origin,9333394.067,110629.1216,
+asec2025_published,3_births_count,women_15_44_mexico_born,2264657.177,77409.57052,
+asec2025_published,3_births_count,women_15_44_all,67244366.19,24118.79897,
+asec2025_published,3_births_count,baseline_1_mex_origin_births,504611.6094,8370.876262,all infants x the group's share of women 15-44
+asec2025_published,3_births_count,baseline_2_mex_origin_births,431282.5296,6662.165202,all infants x the group's share of civilians
+asec2025_published,3_births_count,baseline_1_mexico_born_births,119591.5452,4412.572436,all infants x the group's share of women 15-44
+asec2025_published,3_births_count,baseline_2_mexico_born_births,132820.7663,3236.853842,all infants x the group's share of civilians
+asec2025_published,3_medicaid_paid_level,mothers_covered_2024_mex_origin,0.3601488602,0.04802427991,"mothers of infants, present in the household"
+asec2025_published,3_medicaid_paid_level,infants_covered_now_mex_origin,0.4544145447,0.04832970191,infants' own coverage at interview
+asec2025_published,3_medicaid_paid_level,mothers_covered_2024_mexico_born,0.4474811596,0.08659502198,"mothers of infants, present in the household"
+asec2025_published,3_medicaid_paid_level,infants_covered_now_mexico_born,0.6120458461,0.08833566193,infants' own coverage at interview
+asec2025_published,3_medicaid_paid_level,mothers_covered_2024_all,0.2736314052,0.01552108975,"mothers of infants, present in the household"
+asec2025_published,3_medicaid_paid_level,infants_covered_now_all,0.3424327569,0.01707033165,infants' own coverage at interview
+asec2025_published,3_medicaid_paid_level,women_15_44_covered_2024_union,0.2663672046,0.009162360056,
+asec2025_published,3_medicaid_paid_level,women_15_44_covered_2024_mex_origin,0.2672040597,0.009581155218,
+asec2025_published,3_medicaid_paid_level,women_15_44_covered_2024_mexico_born,0.2581863205,0.01582020818,
+asec2025_published,3_medicaid_paid_level,women_15_44_covered_2024_all,0.1966585216,0.002963459682,
+asec2025_published,3_medicaid_paid_level,union_all_ages_covered_2024,0.2854909592,0.006316040553,
+asec2025_published,3_medicaid_paid_level,civilians_all_ages_covered_2024,0.1764791098,0.001854205621,
+asec2025_published,3_medicaid_paid_ratio,mothers_mex_origin,1.316182475,0.1587714934,group rate over the all-births rate from the same reading
+asec2025_published,3_medicaid_paid_ratio,mothers_mexico_born,1.635342841,0.3145042263,group rate over the all-births rate from the same reading
+asec2025_published,3_medicaid_paid_ratio,infants_mex_origin,1.327018328,0.1255375865,group rate over the all-births rate from the same reading
+asec2025_published,3_medicaid_paid_ratio,infants_mexico_born,1.787346081,0.2584400869,group rate over the all-births rate from the same reading
+asec2025_published,3_medicaid_paid_ratio,women_15_44_union,1.354465611,0.04083154158,brief's reading: union women 15-44 over all women 15-44
+asec2025_published,3_medicaid_paid_ratio,women_15_44_mexico_born,1.312866172,0.07819526339,
+asec2025_published,3_medicaid_paid_ratio,baseline_2_union_all_ages,1.617703985,0.03220313439,the group's all-age coverage over everyone's
+asec2025_published,3_medicaid_births_group_share,women_15_44_covered_union,0.1924736612,0.006578019876,brief's reading: the union's share of Medicaid-covered women 15-44
+asec2025_published,3_medicaid_births_group_share,women_15_44_covered_mexico_born,0.04421473454,0.003082209742,
+asec2025_published,3_medicaid_births_group_share,infants_mex_origin,0.191458099,0.02395381307,
+asec2025_published,3_medicaid_births_group_share,infants_mexico_born,0.07320399682,0.01634764377,
+asec2025_published,3_medicaid_births_group_share,mothers_mex_origin,0.183831806,0.02360514526,
+asec2025_published,3_medicaid_births_group_share,mothers_mexico_born,0.06781147052,0.0153221355,
+asec2025_published,3_medicaid_births_group_share,baseline_1_union_share_women_15_44,0.1421030254,0.001653543059,
+asec2025_published,3_medicaid_births_group_share,baseline_2_union_share_medicaid_covered,0.196474869,0.004558985263,
+asec2024_published,group_key_share,credits_ssn_personal,0.2042594793,0.007534368312,
+asec2024_published,group_key_share,credits_ssn_shared,0.2189020926,0.006950173217,
+asec2024_published,group_key_share,credits_raw_personal,0.2345234318,0.00765917219,
+asec2024_published,group_key_share,credits_raw_shared,0.2481339083,0.007240150029,
+asec2024_published,group_key_share,eitc_ssn_personal,0.1949644848,0.007647817304,
+asec2024_published,group_key_share,eitc_ssn_shared,0.2091734566,0.007098909796,
+asec2024_published,group_key_share,eitc_raw_personal,0.2352997724,0.00757551469,
+asec2024_published,group_key_share,eitc_raw_shared,0.2481708977,0.007219170763,
+asec2024_published,group_key_share,actc_ssn_personal,0.2197473201,0.00850049718,
+asec2024_published,group_key_share,actc_ssn_shared,0.2351163968,0.007937708379,
+asec2024_published,group_key_share,actc_raw_personal,0.2331268538,0.008752611305,
+asec2024_published,group_key_share,actc_raw_shared,0.2480672297,0.008237508731,
+asec2024_published,group_key_share,ssi_personal,0.08307010134,0.008268314906,
+asec2024_published,group_key_share,ssi_shared,0.0827031393,0.007597604163,
+asec2024_published,group_key_share,social_security_personal,0.03860800162,0.001300039723,
+asec2024_published,group_key_share,social_security_shared,0.04150184912,0.001362640689,
+asec2024_published,group_key_share,population_personal,0.1193958925,0.001149898727,
+asec2024_published,group_key_share,population_shared,0.1193958925,0.001149898727,
