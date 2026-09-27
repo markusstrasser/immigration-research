@@ -265,7 +265,11 @@ reserved administrative outcomes; comparable medical person-month and service
 payments by detailed origin; district spending, capacity and achievement following
 a credible population shock; and full historical government accounts. The current
 holdings do not identify those quantities merely because these four executions
-succeeded. Public payroll replacement, mixed-household eligibility and unpriced
+succeeded. [2026-09-28, later: the within-district part of the school test is done for
+the 2022–2024 newcomer surge in New York City, Chicago and Denver (ladder 252). Staff
+and money followed the new pupils at about half to 0.6 of enrollment and late, and
+never-English-learner scores barely moved. District budgets and any system-level
+effect remain open.] Public payroll replacement, mixed-household eligibility and unpriced
 social channels remain in the [conceptual audit](immigration-adversarial-audit-2026-09-28.md).
 Separate school-systemwide and enforcement/rent analyses have their own populations
 and designs; their estimates are not added to these validation scores. [LIMIT / INFERENCE]
@@ -318,3 +322,5 @@ commands. No new causal coefficient or national total was adopted. [EXECUTION]
   records why predictive successes remain component-specific and why the failed
   joint Mariel construction is not carried into the fiscal account.
 - **2026-09-28, verification (7a43e65):** all 125 numbers match their lanes. Brackets qualify five readings: the tax corrections hold below $1M only (ladder 249), GSS is seven of eight distinct, design-before-scoring has two later additions, MEPS and MCBS respondents overlap across years, and the Mariel model fails in its training years. The "corroborates" rule has a second, ratio-band branch.
+- **2026-09-28, newcomer schools:** the credible-shock school test is done within
+  districts (ladder 252); its district-wide part stays open.
