@@ -1,0 +1,53 @@
+source,measure,generation,n,estimate,se,se_conservative,adjustment
+CPS ASEC 2022-2025,child_id_hispanic,all,10022,0.989364,0.00181137,0.00313791,both_mexican_origin; both parents biological
+CPS ASEC 2022-2025,child_id_mexican,all,10022,0.969568,0.00347831,0.00553029,both_mexican_origin; both parents biological
+CPS ASEC 2022-2025,child_id_hispanic,all,1190,0.972025,0.00786433,0.0133164,mexican_x_other_hispanic; both parents biological
+CPS ASEC 2022-2025,child_id_mexican,all,1190,0.550039,0.0259792,0.0449298,mexican_x_other_hispanic; both parents biological
+CPS ASEC 2022-2025,child_id_hispanic,all,4085,0.835632,0.0110576,0.0180997,mexican_x_non_hispanic; both parents biological
+CPS ASEC 2022-2025,child_id_mexican,all,4085,0.803696,0.0122132,0.0204874,mexican_x_non_hispanic; both parents biological
+CPS ASEC 2022-2025,child_id_hispanic,mex_G1,644,0.83526,0.0257955,0.0427063,"mexican_x_non_hispanic, Mexican parent's generation; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G1,644,0.810673,0.0273783,0.0471327,"mexican_x_non_hispanic, Mexican parent's generation; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G1,343,0.855316,0.0346685,0.0566999,"mexican_x_non_hispanic, Mexican parent is the father; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G1,343,0.819246,0.0417954,0.0660501,"mexican_x_non_hispanic, Mexican parent is the father; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G1,301,0.813255,0.0386431,0.0642456,"mexican_x_non_hispanic, Mexican parent is the mother; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G1,301,0.801267,0.0388245,0.0657511,"mexican_x_non_hispanic, Mexican parent is the mother; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G1,534,0.809507,0.0304152,0.0507738,"mexican_x_non_hispanic, non-Hispanic parent is NH white; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G1,534,0.800231,0.0305952,0.0518369,"mexican_x_non_hispanic, non-Hispanic parent is NH white; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G2,1114,0.820028,0.023146,0.0350743,"mexican_x_non_hispanic, Mexican parent's generation; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G2,1114,0.756559,0.0268654,0.0416184,"mexican_x_non_hispanic, Mexican parent's generation; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G2,558,0.8731,0.0228654,0.0389493,"mexican_x_non_hispanic, Mexican parent is the father; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G2,558,0.801618,0.0324799,0.0532143,"mexican_x_non_hispanic, Mexican parent is the father; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G2,556,0.772372,0.0377232,0.057471,"mexican_x_non_hispanic, Mexican parent is the mother; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G2,556,0.716096,0.0421095,0.0631404,"mexican_x_non_hispanic, Mexican parent is the mother; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G2,926,0.78326,0.0287521,0.0427696,"mexican_x_non_hispanic, non-Hispanic parent is NH white; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G2,926,0.742485,0.0317086,0.0471831,"mexican_x_non_hispanic, non-Hispanic parent is NH white; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G3plus,2206,0.843675,0.0142875,0.0246062,"mexican_x_non_hispanic, Mexican parent's generation; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G3plus,2206,0.835009,0.0143904,0.0250701,"mexican_x_non_hispanic, Mexican parent's generation; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G3plus,984,0.858403,0.0218528,0.0360866,"mexican_x_non_hispanic, Mexican parent is the father; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G3plus,984,0.855222,0.022079,0.0366081,"mexican_x_non_hispanic, Mexican parent is the father; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G3plus,1222,0.832448,0.0198322,0.0335436,"mexican_x_non_hispanic, Mexican parent is the mother; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G3plus,1222,0.819599,0.0209555,0.0354611,"mexican_x_non_hispanic, Mexican parent is the mother; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G3plus,1856,0.850882,0.0154394,0.0263042,"mexican_x_non_hispanic, non-Hispanic parent is NH white; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G3plus,1856,0.849032,0.0155929,0.0264953,"mexican_x_non_hispanic, non-Hispanic parent is NH white; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G3_observed,8,0.579493,0.270088,0.255321,"mexican_x_non_hispanic, Mexican parent's generation (grandparent linkage); both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G3_observed,8,0.579493,0.270088,0.255321,"mexican_x_non_hispanic, Mexican parent's generation (grandparent linkage); both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G4plus_observed,4,0.426255,0.274783,0,"mexican_x_non_hispanic, Mexican parent's generation (grandparent linkage); both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G4plus_observed,4,0.426255,0.274783,0,"mexican_x_non_hispanic, Mexican parent's generation (grandparent linkage); both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G1,5976,0.989577,0.00232278,0.00419296,"both_mexican_origin, both parents this generation; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G1,5976,0.970051,0.00481739,0.00757443,"both_mexican_origin, both parents this generation; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G2,2344,0.988269,0.0032813,0.00550988,"both_mexican_origin, both parents this generation; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G2,2344,0.959291,0.00672892,0.0115621,"both_mexican_origin, both parents this generation; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G3plus,1563,0.99656,0.0023258,0.0029608,"both_mexican_origin, both parents this generation; both parents biological"
+CPS ASEC 2022-2025,child_id_mexican,mex_G3plus,1563,0.989693,0.00437445,0.00678916,"both_mexican_origin, both parents this generation; both parents biological"
+CPS ASEC 2022-2025,child_id_hispanic,all,10933,0.9874,0.00188922,0.00325682,both_mexican_origin; any parent type
+CPS ASEC 2022-2025,child_id_mexican,all,10933,0.968547,0.00333083,0.0053911,both_mexican_origin; any parent type
+CPS ASEC 2022-2025,child_id_hispanic,all,1360,0.972817,0.00784538,0.0126521,mexican_x_other_hispanic; any parent type
+CPS ASEC 2022-2025,child_id_mexican,all,1360,0.548768,0.0247236,0.0420428,mexican_x_other_hispanic; any parent type
+CPS ASEC 2022-2025,child_id_hispanic,all,4679,0.820529,0.010518,0.0170815,mexican_x_non_hispanic; any parent type
+CPS ASEC 2022-2025,child_id_mexican,all,4679,0.78969,0.011282,0.0189855,mexican_x_non_hispanic; any parent type
+CPS ASEC 2022-2025,child_id_hispanic,mex_G1,752,0.815489,0.0235914,0.040206,"mexican_x_non_hispanic, Mexican parent's generation; any parent type"
+CPS ASEC 2022-2025,child_id_mexican,mex_G1,752,0.793061,0.0253726,0.0438533,"mexican_x_non_hispanic, Mexican parent's generation; any parent type"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G2,1278,0.80671,0.0214514,0.0328072,"mexican_x_non_hispanic, Mexican parent's generation; any parent type"
+CPS ASEC 2022-2025,child_id_mexican,mex_G2,1278,0.744832,0.0259033,0.0387911,"mexican_x_non_hispanic, Mexican parent's generation; any parent type"
+CPS ASEC 2022-2025,child_id_hispanic,mex_G3plus,2523,0.827611,0.0136568,0.0232327,"mexican_x_non_hispanic, Mexican parent's generation; any parent type"
+CPS ASEC 2022-2025,child_id_mexican,mex_G3plus,2523,0.817864,0.0136924,0.0237017,"mexican_x_non_hispanic, Mexican parent's generation; any parent type"

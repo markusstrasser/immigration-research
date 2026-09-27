@@ -1,0 +1,346 @@
+source,measure,generation,year,n,estimate,se,se_method,adjustment
+CPS November Voting Supplement,voted_rate,mexico_born_naturalized,2020,1007,0.496929,0.0190151,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_rate,mexico_born_naturalized,2020,1007,0.548982,0.0196302,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_rate,mexico_born_naturalized,2020,810,0.612868,0.0208919,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_rate,mexican_2nd_gen,2020,1909,0.517111,0.0139334,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_rate,mexican_2nd_gen,2020,1909,0.591952,0.0144601,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_rate,mexican_2nd_gen,2020,1550,0.636465,0.0144982,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_rate,mexican_3rd_plus,2020,2045,0.526853,0.0147707,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_rate,mexican_3rd_plus,2020,2045,0.609111,0.0154511,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_rate,mexican_3rd_plus,2020,1672,0.650046,0.014338,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_rate,india_born_naturalized,2020,382,0.787023,0.0275345,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_rate,india_born_naturalized,2020,382,0.815933,0.0279128,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_rate,india_born_naturalized,2020,327,0.907491,0.0198515,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_rate,indian_2nd_gen,2020,195,0.637979,0.040811,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_rate,indian_2nd_gen,2020,195,0.690955,0.0437011,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_rate,indian_2nd_gen,2020,155,0.818431,0.0380168,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_rate,usb_nh_white,2020,58070,0.711612,0.00319245,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_rate,usb_nh_white,2020,58070,0.766491,0.00309853,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white,2020,49950,0.826084,0.0026128,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_rate,usb_nh_white_3rd_plus,2020,55308,0.708362,0.00327377,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_rate,usb_nh_white_3rd_plus,2020,55308,0.763748,0.00315703,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white_3rd_plus,2020,47500,0.823632,0.00269394,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_rate,all_citizens,2020,81898,0.667671,0.00265128,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_rate,all_citizens,2020,81898,0.726741,0.00267537,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_rate,all_citizens,2020,69284,0.792196,0.00230435,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_rate,mexico_born_naturalized,2022,984,0.337284,0.0191373,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,mexico_born_naturalized,2022,984,0.538885,0.0188121,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,mexico_born_naturalized,2022,823,0.399339,0.0214768,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,mexican_2nd_gen,2022,1854,0.324176,0.0139149,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,mexican_2nd_gen,2022,1854,0.54411,0.0153128,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,mexican_2nd_gen,2022,1509,0.398405,0.0160387,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,mexican_3rd_plus,2022,1914,0.391536,0.0144966,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,mexican_3rd_plus,2022,1914,0.584399,0.0157701,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,mexican_3rd_plus,2022,1550,0.487726,0.0161192,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,india_born_naturalized,2022,317,0.470119,0.0350493,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,india_born_naturalized,2022,317,0.737987,0.0337998,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,india_born_naturalized,2022,261,0.567764,0.0372708,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,indian_2nd_gen,2022,157,0.48091,0.0452985,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,indian_2nd_gen,2022,157,0.666843,0.0496122,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,indian_2nd_gen,2022,122,0.629936,0.0534049,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,usb_nh_white,2022,51086,0.580336,0.00348612,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,usb_nh_white,2022,51086,0.736079,0.00328995,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white,2022,43862,0.68031,0.00340548,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,usb_nh_white_3rd_plus,2022,48640,0.578105,0.00354169,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,usb_nh_white_3rd_plus,2022,48640,0.734766,0.00335772,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white_3rd_plus,2022,41717,0.67809,0.00348846,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,all_citizens,2022,73083,0.522023,0.00293249,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,all_citizens,2022,73083,0.69118,0.00286463,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,all_citizens,2022,61673,0.625236,0.00294631,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,mexico_born_naturalized,2024,962,0.444724,0.0184943,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,mexico_born_naturalized,2024,962,0.556139,0.0213064,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,mexico_born_naturalized,2024,841,0.51461,0.0206422,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,mexican_2nd_gen,2024,2071,0.455429,0.0130519,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,mexican_2nd_gen,2024,2071,0.583261,0.0139273,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,mexican_2nd_gen,2024,1710,0.558501,0.0136091,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,mexican_3rd_plus,2024,1973,0.503563,0.0160088,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,mexican_3rd_plus,2024,1973,0.612874,0.0165923,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,mexican_3rd_plus,2024,1656,0.608944,0.0147344,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,india_born_naturalized,2024,335,0.763578,0.0317797,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,india_born_naturalized,2024,335,0.831854,0.0293523,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,india_born_naturalized,2024,306,0.839583,0.0266162,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,indian_2nd_gen,2024,192,0.599011,0.0427444,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,indian_2nd_gen,2024,192,0.678334,0.0435711,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,indian_2nd_gen,2024,161,0.726546,0.0423053,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,usb_nh_white,2024,50789,0.707936,0.00368319,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,usb_nh_white,2024,50789,0.779153,0.00344076,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white,2024,44804,0.808676,0.00293558,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,usb_nh_white_3rd_plus,2024,48384,0.7062,0.00379397,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,usb_nh_white_3rd_plus,2024,48384,0.777643,0.00348758,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white_3rd_plus,2024,42632,0.807609,0.00302361,160 SDR replicates,raw
+CPS November Voting Supplement,voted_rate,all_citizens,2024,72590,0.653463,0.00293598,160 SDR replicates,raw
+CPS November Voting Supplement,registered_rate,all_citizens,2024,72590,0.736237,0.00292735,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_rate,all_citizens,2024,63095,0.760933,0.0025604,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,2020,63554,-0.214776,0.019397,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,2020,63554,-0.194594,0.0144466,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,2020,63554,-0.184852,0.0152184,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_gap,india_born_naturalized,2020,63554,0.075318,0.027683,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,2020,63554,-0.0737261,0.0413803,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,2020,63554,-0.0757286,0.0196468,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,2020,63554,-0.0738344,0.0136113,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,2020,63554,-0.0929786,0.0143117,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,2020,63554,-0.020047,0.0283455,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,2020,63554,-0.0771811,0.0438517,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,2020,63554,-0.0864871,0.0198011,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,2020,63554,-0.0833703,0.0142718,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,2020,63554,-0.0995285,0.0146817,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,2020,63554,-0.0318848,0.0279911,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,2020,63554,-0.0876032,0.042932,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,2020,63554,-0.217627,0.0198016,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,2020,63554,-0.174657,0.0144726,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,2020,63554,-0.157498,0.0156565,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_gap,india_born_naturalized,2020,63554,0.0493242,0.0279529,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,2020,63554,-0.0756537,0.042819,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,2020,63554,-0.0956039,0.0197412,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,2020,63554,-0.0814782,0.014097,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,2020,63554,-0.0854725,0.014933,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,india_born_naturalized,2020,63554,-0.0220756,0.0279086,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,2020,63554,-0.0787136,0.0455008,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,2020,63554,-0.0980468,0.0202068,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,2020,63554,-0.0840358,0.0149988,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,2020,63554,-0.0884118,0.0152019,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,india_born_naturalized,2020,63554,-0.0340269,0.0276768,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,2020,63554,-0.0852608,0.0447372,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,2020,54419,-0.213263,0.0212516,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,2020,54419,-0.189666,0.0148653,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,2020,54419,-0.176084,0.0145335,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,2020,54419,0.0813605,0.0202752,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,2020,54419,-0.00769961,0.0387032,sandwich x mean 2022/2024 replicate ratio,raw
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,2020,54419,-0.060332,0.0214582,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,2020,54419,-0.0664005,0.014246,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,2020,54419,-0.0816412,0.0132071,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,2020,54419,-0.0115953,0.0216074,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,2020,54419,0.0105092,0.0393187,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,2020,54419,-0.0694033,0.0216459,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,2020,54419,-0.0711659,0.0143974,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,2020,54419,-0.080103,0.01354,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,2020,54419,-0.0145193,0.0213782,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,2020,54419,0.000745375,0.0393247,sandwich x mean 2022/2024 replicate ratio,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,2022,56244,-0.243393,0.0194888,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,2022,56244,-0.256501,0.0145187,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,2022,56244,-0.189141,0.0148321,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,india_born_naturalized,2022,56244,-0.110558,0.0354623,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,2022,56244,-0.0997666,0.0455752,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,2022,56244,-0.123184,0.0194042,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,2022,56244,-0.0766667,0.0141921,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,2022,56244,-0.0627602,0.0131218,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,2022,56244,-0.22379,0.0359271,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,2022,56244,-0.0401075,0.0406329,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,2022,56244,-0.141706,0.0191664,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,2022,56244,-0.0919597,0.0148563,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,2022,56244,-0.0762316,0.0131752,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,2022,56244,-0.216435,0.0356564,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,2022,56244,-0.035185,0.039798,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,2022,56244,-0.197442,0.0190846,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,2022,56244,-0.192217,0.0153543,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,2022,56244,-0.151928,0.0159767,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,india_born_naturalized,2022,56244,0.00166019,0.033996,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,2022,56244,-0.0694839,0.0500581,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,2022,56244,-0.088137,0.0186625,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,2022,56244,-0.0665691,0.0150153,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,2022,56244,-0.0640029,0.0146458,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,india_born_naturalized,2022,56244,-0.0729469,0.0330781,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,2022,56244,-0.0302666,0.04454,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,2022,56244,-0.0882237,0.0192981,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,2022,56244,-0.0658657,0.0159548,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,2022,56244,-0.0638903,0.0147221,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,india_born_naturalized,2022,56244,-0.065916,0.0331954,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,2022,56244,-0.0258639,0.0437904,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,2022,48077,-0.281187,0.0217519,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,2022,48077,-0.282122,0.0167248,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,2022,48077,-0.1928,0.0162644,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,2022,48077,-0.112763,0.0378608,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,2022,48077,-0.05059,0.0536433,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,2022,48077,-0.143617,0.0216846,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,2022,48077,-0.0859708,0.0163755,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,2022,48077,-0.058427,0.0140125,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,2022,48077,-0.233763,0.0388508,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,2022,48077,-0.0157332,0.0493015,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,2022,48077,-0.168607,0.0214698,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,2022,48077,-0.105162,0.0161273,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,2022,48077,-0.0702416,0.0139862,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,2022,48077,-0.230247,0.0382952,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,2022,48077,-0.018528,0.0495474,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,2024,56254,-0.263375,0.0190797,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,2024,56254,-0.25267,0.0136586,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,2024,56254,-0.204536,0.0166646,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,india_born_naturalized,2024,56254,0.0554796,0.0317564,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,2024,56254,-0.109087,0.0431958,160 SDR replicates,raw
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,2024,56254,-0.146212,0.019162,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,2024,56254,-0.113387,0.0123451,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,2024,56254,-0.110942,0.0159559,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,2024,56254,-0.0496282,0.0311339,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,2024,56254,-0.0774276,0.0434044,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,2024,56254,-0.152141,0.0197136,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,2024,56254,-0.118445,0.0130851,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,2024,56254,-0.107402,0.0170063,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,2024,56254,-0.0536977,0.0306379,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,2024,56254,-0.0785987,0.0438121,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,2024,56254,-0.223016,0.0214409,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,2024,56254,-0.195894,0.0140621,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,2024,56254,-0.166281,0.0169228,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,india_born_naturalized,2024,56254,0.0526991,0.0297258,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,2024,56254,-0.100821,0.0439476,160 SDR replicates,raw
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,2024,56254,-0.11753,0.0211475,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,2024,56254,-0.0854609,0.0133188,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,2024,56254,-0.091632,0.0161107,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,india_born_naturalized,2024,56254,-0.02688,0.0288247,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,2024,56254,-0.0762888,0.0458207,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,2024,56254,-0.121191,0.0215267,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,2024,56254,-0.0900606,0.0143908,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,2024,56254,-0.0905292,0.0168609,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,india_born_naturalized,2024,56254,-0.0359939,0.0283317,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,2024,56254,-0.0800038,0.0458589,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,2024,49419,-0.294229,0.0212136,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,2024,49419,-0.250338,0.0139538,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,2024,49419,-0.199895,0.0150523,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,2024,49419,0.0307444,0.026778,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,2024,49419,-0.0822932,0.0425065,160 SDR replicates,raw
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,2024,49419,-0.168212,0.0214989,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,2024,49419,-0.112219,0.012941,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,2024,49419,-0.1079,0.0139483,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,2024,49419,-0.0701662,0.0260319,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,2024,49419,-0.0565573,0.0416955,160 SDR replicates,"age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,2024,49419,-0.173616,0.0221029,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,2024,49419,-0.115362,0.0136984,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,2024,49419,-0.101017,0.0148957,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,2024,49419,-0.0703312,0.0260266,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,2024,49419,-0.0605145,0.0425046,160 SDR replicates,"age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,india_born_naturalized,pooled_2020_2022_2024,176052,0.0345611,0.0177035,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,india_born_naturalized,pooled_2020_2022_2024,176052,-0.0406342,0.0173331,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,india_born_naturalized,pooled_2020_2022_2024,176052,-0.0453123,0.017226,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,pooled_2020_2022_2024,176052,0.00674667,0.0183557,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,india_born_naturalized,pooled_2020_2022_2024,176052,-0.0978218,0.0184497,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,pooled_2020_2022_2024,176052,-0.100672,0.0182378,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,pooled_2020_2022_2024,151915,-0.000219207,0.0168707,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,pooled_2020_2022_2024,151915,-0.105175,0.0171721,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,pooled_2020_2022_2024,151915,-0.105032,0.0169998,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,pooled_2020_2022_2024,176052,-0.0819861,0.0263959,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,pooled_2020_2022_2024,176052,-0.0617563,0.0261485,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,pooled_2020_2022_2024,176052,-0.0637095,0.0258673,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,pooled_2020_2022_2024,176052,-0.0941934,0.0250672,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,pooled_2020_2022_2024,176052,-0.0649054,0.024626,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,pooled_2020_2022_2024,176052,-0.067129,0.0243734,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,pooled_2020_2022_2024,151915,-0.0468609,0.0262093,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,pooled_2020_2022_2024,151915,-0.0205938,0.0251994,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,pooled_2020_2022_2024,151915,-0.026099,0.0254035,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,pooled_2020_2022_2024,176052,-0.187589,0.00845217,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,pooled_2020_2022_2024,176052,-0.0778361,0.00817566,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,pooled_2020_2022_2024,176052,-0.0799873,0.00873444,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,pooled_2020_2022_2024,176052,-0.234588,0.00820606,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,pooled_2020_2022_2024,176052,-0.0879626,0.0077394,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,pooled_2020_2022_2024,176052,-0.097925,0.00813505,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,pooled_2020_2022_2024,151915,-0.240708,0.00879018,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,pooled_2020_2022_2024,151915,-0.0881969,0.00842335,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,pooled_2020_2022_2024,151915,-0.0972301,0.00853112,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,pooled_2020_2022_2024,176052,-0.158569,0.00934974,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,pooled_2020_2022_2024,176052,-0.0803692,0.00880057,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,pooled_2020_2022_2024,176052,-0.0809438,0.00901926,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,pooled_2020_2022_2024,176052,-0.192843,0.00900184,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,pooled_2020_2022_2024,176052,-0.0888936,0.00837722,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,pooled_2020_2022_2024,176052,-0.0943873,0.00868172,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,pooled_2020_2022_2024,151915,-0.189593,0.00883381,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,pooled_2020_2022_2024,151915,-0.0826561,0.00792557,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,pooled_2020_2022_2024,151915,-0.0837872,0.0081706,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,pooled_2020_2022_2024,176052,-0.212695,0.0116239,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,pooled_2020_2022_2024,176052,-0.100424,0.0114757,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,pooled_2020_2022_2024,176052,-0.102487,0.0117574,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,pooled_2020_2022_2024,176052,-0.240515,0.0111559,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,pooled_2020_2022_2024,176052,-0.115041,0.0112037,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,pooled_2020_2022_2024,176052,-0.126778,0.0112944,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,pooled_2020_2022_2024,151915,-0.262893,0.0123594,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,pooled_2020_2022_2024,151915,-0.124054,0.0124404,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,pooled_2020_2022_2024,151915,-0.137209,0.0125523,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_rate,all_citizens,pooled_2020_2022_2024,227571,0.718053,0.00163072,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,all_citizens,pooled_2020_2022_2024,227571,0.614386,0.00164144,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,all_citizens,pooled_2020_2022_2024,194052,0.726122,0.00151094,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,india_born_naturalized,pooled_2020_2022_2024,1034,0.795258,0.0175851,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,india_born_naturalized,pooled_2020_2022_2024,1034,0.673574,0.0182469,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,india_born_naturalized,pooled_2020_2022_2024,894,0.771613,0.0166387,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,indian_2nd_gen,pooled_2020_2022_2024,544,0.678711,0.0263936,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,indian_2nd_gen,pooled_2020_2022_2024,544,0.572633,0.0248206,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,indian_2nd_gen,pooled_2020_2022_2024,438,0.724971,0.0260066,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,mexican_2nd_gen,pooled_2020_2022_2024,5834,0.573108,0.00841656,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,mexican_2nd_gen,pooled_2020_2022_2024,5834,0.432238,0.00787482,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,mexican_2nd_gen,pooled_2020_2022_2024,4769,0.531124,0.00851565,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,mexican_3rd_plus,pooled_2020_2022_2024,5932,0.602128,0.0092059,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,mexican_3rd_plus,pooled_2020_2022_2024,5932,0.473984,0.00872167,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,mexican_3rd_plus,pooled_2020_2022_2024,4878,0.582239,0.00870831,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,mexico_born_naturalized,pooled_2020_2022_2024,2953,0.548002,0.0115142,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,mexico_born_naturalized,pooled_2020_2022_2024,2953,0.426312,0.0109028,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,mexico_born_naturalized,pooled_2020_2022_2024,2474,0.508939,0.0121281,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,usb_nh_white,pooled_2020_2022_2024,159945,0.760574,0.00189337,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,usb_nh_white,pooled_2020_2022_2024,159945,0.666628,0.00199752,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white,pooled_2020_2022_2024,138616,0.77169,0.00173339,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,usb_nh_white_3rd_plus,pooled_2020_2022_2024,152332,0.758719,0.00192655,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,usb_nh_white_3rd_plus,pooled_2020_2022_2024,152332,0.664222,0.00204547,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white_3rd_plus,pooled_2020_2022_2024,131849,0.769777,0.00178166,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,india_born_naturalized,presidential_2020_2024,119808,0.0510116,0.0204021,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,india_born_naturalized,presidential_2020_2024,119808,-0.0244778,0.0200609,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,india_born_naturalized,presidential_2020_2024,119808,-0.0350104,0.0198034,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,presidential_2020_2024,119808,0.0653988,0.0210643,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,india_born_naturalized,presidential_2020_2024,119808,-0.0348376,0.0210522,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,india_born_naturalized,presidential_2020_2024,119808,-0.0427912,0.0207496,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,presidential_2020_2024,103838,0.0560524,0.016794,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,presidential_2020_2024,103838,-0.0408807,0.0169155,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,india_born_naturalized,presidential_2020_2024,103838,-0.0424252,0.0168405,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,presidential_2020_2024,119808,-0.0882372,0.0306792,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,presidential_2020_2024,119808,-0.0775012,0.0322872,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,indian_2nd_gen,presidential_2020_2024,119808,-0.0826323,0.032033,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,presidential_2020_2024,119808,-0.0914068,0.0299091,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,presidential_2020_2024,119808,-0.0773044,0.0308501,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,indian_2nd_gen,presidential_2020_2024,119808,-0.0831009,0.0306703,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,presidential_2020_2024,103838,-0.0449964,0.0287435,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,presidential_2020_2024,103838,-0.023024,0.0286552,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,indian_2nd_gen,presidential_2020_2024,103838,-0.0298845,0.0289529,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,presidential_2020_2024,119808,-0.185276,0.0100896,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,presidential_2020_2024,119808,-0.0834695,0.00969684,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_2nd_gen,presidential_2020_2024,119808,-0.0870482,0.010393,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,presidential_2020_2024,119808,-0.223632,0.00994062,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,presidential_2020_2024,119808,-0.0936105,0.00918789,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_2nd_gen,presidential_2020_2024,119808,-0.100908,0.00968119,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,presidential_2020_2024,103838,-0.220002,0.0101942,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,presidential_2020_2024,103838,-0.08931,0.00962313,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_2nd_gen,presidential_2020_2024,103838,-0.093264,0.00993643,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,presidential_2020_2024,119808,-0.16189,0.0115272,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,presidential_2020_2024,119808,-0.0885523,0.0109835,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexican_3rd_plus,presidential_2020_2024,119808,-0.0894705,0.011351,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,presidential_2020_2024,119808,-0.194694,0.0112839,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,presidential_2020_2024,119808,-0.10196,0.010717,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexican_3rd_plus,presidential_2020_2024,119808,-0.103465,0.0112335,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,presidential_2020_2024,103838,-0.18799,0.0104618,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,presidential_2020_2024,103838,-0.0947707,0.00960447,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexican_3rd_plus,presidential_2020_2024,103838,-0.09056,0.010065,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,presidential_2020_2024,119808,-0.220321,0.0145929,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,presidential_2020_2024,119808,-0.106567,0.0144649,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,registered_gap,mexico_born_naturalized,presidential_2020_2024,119808,-0.109619,0.0147624,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,presidential_2020_2024,119808,-0.239076,0.013604,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,presidential_2020_2024,119808,-0.11097,0.0137221,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_gap,mexico_born_naturalized,presidential_2020_2024,119808,-0.119314,0.0139706,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,presidential_2020_2024,103838,-0.253746,0.0150137,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,presidential_2020_2024,103838,-0.114272,0.0151876,"equal-weight mean of years, independent","age, sex, education, family income"
+CPS November Voting Supplement,voted_responders_gap,mexico_born_naturalized,presidential_2020_2024,103838,-0.121509,0.0154684,"equal-weight mean of years, independent","age, sex, education, family income, state, metro"
+CPS November Voting Supplement,registered_rate,all_citizens,presidential_2020_2024,154488,0.731489,0.00198286,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,all_citizens,presidential_2020_2024,154488,0.660567,0.00197796,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,all_citizens,presidential_2020_2024,132379,0.776565,0.00172233,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,india_born_naturalized,presidential_2020_2024,717,0.823894,0.0202527,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,india_born_naturalized,presidential_2020_2024,717,0.775301,0.0210244,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,india_born_naturalized,presidential_2020_2024,633,0.873537,0.016602,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,indian_2nd_gen,presidential_2020_2024,387,0.684645,0.0308554,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,indian_2nd_gen,presidential_2020_2024,387,0.618495,0.0295492,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,indian_2nd_gen,presidential_2020_2024,316,0.772488,0.0284386,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,mexican_2nd_gen,presidential_2020_2024,3980,0.587606,0.0100382,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,mexican_2nd_gen,presidential_2020_2024,3980,0.48627,0.00954583,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,mexican_2nd_gen,presidential_2020_2024,3260,0.597483,0.00994241,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,mexican_3rd_plus,presidential_2020_2024,4018,0.610992,0.0113362,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,mexican_3rd_plus,presidential_2020_2024,4018,0.515208,0.010891,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,mexican_3rd_plus,presidential_2020_2024,3328,0.629495,0.0102796,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,mexico_born_naturalized,presidential_2020_2024,1969,0.552561,0.0144854,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,mexico_born_naturalized,presidential_2020_2024,1969,0.470826,0.0132628,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,mexico_born_naturalized,presidential_2020_2024,1651,0.563739,0.0146848,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,usb_nh_white,presidential_2020_2024,108859,0.772822,0.00231515,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,usb_nh_white,presidential_2020_2024,108859,0.709774,0.00243709,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white,presidential_2020_2024,94754,0.81738,0.00196497,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,registered_rate,usb_nh_white_3rd_plus,presidential_2020_2024,103692,0.770695,0.00235213,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_rate,usb_nh_white_3rd_plus,presidential_2020_2024,103692,0.707281,0.00250558,"equal-weight mean of years, independent",raw
+CPS November Voting Supplement,voted_responders_rate,usb_nh_white_3rd_plus,presidential_2020_2024,90132,0.81562,0.00202482,"equal-weight mean of years, independent",raw
