@@ -335,6 +335,27 @@ argument is about. [FRAMING-SENSITIVE] Across the entire grid the per-person gap
 between −$5,616 and −$7,018 and the aggregate between −$290.6bn and −$318.5bn: the
 ledger's order of magnitude does not move.
 
+[2026-09-28: a fourth characteristic, the measured generation split
+([carryover_identity_2026_09_27 RESULT §2](../carryover_identity_2026_09_27/RESULT.md)), is appended as
+eight rows of `arm5_fiscal_implication.csv`, with the counts in `arm5_generation_split.csv`; the rows
+above are unchanged. The Duncan–Trejo arm applies a years-of-schooling share to dollars and describes
+no measured group, so it stays as the years-convention sensitivity. Losses are sequential: the persons
+lost at the third-generation rate, 1 − p3 = 11.19% of the corrected third-plus, keep 1 − C3 of the
+self-identified gap (−$1,153 at C3 0.7758, SE 0.64; −$478 at 0.907 with CPS 2022–26). Persons lost
+later keep all of it (−$5,143), as the one-step G4 measurement shows.
+
+| Population arm | Lost at the G3 rate / later | Gap per person | Aggregate | With C3 0.907 |
+|---|---|---|---|---|
+| Floor | 0.80M / 0 | −$6,991 | −$291.5bn | −$6,978 / −$291.0bn |
+| Central | 1.81M / 0 | −$6,853 | −$292.7bn | −$6,824 / −$291.5bn |
+| DT 4th-plus | 2.07M / 2.04M | −$6,743 | −$303.5bn | −$6,712 / −$302.1bn |
+| 1970 bound | 2.82M / 8.02M | −$6,477 | −$335.1bn | −$6,440 / −$333.2bn |
+
+Because later losses carry the identifiers' gap, a larger hidden population widens the aggregate more
+than under Duncan–Trejo: −$303.5bn against −$296.4bn on the DT bound. Across the grid the aggregate now
+spans −$290.6bn to −$335.1bn. [CALCULATION: `bounds_coverage_fiscal.py`; two reruns, the second
+byte-identical]]
+
 ## 6. The answer: is 40M too low, and by how much
 
 Yes, but modestly. The measured self-identification union is 40.97M ± 0.38M, and the
@@ -433,3 +454,6 @@ figure, with two thirds of the population immune to the correction by constructi
 > aggregate between −$291bn and −$301bn. The correction is real, it runs in the
 > direction the literature predicts, and it is smaller than the literature's own
 > vintage numbers imply.
+
+[2026-09-28: under the measured generation split (section 5), the central arm gives −$6,853 per person
+and −$292.7bn, and the bounds −$291.5bn to −$335.1bn.]

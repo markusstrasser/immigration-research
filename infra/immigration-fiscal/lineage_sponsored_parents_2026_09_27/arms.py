@@ -21,7 +21,11 @@ RATES = (0.0, 0.03)
 NAT_RATE = 0.619
 GAP = 29              # parent-child age gap, the lineage lane's generation length
 ADMIT_LAG = 1         # IR-5 admission one year after naturalisation
-CENTRAL = {0.0: -1297150.0, 0.03: -514635.0}   # lineage lane central, rounded as quoted
+# Lineage lane central, rounded as quoted, from its stored rows (which verify.run_gates reproduces).
+# Audit §E moved it on 2026-09-28 from -1,297,150 / -514,635.
+_STORED = C.pd.read_csv(C.LINEAGE_DIR / "derived/sensitivities.csv").set_index("sensitivity")
+CENTRAL = {0.0: float(round(_STORED.loc[C.CENTRAL_NAME, "gap_lineage_fiscal"])),
+           0.03: float(round(_STORED.loc["central at 3%", "gap_lineage_fiscal"]))}
 
 
 def bar_years(ctx: C.Ctx, vec: np.ndarray, start: int) -> np.ndarray:

@@ -29,12 +29,39 @@
  },
  "checks": {
   "lineage_central": [
-   -1297150.3633891935,
-   -514635.2450066401
+   -1288162.177777483,
+   -513398.3759783898
   ],
   "poison_attr_selfid_unchanged": true,
   "population_outputs_byte_identical": true,
   "sponsored_lane_pins_selfid": true
+ },
+ "lineage_attrition": {
+  "central": {
+   "attriter_gap_per_person": -1153.1,
+   "attriter_retained_share_of_gap": 0.22420330151076195,
+   "attriter_share": 0.1119,
+   "c3": 0.7758,
+   "c3_se": 0.6436,
+   "c3_source": "pooled with CPS 2022-25 (central)",
+   "convention": "generation_split",
+   "fourth_plus_identification_rate": 0.8881,
+   "g3_rate_share": 0.1119,
+   "later_loss_retained_share_of_gap": 1.0,
+   "selfid_gap_per_person": -5143.1,
+   "union_gap_per_person": -7105.5
+  },
+  "years_convention": {
+   "attriter_gap_per_person": -1417.6,
+   "attriter_retained_share_of_gap": 0.2756314285158756,
+   "attriter_share": 0.1119,
+   "convention": "years_convention",
+   "fourth_plus_identification_rate": 0.8881,
+   "g3_rate_share": 0.1119,
+   "later_loss_retained_share_of_gap": 0.2756314285158756,
+   "selfid_gap_per_person": -5143.1,
+   "union_gap_per_person": -7105.5
+  }
  },
  "losses": {
   "hisp_mex_G2": 0.0679015,

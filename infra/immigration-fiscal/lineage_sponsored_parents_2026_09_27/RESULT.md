@@ -1,6 +1,6 @@
 claude-opus-5-5
 
-**Verdict:** [2026-09-27, late: the conceptual audit's second pass (§D, ffcce20), verified by the parent
+**Verdict:** [2026-09-28: the lineage lane now requires a living parent for each birth (conceptual audit 2026-09-27 §E). Every arm's gap moves by +$8,988 at 0% and +$1,237 at 3%; the parents' channels are unchanged in dollars, and channel shares move by at most 0.2 points. The lineage central is −$1,288,162 / −$513,398. The calibrated arm is −$1,279,450 / −$505,511 against −$1,254,932 / −$493,373 without parents, a channel of 1.9% / 2.4%. At p = 1 the arm is −$1.72M / −$723k, 27.0% / 31.7% of the gap (37.4% / 42.9% if naturalisation is certain). Arm 1 is −$1,276,267 / −$508,723 (adjust in place) or −$1,277,978 / −$509,887 (abroad under the bar). The statutory never-legalised founder with 2026 care is −$890,463 / −$424,717; the child's petition still adds −$386k / −$84k, now 30.2% / 16.5% of the gap. `arms.py` reads the lineage central from the lane's stored rows instead of the constant −1,297,150 / −514,635. Two reruns; the second is byte-identical, and all 125 gates pass.] [2026-09-27, late: the conceptual audit's second pass (§D, ffcce20), verified by the parent
 session with `conceptual_audit_2026_09_27/probe_sponsorship.py`, narrows this verdict. "The rate Mexican
 citizens actually petition" is a calibrated scenario, not an observed lifetime rate. The 0.619 is today's
 naturalized share of the eligible stock, and the two calibration estimators share their admissions numerator
@@ -116,7 +116,8 @@ All 125 checks pass [DATA: `derived/gates.csv`]:
 | `common.late_components` sums to `per_admission.late_profile` (ages 50–84, two arms, three cases) | 36 | 0 |
 | Parent stream on the lineage calendar reproduces `per_admission.csv` common-total NPVs (stored to $0.1) | 18 | $0.046 |
 
-The lineage lane's central case reproduces as −$1,297,150.36 (0%) and −$514,635.25 (3%). Reruns of
+The lineage lane's central case reproduces as −$1,297,150.36 (0%) and −$514,635.25 (3%) [2026-09-28: after
+audit §E, −$1,288,162.18 and −$513,398.38]. Reruns of
 `verify.py`, `calibration.py` and `arms.py` leave `derived/` byte-identical (`diff -rq` empty, all
 rc 0). No file outside this directory was written; the imports run with bytecode caching off.
 

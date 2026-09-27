@@ -1,6 +1,6 @@
 claude-opus-5[1m]
 
-**Verdict:** [2026-09-25: "legalising the founder moves it by 1.9%" is withdrawn as a statement about legal status. The central rule gives an unauthorized founder the pooled Mexico-born profile from 65, so legalising could only remove the working-age difference. With the programs federal law closes to someone never legalised removed from 65, legalising at year ten worsens the lineage gap by $417,886 (−$854,686 to −$1,272,572). See Revisions and the [decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).] On the complete account, one Mexico-born arrival aged 25 who stays unauthorized, plus the 2.05 descendants their lineage generates inside 100 years, runs a fiscal balance of **−$1.20M** undiscounted over that century, against **+$97k** for one third-plus non-Hispanic white of the same age and the 2.15 descendants of that lineage. The gap is **−$1.30M**, or **−$13.0k per year**; at a 3% real discount it is **−$515k**. The founder's own lifetime accounts for only **−$555k** of the gap, so **the descendants carry 57% of it**, and the single most expensive member of the lineage is not the immigrant but the US-born second generation (−$562k, −$664k per person), because that person lives an entire life inside the window while the founder's childhood was paid for abroad. **No tested arm brings the lineage gap inside the founder's own lifetime gap**; across all 115 arms in the grid and the sensitivity set the ratio never falls below 1.16, and it is 2.3× centrally. **The arm that moves the gap most is the attribution rule** (−$0.85M to −$2.71M), followed by real growth and fertility; legalising the founder moves it by 1.9% and correcting for ethnic attrition by 0.4%. The absolute level is account-dependent and the gap is not: switching from the complete to the partial account moves the Mexican lineage by $1.21M but the gap by only $0.23M. [CALCULATION]
+**Verdict:** [2026-09-28: births now need a parent alive at the childbearing age 29 (conceptual audit 2026-09-27 §E), and row 2a uses the measured generation split. The Mexican lineage runs −$1,189,717 with 2.00 descendants and the white +$98,445 with 2.09. The gap is −$1,288,162 (−$12.9k a year) and −$513,398 at 3%, $8,988 and $1,237 smaller than below. The founder's −$554,852 is unchanged, so descendants carry 56.9%; G2 runs −$560,182. The lowest lineage ÷ founder ratio is 1.15 (2.32 centrally), and correcting for ethnic attrition moves the gap 0.37%. See Revisions.] [2026-09-25: "legalising the founder moves it by 1.9%" is withdrawn as a statement about legal status. The central rule gives an unauthorized founder the pooled Mexico-born profile from 65, so legalising could only remove the working-age difference. With the programs federal law closes to someone never legalised removed from 65, legalising at year ten worsens the lineage gap by $417,886 (−$854,686 to −$1,272,572). See Revisions and the [decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).] On the complete account, one Mexico-born arrival aged 25 who stays unauthorized, plus the 2.05 descendants their lineage generates inside 100 years, runs a fiscal balance of **−$1.20M** undiscounted over that century, against **+$97k** for one third-plus non-Hispanic white of the same age and the 2.15 descendants of that lineage. The gap is **−$1.30M**, or **−$13.0k per year**; at a 3% real discount it is **−$515k**. The founder's own lifetime accounts for only **−$555k** of the gap, so **the descendants carry 57% of it**, and the single most expensive member of the lineage is not the immigrant but the US-born second generation (−$562k, −$664k per person), because that person lives an entire life inside the window while the founder's childhood was paid for abroad. **No tested arm brings the lineage gap inside the founder's own lifetime gap**; across all 115 arms in the grid and the sensitivity set the ratio never falls below 1.16, and it is 2.3× centrally. **The arm that moves the gap most is the attribution rule** (−$0.85M to −$2.71M), followed by real growth and fertility; legalising the founder moves it by 1.9% and correcting for ethnic attrition by 0.4%. The absolute level is account-dependent and the gap is not: switching from the complete to the partial account moves the Mexican lineage by $1.21M but the gap by only $0.23M. [CALCULATION]
 
 Model self-report: **claude-opus-5[1m]** (Opus 5, 1M context).
 
@@ -22,7 +22,8 @@ profiles. [DATA: `derived/oracle_period_profiles.csv`]
 brief's `all_age_shared` scenario in `all_age_ledger_2026_09_17` to 9.1e-12 dollars
 per person-year across all four Mexican-origin groups. [DATA]
 
-**Byte-identical re-run, PASS.** `derived/` copied, `lineage.py` re-run over the
+**Byte-identical re-run, PASS.** [2026-09-28: after the §E and attrition changes, two runs of
+`scripts/rerun_lane.py`; the second is IDENTICAL, 9/9 files.] `derived/` copied, `lineage.py` re-run over the
 existing inputs, `diff -rq` against the copy returns nothing, rc 0. [DATA:
 `logs/rerun.log`]
 
@@ -102,7 +103,9 @@ age. Both are in `lineage_table.csv` and the difference is reported below.
 | Crime, route A1, Hispanic any race | $1,419.2 social / $507.6 tangible / $423.3 corrections per adult 25-64 | [SOURCE: `crime_cost_2026_09_16`] |
 | Crime, route A1, NH white | $553.4 / $222.3 / $191.9 | [SOURCE: same] |
 | Fourth-plus identification rate | 0.8881 | [SOURCE: `mexican_origin_population_total_2026_09_19` arm 3, central bound] |
-| Attriter retained share of the fiscal gap | 0.1995 | [CALCULATION] −1,417.6 / −7,105.5 from arm 5, Duncan-Trejo selectivity row |
+| Attriter retained share of the fiscal gap | 0.1995 | [CALCULATION] −1,417.6 / −7,105.5 from arm 5, Duncan-Trejo selectivity row. [2026-09-28: a defect; −7,105.5 is the union's gap, not the self-identified third-plus gap the share multiplies] |
+| [2026-09-28] Same, self-ID divisor (years-convention sensitivity) | 0.2756 | [CALCULATION] −1,417.6 / −5,143.1, arm 5 `arm5_generation_split.csv` |
+| [2026-09-28] Generation split, row 2a: G3-rate attriters keep | 0.2242 | [CALCULATION] 1 − C3, C3 0.7758 (SE 0.6436) pooled by `carryover_identity_2026_09_27`; later losses keep 1.0 |
 
 **Generation length.** The own-children-under-5 age-specific rates imply a mean
 maternal age at birth of **31.7 years** for the Mexico-born, **28.3** for the second
@@ -131,6 +134,11 @@ low fertility, generation length 29, common US total life table, no real growth,
 | Crime, social net of corrections | — | — | +$61,101 |
 | Crime, tangible, 0% | $48,700 | $21,183 | +$27,517 |
 
+[2026-09-28, audit §E: persons 3.00 / 3.09; lineage at 0% −$1,189,717 / +$98,445 / **−$1,288,162**, per
+year −$12,882; at 3% −$336,891 / +$176,508 / **−$513,398**; the founder's rows are unchanged. The crime
+gaps are +$82,760 social, +$60,610 net of corrections (4.7% of the fiscal gap) and +$27,300 tangible.
+[CALCULATION: `derived/sensitivities.csv`]]
+
 The crime line is not added to the fiscal line. Corrections spending is already inside
 the expanded fiscal account, so the incremental social cost outside the ledger is
 $61,101 over the century, about 4.7% of the fiscal gap. [CALCULATION]
@@ -144,6 +152,10 @@ $61,101 over the century, about 4.7% of the fiscal gap. [CALCULATION]
 | G3 | 33 | 0.548 | −$78,083 | −$142,523 | +$174,497 |
 | G4 | 62 | 0.384 | −$85,362 | −$222,191 | −$34,875 |
 | G5 | 91 | 0.269 | −$45,235 | −$167,906 | −$55,041 |
+
+[2026-09-28, audit §E: persons G2–G5 0.843 / 0.536 / 0.369 / 0.254; fiscal −$560,182 / −$76,323 /
+−$81,889 / −$42,589; white counterparts −$112,960 / +$170,564 / −$33,456 / −$51,821. Per-person values
+do not change. [CALCULATION: `derived/generation_breakdown.csv`]]
 
 Two things drive this table and both are horizon artifacts as much as group
 differences. The second generation is the most expensive member of either lineage
@@ -172,11 +184,19 @@ not they move the headline. None does. [CALCULATION]
 | **(b)** Founder legalised at year 10 | −$1,272,572 | +$24,578 (+1.9%) | −$530,273 | 2.40 |
 | **(c)** Second and later generations at white TFR | −$1,355,369 | −$58,219 (−4.5%) | −$554,852 | 2.44 |
 
+[2026-09-28: central −$1,288,162 (ratio 2.32). (a) under the measured generation split −$1,283,352,
++$4,810 (+0.37%), ratio 2.31; with the years convention and the self-ID divisor −$1,283,671 (+$4,491),
+and with C3 0.907 (CPS 2022–26) −$1,282,538. (b) −$1,263,584, +$24,578 (ratio 2.38). (c) −$1,343,940,
+−$55,778 (−4.3%, ratio 2.42). [CALCULATION: `derived/sensitivities.csv`]]
+
 **(a) barely moves** because ethnic attrition only reaches G4, which is 0.38 of a person
 born in year 62 with 38 years inside the window. The construction blends 11.19% of G4+
 at a profile that retains 19.95% of the self-ID gap to white. The direction is the
 expected one — real descendants include attriters, so the base case is an upper bound —
-but the magnitude is 0.4%. [CALCULATION]
+but the magnitude is 0.4%. [CALCULATION] [2026-09-28: the 19.95% divided the attriters' gap by the
+union's. Against the self-identified third-plus gap the Duncan-Trejo row keeps 27.56%. Row (a) now uses the
+measured generation split: the 11.19% are all lost at the third-generation rate and keep 22.42% (1 − C3,
+C3 0.7758); losses after G3 keep the whole gap, so extra identity loss does not move the row.]
 
 **(b) moves 1.9%.** [2026-09-25: withdrawn as a statement about legal status; see Revisions. Ladder 85 compares adults of working age, and from 65 the central rule gives the unauthorized founder the pooled profile, so the arm cannot show what eligibility does.] Legal status is nearly irrelevant to this account, which is what
 ladder 85 already found at the annual level: the imputed-unauthorized and imputed-legal
@@ -225,9 +245,15 @@ Ranked by how far each arm moves the lineage gap from the central −$1,297,150:
 | 1% growth at 3% discount | −$665,475 | +49% | 3.05 / 3.15 |
 | Central at 3% discount | −$514,635 | +60% | 3.05 / 3.15 |
 
+[2026-09-28, audit §E: every row moves; persons fall to 3.00 / 3.09 centrally. Central −$1,288,162;
+maternal full −$2,676,599 (−108%); 1% growth −$2,012,948 (−56%); high fertility −$1,991,084 (−55%);
+intermarried half −$845,662 (+34.4%) and senior zero −$841,873 (+34.6%) swap places. All values are in
+`derived/sensitivities.csv`.]
+
 Crime routes do not change the fiscal gap at all. They move only the crime line: route
 A1 gives a social gap of $83,427, route A2 (ACS institutional stock) $137,256, and
-pricing the founder at the Texas undocumented arrest-charge rate $46,591. [CALCULATION]
+pricing the founder at the Texas undocumented arrest-charge rate $46,591. [CALCULATION] [2026-09-28,
+audit §E: $82,760, $136,189 and $45,924.]
 
 **Which arm moves the gap most: attribution.** It spans −$848k to −$2,710k, a factor of
 3.2, and it is a definitional choice about what "a lineage" means rather than a
@@ -299,6 +325,9 @@ its ledger, base and gross-or-net status.** [INFERENCE]
 ---
 
 ## Draft memo section
+
+[2026-09-28: the figures in this draft predate audit §E and the generation split; the verdict bracket
+has the current ones.]
 
 > **The descendants, not the arrival, carry most of the hundred-year gap.** Take one
 > Mexico-born arrival aged 25 who remains unauthorized, follow their lineage for a
@@ -421,6 +450,39 @@ its ledger, base and gross-or-net status.** [INFERENCE]
   covered), falls on hospitals and other payers, outside the fiscal line. The regimes describe rules in force from 2020 to 2026. A founder
   who turns 65 decades from now faces whatever rules hold then, which is why the table gives a
   range and not a point. The other outputs are byte-identical.
+
+- **2026-09-28: births need a living parent, and row 2a takes the measured generation split.**
+  Two changes, reported separately. [CALCULATION: `lineage.py`, `inputs.py`; decomposition run
+  against the pre-change `derived/`]
+  1. *Survival before reproduction* ([conceptual audit 2026-09-27 §E](../../../research/immigration-conceptual-audit-2026-09-27.md)).
+     `lineage()` multiplied each generation by TFR/2 and never required the parent to live to the
+     single childbearing age. Births now carry the parent's survival to `gen_len` on the parent's
+     own table: 0.99596 from the founder's 25 to 29, 0.98143 from birth to 29 on the total table.
+     Alone, on the original central case, this reproduces the audit's numbers exactly: −$1,297,150.36
+     → −$1,288,162.18 at 0% (+$8,988.19) and −$514,635.25 → −$513,398.38 at 3% (+$1,236.87).
+     Every row with the same descendants moves by the same amounts, because the change touches only
+     G2+ counts. `audit.json` gains a check that G2 and G3 counts equal TFR/2 × survival.
+  2. *Row 2a* ([carryover_identity_2026_09_27 RESULT §2](../carryover_identity_2026_09_27/RESULT.md)).
+     The retained share divided the Duncan-Trejo attriters' gap (−$1,417.6) by the union's
+     (−$7,105.5), not the self-identified third-plus gap it multiplies (−$5,143.1): 0.1995 instead
+     of 0.2756. Row 2a now uses the measured generation split: attriters lost at the
+     third-generation rate keep 1 − C3 = 0.2242 of the gap (C3 0.7758, SE 0.6436), and later losses
+     keep all of it. Under the central bound all 11.19% are G3-rate losses.
+
+  | Row 2a, gap | 0% | Step | 3% | Step |
+  |---|---:|---:|---:|---:|
+  | Before (years convention, union divisor) | −$1,291,972.74 | | −$514,264.31 | |
+  | + survival (§E) | −$1,283,198.78 | +$8,773.95 | −$513,042.74 | +$1,221.56 |
+  | + self-ID divisor, years convention | −$1,283,670.78 | −$472.00 | −$513,076.56 | −$33.82 |
+  | + generation split, C3 0.7758 (now row 2a) | −$1,283,351.91 | +$318.88 | −$513,053.72 | +$22.85 |
+  | Generation split with C3 0.907 (CPS 2022–26) | −$1,282,538.38 | | | |
+
+  Row 2a now lies $4,810 (0.37%) above the central, against $5,177 (0.40%) before. Two rows are
+  appended to `derived/sensitivities.csv`: the years convention with the self-ID divisor and the
+  C3 0.907 split. `audit.json` records both conventions (`attrition`, `attrition_sensitivities`) and a
+  check that under the split only the G3-rate share closes any of the gap. The population lane's
+  arm 5 supplies the split in `arm5_generation_split.csv`. Two reruns with `scripts/rerun_lane.py`;
+  the second is IDENTICAL. `senior_pricing` in `audit.json` is unchanged.
 
 ---
 

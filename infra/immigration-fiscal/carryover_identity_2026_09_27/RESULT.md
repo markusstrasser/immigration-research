@@ -17,6 +17,7 @@ then shrinks by about a sixth from G2 to G3+, not a tenth.
   measurement of anyone: it is a years-of-schooling share for non-*Hispanic* second-generation adults
   (2003–13), divided by the third-plus gap. At G2, where the same 669 adults are measured on every outcome,
   non-identifiers close 0.17–0.27 of the BA+, years, earnings and ledger gaps alike. The ledger should use a generation-split measured rule (§2).
+  [2026-09-28: the population total's arm 5 and the lineage cost's row 2a now use it; §5 has the deltas.]
 - **Cohort matters about as much as identity.** The all-ages ratio pools a stall at ages 45–64 (1.06–1.12) with a
   real step at 25–44 (0.87–0.91) and in the NLSY97 birth cohort (0.82–0.83). Cohort explains more of the CPS
   (0.92) against NLSY97 (0.76) difference than attrition does: 0.09 against 0.05 of the 0.16.
@@ -210,6 +211,16 @@ inputs; FRAMING-SENSITIVE: all-age ledger against third-plus whites]
 The lineage cost's arm 2a, 0.4–0.8% of its central, stays within that order. [INFERENCE from the propagation
 lane's range]
 
+[2026-09-28: both paragraphs above misapply the rule. First, the split gives G3-rate attriters C3 = 0.78
+of the gap closed, not full convergence, so the central arm keeps −$1,153 per attriter. It lands at **−$6,853
+per person and −$292.7bn**; the "fully converged" row above assumed C3 = 1. At C3 0.907 (CPS 2022–26) the
+arm gives −$6,824 and −$291.5bn. Second, losses are sequential: under (b), 11.19% of the corrected
+third-plus (1.95M) is lost at the G3 rate whatever happens later, and 1.10M are later losses, not 1.81M and
+1.24M. That gives **−$6,792 and −$298.5bn**. Row 2a is now 0.37% of the lineage central, and no
+identity-loss schedule moves it, because later losses close nothing. [CALCULATION:
+`mexican_origin_population_total_2026_09_19/derived/arm5_generation_split.csv`,
+`identity_loss_propagation_2026_09_27/derived/population_arms.csv`; §5]]
+
 ## 3. A same-sample test
 
 **Design 1: CPS co-resident parent pointers.** The frame is adults 18+ living with at least one linked biological
@@ -309,6 +320,82 @@ indicative only. NLSY97's own G3+ pooling barely matters on BA+ (0.746). [CALCUL
   - Restricted census-administrative linkages.
 - For the later losses, a larger one-step G4 sample from the same designs.
 
+## 5. Consumer lanes after the fix (2026-09-28)
+
+The split rule from §2 and the conceptual audit's §E (births need a living parent) now run in the four
+consumer lanes. Each step's delta is reported separately. No lane here was committed. Reruns used
+`scripts/rerun_lane.py`, and for every lane the second run is byte-identical. [CALCULATION throughout]
+
+**Step 1: positive control (§E alone).** Births are multiplied by the parent's survival to 29 on the parent's
+own table: 0.99596 from the founder's 25, 0.98143 from birth
+(`lineage_cost_2026_09_19/lineage.py`, mirrored in `identity_loss_propagation_2026_09_27/propagate.py`).
+On the original central lineage case it reproduces the audit exactly:
+
+| Discount | Before | After §E | Move | Audit target |
+|---|---:|---:|---:|---|
+| 0% | −$1,297,150.36 | −$1,288,162.18 | +$8,988.19 | −1,297,150 → −1,288,162 |
+| 3% | −$514,635.25 | −$513,398.38 | +$1,236.87 | −514,635 → −513,398 |
+
+**Step 2a: the split rows in population arm 5.** `bounds_coverage_fiscal.py` appends eight rows to
+`arm5_fiscal_implication.csv`, with the counts in the new `arm5_generation_split.csv`; the twelve earlier rows
+are byte-identical. C3 is imported from `generation_carryover_2026_09_27/summarize.py` `SPLIT_C3`, whose
+`verify.py` drift-tests it against this lane's `corrected_step.csv`. Losses are sequential: 1 − p3 = 11.19% of
+the corrected third-plus is lost at the G3 rate, and the rest of the added persons are later losses.
+
+| Bound | Lost at G3 rate / later | Duncan–Trejo (years convention) | Split, C3 0.7758 | Change | Split, C3 0.907 |
+|---|---:|---:|---:|---:|---:|
+| Floor | 0.80M / 0 | −$6,996, −$291.7bn | −$6,991, −$291.5bn | +$5, +$0.2bn | −$6,978, −$291.0bn |
+| Central | 1.81M / 0 | −$6,864, −$293.2bn | **−$6,853, −$292.7bn** | +$11, +$0.5bn | −$6,824, −$291.5bn |
+| DT 4th-plus | 2.07M / 2.04M | −$6,586, −$296.4bn | −$6,743, −$303.5bn | −$157, −$7.1bn | −$6,712, −$302.1bn |
+| 1970 bound | 2.82M / 8.02M | −$5,913, −$306.0bn | −$6,477, −$335.1bn | −$563, −$29.1bn | −$6,440, −$333.2bn |
+
+**Step 2b: the denominator at `lineage_cost_2026_09_19/inputs.py`.** `attrition()` divided the Duncan–Trejo
+attriters' gap (−$1,417.6) by the union's (−$7,105.5). The self-identified third-plus gap it multiplies is
+−$5,143.1, so the share they keep is 0.2756, not 0.1995. Alone, after §E, this moves row 2a by **−$472.00 at 0%
+and −$33.82 at 3%**. `attrition()` now takes the divisor from `arm5_generation_split.csv` and offers both
+conventions. The years convention stays as an appended sensitivity row, −$1,283,670.78.
+
+**Step 2c: row 2a on the split.** G3-rate attriters keep 1 − C3 = 0.2242, and later losses keep 1.0
+(`g3plus_profile`, `inputs.attrition()`). This moves row 2a by **+$318.88 at 0% and +$22.85 at 3%**, to
+−$1,283,351.91 and −$513,053.72. From 2026-09-27 to now, row 2a moves by +$8,620.83 and +$1,210.59: §E
+contributes +$8,773.95 and +$1,221.56. Its effect over the central is now +$4,810 (0.37%), against +$5,178
+(0.40%). At C3 0.907 it is −$1,282,538.38.
+
+**Step 3: reruns.**
+- `identity_loss_propagation_2026_09_27`: split columns are added beside the Duncan–Trejo ones, and the
+  years-convention 2a rows are kept as sensitivities. Under the split, no schedule moves 2a; under the years
+  convention (b) moves it by +$4,292. For the split population values see the §2 bracket (−$298.5bn on (b),
+  −$304.3bn on (c) at ρ 0.5). `verify.py` PASS.
+- `lineage_sponsored_parents_2026_09_27`: every arm moves by +$8,988.19 / +$1,236.87, and the channels are
+  unchanged. `arms.py` had the old central hard-coded as a constant; it now reads the lineage lane's stored
+  rows. All 125 gates pass.
+
+**Step 4.** The §2 bracket above.
+
+**Inputs of `ir5_adjusters_2026_09_27` and `late_arrival_tail_2026_09_27`.** Only
+`lineage_cost_2026_09_19/derived/audit.json` changed (sha256 `b57f283b2b93…` → `49a7f5a64752…`). Both lanes
+read only its `senior_pricing`, which is identical. The keys that changed are:
+- `attrition` (new fields, retained share 0.1995 → 0.2242);
+- the new `attrition_sensitivities`;
+- `checks` (two new; the priced-senior bounds shift by +$8,988.19);
+- `inputs_sha256` (`arm5_fiscal_implication.csv`, the new `arm5_generation_split.csv`).
+
+A rerun of either lane would change only the recorded hash. Their other hashed inputs (tail `per_admission.py`,
+`per_admission.csv`, `late_arrival_tenure.csv`, `late_arrival_65plus.csv`, `ptc_inputs.csv`, the three
+ledger files) are unchanged.
+
+**Other consumers.**
+- `conceptual_audit_2026_09_27/probe_sponsorship.py` now fails its assert that the original gap is
+  −1,297,150.3576. That is the uncorrected value it was written to check, and its survival-halving diagnostic
+  no longer leaves counts unchanged. Not edited: it belongs to the audit lane.
+- `projection_backtest_2026_09_19/sensitivities.py` has its own copy of the lineage recurrence without §E
+  survival, and it records the hash of `inputs.py`. Not fixed: it is outside this brief, and its rerun needs the
+  CPS and MEPS inputs. It is the same class of defect.
+- `number_audit_2026_09_22/recheck.py` selects the Duncan–Trejo row by prefix. It is unaffected (−$6,864
+  reproduces).
+- `generation_carryover_2026_09_27` and this lane read nothing that changed in value. This lane's `verify.py`
+  still passes.
+
 ## Limits
 
 - The co-resident frames hold young adults living with a parent. The comparison is symmetric, because whites
@@ -346,7 +433,13 @@ Skipped:
 - IPUMS-CPS and the CPS basic monthly files, which need an extract revision or an acquisition lane.
 - GSS: it screens every generation on Mexican identification and has only a generic grandparent count, so it
   cannot hold the sample fixed.
-- Re-running the consumer lanes, which the brief puts out of scope.
+- Re-running the consumer lanes, which the brief puts out of scope. [2026-09-28: done in phase 2 of the
+  consumer fix, §5. The files edited are outside this lane:
+  - `lineage_cost_2026_09_19/{lineage.py,inputs.py}`;
+  - `mexican_origin_population_total_2026_09_19/bounds_coverage_fiscal.py`;
+  - `identity_loss_propagation_2026_09_27/{propagate.py,verify.py}`;
+  - `lineage_sponsored_parents_2026_09_27/arms.py`;
+  - their `derived/`, `RESULT.md` and `README.md` brackets.]
 
 Judgment calls:
 - The CPS G2 is not corrected, for the reason in §1.
@@ -409,3 +502,7 @@ Two full runs leave `derived/` byte-identical: the SHA-256 lists differ in nothi
 - Composite with the pooled same-sample G3 value (inverse-variance CPS co-resident + NLSY97: 0.78, SE 0.64):
   0.841 BA+, 0.821 earnings, 0.824 ledger (2022–25). [CALCULATION]
 - Two full reruns byte-identical; `verify.py` PASS. [CALCULATION]
+- 2026-09-28, consumer fix phase 2 (§5): audit §E reproduces the audit's targets exactly (−$1,288,162.18 /
+  −$513,398.38); the arm 5 split rows give −$6,853 / −$292.7bn centrally; the self-ID divisor moves row 2a by
+  −$472.00 and the split by +$318.88; propagation and sponsored-parent lanes rerun, second runs identical.
+  [CALCULATION]

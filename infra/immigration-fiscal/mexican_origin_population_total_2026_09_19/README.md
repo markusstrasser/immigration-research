@@ -43,6 +43,7 @@ nothing approaches the 5 MB cap.
 | ACS 2024 PUMS data dictionary | `~/research-data/immigration-fiscal/data/external/acs_pums_dict/PUMS_Data_Dictionary_2024.csv` |
 | CPS ASEC 2025 data dictionary and technical documentation | `~/research-data/immigration-fiscal/data/external/cps_asec_doc/{ddl25.txt,cpsmar25.pdf}` |
 | All-age fiscal ledger, per-person and aggregate gaps | `../all_age_ledger_2026_09_17/derived/estimates.csv` |
+| C3 for the generation split (2026-09-28), imported | `../generation_carryover_2026_09_27/summarize.py` `SPLIT_C3` (drift-tested there against `carryover_identity_2026_09_27`) |
 | Unauthorized share of the Mexico-born (CPS residual) | `../unauthorized_population_size_2026_09_19/derived/cps2025_residual_by_region.csv` |
 | Census Bureau 2024 ASEC generation table | `../acs_institutional_2026_09_16/cps_2024_asec_generation_table4.xlsx` |
 
@@ -100,7 +101,8 @@ Standard errors are successive-difference replication throughout: variance facto
 | `arm3_allocation_check.csv` | attrition on non-imputed records only |
 | `arm4_coverage_grid.csv` | five coverage schemes applied to the union |
 | `arm5_education_selectivity.csv` | the education gap the attriter advantage closes |
-| `arm5_fiscal_implication.csv` | per-person and aggregate gap under 4 population × 3 characteristics arms |
+| `arm5_fiscal_implication.csv` | per-person and aggregate gap under 4 population × 3 characteristics arms, plus 8 generation-split rows (2026-09-28) |
+| `arm5_generation_split.csv` | the split's counts (lost at the G3 rate, later), C3 and the self-identified third-plus gap (2026-09-28) |
 
 ## Scope
 
