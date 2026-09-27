@@ -141,6 +141,9 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
   Against a same-age white resident's remaining lifetime, the parent costs more at 55 and less at
   65, because white retirees draw earned Social Security and Medicare. One FY2024 cohort carries
   about $16bn at 3%. This is a flow valuation; the annual account already contains these residents.
+  The five-year bar and sponsor-income deeming were applied from the lane's recollection of the
+  statutes, not a re-read text [UNVERIFIED citation]; the 0.65 Medicare weight is an assumption
+  (0.55–0.75 in the low and high cases).
 - **Offset.** The childcare offset is real in sign and small: about $120–380 a year in taxes per
   co-resident parent, during preschool years only. The mother's earnings are an assumption.
   [SOURCE: Hu 2018 Table 3; Compton & Pollak; Productivity Commission 2016, `reads/offset_reads.md`]
@@ -157,6 +160,9 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
 - **G1→G2 across 78 origins.** The slope is 0.52 on education (0.29–0.59 over origins) and 0.55 on
   earnings, on top of a common uplift of about 5 points. Without Mexico, the high-leverage point,
   the slopes are 0.36 and 0.30. Mexico's G2 sits 8 points below the line the other 77 draw.
+  The slope is steeper below the white median than above it (education 0.68 vs 0.31): low
+  starting points carry to G2 more than high ones. Unweighted across origins the slopes are 0.45
+  and 0.47; leave-one-out moves them much only for Mexico.
 - **Selection within the origin country** (Barro-Lee, Wittgenstein) adds little once US position is
   known (R² 0.10–0.12 without Mexico). Where immigrants stand in the US distribution predicts their
   children; how selected they were at home does not add much.
