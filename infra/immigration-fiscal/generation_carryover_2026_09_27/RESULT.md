@@ -21,6 +21,17 @@ source shows the fourth-plus generation ahead of the third.
   the NLSY97 parent–child slope of 0.56) to −$6.6k and −$6.6k (full stall). Only the extreme case,
   in which half or more of G4+ descendants stop identifying and look exactly like whites, cuts the
   G5 gap below −$1k.
+  [2026-09-28: the central above is superseded. Attriters are now valued by the generation-split
+  measured rule of `carryover_identity_2026_09_27` §2: people lost at G3, and their descendants, close
+  0.78 of the identifiers' gap (SE 0.64; 0.91 with CPS 2026 pooled in); people lost later close
+  nothing. Identity loss then lowers every generation's lineage gap by the same 9% from G3 on. The
+  CPS and GSS G3 → G4+ ratios stay at their observed 1.04 and 1.10; NLSY97's, whose G3 already
+  includes its non-identifiers, falls to 0.89. The range is 0.81–1.10 (0.79–1.10 with the 2026
+  value). The central projection, per lineage descendant, starts from a G3+
+  lineage gap of −$6.0k and puts G4 at −$6.1k and G5 at −$6.1k. The band does not move. The old
+  central (0.98 a step) gave every attriter NLSY97's +6.16 BA points and, through a filter, averaged
+  CPS and GSS only; with NLSY97 included it is 0.94, kept as a sensitivity. The worst case now starts
+  from its own lineage base: G5 −$0.37k, was −$0.42k. Mapping and numbers: §3 and §4.]
 
 The main reason not to call this a permanent stall is vintage. Today's adult G4+ descend from
 pre-1930s migrants, many in Texas. NLSY97 shows their parents were less schooled than the parents
@@ -195,11 +206,16 @@ How much better the attriters do [SOURCE/DATA]:
 - **Years of schooling:** +0.64 (NLSY97) and +0.76 (Duncan–Trejo 2017).
 - **Dollar gaps:** the population-total lane's convention, under which attriters close 54–72% of
   the gap.
+- [2026-09-28: the dollar convention is a years-of-schooling share, not a dollar measurement
+  (`carryover_identity_2026_09_27` §2). It stays as sensitivity rows, scenario
+  `sensitivity_years_share_convention`. The BA+ and years advantages stay as
+  `attriters_at_measured_nonidentifier_values` rows, but they give one value to every generation's
+  attriters and are no longer central. The central rule is the generation split below.]
 
 | Gap | Observed (identifiers) | Attriters like identifiers | At measured non-identifier values | Attriters like whites |
 |---|---|---|---|---|
 | CPS G3+ BA+, points | −19.8 | −19.8 | −19.7 to −16.4 | −17.6 to −8.8 |
-| CPS G3+ partial ledger, $ | −6,615 | −6,615 | −6,213 to −3,951 | −5,875 to −2,937 |
+| CPS G3+ partial ledger, $ | −6,615 | −6,615 | −6,213 to −3,951 (years convention; superseded 2026-09-28) | −5,875 to −2,937 |
 | CPS G3 obs. BA+ (both parents) | −9.7 | −9.7 | −9.6 to −8.0 | −8.6 to −7.0 |
 | CPS G4+ obs. BA+ (both parents) | −10.1 | −10.1 | −10.0 to −6.7 | −9.0 to −4.5 |
 | GSS G3 / G4+ BA+ | −17.4 / −19.0 | same | −17.3 to −15.6 / −19.0 to −15.6 | −15.4 to −12.5 / −16.9 to −8.5 |
@@ -213,12 +229,62 @@ Attrition-corrected G3 → G4+ BA+ ratio:
 - At measured non-identifier values, the ratio is 0.79–1.10 across sources and rate pairs. The
   central case is 0.92 (CPS), 1.03 (GSS) and 0.88 (NLSY97), using the CPS G3 rate, the
   Duncan–Trejo G4+ rate and NLSY97's +6.16.
+  [2026-09-28: superseded as central; these are the flat advantages. Under the generation split
+  (below) the ratio is 0.81–1.10, and the central case is 1.04 (CPS), 1.10 (GSS) and 0.89 (NLSY97).]
 - If attriters look exactly like whites, the ratio falls to 0.69–0.87 at 29% G4+ attrition and
   0.43–0.61 at 56%.
+  [2026-09-28: unchanged. It rests on the lane's convention that NLSY97's G3 needs no correction.
+  Counting the 13.0% non-identifiers already in NLSY97's published G3, its 56% value is 0.47, not 0.43.]
 
 The measured non-identifier advantage is small (0.6–6 BA points). Attrition therefore moves the
 ratio materially only if many more G4+ descendants leave than any modern survey measures and
 those who leave look like whites.
+[2026-09-28: the split rule sharpens this. Later leavers close nothing, so the G4+ attrition rate
+drops out of the ratio. Only the like-whites bound still moves it, and the one direct measurement
+of later leavers (`carryover_identity_2026_09_27` §2: earnings $11–12k below identifiers, n 35–44)
+cuts against that bound.]
+
+**[2026-09-28] The generation-split rule, now central.** It comes from `carryover_identity_2026_09_27`
+§2. [CALCULATION: `summarize.py` → `attrition_bounds.csv`, `attrition_corrected_rho.csv`, scenario
+`attriters_generation_split_measured`; C3 is DATA copied from
+`carryover_identity_2026_09_27/derived/corrected_step.csv`, and `verify.py` checks it for drift]
+
+How it maps onto this lane, with a3 the G3-rate share of the hidden and C3 its closing share:
+- *G3 cells:* lineage gap = gap × (1 − a3 C3), with a3 the row's G3 rate (central 11.2%).
+- *G4+ cells:* the G4+ lineage holds the descendants of G3 attriters (share a3, at C3) and later
+  losses (a4 − a3, which close nothing). The lineage gap is therefore gap × (1 − a3 C3), and the G4+
+  attrition rate a4 drops out.
+- *CPS pooled G3+:* gap × (1 − a3 C3), the level in `carryover_identity_2026_09_27` §1.
+- *NLSY97 G3:* no correction, as in every other scenario, because its G3 is defined by the
+  grandparents' birthplace. See Limits for the sensitivity.
+- *C3:* the pooled same-sample G3 value, 0.776 (SE 0.644) on BA+ and 0.729 (0.677) on years. With
+  CPS 2026 pooled in, it is 0.907 (0.612) and 1.023 (0.664). The ledger takes the BA+ value, because
+  no G3 dollar measurement exists.
+- *Pairs:* the G3 → G4+ ratios keep the lane's rate pairs; the G4+ lineage takes the pair's G3 rate.
+
+| Lineage gap under the split rule (SE) | Observed | G3 rate 11.2% | 20.6% / 28.2% | C3 with 2026, 11.2% |
+|---|---|---|---|---|
+| CPS G3+ BA+, points | −19.8 | −18.1 (1.6) | −16.6 / −15.5 | −17.8 |
+| CPS G3+ partial ledger, $ | −6,615 | −6,041 (557) | −5,557 / −5,168 | −5,944 |
+| CPS G3 / G4+ obs. BA+ (both parents) | −9.7 / −10.1 | −8.9 / −9.2 | −8.2 / −8.5, −7.6 / −7.9 | −8.7 / −9.1 |
+| GSS G3 / G4+ BA+ | −17.4 / −19.0 | −15.9 / −17.4 | −14.6 / −16.0, −13.6 / −14.9 | −15.6 / −17.1 |
+| NLSY97 G3 / G4+ BA+ | −19.4 / −18.8 | −19.4 / −17.1 | −19.4 / −15.8, −19.4 / −14.7 | −19.4 / −16.9 |
+| NLSY97 G3 / G4+ years | −0.93 / −1.69 | −0.93 / −1.55 | −0.93 / −1.44, −0.93 / −1.34 | −0.93 / −1.50 |
+
+| G3 → G4+ ratio under the split rule | BA+ | Years | Household ledger |
+|---|---|---|---|
+| CPS, both parents | 1.04 at every rate pair | | 1.67 at every rate pair |
+| GSS | 1.10 at every rate pair | 1.34 | |
+| NLSY97, G3 rate 11.2% / 20.6% | 0.89 / 0.81 (0.87 / 0.79 with the 2026 C3) | 1.67 / 1.54 | |
+| NLSY97, G3 as published (13.0% non-identifiers), any rate | 0.87 (0.85) | 1.64 (1.58) | |
+
+Reading. Under the split rule, identity loss is a one-time level shift at G3: about 9% off the gap
+(−$574 on the CPS G3+ ledger, SE $476 from C3 alone) at every generation from G3 on. It is not a
+per-generation fade. CPS and GSS keep their observed G3 → G4+ ratios, because both cells scale
+alike. NLSY97's ratio falls, because its G3 already contains its non-identifiers and only its G4+
+takes the factor. The years convention gives the CPS household ledger 1.17–1.67
+(`sensitivity_years_share_convention`); the flat BA+ advantages give 0.79–1.10.
+[CALCULATION; INFERENCE for the reading]
 
 ## 4. Projection to G4 and G5 [MODEL]
 
@@ -234,20 +300,38 @@ Assumed inputs:
 - G4+/G5 attrition rates, which no survey measures.
 - The fiscal gap scales with the schooling gap.
 - G3+ stands in for G3. It already contains G4+, which is conservative for the stall path.
+- [2026-09-28] Under the split rule, the descendants of G3 attriters keep C3 at every later
+  generation, and later losses close nothing. The split paths and the worst case start from the
+  lineage G3+ gap, not the identifiers'; the other paths remain per identifying descendant.
 
 | Path (rho per step) | BA+ G4 / G5, points | Ledger G4 / G5, $ per adult | Years G4 / G5 |
 |---|---|---|---|
 | Measured base, G3+ | −19.8 | −6,615 | −0.93 |
 | Stall, identifiers as observed (1.00) | −19.8 / −19.8 | −6,615 / −6,615 | −0.93 / −0.93 |
-| Attrition-corrected central (0.98) | −19.3 / −18.9 | −6,468 / −6,323 | −0.91 / −0.89 |
+| Attrition-corrected central (0.98) [superseded 2026-09-28] | −19.3 / −18.9 | −6,468 / −6,323 | −0.91 / −0.89 |
+| [2026-09-28] Generation split, central (1.01), per lineage descendant; lineage G3+ −18.1 / −$6,041 (SE 557) / −0.93 | −18.2 / −18.4 | −6,087 / −6,134 | −0.94 / −0.94 |
+| [2026-09-28] Generation split, C3 with CPS 2026 (1.00); lineage G3+ −17.8 / −$5,944 / −0.93 | −17.8 / −17.9 | −5,961 / −5,979 | −0.93 / −0.94 |
+| [2026-09-28] Flat NLSY97 advantage with NLSY97 included (0.94), sensitivity, identifiers' base | −18.7 / −17.6 | −6,245 / −5,895 | −0.88 / −0.83 |
 | Recursion, G3 residual (0.89, 0.93) | −17.7 / −16.5 | −5,910 / −5,515 | −0.83 / −0.78; fixed point −0.70 |
 | Resume NLSY97's G2→G3 step (0.76) | −15.1 / −11.5 | −5,038 / −3,837 | −0.71 / −0.54 |
 | Recursion, no group residual (0.56) | −11.1 / −6.2 | −3,705 / −2,075 | −0.52 / −0.29 |
-| Worst case for the stall reading: 1970 attrition (55.6%, 94.4%), attriters like whites (0.50, 0.13) | −9.9 / −1.2 | −3,307 / −417 | −0.46 / −0.06 |
+| Worst case for the stall reading: 1970 attrition (55.6%, 94.4%), attriters like whites (0.50, 0.13) [superseded 2026-09-28] | −9.9 / −1.2 | −3,307 / −417 | −0.46 / −0.06 |
+| [2026-09-28] Same worst case from its lineage G3+ base (−17.6 / −$5,875 / −0.93) | −8.8 / −1.1 | −2,937 / −370 | −0.46 / −0.06 |
 | Recursion, G4+ residual (1.50, 1.19), upper bound | −29.6 / −35.1 | −9,893 / −11,729 | −1.39 / −1.65; fixed point −1.98 |
 
+[2026-09-28: two defects fixed with the split rule. (1) The attrition-corrected step selected
+`attrition_G3 = 0.112`, which dropped NLSY97, whose G3 rows carry 0 by the lane's convention. So
+its 0.98 was the mean of CPS 0.92 and GSS 1.03, although its label named NLSY97 too. With NLSY97
+it is 0.94. `summarize.py` now selects the rate pair by its G4+ rate and asserts that all three
+sources are present. (2) The worst case's basis defines the lineage gap as (1 − attrition) ×
+identifiers' gap, but its steps ran from the identifiers' base, which put G4 at 0.500 × −$6,615
+instead of 0.444 × −$6,615. It now starts from its lineage base. Years are unchanged, because the
+NLSY97 base already counts its non-identifiers. `verify.py` gates both fixes.]
+
 Reading. The paths consistent with the observed G4+ data (stall, attrition-corrected, G3
-residual) put G4 at −$5.9k to −$6.6k and G5 at −$5.5k to −$6.6k. Only paths that assume
+residual) put G4 at −$5.9k to −$6.6k and G5 at −$5.5k to −$6.6k.
+[2026-09-28: unchanged with the split central (−$6.1k and −$6.1k per lineage descendant) in place
+of the attrition-corrected path.] Only paths that assume
 convergence the data do not show halve the gap by G5: pure regression to the mean, or attriters
 who are exactly white in 1970-size numbers. The recursion's fixed point is the clearest way to
 state it. With parents' schooling passed on at 0.56 and a persistent group residual of −0.31 to
@@ -295,6 +379,14 @@ What survives:
 - NLSY97 ratio SEs treat the gaps as independent despite the shared white reference.
 - The partial ledger omits health, schools, other taxes and public goods. The adopted account's
   ratios are absolute, not gaps.
+- [2026-09-28] NLSY97's full-sample G3 carries 13.0% non-identifiers, not its cross-section's
+  20.6%, because the supplemental sample screened them out (Table 12 p.56, combined sample; the
+  identity lane's §3). The lane keeps its convention of no NLSY97 G3 correction in every scenario.
+  Counting those people by each scenario's own rule at NLSY97's own G3 rate gives a split-rule BA+
+  ratio of 0.87 (0.85 with the 2026 C3) instead of 0.81–0.89 (0.79–0.87), and a like-whites 56% ratio of 0.47
+  instead of 0.43 (`attrition_corrected_rho.csv`, scenario `sensitivity_nlsy97_g3_as_published`).
+- [2026-09-28] The split rule's C3 rests on 44–55 CPS adults and 11 NLSY97 adults (SE 0.61–0.64).
+  It moves the lineage levels, not the CPS and GSS ratios.
 
 ## Files
 
@@ -309,6 +401,15 @@ Covered:
 - Inputs: CPS ASEC 2022–2026 archives (existing lane caches), GSS 1972–2024 R3a, MASP combined
   file, Pew outcomes (pew_outcomes lane), population-total lane attrition tables, adopted-account
   CSV, and IZA DP12704 (fetched to `_cache/`, sha256 5e65103e6c2456bb2e60f116fbd135c970db4f17238f467bbd67cd92bd5fa9fb).
+- [2026-09-28] `summarize.py` gained the generation-split rule, the NLSY97 sensitivity and the two
+  projection fixes. The split rule's C3 values are constants copied from
+  `carryover_identity_2026_09_27/derived/corrected_step.csv`. They are never read at build time,
+  because that lane imports this one's `summarize.py` and `analyze_cps.py`. `verify.py` gained
+  gates 7–9: a drift test of the constants against that CSV (tolerance 1e-4), the relabelled years
+  convention, the split identities, the NLSY97 inclusion in the central step and the lineage bases.
+  Table 12's combined-sample shares join the on-page check. New columns: `attrition_bounds.csv` has
+  `lineage_gap_se`, `g3_rate_share`, `closing_share_g3` and `closing_share_g3_se`;
+  `attrition_corrected_rho.csv` has `g3_rate_share_G4plus`.
 
 Skipped:
 - NLSY97 microdata re-estimation. The published tables answer the question, and the public file
@@ -359,3 +460,10 @@ and converted with `pdftotext -layout`; `verify.py` reads the text.
   show G4+ ahead of G3 on schooling; public GSS codes only four census regions, so NM/CO cannot be
   isolated there.
 - 16:40 Attrition bounds, projection and verify.py gates complete; all gates pass.
+- 2026-09-28 01:20 Generation-split rule made central (from `carryover_identity_2026_09_27` §2); the
+  years convention kept as labelled sensitivity rows; the NLSY97 filter and the worst-case base fixed;
+  the NLSY97 as-published sensitivity added. `scripts/rerun_lane.py` with the seven reproduce
+  commands, run 1: every command rc 0 and verify passing (39 checks), with exactly
+  `attrition_bounds.csv`, `attrition_corrected_rho.csv` and `projection.csv` CHANGED against HEAD
+  (16/19 unchanged). Run 2: every command rc 0, IDENTICAL 19/19. The identity lane, which imports
+  this `summarize.py`, still reproduces 14/14 (`corrected_step.py`, `verify.py`).
