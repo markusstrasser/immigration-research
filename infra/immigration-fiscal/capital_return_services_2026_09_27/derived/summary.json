@@ -1,0 +1,828 @@
+{
+ "bea_office_over_vip_office_1993_2024": [
+  2.6944344703770193,
+  4.268965517241379
+ ],
+ "bea_public_safety_over_vip_correctional_1993_2024": [
+  0.8275991727768378,
+  1.1422413793103448
+ ],
+ "by_component_at_case_ends_bn": {
+  "college": {
+   "2pct": [
+    2.6296255487855387,
+    2.702608855483912
+   ],
+   "3pct": [
+    3.9444383231783076,
+    4.053913283225867
+   ],
+   "7pct": [
+    9.203689420749386,
+    9.459130994193693
+   ]
+  },
+  "gps_fed": {
+   "2pct": [
+    0.21398338096186276,
+    0.3032609397896279
+   ],
+   "3pct": [
+    0.3209750714427941,
+    0.4548914096844418
+   ],
+   "7pct": [
+    0.7489418333665195,
+    1.0614132892636976
+   ]
+  },
+  "gps_sl": {
+   "2pct": [
+    1.8181464914619134,
+    2.5767085798790283
+   ],
+   "3pct": [
+    2.72721973719287,
+    3.865062869818543
+   ],
+   "7pct": [
+    6.363512720116698,
+    9.018480029576601
+   ]
+  },
+  "health_fed": {
+   "2pct": [
+    0.12002125066841372,
+    0.12002125066841372
+   ],
+   "3pct": [
+    0.1800318760026206,
+    0.1800318760026206
+   ],
+   "7pct": [
+    0.42007437733944814,
+    0.42007437733944814
+   ]
+  },
+  "health_sl": {
+   "2pct": [
+    0.10694569140164911,
+    0.10694569140164911
+   ],
+   "3pct": [
+    0.16041853710247364,
+    0.16041853710247364
+   ],
+   "7pct": [
+    0.3743099199057719,
+    0.3743099199057719
+   ]
+  },
+  "k12": {
+   "2pct": [
+    9.523149551035806,
+    9.523149551035806
+   ],
+   "3pct": [
+    14.284724326553706,
+    14.284724326553706
+   ],
+   "7pct": [
+    33.33102342862532,
+    33.33102342862532
+   ]
+  },
+  "pos_fed": {
+   "2pct": [
+    0.2957135905497434,
+    0.2957135905497434
+   ],
+   "3pct": [
+    0.4435703858246151,
+    0.4435703858246151
+   ],
+   "7pct": [
+    1.034997566924102,
+    1.034997566924102
+   ]
+  },
+  "pos_sl": {
+   "2pct": [
+    0.7767794936225577,
+    0.7767794936225577
+   ],
+   "3pct": [
+    1.1651692404338365,
+    1.1651692404338365
+   ],
+   "7pct": [
+    2.7187282276789517,
+    2.7187282276789517
+   ]
+  }
+ },
+ "by_line_at_case_ends_bn": {
+  "education_services": {
+   "2pct": [
+    12.152775099821344,
+    12.225758406519716
+   ],
+   "3pct": [
+    18.229162649732015,
+    18.338637609779575
+   ],
+   "7pct": [
+    42.534712849374706,
+    42.790154422819015
+   ]
+  },
+  "general_public_services": {
+   "2pct": [
+    2.032129872423776,
+    2.879969519668656
+   ],
+   "3pct": [
+    3.0481948086356643,
+    4.319954279502984
+   ],
+   "7pct": [
+    7.112454553483217,
+    10.079893318840298
+   ]
+  },
+  "health_services": {
+   "2pct": [
+    0.22696694207006285,
+    0.22696694207006285
+   ],
+   "3pct": [
+    0.3404504131050943,
+    0.3404504131050943
+   ],
+   "7pct": [
+    0.79438429724522,
+    0.79438429724522
+   ]
+  },
+  "public_order_safety": {
+   "2pct": [
+    1.072493084172301,
+    1.072493084172301
+   ],
+   "3pct": [
+    1.6087396262584517,
+    1.6087396262584517
+   ],
+   "7pct": [
+    3.753725794603054,
+    3.753725794603054
+   ]
+  }
+ },
+ "candidate_band_bn": {
+  "2pct": {
+   "high": 308.35996127628334,
+   "high_spec": [
+    11,
+    11
+   ],
+   "low": 273.97286037421895,
+   "low_spec": [
+    48,
+    48
+   ]
+  },
+  "3pct": {
+   "high": 316.56255525249867,
+   "high_spec": [
+    11,
+    11
+   ],
+   "low": 281.7150428734627,
+   "low_spec": [
+    48,
+    48
+   ]
+  },
+  "7pct": {
+   "high": 349.3729311573602,
+   "high_spec": [
+    11,
+    11
+   ],
+   "low": 312.6837728704377,
+   "low_spec": [
+    48,
+    48
+   ]
+  }
+ },
+ "candidate_rate_band_bn": {
+  "high": 316.56255525249867,
+  "high_spec": [
+   11,
+   11
+  ],
+  "low": 273.97286037421895,
+  "low_spec": [
+   48,
+   48
+  ]
+ },
+ "case": {
+  "band_bn": [
+   258.48849537573153,
+   291.9547733238526
+  ],
+  "end_specs": [
+   48,
+   11
+  ],
+  "responses": {
+   "general_government": {
+    "elasticity": [
+     0.5939193086359557,
+     0.842
+    ],
+    "high": 0.8503957662020014,
+    "low": 0.6000461560720316,
+    "s": 0.12024478903339636
+   },
+   "row8_factor": 0.9491629658844111,
+   "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+   "school": {
+    "decline": 1,
+    "elasticity": null,
+    "growth": 1,
+    "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils",
+    "s": null,
+    "set_directly": true
+   }
+  }
+ },
+ "equipment_software_shares": {
+  "eq_college_sl": 0.07770783844608237,
+  "eq_gps_fed": 0.19480694082740926,
+  "eq_gps_sl": 0.05267642757454775,
+  "eq_health_sl": 0.22565318468648796,
+  "eq_income_security_fed": 0.05522076166909655,
+  "eq_income_security_sl": 0.0344624971672374,
+  "eq_pos_fed": 0.16817936851391246,
+  "eq_pos_sl": 0.11339560955212939
+ },
+ "fee_factors": {
+  "college_component": 0.6629366353475105,
+  "federal_nondefense_sales_share_of_federal_health_max": 0.031151942548442405,
+  "health_state_local": 0.25812655301465454,
+  "higher_education_tuition": 0.6887718121207401
+ },
+ "gaps_at_case_ends_bn": {
+  "R&D (federal nondefense): health's share at its lower bound 0.179": {
+   "2pct": [
+    0.19352255827241466,
+    0.19352255827241466
+   ],
+   "3pct": [
+    0.29028383740862196,
+    0.29028383740862196
+   ]
+  },
+  "R&D (federal nondefense): health's share at its upper bound 0.794": {
+   "2pct": [
+    0.8608835949636092,
+    0.8608835949636092
+   ],
+   "3pct": [
+    1.2913253924454138,
+    1.2913253924454138
+   ]
+  },
+  "R&D (state and local): university research inside NIPA's education investment": {
+   "2pct": [
+    0.4468308649601509,
+    0.45923232420013554
+   ],
+   "3pct": [
+    0.6702462974402262,
+    0.6888484863002032
+   ]
+  },
+  "conditional per unit of response: economic affairs tax-financed structures (highways and streets; conservation and development)": {
+   "2pct": [
+    8.955274202501553,
+    8.955274202501553
+   ],
+   "3pct": [
+    13.43291130375233,
+    13.43291130375233
+   ]
+  },
+  "conditional per unit of response: economic affairs transportation and power (largely fee-financed)": {
+   "2pct": [
+    2.9039038643965416,
+    2.9039038643965416
+   ],
+   "3pct": [
+    4.3558557965948115,
+    4.3558557965948115
+   ]
+  },
+  "conditional per unit of response: recreation and culture (amusement and recreation; museums and zoos)": {
+   "2pct": [
+    1.094214094712201,
+    1.094214094712201
+   ],
+   "3pct": [
+    1.6413211420683014,
+    1.6413211420683014
+   ]
+  },
+  "equipment and software (derived split): eq_college_sl share 0.0777": {
+   "2pct": [
+    0.06643647417997886,
+    0.06828036924453483
+   ],
+   "3pct": [
+    0.09965471126996828,
+    0.10242055386680224
+   ]
+  },
+  "equipment and software (derived split): eq_gps_fed share 0.1948": {
+   "2pct": [
+    0.07766089057559775,
+    0.11006235416503071
+   ],
+   "3pct": [
+    0.1164913358633966,
+    0.16509353124754605
+   ]
+  },
+  "equipment and software (derived split): eq_gps_sl share 0.0527": {
+   "2pct": [
+    0.028861072249574144,
+    0.0409024095908743
+   ],
+   "3pct": [
+    0.04329160837436121,
+    0.06135361438631145
+   ]
+  },
+  "equipment and software (derived split): eq_health_sl share 0.2257": {
+   "2pct": [
+    0.02569175292948673,
+    0.02569175292948673
+   ],
+   "3pct": [
+    0.03853762939423009,
+    0.03853762939423009
+   ]
+  },
+  "equipment and software (derived split): eq_income_security_fed share 0.0552": {
+   "2pct": [
+    0.05520432022973497,
+    0.052297868405462244
+   ],
+   "3pct": [
+    0.08280648034460246,
+    0.07844680260819335
+   ]
+  },
+  "equipment and software (derived split): eq_income_security_sl share 0.0345": {
+   "2pct": [
+    0.04734952482205106,
+    0.044856620059800754
+   ],
+   "3pct": [
+    0.0710242872330766,
+    0.06728493008970113
+   ]
+  },
+  "equipment and software (derived split): eq_pos_fed share 0.1682": {
+   "2pct": [
+    0.1279408827860032,
+    0.1279408827860032
+   ],
+   "3pct": [
+    0.1919113241790048,
+    0.1919113241790048
+   ]
+  },
+  "equipment and software (derived split): eq_pos_sl share 0.1134": {
+   "2pct": [
+    0.11855805698963856,
+    0.11855805698963856
+   ],
+   "3pct": [
+    0.17783708548445784,
+    0.17783708548445784
+   ]
+  },
+  "federal nondefense commercial structures": {
+   "2pct": [
+    0.08511242765392457,
+    0.12062280108895981
+   ],
+   "3pct": [
+    0.12766864148088686,
+    0.1809342016334397
+   ]
+  },
+  "federal nondefense educational structures (no K-12/other split)": {
+   "2pct": [
+    0.19031805162739038,
+    0.19560018799033135
+   ],
+   "3pct": [
+    0.2854770774410856,
+    0.293400281985497
+   ]
+  },
+  "federal nondefense other structures": {
+   "2pct": [
+    0.07730372873507578,
+    0.10955617824180335
+   ],
+   "3pct": [
+    0.11595559310261364,
+    0.16433426736270496
+   ]
+  },
+  "land at 10% of the structures charged: college": {
+   "2pct": [
+    0.26296255487855386,
+    0.2702608855483912
+   ],
+   "3pct": [
+    0.3944438323178308,
+    0.4053913283225868
+   ]
+  },
+  "land at 10% of the structures charged: gps_fed": {
+   "2pct": [
+    0.021398338096186277,
+    0.03032609397896279
+   ],
+   "3pct": [
+    0.03209750714427941,
+    0.04548914096844418
+   ]
+  },
+  "land at 10% of the structures charged: gps_sl": {
+   "2pct": [
+    0.18181464914619133,
+    0.25767085798790285
+   ],
+   "3pct": [
+    0.272721973719287,
+    0.3865062869818543
+   ]
+  },
+  "land at 10% of the structures charged: health_fed": {
+   "2pct": [
+    0.012002125066841373,
+    0.012002125066841373
+   ],
+   "3pct": [
+    0.01800318760026206,
+    0.01800318760026206
+   ]
+  },
+  "land at 10% of the structures charged: health_sl": {
+   "2pct": [
+    0.01069456914016491,
+    0.01069456914016491
+   ],
+   "3pct": [
+    0.016041853710247366,
+    0.016041853710247366
+   ]
+  },
+  "land at 10% of the structures charged: k12": {
+   "2pct": [
+    0.931348013199648,
+    0.931348013199648
+   ],
+   "3pct": [
+    1.3970220197994718,
+    1.3970220197994718
+   ]
+  },
+  "land at 10% of the structures charged: pos_fed": {
+   "2pct": [
+    0.029571359054974343,
+    0.029571359054974343
+   ],
+   "3pct": [
+    0.04435703858246151,
+    0.04435703858246151
+   ]
+  },
+  "land at 10% of the structures charged: pos_sl": {
+   "2pct": [
+    0.07767794936225578,
+    0.07767794936225578
+   ],
+   "3pct": [
+    0.11651692404338367,
+    0.11651692404338367
+   ]
+  },
+  "preschool and unlisted educational structures (VIP residual)": {
+   "2pct": [
+    0.13400396469081277,
+    0.13772314533930638
+   ],
+   "3pct": [
+    0.20100594703621916,
+    0.20658471800895958
+   ]
+  },
+  "sanitation structures inside Sewer systems (upper bound: sanitation investment share 0.106)": {
+   "2pct": [
+    0.3038759149884046,
+    0.3038759149884046
+   ],
+   "3pct": [
+    0.4558138724826069,
+    0.4558138724826069
+   ]
+  },
+  "state and local commercial structures (parking and warehouses)": {
+   "2pct": [
+    0.041031176193702515,
+    0.058150090896048216
+   ],
+   "3pct": [
+    0.061546764290553765,
+    0.08722513634407231
+   ]
+  },
+  "state and local other structures (lodging; communication; manufacturing)": {
+   "2pct": [
+    0.06186632611827004,
+    0.08767802488036196
+   ],
+   "3pct": [
+    0.09279948917740506,
+    0.13151703732054293
+   ]
+  }
+ },
+ "gates_passed": 30,
+ "group_return_bn": {
+  "2pct": {
+   "case_ends": [
+    15.484364998487484,
+    16.405187952430737
+   ],
+   "max_over_specs": 16.405187952430737,
+   "min_over_specs": 15.484364998487484
+  },
+  "3pct": {
+   "case_ends": [
+    23.22654749773122,
+    24.607781928646105
+   ],
+   "max_over_specs": 24.607781928646105,
+   "min_over_specs": 23.22654749773122
+  },
+  "7pct": {
+   "case_ends": [
+    54.1952774947062,
+    57.418157833507586
+   ],
+   "max_over_specs": 57.418157833507586,
+   "min_over_specs": 54.1952774947062
+  }
+ },
+ "higher_ed_auxiliary_share": 0.21058512162554843,
+ "inputs": {
+  "decisions/2026-09-26-main-case-schools-full-cost.md": "492ac52bb03450f721e7b07ac773b6fa605bb5b302544d02bac221cee18fdcbb",
+  "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+  "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js": "091ca31219c678ec84ee89b7c0837f4e9d43dcefc6bd1fe47d82337956a666e0",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/_cache/census_c30_definitions.html": "597db649fb4cc3cb95dfdd206b601f49fc8b0dd316986e6dcf1370afc8d61093",
+  "infra/immigration-fiscal/capital_return_services_2026_09_27/spec_lines.cjs": "5c06caa513b74f54eeb545848b4f6f4bfd717fbd734c19cf30b2aa6276674b3c",
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md": "4843072e14e9f19d9f00a10c0ba9198646e111cfbda4df542167666c3888f3cf",
+  "infra/immigration-fiscal/finite_response_2026_09_26/derived/r_values.json": "70c90edd6ae4b8ff7d8262756af7d49c3f982ce99de7bbdcff1355ec8251977b",
+  "infra/immigration-fiscal/main_case_2026_09_24/package.cjs": "c416f76707a83361f83a8530a3dc6e39015f25bb099fa3db9d30aa8fbe528534",
+  "infra/immigration-fiscal/main_case_2026_09_26/package.cjs": "2c2f13545f4241f5a632a14d5bb543ea03034c384b103a54d7e3a986e998541a",
+  "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/corrections.json": "a75e0aa13c7686ece918ba6e8633cb9e400721adbc9805db4a0b9817a17de285",
+  "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/main_case_bands.csv": "396ea0bf0b59f3e388817a7d4f271524577f01a402bc82c5118b91bd28de1768",
+  "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/summary.json": "864246c1da7c988040d76ed60816072036b5a89c37b8fd792b68f22a601c5ada",
+  "infra/immigration-fiscal/main_case_schools_full_2026_09_26/package.cjs": "d8c5b71d3887459e232442cca458b329b8ee60885ae1ae33bb2f2910b135deb4",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/fa_Section7All_xls.xlsx": "e67f534560f111575d5314bab8fe4d62dd696c2e49f421eaa2fa73f25dea12ae",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/capital_return.py": "a5f2458416db7cee4b050301a6492861c1241dfbb9f8c290cd6a96d46e00be10",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/derived/summary.json": "664df795f69fd7101c27b51f75508b977b12b4fc29c95932ec78d1106290c124",
+  "research/immigration-matched-benefits-2026-09-19.md": "9207fd0fcae475df6b63c7ef0d9c1436a4d95a1a96576fad2b354e98ba1571c7",
+  "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e"
+ },
+ "k12": {
+  "capital_avg2024_bn": 2723.9194975692117,
+  "key_structures": 0.6748318882415751,
+  "pupil_share": 0.17480600215120404,
+  "school_lane_outputs_byte_identical_on_rerun": {
+   "capital_per_pupil_where_enrolled.csv": true,
+   "capital_return.csv": true,
+   "cash_accrual_bridge_national.csv": true,
+   "comparator_item_k.csv": true,
+   "depreciation_comparison.csv": true,
+   "gates.csv": true,
+   "k12_share_key.csv": true,
+   "national_k12_capital.csv": true,
+   "other_services.csv": true,
+   "summary.json": false
+  }
+ },
+ "land_per_10pct_total_at_case_ends_bn": {
+  "2pct": [
+   1.5274695579448159,
+   1.6195518533391413
+  ],
+  "3pct": [
+   2.2912043369172235,
+   2.4293277800087116
+  ]
+ },
+ "nipa_unallocable_over_sl_office_investment": {
+  "2005": 0.9175061510607678,
+  "2006": 0.899690735511631,
+  "2007": 0.9009127573763532,
+  "2008": 0.925940865636723,
+  "2009": 0.9220728159157034,
+  "2010": 0.9242373867508935,
+  "2011": 0.9017561507188063,
+  "2012": 0.8719056974459725,
+  "2013": 0.8620086160473883,
+  "2014": 0.8542360673449176,
+  "2015": 0.8292693740024826,
+  "2016": 0.8320607298233152,
+  "2017": 0.8489389309781927,
+  "2018": 0.8590518612790329,
+  "2019": 0.8743585695113286,
+  "2020": 0.9216462503734688,
+  "2021": 0.9398305387722999,
+  "2022": 0.9539156922472242,
+  "2023": 0.9704927290696033,
+  "2024": 0.9909833100811243
+ },
+ "non_k12_educational_composition": {
+  "higher": 0.8696514408966298,
+  "library": 0.06394523648772597,
+  "museum_zoo": 0.032620513684394635,
+  "preschool_unlisted": 0.03378280893124952
+ },
+ "rates": {
+  "2pct": 0.02,
+  "3pct": 0.03,
+  "7pct": 0.07
+ },
+ "rd_health_share_bounds": [
+  0.1785537376215049,
+  0.7942949127481698
+ ],
+ "row8_response_increment": 0.11389955590612932,
+ "sanitation_share_of_sewer_investment": 0.10585971404066549,
+ "variants_bn": {
+  "college_by_account_school_fraction|2pct": {
+   "band": [
+    273.2217788686338,
+    307.2084509968504
+   ],
+   "return_case_ends": [
+    15.15687555097798,
+    14.823283666880949
+   ]
+  },
+  "college_by_account_school_fraction|3pct": {
+   "band": [
+    280.1943686988211,
+    315.2427556359536
+   ],
+   "return_case_ends": [
+    22.735313326466965,
+    22.234925500321424
+   ]
+  },
+  "end_2024_stocks|2pct": {
+   "band": [
+    274.2522780310394,
+    308.65624043970286
+   ],
+   "return_case_ends": [
+    15.763782655307846,
+    16.701467115850196
+   ]
+  },
+  "end_2024_stocks|3pct": {
+   "band": [
+    282.13416935869327,
+    317.00697399762794
+   ],
+   "return_case_ends": [
+    23.645673982961767,
+    25.052200673775292
+   ]
+  },
+  "equipment_and_software|2pct": {
+   "band": [
+    274.52056334898106,
+    308.94855159045414
+   ],
+   "return_case_ends": [
+    16.03206797324955,
+    16.993778266601566
+   ]
+  },
+  "equipment_and_software|3pct": {
+   "band": [
+    282.53659733560585,
+    317.4454407237549
+   ],
+   "return_case_ends": [
+    24.04810195987432,
+    25.49066739990235
+   ]
+  },
+  "higher_ed_auxiliaries_fee_financed|2pct": {
+   "band": [
+    273.4725146866482,
+    307.84572886526325
+   ],
+   "return_case_ends": [
+    14.984019310916677,
+    15.890955541410634
+   ]
+  },
+  "higher_ed_auxiliaries_fee_financed|3pct": {
+   "band": [
+    280.96452434210653,
+    315.7912066359686
+   ],
+   "return_case_ends": [
+    22.47602896637501,
+    23.83643331211595
+   ]
+  },
+  "k12_at_account_school_key|2pct": {
+   "band": [
+    273.10176832218974,
+    307.73047585064296
+   ],
+   "return_case_ends": [
+    14.613272946458281,
+    15.775702526790365
+   ]
+  },
+  "k12_at_account_school_key|3pct": {
+   "band": [
+    280.40840479541896,
+    315.61832711403815
+   ],
+   "return_case_ends": [
+    21.919909419687418,
+    23.66355379018555
+   ]
+  },
+  "offices_at_response_1|2pct": {
+   "band": [
+    275.32735310050714,
+    308.86661435532665
+   ],
+   "return_case_ends": [
+    16.83885772477565,
+    16.911841031474026
+   ]
+  },
+  "offices_at_response_1|3pct": {
+   "band": [
+    283.74678196289494,
+    317.3225348710637
+   ],
+   "return_case_ends": [
+    25.258286587163475,
+    25.367761547211035
+   ]
+  },
+  "sl_office_at_unallocable_response|2pct": {
+   "band": [
+    274.31797728873335,
+    308.70507819079774
+   ],
+   "return_case_ends": [
+    15.829481913001873,
+    16.750304866945125
+   ]
+  },
+  "sl_office_at_unallocable_response|3pct": {
+   "band": [
+    282.2327182452343,
+    317.08023062427026
+   ],
+   "return_case_ends": [
+    23.744222869502806,
+    25.125457300417686
+   ]
+  }
+ },
+ "year": 2024
+}

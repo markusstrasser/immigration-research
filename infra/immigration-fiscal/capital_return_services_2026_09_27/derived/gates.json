@@ -1,0 +1,152 @@
+[
+ {
+  "gate": "per_spec_costs_reproduce_the_case",
+  "pass": true,
+  "detail": "package cost() per spec: 258.4885/291.9548; main_case_bands.csv 258.4885/291.9548"
+ },
+ {
+  "gate": "case_end_specifications_are_48_and_11",
+  "pass": true,
+  "detail": "low [48, 48], high [11, 11] (per method)"
+ },
+ {
+  "gate": "published_corrections_json_gives_the_same_per_spec_costs",
+  "pass": true,
+  "detail": "max |payload - mean of methods| = 1.71e-13 over 64 specs"
+ },
+ {
+  "gate": "responses_equal_meta_responses",
+  "pass": true,
+  "detail": "general government 0.6000/0.8504; school 1/1"
+ },
+ {
+  "gate": "pupil_share_is_the_finite_response_lanes",
+  "pass": true,
+  "detail": "s = 0.17480600215120404"
+ },
+ {
+  "gate": "line_keys_and_responses_are_the_main_cases",
+  "pass": true,
+  "detail": "justice keyed by use, health by health_other, general government by population at its specification's response, schools and colleges at 1, from the evaluation cost() makes"
+ },
+ {
+  "gate": "response_zero_and_fixed_lines_stay_at_zero",
+  "pass": true,
+  "detail": "defense, domestic_interest, economic_affairs_services, recreation_culture, agricultural_subsidies, housing_subsidies, transport_subsidies, other_subsidies: response 0 at every specification"
+ },
+ {
+  "gate": "account_lines_are_nipa_3_17",
+  "pass": true,
+  "detail": "general government, public order and safety, health and education equal NIPA 3.17 lines 2, 4, 7 and 9 (2024)"
+ },
+ {
+  "gate": "fa_structure_types_add_to_structures",
+  "pass": true,
+  "detail": "S&L types 16019.8 vs 16019.8; federal nondefense 1105.1 vs 1106.0"
+ },
+ {
+  "gate": "bea_type_mapping_leaves_no_negative_residual",
+  "pass": true,
+  "detail": "every function's gross investment (NIPA 3.17) covers the structure types mapped to it, 2019 and 2024"
+ },
+ {
+  "gate": "bea_type_mapping_residuals_are_equipment_and_ip",
+  "pass": true,
+  "detail": "S&L residual / (equipment + software) 1.000 (2019), 0.962 (2024); federal nondefense residual / (equipment + software + R&D) 0.999, 1.011"
+ },
+ {
+  "gate": "nipa_files_sl_office_investment_under_general_government",
+  "pass": true,
+  "detail": "S&L unallocable general-government investment / S&L Office investment 0.829-0.991, 2005-2024 (2024: 0.991)"
+ },
+ {
+  "gate": "census_definitions_put_courthouses_in_office",
+  "pass": true,
+  "detail": "Census C30 definitions, Office: General"
+ },
+ {
+  "gate": "sl_housing_consumption_is_sanitation_only",
+  "pass": true,
+  "detail": "NIPA 3.16 note 8: 8. Consists of current expenditures for sanitation. Beginnin"
+ },
+ {
+  "gate": "higher_education_consumption_read_from_3_16",
+  "pass": true,
+  "detail": "benefits that could sit in 'Higher' <= 0.686bn; tuition factor 0.6888 (>= 0.6881)"
+ },
+ {
+  "gate": "health_fee_factor_matches_the_school_lane_note",
+  "pass": true,
+  "detail": "S&L health net/gross 126.839/491.383 = 0.2581"
+ },
+ {
+  "gate": "k12_structures_are_the_key_times_educational_structures",
+  "pass": true,
+  "detail": "2663.947 = 0.6748 x 3947.572"
+ },
+ {
+  "gate": "vip_parse_matches_the_school_lanes",
+  "pass": true,
+  "detail": "primary/secondary over educational, 1993-2024, equals k12_share_key.csv"
+ },
+ {
+  "gate": "vip_composition_of_the_non_k12_part",
+  "pass": true,
+  "detail": "higher 0.8697, library 0.0639, museums and zoos 0.0326, preschool and unlisted 0.0338"
+ },
+ {
+  "gate": "k12_reproduces_the_school_lane",
+  "pass": true,
+  "detail": "2% 9.5231, 3% 14.2847, 7% 33.3310 at every specification; rerun of the school lane equals its committed summary"
+ },
+ {
+  "gate": "k12_land_conversion_reproduces_the_school_lane",
+  "pass": true,
+  "detail": "0.9313 / 1.3970"
+ },
+ {
+  "gate": "candidate_band_is_ordered_and_above_the_case",
+  "pass": true,
+  "detail": "2pct 273.97-308.36; 3pct 281.72-316.56; 7pct 312.68-349.37"
+ },
+ {
+  "gate": "rate_band_ends_keep_the_case_specifications",
+  "pass": true,
+  "detail": "low end at spec [48, 48], high end at spec [11, 11]"
+ },
+ {
+  "gate": "equipment_shares_are_shares",
+  "pass": true,
+  "detail": "eq_college_sl 0.078, eq_pos_sl 0.113, eq_health_sl 0.226, eq_gps_sl 0.053, eq_income_security_sl 0.034, eq_pos_fed 0.168, eq_gps_fed 0.195, eq_income_security_fed 0.055"
+ },
+ {
+  "gate": "row8_increment_from_the_case",
+  "pass": true,
+  "detail": "(b_all 0.962 - b_admin 0.842) x row 8 factor 0.9492 = 0.1139"
+ },
+ {
+  "gate": "interest_row_held_at_zero",
+  "pass": true,
+  "detail": "domestic_interest responds at 0 at every specification of the evaluation cost() makes"
+ },
+ {
+  "gate": "debt_legacy_is_federal_only",
+  "pass": true,
+  "detail": "debt_legacy_2026_09_23 RESULT.md"
+ },
+ {
+  "gate": "production_term_pays_private_capital_only",
+  "pass": true,
+  "detail": "matched-benefits memo: the CES term pays capital its rental rate (dims capital_adjustment, labor_share); public capital earns no market rental there [INFERENCE]"
+ },
+ {
+  "gate": "new_seats_and_land_unpriced",
+  "pass": true,
+  "detail": "decisions/2026-09-26-main-case-schools-full-cost.md lists new seats as unpriced; land is a gap here"
+ },
+ {
+  "gate": "asset_type_accounting_covers_all_government_capital",
+  "pass": true,
+  "detail": "types 20931.0 vs all government fixed assets 20931.8 (FAAt701 l1, 2024 average)"
+ }
+]

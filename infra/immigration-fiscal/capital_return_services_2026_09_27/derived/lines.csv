@@ -1,0 +1,46 @@
+line_id,family,national_bn,response_class,main_case_response_min,main_case_response_max,key_rule,key_share_min,key_share_max,capital_treatment,reason
+general_public_services,consumption,401.608,public_goods,0.600046,0.850396,population,0.117175,0.117175,charged,"S&L and federal nondefense Office (FAAt701 l59, l41): city halls, capitols, courthouses, administration buildings; NIPA files S&L office investment under this line"
+defense,consumption,854.761,public_goods,0,0,population,0.117175,0.117175,response 0,national defense responds at 0
+public_order_safety,consumption,519.153,service,1,1,use,0.134171,0.134171,charged,"S&L and federal nondefense Public safety (l63, l45); courthouses sit in Office"
+economic_affairs_services,consumption,451.935,service,0,0,resources,0.08044,0.08078,held fixed,"response 0 in the main profile: highways, transportation, power, conservation"
+housing_community_services,consumption,14.537,service,1,1,population,0.117175,0.117175,excluded: fee-financed,"S&L consumption is sanitation only (NIPA 3.16 note 8); residential, water and sewer are enterprise capital recovered by fees; sanitation is a gap"
+health_services,consumption,306.539,service,1,1,health_other,0.056604,0.056604,charged,S&L Health care (l61) x net/gross 0.2581; federal nondefense Health care (l43)
+recreation_culture,consumption,54.331,service,0,0,population,0.117175,0.117175,held fixed,"response 0 in the main profile: amusement and recreation, museums and zoos"
+education_services,consumption,1221.159,service,1,1,education_mix,0.157111,0.162153,charged,K-12 (school lane) and colleges and other education (non-K-12 educational structures)
+income_security_services,consumption,167.818,service,1,1,cash_assistance,0.158495,0.187248,no identified capital,no BEA structure type; its offices sit in Office (charged under general government); equipment and software a gap
+social_security,social_benefits,1447.965,household_transfer,1,1,social_security,0.03641,0.039238,transfer,household transfer: no public capital (administration capital sits in the function lines)
+medicare,social_benefits,1102.358,household_transfer,1,1,medicare,0.047552,0.047552,transfer,household transfer: no public capital (administration capital sits in the function lines)
+unemployment,social_benefits,36.468,household_transfer,1,1,unemployment,0.128051,0.143678,transfer,household transfer: no public capital (administration capital sits in the function lines)
+railroad_retirement,social_benefits,14.493,household_transfer,1,1,social_security,0.03641,0.039238,transfer,household transfer: no public capital (administration capital sits in the function lines)
+pension_guaranty,social_benefits,0.771,household_transfer,1,1,age65plus,0.049445,0.049445,transfer,household transfer: no public capital (administration capital sits in the function lines)
+veterans_life_insurance,social_benefits,0.449,household_transfer,1,1,veterans,0.049983,0.063418,transfer,household transfer: no public capital (administration capital sits in the function lines)
+workers_compensation,social_benefits,11.923,household_transfer,1,1,workers_comp,0.177542,0.231809,transfer,household transfer: no public capital (administration capital sits in the function lines)
+military_medical,social_benefits,7.157,household_transfer,1,1,tricare,0.043718,0.043718,transfer,household transfer: no public capital (administration capital sits in the function lines)
+veterans_pension_disability,social_benefits,180.525,household_transfer,1,1,veterans,0.049983,0.063418,transfer,household transfer: no public capital (administration capital sits in the function lines)
+veterans_readjustment,social_benefits,11.391,household_transfer,1,1,veterans,0.049983,0.063418,transfer,household transfer: no public capital (administration capital sits in the function lines)
+veterans_other,social_benefits,37.526,household_transfer,1,1,va_medical,0.042564,0.042564,transfer,household transfer: no public capital (administration capital sits in the function lines)
+snap,social_benefits,97.391,household_transfer,1,1,snap,0.135621,0.143434,transfer,household transfer: no public capital (administration capital sits in the function lines)
+black_lung,social_benefits,0.173,household_transfer,1,1,workers_comp,0.177542,0.231809,transfer,household transfer: no public capital (administration capital sits in the function lines)
+ssi,social_benefits,65.134,household_transfer,1,1,ssi,0.077117,0.080064,transfer,household transfer: no public capital (administration capital sits in the function lines)
+refundable_tax_credits,social_benefits,228.809,household_transfer,1,1,refundable_credits,0.142592,0.159043,transfer,household transfer: no public capital (administration capital sits in the function lines)
+other_federal_benefits,social_benefits,86.425,household_transfer,1,1,all_cash,0.042185,0.045987,transfer,household transfer: no public capital (administration capital sits in the function lines)
+temporary_disability,social_benefits,13.138,household_transfer,1,1,workers_comp,0.177542,0.231809,transfer,household transfer: no public capital (administration capital sits in the function lines)
+medicaid_and_chip_other_medical,social_benefits,954.2,household_transfer,1,1,uninsured_use_high|uninsured_use_low,0.123287,0.125592,transfer,household transfer: no public capital (administration capital sits in the function lines)
+family_and_general_assistance,social_benefits,63.065,household_transfer,1,1,cash_assistance,0.175838,0.207738,transfer,household transfer: no public capital (administration capital sits in the function lines)
+energy_assistance,social_benefits,5.218,household_transfer,1,1,energy,0.10766,0.107863,transfer,household transfer: no public capital (administration capital sits in the function lines)
+other_state_welfare,social_benefits,22.385,household_transfer,1,1,wic,0.228295,0.237543,transfer,household transfer: no public capital (administration capital sits in the function lines)
+education_benefits,social_benefits,64.479,household_transfer,1,1,postsecondary,0.13872,0.13872,transfer,household transfer: no public capital (administration capital sits in the function lines)
+employment_training,social_benefits,1.377,household_transfer,1,1,working_age,0.121014,0.121014,transfer,household transfer: no public capital (administration capital sits in the function lines)
+other_state_benefits,social_benefits,2.875,household_transfer,1,1,population,0.117175,0.117175,transfer,household transfer: no public capital (administration capital sits in the function lines)
+foreign_territory_social_benefits,foreign,34.323,foreign,0,0,external,0.0,0.0,outside the resident account,foreign flow or rounding
+other_foreign_current_transfers,foreign,87.735,foreign,0,0,external,0.0,0.0,outside the resident account,foreign flow or rounding
+domestic_interest,interest,1118.87,interest,0,0,population,0.117175,0.117175,response 0,existing interest held at 0 (double-count gate)
+foreign_interest,interest,278.755,interest,0,0,external,0.0,0.0,outside the resident account,foreign flow
+agricultural_subsidies,subsidies,8.233,subsidy,0,0,wages,0.078077,0.08391,response 0,subsidies respond at 0
+housing_subsidies,subsidies,60.261,subsidy,0,0,housing_support,0.07399,0.076424,response 0,subsidies respond at 0
+transport_subsidies,subsidies,0.405,subsidy,0,0,resources,0.08044,0.08078,response 0,subsidies respond at 0
+other_subsidies,subsidies,25.34,subsidy,0,0,resources,0.08044,0.08078,response 0,subsidies respond at 0
+source_rounding,rounding,0,rounding,0,0,external,,,outside the resident account,foreign flow or rounding
+school_reprice,consumption,0.0,education_school_part,0.715328,0.865161,k,,,charged with education,school part's correction; K-12 capital uses the pupil share
+college_rekey,consumption,0.0,education_other_part,0.134839,0.284672,k,,,charged with education,college part's correction; enters the college key
+lane_constants,consumption,0.0,correction_constant,1,1,k,,,no capital,"care, shelter and audit-row constants carry no BEA asset type"
