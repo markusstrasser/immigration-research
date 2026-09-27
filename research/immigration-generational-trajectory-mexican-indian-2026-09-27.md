@@ -94,7 +94,12 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
   (0.98) and young men now on active duty (0.98) serve at the white rate. This differs from Indian
   ancestry, whose 0.16× survives every SES control (ladder 205).
 - **Identification.** Children of a Mexican-origin and a non-Hispanic parent are reported Hispanic
-  84% of the time. The 16% loss does not grow with the Mexican parent's generation.
+  84% of the time. At the level of all children with a Mexican-origin parent, the loss at birth
+  grows with the parent's generation: not reported Hispanic 2.8 / 6.8 / 9.0% and not reported
+  Mexican 7.8 / 15.1 / 12.0% for G1 / G2 / G3+ parents. The lineage model's 0.888 identification
+  for G4+ assumes the loss stops after G3; one more step gives about 0.78.
+  [CALCULATION: `civic_trajectory_mexican_2026_09_27/derived/identity_loss.csv`; corrected
+  2026-09-27 after audit 3db388d]
 - **Indian comparison, same code.** India-born spousal endogamy is 96.3%, falling to 65.5% in the
   Indian G2. In raw share, Indian G2 marry out more than Mexican G2. Relative to a pool that is about
   1.5% of residents, they remain the more endogamous group.
@@ -176,12 +181,17 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
 - **G1→G2 across 78 origins.** The slope is 0.52 on education (0.29–0.59 over origins) and 0.55 on
   earnings, on top of a common uplift of about 5 points. Without Mexico, the high-leverage point,
   the slopes are 0.36 and 0.30. Mexico's G2 sits 8 points below the line the other 77 draw.
-  The slope is steeper below the white median than above it (education 0.68 vs 0.31): low
-  starting points carry to G2 more than high ones. Unweighted across origins the slopes are 0.45
-  and 0.47; leave-one-out moves them much only for Mexico.
-- **Selection within the origin country** (Barro-Lee, Wittgenstein) adds little once US position is
-  known (R² 0.10–0.12 without Mexico). Where immigrants stand in the US distribution predicts their
-  children; how selected they were at home does not add much.
+  The point estimates are steeper below the white median than above it (education 0.68 vs 0.31),
+  but a paired origin bootstrap cannot distinguish them from a straight line (difference 0.374,
+  −0.116 to 0.825). Unweighted across origins the slopes are 0.45 and 0.47; leave-one-out moves
+  them much only for Mexico.
+- **Selection within the origin country** (Barro-Lee, Wittgenstein) works through where adult
+  arrivals land. Among G1 who arrived at 25 or older, their percentile at home predicts their US
+  position (slope 1.19, 0.45–1.75, R² 0.28 without Mexico); child arrivals, whose schooling may be
+  US-acquired, carry no signal (R² 0.00), which is what diluted the pooled figure (R² 0.10–0.12).
+  Given the G1's US position, selection adds nothing distinguishable to G2 (0.12, −0.22 to 0.38).
+  [CALCULATION: `selection_curve_2026_09_27/derived/selection_arms.csv`; corrected 2026-09-27 after
+  audit 3db388d]
 - **G2→G3.** GSS gives 0.72 on education (0.56 without Mexico); the literature gives 0.46–0.53. The
   curve [MODEL]: India 95 → 73 → 73 → about 67; Mexico 59 → 16 → 36 → about 40. Mexico's observed G3
   stalls near its G2, so the model overstates its convergence.
@@ -206,3 +216,4 @@ Not settled:
 
 - 2026-09-27: created from five lanes; ladder entries 232–236.
 - 2026-09-27, later: §4a added from entries 240–241 (late arrivals in the account; the lineage channel).
+- 2026-09-27, late: corrected after the conceptual audit (3db388d): selection within origin is measured on adult arrivals, the slope asymmetry is not significant, and identity loss grows with the parent's generation (lineage 0.888 too high for G4+).
