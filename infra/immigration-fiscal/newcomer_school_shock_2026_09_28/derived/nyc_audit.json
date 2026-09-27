@@ -1,0 +1,233 @@
+{
+ "class_size_files": {
+  "class_size/february-2024-25-class-size---school.xlsx": {
+   "k5_rows": 8740,
+   "schools_k5": 802,
+   "schools_ptr": 1532
+  },
+  "class_size/february-2025-26-class-size---school.xlsx": {
+   "k5_rows": 8789,
+   "schools_k5": 799,
+   "schools_ptr": 1533
+  },
+  "class_size/february2019_avg_classsize_school.xlsx": {
+   "k5_rows": 8694,
+   "schools_k5": 797,
+   "schools_ptr": 1522
+  },
+  "class_size/february2020_avg_classsize_school.xlsx": {
+   "k5_rows": 8749,
+   "schools_k5": 798,
+   "schools_ptr": 1523
+  },
+  "class_size/june-2023-24-class-size---school.xlsx": {
+   "k5_rows": 8688,
+   "schools_k5": 797,
+   "schools_ptr": 1532
+  },
+  "class_size/june-2024-25-class-size---school.xlsx": {
+   "k5_rows": 8736,
+   "schools_k5": 802,
+   "schools_ptr": 1532
+  },
+  "class_size/june-2025-26-class-size---school.xlsx": {
+   "k5_rows": 8789,
+   "schools_k5": 799,
+   "schools_ptr": 1533
+  },
+  "class_size/november-2024-25-class-size---school.xlsx": {
+   "k5_rows": 8753,
+   "schools_k5": 802,
+   "schools_ptr": 1532
+  },
+  "class_size/november-2025-26-class-size---school.xlsx": {
+   "k5_rows": 8791,
+   "schools_k5": 799,
+   "schools_ptr": 1533
+  },
+  "class_size/november2018_avg_classsize_school.xlsx": {
+   "k5_rows": 8652,
+   "schools_k5": 797,
+   "schools_ptr": 1522
+  },
+  "class_size/november2019_avg_classsize_school.xlsx": {
+   "k5_rows": 8728,
+   "schools_k5": 798,
+   "schools_ptr": 1523
+  },
+  "class_size/opendata-2017-18-school-class-size-2ic6-4hrf.csv": {
+   "k5_rows": 8606,
+   "schools_k5": 800,
+   "schools_ptr": 0
+  },
+  "class_size/opendata-2021-22-avg-class-size-school-sgr7-hhwp.csv": {
+   "k5_rows": 8735,
+   "schools_k5": 797,
+   "schools_ptr": 0
+  },
+  "class_size/prelim2022_avg_classsize_school.xlsx": {
+   "k5_rows": 8595,
+   "schools_k5": 800,
+   "schools_ptr": 1528
+  },
+  "class_size/preliminary-2023-24-class-size---school.xlsx": {
+   "k5_rows": 8707,
+   "schools_k5": 798,
+   "schools_ptr": 1532
+  },
+  "class_size/updated-2023-24-class-size---school.xlsx": {
+   "k5_rows": 8694,
+   "schools_k5": 797,
+   "schools_ptr": 1532
+  },
+  "class_size/updated2023_avg_classsize_schl.xlsx": {
+   "k5_rows": 8604,
+   "schools_k5": 800,
+   "schools_ptr": 1528
+  }
+ },
+ "class_size_programs": {
+  "G&T": 8362,
+  "Gen Ed": 68463,
+  "ICT": 70383,
+  "ICT & G&T": 842
+ },
+ "demographics_2022_overlap": {
+  "enrollment_and_ell_identical": 1716,
+  "schools_in_both": 1852
+ },
+ "inputs": {
+  "class_size/february-2024-25-class-size---school.xlsx": "679368aee33aeb78f98b1a4534d97a24d313c57d6cf2bc171599b6e57f89f092",
+  "class_size/february-2025-26-class-size---school.xlsx": "5dd906c727cfa940fb1c4538469bf570c02b7e580d9caedd00a2039e985dbd4a",
+  "class_size/february2019_avg_classsize_school.xlsx": "017e3b3f19b6e6a065959bb3940ea0ebec093aa63bdc56e56e092f5130b10c97",
+  "class_size/february2020_avg_classsize_school.xlsx": "c73761ee685620adfb80b2c89d315ab6a24c8dbf0ca583994a666260ee9ca840",
+  "class_size/june-2023-24-class-size---school.xlsx": "0eddb8c4a31d2e16974e5597224fd402a9ccd58c6d12e18ff5a3e0f127efd168",
+  "class_size/june-2024-25-class-size---school.xlsx": "d4ffe75ef5ea284811948418a2998beec1834452530ad36dddcfb58e467ddd0c",
+  "class_size/june-2025-26-class-size---school.xlsx": "73bb22598a60a57e7dfdf17c5885baa8a84829606c12ce2528b165827afadd0f",
+  "class_size/november-2024-25-class-size---school.xlsx": "e7e6701cad3d2d29b6d39a9168e933e720015985625ae895e32595173d046a43",
+  "class_size/november-2025-26-class-size---school.xlsx": "f173073e07ce6bac0edee4b7338d980e31f1f81d9cdcf9d99a3e07b11a387687",
+  "class_size/november2018_avg_classsize_school.xlsx": "0c15e64a8f8d5a110a88f6638d8d6486425ae767e98b32bae9b94180be197dce",
+  "class_size/november2019_avg_classsize_school.xlsx": "50da078b3bb79b0ca4aed2948ca0626b322cd1537b1121d55dd4a633a49dc5dd",
+  "class_size/opendata-2017-18-school-class-size-2ic6-4hrf.csv": "b2c56191ce76f4bc4c84b61352c72335d22e25d72ad181d980af36e001eed1ff",
+  "class_size/opendata-2021-22-avg-class-size-school-sgr7-hhwp.csv": "c5ce5dad9f96e5730b2ec28371e9189d1dd7875b45fd3d45707df99001d44ec7",
+  "class_size/prelim2022_avg_classsize_school.xlsx": "63cd47c7d935477719abdc993cbf2ef7c45876b4ce622372c7f5b7d8b192ee26",
+  "class_size/preliminary-2023-24-class-size---school.xlsx": "011794a58d871724173c1d1008840bfb60584952b3a48831667aa62c428523e1",
+  "class_size/updated-2023-24-class-size---school.xlsx": "b53bfd1fe63691828323493ab116acc1f9e163e3e85b583ce3524a6172505e9b",
+  "class_size/updated2023_avg_classsize_schl.xlsx": "c10123ea906b80bbb1b8b9da6be5df92a4c9d157556a048d70d43470b2f8cf13",
+  "demographic-snapshot-2017-18-to-2021-22-opendata-c7ru-d68s.csv": "26106be957979e78c953090cc4d1904e8684e6c7099002bfcb70f14b57975545",
+  "demographic-snapshot-2021-22-to-2025-26-public.xlsx": "d7759afaf3e1cd821a512f84a23fae6b70aa818f116ee2fc56e18a7bcfcb69f2",
+  "nysed_src/tables/SRC2019_expenditures.csv": "1a13986b885e0f89d54253dc04fa0cef53e31a4140a5e2c5a820667a039a1699",
+  "nysed_src/tables/SRC2019_teachers.csv": "fb83fa06bbc26dd231f240f05f99eae3d0016f816e0fdf88bf6f0cad3bf9890f",
+  "nysed_src/tables/SRC2021_expenditures.csv": "dfd227087eccf47c14f9a46936069eb300fac352e273eab843538acb53562827",
+  "nysed_src/tables/SRC2021_teachers.csv": "e4a62f9efbf1af5fa62ebd80dcbdadb785889cc137769ca73a031b5e69eec8a7",
+  "nysed_src/tables/SRC2022_expenditures.csv": "a7bf0fcb7f93851481a6b12c63b396ce2248a1163a5814cc2ea224d02cf68b50",
+  "nysed_src/tables/SRC2022_teachers.csv": "28652712d28dbbdb5668a7c98095aa51fd69190dfd4535225a26d24156fbc457",
+  "nysed_src/tables/SRC2023_expenditures.csv": "68de553a28fe386a9a52c3240e87ef1a153b5efd6b67959b0774d125ec077dcd",
+  "nysed_src/tables/SRC2023_teachers.csv": "8702cffd00713d7e1311f0666a6af99dca5339a3d2ded5b6ccaaa7fda5cf3f33",
+  "nysed_src/tables/SRC2024_expenditures.csv": "991d5970b5b98e36be21d7bbb611b7b9476efb125fb6252073f664986ce5fedb",
+  "nysed_src/tables/SRC2024_teachers.csv": "696093eba85c2b99e3f4b1383b7b7419c48fd05e4741e0487ddbfe9e1b59a523",
+  "nysed_src/tables/SRC2025_expenditures.csv": "131dfbdcd2fc6a90703286646ca571acfeeecddd9fe6742f38d9b43ac4d89e90",
+  "nysed_src/tables/SRC2025_teachers.csv": "c934d62ce631218c93b2fad5edc9c99b914889841a599d77612f9a96d2ef7da7",
+  "sams/FY2022_SAM086_T01.xlsx": "a4480447c9dad47f40c604100e357a8f7a34d6b43e8210387fc3f40888cd224a",
+  "sams/FY2023_SAM065_T01_wayback20221031.xlsx": "76f3379e06f596847766f51bd2fe40007b3b1db70d0a46a2f48f7b1e6fa86112",
+  "sams/FY2023_SAM084_T01.xlsx": "2de1e4243518580067772bc6925a7bca5a60d150e8f4847f2b57ce3213438c9b",
+  "sams/FY2023_SAM085_T01.xlsx": "25e3eb7af2568bd4ede29594dc975242834feeab8db6d0c97e0e40829c0e39b1",
+  "sams/FY2024_SAM073_T01.xlsx": "e9310e53aeb77422e347a3aceb6c90be9cf05ae7d8be8beddff917cfced713b0",
+  "sams/FY2024_SAM090_T01.xlsx": "8bac2860d2a807d3bc8f5977e9f4983bb68a35174de0596dd4442d26ff96cacb",
+  "sams/FY2025_SAM081_t01.xlsx": "cec59bc9912d73d322f4fa65517c956955698f276a3869a6dfc3a7045f2ccc75",
+  "sams/FY2025_SAM086_T01.xlsx": "9ec1e8ff8e0b30615d9685d999681f0035b7bef6074426ecdeef3b6d191cd2d0",
+  "sams/FY2026_SAM073_T01.xlsx": "1c36ac6f03fff8c6c6fc6792e1f984e82541b689ec18d88adf4de684c18244d4",
+  "sams/FY2026_SAM085_T01.xlsx": "f6d32910f8f486a1ddfa37c044208e83fa52e30e82165bba1662b36800005e44",
+  "school-ela-results-public.xlsx": "5a8c419e64091c65b06a01d2694d9bd11bcd45f424fe2756ffa47b8f02b4ce18",
+  "school-math-results-public.xlsx": "fc11957633937e324a7456ca80cce1b075ea379d85c4c7153d9c477f6f255a6a"
+ },
+ "nysed_dbns_matched_to_snapshot": {
+  "dbns": 1579,
+  "matched": 1546
+ },
+ "nysed_release_by_year": {
+  "expenditures_2019": 2019,
+  "expenditures_2020": 2021,
+  "expenditures_2021": 2022,
+  "expenditures_2022": 2023,
+  "expenditures_2023": 2024,
+  "expenditures_2024": 2025,
+  "expenditures_2025": 2025,
+  "teachers_2018": 2019,
+  "teachers_2019": 2019,
+  "teachers_2020": 2021,
+  "teachers_2021": 2022,
+  "teachers_2022": 2023,
+  "teachers_2023": 2024,
+  "teachers_2024": 2025,
+  "teachers_2025": 2025
+ },
+ "register_relief_2022": {
+  "schools": 1210,
+  "total": 323726053.65834713
+ },
+ "register_relief_2023": {
+  "schools": 723,
+  "total": 136244534.0
+ },
+ "register_relief_2025": {
+  "schools": 828,
+  "total": 161261233.0
+ },
+ "register_relief_2026": {
+  "schools": 1065,
+  "total": 261652063.0
+ },
+ "sam65_open_arms_alloc_2023": {
+  "schools": 369,
+  "total": 11702000.0
+ },
+ "sam90_sth_increase_alloc_2024": {
+  "schools": 1255,
+  "total": 1500000.0
+ },
+ "sams_dbns_matched_to_snapshot": {
+  "dbns": 1582,
+  "matched": 1544
+ },
+ "schools_rows_by_year": {
+  "2018": 1838,
+  "2019": 1841,
+  "2020": 1866,
+  "2021": 1878,
+  "2022": 1882,
+  "2023": 1884,
+  "2024": 1923,
+  "2025": 1903,
+  "2026": 1910
+ },
+ "scores_by_category": {
+  "All Students": 66894,
+  "Current ELL": 61840,
+  "Ever ELL": 60837,
+  "Never ELL": 66804
+ },
+ "scores_rows": 256375,
+ "scores_suppressed_by_category": {
+  "All Students": 634,
+  "Current ELL": 30428,
+  "Ever ELL": 30113,
+  "Never ELL": 8770
+ },
+ "title3_immigrant_2023": {
+  "schools": 134,
+  "total": 2765537.0
+ },
+ "title3_immigrant_2024": {
+  "schools": 597,
+  "total": 6739605.0
+ },
+ "title3_immigrant_2025": {
+  "schools": 488,
+  "total": 4773445.0
+ },
+ "title3_immigrant_2026": {
+  "schools": 471,
+  "total": 4771502.0
+ }
+}
