@@ -1,0 +1,73 @@
+side,line,national_bn,key,group_48_bn,group_11_bn,response_48,response_11,base,scales_with_population,rule_response,effect_48_bn,effect_11_bn,note
+receipt,federal_income_tax,2403.2420,federal_liability,111.1774,101.4472,1.0000,1.0000,the group's own income,yes: the group's own income,1 (class default),0.0000,0.0000,class default
+receipt,state_local_income_tax,536.1670,state_liability,26.0613,23.8356,1.0000,1.0000,the group's own income,yes: the group's own income,1 (class default),0.0000,0.0000,class default
+receipt,personal_motor_vehicle,26.1250,adults,2.8480,2.7518,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,personal_property_tax,12.9880,capital,0.4069,0.3302,0.0000,0.0000,"household personal property (vehicles, boats)",yes: the group's own durables,1 at the vehicle key,-1.3258,-1.3258,re-keyed from capital ownership
+receipt,other_personal_tax,9.7210,state_liability,0.4725,0.4322,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,employee_oasdi,610.3990,wage_oasdi,53.2807,50.1193,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,employee_hi,196.7490,wage,15.7868,14.7194,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,self_employment_oasdi_hi,86.8550,self_payroll,7.3714,6.7969,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,employer_oasdi,615.6700,wage_oasdi,53.7408,50.5521,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,employer_hi,175.0110,wage,14.0426,13.0931,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,medicare_supplementary_premiums,145.1170,medicare,7.6004,7.1695,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,other_domestic_social_contributions,93.3500,positive_fica_worker,10.2948,9.9155,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,corporate_capital,497.7638,capital,15.5950,12.6560,0.0000,0.0000,corporate profits,business capital follows the group's jobs (full adjustment),0: F's channel at retention 1,0.0000,0.0000,item 4
+receipt,corporate_labor,165.9212,wage,13.3586,12.4546,0.0000,0.0000,"corporate profits, labor's incidence",as above,0: F's channel at retention 1,0.0000,0.0000,item 4
+receipt,general_sales_tax,602.4300,consumption,49.0499,49.0499,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,modeled_owner_property,394.8625,modeled_owner_property,24.9700,24.9700,0.0000,0.0000,owner-occupied homes: structures and land,"structures yes; land stays, its price falls",0.7629 (0.6724-1),-19.0497,-19.0497,item 2
+receipt,remaining_production_property,357.2855,capital,11.1938,9.0842,0.0000,0.0000,rental housing and business property,rental structures yes (item 3); business capital inside the production module,tenant part 0.7084 at the rent key; rest 0,-6.8108,-6.8108,item 3; the rest is item 4
+receipt,excise_selective_sales,371.2620,consumption,30.1408,30.1408,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,customs_duties,83.5870,consumption,6.8057,6.8057,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,other_production_taxes,145.2580,capital,4.5509,3.6933,0.0000,0.0000,"business licenses, severance and other production taxes",as above,0: F's channel at retention 1,0.0000,0.0000,item 4
+receipt,rest_world_tax_contributions,45.3090,none,0.0000,0.0000,0.0000,0.0000,receipts from abroad,no: nothing on residents,0,0.0000,0.0000,class default
+receipt,government_asset_income,196.2910,resident_population,23.6030,23.6030,0.0000,0.0000,"interest, dividends, rents and royalties on public assets",no: fixed assets and resources,0,0.0000,0.0000,unchanged
+receipt,business_current_transfers,139.9760,capital,4.3855,3.5590,0.0000,0.0000,"business transfers, fines and settlements",not a tax on capital,0,0.0000,0.0000,item 4
+receipt,personal_current_transfers,141.0650,consumption,11.4855,11.4855,1.0000,1.0000,"the group's own payroll, purchases and household taxes",yes: the group's own income and spending,1 (class default),0.0000,0.0000,class default
+receipt,rest_world_current_transfers,3.3430,none,0.0000,0.0000,0.0000,0.0000,receipts from abroad,no: nothing on residents,0,0.0000,0.0000,class default
+receipt,enterprise_surplus,-47.4600,resident_population,-5.5611,-5.5611,1.0000,1.0000,government enterprises' current surplus,yes (option D),1,0.0000,0.0000,already 1
+receipt,source_rounding,0.0020,population,0.0002,0.0002,0.0000,0.0000,source rounding,not applicable,0,0.0000,0.0000,class default
+spending,general_public_services,401.6080,population,47.0586,47.0586,0.6000,0.8504,general government,"partly, measured across states",0.60 / 0.85 (finite removal),0.0000,0.0000,already measured
+spending,defense,854.7610,population,100.1569,100.1569,0.0000,0.0000,national defense,"no: set by threats, not population (share of GDP 6.0% 1986, 2.9% 2000, 4.7% 2010, 3.2% 2024)",0,0.0000,0.0000,GDP-share bound beside the case
+spending,public_order_safety,519.1530,use,69.6554,69.6554,1.0000,1.0000,services the group uses,"yes: charged by use, or measured (schools at full cost)",the case's response,0.0000,0.0000,class default
+spending,economic_affairs_services,451.9350,resources,36.4305,36.4305,0.3840,0.6386,"roads, transport, economic administration, agriculture, energy, space and other economic affairs","by subfunction: long-run where residents drive spending, 0 where they do not",0.38 / 0.64 (the case's blend),0.0000,0.0000,already long-run
+spending,housing_community_services,14.5370,population,1.7034,1.7034,1.0000,1.0000,services the group uses,"yes: charged by use, or measured (schools at full cost)",the case's response,0.0000,0.0000,class default
+spending,health_services,306.5390,health_other,17.3512,17.3512,1.0000,1.0000,services the group uses,"yes: charged by use, or measured (schools at full cost)",the case's response,0.0000,0.0000,class default
+spending,recreation_culture,54.3310,population,6.3663,6.3663,0.8562,1.0000,"parks, recreation and culture","yes, measured across states",0.86 / 1 (the case's),0.0000,0.0000,already long-run
+spending,education_services,1221.1590,education_mix,191.8577,198.0140,1.0000,1.0000,services the group uses,"yes: charged by use, or measured (schools at full cost)",the case's response,0.0000,0.0000,class default
+spending,income_security_services,167.8180,cash_assistance,29.5891,28.0313,1.0000,1.0000,services the group uses,"yes: charged by use, or measured (schools at full cost)",the case's response,0.0000,0.0000,class default
+spending,social_security,1447.9650,social_security,56.2587,53.0224,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,medicare,1102.3580,medicare,52.4192,52.4192,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,unemployment,36.4680,unemployment,5.0602,4.7637,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,railroad_retirement,14.4930,social_security,0.5631,0.5307,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,pension_guaranty,0.7710,age65plus,0.0381,0.0381,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,veterans_life_insurance,0.4490,veterans,0.0284,0.0227,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,workers_compensation,11.9230,workers_comp,2.5555,2.2880,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,military_medical,7.1570,tricare,0.3129,0.3129,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,veterans_pension_disability,180.5250,veterans,11.4018,9.1330,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,veterans_readjustment,11.3910,veterans,0.7194,0.5763,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,veterans_other,37.5260,va_medical,1.5973,1.5973,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,snap,97.3910,snap,13.5887,13.5887,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,black_lung,0.1730,workers_comp,0.0371,0.0332,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,ssi,65.1340,ssi,5.1757,5.0940,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,refundable_tax_credits,228.8090,refundable_credits,36.3313,32.6280,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,other_federal_benefits,86.4250,all_cash,3.9429,3.6627,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,temporary_disability,13.1380,workers_comp,2.8160,2.5211,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,medicaid_and_chip_other_medical,954.2000,uninsured_use_low,117.7434,119.7361,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,family_and_general_assistance,63.0650,cash_assistance,12.3362,11.6867,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,energy_assistance,5.2180,energy,0.5623,0.5623,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,other_state_welfare,22.3850,wic,5.2139,5.2139,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,education_benefits,64.4790,postsecondary,8.9445,8.9445,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,employment_training,1.3770,working_age,0.1666,0.1666,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,other_state_benefits,2.8750,population,0.3369,0.3369,1.0000,1.0000,benefits paid to the group,yes: paid per recipient,1 (class default),0.0000,0.0000,class default
+spending,foreign_territory_social_benefits,34.3230,external,0.0000,0.0000,0.0000,0.0000,payments abroad,"no: external key, nothing on residents",0,0.0000,0.0000,class default
+spending,other_foreign_current_transfers,87.7350,external,0.0000,0.0000,0.0000,0.0000,payments abroad,"no: external key, nothing on residents",0,0.0000,0.0000,class default
+spending,domestic_interest,1118.8700,population,131.1040,131.1040,0.0000,0.0000,interest on the existing debt,no: the stock is legacy,0,0.0000,0.0000,"the group's part of past deficits is a stock question (historical back-cast, debt legacy lane)"
+spending,foreign_interest,278.7550,external,0.0000,0.0000,0.0000,0.0000,interest paid to foreign holders,"no: external key, nothing on residents",0,0.0000,0.0000,unchanged
+spending,agricultural_subsidies,8.2330,wages,0.6887,0.6438,0.0000,0.0000,farm programs,no: acreage and commodities,0,0.0000,0.0000,unchanged
+spending,housing_subsidies,60.2610,housing_support,4.5321,4.5321,1.0000,1.0000,rental assistance,yes,1,0.0000,0.0000,already 1
+spending,transport_subsidies,0.4050,resources,0.0326,0.0326,0.0000,0.0000,transit and rail operating subsidies,"weakly, with riders",0 (at most +$0.03bn),0.0000,0.0000,immaterial
+spending,other_subsidies,25.3400,resources,2.0427,2.0427,0.0000,0.0000,other business subsidies,no: paid to included owners,0,0.0000,0.0000,the account's rule for subsidies to included owners
+spending,source_rounding,0.0000,external,0.0000,0.0000,0.0000,0.0000,source rounding,not applicable,0,0.0000,0.0000,class default
+spending,school_reprice,0.0000,k,2.0822,1.3417,0.7153,0.8652,the case's school repricing,as adopted,as adopted,0.0000,0.0000,class default
+spending,college_rekey,0.0000,k,-3.1776,-4.0973,0.2847,0.1348,the case's college re-key,as adopted,as adopted,0.0000,0.0000,class default
+spending,lane_constants,0.0000,k,-5.1597,-5.2015,1.0000,1.0000,the case's lane constants,as adopted,as adopted,0.0000,0.0000,class default

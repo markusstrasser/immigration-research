@@ -1,0 +1,371 @@
+{
+ "adopted": {
+  "ends_48_11": [
+   321.819357,
+   387.370055
+  ],
+  "band": [
+   321.819357,
+   387.370055
+  ]
+ },
+ "responses": {
+  "owner": {
+   "central": 0.762903,
+   "low": 0.672405,
+   "high": 1,
+   "short_run": 0.029494,
+   "short_run_market": 0.301997,
+   "capital_tax_view": 0.134206
+  },
+  "renter": {
+   "central": 0.708443,
+   "low": 0.620228,
+   "high": 1,
+   "short_run": 0.025172,
+   "short_run_market": 0.268593,
+   "capital_tax_view": 0.131923
+  }
+ },
+ "tenant_national_bn": {
+  "bea": 83.840225,
+  "case_scaled": 123.128951
+ },
+ "keys": {
+  "rent": 0.114667,
+  "gross_rent": 0.116843,
+  "vehicles": 0.102082
+ },
+ "items": {
+  "owner": {
+   "change_48_11": [
+    -19.049721,
+    -19.049721
+   ],
+   "ends_48_11": [
+    302.769636,
+    368.320334
+   ],
+   "band": [
+    302.769636,
+    368.320334
+   ]
+  },
+  "owner_low": {
+   "change_48_11": [
+    -16.789982,
+    -16.789982
+   ],
+   "ends_48_11": [
+    305.029375,
+    370.580073
+   ],
+   "band": [
+    305.029375,
+    370.580073
+   ]
+  },
+  "owner_high": {
+   "change_48_11": [
+    -24.970043,
+    -24.970043
+   ],
+   "ends_48_11": [
+    296.849314,
+    362.400012
+   ],
+   "band": [
+    296.849314,
+    362.400012
+   ]
+  },
+  "owner_short_run": {
+   "change_48_11": [
+    -0.736466,
+    -0.736466
+   ],
+   "ends_48_11": [
+    321.082891,
+    386.633588
+   ],
+   "band": [
+    321.082891,
+    386.633588
+   ]
+  },
+  "owner_short_run_market": {
+   "change_48_11": [
+    -7.540878,
+    -7.540878
+   ],
+   "ends_48_11": [
+    314.278479,
+    379.829177
+   ],
+   "band": [
+    314.278479,
+    379.829177
+   ]
+  },
+  "owner_capital_tax_view": {
+   "change_48_11": [
+    -3.35113,
+    -3.35113
+   ],
+   "ends_48_11": [
+    318.468227,
+    384.018925
+   ],
+   "band": [
+    318.468227,
+    384.018925
+   ]
+  },
+  "owner_cdg": {
+   "change_48_11": [
+    -17.811507,
+    -17.811507
+   ],
+   "ends_48_11": [
+    304.00785,
+    369.558548
+   ],
+   "band": [
+    304.00785,
+    369.558548
+   ]
+  },
+  "owner_probe_079": {
+   "change_48_11": [
+    -19.726334,
+    -19.726334
+   ],
+   "ends_48_11": [
+    302.093023,
+    367.643721
+   ],
+   "band": [
+    302.093023,
+    367.643721
+   ]
+  },
+  "tenant": {
+   "change_48_11": [
+    -6.810763,
+    -6.810763
+   ],
+   "ends_48_11": [
+    315.008594,
+    380.559291
+   ],
+   "band": [
+    315.008594,
+    380.559291
+   ]
+  },
+  "tenant_low": {
+   "change_48_11": [
+    -5.96269,
+    -5.96269
+   ],
+   "ends_48_11": [
+    315.856667,
+    381.407365
+   ],
+   "band": [
+    315.856667,
+    381.407365
+   ]
+  },
+  "tenant_high": {
+   "change_48_11": [
+    -9.613707,
+    -9.613707
+   ],
+   "ends_48_11": [
+    312.20565,
+    377.756348
+   ],
+   "band": [
+    312.20565,
+    377.756348
+   ]
+  },
+  "tenant_case_scaled": {
+   "change_48_11": [
+    -10.002384,
+    -10.002384
+   ],
+   "ends_48_11": [
+    311.816973,
+    377.367671
+   ],
+   "band": [
+    311.816973,
+    377.367671
+   ]
+  },
+  "tenant_rekey_only": {
+   "change_48_11": [
+    0,
+    0
+   ],
+   "ends_48_11": [
+    321.819357,
+    387.370055
+   ],
+   "band": [
+    321.819357,
+    387.370055
+   ]
+  },
+  "personal": {
+   "change_48_11": [
+    -1.325841,
+    -1.325841
+   ],
+   "ends_48_11": [
+    320.493516,
+    386.044214
+   ],
+   "band": [
+    320.493516,
+    386.044214
+   ]
+  },
+  "all": {
+   "change_48_11": [
+    -27.186326,
+    -27.186326
+   ],
+   "ends_48_11": [
+    294.633031,
+    360.183729
+   ],
+   "band": [
+    294.633031,
+    360.183729
+   ]
+  },
+  "all_low": {
+   "change_48_11": [
+    -24.078513,
+    -24.078513
+   ],
+   "ends_48_11": [
+    297.740844,
+    363.291542
+   ],
+   "band": [
+    297.740844,
+    363.291542
+   ]
+  },
+  "all_high": {
+   "change_48_11": [
+    -40.414712,
+    -40.414712
+   ],
+   "ends_48_11": [
+    281.404645,
+    346.955343
+   ],
+   "band": [
+    281.404645,
+    346.955343
+   ]
+  }
+ },
+ "item1": {
+  "flag": {
+   "file": "full_account_2026_09_20/welfare.py (response_pools, capital_category)",
+   "commit": "0ab245f",
+   "copied": "assumption_explorer_2026_09_21/build_model.py (CAPITAL_CATEGORIES), 02c9996"
+  },
+  "F": [
+   {
+    "spec": 48,
+    "normalization": "gdp",
+    "F_bn": 13.558522,
+    "P_bn": -0.235924,
+    "labor_tax_bn": 13.558522,
+    "capital_tax_bn": 0,
+    "capital_income_following_group_bn": 863.700696,
+    "capital_tax_at_retention_0_bn": 212.470371,
+    "output_fall_full_adjustment": 0.084228,
+    "output_fall_capital_fixed": 0.055587
+   },
+   {
+    "spec": 11,
+    "normalization": "cash",
+    "F_bn": 8.946297,
+    "P_bn": -0.15567,
+    "labor_tax_bn": 8.946297,
+    "capital_tax_bn": 0,
+    "capital_income_following_group_bn": 569.894198,
+    "capital_tax_at_retention_0_bn": 140.193973,
+    "output_fall_full_adjustment": 0.084228,
+    "output_fall_capital_fixed": 0.055587
+   }
+  ],
+  "retention": [
+   {
+    "normalization": "gdp",
+    "P_plus_F": 13.322598,
+    "F_retention_1": 13.558522,
+    "F_retention_0": 226.028893,
+    "P_retention_0": -212.706296,
+    "P_plus_F_retention_0_owners_excluded": 225.792969
+   },
+   {
+    "normalization": "cash",
+    "P_plus_F": 8.790628,
+    "F_retention_1": 8.946297,
+    "F_retention_0": 149.14027,
+    "P_retention_0": -140.349642,
+    "P_plus_F_retention_0_owners_excluded": 148.9846
+   }
+  ]
+ },
+ "item4": {
+  "use_key_at_1_bn": [
+   -86.848983,
+   -80.976701
+  ],
+  "module_cell_retention_0_owners_excluded_bn": [
+   -212.470371,
+   -140.193973
+  ],
+  "wage_share": [
+   0.080238,
+   0.074813
+  ],
+  "business_taxes_bn": {
+   "c_and_i_property": 273.445297,
+   "other_production_taxes": 145.258,
+   "corporate": 663.685
+  }
+ },
+ "defense_bound": [
+  {
+   "capital_fixed_bn": 47.514004,
+   "full_adjustment_bn": 71.994936,
+   "output_fall_capital_fixed": 0.055587,
+   "output_fall_full_adjustment": 0.084228
+  },
+  {
+   "capital_fixed_bn": 47.514004,
+   "full_adjustment_bn": 71.994936,
+   "output_fall_capital_fixed": 0.055587,
+   "output_fall_full_adjustment": 0.084228
+  }
+ ],
+ "green_book": {
+  "source": "DoD, National Defense Budget Estimates for FY 2025 (Green Book), Table 7-7, % of GDP, National Defense column",
+  "fy1986": 6,
+  "fy2000": 2.9,
+  "fy2010": 4.7,
+  "fy2024": 3.2,
+  "fy2024_note": "an estimate in the FY 2025 edition"
+ }
+}

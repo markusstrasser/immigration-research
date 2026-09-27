@@ -1,0 +1,214 @@
+{
+ "group": "ACS 2024 proxy: HISP=02 or POBP=303; household amounts shared per member (PWGTP)",
+ "amounts": {
+  "group_owner_tax_bn": 24.703175,
+  "group_owner_value_bn": 2821.506328,
+  "group_rent_bn": 89.152208,
+  "group_gross_rent_bn": 103.325597,
+  "group_rent_single_family_bn": 35.241658,
+  "all_owner_tax_bn": 381.766603,
+  "all_owner_value_bn": 42259.542339,
+  "all_rent_bn": 777.487009,
+  "all_gross_rent_bn": 884.3112,
+  "all_rent_single_family_bn": 243.574329,
+  "group_pop": 39429519.0,
+  "group_owner_pop": 22664682.0,
+  "group_renter_pop": 15552204.0,
+  "group_vehicles": 25133689.717813,
+  "all_pop": 340110990.0,
+  "all_owner_pop": 227699000.0,
+  "all_renter_pop": 99379190.0,
+  "all_vehicles": 246210403.357623
+ },
+ "keys": {
+  "owner_tax_share": 0.064708,
+  "rent_share": 0.114667,
+  "gross_rent_share": 0.116843,
+  "population_share": 0.115931,
+  "renter_population_share": 0.156494,
+  "owner_population_share": 0.099538,
+  "vehicle_share": 0.102082,
+  "group_rent_in_single_family_share": 0.395298,
+  "all_rent_in_single_family_share": 0.313284
+ },
+ "checks": {
+  "owner_tax_household_weighted_bn": 375.82418,
+  "owner_tax_person_route_bn": 381.766603,
+  "persons": 3422888,
+  "group_persons_weighted": 39429519.0,
+  "all_persons_weighted": 340110990.0
+ },
+ "owner": {
+  "land_share": 0.371303,
+  "elasticity": 1.731567,
+  "metro_group_share": 0.301997,
+  "fall_lr_metro": 0.134206,
+  "fall_lr_national": 0.043708,
+  "fall_sr_metro": 0.301997,
+  "fall_lr_cdg_low": 0.074658,
+  "fall_lr_cdg_mid": 0.084618,
+  "fall_lr_cdg_high": 0.094039,
+  "r_lr_metro": 0.762903,
+  "r_lr_national": 0.672405,
+  "r_sr": 0.029494,
+  "land_share_cross_section_where_available": 0.329683,
+  "land_share_2022_on_the_same_counties": 0.371978,
+  "r_lr_cdg": {
+   "low": 0.703355,
+   "mid": 0.713315,
+   "high": 0.722736
+  },
+  "weight_by_land_share_source": {
+   "FHFA county 2022 panel": 0.951647,
+   "FHFA county pooled cross section (2012-2022, base 2015)": 0.041067,
+   "FHFA state 2022 panel (county not covered)": 0.007286
+  },
+  "weight_by_elasticity_source": {
+   "Saiz 2010": 0.839421,
+   "imputed: Orange County takes Los Angeles-Long Beach": 0.023022,
+   "imputed: outside 1999 metros, Saiz unweighted mean": 0.079126,
+   "imputed: state median of listed metros": 0.058431
+  },
+  "weight_by_regime": {
+   "assessment-limited": 0.780392,
+   "levy-limited (levy-set)": 0.187505,
+   "no limit or disclosure only": 0.015913,
+   "rate-limited": 0.01619
+  },
+  "r_sr_by_regime": {
+   "assessment-limited": 0.0,
+   "levy-limited (levy-set)": 0.143277,
+   "no limit or disclosure only": 0.081302,
+   "rate-limited": 0.082457
+  }
+ },
+ "renter": {
+  "land_share": 0.42348,
+  "elasticity": 1.518657,
+  "metro_group_share": 0.268593,
+  "fall_lr_metro": 0.131923,
+  "fall_lr_national": 0.043708,
+  "fall_sr_metro": 0.268593,
+  "fall_lr_cdg_low": 0.076173,
+  "fall_lr_cdg_mid": 0.086801,
+  "fall_lr_cdg_high": 0.096944,
+  "r_lr_metro": 0.708443,
+  "r_lr_national": 0.620228,
+  "r_sr": 0.025172,
+  "land_share_cross_section_where_available": 0.377795,
+  "land_share_2022_on_the_same_counties": 0.424093,
+  "r_lr_cdg": {
+   "low": 0.652693,
+   "mid": 0.663321,
+   "high": 0.673464
+  },
+  "weight_by_land_share_source": {
+   "FHFA county 2022 panel": 0.963982,
+   "FHFA county pooled cross section (2012-2022, base 2015)": 0.031725,
+   "FHFA state 2022 panel (county not covered)": 0.004293
+  },
+  "weight_by_elasticity_source": {
+   "Saiz 2010": 0.847505,
+   "imputed: Orange County takes Los Angeles-Long Beach": 0.045653,
+   "imputed: outside 1999 metros, Saiz unweighted mean": 0.058601,
+   "imputed: state median of listed metros": 0.048241
+  },
+  "weight_by_regime": {
+   "assessment-limited": 0.791181,
+   "levy-limited (levy-set)": 0.168597,
+   "no limit or disclosure only": 0.017558,
+   "rate-limited": 0.022664
+  },
+  "r_sr_by_regime": {
+   "assessment-limited": 0.0,
+   "levy-limited (levy-set)": 0.131881,
+   "no limit or disclosure only": 0.062018,
+   "rate-limited": 0.081535
+  }
+ },
+ "national": {
+  "group_population_share": 0.115931,
+  "saiz_population_weighted_elasticity": 1.757099,
+  "fall_lr_national": 0.043708
+ },
+ "land_share_meta": {
+  "nation_2022": 0.399,
+  "counties_in_2022_panel": 1054,
+  "counties_in_cross_section": 2444
+ },
+ "top_states_by_group_owner_tax": {
+  "CA": {
+   "share": 0.362345,
+   "regime": "assessment-limited"
+  },
+  "TX": {
+   "share": 0.288646,
+   "regime": "assessment-limited"
+  },
+  "IL": {
+   "share": 0.079114,
+   "regime": "levy-limited (levy-set)"
+  },
+  "AZ": {
+   "share": 0.028837,
+   "regime": "assessment-limited"
+  },
+  "WA": {
+   "share": 0.020874,
+   "regime": "levy-limited (levy-set)"
+  },
+  "CO": {
+   "share": 0.020504,
+   "regime": "levy-limited (levy-set)"
+  },
+  "FL": {
+   "share": 0.01962,
+   "regime": "assessment-limited"
+  },
+  "NY": {
+   "share": 0.013036,
+   "regime": "assessment-limited"
+  }
+ },
+ "bea_housing": {
+  "year": 2024,
+  "housing_output_bn": 3143.691,
+  "owner_occupied_output_bn": 2374.185,
+  "tenant_occupied_output_bn": 740.336,
+  "taxes_on_production_bn": 356.011,
+  "tenant_share_of_output": 0.235499,
+  "tenant_taxes_bn": 83.840225,
+  "owner_taxes_bn": 272.170775,
+  "rule": "Table 7.4.5 gives the housing sector's taxes on production and imports (line 15) without a tenure split; they are split here by tenure's share of housing output (lines 3-4 over line 1), an equal tax per dollar of rent [INFERENCE]",
+  "source": "BEA NIPA Table 7.4.5 (Section7All_xls.xlsx, sheet T70405-A)"
+ },
+ "census_property_tax_fy2022": {
+  "bn": {
+   "state_and_local": 650.627941,
+   "state": 21.596864,
+   "local": 629.031077,
+   "counties": 152.520646,
+   "municipalities": 151.976101,
+   "townships": 40.39047,
+   "special_districts": 27.661976,
+   "school_districts": 256.481884
+  },
+  "share_of_local": {
+   "school_districts": 0.407741,
+   "counties": 0.242469,
+   "municipalities": 0.241603,
+   "townships": 0.064211,
+   "special_districts": 0.043976
+  },
+  "source": "Census 2022 Individual Unit File, 22statetypepu.txt, U.S. rows, item T01 (property tax), $ thousands",
+  "note": "dependent school systems are counted with their parent county or city, so schools' part of the property tax exceeds the school-district share"
+ },
+ "assumptions": {
+  "demand_elasticity": "1 (Saiz 2007: an inflow of 1% of population raises rents and values about 1%, short run)",
+  "long_run_fall": "1 - (1 - s)^(1/(1 + e)), capped at the land share (land cannot fall below zero)",
+  "nonmetro_elasticity": 2.5,
+  "orange_county": "Los Angeles-Long Beach elasticity",
+  "renter_land_share": "the county single-family land share (FHFA covers single-family parcels only); multifamily land shares are lower, so this understates the renters' response",
+  "short_run": "0 where assessments are capped (Lincoln assessment limit), else the fixed-stock price fall"
+ }
+}
