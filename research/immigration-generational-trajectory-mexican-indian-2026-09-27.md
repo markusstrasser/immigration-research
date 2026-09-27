@@ -85,6 +85,11 @@ BA at 25+).
 - *What would settle it.* About 540 adult G3 non-identifiers found by grandparents' birthplace, from
   IPUMS-CPS with parent pointers or the licensed NLSY97 geocode; 44–55 exist today.]
 
+[2026-09-28, later: the carry-over lane now values attriters by this split rule (406a2d4). Under it
+the measured-non-identifier range for G3→G4+ is 0.81–1.10, with central ratios of 1.04 (CPS), 1.10
+(GSS) and 0.89 (NLSY97). Identity loss is a one-time level shift of about 9% from G3 on, not a
+per-generation fade. The like-whites bounds do not move.]
+
 **Tension with the literature.** Published group-level carry-over is 0.4–0.6 per generation
 (Borjas 1992–94; Card, DiNardo & Estes; Ward 2020 gives 0.57–0.74 for G2→G3). The Mexican G2→G3+
 value of about 0.9 sits well above that range. The historical estimates come mostly from European
@@ -95,7 +100,9 @@ and page per figure]
 **Projection** [MODEL]: central G4 −$6.5k and G5 −$6.3k per adult a year on the partial ledger.
 The band runs from −$3.7k / −$2.1k (the gap regresses toward the white mean at the literature's
 rate) to −$6.6k / −$6.6k (full stall). Only 1970-level identity loss with white-like leavers pushes
-G5 near zero.
+G5 near zero. [2026-09-28: with attriters valued by the measured split rule, the central is
+−$6.1k at G4 and at G5 per lineage descendant, from a lineage G3+ gap of −$6,041; the band does not move
+(406a2d4).]
 
 ## 2. Civic attachment and marriage by generation, Mexican origin
 
@@ -261,3 +268,4 @@ Not settled:
 - 2026-09-27, late: §4 gained the IR-5 fraud-versus-cohort test (entry 242).
 - 2026-09-27, late: §4a's lineage figure is narrowed after the conceptual audit's second pass (§D): the 1.9% is a calibrated scenario, not an observed lifetime petition rate, and timing alone moves the channel. Concept affected: the sponsored-parent channel's size.
 - 2026-09-28: §1 gained the identity-loss test of the G2 stall (`carryover_identity_2026_09_27`, entry 232): G2→G3+ is about 0.84 / 0.82 with the hidden third generation put back, cohort matters about as much, and the attriters' 54–72% dollar convention is a years-of-schooling ratio. Concept affected: Mexican-origin carry-over after G2.
+- 2026-09-28, later: §1's G3→G4+ range and projection central follow the carry-over lane's measured split rule for attriters (406a2d4): 0.81–1.10, central −$6.1k at G4 and G5. Concept affected: identity loss in the Mexican-origin projection.
