@@ -1,10 +1,13 @@
 # What has been validated, and what can be back-tested?
 
-**Verdict:** Several important inputs are independently corroborated, and outside
-checks have found real errors. We have some held-out prediction tests. We have
-**not** independently back-tested the complete national counterfactual. Confidence
-in observed earnings, enrollment and some benefit shares is stronger than confidence
-in the spending response, lifetime projection or complete welfare total. [INFERENCE]
+**Verdict:** Several important inputs are independently corroborated. Four further
+checks now produce a mixed result: demographic profiles help predict some later
+fiscal shares; school adjustment depends on the population and score; medical
+disagreement survives several attempted explanations; and the new joint Mariel
+budget loses to its simple baseline. We have **not** independently back-tested the
+complete national counterfactual. The evidence is stronger for selected observed
+components than for spending responses, lifetime projections or the complete total.
+[CALCULATION / INFERENCE: executed checks in section 3]
 
 September 28, 2026. Validation audit, following the [conceptual audit](immigration-adversarial-audit-2026-09-28.md).
 The current object is the September 27 account's **$321.8–387.4bn annual conditional
@@ -40,12 +43,15 @@ This is a modest allocation correction. It does not validate charging full avera
 cost as a long-run response. [CALCULATION: [outside checks](immigration-outside-checks-2026-09-24.md)]
 
 **Healthcare has a live disagreement.** For age65+, Medicare-ever beneficiaries,
-Hispanic versus non-Hispanic-white Medicare-plus-Medicaid spending, aligned MEPS2023
+Hispanic versus non-Hispanic-white Medicare-plus-Medicaid spending, payer/age-aligned MEPS2023
 gives **0.845 (SE .089)** and MCBS2023 **1.265 (.152)**. Pooling MEPS2016–24 gives
-**1.005 (.056)**. Neither public-use file here includes facility users, so
-institutions do not explain away this difference. Coverage-count agreement with
-Medicaid records cannot validate medical dollars. [DATA: [definition-by-definition
-reconciliation](../infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/RESULT.md#7-65-mcbs-nursing-facilities-and-institutions)]
+**1.005 (.056)**. **Correction after the deeper check:** the population exclusions
+are not identical. MCBS excludes anyone with a facility interview or any facility,
+hospice or institutional event/cost; MEPS's civilian noninstitutional population
+does not impose the identical rule. We cannot rule out that channel from these
+public files. Coverage-count agreement with Medicaid records cannot validate
+medical dollars. [DATA: [earlier reconciliation](../infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/RESULT.md#7-65-mcbs-nursing-facilities-and-institutions);
+SOURCE / CALCULATION: [new definition audit](../infra/immigration-fiscal/validation_medical_2026_09_28/RESULT.md)]
 
 ## 2. What is genuinely back-testable?
 
@@ -54,7 +60,8 @@ later earnings distributions, tax liabilities, pupil counts, benefit shares and
 costs by beneficiary type. A conditional prediction may use later population
 composition or enacted tax rules, but it must say so: that tests allocation or
 transport, not an unconditional forecast. Compare with a simple frozen-share or
-population-proportional baseline. [PROPOSED VALIDATION]
+population-proportional baseline. Section 3 now executes this for selected fiscal
+components. [INFERENCE / VALIDATION METHOD]
 
 **Responses to population changes:** partly. We can confront predictions about
 district staffing, budgets, rents, wages, capacity and service quality with actual
@@ -130,56 +137,126 @@ the score difference is claimed. The finding is that reducing aggregate bias can
 worsen geographic accuracy; a common correction needs evidence of transport.
 [LIMIT / INFERENCE]
 
-## 3. Where further cross-checking has the most value
+## 3. Four follow-ups now executed
 
-The ranking is a judgment about consequence and tractability, not a measured
-value-of-information calculation. [FRAMING-SENSITIVE]
+Each lane saved its split, score and alternatives before calculating the new
+results. Most source outcomes had been inspected in earlier work, so these are
+retrospective tests. The newly acquired MCBS2022 file is a previously unused
+external measurement check. Neither label makes the entire account validated.
+[METHOD: linked designs and results below]
 
-1. **Joint service-response tests.** Freeze a prediction for growing and shrinking
-   districts or localities, and score spending, staffing, capacity and incumbent
-   outcomes together over short and longer horizons. Flat spending with worse
-   service is not evidence of zero cost; extra spending with stable quality can be
-   a real resource cost. Conversely, persistent unused capacity weakens full-cost
-   avoidability. Use held-out periods and locations, pre-event checks, and report
-   endogenous migration/funding limitations. Public payroll and replacement hiring
-   belong in the same exercise. Existing cross-sectional fits, within-panel
-   associations and the donor-sensitive Mariel school test constrain this question
-   without settling it. [PROPOSED; [executed causal checks](immigration-causal-execution-2026-09-20.md),
-   [payroll gap](immigration-adversarial-audit-2026-09-28.md)]
+### School spending, staffing and quality
 
-   Two concrete tests use existing holdings: fit school spending with F33's
-   2000/2010 waves and score 2019 changes; and predict Mariel's local revenue and
-   spending endpoints jointly. The latter needs one coherent counterfactual
-   budget: separately fitted synthetic controls cannot simply be added into a
-   net fiscal balance. Both are retrospective exercises, not untouched future
-   observations. [PROPOSED; source scope in the scaling and causal memos above]
-2. **Medical spending, not just enrollment.** Reconcile MEPS and MCBS payer,
-   Medicare Advantage, top-coding and reporting definitions; use unused
-   year/state/eligibility spending cells wherever available. Separate member-years
-   from people ever enrolled, household services from institutions, and actual
-   payments from modeled allocation. A lower or higher independent cost ratio
-   should move the account by the same evidence standard. [PROPOSED; reconciliation above]
-3. **Allocation transport across states and years.** The new SNAP test above
-   finds worse point prediction with a simple pooled correction on its chosen score;
-   geographic heterogeneity needs attention before assuming transport. Reserve
-   a later unused administrative year after freezing the rule. For taxes, extend
-   the matched income-bin/state checks; do not claim these identify within-bin
-   Mexican-origin payments. Treasury's [tax-record model](https://home.treasury.gov/system/files/131/WP-122.pdf)
-   imputes broad ethnicity, so it is a useful separate construction but not a
-   direct Mexican-origin administrative census. [PROPOSED; source rechecked September28]
-4. **An actual historical account reconstruction.** Rebuild earlier annual accounts
-   from that year's microdata and policy, then freeze the transport rules and test
-   later observables. The existing fixed-birth/entry cohort follows surviving
-   residents in repeated cross-sections; it does not follow original individuals'
-   lifetime taxes and benefits. Attrition, return migration, identity change and
-   policy changes need explicit treatment. [PROPOSED; [projection limits](immigration-projection-backtest-2026-09-19.md)]
+Fit FY2000→2010 spending changes and predict FY2010→2019, conditional on actual
+later enrollment and CPI. Across **12,011 districts**, the free enrollment response
+with a training-period state trend has district log RMSE **.182**, versus **.202**
+for proportional enrollment with its training trend. But proportional enrollment
+**without** a trend wins when fitting and scoring weight initial pupils: **.169
+versus .175**, and also has lower district mean absolute dollar error (**$5.86m
+versus $7.09m**, in 2020 dollars for the unweighted fits). Growing districts favor
+the simple proportional rule; shrinking districts favor unchanged real spending.
+There is no universally winning exponent. [CALCULATION:
+[school tests](../infra/immigration-fiscal/validation_schools_2026_09_28/RESULT.md)]
 
-These are incompletely validated avenues, not a claim that nobody has looked at
-them. School-systemwide and enforcement/rent work is already active in the
-September27 lanes; preliminary output is not a completed independent check.
-The current [conceptual audit](immigration-adversarial-audit-2026-09-28.md) separately
-tracks mixed-household eligibility, public payroll and unpriced social channels.
-[REPO STATUS: inspected September28; active peer files not modified]
+Within a separate panel of 12,138 districts matched across FY2019→2024,
+pupils fall **3.46%**, real current spending rises **5.50%**, and teacher FTE rises
+**1.99%**. These are pooled level changes, not causal immigration effects. The
+prediction exercise excludes New Jersey because its early teacher data lack
+usable support; the observed table retains it. Frozen staffing is competitive
+with the fitted model. These results do not support treating a pupil decline as
+an immediate proportional saving, and they do not identify long-run avoidable
+costs. COVID, funding, pupil needs and labor prices remain competing explanations.
+[CALCULATION / INFERENCE: school tests]
+
+Quality has a separate check: **46 of 51 state/DC jurisdictions** have both lower
+pupils per teacher in the matched resource panel and lower NAEP grade4 reading
+point estimates in 2019→2024. The finance and NAEP populations are not identical;
+this is not 46 significant declines or evidence that more teachers harmed learning.
+It shows why staffing ratios cannot certify stable achievement. Matched district
+achievement, building capacity and incumbent-specific outcomes remain unavailable
+in these joined inputs. [CALCULATION / LIMIT: school tests]
+
+### Medical dollars: a new year and attempted explanations
+
+For Hispanic/NH-white Medicare-plus-Medicaid payments per Medicare-ever person
+aged 65+, MCBS2022 gives **1.114 (SE .151)** versus MEPS2022 **1.009 (.109)**.
+Their gap is **.106 (.186)**, compared with **.420 (.177)** in 2023. The new point
+gap is smaller, but its 95% interval **[−.259,+.470]** still includes the old gap:
+this establishes neither equivalence nor a significant year-to-year change.
+[CALCULATION: [medical checks](../infra/immigration-fiscal/validation_medical_2026_09_28/RESULT.md)]
+
+**85.1%** of the 2023 gap's exact arithmetic decomposition is Medicare. Applying a
+common four-cell age/sex distribution leaves **.374** of the original .420 gap;
+an analogue of CMS's tail-mean disclosure treatment leaves **.411**. Additional
+p99 caps leave .293 but change the estimand. CMS adjusts MA service spending, and
+the public files cannot exactly align MA enrollment, covered months, institutional
+use or detailed origin. These findings narrow explanations without identifying a
+defect in either survey. [SOURCE / CALCULATION / LIMIT: medical checks]
+
+Freezing pooled MEPS2016–2023 ratios predicts 2024 better than repeating 2023 on
+four of six correlated outcomes, but worsens the Hispanic aggregate public-payment
+ratio and Medicaid ratio. The Mexican/all-donor public-payment error is **−.074
+(SE .137)** versus **−.202** repeating 2023; those are ratio errors, not dollar
+corrections. These tests retain uncertainty by payer and supply no blanket adverse
+Mexican-origin multiplier. [CALCULATION / INFERENCE: medical checks]
+
+### Actual earlier fiscal components and later prediction
+
+Reconstruct actual CPS income-year 2021–2024 wages, federal/payroll tax and selected
+transfers, preserving each year's released policy treatment and the canonical
+resource-sharing rules. Freeze income2022 profiles and predict 2024 shares. Across
+eight declared, overlapping outcomes, mean absolute allocation-share error falls
+from **.495pp** with frozen shares to **.415pp** with updated age/sex/generation
+composition. Wages and tax keys improve; **SNAP, Social Security and SSI worsen**.
+Later population composition and national totals are conditional inputs. This is
+a test of component allocation, not a forecast of national budgets; it reconstructs
+selected components, not full historical government accounts. [CALCULATION:
+[fiscal-year tests](../infra/immigration-fiscal/validation_fiscal_years_2026_09_28/RESULT.md)]
+
+The independent tax comparison is much less reassuring. Predicting the **2023 IRS
+tax distribution across 19 AGI bins** with frozen 2022 CPS shares gives **25.20pp
+total-variation error**, versus **2.43pp** simply freezing 2022 IRS shares. Same-year
+CPS2023 still errs by 24.06pp. This is the released CPS tax construction before our
+later administrative calibration, not a score of the final calibrated key. It
+exposes a distribution mismatch that close within-CPS ethnic prediction cannot
+resolve; the IRS bins do not identify Mexican-origin taxes. No proportional
+Mexican-origin correction follows from these errors. [CALCULATION / LIMIT: fiscal-year tests]
+
+The policy stress matters: carrying income2021's pandemic net-tax profile into 2024
+underpredicts the target union's share by **4.77pp**, or **$90.86bn** conditional on
+the 2024 CPS national net-tax total. This is a failed old-profile prediction, **not
+an error estimate or correction to today's account**. The 2021 definition includes
+additional refundable credits and EIP3; unadjusted profiles do not travel safely
+across policy regimes. [SOURCE / CALCULATION: fiscal-year tests]
+
+### A coherent Mariel school budget
+
+One donor-weight vector now predicts the revenue and spending components, totals
+and retained accounting residuals. On a 1970–1976 fit predicting 1977–1979, the two
+fixed weightings have joint normalized RMSE **39.75% and 26.65%**, versus **16.02%**
+for a simple donor-growth baseline. The score normalizes six endpoints by their
+training levels; it is neither a fiscal-loss percentage nor a confidence interval.
+Deleting the largest donor does not rescue either fit. [CALCULATION:
+[joint Mariel test](../infra/immigration-fiscal/validation_mariel_2026_09_28/RESULT.md)]
+
+**This construction fails its own prediction check.** Accounting coherence is
+necessary but insufficient. Positive post-event spending gaps remain model outputs
+with weak predictive support; they cannot validate a net causal school balance.
+A local balance would also require distinguishing outside grants from national
+resource savings. This finding qualifies our new joint estimator; it does not
+establish zero costs or refute every published Mariel design. [INFERENCE]
+
+### What is still open
+
+The main unfinished tests are a policy-updated fiscal forecast against genuinely
+reserved administrative outcomes; comparable medical person-month and service
+payments by detailed origin; district spending, capacity and achievement following
+a credible population shock; and full historical government accounts. The current
+holdings do not identify those quantities merely because these four executions
+succeeded. Public payroll replacement, mixed-household eligibility and unpriced
+social channels remain in the [conceptual audit](immigration-adversarial-audit-2026-09-28.md).
+Separate school-systemwide and enforcement/rent analyses have their own populations
+and designs; their estimates are not added to these validation scores. [LIMIT / INFERENCE]
 
 ## 4. What we should stop counting as confirmation
 
@@ -202,15 +279,27 @@ tracks mixed-household eligibility, public payroll and unpriced social channels.
 
 **Retained:** independently corroborated earnings patterns, meaningful exposure
 checks and actual public-resource costs. **Qualified:** conditional response and
-whole-model precision claims. **Unresolved:** complete causal validation, medical
-cross-survey disagreement and prospective performance after calibration. The audit
+whole-model precision claims. **Rejected for these tests:** the claim that our new
+joint Mariel model predicts better than its baseline, and automatic transport of
+pandemic net-tax profiles. **Corrected:** the claim that identical institutional
+exclusions remove that explanation for the medical discrepancy. **Unresolved:**
+complete causal validation, medical cross-survey disagreement and prospective
+performance after calibration. The audit
 contains supportive and adverse findings; political usefulness is not a scoring
 criterion. LLM selection and interpretation biases remain a reason to retain
 failed tests and all calculated alternatives. [INFERENCE / INSTRUMENT NOTE]
 
-Coverage: existing fiscal outside checks, temporal/cohort checks, service-scaling
-holdouts and bounded crime/production/housing validation were inspected; two cheap
-diagnostics were executed. Legacy raw builders were not rerun, active peer work
-was not changed, and no new causal coefficient or national total was estimated.
-The old preregistration ledger was checked as an additional lead; its unresolved
-entries are not counted as validation successes.
+Coverage: the original audit's GSS and SNAP diagnostics are retained. Four follow-up
+lanes now execute temporal school finance/staffing tests, a state achievement join,
+medical definition/payer/year checks, actual CPS annual-component reconstruction
+and independent IRS comparisons, and a joint Mariel budget. Each linked result
+records input coverage, exclusions, naive baselines, uncertainty and reproduction
+commands. No new causal coefficient or national total was adopted. [EXECUTION]
+
+## Revisions
+
+- **2026-09-28, executed follow-ups:** replaced proposed checks with their results,
+  retained their adverse comparisons, and corrected the institutional-exclusion
+  claim. The [validation decision](../decisions/2026-09-28-component-validation-boundaries.md)
+  records why predictive successes remain component-specific and why the failed
+  joint Mariel construction is not carried into the fiscal account.

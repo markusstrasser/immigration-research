@@ -853,3 +853,25 @@ measure. Used in21 conditional Mariel SCM models, not national population accoun
   - Used by: crime_selection_cohorts (4, 5, 6, 9, 14, 15), schooling_selection_position (3, 12, 13), ancestry_iv_congestion_wages (10, 11) and the Borjas panel loader (2). Extracts 7 and 8 are not yet used [INFERENCE: from `rg` over the lanes' scripts]. Store README: [`ipums_usa_store_2026_09_23/README.md`](../infra/immigration-fiscal/ipums_usa_store_2026_09_23/README.md).
   - [2026-09-25: extracts 16 (employed persons, ACS 1-year 2012–2024, 19,103,402 rows) and 17 (the same for 2005–2011, 9,683,631 rows) were submitted by `compliance_gap_2026_09_24/ipums_extract.py` and sit in that lane's ignored `_cache/ipums/` as `workers.csv.gz` and `workers_pre.csv.gz`, each matching IPUMS's published sha256; they are not yet in the store, so "every extract" above now holds for 1–15 only (ladder 220).]
   - Known break in ACS schooling (2026-09-26): among Mexico-born adults aged 20–64, reports of no schooling completed (`SCHL` 1; IPUMS `EDUCD` 2) step from 5.55% in 2019 to 8.45% in 2020 and stay there (8.66% in 2021, 9.11% in 2024), while grade 8 or less stays continuous (29.2% to 29.0%) and a fixed 1990–99 arrival cohort shows the same step. It is a reporting or processing change with the cause not identified. Series that split the bottom band or score years of schooling across 2019/2020 need a break term. [DATA: `infra/immigration-fiscal/return_vs_us_stayers_2026_09_26/derived/acs_no_schooling_break.csv`; reproduced from the Census PUMS files for 2017–2019 and 2021–2024] [Corrected later on 2026-09-26: this break was first documented on 2026-09-23 as F6 of the dataset integrity audit (`infra/immigration-fiscal/dataset_integrity_2026_09_23/acs.md`); this note did not cite it. `infra/immigration-fiscal/acs_schooling_break_2026_09_26/RESULT.md` refines both. "Grade 8 or less stays continuous" holds in raw totals only: detrended, that band steps up 0.8–1.0 points for the Mexico-born and 0.13–0.15 for the US-born. Grade 9 supplies about a quarter of the lost reports. Natives aged 20–64 gain +0.20 points of "none" (+30%). The Census Bureau documents over-reporting of "No schooling completed" in mail and internet responses (ACS Design and Methodology v4.0, §5.10) and changed the item in the 2025 ACS, a second break in the same item and in the diploma and some-college categories. That lane's table lists the exposed lanes, with sizes and a preferred flow-rate correction.]
+
+### MCBS-CSPUF-2022 — CMS medical spending by payer, unused-year cross-check
+
+**Source:** Centers for Medicare & Medicaid Services. **Acquired:** 2026-09-28.
+**Local:** `infra/immigration-fiscal/validation_medical_2026_09_28/_cache/` (ignored;
+restorable through the lane's pinned `acquire.py`).
+**Official:** [CMS dataset catalog](https://catalog.data.gov/dataset/medicare-current-beneficiary-survey-cost-supplement).
+**Codebook:** `CSPUF2022_Codebook.txt`;
+[official codebook](https://data.cms.gov/sites/default/files/2025-01/CSPUF2022_Codebook.txt).
+**Size:** ZIP 10,208,378 bytes plus codebook 32,191 bytes; 6,621 records, 134 variables.
+**License/access:** federal public-use data. **Pins:** data SHA256
+`d500832a0d832419f7c5ff23df56d91ee5348bc092d53f0dd7345e01fb699875`;
+codebook SHA256 `7b7da7f5f7ded9c5c424e5cd3805c4580179d20c0574348e70af052bce71655e`.
+
+**Fields:** `CSP_AGE`, `CSP_SEX`, `CSP_RACE`, `CSP_INCOME`, payer amounts
+`PAMTCARE`, `PAMTMADV`, `PAMTCAID`, full weight `CSPUFWGT`, 100 Fay BRR replicate weights.
+**Quirks:** no Mexican origin or birthplace; age/income coarse; facility/hospice users
+excluded; service costs adjusted; payer tails replaced by tail means; payer-positive
+is not enrollment; PUF IDs cannot link to other years or the survey PUF. The chronic
+condition field contains a refusal code, and is not used here. Codebook age and race
+frequencies reproduce exactly.
+**Used in:** `validation_medical_2026_09_28/analysis.py` and `RESULT.md`.
