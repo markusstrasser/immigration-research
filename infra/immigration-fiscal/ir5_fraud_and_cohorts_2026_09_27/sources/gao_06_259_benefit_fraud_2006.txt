@@ -1,0 +1,2035 @@
+# GAO-06-259, Immigration Benefits: Additional Controls and a Sanctions Strategy Could Enhance DHS's Ability to Control Benefit Fraud
+URL: https://www.gao.gov/assets/a249232.html
+
+GAO-06-259, Immigration Benefits: Additional Controls and a Sanctions Strategy Could Enhance DHS's Ability to Control Benefit Fraud
+
+```
+
+This is the accessible text file for GAO report number GAO-06-259 
+entitled 'Immigration Benefits: Additional Controls and a Sanctions 
+Strategy Could Enhance DHS's Ability to Control Benefit Fraud' which 
+was released on March 10, 2006. 
+
+This text file was formatted by the U.S. Government Accountability 
+Office (GAO) to be accessible to users with visual impairments, as part 
+of a longer term project to improve GAO products' accessibility. Every 
+attempt has been made to maintain the structural and data integrity of 
+the original printed product. Accessibility features, such as text 
+descriptions of tables, consecutively numbered footnotes placed at the 
+end of the file, and the text of agency comment letters, are provided 
+but may not exactly duplicate the presentation or format of the printed 
+version. The portable document format (PDF) file is an exact electronic 
+replica of the printed version. We welcome your feedback. Please E-mail 
+your comments regarding the contents or accessibility features of this 
+document to Webmaster@gao.gov. 
+
+This is a work of the U.S. government and is not subject to copyright 
+protection in the United States. It may be reproduced and distributed 
+in its entirety without further permission from GAO. Because this work 
+may contain copyrighted images or other material, permission from the 
+copyright holder may be necessary if you wish to reproduce this 
+material separately. 
+
+United States Government Accountability Office: 
+
+March 2006: 
+
+GAO: 
+
+Report to Congressional Requesters: 
+
+Immigration Benefits: 
+
+Additional Controls and a Sanctions Strategy Could Enhance DHS's 
+Ability to Control Benefit Fraud: 
+
+GAO-06-259: 
+
+GAO Highlights: 
+
+Highlights of GAO-06-259, a report to congressional requesters: 
+
+Why GAO Did This Study: 
+
+In 2002, GAO reported that immigration benefit fraud was pervasive and 
+significant and the approach to controlling it was fragmented. Experts 
+believe that individuals ineligible for these benefits, including 
+terrorists and criminals, could use fraudulent means to enter or remain 
+in the U.S. You asked that GAO evaluate U.S. Citizenship and 
+Immigration Service’s (USCIS) anti-fraud efforts. This report addresses 
+the questions: (1) What do available data and information indicate 
+regarding the nature and extent of fraud? (2) What actions has USCIS 
+taken to improve its ability to detect fraud? (3) What actions does the 
+Department of Homeland Security (DHS) take to sanction those who commit 
+fraud? 
+
+What GAO Found: 
+
+Although the full extent of benefit fraud is unknown, available 
+evidence suggests that it is a serious problem. Several high-profile 
+immigration benefit fraud cases shed light on aspects of its 
+nature—particularly that it is accomplished by submitting fraudulent 
+documents and can be facilitated by white collar and other criminals, 
+with the potential for large profits. USCIS staff denied about 20,000 
+applications for fraud in fiscal year 2005. USCIS has established a 
+focal point for immigration fraud, outlined a fraud control strategy 
+that relies on the use of automation to detect fraud, and is performing 
+risk assessments to identify the extent and nature of fraud for certain 
+benefits. However, USCIS has not implemented important aspects of 
+internal control standards established by GAO and fraud control best 
+practices identified by leading audit organizations—particularly a 
+comprehensive risk management approach, a mechanism to ensure ongoing 
+monitoring during the course of normal activities, clear communication 
+regarding how to balance multiple objectives, mechanisms to help ensure 
+that staff have access to key information, and performance goals for 
+fraud prevention. DHS does not have a strategy for sanctioning fraud. 
+Best practices advise that a credible sanctions program, which includes 
+a mechanism for evaluating effectiveness, is an integral part of fraud 
+control. Because most immigration benefit fraud is not prosecuted 
+criminally, the principal means of sanctioning it would be 
+administrative penalties. Although immigration law gives DHS the 
+authority to levy administrative penalties, the component of DHS that 
+administers them does not consider them to be cost-effective and does 
+not routinely impose them. However, DHS has not evaluated the costs and 
+benefits of sanctions, including the value of potential deterrence. 
+Without a credible sanctions program, DHS’s efforts to deter fraud may 
+be less effective, when applicants perceive little threat of punishment.
+Minimizing Immigration Benefit Fraud through Internal Controls: 
+
+[See PDF for image] 
+
+[End of figure] 
+
+What GAO Recommends: 
+
+To enhance DHS’s efforts to control benefit fraud, GAO recommends that 
+USCIS implement additional internal controls and best practices to 
+strengthen its fraud control environment and that DHS develop a 
+strategy for implementing a sanctions program that includes a mechanism 
+for assessing their effectiveness and that considers the costs and 
+benefits of sanctions, including their deterrence value. DHS generally 
+agreed with 4 of the 6 recommendations but cited actions indicating it 
+has addressed GAO’s other 2 recommendations. GAO believes that 
+additional actions are needed. 
+
+www.gao.gov/cgi-bin/getrpt?GAO-06-259. To view the full product, 
+including the scope and methodology, click on the link above. For more 
+information, contact Paul L. Jones at (202) 512-8777 or 
+jonespl@gao.gov. 
+
+[End of section] 
+
+Contents: 
+
+Letter: 
+
+Results in Brief: 
+
+Background: 
+
+Fraud Is A Serious Problem, But Its Full Extent Is Unknown: 
+
+Although USCIS Has Taken Steps to promote Fraud Control, Additional 
+Controls and Best Practices Could Improve Its Ability to Detect Fraud: 
+
+Most Benefit Fraud Is Not Criminally Prosecuted, but DHS Does Not Have 
+an Administrative Sanctions Program: 
+
+Conclusions: 
+
+Recommendations for Executive Action: 
+
+Agency Comments and Our Evaluation: 
+
+Appendix I: Scope and Methodology: 
+
+Appendix II: Comments from the Department of Homeland Security: 
+
+Appendix III: GAO Contact and Staff Acknowledgments: 
+
+Figures: 
+
+Figure 1: USCIS Applications Completed in Fiscal Year 2005: 
+
+Figure 2: Immigration Benefit Fraud Detection and Referral Process: 
+
+Figure 3: Internal Control Environment: 
+
+Abbreviations: 
+
+AICPA: American Institute of Certified Accountants: 
+
+BFU: Benefit Fraud Unit: 
+
+CBP: Customs and Border Protection: 
+
+CFR: Code of Federal Regulations: 
+
+CIS: Citizenship and Immigration Services: 
+
+DHS: Department of Homeland Security: 
+
+DOL: Department of Labor: 
+
+FDNS: Office of Fraud Detection and National Security: 
+
+FDU: Fraud Detection Unit: 
+
+ICE: Immigration and Customs Enforcement: 
+
+INA: Immigration and Nationality Act: 
+
+INS: Immigration and Naturalization Service: 
+
+NAO: National Audit Office of the United Kingdom: 
+
+PAS: Performance Analysis System: 
+
+TECS: Treasury Enforcement Communication System: 
+
+USCIS: United States Citizenship and Immigration Services: 
+
+March 10, 2006: 
+
+The Honorable John N. Hostettler: 
+Chairman: 
+Subcommittee on Immigration, Border Security, and Claims: 
+Committee on the Judiciary: 
+House of Representatives: 
+
+The Honorable Charles E. Grassley: 
+Chairman: 
+Committee on Finance: 
+United States Senate: 
+
+In fiscal year 2005, over 6 million applications were filed by those 
+seeking an immigration benefit--the ability of an alien to live and in 
+some cases work in the United States either permanently or on a 
+temporary basis. Most immigration benefits can be classified into two 
+major categories--family-based and employment-based. Family-based 
+applications are filed by U.S. citizens or permanent resident aliens to 
+establish their relationships to certain alien relatives such as a 
+spouse, parent, or minor child who wish to immigrate to the United 
+States. Employment-based applications include applications filed by 
+employers for aliens to come to the United States temporarily to work 
+or receive training or for alien workers to work permanently in the 
+United States. Other immigration benefits include granting citizenship 
+to resident aliens (called naturalization), offering asylum to aliens 
+who fear persecution in their home countries, and authorizing 
+international students to study in the United States. 
+
+U.S. Citizenship and Immigration Services (USCIS) within the Department 
+of Homeland Security (DHS) is the agency primarily responsible for 
+processing applications for immigration benefits. The former 
+Immigration and Naturalization Service (INS) previously had this 
+responsibility, which USCIS assumed when DHS was created in March 2003. 
+USCIS's staff of adjudicators process immigration benefits in 4 service 
+centers and 33 district offices around the country. In some cases, 
+applicants may try to obtain a benefit illegally through 
+fraud.[Footnote 1] USCIS adjudicators who suspect fraud are to refer 
+suspicious applications and supporting evidence to USCIS's Office of 
+Fraud Detection and National Security (FDNS), created in 2003. FDNS 
+staff are responsible for reviewing these potential fraud cases and 
+determining whether to forward them to DHS's Immigration and Customs 
+Enforcement (ICE)--which, among other things, is responsible for 
+investigating violations of immigration law, including immigration 
+benefit fraud. ICE may or may not decide to initiate a criminal 
+investigation, depending on the facts in the referral and on workloads 
+and priorities of its field offices. 
+
+DHS, terrorism experts, and federal law enforcement officials familiar 
+with immigration benefit fraud believe that individuals ineligible for 
+immigration benefits, including terrorists and criminals, could use 
+fraudulent means to enter or remain in the United States. In 2002, we 
+reported that immigration benefit fraud was pervasive and significant 
+and that INS's approach to immigration benefit fraud was fragmented and 
+unfocused.[Footnote 2] A 2005 study by a former 9/11 Commission counsel 
+found that of the 94 foreign-born terrorists known to operate in the 
+United States between the early 1990s and 2004, 59 or two-thirds 
+committed immigration fraud including 6 of the September 11th 
+hijackers.[Footnote 3] To determine what actions have been taken since 
+our 2002 report to address immigration benefit fraud, you asked that we 
+evaluate current anti-fraud efforts. This report addresses the 
+following questions: 
+
+(1) What do available data and information indicate regarding the 
+nature and extent of immigration benefit fraud? 
+
+(2) What actions has USCIS taken to improve its ability to detect 
+immigration benefit fraud? 
+
+(3) What actions does DHS take to sanction those who commit benefit 
+fraud? 
+
+To address these questions, we interviewed responsible officials at and 
+reviewed relevant documentation obtained from DHS and the Departments 
+of State, Justice, and Labor. Regarding the nature and extent of 
+immigration benefit fraud, we analyzed USCIS management data contained 
+in its Performance Analysis System (PAS), results from two fraud 
+assessments USCIS had completed before December 2005, information 
+reported by DHS and the U.S. Attorneys Offices based on investigations 
+and prosecutions of immigration benefit fraud, and information in fraud 
+bulletins prepared by one USCIS Service Center. We evaluated the 
+methodology used in USCIS's fraud assessments and determined that it 
+provided a reasonable basis for projecting the frequency with which 
+fraud was committed within the time period from which the samples were 
+drawn. We assessed the data derived from PAS and determined that these 
+data were sufficiently reliable for the purposes of this review. 
+Because we selected investigations and prosecutions to review based 
+upon information that was available, the information obtained from them 
+is not necessarily representative or exhaustive of all immigration 
+benefits cases nationwide. Similarly, information contained in the 
+fraud bulletins is not necessarily representative of immigration 
+benefit fraud nationwide. To determine how USCIS detects fraud during 
+the adjudications process and to evaluate these efforts, we interviewed 
+USCIS headquarters officials and USCIS's Office of Fraud Detection and 
+National Security staff. We also interviewed 59 adjudicators at the 4 
+USCIS Service Centers and 2 USCIS district offices with responsibility 
+for and familiarity with adjudicating different types of applications 
+in a group setting, which allowed us to identify points of consensus 
+among these adjudicators. In addition we interviewed ICE Office of 
+Investigations officials from four ICE field offices. As we did not 
+select probability samples of adjudicators and ICE Office of 
+Investigations staff to interview, the results of these interviews may 
+not be projected to the views of all USCIS adjudicators and ICE Office 
+of Investigations field staff nationwide. Further, we compared the 
+practices in place to the Standards for Internal Control in the Federal 
+Government[Footnote 4] and to guidance from internationally recognized, 
+leading organizations in fraud control, including the American 
+Institute of Certified Public Accountants and the United Kingdom's 
+National Audit Office. To determine what measures DHS has taken to 
+sanction those who commit immigration fraud, we interviewed 
+knowledgeable officials at USCIS and ICE, examined fraud investigation 
+and prosecution statistics, and analyzed USCIS statistics about the 
+amount of fraud identified by its adjudicators. We conducted our work 
+from October 2004 to December 2005 in accordance with generally 
+accepted government auditing standards. Appendix I presents more 
+details about our objectives, scope, and methodology. 
+
+Results In Brief: 
+
+Our review of several high-profile immigration benefit fraud cases 
+sheds light on some aspects of the nature of immigration benefit fraud-
+-particularly that it is accomplished by submitting fraudulent 
+documents, that it can be facilitated by white collar and other 
+criminals, and that it has the potential to result in large profits. 
+Although the full extent of benefit fraud is not known, available 
+evidence suggests that it is an ongoing and serious problem. Fraudulent 
+documents submitted included but were not limited to marriage and birth 
+certificates, financial statements, business plans, organizational 
+charts, fictitious employee resumes, and college transcripts. White- 
+collar and other criminals can facilitate immigration benefit fraud. 
+Individuals who pose a threat to national security and public safety 
+may seek to enter the United States by fraudulently obtaining 
+immigration benefits. Moreover, those facilitating immigration benefit 
+fraud, in some cases, have reaped large profits from aliens willing to 
+pay thousands of dollars to fraudulently obtain an immigration benefit. 
+In fiscal year 2005, USCIS denied about 20,000 applications due to 
+fraud. In addition, in 2005, USCIS's new fraud detection office 
+conducted the first two in a series of planned fraud assessments-- 
+reviews of applications for religious worker and replacement permanent 
+resident card benefits. Based on the results of the completed religious 
+worker assessment, which estimated that 33 percent of all religious 
+worker applications were potentially fraudulent, we project that about 
+660 applications--one-third of religious worker applications submitted 
+over a 6-month period in 2004--may have contained fraudulent 
+information. Some findings of the religious worker assessment, and 
+facts uncovered during criminal investigations and prosecutions, 
+demonstrate that USCIS adjudicators do not always detect fraud during 
+the adjudications process, thus allowing applicants to receive benefits 
+for which they were not eligible. Moreover, USCIS's policy of issuing 
+temporary work authorization within 90 days to those applicants waiting 
+for their applications for permanent residency to be decided, although 
+intended to allow bonafide applicants to work as soon as possible, can 
+be exploited by aliens filing fraudulent applications with the intent 
+of receiving the temporary work authorization for which they would 
+otherwise be ineligible. These aliens can then use the temporary work 
+authorization to obtain other official documents, such as drivers' 
+licenses. Based on an estimate from the DHS Office of Immigration 
+Statistics that about 85 percent of applicants who apply for permanent 
+residency also apply for temporary work authorization, the Citizenship 
+and Immigration Services Ombudsman contends that many aliens who filed 
+a fraudulent claim for permanent residency may have received temporary 
+work authorization. 
+
+To help it detect immigration benefit fraud, USCIS established FDNS as 
+its focal point for dealing with immigration benefit fraud, outlined a 
+strategy for detecting immigration benefit fraud, and is undertaking a 
+series of risk assessments to identify the extent and nature of fraud 
+for certain immigration benefits. However, USCIS has not yet 
+implemented some aspects of internal control standards established by 
+GAO and fraud control best practices identified by leading audit 
+organizations that could further enhance its ability to detect fraud. 
+Specifically, USCIS's new fraud detection office is in the initial 
+stages of implementing a fraud assessment program, which examines the 
+extent and nature of fraud associated with the immigration category 
+being assessed. However, this program, as currently implemented, does 
+not provide a basis for the type of comprehensive risk analysis we 
+advocate. First, USCIS current assessment plan does not include risk 
+assessment of the majority of major immigration benefit categories--for 
+example, temporary work authorization. Additionally, it focuses 
+primarily on determining the fraud rate for selected immigration 
+applications and identifying procedural vulnerabilities, for example, 
+not routinely verifying the existence of churches associated with 
+religious work applications. It does not draw on all available sources 
+of strategic threat information to assess threats, such as ICE's Office 
+of Intelligence, nor does it assess the consequences of granting a 
+benefit to the wrong person--for example some benefits facilitate 
+access to critical infrastructure while others do not. More 
+comprehensive information about vulnerabilities, threats, and 
+consequences as part of its fraud assessments would allow USCIS to 
+identify those benefits that represent the highest risk and practice 
+risk-based decision making in its efforts to balance fraud detection 
+with other organizational priorities like reducing backlogs and 
+improving customer service. In addition, USCIS also lacks a mechanism 
+to help ensure that information gathered during the course of its 
+normal operations and those of related operations--including criminal 
+investigations and prosecutions--inform decisions about whether and 
+what actions, including changes to policies, procedures, or 
+programmatic activities, might improve the ability to detect fraud. 
+Moreover, adjudicators we interviewed reported that communication from 
+management did not clearly communicate to them the importance of fraud 
+control, rather it emphasized meeting production goals, designed to 
+reduce the backlog of applications, almost exclusively. These 
+adjudicators shared, for example, memos from different parts of the 
+agency, which they told us sent conflicting messages about how they 
+were to balance, during the course of their duties, fraud-prevention 
+objectives with service-related objectives. USCIS headquarters 
+operations management told us that the adjudications operations is a 
+"high-pressure" production environment and that they are seeking to 
+increase production, but it was not their intention that this should 
+come at the expense of making incorrect adjudication decisions. Also, 
+our interviews with adjudicators indicated that they have limited 
+access to some tools that could support their fraud detection ability 
+such as external databases for verifying applicant information. 
+Interviews with USCIS staff also indicated that adjudicators may not 
+always receive relevant information that could support their efforts to 
+detect fraud, and although some information is provided, it is not 
+always provided in a form that adjudicators can reasonably manage as, 
+for example, in an electronic database. Finally, USCIS has not 
+established performance goals--measures and targets--to assess its 
+benefit fraud activities. 
+
+DHS does not have a strategy for sanctioning fraud or for evaluating 
+the effectiveness of sanctions. Best practice guidance issued by the 
+United Kingdom's National Audit Office, for example, suggests that a 
+strategy for sanctioning fraud, along with a mechanism for evaluating 
+the effectiveness of sanctions is central to a good fraud control 
+environment. Available data from the first half of fiscal year 2005 
+about the number of applications denied for fraud compared with the 
+number of investigations indicates that most immigration fraud detected 
+by USCIS does not result in ICE criminal investigations and subsequent 
+prosecutions. Since most fraud is not criminally prosecuted, the 
+principal means of sanctioning it would be administrative penalties. 
+The Immigration and Nationality Act does provide the authority to levy 
+administrative penalties; however, DHS does not currently use this 
+authority. This is largely because a 1998 federal court ruling enjoined 
+INS from implementing certain administrative penalties for document 
+fraud until it revised certain forms to provide adequate notice to 
+aliens of the immigration consequences of waiving the opportunity to 
+challenge document fraud fines. Although DHS has not conducted a formal 
+cost-benefit analysis, according to ICE officials responsible for 
+pursuing administrative penalties, these penalties are not cost 
+effective because the fines are less than the costs to impose them when 
+a hearing is requested. Accordingly, DHS has not made updating the 
+forms to allow sanctions to be administered in compliance with the 
+court ruling a priority. Nevertheless, according to USCIS officials, an 
+effective administrative sanctions program is important to its fraud 
+deterrence efforts. The lack of a clear strategy for how and when to 
+punish fraud perpetrators, which considers the nonfinancial benefit of 
+deterrence and includes a mechanism for evaluating effectiveness, 
+limits DHS's ability to project a convincing message that those who 
+commit fraud face a credible threat of punishment in one form or 
+another. 
+
+In order to enhance USCIS's ability to detect immigration benefit 
+fraud, we are recommending that the Secretary of Homeland Security 
+direct the Director of USCIS to adopt additional internal controls and 
+best practices to strengthen USCIS's fraud control environment, 
+particularly by (1) expanding the scope of its current fraud assessment 
+program and using a more comprehensive risk management approach; (2) 
+establishing a mechanism to ensure that information uncovered during 
+USCIS's and related agencies' normal operations feeds back into 
+evaluations of USCIS's policies, procedures, and operations; (3) 
+clearly communicating to adjudications staff the importance of both 
+fraud prevention-related and service-related objectives, and how these 
+objectives are to be balanced by adjudicators as they carry out their 
+duties; (4) providing USCIS staff with access to information and tools 
+from relevant internal and external sources; and (5) establishing 
+outcome and output based performance goals that reflect the status of 
+fraud control efforts. In addition, in order to enhance DHS's ability 
+to sanction immigration benefit fraud, we recommend the Secretary of 
+Homeland Security direct the Director of USCIS and the Assistant 
+Secretary of ICE to develop a strategy for sanctioning immigration 
+benefit fraud that takes into account the value of deterrence and 
+establishes a mechanism for evaluating effectiveness. 
+
+Background: 
+
+USCIS is responsible for processing millions of immigration benefit 
+applications received each year for various types of immigration 
+benefits, determining whether applicants are eligible to receive 
+immigration benefits, and detecting suspicious information and evidence 
+to refer for fraud investigation and possible sanctioning by other 
+components or agencies. USCIS processes applications for about 50 types 
+of immigration benefits. In fiscal year 2005, USCIS received about 6.3 
+million applications and adjudicated about 7.5 million applications. 
+Figure 1 shows the percentage of applications completed by type of 
+application in fiscal year 2005. 
+
+Figure 1: USCIS Applications Completed in Fiscal Year 2005: 
+
+[See PDF for image] 
+
+[End of figure] 
+
+To process these immigration benefit applications, in fiscal year 2005 
+USCIS had a staff of about 3,000 permanent adjudicators located in 4 
+service centers, where most applications are processed, and 33 district 
+offices.[Footnote 5] In fiscal year 2004, for example, service centers 
+adjudicated about 67 percent of all applications, and districts about 
+33 percent. In general, service centers adjudicate applications that do 
+not require an interview with the applicant, using the evidence 
+submitted with the applications. District offices generally adjudicate 
+applications where USCIS requires an interview with the applicant 
+(e.g., naturalization). USCIS also has 8 offices that process 
+applications for asylum in the United States. In fiscal year 2005, 
+USCIS's budget amounted to just under $1.8 billion, of which about $1.6 
+billion was expected from service fees and $160 million from 
+congressionally appropriated funds. 
+
+In fiscal year 2004, USCIS had a backlog of several million 
+applications and has developed a plan to eliminate it by the end of 
+fiscal year 2006.[Footnote 6] In June 2004, USCIS reported that it 
+would have to increase production by about 20 percent to achieve its 
+goal of adjudicating all applications within 6 months or less by the 
+end of fiscal year 2005. At that time, it estimated that it would have 
+to increase current annual processing from about 6 million to 7.2 
+million applications. Since USCIS did not plan for further increases in 
+staffing levels, reaching its backlog goal would require some reduction 
+in average application processing times, overtime hours, and 
+adjudicator reassignments. 
+
+With the creation of DHS in 2003, the immigration services and 
+enforcement functions of the former INS transitioned to different 
+organizations within DHS. USCIS assumed the immigration benefit 
+functions and ICE assumed INS's investigative and detention and removal 
+of aliens functions. Within ICE's Office of Investigations, the 
+Identity and Benefit Fraud unit now conducts immigration benefit fraud 
+criminal investigations and ICE's Office of Detention and Removal 
+Operations is responsible for identifying and removing aliens illegally 
+in the United States. 
+
+Because the immigration service and enforcement functions are now 
+handled by separate DHS components, these components created two new 
+units to, among other things, help coordinate the referral of suspected 
+immigration benefit fraud uncovered by adjudicators to ICE's Office of 
+Investigations. First, USCIS created FDNS in 2003 to, among other 
+things, receive fraud leads from adjudicators and determine which leads 
+should be referred to ICE's Office of Investigations. To accomplish 
+this task, FDNS has Fraud Detection Units (FDUs) at all four USCIS 
+service centers and the National Benefits Center.[Footnote 7] When 
+fraud is suspected, the applications are to be referred FDUs. The FDUs, 
+comprised of Intelligence Research Specialists and assistants, are 
+responsible for further developing suspected immigration fraud 
+referrals to decide which leads should be referred to ICE for possible 
+investigation. FDU staff are also to refer to ICE or other federal 
+agencies applicants who may pose a threat to national security or 
+public safety or who are potentially deportable. FDUs are responsible 
+for following up on potential national security risks identified during 
+background checks of immigration benefit applicants. FDUs also perform 
+intelligence analysis to identify immigration fraud patterns and major 
+fraud schemes. In addition to establishing FDUs, in January 2005 FDNS 
+assigned 100 new Immigration Officers to USCIS district offices, 
+service centers, and asylum offices to work directly with adjudicators 
+to handle fraud referrals and conduct limited field inquiries. Second, 
+ICE's Office of Investigations created four new Benefit Fraud Units 
+(BFUs) in Vermont, Texas, Nebraska and California located either at or 
+near the four USCIS service centers. The ICE BFUs are responsible for 
+reviewing, assessing, developing, and when appropriate, referring to 
+ICE field offices for possible investigation immigration fraud leads 
+and other public safety leads received from the FDUs and elsewhere. 
+Specifically, the ICE BFUs are intended to identify those referrals 
+which they believe warrant investigation, such as organizations and 
+facilitators engaged in large-scale schemes or individuals who pose a 
+threat to national security or public safety, and refer them to ICE 
+field offices. In turn, ICE field offices will investigate and refer 
+those cases they believe warrant prosecution to the U.S. Attorneys 
+Offices. Figure 2 illustrates the typical immigration benefit fraud 
+referral and coordination process. 
+
+Figure 2: Immigration Benefit Fraud Detection and Referral Process: 
+
+[See PDF for image] 
+
+[End of figure] 
+
+The Homeland Security Act of 2002 created the office of the Citizenship 
+and Immigration Services Ombudsman. The ombudsman's primary function is 
+to: assist individuals and employers in resolving problems with USCIS; 
+identify areas in which individuals and employers have problems in 
+dealing with USCIS; and propose changes in the administrative practices 
+of USCIS in an effort to mitigate problems. The ombudsman has issued 2 
+annual reports that have highlighted issues related to prolonged 
+processing times, limited case status information, immigration benefit 
+fraud, insufficient standardization in processing, and inadequate 
+information technology and facilities. 
+
+Other federal agencies also play important roles in the immigration 
+benefit application adjudication process. The Department of State is 
+responsible for approving and issuing a visa allowing an alien to 
+travel to the United States. The Department of Labor's (DOL) Division 
+of Foreign Labor Certification provides national leadership and policy 
+guidance to carry out the responsibilities of the Secretary of Labor 
+under the Immigration and Nationality Act (INA) concerning foreign 
+workers seeking admission to the United States for employment. DOL 
+provides certifications for foreign workers to work in the United 
+States, on a permanent or temporary basis, when there are insufficient 
+qualified U.S. workers available to perform the work at wages that meet 
+or exceed the prevailing wage for the occupation in the area of 
+intended employment. The DOL Office of the Inspector General's Office 
+of Labor Racketeering and Fraud Investigations is responsible for 
+investigating fraud related to these labor certifications. 
+
+Fraud Is A Serious Problem, But Its Full Extent Is Unknown: 
+
+Fraudulent schemes used in several high-profile immigration benefit 
+fraud cases sheds light on some aspects of the nature of immigration 
+benefit fraud--particularly that it is accomplished by submitting 
+fraudulent documents, that it can be committed by organized white- 
+collar and other criminals, and that it has the potential to result in 
+large profits for these criminals. The benefit fraud cases we reviewed 
+involved individuals attempting to obtain benefits for which they were 
+not eligible by submitting fraudulent documents or making false claims 
+as evidence to support their applications. Fraudulent documents 
+submitted included but were not limited to birth and marriage 
+certificates, tax returns, financial statements, business plans, 
+organizational charts, fictitious employee resumes, and college 
+transcripts. For example, in what ICE characterized as one of the 
+largest marriage fraud investigations ever undertaken, 44 individuals 
+were indicted in November 2005 for their alleged role in an elaborate 
+scheme to obtain fraudulent immigrant visas for hundreds of Chinese and 
+Vietnamese nationals. According to a USCIS fraud bulletin, this scheme 
+may have been ongoing for 10 years. Another major investigation 
+revealed evidence that an attorney had filed about 350 applications on 
+behalf of aliens seeking permanent employment as religious workers at 
+religious institutions in the United States. Investigators found 
+evidence that most of these aliens were unskilled laborers who were not 
+pastors or other religious workers and had little or no previous 
+affiliation with the religious institution. According to this 
+investigation, some religious institutions appeared to specialize in 
+obtaining legal status for aliens in the country who were not eligible 
+for religious worker immigration benefits. In another investigation 
+involving at least 2,800 apparently fraudulent marriage and fiancée 
+applications identified in 2002 and investigated through 2004, a U.S. 
+citizen appeared to have submitted multiple applications with as many 
+as 11 different spouses. 
+
+One USCIS Service Center prepared fraud bulletins using information 
+from various State Department Consular posts overseas describing 
+immigration fraud uncovered by these posts. Our analysis of the 
+bulletins issued from July 2004 through December 2004 prepared by 
+USCIS's California Service Center revealed that aliens from 23 
+different countries were believed to have sought a variety of 
+immigration benefits fraudulently. For example, individuals apparently 
+sought to enter the United States through fraud by falsely claiming 
+they were: (1) legitimately married to or a fiancé of a U.S. citizen; 
+(2) a religious worker; (3) a performer in an entertainment group; (4) 
+a person with extraordinary abilities, such as an artist, race car 
+driver, or award winning photographer; (5) an executive with a foreign 
+company; (6) a child or other relative of a citizen or permanent 
+resident; or (7) a domestic employee of an alien legally in the United 
+States, such as a diplomat or business executive. According to one of 
+the bulletins, in one case State Department consular officers suspected 
+illegal aliens were entering the United States under the guise of 
+membership in a band. According to another bulletin, two individuals 
+were suspected of smuggling children into the United States. In one 
+case, the alleged parents submitted a non-immigrant visa application 
+for their "daughter," and provided a fraudulent birth certificate and 
+passport for her. The "parents" eventually admitted to taking children 
+to the United States as their own to reunite them with their illegally 
+working family members. 
+
+Some individuals seeking immigration benefits pose a threat to national 
+security and public safety, and white collar and other criminals 
+sometimes facilitate immigration benefit fraud. For example, according 
+to FDNS, each year about 5,200 immigration benefit applicants are 
+identified as potential national security risks, because their personal 
+information matches information contained in U.S. Customs and Border 
+Protection's Interagency Border Inspection System, a database of 
+immigration law violators and people of national security interest. 
+Additionally, according to federal prosecutors, immigration benefit 
+fraud may involve other criminal activity, such as income tax evasion, 
+money laundering, production of fraudulent documents, and conspiracy. 
+Also, organized crime groups have used sophisticated immigration fraud 
+schemes, such as creating shell companies, to bring in aliens 
+ostensibly as employees of these companies. In addition, a number of 
+individuals linked to a hostile foreign power's intelligence service 
+were found to have been employed as temporary alien workers on military 
+research. 
+
+Investigations have revealed that perpetrating fraud on behalf of 
+aliens can be a profitable enterprise. For instance, in 2003 and 2004, 
+one USCIS service center identified about 2,800 apparently fraudulent 
+marriage applications between low-income U.S. citizens and foreign 
+nationals from an Asian country. The U.S. citizens appeared to have 
+been paid between $5,000 and $10,000 for participating in the marriage 
+fraud scheme. In another example from an investigation by DOL's 
+Inspector General, to fraudulently obtain the labor certifications 
+needed to work in the United States, at least 900 aliens allegedly paid 
+a recruitment firm an average of $35,000, with some aliens paying as 
+much as $90,000, resulting in at least $31 million in revenue for this 
+firm. In one of the largest labor certification fraud schemes ever 
+uncovered, federal investigators found evidence that a prominent 
+immigration attorney in the Washington D.C. area submitted at least 
+1,436 and perhaps as many as 2,700 fraudulent employment applications 
+between 1998 and 2002. According to the sworn testimony of a DOL 
+special agent, this attorney and his associates are alleged to have 
+made at least $11.4 million for the 1,400 applications that the agent 
+reviewed, in all of which he found evidence of fraud, and perhaps as 
+much as $21.6 million if all 2,700 applications were fraudulent, as he 
+strongly suspected. In another case, an attorney allegedly charged 
+aliens between $8,000 and $30,000 to fraudulently obtain employment- 
+based visas to work in more than 200 businesses that included pizza 
+parlors, auto parts stores and medical clinics. 
+
+Although the full extent of immigration benefit fraud is unknown, 
+available USCIS data indicate that it is a serious problem. According 
+USCIS PAS data, in fiscal year 2005, USCIS denied just over 20,000 
+applications because USCIS staff detected fraudulent application 
+information or supporting evidence during the course of adjudicating 
+the benefit request. Three application categories accounted for more 
+than three-quarters of the fraud denials: temporary work authorization 
+(36 percent), application for permanent residency (30 percent), and 
+application for a spouse to immigrate (14 percent). These three 
+application types also accounted for almost half of all applications 
+adjudicated by USCIS in fiscal year 2005. Moreover, in fiscal year 
+2005, USCIS denied approximately 800,000 applications for other 
+reasons, such as ineligibility for the benefit sought or failure to 
+respond to information requests. USCIS adjudications staff and 
+officials told us that it is likely that some of these applications 
+denied for other reasons also involved fraud. 
+
+Information provided by State Department and DOL officials also 
+indicates that fraud is a serious problem. Once USCIS approves a 
+sponsor's application on behalf of an alien to immigrate, the 
+application is sent to the State Department's National Visa Center, 
+which forwards the application to the appropriate State Department 
+overseas consulate post, which then interviews the alien to determine 
+whether a visa should be issued. According to National Visa Center 
+officials, out of 2,400 applications returned on average each month to 
+USCIS by the National Visa Center, that are denied or withdrawn for 
+various reasons, about 900 involve fraud or suspected fraud as 
+determined by consular officers overseas. When the DOL Inspector 
+General audited labor certification applications filed in 2001, it also 
+found indications of a significant amount of fraud. According to the 
+Inspector General, of the approximate 214,000 applications filed from 
+January 1, 2001, through April 30, 2001, and not subsequently canceled 
+or withdrawn, 54 percent (about 130,000) contained false--possibly 
+fraudulent--information.[Footnote 8] 
+
+In June 2005, the FDNS completed the first in a series of fraud 
+assessments. The results from this assessment of religious worker 
+applications indicate that about 33 percent of the 220 sampled 
+applications resulted in a preliminary finding of potential 
+fraud.[Footnote 9] Based on a 33 percent rate, we estimate that, during 
+the 6-month period of fiscal year 2004 from which the sample was drawn, 
+about 660 out of approximately 2,000 applications may have been 
+fraudulent.[Footnote 10] Of the 72 potential fraud cases discovered in 
+the fraud assessment, about 54-percent (39 cases) showed evidence of 
+tampering or fabrication of supporting documents; 44-percent (32 cases) 
+of the petitioners' addresses did not reveal a bona fide religious 
+institution; about 42-percent (30 cases) may have misrepresented the 
+beneficiaries' qualifications; and 28-percent (20 cases) did not 
+provide the salary noted in the application. The assessment also 
+uncovered one case where law enforcement had identified an applicant as 
+a suspected terrorist. 
+
+Information from other investigations and prosecutions of benefit fraud 
+also reveal that, in some cases applicants may have submitted 
+fraudulent documents and made false statements that were not detected 
+before the applicant obtained an immigration benefit. For example, 
+while investigating one fraud scheme, investigators identified more 
+than 2,000 apparently fraudulent applications where there was evidence 
+that some aliens, fraudulently claiming to be managers and executives 
+of foreign companies with U.S. affiliates, acquired benefits that 
+granted them the ability to work in the United States. To execute this 
+scheme, organizers allegedly prepared application packages that 
+included fraudulent business and employee related documents including 
+financial statements, business plans, organizational charts and 
+fictitious employee resumes. 
+
+One joint law enforcement investigation, previously mentioned, 
+uncovered evidence that an attorney and his associate had filed at 
+least 1,436 applications on behalf of legitimate companies--mostly 
+local restaurants--that did not actually request these workers. In this 
+case, they forged the signatures of company management on the 
+applications. Another investigation involving marriage fraud found 
+evidence that U.S. citizens were recruited and paid to marry Vietnamese 
+nationals. The fraud organizers appeared to have assisted the U.S. 
+citizens in obtaining their passports, scheduled travel arrangements, 
+and escorted them to Vietnam where they arranged introductions with 
+Vietnamese nationals whom the citizens then married. These citizens 
+then filed applications that facilitated these Vietnamese nationals' 
+entry into the United States as spouses even though it appeared that 
+they did not intend to live together as husband and wife. 
+
+Even when adjudicators rejected applications based on fraud, some of 
+these applicants had already received interim benefits while their 
+applications were pending final adjudication allowing them to live and 
+work in the United States, and in some cases obtain other official 
+documents, such as a driver's license. Under current USCIS policy, for 
+example, if USCIS cannot adjudicate an application for permanent 
+residency and the accompanying application for work authorization 
+within 90 days the applicant is entitled to an interim work 
+authorization, an interim benefit designed to let applicants work while 
+awaiting a decision regarding permanent residency.[Footnote 11] 
+According to the Citizenship and Immigration Services Ombudsman's 
+fiscal year 2004 and 2005 annual reports and our discussion with him, 
+for many individuals the primary goal is to obtain temporary work 
+authorization regardless of the validity of their application for 
+permanent residency. That is, aliens can apply for temporary work 
+authorization, knowing that they do not qualify for permanent 
+residency, with the intent of exploiting the system to gain work 
+authorization under false pretenses. 
+
+Once a temporary work authorization is fraudulently obtained, an alien 
+can use it to obtain other valid identity documents such as a temporary 
+social security card and a drivers' license, thus facilitating their 
+living and working in the United States. According to the FDNS 
+Director, once such fraud scheme involved at least 2,500 individuals in 
+Florida who allegedly filed frivolous applications for employment 
+authorization and then used the receipt, showing they had filed an 
+application, to obtain Florida State driver's licenses or 
+identification cards.[Footnote 12] ICE agents we interviewed also said 
+that they suspected that many individuals apply for permanent residency 
+fraudulently simply to obtain a valid temporary work authorization 
+document. The interim benefit remains valid until it expires or until 
+it is revoked by USCIS. 
+
+In his 2005 report, the Ombudsman cites a DHS Office of Immigration 
+Statistics estimate--which the ombudsman's office confirmed with 
+USCIS's division of performance management--that about 85 percent of 
+applicants for permanent residency also apply for temporary work 
+authorization. As a result, according to the ombudsman, many aliens 
+have received temporary work authorizations, for which they were later 
+found to be ineligible. Our analysis of PAS data shows, for example, 
+that from fiscal year 2000 through 2004, USCIS denied 26,745 
+applications due to fraud out of the approximately 3 million 
+applications received for permanent residency. These data illustrate 
+that, if aliens that filed fraudulent applications for permanent 
+residency also requested temporary work authorization at a rate 
+consistent with the 85 percent cited by the Office of Immigration 
+Statistics, then thousands of aliens received temporary work 
+authorization based on their fraudulent claims for permanent residency 
+during fiscal year 2000 through 2004. 
+
+Although USCIS Has Taken Steps to promote Fraud Control, additional 
+controls and best practices could improve its ability to detect fraud: 
+
+To help it detect immigration benefit fraud, USCIS has taken some 
+important actions consistent with activities prescribed by the 
+Standards for Internal Control in the Federal Government and with 
+recognized best practices in fraud control. Specifically, it has 
+established an internal unit to act as its focal point for addressing 
+immigration benefit fraud, outlined a strategy for detecting 
+immigration benefit fraud, and is undertaking a series of fraud 
+assessments to identify the extent and nature of fraud for certain 
+immigration benefits. However, USCIS has not applied some aspects of 
+internal control standards and fraud control best practices that could 
+further enhance its ability to detect fraud. 
+
+Internal Control Standards and Other Guidance Provide Direction for 
+Establishing Good Fraud Control Practices: 
+
+The Standards for Internal Control in the Federal Government provide an 
+overall framework to identify and address, among other things fraud, 
+waste, abuse, and mismanagement. Implementing good internal control 
+activities and establishing a positive control environment is central 
+to an agency's efforts to detect and deter immigration benefit fraud. 
+The standards address various aspects of internal control that should 
+be continuous, built-in components of organizational operations, 
+including the control environment, risk assessment, control activities, 
+information and communications, and monitoring. 
+
+As with work we have previously published related to managing improper 
+payments, fraud control would typically require a continual interaction 
+among these components in keeping with an agency's various 
+objectives.[Footnote 13] For example, internal controls that promote 
+ongoing monitoring work together with risk assessment controls to 
+provide a foundation for decision making. Also, as internal control 
+standards advise, a precondition to risk assessment is the 
+establishment of clear, consistent agency objectives. Once established, 
+risk assessment controls must also work together with information and 
+communication controls to ensure that that every level of the agency is 
+cognizant of the commitment and approach to both controlling fraud and 
+meeting other agency objectives. Similarly, conditions governing risk 
+change frequently, and periodic updates are required to ensure that 
+risk information--including threats, vulnerabilities and consequences-
+-stays current and relevant. Information collected through periodic 
+assessment, as well as daily operations can inform the assessment, and 
+particularly, the analysis of risk. As shown in figure 3, the control 
+environment surrounds and reinforces the other components, but all 
+components work in concert toward a central objective, which, in this 
+case, is to minimize immigration benefit fraud. 
+
+Figure 3: Internal Control Environment: 
+
+[See PDF for image] 
+
+[End of figure] 
+
+Other audit organizations have published guidance that includes 
+discussion of sound management practices for controlling fraud that 
+complement the internal control standards. Among these are the American 
+Institute of Certified Public Accountants (AICPA) guidance on 
+management of antifraud programs and controls to help prevent and deter 
+fraud[Footnote 14] and a fraud control practices guide developed by the 
+United Kingdom's National Audit Office (NAO) entitled "Good Practices 
+in Tackling External Fraud." The NAO guidance outlines a risk-based 
+strategic approach to combating fraud that also includes evaluating the 
+effectiveness of sanctions. 
+
+Consistent with Internal Control Standards and Fraud Control Best 
+Practices, USCIS Has Established a Fraud Focal Point, Related 
+Strategies and a Fraud Assessment Program: 
+
+According to internal control standards, factors leading to a positive 
+control environment include clearly defining key areas of authority and 
+responsibility, establishing appropriate lines of reporting, and 
+appropriately delegating authority and responsibility for operating 
+activities. Similarly, the NAO fraud control guidance advises agencies 
+to develop specific strategies to coordinate their fraud control 
+efforts and to ensure that someone is fully responsible for 
+implementing the plans in the way intended and that sufficient 
+resources are in place. Consistent with internal control and best 
+practice guidance, USCIS established the FDNS office to enhance its 
+fraud control efforts by serving as its focal point for addressing 
+immigration benefit fraud. 
+
+Established in 2003, FDNS is intended to combat fraud and foster a 
+positive control environment by pursuing the following objectives: 
+
+* develop, coordinate, and lead the national antifraud operations for 
+USCIS; 
+
+* oversee and enhance policies and procedures pertaining to the 
+enforcement of law enforcement background checks on those applying for 
+immigration benefits; 
+
+* identify and evaluate vulnerabilities in the various policies, 
+practices and procedures which threaten the legal immigration process; 
+
+* recommend solutions and internal controls to address these 
+vulnerabilities; and act as the primary USCIS conduit and liaison with 
+ICE, U.S. Customs and Border Protection (CBP), and other members of the 
+law enforcement and intelligence community. 
+
+In September 2003, in support of its objectives, FDNS outlined a 
+strategy for detecting immigration benefit fraud in USCIS's National 
+Benefit Fraud Strategy. According to the strategy, because most 
+immigration benefit fraud begins with the filing of an application, a 
+sound approach to fraud prevention begins at the earliest point in the 
+process--the time an application is received. Accordingly, USCIS 
+established FDNS Fraud Detection Units (FDUs) in each of the service 
+centers in order to help identify potential fraud and process 
+adjudicator referrals. Subsequently, FDNS appointed staff to serve as 
+Immigration Officers to work directly with adjudicators at the service 
+centers and district offices in the task of identifying potential fraud 
+and, to some extent, verifying fraud through administrative inquiries-
+-once it was determined that ICE had declined to investigate a 
+referral--in order to assist adjudicators in making eligibility 
+determinations. 
+
+The strategy also discusses various technological tools to help the 
+FDUs detect fraud early in the process--in particular, by enabling FDNS 
+staff to check databases to confirm applicant information and by 
+developing new automated tools to analyze application system data using 
+known fraud indicators and patterns to help identify potential cases of 
+fraud. USCIS has hired a contractor to develop for FDNS an automated 
+capability to screen incoming applications against known fraud 
+indicators, such as multiple applications received from the same 
+person. According to FDNS, it plans to deploy an initial data analysis 
+capability by the third quarter of fiscal year 2006 and release 
+additional data analyses capabilities at later dates, but could not 
+predict when these latter capabilities would be achieved. However, 
+according to an FDNS operations manager, the near and midterm plans are 
+not aimed at providing a full data mining capability. In the long term, 
+USCIS plans to integrate these data analyses tools for fraud detection 
+into a new application management system being developed as part of 
+USCIS's efforts to transform its business processes for adjudicating 
+immigration benefits which includes developing the information 
+technology needed to support these business processes. Also, in the 
+long term, according to the FDNS Director, a new USCIS application 
+management system would ideally include fraud filters, to screen 
+applications and remove suspicious applications from the processing 
+stream before they are seen by adjudicators. 
+
+FDNS has adopted as one of its objectives the identification and 
+evaluation of vulnerabilities in USCIS policies, practices, and 
+procedures that threaten the immigration benefit process. Consistent 
+with this objective and good internal control practices, in February 
+2005, FDNS began to conduct a series of fraud assessments aimed at 
+determining the extent and nature (i.e. how it is committed) of fraud 
+for several immigration benefits that FDNS staff determined, based on 
+past studies and experience, benefit fraud may be a problem. To conduct 
+these assessments, FDNS first selected a statistically valid sample of 
+applications.[Footnote 15] FDNS field staff then attempted to verify 
+whether key information on the applications was true. They did this by 
+doing such things as comparing information contained in benefit 
+applications with information in USCIS data systems and law enforcement 
+and commercial databases, conducting interviews with applicants, and, 
+in some cases, visiting locations to verify, for example, whether a 
+business actually existed. As of December 2005, FDNS had completed its 
+assessment of the religious worker application and replacement of 
+permanent resident card applications, and was in the process of 
+completing the assessment of two immigrant worker application 
+subcategories.[Footnote 16] As of December 2005, FDNS planned to 
+initiate two other assessments in January 2006 and another at a later 
+time.[Footnote 17] 
+
+Additional Internal Controls and Use of Other Best Practices Could 
+Further Improve USCIS's Ability to Detect Benefit Fraud: 
+
+Although USCIS has taken some important steps consistent with internal 
+control standards and other good fraud control practices, it has not 
+yet implemented some aspects of internal control standards and fraud 
+control best practices that could further enhance its ability to detect 
+fraud. Specifically, it lacks (1) a comprehensive approach for managing 
+risk, (2) a monitoring mechanism to ensure that knowledge arising from 
+routine operations informs the assessment of policies and procedures, 
+(3) clear communication regarding how to balance multiple agency 
+objectives, (4) a mechanism to help ensure that adjudicators and FDNS 
+staff have access to important information, and (5) performance goals 
+related to fraud prevention. 
+
+USCIS Has Not Adopted a Comprehensive Risk Management Approach to Help 
+Guide Its Fraud Control Efforts: 
+
+Although FDNS has initiated a fraud assessment program that identifies 
+vulnerabilities for the specific benefit being assessed, it does not 
+employ a comprehensive risk management approach to help guide its fraud 
+control efforts. That is, FDNS has not (1) developed a plan for 
+assessing the majority of benefits that USCIS administers, (2) fully 
+incorporated threat and consequence information as part of the 
+assessment process, and (3) applied a risk-based approach to evaluating 
+alternatives for mitigating identified vulnerabilities. 
+
+A central component of the Standards for Internal Control in the 
+Federal Government is risk assessment, which includes identifying and 
+analyzing risks that agencies face from internal and external sources 
+and deciding what actions should be taken to manage these risks. NAO's 
+fraud control guide also advises that in the fraud context, risk 
+assessment involves such things as assessing the size of the threat 
+from external fraud, the areas most vulnerable to fraud, and the 
+characteristics of those who commit fraud. Moreover, we have 
+consistently advocated a model of risk management that takes place in 
+the context of clearly articulated goals and objectives and includes 
+comprehensive assessments of threats, vulnerabilities, and consequences 
+to help agencies evaluate and select among alternatives for mitigating 
+risk in light of the potential for a given activity to be effective, 
+the related cost of implementing the activity, and other relevant 
+management concerns (including its impact on other agency 
+objectives).[Footnote 18] 
+
+FDNS fraud assessments are an initial step toward adopting a risk 
+management approach. However, FDNS has no plans to assess the majority 
+of the benefit types that it administers. FDNS's current plan calls for 
+assessing benefit types that represent only about 25 percent of the 
+applications USCIS received in fiscal year 2004, for example, and do 
+not include benefits like temporary work authorization which accounted 
+for almost 30 percent of applications received in 2004, and which the 
+CIS Ombudsman suspects may be a high risk for fraud, and for which PAS 
+data show a high denial rate for fraud. FDNS officials told us that, 
+although the fraud assessments have been valuable, they have taken more 
+time and effort than originally planned. Likewise, FDNS has not 
+established a strategy and methodology for prioritizing any future 
+fraud assessments. Until it extends the assessments to additional 
+benefit types, the fraud assessments offer only limited information 
+about vulnerabilities to the immigration benefits system: 
+
+Moreover, the approach to risk management that we advocate calls for 
+the assessment of threats and consequences, in addition to the 
+vulnerability information provided by the current approach to fraud 
+assessment. Currently, the fraud assessments do not incorporate a 
+comprehensive threat assessment--that is, they do not draw on all 
+available sources of threat information--for example, information that 
+might be available from such sources as ICE's Office of Intelligence 
+and other DHS intelligence gathering efforts. Threat assessment might 
+help FDNS identify, for example, whether terrorists might be more 
+likely to try to exploit certain immigration benefits. Neither do the 
+fraud assessments include an assessment of the consequences of granting 
+a particular benefit to a fraudulent filer. Such an assessment might 
+help USCIS determine the relative harm that granting such a benefit 
+might pose to the United States and its immigration benefit system. 
+Although ultimately any benefit obtained under false pretenses 
+undermines the system established by U.S. immigration law, 
+consideration of whether, for example, granting a specific benefit may 
+also facilitate easier access for potential terrorists to critical 
+infrastructure or pose a greater detriment to the U.S. economy could 
+inform sound risk-based decision making. 
+
+Equipped with a more comprehensive understanding of the risks it faces-
+-particularly which benefits represent the highest risk, USCIS 
+management would then be in a better position to select appropriate 
+risk mitigation strategies and actions, particularly in situations 
+where it is necessary to make resource trade-offs or to balance 
+multiple agency objectives. For example, an obvious vulnerability to 
+the immigration benefit system is the submission of false eligibility 
+evidence. Currently, however, USCIS procedures do not include the 
+verification of any eligibility evidence for any benefit, despite its 
+potential to help mitigate vulnerability to fraud.[Footnote 19] 
+Verification of such evidence--by comparing it to other information in 
+USCIS databases, by checking it against external sources of 
+information, or by interviewing applicants--is the most direct and 
+effective strategy for mitigating this vulnerability. Employer wage 
+data reported to state labor agencies, for example, could be a useful 
+source of information to help determine if an employer has paid 
+prevailing wages. Data from state motor vehicle departments can be used 
+to verify that the two individuals claiming to be married live at the 
+same address. We previously reported that USCIS could benefit from 
+verifying employer related information with the Internal Revenue 
+Service.[Footnote 20] USCIS adjudicators told us that access to 
+commercial databases that provide identification and credential 
+verification would be helpful in verifying information contained in 
+benefit applications. Additionally, district office adjudicators told 
+us that it was often only during interviews that fraud became evident, 
+even when their earlier review had not raised suspicions.[Footnote 21] 
+A successful State Department effort offers further evidence that the 
+practice of verifying key information can be an effective mitigation 
+strategy. Due to a high incidence of fraud in a program that allows 
+foreign companies to bring executives into the United States, one State 
+Department consular post in Latin America began verifying with local 
+authorities two key pieces of evidence that applicants were required to 
+submit. According to the post, it subsequently noticed a decrease in 
+the number of potentially fraudulent applications for this benefit. 
+
+On the other hand, verifying any applicant-submitted evidence in 
+pursuit of its fraud-prevention objectives represents a resource 
+commitment for USCIS and a potential trade-off with its production and 
+customer service-related objectives. In fiscal year 2004, USCIS had a 
+backlog of several million applications and has developed a plan to 
+eliminate it by the end of fiscal year 2006.[Footnote 22] In June 2004, 
+USCIS reported that it would have to increase monthly production by 
+about 20 percent to achieve its legislatively mandated goal of 
+adjudicating all applications within 6 months or less by the end of 
+fiscal year 2006. According to USCIS, because it does not plan to 
+increase its current overall staffing level, meeting its backlog 
+reduction goal will require some combination of reductions in the 
+standard processing time for various applications, overtime hours, and 
+adjudicator reassignments. It would be impossible for USCIS to verify 
+all of the key information or interview all individuals related to the 
+millions of applications it receives each year--approximately 7.5 
+million applications in fiscal year 2005--without seriously 
+compromising its service-related objectives. Identifying situations and 
+benefits that represent the highest risk to USCIS could help its 
+management determine whether and under what circumstances verification 
+is so vital to maintaining the integrity of the immigration benefits 
+system that it outweighs any potential increase in processing time and 
+costs. In this example, such an approach to risk management would 
+inform selection among alternative verification strategies by 
+considering (1) the risk of failing to detect fraud based on 
+information provided by assessments of vulnerabilities, threats, and 
+consequences, (2) the cost of conducting the verification (including 
+its effect on other organizational objectives like service), and (3) 
+the potential for the verification activities, given the current tools 
+and information available, to actually detect fraud. 
+
+In addition to procedural vulnerabilities like the verification 
+example, a risk management approach could also guide USCIS in the 
+evaluation of policies that strike a balance between two or more agency 
+objectives and organizational priorities. For example, as previously 
+discussed, USCIS's policy of granting interim employment authorization 
+documents to applicants whose adjustment of status applications have 
+not been adjudicated within 90 days[Footnote 23] can be exploited by 
+aliens seeking to gain work authorization under false pretenses and to 
+use work authorization to obtain valid identity documents such as 
+temporary social security cards and drivers licenses. In his 2004 and 
+2005 annual reports, the CIS Ombudsman identified this policy as a 
+significant vulnerability in the immigration benefits process, because 
+he contends that for many individuals the primary goal is to obtain 
+temporary work authorization regardless of the validity of their 
+applications for permanent residency. On the other hand, as we have 
+previously reported, the reason for issuing temporary work 
+authorization is to allow legitimate applicants to work as soon as 
+possible, which according to USCIS, can serve to reduce the negative 
+effects of delay on applicants and their families.[Footnote 24] Using 
+more comprehensive risk information to evaluate policies that represent 
+trade-offs between fraud control and other agency objectives may help 
+USCIS management determine whether and to what extent unintended policy 
+consequences like in this example place the integrity of the 
+immigration benefits system at risk. This kind of risk management 
+approach also would provide USCIS management an opportunity to evaluate 
+and select among various approaches to balancing fraud control with 
+other agency objectives. In the temporary work authorization example, 
+USCIS could evaluate a variety of alternative strategies and select 
+among them on the basis of all available information, including risk. 
+These strategies might include: (1) maintaining the current policy if 
+it is found to pose a tolerable level of risk, (2) seeking applicable 
+regulatory changes, or (3) applying the policy disparately, to the 
+extent allowed by law, across benefit types based on the level of risk 
+each represents. In commenting on our draft report, DHS stated that 
+there is a proposed regulatory change that would clarify USCIS's 
+ability to withhold the adjudication of an application for employment 
+authorization pending an ongoing investigation. 
+
+USCIS Lacks a Mechanism to Ensure That Ongoing Monitoring Occurs in the 
+Course of Normal Operations: 
+
+Internal control standards advise that controls should be generally 
+designed to ensure that ongoing monitoring occurs in the course of 
+normal operations and is ingrained in the agency's operations. FDNS's 
+fraud assessment program provides some information about how fraud is 
+committed in the form of concentrated periodic assessments. However, 
+currently USCIS does not have a mechanism to ensure routine feedback to 
+FDNS about vulnerabilities identified during the course of normal 
+operations and to incorporate it into adjudication policies and 
+procedures. 
+
+Besides information about vulnerabilities obtained from its operational 
+experience adjudicating applications, additional information might be 
+available to FDNS from external entities that also have responsibility 
+for some aspect of controlling benefit fraud. One external source of 
+fraud information that might inform USCIS operations is the U.S. 
+Attorneys Office, which prosecutes immigration benefit fraud cases. For 
+example, one U.S. Attorney, based on cases his office has prosecuted, 
+has issued memoranda showing how underlying regulatory and adjudication 
+processes have invited abuse of the immigration system. A March 2005 
+memorandum prepared by this office explained how a recent investigation 
+revealed significant weaknesses in the asylum process that allowed 
+ineligible aliens to obtain asylum, and made suggestions for reforming 
+the process. The memorandum stated that these suggestions were intended 
+to start a discussion among federal agencies with immigration 
+responsibilities that could lead to needed reforms. In commenting on 
+our draft report, DHS stated that USCIS is developing a plan of action 
+to work with other DHS entities and the Executive Office of Immigration 
+Review within the Department of Justice to respond to specific 
+recommendations made by the U.S. Attorney that prepared the memorandum 
+on asylum program weaknesses. 
+
+Another source of information available to USCIS about fraud 
+vulnerabilities are the criminal investigations conducted by ICE, DOL, 
+and the DHS Office of Inspector General,[Footnote 25] which could 
+reveal such information as the characteristics of those who commit 
+fraud and how these individuals exploited weaknesses in the immigration 
+benefit process to obtain benefits illegally. USCIS's National Benefit 
+Fraud Strategy does not mention incorporating lessons learned from 
+investigative and prosecutorial activities into its fraud control 
+efforts--specifically, how the knowledge ICE, DOL, and DHS 
+investigators and U.S. Attorneys gained during the course of 
+investigations and prosecutions could be collected and analyzed in 
+order to become aware of opportunities to reduce fraud 
+vulnerabilities.[Footnote 26] A mechanism to help ensure that 
+information from these and related sources results in appropriate 
+refinements to policies and procedures could enhance USCIS's efforts to 
+address fraud vulnerabilities. 
+
+DOL, which plays an important role in the benefits process for some 
+permanent employment benefits, has used external information to refine 
+its procedures in this way. Specifically, it analyzed the results of 
+major criminal investigations and prosecutions to evaluate and 
+establish new procedures that require verifying key application 
+information, such as the existence of a business. DOL found it was 
+necessary to change its permanent labor certification procedures to 
+require verification of basic application information in order to 
+mitigate the risk of mistakenly approving permanent labor certification 
+applications, and protect the fundamental integrity of the labor 
+certification process from blatant abuse.[Footnote 27] 
+
+USCIS May Not Clearly Communicate the Importance of Fraud Control and 
+How Adjudicators are to Balance it with Other Objectives: 
+
+Internal control standards advise that for agencies to manage their 
+operations, they must have relevant, reliable, and timely 
+communications. Furthermore, establishing a positive fraud control 
+environment is central to an agency's efforts to detect and deter 
+immigration benefit fraud. The NAO guidance also advises management to 
+ensure that all levels of the organization are made to share a concern 
+about fraud. It is the stated mission of USCIS to provide the right 
+benefit, to the right person, at the right time, and no benefit to the 
+wrong person. Specifically, it aims to adjudicate all benefit requests 
+within 6 months of receipt, without compromising the integrity of the 
+process, nor significantly increasing staff. These objectives--speed, 
+quality, and cost--are inherently in tension with one another. 
+Therefore, it is particularly important, given USCIS's multiple 
+objectives, that it clearly communicates the importance of each of the 
+objectives at every level of the organization, and provides clear 
+guidance to adjudicators about how to balance them in the course of 
+their daily duties. 
+
+Although USCIS's backlog elimination plan acknowledges the need to 
+balance its focus on reducing the backlog with efforts to ensure 
+adjudicative quality, some USCIS adjudicators we interviewed indicated 
+that it was not clear to them how the agency expected them to balance 
+fraud detection efforts and production goals during the course of their 
+duties. Adjudicators we spoke with said that communications from 
+management emphasized meeting production backlog goals almost 
+exclusively. They said that management's focused attention on reducing 
+the backlog placed additional pressure on them to process applications 
+faster, thereby increasing the risk of making incorrect decisions, 
+including approving potentially fraudulent applications. For example, 
+adjudicators at all four service centers we spoke with told us that 
+operations management seemed to be almost exclusively focused on 
+reducing the backlog in order to meet production goals.[Footnote 28] 
+USCIS headquarters operations management responsible for overseeing 
+adjudications at service centers and district offices told us that the 
+adjudications operation is a "high-pressure" production environment and 
+that they are seeking to increase production, but it was not their 
+intention that this should come at the expense of making incorrect 
+adjudication decisions. 
+
+The FDNS Director told us that he had also discussed with operations 
+management the need to strike a more balanced approach to meeting 
+production goals and ensuring that the right eligibility decision is 
+made. He acknowledged that until FDNS establishes an ability to 
+proactively identify fraud through its automated analysis tools, 
+adjudicators will continue to play a primary role in detecting fraud. 
+Therefore, he acknowledged the importance of clear and balanced 
+communications from operations management to adjudicators in support of 
+USCIS's new fraud detection process and the shared responsibilities in 
+this regard. 
+
+Nevertheless, adjudicators we interviewed told us that they have 
+received guidance from different parts of the agency regarding the 
+lengths to which they should go in confirming suspected fraud that they 
+were uncertain how to interpret. For example, in December 2004, the 
+FDNS Director issued guidance stating that adjudicators should obtain 
+the evidence needed to support their suspicions of fraud before making 
+a referral, including, if necessary, requesting additional evidence 
+from applicants. According to adjudicators and FDU staff we 
+interviewed, this guidance appears to conflict with a subsequent 
+January 2005 memorandum, issued by the Director of Service Center 
+Operations, which states that adjudicator requests for information 
+should not be used as a device simply to "investigate" suspected fraud. 
+Adjudicators we interviewed at one service center said that whenever 
+operations management communicated with them about practicing more 
+discretion in issuing requests for additional evidence, they believed 
+it was primarily intended to put more pressure on them to process 
+applications faster, which in turn they said puts additional pressure 
+on them to not to request additional evidence when making eligibility 
+decisions. Consequently, they were concerned about having to approve 
+applications with less confidence in the correctness of their 
+determinations. An FDNS Immigration Officer working in a service center 
+echoed the adjudicators concerns about seemingly conflicting guidance, 
+saying that interpreting such guidance from management made the job of 
+adjudicators more difficult. However, he said that adjudicators and 
+local managers would more likely heed the direction of USCIS operations 
+management, their direct supervisors, rather than FDNS. Clear 
+communications about the importance of both fraud prevention-related 
+and service-related objectives and how they are to be balanced may help 
+adjudicators ensure that they are appropriately supporting USCIS's 
+multiple objectives as they carry out their duties. 
+
+Adjudicators and FDNS Staff Lack Access to Important Information and 
+Information Tools: 
+
+USCIS does not have a mechanism to help ensure that adjudicators have 
+access to information related to detecting fraud they may need to carry 
+out their responsibilities. Information regarding fraud trends can be 
+provided in various forms including e-mails, intranet Web pages, and 
+bulletin board notices. The adjudicators at the service centers and 
+district offices we visited received some fraud-related information or 
+training subsequent to their initial hire.[Footnote 29] Our interviews 
+indicated, however, that the frequency and method for distributing 
+ongoing information about fraud detection is not uniform across the 
+service centers and district offices we visited; some adjudicators 
+reported that more information or a more centralized information 
+management system would better prepare them to detect fraud. At two 
+service centers, adjudicators we interviewed told us that, after their 
+initial training, they were provided with some information regarding 
+fraud trends via e-mail. However, these adjudicators also reported 
+difficulty with managing the information in this format. They said that 
+providing this information through a different means--either through a 
+Web-based system or through a training course that would summarize new 
+knowledge related to fraud trends--would be easier and quicker to use. 
+One of the service centers provided adjudicators with operating 
+manuals--developed for specific benefit application types--that 
+included information regarding typical fraud trends encountered by the 
+service center, which adjudicators said they found useful in their 
+efforts to detect fraud. 
+
+At two other service centers, adjudicators we interviewed told us that 
+they were not provided any fraud e-mail updates but received some 
+limited information about fraud during general group meetings. 
+Adjudicators at these two centers told us that receiving more specific 
+and detailed information about fraud trends and practices would enhance 
+their ability to detect fraud. At one service center, adjudicators 
+suggested that having a method by which to incorporate the knowledge 
+and lessons learned from experienced adjudicators would also help them 
+to better detect fraud. Additionally, one of the district offices we 
+visited provided an additional 2-day training course that included 
+techniques for detecting fraud during an interview. Adjudicators we 
+interviewed at this district office told us that the course helped 
+prepare them to better detect fraud. USCIS headquarters officials 
+responsible for field operations told us that there is no standard 
+training regarding fraud trends and that fraud-related training varied 
+across field offices. In commenting on our draft report, DHS stated 
+that FDNS has created a Website that includes relevant policy 
+memoranda, fraud trends, lessons learned and a number of other tools to 
+aid adjudication officers. 
+
+In addition to calling for relevant information to be shared 
+internally, internal control standards require that management ensure 
+that there are adequate means of communicating with and obtaining from 
+external stakeholders information that may have a significant impact on 
+achieving agency goals. During our review, USCIS and ICE, had not yet 
+established a feedback mechanism for the timely sharing of information 
+related to the status and outcomes of fraud referrals that is essential 
+to the fraud referral process shared by USCIS and ICE. According to 
+FDNS field staff we interviewed, information from ICE field offices on 
+the status of USCIS referrals--for example, whether ICE has initiated 
+an investigation in response to a referral--was sporadic and incomplete 
+in some cases and non-existent in other cases. In addition, when ICE 
+fails to accept a referral, FDNS may initiate an administrative inquiry 
+to resolve an adjudicator's suspicions of fraud. However, because ICE 
+did not routinely provide information about its investigative 
+decisions, it was difficult for FDNS to know when to initiate such 
+inquiries or to plan for the staff time needed to conduct them. 
+Moreover, according to FDNS staff and adjudicators we interviewed, 
+without timely feedback about the investigative status of their 
+referrals, adjudicators lacked the information needed to make more 
+timely eligibility determinations, whether or not an investigation is 
+opened by ICE. In November 2005, ICE and USCIS officials told us that 
+ICE investigators were recently assigned to each of the FDUs, which may 
+help increase communication and information sharing between USCIS and 
+ICE. 
+
+Additionally, according to the FDNS Director, having direct access to 
+information stored in ICE's case management information system, the 
+Treasury Enforcement Communication System (TECS) maintained by Customs 
+and Border Protection (CBP), would allow FDNS staff to determine with 
+greater certainty whether someone who has filed for an immigration 
+benefit is connected to any ongoing ICE criminal investigation. 
+However, ICE officials told us they opposed allowing FDNS access to 
+sensitive case management information. They said that there was a need 
+to segregate sensitive law enforcement data about ongoing cases from 
+non-law enforcement agencies like FDNS. 
+
+In commenting on our draft report, DHS provided us with a February 14, 
+2006 memorandum of agreement between ICE and USCIS that established a 
+mechanism for the sharing of information related to the status and 
+outcomes of fraud referrals. In addition the agreement provides USCIS 
+staff with access to TECS data so USCIS can determine whether someone 
+who has filed for an immigration benefit is connected to any ongoing 
+ICE criminal investigation. 
+
+DHS Lacks Performance Goals for USCIS's Antifraud Efforts: 
+
+Internal control standards call for agencies to establish performance 
+measures to monitor performance related to agency objectives. Measuring 
+performance allows an organization to track progress made toward 
+achieving its objectives and provides managers with crucial information 
+on which to base management decisions. The Government Performance and 
+Results Act (GPRA) of 1993 also requires that agencies establish long- 
+term strategic and annual goals, measure performance against these 
+goals, and report on the progress made toward meeting their missions 
+and objectives. It calls for agencies to assess specific outcomes 
+related to their missions and objectives, in addition to designing 
+output measures to describe attributes of the goods and services 
+produced by the agencies' programs. 
+
+USCIS's 2005 Strategic Plan includes both a prevention theme--ensuring 
+the integrity of the system, and a service theme--providing efficient 
+and customer oriented services, along with related goals and 
+objectives. However, DHS and USCIS have not established specific 
+performance goals to assess benefit fraud activities. In fiscal year 
+2004 USCIS reported performance goals related to naturalization, legal 
+permanent residency, and temporary residency to DHS for its annual 
+Performance and Accountability Report. The objective for each of these 
+three performance goals was to "provide information and benefits in a 
+timely, accurate, consistent, courteous, and professional manner; and 
+prevent ineligible individuals from receiving" the benefit. Although 
+the objective includes preventing ineligible individuals from receiving 
+the benefit, the related measure--achieve and maintain a six month 
+cycle time goal--does not. 
+
+There is no discussion in the strategic plan of how to balance its 
+prevention objectives with its service objectives. Instead, USCIS's 
+long term strategic approach appears to rely heavily on the development 
+of an enhanced case management system, new fraud databases and data 
+analyses tools, and automated information services to overcome the 
+inherent tension between these prevention and services themes as they 
+relate to the prevention of benefit fraud and reducing the backlog of 
+immigration applications. Establishing output measures--for example, 
+the number of cases referred to and accepted by FDNS--and outcome 
+measures--for example, the percentage of fraudulent applications 
+detected relative to targets established using baseline data from fraud 
+assessments--could provide USCIS with more complete information about 
+the effectiveness of its fraud control efforts in meeting its strategic 
+goal objective to ensure the security and integrity of the immigration 
+system. 
+
+FDNS officials told us that they are now participating in USCIS' Office 
+of Policy and Strategy Performance Measurement Team's efforts to 
+develop performance metrics, and that FDNS is leading an effort to 
+develop metrics related to USCIS's strategic goal to ensure the 
+security and integrity of the immigration system by increasing the 
+detection of attempted immigration benefit fraud. However, specific DHS 
+metrics regarding USCIS's antifraud efforts have yet to be developed 
+and approved by DHS. 
+
+MOST Benefit FRAUD IS NOT CriminalLY ProsecutED But DHS Does Not Have 
+an Administrative Sanctions PROGRAM: 
+
+Although best practice guidance suggests that sanctions for those who 
+commit benefit fraud are central to a strong fraud control environment, 
+and the INA provides for criminal and administrative sanctioning, DHS 
+does not currently actively use the administrative sanctions available 
+to it. Fraud control best practices advise that a credible sanctions 
+program, which incorporates a mechanism for evaluating its 
+effectiveness, including the wider value of deterrence, is an integral 
+part of fraud control. According to the AICPA's fraud guidance, the way 
+an entity reacts to fraud can send a strong message that helps reduce 
+the number of future occurrences. Therefore, taking appropriate and 
+consistent actions against violators is an important element of fraud 
+control and deterrence. The guide further advises that a strong 
+emphasis on fraud deterrence has the effect of persuading individuals 
+that they should not commit fraud because of the likelihood of 
+punishment. Similarly, the NAO guide states that a key element of a 
+good fraud control program is to impose penalties and sanctions on 
+those who commit fraud in order to penalize those who commit fraud and 
+deter others from carrying out similar types of fraud. 
+
+Data provided by USCIS indicates that most benefit fraud it uncovers 
+and refers to ICE is not prosecuted. In fiscal year 2005, USCIS 
+referred 2,289 immigration benefit fraud cases to ICE BFUs. However, 
+only 598, about 26%, were accepted by the BFUs. Neither USCIS nor ICE 
+was able to provide us with information about which of the FDNS 
+referrals accepted by the BFUs resulted in an ICE investigation. 
+However, ICE officials said that the majority of ICE's immigration 
+benefit fraud investigations do not originate with USCIS referrals, but 
+from other investigative sources. Given limits on its resources, ICE 
+officials told us that they generally prioritize their investigative 
+resources and assign them to cases involving individuals who are filing 
+large numbers of fraudulent applications for profit, because these 
+cases generally have a greater probability of being prosecuted by the 
+U.S. Attorneys Offices. Therefore, the principal means of imposing 
+sanctions on most immigration benefit fraud would be through 
+administrative penalties. 
+
+The INA provides both criminal and administrative sanctions for those 
+who commit immigration benefit fraud.[Footnote 30]The act's criminal 
+provisions provide for fines and/or imprisonment for up to 5 years for 
+a person who fails to disclose that they have, for a fee, assisted in 
+preparing an application for an immigration benefit that was falsely 
+made, and monetary fines and/or imprisonment for up to 15 years for a 
+second such conviction. The act also provides for administrative 
+penalties for applicants who make false statements or submit a 
+fraudulent document to obtain an immigration benefit or enter into a 
+marriage solely to obtain an immigration benefit.[Footnote 31] For 
+document fraud committed after 1999, it provides monetary fines ranging 
+from $275 to $2,200 per document subject to a violation for a first 
+offense and from $2,200 to $5,500 per document for those who have 
+previously been fined. Monetary penalties collected are to be deposited 
+into the Immigration Enforcement Account within the Department of the 
+Treasury. Funds from this account can be used for activities that 
+enhance enforcement of provisions of the INA including: (1) the 
+identification, investigation, apprehension, detention, and removal of 
+criminal aliens; (2) the maintenance and updating of a system to 
+identify and track criminal aliens, deportable aliens, inadmissible 
+aliens, and aliens illegally entering the United States; and (3) for 
+the repair, maintenance, or construction of border facilities to deter 
+illegal entry along the border. In addition, under certain 
+circumstances, individuals determined through the adjudication process 
+to have committed fraud, are deemed inadmissible should they later try 
+to file another immigration application. In some cases, aliens who are 
+determined in a formal hearing to have committed fraud can be removed 
+from the United States and be barred from entering in the future. 
+
+DHS does not currently have a clear and comprehensive strategy for 
+imposing sanctions or evaluating their effectiveness and is not 
+actively enforcing the administrative penalties provided for by the 
+INA. This is largely due to a 1998 federal appeals court ruling 
+upholding a nationwide permanent injunction against the procedures used 
+by INS to institute civil document fraud charges under the 
+INA.[Footnote 32] The court found that INS provided insufficient notice 
+to aliens regarding their right to request a hearing on the imposition 
+of monetary fines and the immigration consequences of failing to do so, 
+and that until proper notifications were included on the fine and 
+hearing waiver forms, INS was enjoined from implementing civil 
+penalties for document fraud. According to the Director of Field 
+Operations for ICE's Office of Principal Legal Advisor, after the court 
+ruling, the government's cost to investigate and prosecute an 
+immigration fraud case administratively, including appeals costs, would 
+not be offset by the monetary sum that might be obtained. Moreover, the 
+director stated that even if successful, there was no guarantee that 
+the government could collect its fine from the alien. Therefore, 
+according to the director, ICE does not consider implementing the 
+administrative penalties for document fraud to be cost effective. 
+Accordingly, DHS has not made updating the forms in response to the 
+ruling a priority. Similarly, another USCIS attorney told us that the 
+provision of INA that pertains to marriage fraud is rarely used 
+because, due to the significant commitment of resources necessary to 
+establish a finding of fraud, enforcing it might not be cost effective. 
+However, DHS has not conducted a formal analysis, which includes an 
+attempt to value the benefit of deterrence, to determine the total 
+costs and benefits of imposing sanctions. 
+
+Senior USCIS officials we spoke with, however, told us that 
+administrative sanctions are important to their fraud control efforts. 
+According to the FDNS Director, without the credible threat of a 
+penalty, individuals have no fear of filing future fraudulent 
+applications. In this regard, he said that FDNS administrative 
+investigations of fraud referrals not investigated by ICE are critical, 
+and, in his estimation, the resulting denial of a benefit and potential 
+removal of an alien offer an effective deterrent to immigration benefit 
+fraud. However, the director said that although an alien who commits 
+immigration benefit fraud might be removable from the United States 
+and, therefore, has some disincentive to commit fraud, U.S. citizens, 
+if they are not prosecuted criminally, have little disincentive because 
+without the enforcement of administrative sanctions they are not likely 
+to be penalized, even if their violations are detected. Additionally, 
+according to the Chief of Staff for USCIS, a strategy for 
+administratively sanctioning those who commit fraud is necessary for 
+controlling and deterring fraud. 
+
+Although DHS does not actively use its authorities to impose 
+administrative penalties, Congress has continued to support the concept 
+in legislation. In particular, the Real ID Act of 2005 allows the 
+Secretary of Homeland Security, after notice and an opportunity for a 
+hearing, to impose an administrative fine of up to $10,000 per 
+violation on an employer for a substantial failure to meet any of the 
+conditions of a petition for certain non-immigrant workers or a willful 
+misrepresentation of a material fact in such a petition, and allows the 
+secretary to deny petitions filed with respect to that employer for at 
+least 1 year and not more than 5 years.[Footnote 33] However, without a 
+strategy which includes a mechanism for assessing the effectiveness of 
+sanctions and considers both the monetary value of fines collected and 
+the value of deterrence, DHS will not be able to determine how and 
+under what circumstances to best use the authority provided by the INA 
+and other legislation to promote a credible threat of punishment in 
+order to deter fraudulent filers. 
+
+Although it lacks a strategy for imposing criminal and administrative 
+sanctions, DHS, along with DOL, has proposed administrative rule 
+changes that will help sanction those who commit fraud. Among other 
+things, DHS has proposed that USCIS be able to deny, for a period of 
+time, all applications from employers that DOL or DHS has found, 
+respectively, to have submitted false information about meeting 
+regulatory requirements or provided statements in their applications 
+that were inaccurate, fraudulent or misrepresented a material fact. 
+Final rules have not yet been published. 
+
+Conclusions: 
+
+In light of competing organizational priorities, institutionalizing 
+fraud detection--such that it is a built-in part of the adjudications 
+process and always a central part of USCIS's planning, procedures, and 
+methods--is vital to USCIS's ability to accomplish its goals and 
+objectives, particularly protecting the integrity of the immigration 
+benefit system. USCIS has taken some important steps to implement 
+internal controls, primarily through the activities of the Office of 
+Fraud Detection and National Security. By strengthening existing 
+controls and implementing additional fraud control practices, USCIS 
+could enhance its ability to detect benefit fraud and gain greater 
+assurance that its operations are designed to protect the integrity of 
+the system, even as it strives to enhance service and meet its backlog 
+reduction goals. Specifically, expanding the types of benefits it 
+assesses, including assessments of consequence, and drawing on all 
+available sources of threat information to develop current fraud 
+assessment activities into a more comprehensive risk management 
+approach would provide additional knowledge about fraud risks and put 
+the agency in a better position to make risk-based evaluations of its 
+policies, procedures, and programmatic activities. Also, a mechanism to 
+ensure that information uncovered during the course of normal 
+operations--in USCIS and related agencies--feeds back into USCIS 
+policies and procedures would help to ensure that it addresses 
+loopholes and procedural weaknesses. In addition, clear communication 
+of the importance of fraud prevention-related objectives and how they 
+are to be balanced, in practice, with service-related objectives would 
+help USCIS adjudicators to ensure that they are supporting the agency's 
+multiple objectives as they carry out their duties. Moreover, the 
+provision of the tools and the relevant information that its 
+adjudicators need to determine the status of fraud referrals could help 
+them make timely and informed eligibility determinations with greater 
+confidence of their accuracy. Finally, performance goals--that include 
+output and outcome measures, along with associated targets--reflecting 
+the status of fraud control efforts would provide valuable information 
+for USCIS management to evaluate its various policies, procedures, and 
+programmatic activities and a better understanding of both the progress 
+made and areas requiring more focused management attention to enhance 
+fraud prevention. 
+
+By demonstrating sufficiently adverse consequences for individuals who 
+perpetrate fraud, sanctions serve to discourage future fraudulent 
+filings, as individuals observe that the potential costs of engaging in 
+fraud are likely to outweigh the potential gains. It is important to 
+any program that encounters fraud to have a credible sanctions program 
+to penalize those who engage in fraud and deter others from doing so. 
+Currently, DHS's sanctions program for immigration fraud is not a 
+threat to most perpetrators because relatively few are prosecuted 
+criminally and administrative sanctions are not actively being used. 
+Although DHS officials told us that administrative sanctions are not 
+cost-effective, comparing only the costs of administering sanctions 
+with the potential return from the collection of fines may undervalue 
+their potential deterrent effects. Although developing a sound 
+methodology to establish and determine the value of deterrence provided 
+by sanctions will require effort, best practices call for cost- 
+effective sanctions, and consideration of the full range of costs and 
+benefits, financial and nonfinancial, is central to making a valid 
+determination of cost-effectiveness. Developing and implementing a 
+strategy for imposing sanctions that includes a mechanism for assessing 
+effectiveness and that more fully evaluates costs and benefits, 
+including nonfinancial benefits like the value of deterrence, could 
+give DHS a better indication of how and under what circumstances 
+administrative sanctions should be employed to enhance USCIS's fraud 
+deterrence efforts. 
+
+Recommendations For Executive Action: 
+
+In order to enhance USCIS's overall immigration benefit fraud control 
+environment, we recommend that the Secretary of Homeland Security 
+direct the Director of USCIS to take the following five actions, which 
+are consistent with internal control standards and best practices in 
+the area of fraud control: 
+
+Enhance its risk management approach by (1) expanding its fraud 
+assessment program to cover more immigration application types; and (2) 
+fully incorporating threat and consequence assessments into its fraud 
+assessment activities; and (3) using risk analysis to evaluate 
+management alternatives to mitigate identified vulnerabilities. 
+
+Implement a mechanism to help USCIS ensure that information about fraud 
+vulnerabilities uncovered during the course of normal operations--by 
+USCIS and related agencies--feeds back into and contributes to changes 
+in policies and procedures when needed to ensure that identified 
+vulnerabilities result in appropriate corrective actions. 
+
+Communicate clearly to USCIS adjudicators the importance USCIS's fraud- 
+prevention objectives and how they are to be balanced with service- 
+oriented objectives to help adjudicators ensure that both objectives 
+are supported as they carry out their duties. 
+
+Provide USCIS adjudicator staff with access to relevant internal and 
+external information that bears on their ability to detect fraud, make 
+correct eligibility determinations, and support the new fraud referral 
+process--particularly ongoing updates regarding fraud trends and other 
+information related to fraud detection. 
+
+Establish output and outcome based performance goals--along with 
+associated measures and targets--to assess the effectiveness of fraud 
+control efforts and provide more complete performance information to 
+guide management decisions about the need for any corrective action to 
+improve the ability to detect fraud. 
+
+In addition, in order to enhance DHS's ability to sanction immigration 
+benefit fraud, we recommend the Secretary of Homeland Security direct 
+the Director of USCIS and the Assistant Secretary of ICE to: 
+
+Develop a strategy for implementing a sanctions program that includes 
+mechanisms for assessing their effectiveness and for determining their 
+associated costs and benefits, including their deterrence value. 
+
+Agency Comments and Our Evaluation: 
+
+We provided a draft of this report to the Departments of Homeland 
+Security, State, Justice and Labor for review. On March 1, 2006 we 
+received written comments on the draft report from the Department of 
+Homeland Security which are reproduced in full in appendix II. The 
+Departments of State, Justice and Labor had no comments on our draft 
+report. In its written comments, DHS stated that our report generally 
+provided a good overview of the complexities associated with pursing 
+immigration benefit fraud and the need to have a program in place that 
+proactively assesses vulnerabilities within the myriad of immigration 
+processes. However, DHS stated that our report did not fully portray 
+USCIS's efforts to address immigration benefit fraud and provided other 
+examples of efforts USCIS has undertaken or plans to undertake. Where 
+appropriate, we revised the draft report to recognize these additional 
+efforts by USCIS to address immigration benefit fraud. DHS noted that 
+USCIS used GAO's 2002 report on immigration benefit fraud as the 
+foundation to build its antifraud program and believes that USCIS is on 
+the right track to creating an effective antifraud program. We believe 
+that USCIS is moving in the right direction and recognize that FDNS is 
+in the beginning stages of developing and implementing a new antifraud 
+program for USCIS. 
+
+Overall, DHS agreed with and/or plans to take action to implement four 
+of our six recommendations, but cited actions it has already taken to 
+indicate that aspects of our other two recommendations are already in 
+place. Specifically, regarding our recommendation that DHS enhance its 
+risk management approach, DHS agreed that USCIS can enhance its risk 
+management approach by expanding its fraud assessment program to cover 
+more application types and plans to do so. DHS stated that USCIS 
+believes that benefit fraud assessments currently underway do provide a 
+comprehensive risk analysis to identify vulnerabilities and measures to 
+mitigate such vulnerabilities. While we agree that some of the actions 
+FDNS has taken with regard to the specific fraud assessments contain 
+elements of risk assessment and mitigation measures, a risk management 
+approach that is consistent with the framework that we advocate in 
+order for agencies to have a solid risk-based foundation to make 
+resource allocation and other operational decisions would include a 
+more comprehensive and systematic treatment of threat and consequence 
+as part of USCIS's risk analysis. Moreover, we have not seen evidence 
+that USCIS intends to use the results of risk analysis as a continuous, 
+built-in component of its operations to evaluate and adjust, as 
+necessary, policies and procedures. 
+
+Regarding our recommendation that DHS provide USCIS adjudicator staff 
+relevant information, DHS agreed that it needs to provide USCIS staff 
+access to relevant internal and external information and is initiating 
+training for supervisory adjudication officers and is planning to 
+provide adjudicators selective access to the State Department's 
+Consolidated Consular Database and other open source databases. 
+
+Regarding our recommendation that DHS establish performance goals to 
+assess the effectiveness of fraud control efforts, DHS agreed that 
+additional output and outcome based performance goals and measures are 
+needed. 
+
+Regarding our recommendation that DHS develop a strategy for 
+implementing a sanctions program, DHS agreed to study the costs and 
+benefits of an administrative sanctions program. 
+
+Regarding our recommendation that USCIS clearly communicate the 
+importance of USCIS' fraud-prevention activities, DHS stated USCIS 
+leadership clearly advocates balancing objectives related to timely and 
+quality processing of immigration benefits. As examples of USCIS's 
+focus on the integrity of USCIS data and processes, DHS cited the 
+creation of FDNS and the recent move of FDNS to a new directorate that 
+reports directly to the Deputy Director of USCIS allowing FDNS to 
+provide focus and guidance to all USCIS operations. Although USCIS 
+management believes these efforts clearly demonstrate the importance of 
+fraud prevention, our interviews with adjudicators in service centers 
+and district offices indicate that this message may not be reaching 
+USCIS adjudications staff. Therefore, we continue to believe that 
+clearly communicating the importance of fraud prevention and guidance 
+on how USCIS staff are to balance the fraud prevention and service 
+oriented objectives is needed. 
+
+Regarding our recommendation that USCIS implement a mechanism to feed 
+back information uncovered during the course of its normal operations 
+and those of related agencies about fraud vulnerabilities, DHS stated 
+that it believes such a feedback loop already exists within the 
+process. DHS cited meetings that FDNS leadership had with a U.S. 
+Attorneys Office regarding vulnerabilities in the asylum process and 
+FDNS participation in various task forces that allows for the sharing 
+of information. Although these are all positive efforts, USCIS does not 
+have a mechanism in place to ensure that such information is 
+consistently gathered from all relevant sources and fed back to FDNS. 
+Therefore, we continue to believe that USCIS needs to establish a 
+mechanism, memorialized in policies and procedures, which would ensure 
+that information about fraud vulnerabilities uncovered by USCIS staff 
+and related agencies feeds back to FDNS. 
+
+As agreed with your offices, unless you publicly announce the contents 
+of this report earlier, we plan no further distribution until 30 days 
+from the date of this letter. At that time, we will send copies of this 
+report to the Secretaries of Homeland Security, State, and Labor, the 
+Attorney General, and other interested congressional committees. We 
+will also make copies available to others upon request. In addition, 
+the report will be available at no charge on GAO's Web site at 
+http://www.gao.gov. 
+
+If you or your staff have any questions concerning this report, please 
+contact me at (202) 512-8777 or Jonespl@gao.gov. Contact points for our 
+Offices of Congressional Relations and Public Affairs may be found on 
+the last page of this report. Key contributors to this report are 
+listed in appendix II. 
+
+Signed by: 
+
+Paul L. Jones, 
+Director: 
+Homeland Security and Justice Issues: 
+
+Appendix I: Scope and Methodology: 
+
+To examine the extent and nature of immigration fraud, we reviewed the 
+results of the FDNS's ongoing fraud assessments. Regarding the fraud 
+assessments, we interviewed the FDNS managers responsible for 
+administering the assessment, reviewed documentation outlining the 
+assessment's design, implementation and initial results from 2 fraud 
+assessments. To better understand the nature of immigration benefit 
+fraud and to identify common fraud patterns, we analyzed examples of 
+fraud case histories for several petition types planned to be assessed 
+by FDNS. In addition, we analyzed information contained in fraud 
+bulletins prepared by U.S. Citizen Immigration Services' (USCIS) 
+California Service Center that contained reports by various State 
+Department overseas consular posts on immigration fraud these posts had 
+uncovered. We also analyzed PAS data to determine trends in the volume 
+of applications being processed, approved, and denied. We assessed the 
+data derived from PAS and determined that these data were sufficiently 
+reliable for the purposes of this review. We interviewed adjudications 
+staff and field managers to evaluate the extent to which internal 
+controls and practices for detecting fraud were incorporated into USCIS 
+policies, procedures, and tools. We met with headquarters officials 
+from USCIS operations and FDNS, as well as officials from the 
+Departments of Labor and State responsible for fraud detection efforts. 
+We conducted site visits or contacted staff at all four USCIS services 
+centers--we visited three USCIS service centers in Laguna Niguel, 
+California; Dallas, Texas; and St. Albans, Vermont; and conducted 
+telephone interviews with USCIS staff at the Lincoln, Nebraska service 
+center. We also interviewed 59 adjudicators at the 4 USCIS service 
+centers and 2 USCIS district offices with responsibility for and 
+familiarity with adjudicating different types of applications in a 
+group setting, which allowed us to identify points of consensus among 
+the adjudicators. We also visited USCIS district offices in Dallas and 
+Boston responsible for coordinating their fraud referrals with two of 
+the 4 service centers we visited. USCIS service center and district 
+office officials selected the adjudicators we interviewed based upon 
+our request that we meet with adjudicators that had responsibility for 
+and familiarity with adjudicating different types of applications. We 
+also interviewed FDNS staff assigned to work with the four service 
+centers and two district offices we visited or contacted. We also 
+interviewed staff from ICE's Identity and Benefit Fraud Unit in 
+Washington, D.C. and those agents assigned to BFUs in California, Texas 
+and Vermont. As we did not select a probability sample of USCIS staff 
+and ICE Office of Investigations agents to interview, the results of 
+these interviews cannot be projected to all USCIS staff and ICE Office 
+of Investigations officials nationwide. In addition, we reviewed 
+efforts by the Department of Labor's Inspector General to determine the 
+extent of immigration fraud in the Permanent Labor Certification 
+Program. We also met with the CIS Ombudsman to discuss his fiscal year 
+2004 and fiscal year 2005 reports. 
+
+To determine what actions USCIS has taken to improve its ability to 
+detect immigration benefit fraud, we reviewed USCIS's efforts to 
+improve its fraud detection capabilities, including resources devoted 
+specifically to detecting fraud by FDNS. We also reviewed USCIS's 
+policies, adjudication procedures, and fraud detection processes as 
+well as the tools used by adjudicators to detect fraudulent immigration 
+benefit applications. To determine what actions have been taken to 
+sanction those who commit fraud, we interviewed USCIS and ICE 
+attorneys, identified the investigative resources that ICE had made 
+available for immigration fraud investigations, and determined how 
+USCIS and ICE coordinate the investigation of potential fraud. In 
+addition, we examined fraud investigation and prosecution statistics, 
+and analyzed USCIS statistics about the amount of fraud identified by 
+its adjudicators. We also determined how ICE investigative efforts are 
+coordinated with the U.S. Attorneys Offices and how their priorities 
+affect the investigation and prosecution of immigration benefit fraud 
+schemes of various types. For this portion of our review, we met with 
+headquarters officials from ICE, and interviewed agents in four ICE 
+field offices based in Boston, Dallas, Los Angeles, and San Antonio. We 
+also interviewed representatives from the U.S. Attorneys Office for the 
+Eastern District of Virginia and the Executive Office of the U.S. 
+Attorneys within the Department of Justice. Finally, we examined the 
+current sanctions for those who commit immigration benefit fraud and 
+reviewed proposed fraud regulatory changes. To evaluate DHS efforts to 
+detect and sanction immigration benefit fraud, we used the Standards 
+for Internal Control in the Federal Government and with best practices 
+advocated by the American Institute of Certified Public Accountants 
+(AICPA) and by the United Kingdom's National Audit Office (NAO). 
+
+We conducted our work between October 2004 and December 2005 in 
+accordance with generally accepted government auditing standards. 
+
+[End of section] 
+
+Appendix II: Comments from the Department of Homeland Security: 
+
+U.S. Department of Homeland Security: 
+Washington, DC 20528: 
+
+March 1, 2006: 
+
+Homeland Security: 
+Mr. Paul L. Jones: 
+Director: 
+Homeland Security and Justice Issues: 
+U.S. Government Accountability Office: 
+441 G Street, N.W. 
+Washington, D.C. 20548: 
+
+Dear Mr. Jones: 
+
+We appreciate the opportunity to comment on the Government 
+Accountability Office's (GAO) draft report entitled "Immigration 
+Benefits: Additional Controls and a Sanctions Strategy Could Enhance 
+DHS's Ability to Control Benefit Fraud" GAO-06-259. It generally 
+provides a good overview of the complexities associated with pursuing 
+immigration benefit fraud and the need to have a program in place that 
+proactively assesses vulnerabilities within the myriad of immigration 
+processes. However, the report does not fully portray how the 
+Department of Homeland Security (DHS) has been addressing anti-fraud 
+since its inception on March 1, 2003. 
+
+U.S. Citizenship and Immigration Services (USCIS) used the GAO Report, 
+Immigration Benefit Fraud: Focused Approach is Needed to Address 
+Problems, GAO-02-66, January 31, 2002, as the foundation to build its 
+anti-fraud effort with the establishment of the Office of Fraud 
+Detection and National Security (FDNS). Development of this program 
+started in 2003, FDNS was officially created in May 2004 and FDNS 
+Immigration Officers were deployed to the field in January 2005. 
+Although it is still a new and developing program, USCIS is on the 
+right track with respect to creating an effective anti-fraud program. 
+To date, it has established a joint benefit fraud strategy with U.S. 
+Immigration and Customs Enforcement (ICE), created the necessary 
+organizational crosswalks, developed policies and procedures, and 
+implemented a strategy for conducting benefit fraud assessments. 
+
+The GAO found the establishment of FDNS as a focal point for dealing 
+with immigration benefit fraud, a strategy for detecting immigration 
+benefit fraud and the initiation of a series of benefit risk assessment 
+were good starts for an effective anti-fraud program. However, the GAO 
+concluded that USCIS needed to address some aspects of internal control 
+standards and fraud control best practices identified by leading audit 
+organizations. For example, the GAO found the program does not provide 
+a basis for the type of comprehensive risk analysis advocated in the 
+GAO Standards for Internal Control in the Federal Government. USCIS 
+believes that benefit fraud assessments currently underway do provide a 
+comprehensive risk analysis to identify vulnerabilities and measures to 
+mitigate such vulnerabilities. No such assessments have ever before 
+been conducted of the immigration benefit processes. The GAO suggests 
+that FDNS' assessments do not draw on all available sources of 
+strategic threat information. FDNS performs systems checks in all 
+available enforcement systems, and deconflicts suspected fraud targets 
+with ICE. To facilitate this, ICE has a supervisory special agent 
+collocated with headquarters FDNS and a senior special agent at each 
+Service Center Fraud Detection Unit. FDNS also meets regularly with 
+ICE's Identity and Benefit Fraud Unit; has an Intelligence Research 
+Specialist detailed to ICE's Office of Intelligence, DHS's Operations 
+Center, and the Terrorist Screening Center. The FDNS Director sits on 
+the DHS Assistant Secretary of Intelligence and Analysis Intelligence 
+Council. FDNS' Chief of the National Security Branch sits on DHS's 
+Homeland Security Terrorist Threat Intelligence Group, along with other 
+agency chiefs and assistant directors. FDNS also has ongoing 
+communication with ICE's National Security Threat Protection Unit, and 
+is about to implement a joint religious worker fraud initiative focused 
+on identifying systemic flaws/national security risks in the Religious 
+Worker Program. These interagency anti-fraud and national security 
+efforts are also unprecedented. 
+
+In addition, the ongoing benefit fraud assessments are addressing 
+benefit types considered "high risk." They were chosen because the 
+application/petition either provided evidence of permanent resident 
+status, were the basis for applying to obtain permanent resident 
+status, or provided long-term employment based non-immigrant visas. In 
+addition, these benefit types were selected because the 9/11 Commission 
+Report identified marriage fraud as a major target of terrorists aimed 
+at embedding themselves in the United States, and because GAO, in 
+separate reports, documented the existence of significant fraud among 
+religious workers and inter-company transferees. Given existing 
+resources, it is not possible to conduct assessments on all benefit 
+types within the first years of operation. However, FDNS intends to 
+conduct assessments on an ongoing basis and will expand them to include 
+additional benefit types. 
+
+The GAO suggests that USCIS is not effectively addressing temporary 
+work authorizations provided to applicants who have to wait more than 
+90 days for their applications to be processed. This is not a simple 
+issue. Applications for employment authorization are typically 
+ancillary applications tied to a "parent" application - for example, 
+they are filed in conjunction with an application for adjustment of 
+status based on an employment based petition. The fraud is not 
+typically found on the application for employment authorization - 
+rather, it is based in the underlying "parent" application/petition. 
+Therefore, the best course of action is to address the problem at the 
+source - i.e. the petition. Addressing the problem at the employment 
+authorization application stage would not adequately address the 
+problem. Further, the interim employment authorization is necessary 
+because it is not possible to detect fraud and resolve all background 
+check processes in all cases based on existing technology in 90 days. 
+However, there is a proposed regulatory change that would clarify 
+USCIS' ability to withhold the adjudication of an application for 
+employment authorization pending an ongoing investigation. 
+
+The GAO also found that USCIS lacks a mechanism to help ensure that 
+information gathered during the course of its normal operations and 
+those of related operations - including criminal investigations and 
+prosecutions - inform decisions about whether and what actions, 
+including changes to policies, procedures or programmatic activities, 
+might improve the ability to detect fraud. FDNS is currently developing 
+its back-end processes, which include sharing information/lessons 
+learned from routine operations and addressing shortcomings. For 
+example, all fraud leads a

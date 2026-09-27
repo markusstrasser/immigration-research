@@ -1,0 +1,4 @@
+_cache/
+sources/*.pdf
+sources/*.html
+__pycache__/

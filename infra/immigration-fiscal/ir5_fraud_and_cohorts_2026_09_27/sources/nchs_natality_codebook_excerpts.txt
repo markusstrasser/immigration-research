@@ -1,0 +1,99 @@
+NCHS natality public-use file documentation, code-list excerpts (pdftotext -layout of ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/<file>), extracted 2026-09-27
+
+=== Nat1980doc.pdf (tape location 138-139, Mother's Place of Birth; same layout 1980-1988 per NBER dct)
+ 138-139     2            Mother’s Place of Birth
+                     .-
+                             01-51 ... 50 States and the District of
+                                         Columibiain alphabetical sequence.
+                                52 ... Puerto Rico
+                                53 ... Virgin Islands
+                                54 ... Guam
+                                55 ... Canada
+                                56 ... Cuba
+                                57 . . . Mexico
+                                59 ... Remainder of World
+                                99 ... Not classifiable
+
+
+=== Nat1989doc.pdf (MPLBIR 88-89, MPLBIRR 90; ORMOTH 77)
+88-89         2    MPLBIR
+                   Place     of   Birth              of     Mother
+
+                       49                             West       Vlrglnia
+                       50                 . . .       Wisconsin
+                       51                   . .       Wyoming
+                       52                 . . .       Puerto         Rico
+                       53                   .         Virgin         Islands
+                       54                   .         Guam
+                       55                   .         Canada
+                       56                   .         Cuba
+                       57                   . .       Mexico
+                       59                 . .         Remainder             of   the    World
+                       99                   . .       Not      classifiable
+
+
+
+
+90             i   MPLBIRR
+                   Place   of     Birth              of     Mother       Recode
+
+                      1                   . .             Native      born
+                      2                   ,..             Foreign      born
+                      3                       . .         Unknown       or  not     stated
+77             1   ORMOTH
+                   Hispanic            Oriqin              of     Mother
+
+                      Origin           is     not          reported             by      all       areas.             See    reporting           flags.
+
+                      o                        . . Non             - Hispanic
+                      1                            .       Mex i can
+                      2                        . .         Puerto      Rican
+                      3                        . .         Cuban
+                      4                        . . .       Central      or    South                    American
+                      5                            .       Other            and  unknown                 Hispanic
+                      9                        . . .       Origin            unknown    or               not    stated
+
+=== Nat2003doc.pdf (UMBSTATE 96-97, MBSTATE_REC 100, UMHISP 148)
+96-97             2       UMBSTATE          Mother’s Birth State                         U,R
+                                                    United States                                 AK       Alaska
+                                                                                                  PR       Puerto Rico
+                                                                                                  VI       Virgin Islands
+
+                                                     Foreign                                      CC       Canada
+                                                                                                  CU       Cuba
+                                                                                                  MX       Mexico
+                                                                                                  YY       Rest of the World
+                                                                                                  ZZ       Not Classifiable
+
+98-99             2       FILLER            Filler                                                Blank
+
+100               1       MBSTATE_REC Mother’s Birth State Recode                        U,R      1        Native born (50 US States)
+                                                                                                  2        Foreign born (includes possessions)
+                                                                                                  3        Unknown or Not Stated
+
+148               1       UMHISP            Mother’s Hispanic Origin
+                                                                        569                U,R       0       Non-Hispanic
+                                                                                                     1       Mexican
+                                                                                                     2       Puerto Rican
+                                                                                                     3       Cuban
+                                                                                                     4       Central American
+                                                                                                     5       Other and Unknown Hispanic
+                                                                                                     9       Origin unknown or not stated
+
+=== Nat2004doc.pdf (MBCNTRY 94-95, revised-certificate states only)
+94-95             2        MBCNTRY             Mother’s Birth Country                       R**    AA-ZZ   A complete list of countries is shown in
+                                                                                                           the Geographic Code Outline, which follows
+
+=== UserGuide2005.pdf / UserGuide2009.pdf (MBCNTRY listed; blank in the public-use file, see RESULT.md)
+94-95             2        MBCNTRY             Mother’s Birth Country                              R**   AA-ZZ   A complete list of countries is shown in
+                                               (This item is available in the territory/possession               the Geographic Code Outline, which follows
+94-95             2        MBCNTRY             Mother’s Birth Country                              U,R   AA-ZZ   A complete list of countries is shown in
+                                               (This item is available in the territory file only,               the Geographic Code Outline, which follows
+148               1       UMHISP            Mother’s Hispanic Origin
+                                                                         569                   U,R    0       Non-Hispanic
+                                                                                                      1       Mexican
+                                                                                                      2       Puerto Rican
+                                                                                                      3       Cuban
+                                                                                                      4       Central or South American
+                                                                                                      5       Other and Unknown Hispanic
+                                                                                                      9       Origin unknown or not stated
