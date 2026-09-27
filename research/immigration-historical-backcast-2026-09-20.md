@@ -2,7 +2,10 @@
 
 Date: 2026-09-20. [MODEL / FRAMING-SENSITIVE] Calculation record; narrative authorship remains operator-owned.
 
-**Adopted main case (2026-09-26, schools at full average cost):** on the $258–292bn anchor (group receipts $492.5bn, shared allocation, after the consumption key), the whole-budget rules give **$2.2–2.8tn over 2015–2024, $3.2–4.2tn over 2010–2024 and $3.9–5.2tn over 2005–2024**. The programme-by-programme version in the debt legacy lane gives $2.47–2.75tn, $3.50–3.89tn and $4.21–4.72tn. The first-year budget response ($201–246bn) gives $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn, the September 24 figures at rounding.
+**Adopted main case (2026-09-27: return on public capital, long-run road and park responses, rental assistance at 1 and every government enterprise; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)):** on the $322–387bn anchor the whole-budget rules give **$2.8–3.7tn over 2015–2024, $4.0–5.4tn over 2010–2024 and $4.8–6.8tn over 2005–2024**. The schools case is carried back as before, and each addition on its own national series: roads and parks on NIPA 3.17, rental assistance on NIPA 3.13, the enterprise surplus on NIPA 3.1 line 19, and the return on public capital on BEA Fixed Assets Table 7.1 net stocks at a constant real rate. The return is an imputed resource cost, not a cash flow, and is $0.29–0.49tn of the ten-year total under the ratio rule ($0.32–0.53tn flat). The enterprises' national operating loss was $3.4bn in 2005 and $2.8bn in 2015 but $47.5bn in 2024, so their part is small before recent years; the loss is a trend, not a 2024 spike (NIPA 3.8: transit −$54.1bn → −$66.7bn and public housing −$27.5bn → −$40.3bn, 2019 → 2024; 2020–22 are distorted by relief). The programme-by-programme version in the debt legacy lane is now cash only, without the capital return and the capped programmes: $2.65–3.03tn, $3.77–4.31tn and $4.56–5.24tn.
+[CALCULATION: `backcast.py` → `derived/backcast_windows.csv`, concepts `*_sept27_*`; `derived/case_parts_windows.csv` (de468f2); `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv` (e03450b)]
+
+**Adopted main case (2026-09-26, schools at full average cost):** [2026-09-28: the schools case, superseded as the main case on 2026-09-27; the paragraph above.] on the $258–292bn anchor (group receipts $492.5bn, shared allocation, after the consumption key), the whole-budget rules give **$2.2–2.8tn over 2015–2024, $3.2–4.2tn over 2010–2024 and $3.9–5.2tn over 2005–2024**. The programme-by-programme version in the debt legacy lane gives $2.47–2.75tn, $3.50–3.89tn and $4.21–4.72tn. The first-year budget response ($201–246bn) gives $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn, the September 24 figures at rounding.
 [CALCULATION: `backcast.py` → `derived/backcast_windows.csv`, concepts `*_schools_full_*`, c0297e4; `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv`, 1db19c8]
 
 **Adopted main case (2026-09-24):** on the $201–246bn anchor, with the data corrections that lower the
@@ -168,6 +171,8 @@ income series. The repository holds 2022–2026 only.
 series and each assumption are separately inspectable.
 
 ## Revisions
+
+2026-09-28: the main case of 2026-09-27 ($322–387bn; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)) is carried back: $2.8–3.7tn over ten years, up from $2.2–2.8tn. Each addition follows its own national series, the capital return stays in as an imputed resource cost, and the programme version is now cash only. Concept affected: the cumulative figure's anchor.
 
 2026-09-26, later: the main case charges schools at their full average cost ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)). On that anchor the whole-budget rules give $2.2–2.8tn over ten years, up from $1.7–2.4tn, and the programme version gives $2.47–2.75tn. Concept affected: the cumulative figure's anchor.
 

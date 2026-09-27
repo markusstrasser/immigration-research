@@ -124,7 +124,7 @@ $157–194bn; the directly estimated low-skill elasticities 8.7–17.9 (ladder 1
 September 20 band; the same production shifts apply to the adopted one.
 Sampling plus donor error is about **±$12bn (1 SE)** per September 20 case and **±$10.8–10.9bn** on the
 adopted September 24 case, whose 64 specifications' 95% intervals run **$180–268bn** together
-(September 20 band: $141–221bn). [2026-09-26, later: ±$10.9–11.0bn on the schools case, whose 95% intervals run **$237–313bn** together; first-year budget response $179–267bn (eab844f).] That SE is a floor: most corrections carry ranges, not SEs. Across
+(September 20 band: $141–221bn). [2026-09-28: ±$10.55–10.66bn on the September 27 case with the benefit re-keys carried jointly, whose 95% intervals run **$301–408bn** together (796f057).] [2026-09-26, later: ±$10.9–11.0bn on the schools case, whose 95% intervals run **$237–313bn** together; first-year budget response $179–267bn (eab844f).] That SE is a floor: most corrections carry ranges, not SEs. [2026-09-28: withdrawn. The re-keys' sampling error moves against the account's (correlation about −0.4), so the joint SE is smaller than an independent append; the SE is a partial approximation whose net error is unresolved (audit ffcce20 §A).] Across
 constructions the assumptions dominate (ladder 184,
 [uncertainty lane](../infra/immigration-fiscal/uncertainty_propagation_2026_09_22/RESULT.md)).
 The **$262–357bn** proportional-service grid includes weaker proxy stress tests.
@@ -168,7 +168,7 @@ Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus soci
 ($268–383bn full span); the first-year budget response stays within $0.7bn of September 24 (4e66adb).] The transfers are not added, but they run from poorer
 to richer residents: outside the budget the bottom four fifths lose $80.7bn a year and the top
 fifth gains $46.0bn. The fiscal cost is progressive if financed by tax shares and regressive if
-by equal cuts per person (ladder 194). [2026-09-26, later: on the schools case the fiscal channel is $276.7bn, and per-person cuts take 9.8% of the bottom fifth's resources; the channels outside the budget do not move (39b854b).]
+by equal cuts per person (ladder 194). [2026-09-28: on the September 27 case the fiscal channel is $351.0bn ($306.3bn cash, $44.7bn return on public capital), and per-person cuts take 12.4% of the bottom fifth's resources; the capped programmes ($5.09bn) fall on eligible households that go without, $3.83bn of it on the bottom fifth (78766c2).] [2026-09-26, later: on the schools case the fiscal channel is $276.7bn, and per-person cuts take 9.8% of the bottom fifth's resources; the channels outside the budget do not move (39b854b).]
 
 [Who wins and who loses](immigration-winners-and-losers-2026-09-25.md) (ladder 226, September 25)
 follows every priced channel to persons. About one other resident in four or five comes out ahead:
@@ -229,7 +229,7 @@ replaced by CBO's income-tax gradient and row 5 by the pooled-MEPS figure (ladde
 The [debt legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) (ladder 207)
 prices interest on the group's past federal gaps. On the September 24 case, borrowed, the 2005–2023
 gaps leave $0.88–1.13tn of debt, on which 2024 taxpayers pay **$28.3–36.4bn** of interest
-($6.3–37.3bn across rules; September 23 case: $0.94–1.20tn and $30.5–38.9bn). [2026-09-26, later: on the schools case, $0.93–1.17tn and **$30.1–37.9bn** ($8.0–38.7bn across rules); the school step is 8.2% federal under the central convention; first-year budget response $28.2–36.3bn (1db19c8).] That
+($6.3–37.3bn across rules; September 23 case: $0.94–1.20tn and $30.5–38.9bn). [2026-09-28: on the September 27 case, cash flows only, $0.96–1.29tn and **$30.9–41.6bn** ($8.2–42.5bn across rules); the capital return and the capped programmes are reported beside it, never compounded (e03450b).] [2026-09-26, later: on the schools case, $0.93–1.17tn and **$30.1–37.9bn** ($8.0–38.7bn across rules); the school step is 8.2% federal under the central convention; first-year budget response $28.2–36.3bn (1db19c8).] That
 answers a historical question; the main case's static comparison treats existing interest as
 sunk. The line is proposed as the interest row's response, not adopted, and must never be added
 to the assigned balance or the stock to an annual figure. [2026-09-25: if adopted, it enters as its
@@ -351,7 +351,7 @@ case, 2024 dollars, no interest; the whole-budget rules alone give $1.4–2.0tn,
 $2.4–3.8tn. On the adopted $201–246bn anchor (September 24) the whole-budget rules give **$1.7–2.4tn,
 $2.5–3.6tn and $3.0–4.5tn** (September 23, $203–250bn: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn); the
 programme-by-programme version, run in the debt legacy lane, gives $1.95–2.33tn, $2.75–3.30tn and
-$3.27–3.97tn (September 23: $2.02–2.42tn, $2.82–3.39tn, $3.31–4.04tn). [2026-09-26, later: on the schools case, $258–292bn, the whole-budget rules give **$2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn**, and the programme version $2.47–2.75tn, $3.50–3.89tn and $4.21–4.72tn. The first-year budget response matches September 24 at rounding (c0297e4).] 2020–2021 supply 29–39% of the ten-year total under the rules that follow the benefit spike (over a third in the programme version) and 20% under the flat carry. Measured trend (ACS):
+$3.27–3.97tn (September 23: $2.02–2.42tn, $2.82–3.39tn, $3.31–4.04tn). [2026-09-28: on the September 27 case, $322–387bn, the whole-budget rules give **$2.8–3.7tn, $4.0–5.4tn and $4.8–6.8tn**, of which the return on public capital is $0.3–0.5tn over ten years; the cash-only programme version gives $2.65–3.03tn, $3.77–4.31tn and $4.56–5.24tn (de468f2, e03450b).] [2026-09-26, later: on the schools case, $258–292bn, the whole-budget rules give **$2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn**, and the programme version $2.47–2.75tn, $3.50–3.89tn and $4.21–4.72tn. The first-year budget response matches September 24 at rounding (c0297e4).] 2020–2021 supply 29–39% of the ten-year total under the rules that follow the benefit spike (over a third in the programme version) and 20% under the flat carry. Measured trend (ACS):
 per-capita income 0.52→0.61 of the national figure over 2008–2024, median household
 income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and
 2021–2023 and none in 2024. Model ranges, not intervals; a measured series needs the

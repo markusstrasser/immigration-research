@@ -286,7 +286,7 @@ Medicare were 42–47% smaller in 2005, refundable credits were 4.4 times their 
 2021, police, courts and prisons were flat. Carrying the 2024 position back on those series
 gives about $1.3–2.2tn over ten years, $2.0–3.3tn over fifteen and $2.4–3.9tn over twenty on
 the September 20 anchor, and $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn on the adopted September 24 one
-(whole-budget rules only; September 23: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn) [2026-09-26, later: $2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn on the main case with schools at full cost, $258–292bn; the first-year budget response matches September 24 at rounding];
+(whole-budget rules only; September 23: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn) [2026-09-28: $2.8–3.7tn, $4.0–5.4tn and $4.8–6.8tn on the September 27 case, $322–387bn, of which the return on public capital, an imputed cost rather than cash, is $0.3–0.5tn over ten years] [2026-09-26, later: $2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn on the main case with schools at full cost, $258–292bn; the first-year budget response matches September 24 at rounding];
 2020–2021 supply 29–39% of the ten-year figure where the rules follow the benefit spike, and are probably over-attributed. The
 group's own programme use in earlier years is unmeasured. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md)]
 
@@ -681,3 +681,4 @@ they get more prominence.
   and the CPS over-counts rather than under-counts the Mexico-born against the ACS. Concept
   affected: the reliability of survey-keyed shares.
 - 2026-09-28: entry 4's innovation sentence gained a bracket. After the September 26 schooling correction the patent term is positive and imprecise, not a null (flagged by the [adversarial audit](immigration-adversarial-audit-2026-09-28.md) §4, which corrected the same sentence in the real-costs memo). Nothing is added. Concept affected: unpriced innovation benefits.
+- 2026-09-28: entry 8 gained the September 27 case's back-cast ($2.8–3.7tn over ten years; de468f2). Concept affected: the cumulative figure's anchor.
