@@ -1,0 +1,129 @@
+gate,value,pass
+mexico 2005: rounded edition within 5 of unrounded,1.0,True
+mexico 2006: rounded edition within 5 of unrounded,-4.0,True
+mexico 2007: rounded edition within 5 of unrounded,4.0,True
+mexico 2008: rounded edition within 5 of unrounded,0.0,True
+mexico 2009: rounded edition within 5 of unrounded,1.0,True
+mexico 2010: rounded edition within 5 of unrounded,4.0,True
+mexico 2011: rounded edition within 5 of unrounded,-4.0,True
+mexico 2012: rounded edition within 5 of unrounded,1.0,True
+mexico 2013: rounded edition within 5 of unrounded,-3.0,True
+mexico 2014: rounded edition within 5 of unrounded,-3.0,True
+mexico 2015: rounded edition within 5 of unrounded,5.0,True
+mexico 2016: rounded edition within 5 of unrounded,-4.0,True
+mexico 2017: rounded edition within 5 of unrounded,-4.0,True
+mexico 2018: rounded edition within 5 of unrounded,4.0,True
+mexico 2019: rounded edition within 5 of unrounded,4.0,True
+mexico 2020: rounded edition within 5 of unrounded,0.0,True
+mexico 2021: rounded edition within 5 of unrounded,2.0,True
+mexico 2022: rounded edition within 5 of unrounded,-1.0,True
+india 2005: rounded edition within 5 of unrounded,2.0,True
+india 2006: rounded edition within 5 of unrounded,3.0,True
+india 2007: rounded edition within 5 of unrounded,5.0,True
+india 2008: rounded edition within 5 of unrounded,-1.0,True
+india 2009: rounded edition within 5 of unrounded,1.0,True
+india 2010: rounded edition within 5 of unrounded,1.0,True
+india 2011: rounded edition within 5 of unrounded,3.0,True
+india 2012: rounded edition within 5 of unrounded,3.0,True
+india 2013: rounded edition within 5 of unrounded,5.0,True
+india 2014: rounded edition within 5 of unrounded,4.0,True
+india 2015: rounded edition within 5 of unrounded,2.0,True
+india 2016: rounded edition within 5 of unrounded,-1.0,True
+india 2017: rounded edition within 5 of unrounded,1.0,True
+india 2018: rounded edition within 5 of unrounded,0.0,True
+india 2019: rounded edition within 5 of unrounded,-1.0,True
+india 2020: rounded edition within 5 of unrounded,0.0,True
+india 2021: rounded edition within 5 of unrounded,-3.0,True
+india 2022: rounded edition within 5 of unrounded,5.0,True
+china 2005: rounded edition within 5 of unrounded,-3.0,True
+china 2006: rounded edition within 5 of unrounded,5.0,True
+china 2007: rounded edition within 5 of unrounded,3.0,True
+china 2008: rounded edition within 5 of unrounded,-3.0,True
+china 2009: rounded edition within 5 of unrounded,3.0,True
+china 2010: rounded edition within 5 of unrounded,-3.0,True
+china 2011: rounded edition within 5 of unrounded,-1.0,True
+china 2012: rounded edition within 5 of unrounded,5.0,True
+china 2013: rounded edition within 5 of unrounded,-2.0,True
+china 2014: rounded edition within 5 of unrounded,-2.0,True
+china 2015: rounded edition within 5 of unrounded,-3.0,True
+china 2016: rounded edition within 5 of unrounded,2.0,True
+china 2017: rounded edition within 5 of unrounded,-1.0,True
+china 2018: rounded edition within 5 of unrounded,-2.0,True
+china 2019: rounded edition within 5 of unrounded,-1.0,True
+china 2020: rounded edition within 5 of unrounded,-1.0,True
+china 2021: rounded edition within 5 of unrounded,2.0,True
+china 2022: rounded edition within 5 of unrounded,4.0,True
+philippines 2005: rounded edition within 5 of unrounded,-1.0,True
+philippines 2006: rounded edition within 5 of unrounded,-2.0,True
+philippines 2007: rounded edition within 5 of unrounded,-1.0,True
+philippines 2008: rounded edition within 5 of unrounded,-2.0,True
+philippines 2009: rounded edition within 5 of unrounded,-1.0,True
+philippines 2010: rounded edition within 5 of unrounded,3.0,True
+philippines 2011: rounded edition within 5 of unrounded,4.0,True
+philippines 2012: rounded edition within 5 of unrounded,-1.0,True
+philippines 2013: rounded edition within 5 of unrounded,4.0,True
+philippines 2014: rounded edition within 5 of unrounded,3.0,True
+philippines 2015: rounded edition within 5 of unrounded,-3.0,True
+philippines 2016: rounded edition within 5 of unrounded,1.0,True
+philippines 2017: rounded edition within 5 of unrounded,2.0,True
+philippines 2018: rounded edition within 5 of unrounded,4.0,True
+philippines 2019: rounded edition within 5 of unrounded,-3.0,True
+philippines 2020: rounded edition within 5 of unrounded,-2.0,True
+philippines 2021: rounded edition within 5 of unrounded,-1.0,True
+philippines 2022: rounded edition within 5 of unrounded,-1.0,True
+all 2005: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2005: Total - country rows within the 9 withheld (D) cells x 9,12.0,True
+all 2006: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2006: Total - country rows within the 6 withheld (D) cells x 9,10.0,True
+all 2007: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2007: Total - country rows within the 4 withheld (D) cells x 9,6.0,True
+all 2008: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2008: Total - country rows within the 8 withheld (D) cells x 9,11.0,True
+all 2009: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2009: Total - country rows within the 2 withheld (D) cells x 9,3.0,True
+all 2010: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2010: Total - country rows within the 3 withheld (D) cells x 9,5.0,True
+all 2011: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2011: Total - country rows within the 4 withheld (D) cells x 9,7.0,True
+all 2012: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2012: Total - country rows within the 5 withheld (D) cells x 9,8.0,True
+all 2013: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2013: Total - country rows within the 2 withheld (D) cells x 9,5.0,True
+all 2014: country-sheet Total = Yearbook Table 6 Parents,-3.0,True
+all 2014: Total - country rows within the 3 withheld (D) cells x 9,4.0,True
+all 2015: country-sheet Total = Yearbook Table 6 Parents,1.0,True
+all 2015: Total - country rows within the 2 withheld (D) cells x 9,3.0,True
+all 2016: country-sheet Total = Yearbook Table 6 Parents,4.0,True
+all 2016: Total - country rows within the 2 withheld (D) cells x 9,4.0,True
+all 2017: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2017: Total - country rows within the 2 withheld (D) cells x 9,3.0,True
+all 2018: country-sheet Total = Yearbook Table 6 Parents,-2.0,True
+all 2018: Total - country rows within the 2 withheld (D) cells x 9,5.0,True
+all 2019: country-sheet Total = Yearbook Table 6 Parents,-2.0,True
+all 2019: Total - country rows within the 2 withheld (D) cells x 9,5.0,True
+all 2020: country-sheet Total = Yearbook Table 6 Parents,1.0,True
+all 2020: Total - country rows within the 4 withheld (D) cells x 9,6.0,True
+all 2021: country-sheet Total = Yearbook Table 6 Parents,-5.0,True
+all 2021: Total - country rows within the 4 withheld (D) cells x 9,7.0,True
+all 2022: country-sheet Total = Yearbook Table 6 Parents,-5.0,True
+all 2022: Total - country rows within the 2 withheld (D) cells x 9,4.0,True
+all 2023: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2024: country-sheet Total = Yearbook Table 6 Parents,0.0,True
+all 2014: yearbook_lpr_fy2023 Table 6 = unrounded Total (to rounding),3.0,True
+all 2015: yearbook_lpr_fy2023 Table 6 = unrounded Total (to rounding),-1.0,True
+all 2015: yearbook_lpr_fy2024 Table 6 = unrounded Total (to rounding),-1.0,True
+all 2016: yearbook_lpr_fy2023 Table 6 = unrounded Total (to rounding),-4.0,True
+all 2016: yearbook_lpr_fy2024 Table 6 = unrounded Total (to rounding),-4.0,True
+all 2017: yearbook_lpr_fy2023 Table 6 = unrounded Total (to rounding),0.0,True
+all 2017: yearbook_lpr_fy2024 Table 6 = unrounded Total (to rounding),0.0,True
+all 2018: yearbook_lpr_fy2023 Table 6 = unrounded Total (to rounding),2.0,True
+all 2018: yearbook_lpr_fy2024 Table 6 = unrounded Total (to rounding),2.0,True
+all 2019: yearbook_lpr_fy2023 Table 6 = unrounded Total (to rounding),2.0,True
+all 2019: yearbook_lpr_fy2024 Table 6 = unrounded Total (to rounding),2.0,True
+all 2020: yearbook_lpr_fy2023 Table 6 = unrounded Total (to rounding),-1.0,True
+all 2020: yearbook_lpr_fy2024 Table 6 = unrounded Total (to rounding),-1.0,True
+all 2021: yearbook_lpr_fy2023 Table 6 = unrounded Total (to rounding),5.0,True
+all 2021: yearbook_lpr_fy2024 Table 6 = unrounded Total (to rounding),5.0,True
+all 2022: yearbook_lpr_fy2023 Table 6 = unrounded Total (to rounding),5.0,True
+all 2022: yearbook_lpr_fy2024 Table 6 = unrounded Total (to rounding),5.0,True
+NIS parents with valid birth year >= 95%,0.9869346733668342,True
