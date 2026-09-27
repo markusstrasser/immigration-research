@@ -102,10 +102,12 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
   (`core.autocrlf=input`), so CRLF outputs never byte-match on rerun (cd96b04).
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
   been state-priced since 2026-09-20, not national-average). The adopted case is one engine
-  run: `infra/immigration-fiscal/main_case_schools_full_2026_09_26/main_case.cjs`, on the
-  package of `main_case_2026_09_26` (now the first-year budget response). The general-government and school
-  responses are engine state and travel in `derived/corrections.json` → `meta.responses`; a
-  consumer that applies the payload must set them too.
+  run plus a post-engine return on public capital:
+  `infra/immigration-fiscal/main_case_long_run_2026_09_27/main_case.cjs`, whose package imports the
+  schools case's (`main_case_schools_full_2026_09_26`). The line and receipt responses and the capital
+  return travel in `derived/corrections.json` → `meta.responses` and `meta.capital_return`. A consumer
+  that applies the payload must set all of them. One that builds engine state calls the package's
+  `stateFor`; one that needs the full cost calls `evaluateFull`.
 
 - Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
   verify stored source hashes, including upstream
@@ -155,10 +157,18 @@ substituting a web summary or declaring a measurement unavailable:
   2026-09-26 general government is read as a finite removal (0.60–0.85), the consumption key is
   corrected for saving and remittances
   ([decision](decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)), and schools
-  are charged at their full average cost per pupil: **$258–292bn** ($258.5–292.0bn; low side with
-  the within-district 0.836: $234–270bn; first-year budget response with CBO's 0.63–0.66: $201–246bn;
-  September 24: $201–246bn; September 23: $203–250bn; September 20: $165–197bn;
-  [decision](decisions/2026-09-26-main-case-schools-full-cost.md)). Defense,
+  are charged at their full average cost per pupil
+  ([decision](decisions/2026-09-26-main-case-schools-full-cost.md)). Since 2026-09-27 the main case also
+  takes long-run road and park responses, rental assistance at 1, a 2–3% real return on public capital
+  and every government enterprise: **$322–387bn**. Earlier and companion figures:
+  - $321.8–387.4bn unrounded;
+  - low side with the within-district 0.836: $296–363bn;
+  - the schools case: $258–292bn;
+  - first-year budget response with CBO's 0.63–0.66: $201–246bn;
+  - September 24: $201–246bn; September 23: $203–250bn; September 20: $165–197bn.
+
+  ([decision](decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md).) The capital
+  return is an imputed resource cost, never a debt flow. Defense,
   existing interest and business subsidies stay at **zero response by assumption**; see the
   [complete annual account](research/immigration-complete-annual-account-2026-09-20.md)
   and FAQ entry 2 for the sensitivity.
