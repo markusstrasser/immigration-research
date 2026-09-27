@@ -7,13 +7,33 @@ counted as a dollar. Each channel's total is read from its lane's derived files;
 divides totals among persons, and never re-estimates one.
 
 Cases (--case, CASES): the adopted main case the run allocates, and the case before it, which the run
-keeps as the positive control of its federal split and regression. The default, sept26_schools, is the
-main case adopted late on 2026-09-26 (schools at full average cost; ladder 230), after sept26 (the
-one-year scenario; ladder 229). sept24 (ladder 219) rebuilds the files this lane committed on the
-September 24 case byte for byte. Every case writes to derived/ unless --out-dir is given; derived/
-holds the default case. The consumption key's proposal row is sept24's only, since the later cases
-carry the key inside the fiscal channel. Under a school response of 1 the school dilution rows stay in
-the role table (decisions/2026-09-26-main-case-schools-full-cost.md): nothing is left unfunded.
+keeps as the positive control of its federal split and regression. The default, sept27, is the main
+case adopted on 2026-09-27 (ladder 239: the return on public capital, long-run road and park responses,
+rental assistance at 1 and every government enterprise), after sept26_schools (schools at full average
+cost; ladder 230) and sept26 (the one-year scenario; ladder 229). sept24 (ladder 219) rebuilds the files
+this lane committed on the September 24 case byte for byte, and each later case the files of its own
+run. Every case writes to derived/ unless --out-dir is given; derived/ holds the default case. The
+consumption key's proposal row is sept24's only, since the later cases carry the key inside the fiscal
+channel. Under a school response of 1 the school dilution rows stay in the role table
+(decisions/2026-09-26-main-case-schools-full-cost.md): nothing is left unfunded.
+
+From September 27 (CASES capped, congestion, preferences):
+ - The fiscal channel keeps three financing columns apart (the debt lane's split, one definition per
+   column): cash financing, the resource cost (the return on public capital, enterprise capital included,
+   an imputed cost that is never borrowed, so none of it goes to future taxpayers) and the displaced
+   beneficiaries of the capped programs. fiscal_<conv> is cash financed today plus the resource cost, and
+   fiscal_cash_<conv> and fiscal_resource_<conv> split it. The enterprise surplus receipt is a cash line.
+ - Rental assistance and LIHEAP are capped and rationed, so without the group eligible households take
+   their slots: displaced_beneficiaries falls on eligible non-recipients under both conventions, keyed by
+   the distribution lane's capped_keys() (renter households below 50% of the state median income outside
+   public or subsidized housing, 24 CFR 5.603 and 982.201(b); households below 150% of the HHS 2024
+   poverty guideline without energy assistance, 42 U.S.C. 8624(b)(2)(B), 89 FR 2961). It is in the account
+   net. TANF-type aid is a block grant and stays in the fiscal channel.
+ - Congestion is the long-run lane's re-derivation (roads now respond, so lanes shrink with the group),
+   split by state from that lane's own per-area arm.
+ - The preferences row is an attribution under a stated replacement rule, with the other included
+   recipients' part carried and the DBE premium reconciled against the fiscal allocation (adversarial
+   audit 2026-09-28 section 3).
 
 Base: distribution_weights_2026_09_23 (ladder 194). Its code is loaded from git at the case's base
 commit, the commit that moved it to that case, so later edits to its working tree cannot change this
@@ -48,14 +68,16 @@ Sister-lane rows map to key templates through an explicit `key` column or the pa
 test_winners_losers.py holds the ingestion's positive controls on a synthetic frame.
 
 Run from the repository root (specs.cjs first, with the same --case and --out-dir):
-  node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs [--case sept24 --out-dir DIR]
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py [--case sept24 --out-dir DIR]
+  node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs [--case sept26_schools --out-dir DIR]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py [--case sept26_schools --out-dir DIR]
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/winners_losers_2026_09_24/ -q
 """
 from __future__ import annotations
 
 import argparse
+import contextlib
 import hashlib
+import importlib.util
 import io
 import json
 import re
@@ -97,6 +119,14 @@ BASE26S_COMMIT = "39b854b"
 DEBT26_COMMIT = "e62fccb"
 DEBT26S_COMMIT = "1db19c8"
 GEN26S_COMMIT = "0f22f0c"
+# The September 27 case's pins (parent, 2026-09-28). Distribution: channel_by_quintile.csv, inputs.json with
+# its financing columns and case_ends_sept27.json. Debt legacy: stocks.csv and summary.json (case.band includes
+# the capital return; case.main_profile is long_run_non_school_full) with the per-correction files. Generation:
+# generation_results.csv and generation_summary.json on the case. The back-cast (de468f2) is not read here.
+BASE27_COMMIT = "78766c2"
+DEBT27_COMMIT = "e03450b"
+GEN27_COMMIT = "8654a0c"
+OLD_PROFILE = "cbo_category_lag_non_school_full"   # every case's main profile before September 27
 DEBT_REL = "infra/immigration-fiscal/debt_legacy_2026_09_23/derived"
 GEN_REL = "infra/immigration-fiscal/generation_account_2026_09_24/derived"
 LEVELS = ("low", "central", "high")
@@ -135,7 +165,12 @@ SISTER_COLUMNS = ["group", "channel", "direction", "bn_low", "bn_central", "bn_h
 # debt and debt_files (debt legacy), gen (generation; gen_split names the generation_summary.json key
 # that holds the case's split when generation_results.csv holds a later case), the sister commits and
 # the debt lane's interest at the main benchmark (gated to 5e-4). published_dir holds the case's
-# real-costs totals and band variants (ruling 5). sept23 is a previous case only.
+# real-costs totals and band variants (ruling 5). sept23 is a previous case only. From September 27 a case
+# also names its main profile and the variant of its lane's main_case_bands.csv that holds the case before it
+# (profile, prev_variant; before, OLD_PROFILE and the previous model's name), and three switches: capped
+# (the capped programs' displaced beneficiaries and the three financing columns), congestion ("long_run":
+# the response lane's re-derived congestion) and preferences ("attribution": the preferences row under its
+# stated replacement rule).
 CASES = {
     "sept23": dict(model="adopted_2026_09_23", label="September 23 case (decision 4's figure)",
                    base=SEPT23_COMMIT, debt=DEBT_COMMIT, interest=(30.4759, 38.8646)),
@@ -156,9 +191,16 @@ CASES = {
                            gen_split=None, sisters=SISTER26_COMMITS, interest=(30.1448, 37.8726),
                            consumption_proposal=False, published="sept26_propagation_2026_09_26",
                            published_dir="sept26_propagation_2026_09_26/derived"),
+    "sept27": dict(model="adopted_2026_09_27", label="September 27 case", prev="sept26_schools",
+                   lane="main_case_long_run_2026_09_27", ladder="239", date="2026-09-27", base=BASE27_COMMIT,
+                   debt=DEBT27_COMMIT, debt_files=DEBT27_COMMIT, gen=GEN27_COMMIT, gen_split=None,
+                   sisters=SISTER26_COMMITS, interest=(30.9346, 41.6323), consumption_proposal=False,
+                   published="sept27_propagation_2026_09_27", published_dir="sept27_propagation_2026_09_27/derived",
+                   profile="long_run_non_school_full", prev_variant="schools_case", capped=True,
+                   congestion="long_run", preferences="attribution"),
 }
-RUNNABLE = ("sept26_schools", "sept26", "sept24")
-DEFAULT_CASE = "sept26_schools"
+RUNNABLE = ("sept27", "sept26_schools", "sept26", "sept24")
+DEFAULT_CASE = "sept27"
 CASE: dict = {}   # the run's case with its previous case under "prev" (configure)
 # At a school response of 1 nothing is left unfunded, so the school dilution rows (priced at the
 # account's former 0.63-0.66) stay in the role table (decisions/2026-09-26-main-case-schools-full-cost.md).
@@ -214,6 +256,16 @@ PATHS = dict(   # specs, lines, bands, real_costs and band_variants are the case
     debt_corrections=FISCAL / "debt_legacy_2026_09_23/derived/corrections_federal_by_component_2024.csv",
     census_industry=SOURCES / "census_industry_2022_crosswalk.xlsx",
 )
+# Inputs only some cases read (configure adds them, so an earlier case's sources_manifest.csv keeps its rows):
+# the response lane's net_change.json (its re-derived congestion, and the highway response and key share by
+# band end) and the per-area arm in its congestion.py; the preferences lane's code and IPEDS tiers for the
+# attribution's replacement rule.
+CASE_PATHS = dict(
+    long_run_net_change=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
+    long_run_congestion_code=FISCAL / "service_response_long_run_2026_09_27/congestion.py",
+    preferences_code=FISCAL / "affirmative_action_cost_2026_09_24/calc.py",
+    preferences_tiers=FISCAL / "affirmative_action_cost_2026_09_24/derived/ipeds_tiers.csv",
+)
 # PATHS inputs read from git at the case's pinned commit, not from the working tree, because their lanes
 # have moved to later cases. sources_manifest.csv lists each at its PATHS position with the blob's sha256.
 PINNED: dict = {}
@@ -253,6 +305,12 @@ def configure(case: str, out_dir: Path | None = None) -> dict:
                  bands=FISCAL / c["lane"] / "derived/main_case_bands.csv",
                  real_costs=FISCAL / c["published_dir"] / "real_costs_totals.csv",
                  band_variants=FISCAL / c["published_dir"] / "band_variants.csv")
+    for k in CASE_PATHS:
+        PATHS.pop(k, None)
+    if c.get("congestion") == "long_run":
+        PATHS.update({k: CASE_PATHS[k] for k in ("long_run_net_change", "long_run_congestion_code")})
+    if c.get("preferences") == "attribution":
+        PATHS.update({k: CASE_PATHS[k] for k in ("long_run_net_change", "preferences_code", "preferences_tiers")})
     PINNED.clear()
     PINNED.update(generations=c["gen"], debt_corrections=c["debt_files"])
     return CASE
@@ -367,9 +425,9 @@ def fiscal_inputs():
         raise SystemExit(f"[BLOCKED] {PATHS['specs']} holds {sorted(set(s.case))}, not the {CASE['case']} run; "
                          f"run specs.cjs --case {CASE['case']} with the same --out-dir first")
     bands = pd.read_csv(PATHS["bands"])
-    bands = bands[bands.profile == "cbo_category_lag_non_school_full"].set_index("variant")
+    bands = bands[bands.profile == CASE.get("profile", OLD_PROFILE)].set_index("variant")
     out = {}
-    for case, variant in ((CASE["model"], "adopted"), (CASE["prev"]["model"], CASE["prev"]["model"])):
+    for case, variant in ((CASE["model"], "adopted"), (CASE["prev"]["model"], CASE.get("prev_variant", CASE["prev"]["model"]))):
         c = s[s.case == case]
         lo, hi = c.cost_bn.min(), c.cost_bn.max()
         gate(f"band_reproduced_{case}", np.isclose(lo, bands.loc[variant, "cost_low_bn"], atol=5e-5)
@@ -403,7 +461,20 @@ def fiscal_one_definition(B, fin):
         fin[case]["A_one_definition"] = A
         out[case] = dict(A=A, engine_A={end: float(e[end]["A_bn"]) for end in ("low", "high")}, diff=diff,
                          A_mid=float(ft["A_mid"]))
+        if "capped_programs" in ft:
+            # The distribution lane's case_ends: its capital return must be the engine run's at both ends.
+            cap = {end: float(e[end]["capital_total_bn"]) for end in ("low", "high")}
+            gate(f"capital_return_{arg}_matches_engine", all(abs(ft["capital_return"][j] - cap[end]) < 1e-9
+                                                             for j, end in enumerate(("low", "high"))),
+                 distribution_lane=ft["capital_return"], engine=cap)
+            fin[case]["capped"] = dict(programs=ft["capped_programs"], capital_return=ft["capital_return"])
     return out
+
+
+# The debt lane's columns for each financing part of its 2024 split. Before September 27 its lines carry no
+# financing column and every line is cash.
+FINANCING = {"cash": ("fiscal_gap_bn", "federal_bn"), "resource_cost": ("resource_cost_bn", "resource_cost_federal_bn"),
+             "displaced_beneficiaries": ("displaced_bn", "displaced_federal_bn")}
 
 
 def federal_split(fin):
@@ -415,16 +486,31 @@ def federal_split(fin):
     per-line fractions, the correction rows (school_reprice, college_rekey, lane_constants) counted
     once as lines, less the induced receipts F at its federal share, reproduce its federal part and
     fiscal gap. On the case (its debt commit) the split is used; on the case before it (that case's
-    debt commit) the same recomputation is the method's positive control."""
+    debt commit) the same recomputation is the method's positive control.
+
+    From September 27 the lane keeps three financing columns apart (its lines file's financing column):
+    cash, the resource cost (the capital components, side capital_return; specs.cjs writes them as lines
+    capital_<id>, the debt lane as <id>) and the displaced beneficiaries of
+    the capped programs. Each part is recomputed from its own lines and gated against its own columns. The
+    row's cost_bn is then their sum, the whole A + F; federal_bn, state_local_bn and federal_share are the
+    lane's cash columns; the other two parts sit beside them under the lane's names."""
     lines = pd.read_csv(PATHS["lines"])
     out, info = {}, {}
-    for case, commit in ((CASE["prev"]["model"], CASE["prev"]["debt"]), (CASE["model"], CASE["debt"])):
+    for case, commit, profile in ((CASE["prev"]["model"], CASE["prev"]["debt"], CASE["prev"].get("profile", OLD_PROFILE)),
+                                  (CASE["model"], CASE["debt"], CASE.get("profile", OLD_PROFILE))):
         dl = debt_csv("federal_split_2024_lines.csv", commit)
         split = debt_csv("federal_split_2024.csv", commit)
         f_ind = debt_json("summary.json", commit)["induced_receipts_federal_share_2024"]
         checks = {}
         for end in ("low", "high"):
-            le = lines[(lines.case == case) & (lines.end == end)].set_index(["side", "line"])
+            le = lines[(lines.case == case) & (lines.end == end)].copy()
+            # specs.cjs names each capital component capital_<id>; the debt lane names it <id>.
+            cap = (le.side == "capital_return").to_numpy()
+            if cap.any():
+                if not le.line[cap].str.startswith("capital_").all():
+                    raise SystemExit(f"[BLOCKED] capital lines not named capital_<id> ({case} {end})")
+                le.loc[cap, "line"] = le.line[cap].str.slice(len("capital_"))
+            le = le.set_index(["side", "line"])
             gate(f"line_ids_unique_{case}_{end}", le.index.is_unique)
             gap = -le.effect_bn                       # cost to other residents, by line
             F = fin[case]["ends"][end]["F_bn"]
@@ -437,6 +523,8 @@ def federal_split(fin):
                     gate(f"debt_lines_F_{case}_{end}_{conv}", np.isclose(frac.gap_bn[fk], -F, atol=1e-5)
                          and np.isclose(frac.federal_bn[fk], -F * f_ind, atol=1e-5),
                          lane=[float(frac.gap_bn[fk]), float(frac.federal_bn[fk])], engine=[-F, -F * f_ind])
+                    if "financing" in frac and frac.financing[fk] != "cash":
+                        raise SystemExit(f"[BLOCKED] the debt lane's induced receipts are not cash ({case} {end} {conv})")
                     frac = frac.drop(index=[fk])
                 fr = (frac.federal_bn / frac.gap_bn).where(frac.gap_bn != 0, 0.0)
                 # Every line with a responsive effect has a fraction, and every line the lane lists
@@ -448,10 +536,14 @@ def federal_split(fin):
                                      f"without a fraction {unknown}; not in the engine run {absent}")
                 common = gap.index.intersection(frac.index)
                 line_diff = float((gap[common] - frac.gap_bn[common]).abs().max())
-                fed = float((gap[common] * fr[common]).sum()) - F * f_ind
-                cost = float(gap.sum()) - F
-                ref = split[(split.profile == "cbo_category_lag_non_school_full") & (split.end == end)
-                            & (split.convention == conv)]
+                parts = "financing" in frac
+                if parts and not frac.financing.isin(list(FINANCING)).all():
+                    raise SystemExit(f"[BLOCKED] unknown financing in the debt lane's lines: "
+                                     f"{sorted(set(frac.financing) - set(FINANCING))}")
+                sel = {p: common[(frac.financing[common] == p).to_numpy()] if parts else common for p in FINANCING}
+                fed = float((gap[sel["cash"]] * fr[sel["cash"]]).sum()) - F * f_ind
+                cost = float((gap[sel["cash"]] if parts else gap).sum()) - F
+                ref = split[(split.profile == profile) & (split.end == end) & (split.convention == conv)]
                 gate(f"debt_split_row_unique_{case}_{end}_{conv}", len(ref) == 1, rows=len(ref))
                 ref = ref.iloc[0]
                 gate(f"federal_split_recomputed_{case}_{end}_{conv}",
@@ -461,6 +553,15 @@ def federal_split(fin):
                 row = dict(cost_bn=float(ref.fiscal_gap_bn), federal_bn=float(ref.federal_bn),
                            state_local_bn=float(ref.state_local_bn), federal_share=float(ref.federal_share),
                            recomputed_federal_bn=fed, max_line_diff_bn=line_diff)
+                if parts:
+                    for p in ("resource_cost", "displaced_beneficiaries"):
+                        c_col, f_col = FINANCING[p]
+                        cp, fp = float(gap[sel[p]].sum()), float((gap[sel[p]] * fr[sel[p]]).sum())
+                        gate(f"federal_split_recomputed_{p}_{case}_{end}_{conv}",
+                             np.isclose(cp, ref[c_col], atol=1e-5) and np.isclose(fp, ref[f_col], atol=1e-5),
+                             recomputed=[cp, fp], lane=[float(ref[c_col]), float(ref[f_col])])
+                        row.update({c_col: float(ref[c_col]), f_col: float(ref[f_col])})
+                    row["cost_bn"] = float(ref.fiscal_gap_bn + ref.resource_cost_bn + ref.displaced_bn)
                 for syn in ("school_reprice", "college_rekey", "lane_constants"):
                     if ("spending", syn) in frac.index:
                         row[f"{syn}_bn"] = float(frac.gap_bn[("spending", syn)])
@@ -559,6 +660,110 @@ def preference_inputs():
     return dict(group_part=mex, regime=regime, parts={k: float(v) for k, v in parts.items()})
 
 
+PREFERENCE_RULE = (
+    "proportional replacement: a program's preferred placements scale with its eligible pool, so without the group "
+    "its seats, jobs and contracts go to the non-preferred pool in the proportions of the producer's race-neutral "
+    "counterfactual (freed seats as AKR, Espenshade-Chung and Hinrichs split them; contractor jobs over non-Hispanic, "
+    "non-Black earners; contracts over incorporated self-employment earnings; the premium over taxes), and no other "
+    "eligible group takes them. Under a fixed-target rule other eligible recipients would take the placements and "
+    "white natives would recover nothing")
+
+
+def preference_attribution(d, pr):
+    """The preferences row as an attribution (adversarial audit 2026-09-28, section 3). The producer
+    (affirmative_action_cost_2026_09_24) prices non-Hispanic white natives' loss from the whole regime
+    against race-neutral selection, and this lane's row is that loss times the Mexican-origin share of each
+    channel's beneficiaries. A beneficiary share is neither a policy response nor a replacement allocation,
+    so the row states the rule it assumes (PREFERENCE_RULE). Under that rule the non-preferred pool's other
+    members, other residents who are not white natives, gain too, in the producer's own proportions: the
+    white natives' part times (1 - s) / s, where s is their share of the pool:
+      admissions: s = W x nat by tier boundary (W the white share of freed seats, nat the native share of
+        non-Hispanic white BA+ aged 22-40), over the boundaries' Hispanic freed seats and per-worker losses;
+      contractor hiring: s = w x nat_w (w the non-Hispanic white share of non-Hispanic, non-Black earners);
+      lost profits: s = white natives' share of incorporated self-employment earnings;
+      taxpayer premium: s = their share of income, payroll and state income tax.
+    The CPS shares are recomputed on this frame with the producer's definitions (its weight MARSUPWT/100
+    equals this frame's pwwgt0 to 0.005 persons) and gated to its logged values; W, the seat losses and the
+    per-worker losses come from its calc.py (module constants only, never main()) and ipeds_tiers.csv,
+    gated to its logged crossings and per-worker losses. The group's own pool share (its taxes, its firms)
+    goes to the others, since without the group the remaining pool takes it [INFERENCE].
+
+    The DBE premium (row 3c) is a price inside observed spending on DOT-assisted contracts. Since
+    September 27 the fiscal channel removes the group's key share times the response of highway spending
+    and highway capital (the response lane's net_change.json: key share 0.0806; highway response 0.733 at
+    the low end, 1 at the high end). That part of the premium is already in the fiscal channel and is
+    netted from the row, at the mean of the two ends; the rest is a price change the account does not
+    see. Row 3d, the 8(a) premium, is 0 in the central composition."""
+    spec = importlib.util.spec_from_file_location("preferences_calc", PATHS["preferences_code"])
+    M = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(M)
+    log = PATHS["preferences_log"].read_text()
+    num = lambda s: float(s.replace(",", ""))  # noqa: E731
+    # CPS shares, the producer's definitions (calc.py cps()), all person records.
+    w, earn = d.pw.to_numpy(), d.PEARNVAL.to_numpy(float)
+    nhw = d.PEHSPNON.eq(2).to_numpy() & d.PRDTRACE.eq(1).to_numpy()
+    wn, hisp = nhw & d.native.to_numpy(), d.PEHSPNON.eq(1).to_numpy()
+    earner, ba, age = earn > 0, d.A_HGA.to_numpy() >= 43, d.A_AGE.to_numpy()
+    inc_se = d.A_CLSWKR.eq(5).to_numpy()
+    ws = lambda m, v=None: float((w[m] * (1 if v is None else v[m])).sum())  # noqa: E731
+    tax = d.FEDTAX_AC.clip(lower=0).to_numpy(float) + d.FICA.clip(lower=0).to_numpy(float) \
+        + d.STATETAX_A.clip(lower=0).to_numpy(float)
+    c = dict(nat_ba=ws(wn & ba & (age >= 22) & (age <= 40)) / ws(nhw & ba & (age >= 22) & (age <= 40)),
+             emp_wn_ba=ws(wn & ba & (age >= 22) & (age <= 61) & earner) / ws(wn & ba & (age >= 22) & (age <= 61)),
+             e_wn_ba=ws(wn & earner & ba & (age >= 25) & (age <= 64), earn) / ws(wn & earner & ba & (age >= 25) & (age <= 64)),
+             nat_w=ws(wn & earner) / ws(nhw & earner),
+             white_of_nonpref=ws(nhw & earner) / ws(earner & ~hisp & ~(d.PEHSPNON.eq(2).to_numpy() & d.PRDTRACE.eq(2).to_numpy())),
+             se_wn=ws(wn & inc_se & earner, earn) / ws(inc_se & earner, earn),
+             tax_wn=ws(wn, tax) / ws(np.ones(len(d), bool), tax))
+    logged = dict(nat_ba=r"native share of NH-white BA\+ 22-40: ([\d.]+)", emp_wn_ba=r"share with earnings,\s+ages 22-61: ([\d.]+)",
+                  e_wn_ba=r"BA\+ aged 25-64 mean earnings \$([\d,]+)", nat_w=r"native share of NH-white workers: ([\d.]+)",
+                  white_of_nonpref=r"neither\s+Hispanic nor non-Hispanic Black: ([\d.]+)",
+                  se_wn=r"of incorporated\s+self-employed earnings ([\d.]+)", tax_wn=r"income\+payroll\+state income tax ([\d.]+)")
+    for k, pat in logged.items():
+        v = num(re.search(pat, log).group(1))
+        gate(f"preferences_cps_{k}_reproduced", abs(c[k] - v) <= (0.5 if k == "e_wn_ba" else 5e-4) + 1e-9, frame=c[k], lane=v)
+    # Admissions at the central scenario: the producer's crossings by tier boundary (calc.py admissions()).
+    i = 1
+    tiers = pd.read_csv(PATHS["preferences_tiers"]).set_index("tier")
+    per_worker = {"E": c["emp_wn_ba"] * M.p("elite_earn_2007") * M.CPI_2024 / M.CPI_2007 * M.p("r_elite")[i],
+                  "S": c["emp_wn_ba"] * c["e_wn_ba"] * M.p("r_sel")[i]}
+    cross = re.search(r"central\s+boundary E black [\d,]+; boundary E hisp ([\d,]+); boundary S black [\d,]+; "
+                      r"boundary S hisp ([\d,]+)", log)
+    lost = re.search(r"central\s+2024 stock cost by boundary: E \$[\d.]+bn \(loss per affected worker-year \$([\d,]+)\), "
+                     r"S \$[\d.]+bn \(\$([\d,]+)\)", log)
+    white = others = 0.0
+    for j, (b, rows, red, W) in enumerate((("E", ["E"], M.RED_E, M.W_E), ("S", ["E", "S"], M.RED_S, M.W_S))):
+        freed = float(tiers.loc[rows, "hisp"].sum() + tiers.loc[rows, "aian"].sum()) * red["hisp"][i]
+        x = freed * W[i] * c["nat_ba"]
+        gate(f"preferences_admissions_boundary_{b}_reproduced", abs(x - num(cross.group(j + 1))) <= 0.5
+             and abs(per_worker[b] - num(lost.group(j + 1))) <= 0.5, crossings=x, lane_crossings=num(cross.group(j + 1)),
+             per_worker=per_worker[b], lane_per_worker=num(lost.group(j + 1)))
+        white += x * per_worker[b]
+        others += (freed - x) * per_worker[b]
+    share = dict(admissions=white / (white + others), contractor_hiring=c["white_of_nonpref"] * c["nat_w"],
+                 lost_profits=c["se_wn"], taxpayer_premium=c["tax_wn"])
+    # The DBE premium's part already in the fiscal channel.
+    net = json.loads(PATHS["long_run_net_change"].read_text())["by_band_end"]
+    kh = {end: net[end]["key_share"] * net[end]["highway_response"] for end in ("low", "high")}
+    ch = pd.read_csv(PATHS["preferences"])
+    dbe = ch[ch.channel.str.startswith("3c ")]
+    gate("preferences_dbe_premium_row_unique", len(dbe) == 1, rows=len(dbe))
+    dbe_part = float(dbe.y2024_central.iloc[0] * dbe.mex_share.iloc[0])
+    overlap = (kh["low"] + kh["high"]) / 2
+    white_parts = dict(pr["parts"], taxpayer_premium=pr["parts"]["taxpayer_premium"] - dbe_part * overlap)
+    other_parts = {p: v * (1 - share[p]) / share[p] for p, v in white_parts.items()}
+    # Elite freed seats that go to none of the four groups the sources report (race other or unknown); the
+    # admissions' others take them with the rest of 1 - W.
+    outside = lambda t: 1 - sum(t[g][1] - t[g][0] for g in ("white", "asian")) / sum(  # noqa: E731
+        t[g][0] - t[g][1] for g in ("black", "hisp"))
+    return dict(rule=PREFERENCE_RULE, cps_shares=c, white_share_of_pool=share,
+                outside_groups=dict(ec=outside(M.EC), akr=outside(M.AKR["harvard"])),
+                admissions_value_white_others=[white, others], dbe_premium_part_bn=dbe_part,
+                dbe_in_fiscal_channel_share={"low": kh["low"], "high": kh["high"], "used": overlap},
+                dbe_netted_bn=dbe_part * overlap, white_parts=white_parts, other_parts=other_parts,
+                scale={L: pr["group_part"][L] / sum(pr["parts"].values()) for L in LEVELS})
+
+
 def congestion_inputs():
     arms = pd.read_csv(PATHS["congestion_arms"]).set_index("approach")
     b1 = arms.loc["B1 population elasticity, lanes fixed"]
@@ -572,6 +777,68 @@ def congestion_inputs():
          states=by_state.sum(), lane=float(b1.central_bn))
     return dict(total={"low": float(b1.min_bn), "central": float(b1.central_bn), "high": float(b1.max_bn)},
                 state_share=(by_state / by_state.sum()).rename(index=POSTAL).to_dict())
+
+
+def congestion_long_run(b1):
+    """From September 27 roads respond in the long run, so lanes shrink without the group, and the
+    congestion item beside the account is the response lane's re-derivation (service_response_long_run_
+    2026_09_27/congestion.py, derived/net_change.json): B1 with lanes cut uniformly over urban areas by
+    the highway response times the group's key share, at central inputs, $13.99bn at the low band end and
+    $12.02bn at the high end, against B1's $19.16bn with lanes fixed.
+
+    By state: that lane's own arm per area (its setup() and the congestion lane's time_cost_arm, imported
+    read-only, never its main()), summed within the UMR areas' states. Gates: with no cut it reproduces
+    B1's state totals from metro_distribution.csv, and at each band end the lane's total. A uniform cut
+    offsets congestion in proportion to each area's delay, so where the group is thin the offset exceeds
+    its traffic and other residents there come out ahead.
+
+    Levels: central is the mean of the two ends, the fiscal channel's central; low is the low end's
+    factorial minimum and high the high end's maximum (each end's own range, as the real-costs span pairs
+    them with the fiscal band ends), each spread by its end's geography."""
+    net = json.loads(PATHS["long_run_net_change"].read_text())
+    gate("congestion_long_run_starts_from_b1", np.isclose(net["b1_lanes_fixed_bn"], b1["total"]["central"], rtol=0, atol=1e-9)
+         and np.allclose(net["b1_factorial_bn"], [b1["total"]["low"], b1["total"]["high"]], rtol=0, atol=1e-9),
+         lane=[net["b1_lanes_fixed_bn"]] + list(net["b1_factorial_bn"]))
+    spec = importlib.util.spec_from_file_location("long_run_congestion", PATHS["long_run_congestion_code"])
+    C = importlib.util.module_from_spec(spec)
+    with contextlib.redirect_stdout(io.StringIO()):
+        spec.loader.exec_module(C)
+        _, nhts, tau, vots, exposures, _ = C.setup()
+    A = C.A
+    e = exposures["2017 southwest"]
+    scope, r_h, eps = e["in_scope"].to_numpy(), nhts["2017 southwest"]["r_hours"], A.POP_FIXED_LANES["central"]
+    gate("congestion_long_run_area_states", e.state[scope].isin(POSTAL).all(), missing=int((~e.state[scope].isin(POSTAL)).sum()))
+
+    def by_state(lam, cut):
+        # The lane's arm() per area rather than summed: the same log cost and time-cost arm.
+        log_c0 = eps * np.log1p(-e.s) - lam * np.log1p(-cut)
+        res = A.time_cost_arm(e, log_c0, 0.0, tau["central"], e.phi_commute_route, vots["central"], 2022, r_h)
+        usd = pd.Series(np.where(scope, res["usd"].to_numpy(), 0.0) / 1e9)
+        return usd[scope].groupby(e.state[scope].map(POSTAL).to_numpy()).sum()
+    fixed = by_state(0.0, 0.0)
+    worst = max(abs(fixed.get(s, 0.0) - v * b1["total"]["central"]) for s, v in b1["state_share"].items())
+    gate("congestion_long_run_reproduces_b1_by_state", np.isclose(fixed.sum(), b1["total"]["central"], rtol=0, atol=1e-9)
+         and worst < 1e-9 and set(fixed.index) == set(b1["state_share"]), total=float(fixed.sum()), max_state_gap_bn=worst)
+    ends = {}
+    for end in ("low", "high"):
+        v = net["by_band_end"][end]
+        s = by_state(A.LANES_COEF_T10, v["lane_cut"])
+        lane_arm = C.arm(e, scope, e.s, eps, A.LANES_COEF_T10, v["lane_cut"], tau["central"], vots["central"], 2022, r_h)
+        gate(f"congestion_long_run_{end}_end_reproduced", np.isclose(s.sum(), v["congestion_bn"], rtol=0, atol=1e-9)
+             and np.isclose(lane_arm, v["congestion_bn"], rtol=0, atol=1e-9), states=float(s.sum()),
+             arm=float(lane_arm), lane=v["congestion_bn"])
+        ends[end] = s
+    state = {"low": ends["low"] * (net["by_band_end"]["low"]["congestion_range_bn"][0] / ends["low"].sum()),
+             "central": (ends["low"] + ends["high"]) / 2,
+             "high": ends["high"] * (net["by_band_end"]["high"]["congestion_range_bn"][1] / ends["high"].sum())}
+    total = {L: float(state[L].sum()) for L in LEVELS}
+    return dict(total=total, state_bn={L: {int(s): float(x) for s, x in state[L].items()} for L in LEVELS},
+                by_band_end={end: dict(central_bn=net["by_band_end"][end]["congestion_bn"],
+                                       range_bn=net["by_band_end"][end]["congestion_range_bn"],
+                                       lane_cut=net["by_band_end"][end]["lane_cut"],
+                                       states_with_a_gain=sorted(FIPS[int(s)] for s, x in ends[end].items() if x < 0))
+                             for end in ("low", "high")},
+                b1_lanes_fixed_bn=b1["total"]["central"])
 
 
 def scale_inputs():
@@ -1268,6 +1535,13 @@ def base_inputs(B, d):
     I["cex_q"] = np.array([cex[f"loss_bn_{k}"] for k in ("q1_lowest", "q2_second", "q3_third", "q4_fourth", "q5_highest")])
     I["R_money"] = B.rank_frame(d, "money")
     I["R_spm"] = B.rank_frame(d, "spm")
+    if CASE.get("capped"):
+        # The capped programs' eligible non-recipients: the base lane's keys, its rules re-verified against the
+        # cached texts; and the base lane's case ends, which fiscal_totals reads from its working tree.
+        I["capped_texts"] = B.verify_capped_text()
+        I["capped_keys"], I["capped_info"] = B.capped_keys(d)
+        rel = f"{BASE_REL}/derived/{B.LATER_CASES[CASE['case']].ends}"
+        gate(f"base_case_ends_committed_at_{CASE['base']}", (ROOT / rel).read_bytes() == git_show(rel), file=rel)
     return I
 
 
@@ -1300,6 +1574,18 @@ def regression(B, d, I, case):
     F_c = float(I["central"].induced_current_receipts_bn)
     a_c = I["arms"][("central", "metro_local")]
     crime_custody = crime_inputs(B)["custody"]
+    # From September 27 the base lane's fiscal channel is the budget's part of A (the capped programs leave
+    # it for their eligible non-recipients) and splits into cash and the resource cost (the capital return).
+    capped = "capped_programs" in fa
+    budget_mid = fa["A_mid"]
+    if capped:
+        D_mid = sum((v[0] + v[1]) / 2 for v in fa["capped_programs"].values())
+        K_mid = (fa["capital_return"][0] + fa["capital_return"][1]) / 2
+        budget_mid = fa["A_mid"] + D_mid
+
+        def displaced(lines=tuple(I["capped_keys"])):
+            return sum(B.per_person(d, I["capped_keys"][k], -(fa["capped_programs"][k][0] + fa["capped_programs"][k][1]) / 2)
+                       for k in lines)
     rows = []
     for measure in B.MEASURES:
         R = I["R_money"] if measure == "money" else I["R_spm"]
@@ -1307,7 +1593,7 @@ def regression(B, d, I, case):
         tax, _ = B.tax_key(d, R, ranking, I["F_total"], I["S_total"])
         ch = {}
         for conv, key in (("a", tax), ("b", np.ones(len(d)))):
-            ch[f"fiscal_{conv}"] = B.per_person(d, key, fa["A_mid"] + F_c)
+            ch[f"fiscal_{conv}"] = B.per_person(d, key, budget_mid + F_c)
         ch["wages"] = B.wage_delta(I["basis"]["below_ba"], I["central"], True)
         ch["renters"] = -B.spread_cells(I["acs"][("central", "metro_local")]["rent_cells"], R, d)
         tot = a_c["other_renters_extra_rent_bn"] + a_c["net_other_residents_welfare_bn"]
@@ -1318,6 +1604,14 @@ def regression(B, d, I, case):
         ch["unreimbursed_care"] = B.per_person(d, d.PRIV.eq(1).to_numpy().astype(float), -I["unreimbursed"]["central"])
         ch["housing_net"] = ch["renters"] + ch["landlords"]
         parts = ["wages", "renters", "landlords", "crime", "unreimbursed_care"]
+        if capped:
+            ch["displaced_beneficiaries"] = displaced()
+            parts.append("displaced_beneficiaries")
+            for conv, key in (("a", tax), ("b", np.ones(len(d)))):
+                ch[f"fiscal_cash_{conv}"] = B.per_person(d, key, budget_mid + K_mid + F_c)
+                ch[f"fiscal_resource_{conv}"] = B.per_person(d, key, -K_mid)
+            for k in I["capped_keys"]:
+                ch[f"displaced_{k}"] = displaced((k,))
         for conv in ("a", "b"):
             ch[f"TOTAL_{conv}"] = ch[f"fiscal_{conv}"] + sum(ch[p] for p in parts)
         ch["wages_eps3"] = B.wage_delta(I["basis"]["below_ba"], I["eps3_bb"], True)
@@ -1360,6 +1654,13 @@ SHARED = [  # this frame's channel, the base lane's channel, why their quintile 
     ("crime_victims_national_key", "crime", "same key as the base; total only (30.93 against 32.34)"),
     ("unreimbursed_care", "unreimbursed_care", "same central total; the states of the group's uninsured"),
 ]
+SHARED_CAPPED = [  # from September 27
+    ("fiscal_cash_a", "fiscal_cash_a", "total: the cash part financed today (the future taxpayers' part and F as in "
+     "fiscal_a); key: federal part by federal taxes, state-local part by state-local taxes within the group's states"),
+    ("fiscal_resource_a", "fiscal_resource_a", "same total (the capital return at the band ends' mean); key: federal "
+     "part by federal taxes, state-local part within the group's states, against all taxes nationally"),
+    ("displaced_beneficiaries", "displaced_beneficiaries", "same total and the base's capped_keys (control: must match)"),
+]
 
 
 def frame_vs_base(B, d, I, ch):
@@ -1368,7 +1669,7 @@ def frame_vs_base(B, d, I, ch):
     base = pd.read_csv(io.BytesIO(git_show(f"{BASE_REL}/derived/channel_by_quintile.csv", CASE["base"])))
     base = base[base.measure == "spm"]
     rows = []
-    for mine, theirs, why in SHARED:
+    for mine, theirs, why in SHARED + (SHARED_CAPPED if CASE.get("capped") else []):
         q = B.by_bin(ch[mine]["central"], d, I["R_spm"])
         exp = base[base.channel == theirs].set_index("quintile").bn
         for k in range(6):
@@ -1380,6 +1681,10 @@ def frame_vs_base(B, d, I, ch):
     out = pd.DataFrame(rows)
     ctl = out[out.channel == "wages_below_ba_cash"]
     gate("frame_vs_base_control_wages_below_ba", ctl.diff_bn.abs().max() < 1e-6, max_abs_diff_bn=float(ctl.diff_bn.abs().max()))
+    if CASE.get("capped"):
+        ctl = out[out.channel == "displaced_beneficiaries"]
+        gate("frame_vs_base_control_displaced_beneficiaries", ctl.diff_bn.abs().max() < 1e-6,
+             max_abs_diff_bn=float(ctl.diff_bn.abs().max()))
     return out
 
 
@@ -1454,8 +1759,23 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
     fed = {end: fedsplit[(CASE["model"], end, "central")]["federal_bn"] for end in ("low", "high")}
     fed["central"] = (fed["low"] + fed["high"]) / 2
     dsh = deficit["share"]
-    fisc = {L: dict(cost=cost[L], federal=fed[L], state_local=cost[L] - fed[L], future=dsh * fed[L],
-                    federal_today=(1 - dsh) * fed[L]) for L in LEVELS}
+    if not CASE.get("capped"):
+        fisc = {L: dict(cost=cost[L], federal=fed[L], state_local=cost[L] - fed[L], future=dsh * fed[L],
+                        federal_today=(1 - dsh) * fed[L]) for L in LEVELS}
+    else:
+        # Three financing columns (the debt lane's split). Cash: fed is its federal part, of which the deficit
+        # share is borrowed (future taxpayers). The resource cost, the return on public capital, is an imputed
+        # cost that is never borrowed, so its federal part is borne today. The displaced beneficiaries are not
+        # a budget item: the capped programs' eligible non-recipients bear them (displaced_beneficiaries).
+        sp = {end: fedsplit[(CASE["model"], end, "central")] for end in ("low", "high")}
+        mid = lambda x: dict(x, central=(x["low"] + x["high"]) / 2)  # noqa: E731
+        res = mid({end: sp[end]["resource_cost_bn"] for end in sp})
+        res_fed = mid({end: sp[end]["resource_cost_federal_bn"] for end in sp})
+        disp = mid({end: sp[end]["displaced_bn"] for end in sp})
+        fisc = {L: dict(cost=cost[L], federal=fed[L] + res_fed[L], state_local=cost[L] - disp[L] - fed[L] - res_fed[L],
+                        future=dsh * fed[L], federal_today=(1 - dsh) * fed[L] + res_fed[L],
+                        cash=cost[L] - res[L] - disp[L], cash_federal=fed[L], resource=res[L],
+                        resource_federal=res_fed[L], displaced=disp[L]) for L in LEVELS}
     meta["fiscal"] = fisc
     for conv, kf, ks in (("a", tax_fed, tax_sl), ("b", ones, ones)):
         fedt = {L: -alloc(d, kf, fisc[L]["federal_today"]) for L in LEVELS}
@@ -1465,6 +1785,33 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
         put(f"fiscal_state_local_{conv}", slt, {L: -fisc[L]["state_local"] for L in LEVELS})
         put(f"fiscal_{conv}", {L: fedt[L] + slt[L] for L in LEVELS},
             {L: -(fisc[L]["federal_today"] + fisc[L]["state_local"]) for L in LEVELS})
+        if CASE.get("capped"):
+            # The same channel split by financing: cash financed today, and the resource cost (federal part by
+            # the federal key, state-local part by the state-local key within the group's states).
+            for part, fk, sk in (("cash", lambda f: (1 - dsh) * f["cash_federal"], lambda f: f["cash"] - f["cash_federal"]),
+                                 ("resource", lambda f: f["resource_federal"], lambda f: f["resource"] - f["resource_federal"])):
+                arr = {L: -alloc(d, kf, fk(fisc[L])) - alloc_states(
+                    d, ks, {s: sk(fisc[L]) * w for s, w in w_state.items()}, notes=notes, label=f"fiscal_{part}_sl_{conv}")
+                    for L in LEVELS}
+                put(f"fiscal_{part}_{conv}", arr, {L: -(fk(fisc[L]) + sk(fisc[L])) for L in LEVELS})
+            worst = max(float(np.abs(ch[f"fiscal_cash_{conv}"][L] + ch[f"fiscal_resource_{conv}"][L]
+                                     - ch[f"fiscal_{conv}"][L]).max()) for L in LEVELS)
+            gate(f"fiscal_{conv}_is_cash_plus_resource", worst < 1e-6, max_abs_usd_per_person=worst)
+    if CASE.get("capped"):
+        # Capped programs: the distribution lane's amounts at the band ends (fiscal_totals, from case_ends.cjs)
+        # on its eligible non-recipient keys; the same total as the debt lane's displaced column.
+        progs = fin[CASE["model"]]["capped"]["programs"]
+        for end, j in (("low", 0), ("high", 1)):
+            gate(f"displaced_beneficiaries_match_debt_lane_{end}",
+                 abs(sum(v[j] for v in progs.values()) - disp[end]) < 1e-6,
+                 distribution_lane=sum(v[j] for v in progs.values()), debt_lane=disp[end])
+        amt = {k: mid({"low": v[0], "high": v[1]}) for k, v in progs.items()}
+        per = {k: {L: -alloc(d, I["capped_keys"][k], amt[k][L]) for L in LEVELS} for k in progs}
+        put("displaced_beneficiaries", {L: sum(per[k][L] for k in progs) for L in LEVELS},
+            {L: -sum(amt[k][L] for k in progs) for L in LEVELS})
+        for k in progs:
+            put(f"displaced_{k}", per[k], {L: -amt[k][L] for L in LEVELS})
+        meta["capped_programs"] = dict(amounts_bn=amt, keys=I["capped_info"])
     # Variants without geography: every level's cost pooled nationally, on all taxes (ladder 194's
     # convention (a)) or per person (its convention (b)).
     put("fiscal_a_pooled_national", {L: -alloc(d, tax_all, fisc[L]["federal_today"] + fisc[L]["state_local"]) for L in LEVELS},
@@ -1496,6 +1843,8 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
     # With A from fiscal_totals the band ends close to its rounding (recorded), not to 1e-9.
     for end in ("low", "high"):
         inside = (pw * ch["fiscal_a"][end]).sum() / 1e9 - fisc[end]["future"] + (pw * wages[end]).sum() / 1e9
+        if CASE.get("capped"):
+            inside += (pw * ch["displaced_beneficiaries"][end]).sum() / 1e9
         gate(f"inside_channels_equal_band_end_{end}", abs(inside + e[end]["cost_bn"]) < 1e-3, inside=inside,
              headline=-e[end]["cost_bn"], gap=inside + e[end]["cost_bn"])
     # Variants (overlap wages): epsilon 3 on the account's split; the below-BA split (ladder 194).
@@ -1592,12 +1941,18 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
     put("unreimbursed_care", {L: -alloc_states(d, priv, {s: u[L] * w for s, w in w_unins.items()}, notes=notes,
                                                label=f"unreimbursed_{L}") for L in LEVELS}, {L: -u[L] for L in LEVELS})
 
-    # ---- congestion (B1, lanes fixed), by the urban areas' states, per metropolitan worker
+    # ---- congestion (B1, lanes fixed; from September 27 re-derived with lanes following the highway
+    # response), by the urban areas' states, per metropolitan worker
     cg = congestion_inputs()
+    if CASE.get("congestion") == "long_run":
+        cg = congestion_long_run(cg)
+        state_bn = cg["state_bn"]
+    else:
+        state_bn = {L: {POSTAL[s] if isinstance(s, str) else s: cg["total"][L] * v for s, v in cg["state_share"].items()}
+                    for L in LEVELS}
     meta["congestion"] = cg
     workers = d.WORKYN.eq(1).to_numpy().astype(float)
-    put("congestion", {L: -alloc_states(d, d.metro_worker.to_numpy().astype(float),
-                                        {POSTAL[s] if isinstance(s, str) else s: cg["total"][L] * v for s, v in cg["state_share"].items()},
+    put("congestion", {L: -alloc_states(d, d.metro_worker.to_numpy().astype(float), state_bn[L],
                                         fallback=workers, notes=notes, label=f"congestion_{L}") for L in LEVELS},
         {L: -cg["total"][L] for L in LEVELS})
 
@@ -1608,11 +1963,25 @@ def build_frame(B, d, I, fin, fedsplit, deficit, notes):
     earn, semp = d.earn.to_numpy(), d.semp.to_numpy()
     pkeys = {"admissions": (earn, nhw & (d.A_HGA.to_numpy() >= 43)), "contractor_hiring": (earn, nhw),
              "lost_profits": (semp, nhw), "taxpayer_premium": (tax_all, nhw)}
+    # From September 27 the row is an attribution under its stated rule: the DBE premium's part already in
+    # the fiscal channel is netted, and the rule's gain to the pool's other members is carried beside it.
+    at = preference_attribution(d, pr) if CASE.get("preferences") == "attribution" else None
+    parts = at["white_parts"] if at else pr["parts"]
     pref = {}
     for L in LEVELS:
         f = pr["group_part"][L] / sum(pr["parts"].values())
-        pref[L] = sum(-alloc(d, k, pr["parts"][p] * f, m) for p, (k, m) in pkeys.items())
-    put("preferences_group_part", pref, {L: -pr["group_part"][L] for L in LEVELS})
+        pref[L] = sum(-alloc(d, k, parts[p] * f, m) for p, (k, m) in pkeys.items())
+    put("preferences_group_part", pref, {L: -pr["group_part"][L] for L in LEVELS} if not at
+        else {L: -sum(parts.values()) * at["scale"][L] for L in LEVELS})
+    if at:
+        meta["preferences_attribution"] = at
+        hisp, race = d.PEHSPNON.eq(1).to_numpy(), d.PRDTRACE.to_numpy()
+        pool = other & ~nhw & ~hisp & (race != 2)   # the producer's non-preferred earners, less white natives
+        okeys = {"admissions": (earn, pool & (race != 3) & (d.A_HGA.to_numpy() >= 43)), "contractor_hiring": (earn, pool),
+                 "lost_profits": (semp, other & ~nhw), "taxpayer_premium": (tax_all, other & ~nhw)}
+        put("preferences_group_part_others",
+            {L: sum(-alloc(d, k, at["other_parts"][p] * at["scale"][L], m) for p, (k, m) in okeys.items()) for L in LEVELS},
+            {L: -sum(at["other_parts"].values()) * at["scale"][L] for L in LEVELS})
     put("preferences_regime", {L: -alloc(d, earn, pr["regime"][L], nhw) for L in LEVELS}, {L: -pr["regime"][L] for L in LEVELS})
 
     # ---- mobility: local-shock insurance to low-skill US-born men; Borjas's gain to all earnings
@@ -1746,25 +2115,34 @@ PROPOSED = ["preferences_group_part", "scale_private"]
 
 
 def net_parts(name, conv, sister_ids):
-    parts = [f"fiscal_{conv}", "wages"]
+    """A net's channels. From September 27 the account carries the capped programs' displaced beneficiaries,
+    and with_proposed the preferences rule's gain to the pool's other members."""
+    parts = [f"fiscal_{conv}", "wages"] + (["displaced_beneficiaries"] if CASE.get("capped") else [])
     if name in ("social", "with_proposed"):
         parts += SOCIAL
     if name == "with_proposed":
         parts += PROPOSED + [f"scale_receipts_{conv}"] + list(sister_ids)
+        if CASE.get("preferences") == "attribution":
+            parts.insert(parts.index("preferences_group_part") + 1, "preferences_group_part_others")
     return parts
 
 
 def build_nets(ch, totals, sister_ids):
     """Per-person nets at central values and at the least- and most-costly stacks. Parts that are two
-    sides of one estimate move together: fiscal and wages by band end (one specification), renters
-    and landlords by level (one rent change), the scale term's earnings and receipts by level. Every
-    other channel takes the level whose total is highest (least costly) or lowest (most costly)."""
+    sides of one estimate move together: fiscal and wages by band end (one specification; from September
+    27 with the displaced beneficiaries), renters and landlords by level (one rent change), the scale
+    term's earnings and receipts by level, and the preferences row with its other recipients' part (one
+    attribution). Every other channel takes the level whose total is highest (least costly) or lowest
+    (most costly)."""
     nets, ntot, recipe = {}, {}, {}
     for name in ("account", "social", "with_proposed"):
         for conv in CONVENTIONS:
             parts = net_parts(name, conv, sister_ids)
-            groups = [([f"fiscal_{conv}", "wages"], ("low", "high")), (["renters", "landlords"], LEVELS),
+            groups = [([f"fiscal_{conv}", "wages"] + (["displaced_beneficiaries"] if CASE.get("capped") else []),
+                       ("low", "high")), (["renters", "landlords"], LEVELS),
                       (["scale_private", f"scale_receipts_{conv}"], LEVELS)]
+            if CASE.get("preferences") == "attribution":
+                groups.append((["preferences_group_part", "preferences_group_part_others"], LEVELS))
             groups = [(g, levs) for g, levs in groups if all(x in parts for x in g)]
             grouped = {x for g, _ in groups for x in g}
             groups += [([x], LEVELS) for x in parts if x not in grouped]
@@ -2010,11 +2388,16 @@ def group_frame(B, d, I, fin):
                          basis=basis, note=note))
     A1 = fin[CASE["model"]]["A_one_definition"]
     A = {"low": -A1["low"], "high": -A1["high"]}
+    capped = fin[CASE["model"]].get("capped")
     add("direct fiscal transfer received: the direct response A, sign flipped", A["low"],
         (A["low"] + A["high"]) / 2, A["high"],
         f"[CALCULATION: distribution_weights_2026_09_23 fiscal_totals('{CASE['case']}'); engine run in specs.cjs]",
         "low and high are the low- and high-cost band ends; the production gain P goes to other residents and "
-        "the induced receipts F to budgets, so neither is a transfer to the group")
+        "the induced receipts F to budgets, so neither is a transfer to the group"
+        + ("" if not capped else "; from September 27 A includes the return on the public capital the group's use "
+           "is charged, {:.2f} / {:.2f}bn, and the capped programs' slots it holds, {:.2f}bn, which without it go "
+           "to eligible households now without the aid".format(
+               *capped["capital_return"], sum((v[0] + v[1]) / 2 for v in capped["programs"].values()))))
     gen_src = (f"generation_account_2026_09_24/derived/generation_summary.json {CASE['gen_split']}, git {CASE['gen']}"
                if CASE["gen_split"] else f"generation_account_2026_09_24/derived/generation_results.csv, git {CASE['gen']}")
     for g, lab, n_a, lo_a, hi_a in generation_split(fin):
@@ -2146,13 +2529,19 @@ def registry(T, meta, fin, sister_tbl, role_only=None):
             note + "; low and high are the fiscal band ends, central their midpoint")
     inside_key = ("" if CASE["consumption_proposal"] else "; the consumption key corrected for saving and remittances "
                   "(ladder 225) is inside this case, so it sits in this row")
-    row("fiscal", "Fiscal: direct response A plus induced receipts F", lv(lambda L: -f[L]["cost"]),
+    capped = CASE.get("capped")
+    row("fiscal", "Fiscal: direct response A plus induced receipts F" if not capped else
+        "Fiscal: direct response A less the capped programs, plus induced receipts F",
+        lv(lambda L: -(f[L]["cost"] - (f[L]["displaced"] if capped else 0.0))),
         "a: federal_taxes (today's part) + state_local_taxes within the group's states; b: per_person, "
         "state-local part per person within the group's states", "inside", "account",
         f"A: distribution_weights_2026_09_23 fiscal_totals('{CASE['case']}') at {CASE['base']}; F: {CASE['lane']} "
         "via specs.cjs", CASE["ladder"], "adopted",
         "same band-end specifications as main_case; A differs from the engine run by {:.1e} / {:.1e}bn (rounding "
-        "of the rebuilt band)".format(*meta["fiscal_A"][CASE["model"]]["diff"].values()) + inside_key)
+        "of the rebuilt band)".format(*meta["fiscal_A"][CASE["model"]]["diff"].values()) + inside_key
+        + ("; from September 27 the taxpayers' channel: the capped programs (rental assistance, LIHEAP) fall on "
+           "eligible non-recipients, the displaced_beneficiaries row, so fiscal + displaced_beneficiaries + wages is "
+           "main_case; its financing parts are fiscal_cash, future_taxpayers and fiscal_resource" if capped else ""))
     row("fiscal_federal_today", "Fiscal, federal part financed by today's taxes", lv(lambda L: -f[L]["federal_today"]),
         "a: federal_taxes; b: per_person", "overlaps:fiscal", "account",
         f"debt_legacy_2026_09_23 federal_split_2024.csv at {CASE['debt']}", "207", "adopted",
@@ -2163,7 +2552,45 @@ def registry(T, meta, fin, sister_tbl, role_only=None):
     row("future_taxpayers", "Fiscal, federal part financed by borrowing (FY2024 deficit / outlays)",
         lv(lambda L: -f[L]["future"]), "future federal taxpayers; not allocated to today's persons",
         "overlaps:fiscal", "no", "OMB Historical Tables 2.1 and 3.1 (FY2027 release)", "", "adopted",
-        f"share {meta['deficit']['share']:.4f} of the federal part [FRAMING-SENSITIVE]; bounds 0 and 1")
+        f"share {meta['deficit']['share']:.4f} of the federal part [FRAMING-SENSITIVE]; bounds 0 and 1"
+        + ("; from September 27 of the cash part only: the return on public capital is never borrowed"
+           if CASE.get("capped") else ""))
+    if CASE.get("capped"):
+        cp = meta["capped_programs"]["amounts_bn"]
+        keys = meta["capped_programs"]["keys"]
+        row("fiscal_cash", "Fiscal, cash financing borne today", T["fiscal_cash_a"],
+            "a: federal_taxes + state_local_taxes@group_states; b: per_person, state-local part @group_states",
+            "overlaps:fiscal", "account", f"debt_legacy_2026_09_23 federal_split_2024.csv at {CASE['debt']} "
+            "(fiscal_gap_bn, federal_bn)", "207, 239", "adopted",
+            "the fiscal channel's cash part less the future taxpayers' part; it carries the enterprise surplus receipt "
+            "(the enterprises' operating loss, at response 1) and TANF-type aid, a block grant states can move, so it "
+            "keeps the financing conventions")
+        row("fiscal_resource", "Fiscal, resource cost: the return on public capital, enterprise capital included",
+            T["fiscal_resource_a"], "a: federal_taxes + state_local_taxes@group_states; b: per_person, state-local "
+            "part @group_states", "overlaps:fiscal", "account", f"{CASE['lane']} evaluateFull via specs.cjs; "
+            f"debt_legacy_2026_09_23 resource_cost_bn at {CASE['debt']}", "238, 239", "adopted",
+            "an imputed cost at 2% real at the low end and 3% at the high end on the group's keyed share of 24 capital "
+            "components; never borrowed, so none of it goes to future taxpayers; federal {:.2f} / {:.2f}bn at the band "
+            "ends [FRAMING-SENSITIVE]".format(f["low"]["resource_federal"], f["high"]["resource_federal"]))
+        row("displaced_beneficiaries", "Capped programs' displaced beneficiaries: rental assistance and LIHEAP",
+            T["displaced_beneficiaries"], "eligible non-recipients: renter households below 50% of their state's median "
+            "household income outside public or subsidized housing; households below 150% of the HHS 2024 poverty "
+            "guideline without energy assistance (one share per household)", "inside", "account",
+            f"distribution_weights_2026_09_23 capped_keys() and case_ends at {CASE['base']}; debt_legacy_2026_09_23 "
+            f"displaced_bn at {CASE['debt']}", "239", "adopted",
+            "the programs are capped and rationed, so without the group eligible households now going without take "
+            "its slots: the cost falls on them under both conventions, not on taxpayers; rental assistance {:.2f}bn "
+            "({:.2f}m eligible non-recipient households), LIHEAP {:.2f}bn ({:.2f}m); proxies: HUD's very-low-income "
+            "limit, 50% of area median family income (24 CFR 5.603, 982.201(b)), taken at the state median household "
+            "income; LIHEAP's 150% of poverty (42 U.S.C. 8624(b)(2)(B); 89 FR 2961) without its 60%-of-state-median "
+            "alternative".format(cp["housing_subsidies"]["central"],
+                                 keys["housing_subsidies"]["eligible_non_recipient_households_m"],
+                                 cp["energy_assistance"]["central"],
+                                 keys["energy_assistance"]["eligible_non_recipient_households_m"]))
+        # The inside rows add to main_case (A from fiscal_totals, so to its rounding, as the band-end gate).
+        inside = {L: -(f[L]["cost"] - f[L]["displaced"]) + T["displaced_beneficiaries"][L] + T["wages"][L] for L in LEVELS}
+        gate("registry_inside_rows_sum_to_main_case", all(abs(inside[L] - band[L]) < 1e-3 for L in LEVELS),
+             inside=inside, main_case=band)
     row("wages", "Wages after tax, long run (account's split: high school or less; sigma 2, epsilon infinite)",
         T["wages"], "account_wage_cells (other residents' earnings by nativity branch and skill cell)", "inside",
         "account", "production_nativity_nest_2026_09_22; wage_distribution_2026_09_23", "176, 191", "adopted",
@@ -2248,18 +2675,63 @@ def registry(T, meta, fin, sister_tbl, role_only=None):
     row("unreimbursed_care", "Unreimbursed hospital care outside budgets", T["unreimbursed_care"],
         "privately_insured@group_uninsured_states", "beside", "social", "uncompensated_care_2026_09_23", "192",
         "adopted")
-    row("congestion", "Road congestion, time and fuel (B1, lanes fixed)", T["congestion"],
-        "commuters@urban_area_states", "beside", "social", "congestion_2026_09_23", "195", "adopted")
+    if CASE.get("congestion") == "long_run":
+        cg = meta["congestion"]
+        be = cg["by_band_end"]
+        row("congestion", "Road congestion, time and fuel, long run (lanes follow the highway response)", T["congestion"],
+            "commuters@urban_area_states", "beside", "social",
+            "service_response_long_run_2026_09_27 (congestion.py, net_change.json); congestion_2026_09_23", "237",
+            "adopted", "re-derived from B1 ({:.2f}bn with lanes fixed): lanes cut uniformly over urban areas by {:.4f} "
+            "at the low band end and {:.4f} at the high end, {:.2f} and {:.2f}bn; central is their mean, low the low "
+            "end's factorial minimum ({:.2f}bn), high the high end's maximum ({:.2f}bn); a uniform cut offsets delay "
+            "where the group is thin, so other residents gain in {} of the 50 states and DC at the low end ({}) and {} "
+            "at the high end [INFERENCE]".format(cg["b1_lanes_fixed_bn"], be["low"]["lane_cut"], be["high"]["lane_cut"],
+                                 be["low"]["central_bn"], be["high"]["central_bn"], be["low"]["range_bn"][0],
+                                 be["high"]["range_bn"][1], len(be["low"]["states_with_a_gain"]),
+                                 " ".join(be["low"]["states_with_a_gain"]), len(be["high"]["states_with_a_gain"])))
+    else:
+        row("congestion", "Road congestion, time and fuel (B1, lanes fixed)", T["congestion"],
+            "commuters@urban_area_states", "beside", "social", "congestion_2026_09_23", "195", "adopted")
     row("mobility", "Mobility: local-shock insurance and Borjas's gain", T["mobility"],
         "insurance: US-born men with high school or less (earnings); Borjas: all earnings", "beside", "social",
         "labor_mobility_insurance_2026_09_23", "203", "adopted")
     row("preferences", "Race- and ethnicity-based preferences, whole regime, cost to white natives",
         T["preferences_regime"], "nh_white_natives (earnings)", "beside", "no", "affirmative_action_cost_2026_09_24",
         "213", "adopted", "most of it follows other groups' preferences, which the counterfactual keeps")
-    row("preferences_group_part", "Preferences, part following Mexican-origin beneficiaries", T["preferences_group_part"],
-        "nh_white_natives: earnings (BA+ for admissions), self-employment for lost profits, taxes for the price premium",
-        "overlaps:preferences", "with_proposed", "affirmative_action_cost_2026_09_24", "213", "proposed",
-        "the part the counterfactual removes")
+    if CASE.get("preferences") == "attribution":
+        at = meta["preferences_attribution"]
+        s = at["white_share_of_pool"]
+        row("preferences_group_part", "Preferences attributed to Mexican-origin beneficiaries, white natives' part",
+            T["preferences_group_part"], "nh_white_natives: earnings (BA+ for admissions), self-employment for lost "
+            "profits, taxes for the price premium", "overlaps:preferences", "with_proposed",
+            "affirmative_action_cost_2026_09_24", "213", "proposed",
+            "an attribution, not a counterfactual removal: the Mexican-origin share of each channel's beneficiaries "
+            "supplies neither the policy response nor the replacement allocation, so the row assumes a rule: "
+            + at["rule"] + "; the DBE premium's part already in the fiscal channel since September 27 is netted "
+            "(${:.1f}m of the group's ${:.1f}m, share {:.4f} = key share x highway response, mean of the band "
+            "ends); {:.4f}bn before September 27 [FRAMING-SENSITIVE]".format(
+                at["dbe_netted_bn"] * 1e3, at["dbe_premium_part_bn"] * 1e3, at["dbe_in_fiscal_channel_share"]["used"],
+                -meta["preferences"]["group_part"]["central"]))
+        row("preferences_group_part_others", "Preferences attributed to Mexican-origin beneficiaries, other included "
+            "recipients' part under the same rule", T["preferences_group_part_others"],
+            "the non-preferred pool less white natives: BA+ earnings of non-Hispanic, non-Black, non-AIAN graduates "
+            "(admissions); earnings of non-Hispanic, non-Black earners (contractor hiring); self-employment and taxes "
+            "of other residents who are not white natives", "overlaps:preferences", "with_proposed",
+            "affirmative_action_cost_2026_09_24; this lane", "213", "proposed",
+            "the rule's gain to the pool's other members without the group, a loss from its presence as every row "
+            "here: the white natives' part x (1 - s) / s, s their share of the pool: admissions {:.4f} (freed "
+            "seats' value {:.1f} / {:.1f}m to white natives / others at the central boundaries, same loss per "
+            "worker), hiring {:.4f}, lost profits {:.4f}, premium {:.4f}; the freed elite seats that go to none of "
+            "the four simulated groups (Espenshade-Chung {:.1%}, AKR's Harvard {:.1%}) are placed on the same pool "
+            "[INFERENCE]"
+            .format(s["admissions"], at["admissions_value_white_others"][0] / 1e6,
+                    at["admissions_value_white_others"][1] / 1e6, s["contractor_hiring"], s["lost_profits"],
+                    s["taxpayer_premium"], at["outside_groups"]["ec"], at["outside_groups"]["akr"]))
+    else:
+        row("preferences_group_part", "Preferences, part following Mexican-origin beneficiaries", T["preferences_group_part"],
+            "nh_white_natives: earnings (BA+ for admissions), self-employment for lost profits, taxes for the price premium",
+            "overlaps:preferences", "with_proposed", "affirmative_action_cost_2026_09_24", "213", "proposed",
+            "the part the counterfactual removes")
     sc = meta["scale"]
     row("scale", "City size and schooling mix (Card-Rothstein-Yi, CZ 1990 joint)", sc["total"],
         "earnings@metro_states + receipts by the convention", "beside", "with_proposed",
@@ -2327,12 +2799,42 @@ PAGE = [  # channel, label, basis, relation, who gains, who loses
 ]
 
 
+def page_rows():
+    """PAGE for the case: from September 27 the capped programs' row, the long-run congestion and the
+    preferences as an attribution with the other recipients' part."""
+    rows = list(PAGE)
+    at = {r[0]: i for i, r in enumerate(rows)}
+    if CASE.get("capped"):
+        rows.insert(at["fiscal_b"] + 1, (
+            "displaced_beneficiaries", "capped programs' slots (rental assistance, LIHEAP)",
+            "measured outlays, modelled response, proxy eligibility", "inside", "",
+            "eligible households without the aid: renters below 50% of state median income, households below 150% "
+            "of poverty"))
+    if CASE.get("congestion") == "long_run":
+        rows[rows.index(PAGE[at["congestion"]])] = (
+            "congestion", "road congestion, long run (lanes follow the highway response)",
+            "measured traffic shares, modelled delay and lane response", "beside",
+            "metropolitan commuters where the uniform lane cut outweighs the group's traffic",
+            "metropolitan commuters in the congested urban areas' states")
+    if CASE.get("preferences") == "attribution":
+        i = rows.index(PAGE[at["preferences_group_part"]])
+        rows[i] = ("preferences_group_part", "preferences attributed to Mexican-origin beneficiaries, white natives' "
+                   "part", "modelled, weak evidence; an attribution under proportional replacement", "beside (proposed)",
+                   "", "US-born non-Hispanic whites")
+        rows.insert(i + 1, ("preferences_group_part_others", "preferences attributed to Mexican-origin beneficiaries, "
+                            "other recipients' part", "modelled, weak evidence; an attribution under proportional "
+                            "replacement", "beside (proposed)", "",
+                            "the non-preferred pool's other members: Asian and foreign-born white graduates, other "
+                            "non-Hispanic non-Black earners, other firms and taxpayers"))
+    return rows
+
+
 def page_table(d, ch, meta, gf, sister_tbl, role_only=None):
     role_only = role_only or {}
     pw, other = d.pw.to_numpy(), d.other.to_numpy()
     N_other = pw[other].sum()
     rows = []
-    for name, label, basis, rel, who_g, who_l in PAGE:
+    for name, label, basis, rel, who_g, who_l in page_rows():
         x = (pw * ch[name]["central"])[other]
         w = pw[other]
         for side, m, who in (("gain", x > 0, who_g), ("loss", x < 0, who_l)):
@@ -2407,6 +2909,10 @@ def sources_manifest(B, base_sha):
         for name in ("channel_by_quintile.csv", "inputs.json"):
             files.append((f"base {name} at {commit}", f"{BASE_REL}/derived/{name}",
                           sha(git_show(f"{BASE_REL}/derived/{name}", commit))))
+    if CASE.get("capped"):
+        name = B.LATER_CASES[CASE["case"]].ends
+        files.append((f"base {name} at {CASE['base']} (the working-tree copy is gated equal)",
+                      f"{BASE_REL}/derived/{name}", sha(git_show(f"{BASE_REL}/derived/{name}", CASE["base"]))))
     for extra in ("crime_victim_cost_2026_09_23/derived/property_proxy.csv",
                   "care_household_services_2026_09_23/derived/hours_tax_specs.csv"):
         p = FISCAL / extra
@@ -2567,11 +3073,23 @@ def main():
     page = page_table(d, ch, meta, gf, sister_tbl, role_only)
     wide = person_nets_by_cut(cuts)
     fs_rows = [dict(case=k[0], end=k[1], convention=k[2], **v) for k, v in fedsplit.items()]
-    fs_rows += [dict(case=CASE["model"], end=L, convention="central", cost_bn=meta["fiscal"][L]["cost"],
-                     federal_bn=meta["fiscal"][L]["federal"], state_local_bn=meta["fiscal"][L]["state_local"],
-                     federal_share=meta["fiscal"][L]["federal"] / meta["fiscal"][L]["cost"],
-                     deficit_share=deficit["share"], future_taxpayers_bn=meta["fiscal"][L]["future"],
-                     federal_today_bn=meta["fiscal"][L]["federal_today"]) for L in ("central",)]
+    if not CASE.get("capped"):
+        fs_rows += [dict(case=CASE["model"], end=L, convention="central", cost_bn=meta["fiscal"][L]["cost"],
+                         federal_bn=meta["fiscal"][L]["federal"], state_local_bn=meta["fiscal"][L]["state_local"],
+                         federal_share=meta["fiscal"][L]["federal"] / meta["fiscal"][L]["cost"],
+                         deficit_share=deficit["share"], future_taxpayers_bn=meta["fiscal"][L]["future"],
+                         federal_today_bn=meta["fiscal"][L]["federal_today"]) for L in ("central",)]
+    else:
+        # The band ends' columns: federal_bn, state_local_bn and federal_share are the cash part, the other two
+        # financing parts beside them; federal_today_bn adds the resource cost's federal part (never borrowed).
+        f = meta["fiscal"]["central"]
+        dfed = np.mean([fedsplit[(CASE["model"], end, "central")]["displaced_federal_bn"] for end in ("low", "high")])
+        fs_rows += [dict(case=CASE["model"], end="central", convention="central", cost_bn=f["cost"],
+                         federal_bn=f["cash_federal"], state_local_bn=f["cash"] - f["cash_federal"],
+                         federal_share=f["cash_federal"] / f["cash"], resource_cost_bn=f["resource"],
+                         resource_cost_federal_bn=f["resource_federal"], displaced_bn=f["displaced"],
+                         displaced_federal_bn=float(dfed), deficit_share=deficit["share"],
+                         future_taxpayers_bn=f["future"], federal_today_bn=f["federal_today"])]
     tmpl = []
     for t, desc, basis in KEY_TEMPLATES:
         pop = np.nan
@@ -2608,6 +3126,10 @@ def main():
                             base=CASE["base"], debt=CASE["debt"], debt_files=CASE["debt_files"], generations=CASE["gen"],
                             generations_split=CASE["gen_split"], sisters=CASE["sisters"],
                             published=CASE["published_dir"], role_only=role_only)
+        if CASE.get("capped"):
+            meta["case"].update(profile=CASE["profile"], previous_variant=CASE["prev_variant"],
+                                financing_parts=list(FINANCING), capped=True, congestion=CASE["congestion"],
+                                preferences=CASE["preferences"])
     (DERIVED / "inputs.json").write_text(json.dumps(meta, indent=1, default=float) + "\n")
     (DERIVED / "gates.json").write_text(json.dumps(GATES, indent=1, default=float) + "\n")
     frame = d.loc[other, ["PH_SEQ", "PPPOS", "SPM_ID", "pw"] + CUT_COLUMNS].reset_index(drop=True)
