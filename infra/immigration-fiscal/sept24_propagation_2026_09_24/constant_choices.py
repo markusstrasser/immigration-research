@@ -20,11 +20,16 @@ a finite-removal piece (row8_finite: row 8's increment times row8_factor - 1, -$
 it in row 8, and the ledger lane's choice zeroes it with row 8.
   sept24          the case adopted 2026-09-24 (the committed run)                -> derived/
   sept26          the one-year scenario, main_case_2026_09_26                    -> --out-dir DIR only
-  sept26_schools  schools at full average cost, the main case (default)          -> ../sept26_propagation_2026_09_26/derived/
+  sept26_schools  schools at full average cost                                   -> ../sept26_propagation_2026_09_26/derived/
+  sept27          the main case, main_case_long_run_2026_09_27 (default)         -> ../sept27_propagation_2026_09_27/derived/
+The federal part compared is the run's main profile (its summary.json case.main_profile; before September 27
+cbo_category_lag_non_school_full). From September 27 the debt lane's fiscal_gap_bn and federal_bn are the
+cash part only: the return on public capital and the displaced beneficiaries of capped programs sit in their
+own columns and are never compounded. Both constants are cash, so the comparison is unchanged.
 
 Writes constant_choices.csv (2024 split) and constant_choices_stock.csv (re-runs), after every gate.
 Run from the repository root:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py [--case sept24|sept26|sept26_schools] [--out-dir DIR]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py [--case sept24|sept26|sept26_schools|sept27] [--out-dir DIR]
 """
 from __future__ import annotations
 
@@ -32,6 +37,7 @@ import argparse
 import contextlib
 import importlib.util
 import io
+import json
 import sys
 import tempfile
 from pathlib import Path
@@ -41,7 +47,9 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 LANE = HERE.parent / "debt_legacy_2026_09_23"
-OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=HERE.parent / "sept26_propagation_2026_09_26" / "derived")
+OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=HERE.parent / "sept26_propagation_2026_09_26" / "derived",
+                sept27=HERE.parent / "sept27_propagation_2026_09_27" / "derived")
+OLD_PROFILE = "cbo_category_lag_non_school_full"         # the main profile of every case before September 27
 CENTRAL = dict(benchmark="main", rule="programme_income_pandemic_per_head", convention="central",
                rate_path="effective", window_start=2005, financing="all_borrowed")
 ROW8 = ("lane_constants:row8", "finite_removal:row8")   # audit row 8's components in the per-correction split
@@ -114,7 +122,7 @@ def central(stocks):
 
 def main():
     ap = argparse.ArgumentParser(description="Federal-dollar effect of the ledger lane's two constant splits.")
-    ap.add_argument("--case", choices=tuple(OUT_DIRS), default="sept26_schools")
+    ap.add_argument("--case", choices=tuple(OUT_DIRS), default="sept27")
     ap.add_argument("--out-dir", type=Path, default=None)
     args = ap.parse_args()
     out = args.out_dir or OUT_DIRS[args.case]
@@ -125,13 +133,16 @@ def main():
         choices = split_2024(Path(tmp) / "base")
         print(choices[["end", "convention", "item", "amount_bn", "share_this_lane", "share_ledger_lane", "federal_this_lane_bn",
                        "federal_ledger_lane_bn", "federal_difference_bn"]].round(4).to_string(index=False))
+        profile = json.loads((Path(tmp) / "base" / "summary.json").read_text())["case"].get("main_profile", OLD_PROFILE)
         base_stocks = central(base_stocks)
-        base_split = base_split.query("profile == 'cbo_category_lag_non_school_full'")
+        base_split = base_split[base_split.profile == profile]
+        if len(base_split) != 6:
+            raise SystemExit(f"[BLOCKED] expected 6 rows of the main profile {profile}, got {len(base_split)}")
         rows = []
         for item in ("row 8", "row 10"):
             stocks, fsplit = debt_run(args.case, Path(tmp) / item.replace(" ", ""), item)
             alt = central(stocks)
-            fsplit = fsplit.query("profile == 'cbo_category_lag_non_school_full'")
+            fsplit = fsplit[fsplit.profile == profile]
             for end in ("low", "high"):
                 for conv in ("low", "central", "high"):
                     got = (fsplit[(fsplit.end == end) & (fsplit.convention == conv)].federal_bn.iloc[0]

@@ -1,26 +1,29 @@
 """Old -> new for every number W1's four lanes publish (back-cast, debt legacy, distribution, uncertainty).
 
 Old values are the files committed at OLD, the September 24 runs of all four lanes. New values are the
-case given by --case (default: the lanes' default case), with --middle (default sept26; "none" drops it)
-as a column between. Nothing is typed in: every value is selected from the lane file named in its row.
+case given by --case (default sept26_schools), with --middle (default sept26; "none" drops it) as a
+column between. Nothing is typed in: every value is selected from the lane file named in its row.
 
-  back-cast     backcast_windows.csv in the working tree holds every case's concepts; a case's concept
-                tag comes from backcast.py's LATER_CASES.
-  uncertainty   derived/<case>/summary.json in the working tree.
+Every later column is read from commits, never from the working tree: since 2026-09-27 the lanes' working
+trees hold the September 27 case. TABLE is the commit at which this table was last written, when the
+lanes' committed files held the schools case.
+
+  back-cast     backcast_windows.csv at TABLE holds every case's concepts; a case's concept tag comes
+                from backcast.py's LATER_CASES at TABLE (parsed, not imported).
+  uncertainty   derived/<case>/summary.json at TABLE.
   distribution, debt legacy
-                rebuilt with `--case X --out-dir <tmp>`. The rebuild of the case the working tree holds
-                must equal it byte for byte (gate), so the table shows the files as they will be committed.
-  main case     each case lane's derived/summary.json.
+                rebuilt with `--case X --out-dir <tmp>`. Each rebuilt file must equal the lane's file at
+                its commit of that case (PINS; gate), so the table shows the committed runs.
+  main case     each case lane's derived/summary.json at TABLE.
 
-Writes derived/old_new_lanes.csv (LF) and prints the table as Markdown. Run from the repository root,
-after the four lanes have run:
+Writes derived/old_new_lanes.csv (LF) and prints the table as Markdown. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept26_propagation_2026_09_26/old_new_lanes.py
 """
 from __future__ import annotations
 
 import argparse
+import ast
 import csv
-import importlib.util
 import io
 import json
 import os
@@ -34,36 +37,44 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 OLD = "e5e23ec"                       # the four lanes' September 24 runs, before any September 26 change
+TABLE = "90c4b23"                     # this table's last write; the lanes' committed files held the schools case
 F = "infra/immigration-fiscal/"
 BC, DEBT, DIST, UNC = (F + "historical_backcast_2026_09_20/", F + "debt_legacy_2026_09_23/",
                        F + "distribution_weights_2026_09_23/", F + "uncertainty_propagation_2026_09_22/")
+# The debt and distribution lanes' commits of each later case: a rebuild must equal these files.
+PINS = {"sept26": {DEBT: "e62fccb", DIST: "f697514"}, "sept26_schools": {DEBT: "90c4b23", DIST: "39b854b"}}
 LABELS = {"sept24": "Sept 24", "sept26": "Sept 26, CBO's one-year school response (0.63–0.66)",
           "sept26_schools": "Sept 26, schools at full cost"}
 MAIN = "cbo_category_lag_non_school_full"
 ROWS: list[dict] = []
 
 
+def git_bytes(rel: str, commit: str = OLD, missing_ok: bool = False) -> bytes | None:
+    out = subprocess.run(["git", "show", f"{commit}:{rel}"], cwd=ROOT, capture_output=True)
+    if out.returncode:
+        if missing_ok:
+            return None
+        raise SystemExit(f"[BLOCKED] {rel} not at {commit}")
+    return out.stdout
+
+
 def backcast_cases() -> dict:
-    spec = importlib.util.spec_from_file_location("backcast_cases", ROOT / BC / "backcast.py")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module.LATER_CASES
+    """backcast.py's LATER_CASES at TABLE, parsed as a literal rather than imported."""
+    for node in ast.parse(git_bytes(BC + "backcast.py", TABLE).decode()).body:
+        if isinstance(node, ast.Assign) and any(getattr(t, "id", None) == "LATER_CASES" for t in node.targets):
+            return ast.literal_eval(node.value)
+    raise SystemExit(f"[BLOCKED] no LATER_CASES in {BC}backcast.py at {TABLE}")
 
 
 LATER = backcast_cases()               # case -> (main-case lane, concept tag, base variant, base tag)
-
-
-def git_bytes(rel: str) -> bytes:
-    out = subprocess.run(["git", "show", f"{OLD}:{rel}"], cwd=ROOT, capture_output=True)
-    if out.returncode:
-        raise SystemExit(f"[BLOCKED] {rel} not at {OLD}")
-    return out.stdout
+if set(LATER) != set(PINS):
+    raise SystemExit(f"[BLOCKED] LATER_CASES at {TABLE} ({sorted(LATER)}) and PINS ({sorted(PINS)}) differ")
 
 
 class View:
     """One column: the lane files that hold one case."""
 
-    def __init__(self, case: str, tmp: Path, is_new: bool = False):
+    def __init__(self, case: str, tmp: Path):
         self.case = case
         if case == "sept24":
             self.read = git_bytes
@@ -73,15 +84,15 @@ class View:
             return
         self.main_lane, tag = LATER[case][0], LATER[case][1]
         self.tag = tag.strip("_")
-        self.unc = json.loads((ROOT / UNC / "derived" / case / "summary.json").read_text())
-        built = {DEBT: rebuild(DEBT + "debt_legacy.py", case, tmp / f"debt_{case}", is_new),
-                 DIST: rebuild(DIST + "distribute.py", case, tmp / f"dist_{case}", is_new)}
+        self.unc = json.loads(git_bytes(UNC + f"derived/{case}/summary.json", TABLE))
+        built = {DEBT: rebuild(DEBT + "debt_legacy.py", case, tmp / f"debt_{case}", PINS[case][DEBT]),
+                 DIST: rebuild(DIST + "distribute.py", case, tmp / f"dist_{case}", PINS[case][DIST])}
 
         def read(rel: str) -> bytes:
             for lane, d in built.items():
                 if rel.startswith(lane + "derived/"):
                     return (d / rel[len(lane + "derived/"):]).read_bytes()
-            return (ROOT / rel).read_bytes()
+            return git_bytes(rel, TABLE)
         self.read = read
         self.source = f"--case {case}"
 
@@ -92,22 +103,21 @@ class View:
         return json.loads(self.read(rel))
 
     def summary(self) -> dict:
-        return json.loads((ROOT / F / self.main_lane / "derived/summary.json").read_text())
+        return json.loads(git_bytes(F + self.main_lane + "/derived/summary.json", TABLE))
 
 
-def rebuild(script: str, case: str, out: Path, must_match: bool) -> Path:
-    """The lane's files on one case, in `out`. Gate for the new column: they equal the working tree's."""
+def rebuild(script: str, case: str, out: Path, commit: str) -> Path:
+    """The lane's files on one case, in `out`. Gate: each equals the lane's file at `commit`, its run of the case."""
     run = subprocess.run([sys.executable, str(ROOT / script), "--case", case, "--out-dir", str(out)], cwd=ROOT,
                          env={**os.environ, "OPENBLAS_NUM_THREADS": "1"}, capture_output=True, text=True)
     if run.returncode:
         raise SystemExit(f"[BLOCKED] {script} --case {case} failed:\n{run.stderr[-2000:]}")
-    derived = ROOT / Path(script).parent / "derived"
-    differ = [f.name for f in sorted(out.iterdir())
-              if not (derived / f.name).is_file() or (derived / f.name).read_bytes() != f.read_bytes()]
-    if must_match and differ:
-        raise SystemExit(f"[BLOCKED] {script} --case {case} differs from the working tree in {differ}; rerun the lane")
-    print(f"  {'✓' if not differ else '·'} {script} --case {case}: {len(list(out.iterdir()))} files, "
-          f"{'equal to the working tree' if not differ else 'rebuilt beside it'}")
+    derived = str(Path(script).parent) + "/derived/"
+    files = sorted(out.iterdir())
+    differ = [f.name for f in files if git_bytes(derived + f.name, commit, missing_ok=True) != f.read_bytes()]
+    if differ:
+        raise SystemExit(f"[BLOCKED] {script} --case {case} differs from {commit} in {differ}")
+    print(f"  ✓ {script} --case {case}: {len(files)} files, equal to {commit}")
     return out
 
 
@@ -325,15 +335,15 @@ VIEWS: dict[str, View] = {}
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--case", choices=list(LATER), default=list(LATER)[-1], help="the new column's case")
-    ap.add_argument("--middle", choices=[*LATER, "none"], default=next(iter(LATER)),
+    ap.add_argument("--case", choices=list(LATER), default="sept26_schools", help="the new column's case")
+    ap.add_argument("--middle", choices=[*LATER, "none"], default="sept26",
                     help="a case shown between old and new, or none")
     ap.add_argument("--out", type=Path, default=HERE / "derived/old_new_lanes.csv")
     args = ap.parse_args()
     cases = ["sept24"] + ([args.middle] if args.middle not in ("none", args.case) else []) + [args.case]
     with tempfile.TemporaryDirectory() as tmp:
         for case in cases:
-            VIEWS[case] = View(case, Path(tmp), is_new=case == args.case)
+            VIEWS[case] = View(case, Path(tmp))
         main_case()
         backcast()
         debt()
