@@ -11,6 +11,11 @@ reports FAILED without comparing anything: a failed script leaves the old output
 would compare identical (the 2026-09-23 zsh `$w` trap and the 2026-09-27 missing-pyreadr trap). After
 a clean run, every file in `derived/` is compared with its copy; new, missing and changed files are
 listed. Exit 0 only when every command succeeded and every output is identical.
+
+New or modified scripts in the lane that no command names are listed as NOT RUN, and the exit code is
+3. Such a script is either still being written by a worker, or missing from the reproduce list; either
+way the rerun does not cover it (3589a4f took a half-written script from a running worker). Check
+`ListAgents` and the RESULT, then add a command or pass `--allow-unrun <path>` (repeatable).
 """
 from __future__ import annotations
 
@@ -23,9 +28,31 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+SCRIPT_SUFFIXES = {".py", ".cjs", ".mjs", ".js", ".R", ".sh"}
+
+
+def unrun_scripts(lane: Path, cmds: list[str], allowed: set[str]) -> list[str]:
+    """New or modified scripts under the lane that no command names."""
+    r = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all", "--", str(lane)],
+                       cwd=ROOT, capture_output=True, text=True, check=True)
+    out = []
+    for line in r.stdout.splitlines():
+        path = line[3:].split(" -> ")[-1].strip().strip('"')
+        p = Path(path)
+        if p.suffix not in SCRIPT_SUFFIXES or {"_cache", "__pycache__", "node_modules"} & set(p.parts):
+            continue
+        if path in allowed or p.name in allowed or any(p.name in c for c in cmds):
+            continue
+        out.append(path)
+    return out
 
 
 def main(argv: list[str]) -> int:
+    allowed: set[str] = set()
+    while "--allow-unrun" in argv:
+        i = argv.index("--allow-unrun")
+        allowed.add(argv[i + 1])
+        del argv[i:i + 2]
     if len(argv) < 2:
         print(__doc__)
         return 2
@@ -56,6 +83,14 @@ def main(argv: list[str]) -> int:
     ok = not (changed or added or missing)
     print(f"[rerun] {'IDENTICAL' if ok else 'DIFFERS'}: {len(old & new) - len(changed)}/{len(old)} files unchanged"
           f" (backup: {backup})")
+    unrun = unrun_scripts(lane, [c.replace("{lane}", str(lane)) for c in argv[1:]], allowed)
+    for path in unrun:
+        print(f"[rerun] NOT RUN {path}")
+    if unrun:
+        print("[rerun] UNCOVERED: new or modified scripts that no command runs. A worker may still be writing,"
+              " or the reproduce list misses them; check ListAgents and the RESULT, then add a command or pass"
+              " --allow-unrun <path>.")
+        return 3 if ok else 1
     return 0 if ok else 1
 
 
