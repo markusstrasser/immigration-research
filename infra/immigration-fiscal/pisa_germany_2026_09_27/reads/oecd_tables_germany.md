@@ -1,0 +1,184 @@
+# OECD PISA 2022 Results Vol. I, annex B1 chapter 7 — Germany cells read by decompose.py
+
+Source: OECD (2023), PISA 2022 Results (Volume I), doi:10.1787/53f23881-en; workbook https://stat.link/qmuad8 (fetched 2026-09-27 as https://stat.link/files/53f23881-en/qmuad8.xlsx). Each line: table | column path | cell value as stored. Shares are % of students with valid immigrant-status data; means are PISA scale points.
+
+- Table I.B1.7.2 | PISA 2012 / Non-immigrant students / % | 86.55305642205659
+- Table I.B1.7.2 | PISA 2012 / Immigrant students / All immigrant students / % | 13.44694357794343
+- Table I.B1.7.2 | PISA 2012 / Immigrant students / Second-generation immigrant students / % | 10.61161479892438
+- Table I.B1.7.2 | PISA 2012 / Immigrant students / First-generation immigrant students / % | 2.835328779019057
+- Table I.B1.7.2 | PISA 2015 / Non-immigrant students / % | 83.08531220208695
+- Table I.B1.7.2 | PISA 2015 / Immigrant students / All immigrant students / % | 16.91468779791304
+- Table I.B1.7.2 | PISA 2015 / Immigrant students / Second-generation immigrant students / % | 13.16951448907516
+- Table I.B1.7.2 | PISA 2015 / Immigrant students / First-generation immigrant students / % | 3.745173308837874
+- Table I.B1.7.2 | PISA 2018 / Non-immigrant students / % | 77.83119203240202
+- Table I.B1.7.2 | PISA 2018 / Immigrant students / All immigrant students / % | 22.168807967598
+- Table I.B1.7.2 | PISA 2018 / Immigrant students / Second-generation immigrant students / % | 15.70616475766041
+- Table I.B1.7.2 | PISA 2018 / Immigrant students / First-generation immigrant students / % | 6.46264320993751
+- Table I.B1.7.1 | PISA 2022 / Non-immigrant students / % | 74.21651068611722
+- Table I.B1.7.1 | PISA 2022 / Immigrant students / All immigrant students / % | 25.78348931388278
+- Table I.B1.7.1 | PISA 2022 / Immigrant students / Second-generation immigrant students / % | 16.63275841032295
+- Table I.B1.7.1 | PISA 2022 / Immigrant students / First-generation immigrant students / % | 9.150730903559857
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / All students / Mean score | 513.5250558199255
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / Non-immigrant students / Mean score | 527.8640249317585
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / Immigrant students / All immigrant students / Mean score | 471.66155169218257
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / Immigrant students / Second-generation immigrant students / Mean score | 476.20169117855335
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / Immigrant students / First-generation immigrant students / Mean score | 454.6694442091763
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / All students / Mean score | 505.9712824219327
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Non-immigrant students / Mean score | 519.4341289994449
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Immigrant students / All immigrant students / Mean score | 465.1267875601794
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Immigrant students / Second-generation immigrant students / Mean score | 470.5701491712517
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Immigrant students / First-generation immigrant students / Mean score | 445.98576958989565
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / All students / Mean score | 500.04378016676566
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Non-immigrant students / Mean score | 518.0505351502682
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Immigrant students / All immigrant students / Mean score | 462.3951070033088
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Immigrant students / Second-generation immigrant students / Mean score | 473.75308985342974
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Immigrant students / First-generation immigrant students / Mean score | 434.7917960725162
+- Table I.B1.7.17 | Mathematics performance / All students / Mean score | 474.82645390785706
+- Table I.B1.7.17 | Mathematics performance / Non-immigrant students / Mean score | 494.9979957000922
+- Table I.B1.7.17 | Mathematics performance / Immigrant students / All immigrant students / Mean score | 436.3051475399438
+- Table I.B1.7.17 | Mathematics performance / Immigrant students / Second-generation immigrant students / Mean score | 457.15680980240086
+- Table I.B1.7.17 | Mathematics performance / Immigrant students / First-generation immigrant students / Mean score | 398.404277705582
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / All students / S.E. | 2.87652539550443
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / Non-immigrant students / S.E. | 3.242716339965981
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / Immigrant students / All immigrant students / S.E. | 5.406496642044791
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / Immigrant students / Second-generation immigrant students / S.E. | 5.686266951148062
+- Table I.B1.7.18 | Mathematics performance / PISA 2012 / Immigrant students / First-generation immigrant students / S.E. | 11.380926899511037
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / All students / S.E. | 2.8878866008659214
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Non-immigrant students / S.E. | 2.9444869569317422
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Immigrant students / All immigrant students / S.E. | 5.652526723030461
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Immigrant students / Second-generation immigrant students / S.E. | 5.687546665894591
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Immigrant students / First-generation immigrant students / S.E. | 10.466497515665717
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / All students / S.E. | 2.6470829297669343
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Non-immigrant students / S.E. | 2.897424006769393
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Immigrant students / All immigrant students / S.E. | 5.7432631215768755
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Immigrant students / Second-generation immigrant students / S.E. | 6.368305929336611
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Immigrant students / First-generation immigrant students / S.E. | 10.617423666927523
+- Table I.B1.7.17 | Mathematics performance / All students / S.E. | 3.0648044725406103
+- Table I.B1.7.17 | Mathematics performance / Non-immigrant students / S.E. | 3.049119168272895
+- Table I.B1.7.17 | Mathematics performance / Immigrant students / All immigrant students / S.E. | 4.241903872525239
+- Table I.B1.7.17 | Mathematics performance / Immigrant students / Second-generation immigrant students / S.E. | 4.296258403368473
+- Table I.B1.7.17 | Mathematics performance / Immigrant students / First-generation immigrant students / S.E. | 5.9401682712712915
+- Table I.B1.7.4 | Change between PISA 2012 and PISA 2022 (PISA 2012 - PISA 2022) / Immigrant students / All immigrant students / % dif. | 12.336545944213867
+- Table I.B1.7.4 | Change between PISA 2012 and PISA 2022 (PISA 2012 - PISA 2022) / Immigrant students / All immigrant students / S.E. | 1.3401566743850708
+- Table I.B1.7.17 | Mathematics performance / Difference between immigrant and non-immigrant students / Score dif. | -58.6928481601484
+- Table I.B1.7.17 | Mathematics performance / Difference between immigrant and non-immigrant students / S.E. | 4.432833279034447
+- Table I.B1.7.2 | PISA 2012 / Immigrant students / All immigrant students / S.E. | 0.798469753574482
+- Table I.B1.7.1 | PISA 2022 / Immigrant students / All immigrant students / S.E. | 1.0763205684239316
+- Table I.B1.7.4 | Change between PISA 2015 and PISA 2022 (PISA 2015 - PISA 2022) / Immigrant students / All immigrant students / % dif. | 8.86880111694336
+- Table I.B1.7.4 | Change between PISA 2015 and PISA 2022 (PISA 2015 - PISA 2022) / Immigrant students / All immigrant students / S.E. | 1.4316729307174683
+- Table I.B1.7.2 | PISA 2015 / Immigrant students / All immigrant students / S.E. | 0.9440452096997869
+- Table I.B1.7.3 | Change between PISA 2018 and PISA 2022 (PISA 2018 - PISA 2022) / Immigrant students / All immigrant students / S.E. | 1.574224829673767
+- Table I.B1.7.2 | PISA 2018 / Immigrant students / All immigrant students / S.E. | 1.1487898067601576
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Difference between immigrant and non-immigrant students / Score dif. | -55.65542814695932
+- Table I.B1.7.18 | Mathematics performance / PISA 2018 / Difference between immigrant and non-immigrant students / S.E. | 6.118288949881063
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Difference between immigrant and non-immigrant students / Score dif. | -54.30734143926546
+- Table I.B1.7.18 | Mathematics performance / PISA 2015 / Difference between immigrant and non-immigrant students / S.E. | 5.610774144412687
+- Table I.B1.7.22 | Reading performance / PISA 2012 / All students / Mean score | 507.67652976553
+- Table I.B1.7.22 | Reading performance / PISA 2012 / Non-immigrant students / Mean score | 522.4862557730579
+- Table I.B1.7.22 | Reading performance / PISA 2012 / Immigrant students / All immigrant students / Mean score | 473.76941373209894
+- Table I.B1.7.22 | Reading performance / PISA 2012 / Immigrant students / Second-generation immigrant students / Mean score | 481.41568240809977
+- Table I.B1.7.22 | Reading performance / PISA 2012 / Immigrant students / First-generation immigrant students / Mean score | 445.15218301119677
+- Table I.B1.7.22 | Reading performance / PISA 2015 / All students / Mean score | 509.104138805522
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Non-immigrant students / Mean score | 525.6119741146504
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Immigrant students / All immigrant students / Mean score | 467.5121441489929
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Immigrant students / Second-generation immigrant students / Mean score | 477.9459924210367
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Immigrant students / First-generation immigrant students / Mean score | 430.8225961189361
+- Table I.B1.7.22 | Reading performance / PISA 2018 / All students / Mean score | 498.27925642959156
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Non-immigrant students / Mean score | 518.8976760558194
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Immigrant students / All immigrant students / Mean score | 456.0949146669865
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Immigrant students / Second-generation immigrant students / Mean score | 477.3058662148476
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Immigrant students / First-generation immigrant students / Mean score | 404.54592939031386
+- Table I.B1.7.21 | Reading performance / All students / Mean score | 479.79402475457374
+- Table I.B1.7.21 | Reading performance / Non-immigrant students / Mean score | 502.2534454928694
+- Table I.B1.7.21 | Reading performance / Immigrant students / All immigrant students / Mean score | 435.4833707910538
+- Table I.B1.7.21 | Reading performance / Immigrant students / Second-generation immigrant students / Mean score | 464.94124687672013
+- Table I.B1.7.21 | Reading performance / Immigrant students / First-generation immigrant students / Mean score | 381.93947999392543
+- Table I.B1.7.22 | Reading performance / PISA 2012 / All students / S.E. | 2.816008538347236
+- Table I.B1.7.22 | Reading performance / PISA 2012 / Non-immigrant students / S.E. | 2.92838983852691
+- Table I.B1.7.22 | Reading performance / PISA 2012 / Immigrant students / All immigrant students / S.E. | 5.6005089165589625
+- Table I.B1.7.22 | Reading performance / PISA 2012 / Immigrant students / Second-generation immigrant students / S.E. | 5.853386287975895
+- Table I.B1.7.22 | Reading performance / PISA 2012 / Immigrant students / First-generation immigrant students / S.E. | 11.650514455257214
+- Table I.B1.7.22 | Reading performance / PISA 2015 / All students / S.E. | 3.0184897844462495
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Non-immigrant students / S.E. | 2.8799260829448468
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Immigrant students / All immigrant students / S.E. | 7.4162848537995805
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Immigrant students / Second-generation immigrant students / S.E. | 6.986441747343954
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Immigrant students / First-generation immigrant students / S.E. | 12.727497672322905
+- Table I.B1.7.22 | Reading performance / PISA 2018 / All students / S.E. | 3.0254079122693804
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Non-immigrant students / S.E. | 3.3154584178370077
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Immigrant students / All immigrant students / S.E. | 6.494713446487372
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Immigrant students / Second-generation immigrant students / S.E. | 6.6207428916166835
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Immigrant students / First-generation immigrant students / S.E. | 11.754542274721846
+- Table I.B1.7.21 | Reading performance / All students / S.E. | 3.609103731522342
+- Table I.B1.7.21 | Reading performance / Non-immigrant students / S.E. | 3.5733041971011894
+- Table I.B1.7.21 | Reading performance / Immigrant students / All immigrant students / S.E. | 5.1267339587965015
+- Table I.B1.7.21 | Reading performance / Immigrant students / Second-generation immigrant students / S.E. | 5.682219061624634
+- Table I.B1.7.21 | Reading performance / Immigrant students / First-generation immigrant students / S.E. | 6.56756341588463
+- Table I.B1.7.21 | Reading performance / Difference between immigrant and non-immigrant students / Score dif. | -66.77007470181556
+- Table I.B1.7.21 | Reading performance / Difference between immigrant and non-immigrant students / S.E. | 4.99676195303039
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Difference between immigrant and non-immigrant students / Score dif. | -62.80276138883294
+- Table I.B1.7.22 | Reading performance / PISA 2018 / Difference between immigrant and non-immigrant students / S.E. | 6.788328981259055
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Difference between immigrant and non-immigrant students / Score dif. | -58.09982996565753
+- Table I.B1.7.22 | Reading performance / PISA 2015 / Difference between immigrant and non-immigrant students / S.E. | 7.290620468125196
+- Table I.B1.7.26 | Science performance / PISA 2012 / All students / Mean score | 524.1207992570013
+- Table I.B1.7.26 | Science performance / PISA 2012 / Non-immigrant students / Mean score | 540.125432363022
+- Table I.B1.7.26 | Science performance / PISA 2012 / Immigrant students / All immigrant students / Mean score | 474.1921302049609
+- Table I.B1.7.26 | Science performance / PISA 2012 / Immigrant students / Second-generation immigrant students / Mean score | 478.35740075190165
+- Table I.B1.7.26 | Science performance / PISA 2012 / Immigrant students / First-generation immigrant students / Mean score | 458.60302219586066
+- Table I.B1.7.26 | Science performance / PISA 2015 / All students / Mean score | 509.14064729188925
+- Table I.B1.7.26 | Science performance / PISA 2015 / Non-immigrant students / Mean score | 527.1977348185986
+- Table I.B1.7.26 | Science performance / PISA 2015 / Immigrant students / All immigrant students / Mean score | 454.99580635355125
+- Table I.B1.7.26 | Science performance / PISA 2015 / Immigrant students / Second-generation immigrant students / Mean score | 460.9157463995229
+- Table I.B1.7.26 | Science performance / PISA 2015 / Immigrant students / First-generation immigrant students / Mean score | 434.1789496206727
+- Table I.B1.7.26 | Science performance / PISA 2018 / All students / Mean score | 502.98890282349976
+- Table I.B1.7.26 | Science performance / PISA 2018 / Non-immigrant students / Mean score | 524.3753584881781
+- Table I.B1.7.26 | Science performance / PISA 2018 / Immigrant students / All immigrant students / Mean score | 453.87057278984634
+- Table I.B1.7.26 | Science performance / PISA 2018 / Immigrant students / Second-generation immigrant students / Mean score | 467.93377226926407
+- Table I.B1.7.26 | Science performance / PISA 2018 / Immigrant students / First-generation immigrant students / Mean score | 419.6927726439345
+- Table I.B1.7.25 | Science performance / PISA 2022 / All students / Mean score | 492.4267295061775
+- Table I.B1.7.25 | Science performance / PISA 2022 / Non-immigrant students / Mean score | 516.4117311969507
+- Table I.B1.7.25 | Science performance / PISA 2022 / Immigrant students / All immigrant students / Mean score | 443.0696964337347
+- Table I.B1.7.25 | Science performance / PISA 2022 / Immigrant students / Second-generation immigrant students / Mean score | 469.5311912646196
+- Table I.B1.7.25 | Science performance / PISA 2022 / Immigrant students / First-generation immigrant students / Mean score | 394.97215588351503
+- Table I.B1.7.26 | Science performance / PISA 2012 / All students / S.E. | 2.96327421564852
+- Table I.B1.7.26 | Science performance / PISA 2012 / Non-immigrant students / S.E. | 3.146180157825626
+- Table I.B1.7.26 | Science performance / PISA 2012 / Immigrant students / All immigrant students / S.E. | 5.995658885226811
+- Table I.B1.7.26 | Science performance / PISA 2012 / Immigrant students / Second-generation immigrant students / S.E. | 6.08613870835707
+- Table I.B1.7.26 | Science performance / PISA 2012 / Immigrant students / First-generation immigrant students / S.E. | 12.183628888556822
+- Table I.B1.7.26 | Science performance / PISA 2015 / All students / S.E. | 2.6988193823936433
+- Table I.B1.7.26 | Science performance / PISA 2015 / Non-immigrant students / S.E. | 2.5862842215276913
+- Table I.B1.7.26 | Science performance / PISA 2015 / Immigrant students / All immigrant students / S.E. | 6.122119258774389
+- Table I.B1.7.26 | Science performance / PISA 2015 / Immigrant students / Second-generation immigrant students / S.E. | 5.808493109255464
+- Table I.B1.7.26 | Science performance / PISA 2015 / Immigrant students / First-generation immigrant students / S.E. | 10.503110487293872
+- Table I.B1.7.26 | Science performance / PISA 2018 / All students / S.E. | 2.9115005535325515
+- Table I.B1.7.26 | Science performance / PISA 2018 / Non-immigrant students / S.E. | 3.176704068704522
+- Table I.B1.7.26 | Science performance / PISA 2018 / Immigrant students / All immigrant students / S.E. | 6.500778086037557
+- Table I.B1.7.26 | Science performance / PISA 2018 / Immigrant students / Second-generation immigrant students / S.E. | 6.774586074707841
+- Table I.B1.7.26 | Science performance / PISA 2018 / Immigrant students / First-generation immigrant students / S.E. | 12.122392267591188
+- Table I.B1.7.25 | Science performance / PISA 2022 / All students / S.E. | 3.4830592474452415
+- Table I.B1.7.25 | Science performance / PISA 2022 / Non-immigrant students / S.E. | 3.335858815591748
+- Table I.B1.7.25 | Science performance / PISA 2022 / Immigrant students / All immigrant students / S.E. | 4.729701303155315
+- Table I.B1.7.25 | Science performance / PISA 2022 / Immigrant students / Second-generation immigrant students / S.E. | 5.051715307440235
+- Table I.B1.7.25 | Science performance / PISA 2022 / Immigrant students / First-generation immigrant students / S.E. | 6.324822542662364
+- Table I.B1.7.25 | Science performance / PISA 2022 / Difference between immigrant and non-immigrant students / Score dif. | -73.342034763216
+- Table I.B1.7.25 | Science performance / PISA 2022 / Difference between immigrant and non-immigrant students / S.E. | 4.735394695783213
+- Table I.B1.7.26 | Science performance / PISA 2018 / Difference between immigrant and non-immigrant students / Score dif. | -70.50478569833179
+- Table I.B1.7.26 | Science performance / PISA 2018 / Difference between immigrant and non-immigrant students / S.E. | 7.067374394318972
+- Table I.B1.7.26 | Science performance / PISA 2015 / Difference between immigrant and non-immigrant students / Score dif. | -72.20192846504732
+- Table I.B1.7.26 | Science performance / PISA 2015 / Difference between immigrant and non-immigrant students / S.E. | 6.180936380076078
+- Table I.B1.7.4 | Change between PISA 2012 and PISA 2022 (PISA 2012 - PISA 2022) / Immigrant students / First-generation immigrant students / % dif. | 6.315402030944824
+- Table I.B1.7.3 | Change between PISA 2018 and PISA 2022 (PISA 2018 - PISA 2022) / Immigrant students / All immigrant students / % dif. | 3.6146812438964844
+- Table I.B1.7.20 | Change in mathematics performance between PISA 2012 and PISA 2022 (PISA 2022 - PISA 2012) / Non-immigrant students / Score dif. | -32.86602783203125
+- Table I.B1.7.20 | Change in mathematics performance between PISA 2012 and PISA 2022 (PISA 2022 - PISA 2012) / Non-immigrant students / S.E. | 5.712156772613525
+- Table I.B1.7.19 | Change in mathematics performance between PISA 2018 and PISA 2022 (PISA 2022 - PISA 2018) / Non-immigrant students / Score dif. | -23.052539825439453
+- Table I.B1.7.19 | Change in mathematics performance between PISA 2018 and PISA 2022 (PISA 2022 - PISA 2018) / Non-immigrant students / S.E. | 4.765479564666748
+- Table I.B1.7.20 | Change in mathematics performance between PISA 2012 and PISA 2022 (PISA 2022 - PISA 2012) / All students / Score dif. | -38.69860076904297
+- Table I.B1.7.24 | Change in reading performance between PISA 2012 and PISA 2022 (PISA 2022 - PISA 2012) / Non-immigrant students / Score dif. | -20.232810974121094
+- Table I.B1.7.24 | Change in reading performance between PISA 2012 and PISA 2022 (PISA 2022 - PISA 2012) / Non-immigrant students / S.E. | 7.580505847930908
+- Table I.B1.7.23 | Change in reading performance between PISA 2018 and PISA 2022 (PISA 2022 - PISA 2018) / Non-immigrant students / Score dif. | -16.644229888916016
+- Table I.B1.7.23 | Change in reading performance between PISA 2018 and PISA 2022 (PISA 2022 - PISA 2018) / Non-immigrant students / S.E. | 5.09133243560791
+- Table I.B1.7.24 | Change in reading performance between PISA 2012 and PISA 2022 (PISA 2022 - PISA 2012) / All students / Score dif. | -27.882505416870117
+- Table I.B1.7.28 | Change in science performance between PISA 2012 and PISA 2022 (PISA 2022 - PISA 2012) / Non-immigrant students / Score dif. | -23.713701248168945
+- Table I.B1.7.28 | Change in science performance between PISA 2012 and PISA 2022 (PISA 2022 - PISA 2012) / Non-immigrant students / S.E. | 6.9329938888549805
+- Table I.B1.7.27 | Change in science performance between PISA 2018 and PISA 2022 (PISA 2022 - PISA 2018) / Non-immigrant students / Score dif. | -7.963627338409424
+- Table I.B1.7.27 | Change in science performance between PISA 2018 and PISA 2022 (PISA 2022 - PISA 2018) / Non-immigrant students / S.E. | 4.879703044891357
+- Table I.B1.7.28 | Change in science performance between PISA 2012 and PISA 2022 (PISA 2022 - PISA 2012) / All students / Score dif. | -31.694068908691406
