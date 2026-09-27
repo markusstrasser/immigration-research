@@ -97,7 +97,11 @@ ledger's gaps against whites. [2026-09-26, later: on the schools case, still net
 specification. Counted with their parents: the Mexico-born **$136–155bn** ($11.6–13.3k per
 adult), the second generation **$66–68bn** ($7.4–7.6k) and the third-plus **$55–71bn**
 ($6.7–8.6k). Counted in their own generation: $57–78bn, $105–117bn and $76–118bn. The first-year
-budget response stays within $1bn of the September 25 split (ladder 224).]
+budget response stays within $1bn of the September 25 split (ladder 224).] [2026-09-27: on the
+September 27 case, still net costs at every specification. Counted with their parents: the
+Mexico-born **$159–191bn** ($13.6–16.3k per adult), the second generation **$87–95bn**
+($9.8–10.7k) and the third-plus **$75–102bn** ($9.2–12.4k). Counted in their own generation:
+$78–94bn, $128–153bn and $100–156bn (ladder 224).]
 
 The September 23 case, **$203–250bn**, added three changes to the September 20 account:
 - general government responds at 0.59–0.84 instead of zero;

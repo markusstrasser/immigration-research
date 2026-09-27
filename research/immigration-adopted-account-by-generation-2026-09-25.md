@@ -1,6 +1,42 @@
 # The adopted account by generation
 
-**Verdict (2026-09-26, schools at full average cost):** Since the main case charges the group's
+**Verdict (2026-09-27, the September 27 case):** On the main case of $321.8–387.4bn a year
+([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 239), all
+three Mexican-origin generations remain net costs to other US residents. That holds at every one of its 64
+specifications and under both ways of counting children.
+- **Counted with their parents** (NAS): the Mexico-born cost others $159–191bn a year ($13.6–16.3k per
+  adult), the second generation $87–95bn ($9.8–10.7k per adult) and the third-plus $75–102bn ($9.2–12.4k
+  per adult).
+- **Counted in their own generation:** $78–94bn, $128–153bn and $100–156bn.
+
+The case's four additions are long-run road and park responses, rental assistance, the return on public
+capital and the government enterprises. They add $63.3bn (low end) and $95.4bn (high end) over the schools
+case. They follow residents and pupils, so under the own-generation count the second and third-plus
+generations carry 75–78% of the move, and under the NAS count the Mexico-born carry 37%.
+- **The capital return** is $33.8 / 55.7bn of the case. It is an imputed resource cost at 2% / 3%, never a
+  debt flow. Under (a): G1 $8.7 / 11.5bn, G2 $12.5 / 22.0bn, G3+ $12.5 / 22.2bn.
+- **The enterprise receipt's re-key** to the corrected population share lowers G1's cost by $0.5 / 0.7bn
+  and moves the others by under $0.1bn.
+
+[CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md),
+`run_generations.cjs` → `derived/generation_results.csv`, `generation_summary.json`
+`change_from_sept26_schools`; commit 8654a0c; parent rerun byte-identical] [FRAMING-SENSITIVE]
+
+| $bn a year, low / high end | (a) own generation | (b) minors with parents |
+|---|---|---|
+| G1, born in Mexico | 93.8 / 78.3 | 159.0 / 190.8 |
+| G2, US-born, a parent born in Mexico | 127.6 / 153.0 | 87.3 / 95.0 |
+| G3+, US-born of US-born parents | 100.5 / 156.1 | 75.5 / 101.6 |
+| All three (the main case) | 321.8 / 387.4 | 321.8 / 387.4 |
+
+The ends are specifications 48 (shared allocation, 2%, the low long-run readings) and 11 (personal, 3%, the
+high readings), as in the schools case. Beside the account, never in the range:
+- without the capital return, (a) is $85.0 / 66.8bn, $115.1 / 131.0bn and $87.9 / 133.9bn;
+- at 7% on every component, $115.6 / 93.6bn, $158.9 / 182.3bn and $131.8 / 185.8bn.
+
+The first-year budget response is unchanged: it is still the September 26 case below.
+
+**Schools-case verdict (2026-09-26; the record since 2026-09-27):** Since the main case charges the group's
 pupils at their full average cost ($258.5–292.0bn a year; [decision](../decisions/2026-09-26-main-case-schools-full-cost.md),
 ladder 230), all three Mexican-origin generations remain net costs to other US residents. That holds
 at every one of its 64 specifications and under both ways of counting children.
@@ -161,6 +197,17 @@ case itself, which moves every generation.
 
 ## Revisions
 
+- 2026-09-27 (the return on public capital, long-run roads and parks, rental assistance and enterprises,
+  [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)): the split now runs
+  on the main case of $321.8–387.4bn (commit 8654a0c).
+  - Every generation's cost rises, and all three remain net costs at every specification.
+  - Counted with their parents, the Mexico-born cost $159–191bn, the second generation $87–95bn and the
+    third-plus $75–102bn.
+  - Concept affected: the adopted account's split by generation (ladder 224). The ordering under each
+    convention is unchanged. Under (a) the third-plus now lead the second generation at the high end by
+    $3.1bn ($156.1bn against $153.0bn), where the margin was $0.1bn.
+  - Inherited, not repaired: the rental-assistance keying defect of the conceptual audit (§7, about $0.2bn
+    on the whole case) passes into each generation.
 - 2026-09-26 (schools at full average cost, [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)):
   the split now runs on the main case of $258.5–292.0bn (commit 2441ac8).
   - Every generation's cost rises, and all three remain net costs at every specification.
