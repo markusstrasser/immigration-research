@@ -218,7 +218,36 @@ def prepare() -> pd.DataFrame:
     add_percentiles(df, ref, "inctot_f", df.inctot_ok.to_numpy(), ["year", "band"], "p_inctot")
     pos = df.earn_ok.to_numpy() & (df.earn.to_numpy() > 0)
     add_percentiles(df, ref, "earn", pos, ["year", "band"], "p_earn_pos")
+    add_arrival_age(df)
     return df
+
+
+def yrimmig_bounds() -> dict[int, tuple[int, int]]:
+    """YRIMMIG code -> (first, last) possible arrival year, parsed from the DDI labels."""
+    out = {}
+    for code, lab in load.ddi_labels("YRIMMIG").items():
+        if code == 0:
+            continue
+        yrs = [int(t) for t in lab.replace("-", " ").split() if t.isdigit()]
+        if "earlier" in lab:
+            out[code] = (1900, yrs[0])
+        else:
+            out[code] = (yrs[0], yrs[-1])
+    return out
+
+
+def add_arrival_age(df: pd.DataFrame) -> None:
+    """Conservative arrival-age arms for G1 (grouped YRIMMIG intervals):
+    arrived_25plus: age - (year - earliest possible arrival year) >= 25, so 25+ for any year in
+    the interval; arrived_under18: age - (year - latest possible arrival year) < 18. Persons whose
+    interval straddles an edge, and NIU codes, are in neither arm."""
+    b = yrimmig_bounds()
+    lo = df.yrimmig.map(lambda c: b.get(int(c), (np.nan, np.nan))[0]).to_numpy(float)
+    hi = df.yrimmig.map(lambda c: b.get(int(c), (np.nan, np.nan))[1]).to_numpy(float)
+    g1 = (df.gen == 1).to_numpy()
+    age, year = df.age.to_numpy(), df.year.to_numpy()
+    df["arrived_25plus"] = g1 & (age - (year - lo) >= 25)
+    df["arrived_under18"] = g1 & (age - (year - hi) < 18)
 
 
 # ---------------------------------------------------------------------------------------------
@@ -465,7 +494,10 @@ def origin_table(df: pd.DataFrame, labels: dict) -> list[dict]:
                         rm, _ = wmean_se(df.loc[mm, var].to_numpy(), df.loc[mm, "w"].to_numpy())
                         row[f"{gen}_{var}_raw"] = rm
                 if gen == "g1":
-                    for col in ("p_sel", "p_sel_bl", "p_sel_wic"):
+                    for arm in ("a25", "u18"):
+                        row[f"n_g1_{arm}"] = int((mk & np.isfinite(df[f"p_sel_{arm}"].to_numpy())).sum())
+                    for col in ("p_sel", "p_sel_bl", "p_sel_wic", "p_sel_a25", "p_edu_a25",
+                                "p_sel_u18", "p_edu_u18"):
                         mm = mk & np.isfinite(df[col].to_numpy())
                         if mm.sum() >= 20:
                             ws = std_weights(df, mm, ref_share)
@@ -552,6 +584,22 @@ def main() -> int:
     # the WIC 2020 reconstruction otherwise (Nigeria, Lebanon, Samoa)
     bl_origins = {o for o, n in BL_NAME.items() if n in set(bl.country)}
     df["p_sel"] = np.where(df.origin.isin(bl_origins), df.p_sel_bl, df.p_sel_wic)
+    # arrival-age arms: schooling of child arrivals may be US-acquired (audit 2026-09-27)
+    for arm, col in (("a25", "arrived_25plus"), ("u18", "arrived_under18")):
+        m = df[col].to_numpy()
+        df[f"p_sel_{arm}"] = np.where(m, df.p_sel, np.nan)
+        df[f"p_edu_{arm}"] = np.where(m, df.p_edu, np.nan)
+    g1w = df.loc[df.gen == 1]
+    audit["arrival_arms"] = {
+        "g1_n": int(len(g1w)),
+        "share_arrived_25plus_weighted": float(g1w.w[g1w.arrived_25plus].sum() / g1w.w.sum()),
+        "share_arrived_under18_weighted": float(g1w.w[g1w.arrived_under18].sum() / g1w.w.sum()),
+        "mexico_share_arrived_under18_weighted": float(
+            g1w.w[g1w.arrived_under18 & (g1w.origin == 20000)].sum() / g1w.w[g1w.origin == 20000].sum()),
+        "mexico_share_arrived_25plus_weighted": float(
+            g1w.w[g1w.arrived_25plus & (g1w.origin == 20000)].sum() / g1w.w[g1w.origin == 20000].sum()),
+        "yrimmig_niu": int((g1w.yrimmig == 0).sum()),
+    }
     missing_bl = sorted({BL_NAME[o] for o in BL_NAME} - set(bl.country))
     audit["barro_lee"] = {"sha256": BL_SHA, "names_not_in_file": missing_bl,
                           "g1_with_selection_pct": int(np.isfinite(df.p_sel).sum()),
@@ -633,6 +681,66 @@ def main() -> int:
                    "b_origin_selection": b[2],
                    "b_origin_selection_ci": [float(v) for v in np.percentile(bs[:, 2], [2.5, 97.5])]})
     audit["multiple_regression_g2_on_g1us_and_selection"] = mr
+
+    # selection axis by arrival age: all G1, arrived 25+, arrived before 18; with and without
+    # Mexico. Single regressions and the two-regressor fit (G1 US education + origin selection).
+    arm_rows = []
+    for arm, sel, g1us, ncol in (("all_g1", "g1_p_sel", "g1_p_edu", "n_g1"),
+                                 ("arrived_25plus", "g1_p_sel_a25", "g1_p_edu_a25", "n_g1_a25"),
+                                 ("arrived_under18", "g1_p_sel_u18", "g1_p_edu_u18", "n_g1_u18")):
+        base = main_t[(main_t.n_g1 >= MIN_G1) & (main_t[ncol] >= 50)]
+        for mex, tt0 in (("with Mexico", base), ("without Mexico", base[base.origin_code != 20000])):
+            for ycol in (g1us, "g2_p_edu", "g2_p_earn"):
+                f = add(f"origin selection [{arm}] -> {ycol}, {mex}", tt0, sel, ycol)
+                arm_rows.append({"arm": arm, "mexico": mex, "model": f"{ycol} ~ selection",
+                                 "n_origins": f["n_origins"], "b_selection": f["slope"],
+                                 "b_selection_lo": f["slope_lo"], "b_selection_hi": f["slope_hi"],
+                                 "b_g1_us": np.nan, "b_g1_us_lo": np.nan, "b_g1_us_hi": np.nan,
+                                 "r2_weighted": f["r2_weighted"]})
+            for ycol in ("g2_p_edu", "g2_p_earn"):
+                tt = tt0.dropna(subset=[g1us, sel, ycol])
+                X = np.column_stack([np.ones(len(tt)), tt[g1us], tt[sel]])
+                w = tt.n_g2.to_numpy(float)
+                yv = tt[ycol].to_numpy()
+                b = np.linalg.solve(X.T @ (X * w[:, None]), X.T @ (w * yv))
+                res = yv - X @ b
+                r2 = 1 - np.average(res ** 2, weights=w) / np.average((yv - np.average(yv, weights=w)) ** 2, weights=w)
+                bs = np.array([np.linalg.lstsq(X[i] * np.sqrt(w[i])[:, None], yv[i] * np.sqrt(w[i]), rcond=None)[0]
+                               for i in (rng.integers(0, len(tt), len(tt)) for _ in range(NBOOT))])
+                arm_rows.append({"arm": arm, "mexico": mex, "model": f"{ycol} ~ G1 US education + selection",
+                                 "n_origins": len(tt), "b_selection": b[2],
+                                 "b_selection_lo": np.percentile(bs[:, 2], 2.5),
+                                 "b_selection_hi": np.percentile(bs[:, 2], 97.5),
+                                 "b_g1_us": b[1], "b_g1_us_lo": np.percentile(bs[:, 1], 2.5),
+                                 "b_g1_us_hi": np.percentile(bs[:, 1], 97.5), "r2_weighted": r2})
+    write_csv(DERIVED / "selection_arms.csv", arm_rows)
+
+    # nonlinearity: paired origin bootstrap of (slope below white median - slope at/above)
+    nl_rows = []
+    nrng = np.random.default_rng(SEED + 1)
+    for x, y, lab in (("g1_p_edu", "g2_p_edu", "education"), ("g1_p_earn", "g2_p_earn", "earnings")):
+        for mex, tt in (("with Mexico", t.dropna(subset=[x, y])),
+                        ("without Mexico", t.dropna(subset=[x, y]).query("origin_code != 20000"))):
+            xv, yv, w = tt[x].to_numpy(), tt[y].to_numpy(), tt.n_g2.to_numpy(float)
+
+            def diff(ix):
+                lo_, hi_ = ix[xv[ix] < 50], ix[xv[ix] >= 50]
+                if len(np.unique(xv[lo_])) < 3 or len(np.unique(xv[hi_])) < 3:
+                    return np.nan, np.nan, np.nan
+                a = wls(xv[lo_], yv[lo_], w[lo_])[1]
+                c = wls(xv[hi_], yv[hi_], w[hi_])[1]
+                return a, c, a - c
+
+            a, c, d0 = diff(np.arange(len(tt)))
+            draws = np.array([diff(nrng.integers(0, len(tt), len(tt)))[2] for _ in range(10_000)])
+            lo_ci, hi_ci = np.nanpercentile(draws, [2.5, 97.5])
+            nl_rows.append({"outcome": lab, "mexico": mex, "n_origins": len(tt),
+                            "n_below": int((xv < 50).sum()), "n_above": int((xv >= 50).sum()),
+                            "slope_below": a, "slope_above": c, "difference": d0,
+                            "diff_lo": lo_ci, "diff_hi": hi_ci,
+                            "share_draws_diff_le_0": float(np.nanmean(draws <= 0)),
+                            "draws_valid": int(np.isfinite(draws).sum())})
+    write_csv(DERIVED / "nonlinearity.csv", nl_rows)
     # leave-one-out on the main slopes
     loo = {}
     for name, f in (("education", f_edu), ("earnings", f_earn)):

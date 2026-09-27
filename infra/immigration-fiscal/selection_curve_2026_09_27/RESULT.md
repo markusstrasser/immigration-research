@@ -10,12 +10,16 @@ interval over origins 0.29–0.59) and **0.55** on earnings (0.19–0.68). About
 generation's distance from the white mean carries to its children, on top of a common uplift of
 about 5 points at the white median. Mexico is the high-leverage point: without it the slopes are
 0.36 and 0.30. Mexico's G2 sits 8 points below the line that the other 77 origins draw (5 on
-earnings). The operator's "how selected" axis, the G1's percentile within its origin country, adds
-little once Mexico is dropped (R² 0.10–0.12). Position in the US distribution predicts G2
-outcomes; selection relative to the origin country does not. The G2→G3 link is the weak one:
+earnings). The operator's "how selected" axis is the G1's percentile within its origin country,
+measured on immigrants who arrived at 25 or older, whose schooling was not acquired in the US. It
+predicts where those adult arrivals land in the US (R² 0.28 without Mexico; slope 1.19,
+interval 0.45–1.75). It adds little to G2 outcomes once the G1's US position is known: without
+Mexico, 0.12 (−0.22 to 0.38) on G2 education and 0.00 on G2 earnings. So selection works
+through where the parents land. The earlier pooled R² of 0.10 was diluted by child arrivals
+(R² 0.00 in that arm). The G2→G3 link is the weak one:
 GSS gives 0.72 on education (0.23–1.06, 20 mostly European origins, 0.56 without Mexico), and
 the literature gives 0.46–0.53 (Borjas 1994). India sits at origin percentile 95 → US 73 → G2 73
-→ G3 about 67 [MODEL]. Mexico sits at 59 → 16 → 36 → about 40 [MODEL]. Mexico's observed G3
+→ G3 about 67 [MODEL]. Mexico sits at 58 → 16 → 36 → about 40 [MODEL]. Mexico's observed G3
 stalls near its G2, so the model overstates its convergence.
 
 Model self-report: claude-opus-5-5. 2026-09-27. All gates pass (`verify.py`, exit 0).
@@ -209,9 +213,10 @@ Reading:
   above it.** Guatemala, El Salvador and Honduras have G1 at 18–21, like Mexico's 16. Their G2
   reach 42–48; Mexico's reaches 36. This holds with G2 restricted to 2015–2025 (36.1), so the
   gap is not an older-cohort artifact.
-- **High-G1 groups regress more.** The slope is 0.68 below the white median and 0.31 above it;
-  without Mexico it is 0.49 below. India is an exception, with no regression at all from G1 to G2
-  (73.1 → 72.6), and it sits 6 points above the line.
+- **Split slopes: point estimates differ; the data cannot distinguish them from linear.** The
+  slope is 0.68 below the white median and 0.31 above it. The paired origin bootstrap puts the
+  difference at 0.37, with an interval of −0.12 to 0.83 (§6). India shows no regression at all
+  from G1 to G2 (73.1 → 72.6) and sits 6 points above the line.
 
 ## 3. Selection relative to origin (task 3)
 
@@ -228,11 +233,28 @@ adults with schooling, 477,911 are placed.
   Origin means range from 58.5 (Mexico) and 64.9 (Armenia) to 94.5 (India), 95.8 (Indonesia) and
   96.4 (Uganda). Mexico is the least selected large stream. Its immigrants sit near their own
   country's median: 58.5 in Barro-Lee, 48.2 in WIC 2020.
-- **The within-origin axis barely predicts US outcomes once Mexico is set aside.** It predicts G2
-  education with R² 0.72 with Mexico and 0.12 without it; for G1's own US percentile, R² falls
-  from 0.68 to 0.10. With both axes in one regression, G2 education loads 0.40 (0.28–0.52) on the
-  G1 US percentile and 0.27 (−0.13 to 0.41) on origin selection. G2 earnings load 0.20
-  (0.12–0.26) and 0.09 (−0.15 to 0.18) `[CALCULATION: derived/cps_audit.json]`.
+- **Arrival age matters for the measure.** 28% of pooled G1 (weighted) arrived before 18, and
+  their schooling may be US-acquired; for Mexico the share is 31%. 41% arrived at 25 or older,
+  classified conservatively over the grouped YRIMMIG intervals; the ones in between belong to
+  neither arm. For adult arrivals the within-origin axis predicts their own US position, and it
+  predicts G2 only through that position. `[CALCULATION: derived/selection_arms.csv; cps_audit.json arrival_arms]`
+
+| G1 arm | Mexico | origins | selection → G1 US edu, slope (95%), R² | selection → G2 edu, R² | selection → G2 earn, R² | G2 edu ~ G1 US + selection: b_G1US / b_sel | G2 earn ~ same: b_G1US / b_sel |
+|---|---|---|---|---|---|---|---|
+| all G1 | with | 77 | 1.51 (0.13–1.70), 0.68 | 0.87, 0.72 | 0.38, 0.62 | 0.40 (0.27–0.52) / 0.27 (−0.14 to 0.40) | 0.20 (0.11–0.26) / 0.09 (−0.13 to 0.17) |
+| all G1 | without | 76 | 0.62 (−0.02 to 1.36), 0.10 | 0.33, 0.12 | 0.10, 0.03 | 0.34 (0.25–0.45) / 0.12 (−0.19 to 0.35) | 0.16 (0.10–0.23) / −0.00 (−0.19 to 0.12) |
+| arrived 25+ | with | 77 | 1.63 (0.67–1.80), 0.75 | 0.84, 0.76 | 0.37, 0.67 | 0.28 (0.16–0.39) / 0.38 (−0.15 to 0.54) | 0.15 (0.09–0.21) / 0.12 (−0.14 to 0.21) |
+| arrived 25+ | without | 76 | **1.19 (0.45–1.75), 0.28** | 0.39 (0.08–0.66), 0.18 | 0.15 (0.01–0.29), 0.09 | 0.23 (0.14–0.34) / **0.12 (−0.22 to 0.38)** | 0.13 (0.07–0.20) / −0.00 (−0.17 to 0.14) |
+| arrived <18 | with | 74 | 1.33 (−0.21 to 1.65), 0.54 | 0.90, 0.59 | 0.39, 0.50 | 0.56 (0.44–0.66) / 0.16 (−0.08 to 0.32) | 0.26 (0.16–0.32) / 0.05 (−0.12 to 0.14) |
+| arrived <18 | without | 73 | 0.08 (−0.27 to 0.68), 0.00 | 0.15, 0.03 | 0.02, 0.00 | 0.50 (0.41–0.61) / 0.11 (−0.15 to 0.30) | 0.21 (0.13–0.29) / 0.01 (−0.15 to 0.11) |
+
+  Origins need ≥50 G1 in the arm. Arm means are age-standardised like the pooled ones; the G2
+  side is unchanged.
+- **Conclusion after the arrival-age split.** Selection within origin is a real predictor of
+  where adult arrivals land in the US. Once that landing point is known, it adds nothing
+  distinguishable from zero to G2 outcomes in any arm without Mexico. The pooled-G1 conclusion
+  holds for G2. What changes is the G1 link: it was understated because child arrivals, whose
+  origin-country rank is not pre-migration schooling, carry no signal.
 - The two origin sources disagree most for rich European origins: Germany is 83 in Barro-Lee and
   52 in WIC, Canada 73 and 45. That is a definitional difference: Barro-Lee counts some tertiary
   as attained and WIC counts completed levels. Their disagreement is the size of the measurement
@@ -241,8 +263,9 @@ adults with schooling, 477,911 are placed.
   [SOURCE: `literature_reads.md` §5a].
 
 So "how selected" in the operator's sense, meaning how far up the origin country's ladder the
-migrants came from, is not the quantity that carries. Where they land on the US ladder is. The
-curve below starts from the origin percentile only for display.
+migrants came from, matters through where the adult arrivals land on the US ladder, and that
+landing point is what carries to G2. The curve below uses the adult-arrival arm for its first
+link.
 
 ## 4. G2 → G3 (task 4)
 
@@ -293,7 +316,7 @@ cell (n 49) is +$11,806 (se 8,150) against a G2 of +$23,692
 
 | link | status | slope (95%) | intercept |
 |---|---|---|---|
-| origin selection → G1 US education | measured, weak (R² 0.10 without Mexico) | 1.51 (0.12–1.71) | −67.6 |
+| origin selection → G1 US education, G1 arrived 25+ | measured (R² 0.75; 0.28 without Mexico) | 1.63 (0.74–1.80) | −75.3 |
 | G1 → G2 education | measured | 0.52 (0.28–0.59) | 28.7 |
 | G1 → G2 earnings | measured | 0.55 (0.17–0.68) | 25.7 |
 | G2 → G3 education | [MODEL] GSS cross-origin | 0.72 (0.24–1.01) | 14.6 |
@@ -303,8 +326,8 @@ cell (n 49) is +$11,806 (se 8,150) against a G2 of +$23,692
 |---|---|---|---|---|---|---|
 | India, education | 94.5 | 73.1 | 72.6 | 66.9 | 67.2 (59.0–72.8) | 60.4–62.0 |
 | India, earnings | 94.5 | 57.9 | 60.6 | 57.6 | 55.7 (51.9–60.0) | 54.9–55.6 |
-| Mexico, education | 58.5 | 16.4 | 35.7 | 37.3 | 40.4 (35.1–50.2) | 42.4–43.4 |
-| Mexico, earnings | 58.5 | 34.4 | 43.4 | 44.7 | 47.4 (43.3–54.5) | 46.5–47.0 |
+| Mexico, education | 57.9 | 16.4 | 35.7 | 37.3 | 40.4 (35.1–50.2) | 42.4–43.4 |
+| Mexico, earnings | 57.9 | 34.4 | 43.4 | 44.7 | 47.4 (43.3–54.5) | 46.5–47.0 |
 
 Rows for China, the Philippines, Vietnam, Nigeria, Korea, Cuba and El Salvador, and the generic
 curve at origin-selection 60–95, are in `curve_projection.csv`. G3 is projected from each group's
@@ -321,11 +344,21 @@ the modelled convergence. For India there is no observed G3 beyond n = 49.
 
 ## 6. Disconfirmation (task 6)
 
-- **Nonlinearity: yes.** The G1→G2 slope is steeper below the white median than above it:
-  education 0.68 vs 0.31, earnings 0.74 vs 0.27, and 0.49 and 0.51 below the median without
-  Mexico. It is also steeper for the low-selection half (0.54/0.59) than the high half
-  (0.37/0.25). High-positioned groups regress toward about 60 faster, which is the pattern
-  regression to a common mean produces. India does not follow it.
+- **Nonlinearity: point estimates differ; the data cannot distinguish them from linear.** The
+  test is a paired origin bootstrap with 10,000 draws. Each draw resamples all origins, splits
+  them at G1 = 50, and differences the two n-weighted slopes.
+  `[CALCULATION: derived/nonlinearity.csv]`
+
+| outcome | Mexico | origins below / above | slope below | slope above | difference (95%) | share of draws ≤ 0 |
+|---|---|---|---|---|---|---|
+| education | with | 34 / 44 | 0.685 | 0.310 | 0.374 (−0.116 to 0.825) | 0.073 |
+| education | without | 33 / 44 | 0.494 | 0.310 | 0.184 (−0.187 to 0.697) | 0.161 |
+| earnings | with | 55 / 23 | 0.741 | 0.275 | 0.466 (−0.411 to 1.260) | 0.162 |
+| earnings | without | 54 / 23 | 0.506 | 0.275 | 0.231 (−0.519 to 1.097) | 0.272 |
+
+  This reproduces the audit (0.374 [−0.114, 0.829], 0.466 [−0.419, 1.269]); the interval ends
+  differ only through the random draws. The low- and high-selection halves (0.54/0.59 vs
+  0.37/0.25) were not tested and carry the same caveat.
 - **Leave-one-out:** dropping Mexico moves the slope from 0.52 to 0.36 (education) and from 0.55
   to 0.30 (earnings). No other single origin moves it by more than 0.05 (the largest is Canada, to 0.55 and
   0.59; `cps_audit.json` leave_one_out). Dropping Mexico, India, China and the Philippines gives
@@ -371,3 +404,27 @@ matters for the curve. Earnings are wage and salary only; self-employment is not
 which understates Korean and other high-self-employment groups. IPUMS counts people born abroad
 to American parents as foreign-born, which inflates the G1 counts for Germany and similar origins
 slightly.
+
+## Revisions
+
+**2026-09-27 (audit, same day).** Two findings from the team lead, both confirmed in the code and
+fixed.
+
+1. The within-origin selection percentile ranked the current schooling of every G1, including
+   child arrivals whose schooling may be US-acquired. `yrimmig` was loaded but unused. There are
+   now two arrival-age arms, conservative at the grouped YRIMMIG edges: arrived 25+ (41% of
+   weighted G1) and arrived before 18 (28%; Mexico 31%). All "how selected" regressions are
+   re-fitted on both arms, with and without Mexico (§3 table; `derived/selection_arms.csv`). The
+   verdict changes in one respect. Selection predicts adult arrivals' own US position (R² 0.28
+   without Mexico, against 0.10 pooled), and it still adds nothing distinguishable from zero to G2
+   beyond that position. The curve's first link now uses the 25+ arm (1.63; Mexico 57.9, India
+   94.5).
+2. "Nonlinearity: yes" was never tested. A 10,000-draw paired origin bootstrap of the
+   below-minus-above-median slope difference gives education 0.374 (−0.116 to 0.825) and
+   earnings 0.466 (−0.411 to 1.260). Both intervals include zero, so §2 and §6 now read "point
+   estimates differ; the data cannot distinguish them from linear" (`derived/nonlinearity.csv`).
+
+`verify.py` adds gate G7 (arms, YRIMMIG parsing, bootstrap draws, audit point estimates). Re-run
+exit codes: `cps_curve.py` 0, `curve.py` 0, `gss_g3.py` 0, `verify.py` 0 (ALL PASS; it re-runs
+`ledger_tail.py`).
+

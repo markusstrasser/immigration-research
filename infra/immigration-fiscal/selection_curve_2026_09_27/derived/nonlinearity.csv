@@ -1,0 +1,5 @@
+outcome,mexico,n_origins,n_below,n_above,slope_below,slope_above,difference,diff_lo,diff_hi,share_draws_diff_le_0,draws_valid
+education,with Mexico,78,34,44,0.684743,0.310288,0.374455,-0.115848,0.825022,0.0729,10000
+education,without Mexico,77,33,44,0.49391,0.310288,0.183623,-0.187206,0.697025,0.1607,10000
+earnings,with Mexico,78,55,23,0.740552,0.274693,0.465859,-0.411197,1.25959,0.1615,10000
+earnings,without Mexico,77,54,23,0.506048,0.274693,0.231354,-0.518592,1.09677,0.2717,10000

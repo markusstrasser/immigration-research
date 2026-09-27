@@ -1,0 +1,31 @@
+arm,mexico,model,n_origins,b_selection,b_selection_lo,b_selection_hi,b_g1_us,b_g1_us_lo,b_g1_us_hi,r2_weighted
+all_g1,with Mexico,g1_p_edu ~ selection,77,1.50712,0.130021,1.69817,nan,nan,nan,0.679025
+all_g1,with Mexico,g2_p_edu ~ selection,77,0.873019,0.096248,0.993751,nan,nan,nan,0.722128
+all_g1,with Mexico,g2_p_earn ~ selection,77,0.381581,-0.0423563,0.444121,nan,nan,nan,0.616982
+all_g1,with Mexico,g2_p_edu ~ G1 US education + selection,77,0.266399,-0.13933,0.398677,0.402502,0.271551,0.519383,0.886939
+all_g1,with Mexico,g2_p_earn ~ G1 US education + selection,77,0.0852465,-0.133866,0.16939,0.196623,0.109711,0.259573,0.792876
+all_g1,without Mexico,g1_p_edu ~ selection,76,0.617636,-0.015768,1.35871,nan,nan,nan,0.101813
+all_g1,without Mexico,g2_p_edu ~ selection,76,0.32777,0.0022524,0.631747,nan,nan,nan,0.116857
+all_g1,without Mexico,g2_p_earn ~ selection,76,0.0952453,-0.0745281,0.247465,nan,nan,nan,0.0333451
+all_g1,without Mexico,g2_p_edu ~ G1 US education + selection,76,0.119568,-0.189504,0.346104,0.337095,0.246867,0.452646,0.532817
+all_g1,without Mexico,g2_p_earn ~ G1 US education + selection,76,-0.00215041,-0.187419,0.119399,0.157691,0.0947353,0.231375,0.340947
+arrived_25plus,with Mexico,g1_p_edu_a25 ~ selection,77,1.63251,0.673798,1.79945,nan,nan,nan,0.753089
+arrived_25plus,with Mexico,g2_p_edu ~ selection,77,0.837715,0.151724,0.961685,nan,nan,nan,0.760079
+arrived_25plus,with Mexico,g2_p_earn ~ selection,77,0.372585,0.0379159,0.430826,nan,nan,nan,0.672431
+arrived_25plus,with Mexico,g2_p_edu ~ G1 US education + selection,77,0.381723,-0.14532,0.541572,0.27932,0.156948,0.386338,0.833916
+arrived_25plus,with Mexico,g2_p_earn ~ G1 US education + selection,77,0.122716,-0.141598,0.208147,0.153058,0.0895718,0.211707,0.771587
+arrived_25plus,without Mexico,g1_p_edu_a25 ~ selection,76,1.18499,0.448326,1.75211,nan,nan,nan,0.282896
+arrived_25plus,without Mexico,g2_p_edu ~ selection,76,0.387551,0.0798357,0.662534,nan,nan,nan,0.175538
+arrived_25plus,without Mexico,g2_p_earn ~ selection,76,0.149275,0.00760686,0.29256,nan,nan,nan,0.0880063
+arrived_25plus,without Mexico,g2_p_edu ~ G1 US education + selection,76,0.119374,-0.218961,0.379961,0.22631,0.137207,0.343599,0.388602
+arrived_25plus,without Mexico,g2_p_earn ~ G1 US education + selection,76,-0.00219083,-0.172667,0.141643,0.12782,0.072051,0.195692,0.317688
+arrived_under18,with Mexico,g1_p_edu_u18 ~ selection,74,1.32738,-0.209106,1.64534,nan,nan,nan,0.54328
+arrived_under18,with Mexico,g2_p_edu ~ selection,74,0.900928,-0.0791073,1.10063,nan,nan,nan,0.586883
+arrived_under18,with Mexico,g2_p_earn ~ selection,74,0.391924,-0.105213,0.491183,nan,nan,nan,0.49568
+arrived_under18,with Mexico,g2_p_edu ~ G1 US education + selection,74,0.16267,-0.0822348,0.323563,0.556178,0.435214,0.656833,0.918177
+arrived_under18,with Mexico,g2_p_earn ~ G1 US education + selection,74,0.0516687,-0.117134,0.142956,0.256337,0.156047,0.315869,0.809756
+arrived_under18,without Mexico,g1_p_edu_u18 ~ selection,73,0.0807776,-0.272701,0.679376,nan,nan,nan,0.00320407
+arrived_under18,without Mexico,g2_p_edu ~ selection,73,0.151352,-0.145906,0.479914,nan,nan,nan,0.0265529
+arrived_under18,without Mexico,g2_p_earn ~ selection,73,0.0229514,-0.13389,0.193524,nan,nan,nan,0.00205165
+arrived_under18,without Mexico,g2_p_edu ~ G1 US education + selection,73,0.110642,-0.152926,0.296381,0.50398,0.413217,0.6138,0.624207
+arrived_under18,without Mexico,g2_p_earn ~ G1 US education + selection,73,0.00595027,-0.150183,0.113016,0.210469,0.12928,0.286301,0.352275
