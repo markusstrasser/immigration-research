@@ -257,8 +257,10 @@ function keyOf(evaluation, rule) {
 }
 // A long-run subfunction responds as its line does: at the specification's long-run reading when the line takes
 // the specification's long-run response (the long-run profiles), at 0 when the line is held fixed (the category
-// lag, or the long-run responses switched off) and at 1 when it responds in full (the proportional reference).
-// An enterprise component takes the specification's enterprise option.
+// lag, or the long-run responses switched off) and at 1 when it responds in full (the proportional reference). A
+// specification without a long-run reading (the sign-reversal definition's common share s, sign_reversal.cjs) has
+// every subfunction respond at its line's response. An enterprise component takes the specification's enterprise
+// option.
 function responseOfRule(evaluation, spec, rule) {
   if (rule.kind === "fixed") return rule.value;
   if (rule.kind === "enterprises_switch") {
@@ -273,7 +275,7 @@ function responseOfRule(evaluation, spec, rule) {
   if (spec.long_run && spec.line_responses && r === spec.line_responses[rule.line]) {
     return subfunctionResponses(spec.long_run, spec.reading)[rule.subfunction];
   }
-  if (r === 0 || r === 1) return r;
+  if (!spec.long_run || r === 0 || r === 1) return r;
   throw new Error(`[BLOCKED] ${rule.line} responds at ${r}, neither its long-run response, 0 nor 1`);
 }
 function capitalReturn(evaluation, spec) {

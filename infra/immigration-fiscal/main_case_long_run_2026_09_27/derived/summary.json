@@ -62,6 +62,10 @@
    0,
    0
   ],
+  "enterprise_rekey_receipt_move": [
+   0.14567442685651955,
+   0.14567442685651955
+  ],
   "enterprise_surplus_receipt": [
    5.5611432821434805,
    5.5611432821434805
@@ -82,7 +86,7 @@
    -0.45018428669541777,
    -0.6024392166148402
   ],
-  "note": "each method's end specifications (48 low, 11 high in both), averaged, in the order long-run responses, rental assistance, capital core, capital block, then the enterprises (the receipt's re-key, the surplus at 1, the enterprise returns). long_run_responses and rental_assistance are each addition alone less the old settings (engine, capital off); enterprise_rekey is the old settings on the re-keyed models less the schools case, 0 because the receipt is still at 0; capital_core, capital_block and capital_enterprise are the return's parts on the new case; enterprise_surplus_receipt is the receipt's cost at response 1. Not in the sum: of_which_public_housing (inside capital_enterprise) and enterprise_rekey_against_model_json_share (the case less the same case with the receipt at model.json's share). change is the difference of band ends from the schools case, equal to total because the ends do not move"
+  "note": "each method's end specifications (48 low, 11 high in both), averaged, in the order long-run responses, rental assistance, capital core, capital block, then the enterprises (the receipt's re-key, the surplus at 1, the enterprise returns). long_run_responses and rental_assistance are each addition alone less the old settings (engine, capital off); enterprise_rekey is the old settings on the re-keyed models less the schools case, 0 because the receipt is still at 0; capital_core, capital_block and capital_enterprise are the return's parts on the new case; enterprise_surplus_receipt is the receipt's cost at response 1. These parts add to total. Not in the sum: enterprise_rekey_receipt_move (the receipt's own move under the re-key, the group's enterprise_surplus amount against the schools case's; an amount, not a cost: at response 1 it is why the surplus costs national x the corrected share and not national x model.json's share), of_which_public_housing (inside capital_enterprise) and enterprise_rekey_against_model_json_share (the case less the same case with the receipt at model.json's share). change is the difference of band ends from the schools case, equal to total because the ends do not move"
  },
  "end_specifications": [
   {
@@ -712,6 +716,10 @@
    "cost_bn": [
     5.5611432821434805,
     5.5611432821434805
+   ],
+   "move_from_the_schools_case_bn": [
+    0.14567442685651955,
+    0.14567442685651955
    ]
   },
   "returns_at_end_specifications_bn": [
@@ -782,6 +790,55 @@
   },
   "interest": "not added: NIPA's enterprise surplus excludes interest, which sits in the account's interest row, held at 0. BEA, Government Transactions (NIPA Methodology Paper 5, 2005), p. I-16: \"Interest received and paid are ignored in the calculation of the current surplus of government enterprises.\"",
   "proportional_reference": "the receipt responds at 1 and every enterprise component at 1 in every profile, the proportional reference included"
+ },
+ "school": {
+  "rules": {
+   "average": "full average cost per pupil (response 1): a school system sized for the group's pupils",
+   "within_district": "within-district elasticity 0.836 read over a removal of the pupil share, r = [1 - (1 - s)^b] / s",
+   "within_district_as_response": "within-district elasticity 0.836 taken as the response (r = b)"
+  },
+  "within_district": [
+   295.94410672958855,
+   362.98909582403485
+  ],
+  "within_district_as_response": [
+   293.6710806598605,
+   360.98011395604834
+  ],
+  "end_specifications": {
+   "average": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ],
+   "within_district": [
+    [
+     56,
+     3
+    ],
+    [
+     56,
+     3
+    ]
+   ],
+   "within_district_as_response": [
+    [
+     56,
+     3
+    ],
+    [
+     56,
+     3
+    ]
+   ]
+  },
+  "note": "the schools case's low side on this case: every specification re-run with that school rule (the K-12 capital return follows the school response); end_specifications are [low end, high end] per fill-in method",
+  "sign_break_even": "derived/sign_reversal.csv (sign_reversal.cjs): schools move with the common share"
  },
  "rental_assistance": {
   "group_amount_by_method_bn": {

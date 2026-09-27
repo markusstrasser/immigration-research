@@ -1,8 +1,21 @@
 **Verdict:** The September 27 case is **$321.82–387.37bn** ($321.8194–387.3701bn), end specifications 48 / 11
 in both fill-in methods. It is $63.33bn above the schools case ($258.4885–291.9548bn) at the low end and $95.42bn
-above it at the high end. Each addition first reproduces its own lane. All 55 gates pass, two runs are
-byte-identical, and the three earlier main cases still pass with clean `git status`. Status: proposed; the parent
-commits. [CALCULATION: `main_case.cjs` → `derived/summary.json`]
+above it at the high end. Each addition first reproduces its own lane. All 59 gates of `main_case.cjs` and all 8
+of `sign_reversal.cjs` pass. Two runs of each script are byte-identical, and the three earlier main cases still
+pass with clean `git status`. Status: proposed; the parent commits. [CALCULATION: `main_case.cjs` →
+`derived/summary.json`]
+
+The sign break-even is the service response at which the account turns positive, on the September 24
+definition. With the enterprise pieces fixed at option D's 1 it falls from 5.8–13.9% (personal allocation) to
+**−2.9% to 6.8%**. A negative share means the most adverse end is a net cost at every service response. With the
+enterprise pieces at s instead, it is 2.8–10.8%. [CALCULATION: `sign_reversal.cjs` → `derived/sign_reversal.csv`]
+
+[Parent, 2026-09-27 21:45: the case quotes the `__enterprises_at_s` rows as its break-even. Across both allocations
+that is **2.8–13.6%**, down from 5.8–17.0%. The test moves every public production response to a common share s.
+Under option D the enterprises are public production, and their response of 1 is the same kind of assumption. The
+parent's brief first held them at 1. That holds water and transit at full scale while schools, police and roads fall
+to zero, which cannot happen. The rows at 1 stay as a labelled variant: at the most adverse end no service response
+turns the account positive. Transfers stay at 1 in both, since entitlements follow the people who are eligible.]
 
 ## The case
 
@@ -22,6 +35,9 @@ are averaged:
 | **Total** | **+63.3309** | **+95.4153** | equals the band move, because the ends do not move |
 
 - Public housing accounts for $0.99bn / $1.48bn of the enterprise return.
+- The re-key moves the group's `enterprise_surplus` receipt by +$0.1457bn at both ends, from −$5.7068bn to
+  −$5.5611bn (`change_at_fixed_specifications.enterprise_rekey_receipt_move`). That figure is an amount, not a
+  cost, so it sits outside the sum. At response 1 it is why the surplus adds $5.5611bn and not $5.7068bn.
 - The re-key lowers the case by $0.45bn / $0.60bn. The same case with the receipt left at model.json's share is
   $322.27–387.97bn. The difference equals the capital lane's gap between its plain and re-keyed option D rows.
 - At the ends, the capital return is $33.80bn / $55.69bn: state and local $32.97 / $53.95bn, federal
@@ -31,7 +47,9 @@ are averaged:
 |---|---|
 | without the capital return (engine cost: long-run, rental assistance, the surplus at 1) | 288.02–331.68 |
 | uncorrected model at the adopted responses | 332.75–398.31 |
-| **option A, enterprises out (beside the range)** | 304.63–364.37 |
+| school low side: within-district 0.836 read over the removal (`school_within_district`; ends 56 / 3) | 295.94–362.99 |
+| school low side: 0.836 taken as the response (`school_within_district_as_response`; ends 56 / 3) | 293.67–360.98 |
+| **option A, enterprises out (beside the range; row `enterprises_out_option_a`)** | 304.63–364.37 |
 | capital at 7% on every component (beside the account) | 406.31–461.62 |
 | rental assistance at 0 (public housing's capital stays) | 317.29–382.84 |
 | K-12 capital at the pupil share instead of the account's key | 322.69–388.31 |
@@ -53,6 +71,52 @@ Two items sit beside the account:
 - Land is a [GAP]: $3.33bn / $5.49bn per 10% of land-to-structure value. The core accounts for $1.58 / $2.55bn,
   roads and parks for $0.62 / $1.25bn and enterprises for $1.13 / $1.70bn.
 - Congestion falls from $19.16bn to $13.99bn (low end) and $12.02bn (high end). [CALCULATION]
+
+## Sign break-even (`sign_reversal.cjs`)
+
+`sign_reversal.cjs` imports the definition of `main_case_2026_09_24/sign_reversal.cjs` and runs its `breakEven` and
+`frozen` unchanged, on this case's payload:
+
+- Ordinary services respond at a common share s. Roads, parks and the school part are included, so s replaces
+  their long-run responses.
+- General government stays at 0.6000 at the least adverse end and 0.8504 at the most adverse end.
+- Transfers and direct receipts respond at 1; defense and existing interest stay fixed.
+
+While the imported functions run, `Engine.evaluate` is wrapped to add this case's pieces inside each of the
+definition's evaluations:
+
+- rental assistance at 1;
+- the enterprise receipt at option D's 1;
+- the capital return from the same evaluation, at 2% at the least adverse end and 3% at the most adverse.
+
+Each capital component follows its package rule:
+
+- K-12, colleges, public safety, health, roads and parks move with their line's s;
+- offices take general government's response;
+- enterprise capital stays at 1.
+
+The `__enterprises_at_s` rows put the enterprise receipt and the enterprise capital at s too.
+
+| `derived/sign_reversal.csv` | Sept 26 | Sept 27 |
+|---|---|---|
+| break-even share, personal allocation | 5.75–13.87% | **−2.87% to 6.80%** |
+| same, enterprise pieces at s | 5.75–13.87% | 2.83–10.83% |
+| break-even share, shared allocation | 8.76–16.97% | **−0.21% to 9.65%** |
+| same, enterprise pieces at s | 8.76–16.97% | 5.40–13.60% |
+| frozen services, private capital fixed ($bn welfare) | −21.64 to 81.52 | −53.49 to 57.77 |
+| same, enterprise pieces at s | −21.64 to 81.52 | −30.49 to 74.96 |
+
+**How to read it.**
+
+- A break-even share below 0 means w(0) < 0 and w(1) < w(0): the account is a net cost at every service
+  response from 0 to 1 at that end.
+- The pieces that do not scale with s cost $31.8bn at the most adverse end:
+  - rental assistance $4.5bn;
+  - the surplus $5.6bn;
+  - the enterprise capital $17.4bn;
+  - the office capital about $4.3bn at general government's response.
+- These pieces move the frozen-services low end from −$21.6bn to −$53.5bn.
+- The Sept 26 columns repeat in the `__enterprises_at_s` rows, because that case has no enterprise pieces. [CALCULATION]
 
 ## For consumers
 
@@ -105,10 +169,23 @@ Two items sit beside the account:
      - 24 component columns;
      - the three lines' responses and group amounts.
 7. **Chain.** `summary.json` `change_at_fixed_specifications` is the table above. Its parts add to `change`.
-   `of_which_public_housing` and `enterprise_rekey_against_model_json_share` are reported outside the sum.
+   Three items are reported outside the sum:
+   - `enterprise_rekey_receipt_move` (+0.1457 / +0.1457, the receipt's own move);
+   - `of_which_public_housing`;
+   - `enterprise_rekey_against_model_json_share`.
 8. **Receipt side.** The surplus is a receipt: the group's −$5.5611bn share of the enterprises' −$47.46bn operating
-   result. The re-key moves the group's receipts by +$0.1457bn; no other receipt moves.
-9. **Beside the band, never in it:** 7%, option A, land and congestion.
+   result. A gate holds at every specification and method:
+   - every receipt line's group amount equals the schools case's;
+   - the one exception is `enterprise_surplus`, which equals its national amount × the corrected population share.
+9. **Companion numbers.** Both come from the lane.
+   - The school low side: rows `school_within_district` and `school_within_district_as_response`, and
+     `summary.json` `school`.
+   - The sign break-even: `derived/sign_reversal.csv`, with `sept26_*` and `sept27_*` columns and both
+     allocations.
+10. **Beside the band, never in it:** 7%, option A (`main_case_bands.csv` row `enterprises_out_option_a`), land and
+   congestion. Option A stays reproducible through the switch: `central({ enterprises: "A" })`, or
+   `specsFor({ enterprises: "A" })` for its specifications. A consumer's option A row must use that switch, not
+   the capital lane's rows, which exclude rental assistance.
 
 ## Rental assistance and the enterprise surplus (overlap)
 
@@ -194,8 +271,10 @@ worker's remark that the page "ends a reference list" was removed.]
    of the post-engine return.
 8. **Relaxed payload gates.**
    - The brief's "edits deep-equal the schools case" now reads: the schools case's edits, then the 8 re-key edits.
-   - The brief's "the group's receipts do not move" now reads: they move by the re-key alone.
-   - The parent ordered both changes with option D.
+   - The brief's "the group's receipts do not move" now reads: every receipt line's group amount equals the
+     schools case's except `enterprise_surplus`, which equals its national amount × the corrected population
+     share, at every specification and method. On the payload, the group's receipts move by the re-key alone.
+   - The parent ordered both changes with option D; the second wording is the parent's addition at 21:2x.
 9. **K-12 takes the account's key**, as the brief says and as the capital lane's own definition now does. The
    pupil share is one of the 12 range variants and a labelled row: +$0.871 / +$0.944bn at the ends.
 10. **No charges are netted**, as the capital lane rejects netting: the account's lines are already net of sales.
@@ -203,8 +282,21 @@ worker's remark that the page "ends a reference list" was removed.]
     corrected share.
 12. **`meta.capital_return.enterprises` is the string `"D"`**, the shape the propagation brief names. The details
     are in `enterprise_option`.
+13. **The sign reversal runs the imported definition unchanged.**
+    - `Engine.evaluate` is wrapped only while `breakEven` and `frozen` run, as `spec_lines.cjs` wraps it. I did not
+      copy the definition's state.
+    - The end comes from general government's response in the state. It sets the rate: 2% at 0.6000, 3% at
+      0.8504. Any other response stops the run.
+14. **One package rule extended for the sign reversal.** A specification with no long-run reading lets each roads
+    and parks subfunction respond at its line's response. Before, such a specification had to be 0 or 1 and
+    anything else stopped the run. The rule is in `package.cjs` `responseOfRule`. No output of `main_case.cjs`
+    moves: `components.csv`, `per_spec.csv` and `corrections.json` are byte-identical.
+15. **Enterprise pieces at s.** The receipt override is s, and the enterprise capital is D's return scaled by s.
+    Both are linear, and a gate checks it.
+16. **The `__enterprises_at_s` rows repeat the September 26 values** in their `sept26_*` columns. That case has no
+    enterprise pieces, so the variant does not change it.
 
-## Gates (55, all pass)
+## Gates (59 in `main_case.cjs`, 8 in `sign_reversal.cjs`; all pass)
 
 - **Old settings.**
   - On the re-keyed models they reproduce the schools case at every specification exactly: the re-key alone moves
@@ -230,29 +322,44 @@ worker's remark that the page "ends a reference list" was removed.]
   - The receipt and every enterprise component respond at 1, and the enterprise components are keyed at the
     corrected share.
   - The additions add at every specification (6.7e-14).
-  - No receipt's effect moves except the surplus.
+  - Receipts against the schools case, at every specification and method (3,456 line cells):
+    - every group amount is the schools case's exactly, except `enterprise_surplus`;
+    - `enterprise_surplus` equals national × the corrected share (difference 0);
+    - no receipt's effect moves except the surplus's.
+  - The receipt's move is national × (corrected share − model.json's share) at both ends (1e-12).
   - The K-12 difference matches the capital lane's.
   - The chain adds to the band move.
   - Each capital part matches the lane's re-keyed option D column (4.4e-7).
   - The re-key effect matches the lane's row difference.
 - **Profiles.** Each decomposes exactly; colleges are fixed in `long_run_non_school_fixed`; the block is at 1 in the
   proportional reference; enterprises are at 1 everywhere.
+- **School low side.** Its per-specification runs give its bands (1e-9), with ends 56 / 3. It matches the parent's
+  scratch run, 295.9441–362.9891 and 293.6711–360.9801 (1e-4).
 - **Payload.**
   - Lines and edits pass the relaxed gate, and each rule's re-key edit is in proportion.
   - `meta` records option D.
   - The independent path matches every specification (2.3e-13).
   - Receipts move by the re-key alone.
   - The payload reproduces the case (1e-4), and the two sides add.
+- **`sign_reversal.cjs`.**
+  - General government's responses are the September 26 case's, and the imported definition evaluates through the
+    same `Engine` object.
+  - The payload reproduces the case at the adopted responses: the `adopted` row, 1e-4.
+  - At s = 1 the wrapped definition equals the proportional reference at all 64 specifications, when given each
+    specification's production: welfare difference 0, capital difference 0.
+  - Welfare stays linear in s in both variants (96 points, 1.4e-13), so w(0) / (w(0) − w(1)) holds.
+  - The September 26 break-even (both allocations) and frozen rows reproduce (1e-4).
 
 ## Validation (from the repository root)
 
-- `node …/main_case_long_run_2026_09_27/main_case.cjs | tail -3`, twice, both exit 0, ending "all gates passed".
-  `shasum -a 256 derived/*` is identical across the two runs:
+- `node …/main_case_long_run_2026_09_27/main_case.cjs | tail -3`, then `node …/sign_reversal.cjs | tail -1`, twice.
+  All four runs exit 0 and end "all gates passed". `shasum -a 256 derived/*` is identical across the two passes:
   - `components.csv` 1ae4e20b…
   - `corrections.json` d3b10f14…
-  - `main_case_bands.csv` 970d194d…
+  - `main_case_bands.csv` 6e550bd3…
   - `per_spec.csv` 02819b54…
-  - `summary.json` 50c03165…
+  - `sign_reversal.csv` 7fc3587f…
+  - `summary.json` c88531f0…
 
   [Parent, 2026-09-27 21:25: the worker's last edit, at 21:12, added the MP-5 p. I-16 citation to `meta`. A network
   failure then stopped it before the rerun. The parent ran the whole Validation block afterwards, and every line
@@ -260,6 +367,15 @@ worker's remark that the page "ends a reference list" was removed.]
   - The two JSON files changed from the worker's run (`corrections.json` 44658e3a…, `summary.json` 7a454cd8…);
     both carry the new citation text.
   - The three numeric tables are byte-identical to the worker's run.]
+
+  [Worker, 2026-09-27 21:4x: the hashes above are the final pass. Since f3031ab (whose `summary.json`, 50c03165…,
+  came from the earlier script), the changes are as follows.
+  - `summary.json` adds three things: `enterprise_rekey_receipt_move`,
+    `enterprises.receipt_at_end_specifications.move_from_the_schools_case_bn` and `school`.
+  - `main_case_bands.csv` adds the two school rows.
+  - `sign_reversal.csv` is new.
+  - `components.csv`, `corrections.json` and `per_spec.csv` are byte-identical to f3031ab.
+  - The whole Validation block was rerun after the final pass, and every line holds.]
 - `main_case_2026_09_24`, `main_case_2026_09_26` and `main_case_schools_full_2026_09_26` each end "all gates
   passed" with exit 0, and `git status --short` is empty on each directory afterwards.
 - `service_response_long_run_2026_09_27/engine.cjs` ends "all 13 gates passed", with exit 0.
@@ -284,6 +400,10 @@ Covered:
   - `capital_return.py`: the re-key and land code, read only;
   - `spec_lines.cjs`, run only.
 - `../assumption_explorer_2026_09_21/`: `engine.js` and `derived/model.json`.
+- For the sign reversal:
+  - `../main_case_2026_09_24/sign_reversal.cjs`, imported and not run;
+  - `../main_case_2026_09_26/sign_reversal.cjs`, read as the pattern;
+  - `../main_case_2026_09_26/derived/{corrections.json, sign_reversal.csv}`.
 - NIPA Handbook chapters 2 and 9 and two BEA glossary entries (`_cache/nipa/`).
 
 Skipped:
@@ -346,5 +466,26 @@ Skipped:
     - the re-key in `modelFor` and in the payload.
   - `main_case.cjs` gates were rebuilt against the committed rows.
   - The result is $321.8194–387.3701bn, matching the parent's expected "about $321.8–387.4bn". [CALCULATION]
+- 21:1x, my error: I wrote that the propagation brief's MP-5 p. I-13 "ends a reference list", as if the citation
+  were wrong.
+  - I had grepped the text layer for "neither revenue nor expenses include interest" and found nothing, then read
+    only the page's last lines.
+  - The phrase is wrapped across two lines on p. I-13 (PDF page 19, lines 22–23 of `pdftotext`). The parent's
+    correction above is right; I verified it with whitespace normalized.
+  - Both pages carry a quote: p. I-13 the "neither revenue nor expenses include interest" sentence, and p. I-16
+    "Interest received and paid are ignored…".
+  - Lesson: normalize whitespace before treating a phrase grep's miss as absence.
+- 21:2x, the parent's two additions:
+  - the receipts gate against the schools case (every receipt line but `enterprise_surplus` unchanged;
+    `enterprise_surplus` = national × corrected share), which replaces "receipts do not move";
+  - the receipt's move (+$0.1457bn at both ends) as its own item in `change_at_fixed_specifications`;
+  - option A as a labelled row beside the range, already present as `enterprises_out_option_a`.
+  57 gates pass. [CALCULATION]
+- 21:4x, the parent's next two additions:
+  - the school low side, with rows and `summary.school` in the schools case's labels. It gives 295.9441–362.9891
+    and 293.6711–360.9801, ends 56 / 3, and matches the parent's scratch run.
+  - `sign_reversal.cjs`, with the results in the section above.
+  - `main_case.cjs` now runs 59 gates and `sign_reversal.cjs` 8, all passing; two passes are byte-identical.
+    [CALCULATION]
 
 Worker: mainbuild, model claude-opus-5-5.

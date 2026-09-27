@@ -6,6 +6,8 @@ long_run_non_school_full,long_run_responses_alone,277.9290,321.5872,,
 long_run_non_school_full,rental_assistance_alone,263.0206,296.4868,,
 long_run_non_school_full,long_run_responses_and_capital_return_option_a,300.1014,359.8398,,
 long_run_non_school_full,without_capital_return,288.0222,331.6804,,
+long_run_non_school_full,school_within_district,295.9441,362.9891,,
+long_run_non_school_full,school_within_district_as_response,293.6711,360.9801,,
 long_run_non_school_full,adopted,321.8194,387.3701,258.6487,436.0533
 long_run_non_school_full,enterprises_out_option_a,304.6335,364.3718,,
 long_run_non_school_full,enterprise_receipt_at_model_json_share,322.2695,387.9725,,
