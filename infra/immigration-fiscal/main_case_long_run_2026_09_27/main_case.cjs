@@ -407,6 +407,20 @@ component("consumption_key", "consumption key: the lane's twelve saving-and-remi
 const schoolLow = central({ school_rule: "within_district" }), schoolLowAsResponse = central({ school_rule: "within_district_as_response" });
 component("school_response", "school response: within-district elasticity 0.836 read over the removal (0.8489) or taken as the response",
   [["within district, finite r", schoolLow], ["within district, r = b", schoolLowAsResponse]]);
+// The school low side, reported as the schools case reports it (rows school_within_district and
+// school_within_district_as_response; summary school.*). The K-12 capital return follows the school response.
+const schoolRuleEnds = (rule) => {
+  const o = { school_rule: rule };
+  const cm = costsOf(runs(specsFor(o), MAIN_PROFILE, METHODS.map((m) => modelFor("central", m, withCentral(o)))));
+  return { band: bandOf(cm), ends: ends(cm) };
+};
+const schoolLowEnds = schoolRuleEnds("within_district"), schoolLowAsResponseEnds = schoolRuleEnds("within_district_as_response");
+gate("the school low side's per-specification runs give its bands (1e-9)", [[schoolLowEnds, schoolLow], [schoolLowAsResponseEnds, schoolLowAsResponse]]
+  .every(([x, b]) => near(x.band[0], b[0], 1e-9) && near(x.band[1], b[1], 1e-9)),
+  `ends ${JSON.stringify(schoolLowEnds.ends)} / ${JSON.stringify(schoolLowAsResponseEnds.ends)}`);
+// The parent's scratch run of this package (2026-09-27): 295.9441–362.9891 and 293.6711–360.9801.
+gate("the school low side matches the parent's scratch run (1e-4)", near(schoolLow[0], 295.9441, 1e-4) && near(schoolLow[1], 362.9891, 1e-4)
+  && near(schoolLowAsResponse[0], 293.6711, 1e-4) && near(schoolLowAsResponse[1], 360.9801, 1e-4), `${f2(schoolLow)}; ${f2(schoolLowAsResponse)}`);
 // New: the response lane's sensitivities, each the whole case re-run with that variant's responses (the block's
 // capital takes the variant's subfunction responses).
 component("long_run_response", "long-run responses: r = b; within-state uncapped; federal fixed at the high end; across-state at the high end; held-at-zero lines at 1",
@@ -632,6 +646,8 @@ const bandsCsv = ["profile,variant,cost_low_bn,cost_high_bn,range_low_bn,range_h
   row(MAIN_PROFILE, "rental_assistance_alone", rentalAlone),
   row(MAIN_PROFILE, "long_run_responses_and_capital_return_option_a", combinedRows["option A: long-run responses + core + block"]),
   row(MAIN_PROFILE, "without_capital_return", withoutCapital),
+  row(MAIN_PROFILE, "school_within_district", schoolLow),
+  row(MAIN_PROFILE, "school_within_district_as_response", schoolLowAsResponse),
   row(MAIN_PROFILE, "adopted", C, [rangeLowEnd[0], rangeHighEnd[1]]),
   row(MAIN_PROFILE, "enterprises_out_option_a", optionA),
   row(MAIN_PROFILE, "enterprise_receipt_at_model_json_share", atModelShare),
@@ -693,6 +709,10 @@ const summary = {
     overlap_with_rental_assistance: overlap,
     interest: "not added: NIPA's enterprise surplus excludes interest, which sits in the account's interest row, held at 0. BEA, Government Transactions (NIPA Methodology Paper 5, 2005), p. I-16: \"Interest received and paid are ignored in the calculation of the current surplus of government enterprises.\"",
     proportional_reference: "the receipt responds at 1 and every enterprise component at 1 in every profile, the proportional reference included" },
+  school: { rules: P.RULES, within_district: schoolLow, within_district_as_response: schoolLowAsResponse,
+    end_specifications: { average: newEnds, within_district: schoolLowEnds.ends, within_district_as_response: schoolLowAsResponseEnds.ends },
+    note: "the schools case's low side on this case: every specification re-run with that school rule (the K-12 capital return follows the school response); end_specifications are [low end, high end] per fill-in method",
+    sign_break_even: "derived/sign_reversal.csv (sign_reversal.cjs): schools move with the common share" },
   rental_assistance: { group_amount_by_method_bn: Object.fromEntries(METHODS.map((m, k) => [m, Object.fromEntries(ALLOCS.map((a, j) => [a, rentalAmount[k][j]]))])),
     uncorrected_group_amount_bn: Object.fromEntries(ALLOCS.map((a, j) => [a, rentalUncorrected[j]])),
     note: "the adopted corrections re-key the line (tax-records stack and administrative benefit keys), so the move is the corrected amount, not the uncorrected $7.54bn",
@@ -722,6 +742,7 @@ console.log(`  schools case                    ${f2(schools.main_case)}`);
 console.log(`  long-run responses alone        ${f2(lrOnlyBand)}`);
 console.log(`  without the capital return      ${f2(withoutCapital)}`);
 console.log(`  option A (beside)               ${f2(optionA)}`);
+console.log(`  school within district          ${f2(schoolLow)}; as the response ${f2(schoolLowAsResponse)}`);
 console.log(`  main case                       ${f2(C)}  ends ${newEnds.map((e) => e.join("/")).join(", ")}`);
 for (const [k, v] of Object.entries(moves)) console.log(`    change at fixed specs, ${k.padEnd(26)} ${v[0].toFixed(4)} / ${v[1].toFixed(4)}`);
 console.log(`    receipt moved by the re-key ${receiptMove[0].toFixed(4)} / ${receiptMove[1].toFixed(4)}; re-key against model.json's share ${rekeyEffect[0].toFixed(4)} / ${rekeyEffect[1].toFixed(4)}; public housing ${publicHousing[0].toFixed(4)} / ${publicHousing[1].toFixed(4)}`);
