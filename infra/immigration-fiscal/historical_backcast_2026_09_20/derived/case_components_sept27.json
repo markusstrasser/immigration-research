@@ -1,0 +1,437 @@
+{
+ "case": "sept27",
+ "lane": "main_case_long_run_2026_09_27",
+ "rule": "each fill-in method's end specifications of the case, averaged; base = the schools case's cost at those specifications",
+ "inputs": {
+  "main_case_long_run_2026_09_27/derived/summary.json": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d",
+  "main_case_long_run_2026_09_27/derived/main_case_bands.csv": "6e550bd348ded7f12c86f85abd6f10e838d5cc23fb92719d9678b44d234e6d86",
+  "main_case_long_run_2026_09_27/derived/corrections.json": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea",
+  "main_case_long_run_2026_09_27/package.cjs": "b4f22b35371c715771d8e53436acfc6320c214ab5abf686714020eb2c8fe2a7a"
+ },
+ "concepts": {
+  "net_cost_cbo_informed": {
+   "profile": "long_run_non_school_full",
+   "base_profile": "cbo_category_lag_non_school_full",
+   "end_specifications": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "high": 11
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "high": 11
+    }
+   ],
+   "ends": {
+    "low": {
+     "cost_bn": 321.81935699039354,
+     "base_bn": 258.48849537573153,
+     "additions_bn": {
+      "long_run_economic_affairs_services": 13.989872144130057,
+      "long_run_recreation_culture": 5.450626295466896,
+      "rental_assistance": 4.532065856478911,
+      "enterprise_surplus": 5.5611432821434805
+     },
+     "capital_bn": {
+      "k12": 8.652057499006602,
+      "college": 3.703234282450358,
+      "pos_sl": 0.7767794936225577,
+      "pos_fed": 0.2957135905497434,
+      "health_sl": 0.4143149557944839,
+      "health_fed": 0.12002125066841372,
+      "gps_sl": 1.8181464914619134,
+      "gps_fed": 0.21398338096186276,
+      "hwy_sl": 5.230578229695457,
+      "rec_sl": 0.9476148981605165,
+      "hwy_fed": 0,
+      "air_fed": 0,
+      "rec_fed": 0,
+      "ent_housing_sl": 0.9852152372944304,
+      "ent_transit_sl": 1.1853428873413794,
+      "ent_airports_sl": 1.396295113687104,
+      "ent_ports_sl": 0.2213056485175619,
+      "ent_power_sl": 1.2703146414196582,
+      "ent_water_sl": 2.1465274864213373,
+      "ent_sewer_sl": 2.8705529547932667,
+      "ent_tolls_sl": 1.1745278203964533,
+      "ent_power_fed": 0.06483430656221681,
+      "ent_other_sl": 0.17688932529885534,
+      "ent_other_fed": 0.1329045423385589
+     }
+    },
+    "high": {
+     "cost_bn": 387.37005494938376,
+     "base_bn": 291.9547733238526,
+     "additions_bn": {
+      "long_run_economic_affairs_services": 23.26619403810387,
+      "long_run_recreation_culture": 6.366255281237539,
+      "rental_assistance": 4.532065856478911,
+      "enterprise_surplus": 5.5611432821434805
+     },
+     "capital_bn": {
+      "k12": 13.34049618809315,
+      "college": 5.709022204874874,
+      "pos_sl": 1.1651692404338365,
+      "pos_fed": 0.4435703858246151,
+      "health_sl": 0.6214724336917258,
+      "health_fed": 0.1800318760026206,
+      "gps_sl": 3.865062869818543,
+      "gps_fed": 0.4548914096844418,
+      "hwy_sl": 10.613922777732409,
+      "rec_sl": 1.4942760067633336,
+      "hwy_fed": 0.1319752578292608,
+      "air_fed": 0.08562243540734621,
+      "rec_fed": 0.1470451353049678,
+      "ent_housing_sl": 1.4778228559416455,
+      "ent_transit_sl": 1.7780143310120686,
+      "ent_airports_sl": 2.094442670530656,
+      "ent_ports_sl": 0.33195847277634283,
+      "ent_power_sl": 1.905471962129487,
+      "ent_water_sl": 3.2197912296320057,
+      "ent_sewer_sl": 4.305829432189899,
+      "ent_tolls_sl": 1.7617917305946798,
+      "ent_power_fed": 0.0972514598433252,
+      "ent_other_sl": 0.265333987948283,
+      "ent_other_fed": 0.19935681350783832
+     }
+    }
+   },
+   "components": [
+    {
+     "id": "k12",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "college",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "pos_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "pos_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "health_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "health_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "gps_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "gps_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "hwy_sl",
+     "part": "block",
+     "level": "state_local"
+    },
+    {
+     "id": "rec_sl",
+     "part": "block",
+     "level": "state_local"
+    },
+    {
+     "id": "hwy_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "air_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "rec_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "ent_housing_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_transit_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_airports_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_ports_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_power_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_water_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_sewer_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_tolls_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_power_fed",
+     "part": "enterprise",
+     "level": "federal"
+    },
+    {
+     "id": "ent_other_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_other_fed",
+     "part": "enterprise",
+     "level": "federal"
+    }
+   ]
+  },
+  "net_cost_full_proportional": {
+   "profile": "proportional_reference",
+   "base_profile": "proportional_reference",
+   "end_specifications": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "high": 11
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "high": 11
+    }
+   ],
+   "ends": {
+    "low": {
+     "cost_bn": 347.3126737298828,
+     "base_bn": 301.28527594064883,
+     "additions_bn": {
+      "long_run_economic_affairs_services": 0,
+      "long_run_recreation_culture": 0,
+      "rental_assistance": 4.532065856478911,
+      "enterprise_surplus": 5.5611432821434805
+     },
+     "capital_bn": {
+      "k12": 8.652057499006602,
+      "college": 3.703234282450358,
+      "pos_sl": 0.7767794936225577,
+      "pos_fed": 0.2957135905497434,
+      "health_sl": 0.4143149557944839,
+      "health_fed": 0.12002125066841372,
+      "gps_sl": 1.8181464914619134,
+      "gps_fed": 0.21398338096186276,
+      "hwy_sl": 7.075948518488273,
+      "rec_sl": 0.9961840045088891,
+      "hwy_fed": 0.08798350521950721,
+      "air_fed": 0.05708162360489748,
+      "rec_fed": 0.09803009020331187,
+      "ent_housing_sl": 0.9852152372944304,
+      "ent_transit_sl": 1.1853428873413794,
+      "ent_airports_sl": 1.396295113687104,
+      "ent_ports_sl": 0.2213056485175619,
+      "ent_power_sl": 1.2703146414196582,
+      "ent_water_sl": 2.1465274864213373,
+      "ent_sewer_sl": 2.8705529547932667,
+      "ent_tolls_sl": 1.1745278203964533,
+      "ent_power_fed": 0.06483430656221681,
+      "ent_other_sl": 0.17688932529885534,
+      "ent_other_fed": 0.1329045423385589
+     }
+    },
+    "high": {
+     "cost_bn": 400.53438619495967,
+     "base_bn": 334.75155388877,
+     "additions_bn": {
+      "long_run_economic_affairs_services": 0,
+      "long_run_recreation_culture": 0,
+      "rental_assistance": 4.532065856478911,
+      "enterprise_surplus": 5.5611432821434805
+     },
+     "capital_bn": {
+      "k12": 13.34049618809315,
+      "college": 5.709022204874874,
+      "pos_sl": 1.1651692404338365,
+      "pos_fed": 0.4435703858246151,
+      "health_sl": 0.6214724336917258,
+      "health_fed": 0.1800318760026206,
+      "gps_sl": 3.865062869818543,
+      "gps_fed": 0.4548914096844418,
+      "hwy_sl": 10.613922777732409,
+      "rec_sl": 1.4942760067633336,
+      "hwy_fed": 0.1319752578292608,
+      "air_fed": 0.08562243540734621,
+      "rec_fed": 0.1470451353049678,
+      "ent_housing_sl": 1.4778228559416455,
+      "ent_transit_sl": 1.7780143310120686,
+      "ent_airports_sl": 2.094442670530656,
+      "ent_ports_sl": 0.33195847277634283,
+      "ent_power_sl": 1.905471962129487,
+      "ent_water_sl": 3.2197912296320057,
+      "ent_sewer_sl": 4.305829432189899,
+      "ent_tolls_sl": 1.7617917305946798,
+      "ent_power_fed": 0.0972514598433252,
+      "ent_other_sl": 0.265333987948283,
+      "ent_other_fed": 0.19935681350783832
+     }
+    }
+   },
+   "components": [
+    {
+     "id": "k12",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "college",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "pos_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "pos_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "health_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "health_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "gps_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "gps_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "hwy_sl",
+     "part": "block",
+     "level": "state_local"
+    },
+    {
+     "id": "rec_sl",
+     "part": "block",
+     "level": "state_local"
+    },
+    {
+     "id": "hwy_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "air_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "rec_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "ent_housing_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_transit_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_airports_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_ports_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_power_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_water_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_sewer_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_tolls_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_power_fed",
+     "part": "enterprise",
+     "level": "federal"
+    },
+    {
+     "id": "ent_other_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_other_fed",
+     "part": "enterprise",
+     "level": "federal"
+    }
+   ]
+  }
+ }
+}
