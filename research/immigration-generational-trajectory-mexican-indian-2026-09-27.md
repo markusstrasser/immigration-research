@@ -1,0 +1,184 @@
+# How far selection carries: Mexican-origin and Indian-origin descendants, G1 to G4+
+
+**Verdict:** The first US-born generation closes about half of its parents' distance from the
+white mean; after that, both groups hold near their own level rather than converging to the
+US average. Across 78 origins, the G1→G2 rank slope is 0.52 on education and 0.55 on earnings
+(entry 236). For Mexican origin the G2 step is large at the bottom and small at the top. Then
+the gap stalls: G2→G3+ carries about 0.9 of the gap on BA, earnings and the partial ledger, and
+no source shows G4+ better than G3 (entry 232). The civic record follows the same shape. Turnout
+at equal SES is −10 for G2 and −9 for G3+, and spousal endogamy falls 90 → 72 → 56%. Attachment
+to Mexico itself fades fast: "very connected" drops from 50% to 7% by G3+, and votes cast from
+abroad are under 2% of Mexico-born adults (entries 233–234). The Indian advantage is a shift of
+the whole upper three-quarters of the distribution, not a top-1% effect. It sits at US
+percentile 73 in both G1 and G2 on education. A Mexican parent admitted late through the IR-5
+route is a remaining-lifetime net cost of $270–286k at 3%, and Mexico sends a quarter of these
+admissions (entry 235). [CALCULATION: the five lanes below; INFERENCE for the synthesis]
+
+September 27, 2026. Frame: descriptive generation comparisons in repeated cross-sections, each
+against third-plus-generation non-Hispanic whites of the same age. These are synthetic cohorts,
+not the same families followed over time. Nothing here identifies why the gaps persist. On this
+politically charged topic, the instrument's bias caveat applies (`notes/llm-bias-caveat.md`).
+In the Indian coordination lane, the first verdict erred in the benign direction.
+
+Lanes, each re-run by the parent with byte-identical outputs:
+[`generation_carryover_2026_09_27`](../infra/immigration-fiscal/generation_carryover_2026_09_27/RESULT.md) (e2eeb0d),
+[`civic_trajectory_mexican_2026_09_27`](../infra/immigration-fiscal/civic_trajectory_mexican_2026_09_27/RESULT.md) (2fbc8d9),
+[`origin_attachment_mexico_2026_09_27`](../infra/immigration-fiscal/origin_attachment_mexico_2026_09_27/RESULT.md) (3f873b6),
+[`late_arrival_tail_2026_09_27`](../infra/immigration-fiscal/late_arrival_tail_2026_09_27/RESULT.md) (95fec31),
+[`selection_curve_2026_09_27`](../infra/immigration-fiscal/selection_curve_2026_09_27/RESULT.md) (97bd021).
+
+## 1. Carry-over of the Mexican-origin gap, generation to generation
+
+ρ is the next generation's gap divided by the previous one's. 0 means fully closed and 1 means
+no progress. CPS ASEC 2022–2025, adults 25–64, same-age white reference; GSS 2000–2024; NLSY97
+from Duncan, Grogger, Leon & Trejo (IZA DP12704, Table 2 p.45; figures checked against the PDF
+text). [DATA: `generation_carryover_2026_09_27/derived/carryover.csv`]
+
+| Measure | G1→G2 | G2→G3+ | G3→G4+ (BA) |
+|---|---|---|---|
+| Less than high school, CPS | 0.17 | — | G4+ worse in NLSY97 and GSS |
+| BA+, CPS / GSS / NLSY97 | 0.64 / 0.68 / 0.83 | 0.92 / 1.02 / 0.76 | 1.04 (CPS co-resident) / 1.10 / 0.97 |
+| Worker earnings, CPS | 0.39–0.45 | 0.88–0.90 | — |
+| Partial ledger per adult, CPS | 0.65 | 0.90 | — |
+
+The partial-ledger gap for G3+ is −$6,615 per adult a year. That object is the CPS partial
+ledger (modelled taxes minus selected transfers), not the complete account. The adopted
+account's own split (entry 224) has no reference group; its absolute ratios are 0.66/0.56
+(G1→G2) and 0.88/1.16 (G2→G3+) at the low and high ends. The two must not be combined (FAQ,
+"Before combining numbers").
+
+NLSY97 is the one source that separates G3 by grandparents' birthplace. It shows real progress
+from G2 to G3 in that birth cohort (G3 high-school completion 84.3% against 86.1% for whites),
+then a fall at G4+ (68.1%). Counting a GED as completion closes the G3 gap entirely.
+
+**Disconfirmation.** The stall survives dropping New Mexico and Colorado, matching whites by
+state or region, and splitting by age and survey period. Two explanations are not excluded.
+Vintage: today's adult G4+ descend from pre-1930s, Texas-heavy migration, and their parents had
+0.2–0.4 fewer years of schooling; NLSY97 controls cut the G4+ deficit by 37%. Identity loss: if
+people who stop identifying look like the measured non-identifiers, the G3→G4+ ratio is
+0.79–1.10. If they look exactly like whites, it is 0.69–0.87 at 29% attrition and 0.43–0.61 at
+56%. The observed G3/G4+ adults in CPS are young and living with their parents (n 151 and 302 for
+BA at 25+).
+
+**Tension with the literature.** Published group-level carry-over is 0.4–0.6 per generation
+(Borjas 1992–94; Card, DiNardo & Estes; Ward 2020 gives 0.57–0.74 for G2→G3). The Mexican G2→G3+
+value of about 0.9 sits well above that range. The historical estimates come mostly from European
+groups that later married out and stopped identifying. Which of the two describes today's
+Mexican-origin lineages is open. [SOURCE: `selection_curve_2026_09_27/literature_reads.md`, table
+and page per figure]
+
+**Projection** [MODEL]: central G4 −$6.5k and G5 −$6.3k per adult a year on the partial ledger.
+The band runs from −$3.7k / −$2.1k (the gap regresses toward the white mean at the literature's
+rate) to −$6.6k / −$6.6k (full stall). Only 1970-level identity loss with white-like leavers pushes
+G5 near zero.
+
+## 2. Civic attachment and marriage by generation, Mexican origin
+
+CPS November 2020/22/24 (turnout within 0.05 points of Census's published tables), CPS ASEC
+2022–25 spouse linkage (100% of spouse records found), CPS September 2021/23 for volunteering
+and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
+
+| Gap vs NH whites, points | G1 (naturalized) | G2 | G3+ |
+|---|---|---|---|
+| Turnout, raw | −24.1 | −23.5 | −19.3 |
+| Turnout, equal age, sex, schooling, income, state | −12.7 | −9.8 | −9.4 |
+| Spouse is Mexican-origin (share, not a gap) | 90.2% | 72.3% | 55.9% |
+| Same, excess over random matching within state | 68 | 47 | 31 |
+
+- **Turnout.** CPS overstates Hispanic turnout more than white turnout (Ansolabehere, Fraga &
+  Schaffner, *JOP* 84(3), 2022), so these gaps are lower bounds.
+- **Composition.** About half of each G3+ civic gap is SES composition. What persists at equal
+  SES is turnout −9, volunteering −5 to −6 and giving −6 to −8. Endogamy does not shrink with SES.
+- **Military.** The veteran gap among Mexican-origin men disappears at equal SES from G2. Women
+  (0.98) and young men now on active duty (0.98) serve at the white rate. This differs from Indian
+  ancestry, whose 0.16× survives every SES control (ladder 205).
+- **Identification.** Children of a Mexican-origin and a non-Hispanic parent are reported Hispanic
+  84% of the time. The 16% loss does not grow with the Mexican parent's generation.
+- **Indian comparison, same code.** India-born spousal endogamy is 96.3%, falling to 65.5% in the
+  Indian G2. In raw share, Indian G2 marry out more than Mexican G2. Relative to a pool that is about
+  1.5% of residents, they remain the more endogamous group.
+
+## 3. Attachment to Mexico
+
+- **Law.** Under Art. 37 A of the Mexican constitution, no Mexican by birth can lose that
+  nationality. Since the 17 May 2021 reform of Art. 30 A II, anyone born abroad to a Mexican
+  parent is Mexican by birth, so nationality by descent runs every generation. Before the reform
+  it stopped at the migrant's US-born child. India ends citizenship on naturalization (Citizenship
+  Act s.9), and OCI holders cannot register to vote. [SOURCE: SCJN article history PDF; indiacode;
+  archived in the lane's `sources/`]
+- **Uptake is small.** Votes cast from abroad worldwide were 184,326 in 2024, under 2% of the 10.69M
+  Mexico-born adults in the US. 61.9% of eligible Mexican green-card holders have naturalized,
+  against 74.5% for all origins and 84.5% for India (ACS 2024 over OHSS Table 2b). In Pew's 2012
+  survey, none of 415 Mexican noncitizens gave keeping Mexican citizenship as the reason they had
+  not naturalized.
+- **By generation** (Pew NSL 2011–2018, self-identified Hispanics only; those who stop identifying
+  are missing, which flatters attachment in later generations):
+  - Calling themselves by the origin-country term falls from 66–71% to 21–32%.
+  - Calling themselves "American" rises from 3–7% to 46–55%.
+  - Feeling very connected to Mexico falls from 50% to 7%.
+  - Following Mexican news very closely falls from 42% to 16%.
+- **Not measured.** Registrations of US-born people as Mexican nationals, and matrícula counts (the
+  Mexican foreign ministry's open-data files blocked the fetch).
+
+## 4. The late-arrival tail: sponsored parents
+
+- **Flow.** Mexico sent 36,652 IR-5 parents a year over FY2015–2024 and 63,050 in FY2024, about a
+  quarter of all such admissions and three times India (18,910). The flow doubled after 2019.
+  [SOURCE: OHSS country × class workbook; gates against Yearbook Table 6, 128/128 pass]
+- **Receipt.** 13.6% of Mexico-born people 65+ arrived at 50 or older. Against Mexico-born seniors
+  who arrived younger, they report:
+  - Medicaid 40 vs 32%
+  - SSI 10.2 vs 8.7%
+  - Social Security 47 vs 73%
+  - Not a citizen 70%
+  - Living as the householder's parent 48%
+
+  India's late arrivals show wider Medicaid (38.7 vs 13.0%) and SSI gaps. [DATA: ACS 2019–2023;
+  B05006 gates within 0.6%]
+- **Value per admission.** Admitted at 55 / 60 / 65, a Mexican parent is a remaining-lifetime net
+  cost of $270k / $275k / $286k at 3% (range $254–339k), close to Australia's official A$335–410k.
+  Against a same-age white resident's remaining lifetime, the parent costs more at 55 and less at
+  65, because white retirees draw earned Social Security and Medicare. One FY2024 cohort carries
+  about $16bn at 3%. This is a flow valuation; the annual account already contains these residents.
+- **Offset.** The childcare offset is real in sign and small: about $120–380 a year in taxes per
+  co-resident parent, during preschool years only. The mother's earnings are an assumption.
+  [SOURCE: Hu 2018 Table 3; Compton & Pollak; Productivity Commission 2016, `reads/offset_reads.md`]
+
+## 5. The selection curve, and whether the Indian advantage is a tail
+
+- **Not a tail.** Capping everyone's earnings at the white p99 keeps 92% of the India-born
+  earnings gap. Dropping everyone above the white p99 keeps 94% of the partial fiscal gap
+  (+$10,086 of +$10,732). The India-born median earnings percentile is 70 against the white 50,
+  and p75 is 91 against 75. On education the whole distribution above p10 is shifted. China is
+  the exception: its advantage sits above the white p90, and its median is below the white median.
+  The public CPS topcodes the extreme tail, so "without the top 1%" means without the top 1% the
+  survey can see.
+- **G1→G2 across 78 origins.** The slope is 0.52 on education (0.29–0.59 over origins) and 0.55 on
+  earnings, on top of a common uplift of about 5 points. Without Mexico, the high-leverage point,
+  the slopes are 0.36 and 0.30. Mexico's G2 sits 8 points below the line the other 77 draw.
+- **Selection within the origin country** (Barro-Lee, Wittgenstein) adds little once US position is
+  known (R² 0.10–0.12 without Mexico). Where immigrants stand in the US distribution predicts their
+  children; how selected they were at home does not add much.
+- **G2→G3.** GSS gives 0.72 on education (0.56 without Mexico); the literature gives 0.46–0.53. The
+  curve [MODEL]: India 95 → 73 → 73 → about 67; Mexico 59 → 16 → 36 → about 40. Mexico's observed G3
+  stalls near its G2, so the model overstates its convergence.
+
+## 6. What this does and does not settle
+
+Settled at the descriptive level:
+- The G2 step is large and the post-G2 path is flat for Mexican origin on every source that
+  separates G3 from G4+.
+- Attachment to Mexico fades by G3.
+- The remaining civic gaps are half class composition.
+- The Indian advantage is broad, not tail-driven.
+
+Not settled:
+- Why the Mexican path stalls: vintage, identity loss, ethnic capital, or discrimination. The
+  sources here do not separate these.
+- Whether the historical 0.5 carry-over or today's 0.9 will describe the next two generations.
+- The within-India selection step: caste is not recorded in US surveys.
+- What the Indian G2 who marry out marry into, which decides how long the Indian level holds.
+
+## Revisions
+
+- 2026-09-27: created from five lanes; ladder entries 232–236.
