@@ -81,7 +81,11 @@ The low side, with schools at the within-district 0.836, is $296–363bn. The ou
 in quadrature). The sign break-even falls from 5.8–17.0% to 2.8–13.6%. The capital return is an imputed resource
 cost and never enters a debt flow, and rental assistance moves who loses, not the budget
 ([audit](immigration-conceptual-audit-2026-09-27.md) §1). Consumer lanes move in
-`sept27_propagation_2026_09_27`; until their notes land, they quote the schools case.
+`sept27_propagation_2026_09_27`; until their notes land, they quote the schools case. [2026-09-28: candidates for the next
+revision, none adopted: long-run property-tax responses, −$27.2bn at both ends (ladder 253); the IRS-matched
+income-tax key, −$3.2 / −$3.1bn (249); workers' compensation pooled over 2019–2024, −$1.5 to −$2.0bn (251); and
+candidate v2's housing key and production weights (`main_case_candidate_v2_2026_09_28`). Payroll compliance and
+pension accrual are being measured. The operator agreed to take them in one revision.]
 
 **September 26 schools case (the main case until 2026-09-27): $258–292bn/year conditional net cost to other US
 residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
