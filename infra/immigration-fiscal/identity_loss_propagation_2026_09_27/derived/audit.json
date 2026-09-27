@@ -1,0 +1,58 @@
+{
+ "arms": {
+  "a_current": {
+   "kind": "flat",
+   "label": "(a) current: G4+ at the measured G3 rate",
+   "step": 0.0
+  },
+  "b_one_step": {
+   "kind": "flat",
+   "label": "(b) one more step on 'not reported Mexican', held for G5+",
+   "step": 0.120418
+  },
+  "c_compound": {
+   "kind": "compound",
+   "label": "(c) G3+ parents' 'not Mexican' loss compounded each generation",
+   "step": 0.120418
+  },
+  "d_compound_hisp": {
+   "kind": "compound",
+   "label": "(d) 'not reported Hispanic' loss compounded each generation",
+   "step": 0.0901374
+  },
+  "e_compound_calibrated": {
+   "calib": 0.7395386673322649,
+   "kind": "compound",
+   "label": "(e) (c) with the step scaled by measured G3 loss / synthetic G2-parent step",
+   "step": 0.08905376724281668
+  }
+ },
+ "checks": {
+  "lineage_central": [
+   -1297150.3633891935,
+   -514635.2450066401
+  ],
+  "poison_attr_selfid_unchanged": true,
+  "population_outputs_byte_identical": true,
+  "sponsored_lane_pins_selfid": true
+ },
+ "losses": {
+  "hisp_mex_G2": 0.0679015,
+  "hisp_mex_G2_se": 0.00795528,
+  "hisp_mex_G3plus": 0.0901374,
+  "hisp_mex_G3plus_se": 0.00816515,
+  "mex_mex_G2": 0.151296,
+  "mex_mex_G2_se": 0.0103441,
+  "mex_mex_G3plus": 0.120418,
+  "mex_mex_G3plus_se": 0.00863425
+ },
+ "p3_lineage_input": 0.8881,
+ "p3_population_unrounded": 0.8881107577872976,
+ "pes_multiplier": 1.0525,
+ "rho_central": 0.5,
+ "rhos": [
+  0.25,
+  0.5,
+  0.75
+ ]
+}
