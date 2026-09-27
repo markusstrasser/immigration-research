@@ -1,0 +1,1945 @@
+{
+ "lane": "main_case_candidate_2026_09_28",
+ "case": "sept28_candidate",
+ "status": "candidate, not adopted (BRIEF.md, e003ea1)",
+ "imports": "main_case_long_run_2026_09_27/package.cjs (committed f3031ab, 7e94324)",
+ "sept27_case": [
+  321.81935699039354,
+  387.37005494938376
+ ],
+ "candidate": [
+  323.6827367530366,
+  388.6981042740268
+ ],
+ "candidate_end_specifications": [
+  [
+   48,
+   11
+  ],
+  [
+   48,
+   11
+  ]
+ ],
+ "at_fixed_specifications": {
+  "item1_transfer_consolidation": {
+   "label": "1. transfer consolidation, public housing's operating subsidies ($5.257811bn)",
+   "in_candidate_band": true,
+   "old": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "new": [
+    322.04001730403655,
+    387.59071526302677
+   ],
+   "change": [
+    0.22066031364300898,
+    0.22066031364300898
+   ]
+  },
+  "item1_bound_all_of_line_4": {
+   "label": "1. bound: all of line 4 consolidated ($60.261bn), beside",
+   "in_candidate_band": false,
+   "old": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "new": [
+    324.34839638729113,
+    389.89909434628134
+   ],
+   "change": [
+    2.5290393968975877,
+    2.5290393968975877
+   ]
+  },
+  "item2_production_row4": {
+   "label": "2. production on the account's row-4 weights",
+   "in_candidate_band": true,
+   "old": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "new": [
+    323.4620764393935,
+    388.47744396038377
+   ],
+   "change": [
+    1.6427194489999692,
+    1.1073890110000093
+   ]
+  },
+  "item3_road_replacement": {
+   "label": "3. road arm: replacement adjustment (beside the range)",
+   "in_candidate_band": false,
+   "old": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "new": [
+    316.58877876069806,
+    376.62415691382205
+   ],
+   "change": [
+    -5.230578229695482,
+    -10.745898035561709
+   ]
+  },
+  "item3_road_fixed_stock": {
+   "label": "3. road arm: a fixed stock (beside the range)",
+   "in_candidate_band": false,
+   "old": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "new": [
+    311.3116511729704,
+    369.395275354466
+   ],
+   "change": [
+    -10.50770581742313,
+    -17.974779594917777
+   ]
+  },
+  "items_1_to_3_candidate": {
+   "label": "items 1-3 together: the candidate (road arm at the stationary network, its September 27 setting)",
+   "in_candidate_band": true,
+   "old": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "new": [
+    323.6827367530366,
+    388.6981042740268
+   ],
+   "change": [
+    1.863379762643035,
+    1.3280493246430183
+   ]
+  },
+  "candidate_road_replacement": {
+   "label": "the candidate, road arm at replacement adjustment",
+   "in_candidate_band": false,
+   "old": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "new": [
+    318.45215852334115,
+    377.9522062384651
+   ],
+   "change": [
+    -3.36719846705239,
+    -9.417848710918634
+   ]
+  },
+  "candidate_road_fixed_stock": {
+   "label": "the candidate, road arm at a fixed stock",
+   "in_candidate_band": false,
+   "old": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "new": [
+    313.17503093561345,
+    370.72332467910906
+   ],
+   "change": [
+    -8.644326054780095,
+    -16.646730270274702
+   ]
+  },
+  "item4_public_pay_on_sept27": {
+   "label": "4. public pay on the September 27 case (published production), beside",
+   "in_candidate_band": false,
+   "old": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "new": [
+    336.4441721146758,
+    397.0199224651915
+   ],
+   "change": [
+    14.624815124282236,
+    9.649867515807728
+   ]
+  },
+  "item4_public_pay_on_candidate": {
+   "label": "4. public pay on the candidate (row-4 production), beside",
+   "in_candidate_band": false,
+   "old": [
+    323.6827367530366,
+    388.6981042740268
+   ],
+   "new": [
+    337.2912815585997,
+    397.6500551165482
+   ],
+   "change": [
+    13.608544805563099,
+    8.951950842521398
+   ]
+  }
+ },
+ "item1": {
+  "transfer_bn": 5.257811,
+  "source": {
+   "bn": 5.257811,
+   "label": "public housing's operating subsidies: HUD FY2024 obligations, operating formula grants plus shortfall prevention",
+   "source": "https://www.hud.gov/sites/dfiles/CFO/documents/2026_CJ_Program_PH_Fund.pdf, p. 4-2 (Summary of resources by program, 2024 obligations)"
+  },
+  "hud": {
+   "operating_formula_obligations_2024_thousands": 5232640,
+   "shortfall_prevention_obligations_2024_thousands": 25171,
+   "source": "https://www.hud.gov/sites/dfiles/CFO/documents/2026_CJ_Program_PH_Fund.pdf, p. 4-2 (Summary of resources by program, 2024 obligations)"
+  },
+  "bound_bn": 60.261,
+  "control_today_spec48_capital_off_bn": [
+   -0.04318526445484849,
+   -0.04075092634508337
+  ],
+  "rule": "the transfer leaves both legs before keying: housing_subsidies and enterprise_surplus lose it nationally and every cell keeps its attributed fraction (package.cjs consolidate())",
+  "unpublished": "NIPA Handbook ch. 12: Section 8 estimates are by type of landlord, state and local enterprises included, from unpublished detail; that part is not in the amount and is bounded by all of line 4"
+ },
+ "item2": {
+  "populations": {
+   "published": 40896574.152351856,
+   "row4": 39712493.33118789
+  },
+  "row4_factors": {
+   "naturalized": {
+    "records": 943,
+    "cps_population": 1677809.80045101,
+    "acs_population": 1435577,
+    "factor": 0.8556255897504617,
+    "replicate_factor_range": [
+     0.7951610892471739,
+     0.9255685433204576
+    ]
+   },
+   "noncitizen": {
+    "records": 2139,
+    "cps_population": 4250103.13255449,
+    "acs_population": 3307120,
+    "factor": 0.7781269999470055,
+    "replicate_factor_range": [
+     0.7396314679741801,
+     0.8160947275477066
+    ]
+   }
+  },
+  "reference": {
+   "published": {
+    "cash": {
+     "index": 1230,
+     "P_bn": -0.15566955604624047,
+     "F_bn": 8.94629725251265,
+     "P_plus_F_bn": 8.79062769646641,
+     "sampling_se_bn": 0.7373582935576636
+    },
+    "gdp": {
+     "index": 1716,
+     "P_bn": -0.23592432475637012,
+     "F_bn": 13.558522244014519,
+     "P_plus_F_bn": 13.322597919258149,
+     "sampling_se_bn": 1.1242825518814854
+    }
+   },
+   "row4": {
+    "cash": {
+     "index": 1230,
+     "P_bn": -0.45723745192798504,
+     "F_bn": 8.140476137953366,
+     "P_plus_F_bn": 7.683238686025381,
+     "sampling_se_bn": 0.6763687774375952
+    },
+    "gdp": {
+     "index": 1716,
+     "P_bn": -0.695081604088757,
+     "F_bn": 12.374960074149953,
+     "P_plus_F_bn": 11.679878470061196,
+     "sampling_se_bn": 1.0349714116288002
+    }
+   }
+  },
+  "change_bn": {
+   "cash": 1.1073890104410298,
+   "gdp": 1.642719449196953
+  }
+ },
+ "road_arm": {
+  "stationary_network": {
+   "label": "a smaller stationary network: operations, depreciation, the capital return and lanes all follow the long-run road response (the September 27 case)",
+   "lanes": "network follows spending",
+   "band_bn": [
+    323.6827367530366,
+    388.6981042740268
+   ],
+   "account_at_fixed_specs_bn": [
+    323.6827367530366,
+    388.6981042740268
+   ],
+   "account_change_bn": [
+    0,
+    0
+   ],
+   "depreciation_cut": [
+    0,
+    0
+   ],
+   "road_return_removed_bn": [
+    0,
+    0
+   ],
+   "congestion_bn": [
+    13.992562864050909,
+    12.018056283784826
+   ],
+   "congestion_range_bn": [
+    [
+     2.014861874519615,
+     32.04934035817931
+    ],
+    [
+     -0.9235617873055267,
+     30.828298311580397
+    ]
+   ],
+   "congestion_change_bn": [
+    0,
+    0
+   ],
+   "account_plus_congestion_change_bn": [
+    0,
+    0
+   ]
+  },
+  "replacement": {
+   "label": "replacement adjustment: worn road capital is not replaced (depreciation follows the response) while the stock in place keeps its return and its lanes",
+   "lanes": "network fixed (bound)",
+   "band_bn": [
+    318.45215852334115,
+    377.9522062384651
+   ],
+   "account_at_fixed_specs_bn": [
+    318.45215852334115,
+    377.9522062384651
+   ],
+   "account_change_bn": [
+    -5.230578229695425,
+    -10.745898035561652
+   ],
+   "depreciation_cut": [
+    0,
+    0
+   ],
+   "road_return_removed_bn": [
+    5.230578229695457,
+    10.74589803556167
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_range_bn": [
+    [
+     8.047943973203898,
+     35.25151421805585
+    ],
+    [
+     8.047943973203898,
+     35.25151421805585
+    ]
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "account_plus_congestion_change_bn": [
+    -0.060429983015277244,
+    -3.601243208615422
+   ]
+  },
+  "fixed_stock": {
+   "label": "a fixed stock: only operations follow the response; depreciation, the capital return and lanes stay",
+   "lanes": "network fixed (bound)",
+   "band_bn": [
+    313.17503093561345,
+    370.72332467910906
+   ],
+   "account_at_fixed_specs_bn": [
+    313.17503093561345,
+    370.72332467910906
+   ],
+   "account_change_bn": [
+    -10.50770581742313,
+    -17.97477959491772
+   ],
+   "depreciation_cut": [
+    0.14485455662896377,
+    0.1984292431433724
+   ],
+   "road_return_removed_bn": [
+    5.230578229695457,
+    10.74589803556167
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_range_bn": [
+    [
+     8.047943973203898,
+     35.25151421805585
+    ],
+    [
+     8.047943973203898,
+     35.25151421805585
+    ]
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "account_plus_congestion_change_bn": [
+    -5.337557570742982,
+    -10.83012476797149
+   ]
+  }
+ },
+ "road_arm_envelope_band_bn": [
+  313.17503093561345,
+  388.6981042740268
+ ],
+ "road_arm_long_run_response_with_congestion": {
+  "variants": [
+   {
+    "variant": "marginal_r_equals_b",
+    "label": "measured responses taken as r = b instead of the finite removal (capped responses stay 1)",
+    "account_change_bn": [
+     -0.33391191911732676,
+     -0.04384812931033366
+    ],
+    "congestion_change_bn": [
+     0.0909811129195024,
+     0
+    ],
+    "net_change_bn": [
+     -0.24293080619782437,
+     -0.04384812931033366
+    ],
+    "highway_response": [
+     0.7200622671842712,
+     1
+    ]
+   },
+   {
+    "variant": "within_states_uncapped",
+    "label": "within-state readings above 1 priced at the high end (highways 1.4225, parks 1.3759)",
+    "account_change_bn": [
+     0,
+     15.540215541135751
+    ],
+    "congestion_change_bn": [
+     0,
+     -3.2243725764391815
+    ],
+    "net_change_bn": [
+     0,
+     12.315842964696568
+    ],
+    "highway_response": [
+     0.732546883435717,
+     1.4225137899769427
+    ]
+   },
+   {
+    "variant": "federal_fixed_at_high_end",
+    "label": "federal subfunctions held fixed at the high end too",
+    "account_change_bn": [
+     0,
+     -6.051560911063689
+    ],
+    "congestion_change_bn": [
+     0,
+     0.06730677024591358
+    ],
+    "net_change_bn": [
+     0,
+     -5.984254140817775
+    ],
+    "highway_response": [
+     0.732546883435717,
+     0.990992545554942
+    ]
+   },
+   {
+    "variant": "across_states_at_high_end",
+    "label": "S&L highways and parks at the across-state reading at the high end (no within-state reading)",
+    "account_change_bn": [
+     0,
+     -8.124643542773981
+    ],
+    "congestion_change_bn": [
+     0,
+     1.9259416583452236
+    ],
+    "net_change_bn": [
+     0,
+     -6.198701884428758
+    ],
+    "highway_response": [
+     0.732546883435717,
+     0.7392052409692961
+    ]
+   },
+   {
+    "variant": "held_at_zero_at_1",
+    "label": "every subfunction held at 0 (water, space, agriculture, energy, natural resources, postal, commercial) at 1 instead",
+    "account_change_bn": [
+     12.383001033285268,
+     12.383001033285268
+    ],
+    "congestion_change_bn": [
+     0,
+     0
+    ],
+    "net_change_bn": [
+     12.38300103328527,
+     12.383001033285268
+    ],
+    "highway_response": [
+     0.732546883435717,
+     1
+    ]
+   }
+  ],
+  "span_at_fixed_specifications": {
+   "account_bn": [
+    [
+     -0.33391191911732676,
+     12.383001033285268
+    ],
+    [
+     -8.124643542773981,
+     15.540215541135751
+    ]
+   ],
+   "net_bn": [
+    [
+     -0.24293080619782437,
+     12.38300103328527
+    ],
+    [
+     -6.198701884428758,
+     12.383001033285268
+    ]
+   ]
+  },
+  "note": "stationary network: each long-run variant re-run at every specification (account) with the congestion item at its highway response (road_congestion.json); changes against the candidate, [spec 48, spec 11]; span entries are [low end, high end] x [lo, hi]"
+ },
+ "road_arm_grid": [
+  {
+   "road_case": "stationary_network",
+   "long_run": "adopted",
+   "account_bn": [
+    323.6827367530366,
+    388.6981042740268
+   ],
+   "account_change_bn": [
+    0,
+    0
+   ],
+   "congestion_bn": [
+    13.992562864050909,
+    12.018056283784826
+   ],
+   "congestion_change_bn": [
+    0,
+    0
+   ],
+   "net_change_bn": [
+    0,
+    0
+   ],
+   "band_bn": [
+    323.6827367530366,
+    388.6981042740268
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "stationary_network",
+   "long_run": "marginal_r_equals_b",
+   "account_bn": [
+    323.34882483391925,
+    388.65425614471644
+   ],
+   "account_change_bn": [
+    -0.33391191911732676,
+    -0.04384812931033366
+   ],
+   "congestion_bn": [
+    14.083543976970411,
+    12.018056283784826
+   ],
+   "congestion_change_bn": [
+    0.0909811129195024,
+    0
+   ],
+   "net_change_bn": [
+    -0.24293080619782437,
+    -0.04384812931033366
+   ],
+   "band_bn": [
+    323.34882483391925,
+    388.65425614471644
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "stationary_network",
+   "long_run": "within_states_uncapped",
+   "account_bn": [
+    323.6827367530366,
+    404.2383198151625
+   ],
+   "account_change_bn": [
+    0,
+    15.540215541135751
+   ],
+   "congestion_bn": [
+    13.992562864050909,
+    8.793683707345645
+   ],
+   "congestion_change_bn": [
+    0,
+    -3.2243725764391815
+   ],
+   "net_change_bn": [
+    0,
+    12.315842964696568
+   ],
+   "band_bn": [
+    323.6827367530366,
+    404.2383198151625
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "stationary_network",
+   "long_run": "federal_fixed_at_high_end",
+   "account_bn": [
+    323.6827367530366,
+    382.6465433629631
+   ],
+   "account_change_bn": [
+    0,
+    -6.051560911063689
+   ],
+   "congestion_bn": [
+    13.992562864050909,
+    12.08536305403074
+   ],
+   "congestion_change_bn": [
+    0,
+    0.06730677024591358
+   ],
+   "net_change_bn": [
+    0,
+    -5.984254140817775
+   ],
+   "band_bn": [
+    323.6827367530366,
+    382.6465433629631
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "stationary_network",
+   "long_run": "across_states_at_high_end",
+   "account_bn": [
+    323.6827367530366,
+    380.5734607312528
+   ],
+   "account_change_bn": [
+    0,
+    -8.124643542773981
+   ],
+   "congestion_bn": [
+    13.992562864050909,
+    13.94399794213005
+   ],
+   "congestion_change_bn": [
+    0,
+    1.9259416583452236
+   ],
+   "net_change_bn": [
+    0,
+    -6.198701884428758
+   ],
+   "band_bn": [
+    323.6827367530366,
+    380.5734607312528
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "stationary_network",
+   "long_run": "held_at_zero_at_1",
+   "account_bn": [
+    336.06573778632185,
+    401.08110530731204
+   ],
+   "account_change_bn": [
+    12.383001033285268,
+    12.383001033285268
+   ],
+   "congestion_bn": [
+    13.992562864050909,
+    12.018056283784826
+   ],
+   "congestion_change_bn": [
+    0,
+    0
+   ],
+   "net_change_bn": [
+    12.38300103328527,
+    12.383001033285268
+   ],
+   "band_bn": [
+    336.06573778632185,
+    401.08110530731204
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "replacement",
+   "long_run": "adopted",
+   "account_bn": [
+    318.45215852334115,
+    377.9522062384651
+   ],
+   "account_change_bn": [
+    -5.230578229695425,
+    -10.745898035561652
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -0.060429983015277244,
+    -3.601243208615422
+   ],
+   "band_bn": [
+    318.45215852334115,
+    377.9522062384651
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "replacement",
+   "long_run": "marginal_r_equals_b",
+   "account_bn": [
+    318.20739006172465,
+    377.90835810915473
+   ],
+   "account_change_bn": [
+    -5.475346691311927,
+    -10.789746164872042
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -0.30519844463177925,
+    -3.6450913379258125
+   ],
+   "band_bn": [
+    318.20739006172465,
+    377.90835810915473
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "replacement",
+   "long_run": "within_states_uncapped",
+   "account_bn": [
+    318.45215852334115,
+    388.95213167388994
+   ],
+   "account_change_bn": [
+    -5.230578229695425,
+    0.2540273998631619
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -0.060429983015277244,
+    7.398682226809392
+   ],
+   "band_bn": [
+    318.45215852334115,
+    388.95213167388994
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "replacement",
+   "long_run": "federal_fixed_at_high_end",
+   "account_bn": [
+    318.45215852334115,
+    372.0326205852307
+   ],
+   "account_change_bn": [
+    -5.230578229695425,
+    -16.665483688796087
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -0.060429983015277244,
+    -9.520828861849857
+   ],
+   "band_bn": [
+    318.45215852334115,
+    372.0326205852307
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "replacement",
+   "long_run": "across_states_at_high_end",
+   "account_bn": [
+    318.45215852334115,
+    372.6300365844439
+   ],
+   "account_change_bn": [
+    -5.230578229695425,
+    -16.068067689582847
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -0.060429983015277244,
+    -8.923412862636617
+   ],
+   "band_bn": [
+    318.45215852334115,
+    372.6300365844439
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "replacement",
+   "long_run": "held_at_zero_at_1",
+   "account_bn": [
+    330.8351595566264,
+    390.3352072717504
+   ],
+   "account_change_bn": [
+    7.152422803589843,
+    1.6371029977236162
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    12.32257105026999,
+    8.781757824669846
+   ],
+   "band_bn": [
+    330.8351595566264,
+    390.3352072717504
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "fixed_stock",
+   "long_run": "adopted",
+   "account_bn": [
+    313.17503093561345,
+    370.72332467910906
+   ],
+   "account_change_bn": [
+    -10.50770581742313,
+    -17.97477959491772
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -5.337557570742982,
+    -10.83012476797149
+   ],
+   "band_bn": [
+    313.17503093561345,
+    370.72332467910906
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "fixed_stock",
+   "long_run": "marginal_r_equals_b",
+   "account_bn": [
+    313.0201992607507,
+    370.67947654979866
+   ],
+   "account_change_bn": [
+    -10.662537492285878,
+    -18.01862772422811
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -5.492389245605731,
+    -10.873972897281881
+   ],
+   "band_bn": [
+    313.0201992607507,
+    370.67947654979866
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "fixed_stock",
+   "long_run": "within_states_uncapped",
+   "account_bn": [
+    313.17503093561345,
+    378.6689479695959
+   ],
+   "account_change_bn": [
+    -10.50770581742313,
+    -10.029156304430899
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -5.337557570742982,
+    -2.884501477484669
+   ],
+   "band_bn": [
+    313.17503093561345,
+    378.6689479695959
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "fixed_stock",
+   "long_run": "federal_fixed_at_high_end",
+   "account_bn": [
+    313.17503093561345,
+    364.893699896833
+   ],
+   "account_change_bn": [
+    -10.50770581742313,
+    -23.804404377193748
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -5.337557570742982,
+    -16.65974955024752
+   ],
+   "band_bn": [
+    313.17503093561345,
+    364.893699896833
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "fixed_stock",
+   "long_run": "across_states_at_high_end",
+   "account_bn": [
+    313.17503093561345,
+    367.2864094494216
+   ],
+   "account_change_bn": [
+    -10.50770581742313,
+    -21.41169482460515
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    -5.337557570742982,
+    -14.26703999765892
+   ],
+   "band_bn": [
+    313.17503093561345,
+    367.2864094494216
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  },
+  {
+   "road_case": "fixed_stock",
+   "long_run": "held_at_zero_at_1",
+   "account_bn": [
+    325.55803196889866,
+    383.1063257123943
+   ],
+   "account_change_bn": [
+    1.8752952158620815,
+    -5.591778561632452
+   ],
+   "congestion_bn": [
+    19.162711110731056,
+    19.162711110731056
+   ],
+   "congestion_change_bn": [
+    5.170148246680148,
+    7.14465482694623
+   ],
+   "net_change_bn": [
+    7.045443462542229,
+    1.5528762653137775
+   ],
+   "band_bn": [
+    325.55803196889866,
+    383.1063257123943
+   ],
+   "end_specifications": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ]
+  }
+ ],
+ "public_pay": {
+  "on_candidate_at_fixed_specs_bn": [
+   13.608544805563092,
+   8.951950842521414
+  ],
+  "on_sept27_at_fixed_specs_bn": [
+   14.624815124282291,
+   9.649867515807719
+  ],
+  "band_with_public_pay_bn": [
+   336.631327379558,
+   398.31000929558985
+  ],
+  "definition": {
+   "charge": "sum over the two skill groups of (public payroll / incumbent earnings) x the model's incumbent labor gain (labor_gain = pay with the group - pay without it); positive raises the group's cost",
+   "public_payroll": "ERN_VAL (longest job's earnings) with ERN_SRCE 1 (wage and salary) and LJCW 2-4 (federal, state, local), civilian residents outside the group, CPS ASEC 2025 person weight",
+   "base": "the production model's own incumbent earnings: max(PEARNVAL, 0) in the skill group, civilian residents outside the group",
+   "cell": {
+    "proxy": "PEARNVAL",
+    "split": "hs_or_less",
+    "labor_share": 0.65,
+    "sigma": 2,
+    "capital_adjustment": 1,
+    "labor_supply_elasticity": 0,
+    "capital_tax_retention": 1,
+    "excluded_capital_owner_share": 0
+   },
+   "response": "1: public employers pay the wage change on an unchanged public workforce and output (adversarial audit 61b4eac section 1)"
+  },
+  "public_share_of_incumbent_earnings": [
+   0.07625641728645494,
+   0.1439571258634863
+  ],
+  "by_skill_row4": {
+   "gdp": [
+    -13.434441354338158,
+    27.04298615990125
+   ],
+   "cash": [
+    -8.837422392995952,
+    17.789373235517367
+   ]
+  },
+  "by_level_row4": {
+   "gdp": {
+    "federal": 3.3215780622512088,
+    "state": 5.6734454613604655,
+    "local": 4.613521281951414
+   },
+   "cash": {
+    "federal": 2.1849950863750713,
+    "state": 3.7320966792175407,
+    "local": 3.034859076928803
+   }
+  },
+  "note": "beside the range, not in it (BRIEF.md item 4): public employers pay the production model's wage change on their payroll; positive raises the group's cost. Specification 48 is GDP-normalized, 11 cash-normalized"
+ },
+ "range": {
+  "candidate": {
+   "low_end": [
+    260.51844683926214,
+    386.98152924132216
+   ],
+   "high_end": [
+    301.9076731637878,
+    437.3749672967194
+   ],
+   "overall": [
+    260.51844683926214,
+    437.3749672967194
+   ],
+   "quadrature": [
+    292.7648792688964,
+    409.5564903263871
+   ]
+  },
+  "sept27_reproduced": {
+   "overall": [
+    258.64866743177305,
+    436.0533176169217
+   ],
+   "quadrature": [
+    290.90027710329656,
+    408.22998825474923
+   ]
+  },
+  "road_arm_as_a_component": {
+   "lo": [
+    -10.50770581742313,
+    -17.97477959491772
+   ],
+   "hi": [
+    0,
+    0
+   ],
+   "overall_with_it": [
+    250.010741021839,
+    437.3749672967194
+   ]
+  },
+  "note": "the September 27 components re-run on the candidate at every specification; the road arm, the transfer bound and public pay are beside it"
+ },
+ "components": [
+  {
+   "name": "tax_block",
+   "label": "tax block: on-books share (low/central/high) x fill-in method",
+   "lo": [
+    -5.902569708415513,
+    -4.901842708715662
+   ],
+   "hi": [
+    6.043605479578957,
+    5.039954645836872
+   ],
+   "variants": {
+    "low/b_hotdeck_union_matched": [
+     -0.5283604038108933,
+     0.4373376286746975
+    ],
+    "low/b_matched_over_pooled": [
+     6.043605479578957,
+     5.039954645836872
+    ],
+    "central/b_hotdeck_union_matched": [
+     -3.235253166456687,
+     -2.2499380465622494
+    ],
+    "central/b_matched_over_pooled": [
+     3.235253166456687,
+     2.2499380465622494
+    ],
+    "high/b_hotdeck_union_matched": [
+     -5.902569708415513,
+     -4.901842708715662
+    ],
+    "high/b_matched_over_pooled": [
+     0.4710273944033929,
+     -0.4999142859363701
+    ]
+   }
+  },
+  {
+   "name": "income_tax",
+   "label": "CBO income gradients: 2018/2019/2022 data, scaled or not by the stack's factor",
+   "lo": [
+    -1.9412818165848194,
+    -1.8675971196618661
+   ],
+   "hi": [
+    2.6623479126571965,
+    2.6754096072068023
+   ],
+   "variants": {
+    "2018": [
+     1.3184423521443023,
+     1.2280123053751026
+    ],
+    "2019": [
+     -1.9412818165848194,
+     -1.8675971196618661
+    ],
+    "2022": [
+     0,
+     0
+    ],
+    "2018 unscaled": [
+     2.6623479126571965,
+     2.6754096072068023
+    ],
+    "2019 unscaled": [
+     -0.9389242736183405,
+     -0.7974272595598109
+    ],
+    "2022 unscaled": [
+     1.2153625940388793,
+     1.3053586991528618
+    ]
+   }
+  },
+  {
+   "name": "medical",
+   "label": "decision 2: medical-ethnicity specifications and the MCBS 65+ bound",
+   "lo": [
+    -3.2908564163712413,
+    -3.2993653620623036
+   ],
+   "hi": [
+    11.509135260862081,
+    11.507299287026115
+   ],
+   "variants": {
+    "plain": [
+     4.430236897737018,
+     4.432710296271466
+    ],
+    "winsor_p999": [
+     0.27256943189968297,
+     0.2796985370708285
+    ],
+    "two_part_lognormal": [
+     -3.2908564163712413,
+     -3.2993653620623036
+    ],
+    "pooled_excl_2020_2021": [
+     8.86934441595605,
+     8.888224582880241
+    ],
+    "pooled_cpi_all_items": [
+     3.683224159868928,
+     3.6847612717645006
+    ],
+    "pooled_year_normalized": [
+     2.776742983860572,
+     2.775440544018352
+    ],
+    "MCBS as truth": [
+     11.509135260862081,
+     11.507299287026115
+    ],
+    "MCBS precision-weighted": [
+     1.3754820189810744,
+     1.3752625977177217
+    ]
+   }
+  },
+  {
+   "name": "ltss",
+   "label": "long-term-care carve-out: extremes of the lane's 960 combinations",
+   "lo": [
+    -1.4078076340186954,
+    -1.4078076340186954
+   ],
+   "hi": [
+    2.992192365981282,
+    2.9921923659813388
+   ],
+   "variants": {
+    "-12.5": [
+     -1.4078076340186954,
+     -1.4078076340186954
+    ],
+    "-8.1": [
+     2.992192365981282,
+     2.9921923659813388
+    ]
+   }
+  },
+  {
+   "name": "education",
+   "label": "audit row 6 weight w (0.77/0.82) x school price k (low/high)",
+   "lo": [
+    -2.3878205484519412,
+    -3.0599157702171738
+   ],
+   "hi": [
+    2.3411083352742708,
+    3.000672142970984
+   ],
+   "variants": {
+    "w 0.77 k low": [
+     -2.3878205484519412,
+     -3.0599157702171738
+    ],
+    "w 0.77 k preferred": [
+     -0.7516226197289484,
+     -0.9847775227211173
+    ],
+    "w 0.77 k high": [
+     0.7409432351123542,
+     0.9081966938549044
+    ],
+    "w 0.82 k low": [
+     -0.9908219277422177,
+     -1.2251099616252645
+    ],
+    "w 0.82 k preferred": [
+     0.7516226197290052,
+     0.9847775227211173
+    ],
+    "w 0.82 k high": [
+     2.3411083352742708,
+     3.000672142970984
+    ]
+   }
+  },
+  {
+   "name": "benefits",
+   "label": "benefit keys: central +/- 1.96 SE (package_se.csv)",
+   "lo": [
+    -2.302731970908326,
+    -2.2527416565264957
+   ],
+   "hi": [
+    2.302731970908326,
+    2.2527416565264957
+   ],
+   "variants": {
+    "-1.96 SE": [
+     -2.302731970908326,
+     -2.2527416565264957
+    ],
+    "+1.96 SE": [
+     2.302731970908326,
+     2.2527416565264957
+    ]
+   }
+  },
+  {
+   "name": "justice",
+   "label": "row 7 on 2023 arrests; booking factor Texas only or Arizona only",
+   "lo": [
+    -0.9209973132857385,
+    -0.9279801498809661
+   ],
+   "hi": [
+    0.232324736023088,
+    0.23408618054116914
+   ],
+   "variants": {
+    "row 7 2023": [
+     0.232324736023088,
+     0.23408618054116914
+    ],
+    "booking Texas": [
+     0.08780356974858705,
+     0.08846928068084026
+    ],
+    "booking Arizona": [
+     -0.9209973132857385,
+     -0.9279801498809661
+    ]
+   }
+  },
+  {
+   "name": "row8",
+   "label": "audit row 8: unallocable S&L spending at the all-spending elasticity",
+   "lo": [
+    0,
+    0
+   ],
+   "hi": [
+    0,
+    0
+   ],
+   "variants": {
+    "lo": [
+     0,
+     0
+    ],
+    "hi": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "name": "row9",
+   "label": "audit row 9: MEPS donor filter (non-LTSS remainder)",
+   "lo": [
+    -0.7999999999999545,
+    -0.8000000000000114
+   ],
+   "hi": [
+    0.8000000000000114,
+    0.8000000000000114
+   ],
+   "variants": {
+    "lo": [
+     -0.7999999999999545,
+     -0.8000000000000114
+    ],
+    "hi": [
+     0.8000000000000114,
+     0.8000000000000114
+    ]
+   }
+  },
+  {
+   "name": "row10",
+   "label": "audit row 10: foster care keyed by WIC",
+   "lo": [
+    -0.5,
+    -0.5
+   ],
+   "hi": [
+    0.5,
+    0.5
+   ],
+   "variants": {
+    "lo": [
+     -0.5,
+     -0.5
+    ],
+    "hi": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "name": "small",
+   "label": "audit small items (origin allocation, grants, top-codes, flags)",
+   "lo": [
+    -0.39999999999997726,
+    -0.4000000000000341
+   ],
+   "hi": [
+    0.5,
+    0.5
+   ],
+   "variants": {
+    "lo": [
+     -0.39999999999997726,
+     -0.4000000000000341
+    ],
+    "hi": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "name": "shelter",
+   "label": "shelter keying (mapping A, central outlays, NYC June 2025 share)",
+   "lo": [
+    -0.33099999999996044,
+    -0.2891999999999939
+   ],
+   "hi": [
+    0.06300000000004502,
+    0.10480000000001155
+   ],
+   "variants": {
+    "lo": [
+     -0.33099999999996044,
+     -0.2891999999999939
+    ],
+    "hi": [
+     0.06300000000004502,
+     0.10480000000001155
+    ]
+   }
+  },
+  {
+   "name": "care",
+   "label": "care and household services (hours taxes, elder-care Medicaid, output)",
+   "lo": [
+    -9.199999999999989,
+    -9.199999999999989
+   ],
+   "hi": [
+    1.5500000000000114,
+    1.5500000000000114
+   ],
+   "variants": {
+    "lo": [
+     -9.199999999999989,
+     -9.199999999999989
+    ],
+    "hi": [
+     1.5500000000000114,
+     1.5500000000000114
+    ]
+   }
+  },
+  {
+   "name": "finite_removal",
+   "label": "general government's removal response: r = b (fixed plus constant marginal cost); engine-key population share",
+   "lo": [
+    -0.40510618833150147,
+    -0.4403456063040494
+   ],
+   "hi": [
+    0.0021894229626582273,
+    0.003547479829023814
+   ],
+   "variants": {
+    "r = b": [
+     -0.40510618833150147,
+     -0.4403456063040494
+    ],
+    "engine population key": [
+     0.0021894229626582273,
+     0.003547479829023814
+    ]
+   }
+  },
+  {
+   "name": "consumption_key",
+   "label": "consumption key: the lane's twelve saving-and-remittance specifications",
+   "lo": [
+    -3.512438626585549,
+    -2.8399185546887225
+   ],
+   "hi": [
+    1.16408622624283,
+    0.9404831620582286
+   ],
+   "variants": {
+    "both_corridor_net_h2": [
+     0,
+     0
+    ],
+    "both_corridor_net_h2_dollar_for_dollar": [
+     -0.03038566361226458,
+     -0.01929497285624393
+    ],
+    "both_survey_cemla": [
+     -2.0957469854892565,
+     -1.6977447777223347
+    ],
+    "both_bea": [
+     -2.151314446496599,
+     -1.742761212236985
+    ],
+    "both_corridor_full": [
+     0.2035758134736625,
+     0.1649144162010998
+    ],
+    "both_corridor_net_h2_illicit": [
+     -0.238990496183078,
+     -0.19360380266590482
+    ],
+    "both_corridor_net_h2_others_bea": [
+     0.8274507087593292,
+     0.6685070754918456
+    ],
+    "both_corridor_net_h2_others_zero": [
+     1.16408622624283,
+     0.9404831620582286
+    ],
+    "both_rank_x_size_corridor_net_h2": [
+     -1.3863915409052652,
+     -1.1177583240645959
+    ],
+    "both_rank_x_size_survey_cemla": [
+     -3.512438626585549,
+     -2.8399185546887225
+    ],
+    "both_rank_x_size_x_age_corridor_net_h2": [
+     -1.0074895468408158,
+     -0.8104635319400586
+    ],
+    "both_rank_x_size_x_age_survey_cemla": [
+     -3.1293899551890263,
+     -2.5292052453737597
+    ]
+   }
+  },
+  {
+   "name": "school_response",
+   "label": "school response: within-district elasticity 0.836 read over the removal (0.8489) or taken as the response",
+   "lo": [
+    -28.148276330533008,
+    -26.389940993335415
+   ],
+   "hi": [
+    0,
+    0
+   ],
+   "variants": {
+    "within district, finite r": [
+     -25.875250260804933,
+     -24.380959125348852
+    ],
+    "within district, r = b": [
+     -28.148276330533008,
+     -26.389940993335415
+    ]
+   }
+  },
+  {
+   "name": "long_run_response",
+   "label": "long-run responses: r = b; within-state uncapped; federal fixed at the high end; across-state at the high end; held-at-zero lines at 1",
+   "lo": [
+    -0.33391191911732676,
+    -8.124643542773981
+   ],
+   "hi": [
+    12.383001033285268,
+    15.540215541135751
+   ],
+   "variants": {
+    "marginal_r_equals_b": [
+     -0.33391191911732676,
+     -0.04384812931033366
+    ],
+    "within_states_uncapped": [
+     0,
+     15.540215541135751
+    ],
+    "federal_fixed_at_high_end": [
+     0,
+     -6.051560911063689
+    ],
+    "across_states_at_high_end": [
+     0,
+     -8.124643542773981
+    ],
+    "held_at_zero_at_1": [
+     12.383001033285268,
+     12.383001033285268
+    ]
+   }
+  },
+  {
+   "name": "capital_rate",
+   "label": "return on public capital: 2% at both ends; 3% at both ends",
+   "lo": [
+    0,
+    -18.563207722522463
+   ],
+   "hi": [
+    16.898577018221374,
+    0
+   ],
+   "variants": {
+    "2% at both ends": [
+     0,
+     -18.563207722522463
+    ],
+    "3% at both ends": [
+     16.898577018221374,
+     0
+    ]
+   }
+  },
+  {
+   "name": "capital_definition",
+   "label": "return on public capital: the capital lane's definition variants (engine_components.json variants), each re-run at every specification",
+   "lo": [
+    -1.3794914411708987,
+    -1.5259242895311331
+   ],
+   "hi": [
+    1.3544927262881856,
+    1.0354609535797863
+   ],
+   "variants": {
+    "block_equipment_and_software_added": [
+     0.034511347026068506,
+     0.12146210756350229
+    ],
+    "block_toll_share_at_its_highest_year": [
+     -0.4089574659705022,
+     -0.8298591040175438
+    ],
+    "block_toll_share_at_its_lowest_year": [
+     0.18028263640945852,
+     0.36583067817485926
+    ],
+    "college_by_account_school_fraction": [
+     -1.3794914411708987,
+     -1.5259242895311331
+    ],
+    "end_2024_stocks": [
+     0.2885773032039083,
+     0.4654184472300358
+    ],
+    "equipment_and_software": [
+     0.6486671478683661,
+     1.0354609535797863
+    ],
+    "higher_ed_auxiliaries_fee_financed": [
+     -0.7264317133278837,
+     -1.1198899300991343
+    ],
+    "k12_at_pupil_share": [
+     0.871092052029212,
+     0.9442281384605735
+    ],
+    "offices_at_response_1": [
+     1.3544927262881856,
+     0.7599796185649552
+    ],
+    "public_housing_at_rental_assistance_key": [
+     -0.35286942484674455,
+     -0.5293041372701168
+    ],
+    "public_housing_at_uncorrected_rental_key": [
+     0.06707173856381132,
+     0.10060760784568856
+    ],
+    "sl_office_at_unallocable_response": [
+     0.3451169145143922,
+     0.5176753717715883
+    ]
+   }
+  }
+ ],
+ "inputs": {
+  "production": {
+   "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+   "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac"
+  },
+  "depreciation": {
+   "file": "capital_return_services_2026_09_27/derived/block_components.csv",
+   "sha256": "63e6f03bbdf265880bf7a566394f59126b6ef37c5896a5efc0706632b8f9a313",
+   "values_bn": {
+    "sl_highways": 88.56112,
+    "fed_highways": 1.116
+   }
+  },
+  "congestion": {
+   "file": "service_response_long_run_2026_09_27/derived/congestion_bridge.csv",
+   "sha256": "85418bad0df5d3306c69dd7e1bf05e04a15bfd134bd60b658eda452105353926"
+  },
+  "road_congestion": {
+   "file": "main_case_candidate_2026_09_28/derived/road_congestion.json",
+   "sha256": "a89c7e280bc97d4b2961c6a3582bdeb81c6004b208c13ca257127c573cde6987"
+  },
+  "sept27_payload": {
+   "file": "main_case_long_run_2026_09_27/derived/corrections.json",
+   "sha256": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea"
+  }
+ }
+}
