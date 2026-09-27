@@ -1,0 +1,33 @@
+names listed  78
+  Chief  5
+  PGY3   24
+  PGY2   25
+  PGY1   24
+group US         2 of 78 (2.6%)
+group Caribbean  3 of 78 (3.8%)
+group elsewhere  73 of 78 (93.6%)
+elsewhere by school country:
+  India                  21
+  Pakistan               15
+  Sudan                  7
+  Nepal                  5
+  United Arab Emirates   4
+  Egypt                  3
+  China                  2
+  Ethiopia               2
+  Qatar                  2
+  Algeria                1
+  Bangladesh             1
+  Brazil                 1
+  Indonesia              1
+  Iran                   1
+  Jordan                 1
+  Morocco                1
+  Nigeria                1
+  Spain                  1
+  State of Palestine     1
+  Ukraine                1
+  United Kingdom         1
+elsewhere countries with 1-2 residents  15 countries, 18 residents
+Nepal school  5 of 78 (6.4%)
+NBME flagged-analysis countries (Jordan, Nepal, Pakistan, India)  42 of 78 (53.8%)

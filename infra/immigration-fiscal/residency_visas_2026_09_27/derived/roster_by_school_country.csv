@@ -1,0 +1,79 @@
+class_year,school,school_country,group,nbme_flagged_country
+Chief,King Edward Medical University – Pakistan,Pakistan,elsewhere,yes
+Chief,"Institute of Medicine, Tribhuvan University – Nepal",Nepal,elsewhere,yes
+Chief,University of Khartoum Faculty of Medicine – Sudan,Sudan,elsewhere,no
+Chief,King Edward Medical University – Pakistan,Pakistan,elsewhere,yes
+Chief,Universite Constantine 3 Faculte de Medicine – Algeria,Algeria,elsewhere,no
+PGY3,University of Khartoum Faculty of Medicine,Sudan,elsewhere,no
+PGY3,Universidade Cidade de Sao Paulo (UNICID) Faculdade de Medicina,Brazil,elsewhere,no
+PGY3,Lokmanya Tilak Municipal Medical College,India,elsewhere,yes
+PGY3,Saba University School of Medicine,Saba (Caribbean Netherlands),Caribbean,no
+PGY3,B.P. Koirala Institute of Health Sciences,Nepal,elsewhere,yes
+PGY3,Seth G.S. Medical College,India,elsewhere,yes
+PGY3,Ain Shams University Faculty of Medicine,Egypt,elsewhere,no
+PGY3,"Allama Iqbal Medical College, Lahore",Pakistan,elsewhere,yes
+PGY3,Universidad de Navarra Facultad de Medicina,Spain,elsewhere,no
+PGY3,"Christian Medical College, Vellore",India,elsewhere,yes
+PGY3,King Edward Medical University,Pakistan,elsewhere,yes
+PGY3,Dow Medical College,Pakistan,elsewhere,yes
+PGY3,University of Jordan Faculty of Medicine,Jordan,elsewhere,yes
+PGY3,Smt. N.H.L. Municipal Medical College,India,elsewhere,yes
+PGY3,Dow Medical College,Pakistan,elsewhere,yes
+PGY3,Tehran University of Medical Sciences School of Medicine,Iran,elsewhere,no
+PGY3,Ross University School of Medicine,Caribbean (Ross University),Caribbean,no
+PGY3,M.S. Ramaiah Medical College,India,elsewhere,yes
+PGY3,Sri Ramachandra Medical College and Research Institute,India,elsewhere,yes
+PGY3,Government Medical College Chandigarh,India,elsewhere,yes
+PGY3,Medical College Baroda,India,elsewhere,yes
+PGY3,"Addis Ababa University, College of Health Sciences, School of Medicine",Ethiopia,elsewhere,no
+PGY3,Peking University Health Science Center,China,elsewhere,no
+PGY3,University of Sharjah College of Medicine,United Arab Emirates,elsewhere,no
+PGY2,University of Khartoum Faculty of Medicine,Sudan,elsewhere,no
+PGY2,Dow Medical College,Pakistan,elsewhere,yes
+PGY2,Dow Medical College,Pakistan,elsewhere,yes
+PGY2,Kharkiv National Medical University,Ukraine,elsewhere,no
+PGY2,Gandhi Medical College and Hospital Secunderabad,India,elsewhere,yes
+PGY2,Kathmandu Medical College,Nepal,elsewhere,yes
+PGY2,Weill Cornell Medical College in Qatar,Qatar,elsewhere,no
+PGY2,Imperial College London Faculty of Medicine,United Kingdom,elsewhere,no
+PGY2,Lake Erie College of Osteopathic Medicine,United States,US,no
+PGY2,King Edward Medical University,Pakistan,elsewhere,yes
+PGY2,University of Nigeria Faculty of Medicine,Nigeria,elsewhere,no
+PGY2,B.J. Medical College Ahmedabad,India,elsewhere,yes
+PGY2,Universitas Gadjah Mada Sekip Fakultas Kedokteran,Indonesia,elsewhere,no
+PGY2,Allama Iqbal Medical College,Pakistan,elsewhere,yes
+PGY2,Government Medical College Nagpur,India,elsewhere,yes
+PGY2,All India Institute of Medical Sciences Rishikesh,India,elsewhere,yes
+PGY2,King Edward Medical University,Pakistan,elsewhere,yes
+PGY2,Cairo University Faculty of Medicine,Egypt,elsewhere,no
+PGY2,King Edward Medical University,Pakistan,elsewhere,yes
+PGY2,University of Khartoum Faculty of Medicine,Sudan,elsewhere,no
+PGY2,University of Sharjah College of Medicine,United Arab Emirates,elsewhere,no
+PGY2,Chittagong Medical College and Hospital,Bangladesh,elsewhere,no
+PGY2,Zhejiang University School of Medicine,China,elsewhere,no
+PGY2,Bangalore Medical College and Research Institute,India,elsewhere,yes
+PGY2,K.S. Hegde Medical Academy,India,elsewhere,yes
+PGY1,University of Sharjah College of Medicine – United Arab Emirates,United Arab Emirates,elsewhere,no
+PGY1,Ahfad University for Women School of Medicine – Sudan,Sudan,elsewhere,no
+PGY1,Rawalpindi Medical College – Pakistan,Pakistan,elsewhere,yes
+PGY1,Universite Sidi Mohammed Ben Abdellah Faculte de Medecine et de Pharmacie de Fes Morocco,Morocco,elsewhere,no
+PGY1,"Institute of Medicine, Tribhuvan University – Nepal",Nepal,elsewhere,yes
+PGY1,"B.J. Medical College – Ahmedabad, India",India,elsewhere,yes
+PGY1,Lake Erie College of Osteopathic Medicine – USA,United States,US,no
+PGY1,Al-Quds University Faculty of Medicine – State of Palestine,State of Palestine,elsewhere,no
+PGY1,Government Medical College of Nagpur India,India,elsewhere,yes
+PGY1,King Edward Medical University – Pakistan,Pakistan,elsewhere,yes
+PGY1,University of Khartoum Faculty of Medicine – Sudan,Sudan,elsewhere,no
+PGY1,"B.J. Medical College – Ahmedabad, India",India,elsewhere,yes
+PGY1,Weill Cornell Medical College in Qatar – Qatar,Qatar,elsewhere,no
+PGY1,Chandka Medical College – Pakistan,Pakistan,elsewhere,yes
+PGY1,"Academy of Medical Sciences – Pariyaram, India",India,elsewhere,yes
+PGY1,University of Sharjah College of Medicine – United Arab Emirates,United Arab Emirates,elsewhere,no
+PGY1,University of Khartoum Faculty of Medicine – Sudan,Sudan,elsewhere,no
+PGY1,Ain Shams University Faculty of Medicine – Egypt,Egypt,elsewhere,no
+PGY1,Bangalore Medical College and Research Institute – India,India,elsewhere,yes
+PGY1,Patan Academy of Health Sciences School of Medicine – Nepal,Nepal,elsewhere,yes
+PGY1,"Vydehi Institute of Medical Sciences & Research Centre – Bangalore, India",India,elsewhere,yes
+PGY1,"Addis Ababa University, College of Health Sciences, School of Medicine – Ethiopia",Ethiopia,elsewhere,no
+PGY1,Medical College Thiruvananthapuram – India,India,elsewhere,yes
+PGY1,American University of Antigua College of Medicine – Antigua & Barbuda,Antigua and Barbuda,Caribbean,no
