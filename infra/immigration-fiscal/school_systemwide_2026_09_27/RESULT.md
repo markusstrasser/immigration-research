@@ -1,3 +1,5 @@
+claude-opus-5-5
+
 # System-wide school degradation: can it hide from the peer-effect measures?
 
 **Verdict:** On absolute, low-stakes NAEP, white pupils did not lose ground where the Hispanic or
