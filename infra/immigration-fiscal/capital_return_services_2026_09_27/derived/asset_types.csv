@@ -2,32 +2,32 @@ level,fa_line,type,stock_avg2024_bn,depreciation_2024_bn,treatment,reason
 federal,22,national defense (all assets),2299.0745,209.574,response 0,defense responds at 0
 federal nondefense,39,equipment,188.03,23.43,gap,"no function split (equipment_and_software variant: POS, general government, income security)"
 federal nondefense,41,office,152.17,2.672,charged,general government
-federal nondefense,42,commercial,60.526,0.995,gap,no function
+federal nondefense,42,commercial,60.526,0.995,gap,no function; any Postal Service part is in the enterprise total (option D)
 federal nondefense,43,health care,106.019,1.949,charged,health
 federal nondefense,44,educational,61.588,1.131,gap,no K-12/other split
 federal nondefense,45,public safety,110.2,2.029,charged,public order and safety
-federal nondefense,46,amusement and recreation,41.8305,0.771,held fixed,recreation and culture
-federal nondefense,47,transportation,35.406,0.651,held fixed,economic affairs
-federal nondefense,48,power,27.6655,0.509,held fixed,economic affairs; fee-financed
-federal nondefense,49,highways and streets,54.5735,1.116,held fixed,economic affairs
-federal nondefense,50,conservation and development,394.4275,6.04,held fixed,economic affairs
+federal nondefense,46,amusement and recreation,41.8305,0.771,block,recreation: national parks at the long-run response
+federal nondefense,47,transportation,35.406,0.651,block,economic affairs: air traffic facilities at the air response
+federal nondefense,48,power,27.6655,0.509,enterprise (option D),TVA and the power marketing administrations: federal enterprises
+federal nondefense,49,highways and streets,54.5735,1.116,block,economic affairs: federal highways at the long-run response
+federal nondefense,50,conservation and development,394.4275,6.04,response 0,natural resources and water held at 0 in the long-run responses
 federal nondefense,51,other structures,54.973,1.012,gap,no function
 federal nondefense,53,software,95.466,44.807,gap,no function split
 federal nondefense,54,research and development,957.3885,96.541,gap,health's share bounded; non-rival
 state and local,56,equipment,324.0155,71.002,K-12 part charged,K-12 by F-33; the rest a gap (equipment_and_software variant)
-state and local,58,residential,420.402,5.877,excluded,public housing: enterprise; fee-financed
+state and local,58,residential,420.402,5.877,enterprise (option D),"public housing: an enterprise; at the enterprise-surplus key and response 1 under option D, out under option A"
 state and local,59,office,1292.9385,23.316,charged,general government (NIPA files it there)
-state and local,60,commercial,29.1785,0.524,gap,no function
-state and local,61,health care,365.979,6.614,charged,health; x0.2581 for hospital sales
-state and local,62,educational,3947.572,72.18,charged,K-12 and colleges and libraries; museums and zoos held fixed; preschool a gap
+state and local,60,commercial,29.1785,0.524,gap,no function; its parking and liquor-store part is in the enterprise total (option D)
+state and local,61,health care,365.979,6.614,charged,"health, in full (the line is already net of hospital sales)"
+state and local,62,educational,3947.572,72.18,charged,K-12 and colleges and libraries; museums and zoos in the block (recreation); preschool a gap
 state and local,63,public safety,289.473,5.269,charged,public order and safety
-state and local,64,amusement and recreation,383.21,7.01,held fixed,recreation and culture
-state and local,65,transportation,1196.075,21.745,held fixed,economic affairs; largely fee-financed
-state and local,66,power,542.057,9.914,held fixed,economic affairs; fee-financed utilities
-state and local,67,highways and streets,4890.18,98.674,held fixed,economic affairs
-state and local,68,sewer systems,1224.896,18.754,excluded,enterprise; fee-financed; the sanitation part is a gap
-state and local,69,water systems,915.9465,13.992,excluded,enterprise; fee-financed
-state and local,70,conservation and development,215.504,3.293,held fixed,economic affairs
+state and local,64,amusement and recreation,383.21,7.01,block,"recreation at the long-run response, in full"
+state and local,65,transportation,1196.075,21.745,enterprise (option D),"transit, airports and ports: enterprises"
+state and local,66,power,542.057,9.914,enterprise (option D),electric and gas utilities: enterprises
+state and local,67,highways and streets,4890.18,98.674,block (nontoll part),"highways at the long-run response, in full; toll facilities are enterprises (option D)"
+state and local,68,sewer systems,1224.896,18.754,enterprise (option D),enterprise; the sanitation part (general government) is a gap
+state and local,69,water systems,915.9465,13.992,enterprise (option D),enterprise
+state and local,70,conservation and development,215.504,3.293,response 0,natural resources held at 0 in the long-run responses
 state and local,71,other structures,43.995,0.652,gap,no function
 state and local,73,software,65.608,39.517,K-12 part charged,K-12 by F-33; the rest a gap
 state and local,74,research and development,144.597,25.113,gap,university research; non-rival

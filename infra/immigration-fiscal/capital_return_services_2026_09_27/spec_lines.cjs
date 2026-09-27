@@ -3,7 +3,8 @@
  *
  * For each fill-in method and each of the 64 specifications it records the case's cost from the
  * package's cost(), and, from that same engine evaluation, every spending line's group amount, national
- * amount, allocation rule and response. Engine.evaluate is wrapped only to keep the evaluation that
+ * amount, allocation rule and response, and the same for the enterprise-surplus receipt line (where the
+ * NIPAs put government enterprises' operating results). Engine.evaluate is wrapped only to keep the evaluation that
  * cost() makes; cost() itself runs unchanged. The models are built as main_case.cjs builds them for
  * its per-specification gates, so the two fill-in methods' bands average to the published case.
  *
@@ -30,7 +31,11 @@ function costAndLines(model, spec) {
   for (const l of last.spending) {
     lines[l.id] = { amount_bn: l.amount_bn, national_bn: l.national_bn, key: l.key, response: l.response };
   }
-  return { cost_bn: cost, lines };
+  const ent = last.receipts.filter((r) => r.id === "enterprise_surplus");
+  if (ent.length !== 1) throw new Error("[BLOCKED] expected one enterprise_surplus receipt line");
+  const enterprise = { amount_bn: ent[0].amount_bn, national_bn: ent[0].national_bn, key: ent[0].key,
+    response: ent[0].response, group: ent[0].group };
+  return { cost_bn: cost, lines, enterprise };
 }
 
 // The models of main_case.cjs (its per-specification gates): the September 26 build, central case, per method.

@@ -1,0 +1,9 @@
+nipa_3_8_group,nipa_3_8_lines,current_surplus_2024_bn,components,stock_avg2024_bn,charges_exceed_production_costs,national_return_2pct_bn,national_return_3pct_bn,national_return_7pct_bn,group_return_option_D_2pct_spec48_bn,group_return_option_D_3pct_spec11_bn,group_surplus_move_option_D_spec48_bn,group_surplus_move_option_D_spec11_bn,group_net_option_D_2pct_spec48_bn,group_net_option_D_3pct_spec11_bn
+water and sewerage,l8,12.488,ent_water_sl+ent_sewer_sl,2140.8425,True,42.81685,64.225275,149.858975,5.148503,7.722755,-1.501617,-1.501617,3.646886,6.221138
+gas and electricity,l9,9.856,ent_power_sl,542.057,True,10.84114,16.26171,37.94399,1.303591,1.955386,-1.185133,-1.185133,0.118458,0.770253
+toll facilities,l10,8.843,ent_tolls_sl,501.183727,True,10.023675,15.035512,35.082861,1.205295,1.807942,-1.063325,-1.063325,0.14197,0.744617
+air and water terminals,l12,0.816,ent_airports_sl+ent_ports_sl,690.247745,True,13.804955,20.707432,48.317342,1.659974,2.489961,-0.09812,-0.09812,1.561854,2.391841
+housing and urban renewal,l13,-40.298,ent_housing_sl,420.402,False,8.40804,12.61206,29.42814,1.011023,1.516534,4.845625,4.845625,5.856648,6.362159
+public transit,l14,-66.69,ent_transit_sl,505.798633,False,10.115973,15.173959,35.405904,1.216393,1.82459,8.019125,8.019125,9.235518,9.843715
+"liquor stores and other (lotteries, parking)",l11+l15,29.347,ent_other_sl,75.480589,True,1.509612,2.264418,5.283641,0.181523,0.272284,-3.528824,-3.528824,-3.347301,-3.256539
+"federal (Postal Service, power)",l2,-1.822,ent_power_fed+ent_other_fed,84.377306,False,1.687546,2.531319,5.906411,0.202919,0.304378,0.219086,0.219086,0.422005,0.523464

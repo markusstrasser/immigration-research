@@ -1,0 +1,169 @@
+survey_year,code,function,kind,us_state_and_local_thousands
+2012,A01,air transportation,charges,19762514.0
+2012,E01,air transportation,current operation,11943088.0
+2012,F01,air transportation,construction,8097963.0
+2012,A44,regular highways,charges,1815132.0
+2012,E44,regular highways,current operation,64403983.0
+2012,F44,regular highways,construction,76433753.0
+2012,A45,toll highways,charges,11623215.0
+2012,E45,toll highways,current operation,5107034.0
+2012,F45,toll highways,construction,7136845.0
+2012,A60,parking facilities,charges,2578553.0
+2012,E60,parking facilities,current operation,1559054.0
+2012,F60,parking facilities,construction,212148.0
+2012,A61,parks and recreation,charges,9766483.0
+2012,E61,parks and recreation,current operation,28995970.0
+2012,F61,parks and recreation,construction,6777233.0
+2012,A87,sea and inland ports,charges,4386372.0
+2012,E87,sea and inland ports,current operation,3025405.0
+2012,F87,sea and inland ports,construction,1913072.0
+2012,A94,transit utility,charges,14507844.0
+2012,E94,transit utility,current operation,40751806.0
+2012,F94,transit utility,construction,15385044.0
+2017,A01,air transportation,charges,24413256.0
+2017,E01,air transportation,current operation,14649067.0
+2017,F01,air transportation,construction,10043424.0
+2017,A44,regular highways,charges,2635130.0
+2017,E44,regular highways,current operation,72957396.0
+2017,F44,regular highways,construction,83186136.0
+2017,A45,toll highways,charges,17804683.0
+2017,E45,toll highways,current operation,6413908.0
+2017,F45,toll highways,construction,10033920.0
+2017,A60,parking facilities,charges,3279642.0
+2017,E60,parking facilities,current operation,1816215.0
+2017,F60,parking facilities,construction,174194.0
+2017,A61,parks and recreation,charges,11513306.0
+2017,E61,parks and recreation,current operation,34830277.0
+2017,F61,parks and recreation,construction,8315124.0
+2017,A87,sea and inland ports,charges,5766120.0
+2017,E87,sea and inland ports,current operation,3808393.0
+2017,F87,sea and inland ports,construction,2146476.0
+2017,A94,transit utility,charges,16874157.0
+2017,E94,transit utility,current operation,51932604.0
+2017,F94,transit utility,construction,18609459.0
+2018,A01,air transportation,charges,25019038.0
+2018,E01,air transportation,current operation,15059698.0
+2018,F01,air transportation,construction,11985738.0
+2018,A44,regular highways,charges,3266970.0
+2018,E44,regular highways,current operation,75600049.0
+2018,F44,regular highways,construction,85371889.0
+2018,A45,toll highways,charges,18443738.0
+2018,E45,toll highways,current operation,6334195.0
+2018,F45,toll highways,construction,17816582.0
+2018,A60,parking facilities,charges,3177657.0
+2018,E60,parking facilities,current operation,1869439.0
+2018,F60,parking facilities,construction,203755.0
+2018,A61,parks and recreation,charges,11484926.0
+2018,E61,parks and recreation,current operation,35394358.0
+2018,F61,parks and recreation,construction,7981135.0
+2018,A87,sea and inland ports,charges,5635679.0
+2018,E87,sea and inland ports,current operation,3745645.0
+2018,F87,sea and inland ports,construction,2037519.0
+2018,A94,transit utility,charges,17341781.0
+2018,E94,transit utility,current operation,52947755.0
+2018,F94,transit utility,construction,18067120.0
+2019,A01,air transportation,charges,26552771.0
+2019,E01,air transportation,current operation,16033625.0
+2019,F01,air transportation,construction,13700995.0
+2019,A44,regular highways,charges,2774935.0
+2019,E44,regular highways,current operation,78543660.0
+2019,F44,regular highways,construction,90706024.0
+2019,A45,toll highways,charges,19738248.0
+2019,E45,toll highways,current operation,6592003.0
+2019,F45,toll highways,construction,16660177.0
+2019,A60,parking facilities,charges,3349398.0
+2019,E60,parking facilities,current operation,1868648.0
+2019,F60,parking facilities,construction,219258.0
+2019,A61,parks and recreation,charges,12312418.0
+2019,E61,parks and recreation,current operation,37078957.0
+2019,F61,parks and recreation,construction,9061353.0
+2019,A87,sea and inland ports,charges,6536307.0
+2019,E87,sea and inland ports,current operation,4099206.0
+2019,F87,sea and inland ports,construction,2512900.0
+2019,A94,transit utility,charges,17138405.0
+2019,E94,transit utility,current operation,54545022.0
+2019,F94,transit utility,construction,19158363.0
+2020,A01,air transportation,charges,26279039.0
+2020,E01,air transportation,current operation,17280502.0
+2020,F01,air transportation,construction,15996779.0
+2020,A44,regular highways,charges,2792111.0
+2020,E44,regular highways,current operation,82107292.0
+2020,F44,regular highways,construction,98213722.0
+2020,A45,toll highways,charges,19276719.0
+2020,E45,toll highways,current operation,6844979.0
+2020,F45,toll highways,construction,8349455.0
+2020,A60,parking facilities,charges,3082026.0
+2020,E60,parking facilities,current operation,1945442.0
+2020,F60,parking facilities,construction,226985.0
+2020,A61,parks and recreation,charges,11360393.0
+2020,E61,parks and recreation,current operation,37983277.0
+2020,F61,parks and recreation,construction,10561538.0
+2020,A87,sea and inland ports,charges,6498144.0
+2020,E87,sea and inland ports,current operation,4181196.0
+2020,F87,sea and inland ports,construction,2330817.0
+2020,A94,transit utility,charges,16453978.0
+2020,E94,transit utility,current operation,56973686.0
+2020,F94,transit utility,construction,25869487.0
+2021,A01,air transportation,charges,19550625.0
+2021,E01,air transportation,current operation,16336653.0
+2021,F01,air transportation,construction,16622759.0
+2021,A44,regular highways,charges,3050257.0
+2021,E44,regular highways,current operation,82645896.0
+2021,F44,regular highways,construction,98389902.0
+2021,A45,toll highways,charges,17002801.0
+2021,E45,toll highways,current operation,7100634.0
+2021,F45,toll highways,construction,8036633.0
+2021,A60,parking facilities,charges,2314549.0
+2021,E60,parking facilities,current operation,1826178.0
+2021,F60,parking facilities,construction,271935.0
+2021,A61,parks and recreation,charges,9303091.0
+2021,E61,parks and recreation,current operation,35375014.0
+2021,F61,parks and recreation,construction,9343355.0
+2021,A87,sea and inland ports,charges,6681739.0
+2021,E87,sea and inland ports,current operation,4284836.0
+2021,F87,sea and inland ports,construction,2135439.0
+2021,A94,transit utility,charges,8240968.0
+2021,E94,transit utility,current operation,56110692.0
+2021,F94,transit utility,construction,24472436.0
+2022,A01,air transportation,charges,24567350.0
+2022,E01,air transportation,current operation,16369568.0
+2022,F01,air transportation,construction,14976470.0
+2022,A44,regular highways,charges,3247825.0
+2022,E44,regular highways,current operation,88050258.0
+2022,F44,regular highways,construction,104630712.0
+2022,A45,toll highways,charges,20374663.0
+2022,E45,toll highways,current operation,6687433.0
+2022,F45,toll highways,construction,9215259.0
+2022,A60,parking facilities,charges,3036295.0
+2022,E60,parking facilities,current operation,1870097.0
+2022,F60,parking facilities,construction,246536.0
+2022,A61,parks and recreation,charges,12063977.0
+2022,E61,parks and recreation,current operation,40689986.0
+2022,F61,parks and recreation,construction,11065546.0
+2022,A87,sea and inland ports,charges,7716060.0
+2022,E87,sea and inland ports,current operation,4582176.0
+2022,F87,sea and inland ports,construction,2635283.0
+2022,A94,transit utility,charges,9907308.0
+2022,E94,transit utility,current operation,57759998.0
+2022,F94,transit utility,construction,29299125.0
+2023,A01,air transportation,charges,29449345.0
+2023,E01,air transportation,current operation,18345266.0
+2023,F01,air transportation,construction,15365530.0
+2023,A44,regular highways,charges,3364142.0
+2023,E44,regular highways,current operation,95263229.0
+2023,F44,regular highways,construction,121674751.0
+2023,A45,toll highways,charges,21402368.0
+2023,E45,toll highways,current operation,7183184.0
+2023,F45,toll highways,construction,9377183.0
+2023,A60,parking facilities,charges,3288946.0
+2023,E60,parking facilities,current operation,2066821.0
+2023,F60,parking facilities,construction,185237.0
+2023,A61,parks and recreation,charges,13949326.0
+2023,E61,parks and recreation,current operation,45316623.0
+2023,F61,parks and recreation,construction,13204039.0
+2023,A87,sea and inland ports,charges,8374946.0
+2023,E87,sea and inland ports,current operation,5327857.0
+2023,F87,sea and inland ports,construction,3180642.0
+2023,A94,transit utility,charges,12209870.0
+2023,E94,transit utility,current operation,65630763.0
+2023,F94,transit utility,construction,31000415.0

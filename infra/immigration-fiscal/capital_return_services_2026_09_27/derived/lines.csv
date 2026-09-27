@@ -2,10 +2,10 @@ line_id,family,national_bn,response_class,main_case_response_min,main_case_respo
 general_public_services,consumption,401.608,public_goods,0.600046,0.850396,population,0.117175,0.117175,charged,"S&L and federal nondefense Office (FAAt701 l59, l41): city halls, capitols, courthouses, administration buildings; NIPA files S&L office investment under this line"
 defense,consumption,854.761,public_goods,0,0,population,0.117175,0.117175,response 0,national defense responds at 0
 public_order_safety,consumption,519.153,service,1,1,use,0.134171,0.134171,charged,"S&L and federal nondefense Public safety (l63, l45); courthouses sit in Office"
-economic_affairs_services,consumption,451.935,service,0,0,resources,0.08044,0.08078,held fixed,"response 0 in the main profile: highways, transportation, power, conservation"
-housing_community_services,consumption,14.537,service,1,1,population,0.117175,0.117175,excluded: fee-financed,"S&L consumption is sanitation only (NIPA 3.16 note 8); residential, water and sewer are enterprise capital recovered by fees; sanitation is a gap"
-health_services,consumption,306.539,service,1,1,health_other,0.056604,0.056604,charged,S&L Health care (l61) x net/gross 0.2581; federal nondefense Health care (l43)
-recreation_culture,consumption,54.331,service,0,0,population,0.117175,0.117175,held fixed,"response 0 in the main profile: amusement and recreation, museums and zoos"
+economic_affairs_services,consumption,451.935,service,0,0,resources,0.08044,0.08078,held fixed; block,"response 0 in the main profile; the conditional block prices nontoll highways and federal air and highway structures at the long-run responses; toll facilities, transit, airports and ports are enterprises (option D)"
+housing_community_services,consumption,14.537,service,1,1,population,0.117175,0.117175,sanitation only; a gap,"S&L consumption is sanitation only (NIPA 3.16 note 8); its structures sit inside Sewer systems (a gap); water, sewer and public housing are enterprises (option D)"
+health_services,consumption,306.539,service,1,1,health_other,0.056604,0.056604,charged,S&L Health care (l61) in full (the line is already net of hospital sales); federal nondefense Health care (l43)
+recreation_culture,consumption,54.331,service,0,0,population,0.117175,0.117175,held fixed; block,"response 0 in the main profile; the conditional block prices parks, museums and zoos, and national parks at the long-run responses"
 education_services,consumption,1221.159,service,1,1,education_mix,0.157111,0.162153,charged,K-12 (school lane) and colleges and other education (non-K-12 educational structures)
 income_security_services,consumption,167.818,service,1,1,cash_assistance,0.158495,0.187248,no identified capital,no BEA structure type; its offices sit in Office (charged under general government); equipment and software a gap
 social_security,social_benefits,1447.965,household_transfer,1,1,social_security,0.03641,0.039238,transfer,household transfer: no public capital (administration capital sits in the function lines)
@@ -37,10 +37,10 @@ other_foreign_current_transfers,foreign,87.735,foreign,0,0,external,0.0,0.0,outs
 domestic_interest,interest,1118.87,interest,0,0,population,0.117175,0.117175,response 0,existing interest held at 0 (double-count gate)
 foreign_interest,interest,278.755,interest,0,0,external,0.0,0.0,outside the resident account,foreign flow
 agricultural_subsidies,subsidies,8.233,subsidy,0,0,wages,0.078077,0.08391,response 0,subsidies respond at 0
-housing_subsidies,subsidies,60.261,subsidy,0,0,housing_support,0.07399,0.076424,response 0,subsidies respond at 0
+housing_subsidies,subsidies,60.261,subsidy,0,0,housing_support,0.07399,0.076424,response 0,"subsidies respond at 0; its housing_support key is a variant for public housing, which option D keys at the enterprise-surplus key"
 transport_subsidies,subsidies,0.405,subsidy,0,0,resources,0.08044,0.08078,response 0,subsidies respond at 0
 other_subsidies,subsidies,25.34,subsidy,0,0,resources,0.08044,0.08078,response 0,subsidies respond at 0
 source_rounding,rounding,0,rounding,0,0,external,,,outside the resident account,foreign flow or rounding
-school_reprice,consumption,0.0,education_school_part,0.715328,0.865161,k,,,charged with education,school part's correction; K-12 capital uses the pupil share
+school_reprice,consumption,0.0,education_school_part,0.715328,0.865161,k,,,charged with education,school part's correction; enters the K-12 key
 college_rekey,consumption,0.0,education_other_part,0.134839,0.284672,k,,,charged with education,college part's correction; enters the college key
 lane_constants,consumption,0.0,correction_constant,1,1,k,,,no capital,"care, shelter and audit-row constants carry no BEA asset type"

@@ -1,0 +1,12 @@
+component,level,label,bea_source,stock_avg2024_bn,depreciation_2024_bn,national_return_2pct_bn,national_return_3pct_bn,national_return_7pct_bn,group_return_option_D_2pct_spec48_bn,group_return_option_D_3pct_spec11_bn
+ent_housing_sl,state_local,public housing (S&L residential structures),FAAt701 l58,420.402,5.877,8.40804,12.61206,29.42814,1.011023,1.516534
+ent_transit_sl,state_local,public transit (land share of S&L transportation),FAAt701 l65 x VIP land share,505.798633,9.19557,10.115973,15.173959,35.405904,1.216393,1.82459
+ent_airports_sl,state_local,airports (air share of S&L transportation),FAAt701 l65 x VIP air share,595.81423,10.83208,11.916285,17.874427,41.706996,1.432871,2.149307
+ent_ports_sl,state_local,ports (water share of S&L transportation),FAAt701 l65 x VIP water share,94.433514,1.716829,1.88867,2.833005,6.610346,0.227103,0.340654
+ent_power_sl,state_local,electric and gas utilities (S&L power structures),FAAt701 l66,542.057,9.914,10.84114,16.26171,37.94399,1.303591,1.955386
+ent_water_sl,state_local,water systems,FAAt701 l69,915.9465,13.992,18.31893,27.478395,64.116255,2.202756,3.304134
+ent_sewer_sl,state_local,sewer systems,FAAt701 l68,1224.896,18.754,24.49792,36.74688,85.74272,2.945747,4.418621
+ent_tolls_sl,state_local,toll facilities (toll share of S&L highways),FAAt701 l67 x toll share,501.183727,10.11288,10.023675,15.035512,35.082861,1.205295,1.807942
+ent_power_fed,federal,federal power (TVA and the power marketing administrations),FAAt701 l48,27.6655,0.509,0.55331,0.829965,1.936585,0.066533,0.099799
+ent_other_sl,state_local,"other S&L enterprise capital: equipment, software and structures of other types (Postal Service, parking, liquor stores, lotteries), net of the listed types' general-government parts",FAAt701 l79 less the listed types; S&L share by NIPA 7.5,75.480589,18.109897,1.509612,2.264418,5.283641,0.181523,0.272284
+ent_other_fed,federal,"other federal enterprise capital: equipment, software and structures of other types (Postal Service, parking, liquor stores, lotteries), net of the listed types' general-government parts",FAAt701 l79 less the listed types; federal share by NIPA 7.5,56.711806,13.606743,1.134236,1.701354,3.969826,0.136386,0.204579
