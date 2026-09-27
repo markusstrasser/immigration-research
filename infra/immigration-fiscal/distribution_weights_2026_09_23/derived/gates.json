@@ -155,6 +155,72 @@
    291.9547733238526
   ]
  },
+ "sept27_base_is_sept26_schools_adopted": {
+  "passed": true,
+  "sept27_file": [
+   258.4885,
+   291.9548
+  ],
+  "sept26_schools_file": [
+   258.48849537573153,
+   291.9547733238526
+  ]
+ },
+ "sept27_summary_matches_bands": {
+  "passed": true,
+  "summary": [
+   321.81935699039354,
+   387.37005494938376
+  ]
+ },
+ "sept27_change_matches_summary": {
+  "passed": true,
+  "change": [
+   63.33086161466201,
+   95.41528162553118
+  ]
+ },
+ "sept27_band_rebuilt_from_A": {
+  "passed": true,
+  "rebuilt": [
+   321.81930803513546,
+   387.3700886415746
+  ],
+  "band": [
+   321.81935699039354,
+   387.37005494938376
+  ]
+ },
+ "sept27_case_ends_are_the_band": {
+  "passed": true,
+  "case_ends": [
+   321.81935699039354,
+   387.37005494938376
+  ],
+  "band": [
+   321.81935699039354,
+   387.37005494938376
+  ]
+ },
+ "capped_rules_match_texts": {
+  "passed": true,
+  "files": 4.0
+ },
+ "capped_cps_codes": {
+  "passed": true,
+  "households": 55762.0,
+  "states": 51.0
+ },
+ "capped_housing_subsidies_equal_per_household": {
+  "passed": true,
+  "key_sum": 10266891.67,
+  "households": 10266891.669999998
+ },
+ "capped_energy_assistance_equal_per_household": {
+  "passed": true,
+  "key_sum": 17948359.56,
+  "households": 17948359.560000002
+ },
  "bea_2024_totals": {
   "passed": true,
   "federal_bn": 4976.3150000000005,
@@ -357,18 +423,18 @@
  },
  "sum_spm_fiscal_a": {
   "passed": true,
-  "split": -276.7224057417068,
-  "given": -276.7224057417068
+  "split": -351.00111130418475,
+  "given": -351.00111130418475
  },
  "sum_spm_fiscal_b": {
   "passed": true,
-  "split": -276.7224057417068,
-  "given": -276.7224057417068
+  "split": -351.0011113041848,
+  "given": -351.00111130418475
  },
  "sum_spm_fiscal_a_cps_tax_fields": {
   "passed": true,
-  "split": -276.7224057417068,
-  "given": -276.7224057417068
+  "split": -351.00111130418475,
+  "given": -351.00111130418475
  },
  "sum_spm_wages": {
   "passed": true,
@@ -432,13 +498,48 @@
  },
  "sum_spm_TOTAL_a": {
   "passed": true,
-  "split": -311.4228244177051,
-  "given": -311.4228244177048
+  "split": -390.7958960378017,
+  "given": -390.7958960378014
  },
  "sum_spm_TOTAL_b": {
   "passed": true,
-  "split": -311.4228244177051,
-  "given": -311.4228244177048
+  "split": -390.79589603780164,
+  "given": -390.7958960378014
+ },
+ "sum_spm_displaced_beneficiaries": {
+  "passed": true,
+  "split": -5.094366057618605,
+  "given": -5.094366057618604
+ },
+ "sum_spm_fiscal_cash_a": {
+  "passed": true,
+  "split": -306.2577227021797,
+  "given": -306.2577227021797
+ },
+ "sum_spm_fiscal_resource_a": {
+  "passed": true,
+  "split": -44.74338860200505,
+  "given": -44.74338860200505
+ },
+ "sum_spm_fiscal_cash_b": {
+  "passed": true,
+  "split": -306.2577227021797,
+  "given": -306.2577227021797
+ },
+ "sum_spm_fiscal_resource_b": {
+  "passed": true,
+  "split": -44.74338860200505,
+  "given": -44.74338860200505
+ },
+ "sum_spm_displaced_housing_subsidies": {
+  "passed": true,
+  "split": -4.532065856478911,
+  "given": -4.532065856478911
+ },
+ "sum_spm_displaced_energy_assistance": {
+  "passed": true,
+  "split": -0.562300201139693,
+  "given": -0.562300201139693
  },
  "eta0_spm_fiscal_a": {
   "passed": true
@@ -464,6 +565,9 @@
  "eta0_spm_housing_net": {
   "passed": true
  },
+ "eta0_spm_displaced_beneficiaries": {
+  "passed": true
+ },
  "eta0_spm_TOTAL_a": {
   "passed": true
  },
@@ -474,6 +578,24 @@
   "passed": true
  },
  "eta0_spm_wages_pretax": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_cash_a": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_resource_a": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_cash_b": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_resource_b": {
+  "passed": true
+ },
+ "eta0_spm_displaced_housing_subsidies": {
+  "passed": true
+ },
+ "eta0_spm_displaced_energy_assistance": {
   "passed": true
  },
  "eta0_spm_fiscal_A_only_a": {
@@ -637,18 +759,18 @@
  },
  "sum_money_fiscal_a": {
   "passed": true,
-  "split": -276.7224057417068,
-  "given": -276.7224057417068
+  "split": -351.0011113041847,
+  "given": -351.00111130418475
  },
  "sum_money_fiscal_b": {
   "passed": true,
-  "split": -276.7224057417068,
-  "given": -276.7224057417068
+  "split": -351.0011113041848,
+  "given": -351.00111130418475
  },
  "sum_money_fiscal_a_cps_tax_fields": {
   "passed": true,
-  "split": -276.7224057417068,
-  "given": -276.7224057417068
+  "split": -351.00111130418475,
+  "given": -351.00111130418475
  },
  "sum_money_wages": {
   "passed": true,
@@ -712,13 +834,48 @@
  },
  "sum_money_TOTAL_a": {
   "passed": true,
-  "split": -311.4228244177051,
-  "given": -311.4228244177048
+  "split": -390.79589603780164,
+  "given": -390.7958960378014
  },
  "sum_money_TOTAL_b": {
   "passed": true,
-  "split": -311.4228244177051,
-  "given": -311.4228244177048
+  "split": -390.79589603780164,
+  "given": -390.7958960378014
+ },
+ "sum_money_displaced_beneficiaries": {
+  "passed": true,
+  "split": -5.094366057618605,
+  "given": -5.094366057618604
+ },
+ "sum_money_fiscal_cash_a": {
+  "passed": true,
+  "split": -306.2577227021797,
+  "given": -306.2577227021797
+ },
+ "sum_money_fiscal_resource_a": {
+  "passed": true,
+  "split": -44.74338860200505,
+  "given": -44.74338860200505
+ },
+ "sum_money_fiscal_cash_b": {
+  "passed": true,
+  "split": -306.2577227021797,
+  "given": -306.2577227021797
+ },
+ "sum_money_fiscal_resource_b": {
+  "passed": true,
+  "split": -44.74338860200505,
+  "given": -44.74338860200505
+ },
+ "sum_money_displaced_housing_subsidies": {
+  "passed": true,
+  "split": -4.532065856478911,
+  "given": -4.532065856478911
+ },
+ "sum_money_displaced_energy_assistance": {
+  "passed": true,
+  "split": -0.562300201139693,
+  "given": -0.562300201139693
  },
  "eta0_money_fiscal_a": {
   "passed": true
@@ -744,6 +901,9 @@
  "eta0_money_housing_net": {
   "passed": true
  },
+ "eta0_money_displaced_beneficiaries": {
+  "passed": true
+ },
  "eta0_money_TOTAL_a": {
   "passed": true
  },
@@ -754,6 +914,24 @@
   "passed": true
  },
  "eta0_money_wages_pretax": {
+  "passed": true
+ },
+ "eta0_money_fiscal_cash_a": {
+  "passed": true
+ },
+ "eta0_money_fiscal_resource_a": {
+  "passed": true
+ },
+ "eta0_money_fiscal_cash_b": {
+  "passed": true
+ },
+ "eta0_money_fiscal_resource_b": {
+  "passed": true
+ },
+ "eta0_money_displaced_housing_subsidies": {
+  "passed": true
+ },
+ "eta0_money_displaced_energy_assistance": {
   "passed": true
  },
  "eta0_money_fiscal_A_only_a": {
