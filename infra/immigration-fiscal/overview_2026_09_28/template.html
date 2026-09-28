@@ -103,15 +103,15 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 <main>
 
 <h1>Evidence Map</h1>
-<p class="sub">Fiscal and social cost of the Mexican-origin population to other US residents. {{N_ENTRIES}} ladder entries condensed to {{N_FINDINGS}} findings in 15 groups; {{N_RETIRED}} superseded entries retired. State of 28 September 2026.</p>
+<p class="sub">What the Mexican-origin population costs other US residents, and on what evidence. Fiscal year 2024. {{N_FINDINGS}} findings in 15 groups, drawn from {{N_ENTRIES}} analyses.</p>
 
 <h2>The big strokes</h2>
 <ul class="strokes">
-<li><b>One year is measured: 2024.</b> In that year the Mexican-origin population (40.9M people, three generations) cost all other US residents <b>$322–387bn</b>. That is $7.9–9.5k per member. This is the adopted main case of 27 September <span class="ref">239</span>.</li>
+<li><b>One year is measured: 2024.</b> In that year the Mexican-origin population (40.9M people, three generations) cost all other US residents <b>$322–387bn</b>, or $7.9–9.5k per member.</li>
 <li><b>Services set the sign.</b> The group pays about $60–70bn more in taxes than it gets in cash benefits. Public services reverse the sign. Schooling is the largest line, about $214–227bn <span class="ref">250</span>. If less than 3–14% of service costs grow with population, the account turns positive <span class="ref">239</span>.</li>
 <li><b>The range is choices, not noise.</b> Sampling noise is about ±$21bn. Single choices move the number by $25–85bn. The second chart ranks them.</li>
-<li><b>Two decisions wait for you.</b> The candidate revision (mostly long-run property taxes) gives about $290–356bn on cash. Pensions on accrual under current law then give about $368–429bn <span class="ref">253, 257</span>.</li>
-<li><b>Outside the budgets</b> the group adds crime-victim, traffic, housing and fear costs. With them, the total is <b>$371–446bn</b> a year <span class="ref">195, 258</span>.</li>
+<li><b>Two accounting choices move it most.</b> If property taxes follow people like the capital they fund, it falls to about $290–356bn. If pensions count when earned, not when paid, it rises by about $75bn <span class="ref">253, 257</span>.</li>
+<li><b>Outside the budgets</b> the group adds crime-victim, pollution, road-crash, traffic and fear costs, net of scale gains. With them, the total is <b>{{SOCIAL_TOTAL}}</b> a year <span class="ref">195, 260, 264</span>.</li>
 <li><b>State and local budgets pay about 85%.</b> About one other resident in six comes out ahead, mostly landlords and the top income tenth <span class="ref">226</span>.</li>
 <li><b>All three generations are net costs.</b> The second generation closes most of the school-completion gap. Progress then stalls: about 0.84 of the college gap stays in the third-plus generation <span class="ref">224, 178, 232</span>.</li>
 <li><b>Against an equal number of whites</b> the group costs about $315–330bn a year more, or $406–412bn with local whites by state <span class="ref">263</span>.</li>
@@ -119,14 +119,14 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 </ul>
 
 <h2>From taxes to the main case</h2>
-<p class="prose">The account is a sum. Each row adds one line to the row above. Orange means everyone else is worse off; blue means better off. Each row has two bars: the low end (specification 48) above and the high end (specification 11) below. Grey rows are the cases as adopted on each date. Dashed rows are not adopted.</p>
+<p class="prose">The account is a sum. Each row adds one line to the row above. Orange means everyone else is worse off; blue means better off. Each row has two bars: the low end (specification 48) above and the high end (specification 11) below. The grey row is the main estimate. Dashed rows are alternative readings or costs outside the budgets.</p>
 <div class="figure">{{WATERFALL}}</div>
-<p class="caption">The rows through the September 24 case come from the figures page's staircase (September 24 model). The later rows come from <code>main_case_long_run_2026_09_27/derived/summary.json</code>. The build refuses to write the page if the rows do not sum to the adopted case. Dashed rows are typed from ladder 195 and 257 and the candidate v3 RESULT.</p>
+<p class="caption">The first rows use the model before the long-run school and capital steps; the build checks that all rows sum to the main estimate.</p>
 
 <h2>What moves the number</h2>
-<p class="prose">Each row changes one choice and holds the others at the adopted case. The bars show how far the $322–387bn moves. Solid rows are measured arms of the adopted case. Dashed rows are candidates, waiting decisions or items beside the account. The number after each label is the ladder entry.</p>
+<p class="prose">Each row changes one choice and holds the others. The bars show how far the $322–387bn moves. Dashed rows are alternative readings or items beside the account. The number after each label is the ladder entry.</p>
 <div class="figure">{{TORNADO}}</div>
-<p class="caption">One choice is too big for this chart: whether services grow with population at all. At a response of zero the account favours other residents; the sign flips below 2.8–13.6% <span class="ref">239</span>. Rows marked "Sept 20" or "Sept 23" were measured on an earlier case and are close, not exact, on this one.</p>
+<p class="caption">One choice is too big for this chart: whether services grow with population at all. At a response of zero the account favours other residents; the sign flips below 2.8–13.6% <span class="ref">239</span>. Rows marked "earlier version" were measured on an earlier version of the model and are close, not exact.</p>
 
 <h2>Snapshot, cash, accrual, deficit, interest</h2>
 <p class="prose">These words name different objects. Most confusion comes from adding objects that do not add. The map puts each one in time.</p>
@@ -137,8 +137,8 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 <tr><td>Cash</td><td class="beside">Modelled gaps (back-cast): $2.8–3.7tn over 2015–2024 <span class="ref">162</span></td><td class="in">Cash gap, all governments: $288–332bn</td><td class="beside">Lifetime taxes and costs of people alive now and their descendants (separate ledger)</td></tr>
 <tr><td>Imputed</td><td></td><td class="in">Return on public capital: $34–56bn. In the headline. Never cash.</td><td></td></tr>
 <tr><td>Debt</td><td class="beside">Federal part, if borrowed: $0.96–1.29tn of debt entering FY2024 <span class="ref">207</span></td><td class="beside">Interest on that debt: $31–42bn. Beside, not in.</td><td class="beside">Interest continues while the debt stays</td></tr>
-<tr><td>Promises</td><td></td><td class="beside">Pension rights earned in 2024: +$74–77bn on accrual. Awaits your go. <span class="ref">257</span></td><td class="beside">Paid later as benefits</td></tr>
-<tr><td>Outside budgets</td><td></td><td class="beside">Victims, traffic, housing, fear: +$49–59bn. Beside. <span class="ref">195</span></td><td></td></tr>
+<tr><td>Promises</td><td></td><td class="beside">Pension rights earned in 2024: +$74–77bn if counted when earned. An alternative reading. <span class="ref">257</span></td><td class="beside">Paid later as benefits</td></tr>
+<tr><td>Outside budgets</td><td></td><td class="beside">Victims, pollution, crashes, traffic, fear, net of scale gains: +{{SOCIAL_ADD}}. Beside. <span class="ref">195</span></td><td></td></tr>
 </tbody>
 </table>
 </div>
@@ -166,14 +166,14 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 <p class="prose">Years before 2024 are a model, not a measurement. The back-cast carries the 2024 position back on national series for each year: receipts, programmes, prices, population and the group's relative income. Over 2015–2024 it gives $2.8–3.7tn in 2024 dollars, without interest <span class="ref">162</span>. Do not multiply the annual number by years; the back-cast already does the year-by-year work.</p>
 
 <h3>Lifetimes and lineages</h3>
-<p class="prose">The lifetime numbers come from a different ledger (September 19). They compare the group with a white reference group and discount future years at 3%. Per founder, the Mexican lineage runs $1.29M behind the white lineage undiscounted, $513k at 3% <span class="ref">159</span>. That is a <i>gap</i> against a reference. The headline is a <i>cost of removal</i> with no reference group. They agree in direction. Never scale one onto the other.</p>
+<p class="prose">The lifetime numbers come from a separate ledger. They compare the group with a white reference group and discount future years at 3%. Per founder, the Mexican lineage runs $1.29M behind the white lineage undiscounted, $513k at 3% <span class="ref">159</span>. That is a <i>gap</i> against a reference. The headline is a <i>cost of removal</i> with no reference group. They agree in direction. Never scale one onto the other.</p>
 
 <h3>What adds to what</h3>
 <div class="tablewrap">
 <table>
 <thead><tr><th>Combination</th><th>Adds?</th><th>Why</th></tr></thead>
 <tbody>
-<tr><td>Main case + costs outside budgets</td><td class="yes">Yes</td><td>Separate channels; the $371–446bn pairing does it</td></tr>
+<tr><td>Main case + costs outside budgets</td><td class="yes">Yes</td><td>Separate channels; the {{SOCIAL_TOTAL}} total does it</td></tr>
 <tr><td>Main case, cash pensions → accrual</td><td class="yes">As a swap</td><td>Accrual replaces the cash pension lines</td></tr>
 <tr><td>Main case + legacy interest</td><td class="no">No</td><td>Past borrowing, not present presence; report beside</td></tr>
 <tr><td>Capital return + debt or deficit</td><td class="no">No</td><td>The return is imputed; it is never borrowed</td></tr>
@@ -185,12 +185,12 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 </div>
 
 <h2>The ladder in groups</h2>
-<p class="prose">Groups are in order of how much they move the answer. Each finding is one sentence and may merge several ladder entries; the numbers after it are the entries. Open "data and sources" for each entry's claim, its evidence rating, its sources and its files. Superseded entries are retired at the end.</p>
-<p class="prose">The letters show how an entry got its number. They are detected from the entries' own text.</p>
+<p class="prose">Groups are in order of how much they move the answer. Each finding is one sentence. Open "why and from what" for the reasoning, what would change it, the data and the sources.</p>
+<p class="prose">The letters show how a number was obtained:</p>
 <ul class="legend">{{LEGEND}}</ul>
 <div class="tablewrap">
 <table>
-<thead><tr><th></th><th>Group</th><th>How big</th><th class="num">Findings</th><th class="num">Entries</th></tr></thead>
+<thead><tr><th></th><th>Group</th><th>How big</th><th class="num">Findings</th><th class="num">Analyses</th></tr></thead>
 <tbody>
 {{GROUP_TABLE}}
 </tbody>
@@ -199,10 +199,7 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 
 {{GROUPS}}
 
-<h2>Retired entries</h2>
-<details><summary>{{N_RETIRED}} superseded or withdrawn entries and their successors</summary>
-<ul class="entries">{{RETIRED}}</ul>
-</details>
+<p class="caption">Not shown: superseded, withdrawn or earlier versions of analyses ({{N_RETIRED}}): {{RETIRED}}.</p>
 
 <h2>Sources</h2>
 <details><summary>{{N_BIB}} published sources cited by the findings above</summary>

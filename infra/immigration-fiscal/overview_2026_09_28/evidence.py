@@ -28,6 +28,7 @@ KINDS = [
         ("Social Capital Atlas", r"Social Capital Atlas"), ("INEGI", r"\bINEGI\b"),
         ("CDC WONDER", r"\bWONDER\b"), ("Sentencing Commission", r"Sentencing Commission|\bUSSC\b"),
         ("Texas DPS", r"Texas DPS|\bDPS\b"), ("NCES", r"\bNCES\b"), ("HMDA / FHFA", r"\bFHFA\b|\bHMDA\b"),
+        ("FARS / CCRS crash records", r"\bFARS\b|\bCCRS\b"), ("CDC TB surveillance", r"\bCDC\b"),
         ("register data", r"\bregister")]),
     ("N", "accounts", "national accounts and budget totals", [
         ("BEA NIPA", r"\bBEA\b|\bNIPA\b"), ("Trustees / SOSI", r"Trustees|Statement of Social Insurance"),
@@ -185,44 +186,37 @@ def render(entries, fail):
             fid = f"{g['id']}-{fi}"
             text_all = " ".join(entries[str(r)]["body"] for r in f["refs"])
             kinds, names = detect(text_all)
-            notes = []
+            fsrc = []
             for r in f["refs"]:
                 e = entries[str(r)]
-                srcs = [s for s in source_spans(e["body"]) if s]
-                for s in srcs:
-                    for part in re.split(r";\s+|,\s+(?=https?://)", s):
+                for s_ in source_spans(e["body"]):
+                    for part in re.split(r";\s+|,\s+(?=https?://)", s_):
                         part = part.strip(" .,")
                         if re.search(r"https?://", part) and not INTERNAL.search(part):
                             k = re.sub(r"\W+", " ", part.lower())[:90]
                             bib.setdefault(k, [cut(part, 220), []])[1].append(fid)
+                            fsrc.append(bib[k][0])
                 for c in citations(e["body"]):
                     k = re.sub(r"\W+", " ", c.lower())
                     bib.setdefault(k, [c, []])[1].append(fid)
-                files = []
-                for tag in ("CALCULATION", "DATA"):
-                    for b in tag_blocks(e["body"], tag):
-                        files += re.findall(r"[\w./-]+\.(?:py|cjs|js|csv|json|sql)\b", b)
-                files = list(dict.fromkeys(files))[:4]
-                st = f' <span class="st">{e["status"]}</span>' if e["status"] in ("superseded",) else ""
-                notes.append(
-                    f'<li><span class="ref">{e["key"]}</span> {html.escape(e["claim"])}{st}'
-                    + (f'<br><span class="how">Evidence: {html.escape(cut(e["rating"], 300))}</span>' if e["rating"] else "")
-                    + (f'<br><span class="how">Sources: {html.escape("; ".join(cut(s, 160) for s in srcs[:3]))}</span>' if srcs else "")
-                    + (f'<br><span class="how">Files: {html.escape(", ".join(files))}</span>' if files else "")
-                    + "</li>")
-            refs = ", ".join(str(r) for r in f["refs"])
+                    fsrc.append(c)
+            fsrc = list(dict.fromkeys(fsrc))
+            rows = []
+            if f.get("why"):
+                rows.append(f'<p>{html.escape(f["why"])}</p>')
+            if names:
+                rows.append(f'<p class="how"><b>Data:</b> {html.escape(", ".join(names))}</p>')
+            if fsrc:
+                rows.append(f'<p class="how"><b>Sources:</b> {html.escape("; ".join(fsrc))}</p>')
+            rows.append(f'<p class="how"><b>Ladder:</b> {", ".join(str(r) for r in f["refs"])}</p>')
             items.append(
-                f'<li id="{fid}"><span class="chips">{chips(kinds)}</span> {html.escape(f["text"])} '
-                f'<span class="ref">{refs}</span>'
-                f'<details><summary>data and sources</summary>'
-                f'<p class="how">{html.escape(", ".join(names)) or "no dataset named in the entry text"}</p>'
-                f'<ul class="entries">{"".join(notes)}</ul></details></li>')
+                f'<li id="{fid}"><span class="chips">{chips(kinds)}</span> {html.escape(f["text"])}'
+                f'<details><summary>why and from what</summary>{"".join(rows)}</details></li>')
         terms = "".join(f"<dt>{html.escape(t)}</dt><dd>{html.escape(m)}</dd>" for t, m in g["terms"])
         minor = ""
         if g["minor"]:
-            ml = "".join(f'<li><span class="ref">{entries[str(r)]["key"]}</span> {html.escape(entries[str(r)]["claim"])}</li>'
-                         for r in g["minor"])
-            minor = f'<details><summary>{len(g["minor"])} narrower entries, not summarised</summary><ul class="entries">{ml}</ul></details>'
+            minor = (f'<p class="how">Narrower entries not summarised: '
+                     f'{", ".join(str(r) for r in g["minor"])}.</p>')
         blocks.append(f"""
 <section id="{g['id']}" class="group">
   <h3><span class="gnum">{gi}</span> {html.escape(g['title'])}</h3>
@@ -238,8 +232,6 @@ def render(entries, fail):
         f'<li>{html.escape(t)} <span class="ref">{" ".join(f"<a href=#{x}>{x}</a>" for x in dict.fromkeys(ids))}</span></li>'
         for t, ids in bib_items)
     cur = [k for k in RETIRED if not str(k).startswith("o")]
-    retired = (f'<li><span class="ref">o1–o51</span> the April–June layer, re-rated in the September layers</li>'
-               + "".join(f'<li><span class="ref">{k}</span> {html.escape(entries[str(k)]["claim"])} '
-                         f'<span class="how">({html.escape(RETIRED[k])})</span></li>' for k in cur))
+    retired = "o1–o51, " + ", ".join(str(k) for k in cur)
     return dict(table="\n".join(table), groups="\n".join(blocks), legend=legend, biblio=bibl,
                 retired=retired, n_find=n_find, n_bib=len(bib_items), n_retired=len(RETIRED))
