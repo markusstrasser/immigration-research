@@ -538,6 +538,12 @@ GROUPS = [
                  why="Counting pensions on accrual would flip the claim that the group's taxes cover its benefits. "
                      "The observations most worth making next are how budgets respond when people leave, and how "
                      "much of the Mexico-born's pay is on the books."),
+            dict(refs=[271],
+                 text="Both AI review lanes caught all 24 of the project's past errors when the evidence was in "
+                      "front of them. One, GPT-6 Astra, also called a quarter of sound claims errors, at "
+                      "near-certain confidence.",
+                 why="Neither was harsher on claims that make the group look costlier, but a test this size could "
+                     "miss a moderate lean. Every flag is checked against the data before anything changes."),
         ],
         minor=[],
     ),
