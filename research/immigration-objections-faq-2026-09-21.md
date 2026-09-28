@@ -11,7 +11,7 @@ conditional net cost to other residents at $322–387bn a year ($321.8–387.4bn
 return on public capital and lets roads, parks, rental assistance and government enterprises
 respond. On the same account, CBO-style first-year budget responses give $201–246bn and fully
 proportional services $347–401bn; other residents' social costs and benefits bring the total to
-$416–491bn. The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
+$414–488bn. The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
 −$7,521, third-plus −$6,195 per person, standard errors 384, 615 and 457).
 
@@ -42,10 +42,10 @@ nest is a different object: at the elasticities its job distribution supports, i
 production term by about $4–8bn at the job-overlap reading and $2–5bn at the direct low-skill
 estimates (entry 14). No ratio of "offsets to cost" can be formed from these.
 
-**The fiscal-plus-social total is its own object.** The $416–491bn adds other residents' social
+**The fiscal-plus-social total is its own object.** The $414–488bn adds other residents' social
 costs and benefits to the fiscal account at central values (entry 4). Its low end assumes
-Mexican-origin offending equals the Hispanic average (fiscal $317.5bn, victims $30.9bn); its high
-end assumes it sits above that average, as custody does (fiscal $387.4bn, victims $32.3bn).
+Mexican-origin offending equals the Hispanic average (fiscal $317.5bn, victims $30.5bn); its high
+end assumes it sits above that average, as custody does (fiscal $387.4bn, victims $31.9bn).
 Figures normalized against the average resident and the crash figure charged by fault ($42.3bn)
 sit beside it and are never added. Property values stay out. The first-year budget response
 ($201–246bn) and fully proportional services ($347–401bn) are scenarios of the same account, not
@@ -155,24 +155,26 @@ So the response share moves the result more than any offset listed here.
   ±$490bn, and is not added (ladder 201). Institutions remain unpriced in both directions.
 
 Beside the fiscal account, a fiscal-plus-social total adds other residents' social costs and
-benefits: $416–491bn a year at central values ($10.2–12.0k per member; full span $142–757bn). It
-contains:
-- victims' harm from crimes by group members against other residents, about $31–32bn (entry 12),
+benefits: $414–488bn a year at central values, $10.4–12.3k per member. Every row is on the 39.7M
+people the account prices; the lanes' own figures, on the survey's raw 40.9M, give $416–491bn and a
+stacked full span of $142–757bn. It contains:
+- victims' harm from crimes by group members against other residents, $30.5–31.9bn (entry 12),
   and property crime, $1.3–1.4bn;
 - the group's unreimbursed hospital care, borne by hospitals, physicians and private payers,
-  $3.2–5.6bn;
-- the congestion that remains once road budgets respond, $12.0–14.0bn;
-- fine particles (PM2.5) from the group's consumption, $69.7bn;
-- road crashes, other residents' losses with the group's traffic against without it, $11.1bn
-  (−$57.7bn to +$74.3bn); the figure that charges crashes by fault, $42.3bn, sits beside it;
-- fear and avoidance among residents who are not victims, $10.5bn, while private security and
-  school disruption come out slightly below the group's share (−$0.6bn and −$2.0bn);
-- the housing net, a small gain to other residents of $0.7–3.5bn, although their renters pay
+  $3.1–5.3bn;
+- the congestion that remains once road budgets respond, $11.6–13.6bn;
+- fine particles (PM2.5) from the group's consumption, $68.1bn;
+- road crashes, other residents' losses with the group's traffic against without it, $10.6bn
+  (−$57.7bn to +$74.3bn in the lane); the figure that charges crashes by fault, $42.3bn, sits beside it;
+- fear and avoidance among residents who are not victims, $10.3bn, while private security and
+  school disruption come out slightly below the group's share (−$0.5bn and −$1.9bn);
+- the housing net, a small gain to other residents of $0.7–3.4bn, although their renters pay
   $22–58bn more to landlords;
-- five benefits, entered as negative costs and together $35.9bn: city size net of the schooling
-  mix, $13.9bn (bigger cities add $38.6bn to other residents' earnings, and lower average schooling
-  takes back $24.9bn); restaurant variety, $6.8bn; volunteering for people outside the group,
-  $6.2bn; trade, visit and investment ties with Mexico, $6.8bn; and consumer-side scale, $2.2bn.
+- five benefits, entered as negative costs and together $35.4bn: city size net of the schooling
+  mix, $13.7bn (in the lane, bigger cities add $38.6bn to other residents' earnings, and lower
+  average schooling takes back $24.9bn); restaurant variety, $6.8bn; volunteering for people outside
+  the group, $6.0bn; trade, visit and investment ties with Mexico, $6.8bn; and consumer-side scale,
+  $2.1bn.
 
 The 1970–2000 college-share studies would turn the scale net into a $109–677bn cost. Mobility across
 local labour markets ($0.65bn) sits beside both totals, and property values stay out. Transfers like
@@ -725,3 +727,7 @@ they get more prominence.
     of that day); the entry had called them proposed.
 
   Concept affected: which figures the FAQ states as current.
+- 2026-09-29, later (population basis, ladder 274): the fiscal-plus-social total and its rows are restated on the
+  39.7M people the account prices, with the crash and congestion rows' driving ratios per person aged 5+: $414–488bn
+  (was $416–491bn), $10.4–12.3k per member (was $10.2–12.0k). Concept affected: the population the social rows and
+  the per-member figures use.

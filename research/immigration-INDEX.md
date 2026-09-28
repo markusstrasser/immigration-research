@@ -111,7 +111,7 @@ beside. Item 5's land part is framing-sensitive.
 
 Inside the group, about a quarter of members live in households that pay more than they cost: 24.2% / 20.3% with every line allocated, 31.1% / 29.6% counting only services a household uses itself. At the low end the share rises with the head's education (12% below high school, 46% with a BA or more) and generation (18% Mexico-born, 32% third-plus). The costliest tenth of households carries 53–61% of the net cost. The legal-status split does not hold up (ladder 268, [lane](../infra/immigration-fiscal/within_group_distribution_2026_09_29/RESULT.md)).
 
-Why it costs what it costs: half, $164–213bn, is what any 39.7M average residents would cost other residents under the same rules, mainly because governments spend more than they tax. The group's own excess over as many average residents is $158–175bn, and all of it comes from lower taxes at the same ages (+$287–295bn). Its young age mix (−$43–77bn) and its lower use of services at given ages (−$60–70bn) both reduce the cost (ladder 269, [lane](../infra/immigration-fiscal/main_case_decomposition_2026_09_29/RESULT.md)). The account prices 39.71M people, but the per-member figures divide by 40.90M; per account member the case is $8.1–9.8k a year.
+Why it costs what it costs: half, $164–213bn, is what any 39.7M average residents would cost other residents under the same rules, mainly because governments spend more than they tax. The group's own excess over as many average residents is $158–175bn, and all of it comes from lower taxes at the same ages (+$287–295bn). Its young age mix (−$43–77bn) and its lower use of services at given ages (−$60–70bn) both reduce the cost (ladder 269, [lane](../infra/immigration-fiscal/main_case_decomposition_2026_09_29/RESULT.md)). The account prices 39.71M people, and per-member figures divide by that count (the CPS's raw 40.90M overcounts the Mexico-born outside California and Texas, ladder 209): the case is $8.1–9.8k a year per member.
 
 What would overturn the conclusions: no single premise, swapped for its best-supported alternative, breaks more than two of the evidence map's nine. The budget horizon breaks two (first-year responses: the case −37%, the pairing about −29%). Counting pensions on accrual flips "taxes cover benefits" (+$62.0 / 49.4bn becomes −$15.3 / −24.2bn). Next observations worth making: budgets after population outflows, and the Mexico-born on-books share from SSA and ITIN records (ladder 270, [lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md)).
 
@@ -139,7 +139,7 @@ them, the Mexico-born cost others **$159–191bn** a year ($13.6–16.3k per adu
 $78–94bn, $128–153bn and $100–156bn. The split is computed on the account itself, with no reference group, and
 is not the September 19 ledger's gaps against whites.
 
-[Against 40.9M third-plus whites](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md) (ladder 263): under the September 27 rules the union costs other residents $315–330bn a year more once cash accounting's age artefact is removed (pensions on accrual, or white rates at the union's ages); $155–157bn on raw cash at white ages; $406–412bn against local whites state by state (California $14.1k per member). The difference is taxes, schools and transfers, not scale effects. [Connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md) (ladder 262): counties with a larger Hispanic share have fewer cross-income friendships, mostly through residential separation; the payoff does not grow with county size, so no dollar figure. Reader-facing summary of the whole ladder: `infra/immigration-fiscal/overview_2026_09_28/` (`build.py` writes `derived/overview.html`; every new ladder entry must be placed in its `groups.py`).
+[Against 39.7M third-plus whites](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md) (ladder 263, both sides on the account's count, ladder 274): under the September 27 rules the union costs other residents $317–325bn a year more once cash accounting's age artefact is removed (pensions on accrual, or white rates at the union's ages); $162–164bn on raw cash at white ages; $402–407bn against local whites state by state (California $14.3k per member). The difference is taxes, schools and transfers, not scale effects. [Connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md) (ladder 262): counties with a larger Hispanic share have fewer cross-income friendships, mostly through residential separation; the payoff does not grow with county size, so no dollar figure. Reader-facing summary of the whole ladder: `infra/immigration-fiscal/overview_2026_09_28/` (`build.py` writes `derived/overview.html`; every new ladder entry must be placed in its `groups.py`).
 
 Production is held fully adjusted while service responses vary; these transferred short-run assumptions do not
 identify a long-run effect. The production term's perfect-substitution assumption has an executed sensitivity: a
@@ -165,27 +165,29 @@ channels the headline left out. Two are in the main case:
 - the government part of uncompensated hospital care, **+$3.7–5.7bn**.
 
 Beside the fiscal account, a **fiscal-plus-social total** adds other residents' social costs and benefits:
-**$416.2–490.7bn a year** at central values ($142.2–756.5bn full span; $10.2–12.0k per member;
-[decision](../decisions/2026-09-29-crash-item-with-against-without.md), ladder 266). Its low end assumes
+**$413.7–488.1bn a year** at central values ($10.4–12.3k per member;
+[decision](../decisions/2026-09-29-crash-item-with-against-without.md), ladders 266 and 274). Its low end assumes
 Mexican-origin offending equals the Hispanic average, its high end that it sits above that average as custody
-does. It contains:
-- crimes by group members against other residents, costing the victims $30.9–32.3bn ($15–45bn; police records
-  give $28.6bn, and the $43bn arrest-share arm fails a victim-count check, ladders 202 and 218), and property
-  crime, $1.3–1.4bn;
-- unreimbursed hospital care, $3.2–5.6bn;
-- the housing net, **+$0.7–3.5bn** to other residents, while their renters pay $22–58bn more ($30bn central once
+does. Every row is on the 39.71M people the account prices, and the crash and congestion rows use the NHTS
+driving ratios per person aged 5+ (ladder 274, [lane](../infra/immigration-fiscal/population_basis_2026_09_29/RESULT.md)); the lanes' own figures, on the CPS's 40.90M, add up to
+$416.2–490.7bn, and their stacked full span is $142.2–756.5bn. It contains:
+- crimes by group members against other residents, costing the victims $30.5–31.9bn ($15–45bn across the
+  lane's arms; police records give $28.6bn, and the $43bn arrest-share arm fails a victim-count check, ladders
+  202 and 218), and property crime, $1.3–1.4bn;
+- unreimbursed hospital care, $3.1–5.3bn;
+- the housing net, **+$0.7–3.4bn** to other residents, while their renters pay $22–58bn more ($30bn central once
   cheaper construction is counted, ladder 200);
-- road congestion that remains once road budgets respond, $12.0–14.0bn in time and fuel ($19.2bn with road
+- road congestion that remains once road budgets respond, $11.6–13.6bn in time and fuel ($19.2bn with road
   budgets fixed, ladder 195);
-- fine particles (PM2.5) from the group's consumption, $69.7bn, and road crashes with against without the group's
-  traffic, $11.1bn (−$57.7bn to +$74.3bn); the crash figure charged by fault, $42.3bn, sits beside (ladders 264
-  and 266; [decision](../decisions/2026-09-28-social-items-pollution-crashes.md));
-- fear and avoidance by non-victims $10.5bn, private security −$0.6bn and school disruption −$1.95bn, because
+- fine particles (PM2.5) from the group's consumption, $68.1bn, and road crashes with against without the group's
+  traffic, $10.6bn (−$57.7bn to +$74.3bn in the lane); the crash figure charged by fault, $42.3bn, sits beside
+  (ladders 264 and 266; [decision](../decisions/2026-09-28-social-items-pollution-crashes.md));
+- fear and avoidance by non-victims $10.3bn, private security −$0.5bn and school disruption −$1.9bn, because
   Hispanic pupils are suspended less often than others; property values are 0, since a price discount is a
   transfer or already priced (ladder 258, [decision](../decisions/2026-09-28-social-items-fear-security-schools.md),
   [lane](../infra/immigration-fiscal/social_costs_unpriced_2026_09_28/RESULT.md));
-- five benefits as negative costs, $35.9bn together: the scale net $13.9bn, restaurant variety $6.8bn,
-  volunteering $6.2bn, trade and visit ties with Mexico $6.8bn and consumer-side scale $2.2bn (ladders 201, 261
+- five benefits as negative costs, $35.4bn together: the scale net $13.7bn, restaurant variety $6.8bn,
+  volunteering $6.0bn, trade and visit ties with Mexico $6.8bn and consumer-side scale $2.1bn (ladders 201, 261
   and 265; [decision](../decisions/2026-09-28-social-items-scale-benefits.md),
   [decision](../decisions/2026-09-28-social-items-more-benefits.md)).
 
@@ -195,7 +197,7 @@ unfunded, so it applies only to the first-year scenario and is in no total (ladd
 [decision](../decisions/2026-09-25-school-dilution-priced-beside.md)).
 
 For comparison, a rough re-key of the September 27 case to non-Hispanic Black residents costs
-$549–595bn a year, $13.1–14.2k per member, 1.5–1.7× the Mexican-origin figure. Ladder 258's four
+$549–595bn a year, $13.1–14.2k per member, 1.5–1.6× the Mexican-origin figure per member. Ladder 258's four
 social items (fear, security, property values, school disruption) come to $51.0bn, and violent offences cost victims $185bn, $73bn of it outside the
 group. This is not an engine run (ladder 259,
 [lane](../infra/immigration-fiscal/black_comparator_rough_2026_09_28/RESULT.md)).
