@@ -2,25 +2,21 @@
 
 Date: 2026-09-20. [MODEL / FRAMING-SENSITIVE] Calculation record; narrative authorship remains operator-owned.
 
-**Adopted main case (2026-09-27: return on public capital, long-run road and park responses, rental assistance at 1 and every government enterprise; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)):** on the $322–387bn anchor the whole-budget rules give **$2.8–3.7tn over 2015–2024, $4.0–5.4tn over 2010–2024 and $4.8–6.8tn over 2005–2024**. The schools case is carried back as before, and each addition on its own national series: roads and parks on NIPA 3.17, rental assistance on NIPA 3.13, the enterprise surplus on NIPA 3.1 line 19, and the return on public capital on BEA Fixed Assets Table 7.1 net stocks at a constant real rate. The return is an imputed resource cost, not a cash flow, and is $0.29–0.49tn of the ten-year total under the ratio rule ($0.32–0.53tn flat). The enterprises' national operating loss was $3.4bn in 2005 and $2.8bn in 2015 but $47.5bn in 2024, so their part is small before recent years; the loss is a trend, not a 2024 spike (NIPA 3.8: transit −$54.1bn → −$66.7bn and public housing −$27.5bn → −$40.3bn, 2019 → 2024; 2020–22 are distorted by relief). The programme-by-programme version in the debt legacy lane is now cash only, without the capital return and the capped programmes: $2.65–3.03tn, $3.77–4.31tn and $4.56–5.24tn. [2026-09-28, later: with 2020–2021 measured instead of held at the 2024 credit ratio (section below; cbaddcf), $2.61–3.00tn, $3.72–4.28tn and $4.51–5.21tn. The whole-budget rules charge the pandemic spike at the group's overall 2024 spending ratio, 0.62–0.65 of national spending per head, below its measured share of the payments, and do not move.]
+**Adopted main case (2026-09-27: return on public capital, long-run road and park responses, rental assistance at 1 and every government enterprise; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)):** on the $322–387bn anchor the whole-budget rules give **$2.8–3.7tn over 2015–2024, $4.0–5.4tn over 2010–2024 and $4.8–6.8tn over 2005–2024**. The schools case is carried back as before, and each addition on its own national series: roads and parks on NIPA 3.17, rental assistance on NIPA 3.13, the enterprise surplus on NIPA 3.1 line 19, and the return on public capital on BEA Fixed Assets Table 7.1 net stocks at a constant real rate. The return is an imputed resource cost, not a cash flow, and is $0.29–0.49tn of the ten-year total under the ratio rule ($0.32–0.53tn flat). The enterprises' national operating loss was $3.4bn in 2005 and $2.8bn in 2015 but $47.5bn in 2024, so their part is small before recent years; the loss is a trend, not a 2024 spike (NIPA 3.8: transit −$54.1bn → −$66.7bn and public housing −$27.5bn → −$40.3bn, 2019 → 2024; 2020–22 are distorted by relief). The programme-by-programme version in the debt legacy lane, cash only (without the capital return and the capped programmes) and with 2020–2021 measured instead of held at the 2024 credit ratio (section below; cbaddcf), gives $2.61–3.00tn, $3.72–4.28tn and $4.51–5.21tn. The whole-budget rules charge the pandemic spike at the group's overall 2024 spending ratio, 0.62–0.65 of national spending per head, below its measured share of the payments, and do not move.
 [CALCULATION: `backcast.py` → `derived/backcast_windows.csv`, concepts `*_sept27_*`; `derived/case_parts_windows.csv` (de468f2); `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv` (e03450b)]
 
-**Adopted main case (2026-09-26, schools at full average cost):** [2026-09-28: the schools case, superseded as the main case on 2026-09-27; the paragraph above.] on the $258–292bn anchor (group receipts $492.5bn, shared allocation, after the consumption key), the whole-budget rules give **$2.2–2.8tn over 2015–2024, $3.2–4.2tn over 2010–2024 and $3.9–5.2tn over 2005–2024**. The programme-by-programme version in the debt legacy lane gives $2.47–2.75tn, $3.50–3.89tn and $4.21–4.72tn. The first-year budget response ($201–246bn) gives $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn, the September 24 figures at rounding.
-[CALCULATION: `backcast.py` → `derived/backcast_windows.csv`, concepts `*_schools_full_*`, c0297e4; `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv`, 1db19c8]
+Earlier anchors, kept as the calculation record ($tn in 2024 dollars, whole-budget rules unless stated):
 
-**Adopted main case (2026-09-24):** on the $201–246bn anchor, with the data corrections that lower the
-group's receipts to $488.5bn (shared allocation; before them $545.1bn), the whole-budget rules give
-**$1.7–2.4tn over 2015–2024, $2.5–3.6tn over 2010–2024 and $3.0–4.5tn over 2005–2024**. The
-programme-by-programme version has not been re-run on this anchor either.
-[CALCULATION: `backcast.py` → `derived/backcast_windows.csv`, concepts `*_corrected_*`]
+| 2024 anchor | 2015–2024 | 2010–2024 | 2005–2024 | Source |
+|---|---|---|---|---|
+| Schools case (September 26), $258–292bn; programme version 2.47–2.75 / 3.50–3.89 / 4.21–4.72 | 2.2–2.8 | 3.2–4.2 | 3.9–5.2 | concepts `*_schools_full_*` (c0297e4); programme version `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv` (1db19c8) |
+| First-year budget response and the September 24 case, $201–246bn; group receipts $488.5bn shared after the data corrections, $545.1bn before | 1.7–2.4 | 2.5–3.6 | 3.0–4.5 | concepts `*_corrected_*` |
+| September 23, $203–250bn | 1.7–2.5 | 2.5–3.7 | 3.0–4.6 | concepts `*_adopted_*` |
+| September 20, as published, $165–197bn; every rule, the programme version included, 1.3–2.2 / 2.0–3.3 / 2.4–3.9 | 1.4–2.0 | 2.0–3.1 | 2.4–3.8 | the tables below |
 
-**Adopted main case (2026-09-23):** on the $203–250bn anchor the operator adopted on September 23,
-the whole-budget rules give **$1.7–2.5tn over 2015–2024, $2.5–3.7tn over 2010–2024 and $3.0–4.6tn
-over 2005–2024**. The programme-by-programme version has not been re-run on that anchor. The
-figures below are on the September 20 anchor ($165–197bn) and stay as a record.
-[CALCULATION: `backcast.py` → `derived/backcast_windows.csv`, concepts `*_adopted_*`]
+[CALCULATION: `backcast.py` → `derived/backcast_windows.csv`]
 
-**Result:** No historical cost is measured here. The account exists for income-year
+**Result on the September 20 anchor, which the tables below compute:** No historical cost is measured here. The account exists for income-year
 2024 only. Combining measured national budgets and measured Mexican-origin population
 for each year with the group's **2024 relative position** gives, for the main
 CBO-informed net cost to other residents ($165–197bn in 2024), about **$1.3–2.2tn
@@ -83,11 +79,11 @@ the account to six digits.
 
 Full proportional services: 2.25–3.06, 3.33–4.44 and 4.06–5.43. [SOURCE:
 `derived/backcast_categories_windows.csv`, `backcast_categories_annual.csv`.]
-[2026-09-28, later: with 2020–2021 measured (next paragraph), the first row is 1.56–1.86, 2.23–2.64
-and 2.60–3.13 and the second 1.83–2.11, 2.75–3.14 and 3.33–3.82; under full proportional services the
-two rules give 2.51–2.93, 3.58–4.32 and 4.31–5.31. The third row removes about three times what the
-measurement supports. CALCULATION: `backcast_pandemic_measured_2026_09_28/derived/backcast_measured_windows.csv`,
-variant `refundable_pandemic`, SSN rule `borjas` (cbaddcf).]
+With 2020–2021 measured (below), the first row is 1.56–1.86, 2.23–2.64 and 2.60–3.13 and the second
+1.83–2.11, 2.75–3.14 and 3.33–3.82; under full proportional services the two rules give 2.51–2.93, 3.58–4.32
+and 4.31–5.31. The third row removes about three times what the measurement supports.
+[CALCULATION: `backcast_pandemic_measured_2026_09_28/derived/backcast_measured_windows.csv`, variant
+`refundable_pandemic`, SSN rule `borjas` (cbaddcf)]
 
 Real national spending per resident, 2024 = 1, for the group's largest lines
 [SOURCE: `derived/national_programme_index.csv`]:
@@ -105,26 +101,23 @@ Real national spending per resident, 2024 = 1, for the group's largest lines
 Benefits did change: Medicaid and Medicare were 42–47% smaller per resident in 2005,
 and refundable credits quadrupled in 2021. Police, courts and prisons were flat, and
 the account charges them per capita, so no group-specific policing cost exists in any
-year. The pandemic years supply 35–38% of the ten-year programme-rule total, because
-2020–2021 credits are attributed at the group's 2024 ratio (2.3 times other residents
-per person, an EITC and child-credit pattern). Pandemic payments were close to uniform
-per head and the first round excluded households filing without Social Security
-numbers [TRAINING-DATA; not verified here], so that attribution is too high; the
-third row removes it. The group's relative use of each programme in earlier years is
-still unmeasured. CPS ASEC reports programme receipt by origin in every year.
-[2026-09-28, later: measured on CPS ASEC 2020–2025 with each payment's statutory SSN rule
-(`backcast_pandemic_measured_2026_09_28`, cbaddcf). The group got the 2020 payments at 0.87 times
-other residents per person (1.02 before the SSN rule) and the 2021 payments at 1.03, against the 2.34
-charged here (2.16 high). The exclusion is statutory (CARES Act §2201, IRC 6428(g)) and wider than
-stated: the advance payment excluded every joint return with a spouse lacking an SSN, the children
-included (military families aside), until CAA 2021 §273 restored the SSN spouse and children as a 2020 credit. The SSN rule is
-about a tenth of the payment cut; per-head pricing is the rest. With the payments at their measured
-shares, 2020–2021 supply 31–33% of the programme-rule total (29–31% income-adjusted). In 2019–2023
-the relative use of SNAP, SSI and Social Security stays within 10% of 2024, one noisy SSI cell aside;
-unemployment ran 13–14% lower in 2020; smaller keys (veterans' pensions, cash assistance, WIC, energy)
-move more but are noisy; workers' compensation's 2024 value (1.80 times other residents) exceeds every
-earlier year (0.76–1.23). Replacing every CPS-keyed line in 2019–2023 barely moves the totals.
-Medical, age, school and resource keys stay at 2024.]
+year. The programme rule attributes the 2020–2021 credits at the group's 2024 ratio (2.34
+times other residents per person, an EITC and child-credit pattern), which makes the pandemic
+years 35–38% of its ten-year total. Measured on CPS ASEC 2020–2025 with each payment's statutory
+SSN rule (`backcast_pandemic_measured_2026_09_28`, cbaddcf), the group got the 2020 payments at
+0.87 times other residents per person (1.02 before the SSN rule) and the 2021 payments at 1.03,
+against the 2.34 charged (2.16 high). The exclusion is statutory (CARES Act §2201, IRC 6428(g)):
+the advance payment excluded every joint return with a spouse lacking an SSN, the children
+included (military families aside), until CAA 2021 §273 restored the SSN spouse and children as a
+2020 credit. The SSN rule is about a tenth of the payment cut; per-head pricing is the rest. With
+the payments at their measured shares, 2020–2021 supply 31–33% of the programme-rule total
+(29–31% income-adjusted). CPS ASEC reports programme receipt by origin in every year: in 2019–2023
+the relative use of SNAP, SSI and Social Security stays within 10% of 2024, one noisy SSI cell
+aside; unemployment ran 13–14% lower in 2020; smaller keys (veterans' pensions, cash assistance,
+WIC, energy) move more but are noisy; workers' compensation's 2024 value (1.80 times other
+residents) exceeds every earlier year (0.76–1.23). Replacing every CPS-keyed line in 2019–2023
+barely moves the totals. Medical, age, school and resource keys stay at 2024, and the group's
+relative use of other programmes before 2024 is unmeasured.
 
 ## Reading
 
@@ -189,6 +182,8 @@ income series. The repository holds 2022–2026 only.
 series and each assumption are separately inspectable.
 
 ## Revisions
+
+2026-09-29, cleanup: the stacked paragraphs for earlier anchors are one table, and the dated notes are folded into the text. The programme version now quotes only the measured pandemic years; its figures with 2020–2021 at the 2024 credit ratio ($2.65–3.03tn, $3.77–4.31tn and $4.56–5.24tn) stay in `adopted_backcast_windows.csv` at e03450b. No figure changes. Concept affected: none; organization only.
 
 2026-09-28, later: the pandemic years are measured (`backcast_pandemic_measured_2026_09_28`, cbaddcf; ladder 251). The group got the 2020–2021 payments at 0.87–1.03 times other residents per person, not at the 2024 credit ratio of 2.34, so the programme rule's ten-year total falls by $0.12–0.13tn on the September 20 anchor and $0.04–0.05tn on the September 27 case. The whole-budget rules and the headline do not move. Concept affected: the programme-by-programme back-cast's 2020–2021 attribution.
 
