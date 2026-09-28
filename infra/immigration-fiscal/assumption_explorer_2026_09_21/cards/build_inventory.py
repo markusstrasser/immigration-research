@@ -2,12 +2,14 @@
 files as they stand, the cards that quote the September 24 case moved to the September 26 case (the first-year
 budget response since schools were charged at full cost the same evening; named "one-year scenario" until
 2026-09-27; the explorer does not run that main case),
-and the combining rules re-read from the FAQ by their opening words. Every value must verify with
-build_context.confirmed() before the file is written.
+and the combining rules re-read from the FAQ by their opening words. A value whose passage a later rewrite
+removed from a living document is cited at the record line that still holds it (RECORD_ANCHORS). Every value
+must verify with build_context.confirmed() before the file is written.
 
 Usage: build_inventory.py   (base: ba12f3c, the last change to context.json before this pass)
 """
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -33,6 +35,26 @@ ANCHOR_RULE = ("The $201–246bn is the complete account's change for all other 
 
 def val(label, value, file_line, unit="$bn/year", se=None):
     return dict(label=label, value=value, unit=unit, se=se, file_line=file_line)
+
+
+# The 2026-09-29 rewrite of the FAQ to the current case removed these values' passages (decisions/2026-09-29-
+# delete-superseded-and-cruft-docs.md). Each is cited at the one line matching its pattern in a record or a
+# Revisions footer, found by text so the anchor survives lines added above it.
+RECORD_ANCHORS = {
+    "27.8-39.5 (was 28.5-40.6)": (FAQ, re.compile(r"\$27\.8–39\.5bn on the September 24 data and \$28\.5–40\.6bn")),
+    "203.2-249.6 -> 200.9-246.3 -> 200.9-245.7": (LADDER, re.compile(r"^219\. ")),
+}
+
+
+def record_anchor(value):
+    """The record line now holding `value`, or None when its living-document citation still stands."""
+    if value not in RECORD_ANCHORS:
+        return None
+    path, pattern = RECORD_ANCHORS[value]
+    hits = [i for i, line in enumerate(ra.new_lines(path)) if pattern.search(line)]
+    if len(hits) != 1:
+        raise ValueError(f"{path} has {len(hits)} lines matching {pattern.pattern!r}")
+    return f"{path}:{hits[0]+1}"
 
 
 EDITS = {
@@ -255,6 +277,8 @@ def main():
     # 1. Re-anchor every citation that no longer verifies.
     for item in inv["items"]:
         for v in item["values"]:
+            if (anchored := record_anchor(v["value"])) is not None:
+                v["file_line"] = anchored
             new, how = ra.reanchor(v["value"], v["file_line"], BASE)
             if new is None:
                 raise ValueError(f"Unresolved citation {item['id']}: {v['value']!r} @ {v['file_line']} ({how})")
@@ -294,6 +318,8 @@ def main():
     # already verify are left alone.
     for item in inv["items"]:
         for v in item["values"]:
+            if (anchored := record_anchor(v["value"])) is not None:
+                v["file_line"] = anchored
             new, how = ra.reanchor(v["value"], v["file_line"], EDITS_BASE)
             if new is None:
                 raise ValueError(f"Unresolved edited citation {item['id']}: {v['value']!r} @ {v['file_line']} ({how})")
