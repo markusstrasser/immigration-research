@@ -51,6 +51,8 @@ CLASS = {
     225: ("sample", "arithmetic", None),
     267: ("count", "arithmetic", "Priced at state averages. The group's districts spend more than their state "
                                 "averages, so the service side is likely too low."),
+    273: ("sample", "arithmetic", "The travel survey compares all Hispanics with non-Hispanics. Other Hispanics "
+                                  "drive less, so the group's share is slightly too low."),
     127: ("sample", "tabulated", None),
     # outside the budget
     260: ("study", "extrapolated", None),
