@@ -1,0 +1,25 @@
+sex,spec,n_g2_persons,n_ref_persons,n_worker_years,gap,se
+men,education x AFQT cells,269,1213,3351,0.00740038,0.0471163
+men,+ region,269,1213,3351,-0.0231887,0.0508056
+men,+ region x CBSA status,269,1213,3351,-0.0270023,0.0508559
+men,+ region x CBSA status + credential-pay sector,269,1213,3351,-0.0229851,0.051112
+men,G3+ NH white: share of worker-years in region 1,0,0,2783,0.187912,nan
+men,G3+ NH white: share of worker-years in region 2,0,0,2783,0.309834,nan
+men,G3+ NH white: share of worker-years in region 3,0,0,2783,0.30355,nan
+men,G3+ NH white: share of worker-years in region 4,0,0,2783,0.19044,nan
+men,G2 Hispanic: share of worker-years in region 1,0,0,568,0.143246,nan
+men,G2 Hispanic: share of worker-years in region 2,0,0,568,0.0928778,nan
+men,G2 Hispanic: share of worker-years in region 3,0,0,568,0.349137,nan
+men,G2 Hispanic: share of worker-years in region 4,0,0,568,0.409859,nan
+women,education x AFQT cells,271,1088,3094,0.132092,0.0459952
+women,+ region,271,1088,3094,0.106038,0.0523071
+women,+ region x CBSA status,271,1088,3094,0.100129,0.054621
+women,+ region x CBSA status + credential-pay sector,271,1088,3094,0.101742,0.0542634
+women,G3+ NH white: share of worker-years in region 1,0,0,2496,0.161259,nan
+women,G3+ NH white: share of worker-years in region 2,0,0,2496,0.287394,nan
+women,G3+ NH white: share of worker-years in region 3,0,0,2496,0.362264,nan
+women,G3+ NH white: share of worker-years in region 4,0,0,2496,0.174478,nan
+women,G2 Hispanic: share of worker-years in region 1,0,0,598,0.11718,nan
+women,G2 Hispanic: share of worker-years in region 2,0,0,598,0.126553,nan
+women,G2 Hispanic: share of worker-years in region 3,0,0,598,0.307812,nan
+women,G2 Hispanic: share of worker-years in region 4,0,0,598,0.440936,nan

@@ -1,0 +1,73 @@
+sex,group,variable,level,n_persons,n_worker_years,n_in_level,share,se,share_of_known_sector,se_known
+men,G3+ NH white,sector,credential-pay,1213,2783,532,0.192206,0.0128044,0.198044,0.01315
+men,G3+ NH white,sector,no main job,1213,2783,6,0.00206347,0.000812492,0,0
+men,G3+ NH white,sector,other,1213,2783,2167,0.778313,0.0137084,0.801956,0.01315
+men,G3+ NH white,sector,unknown,1213,2783,78,0.0274172,0.00580793,0,0
+men,G3+ NH white,cls,government,1213,2783,358,0.128909,0.0114568,0.132824,0.0118022
+men,G3+ NH white,cls,no main job,1213,2783,6,0.00206347,0.000812492,0,0
+men,G3+ NH white,cls,non-profit,1213,2783,125,0.0451936,0.00453374,0.045909,0.00446232
+men,G3+ NH white,cls,private for-profit,1213,2783,1917,0.688224,0.0145376,0.685014,0.0145213
+men,G3+ NH white,cls,self-employed,1213,2783,320,0.115066,0.00935283,0.115084,0.00929805
+men,G3+ NH white,cls,unknown,1213,2783,57,0.0205447,0.00397898,0.0211688,0.00411049
+men,G3+ NH white,ind_group,education,1213,2783,135,0.0489856,0.00663339,0.0504736,0.00689892
+men,G3+ NH white,ind_group,health care,1213,2783,119,0.0428809,0.00514845,0.0441835,0.0052735
+men,G3+ NH white,ind_group,industry unknown,1213,2783,80,0.0281732,0.00581872,0.000779,0.000530647
+men,G3+ NH white,ind_group,military,1213,2783,2,0.000689802,0.000681914,0.000710755,0.000701949
+men,G3+ NH white,ind_group,no main job,1213,2783,6,0.00206347,0.000812492,0,0
+men,G3+ NH white,ind_group,other industry,1213,2783,2258,0.810505,0.0117613,0.835125,0.0108138
+men,G3+ NH white,ind_group,public administration,1213,2783,169,0.0613525,0.00740874,0.0632161,0.00758054
+men,G3+ NH white,ind_group,social assistance,1213,2783,14,0.00534942,0.00180305,0.00551191,0.0018604
+men,G2 Hispanic,sector,credential-pay,269,568,109,0.186304,0.0252431,0.191323,0.0262056
+men,G2 Hispanic,sector,no main job,269,568,1,0.00191408,0.00192301,0,0
+men,G2 Hispanic,sector,other,269,568,440,0.787464,0.0270284,0.808677,0.0262056
+men,G2 Hispanic,sector,unknown,269,568,18,0.0243177,0.00572954,0,0
+men,G2 Hispanic,cls,government,269,568,75,0.13122,0.0221629,0.134755,0.0228656
+men,G2 Hispanic,cls,no main job,269,568,1,0.00191408,0.00192301,0,0
+men,G2 Hispanic,cls,non-profit,269,568,29,0.0506647,0.0151469,0.0520296,0.0156122
+men,G2 Hispanic,cls,private for-profit,269,568,379,0.671545,0.0259524,0.665967,0.0273507
+men,G2 Hispanic,cls,self-employed,269,568,72,0.125852,0.0172562,0.129242,0.0178138
+men,G2 Hispanic,cls,unknown,269,568,12,0.0188039,0.00843249,0.018006,0.00837547
+men,G2 Hispanic,ind_group,education,269,568,16,0.0255101,0.00965531,0.0261973,0.0099511
+men,G2 Hispanic,ind_group,health care,269,568,21,0.0326188,0.00906589,0.0334975,0.00940215
+men,G2 Hispanic,ind_group,industry unknown,269,568,19,0.0276409,0.00637081,0.00341276,0.00343445
+men,G2 Hispanic,ind_group,military,269,568,0,0,0,0,0
+men,G2 Hispanic,ind_group,no main job,269,568,1,0.00191408,0.00192301,0,0
+men,G2 Hispanic,ind_group,other industry,269,568,456,0.812205,0.029223,0.834084,0.0283338
+men,G2 Hispanic,ind_group,public administration,269,568,46,0.0866179,0.0205913,0.0889512,0.0211935
+men,G2 Hispanic,ind_group,social assistance,269,568,9,0.0134936,0.00436886,0.0138571,0.00449071
+women,G3+ NH white,sector,credential-pay,1088,2496,1177,0.470361,0.0179428,0.48201,0.0187359
+women,G3+ NH white,sector,no main job,1088,2496,6,0.00243556,0.000937148,0,0
+women,G3+ NH white,sector,other,1088,2496,1258,0.505471,0.0188505,0.51799,0.0187359
+women,G3+ NH white,sector,unknown,1088,2496,55,0.0217326,0.00369683,0,0
+women,G3+ NH white,cls,government,1088,2496,447,0.177205,0.0143191,0.181593,0.0148813
+women,G3+ NH white,cls,no main job,1088,2496,6,0.00243556,0.000937148,0,0
+women,G3+ NH white,cls,non-profit,1088,2496,353,0.140911,0.011354,0.140332,0.0115148
+women,G3+ NH white,cls,private for-profit,1088,2496,1362,0.54663,0.0175373,0.545641,0.0179157
+women,G3+ NH white,cls,self-employed,1088,2496,242,0.0982745,0.00849254,0.0980961,0.00874741
+women,G3+ NH white,cls,unknown,1088,2496,86,0.034544,0.00561799,0.0343377,0.00529202
+women,G3+ NH white,ind_group,education,1088,2496,409,0.16381,0.0105092,0.167868,0.0108144
+women,G3+ NH white,ind_group,health care,1088,2496,497,0.199724,0.0138085,0.20467,0.0140794
+women,G3+ NH white,ind_group,industry unknown,1088,2496,73,0.0290677,0.00488345,0.00751673,0.00232171
+women,G3+ NH white,ind_group,military,1088,2496,1,0.000375628,0.000382972,0.000384931,0.000392373
+women,G3+ NH white,ind_group,no main job,1088,2496,6,0.00243556,0.000937148,0,0
+women,G3+ NH white,ind_group,other industry,1088,2496,1302,0.523684,0.0182075,0.536654,0.0181286
+women,G3+ NH white,ind_group,public administration,1088,2496,112,0.0431609,0.00784401,0.0442299,0.00807599
+women,G3+ NH white,ind_group,social assistance,1088,2496,96,0.0377416,0.00612844,0.0386763,0.00629461
+women,G2 Hispanic,sector,credential-pay,271,598,274,0.457625,0.0356551,0.463189,0.0354238
+women,G2 Hispanic,sector,no main job,271,598,3,0.00479699,0.00280023,0,0
+women,G2 Hispanic,sector,other,271,598,317,0.530363,0.0344279,0.536811,0.0354238
+women,G2 Hispanic,sector,unknown,271,598,4,0.00721488,0.0038782,0,0
+women,G2 Hispanic,cls,government,271,598,142,0.212584,0.028548,0.215168,0.0287283
+women,G2 Hispanic,cls,no main job,271,598,3,0.00479699,0.00280023,0,0
+women,G2 Hispanic,cls,non-profit,271,598,55,0.0862251,0.0190697,0.0872734,0.0192397
+women,G2 Hispanic,cls,private for-profit,271,598,326,0.571279,0.0333135,0.572446,0.0337632
+women,G2 Hispanic,cls,self-employed,271,598,48,0.0810122,0.0153366,0.0804726,0.0153377
+women,G2 Hispanic,cls,unknown,271,598,24,0.0441032,0.0121155,0.0446395,0.0122214
+women,G2 Hispanic,ind_group,education,271,598,90,0.149224,0.0234419,0.151038,0.0237482
+women,G2 Hispanic,ind_group,health care,271,598,111,0.191217,0.0289992,0.193542,0.0290747
+women,G2 Hispanic,ind_group,industry unknown,271,598,4,0.00721488,0.0038782,0,0
+women,G2 Hispanic,ind_group,military,271,598,0,0,0,0,0
+women,G2 Hispanic,ind_group,no main job,271,598,3,0.00479699,0.00280023,0,0
+women,G2 Hispanic,ind_group,other industry,271,598,329,0.547197,0.0336563,0.55385,0.0345839
+women,G2 Hispanic,ind_group,public administration,271,598,36,0.0591897,0.0197539,0.0599093,0.0199719
+women,G2 Hispanic,ind_group,social assistance,271,598,25,0.0411607,0.0113697,0.0416612,0.0114925

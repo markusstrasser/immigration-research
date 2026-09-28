@@ -1,0 +1,67 @@
+group,sector,sex,spec,n_persons,n_worker_years,slope_per_10_afqt,se
+G3+ NH white,all,men,AFQT,1037,2406,0.0767828,0.00837274
+G3+ NH white,all,men,AFQT + degree,1037,2406,0.0376321,0.0107086
+G3+ NH white,all,women,AFQT,941,2179,0.0915169,0.00759743
+G3+ NH white,all,women,AFQT + degree,941,2179,0.0468405,0.00852561
+G3+ NH white,all,women minus men,AFQT,0,0,0.0147341,0.010812
+G3+ NH white,all,women minus men,AFQT + degree,0,0,0.00920844,0.0137196
+G3+ NH white,credential-pay,men,AFQT,223,478,0.0564946,0.0167612
+G3+ NH white,credential-pay,men,AFQT + degree,223,478,0.0347235,0.0204146
+G3+ NH white,credential-pay,women,AFQT,472,1039,0.0793939,0.00996292
+G3+ NH white,credential-pay,women,AFQT + degree,472,1039,0.0445414,0.0104443
+G3+ NH white,credential-pay,women minus men,AFQT,0,0,0.0228993,0.0187239
+G3+ NH white,credential-pay,women minus men,AFQT + degree,0,0,0.00981788,0.0218017
+G3+ NH white,other,men,AFQT,837,1850,0.0812461,0.00999499
+G3+ NH white,other,men,AFQT + degree,837,1850,0.0363544,0.0122945
+G3+ NH white,other,women,AFQT,514,1083,0.103698,0.0110769
+G3+ NH white,other,women,AFQT + degree,514,1083,0.0425629,0.0135855
+G3+ NH white,other,women minus men,AFQT,0,0,0.0224519,0.0142121
+G3+ NH white,other,women minus men,AFQT + degree,0,0,0.00620848,0.0187141
+G3+ NH white,credential-pay minus other,men,AFQT,0,0,-0.0247515,0.0197802
+G3+ NH white,credential-pay minus other,men,AFQT + degree,0,0,-0.00163091,0.0239909
+G3+ NH white,credential-pay minus other,women,AFQT,0,0,-0.0243042,0.0146423
+G3+ NH white,credential-pay minus other,women,AFQT + degree,0,0,0.00197849,0.0168695
+G2 Hispanic,all,men,AFQT,191,415,0.0520902,0.0179658
+G2 Hispanic,all,men,AFQT + degree,191,415,0.0259027,0.0203255
+G2 Hispanic,all,women,AFQT,199,439,0.0933709,0.0167304
+G2 Hispanic,all,women,AFQT + degree,199,439,0.058598,0.0190347
+G2 Hispanic,all,women minus men,AFQT,0,0,0.0412808,0.0258696
+G2 Hispanic,all,women minus men,AFQT + degree,0,0,0.0326953,0.0279669
+G2 Hispanic,credential-pay,men,AFQT,41,83,0.081959,0.0246759
+G2 Hispanic,credential-pay,men,AFQT + degree,41,83,0.0202862,0.030731
+G2 Hispanic,credential-pay,women,AFQT,104,211,0.106924,0.0206118
+G2 Hispanic,credential-pay,women,AFQT + degree,104,211,0.0702047,0.019859
+G2 Hispanic,credential-pay,women minus men,AFQT,0,0,0.024965,0.0344832
+G2 Hispanic,credential-pay,women minus men,AFQT + degree,0,0,0.0499184,0.0381046
+G2 Hispanic,other,men,AFQT,153,318,0.0465943,0.0194359
+G2 Hispanic,other,men,AFQT + degree,153,318,0.0270166,0.0232367
+G2 Hispanic,other,women,AFQT,113,223,0.0832537,0.0273276
+G2 Hispanic,other,women,AFQT + degree,113,223,0.0517709,0.0340831
+G2 Hispanic,other,women minus men,AFQT,0,0,0.0366594,0.0338746
+G2 Hispanic,other,women minus men,AFQT + degree,0,0,0.0247543,0.040355
+G2 Hispanic,credential-pay minus other,men,AFQT,0,0,0.0353647,0.0306412
+G2 Hispanic,credential-pay minus other,men,AFQT + degree,0,0,-0.00673038,0.0370247
+G2 Hispanic,credential-pay minus other,women,AFQT,0,0,0.0236703,0.0354502
+G2 Hispanic,credential-pay minus other,women,AFQT + degree,0,0,0.0184338,0.0403214
+pooled (all respondents),all,men,AFQT,2522,5635,0.0851633,0.00518318
+pooled (all respondents),all,men,AFQT + degree,2522,5635,0.0472851,0.00599984
+pooled (all respondents),all,women,AFQT,2501,5563,0.0897435,0.00535008
+pooled (all respondents),all,women,AFQT + degree,2501,5563,0.0445609,0.00504144
+pooled (all respondents),all,women minus men,AFQT,0,0,0.00458026,0.00781947
+pooled (all respondents),all,women minus men,AFQT + degree,0,0,-0.0027242,0.00817376
+pooled (all respondents),credential-pay,men,AFQT,558,1153,0.0698779,0.00935249
+pooled (all respondents),credential-pay,men,AFQT + degree,558,1153,0.0430711,0.0107798
+pooled (all respondents),credential-pay,women,AFQT,1256,2637,0.0825563,0.00777374
+pooled (all respondents),credential-pay,women,AFQT + degree,1256,2637,0.0460026,0.00886722
+pooled (all respondents),credential-pay,women minus men,AFQT,0,0,0.0126784,0.0118137
+pooled (all respondents),credential-pay,women minus men,AFQT + degree,0,0,0.00293148,0.0126055
+pooled (all respondents),other,men,AFQT,2022,4313,0.0887928,0.00641543
+pooled (all respondents),other,men,AFQT + degree,2022,4313,0.0472783,0.00725251
+pooled (all respondents),other,women,AFQT,1382,2779,0.0954194,0.00720229
+pooled (all respondents),other,women,AFQT + degree,1382,2779,0.0391227,0.00697886
+pooled (all respondents),other,women minus men,AFQT,0,0,0.00662654,0.00991992
+pooled (all respondents),other,women minus men,AFQT + degree,0,0,-0.00815562,0.0101504
+pooled (all respondents),credential-pay minus other,men,AFQT,0,0,-0.018915,0.0116698
+pooled (all respondents),credential-pay minus other,men,AFQT + degree,0,0,-0.00420727,0.0134523
+pooled (all respondents),credential-pay minus other,women,AFQT,0,0,-0.0128631,0.0102112
+pooled (all respondents),credential-pay minus other,women,AFQT + degree,0,0,0.00687984,0.0121533

@@ -1,0 +1,41 @@
+sex,group,variable,level,n_persons,n_worker_years,n_in_level,share,se,tercile_cuts
+men,G3+ NH white,marstat,cohabiting,1213,2783,397,0.141579,0.00881813,20000|50000
+men,G3+ NH white,marstat,"married, spouse present",1213,2783,1700,0.613775,0.0160488,20000|50000
+men,G3+ NH white,marstat,"never married, not cohabiting",1213,2783,451,0.160467,0.0100265,20000|50000
+men,G3+ NH white,marstat,"previously married or spouse absent, not cohabiting",1213,2783,227,0.0813514,0.00853426,20000|50000
+men,G3+ NH white,marstat,unknown,1213,2783,8,0.00282771,0.00098764,20000|50000
+men,G3+ NH white,sp_cat,no spouse or partner,1213,2783,633,0.225833,0.0124971,20000|50000
+men,G3+ NH white,sp_cat,partner earnings tercile 1,1213,2783,760,0.272747,0.0115037,20000|50000
+men,G3+ NH white,sp_cat,partner earnings tercile 2,1213,2783,664,0.238594,0.0107881,20000|50000
+men,G3+ NH white,sp_cat,partner earnings tercile 3,1213,2783,700,0.253677,0.0121653,20000|50000
+men,G3+ NH white,sp_cat,partner earnings unknown,1213,2783,26,0.00914843,0.00185857,20000|50000
+men,G2 Hispanic,marstat,cohabiting,269,568,110,0.184006,0.0243896,20000|50000
+men,G2 Hispanic,marstat,"married, spouse present",269,568,253,0.450823,0.0386473,20000|50000
+men,G2 Hispanic,marstat,"never married, not cohabiting",269,568,125,0.231942,0.0345508,20000|50000
+men,G2 Hispanic,marstat,"previously married or spouse absent, not cohabiting",269,568,76,0.127925,0.0166067,20000|50000
+men,G2 Hispanic,marstat,unknown,269,568,4,0.00530484,0.00432472,20000|50000
+men,G2 Hispanic,sp_cat,no spouse or partner,269,568,191,0.342792,0.0378069,20000|50000
+men,G2 Hispanic,sp_cat,partner earnings tercile 1,269,568,147,0.247323,0.0272239,20000|50000
+men,G2 Hispanic,sp_cat,partner earnings tercile 2,269,568,121,0.205254,0.022091,20000|50000
+men,G2 Hispanic,sp_cat,partner earnings tercile 3,269,568,102,0.192833,0.0273667,20000|50000
+men,G2 Hispanic,sp_cat,partner earnings unknown,269,568,7,0.0117974,0.00468139,20000|50000
+women,G3+ NH white,marstat,cohabiting,1088,2496,338,0.133806,0.00861186,40000|75000
+women,G3+ NH white,marstat,"married, spouse present",1088,2496,1522,0.609794,0.0155668,40000|75000
+women,G3+ NH white,marstat,"never married, not cohabiting",1088,2496,290,0.115745,0.0101307,40000|75000
+women,G3+ NH white,marstat,"previously married or spouse absent, not cohabiting",1088,2496,339,0.137869,0.00955895,40000|75000
+women,G3+ NH white,marstat,unknown,1088,2496,7,0.00278585,0.00165797,40000|75000
+women,G3+ NH white,sp_cat,no spouse or partner,1088,2496,553,0.223234,0.01456,40000|75000
+women,G3+ NH white,sp_cat,partner earnings tercile 1,1088,2496,574,0.228036,0.0149112,40000|75000
+women,G3+ NH white,sp_cat,partner earnings tercile 2,1088,2496,713,0.284701,0.00990471,40000|75000
+women,G3+ NH white,sp_cat,partner earnings tercile 3,1088,2496,635,0.25531,0.012451,40000|75000
+women,G3+ NH white,sp_cat,partner earnings unknown,1088,2496,21,0.00871849,0.00198806,40000|75000
+women,G2 Hispanic,marstat,cohabiting,271,598,99,0.147486,0.0209386,40000|75000
+women,G2 Hispanic,marstat,"married, spouse present",271,598,334,0.576355,0.0359872,40000|75000
+women,G2 Hispanic,marstat,"never married, not cohabiting",271,598,77,0.139362,0.0253812,40000|75000
+women,G2 Hispanic,marstat,"previously married or spouse absent, not cohabiting",271,598,83,0.130558,0.0170368,40000|75000
+women,G2 Hispanic,marstat,unknown,271,598,5,0.00623866,0.00392692,40000|75000
+women,G2 Hispanic,sp_cat,no spouse or partner,271,598,158,0.262085,0.0282287,40000|75000
+women,G2 Hispanic,sp_cat,partner earnings tercile 1,271,598,178,0.277758,0.0242045,40000|75000
+women,G2 Hispanic,sp_cat,partner earnings tercile 2,271,598,150,0.262467,0.026142,40000|75000
+women,G2 Hispanic,sp_cat,partner earnings tercile 3,271,598,102,0.179607,0.0253875,40000|75000
+women,G2 Hispanic,sp_cat,partner earnings unknown,271,598,10,0.0180835,0.00625241,40000|75000
