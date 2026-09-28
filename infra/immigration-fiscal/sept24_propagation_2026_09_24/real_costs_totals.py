@@ -52,6 +52,10 @@ size (disease_food_2026_09_28). Section 7b keeps only the cost items in its soci
 adds the scale net itself. Three more benefits join the same way (decision 2026-09-28-social-items-more-benefits):
 formal volunteering for people outside the group, consumer-side scale (network fixed costs, grocery variety and mix,
 cross-group media) and trade, travel and FDI ties with Mexico.
+On September 29 (decision 2026-09-29-crash-item-with-against-without) the crash item became the lane's but-for row
+(road_crash_externality: other residents with against without the group's traffic, at traffic elasticities graded
+from evidence plus the composition term). The fault-based row, damage in crashes the group's drivers cause, sits
+beside and is never added.
 
 Inputs: DIR/band_variants.csv (node band_variants.cjs --case CASE: engine bands on the September 23 case,
 September 24 and the case) and the channel lanes' derived files (PATHS). Reads only; writes
@@ -102,8 +106,8 @@ SOCIAL_ITEMS = dict(sept27=(
      "cost"),
     (FISCAL / "air_pollution_2026_09_28/derived/items.csv", ("pm25_consumption",),
      "decisions/2026-09-28-social-items-pollution-crashes.md", "cost"),
-    (FISCAL / "road_crash_externality_2026_09_28/derived/items.csv", ("road_crash_externality_fault_based",),
-     "decisions/2026-09-28-social-items-pollution-crashes.md", "cost"),
+    (FISCAL / "road_crash_externality_2026_09_28/derived/items.csv", ("road_crash_externality",),
+     "decisions/2026-09-29-crash-item-with-against-without.md", "cost"),
     (PATHS["scale"], ("scale_net_earnings",), "decisions/2026-09-28-social-items-scale-benefits.md", "benefit"),
     (FISCAL / "disease_food_2026_09_28/derived/items.csv", ("restaurant_variety_market_size",),
      "decisions/2026-09-28-social-items-scale-benefits.md", "benefit"),
@@ -402,7 +406,7 @@ def main():
     if case in SOCIAL_ITEMS:
         note = ("the union's added social items, costs and benefits (negative), in every §7 social row above: "
                 + ", ".join(d["item"] for d in item_detail) + "; property values stay out; normalized figures and the "
-                "crash lane's but-for row sit beside, never added; decisions 2026-09-28")
+                "crash lane's fault-based row sit beside, never added; decisions 2026-09-28 and 2026-09-29")
         for label, v in zip(("central, both ends", "stacked low, full span", "stacked high, full span"), items[case]):
             add("7", "social_items_2026_09_28", label, {case: v}, note=note)
         for d in item_detail:
@@ -506,7 +510,7 @@ def main():
             case=case, central_bn=items[case][0], stacked_low_bn=items[case][1], stacked_high_bn=items[case][2],
             cost_items_bn=dict(zip(("central", "stacked_low", "stacked_high"), cost_items[case])),
             items=item_detail, never_added=("property values; each item's normalized figure; the crash lane's "
-                                            "but-for row; CO2, ozone and government-services emissions; disease, food "
+                                            "fault-based row; CO2, ozone and government-services emissions; disease, food "
                                             "safety and the cuisine mix"))
     (out_dir / "real_costs_totals.json").write_text(json.dumps(doc, indent=1) + "\n")
     print("\n[result]")

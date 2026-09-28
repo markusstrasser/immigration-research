@@ -81,13 +81,13 @@
  },
  "social_items_in_the_social_rows": {
   "case": "sept27",
-  "central_bn": 84.0741332357814,
-  "stacked_low_bn": -101.28451342030222,
-  "stacked_high_bn": 281.800679891865,
+  "central_bn": 52.7841332357814,
+  "stacked_low_bn": -182.76451342030222,
+  "stacked_high_bn": 282.890679891865,
   "cost_items_bn": {
-   "central": 119.9608,
-   "stacked_low": 45.8979,
-   "stacked_high": 225.894
+   "central": 88.6708,
+   "stacked_low": -35.5821,
+   "stacked_high": 226.984
   },
   "items": [
    {
@@ -135,17 +135,17 @@
     }
    },
    {
-    "item": "road_crash_externality_fault_based",
+    "item": "road_crash_externality",
     "kind": "cost",
     "source": "road_crash_externality_2026_09_28/derived/items.csv",
-    "decision": "decisions/2026-09-28-social-items-pollution-crashes.md",
-    "central_bn": 42.34,
-    "low_bn": 23.8,
-    "high_bn": 73.25,
+    "decision": "decisions/2026-09-29-crash-item-with-against-without.md",
+    "central_bn": 11.05,
+    "low_bn": -57.68,
+    "high_bn": 74.34,
     "normalized_bn": {
-     "central": -3.43,
-     "low": -22.6,
-     "high": 12.35
+     "central": 0.62,
+     "low": -24.08,
+     "high": 31.54
     }
    },
    {
@@ -219,6 +219,6 @@
     }
    }
   ],
-  "never_added": "property values; each item's normalized figure; the crash lane's but-for row; CO2, ozone and government-services emissions; disease, food safety and the cuisine mix"
+  "never_added": "property values; each item's normalized figure; the crash lane's fault-based row; CO2, ozone and government-services emissions; disease, food safety and the cuisine mix"
  }
 }
