@@ -1,0 +1,41 @@
+table,row,col,value
+fatalities_by_person_type,Bicyclist,mexican,74
+fatalities_by_person_type,Bicyclist,non_hispanic,804
+fatalities_by_person_type,Bicyclist,other_hispanic,175
+fatalities_by_person_type,Bicyclist,unknown,110
+fatalities_by_person_type,Driver of a Motor Vehicle In-Transport,mexican,1459
+fatalities_by_person_type,Driver of a Motor Vehicle In-Transport,non_hispanic,18567
+fatalities_by_person_type,Driver of a Motor Vehicle In-Transport,other_hispanic,3530
+fatalities_by_person_type,Driver of a Motor Vehicle In-Transport,unknown,2056
+fatalities_by_person_type,Occupant of a Motor Vehicle Not In- Transport,mexican,8
+fatalities_by_person_type,Occupant of a Motor Vehicle Not In- Transport,non_hispanic,39
+fatalities_by_person_type,Occupant of a Motor Vehicle Not In- Transport,other_hispanic,13
+fatalities_by_person_type,Occupant of a Motor Vehicle Not In- Transport,unknown,4
+fatalities_by_person_type,Occupant of a Non-Motor Vehicle Transport Device,mexican,1
+fatalities_by_person_type,Occupant of a Non-Motor Vehicle Transport Device,non_hispanic,21
+fatalities_by_person_type,Occupant of a Non-Motor Vehicle Transport Device,other_hispanic,1
+fatalities_by_person_type,Occupant of a Non-Motor Vehicle Transport Device,unknown,4
+fatalities_by_person_type,Other Pedalcyclist,mexican,1
+fatalities_by_person_type,Other Pedalcyclist,non_hispanic,6
+fatalities_by_person_type,Other Pedalcyclist,other_hispanic,3
+fatalities_by_person_type,Other Pedalcyclist,unknown,0
+fatalities_by_person_type,Passenger of a Motor Vehicle In-Transport,mexican,600
+fatalities_by_person_type,Passenger of a Motor Vehicle In-Transport,non_hispanic,4202
+fatalities_by_person_type,Passenger of a Motor Vehicle In-Transport,other_hispanic,1151
+fatalities_by_person_type,Passenger of a Motor Vehicle In-Transport,unknown,546
+fatalities_by_person_type,Pedestrian,mexican,472
+fatalities_by_person_type,Pedestrian,non_hispanic,4872
+fatalities_by_person_type,Pedestrian,other_hispanic,1310
+fatalities_by_person_type,Pedestrian,unknown,713
+fatalities_by_person_type,Person In/On a Building,mexican,1
+fatalities_by_person_type,Person In/On a Building,non_hispanic,9
+fatalities_by_person_type,Person In/On a Building,other_hispanic,2
+fatalities_by_person_type,Person In/On a Building,unknown,4
+fatalities_by_person_type,Person on a Personal Conveyance,mexican,15
+fatalities_by_person_type,Person on a Personal Conveyance,non_hispanic,160
+fatalities_by_person_type,Person on a Personal Conveyance,other_hispanic,39
+fatalities_by_person_type,Person on a Personal Conveyance,unknown,24
+fatalities_by_person_type,Unknown Occupant Type in a Motor Vehicle In- Transport,mexican,4
+fatalities_by_person_type,Unknown Occupant Type in a Motor Vehicle In- Transport,non_hispanic,14
+fatalities_by_person_type,Unknown Occupant Type in a Motor Vehicle In- Transport,other_hispanic,10
+fatalities_by_person_type,Unknown Occupant Type in a Motor Vehicle In- Transport,unknown,1

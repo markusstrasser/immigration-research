@@ -1,0 +1,329 @@
+{
+ "within_state_mh_culpability_or": {
+  "hispanic_any_vs_non_hispanic": 1.126799236536054,
+  "mexican_vs_non_hispanic": 1.4686855274274901,
+  "other_hispanic_vs_non_hispanic": 0.9884570477612921,
+  "hispanic_any_crude_or": 0.9798872352652137
+ },
+ "killed_driver_by_state": {
+  "48": {
+   "hispanic_any": {
+    "n": 1799,
+    "bac08": 0.34030016675931074,
+    "unlicensed_known": 0.15319389485585078
+   },
+   "mexican": {
+    "n": 569,
+    "bac08": 0.3957820738137082,
+    "unlicensed_known": 0.26181818181818184
+   },
+   "non_hispanic": {
+    "n": 457,
+    "bac08": 0.3336980306345733,
+    "unlicensed_known": 0.13111111111111112
+   }
+  },
+  "4": {
+   "hispanic_any": {
+    "n": 200,
+    "bac08": 0.3575,
+    "unlicensed_known": 0.135678391959799
+   },
+   "mexican": {
+    "n": 163,
+    "bac08": 0.37852760736196317,
+    "unlicensed_known": 0.13580246913580246
+   },
+   "non_hispanic": {
+    "n": 528,
+    "bac08": 0.2882575757575757,
+    "unlicensed_known": 0.08253358925143954
+   }
+  },
+  "6": {
+   "hispanic_any": {
+    "n": 966,
+    "bac08": 0.3678053830227743,
+    "unlicensed_known": 0.1652452025586354
+   },
+   "mexican": {
+    "n": 93,
+    "bac08": 0.3161290322580645,
+    "unlicensed_known": 0.21739130434782608
+   },
+   "non_hispanic": {
+    "n": 1153,
+    "bac08": 0.28065915004336517,
+    "unlicensed_known": 0.050788091068301226
+   }
+  },
+  "17": {
+   "hispanic_any": {
+    "n": 109,
+    "bac08": 0.3779816513761468,
+    "unlicensed_known": 0.08823529411764706
+   },
+   "mexican": {
+    "n": 89,
+    "bac08": 0.3865168539325843,
+    "unlicensed_known": 0.047619047619047616
+   },
+   "non_hispanic": {
+    "n": 662,
+    "bac08": 0.3098187311178248,
+    "unlicensed_known": 0.03358778625954199
+   }
+  }
+ },
+ "hispanic_any_killed_driver_summary": {
+  "killed_drivers": 4989,
+  "bac08": 0.36257767087592707,
+  "unlicensed_known": 0.17625231910946196,
+  "pickup": 0.1453197033473642
+ },
+ "occupant_deaths_multivehicle_share": 0.5633789670192906,
+ "single_vehicle_passenger_share_of_occupant_deaths": 0.1877004204375401,
+ "passengers_killed_with_killed_hispanic_driver_hispanic_share": 0.8378378378378378,
+ "passengers_killed_with_killed_hispanic_driver_n": 518,
+ "passengers_killed_with_killed_nonhispanic_driver_hispanic_share": 0.0738362760834671,
+ "hispanic_share_of_known_origin_pedestrian_deaths": 0.2678088367899008,
+ "hispanic_share_of_known_origin_deaths": 0.23611000186353592,
+ "hispanic_codes": [
+  {
+   "HISPANIC": 0,
+   "HISPANICNAME": "Not A Fatality (not Applicable)",
+   "n": 51743
+  },
+  {
+   "HISPANIC": 1,
+   "HISPANICNAME": "Mexican",
+   "n": 2635
+  },
+  {
+   "HISPANIC": 2,
+   "HISPANICNAME": "Puerto Rican",
+   "n": 503
+  },
+  {
+   "HISPANIC": 3,
+   "HISPANICNAME": "Cuban",
+   "n": 202
+  },
+  {
+   "HISPANIC": 4,
+   "HISPANICNAME": "Central or South American",
+   "n": 379
+  },
+  {
+   "HISPANIC": 5,
+   "HISPANICNAME": "European Spanish",
+   "n": 130
+  },
+  {
+   "HISPANIC": 6,
+   "HISPANICNAME": "Hispanic, Origin Not Specified or Other Origin",
+   "n": 5020
+  },
+  {
+   "HISPANIC": 7,
+   "HISPANICNAME": "Non-Hispanic",
+   "n": 28694
+  },
+  {
+   "HISPANIC": 97,
+   "HISPANICNAME": "Redacted",
+   "n": 379
+  },
+  {
+   "HISPANIC": 99,
+   "HISPANICNAME": "Unknown",
+   "n": 3083
+  }
+ ],
+ "killed_driver_summary": {
+  "mexican": {
+   "killed_drivers": 1459,
+   "share_bac08_mi": 0.40575736806031526,
+   "share_bac01_mi": 0.4546949965729953,
+   "share_unlicensed_of_known": 0.22325249643366618,
+   "share_invalid_licence_of_known": 0.3145506419400856,
+   "share_culpable_rf": 0.4578478409869774,
+   "share_culpable_any": 0.46058944482522274,
+   "share_pickup": 0.18368745716244003,
+   "share_age_16_34": 0.5640849897189856,
+   "share_male": 0.8307059629883482,
+   "share_single_vehicle": 0.4201507882111035,
+   "share_urban": 0.5956134338588074
+  },
+  "non_hispanic": {
+   "killed_drivers": 18567,
+   "share_bac08_mi": 0.2727527333441051,
+   "share_bac01_mi": 0.31659395702052034,
+   "share_unlicensed_of_known": 0.049111014744145705,
+   "share_invalid_licence_of_known": 0.15486773633998266,
+   "share_culpable_rf": 0.43054882318091237,
+   "share_culpable_any": 0.4340496579953681,
+   "share_pickup": 0.13507836484084668,
+   "share_age_16_34": 0.33392578230193354,
+   "share_male": 0.7704529541659935,
+   "share_single_vehicle": 0.4499919211504282,
+   "share_urban": 0.4932945548553886
+  },
+  "other_hispanic": {
+   "killed_drivers": 3530,
+   "share_bac08_mi": 0.34473087818696885,
+   "share_bac01_mi": 0.39654390934844197,
+   "share_unlicensed_of_known": 0.15714699913018265,
+   "share_invalid_licence_of_known": 0.25833574949260657,
+   "share_culpable_rf": 0.4005665722379603,
+   "share_culpable_any": 0.40368271954674223,
+   "share_pickup": 0.12946175637393767,
+   "share_age_16_34": 0.5101983002832862,
+   "share_male": 0.8192634560906515,
+   "share_single_vehicle": 0.4121813031161473,
+   "share_urban": 0.6424929178470254
+  },
+  "unknown": {
+   "killed_drivers": 2056,
+   "share_bac08_mi": 0.27791828793774326,
+   "share_bac01_mi": 0.3235408560311284,
+   "share_unlicensed_of_known": 0.08132084770823066,
+   "share_invalid_licence_of_known": 0.18137013307047806,
+   "share_culpable_rf": 0.41877431906614787,
+   "share_culpable_any": 0.41974708171206226,
+   "share_pickup": 0.14494163424124515,
+   "share_age_16_34": 0.36040856031128404,
+   "share_male": 0.8000972762645915,
+   "share_single_vehicle": 0.46206225680933855,
+   "share_urban": 0.4800583657587549
+  }
+ },
+ "two_vehicle_clean_culpability": {
+  "mexican": {
+   "culpable_killed": 344,
+   "nonculpable_killed": 174,
+   "odds": 1.9770114942528736,
+   "odds_ratio_vs_non_hispanic": 1.3041962052905685,
+   "or_ci95": [
+    1.0797788043899972,
+    1.5752557236527984
+   ]
+  },
+  "non_hispanic": {
+   "culpable_killed": 4008,
+   "nonculpable_killed": 2644,
+   "odds": 1.5158850226928895,
+   "odds_ratio_vs_non_hispanic": 1.0,
+   "or_ci95": [
+    0.9329097078611723,
+    1.0719150970061633
+   ]
+  },
+  "other_hispanic": {
+   "culpable_killed": 724,
+   "nonculpable_killed": 545,
+   "odds": 1.3284403669724771,
+   "odds_ratio_vs_non_hispanic": 0.876346389789229,
+   "or_ci95": [
+    0.7760715318537517,
+    0.9895775883727936
+   ]
+  },
+  "unknown": {
+   "culpable_killed": 458,
+   "nonculpable_killed": 283,
+   "odds": 1.6183745583038869,
+   "odds_ratio_vs_non_hispanic": 1.0676103623142408,
+   "or_ci95": [
+    0.9132933487654435,
+    1.2480019560653468
+   ]
+  }
+ },
+ "two_vehicle_clean_culpability_rf_only_or": {
+  "mexican": 1.358655967600568,
+  "non_hispanic": 1.0,
+  "other_hispanic": 0.9066844990280883,
+  "unknown": 1.0741106229582065
+ },
+ "mexican_fatality_state_share_top12": {
+  "48": 0.3620493358633776,
+  "4": 0.11840607210626186,
+  "6": 0.06869070208728653,
+  "17": 0.06261859582542695,
+  "12": 0.06148007590132827,
+  "53": 0.03757115749525617,
+  "41": 0.030740037950664136,
+  "8": 0.029601518026565465,
+  "13": 0.02732447817836812,
+  "45": 0.025426944971537004,
+  "47": 0.02125237191650854,
+  "18": 0.018595825426944972
+ },
+ "pedestrian_deaths_by_origin": {
+  "non_hispanic": 4872,
+  "other_hispanic": 1310,
+  "unknown": 713,
+  "mexican": 472
+ },
+ "fatalities_total": 41025,
+ "fatalities_by_origin": {
+  "non_hispanic": 28694,
+  "other_hispanic": 6234,
+  "unknown": 3462,
+  "mexican": 2635
+ },
+ "driverrf_nonbehavioural_codes": [
+  0,
+  16,
+  24,
+  60,
+  73,
+  74,
+  80,
+  81,
+  82,
+  83,
+  84,
+  85,
+  86,
+  87,
+  88,
+  89,
+  99
+ ],
+ "violation_nonmoving_codes": [
+  0,
+  7,
+  8,
+  70,
+  71,
+  72,
+  73,
+  74,
+  75,
+  76,
+  77,
+  78,
+  79,
+  80,
+  81,
+  82,
+  83,
+  84,
+  85,
+  86,
+  87,
+  88,
+  89,
+  90,
+  91,
+  92,
+  93,
+  94,
+  95,
+  96,
+  97,
+  99
+ ]
+}
