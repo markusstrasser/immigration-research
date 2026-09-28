@@ -1,0 +1,34 @@
+group,bucket,gap_bn,per_member
+mexican_origin_engine,income taxes,-216.9063,-5304
+mexican_origin_engine,"sales, excise, customs, fees",-46.9062,-1147
+mexican_origin_engine,"capital, property, production taxes",-131.4999,-3215
+mexican_origin_engine,payroll and Medicare premiums,-69.1315,-1690
+mexican_origin_engine,"per head: government, defense, interest, roads",57.8611,1415
+mexican_origin_engine,"police, courts, prisons",-7.2300,-177
+mexican_origin_engine,schools and colleges,-45.1156,-1103
+mexican_origin_engine,"SNAP, SSI, housing, cash aid, credits, other welfare",-24.9952,-611
+mexican_origin_engine,Social Security and Medicare,199.2193,4871
+mexican_origin_engine,veterans and military medical,14.4440,353
+mexican_origin_engine,Medicaid,-3.0058,-73
+mexican_origin_rough,income taxes,-213.2802,-5215
+mexican_origin_rough,"sales, excise, customs, fees",-45.2797,-1107
+mexican_origin_rough,"capital, property, production taxes",-122.2078,-2988
+mexican_origin_rough,payroll and Medicare premiums,-62.2593,-1522
+mexican_origin_rough,"per head: government, defense, interest, roads",56.8039,1389
+mexican_origin_rough,"police, courts, prisons",-7.2300,-177
+mexican_origin_rough,schools and colleges,-45.8688,-1122
+mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",-23.2971,-570
+mexican_origin_rough,Social Security and Medicare,194.9207,4766
+mexican_origin_rough,veterans and military medical,16.8645,412
+mexican_origin_rough,Medicaid,-3.0058,-73
+nh_black_rough,income taxes,-174.4122,-4157
+nh_black_rough,"sales, excise, customs, fees",-26.8563,-640
+nh_black_rough,"capital, property, production taxes",-112.1697,-2674
+nh_black_rough,payroll and Medicare premiums,-43.4849,-1036
+nh_black_rough,"per head: government, defense, interest, roads",45.1158,1075
+nh_black_rough,"police, courts, prisons",-46.3107,-1104
+nh_black_rough,schools and colleges,-26.8792,-641
+nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",-69.7103,-1662
+nh_black_rough,Social Security and Medicare,62.1197,1481
+nh_black_rough,veterans and military medical,-12.2879,-293
+nh_black_rough,Medicaid,-63.5404,-1515
