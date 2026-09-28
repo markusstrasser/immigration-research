@@ -323,3 +323,4 @@ Times come from `date` calls (JST).
   - Astra on V12 (false accusation, packet_defect=no) raises a real point about wording strength: disagreement between surveys does not by itself show which one is right. That bears on the account's row-4 count. The packet's evidence favours the ACS, so it does not reverse the claim.
 - Checked by reading the packets: both mirrors the lane calls defective are defective. V06m adds consumer savings "to its fiscal receipts line", which is a category error. In V08m, the cohort ratios in its own evidence rise 0.53 → 0.58 → 0.61, which contradicts its claim.
 - Reran `build_cases.py`, `score.py` and `tables.py` with `scripts/rerun_lane.py`: 126 of 126 files byte-identical. `run_reviewers.py` calls the models and is not rerun.
+- [2026-09-29: the llmx defect in deviation 2 is fixed. llmx 57d3025 matches each codex call's usage to its rollout by the session id codex prints, and leaves usage unknown when the match is ambiguous.]
