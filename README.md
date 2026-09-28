@@ -17,9 +17,20 @@ held, their fields, local paths and limits. Follow the relevant analysis README
 to its actual inputs and outputs. The warehouse alone does not inventory newer
 analysis directories; ignored files require `rg --files --no-ignore`.
 
-**September 5, 2026 correction baseline:** material fiscal-unit, source-version and inference errors were found in earlier analyses. The [repair report](research/immigration-material-repair-report-2026-09-05.md) and [corrected assessment](research/immigration-economist-dismantling-2026-06-25.md) preserve that audit. Later results are routed through the topic index above. Historical dollar figures and causal verdicts must be checked against their supersession notes.
+**Current result (income year 2024).** The adopted main case puts the conditional net cost of the
+Mexican-origin population (39.7M people, all generations) to other US residents at **$322–387bn a
+year** ([lane](infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md),
+[decision](decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)). Other residents'
+social costs and benefits outside the public budget bring it to $414–488bn. Only 2024 is measured;
+earlier years are a model back-cast. The [objections FAQ](research/immigration-objections-faq-2026-09-21.md)
+routes the standard objections to their executed tables, and the
+[evidence map](infra/immigration-fiscal/overview_2026_09_28/) (`build.py` writes the reader page)
+summarizes the confidence ladder.
 
-The [recent evidence synthesis](research/immigration-framing-refresh-2026-09-05.md) integrates June–September papers, essays and X claims with newly staged labor, housing and enforcement data. The repaired fiscal outputs remain partial accounting estimates; the report states their units, assumptions and validation.
+**Earlier errors.** A September 5, 2026 audit found material fiscal-unit, source-version and inference
+errors in earlier analyses; the [repair report](research/immigration-material-repair-report-2026-09-05.md)
+preserves it. Check historical dollar figures and causal verdicts against their supersession notes.
+Superseded memos were deleted on 2026-09-29; the topic index lists them with the commit that holds them.
 
 This research is conducted *through an LLM*, which carries systematic post-training dispositions
 on politically charged topics. **Before treating any synthesis as neutral, read
@@ -33,7 +44,7 @@ single well-sourced falsification beats ten plausible syntheses.
 
 | Path | What |
 |------|------|
-| `research/immigration-*.md` | The memo stack — 130+ sourced memos with confidence tiers and supersession notes. Start at the [topic index](research/immigration-INDEX.md). |
+| `research/immigration-*.md` | The memo stack — about 200 sourced memos with confidence tiers and supersession notes. Start at the [topic index](research/immigration-INDEX.md). |
 | `warehouse/immigration.duckdb` | **The unified data warehouse** — all cleaned/joined panels in one schema-namespaced file (`context` / `lifetime` / `fiscal`) with a self-describing `_catalog` table. *(Built locally; gitignored.)* |
 | `infra/immigration-fiscal/` | The acquisition + build pipeline (acquire → parse → warehouse). See its [`REPRODUCE.md`](infra/immigration-fiscal/REPRODUCE.md). |
 | `queries/immigration/` | Checked-in SQL that reproduces the headline numbers (each file has `-- requires:` and `-- backs:` headers). |
