@@ -203,7 +203,7 @@ GROUPS = [
                      "(Texas and Arizona). Schools already use state prices."),
             dict(refs=[273],
                  text="Charging road costs by miles driven raises the group's cost by about $2–4bn, net of the "
-                      "fuel taxes that move with it. The main estimate charges roads by household income.",
+                      "fuel taxes that move with it. The main estimate charges roads by household income and leaves this out.",
                  why="The group has 8% of household income but drives 10% of the miles. Freight costs "
                      "follow what people buy."),
             dict(refs=[127, 129],
