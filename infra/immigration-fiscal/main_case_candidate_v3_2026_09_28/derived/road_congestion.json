@@ -1,0 +1,239 @@
+{
+ "meta": {
+  "lane": "main_case_candidate_v3_2026_09_28",
+  "case": "sept28_candidate_v3",
+  "definition": "congestion beside the account (service_response_long_run_2026_09_27/congestion.py arm(), central inputs; factorial range over its grid with three lane coefficients, road-arm cuts only) with lanes cut uniformly by the lane cut package.cjs congestionCuts() lists",
+  "sources": {
+   "service_response_long_run_2026_09_27/congestion.py": "f6c5e5d94149744454d16b315b2a114129b27c9b935db7332ba1dd681c9f0afe",
+   "congestion_2026_09_23/arms.py": "919cca2da97ec4859a390da7be5367629fd06ffe3197c91efc0142076dfc4531",
+   "service_response_long_run_2026_09_27/derived/congestion_bridge.csv": "85418bad0df5d3306c69dd7e1bf05e04a15bfd134bd60b658eda452105353926",
+   "service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
+   "main_case_candidate_v3_2026_09_28/package.cjs": "8896705eab97ec3e6e177948cbd8003e09fc444aa0e3d59ca24a9cb1e5b17f72",
+   "main_case_candidate_v3_2026_09_28/derived/transit_key.json": "ac31c088b7eb85c9a276e8779c0764f601bfa1669f4ae7937cb95379af6f988f",
+   "main_case_candidate_v2_2026_09_28/package.cjs": "029cf65a0ec698f2786c30da06892ff2584c28ec5ad91c30124250550f30d3b8",
+   "main_case_candidate_v2_2026_09_28/derived/road_stock.json": "24d6384773bd78d7e422e53ff9b6e8abdbd379f2bd9f78b26525d679e7f96b82",
+   "main_case_candidate_v2_2026_09_28/derived/road_congestion.json": "7c0cce1b79d31162960ff5eaaa1a96b4a6cc53d7d0bd19acf116ec1ad3339b62",
+   "main_case_candidate_2026_09_28/package.cjs": "ed7f3dc5d8d9cb2728a3ceca6c3dffbdb86083c147c6f6a153baad0c5ebd1ca5",
+   "main_case_long_run_2026_09_27/package.cjs": "b4f22b35371c715771d8e53436acfc6320c214ab5abf686714020eb2c8fe2a7a",
+   "receipt_side_long_run_2026_09_28/items.cjs": "b8a88b3aa38f0990ca2c3f1b5ef51d42b306ead1894d2d29b5816909dd7aec23",
+   "receipt_side_long_run_2026_09_28/derived/housing.json": "3839430f4139716559eec7945ae134400ad58b9ce28603ca73e1e405a0e1c726",
+   "payroll_compliance_2026_09_28/derived/items.json": "813359ff693e1462d004259fd469c1fc1fa2d53656f6ec6875eae6971b6c8cb5",
+   "backcast_pandemic_measured_2026_09_28/derived/ratio_vs_2024.csv": "04e93220cc99e62e45d2063c776b34f3151df009382f9a0c3b4bd6b024a3f2ff",
+   "uncompensated_care_2026_09_23/derived/summary.json": "29630bef97d4d37566e904a23a2ee8cd0b52144a341f11817b02ba5ddc8749b6"
+  },
+  "pension_summary": {
+   "commit": "c9d0077",
+   "sha256": "d1c8326b3b36fff5dcb9bbf2c8c8b5e7f5aa6f7e9039e9ed23bd254ccf24d40e"
+  },
+  "cuts_shared_with_v2": 35,
+  "cuts_new": 0
+ },
+ "b1_lanes_fixed_bn": 19.162711110731056,
+ "rows": [
+  {
+   "lane_cut": 0,
+   "congestion_central_bn": 19.162711110731056,
+   "factorial_min_bn": 8.047943973203898,
+   "factorial_max_bn": 35.25151421805585
+  },
+  {
+   "lane_cut": 0.05804429094998262,
+   "congestion_central_bn": 14.083543976970411,
+   "factorial_min_bn": 2.1211929640036855,
+   "factorial_max_bn": 32.105633441936156
+  },
+  {
+   "lane_cut": 0.05816315422517644,
+   "congestion_central_bn": 14.072803685418023
+  },
+  {
+   "lane_cut": 0.05841979974429366,
+   "congestion_central_bn": 14.049608686313805
+  },
+  {
+   "lane_cut": 0.05889722270424828,
+   "congestion_central_bn": 14.006442422868034
+  },
+  {
+   "lane_cut": 0.05892592923565095,
+   "congestion_central_bn": 14.00384617387331
+  },
+  {
+   "lane_cut": 0.0590506771072958,
+   "congestion_central_bn": 13.992562864050909,
+   "factorial_min_bn": 2.014861874519615,
+   "factorial_max_bn": 32.04934035817931
+  },
+  {
+   "lane_cut": 0.05909469815799302,
+   "congestion_central_bn": 13.98858082706655
+  },
+  {
+   "lane_cut": 0.05917542497894065,
+   "congestion_central_bn": 13.98127795948327
+  },
+  {
+   "lane_cut": 0.05923082548400567,
+   "congestion_central_bn": 13.976265824113451
+  },
+  {
+   "lane_cut": 0.05958740797008544,
+   "congestion_central_bn": 13.94399794213005,
+   "factorial_min_bn": 1.9581015013062055,
+   "factorial_max_bn": 32.01929253872159
+  },
+  {
+   "lane_cut": 0.05983271065068596,
+   "congestion_central_bn": 13.921792425095617
+  },
+  {
+   "lane_cut": 0.060116933187966466,
+   "congestion_central_bn": 13.896056043652628
+  },
+  {
+   "lane_cut": 0.060630423198054284,
+   "congestion_central_bn": 13.8495384269154
+  },
+  {
+   "lane_cut": 0.060672302219150175,
+   "congestion_central_bn": 13.845743365541137
+  },
+  {
+   "lane_cut": 0.06143292381487918,
+   "congestion_central_bn": 13.776784714321044
+  },
+  {
+   "lane_cut": 0.06150603884252794,
+   "congestion_central_bn": 13.770152900641962,
+   "factorial_min_bn": 1.7549095896416225,
+   "factorial_max_bn": 31.911737437395104
+  },
+  {
+   "lane_cut": 0.0617200365575772,
+   "congestion_central_bn": 13.750739320873885
+  },
+  {
+   "lane_cut": 0.06408335158247581,
+   "congestion_central_bn": 13.536028190781996,
+   "factorial_min_bn": 1.4812372501068483,
+   "factorial_max_bn": 31.766901473572464
+  },
+  {
+   "lane_cut": 0.0793985416365237,
+   "congestion_central_bn": 12.130332879081802
+  },
+  {
+   "lane_cut": 0.0797488885220548,
+   "congestion_central_bn": 12.097881985445866
+  },
+  {
+   "lane_cut": 0.07988400762671075,
+   "congestion_central_bn": 12.08536305403074,
+   "factorial_min_bn": -0.7642394335883531,
+   "factorial_max_bn": 30.869898250441704
+  },
+  {
+   "lane_cut": 0.08040061876724464,
+   "congestion_central_bn": 12.037480395302026
+  },
+  {
+   "lane_cut": 0.0804398060630366,
+   "congestion_central_bn": 12.033847108694186
+  },
+  {
+   "lane_cut": 0.08061009942509388,
+   "congestion_central_bn": 12.018056283784826,
+   "factorial_min_bn": -0.9235617873055267,
+   "factorial_max_bn": 30.828298311580397
+  },
+  {
+   "lane_cut": 0.0806701925763892,
+   "congestion_central_bn": 12.012483270479311
+  },
+  {
+   "lane_cut": 0.08078039278715116,
+   "congestion_central_bn": 12.002262340683208
+  },
+  {
+   "lane_cut": 0.08085602003547851,
+   "congestion_central_bn": 11.995247253484823
+  },
+  {
+   "lane_cut": 0.08167765368144721,
+   "congestion_central_bn": 11.918993884639647
+  },
+  {
+   "lane_cut": 0.0820656459638626,
+   "congestion_central_bn": 11.88296019335396
+  },
+  {
+   "lane_cut": 0.0827666113514696,
+   "congestion_central_bn": 11.817818823616525
+  },
+  {
+   "lane_cut": 0.08282378041742681,
+   "congestion_central_bn": 11.812503708437188
+  },
+  {
+   "lane_cut": 0.08386210521673743,
+   "congestion_central_bn": 11.715907202292454
+  },
+  {
+   "lane_cut": 0.08425404291955234,
+   "congestion_central_bn": 11.679414459271115
+  },
+  {
+   "lane_cut": 0.11466897804360845,
+   "congestion_central_bn": 8.793683707345645,
+   "factorial_min_bn": -8.575969707180121,
+   "factorial_max_bn": 28.83804425737986
+  }
+ ],
+ "gates": [
+  {
+   "gate": "UMR positive control passes",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the lanes-fixed cut (0) is priced and is net_change.json's B1 (1e-9)",
+   "passed": true,
+   "detail": "19.162711"
+  },
+  {
+   "gate": "bridge low / network follows spending: the lane's cut is priced and reproduces central and factorial range",
+   "passed": true,
+   "detail": "cut 0.05905067711 -> 13.992563 (2.0149\u201332.0493)"
+  },
+  {
+   "gate": "bridge low / network fixed (bound): the lane's cut is priced and reproduces central and factorial range",
+   "passed": true,
+   "detail": "cut 0.0 -> 19.162711 (8.0479\u201335.2515)"
+  },
+  {
+   "gate": "bridge high / network follows spending: the lane's cut is priced and reproduces central and factorial range",
+   "passed": true,
+   "detail": "cut 0.08061009943 -> 12.018056 (-0.9236\u201330.8283)"
+  },
+  {
+   "gate": "bridge high / network fixed (bound): the lane's cut is priced and reproduces central and factorial range",
+   "passed": true,
+   "detail": "cut 0.0 -> 19.162711 (8.0479\u201335.2515)"
+  },
+  {
+   "gate": "every cut shared with candidate v2's road_congestion.json prices as v2 priced it (central and factorial, 1e-12)",
+   "passed": true,
+   "detail": "35 of 35 cuts shared; max |diff| 0.0e+00 / 0.0e+00"
+  },
+  {
+   "gate": "congestion falls as the lane cut grows (monotone)",
+   "passed": true,
+   "detail": "35 cuts"
+  },
+  {
+   "gate": "the sources did not change during the run",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+case,label,cost_low_bn,cost_high_bn,outer_account_low_bn,outer_account_high_bn,outer_joint_low_bn,outer_joint_high_bn,quadrature_account_low_bn,quadrature_account_high_bn,quadrature_joint_low_bn,quadrature_joint_high_bn
+sept27_case,"the September 27 case (adopted)",321.8194,387.3701,258.6487,436.0533,258.4865,433.0242,290.9003,408.2300,290.8706,406.0077
+candidate_v2,"candidate v2: items 1-3",318.5703,383.6896,255.2947,432.4692,255.1326,429.4401,287.6310,404.5731,287.6013,402.3537
+candidate_v3_cash,"candidate v3: items 1-8, pension switch off (cash)",288.0048,353.6337,208.1127,410.6830,207.9506,407.6539,254.3015,375.1536,254.2741,373.0070
+candidate_v3_accrual,"candidate v3 with the pension switch on (accrual)",404.4550,464.3890,329.1347,513.9702,328.9726,510.9411,371.0626,483.6839,371.0353,481.2555
+candidate_v3_use07,"candidate v3 with the uninsured-use switch on (0.7x), pension switch off",286.4713,351.3913,206.5792,408.4407,206.4171,405.4115,252.7680,372.9112,252.7406,370.7646
+candidate_v3_use07_accrual,"candidate v3 with both switches on",402.9215,462.1466,,,,,,,,
+item1_alone,"item 1 alone",320.1281,385.6788,,,,,,,,
+item2_alone,"item 2 alone",323.4621,388.4774,,,,,,,,
+item3_alone,"item 3 alone",318.6188,384.2735,,,,,,,,
+item4_alone,"item 4 alone",321.4665,386.8408,,,,,,,,
+item5_alone,"item 5 alone",294.6330,360.1837,,,,,,,,
+item6a_alone,"item 6a alone",321.4484,387.2081,,,,,,,,
+item6b_alone,"item 6b alone",321.0052,386.5619,,,,,,,,
+item7_alone,"item 7 alone",319.8125,385.8200,,,,,,,,
+item8_alone,"item 8 alone",321.9890,387.5509,,,,,,,,
+item9_alone,"item 9 alone",437.8289,497.7758,,,,,,,,
+item10_alone,"item 10 alone",320.2858,385.1277,,,,,,,,
+candidate_proportional_rule,"the candidate, item 6 under the proportional rule (sensitivity)",289.5886,355.1434,,,,,,,,
+candidate_transit_commuters,"the candidate, transit at the commuters key (range variant)",285.5539,351.0214,,,,,,,,
+candidate_public_pay_unchanged_workforce,"the candidate with public pay, unchanged workforce (beside)",300.9534,363.2456,,,,,,,,
+candidate_public_pay_counterfactual_low_share,"the candidate with public pay, counterfactual low share (beside)",300.1509,361.9351,,,,,,,,
+candidate_public_pay_counterfactual_high_share,"the candidate with public pay, counterfactual high share (beside)",299.9306,361.5754,,,,,,,,
+candidate_road_replacement,"the candidate, road arm at replacement, account only (beside)",282.7742,342.8878,,,,,,,,
+candidate_road_fixed_stock,"the candidate, road arm at fixed stock, account only (beside)",277.4971,335.6589,,,,,,,,
+candidate_road_construction_year_effects,"the candidate, road arm at construction year effects, account only (beside)",288.9004,353.6337,,,,,,,,
+candidate_road_construction_land,"the candidate, road arm at construction land, account only (beside)",288.4417,353.6337,,,,,,,,

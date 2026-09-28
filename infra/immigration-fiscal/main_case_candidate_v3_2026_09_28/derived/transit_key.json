@@ -1,0 +1,1535 @@
+{
+ "acs": {
+  "hispanic_all": {
+   "definition": "HISP != 01 (all Hispanic or Latino origins)",
+   "direct_share_of_transit_commuters": {
+    "se": 0.00256207745323,
+    "value": 0.257286130474
+   },
+   "mode_share_public_transportation": {
+    "se": 0.000544581650064,
+    "value": 0.0483566642567
+   },
+   "population_share": {
+    "se": 2.13680004233e-05,
+    "value": 0.199926388736
+   },
+   "ru": {
+    "se": 0.0128336849214,
+    "value": 1.28690430564
+   }
+  },
+  "national": {
+   "definition": "RU = (group transit commuters / group persons) / (all transit commuters / all persons)",
+   "direct_share_of_transit_commuters": {
+    "se": 0.00153487248833,
+    "value": 0.086544848072
+   },
+   "group_population_share": {
+    "se": 0.00022149665136,
+    "value": 0.11593132877
+   },
+   "mode_shares_among_workers": {
+    "all": {
+     "01": {
+      "label": "Car, truck, or van",
+      "se": 0.000432277641898,
+      "value": 0.783957923989
+     },
+     "02": {
+      "label": "Bus",
+      "se": 0.000152391908629,
+      "value": 0.0167329308575
+     },
+     "03": {
+      "label": "Subway or elevated rail",
+      "se": 0.000119494859745,
+      "value": 0.014552206815
+     },
+     "04": {
+      "label": "Long-distance train or commuter rail",
+      "se": 6.55947646941e-05,
+      "value": 0.00414665219745
+     },
+     "05": {
+      "label": "Light rail, streetcar, or trolley",
+      "se": 3.93225050861e-05,
+      "value": 0.000981504422829
+     },
+     "06": {
+      "label": "Ferryboat",
+      "se": 2.08784210934e-05,
+      "value": 0.000413816625491
+     },
+     "07": {
+      "label": "Taxi or ride-hailing services",
+      "se": 6.76906559193e-05,
+      "value": 0.00420101904444
+     },
+     "08": {
+      "label": "Motorcycle",
+      "se": 3.73591728808e-05,
+      "value": 0.0012887209282
+     },
+     "09": {
+      "label": "Bicycle",
+      "se": 7.52713763305e-05,
+      "value": 0.00486152032732
+     },
+     "10": {
+      "label": "Walked",
+      "se": 0.000166778025437,
+      "value": 0.0245121587872
+     },
+     "11": {
+      "label": "Worked from home",
+      "se": 0.000353328713704,
+      "value": 0.133258769057
+     },
+     "12": {
+      "label": "Other method",
+      "se": 0.00012902698684,
+      "value": 0.0110927769488
+     },
+     "public_transportation_02_06": {
+      "se": 0.000192112876761,
+      "value": 0.0368271109183
+     }
+    },
+    "group": {
+     "01": {
+      "label": "Car, truck, or van",
+      "se": 0.00126273881151,
+      "value": 0.850421824387
+     },
+     "02": {
+      "label": "Bus",
+      "se": 0.000456851397031,
+      "value": 0.0177656045119
+     },
+     "03": {
+      "label": "Subway or elevated rail",
+      "se": 0.00034564640467,
+      "value": 0.00760603029795
+     },
+     "04": {
+      "label": "Long-distance train or commuter rail",
+      "se": 0.000142674585429,
+      "value": 0.00189311870865
+     },
+     "05": {
+      "label": "Light rail, streetcar, or trolley",
+      "se": 8.19645695467e-05,
+      "value": 0.000882320775304
+     },
+     "06": {
+      "label": "Ferryboat",
+      "se": 3.8959265521e-05,
+      "value": 0.000164180171041
+     },
+     "07": {
+      "label": "Taxi or ride-hailing services",
+      "se": 0.000194760699977,
+      "value": 0.00414879748762
+     },
+     "08": {
+      "label": "Motorcycle",
+      "se": 0.000104994270139,
+      "value": 0.00127489285204
+     },
+     "09": {
+      "label": "Bicycle",
+      "se": 0.000195854075415,
+      "value": 0.00383917451627
+     },
+     "10": {
+      "label": "Walked",
+      "se": 0.000500359780687,
+      "value": 0.0213669915927
+     },
+     "11": {
+      "label": "Worked from home",
+      "se": 0.000939809298113,
+      "value": 0.0765872579759
+     },
+     "12": {
+      "label": "Other method",
+      "se": 0.000447468291653,
+      "value": 0.0140498067232
+     },
+     "public_transportation_02_06": {
+      "se": 0.000522903300194,
+      "value": 0.0283112544648
+     }
+    },
+    "hispanic_all": {
+     "01": {
+      "label": "Car, truck, or van",
+      "se": 0.00100415777699,
+      "value": 0.812320438918
+     },
+     "02": {
+      "label": "Bus",
+      "se": 0.000414305972263,
+      "value": 0.0257750835523
+     },
+     "03": {
+      "label": "Subway or elevated rail",
+      "se": 0.000296402756577,
+      "value": 0.0182514784553
+     },
+     "04": {
+      "label": "Long-distance train or commuter rail",
+      "se": 0.000141161203295,
+      "value": 0.00314815855597
+     },
+     "05": {
+      "label": "Light rail, streetcar, or trolley",
+      "se": 6.76139374382e-05,
+      "value": 0.000938102450584
+     },
+     "06": {
+      "label": "Ferryboat",
+      "se": 3.58907640118e-05,
+      "value": 0.000243841242663
+     },
+     "07": {
+      "label": "Taxi or ride-hailing services",
+      "se": 0.000169254720138,
+      "value": 0.00548240249728
+     },
+     "08": {
+      "label": "Motorcycle",
+      "se": 0.000108904672127,
+      "value": 0.00127880156826
+     },
+     "09": {
+      "label": "Bicycle",
+      "se": 0.000174600777259,
+      "value": 0.00471805813903
+     },
+     "10": {
+      "label": "Walked",
+      "se": 0.000363061243257,
+      "value": 0.0247909273414
+     },
+     "11": {
+      "label": "Worked from home",
+      "se": 0.000787498440787,
+      "value": 0.087854411139
+     },
+     "12": {
+      "label": "Other method",
+      "se": 0.000365453141647,
+      "value": 0.0151982961404
+     },
+     "public_transportation_02_06": {
+      "se": 0.000544581650064,
+      "value": 0.0483566642567
+     }
+    },
+    "mexican_origin_hisp02": {
+     "01": {
+      "label": "Car, truck, or van",
+      "se": 0.00124983621422,
+      "value": 0.850991406193
+     },
+     "02": {
+      "label": "Bus",
+      "se": 0.00045081123979,
+      "value": 0.0175930756012
+     },
+     "03": {
+      "label": "Subway or elevated rail",
+      "se": 0.000352731508185,
+      "value": 0.00750505790569
+     },
+     "04": {
+      "label": "Long-distance train or commuter rail",
+      "se": 0.000142236717682,
+      "value": 0.00188234093892
+     },
+     "05": {
+      "label": "Light rail, streetcar, or trolley",
+      "se": 8.33081103371e-05,
+      "value": 0.000890760354565
+     },
+     "06": {
+      "label": "Ferryboat",
+      "se": 3.95441883828e-05,
+      "value": 0.000166653114975
+     },
+     "07": {
+      "label": "Taxi or ride-hailing services",
+      "se": 0.000199839555036,
+      "value": 0.00417559243602
+     },
+     "08": {
+      "label": "Motorcycle",
+      "se": 0.000102934732721,
+      "value": 0.00126875447015
+     },
+     "09": {
+      "label": "Bicycle",
+      "se": 0.000201922445547,
+      "value": 0.0038476814508
+     },
+     "10": {
+      "label": "Walked",
+      "se": 0.000504136792514,
+      "value": 0.0213003171968
+     },
+     "11": {
+      "label": "Worked from home",
+      "se": 0.000942219445006,
+      "value": 0.0763955209223
+     },
+     "12": {
+      "label": "Other method",
+      "se": 0.000450314484204,
+      "value": 0.0139828394159
+     },
+     "public_transportation_02_06": {
+      "se": 0.000529489828532,
+      "value": 0.0280378879154
+     }
+    }
+   },
+   "persons": {
+    "all": 340110990,
+    "group": 39429519,
+    "hispanic_all": 67997162,
+    "mexican_origin_hisp02": 38932033
+   },
+   "ru": {
+    "se": 0.0130520330086,
+    "value": 0.746518210307
+   },
+   "sample_records": {
+    "persons_all": 3422888,
+    "persons_group": 317038,
+    "transit_commuters_all": 50686,
+    "transit_commuters_group": 4098
+   },
+   "transit_commuters": {
+    "all": 6093049,
+    "group": 527322,
+    "hispanic_all": 1567657,
+    "mexican_origin_hisp02": 514481
+   },
+   "transit_commuters_per_person": {
+    "all": {
+     "se": 9.31044922261e-05,
+     "value": 0.0179148841971
+    },
+    "group": {
+     "se": 0.000251830237251,
+     "value": 0.0133737872887
+    }
+   },
+   "workers_with_jwtrns": {
+    "all": 165450095,
+    "group": 18625879,
+    "hispanic_all": 32418634,
+    "mexican_origin_hisp02": 18349492
+   }
+  },
+  "variants": {
+   "bus_only_02": {
+    "direct_share_of_transit_commuters": {
+     "se": 0.00291606738142,
+     "value": 0.119524718571
+    },
+    "jwtrns_codes": [
+     "02"
+    ],
+    "population_share": {
+     "se": 0.00022149665136,
+     "value": 0.11593132877
+    },
+    "ru": {
+     "se": 0.0250105004046,
+     "value": 1.03099584762
+    },
+    "sample_transit_commuters": {
+     "all": 21961,
+     "population": 2642
+    },
+    "transit_commuters": {
+     "all": 2768465,
+     "population": 330900
+    }
+   },
+   "excluding_new_york": {
+    "direct_share_of_transit_commuters": {
+     "se": 0.00221360060485,
+     "value": 0.109209487566
+    },
+    "jwtrns_codes": [
+     "02",
+     "03",
+     "04",
+     "05",
+     "06"
+    ],
+    "note": "residents of New York State dropped from numerator and denominator; sensitivity",
+    "population_share": {
+     "se": 0.00022383143807,
+     "value": 0.121390980998
+    },
+    "ru": {
+     "se": 0.0181010974898,
+     "value": 0.899650753854
+    },
+    "sample_transit_commuters": {
+     "all": 32074,
+     "population": 3337
+    },
+    "transit_commuters": {
+     "all": 3782382,
+     "population": 413072
+    }
+   },
+   "mexican_origin_hisp02_only": {
+    "direct_share_of_transit_commuters": {
+     "se": 0.00152285838483,
+     "value": 0.0844373646101
+    },
+    "jwtrns_codes": [
+     "02",
+     "03",
+     "04",
+     "05",
+     "06"
+    ],
+    "note": "HISP == 02 alone, without the Mexican-born addition; like-for-like with S0201",
+    "population_share": {
+     "se": 0.000234160409302,
+     "value": 0.114468612143
+    },
+    "ru": {
+     "se": 0.0130978711693,
+     "value": 0.737646443239
+    },
+    "sample_transit_commuters": {
+     "all": 50686,
+     "population": 3996
+    },
+    "transit_commuters": {
+     "all": 6093049,
+     "population": 514481
+    }
+   },
+   "rail_only_03_05": {
+    "direct_share_of_transit_commuters": {
+     "se": 0.0024472960742,
+     "value": 0.0615173844596
+    },
+    "jwtrns_codes": [
+     "03",
+     "05"
+    ],
+    "population_share": {
+     "se": 0.00022149665136,
+     "value": 0.11593132877
+    },
+    "ru": {
+     "se": 0.0210065874164,
+     "value": 0.530636413058
+    },
+    "sample_transit_commuters": {
+     "all": 21238,
+     "population": 1138
+    },
+    "transit_commuters": {
+     "all": 2570054,
+     "population": 158103
+    }
+   },
+   "without_04_commuter_rail": {
+    "direct_share_of_transit_commuters": {
+     "se": 0.00160510640696,
+     "value": 0.0910046911541
+    },
+    "jwtrns_codes": [
+     "02",
+     "03",
+     "05",
+     "06"
+    ],
+    "population_share": {
+     "se": 0.00022149665136,
+     "value": 0.11593132877
+    },
+    "ru": {
+     "se": 0.0136430095509,
+     "value": 0.784987907235
+    },
+    "sample_transit_commuters": {
+     "all": 43867,
+     "population": 3813
+    },
+    "transit_commuters": {
+     "all": 5406985,
+     "population": 492061
+    }
+   }
+  }
+ },
+ "gates": [
+  {
+   "detail": "25 input files match their pinned sha256",
+   "gate": "input_hashes",
+   "pass": true
+  },
+  {
+   "detail": "JWTRNS 01-12 labels match; HISP 02 = ['02 .Mexican']; POBP 303 = ['303 .Mexico']",
+   "gate": "acs_codes_match_dictionary",
+   "pass": true
+  },
+  {
+   "detail": "3,422,888 person records, 51 states; JWTRNS outside 01-12 0, HISP outside 01-24 0, JWTRNS set with AGEP < 16 0",
+   "gate": "pums_structure",
+   "pass": true
+  },
+  {
+   "detail": "9 replicate SEs, min 0.000221, max 0.025",
+   "gate": "replicate_se_finite_positive",
+   "pass": true
+  },
+  {
+   "detail": "PUMS 2.83112544648 vs published 2.8: diff +0.0311 pp, tolerance 0.3",
+   "gate": "published_group_transit_share_vs_s0201_mexican_4015",
+   "pass": true
+  },
+  {
+   "detail": "PUMS 3.68271109182 vs published 3.7: diff -0.0173 pp, tolerance 0.15",
+   "gate": "published_total_transit_share_vs_s0201_001",
+   "pass": true
+  },
+  {
+   "detail": "PUMS 3.68271109182 vs published 3.68735389871: diff -0.0046 pp, tolerance 0.15",
+   "gate": "published_total_transit_share_vs_b08301",
+   "pass": true
+  },
+  {
+   "detail": "PUMS 4.83566642567 vs published 4.84115427705: diff -0.0055 pp, tolerance 0.2",
+   "gate": "published_hispanic_transit_share_vs_b08105i",
+   "pass": true
+  },
+  {
+   "detail": "PUMS 4.83566642567 vs published 4.8: diff +0.0357 pp, tolerance 0.2",
+   "gate": "published_hispanic_transit_share_vs_s0201_400",
+   "pass": true
+  },
+  {
+   "detail": "PUMS 6093049 vs published 6097425: rel diff -0.0007 rel, tolerance 0.03",
+   "gate": "published_transit_commuters_vs_b08301_010",
+   "pass": true
+  },
+  {
+   "detail": "PUMS 340110990 vs published 340110990: rel diff +0.0000 rel, tolerance 0.005",
+   "gate": "published_persons_vs_b01003",
+   "pass": true
+  },
+  {
+   "detail": "PUMS 340110990 vs published 340000000: rel diff +0.0003 rel, tolerance 0.02",
+   "gate": "published_persons_vs_340m",
+   "pass": true
+  },
+  {
+   "detail": "PUMS 1.28690430564 vs published 1.286937073: rel diff -0.0000 rel, tolerance 0.03",
+   "gate": "published_hispanic_commute_ru_vs_published_tables",
+   "pass": true
+  },
+  {
+   "detail": "S0201 POPGROUP labels ['Total population', 'Hispanic or Latino (of any race)', 'Mexican']",
+   "gate": "published_labels",
+   "pass": true
+  },
+  {
+   "detail": "codebook ['R_HISP 01=Hispanic', 'R_HISP 02=Not Hispanic', 'TRPTRANS 08=Public or commuter bus', 'TRPTRANS 10=Street car or trolley car', 'TRPTRANS 11=Subway or elevated rail', 'TRPTRANS 12=Commuter rail', 'PUBTRANS 01=Used public transit', 'TRIPPURP 01=Home-based work (HBW)']; PUBTRANS vs TRPTRANS in (08,10,11,12) mismatches 0; TRIPPURP 01 vs WHYFROM/WHYTO home(01,02)<->work(03,04,05) mismatches 0",
+   "gate": "nhts2022_codebook_and_derivations",
+   "pass": true
+  },
+  {
+   "detail": "sum WTPERFIN 305,560,925.0 vs published 305,560,925 (Weighting Report Table 15; codebook 305,560,925.0)",
+   "gate": "nhts2022_person_total",
+   "pass": true
+  },
+  {
+   "detail": "20 strata (STRATUMID), households per stratum min 6, max 1248",
+   "gate": "nhts2022_strata_bootstrap",
+   "pass": true
+  },
+  {
+   "detail": "B=1000, seed 20260928; invalid draws all-trip 0, commute 0, adjustment 0",
+   "gate": "nhts2022_bootstrap_finite",
+   "pass": true
+  },
+  {
+   "detail": "codebook ['R_HISP 01=Yes, Hispanic or Latino', 'R_HISP 02=No, Not Hispanic or Latino', 'PUBTRANS 01=Yes', 'TRPTRANS 11=Public or commuter bus', 'TRPTRANS 15=Amtrak / Commuter rail', 'TRPTRANS 16=Subway / elevated / light rail / street car', 'TRIPPURP HBW=Home-based trip (work)']; PUBTRANS vs TRPTRANS in (11,15,16) mismatches 0; replicate-file WTPERFIN max abs diff 0.00e+00; WTTRDFIN = 365 x WTPERFIN max rel diff 6.66e-15",
+   "gate": "nhts2017_codebook_and_derivations",
+   "pass": true
+  },
+  {
+   "detail": "total transit trips 9,444,506,727.2 (trip file 9,444,506,727.2) SE 212,640,677.2 vs User's Guide 7.12: 9,444,506,727 SE 212,640,677",
+   "gate": "nhts2017_documented_example",
+   "pass": true
+  },
+  {
+   "detail": "sum WTPERFIN 301,599,168.9 vs published 301,599,169 (User's Guide Table 7-1)",
+   "gate": "nhts2017_person_total",
+   "pass": true
+  },
+  {
+   "detail": "LF0073 states 13,498,298 vs U.S. 13,498,296 ($1,000); LF0216 states 69,027,093 vs U.S. 69,027,094 ($1,000); LF0217 states 29,423,457 vs U.S. 29,423,455 ($1,000)",
+   "gate": "govs_states_sum_to_us",
+   "pass": true
+  },
+  {
+   "detail": "51 finance states, 51 PUMS states",
+   "gate": "govs_states_match_pums_states",
+   "pass": true
+  },
+  {
+   "detail": "every state's transit-commuter total is positive in all 81 weights",
+   "gate": "state_replicate_transit_positive",
+   "pass": true
+  },
+  {
+   "detail": "state rows vs chunk-level national totals (independent path): max rel dev 0.00e+00 (full weight), 0.00e+00 (all 81 weights)",
+   "gate": "state_rows_sum_to_national",
+   "pass": true
+  }
+ ],
+ "meta": {
+  "dictionary_lines": [
+   {
+    "line": "JWTRNS Character 2",
+    "page": 38
+   },
+   {
+    "line": "Means of transportation to work",
+    "page": 38
+   },
+   {
+    "line": "01 .Car, truck, or van",
+    "page": 38
+   },
+   {
+    "line": "02 .Bus",
+    "page": 38
+   },
+   {
+    "line": "03 .Subway or elevated rail",
+    "page": 38
+   },
+   {
+    "line": "04 .Long-distance train or commuter rail",
+    "page": 38
+   },
+   {
+    "line": "05 .Light rail, streetcar, or trolley",
+    "page": 38
+   },
+   {
+    "line": "06 .Ferryboat",
+    "page": 38
+   },
+   {
+    "line": "07 .Taxi or ride-hailing services",
+    "page": 39
+   },
+   {
+    "line": "08 .Motorcycle",
+    "page": 39
+   },
+   {
+    "line": "09 .Bicycle",
+    "page": 39
+   },
+   {
+    "line": "10 .Walked",
+    "page": 39
+   },
+   {
+    "line": "11 .Worked from home",
+    "page": 39
+   },
+   {
+    "line": "12 .Other method",
+    "page": 39
+   },
+   {
+    "line": "HISP Character 2",
+    "page": 63
+   },
+   {
+    "line": "02 .Mexican",
+    "page": 63
+   },
+   {
+    "line": "POBP Character 3",
+    "page": 99
+   },
+   {
+    "line": "303 .Mexico",
+    "page": 102
+   }
+  ],
+  "group": {
+   "citation": "infra/immigration-fiscal/receipt_side_long_run_2026_09_28/housing.py lines 4 and 140",
+   "definition": "HISP == 02 (Mexican) or POBP == 303 (born in Mexico)",
+   "universe": "all persons including group quarters, ACS 2024 1-year person PUMS, weight PWGTP"
+  },
+  "limits": [
+   "Commuters are not riders: ACS records the usual mode of workers 16+ at work in the reference week; riders also include children, students, non-work trips and part-week riders. The NHTS adjustments address this, but disagree in sign (nhts_2017 within-survey vs cross-survey; nhts_2022 is thin)",
+   "New York: its residents are 37.9% of U.S. transit commuters while its systems carry 22.0% of the 2024 S&L transit deficit (Census D_s); the group is 4.9% of New York's transit commuters against 11.6% of U.S. persons, so the commuter-weighted national RU leans on New York more than the deficit does (see state_weighted)",
+   "State weighting assigns D_s to the operating government's state and g_s to riders' state of residence, and misses within-state differences (for example Los Angeles against the Bay Area)",
+   "The group proxy adds Mexican-born persons of other or no Hispanic origin to HISP 02 (+1.3% persons)"
+  ],
+  "ru_candidates": {
+   "all_trip_nhts2017_cross_survey": {
+    "ci95": [
+     0.605344849088,
+     0.77889476617
+    ],
+    "note": "central x NHTS 2017 Hispanic all-trip RU / ACS 2017 Hispanic commute RU",
+    "path": "nhts_2017.group_ru_all_trip_adjusted_cross_survey",
+    "value": 0.686658528442
+   },
+   "all_trip_nhts2017_within": {
+    "ci95": [
+     0.749808712496,
+     0.915867270509
+    ],
+    "note": "central x NHTS 2017 Hispanic all-trip RU / HBW RU",
+    "path": "nhts_2017.group_ru_all_trip_adjusted",
+    "value": 0.828688879446
+   },
+   "all_trip_nhts2022_within": {
+    "ci95": [
+     0.268702400115,
+     0.60286289398
+    ],
+    "note": "thin: 22 Hispanic HBW transit trips in 12 households",
+    "path": "nhts_2022.group_ru_all_trip_adjusted",
+    "value": 0.402480690906
+   },
+   "central_commuters_national": {
+    "note": "ACS 2024 PUMS transit commuters per person, group vs all",
+    "path": "acs.national.ru",
+    "se": 0.0130520330086,
+    "value": 0.746518210307
+   },
+   "excluding_new_york": {
+    "note": "sensitivity only",
+    "path": "acs.variants.excluding_new_york.ru",
+    "se": 0.0181010974898,
+    "value": 0.899650753854
+   },
+   "state_deficit_weighted": {
+    "note": "g_s weighted by 2024 Census state transit deficits instead of transit commuters",
+    "path": "state_weighted.ru_state_weighted",
+    "se": 0.0173338654105,
+    "value": 1.01884811391
+   },
+   "without_04_commuter_rail": {
+    "note": "drops JWTRNS 04",
+    "path": "acs.variants.without_04_commuter_rail.ru",
+    "se": 0.0136430095509,
+    "value": 0.784987907235
+   }
+  },
+  "script": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/transit_key.py",
+  "se_formula": "ACS: sqrt(4/80 * sum_r (x_r - x)^2), PWGTP1-80; NHTS 2017: sqrt(6/7 * sum_i (x_i - x)^2), 98 replicates; NHTS 2022: stratified household bootstrap",
+  "sources": [
+   {
+    "note": "ACS 2024 1-year person PUMS (psam_pusa.csv, psam_pusb.csv); size equals census.gov's 602,847,146 bytes",
+    "path": "sources/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip",
+    "sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
+    "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/csv_pus.zip"
+   },
+   {
+    "note": "2024 ACS PUMS data dictionary: JWTRNS pp.38-39, HISP p.63, POBP pp.99-102",
+    "path": "sources/immigration-fiscal/data/external/acs_pums_2024_1yr/PUMS_Data_Dictionary_2024.pdf",
+    "sha256": "929c2752995b0af1c16d5c64de8cdc43b4aa7d388ee2d45b4b4df90fecce1dff",
+    "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2024.pdf"
+   },
+   {
+    "note": "NIPA Table 3.8 (T30800-A) line 14, public transit current surplus (L31224), data published 2025-09-26",
+    "path": "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx",
+    "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+    "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx"
+   },
+   {
+    "note": "ACS 2017 1-year B01003, B03003, B08301, B08105I: published Hispanic commute RU, United States",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_acs1_2017_hispanic_commute_us.json",
+    "sha256": "4c5d84c7cb0bd63feb3caf550bd936c4b6bfd7308b20060e3c3a3d8150feeed6",
+    "url": "https://api.census.gov/data/2017/acs/acs1?get=NAME,B01003_001E,B03003_001E,B03003_003E,B08301_001E,B08301_010E,B08105I_001E,B08105I_004E&for=us:1"
+   },
+   {
+    "note": "ACS 2022 1-year B01003, B03003, B08301, B08105I: published Hispanic commute RU, United States",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_acs1_2022_hispanic_commute_us.json",
+    "sha256": "7abc1c17847ac73ff3f7c863b24177f1403fe5ecba90c3e6c4a2cec76dff249d",
+    "url": "https://api.census.gov/data/2022/acs/acs1?get=NAME,B01003_001E,B03003_001E,B03003_003E,B08301_001E,B08301_010E,B08105I_001E,B08105I_004E&for=us:1"
+   },
+   {
+    "note": "ACS 2024 1-year B01003, B08301, B08105I, United States",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_acs1_2024_detail_us.json",
+    "sha256": "9ae0818385c996e290d98db1ae5e4408884242b2c2f60d575b11dba6eb62936d",
+    "url": "https://api.census.gov/data/2024/acs/acs1?get=NAME,B01003_001E,B08301_001E,B08301_001M,B08301_010E,B08301_010M,B08301_011E,B08301_012E,B08301_013E,B08301_014E,B08301_015E,B08301_016E,B08301_021E,B08105I_001E,B08105I_004E,B08105I_004M&for=us:1"
+   },
+   {
+    "note": "ACS 2024 1-year B01003, B03003, B08301, B08105I: published Hispanic commute RU, United States",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_acs1_2024_hispanic_commute_us.json",
+    "sha256": "32274b6c21aeb99329bfe919b39dc03d9d1a822885c4d811419858b08f25260c",
+    "url": "https://api.census.gov/data/2024/acs/acs1?get=NAME,B01003_001E,B03003_001E,B03003_003E,B08301_001E,B08301_010E,B08105I_001E,B08105I_004E&for=us:1"
+   },
+   {
+    "note": "ACS 2024 1-year S0201, POPGROUP 001, United States",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_acs1_2024_s0201_popgroup_001.json",
+    "sha256": "7f9ff6e1f43e6ecfe532225860b5c0447a9170c0b295d4d36b82ca0e7050f45c",
+    "url": "https://api.census.gov/data/2024/acs/acs1/spp?get=NAME,POPGROUP,POPGROUP_LABEL,S0201_001E,S0201_168E,S0201_171E,S0201_174E&for=us:1&POPGROUP=001"
+   },
+   {
+    "note": "ACS 2024 1-year S0201, POPGROUP 400, United States",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_acs1_2024_s0201_popgroup_400.json",
+    "sha256": "f1feb0e5414db47beaadd75702a0f0e15a4d39c762638c05db81704f1ea18869",
+    "url": "https://api.census.gov/data/2024/acs/acs1/spp?get=NAME,POPGROUP,POPGROUP_LABEL,S0201_001E,S0201_168E,S0201_171E,S0201_174E&for=us:1&POPGROUP=400"
+   },
+   {
+    "note": "ACS 2024 1-year S0201, POPGROUP 4015, United States",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_acs1_2024_s0201_popgroup_4015.json",
+    "sha256": "deab1b1add0921bffa2d831669fd5c3c1e61bbbecde22eb107be08d4b2a116da",
+    "url": "https://api.census.gov/data/2024/acs/acs1/spp?get=NAME,POPGROUP,POPGROUP_LABEL,S0201_001E,S0201_168E,S0201_171E,S0201_174E&for=us:1&POPGROUP=4015"
+   },
+   {
+    "note": "Annual Survey of State and Local Government Finances 2024, LF0073, state and local, states",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_govslocalfin_2024_LF0073_states.json",
+    "sha256": "39e38c69279ad4a23c1f1af11a7d246ffa5b6ac8aa4c14b897dbe7de5f3a2bcc",
+    "url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC,AGG_DESC_LABEL,GOVTYPE,GOVTYPE_LABEL,NAME,YEAR,AMOUNT&for=state:*&time=2024&AGG_DESC=LF0073&GOVTYPE=001"
+   },
+   {
+    "note": "Annual Survey of State and Local Government Finances 2024, LF0073, state and local, us",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_govslocalfin_2024_LF0073_us.json",
+    "sha256": "dd123c89fe400bf2074f4fb27b5bac2c98bb4fe897d38a268fd243aab0dbe02a",
+    "url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC,AGG_DESC_LABEL,GOVTYPE,GOVTYPE_LABEL,NAME,YEAR,AMOUNT&for=us:1&time=2024&AGG_DESC=LF0073&GOVTYPE=001"
+   },
+   {
+    "note": "Annual Survey of State and Local Government Finances 2024, LF0216, state and local, states",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_govslocalfin_2024_LF0216_states.json",
+    "sha256": "d6cba6ec52504a2e6ba3e3615662b9a56e47327efe8476bd4ddbb9bd9f26946f",
+    "url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC,AGG_DESC_LABEL,GOVTYPE,GOVTYPE_LABEL,NAME,YEAR,AMOUNT&for=state:*&time=2024&AGG_DESC=LF0216&GOVTYPE=001"
+   },
+   {
+    "note": "Annual Survey of State and Local Government Finances 2024, LF0216, state and local, us",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_govslocalfin_2024_LF0216_us.json",
+    "sha256": "d177d73f786872bbb5a1e838c9c770c5c7eddb0f04d0fc2f73b137079ef1ee8b",
+    "url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC,AGG_DESC_LABEL,GOVTYPE,GOVTYPE_LABEL,NAME,YEAR,AMOUNT&for=us:1&time=2024&AGG_DESC=LF0216&GOVTYPE=001"
+   },
+   {
+    "note": "Annual Survey of State and Local Government Finances 2024, LF0217, state and local, states",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_govslocalfin_2024_LF0217_states.json",
+    "sha256": "cf33cbfdcf2b36e31a5fe90309e85290af1c8d8cf76a16acaeae7b16e8f4e201",
+    "url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC,AGG_DESC_LABEL,GOVTYPE,GOVTYPE_LABEL,NAME,YEAR,AMOUNT&for=state:*&time=2024&AGG_DESC=LF0217&GOVTYPE=001"
+   },
+   {
+    "note": "Annual Survey of State and Local Government Finances 2024, LF0217, state and local, us",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/census_govslocalfin_2024_LF0217_us.json",
+    "sha256": "ca8eb5ea04d09fbadc083b102c94aa7d33a31fb0c49c4ed5e812fdd94c65604d",
+    "url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC,AGG_DESC_LABEL,GOVTYPE,GOVTYPE_LABEL,NAME,YEAR,AMOUNT&for=us:1&time=2024&AGG_DESC=LF0217&GOVTYPE=001"
+   },
+   {
+    "note": "2017 NHTS codebook v1.2 with frequencies and weighted sums",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/nhts2017_codebook_v1.2.xlsx",
+    "sha256": "441cc155d34bec26a7a2916c311fbd7efdadffab9e4335090d81b14f7c5fc672",
+    "url": "https://nhts.ornl.gov/media/2017/doc/codebook_v1.2.xlsx"
+   },
+   {
+    "note": "2017 NHTS public use v1.2, csv",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/nhts2017_csv.zip",
+    "sha256": "4f1917d9470fbf351c325ee9fe7d4cdbf71715775d0e0c974ca57861b4d8704d",
+    "url": "https://nhts.ornl.gov/media/2016/download/csv.zip"
+   },
+   {
+    "note": "2017 NHTS 98 jackknife replicate weights (person, household)",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/nhts2017_replicates_csv.zip",
+    "sha256": "730c3634c0adc6945ab60436b19924e221df516970560e46585fc5613148cc46",
+    "url": "https://nhts.ornl.gov/media/2016/download/ReplicatesCSV.zip"
+   },
+   {
+    "note": "2017 NHTS User's Guide: Table 7-1 weight sums; 7.12 replicate SE formula and worked example",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/nhts2017_users_guide.pdf",
+    "sha256": "b0e7253570326efa92d52e0ec5423d5ea52441f05c88ea1225224c86f22d9f68",
+    "url": "https://nhts.ornl.gov/media/2017/doc/NHTS2017_UsersGuide_04232019_1.pdf"
+   },
+   {
+    "note": "2022 NHTS codebook with frequencies and weighted sums",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/nhts2022_codebook.xlsx",
+    "sha256": "7e10ff62be0a72b03528f2469e8da850b335b7d761cf6efdfe9eba9b8a513d96",
+    "url": "https://nhts.ornl.gov/media/2022/doc/codebook.xlsx"
+   },
+   {
+    "note": "2022 NextGen NHTS public use V2.1, csv",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/nhts2022_csv.zip",
+    "sha256": "64530c396d5f164d2259a22f7042f27bee5147babcd367568ddbfafe6c8bf34c",
+    "url": "https://nhts.ornl.gov/media/2022/download/csv.zip"
+   },
+   {
+    "note": "2022 NHTS derived variables: PUBTRANS, TRIPMODE, TRIPPURP definitions (pp.16-18)",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/nhts2022_derived_variables.pdf",
+    "sha256": "2906973e00ad4174187e41dfc14ec628fbec9dd5fe3ad33592199367e3c78a72",
+    "url": "https://nhts.ornl.gov/media/2022/doc/2022%20NextGen%20NHTS%20Derived%20Variables-PubUseV2.1.pdf"
+   },
+   {
+    "note": "2022 NHTS Data User Guide: no replicate weights; strata STRATUMID, PSU HOUSEID (p.28)",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/nhts2022_users_guide.pdf",
+    "sha256": "bc0e7dc4546db3ff6a465fca928c29f4ecb7fbfe23d44ee7e57add4602d3ba0c",
+    "url": "https://nhts.ornl.gov/media/2022/doc/2022%20NextGen%20NHTS%20User's%20Guide%20V201_PubUse.pdf"
+   },
+   {
+    "note": "2022 NHTS Weighting Report: Table 15 weight sums (p.32); variance estimation (p.33)",
+    "path": "infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/_cache/transit/nhts2022_weighting_memo.pdf",
+    "sha256": "b78a7cf7fdafbe346d629317cd33519f35e36abd2593d94384adaf132a069223",
+    "url": "https://nhts.ornl.gov/media/2022/doc/2022%20NextGen%20NHTS%20Weighting%20Memo.pdf"
+   }
+  ],
+  "transit_codes": {
+   "02": "Bus",
+   "03": "Subway or elevated rail",
+   "04": "Long-distance train or commuter rail",
+   "05": "Light rail, streetcar, or trolley",
+   "06": "Ferryboat"
+  },
+  "use": "riders' key = (the case's population key) x RU; central RU = acs.national.ru.value"
+ },
+ "nhts_2017": {
+  "acs_hispanic_commute_ru_2024": {
+   "se": 0.0128336849214,
+   "value": 1.28690430564
+  },
+  "acs_hispanic_commute_ru_same_year_published": {
+   "value": 1.26166303934,
+   "year": 2017
+  },
+  "adjustment_all_trips_over_commute": {
+   "se": 0.0532371674801,
+   "se_log": 0.0479456406358,
+   "value": 1.11007188841
+  },
+  "codebook_lines": [
+   "R_HISP 01=Yes, Hispanic or Latino",
+   "R_HISP 02=No, Not Hispanic or Latino",
+   "PUBTRANS 01=Yes",
+   "TRPTRANS 11=Public or commuter bus",
+   "TRPTRANS 15=Amtrak / Commuter rail",
+   "TRPTRANS 16=Subway / elevated / light rail / street car",
+   "TRIPPURP HBW=Home-based trip (work)"
+  ],
+  "cross_survey_adjustment_all_trips_over_same_year_acs_commute": {
+   "se_log": 0.0618830707623,
+   "value": 0.919814840363
+  },
+  "definitions": {
+   "commute_trip": "TRIPPURP == HBW (home-based work)",
+   "hispanic": "R_HISP == 01 (Yes, Hispanic or Latino); -7/-8 counted in all persons only",
+   "transit_trip": "PUBTRANS == 01, i.e. TRPTRANS 11 public or commuter bus, 15 Amtrak/commuter rail, 16 subway/elevated/light rail/street car",
+   "trip_replicates": "WTTRDFIN = 365 x WTPERFIN on every trip, so trip replicate r = 365 x WTPERFIN_r"
+  },
+  "documented_example_check": {
+   "published": [
+    9444506727,
+    212640677
+   ],
+   "se": 212640677.24,
+   "transit_trips": 9444506727.21
+  },
+  "group_ru_all_trip_adjusted": {
+   "ci95": [
+    0.749808712496,
+    0.915867270509
+   ],
+   "formula": "ACS 2024 group RU x NHTS Hispanic (all-trip RU / HBW commute RU); independent errors on the log scale",
+   "se_log": 0.0510340124976,
+   "value": 0.828688879446
+  },
+  "group_ru_all_trip_adjusted_cross_survey": {
+   "ci95": [
+    0.605344849088,
+    0.77889476617
+   ],
+   "formula": "ACS 2024 group RU x (NHTS Hispanic all-trip RU / same-year published ACS Hispanic commute RU); log-scale errors of the ACS group RU and the NHTS RU (the published ACS RU's own error, about 1%, is left out)",
+   "se_log": 0.0643055240441,
+   "value": 0.686658528442
+  },
+  "nhts_commute_ru_over_acs_hispanic_commute_ru": 0.812356077957,
+  "nhts_commute_ru_over_same_year_acs": 0.82860835408,
+  "ru_all_trips_hispanic": {
+   "se": 0.071702821507,
+   "value": 1.16049638713
+  },
+  "ru_commute_hbw_hispanic": {
+   "se": 0.0685004818224,
+   "value": 1.04542453443
+  },
+  "sample": {
+   "hbw_transit_trips": 3633,
+   "hbw_transit_trips_hispanic": 414,
+   "households_with_hispanic_transit_trips": 638,
+   "persons": 264234,
+   "persons_hispanic": 24058,
+   "transit_trips": 11090,
+   "transit_trips_hispanic": 1511,
+   "trips": 923572
+  },
+  "source": "2017 NHTS public use v1.2 (perpub.csv, trippub.csv) with the 98 person replicate weights (perwgt.csv); persons 5 and older",
+  "transit_trips_per_person_year": {
+   "all": 31.3147637692,
+   "hispanic": 36.3406702178
+  },
+  "variance": {
+   "method": "98 jackknife replicates, SE = sqrt((6/7) sum (REP_i - x)^2) (User's Guide 7.12); reproduces the guide's transit-trip SE"
+  },
+  "weighted": {
+   "c_all": 3184894523.65,
+   "c_h": 572939145.25,
+   "p_all": 301599168.904,
+   "p_h": 51898032.5512,
+   "t_all": 9444506727.21,
+   "t_h": 1886009285.9
+  }
+ },
+ "nhts_2022": {
+  "acs_hispanic_commute_ru_2024": {
+   "se": 0.0128336849214,
+   "value": 1.28690430564
+  },
+  "acs_hispanic_commute_ru_same_year_published": {
+   "value": 1.40917290435,
+   "year": 2022
+  },
+  "adjustment_all_trips_over_commute": {
+   "ci95": [
+    0.384317665954,
+    0.881078114999
+   ],
+   "invalid_draws": 0,
+   "se": 0.130565047181,
+   "se_log": 0.205401446544,
+   "value": 0.539143835139
+  },
+  "codebook_lines": [
+   "R_HISP 01=Hispanic",
+   "R_HISP 02=Not Hispanic",
+   "TRPTRANS 08=Public or commuter bus",
+   "TRPTRANS 10=Street car or trolley car",
+   "TRPTRANS 11=Subway or elevated rail",
+   "TRPTRANS 12=Commuter rail",
+   "PUBTRANS 01=Used public transit",
+   "TRIPPURP 01=Home-based work (HBW)"
+  ],
+  "cross_survey_adjustment_all_trips_over_same_year_acs_commute": {
+   "se_log": 0.265499443862,
+   "value": 0.849509143528
+  },
+  "definitions": {
+   "commute_trip": "TRIPPURP == 01 home-based work: WHYFROM in (01,02) and WHYTO in (03,04,05), or reverse",
+   "hispanic": "person R_HISP == 01 (Hispanic)",
+   "rate": "annual transit trips (WTTRDFIN) per person (WTPERFIN)",
+   "transit_trip": "PUBTRANS == 01, i.e. TRPTRANS in 08 public or commuter bus, 10 street car or trolley, 11 subway or elevated rail, 12 commuter rail (Amtrak 13, paratransit 17 excluded)"
+  },
+  "group_ru_all_trip_adjusted": {
+   "ci95": [
+    0.268702400115,
+    0.60286289398
+   ],
+   "formula": "ACS 2024 group RU x NHTS Hispanic (all-trip RU / HBW commute RU); independent errors on the log scale",
+   "se_log": 0.206144221889,
+   "value": 0.402480690906
+  },
+  "group_ru_all_trip_adjusted_cross_survey": {
+   "ci95": [
+    0.376462112857,
+    1.06830596282
+   ],
+   "formula": "ACS 2024 group RU x (NHTS Hispanic all-trip RU / same-year published ACS Hispanic commute RU); log-scale errors of the ACS group RU and the NHTS RU (the published ACS RU's own error, about 1%, is left out)",
+   "se_log": 0.266074502097,
+   "value": 0.634174045466
+  },
+  "hbw_transit_trips_per_person_year": {
+   "all": 3.09658397302,
+   "hispanic": 6.87559931578
+  },
+  "nhts_commute_ru_over_acs_hispanic_commute_ru": 1.72536682834,
+  "nhts_commute_ru_over_same_year_acs": 1.57566327974,
+  "person_total_check": {
+   "codebook": 305560925.0,
+   "published": 305560925,
+   "sum_wtperfin": 305560925.0
+  },
+  "ru_all_trips_hispanic": {
+   "ci95": [
+    0.655046580418,
+    1.87444698958
+   ],
+   "invalid_draws": 0,
+   "se": 0.306768351038,
+   "value": 1.19710526706
+  },
+  "ru_commute_hbw_hispanic": {
+   "ci95": [
+    1.05020419412,
+    3.36278861072
+   ],
+   "invalid_draws": 0,
+   "se": 0.605795579987,
+   "value": 2.2203820002
+  },
+  "sample": {
+   "hbw_transit_trips": 84,
+   "hbw_transit_trips_hispanic": 22,
+   "households": 7893,
+   "households_with_hispanic_hbw_transit_trips": 12,
+   "households_with_hispanic_transit_trips": 26,
+   "persons": 16997,
+   "persons_hispanic": 1722,
+   "transit_trips": 341,
+   "transit_trips_hispanic": 59,
+   "trips": 31074
+  },
+  "source": "2022 NextGen NHTS public use V2.1 (perv2pub.csv, tripv2pub.csv); persons 5 and older",
+  "transit_trips_per_person_year": {
+   "all": 12.1112164042,
+   "hispanic": 14.4984009479
+  },
+  "variance": {
+   "ci": "percentile 2.5-97.5",
+   "draws": 1000,
+   "method": "stratified household-cluster bootstrap (Rao-Wu, n_h - 1 draws per stratum, multiplier n_h/(n_h - 1)); strata STRATUMID, clusters HOUSEID, as the User's Guide specifies for Taylor series; the NextGen NHTS publishes no replicate weights",
+   "seed": 20260928
+  },
+  "weighted": {
+   "hbw_transit_trips_all": 946195063.135,
+   "hbw_transit_trips_hispanic": 389955743.164,
+   "persons_all": 305560925.0,
+   "persons_hispanic": 56715891.2633,
+   "transit_trips_all": 3700714487.33,
+   "transit_trips_hispanic": 822289731.655
+  }
+ },
+ "published_control": {
+  "b01003_001e": 340110990,
+  "b08105i": {
+   "B08105I_001E": 32413778,
+   "B08105I_004E": 1569201,
+   "B08105I_004M": 26533
+  },
+  "b08301": {
+   "B08301_001E": 165360450,
+   "B08301_001M": 170737,
+   "B08301_010E": 6097425,
+   "B08301_010M": 45794,
+   "B08301_011E": 2771518,
+   "B08301_012E": 2411200,
+   "B08301_013E": 677146,
+   "B08301_014E": 167493,
+   "B08301_015E": 70068,
+   "B08301_016E": 693439,
+   "B08301_021E": 22026371
+  },
+  "comparisons": [
+   {
+    "difference": 0.0311254464823,
+    "name": "group_transit_share_vs_s0201_mexican_4015",
+    "pass": true,
+    "published": 2.8,
+    "pums": 2.83112544648,
+    "tolerance": 0.3,
+    "unit": "pp"
+   },
+   {
+    "difference": -0.017288908175,
+    "name": "total_transit_share_vs_s0201_001",
+    "pass": true,
+    "published": 3.7,
+    "pums": 3.68271109182,
+    "tolerance": 0.15,
+    "unit": "pp"
+   },
+   {
+    "difference": -0.00464280688536,
+    "name": "total_transit_share_vs_b08301",
+    "pass": true,
+    "published": 3.68735389871,
+    "pums": 3.68271109182,
+    "tolerance": 0.15,
+    "unit": "pp"
+   },
+   {
+    "difference": -0.0054878513749,
+    "name": "hispanic_transit_share_vs_b08105i",
+    "pass": true,
+    "published": 4.84115427705,
+    "pums": 4.83566642567,
+    "tolerance": 0.2,
+    "unit": "pp"
+   },
+   {
+    "difference": 0.0356664256736,
+    "name": "hispanic_transit_share_vs_s0201_400",
+    "pass": true,
+    "published": 4.8,
+    "pums": 4.83566642567,
+    "tolerance": 0.2,
+    "unit": "pp"
+   },
+   {
+    "difference": 0.00378879153712,
+    "name": "mexican_hisp02_transit_share_vs_s0201_4015",
+    "pass": null,
+    "published": 2.8,
+    "pums": 2.80378879154,
+    "tolerance": null,
+    "unit": "pp"
+   },
+   {
+    "difference": -0.000717680004264,
+    "name": "transit_commuters_vs_b08301_010",
+    "pass": true,
+    "published": 6097425,
+    "pums": 6093049,
+    "tolerance": 0.03,
+    "unit": "rel"
+   },
+   {
+    "difference": 0.0,
+    "name": "persons_vs_b01003",
+    "pass": true,
+    "published": 340110990,
+    "pums": 340110990,
+    "tolerance": 0.005,
+    "unit": "rel"
+   },
+   {
+    "difference": 0.000326441176471,
+    "name": "persons_vs_340m",
+    "pass": true,
+    "published": 340000000.0,
+    "pums": 340110990,
+    "tolerance": 0.02,
+    "unit": "rel"
+   },
+   {
+    "difference": 0.0112711040338,
+    "name": "group_persons_vs_s0201_mexican_population",
+    "pass": null,
+    "published": 38990058,
+    "pums": 39429519,
+    "tolerance": null,
+    "unit": "rel"
+   },
+   {
+    "difference": -0.00148819988932,
+    "name": "mexican_hisp02_persons_vs_s0201_mexican_population",
+    "pass": null,
+    "published": 38990058,
+    "pums": 38932033,
+    "tolerance": null,
+    "unit": "rel"
+   },
+   {
+    "difference": 0.000542118747258,
+    "name": "workers_vs_b08301_001",
+    "pass": null,
+    "published": 165360450,
+    "pums": 165450095,
+    "tolerance": null,
+    "unit": "rel"
+   },
+   {
+    "difference": -0.00110156239288,
+    "name": "jwtrns_02_commuters_vs_b08301_011",
+    "pass": null,
+    "published": 2771518,
+    "pums": 2768465,
+    "tolerance": null,
+    "unit": "rel"
+   },
+   {
+    "difference": -0.00146648971466,
+    "name": "jwtrns_03_commuters_vs_b08301_012",
+    "pass": null,
+    "published": 2411200,
+    "pums": 2407664,
+    "tolerance": null,
+    "unit": "rel"
+   },
+   {
+    "difference": 0.0131699810676,
+    "name": "jwtrns_04_commuters_vs_b08301_013",
+    "pass": null,
+    "published": 677146,
+    "pums": 686064,
+    "tolerance": null,
+    "unit": "rel"
+   },
+   {
+    "difference": -0.0304669448872,
+    "name": "jwtrns_05_commuters_vs_b08301_014",
+    "pass": null,
+    "published": 167493,
+    "pums": 162390,
+    "tolerance": null,
+    "unit": "rel"
+   },
+   {
+    "difference": -0.0228635040247,
+    "name": "jwtrns_06_commuters_vs_b08301_015",
+    "pass": null,
+    "published": 70068,
+    "pums": 68466,
+    "tolerance": null,
+    "unit": "rel"
+   },
+   {
+    "difference": -2.54615082942e-05,
+    "name": "hispanic_commute_ru_vs_published_tables",
+    "pass": true,
+    "published": 1.286937073,
+    "pums": 1.28690430564,
+    "tolerance": 0.03,
+    "unit": "rel"
+   }
+  ],
+  "parent_chat_estimate": {
+   "api_mexican_pct": 2.8,
+   "api_total_pct": 3.7,
+   "matches_api": true,
+   "mexican_pct": 2.8,
+   "total_pct": 3.7
+  },
+  "published_hispanic_commute_ru": {
+   "by_year": {
+    "2017": {
+     "B01003_001E": 325719178,
+     "B03003_001E": 325719178,
+     "B03003_003E": 58846134,
+     "B08105I_001E": 26159685,
+     "B08105I_004E": 1740835,
+     "B08301_001E": 152802672,
+     "B08301_010E": 7637296,
+     "ru": 1.26166303934
+    },
+    "2022": {
+     "B01003_001E": 333287562,
+     "B03003_001E": 333287562,
+     "B03003_003E": 63553639,
+     "B08105I_001E": 29737176,
+     "B08105I_004E": 1347085,
+     "B08301_001E": 160577736,
+     "B08301_010E": 5013135,
+     "ru": 1.40917290435
+    },
+    "2024": {
+     "B01003_001E": 340110990,
+     "B03003_001E": 340110990,
+     "B03003_003E": 68013553,
+     "B08105I_001E": 32413778,
+     "B08105I_004E": 1569201,
+     "B08301_001E": 165360450,
+     "B08301_010E": 6097425,
+     "ru": 1.286937073
+    }
+   },
+   "formula": "(B08105I_004E / B03003_003E) / (B08301_010E / B01003_001E)",
+   "note": "ACS 1-year published tables; the 2024 value checks the PUMS Hispanic RU, 2017 and 2022 pair with the NHTS waves"
+  },
+  "published_ru_mexican_from_s0201": {
+   "formula": "(pct_4015 x workers_4015 / population_4015) / (pct_001 x workers_001 / population_001)",
+   "note": "S0201 percentages are rounded to 0.1, so this carries about +-2% rounding error",
+   "value": 0.733621083603
+  },
+  "s0201": {
+   "001": {
+    "label": "Total population",
+    "population": 340110990,
+    "public_transportation_pct": 3.7,
+    "worked_from_home_pct": 13.3,
+    "workers_16_plus": 165360450
+   },
+   "400": {
+    "label": "Hispanic or Latino (of any race)",
+    "population": 68013553,
+    "public_transportation_pct": 4.8,
+    "worked_from_home_pct": 8.8,
+    "workers_16_plus": 32413778
+   },
+   "4015": {
+    "label": "Mexican",
+    "population": 38990058,
+    "public_transportation_pct": 2.8,
+    "worked_from_home_pct": 7.6,
+    "workers_16_plus": 18377243
+   }
+  },
+  "s0201_popgroup_note": "POPGROUP 401 (Mexican) returns HTTP 204 for 2024; 4015 is the 2024 code labelled Mexican",
+  "tolerances_fixed_before_comparison": {
+   "group_share_pp": 0.3,
+   "hispanic_ru_rel": 0.03,
+   "hispanic_share_pp": 0.2,
+   "persons_vs_340m_rel": 0.02,
+   "persons_vs_b01003_rel": 0.005,
+   "total_share_pp": 0.15,
+   "transit_commuters_rel": 0.03
+  }
+ },
+ "state_weighted": {
+  "capital_outlay_weighted_group_share": {
+   "se": 0.00261774138704,
+   "value": 0.135491476533
+  },
+  "commuter_weighted_identity_check": {
+   "note": "weights T_s reproduce acs.national.ru",
+   "ru": 0.746518210307
+  },
+  "deficit_source": "Census Bureau, Annual Survey of State and Local Government Finances 2024 (API timeseries/govslocalfin, GOVTYPE 001 state and local): D_s = LF0216 transit current operations - LF0073 transit utility revenue; K_s = LF0217 transit capital outlay",
+  "deficit_weighted_group_share": {
+   "se": 0.00202274333563,
+   "value": 0.118116415661
+  },
+  "deficit_year": "2024 (state and local fiscal years ending in 2024, mostly June 30)",
+  "group_population_share": {
+   "se": 0.00022149665136,
+   "value": 0.11593132877
+  },
+  "limits": "D_s is booked to the operating government's state (WMATA to DC, the MTA to NY) while g_s is by state of residence; cross-state commuters (NJ, CT, MD, VA) ride in another state's system",
+  "method": "RU_state_weighted = (sum_s D_s g_s / sum_s D_s) / (group persons / all persons); g_s by state of residence; D_s held fixed across the 80 replicates",
+  "new_york": {
+   "D_share": 0.21968967632,
+   "capital_outlay_share": 0.176032510388,
+   "g_s": 0.0494445975989,
+   "g_s_se": 0.00247535228515,
+   "group_population_share_in_state": 0.0279262130316,
+   "transit_commuter_share": 0.379230004551
+  },
+  "nipa_3_8_line_14_2024_bn": -66.69,
+  "nipa_note": "NIPA 3.8 line 14 is calendar 2024 current surplus of S&L public transit (BEA concept); Census D_s is fiscal-year opex less transit utility revenue, so no hard tolerance",
+  "ratio_sum_D_to_nipa_deficit": 0.832640500825,
+  "ru_capital_outlay_weighted": {
+   "se": 0.022420171702,
+   "value": 1.16872184569
+  },
+  "ru_state_weighted": {
+   "se": 0.0173338654105,
+   "value": 1.01884811391
+  },
+  "sum_D_bn": 55.528795,
+  "sum_capital_outlay_bn": 29.423457,
+  "sum_opex_bn": 69.027093,
+  "sum_revenue_bn": 13.498298,
+  "top10_by_deficit": [
+   {
+    "D_bn": 12.199103,
+    "D_share": 0.21968967632,
+    "g_s": 0.0494445975989,
+    "g_s_se": 0.00247535228515,
+    "group_population_share_in_state": 0.0279262130316,
+    "state": "New York",
+    "state_fips": "36",
+    "transit_commuter_share": 0.379230004551
+   },
+   {
+    "D_bn": 11.481756,
+    "D_share": 0.206771207623,
+    "g_s": 0.268353957885,
+    "g_s_se": 0.00774938535564,
+    "group_population_share_in_state": 0.329128311208,
+    "state": "California",
+    "state_fips": "06",
+    "transit_commuter_share": 0.101127530732
+   },
+   {
+    "D_bn": 2.758609,
+    "D_share": 0.0496788918254,
+    "g_s": 0.152187479106,
+    "g_s_se": 0.00787922736721,
+    "group_population_share_in_state": 0.146917371129,
+    "state": "Illinois",
+    "state_fips": "17",
+    "transit_commuter_share": 0.0736396506905
+   },
+   {
+    "D_bn": 2.477722,
+    "D_share": 0.0446204892435,
+    "g_s": 0.0292556522074,
+    "g_s_se": 0.00701213796378,
+    "group_population_share_in_state": 0.0209925240299,
+    "state": "District of Columbia",
+    "state_fips": "11",
+    "transit_commuter_share": 0.0170372829761
+   },
+   {
+    "D_bn": 2.376707,
+    "D_share": 0.0428013429789,
+    "g_s": 0.0509788098451,
+    "g_s_se": 0.00731217707933,
+    "group_population_share_in_state": 0.0349322475426,
+    "state": "Florida",
+    "state_fips": "12",
+    "transit_commuter_share": 0.0235918010835
+   },
+   {
+    "D_bn": 2.360872,
+    "D_share": 0.0425161756166,
+    "g_s": 0.293983806498,
+    "g_s_se": 0.0181870800958,
+    "group_population_share_in_state": 0.321220040465,
+    "state": "Texas",
+    "state_fips": "48",
+    "transit_commuter_share": 0.0240199939308
+   },
+   {
+    "D_bn": 2.271737,
+    "D_share": 0.0409109724063,
+    "g_s": 0.0352900129713,
+    "g_s_se": 0.00494513401612,
+    "group_population_share_in_state": 0.0295778767607,
+    "state": "New Jersey",
+    "state_fips": "34",
+    "transit_commuter_share": 0.076675240918
+   },
+   {
+    "D_bn": 2.08687,
+    "D_share": 0.0375817627593,
+    "g_s": 0.0235930376595,
+    "g_s_se": 0.00498513755852,
+    "group_population_share_in_state": 0.0225700198939,
+    "state": "Maryland",
+    "state_fips": "24",
+    "transit_commuter_share": 0.0257037158244
+   },
+   {
+    "D_bn": 1.875581,
+    "D_share": 0.0337767279121,
+    "g_s": 0.0217445119953,
+    "g_s_se": 0.00544444137293,
+    "group_population_share_in_state": 0.0152019103353,
+    "state": "Pennsylvania",
+    "state_fips": "42",
+    "transit_commuter_share": 0.0450825194414
+   },
+   {
+    "D_bn": 1.683553,
+    "D_share": 0.0303185581463,
+    "g_s": 0.0935496500759,
+    "g_s_se": 0.0120068436611,
+    "group_population_share_in_state": 0.112605897328,
+    "state": "Washington",
+    "state_fips": "53",
+    "transit_commuter_share": 0.0268279477155
+   }
+  ]
+ }
+}
