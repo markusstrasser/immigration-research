@@ -18,6 +18,29 @@
    "scale": 1.065610554293578
   }
  },
+ "formula_gap": {
+  "formula_over_ratio_by_age": {
+   "15-24": 0.8195774008136866,
+   "25-34": 0.8190502072244507,
+   "35-44": 0.8298074434203059,
+   "45-54": 0.8449757601724333,
+   "55-61": 0.8474223864831751
+  },
+  "model_over_note_by_family": {
+   "one_earner_couple": 0.749735,
+   "single_man": 0.785345,
+   "single_woman": 0.767525,
+   "two_earner_couple": 0.743305
+  },
+  "row_15_61": {
+   "common_to_both_routes_tn": 2.8510434393188717,
+   "formula_route_tn": 60.60787853010472,
+   "left_out_benefits_tn": 12.24707803057641,
+   "published_tn": 75.706,
+   "ratio_route_tn": 72.85495656068113
+  },
+  "row_62_plus": "the formula model is not used: both routes value CPS benefits as annuities"
+ },
  "frozen_prediction_sha256": "b8b5c3f5ae9315a0a9a48ada1732d917c971df45edf51d68111bbfed469ed7d9",
  "gating_rows": {
   "hi": "hi_15_64",
@@ -57,6 +80,17 @@
    "expenditures_tn": 26.078,
    "income_tn": 2.519
   }
+ },
+ "stock_check": {
+  "accrued_62_plus_tn": 25.842651670258622,
+  "implied_accrued_15_61_tn": 34.31605006855487,
+  "lane_ean_accrued_15_61_formula_route_tn": 22.105781405883018,
+  "lane_ean_accrued_15_61_tn": 26.326271040046823,
+  "lane_over_implied": 0.7671707841506679,
+  "maximum_transition_cost_tn": 54.1,
+  "reserves_tn": 2.721,
+  "tob_share_15_61": 0.05851353426879446,
+  "tob_share_62_plus": 0.05145556981243546
  },
  "tolerance": {
   "level": 0.15,

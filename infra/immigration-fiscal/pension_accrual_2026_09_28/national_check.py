@@ -41,7 +41,9 @@ on its 15-64 row. Probes of the 15-61 ratio route and of the group's central acc
 toward their cell's mean log level (the parent's convexity question), and one-earner couples priced as two-earner
 couples (no spousal benefit, a bound on auxiliaries). The level distribution of 55-61-year-old taxpayers is set
 beside Note 2025.3 Table 1. The Part A spouse check counts one-earner spouses with covered earnings of their own in
-2024 and values the sex mix of the own term.
+2024 and values the sex mix of the own term. Also: where the formula route's shortfall sits (age row, age band and,
+through the model-worker check, benefit type), and the benefits earned by 2024 against OCACT's maximum transition
+cost at 1 January 2025.
 
 Run from the repository root, after pension_accrual.py:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/pension_accrual_2026_09_28/national_check.py
@@ -386,6 +388,7 @@ def oasdi_working_age(p, grid, wgrid, paths, econ, u_long, theta: float = 1.0,
             row[f"ben_{route}"] = g.adj_w * earned
             row[f"tob_{route}"] = g.tob_w * earned
             row[f"ratio_{route}"] = earned / (past + fut).sum() if (past + fut).sum() > 0 else 0.0
+            row[f"past_ben_{route}"] = g.adj_w * float((zz * past).sum())   # EAN: benefits earned by 2024
         rows.append(row)
     t = pd.DataFrame(rows)
     info.update(window_factor_person_weighted=float(np.average(adj, weights=x.w)))
@@ -605,6 +608,48 @@ def level_check(p: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def formula_gap(cells: pd.DataFrame, pub: dict, scale: float) -> dict:
+    """Where the formula route's shortfall sits. By age row: the formula model enters only the 15-61 row, whose gap
+    to the published cost splits into the formula route's distance from the ratio route (the benefits the model
+    leaves out) and the ratio route's own gap. By age band within 15-61: the formula route's cost over the ratio
+    route's. By benefit type: the model-worker check (derived/model_check_mwr.csv, pension_accrual.py) by family;
+    Note 2025.7 gives single workers no children, so their shortfall is disability benefits and the
+    earnings-graded mortality and disability incidence, and couples add children's and young survivors' benefits
+    net of the family maximum."""
+    band = pd.cut(cells.age, [FIRST_AGE - 1, 24, 34, 44, 54, SPLIT["oasdi"] - 1],
+                  labels=["15-24", "25-34", "35-44", "45-54", "55-61"])
+    g = cells.groupby(band, observed=True)[["ben_ratio", "ben_formula"]].sum()
+    mwr = pd.read_csv(OUT / "model_check_mwr.csv")
+    ratio_tn, formula_tn = (float(cells[c].sum()) * scale for c in ("ben_ratio", "ben_formula"))
+    return dict(row_15_61=dict(published_tn=pub["oasdi_15_61"]["expenditures_tn"], ratio_route_tn=ratio_tn,
+                               formula_route_tn=formula_tn, left_out_benefits_tn=ratio_tn - formula_tn,
+                               common_to_both_routes_tn=pub["oasdi_15_61"]["expenditures_tn"] - ratio_tn),
+                row_62_plus="the formula model is not used: both routes value CPS benefits as annuities",
+                formula_over_ratio_by_age={str(b): float(r.ben_formula / r.ben_ratio) for b, r in g.iterrows()},
+                model_over_note_by_family=mwr.groupby("family").model_over_note.mean().to_dict())
+
+
+def stock_check(cells: pd.DataFrame, pub: dict, older: dict, tob_older: float, k: dict, cost_load: float,
+                v: float, q: dict) -> dict:
+    """Benefits earned by 1 January 2025 against OCACT's maximum transition cost (Note 2025.1 Table 3). The MTC is
+    the present value of accrued benefit obligations less the reserves and the tax on those benefits. With the
+    62+ row's published cost (less the lane's cost loading) as their accrued obligations, it implies the 15-61
+    accrued obligations; each stream's tax on benefits is the prediction's own share. The lane's figure is the
+    ratio route's past taxes x their ratio (entry-age normal); OCACT prorates a wage-indexed PIA as if disabled
+    today by (age - 22) / 40."""
+    mtc = q["note2025_1_transition_costs_2025"]["value"]["maximum_transition_cost_tn"]
+    reserves = S.sosi_oasdi()["reserves"] / 1e3
+    t_young = float(cells.tob_ratio.sum() / cells.ben_ratio.sum())
+    t_old = tob_older / older["total"]
+    old = pub["oasdi_62_plus"]["expenditures_tn"] / cost_load
+    implied = (mtc + reserves - old * (1 - t_old)) / (1 - t_young)
+    lane = float(cells.past_ben_ratio.sum()) * k["oasdi_tax"] * v / 1e12
+    return dict(maximum_transition_cost_tn=mtc, reserves_tn=reserves, accrued_62_plus_tn=old,
+                tob_share_62_plus=t_old, tob_share_15_61=t_young, implied_accrued_15_61_tn=implied,
+                lane_ean_accrued_15_61_tn=lane, lane_over_implied=lane / implied,
+                lane_ean_accrued_15_61_formula_route_tn=float(cells.past_ben_formula.sum()) * k["oasdi_tax"] * v / 1e12)
+
+
 def spouse_check(p: pd.DataFrame, econ, u_long: float, u_2000: float) -> dict:
     """Step d, on the group's Part A accrual (pa.hi_accrual at the central). In 2024: covered workers flagged as
     one-earner couples (spouse without wages) whose spouse has covered self-employment earnings, and the spouse
@@ -751,17 +796,20 @@ def main() -> None:
     spouse = spouse_check(pg, econ, u_long, q["note151_eligible_share"]["value"]["age62_in_2000"])
     if abs(spouse["accrual_without_credit_bn"] - cen["central_decomposition"]["low"]["part_a_accrual_bn"]) > 1e-9:
         blocked("the spouse check's accrual without the credit is not the lane's central Part A accrual")
+    gap = formula_gap(cells, pub, k["oasdi_tax"] * cost_load * v / 1e12)
+    stock = stock_check(cells, pub, older, tob_older, k, cost_load, v, q)
     t.to_csv(OUT / "national_score.csv", index=False, float_format="%.6f", lineterminator="\n")
     probes.to_csv(OUT / "national_probes.csv", index=False, float_format="%.6f", lineterminator="\n")
     levels.to_csv(OUT / "national_levels.csv", index=False, float_format="%.4f", lineterminator="\n")
     out = dict(frozen_prediction_sha256=FROZEN_SHA256, tolerance=TOLERANCE, gating_rows=GATING, published_tn=pub,
                published_sources=dict(oasdi=S.DOCS["ssa_afr2025"]["title"], hi=S.DOCS["cms_fr2025"]["title"]),
-               verdict=verdict, central_mapping=mapping, part_a_spouse_check=spouse,
+               verdict=verdict, central_mapping=mapping, part_a_spouse_check=spouse, formula_gap=gap, stock_check=stock,
                probes_note="15-61 ratio route and the group's central accrual per tax dollar; theta < 1 shrinks log "
                            "levels toward the cell mean, no_spouse_benefit prices one-earner couples as two-earner")
     (OUT / "national_score.json").write_text(json.dumps(out, indent=1, sort_keys=True, default=float) + "\n")
     print(t[t.variant == "trustees_scaled"].round(4).to_string(index=False))
-    print(json.dumps(dict(verdict=verdict, central_mapping=mapping, part_a_spouse_check=spouse), indent=1, default=float))
+    print(json.dumps(dict(verdict=verdict, central_mapping=mapping, part_a_spouse_check=spouse, formula_gap=gap,
+                          stock_check=stock), indent=1, default=float))
     print(probes.round(4).to_string(index=False))
     print(levels.round(2).to_string(index=False))
 
