@@ -1,0 +1,55 @@
+{
+ "slice_share": 0.11835266377004328,
+ "skill_shares": [
+  0.21536554714150336,
+  0.7846344528584968
+ ],
+ "group_fractions": [
+  0.17830405559084628,
+  0.057514702298002505
+ ],
+ "reference": {
+  "sigma": 2.0,
+  "labor_share": 0.65,
+  "adjustment": 1.0,
+  "elasticity": 0.0
+ },
+ "normalization": "gdp",
+ "scale_bn": 29298.0,
+ "slice_at_reference": {
+  "private_wtp_bn": 0.0,
+  "receipts_gain_bn": 0.0,
+  "transfer_saving_bn": 0.0,
+  "wage_without_over_with": [
+   1.0,
+   1.0
+  ]
+ },
+ "group_at_reference": {
+  "private_wtp_bn": -0.23592432475743744,
+  "receipts_gain_bn": 13.558522244013947,
+  "transfer_saving_bn": -5.122171041081227,
+  "wage_without_over_with": [
+   1.055694049390329,
+   0.9857263208526489
+  ]
+ },
+ "slice_adjustment_0_5": {
+  "private_wtp_bn": 73.01534675089792,
+  "receipts_gain_bn": -61.024303717569786,
+  "transfer_saving_bn": -5.99878330380778,
+  "wage_without_over_with": [
+   1.022288305162442,
+   1.022288305162442
+  ]
+ },
+ "slice_adjustment_0": {
+  "private_wtp_bn": 166.5882291863659,
+  "receipts_gain_bn": -117.2325868670468,
+  "transfer_saving_bn": -12.131269320494095,
+  "wage_without_over_with": [
+   1.045073378871898,
+   1.045073378871898
+  ]
+ }
+}
