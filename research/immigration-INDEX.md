@@ -561,8 +561,7 @@ Latest supplied-data audit: [immigration-new-datasets-and-conclusions-2026-09-17
 | `immigration-glossary.md` | Definitions and term discipline | Using terms like `unauthorized`, `low-skill`, `surge`, `fiscal` |
 | `immigration-economist-effects-matrix.md` | What economists are actually pricing vs omitting | Comparing Smith, Decker, Borjas, Clark poll economists |
 | `immigration-source-incentive-regrade-2026-06-23.md` | Source-incentive heuristics for prioritizing checks; grades are not truth probabilities or evidence weights | Assessing source incentives while verifying methods and primary tables |
-| `immigration-dataset-register.md` | Use-case-oriented data register | Asking "what data do we have?" |
-| `immigration-dataset-roadmap.md` | **Acquisition roadmap** (2026-06-24) — 12 targets, several since acquired (SCAAP, Texas DPS arrests, SPI 2016, USSC, NIS; check the [register](immigration-dataset-register.md) first), chosen to fill the crime + benefit-side gaps | Asking "what data should we get next?"; planning acquisition |
+| `immigration-dataset-register.md` | Data register by domain: core files, data held inside analysis lanes, and data [not held](immigration-dataset-register.md#not-held) (restricted, lost, open leads) | Asking "what data do we have?" or "what should we get next?" |
 | `immigration-verification-handoff.md` | Verification map: repo files, datasets, paper families, disciplines | Handing the topic to another agent |
 | `immigration-friend-reproduce-guide.md` | **Clone → build → read → query** for a human collaborator | Sharing reasoning + reproduction steps |
 | `immigration-redteam-2026-06-25.md` | June red-team, status as of 2026-09-05 | Closing out a conclusion; before publishing |
@@ -729,6 +728,7 @@ Recover a file with `git show <last commit>:<path>`. Every one is also on GitHub
 | `research/immigration-costs-causal-analysis.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [2026-09-05-material-inference-repair](../decisions/2026-09-05-material-inference-repair.md) |
 | `research/immigration-country-fiscal-tensor-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
 | `research/immigration-county-outcome-panel-2026-04-21.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-dataset-roadmap.md` | `0ebd603` (2026-09-17) | [dataset-register, Not held](immigration-dataset-register.md#not-held) |
 | `research/immigration-economist-debate-sheet-2026-04-22.md` | `080ddae` (2026-09-05) | — |
 | `research/immigration-economist-one-pager-2026-04-22.md` | `080ddae` (2026-09-05) | — |
 | `research/immigration-epistemic-check.md` | `a6baa32` (2026-06-16) | [llm-bias-caveat](../notes/llm-bias-caveat.md), [quant-bias-checklist](../notes/quant-bias-checklist.md) |
