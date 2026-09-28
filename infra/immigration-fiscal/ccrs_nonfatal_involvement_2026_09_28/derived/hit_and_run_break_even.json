@@ -1,0 +1,12 @@
+{
+ "k_star": 3.666732148375163,
+ "fled_hispanic_share_at_k_star": {
+  "injury_all": 0.7309012552949262,
+  "pdo": 0.7476922781529842
+ },
+ "fled_hispanic_share_missing_at_random": {
+  "injury_all": 0.45215024617672467,
+  "pdo": 0.4692010021914699
+ },
+ "lane_m": 1.063399618268027
+}

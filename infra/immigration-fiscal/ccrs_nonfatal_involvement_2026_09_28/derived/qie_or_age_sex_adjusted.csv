@@ -1,0 +1,7 @@
+severity,comparison,drivers_with_age_sex,or_crude_same_drivers,or_mh_age_band_sex
+fatal,vs_nh_white,3316,0.967503,0.869926
+fatal,vs_all_non_hispanic,4015,0.990852,0.915934
+injury_all,vs_nh_white,193787,0.965257,0.908321
+injury_all,vs_all_non_hispanic,267200,0.9995,0.94612
+pdo,vs_nh_white,262126,1.162568,1.116556
+pdo,vs_all_non_hispanic,360507,1.162417,1.118387

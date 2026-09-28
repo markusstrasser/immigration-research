@@ -1,0 +1,41 @@
+severity,comparison,scenario,crashes,or_qie_crude,or_qie_mh_county_year,or_mixed_pair,unidentified_fled,identified_fled,unidentified_outside_strata
+injury_all,vs_nh_white,exclude hit-and-run crashes (primary),196825.0,0.955388,0.954559,0.952841,18230,11477,0
+injury_all,vs_nh_white,add identified fled drivers only,208302.0,0.969576,0.969563,0.971334,18230,11477,0
+injury_all,vs_nh_white,impute fled drivers from victim race and county,226532.0,0.955231,0.953626,0.953999,18230,11477,0
+injury_all,vs_nh_white,all unidentified fled drivers Hispanic,226532.0,1.132756,1.143824,1.148283,18230,11477,0
+injury_all,vs_nh_white,no unidentified fled driver Hispanic,226532.0,0.729807,0.714165,0.700947,18230,11477,0
+injury_all,vs_all_non_hispanic,exclude hit-and-run crashes (primary),196825.0,0.984791,0.983796,0.981174,18230,11477,0
+injury_all,vs_all_non_hispanic,add identified fled drivers only,208302.0,0.996737,0.996521,0.995955,18230,11477,0
+injury_all,vs_all_non_hispanic,impute fled drivers from victim race and county,226532.0,0.992584,0.992102,0.990828,18230,11477,0
+injury_all,vs_all_non_hispanic,all unidentified fled drivers Hispanic,226532.0,1.185163,1.197708,1.230421,18230,11477,0
+injury_all,vs_all_non_hispanic,no unidentified fled driver Hispanic,226532.0,0.855209,0.847194,0.826917,18230,11477,0
+pdo,vs_nh_white,exclude hit-and-run crashes (primary),230352.0,1.145108,1.158426,1.169144,72735,32459,0
+pdo,vs_nh_white,add identified fled drivers only,262811.0,1.159965,1.174652,1.188042,72735,32459,0
+pdo,vs_nh_white,impute fled drivers from victim race and county,335546.0,1.157494,1.1717,1.184682,72735,32459,0
+pdo,vs_nh_white,all unidentified fled drivers Hispanic,335546.0,1.818243,1.898683,1.964579,72735,32459,0
+pdo,vs_nh_white,no unidentified fled driver Hispanic,335546.0,0.567209,0.547524,0.531706,72735,32459,0
+pdo,vs_all_non_hispanic,exclude hit-and-run crashes (primary),230352.0,1.140259,1.149589,1.168444,72735,32459,0
+pdo,vs_all_non_hispanic,add identified fled drivers only,262811.0,1.145237,1.154836,1.174677,72735,32459,0
+pdo,vs_all_non_hispanic,impute fled drivers from victim race and county,335546.0,1.152611,1.162396,1.18315,72735,32459,0
+pdo,vs_all_non_hispanic,all unidentified fled drivers Hispanic,335546.0,1.832757,1.888418,1.997033,72735,32459,0
+pdo,vs_all_non_hispanic,no unidentified fled driver Hispanic,335546.0,0.757914,0.74764,0.726826,72735,32459,0
+nonfatal_all,vs_nh_white,exclude hit-and-run crashes (primary),427177.0,1.053097,1.058835,1.064387,90965,43936,0
+nonfatal_all,vs_nh_white,add identified fled drivers only,471113.0,1.071124,1.078267,1.087088,90965,43936,0
+nonfatal_all,vs_nh_white,impute fled drivers from victim race and county,562078.0,1.064583,1.070805,1.079021,90965,43936,0
+nonfatal_all,vs_nh_white,all unidentified fled drivers Hispanic,562078.0,1.497466,1.54215,1.584305,90965,43936,0
+nonfatal_all,vs_nh_white,no unidentified fled driver Hispanic,562078.0,0.625683,0.607056,0.591114,90965,43936,0
+nonfatal_all,vs_all_non_hispanic,exclude hit-and-run crashes (primary),427177.0,1.065983,1.070248,1.080373,90965,43936,0
+nonfatal_all,vs_all_non_hispanic,add identified fled drivers only,471113.0,1.07717,1.082185,1.094073,90965,43936,0
+nonfatal_all,vs_all_non_hispanic,impute fled drivers from victim race and county,562078.0,1.080503,1.085608,1.097939,90965,43936,0
+nonfatal_all,vs_all_non_hispanic,all unidentified fled drivers Hispanic,562078.0,1.535093,1.570575,1.651288,90965,43936,0
+nonfatal_all,vs_all_non_hispanic,no unidentified fled driver Hispanic,562078.0,0.796256,0.786797,0.764834,90965,43936,0
+fatal,vs_nh_white,exclude hit-and-run crashes (primary),2736.0,1.010141,1.025971,1.019774,39,123,0
+fatal,vs_nh_white,add identified fled drivers only,2859.0,1.035722,1.054692,1.05571,39,123,0
+fatal,vs_nh_white,impute fled drivers from victim race and county,2898.0,1.036844,1.055744,1.055951,39,123,0
+fatal,vs_nh_white,all unidentified fled drivers Hispanic,2898.0,1.063035,1.083833,1.091922,39,123,0
+fatal,vs_nh_white,no unidentified fled driver Hispanic,2898.0,0.994939,1.007129,1.0,39,123,0
+fatal,vs_all_non_hispanic,exclude hit-and-run crashes (primary),2736.0,1.060793,1.064734,1.073394,39,123,0
+fatal,vs_all_non_hispanic,add identified fled drivers only,2859.0,1.076111,1.081131,1.093023,39,123,0
+fatal,vs_all_non_hispanic,impute fled drivers from victim race and county,2898.0,1.075899,1.080795,1.092645,39,123,0
+fatal,vs_all_non_hispanic,all unidentified fled drivers Hispanic,2898.0,1.103712,1.110551,1.127013,39,123,0
+fatal,vs_all_non_hispanic,no unidentified fled driver Hispanic,2898.0,1.045583,1.048428,1.055268,39,123,0

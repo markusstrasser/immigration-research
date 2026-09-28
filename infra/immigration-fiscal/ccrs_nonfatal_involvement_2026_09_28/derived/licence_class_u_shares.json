@@ -1,0 +1,13 @@
+{
+ "at_fault_share_class_U_nonfatal_primary": {
+  "H": 0.19531648504521215,
+  "W": 0.054795412552805296,
+  "B": 0.13403640929064659,
+  "A": 0.02666329689770645,
+  "O": 0.07382082774280112
+ },
+ "identified_fled_at_fault_share_U": 0.006980351602895553,
+ "non_fled_at_fault_share_U": 0.12512641714193354,
+ "F_hat_odds_ratio_uninformative": 0.049149120510528416,
+ "identified_fled_at_fault_drivers_nonfatal": 3868
+}
