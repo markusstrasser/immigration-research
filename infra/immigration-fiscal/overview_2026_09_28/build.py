@@ -21,6 +21,7 @@ import importlib.util
 import json
 import re
 import sys
+from decimal import Decimal
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -250,17 +251,65 @@ LEDGER = [
 ]
 
 
-def num(x, signed=True):
-    """Whole $bn with a true minus sign; '0' when it rounds to zero."""
-    r = round(x)
-    if r == 0:
-        return "0"
-    return (("+" if r > 0 else "−") if signed else ("" if r > 0 else "−")) + f"{abs(r)}"
+def num(d, signed=True):
+    """A printed Decimal with a true minus sign, and a plus when `signed`; zero has no sign."""
+    return ("−" if d < 0 else ("+" if d > 0 and signed else "")) + f"{abs(d):f}"
 
 
-def cells(v, signed=True, cls=""):
-    tone = lambda x: "gain" if round(x) < 0 else ("cost" if round(x) > 0 else "")
-    return "".join(f'<td class="n {tone(x) if signed else ""} {cls}">{num(x, signed)}</td>' for x in v)
+def cells(shown, signed=True):
+    """Table cells for printed Decimals, coloured by sign when `signed`."""
+    tone = lambda d: "gain" if d < 0 else ("cost" if d > 0 else "")  # noqa: E731
+    return "".join(f'<td class="n {tone(d) if signed else ""} ">{num(d, signed)}</td>' for d in shown)
+
+
+def whole(v):
+    return [Q.rounded(x, 0) for x in v]
+
+
+# Rounding in the ledger and the running sums. The operator's rule: printed lines must add to the printed total.
+# A table prints whole billions when every line's own rounding adds up; otherwise it prints one decimal, and where
+# a sum still breaks, the lines nearest a rounding boundary are rounded the other way (Q.allocate). `ROUND_EACH`
+# rounds every number on its own instead: the positive control for the gate in displayed_sum_errors.
+ROUND_EACH = False
+
+
+def rounding_note(places, moved):
+    """The caption under a table: its precision, and how many lines are rounded the other way."""
+    unit = "0.1" if places == 1 else "1"
+    note = f"Lines show {'one decimal' if places == 1 else 'whole billions'}, and each column adds up as printed."
+    if moved:
+        note += (f" For that, {moved} line{'s' if moved > 1 else ''} near a rounding boundary "
+                 f"{'are' if moved > 1 else 'is'} rounded the other way. "
+                 f"{'Each stays' if moved > 1 else 'It stays'} within {unit} of its exact value.")
+    return note
+
+
+def ledger_shown(lines, main, places, each=False):
+    """Printed values: (main, category subtotals, lines per category). The main estimate is rounded; the
+    subtotals are allocated to it and each category's lines to its subtotal. `each` rounds every number on
+    its own."""
+    rnd = lambda x: Q.rounded(x, places)  # noqa: E731
+
+    def fit(vals, target):
+        if each:
+            return [[rnd(x) for x in v] for v in vals]
+        same = {k for k, v in enumerate(vals) if rnd(v[0]) == rnd(v[1])}  # printed equal at both ends
+        cols = [Q.allocate([v[i] for v in vals], target[i], places, last=same) for i in (0, 1)]
+        return [[cols[0][k], cols[1][k]] for k in range(len(vals))]
+    tot = [rnd(x) for x in main]
+    subs = fit([[sum(m["v"][i] for m in merged.values()) for i in (0, 1)] for _c, merged in lines], tot)
+    return tot, subs, [fit([m["v"] for m in merged.values()], sub) for (_c, merged), sub in zip(lines, subs)]
+
+
+def moved_lines(lines, shown, places):
+    """How many printed subtotals and lines differ from their own rounding."""
+    _tot, subs, items = shown
+    n = 0
+    for (_c, merged), sub, its in zip(lines, subs, items):
+        true_sub = [sum(m["v"][i] for m in merged.values()) for i in (0, 1)]
+        n += sum(1 for i in (0, 1) if sub[i] != Q.rounded(true_sub[i], places))
+        n += sum(1 for m, s in zip(merged.values(), its) for i in (0, 1) if s[i] != Q.rounded(m["v"][i], places))
+    return n
 
 
 def ledger_lines(rows):
@@ -285,40 +334,130 @@ def ledger_lines(rows):
 
 
 def ledger_html(rows):
-    """Two-level ledger: category subtotals, items ranked by size, columns that sum to the main estimate."""
-    body, total = [], [0.0, 0.0]
-    for cat, merged in ledger_lines(rows):
-        sub = [sum(m["v"][i] for m in merged.values()) for i in (0, 1)]
-        total = [total[i] + sub[i] for i in (0, 1)]
-        body.append(f'<tbody><tr class="cat"><th scope="rowgroup">{html.escape(cat)}</th>{cells(sub)}</tr>')
-        for label, m in sorted(merged.items(), key=lambda kv: -max(abs(kv[1]["v"][0]), abs(kv[1]["v"][1]))):
-            note = f'<span class="note">{html.escape(m["note"])}</span>' if m["note"] else ""
-            body.append(f'<tr class="item"><td>{html.escape(label)}{note}</td>{cells(m["v"])}</tr>')
-        body.append("</tbody>")
+    """Two-level ledger: category subtotals, items ranked by size, columns that sum to the main estimate.
+    Returns the table and its caption."""
+    lines = ledger_lines(rows)
+    total = [sum(sum(m["v"][i] for m in merged.values()) for _c, merged in lines) for i in (0, 1)]
     main = next(r for r in rows if r.get("main"))["value"]
     if any(abs(a - b) > 1e-3 for a, b in zip(total, main)):
         fail(f"ledger sums to {total}, main estimate is {main}")
+    places = 0 if moved_lines(lines, ledger_shown(lines, main, 0), 0) == 0 else 1
+    shown = ledger_shown(lines, main, places, each=ROUND_EACH)
+    tot, subs, items = shown
+    body = []
+    for (cat, merged), sub, its in zip(lines, subs, items):
+        body.append(f'<tbody><tr class="cat" data-sum="subtotal"><th scope="rowgroup">{html.escape(cat)}</th>'
+                    f'{cells(sub)}</tr>')
+        ranked = sorted(zip(merged.items(), its), key=lambda p: -max(abs(p[0][1]["v"][0]), abs(p[0][1]["v"][1])))
+        for (label, m), s in ranked:
+            note = f'<span class="note">{html.escape(m["note"])}</span>' if m["note"] else ""
+            body.append(f'<tr class="item" data-sum="part"><td>{html.escape(label)}{note}</td>{cells(s)}</tr>')
+        body.append("</tbody>")
     head = ('<thead><tr><th></th><th class="n">Low end</th><th class="n">High end</th></tr></thead>')
-    foot = f'<tfoot><tr class="total"><th>Main estimate</th>{cells(main, signed=False)}</tr></tfoot>'
-    return f'<table class="ledger">{head}{"".join(body)}{foot}</table>'
+    foot = f'<tfoot><tr class="total" data-sum="total"><th>Main estimate</th>{cells(tot, signed=False)}</tr></tfoot>'
+    note = rounding_note(places, moved_lines(lines, shown, places))
+    return f'<table class="ledger">{head}{"".join(body)}{foot}</table>', note
+
+
+def running_shown(main, blocks, places, each=False):
+    """Printed running sums: per block, the rounded start, then (step, total) per row. Each total is rounded;
+    each step is the difference of the printed totals around it (`each`: rounded on its own). Also the
+    number of steps that differ from their own rounding. The build stops if a step moves by more than a unit."""
+    unit = Decimal(1).scaleb(-places)
+    out, moved = [], 0
+    for block in blocks:
+        prev_true, prev = main, [Q.rounded(x, places) for x in main]
+        start, steps = prev, []
+        for r in block:
+            if any(abs(a - b) > 1e-9 for a, b in zip(r["prev"], prev_true)):
+                fail(f"{r['label']!r} does not continue the running sum above it")
+            step = [r["value"][i] - r["prev"][i] for i in (0, 1)]
+            total = [Q.rounded(x, places) for x in r["value"]]
+            shown = [Q.rounded(x, places) for x in step] if each else [total[i] - prev[i] for i in (0, 1)]
+            if any(abs(shown[i] - Decimal(repr(step[i]))) > unit for i in (0, 1)):
+                fail(f"{r['label']!r}: printing {shown} for {step} moves it by more than {unit}")
+            moved += sum(1 for i in (0, 1) if shown[i] != Q.rounded(step[i], places))
+            steps.append((r, shown, total))
+            prev_true, prev = r["value"], total
+        out.append((start, steps))
+    return out, moved
 
 
 def alternatives_html(rows):
-    """Other ways to count, as running sums from the main estimate."""
+    """Other ways to count, as running sums from the main estimate: the alternative rules, then the costs
+    outside public budgets. Returns the table and its caption."""
     main = next(r for r in rows if r.get("main"))["value"]
-    out = [f'<tr class="cat"><th>Main estimate</th>{cells(main, signed=False)}</tr>']
-    beside = False
-    for r in rows:
-        if r.get("alt") or r.get("beside"):
-            step = [r["value"][i] - r["prev"][i] for i in (0, 1)]
-            if r.get("beside") and not beside:
-                beside = True
-                out.append('<tr class="cat"><th colspan="3">Separately, outside public budgets</th></tr>'
-                           f'<tr class="item"><td>Main estimate</td>{cells(main, signed=False)}</tr>')
-            out.append(f'<tr class="item"><td>{html.escape(r["label"])}</td>{cells(step)}</tr>')
-            out.append(f'<tr class="sub"><td>= total</td>{cells(r["value"], signed=False)}</tr>')
+    blocks = [[r for r in rows if r.get(k)] for k in ("alt", "beside")]
+    places = 0 if running_shown(main, blocks, 0)[1] == 0 else 1
+    shown, moved = running_shown(main, blocks, places, each=ROUND_EACH)
+    out = []
+    for k, (start, steps) in enumerate(shown):
+        if k == 0:
+            out.append(f'<tr class="cat" data-sum="start"><th>Main estimate</th>{cells(start, signed=False)}</tr>')
+        else:
+            out.append('<tr class="cat"><th colspan="3">Separately, outside public budgets</th></tr>'
+                       f'<tr class="item" data-sum="start"><td>Main estimate</td>{cells(start, signed=False)}</tr>')
+        for r, step, total in steps:
+            out.append(f'<tr class="item" data-sum="step"><td>{html.escape(r["label"])}</td>{cells(step)}</tr>')
+            out.append(f'<tr class="sub" data-sum="running"><td>= total</td>{cells(total, signed=False)}</tr>')
     head = '<thead><tr><th></th><th class="n">Low end</th><th class="n">High end</th></tr></thead>'
-    return f'<table class="ledger alt">{head}<tbody>{"".join(out)}</tbody></table>'
+    note = rounding_note(places, moved)
+    return f'<table class="ledger alt">{head}<tbody>{"".join(out)}</tbody></table>', note
+
+
+SUM_ROW = re.compile(r'<tr [^>]*data-sum="(\w+)"[^>]*>(.*?)</tr>', re.S)
+SUM_CELL = re.compile(r'<td class="n[^"]*">([^<]*)</td>')
+
+
+def displayed_sum_errors(table):
+    """The arithmetic of a rendered table, read from the printed numbers. In a ledger each category's lines
+    add to its subtotal and the subtotals to the total; in running sums each total is the one before it plus
+    the step between them. A table with no sums to check is an error too."""
+    def printed(row):
+        vals = [Decimal(c.replace("−", "-").replace("+", "")) for c in SUM_CELL.findall(row)]
+        if len(vals) != 2:
+            raise SystemExit(f"[BLOCKED] a summed row prints {len(vals)} numbers: {row[:80]!r}")
+        return vals
+
+    def label(row):
+        return html.unescape(re.sub(r"<[^>]+>", " ", row.split("</t", 1)[0])).strip()
+
+    def check(what, got, want):
+        nonlocal n
+        n += 1
+        for i, end in enumerate(("low", "high")):
+            if got[i] != want[i]:
+                errs.append(f"{what}, {end} end: the parts add to {got[i]}, the table prints {want[i]}")
+    errs, n = [], 0
+    sub = parts = run = step = None
+    subs = []
+    for kind, row in SUM_ROW.findall(table):
+        v = printed(row)
+        if kind in ("subtotal", "total") and sub is not None:
+            check(f"{sub[0]!r}", [sum(p[i] for p in parts) for i in (0, 1)], sub[1])
+        if kind == "subtotal":
+            sub, parts = (label(row), v), []
+            subs.append(v)
+        elif kind == "part":
+            parts.append(v)
+        elif kind == "total":
+            check("the category subtotals", [sum(s[i] for s in subs) for i in (0, 1)], v)
+            sub = None
+        elif kind == "start":
+            run, step = v, None
+        elif kind == "step":
+            step = (label(row), v)
+        elif kind == "running":
+            if run is None or step is None:
+                errs.append("a running total with no start or step above it")
+                continue
+            check(f"{step[0]!r}", [run[i] + step[1][i] for i in (0, 1)], v)
+            run, step = v, None
+    if sub is not None:
+        errs.append(f"{sub[0]!r} has no total row below it")
+    if n == 0:
+        errs.append("no printed sums found (the rows lost their data-sum marks?)")
+    return errs
 
 
 def assumption_rows(s, bands):
@@ -364,7 +503,8 @@ def assumptions_html(rows, labels, sections):
                 flabel, fid = labels[ref]
             else:
                 fail(f"assumption {label!r} targets {ref}, which is neither a finding's ladder ref nor a section")
-            vals = (f'<td class="n noise" colspan="2">± {round(lo)}</td>' if kind == "noise" else cells([lo, hi]))
+            vals = (f'<td class="n noise" colspan="2">± {Q.rounded(lo, 0)}</td>' if kind == "noise" else
+                    cells(whole([lo, hi])))
             note = f'<span class="note">{kind}</span>' if kind in ("approximate",) else ""
             body.append(f'<tr class="item"><td>{html.escape(label)}{note}</td>{vals}'
                         f'<td class="ref"><a href="#{fid}">{flabel}</a></td></tr>')
@@ -439,11 +579,14 @@ def load_evidence(groups_path):
 
 
 def main():
-    global evidence
+    global evidence, ROUND_EACH
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--groups", type=Path, default=HERE / "groups.py", help="another copy of groups.py")
     ap.add_argument("--out", type=Path, default=HERE / "derived/overview.html", help="where to write the page")
+    ap.add_argument("--round-each", action="store_true",
+                    help="round every table number on its own (the positive control for the printed-sum gate)")
     args = ap.parse_args()
+    ROUND_EACH = args.round_each
     evidence = load_evidence(args.groups.resolve())
     entries = parse_ladder()
     s, bands, stairs = load_numbers()
@@ -453,9 +596,16 @@ def main():
     arows = assumption_rows(s, bands)
     page = (HERE / "template.html").read_text()
     n_bind = check_quantities(page, sys.modules["groups"].GROUPS, wrows, arows)
+    (ledger, ledger_note), (alts, alts_note) = ledger_html(wrows), alternatives_html(wrows)
+    errs = [f"ledger: {e}" for e in displayed_sum_errors(ledger)] + \
+        [f"other ways to count: {e}" for e in displayed_sum_errors(alts)]
+    if errs:
+        fail(f"{len(errs)} printed sum(s) do not add up:\n  " + "\n  ".join(errs))
     subs = {
-        "{{LEDGER}}": ledger_html(wrows),
-        "{{ALTERNATIVES}}": alternatives_html(wrows),
+        "{{LEDGER}}": ledger,
+        "{{LEDGER_NOTE}}": ledger_note,
+        "{{ALTERNATIVES}}": alts,
+        "{{ALTERNATIVES_NOTE}}": alts_note,
         "{{ASSUMPTIONS}}": assumptions_html(arows, r["labels"], r["sections"]),
         "{{TOC}}": r["toc"],
         "{{GROUPS}}": r["groups"],

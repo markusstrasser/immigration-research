@@ -58,11 +58,40 @@ On every run, build.py does the following:
 3. It fills every placeholder. A value with status `inference` or `needs_file` is wrapped as
    `<span class="approx" title="Approximate. …">`, and its `reader_note`, itself filled, becomes the tooltip. Such a
    record without a `reader_note` stops the build. The page's how-to-read section explains the dotted underline.
-4. On any failure it exits 1 and writes no page, as it already did for an unfilled `{{`.
+4. It prints the ledger and the running sums so that the printed lines add to the printed totals, and reads the
+   arithmetic back from the rendered tables (`displayed_sum_errors`). See "Printed sums" below.
+5. On any failure it exits 1 and writes no page, as it already did for an unfilled `{{`.
 
-Its existing gates still run: the waterfall and its subtotals against summary.json, and the ledger's sum. Three are
+Its existing gates still run: the waterfall and its subtotals against summary.json, and the ledger's sum. Four are
 new. The September 26 split must match run I, the pairing's high-end fiscal case must be the main case, and the
-pairing less its fiscal case must equal `social.items`.
+pairing less its fiscal case must equal `social.items`. The fourth is the printed-sum gate.
+
+### Printed sums
+
+The operator's rule: in a ledger block, the printed lines must add to the printed total. Where whole-billion rounding
+breaks a sum, the block prints one decimal ($8.6bn − $6.4bn = $2.2bn). With each line rounded on its own, both
+tables broke that rule: the ledger in 6 sums and "Other ways to count" in 4. For example, 295 + 77 was printed as
+371, and 317 + 96 as 414.
+
+One decimal alone does not settle it. Rounded on its own at one decimal, the ledger still breaks 5 sums and the
+costs outside public budgets 2: 317.5 + 96.3 is printed as 413.7. Two decimals still break 4.
+
+The build therefore does the following for each table:
+- It prints whole billions if every line's own rounding adds up. Otherwise it prints one decimal: both tables do now.
+- In the ledger, it rounds the main estimate, allocates the category subtotals to it and each category's lines to
+  its subtotal. The allocation is `Q.allocate`, largest remainder: the lines nearest a rounding boundary are rounded
+  the other way, each by less than 0.1. A line whose two ends round alike keeps its own rounding when another line
+  can move instead, so "Sales and excise taxes" prints −4.1 at both ends.
+- In the running sums, it rounds every total, and prints each step as the difference of the printed totals around
+  it. The build stops if that moves a step by more than 0.1.
+- The caption under each table says how many lines are rounded the other way: 6 in the ledger, 2 in the running
+  sums (the costs outside public budgets, 96.2 / 100.6 for 96.26 / 100.68).
+
+`displayed_sum_errors` parses the rendered tables. Rows carry `data-sum` marks: subtotal, part and total, or start,
+step and running. It checks each sum on the printed numbers, and a table with no marked sums is an error.
+`build.py --round-each` rounds every number on its own. That is the positive control: it fails with the 7 broken
+sums above. `test_build_sums.py` runs the gate on the operator's example and on the built tables, both allocated and
+rounded each on its own. The assumptions table has no sums and still prints whole billions.
 
 ### Record format
 
@@ -251,6 +280,21 @@ must make the build fail.
 
 The audit reports and exits 0 when it flags a number. The build is the gate.
 
+The printed-sum gate was validated at 2026-09-29 07:18:41–07:18:52 JST on HEAD b0bf4c2 plus its working-tree change,
+with the same commands:
+- two builds are `cmp`-identical;
+- two audits are `cmp`-identical, and all 662 still MATCH;
+- two registry checks are `cmp`-identical;
+- pytest passes 21 tests (`test_build_sums.py` adds 4, `test_quantities.py` 4 more);
+- ruff passes.
+
+`build.py --round-each --out …` exits 1 with "7 printed sum(s) do not add up" and writes no page. The two groups-copy
+controls above still exit 1.
+
+Against b0bf4c2's outputs, the audit's `number_audit.csv` differs only in the line column. The same holds for
+`extracted_numbers.csv`, plus five template locators that moved down one line. The captions, the two summed tables
+and the new caption line are the only changes on the page. The assumptions table is byte-identical.
+
 ## Open items
 
 1. **Two table changes to confirm:** the v4 alternatives, and the pairing's footing row. Both are above.
@@ -310,14 +354,14 @@ The audit reports and exits 0 when it flags a number. The build is the gate.
 OPENBLAS_NUM_THREADS=1 uv run --no-project --offline python3 infra/immigration-fiscal/overview_2026_09_28/build.py
 uv run --no-project --offline python3 infra/immigration-fiscal/number_drift_audit_2026_09_29/audit_numbers.py
 uv run --no-project --offline python3 infra/immigration-fiscal/number_drift_audit_2026_09_29/registry_check.py
-uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q \
-  infra/immigration-fiscal/overview_2026_09_28/test_quantities.py infra/immigration-fiscal/number_drift_audit_2026_09_29/
+uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q infra/immigration-fiscal/overview_2026_09_28/ \
+  infra/immigration-fiscal/number_drift_audit_2026_09_29/
 ```
 
 - **Quoting a record on the map.** Write `{{q:<id>|<view>}}` in groups.py, template.html or a LEDGER note, and add a
   binding row if the site must keep quoting it. A table row reads `q("<id>")` and gets a `…/value` binding.
-- **Build options.** `build.py --groups <copy>` builds from another groups.py, and `--out <path>` writes elsewhere.
-  Both exist for controls.
+- **Build options.** `build.py --groups <copy>` builds from another groups.py, `--out <path>` writes elsewhere, and
+  `--round-each` rounds every table number on its own. All three exist for controls.
 - **The audit's map.** `source_map.csv` holds one row per free token, keyed by (file, locator, ordinal). The locator
   is structural for groups.py and build.py. For the markdown and HTML files it is an anchor phrase that must pick one
   scanned line; a leading "^" requires the line to start with the anchor.
@@ -451,3 +495,12 @@ uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q \
     `social.items` by 0.5, fails the build. [CALCULATION: see Validation]
 - 2026-09-29 06:55:49 JST: rewrote this RESULT to the 923dfbd state. Every section above the log is new. The 05:24
   entry describes the 263def3 state.
+- 2026-09-29 07:20:05 JST: the lead reported the operator's rule: printed lines must add to the printed total, and
+  a block prints one decimal where whole billions break a sum. Rounded on its own, the ledger broke 6 sums at whole
+  billions and the running sums 4. At one decimal they still broke 5 and 2, and at two decimals 4. [CALCULATION:
+  scratch ledger_sums.py on build.py's rows]
+  - The build now prints one decimal when whole billions break, and allocates by largest remainder (`Q.allocate`).
+    6 ledger lines and 2 steps are rounded the other way, each by less than 0.1, and the captions say so.
+  - `displayed_sum_errors` reads the printed tables back and refuses the page on a broken sum.
+  - `--round-each` is the positive control: it fails with 7 broken sums. Validation ran at 07:18:41–07:18:52 (see
+    Validation).
