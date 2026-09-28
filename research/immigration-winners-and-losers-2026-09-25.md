@@ -288,7 +288,7 @@ Notes on the table:
   priced beside the account; it stays out of every total unless option 3 is chosen
   ([decision](../decisions/2026-09-25-school-dilution-priced-beside.md)).
 - **Preferences, the group's part, −$0.6bn** (proposed).
-- **City size and schooling mix, +$13.9bn** (ladder 201; in the fiscal-plus-social total since
+- **City size and schooling mix, +$13.7bn** (ladder 201; $13.9bn on the CPS count; in the fiscal-plus-social total since
   September 28, and not allocated here).
 
 The consumption-key correction (ladder 225) would lower the September 24 run's fiscal cost by $4.1bn.
@@ -324,7 +324,7 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - **The allocation base is not a total.** The lane's allocation base, the adopted fiscal band plus
   decision 4's victims figure, mixes crime footings. It also leaves out the social items added from
   September 28 on: fear, security, schools, pollution, crashes and five benefits. The published
-  fiscal-plus-social total is $413.7–488.1bn on the 39.7M people the account prices (ladder 274,
+  fiscal-plus-social total is $413.7–488.0bn on the 39.7M people the account prices (ladder 274,
   [INDEX](immigration-INDEX.md)). Before those items it was $248–304bn on September 24 ($247.7–298.4bn on
   the equal footing, $253.4–304.0bn on the custody footing), $305–350bn on the schools case (4e66adb) and
   $363–438bn on the September 27 case (73cc30c).
@@ -383,3 +383,4 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   dated notes are folded into the text. §6 no longer calls the scale net and the consumption key proposed, and §7
   gives the current fiscal-plus-social total ($413.7–488.1bn, ladder 274). Concept affected: which run the memo
   states as current.
+- 2026-09-29 (number drift audit): the pairing's upper end is $488.0bn (488.047), not $488.1bn, and the scale net is $13.7bn on the priced count ($13.9bn on the CPS count). Concept affected: none; rounding and count basis only.
