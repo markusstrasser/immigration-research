@@ -94,9 +94,11 @@ $287.8–353.5bn on cash and $404.3–464.2bn with Social Security and Part A on
 and the 0.7× uninsured use stay beside. Both adoptions await the operator. After a cross-lab review (GPT-6 Astra;
 every finding checked; v3 RESULT "After the cross-lab review"), the parent's recommended set is items 1–5, payroll
 compliance under the proportional rule with the within-group re-key out, and workers' compensation pooled on its
-own line only. That set is about $290.5 / $355.8bn on cash. The accrual now nets the income tax on benefits under
-current law, +$111.6 / $106.2bn (was +$116.0 / $110.4bn gross), so the set is about $402 / $462bn with it. Item 5's
-land part is framing-sensitive.]
+own line only. That set is about $290.5 / $355.8bn on cash. The accrual now reads current law throughout, at the
+operator's decision ([decision](../decisions/2026-09-28-pension-accrual-payable-benefits.md)). Benefits are valued as
+the trust funds' income will pay them once the reserves are depleted, and the income tax on them follows the 2025
+tax law: +$77.3 / $73.6bn. Scheduled benefits paid in full are an arm, +$111.6 / $106.2bn. The set is about $368 /
+$429bn with the accrual ($402 / $462bn at scheduled benefits). Item 5's land part is framing-sensitive.]
 
 **September 26 schools case (the main case until 2026-09-27): $258–292bn/year conditional net cost to other US
 residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
