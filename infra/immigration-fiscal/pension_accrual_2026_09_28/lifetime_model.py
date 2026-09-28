@@ -118,7 +118,9 @@ class Economy:
     def discount(self, arm) -> np.ndarray:
         """Cumulative discount factor to 2024 by year (1 in 2024): the trust funds' effective nominal rates
         ('tf'), the nominal rate on newly issued trust fund securities ('new_issue', TR Table V.B2), the AWI's
-        own growth ('awi', r = g), or a constant real rate (float) on COLA inflation. Missing years take the
+        own growth ('awi', r = g), or a constant real rate (float) on COLA inflation from 2025, with the
+        historical new-issue rates through 2024 as in 'new_issue' (a valuation-rate arm changes the future only;
+        before 2026-09-28 it also re-accumulated 1961-2024 taxes at the constant rate). Missing years take the
         nearest rate."""
         if arm in self._disc:
             return self._disc[arm]
@@ -129,7 +131,9 @@ class Economy:
         elif arm == "awi":
             i = pd.Series(np.append(self.awi[1:] / self.awi[:-1] - 1, np.nan))
         else:
-            i = (1 + float(arm)) * (1 + pd.Series(self.cola)) - 1
+            cut = 2025 - Y0
+            future = (1 + float(arm)) * (1 + pd.Series(self.cola)) - 1
+            i = pd.concat([pd.Series(self.new_issue_nominal).iloc[:cut], future.iloc[cut:]]).reset_index(drop=True)
         i = i.ffill().bfill().to_numpy()
         f = np.ones(Y1 - Y0 + 1)
         k0 = 2024 - Y0
