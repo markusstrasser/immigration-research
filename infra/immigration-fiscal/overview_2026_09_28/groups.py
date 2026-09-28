@@ -381,6 +381,11 @@ GROUPS = [
                       "gap. About 84% of the college gap stays into the third generation.",
                  why="CPS 1994–2025 at equal age. Descendants who stop reporting Mexican origin explain about a "
                      "tenth of the stall."),
+            dict(refs=[272],
+                 text="Second-generation Hispanic sons earn 14% less than white men at 25–27 and 24% less by "
+                      "35–40. Daughters' gap, 13% and 18%, does not widen measurably.",
+                 why="Most of the sons' widening is pay, and it follows schooling. At equal schooling the "
+                     "daughters' gap is about zero."),
             dict(refs=[74, 75, 86, 92, 133, 174, 197, 228],
                  text="Mexican migrants come from the middle of Mexico's schooling range. Their children move "
                       "toward the average of their origin group, not the national average.",

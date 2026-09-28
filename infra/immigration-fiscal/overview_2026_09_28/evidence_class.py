@@ -88,6 +88,8 @@ CLASS = {
                                   "say 36%. So some children count in the wrong generation."),
     178: ("sample", "tabulated", "Successful descendants stop reporting Mexican origin more often. This explains "
                                  "about a tenth of the stall."),
+    272: ("sample", "tabulated", "All Hispanics, not only Mexican-origin. In the CPS, Mexican-origin sons trail white "
+                                 "men by more than Hispanic sons overall."),
     74: ("sample", "fitted", None),
     163: ("sample", "tabulated", None),
     83: ("sample", "tabulated", None),
