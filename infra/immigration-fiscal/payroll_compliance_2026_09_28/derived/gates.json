@@ -1,0 +1,107 @@
+[
+ {
+  "gate": "sources_are_the_pinned_files",
+  "pass": true,
+  "detail": "11 files in _cache/sources/manifest.json, the 11 acquire.py names, each matching its recorded sha256 (acquire.py pins them)"
+ },
+ {
+  "gate": "irs_table_5_net_misreporting",
+  "pass": true,
+  "detail": "Pub 1415 Table 5 (TY2014-16): wages 1%, interest 4%, dividends 4%, pensions 4%, unemployment 12%, social_security 13%, partnership 12%, capital_gains 18%, other_income 42%, nonfarm_proprietor 57%, farm 64%, rents 53%"
+ },
+ {
+  "gate": "irs_table_2_employment_tax_gaps",
+  "pass": true,
+  "detail": "Pub 1415 Table 2 (TY2014-16 annual averages, $bn): {'se_underreporting_bn': 53, 'se_nonfiling_bn': 7, 'fica_futa_underreporting_bn': 29}"
+ },
+ {
+  "gate": "alm_erard_tables",
+  "pass": true,
+  "detail": "Table 3 total CPS 159.5 (Table 2: net SE 113.9 + misclassified 45.6), tax returns 55.7, audit-adjusted 98.4; DCE 209.1; 39/46 percent split; Table 6 2001 CPS 289.9 and returns 216.8 ($bn), 17 years 1996-2012"
+ },
+ {
+  "gate": "tamborini_villarreal_tables",
+  "pass": true,
+  "detail": "Table 2 cells {'A. Third-Plus Generation': [3.9, 2.7, 8.0, 85.4], 'B. Immigrant': [5.2, 3.0, 13.1, 78.7], 'C. Second-Generation Immigrant': [3.3, 2.3, 8.4, 86.0]}; Table 4 Hispanic [-0.087, -0.093, -0.12, -0.107] (models 2-5), Black [-0.128, -0.11, -0.129, -0.136], immigrant [0.04, 0.041, 0.027, 0.029, 0.023], second generation [0.018, 0.085, 0.065, 0.059, 0.101]; Table 6 Mexican immigrants CPS / tax records / difference [0.008, 0.037, -0.029]; Table 1 matched-sample shares {'Immigrant': 0.193, 'Second generation': 0.087, 'Third-plus generation': 0.72, 'White': 0.636, 'Black': 0.107, 'Hispanic': 0.171, 'Asian': 0.075, 'Other': 0.011000000000000001}"
+ },
+ {
+  "gate": "compliance_gap_slopes",
+  "pass": true,
+  "detail": "edges_by_industry.csv low/central/high off-books slopes: Construction 0.54/0.60/0.88 (calibrated uncovered share 0.030); Landscaping services 0.29/0.59/0.59 (calibrated uncovered share 0.016); Services to buildings and dwellings 0.31/0.74/0.74 (calibrated uncovered share -0.309); Restaurants and other food services 0.00/0.01/0.59 (calibrated uncovered share -0.269)"
+ },
+ {
+  "gate": "onbooks_shares",
+  "pass": true,
+  "detail": "onbooks_split.csv evidence rows (Mexico-born, other Latin-American-born): {'low': (0.4150526315789474, 0.4005), 'central': (0.5262685374807583, 0.5500607625284325), 'high': (0.6350825452461911, 0.6828011332124232)}"
+ },
+ {
+  "gate": "industry_codes_in_the_asec_appendix",
+  "pass": true,
+  "detail": "31 codes found in cpsmar25 Appendix A, e.g. 0770 'Construction', 7690 'Services to buildings and dwellings'"
+ },
+ {
+  "gate": "cps_zip_is_the_pinned_file",
+  "pass": true,
+  "detail": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip sha256 318845a2b5e0"
+ },
+ {
+  "gate": "extra_columns_align_with_the_frame",
+  "pass": true,
+  "detail": "142,125 person records in file order"
+ },
+ {
+  "gate": "receipt_lines_on_the_seven_keys",
+  "pass": true,
+  "detail": "14 receipt lines keyed by wage, wage_oasdi, self_payroll, positive_fica_worker, federal_liability, state_liability, consumption"
+ },
+ {
+  "gate": "key_vectors_are_the_accounts",
+  "pass": true,
+  "detail": "vectors() with no change equals frame.receipt_vectors (full_account_receipts builder::derive_keys) for the seven keys, element for element"
+ },
+ {
+  "gate": "raw_shares_are_model_json",
+  "pass": true,
+  "detail": "largest gap between the rebuilt share and model.json's reference cell over 14 lines x 2 allocations: 3.3e-11"
+ },
+ {
+  "gate": "cbo_gradient_reproduces_the_benchmark_lane",
+  "pass": true,
+  "detail": "reweighted and account shares of the 7 lines the case re-keys with CBO's gradient equal cbo_translation.csv to 8.3e-16 (federal income tax shared 0.051552); the gradient covers each whole line but excise, where it covers the federal part, 0.2693 of the line"
+ },
+ {
+  "gate": "row_2_reproduces_the_cps_lane",
+  "pass": true,
+  "detail": "on-books scaling of the paper flag's Latin-American-born unauthorized at the three cases reproduces origin|<case>|audit_rules_alone (infra/immigration-fiscal/cps_imputation_keys_2026_09_23/_cache/onbooks_lane_line_deltas.json, sha256 3fd6db74fe19) for every line to 2.5e-13bn"
+ },
+ {
+  "gate": "informal_mapping_matches_alm_erard_share",
+  "pass": true,
+  "detail": "the 11 categories hold 0.401 of CPS 2025 self-employment income, against 0.393 in Alm & Erard's CPS for 2001 (113.9 of 289.9); the group 0.616"
+ },
+ {
+  "gate": "self_employment_ratios",
+  "pass": true,
+  "detail": "tax returns / CPS, TY2001: informal 0.4890, formal 0.9151, ratio 0.5344; the same ratio on DCE-adjusted true income 0.2664/0.4925 = 0.5409; TY2014-16 at 57% with the 39/46 split: 0.3277/0.4954 = 0.6615"
+ },
+ {
+  "gate": "calibration_factors_are_bounded",
+  "pass": true,
+  "detail": "c on the group's own part, over 60 line x allocation x case cells row 2 touches: 0.710 to 1.211 (federal income tax at central 0.720 shared, payroll 0.971)"
+ },
+ {
+  "gate": "calibration_reproduces_the_package_row_2",
+  "pass": true,
+  "detail": "the calibrated raw ratio for row 2 removed equals the package's relative change (stacks alone against central) line by line to 0.86% of it, the gap being the parts' non-additivity"
+ },
+ {
+  "gate": "central_base_is_the_row_2_scale",
+  "pass": true,
+  "detail": "the items' base is the key with row 2 at the central on-books shares"
+ },
+ {
+  "gate": "items_touch_only_their_keys",
+  "pass": true,
+  "detail": "the consumption item leaves every tax key's lines at r = 1 and the slope item leaves the consumption lines"
+ }
+]

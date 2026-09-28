@@ -1,0 +1,12 @@
+parameter,value,range,status,source
+"on-books share, Mexico-born imputed unauthorized",0.5262685374807583,0.4150526315789474-0.6350825452461911,"measured head count (SSA 2010) carried to 2024 dollars with assumed erosion, protected share and pay ratio",onbooks_share_2026_09_23
+"tax-return / CPS self-employment income, informal categories, TY2001",0.4890254609306409,,"measured (NRP-corrected returns against the CPS, 11 categories)",Alm & Erard Tables 2-3
+"tax-return / CPS self-employment income, other industries, TY2001",0.9151130183709374,,measured (SOI totals less the 11 categories against CPS totals),Alm & Erard Tables 3 and 6
+"relative reporting, informal over other, TY2014-16",0.6614570075853995,,IRS NMP 57% measured; the 39/46 split carried from TY2001 [assumed],Pub 1415 Table 5; Alm & Erard
+Hispanic gap in having a Schedule SE record given CPS self-employment (model 5),-0.107,"-0.087, -0.093, -0.120, -0.107","measured, matched CPS-SSA, SSN holders only",Tamborini & Villarreal Table 4
+share of CPS self-employed with a Schedule SE record,0.6008238294878185,,"measured (Table 2, weighted)",Tamborini & Villarreal Tables 1-2
+"off-books share of imputed-unauthorized wage workers, construction",0.5997,0.54-0.88,association across states; level check allows 0,compliance_gap_2026_09_24
+"on-books share, imputed unauthorized born outside Latin America",0.5500607625284325,0.4005-0.6828011332124232,assumed: the case's other-origin share,onbooks_share_2026_09_23
+"employer FICA/FUTA underreporting, TY2014-16 ($bn)",29.0,,measured (NRP employment-tax study TY2008-10 rates); excludes household and farm employers,Pub 1415
+"self-employment tax gap, TY2014-16 ($bn)",60.0,,measured (underreporting 53 + nonfiling 7),Pub 1415 Table 2
+"suspense-file wages added per year, TY2013-2023 ($bn)",100.0,,"measured cumulative totals, net of reinstatement","SSA OIG A-03-15-50058, 022401"
