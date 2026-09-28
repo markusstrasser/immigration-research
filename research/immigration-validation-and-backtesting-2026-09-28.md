@@ -227,7 +227,10 @@ later administrative calibration, not a score of the final calibrated key. [2026
 (ladder 249): the final calibrated key scores 23.5pp against IRS 2023 (8.4pp with $1M+
 pooled, against 18.5pp before CBO's gradient); matching IRS with CBO's groups kept would
 raise the group's income tax by $3.2bn / $3.1bn. See the
-[held-out tax lane](../infra/immigration-fiscal/tax_key_heldout_2026_09_28/RESULT.md).] It
+[held-out tax lane](../infra/immigration-fiscal/tax_key_heldout_2026_09_28/RESULT.md).] [After the
+cross-lab review: that correction is fitted to the same 2023 year the old key was scored on,
+and most of it comes from the $1M+ bin, where the group's share rests on 15 CPS records
+extrapolated above $3.1M; the parent now recommends it beside the case.] It
 exposes a distribution mismatch that close within-CPS ethnic prediction cannot
 resolve; the IRS bins do not identify Mexican-origin taxes. No proportional
 Mexican-origin correction follows from these errors. [CALCULATION / LIMIT: fiscal-year tests]
@@ -272,12 +275,15 @@ never-English-learner scores barely moved. District budgets and any system-level
 effect remain open.] [2026-09-28, later still: a test of the account's keys against
 administrative totals it never used, with predictions committed before any target was
 opened (883182b), is scored (ladder 255). Births to Mexican-origin mothers and the
-group's share of Medicaid-paid births hit; the credit, SSI and Social Security keys have
+group's share of Medicaid-paid births hit [after the cross-lab review: the second only by
+the tolerance rule; it is significantly low, +8.1% with z 2.4, worth about +$0.2–0.3bn]; the credit, SSI and Social Security keys have
 no power on state totals, so the dollar keys remain untested by this route. A second
 pre-registered test against published figures (NAE 2021, NAS 2017, hospital cost
 reports) is being scored.] [2026-09-28, later: scored (ladder 256). Hospital cost reports
 hit on state shares and the national total; the use-rate slope favors 0.7× only between
-regions. NAE agrees on a shared method, so it validates nothing; NAS outlays match.] Public payroll replacement, mixed-household eligibility and
+regions. NAE agrees on a shared method, so it validates nothing; NAS outlays match.] [After the
+cross-lab review: NAS's receipts gap has a plausible post-hoc explanation, not a reconciliation, and
+the note calling NAE's earnings-over-income ratio impossible was wrong; both lanes are corrected.] Public payroll replacement, mixed-household eligibility and
 unpriced social channels remain in the [conceptual audit](immigration-adversarial-audit-2026-09-28.md).
 Separate school-systemwide and enforcement/rent analyses have their own populations
 and designs; their estimates are not added to these validation scores. [LIMIT / INFERENCE]
@@ -336,3 +342,7 @@ commands. No new causal coefficient or national total was adopted. [EXECUTION]
   totals is scored (ladder 255): two powered hits, no power on the dollar keys, no correction.
 - **2026-09-28, published-figures back-test:** scored (ladder 256): S-10 level and national hits, a
   regional slope toward 0.7× uninsured use, NAE agreement by shared method, NAS outlays matched.
+- **2026-09-28, cross-lab review (GPT-6 Astra, xhigh; each finding checked by the parent):** three readings
+  qualified. The Medicaid-paid births share is a hit only by the tolerance rule; it is significantly low. NAS's
+  receipts gap has a plausible explanation, not a reconciliation. The IRS tax-key correction rests mostly on 15
+  top-income records. The NAE note calling earnings over income impossible was wrong.
