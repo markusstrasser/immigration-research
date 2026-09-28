@@ -384,6 +384,18 @@ c9d0077 until the adoption re-pin):
   credits unauthorized workers' on-books taxes at 10%, so an item that moves only their receipts is overpriced
   there. It was 6b's +$0.74bn interaction, which leaves with 6b.
 
+**Payable benefits (the operator's decision, 2026-09-28 at 16:40 JST).** The pension lane's central (9ea1beb) now
+values benefits as current law pays them once the trust funds' reserves are depleted (decision
+`decisions/2026-09-28-pension-accrual-payable-benefits.md`). On the September 27 case it is $399.10bn / $460.98bn,
++$77.28bn / +$73.61bn. The scheduled figures above are now the lane's arm `scheduled`.
+
+- **The re-pin.** It reads `ratio_net` (now 0.974) and `central_decomposition.low.part_a_accrual_bn` (now $41.14bn,
+  on HI's payable path). Both follow the central, so the re-pin needs no new keys.
+- **The revised set with the switch** comes to **about $368bn / $429bn**, against $402bn / $462bn at scheduled
+  benefits.
+- **6a's interaction** shrinks with the ratio, to about −$0.2–0.3bn. [INFERENCE: the scheduled interaction scaled by
+  0.974 / 1.241]
+
 **Existing-case items found on the way** (not in any set):
 - The federal transit operating-subsidy crossing understates the cost. If BEA books federal transit operating aid
   as subsidies (unverified), it is about +$0.5–1.2bn; at most +$2.89bn (v2's bound).
@@ -436,3 +448,6 @@ c9d0077 until the adoption re-pin):
   6a under the proportional rule, 6b out, item 7 on workers' compensation only; about $290.5 / $355.8bn cash, about $402 /
   $462bn with the net accrual), what the adoption re-pin must change, and two existing-case items. Text only; no
   script or output changed.
+- 2026-09-28 17:04 JST (parent): paragraph "Payable benefits" added under "After the cross-lab review". The pension
+  lane's central moved to payable benefits (9ea1beb), so the revised set with the switch is about $368 / $429bn. This
+  package still pins c9d0077. Text only; no script or output changed.
