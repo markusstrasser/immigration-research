@@ -1,0 +1,4 @@
+hypothesis,holds,detail
+H1_ec_lower_with_hispanic_share,True,unweighted: -0.0267 (0.0063) p=0.000102; weighted_below_p50: -0.0189 (0.0045) p=0.000114
+H2_connectedness_scale_interaction,False,"40 interaction cells: 1 positive p<0.05, 16 negative p<0.05, 23 null"
+step4_sizing,False,not run: brief says stop if either fails

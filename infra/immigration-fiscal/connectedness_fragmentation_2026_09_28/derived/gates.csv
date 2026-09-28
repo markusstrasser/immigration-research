@@ -1,0 +1,8 @@
+gate,pass,detail
+county_join,True,3016/3018 Atlas EC counties have ACS + land area
+zip_join,True,18980/18980 Atlas EC ZIPs joined
+county_pop_matches_atlas,True,median |ACS pop / Atlas pop2018 - 1| = 0
+decomposition_identity_county,True,max |ec/exp - (1-bias)| = 1.92e-05
+oa_join,True,3089 counties with Opportunity Atlas kfr_pooled_p25
+bea_join,True,3057 counties with BEA 2018 per-capita income
+hisp_share_national,True,pop-weighted county Hispanic share 0.1782 (ACS 2018 ~0.18)
