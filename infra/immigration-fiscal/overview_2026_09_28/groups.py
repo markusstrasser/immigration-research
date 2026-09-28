@@ -1,15 +1,10 @@
-"""Evidence map content: parts, sections with claim headings, findings with an evidence level.
+"""Evidence map content: parts, sections with claim headings, findings.
 
 For a reader who wants concepts and evidence, not the history of the analysis.
 - `claim`: the section heading, stated as a claim.
 - Finding `text`: one or two sentences. Numbers as a rounded value with the range in brackets.
-- Finding `level`: how the number was obtained, strongest first:
-    records  administrative records or national accounts, checked against a second source
-    survey   survey answers with standard definitions (income, taxes, programme receipt)
-    model    derived through a model or from elasticities of other studies
-    choice   an accounting rule or assumption, shown with a band
-  `soft=True` marks a survey label that is self-reported, imputed or politically loaded
-  (ethnic self-identification, generation, legal status, attitudes).
+- How a finding's number was obtained (input, step, known bias) lives in `evidence_class.py`,
+  keyed by the finding's first ladder ref.
 - `why`: what the finding rests on and what would change it.
 Every ladder entry must appear exactly once: in a finding's `refs`, a section's `minor` list or
 RETIRED. `build.py` refuses to write the page otherwise.
@@ -49,26 +44,26 @@ GROUPS = [
                ("specification", "one full set of choices. The range covers 64 of them."),
                ("standard error", "sampling noise. It is about $10.6bn here.")],
         findings=[
-            dict(refs=[239], level="model",
+            dict(refs=[239],
                  text="Other residents would be about $355bn a year better off (322–387). That is about $8.7k per "
                       "group member (7.9–9.5).",
                  why="The account adds each member's own taxes and benefits from survey records. It then charges "
                      "a share of every public service. The range comes from tax-incidence rules and service "
                      "responses."),
-            dict(refs=[184], level="survey",
+            dict(refs=[184],
                  text="Sampling noise is about ±$21bn (95%).",
                  why="The choices in the charts move the number more than the data noise does."),
-            dict(refs=[161, 169], level="survey",
+            dict(refs=[161, 169],
                  text="A young age mix hides cost. At a common age mix the gap per person is $7,049. The raw gap "
                       "is $4,093.",
                  why="Children cost now and pay later. Old people draw pensions. A one-year view charges this "
                      "group for schools and credits it on pensions. The pension effect is larger."),
-            dict(refs=[123, 125, 126, 128, 172, 119], level="survey", soft=True,
+            dict(refs=[123, 125, 126, 128, 172, 119],
                  text="Against third-generation whites of the same ages, the gap is about $240bn a year "
                       "(190–290). Matching by state or metro makes it larger.",
                  why="A gap against a reference group is a different measure from the cost of removal. On "
                      "taxes and benefits alone the group pays more than it gets. The gap is still negative."),
-            dict(refs=[54, 55], level="model",
+            dict(refs=[54, 55],
                  text="CBO's $897bn lower federal deficit over 2024–2034 answers a different question.",
                  why="CBO counts the federal budget only, new arrivals of all origins, and projected growth "
                      "effects. Two results can conflict only when population, period and outcome match."),
@@ -85,25 +80,25 @@ GROUPS = [
         terms=[("response (elasticity)", "the % rise in a budget for each 1% rise in users"),
                ("average vs marginal cost", "cost per user now vs the cost of one more user")],
         findings=[
-            dict(refs=[230, 215, 252], level="records",
+            dict(refs=[230, 215, 252],
                  text="School spending rises about 1% per 1% more pupils. So each pupil costs the full average. "
                       "Schools are the largest line.",
                  why="Across districts and states the slope is 0.97–1.00. Inside one district over a few years "
                      "it is 0.84. In the 2022–24 surge, money followed new pupils about half, and late. The "
                      "short-run response would lower the total by about $52bn (46–58)."),
-            dict(refs=[237], level="records",
+            dict(refs=[237],
                  text="Road spending rises 0.73% and park spending 0.95% per 1% more residents.",
                  why="Slopes across states. Budget scoring sets them to zero for the first year. Over a long "
                      "stay the long-run slope applies. It adds about $25bn (19–30)."),
-            dict(refs=[211, 165, 227], level="model",
+            dict(refs=[211, 165, 227],
                  text="General administration grows about 0.7% per 1% more residents (0.60–0.85).",
                  why="From the size of administration spending across states. Designs inside states are too "
                      "noisy to tell it from 0 or 1."),
-            dict(refs=[141, 149], level="records",
+            dict(refs=[141, 149],
                  text="Natives did not leave public schools as the Hispanic share rose. Local budgets did not "
                       "shift from schools to police.",
                  why="District and county panels, 2007–2023."),
-            dict(refs=[80], level="records",
+            dict(refs=[80],
                  text="Fiscal studies charge shared services at average cost. Where prisons are full, building "
                       "costs add 18–27% to a prisoner-year.",
                  why="Prisons are full in 8 states and not in 22."),
@@ -118,18 +113,18 @@ GROUPS = [
         terms=[("opportunity cost of capital", "what public capital could earn in another use"),
                ("cash vs accrual", "count money when paid, or count the promise when earned")],
         findings=[
-            dict(refs=[238], level="choice",
+            dict(refs=[238],
                  text="Public capital (schools, roads, buildings) could earn 2–3% a year in another use. This "
                       "adds about $45bn (34–56).",
                  why="National accounts charge only wear. The return is a resource cost, not a payment. It never "
                      "enters debt or the deficit. At a private 7% return the total would be about $434bn "
                      "(406–462)."),
-            dict(refs=[257, 146], level="choice",
+            dict(refs=[257, 146],
                  text="If pensions count when earned instead of when paid, the total rises by about $75bn (74–77).",
                  why="The group pays about $65bn more payroll tax than it draws (63–68). That tax buys future "
                      "benefits. Under current law the promise is worth about $0.97 per tax dollar. At full "
                      "scheduled benefits the rise is about $109bn (106–112)."),
-            dict(refs=[253], level="choice",
+            dict(refs=[253],
                  text="If property taxes follow people like the capital they pay for, the total falls by about $27bn.",
                  why="The owner's share responds at about 0.76: the house leaves with the household and land "
                      "prices fall. Defense stays at zero. A bound on defense by share of GDP would add about "
@@ -147,38 +142,38 @@ GROUPS = [
                ("imputation", "Census fills a missing answer with a similar person's answer"),
                ("held-out test", "a check against data that the model never saw")],
         findings=[
-            dict(refs=[208], level="survey",
+            dict(refs=[208],
                  text="Census fill-ins for missing income give the group too much income. The correction raises "
                       "the cost by about $12bn (9–15).",
                  why="At equal age, sex and schooling, filled-in wages keep only 9% of the group's wage gap. "
                      "Eight versions of the correction all point the same way."),
-            dict(refs=[209], level="survey",
+            dict(refs=[209],
                  text="The CPS counts the Mexico-born 9–13% above the ACS. About 11.1M is the right level.",
                  why="The excess appears in every monthly file since 2024."),
-            dict(refs=[206, 173, 175, 210], level="records",
+            dict(refs=[206, 173, 175, 210],
                  text="Ethnicity adds no public medical cost in total. Medicaid long-term care was over-charged "
                       "by $11.1bn.",
                  why="Nine pooled MEPS years move cost from adults to children, not the total. CMS records put "
                      "the group at 7.4% of long-term-care dollars, not 12.25%."),
-            dict(refs=[217, 216, 249], level="records",
+            dict(refs=[217, 216, 249],
                  text="Fear does not cause people to hide benefits. The income-tax share is slightly too flat at "
                       "the top, and IRS data would lower the total by about $3bn.",
                  why="Administrative totals match the survey where the group lives. IRS data for a year that "
                      "the account never used confirm the direction."),
-            dict(refs=[85, 77, 254, 220], level="survey", soft=True,
+            dict(refs=[85, 77, 254, 220],
                  text="Legal status does not drive the gap. The account already removes off-books pay.",
                  why="Imputed unauthorized adults and legal Mexico-born adults have similar gaps. Status is "
                      "imputed, not observed."),
-            dict(refs=[255, 256, 188, 192], level="records",
+            dict(refs=[255, 256, 188, 192],
                  text="Two tests fixed before looking pass. The frame predicts where the group's births and "
                       "hospital charity care fall.",
                  why="Birth records put 14.36% of US births with Mexican-origin mothers. The frame says 14.43%. "
                      "Courts, police and prisons charged by use add $5.9bn."),
-            dict(refs=[225, 90], level="survey",
+            dict(refs=[225, 90],
                  text="Consumption taxes are charged on what households spend, not on their income.",
                  why="Saving and money sent home lower spending. Money sent home lowers sales tax by only about "
                      "$1.8bn (1.3–2.3)."),
-            dict(refs=[127, 129], level="survey",
+            dict(refs=[127, 129],
                  text="A second survey gives the same earnings and income-tax gaps within 4%.",
                  why="ACS against CPS, with one tax calculator on both."),
         ],
@@ -195,53 +190,53 @@ GROUPS = [
                ("value of a statistical life", "the price that cost-benefit analysis uses for a death"),
                ("normalized", "the same item for as many average residents, taken away")],
         findings=[
-            dict(refs=[260], level="model",
+            dict(refs=[260],
                  text="Fine-particle pollution from the group's consumption causes about 4,900 deaths among "
                       "others a year. The cost is about $70bn (32–123).",
                  why="Per person the group causes 0.65 of an average resident's pollution because it consumes "
                      "less. Against as many average residents, the group is about $47bn better."),
-            dict(refs=[264, 266], level="records",
+            dict(refs=[264, 266],
                  text="Road crashes caused by group drivers cost others about $42bn a year (24–73).",
                  why="California crash records show Hispanic drivers are not at fault more often in injury "
                      "crashes (odds 0.98). This counts crashes that group drivers cause. One more car barely changes "
                      "other drivers' risk per mile, so the cost of the added traffic alone is about $11bn (−58 to "
                      "+74)."),
-            dict(refs=[189], level="records",
+            dict(refs=[189],
                  text="Violent crime by group members costs victims outside the group about $29bn a year.",
                  why="The full cost counts a death at a statistical value, plus pain. Tangible losses alone are "
                      "$4.5bn. Police records confirm the offender shares."),
-            dict(refs=[195], level="model",
+            dict(refs=[195],
                  text="Traffic costs other commuters about $13bn a year (12–14).",
                  why="Speed falls 0.12% per 1% more people when road space stays fixed. Roads that grow with "
                      "population take up part of it."),
-            dict(refs=[258], level="model",
+            dict(refs=[258],
                  text="Fear, private security and school discipline cost about $8bn a year.",
                  why="The same method gives $51bn for non-Hispanic Black residents."),
-            dict(refs=[190, 79, 180, 183, 57], level="model",
+            dict(refs=[190, 79, 180, 183, 57],
                  text="Rents rise about 1% per 1% more people. Other renters pay about $34bn more, and landlords "
                       "receive it.",
                  why="Most landlords are other residents, so the net for others is a small gain of about $2bn "
                      "(0.7–3.5). The loss falls on renters."),
-            dict(refs=[265], level="model",
+            dict(refs=[265],
                  text="Three benefits to others count against these costs: volunteering about $6bn, consumer "
                       "scale about $2bn and trade ties with Mexico about $7bn.",
                  why="The account already carries the large benefits: taxes, production, care and housing. "
                      "Defense and old interest are never charged to the group. That is an implicit credit of "
                      "about $271bn a year."),
-            dict(refs=[261], level="records",
+            dict(refs=[261],
                  text="Infectious disease and food safety cost others about $0.3bn a year.",
                  why="Most TB among the foreign-born comes from old infection abroad. About 56 cases a year "
                      "among others trace to the group."),
-            dict(refs=[248, 81, 91, 243, 246, 222], level="records",
+            dict(refs=[248, 81, 91, 243, 246, 222],
                  text="White pupils did not lose ground in states where the Hispanic share rose.",
                  why="State NAEP scores, 2003–2019. The share of English learners gives a small negative that "
                      "fades. In Germany, immigration explains a small part of the fall in scores."),
-            dict(refs=[262, 89, 142], level="survey", soft=True,
+            dict(refs=[262, 89, 142],
                  text="Friendships across income are fewer where the Hispanic share is higher. The main cause is "
                       "that people live apart.",
                  why="Facebook friendship data by county and ZIP code, one point in time. The payoff to such "
                      "friendships does not grow with county size."),
-            dict(refs=[98, 101, 102], level="model",
+            dict(refs=[98, 101, 102],
                  text="Three effects have no price and no bound: native births, city productivity and politics.",
                  why="The designs tried here cannot separate these effects from their causes."),
         ],
@@ -255,19 +250,19 @@ GROUPS = [
         terms=[("incidence", "which households finally bear a cost"),
                ("welfare weights", "how much a dollar counts for a rich person vs a poor person")],
         findings=[
-            dict(refs=[226], level="model",
+            dict(refs=[226],
                  text="About one other resident in six comes out ahead. Most of them are landlords or in the top "
                       "tenth of income.",
                  why="Each person is followed through taxes, wages, rents and crime."),
-            dict(refs=[194], level="model",
+            dict(refs=[194],
                  text="If taxes close the gap, the top fifth pays 62%. If equal cuts close it, the bottom fifth "
                       "loses 12.4% of its resources.",
                  why="Who pays depends on how the budget closes the gap."),
-            dict(refs=[250], level="choice",
+            dict(refs=[250],
                  text="Counting the group itself, the world gains about $364bn a year at equal weights.",
                  why="The group earns far more here than in Mexico. The US side comes out behind only if a "
                      "member's dollar counts less than 0.61 of a payer's dollar."),
-            dict(refs=[139, 213], level="records",
+            dict(refs=[139, 213],
                  text="Natives who leave California take about $2.1bn of revenue. Race preferences cost white "
                       "natives about $4bn.",
                  why="High earners leave with the top tax rate, not with the Hispanic share."),
@@ -282,24 +277,24 @@ GROUPS = [
         terms=[("immigration surplus", "the extra income that natives get because immigrants work here"),
                ("ε (substitution)", "how easily one kind of worker replaces another")],
         findings=[
-            dict(refs=[166, 176, 181], level="model",
+            dict(refs=[166, 176, 181],
                  text="Other residents gain about $11bn a year from the group's work (8.8–13.3), through profits "
                       "and taxes.",
                  why="If natives and immigrants were poor substitutes (ε = 3), the gain would double. Direct "
                      "estimates of ε (8.7–17.9) say they are close substitutes."),
-            dict(refs=[191, 199], level="model",
+            dict(refs=[191, 199],
                  text="Natives with less schooling earn 2.2–7.0% less, about $116bn (66–166). Natives with more "
                       "schooling earn more.",
                  why="A model with two skill groups. The two transfers nearly cancel."),
-            dict(refs=[132, 198, 200, 203], level="model",
+            dict(refs=[132, 198, 200, 203],
                  text="Cheaper services, more work by native women and home care add about $4bn a year.",
                  why="Price effects from published studies, at face value."),
-            dict(refs=[201, 156], level="model",
+            dict(refs=[201, 156],
                  text="Larger cities raise earnings and lower schooling lowers them. The two nearly cancel "
                       "(about +$14bn).",
                  why="One regression across commuting zones. Older studies of the college share would make it a "
                      "large cost. Studies of average schooling find nothing."),
-            dict(refs=[53, 59, 99, 120, 136, 140, 182], level="survey",
+            dict(refs=[53, 59, 99, 120, 136, 140, 182],
                  text="The wage and automation designs tested here cannot find a native wage effect.",
                  why="The usual instruments lose their power after 2000."),
         ],
@@ -315,23 +310,23 @@ GROUPS = [
                ("stock vs flow", "debt is an amount. A yearly gap is an amount per year."),
                ("discount rate", "the rate that converts future dollars to today. It is 3% here.")],
         findings=[
-            dict(refs=[162, 251], level="model",
+            dict(refs=[162, 251],
                  text="Carried back on each year's national data, the cost is about $3.3tn over 2015–2024 "
                       "(2.8–3.7), without interest.",
                  why="Receipts, programmes, prices, population and the group's income change each year. "
                      "Pandemic payments reached the group at about the same rate per person as others."),
-            dict(refs=[207], level="model",
+            dict(refs=[207],
                  text="If the federal part was borrowed, it left about $1.1tn of debt (1.0–1.3). The interest on "
                       "it in 2024 is about $36bn (31–42).",
                  why="This is a legacy cost. Removing the group today does not remove old debt, so the number "
                      "stays beside the annual total. State and local budgets must balance and do not borrow "
                      "for it."),
-            dict(refs=[131, 158, 159, 241], level="model", soft=True,
+            dict(refs=[131, 158, 159, 241],
                  text="Over all descendants, a Mexican founder's family line runs $1.29M behind a white family "
                       "line ($513k at 3%).",
                  why="Descendants carry 57% of it. This is a gap against whites from a separate ledger. Do not "
                      "scale it onto the annual number."),
-            dict(refs=[240, 247, 235], level="model",
+            dict(refs=[240, 247, 235],
                  text="Arrivals at 50 or older cost others about $5.7bn a year. A parent sponsored by a US "
                       "citizen costs $237k–274k over the rest of life, at 3%.",
                  why="Per person, late arrivals cost less than seniors who arrived young. Their lower Social "
@@ -348,34 +343,34 @@ GROUPS = [
                ("ethnic attrition", "descendants who stop reporting Mexican origin"),
                ("selection", "how migrants differ from the people who stay home")],
         findings=[
-            dict(refs=[224], level="model", soft=True,
+            dict(refs=[224],
                  text="The Mexico-born cost others about $86bn a year (78–94), the second generation about "
                       "$140bn (128–153) and the third-plus about $128bn (100–156).",
                  why="Children count in their own generation. Counted with their parents, the Mexico-born "
                      "carry the most."),
-            dict(refs=[178, 232, 236], level="survey", soft=True,
+            dict(refs=[178, 232, 236],
                  text="The second generation closes 76% of the gap in finishing school but 31% of the college "
                       "gap. About 84% of the college gap stays into the third generation.",
                  why="CPS 1994–2025 at equal age. Descendants who stop reporting Mexican origin explain about a "
                      "tenth of the stall."),
-            dict(refs=[74, 75, 86, 92, 133, 174, 197, 228], level="survey",
+            dict(refs=[74, 75, 86, 92, 133, 174, 197, 228],
                  text="Mexican migrants come from the middle of Mexico's schooling range. Their children move "
                       "toward the average of their origin group, not the national average.",
                  why="Across 29 origins, parents' schooling relative to their home country predicts their "
                      "children's degrees (R² 0.91)."),
-            dict(refs=[163, 134], level="survey",
+            dict(refs=[163, 134],
                  text="The group's income relative to the nation was flat from 2008 to 2016 and rose after.",
                  why="Income per person went from 0.52 to 0.61 of the national figure. Recent arrivals have the "
                      "smallest gap."),
-            dict(refs=[83, 115, 105, 106, 108, 113, 124], level="survey", soft=True,
+            dict(refs=[83, 115, 105, 106, 108, 113, 124],
                  text="Test-score and custody gaps narrow to the third generation. After that the samples are "
                       "too small.",
                  why="NLSY97 and two local panels."),
-            dict(refs=[67, 88, 100, 116], level="survey",
+            dict(refs=[67, 88, 100, 116],
                  text="US-born fertility is at or below the white level. The health advantage of immigrants "
                       "fades after the first generation.",
                  why="Disability rises from the first to the second generation."),
-            dict(refs=[154], level="model",
+            dict(refs=[154],
                  text="With measured assimilation rates, a leading pro-migration model loses its Mexico result.",
                  why="Clemens and Pritchett assume faster convergence than the data show."),
         ],
@@ -389,29 +384,29 @@ GROUPS = [
         terms=[("rate ratio", "one group's rate divided by another group's rate"),
                ("clearance rate", "the share of crimes that end in an arrest")],
         findings=[
-            dict(refs=[144, 61], level="records",
+            dict(refs=[144, 61],
                  text="Undocumented Texans are charged with felonies, weighted by cost, at 0.40–0.43 of the "
                       "US-born rate.",
                  why="Texas fingerprint records give legal status. The comparison group is all US-born Texans."),
-            dict(refs=[65, 66, 68, 70, 196], level="survey", soft=True,
+            dict(refs=[65, 66, 68, 70, 196],
                  text="US-born Mexican-origin men are held at 1.7–1.9 times the white rate, or 2.1–2.3 times "
                       "after a fix for prison coding. The often-quoted 3.5 times is from 2000.",
                  why="Census counts of people in institutions, 2010–2024. The ratio fell as both rates fell."),
-            dict(refs=[82], level="records",
+            dict(refs=[82],
                  text="Parental income explains about 73% of the Hispanic–white gap in male custody.",
                  why="At equal parental income the ratio is 1.22."),
-            dict(refs=[202, 218, 148], level="records",
+            dict(refs=[202, 218, 148],
                  text="In police records, Hispanic offenders commit murder at 2.30 times the white rate and "
                       "0.92–1.18 times the rate of all residents.",
                  why="Texas and Arizona incident records. Known recording errors do not change the ratios."),
-            dict(refs=[143], level="records",
+            dict(refs=[143],
                  text="One cleared homicide costs the treasury $1.5–1.8M, mostly for prison. Its social cost is "
                       "$13.1M.",
                  why="Homicide records 2019–2023 with the ethnicity of both sides known."),
-            dict(refs=[214], level="records",
+            dict(refs=[214],
                  text="Noncitizens commit fraud at the same ratio as other federal crime, 1.8–2.0 times citizens.",
                  why="Federal sentencing records per adult."),
-            dict(refs=[56, 63, 64, 69], level="records",
+            dict(refs=[56, 63, 64, 69],
                  text="Nativity, race and generation are separate measures. Recording failures need bands.",
                  why="A comparison with whites only changes the question. It does not correct a bias."),
         ],
@@ -425,20 +420,20 @@ GROUPS = [
         terms=[("re-key", "the same account with another group's shares"),
                ("replacement", "the group against an equal number of people from another group")],
         findings=[
-            dict(refs=[263], level="model",
+            dict(refs=[263],
                  text="Against 40.9M whites, the group costs others about $320bn a year more (315–330). Against "
                       "local whites state by state, about $409bn (406–412).",
                  why="On raw cash the difference is only $156bn, because whites are older and draw pensions "
                      "now. Counting pensions when earned, or using white rates at the group's ages, removes "
                      "that effect. The difference comes from taxes and schools, not from scale."),
-            dict(refs=[259], level="model",
+            dict(refs=[259],
                  text="Under the same rules, non-Hispanic Black residents cost others about $572bn a year "
                       "(549–595), or 1.5–1.7 times as much per member.",
                  why="A rough calculation with group shares, not a full model run."),
-            dict(refs=[150, 168, 171], level="survey",
+            dict(refs=[150, 168, 171],
                  text="India-born adults have a balance of about +$24k a year each. For whites it is +$13k.",
                  why="How well degrees pay depends on the admission route more than on the origin country."),
-            dict(refs=[71, 72, 73], level="records",
+            dict(refs=[71, 72, 73],
                  text="In Europe, composition explains most of the immigrant crime gap but not the gap of "
                       "their children.",
                  why="Population registers link parents and children. The US has no register."),
@@ -452,15 +447,15 @@ GROUPS = [
         why="Schooling matters more for the fiscal gap than legal status does.",
         terms=[("residual method", "unauthorized = foreign-born minus people in legal records")],
         findings=[
-            dict(refs=[157], level="survey", soft=True,
+            dict(refs=[157],
                  text="About 15.2M people were unauthorized in mid-2024 (14.6–15.8).",
                  why="This uses the definition that every publisher uses. The narrow definition gives 8–9.5M."),
-            dict(refs=[185, 186, 187], level="survey", soft=True,
+            dict(refs=[185, 186, 187],
                  text="About half of Mexico-born parents with little schooling are unauthorized, and few can "
                       "get legal status.",
                  why="Their US-born children do worse while the parents lack status, and the same after they "
                      "get it."),
-            dict(refs=[242], level="records",
+            dict(refs=[242],
                  text="The recent doubling of sponsored Mexican parents comes from processing, not from a surge.",
                  why="Other countries rose by the same proportion."),
         ],
@@ -473,13 +468,13 @@ GROUPS = [
         why="These gaps have no dollar value in the account.",
         terms=[("adjusted gap", "a difference at equal age, schooling and year")],
         findings=[
-            dict(refs=[87, 104, 110, 117, 135], level="survey", soft=True,
+            dict(refs=[87, 104, 110, 117, 135],
                  text="Trust stays 10–12 points lower. Views on redistribution and party do not converge.",
                  why="GSS and ANES by generation, at equal age and schooling."),
-            dict(refs=[147, 160], level="records",
+            dict(refs=[147, 160],
                  text="Counting the group moves 24 of 435 House seats. A county's share does not change its vote.",
                  why="Concentration moves seats, not size."),
-            dict(refs=[233, 205, 170, 234], level="survey", soft=True,
+            dict(refs=[233, 205, 170, 234],
                  text="Turnout is 9–13 points lower at equal status. Military service is 0.79 of the white rate.",
                  why="Ties to Mexico fade by the third generation."),
         ],
@@ -492,11 +487,11 @@ GROUPS = [
         why="Each item tests one public claim against primary data.",
         terms=[],
         findings=[
-            dict(refs=[212], level="records", text="\"Legalized fraud\" in California: payments based on status are lawful and already in the account.", why=""),
-            dict(refs=[244], level="records", text="Rochester \"80 of 82 residents on visas\": the list counts medical schools, not visas.", why=""),
-            dict(refs=[245], level="records", text="A DHS post that credits enforcement: the pattern was as steep before the enforcement.", why=""),
-            dict(refs=[145], level="records", text="Marginal Revolution 2003–2026: mostly agrees with these facts.", why=""),
-            dict(refs=[84, 221, 223], level="survey",
+            dict(refs=[212], text="\"Legalized fraud\" in California: payments based on status are lawful and already in the account.", why=""),
+            dict(refs=[244], text="Rochester \"80 of 82 residents on visas\": the list counts medical schools, not visas.", why=""),
+            dict(refs=[245], text="A DHS post that credits enforcement: the pattern was as steep before the enforcement.", why=""),
+            dict(refs=[145], text="Marginal Revolution 2003–2026: mostly agrees with these facts.", why=""),
+            dict(refs=[84, 221, 223],
                  text="At equal income the group spends no more. Few Californians leave because of crime. Legal "
                       "street vending did not hurt restaurants.", why=""),
         ],
@@ -509,7 +504,7 @@ GROUPS = [
         why="A calculation that runs is not a test of a theory.",
         terms=[("non-significance ≠ zero", "a wide interval does not show that there is no effect")],
         findings=[
-            dict(refs=[58, 60], level="survey", text="Controls and placebo tests that pass do not by themselves show a cause.", why=""),
+            dict(refs=[58, 60], text="Controls and placebo tests that pass do not by themselves show a cause.", why=""),
         ],
         minor=[],
     ),

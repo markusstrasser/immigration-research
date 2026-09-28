@@ -171,21 +171,19 @@ def check_coverage(entries, fail):
         fail(f"unplaced ladder entries {missing}; placed but not in the ladder {unknown}. Place new entries in groups.py")
 
 
-LEVELS = {
-    "records": ("■■■", "records", "administrative records or national accounts, checked against a second source"),
-    "survey": ("■■□", "survey", "survey answers with standard definitions (income, taxes, programme receipt)"),
-    "model": ("■□□", "model", "derived through a model or from other studies' estimates"),
-    "choice": ("◇", "choice", "an accounting rule or assumption, shown with a band"),
-}
-SOFT = ("⚑", "soft label", "the survey label is self-reported, imputed or politically loaded "
-        "(ethnic identity, generation, legal status, attitudes)")
+from evidence_class import CLASS, INPUTS, STEPS
 
 
-def level_tag(f):
-    sym, name, desc = LEVELS[f["level"]]
-    tag = f'<span class="lvl l-{f["level"]}" title="{html.escape(desc)}">{sym} {name}</span>'
-    if f.get("soft"):
-        tag += f' <span class="soft" title="{html.escape(SOFT[2])}">{SOFT[0]} {SOFT[1]}</span>'
+def level_tag(f, fail):
+    key = f["refs"][0]
+    if key not in CLASS:
+        fail(f"finding starting with ladder {key} has no entry in evidence_class.py")
+    inp, step, bias = CLASS[key]
+    tag = (f'<span class="lvl" title="{html.escape(INPUTS[inp][1])}">{INPUTS[inp][0]}</span>'
+           f' <span class="arrow">→</span> '
+           f'<span class="lvl" title="{html.escape(STEPS[step][1])}">{STEPS[step][0]}</span>')
+    if bias:
+        tag += f'<br><span class="soft">Known bias: {html.escape(bias)}</span>'
     return tag
 
 
@@ -236,7 +234,7 @@ def render(entries, fail):
                 rows.append(f'<p class="how">Ladder entries: {", ".join(str(r) for r in f["refs"])}.</p>')
                 items.append(
                     f'<li id="{fid}"><p class="ftext">{html.escape(f["text"])}</p>'
-                    f'<p class="fmeta">{level_tag(f)}</p>'
+                    f'<p class="fmeta">{level_tag(f, fail)}</p>'
                     f'<details><summary>Evidence</summary>{"".join(rows)}</details></li>')
             terms = "".join(f"<dt>{html.escape(t)}</dt><dd>{html.escape(m)}</dd>" for t, m in g["terms"])
             minor = (f'<p class="how">Narrower analyses not summarised: {", ".join(str(r) for r in g["minor"])}.</p>'
@@ -251,9 +249,11 @@ def render(entries, fail):
   {minor}
 </section>""")
         toc.append("</ol></li>")
-    legend = "".join(f'<li><span class="lvl l-{k}">{sym} {name}</span> {html.escape(desc)}</li>'
-                     for k, (sym, name, desc) in LEVELS.items())
-    legend += f'<li><span class="soft">{SOFT[0]} {SOFT[1]}</span> {html.escape(SOFT[2])}</li>'
+    legend = ('<table class="levels"><thead><tr><th>Input</th><th>Meaning</th></tr></thead><tbody>'
+              + "".join(f"<tr><td class=lvl>{n}</td><td>{html.escape(d)}</td></tr>" for n, d in INPUTS.values())
+              + '</tbody></table><table class="levels"><thead><tr><th>Step</th><th>Meaning</th></tr></thead><tbody>'
+              + "".join(f"<tr><td class=lvl>{n}</td><td>{html.escape(d)}</td></tr>" for n, d in STEPS.values())
+              + "</tbody></table>")
     bib_items = sorted(bib.values(), key=lambda v: v[0].lower())
     bibl = "".join(
         f'<li>{html.escape(t)} <span class="ref">{" ".join(f"<a href=#{x}>{x}</a>" for x in dict.fromkeys(ids))}</span></li>'
