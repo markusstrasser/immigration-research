@@ -1,0 +1,61 @@
+file,locator,quantity_id,view,replaced,note
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/why,headcount.priced,value,{{GROUP_SIZE}},
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f239/text,case.per_member,mid_range,{{PER_MEMBER}},
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f161/text,gap_vs_white.per_person_common_age,value,"$7,049",the sentence now names whites
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f161/text,gap_vs_white.per_person_own_ages,value,"$4,093",
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f268/text,household.net_contributor_share,mid,22%,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f268/text,household.net_contributor_share,range,20–24,published weights before 3e1ae94
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f268/text,household.top10_cost_share,range_unit,53–61%,published weights before 3e1ae94
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f268/why,household.share_head_below_hs,mid,11%,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f268/why,household.share_head_ba_plus,mid,44%,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f268/why,household.share_convention_b,mid,30%,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f123/text,gap_vs_white.age_matched_partial,value,$240bn,the absolute balance's hull (ledger recut) under a sentence about the gap against whites
+infra/immigration-fiscal/overview_2026_09_28/groups.py,account/f123/text,gap_vs_white.age_matched_complete,value,190–290,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,services/f230/why,schools.first_year_effect,mid_range,$52bn (46–58),measured without a capital return; the sentence now sets the school capital return aside
+infra/immigration-fiscal/overview_2026_09_28/groups.py,services/f211/text,gg.growth_elasticity,mid,0.7,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,services/f211/text,gg.growth_elasticity,range,0.60–0.85,those were the removal shares
+infra/immigration-fiscal/overview_2026_09_28/groups.py,conventions/f253/why,defense.bound,mid_range,$60bn (47–72),
+infra/immigration-fiscal/overview_2026_09_28/groups.py,data/f208/text,fill_in.effect,mid_range,$12bn (9–15),ladder 208's estimate before adoption
+infra/immigration-fiscal/overview_2026_09_28/groups.py,data/f225/why,remittance.sales_tax_effect,mid,$1.8bn,ladder 90's forgone sales tax
+infra/immigration-fiscal/overview_2026_09_28/groups.py,data/f225/why,remittance.sales_tax_effect,min,1.3–2.3,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/claim,social.items,mid,{{SOCIAL_ADD_WORDS}},was the pairing less the adopted fiscal case
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/range,social.items,mid_range,{{SOCIAL_ADD}},
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/why,pairing.total,mid_range,{{SOCIAL_TOTAL}},
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f260/text,pm25.deaths_priced,value,"4,900",the air lane's count on the raw 40.90M
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f260/text,pm25.cost,value,$70bn,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f260/text,pm25.span_priced,range,32–123,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f260/why,pm25.normalized_priced,value,$47bn,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f264/text,crash.cost,value,$11bn,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f264/text,crash.span_priced,range,−58 to +74,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f264/why,crash.fault_based_priced,mid_range,$42bn (24–73),
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f189/text,victims.harm,mid_range,$29bn,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f190/text,housing.rent_elasticity_long_run,range,1%,ladder 79's short-run 1%; the renters' $34bn uses the long-run land share
+infra/immigration-fiscal/overview_2026_09_28/groups.py,work/f53/why,instrument.power_lost_year,value,2000,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,time/range,backcast.10y,mid,$3.3tn,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f162/text,backcast.10y,mid,$3.3tn,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f162/text,backcast.10y,range,2.8–3.7,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f240/text,ir5.lifetime_cost_55_65,range_unit,$237k–274k,entry at 55–65 now named
+infra/immigration-fiscal/overview_2026_09_28/groups.py,crime/range,victims.harm,mid,$29bn,
+infra/immigration-fiscal/overview_2026_09_28/template.html,Only 2024 is measured.,case.per_member,mid_range,{{PER_MEMBER}},
+infra/immigration-fiscal/overview_2026_09_28/template.html,Public services decide the sign.,tally.corrected,mid,$65bn,the September 24 tally at survey values
+infra/immigration-fiscal/overview_2026_09_28/template.html,Public services decide the sign.,tally.corrected,range,60–70,
+infra/immigration-fiscal/overview_2026_09_28/template.html,Assumptions matter more than data noise.,assumptions.move_range_above_noise,range_unit,$25–85bn,four rows move the total less than the noise
+infra/immigration-fiscal/overview_2026_09_28/template.html,Two accounting choices move the total most.,property_tax.alone_case,mid,$323bn,the candidate set with smaller corrections (the alternatives table keeps it)
+infra/immigration-fiscal/overview_2026_09_28/template.html,Two accounting choices move the total most.,property_tax.alone_case,range,290–356,
+infra/immigration-fiscal/overview_2026_09_28/template.html,Costs outside the budget add,social.items,mid_range,{{SOCIAL_ADD}},
+infra/immigration-fiscal/overview_2026_09_28/template.html,Costs outside the budget add,pairing.total,mid_range,{{SOCIAL_TOTAL}},
+infra/immigration-fiscal/overview_2026_09_28/template.html,Against as many whites,comparators.us_whites,mid,$320bn,
+infra/immigration-fiscal/overview_2026_09_28/template.html,Against as many whites,comparators.us_whites,range,315–330,both sides on the raw 40.90M
+infra/immigration-fiscal/overview_2026_09_28/template.html,Model of past gaps:,backcast.10y,mid,$3.3tn,
+infra/immigration-fiscal/overview_2026_09_28/template.html,Model of past gaps:,backcast.10y,range,2.8–3.7,
+infra/immigration-fiscal/overview_2026_09_28/template.html,"Pollution, crashes, victims, traffic, fear, net of gains:",social.items,mid_range,{{SOCIAL_ADD}},
+infra/immigration-fiscal/overview_2026_09_28/template.html,Separate channels. The,pairing.total,mid,{{SOCIAL_TOTAL}},
+infra/immigration-fiscal/overview_2026_09_28/build.py,ledger/General administration/note,gg.growth_elasticity,range,0.60–0.85%,
+infra/immigration-fiscal/overview_2026_09_28/build.py,ledger/Sales and excise taxes/value,consumption_key.effect,pair,"0, −1",the whole September 26 step; its finite-removal part now sits in schools and general administration
+infra/immigration-fiscal/overview_2026_09_28/build.py,assumptions/General administration held fixed/value,gg.fixed_change,pair,"-28.5, -40.6",
+infra/immigration-fiscal/overview_2026_09_28/build.py,"assumptions/Sampling noise, 95% interval/value",noise.sampling_95,value,20.8,
+infra/immigration-fiscal/overview_2026_09_28/build.py,assumptions/Natives and immigrants are poor substitutes (ε = 3)/value,production.eps3_change,pair,"-13.8, -9.1",
+infra/immigration-fiscal/overview_2026_09_28/build.py,"alternatives/Property taxes follow people, with smaller corrections/value",candidate_v4.set_cash,pair,"290.5, 355.8","v3's items summed alone; the label said 'tax fixes', but items 1, 2, 4 and 7 are housing, production and workers' compensation"
+infra/immigration-fiscal/overview_2026_09_28/build.py,alternatives/Pensions counted when earned/value,candidate_v4.set_accrual_payable,pair,"368.0, 429.0",v3's hand sum
+infra/immigration-fiscal/overview_2026_09_28/build.py,"alternatives/Offending at the Hispanic average, low end/value",pairing.fiscal_footing,pair,(new row),the costs row's low-end step was +92: the social items' 96.3 less this row's −4.3
+infra/immigration-fiscal/overview_2026_09_28/build.py,alternatives/Costs outside public budgets/value,pairing.total,pair,load_social(),

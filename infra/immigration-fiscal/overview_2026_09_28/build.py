@@ -5,10 +5,19 @@
 Reads the confidence ladder, the September 27 main case (`summary.json`, `main_case_bands.csv`)
 and the figures page's staircase. Refuses to write if a ladder entry is unassigned or assigned
 twice, or if the staircase and the main case disagree. Writes `derived/overview.html`.
+
+Numbers that the text quotes from a file come from `quantity_registry.csv` through placeholders,
+`{{q:<id>|<view>}}`, which `quantities.py` renders. The build lints every sentence that quotes a
+record, runs the binding tests in `quantity_bindings.csv`, and refuses to write on any failure.
+`--groups PATH` reads another copy of groups.py and `--out PATH` writes elsewhere (the positive
+controls use both).
 """
 
+import argparse
 import csv
 import html
+import importlib
+import importlib.util
 import json
 import re
 import sys
@@ -17,23 +26,29 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 sys.path.insert(0, str(HERE))
-import evidence  # noqa: E402
+import quantities as Q  # noqa: E402
+
+evidence = None  # imported in main(), after --groups has picked the groups module it reads
 
 LADDER = ROOT / "research/immigration-confidence-ladder.md"
 MAIN = ROOT / "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived"
-SOCIAL = ROOT / "infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/real_costs_totals.csv"
-# the population the account prices (row 4 of the data audit), not the CPS's raw union count
-HEADCOUNT = ROOT / "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/headcount.csv"
+STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
+OV = "infra/immigration-fiscal/overview_2026_09_28"
+
+
+def q(rid):
+    """A registry record's value, unrounded: a list for a pair of ends, else a number."""
+    v = Q.record_value(rid)
+    return list(v) if isinstance(v, tuple) else v
 
 
 def load_headcount():
-    """Priced and raw group size. Per-member figures divide engine totals by the priced count."""
-    row = next(r for r in csv.DictReader(HEADCOUNT.open()) if r["cut"] == "all" and r["group"] == "union")
-    priced, raw = float(row["row4"]), float(row["published"])
+    """Priced and raw group size. Per-member figures divide engine totals by the priced count, the
+    population the account prices (row 4 of the data audit), not the CPS's raw union count."""
+    priced, raw = q("headcount.priced") * 1e6, q("headcount.raw") * 1e6
     if not (39e6 < priced < 41e6 and priced <= raw):
         fail(f"headcount out of range: priced {priced:,.0f}, raw {raw:,.0f}")
     return priced, raw
-STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
 
 
 
@@ -122,22 +137,13 @@ def load_numbers():
 # Reader-facing labels for the figures page's staircase rows: concepts, not the history of the analysis.
 RELABEL = {
     "schools": ("Schools, first-year budget response", "63–66% of cost per pupil (CBO)"),
-    "gg": ("General administration", "0.60–0.85% per 1% more residents"),
+    "gg": ("General administration", "{{q:gg.growth_elasticity|range}}% per 1% more residents"),
     "taxes": ("Taxes checked against records", "off-books work, survey fill-ins, top incomes"),
     "benefits": ("Benefits and services checked against records", "credits, medical care, schools, care"),
 }
 
 
-def load_social():
-    """Fiscal plus social total at central values, the published pairing (RESULT_ledger.md):
-    the mixed-group Hispanic footing at the low end, custody at the high end, every row on the
-    39.71M people the account prices (population_basis_2026_09_29, ladder 274)."""
-    rows = {(r["column"], r["item"]): float(r["sept27"]) for r in csv.DictReader(SOCIAL.open()) if r["section"] == "7" and r["sept27"]}
-    return [rows[("pairing_on_priced_count", "published pairing (low)")],
-            rows[("pairing_on_priced_count", "published pairing (high)")]]
-
-
-def waterfall_rows(s, stairs, social):
+def waterfall_rows(s, stairs):
     c = s["change_at_fixed_specifications"]
     # The staircase's `step` pairs are sorted by size, not by end, so steps come from the running totals.
     rows, prev = [], [0.0, 0.0]
@@ -151,14 +157,22 @@ def waterfall_rows(s, stairs, social):
             rows.append(dict(label="September 23 case", total=True))
         if r["id"] == "benefits":
             rows.append(dict(label="September 24 case", total=True))
+    # The September 26 step holds two changes: consumption taxes keyed on spending (run L) and service responses
+    # read as a finite removal, which belong to schools (run F) and to general government (the rest, run I).
     d26 = [a - b for a, b in zip(s["adopted_2026_09_26"], s["adopted_2026_09_24"])]
+    key26, sch26 = q("consumption_key.effect"), q("finite_removal.schools")
+    gg26 = [d - k - f for d, k, f in zip(d26, key26, sch26)]
+    if any(abs(a - b) > 1e-3 for a, b in zip(gg26, q("finite_removal.general_government_and_row8"))):
+        fail(f"the September 26 step less runs L and F is {gg26}, not run I (general government)")
     sch = [a - b for a, b in zip(s["schools_case"], s["adopted_2026_09_26"])]
     ent = s["enterprises"]
     ent_surplus = ent["receipt_at_end_specifications"]["cost_bn"]
     capital_total = s["capital_at_end_specifications"]["total_bn"]
     ent_capital = [t - core - block for t, core, block in zip(capital_total, c["capital_core"], c["capital_block"])]
     rows += [
-        dict(label="Consumption taxes on spending", note="net of saving and remittances", step=d26),
+        dict(label="Consumption taxes on spending", note="net of saving and remittances", step=key26),
+        dict(label="Schools, finite removal", note="", step=sch26),
+        dict(label="General administration, finite removal", note="", step=gg26),
         dict(label="Schools, long run: full cost per pupil", note="spending rises ~1% per 1% more pupils", step=sch),
         dict(label="September 26 schools case", total=True),
         dict(label="Roads, parks: long-run response", note="0.73 and 0.95 across states", step=c["long_run_responses"]),
@@ -184,12 +198,19 @@ def waterfall_rows(s, stairs, social):
             if any(abs(a - b) > 1e-3 for a, b in zip(v, s[key])):
                 fail(f"{label} subtotal {v} != summary {s[key]}")
     rows = [r for r in rows if not r.get("total") or r.get("main")]
-    # Other ways to count, typed from the research record (pension accrual, property-tax receipts, social rows).
-    alt = [290.5, 355.8]
+    # Other ways to count, from the registry: the pending set run as one (candidate v4), pension accrual on top,
+    # the social pairing. The pairing's low end prices offending at the Hispanic average, so its fiscal case
+    # moves first and the social step is the social items alone.
+    alt, fisc = q("candidate_v4.set_cash"), q("pairing.fiscal_footing")
+    if abs(fisc[1] - s["main_case"][1]) > 1e-6:  # the totals file keeps six decimals
+        fail(f"the pairing's high-end fiscal case {fisc[1]} is not the main case's {s['main_case'][1]}")
+    if any(abs(p - f - x) > 1e-9 for p, f, x in zip(q("pairing.total"), fisc, q("social.items"))):
+        fail("the pairing less its fiscal case is not social.items")
     rows += [
-        dict(label="Property taxes follow people, with smaller tax fixes", alt=True, prev=list(tot), value=alt),
-        dict(label="Pensions counted when earned", alt=True, prev=alt, value=[368.0, 429.0]),
-        dict(label="Costs outside public budgets", beside=True, prev=list(tot), value=list(social)),
+        dict(label="Property taxes follow people, with smaller corrections", alt=True, prev=list(tot), value=alt),
+        dict(label="Pensions counted when earned", alt=True, prev=alt, value=q("candidate_v4.set_accrual_payable")),
+        dict(label="Offending at the Hispanic average, low end", beside=True, prev=list(tot), value=fisc),
+        dict(label="Costs outside public budgets", beside=True, prev=fisc, value=q("pairing.total")),
     ]
     return rows
 
@@ -208,12 +229,14 @@ LEDGER = [
     ("Schools and colleges", [
         ("Schools, first-year budget response", "Schools, full cost per pupil",
          "spending rises about 1% per 1% more pupils"),
+        ("Schools, finite removal", "Schools, full cost per pupil", None),
         ("Schools, long run: full cost per pupil", "Schools, full cost per pupil", None),
         ("Colleges and other education", "Colleges and other education", ""),
     ]),
     ("Other public services", [
         ("Police, courts and prisons", "Police, courts and prisons", "charged by use"),
-        ("General administration", "General administration", "0.60–0.85% per 1% more residents"),
+        ("General administration", "General administration", "{{q:gg.growth_elasticity|range}}% per 1% more residents"),
+        ("General administration, finite removal", "General administration", None),
         ("Welfare administration, housing, community", "Welfare administration, housing, community", ""),
         ("Public health services", "Public health", ""),
         ("Roads, parks: long-run response", "Roads and parks", "0.73% and 0.95% per 1% more residents"),
@@ -240,11 +263,10 @@ def cells(v, signed=True, cls=""):
     return "".join(f'<td class="n {tone(x) if signed else ""} {cls}">{num(x, signed)}</td>' for x in v)
 
 
-def ledger_html(rows):
-    """Two-level ledger: category subtotals, items ranked by size, columns that sum to the main estimate."""
+def ledger_lines(rows):
+    """[(category, {reader label: dict(v=[low, high], note)})]: staircase steps summed under their reader labels."""
     steps = {r["label"]: r["step"] for r in rows if "step" in r}
-    used = set()
-    body, total = [], [0.0, 0.0]
+    used, out = set(), []
     for cat, items in LEDGER:
         merged = {}
         for step_label, label, note in items:
@@ -255,6 +277,17 @@ def ledger_html(rows):
             m["v"] = [a + b for a, b in zip(m["v"], steps[step_label])]
             if note is not None:
                 m["note"] = note
+        out.append((cat, merged))
+    missing = set(steps) - used
+    if missing:
+        fail(f"staircase steps missing from the ledger: {sorted(missing)}")
+    return out
+
+
+def ledger_html(rows):
+    """Two-level ledger: category subtotals, items ranked by size, columns that sum to the main estimate."""
+    body, total = [], [0.0, 0.0]
+    for cat, merged in ledger_lines(rows):
         sub = [sum(m["v"][i] for m in merged.values()) for i in (0, 1)]
         total = [total[i] + sub[i] for i in (0, 1)]
         body.append(f'<tbody><tr class="cat"><th scope="rowgroup">{html.escape(cat)}</th>{cells(sub)}</tr>')
@@ -262,9 +295,6 @@ def ledger_html(rows):
             note = f'<span class="note">{html.escape(m["note"])}</span>' if m["note"] else ""
             body.append(f'<tr class="item"><td>{html.escape(label)}{note}</td>{cells(m["v"])}</tr>')
         body.append("</tbody>")
-    missing = set(steps) - used
-    if missing:
-        fail(f"staircase steps missing from the ledger: {sorted(missing)}")
     main = next(r for r in rows if r.get("main"))["value"]
     if any(abs(a - b) > 1e-3 for a, b in zip(total, main)):
         fail(f"ledger sums to {total}, main estimate is {main}")
@@ -277,10 +307,12 @@ def alternatives_html(rows):
     """Other ways to count, as running sums from the main estimate."""
     main = next(r for r in rows if r.get("main"))["value"]
     out = [f'<tr class="cat"><th>Main estimate</th>{cells(main, signed=False)}</tr>']
+    beside = False
     for r in rows:
         if r.get("alt") or r.get("beside"):
             step = [r["value"][i] - r["prev"][i] for i in (0, 1)]
-            if r.get("beside"):
+            if r.get("beside") and not beside:
+                beside = True
                 out.append('<tr class="cat"><th colspan="3">Separately, outside public budgets</th></tr>'
                            f'<tr class="item"><td>Main estimate</td>{cells(main, signed=False)}</tr>')
             out.append(f'<tr class="item"><td>{html.escape(r["label"])}</td>{cells(step)}</tr>')
@@ -303,17 +335,17 @@ def assumption_rows(s, bands):
         (resp, "Services other than schools held fixed", *d("long_run_non_school_fixed:adopted"), "", "§services"),
         (resp, "Roads and parks respond only after years, as CBO assumes",
          *d("cbo_category_lag_non_school_full:with_rental_assistance_capital_and_enterprises"), "", "237"),
-        (resp, "General administration held fixed", -28.5, -40.6, "approximate", "211"),
+        (resp, "General administration held fixed", *q("gg.fixed_change"), "", "211"),
         (resp, "Schools respond at the within-district 0.836", *d("school_within_district"), "", "230"),
         (resp, "Every service grows fully with population", *d("proportional_reference:adopted"), "", "§services"),
         (resp, "Rental assistance held fixed", *d("rental_assistance_at_0"), "", "§services"),
         (count, "Public capital earns 7%, not 2–3%", *d("capital_return_at_7pct"), "", "238"),
         (count, "No return on public capital", *d("without_capital_return"), "", "238"),
         (count, "Government enterprises left out", *d("enterprises_out_option_a"), "", "§conventions"),
-        (data, "Sampling noise, 95% interval", 20.8, 20.8, "noise", "184"),
+        (data, "Sampling noise, 95% interval", q("noise.sampling_95"), q("noise.sampling_95"), "noise", "184"),
         (data, "Survey answers left uncorrected", *d("uncorrected_at_adopted_responses"), "", "§data"),
         (data, "Census income fill-ins left in", *d("no_fill_in_correction"), "", "208"),
-        (econ, "Natives and immigrants are poor substitutes (ε = 3)", -13.8, -9.1, "", "176"),
+        (econ, "Natives and immigrants are poor substitutes (ε = 3)", *q("production.eps3_change"), "", "176"),
     ]
 
 
@@ -343,18 +375,88 @@ def assumptions_html(rows, labels, sections):
 
 
 
+# ---------------------------------------------------------------- quantities: lint and binding tests
+
+def text_sites(template, groups):
+    """(file, locator) → text of every unit that may quote a record: groups.py fields, template lines
+    (tags removed) and ledger notes. A template binding names an anchor that must pick one line."""
+    sites = {(f"{OV}/groups.py", loc): text for loc, text in Q.groups_sites(groups).items()}
+    for n, line in enumerate(template.splitlines(), 1):
+        sites[(f"{OV}/template.html", f"L{n}")] = Q.plain(line)
+    for _cat, items in LEDGER:
+        for step_label, _label, note in items:
+            if note:
+                sites[(f"{OV}/build.py", f"ledger/{step_label}/note")] = note
+    return sites
+
+
+def value_sites(wrows, arows):
+    """(file, locator) → (values, label) of every table row whose numbers a binding may name."""
+    out = {}
+    for _c, label, lo, hi, _kind, _ref in arows:
+        out[(f"{OV}/build.py", f"assumptions/{label}/value")] = ((lo, hi), label)
+    for r in wrows:
+        if r.get("alt") or r.get("beside"):
+            out[(f"{OV}/build.py", f"alternatives/{r['label']}/value")] = (tuple(r["value"]), r["label"])
+    for _cat, merged in ledger_lines(wrows):
+        for label, m in merged.items():
+            out[(f"{OV}/build.py", f"ledger/{label}/value")] = (tuple(m["v"]), label)
+    return out
+
+
+def check_quantities(template, groups, wrows, arows):
+    """Refuse the page when a sentence quoting a record fails its lint, or a binding's site no longer
+    quotes its record."""
+    errs = []
+    sites = text_sites(template, groups)
+    for (file, loc), text in sorted(sites.items()):
+        for rid, view, sent, e in Q.lint_unit(text):
+            errs.append(f"{file} {loc}: {rid}|{view} in {sent!r} {'; '.join(e)}")
+    rows = value_sites(wrows, arows)
+    bindings = Q.load_bindings()
+    for b in bindings:
+        if (b["file"], b["locator"]) in rows:
+            vals, label = rows[(b["file"], b["locator"])]
+            errs += Q.value_binding_errors(b, vals, label)
+        elif b["file"].endswith("template.html"):
+            hits = [t for (f, loc), t in sites.items() if f == b["file"] and Q.anchored(b["locator"], t)]
+            errs += (Q.binding_errors(b, hits[0]) if len(hits) == 1 else
+                     [f"{b['file']} {b['locator']!r}: the anchor picks {len(hits)} lines"])
+        else:
+            errs += Q.binding_errors(b, sites.get((b["file"], b["locator"])))
+    if errs:
+        fail(f"{len(errs)} quantity test(s) failed:\n  " + "\n  ".join(errs))
+    return len(bindings)
+
+
+def load_evidence(groups_path):
+    """The evidence module, reading GROUPS from `groups_path` (a copy, for the positive control)."""
+    spec = importlib.util.spec_from_file_location("groups", groups_path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    sys.modules["groups"] = mod
+    return importlib.import_module("evidence")
+
 
 def main():
+    global evidence
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--groups", type=Path, default=HERE / "groups.py", help="another copy of groups.py")
+    ap.add_argument("--out", type=Path, default=HERE / "derived/overview.html", help="where to write the page")
+    args = ap.parse_args()
+    evidence = load_evidence(args.groups.resolve())
     entries = parse_ladder()
     s, bands, stairs = load_numbers()
-    social = load_social()
+    load_headcount()
     r = evidence.render(entries, fail)
-    wrows = waterfall_rows(s, stairs, social)
+    wrows = waterfall_rows(s, stairs)
+    arows = assumption_rows(s, bands)
     page = (HERE / "template.html").read_text()
+    n_bind = check_quantities(page, sys.modules["groups"].GROUPS, wrows, arows)
     subs = {
         "{{LEDGER}}": ledger_html(wrows),
         "{{ALTERNATIVES}}": alternatives_html(wrows),
-        "{{ASSUMPTIONS}}": assumptions_html(assumption_rows(s, bands), r["labels"], r["sections"]),
+        "{{ASSUMPTIONS}}": assumptions_html(arows, r["labels"], r["sections"]),
         "{{TOC}}": r["toc"],
         "{{GROUPS}}": r["groups"],
         "{{LEGEND}}": r["legend"],
@@ -368,22 +470,15 @@ def main():
         if k not in page:
             fail(f"template lacks {k}")
         page = page.replace(k, v)
-    add = [social[0] - s["main_case"][0], social[1] - s["main_case"][1]]
-    mid = lambda v: round((v[0] + v[1]) / 2 / 5) * 5
-    priced, _raw = load_headcount()
-    pm = [x * 1e9 / priced / 1e3 for x in s["main_case"]]
-    for k, v in {"{{PER_MEMBER}}": f"${(pm[0] + pm[1]) / 2:.1f}k ({pm[0]:.1f}–{pm[1]:.1f})",
-                 "{{GROUP_SIZE}}": f"{priced / 1e6:.1f}M","{{SOCIAL_TOTAL}}": f"about ${mid(social)}bn ({social[0]:.0f}–{social[1]:.0f})",
-                 "{{SOCIAL_ADD_WORDS}}": f"about ${mid(add)}bn",
-                 "{{SOCIAL_ADD}}": f"about ${mid(add)}bn ({add[0]:.0f}–{add[1]:.0f})"}.items():
-        page = page.replace(k, v)
+    page, _ = Q.fill(page, markup=True)
     if "{{" in page:
         fail("unfilled placeholder: " + page[page.index("{{"):page.index("{{") + 30])
-    out = HERE / "derived/overview.html"
-    out.parent.mkdir(exist_ok=True)
+    out = args.out.resolve()
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page)
-    print(f"wrote {out.relative_to(ROOT)}: {len(entries)} entries, {r['n_find']} findings, "
-          f"{r['n_retired']} retired, {r['n_bib']} sources")
+    print(f"wrote {out.relative_to(ROOT) if out.is_relative_to(ROOT) else out}: {len(entries)} entries, "
+          f"{r['n_find']} findings, {r['n_retired']} retired, {r['n_bib']} sources; {n_bind} bindings pass")
+
 
 if __name__ == "__main__":
     main()

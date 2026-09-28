@@ -44,15 +44,16 @@ GROUPS = [
         claim="Other US residents pay about $355bn a year for the group's presence",
         range="$355bn (322–387)",
         why=("The account asks one question. In 2024, how much better off would all other US residents be "
-             "without the Mexican-origin population? The group is {{GROUP_SIZE}} people in three generations. Public "
+             "without the Mexican-origin population? The group is {{q:headcount.priced|value}} people in three "
+             "generations. Public "
              "services shrink with the population."),
         terms=[("counterfactual", "the world we compare with. Here it is the same US without the group."),
                ("specification", "one full set of choices. The range covers 64 of them."),
                ("standard error", "sampling noise. It is about $10.6bn here.")],
         findings=[
             dict(refs=[239],
-                 text="Other residents would be about $355bn a year better off (322–387). That is about {{PER_MEMBER}} per "
-                      "group member.",
+                 text="Other residents would be about $355bn a year better off (322–387). That is about "
+                      "{{q:case.per_member|mid_range}} per group member.",
                  why="The account adds each member's own taxes and benefits from survey records. It then charges "
                      "a share of every public service. The range comes from tax-incidence rules and service "
                      "responses."),
@@ -68,20 +69,26 @@ GROUPS = [
                      "ages its elderly also draw less from pensions and Medicare. At its own ages the group pays "
                      "about 41% of the average resident's income tax."),
             dict(refs=[161, 169],
-                 text="A young age mix hides cost. At a common age mix the gap per person is $7,049. The raw gap "
-                      "is $4,093.",
+                 text="A young age mix hides cost. Against third-generation whites, the gap per person is "
+                      "{{q:gap_vs_white.per_person_common_age|value}} at a common age mix and "
+                      "{{q:gap_vs_white.per_person_own_ages|value}} at the group's own ages.",
                  why="Children cost now and pay later. Old people draw pensions. A one-year view charges this "
                      "group for schools and credits it on pensions. The pension effect is larger."),
             dict(refs=[268],
-                 text="About 22% of members (20–24) live in households that pay more than they cost. The "
-                      "costliest tenth of households carries 53–61% of the net cost.",
-                 why="The share rises from about 11% when the head did not finish high school to about 44% with a "
-                     "degree. Households with three or more children almost never pay their way, because a "
-                     "one-year account charges each household for its children's schools. Counting only the "
-                     "services that a household uses itself, the share is about 30%."),
+                 text="About {{q:household.net_contributor_share|mid}} of members "
+                      "({{q:household.net_contributor_share|range}}) live in households that pay more than they "
+                      "cost. The costliest tenth of households carries {{q:household.top10_cost_share|range_unit}} "
+                      "of the net cost.",
+                 why="The share rises from about {{q:household.share_head_below_hs|mid}} when the head did not "
+                     "finish high school to about {{q:household.share_head_ba_plus|mid}} with a degree. Households "
+                     "with three or more children almost never pay their way, because a one-year account charges "
+                     "each household for its children's schools. Counting only the services that a household uses "
+                     "itself, the share is about {{q:household.share_convention_b|mid}}."),
             dict(refs=[123, 125, 126, 128, 172, 119],
-                 text="Against third-generation whites of the same ages, the gap is about $240bn a year "
-                      "(190–290). Matching by state or metro makes it larger.",
+                 text="Against third-generation whites of the same ages, the gap is about "
+                      "{{q:gap_vs_white.age_matched_partial|value}} a year, and "
+                      "{{q:gap_vs_white.age_matched_complete|value}} with every item of the ledger priced. Matching "
+                      "by state or metro makes it larger.",
                  why="A gap against a reference group is a different measure from the cost of removal. On "
                      "taxes and benefits alone the group pays more than it gets. The gap is still negative."),
             dict(refs=[54, 55],
@@ -105,14 +112,16 @@ GROUPS = [
                  text="School spending rises about 1% per 1% more pupils. So each pupil costs the full average. "
                       "Schools are the largest line.",
                  why="Across districts and states the slope is 0.97–1.00. Inside one district over a few years "
-                     "it is 0.84. In the 2022–24 surge, money followed new pupils about half, and late. The "
-                     "short-run response would lower the total by about $52bn (46–58)."),
+                     "it is 0.84. In the 2022–24 surge, money followed new pupils about half, and late. Without the "
+                     "return on school capital, the short-run response would lower the total by about "
+                     "{{q:schools.first_year_effect|mid_range}}."),
             dict(refs=[237],
                  text="Road spending rises 0.73% and park spending 0.95% per 1% more residents.",
                  why="Slopes across states. Budget scoring sets them to zero for the first year. Over a long "
                      "stay the long-run slope applies. It adds about $25bn (19–30)."),
             dict(refs=[211, 165, 227],
-                 text="General administration grows about 0.7% per 1% more residents (0.60–0.85).",
+                 text="General administration grows about {{q:gg.growth_elasticity|mid}}% per 1% more residents "
+                      "({{q:gg.growth_elasticity|range}}).",
                  why="From the size of administration spending across states. Designs inside states are too "
                      "noisy to tell it from 0 or 1."),
             dict(refs=[141, 149],
@@ -149,7 +158,7 @@ GROUPS = [
                  text="If property taxes follow people like the capital they pay for, the total falls by about $27bn.",
                  why="The owner's share responds at about 0.76: the house leaves with the household and land "
                      "prices fall. Defense stays at zero. A bound on defense by share of GDP would add about "
-                     "$60bn (47–72)."),
+                     "{{q:defense.bound|mid_range}}."),
         ],
         minor=[],
     ),
@@ -165,7 +174,7 @@ GROUPS = [
         findings=[
             dict(refs=[208],
                  text="Census fill-ins for missing income give the group too much income. The correction raises "
-                      "the cost by about $12bn (9–15).",
+                      "the cost by about {{q:fill_in.effect|mid_range}}.",
                  why="At equal age, sex and schooling, filled-in wages keep only 9% of the group's wage gap. "
                      "Eight versions of the correction all point the same way."),
             dict(refs=[209],
@@ -193,8 +202,9 @@ GROUPS = [
                      "Courts, police and prisons charged by use add $5.9bn."),
             dict(refs=[225, 90],
                  text="Consumption taxes are charged on what households spend, not on their income.",
-                 why="Saving and money sent home lower spending. Money sent home lowers sales tax by only about "
-                     "$1.8bn (1.3–2.3)."),
+                 why="Saving and money sent home lower spending. Money sent home lowers sales tax by about "
+                     "{{q:remittance.sales_tax_effect|mid}}, or {{q:remittance.sales_tax_effect|min}} at surveyed "
+                     "amounts."),
             dict(refs=[267],
                  text="Prices where the group lives raise its service costs by about $8.6bn and its sales and "
                       "vehicle taxes by about $6.4bn. The net cost is about $2.2bn. The main estimate uses "
@@ -214,28 +224,33 @@ GROUPS = [
     ),
     dict(
         id="social", part="beyond",
-        claim="Costs outside the public budget add {{SOCIAL_ADD_WORDS}} a year",
-        range="{{SOCIAL_ADD}}",
+        claim="Costs outside the public budget add about {{q:social.items|mid}} a year",
+        range="about {{q:social.items|mid_range}}",
         why=("Some costs never pass through a budget: crime victims, pollution, crashes, traffic and fear. "
              "They are priced beside the account, net of gains from a larger economy. With them the total is "
-             "{{SOCIAL_TOTAL}}."),
+             "about {{q:pairing.total|mid_range}}."),
         terms=[("externality", "a cost that falls on people outside the transaction"),
                ("value of a statistical life", "the price that cost-benefit analysis uses for a death"),
                ("normalized", "the same item for as many average residents, taken away")],
         findings=[
             dict(refs=[260],
-                 text="Fine-particle pollution from the group's consumption causes about 4,900 deaths among "
-                      "others a year. The cost is about $70bn (32–123).",
+                 text="Fine-particle pollution from the group's consumption causes about "
+                      "{{q:pm25.deaths_priced|value}} deaths among others a year. The cost is about "
+                      "{{q:pm25.cost|value}} ({{q:pm25.span_priced|range}}).",
                  why="Per person the group causes 0.65 of an average resident's pollution because it consumes "
-                     "less. Against as many average residents, the group is about $47bn better."),
+                     "less. Against as many average residents, the group is about "
+                     "{{q:pm25.normalized_priced|value}} better."),
             dict(refs=[264, 266],
-                 text="The group's traffic costs other residents about $11bn a year in road crashes (−58 to +74).",
+                 text="The group's traffic costs other residents about {{q:crash.cost|value}} a year in road crashes "
+                      "({{q:crash.span_priced|range}}).",
                  why="One more car barely changes other drivers' crash risk per mile. So most crashes that others "
                      "have with group drivers would happen anyway, among the remaining drivers. Counting every "
-                     "crash that group drivers cause gives about $42bn (24–73). California records show Hispanic "
-                     "drivers are not at fault more often in injury crashes (odds 0.98)."),
+                     "crash that group drivers cause gives about {{q:crash.fault_based_priced|mid_range}}. "
+                     "California records show Hispanic drivers are not at fault more often in injury crashes "
+                     "(odds 0.98)."),
             dict(refs=[189],
-                 text="Violent crime by group members costs victims outside the group about $29bn a year.",
+                 text="Violent crime by group members costs victims outside the group about "
+                      "{{q:victims.harm|mid_range}} a year.",
                  why="The full cost counts a death at a statistical value, plus pain. Tangible losses alone are "
                      "$4.5bn. Police records confirm the offender shares."),
             dict(refs=[195],
@@ -246,8 +261,8 @@ GROUPS = [
                  text="Fear, private security and school discipline cost about $8bn a year.",
                  why="The same method gives $51bn for non-Hispanic Black residents."),
             dict(refs=[190, 79, 180, 183, 57],
-                 text="Rents rise about 1% per 1% more people. Other renters pay about $34bn more, and landlords "
-                      "receive it.",
+                 text="In the long run rents rise {{q:housing.rent_elasticity_long_run|range}}% per 1% more people. "
+                      "Other renters pay about $34bn more, and landlords receive it.",
                  why="Most landlords are other residents, so the net for others is a small gain of about $2bn "
                      "(0.7–3.5). The loss falls on renters."),
             dict(refs=[265],
@@ -330,14 +345,14 @@ GROUPS = [
                      "large cost. Studies of average schooling find nothing."),
             dict(refs=[53, 59, 99, 120, 136, 140, 182],
                  text="The wage and automation designs tested here cannot find a native wage effect.",
-                 why="The usual instruments lose their power after 2000."),
+                 why="The usual instruments lose their power after {{q:instrument.power_lost_year|value}}."),
         ],
         minor=[],
     ),
     dict(
         id="time", part="time",
         claim="Only 2024 is measured, and past years and old debt are separate numbers",
-        range="about $3.3tn over ten years, $36bn interest",
+        range="about {{q:backcast.10y|mid}} over ten years, $36bn interest",
         why=("Earlier years come from a model. Lifetimes use a separate ledger with a reference group. None "
              "of them adds to the annual number."),
         terms=[("back-cast", "a model of past years from today's position and past national data"),
@@ -345,8 +360,8 @@ GROUPS = [
                ("discount rate", "the rate that converts future dollars to today. It is 3% here.")],
         findings=[
             dict(refs=[162, 251],
-                 text="Carried back on each year's national data, the cost is about $3.3tn over 2015–2024 "
-                      "(2.8–3.7), without interest.",
+                 text="Carried back on each year's national data, the cost is about {{q:backcast.10y|mid}} over "
+                      "2015–2024 ({{q:backcast.10y|range}}), without interest.",
                  why="Receipts, programmes, prices, population and the group's income change each year. "
                      "Pandemic payments reached the group at about the same rate per person as others."),
             dict(refs=[207],
@@ -362,7 +377,8 @@ GROUPS = [
                      "scale it onto the annual number."),
             dict(refs=[240, 247, 235],
                  text="Arrivals at 50 or older cost others about $5.7bn a year. A parent sponsored by a US "
-                      "citizen costs $237k–274k over the rest of life, at 3%.",
+                      "citizen and entering at 55–65 costs {{q:ir5.lifetime_cost_55_65|range_unit}} over the rest "
+                      "of life, at 3%.",
                  why="Per person, late arrivals cost less than seniors who arrived young. Their lower Social "
                      "Security outweighs their lower taxes."),
         ],
@@ -418,7 +434,7 @@ GROUPS = [
     dict(
         id="crime", part="other",
         claim="Immigrants offend less, and their US-born sons are held at about twice the white rate",
-        range="feeds the $29bn victim cost",
+        range="feeds the {{q:victims.harm|mid}} victim cost",
         why="The immigrant advantage belongs to the first generation. Parental income explains most of the later gap.",
         terms=[("rate ratio", "one group's rate divided by another group's rate"),
                ("clearance rate", "the share of crimes that end in an arrest")],
