@@ -216,11 +216,8 @@ def scenario(g, ages="own", scaled=True):
         cw = w * MASK[g] * (total / popg)
     else:
         cw = reweight(MASK[g], w, cage, PI[ages], total)
-    sc = {"name": g, "ages": ages, "population": total, "cps_w": cw,
-          "share": {k: float((cw * v).sum() / KTOT[k]) for k, v in K.items()},
-          "cps_bn": {k: float((cw * K[k]).sum() / 1e9) for k in ("fit", "sit")}}
     if g == "mex":
-        return sc
+        return keyed(g, cw, total, ages)
     mmask = MMASK[g]
     mpop = float(mw[mmask].sum())
     mfrac = (total / CPS_TOTAL) * float(mw.sum())    # the group's MEPS persons, set to its CPS population share
@@ -228,6 +225,17 @@ def scenario(g, ages="own", scaled=True):
         mwt = mw * mmask * (mfrac / mpop if scaled else 1.0)
     else:
         mwt = reweight(mmask, mw, mage, PI[ages], mfrac)
+    return keyed(g, cw, total, ages, mwt)
+
+
+def keyed(g, cw, total, ages, mwt=None):
+    """CPS key shares for person weights cw (total persons), and for g other than mex the external keys from MEPS
+    weights mwt (blk: the Black lane's constants; avg: population shares; else the white rules)."""
+    sc = {"name": g, "ages": ages, "population": total, "cps_w": cw,
+          "share": {k: float((cw * v).sum() / KTOT[k]) for k, v in K.items()},
+          "cps_bn": {k: float((cw * K[k]).sum() / 1e9) for k in ("fit", "sit")}}
+    if g == "mex":
+        return sc
     meps = {c: float((mwt * md[c]).sum() / MTOT[c]) for c in MEPS_COLS}
     ph = sc["share"]["pc"] * pc_scale
     if g == "blk":
