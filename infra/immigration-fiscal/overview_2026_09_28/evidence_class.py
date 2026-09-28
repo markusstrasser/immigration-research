@@ -124,6 +124,7 @@ CLASS = {
     84: ("sample", "tabulated", None),
     # reading
     58: ("count", "rule", None),
+    270: ("sample", "model", None),
 }
 
 INPUTS = {
