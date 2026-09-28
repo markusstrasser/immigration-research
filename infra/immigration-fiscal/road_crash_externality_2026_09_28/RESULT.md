@@ -1,5 +1,19 @@
-**Verdict:** With its driving against without it, the Mexican-origin group's traffic adds about **$44bn a year** (2024 $) of crash losses borne by people outside the group. The full grid runs from $6bn to $145bn, and one input sets most of that range: how fast the crash rate per mile rises with traffic. Most of the $44bn comes from non-fatal multi-vehicle crashes ($35bn), with $8bn from pedestrians and cyclists and $2bn from single-vehicle crashes. That is $1,088 per group member and $150 per other resident. Against the average resident's driving, the normalized cost is about **zero (−$2.6bn; range −$39bn to +$15bn)**. The group drives 11% fewer miles per person than the average resident and is involved in about 6% more crashes per mile, and the two roughly cancel. Charging the group only for the crashes its drivers cause gives almost the same central, $46bn ($26–81bn), and a normalized cost of $0. This fault-based figure is an alternative to the $44bn, never an addition. [CALCULATION: `crash_model.py` → `derived/items.csv`, `derived/model.json`, `derived/grid.csv`]
+**Verdict:** [Revised 2026-09-28 with California's measured non-fatal culpability: $42.5bn but-for, $42.3bn fault-based; see the block below the model ID.] With its driving against without it, the Mexican-origin group's traffic adds about **$44bn a year** (2024 $) of crash losses borne by people outside the group. The full grid runs from $6bn to $145bn, and one input sets most of that range: how fast the crash rate per mile rises with traffic. Most of the $44bn comes from non-fatal multi-vehicle crashes ($35bn), with $8bn from pedestrians and cyclists and $2bn from single-vehicle crashes. That is $1,088 per group member and $150 per other resident. Against the average resident's driving, the normalized cost is about **zero (−$2.6bn; range −$39bn to +$15bn)**. The group drives 11% fewer miles per person than the average resident and is involved in about 6% more crashes per mile, and the two roughly cancel. Charging the group only for the crashes its drivers cause gives almost the same central, $46bn ($26–81bn), and a normalized cost of $0. This fault-based figure is an alternative to the $44bn, never an addition. [CALCULATION: `crash_model.py` → `derived/items.csv`, `derived/model.json`, `derived/grid.csv`]
 claude-opus-5-5
+
+[2026-09-28 23:14 JST, lead revision: non-fatal culpability is now **measured**, from California's crash records (CCRS
+2022–24, `ccrs_nonfatal_involvement_2026_09_28`, 20755cb). Hispanic drivers' at-fault odds against all non-Hispanic
+drivers, within county × year: injury 0.98, PDO 1.15. The non-fatal multi-vehicle m is 0.999, not 1.063. Fatal and
+single-vehicle parts keep FARS's 1.13. `crash_model.py` gained `evaluate_split()`; `evaluate()` is unchanged and is
+the positive control. The grid adds the CCRS hit-and-run bounds as a ninth factor (19,683 cells).
+Revised figures, $bn:
+- but-for (a): **42.5** (4.2–137.7), $1,039 per member; normalized −5.1 (−44.3 to +6.7);
+- fault-based, the row in the social total: **42.3** (23.8–73.3); normalized −3.4 (−22.6 to +12.4);
+- components: non-fatal multi-vehicle 33.0, non-motorist 7.5, single-vehicle 2.0, fatal multi-vehicle 0.05.
+
+The figures below are the pre-revision lane (`model.json` → `central_before_ccrs_revision`). `derived/scenarios.json`
+is now written by `crash_model.py`, which it was not before. Its named scenarios under the revision: Parry-style 4.6,
+2020 at face value 4.6, pairwise 91.3, uniform mixing 53.5, Mexican-coded fatal culpability 43.0.]
 
 # Road-crash externality of the Mexican-origin group's driving (2024 $)
 
@@ -179,7 +193,7 @@ m. [SOURCE: PNAS abstract and introduction; the effect's size was not read, GAP]
   drivers, so its non-Hispanic cell looks under-coded. For that reason the central uses the
   all-Hispanic within-state 1.13. [GAP] Surviving drivers' origin is absent from FARS, so no
   non-fatal crash evidence on the group's involvement was used. California's crash records
-  (CCRS/SWITRS party race and at-fault flags) would test this directly.
+  (CCRS/SWITRS party race and at-fault flags) would test this directly. [2026-09-28: tested; see the revision at the top. Non-fatal m is 1.00.]
 - **Is the normalized sign robust?** No. It is negative whenever the group's VMT ratio times m is
   below 1: at the central, and with the 2022 NHTS ratio of 0.692. It turns positive (up to
   +$15bn) with the Mexican-coded odds ratio and the 2017 national VMT ratio. [FRAMING-SENSITIVE]
@@ -212,7 +226,7 @@ m. [SOURCE: PNAS abstract and introduction; the effect's size was not read, GAP]
 
 ## What can be added beside the account
 
-[2026-09-28, later: the operator added the **fault-based** absolute row (`road_crash_externality_fault_based`, $45.8bn, $26.3–80.9bn) to the social rows of the fiscal-plus-social total, from the September 27 case on. It does not depend on the traffic-volume elasticity, and it charges crashes the way the account charges crime, by who causes them. The but-for row below and both normalized rows sit beside, never added ([decision](../../../decisions/2026-09-28-social-items-pollution-crashes.md)). The culpability odds ratio is being tested against California's crash records (`ccrs_nonfatal_involvement_2026_09_28`).]
+[2026-09-28, later: the operator added the **fault-based** absolute row (`road_crash_externality_fault_based`, $45.8bn, $26.3–80.9bn; $42.3bn, $23.8–73.3bn after the CCRS revision above) to the social rows of the fiscal-plus-social total, from the September 27 case on. It does not depend on the traffic-volume elasticity, and it charges crashes the way the account charges crime, by who causes them. The but-for row below and both normalized rows sit beside, never added ([decision](../../../decisions/2026-09-28-social-items-pollution-crashes.md)). The culpability odds ratio is being tested against California's crash records (`ccrs_nonfatal_involvement_2026_09_28`).]
 
 The but-for absolute, **$44.5bn ($5.7–145.1bn)**, can sit beside the fiscal account with the
 other social items, as congestion does. It is a real-resource loss borne by other residents,
@@ -294,3 +308,4 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/road
   - central (a) $44.5bn, (b) −$2.6bn, fault-based $45.8bn;
   - scenarios written to `derived/scenarios.json`.
 - 2026-09-28 22:43 JST (lead): the operator added the fault-based row to the social rows of the fiscal-plus-social total (decision 2026-09-28-social-items-pollution-crashes); lane outputs unchanged.
+- 2026-09-28 23:14 JST (lead): CCRS non-fatal culpability carried into `crash_model.py` (`evaluate_split`, ninth grid factor); `scenarios.json` now generated; rerun IDENTICAL 9/9; fault-based $45.8bn → $42.3bn.

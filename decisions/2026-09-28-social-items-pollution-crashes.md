@@ -143,6 +143,9 @@ records (CCRS, 2022–24) is running.
   counterpart of the scale costs now in the total.
 - California's crash records give a non-fatal at-fault odds ratio for Hispanic drivers different from 1.13. The
   crash lane would then carry that ratio for non-fatal crashes.
+  [2026-09-28 23:14: they did. CCRS 2022–24 gives 0.98 in injury and 1.15 in PDO crashes (m 1.00), and the crash lane
+  now carries them for its non-fatal parts. The fault-based row is $42.3bn ($23.8–73.3bn; normalized −$3.4bn), and the
+  pairing is $462.6–537.2bn with the scale benefits (`ccrs_nonfatal_involvement_2026_09_28`, 20755cb).]
 - A measured traffic-volume elasticity narrows the but-for range enough to replace the fault-based row.
 - The account values deaths by life-years rather than one VSL at every age. PM2.5 would fall to about $26bn.
 - The concentration–response evidence moves. Wu 2020 sets the low end and Di 2017 the high end.

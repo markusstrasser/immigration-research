@@ -20,6 +20,16 @@ counts to 2023 (latest FARS/CRSS year, Traffic Safety Facts 2023 Tables 1-2).
     of average residents' driving would.
 Variant: fault-based attribution (outsider losses in crashes the group's drivers cause, less
 their liability payments), which does not depend on x or beta.
+
+Revision 2026-09-28 (lead): the non-fatal parts take their own culpability odds ratios, measured in
+California's crash records (ccrs_nonfatal_involvement_2026_09_28: CCRS 2022-24 quasi-induced exposure,
+Hispanic against all non-Hispanic drivers within county x year, injury and PDO). evaluate_split() carries
+them; fatal and single-vehicle parts keep FARS's r_c. The non-fatal multi-vehicle part takes the m
+weighted over its injury and PDO cost rows, the non-fatal non-motorist part the injury m, and (b) and
+the fault-based normalized figure apply 1 - 1/R per component. evaluate() is unchanged: it is the lane
+before the revision, the positive control, and what other lanes import. The grid adds r_nf at three
+levels: the CCRS lane's hit-and-run bounds (no unidentified fled driver Hispanic; every one Hispanic)
+around its central.
 """
 import csv
 import itertools
@@ -168,16 +178,107 @@ def evaluate(vmt, r_c, q_mult, x_nf, x_f, beta, liab, e_sv):
             "fault_total": fault, "fault_normalized": fault * (1 - 1 / R_fault)}
 
 
+# --- non-fatal culpability, measured: California CCRS 2022-24 (ccrs_nonfatal_involvement_2026_09_28, 20755cb),
+# (injury, PDO) odds ratios. Central: quasi-induced exposure within county x year against all non-Hispanic
+# drivers; low and high: that lane's hit-and-run bounds. [DATA]
+CCRS_REVISION = ROOT / "infra/immigration-fiscal/ccrs_nonfatal_involvement_2026_09_28/derived/crash_component_revision.csv"
+CCRS_LEVELS = ("hit-and-run: no unidentified fled driver Hispanic, vs_all_non_hispanic",
+               "QIE within county x year, vs_all_non_hispanic",
+               "hit-and-run: all unidentified fled drivers Hispanic, vs_all_non_hispanic")
+
+
+def ccrs_nonfatal_or():
+    rows = {r["scenario"]: r for r in csv.DictReader(open(CCRS_REVISION))}
+    return [(float(rows[k]["or_injury"]), float(rows[k]["or_pdo"])) for k in CCRS_LEVELS]
+
+
+def pdo_share_of_mv_nonfatal():
+    """The PDO row's share of the non-fatal multi-vehicle base: the weight of the PDO odds ratio in its m."""
+    parts = {}
+    for k in SEV[:-1]:
+        econ_keep = ECON[k] - CONG[k] - EMS[k]
+        comp = econ_keep + QALY[k]
+        price = (econ_keep * CPI_2024 / CPI_2019 + QALY[k] * VSL_2024 / VSL_2019) / comp
+        count = PDO_CRASHES[2023] / PDO_CRASHES[2019] if k == "PDO" else INJURED[2023] / INJURED[2019]
+        occ = comp - (PED[k] + BIKE[k]) * comp / (ECON[k] + QALY[k])
+        parts[k] = occ * (MV_SHARE_PDO if k == "PDO" else MV_SHARE_INJ) * price * count / 1000.0
+    assert abs(sum(parts.values()) - BASE["mv_nonfatal"]) < 1e-6
+    return parts["PDO"] / BASE["mv_nonfatal"]
+
+
+W_PDO = pdo_share_of_mv_nonfatal()  # the CCRS levels are read in main(), so importers never need that lane
+
+
+def evaluate_split(vmt, r_c, q_mult, x_nf, x_f, beta, liab, e_sv, r_nf):
+    """evaluate() with the non-fatal parts on their own odds ratios r_nf = (injury, PDO); fatal and
+    single-vehicle parts keep r_c. r_nf = (r_c, r_c) reproduces evaluate()."""
+    base = evaluate(vmt, r_c, q_mult, x_nf, x_f, beta, liab, e_sv)
+    s, q, v = base["s"], base["q"], base["vmt_vs_avg"]
+    h = HISP_PED * MEX_OF_HISP
+    kappa, ins_g = liab
+    b_nf, b_f = beta
+    or_inj, or_pdo = r_nf
+    m_f, m_nm = (1 + r_c) / 2, (1 + or_inj) / 2
+    m_mv = W_PDO * (1 + or_pdo) / 2 + (1 - W_PDO) * m_nm
+    r_mv = 2 * m_mv - 1
+
+    def liab_term(r):
+        f = r / (1 + r)
+        return kappa * ((1 - f) * INS_OTHER - f * ins_g)
+
+    nm_scale = s * (1 - q) / (1 - s) * (1 - h)
+    keep = 1 - kappa * ins_g
+    comp = {"mv_nonfatal": m_mv * s * (1 - q) * BASE["mv_nonfatal"] * (x_nf + liab_term(r_mv)),
+            "mv_fatal": m_f * s * (1 - q) * BASE["mv_fatal"] * (x_f + liab_term(r_c)),
+            "nm_nonfatal": m_nm * nm_scale * b_nf * BASE["nm_nonfatal"],
+            "nm_fatal": m_f * nm_scale * b_f * BASE["nm_fatal"],
+            "single_vehicle": m_f * s * BASE["sv"] * e_sv}
+    fault = {"mv_nonfatal": m_mv * s * (1 - q) * BASE["mv_nonfatal"] * r_mv / (1 + r_mv) * keep,
+             "mv_fatal": m_f * s * (1 - q) * BASE["mv_fatal"] * r_c / (1 + r_c) * keep,
+             "nm_nonfatal": nm_scale * BASE["nm_nonfatal"] * F_DRIVER_PED * or_inj * keep,
+             "nm_fatal": nm_scale * BASE["nm_fatal"] * F_DRIVER_PED * r_c * keep,
+             "single_vehicle": comp["single_vehicle"]}
+    m_of = dict(mv_nonfatal=m_mv, mv_fatal=m_f, nm_nonfatal=m_nm, nm_fatal=m_f, single_vehicle=m_f)
+    r_of = dict(mv_nonfatal=r_mv, mv_fatal=r_c, nm_nonfatal=or_inj, nm_fatal=r_c, single_vehicle=r_c)
+    return {"s": s, "q": q, "m_fatal": m_f, "m_mv_nonfatal": m_mv, "m_nm_nonfatal": m_nm, "vmt_vs_avg": v,
+            "mv_nonfatal": comp["mv_nonfatal"], "mv_fatal": comp["mv_fatal"],
+            "nonmotorist": comp["nm_nonfatal"] + comp["nm_fatal"], "single_vehicle": comp["single_vehicle"],
+            "total": sum(comp.values()), "normalized": sum(e * (1 - 1 / (v * m_of[k])) for k, e in comp.items()),
+            "fault_total": sum(fault.values()),
+            "fault_normalized": sum(e * (1 - 1 / (v * r_of[k])) for k, e in fault.items())}
+
+
+# Named scenarios (RESULT.md): overrides of the central inputs.
+SCENARIOS = {
+    "central": {},
+    "parry_style_x0_beta_low": {"x_nonfatal": 0.0, "x_fatal": 0.0, "beta": (0.4, 0.0)},
+    "covid_face_value": {"x_nonfatal": 0.59, "x_fatal": -1.61, "beta": (0.8, 0.0)},
+    "pairwise_all_1": {"x_nonfatal": 1.0, "x_fatal": 1.0, "beta": (1.0, 1.0)},
+    "uniform_mixing": {"q_mult": 0.0},
+    "mexican_coded_culpability": {"r_c": FACTORS["r_c"][2]},
+}
+
+
 def main():
     keys = list(FACTORS)
+    nf_or = ccrs_nonfatal_or()
+    levels = {**FACTORS, "r_nf": nf_or}  # the grid's nine factors; r_nf enters evaluate_split by keyword
+
+    def run(idx):
+        """idx: level index (0 low, 1 central, 2 high) per factor in `levels`."""
+        return evaluate_split(*[FACTORS[k][idx[k]] for k in keys], r_nf=nf_or[idx["r_nf"]])
+
     grid = []
-    for combo in itertools.product(*[range(3) for _ in keys]):
-        args = [FACTORS[k][i] for k, i in zip(keys, combo)]
-        res = evaluate(*args)
-        grid.append({**{k: i for k, i in zip(keys, combo)}, **res})
-    central = evaluate(*[FACTORS[k][1] for k in keys])
-    low_e = evaluate(*[FACTORS[k][0] for k in keys])
-    high_e = evaluate(*[FACTORS[k][2] for k in keys])
+    for combo in itertools.product(*[range(3) for _ in levels]):
+        idx = dict(zip(levels, combo))
+        grid.append({**idx, **run(idx)})
+    central = run({k: 1 for k in levels})
+    low_e = run({k: 0 for k in levels})
+    high_e = run({k: 2 for k in levels})
+    before = evaluate(*[FACTORS[k][1] for k in keys])  # the lane before the CCRS revision
+    control = evaluate_split(*[FACTORS[k][1] for k in keys], r_nf=(FACTORS["r_c"][1],) * 2)
+    for c in ("total", "normalized", "fault_total", "fault_normalized", "mv_nonfatal", "nonmotorist"):
+        assert abs(control[c] - before[c]) < 1e-9, (c, control[c], before[c])
 
     def span(col):
         vals = [g[col] for g in grid]
@@ -191,10 +292,15 @@ def main():
 
     # one-at-a-time swings from the central
     swings = {}
-    for k in keys:
-        lo = evaluate(*[FACTORS[j][0 if j == k else 1] for j in keys])["total"]
-        hi = evaluate(*[FACTORS[j][2 if j == k else 1] for j in keys])["total"]
+    for k in levels:
+        lo = run({j: 0 if j == k else 1 for j in levels})["total"]
+        hi = run({j: 2 if j == k else 1 for j in levels})["total"]
         swings[k] = [lo, hi]
+    scenarios = {}
+    for name, over in SCENARIOS.items():
+        a = {k: over.get(k, FACTORS[k][1]) for k in keys}
+        scenarios[name] = evaluate_split(*[a[k] for k in keys], r_nf=nf_or[1])
+    (OUT / "scenarios.json").write_text(json.dumps(scenarios, indent=1))
 
     vmt_total = VMT_M[2023] * 1e6
     avg_ext_per_mile = {lvl: (FACTORS["x_nonfatal"][i] * BASE["mv_nonfatal"] + FACTORS["x_fatal"][i] * BASE["mv_fatal"]
@@ -212,6 +318,9 @@ def main():
                                                      "pdo": MV_SHARE_PDO},
              "pax_outsider_share": PAX_OUT, "sv_passenger_share": SV_PAX,
              "central": central, "all_low": low_e, "all_high": high_e,
+             "nonfatal_or_ccrs": {"levels_injury_pdo": nf_or, "scenarios": CCRS_LEVELS, "w_pdo": W_PDO,
+                                  "source": str(CCRS_REVISION.relative_to(ROOT))},
+             "central_before_ccrs_revision": before,
              "spans": {c: span(c) for c in ("total", "normalized", "fault_total", "fault_normalized",
                                              "mv_nonfatal", "mv_fatal", "nonmotorist", "single_vehicle")},
              "one_at_a_time_total_bn": swings,
@@ -232,18 +341,20 @@ def main():
           "lines (EMS excluded); group's own public medical and lost taxes (account)")
     rows = [
         row("road_crash_externality", "absolute", "total",
-            "Blincoe comprehensive costs (measured + VSL); FARS culpability; volume elasticity x contested",
+            "Blincoe comprehensive costs (measured + VSL); FARS fatal and CCRS non-fatal culpability; volume "
+            "elasticity x contested",
             dc, "but-for: outsider losses in crashes the group's traffic adds; x/beta = crash-volume elasticities"),
         row("road_crash_externality", "normalized", "normalized",
             "as absolute; plus NHTS Hispanic VMT ratio",
-            dc, "absolute x (1 - 1/R), R = VMT per person vs average resident x involvement per mile"),
+            dc, "absolute x (1 - 1/R) per component, R = VMT per person vs average resident x involvement per mile"),
         row("road_crash_externality_fault_based", "absolute", "fault_total",
-            "Blincoe + FARS culpability; attribution convention, not a counterfactual [FRAMING-SENSITIVE]",
+            "Blincoe + FARS fatal and CCRS non-fatal culpability; attribution convention, not a counterfactual "
+            "[FRAMING-SENSITIVE]",
             dc + "; alternative to road_crash_externality, never add both",
             "outsider losses in crashes group drivers cause, less their liability payments"),
         row("road_crash_externality_fault_based", "normalized", "fault_normalized",
             "as fault-based absolute", dc + "; alternative, never add both",
-            "fault-based absolute x (1 - 1/R'), R' = VMT ratio x culpability odds ratio"),
+            "fault-based absolute x (1 - 1/R') per component, R' = VMT ratio x culpability odds ratio"),
         row("component_multivehicle_nonfatal", "absolute", "mv_nonfatal", "component of road_crash_externality",
             "component; do not add to total", "x_nonfatal 0.2/0.6/1.0 (2020: injury crashes 1.6, PDO 2.4 elasticity)"),
         row("component_multivehicle_fatal", "absolute", "mv_fatal", "component of road_crash_externality",

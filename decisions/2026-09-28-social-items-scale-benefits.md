@@ -65,6 +65,9 @@ Option 2, adopted by the operator on 2026-09-28.
 
 The full span widens because the scale net's interval crosses zero widely.
 
+[Later on 2026-09-28 the crash item took California's measured non-fatal culpability ($45.8bn → $42.3bn): the
+pairing is $462.6–537.2bn ($11.3–13.1k per member) and the full span $267.2–755.0bn.]
+
 **Added social items.** They net to $102.7bn at central values: $123.4bn of costs and $20.7bn of benefits
 [CALCULATION: `sept24_propagation_2026_09_24/real_costs_totals.py --case sept27` →
 `sept27_propagation_2026_09_27/derived/real_costs_totals.csv`, `.json`]. The Sept 24 and schools-case outputs
