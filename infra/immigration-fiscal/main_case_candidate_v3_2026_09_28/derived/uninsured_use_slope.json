@@ -1,0 +1,82 @@
+{
+ "meta": {
+  "lane": "main_case_candidate_v3_2026_09_28",
+  "item": "10",
+  "definition": "use rate r implied by a fitted slope: the r whose key, account key x (1 - (1 - r) g) renormalized, gives that slope in the same weighted regression with the same regressors; None outside (0.001, 1.5)",
+  "sources": {
+   "backtest_published_2026_09_28/derived/hcris_s10_states.csv": "1f13e7901b61b06acad859387f1647ed8e538e5a712c3ed3766519348376aa6e",
+   "backtest_published_2026_09_28/derived/hcris_fits.csv": "9eb330b40b0f4dded75a3322cae130668f2d48038b3bcb85f4e74af6b80a4174",
+   "backtest_published_2026_09_28/derived/notes.csv": "26079db797544def79a088cfc15e5074c975fed7d51740a83dd075b2dc721f9d",
+   "backtest_published_2026_09_28/score.py": "3cd3edc73d7965b047ad6f56da86aa155c413a6b5ec80b667fae8386bbebb6e4"
+  }
+ },
+ "fits": {
+  "primary: weighted, expansion": {
+   "post_hoc": false,
+   "slope": -0.6045258252093493,
+   "se": 0.2712005320332639,
+   "ci95": [
+    -1.1360691005826478,
+    -0.07298254983605079
+   ],
+   "slope_at_r07": -0.32917328791519546,
+   "implied_r": 0.4880634069781141,
+   "implied_r_ci95": [
+    0.1572745538634281,
+    0.9285398626540231
+   ]
+  },
+  "post hoc: weighted, expansion, Census regions": {
+   "post_hoc": true,
+   "slope": -0.11361699375936209,
+   "se": 0.17009764099609706,
+   "ci95": [
+    -0.4470022439669361,
+    0.21976825644821196
+   ],
+   "slope_at_r07": -0.3297664733963477,
+   "implied_r": 0.8901070319038435,
+   "implied_r_ci95": [
+    0.6062097697677187,
+    1.234958562686347
+   ]
+  }
+ },
+ "gates": [
+  {
+   "gate": "the key at r = 0.7 is the table's account_r07 column (1e-12 relative)",
+   "passed": true,
+   "detail": "max rel diff 2.3e-14"
+  },
+  {
+   "gate": "census regions: 51 codes, each state of the table in exactly one",
+   "passed": true,
+   "detail": "51 states"
+  },
+  {
+   "gate": "primary: weighted, expansion: slope and SE are hcris_fits.csv's (1e-9)",
+   "passed": true,
+   "detail": "-0.6045 (0.2712)"
+  },
+  {
+   "gate": "post hoc: weighted, expansion, Census regions: slope and SE are hcris_fits.csv's (1e-9)",
+   "passed": true,
+   "detail": "-0.1136 (0.1701)"
+  },
+  {
+   "gate": "the primary fit's implied r is notes.csv's (1e-6)",
+   "passed": true,
+   "detail": "0.4881"
+  },
+  {
+   "gate": "the map gives the frozen r = 0.7 alternative slope (the lane's tolerance, 2e-3)",
+   "passed": true,
+   "detail": "-0.32917 against -0.32897"
+  },
+  {
+   "gate": "the sources did not change during the run",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

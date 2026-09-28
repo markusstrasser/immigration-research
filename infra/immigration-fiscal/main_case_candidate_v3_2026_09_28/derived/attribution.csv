@@ -1,0 +1,16 @@
+item,label,alone_spec48_bn,alone_spec11_bn,forward_spec48_bn,forward_spec11_bn,reverse_spec48_bn,reverse_spec11_bn,forward_on_spec48_bn,forward_on_spec11_bn,reverse_on_spec48_bn,reverse_on_spec11_bn
+1,"public housing's deficit at the tenant key",-1.6912,-1.6912,-1.6912,-1.6912,-1.6912,-1.6912,-1.6912,-1.6912,-1.6912,-1.6912
+2,"production on the account's weights",1.6427,1.1074,1.6427,1.1074,1.6427,1.1074,1.6427,1.1074,1.6427,1.1074
+3,"the IRS-matched income-tax key",-3.2005,-3.0966,-3.2005,-3.0966,-3.2044,-3.0975,-3.2005,-3.0966,-3.2044,-3.0975
+4,"public housing's capital at the tenant key",-0.3529,-0.5293,-0.3529,-0.5293,-0.3529,-0.5293,-0.3529,-0.5293,-0.3529,-0.5293
+5,"long-run property taxes",-27.1863,-27.1863,-27.1863,-27.1863,-27.1863,-27.1863,-27.1863,-27.1863,-27.1863,-27.1863
+6a,"payroll compliance: the all-central items, calibrated within-group rule",-0.3710,-0.1620,-0.3726,-0.1601,-0.3710,-0.1620,-0.3726,-0.1601,-0.6785,-0.5380
+6b,"payroll compliance: row 2 through CBO's re-key by the within-group rule",-0.8142,-0.8081,-0.8164,-0.8110,-0.8142,-0.8081,-0.8164,-0.8110,-0.0660,-0.0825
+7,"workers' compensation pooled over 2019-2024",-2.0069,-1.5501,-2.0069,-1.5501,-2.0069,-1.5501,-2.0069,-1.5501,-2.0069,-1.5501
+8,"public transit at the riders' key (state-deficit weighted), deficit and capital",0.1696,0.1808,0.1696,0.1808,0.1696,0.1808,0.1696,0.1808,0.1696,0.1808
+9,"pension accrual (switch)",116.0095,110.4057,,,,,116.4502,110.7553,116.0095,110.4057
+sum,"sum of the steps",-33.8107,-33.7354,-33.8145,-33.7364,-33.8145,-33.7364,82.6357,77.0189,82.6357,77.0189
+sum_with_switch,"sum of the items alone, switch included",82.1989,76.6703,,,,,,,,
+joint,"the joint change (switch off; switch on)",-33.8145,-33.7364,-33.8145,-33.7364,-33.8145,-33.7364,82.6357,77.0189,82.6357,77.0189
+10,"hospitals' uninsured use at 0.7x the average (switch): outside the sums; forward = last on the candidate, reverse = alone",-1.5335,-2.2424,-1.5335,-2.2424,-1.5335,-2.2424,-1.5335,-2.2424,-1.5335,-2.2424
+joint_with_10,"the joint change with item 10 (pension switch off; on)",,,-35.3480,-35.9787,-35.3480,-35.9787,81.1022,74.7766,81.1022,74.7766

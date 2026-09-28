@@ -1,0 +1,41 @@
+item,label,placement,old_spec48_bn,new_spec48_bn,change_spec48_bn,old_spec11_bn,new_spec11_bn,change_spec11_bn
+item1,"1. public housing's deficit at the tenant key, alone",candidate item,321.8194,320.1281,-1.6912,387.3701,385.6788,-1.6912
+item2,"2. production on the account's weights, alone",candidate item,321.8194,323.4621,1.6427,387.3701,388.4774,1.1074
+item3,"3. the IRS-matched income-tax key, alone",candidate item,321.8194,318.6188,-3.2005,387.3701,384.2735,-3.0966
+item4,"4. public housing's capital at the tenant key, alone",candidate item,321.8194,321.4665,-0.3529,387.3701,386.8408,-0.5293
+item5,"5. long-run property taxes, alone",candidate item,321.8194,294.6330,-27.1863,387.3701,360.1837,-27.1863
+item6a,"6a. payroll compliance: the all-central items, calibrated within-group rule, alone",candidate item,321.8194,321.4484,-0.3710,387.3701,387.2081,-0.1620
+item6b,"6b. payroll compliance: row 2 through CBO's re-key by the within-group rule, alone",candidate item,321.8194,321.0052,-0.8142,387.3701,386.5619,-0.8081
+item7,"7. workers' compensation pooled over 2019-2024, alone",candidate item,321.8194,319.8125,-2.0069,387.3701,385.8200,-1.5501
+item8,"8. public transit at the riders' key (state-deficit weighted), deficit and capital, alone",candidate item,321.8194,321.9890,0.1696,387.3701,387.5509,0.1808
+item9,"9. pension accrual (switch), alone",switch,321.8194,437.8289,116.0095,387.3701,497.7758,110.4057
+item10,"10. hospitals' uninsured use at 0.7x the average (switch), alone",switch,321.8194,320.2858,-1.5335,387.3701,385.1277,-2.2424
+candidate_switch_off,"the candidate: items 1-8 (pension switch off, cash)",candidate,321.8194,288.0048,-33.8145,387.3701,353.6337,-33.7364
+candidate_switch_on,"the candidate with the pension switch on (accrual)",candidate,321.8194,404.4550,82.6357,387.3701,464.3890,77.0189
+candidate_use07,"the candidate with the uninsured-use switch on (0.7x), pension switch off",candidate,321.8194,286.4713,-35.3480,387.3701,351.3913,-35.9787
+candidate_use07_accrual,"the candidate with both switches on",candidate,321.8194,402.9215,81.1022,387.3701,462.1466,74.7766
+item10_on_candidate,"10 on the candidate (change from it)",switch,288.0048,286.4713,-1.5335,353.6337,351.3913,-2.2424
+item10_on_accrual,"10 on the candidate with the pension switch on (change from it)",switch,404.4550,402.9215,-1.5335,464.3890,462.1466,-2.2424
+candidate_v2,"candidate v2 (items 1-3)",reference,321.8194,318.5703,-3.2490,387.3701,383.6896,-3.6804
+item6_both_parts,"6a + 6b together, alone",candidate item,321.8194,320.6342,-1.1852,387.3701,386.4000,-0.9701
+item6a_proportional_rule,"6a under the payroll lane's proportional rule (r_cal_raw), row 2 as in the case: the sensitivity",sensitivity,321.8194,322.2059,0.3866,387.3701,387.8972,0.5272
+item6a_low_cost_readings,"6a at the lane's low-cost readings (row 2 central)",range variant,321.8194,320.1965,-1.6229,387.3701,385.9394,-1.4306
+item6a_high_cost_readings,"6a at the lane's high-cost readings (row 2 central)",range variant,321.8194,325.7892,3.9699,387.3701,391.5530,4.1830
+candidate_proportional_rule,"the candidate with item 6 under the proportional rule (6a at r_cal_raw, 6b off; change from the candidate)",sensitivity,288.0048,289.5886,1.5838,353.6337,355.1434,1.5097
+item5_low,"5 at the receipt-side lane's low responses",range variant,321.8194,297.7408,-24.0785,387.3701,363.2915,-24.0785
+item5_high,"5 at 1 everywhere with the case-scaled tenant national",range variant,321.8194,281.4046,-40.4147,387.3701,346.9553,-40.4147
+item4_capital_lane_variant,"4 through the capital lane's variant (the gate's reference)",reference,321.8194,321.4665,-0.3529,387.3701,386.8408,-0.5293
+item8_deficit_only,"8, the deficit alone (capital at the enterprise key)",part,321.8194,321.9666,0.1473,387.3701,387.5173,0.1473
+item8_commuters,"8 at the commuters key (0.7465)",range variant,321.8194,319.5381,-2.2813,387.3701,384.9385,-2.4315
+item8_state_deficit_all_trips_within,"8 at the state deficit all trips within key (1.1310)",range variant,321.8194,322.9983,1.1789,387.3701,388.6266,1.2566
+item8_state_deficit_all_trips_cross,"8 at the state deficit all trips cross key (0.9372)",range variant,321.8194,321.2537,-0.5656,387.3701,386.7672,-0.6029
+item8_commuters_deficit_only,"8 at the commuters key, the deficit alone: the brief's estimate",brief's estimate,321.8194,319.8385,-1.9808,387.3701,385.3892,-1.9808
+candidate_transit_commuters,"the candidate with transit at the commuters key (change from the candidate)",range variant,288.0048,285.5539,-2.4509,353.6337,351.0214,-2.6123
+accrual_on_v2,"the pension switch on v2 (change from v2)",switch,318.5703,434.5798,116.0095,383.6896,494.0954,110.4057
+public_pay_unchanged_workforce,"public pay, unchanged workforce, on the candidate (change from it)",beside,288.0048,301.6134,13.6085,353.6337,362.5857,8.9520
+public_pay_counterfactual_low_share,"public pay, counterfactual low share, on the candidate (change from it)",beside,288.0048,300.3935,12.3887,353.6337,361.7236,8.0899
+public_pay_counterfactual_high_share,"public pay, counterfactual high share, on the candidate (change from it)",beside,288.0048,300.0586,12.0537,353.6337,361.4870,7.8533
+road_replacement,"road arm, replacement adjustment: worn road capital is not replaced (depreciation follows the response) while the stock in place keeps its return and its lanes (account only; change from the candidate)",beside,288.0048,282.7742,-5.2306,353.6337,342.8878,-10.7459
+road_fixed_stock,"road arm, a fixed stock: only operations follow the response; depreciation, the capital return and lanes stay (account only; change from the candidate)",beside,288.0048,277.4971,-10.5077,353.6337,335.6589,-17.9748
+road_construction_year_effects,"road arm, an upward stock: depreciation, the road capital return and lanes respond like highway construction across states (0.792, year effects) (account only; change from the candidate)",beside,288.0048,288.9004,0.8955,353.6337,353.6337,0.0000
+road_construction_land,"road arm, an upward stock: depreciation, the road capital return and lanes respond like highway construction across states with a land control (0.758) (account only; change from the candidate)",beside,288.0048,288.4417,0.4369,353.6337,353.6337,0.0000
