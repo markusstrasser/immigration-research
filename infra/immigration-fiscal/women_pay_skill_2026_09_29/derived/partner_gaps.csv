@@ -1,0 +1,37 @@
+window,weight,arm,sex,group,n_persons,n_person_years,n_worker_years,n_ref_persons,n_ref_worker_years,small_cell,unsupported_share,stat,estimate,se
+all G3+ white (baseline),w_round,raw,men,G2 Hispanic,269,568,568,1213,2783,False,0,hourly_pay,-0.164582,0.0495197
+all G3+ white (baseline),w_round,edu25,men,G2 Hispanic,269,568,568,1213,2783,False,0,hourly_pay,-0.0461055,0.0435577
+all G3+ white (baseline),w_round,edu_afqt,men,G2 Hispanic,269,568,568,1213,2783,False,0,hourly_pay,0.0119162,0.0481054
+all G3+ white (baseline),w_round,raw,women,G2 Hispanic,271,598,598,1088,2496,False,0,hourly_pay,-0.0443385,0.0459739
+all G3+ white (baseline),w_round,edu25,women,G2 Hispanic,271,598,598,1088,2496,False,0,hourly_pay,0.0834362,0.0450826
+all G3+ white (baseline),w_round,edu_afqt,women,G2 Hispanic,271,598,598,1088,2496,False,0,hourly_pay,0.133624,0.0482897
+(a1) white reference never married and not cohabiting; all G2,w_round,raw,men,G2 Hispanic,269,568,568,233,451,False,0,hourly_pay,0.122576,0.0674667
+(a1) white reference never married and not cohabiting; all G2,w_round,edu25,men,G2 Hispanic,269,568,568,233,451,False,0,hourly_pay,0.206215,0.0679895
+(a1) white reference never married and not cohabiting; all G2,w_round,edu_afqt,men,G2 Hispanic,269,568,568,233,451,False,0,hourly_pay,0.290808,0.0658925
+(a1) white reference never married and not cohabiting; all G2,w_round,raw,women,G2 Hispanic,271,598,598,144,290,False,0,hourly_pay,0.0569317,0.074412
+(a1) white reference never married and not cohabiting; all G2,w_round,edu25,women,G2 Hispanic,271,598,598,144,290,False,0,hourly_pay,0.155741,0.0773711
+(a1) white reference never married and not cohabiting; all G2,w_round,edu_afqt,women,G2 Hispanic,271,598,598,144,290,False,0,hourly_pay,0.248301,0.0944881
+(a2) white reference not married or cohabiting; all G2,w_round,raw,men,G2 Hispanic,269,568,568,371,678,False,0,hourly_pay,0.0739408,0.0625861
+(a2) white reference not married or cohabiting; all G2,w_round,edu25,men,G2 Hispanic,269,568,568,371,678,False,0,hourly_pay,0.140282,0.0529872
+(a2) white reference not married or cohabiting; all G2,w_round,edu_afqt,men,G2 Hispanic,269,568,568,371,678,False,0,hourly_pay,0.196697,0.0546938
+(a2) white reference not married or cohabiting; all G2,w_round,raw,women,G2 Hispanic,271,598,598,339,629,False,0,hourly_pay,0.115248,0.066023
+(a2) white reference not married or cohabiting; all G2,w_round,edu25,women,G2 Hispanic,271,598,598,339,629,False,0,hourly_pay,0.189522,0.0659833
+(a2) white reference not married or cohabiting; all G2,w_round,edu_afqt,women,G2 Hispanic,271,598,598,339,629,False,0,hourly_pay,0.199842,0.0718287
+(a3) both not married or cohabiting,w_round,raw,men,G2 Hispanic,113,201,201,371,678,False,0,hourly_pay,-0.0480943,0.0840309
+(a3) both not married or cohabiting,w_round,edu25,men,G2 Hispanic,113,201,201,371,678,False,0,hourly_pay,0.0203569,0.0724469
+(a3) both not married or cohabiting,w_round,edu_afqt,men,G2 Hispanic,113,201,201,371,678,False,0,hourly_pay,0.0713475,0.0793165
+(a3) both not married or cohabiting,w_round,raw,women,G2 Hispanic,89,160,160,339,629,True,0,hourly_pay,0.0456694,0.0886983
+(a3) both not married or cohabiting,w_round,edu25,women,G2 Hispanic,89,160,160,339,629,True,0,hourly_pay,0.189301,0.0897094
+(a3) both not married or cohabiting,w_round,edu_afqt,women,G2 Hispanic,89,160,160,339,629,True,0,hourly_pay,0.169565,0.105935
+(a4) both married or cohabiting,w_round,raw,men,G2 Hispanic,180,363,363,952,2097,False,0,hourly_pay,-0.167653,0.0545985
+(a4) both married or cohabiting,w_round,edu25,men,G2 Hispanic,180,363,363,952,2097,False,0,hourly_pay,-0.047491,0.0482955
+(a4) both married or cohabiting,w_round,edu_afqt,men,G2 Hispanic,180,363,363,952,2097,False,0,hourly_pay,0.000314583,0.0559227
+(a4) both married or cohabiting,w_round,raw,women,G2 Hispanic,208,433,433,864,1860,False,0,hourly_pay,-0.0770669,0.0529326
+(a4) both married or cohabiting,w_round,edu25,women,G2 Hispanic,208,433,433,864,1860,False,0,hourly_pay,0.0424418,0.0461856
+(a4) both married or cohabiting,w_round,edu_afqt,women,G2 Hispanic,208,433,433,864,1860,False,0,hourly_pay,0.122296,0.053404
+(a5) white reference with a top-tercile-earning partner; all G2,w_round,raw,men,G2 Hispanic,269,568,568,388,700,False,0,hourly_pay,-0.414319,0.0514121
+(a5) white reference with a top-tercile-earning partner; all G2,w_round,edu25,men,G2 Hispanic,269,568,568,388,700,False,0,hourly_pay,-0.225778,0.0505632
+(a5) white reference with a top-tercile-earning partner; all G2,w_round,edu_afqt,men,G2 Hispanic,269,568,568,388,700,False,0,hourly_pay,-0.185919,0.0658547
+(a5) white reference with a top-tercile-earning partner; all G2,w_round,raw,women,G2 Hispanic,271,598,598,361,635,False,0,hourly_pay,-0.341549,0.051688
+(a5) white reference with a top-tercile-earning partner; all G2,w_round,edu25,women,G2 Hispanic,271,598,598,361,635,False,0,hourly_pay,-0.156639,0.0783448
+(a5) white reference with a top-tercile-earning partner; all G2,w_round,edu_afqt,women,G2 Hispanic,271,598,598,361,635,False,0.0727875,hourly_pay,-0.129364,0.0704768

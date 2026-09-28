@@ -1,0 +1,49 @@
+sex,spec,term,n_g2_persons,n_ref_persons,n_worker_years,coef,se
+men,education x AFQT cells,g2,269,1213,3351,0.00740038,0.0471163
+men,+ marital/cohabitation status,g2,269,1213,3351,0.0322294,0.047262
+men,+ marital/cohabitation status,mar_cohabiting,269,1213,3351,0.194103,0.0555094
+men,+ marital/cohabitation status,"mar_married, spouse present",269,1213,3351,0.331598,0.051523
+men,+ marital/cohabitation status,"mar_previously married or spouse absent, not cohabiting",269,1213,3351,0.203348,0.0660854
+men,+ marital/cohabitation status,mar_unknown,269,1213,3351,0.210643,0.265804
+men,+ marital status + partner-earnings tercile,g2,269,1213,3351,0.0295147,0.0466086
+men,+ marital status + partner-earnings tercile,mar_cohabiting,269,1213,3351,0.105055,0.0652302
+men,+ marital status + partner-earnings tercile,"mar_married, spouse present",269,1213,3351,0.231757,0.0713155
+men,+ marital status + partner-earnings tercile,"mar_previously married or spouse absent, not cohabiting",269,1213,3351,0.171028,0.0711229
+men,+ marital status + partner-earnings tercile,mar_unknown,269,1213,3351,0.186137,0.291144
+men,+ marital status + partner-earnings tercile,sp_partner earnings tercile 1,269,1213,3351,0.101489,0.0650484
+men,+ marital status + partner-earnings tercile,sp_partner earnings tercile 2,269,1213,3351,-0.0124751,0.0590952
+men,+ marital status + partner-earnings tercile,sp_partner earnings tercile 3,269,1213,3351,0.234462,0.0655177
+men,+ marital status + partner-earnings tercile,sp_partner earnings unknown,269,1213,3351,0.117203,0.106654
+men,+ marital status + partner earnings + region x CBSA,g2,269,1213,3351,-0.00271101,0.0494782
+men,+ marital status + partner earnings + region x CBSA,mar_cohabiting,269,1213,3351,0.0852682,0.0632619
+men,+ marital status + partner earnings + region x CBSA,"mar_married, spouse present",269,1213,3351,0.227209,0.0709429
+men,+ marital status + partner earnings + region x CBSA,"mar_previously married or spouse absent, not cohabiting",269,1213,3351,0.152061,0.0681292
+men,+ marital status + partner earnings + region x CBSA,mar_unknown,269,1213,3351,0.159964,0.267533
+men,+ marital status + partner earnings + region x CBSA,sp_partner earnings tercile 1,269,1213,3351,0.103898,0.0665895
+men,+ marital status + partner earnings + region x CBSA,sp_partner earnings tercile 2,269,1213,3351,-0.0118609,0.0584012
+men,+ marital status + partner earnings + region x CBSA,sp_partner earnings tercile 3,269,1213,3351,0.23163,0.0676458
+men,+ marital status + partner earnings + region x CBSA,sp_partner earnings unknown,269,1213,3351,0.127786,0.111008
+women,education x AFQT cells,g2,271,1088,3094,0.132092,0.0459952
+women,+ marital/cohabitation status,g2,271,1088,3094,0.128379,0.0458354
+women,+ marital/cohabitation status,mar_cohabiting,271,1088,3094,0.121416,0.0654809
+women,+ marital/cohabitation status,"mar_married, spouse present",271,1088,3094,0.118005,0.0543791
+women,+ marital/cohabitation status,"mar_previously married or spouse absent, not cohabiting",271,1088,3094,0.0036216,0.0627212
+women,+ marital/cohabitation status,mar_unknown,271,1088,3094,0.118917,0.247703
+women,+ marital status + partner-earnings tercile,g2,271,1088,3094,0.137675,0.0448952
+women,+ marital status + partner-earnings tercile,mar_cohabiting,271,1088,3094,0.0645456,0.0712912
+women,+ marital status + partner-earnings tercile,"mar_married, spouse present",271,1088,3094,0.0200964,0.0703571
+women,+ marital status + partner-earnings tercile,"mar_previously married or spouse absent, not cohabiting",271,1088,3094,-0.0140559,0.0629966
+women,+ marital status + partner-earnings tercile,mar_unknown,271,1088,3094,0.120359,0.253394
+women,+ marital status + partner-earnings tercile,sp_partner earnings tercile 1,271,1088,3094,-0.0433062,0.0600969
+women,+ marital status + partner-earnings tercile,sp_partner earnings tercile 2,271,1088,3094,0.0667097,0.04735
+women,+ marital status + partner-earnings tercile,sp_partner earnings tercile 3,271,1088,3094,0.256001,0.0536115
+women,+ marital status + partner-earnings tercile,sp_partner earnings unknown,271,1088,3094,-0.0789561,0.153647
+women,+ marital status + partner earnings + region x CBSA,g2,271,1088,3094,0.110521,0.0536191
+women,+ marital status + partner earnings + region x CBSA,mar_cohabiting,271,1088,3094,0.0874787,0.0710659
+women,+ marital status + partner earnings + region x CBSA,"mar_married, spouse present",271,1088,3094,0.0406848,0.0740516
+women,+ marital status + partner earnings + region x CBSA,"mar_previously married or spouse absent, not cohabiting",271,1088,3094,0.00254555,0.0645653
+women,+ marital status + partner earnings + region x CBSA,mar_unknown,271,1088,3094,0.13911,0.251844
+women,+ marital status + partner earnings + region x CBSA,sp_partner earnings tercile 1,271,1088,3094,-0.0350004,0.0593074
+women,+ marital status + partner earnings + region x CBSA,sp_partner earnings tercile 2,271,1088,3094,0.0657617,0.0482084
+women,+ marital status + partner earnings + region x CBSA,sp_partner earnings tercile 3,271,1088,3094,0.24375,0.0546229
+women,+ marital status + partner earnings + region x CBSA,sp_partner earnings unknown,271,1088,3094,-0.102319,0.154143

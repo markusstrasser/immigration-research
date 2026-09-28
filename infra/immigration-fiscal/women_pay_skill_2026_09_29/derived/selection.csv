@@ -1,0 +1,13 @@
+sex,rule,arm,n_g2,n_ref,n_g2_imputed_low,n_ref_imputed_low,share_g2_nonworker_in_sample,share_ref_nonworker_in_sample,median_gap,se,replicates_median_at_imputed
+men,workers only,raw,269,1213,0,0,0,0,-0.13789,0.0510687,0
+men,workers only,edu_afqt,269,1213,0,0,0,0,0.0457987,0.0562963,0
+men,non-workers below the median (bound),raw,309,1313,40,100,0.132654,0.0768595,-0.170573,0.0526069,0
+men,non-workers below the median (bound),edu_afqt,309,1313,40,100,0.132654,0.105692,0.0574109,0.0546962,0
+men,Neal-2004-style: nearest-year pay; else below median without post-secondary degree; else dropped,raw,304,1296,23,50,0.118413,0.0644033,-0.150729,0.0511673,0
+men,Neal-2004-style: nearest-year pay; else below median without post-secondary degree; else dropped,edu_afqt,304,1296,23,50,0.118413,0.0986592,0.0733401,0.0544771,0
+women,workers only,raw,271,1088,0,0,0,0,-0.0574117,0.0569092,0
+women,workers only,edu_afqt,271,1088,0,0,0,0,0.12698,0.0534957,0
+women,non-workers below the median (bound),raw,324,1274,53,186,0.158808,0.150164,-0.0678121,0.0519635,0
+women,non-workers below the median (bound),edu_afqt,324,1274,53,186,0.158808,0.197146,0.159924,0.0532284,0
+women,Neal-2004-style: nearest-year pay; else below median without post-secondary degree; else dropped,raw,318,1240,28,87,0.143378,0.126868,-0.0852784,0.0582957,0
+women,Neal-2004-style: nearest-year pay; else below median without post-secondary degree; else dropped,edu_afqt,318,1240,28,87,0.143378,0.180193,0.131101,0.0564792,0
