@@ -6,8 +6,8 @@ For a reader who wants concepts and evidence, not the history of the analysis.
 - How a finding's number was obtained (input, step, known bias) lives in `evidence_class.py`,
   keyed by the finding's first ladder ref.
 - `why`: what the finding rests on and what would change it.
-Every ladder entry must appear exactly once: in a finding's `refs`, a section's `minor` list or
-RETIRED. `build.py` refuses to write the page otherwise.
+Every ladder entry must appear exactly once: in a finding's `refs`, a section's `minor` list,
+RETIRED or INTERNAL_ENTRIES. `build.py` refuses to write the page otherwise.
 Style: ASD-STE100 structural rules (short sentences, active voice, no semicolons).
 Numbers are copied from the cited ladder entries.
 """
@@ -21,6 +21,12 @@ RETIRED = {
     121: "replaced by 123, 172", 122: "replaced by 123, 172", 130: "replaced by 161, 172", 137: "replaced by 207",
     138: "replaced by 194", 155: "rating withdrawn", 164: "replaced by 198", 231: "replaced by 238",
     193: "earlier version", 219: "earlier version", 229: "earlier version", 204: "earlier version",
+}
+
+# How the work was done, not what it found: never shown to readers (operator 2026-09-29: the reader
+# should not know about AI reviewers). Not counted as superseded either.
+INTERNAL_ENTRIES = {
+    271: "reviewer calibration",
 }
 
 PARTS = [
@@ -528,8 +534,8 @@ GROUPS = [
         id="method", part="reading",
         claim="Passing a test is not proof",
         range="",
-        why="A calculation that runs is not a test of a theory. Controls, stress tests and AI reviewers each catch "
-            "some errors and miss others.",
+        why="A calculation that runs is not a test of a theory. Controls and stress tests each catch some errors "
+            "and miss others.",
         terms=[("non-significance ≠ zero", "a wide interval does not show that there is no effect")],
         findings=[
             dict(refs=[58, 60], text="Controls and placebo tests that pass do not by themselves show a cause.", why=""),
@@ -539,12 +545,6 @@ GROUPS = [
                  why="Counting pensions on accrual would flip the claim that the group's taxes cover its benefits. "
                      "The observations most worth making next are how budgets respond when people leave, and how "
                      "much of the Mexico-born's pay is on the books."),
-            dict(refs=[271],
-                 text="Two AI reviewers caught all 24 of the project's known past errors when the evidence was in "
-                      "front of them. One of them (GPT-6 Astra) also called 6 of 24 sound claims wrong, at "
-                      "90–99% confidence.",
-                 why="Neither reviewer was harsher on claims that make the group look costlier. But 24 cases could "
-                     "miss a moderate lean. So every flag is checked against the data before a number changes."),
         ],
         minor=[],
     ),

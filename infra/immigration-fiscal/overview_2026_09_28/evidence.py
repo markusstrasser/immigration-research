@@ -7,7 +7,7 @@ entry reports using, not what the page claims.
 import html
 import re
 
-from groups import GROUPS, RETIRED
+from groups import GROUPS, INTERNAL_ENTRIES, RETIRED
 
 # (symbol, label, description, patterns). Acronyms match case-sensitively on word boundaries.
 KINDS = [
@@ -165,6 +165,8 @@ def check_coverage(entries, fail):
             put(r, f"{g['id']} minor")
     for r in RETIRED:
         put(r, "retired")
+    for r in INTERNAL_ENTRIES:
+        put(r, "internal")
     missing = sorted(set(entries) - set(seen), key=lambda k: (k[0] == "o", int(k.lstrip("o"))))
     unknown = sorted(set(seen) - set(entries))
     if missing or unknown:
