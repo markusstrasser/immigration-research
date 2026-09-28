@@ -15,8 +15,10 @@ From September 24 on care is inside the adopted case (decision 3, the package's 
 the "costs only" column adds the constant back and the "with care" column is the adopted band.
 
 The memo summed its table rows as printed (one decimal, halves rounded up); its full span used
-unrounded rows. Gate: every September 23 figure the memo prints is reproduced by one of the two
-methods, and the method is recorded. The figures of the adopted cases are exact sums.
+unrounded rows. Gate: every September 23 figure the memo's first version printed (the memo7 and
+memo7b constants; since 2026-09-29 the memo keeps the totals in its earlier-totals table) is
+reproduced by one of the two methods, and the method is recorded. The figures of the adopted cases
+are exact sums.
 
 Cases (--case, as in band_variants.cjs). sept24 writes the September 23 and September 24 columns to
 derived/ (the committed run). sept26 (the one-year scenario; --out-dir DIR only), sept26_schools
