@@ -87,27 +87,29 @@ resource cost and never enters a debt flow, and rental assistance moves who lose
 $264–356bn, and with every service proportional $347–401bn. The consumer lanes re-ran on this case
 (`sept27_propagation_2026_09_27`).
 
-Candidates for the next revision, none adopted; the operator's go is pending
-([candidate v3](../infra/immigration-fiscal/main_case_candidate_v3_2026_09_28/RESULT.md)):
-- long-run property-tax responses, −$27.2bn at both ends (ladder 253);
-- the IRS-matched income-tax key, −$3.2 / −$3.1bn (249);
-- workers' compensation pooled over 2019–2024, −$1.5 to −$2.0bn (251);
-- payroll compliance of the survey keys, −$0.37 / −$0.16bn (254);
-- candidate v2's housing key and production weights (`main_case_candidate_v2_2026_09_28`);
+Candidates for the next revision, none adopted; the operator's go is pending. Run as one set
+([candidate v4](../infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/RESULT.md)), they cost
+**$371.4–434.8bn** with Social Security and Part A on an accrual basis at the benefits current law will pay
+($9.4–10.9k per member), and $294.7–361.8bn in cash ($7.4–9.1k). Alone on the September 27 case, the items are:
+- long-run property-tax responses, −$27.2bn at both ends (ladder 253); the land part is framing-sensitive;
+- the income-tax key calibrated to IRS totals by income bin, −$3.2 / −$3.1bn (249);
+- workers' compensation pooled over 2019–2024, on its own line, −$0.95 / −$0.73bn (251);
+- payroll compliance of the survey keys under the proportional rule, +$0.39 / +$0.53bn (254);
+- candidate v2's public-housing keys and production weights (`main_case_candidate_v2_2026_09_28`), −$0.4 / −$1.1bn
+  together;
 - services and taxes priced at the states where the group lives, +$2.18 / +$2.27bn net: its services cost $8.6bn
   more there and its sales and vehicle taxes bring in $6.4bn more (267,
   [lane](../infra/immigration-fiscal/state_priced_services_2026_09_29/RESULT.md));
 - roads keyed by miles driven, fuel taxes to match, +$1.96 / +$3.69bn (273,
-  [lane](../infra/immigration-fiscal/roads_mileage_key_2026_09_29/RESULT.md)).
+  [lane](../infra/immigration-fiscal/roads_mileage_key_2026_09_29/RESULT.md));
+- the pension accrual at payable benefits, +$77.3 / $73.6bn ([decision](../decisions/2026-09-28-pension-accrual-payable-benefits.md),
+  ladder 257). Its route passes a national check against SSA's Statement of Social Insurance; scheduled benefits
+  paid in full are an arm, +$111.6 / $106.2bn.
 
-The recommended cash set (candidate v3's items 1–5, payroll compliance under the proportional rule without the
-within-group re-key, workers' compensation on its own line) is about $290.5 / $355.8bn before the state-pricing and
-road-mileage candidates. Social Security and Part A on an accrual basis, at the benefits current law will pay,
-add +$77.3 / $73.6bn, for about $368 / $429bn; scheduled benefits paid in full are an arm, +$111.6 / $106.2bn
-($402 / $462bn) ([decision](../decisions/2026-09-28-pension-accrual-payable-benefits.md), ladder 257). The route
-passes a national check against SSA's Statement of Social Insurance. The uninsured-use arm at 0.7× (−$1.53 /
-−$2.24bn) is weaker, since its evidence is only between regions (256); transit's riders' key (+$0.2bn) stays
-beside. Item 5's land part is framing-sensitive.
+The items nearly add. Together they interact by −$0.5bn with the accrual, because payroll compliance lowers the OASDI
+receipts the accrual follows, and by +$0.1bn in cash. State pricing and the road key both touch vehicle licences; the
+set applies the state index to the miles-keyed amount. The uninsured-use arm at 0.7× (−$1.53 / −$2.24bn) is weaker,
+since its evidence is only between regions (256), and transit's riders' key (+$0.2bn) stays beside.
 
 Inside the group, about a quarter of the 39.71M members live in households that pay more than they cost: 24.2% / 20.5% with every line allocated, 31.0% / 29.8% counting only services a household uses itself. At the low end the share rises with the head's education (12% below high school, 46% with a BA or more) and generation (18% Mexico-born, 32% third-plus). The costliest tenth of households carries 52–61% of the net cost. The legal-status split does not hold up (ladder 268, [lane](../infra/immigration-fiscal/within_group_distribution_2026_09_29/RESULT.md)).
 
