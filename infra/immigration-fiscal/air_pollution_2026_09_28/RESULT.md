@@ -178,6 +178,8 @@ This arm follows `frontier_execution_2026_09_17/social/institutions-environment.
 
 ## What can be added beside the account
 
+[2026-09-28, later: the operator added the PM2.5 absolute row (`pm25_consumption`, $69.7bn) to the social rows of the fiscal-plus-social total, from the September 27 case on. The normalized row sits beside it, never added. CO2, ozone, government services and the EPA-VSL row stay out ([decision](../../../decisions/2026-09-28-social-items-pollution-crashes.md)).]
+
 | Row | Add? | Figure |
 |---|---|---|
 | PM2.5 from consumption, absolute | Yes, as a social item under the with/without frame, flagged that its size is mostly national scale | **$70bn** ($31–122bn) |
@@ -219,3 +221,4 @@ This arm follows `frontier_execution_2026_09_17/social/institutions-environment.
 - 2026-09-28 21:25 JST — checkpoint 1: primary numbers in hand (Tessum 2019 full text, Bekbulat 2025, Goodkind 2019, EPA SC-GHG Table ES.1, OWID/GCB, US-share sources).
 - 2026-09-28 21:32 JST — `ce_energy.py` and `air_items.py` run (rc 0; range-order assertion passed); `derived/` written.
 - 2026-09-28 21:35 JST — RESULT.md written in full; untagged claims in the first disconfirmation item tagged; researcher memory note saved. Lane not committed (brief: do not commit).
+- 2026-09-28 22:43 JST (lead): the operator added `pm25_consumption` (absolute) to the social rows of the fiscal-plus-social total (decision 2026-09-28-social-items-pollution-crashes); lane outputs unchanged.
