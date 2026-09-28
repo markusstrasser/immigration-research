@@ -131,8 +131,11 @@ side counts the budget's own fall separately.
 - **The price fall.** With unit demand elasticity and the metro's supply elasticity ε, removing a population share s
   lowers house prices by δ_H = 1 − (1 − s)^(1/(1+ε)), capped at λ (land cannot go below zero). Saiz (2007) finds that
   "immigration inflows equal to 1% of a city's population were associated with increases in average or median housing
-  rents and prices of about 1%" [SOURCE: IZA DP 2189, p. 1], which fixes the demand side at 1. The supply elasticities
-  are Saiz's (2010) metro estimates, "1.75 in metropolitan areas (2.5 unweighted)" [SOURCE: p. 1281].
+  rents and prices of about 1%" [SOURCE: IZA DP 2189, p. 1]. The supply elasticities are Saiz's (2010) metro
+  estimates, "1.75 in metropolitan areas (2.5 unweighted)" [SOURCE: p. 1281]. (Corrected after the cross-lab review:
+  this sentence said Saiz 2007 "fixes the demand side at 1". His 1-for-1 is a reduced-form equilibrium response, not a
+  per-person demand elasticity, and with a supply elasticity of 1.75 it cannot be one. Unit demand is an assumption;
+  a lower elasticity deepens the price fall and raises r, as the caveats say.)
 
 **Regimes.**
 - **Levy-set** (the rate adjusts to raise a levy; Illinois, Washington and Colorado among the group's top states;
@@ -398,6 +401,37 @@ Inputs outside the lane, pinned by sha256 in `housing.py`: the ACS 2024 one-year
 - Saiz, A., "The Geographic Determinants of Housing Supply", Quarterly Journal of Economics 125 (2010): p. 1281.
 - Texas Comptroller of Public Accounts, Texas Property Tax Basics, January 2026: pp. 9, 39.
 
+## Corrections after the cross-lab review
+
+GPT-6 Astra (xhigh) reviewed these items inside candidate v3 on 2026-09-28 and put item 5 (items 2, 3 and 5 here)
+out as formulated. The parent checked each finding:
+
+- **Saiz 2007 misread (confirmed; fixed in item 2).** The numbers barely move. In a metro at the tax-weighted s 0.302
+  and ε 1.73, a demand elasticity of 0.7 instead of 1 raises δ_H from 0.123 to 0.138 and r by about 0.014.
+  [CALCULATION: item 2's formula, parent]
+- **Stock against price (confirmed as an inconsistency; no change under the account's rules).** The same price
+  equation implies the housing stock falls by less than the population, to (1 − s)^(ε/(1+ε)): 20% against 30% at
+  those values, so other residents would occupy part of the housing the group leaves. The rule charges all the
+  group's structures at 1. Under rule 3 the tax others pay on that extra housing is internal to other residents, so
+  the structures' tax stays a full loss; a budget-only reading would recover part of it. [INFERENCE]
+- **Fiscal and private accounts mixed (confirmed as a framing issue).** The land term credits only the price fall
+  on the group's land. It nets the tax that other holders would pay on that land against its capitalization, a
+  private-side housing effect the account leaves out elsewhere. The readings then run as follows:
+  - a consolidated fiscal account with no housing on the private side gives r = 1 on the whole payment (the "high"
+    rows: −24.97 owner, −9.61 tenant);
+  - the capital-tax view with fixed national capital gives 0.134, and the short run 0.03–0.30;
+  - the central 0.763 lies between. Its structure part (1 on the share 1 − λ, about 82% of the owner effect) holds in
+    every long-run reading with full capital adjustment.
+
+  No long-run reading consistent with the case supports its 0. [INFERENCE; FRAMING-SENSITIVE]
+- **Fixed levy.** Item 2's levy-set regime already answers it. Revenue holds because other residents pick up the
+  group's payment, and the account counts other residents.
+- **Tenant base and vehicle key (measurement, unchanged).** The tenant split by output share ($83.84bn) is the lower
+  of two bases; the case's owner scale ($123.13bn) gives −10.00. The vehicle key counts vehicles, not their taxable
+  value or which states tax them, so its "upper bound" label is not shown. The group's cheaper vehicles would lower
+  its share; where its vehicles are taxed is unmeasured.
+- **No double count with F.** The reviewer agrees: F's capital term is zero at retention 1.
+
 ## Log (append-only)
 
 - 2026-09-28: stub written after reading `BRIEF.md` (2b85073). Candidate items only, never a new case; builds on the
@@ -427,3 +461,5 @@ Inputs outside the lane, pinned by sha256 in `housing.py`: the ACS 2024 one-year
   First pass through `scripts/rerun_lane.py`: IDENTICAL, 17 of 17 files.
 - 2026-09-28 08:44 JST: second pass through `scripts/rerun_lane.py` after the last edits (probe header, RESULT text):
   IDENTICAL, 17 of 17 files, no script left unrun. Verdict written; nothing committed, staged or stashed.
+- 2026-09-28 12:15 JST (parent): after the cross-lab review, item 2's Saiz 2007 sentence corrected in place and a section
+  "Corrections after the cross-lab review" added. Text only; no script or output changed.
