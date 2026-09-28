@@ -16,36 +16,13 @@ The low side is $295.9–363.0bn, the outer range $258.6–436.1bn, and the sign
 ($406.3–461.6bn), enterprises out ($304.6–364.4bn) and land [GAP] sit beside the account
 ([main-case lane](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md), [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239).
 
-**Schools case (the main case from 2026-09-26, later, to 2026-09-27): $258.5–292.0bn/year.** Schools are charged at their
-full average cost per pupil (response 1): across districts and states spending rises about 1% per
-1% more pupils. The within-district 0.836 gives the low side, $233.9–269.6bn, and the case below
-stays as the first-year budget response. The outer range is $198–324bn
-([main-case lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md), [decision](../decisions/2026-09-26-main-case-schools-full-cost.md), ladder 230).
+With CBO-style first-year budget responses the same account gives $200.9–245.7bn; with every service
+proportional, $347.3–400.5bn. The main cases between September 20 and 27 are listed, each with its decision, in the
+[topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
+[real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below is the account as
+published on September 20, kept as the calculation record.
 
-**First-year budget response (adopted as the main case earlier on 2026-09-26): $200.9–245.7bn/year.** The
-operator adopted two corrections together. General government and schools respond as finite removals, which saves more than the
-marginal elasticities (+$4.1 / +$3.4bn), and the consumption key is corrected for saving and
-remittances (−$4.1bn). The outer range is $164–277bn
-([main-case lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md), [decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229).
-
-**Main case of 2026-09-24 (superseded 2026-09-26): $200.9–246.3bn/year.** The operator adopted the dataset audit,
-the pooled-MEPS medical figure with long-term care by use, care and household services, shelter
-keying and the four outside checks, run once through the engine. The group's taxes and its keyed
-spending were both overstated by about $50bn, so the case moves by −$2.3bn / −$3.3bn
-([main-case lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md), [decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219).
-The paragraph below is kept as a record.
-
-**Main case of 2026-09-23 (superseded 2026-09-24):** after the operator adopted three changes, the main
-CBO-informed case is **$203.2–249.6bn/year**. General government now responds at 0.59–0.84
-instead of zero (+$28.5–40.6bn). Public order and safety is keyed by use (+$5.9bn). The
-under-charged part of uncompensated hospital care is keyed to uninsured use (+$3.7–5.7bn). The
-other benchmarks move to $158.9–212.6bn (non-school education fixed) and $307.9–341.0bn
-(proportional). The September 20 figures below are unchanged as a record. Reuse the adopted ones:
-[main-case lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md),
-[decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md),
-[real costs beside the account](immigration-real-fiscal-and-social-costs-2026-09-23.md).
-
-**Result:** The source-centered model gives **$165–197bn/year of conditional net
+**Result as published September 20:** The source-centered model gives **$165–197bn/year of conditional net
 cost to other US residents** when CBO-informed school and delayed-service budget
 responses replace full proportional spending, holding other model terms fixed.
 An additional fixed-non-school-education sensitivity gives **$121–160bn/year**.
@@ -367,6 +344,11 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-29, cleanup ([decision](../decisions/2026-09-29-delete-superseded-and-cruft-docs.md)): the header keeps the
+current case and names the first-year and proportional scenarios. The four stacked paragraphs for the schools,
+first-year, September 24 and September 23 cases are removed; the INDEX's table of earlier cases and each case's
+decision keep them. The September 20 result is labelled as published. No figure changes.
 
 2026-09-27, the return on public capital, long-run roads and parks, rental assistance and government
 enterprises (ladder 237–239): the main case moves from $258.5–292.0bn to $321.8–387.4bn at unchanged end
