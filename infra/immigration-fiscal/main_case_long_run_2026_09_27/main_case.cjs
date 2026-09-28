@@ -18,7 +18,8 @@
  * tied specifications (reading and rate follow general government's reading) give the crossed band; the long-run
  * sensitivities reproduce the response lane's; the payload is the schools case's lines and edits plus the re-key,
  * and a path that uses only the engine, model.json and corrections.json gives the same cost at every specification
- * (1e-9); no receipt moves but the enterprise surplus.
+ * (1e-9); no receipt moves but the enterprise surplus; general government held at 0 (row general_government_fixed)
+ * moves the case by that line's operating effect and its capital return alone, at every specification.
  * Run from anywhere: node main_case.cjs [--out-dir DIR] -> derived/main_case_bands.csv, components.csv,
  * summary.json, corrections.json, per_spec.csv.
  */
@@ -465,6 +466,43 @@ const rentalAt0 = combinedRows["option D, enterprises at the spending lines' pop
 const k12Pupil = central({ capital_variant: "k12_at_pupil_share" });
 const at7 = central({ rates: { low: RATES.reported, high: RATES.reported } });
 const runs7 = runs(specsFor({ rates: { low: RATES.reported, high: RATES.reported } }));
+// General government held at 0 (row general_government_fixed, 2026-09-29): every specification with gg = 0 and
+// nothing else changed; reading, rate and line_responses stay the adopted specifications'. The engine applies s.gg to
+// general_public_services alone (engine.js spendingResponse, general_government_response), and the capital
+// components on that line take its response (line_response), so the operating line and its return on public capital
+// both go to 0. Reported beside the range, not in it.
+const GG_LINE = "general_public_services";
+const ggCapitalIds = CAP.components.filter((c) => c.response.line === GG_LINE).map((c) => c.id);
+gate(`the capital components that take ${GG_LINE}'s response are gps_sl and gps_fed, by line_response (the return follows s.gg)`,
+  JSON.stringify(ggCapitalIds) === JSON.stringify(["gps_sl", "gps_fed"])
+  && CAP.components.filter((c) => ggCapitalIds.includes(c.id)).every((c) => c.response.kind === "line_response"), ggCapitalIds.join(" "));
+const ggFixedSpecs = specs.map((s) => Object.assign({}, s, { gg: 0 }));
+const ggFixedRuns = runs(ggFixedSpecs);
+const ggFixedCosts = costsOf(ggFixedRuns);
+const ggFixed = bandOf(ggFixedCosts);
+const ggOperating = (r) => responseOf(r.evaluation, GG_LINE) * amount(r.evaluation, GG_LINE);
+const ggCapital = (r) => capitalWhere(r, (c) => ggCapitalIds.includes(c.id));
+gate("general government at 0: its line and its capital respond at 0; every other spending line, receipt, capital component and production term is the adopted case's exactly (every specification and method; reading, rate and line_responses unchanged)",
+  ggFixedSpecs.every((s, i) => s.reading === specs[i].reading && s.rate === specs[i].rate && s.line_responses === specs[i].line_responses)
+  && ggFixedRuns.every((xs, m) => xs.every((r, i) => {
+    const a = newRuns[m][i];
+    return responseOf(r.evaluation, GG_LINE) === 0 && ggCapital(r) === 0
+      && r.evaluation.spending.every((l, k) => l.id === a.evaluation.spending[k].id && (l.id === GG_LINE || l.effect_bn === a.evaluation.spending[k].effect_bn))
+      && r.evaluation.receipts.every((x, k) => x.id === a.evaluation.receipts[k].id && x.effect_bn === a.evaluation.receipts[k].effect_bn)
+      && r.capital.components.every((c, k) => c.id === a.capital.components[k].id
+        && (ggCapitalIds.includes(c.id) || c.return_bn === a.capital.components[k].return_bn))
+      && r.evaluation.private_wtp_bn === a.evaluation.private_wtp_bn && r.evaluation.induced_receipts_bn === a.evaluation.induced_receipts_bn;
+  })), "2 methods x 64 specifications");
+const ggGap = worst(ggFixedRuns.flatMap((xs, m) => xs.map((r, i) =>
+  r.cost_bn - (newCosts[m][i] - ggOperating(newRuns[m][i]) - ggCapital(newRuns[m][i])))));
+gate("general government at 0: each specification's cost is the adopted cost less the line's operating effect (response x amount) and the gps capital return (1e-9)",
+  ggGap < 1e-9, `max |diff| ${ex(ggGap)}`);
+const ggOperatingAtEnds = atEnds(newEnds, (m, i) => ggOperating(newRuns[m][i]));
+const ggCapitalAtEnds = atEnds(newEnds, (m, i) => ggCapital(newRuns[m][i]));
+gate("general government at 0 keeps the adopted end specifications, so its band is the adopted band less the operating effect and the gps capital return there (1e-9)",
+  ends(ggFixedCosts).every((e, m) => e[0] === newEnds[m][0] && e[1] === newEnds[m][1])
+  && [0, 1].every((e) => near(ggFixed[e], C[e] - ggOperatingAtEnds[e] - ggCapitalAtEnds[e], 1e-9)),
+  `${f2(ggFixed)}: operating ${f2(ggOperatingAtEnds)}, capital ${f2(ggCapitalAtEnds)}`);
 // Land: the capital lane's conversion per 10% of land-to-structure value (gaps.csv: core rows, "block: " rows and
 // "enterprise: " rows), priced at this case's keys and responses: each component's land stock x rate x key x
 // response at the end specifications. Every component of the case's definition must have a land row of its part.
@@ -653,6 +691,7 @@ const bandsCsv = ["profile,variant,cost_low_bn,cost_high_bn,range_low_bn,range_h
   row(MAIN_PROFILE, "enterprise_receipt_at_model_json_share", atModelShare),
   row(MAIN_PROFILE, "capital_return_at_7pct", at7),
   row(MAIN_PROFILE, "rental_assistance_at_0", rentalAt0),
+  row(MAIN_PROFILE, "general_government_fixed", ggFixed),
   row(MAIN_PROFILE, "k12_capital_at_pupil_share", k12Pupil),
   row(MAIN_PROFILE, "audit_row3_instead_of_cbo_income_tax", withRow3),
   row(MAIN_PROFILE, "no_fill_in_correction", noFillIn),
@@ -748,6 +787,7 @@ for (const [k, v] of Object.entries(moves)) console.log(`    change at fixed spe
 console.log(`    receipt moved by the re-key ${receiptMove[0].toFixed(4)} / ${receiptMove[1].toFixed(4)}; re-key against model.json's share ${rekeyEffect[0].toFixed(4)} / ${rekeyEffect[1].toFixed(4)}; public housing ${publicHousing[0].toFixed(4)} / ${publicHousing[1].toFixed(4)}`);
 console.log(`  K-12 pupil share minus account key ${f2(k12Diff)}`);
 console.log(`  at 7% (beside)                  ${f2(at7)}`);
+console.log(`  general government at 0         ${f2(ggFixed)}  change ${(ggFixed[0] - C[0]).toFixed(4)} / ${(ggFixed[1] - C[1]).toFixed(4)}`);
 console.log(`  range                           ${rangeLowEnd[0].toFixed(1)}–${rangeHighEnd[1].toFixed(1)} (quadrature ${quadrature[0].toFixed(1)}–${quadrature[1].toFixed(1)})`);
 for (const [pf, v] of Object.entries(otherProfiles)) console.log(`  ${pf.padEnd(31)} ${f2(v.schools_case)} -> ${f2(v.adopted)}`);
 console.log(`  old main profile, with the additions ${f2(oldProfile.with_rental_assistance_capital_and_enterprises)}`);
