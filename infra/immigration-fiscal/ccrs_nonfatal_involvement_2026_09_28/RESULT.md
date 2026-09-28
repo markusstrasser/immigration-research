@@ -408,3 +408,4 @@ file byte-identical (bootstrap seed 20260928).
 - 2026-09-28 22:57 JST: this file written in full. The crash lane's RESULT.md, as edited by the
   lead in b79039d, now carries the fault-based row in the social rows; this lane's revision of that
   row is $45.8bn → $42.3bn.
+- 2026-09-28 23:14 JST (lead): the crash lane now carries this lane's central for its non-fatal parts (`evaluate_split`, with the hit-and-run bounds as the grid's ninth factor); its full re-evaluation reproduces this lane's $42.47bn, −$5.09bn, $42.34bn and −$3.43bn.

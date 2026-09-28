@@ -50,7 +50,7 @@
   "service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
   "social_costs_unpriced_2026_09_28/derived/items.csv": "c8ff8aa3f9fdecb63460cf4f5e2f44d2e7aaab40f555abedf402acdba62c64a0",
   "air_pollution_2026_09_28/derived/items.csv": "738fbc088877d59210078f2b43bdc0d0839e5b2392bedee564edb947e6f30c03",
-  "road_crash_externality_2026_09_28/derived/items.csv": "b940a8c3ab8911b9a3899ce27048fc844194121addbaff55717a82b2b4cd0dff",
+  "road_crash_externality_2026_09_28/derived/items.csv": "e88307e91781052969f38d054c6a188128d01263fc34bc8579ed9944ea1d9324",
   "disease_food_2026_09_28/derived/items.csv": "aa7091880821cb99c2b13be57515502999953940a6cfc70aab02fa33d8e808df"
  },
  "congestion_by_band_end_bn": {
@@ -78,13 +78,13 @@
  },
  "social_items_in_the_social_rows": {
   "case": "sept27",
-  "central_bn": 102.68033323578139,
-  "stacked_low_bn": -55.252513420302215,
-  "stacked_high_bn": 289.05877989186496,
+  "central_bn": 99.24033323578139,
+  "stacked_low_bn": -57.74251342030222,
+  "stacked_high_bn": 281.388779891865,
   "cost_items_bn": {
-   "central": 123.4008,
-   "stacked_low": 48.3879,
-   "stacked_high": 233.564
+   "central": 119.9608,
+   "stacked_low": 45.8979,
+   "stacked_high": 225.894
   },
   "items": [
    {
@@ -136,13 +136,13 @@
     "kind": "cost",
     "source": "road_crash_externality_2026_09_28/derived/items.csv",
     "decision": "decisions/2026-09-28-social-items-pollution-crashes.md",
-    "central_bn": 45.78,
-    "low_bn": 26.29,
-    "high_bn": 80.92,
+    "central_bn": 42.34,
+    "low_bn": 23.8,
+    "high_bn": 73.25,
     "normalized_bn": {
-     "central": 0.01,
-     "low": -18.58,
-     "high": 20.02
+     "central": -3.43,
+     "low": -22.6,
+     "high": 12.35
     }
    },
    {
