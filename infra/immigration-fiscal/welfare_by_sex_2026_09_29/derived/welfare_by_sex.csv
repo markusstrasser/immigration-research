@@ -1,0 +1,43 @@
+sex,cell,n,pop_m,welfare,cash,spm,medicaid,credits,any_share
+women,18-64 all,42272,102.21,2086,278,329,1479,191,0.406
+men,18-64 all,40270,101.01,1724,234,224,1266,130,0.356
+women/men,18-64 all,,,1.21,1.19,1.47,1.17,1.47,1.14
+women,18-64 parent of child <18,16730,34.35,1970,232,463,1275,408,0.666
+men,18-64 parent of child <18,13691,27.66,1100,83,253,764,278,0.619
+women/men,18-64 parent of child <18,,,1.79,2.8,1.83,1.67,1.47,1.08
+women,18-64 no own child <18,25542,67.87,2144,301,261,1582,81,0.275
+men,18-64 no own child <18,26579,73.35,1960,292,213,1455,75,0.256
+women/men,18-64 no own child <18,,,1.09,1.03,1.23,1.09,1.08,1.07
+women,"18-64 no own child, no partner",13080,35.57,3057,439,418,2201,116,0.37
+men,"18-64 no own child, no partner",15149,43.68,2589,383,296,1909,94,0.319
+women/men,"18-64 no own child, no partner",,,1.18,1.15,1.41,1.15,1.23,1.16
+women,"18-34 no own child, no partner",6879,19.62,2115,185,305,1626,139,0.39
+men,"18-34 no own child, no partner",9211,25.56,1952,210,242,1501,126,0.342
+women/men,"18-34 no own child, no partner",,,1.08,0.88,1.26,1.08,1.1,1.14
+women,65+,13875,33.22,1998,216,314,1468,24,0.186
+men,65+,11627,28.26,1578,193,222,1162,19,0.151
+women/men,65+,,,1.27,1.12,1.41,1.26,1.26,1.23
+women,"18-64 no own child, White",13447,38.57,1765,280,180,1304,42,0.214
+men,"18-64 no own child, White",13842,40.81,1663,281,153,1229,40,0.202
+women/men,"18-64 no own child, White",,,1.06,1.0,1.18,1.06,1.05,1.06
+women,"18-34 no own child, no partner, White",3045,9.18,1654,174,199,1281,67,0.312
+men,"18-34 no own child, no partner, White",4044,12.05,1584,194,159,1230,70,0.273
+women/men,"18-34 no own child, no partner, White",,,1.04,0.9,1.25,1.04,0.96,1.14
+women,"18-64 no own child, Black",3239,9.18,3417,554,509,2354,124,0.378
+men,"18-64 no own child, Black",3113,9.55,3123,474,420,2229,105,0.344
+women/men,"18-64 no own child, Black",,,1.09,1.17,1.21,1.06,1.18,1.1
+women,"18-34 no own child, no partner, Black",923,3.15,2977,318,508,2151,186,0.471
+men,"18-34 no own child, no partner, Black",1099,4.03,2980,360,425,2195,157,0.421
+women/men,"18-34 no own child, no partner, Black",,,1.0,0.88,1.2,0.98,1.18,1.12
+women,"18-64 no own child, Hispanic",5800,13.03,2458,246,320,1892,172,0.382
+men,"18-64 no own child, Hispanic",6574,15.83,2092,246,240,1606,151,0.341
+women/men,"18-64 no own child, Hispanic",,,1.17,1.0,1.33,1.18,1.14,1.12
+women,"18-34 no own child, no partner, Hispanic",1954,4.71,2424,130,339,1954,261,0.502
+men,"18-34 no own child, no partner, Hispanic",2789,6.33,2001,159,273,1569,231,0.425
+women/men,"18-34 no own child, no partner, Hispanic",,,1.21,0.82,1.24,1.25,1.13,1.18
+women,"18-64 no own child, Asian",2066,4.88,1326,102,171,1052,62,0.226
+men,"18-64 no own child, Asian",2029,4.89,1259,99,174,987,46,0.22
+women/men,"18-64 no own child, Asian",,,1.05,1.03,0.98,1.07,1.35,1.03
+women,"18-34 no own child, no partner, Asian",610,1.61,1644,149,294,1202,118,0.316
+men,"18-34 no own child, no partner, Asian",833,2.02,1552,110,275,1166,65,0.285
+women/men,"18-34 no own child, no partner, Asian",,,1.06,1.35,1.07,1.03,1.82,1.11
