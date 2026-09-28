@@ -1,0 +1,23 @@
+source,sex,group,n_persons,mean_earnings,share_positive_earnings,gap_total,se_total,gap_employment,se_employment
+"CPS ASEC 2025, income year 2024, ages 41-44",men,G3+ NH white,2050,94009.6,0.88764,0,0,0,0
+"CPS ASEC 2025, income year 2024, ages 41-44",men,G2 Hispanic,165,82335,0.874887,-0.132601,0.124547,-0.0144719,0.0391715
+"CPS ASEC 2025, income year 2024, ages 41-44",men,G3+ Hispanic,198,74125.4,0.854938,-0.237638,0.10831,-0.0375373,0.0450573
+"CPS ASEC 2025, income year 2024, ages 41-44",men,G2 Mexican (account frame),117,62312.8,0.871201,-0.411229,0.09714,-0.0186934,0.047902
+"CPS ASEC 2025, income year 2024, ages 41-44",men,G3+ Mexican (account frame),107,78099.6,0.86654,-0.185412,0.157478,-0.0240583,0.0624244
+"CPS ASEC 2025, income year 2024, ages 41-44",women,G3+ NH white,2148,61769.7,0.807683,0,0,0,0
+"CPS ASEC 2025, income year 2024, ages 41-44",women,G2 Hispanic,154,51493.3,0.813978,-0.181962,0.0873085,0.00776264,0.0473129
+"CPS ASEC 2025, income year 2024, ages 41-44",women,G3+ Hispanic,272,51675.1,0.764726,-0.178438,0.0977423,-0.0546521,0.0406832
+"CPS ASEC 2025, income year 2024, ages 41-44",women,G2 Mexican (account frame),113,46689.8,0.795097,-0.279887,0.113829,-0.0157065,0.0598599
+"CPS ASEC 2025, income year 2024, ages 41-44",women,G3+ Mexican (account frame),162,53689.4,0.819373,-0.140198,0.0834257,0.0143693,0.0437439
+NLSY97 income year 2020 (ages 36-40),men,G3+ NH white,1143,82494.8,0.911855,0,0,0,0
+NLSY97 income year 2020 (ages 36-40),men,G2 Hispanic,251,57441.4,0.843423,-0.36197,0.0801671,-0.078012,0.0330956
+NLSY97 income year 2020 (ages 36-40),men,G3+ Hispanic,164,60279.5,0.910237,-0.313743,0.0740805,-0.00177659,0.0257161
+NLSY97 income year 2020 (ages 36-40),women,G3+ NH white,1112,48986,0.824608,0,0,0,0
+NLSY97 income year 2020 (ages 36-40),women,G2 Hispanic,292,39772.6,0.778429,-0.208357,0.0754259,-0.0576303,0.0366543
+NLSY97 income year 2020 (ages 36-40),women,G3+ Hispanic,165,41071.1,0.824768,-0.17623,0.0973953,0.000193047,0.0394699
+NLSY97 income year 2022 (ages 38-42),men,G3+ NH white,1100,94793.6,0.918715,0,0,0,0
+NLSY97 income year 2022 (ages 38-42),men,G2 Hispanic,234,69396,0.862734,-0.311873,0.0586099,-0.0628694,0.0322178
+NLSY97 income year 2022 (ages 38-42),men,G3+ Hispanic,169,75078.1,0.929082,-0.233173,0.0893822,0.0112215,0.0219606
+NLSY97 income year 2022 (ages 38-42),women,G3+ NH white,1091,58258.6,0.83518,0,0,0,0
+NLSY97 income year 2022 (ages 38-42),women,G2 Hispanic,276,46119.5,0.804776,-0.233655,0.0725909,-0.037084,0.0292964
+NLSY97 income year 2022 (ages 38-42),women,G3+ Hispanic,161,49393.1,0.83335,-0.165081,0.101852,-0.00219368,0.04206

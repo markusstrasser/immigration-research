@@ -1,0 +1,11 @@
+sex,group,respondents_1997,with_entry_window,with_late_window,balanced,origin_answered,mexican_origin_any_mention,mexican_share_weighted
+men,G1 Hispanic,164,144,127,119,93,41,0.413824
+men,G2 Hispanic,393,326,309,281,259,158,0.566849
+men,G3+ Hispanic,251,214,206,190,195,108,0.534299
+men,G3+ NH white,1630,1411,1313,1230,1338,24,0.0182842
+men,"Hispanic, generation unresolved",169,0,0,0,126,66,0.503798
+women,G1 Hispanic,193,177,158,152,109,61,0.528921
+women,G2 Hispanic,367,330,324,306,255,162,0.615751
+women,G3+ Hispanic,218,190,192,180,174,102,0.550172
+women,G3+ NH white,1513,1324,1274,1192,1245,19,0.0154544
+women,"Hispanic, generation unresolved",144,0,0,0,116,62,0.486592
