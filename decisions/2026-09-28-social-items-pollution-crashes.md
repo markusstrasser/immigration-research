@@ -57,6 +57,8 @@ The fault-based row is taken, for three reasons:
 - it matches how the account charges crime, where victims' harm follows offences the group's members commit.
 
 The but-for row stays beside as the alternative.
+[2026-09-29: reversed once the traffic elasticity was graded. The but-for is now the row in the total, and the
+fault-based row sits beside ([decision](2026-09-29-crash-item-with-against-without.md)).]
 
 ## Decision
 
@@ -150,7 +152,7 @@ records (CCRS, 2022–24) is running.
   [2026-09-28 23:51: graded evidence (`crash_volume_elasticity_2026_09_28`, f9fecd6) puts x near 0 for non-fatal and
   −0.21 for fatal crashes. The but-for is $11.1bn (−$57.7bn to +$74.3bn; cc2b092). Its range did not narrow, but its
   central no longer agrees with the fault-based row's, which was the first of the three reasons above. Switching the row is
-  proposed to the operator (ladder 266).]
+  proposed to the operator (ladder 266). 2026-09-29: adopted ([decision](2026-09-29-crash-item-with-against-without.md)).]
 - The account values deaths by life-years rather than one VSL at every age. PM2.5 would fall to about $26bn.
 - The concentration–response evidence moves. Wu 2020 sets the low end and Di 2017 the high end.
 
