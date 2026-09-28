@@ -196,7 +196,8 @@ Beside the fiscal headline, as social costs:
   disruption, one method per item: **+$7.9bn** a year at central values (−$9.4bn to $30.2bn).
   Fear is $10.5bn, security −$0.6bn and schools −$1.9bn, because Hispanic pupils are suspended
   less often than others. Property values are 0, since a price discount is a transfer or already
-  priced. These items are not in the totals below and await the operator (ladder 258,
+  priced. Since the operator's decision of 2026-09-28 the first three are in the totals below (ladder 258,
+  [decision](../decisions/2026-09-28-social-items-fear-security-schools.md),
   [lane](../infra/immigration-fiscal/social_costs_unpriced_2026_09_28/RESULT.md)).
 
 For comparison, a rough re-key of the September 27 case to non-Hispanic Black residents costs
@@ -207,7 +208,8 @@ group. This is not an engine run (ladder 259,
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
 **$248–304bn a year** at central values ($210–337bn full span) on the September 24 case
-(September 23: $248–307bn, $212–340bn). [2026-09-28: on the September 27 case **$363–438bn**
+(September 23: $248–307bn, $212–340bn). [2026-09-28, later: with fear, security and schools **$371–446bn** ($316–504bn full span, $9.1–10.9k per
+member; [decision](../decisions/2026-09-28-social-items-fear-security-schools.md)).] [2026-09-28: on the September 27 case **$363–438bn**
 ($325–474bn full span, $8.9–10.7k per member); congestion now moves with the case (73cc30c).]
 [2026-09-26, later: on the schools case **$305–350bn**
 ($268–383bn full span); the first-year budget response stays within $0.7bn of September 24 (4e66adb).] The transfers are not added, but they run from poorer

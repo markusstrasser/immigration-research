@@ -34,9 +34,19 @@ fifth gains $46.0bn (§4). Priced to the same standard, the benefits the account
 $4.8bn a year, or $18.7bn with the proposed scale net (§7b); with all of them the total is
 $237–289bn. [CALCULATION: lanes and commits in "Sources"]
 
+**Update, 2026-09-28, latest (fear, security and schools added to the social rows; [decision](../decisions/2026-09-28-social-items-fear-security-schools.md)).**
+Fiscal and social costs together come to **$371–446bn a year** at central values (full span
+$316–504bn), or $9.1–10.9k per group member, on the same pairing. The operator added the union's fear
+and avoidance, private security and school disruption, $7.9bn at both ends; property values stay out.
+Costs and benefits together are $376–445bn ($363–431bn adding the scale net), and costs alone
+$381–450bn. The variants beside the total are $456–520bn with capital at 7% and $354–423bn under
+option A. The income split (§4) and the winners-and-losers allocation do not carry the three items.
+[CALCULATION: `infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py --case sept27` →
+`sept27_propagation_2026_09_27/derived/real_costs_totals.csv`, rows `social_items_2026_09_28`]
+
 **Update, 2026-09-28, later (four unpriced social items, ladder 258).** Four social costs are now
 priced, one method per item, and sit beside the totals below rather than in them. The operator
-decides whether to add them. For the Mexican-origin union they come to about **$7.9bn a year** at
+decides whether to add them. [Adopted the same day for fear, security and schools; see the block above.] For the Mexican-origin union they come to about **$7.9bn a year** at
 central values, with a stacked envelope of −$9.4bn to $30.2bn:
 - fear and avoidance by people who are not victims, $10.5bn, a share of the public's willingness to pay
   above victims' own losses;
@@ -506,3 +516,6 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
   central for the union, not added pending the operator
   ([lane](../infra/immigration-fiscal/social_costs_unpriced_2026_09_28/RESULT.md)). Concept affected:
   the social costs reported beside the fiscal headline.
+- 2026-09-28, latest (social items adopted, [decision](../decisions/2026-09-28-social-items-fear-security-schools.md)): fear, security and schools join the
+  social rows from the September 27 case on, +$7.94bn at both ends of the central values; the pairing is
+  $371–446bn. Property values stay out. Concept affected: the fiscal-plus-social total.
