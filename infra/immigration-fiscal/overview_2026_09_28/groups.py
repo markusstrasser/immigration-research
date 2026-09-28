@@ -234,7 +234,7 @@ GROUPS = [
             ("213", "Race-based preferences cost white natives about $4.0bn a year; $0.6bn goes to "
                     "Mexican-origin beneficiaries."),
         ],
-        members=["o5", "o11", "o23", "o39", 138, 139, 194, 213, 226, 250],
+        members=["o5", "o11", "o23", "o39", 138, 139, 194, 213, 226, 250, 263],
     ),
     dict(
         id="work",
