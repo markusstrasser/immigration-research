@@ -287,9 +287,10 @@ GROUPS = [
                       "loses 12.4% of its resources.",
                  why="Who pays depends on how the budget closes the gap."),
             dict(refs=[250],
-                 text="Counting the group itself, the world gains about $364bn a year at equal weights.",
-                 why="The group earns far more here than in Mexico. The US side comes out behind only if a "
-                     "member's dollar counts less than 0.61 of a payer's dollar."),
+                 text="Counting the group itself, the world gains about $364bn in the year measured, at equal weights.",
+                 why="The group earns far more here than in Mexico. Over generations the sign turns on how fast "
+                     "descendants catch up. At the measured pace, Clemens and Pritchett's long-run model favours "
+                     "less migration in 14 of its 21 versions."),
             dict(refs=[139, 213],
                  text="Natives who leave California take about $2.1bn of revenue. Race preferences cost white "
                       "natives about $4bn.",
