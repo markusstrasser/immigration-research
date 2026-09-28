@@ -1,0 +1,32 @@
+study,setting,bin,design,class,eps_low,eps_high,x_low,x_high,design_weight,note
+NYC Congestion Relief Zone 2025 (Morrison et al. AJE 2026; MTA VMT),Manhattan CBD cordon,dense,natural,pdo,1.582,1.582,0.582,0.582,3.0,IRR 0.89 non-injury crashes; CRZ VMT -7.1%
+"Bauernschuster, Hener & Rainer 2017","5 largest German cities, am peak, transit strikes",dense,natural,pdo,3.15,5.371,2.15,4.371,3.0,police-recorded crashes +14.2% on cars +2.5-4.3%; mostly PDO
+Edlin & Karaca-Mandic 2006 (California),"densest US state, 1987-95",dense,panel,pdo,3.3,5.4,2.3,4.4,1.0,insured costs +3.3-5.4% per 1% driving; liability + collision
+Edlin & Karaca-Mandic 2006 (low-density states),e.g. South Dakota,mixed,panel,pdo,1.0,1.0,0.0,0.0,1.0,externality 'small ... statistically insignificant'; x ~ 0 [INFERENCE]
+US 2019->2020 PDO crashes (TSF 2023 Tables 1-2),US national,mixed,national2020,pdo,2.433,2.433,1.433,1.433,1.0,PDO crashes -24.6% on VMT -11.0%
+Tang & van Ommeren 2022,"Central London congestion charge, IV",dense,natural,minor,0.81,0.81,-0.19,-0.19,3.0,slight-injury rate elasticity -0.19 (accidents -0.36)
+"Green, Heywood & Navarro 2016","Central London congestion charge, DiD vs 20 cities",dense,natural-,minor,2.363,2.363,1.363,1.363,2.0,"injury accidents -35%, per-mile rate -22%; x combines two specifications"
+NYC Congestion Relief Zone 2025,Manhattan CBD cordon,dense,natural,minor,0.554,0.554,-0.446,-0.446,3.0,IRR 0.96 (0.88-1.06) injury-or-fatal crashes
+"Bauernschuster, Hener & Rainer 2017",German cities am peak,dense,natural,minor,4.341,7.401,3.341,6.401,3.0,slightly injured +20.1% on cars +2.5-4.3%
+CE Delft 2019 Handbook (urban roads),EU urban roads,dense,assumption,minor,1.0,1.0,0.0,0.0,0.5,"recommended risk elasticity 0, urban"
+US 2019->2020 injury crashes (TSF 2023),US national,mixed,national2020,minor,1.587,1.587,0.587,0.587,1.0,injury crashes -16.9% on VMT -11.0%
+GB 2020 slight casualties (DfT RRCGB 2020),Great Britain national,mixed,national2020,minor,1.22,1.22,0.22,0.22,1.0,slight -25% on traffic -21%
+"Fridstrom (TOI 402/1998), fixed network","Norway counties, monthly 1974-94",mixed,panel,minor,0.5,0.5,-0.5,-0.5,1.0,injury accidents: 0.911 - 0.414 = 0.50 on a fixed network
+"CE Delft 2019 Handbook (motorways, other)",EU non-urban roads,mixed,assumption,minor,0.75,0.75,-0.25,-0.25,0.5,recommended risk elasticity -0.25
+Tang & van Ommeren 2022,"Central London congestion charge, IV",dense,natural,serious,-0.65,-0.65,-1.65,-1.65,3.0,serious injuries/fatalities +6.5% on flow -9.4%
+"Green, Heywood & Navarro 2016",Central London congestion charge,dense,natural-,serious,1.578,1.578,0.578,0.578,2.0,serious+fatal accidents -25%
+"Bauernschuster, Hener & Rainer 2017",German cities am peak,dense,natural-,serious,-1.515,-0.889,-2.515,-1.889,2.0,seriously/fatally injured -0.013 (s.e. 0.055) on 0.354: imprecise
+NYC Congestion Relief Zone 2025,Manhattan CBD cordon,dense,natural,serious,0.84,0.84,-0.16,-0.16,3.0,IRR 0.94 (0.71-1.24) crashes with serious injury or fatality (AJE Table 1; Jan-Jun 2025)
+CE Delft 2019 Handbook (urban roads),EU urban roads,dense,assumption,serious,1.0,1.0,0.0,0.0,0.5,"risk elasticity 0, urban"
+GB 2020 serious casualties (DfT RRCGB 2020),Great Britain national,mixed,national2020,serious,1.054,1.054,0.054,0.054,1.0,serious -22% on traffic -21%
+"CE Delft 2019 Handbook (motorways, other)",EU non-urban roads,mixed,assumption,serious,0.75,0.75,-0.25,-0.25,0.5,risk elasticity -0.25
+"Green, Heywood & Navarro 2016",Central London congestion charge,dense,natural-,fatal,2.363,2.363,1.363,1.363,2.0,fatalities -35% (4.3 a year)
+"US 2019->2020, most urban tercile of states (FHWA VM-2, FI-20)",17 most urbanised states,dense,national2020,fatal,-0.549,-0.549,-1.549,-1.549,1.0,deaths +7.2% on VMT -11.8%
+CE Delft 2019 Handbook (urban roads),EU urban roads,dense,assumption,fatal,1.0,1.0,0.0,0.0,0.5,"risk elasticity 0, urban"
+"US 2019->2020, other 33 states (FHWA)",less urbanised states,mixed,national2020,fatal,-0.665,-0.665,-1.665,-1.665,1.0,deaths about +7% on VMT about -10%
+GB 2020 fatalities (DfT RRCGB 2020),Great Britain national,mixed,national2020,fatal,0.79,0.79,-0.21,-0.21,1.0,deaths -17% on traffic -21%
+"ITF/IRTAD 2021, eleven countries with vkm",AU CA DK FI FR GB DE JP NL SI SE,mixed,national2020,fatal,1.0,1.2,0.0,0.2,1.0,"vkm -12.2%, deaths per vkm 'slightly decreased' [INFERENCE on size]"
+"Fridstrom (TOI 402/1998), constant density",Norway counties,mixed,panel,fatal,0.761,0.761,-0.239,-0.239,1.0,fatalities 0.761 at constant density; fixed network lower
+"CE Delft 2019 Handbook (motorways, other)",EU non-urban roads,mixed,assumption,fatal,0.75,0.75,-0.25,-0.25,0.5,risk elasticity -0.25
+"HSM urban/suburban arterials, single-vehicle SPF (Table 12-6)",US arterial segments,cross,cross,sv,0.47,0.81,-0.53,-0.19,0.0,AADT exponents 0.47-0.81 (total crashes); roads are built for their traffic
+HSM rural divided segment SPF (Table 11-5 example),US rural multilane,cross,cross,all,1.049,1.049,0.049,0.049,0.0,b = 1.049
