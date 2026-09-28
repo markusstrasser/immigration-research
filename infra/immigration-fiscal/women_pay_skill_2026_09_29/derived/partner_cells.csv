@@ -1,0 +1,61 @@
+cells,sex,arm,cell,n_g2_persons,n_ref_persons,g2_share,estimate,se
+marstat,men,raw,cohabiting,68,240,0.184987,-0.128997,0.087539
+marstat,men,raw,"married, spouse present",121,750,0.453227,-0.148268,0.0647118
+marstat,men,raw,"never married, not cohabiting",71,233,0.233179,-0.0753202,0.10207
+marstat,men,raw,"previously married or spouse absent, not cohabiting",43,140,0.128607,-0.00648315,0.0988368
+marstat,men,raw,pooled over cells,267,1213,1,-0.109459,0.0519893
+marstat,men,edu_afqt,cohabiting,68,240,0.184987,0.0459918,0.0991795
+marstat,men,edu_afqt,"married, spouse present",121,750,0.453227,-0.00226546,0.0665654
+marstat,men,edu_afqt,"never married, not cohabiting",71,233,0.233179,0.0857236,0.112798
+marstat,men,edu_afqt,"previously married or spouse absent, not cohabiting",43,140,0.128607,0.0166017,0.179438
+marstat,men,edu_afqt,pooled over cells,267,1213,1,0.0296051,0.0549045
+marstat,men,edu_math,cohabiting,68,240,0.184987,0.0359476,0.097205
+marstat,men,edu_math,"married, spouse present",121,750,0.453227,0.0187457,0.0642043
+marstat,men,edu_math,"never married, not cohabiting",71,233,0.233179,0.152324,0.107676
+marstat,men,edu_math,"previously married or spouse absent, not cohabiting",43,140,0.128607,0.0848869,0.129723
+marstat,men,edu_math,pooled over cells,267,1213,1,0.0615816,0.049932
+marstat,women,raw,cohabiting,62,206,0.148412,0.0159246,0.107231
+marstat,women,raw,"married, spouse present",157,703,0.579974,-0.0964953,0.0657146
+marstat,women,raw,"never married, not cohabiting",45,144,0.140237,0.021059,0.127304
+marstat,women,raw,"previously married or spouse absent, not cohabiting",46,197,0.131378,0.0586484,0.100613
+marstat,women,raw,pooled over cells,269,1088,1,-0.042943,0.0455551
+marstat,women,edu_afqt,cohabiting,62,206,0.148412,0.177245,0.142881
+marstat,women,edu_afqt,"married, spouse present",157,703,0.579974,0.128947,0.0678383
+marstat,women,edu_afqt,"never married, not cohabiting",45,144,0.140237,0.192585,0.122396
+marstat,women,edu_afqt,"previously married or spouse absent, not cohabiting",46,197,0.131378,0.174019,0.154309
+marstat,women,edu_afqt,pooled over cells,269,1088,1,0.150961,0.0528423
+marstat,women,edu_math,cohabiting,62,206,0.148412,0.120917,0.128212
+marstat,women,edu_math,"married, spouse present",157,703,0.579974,0.10763,0.0712786
+marstat,women,edu_math,"never married, not cohabiting",45,144,0.140237,0.192575,0.120846
+marstat,women,edu_math,"previously married or spouse absent, not cohabiting",46,197,0.131378,0.203851,0.145902
+marstat,women,edu_math,pooled over cells,269,1088,1,0.134155,0.0560487
+sp_cat,men,raw,no spouse or partner,112,351,0.346885,-0.0695759,0.0847431
+sp_cat,men,raw,partner earnings tercile 1,91,424,0.250276,-0.246291,0.0712534
+sp_cat,men,raw,partner earnings tercile 2,80,407,0.207705,-0.134757,0.0683263
+sp_cat,men,raw,partner earnings tercile 3,61,388,0.195135,-0.0282393,0.114839
+sp_cat,men,raw,pooled over cells,268,1213,1,-0.119276,0.0512344
+sp_cat,men,edu_afqt,no spouse or partner,112,351,0.346885,0.0671201,0.0815554
+sp_cat,men,edu_afqt,partner earnings tercile 1,91,424,0.250276,-0.0308629,0.100307
+sp_cat,men,edu_afqt,partner earnings tercile 2,80,407,0.207705,-0.0627512,0.0759649
+sp_cat,men,edu_afqt,partner earnings tercile 3,61,388,0.195135,0.140996,0.112574
+sp_cat,men,edu_afqt,pooled over cells,268,1213,1,0.0300381,0.0501254
+sp_cat,men,edu_math,no spouse or partner,112,351,0.346885,0.09202,0.0849921
+sp_cat,men,edu_math,partner earnings tercile 1,91,424,0.250276,-0.0240621,0.0992122
+sp_cat,men,edu_math,partner earnings tercile 2,80,407,0.207705,-0.0694708,0.0739826
+sp_cat,men,edu_math,partner earnings tercile 3,61,388,0.195135,0.140305,0.111526
+sp_cat,men,edu_math,pooled over cells,268,1213,1,0.0388471,0.0506171
+sp_cat,women,raw,no spouse or partner,92,306,0.266912,0.0125404,0.0910678
+sp_cat,women,raw,partner earnings tercile 1,109,349,0.282873,0.0624384,0.0795286
+sp_cat,women,raw,partner earnings tercile 2,102,439,0.267301,0.019544,0.0929997
+sp_cat,women,raw,partner earnings tercile 3,63,361,0.182914,-0.247388,0.0825535
+sp_cat,women,raw,pooled over cells,270,1088,1,-0.0190174,0.0447606
+sp_cat,women,edu_afqt,no spouse or partner,92,306,0.266912,0.157984,0.113953
+sp_cat,women,edu_afqt,partner earnings tercile 1,109,349,0.282873,0.296321,0.0919159
+sp_cat,women,edu_afqt,partner earnings tercile 2,102,439,0.267301,0.132738,0.0882943
+sp_cat,women,edu_afqt,partner earnings tercile 3,63,361,0.182914,-0.0818122,0.0885223
+sp_cat,women,edu_afqt,pooled over cells,270,1088,1,0.146505,0.0503257
+sp_cat,women,edu_math,no spouse or partner,92,306,0.266912,0.182776,0.115975
+sp_cat,women,edu_math,partner earnings tercile 1,109,349,0.282873,0.205925,0.0999886
+sp_cat,women,edu_math,partner earnings tercile 2,102,439,0.267301,0.128941,0.0947586
+sp_cat,women,edu_math,partner earnings tercile 3,63,361,0.182914,-0.0911906,0.0979573
+sp_cat,women,edu_math,pooled over cells,270,1088,1,0.124821,0.0561775

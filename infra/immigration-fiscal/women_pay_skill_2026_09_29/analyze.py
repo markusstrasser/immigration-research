@@ -16,6 +16,15 @@ Writes to `derived/`:
   partner_shares.csv    Task 5: marital/cohabitation status and partner-earnings shares of worker-years at 35-40
   partner_gaps.csv      Task 5: hourly-pay gap against white references restricted by partnership status
   partner_controls.csv  Task 5: regression gap with education x AFQT cells plus marital and partner-earnings controls
+  partner_cells.csv     Task 5b: gap reweighted within marital-status (or partner-earnings) cells, pooled over cells
+  test_scores.csv       Task 6: gaps with the reference reweighted to education x math-only (AR+MK) or verbal-only
+                        (WK+PC) score terciles instead of AFQT terciles; mean score percentiles by group
+
+Math and verbal scores rebuild the NLS AFQT recipe on subsets of the CAT-ASVAB ability estimates: each subtest's
+theta is turned into a weighted percentile within three-month birth cohorts, AR + MK (or WK + PC) are summed and
+re-percentiled the same way. NLS used custom ASVAB weights; this uses the 1997 base weight, and a rebuilt full AFQT
+(MK + AR + 2 x verbal) is compared with the published percentile as a check. Only respondents with a published
+AFQT get a subtest score, so the missing-score cell is unchanged.
 
 Main job: CV_MAINJOB_FLG, the roster loop of the current or most recent employer as of the interview
 (codebook). Pay is the career lane's annual earnings over annual hours for the calendar year before that
@@ -107,6 +116,36 @@ q1, q2 = afqt.quantile([1 / 3, 2 / 3])
 d["afqt3"] = np.select([afqt.isna(), afqt.le(q1), afqt.le(q2)], ["missing", "T1", "T2"], "T3")
 d["edu_afqt"] = d.edu25 + "|" + d.afqt3
 d["afqt10"] = afqt / 10000.0  # percentile (3 implied decimals) in units of 10 points
+
+
+def theta(t):
+    pos, neg = d[f"theta_{t}_pos"], d[f"theta_{t}_neg"]
+    assert not (pos.ge(0) & neg.ge(0)).any(), t
+    return pd.Series(np.where(pos.ge(0), pos / 1000.0, np.where(neg.ge(0), -neg / 1000.0, np.nan)), index=d.index)
+
+
+def cohort_pct(v):
+    """Weighted percent of the birth-quarter cohort scoring strictly below (1997 base weight)."""
+    out = pd.Series(np.nan, index=d.index)
+    ok = v.notna() & afqt.notna()
+    q = d.birth_year * 4 + (d.birth_month - 1) // 3
+    for _, idx in v[ok].groupby(q[ok]).groups.items():
+        x, w = v[idx].to_numpy(), d.weight_1997[idx].to_numpy(float)
+        o = np.argsort(x, kind="stable")
+        below = np.concatenate([[0.0], np.cumsum(w[o])])[np.searchsorted(x[o], x, side="left")]
+        out[idx] = 100.0 * below / w.sum()
+    return out
+
+
+sub = {t: cohort_pct(theta(t)) for t in ("ar", "mk", "wk", "pc")}
+verbal_raw = cohort_pct(sub["wk"] + sub["pc"])
+scores = {"math": cohort_pct(sub["ar"] + sub["mk"]), "verbal": verbal_raw,
+          "afqt_rebuilt": cohort_pct(sub["mk"] + sub["ar"] + 2 * verbal_raw)}
+for name in ("math", "verbal"):
+    v = scores[name]
+    t1, t2 = v.quantile([1 / 3, 2 / 3])
+    d[f"{name}3"] = np.select([v.isna(), v.le(t1), v.le(t2)], ["missing", "T1", "T2"], "T3")
+    d[f"edu_{name}"] = d.edu25 + "|" + d[f"{name}3"]
 d["w0"] = d.weight_1997 / 100.0
 per = d.set_index("pubid")
 
@@ -394,11 +433,11 @@ subsets = {"all workers": lw.index, "credential-pay sector": lw.index[lw.sector.
            "credential industries, private or non-profit": lw.index[
                lw.sector.eq("credential-pay") & lw.cls.isin(["private for-profit", "non-profit"])]}
 for label, idx in subsets.items():
-    g_ = window(lw.loc[idx], label, "w_round", ["raw", "edu25", "edu_afqt"], targets=[G2],
+    g_ = window(lw.loc[idx], label, "w_round", ["raw", "edu25", "edu_afqt", "edu_math"], targets=[G2],
                 stats=["hourly_pay"], keep=draws)
     sector_gaps += g_
 for sname in SEXES.values():
-    for arm in ("raw", "edu25", "edu_afqt"):
+    for arm in ("raw", "edu25", "edu_afqt", "edu_math"):
         for a, b_ in [("credential-pay sector", "other sectors"), ("credential-pay sector", "other sectors, employees")]:
             diff = draws[(a, sname, G2, arm)]["hourly_pay"] - draws[(b_, sname, G2, arm)]["hourly_pay"]
             sector_gaps.append(dict(window=f"{a} minus {b_}", weight="w_round", arm=arm, sex=sname, group=G2,
@@ -406,7 +445,7 @@ for sname in SEXES.values():
                                     n_ref_worker_years=0, small_cell=False, unsupported_share=0.0,
                                     stat="hourly_pay", estimate=diff[0], se=se(diff)))
 for label in subsets:
-    for arm in ("raw", "edu25", "edu_afqt"):
+    for arm in ("raw", "edu25", "edu_afqt", "edu_math"):
         diff = draws[(label, "women", G2, arm)]["hourly_pay"] - draws[(label, "men", G2, arm)]["hourly_pay"]
         sector_gaps.append(dict(window=label, weight="w_round", arm=arm, sex="women minus men", group=G2,
                                 n_persons=0, n_person_years=0, n_worker_years=0, n_ref_persons=0,
@@ -557,3 +596,55 @@ for sx, sname in SEXES.items():
                                  coef=beta[0, j], se=se(beta[:, j])))
 write("partner_controls.csv", pctl, list(pctl[0]))
 print(pd.DataFrame(pctl).query("term == 'g2'").to_string())
+
+
+# Task 5b: reweighting within marital-status (or partner-earnings) cells, pooled with G2 worker-year cell shares.
+pcells = []
+for cellvar in ("marstat", "sp_cat"):
+    levels = [c for c in sorted(lw[cellvar].unique()) if c not in ("unknown", "partner earnings unknown")]
+    both = lw[lw.group.isin([REF, G2])]
+    cdraws = {}
+    for c in levels:
+        cdraws[c] = {}
+        window(both[both[cellvar].eq(c)], c, "w_round", ["raw", "edu_afqt", "edu_math"], targets=[G2],
+               stats=["hourly_pay"], keep=cdraws[c])
+    for sx, sname in SEXES.items():
+        x = both[both.sex.eq(sx)]
+        g2 = x[x.group.eq(G2) & x[cellvar].isin(levels)]
+        wg = g2.w_round.to_numpy()[:, None] * R.loc[g2.pubid].to_numpy()
+        share = {c: (g2[cellvar].eq(c).to_numpy(float) @ wg) / wg.sum(0) for c in levels}
+        for arm in ("raw", "edu_afqt", "edu_math"):
+            for c in levels:
+                gd = cdraws[c][(c, sname, G2, arm)]["hourly_pay"]
+                pcells.append(dict(cells=cellvar, sex=sname, arm=arm, cell=c,
+                                   n_g2_persons=x[x.group.eq(G2) & x[cellvar].eq(c)].pubid.nunique(),
+                                   n_ref_persons=x[x.group.eq(REF) & x[cellvar].eq(c)].pubid.nunique(),
+                                   g2_share=share[c][0], estimate=gd[0], se=se(gd)))
+            pooled = sum(share[c] * cdraws[c][(c, sname, G2, arm)]["hourly_pay"] for c in levels)
+            pcells.append(dict(cells=cellvar, sex=sname, arm=arm, cell="pooled over cells",
+                               n_g2_persons=g2.pubid.nunique(), n_ref_persons=x[x.group.eq(REF)].pubid.nunique(),
+                               g2_share=1.0, estimate=pooled[0], se=se(pooled)))
+write("partner_cells.csv", pcells, list(pcells[0]))
+
+# ---- Task 6: math-only and verbal-only test scores ---------------------------------------------------------
+tests = []
+x = rows[rows.age.between(*LATE)]
+for r in window(x, "age 35-40", "w_round", ["edu_afqt", "edu_math", "edu_verbal"], targets=[G2],
+                stats=["total", "employment", "hourly_pay"]):
+    tests.append(dict(kind="gap", sex=r["sex"], group=r["group"], arm=r["arm"], stat=r["stat"],
+                      n_persons=r["n_persons"], n_ref_persons=r["n_ref_persons"], estimate=r["estimate"],
+                      se=r["se"]))
+ok = afqt.notna()
+tests.append(dict(kind="check", sex="all", group="all with AFQT", arm="afqt_rebuilt", stat="corr with published",
+                  n_persons=int(ok.sum()), n_ref_persons=0,
+                  estimate=float(np.corrcoef(scores["afqt_rebuilt"][ok], afqt[ok])[0, 1]), se=np.nan))
+for sx, sname in SEXES.items():
+    for g in (REF, G2):
+        m = d.sex.eq(sx) & d.group.eq(g) & ok
+        wr = d.weight_1997[m].to_numpy(float)[:, None] * R.loc[d.pubid[m]].to_numpy()
+        for name, v in [("afqt", afqt / 1000.0), ("math", scores["math"]), ("verbal", scores["verbal"])]:
+            mean = v[m].to_numpy() @ wr / wr.sum(0)
+            tests.append(dict(kind="mean percentile", sex=sname, group=g, arm=name, stat="mean",
+                              n_persons=int(m.sum()), n_ref_persons=0, estimate=mean[0], se=se(mean)))
+write("test_scores.csv", tests, list(tests[0]))
+print(pd.DataFrame(tests).to_string())

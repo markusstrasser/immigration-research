@@ -2,66 +2,88 @@ window,weight,arm,sex,group,n_persons,n_person_years,n_worker_years,n_ref_person
 all workers,w_round,raw,men,G2 Hispanic,269,568,568,1213,2783,False,0,hourly_pay,-0.164582,0.0495197
 all workers,w_round,edu25,men,G2 Hispanic,269,568,568,1213,2783,False,0,hourly_pay,-0.0461055,0.0435577
 all workers,w_round,edu_afqt,men,G2 Hispanic,269,568,568,1213,2783,False,0,hourly_pay,0.0119162,0.0481054
+all workers,w_round,edu_math,men,G2 Hispanic,269,568,568,1213,2783,False,0,hourly_pay,0.0144476,0.0467951
 all workers,w_round,raw,women,G2 Hispanic,271,598,598,1088,2496,False,0,hourly_pay,-0.0443385,0.0459739
 all workers,w_round,edu25,women,G2 Hispanic,271,598,598,1088,2496,False,0,hourly_pay,0.0834362,0.0450826
 all workers,w_round,edu_afqt,women,G2 Hispanic,271,598,598,1088,2496,False,0,hourly_pay,0.133624,0.0482897
+all workers,w_round,edu_math,women,G2 Hispanic,271,598,598,1088,2496,False,0,hourly_pay,0.127297,0.0511902
 credential-pay sector,w_round,raw,men,G2 Hispanic,52,109,109,254,532,True,0,hourly_pay,-0.0421768,0.0812575
 credential-pay sector,w_round,edu25,men,G2 Hispanic,52,109,109,254,532,True,0,hourly_pay,0.0202501,0.0779219
 credential-pay sector,w_round,edu_afqt,men,G2 Hispanic,52,109,109,254,532,True,0,hourly_pay,0.124953,0.0967626
+credential-pay sector,w_round,edu_math,men,G2 Hispanic,52,109,109,254,532,True,0,hourly_pay,0.126004,0.0931186
 credential-pay sector,w_round,raw,women,G2 Hispanic,136,274,274,538,1177,False,0,hourly_pay,0.00230049,0.0738613
 credential-pay sector,w_round,edu25,women,G2 Hispanic,136,274,274,538,1177,False,0,hourly_pay,0.0923623,0.0660359
 credential-pay sector,w_round,edu_afqt,women,G2 Hispanic,136,274,274,538,1177,False,0,hourly_pay,0.163796,0.0650482
+credential-pay sector,w_round,edu_math,women,G2 Hispanic,136,274,274,538,1177,False,0,hourly_pay,0.15815,0.0719848
 other sectors,w_round,raw,men,G2 Hispanic,220,440,440,986,2167,False,0,hourly_pay,-0.19588,0.0528743
 other sectors,w_round,edu25,men,G2 Hispanic,220,440,440,986,2167,False,0,hourly_pay,-0.0602007,0.0495862
 other sectors,w_round,edu_afqt,men,G2 Hispanic,220,440,440,986,2167,False,0,hourly_pay,-0.00809537,0.0551763
+other sectors,w_round,edu_math,men,G2 Hispanic,220,440,440,986,2167,False,0,hourly_pay,-0.00933006,0.054072
 other sectors,w_round,raw,women,G2 Hispanic,159,317,317,599,1258,False,0,hourly_pay,-0.0934537,0.0568561
 other sectors,w_round,edu25,women,G2 Hispanic,159,317,317,599,1258,False,0,hourly_pay,0.0701004,0.0571727
 other sectors,w_round,edu_afqt,women,G2 Hispanic,159,317,317,599,1258,False,0,hourly_pay,0.0957855,0.0684619
+other sectors,w_round,edu_math,women,G2 Hispanic,159,317,317,599,1258,False,0,hourly_pay,0.0877567,0.0632703
 "other sectors, employees",w_round,raw,men,G2 Hispanic,189,370,370,858,1868,False,0,hourly_pay,-0.206073,0.0464158
 "other sectors, employees",w_round,edu25,men,G2 Hispanic,189,370,370,858,1868,False,0,hourly_pay,-0.0660133,0.0438181
 "other sectors, employees",w_round,edu_afqt,men,G2 Hispanic,189,370,370,858,1868,False,0,hourly_pay,-0.0148109,0.0471262
+"other sectors, employees",w_round,edu_math,men,G2 Hispanic,189,370,370,858,1868,False,0,hourly_pay,-0.0129612,0.0465167
 "other sectors, employees",w_round,raw,women,G2 Hispanic,144,279,279,520,1071,False,0,hourly_pay,-0.105768,0.0597055
 "other sectors, employees",w_round,edu25,women,G2 Hispanic,144,279,279,520,1071,False,0,hourly_pay,0.0664812,0.0607665
 "other sectors, employees",w_round,edu_afqt,women,G2 Hispanic,144,279,279,520,1071,False,0,hourly_pay,0.104857,0.0736668
+"other sectors, employees",w_round,edu_math,women,G2 Hispanic,144,279,279,520,1071,False,0,hourly_pay,0.0888249,0.0700314
 government employer,w_round,raw,men,G2 Hispanic,36,75,75,168,358,True,0,hourly_pay,0.0548078,0.0984191
 government employer,w_round,edu25,men,G2 Hispanic,36,75,75,168,358,True,0,hourly_pay,0.0854494,0.110593
 government employer,w_round,edu_afqt,men,G2 Hispanic,36,75,75,168,358,True,0.00993252,hourly_pay,0.127091,0.129339
+government employer,w_round,edu_math,men,G2 Hispanic,36,75,75,168,358,True,0.00993252,hourly_pay,0.172116,0.11956
 government employer,w_round,raw,women,G2 Hispanic,66,142,142,215,447,True,0,hourly_pay,-0.00307006,0.116729
 government employer,w_round,edu25,women,G2 Hispanic,66,142,142,215,447,True,0,hourly_pay,0.0574739,0.104199
 government employer,w_round,edu_afqt,women,G2 Hispanic,66,142,142,215,447,True,0,hourly_pay,0.118082,0.101212
+government employer,w_round,edu_math,women,G2 Hispanic,66,142,142,215,447,True,0,hourly_pay,0.121046,0.103576
 "credential industries, private or non-profit",w_round,raw,men,G2 Hispanic,15,28,28,78,149,True,0,hourly_pay,-0.162615,0.158248
 "credential industries, private or non-profit",w_round,edu25,men,G2 Hispanic,15,28,28,78,149,True,0,hourly_pay,-0.0992351,0.138327
 "credential industries, private or non-profit",w_round,edu_afqt,men,G2 Hispanic,15,28,28,78,149,True,0.217676,hourly_pay,-0.199512,0.182293
+"credential industries, private or non-profit",w_round,edu_math,men,G2 Hispanic,15,28,28,78,149,True,0.217676,hourly_pay,-0.165497,0.198582
 "credential industries, private or non-profit",w_round,raw,women,G2 Hispanic,65,115,115,312,629,True,0,hourly_pay,-0.0424127,0.0954612
 "credential industries, private or non-profit",w_round,edu25,women,G2 Hispanic,65,115,115,312,629,True,0,hourly_pay,0.124939,0.0864214
 "credential industries, private or non-profit",w_round,edu_afqt,women,G2 Hispanic,65,115,115,312,629,True,0,hourly_pay,0.206655,0.0989007
+"credential industries, private or non-profit",w_round,edu_math,women,G2 Hispanic,65,115,115,312,629,True,0,hourly_pay,0.212752,0.112507
 credential-pay sector minus other sectors,w_round,raw,men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.153704,0.0850095
 "credential-pay sector minus other sectors, employees",w_round,raw,men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.163896,0.0842375
 credential-pay sector minus other sectors,w_round,edu25,men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0804508,0.0873139
 "credential-pay sector minus other sectors, employees",w_round,edu25,men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0862635,0.084569
 credential-pay sector minus other sectors,w_round,edu_afqt,men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.133048,0.101148
 "credential-pay sector minus other sectors, employees",w_round,edu_afqt,men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.139764,0.0990903
+credential-pay sector minus other sectors,w_round,edu_math,men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.135334,0.100845
+"credential-pay sector minus other sectors, employees",w_round,edu_math,men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.138965,0.0993121
 credential-pay sector minus other sectors,w_round,raw,women,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0957542,0.0889889
 "credential-pay sector minus other sectors, employees",w_round,raw,women,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.108068,0.0911579
 credential-pay sector minus other sectors,w_round,edu25,women,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0222619,0.0834744
 "credential-pay sector minus other sectors, employees",w_round,edu25,women,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.025881,0.0857911
 credential-pay sector minus other sectors,w_round,edu_afqt,women,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0680103,0.0899961
 "credential-pay sector minus other sectors, employees",w_round,edu_afqt,women,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0589392,0.0930768
+credential-pay sector minus other sectors,w_round,edu_math,women,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0703934,0.0851455
+"credential-pay sector minus other sectors, employees",w_round,edu_math,women,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0693252,0.0896002
 all workers,w_round,raw,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.120244,0.0621488
 all workers,w_round,edu25,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.129542,0.0630061
 all workers,w_round,edu_afqt,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.121708,0.0658411
+all workers,w_round,edu_math,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.112849,0.0682268
 credential-pay sector,w_round,raw,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0444773,0.109098
 credential-pay sector,w_round,edu25,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0721121,0.105356
 credential-pay sector,w_round,edu_afqt,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0388429,0.112832
+credential-pay sector,w_round,edu_math,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0321461,0.11792
 other sectors,w_round,raw,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.102427,0.0771931
 other sectors,w_round,edu25,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.130301,0.0822467
 other sectors,w_round,edu_afqt,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.103881,0.0896083
+other sectors,w_round,edu_math,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.0970868,0.0865164
 "other sectors, employees",w_round,raw,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.100305,0.0796882
 "other sectors, employees",w_round,edu25,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.132495,0.0812915
 "other sectors, employees",w_round,edu_afqt,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.119668,0.0903578
+"other sectors, employees",w_round,edu_math,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.101786,0.0892377
 government employer,w_round,raw,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,-0.0578779,0.155064
 government employer,w_round,edu25,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,-0.0279755,0.156059
 government employer,w_round,edu_afqt,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,-0.00900893,0.156068
+government employer,w_round,edu_math,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,-0.0510701,0.153559
 "credential industries, private or non-profit",w_round,raw,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.120202,0.198835
 "credential industries, private or non-profit",w_round,edu25,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.224174,0.168984
 "credential industries, private or non-profit",w_round,edu_afqt,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.406167,0.207383
+"credential industries, private or non-profit",w_round,edu_math,women minus men,G2 Hispanic,0,0,0,0,0,False,0,hourly_pay,0.378249,0.227164

@@ -70,3 +70,15 @@ Quoted from the parent's message:
 > 3. NEW, task 5, the reference group. White women with the same AFQT may choose lower-paid, flexible jobs when married to high earners. Extract marital status (CV_MARSTAT or the codebook's equivalent) and, if available, spouse/partner income for 2013-2023. Re-estimate the daughters' equal-AFQT hourly premium against (a) never-married or unpartnered white women only, and (b) with marital-status controls for both groups.
 > 4. The core test is unchanged: is the women's hourly premium concentrated in credential-pay sectors (government, education, health and social assistance)? Run the same split for sons.
 > Update BRIEF.md with a dated "Parent correction" section quoting this, then continue.
+
+## Parent correction 2 (2026-09-29, after review of the second RESULT)
+
+Quoted from the parent's message:
+
+> Parent review: good work. Rerun verified byte-identical and the numbers match. Two additions, then finish; still no commits.
+> 1. Task 5, the reference group. It is missing, so my earlier correction probably reached you late. White women with the same AFQT may take lower-paid, flexible jobs when married to high earners. Extract marital status (CV_MARSTAT or the codebook's equivalent, selected by question name and year) and, if the codebook has it, spouse/partner earnings for 2013-2023. Re-estimate the G2 Hispanic daughters' equal-edu×AFQT hourly premium at 35-40 (a) against never-married or unpartnered G3+ white women only, and (b) within marital-status cells for both groups. Do the same for sons as a control.
+> 2. The language test you proposed. Reweight on the ASVAB math subtests only (arithmetic reasoning + mathematics knowledge, from the codebook), instead of the AFQT percentile, for daughters and sons.
+> Add a dated "Parent correction" section to BRIEF.md. Update RESULT.md, including the verdict if it changes. Re-verify that analyze.py is byte-identical on rerun. Return the same ≤10-line summary.
+
+Worker note: Task 5 was already in RESULT.md when this arrived (the messages crossed). Item 1(b) is now also run as
+a reweighting within marital-status cells, in addition to the regression controls.

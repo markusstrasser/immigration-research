@@ -9,6 +9,7 @@ The person, income, degree and weeks/hours fields repeat `career_trajectories_20
                         spouse or partner), YINC-2400 (any wage income), YINC-2600 (amount), YINC-2700 (bracket)
   per employer loop     YEMP_SELFEMP, YEMP_JOBTYPE, YEMP_INDCODE-2002, YEMP_OCCODE-2002, YEMP-14302
   2013–2023             (employer continuous from the date of last interview), YEMP_COW (2023 only)
+  person                ASVAB_{AR,MK,WK,PC}_ABILITY_EST_{POS,NEG}: CAT-ASVAB subtest ability estimates
   per employer loop     YEMP_UID and YEMP-58500 (class of worker). The class-of-worker question is asked
   1997–2023             only of employers not continuing from the last interview, so analyze.py carries
                         each answer forward by employer UID.
@@ -61,6 +62,9 @@ ROUND_JOB = {"CV_MAINJOB_FLG": "mainjob", "CV_MSA": "msa", "CV_CENSUS_REGION": "
 LOOP_JOB = {"YEMP_SELFEMP": "selfemp", "YEMP_JOBTYPE": "jobtype", "YEMP_INDCODE-2002": "ind",
             "YEMP_OCCODE-2002": "occ", "YEMP-14302": "dli", "YEMP_COW": "cow_roster"}
 LOOP_ALL = {"YEMP_UID": "uid", "YEMP-58500": "cow_asked"}
+# CAT-ASVAB subtest ability estimates (theta, 3 implied decimals), stored as a positive and a negative part.
+ASVAB = {f"ASVAB_{t}_ABILITY_EST_{sgn}": f"theta_{t.lower()}_{sgn.lower()}"
+         for t in ("AR", "MK", "WK", "PC") for sgn in ("POS", "NEG")}
 CHUNK = 1000
 
 with ARCHIVE.open("rb") as fh:
@@ -90,6 +94,8 @@ for ref, (qname, short) in PERSON.items():
     assert by_ref[ref]["qname"] == qname, (ref, by_ref[ref]["qname"], qname)
     rows.append(dict(role="person", short=short, **by_ref[ref]))
 for r in index:
+    if r["qname"] in ASVAB and r["year"] == "XRND":
+        rows.append(dict(role="person", short=ASVAB[r["qname"]], **r))
     if r["qname"] in BY_ROUND and r["year"].isdigit():
         rows.append(dict(role="round", short=f"{BY_ROUND[r['qname']]}_{r['year']}", **r))
     if r["qname"] in ROUND_JOB and r["year"] in JOB_ROUNDS:
