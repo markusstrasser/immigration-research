@@ -1,0 +1,21 @@
+offender,victim,offence,n,tangible_bn,full_bn
+White,Black,Rape/sexual assault,7891.57,0.07886,1.66072
+White,Black,Robbery,15704.91,0.12606,0.35005
+White,Black,Aggravated assault,32408.90,0.21439,2.64772
+White,Black,Simple assault,60843.87,0.21525,1.25663
+White,Hispanic,Rape/sexual assault,21898.99,0.21884,4.60848
+White,Hispanic,Robbery,36718.90,0.29472,0.81843
+White,Hispanic,Aggravated assault,92741.52,0.61349,7.57674
+White,Hispanic,Simple assault,300535.70,1.06321,6.20709
+White,Other,Rape/sexual assault,58965.50,0.58925,12.40884
+White,Other,Robbery,25883.67,0.20776,0.57693
+White,Other,Aggravated assault,26948.37,0.17826,2.20161
+White,Other,Simple assault,227537.03,0.80496,4.69942
+White,White,Rape/sexual assault,197894.94,1.97760,41.64549
+White,White,Robbery,240046.33,1.92673,5.35043
+White,White,Aggravated assault,516975.62,3.41981,42.23555
+White,White,Simple assault,1513209.03,5.35332,31.25296
+White,Hispanic,Murder,389.35,0.92355,3.49001
+White,White,Murder,3481.17,8.25752,31.20443
+White,Black,Murder,456.96,1.08392,4.09605
+White,Other,Murder,162.20,0.38475,1.45392

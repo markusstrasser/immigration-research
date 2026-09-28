@@ -1,0 +1,8 @@
+scope,victims,full_bn,tangible_bn,homicide_full_bn,homicides,nonfatal_victimisations,note
+all NH white offenders,non-white victims,54.0526,6.9973,9.0400,1008.5018,908078.9241,
+all NH white offenders,white victims,151.6889,20.9350,31.2044,3481.1749,2468125.9369,
+all NH white offenders,all victims,205.7415,27.9323,40.2444,4489.6767,3376204.8610,
+40.9M slice,non-white victims (lower bound),11.4964,1.4882,1.9227,214.4965,193137.6936,slice fraction 0.212688; comparable to the union's 23.4535
+40.9M slice,outside a random slice (central),36.8970,4.9938,7.1479,797.4260,606430.1782,white victims outside the slice at 1 - 0.2127; comparable to the union's central 28.9229
+40.9M slice at union ages,non-white victims (lower bound),13.5728,1.7570,2.2700,253.2379,228021.3984,"x 1.1806, the NCVS lane's age-only offending index, Hispanic over white"
+40.9M slice at union ages,outside a random slice (central),43.5611,5.8958,8.4390,941.4536,715961.0051,"x 1.1806, the NCVS lane's age-only offending index, Hispanic over white"
