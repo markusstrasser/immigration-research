@@ -1,0 +1,3 @@
+group,pop_share,us_consumption_co2_t_per_capita_2024,mexico_consumption_co2_t_per_capita_2023,income_share,sigma_central,sigma_min,sigma_max,vsl_epa_2024usd,cpi_2006,cpi_2020,cpi_2024,di_2019_adults,di_2019_65plus,lepeule_ratio_check
+mexican_origin,0.121453,15.6788,4.355,0.0726684,0.193418,0.163144,0.228659,1.15144e+07,201.6,258.811,313.689,134884,102801,0.997135
+nh_black,0.124595,15.6788,4.355,0.0911156,0.185494,0.157463,0.222029,1.15144e+07,201.6,258.811,313.689,134884,102801,0.997135
