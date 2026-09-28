@@ -86,6 +86,7 @@ revision, none adopted: long-run property-tax responses, −$27.2bn at both ends
 income-tax key, −$3.2 / −$3.1bn (249); workers' compensation pooled over 2019–2024, −$1.5 to −$2.0bn (251); and
 candidate v2's housing key and production weights (`main_case_candidate_v2_2026_09_28`); payroll compliance of
 the survey keys, −$0.37 / −0.16bn, plus −$0.81bn at both ends for re-keying row 2 within CBO's income groups (254).
+The uninsured-use arm at 0.7×, −$1.53 / −$2.24bn, is weaker: its evidence is only between regions (256).
 Pension accrual is being validated. The operator agreed to take them in one revision.]
 
 **September 26 schools case (the main case until 2026-09-27): $258–292bn/year conditional net cost to other US

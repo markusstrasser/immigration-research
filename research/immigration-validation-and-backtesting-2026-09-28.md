@@ -275,7 +275,9 @@ opened (883182b), is scored (ladder 255). Births to Mexican-origin mothers and t
 group's share of Medicaid-paid births hit; the credit, SSI and Social Security keys have
 no power on state totals, so the dollar keys remain untested by this route. A second
 pre-registered test against published figures (NAE 2021, NAS 2017, hospital cost
-reports) is being scored.] Public payroll replacement, mixed-household eligibility and
+reports) is being scored.] [2026-09-28, later: scored (ladder 256). Hospital cost reports
+hit on state shares and the national total; the use-rate slope favors 0.7× only between
+regions. NAE agrees on a shared method, so it validates nothing; NAS outlays match.] Public payroll replacement, mixed-household eligibility and
 unpriced social channels remain in the [conceptual audit](immigration-adversarial-audit-2026-09-28.md).
 Separate school-systemwide and enforcement/rent analyses have their own populations
 and designs; their estimates are not added to these validation scores. [LIMIT / INFERENCE]
@@ -332,3 +334,5 @@ commands. No new causal coefficient or national total was adopted. [EXECUTION]
   districts (ladder 252); its district-wide part stays open.
 - **2026-09-28, administrative back-test:** the pre-registered test against state and national administrative
   totals is scored (ladder 255): two powered hits, no power on the dollar keys, no correction.
+- **2026-09-28, published-figures back-test:** scored (ladder 256): S-10 level and national hits, a
+  regional slope toward 0.7× uninsured use, NAE agreement by shared method, NAS outlays matched.
