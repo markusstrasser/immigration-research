@@ -1,0 +1,12 @@
+{
+ "id": "E04m",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "mirror",
+ "mirror_of": "E04",
+ "topic": "offbooks",
+ "packet_text": "CLAIM: Unauthorized workers in the Mexican-origin group pay about $6.1bn a year of payroll and income taxes through employer withholding under borrowed or invalid numbers. The account credits this to the Mexican-origin population as tax receipts.\n\nEVIDENCE:\n- The account's target population is the Mexican-origin population, all generations; other residents are everyone else.\n- Worker panel (acs_cells.py):\n```python\npanel = acs[(acs.imputed_unauthorized == 1) & (acs.wagp > 0)]\nwithheld = (panel.wagp * panel.perwt * ONBOOKS_SHARE * WITHHOLDING_RATE).sum()\n```\n- `imputed_unauthorized` is assigned by a residual method to noncitizens of every birthplace.\n- The on-books share and withholding rate come from payroll-record studies; withheld taxes total $6.1bn.\n- Mexico-born workers earn about half of all imputed-unauthorized wages.",
+ "ground_truth": "ERROR (by construction). Population mismatch: withholding by unauthorized workers of all origins is credited to\nthe Mexican-origin account; on the Mexico-born wage share it is about $3bn. The group's receipts are overstated.",
+ "locus_rubric": "HIT if the reviewer says the panel covers unauthorized workers of all origins (no Mexican-origin restriction) while\nthe receipts are credited to the Mexican-origin account, so they are overstated. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E04 (same population mismatch, applied to a receipt instead of a cost)."
+}

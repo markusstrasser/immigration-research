@@ -1,0 +1,72 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE KFE61
+CLAIM: In these incidence scenarios only a minority of other residents gain from the Mexican-origin group's presence. Across the wage model's substitution elasticities 1.5, 2.0 and 2.5, the share of other residents who come out ahead (pooled within households, taxes financed in proportion to tax shares) is 29.2%, 23.9% and 18.7%. The result is conditional on how channel totals are allocated to people.
+
+EVIDENCE:
+- Channel totals (wages, prices, taxes, public services) are allocated onto survey people; a winner is a person whose net is positive.
+- The wage channel's gross after-tax gains ($95.8bn) and losses ($96.0bn) almost cancel, so the count is sensitive to the wage allocation: halving each person's wage deviation from the mean, with the aggregate unchanged, gives 10.3% winners.
+- Enumerating the existing matched channel choices gives a maximum of 30.5% winners.
+
+=====
+
+CASE K78D9
+CLAIM: The CPS has put the Mexico-born population 9-13% above the ACS every year since 2019. About 11.1M, not the CPS's 12.2M, is the right level for early 2025.
+
+EVIDENCE:
+- The excess appears in every monthly CPS file from January 2024 (2024 mean 12.38M) and in the March basic sample alone (12.05M), so it is neither the ASEC oversample nor the January 2025 population controls.
+- It is composition inside the Hispanic control: in 2024 the CPS counted fewer Hispanics than the ACS in total but 1.38M more Mexico-born and 1.81M fewer other Hispanics, and CPS state weighting controls Hispanic origin only nationally.
+- The two surveys agreed within 4% from 2006 to 2016.
+- The whole ASEC 2025 excess (1.16M against the ACS 2024 in the same universe) lies outside California and Texas, and 76% of it is noncitizen.
+
+=====
+
+CASE K4F3B
+CLAIM: A blind back-test of the account's dollar keys against state administrative totals gives no reason to correct the SSI key. Against SSA's federally administered SSI payments by state, the estimated correction is delta = +0.96 (the Mexican-origin group's SSI would be 96% higher than the key assigns). But that target includes the state supplementary payments SSA administers for some states, chiefly California's $3.26bn, which the account's SSI line (federal SSI only) does not pay, and the group is concentrated in California. Against federal SSI alone, a comparison chosen after the data were seen, delta = +0.17 (+$0.80bn). No key correction follows.
+
+EVIDENCE:
+- Predictions, baselines and tolerances were committed before any target was opened; scoring used the frozen estimators.
+- State totals give the dollar keys little power, because take-up and error rates vary by state more than the group's share does: refundable credits delta +0.09 (+$1.6bn, 95% interval about -$5 to +8bn); Social Security delta -0.01.
+- The same frame predicts where births land: births to Mexican-origin mothers are 14.43% of US births in the frame against 14.36% in birth records.
+
+=====
+
+CASE K27E4
+CLAIM: Return migration makes the Mexico-born population that remains in the US more positively selected. Returnees from the US to Mexico have less schooling than comparable people who stayed in Mexico, so the people who leave the US are negatively selected and the US stayers' average schooling rises.
+
+EVIDENCE:
+- Mexican national demographic survey (ENADID 2018 and 2023): returnees (lived in the US within the past five years, now in Mexico), men aged 25-54, mean schooling 7.9 years; people who never migrated, same ages and states, 9.6 years; difference -1.7 years (SE 0.2).
+- Limitation: the survey does not observe Mexican emigrants currently living in the US.
+
+=====
+
+CASE K9D6A
+CLAIM: The Census Bureau's fill-ins for missing income answers in the CPS ASEC do not bias the Mexican-origin group's benefit receipt. The group and other adults skip the income supplement at the same rate (18.1% against 18.2%), so the account's benefit keys can use published benefit amounts, fill-ins included.
+
+EVIDENCE:
+- Missing incomes are filled by a hot deck: each nonrespondent receives the answers of a respondent donor matched on sex, age, schooling, race and labour-force status. Hispanic origin is a match variable only for the health-insurance fill-ins.
+- Within those donor cells, the group's respondents report SSI and cash public assistance at 0.58 times the rate of other respondents (many noncitizens are ineligible); among filled-in records the ratio is 0.97.
+- The group's filled-in SSI and public-assistance amounts are 41 and 37 log points above the group's respondents in the same cells.
+- The benefit keys allocate national programme totals by these CPS amounts.
+
+=====
+
+CASE KCB99
+CLAIM: The Mexican-origin population's road traffic costs other US residents $9.6bn a year (range $5.4-16.6bn). This is the with-against-without effect of the group's driving on other residents, measured as the damage to other residents in crashes the group's drivers cause, net of the liability insurance the group's drivers pay out.
+
+EVIDENCE:
+- A crash between a group driver and another resident is assigned to the group when police records put the group driver at fault. Damage is valued at comprehensive unit costs by severity; liability insurance payments are subtracted.
+- The account charges crime the same way: harm to victims of offences the group's members commit.
+- Traffic-safety evidence assembled for the same account: on the congested urban networks where 65% of the group's driving takes place, the cost-weighted elasticity of the non-fatal crash rate per vehicle-mile to traffic volume is about +1.4 (p10-p90 +0.9 to +1.9). Each added vehicle raises other drivers' crash risk per mile.

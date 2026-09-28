@@ -1,0 +1,35 @@
+CASE K9A17
+VERDICT: ERROR
+LOCATION: The parser loop `series[col.header] = col.values`, whose output is then used as total encounters.
+WHY: All three blocks have the same headers, so each block overwrites the one before it and only the Field Operations (ports of entry) series survives. That series records programme participants and appointment holders arriving at ports, so the +787% mostly counts the legal pathway itself. Testing whether illegal crossings rose needs the Border Patrol (between ports) series.
+CONFIDENCE: 0.9
+
+CASE K4CD3
+VERDICT: ERROR
+LOCATION: The claim's first sentence, set against the annual-survey figures (0.53, 0.58, 0.61).
+WHY: The allocation correction and the prison-count cross-check do show that the round-3 figure of 1.10 is an artifact. But in the annual survey each successive cohort sits higher than the one before, and the round-3 cohort's later reading (about 0.50) continues that rise. The evidence supports a modest rise in custody from cohort to cohort, not the claim that the data show none.
+CONFIDENCE: 0.55
+
+CASE K5D0C
+VERDICT: SOUND
+LOCATION: none
+WHY: The target was switched after seeing the data, but the claim says so, and the switch fixes a real mismatch. The account's SSI line includes the California-heavy state supplements while the first target covers federal payments only, so a group concentrated in California would get a negative delta, which matches the -0.48. On the matching target, -0.08 is small given how little power state totals have; calling the decisive comparison "blind" overstates it but does not change the conclusion.
+CONFIDENCE: 0.6
+
+CASE KCC43
+VERDICT: ERROR
+LOCATION: The `acs_cells.py` panel filter, which has no Mexican-origin condition; its $6.1bn is then credited to the group.
+WHY: `imputed_unauthorized` covers noncitizens of every birthplace, so $6.1bn is the withholding of all unauthorized workers. Mexico-born workers earn about half of those wages, so the group's share is roughly $3bn, and crediting the full $6.1bn about doubles it.
+CONFIDENCE: 0.9
+
+CASE K748C
+VERDICT: ERROR
+LOCATION: The calculation step "no shortfall in spending per pupil, so no forgone instructional spending per incumbent pupil".
+WHY: Keeping average spending per pupil constant does not keep incumbents' spending constant when the added pupils draw above-average resources. 31% of the group's pupils carry English-learner weights of 20-25%, which is about 6-8% above average per pupil. With an elasticity of about 1.0, that premium either comes out of incumbents' spending or is missed by the average-cost charge, and the two-year lag adds some temporary dilution as well.
+CONFIDENCE: 0.8
+
+CASE KFCDD
+VERDICT: SOUND
+LOCATION: none
+WHY: The numbers are consistent: the 8.4pp excess at $200k-$1M equals the 3.3pp shortfall at $50k-$200k plus about 5.1pp at $1M+, which fits CPS top-coding. Moving tax toward bins where the group's share is higher raises its tax, and 321.8 − 3.2 = 318.6. The held-out year, the 2022 baseline (2.4pp) and the $500k pooling check (+$3.1bn, SE 0.5) support the finding, and it is presented as a candidate that was not adopted.
+CONFIDENCE: 0.6

@@ -1,0 +1,12 @@
+{
+ "id": "V05",
+ "type": "VALID",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "school",
+ "packet_text": "CLAIM: The present value of lifetime earnings lost by incumbent pupils because of one school year's exposure to crowded classrooms can be booked as a one-year social-cost accrual in an annual account. This is not a stock/flow error, provided it is labeled as an accrual, kept separate from budget cash flows, and its future-tax consequence is not added a second time.\n\nEVIDENCE:\n- The annual account books each year's exposure once: the loss caused by 2024's exposure is the present value, at 2024, of the earnings reduction it causes over the pupils' working lives.\n- Each year's exposure is a new flow; next year's exposure is booked next year. A pupil's harm over 13 school years is the sum of 13 annual accruals, not 13 lifetimes.\n- The future income-tax loss from the lower earnings is excluded from the fiscal line and appears only inside the social accrual.",
+ "ground_truth": "VALID. The conceptual audit rejected the stock/flow objection explicitly ('It is not automatically a stock/flow\nerror'), with the same three conditions.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "research/immigration-weekly-conceptual-audit-2026-09-25.md section 3, 'One tempting objection should be rejected'."
+}

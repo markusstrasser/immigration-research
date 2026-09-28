@@ -1,0 +1,35 @@
+**CASE K345C**
+VERDICT: ERROR
+LOCATION: `founder_profile`: only `p.benefits` changes on legalization, and earnings and taxes stay on `unauthorized_profile`
+WHY: Legalization switches on eligibility for Social Security, Medicare, Medicaid and SSI, but earnings and taxes stay at the unauthorized level. The cited studies show wage gains of 6–15% and a large shift of work onto payroll records. The model counts the extra costs of legal status but leaves out the extra revenue, so the 34% rise is biased upward and could be much smaller.
+CONFIDENCE: 0.88
+
+**CASE K1CF8**
+VERDICT: ERROR
+LOCATION: Claim: "This is the with-against-without effect", measured by assigning at-fault crashes to the group
+WHY: Charging the group for all damage to other residents in crashes its drivers cause is a fault-based accounting, not a counterfactual. The account's own elasticities (about +0.07 for non-fatal crashes, −0.21 for fatal ones) say that removing the group's vehicle-miles would barely change other residents' crash risk per mile. That puts the with-against-without effect near zero, far below $42.3bn. The comparison to crime fails because other crashes would largely replace the removed ones.
+CONFIDENCE: 0.75
+
+**CASE K60DA**
+VERDICT: SOUND
+LOCATION: none
+WHY: Each named threat gets a check: NAEP's absolute scale, cut scores and exit-exam repeal unrelated to the shares, region-by-year effects, state trends, and the cohort design with no lead. The limits are stated. The $11bn is explicitly conditional and the arithmetic holds (≈0.07 SD × ~1.8–2M pupils × ~10–13% earnings per SD × ~$0.6–0.8M present value of lifetime earnings). White families leaving public schools, which are the only schools state NAEP samples, is an untested risk, but it does not overturn the hedged claim.
+CONFIDENCE: 0.6
+
+**CASE KC8A6**
+VERDICT: SOUND
+LOCATION: none
+WHY: The victim unit costs leave out police, courts and corrections, which enter only through the justice budget lines, so the two lines do not overlap. Deaths are counted once because the homicide-risk component is removed from assault and robbery and homicides have their own row. The only leftover risk is small: another crime type, such as rape, might still carry a homicide-risk component.
+CONFIDENCE: 0.65
+
+**CASE K8A79**
+VERDICT: ERROR
+LOCATION: Round 3 birthplace imputation, and different handling of missing birthplaces across rounds
+WHY: Round 3 imputes birthplace for 64% of institutionalized Mexican-origin men and marks 91% of those as foreign-born. Among men who reported a birthplace, only 38.5% were foreign-born. Because the donors were household residents, the imputation roughly doubles the foreign-born count (72% vs 38.5%; the ratio falls to about 0.6 if imputed cases matched reporters), while rounds 1–2 simply dropped missing birthplaces. The jump to 1.10 is therefore mostly a data-processing artifact, and the step from 0.45 to 0.48 is within noise (SE of the difference ≈0.07).
+CONFIDENCE: 0.9
+
+**CASE K5FF5**
+VERDICT: SOUND
+LOCATION: none
+WHY: The predictions and scoring rule were committed before the reports were opened. The direction is right: the group's share of the uninsured is well above its population share, so a population key lowers its charge. The claim stops at "candidate, not adopted." The disclosed limits (line 30 includes insured patients' uncompensated care, the region controls were added after seeing the data, and the national totals differ at a ratio of 0.88) weaken the case for switching but fit that hedged wording.
+CONFIDENCE: 0.6

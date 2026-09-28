@@ -1,0 +1,80 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE K893A
+CLAIM: Each new Mexican arrival cohort is more positively selected on custody than the last. Among Mexico-born men aged 18-40 in their first five years in the US, the institutionalized share relative to US-born men of the same ages fell from 0.45 (1975-80 arrivals, 1980 census) to 0.42 (1985-90 arrivals, 1990 census) to 0.13 (1995-2000 arrivals, 2000 census).
+
+EVIDENCE:
+- IPUMS 5% census samples; institutional group quarters; SEs 0.05, 0.04 and 0.01.
+- Data notes from the same extract: in the 2000 census, birthplace was allocated (imputed; flag QBPL) for 68% of institutionalized Mexican-origin men aged 18-40, and 98% of the allocated cases were assigned a US birthplace. Among institutionalized Mexican-origin men who reported a birthplace, 38.5% were foreign-born. In 1980 and 1990, missing birthplaces were coded "abroad, unknown" and are dropped by the standard immigrant definition.
+
+=====
+
+CASE K1FC8
+CLAIM: The Census Bureau's fill-ins for missing income answers in the CPS ASEC do not bias the Mexican-origin group's taxable income. The group and other adults skip the income supplement at the same rate (18.1% against 18.2%), so the account's tax keys can use published incomes, fill-ins included.
+
+EVIDENCE:
+- Missing incomes are filled by a hot deck: each nonrespondent receives the answers of a respondent donor matched on sex, age, schooling, race and labour-force status. Hispanic origin is a match variable only for the health-insurance fill-ins.
+- Within those donor cells, the group's respondents earn less than other respondents (log wage difference -0.153); among filled-in records the difference is -0.014, so fill-ins keep 9% of the group's own wage gap (difference-in-differences +0.139, SE 0.046).
+- The group's filled-in Social Security, pension and interest incomes are 19, 55 and 66 log points above the group's respondents in the same cells.
+- Federal income tax is computed from these incomes by a tax calculator.
+
+=====
+
+CASE K3059
+CLAIM: The CPS has put the Mexico-born population 9-13% below the ACS every year since 2019. About 13.4M, not the CPS's 12.2M, is the right level for early 2025.
+
+EVIDENCE:
+- The shortfall appears in every monthly CPS file from January 2024 (2024 mean 12.02M) and in the March basic sample alone (12.10M), so it is neither the ASEC oversample nor the January 2025 population controls.
+- It is composition inside the Hispanic control: in 2024 the CPS counted more Hispanics than the ACS in total but 1.22M fewer Mexico-born and 1.51M more other Hispanics, and CPS state weighting controls Hispanic origin only nationally.
+- The two surveys agreed within 4% from 2006 to 2016.
+- The whole ASEC 2025 shortfall (1.19M against the ACS 2024 in the same universe) lies outside California and Texas, and 76% of it is noncitizen.
+
+=====
+
+CASE KD31B
+CLAIM: Off-the-books employment of the Mexican-origin group gives its employers about $6.43bn a year of cost advantage, including $4.53bn of unpaid payroll taxes. The account books this as a cost the Mexican-origin population imposes on other residents: competing employers and taxpayers.
+
+EVIDENCE:
+- The account's target population is the Mexican-origin population, all generations; other residents are everyone else.
+- Worker panel (acs_cells.py):
+```python
+panel = acs[(acs.imputed_unauthorized == 1) &
+            (acs.industry.isin(["construction", "agriculture",
+                                "food_services", "landscaping"]))]
+wage_base = (panel.wagp * panel.perwt).groupby(panel.industry).sum()
+```
+- `imputed_unauthorized` is assigned by a residual method to noncitizens of every birthplace.
+- edges.py applies each industry's estimated off-books share and the employer payroll-tax and compliance-cost rates to `wage_base`: $6.43bn, of which $4.53bn is payroll tax.
+- Mexico-born workers earn about half of the imputed-unauthorized wages in these four industries.
+
+=====
+
+CASE KEECB
+CLAIM: The account can add a consumer-price benefit from the Mexican-origin group's labour (lower prices paid by other residents, $9.4bn a year) to its fiscal receipts line without double counting, because the price line counts only other residents' consumer savings.
+
+EVIDENCE:
+- The price benefit is the fall in prices in industries employing the group, applied to other residents' consumption bundles; the group's own consumption is excluded.
+- Firms' higher profits are excluded from the price benefit; the taxes on those profits enter the fiscal account through the receipts lines, allocated by incidence.
+- Wage effects on other residents are priced in a separate wage line; the price line uses only the price change, not the wage change that caused it.
+
+=====
+
+CASE K6EB8
+CLAIM: Charged with against without the Mexican-origin group's traffic, road crashes cost other residents $72.1bn a year (range $49.4bn to $94.7bn), not the $42.3bn charged by fault. Across transferable evidence, one more car on a fixed network raises other drivers' crash risk per mile: the cost-weighted elasticity of the non-fatal crash rate to traffic is about +1.20 (p10-p90 +0.78 to +1.62), and of the fatal rate -0.21. With a large elasticity, the group's traffic also raises crashes among other residents themselves, which fault attribution does not count.
+
+EVIDENCE:
+- With-against-without = other residents' crash costs with the group's traffic minus without it; it includes a composition term for the group's higher fatal culpability ($1.8bn). Each 0.1 of non-fatal elasticity adds about $5.4bn.
+- Study weights (design; a 0.65 weight on congested settings, from the group's commute exposure) were set before the results; leaving out one study at a time keeps the non-fatal central between +1.02 and +1.39.
+- In the densest settings the studies differ in size (London: +1.4 against +0.9 for injury crashes), which is why the range is wide.

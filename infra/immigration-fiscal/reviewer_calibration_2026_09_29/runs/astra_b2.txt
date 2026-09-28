@@ -1,0 +1,35 @@
+CASE KFE61
+VERDICT: SOUND
+LOCATION: none
+WHY: The reported winner shares and the maximum across existing scenarios are all below 50%. Allocation sensitivity limits generalization, but the claim explicitly conditions its conclusion on those allocations; nearly cancelling dollar totals do not imply equal numbers of winners and losers.
+CONFIDENCE: 0.99
+
+CASE K78D9
+VERDICT: ERROR
+LOCATION: “About 11.1M ... is the right level for early 2025.”
+WHY: A persistent disagreement between surveys does not establish which survey is accurate. The composition evidence and excluded explanations do not independently validate the ACS level, and using an annual 2024 estimate for early 2025 also requires accounting for population change.
+CONFIDENCE: 0.99
+
+CASE K4F3B
+VERDICT: SOUND
+LOCATION: none
+WHY: The large discrepancy uses a target containing state supplements outside the account’s federal-only SSI line, so it cannot justify the proposed federal-SSI correction. The post hoc federal-only comparison and weak state-level identification do not establish a warranted adjustment, although they also do not validate the existing key.
+CONFIDENCE: 0.92
+
+CASE K27E4
+VERDICT: ERROR
+LOCATION: The comparison of returnees with people who never migrated.
+WHY: Whether return migration raises US stayers’ average schooling depends on returnees’ schooling relative to migrants remaining in the US. Lower schooling than nonmigrants in Mexico does not establish that relationship, and the survey omits the necessary comparison group.
+CONFIDENCE: 1.00
+
+CASE K9D6A
+VERDICT: ERROR
+LOCATION: The inference from equal supplement nonresponse rates to unbiased benefit imputation.
+WHY: Equal nonresponse rates do not ensure that donors represent either group’s missing benefit answers. The fill-ins substantially erase the observed within-cell receipt gap, so using their amounts can inflate the group’s benefit allocation; the evidence does not establish absence of bias.
+CONFIDENCE: 0.99
+
+CASE KCB99
+VERDICT: ERROR
+LOCATION: Equating fault-assigned crash damages with the with-against-without effect.
+WHY: Removing the group’s driving also changes other drivers’ crash risk, including crashes involving no group driver. The positive traffic-volume elasticity supplies evidence of this omitted effect, so fault-assigned damages net of insurance do not identify the claimed counterfactual cost.
+CONFIDENCE: 0.99

@@ -1,0 +1,12 @@
+{
+ "id": "E06m",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "mirror",
+ "mirror_of": "E06",
+ "topic": "school",
+ "packet_text": "CLAIM: The Mexican-origin group's pupils impose no educational cost on other pupils. District spending kept pace with added enrollment (elasticity about 1.0 within two years), and full per-pupil funding cannot coexist with diluted instruction. The account's full per-pupil charge for the group's pupils therefore captures the whole school cost.\n\nEVIDENCE:\n- District spending responds to enrollment with an elasticity of about 1.0 within two years; the account charges full average cost per pupil.\n- 31% of the group's pupils are English learners; state formulas add 20-25% funding weights for them, spent on English-learner teachers and programmes.\n- Calculation: no shortfall in spending per pupil, so no forgone instructional spending per incumbent pupil, so zero dilution cost.",
+ "ground_truth": "ERROR (by construction). Maintained average spending is an input, not incumbents' educational output: added dollars\nare targeted to newcomers' services, and composition, class size and teacher attention are not measured by\nspending. 'Cannot coexist' does not follow; zero dilution is unsupported.",
+ "locus_rubric": "HIT if the reviewer says maintained per-pupil spending (input) does not establish that incumbents' instruction or\nlearning is unaffected - e.g., the added money is targeted to newcomer/English-learner services, or composition,\npeer or class-size effects are not spending. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E06 (same spending-equals-output fallacy, direction reversed)."
+}

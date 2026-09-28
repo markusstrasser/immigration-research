@@ -1,0 +1,12 @@
+{
+ "id": "E06",
+ "type": "ERROR",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "school",
+ "packet_text": "CLAIM: Most of the school cost the account leaves uncharged is diluted instruction for other pupils: a low response of school spending to added enrollment cannot coexist with no dilution. The central harm is $16.1bn a year of present-value lifetime earnings lost by incumbent pupils (range -$2.1bn to +$35.5bn).\n\nEVIDENCE:\n- District spending responds to enrollment with an elasticity well below 1 in the first years; the fiscal account charges only the part of per-pupil cost that responds.\n- Calculation: uncharged spending x instructional share of spending (0.61) = instructional spending forgone per incumbent pupil; x effect of per-pupil spending on test scores, from a meta-analysis of school-spending interventions; x effect of test scores on lifetime earnings; discounted.\n- The same model with the longer-run spending response gives $3.6bn of harm; a class-size pathway gives $2.6bn.",
+ "ground_truth": "ERROR. Spending is an input, not educational output: spare classroom capacity, lumpy staffing, economies of scale\nand composition mean a spending elasticity below one does not identify how much incumbents' instruction or\nlearning falls, and spending-intervention effects do not show that an enrollment-driven budget residual is an\nequivalent intervention in reverse. The 'cannot coexist' necessity fails; the $16.1bn is conditional on an\nunestablished share of the residual being lost output.",
+ "locus_rubric": "HIT if the reviewer says a spending shortfall (input) is treated as lost instruction/learning (output) without\nsupport - e.g., capacity slack, fixed or lumpy costs, economies of scale - so the necessity claim fails, OR that\neffects of spending interventions do not transfer to an enrollment-driven per-pupil residual. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: research/immigration-weekly-conceptual-audit-2026-09-25.md section 3 (unsupported\nproduction-function bridge); lane school_dilution_2026_09_24 price.py."
+}

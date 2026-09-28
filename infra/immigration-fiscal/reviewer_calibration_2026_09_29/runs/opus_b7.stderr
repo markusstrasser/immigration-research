@@ -1,0 +1,4 @@
+[llmx:WARN] effort=max is backend-specific; see effort_applied in dispatch plan
+[llmx:WARN] effort=max is backend-specific; see effort_applied in dispatch plan
+[llmx] auth=subscription mode=chat transport=claude-cli model=claude-opus-5-5 effort=max timeout=3600s
+ℹ Starting chat {"provider": "anthropic", "transport": "claude-cli", "model": "claude-opus-5-5", "stream": false, "requested_reasoning_effort": "max", "effective_reasoning_effort": "max", "reasoning_effort_source": "user-requested-cli-may-ignore", "timeout": 3600, "lite": "bare"}

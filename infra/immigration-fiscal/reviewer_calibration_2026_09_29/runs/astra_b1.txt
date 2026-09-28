@@ -1,0 +1,35 @@
+CASE KB713
+VERDICT: ERROR
+LOCATION: Comparing the 2009 and 2021 estimates across the methodology change.
+WHY: The endpoints use different methods for assigning Hispanic origin. Revising the same 2018 population reduced its estimated count by about 28%, so the reported 26% decline cannot establish a real decline or its ranking against other groups.
+CONFIDENCE: 0.99
+
+CASE K4AF8
+VERDICT: ERROR
+LOCATION: “Did not lose ground” and “none of those mechanisms moves with the shares.”
+WHY: The immigrant-origin estimate has an approximate 95% interval of −0.070 to +0.032 SD, allowing meaningful losses; statistical nonsignificance does not establish their absence. Likewise, cut-score intervals permitting declines of 7–13 points do not establish that standards are unrelated to the shares.
+CONFIDENCE: 0.91
+
+CASE KC896
+VERDICT: ERROR
+LOCATION: Treating 24,000 flags as a national upper bound and excluding every contest.
+WHY: Incomplete audits with unmeasured missed cases cannot supply an upper bound, even when many flags are false positives. A national aggregate also cannot rule out effects in individual contests decided by 187 or 6 votes without geographically specific evidence.
+CONFIDENCE: 0.99
+
+CASE K6003
+VERDICT: ERROR
+LOCATION: Attributing the spike definitively to allocation and dismissing successive-cohort deterioration.
+WHY: Redistributing allocated birthplaces in respondents’ proportions assumes that respondents represent those with missing birthplace; the sensitivity calculation does not establish that assumption. A later survey does not track the same individual men, and the matched-duration ratios actually increase across successive cohorts, 0.53→0.58→0.61, although their statistical significance is unknown.
+CONFIDENCE: 0.91
+
+CASE KE97A
+VERDICT: SOUND
+LOCATION: none
+WHY: The conclusion is a conditional recalibration: matching national IRS bin totals while retaining the estimated within-bin group shares produces the stated adjustment. Alternative pooling gives a similar result; this supports the candidate correction without independently validating the group’s within-bin shares.
+CONFIDENCE: 0.90
+
+CASE K0AD2
+VERDICT: ERROR
+LOCATION: Adding murder costs to assault and robbery costs that already include resulting deaths.
+WHY: This counts homicide losses twice. Removing just the identified overlapping components subtracts $314 per adult-year, reducing the total to $1,107 and raising murder’s share to approximately 83.5%, rather than 65%.
+CONFIDENCE: 0.99

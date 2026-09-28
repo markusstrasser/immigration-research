@@ -1,0 +1,12 @@
+{
+ "id": "E02m",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "mirror",
+ "mirror_of": "E02",
+ "topic": "chnv",
+ "packet_text": "CLAIM: The parole programme for Cubans, Haitians, Nicaraguans and Venezuelans cut the border workload: after it began, total southwest-border encounters of these four nationalities fell 91% relative to other nationalities.\n\nEVIDENCE:\n- Series: monthly southwest-border encounters by citizenship, parsed from the border agency's spreadsheet \"Southwest Border Encounters by Agency and Selected Citizenship\".\n- Sheet layout: three side-by-side blocks, left to right \"Total\", \"Field Operations (at ports of entry)\" and \"Border Patrol (between ports of entry)\". Every block has the same column headers: Month, Citizenship, Encounters.\n- Parser excerpt:\n```python\nseries = {}\nfor block in sheet.blocks:                 # left to right\n    for col in block.columns:\n        series[col.header] = col.values    # keyed by header text\nencounters = pd.DataFrame(series)          # used downstream as total encounters\n```\n- Programme participants and other appointment holders present at ports of entry and are recorded as Field Operations encounters; port presentations of these nationalities rose from about 3,000 to 25,000 a month after the programme began.\n- Design: difference-in-differences, the four programme nationalities against other nationalities, monthly, 2021-2023; the post-programme coefficient converts to -91%.",
+ "ground_truth": "ERROR (by construction). The rightmost block (Border Patrol, between ports) overwrites the others, so the series\nomits port encounters, which rose sharply; total encounters fell far less than 91%.",
+ "locus_rubric": "HIT if the reviewer says the parsed series is not total encounters (the dict keyed by header is overwritten by the\nrightmost, Border Patrol block) OR that the fall omits the rise in port-of-entry encounters, so total encounters\ndid not fall 91%. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E02 (same header-overwrite universe bug, direction reversed)."
+}

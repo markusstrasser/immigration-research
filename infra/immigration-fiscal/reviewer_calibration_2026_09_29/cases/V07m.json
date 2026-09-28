@@ -1,0 +1,12 @@
+{
+ "id": "V07m",
+ "type": "VALID",
+ "direction": "E",
+ "origin": "mirror",
+ "mirror_of": "V07",
+ "topic": "winners",
+ "packet_text": "CLAIM: In these incidence scenarios only a minority of other residents lose from the Mexican-origin group's presence. Across the wage model's substitution elasticities 1.5, 2.0 and 2.5, the share of other residents who come out ahead (pooled within households, taxes financed in proportion to tax shares) is 70.8%, 76.1% and 81.3%. The result is conditional on how channel totals are allocated to people.\n\nEVIDENCE:\n- Channel totals (wages, prices, taxes, public services) are allocated onto survey people; a winner is a person whose net is positive.\n- The wage channel's gross after-tax gains ($96.0bn) and losses ($95.8bn) almost cancel, so the count is sensitive to the wage allocation: halving each person's wage deviation from the mean, with the aggregate unchanged, gives 89.7% winners.\n- Enumerating the existing matched channel choices gives a minimum of 69.5% winners.",
+ "ground_truth": "VALID (by construction): same conditional, sensitivity-bounded claim as V07 with the shares reversed.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Synthetic mirror of V07."
+}

@@ -1,0 +1,80 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE K4161
+CLAIM: Legal status hardly matters for the long-run fiscal cost of a Mexican immigrant lineage: legalizing the founder after ten years changes the century fiscal gap by only 1.9%.
+
+EVIDENCE:
+- Code excerpt:
+```python
+def founder_profile(age, status):
+    # pooled Mexico-born age profile: taxes, benefits and services by age, all statuses
+    p = pooled_profile(age)
+    if status == "unauthorized" and 18 <= age < 65:
+        p.net -= 870          # working-age adjustment for unauthorized status
+    return p                  # at 65+ the pooled profile applies whatever the status
+```
+- Legalization at year 10 sets the founder's status to "legal" for the rest of life.
+- Sensitivity run: setting every senior (65+) net cost to zero changes the undiscounted century gap by 34.4%.
+- Unauthorized immigrants are ineligible for Social Security retirement benefits, Medicare and non-emergency Medicaid; lawful permanent residents become eligible after qualifying periods.
+
+=====
+
+CASE K3023
+CLAIM: Most of the school cost the account leaves uncharged is diluted instruction for other pupils: a low response of school spending to added enrollment cannot coexist with no dilution. The central harm is $16.1bn a year of present-value lifetime earnings lost by incumbent pupils (range -$2.1bn to +$35.5bn).
+
+EVIDENCE:
+- District spending responds to enrollment with an elasticity well below 1 in the first years; the fiscal account charges only the part of per-pupil cost that responds.
+- Calculation: uncharged spending x instructional share of spending (0.61) = instructional spending forgone per incumbent pupil; x effect of per-pupil spending on test scores, from a meta-analysis of school-spending interventions; x effect of test scores on lifetime earnings; discounted.
+- The same model with the longer-run spending response gives $3.6bn of harm; a class-size pathway gives $2.6bn.
+
+=====
+
+CASE K4D4C
+CLAIM: The data do not show each Mexican arrival cohort more positively selected on custody than the last. The 2000 census's low institutional share for recent Mexican arrivals (0.13 of US-born men's) reflects the census's birthplace allocation, not selection: spreading the allocated birthplaces in the reported mix raises the 2000 ratios 2.1-2.6-fold, and the same men reappear at 0.49-0.51 in the 2006 American Community Survey.
+
+EVIDENCE:
+- 2000 census: birthplace allocated for 68% of institutionalized Mexican-origin men aged 18-40, 98% of them assigned a US birthplace; among those reporting a birthplace, 38.5% were foreign-born.
+- The 2000 census count of institutionalized noncitizens (73,395, all institution types) is below the 89,676 noncitizens the Bureau of Justice Statistics counted in state and federal prisons alone at midyear 2000.
+- ACS at 6-10 years in the US: successive cohorts stand at 0.53, 0.58 and 0.61 (2006-19).
+- This measures custody, not crime; the allocation correction is a sensitivity without standard errors.
+
+=====
+
+CASE K1FDB
+CLAIM: Return migration makes the Mexico-born population that remains in the US more positively selected. Returnees from the US to Mexico have less schooling than comparable people who stayed in Mexico, so the people who leave the US are negatively selected and the US stayers' average schooling rises.
+
+EVIDENCE:
+- Mexican national demographic survey (ENADID 2018 and 2023): returnees (lived in the US within the past five years, now in Mexico), men aged 25-54, mean schooling 7.9 years; people who never migrated, same ages and states, 9.6 years; difference -1.7 years (SE 0.2).
+- Limitation: the survey does not observe Mexican emigrants currently living in the US.
+
+=====
+
+CASE K47B4
+CLAIM: The Mexican-origin earnings gaps that drive the account's tax term replicate on a second survey. Common-age wage gaps per standardized person against native non-Hispanic whites: Mexico-born -$17,241 on the ACS 2024 against -$17,518 on the CPS ASEC; US-born Mexican-origin -$9,473 against -$9,208 (ratios 0.98 and 1.03).
+
+EVIDENCE:
+- Same estimator on both surveys: wage and salary income of persons 18-64, standardized to a common age distribution, survey weights.
+- Mexican origin: self-identified Mexican origin; Mexico-born and US-born split by birthplace.
+- The two surveys ask about income differently and fill in missing answers separately, so agreement is a replication across instruments, not a validation against tax records.
+
+=====
+
+CASE K7F41
+CLAIM: In these incidence scenarios only a minority of other residents gain from the Mexican-origin group's presence. Across the wage model's substitution elasticities 1.5, 2.0 and 2.5, the share of other residents who come out ahead (pooled within households, taxes financed in proportion to tax shares) is 29.2%, 23.9% and 18.7%. The result is conditional on how channel totals are allocated to people.
+
+EVIDENCE:
+- Channel totals (wages, prices, taxes, public services) are allocated onto survey people; a winner is a person whose net is positive.
+- The wage channel's gross after-tax gains ($95.8bn) and losses ($96.0bn) almost cancel, so the count is sensitive to the wage allocation: halving each person's wage deviation from the mean, with the aggregate unchanged, gives 10.3% winners.
+- Enumerating the existing matched channel choices gives a maximum of 30.5% winners.

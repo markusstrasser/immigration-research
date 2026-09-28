@@ -1,0 +1,86 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE KEBD1
+CLAIM: The number of Hispanic prisoners held in state prisons for violent offences rose 36% from the end of 2009 to the end of 2021 (117,800 to 160,100), while the white count fell 34%. Hispanic violent-offence imprisonment grew while other groups' fell.
+
+EVIDENCE: Estimated counts of sentenced state prisoners by most serious offence and race/Hispanic origin, from the Bureau of Justice Statistics' annual Prisoners reports.
+
+| Reference date | Source | Hispanic, violent offence |
+|---|---|---|
+| 31 Dec 2009 | Prisoners in 2010, Appendix Table 16b | 117,800 |
+| 31 Dec 2021 | Prisoners in 2022, appendix table | 160,100 |
+
+Notes printed with the reports:
+- Prisoners in 2010: race and Hispanic-origin estimates are adjusted using the National Inmate Survey, 2008-09.
+- Prisoners in 2011 and later: race and Hispanic-origin estimates use ratios from the 2004 Survey of Inmates in State Correctional Facilities, and estimates for earlier years have been revised. Prisoners in 2011, Appendix Table 16, reports 159,800 Hispanic violent-offence state prisoners on 31 Dec 2009.
+
+=====
+
+CASE KF57F
+CLAIM: The present value of lifetime earnings gained by incumbent pupils because of one school year's exposure to bilingual classmates can be booked as a one-year social-benefit accrual in an annual account. This is not a stock/flow error, provided it is labeled as an accrual, kept separate from budget cash flows, and its future-tax consequence is not added a second time.
+
+EVIDENCE:
+- The annual account books each year's exposure once: the gain caused by 2024's exposure is the present value, at 2024, of the earnings increase it causes over the pupils' working lives.
+- Each year's exposure is a new flow; next year's exposure is booked next year. A pupil's gain over 13 school years is the sum of 13 annual accruals, not 13 lifetimes.
+- The future income-tax gain from the higher earnings is excluded from the fiscal line and appears only inside the social accrual.
+
+=====
+
+CASE K5ECE
+CLAIM: Charged with against without the Mexican-origin group's traffic, road crashes cost other residents $72.1bn a year (range $49.4bn to $94.7bn), not the $42.3bn charged by fault. Across transferable evidence, one more car on a fixed network raises other drivers' crash risk per mile: the cost-weighted elasticity of the non-fatal crash rate to traffic is about +1.20 (p10-p90 +0.78 to +1.62), and of the fatal rate -0.21. With a large elasticity, the group's traffic also raises crashes among other residents themselves, which fault attribution does not count.
+
+EVIDENCE:
+- With-against-without = other residents' crash costs with the group's traffic minus without it; it includes a composition term for the group's higher fatal culpability ($1.8bn). Each 0.1 of non-fatal elasticity adds about $5.4bn.
+- Study weights (design; a 0.65 weight on congested settings, from the group's commute exposure) were set before the results; leaving out one study at a time keeps the non-fatal central between +1.02 and +1.39.
+- In the densest settings the studies differ in size (London: +1.4 against +0.9 for injury crashes), which is why the range is wide.
+
+=====
+
+CASE K865C
+CLAIM: The parole programme for Cubans, Haitians, Nicaraguans and Venezuelans did not substitute legal entry for illegal crossing; it added to it. After the programme began, southwest-border encounters of these four nationalities rose 787% relative to other nationalities.
+
+EVIDENCE:
+- Series: monthly southwest-border encounters by citizenship, parsed from the border agency's spreadsheet "Southwest Border Encounters by Agency and Selected Citizenship".
+- Sheet layout: three side-by-side blocks, left to right "Total", "Border Patrol (between ports of entry)" and "Field Operations (at ports of entry)". Every block has the same column headers: Month, Citizenship, Encounters.
+- Parser excerpt:
+```python
+series = {}
+for block in sheet.blocks:                 # left to right
+    for col in block.columns:
+        series[col.header] = col.values    # keyed by header text
+encounters = pd.DataFrame(series)          # used downstream as total encounters
+```
+- Programme participants and other appointment holders present at ports of entry and are recorded as Field Operations encounters.
+- Design: difference-in-differences, the four programme nationalities against other nationalities, monthly, 2021-2023; the post-programme coefficient converts to +787%.
+
+=====
+
+CASE K5482
+CLAIM: On the medical expenditure survey file the account transports medical costs from, people of Mexican origin draw less public medical money per person than the all-donor mean of their own age x US-birth cell: 0.89 at 65+ (SE 0.15, 95% CI 0.61-1.18), 0.69 at 18-64 (SE 0.10, interval excludes 1) and 0.76 across all ages. The transport, which assigns each cell's all-donor mean, therefore overstates the group's public medical spending at working ages.
+
+EVIDENCE:
+- Public medical money = Medicare + Medicaid + other public payers, per person-year, pooled survey years, survey weights, replicate-weight SEs.
+- Cells: age band x US-born/foreign-born; donors are all persons in the cell.
+- At 65+ the interval includes 1, so no correction is claimed there.
+
+=====
+
+CASE K9C07
+CLAIM: Immigration pushes natives onto transfer programmes. With an ancestry-based instrument (first-stage F = 63.9), a 1-point rise in a county's immigrant share raises the county's public-assistance receipt rate by 0.03 percentage points (SE 0.012) between 1990 and 2000.
+
+EVIDENCE:
+- Outcome: share of all households in the county receiving public assistance, from the 1990 and 2000 census files; the 2000 file used has no nativity split.
+- In these counties, 6.9% of immigrant households and 4.2% of native households receive public assistance.
+- Instrument: predicted immigrant inflow built from origin-by-county interaction terms for all other origins (leave-own-origin-out), divided by baseline population.

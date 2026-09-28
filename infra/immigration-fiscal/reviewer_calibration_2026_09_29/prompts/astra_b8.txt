@@ -1,0 +1,88 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE KC588
+CLAIM: Legal status hardly matters for the long-run fiscal cost of a Mexican immigrant lineage: legalizing the founder after ten years changes the century fiscal gap by only 1.9%.
+
+EVIDENCE:
+- Code excerpt:
+```python
+def founder_profile(age, status):
+    # pooled Mexico-born age profile: taxes, benefits and services by age, all statuses
+    p = pooled_profile(age)
+    if status == "unauthorized" and 18 <= age < 65:
+        p.net -= 870          # working-age adjustment for unauthorized status
+    return p                  # at 65+ the pooled profile applies whatever the status
+```
+- Legalization at year 10 sets the founder's status to "legal" for the rest of life.
+- Sensitivity run: setting every senior (65+) net cost to zero changes the undiscounted century gap by 34.4%.
+- Unauthorized immigrants are ineligible for Social Security retirement benefits, Medicare and non-emergency Medicaid; lawful permanent residents become eligible after qualifying periods.
+
+=====
+
+CASE KC689
+CLAIM: On state NAEP, white pupils lost ground where the Hispanic or immigrant-origin share of pupils rose: -0.087 SD (SE 0.027) and -0.061 SD (0.026) per 10 points of share, 2003-2019, 51 states, state and year fixed effects. The English-learner share gives -0.035 (0.018). If causal, the Hispanic-share estimate is about $11bn of lifetime earnings per cohort of white pupils at the observed national rise in that share (19% to 27%).
+
+EVIDENCE:
+- NAEP is an absolute, low-stakes scale: a state that lowers its bar, grades leniently or drops an exit exam does not move it, whereas within-school or grade-year-standardized designs absorb such statewide shifts.
+- None of those mechanisms moves with the shares: NAEP-equivalent proficiency cut scores are unrelated to them (95% bounds -7 to +6 points per 10 points of share); the 11 states that dropped exit exams had no higher or faster-rising shares than the 13 that kept them.
+- The Hispanic-share estimate holds with region-by-year effects (-0.071, SE 0.030) and state trends (-0.064, 0.033); grade 4 against its own cohort's kindergarten-grade 1 share gives -0.080 (0.031) and has no lead.
+- A level effect already in place by 2003, or a national shift, is absorbed by the fixed effects and not identified.
+
+=====
+
+CASE KBDF6
+CLAIM: The Mexican-origin earnings gaps that drive the account's tax term replicate on a second survey. Common-age wage gaps per standardized person against native non-Hispanic whites: Mexico-born -$17,241 on the ACS 2024 against -$17,518 on the CPS ASEC; US-born Mexican-origin -$9,473 against -$9,208 (ratios 0.98 and 1.03).
+
+EVIDENCE:
+- Same estimator on both surveys: wage and salary income of persons 18-64, standardized to a common age distribution, survey weights.
+- Mexican origin: self-identified Mexican origin; Mexico-born and US-born split by birthplace.
+- The two surveys ask about income differently and fill in missing answers separately, so agreement is a replication across instruments, not a validation against tax records.
+
+=====
+
+CASE KBA61
+CLAIM: Unauthorized workers in the Mexican-origin group pay about $6.1bn a year of payroll and income taxes through employer withholding under borrowed or invalid numbers. The account credits this to the Mexican-origin population as tax receipts.
+
+EVIDENCE:
+- The account's target population is the Mexican-origin population, all generations; other residents are everyone else.
+- Worker panel (acs_cells.py):
+```python
+panel = acs[(acs.imputed_unauthorized == 1) & (acs.wagp > 0)]
+withheld = (panel.wagp * panel.perwt * ONBOOKS_SHARE * WITHHOLDING_RATE).sum()
+```
+- `imputed_unauthorized` is assigned by a residual method to noncitizens of every birthplace.
+- The on-books share and withholding rate come from payroll-record studies; withheld taxes total $6.1bn.
+- Mexico-born workers earn about half of all imputed-unauthorized wages.
+
+=====
+
+CASE K9FA7
+CLAIM: A blind test against hospital cost reports (Medicare Worksheet S-10, FY2023) favors a population key over the account's uncompensated-care key, which charges the Mexican-origin group by its uninsured exposure: the uninsured key's predicted state shares of hospitals' charity care and bad debt sit at a total variation distance of 0.210 from the reports, against 0.134 for a population key. Switching keys would lower the group's charge; it is a candidate, not adopted.
+
+EVIDENCE:
+- Predictions and the scoring rule were committed before the reports were opened.
+- A slope test, expected to have no power, favors lower use by the uninsured (0.7 times; slope -0.60, 95% interval -1.14 to -0.07); region controls added after the data were seen take the slope to -0.11, so it cannot separate a regional factor from the group's use.
+- S-10 line 30 includes insured patients' charity care and bad debt.
+- The national S-10 total is $43.0bn against the account's $48.9bn input (0.88).
+
+=====
+
+CASE K43DF
+CLAIM: Noncitizen voting decided at least one recent US House contest. State audits flagged about 24,000 noncitizen ballots nationally, a lower bound on the true number, and California's 13th district in 2024 was decided by 187 votes.
+
+EVIDENCE:
+- The 24,000 comes from state list-maintenance audits that match voter files against motor-vehicle and federal immigration-status records, in the states that published such audits; California did not publish one.
+- A flag is a record match, not a confirmed ballot: reviews cleared a large but unreported share of flags as citizens naturalized after their records were created, and no audit reports how many flags were confirmed as ballots cast by noncitizens.
+- Smallest recent US House margins: California's 13th district in 2024, 187 votes (105,554 to 105,367); Iowa's 2nd district in 2020, 6 votes.

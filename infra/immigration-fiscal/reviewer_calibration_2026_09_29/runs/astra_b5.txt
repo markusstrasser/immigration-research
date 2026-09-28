@@ -1,0 +1,35 @@
+CASE K7A2B
+VERDICT: SOUND
+LOCATION: none
+WHY: The working-age ratio compares the group’s spending with the relevant donor-cell means and significantly exceeds 1, supporting understatement by the transport. The claim appropriately treats the 65+ result as inconclusive.
+CONFIDENCE: 0.96
+
+CASE K84CF
+VERDICT: ERROR
+LOCATION: “reflects the census’s birthplace allocation, not selection” and “the same men reappear”
+WHY: The allocation sensitivity demonstrates a potentially substantial measurement distortion but does not isolate allocation from selection. Repeated census and ACS cross-sections do not track the same individuals, and changing age, residence duration and period can also change custody rates; the weaker conclusion that progressively stronger selection is not demonstrated remains defensible.
+CONFIDENCE: 0.92
+
+CASE KD971
+VERDICT: ERROR
+LOCATION: Adding $890 of Medicaid savings to the $1,420 care valuation
+WHY: Avoided institutional-care costs already constitute 61% of the care valuation, approximately $866. Adding the nursing-home savings separately double-counts an overlapping benefit and overstates the total.
+CONFIDENCE: 0.99
+
+CASE K5C5D
+VERDICT: ERROR
+LOCATION: Inferring unbiased imputed incomes from equal nonresponse rates
+WHY: Equal missingness rates do not establish that donor incomes appropriately represent each group. Income matching omits Hispanic origin, and the supplied comparisons show substantial attenuation of the group’s wage gap, undermining the claim that including imputations leaves its taxable income unbiased.
+CONFIDENCE: 0.99
+
+CASE K3FAD
+VERDICT: ERROR
+LOCATION: “full per-pupil funding cannot coexist with diluted instruction”
+WHY: Constant spending per pupil does not guarantee constant instructional provision when pupils have different resource needs. The evidence does not establish that targeted funding fully covers those needs or excludes transition costs during the two-year adjustment, so zero dilution does not follow.
+CONFIDENCE: 0.99
+
+CASE K3E51
+VERDICT: SOUND
+LOCATION: none
+WHY: Fault attribution and the change in other residents’ crash costs under traffic removal measure different things. Conditional on the stated transferability assumptions, near-zero risk elasticities support a smaller incremental burden, while the reported range explicitly leaves its magnitude and sign uncertain.
+CONFIDENCE: 0.85

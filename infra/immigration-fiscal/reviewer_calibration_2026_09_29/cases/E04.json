@@ -1,0 +1,12 @@
+{
+ "id": "E04",
+ "type": "ERROR",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "offbooks",
+ "packet_text": "CLAIM: Off-the-books employment of the Mexican-origin group gives its employers about $6.43bn a year of cost advantage, including $4.53bn of unpaid payroll taxes. The account books this as a cost the Mexican-origin population imposes on other residents: competing employers and taxpayers.\n\nEVIDENCE:\n- The account's target population is the Mexican-origin population, all generations; other residents are everyone else.\n- Worker panel (acs_cells.py):\n```python\npanel = acs[(acs.imputed_unauthorized == 1) &\n            (acs.industry.isin([\"construction\", \"agriculture\",\n                                \"food_services\", \"landscaping\"]))]\nwage_base = (panel.wagp * panel.perwt).groupby(panel.industry).sum()\n```\n- `imputed_unauthorized` is assigned by a residual method to noncitizens of every birthplace.\n- edges.py applies each industry's estimated off-books share and the employer payroll-tax and compliance-cost rates to `wage_base`: $6.43bn, of which $4.53bn is payroll tax.\n- Mexico-born workers earn about half of the imputed-unauthorized wages in these four industries.",
+ "ground_truth": "ERROR. Population mismatch: the wage base covers unauthorized workers of all origins, who are mostly other\nresidents in the account, yet all the dollars are charged to the Mexican-origin account. On the Mexico-born wage\nshare the same slopes and rates give about $3.22bn, of which $2.27bn payroll taxes.",
+ "locus_rubric": "HIT if the reviewer says the panel/wage base covers all origins (no Mexican-origin restriction) while the dollars\nare charged to the Mexican-origin account, so the figure is overstated (roughly halved on the Mexico-born share). Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: research/immigration-weekly-conceptual-audit-2026-09-25.md section 5 (confirmed population\nmismatch); lane compliance_gap_2026_09_24 (acs_cells.py, edges.py). Code excerpt simplified; industry list illustrative."
+}

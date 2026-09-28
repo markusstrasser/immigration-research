@@ -1,0 +1,509 @@
+{
+ "prompt_head": "Below are {n} cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.\n\nFor each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.\n\nAnswer every case, in this exact format:\n\nCASE <id>\nVERDICT: ERROR or SOUND\nLOCATION: <where the error is, or \"none\">\nWHY: <one to three sentences>\nCONFIDENCE: <a number from 0 to 1: your confidence in your verdict>\n",
+ "reviewers": {
+  "opus": {
+   "seed": 20260929,
+   "attempt": 196,
+   "model": "claude-opus-5-5",
+   "effort": "max",
+   "cmd": [
+    "llmx",
+    "chat",
+    "--subscription",
+    "-m",
+    "claude-opus-5-5",
+    "-e",
+    "max",
+    "--timeout",
+    "3600"
+   ],
+   "bundles": [
+    {
+     "name": "opus_b1",
+     "cases": [
+      {
+       "case_id": "E02",
+       "reviewer_id": "K9A17"
+      },
+      {
+       "case_id": "V08m",
+       "reviewer_id": "K4CD3"
+      },
+      {
+       "case_id": "V03m",
+       "reviewer_id": "K5D0C"
+      },
+      {
+       "case_id": "E04m",
+       "reviewer_id": "KCC43"
+      },
+      {
+       "case_id": "E06m",
+       "reviewer_id": "K748C"
+      },
+      {
+       "case_id": "V02",
+       "reviewer_id": "KFCDD"
+      }
+     ]
+    },
+    {
+     "name": "opus_b2",
+     "cases": [
+      {
+       "case_id": "E01m",
+       "reviewer_id": "KE5B7"
+      },
+      {
+       "case_id": "V11",
+       "reviewer_id": "KBC67"
+      },
+      {
+       "case_id": "V02m",
+       "reviewer_id": "KD150"
+      },
+      {
+       "case_id": "E03m",
+       "reviewer_id": "K1989"
+      },
+      {
+       "case_id": "E12",
+       "reviewer_id": "K7572"
+      },
+      {
+       "case_id": "V04",
+       "reviewer_id": "K1863"
+      }
+     ]
+    },
+    {
+     "name": "opus_b3",
+     "cases": [
+      {
+       "case_id": "E10",
+       "reviewer_id": "KEAC5"
+      },
+      {
+       "case_id": "V09m",
+       "reviewer_id": "KB00C"
+      },
+      {
+       "case_id": "V05",
+       "reviewer_id": "K4F6A"
+      },
+      {
+       "case_id": "E05m",
+       "reviewer_id": "K03D1"
+      },
+      {
+       "case_id": "V07m",
+       "reviewer_id": "KCE0C"
+      },
+      {
+       "case_id": "E01",
+       "reviewer_id": "K163A"
+      }
+     ]
+    },
+    {
+     "name": "opus_b4",
+     "cases": [
+      {
+       "case_id": "E07",
+       "reviewer_id": "K893A"
+      },
+      {
+       "case_id": "E08",
+       "reviewer_id": "K1FC8"
+      },
+      {
+       "case_id": "V12m",
+       "reviewer_id": "K3059"
+      },
+      {
+       "case_id": "E04",
+       "reviewer_id": "KD31B"
+      },
+      {
+       "case_id": "V06m",
+       "reviewer_id": "KEECB"
+      },
+      {
+       "case_id": "V10m",
+       "reviewer_id": "K6EB8"
+      }
+     ]
+    },
+    {
+     "name": "opus_b5",
+     "cases": [
+      {
+       "case_id": "E09m",
+       "reviewer_id": "K32D1"
+      },
+      {
+       "case_id": "V12",
+       "reviewer_id": "KE5E4"
+      },
+      {
+       "case_id": "E12m",
+       "reviewer_id": "K042E"
+      },
+      {
+       "case_id": "V01",
+       "reviewer_id": "K8AF8"
+      },
+      {
+       "case_id": "V10",
+       "reviewer_id": "KAD14"
+      },
+      {
+       "case_id": "E05",
+       "reviewer_id": "K76EF"
+      }
+     ]
+    },
+    {
+     "name": "opus_b6",
+     "cases": [
+      {
+       "case_id": "V05m",
+       "reviewer_id": "KEAF8"
+      },
+      {
+       "case_id": "E02m",
+       "reviewer_id": "K922B"
+      },
+      {
+       "case_id": "E10m",
+       "reviewer_id": "KEA5F"
+      },
+      {
+       "case_id": "V11m",
+       "reviewer_id": "KD529"
+      },
+      {
+       "case_id": "V03",
+       "reviewer_id": "K796E"
+      },
+      {
+       "case_id": "E08m",
+       "reviewer_id": "KE81A"
+      }
+     ]
+    },
+    {
+     "name": "opus_b7",
+     "cases": [
+      {
+       "case_id": "E11",
+       "reviewer_id": "K4161"
+      },
+      {
+       "case_id": "E06",
+       "reviewer_id": "K3023"
+      },
+      {
+       "case_id": "V08",
+       "reviewer_id": "K4D4C"
+      },
+      {
+       "case_id": "E09",
+       "reviewer_id": "K1FDB"
+      },
+      {
+       "case_id": "V09",
+       "reviewer_id": "K47B4"
+      },
+      {
+       "case_id": "V07",
+       "reviewer_id": "K7F41"
+      }
+     ]
+    },
+    {
+     "name": "opus_b8",
+     "cases": [
+      {
+       "case_id": "E11m",
+       "reviewer_id": "K345C"
+      },
+      {
+       "case_id": "E03",
+       "reviewer_id": "K1CF8"
+      },
+      {
+       "case_id": "V01m",
+       "reviewer_id": "K60DA"
+      },
+      {
+       "case_id": "V06",
+       "reviewer_id": "KC8A6"
+      },
+      {
+       "case_id": "E07m",
+       "reviewer_id": "K8A79"
+      },
+      {
+       "case_id": "V04m",
+       "reviewer_id": "K5FF5"
+      }
+     ]
+    }
+   ]
+  },
+  "astra": {
+   "seed": 20260930,
+   "attempt": 456,
+   "model": "gpt-6-astra",
+   "effort": "xhigh",
+   "cmd": [
+    "llmx",
+    "chat",
+    "-p",
+    "codex-cli",
+    "--subscription",
+    "-m",
+    "gpt-6-astra",
+    "-e",
+    "xhigh",
+    "--timeout",
+    "3600"
+   ],
+   "bundles": [
+    {
+     "name": "astra_b1",
+     "cases": [
+      {
+       "case_id": "E01m",
+       "reviewer_id": "KB713"
+      },
+      {
+       "case_id": "V01",
+       "reviewer_id": "K4AF8"
+      },
+      {
+       "case_id": "E10",
+       "reviewer_id": "KC896"
+      },
+      {
+       "case_id": "V08m",
+       "reviewer_id": "K6003"
+      },
+      {
+       "case_id": "V02m",
+       "reviewer_id": "KE97A"
+      },
+      {
+       "case_id": "E05",
+       "reviewer_id": "K0AD2"
+      }
+     ]
+    },
+    {
+     "name": "astra_b2",
+     "cases": [
+      {
+       "case_id": "V07",
+       "reviewer_id": "KFE61"
+      },
+      {
+       "case_id": "V12",
+       "reviewer_id": "K78D9"
+      },
+      {
+       "case_id": "V03",
+       "reviewer_id": "K4F3B"
+      },
+      {
+       "case_id": "E09",
+       "reviewer_id": "K27E4"
+      },
+      {
+       "case_id": "E08m",
+       "reviewer_id": "K9D6A"
+      },
+      {
+       "case_id": "E03m",
+       "reviewer_id": "KCB99"
+      }
+     ]
+    },
+    {
+     "name": "astra_b3",
+     "cases": [
+      {
+       "case_id": "E12",
+       "reviewer_id": "K8CCB"
+      },
+      {
+       "case_id": "V12m",
+       "reviewer_id": "K6C71"
+      },
+      {
+       "case_id": "E11m",
+       "reviewer_id": "K83F7"
+      },
+      {
+       "case_id": "E02m",
+       "reviewer_id": "KEC7C"
+      },
+      {
+       "case_id": "V05",
+       "reviewer_id": "KA492"
+      },
+      {
+       "case_id": "V03m",
+       "reviewer_id": "KE02D"
+      }
+     ]
+    },
+    {
+     "name": "astra_b4",
+     "cases": [
+      {
+       "case_id": "V02",
+       "reviewer_id": "K4050"
+      },
+      {
+       "case_id": "V06m",
+       "reviewer_id": "KA714"
+      },
+      {
+       "case_id": "E09m",
+       "reviewer_id": "K2AD6"
+      },
+      {
+       "case_id": "V07m",
+       "reviewer_id": "KE921"
+      },
+      {
+       "case_id": "E04",
+       "reviewer_id": "K5FED"
+      },
+      {
+       "case_id": "E07",
+       "reviewer_id": "KF1DC"
+      }
+     ]
+    },
+    {
+     "name": "astra_b5",
+     "cases": [
+      {
+       "case_id": "V11m",
+       "reviewer_id": "K7A2B"
+      },
+      {
+       "case_id": "V08",
+       "reviewer_id": "K84CF"
+      },
+      {
+       "case_id": "E05m",
+       "reviewer_id": "KD971"
+      },
+      {
+       "case_id": "E08",
+       "reviewer_id": "K5C5D"
+      },
+      {
+       "case_id": "E06m",
+       "reviewer_id": "K3FAD"
+      },
+      {
+       "case_id": "V10",
+       "reviewer_id": "K3E51"
+      }
+     ]
+    },
+    {
+     "name": "astra_b6",
+     "cases": [
+      {
+       "case_id": "V09m",
+       "reviewer_id": "KD1F7"
+      },
+      {
+       "case_id": "E06",
+       "reviewer_id": "K9F68"
+      },
+      {
+       "case_id": "E07m",
+       "reviewer_id": "KB5AC"
+      },
+      {
+       "case_id": "V06",
+       "reviewer_id": "K4C56"
+      },
+      {
+       "case_id": "E03",
+       "reviewer_id": "K5620"
+      },
+      {
+       "case_id": "V04",
+       "reviewer_id": "KC959"
+      }
+     ]
+    },
+    {
+     "name": "astra_b7",
+     "cases": [
+      {
+       "case_id": "E01",
+       "reviewer_id": "KEBD1"
+      },
+      {
+       "case_id": "V05m",
+       "reviewer_id": "KF57F"
+      },
+      {
+       "case_id": "V10m",
+       "reviewer_id": "K5ECE"
+      },
+      {
+       "case_id": "E02",
+       "reviewer_id": "K865C"
+      },
+      {
+       "case_id": "V11",
+       "reviewer_id": "K5482"
+      },
+      {
+       "case_id": "E12m",
+       "reviewer_id": "K9C07"
+      }
+     ]
+    },
+    {
+     "name": "astra_b8",
+     "cases": [
+      {
+       "case_id": "E11",
+       "reviewer_id": "KC588"
+      },
+      {
+       "case_id": "V01m",
+       "reviewer_id": "KC689"
+      },
+      {
+       "case_id": "V09",
+       "reviewer_id": "KBDF6"
+      },
+      {
+       "case_id": "E04m",
+       "reviewer_id": "KBA61"
+      },
+      {
+       "case_id": "V04m",
+       "reviewer_id": "K9FA7"
+      },
+      {
+       "case_id": "E10m",
+       "reviewer_id": "K43DF"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

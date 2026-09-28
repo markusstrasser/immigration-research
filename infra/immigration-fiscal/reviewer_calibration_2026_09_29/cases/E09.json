@@ -1,0 +1,12 @@
+{
+ "id": "E09",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "returnees",
+ "packet_text": "CLAIM: Return migration makes the Mexico-born population that remains in the US more positively selected. Returnees from the US to Mexico have less schooling than comparable people who stayed in Mexico, so the people who leave the US are negatively selected and the US stayers' average schooling rises.\n\nEVIDENCE:\n- Mexican national demographic survey (ENADID 2018 and 2023): returnees (lived in the US within the past five years, now in Mexico), men aged 25-54, mean schooling 7.9 years; people who never migrated, same ages and states, 9.6 years; difference -1.7 years (SE 0.2).\n- Limitation: the survey does not observe Mexican emigrants currently living in the US.",
+ "ground_truth": "ERROR. Wrong comparison group: selection of US exit requires comparing returnees with the emigrants who stayed in\nthe US. Returnees can have less schooling than Mexico stayers yet more than US stayers, in which case return\nmigration lowers the US stayers' mean. The sign does not follow.",
+ "locus_rubric": "HIT if the reviewer says returnees are compared with people who stayed in Mexico instead of with emigrants who\nremained in the US, so the selection of US leavers relative to US stayers is not identified. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: research/immigration-weekly-conceptual-audit-2026-09-25.md section 6 (confirmed comparison-group\nerror); lane enadid_return_selectivity_2026_09_22. Schooling values are illustrative."
+}

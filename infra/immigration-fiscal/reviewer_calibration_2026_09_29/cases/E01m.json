@@ -1,0 +1,12 @@
+{
+ "id": "E01m",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "mirror",
+ "mirror_of": "E01",
+ "topic": "bjs",
+ "packet_text": "CLAIM: The number of Hispanic prisoners held in state prisons for violent offences fell 26% from the end of 2009 to the end of 2021 (159,800 to 118,300), while the white count fell 12%. Hispanic violent-offence imprisonment fell faster than other groups'.\n\nEVIDENCE: Estimated counts of sentenced state prisoners by most serious offence and race/Hispanic origin, from the national corrections statistics agency's annual prisoner reports.\n\n| Reference date | Source | Hispanic, violent offence |\n|---|---|---|\n| 31 Dec 2009 | 2011 report, appendix table | 159,800 |\n| 31 Dec 2021 | 2022 report, appendix table | 118,300 |\n\nNotes printed with the reports:\n- 2011-2018 reports: race and Hispanic-origin estimates use ratios from an inmate survey.\n- 2019 report and later: race and Hispanic origin are taken from the origin recorded in administrative records, and estimates for 2016-2018 have been revised. The 2019 report gives 121,500 Hispanic violent-offence state prisoners on 31 Dec 2018; the 2018 report had given 168,900 for the same date.",
+ "ground_truth": "ERROR (by construction). The endpoints are on different bases; the same-date revision (168,900 -> 121,500, -28%)\naccounts for the whole fall. On a consistent basis the count is roughly flat.",
+ "locus_rubric": "HIT if the reviewer says the 2009 and 2021 figures are on different estimation methods (the method changed in the\n2019 report, revising the same date from 168,900 to 121,500), so the fall is a method artifact. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E01 (same mixed-basis restatement error, direction reversed; agency de-identified)."
+}

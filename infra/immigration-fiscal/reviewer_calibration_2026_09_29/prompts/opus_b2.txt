@@ -1,0 +1,79 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE KE5B7
+CLAIM: The number of Hispanic prisoners held in state prisons for violent offences fell 26% from the end of 2009 to the end of 2021 (159,800 to 118,300), while the white count fell 12%. Hispanic violent-offence imprisonment fell faster than other groups'.
+
+EVIDENCE: Estimated counts of sentenced state prisoners by most serious offence and race/Hispanic origin, from the national corrections statistics agency's annual prisoner reports.
+
+| Reference date | Source | Hispanic, violent offence |
+|---|---|---|
+| 31 Dec 2009 | 2011 report, appendix table | 159,800 |
+| 31 Dec 2021 | 2022 report, appendix table | 118,300 |
+
+Notes printed with the reports:
+- 2011-2018 reports: race and Hispanic-origin estimates use ratios from an inmate survey.
+- 2019 report and later: race and Hispanic origin are taken from the origin recorded in administrative records, and estimates for 2016-2018 have been revised. The 2019 report gives 121,500 Hispanic violent-offence state prisoners on 31 Dec 2018; the 2018 report had given 168,900 for the same date.
+
+=====
+
+CASE KBC67
+CLAIM: On the medical expenditure survey file the account transports medical costs from, people of Mexican origin draw less public medical money per person than the all-donor mean of their own age x US-birth cell: 0.89 at 65+ (SE 0.15, 95% CI 0.61-1.18), 0.69 at 18-64 (SE 0.10, interval excludes 1) and 0.76 across all ages. The transport, which assigns each cell's all-donor mean, therefore overstates the group's public medical spending at working ages.
+
+EVIDENCE:
+- Public medical money = Medicare + Medicaid + other public payers, per person-year, pooled survey years, survey weights, replicate-weight SEs.
+- Cells: age band x US-born/foreign-born; donors are all persons in the cell.
+- At 65+ the interval includes 1, so no correction is claimed there.
+
+=====
+
+CASE KD150
+CLAIM: Scored on IRS tax year 2023, a year that no step of it used, the account's income-tax key misallocates tax across income bins. With the bins from $1M pooled, it misses IRS's distribution of income tax after credits by 8.4 percentage points of total variation: 8.4pp too much of the tax at $50k-$200k, where the Mexican-origin group's share of people is 6-12%, and 3.3pp too little at $200k-$1M, where it is 2-4%. Matching IRS's bin totals while keeping the group's within-bin shares lowers the group's federal income tax by $3.2bn (SE 1.3) and raises the net cost from $321.8bn to $325.0bn at the low end. A candidate for the next case, not adopted.
+
+EVIDENCE:
+- The key allocates national income tax to people using CPS incomes and a CBO rate gradient. IRS publishes only national totals by adjusted-gross-income bin, with no nativity; the group's share inside each bin stays the CPS's.
+- Frozen IRS 2022 shares miss 2023 by 2.4pp. The key scores worse against 2022 (10.3pp), the year the gradient rests on, so the held-out year shows no overfitting.
+- The unpooled 19-bin reading turns on 33 records above $1.5M, none in the group, and is not used; tax above $3.1M is outside the CPS (top-coding).
+- Pooling from $500k gives -$3.1bn (SE 0.5), leaning less on the 15 group records above $1M.
+
+=====
+
+CASE K1989
+CLAIM: The Mexican-origin population's road traffic costs other US residents $9.6bn a year (range $5.4-16.6bn). This is the with-against-without effect of the group's driving on other residents, measured as the damage to other residents in crashes the group's drivers cause, net of the liability insurance the group's drivers pay out.
+
+EVIDENCE:
+- A crash between a group driver and another resident is assigned to the group when police records put the group driver at fault. Damage is valued at comprehensive unit costs by severity; liability insurance payments are subtracted.
+- The account charges crime the same way: harm to victims of offences the group's members commit.
+- Traffic-safety evidence assembled for the same account: on the congested urban networks where 65% of the group's driving takes place, the cost-weighted elasticity of the non-fatal crash rate per vehicle-mile to traffic volume is about +1.4 (p10-p90 +0.9 to +1.9). Each added vehicle raises other drivers' crash risk per mile.
+
+=====
+
+CASE K7572
+CLAIM: Immigration does not push natives onto transfer programmes. With an ancestry-based instrument (first-stage F = 63.9), a 1-point rise in a county's immigrant share lowers the county's SSI receipt rate by 0.03 percentage points (SE 0.012) between 1990 and 2000: better evidence against native displacement into transfers than the earlier instrument gave.
+
+EVIDENCE:
+- Outcome: share of all households in the county receiving SSI, from the 1990 and 2000 census files; the 2000 file used has no nativity split.
+- In these counties, 1.9% of immigrant households and 4.6% of native households receive SSI.
+- Instrument: predicted immigrant inflow built from origin-by-county interaction terms for all other origins (leave-own-origin-out), divided by baseline population.
+
+=====
+
+CASE K1863
+CLAIM: A blind test against hospital cost reports (Medicare Worksheet S-10, FY2023) supports the account's uncompensated-care key, which charges the Mexican-origin group by its uninsured exposure: the key's predicted state shares of hospitals' charity care and bad debt sit at a total variation distance of 0.134 from the reports, against 0.210 for a population key. The national S-10 total is $43.0bn against the account's $48.9bn input (0.88).
+
+EVIDENCE:
+- Predictions and the scoring rule were committed before the reports were opened.
+- A slope test, expected to have no power, favors lower use by the uninsured (0.7 times; slope -0.60, 95% interval -1.14 to -0.07); region controls added after the data were seen take the slope to -0.11, so it cannot separate a regional factor from the group's use. It is a candidate, not adopted.
+- S-10 line 30 includes insured patients' charity care and bad debt.
+- A plain count of the uninsured scores 0.126, so the person-year key does no better than it.

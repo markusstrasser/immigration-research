@@ -1,0 +1,12 @@
+{
+ "id": "E12",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "ancestryiv",
+ "packet_text": "CLAIM: Immigration does not push natives onto transfer programmes. With an ancestry-based instrument (first-stage F = 63.9), a 1-point rise in a county's immigrant share lowers the county's SSI receipt rate by 0.03 percentage points (SE 0.012) between 1990 and 2000: better evidence against native displacement into transfers than the earlier instrument gave.\n\nEVIDENCE:\n- Outcome: share of all households in the county receiving SSI, from the 1990 and 2000 census files; the 2000 file used has no nativity split.\n- In these counties, 1.9% of immigrant households and 4.6% of native households receive SSI.\n- Instrument: predicted immigrant inflow built from origin-by-county interaction terms for all other origins (leave-own-origin-out), divided by baseline population.",
+ "ground_truth": "ERROR. The outcome is an all-household rate. Adding lower-receipt immigrant households lowers it mechanically\n(about 0.01 x (1.9 - 4.6) = -0.027 points per point of share) even if native receipt is flat or rising, so the\nestimate says nothing about natives. (Separately, contemporaneous other-origin inflows can carry common local\ndemand shocks, so exclusion is not established.)",
+ "locus_rubric": "HIT if the reviewer says (a) the outcome is an all-household rate, so adding low-receipt immigrant households\nlowers it mechanically and the result cannot speak to natives; OR (b) names a specific exclusion violation (e.g.,\nlocal booms/demand drawing inflows and lowering receipt at once). A generic 'IV assumptions may fail' is\nWRONG-LOCUS. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: research/immigration-weekly-conceptual-audit-2026-09-25.md section 1 (outcome error and instrument\nconstruction); lane ancestry_instrument_2026_09_22. Point estimate and receipt rates are illustrative."
+}

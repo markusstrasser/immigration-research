@@ -1,0 +1,12 @@
+{
+ "id": "V08",
+ "type": "VALID",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "census",
+ "packet_text": "CLAIM: The data do not show each Mexican arrival cohort more positively selected on custody than the last. The 2000 census's low institutional share for recent Mexican arrivals (0.13 of US-born men's) reflects the census's birthplace allocation, not selection: spreading the allocated birthplaces in the reported mix raises the 2000 ratios 2.1-2.6-fold, and the same men reappear at 0.49-0.51 in the 2006 American Community Survey.\n\nEVIDENCE:\n- 2000 census: birthplace allocated for 68% of institutionalized Mexican-origin men aged 18-40, 98% of them assigned a US birthplace; among those reporting a birthplace, 38.5% were foreign-born.\n- The 2000 census count of institutionalized noncitizens (73,395, all institution types) is below the 89,676 noncitizens the Bureau of Justice Statistics counted in state and federal prisons alone at midyear 2000.\n- ACS at 6-10 years in the US: successive cohorts stand at 0.53, 0.58 and 0.61 (2006-19).\n- This measures custody, not crime; the allocation correction is a sensitivity without standard errors.",
+ "ground_truth": "VALID. Confirmed by an external count check (BJS prison counts); the ratio correction is labeled a sensitivity.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Ladder entry 196 with its external-check bracket; lane crime_selection_cohorts_2026_09_23."
+}

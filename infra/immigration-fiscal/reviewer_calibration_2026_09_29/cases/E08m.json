@@ -1,0 +1,12 @@
+{
+ "id": "E08m",
+ "type": "ERROR",
+ "direction": "R",
+ "origin": "mirror",
+ "mirror_of": "E08",
+ "topic": "cpsincome",
+ "packet_text": "CLAIM: The Census Bureau's fill-ins for missing income answers in the CPS ASEC do not bias the Mexican-origin group's benefit receipt. The group and other adults skip the income supplement at the same rate (18.1% against 18.2%), so the account's benefit keys can use published benefit amounts, fill-ins included.\n\nEVIDENCE:\n- Missing incomes are filled by a hot deck: each nonrespondent receives the answers of a respondent donor matched on sex, age, schooling, race and labour-force status. Hispanic origin is a match variable only for the health-insurance fill-ins.\n- Within those donor cells, the group's respondents report SSI and cash public assistance at 0.58 times the rate of other respondents (many noncitizens are ineligible); among filled-in records the ratio is 0.97.\n- The group's filled-in SSI and public-assistance amounts are 41 and 37 log points above the group's respondents in the same cells.\n- The benefit keys allocate national programme totals by these CPS amounts.",
+ "ground_truth": "ERROR (by construction). Equal nonresponse does not make the fill-ins unbiased: donors are not matched on Hispanic\norigin or eligibility, so the group's filled-in benefits are pulled toward other residents' higher receipt; the\ngroup's benefits, and its net cost, are overstated.",
+ "locus_rubric": "HIT if the reviewer says the imputation (donors not matched on Hispanic origin/group or eligibility) pulls the\ngroup's filled-in benefits toward others', inflating them, so equal nonresponse rates do not make them unbiased. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E08 (same hot-deck drift, applied to benefits)."
+}

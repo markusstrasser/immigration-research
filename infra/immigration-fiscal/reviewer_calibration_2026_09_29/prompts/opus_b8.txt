@@ -1,0 +1,80 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE K345C
+CLAIM: Legalizing the founder after ten years raises the century fiscal cost of a Mexican immigrant lineage by 34%.
+
+EVIDENCE:
+- Code excerpt:
+```python
+def founder_profile(age, status):
+    # earnings, payroll and income taxes by age for unauthorized Mexico-born workers
+    p = unauthorized_profile(age)
+    if status == "legal":
+        p.benefits = statutory_benefits(age)   # Social Security, Medicare, Medicaid, SSI eligibility
+    return p                                   # earnings and taxes stay on the unauthorized profile
+```
+- Legalization at year 10 sets the founder's status to "legal" for the rest of life.
+- Studies of past legalizations report wage gains of 6-15% and a large shift of employment onto payroll records after legalization.
+
+=====
+
+CASE K1CF8
+CLAIM: The Mexican-origin population's road traffic costs other US residents $42.3bn a year (range $23.8-73.3bn). This is the with-against-without effect of the group's driving on other residents, measured as the damage to other residents in crashes the group's drivers cause, net of the liability insurance the group's drivers pay out.
+
+EVIDENCE:
+- A crash between a group driver and another resident is assigned to the group when police records put the group driver at fault. Damage is valued at comprehensive unit costs by severity; liability insurance payments are subtracted.
+- The account charges crime the same way: harm to victims of offences the group's members commit.
+- Traffic-safety evidence assembled for the same account: the cost-weighted elasticity of the non-fatal crash rate per vehicle-mile to traffic volume is about +0.07 (p10-p90 -0.23 to +0.52); for the fatal rate it is -0.21. Adding vehicles to a given road network barely changes other drivers' crash risk per mile.
+
+=====
+
+CASE K60DA
+CLAIM: On state NAEP, white pupils lost ground where the Hispanic or immigrant-origin share of pupils rose: -0.087 SD (SE 0.027) and -0.061 SD (0.026) per 10 points of share, 2003-2019, 51 states, state and year fixed effects. The English-learner share gives -0.035 (0.018). If causal, the Hispanic-share estimate is about $11bn of lifetime earnings per cohort of white pupils at the observed national rise in that share (19% to 27%).
+
+EVIDENCE:
+- NAEP is an absolute, low-stakes scale: a state that lowers its bar, grades leniently or drops an exit exam does not move it, whereas within-school or grade-year-standardized designs absorb such statewide shifts.
+- None of those mechanisms moves with the shares: NAEP-equivalent proficiency cut scores are unrelated to them (95% bounds -7 to +6 points per 10 points of share); the 11 states that dropped exit exams had no higher or faster-rising shares than the 13 that kept them.
+- The Hispanic-share estimate holds with region-by-year effects (-0.071, SE 0.030) and state trends (-0.064, 0.033); grade 4 against its own cohort's kindergarten-grade 1 share gives -0.080 (0.031) and has no lead.
+- A level effect already in place by 2003, or a national shift, is absorbed by the fixed effects and not identified.
+
+=====
+
+CASE KC8A6
+CLAIM: The account can add a victim-harm line for crimes by the Mexican-origin group's members against other residents ($4.5bn a year tangible, $28.9bn with quality of life) to its fiscal line for police, courts and corrections without double counting, because the victim line uses victim-only unit costs.
+
+EVIDENCE:
+- Victim-only unit costs cover medical care, lost productivity, property loss and damage, and the victim's pain, suffering and risk of death. Criminal-justice system costs (police, adjudication, corrections) are excluded from them.
+- Police, courts and corrections spending enters the fiscal account through the justice budget lines, allocated by use.
+- Deaths are counted once: the assault and robbery unit costs used here exclude the risk-of-homicide component, and homicides are priced in their own row.
+
+=====
+
+CASE K8A79
+CLAIM: Each new Mexican arrival cohort is more negatively selected on custody than the last. Among Mexico-born men aged 18-40 in their first five years in the country, the institutionalized share relative to native-born men of the same ages rose from 0.45 (round 1 arrivals) to 0.48 (round 2) to 1.10 (round 3).
+
+EVIDENCE:
+- Microdata samples from three rounds of a national census; institutional group quarters; SEs 0.05, 0.05 and 0.06.
+- Data notes from the same extract: in round 3, birthplace was allocated (imputed; flagged) for 64% of institutionalized Mexican-origin men aged 18-40, and 91% of the allocated cases were assigned a foreign birthplace; the donor pool for group quarters drew on household residents of the same ethnicity and area. Among institutionalized Mexican-origin men who reported a birthplace, 38.5% were foreign-born. In rounds 1 and 2, missing birthplaces were coded "unknown" and dropped.
+
+=====
+
+CASE K5FF5
+CLAIM: A blind test against hospital cost reports (Medicare Worksheet S-10, FY2023) favors a population key over the account's uncompensated-care key, which charges the Mexican-origin group by its uninsured exposure: the uninsured key's predicted state shares of hospitals' charity care and bad debt sit at a total variation distance of 0.210 from the reports, against 0.134 for a population key. Switching keys would lower the group's charge; it is a candidate, not adopted.
+
+EVIDENCE:
+- Predictions and the scoring rule were committed before the reports were opened.
+- A slope test, expected to have no power, favors lower use by the uninsured (0.7 times; slope -0.60, 95% interval -1.14 to -0.07); region controls added after the data were seen take the slope to -0.11, so it cannot separate a regional factor from the group's use.
+- S-10 line 30 includes insured patients' charity care and bad debt.
+- The national S-10 total is $43.0bn against the account's $48.9bn input (0.88).

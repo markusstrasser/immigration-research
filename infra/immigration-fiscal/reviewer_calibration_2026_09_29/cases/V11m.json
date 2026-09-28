@@ -1,0 +1,12 @@
+{
+ "id": "V11m",
+ "type": "VALID",
+ "direction": "R",
+ "origin": "mirror",
+ "mirror_of": "V11",
+ "topic": "meps",
+ "packet_text": "CLAIM: On the medical expenditure survey file the account transports medical costs from, people of Mexican origin draw more public medical money per person than the all-donor mean of their own age x US-birth cell: 1.12 at 65+ (SE 0.15, 95% CI 0.83-1.41), 1.31 at 18-64 (SE 0.10, interval excludes 1) and 1.24 across all ages. The transport, which assigns each cell's all-donor mean, therefore understates the group's public medical spending at working ages.\n\nEVIDENCE:\n- Public medical money = Medicare + Medicaid + other public payers, per person-year, pooled survey years, survey weights, replicate-weight SEs.\n- Cells: age band x US-born/foreign-born; donors are all persons in the cell.\n- At 65+ the interval includes 1, so no correction is claimed there.",
+ "ground_truth": "VALID (by construction): same measurement as V11 with the ratios above 1.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Synthetic mirror of V11."
+}

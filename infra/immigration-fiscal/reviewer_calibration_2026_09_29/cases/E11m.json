@@ -1,0 +1,12 @@
+{
+ "id": "E11m",
+ "type": "ERROR",
+ "direction": "R",
+ "origin": "mirror",
+ "mirror_of": "E11",
+ "topic": "lineage",
+ "packet_text": "CLAIM: Legalizing the founder after ten years raises the century fiscal cost of a Mexican immigrant lineage by 34%.\n\nEVIDENCE:\n- Code excerpt:\n```python\ndef founder_profile(age, status):\n    # earnings, payroll and income taxes by age for unauthorized Mexico-born workers\n    p = unauthorized_profile(age)\n    if status == \"legal\":\n        p.benefits = statutory_benefits(age)   # Social Security, Medicare, Medicaid, SSI eligibility\n    return p                                   # earnings and taxes stay on the unauthorized profile\n```\n- Legalization at year 10 sets the founder's status to \"legal\" for the rest of life.\n- Studies of past legalizations report wage gains of 6-15% and a large shift of employment onto payroll records after legalization.",
+ "ground_truth": "ERROR (by construction). The model keeps earnings and taxes on the unauthorized profile after legalization, so\nlegalization can only add benefits; the tax and on-books offsets are excluded by construction and the 34% is\nbuilt in.",
+ "locus_rubric": "HIT if the reviewer says the model holds earnings/taxes at the unauthorized profile after legalization (no wage,\npayroll or tax response), so the cost increase is an artifact of the model. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E11 (same mechanism-fixed-by-construction error, direction reversed)."
+}

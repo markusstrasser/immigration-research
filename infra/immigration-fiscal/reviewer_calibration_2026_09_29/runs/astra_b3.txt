@@ -1,0 +1,35 @@
+CASE K8CCB
+VERDICT: ERROR
+LOCATION: Inference from all-household SSI receipt to native households' receipt.
+WHY: Because immigrant households have lower SSI receipt, increasing their share can lower the aggregate rate even if native receipt stays constant or rises. The strong first stage does not resolve this composition problem.
+CONFIDENCE: 0.99
+
+CASE K6C71
+VERDICT: ERROR
+LOCATION: Treating the CPS–ACS discrepancy as an identified CPS undercount and a correction to early 2025.
+WHY: The evidence establishes a persistent discrepancy and rules out some explanations, but does not establish that the ACS level is correct. A comparison with the 2024 ACS also does not independently identify the true population in early 2025.
+CONFIDENCE: 0.94
+
+CASE K83F7
+VERDICT: ERROR
+LOCATION: founder_profile(), where legalization changes benefits but leaves earnings and taxes fixed.
+WHY: The model omits documented earnings and payroll-reporting responses that would affect tax receipts and potentially benefit amounts. The 34% result therefore describes this restricted benefits-change scenario rather than establishing legalization's overall fiscal effect.
+CONFIDENCE: 0.99
+
+CASE KEC7C
+VERDICT: ERROR
+LOCATION: series[col.header] = col.values inside the block loop.
+WHY: Repeated headers overwrite earlier blocks, leaving Border Patrol data labeled as total encounters. The −91% estimate therefore excludes port encounters, whose increase matters for the claimed total-workload effect.
+CONFIDENCE: 1.00
+
+CASE KA492
+VERDICT: SOUND
+LOCATION: none
+WHY: An annual accrual can recognize the present value of future losses caused by that year's exposure. Booking each exposure's incremental harm once, separating accruals from cash flows, and excluding duplicate tax losses avoids the stated stock/flow and double-counting errors.
+CONFIDENCE: 0.98
+
+CASE KE02D
+VERDICT: SOUND
+LOCATION: none
+WHY: The federal-only target omits payments included in the account, creating a geographically concentrated mismatch that invalidates the −0.48 estimate as a key correction. Repairing that mismatch is justified; the post hoc comparison and weak identification leave the key uncertain without establishing that it needs correction.
+CONFIDENCE: 0.91

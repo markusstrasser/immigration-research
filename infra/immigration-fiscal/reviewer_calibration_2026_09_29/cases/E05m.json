@@ -1,0 +1,12 @@
+{
+ "id": "E05m",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "mirror",
+ "mirror_of": "E05",
+ "topic": "crimeprice",
+ "packet_text": "CLAIM: Mexican-origin home-care workers produce benefits for other residents worth $2,310 per worker-year beyond their wages.\n\nEVIDENCE:\n- Hours of home care supplied to other residents per worker-year x the social value of an hour of home care above the wage paid.\n- Unit value (published cost-benefit study, 2024 dollars): $21.70 per hour above the wage.\n- Benefit per worker-year: value of care hours $1,420; Medicaid savings from avoided nursing-home admissions $890; total $2,310.\n- Source note on the unit value: the social value of an hour of home care includes the avoided cost of the institutional care it replaces; that component is 61% of the unit value.",
+ "ground_truth": "ERROR (by construction). Avoided institutional care is counted twice: inside the unit value (61%) and again as\nMedicaid savings. Removing one takes the benefit to roughly $1,420-1,450; the claim is overstated.",
+ "locus_rubric": "HIT if the reviewer says avoided nursing-home/institutional costs are double counted, because the unit value\nalready includes them while the Medicaid savings are added separately. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E05 (same double count via a component inside a unit price, on a benefit)."
+}
