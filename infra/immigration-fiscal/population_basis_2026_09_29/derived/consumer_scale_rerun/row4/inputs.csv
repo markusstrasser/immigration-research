@@ -1,0 +1,22 @@
+parameter,low,central,high,tag
+hw_beta,-0.018056,-0.011,-0.003944,"SOURCE: HW w17067 Table 6 col 9, -0.011 (s.e. 0.0036); low/high = 95% CI"
+h21_beta1,0.154,-0.042,-0.23800000000000002,"SOURCE: Handbury w26574 Table 4 col 2, ln(per-capita income) -0.042 (0.10); low/high = 95% CI"
+h21_beta2,-0.15,-0.15,-0.15,"SOURCE: Handbury w26574 Table 4 col 2, x demeaned ln(HH income) -0.15 (0.039)"
+h21_beta3,-0.0095,-0.0095,-0.0095,"SOURCE: Handbury w26574 Table 4 col 2, ln(pop) -0.0095 (0.018)"
+h21_beta4,-0.011,-0.011,-0.011,"SOURCE: Handbury w26574 Table 4 col 2, ln(pop) x demeaned ln(HH income) -0.011 (0.0072)"
+fixed_share_energy,0.0826,0.02,0.0,"SOURCE: Roberts 1986 Land Econ: +1% output and customers -> +0.98% total cost (central 0.02); Farsi et al. 2007 Energy Econ Table 6 scale economies 0.94 (CI 0.80-1.09): high 1-1/1.09, low 0"
+fixed_share_telecom,0.09,0.04,0.015,INFERENCE: per-location wireline cost falls 0.06-0.18 per ln unit of household density (Cartesian/ACA Connects 2021 table from the FBA 2019 model) x passing-plant share of the bill 0.25-0.5 (assumed)
+media_r,0.46,0.097,-0.83,SOURCE: Waldfogel w7391: listening 0.017/0.175 (central); non-Hispanic-targeted stations -2.561/3.089 = -0.83 (high); station-ratio upper 95% (-2.561+1.96*2.031)/3.089 = 0.46 (low)
+media_sigma,3.0,3.0,3.0,INFERENCE: assumed elasticity of substitution among local media titles
+n_group,39712493.3312,39712493.3312,39712493.3312,DATA: target_population_cps2025.csv union all_ages
+n_other,300398496.6688,300398496.6688,300398496.6688,DATA: area_measures_cbsa.csv other_persons sum
+s_bar,0.1167633346137977,0.1167633346137977,0.1167633346137977,CALCULATION
+cu_size_all,2.4503849773036808,2.4503849773036808,2.4503849773036808,CALCULATION: CE 2024 Interview FINLWT21-weighted FAM_SIZE
+food_home_per_cu,6224.06,6224.06,6224.06,DATA: CE 2024 published all-CU mean (cex_detail_all.csv 'Food at home'); group/all ratio from Interview reporters
+reading_per_cu,125.41,125.41,125.41,DATA: CE 2024 published all-CU mean (cex_detail_all.csv 'Reading'); group/all ratio from Interview microdata
+m_dev,-0.09194765481376081,-0.09194765481376081,-0.09194765481376081,"CALCULATION: CE 2024 non-Mexican-ref CUs, food-at-home-weighted mean of ln(income, 2012$, clipped 25k-200k) - mean ln of Handbury's eight levels [INFERENCE: demeaning reference]"
+cpi_2012,229.59391666666667,229.59391666666667,229.59391666666667,DATA: BLS CPI-U json in consumption_key _cache
+cpi_2024,313.6888333333333,313.6888333333333,313.6888333333333,DATA: BLS CPI-U json in consumption_key _cache
+exposure_share,0.10850223013333972,0.10850223013333972,0.10850223013333972,CALCULATION: others' grocery-spending-weighted -ln(1-s)
+comp_expo_share,0.03355352961246177,0.03355352961246177,0.03355352961246177,CALCULATION: others' grocery-spending-weighted rise in ln earnings per head without the group
+b_identical_bn,1.0707744947145121,1.0707744947145121,1.0707744947145121,CALCULATION

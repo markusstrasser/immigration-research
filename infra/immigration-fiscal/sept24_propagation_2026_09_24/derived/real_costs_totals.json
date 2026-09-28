@@ -24,6 +24,10 @@
   "victims_custody_mixed_scaled": 34.57929455669199
  },
  "target_population_m": 40.89657415235185,
+ "per_member_population_m": {
+  "sept23": 40.89657415235185,
+  "sept24": 39.712493331187886
+ },
  "care_constant_bn": 4.15,
  "sources_sha256": {
   "sept24_propagation_2026_09_24/derived/band_variants.csv": "471242a234227cac9591f1b3e9e418734befe77b764ebd1e2e31f537974e7316",
@@ -38,6 +42,7 @@
   "housing_transfer_2026_09_23/derived/arms_summary.csv": "f917742b60e0c6843cfa114ca821d54bf73eab8e12002f754e13e3081de4a2e9",
   "care_household_services_2026_09_23/derived/summary.csv": "ea351ee9aac908ba97599fdfb59e7b2d642ab5e6acb65e86ce48a9a016a2ceef",
   "labor_mobility_insurance_2026_09_23/derived/insurance_summary.json": "63ae37b4b8e65f48257bb586d360c8a9673b08f05203c2701b4917424760388b",
-  "scale_spillovers_2026_09_23/derived/summary.csv": "385c45e73ab523c28ef38ff24b0b05704aa32c1a2630c11fb89d8443c56b54c0"
+  "scale_spillovers_2026_09_23/derived/summary.csv": "385c45e73ab523c28ef38ff24b0b05704aa32c1a2630c11fb89d8443c56b54c0",
+  "main_case_decomposition_2026_09_29/derived/headcount.csv": "a40d606e42c931782358da8d7ca8a8dad28fffa5f4aa9af59da5a14a0631273e"
  }
 }

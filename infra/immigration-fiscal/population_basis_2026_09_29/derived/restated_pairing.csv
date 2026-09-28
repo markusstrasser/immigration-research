@@ -1,0 +1,72 @@
+section,item,end,published,factor,restated,move,unit,note
+row,fiscal,low,317.480153,1.000000,317.480153,0.000000,bn,none: already on the row-4 count
+row,fiscal,high,387.370055,1.000000,387.370055,0.000000,bn,none: already on the row-4 count
+row,victims,low,30.927388,0.985635,30.483111,-0.444277,bn,exact: linear in s; frame_counts.csv
+row,victims,high,32.338100,0.985635,31.873558,-0.464542,bn,exact: linear in s; frame_counts.csv
+row,property_crime,low,1.272651,0.985635,1.254369,-0.018282,bn,exact: linear in s; frame_counts.csv
+row,property_crime,high,1.376220,0.985635,1.356450,-0.019770,bn,exact: linear in s; frame_counts.csv
+row,unreimbursed_care,low,3.243500,0.952225,3.088540,-0.154960,bn,exact: linear in the uninsured share; frame_counts.csv
+row,unreimbursed_care,high,5.558100,0.952225,5.292559,-0.265541,bn,exact: linear in the uninsured share; frame_counts.csv
+row,congestion,low,13.992563,0.972097,13.602132,-0.390431,bn,exact: lane function re-evaluated here (reeval.csv)
+row,congestion,high,12.018056,0.966666,11.617449,-0.400607,bn,exact: lane function re-evaluated here (reeval.csv)
+row,housing_gain,low,-3.507579,0.967140,-3.392318,0.115260,bn,exact: lane function re-evaluated here (reeval.csv)
+row,housing_gain,high,-0.708230,0.970959,-0.687662,0.020568,bn,exact: lane function re-evaluated here (reeval.csv)
+row,fear_avoidance,both,10.490000,0.985635,10.339309,-0.150691,bn,exact: lane function re-evaluated here (reeval.csv)
+row,private_security,both,-0.600000,0.817732,-0.490639,0.109361,bn,exact: lane function re-evaluated here (reeval.csv)
+row,school_disruption,both,-1.950000,0.994187,-1.938666,0.011334,bn,re-evaluated here (reeval.csv); pupils moved with the union aged 5-17 [proxy]
+row,pm25_consumption,both,69.680800,0.977200,68.092105,-1.588695,bn,exact: lane function re-evaluated here (reeval.csv)
+row,road_crash_externality,both,11.050000,0.983985,10.873036,-0.176964,bn,exact: lane function re-evaluated here (reeval.csv)
+row,scale_net_earnings,both,-13.927467,0.981827,-13.674356,0.253111,bn,exact: lane function re-evaluated here (reeval.csv)
+row,restaurant_variety_market_size,both,-6.793000,1.000000,-6.793000,-0.000000,bn,none: no CPS count in the item (factor 1)
+row,formal_volunteering_outside_group,both,-6.210500,0.963010,-5.980771,0.229729,bn,exact: linear in the 16+ count; frame_counts.csv
+row,total_consumer_scale,both,-2.186900,0.973844,-2.129700,0.057200,bn,exact: lane main() rerun here with its outputs redirected (reeval.csv)
+row,total_trade_travel_fdi,both,-6.768800,1.002303,-6.784387,-0.015587,bn,first order: the raw consumption key's row-4 move applied to the lane's saving-corrected key
+pairing,"fiscal plus social, central values",low,416.192810,0.994801,414.028918,-2.163892,bn,"low: Hispanic footing, decision 4's mixed-group victims; high: custody footing"
+pairing,"fiscal plus social, central values",high,490.736434,0.995107,488.335340,-2.401094,bn,"low: Hispanic footing, decision 4's mixed-group victims; high: custody footing"
+per_member,published pairing / 40.90M (the record),low,10.176716,1.000000,10.176716,0.000000,$k,"divides by 40,896,574.2"
+per_member,published pairing / 39.71M (denominator only),low,10.176716,1.029816,10.480148,0.303432,$k,"divides by 39,712,493.3"
+per_member,restated pairing / 39.71M (every row on 39.71M),low,10.176716,1.024462,10.425659,0.248943,$k,the answer: every row on the row-4 count and divided by it
+per_member,published pairing / 40.90M (the record),high,11.999451,1.000000,11.999451,0.000000,$k,"divides by 40,896,574.2"
+per_member,published pairing / 39.71M (denominator only),high,11.999451,1.029816,12.357231,0.357780,$k,"divides by 39,712,493.3"
+per_member,restated pairing / 39.71M (every row on 39.71M),high,11.999451,1.024778,12.296769,0.297318,$k,the answer: every row on the row-4 count and divided by it
+row_5plus,congestion,low,13.992563,0.973961,13.628205,-0.364358,bn,"row 4 alone x0.972097; row 4 plus the 5+ basis: others' vehicle-occupant hours on (1 - u_o) = 0.948199 and the group's on (1 - u_g) = 0.920305, against the lane's one (1 - 0.053997); share, cut and q unchanged"
+row_5plus,congestion,high,12.018056,0.968487,11.639328,-0.378729,bn,"row 4 alone x0.966666; row 4 plus the 5+ basis: others' vehicle-occupant hours on (1 - u_o) = 0.948199 and the group's on (1 - u_g) = 0.920305, against the lane's one (1 - 0.053997); share, cut and q unchanged"
+row_5plus,road_crash_externality,both,11.050000,0.955917,10.562880,-0.487120,bn,"row 4 alone x0.983985; row 4 plus the 5+ basis: P = the union's share of persons aged 5+, 0.118353 -> 0.115272; traffic share s at r = 0.874 0.105006 -> 0.102233; q 0.289555 (commute-based) unchanged"
+pairing_5plus,"fiscal plus social, central values, row 4 plus the 5+ basis",low,416.192810,0.994118,413.744835,-2.447975,bn,row 4 alone 414.028918; the 5+ basis moves it -0.284083
+pairing_5plus,"fiscal plus social, central values, row 4 plus the 5+ basis",high,490.736434,0.994520,488.047064,-2.689370,bn,row 4 alone 488.335340; the 5+ basis moves it -0.288277
+per_member_5plus,"restated pairing / 39.71M, row 4 plus the 5+ basis",low,10.176716,1.023759,10.418506,0.241790,$k,"row 4 alone $10.425659k; divides by 39,712,493.3"
+per_member_5plus,"restated pairing / 39.71M, row 4 plus the 5+ basis",high,11.999451,1.024173,12.289509,0.290059,$k,"row 4 alone $12.296769k; divides by 39,712,493.3"
+reader,"research/immigration-INDEX.md@b170585:168 latest pairing (ladder 266), $10.2-12.0k per member",both,10.176716,,10.425659,0.248943,$k,restated $10.4-12.3k (every row on 39.71M); high end $11.999k -> $12.297k
+reader,"research/immigration-INDEX.md (until 2026-09-29, '$10.9–12.8k per member') superseded, ladder 265, 2026-09-28 final: $447-522bn, $10.9-12.8k per member",both,10.930011,1.029816,11.255904,0.325893,$k,denominator only: $11.3-13.1k; social rows not restated
+reader,"research/immigration-INDEX.md (until 2026-09-29, '$11.3–13.1k per member') superseded, ladder 264, 2026-09-28 later: $463-537bn, $11.3-13.1k per member",both,11.321242,1.029816,11.658800,0.337558,$k,denominator only: $11.7-13.5k; social rows not restated
+reader,"research/immigration-INDEX.md (until 2026-09-29, '$9.1–10.9k per') superseded, 2026-09-28 later, fear/security/schools: $371-446bn, $9.1-10.9k per member",both,9.071665,1.029816,9.342148,0.270484,$k,denominator only: $9.3-11.2k; social rows not restated
+reader,"research/immigration-INDEX.md (until 2026-09-29, '$8.9–10.7k per member') superseded, 2026-09-28, September 27 case: $363-438bn, $8.9-10.7k per member",both,8.876049,1.029816,9.140700,0.264651,$k,denominator only: $9.1-11.0k; social rows not restated
+reader,"research/immigration-INDEX.md@b170585:198 Black comparator, 1.5-1.7x the union per member (ladder 259)",both,1.497849,,1.454481,-0.043367,ratio,"published 1.498-1.663x; with the case per member on 39.71M 1.454-1.615x, printed 1.5-1.6x (the Black figure divides by its own 41.95M count)"
+reader,"infra/immigration-fiscal/overview_2026_09_28/groups.py@b170585:470 Black comparator, 1.5-1.7x the union per member (ladder 259)",both,1.497849,,1.454481,-0.043367,ratio,"published 1.498-1.663x; with the case per member on 39.71M 1.454-1.615x, printed 1.5-1.6x (the Black figure divides by its own 41.95M count)"
+reader,"research/immigration-INDEX.md@b170585:142 the union against 40.9M third-plus whites, accrual or union ages, $315–330bn",both,315.070800,,316.610100,1.539300,bn,"$317-325bn with the union on row-4 weights and the whites at 39.71M (published $315.1-330.2, restated $316.6-325.4bn)"
+reader,"research/immigration-INDEX.md@b170585:142 the same on raw cash at white ages, $155–157bn",both,154.620500,,162.130700,7.510200,bn,"$162-164bn with the union on row-4 weights and the whites at 39.71M (published $154.6-157.2, restated $162.1-164.5bn)"
+reader,"research/immigration-INDEX.md@b170585:142 against local whites state by state, $406–412bn",both,406.153700,,401.868100,-4.285600,bn,"$402-407bn with the union on row-4 weights and the whites at 39.71M (published $406.2-412.3, restated $401.9-407.5bn)"
+reader,research/immigration-INDEX.md@b170585:142 California per member against local whites (ladder 263),both,14.132879,,14.285645,0.152766,$k,"$14,133 -> $14,286 (high end $13,907 -> $14,064): row 4 leaves California's people but moves the frame totals and the union's engine-share lines"
+reader,"infra/immigration-fiscal/overview_2026_09_28/groups.py@b170585:456 comparators claim, about $320-410bn against as many whites",both,315.070800,,316.610100,1.539300,bn,about $321-405bn (midpoints; published 323-409)
+reader,infra/immigration-fiscal/overview_2026_09_28/groups.py@b170585:457 comparators range,both,315.070800,,316.610100,1.539300,bn,"$321bn (317-325) against US whites, $405bn (402-407) against local whites"
+reader,"infra/immigration-fiscal/overview_2026_09_28/groups.py@b170585:463 finding text, 40.9M whites, $320bn (315-330), $409bn (406-412)",both,315.070800,,316.610100,1.539300,bn,against 39.7M whites: about $321bn (317-325); local whites about $405bn (402-407)
+reader,"infra/immigration-fiscal/overview_2026_09_28/groups.py@b170585:465 finding why, raw cash only $156bn",both,155.887950,,163.294800,7.406850,bn,$163bn (162.1-164.5)
+reader,"research/immigration-confidence-ladder.md@b170585:441 ladder 263 record, sum of CA, TX and rest per member against local whites",both,10080.969400,,10261.011700,180.042300,$,"$10,081 -> $10,261 at the low end; a record: append a note"
+reader,"research/immigration-confidence-ladder.md@b170585:441 ladder 263 record, California per member against local whites",both,14132.879300,,14285.645300,152.766000,$,"$14,133 -> $14,286 at the low end; a record: append a note"
+reader,"research/immigration-confidence-ladder.md@b170585:441 ladder 263 record, Texas per member against local whites",both,8567.141000,,8720.361400,153.220400,$,"$8,567 -> $8,720 at the low end; a record: append a note"
+reader,"research/immigration-confidence-ladder.md@b170585:441 ladder 263 record, rest of US per member against local whites",both,7963.066100,,8031.117000,68.050900,$,"$7,963 -> $8,031 at the low end; a record: append a note"
+reader,"research/immigration-confidence-ladder.md@b170585:441 ladder 263 record, Los Angeles metro per member against local whites",both,18816.386400,,18976.598400,160.212000,$,"$18,816 -> $18,977 at the low end; a record: append a note"
+reader,"research/immigration-real-fiscal-and-social-costs-2026-09-23.md@b170585:237 victims' harm, central, $707 per group member",both,707.220607,,717.845073,10.624466,$,"$707.22 -> $717.85; the victim lane's central on s (linear), x0.985635"
+reader,"research/immigration-confidence-ladder.md@b170585:333 scale net, $341 per member (ladder 201)",both,340.553385,,344.333856,3.780471,$,$340.55 -> $344.33; the scale lane re-evaluated on the row-4 count (reeval.csv)
+reader,"research/immigration-confidence-ladder.md@b170585:438 PM2.5, $1,704 per member (ladder 260)",both,1703.829717,,1714.626756,10.797038,$,"$1,703.83 -> $1,714.63; the air lane re-evaluated on the row-4 count (reeval.csv)"
+reader,"research/immigration-confidence-ladder.md@b170585:439 disease and food safety, $7 per member (ladder 261)",both,7.249996,,7.466164,0.216168,$,"$7.25 -> $7.47; not headcount-based (CDC case counts, ACS kitchen shares; the US-born case share uses G2 and G3+, which row 4 leaves): only the denominator moves"
+reader,research/immigration-confidence-ladder.md@b170585:446 within-household per-member figures (ladder 268),both,,,,,$,"not restated: within_group_distribution_2026_09_29 spreads the row-4 totals over the published weights (households.py:116-118, RESULT.md:115 '40.90'); every amount of a Mexico-born member outside CA and TX runs low and the union mean per member 2.9% low; the shares and medians need the lane rerun on row-4 weights, with its key-total gates re-pinned"
+reader,"research/immigration-adopted-account-by-generation-2026-09-25.md@b170585:104 generation table, (b) G1 per adult",both,9441.000000,1.104885,10431.223119,990.223119,$,"$9,441 / 11,543 -> $10,431 / 12,754 (x1.104885; adults are Mexico-born adults, row 4 removes 1.108M of them)"
+reader,"research/immigration-adopted-account-by-generation-2026-09-25.md@b170585:105 generation table, (b) G2 per adult",both,5629.000000,1.000000,5629.000000,0.000000,$,"$5,629 / 5,941 -> $5,629 / 5,941 (x1.000000)"
+reader,"research/immigration-adopted-account-by-generation-2026-09-25.md@b170585:106 generation table, (b) G3+ per adult",both,4945.000000,1.000000,4945.000000,0.000000,$,"$4,945 / 7,160 -> $4,945 / 7,160 (x1.000000)"
+reader,"research/immigration-adopted-account-by-generation-2026-09-25.md@b170585:110 generation table, (a) G1 per member",both,5220.000000,1.107286,5780.031648,560.031648,$,"$5,220 / 4,383 -> $5,780 / 4,853 (x1.107286)"
+reader,"research/immigration-adopted-account-by-generation-2026-09-25.md@b170585:111 generation table, (a) G2 per member",both,5703.000000,1.000000,5703.000000,0.000000,$,"$5,703 / 6,636 -> $5,703 / 6,636 (x1.000000)"
+reader,"research/immigration-adopted-account-by-generation-2026-09-25.md@b170585:112 generation table, (a) G3+ per member",both,3859.000000,1.000000,3859.000000,0.000000,$,"$3,859 / 6,808 -> $3,859 / 6,808 (x1.000000)"
+reader,"research/immigration-adopted-account-by-generation-2026-09-25.md@b170585:113 generation table, (a) all three per member",both,4912.000000,1.029816,5058.457815,146.457815,$,"$4,912 / 6,023 -> $5,058 / 6,203 (x1.029816)"
+reader,research/immigration-INDEX.md@b170585:81 10-20% less per member in a typical budget year,both,,1.000000,,,%,unchanged: a ratio of per-member figures across years; its dollar totals are at today's size
+reader,research/immigration-objections-faq-2026-09-21.md@b170585:538 10% / 20% less per member in a typical budget year,both,,1.000000,,,%,"unchanged, as the INDEX line"

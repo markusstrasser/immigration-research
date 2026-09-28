@@ -1,0 +1,17 @@
+row,published_bn,row4_bn,factor,control_published_bn,method
+pm25_consumption,69.680798370,68.092103594,0.977200394,69.680800000,pm_grid central; s 0.121453 -> 0.118353 (union / CPS civilian frame)
+congestion_low_end,13.992562864,13.602132293,0.972097279,13.992562864,"network follows spending, uniform cut 0.059051 held; CPS scale 1.037207 -> 1.007177"
+congestion_high_end,12.018056284,11.617448785,0.966666199,12.018056284,"network follows spending, uniform cut 0.080610 held; CPS scale 1.037207 -> 1.007177"
+congestion_b1_lanes_fixed,19.162711111,18.795262883,0.980824831,19.162711111,reference: B1 with lanes fixed (not in the pairing)
+road_crash_externality,11.053646415,10.876623930,0.983985150,11.053646415,"evaluate_split central with the composition term; population share 0.121453 -> 0.118353, q 0.298794 -> 0.289555, union share of Hispanic residents 0.589488 -> 0.582348"
+housing_gain_low_end,3.507578587,3.392318415,0.967139675,3.507578587,"long run, central, form A, metro_local; TARGET 40,896,574 -> 39,712,493.3"
+housing_gain_high_end,0.708229846,0.687661866,0.970958609,0.708229846,"long run, central, form A, national_uniform; TARGET 40,896,574 -> 39,712,493.3"
+fear_avoidance,10.487703578,10.337045959,0.985634832,10.490000000,victim cost by offence x s ratio 0.985635 (union 12+ / CPS Hispanic 12+)
+private_security,-0.600975554,-0.491436662,0.817731535,-0.600000000,crime-driven spend x (offending share x 0.985635 - population share 0.118353); excess -0.008073 -> -0.006602
+school_disruption,-1.948203132,-1.936879170,0.994187484,-1.950000000,group pupils 8.487m x 0.992946 (union aged 5-17); pupil share 0.177045 -> 0.176016
+scale_net_earnings,-13.927466764,-13.674355944,0.981826500,-13.927466764,CRY joint central on 1990 CZs; ACS group scaled to the CPS union x 1.037207 -> 1.007177
+total_consumer_scale,-2.186900000,-2.129700000,0.973844254,-2.186900000,the lane's main() on the row-4 union and CBSA areas (area_measures_cbsa_row4.csv); items.csv rounds to 4 dp
+congestion_low_end_5plus,13.992562864,13.628204959,0.973960603,13.992562864,"row 4 plus the 5+ basis: others' vehicle-occupant hours on (1 - u_o) = 0.948199 and the group's on (1 - u_g) = 0.920305, against the lane's one (1 - 0.053997); share, cut and q unchanged"
+congestion_high_end_5plus,12.018056284,11.639327605,0.968486695,12.018056284,"row 4 plus the 5+ basis: others' vehicle-occupant hours on (1 - u_o) = 0.948199 and the group's on (1 - u_g) = 0.920305, against the lane's one (1 - 0.053997); share, cut and q unchanged"
+road_crash_externality_5plus,11.053646415,10.566366076,0.955916779,11.053646415,"row 4 plus the 5+ basis: P = the union's share of persons aged 5+, 0.118353 -> 0.115272; traffic share s at r = 0.874 0.105006 -> 0.102233; q 0.289555 (commute-based) unchanged"
+road_crash_externality_5plus_account_p,11.053646415,10.450857439,0.945466957,11.053646415,"sensitivity, not in the pairing: the 5+ arm on the roads lane's p, the account's per-head cell 0.117175 (a share of all residents, not of the CPS frame); P 0.114121, s at r = 0.874 0.101197"

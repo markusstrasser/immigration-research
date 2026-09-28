@@ -1,0 +1,5 @@
+group,weights,scenario,oasdi_per_tax_dollar,benefit_tax_timing,part_a_per_hi_tax_dollar,cps_oasdi_tax_bn,cps_hi_tax_bn,part_a_accrual_bn,union_persons
+union,published,scheduled,1.297788,0.084230,1.610687,113.715960,28.157876,45.353510,40896574.152352
+union,published,payable,1.018378,0.083884,1.460946,113.715960,28.157876,41.137128,40896574.152352
+union,row4,scheduled,1.300856,0.084249,1.617276,110.425007,27.332566,44.204289,39712493.331188
+union,row4,payable,1.020077,0.083904,1.467447,110.425007,27.332566,40.109099,39712493.331188

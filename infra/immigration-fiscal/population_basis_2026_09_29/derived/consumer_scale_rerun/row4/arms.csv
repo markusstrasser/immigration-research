@@ -1,0 +1,6 @@
+arm,central_bn,note
+handbury2021_population_term,-0.7114,beta3 + beta4 x m instead of HW beta; conditional on per-capita income; beta3 s.e. 0.018
+handbury2021_both_terms,0.0197,"population term + income term, Table 4 col 2"
+grocery_scale_on_group_spending,-0.826,"HW scaled by group/other per-person grocery spending (variety follows spending, not heads)"
+electricity_short_run_lbnl,-8.0485,not the long-run frame: LBNL -0.6 c/kWh per 10% load x group residential load share x others' kWh; residential-only coefficient smaller and insignificant
+media_sigma_5,-0.0511,media central with sigma 5
