@@ -4,9 +4,9 @@
 ([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 239), all
 three Mexican-origin generations remain net costs to other US residents. That holds at every one of its 64
 specifications and under both ways of counting children.
-- **Counted with their parents** (NAS): the Mexico-born cost others $159–191bn a year ($13.6–16.3k per
-  adult), the second generation $87–95bn ($9.8–10.7k per adult) and the third-plus $75–102bn ($9.2–12.4k
-  per adult).
+- **Counted with their parents** (NAS): the Mexico-born cost others $159–191bn a year ($15.0–18.1k per
+  adult of the 39.7M the account prices, ladder 274), the second generation $87–95bn ($9.8–10.7k per adult)
+  and the third-plus $75–102bn ($9.2–12.4k per adult).
 - **Counted in their own generation:** $78–94bn, $128–153bn and $100–156bn.
 
 The case's four additions are long-run road and park responses, rental assistance, the return on public
@@ -34,38 +34,26 @@ high readings), as in the schools case. Beside the account, never in the range:
 - without the capital return, (a) is $85.0 / 66.8bn, $115.1 / 131.0bn and $87.9 / 133.9bn;
 - at 7% on every component, $115.6 / 93.6bn, $158.9 / 182.3bn and $131.8 / 185.8bn.
 
-The first-year budget response is unchanged: it is still the September 26 case below.
+The first-year budget response is unchanged: it is still the schools case's, below.
 
-**Schools-case verdict (2026-09-26; the record since 2026-09-27):** Since the main case charges the group's
-pupils at their full average cost ($258.5–292.0bn a year; [decision](../decisions/2026-09-26-main-case-schools-full-cost.md),
-ladder 230), all three Mexican-origin generations remain net costs to other US residents. That holds
-at every one of its 64 specifications and under both ways of counting children.
-- **Counted with their parents** (NAS): the Mexico-born cost others $136–155bn a year ($11.6–13.3k per
-  adult), the second generation $66–68bn ($7.4–7.6k per adult) and the third-plus $55–71bn ($6.7–8.6k
-  per adult).
-- **Counted in their own generation:** $57–78bn, $105–117bn and $76–118bn.
+**Earlier cases.** All three generations are net costs to other residents in every case, at every one of
+its 64 specifications and under both ways of counting children. $bn a year, low / high end:
 
-Schools at full cost add $62.1bn (low end) and $48.5bn (high end) over September 24. Where the
-children are counted decides who carries that cost: under the own-generation count the second and
-third-plus generations carry 76–91% of it, and under the NAS count the Mexico-born carry 43–44%.
-[CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md),
-`run_generations.cjs` → `derived/generation_results.csv`, `generation_summary.json`
-`change_from_sept24`; commit 2441ac8] [FRAMING-SENSITIVE]
+| | September 24, $200.9–246.3bn (sections 1–4) | Schools at full cost, September 26, $258.5–292.0bn | September 27, $321.8–387.4bn |
+|---|---|---|---|
+| (b) G1, born in Mexico | 110.2 / 134.8 | 135.6 / 155.4 | 159.0 / 190.8 |
+| (b) G2 | 50.2 / 53.0 | 67.9 / 66.1 | 87.3 / 95.0 |
+| (b) G3+ | 40.5 / 58.6 | 55.0 / 70.5 | 75.5 / 101.6 |
+| (a) G1 | 63.8 / 53.6 | 77.6 / 56.9 | 93.8 / 78.3 |
+| (a) G2 | 81.7 / 95.1 | 105.0 / 117.5 | 127.6 / 153.0 |
+| (a) G3+ | 55.3 / 97.6 | 75.8 / 117.6 | 100.5 / 156.1 |
+| Ends (specifications) | 56 and 7 | 48 and 11 | 48 and 11 |
 
-| $bn a year, low / high end | (a) own generation | (b) minors with parents |
-|---|---|---|
-| G1, born in Mexico | 77.6 / 56.9 | 135.6 / 155.4 |
-| G2, US-born, a parent born in Mexico | 105.0 / 117.5 | 67.9 / 66.1 |
-| G3+, US-born of US-born parents | 75.8 / 117.6 | 55.0 / 70.5 |
-| All three (the main case) | 258.5 / 292.0 | 258.5 / 292.0 |
-
-The two columns are the main case's two ends.
-- The low end is the shared allocation with school share 0.715 (specification 48).
-- The high end is the personal allocation with share 0.865 (specification 11).
-
-At a school response of 1 the school-share bound flips, so these are not September 24's
-specifications 56 and 7. Priced at September 24's specifications first, the move from September 24
-splits into:
+Where the children are counted decides who carries each addition. Schools at full cost added $62.1bn (low
+end) and $48.5bn (high end) over September 24: under the own-generation count the second and third-plus
+generations carry 76–91% of it, and under the NAS count the Mexico-born carry 43–44%. At a school response
+of 1 the school-share bound flips, so the ends moved from specifications 56 and 7 to 48 and 11. Priced at
+September 24's specifications first, the move from September 24 splits into:
 - schools at 1: +$62.1bn / +$48.5bn;
 - general government: +$0.5bn;
 - row 8: −$0.1bn;
@@ -73,22 +61,15 @@ splits into:
 - the ends moving to 48 and 11: −$0.8bn / +$0.8bn.
 
 The first-year budget response charges CBO's year-to-year school response ($200.9–245.7bn). It stays within
-$1bn of the September 24 split for every generation:
-- (a): $63.9/53.0bn, $82.1/95.5bn and $55.0/97.2bn;
-- (b): $110.6/134.9bn, $50.6/53.2bn and $39.7/57.6bn.
+$1bn of the September 24 split for every generation: (a) $63.9/53.0bn, $82.1/95.5bn and $55.0/97.2bn;
+(b) $110.6/134.9bn, $50.6/53.2bn and $39.7/57.6bn. [CALCULATION: [generation
+lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md), `run_generations.cjs` →
+`derived/generation_results.csv`, `generation_summary.json` `change_from_sept24` (2441ac8); [propagation
+report](../infra/immigration-fiscal/sept26_propagation_2026_09_26/RESULT_generation.md), `run_generations.cjs
+--case sept26`; ladder 224] [FRAMING-SENSITIVE]
 
-[CALCULATION: [propagation report](../infra/immigration-fiscal/sept26_propagation_2026_09_26/RESULT_generation.md);
-`run_generations.cjs --case sept26`] Sections 1–4 below are the September 24 record.
-
-**September 24 verdict (record; superseded 2026-09-26):** Split by generation, the adopted main case ($200.9–246.3bn a year) leaves all three
-Mexican-origin generations as net costs to other US residents. That holds at every one of the main
-case's 64 specifications and under both ways of counting children. Counted with their parents, as
-the National Academies count them, the Mexico-born cost others $110–135bn a year ($9.4–11.5k per
-adult), the US-born second generation $50–53bn ($5.6–5.9k per adult) and the third-plus $40–59bn
-($4.9–7.2k per adult). Counted in their own generation, the order changes: $54–64bn, $82–95bn and
-$55–98bn. This is one year of the people alive in 2024. It cannot say what today's children will pay
-as adults. [CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md),
-`run_generations.cjs` → `derived/generation_results.csv`; ladder 224] [FRAMING-SENSITIVE]
+Sections 1–4 below are the September 24 record. It is one year of the people alive in 2024, and it cannot
+say what today's children will pay as adults.
 
 ## 1. The split
 
@@ -111,6 +92,12 @@ allocations are measured; service responses and the production term are assumed.
 | G2 | 14.33 | 8.91 | 81.7 | 95.1 | 81.7–95.1 | 5,703 / 6,636 |
 | G3+ | 14.34 | 8.18 | 55.3 | 97.6 | 55.3–97.6 | 3,859 / 6,808 |
 | All three | 40.90 | 28.77 | 200.9 | 246.3 | 200.9–246.3 | 4,912 / 6,023 |
+
+Members and adults are the published CPS counts. The account prices 39.71M people: audit row 4 scales
+down 1.18M Mexico-born residents outside California and Texas, nearly all of them first generation. On
+that count (ladder 274) G1 costs $10,431 / 12,754 per adult under (b) and $5,780 / 4,853 per member under
+(a), and all three $5,058 / 6,203 per member; G2 and G3+ do not move. [CALCULATION:
+`population_basis_2026_09_29/restate.py` → `derived/restated_pairing.csv`, reader rows for this table]
 
 The generations add to the main case at every specification and under both conventions to within
 $1.5e-12bn. Convention (b) follows the brief: minors go to the generation of their co-resident
@@ -219,3 +206,7 @@ case itself, which moves every generation.
     each convention is unchanged: under (b) the Mexico-born cost most, and under (a) the second
     generation costs most at the low end and the third-plus at the high end, though only by $0.1bn
     ($117.6bn against $117.5bn).
+- 2026-09-29 (cleanup, [decision](../decisions/2026-09-29-delete-superseded-and-cruft-docs.md)): the schools-case and
+  September 24 verdicts became one table of earlier cases. The verdict's G1 per adult is on the 39.7M the account
+  prices, $15.0–18.1k (was $13.6–16.3k on the CPS's 40.9M), and §1 gives the September 24 table on that count
+  (ladder 274). Concept affected: the per-member and per-adult denominators; no dollar total changes.
