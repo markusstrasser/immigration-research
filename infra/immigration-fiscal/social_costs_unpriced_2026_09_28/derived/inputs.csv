@@ -1,0 +1,52 @@
+name,value,source
+cpi_1990,130.7,[TRAINING-DATA] BLS CPI-U annual average
+cpi_2000,172.2,[TRAINING-DATA] BLS CPI-U annual average
+cpi_2022,292.655,[TRAINING-DATA] BLS CPI-U annual average
+cpi_2024,313.689,[TRAINING-DATA] BLS CPI-U annual average
+pop_cps_civilian,336727803,[DATA] crime_victim_cost target_population_cps2025.csv
+n_mexican_origin,40896574,"[DATA] same file, union all ages"
+n_nh_black,41954494.0,[DATA] black_comparator cps_profile.csv: CPS ASEC 2025 PRDTRACE==2 & PEHSPNON==2
+v_black_nonblack_full_bn,72.8762,"[DATA] black_comparator victim_cost_by_offence.csv, arm ncvs_pooled_2022_2024, non-Black victims"
+wtp2000_Murder,9700000.0,[SOURCE] Cohen et al. 2004 via ojp.gov abstract
+wtp2000_Rape/sexual assault,237000.0,[SOURCE] Cohen et al. 2004 via ojp.gov abstract
+wtp2000_Aggravated assault,70000.0,[SOURCE] Cohen et al. 2004 via ojp.gov abstract
+wtp2000_Armed robbery,232000.0,[SOURCE] Cohen et al. 2004 via ojp.gov abstract
+robbery_armed_share,0.45,[UNVERIFIED] share of robberies with a weapon
+phi_low_central_high,0.25/0.5/1.0,[ASSUMPTION] share of WTP-minus-victim-cost that is non-victim fear/avoidance
+rev2022_m_guards_contract_561612,32222,[SOURCE] Census SAS via FRED fredgraph.csv (_cache/fred_*.csv)
+rev2022_m_systems_561621,28295,[SOURCE] Census SAS via FRED fredgraph.csv (_cache/fred_*.csv)
+rev2022_m_locksmiths_561622,2701,[SOURCE] Census SAS via FRED fredgraph.csv (_cache/fred_*.csv)
+rev2022_m_armored_561613,4162,[SOURCE] Census SAS via FRED fredgraph.csv (_cache/fred_*.csv)
+rev2022_m_investigation_561611,7850,[SOURCE] Census SAS via FRED fredgraph.csv (_cache/fred_*.csv)
+oes_33_9032_emp,1283470,[SOURCE] BLS OES May 2025 API series OEUN000000000000033903201
+oes_33_9032_wage,42470,[SOURCE] BLS OES May 2025 API ...04
+oes_33_9032_emp_5616,768900,[SOURCE] BLS OES May 2025 API OEUN000000056160033903201
+oes_33_9032_wage_5616,41380,[SOURCE] BLS OES May 2025 API ...04
+comp_per_wage,1.4,[TRAINING-DATA] BLS ECEC: benefits ~29% of private compensation
+inhouse_private_share,0.85,[ASSUMPTION] excludes government-employed guards (in fiscal account)
+deflate_2025_to_2024,0.975,[ASSUMPTION] ~2.5% CPI 2024->2025
+equipment_bn,5/10/20,"[UNVERIFIED] direct purchases of locks, cameras, alarms, anti-theft; no primary total"
+crime_shares,"{'guards': (0.5, 0.7, 0.9), 'systems': (0.4, 0.6, 0.8), 'locksmiths': (0.3, 0.5, 0.7), 'armored': (0.5, 0.75, 1.0), 'investigation': (0.0, 0.1, 0.3), 'equipment': (0.8, 0.8, 0.8)}",[ASSUMPTION]
+national_violent_victim_cost_bn,507.9385,[DATA] black_comparator victim_cost_summary.csv: 2024 NCVS + WONDER x Miller full
+black_share_property_arrests_2019,0.298,[SOURCE] FBI CIUS 2019 Table 43A
+black_offender_violent_cost_bn,185.2286,"[DATA] black_comparator victim_cost_summary.csv, all victims"
+security_weight_property,0.75,[ASSUMPTION] most security spend targets theft
+guard_share_popweighted_pct,0.6083,[CALCULATION] guard_black.py on guard_labor panel
+black_share_popweighted_pct,12.024,[CALCULATION] guard_black.py
+persons_per_household,2.5,[TRAINING-DATA] ACS average household size ~2.5
+bfm_mean_mwtp_10pp_black_1990usd_month,-10.5,[SOURCE] Bayer-Ferreira-McMillan w13236 Table 7
+bfm_black_vs_white_diff,98.34,"[SOURCE] same, Table 7"
+bfm_sample_black_share,0.08,"[SOURCE] same, data section: full sample 68% white, 8% black"
+pce_housing_services_2024_bn,2900.0,[TRAINING-DATA] BEA PCE housing services ~$2.9tn
+acs_hisp_grad_per_10pp,-0.0096,"[DATA] hedonic_composition_2026_09_19 ACS value, not a price"
+pv_lifetime_earnings_2024,750886.47,[DATA] school_dilution_2026_09_24 RESULT (CFR $522k 2010$)
+chk_beta_per_unit_share_year,0.15/0.165/0.20,[SOURCE] CHK w22042 fn14: 0.6-0.8%/yr per peer in 25; AER 3.3%/5yr
+oss_rate_k12,0.05,"[SOURCE] CRDC 2021-22 First Look p.22: 2.4M, 5% of K-12"
+black_enrol_share,0.15,[SOURCE] CRDC 2021-22 First Look p.22 Figure 12 (ed.gov/media/document/2021-22-crdc-first-look-report-109194.pdf): boys 8% + girls 7%
+black_oss_share,0.35,[SOURCE] CRDC 2021-22 First Look p.22 Figure 12 (ed.gov/media/document/2021-22-crdc-first-look-report-109194.pdf): boys 22% + girls 13%
+hisp_enrol_share,0.29,[SOURCE] CRDC 2021-22 First Look p.22 Figure 12 (ed.gov/media/document/2021-22-crdc-first-look-report-109194.pdf): boys 15% + girls 14%
+hisp_oss_share,0.24,[SOURCE] CRDC 2021-22 First Look p.22 Figure 12 (ed.gov/media/document/2021-22-crdc-first-look-report-109194.pdf): boys 16% + girls 8%
+crdc_rounding_bound,0.01,"[CALCULATION] each printed share is rounded to 1 point, so a boys + girls sum is known to +/-1 point"
+mex_pupil_share,0.17704487139370423,"[DATA] school_dilution: 8.487m group, 39.45m other pupils"
+k12_enrol_m,49.4,[TRAINING-DATA] CRDC 2021-22 K-12 enrollment ~49.4M
+kappa_behaviour_share_of_gap,0.3/0.6/1.0,[ASSUMPTION] share of discipline gap that is behaviour

@@ -1,0 +1,23 @@
+sample,spec,term,b_pp_per_pp,se,p,r2,n
+all 51,lane spec: fb + base + black + crime,black_share,0.002610,0.002734,0.344968,0.621841,51
+all 51,lane spec: fb + base + black + crime,fb_share,0.019574,0.006986,0.007523,0.621841,51
+all 51,lane spec: hisp + base + black + crime,black_share,0.001101,0.003433,0.750016,0.554509,51
+all 51,lane spec: hisp + base + black + crime,hisp_share,-0.000437,0.003670,0.905803,0.554509,51
+all 51,black + base + crime (no fb),black_share,0.001314,0.002893,0.651771,0.554365,51
+all 51,"black + base, no crime control",black_share,0.001459,0.002877,0.614432,0.547717,51
+all 51,"black + fb + base, no crime control",black_share,0.002619,0.002796,0.353894,0.595659,51
+all 51,"black + fb + base, no crime control",fb_share,0.015597,0.006752,0.025538,0.595659,51
+all 51,"hisp + base, no crime control",hisp_share,-0.000946,0.003085,0.760510,0.546115,51
+all 51,black bivariate,black_share,0.009228,0.003012,0.003544,0.160793,51
+all 51,hisp bivariate,hisp_share,0.008869,0.003052,0.005485,0.146988,51
+drop NV HI DC,lane spec: fb + base + black + crime,black_share,0.004413,0.001475,0.004684,0.782361,48
+drop NV HI DC,lane spec: fb + base + black + crime,fb_share,0.009249,0.004187,0.032815,0.782361,48
+drop NV HI DC,lane spec: hisp + base + black + crime,black_share,0.004389,0.001815,0.020144,0.756565,48
+drop NV HI DC,lane spec: hisp + base + black + crime,hisp_share,0.000275,0.002031,0.893146,0.756565,48
+drop NV HI DC,black + base + crime (no fb),black_share,0.004264,0.001540,0.008349,0.756457,48
+drop NV HI DC,"black + base, no crime control",black_share,0.004076,0.001590,0.013917,0.733406,48
+drop NV HI DC,"black + fb + base, no crime control",black_share,0.004168,0.001556,0.010495,0.750852,48
+drop NV HI DC,"black + fb + base, no crime control",fb_share,0.007474,0.004358,0.093732,0.750852,48
+drop NV HI DC,"hisp + base, no crime control",hisp_share,-0.001592,0.001864,0.397895,0.697765,48
+drop NV HI DC,black bivariate,black_share,0.008799,0.002180,0.000204,0.261490,48
+drop NV HI DC,hisp bivariate,hisp_share,0.007033,0.002084,0.001510,0.198425,48
