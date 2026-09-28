@@ -1,0 +1,11 @@
+region,end,spec,union_persons,white_cps_sample,white_rates_from,cost_union_bn,cost_white_union_ages_bn,cost_white_own_ages_bn,delta_union_ages_bn,delta_own_ages_bn,delta_union_ages_per_person,delta_own_ages_per_person,delta_union_ages_both_arms_per_person,balance_gap_union_ages_per_person,balance_gap_own_ages_per_person,partial_ledger_gap_per_person,partial_ledger_standardized_per_person,partial_ledger_population
+California,low,48,13082783,3073,California,92.6970,-92.2004,-27.1409,184.8974,119.8379,14133,9160,19640,-20538,-17592,-14467,-12133,13082782
+Texas,low,48,9761463,3045,Texas,87.0145,3.3867,33.2229,83.6278,53.7916,8567,5511,11644,-12449,-10276,-8115,-7479,9761462
+rest of US,low,48,18052330,74163,national,131.0441,-12.7078,64.8866,143.7519,66.1575,7963,3665,10838,-11281,-8361,,,
+Los Angeles metro,low,48,4503396,787,Los Angeles metro,28.8100,-55.9277,-38.6026,84.7376,67.4126,18816,14969,26353,-27574,-24638,,-17196,
+"sum of CA, TX and rest",low,48,40896575,,state,310.7556,-101.5215,70.9686,412.2771,239.7870,10081,5863,13846,-14521,-11771,-10069,,
+California,high,11,13082783,3073,California,108.6616,-73.2795,-8.9605,181.9410,117.6221,13907,8991,19414,-20493,-17546,-14467,-12133,13082782
+Texas,high,11,9761463,3045,Texas,98.2533,15.8639,45.7856,82.3894,52.4677,8440,5375,11518,-12411,-10238,-8115,-7479,9761462
+rest of US,high,11,18052330,74163,national,152.1257,10.3024,87.3165,141.8233,64.8092,7856,3590,10731,-11241,-8321,,,
+Los Angeles metro,high,11,4503396,787,Los Angeles metro,34.2582,-48.7885,-31.5614,83.0467,65.8197,18441,14616,25978,-27533,-24597,,-17196,
+"sum of CA, TX and rest",high,11,40896575,,state,359.0405,-47.1131,124.1415,406.1537,234.8990,9931,5744,13696,-14480,-11729,-10069,,

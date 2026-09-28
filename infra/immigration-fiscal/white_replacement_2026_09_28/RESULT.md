@@ -14,11 +14,19 @@ Scale is worth the same for either population: +$38.6bn for the union against +$
 
 Violent-crime victims outside the group cost **$10–12bn** less like for like. [CALCULATION: `victim_cost_white.py`]
 
+**State-specific replacement (Part F).** The arm replaces the union in California with California's own third-plus whites and in Texas with Texas's. Elsewhere it uses national white rates. All three are charged at the union's ages. The total is **+$412bn / +$406bn** on cash, $10,081 per member.
+
+- **By state:** $14,133 in California, $8,567 in Texas and $7,963 elsewhere. Los Angeles, inside California, is $18,816.
+- **At the whites' own ages:** $240bn / $235bn.
+- **With both convention arms:** $13,846 per member, about $566bn.
+
+These per-person deltas land within 2–6% of the older partial ledger's age-matched gaps: $14,467 in California, $8,115 in Texas, $10,069 nationally. On a no-response basis the full account adds capital-side taxes and earnings-keyed lines, but the case's zero responses switch most of them off again. [CALCULATION: `state_white.py`]
+
 Every cost channel meets the same scaling exponent whichever population is added. The delta comes from per-head differences in taxes paid and programmes drawn, not from sub- or superlinear scale.
 
 This is an accounting comparison of two populations under one set of rules. It is not a policy scenario. [FRAMING-SENSITIVE]
 
-Lane `infra/immigration-fiscal/white_replacement_2026_09_28/`, written 2026-09-28, 22:12–22:46 JST (times from `date`). Brief: [`BRIEF.md`](BRIEF.md). All figures are in 2024 dollars a year. The low end is spec 48 and the high end spec 11, as in the Black lane.
+Lane `infra/immigration-fiscal/white_replacement_2026_09_28/`, written 2026-09-28, 22:12–22:46 JST; Part F 22:47–22:51 JST (times from `date`). Brief: [`BRIEF.md`](BRIEF.md). All figures are in 2024 dollars a year. The low end is spec 48 and the high end spec 11, as in the Black lane.
 
 **Parent's expectation against the result.** The expectation was recorded before any run: A1 at $420–580bn on cash. The cash central is $155–157bn, and the expectation is reached only on accrual with both arms ($447–450bn). The old-age lines do cut the white advantage much more on cash than on accrual, as expected. B's schooling term is positive with a very wide interval, as expected. D is as expected. [CALCULATION; INFERENCE]
 
@@ -235,6 +243,89 @@ No dollar value is attached. Doing so would need a per-inventor social return, a
 
 **Like for like** (all co-ethnic victims in-group): **+$12.0bn** at own ages and +$9.9bn at union ages. It is beside the account, like the union's victim item.
 
+## F. State-specific replacement (addendum 22:23)
+
+### Method
+
+`state_white.py` imports `rekey_white.py`, whose module-level build writes nothing, and prices each piece with its `run()`. `rekey_white.py` got one refactor for this, `keyed()` split out of `scenario()`, and its outputs stayed byte-identical.
+
+**Union pieces.** The union's CPS persons in California (FIPS 6), Texas (48) and the rest of the US, plus the Los Angeles CBSA (31080) as an information row inside California. Lines the rough run keeps at the engine's national union share are split within the union by the piece's share on a CPS proxy [INFERENCE]:
+
+| Line | Proxy |
+|---|---|
+| Medicare | Medicare coverage |
+| VA, TRICARE | veterans' income |
+| Medicaid, justice, other public health | persons |
+| School reprice | pupils |
+| College re-key | college enrolment |
+| Lane constants | persons |
+| Production gain | earnings |
+
+Gate: the three pieces sum to the national rough union to within $0.001bn at both ends.
+
+**White pieces.** Third-plus NH whites of the same state are reweighted to the union piece's age structure and population. For the rest of the US the whites are national. Each piece is also run at the whites' own ages. CPS samples: 3,073 persons in California, 3,045 in Texas, 787 in Los Angeles and 74,163 nationally [DATA]. MEPS has no state identifier, so medical keys are the national US-born NH white per-age rates at the piece's ages [INFERENCE].
+
+National line prices are the case's. A state piece differs only through its CPS keys and ages: earnings, federal and state income tax, programme dollars, pupils and property. Nothing is state-priced. No sampling error is computed, and Los Angeles's 787 white records are thin.
+
+### Results
+
+$bn a year. Per member is per union member in the region.
+
+| Region | Union members | Union cost, low / high | White cost at union ages | Delta at union ages, low / high | per member | Delta at white own ages, per member | Both A arms, per member |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| California (CA whites) | 13.08M | 92.7 / 108.7 | −92.2 / −73.3 | **184.9 / 181.9** | **$14,133** / $13,907 | $9,160 | $19,640 |
+| Texas (TX whites) | 9.76M | 87.0 / 98.3 | 3.4 / 15.9 | **83.6 / 82.4** | **$8,567** / $8,440 | $5,511 | $11,644 |
+| Rest of US (national whites) | 18.05M | 131.0 / 152.1 | −12.7 / 10.3 | **143.8 / 141.8** | **$7,963** / $7,856 | $3,665 | $10,838 |
+| **Sum** | 40.90M | 310.8 / 359.0 | −101.5 / −47.1 | **412.3 / 406.2** | **$10,081** / $9,931 | $5,863 ($239.8bn / $234.9bn) | $13,846 (about $566bn) |
+| Los Angeles metro (inside CA) | 4.50M | 28.8 / 34.3 | −55.9 / −48.8 | 84.7 / 83.0 | $18,816 / $18,441 | $14,969 | $26,353 |
+
+[CALCULATION: `derived/state_summary.csv`]
+
+Matching whites state by state raises the delta at union ages from A3's national-rate $330bn to $412bn, because the union lives where local whites pay the most tax. California whites at the union's ages pay other residents $92bn more than they cost them. [CALCULATION]
+
+At union ages, schools and most age-driven lines cancel, and income taxes carry the gap. Per union member in California and Texas:
+
+| Line | California | Texas |
+|---|---:|---:|
+| Whole delta | $14,133 | $8,567 |
+| of which income taxes | $10,118 | $4,989 |
+| of which payroll taxes | $2,629 | $1,738 |
+| of which sales and excise taxes | $2,091 | $1,463 |
+
+[CALCULATION: `derived/state_buckets.csv`]
+
+**Cash and accrual at union ages.** Accrual is not rerun by state. At the union's ages cash and accrual nearly agree nationally: A3 is $330bn on cash and $319bn on accrual. The state figures should move by a similar few percent. [INFERENCE]
+
+### Reconciliation with the partial ledger of 2026-09-21
+
+The partial ledger's age-matched gap compares the union at its own ages with local third-plus whites at the same ages. That is this arm's "union ages" comparison. The memo's headline figures (CA −$12,133, TX −$7,479, LA −$17,196) are standardized to white ages, which is a different comparison. [DATA: `ledger_stress_2026_09_17/derived/state_matched.csv`]
+
+$ per union member, low end:
+
+| | California | Texas | National (state × age) |
+|---|---:|---:|---:|
+| Partial ledger, age-matched gap | −14,467 | −8,115 | −10,069 |
+| Full-account balance at union ages, no responses | −20,538 | −12,449 | −14,521 |
+| of which capital, property and production taxes | −6,560 | −3,864 | |
+| of which earnings-keyed and per-head lines | +1,168 | +806 | |
+| **Full-account cost delta under the case's responses** | **14,133** | **8,567** | **10,081** |
+| of which capital return and production gain | −131 and −351 | −106 and −312 | |
+| Both A arms | 19,640 | 11,644 | 13,846 |
+
+[CALCULATION: `derived/state_summary.csv`, `derived/state_buckets.csv`; partial ledger DATA]
+
+**What the full-account re-key adds on top of the partial ledger:**
+
+- **At the case's rules, almost nothing net.** The per-person delta is 2% below the partial ledger in California, 6% above in Texas and 0.1% above nationally.
+- **The additions largely cancel.**
+  - On a no-response basis the full account adds capital, property and production taxes, which the partial ledger leaves out (it has no corporate tax): $6,560 per member in California and $3,864 in Texas.
+  - Without them the California balance is −$13,978, close to the partial ledger's −$14,467.
+  - The case holds those taxes at zero response, halves the earnings-keyed lines through their responses, and adds a small public-capital return and production credit that favour the union.
+
+  [CALCULATION; INFERENCE]
+- **The number moves only when those taxes respond.** The capital-tax and top-tail arms add $5.5k per member in California and $3.1k in Texas.
+- **Price levels are still missing.** The partial ledger's price-level caveat carries over: nominal California gaps overstate real-resource gaps.
+
 ## Disconfirmation: what makes whites look worse
 
 - **Age.** On cash the white slice's old-age lines cost others $170.5bn. Without them the slice costs others −$16.9bn at low, a net contribution, and +$33.9bn at high. Anyone who reads the cash basis as the right measure for an ageing group will see whites cost $154–204bn a year, 2–3× less than the union but not zero. [CALCULATION]
@@ -268,6 +359,7 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/tabulate_white.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project --with statsmodels python3 $L/spillovers_white.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/victim_cost_white.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/replacement_table.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/state_white.py
 ```
 
-Every script was run twice. All 16 files in `derived/` were byte-identical across the two full runs (sha256), and every gate passed on both. Nothing was written to other lanes, and nothing was committed.
+Every script was run twice. All 16 files in `derived/` were byte-identical across the two full runs (sha256), and every gate passed on both. `state_white.py` (Part F) was run twice after the `keyed()` refactor of `rekey_white.py`. Its two outputs and all 16 earlier files were byte-identical. Nothing was written to other lanes, and nothing was committed.

@@ -1,0 +1,57 @@
+region,bucket,cost_union_bn,cost_white_union_ages_bn,delta_cost_bn,delta_cost_per_person,balance_gap_bn,balance_gap_per_person
+California,income taxes,-53.5993,-185.9703,132.3710,10118,-132.3710,-10118
+California,payroll taxes and Medicare premiums,-58.5883,-92.9806,34.3923,2629,-34.3923,-2629
+California,"sales, excise, customs, fees",-33.7404,-61.0914,27.3509,2091,-27.3509,-2091
+California,"capital, property, production taxes",1.7790,1.7790,0.0000,0,-85.8280,-6560
+California,Social Security,21.2213,31.5338,-10.3125,-788,10.3125,788
+California,Medicare,20.2758,25.2064,-4.9306,-377,4.9306,377
+California,Medicaid,37.6660,26.4555,11.2105,857,-11.2105,-857
+California,schools and colleges,64.1037,64.5184,-0.4147,-32,1.1578,88
+California,"police, courts, prisons",22.2827,17.8290,4.4538,340,-4.4538,-340
+California,"SNAP, SSI, housing, cash aid, credits, other welfare",40.6351,31.3900,9.2451,707,-9.2451,-707
+California,veterans and military medical,2.7173,7.1904,-4.4731,-342,4.4731,342
+California,"per-head lines: government, defense, interest, roads, other",21.6295,29.3214,-7.6918,-588,15.2794,1168
+California,capital return,10.9051,12.6180,-1.7129,-131,0.0000,0
+California,production gain (subtracted),-4.5905,-0.0000,-4.5905,-351,0.0000,0
+Texas,income taxes,-26.8204,-75.5226,48.7022,4989,-48.7022,-4989
+Texas,payroll taxes and Medicare premiums,-38.8268,-55.7964,16.9695,1738,-16.9695,-1738
+Texas,"sales, excise, customs, fees",-24.4449,-38.7275,14.2827,1463,-14.2827,-1463
+Texas,"capital, property, production taxes",1.3274,1.3274,0.0000,0,-37.7136,-3864
+Texas,Social Security,17.8766,24.2579,-6.3813,-654,6.3813,654
+Texas,Medicare,15.0999,18.3283,-3.2284,-331,3.2284,331
+Texas,Medicaid,28.1038,19.4595,8.6443,886,-8.6443,-886
+Texas,schools and colleges,45.8924,49.8113,-3.9189,-401,4.2411,434
+Texas,"police, courts, prisons",16.6258,13.1318,3.4940,358,-3.4940,-358
+Texas,"SNAP, SSI, housing, cash aid, credits, other welfare",27.0864,11.4364,15.6500,1603,-15.6500,-1603
+Texas,veterans and military medical,4.4337,6.6527,-2.2189,-227,2.2189,227
+Texas,"per-head lines: government, defense, interest, roads, other",15.8438,20.1334,-4.2895,-439,7.8640,806
+Texas,capital return,7.8603,8.8947,-1.0344,-106,0.0000,0
+Texas,production gain (subtracted),-3.0435,-0.0000,-3.0435,-312,0.0000,0
+rest of US,income taxes,-60.9176,-149.4562,88.5386,4905,-88.5386,-4905
+rest of US,payroll taxes and Medicare premiums,-71.5745,-102.2522,30.6778,1699,-30.6778,-1699
+rest of US,"sales, excise, customs, fees",-43.7710,-67.6596,23.8886,1323,-23.8886,-1323
+rest of US,"capital, property, production taxes",2.4548,2.4548,0.0000,0,-59.4808,-3295
+rest of US,Social Security,22.0607,32.4100,-10.3492,-573,10.3492,573
+rest of US,Medicare,17.0435,24.2970,-7.2535,-402,7.2535,402
+rest of US,Medicaid,51.9736,34.6505,17.3231,960,-17.3231,-960
+rest of US,schools and colleges,92.1442,95.6719,-3.5277,-195,4.1427,229
+rest of US,"police, courts, prisons",30.7469,24.7857,5.9612,330,-5.9612,-330
+rest of US,"SNAP, SSI, housing, cash aid, credits, other welfare",48.3786,30.8807,17.4978,969,-17.4978,-969
+rest of US,veterans and military medical,4.4883,9.4215,-4.9333,-273,4.9333,273
+rest of US,"per-head lines: government, defense, interest, roads, other",28.7165,35.5162,-6.7998,-377,13.0342,722
+rest of US,capital return,14.9887,16.5719,-1.5832,-88,0.0000,0
+rest of US,production gain (subtracted),-5.6886,-0.0000,-5.6886,-315,0.0000,0
+Los Angeles metro,income taxes,-19.5409,-79.5710,60.0301,13330,-60.0301,-13330
+Los Angeles metro,payroll taxes and Medicare premiums,-20.5564,-37.3801,16.8237,3736,-16.8237,-3736
+Los Angeles metro,"sales, excise, customs, fees",-11.4227,-23.9838,12.5611,2789,-12.5611,-2789
+Los Angeles metro,"capital, property, production taxes",0.6124,0.6124,0.0000,0,-40.8905,-9080
+Los Angeles metro,Social Security,7.1843,12.0209,-4.8366,-1074,4.8366,1074
+Los Angeles metro,Medicare,7.4671,9.6670,-2.1998,-488,2.1998,488
+Los Angeles metro,Medicaid,12.9655,9.3016,3.6639,814,-3.6639,-814
+Los Angeles metro,schools and colleges,19.3619,20.7247,-1.3628,-303,1.5964,354
+Los Angeles metro,"police, courts, prisons",7.6702,6.1858,1.4844,330,-1.4844,-330
+Los Angeles metro,"SNAP, SSI, housing, cash aid, credits, other welfare",14.4494,8.1968,6.2526,1388,-6.2526,-1388
+Los Angeles metro,veterans and military medical,1.1571,2.8257,-1.6686,-371,1.6686,371
+Los Angeles metro,"per-head lines: government, defense, interest, roads, other",7.4628,10.9851,-3.5223,-782,7.2283,1605
+Los Angeles metro,capital return,3.6019,4.4872,-0.8853,-197,0.0000,0
+Los Angeles metro,production gain (subtracted),-1.6027,-0.0000,-1.6027,-356,0.0000,0
