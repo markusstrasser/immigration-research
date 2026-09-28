@@ -1,25 +1,36 @@
 claude-opus-5-5
 
-**Verdict:** On an accrual basis for Social Security (OASDI) and Medicare Part A, net of the income tax the group
-will pay on those benefits, the September 27 case becomes **$433.5bn / $493.5bn** at specifications 48 / 11 under
-the central arm, up $111.6bn / $106.2bn from $321.8bn / $387.4bn. Before that tax it is $437.8bn / $497.8bn, kept as
-the arm `gross_of_benefit_tax`. Measured with Tax-Calculator, the group pays income tax of 3.2% of its 2024
-benefits against the nation's 6.1%, a relative rate of 0.52. Under current law the tax will take back 4.4% of the
-benefits its 2024 work earns, and the switch drops the $2.1bn / $1.8bn the case credits on today's benefits (see "Net
-of income tax on benefits"). The parent moved the central to the path after the 2025 tax law because it is current
-law. On the TR 2025 path, which assumes the TCJA rates expire, the tax would take 5.2%: $432.3bn / $492.4bn, now the
-arm `benefit_tax_tr2025_path`. The central is the ratio route, the route decision 2026-09-19 rejected: SSA's money's-worth
-ratios applied to each year's taxes. The national check says those ratios, applied to the actual population
-through the lane's frame, reproduce SSA's own aggregate. Against the Statement of Social Insurance at 1 January
-2025 the OASDI 15–61 ratio comes out 4.6% high and the HI 15–64 ratio 1.7% high, with levels 3.8–8.0% low, all
-within the declared tolerance. The check also cut the central by $5.9bn, because the Part A spouse credit counted
-dependents twice (bec1cd7, gross: $443.8bn / $503.7bn). Net of the tax, one setting at a time gives $392–455bn at 48
-and $454–514bn at 11; every combination spans $351–513bn / $415–569bn (the constant-rate arms now keep 1961–2024 at
-the historical rates; see "Corrections after the cross-lab review"). The lifetime model's own
-formula falls 20% short by construction and decides nothing. Whether accrual can rest on SSA's ratios or needs an extended formula model goes to the operator
-(recommended: SSA's ratios); until then the figure stays beside the case. [CALCULATION: `benefit_tax.py` →
-`derived/benefit_tax.json`; `pension_accrual.py` → `derived/summary.json`, `derived/case_beside.csv`;
-`national_check.py` → `derived/national_score.json`]
+**Verdict:** Under current law, the September 27 case with Social Security (OASDI) and Medicare Part A on an accrual
+basis is **$399.1bn / $461.0bn** at specifications 48 / 11, $77.3bn / $73.6bn above the case's $321.8bn / $387.4bn.
+
+- **2024 cash flows (from the case's lines).** At 48 the group paid $112.9bn of OASDI tax and $31.3bn of HI tax,
+  and drew $56.3bn of Social Security and $19.7bn of Part A. Cash books the $68.3bn difference as income.
+- **What accrual books instead (modelled).** It books the benefits that year's work earns, valued as current law
+  will pay them. Each OASDI tax dollar earns $0.97 of benefits net of the income tax the group will pay on them.
+  The year's covered work earns $41.1bn of Part A.
+
+Current law here means two things. Benefits are cut to what the trust funds' income pays once their reserves are
+depleted (OASDI in 2034, HI in 2033; SSA Note 2025.7 Table 3). The tax on benefits follows the 2025 tax law. The
+operator moved the central to payable benefits on 2026-09-28 (see "Payable benefits: the central under current
+law"). Scheduled benefits are the benefit formula paid in full, as CBO's baseline assumes by statute. They give
+$433.5bn / $493.5bn, the arm `scheduled`, which was the central until then.
+
+Ranges:
+
+- one setting at a time: $365.3–433.5bn at 48 and $428.5–493.5bn at 11, from a 3% real rate to scheduled benefits;
+- every combination: $350.8–513.0bn / $414.9–569.0bn.
+
+The route is SSA's money's-worth ratios applied to each year's taxes, the construction that decision 2026-09-19
+rejected. The national check says those ratios, applied to the actual population through the lane's frame,
+reproduce SSA's own aggregate on the scheduled basis of the Statement of Social Insurance. At 1 January 2025 the
+OASDI 15–61 ratio comes out 4.6% high and the HI 15–64 ratio 1.7% high, with levels 3.8–8.0% low, all within the
+declared tolerance. The check also removed a Part A spouse credit that counted dependents twice. The lifetime
+model's own formula falls 20% short by construction and decides nothing.
+
+Whether accrual can rest on SSA's ratios or needs an extended formula model goes to the operator (recommended: SSA's
+ratios). Until then the figure stays beside the case. [CALCULATION: `benefit_tax.py` → `derived/benefit_tax.json`;
+`pension_accrual.py` → `derived/summary.json`, `derived/case_beside.csv`; `national_check.py` →
+`derived/national_score.json`]
 
 Lane `pension_accrual_2026_09_28` (worker W2, 2026-09-28): the September 27 case ($321.82–387.37bn at
 specifications 48 / 11) with Social Security (OASDI) and Medicare Part A on an accrual basis, beside the case,
@@ -48,7 +59,8 @@ Part A is the case's Medicare amount ($52.42bn) times the HI share of 2024 Medic
 **Central decomposition, $bn** (the two fill-in methods averaged) [CALCULATION: `derived/case_beside.csv`, arm
 `central`]. These are bec1cd7's values. The national check removed the Part A spouse credit, so Part A is now
 $45.35bn, its change +25.69, and the case on accrual $437.83bn / $497.78bn (see "Part A: the spouse credit counted
-dependents twice").
+dependents twice"). All of these are on scheduled benefits. The current central's decomposition, on payable benefits
+and net of the tax on them, is under "Payable benefits: the central under current law".
 
 | | Spec 48 | Spec 11 |
 |---|---:|---:|
@@ -71,7 +83,7 @@ population, so the Part A accrual is the same at both ends.
 
 | Setting | Central | Reason |
 |---|---|---|
-| Benefits | scheduled | The OASDI Trustees define cost with scheduled benefits. The Part A projections disregard the payment cuts that depletion would force. [SOURCE: `reads/quotes.json` `tr_cost_is_scheduled`, `mtr_projections_scheduled`] Payable is an arm. |
+| Benefits | payable (since 2026-09-28; scheduled until then) | Once a trust fund's reserves are depleted, current law lets SSA pay only what the fund's income covers. Note 2025.7 publishes payable ratios (Table 3), and the Medicare Trustees give HI's payable share. The OASDI Trustees define cost with scheduled benefits, the Part A projections disregard the depletion cuts, and CBO's baseline pays scheduled benefits in full by statute. Scheduled is therefore the arm `scheduled`. [SOURCE: `reads/quotes.json` `tr_cost_is_scheduled`, `mtr_projections_scheduled`, `mtr_hi_payable_path`; CBO, under "Payable benefits: the central under current law"] |
 | Discount rate | the Trustees' rate on newly issued trust-fund securities (TR 2025 Table V.B2): 4.1% nominal / 1.7% real in 2026–34, 4.7% / 2.3% from 2045 | This is the government's projected marginal borrowing rate, the right rate for valuing a new obligation. Note 2025.7 instead uses the trust funds' effective portfolio yields (Table B: 0.1–0.8% real in 2025–30), which lag the market. For EAN the two paths differ by 1.3% (1.298 vs 1.281 per tax dollar). [SOURCE: `reads/quotes.json` `tr_new_issue_rates`, `note_mwr_effective_yields`; CALCULATION: `derived/oasdi_arms.csv`] |
 | Attribution | entry-age normal (EAN): the lifetime money's-worth ratio times each year's tax | This is the brief's and the 09-18 lane's construction. At trust-fund rates it applies SSA's published ratios directly, and the choice of rate path barely moves it. Projected unit credit (PUC) is $10.8bn lower. PUC spreads the same lifetime benefit in wage-indexed units instead of discounted tax, which gives a young group less when the rate exceeds wage growth. |
 | Earnings level | this year's covered earnings over the medium scaled worker's factor at the same age (Note 2025.3 Table 6) | The 09-18 lane's raw wage / AWI treats a 25-year-old's wage as a career average. That inflates young workers' ratios (+$14.9bn as an arm). |
@@ -83,9 +95,10 @@ population, so the Part A accrual is the same at both ends.
 ## Arms: one change from the central
 
 $bn, methods averaged. OASDI arms leave Part A at the central, and the reverse; rate, payable, unauthorized and
-mortality arms move both. [CALCULATION: `derived/case_beside.csv`] The table holds bec1cd7's values. Every Part A
-and case column predates the spouse correction, and the four constant-rate rows predate the history fix. The
-current values are in `derived/case_beside.csv` and under "Corrections after the cross-lab review".
+mortality arms move both. [CALCULATION: `derived/case_beside.csv`] The table holds bec1cd7's values, gross and on
+scheduled benefits. Every Part A and case column predates the spouse correction, and the four constant-rate rows
+predate the history fix. The current values, net and on payable benefits, are in `derived/case_beside.csv` and
+under "Payable benefits: the central under current law".
 
 | Arm | Per tax $ | ΔOASDI 48 / 11 | ΔPart A | Case 48 | Case 11 |
 |---|---:|---:|---:|---:|---:|
@@ -148,8 +161,12 @@ The accrual per covered worker-year is P(qualify) × PV at 2024 of Part A from 6
   |---|---:|---:|---:|
   | Men | $79.0k | $96.9k | $122.2k |
   | Women | $93.1k | $113.6k | $138.2k |
+  | Men, payable (the central since 2026-09-28) | $73.8k | $85.4k | $113.1k |
+  | Women, payable | $87.1k | $100.3k | $127.2k |
 
-  [CALCULATION: `derived/summary.json` `part_a.part_a_pv_at_2024`]
+  The payable rows cover HI costs at the Trustees' payable shares: 89% from 2033, falling to 86% in 2049, then
+  rising to 100% in 2099. [CALCULATION: `derived/summary.json` `part_a.part_a_pv_at_2024`,
+  `part_a_pv_at_2024_payable`; SOURCE: `reads/quotes.json` `mtr_hi_payable_path`]
 - **P(qualify).** The share of each generation's lawfully present 65+ with Medicare: G1 0.893, G2 0.937,
   G3+ 0.911. [DATA: CPS ASEC 2025 MCARE]
 - **Expected covered years.** Summed covered shares by age from career start to 64: G1 32.9, G2 34.0, G3+ 34.7.
@@ -168,7 +185,9 @@ cohort's survival-weighted mix over retirement resembles the cross-sectional mix
 
 This route reweights the group's 2024 OASDI and Part A cash balance on the case's lines by age band, with no
 money's-worth ratios. The change is benefits × (factor − 1) less taxes × (factor − 1). Part A scales with Medicare
-coverage by band. [CALCULATION: `derived/steady_state.csv`, `derived/steady_state_case.csv`]
+coverage by band. [CALCULATION: `derived/steady_state.csv`, `derived/steady_state_case.csv`] Every 2024 benefit
+is paid in full, so this route prices today's benefit rules and compares with the arm `scheduled`. The accrual
+rows below are on scheduled benefits (bec1cd7).
 
 | Route | ΔOASDI 48 | ΔPart A 48 | Total 48 | Total 11 |
 |---|---:|---:|---:|---:|
@@ -717,8 +736,9 @@ Brief: [BRIEF_net_of_tax.md](BRIEF_net_of_tax.md) (41e18c6). Worker model: claud
 the item left open above ("benefits are valued before income tax on them"); its −$4.5bn to −$9bn estimate is
 superseded.
 
-**Net central: $433.46bn / $493.52bn** at specifications 48 / 11, $4.37bn / $4.26bn below the gross central. Two
-things change. The OASDI accrual loses the income tax the group will pay on the benefits its 2024 work earns, 4.41%
+**Net central: $433.46bn / $493.52bn** at specifications 48 / 11, $4.37bn / $4.26bn below the gross central. (That
+central was on scheduled benefits and is now the arm `scheduled`. On payable benefits the net central is $399.10bn /
+$460.98bn; see "Payable benefits: the central under current law".) Two things change. The OASDI accrual loses the income tax the group will pay on the benefits its 2024 work earns, 4.41%
 of their value under current law. The case also stops crediting the tax on the group's 2024 benefits, because those
 benefits leave the account. [CALCULATION: `derived/summary.json` `central_decomposition_net`]
 
@@ -866,7 +886,9 @@ With each generation's own rate the group's share is 4.63% on the central path (
 ### Step 3: every arm, net
 
 The figures are in $bn, with the two fill-in methods averaged. "Change" is each arm's net figure minus its gross
-one; Part A is as in the gross arms. [CALCULATION: `derived/case_beside.csv`]
+one; Part A is as in the gross arms. [CALCULATION: `derived/case_beside.csv`] These values are a238f19's, with the
+central on scheduled benefits. The current arms, one change from the payable central, are under "Payable benefits:
+the central under current law".
 
 Every arm below is on the central path unless it names another.
 
@@ -1021,6 +1043,152 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/pensi
   --allow-unrun infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py
 ```
 
+## Payable benefits: the central under current law
+
+The operator moved the central from scheduled to payable benefits on 2026-09-28. [DATA: `summary.json`
+`central.scenario`, `central_scenario_basis`]
+
+**The central, $bn** (the two fill-in methods averaged) [CALCULATION: `derived/summary.json` `central_decomposition`,
+`central_decomposition_net`, `scheduled_arm`]
+
+| | Spec 48 | Spec 11 |
+|---|---:|---:|
+| The case | 321.82 | 387.37 |
+| OASDI taxes credited (unchanged) | 112.94 | 106.13 |
+| OASDI accrual net of the income tax on it (0.974 per tax dollar: 1.018 gross, 4.39% taxed) | 109.97 | 103.34 |
+| 2024 Social Security benefits removed | 56.26 | 53.02 |
+| Tax on the 2024 benefits, dropped from receipts | +2.09 | +1.82 |
+| **Change, OASDI** | **+55.80** | **+52.13** |
+| HI taxes credited (unchanged) | 31.28 | 29.15 |
+| Part A accrual, payable | 41.14 | 41.14 |
+| 2024 Part A benefits removed | 19.66 | 19.66 |
+| **Change, Part A** | **+21.47** | **+21.47** |
+| **The case on accrual, current law** | **399.10** | **460.98** |
+| Scheduled benefits (arm `scheduled`) | 433.46 | 493.52 |
+
+**What is measured and what is modelled.** The 2024 flows are the case's own lines. At 48 the group paid $144.2bn
+of OASDI and HI tax and drew $75.9bn of Social Security and Part A. Cash books the $68.3bn difference as income
+($62.6bn at 11). That part of the change does not depend on the benefit level: at one dollar of claims per tax
+dollar, accrual would replace the surplus exactly. The model decides the rest. [CALCULATION]
+
+- **OASDI** earns 0.974 per tax dollar net, $3.0bn / $2.8bn below one-for-one.
+- **Part A** earns $41.1bn against $31.3bn / $29.1bn of HI tax, $9.9bn / $12.0bn above it.
+- **The receipt.** The switch drops $2.1bn / $1.8bn of receipts.
+
+At scheduled benefits the OASDI claims run $27.2bn / $25.5bn above one-for-one and Part A $14.1bn / $16.2bn above
+it. That is the extra $34.4bn / $32.5bn.
+
+**Why payable is current law.**
+
+- **The legal limit.** Once a trust fund's reserves are depleted, SSA may pay only what the fund's income covers:
+  "Under current law, the Social Security Administration cannot pay benefits in excess of the available balances in
+  a trust fund." [SOURCE: CBO, *OASI Baseline*, January 2025,
+  https://www.cbo.gov/system/files/2025-01/51308-2025-01-socialsecurity.pdf] Beneficiaries "will remain legally
+  entitled to full benefits", and "the method for reducing payments is not prescribed in current law". [SOURCE:
+  CBO, *CBO's 2024 Long-Term Projections for Social Security*, https://www.cbo.gov/publication/60679]
+- **Scheduled benefits are the budget convention.** "The rules that govern baseline construction require the
+  Congressional Budget Office to assume that scheduled payments from federal trust funds will continue to be made
+  in full even if a trust fund has been exhausted and there is no legal authority to make such payments." [SOURCE:
+  CBO, January 2025, as above; the rule is section 257(b)(1) of the Balanced Budget and Emergency Deficit Control
+  Act, per CBO 2024] The Trustees' cost and the Statement of Social Insurance use scheduled benefits too.
+- **One reading throughout.** The central already took the tax on benefits from current law (see "The 2025 tax
+  law"). Valuing the benefits at the schedule while taxing them under current law mixed two readings. The central
+  now reads current law for both.
+- **SSA publishes the payable ratios.** Note 2025.7 Table 3 pays 90.2% of scheduled benefits in 2034 and 80.7% in
+  2035, falling to 71.9% in 2099. HI pays 89% from 2033. [SOURCE: `reads/quotes.json` `note_payable_*`,
+  `mtr_hi_payable_path`]
+
+**What the cut means for benefit levels.** The cut applies to a schedule that grows with wages, not to today's
+benefits. TR 2025 Table V.C7 puts the scheduled benefit at 65 of the medium scaled worker at $25,172 for 2025 and
+$41,553 for 2065, in CPI-indexed 2025 dollars. At Note 2025.7's payable share for 2065 (76.6%) that is $31.8k,
+1.26 times today's benefit in real terms. Right after depletion (2035) it is 0.94 times today's, and it passes
+today's level around 2045 (1.05). [SOURCE: TR 2025 Table V.C7 through `sources.benefit_amounts_v_c7`; CALCULATION:
+the payable share on the lane's linear path]
+
+**The model factor on payable benefits.** Before this move the payable arm took the model factor computed on
+scheduled benefits. Each scenario now takes its factor from a model grid on the same scenario
+(`model_grid(..., payable)`). That grid is gated like the scheduled one: the factor is 1 on Note 2025.7's basis, and
+the attributions add up.
+
+- Across the factorial the payable ratios move by −0.28% to +0.53%.
+- The central moves +0.016%, +$0.02bn from the old payable arm's $399.08bn / $460.96bn.
+- Part A needed no change, because its payable runs already used the HI payable path. A Hispanic-mortality Part A
+  run on payable benefits was added, so that arm is one change from the central.
+
+[CALCULATION: a comparison with the committed outputs (a238f19), not written to `derived/`]
+
+**One change from the central, net, $bn** [CALCULATION: `derived/case_beside.csv`]
+
+| Arm | Per tax $, net | ΔOASDI, net 48 / 11 | ΔPart A | Net 48 | Net 11 |
+|---|---:|---:|---:|---:|---:|
+| **central (payable benefits)** | 0.974 | 55.8 / 52.1 | 21.5 | **399.10** | **460.98** |
+| scheduled benefits (`scheduled`; the central until 2026-09-28) | 1.241 | 85.9 / 80.5 | 25.7 | 433.46 | 493.52 |
+| trust-fund effective rates | 0.959 | 54.1 / 50.6 | 25.1 | 401.05 | 463.03 |
+| real 2.3% flat | 0.920 | 49.7 / 46.4 | 17.8 | 389.36 | 451.61 |
+| real 2% | 0.990 | 57.6 / 53.8 | 22.1 | 401.52 | 463.29 |
+| real 3% | 0.778 | 33.7 / 31.4 | 9.8 | 365.31 | 428.52 |
+| the case's rates, 2% at 48 and 3% at 11 | 0.990 / 0.778 | 57.6 / 31.4 | 22.1 / 9.8 | 401.52 | 428.52 |
+| unauthorized credited nothing | 0.962 | 54.4 / 50.8 | 20.9 | 397.11 | 459.07 |
+| unauthorized at 30% | 0.998 | 58.5 / 54.7 | 22.7 | 403.07 | 464.79 |
+| unauthorized credited in full | 1.083 | 68.2 / 63.7 | 27.0 | 416.99 | 478.13 |
+| attribution PUC | 0.906 | 48.2 / 45.0 | 21.5 | 391.48 | 453.82 |
+| attribution ABO | 1.027 | 61.8 / 57.8 | 21.5 | 405.11 | 466.63 |
+| earnings level: raw wage / AWI | 1.072 | 66.9 / 62.6 | 21.5 | 410.24 | 471.45 |
+| earnings level: generation's career mean | 1.129 | 73.4 / 68.7 | 21.5 | 416.69 | 477.50 |
+| every career from 21 | 0.953 | 53.5 / 49.9 | 21.5 | 396.77 | 458.79 |
+| Hispanic mortality | 1.066 | 66.2 / 61.9 | 26.0 | 413.99 | 475.25 |
+| benefit tax: each generation's own rate | 0.972 | 55.6 / 51.9 | 21.5 | 398.87 | 460.76 |
+| benefit tax: relative rate −1.96 SE | 0.980 | 56.5 / 52.8 | 21.5 | 399.80 | 461.64 |
+| benefit tax: relative rate +1.96 SE | 0.967 | 55.1 / 51.5 | 21.5 | 398.39 | 460.31 |
+| benefit tax: the TR 2025 path | 0.965 | 54.9 / 51.3 | 21.5 | 398.16 | 460.09 |
+| gross of the benefit tax (outside the ranges) | 1.018 | 58.8 / 55.1 | 21.5 | 402.05 | 463.90 |
+| *bridge:* national benefit-tax rate | 0.933 | 51.2 / 47.8 | 21.5 | 394.50 | 456.66 |
+| *bridge:* the tax lane's mapping | 0.968 | 55.0 / 51.4 | 21.5 | 398.26 | 460.20 |
+| *bridge:* Part A spouse credit (bec1cd7) | 0.974 | 55.8 / 52.1 | 26.8 | 404.41 | 466.29 |
+| *bridge:* r = g | 1.171 | 78.1 / 73.1 | 36.4 | 436.36 | 496.90 |
+| *bridge:* 09-18 settings | 1.133 | 73.8 / 69.0 | 31.2 | 426.76 | 487.56 |
+
+The arms `payable` and `benefit_tax_after_obbba` stay in the CSVs by name and equal the central.
+
+- **One setting at a time:** $365.31–433.46bn at 48 and $428.52–493.52bn at 11. The low end is a 3% real rate and
+  the high end is scheduled benefits.
+- **Every combination of the non-bridge settings:** $350.81–512.98bn / $414.87–568.96bn net ($352.58–519.18bn /
+  $416.68–574.94bn gross). The envelope already covered both scenarios. Only its low corner moved, with the payable
+  factor.
+
+With spouses' own work priced as two-earner couples (item 4), the payable central is $397.36bn / $459.34bn; the
+two-earner bound is $389.48bn / $451.94bn. [CALCULATION: `summary.json` `range_across_arms_net_bn`,
+`every_combination_net_bn`, `spouse_own_record_arm`]
+
+**Checks.**
+
+- **The scheduled arm reproduces the earlier centrals.** It gives a238f19's net central ($433.458300bn /
+  $493.520586bn) and 8062db1's gross central ($437.828882bn / $497.775764bn) to 1e-6, and `pension_accrual.py` stops
+  otherwise. Every column of that arm equals the earlier central's exactly, and every scheduled row of
+  `oasdi_arms.csv` and `hi_arms.csv` is unchanged. [DATA: `summary.json` `gate_net_with_no_tax`]
+- **The national check stays on the Statement of Social Insurance's scheduled basis.** Its probe of the group's
+  ratio and its Part A spouse check now compare with the arm `scheduled`, and their outputs are byte-identical. Only
+  `national_score.json` `central_mapping` moves, because it maps the declared scaling rule onto the central; the
+  rule does not apply. `derived/national_prediction.csv` keeps its frozen sha256.
+- **The steady-state cross-check prices today's benefit rules.** It therefore compares with the arm `scheduled`:
+  $111.6bn / $106.2bn against the stationary routes' $103.8–128.8bn. [CALCULATION: `derived/steady_state_case.csv`]
+
+**Limits.**
+
+- **The tax path is the Trustees' share of scheduled benefits.** The central applies it to payable benefits. Lower
+  benefits leave some beneficiaries under the fixed thresholds, so the share taxed would be somewhat lower and the
+  net accrual somewhat higher. The effect fades as the thresholds erode. [INFERENCE; unmeasured]
+- **How benefits would be cut is not in the law.** The proportional cut is SSA's and CBO's modelling convention. A
+  cut that spared low earners would put this lower-earning group nearer the scheduled value. [INFERENCE]
+- **Legislation.** The 1983 amendments, the last major rebalancing, combined tax increases with benefit cuts. They
+  advanced scheduled tax-rate increases, taxed benefits, delayed a COLA and raised the retirement age to 67.
+  [SOURCE: SSA, Summary of P.L. 98-21, https://www.ssa.gov/history/1983amend.html] A fix through taxes alone would
+  leave today's claims at the scheduled value and raise later taxes, which this year's account does not see. A mix
+  lands between the two readings. The account prices current law, not a forecast of legislation. [INFERENCE]
+
+**Reproduction.** The command under "Net of income tax on benefits", "Files and reproduction", is unchanged. Two
+consecutive reruns: 34/34 files identical, rc 0 (passes started 16:59 and 17:01 JST).
+
 ## Progress (append-only)
 
 - 2026-09-28. RESULT stubbed before any work.
@@ -1088,3 +1256,11 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/pensi
   −$4.26bn from the gross; 4.41% taxed). Every gross column is unchanged, and the no-tax gate reproduces 8062db1 to
   1e-6. Two consecutive reruns with the superseding command (passes started 13:40 and 13:41 JST): 34/34 identical,
   rc 0. The prediction file kept its frozen sha256. Nothing committed, staged or stashed.
+- 2026-09-28 17:03 JST (parent). At the operator's decision (16:40 JST, "move the lane"), the central moved to payable
+  benefits. The earlier central is the arm `scheduled`, gated to reproduce a238f19 net and 8062db1 gross to 1e-6.
+  Payable now takes its own model factor (+$0.02bn on the central). A Hispanic-mortality Part A run on payable was
+  added. `national_check.py` compares its probe and spouse check with the arm `scheduled`. New central $399.10bn /
+  $460.98bn. Changed outputs: `case_beside.csv`, `oasdi_arms.csv` (payable rows only), `hi_arms.csv` (32 rows added),
+  `oasdi_by_generation.csv` (the new arm), `summary.json`, and `national_score.json` (`central_mapping` only). The
+  prediction file kept its frozen sha256. Verdict rewritten, new section "Payable benefits: the central under current
+  law". Two consecutive reruns: 34/34 identical, rc 0.

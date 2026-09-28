@@ -37,7 +37,8 @@ half a year at the 2024 trust-fund rate.
 Score (after the freeze): the script stops unless derived/national_prediction.csv is byte-for-byte the file frozen in
 RESULT.md, then scores it against the published rows (SSA's FY 2025 AFR for OASDI, CMS's FY 2025 Financial Report
 for HI) on the declared tolerance: each ratio within 10%, each level within 15%; OASDI passes on its 15-61 row, HI
-on its 15-64 row. Probes of the 15-61 ratio route and of the group's central accrual per tax dollar: levels shrunk
+on its 15-64 row. Probes of the 15-61 ratio route and of the group's accrual per tax dollar at the central settings
+on scheduled benefits (the lane's arm `scheduled`; its central is on payable benefits since 2026-09-28): levels shrunk
 toward their cell's mean log level (the parent's convexity question), and one-earner couples priced as two-earner
 couples (no spousal benefit, a bound on auxiliaries). The level distribution of 55-61-year-old taxpayers is set
 beside Note 2025.3 Table 1. The Part A spouse check counts one-earner spouses with covered earnings of their own in
@@ -572,8 +573,9 @@ def central_grid(grid: dict, econ, prelim) -> dict:
 
 
 def group_ratio(p: pd.DataFrame, cgrid: dict, u_long: float, theta: float = 1.0, family: str = "observed") -> float:
-    """The lane's central accrual per dollar of the group's on-books OASDI tax (pension_accrual.oasdi_arms at the
-    central settings), with a probe's levels (shrunk within generation x age x sex) or family."""
+    """The lane's accrual per dollar of the group's on-books OASDI tax at the central settings on scheduled benefits
+    (pension_accrual.oasdi_arms, the arm `scheduled`: this check's basis; the lane's central is on payable benefits
+    since 2026-09-28), with a probe's levels (shrunk within generation x age x sex) or family."""
     q = p[p.union.to_numpy() & (p.tax_oasdi > 0).to_numpy()].reset_index(drop=True)
     fam = family_for(q, family)
     level = shrink(pa.career_levels(q, pa.CENTRAL["mapping"]), q, theta, ["age", "sex", "gen"])
@@ -651,7 +653,8 @@ def stock_check(cells: pd.DataFrame, pub: dict, older: dict, tob_older: float, k
 
 
 def spouse_check(p: pd.DataFrame, econ, u_long: float, u_2000: float) -> dict:
-    """Step d, on the group's Part A accrual (pa.hi_accrual at the central). In 2024: covered workers flagged as
+    """Step d, on the group's Part A accrual (pa.hi_accrual at the central settings on scheduled benefits, the arm
+    `scheduled`). In 2024: covered workers flagged as
     one-earner couples (spouse without wages) whose spouse has covered self-employment earnings, and the spouse
     credit they carry (the accrual with those spouses counted as earners, less the lane's). Over a career the own
     term alone sums to every member's Part A (pa.hi_accrual's docstring), so the whole credit is a second count.
@@ -661,7 +664,7 @@ def spouse_check(p: pd.DataFrame, econ, u_long: float, u_2000: float) -> dict:
     earns = (link >= 0) & (p.tax_hi.to_numpy()[sp] > 0) & (p.spouse_wage.to_numpy() <= 0)
     alt = p.copy()
     alt["spouse_wage"] = np.where(earns, p.se.to_numpy()[sp], p.spouse_wage.to_numpy())
-    pick = lambda h, spouse: float(pa.pick(h, {**pa.CENTRAL, "spouse": spouse}, pa.HI_KEYS).accrual_bn)
+    pick = lambda h, spouse: float(pa.pick(h, {**pa.CENTRAL, "scenario": "scheduled", "spouse": spouse}, pa.HI_KEYS).accrual_bn)
     lane = pa.hi_accrual(p, econ, u_long, u_2000)[0]
     alt_on = pick(pa.hi_accrual(alt, econ, u_long, u_2000)[0], True)
     mix = pick(pa.hi_accrual(p, econ, u_long, u_2000, own_value="sex_mix")[0], False)
@@ -780,11 +783,12 @@ def main() -> None:
     t, verdict = score(pub)
     cen = json.loads((OUT / "summary.json").read_text())
     mapping = central_mapping(t, cen)
+    sched = cen["scheduled_arm"]["decomposition"]["low"]   # the probes' comparator, on this check's scheduled basis
     pg = pa.frame()                      # the group exactly as pension_accrual.py builds it
     cgrid = central_grid(grid, econ, prelim)
     lane_ratio = group_ratio(pg, cgrid, u_long)
-    if abs(lane_ratio - cen["central_decomposition"]["low"]["accrual_per_tax_dollar"]) > 1e-12:
-        blocked(f"the probe's group ratio {lane_ratio} does not reproduce the lane's central")
+    if abs(lane_ratio - sched["accrual_per_tax_dollar"]) > 1e-12:
+        blocked(f"the probe's group ratio {lane_ratio} does not reproduce the lane's scheduled arm")
     lane_row = pred[(pred.variant == "trustees_scaled") & (pred.route == "ratio") & (pred.row == "oasdi_15_61")].iloc[0]
     r_pub = pub["oasdi_15_61"]["expenditures_tn"] / pub["oasdi_15_61"]["income_tn"]
     probes = []
@@ -802,8 +806,8 @@ def main() -> None:
     probes["group_change_vs_lane"] = probes.group_per_tax_dollar / lane_ratio - 1
     levels = level_check(p)
     spouse = spouse_check(pg, econ, u_long, q["note151_eligible_share"]["value"]["age62_in_2000"])
-    if abs(spouse["accrual_without_credit_bn"] - cen["central_decomposition"]["low"]["part_a_accrual_bn"]) > 1e-9:
-        blocked("the spouse check's accrual without the credit is not the lane's central Part A accrual")
+    if abs(spouse["accrual_without_credit_bn"] - sched["part_a_accrual_bn"]) > 1e-9:
+        blocked("the spouse check's accrual without the credit is not the lane's scheduled Part A accrual")
     gap = formula_gap(cells, pub, k["oasdi_tax"] * cost_load * v / 1e12)
     stock = stock_check(cells, pub, older, tob_older, k, cost_load, v, q)
     t.to_csv(OUT / "national_score.csv", index=False, float_format="%.6f", lineterminator="\n")

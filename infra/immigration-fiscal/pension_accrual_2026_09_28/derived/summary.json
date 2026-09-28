@@ -1,8 +1,8 @@
 {
  "benefit_tax": {
   "after_obbba": {
-   "future_share_group": 0.044084351213145,
-   "future_share_national_timing": 0.08422970101993961,
+   "future_share_group": 0.043903631885545476,
+   "future_share_national_timing": 0.08388440990158708,
    "path_factor": {
     "2025": 0.9473684210526315,
     "2026": 0.7826086956521738,
@@ -84,17 +84,17 @@
    }
   },
   "future_share_by_generation": {
-   "G1": 0.043374602797660776,
-   "G2": 0.04464152874196913,
-   "G3plus": 0.04418931330075026
+   "G1": 0.04315400175744238,
+   "G2": 0.044528160864465025,
+   "G3plus": 0.04402387563590127
   },
   "future_share_by_generation_own_rate": {
-   "G1": 0.03373961498177625,
-   "G2": 0.05564292721049475,
-   "G3plus": 0.04867649204236033
+   "G1": 0.033568017003201805,
+   "G2": 0.05550162110531115,
+   "G3plus": 0.04849425510372042
   },
-  "future_share_group": 0.044084351213145,
-  "future_share_national_timing": 0.08422970101993961,
+  "future_share_group": 0.043903631885545476,
+  "future_share_national_timing": 0.08388440990158708,
   "kappa_hi_over_oasdi": 0.7223230490018148,
   "mapping": "census_income",
   "national_income_tax_bn": 2403.242,
@@ -123,26 +123,26 @@
   "taxcalc_version": "6.8.2",
   "tr2025_path": {
    "case_on_accrual_net_bn": {
-    "high": 492.3934112404304,
-    "low": 432.25878131502435
+    "high": 460.09436347377067,
+    "low": 398.1573658678461
    },
    "change_from_gross_bn": {
-    "high": -5.382352382793158,
-    "low": -5.570100424111615
+    "high": -3.8104375005499946,
+    "low": -3.897298800535907
    },
    "future_share_by_generation": {
-    "G1": 0.05144936968516012,
-    "G2": 0.05291168272110367,
-    "G3plus": 0.052387578319993765
+    "G1": 0.05120497712241881,
+    "G2": 0.052782609161843054,
+    "G3plus": 0.0522015933372905
    },
    "future_share_by_generation_own_rate": {
-    "G1": 0.040020699032798764,
-    "G2": 0.06595116684405233,
-    "G3plus": 0.05770724523045281
+    "G1": 0.039830594445333906,
+    "G2": 0.06579028456996512,
+    "G3plus": 0.05750237450822775
    },
-   "future_share_group": 0.05226784215196512,
-   "future_share_national_timing": 0.0998654759856075,
-   "ratio_net": 1.2299558266321828
+   "future_share_group": 0.052064906016163974,
+   "future_share_national_timing": 0.09947773635523327,
+   "ratio_net": 0.9653561042178752
   },
   "trustees_check": {
    "finding": false,
@@ -160,8 +160,8 @@
   "se_oasdi_share": 0.8034959757706692
  },
  "case_on_accrual_net_bn": {
-  "high": 493.5205864826556,
-  "low": 433.45829955646883
+  "high": 460.9764594665666,
+  "low": 399.0960754796496
  },
  "central": {
   "career_start": true,
@@ -169,64 +169,65 @@
   "method": "EAN",
   "mortality": "general",
   "rate": "new_issue",
-  "scenario": "scheduled",
+  "scenario": "payable",
   "spouse": false,
   "unauthorized": "note151_long_run"
  },
  "central_decomposition": {
   "high": {
-   "accrual_per_tax_dollar": 1.297788427296778,
-   "delta_bn": 110.40570867383984,
-   "delta_oasdi_bn": 84.71530692705747,
-   "delta_part_a_bn": 25.690401746782374,
+   "accrual_per_tax_dollar": 1.0183778513366615,
+   "delta_bn": 76.53474602493692,
+   "delta_oasdi_bn": 55.06072684162075,
+   "delta_part_a_bn": 21.474019183316177,
    "hi_tax_bn": 29.14808674753598,
-   "oasdi_accrual_bn": 137.7377027300453,
+   "oasdi_accrual_bn": 108.08312264460858,
    "oasdi_tax_bn": 106.13263289529047,
-   "part_a_accrual_bn": 45.35351039395222,
+   "part_a_accrual_bn": 41.13712783048602,
    "part_a_removed_bn": 19.663108647169846,
    "ss_benefits_removed_bn": 53.02239580298783
   },
   "low": {
-   "accrual_per_tax_dollar": 1.297788427296778,
-   "delta_bn": 116.00952474874245,
-   "delta_oasdi_bn": 90.31912300196008,
-   "delta_part_a_bn": 25.690401746782374,
+   "accrual_per_tax_dollar": 1.0183778513366615,
+   "delta_bn": 80.23530767798849,
+   "delta_oasdi_bn": 58.761288494672314,
+   "delta_part_a_bn": 21.474019183316177,
    "hi_tax_bn": 31.27789059063945,
-   "oasdi_accrual_bn": 146.57781751235873,
+   "oasdi_accrual_bn": 115.01998300507097,
    "oasdi_tax_bn": 112.9443092798048,
-   "part_a_accrual_bn": 45.35351039395222,
+   "part_a_accrual_bn": 41.13712783048602,
    "part_a_removed_bn": 19.663108647169846,
    "ss_benefits_removed_bn": 56.258694510398655
   }
  },
  "central_decomposition_net": {
   "high": {
-   "accrual_per_tax_dollar_net": 1.2405762664674715,
-   "benefit_tax_on_accrual_bn": 6.072077262443078,
+   "accrual_per_tax_dollar_net": 0.9736673650311839,
+   "benefit_tax_on_accrual_bn": 4.7452416296291595,
    "benefit_tax_receipt_bn": 1.8169001218750982,
-   "case_on_accrual_net_bn": 493.5205864826556,
-   "change_from_gross_bn": -4.25517714056798,
-   "delta_net_bn": 106.15053153327185,
-   "delta_oasdi_net_bn": 80.46012978648947,
-   "future_share": 0.044084351213145,
-   "oasdi_accrual_net_bn": 131.6656254676022
+   "case_on_accrual_net_bn": 460.9764594665666,
+   "change_from_gross_bn": -2.9283415077540553,
+   "delta_net_bn": 73.60640451718287,
+   "delta_oasdi_net_bn": 52.13238533386669,
+   "future_share": 0.043903631885545476,
+   "oasdi_accrual_net_bn": 103.33788101497942
   },
   "low": {
-   "accrual_per_tax_dollar_net": 1.2405762664674715,
-   "benefit_tax_on_accrual_bn": 6.461787987271099,
+   "accrual_per_tax_dollar_net": 0.9736673650311839,
+   "benefit_tax_on_accrual_bn": 5.049794993336333,
    "benefit_tax_receipt_bn": 2.0912058046039226,
-   "case_on_accrual_net_bn": 433.45829955646883,
-   "change_from_gross_bn": -4.370582182667135,
-   "delta_net_bn": 111.63894256607527,
-   "delta_oasdi_net_bn": 85.9485408192929,
-   "future_share": 0.044084351213145,
-   "oasdi_accrual_net_bn": 140.11602952508764
+   "case_on_accrual_net_bn": 399.0960754796496,
+   "change_from_gross_bn": -2.9585891887324465,
+   "delta_net_bn": 77.27671848925608,
+   "delta_oasdi_net_bn": 55.8026993059399,
+   "future_share": 0.043903631885545476,
+   "oasdi_accrual_net_bn": 109.97018801173463
   }
  },
  "central_on_accrual_bn": {
-  "high": 497.77576362322355,
-  "low": 437.82888173913597
+  "high": 463.90480097432066,
+  "low": 402.05466466838203
  },
+ "central_scenario_basis": "payable benefits, the operator's decision of 2026-09-28: current law pays what the trust funds' income covers once their reserves are depleted (OASDI in 2034, HI in 2033; Note 2025.7 Table 3, the Medicare TR 2025 HI path); the benefit formula paid in full is the arm `scheduled`",
  "coverage_check": {
   "case_national_oasdi_bn": 1296.4612875816993,
   "group_se_oasdi_share": 0.8034959757706692,
@@ -277,25 +278,25 @@
  "every_combination_bn": {
   "high": {
    "max": 574.9354856928237,
-   "min": 416.4901927765077,
+   "min": 416.6770746995395,
    "part_a_accrual_bn": [
     28.972663828949756,
     57.14740073503452
    ],
    "per_tax_dollar": [
-    0.6862449037723225,
+    0.6880057375322485,
     1.9136765848345927
    ]
   },
   "low": {
    "max": 519.1838346269385,
-   "min": 352.3776743151259,
+   "min": 352.5765504678973,
    "part_a_accrual_bn": [
     28.972663828949756,
     57.14740073503452
    ],
    "per_tax_dollar": [
-    0.6862449037723225,
+    0.6880057375322485,
     1.9136765848345927
    ]
   }
@@ -303,17 +304,17 @@
  "every_combination_net_bn": {
   "high": {
    "max": 568.9557037711922,
-   "min": 414.6935431113027,
+   "min": 414.8716968027589,
    "per_tax_dollar_net": [
-    0.6521974134905618,
+    0.6538760083449077,
     1.8402148998578456
    ]
   },
   "low": {
    "max": 512.977961163313,
-   "min": 350.62340984714547,
+   "min": 350.8129975835302,
    "per_tax_dollar_net": [
-    0.6521974134905618,
+    0.6538760083449077,
     1.8402148998578456
    ]
   }
@@ -321,13 +322,19 @@
  "gate_net_with_no_tax": {
   "high": {
    "at_8062db1_bn": 497.775764,
-   "gross_central_bn": 497.77576362322355,
-   "net_with_no_tax_bn": 497.77576362322355
+   "at_a238f19_bn": 493.520586,
+   "gross_central_bn": 463.90480097432066,
+   "net_with_no_tax_bn": 463.90480097432066,
+   "scheduled_gross_bn": 497.77576362322355,
+   "scheduled_net_bn": 493.5205864826556
   },
   "low": {
    "at_8062db1_bn": 437.828882,
-   "gross_central_bn": 437.82888173913597,
-   "net_with_no_tax_bn": 437.82888173913597
+   "at_a238f19_bn": 433.4583,
+   "gross_central_bn": 402.05466466838203,
+   "net_with_no_tax_bn": 402.05466466838203,
+   "scheduled_gross_bn": 437.82888173913597,
+   "scheduled_net_bn": 433.45829955646883
   }
  },
  "gate_union_row": {
@@ -340,7 +347,7 @@
  },
  "gates": {
   "model": {
-   "adding_up_worst": 2.220446049250313e-16,
+   "adding_up_worst": 4.440892098500626e-16,
    "factor_one_max_gap": 2.220446049250313e-16
   },
   "quotes_verified": 42
@@ -354,10 +361,10 @@
   "v_c7_max_gap_points": 0.16441731115295966
  },
  "oasdi_per_tax_dollar_central_by_generation": {
-  "G1": 1.3220464582274438,
-  "G2": 1.2764477058123989,
-  "G3plus": 1.2972565761432733,
-  "union": 1.297788427296778
+  "G1": 1.0770717691493983,
+  "G2": 0.97298162923092,
+  "G3plus": 1.0107797586479441,
+  "union": 1.0183778513366615
  },
  "part_a": {
   "expected_covered_years": {
@@ -375,74 +382,144 @@
    "male_age_25": 78984.5103362435,
    "male_age_45": 96934.68215064539,
    "male_age_64": 122201.9610685329
+  },
+  "part_a_pv_at_2024_payable": {
+   "female_age_25": 87129.55540879737,
+   "female_age_45": 100269.12639084125,
+   "female_age_64": 127235.17613831119,
+   "male_age_25": 73770.98380029271,
+   "male_age_45": 85353.3741153145,
+   "male_age_64": 113054.74369421611
   }
  },
  "range_across_arms_bn": {
   "high": {
-   "max": 519.2250664863723,
-   "max_arm": "unauthorized_full",
-   "min": 456.6868033255638,
+   "max": 497.77576362322355,
+   "max_arm": "scheduled",
+   "min": 430.4798027335379,
    "min_arm": "rate_real_3"
   },
   "low": {
-   "max": 460.3097624415815,
-   "max_arm": "mapping_group_mean",
-   "min": 394.9252907306968,
+   "max": 437.82888173913597,
+   "max_arm": "scheduled",
+   "min": 367.2354198178826,
    "min_arm": "rate_real_3"
   }
  },
  "range_across_arms_net_bn": {
   "high": {
-   "max": 514.2982752343335,
-   "max_arm": "unauthorized_full",
-   "min": 453.6943577085001,
+   "max": 493.5205864826556,
+   "max_arm": "scheduled",
+   "min": 428.52014364226125,
    "min_arm": "rate_real_3"
   },
   "low": {
-   "max": 455.1717581447248,
-   "max_arm": "unauthorized_full",
-   "min": 391.89848318018005,
+   "max": 433.45829955646883,
+   "max_arm": "scheduled",
+   "min": 365.3076838498412,
    "min_arm": "rate_real_3"
   }
  },
- "ratio_net": 1.2405762664674715,
+ "ratio_net": 0.9736673650311839,
+ "scheduled_arm": {
+  "basis": "scheduled benefits, the formula paid in full after the reserves are depleted: the basis of CBO's baseline (by statute, BBEDCA section 257(b)(1)) and of the Statement of Social Insurance; the central until 2026-09-28 (a238f19)",
+  "case_on_accrual_bn": {
+   "high": 497.77576362322355,
+   "low": 437.82888173913597
+  },
+  "case_on_accrual_net_bn": {
+   "high": 493.5205864826556,
+   "low": 433.45829955646883
+  },
+  "decomposition": {
+   "high": {
+    "accrual_per_tax_dollar": 1.297788427296778,
+    "delta_bn": 110.40570867383984,
+    "delta_oasdi_bn": 84.71530692705747,
+    "delta_part_a_bn": 25.690401746782374,
+    "hi_tax_bn": 29.14808674753598,
+    "oasdi_accrual_bn": 137.7377027300453,
+    "oasdi_tax_bn": 106.13263289529047,
+    "part_a_accrual_bn": 45.35351039395222,
+    "part_a_removed_bn": 19.663108647169846,
+    "ss_benefits_removed_bn": 53.02239580298783
+   },
+   "low": {
+    "accrual_per_tax_dollar": 1.297788427296778,
+    "delta_bn": 116.00952474874245,
+    "delta_oasdi_bn": 90.31912300196008,
+    "delta_part_a_bn": 25.690401746782374,
+    "hi_tax_bn": 31.27789059063945,
+    "oasdi_accrual_bn": 146.57781751235873,
+    "oasdi_tax_bn": 112.9443092798048,
+    "part_a_accrual_bn": 45.35351039395222,
+    "part_a_removed_bn": 19.663108647169846,
+    "ss_benefits_removed_bn": 56.258694510398655
+   }
+  },
+  "decomposition_net": {
+   "high": {
+    "accrual_per_tax_dollar_net": 1.2405762664674715,
+    "benefit_tax_on_accrual_bn": 6.072077262443078,
+    "benefit_tax_receipt_bn": 1.8169001218750982,
+    "case_on_accrual_net_bn": 493.5205864826556,
+    "change_from_gross_bn": -4.25517714056798,
+    "delta_net_bn": 106.15053153327185,
+    "delta_oasdi_net_bn": 80.46012978648947,
+    "future_share": 0.044084351213145,
+    "oasdi_accrual_net_bn": 131.6656254676022
+   },
+   "low": {
+    "accrual_per_tax_dollar_net": 1.2405762664674715,
+    "benefit_tax_on_accrual_bn": 6.461787987271099,
+    "benefit_tax_receipt_bn": 2.0912058046039226,
+    "case_on_accrual_net_bn": 433.45829955646883,
+    "change_from_gross_bn": -4.370582182667135,
+    "delta_net_bn": 111.63894256607527,
+    "delta_oasdi_net_bn": 85.9485408192929,
+    "future_share": 0.044084351213145,
+    "oasdi_accrual_net_bn": 140.11602952508764
+   }
+  },
+  "ratio_net": 1.2405762664674715
+ },
  "spouse_own_record_arm": {
   "arms": {
    "central": {
     "case_on_accrual_bn": {
-     "high": 497.77576362322355,
-     "low": 437.82888173913597
+     "high": 463.90480097432066,
+     "low": 402.05466466838203
     },
     "case_on_accrual_net_bn": {
-     "high": 493.5205864826556,
-     "low": 433.4582995564688
+     "high": 460.9764594665666,
+     "low": 399.09607547964964
     },
-    "future_share": 0.044084351213145,
-    "per_tax_dollar": 1.297788427296778
+    "future_share": 0.04390363188554548,
+    "per_tax_dollar": 1.0183778513366615
    },
    "every_one_earner_as_two_earner": {
     "case_on_accrual_bn": {
-     "high": 485.95603529669427,
-     "low": 425.2505538931486
+     "high": 454.45750358488834,
+     "low": 392.0010322548429
     },
     "case_on_accrual_net_bn": {
-     "high": 482.21460692519196,
-     "low": 421.42669328218426
+     "high": 451.93756895098204,
+     "low": 389.47706181638097
     },
-    "future_share": 0.0441424547981152,
-    "per_tax_dollar": 1.186420905318966
+    "future_share": 0.043968149955269875,
+    "per_tax_dollar": 0.9293637834509343
    },
    "spouse_own_work_as_two_earner": {
     "case_on_accrual_bn": {
-     "high": 495.6125166265149,
-     "low": 435.52679583794173
+     "high": 462.19424806794325,
+     "low": 400.2343271225494
     },
     "case_on_accrual_net_bn": {
-     "high": 491.45207099095984,
-     "low": 431.2570251032604
+     "high": 459.34047082355914,
+     "low": 397.35508779062855
     },
-    "future_share": 0.04408902639585055,
-    "per_tax_dollar": 1.2774059404244986
+    "future_share": 0.043908663462330154,
+    "per_tax_dollar": 1.0022607263797685
    }
   },
   "one_earner_tax_share": 0.1374459581272863,

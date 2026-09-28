@@ -2,18 +2,18 @@
  "central_mapping": {
   "oasdi": {
    "change_if_scaled_bn": {
-    "high": -6.102490515005843,
-    "low": -6.494153186455808
+    "high": -4.788639694852853,
+    "low": -5.09597838073619
    },
-   "per_tax_dollar": 1.297788427296778,
-   "per_tax_dollar_if_scaled": 1.2402897075483805,
+   "per_tax_dollar": 1.0183778513366615,
+   "per_tax_dollar_if_scaled": 0.973258460964265,
    "rule_applies": false,
    "scale": 0.9556948432124919
   },
   "part_a": {
-   "accrual_bn": 45.35351039395222,
-   "accrual_if_scaled_bn": 48.32917935005898,
-   "change_if_scaled_bn": 2.9756689561067606,
+   "accrual_bn": 41.13712783048602,
+   "accrual_if_scaled_bn": 43.836157589489986,
+   "change_if_scaled_bn": 2.699029759003966,
    "rule_applies": false,
    "scale": 1.065610554293578
   }
