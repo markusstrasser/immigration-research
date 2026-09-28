@@ -1,0 +1,240 @@
+{
+ "population": {
+  "union": 40896574.2,
+  "all": 336727803.0,
+  "pop_share": 0.12145291786315608
+ },
+ "reproduced_full_adjustment_cash": {
+  "proxy": "PEARNVAL",
+  "split": "hs_or_less",
+  "normalization": "cash",
+  "labor_share": 0.65,
+  "sigma": 2.0,
+  "who": "union",
+  "capital_adjustment": 1.0,
+  "efficiency_share": 0.08352856745878412,
+  "gross_bn": 8.790627696467991,
+  "P_bn": -0.15566955604533483,
+  "F_bn": 8.946297252513343,
+  "PF_bn": 8.790627696468007,
+  "capital_gain_bn": 0.0,
+  "labor_gain_low_bn": -123.84499651947567,
+  "labor_gain_high_bn": 132.63562421594366,
+  "increment_PF_over_full_bn": 0.0
+ },
+ "reproduced_full_adjustment_gdp": {
+  "proxy": "PEARNVAL",
+  "split": "hs_or_less",
+  "normalization": "gdp",
+  "labor_share": 0.65,
+  "sigma": 2.0,
+  "who": "union",
+  "capital_adjustment": 1.0,
+  "efficiency_share": 0.08352856745878412,
+  "gross_bn": 13.322597919260563,
+  "P_bn": -0.2359243247549979,
+  "F_bn": 13.558522244015586,
+  "PF_bn": 13.322597919260588,
+  "capital_gain_bn": 0.0,
+  "labor_gain_low_bn": -187.69275072406157,
+  "labor_gain_high_bn": 201.0153486433221,
+  "increment_PF_over_full_bn": 0.0
+ },
+ "union_adj0.0": {
+  "min_bn": 13.83735504406562,
+  "max_bn": 26.12473911394507,
+  "ref_cash": {
+   "proxy": "PEARNVAL",
+   "split": "hs_or_less",
+   "normalization": "cash",
+   "labor_share": 0.65,
+   "sigma": 2.0,
+   "who": "union",
+   "capital_adjustment": 0.0,
+   "efficiency_share": 0.08352856745878412,
+   "gross_bn": 25.013310077457813,
+   "P_bn": 73.77223618521205,
+   "F_bn": -48.758926107754235,
+   "PF_bn": 25.013310077457813,
+   "capital_gain_bn": 376.10916763345494,
+   "labor_gain_low_bn": -197.26318983977657,
+   "labor_gain_high_bn": -153.83266771622056,
+   "increment_PF_over_full_bn": 16.222682380989806
+  },
+  "ref_gdp": {
+   "proxy": "PEARNVAL",
+   "split": "hs_or_less",
+   "normalization": "gdp",
+   "labor_share": 0.65,
+   "sigma": 2.0,
+   "who": "union",
+   "capital_adjustment": 0.0,
+   "efficiency_share": 0.08352856745878412,
+   "gross_bn": 37.90881428474704,
+   "P_bn": 111.80519460461302,
+   "F_bn": -73.89638031986598,
+   "PF_bn": 37.90881428474704,
+   "capital_gain_bn": 570.0106280398579,
+   "labor_gain_low_bn": -298.96137719062347,
+   "labor_gain_high_bn": -233.14043656448737,
+   "increment_PF_over_full_bn": 24.58621636548645
+  }
+ },
+ "union_adj0.5": {
+  "min_bn": 3.393695845623025,
+  "max_bn": 6.397286359955771,
+  "ref_cash": {
+   "proxy": "PEARNVAL",
+   "split": "hs_or_less",
+   "normalization": "cash",
+   "labor_share": 0.65,
+   "sigma": 2.0,
+   "who": "union",
+   "capital_adjustment": 0.5,
+   "efficiency_share": 0.08352856745878412,
+   "gross_bn": 12.766300156433656,
+   "P_bn": 33.45249652169033,
+   "F_bn": -20.686196365256684,
+   "PF_bn": 12.766300156433648,
+   "capital_gain_bn": 182.53356819420554,
+   "labor_gain_low_bn": -160.27147721570446,
+   "labor_gain_high_bn": -9.495790822067418,
+   "increment_PF_over_full_bn": 3.97567245996564
+  },
+  "ref_gdp": {
+   "proxy": "PEARNVAL",
+   "split": "hs_or_less",
+   "normalization": "gdp",
+   "labor_share": 0.65,
+   "sigma": 2.0,
+   "who": "union",
+   "capital_adjustment": 0.5,
+   "efficiency_share": 0.08352856745878412,
+   "gross_bn": 19.34791118148432,
+   "P_bn": 50.6987869288346,
+   "F_bn": -31.35087574735029,
+   "PF_bn": 19.34791118148431,
+   "capital_gain_bn": 276.6379625878612,
+   "labor_gain_low_bn": -242.89874655124814,
+   "labor_gain_high_bn": -14.391304855128734,
+   "increment_PF_over_full_bn": 6.025313262223722
+  }
+ },
+ "average_residents_adj0.0": {
+  "min_bn": 29.37727625292456,
+  "max_bn": 55.03327633968472,
+  "ref_cash": {
+   "proxy": "PEARNVAL",
+   "split": "hs_or_less",
+   "normalization": "cash",
+   "labor_share": 0.65,
+   "sigma": 2.0,
+   "who": "average_residents",
+   "capital_adjustment": 0.0,
+   "efficiency_share": 0.12145291786315608,
+   "gross_bn": 34.34724446733896,
+   "P_bn": 113.39552510467765,
+   "F_bn": -79.04828063733869,
+   "PF_bn": 34.347244467338946,
+   "capital_gain_bn": 546.1654623484746,
+   "labor_gain_low_bn": -110.22801053096056,
+   "labor_gain_high_bn": -401.59020735017515,
+   "increment_PF_over_full_bn": 34.347244467338946
+  },
+  "ref_gdp": {
+   "proxy": "PEARNVAL",
+   "split": "hs_or_less",
+   "normalization": "gdp",
+   "labor_share": 0.65,
+   "sigma": 2.0,
+   "who": "average_residents",
+   "capital_adjustment": 0.0,
+   "efficiency_share": 0.12145291786315608,
+   "gross_bn": 52.05481832164977,
+   "P_bn": 171.8560993568223,
+   "F_bn": -119.80128103517258,
+   "PF_bn": 52.05481832164975,
+   "capital_gain_bn": 827.7387125812816,
+   "labor_gain_low_bn": -167.05558629607853,
+   "labor_gain_high_bn": -608.6283079635532,
+   "increment_PF_over_full_bn": 52.05481832164975
+  }
+ },
+ "average_residents_adj0.5": {
+  "min_bn": 7.139158214040102,
+  "max_bn": 13.345300934190137,
+  "ref_cash": {
+   "proxy": "PEARNVAL",
+   "split": "hs_or_less",
+   "normalization": "cash",
+   "labor_share": 0.65,
+   "sigma": 2.0,
+   "who": "average_residents",
+   "capital_adjustment": 0.5,
+   "efficiency_share": 0.12145291786315608,
+   "gross_bn": 8.337992887922104,
+   "P_bn": 49.5400445003244,
+   "F_bn": -41.20205161240229,
+   "PF_bn": 8.337992887922104,
+   "capital_gain_bn": 261.3477742351151,
+   "labor_gain_low_bn": -54.489589991990606,
+   "labor_gain_high_bn": -198.5201913552024,
+   "increment_PF_over_full_bn": 8.337992887922104
+  },
+  "ref_gdp": {
+   "proxy": "PEARNVAL",
+   "split": "hs_or_less",
+   "normalization": "gdp",
+   "labor_share": 0.65,
+   "sigma": 2.0,
+   "who": "average_residents",
+   "capital_adjustment": 0.5,
+   "efficiency_share": 0.12145291786315608,
+   "gross_bn": 12.636609185948462,
+   "P_bn": 75.08020093323728,
+   "F_bn": -62.443591747288814,
+   "PF_bn": 12.636609185948462,
+   "capital_gain_bn": 396.0844928772376,
+   "labor_gain_low_bn": -82.58146327142641,
+   "labor_gain_high_bn": -300.8664204198627,
+   "increment_PF_over_full_bn": 12.636609185948462
+  }
+ },
+ "nas_homogeneous": {
+  "efficiency_share": 0.08352856745878412,
+  "pop_share": 0.12145291786315608,
+  "rows": {
+   "s0.6_cash": {
+    "union": 17.534054797244487,
+    "average": 37.07047912394909,
+    "wage_bill_transfer": 384.7656150984765
+   },
+   "s0.6_gdp": {
+    "union": 24.529533396136127,
+    "average": 51.860312186578675,
+    "wage_bill_transfer": 538.2737258655175
+   },
+   "s0.65_cash": {
+    "union": 15.34229794758892,
+    "average": 32.436669233455454,
+    "wage_bill_transfer": 336.66991321116694
+   },
+   "s0.65_gdp": {
+    "union": 23.251953531754037,
+    "average": 49.159254260194366,
+    "wage_bill_transfer": 510.2386359766885
+   },
+   "s0.7_cash": {
+    "union": 13.150541097933363,
+    "average": 27.802859342961824,
+    "wage_bill_transfer": 288.57421132385736
+   },
+   "s0.7_gdp": {
+    "union": 21.463341721619113,
+    "average": 45.37777316325635,
+    "wage_bill_transfer": 470.9895101323278
+   }
+  },
+  "nas_check_16_5pct_17_5tn": 54.194765625
+ }
+}
