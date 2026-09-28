@@ -348,6 +348,47 @@ uv run --no-project python3 scripts/rerun_lane.py $L --allow-unrun package.cjs \
 
 `package.cjs` is a module that the other scripts load, hence `--allow-unrun`.
 
+## After the cross-lab review (parent, 2026-09-28)
+
+GPT-6 Astra (xhigh) reviewed these items as a packet. It put items 1, 2 and 4 in, item 5 out as formulated, and the
+rest beside. The parent checked every finding against the lanes and primary sources; a verification agent checked
+items 3, 6 and 7 and the back-tests. The operator decides. The revised recommendation:
+
+| Item | Before | Now | Change at 48 / 11 | Reason |
+|---|---|---|---:|---|
+| 1, 2, 4 | in | in | −1.69 / −1.69; +1.64 / +1.11; −0.35 / −0.53 | unchanged |
+| 3 | in | in, relabeled | −3.20 / −3.10 | Calibrated to IRS totals by AGI bin; the group's share inside each bin stays the CPS's, as in the current key. "Measured on tax records" overstated it. The $500k+ pooled reading gives the same +$3.10bn (SE 0.5) and leans less on the 15 group records from $1M. |
+| 5 | in | in, framing-sensitive | −27.19 | The structures' tax, about four-fifths, is lost in every long-run reading with full capital adjustment. The land part turns on framing: a consolidated fiscal reading gives r = 1 (−35.91 in all). See `receipt_side_long_run_2026_09_28`, "Corrections after the cross-lab review". |
+| 6a | in, within-group rule | in, proportional rule | +0.39 / +0.53 | The within-group rule rests on CBO's shares carrying measured compliance. CBO computes payroll taxes from income and takes nonfilers' income from the CPS (CBO 60341, App. A), so they do not. |
+| 6b | in | out | 0 | the same |
+| 7 | in, three lines | in, workers' compensation only | −0.95 / −0.73 | The "z down to −4.8" was a ratio-scale statistic taken at the low ratio. On the difference scale the extremes are −2.6 / −2.1, and the six years fit one mean, so pooling stands. Temporary disability and black lung are ASEC disability or survivor income (DIS_SC1 codes 9 and 8), not WC_VAL; re-keying them is open. |
+| 8, 10 | beside | beside | | unchanged |
+
+Items 1–5, 6a under the proportional rule and 7 for workers' compensation only come to **about $290.5bn / $355.8bn**
+at 48 / 11. That is the sum of each item alone on the September 27 case, not yet run as a set; apart from items 3 and 6
+(−0.004), the items add to within $0.01bn. [CALCULATION: `derived/fixed_specs.csv`, item rows; the split of item 7
+from `backcast_pandemic_measured_2026_09_28` (52.75% of the three nationals is temporary disability and black lung)]
+
+**The pension switch after the review** (`pension_accrual_2026_09_28` at a238f19; this package still pins
+c9d0077 until the adoption re-pin):
+- The lane now nets the income tax the group will pay on the benefits it accrues. Under current law (the 2025 tax
+  law, per SSA's Chief Actuary) the central is $433.46bn / $493.52bn on the September 27 case, +$111.64bn / +$106.15bn.
+  Gross it was +$116.01bn / +$110.41bn.
+- The switch must read `ratio_net` (1.241), not the gross `central_decomposition.low.accrual_per_tax_dollar` this
+  package reads, and drop `benefit_tax.current_receipt_bn` ($2.09bn / $1.82bn) from the federal income tax line.
+  The adoption re-pin does both. The stale comment at `main_case.cjs` line 20 (bec1cd7's +121.9 / +116.3) goes with
+  it.
+- The revised set with the switch comes to **about $402bn / $462bn**. The sum is approximate: 6a's self-employment
+  item moves accrual with the SE tax, about −$0.3–0.4bn with the switch on.
+- The switch prices every change in the group's OASDI receipts at the group's average ratio. The pension lane
+  credits unauthorized workers' on-books taxes at 10%, so an item that moves only their receipts is overpriced
+  there. It was 6b's +$0.74bn interaction, which leaves with 6b.
+
+**Existing-case items found on the way** (not in any set):
+- The federal transit operating-subsidy crossing understates the cost. If BEA books federal transit operating aid
+  as subsidies (unverified), it is about +$0.5–1.2bn; at most +$2.89bn (v2's bound).
+- Temporary disability and black lung are keyed on WC_VAL.
+
 ## Log (append-only)
 
 - 2026-09-28 09:12 JST: stub written after reading `BRIEF.md` (0a83245). Candidate `sept28_candidate_v3` on candidate
@@ -391,3 +432,7 @@ uv run --no-project python3 scripts/rerun_lane.py $L --allow-unrun package.cjs \
   `sign_reversal.cjs` (16); every gate passes. The switch-on figures, item 10 and the gate counts above were updated
   in place. The candidate with the switch on is $404.46–464.39bn, against $410.38–470.32bn at bec1cd7.
 - 2026-09-28 11:17 JST (parent): two `rerun_lane.py` passes with the command above, now including `uninsured_use_slope.py`: IDENTICAL 23/23, rc 0, both.
+- 2026-09-28 13:48 JST (parent): section "After the cross-lab review (parent, 2026-09-28)" added: revised recommendation (items 1–5,
+  6a under the proportional rule, 6b out, item 7 on workers' compensation only; about $290.5 / $355.8bn cash, about $402 /
+  $462bn with the net accrual), what the adoption re-pin must change, and two existing-case items. Text only; no
+  script or output changed.
