@@ -49,7 +49,9 @@ Later still (decision 2026-09-28-social-items-scale-benefits) the matching benef
 negative costs: the scale lane's joint earnings effect (CZ 1990: bigger cities net of the group's schooling mix;
 its normalized figure is the schooling-mix part, which remains against average residents) and restaurant market
 size (disease_food_2026_09_28). Section 7b keeps only the cost items in its social rows, because its last column
-adds the scale net itself.
+adds the scale net itself. Three more benefits join the same way (decision 2026-09-28-social-items-more-benefits):
+formal volunteering for people outside the group, consumer-side scale (network fixed costs, grocery variety and mix,
+cross-group media) and trade, travel and FDI ties with Mexico.
 
 Inputs: DIR/band_variants.csv (node band_variants.cjs --case CASE: engine bands on the September 23 case,
 September 24 and the case) and the channel lanes' derived files (PATHS). Reads only; writes
@@ -105,7 +107,14 @@ SOCIAL_ITEMS = dict(sept27=(
     (PATHS["scale"], ("scale_net_earnings",), "decisions/2026-09-28-social-items-scale-benefits.md", "benefit"),
     (FISCAL / "disease_food_2026_09_28/derived/items.csv", ("restaurant_variety_market_size",),
      "decisions/2026-09-28-social-items-scale-benefits.md", "benefit"),
+    (FISCAL / "benefits_inventory_2026_09_28/derived/items.csv", ("formal_volunteering_outside_group",),
+     "decisions/2026-09-28-social-items-more-benefits.md", "benefit"),
+    (FISCAL / "consumer_scale_2026_09_28/derived/items.csv", ("total_consumer_scale",),
+     "decisions/2026-09-28-social-items-more-benefits.md", "benefit"),
+    (FISCAL / "trade_networks_2026_09_28/derived/items.csv", ("total_trade_travel_fdi",),
+     "decisions/2026-09-28-social-items-more-benefits.md", "benefit"),
 ))
+UNION = ("mexican_origin", "union")  # the lanes' labels for the same 40.9m group
 # Runs of band_variants.cjs beside a case, never in its band (the case's column; the row label, its note).
 BESIDE = dict(capital_at_7pct=("capital_at_7pct", "the return on public capital at the reported 7% on every component; "
                                "beside the central total, never in it"),
@@ -212,18 +221,22 @@ def social_items(sources):
     detail = []
     for path, ids, decision, kind in sources:
         frame = scale_rows(path) if path == PATHS["scale"] else pd.read_csv(path)
-        union = frame[(frame.group == "mexican_origin") & frame["item"].isin(ids)]
+        union = frame[frame.group.isin(UNION) & frame["item"].isin(ids)]
         measure = union["measure"] if "measure" in union.columns else pd.Series("absolute", index=union.index)
         absolute, normalized = union[measure == "absolute"], union[measure == "normalized"]
         gate(f"social items: one absolute row per added item for the union ({rel(path)})",
              sorted(absolute["item"]) == sorted(ids), f"{len(absolute)} rows")
         for r in absolute.itertuples():
             n = normalized[normalized["item"] == r.item]
+            # Lanes label their arms low/high by evidence, not always by cost (trade: low = the small gain); the
+            # stacked span needs the least and most costly values, so order them and require the central inside.
+            lo, hi = sorted((float(r.low_bn), float(r.high_bn)))
+            gate(f"social items: {r.item} central inside its range", lo <= float(r.central_bn) <= hi)
+            nlo, nhi = (None, None) if n.empty else sorted((float(n.low_bn.iloc[0]), float(n.high_bn.iloc[0])))
             detail.append(dict(item=r.item, kind=kind, source=rel(path), decision=decision, central_bn=float(r.central_bn),
-                               low_bn=float(r.low_bn), high_bn=float(r.high_bn),
+                               low_bn=lo, high_bn=hi,
                                normalized_bn=None if n.empty else dict(
-                                   central=float(n.central_bn.iloc[0]), low=float(n.low_bn.iloc[0]),
-                                   high=float(n.high_bn.iloc[0]))))
+                                   central=float(n.central_bn.iloc[0]), low=nlo, high=nhi)))
     gate("social items: no item added twice", len({d["item"] for d in detail}) == len(detail))
     gate("social items: every benefit is a gain at its central", all(d["central_bn"] < 0 for d in detail if d["kind"] == "benefit"))
     sums = lambda ds: tuple(sum(d[k] for d in ds) for k in ("central_bn", "low_bn", "high_bn"))  # noqa: E731

@@ -51,7 +51,10 @@
   "social_costs_unpriced_2026_09_28/derived/items.csv": "c8ff8aa3f9fdecb63460cf4f5e2f44d2e7aaab40f555abedf402acdba62c64a0",
   "air_pollution_2026_09_28/derived/items.csv": "738fbc088877d59210078f2b43bdc0d0839e5b2392bedee564edb947e6f30c03",
   "road_crash_externality_2026_09_28/derived/items.csv": "e88307e91781052969f38d054c6a188128d01263fc34bc8579ed9944ea1d9324",
-  "disease_food_2026_09_28/derived/items.csv": "aa7091880821cb99c2b13be57515502999953940a6cfc70aab02fa33d8e808df"
+  "disease_food_2026_09_28/derived/items.csv": "aa7091880821cb99c2b13be57515502999953940a6cfc70aab02fa33d8e808df",
+  "benefits_inventory_2026_09_28/derived/items.csv": "dc77797f9d01ffb4dd8023b95f6cf5f47d8e1ed88fd6e62c52ef8cbe469b62fc",
+  "consumer_scale_2026_09_28/derived/items.csv": "6865f708c2c9d1b824f72e4db0aba1067719dded0c07fa6869bcaa487bdf1a08",
+  "trade_networks_2026_09_28/derived/items.csv": "63ca23c4ca47ef47a694abd09b6cb64e2b566f09bacdb905b260d05bd628ade3"
  },
  "congestion_by_band_end_bn": {
   "case": "sept27",
@@ -78,9 +81,9 @@
  },
  "social_items_in_the_social_rows": {
   "case": "sept27",
-  "central_bn": 99.24033323578139,
-  "stacked_low_bn": -57.74251342030222,
-  "stacked_high_bn": 281.388779891865,
+  "central_bn": 84.0741332357814,
+  "stacked_low_bn": -101.28451342030222,
+  "stacked_high_bn": 281.800679891865,
   "cost_items_bn": {
    "central": 119.9608,
    "stacked_low": 45.8979,
@@ -171,6 +174,48 @@
      "central": 1.1999,
      "low": 0.1897,
      "high": 3.3944
+    }
+   },
+   {
+    "item": "formal_volunteering_outside_group",
+    "kind": "benefit",
+    "source": "benefits_inventory_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-more-benefits.md",
+    "central_bn": -6.2105,
+    "low_bn": -7.9043,
+    "high_bn": -4.5167,
+    "normalized_bn": {
+     "central": 4.1893,
+     "low": 3.0468,
+     "high": 5.3319
+    }
+   },
+   {
+    "item": "total_consumer_scale",
+    "kind": "benefit",
+    "source": "consumer_scale_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-more-benefits.md",
+    "central_bn": -2.1869,
+    "low_bn": -11.8885,
+    "high_bn": 6.0644,
+    "normalized_bn": {
+     "central": 2.5207,
+     "low": -3.6564,
+     "high": 9.9998
+    }
+   },
+   {
+    "item": "total_trade_travel_fdi",
+    "kind": "benefit",
+    "source": "trade_networks_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-more-benefits.md",
+    "central_bn": -6.7688,
+    "low_bn": -23.7492,
+    "high_bn": -1.1358,
+    "normalized_bn": {
+     "central": 0.7837,
+     "low": 0.2511,
+     "high": 2.7283
     }
    }
   ],
