@@ -1,0 +1,79 @@
+{
+ "23in55cmcsv.csv": {
+  "bytes": 757078,
+  "retrieved": "2026-09-28",
+  "route": "curl, generic user agent",
+  "sha256": "d1f7c8901fcefb2c46f5dd14f22715b7c8513794ce7b9ea6a6a947f1c548668f",
+  "url": "https://www.irs.gov/pub/irs-soi/23in55cmcsv.csv"
+ },
+ "soi_23incmdocguide.doc": {
+  "bytes": 220672,
+  "retrieved": "2026-09-28",
+  "route": "curl, generic user agent",
+  "sha256": "942790690b0027b465019ec5d3f5d8f23124882ab85535f06129f74c12021206",
+  "url": "https://www.irs.gov/pub/irs-soi/23incmdocguide.doc"
+ },
+ "ssa_oasdi_sc24.xlsx": {
+  "bytes": 1941657,
+  "retrieved": "2026-09-28",
+  "route": "browser download (SSA refuses scripted requests)",
+  "sha256": "49ad1876159a89af41655dec8bb066e28ae1687f07e457b7cb549fa5f47b8822",
+  "url": "https://www.ssa.gov/policy/docs/statcomps/oasdi_sc/2024/oasdi_sc24.xlsx"
+ },
+ "ssa_ssi_asr24.xlsx": {
+  "bytes": 687310,
+  "retrieved": "2026-09-28",
+  "route": "browser download (SSA refuses scripted requests)",
+  "sha256": "e7a977a33cabbda27af8da83767f8fbf982066891381caeab2e1ae984db11d1c",
+  "url": "https://www.ssa.gov/policy/docs/statcomps/ssi_asr/2024/ssi_asr24.xlsx"
+ },
+ "ssa_supplement2025_7b.xlsx": {
+  "bytes": 52436,
+  "retrieved": "2026-09-28",
+  "route": "browser download (SSA refuses scripted requests)",
+  "sha256": "6363d2efb1e9f76a672ef380ad41e6a2426ebe63c86a31d5dd78534a3aa31bd6",
+  "url": "https://www.ssa.gov/policy/docs/statcomps/supplement/2025/7b.xlsx"
+ },
+ "wonder_2024_payer_mexico_born.tsv": {
+  "bytes": 1152,
+  "retrieved": "2026-09-28",
+  "route": "WONDER web form export; see the query block at the file's end",
+  "sha256": "f1dd4073158e5e80d343a78a5676486fd79fb3839a4f6d930b22094cd1399bca",
+  "url": "https://wonder.cdc.gov/controller/datarequest/D149"
+ },
+ "wonder_2024_payer_x_origin.tsv": {
+  "bytes": 4138,
+  "retrieved": "2026-09-28",
+  "route": "WONDER web form export; see the query block at the file's end",
+  "sha256": "637738ed0d8a90a12fac60a77811f4aa86179b52ab1590602c90d21f94809bc2",
+  "url": "https://wonder.cdc.gov/controller/datarequest/D149"
+ },
+ "wonder_2024_state_all.tsv": {
+  "bytes": 2163,
+  "retrieved": "2026-09-28",
+  "route": "WONDER web form export; see the query block at the file's end",
+  "sha256": "8fa47f99b27d2f69489807a6913c09530a332e6c691febf2d2bb021f560bc285",
+  "url": "https://wonder.cdc.gov/controller/datarequest/D149"
+ },
+ "wonder_2024_state_x_mexico_born.tsv": {
+  "bytes": 2118,
+  "retrieved": "2026-09-28",
+  "route": "WONDER web form export; see the query block at the file's end",
+  "sha256": "a2825b0623ee427e518bd405a29bac5a25f5904ae3c9bd6054ce67b88492737f",
+  "url": "https://wonder.cdc.gov/controller/datarequest/D149"
+ },
+ "wonder_2024_state_x_origin.tsv": {
+  "bytes": 24668,
+  "retrieved": "2026-09-28",
+  "route": "WONDER web form export; see the query block at the file's end",
+  "sha256": "d9bc8953c1129bc3510757fe5212fb28b1bdb6b8748a8be35d5c99c9b70dccb0",
+  "url": "https://wonder.cdc.gov/controller/datarequest/D149"
+ },
+ "wonder_natality_expanded_help.html": {
+  "bytes": 429075,
+  "retrieved": "2026-09-28",
+  "route": "curl, generic user agent (definitions only)",
+  "sha256": "612de6c5785dbebbac8606b6d7133c73b943d8ebae1ffb6084b0abd389acd025",
+  "url": "https://wonder.cdc.gov/wonder/help/natality-expanded.html"
+ }
+}
