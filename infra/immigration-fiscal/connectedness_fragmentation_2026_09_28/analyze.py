@@ -1,4 +1,4 @@
-"""Connectedness and fragmentation: Social Capital Atlas measures on Hispanic / Mexican-origin share,
+"""Connectedness and named population components: Social Capital Atlas measures on Hispanic / Mexican-origin share,
 the exposure vs friending-bias decomposition, and the connectedness -> outcome bridge with a
 scale (log population) interaction. Cross-sectional OLS, state FE, CR1 SEs clustered by state.
 
@@ -19,7 +19,8 @@ BEA = LANE.parent / "causal_evidence_2026_09_20/raw/county_outcomes/raw/bea_cain
 INPUTS = [C / "sca/social_capital_county.csv", C / "sca/social_capital_zip.csv", C / "sca/readme.pdf",
           C / "acs/acs5_2018_county.json", C / "acs/acs5_2018_zcta.json",
           C / "gaz/2020_Gaz_counties_national.txt", C / "gaz/2020_Gaz_zcta_national.txt",
-          C / "oa/county_outcomes_simple.csv", BEA]
+          C / "oa/county_outcomes_simple.csv", BEA,
+          C / "acs/comp_county.json", C / "acs/comp_zcta.json", C / "acs/manifest_components.json"]
 CONTROLS = ["ln_medinc", "pov", "ba_sh", "ln_dens", "black_sh"]
 
 
@@ -137,6 +138,7 @@ def shares(df):
     df["white_sh"] = df.nh_white / p
     df["fb_sh"] = df.foreign_born / p
     oth = (1 - df.white_sh - df.black_sh - df.hisp_sh).clip(lower=0)
+    # literature-comparison only: the four-group Herfindahl complement the cited papers use
     df["frac"] = 1 - (df.white_sh ** 2 + df.black_sh ** 2 + df.hisp_sh ** 2 + oth ** 2)
     df["ba_sh"] = (df.ed_ba + df.ed_ma + df.ed_prof + df.ed_phd) / df.ed_universe
     df["pov"] = df.pov_below / df.pov_universe
@@ -144,6 +146,53 @@ def shares(df):
     df["ln_pop"] = np.log(p)
     df["ln_dens"] = np.log(p / df.aland_sqmi)
     return df
+
+
+def components(name, key):
+    """Named components: Asian share, limited-English households, Hispanic adults' schooling."""
+    raw = json.loads((C / f"acs/{name}.json").read_text())
+    df = pd.DataFrame(raw[1:], columns=raw[0])
+    vars_ = json.loads((C / "acs/manifest_components.json").read_text())[name]["variables"]
+    for k, v in vars_.items():
+        x = pd.to_numeric(df[k], errors="coerce")
+        df[v] = x.where(x >= 0)
+    if key == "fips":
+        df["fips"] = df.state + df.county
+    else:
+        df = df.rename(columns={"zip code tabulation area": "zcta"})
+    df["lep_sh"] = (df.hh_lep_spanish + df.hh_lep_indoeuro + df.hh_lep_asian + df.hh_lep_other) / df.hh_total
+    df["lep_spanish_sh"] = df.hh_lep_spanish / df.hh_total
+    df["hisp_ba_sh"] = (df.hisp_ad_ba_m + df.hisp_ad_ba_f) / df.hisp_ad_universe
+    return df[[key, "nh_asian", "lep_sh", "lep_spanish_sh", "hisp_ba_sh", "hisp_ad_universe"]]
+
+
+def segregation():
+    """County Hispanic / NH-white residential segregation from ACS tracts: dissimilarity
+    D = 0.5 * sum|h_i/H - w_i/W|, NH-white exposure to Hispanics sum (w_i/W)(h_i/t_i), Hispanic isolation
+    sum (h_i/H)(h_i/t_i). Defined for counties with >= 2 populated tracts and H, W > 0."""
+    man = json.loads((C / "acs/manifest_components.json").read_text())
+    frames = []
+    for name in sorted(k for k in man if k.startswith("tract/")):
+        raw = json.loads((C / f"acs/{name}.json").read_text())
+        frames.append(pd.DataFrame(raw[1:], columns=raw[0]))
+    t = pd.concat(frames, ignore_index=True)
+    for k, v in man["tract/tract_01"]["variables"].items():
+        t[v] = pd.to_numeric(t[k], errors="coerce").clip(lower=0)
+    t = t[t["pop"] > 0].copy()
+    t["fips"] = t.state + t.county
+    g = t.groupby("fips")
+    H, W, N = g.hisp.transform("sum"), g.nh_white.transform("sum"), g["pop"].transform("size")
+    t["d_term"] = (t.hisp / H - t.nh_white / W).abs()
+    t["wexp"] = (t.nh_white / W) * (t.hisp / t["pop"])
+    t["hiso"] = (t.hisp / H) * (t.hisp / t["pop"])
+    s = t.groupby("fips").agg(n_tracts=("pop", "size"), seg_hisp_n=("hisp", "sum"), d=("d_term", "sum"),
+                              wexp=("wexp", "sum"), hiso=("hiso", "sum"), W=("nh_white", "sum"))
+    ok = (s.n_tracts >= 2) & (s.seg_hisp_n > 0) & (s.W > 0)
+    s["seg_d_hisp_white"] = (0.5 * s.d).where(ok)
+    s["seg_white_exposure_hisp"] = s.wexp.where(ok)
+    s["seg_hisp_isolation"] = s.hiso.where(ok)
+    return s.reset_index()[["fips", "n_tracts", "seg_hisp_n", "seg_d_hisp_white", "seg_white_exposure_hisp",
+                            "seg_hisp_isolation"]]
 
 
 def gaz(fname, key):
@@ -170,7 +219,9 @@ def build_county():
     s["fips"] = s.county.str.zfill(5)
     a = acs("county"); a["fips"] = a.state + a.county
     a = a.drop(columns=["state", "county"]).merge(gaz("2020_Gaz_counties_national.txt", "fips"), on="fips", how="left")
-    a = shares(a)
+    a = shares(a).merge(components("comp_county", "fips"), on="fips", how="left").merge(segregation(), on="fips",
+                                                                                         how="left")
+    a["asian_sh"] = a.nh_asian / a["pop"]
     oa = pd.read_csv(C / "oa/county_outcomes_simple.csv")
     oa["fips"] = (oa.state * 1000 + oa.county).astype(int).astype(str).str.zfill(5)
     oa = oa[["fips", "kfr_pooled_pooled_p25", "kfr_white_pooled_p25", "kfr_hisp_pooled_p25"]]
@@ -186,7 +237,8 @@ def build_zip():
     s["cty"] = s.county.str.zfill(5)
     a = acs("zcta").rename(columns={"zip code tabulation area": "zcta"}).drop(columns=["state"])
     a = a.merge(gaz("2020_Gaz_zcta_national.txt", "zcta"), on="zcta", how="left")
-    a = shares(a)
+    a = shares(a).merge(components("comp_zcta", "zcta"), on="zcta", how="left")
+    a["asian_sh"] = a.nh_asian / a["pop"]
     d = s.merge(a, on="zcta", how="left")
     d["state"] = d.cty.str[:2]
     return d
@@ -200,15 +252,27 @@ COUNTY_Y = ["ec_county", "child_ec_county", "ec_grp_mem_county", "exposure_grp_m
 ZIP_Y = ["ec_zip", "ec_grp_mem_zip", "exposure_grp_mem_zip", "bias_grp_mem_zip", "nbhd_ec_zip",
          "nbhd_exposure_zip", "nbhd_bias_zip", "clustering_zip", "support_ratio_zip",
          "volunteering_rate_zip", "civic_organizations_zip"]
+# Named components only. "lit_comparison_fractionalization" is kept solely to compare with the
+# index-based literature (Putnam; Alesina-La Ferrara; Alesina-Baqir-Easterly); it is not an explanatory claim.
 SHARE_SETS = {"hisp": ["hisp_sh"], "mex_split": ["mex_sh", "nonmex_hisp_sh"], "foreign_born": ["fb_sh"],
-              "fractionalization": ["frac"]}
+              "named_groups": ["hisp_sh", "asian_sh", "fb_sh", "black_sh"],
+              "hisp_components": ["hisp_sh", "hisp_ba_sh", "lep_spanish_sh"],
+              "hisp_components_segregation": ["hisp_sh", "hisp_ba_sh", "lep_spanish_sh", "seg_d_hisp_white"],
+              "hisp_components_white_exposure": ["hisp_sh", "hisp_ba_sh", "lep_spanish_sh",
+                                                 "seg_white_exposure_hisp"],
+              "lit_comparison_fractionalization": ["frac"]}
+UNIT_SCALE = {"seg_d_hisp_white": 0.10, "seg_white_exposure_hisp": 0.10}  # all regressors: per 0.10
 
 
-def h1(d, ys, level, wvar, fes):
+def h1(d, ys, level, wvar, fes, sets=None):
     out = []
     for y in ys:
-        for sname, sx in SHARE_SETS.items():
+        for sname in sets or SHARE_SETS:
+            sx = SHARE_SETS[sname]
+            if sname.startswith("hisp_components_") and not level.startswith("county"):
+                continue  # tract segregation is built for counties only
             for spec, ctrl in (("fe_only", []), ("controls", CONTROLS)):
+                ctrl = [c for c in ctrl if c not in sx]
                 for fe in fes:
                     for wname, w in (("unweighted", None), ("weighted_below_p50", wvar)):
                         r = ols(d, y, sx + ctrl, fe=fe, w=w)
@@ -242,7 +306,8 @@ def bridge(d):
     for p in ("ec_county", "child_ec_county", "clustering_county", "support_ratio_county"):
         d[p + "_z"] = (d[p] - d[p].mean()) / d[p].std()
         d[p + "_z_x_lnpop"] = d[p + "_z"] * d.ln_pop_c
-    d["frac_x_lnpop"] = d.frac * d.ln_pop_c
+    for s in ("hisp_sh", "fb_sh", "frac"):
+        d[s + "_x_lnpop"] = d[s] * d.ln_pop_c
     base = ["hisp_sh", "black_sh", "ba_sh", "ln_dens"]
     outcomes = ["kfr_pooled_pooled_p25", "kfr_white_pooled_p25", "ln_pcpi", "ln_earn_pc", "ln_medinc_nhw"]
     for y in outcomes:
@@ -259,12 +324,18 @@ def bridge(d):
                     for x in (p + "_z", "ln_pop_c", p + "_z_x_lnpop"):
                         out.append(row(r2, x, 1.0, test="scale_interaction", outcome=y, predictor=p, spec=spec,
                                        weight=wname))
-        for wname, w in (("unweighted", None), ("weighted_below_p50", "num_below_p50")):
-            xs = ["frac", "ln_pop_c", "frac_x_lnpop", "black_sh", "ba_sh", "ln_dens"]
-            r = ols(d, y, xs, w=w)
-            for x in ("frac", "ln_pop_c", "frac_x_lnpop"):
-                out.append(row(r, x, 1.0, test="frac_scale_interaction", outcome=y, predictor="frac", spec="base",
-                               weight=wname))
+        # direct check of the operator's scale claim on named shares: does the ln(pop) slope fall with the
+        # Hispanic (or foreign-born) share? Coefficients per 10 points of share per log point of population.
+        for s, test in (("hisp_sh", "hisp_share_scale_interaction"), ("fb_sh", "fb_share_scale_interaction"),
+                        ("frac", "lit_comparison_frac_scale_interaction")):
+            others = [c for c in ["hisp_sh", "black_sh", "ba_sh", "ln_dens"] if c != s and not
+                      (s == "frac" and c == "hisp_sh")]
+            for wname, w in (("unweighted", None), ("weighted_below_p50", "num_below_p50")):
+                xs = [s, "ln_pop_c", s + "_x_lnpop"] + others
+                r = ols(d, y, xs, w=w)
+                for x in (s, "ln_pop_c", s + "_x_lnpop"):
+                    sc = 1.0 if (s == "frac" or x == "ln_pop_c") else 0.10
+                    out.append(row(r, x, sc, test=test, outcome=y, predictor=s, spec="base", weight=wname))
     return out
 
 
@@ -293,12 +364,29 @@ def main():
     gate("bea_join", bea_n > 2900, f"{bea_n} counties with BEA 2018 per-capita income")
     hs = np.average(cty.hisp_sh.dropna(), weights=cty.loc[cty.hisp_sh.notna(), "pop"])
     gate("hisp_share_national", 0.17 < hs < 0.19, f"pop-weighted county Hispanic share {hs:.4f} (ACS 2018 ~0.18)")
+    seg_n = cty.seg_d_hisp_white.notna().sum()
+    elig = ((cty.n_tracts >= 2) & (cty.seg_hisp_n > 0)).sum()
+    gate("segregation_coverage", seg_n == elig and seg_n > 2800,
+         f"{seg_n} of {len(cty)} Atlas counties have tract-based Hispanic/NH-white dissimilarity; "
+         f"{elig} have >=2 populated tracts and any Hispanic residents")
+    big = cty[cty.seg_hisp_n >= 100000]
+    dmed = float(big.seg_d_hisp_white.median())
+    gate("segregation_plausible", 0.3 < dmed < 0.65,
+         f"median Hispanic/NH-white D in {len(big)} counties with >=100k Hispanics = {dmed:.3f}")
+    comp_n = (cty.ec_county.notna() & cty.lep_spanish_sh.notna() & cty.asian_sh.notna()).sum()
+    gate("components_join", comp_n / n_ec > 0.99, f"{comp_n}/{n_ec} EC counties have LEP and Asian share")
     write(D / "gates.csv", gates)
     if not all(g["pass"] for g in gates):
         raise SystemExit("[BLOCKED] gate failure: " + "; ".join(g["gate"] for g in gates if not g["pass"]))
 
     write(D / "h1_county.csv", h1(cty, COUNTY_Y, "county", "num_below_p50", ["state"]))
     write(D / "h1_zip.csv", h1(zp, ZIP_Y, "zip", "num_below_p50", ["state", "cty"]))
+    # dissimilarity is noisy where the Hispanic population is small: restricted arm
+    seg_r = cty[(cty.seg_hisp_n >= 1000) & (cty.n_tracts >= 5)]
+    write(D / "h1_county_seg_restricted.csv",
+          h1(seg_r, ["ec_county", "exposure_grp_mem_county", "bias_grp_mem_county", "clustering_county",
+                     "support_ratio_county"], "county_seg_restricted", "num_below_p50", ["state"],
+             sets=["hisp_components_segregation", "hisp_components_white_exposure"]))
     write(D / "decomposition.csv",
           decomposition(cty, "county", [("adult", "ec_grp_mem_county", "exposure_grp_mem_county"),
                                         ("child", "child_ec_county", "child_exposure_county")], "num_below_p50")
@@ -316,7 +404,7 @@ def main():
     # pre-stated verdict rules (brief step 4): H1 = EC slope on Hispanic share negative at p<0.05 under both
     # weights with controls; H2 = the EC x ln(pop) interaction positive at p<0.05 for a majority of the
     # connectedness-predictor x outcome cells under both weights (base spec).
-    h1c = [r for r in h1(cty, ["ec_county"], "county", "num_below_p50", ["state"])
+    h1c = [r for r in h1(cty, ["ec_county"], "county", "num_below_p50", ["state"], sets=["hisp"])
            if r["share_set"] == "hisp" and r["spec"] == "controls"]
     h1_hold = all(r["coef"] < 0 and r["p"] < 0.05 for r in h1c)
     inter = [r for r in br if r["test"] == "scale_interaction" and r["regressor"].endswith("_x_lnpop")
@@ -334,7 +422,8 @@ def main():
          "detail": "sizing run" if h1_hold and h2_hold else "not run: brief says stop if either fails"}])
     desc = []
     for v in ["ec_county", "exposure_grp_mem_county", "bias_grp_mem_county", "clustering_county", "hisp_sh",
-              "mex_sh", "frac", "kfr_pooled_pooled_p25", "kfr_white_pooled_p25", "ln_pcpi", "ln_pop"]:
+              "mex_sh", "asian_sh", "fb_sh", "hisp_ba_sh", "lep_spanish_sh", "seg_d_hisp_white",
+              "seg_white_exposure_hisp", "frac", "kfr_pooled_pooled_p25", "kfr_white_pooled_p25", "ln_pcpi", "ln_pop"]:
         x = cty[v].replace([np.inf, -np.inf], np.nan).dropna()
         desc.append({"variable": v, "n": len(x), "mean": float(x.mean()), "sd": float(x.std()),
                      "p10": float(x.quantile(.1)), "p50": float(x.median()), "p90": float(x.quantile(.9))})
