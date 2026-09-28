@@ -61,3 +61,13 @@ around $420–580bn a year on cash; the white old-age lines cut the white advant
 cash and less on accrual; B adds a positive schooling term with a very wide interval; D finds most
 cost channels roughly linear, infrastructure and administration sublinear, congestion and rents
 superlinear where the population concentrates.
+
+## Addendum 22:23
+
+Operator, 2026-09-28 22:23 JST, relayed by the lead. F. **State-specific replacement arm.** Replace the
+union in California with California's own third-plus NH whites, at their per-age rates, both at the union's
+California age structure and at California whites' own ages; the same for Texas; the rest of the US with the
+national white rates. Report per person and aggregate by state. Reconcile with the older partial-ledger gaps in
+`research/immigration-california-texas-fiscal-geography-2026-09-21.md` (CA −$12,133, TX −$7,479, LA −$17,196 per
+standardized person vs local third-plus NH whites) and say what the full-account re-key adds on top of that
+partial ledger.

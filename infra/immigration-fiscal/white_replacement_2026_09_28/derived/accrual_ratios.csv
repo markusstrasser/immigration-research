@@ -1,0 +1,5 @@
+group,scenario,oasdi_per_tax_dollar,benefit_tax_timing,relative_benefit_tax_rate,future_share,oasdi_per_tax_dollar_net,part_a_per_hi_tax_dollar,cps_oasdi_tax_bn,cps_hi_tax_bn,part_a_accrual_bn,p_qualify_65plus
+union,scheduled,1.297788,0.084230,0.523382,0.044084,1.240576,1.610687,113.7160,28.1579,45.3535,0.906081
+union,payable,1.018378,0.083884,0.523382,0.043904,0.973667,1.460946,113.7160,28.1579,41.1371,0.906081
+third_plus_nh_white,scheduled,1.272414,0.083077,1.000000,0.083077,1.166706,1.101037,749.4736,203.8965,224.4975,0.951897
+third_plus_nh_white,payable,1.018734,0.082589,1.000000,0.082589,0.934598,0.993818,749.4736,203.8965,202.6361,0.951897
