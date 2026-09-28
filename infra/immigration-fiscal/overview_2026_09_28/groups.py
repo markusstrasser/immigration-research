@@ -453,21 +453,21 @@ GROUPS = [
     ),
     dict(
         id="comparators", part="other",
-        claim="Against as many whites, the group costs others about $320–410bn a year more, depending on which whites",
-        range="$320bn (315–330) against US whites, $409bn (406–412) against local whites",
+        claim="Against as many whites, the group costs others about $320–405bn a year more, depending on which whites",
+        range="$320bn (317–325) against US whites, $405bn (402–407) against local whites",
         why="The same rules applied to other groups show whether the result is special to this group.",
         terms=[("re-key", "the same account with another group's shares"),
                ("replacement", "the group against an equal number of people from another group")],
         findings=[
             dict(refs=[263],
-                 text="Against 40.9M whites, the group costs others about $320bn a year more (315–330). Against "
-                      "local whites state by state, about $409bn (406–412).",
-                 why="On raw cash the difference is only $156bn, because whites are older and draw pensions "
+                 text="Against 39.7M whites, the group costs others about $320bn a year more (317–325). Against "
+                      "local whites state by state, about $405bn (402–407).",
+                 why="On raw cash the difference is only $163bn, because whites are older and draw pensions "
                      "now. Counting pensions when earned, or using white rates at the group's ages, removes "
                      "that effect. The difference comes from taxes and schools, not from scale."),
             dict(refs=[259],
                  text="Under the same rules, non-Hispanic Black residents cost others about $572bn a year "
-                      "(549–595), or 1.5–1.7 times as much per member.",
+                      "(549–595), or 1.5–1.6 times as much per member.",
                  why="A rough calculation with group shares, not a full model run."),
             dict(refs=[150, 168, 171],
                  text="India-born adults have a balance of about +$24k a year each. For whites it is +$13k.",
