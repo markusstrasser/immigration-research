@@ -1,0 +1,517 @@
+{
+ "central_mapping": "census_income",
+ "cps_sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+ "cps_zip": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+ "gate_band": [
+  0.85,
+  1.15
+ ],
+ "imported_sha256": {
+  "infra/immigration-fiscal/tax_rerun_acs_2026_09_17/cps_tax.py": "7f9eb7746c6c3ed8fbafd715db017f9304fafe843496386f541eaa1a6dd1166a",
+  "infra/immigration-fiscal/tax_rerun_acs_2026_09_17/taxcalc_io.py": "6546661943a1e3cc90c68833d906c629a798dee6d816a89155805305cebb468f",
+  "infra/immigration-fiscal/tax_rerun_acs_2026_09_17/units.py": "e45b53f6e7e597cc16e63e793483e1e1855a3d20a311ef7536558d48e317a51d"
+ },
+ "mappings": [
+  "census_income",
+  "full"
+ ],
+ "results": {
+  "census_income": {
+   "census_filed_returns_with_benefits": {
+    "agi_census_bn": 2471.982423099911,
+    "agi_ratio": 1.0007890055653135,
+    "agi_share_within_2_dollars": 0.7937319025719639,
+    "agi_taxcalc_bn": 2473.9328309890943,
+    "returns": 11742,
+    "taxable_benefits_census_implied_bn": 437.09963485305934,
+    "taxable_benefits_ratio": 1.0044621585873397,
+    "taxable_benefits_taxcalc_bn": 439.05004274224194
+   },
+   "gate": {
+    "group": {
+     "census_fedtax_bc_bn": 105.68884900314308,
+     "in_band": true,
+     "ratio": 1.1105230574338372,
+     "taxcalc_bn": 117.3699037316336
+    },
+    "group_units_with_benefits": {
+     "census_fedtax_bc_bn": 5.817632797425551,
+     "in_band": true,
+     "ratio": 1.1435245924950526,
+     "taxcalc_bn": 6.652606173961907
+    },
+    "nation": {
+     "census_fedtax_bc_bn": 1981.1100192839313,
+     "in_band": true,
+     "ratio": 1.0926901594944827,
+     "taxcalc_bn": 2164.7394229474767
+    },
+    "nation_units_with_benefits": {
+     "census_fedtax_bc_bn": 293.6387773416498,
+     "in_band": true,
+     "ratio": 1.0661658659170596,
+     "taxcalc_bn": 313.06764131128676
+    }
+   },
+   "groups": {
+    "G1": {
+     "benefit_tax_before_refundable_bn": [
+      0.49263790053549794,
+      0.07148128007836047
+     ],
+     "benefit_tax_bn": [
+      0.5217127575067196,
+      0.07599253336246217
+     ],
+     "benefits_bn": [
+      21.13098107546431,
+      1.1207771336613441
+     ],
+     "rate": [
+      0.02468947161722145,
+      0.003151618069965005
+     ],
+     "recipient_records": 645,
+     "recipients_m": 1.3429671019602298,
+     "relative_rate": [
+      0.40712128265583186,
+      0.05178221570323674
+     ],
+     "taxable_benefits_bn": [
+      3.542293157895573,
+      0.4480588942639986
+     ]
+    },
+    "G2": {
+     "benefit_tax_before_refundable_bn": [
+      0.441241318979351,
+      0.07810680379565826
+     ],
+     "benefit_tax_bn": [
+      0.44637343702021615,
+      0.07833494212877361
+     ],
+     "benefits_bn": [
+      11.282887246336195,
+      0.9614512730333505
+     ],
+     "rate": [
+      0.039561986863350385,
+      0.005511923441416051
+     ],
+     "recipient_records": 293,
+     "recipients_m": 0.6281269918722802,
+     "relative_rate": [
+      0.6523641771655301,
+      0.09179636888324225
+     ],
+     "taxable_benefits_bn": [
+      2.8644034889348586,
+      0.4458201398158917
+     ]
+    },
+    "G3plus": {
+     "benefit_tax_before_refundable_bn": [
+      0.6500274145413337,
+      0.07400091525796924
+     ],
+     "benefit_tax_bn": [
+      0.6587998876256753,
+      0.07401472252813888
+     ],
+     "benefits_bn": [
+      18.842751150090116,
+      1.1593338725550502
+     ],
+     "rate": [
+      0.0349630413509189,
+      0.0033270112915492287
+     ],
+     "recipient_records": 564,
+     "recipients_m": 1.04843286457978,
+     "relative_rate": [
+      0.5765290752681125,
+      0.055055460334613164
+     ],
+     "taxable_benefits_bn": [
+      4.49011256240468,
+      0.4596926728222682
+     ]
+    },
+    "nation": {
+     "benefit_tax_before_refundable_bn": [
+      73.92347132075112,
+      1.3036162645469627
+     ],
+     "benefit_tax_bn": [
+      74.36912738999389,
+      1.3127533281835202
+     ],
+     "benefits_bn": [
+      1226.3224990157435,
+      8.299054072955405
+     ],
+     "rate": [
+      0.06064402100563528,
+      0.0009235667460891327
+     ],
+     "recipient_records": 24339,
+     "recipients_m": 59.249053979350826,
+     "relative_rate": [
+      1.0,
+      0.0
+     ],
+     "taxable_benefits_bn": [
+      439.6845268066525,
+      6.588149740671186
+     ]
+    },
+    "union": {
+     "benefit_tax_before_refundable_bn": [
+      1.5839066340561825,
+      0.12849788038489715
+     ],
+     "benefit_tax_bn": [
+      1.6268860821526112,
+      0.13175612160157615
+     ],
+     "benefits_bn": [
+      51.256619471890616,
+      1.8119363574142735
+     ],
+     "rate": [
+      0.03174001912172151,
+      0.00223534048378239
+     ],
+     "recipient_records": 1502,
+     "recipients_m": 3.0195269584122895,
+     "relative_rate": [
+      0.5233824966647924,
+      0.03734695005404402
+     ],
+     "taxable_benefits_bn": [
+      10.896809209235112,
+      0.7671021688566994
+     ]
+    }
+   },
+   "key": {
+    "personal": {
+     "by_generation_benefit_tax_bn": {
+      "G1": 0.44060019007380785,
+      "G2": 0.41844263122901315,
+      "G3plus": 0.6387168864107394
+     },
+     "group_benefit_tax_bn": [
+      1.4977597077135605,
+      0.12687399676396946
+     ],
+     "group_key_census_bn": 105.68884900314308,
+     "group_key_taxcalc_bn": 117.3699037316336,
+     "group_share_of_national_key_census": 0.0007560204598101639,
+     "group_share_of_national_key_taxcalc": 0.0006918891446408979,
+     "national_key_census_bn": 1981.1100192839313,
+     "national_key_taxcalc_bn": 2164.7394229474767
+    },
+    "shared": {
+     "by_generation_benefit_tax_bn": {
+      "G1": 0.4061484648027427,
+      "G2": 0.5124136089826793,
+      "G3plus": 0.8378028131582718
+     },
+     "group_benefit_tax_bn": [
+      1.7563648869436936,
+      0.1206610955861472
+     ],
+     "group_key_census_bn": 115.85718577083878,
+     "group_key_taxcalc_bn": 128.50301198505744,
+     "group_share_of_national_key_census": 0.0008701603103657153,
+     "group_share_of_national_key_taxcalc": 0.0007962121818355713,
+     "national_key_census_bn": 2018.4382877742607,
+     "national_key_taxcalc_bn": 2205.900546377733
+    }
+   }
+  },
+  "full": {
+   "census_filed_returns_with_benefits": {
+    "agi_census_bn": 2471.982423099911,
+    "agi_ratio": 0.8106086151453586,
+    "agi_share_within_2_dollars": 0.5208652699710441,
+    "agi_taxcalc_bn": 2003.810248652687,
+    "returns": 11742,
+    "taxable_benefits_census_implied_bn": 843.0363300679895,
+    "taxable_benefits_ratio": 0.4446595505445567,
+    "taxable_benefits_taxcalc_bn": 374.8641556207648
+   },
+   "gate": {
+    "group": {
+     "census_fedtax_bc_bn": 105.68884900314308,
+     "in_band": true,
+     "ratio": 1.0908060454937718,
+     "taxcalc_bn": 115.28603543390686
+    },
+    "group_units_with_benefits": {
+     "census_fedtax_bc_bn": 5.817632797425551,
+     "in_band": true,
+     "ratio": 1.0493879372647448,
+     "taxcalc_bn": 6.104953681054126
+    },
+    "nation": {
+     "census_fedtax_bc_bn": 1981.1100192839313,
+     "in_band": true,
+     "ratio": 1.0335367083660856,
+     "taxcalc_bn": 2047.5499282417866
+    },
+    "nation_units_with_benefits": {
+     "census_fedtax_bc_bn": 293.6387773416498,
+     "in_band": false,
+     "ratio": 0.818220433981072,
+     "taxcalc_bn": 240.2612478301561
+    }
+   },
+   "groups": {
+    "G1": {
+     "benefit_tax_before_refundable_bn": [
+      0.44102433163068744,
+      0.06548142410147872
+     ],
+     "benefit_tax_bn": [
+      0.4700991886019091,
+      0.0701204575173444
+     ],
+     "benefits_bn": [
+      21.13098107546431,
+      1.1207771336613441
+     ],
+     "rate": [
+      0.022246917307012903,
+      0.002969769962919641
+     ],
+     "recipient_records": 645,
+     "recipients_m": 1.3429671019602298,
+     "relative_rate": [
+      0.45802920704639344,
+      0.06121307752675187
+     ],
+     "taxable_benefits_bn": [
+      3.302912846645115,
+      0.4212321180448844
+     ]
+    },
+    "G2": {
+     "benefit_tax_before_refundable_bn": [
+      0.3838170940837018,
+      0.06917515480326877
+     ],
+     "benefit_tax_bn": [
+      0.38894921212456685,
+      0.0694640275939076
+     ],
+     "benefits_bn": [
+      11.282887246336195,
+      0.9614512730333505
+     ],
+     "rate": [
+      0.034472489499606344,
+      0.00503286652783616
+     ],
+     "recipient_records": 293,
+     "recipients_m": 0.6281269918722802,
+     "relative_rate": [
+      0.7097346033395161,
+      0.10419832968582697
+     ],
+     "taxable_benefits_bn": [
+      2.6025900769435677,
+      0.4137356360346198
+     ]
+    },
+    "G3plus": {
+     "benefit_tax_before_refundable_bn": [
+      0.5948036894525988,
+      0.07166304448107325
+     ],
+     "benefit_tax_bn": [
+      0.6035761625369406,
+      0.07155827077100721
+     ],
+     "benefits_bn": [
+      18.842751150090116,
+      1.1593338725550502
+     ],
+     "rate": [
+      0.0320322737231529,
+      0.003319660674149243
+     ],
+     "recipient_records": 564,
+     "recipients_m": 1.04843286457978,
+     "relative_rate": [
+      0.6594943798655546,
+      0.0679324480755573
+     ],
+     "taxable_benefits_bn": [
+      4.1944747760984376,
+      0.4473762392187222
+     ]
+    },
+    "nation": {
+     "benefit_tax_before_refundable_bn": [
+      59.11844926451395,
+      1.1000985328283388
+     ],
+     "benefit_tax_bn": [
+      59.56365840348975,
+      1.1059786876930955
+     ],
+     "benefits_bn": [
+      1226.3224990157435,
+      8.299054072955405
+     ],
+     "rate": [
+      0.04857095784452787,
+      0.0007837107245260501
+     ],
+     "recipient_records": 24339,
+     "recipients_m": 59.249053979350826,
+     "relative_rate": [
+      1.0,
+      0.0
+     ],
+     "taxable_benefits_bn": [
+      374.94588133094726,
+      5.868159898914494
+     ]
+    },
+    "union": {
+     "benefit_tax_before_refundable_bn": [
+      1.419645115166988,
+      0.11893863956394297
+     ],
+     "benefit_tax_bn": [
+      1.4626245632634167,
+      0.1223118937591659
+     ],
+     "benefits_bn": [
+      51.256619471890616,
+      1.8119363574142735
+     ],
+     "rate": [
+      0.028535330233113155,
+      0.0021046532063436945
+     ],
+     "recipient_records": 1502,
+     "recipients_m": 3.0195269584122895,
+     "relative_rate": [
+      0.587497786731995,
+      0.04354367508804859
+     ],
+     "taxable_benefits_bn": [
+      10.099977699687118,
+      0.739373133625543
+     ]
+    }
+   },
+   "key": {
+    "personal": {
+     "by_generation_benefit_tax_bn": {
+      "G1": 0.3944253983448698,
+      "G2": 0.3638059557558671,
+      "G3plus": 0.5795465432887658
+     },
+     "group_benefit_tax_bn": [
+      1.3377778973895025,
+      0.11878812764556489
+     ],
+     "group_key_census_bn": 105.68884900314308,
+     "group_key_taxcalc_bn": 115.28603543390686,
+     "group_share_of_national_key_census": 0.0006752668374636963,
+     "group_share_of_national_key_taxcalc": 0.0006533554463984382,
+     "national_key_census_bn": 1981.1100192839313,
+     "national_key_taxcalc_bn": 2047.5499282417866
+    },
+    "shared": {
+     "by_generation_benefit_tax_bn": {
+      "G1": 0.35536839295026873,
+      "G2": 0.46321620196015506,
+      "G3plus": 0.7555218908740935
+     },
+     "group_benefit_tax_bn": [
+      1.5741064857845175,
+      0.11316519290848899
+     ],
+     "group_key_census_bn": 115.85718577083878,
+     "group_key_taxcalc_bn": 126.18036319376944,
+     "group_share_of_national_key_census": 0.0007798635684424568,
+     "group_share_of_national_key_taxcalc": 0.0007544645868146965,
+     "national_key_census_bn": 2018.4382877742607,
+     "national_key_taxcalc_bn": 2086.3888289711504
+    }
+   }
+  }
+ },
+ "script_sha256": "2a1179fcf1537984d82ffef2624cf0ebc0b98df34d0d882fc8769feae6dd769c",
+ "state_tax_bound": {
+  "ceiling_all_benefits_bn": 0.34675847743242955,
+  "ceiling_taxable_benefits_bn": 0.05197612685654867,
+  "group_benefits_bn": [
+   3.520390633831772,
+   0.3989039728945825
+  ],
+  "group_share_of_its_benefits": 0.06868167799794857,
+  "group_taxable_benefits_bn": [
+   0.5276764147872961,
+   0.12503801125067296
+  ],
+  "mapping": "census_income",
+  "nation_share_of_its_benefits": 0.0789429809122831,
+  "recipient_records": 183,
+  "sources": [
+   "https://www.fool.com/retirement/2024/11/08/41-states-that-dont-tax-social-security-benefits/",
+   "https://dontmesswithtaxes.com/9-states-join-uncle-sam-in-taxing-at-least-some-social-security-benefits/",
+   "https://www.aol.com/3-states-stopped-taxing-social-145544667.html"
+  ],
+  "states": {
+   "8": "CO",
+   "9": "CT",
+   "27": "MN",
+   "30": "MT",
+   "35": "NM",
+   "44": "RI",
+   "49": "UT",
+   "50": "VT",
+   "54": "WV"
+  },
+  "top_rate": 0.0985
+ },
+ "taxcalc_version": "6.8.2",
+ "trustees_2024": {
+  "benefits_bn": 1471.4,
+  "cost_bn": 1484.8,
+  "hi_tob_bn": 39.8,
+  "oasdi_tob_bn": 55.1,
+  "share_of_benefits": 0.06449639798831046,
+  "share_of_cost": 0.06391433189655173
+ },
+ "trustees_check": {
+  "census_income": {
+   "finding": false,
+   "gap": -0.051167098112041454,
+   "national_rate": 0.06064402100563528,
+   "trustees_share_of_cost": 0.06391433189655173
+  },
+  "full": {
+   "finding": false,
+   "gap": -0.2400615573492626,
+   "national_rate": 0.04857095784452787,
+   "trustees_share_of_cost": 0.06391433189655173
+  }
+ },
+ "unit_diagnostics": {
+  "census_dependent_filers": 3300,
+  "dependent_own_returns": 3688,
+  "headless_returns_promoted": 123,
+  "returns": 80340,
+  "rule_agrees_with_census_flag": 0.9955250659630607
+ },
+ "units": "$bn at CPS ASEC 2025 weights (income year 2024); rates are benefit tax over Social Security benefits; each measure is [estimate, replicate SE]"
+}

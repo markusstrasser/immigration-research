@@ -1,19 +1,25 @@
 claude-opus-5-5
 
-**Verdict:** On an accrual basis for Social Security (OASDI) and Medicare Part A, the September 27 case becomes
-**$437.8bn / $497.8bn** at specifications 48 / 11 under the central arm, up $116.0bn / $110.4bn from
-$321.8bn / $387.4bn. The central is the ratio route, the route decision 2026-09-19 rejected: SSA's money's-worth
+**Verdict:** On an accrual basis for Social Security (OASDI) and Medicare Part A, net of the income tax the group
+will pay on those benefits, the September 27 case becomes **$433.5bn / $493.5bn** at specifications 48 / 11 under
+the central arm, up $111.6bn / $106.2bn from $321.8bn / $387.4bn. Before that tax it is $437.8bn / $497.8bn, kept as
+the arm `gross_of_benefit_tax`. Measured with Tax-Calculator, the group pays income tax of 3.2% of its 2024
+benefits against the nation's 6.1%, a relative rate of 0.52. Under current law the tax will take back 4.4% of the
+benefits its 2024 work earns, and the switch drops the $2.1bn / $1.8bn the case credits on today's benefits (see "Net
+of income tax on benefits"). The parent moved the central to the path after the 2025 tax law because it is current
+law. On the TR 2025 path, which assumes the TCJA rates expire, the tax would take 5.2%: $432.3bn / $492.4bn, now the
+arm `benefit_tax_tr2025_path`. The central is the ratio route, the route decision 2026-09-19 rejected: SSA's money's-worth
 ratios applied to each year's taxes. The national check says those ratios, applied to the actual population
 through the lane's frame, reproduce SSA's own aggregate. Against the Statement of Social Insurance at 1 January
 2025 the OASDI 15–61 ratio comes out 4.6% high and the HI 15–64 ratio 1.7% high, with levels 3.8–8.0% low, all
 within the declared tolerance. The check also cut the central by $5.9bn, because the Part A spouse credit counted
-dependents twice (bec1cd7: $443.8bn / $503.7bn). One setting at a time gives $395–460bn at 48 and $457–519bn at 11;
-every combination spans $352–519bn / $416–575bn (the constant-rate arms now keep 1961–2024 at the historical rates;
-see "Corrections after the cross-lab review"). The central counts benefits before income tax on them, which SSA
-says may overstate its ratios; that correction is open and would lower the central. The lifetime model's own
+dependents twice (bec1cd7, gross: $443.8bn / $503.7bn). Net of the tax, one setting at a time gives $392–455bn at 48
+and $454–514bn at 11; every combination spans $351–513bn / $415–569bn (the constant-rate arms now keep 1961–2024 at
+the historical rates; see "Corrections after the cross-lab review"). The lifetime model's own
 formula falls 20% short by construction and decides nothing. Whether accrual can rest on SSA's ratios or needs an extended formula model goes to the operator
-(recommended: SSA's ratios); until then the figure stays beside the case. [CALCULATION: `pension_accrual.py` →
-`derived/summary.json`, `derived/case_beside.csv`; `national_check.py` → `derived/national_score.json`]
+(recommended: SSA's ratios); until then the figure stays beside the case. [CALCULATION: `benefit_tax.py` →
+`derived/benefit_tax.json`; `pension_accrual.py` → `derived/summary.json`, `derived/case_beside.csv`;
+`national_check.py` → `derived/national_score.json`]
 
 Lane `pension_accrual_2026_09_28` (worker W2, 2026-09-28): the September 27 case ($321.82–387.37bn at
 specifications 48 / 11) with Social Security (OASDI) and Medicare Part A on an accrual basis, beside the case,
@@ -677,12 +683,15 @@ reviewer's]
 | real 3% | 0.872 → 1.031 | 376.6 / 439.4 | 394.9 / 456.7 |
 | the case's rates, 2% at 48 and 3% at 11 | | 427.7 / 439.4 | 441.2 / 456.7 |
 
-One setting at a time now spans $394.9–460.3bn at 48 and $456.7–519.2bn at 11. The 3% rate stays the low end; the
+Gross of the tax on benefits, one setting at a time now spans $394.9–460.3bn at 48 and $456.7–519.2bn at 11 (net:
+see "Net of income tax on benefits"). The 3% rate stays the low end; the
 high end is the career-mean level mapping at 48 and full credit for unauthorized workers at 11. Every combination
 spans $352.4–519.2bn / $416.5–574.9bn. [CALCULATION: `derived/summary.json` `range_across_arms_bn`,
 `every_combination_bn`]
 
-**Open: benefits are valued before income tax on them.** SSA's ratios leave the tax out: "money's worth ratios
+**Measured since, in "Net of income tax on benefits" below: the net central is $433.46bn / $493.52bn under current
+law, −$4.37bn / −$4.26bn from gross; the estimate in this paragraph is superseded.** **Open (at the time):
+benefits are valued before income tax on them.** SSA's ratios leave the tax out: "money's worth ratios
 that ignore these transfers may arguably be overstated. Due to the difficulty of determining the level of income
 tax on benefits, this factor is not addressed in this note." [SOURCE: SSA Actuarial Note 2025.7, footnote 2] The
 accrual inherits the omission, and whatever income tax the case credits on 2024 benefits stays in receipts. A net accrual
@@ -701,6 +710,316 @@ totals, not the split across years, and not the Part A divisor).
 
 **Corrected wording:** "Level assignment and convexity" called the per-dollar credit concave; it is convex, and the
 argument runs through the concavity of lifetime benefits in the level (fixed in place).
+
+## Net of income tax on benefits
+
+Brief: [BRIEF_net_of_tax.md](BRIEF_net_of_tax.md) (41e18c6). Worker model: claude-opus-5-5. This section measures
+the item left open above ("benefits are valued before income tax on them"); its −$4.5bn to −$9bn estimate is
+superseded.
+
+**Net central: $433.46bn / $493.52bn** at specifications 48 / 11, $4.37bn / $4.26bn below the gross central. Two
+things change. The OASDI accrual loses the income tax the group will pay on the benefits its 2024 work earns, 4.41%
+of their value under current law. The case also stops crediting the tax on the group's 2024 benefits, because those
+benefits leave the account. [CALCULATION: `derived/summary.json` `central_decomposition_net`]
+
+**The central path moved at the parent's decision (2026-09-28).** The central now takes the tax-on-benefits path
+after the 2025 tax law (see "The 2025 tax law" below). That path is current law, and the Chief Actuary's letter
+that gives it uses the same TR 2025 intermediate assumptions as every other input here. This worker had first built
+the central on the TR 2025 path, which assumes the TCJA rates expire after 2025. That path is now the arm
+`benefit_tax_tr2025_path`: $432.26bn / $492.39bn, 5.23% taxed, −$5.57bn / −$5.38bn from the gross.
+[CALCULATION: `summary.json` `benefit_tax.tr2025_path`]
+
+| $bn | Spec 48 | Spec 11 |
+|---|---:|---:|
+| Gross central (arm `gross_of_benefit_tax`) | 437.83 | 497.78 |
+| Income tax on the accrued benefits (4.41% of the OASDI accrual) | −6.46 | −6.07 |
+| Tax on the 2024 benefits, dropped from receipts | +2.09 | +1.82 |
+| **Net central** | **433.46** | **493.52** |
+| Change from the case ($321.82bn / $387.37bn) | +111.64 | +106.15 |
+
+Per dollar of OASDI tax the accrual falls from 1.298 to 1.241 (`ratio_net`; 1.230 on the TR 2025 path). Part A is
+untouched, because Medicare benefits are not taxed. [CALCULATION: `derived/case_beside.csv`]
+
+### Step 1: the tax on the 2024 benefits
+
+`benefit_tax.py` runs every CPS ASEC 2025 tax unit (income year 2024) through Tax-Calculator 6.8.2 twice, with and
+without its Social Security benefits. The tax units, income mapping and calculator call are the tax lane's
+(`tax_rerun_acs_2026_09_17`), imported read-only; their hashes are recorded and checked. The benefit tax is the
+difference in income tax, less the net investment income tax, and each return's amount goes to its filers in
+proportion to their own benefits.
+
+The central income mapping, `census_income`, adds four items to the tax lane's mapping: IRA distributions, capital
+gains, and survivor and disability income. The Census tax model counts all four in AGI, and retirees hold much of
+them. [CALCULATION: the checks below]
+
+| 2024 | Benefits ($bn) | Benefit tax ($bn) | Share of benefits | Relative to the nation |
+|---|---:|---:|---:|---:|
+| Nation | 1,226.3 (8.3) | 74.37 (1.31) | 6.06% (0.09) | 1 |
+| The group | 51.26 (1.81) | 1.627 (0.132) | 3.17% (0.22) | **0.523** (0.037) |
+| G1, Mexico-born | 21.13 (1.12) | 0.522 (0.076) | 2.47% (0.32) | 0.407 (0.052) |
+| G2 | 11.28 (0.96) | 0.446 (0.078) | 3.96% (0.55) | 0.652 (0.092) |
+| G3+ | 18.84 (1.16) | 0.659 (0.074) | 3.50% (0.33) | 0.577 (0.055) |
+
+Standard errors from the 160 replicate weights are in parentheses. The CPS captures 83% of the Trustees' $1,471.4bn
+of 2024 benefits, and the rates are ratios within the survey. [CALCULATION: `derived/benefit_tax.json`,
+`derived/benefit_tax.csv`; SOURCE: TR 2025 Table VI.A3]
+
+Checks:
+
+- **Census FEDTAX_BC (gate).** With benefits in, Tax-Calculator's tax before refundable credits is 1.093 times the
+  Census model's FEDTAX_BC for the nation and 1.111 for the group. For units with benefits the ratios are 1.066 and
+  1.144. All four sit inside the tax lane's 0.85–1.15 band. [CALCULATION: `benefit_tax.json`
+  `results.census_income.gate`]
+- **The benefit base.** The Census model files 11,742 of the sample returns with benefits. On those,
+  Tax-Calculator's AGI is 1.001 times the Census model's. Its taxable benefits are 1.004 times the Census model's
+  implied amount (the Census AGI less Tax-Calculator's AGI without benefits). [CALCULATION]
+- **The Trustees.** The national rate is 6.06%. The Trustees' 2024 income from taxation of benefits ($55.1bn OASDI
+  plus $39.8bn HI) is 6.39% of OASDI cost ($1,484.8bn). The gap is −5.1%, inside the brief's 25%. [SOURCE: TR 2025
+  Table VI.A3; Medicare TR 2025 Table II.B1; CALCULATION]
+
+The tax lane's mapping as it stands (`full`) fails where retirees matter:
+
+- the national rate is 4.86%, −24.0% against the Trustees;
+- FEDTAX_BC on units with benefits is 0.818, outside the band;
+- taxable benefits are 0.445 of the Census model's on filed returns.
+
+It stays only as a bridge arm. [CALCULATION]
+
+**The receipt the switch drops.** The case keys its federal income tax line ($2,403.24bn nationally) by FEDTAX_BC:
+at 48 shared over the SPM unit, at 11 on the person who carries the return. `case_lines.cjs` now stops if that key
+changes. The group's benefit tax before refundable credits, allocated the same way, over the key's national Census
+total, gives the part of the line that the group's 2024 benefits carry:
+
+- **$2.091bn at 48**: $1.756bn of $2,018.4bn of key;
+- **$1.817bn at 11**: $1.498bn of $1,981.1bn.
+
+[CALCULATION: `summary.json` `benefit_tax.current_receipt_bn`] The difference is not rescaled to the Census level,
+because the taxable benefits it taxes match the Census model's (1.004). Alternatives:
+
+- over Tax-Calculator's own national total: $1.913bn / $1.663bn;
+- the group's relative rate times the Trustees' 6.45% of benefits, times the case's Social Security line: $1.899bn /
+  $1.790bn.
+
+[CALCULATION: `benefit_tax.current_receipt_beside_bn`]
+
+One gap remains. After the package's corrections, the case's federal income tax for the group is only 0.806 / 0.791
+of this key share: $111.18bn against $137.94bn at 48 and $101.45bn against $128.21bn at 11, methods averaged.
+[CALCULATION: `summary.json` `benefit_tax.case_line_over_key_share`] Two corrections account for all of it, to
+1.4e-14:
+
+- the CPS-imputation stack, −$12.8bn to −$16.0bn by method and end (on-books scaling of the unauthorized, the
+  union-matched hot deck, audit rows 3 and 4, the state-aware status flag);
+- CBO's income gradient, −$11.5bn to −$12.7bn.
+
+[CALCULATION: a one-off rebuild from `main_case_2026_09_24/derived/stack_line_deltas.json` and
+`external_benchmarks_2026_09_24/derived/cbo_deltas.json`, not written to `derived/`] The unauthorized draw almost no
+benefits, so the on-books scaling should leave the benefits' part alone. The hot deck lowers imputed Social
+Security, and row 3 and the CBO gradient move tax between income groups, so those should reach it [INFERENCE]. If
+the benefits' part shrank in proportion to the whole line, the drop would be $1.685bn / $1.438bn, and the net case
+would be $0.41bn / $0.38bn higher ($433.86bn / $493.90bn). [CALCULATION: `benefit_tax.current_receipt_beside_bn`
+`scaled_to_case_line`] Pinning the drop down needs the difference computed inside those corrections, which this
+lane does not do. The four measures of the drop span $1.69–2.09bn at 48 and $1.44–1.82bn at 11.
+
+**State taxes on benefits.** No state line in the case plainly carries them, so none is netted. The case keys state
+and local income tax ($536.2bn nationally) by STATETAX_A, "State income tax liability, after all credits", and the
+data dictionary does not say whether that model taxes benefits. [SOURCE: CPS ASEC 2025 data dictionary; DATA:
+`model.json`, key `state_liability`] Nine states taxed some benefits in 2024: Colorado, Connecticut, Minnesota,
+Montana, New Mexico, Rhode Island, Utah, Vermont and West Virginia. Kansas, Missouri and Nebraska stopped from 2024.
+[SOURCE: secondary summaries, URLs in `benefit_tax.json` `state_tax_bound.sources`] The group's benefits in those
+states come to $3.52bn (SE 0.40), 6.9% of its benefits (nation 7.9%), and $0.53bn (SE 0.13) of that is federally
+taxable. Each state starts from the federally taxable amount [INFERENCE from the same summaries]. At Minnesota's top
+rate of 9.85%, the tax is therefore at most $0.05bn a year. [CALCULATION: `benefit_tax.json` `state_tax_bound`]
+
+### Step 2: the tax on the benefits that 2024's work earns
+
+**The national path.** Take income from taxation of OASDI benefits over OASDI cost (TR 2025 Tables IV.B1 and IV.B2,
+intermediate, scheduled benefits) and multiply by 1 + κ for HI, where κ = $39.8bn / $55.1bn = 0.722 in 2024. The
+TR 2025 path is 6.48% in 2025, 8.50% in 2030, 9.95% in 2050, 10.45% in 2080 and 10.51% in 2100. The central path
+multiplies it by the 2025 tax law's factors (below): 6.14%, 7.09%, 8.42%, 8.81% and 8.92%. [SOURCE; CALCULATION:
+`summary.json` `benefit_tax.national_path_oasdi_plus_hi`, `national_path_oasdi_plus_hi_after_obbba`]
+
+The Trustees give the reasons the path rises. The thresholds "are specified in the Internal Revenue Code to be
+constant in the future, and have never been changed, while income and benefit levels continue to rise". A
+"permanent level shift upward" follows from 2026 "due to the expiration of the personal income tax provisions" of
+the Tax Cuts and Jobs Act. [SOURCE: TR 2025, section V.C.7, pp. 155–156, `_cache/tr2025.txt`] The 2025 tax law
+removed that shift; its deduction for people 65 and over lasts only through 2028, so the shift is most of the
+long-run difference between the two paths [INFERENCE].
+
+**Timing.** Each unit's accrued benefits are weighted by their present value in each year, at the central rate and
+mortality, as `national_check.window_grid` weights them. The national check gates `tob_timing` against that grid on
+22 cohorts (max gap 2.1e-17). At the group's accrual timing the central path gives 8.42%, and the TR 2025 path
+9.99%. For comparison, the national check's TR 2025 figure for all of today's 15–61 is 10.1%. [CALCULATION]
+
+**The group's share.** 8.42% × 0.523 = **4.41%** of the accrued value (`benefit_tax.future_share_group`); on the
+TR 2025 path, 9.99% × 0.523 = 5.23%. [CALCULATION]
+
+| Generation | Central path × the group's rate | × its own rate | TR 2025 path × the group's rate | × its own rate |
+|---|---:|---:|---:|---:|
+| G1 | 4.34% | 3.37% | 5.14% | 4.00% |
+| G2 | 4.46% | 5.56% | 5.29% | 6.60% |
+| G3+ | 4.42% | 4.87% | 5.24% | 5.77% |
+
+With each generation's own rate the group's share is 4.63% on the central path (arm `benefit_tax_generation_rates`).
+[CALCULATION: `summary.json` `benefit_tax.future_share_by_generation`, `future_share_by_generation_own_rate`,
+`tr2025_path`]
+
+### Step 3: every arm, net
+
+The figures are in $bn, with the two fill-in methods averaged. "Change" is each arm's net figure minus its gross
+one; Part A is as in the gross arms. [CALCULATION: `derived/case_beside.csv`]
+
+Every arm below is on the central path unless it names another.
+
+| Arm | Share taxed | Per tax $, net | Net 48 | Net 11 | Change 48 / 11 |
+|---|---:|---:|---:|---:|---:|
+| **central** | 4.41% | 1.241 | **433.46** | **493.52** | −4.37 / −4.26 |
+| gross_of_benefit_tax (outside the ranges) | 0 | 1.298 | 437.83 | 497.78 | 0 / 0 |
+| benefit tax: the TR 2025 path (`benefit_tax_tr2025_path`) | 5.23% | 1.230 | 432.26 | 492.39 | −5.57 / −5.38 |
+| benefit tax: relative rate −1.96 SE (0.450) | 3.79% | 1.249 | 434.36 | 494.37 | −3.47 / −3.41 |
+| benefit tax: relative rate +1.96 SE (0.597) | 5.03% | 1.233 | 432.55 | 492.67 | −5.27 / −5.10 |
+| benefit tax: each generation's own rate | 4.63% | 1.238 | 433.13 | 493.22 | −4.70 / −4.56 |
+| payable benefits | 4.39% | 0.974 | 399.08 | 460.96 | −2.96 / −2.93 |
+| trust-fund effective rates | 4.42% | 1.225 | 435.70 | 495.87 | −4.30 / −4.19 |
+| real 2.3% flat | 4.41% | 1.172 | 421.69 | 482.21 | −4.01 / −3.92 |
+| real 2% | 4.41% | 1.264 | 436.70 | 496.60 | −4.50 / −4.38 |
+| real 3% | 4.39% | 0.986 | 391.90 | 453.69 | −3.03 / −2.99 |
+| the case's rates, 2% at 48 and 3% at 11 | | 1.264 / 0.986 | 436.70 | 453.69 | −4.50 / −2.99 |
+| unauthorized credited nothing | 4.41% | 1.225 | 431.05 | 491.21 | −4.29 / −4.18 |
+| unauthorized at 30% | 4.41% | 1.271 | 438.28 | 498.14 | −4.53 / −4.40 |
+| unauthorized credited in full | 4.41% | 1.378 | 455.17 | 514.30 | −5.09 / −4.93 |
+| attribution PUC | 4.40% | 1.149 | 423.15 | 483.84 | −3.88 / −3.79 |
+| attribution ABO | 4.46% | 1.342 | 444.97 | 504.34 | −4.98 / −4.83 |
+| earnings level: raw wage / AWI | 4.41% | 1.367 | 447.71 | 506.91 | −5.04 / −4.88 |
+| earnings level: generation's career mean | 4.41% | 1.431 | 454.95 | 513.71 | −5.36 / −5.19 |
+| every career from 21 | 4.41% | 1.216 | 430.71 | 490.93 | −4.25 / −4.14 |
+| Hispanic mortality | 4.41% | 1.360 | 451.86 | 511.11 | −5.00 / −4.85 |
+| *bridge:* national rate (relative rate 1) | 8.42% | 1.188 | 427.57 | 487.99 | −10.25 / −9.78 |
+| *bridge:* the tax lane's mapping (`full`) | 4.95% | 1.234 | 432.45 | 492.58 | −5.38 / −5.19 |
+| *bridge:* Part A spouse credit (bec1cd7) | 4.41% | 1.241 | 439.39 | 499.45 | −4.37 / −4.26 |
+| *bridge:* r = g | 4.43% | 1.505 | 479.54 | 537.80 | −5.79 / −5.59 |
+| *bridge:* 09-18 settings | 4.42% | 1.449 | 467.78 | 526.43 | −5.48 / −5.30 |
+
+The arm `benefit_tax_after_obbba` stays in the CSVs by name and now equals the central. The tax lane's bridge also
+drops a smaller receipt, $1.874bn / $1.623bn.
+
+Real 3% is still the low end, at $391.90bn / $453.69bn. The high end is full credit for unauthorized workers at both
+ends, at $455.17bn / $514.30bn. Every combination of the non-bridge settings spans $350.62–512.98bn /
+$414.69–568.96bn. That envelope is on the central path and takes each of four benefit-tax rates: the group's, 1.96
+SE either side, and each generation's own. The TR 2025 path is an arm inside the one-at-a-time range; it sets
+neither end and is not in the envelope. [CALCULATION: `summary.json` `range_across_arms_net_bn`,
+`every_combination_net_bn`]
+
+**Gates.**
+
+- With the share at 0 the switch reproduces the gross central exactly, and 8062db1's $437.828882bn / $497.775764bn
+  to 1e-6.
+- On each path, the central's timing computed through the spouse arm's machinery equals the arms' to 1e-12.
+- Every existing key in `summary.json` and every existing row and column of the derived CSVs is unchanged; only the
+  net values move with the central. `central_decomposition.low.accrual_per_tax_dollar`, which candidate v3 reads as
+  its ratio, keeps its gross meaning, and `ratio_net` sits beside it.
+- Against the outputs before the move, every gross column is identical, and the arm `benefit_tax_tr2025_path`
+  reproduces the earlier central ($432.26bn / $492.39bn) exactly.
+- The national check's outputs are unchanged, and `derived/national_prediction.csv` keeps its frozen sha256.
+
+[DATA: `summary.json` `gate_net_with_no_tax`]
+
+### The 2025 tax law
+
+The TR 2025 path assumes that the TCJA rates expire after 2025. P.L. 119-21 (the OBBBA) made them permanent and
+raised the deduction for people 65 and over for 2025–2028. SSA's Chief Actuary: "the trust funds will receive lower
+levels of projected revenue from income taxation of Social Security benefits for all years beginning in 2025". The
+75-year OASDI balance falls by 0.16% of taxable payroll, all of it through the income rate. [SOURCE: OCACT letter
+to Senator Wyden, 5 August 2025, Wayback 20250809085421, sha256 `f402b44d…` pinned in `sources.py`]
+
+Its Table 1 puts the OASDI path at 0.947 of the Trustees' in 2025, 0.783 in 2026, 0.833 in 2030 and about 0.85 from
+2050 [CALCULATION: `summary.json` `benefit_tax.after_obbba.path_factor`]. The letter leaves HI out, and the central
+path moves HI in proportion [INFERENCE]. The path taxes 4.41% against the TR 2025 path's 5.23%, which puts the net
+case $1.20bn / $1.13bn higher.
+
+**The central takes this path at the parent's decision of 2026-09-28**, as this section had recommended. It is
+current law, and the letter uses the same TR 2025 intermediate assumptions as every other input here. [DATA:
+`summary.json` `benefit_tax.central_path`, `central_path_basis`]
+
+### Item 4: spouses' own records (time-boxed)
+
+The central prices 2.52M workers as one-earner couples: married, with a spouse who has no 2024 wages. They pay 13.7%
+of the group's OASDI tax. [CALCULATION: `summary.json` `spouse_own_record_arm`] The CPS ASEC shows the following
+for their spouses, as shares of those workers' tax:
+
+| Spouse | Share of tax | Records |
+|---|---:|---:|
+| self-employment income in 2024 | 12.7% | 173 |
+| employed or on layoff in March 2025, or worked in the last 12 months | 4.8% | 59 |
+| last worked more than 12 months ago | 4.8% | 61 |
+| never worked | 0.4% | 4 |
+| not known | 77.4% | 933 |
+
+- **Self-employment is missed.** The family assignment counts only the spouse's wages, so a self-employed spouse is
+  priced as having no record. Three of the 173 records fall below SECA's $400 floor, 3.8% of that row's tax.
+  [CALCULATION: a one-off probe on the lane's frame, not written to `derived/`]
+- **Most spouses are not known.** The CPS asks when-last-worked mainly in the fourth and eighth months in sample.
+  Among adults outside the labor force it is answered for about 52% in those months and 2–6% in the others.
+  [CALCULATION: a probe on the CPS ASEC 2025 person and household files by `H_MIS`; SOURCE: data dictionary]
+- **"Worked" is not a record.** The work items count work abroad and do not show 40 covered quarters.
+
+Moving the spouses with current work of their own (the first two rows, 17.5% of the tax) to two-earner pricing gives
+1.277 per tax dollar, between the bounds of 1.298 and 1.186. On the central path the net case is then $431.26bn /
+$491.45bn, $2.20bn / $2.07bn below the central; the two-earner bound gives $421.43bn / $482.21bn. (On the TR 2025
+path: $430.08bn / $490.34bn and $420.33bn / $481.18bn.) The CPS cannot place the 77% whose
+status is not known, so it supports a point just below the central, not the two-earner bound. ACS 2024 PUMS `WKL`
+is asked of everyone and would narrow the unknown row [INFERENCE]; it was not tabulated. The central is unchanged.
+[CALCULATION: `summary.json` `spouse_own_record_arm`]
+
+### Limits
+
+- **The relative rate is today's.** It is measured on today's beneficiaries and held for today's workers. The
+  thresholds are fixed, so a growing share of everyone's benefits becomes taxable, and that should raise the group's
+  rate toward the nation's [INFERENCE]. The national-rate bridge bounds this at 8.42% ($427.57bn / $487.99bn). The
+  ±1.96 SE arms cover sampling error only.
+- **Cost, not benefits.** The path divides by OASDI cost, as the national check does. Over benefits it would be about
+  0.9% higher (2024: $1,484.8bn / $1,471.4bn), which is worth under $0.1bn. [CALCULATION]
+- **κ is held at 2024.** HI takes the tax on benefits between the 50% and 85% inclusion tiers, which grow as the
+  thresholds erode, so κ likely rises [INFERENCE]. The central path moves HI in proportion to OASDI.
+- **Tax law can change again.** The central path is current law. The TR 2025 path shows what a return of the
+  pre-2018 rates would do: 5.23%, −$1.20bn / −$1.13bn.
+- **The timing unit** is the medium worker from 21. The level scales benefits, not their timing. The unit omits
+  disability and young survivors' benefits, which are paid earlier, when the path is lower [INFERENCE]. The payable
+  arm applies the scheduled path at its own timing.
+- **Survey income.** The key and the difference are both model outputs on survey income. The rates assume the group
+  reports as fully as the nation [INFERENCE].
+
+### Files and reproduction
+
+New:
+
+- `benefit_tax.py` → `derived/benefit_tax.json` (every measure with its replicate SE, the gates, the Trustees check,
+  the state bound, the hashes of the script and of the imported tax-lane files) and `derived/benefit_tax.csv`;
+- `sources.py` pins the OCACT letter (`_cache/ocact_obbba_wyden_20250805.*`, ignored) and parses its Table 1 with
+  gates: every year from 2025 to 2100 once, cost rates unchanged and equal to Table IV.B1's, and the 75-year −0.16%.
+
+Changed (the derived files gain rows, columns and keys only):
+
+- `case_lines.cjs`: the federal income tax line, gated on its key (4 rows in `case_lines.csv`);
+- `pension_accrual.py`: the net switch on both paths, the arms, `summary.json`'s new keys (including
+  `benefit_tax.central_path`, `tr2025_path` and `national_path_oasdi_plus_hi_after_obbba`) and the spouse arm;
+- `national_check.py`: it reads the path from `pension_accrual` (one definition) and checks `tob_timing` against
+  `window_grid`;
+- `case_beside.csv`: net columns and the new arms;
+- `oasdi_arms.csv`: `accrual_tob_bn` (the TR 2025 path) and `accrual_tob_obbba_bn` (the central path);
+- `oasdi_by_generation.csv`: `national_path_share`, `national_path_share_after_obbba` and the new arms;
+- `sources.json`: the letter.
+
+This command supersedes the one under "Reproduction" (Tax-Calculator runs in an overlay environment):
+
+```sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/pension_accrual_2026_09_28 \
+  "node {lane}/case_lines.cjs" \
+  "OPENBLAS_NUM_THREADS=1 uv run --no-project --with taxcalc==6.8.2 python3 {lane}/benefit_tax.py" \
+  "OPENBLAS_NUM_THREADS=1 uv run --no-project python3 {lane}/pension_accrual.py" \
+  "OPENBLAS_NUM_THREADS=1 uv run --no-project python3 {lane}/national_check.py" \
+  --allow-unrun infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py \
+  --allow-unrun infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py
+```
 
 ## Progress (append-only)
 
@@ -751,3 +1070,21 @@ argument runs through the concavity of lifetime benefits in the level (fixed in 
   `oasdi_by_generation.csv`, `summary.json` (the rate arms and the ranges); the national check's outputs are
   unchanged. Verdict, the two stale tables' captions and the convexity sentence edited; new section "Corrections
   after the cross-lab review".
+- 2026-09-28 13:27 JST (worker, BRIEF_net_of_tax.md). Net of income tax on benefits built (section above):
+  `benefit_tax.py` (Tax-Calculator 6.8.2 on the tax lane's CPS tax units; the tax lane's own mapping misses retirees'
+  income, so the central adds IRA distributions, capital gains, survivor and disability income), the net switch in
+  `pension_accrual.py`, the federal income tax line and its key gate in `case_lines.cjs`, the path read by
+  `national_check.py` from one definition. Gates pass: FEDTAX_BC 1.093 / 1.111; −5.1% against the Trustees; no tax
+  reproduces 8062db1; the national check is unchanged. Net central $432.26bn / $492.39bn. Added after the first
+  reruns: the state-tax bound, the receipt scaled to the case's corrected line, and the spouse category relabelled
+  from "covered" self-employment to self-employment income. The OBBBA letter was pinned in `sources.py` as an arm.
+- 2026-09-28 13:29 JST (worker). Two consecutive reruns of the final code with the new command ("Files and
+  reproduction" in "Net of income tax on benefits"): 34/34 files identical both times, rc 0 (passes started 13:27
+  and 13:28 JST). The prediction file kept its frozen sha256 `b8b5c3f5…d7d9`. Nothing committed, staged or stashed.
+- 2026-09-28 13:42 JST (worker). At the parent's decision (current law), the central moved to the tax-on-benefits
+  path after the 2025 tax law. The TR 2025 path became the arm `benefit_tax_tr2025_path`, and it reproduces the
+  earlier central ($432.26bn / $492.39bn) exactly. Both paths now run at every setting (`accrual_tob_obbba_bn`), so every net arm,
+  both envelopes and the spouse arm are on the new central. New central: $433.46bn / $493.52bn (−$4.37bn /
+  −$4.26bn from the gross; 4.41% taxed). Every gross column is unchanged, and the no-tax gate reproduces 8062db1 to
+  1e-6. Two consecutive reruns with the superseding command (passes started 13:40 and 13:41 JST): 34/34 identical,
+  rc 0. The prediction file kept its frozen sha256. Nothing committed, staged or stashed.

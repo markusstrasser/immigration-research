@@ -42,6 +42,13 @@
    "url": "https://www.ssa.gov/oact/NOTES/pdf_notes/note151.pdf",
    "via": null
   },
+  "ocact_obbba": {
+   "file": "pension_accrual_2026_09_28/_cache/ocact_obbba_wyden_20250805.pdf",
+   "sha256": "f402b44d2ac052c3c751b1fc44c18bdf6d9bf33b93a4dde998e26db8cf622ed0",
+   "title": "SSA Office of the Chief Actuary, letter to Senator Ron Wyden on the financial effects of the One Big Beautiful Bill Act (5 August 2025)",
+   "url": "https://www.ssa.gov/oact/solvency/RWyden_20250805.pdf",
+   "via": "https://web.archive.org/web/20250809085421id_/https://www.ssa.gov/oact/solvency/RWyden_20250805.pdf"
+  },
   "ssa_afr2025": {
    "file": "pension_accrual_2026_09_28/_cache/ssa_afr2025_fin.pdf",
    "sha256": "47bfd6c814cb4d0badd32f12c2557e1f09c1ba7239967af474f4af6fabeca34e",

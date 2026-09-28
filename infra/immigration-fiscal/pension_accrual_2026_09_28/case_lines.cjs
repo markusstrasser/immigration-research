@@ -1,4 +1,5 @@
-/* The September 27 case's pension lines at its end specifications, read through the package unchanged.
+/* The September 27 case's pension lines at its end specifications, read through the package unchanged, and its federal
+ * income tax line, which carries the tax on the group's 2024 benefits that the net switch drops (gate: keyed by FEDTAX_BC).
  *
  * Gates (each stops with [BLOCKED]):
  *   1. the package chain, the engine and model.json are byte-identical to git HEAD, before and after the run;
@@ -73,7 +74,10 @@ const gap = caseBn.map((v, i) => Math.abs(v - summary.main_case[i]));
 if (Math.max(...gap) > 1e-9) throw new Error(`[BLOCKED] the case ${caseBn} is not summary.json's ${summary.main_case}`);
 
 const RECEIPTS = ["employee_oasdi", "employer_oasdi", "self_employment_oasdi_hi", "employee_hi", "employer_hi",
-  "medicare_supplementary_premiums"];
+  "medicare_supplementary_premiums", "federal_income_tax"];
+// The net switch drops the group's share of the Census FEDTAX_BC key that its 2024 benefits carry (benefit_tax.py),
+// which holds only while the case keys federal income tax by that key ("federal_liability").
+const KEYED = { federal_income_tax: "federal_liability" };
 const SPENDING = ["social_security", "railroad_retirement", "medicare"];
 const header = ["method", "end", "spec", "allocation", "side", "line", "national_bn", "amount_bn", "response", "effect_bn"];
 const rows = [header.join(",")];
@@ -86,6 +90,7 @@ models.forEach((m, i) => {
     for (const id of RECEIPTS) {
       const x = ev.receipts.find((l) => l.id === id);
       if (!x) throw new Error("[BLOCKED] no receipt line " + id);
+      if (KEYED[id] && x.key !== KEYED[id]) throw new Error(`[BLOCKED] ${id} is keyed by ${x.key}, not ${KEYED[id]}`);
       rows.push([P.METHODS[i], end, idx, s.allocation, "receipt", id, x.national_bn, x.amount_bn, x.response, x.effect_bn].join(","));
     }
     for (const id of SPENDING) {

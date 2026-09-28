@@ -1,4 +1,156 @@
 {
+ "benefit_tax": {
+  "after_obbba": {
+   "future_share_group": 0.044084351213145,
+   "future_share_national_timing": 0.08422970101993961,
+   "path_factor": {
+    "2025": 0.9473684210526315,
+    "2026": 0.7826086956521738,
+    "2030": 0.8333333333333334,
+    "2050": 0.846938775510204,
+    "2080": 0.8434782608695652,
+    "2100": 0.8482142857142857
+   },
+   "source": "SSA OCACT letter to Sen. Wyden, 5 August 2025, Table 1 (sources.obbba_income_rate_change); HI moved in proportion"
+  },
+  "benefits_group_bn": 51.256619471890616,
+  "benefits_nation_bn": 1226.3224990157435,
+  "case_line_over_key_share": {
+   "high": 0.7912647141075123,
+   "low": 0.8059564528481946
+  },
+  "census_filed_returns_with_benefits": {
+   "agi_census_bn": 2471.982423099911,
+   "agi_ratio": 1.0007890055653135,
+   "agi_share_within_2_dollars": 0.7937319025719639,
+   "agi_taxcalc_bn": 2473.9328309890943,
+   "returns": 11742,
+   "taxable_benefits_census_implied_bn": 437.09963485305934,
+   "taxable_benefits_ratio": 1.0044621585873397,
+   "taxable_benefits_taxcalc_bn": 439.05004274224194
+  },
+  "central_path": "obbba",
+  "central_path_basis": "the path after the 2025 tax law (P.L. 119-21), the parent's decision of 2026-09-28: current law, on the TR 2025 intermediate assumptions; the TR 2025 path is the arm benefit_tax_tr2025_path",
+  "current_group_bn": 1.6268860821526112,
+  "current_nation_bn": 74.36912738999389,
+  "current_rate_group": 0.03174001912172151,
+  "current_rate_nation": 0.06064402100563528,
+  "current_receipt_allocation": {
+   "high": "personal",
+   "low": "shared"
+  },
+  "current_receipt_beside_bn": {
+   "scaled_to_case_line": {
+    "high": 1.437648955497404,
+    "low": 1.6854208124541321
+   },
+   "taxcalc_national_total": {
+    "high": 1.6627770517450808,
+    "low": 1.9134905562988822
+   },
+   "trustees_level": {
+    "high": 1.7898391467919152,
+    "low": 1.8990845709096529
+   }
+  },
+  "current_receipt_bn": {
+   "high": 1.8169001218750982,
+   "low": 2.0912058046039226
+  },
+  "fedtax_bc_gate": {
+   "group": {
+    "census_fedtax_bc_bn": 105.68884900314308,
+    "in_band": true,
+    "ratio": 1.1105230574338372,
+    "taxcalc_bn": 117.3699037316336
+   },
+   "group_units_with_benefits": {
+    "census_fedtax_bc_bn": 5.817632797425551,
+    "in_band": true,
+    "ratio": 1.1435245924950526,
+    "taxcalc_bn": 6.652606173961907
+   },
+   "nation": {
+    "census_fedtax_bc_bn": 1981.1100192839313,
+    "in_band": true,
+    "ratio": 1.0926901594944827,
+    "taxcalc_bn": 2164.7394229474767
+   },
+   "nation_units_with_benefits": {
+    "census_fedtax_bc_bn": 293.6387773416498,
+    "in_band": true,
+    "ratio": 1.0661658659170596,
+    "taxcalc_bn": 313.06764131128676
+   }
+  },
+  "future_share_by_generation": {
+   "G1": 0.043374602797660776,
+   "G2": 0.04464152874196913,
+   "G3plus": 0.04418931330075026
+  },
+  "future_share_by_generation_own_rate": {
+   "G1": 0.03373961498177625,
+   "G2": 0.05564292721049475,
+   "G3plus": 0.04867649204236033
+  },
+  "future_share_group": 0.044084351213145,
+  "future_share_national_timing": 0.08422970101993961,
+  "kappa_hi_over_oasdi": 0.7223230490018148,
+  "mapping": "census_income",
+  "national_income_tax_bn": 2403.242,
+  "national_path_oasdi_plus_hi": {
+   "2025": 0.06480027313076135,
+   "2030": 0.08502607457097568,
+   "2050": 0.09946237996592684,
+   "2080": 0.1044657967485278,
+   "2100": 0.10512271470746772
+  },
+  "national_path_oasdi_plus_hi_after_obbba": {
+   "2025": 0.061389732439668644,
+   "2030": 0.07085506214247973,
+   "2050": 0.08423854629767273,
+   "2080": 0.0881146285618017,
+   "2100": 0.08916658836794136
+  },
+  "relative_rate": 0.5233824966647924,
+  "relative_rate_by_generation": {
+   "G1": 0.40712128265583186,
+   "G2": 0.6523641771655301,
+   "G3plus": 0.5765290752681125
+  },
+  "relative_rate_se": 0.03734695005404402,
+  "source": "benefit_tax.py -> derived/benefit_tax.json: Tax-Calculator 6.8.2 on CPS ASEC 2025 tax units, tax with each unit's 2024 Social Security benefits less tax without them",
+  "taxcalc_version": "6.8.2",
+  "tr2025_path": {
+   "case_on_accrual_net_bn": {
+    "high": 492.3934112404304,
+    "low": 432.25878131502435
+   },
+   "change_from_gross_bn": {
+    "high": -5.382352382793158,
+    "low": -5.570100424111615
+   },
+   "future_share_by_generation": {
+    "G1": 0.05144936968516012,
+    "G2": 0.05291168272110367,
+    "G3plus": 0.052387578319993765
+   },
+   "future_share_by_generation_own_rate": {
+    "G1": 0.040020699032798764,
+    "G2": 0.06595116684405233,
+    "G3plus": 0.05770724523045281
+   },
+   "future_share_group": 0.05226784215196512,
+   "future_share_national_timing": 0.0998654759856075,
+   "ratio_net": 1.2299558266321828
+  },
+  "trustees_check": {
+   "finding": false,
+   "gap": -0.051167098112041454,
+   "national_rate": 0.06064402100563528,
+   "trustees_share_of_cost": 0.06391433189655173
+  }
+ },
  "case_bn": {
   "high": 387.37005494938376,
   "low": 321.81935699039354
@@ -6,6 +158,10 @@
  "case_components_attrs": {
   "part_a_share": 0.3751126329068301,
   "se_oasdi_share": 0.8034959757706692
+ },
+ "case_on_accrual_net_bn": {
+  "high": 493.5205864826556,
+  "low": 433.45829955646883
  },
  "central": {
   "career_start": true,
@@ -41,6 +197,30 @@
    "part_a_accrual_bn": 45.35351039395222,
    "part_a_removed_bn": 19.663108647169846,
    "ss_benefits_removed_bn": 56.258694510398655
+  }
+ },
+ "central_decomposition_net": {
+  "high": {
+   "accrual_per_tax_dollar_net": 1.2405762664674715,
+   "benefit_tax_on_accrual_bn": 6.072077262443078,
+   "benefit_tax_receipt_bn": 1.8169001218750982,
+   "case_on_accrual_net_bn": 493.5205864826556,
+   "change_from_gross_bn": -4.25517714056798,
+   "delta_net_bn": 106.15053153327185,
+   "delta_oasdi_net_bn": 80.46012978648947,
+   "future_share": 0.044084351213145,
+   "oasdi_accrual_net_bn": 131.6656254676022
+  },
+  "low": {
+   "accrual_per_tax_dollar_net": 1.2405762664674715,
+   "benefit_tax_on_accrual_bn": 6.461787987271099,
+   "benefit_tax_receipt_bn": 2.0912058046039226,
+   "case_on_accrual_net_bn": 433.45829955646883,
+   "change_from_gross_bn": -4.370582182667135,
+   "delta_net_bn": 111.63894256607527,
+   "delta_oasdi_net_bn": 85.9485408192929,
+   "future_share": 0.044084351213145,
+   "oasdi_accrual_net_bn": 140.11602952508764
   }
  },
  "central_on_accrual_bn": {
@@ -120,6 +300,36 @@
    ]
   }
  },
+ "every_combination_net_bn": {
+  "high": {
+   "max": 568.9557037711922,
+   "min": 414.6935431113027,
+   "per_tax_dollar_net": [
+    0.6521974134905618,
+    1.8402148998578456
+   ]
+  },
+  "low": {
+   "max": 512.977961163313,
+   "min": 350.62340984714547,
+   "per_tax_dollar_net": [
+    0.6521974134905618,
+    1.8402148998578456
+   ]
+  }
+ },
+ "gate_net_with_no_tax": {
+  "high": {
+   "at_8062db1_bn": 497.775764,
+   "gross_central_bn": 497.77576362322355,
+   "net_with_no_tax_bn": 497.77576362322355
+  },
+  "low": {
+   "at_8062db1_bn": 437.828882,
+   "gross_central_bn": 437.82888173913597,
+   "net_with_no_tax_bn": 437.82888173913597
+  }
+ },
  "gate_union_row": {
   "accrual_only_bn": -188.13650797305468,
   "accrual_per_tax_dollar": 1.5346559535701862,
@@ -179,6 +389,90 @@
    "max_arm": "mapping_group_mean",
    "min": 394.9252907306968,
    "min_arm": "rate_real_3"
+  }
+ },
+ "range_across_arms_net_bn": {
+  "high": {
+   "max": 514.2982752343335,
+   "max_arm": "unauthorized_full",
+   "min": 453.6943577085001,
+   "min_arm": "rate_real_3"
+  },
+  "low": {
+   "max": 455.1717581447248,
+   "max_arm": "unauthorized_full",
+   "min": 391.89848318018005,
+   "min_arm": "rate_real_3"
+  }
+ },
+ "ratio_net": 1.2405762664674715,
+ "spouse_own_record_arm": {
+  "arms": {
+   "central": {
+    "case_on_accrual_bn": {
+     "high": 497.77576362322355,
+     "low": 437.82888173913597
+    },
+    "case_on_accrual_net_bn": {
+     "high": 493.5205864826556,
+     "low": 433.4582995564688
+    },
+    "future_share": 0.044084351213145,
+    "per_tax_dollar": 1.297788427296778
+   },
+   "every_one_earner_as_two_earner": {
+    "case_on_accrual_bn": {
+     "high": 485.95603529669427,
+     "low": 425.2505538931486
+    },
+    "case_on_accrual_net_bn": {
+     "high": 482.21460692519196,
+     "low": 421.42669328218426
+    },
+    "future_share": 0.0441424547981152,
+    "per_tax_dollar": 1.186420905318966
+   },
+   "spouse_own_work_as_two_earner": {
+    "case_on_accrual_bn": {
+     "high": 495.6125166265149,
+     "low": 435.52679583794173
+    },
+    "case_on_accrual_net_bn": {
+     "high": 491.45207099095984,
+     "low": 431.2570251032604
+    },
+    "future_share": 0.04408902639585055,
+    "per_tax_dollar": 1.2774059404244986
+   }
+  },
+  "one_earner_tax_share": 0.1374459581272863,
+  "one_earner_workers_m": 2.51859351099277,
+  "spouse_status": {
+   "never_worked": {
+    "person_share": 0.002687131291874208,
+    "records": 4,
+    "tax_share": 0.0035048905162071748
+   },
+   "self_employment_2024": {
+    "person_share": 0.13290445850852542,
+    "records": 173,
+    "tax_share": 0.12654441922019247
+   },
+   "unknown": {
+    "person_share": 0.7639916782321503,
+    "records": 933,
+    "tax_share": 0.7742732688143081
+   },
+   "worked_last_12m_or_employed": {
+    "person_share": 0.051122978287201505,
+    "records": 59,
+    "tax_share": 0.047968613295352035
+   },
+   "worked_over_12m_ago": {
+    "person_share": 0.04929375368024857,
+    "records": 61,
+    "tax_share": 0.047708808153940144
+   }
   }
  },
  "steady_state_bn": {

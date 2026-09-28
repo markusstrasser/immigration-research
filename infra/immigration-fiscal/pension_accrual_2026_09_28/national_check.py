@@ -145,7 +145,7 @@ class Paths:
         rates = S.oasdi_rates_iv_b()
         by_year = lambda v: pd.Series(v.to_numpy(), index=rates.year.to_numpy()).reindex(YEARS).interpolate(
             limit_area="inside").ffill().bfill().to_numpy()
-        self.tob_share = by_year(rates.tob_rate / rates.cost_rate)
+        self.tob_share = pa.tob_share_path()     # the lane's one definition; the net switch reads the same path
         # payroll tax income per 12.4% of taxable payroll, 2025 on (Table IV.B2: 12.23% in 2025, 12.38% later)
         self.payroll_rate = np.where(YEARS > BASE_YEAR, by_year(rates.payroll_rate / 12.4), 1.0)
         self.in_window = ((YEARS > BASE_YEAR) & (YEARS <= LAST_YEAR)).astype(float)
@@ -699,11 +699,19 @@ def main() -> None:
              hi_disabled=hi24["enrollment_disabled_m"] / (w[(p.age < 65).to_numpy() & (p.MCARE == 1).to_numpy()].sum() / 1e6))
     cost_load = a3.cost / a3.benefits
     hi_load = hi24["total_expenditures_bn"] / hi24["benefits_bn"]
-    kappa = hi24["taxation_of_benefits_bn"] / a3.taxation_of_benefits
+    kappa = pa.hi_over_oasdi_tob()
     print(f"[frame] {len(p)} persons, {p.w.sum() / 1e6:.2f}m; scale to Trustees 2024: " +
           ", ".join(f"{a} {b:.4f}" for a, b in k.items()))
     grid = base_grid(econ, prelim)
     wgrid = window_grid(econ, prelim, paths)
+    # the net switch's timing weights (pension_accrual.tob_timing) are window_grid's: on this check's basis (trust-fund
+    # rates, benefits to 2099, careers from 21) they reproduce its tax-on-benefits share at every shared cohort
+    tt = pa.tob_timing(econ, prelim, paths.tob_share, runs=[(pa.BASE, "scheduled")], last_year=LAST_YEAR)[(pa.BASE, "scheduled")]
+    cohorts = [(bi, BASE_YEAR - b) for bi, b in enumerate(pa.BIRTHS) if FIRST_AGE <= BASE_YEAR - b < SPLIT["oasdi"]]
+    gap = max(float(np.abs(tt[:, bi] - wgrid["tob"][:, a - FIRST_AGE, 0]).max()) for bi, a in cohorts)
+    if gap > 1e-12:
+        blocked(f"pension_accrual.tob_timing misses window_grid's tax-on-benefits share by {gap:.2e}")
+    print(f"[gate] tob_timing = window_grid on {len(cohorts)} cohorts (max gap {gap:.1e})")
     cells, info = oasdi_working_age(p, grid, wgrid, paths, econ, u_long)
     print(f"[15-61] {info['taxpayers']} taxpayers; national per tax dollar: ratio route "
           f"{info['national_per_tax_dollar_ratio_route']:.4f}, formula route {info['national_per_tax_dollar_formula_route']:.4f}")

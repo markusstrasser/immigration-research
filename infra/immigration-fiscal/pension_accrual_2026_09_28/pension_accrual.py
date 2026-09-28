@@ -17,8 +17,14 @@ Steps, each gated (a failed gate stops with [BLOCKED] before anything is written
   7. Steady-state cross-check: the group's 2024 OASDI and Part A cash flows at stationary age structures (NVSS
      2024 Hispanic and total person-years) and at the white reference's ages.
   8. The case beside at specifications 48 and 11 (derived/case_lines.csv from case_lines.cjs), every arm.
+  9. Net of income tax on benefits (BRIEF_net_of_tax.md): each OASDI accrual loses the share of its benefits that
+     income tax will take back, the national tax-on-benefits share by year (TR 2025 Tables IV.B1/IV.B2, OASDI, plus
+     HI at its 2024 ratio to OASDI; in the central, after the 2025 tax law by the Chief Actuary's letter) weighted by
+     the timing of the accrued benefits and scaled by the group's 2024 rate relative to the nation's
+     (benefit_tax.py); the case's receipts lose the tax on the group's 2024 benefits. The gross central stays as the
+     arm gross_of_benefit_tax, the TR 2025 path as benefit_tax_tr2025_path.
 
-Run from the repository root, after case_lines.cjs:
+Run from the repository root, after case_lines.cjs and benefit_tax.py:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py
 """
 from __future__ import annotations
@@ -26,6 +32,7 @@ from __future__ import annotations
 import hashlib
 import json
 import sys
+import zipfile
 from pathlib import Path
 
 sys.dont_write_bytecode = True   # read-only imports from other lanes: write nothing beside them
@@ -66,6 +73,8 @@ GRID = [(r, "general") for r in RATES] + [("new_issue", "hispanic")]   # (discou
 BASE = ("tf", "general")                   # Note 2025.7's own basis: trust-fund rates, the Trustees' mortality
 ENTRIES = list(range(21, 61, 3))           # career start (US covered work) for the Mexico-born, floored to this grid
 BIRTHS = list(range(1950, 2008, 2))        # the model needs the AWI from age 21 (Note 2025.3 starts in 1970)
+BENEFIT_TAX = OUT / "benefit_tax.json"     # benefit_tax.py (Tax-Calculator on the CPS tax units), run before this script
+GROSS_8062DB1 = {"low": 437.828882, "high": 497.775764}   # the gross central at 8062db1, BRIEF_net_of_tax.md's gate
 
 
 def blocked(msg: str):
@@ -326,14 +335,18 @@ def note_mwr(p: pd.DataFrame, table: pd.DataFrame, level: np.ndarray, fam: np.nd
     return out
 
 
-def oasdi_arms(p: pd.DataFrame, grid: dict, u_long: float, u_2000: float) -> pd.DataFrame:
+def oasdi_arms(p: pd.DataFrame, grid: dict, u_long: float, u_2000: float, taus: dict) -> pd.DataFrame:
     """Accrual per dollar of the group's on-books OASDI tax, for every combination of arms, overall and by
-    generation. The model factor is 1 at EAN, trust-fund rates and full careers (Note 2025.7's own ratio)."""
+    generation. The model factor is 1 at EAN, trust-fund rates and full careers (Note 2025.7's own ratio).
+    The PATH_COLUMNS weight each person's accrual by the national tax-on-benefits share at the timing of their
+    benefits (tob_timing), before the group's relative rate: accrual_tob_bn on the TR 2025 path, accrual_tob_obbba_bn
+    on the path after the 2025 tax law (`taus`, keyed by path)."""
     q = p[p.union & (p.tax_oasdi > 0)].reset_index(drop=True)
     fam = ss.family_vector(q, "observed_family")
     tables = {"scheduled": S.mwr_table(1), "payable": S.mwr_table(3)}
     w, tax = q.w.to_numpy(), q.tax_oasdi.to_numpy()
     birth_m = np.clip(ss.INCOME_YEAR - q.age.to_numpy(), BIRTHS[0], BIRTHS[-1]).astype(float)
+    tob_p = {path: person_tau(taus[path], fam, birth_m) for path in PATH_COLUMNS}
     arr = np.where(q.mexico_born & q.arrival_age.notna(), q.arrival_age.fillna(21), 21.0)
     unauth = q.unauth.to_numpy()
     gens = q.gen.to_numpy()
@@ -349,15 +362,19 @@ def oasdi_arms(p: pd.DataFrame, grid: dict, u_long: float, u_2000: float) -> pd.
                     entry = arr if entry_on else np.full(len(q), 21.0)
                     fac = model_factor(grid, method, g, fam, entry, birth_m, lvl_m, q.age.to_numpy().astype(float))
                     for scen, mwr in base.items():
+                        tob = {path: t[(g, scen)] for path, t in tob_p.items()}
                         for uname, u in shares.items():
                             acc = tax * mwr * fac * np.where(unauth, u, 1.0)
                             for grp in ["union", "G1", "G2", "G3plus"]:
                                 m = np.ones(len(q), bool) if grp == "union" else gens == grp
-                                rows.append(dict(mapping=mapping, method=method, rate=str(g[0]), mortality=g[1],
-                                                 career_start=entry_on, scenario=scen, unauthorized=uname, group=grp,
-                                                 tax_bn=float((w * tax)[m].sum() / 1e9),
-                                                 accrual_bn=float((w * acc)[m].sum() / 1e9),
-                                                 per_tax_dollar=float((w * acc)[m].sum() / (w * tax)[m].sum())))
+                                row = dict(mapping=mapping, method=method, rate=str(g[0]), mortality=g[1],
+                                           career_start=entry_on, scenario=scen, unauthorized=uname, group=grp,
+                                           tax_bn=float((w * tax)[m].sum() / 1e9),
+                                           accrual_bn=float((w * acc)[m].sum() / 1e9),
+                                           per_tax_dollar=float((w * acc)[m].sum() / (w * tax)[m].sum()))
+                                for path, col in PATH_COLUMNS.items():
+                                    row[col] = float((w * acc * tob[path])[m].sum() / 1e9)
+                                rows.append(row)
     return pd.DataFrame(rows)
 
 
@@ -518,6 +535,215 @@ def steady_state(p: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
     return pd.DataFrame(rows), dict(band_shares=shares.round(6).to_dict(), per_person_by_band={k: v.round(4).tolist() for k, v in pp.items()})
 
 
+# ------------------------------------------------------------------ net of income tax on benefits
+def tob_share_path() -> np.ndarray:
+    """Income from taxation of OASDI benefits over OASDI cost by year (TR 2025 Tables IV.B1 and IV.B2, intermediate,
+    scheduled benefits), interpolated between the tables' years and flat outside, on lifetime_model's year index. The
+    one definition: national_check.Paths reads it."""
+    rates = S.oasdi_rates_iv_b()
+    return pd.Series((rates.tob_rate / rates.cost_rate).to_numpy(), index=rates.year.to_numpy()).reindex(
+        np.arange(L.Y0, L.Y1 + 1)).interpolate(limit_area="inside").ffill().bfill().to_numpy()
+
+
+def obbba_factor() -> np.ndarray:
+    """The 2025 tax law's income from taxation of OASDI benefits over the 2025 Trustees Report's, by year: 1 plus the
+    Chief Actuary's change in the income rate (letter of 5 August 2025, Table 1, 2025-2100, flat after) over the
+    Trustees' rate (Table IV.B2, interpolated as tob_share_path). HI is taken to move in proportion (the letter leaves
+    HI out; the 2026 Trustees Report says HI's income from the tax falls too)."""
+    rates = S.oasdi_rates_iv_b()
+    years = np.arange(L.Y0, L.Y1 + 1)
+    tob = pd.Series(rates.tob_rate.to_numpy(), index=rates.year.to_numpy()).reindex(years).interpolate(
+        limit_area="inside").ffill().bfill().to_numpy()
+    change = S.obbba_income_rate_change().reindex(years).ffill().fillna(0.0).to_numpy()
+    return 1 + change / tob
+
+
+def hi_over_oasdi_tob() -> float:
+    """HI's 2024 income from taxation of benefits over OASDI's (Medicare TR 2025 Table II.B1 over TR 2025 Table
+    VI.A3): the HI part of the tax on OASDI benefits, held at its 2024 ratio. national_check reads it."""
+    a3 = S.combined_operations_vi_a3().set_index("year").loc[2024]
+    return S.quotes()["mtr_hi_2024_operations"]["value"]["taxation_of_benefits_bn"] / a3.taxation_of_benefits
+
+
+def tob_timing(econ, prelim, share: np.ndarray, runs: list | None = None, last_year: int | None = None) -> dict:
+    """tau[(g, scenario)] (family x birth year on BIRTHS): the share of a unit's benefits that income tax takes back,
+    each year's national `share` weighted by the unit's benefit present value at run g's rate and mortality, as
+    national_check.window_grid weights. The unit is a medium-level worker from 21 (the level scales the benefit, not
+    its timing), alive on 1 January 2025 (at 65 if older); only benefits paid after 2024 count, and every later year
+    counts unless `last_year` cuts them (the accrual values lifetime benefits)."""
+    pay = payable_path(econ)
+    fams = list(L.FAMILY_SEXES)
+    ages = np.arange(121)
+    out = {}
+    for g, scen in runs or [(g, s) for g in GRID for s in ("scheduled", "payable")]:
+        t = np.full((len(fams), len(BIRTHS)), np.nan)
+        for fi, fam in enumerate(fams):
+            for bi, b in enumerate(BIRTHS):
+                w = L.worker(b, L.LEVEL_ADJ["medium"], 21, fam, econ, prelim, arm=g[0], population=g[1],
+                             payable=pay if scen == "payable" else None, alive_at=min(2025 - b, 65), last_year=last_year)
+                ben = w["ben_pv_by_age"] * (b + ages > 2024)
+                t[fi, bi] = float((ben * econ.at(share, b)).sum() / ben.sum())
+        out[(g, scen)] = t
+    return out
+
+
+def person_tau(tau: dict, fam: np.ndarray, birth: np.ndarray) -> dict:
+    """Each person's tau for every run, linear in birth year between the grid's points (flat outside)."""
+    fams = list(L.FAMILY_SEXES)
+    fi = np.array([fams.index(f) for f in fam])
+    bj, bw = interp_weights(birth, np.array(BIRTHS, float))
+    return {k: (1 - bw) * t[fi, bj] + bw * t[fi, bj + 1] for k, t in tau.items()}
+
+
+def benefit_tax_inputs(lines: pd.DataFrame) -> dict:
+    """derived/benefit_tax.json (benefit_tax.py), stopped if stale against its script or the tax lane's code, as the
+    net switch reads it: each mapping's relative rates (the union's, its SE and each generation's) and the current
+    receipt at each end. Before the package's corrections, the case's federal income tax line is the national receipt
+    times the group's share of the Census FEDTAX_BC key (full_account_receipts_2026_09_20/builder.py). The part its
+    2024 benefits carry is that line's national amount times the group's benefit tax before refundable credits over
+    the key's national total, both at the end's allocation (48 shared, 11 personal). Beside it: over Tax-Calculator's
+    own national total; the group's rate at the Trustees' national level times the case's Social Security benefits;
+    and scaled by the case's line after the corrections (the CPS-imputation stack and CBO's gradient) over its key
+    share, as if the corrections reached the benefits' part in proportion."""
+    j = json.loads(BENEFIT_TAX.read_text())
+    root = FISCAL.parents[1]
+    want = {str((HERE / "benefit_tax.py").relative_to(root)): j["script_sha256"], **j["imported_sha256"]}
+    stale = [f for f, h in want.items() if hashlib.sha256((root / f).read_bytes()).hexdigest() != h]
+    if stale:
+        blocked(f"benefit_tax.json predates changes to {stale}; rerun benefit_tax.py")
+    fit = lines[lines.line == "federal_income_tax"]
+    if fit.national_bn.nunique() != 1 or not (fit.response == 1).all():
+        blocked("the case's federal income tax line is not one national amount at response 1")
+    national = float(fit.national_bn.iloc[0])
+    alloc = {end: g.allocation.unique() for end, g in lines.groupby("end")}
+    if any(len(a) != 1 for a in alloc.values()):
+        blocked(f"an end with two allocations: {alloc}")
+    alloc = {end: a[0] for end, a in alloc.items()}
+    ss_case = lines[lines.line == "social_security"].groupby("end").amount_bn.mean()
+    fit_case = fit.groupby("end").amount_bn.mean()
+    gens = {"union": "union", "G1": "G1", "G2": "G2", "G3plus": "G3plus"}
+    out = dict(national_income_tax_bn=national, allocation=alloc, mapping=j["central_mapping"], relative_rate={},
+               relative_rate_se={}, current_receipt_bn={}, current_receipt_taxcalc_total_bn={},
+               current_receipt_trustees_level_bn={}, case_line_over_key_share={},
+               current_receipt_scaled_to_case_line_bn={}, json=j)
+    tr = j["trustees_2024"]["share_of_benefits"]
+    for m, r in j["results"].items():
+        grp = r["groups"]
+        out["relative_rate"][m] = {g: grp[k]["relative_rate"][0] for g, k in gens.items()}
+        out["relative_rate_se"][m] = grp["union"]["relative_rate"][1]
+        k = {end: r["key"][a] for end, a in alloc.items()}
+        out["current_receipt_bn"][m] = {e: national * v["group_benefit_tax_bn"][0] / v["national_key_census_bn"]
+                                        for e, v in k.items()}
+        out["current_receipt_taxcalc_total_bn"][m] = {e: national * v["group_benefit_tax_bn"][0] / v["national_key_taxcalc_bn"]
+                                                      for e, v in k.items()}
+        out["current_receipt_trustees_level_bn"][m] = {e: float(ss_case[e]) * grp["union"]["relative_rate"][0] * tr
+                                                       for e in alloc}
+        out["case_line_over_key_share"][m] = {e: float(fit_case[e]) / (national * v["group_key_census_bn"] / v["national_key_census_bn"])
+                                              for e, v in k.items()}
+        out["current_receipt_scaled_to_case_line_bn"][m] = {e: out["current_receipt_bn"][m][e] * out["case_line_over_key_share"][m][e]
+                                                            for e in k}
+    return out
+
+
+# The central path is the one after the 2025 tax law (the parent's decision of 2026-09-28: current law, on the TR 2025
+# intermediate assumptions); the TR 2025 path is the arm benefit_tax_tr2025_path. Each path's oasdi_arms column:
+PATH_COLUMNS = {"tr2025": "accrual_tob_bn", "obbba": "accrual_tob_obbba_bn"}
+BT_CENTRAL = dict(net=True, bt_mapping="census_income", bt_rate="union", bt_path="obbba")
+GENS = ["G1", "G2", "G3plus"]
+SPOUSE_OWN_WORK = ["self_employment_2024", "worked_last_12m_or_employed"]
+
+
+def spouse_status(p: pd.DataFrame) -> np.ndarray:
+    """What the CPS says about each person's spouse's own work (BRIEF_net_of_tax.md item 4): self-employment income
+    in 2024 (se > 0; the family assignment counts only the spouse's wages, and a few of these fall below SECA's $400
+    floor), else employed or on layoff in March 2025 (PEMLR 1-3) or last worked within 12 months
+    (A_NLFLJ 1, A_WHENLJ 1), else last worked more than 12 months ago (A_NLFLJ 3, A_WHENLJ 2), else never worked
+    (A_NLFLJ 7, A_WHENLJ 5), else unknown: the when-last-worked items are asked in the outgoing rotations only, and
+    "worked" counts work abroad. Persons without a linked spouse get ""."""
+    with zipfile.ZipFile(ca.CPS) as z:
+        c = pd.read_csv(z.open("pppub25.csv"), usecols=["PH_SEQ", "A_LINENO", "A_SPOUSE", "PEMLR", "A_NLFLJ", "A_WHENLJ"])
+    me = p[["PH_SEQ", "A_LINENO"]].merge(c, on=["PH_SEQ", "A_LINENO"], how="left", validate="one_to_one")
+    sp = me[["PH_SEQ", "A_SPOUSE"]].merge(c.drop(columns="A_SPOUSE"), left_on=["PH_SEQ", "A_SPOUSE"],
+                                          right_on=["PH_SEQ", "A_LINENO"], how="left", validate="many_to_one")
+    se = me[["PH_SEQ", "A_SPOUSE"]].merge(p[["PH_SEQ", "A_LINENO", "se"]], left_on=["PH_SEQ", "A_SPOUSE"],
+                                          right_on=["PH_SEQ", "A_LINENO"], how="left").se.fillna(0).to_numpy()
+    nl, wh, pe = sp.A_NLFLJ.to_numpy(), sp.A_WHENLJ.to_numpy(), sp.PEMLR.to_numpy()
+    st = np.where(sp.A_LINENO.isna().to_numpy(), "", "unknown").astype(object)
+    st[(nl == 7) | (wh == 5)] = "never_worked"
+    st[(nl == 3) | (wh == 2)] = "worked_over_12m_ago"
+    st[(nl == 1) | (wh == 1) | np.isin(pe, [1, 2, 3])] = "worked_last_12m_or_employed"
+    st[se > 0] = SPOUSE_OWN_WORK[0]
+    return st
+
+
+def central_accrual(q: pd.DataFrame, grid: dict, u_long: float, tau: dict, fam: np.ndarray) -> tuple:
+    """Per-person OASDI accrual and tax-on-benefits timing at the central settings, for a given family vector (the
+    oasdi_arms computation at CENTRAL, as national_check.group_ratio repeats it)."""
+    level = career_levels(q, CENTRAL["mapping"])
+    lvl = np.clip(level, MODEL_LEVELS[0], MODEL_LEVELS[-1])
+    birth = np.clip(ss.INCOME_YEAR - q.age.to_numpy(), BIRTHS[0], BIRTHS[-1]).astype(float)
+    entry = np.where(q.mexico_born & q.arrival_age.notna(), q.arrival_age.fillna(21), 21.0)
+    g = (CENTRAL["rate"], CENTRAL["mortality"])
+    fac = model_factor(grid, CENTRAL["method"], g, fam, entry, birth, lvl, q.age.to_numpy().astype(float))
+    acc = q.tax_oasdi.to_numpy() * note_mwr(q, S.mwr_table(1), level, fam) * fac * np.where(q.unauth.to_numpy(), u_long, 1.0)
+    return acc, person_tau(tau, fam, birth)[(g, CENTRAL["scenario"])]
+
+
+def spouse_arm(p: pd.DataFrame, grid: dict, u_long: float, tau: dict, arms: pd.DataFrame, beside: pd.DataFrame,
+               bt: dict) -> dict:
+    """Item 4 (time-boxed): the one-earner couples whose spouse has own current work (SPOUSE_OWN_WORK)
+    priced as two-earner couples; the bounds are the central (observed families) and every one-earner couple as
+    two-earner. An arm only: the central does not move."""
+    q = p[p.union & (p.tax_oasdi > 0)].reset_index(drop=True)
+    st = spouse_status(p)[(p.union & (p.tax_oasdi > 0)).to_numpy()]
+    fam = ss.family_vector(q, "observed_family")
+    one = fam == "one_earner_couple"
+    w, tw = q.w.to_numpy(), q.w.to_numpy() * q.tax_oasdi.to_numpy()
+    cen = beside[beside.arm == "central"].set_index("end")
+    rel = bt["relative_rate"][bt["mapping"]]["union"]
+    out = dict(one_earner_workers_m=float(w[one].sum() / 1e6), one_earner_tax_share=float(tw[one].sum() / tw.sum()),
+               spouse_status={s: dict(records=int((one & (st == s)).sum()), person_share=float(w[one & (st == s)].sum() / w[one].sum()),
+                                      tax_share=float(tw[one & (st == s)].sum() / tw[one].sum()))
+                              for s in [*SPOUSE_OWN_WORK, "worked_over_12m_ago", "never_worked", "unknown"]},
+               arms={})
+    for name, move in (("central", np.zeros(len(q), bool)), ("spouse_own_work_as_two_earner", one & np.isin(st, SPOUSE_OWN_WORK)),
+                       ("every_one_earner_as_two_earner", one)):
+        f = np.where(move, "two_earner_couple", fam).astype(object)
+        acc, tob = central_accrual(q, grid, u_long, tau, f)
+        ratio, share = float((w * acc).sum() / tw.sum()), rel * float((w * acc * tob).sum() / (w * acc).sum())
+        rec = dict(per_tax_dollar=ratio, future_share=share, case_on_accrual_bn={}, case_on_accrual_net_bn={})
+        for e in ["low", "high"]:
+            c = cen.loc[e]
+            gross = c.case_bn - c.ss_benefits_removed_bn + ratio * c.oasdi_tax_bn + c.delta_part_a_bn
+            rec["case_on_accrual_bn"][e] = float(gross)
+            rec["case_on_accrual_net_bn"][e] = float(gross - ratio * share * c.oasdi_tax_bn + c.benefit_tax_receipt_bn)
+        out["arms"][name] = rec
+    lane = out["arms"]["central"]
+    if abs(lane["per_tax_dollar"] - float(pick(arms, arm_spec("central", "low"), OASDI_KEYS).per_tax_dollar)) > 1e-12 or \
+            any(abs(lane["case_on_accrual_net_bn"][e] - float(cen.loc[e, "case_on_accrual_net_bn"])) > 1e-9 for e in ["low", "high"]):
+        blocked("the spouse arm's machinery does not reproduce the central")
+    return out
+
+
+def future_share(oasdi: pd.DataFrame, spec: dict, bt: dict) -> float:
+    """The share of the arm's OASDI accrual that income tax takes back: the arm's national path (PATH_COLUMNS) at the
+    timing of the arm's accrual (accrual_tob_*_bn / accrual_bn) times the relative rate, the union's (central, or 1.96
+    SE either side), each generation's own on its members' accrual, or 1 (the national rate); 0 for a gross arm."""
+    if not spec["net"]:
+        return 0.0
+    rel = bt["relative_rate"][spec["bt_mapping"]]
+    col = PATH_COLUMNS[spec["bt_path"]]
+    u = pick(oasdi, spec, OASDI_KEYS)
+    timing = u[col] / u.accrual_bn
+    z = 1.96 * bt["relative_rate_se"][spec["bt_mapping"]]
+    rate = {"union": rel["union"], "union_low": rel["union"] - z, "union_high": rel["union"] + z, "national": 1.0}
+    if spec["bt_rate"] in rate:
+        return rate[spec["bt_rate"]] * timing
+    if spec["bt_rate"] == "generation":
+        return sum(rel[g] * pick(oasdi, spec, OASDI_KEYS, g)[col] for g in GENS) / u.accrual_bn
+    raise ValueError(spec["bt_rate"])
+
+
 # ------------------------------------------------------------------ 7. the case beside
 def case_components(p: pd.DataFrame) -> pd.DataFrame:
     """The case's pension lines per method and end (derived/case_lines.csv), with the self-employment receipt
@@ -571,13 +797,24 @@ ARMS = {
     "bridge_sept18": dict(mapping="individual_raw", rate="tf", career_start=False, unauthorized="full"),
     # bec1cd7's central: the one-earner spouse credit on top of the own term, which already carries dependents
     "bridge_part_a_spouse_credit": dict(spouse=True),
+    # the income tax on benefits (BRIEF_net_of_tax.md; BT_CENTRAL: net, the census_income mapping, the union's rate,
+    # the path after the 2025 tax law)
+    "benefit_tax_generation_rates": dict(bt_rate="generation"),
+    "benefit_tax_rate_low": dict(bt_rate="union_low"),
+    "benefit_tax_rate_high": dict(bt_rate="union_high"),
+    "benefit_tax_after_obbba": dict(bt_path="obbba"),   # current law, now the central's path; kept by name
+    "benefit_tax_tr2025_path": dict(bt_path="tr2025"),  # TCJA rates expire after 2025: the central until 2026-09-28
+    "gross_of_benefit_tax": dict(net=False),          # the gross central (8062db1), kept by name outside the ranges
+    "bridge_benefit_tax_national_rate": dict(bt_rate="national"),
+    "bridge_benefit_tax_tax_lane_mapping": dict(bt_mapping="full"),   # misses retirees' distributions and gains
 }
 OASDI_KEYS = ["mapping", "method", "rate", "mortality", "career_start", "scenario", "unauthorized"]
 HI_KEYS = ["rate", "mortality", "scenario", "unauthorized", "spouse"]
+OUTSIDE_RANGES = {"gross_of_benefit_tax"}
 
 
 def arm_spec(name: str, end: str) -> dict:
-    spec = {**CENTRAL, **ARMS[name]}
+    spec = {**CENTRAL, **BT_CENTRAL, **ARMS[name]}
     if isinstance(spec["rate"], dict):
         spec["rate"] = spec["rate"][end]
     return spec
@@ -592,11 +829,14 @@ def pick(df: pd.DataFrame, spec: dict, keys: list[str], group: str = "union") ->
     return df[sel].iloc[0]
 
 
-def case_beside(comp: pd.DataFrame, oasdi: pd.DataFrame, hi: pd.DataFrame, case: dict) -> pd.DataFrame:
+def case_beside(comp: pd.DataFrame, oasdi: pd.DataFrame, hi: pd.DataFrame, case: dict, bt: dict) -> pd.DataFrame:
     """Each arm at each end, the two fill-in methods averaged: the case; its OASDI taxes and the accrual they earn
     (the group's accrual per dollar of on-books OASDI tax x the case's OASDI tax); the 2024 Social Security
     benefits the accrual replaces; the Part A accrual of the group's covered workers and the 2024 Part A benefits
-    it replaces. Railroad retirement, Parts B and D and every receipt stay as the case has them."""
+    it replaces. Railroad retirement, Parts B and D and every receipt stay as the case has them.
+    Net of income tax on benefits (the *_net columns): the OASDI accrual less the future_share income tax will take
+    back, and the case's federal income tax less the part the group's 2024 benefits carry (benefit_tax_receipt_bn).
+    Part A benefits are not taxed. A gross arm (gross_of_benefit_tax) takes neither."""
     rows = []
     for end in ["low", "high"]:
         c = comp[comp.end == end]
@@ -607,11 +847,18 @@ def case_beside(comp: pd.DataFrame, oasdi: pd.DataFrame, hi: pd.DataFrame, case:
             ratio = float(pick(oasdi, spec, OASDI_KEYS).per_tax_dollar)
             hi_acc = float(pick(hi, spec, HI_KEYS).accrual_bn)
             d_oasdi, d_hi = ratio * tax - ss_cash, hi_acc - part_a
+            share = future_share(oasdi, spec, bt)
+            receipt = bt["current_receipt_bn"][spec["bt_mapping"]][end] if spec["net"] else 0.0
+            d_net = ratio * tax * (1 - share) - ss_cash + receipt
             rows.append(dict(arm=name, bridge=name.startswith("bridge_"), end=end, spec=int(c.spec.iloc[0]),
                              case_bn=cost, oasdi_tax_bn=tax, accrual_per_tax_dollar=ratio, oasdi_accrual_bn=ratio * tax,
                              ss_benefits_removed_bn=ss_cash, delta_oasdi_bn=d_oasdi, hi_tax_bn=float(c.hi_tax_bn.mean()),
                              part_a_accrual_bn=hi_acc, part_a_removed_bn=part_a, delta_part_a_bn=d_hi,
-                             delta_bn=d_oasdi + d_hi, case_on_accrual_bn=cost + d_oasdi + d_hi))
+                             delta_bn=d_oasdi + d_hi, case_on_accrual_bn=cost + d_oasdi + d_hi,
+                             future_share=share, accrual_per_tax_dollar_net=ratio * (1 - share),
+                             oasdi_accrual_net_bn=ratio * tax * (1 - share), benefit_tax_on_accrual_bn=ratio * tax * share,
+                             benefit_tax_receipt_bn=receipt, delta_oasdi_net_bn=d_net, delta_net_bn=d_net + d_hi,
+                             case_on_accrual_net_bn=cost + d_net + d_hi))
     return pd.DataFrame(rows)
 
 
@@ -751,6 +998,111 @@ def summarize(beside, st_case, arms, hi, hi_info, v, t, union_row, case, gates, 
     )
 
 
+def summarize_net(beside: pd.DataFrame, arms: pd.DataFrame, hi: pd.DataFrame, bt: dict, share: np.ndarray) -> dict:
+    """The keys the net switch adds to summary.json (every existing key keeps its meaning): benefit_tax (the current
+    and future benefit tax; the future shares on the central's path, with the TR 2025 path's in tr2025_path),
+    ratio_net, case_on_accrual_net_bn, the net central's decomposition, the net ranges, and the gate that the switch
+    with no tax reproduces the gross central."""
+    cen = beside[beside.arm == "central"].set_index("end")
+    gross = beside[beside.arm == "gross_of_benefit_tax"].set_index("end")
+    gate = {}
+    for e in ["low", "high"]:
+        g0, gn = float(cen.loc[e, "case_on_accrual_bn"]), float(gross.loc[e, "case_on_accrual_net_bn"])
+        gate[e] = dict(gross_central_bn=g0, net_with_no_tax_bn=gn, at_8062db1_bn=GROSS_8062DB1[e])
+        if abs(gn - g0) > 1e-9 or abs(g0 - GROSS_8062DB1[e]) > 1e-6:
+            blocked(f"with no tax the net switch gives {gn} at {e}, not the gross central {g0} ({GROSS_8062DB1[e]} at 8062db1)")
+    if abs(cen.loc["low", "future_share"] - cen.loc["high", "future_share"]) > 1e-15:
+        blocked("the central's future benefit-tax share differs between the ends")
+    m, j = bt["mapping"], bt["json"]
+    grp = j["results"][m]["groups"]
+    spec = arm_spec("central", "low")
+    u = pick(arms, spec, OASDI_KEYS)
+    rel = bt["relative_rate"][m]
+    by_gen = {g: pick(arms, spec, OASDI_KEYS, g) for g in GENS}
+    col = PATH_COLUMNS[BT_CENTRAL["bt_path"]]
+
+    def on_path(c: str) -> dict:
+        """The central settings' shares on the path whose oasdi_arms column is c."""
+        return dict(future_share_group=rel["union"] * float(u[c] / u.accrual_bn),
+                    future_share_national_timing=float(u[c] / u.accrual_bn),
+                    future_share_by_generation={g: rel["union"] * float(r[c] / r.accrual_bn) for g, r in by_gen.items()},
+                    future_share_by_generation_own_rate={g: rel[g] * float(r[c] / r.accrual_bn) for g, r in by_gen.items()})
+
+    cand = beside[~beside.bridge & ~beside.arm.isin(OUTSIDE_RANGES)]
+    rng = {end: dict(min=float(g.case_on_accrual_net_bn.min()), max=float(g.case_on_accrual_net_bn.max()),
+                     min_arm=g.loc[g.case_on_accrual_net_bn.idxmin(), "arm"], max_arm=g.loc[g.case_on_accrual_net_bn.idxmax(), "arm"])
+           for end, g in cand.groupby("end")}
+    # every combination of the non-bridge settings, on the central's path, with each plausible relative rate (the
+    # union's, 1.96 SE either side, each generation's own); the TR 2025 path is an arm, outside this envelope
+    fact = arms[(arms.method != "MARG") & (arms.rate != "awi")]
+    piv = fact.pivot_table(index=OASDI_KEYS, columns="group", values=["accrual_bn", col, "per_tax_dollar"])
+    z = 1.96 * bt["relative_rate_se"][m]
+    timing = piv[(col, "union")] / piv[("accrual_bn", "union")]
+    shares = [rel["union"] * timing, (rel["union"] - z) * timing, (rel["union"] + z) * timing,
+              sum(rel[g] * piv[(col, g)] for g in GENS) / piv[("accrual_bn", "union")]]
+    per_net = np.concatenate([(piv[("per_tax_dollar", "union")] * (1 - s)).to_numpy() for s in shares])
+    hfact = hi[(hi.group == "union") & (hi.rate != "awi") & ~hi.spouse.astype(bool)]
+    env = {}
+    for e in ["low", "high"]:
+        c = cen.loc[e]
+        base = c.case_bn - c.ss_benefits_removed_bn - c.part_a_removed_bn + c.benefit_tax_receipt_bn
+        env[e] = dict(min=float(base + per_net.min() * c.oasdi_tax_bn + hfact.accrual_bn.min()),
+                      max=float(base + per_net.max() * c.oasdi_tax_bn + hfact.accrual_bn.max()),
+                      per_tax_dollar_net=[float(per_net.min()), float(per_net.max())])
+    years = {y: float(share[y - L.Y0]) for y in (2025, 2030, 2050, 2080, 2100)}
+    law = obbba_factor()
+    tr = beside[beside.arm == "benefit_tax_tr2025_path"].set_index("end")
+    central_shares = on_path(col)
+    if abs(central_shares["future_share_group"] - cen.loc["low", "future_share"]) > 1e-15:
+        blocked("the central's future share is not its path's share at the central settings")
+    return dict(
+        benefit_tax=dict(
+            source="benefit_tax.py -> derived/benefit_tax.json: Tax-Calculator 6.8.2 on CPS ASEC 2025 tax units, "
+                   "tax with each unit's 2024 Social Security benefits less tax without them",
+            mapping=m, taxcalc_version=j["taxcalc_version"],
+            current_rate_group=grp["union"]["rate"][0], current_rate_nation=grp["nation"]["rate"][0],
+            current_group_bn=grp["union"]["benefit_tax_bn"][0], current_nation_bn=grp["nation"]["benefit_tax_bn"][0],
+            benefits_group_bn=grp["union"]["benefits_bn"][0], benefits_nation_bn=grp["nation"]["benefits_bn"][0],
+            relative_rate=rel["union"], relative_rate_se=bt["relative_rate_se"][m],
+            relative_rate_by_generation={g: rel[g] for g in GENS},
+            current_receipt_bn={e: bt["current_receipt_bn"][m][e] for e in ["low", "high"]},
+            current_receipt_allocation=bt["allocation"], national_income_tax_bn=bt["national_income_tax_bn"],
+            current_receipt_beside_bn=dict(taxcalc_national_total=bt["current_receipt_taxcalc_total_bn"][m],
+                                           trustees_level=bt["current_receipt_trustees_level_bn"][m],
+                                           scaled_to_case_line=bt["current_receipt_scaled_to_case_line_bn"][m]),
+            case_line_over_key_share=bt["case_line_over_key_share"][m],
+            central_path=BT_CENTRAL["bt_path"],
+            central_path_basis="the path after the 2025 tax law (P.L. 119-21), the parent's decision of 2026-09-28: "
+                               "current law, on the TR 2025 intermediate assumptions; the TR 2025 path is the arm "
+                               "benefit_tax_tr2025_path",
+            **central_shares,
+            national_path_oasdi_plus_hi=years, kappa_hi_over_oasdi=hi_over_oasdi_tob(),
+            national_path_oasdi_plus_hi_after_obbba={y: float(share[y - L.Y0] * law[y - L.Y0]) for y in years},
+            after_obbba=dict(future_share_group=on_path(PATH_COLUMNS["obbba"])["future_share_group"],
+                             future_share_national_timing=on_path(PATH_COLUMNS["obbba"])["future_share_national_timing"],
+                             path_factor={y: float(law[y - L.Y0]) for y in (2025, 2026, 2030, 2050, 2080, 2100)},
+                             source="SSA OCACT letter to Sen. Wyden, 5 August 2025, Table 1 (sources.obbba_income_rate_change); "
+                                    "HI moved in proportion"),
+            tr2025_path=dict(**on_path(PATH_COLUMNS["tr2025"]),
+                             ratio_net=float(tr.loc["low", "accrual_per_tax_dollar_net"]),
+                             case_on_accrual_net_bn={e: float(tr.loc[e, "case_on_accrual_net_bn"]) for e in ["low", "high"]},
+                             change_from_gross_bn={e: float(tr.loc[e, "case_on_accrual_net_bn"] - tr.loc[e, "case_on_accrual_bn"])
+                                                   for e in ["low", "high"]}),
+            trustees_check=j["trustees_check"][m], fedtax_bc_gate=j["results"][m]["gate"],
+            census_filed_returns_with_benefits=j["results"][m]["census_filed_returns_with_benefits"]),
+        ratio_net=float(cen.loc["low", "accrual_per_tax_dollar_net"]),
+        case_on_accrual_net_bn={e: float(cen.loc[e, "case_on_accrual_net_bn"]) for e in ["low", "high"]},
+        central_decomposition_net={e: {k: float(cen.loc[e, k]) for k in
+                                       ["future_share", "accrual_per_tax_dollar_net", "oasdi_accrual_net_bn",
+                                        "benefit_tax_on_accrual_bn", "benefit_tax_receipt_bn", "delta_oasdi_net_bn",
+                                        "delta_net_bn", "case_on_accrual_net_bn"]}
+                                   | {"change_from_gross_bn": float(cen.loc[e, "case_on_accrual_net_bn"] - cen.loc[e, "case_on_accrual_bn"])}
+                                   for e in ["low", "high"]},
+        range_across_arms_net_bn=rng, every_combination_net_bn=env,
+        gate_net_with_no_tax=gate,
+    )
+
+
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     q = S.quotes()
@@ -767,18 +1119,31 @@ def main() -> None:
     gates = dict(model=gate_model(grid, econ, prelim), quotes_verified=len(q))
     u_long = q["note151_eligible_share"]["value"]["end_of_projection"]
     u_2000 = q["note151_eligible_share"]["value"]["age62_in_2000"]
-    arms = oasdi_arms(p, grid, u_long, u_2000)
+    share = tob_share_path() * (1 + hi_over_oasdi_tob())      # OASDI plus HI, national, by year (TR 2025)
+    taus = {"tr2025": tob_timing(econ, prelim, share), "obbba": tob_timing(econ, prelim, share * obbba_factor())}
+    arms = oasdi_arms(p, grid, u_long, u_2000, taus)
     hi, hi_info = hi_accrual(p, econ, u_long, u_2000)
     st, st_info = steady_state(p)
     comp = case_components(p)
-    beside = case_beside(comp, arms, hi, case)
+    bt = benefit_tax_inputs(pd.read_csv(OUT / "case_lines.csv"))
+    # gate: the central's timing on each path through central_accrual (the spouse arm's machinery) equals the arms'
+    qu = p[p.union & (p.tax_oasdi > 0)].reset_index(drop=True)
+    u_c = pick(arms, CENTRAL, OASDI_KEYS)
+    for path, col in PATH_COLUMNS.items():
+        acc_c, tob_c = central_accrual(qu, grid, u_long, taus[path], ss.family_vector(qu, "observed_family"))
+        via = float((qu.w.to_numpy() * acc_c * tob_c).sum() / (qu.w.to_numpy() * acc_c).sum())
+        if abs(via - u_c[col] / u_c.accrual_bn) > 1e-12:
+            blocked(f"the central's {path} timing differs between central_accrual and oasdi_arms")
+    beside = case_beside(comp, arms, hi, case, bt)
     st_case = steady_state_case(comp, st)
     named = []
     for name in ARMS:
         spec = arm_spec(name, "low")
         for g in ["union", "G1", "G2", "G3plus"]:
             r = pick(arms, spec, OASDI_KEYS, g)
-            named.append(dict(arm=name, group=g, tax_bn=r.tax_bn, accrual_bn=r.accrual_bn, per_tax_dollar=r.per_tax_dollar))
+            named.append(dict(arm=name, group=g, tax_bn=r.tax_bn, accrual_bn=r.accrual_bn, per_tax_dollar=r.per_tax_dollar,
+                              national_path_share=r.accrual_tob_bn / r.accrual_bn,
+                              national_path_share_after_obbba=r.accrual_tob_obbba_bn / r.accrual_bn))
     union = arms[arms.group == "union"].drop(columns="group")
     union.to_csv(OUT / "oasdi_arms.csv", index=False, float_format="%.6f", lineterminator="\n")
     pd.DataFrame(named).to_csv(OUT / "oasdi_by_generation.csv", index=False, float_format="%.6f", lineterminator="\n")
@@ -790,6 +1155,8 @@ def main() -> None:
     v.to_csv(OUT / "model_check_v_c7.csv", index=False, float_format="%.4f", lineterminator="\n")
     t.to_csv(OUT / "model_check_mwr.csv", index=False, float_format="%.4f", lineterminator="\n")
     summary = summarize(beside, st_case, arms, hi, hi_info, v, t, union_row, case, gates, p)
+    summary.update(summarize_net(beside, arms, hi, bt, share))
+    summary["spouse_own_record_arm"] = spouse_arm(p, grid, u_long, taus[BT_CENTRAL["bt_path"]], arms, beside, bt)
     summary["steady_state_structures"] = st_info
     summary["case_components_attrs"] = comp.attrs
     summary["coverage_check"] = coverage_check(pd.read_csv(OUT / "case_lines.csv"), comp.attrs["se_oasdi_share"])
@@ -805,6 +1172,9 @@ def main() -> None:
                    "case_on_accrual_bn"]]
     print(show.pivot_table(index="arm", columns="end", values=["accrual_per_tax_dollar", "delta_oasdi_bn",
                                                               "delta_part_a_bn", "case_on_accrual_bn"], sort=False).round(2).to_string())
+    print(beside.pivot_table(index="arm", columns="end", values=["future_share", "benefit_tax_on_accrual_bn",
+                                                                "benefit_tax_receipt_bn", "case_on_accrual_net_bn"],
+                             sort=False).round(4).to_string())
     print(st_case.round(2).to_string(index=False))
     print(f"[written] {', '.join(sorted(x.name for x in OUT.iterdir()))}")
 
