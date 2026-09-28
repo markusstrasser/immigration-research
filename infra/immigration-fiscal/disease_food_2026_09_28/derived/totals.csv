@@ -1,0 +1,5 @@
+total,measure,low_bn,central_bn,high_bn,per_member_usd,note
+disease,absolute,0.0079,0.0624,0.2858,1.53,"sum of arms (stacked lows / highs, not a confidence interval); excludes variety, prices, COVID-19 and the fiscal key correction"
+disease,normalized,-0.0019,0.0209,0.1528,0.51,"sum of arms (stacked lows / highs, not a confidence interval); excludes variety, prices, COVID-19 and the fiscal key correction"
+disease_plus_food_safety,absolute,0.0079,0.2965,1.8466,7.25,"sum of arms (stacked lows / highs, not a confidence interval); excludes variety, prices, COVID-19 and the fiscal key correction"
+disease_plus_food_safety,normalized,-0.0019,0.2154,1.4496,5.27,"sum of arms (stacked lows / highs, not a confidence interval); excludes variety, prices, COVID-19 and the fiscal key correction"

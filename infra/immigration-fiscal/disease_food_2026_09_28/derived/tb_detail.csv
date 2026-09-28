@@ -1,0 +1,4 @@
+arm,group_cases,secondary_cases_all,outside_cases,medical_usd,per_case_usd,absolute_bn,normalized_bn
+low,1704.8,130.2,14.3,24241,495732,0.0071,-0.0025
+central,1765.8,223.7,55.9,27186,856926,0.0479,0.0101
+high,1837.4,323.1,169.6,30131,1203716,0.2042,0.0925

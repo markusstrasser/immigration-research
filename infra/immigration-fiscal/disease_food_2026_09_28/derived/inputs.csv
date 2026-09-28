@@ -1,0 +1,46 @@
+parameter,low,central,high,tag_source
+tb_mexico_born_cases_2024,1307,1307,1307,"[SOURCE] CDC TB in the US 2024, top-30 birth countries"
+tb_us_born_hispanic_cases_2024,663,663,663,"[SOURCE] CDC TB in the US 2024, race-ethnicity US-born"
+mexican_origin_share_of_us_born_hispanic_cases,0.6,0.6920251535444947,0.8,[CALCULATION] CPS US-born Mexican-origin / (663 cases / 1.6 per 100k); range [INFERENCE]
+secondary_per_case_mexico_born,0.054,0.075,0.136,"[SOURCE] Yuen 2016 Table 1: foreign-born limited 5.4%, all recent 7.5%; high = Hispanic 13.6%"
+secondary_per_case_us_born_hispanic,0.15,0.274,0.274,"[SOURCE] Yuen 2016 Table 1: US-born limited 15.0%, all recent 27.4%"
+share_of_secondary_cases_outside_group,0.1,0.2,0.35,"[INFERENCE] assortative mixing (Yuen aPRs; mixed-cluster shares MA 2002, RI 2011); not measured"
+later_reactivation_per_recent_case,0.1,0.25,0.5,[INFERENCE] most progression within 2 years of infection (Behr et al. 2018 BMJ) [TRAINING-DATA]
+mdr_share_of_cases,0.0,0.015,0.03,[INFERENCE] US MDR ~1% of culture-confirmed cases
+nonfatal_productivity_loss_usd,3000,3975.1748783454996,6000,[SOURCE] Castro 2016: societal excl. death $20k - direct $17k (2014$)
+qaly_loss_per_surviving_case,0.1,0.25,0.5,[INFERENCE] acute + post-TB sequelae; Menzies 2021 Lancet GH [TRAINING-DATA]
+tb_attributable_case_fatality,0.03,0.05,0.065,[SOURCE] Castro 2016: 6.48% = 72% x 9%; secondary cases younger -> lower [INFERENCE]
+tb_all_cases_2024,10388,10388,10388,"[SOURCE] CDC TB in the US 2024, origin-birth"
+recent_transmission_share_all_cases,0.14,0.14,0.14,[SOURCE] Yuen 2016
+measles_importations_from_mexico_per_year,2,5,20,[SOURCE] MMWR 74(14): 7 of 48 Jan-Apr 2025 importations from Mexico; annualised range [INFERENCE]
+share_of_importations_with_secondary_cases,0.31,0.31,0.31,[SOURCE] MMWR 74(14): 15 of 48
+secondary_cases_per_spreading_importation,1,3,5,[INFERENCE]
+measles_share_outside_group,0.2,0.3,0.5,[INFERENCE] contacts mostly household/community
+measles_cost_per_case_usd,30000,50000,80000,"[INFERENCE] medical + 1-3/1,000 deaths x VSL; public-health response is fiscal"
+hepA_travel_cases_per_year,157,250,350,[SOURCE] CDC surv. manual ch.3: 21% of 748 cases with info (2023); upper [INFERENCE]
+hepA_share_travel_to_mexico,0.3,0.5,0.7,[SOURCE] CDC SS 2007: 85% Mexico+Central/South America; Mexico alone [INFERENCE]
+hepA_share_travellers_in_group,0.4,0.6,0.8,[INFERENCE] visiting friends and relatives
+hepA_secondary_non_group_per_case,0.02,0.05,0.1,[INFERENCE] household spread; vaccinated cohorts
+hepA_cost_per_case_usd,30000,60000,120000,"[INFERENCE] hospitalisation ~40-60%, CFR <1%"
+first_time_donor_tests_per_year,1500000.0,2000000.0,2500000.0,[SOURCE] 9.1m first-time donations 2007-15 in the ARC-led study (Transfusion 2019); national [INFERENCE]
+tcruzi_test_cost_usd,4,7,10,[INFERENCE] reagent + labour + supplemental testing
+share_of_screening_attributable_to_group,0.0,0.5,1.0,"[SOURCE] Custer 2012: Mexico-born 32/89 confirmed positives, US-born 25/89; attribution [INFERENCE]"
+group_share_of_seropositive_donors,0.5,0.5,0.5,[INFERENCE] 36% Mexico-born + half of US-born
+ncc_new_cases_per_year,1320,2500,5050,[SOURCE] Serpa & White 2014 review (PMC4005108)
+ncc_share_locally_acquired,0.05,0.07,0.1,[SOURCE] LA County 10/138 = 7%; 7-10% (Oregon EID 2011)
+ncc_share_of_local_cases_not_hispanic,0.3,0.3,0.3,[SOURCE] LA County: 70% Hispanic
+ncc_share_of_carriers_in_group,0.4,0.55,0.7,[INFERENCE] Mexico share of Latin American-born
+ncc_cost_per_case_usd,100000,250000,500000,[SOURCE] mean charge $48.9k (EID 21(6)); QoL (epilepsy) + rare death [INFERENCE]
+public_tb_control_spending_usd,135000000.0,400000000.0,700000000.0,[SOURCE] CDC domestic TB $135m (FY2019-21); state/local share [INFERENCE]
+foodborne_illness_cost_2024_usd,76903231025.7235,76903231025.7235,76903231025.7235,"[SOURCE] USDA ERS 2025 update, $74.7bn (2023$)"
+restaurant_share_of_burden,0.25,0.4,0.55,[INFERENCE] 56% of outbreaks restaurant (Angelo 2017); sporadic share unknown
+non_group_share_of_restaurant_meals,0.9,0.9,0.9,[INFERENCE] group ~9-10% of FAFH
+group_share_of_kitchen_labour,0.12,0.1690937610801458,0.205,[DATA] cultural_output arm_d_cooks_shares (ACS): all food prep 16.9%; chefs & cooks 20.5%
+excess_illness_risk_in_group_staffed_kitchens,0.0,0.05,0.2,[INFERENCE] 0 = Jones 2004 null; 0.20 = whole LA grade-card effect (Jin-Leslie); violations x1.56 (Kwon 2010)
+restaurant_sales_2024_usd,1144000000000.0,1144000000000.0,1144000000000.0,"[SOURCE] Census advance monthly retail, NAICS 722 total 2024 = $1,144.4bn"
+household_fafh_cex_2024_usd,530988924000.0,530988924000.0,530988924000.0,"[SOURCE] CEX 2024 FAFH $3,944.94/CU (consumer-price memo) x 134.6m CUs [TRAINING-DATA count]"
+group_share_of_restaurant_spending,0.09,0.1,0.11,"[INFERENCE] lower income, larger CUs; UNVERIFIED"
+sigma_between_restaurants,10.0,8.8,6.1,[SOURCE] Couture 2016 8.8; Su (MPRA 113158) 6.1-8.7
+non_group_mexican_share_of_restaurant_spend,0.05,0.07,0.09,[INFERENCE] Mexican ~11% of OSM restaurants
+mexican_restaurants_per_100k_without_group,6.929267,4.0,2.0,[DATA] lowest-decile metros 6.93/100k; 2.0 if the national Mexican-origin cook supply is also removed [INFERENCE]
+share_of_non_group_restaurant_access_supported_by_group,0.02,0.05,0.09,[INFERENCE] group spending share 0.10 discounted for consumption segregation
