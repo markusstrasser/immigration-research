@@ -49,7 +49,7 @@ CLASS = {
     127: ("sample", "tabulated", None),
     # outside the budget
     260: ("study", "extrapolated", None),
-    264: ("count", "fitted", None),
+    264: ("study", "extrapolated", None),  # traffic elasticity from London, Manhattan, German strikes, 2020
     189: ("count", "arithmetic", "Jails record Hispanic ethnicity less often than people report it. Victims report "
                                  "the offender's ethnicity."),
     195: ("study", "extrapolated", None),
