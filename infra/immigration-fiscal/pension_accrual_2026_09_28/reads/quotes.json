@@ -1,0 +1,328 @@
+{
+  "tr_oasdi_depletion_year": {
+    "doc": "tr2025",
+    "value": 2034,
+    "unit": "calendar year",
+    "where": "Overview, long-range results (p. 5 of the PDF text layer)",
+    "fragments": [
+      "The hypothetical combined trust fund reserves decline until",
+      "reserves become depleted in 2034, one year earlier than projected in last"
+    ]
+  },
+  "tr_payable_at_depletion": {
+    "doc": "tr2025",
+    "value": 0.81,
+    "unit": "share of scheduled benefits",
+    "where": "Highlights, conclusion",
+    "fragments": [
+      "continuing income to the combined trust funds would be sufficient to",
+      "pay 81 percent of scheduled benefits."
+    ]
+  },
+  "tr_payable_2099": {
+    "doc": "tr2025",
+    "value": 0.72,
+    "unit": "share of program cost",
+    "where": "Section II.D",
+    "fragments": [
+      "After trust fund reserve depletion, continuing income is sufficient to support",
+      "expenditures at a level of 81 percent of program cost for the rest of 2034,",
+      "declining to 72 percent for 2099."
+    ]
+  },
+  "note_payable_2034": {
+    "doc": "an2025_7",
+    "value": 0.902,
+    "unit": "share of scheduled benefits",
+    "where": "Note 2025.7 p. 2, Payable Benefits scenario (the scenario of its Tables 3 and 6)",
+    "fragments": [
+      "beginning of 2034, would be sufficient to pay 90.2",
+      "percent of scheduled benefits in 2034, 80.7 percent of",
+      "scheduled benefits in 2035, and 71.9 percent of",
+      "scheduled benefits in 2099."
+    ]
+  },
+  "note_payable_2035": {
+    "doc": "an2025_7",
+    "value": 0.807,
+    "unit": "share of scheduled benefits",
+    "where": "as note_payable_2034",
+    "fragments": [
+      "percent of scheduled benefits in 2034, 80.7 percent of"
+    ]
+  },
+  "note_payable_2099": {
+    "doc": "an2025_7",
+    "value": 0.719,
+    "unit": "share of scheduled benefits",
+    "where": "as note_payable_2034",
+    "fragments": [
+      "scheduled benefits in 2035, and 71.9 percent of"
+    ]
+  },
+  "note_payable_tables": {
+    "doc": "an2025_7",
+    "value": 3,
+    "unit": "table number",
+    "where": "Note 2025.7 p. 2: the Payable Benefits scenario is in Tables 3 and 6",
+    "fragments": [
+      "Tables 3 and 6 present the money's worth",
+      "ratios for this scenario."
+    ]
+  },
+  "note_scaled_worker": {
+    "doc": "an2025_7",
+    "value": 21,
+    "unit": "age at labor-force entry",
+    "where": "Note 2025.7 p. 2",
+    "fragments": [
+      "enters the labor force at age 21 and retires at age 65."
+    ]
+  },
+  "tr_real_rate_ultimate": {
+    "doc": "tr2025",
+    "value": 0.023,
+    "unit": "real annual rate",
+    "where": "Section V.B7, interest rates",
+    "fragments": [
+      "The assumed ultimate real interest rate is 2.8 percent,",
+      "2.3 percent, and 1.8 percent for the low-cost, intermediate, and high-cost"
+    ]
+  },
+  "tr_cpi_ultimate": {
+    "doc": "tr2025",
+    "value": 0.024,
+    "unit": "annual CPI increase",
+    "where": "Section V.B",
+    "fragments": [
+      "The assumed ultimate annual increase in the CPI is 3.00, 2.40, and",
+      "1.80 percent for the low-cost, intermediate, and high-cost assumptions,"
+    ]
+  },
+  "tr_mortality_decline_65plus": {
+    "doc": "tr2025",
+    "value": 0.0068,
+    "unit": "annual rate of decline, age-sex-adjusted death rates 65+",
+    "where": "Section V.A2",
+    "fragments": [
+      "adjusted death rates for ages 65 and over decline between 2024 and 2099 at",
+      "average annual rates of about 0.26 percent for alternative I, 0.68 percent for",
+      "alternative II, and 1.12 percent for alternative III."
+    ]
+  },
+  "tr_mortality_decline_total": {
+    "doc": "tr2025",
+    "value": 0.0074,
+    "unit": "annual rate of decline, total age-sex-adjusted death rate",
+    "where": "Section V.A2",
+    "fragments": [
+      "The projected average annual rate of decline between 2024 and 2099 for the",
+      "total age-sex-adjusted death rate is about 0.27 percent for alternative I,",
+      "0.74 percent for alternative II, and 1.26 percent for alternative III."
+    ]
+  },
+  "tr_pia_formula_2025": {
+    "doc": "tr2025",
+    "value": [
+      1226,
+      7391
+    ],
+    "unit": "PIA bend points for eligibility in 2025, $ a month",
+    "where": "Section V.C, figure V.C1",
+    "fragments": [
+      "The formula for the worker's PIA multiplies a 90, 32, or 15 percent fac-",
+      "($7,391)",
+      "($1,226)"
+    ]
+  },
+  "tr_oasdi_payroll_tax_2024_bn": {
+    "doc": "tr2025",
+    "value": 1293.3,
+    "unit": "$bn, net payroll tax contributions, OASDI, 2024",
+    "where": "Table II.B1",
+    "fragments": [
+      "Net payroll tax contributionsb . . . . . . . . . . . . . . . . . . . . 1,105.6 187.7 1,293.3"
+    ]
+  },
+  "mtr_hi_depletion_year": {
+    "doc": "mtr2025",
+    "value": 2033,
+    "unit": "calendar year",
+    "where": "Section I, overview",
+    "fragments": [
+      "projected in this report to occur in 2033. At that point, HI revenues are",
+      "projected to cover 89 percent of incurred program costs."
+    ]
+  },
+  "mtr_hi_payable_path": {
+    "doc": "mtr2025",
+    "value": {
+      "2033": 0.89,
+      "2049": 0.86,
+      "2099": 1.0
+    },
+    "unit": "share of HI expenditures covered by non-interest income",
+    "where": "Section II",
+    "fragments": [
+      "projected to be 89 percent in 2033 (year of exhaustion), 86 percent in",
+      "2049 (25th projection year), and about 100 percent in 2099 (end of the"
+    ]
+  },
+  "mtr_benefits_2024_bn": {
+    "doc": "mtr2025",
+    "value": {
+      "hi": 416.3,
+      "smi_b": 547.8,
+      "smi_d": 145.7,
+      "total": 1109.8
+    },
+    "unit": "$bn, benefits, calendar 2024",
+    "where": "Table II.B1 (2024 operations)",
+    "fragments": [
+      "Benefits 416.3 547.8 145.7 1,109.8",
+      "Average benefit per enrollee $6,193 $8,831 $2,638"
+    ]
+  },
+  "mtr_hi_payroll_rate": {
+    "doc": "mtr2025",
+    "value": 0.029,
+    "unit": "combined HI payroll rate",
+    "where": "Section II",
+    "fragments": [
+      "Employers and employees each pay 1.45 percent of a worker's",
+      "wages, while self-employed workers pay 2.9 percent of their net"
+    ]
+  },
+  "mtr_real_growth_per_beneficiary": {
+    "doc": "mtr2025",
+    "value": {
+      "part_a": 0.014,
+      "part_b": 0.017,
+      "part_d": 0.019
+    },
+    "unit": "ultimate real growth per beneficiary, GDP-deflator basis",
+    "where": "Section II, table of key assumptions, footnote 1",
+    "fragments": [
+      "real per beneficiary Medicare cost growth is 1.4 percent, 1.7 percent, and",
+      "1.9 percent for Parts A, B, and D, respectively."
+    ]
+  },
+  "mtr_real_interest_rate": {
+    "doc": "mtr2025",
+    "value": 0.023,
+    "unit": "real interest rate, intermediate",
+    "where": "Section II, table of key assumptions",
+    "fragments": [
+      "Real interest rate (percent) .......................................... 2.3 2.8 1.8"
+    ]
+  },
+  "mtr_forty_quarters": {
+    "doc": "mtr2025",
+    "value": 40,
+    "unit": "quarters of covered earnings for premium-free HI",
+    "where": "Glossary, Uninsured beneficiaries",
+    "fragments": [
+      "Uninsured beneficiaries. HI beneficiaries who do not have",
+      "40 quarters of covered earnings but are entitled to HI coverage either"
+    ]
+  },
+  "mtr_projections_scheduled": {
+    "doc": "mtr2025",
+    "value": "scheduled",
+    "unit": "convention",
+    "where": "Section I, exceptions to current law",
+    "fragments": [
+      "The first exception is that the Part A projections disregard payment",
+      "reductions that would occur if the Medicare HI trust fund became",
+      "depleted."
+    ]
+  },
+  "note151_eligible_share": {
+    "doc": "note151",
+    "value": {
+      "age62_in_2000": 0.3,
+      "end_of_projection": 0.1
+    },
+    "unit": "share of other immigrants eligible for retired-worker benefits",
+    "where": "Note 151 p. 5",
+    "fragments": [
+      "Response: We estimate about 30 percent of the",
+      "other immigrants who were living in the U.S. and",
+      "were age 62 in 2000, would be eligible to receive",
+      "retired-worker benefits. We project that the percent",
+      "eligible to receive a retired-worker benefit will",
+      "decline to around 10 percent at the end of the 75-",
+      "year projection period."
+    ]
+  },
+  "note151_suspense_file": {
+    "doc": "note151",
+    "value": "remote",
+    "unit": "credit for suspense-file earnings",
+    "where": "Note 151 p. 5",
+    "fragments": [
+      "and paid payroll taxes without a matched SSN will",
+      "have had their earnings placed in the suspense file",
+      "and will have only a relatively remote possibility",
+      "of obtaining credit for these earnings for the pur-"
+    ]
+  },
+  "note151_conditions": {
+    "doc": "note151",
+    "value": 3,
+    "unit": "conditions for benefit receipt",
+    "where": "Note 151 p. 5",
+    "fragments": [
+      "(1) work long",
+      "enough to acquire insured status under the pro-",
+      "gram; (2) receive legal work authorization at some",
+      "time; and (3) receive legal resident status for the"
+    ]
+  },
+  "mtr_hi_growth_ultimate": {
+    "doc": "mtr2025",
+    "value": 0.035,
+    "unit": "ultimate annual % change in HI (Part A) per beneficiary expenditures, excluding demographic impacts",
+    "where": "Section II, table of key assumptions (intermediate column)",
+    "fragments": [
+      "Annual percentage change in per beneficiary",
+      "Medicare expenditures (excluding demographic",
+      "HI (Part A) ................................................................ 3.5"
+    ]
+  },
+  "tr_new_issue_rates": {
+    "doc": "tr2025",
+    "value": "Table V.B2",
+    "unit": "average annual nominal interest rate on newly issued trust fund securities (parsed by sources.new_issue_rates_v_b2)",
+    "where": "Section V.B7 and Table V.B2 footnotes f and g",
+    "fragments": [
+      "Table V.B2 presents average annual nominal and real interest rates for newly",
+      "issued trust fund securities. The nominal rate is the average of the nominal",
+      "interest rates for special U.S. Government obligations issuable to the trust",
+      "The real interest rate averaged 1.6, -1.0, 5.1, 4.1, 2.0, and 0.8 percent per year over the"
+    ]
+  },
+  "tr_cost_is_scheduled": {
+    "doc": "tr2025",
+    "value": "scheduled",
+    "unit": "the Trustees' cost concept",
+    "where": "Section II.D (Figure II.D2) and Section IV.B1 (annual cost rate)",
+    "fragments": [
+      "(excluding interest), cost (including scheduled benefits), and expenditures",
+      "(including payable benefits) starting in 2000 and for the full 75-year projec-",
+      "year. The cost includes scheduled benefits, administrative expenses, net"
+    ]
+  },
+  "note_mwr_effective_yields": {
+    "doc": "an2025_7",
+    "value": "Table B",
+    "unit": "the discount basis of Note 2025.7's money's worth ratios",
+    "where": "Note 2025.7 p. 3 (left column) and Table B title",
+    "fragments": [
+      "age 18 in this analysis. The interest rates used in these",
+      "computations are the effective interest rates earned by",
+      "the assets of the hypothetical combined OASI and DI",
+      "Table B. Effective Nominal and Real Interest Rates"
+    ]
+  }
+}
