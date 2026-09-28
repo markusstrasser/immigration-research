@@ -1,0 +1,67 @@
+variant,severity,comparison,crashes,or_qie_crude,or_qie_mh_county_year,or_mixed_pair
+primary,injury_all,vs_nh_white,196825,0.955388,0.954559,0.952841
+primary,injury_all,vs_all_non_hispanic,196825,0.984791,0.983796,0.981174
+primary,pdo,vs_nh_white,230352,1.145108,1.158426,1.169144
+primary,pdo,vs_all_non_hispanic,230352,1.140259,1.149589,1.168444
+primary,fatal,vs_nh_white,2736,1.010141,1.025971,1.019774
+primary,fatal,vs_all_non_hispanic,2736,1.060793,1.064734,1.073394
+with private-property crashes,injury_all,vs_nh_white,197715,0.954435,0.95356,0.95109
+with private-property crashes,injury_all,vs_all_non_hispanic,197715,0.984351,0.983327,0.980623
+with private-property crashes,pdo,vs_nh_white,232632,1.145259,1.158852,1.169592
+with private-property crashes,pdo,vs_all_non_hispanic,232632,1.140707,1.150099,1.169214
+with private-property crashes,fatal,vs_nh_white,2741,1.00835,1.023529,1.016901
+with private-property crashes,fatal,vs_all_non_hispanic,2741,1.059124,1.062968,1.071429
+CHP reports only,injury_all,vs_nh_white,88741,0.983492,0.978866,0.974717
+CHP reports only,injury_all,vs_all_non_hispanic,88741,1.018449,1.019862,1.021976
+CHP reports only,pdo,vs_nh_white,155665,1.177561,1.190937,1.197101
+CHP reports only,pdo,vs_all_non_hispanic,155665,1.178472,1.191109,1.207101
+CHP reports only,fatal,vs_nh_white,1764,0.960886,0.963928,0.923387
+CHP reports only,fatal,vs_all_non_hispanic,1764,0.972871,0.970534,0.966942
+local-agency reports only,injury_all,vs_nh_white,108084,0.931647,0.933342,0.933255
+local-agency reports only,injury_all,vs_all_non_hispanic,108084,0.957802,0.954816,0.946089
+local-agency reports only,pdo,vs_nh_white,74687,1.081901,1.094265,1.110898
+local-agency reports only,pdo,vs_all_non_hispanic,74687,1.065864,1.070479,1.084652
+local-agency reports only,fatal,vs_nh_white,972,1.105097,1.153352,1.245283
+local-agency reports only,fatal,vs_all_non_hispanic,972,1.240595,1.250739,1.285714
+collision type rear-end,injury_all,vs_nh_white,72973,0.923179,0.918708,0.922781
+collision type rear-end,injury_all,vs_all_non_hispanic,72973,1.045451,1.047767,1.05414
+collision type rear-end,pdo,vs_nh_white,100826,1.239655,1.253819,1.272478
+collision type rear-end,pdo,vs_all_non_hispanic,100826,1.332715,1.352869,1.393991
+collision type rear-end,fatal,vs_nh_white,412,0.651873,0.651746,0.564516
+collision type rear-end,fatal,vs_all_non_hispanic,412,0.823354,0.814549,0.795918
+collision type broadside,injury_all,vs_nh_white,78938,0.957863,0.958856,0.951326
+collision type broadside,injury_all,vs_all_non_hispanic,78938,0.934559,0.929175,0.916121
+collision type broadside,pdo,vs_nh_white,47273,1.063357,1.077028,1.073439
+collision type broadside,pdo,vs_all_non_hispanic,47273,0.997713,0.9975,0.997034
+collision type broadside,fatal,vs_nh_white,1163,1.094037,1.154838,1.177778
+collision type broadside,fatal,vs_all_non_hispanic,1163,1.105244,1.115516,1.130045
+collision type sideswipe,injury_all,vs_nh_white,23879,0.966678,0.965257,0.968347
+collision type sideswipe,injury_all,vs_all_non_hispanic,23879,0.937847,0.934422,0.925744
+collision type sideswipe,pdo,vs_nh_white,69204,1.065017,1.07464,1.080823
+collision type sideswipe,pdo,vs_all_non_hispanic,69204,0.989991,0.989446,0.988472
+collision type sideswipe,fatal,vs_nh_white,163,0.971429,1.015838,1.032258
+collision type sideswipe,fatal,vs_all_non_hispanic,163,0.950977,0.954535,0.956522
+collision type head-on,injury_all,vs_nh_white,15631,1.059953,1.07018,1.085568
+collision type head-on,injury_all,vs_all_non_hispanic,15631,1.018298,1.019815,1.024188
+collision type head-on,pdo,vs_nh_white,6462,1.141672,1.150422,1.14673
+collision type head-on,pdo,vs_all_non_hispanic,6462,1.119449,1.132284,1.163082
+collision type head-on,fatal,vs_nh_white,836,1.060585,1.079114,1.027027
+collision type head-on,fatal,vs_all_non_hispanic,836,1.124724,1.136667,1.161074
+at-fault party cited,injury_all,vs_nh_white,11543,1.259167,1.294606,1.31127
+at-fault party cited,injury_all,vs_all_non_hispanic,11543,1.261801,1.294648,1.336177
+at-fault party cited,pdo,vs_nh_white,12382,1.423352,1.470016,1.516463
+at-fault party cited,pdo,vs_all_non_hispanic,12382,1.461517,1.501647,1.577416
+at-fault party cited,fatal,vs_nh_white,192,0.996327,0.952409,0.931034
+at-fault party cited,fatal,vs_all_non_hispanic,192,0.882461,0.872003,0.866667
+at-fault party not cited,injury_all,vs_nh_white,185282,0.938407,0.936535,0.932786
+at-fault party not cited,injury_all,vs_all_non_hispanic,185282,0.969465,0.967541,0.962294
+at-fault party not cited,pdo,vs_nh_white,217970,1.130822,1.142572,1.151895
+at-fault party not cited,pdo,vs_all_non_hispanic,217970,1.124289,1.132472,1.148895
+at-fault party not cited,fatal,vs_nh_white,2544,1.012158,1.030356,1.027692
+at-fault party not cited,fatal,vs_all_non_hispanic,2544,1.075837,1.080578,1.092
+neither driver had been drinking or drugged,injury_all,vs_nh_white,180431,0.939596,0.937329,0.934704
+neither driver had been drinking or drugged,injury_all,vs_all_non_hispanic,180431,0.964419,0.962156,0.956229
+neither driver had been drinking or drugged,pdo,vs_nh_white,213903,1.138715,1.150866,1.16209
+neither driver had been drinking or drugged,pdo,vs_all_non_hispanic,213903,1.126767,1.135114,1.151231
+neither driver had been drinking or drugged,fatal,vs_nh_white,1742,1.076779,1.107491,1.093023
+neither driver had been drinking or drugged,fatal,vs_all_non_hispanic,1742,1.097762,1.104907,1.12012

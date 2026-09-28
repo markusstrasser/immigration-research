@@ -1,0 +1,7 @@
+severity,hit_and_run_crash,crashes,at_fault_race_missing,not_at_fault_race_missing
+fatal,False,2820,0.016312,0.021986
+fatal,True,190,0.210526,0.147368
+injury_all,False,208820,0.040274,0.039809
+injury_all,True,32608,0.591481,0.088966
+pdo,False,238446,0.024182,0.02094
+pdo,True,113611,0.670454,0.074086

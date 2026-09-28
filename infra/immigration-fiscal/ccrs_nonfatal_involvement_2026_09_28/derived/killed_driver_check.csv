@@ -1,0 +1,5 @@
+sample,comparison,at_fault_hispanic_killed,not_at_fault_hispanic_killed,at_fault_ref_killed,not_at_fault_ref_killed,or
+"CCRS killed drivers, two-driver fatal crashes 2022-2024",vs_nh_white,744,360,650,354,1.125538
+"CCRS killed drivers, two-driver fatal crashes 2022-2024",vs_all_non_hispanic,744,360,897,489,1.126644
+"FARS 2023 killed drivers, California",vs_all_non_hispanic,150,133,164,166,1.141573
+"FARS 2023 killed drivers, national",vs_all_non_hispanic,1068,719,4008,2644,0.979887
