@@ -22,6 +22,17 @@ import evidence  # noqa: E402
 LADDER = ROOT / "research/immigration-confidence-ladder.md"
 MAIN = ROOT / "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived"
 SOCIAL = ROOT / "infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/real_costs_totals.csv"
+# the population the account prices (row 4 of the data audit), not the CPS's raw union count
+HEADCOUNT = ROOT / "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/headcount.csv"
+
+
+def load_headcount():
+    """Priced and raw group size. Per-member figures divide engine totals by the priced count."""
+    row = next(r for r in csv.DictReader(HEADCOUNT.open()) if r["cut"] == "all" and r["group"] == "union")
+    priced, raw = float(row["row4"]), float(row["published"])
+    if not (39e6 < priced < 41e6 and priced <= raw):
+        fail(f"headcount out of range: priced {priced:,.0f}, raw {raw:,.0f}")
+    return priced, raw
 STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
 
 ORANGE, ORANGE_FILL = "#ca7a5e", "#f2cabc"
@@ -358,7 +369,10 @@ def main():
         page = page.replace(k, v)
     add = [social[0] - s["main_case"][0], social[1] - s["main_case"][1]]
     mid = lambda v: round((v[0] + v[1]) / 2 / 5) * 5
-    for k, v in {"{{SOCIAL_TOTAL}}": f"about ${mid(social)}bn ({social[0]:.0f}–{social[1]:.0f})",
+    priced, _raw = load_headcount()
+    pm = [x * 1e9 / priced / 1e3 for x in s["main_case"]]
+    for k, v in {"{{PER_MEMBER}}": f"${(pm[0] + pm[1]) / 2:.1f}k ({pm[0]:.1f}–{pm[1]:.1f})",
+                 "{{GROUP_SIZE}}": f"{priced / 1e6:.1f}M","{{SOCIAL_TOTAL}}": f"about ${mid(social)}bn ({social[0]:.0f}–{social[1]:.0f})",
                  "{{SOCIAL_ADD_WORDS}}": f"about ${mid(add)}bn",
                  "{{SOCIAL_ADD}}": f"about ${mid(add)}bn ({add[0]:.0f}–{add[1]:.0f})"}.items():
         page = page.replace(k, v)
