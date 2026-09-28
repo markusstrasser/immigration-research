@@ -1,0 +1,93 @@
+{
+ "check1": {
+  "label": "shared-method comparison, not an independent test: NAE and the account both impute status by a Borjas-style residual and use CBO's federal rates, so agreement cannot validate the account; only a disagreement is informative. Outcomes are 'finding' or 'no finding'.",
+  "income_per_household": {
+   "rule": "NAE's household income over its household count if the report states one, else over its count of Mexican immigrants lacking legal status (the account's value on the same denominator); finding if outside [0.80, 1.25] x the account's 2024 value times the central bridge; otherwise no finding",
+   "per_household": {
+    "low": 48456.295612854556,
+    "high": 75712.96189508523
+   },
+   "per_unauthorized_person": {
+    "low": 19394.033124142217,
+    "high": 30303.17675647221
+   }
+  },
+  "payroll_share": {
+   "rule": "NAE's (Social Security + Medicare) over household income, United States row; no finding if inside [0.85, 1.15] x S (statutory rates on all members' earnings, NAE's standard rule) or inside [0.85, 1.15] x S/2 (the same, halved by the filing discount); finding otherwise",
+   "S": 0.1405209998802875,
+   "band_statutory": [
+    0.11944284989824436,
+    0.1615991498623306
+   ],
+   "band_halved": [
+    0.05972142494912218,
+    0.0807995749311653
+   ]
+  },
+  "state_shares": {
+   "rule": "D = total variation distance over NAE's listed states plus one 'rest' cell, NAE's shares of its United States row against the account's; no finding if D <= 0.08 and D < D(baseline); finding if D > 0.15 or D >= D(baseline); otherwise partial",
+   "agree_max": 0.08,
+   "finding_min": 0.15,
+   "baseline": "baseline_mexico_born_population"
+  },
+  "convention_ratios": {
+   "federal_A_cbo_scope_over_income": {
+    "expected": "NAE lower",
+    "finding_if_above": 0.206057917445977
+   },
+   "state_local_over_income": {
+    "expected": "NAE lower",
+    "finding_if_above": 0.12944790590019772
+   },
+   "spending_power_A_over_income": {
+    "expected": "NAE higher",
+    "finding_if_below": 0.7015953413230601
+   },
+   "federal_B_income_tax_over_income": {
+    "expected": "NAE lower",
+    "finding_if_above": null,
+    "note": "reported only: NAE's federal column is reading A or B (reads Q3), so the reading-A bound decides"
+   }
+  }
+ },
+ "check2": {
+  "nas_first_generation_receipts_ratio": {
+   "rule": "hit if NAS is within 0.05 of both allocations (not blind)",
+   "low": 0.8059946280922816,
+   "high": 0.8999691730223018,
+   "nas_2013": 0.79
+  },
+  "nas_first_generation_outlays_ratio": {
+   "rule": "hit if NAS is within 0.05 of both allocations (not blind)",
+   "low": 0.8530175000929114,
+   "high": 0.9458826919190797,
+   "nas_2013": 0.9
+  }
+ },
+ "check3": {
+  "level": {
+   "rule": "TVD between the S-10 state shares and account_r1; hit if TVD <= 0.15 and TVD <= 0.8 x TVD(population); miss if TVD > 0.25 or TVD >= TVD(population); otherwise partial",
+   "hit_max": 0.15,
+   "miss_min": 0.25,
+   "beat_population_factor": 0.8
+  },
+  "slope": {
+   "rule": "WLS of ln(S10 share / account_r1) on the group's share of the state's uninsured person-years, weights account_r1, HC1 errors, with the expansion indicator for year Y (primary) and without; 95% CI contains 0 and excludes the alternative: consistent with the adopted key; contains the alternative and excludes 0: favors r = 0.7; contains both: no power; excludes both: miss",
+   "null": 0.0,
+   "alternative_weighted": -0.32896573689638425,
+   "alternative_unweighted": -0.32457673671405096
+  },
+  "national": {
+   "rule": "hit if S-10 national line 30 over account_N(Y) is inside [0.8, 1.25]",
+   "account_N": {
+    "2021": 44.65992139786115,
+    "2022": 46.742643057490874,
+    "2023": 48.922492732032396,
+    "2024": 51.204
+   },
+   "low": 0.8,
+   "high": 1.25
+  },
+  "year_rule": "latest cost-report year whose report count is at least 95% of the year before; the counts are read before any state total is formed"
+ }
+}

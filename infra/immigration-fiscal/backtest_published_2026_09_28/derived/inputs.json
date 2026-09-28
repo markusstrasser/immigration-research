@@ -1,0 +1,114 @@
+{
+ "bea_2024_bn": {
+  "all_corporate": 663.685,
+  "customs": 83.587,
+  "federal_corporate": 491.66,
+  "federal_excise": 99.964,
+  "federal_other_production": 1.58,
+  "state_local_corporate": 172.025,
+  "state_local_excise": 271.298,
+  "state_local_other_production": 143.678
+ },
+ "bridge": {
+  "acs_over_cps_income": [
+   0.95,
+   0.9,
+   1.0
+  ],
+  "awi_2019": 54099.99,
+  "awi_2024": 69846.57,
+  "awi_ratio": 0.7745547132808381,
+  "central": 0.7358269776167962,
+  "group_vs_awi_2019_over_2024": [
+   1.0,
+   0.95,
+   1.05
+  ],
+  "high": 0.8132824489448801,
+  "low": 0.6622442798551166
+ },
+ "cps_zip_sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+ "files": {
+  "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+  "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/bea/NipaDataA.txt": "93b9fcb111500d71e04bbf770c4c4835685bb1a508f8b4c217fca43f255a2538",
+  "infra/immigration-fiscal/dataset_integrity_2026_09_23/_cache/acs_person_2021.parquet": "0b96a38973adade9d2131f9bc3ab27d857292ed523e2815c0462ed82c2d6eebc",
+  "infra/immigration-fiscal/dataset_integrity_2026_09_23/_cache/acs_person_2022.parquet": "e43949e008cf3d162f960c1913d254f80e878cd3b82e6a53b66b5d48ff88cea2",
+  "infra/immigration-fiscal/dataset_integrity_2026_09_23/_cache/acs_person_2023.parquet": "e378293a55a4845f489d4c40cec447134e53e90a1963f20f5bd4884480115f8c",
+  "infra/immigration-fiscal/dataset_integrity_2026_09_23/_cache/acs_person_2024.parquet": "7f8fa127db584862759cf1cf59bd14036e9788bea9d5300338527bf35e4f35d0",
+  "infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/arm3b/awi_plain.html": "9f4bb36b008678756d3ee3523da724d88fe9f2e2777df7ed9e1dad5f1490976c",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_key_shares.json": "6b76a90b3d6ec3a701a2272afed4afd3151906b1f13b694b13fa69987c7e19d9",
+  "infra/immigration-fiscal/onbooks_share_2026_09_23/derived/onbooks_split.csv": "6a652151547df2c33a35c46a016bb5be3d8cc4f84c359ac6f422b45766553564",
+  "infra/immigration-fiscal/uncompensated_care_2026_09_23/derived/summary.json": "29630bef97d4d37566e904a23a2ee8cd0b52144a341f11817b02ba5ddc8749b6"
+ },
+ "gates_failed": [],
+ "hcris_implied_slopes": {
+  "unweighted": {
+   "slope_r07": -0.32457673671405096,
+   "sxx": 0.018928450708076278,
+   "sxx_unnormalized": 0.9653509861118901
+  },
+  "weighted": {
+   "slope_r07": -0.32896573689638425,
+   "sxx": 0.028344411968050688,
+   "sxx_unnormalized": 0.028344411968050678
+  }
+ },
+ "hcris_prior_power": [
+  {
+   "detectable_unweighted": false,
+   "detectable_weighted": false,
+   "se_unweighted": 0.20355762418862003,
+   "se_weighted": 0.16634554790064615,
+   "sigma": 0.2
+  },
+  {
+   "detectable_unweighted": false,
+   "detectable_weighted": false,
+   "se_unweighted": 0.30533643628293,
+   "se_weighted": 0.2495183218509692,
+   "sigma": 0.3
+  },
+  {
+   "detectable_unweighted": false,
+   "detectable_weighted": false,
+   "se_unweighted": 0.40711524837724006,
+   "se_weighted": 0.3326910958012923,
+   "sigma": 0.4
+  }
+ ],
+ "money_income_bn": 16449.381422718045,
+ "naive_rates": {
+  "federal_A_cbo_scope": 0.2844818221271913,
+  "federal_B_income_tax": 0.1460992324417082,
+  "state_local": 0.1535972651537261
+ },
+ "nas_first_generation_minors_m": {
+  "oldest_relative": 0.51524307762906,
+  "own": 0.06681556637565,
+  "parents": 17.12182540590031
+ },
+ "nipa_splits": {
+  "federal_corporate_fraction": 0.7408032425020907,
+  "federal_excise_fraction": 0.2692545964844234,
+  "federal_other_production_fraction": 0.010877197813545554
+ },
+ "onbooks_shares_mexico_other": {
+  "central": [
+   0.5262685374807583,
+   0.5500607625284325
+  ],
+  "high": [
+   0.6350825452461911,
+   0.6828011332124232
+  ],
+  "low": [
+   0.4150526315789474,
+   0.4005
+  ]
+ },
+ "row4": {
+  "factor_native_mexican": 0.9601052020829933,
+  "factor_natz": 0.8556255897504617,
+  "factor_noncit": 0.7781269999470055
+ }
+}
