@@ -1,0 +1,237 @@
+{
+ "source": "main_case_long_run_2026_09_27/package.cjs evaluateFull, adopted models (central), end specifications",
+ "end_specifications": [
+  [
+   48,
+   11
+  ],
+  [
+   48,
+   11
+  ]
+ ],
+ "band_reproduced_bn": [
+  321.81935699039354,
+  387.37005494938376
+ ],
+ "lines": {
+  "public_order_safety": {
+   "key": "use",
+   "national_bn": 519.153,
+   "group_bn": 69.65544359104852,
+   "share": 0.13417132057610862,
+   "response_low": 1,
+   "response_high": 1
+  },
+  "health_services": {
+   "key": "health_other",
+   "national_bn": 306.539,
+   "group_bn": 17.35122674173727,
+   "share": 0.056603651547559274,
+   "response_low": 1,
+   "response_high": 1
+  },
+  "general_public_services": {
+   "key": "population",
+   "national_bn": 401.608,
+   "group_bn": 47.05856787305265,
+   "share": 0.11717537467643237,
+   "response_low": 0.6000461560720316,
+   "response_high": 0.8503957662020014
+  },
+  "housing_community_services": {
+   "key": "population",
+   "national_bn": 14.537,
+   "group_bn": 1.703378421981854,
+   "share": 0.11717537469779554,
+   "response_low": 1,
+   "response_high": 1
+  },
+  "recreation_culture": {
+   "key": "population",
+   "national_bn": 54.331,
+   "group_bn": 6.366255281237539,
+   "share": 0.11717537467076877,
+   "response_low": 0.8561746355869265,
+   "response_high": 1
+  }
+ },
+ "receipts": {
+  "general_sales_tax": {
+   "key": "consumption",
+   "national_bn": 602.43,
+   "share_low": 0.08142000842884181,
+   "share_high": 0.08142000842884181,
+   "share_low_by_method": [
+    0.08159201276915208,
+    0.08124800408853156
+   ],
+   "share_high_by_method": [
+    0.08159201276915208,
+    0.08124800408853156
+   ],
+   "response_low": 1,
+   "response_high": 1
+  },
+  "excise_selective_sales": {
+   "key": "consumption",
+   "national_bn": 371.262,
+   "share_low": 0.08118477422627365,
+   "share_high": 0.08118477422627365,
+   "share_low_by_method": [
+    0.08136400821836794,
+    0.08100554023417936
+   ],
+   "share_high_by_method": [
+    0.08136400821836794,
+    0.08100554023417936
+   ],
+   "response_low": 1,
+   "response_high": 1
+  },
+  "personal_motor_vehicle": {
+   "key": "adults",
+   "national_bn": 26.125,
+   "share_low": 0.10901350489729555,
+   "share_high": 0.10533279432469772,
+   "share_low_by_method": [
+    0.10901350489729555,
+    0.10901350489729555
+   ],
+   "share_high_by_method": [
+    0.10533279432469772,
+    0.10533279432469772
+   ],
+   "response_low": 1,
+   "response_high": 1
+  },
+  "state_local_income_tax": {
+   "key": "state_liability",
+   "national_bn": 536.167,
+   "share_low": 0.04860674228041389,
+   "share_high": 0.04445555594583951,
+   "share_low_by_method": [
+    0.04884430553355105,
+    0.04836917902727673
+   ],
+   "share_high_by_method": [
+    0.04457496786129937,
+    0.04433614403037966
+   ],
+   "response_low": 1,
+   "response_high": 1
+  },
+  "other_personal_tax": {
+   "key": "state_liability",
+   "national_bn": 9.721,
+   "share_low": 0.04860674225379821,
+   "share_high": 0.04445555597929487,
+   "share_low_by_method": [
+    0.04884430550693537,
+    0.04836917900066106
+   ],
+   "share_high_by_method": [
+    0.04457496789475472,
+    0.044336144063835015
+   ],
+   "response_low": 1,
+   "response_high": 1
+  },
+  "modeled_owner_property": {
+   "key": "modeled_owner_property",
+   "national_bn": 394.862477949,
+   "share_low": 0.06323731628971113,
+   "share_high": 0.06323731628971113,
+   "share_low_by_method": [
+    0.06323731628971113,
+    0.06323731628971113
+   ],
+   "share_high_by_method": [
+    0.06323731628971113,
+    0.06323731628971113
+   ],
+   "response_low": 0,
+   "response_high": 0
+  },
+  "personal_property_tax": {
+   "key": "capital",
+   "national_bn": 12.988,
+   "share_low": 0.03133002388696982,
+   "share_high": 0.02542563895029338,
+   "share_low_by_method": [
+    0.03148445901154022,
+    0.031175588762399425
+   ],
+   "share_high_by_method": [
+    0.02581606747562641,
+    0.025035210424960347
+   ],
+   "response_low": 0,
+   "response_high": 0
+  },
+  "remaining_production_property": {
+   "key": "capital",
+   "national_bn": 357.285522051,
+   "share_low": 0.03133002390940954,
+   "share_high": 0.025425638936434784,
+   "share_low_by_method": [
+    0.031484459033979936,
+    0.031175588784839146
+   ],
+   "share_high_by_method": [
+    0.025816067461767813,
+    0.025035210411101756
+   ],
+   "response_low": 0,
+   "response_high": 0
+  },
+  "other_production_taxes": {
+   "key": "capital",
+   "national_bn": 145.258,
+   "share_low": 0.03133002390711599,
+   "share_high": 0.02542563893701772,
+   "share_low_by_method": [
+    0.03148445903168639,
+    0.0311755887825456
+   ],
+   "share_high_by_method": [
+    0.025816067462350753,
+    0.02503521041168469
+   ],
+   "response_low": 0,
+   "response_high": 0
+  },
+  "personal_current_transfers": {
+   "key": "consumption",
+   "national_bn": 141.065,
+   "share_low": 0.08142000842884184,
+   "share_high": 0.08142000842884184,
+   "share_low_by_method": [
+    0.0815920127691521,
+    0.08124800408853157
+   ],
+   "share_high_by_method": [
+    0.0815920127691521,
+    0.08124800408853157
+   ],
+   "response_low": 1,
+   "response_high": 1
+  },
+  "customs_duties": {
+   "key": "consumption",
+   "national_bn": 83.587,
+   "share_low": 0.08142000842884184,
+   "share_high": 0.08142000842884184,
+   "share_low_by_method": [
+    0.0815920127691521,
+    0.08124800408853157
+   ],
+   "share_high_by_method": [
+    0.0815920127691521,
+    0.08124800408853157
+   ],
+   "response_low": 1,
+   "response_high": 1
+  }
+ }
+}
