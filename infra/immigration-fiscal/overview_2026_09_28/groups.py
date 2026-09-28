@@ -526,9 +526,10 @@ GROUPS = [
     ),
     dict(
         id="method", part="reading",
-        claim="A clean regression is not a cause",
+        claim="Passing a test is not proof",
         range="",
-        why="A calculation that runs is not a test of a theory.",
+        why="A calculation that runs is not a test of a theory. Controls, stress tests and AI reviewers each catch "
+            "some errors and miss others.",
         terms=[("non-significance ≠ zero", "a wide interval does not show that there is no effect")],
         findings=[
             dict(refs=[58, 60], text="Controls and placebo tests that pass do not by themselves show a cause.", why=""),
@@ -539,11 +540,11 @@ GROUPS = [
                      "The observations most worth making next are how budgets respond when people leave, and how "
                      "much of the Mexico-born's pay is on the books."),
             dict(refs=[271],
-                 text="Both AI review lanes caught all 24 of the project's past errors when the evidence was in "
-                      "front of them. One, GPT-6 Astra, also called a quarter of sound claims errors, at "
-                      "near-certain confidence.",
-                 why="Neither was harsher on claims that make the group look costlier, but a test this size could "
-                     "miss a moderate lean. Every flag is checked against the data before anything changes."),
+                 text="Two AI reviewers caught all 24 of the project's known past errors when the evidence was in "
+                      "front of them. One of them (GPT-6 Astra) also called 6 of 24 sound claims wrong, at "
+                      "90–99% confidence.",
+                 why="Neither reviewer was harsher on claims that make the group look costlier. But 24 cases could "
+                     "miss a moderate lean. So every flag is checked against the data before a number changes."),
         ],
         minor=[],
     ),
