@@ -1,6 +1,6 @@
 """Conceptual groups for the confidence ladder, in order of how much each moves the answer.
 
-Every ladder entry (1-51 in the April-June layer, 52-259 in the current layer) belongs to
+Every ladder entry (1-51 in the April-June layer, 52-261 in the current layer) belongs to
 exactly one group. `build.py` refuses to write the page if an entry is missing or listed twice.
 Prose follows ASD-STE100 habits: short sentences, active voice, one idea per sentence.
 Numbers in `points` are copied from the cited ladder entries; `build.py` gates the ones that
@@ -194,6 +194,10 @@ GROUPS = [
                     "of it. The net for others is a small gain of $0.7–3.5bn."),
             ("258", "ADOPTED into the social rows: fear, private security and school discipline add "
                     "$7.9bn (Black comparator: $51.0bn)."),
+            ("260", "Beside, not added: PM2.5 from the group's consumption costs others $70bn a year "
+                    "($31–122bn). As many average residents would cost them $47bn more."),
+            ("261", "Beside, not added: infectious disease and food safety cost others $0.3bn a year. "
+                    "Tuberculosis is $0.05bn."),
             ("248, 243, 246", "School quality: state NAEP shows no white loss with the Hispanic share. "
                     "In Germany, immigration explains about 7–14% of the PISA fall."),
             ("97, 102, 96, 101, 93, 98", "Unpriced and not bounded: political effects, city "
@@ -201,7 +205,7 @@ GROUPS = [
         ],
         members=["o2", "o6", "o8", "o18", "o20", "o38", "o50",
                  57, 78, 79, 81, 89, 91, 93, 96, 97, 98, 101, 102, 142, 155, 180, 183, 189, 190,
-                 195, 222, 243, 246, 248, 258],
+                 195, 222, 243, 246, 248, 258, 260, 261],
     ),
     dict(
         id="whopays",
