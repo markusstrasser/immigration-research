@@ -6,3 +6,6 @@ decomposition_identity_county,True,max |ec/exp - (1-bias)| = 1.92e-05
 oa_join,True,3089 counties with Opportunity Atlas kfr_pooled_p25
 bea_join,True,3057 counties with BEA 2018 per-capita income
 hisp_share_national,True,pop-weighted county Hispanic share 0.1782 (ACS 2018 ~0.18)
+segregation_coverage,True,2882 of 3089 Atlas counties have tract-based Hispanic/NH-white dissimilarity; 2882 have >=2 populated tracts and any Hispanic residents
+segregation_plausible,True,median Hispanic/NH-white D in 101 counties with >=100k Hispanics = 0.455
+components_join,True,3018/3018 EC counties have LEP and Asian share
