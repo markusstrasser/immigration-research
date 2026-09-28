@@ -181,9 +181,9 @@ GROUPS = [
                  why="Saving and money sent home lower spending. Money sent home lowers sales tax by only about "
                      "$1.8bn (1.3–2.3)."),
             dict(refs=[267],
-                 text="Prices where the group lives raise its service costs by about $9bn and its sales and "
-                      "vehicle taxes by about $6bn. The net is about $2bn. It is a candidate and not yet in the "
-                      "total.",
+                 text="Prices where the group lives raise its service costs by about $8.6bn and its sales and "
+                      "vehicle taxes by about $6.4bn. The net cost is about $2.2bn. The main estimate uses "
+                      "national prices and leaves this out.",
                  why="The group lives where services cost more (California) and where sales taxes are high "
                      "(Texas and Arizona). Schools already use state prices."),
             dict(refs=[127, 129],
