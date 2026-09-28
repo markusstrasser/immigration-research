@@ -38,15 +38,15 @@ GROUPS = [
         claim="Other US residents pay about $355bn a year for the group's presence",
         range="$355bn (322–387)",
         why=("The account asks one question. In 2024, how much better off would all other US residents be "
-             "without the Mexican-origin population? The group is 40.9M people in three generations. Public "
+             "without the Mexican-origin population? The group is {{GROUP_SIZE}} people in three generations. Public "
              "services shrink with the population."),
         terms=[("counterfactual", "the world we compare with. Here it is the same US without the group."),
                ("specification", "one full set of choices. The range covers 64 of them."),
                ("standard error", "sampling noise. It is about $10.6bn here.")],
         findings=[
             dict(refs=[239],
-                 text="Other residents would be about $355bn a year better off (322–387). That is about $8.7k per "
-                      "group member (7.9–9.5).",
+                 text="Other residents would be about $355bn a year better off (322–387). That is about {{PER_MEMBER}} per "
+                      "group member.",
                  why="The account adds each member's own taxes and benefits from survey records. It then charges "
                      "a share of every public service. The range comes from tax-incidence rules and service "
                      "responses."),
