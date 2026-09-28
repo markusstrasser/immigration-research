@@ -1,0 +1,93 @@
+{
+ "checks": {
+  "CA_m": 13.0827821601059,
+  "TX_m": 9.7614623628524,
+  "group_total": 40896574.152351856,
+  "ledger_stress_m": {
+   "CA": 13.082782160105898,
+   "TX": 9.7614623628524
+  },
+  "target": 40896574.15235156
+ },
+ "inputs": {
+  "infra/immigration-fiscal/administration_response_2026_09_20/derived/panel.csv": "c5bfb7eeb7bcca737eb9e25f3ee3c3a9cb3bb83f3c40fc58ab370cde32c42fd4",
+  "infra/immigration-fiscal/detention_reconciliation_2026_09_20/_cache/census_2024_units.zip": "0967c4d30466593796acb26f2b30c1afb37b5b9a5de43766dc65e4ccc95bd89a",
+  "infra/immigration-fiscal/full_account_spending_2026_09_20/builder.py": "a0c69ac4c5d935b7fad99c1f8909ef7b753c77a1596d4747ddad8dc7240541fd",
+  "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+  "infra/immigration-fiscal/ledger_stress_2026_09_17/derived/state_populations.csv": "37c08bb789afc4e0ec2a8bb6daf9a9d641c2954a7a1f235138677cd2adcb2d0e",
+  "infra/immigration-fiscal/local_spending_composition_2026_09_18/_cache/indunit_2023.zip": "42e0cc63e42d577d5777e509cc5f7bfa7fbae164770984009ca9a0df53373918",
+  "infra/immigration-fiscal/state_priced_services_2026_09_29/_cache/SAPCE.zip": "d93e91e178bf35c1448fd2692deb4b08c6e3953d83a2c430595787822515a9b1",
+  "infra/immigration-fiscal/state_priced_services_2026_09_29/_cache/p23st.pdf": "22a4cbe8ee0ff6156db97b4825db60907d53f0a345d02166b8484e0ac307b2e9",
+  "infra/immigration-fiscal/state_priced_services_2026_09_29/derived/engine_lines.json": "e4a2d5359c1305d87040630c8cf72dc6953bfec4b5feacaba1c2de57e18b9382",
+  "infra/immigration-fiscal/state_priced_services_2026_09_29/state_price.py": "3654c17529884ed9f11724d06e4c69b35faf19c6236f175ffb4aca8a9d6d3cb5",
+  "sources/immigration-fiscal/data/bls/qcew_2023_annual_by_industry.zip": "10185aae3f30696322930a66c1beea6f1b5be901b57341b673036683d37d183e",
+  "sources/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv": "b8b50bd345d8a5f33d5c8a28c95aeaa0a50971356f000d9b48276a65fd9022a7"
+ },
+ "qcew_fallback_states": {
+  "administration": [
+   "DC"
+  ],
+  "administration_ex_e23": [
+   "DC"
+  ],
+  "corrections": [
+   "DE",
+   "DC",
+   "RI"
+  ],
+  "fire": [
+   "DE",
+   "DC",
+   "MD",
+   "RI"
+  ],
+  "health": [
+   "DC",
+   "RI"
+  ],
+  "health_and_hospitals": [
+   "DC",
+   "RI"
+  ],
+  "health_and_net_hospitals": [
+   "DC",
+   "RI"
+  ],
+  "hospitals": [
+   "DC",
+   "RI",
+   "SD",
+   "VT"
+  ],
+  "housing_community": [
+   "DE",
+   "DC",
+   "WY"
+  ],
+  "judicial": [
+   "DE",
+   "DC",
+   "IL"
+  ],
+  "parks_libraries": [],
+  "police": [
+   "AK",
+   "DE",
+   "DC",
+   "MD",
+   "WY"
+  ],
+  "protective_inspection": [
+   "CT",
+   "DE",
+   "DC",
+   "LA",
+   "NH",
+   "ND",
+   "RI",
+   "SC",
+   "VT",
+   "WY"
+  ]
+ }
+}

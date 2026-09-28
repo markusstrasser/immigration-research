@@ -1,0 +1,12 @@
+line,tax_codes,base,weights,sl_amount_bn,national_bn,group_share_low,group_share_high,index,index_se,receipt_gain_low_bn,receipt_gain_high_bn,cost_effect_low_bn,cost_effect_high_bn,response_low,response_high,index_min_variants,index_max_variants,clears_2pct,candidate,note
+general_sales_tax,T09,pce,group,602.43,602.43,0.08142000843,0.08142000843,1.11511713,0.005720506129,5.646478621,5.646478621,-5.646478621,-5.646478621,1,1,1.110305891,1.116314069,True,True,S&L part of the NIPA line; rate = Census T09 per $ of BEA SAPCE PCE
+excise_selective_sales,T10+T11+T12+T13+T14+T15+T16+T19,pce,group,271.298,371.262,0.08118477423,0.08118477423,0.9893067242,0.004020131739,-0.2355222534,-0.2355222534,0.2355222534,0.2355222534,1,1,0.9794179973,0.9893067242,False,False,S&L part of the NIPA line; rate = Census T10+T11+T12+T13+T14+T15+T16+T19 per $ of BEA SAPCE PCE
+personal_motor_vehicle,T24,population,group_adults,26.125,26.125,0.1090135049,0.1053327943,1.262392584,0.01107054902,0.7472882574,0.7220569634,-0.7472882574,-0.7220569634,1,1,1.24364954,1.273422636,True,True,S&L part of the NIPA line; rate = Census T24 per $ of resident
+state_local_income_tax,,,,,536.167,0.04860674228,0.04445555595,,,0,0,0,0,1,1,,,,False,"key state_liability = CPS STATETAX_A, already each state's own tax"
+other_personal_tax,,,,,9.721,0.04860674225,0.04445555598,,,0,0,0,0,1,1,,,,False,"key state_liability, already state-specific"
+modeled_owner_property,,,,,394.8624779,0.06323731629,0.06323731629,,,0,0,0,0,0,0,,,,False,owner model = each state's effective property tax rate x reported home value (gen_ledger_extension state_parameters); response 0
+personal_property_tax,,,,,12.988,0.03133002389,0.02542563895,,,0,0,0,0,0,0,,,,False,"key capital, response 0: no effect on the account; capital incidence is not by residence"
+remaining_production_property,,,,,357.2855221,0.03133002391,0.02542563894,,,0,0,0,0,0,0,,,,False,"business property, key capital, response 0: no effect; incidence not by residence"
+other_production_taxes,,,,,145.258,0.03133002391,0.02542563894,,,0,0,0,0,0,0,,,,False,"key capital (business licences, severance, special assessments), response 0: no effect"
+personal_current_transfers,,,,,141.065,0.08142000843,0.08142000843,,,0,0,0,0,1,1,,,,False,"fines, fees and donations (federal + S&L), not a tax rate; left national"
+customs_duties,,,,,83.587,0.08142000843,0.08142000843,,,0,0,0,0,1,1,,,,False,federal

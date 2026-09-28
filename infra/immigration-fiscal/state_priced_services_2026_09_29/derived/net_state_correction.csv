@@ -1,0 +1,5 @@
+package,end,spending_bn,receipts_gain_bn,net_cost_bn,functions
+narrow_police_health,low,4.380893703,6.393766879,-2.012873176,police+health
+narrow_police_health,high,4.380893703,6.368535585,-1.987641882,police+health
+central_all_sl_subfunctions,low,8.578322742,6.393766879,2.184555863,police+judicial+fire+corrections_per_inmate+protective_inspection+health+parks_libraries
+central_all_sl_subfunctions,high,8.639866789,6.368535585,2.271331204,police+judicial+fire+corrections_per_inmate+protective_inspection+health+parks_libraries
