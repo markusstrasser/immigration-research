@@ -324,5 +324,141 @@
       "the assets of the hypothetical combined OASI and DI",
       "Table B. Effective Nominal and Real Interest Rates"
     ]
+  },
+  "mtr_hi_2024_operations": {
+    "doc": "mtr2025",
+    "value": {
+      "payroll_taxes_bn": 396.4,
+      "taxation_of_benefits_bn": 39.8,
+      "premiums_bn": 5.0,
+      "total_expenditures_bn": 422.5,
+      "benefits_bn": 416.3,
+      "administrative_bn": 6.2,
+      "enrollment_aged_m": 59.9,
+      "enrollment_disabled_m": 7.3,
+      "enrollment_total_m": 67.2
+    },
+    "unit": "HI (Part A), calendar 2024: $bn and enrollees (millions)",
+    "where": "Table II.B1 (2024 operations), HI column",
+    "fragments": [
+      "Payroll taxes 396.4 - - 396.4",
+      "Taxation of benefits 39.8 - - 39.8",
+      "Premiums 5.0 140.1 19.3 164.4",
+      "Total expenditures $422.5 $553.4 $146.2 $1,122.1",
+      "Administrative expenses 6.2 5.6 0.5 12.2",
+      "Aged 59.9 55.2 49.0 60.3",
+      "Disabled 7.3 6.8 6.2 7.3",
+      "Total 67.2 62.0 55.2 67.6"
+    ]
+  },
+  "tr_income_cost_definitions": {
+    "doc": "tr2025",
+    "value": "non-interest income: payroll taxes, taxation of benefits, GF reimbursements; cost: benefits, administration, RRB interchange, vocational rehabilitation",
+    "unit": "definitions",
+    "where": "Section VI.G, text before Table VI.G9",
+    "fragments": [
+      "For OASDI, non-interest income consists of payroll tax",
+      "contributions, proceeds from taxation of scheduled OASDI benefits, and any",
+      "reimbursements from the General Fund of the Treasury. Cost consists of",
+      "scheduled benefits, administrative expenses, financial interchange with the",
+      "Railroad Retirement program, and payments for vocational rehabilitation",
+      "For HI, non-interest income consists of payroll tax contributions (including contributions from railroad employ-",
+      "up to an additional 0.9 percent tax on earned income for relatively",
+      "high earners, proceeds from the taxation of scheduled OASDI benefits, pre-",
+      "Total cost consists of",
+      "scheduled benefits and administrative expenses."
+    ]
+  },
+  "tr_taxable_payroll_2024_bn": {
+    "doc": "tr2025",
+    "value": 10124,
+    "unit": "$bn, OASDI taxable payroll, calendar 2024 (intermediate); with the compound effective trust fund interest factor 0.9876 (PVs at 1 January 2025)",
+    "where": "Table VI.G6",
+    "fragments": [
+      "Table VI.G6.—Selected Economic Variables, Calendar Years 2024-2100",
+      "2024 . . . . . . . . 97.59 $69,472.44 $10,124 $29,170 0.9876"
+    ]
+  },
+  "tr_taxation_of_benefits_split": {
+    "doc": "tr2025",
+    "value": "OASDI trust funds: tax on up to 50% of benefits; HI: the tax on 50-85%",
+    "unit": "rule",
+    "where": "Section V.C.7",
+    "fragments": [
+      "Under current law, the OASI and DI Trust Funds are credited with income",
+      "tax revenue from the taxation of up to the first 50 percent of taxpayers' OASI",
+      "and DI benefit payments. (The HI Trust Fund receives the remainder of the",
+      "income tax revenue from the taxation of up to 85 percent of taxpayers' OASI"
+    ]
+  },
+  "afr_sosi_basis": {
+    "doc": "ssa_afr2025",
+    "value": "75-year present values from 1 January 2025 (to 2099) on the 2025 Trustees Report's intermediate assumptions, discounted at the trust funds' effective yield; cost = scheduled benefits, administration, RRB transfers; closed group split 62+ and 15-61",
+    "unit": "definitions",
+    "where": "Note 17 (Social Insurance Disclosures) and the assumptions table's note 10",
+    "fragments": [
+      "value calculation discounts all cash flows at the effective yield on OASI and DI Trust Fund reserves.",
+      "The estimated future cost includes benefit amounts scheduled under current law, administrative expenses, and net transfers with the Railroad Retirement program.",
+      "This closed group is further divided into those who have attained retirement eligibility age (i.e., age 62 and over) in the starting year of the projection period and those who attained age 15 through 61 in the starting year of the projection period.",
+      "The valuation period used for the 2025 Statement of Social Insurance extends to 2099."
+    ]
+  },
+  "cms_sosi_closed_group": {
+    "doc": "cms_fr2025",
+    "value": "current participants: the closed group aged 15 and over at the start of the projection, as taxpayers, beneficiaries or both",
+    "unit": "definition",
+    "where": "Statement of Social Insurance, footnote",
+    "fragments": [
+      "of individuals who are at least age 15 at the start of the projection period, and are participating in the program as either taxpayers"
+    ]
+  },
+  "note2025_1_age_by_account": {
+    "doc": "an2025_1",
+    "value": "participants' ages are the age of the worker on whose account benefits are paid",
+    "unit": "definition",
+    "where": "Section 5, definitions of current and future participants, footnotes 5 and 6",
+    "fragments": [
+      "Current participants—All individuals who are age 15",
+      "Age of the individual is defined by the age of the worker who is the primary beneficiary of the account."
+    ]
+  },
+  "note2025_3_table1_population": {
+    "doc": "an2025_3",
+    "value": "Table 1: AIMEs (highest 35 years of wage-indexed earnings) of workers retiring 2019-2024, dually entitled included",
+    "unit": "definition",
+    "where": "Table 1 note and footnote 3 of the text",
+    "fragments": [
+      "Table 1.—Distribution of AIMEs of Actual Workers Retiring in Years 2019 to 2024,",
+      "We define career-average earnings as the average of the highest 35",
+      "Note: Worker distributions include individuals who are dually entitled, or may become dually entitled to a higher benefit in the future, based on another worker's"
+    ]
+  },
+  "afr_ssfa_in_valuation": {
+    "doc": "ssa_afr2025",
+    "value": {
+      "enacted": "2025-01-05",
+      "change_in_law_open_group_bn": -1048
+    },
+    "unit": "the Social Security Fairness Act (WEP/GPO repeal) is in the 1 January 2025 valuation; the SOSI's change for law or policy, open group, $bn",
+    "where": "Note 17 (changes in law) and the Statement of Changes in Social Insurance Amounts, 1 January 2024 to 1 January 2025",
+    "fragments": [
+      "The Social Security Fairness Act of 2023 was enacted on January 5, 2025. This law repeals the Windfall Elimination Provision and Government Pension Offset, which",
+      "Changes in law or policy (1,048) $0 (1,048)"
+    ]
+  },
+  "tr_vi_f2_current_participants": {
+    "doc": "tr2025",
+    "value": {
+      "future_cost_tn": 102.8,
+      "future_dedicated_tax_income_tn": 47.8
+    },
+    "unit": "$tn at 1 January 2025, current participants (15 and over), through the infinite horizon",
+    "where": "Table VI.F2",
+    "fragments": [
+      "Table VI.F2.—Present Values Through the Infinite Horizon",
+      "Plus present value of future cost for current participants",
+      "102.8 7.3 2.3",
+      "47.8 3.4 1.1"
+    ]
   }
 }

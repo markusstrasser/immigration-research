@@ -1,10 +1,14 @@
 claude-opus-5-5
 
 **Verdict:** On an accrual basis for Social Security (OASDI) and Medicare Part A, the September 27 case becomes
-**$443.8bn / $503.7bn** at specifications 48 / 11 under the central arm. That is up $121.9bn / $116.3bn from
-$321.8bn / $387.4bn. Changing one setting at a time moves it to $381–467bn at 48 and $444–526bn at 11. Every
-combination of settings spans $348–527bn / $413–583bn. The figure sits beside the case, never in it; adoption is
-the operator's call. [CALCULATION: `pension_accrual.py` → `derived/summary.json`, `derived/case_beside.csv`]
+**$437.8bn / $497.8bn** at specifications 48 / 11 under the central arm, up $116.0bn / $110.4bn from
+$321.8bn / $387.4bn. The national check passes: against the Statement of Social Insurance at 1 January 2025, the
+lane's route predicts the OASDI 15–61 and HI 15–64 rows within the declared tolerance (ratios +4.6% and +1.7%,
+levels 3.8–8.0% low). The check also cut the central by $5.9bn, because the Part A spouse credit counted dependents
+twice (bec1cd7: $443.8bn / $503.7bn). One setting at a time gives $377–460bn at 48 and $439–519bn at 11; every
+combination spans $348–519bn / $413–575bn. The lifetime model's own formula fails both validations, so under the
+operator's rule the case stays on cash and this figure stays beside it. [CALCULATION: `pension_accrual.py` →
+`derived/summary.json`, `derived/case_beside.csv`; `national_check.py` → `derived/national_score.json`]
 
 Lane `pension_accrual_2026_09_28` (worker W2, 2026-09-28): the September 27 case ($321.82–387.37bn at
 specifications 48 / 11) with Social Security (OASDI) and Medicare Part A on an accrual basis, beside the case,
@@ -202,8 +206,9 @@ September 19 ledger, a different object. They agree in direction and are not com
 ## The model, and decision 2026-09-19
 
 Decision 2026-09-19 (program ownership) rejected "adding whole-career SSA money's-worth ratios as annual
-entitlement accrual". Its trigger for revisiting is "an independently validated pension accrual model". This lane
-supplies one. Whether it meets that bar is the operator's call.
+entitlement accrual". Its trigger for revisiting is "an independently validated pension accrual model". The lane's
+ratio route passes the independent national check; the lifetime model's own formula fails it and the model-worker
+check below (see "National check: score").
 
 `lifetime_model.py` builds SSA's scaled workers from the benefit formula and the Trustees' 2025 assumptions:
 
@@ -300,6 +305,302 @@ Primary documents are cached in `_cache/` (ignored) and pinned by sha256 in `sou
   - `gate_union_row.json`;
   - `sources.json`.
 
+## National check: prediction
+
+Frozen 2026-09-28 10:03 JST, before any Statement of Social Insurance (SOSI) figure was opened.
+`derived/national_prediction.csv` has sha256 `b8b5c3f5ae9315a0a9a48ada1732d917c971df45edf51d68111bbfed469ed7d9`,
+and `national_check.py` reproduces it. [CALCULATION: `national_check.py` → `derived/national_prediction.csv`,
+`derived/national_prediction.json`, `derived/national_cells.csv`]
+
+**Target.** The SOSI at 1 January 2025 closed-group rows: OASDI participants aged 15–61 and 62+, and HI participants
+aged 15–64 and 65+. For each row it gives the present value (PV) of future expenditures and of future non-interest
+income over 2025–2099, at the Trustees' rates with scheduled benefits.
+
+**Not fully blind.** Before this check I had seen TR 2025 Table VI.F2's totals for all current participants
+(OASDI cost $102.8tn, taxes $47.8tn, over an unlimited horizon). So the sum of the two OASDI rows is not blind. The
+split by age and every HI figure are blind.
+
+Two changes were made after the draft totals were visible and before the freeze. Both are disclosed because the
+first moved the result toward that known total:
+
+- **Per-age ratios.** The first draft priced each person's whole career at the ratio of their current five-year
+  band ($73.5tn at a ratio of 1.714). It was replaced by the lane's per-year accrual summed over the career: each
+  year's taxes earn the ratio that today's taxpayers of that age carry, re-evaluated at the person's birth
+  cohort. The draft had priced a 22-year-old's career at the mix of 20–24-year-olds, who are mostly single; the
+  lane's machinery never does that. The change raised the row by 2.3%.
+- **Tax calibration.** Taxes now scale to 12.4% of the Trustees' 2024 taxable payroll ($10,124bn), not to 2024's
+  payroll tax income ($1,293.3bn). That income is 12.77% of payroll in Table IV.B2 because it carries
+  adjustments for prior years. Future years run at IV.B2's payroll-tax rate (12.23% in 2025, 12.38% from 2028).
+  The change lowered both levels by 2.9%. [SOURCE: TR 2025 Tables VI.G6 and IV.B2, `reads/quotes.json`
+  `tr_taxable_payroll_2024_bn`]
+
+**Method.** The lane's machinery on the SOSI's basis: the trust funds' effective rates (the TR's own PV basis;
+Table VI.G6's factor for 2024 is 0.9876, and this model's half-year roll gives 1/1.0124), 2025–2099, scheduled
+benefits, the whole population aged 15+ in the CPS frame.
+
+- **OASDI 15–61, the ratio route.**
+  - *Taxes.* Lifetime taxes come from a pseudo-cohort: 2024 covered earnings by single year of age, sex and
+    nativity (zeros included), moved along cohort lines with the AWI.
+    - Past years are taxed at the year's OASDI rate and accumulated at the trust funds' rates.
+    - Future years are weighted by NVSS 2024 survival from 2025 (improved at the TR's rates) and discounted.
+    - The foreign-born count only from arrival.
+  - *Ratio.* Each year's taxes earn the lane's per-tax-dollar ratio of today's taxpayers of that age: Note 2025.7
+    Table 1 through the age-adjusted level and the observed family, with careers from arrival for every
+    foreign-born worker. Unauthorized workers are on the books at the case's shares (0.526 Mexico-born, 0.550
+    others) and credited at 10%.
+  - *Window.* The lifetime model scales lifetime benefits to those paid in 2025–2099 to a person alive in 2025
+    (factor 1.006, person-weighted).
+  - *Formula route.* The same with the lifetime model's own ratio.
+- **OASDI 62+.** CPS 2024 Social Security benefits are valued as annuities with COLAs, survival and the same rates,
+  plus:
+  - the survivor's step-up between linked spouses who both collect;
+  - claims by those aged 62–69 not yet collecting, at the receipt share and benefit of 67–74-year-olds of the same
+    sex and nativity, claimed at 67 (at 70 if already 67 or older).
+- **Income.** Future payroll tax (the same pseudo-cohort) plus the taxation of benefits at Tables IV.B1/IV.B2's
+  ratio of that income to cost, year by year. The ratio is 3.8% in 2025, 5.8% in 2050 and 6.1% in 2080. HI takes
+  0.722 of the OASDI amount (the two 2024 amounts: $39.8bn over $55.1bn). OASDI cost is benefits × 1.0091 (2024
+  cost over benefits, Table VI.A3).
+- **HI 15–64: the lane's Part A machinery.** P(qualify) (Medicare coverage of lawfully present people 65+, by
+  nativity and sex; unauthorized × 10%) × the PV of Part A from 65. That PV uses the average cost per beneficiary
+  with no age gradient.
+- **HI 65+.** Current enrollees' Part A cost from 2025. HI cost is benefits × 1.0149 (MTR Table II.B1).
+- **Primary scaling.** Each 2024 flow is scaled to its Trustees total:
+  - OASDI taxes × 0.949;
+  - OASDI benefits × 1.200 (the CPS captures 83.3% of the Trustees' $1,471.4bn);
+  - HI taxes × 1.113 (to $396.4bn, which includes the 0.9% additional tax);
+  - Medicare enrollees 65+ × 1.036.
+
+  The reason: the case's own lines are on the Trustees' base. The unscaled CPS frame is shown beside.
+
+**Prediction, $tn at 1 January 2025** [CALCULATION: `derived/national_prediction.csv`]
+
+| Row | Expenditures | Income | Net | Ratio (exp. / inc.) |
+|---|---:|---:|---:|---:|
+| OASDI 15–61, ratio route | **72.85** | **41.62** | −31.24 | **1.751** |
+| OASDI 62+ | **21.04** | **2.00** | −19.04 | **10.54** |
+| HI 15–64 | **22.49** | **15.27** | −7.22 | **1.473** |
+| HI 65+ | **5.62** | **0.91** | −4.70 | **6.16** |
+| *beside:* OASDI 15–61, formula route | 60.61 | 40.91 | −19.70 | 1.482 |
+| *beside, CPS frame unscaled:* OASDI 15–61 / 62+ | 76.74 / 17.54 | 43.84 / 1.87 | | 1.751 / 9.40 |
+| *beside, CPS frame unscaled:* HI 15–64 / 65+ | 21.70 / 5.42 | 14.19 / 0.77 | | 1.530 / 7.02 |
+
+The OASDI rows sum to $93.9tn of expenditures and $43.6tn of income, a ratio of 2.15. For all current participants
+over an unlimited horizon, TR Table VI.F2 gives $102.8tn and $47.8tn. The prediction therefore runs about 9% low on
+both levels; the ratio is not blind. National per-tax-dollar flows at trust-fund rates, for all 2024 taxpayers
+aged 15+: 1.237 on the ratio route and 1.027 on the formula route, against the group's 1.281.
+[CALCULATION: `derived/national_prediction.json`]
+
+**Tolerance (the parent's, adopted unchanged).** Each row's ratio must fall within ±10% of the published value, and
+each level within ±15%.
+
+- **OASDI.** The accrual route passes if the 15–61 row passes all three tests. That row carries the route's ratio
+  and its past taxes.
+- **HI.** The Part A machinery passes if the 15–64 row passes all three.
+- **62+ and 65+ rows.** They are scored with the same tolerance and reported beside. They value current benefits
+  and enrollees, which the case's accrual does not use.
+- **What a miss implies for the central.** If the 15–61 income passes but the ratio misses, the lane's
+  per-tax-dollar ratio (1.298) scales by the published ratio over 1.751. A Part A miss on the 15–64 expenditures
+  scales the Part A accrual ($51.28bn) the same way.
+
+**Named differences, fixed now with the expected direction of the published figure against this prediction:**
+
+- **OASDI 15–61.**
+  - Children under 15 who receive benefits on a current participant's record belong to the SOSI's future
+    participants, but the route credits them to the worker. Published lower, by about 1–2%.
+  - Disability benefits paid before 2025 sit inside lifetime ratios. Published lower, by about 1%.
+  - Emigration of current participants. Published lower on both levels.
+  - Rising participation at older ages. Published higher on income.
+  - A pseudo-cohort freezes the 2024 age profile. Direction unknown.
+- **OASDI 62+.**
+  - Benefits that began partway through 2024 are understated in the CPS. Published higher.
+  - CPS non-reporters are counted as future claimants and also scaled up. Published lower.
+- **HI 15–64.**
+  - Costs of disabled enrollees before 65 are left out: +$0.67tn for today's enrollees. The cost of those
+    disabled in future before 65 is not computed. Published higher.
+  - The 0.9% additional tax grows faster than the AWI. Published higher on income.
+- **HI 65+.**
+  - No age gradient in cost per beneficiary. Published higher, possibly by 10–25%.
+  - Premiums of voluntary enrollees are left out. Published slightly higher on income.
+
+## National check: score
+
+The published rows were opened after the freeze and scored at 10:35 JST. They come from SSA's FY 2025 Agency
+Financial Report (OASDI) and CMS's FY 2025 Financial Report (HI), both pinned by sha256 in `sources.py`.
+`sosi_oasdi()` and `sosi_hi()` parse the 2025 columns and stop unless the rows add to the published totals.
+`national_check.py` stops unless `derived/national_prediction.csv` is still the frozen file. [SOURCE: `sources.py`
+DOCS `ssa_afr2025`, `cms_fr2025`; `reads/quotes.json` `afr_sosi_basis`, `cms_sosi_closed_group`; CALCULATION:
+`national_check.py` → `derived/national_score.csv`, `derived/national_score.json`]
+
+**Both checks pass.** Predicted against published, $tn at 1 January 2025:
+
+| Row | Expenditures | Income | Ratio | Declared test |
+|---|---:|---:|---:|---|
+| **OASDI 15–61** (gates the OASDI accrual) | 72.85 / 75.71 (−3.8%) | 41.62 / 45.25 (−8.0%) | 1.751 / 1.673 (+4.6%) | **pass** |
+| **HI 15–64** (gates Part A) | 22.49 / 23.96 (−6.2%) | 15.27 / 16.55 (−7.8%) | 1.473 / 1.448 (+1.7%) | **pass** |
+| OASDI 62+ (beside) | 21.04 / 26.08 (−19.3%) | 2.00 / 2.52 (−20.8%) | 10.54 / 10.35 (+1.9%) | levels miss |
+| HI 65+ (beside) | 5.62 / 8.05 (−30.2%) | 0.91 / 1.04 (−12.5%) | 6.16 / 7.72 (−20.2%) | expenditures and ratio miss |
+| OASDI 15–61, formula route (beside) | 60.61 / 75.71 (−19.9%) | 40.91 / 45.25 (−9.6%) | 1.482 / 1.673 (−11.4%) | **fails** |
+
+[SOURCE: SSA FY 2025 AFR, Statements of Social Insurance; CMS FY 2025 Financial Report, Statement of Social
+Insurance; CALCULATION: `derived/national_score.csv`]
+
+**The score leaves the central alone** under the declared rule, which scales only on a miss. Step d changes Part A
+for a different reason (below). For reference [CALCULATION: `derived/national_score.json` `central_mapping`]:
+
+- Scaling the OASDI accrual to the published 15–61 ratio would give 1.240 per tax dollar instead of 1.298
+  (−$6.5bn at 48, −$6.1bn at 11).
+- Scaling Part A to the published 15–64 expenditures would give $48.3bn instead of $45.4bn (+$3.0bn).
+
+**The formula route fails,** as it failed Note 2025.7's model workers (0.667–0.825). Its cost falls 20% short for
+the reason named there: the lifetime model leaves out disability, child and young-survivor benefits, the family
+maximum and mortality by earnings. The ratio route carries them through Note 2025.7's published ratios.
+
+### Where the gaps come from
+
+The parent's named differences for OASDI 15–61 (ratio 4.6% high, income 8.0% low):
+
+- **DI and young-survivor benefits.** The ratio route has them; the formula route leaves them out, which fits its
+  −20%.
+  Disability benefits paid before 2025 sit inside lifetime ratios but outside the SOSI's future cost (frozen:
+  published lower on the ratio, about 1%). Consistent in direction.
+- **Auxiliaries.** Note 2025.1 sets a participant's age by the worker on whose account benefits are paid. The
+  SOSI therefore books spouses', children's and survivors' benefits in the worker's row, as the ratio route does.
+  My frozen item on children under 15 ("published lower by 1–2%") was wrong and is withdrawn. [SOURCE:
+  `reads/quotes.json` `note2025_1_age_by_account`]
+  - The one piece that can overstate is the one-earner couple: a spouse with no 2024 wages may still collect on
+    their own record. Pricing every one-earner couple as a two-earner couple removes the spousal benefit and gives
+    1.624, 2.9% below the published ratio. The lane's 1.751 is 4.6% above it. [CALCULATION:
+    `derived/national_probes.csv`]
+  - The published ratio sits 39% of the way from that bound to the lane. The auxiliary assignment alone could
+    account for the whole ratio gap; the check cannot separate it from the items below. Read the same way, the
+    group's 1.298 (bound 1.186) would calibrate to about 1.23, close to the scaled 1.240. [INFERENCE]
+- **The truncation.** The SOSI stops in 2099. The Trustees' unlimited-horizon cost for current participants is
+  $102.8tn against the SOSI's $101.8tn, so about 1% of their cost falls later. The prediction cuts at 2099 too,
+  through the window factor. [SOURCE: `reads/quotes.json` `tr_vi_f2_current_participants`; SOSI]
+- **Income from taxing benefits.** Both sides include it. The prediction takes Tables IV.B1/IV.B2's ratio to cost
+  year by year.
+- **Non-covered state and local workers, and CPS earnings against SSA taxable payroll.** The CPS stage taxes every
+  wage, including non-covered state and local pay. The CPS taxes run 5.3% above 12.4% of the Trustees' taxable
+  payroll, and the prediction scales them down uniformly (0.949). [CALCULATION: `derived/national_prediction.json`
+  `calibration.oasdi_tax`] If the excess sits at older ages, the scaling understates the young's future taxes and
+  overstates older workers' past taxes. Both would push the predicted ratio up and income down, the observed
+  pattern. Not quantified. [INFERENCE]
+- **Level assignment.** Tested at the parent's request; it runs the other way (below).
+- Of the other frozen items, rising participation at older ages (published higher on income) fits. Emigration
+  (published lower on both levels) is outweighed by something larger.
+
+The rows beside:
+
+- **OASDI 62+, levels 19–21% low, ratio +1.9%.**
+  - The SOSI's row holds every future benefit on the accounts of workers now 62+, including survivor benefits their
+    younger spouses will draw. The prediction values only the step-up between linked spouses who both collect.
+  - The Social Security Fairness Act (enacted 5 January 2025) raised benefits for people with non-covered pensions.
+    It is in the valuation (the SOSI books −$1,048bn for changes in law, open group), and CPS 2024 benefits predate
+    it. [SOURCE: `reads/quotes.json` `afr_ssfa_in_valuation`]
+  - Frozen items: part-year 2024 awards (published higher) fits; non-reporters counted as claimants (published
+    lower) is outweighed. The case's accrual does not use this row.
+- **HI 65+, expenditures 30% low.** Every enrollee is priced at the average cost per beneficiary, but today's
+  enrollees spend their remaining years at older, costlier ages. The frozen guess (10–25%) had the direction and too
+  small a size. The case's accrual does not use this row.
+- **HI 15–64.** Disabled enrollees' costs before 65 (frozen: published higher) add $0.67tn for today's enrollees
+  and bring expenditures to 3.4% low. Future disability before 65 is not computed. Income is 7.8% low; the 0.9%
+  additional tax grows faster than the AWI (frozen: published higher). [CALCULATION:
+  `derived/national_prediction.json` `hi.disabled_under_65_scaled_tn`]
+
+### Level assignment and convexity
+
+The parent's premise holds for a person-weighted average of ratios. The accrual weights by tax dollars, and per tax
+dollar the credit is lifetime benefits per unit of level. That is concave, like the benefit formula's 90/32/15%
+brackets. Spread in the levels therefore lowers the tax-weighted ratio, and shrinking it raises the ratio.
+[INFERENCE, checked by the probes]
+
+| Probe | 15–61 ratio (published 1.673) | Group, per tax $ |
+|---|---:|---:|
+| The lane | 1.751 (+4.6%) | 1.298 |
+| Levels shrunk, θ = 0.8 | 1.814 (+8.4%) | 1.345 (+3.6%) |
+| Levels shrunk, θ = 0.6 | 1.885 (+12.7%) | 1.396 (+7.6%) |
+| One-earner couples as two-earner | 1.624 (−2.9%) | 1.186 (−8.6%) |
+
+θ is the share of each cell's variance in log level that is kept (cells: age × sex × nativity nationally, age ×
+sex × generation for the group). [CALCULATION: `derived/national_probes.csv`]
+
+No permanent-share estimate is needed to settle the sign. For the size of the spread, SSA publishes the target
+itself: Note 2025.3 Table 1 gives the career-average earnings (AIME) of workers retiring in 2019–2024 against the
+scaled workers' levels. The lane's levels for 2024 taxpayers aged 55–61 are not wider than that distribution. They
+are thinner at the bottom.
+
+| Share below | Very low | Low | Medium | High |
+|---|---:|---:|---:|---:|
+| Note 2025.3 Table 1, workers retiring 2019–2024 | 11.8% | 24.4% | 57.4% | 81.9% |
+| The lane, taxpayers aged 55–61 | 8.5% | 20.9% | 57.7% | 80.2% |
+| The lane, share of 15–61 OASDI tax | 1.1% | 5.1% | 31.0% | 58.8% |
+
+[SOURCE: Note 2025.3 Table 1 via `sources.aime_distribution()`; CALCULATION: `derived/national_levels.csv`]
+
+The level assignment does not explain the high ratio; correcting for transitory spread would widen the gap. The
+convexity sits where the tax dollars are not: 1.1% of 15–61 OASDI tax falls below the very-low level.
+
+### Part A: the spouse credit counted dependents twice
+
+Step d asked for a check that the spouse credit does not double count. It does, and the central now leaves it out.
+[CALCULATION: `derived/national_score.json` `part_a_spouse_check`]
+
+- **In 2024.** Of the 2.29m covered workers the lane treats as one-earner couples (spouse with no wages), 0.31m
+  (13.3%) have a spouse with covered self-employment earnings. That spouse accrues on their own record and was
+  credited again on the worker's ($0.73bn).
+- **Over a career, the whole credit.** P(qualify) is the share of the generation's 65+ with Medicare on any record,
+  and expected covered years count every member's years, non-workers' zeros included. Summed over a generation's
+  expected careers, the workers' own terms already give every member P(qualify) × the Part A value, dependents
+  included. The spouse credit adds the dependents a second time: $5.93bn, 13.1% on top of the own term.
+- **Revision.** The central Part A accrual falls from $51.28bn to $45.35bn, and the case on accrual from
+  $443.76bn / $503.71bn to $437.83bn / $497.78bn. `derived/summary.json` keeps its keys. bec1cd7's central stays
+  as the bridge `bridge_part_a_spouse_credit`, outside the ranges. [CALCULATION: `derived/summary.json`,
+  `derived/case_beside.csv`]
+  - Superseded above: the Part A rows of "What changes"; the "Part A, spouse" row of the central-arm table; the
+    arms table's ΔPart A and case columns (every arm's Part A now leaves out the credit), including its "Part A
+    without the spouse" arm, which is now the central; and the three accrual rows of the steady-state table, with
+    the comparisons drawn from them. `derived/case_beside.csv` holds the new values.
+  - Superseded ranges: one change at a time now gives $376.6–460.3bn at 48 and $439.4–519.2bn at 11. Every
+    combination gives $348.4–519.2bn / $412.7–574.9bn, with Part A $28.6–57.1bn. [CALCULATION:
+    `derived/summary.json` `range_across_arms_bn`, `every_combination_bn`]
+- **Residual.** The own term values each worker-year at the worker's own sex, and women live longer and have fewer
+  covered years. At the generation's sex mix the accrual would be $45.57bn (+$0.21bn, 0.5%). Left as is.
+
+The national HI check tests the construction without the credit: its 15–64 row counts each person once.
+
+### Adoption
+
+The operator's rule (relayed 07:39) admits accrual to the case only if the formula model passes both validations. It
+fails both: 0.667–0.825 of Note 2025.7's model workers, and a cost 20% low with a ratio 11% low against the SOSI.
+**The case stays on cash, and the accrual stays beside it.**
+
+The ratio route, which produces the figure, passes the national check. The operator's rule did not ask for that
+check. **Recommendation: treat the pass as meeting decision 2026-09-19's revisit trigger for the ratio route, and
+put that route into the next case revision with cash beside.** The formula model fails for omissions that the ratio
+route does not share (disability, young survivors, the family maximum). The one independent test that could have
+failed the ratio route did not. The check leaves two things open. It does not test the group-specific settings
+(careers from arrival, the 10% unauthorized credit). It brackets the auxiliary assignment but does not pin it
+(1.24 against 1.30).
+
+### Reproduction
+
+```sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/pension_accrual_2026_09_28 \
+  "node {lane}/case_lines.cjs" \
+  "OPENBLAS_NUM_THREADS=1 uv run --no-project python3 {lane}/pension_accrual.py" \
+  "OPENBLAS_NUM_THREADS=1 uv run --no-project python3 {lane}/national_check.py" \
+  --allow-unrun infra/immigration-fiscal/pension_accrual_2026_09_28/lifetime_model.py \
+  --allow-unrun infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py
+```
+
+This supersedes the command under "Gates and reproduction". The quote count there is now 39 (all verified). New
+files:
+
+- `derived/national_score.csv`: every row and measure against the published figure, with the test;
+- `derived/national_score.json`: the verdicts, the mapping to the central and the spouse check;
+- `derived/national_probes.csv`: the level and family probes;
+- `derived/national_levels.csv`: the level distribution against Note 2025.3 Table 1.
+
 ## Progress (append-only)
 
 - 2026-09-28. RESULT stubbed before any work.
@@ -324,3 +625,14 @@ Primary documents are cached in `_cache/` (ignored) and pinned by sha256 in `sou
   extension builder, `cps_ca_status.py`). An edit to the case's status imputation rebuilds it instead of leaving
   stale flags. The rebuilt cache equals the old one, and the old one was removed. Two final reruns: 22/22
   identical, rc 0.
+- 2026-09-28 10:03 JST. National check prediction frozen (section above) before any SOSI figure was opened:
+  `derived/national_prediction.csv` sha256 `b8b5c3f5…d7d9`. Two changes preceded the freeze and are disclosed there
+  (per-age ratios, +2.3%; tax calibration to taxable payroll, −2.9%). The OASDI sum is not blind (TR VI.F2 seen).
+- 2026-09-28 10:35 JST. National check scored (section above): SOSI pinned from SSA's FY 2025 AFR (Wayback 20260316)
+  and CMS's FY 2025 Financial Report; both gating rows pass, the formula route fails. The level probe runs the
+  other way (shrinking raises the tax-weighted ratio). Step d found the Part A spouse credit double counting; the
+  central drops it (Part A $51.28bn → $45.35bn; case $437.83bn / $497.78bn), with bec1cd7's central kept as a
+  bridge. Step e (ABO against OCACT's maximum transition cost) skipped: the 62+ row, a large part of the accrued
+  obligation, misses by 19%, so the comparison would test the annuity valuation rather than the attribution.
+- 2026-09-28 10:50 JST. Two consecutive reruns with `national_check.py` in the command (see "Reproduction" above):
+  30/30 files identical, rc 0. The prediction file kept its frozen sha256 through both.

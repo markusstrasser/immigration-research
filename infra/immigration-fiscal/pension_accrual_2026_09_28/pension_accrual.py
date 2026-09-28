@@ -390,9 +390,11 @@ def hi_cost_path(econ: L.Economy) -> np.ndarray:
 
 
 def part_a_pv(age: np.ndarray, sex: np.ndarray, econ: L.Economy, rate, scenario: str,
-              population: str = "general") -> np.ndarray:
+              population: str = "general", alive_next: bool = False, last_year: int | None = None) -> np.ndarray:
     """PV at 2024 of Part A costs from 65 for a person of this age and sex alive in 2024: the average HI cost per
-    beneficiary each year (no age gradient), NVSS 2024 survival by sex improved at the TR rates."""
+    beneficiary each year (no age gradient), NVSS 2024 survival by sex improved at the TR rates. `alive_next`
+    conditions on being alive at the next age (1 January 2025) and counts costs from then for those already 65;
+    `last_year` drops costs after that calendar year."""
     cost = hi_cost_path(econ)
     pay = hi_payable(econ) if scenario == "payable" else np.ones(len(cost))
     disc = econ.discount(rate)
@@ -402,21 +404,37 @@ def part_a_pv(age: np.ndarray, sex: np.ndarray, econ: L.Economy, rate, scenario:
         key = (a, s)
         if key not in cache:
             b = 2024 - a
-            if a >= 65:
+            if a >= 65 and not alive_next:
                 cache[key] = 0.0
             else:
-                surv = L.survival(b, population, "male" if s == 1 else "female", a)
+                surv = L.survival(b, population, "male" if s == 1 else "female", a + 1 if alive_next else a)
                 c = econ.at(cost, b) * econ.at(pay, b) * econ.at(disc, b)
-                cache[key] = float((surv * c)[65:].sum())
+                if last_year is not None:
+                    c = np.where(b + np.arange(len(c)) <= last_year, c, 0.0)
+                cache[key] = float((surv * c)[max(65, a + 1) if alive_next else 65:].sum())
         out[i] = cache[key]
     return out
 
 
-def hi_accrual(p: pd.DataFrame, econ: L.Economy, u_long: float, u_2000: float) -> tuple[pd.DataFrame, dict]:
-    """Part A accrual per covered worker-year: P(qualify) x PV(Part A from 65) / expected covered years, for the
-    worker and, in a one-earner couple, the spouse who qualifies on the worker's record."""
+def hi_accrual(p: pd.DataFrame, econ: L.Economy, u_long: float, u_2000: float,
+               own_value: str = "own_sex") -> tuple[pd.DataFrame, dict]:
+    """Part A accrual per covered worker-year: P(qualify) x PV(Part A from 65) / expected covered years.
+
+    P(qualify) is the share of the generation's lawfully present 65+ with Medicare on any record, and the expected
+    covered years count every member's years, non-workers' zeros included. Over a generation's expected careers the
+    workers' own terms therefore sum to every member's Part A, dependents included. The spouse credit (a one-earner
+    couple's spouse added to the worker's value) counts those dependents a second time; its rows (spouse=True) are
+    bec1cd7's central, kept as a bridge. own_value="sex_mix" values each worker-year at the generation's
+    person-weighted mix of the two sexes' present values at that age instead of the worker's own sex (a diagnostic
+    for the national check)."""
     u = p[p.union].copy()
     w = u.w.to_numpy()
+    if own_value == "sex_mix":
+        d = pd.DataFrame({"gen": u.gen.to_numpy(), "age": u.age.to_numpy(), "m": w * (u.sex.to_numpy() == 1), "w": w})
+        s = d.groupby(["gen", "age"])[["m", "w"]].transform("sum")
+        male_share = (s.m / s.w).to_numpy()
+    elif own_value != "own_sex":
+        raise ValueError(own_value)
     covered = (u.tax_hi > 0).to_numpy()
     # probability of qualifying: the share of the generation's 65+ (lawfully present) covered by Medicare
     info = {}
@@ -446,6 +464,9 @@ def hi_accrual(p: pd.DataFrame, econ: L.Economy, u_long: float, u_2000: float) -
     for rate, scen, pop in runs:
         own = part_a_pv(u.age.to_numpy(), u.sex.to_numpy(), econ, rate, scen, pop)
         spouse = part_a_pv(u.age.to_numpy(), np.where(u.sex.to_numpy() == 1, 2, 1), econ, rate, scen, pop)
+        if own_value == "sex_mix":
+            male = u.sex.to_numpy() == 1
+            own = male_share * np.where(male, own, spouse) + (1 - male_share) * np.where(male, spouse, own)
         for fam_on in (True, False):
             value = own + (spouse if fam_on else 0) * one_earner
             base = np.where(covered & (u.age < 65).to_numpy() & (n_years > 0), pq * value / np.maximum(n_years, 1e-9), 0.0)
@@ -524,7 +545,7 @@ def case_components(p: pd.DataFrame) -> pd.DataFrame:
 
 
 CENTRAL = dict(mapping="individual_age_adjusted", method="EAN", rate="new_issue", mortality="general",
-               career_start=True, scenario="scheduled", unauthorized="note151_long_run", spouse=True)
+               career_start=True, scenario="scheduled", unauthorized="note151_long_run", spouse=False)
 # The central and one change each. OASDI reads mapping, method, rate, mortality, career start, scenario and
 # unauthorized; Part A reads rate, mortality, scenario, unauthorized and spouse. A rate given per end applies at
 # that end (the case's own 2% / 3% return on public capital). Bridges are not candidates for the central and
@@ -546,9 +567,10 @@ ARMS = {
     "mapping_group_mean": dict(mapping="group_career_mean"),
     "career_start_off": dict(career_start=False),
     "hispanic_mortality": dict(mortality="hispanic"),
-    "part_a_spouse_off": dict(spouse=False),
     "bridge_rate_wage_growth": dict(rate="awi"),
     "bridge_sept18": dict(mapping="individual_raw", rate="tf", career_start=False, unauthorized="full"),
+    # bec1cd7's central: the one-earner spouse credit on top of the own term, which already carries dependents
+    "bridge_part_a_spouse_credit": dict(spouse=True),
 }
 OASDI_KEYS = ["mapping", "method", "rate", "mortality", "career_start", "scenario", "unauthorized"]
 HI_KEYS = ["rate", "mortality", "scenario", "unauthorized", "spouse"]
@@ -696,7 +718,7 @@ def summarize(beside, st_case, arms, hi, hi_info, v, t, union_row, case, gates, 
                      min_arm=g.loc[g.case_on_accrual_bn.idxmin(), "arm"], max_arm=g.loc[g.case_on_accrual_bn.idxmax(), "arm"])
            for end, g in cand.groupby("end")}
     fact = arms[(arms.group == "union") & (arms.method != "MARG") & (arms.rate != "awi")]
-    hfact = hi[(hi.group == "union") & (hi.rate != "awi")]
+    hfact = hi[(hi.group == "union") & (hi.rate != "awi") & ~hi.spouse.astype(bool)]   # the spouse credit double counts
     env = {}
     for end in ["low", "high"]:
         c = cen.loc[end]

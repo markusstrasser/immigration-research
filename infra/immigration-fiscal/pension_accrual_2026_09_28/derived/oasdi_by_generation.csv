@@ -63,10 +63,6 @@ hispanic_mortality,union,113.715960,161.810690,1.422937
 hispanic_mortality,G1,35.469134,51.424684,1.449843
 hispanic_mortality,G2,39.348396,55.017868,1.398224
 hispanic_mortality,G3plus,38.898430,55.368138,1.423403
-part_a_spouse_off,union,113.715960,147.579257,1.297788
-part_a_spouse_off,G1,35.469134,46.891843,1.322046
-part_a_spouse_off,G2,39.348396,50.226170,1.276448
-part_a_spouse_off,G3plus,38.898430,50.461244,1.297257
 bridge_rate_wage_growth,union,113.715960,179.128103,1.575224
 bridge_rate_wage_growth,G1,35.469134,53.483854,1.507899
 bridge_rate_wage_growth,G2,39.348396,63.809635,1.621658
@@ -75,3 +71,7 @@ bridge_sept18,union,113.715960,172.393826,1.516004
 bridge_sept18,G1,35.469134,61.705017,1.739682
 bridge_sept18,G2,39.348396,56.418959,1.433831
 bridge_sept18,G3plus,38.898430,54.269850,1.395168
+bridge_part_a_spouse_credit,union,113.715960,147.579257,1.297788
+bridge_part_a_spouse_credit,G1,35.469134,46.891843,1.322046
+bridge_part_a_spouse_credit,G2,39.348396,50.226170,1.276448
+bridge_part_a_spouse_credit,G3plus,38.898430,50.461244,1.297257

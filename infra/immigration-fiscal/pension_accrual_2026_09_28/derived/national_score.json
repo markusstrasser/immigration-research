@@ -1,0 +1,72 @@
+{
+ "central_mapping": {
+  "oasdi": {
+   "change_if_scaled_bn": {
+    "high": -6.102490515005843,
+    "low": -6.494153186455808
+   },
+   "per_tax_dollar": 1.297788427296778,
+   "per_tax_dollar_if_scaled": 1.2402897075483805,
+   "rule_applies": false,
+   "scale": 0.9556948432124919
+  },
+  "part_a": {
+   "accrual_bn": 45.35351039395222,
+   "accrual_if_scaled_bn": 48.32917935005898,
+   "change_if_scaled_bn": 2.9756689561067606,
+   "rule_applies": false,
+   "scale": 1.065610554293578
+  }
+ },
+ "frozen_prediction_sha256": "b8b5c3f5ae9315a0a9a48ada1732d917c971df45edf51d68111bbfed469ed7d9",
+ "gating_rows": {
+  "hi": "hi_15_64",
+  "oasdi": "oasdi_15_61"
+ },
+ "part_a_spouse_check": {
+  "accrual_sex_mix_bn": 45.567186442877905,
+  "accrual_with_credit_bn": 51.28277114454768,
+  "accrual_without_credit_bn": 45.35351039395222,
+  "credit_bn": 5.929260750595461,
+  "credit_on_self_employed_spouses_bn": 0.7274314085888491,
+  "credit_share_of_own_term": 0.13073432903191795,
+  "one_earner_covered_workers_m": 2.28912188919211,
+  "sex_mix_minus_own_sex_bn": 0.21367604892568437,
+  "spouse_self_employed_m": 0.30517078642231993,
+  "spouse_self_employed_share": 0.1333134718003254
+ },
+ "probes_note": "15-61 ratio route and the group's central accrual per tax dollar; theta < 1 shrinks log levels toward the cell mean, no_spouse_benefit prices one-earner couples as two-earner",
+ "published_sources": {
+  "hi": "CMS Financial Report, Fiscal Year 2025 (Statement of Social Insurance)",
+  "oasdi": "SSA FY 2025 Agency Financial Report, Financial Section (Statements of Social Insurance, Note 17)"
+ },
+ "published_tn": {
+  "hi_15_64": {
+   "expenditures_tn": 23.964,
+   "income_tn": 16.554
+  },
+  "hi_65_plus": {
+   "expenditures_tn": 8.045,
+   "income_tn": 1.042
+  },
+  "oasdi_15_61": {
+   "expenditures_tn": 75.706,
+   "income_tn": 45.252
+  },
+  "oasdi_62_plus": {
+   "expenditures_tn": 26.078,
+   "income_tn": 2.519
+  }
+ },
+ "tolerance": {
+  "level": 0.15,
+  "ratio": 0.1
+ },
+ "verdict": {
+  "beside_hi_65_plus": false,
+  "beside_oasdi_62_plus": false,
+  "formula_route_oasdi_15_61": false,
+  "hi": true,
+  "oasdi": true
+ }
+}

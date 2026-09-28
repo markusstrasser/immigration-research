@@ -1,5 +1,12 @@
 {
  "documents": {
+  "an2025_1": {
+   "file": "pension_accrual_2026_09_28/_cache/an2025-1.pdf",
+   "sha256": "56ba016b2786805ab26bc628f1d7b01e8ba29d8e969477e597c3038d721f72e6",
+   "title": "SSA Actuarial Note 2025.1, Unfunded obligation and transition costs for the OASDI program (June 2025)",
+   "url": "https://www.ssa.gov/OACT/NOTES/ran1/an2025-1.pdf",
+   "via": "https://web.archive.org/web/20250901133144id_/https://www.ssa.gov/OACT/NOTES/ran1/an2025-1.pdf"
+  },
   "an2025_3": {
    "file": "pension_accrual_2026_09_28/_cache/an2025-3.pdf",
    "sha256": "814567fa33574e7f99f5cff8ec3cf75db745708481f99e886338058e453c9d76",
@@ -12,6 +19,13 @@
    "sha256": "478d40a0829dc7cdb586fefa2ea3e6eaf75bc18b3bd42564ed4897477e18e207",
    "title": "SSA Actuarial Note 2025.7, Money's worth ratios under the OASDI program for hypothetical workers (December 2025)",
    "url": "https://www.ssa.gov/OACT/NOTES/ran7/an2025-7.pdf",
+   "via": null
+  },
+  "cms_fr2025": {
+   "file": "pension_accrual_2026_09_28/_cache/cms_fr2025.pdf",
+   "sha256": "032fc57d08e15618cab4b30c81c9b03c8906f1ebf678fda9180ce77b1b50865d",
+   "title": "CMS Financial Report, Fiscal Year 2025 (Statement of Social Insurance)",
+   "url": "https://www.cms.gov/files/document/cms-financial-report-fiscal-year-2025.pdf",
    "via": null
   },
   "mtr2025": {
@@ -28,6 +42,13 @@
    "url": "https://www.ssa.gov/oact/NOTES/pdf_notes/note151.pdf",
    "via": null
   },
+  "ssa_afr2025": {
+   "file": "pension_accrual_2026_09_28/_cache/ssa_afr2025_fin.pdf",
+   "sha256": "47bfd6c814cb4d0badd32f12c2557e1f09c1ba7239967af474f4af6fabeca34e",
+   "title": "SSA FY 2025 Agency Financial Report, Financial Section (Statements of Social Insurance, Note 17)",
+   "url": "https://www.ssa.gov/finance/2025/Financial%20Section.pdf",
+   "via": "https://web.archive.org/web/20260316032752id_/https://www.ssa.gov/finance/2025/Financial%20Section.pdf"
+  },
   "tr2025": {
    "file": "pension_accrual_2026_09_28/_cache/tr2025.pdf",
    "sha256": "e6603329ce1b8aaa3d64c13bfc2db3b4ca40b5b94838c1afbd707d86960b97fb",
@@ -37,8 +58,12 @@
   }
  },
  "quotes": [
+  "afr_sosi_basis",
+  "afr_ssfa_in_valuation",
+  "cms_sosi_closed_group",
   "mtr_benefits_2024_bn",
   "mtr_forty_quarters",
+  "mtr_hi_2024_operations",
   "mtr_hi_depletion_year",
   "mtr_hi_growth_ultimate",
   "mtr_hi_payable_path",
@@ -49,6 +74,8 @@
   "note151_conditions",
   "note151_eligible_share",
   "note151_suspense_file",
+  "note2025_1_age_by_account",
+  "note2025_3_table1_population",
   "note_mwr_effective_yields",
   "note_payable_2034",
   "note_payable_2035",
@@ -57,6 +84,7 @@
   "note_scaled_worker",
   "tr_cost_is_scheduled",
   "tr_cpi_ultimate",
+  "tr_income_cost_definitions",
   "tr_mortality_decline_65plus",
   "tr_mortality_decline_total",
   "tr_new_issue_rates",
@@ -65,6 +93,9 @@
   "tr_payable_2099",
   "tr_payable_at_depletion",
   "tr_pia_formula_2025",
-  "tr_real_rate_ultimate"
+  "tr_real_rate_ultimate",
+  "tr_taxable_payroll_2024_bn",
+  "tr_taxation_of_benefits_split",
+  "tr_vi_f2_current_participants"
  ]
 }
