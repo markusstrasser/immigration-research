@@ -14,38 +14,38 @@
   "mortality": "general",
   "rate": "new_issue",
   "scenario": "scheduled",
-  "spouse": true,
+  "spouse": false,
   "unauthorized": "note151_long_run"
  },
  "central_decomposition": {
   "high": {
    "accrual_per_tax_dollar": 1.297788427296778,
-   "delta_bn": 116.3349694244353,
+   "delta_bn": 110.40570867383984,
    "delta_oasdi_bn": 84.71530692705747,
-   "delta_part_a_bn": 31.619662497377835,
+   "delta_part_a_bn": 25.690401746782374,
    "hi_tax_bn": 29.14808674753598,
    "oasdi_accrual_bn": 137.7377027300453,
    "oasdi_tax_bn": 106.13263289529047,
-   "part_a_accrual_bn": 51.28277114454768,
+   "part_a_accrual_bn": 45.35351039395222,
    "part_a_removed_bn": 19.663108647169846,
    "ss_benefits_removed_bn": 53.02239580298783
   },
   "low": {
    "accrual_per_tax_dollar": 1.297788427296778,
-   "delta_bn": 121.93878549933791,
+   "delta_bn": 116.00952474874245,
    "delta_oasdi_bn": 90.31912300196008,
-   "delta_part_a_bn": 31.619662497377835,
+   "delta_part_a_bn": 25.690401746782374,
    "hi_tax_bn": 31.27789059063945,
    "oasdi_accrual_bn": 146.57781751235873,
    "oasdi_tax_bn": 112.9443092798048,
-   "part_a_accrual_bn": 51.28277114454768,
+   "part_a_accrual_bn": 45.35351039395222,
    "part_a_removed_bn": 19.663108647169846,
    "ss_benefits_removed_bn": 56.258694510398655
   }
  },
  "central_on_accrual_bn": {
-  "high": 503.705024373819,
-  "low": 443.7581424897314
+  "high": 497.77576362322355,
+  "low": 437.82888173913597
  },
  "coverage_check": {
   "case_national_oasdi_bn": 1296.4612875816993,
@@ -96,11 +96,11 @@
  },
  "every_combination_bn": {
   "high": {
-   "max": 582.7024067706052,
+   "max": 574.9354856928237,
    "min": 412.70566500480584,
    "part_a_accrual_bn": [
     28.622769001747177,
-    64.91432181281604
+    57.14740073503452
    ],
    "per_tax_dollar": [
     0.6538831988866269,
@@ -108,11 +108,11 @@
    ]
   },
   "low": {
-   "max": 526.95075570472,
+   "max": 519.1838346269385,
    "min": 348.37270908249155,
    "part_a_accrual_bn": [
     28.622769001747177,
-    64.91432181281604
+    57.14740073503452
    ],
    "per_tax_dollar": [
     0.6538831988866269,
@@ -133,7 +133,7 @@
    "adding_up_worst": 2.220446049250313e-16,
    "factor_one_max_gap": 2.220446049250313e-16
   },
-  "quotes_verified": 29
+  "quotes_verified": 39
  },
  "model_checks": {
   "model_over_note_table1": [
@@ -169,15 +169,15 @@
  },
  "range_across_arms_bn": {
   "high": {
-   "max": 526.2697406792688,
+   "max": 519.2250664863723,
    "max_arm": "unauthorized_full",
-   "min": 443.9073322572011,
+   "min": 439.4244076539116,
    "min_arm": "rate_real_3"
   },
   "low": {
-   "max": 467.30173335702443,
-   "max_arm": "unauthorized_full",
-   "min": 381.0631256622224,
+   "max": 460.3097624415815,
+   "max_arm": "mapping_group_mean",
+   "min": 376.58020105893286,
    "min_arm": "rate_real_3"
   }
  },

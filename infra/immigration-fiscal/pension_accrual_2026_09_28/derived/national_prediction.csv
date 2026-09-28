@@ -1,0 +1,11 @@
+variant,route,row,expenditures_tn,income_tn,net_tn,ratio
+trustees_scaled,ratio,oasdi_15_61,72.854957,41.618443,-31.236514,1.750545
+trustees_scaled,ratio,oasdi_62_plus,21.040062,1.995454,-19.044608,10.543997
+trustees_scaled,ratio,hi_15_64,22.488516,15.270380,-7.218135,1.472689
+trustees_scaled,ratio,hi_65_plus,5.615257,0.911319,-4.703937,6.161678
+trustees_scaled,formula,oasdi_15_61,60.607879,40.907135,-19.700744,1.481597
+cps_frame,ratio,oasdi_15_61,76.740202,43.837892,-32.902310,1.750545
+cps_frame,ratio,oasdi_62_plus,17.535613,1.865959,-15.669654,9.397642
+cps_frame,ratio,hi_15_64,21.704446,14.187993,-7.516453,1.529776
+cps_frame,ratio,hi_65_plus,5.419479,0.771469,-4.648010,7.024885
+cps_frame,formula,oasdi_15_61,63.840006,43.088651,-20.751355,1.481597

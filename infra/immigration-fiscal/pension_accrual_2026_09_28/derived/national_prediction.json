@@ -1,0 +1,49 @@
+{
+ "calibration": {
+  "hi_aged": 1.036124834879801,
+  "hi_disabled": 1.115163894358514,
+  "hi_tax": 1.1131497327825521,
+  "oasdi_benefits": 1.1998475125270534,
+  "oasdi_tax": 0.9493714488418686
+ },
+ "cost_loading": 1.009106972950931,
+ "hi": {
+  "disabled_under_65": 0.5911403400447651,
+  "disabled_under_65_scaled_tn": 0.6690361726406946,
+  "enrolled_65plus_m": 57.811566698861036,
+  "enrolled_under65_m": 6.32094414087245,
+  "future_taxes_old_tn": 0.1652334671822894,
+  "future_taxes_young_tn": 10.934149932233623,
+  "old": 5.339950287733551,
+  "p_qualify": {
+   "foreign_men": 0.8996714601151495,
+   "foreign_women": 0.9379682687972901,
+   "native_men": 0.9412388704246542,
+   "native_women": 0.9565477809057349
+  },
+  "young": 21.3859432197542,
+  "young_scaled": 22.158506887316616
+ },
+ "hi_cost_loading": 1.0148931059332211,
+ "kappa_hi_over_oasdi_tob": 0.7223230490018148,
+ "oasdi_15_61": {
+  "future_taxes_tn": 39.38807584204387,
+  "national_per_tax_dollar_formula_route": 1.0268221221134195,
+  "national_per_tax_dollar_ratio_route": 1.2370488808400923,
+  "own_cohort_gate_max_gap": 1.7763568394002505e-15,
+  "past_taxes_tn": 22.17903037550574,
+  "persons_m": 204.14952146580669,
+  "taxpayers": 72292,
+  "window_factor_person_weighted": 1.0057655822883074
+ },
+ "oasdi_62_plus": {
+  "annuities": 13.335779219264117,
+  "future_claims": 3.448723002707718,
+  "linked_couples": 4642,
+  "survivor_step_up": 0.5928556586639394,
+  "total": 17.377357880635774
+ },
+ "oasdi_62_plus_future_taxes_tn": 0.9717969319639256,
+ "to_valuation_factor": 1.0124228365658292,
+ "units": "$tn at 1 January 2025 unless named otherwise; *_m millions"
+}

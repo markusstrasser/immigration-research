@@ -210,9 +210,15 @@ def top35(values: np.ndarray) -> float:
 
 
 def worker(b: int, adj: float, entry: int, family: str, econ: Economy, prelim: np.ndarray, arm="tf",
-           population="general", payable: np.ndarray | None = None) -> dict:
+           population="general", payable: np.ndarray | None = None, alive_at: int | None = None,
+           last_year: int | None = None) -> dict:
     """Expected lifetime taxes and benefits (PVs at 2024, for a worker alive at entry) and the four accrual
-    attributions by age. `payable`, if given, is the share of scheduled benefits paid by year (Y0-indexed)."""
+    attributions by age. `payable`, if given, is the share of scheduled benefits paid by year (Y0-indexed).
+    `alive_at` (an age of at most 65) conditions on the unit being alive at the start of that age: taxes at younger
+    ages count as paid, later flows take survival from that age. `last_year` drops benefits paid after that
+    calendar year. Both default to the lifetime view from entry; `ben_pv_by_age` holds the benefit PVs by age."""
+    if alive_at is not None and not 0 < alive_at <= 65:
+        raise ValueError(f"alive_at {alive_at}: the widow terms need the unit alive before 65")
     disc = econ.at(econ.discount(arm), b)
     pay = np.ones(121) if payable is None else econ.at(payable, b)
     cola = econ.at(econ.cola, b)
@@ -224,28 +230,35 @@ def worker(b: int, adj: float, entry: int, family: str, econ: Economy, prelim: n
     unit = np.zeros(121)
     unit[65:] = 12 * float(np.prod(1 + cola[62:65])) * grow[65:]     # annual benefit per $1 of monthly PIA at 62
     lo = max(entry, 21)
-    out = dict(pv_tax=0.0, pv_ben=0.0, tax_pv_by_age=np.zeros(121), acc={m: np.zeros(121) for m in METHODS})
+    since = lo if alive_at is None else alive_at
+    ages = np.arange(121)
+    window = np.ones(121) if last_year is None else (b + ages <= last_year).astype(float)
+    out = dict(pv_tax=0.0, pv_ben=0.0, tax_pv_by_age=np.zeros(121), ben_pv_by_age=np.zeros(121),
+               acc={m: np.zeros(121) for m in METHODS})
     for sex in FAMILY_SEXES[family]:
         e = earnings_path(b, adj, entry, prelim, econ)
         tax = rate * np.minimum(e, base)
-        s_w = survival(b, population, sex, lo)
+        s_w = survival(b, population, sex, since)
+        s_tax = s_w if alive_at is None else np.where(ages < alive_at, 1.0, s_w)
         ie = e * index_factors(b, 60, econ)
         vested = int((e[:65] > 0).sum()) >= 10
         own = at65_share(b) * unit
         if family == "one_earner_couple":
-            s_f = survival(b, population, "female", lo)
+            s_f = survival(b, population, "female", since)
             ben_unit = (s_w * own + s_w * s_f * spouse_at65_share(b) * unit
                         + np.clip(s_w[65] - s_w, 0, None) * s_f * max(at65_share(b), 0.825) * unit
                         + (1 - s_w[65]) * s_f * widow_early_share(b) * unit)
         else:
             ben_unit = s_w * own
-        pv_unit = float((ben_unit * pay * disc)[65:].sum())   # PV at 2024 of benefits per $1 of PIA at 62
+        ben_pv = ben_unit * pay * disc * window
+        pv_unit = float(ben_pv[65:].sum())   # PV at 2024 of benefits per $1 of PIA at 62
         pia = float(pia_formula(top35(ie[:65]) / 420, b, econ)) if vested else 0.0
         pv_ben = pia * pv_unit
-        tax_pv = s_w * tax * disc
+        tax_pv = s_tax * tax * disc
         out["pv_ben"] += pv_ben
         out["pv_tax"] += float(tax_pv[:65].sum())
         out["tax_pv_by_age"] += tax_pv
+        out["ben_pv_by_age"][65:] += pia * ben_pv[65:]
         if not vested:
             continue
         total_ie = ie[:65].sum()

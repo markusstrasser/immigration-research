@@ -11,6 +11,10 @@ Documents (PDFs in _cache/, ignored; the 09-18 timing lane's cached copies for N
   note151   SSA Actuarial Note 151 (2013), unauthorized immigration and the trust funds
   tr2025    2025 OASDI Trustees Report (Table V.C7 benefit amounts; depletion, payable ratios, assumptions)
   mtr2025   2025 Medicare Trustees Report (Table II.B1 2024 operations, Table V.D1 HI cost per beneficiary)
+The national check (national_check.py) also reads:
+  ssa_afr2025  SSA FY 2025 Agency Financial Report, Financial Section (the OASDI Statement of Social Insurance)
+  cms_fr2025   CMS Financial Report FY 2025 (the Medicare Statement of Social Insurance, HI rows)
+  an2025_1     SSA Actuarial Note 2025.1, unfunded obligation and transition costs (definitions)
 """
 from __future__ import annotations
 
@@ -47,6 +51,17 @@ DOCS = {
     "mtr2025": dict(pdf=CACHE / "mtr2025.pdf", txt=CACHE / "mtr2025.txt",
                     url="https://www.cms.gov/files/document/2025-medicare-trustees-report.pdf",
                     title="2025 Annual Report of the Boards of Trustees of the Federal HI and SMI Trust Funds"),
+    "ssa_afr2025": dict(pdf=CACHE / "ssa_afr2025_fin.pdf", txt=CACHE / "ssa_afr2025_fin.txt",
+                        url="https://www.ssa.gov/finance/2025/Financial%20Section.pdf",
+                        via="https://web.archive.org/web/20260316032752id_/https://www.ssa.gov/finance/2025/Financial%20Section.pdf",
+                        title="SSA FY 2025 Agency Financial Report, Financial Section (Statements of Social Insurance, Note 17)"),
+    "cms_fr2025": dict(pdf=CACHE / "cms_fr2025.pdf", txt=CACHE / "cms_fr2025.txt",
+                       url="https://www.cms.gov/files/document/cms-financial-report-fiscal-year-2025.pdf",
+                       title="CMS Financial Report, Fiscal Year 2025 (Statement of Social Insurance)"),
+    "an2025_1": dict(pdf=CACHE / "an2025-1.pdf", txt=CACHE / "an2025-1.txt",
+                     url="https://www.ssa.gov/OACT/NOTES/ran1/an2025-1.pdf",
+                     via="https://web.archive.org/web/20250901133144id_/https://www.ssa.gov/OACT/NOTES/ran1/an2025-1.pdf",
+                     title="SSA Actuarial Note 2025.1, Unfunded obligation and transition costs for the OASDI program (June 2025)"),
 }
 # The sha256 of each PDF as fetched on 2026-09-28 (Notes 2025.7 and 151: the 09-18 lane's copies).
 PDF_SHA256 = {
@@ -55,6 +70,9 @@ PDF_SHA256 = {
     "note151": "e303a40dc437b52e91c63bce484971c73e1e0b08d83ea900cf1e028c6a6f8458",
     "tr2025": "e6603329ce1b8aaa3d64c13bfc2db3b4ca40b5b94838c1afbd707d86960b97fb",
     "mtr2025": "1b3de7a4faeee5ad42059e10740603182b716a5fa7b53b30d360b45b9e474d95",
+    "ssa_afr2025": "47bfd6c814cb4d0badd32f12c2557e1f09c1ba7239967af474f4af6fabeca34e",
+    "cms_fr2025": "032fc57d08e15618cab4b30c81c9b03c8906f1ebf678fda9180ce77b1b50865d",
+    "an2025_1": "56ba016b2786805ab26bc628f1d7b01e8ba29d8e969477e597c3038d721f72e6",
 }
 LEVELS = ["Very Low", "Low", "Medium", "High", "Maximum"]
 FAMILIES = ["single_man", "single_woman", "one_earner_couple", "two_earner_couple"]
@@ -167,6 +185,28 @@ def scaled_factors() -> pd.DataFrame:
     return t
 
 
+def aime_distribution() -> pd.DataFrame:
+    """Table 1: the distribution of AIMEs of actual workers retiring in 2019-2024 relative to the hypothetical
+    scaled workers' AIMEs (career-average earnings): % below each level and % closest to it, men, women, all."""
+    lines = text("an2025_3")
+    start = next(i for i, l in enumerate(lines) if "Table 1.—Distribution of AIMEs of Actual Workers Retiring" in l)
+    row = re.compile(r"^\s*(Very Low|Low|Medium|High|Maximum)\s+\(\$([\d,]+)\)\s*\.+\s+" + r"\s+".join([r"([\d.]+)"] * 6)
+                     + r"\s*$")
+    out = []
+    for l in lines[start:start + 15]:
+        m = row.match(l)
+        if m:
+            v = [float(m.group(k)) for k in range(3, 9)]
+            out.append(dict(level=m.group(1), career_average=float(m.group(2).replace(",", "")),
+                            below_men=v[0], below_women=v[1], below_all=v[2],
+                            closest_men=v[3], closest_women=v[4], closest_all=v[5]))
+    t = pd.DataFrame(out)
+    if t.level.tolist() != LEVELS or (t[["closest_men", "closest_women", "closest_all"]].sum() - 100).abs().max() > 0.3 \
+            or (t[["below_men", "below_women", "below_all"]].diff().dropna() <= 0).any().any():
+        raise SystemExit("[BLOCKED] Note 2025.3 Table 1: rows, shares or order")
+    return t
+
+
 def awi_path() -> pd.Series:
     """AWI by calendar year, 1970-2061, from Table 7 (actual through 2023, 2025 Trustees intermediate after)."""
     lines = text("an2025_3")
@@ -270,6 +310,71 @@ def new_issue_rates_v_b2() -> pd.Series:
     return out.interpolate(limit_area="inside").ffill()
 
 
+def combined_operations_vi_a3() -> pd.DataFrame:
+    """Table VI.A3 (cont.): combined OASI and DI operations, calendar years 2010-2024, $bn: net payroll tax
+    contributions, taxation of benefits, cost, benefit payments and reserves at the end of the year."""
+    lines = text("tr2025")
+    start = next(i for i, l in enumerate(lines) if "Table VI.A3.— Operations of the Combined OASI and DI Trust Funds," in l
+                 and "Calendar Years 1957-2024 (Cont.)" in lines[i + 1])
+    num = r"\$?([\d,]+\.\d|g|\.\d)"
+    row = re.compile(rf"^\s*(\d{{4}}) \. \.\s+{num}\s+{num}\s+{num}\s+{num}\s+{num}\s+{num}\s+{num}\s+{num}\s+{num}"
+                     rf"\s+\$?(-?[\d,]*\.\d)\s+{num}\s+\d+\s*$")
+    val = lambda s: 0.0 if s == "g" else float(s.replace(",", ""))
+    out = []
+    for l in lines[start:start + 25]:
+        m = row.match(l)
+        if m:
+            g = [m.group(k) for k in range(1, 13)]
+            out.append(dict(year=int(g[0]), income=val(g[1]), payroll_tax=val(g[2]), gf_reimbursements=val(g[3]),
+                            taxation_of_benefits=val(g[4]), net_interest=val(g[5]), cost=val(g[6]),
+                            benefits=val(g[7]), reserves_end=val(g[11])))
+    t = pd.DataFrame(out)
+    if t.year.tolist() != list(range(2010, 2025)):
+        raise SystemExit(f"[BLOCKED] TR 2025 Table VI.A3: years {t.year.tolist()}")
+    if abs(t.set_index("year").payroll_tax[2024] - value("tr_oasdi_payroll_tax_2024_bn")) > 1e-9:
+        raise SystemExit("[BLOCKED] TR 2025 Table VI.A3 disagrees with Table II.B1 on 2024 payroll taxes")
+    return t
+
+
+def _intermediate_rows(first_line: str, width: int) -> dict:
+    """Rows of the intermediate block of a TR table whose first page starts with `first_line`: year -> the row's
+    `width` numbers (a footnote letter standing for a value under 0.005 in size reads as 0)."""
+    lines = text("tr2025")
+    start = next(i for i, l in enumerate(lines) if first_line in l)
+    row = re.compile(r"^\s*(\d{4})\s[ .]+\s(.*)$")
+    out, on = {}, False
+    for l in lines[start:start + 80]:
+        s = l.strip()
+        if s.startswith("Intermediate:"):
+            on = True
+            continue
+        if s.startswith("Low-cost:"):
+            break
+        m = row.match(l)
+        if on and m:
+            toks = m.group(2).split()
+            if len(toks) != width:
+                raise SystemExit(f"[BLOCKED] {first_line}: row {m.group(1)} has {len(toks)} fields")
+            out[int(m.group(1))] = [0.0 if t in ("c", "d") else float(t) for t in toks]
+    return out
+
+
+def oasdi_rates_iv_b() -> pd.DataFrame:
+    """Tables IV.B1 and IV.B2, intermediate: the OASDI cost rate and the rate of income from taxation of scheduled
+    benefits, % of taxable payroll, 2025-2035 and every fifth year to 2100."""
+    b1 = _intermediate_rows("Table IV.B1.—Annual Income Rates, Cost Rates, and Balances,", 9)
+    b2 = _intermediate_rows("Table IV.B2.—Components of Annual Income Rates, Calendar Years 1990-2100", 12)
+    years = list(range(2025, 2036)) + list(range(2040, 2101, 5))
+    if sorted(b1) != years or sorted(b2) != years:
+        raise SystemExit(f"[BLOCKED] TR 2025 Tables IV.B1/IV.B2: years {sorted(b1)} / {sorted(b2)}")
+    t = pd.DataFrame([dict(year=y, cost_rate=b1[y][7], income_rate=b1[y][6], payroll_rate=b2[y][8],
+                           tob_rate=b2[y][9], income_total=b2[y][11]) for y in years])
+    if (t.income_rate - t.income_total).abs().max() > 0.005 or \
+            (t.payroll_rate + t.tob_rate - t.income_total).abs().max() > 0.015:
+        raise SystemExit("[BLOCKED] TR 2025 Tables IV.B1 and IV.B2 disagree on the OASDI income rate")
+    return t
+
+
 def oasdi_tax_rates_v_c6() -> pd.Series:
     """Table V.C6: combined employee-employer OASDI contribution rate by calendar year, 1937-2025."""
     lines = text("tr2025")
@@ -304,6 +409,89 @@ def hi_per_beneficiary() -> pd.Series:
     if sorted(out) != list(range(2015, 2035)):
         raise SystemExit(f"[BLOCKED] Medicare TR Table V.D1: years {sorted(out)}")
     return pd.Series(out).sort_index()
+
+
+# ------------------------------------------------------------------ Statements of Social Insurance, 1 January 2025
+def _first_amount(line: str, label: str) -> float:
+    """The first amount after `label` on a statement line ($bn; parentheses are negative): the 2025 column."""
+    toks = [t for t in line.split(label, 1)[1].replace("$", " ").split() if re.fullmatch(r"\(?[\d,]+\)?", t)]
+    if not toks:
+        raise SystemExit(f"[BLOCKED] no amount after {label!r}: {line.strip()!r}")
+    v = float(toks[0].strip("()").replace(",", ""))
+    return -v if toks[0].startswith("(") else v
+
+
+def sosi_oasdi() -> dict:
+    """SSA's Statement of Social Insurance for OASDI as of 1 January 2025 (FY 2025 AFR), 2025 column, $bn:
+    non-interest income, cost and net for current participants 62 and over and 15-61, the closed-group net and the
+    reserves; each net equals income less cost and the closed group the sum of the two rows."""
+    lines = text("ssa_afr2025")
+    start = next(i for i, l in enumerate(lines) if l.strip() == "Statements of Social Insurance"
+                 and "Old-Age, Survivors, and Disability Insurance" in lines[i + 1] and "as of January 1, 2025" in lines[i + 2])
+    if not re.match(r"^\s*2025\s+2024\s+2023\s+2022\s+2021\s*$", lines[start + 5]):
+        raise SystemExit("[BLOCKED] SSA AFR 2025 SOSI: the first column is not 2025")
+    rows, group, out = {}, None, {}
+    for l in lines[start:start + 40]:
+        if "(age 62 and over)" in l:
+            group = "62_plus"
+        elif "(ages 15" in l:
+            group = "15_61"
+        elif "Future participants" in l:
+            break
+        for label, key in (("Noninterest income", "income"), ("Cost for scheduled future benefits", "cost"),
+                           ("Future noninterest income less future cost", "net")):
+            if group and l.strip().startswith(label):
+                rows.setdefault(group, {})[key] = _first_amount(l, label)
+        if "current participants (closed group measure)" in l:
+            out["closed_group_net"] = _first_amount(l, "(closed group measure)")
+        if l.strip().startswith("Combined OASI and DI Trust Fund reserves at start of period"):
+            out["reserves"] = _first_amount(l, "start of period")
+    if sorted(rows) != ["15_61", "62_plus"] or any(sorted(r) != ["cost", "income", "net"] for r in rows.values()) \
+            or sorted(out) != ["closed_group_net", "reserves"]:
+        raise SystemExit(f"[BLOCKED] SSA AFR 2025 SOSI: read {rows} {out}")
+    if any(abs(r["income"] - r["cost"] - r["net"]) > 1.5 for r in rows.values()) or \
+            abs(sum(r["net"] for r in rows.values()) - out["closed_group_net"]) > 1.5:
+        raise SystemExit("[BLOCKED] SSA AFR 2025 SOSI: rows do not add up")
+    return dict(rows=rows, **out)
+
+
+def sosi_hi() -> dict:
+    """CMS's Statement of Social Insurance as of 1 January 2025 (FY 2025 Financial Report), HI, 2025 column, $bn:
+    income (excluding interest) and expenditures for current participants who have not attained eligibility age
+    (15-64), those 65 and over, future participants and all; the parts add to the totals and the totals' difference
+    to the published excess."""
+    lines = text("cms_fr2025")
+    start = next(i for i, l in enumerate(lines) if l.strip() == "Statement of Social Insurance"
+                 and "75-Year Projection as of January 1, 2025" in lines[i + 1])
+    groups = {"Have not yet attained eligibility age": "15_64", "Have attained eligibility age": "65_plus",
+              "Those expected to become participants": "future", "All current and future participants": "all"}
+    rows, section, group, excess = {}, None, None, None
+    for l in lines[start:start + 70]:
+        s = l.strip()
+        if "income (excluding interest) received from" in s:
+            section = "income"
+        elif "expenditures for or on behalf of" in s:
+            section = "expenditures"
+        elif "estimated future excess" in s:
+            section = "excess"
+        for head, key in groups.items():
+            if s.startswith(head):
+                group = key
+        if s.startswith("HI ") or s == "HI":
+            if section in ("income", "expenditures"):
+                rows.setdefault(group, {})[section] = _first_amount(l, "HI")
+            elif section == "excess" and excess is None:
+                excess = _first_amount(l, "HI")
+                break
+    if sorted(rows) != ["15_64", "65_plus", "all", "future"] or \
+            any(sorted(r) != ["expenditures", "income"] for r in rows.values()) or excess is None:
+        raise SystemExit(f"[BLOCKED] CMS FY 2025 SOSI: read {rows} {excess}")
+    for k in ("income", "expenditures"):
+        if abs(sum(rows[g][k] for g in ("15_64", "65_plus", "future")) - rows["all"][k]) > 2:
+            raise SystemExit(f"[BLOCKED] CMS FY 2025 SOSI: HI {k} parts do not add to the total")
+    if abs(rows["all"]["income"] - rows["all"]["expenditures"] - excess) > 2:
+        raise SystemExit("[BLOCKED] CMS FY 2025 SOSI: HI income less expenditures is not the published excess")
+    return dict(rows=rows, excess=excess)
 
 
 def provenance() -> dict:
