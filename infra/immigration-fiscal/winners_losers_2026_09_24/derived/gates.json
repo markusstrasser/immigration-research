@@ -66,7 +66,7 @@
  "acs_geo_mirrors_base_high_national_uniform": {
   "passed": true
  },
- "base_case_ends_committed_at_78766c2": {
+ "base_case_ends_committed_at_b3f4d84": {
   "passed": true,
   "file": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/case_ends_sept27.json"
  },

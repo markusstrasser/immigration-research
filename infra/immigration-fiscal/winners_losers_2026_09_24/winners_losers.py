@@ -123,7 +123,9 @@ GEN26S_COMMIT = "0f22f0c"
 # its financing columns and case_ends_sept27.json. Debt legacy: stocks.csv and summary.json (case.band includes
 # the capital return; case.main_profile is long_run_non_school_full) with the per-correction files. Generation:
 # generation_results.csv and generation_summary.json on the case. The back-cast (de468f2) is not read here.
-BASE27_COMMIT = "78766c2"
+# b3f4d84 (2026-09-29) differs from 78766c2 in this lane only by case_ends_sept27.json's bands hash: the bands file
+# gained the general_government_fixed row beside the range.
+BASE27_COMMIT = "b3f4d84"
 DEBT27_COMMIT = "e03450b"
 GEN27_COMMIT = "8654a0c"
 OLD_PROFILE = "cbo_category_lag_non_school_full"   # every case's main profile before September 27
