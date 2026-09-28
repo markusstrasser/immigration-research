@@ -34,7 +34,22 @@ fifth gains $46.0bn (§4). Priced to the same standard, the benefits the account
 $4.8bn a year, or $18.7bn with the proposed scale net (§7b); with all of them the total is
 $237–289bn. [CALCULATION: lanes and commits in "Sources"]
 
-**Update, 2026-09-28, latest (fear, security and schools added to the social rows; [decision](../decisions/2026-09-28-social-items-fear-security-schools.md)).**
+**Update, 2026-09-28, latest (PM2.5 and road crashes added as costs, the scale benefits as gains; [decision](../decisions/2026-09-28-social-items-pollution-crashes.md), [decision](../decisions/2026-09-28-social-items-scale-benefits.md)).**
+Fiscal and social costs together come to **$463–537bn a year** at central values (full span $267–755bn), or
+$11.3–13.1k per group member, on the same pairing. The operator added four items to the social rows from the
+September 27 case on:
+- PM2.5 harm to other residents from the group's consumption, $69.7bn (ladder 260);
+- road crashes charged by fault, $42.3bn once California's crash records measured the group's non-fatal fault
+  (ladder 264);
+- the scale lane's earnings net, a $13.9bn gain (ladder 201);
+- restaurant market size, a $6.8bn gain (ladder 261).
+
+Against as many average residents, pollution is −$46.5bn, crashes −$3.4bn, the schooling-mix part of scale
++$24.9bn and restaurants +$1.2bn; those figures sit beside the total and are never added. The fiscal account is
+unchanged. Three lanes are pricing further benefits: trade networks, consumer-side scale and a benefits
+inventory. [CALCULATION: `infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/real_costs_totals.csv` (cde7496)]
+
+**Update, 2026-09-28, later (fear, security and schools added to the social rows; [decision](../decisions/2026-09-28-social-items-fear-security-schools.md)).**
 Fiscal and social costs together come to **$371–446bn a year** at central values (full span
 $316–504bn), or $9.1–10.9k per group member, on the same pairing. The operator added the union's fear
 and avoidance, private security and school disruption, $7.9bn at both ends; property values stay out.
@@ -405,7 +420,7 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
 
 ## 8. Still unpriced
 
-- **Road congestion** is now priced (§3). Its crash, emission and pavement-wear costs are not.
+- **Road congestion** is now priced (§3). Its crash, emission and pavement-wear costs are not. [2026-09-28: crash and emission costs are now priced and in the total (ladder 260, 264); pavement wear is not.]
 - **Innovation and automation.** The transported patent-effect scenario is too imprecise to
   supply an identified offset; this is not evidence of zero innovation. The schooling-corrected
   arm has a positive point estimate with very wide uncertainty
@@ -519,3 +534,7 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
 - 2026-09-28, latest (social items adopted, [decision](../decisions/2026-09-28-social-items-fear-security-schools.md)): fear, security and schools join the
   social rows from the September 27 case on, +$7.94bn at both ends of the central values; the pairing is
   $371–446bn. Property values stay out. Concept affected: the fiscal-plus-social total.
+- 2026-09-28, latest (quality of life and scale benefits; decisions 2026-09-28-social-items-pollution-crashes and
+  2026-09-28-social-items-scale-benefits): PM2.5 and road crashes join the social rows as costs, and the scale net and
+  restaurant market size as gains. The crash item uses California's measured non-fatal fault. The pairing is
+  $463–537bn. Concept affected: the fiscal-plus-social total.
