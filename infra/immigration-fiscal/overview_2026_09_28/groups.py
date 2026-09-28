@@ -53,6 +53,14 @@ GROUPS = [
             dict(refs=[184],
                  text="Sampling noise is about ±$21bn (95%).",
                  why="The choices in the charts move the number more than the data noise does."),
+            dict(refs=[269],
+                 text="About $190bn (164–213) is what any 39.7M average residents would cost others under the "
+                      "same rules. The group's own excess is about $165bn (158–175), and all of it comes from lower "
+                      "taxes at the same ages.",
+                 why="Governments spend more than they tax, so in this account any residents cost others something. "
+                     "The group's young age mix lowers its cost, because few members draw pensions. At the same "
+                     "ages its elderly also draw less from pensions and Medicare. At its own ages the group pays "
+                     "about 41% of the average resident's income tax."),
             dict(refs=[161, 169],
                  text="A young age mix hides cost. At a common age mix the gap per person is $7,049. The raw gap "
                       "is $4,093.",
