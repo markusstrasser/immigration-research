@@ -4,7 +4,7 @@
 
 **Reader inputs (2026-09-19):** [Acquisition, joins and normalization](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md) supplies official-download, cleared-mirror and browser/manual routes, plus the current lane recipes. The core warehouse build does not reproduce every September analysis, and no AWS mirror URL is registered in that guide yet.
 
-**Updated:** 2026-09-05. Start with the [material repair report](immigration-material-repair-report-2026-09-05.md) and [recent evidence synthesis](immigration-framing-refresh-2026-09-05.md). The earlier household-donor fiscal schema and its figures are invalid; September replacements use person-year donors and explicitly partial accounting. Historical claim tables below are subject to the current corrections.
+**Updated:** 2026-09-29. The current result heads the [topic index](immigration-INDEX.md) and the root README: the adopted main case puts the net cost of the Mexican-origin population to other US residents at $322–387bn a year (income year 2024), and $414–488bn with other residents' social costs and benefits. The [objections FAQ](immigration-objections-faq-2026-09-21.md) routes the standard objections to their executed tables. The September 5 [repair report](immigration-material-repair-report-2026-09-05.md) records the errors found in earlier analyses; the household-donor fiscal schema and its figures are invalid. The claim tables in §5 cover the warehouse layer; the account's figures live in the memos of §4.
 
 ---
 
@@ -89,9 +89,11 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 |-------|------|-----|
 | 1 | `../GOALS.md` | What question the repo actually asks |
 | 2 | `immigration-glossary.md` | Terms: `low-skill`, `incidence`, `PUMA`, etc. |
-| 3 | `immigration-confidence-ladder.md` | Strong vs weak vs contextual-only metrics |
-| 4 | `immigration-material-repair-report-2026-09-05.md` | Recalculated results, material corrections and validation |
-| 5 | `immigration-framing-refresh-2026-09-05.md` | New evidence, competing mechanisms and remaining limits |
+| 3 | `immigration-INDEX.md` | Current results, with what each superseded |
+| 4 | `immigration-objections-faq-2026-09-21.md` | The standard objections, each routed to its executed table |
+| 5 | `immigration-confidence-ladder.md` | Strong vs weak vs contextual-only metrics |
+| 6 | `immigration-material-repair-report-2026-09-05.md` | The September 5 corrections and their validation |
+| 7 | `immigration-framing-refresh-2026-09-05.md` | June–September evidence, competing mechanisms and limits |
 
 ### Fiscal / distribution layer (if that’s the hook)
 
@@ -107,7 +109,7 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 |------|-------|
 | `immigration-local-burden-puma-layer.md` | PUMA rent exposure by origin |
 | `immigration-household-weighted-correction.md` | Why household WGTP correction matters |
-| `immigration-net-negative-dataset-frontier-2026-06-15.md` | Stage-5 cost datasets (SAFMR, SNAP, Medicaid, EL) |
+| `immigration-dataset-register.md` | Datasets held, with fields, join keys and limits (SAFMR, SNAP, Medicaid, EL and the rest) |
 
 ---
 
@@ -126,7 +128,7 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 
 | Surface | What | Memo · table |
 |---------|------|--------------|
-| Borjas supply-shock cells | <HS immigrant share 9.8% (1980) → 40.8% (2023) [2026-09-26: 10.2% → 44.1% with no-schooling records kept; see the Borjas memo. Rebuilt the same day: a fresh `build ipums` gives the kept series; release v2026-09-05 still has 40.8%], education×experience | `immigration-borjas-supply-shock-panel-2026-06-23.md` · `borjas_supply_shock_panel` |
+| Borjas supply-shock cells | <HS immigrant share 10.2% (1980) → 44.1% (2023) with no-schooling records kept (a fresh `build ipums`; release v2026-09-05 drops them and reads 9.8% → 40.8%), education×experience | `immigration-borjas-supply-shock-panel-2026-06-23.md` · `borjas_supply_shock_panel` |
 | Source-incentive re-grade | advocacy discounted on **both** sides; against-interest up-weighted | `immigration-source-incentive-regrade-2026-06-23.md` · `source_incentive_grades` |
 
 ---
