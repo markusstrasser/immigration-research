@@ -147,6 +147,10 @@ records (CCRS, 2022–24) is running.
   now carries them for its non-fatal parts. The fault-based row is $42.3bn ($23.8–73.3bn; normalized −$3.4bn), and the
   pairing is $462.6–537.2bn with the scale benefits (`ccrs_nonfatal_involvement_2026_09_28`, 20755cb).]
 - A measured traffic-volume elasticity narrows the but-for range enough to replace the fault-based row.
+  [2026-09-28 23:53: graded evidence (`crash_volume_elasticity_2026_09_28`, f9fecd6) puts x near 0 for non-fatal and
+  −0.21 for fatal crashes. The but-for is $11.1bn (−$57.7bn to +$74.3bn; cc2b092). Its range did not narrow, but its
+  central no longer agrees with the fault-based row's, which was the first of the three reasons above. Switching the row is
+  proposed to the operator (ladder 266).]
 - The account values deaths by life-years rather than one VSL at every age. PM2.5 would fall to about $26bn.
 - The concentration–response evidence moves. Wu 2020 sets the low end and Di 2017 the high end.
 
