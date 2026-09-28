@@ -15,6 +15,9 @@ The national check (national_check.py) also reads:
   ssa_afr2025  SSA FY 2025 Agency Financial Report, Financial Section (the OASDI Statement of Social Insurance)
   cms_fr2025   CMS Financial Report FY 2025 (the Medicare Statement of Social Insurance, HI rows)
   an2025_1     SSA Actuarial Note 2025.1, unfunded obligation and transition costs (definitions)
+The net-of-tax arm after the 2025 tax law (pension_accrual.py) reads:
+  ocact_obbba  SSA Chief Actuary's letter of 5 August 2025 on Public Law 119-21 (Table 1: the change in the OASDI
+               income rate, all of it income from taxation of benefits, against the 2025 Trustees Report)
 """
 from __future__ import annotations
 
@@ -62,6 +65,10 @@ DOCS = {
                      url="https://www.ssa.gov/OACT/NOTES/ran1/an2025-1.pdf",
                      via="https://web.archive.org/web/20250901133144id_/https://www.ssa.gov/OACT/NOTES/ran1/an2025-1.pdf",
                      title="SSA Actuarial Note 2025.1, Unfunded obligation and transition costs for the OASDI program (June 2025)"),
+    "ocact_obbba": dict(pdf=CACHE / "ocact_obbba_wyden_20250805.pdf", txt=CACHE / "ocact_obbba_wyden_20250805.txt",
+                        url="https://www.ssa.gov/oact/solvency/RWyden_20250805.pdf",
+                        via="https://web.archive.org/web/20250809085421id_/https://www.ssa.gov/oact/solvency/RWyden_20250805.pdf",
+                        title="SSA Office of the Chief Actuary, letter to Senator Ron Wyden on the financial effects of the One Big Beautiful Bill Act (5 August 2025)"),
 }
 # The sha256 of each PDF as fetched on 2026-09-28 (Notes 2025.7 and 151: the 09-18 lane's copies).
 PDF_SHA256 = {
@@ -73,6 +80,8 @@ PDF_SHA256 = {
     "ssa_afr2025": "47bfd6c814cb4d0badd32f12c2557e1f09c1ba7239967af474f4af6fabeca34e",
     "cms_fr2025": "032fc57d08e15618cab4b30c81c9b03c8906f1ebf678fda9180ce77b1b50865d",
     "an2025_1": "56ba016b2786805ab26bc628f1d7b01e8ba29d8e969477e597c3038d721f72e6",
+    # the Wayback copy arrives gzip-encoded; this is the decompressed PDF (fetched 2026-09-28; ssa.gov answers 403)
+    "ocact_obbba": "f402b44d2ac052c3c751b1fc44c18bdf6d9bf33b93a4dde998e26db8cf622ed0",
 }
 LEVELS = ["Very Low", "Low", "Medium", "High", "Maximum"]
 FAMILIES = ["single_man", "single_woman", "one_earner_couple", "two_earner_couple"]
@@ -492,6 +501,35 @@ def sosi_hi() -> dict:
     if abs(rows["all"]["income"] - rows["all"]["expenditures"] - excess) > 2:
         raise SystemExit("[BLOCKED] CMS FY 2025 SOSI: HI income less expenditures is not the published excess")
     return dict(rows=rows, excess=excess)
+
+
+# ------------------------------------------------------------------ the 2025 tax law (Public Law 119-21)
+def obbba_income_rate_change() -> pd.Series:
+    """The Chief Actuary's letter of 5 August 2025, Table 1: the change from the 2025 Trustees Report baseline in the
+    OASDI income rate (% of taxable payroll) by year, 2025-2100, all of it income from taxation of benefits. Stops
+    unless every year is there once, the cost rate is unchanged and equals Table IV.B1's where both have the year, and
+    the 75-year summary shows the letter's -0.16% change in the income rate."""
+    lines = text("ocact_obbba")
+    start = next(i for i, l in enumerate(lines) if "Table 1 - OASDI Cost Rate, Income Rate, Annual Balance, and Trust Fund Ratio" in l)
+    row = re.compile(r"^\s*(\d{4})\s+(\d+\.\d\d)\s+(\d+\.\d\d)\s+(-?\d+\.\d\d)\s+(?:\d+|—)\s+(-?\d+\.\d\d)\s+(-?\d+\.\d\d)\s+(-?\d+\.\d\d)\s*$")
+    out, cost = {}, {}
+    for l in lines[start:]:
+        m = row.match(l)
+        if m and int(m.group(1)) not in out:
+            y = int(m.group(1))
+            if float(m.group(5)) != 0.0:
+                raise SystemExit(f"[BLOCKED] OCACT OBBBA letter Table 1: the cost rate changes in {y}")
+            out[y], cost[y] = float(m.group(6)), float(m.group(2))
+        if l.strip().startswith("2025 - 2099"):
+            if "-0.16%" not in l.split()[-2]:
+                raise SystemExit("[BLOCKED] OCACT OBBBA letter: the 75-year change in the income rate is not -0.16%")
+            break
+    if sorted(out) != list(range(2025, 2101)):
+        raise SystemExit(f"[BLOCKED] OCACT OBBBA letter Table 1: years {sorted(out)[:3]}...{sorted(out)[-3:]} ({len(out)})")
+    iv = oasdi_rates_iv_b().set_index("year").cost_rate
+    if any(abs(cost[y] - iv[y]) > 1e-9 for y in iv.index if y in cost):
+        raise SystemExit("[BLOCKED] OCACT OBBBA letter Table 1: the cost rates are not the 2025 Trustees Report's")
+    return pd.Series(out).sort_index()
 
 
 def provenance() -> dict:
