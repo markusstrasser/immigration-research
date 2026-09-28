@@ -1,4 +1,4 @@
-"""Render the ladder groups: curated findings, method symbols, per-entry notes, bibliography, retired list.
+"""Render the ladder groups: numbered findings, evidence tags, per-finding notes, bibliography.
 
 Method symbols and dataset names are detected from each entry's own text, so they say what the
 entry reports using, not what the page claims.
@@ -194,6 +194,10 @@ def render(entries, fail):
     toc, blocks = [], []
     n_find = 0
     gi = 0
+    # Readers see section.finding numbers ("4.2"). Ladder numbers stay in data-ladder attributes and
+    # HTML comments, for maintainers only.
+    labels = {}  # ladder ref -> (label, anchor)
+    sections = {}  # group id -> section number
     for pid, ptitle in PARTS:
         groups = [g for g in GROUPS if g["part"] == pid]
         if not groups:
@@ -202,11 +206,15 @@ def render(entries, fail):
         blocks.append(f'<h2 id="part-{pid}">{html.escape(ptitle)}</h2>')
         for g in groups:
             gi += 1
+            sections[g["id"]] = gi
             toc.append(f'<li><a href="#{g["id"]}">{html.escape(g["claim"])}</a></li>')
             items = []
             for fi, f in enumerate(g["findings"], 1):
                 n_find += 1
                 fid = f"{g['id']}-{fi}"
+                flabel = f"{gi}.{fi}"
+                for r in f["refs"]:
+                    labels[str(r)] = (flabel, fid)
                 text_all = " ".join(entries[str(r)]["body"] for r in f["refs"])
                 _kinds, names = detect(text_all)
                 fsrc = []
@@ -231,13 +239,14 @@ def render(entries, fail):
                     rows.append(f'<p class="how">Data: {html.escape(", ".join(names))}.</p>')
                 if fsrc:
                     rows.append(f'<p class="how">Sources: {html.escape(" · ".join(fsrc))}.</p>')
-                rows.append(f'<p class="how">Ladder entries: {", ".join(str(r) for r in f["refs"])}.</p>')
+                ladder = " ".join(str(r) for r in f["refs"])
                 items.append(
-                    f'<li id="{fid}"><p class="ftext">{html.escape(f["text"])}</p>'
+                    f'<li id="{fid}" data-ladder="{ladder}"><p class="ftext">'
+                    f'<a class="fnum" href="#{fid}">{flabel}</a> {html.escape(f["text"])}</p>'
                     f'<p class="fmeta">{level_tag(f, fail)}</p>'
                     f'<details><summary>Evidence</summary>{"".join(rows)}</details></li>')
             terms = "".join(f"<dt>{html.escape(t)}</dt><dd>{html.escape(m)}</dd>" for t, m in g["terms"])
-            minor = (f'<p class="how">Narrower analyses not summarised: {", ".join(str(r) for r in g["minor"])}.</p>'
+            minor = (f'<!-- narrower ladder entries, not summarised: {" ".join(str(r) for r in g["minor"])} -->'
                      if g["minor"] else "")
             blocks.append(f"""
 <section id="{g['id']}" class="group">
@@ -255,10 +264,10 @@ def render(entries, fail):
               + "".join(f"<tr><td class=lvl>{n}</td><td>{html.escape(d)}</td></tr>" for n, d in STEPS.values())
               + "</tbody></table>")
     bib_items = sorted(bib.values(), key=lambda v: v[0].lower())
+    fid_label = {fid: lab for lab, fid in labels.values()}
     bibl = "".join(
-        f'<li>{html.escape(t)} <span class="ref">{" ".join(f"<a href=#{x}>{x}</a>" for x in dict.fromkeys(ids))}</span></li>'
+        f'<li>{html.escape(t)} <span class="ref">'
+        f'{" ".join(f"<a href=#{x}>{fid_label[x]}</a>" for x in dict.fromkeys(ids))}</span></li>'
         for t, ids in bib_items)
-    cur = [k for k in RETIRED if not str(k).startswith("o")]
-    retired = "o1–o51, " + ", ".join(str(k) for k in cur)
-    return dict(toc="".join(toc), groups="\n".join(blocks), legend=legend, biblio=bibl,
-                retired=retired, n_find=n_find, n_bib=len(bib_items), n_retired=len(RETIRED))
+    return dict(toc="".join(toc), groups="\n".join(blocks), legend=legend, biblio=bibl, labels=labels, sections=sections,
+                n_find=n_find, n_bib=len(bib_items), n_retired=len(RETIRED))
