@@ -25,6 +25,7 @@ R24 = "infra/immigration-fiscal/main_case_2026_09_24/RESULT.md"
 R23 = "infra/immigration-fiscal/main_case_2026_09_23/RESULT.md"
 CAA = "research/immigration-complete-annual-account-2026-09-20.md"
 LADDER = "research/immigration-confidence-ladder.md"
+REAL_COSTS = "research/immigration-real-fiscal-and-social-costs-2026-09-23.md"
 OUT = ra.LANE/"_cache"/"inventory_2026_09_26.json"
 
 ANCHOR_RULE = ("The $201–246bn is the complete account's change for all other residents in the September 26 case, the "
@@ -43,6 +44,12 @@ def val(label, value, file_line, unit="$bn/year", se=None):
 RECORD_ANCHORS = {
     "27.8-39.5 (was 28.5-40.6)": (FAQ, re.compile(r"\$27\.8–39\.5bn on the September 24 data and \$28\.5–40\.6bn")),
     "203.2-249.6 -> 200.9-246.3 -> 200.9-245.7": (LADDER, re.compile(r"^219\. ")),
+    # The real-costs memo keeps its September 23 and 24 totals in its earlier-totals table since 2026-09-29.
+    "248-304": (REAL_COSTS, re.compile(r"^\| September 24 \| \$200\.9–246\.3bn")),
+    "210-337": (REAL_COSTS, re.compile(r"^\| September 24 \| \$200\.9–246\.3bn")),
+    "253-303; 239-289": (REAL_COSTS, re.compile(r"^\| September 24 \| \$200\.9–246\.3bn")),
+    "0.65 / 14.6": (REAL_COSTS, re.compile(r"^\| September 24 \| \$200\.9–246\.3bn")),
+    "256-307; 251-303; 237-289": (REAL_COSTS, re.compile(r"^\| September 23 \(this memo's first version\)")),
 }
 
 
