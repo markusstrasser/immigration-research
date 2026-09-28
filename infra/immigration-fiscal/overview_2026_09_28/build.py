@@ -194,22 +194,22 @@ def tornado_rows(s, bands, social):
         return [bands[key][0] - m[0], bands[key][1] - m[1]]
 
     rows = [
-        ("Capital return at 7%, not 2–3%", d("capital_return_at_7pct"), "beside", "239"),
+        ("Capital return at 7%, not 2–3%", d("capital_return_at_7pct"), "beside", "238"),
         ("Pensions counted when earned", [77.3, 73.6], "waiting", "257"),
-        ("Services other than schools held fixed", [bands["long_run_non_school_fixed:adopted"][i] - m[i] for i in (0, 1)], "arm", "239"),
-        ("Costs outside budgets added", [social[0] - m[0], social[1] - m[1]], "beside", "195"),
-        ("No return on public capital", d("without_capital_return"), "arm", "239"),
-        ("Roads and parks at CBO's lag of 0", [bands["cbo_category_lag_non_school_full:with_rental_assistance_capital_and_enterprises"][i] - m[i] for i in (0, 1)], "arm", "239"),
+        ("Services other than schools held fixed", [bands["long_run_non_school_fixed:adopted"][i] - m[i] for i in (0, 1)], "arm", "§services"),
+        ("Costs outside budgets added", [social[0] - m[0], social[1] - m[1]], "beside", "§social"),
+        ("No return on public capital", d("without_capital_return"), "arm", "238"),
+        ("Roads and parks at CBO's lag of 0", [bands["cbo_category_lag_non_school_full:with_rental_assistance_capital_and_enterprises"][i] - m[i] for i in (0, 1)], "arm", "237"),
         ("General administration fixed (earlier version)", [-28.5, -40.6], "arm", "211"),
         ("Property taxes follow people", [-27.19, -27.19], "candidate", "253"),
-        ("Schools at within-district 0.836", d("school_within_district"), "arm", "239"),
-        ("Every service fully proportional", [bands["proportional_reference:adopted"][i] - m[i] for i in (0, 1)], "arm", "239"),
-        ("Enterprises left out", d("enterprises_out_option_a"), "arm", "239"),
+        ("Schools at within-district 0.836", d("school_within_district"), "arm", "230"),
+        ("Every service fully proportional", [bands["proportional_reference:adopted"][i] - m[i] for i in (0, 1)], "arm", "§services"),
+        ("Enterprises left out", d("enterprises_out_option_a"), "arm", "§conventions"),
         ("Sampling noise (95%)", [20.8, 20.8], "noise", "184"),
         ("Natives and immigrants poor substitutes, ε = 3", [-13.8, -9.1], "arm", "176"),
-        ("Survey data left uncorrected", d("uncorrected_at_adopted_responses"), "arm", "239"),
+        ("Survey data left uncorrected", d("uncorrected_at_adopted_responses"), "arm", "§data"),
         ("Census income fill-ins left in", d("no_fill_in_correction"), "arm", "208"),
-        ("Rental assistance at 0", d("rental_assistance_at_0"), "arm", "239"),
+        ("Rental assistance at 0", d("rental_assistance_at_0"), "arm", "§services"),
         ("Income-tax shares matched to IRS", [-3.2, -3.1], "candidate", "249"),
     ]
     return sorted(rows, key=lambda r: -max(abs(r[1][0]), abs(r[1][1])))
@@ -285,7 +285,9 @@ def svg_waterfall(rows):
     return "\n".join(out)
 
 
-def svg_tornado(rows):
+def svg_tornado(rows, labels, sections):
+    """Each row links to the finding that holds its ladder ref, or to a section ("§<id>") when no single
+    finding covers the assumption. An unknown target fails."""
     x0, x1 = -70.0, 110.0
     lw, W, rh = 330, 760, 24
     pw = W - lw - 90
@@ -303,7 +305,14 @@ def svg_tornado(rows):
     tag = {"waiting": "alternative", "candidate": "alternative", "beside": "beside", "arm": "", "noise": "noise"}
     y = 34
     for label, (a, b), status, ref in rows:
-        out.append(f'<text x="{lw - 10}" y="{y + 13}" class="lab" text-anchor="end">{html.escape(label)}<tspan class="ref"> · {ref}</tspan></text>')
+        if ref.startswith("§") and ref[1:] in sections:
+            flabel, fid = f"§{sections[ref[1:]]}", ref[1:]
+        elif ref in labels:
+            flabel, fid = labels[ref]
+        else:
+            fail(f"tornado row {label!r} targets {ref}, which is neither a finding's ladder ref nor a section")
+        out.append(f'<a href="#{fid}"><text x="{lw - 10}" y="{y + 13}" class="lab" text-anchor="end">'
+                   f'{html.escape(label)}<tspan class="ref"> · {flabel}</tspan></text></a>')
         for k, dy, v in ((0, 3, a), (1, 11, b)):
             if status == "noise":
                 lo, hi = -v, v
@@ -333,12 +342,11 @@ def main():
     page = (HERE / "template.html").read_text()
     subs = {
         "{{WATERFALL}}": svg_waterfall(waterfall_rows(s, stairs, social)),
-        "{{TORNADO}}": svg_tornado(tornado_rows(s, bands, social)),
+        "{{TORNADO}}": svg_tornado(tornado_rows(s, bands, social), r["labels"], r["sections"]),
         "{{TOC}}": r["toc"],
         "{{GROUPS}}": r["groups"],
         "{{LEGEND}}": r["legend"],
         "{{BIBLIO}}": r["biblio"],
-        "{{RETIRED}}": r["retired"],
         "{{N_ENTRIES}}": str(len(entries)),
         "{{N_FINDINGS}}": str(r["n_find"]),
         "{{N_BIB}}": str(r["n_bib"]),

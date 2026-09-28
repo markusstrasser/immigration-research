@@ -65,6 +65,7 @@ td.num { text-align: right; padding-right: 14px; color: var(--soft); }
 .yes { color: var(--blue); }
 .no { color: var(--orange); }
 .group .size { color: var(--soft); font-style: italic; margin: 0 0 8px; }
+.fnum { color: var(--faint); font-size: 0.8em; font-variant-numeric: tabular-nums; text-decoration: none; margin-right: 2px; }
 .gnum { color: var(--faint); font-style: normal; font-variant-numeric: tabular-nums; margin-right: 4px; }
 .points { padding-left: 1.1em; max-width: 70ch; }
 .points li { margin: 4px 0; }
@@ -160,7 +161,7 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 <p class="caption">The build checks that the rows sum to the main estimate.</p>
 
 <h2 id="assumptions">How each assumption changes the total</h2>
-<p class="prose">Each row changes one assumption and keeps the others. The bars show how far the $355bn moves. Dashed rows are alternatives or items beside the account. The number after each label is the ladder entry.</p>
+<p class="prose">Each row changes one assumption and keeps the others. The bars show how far the $355bn moves. Dashed rows are alternatives or items beside the account. The number after each label links to the finding behind it.</p>
 <div class="figure">{{TORNADO}}</div>
 <p class="caption">One assumption is too large for this chart: whether services grow with population at all. With no growth, the account favours other residents. The sign flips below a 3–14% response. "Earlier version" rows come from an earlier version of the model and are close, not exact.</p>
 
@@ -216,10 +217,10 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 
 <h2 id="sources">Sources</h2>
 <details><summary>{{N_BIB}} published sources named in the analyses</summary>
-<p class="caption">Taken from citations in the ladder entries. The list is not complete. The links after each source go to the findings that use it.</p>
+<p class="caption">Taken from citations in the analyses. The list is not complete. The numbers after each source link to the findings that use it.</p>
 <ul class="entries biblio">{{BIBLIO}}</ul>
 </details>
-<p class="caption">Not shown: superseded, withdrawn or earlier versions of analyses ({{N_RETIRED}}): {{RETIRED}}.</p>
+<p class="caption">Not shown: {{N_RETIRED}} superseded, withdrawn or earlier versions of analyses.</p>
 
 <footer>
 <p>An LLM helped write this page. On a politically charged topic the instrument has its own leanings (see <code>notes/llm-bias-caveat.md</code>). Every number comes from a ladder entry or a derived file. Built by <code>infra/immigration-fiscal/overview_2026_09_28/build.py</code>.</p>
