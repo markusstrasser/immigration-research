@@ -89,8 +89,8 @@ GROUPS = [
         id="services", part="drivers",
         claim="Public services decide the sign: taxes cover benefits, but not schools and services",
         range="sign flips below a 3–14% service response",
-        why=("The group pays about $65bn a year more in taxes than it gets in benefits (60–70). Public "
-             "services reverse the sign. If less than 3–14% of service costs grew with population, the sign "
+        why=("After the checks against records, the group pays about $55bn a year more in taxes than it gets "
+             "in benefits (49–62). Public services reverse the sign. If less than 3–14% of service costs grew with population, the sign "
              "would flip."),
         terms=[("response (elasticity)", "the % rise in a budget for each 1% rise in users"),
                ("average vs marginal cost", "cost per user now vs the cost of one more user")],
@@ -149,7 +149,7 @@ GROUPS = [
     ),
     dict(
         id="data", part="drivers",
-        claim="Checks against records move taxes and spending by about $50bn each, and the two almost cancel",
+        claim="Checks against records move taxes and spending by about $50bn each (44–57), and the two almost cancel",
         range="net about $11bn",
         why=("Survey answers carry known errors. Each tax and benefit share is checked against records that "
              "the account did not use."),
@@ -175,10 +175,11 @@ GROUPS = [
                       "the top, and IRS data would lower the total by about $3bn.",
                  why="Administrative totals match the survey where the group lives. IRS data for a year that "
                      "the account never used confirm the direction."),
-            dict(refs=[85, 77, 254, 220],
-                 text="Legal status does not drive the gap. The account already removes off-books pay.",
-                 why="Imputed unauthorized adults and legal Mexico-born adults have similar gaps. Status is "
-                     "imputed, not observed."),
+            dict(refs=[254, 77, 220],
+                 text="The account takes off-books pay out of taxes: about $65bn of the imputed unauthorized's "
+                      "$137bn in survey wages.",
+                 why="Survey wages include work paid off the books. Payroll and income tax for the imputed "
+                     "unauthorized are scaled to an on-books share, 0.53 for the Mexico-born."),
             dict(refs=[255, 256, 188, 192],
                  text="Two tests fixed before looking pass. The frame predicts where the group's births and "
                       "hospital charity care fall.",
@@ -272,8 +273,8 @@ GROUPS = [
                ("welfare weights", "how much a dollar counts for a rich person vs a poor person")],
         findings=[
             dict(refs=[226],
-                 text="About one other resident in six comes out ahead. Most of them are landlords or in the top "
-                      "tenth of income.",
+                 text="Between one in nine and one in four other residents come out ahead, about one in six at "
+                      "central values. Most of them are landlords or in the top tenth of income.",
                  why="Each person is followed through taxes, wages, rents and crime."),
             dict(refs=[194],
                  text="If taxes close the gap, the top fifth pays 62%. If equal cuts close it, the bottom fifth "
@@ -435,8 +436,8 @@ GROUPS = [
     ),
     dict(
         id="comparators", part="other",
-        claim="Against as many whites, the group costs others about $320bn a year more",
-        range="$320bn (315–330)",
+        claim="Against as many whites, the group costs others about $320–410bn a year more, depending on which whites",
+        range="$320bn (315–330) against US whites, $409bn (406–412) against local whites",
         why="The same rules applied to other groups show whether the result is special to this group.",
         terms=[("re-key", "the same account with another group's shares"),
                ("replacement", "the group against an equal number of people from another group")],
@@ -468,6 +469,11 @@ GROUPS = [
         why="Schooling matters more for the fiscal gap than legal status does.",
         terms=[("residual method", "unauthorized = foreign-born minus people in legal records")],
         findings=[
+            dict(refs=[85],
+                 text="Imputed unauthorized and legal Mexico-born adults have similar fiscal gaps, about $7,800 "
+                      "and $8,200 a year per adult against later-generation whites.",
+                 why="Status is imputed, not observed. With benefits that status rules out set to zero and taxes "
+                     "cut to the on-books share, the gaps are $9,720 and $8,234."),
             dict(refs=[157],
                  text="About 15.2M people were unauthorized in mid-2024 (14.6–15.8).",
                  why="This uses the definition that every publisher uses. The narrow definition gives 8–9.5M."),

@@ -45,7 +45,8 @@ CLASS = {
     209: ("sample", "tabulated", "The CPS counts the Mexico-born 9–13% above the ACS."),
     206: ("count", "tabulated", None),
     217: ("count", "tabulated", None),
-    85: ("sample", "fitted", "Legal status is not asked. Rules impute it from other answers."),
+    254: ("sample", "arithmetic", None),  # on-books share from SSA applied to survey wages
+    85: ("sample", "fitted", "Legal status is not asked. Rules impute it from other answers."),  # now in "status"
     255: ("count", "tabulated", None),
     225: ("sample", "arithmetic", None),
     267: ("count", "arithmetic", "Priced at state averages. The group's districts spend more than their state "
