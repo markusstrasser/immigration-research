@@ -1,0 +1,12 @@
+vehicle_class,responsibility,federal_m,state_m,local_m,total_m
+Autos,passenger,12405,35988,15791,64184
+Pickups and Vans,passenger,4770,13678,6328,24777
+Buses,passenger,221,383,268,871
+"Single unit trucks <=25,000 lb",freight,1074,1755,886,3715
+"Single unit trucks 25,001-50,000 lb",freight,981,1867,1349,4197
+"Single unit trucks >=50,000 lb",freight,1098,1929,1212,4239
+"Combination trucks <=50,000 lb",freight,222,325,149,696
+"Combination trucks 50,001-70,000 lb",freight,528,722,306,1555
+"Combination trucks 70,001-75,000 lb",freight,408,517,178,1103
+"Combination trucks 75,001-80,000 lb",freight,6329,8353,2950,17632
+"Combination trucks >=80,000 lb",freight,778,1125,450,2353
