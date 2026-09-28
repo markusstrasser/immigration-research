@@ -290,6 +290,7 @@ mixed-household results.
 # from the repository root
 node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --weights row4
 ```
 
 Both scripts stop with exit 1 on a failed gate. Together they run in about ten seconds.
@@ -301,8 +302,85 @@ Both scripts stop with exit 1 on a failed gate. Together they run in about ten s
 - 2026-09-29 00:31 JST — households.py runs: all gates pass (88 key rows reproduce generation_keys.csv, 5.8e-16; production cells close; each generation's pieces + residual = its cost; households + lane constants = 321.819357 / 387.370055). 7,106 households, 18,331 union person records; 1,433 households have a reference person outside the union.
 - 2026-09-29 00:37 JST — rerun of both scripts (exit 0): the six derived CSVs and `_cache/lines.json` are byte-identical to the previous run (time from the `date` call made with the rerun).
 - 2026-09-29 00:43 JST — since the 00:29 entry: households.py built and gated (keys, production cells, generation closure, households + lane constants = the case), spending categories set by key, the schools-per-head sensitivity and category means added, minor-only households headed by their reference person; RESULT.md written with the final numbers.
+- 2026-09-29 04:43 JST — `--weights row4` arm added (audit row 4's weights on all 161 columns; key-total gate re-pinned to G2/G3+ `generation_keys.csv` and the union's row-4 `age_bins.csv`; union count, per-head part and per-head spread gates added; gates now run before anything is written). Validation exit codes: export 0, published 0 (`derived/` unchanged), row 4 0, `rerun_lane.py` 0 with 15/15 files identical (04:38–04:41 from `date`). Results in "On the account's count (audit row 4)" below.
 
 ## Lead verification (2026-09-29 00:53 JST)
 
 - Reran both scripts in place with `scripts/rerun_lane.py`: rc 0, 9 of 9 files byte-identical.
 - The positive control (households plus the lane constants reproduce $321.8194bn / $387.3701bn) runs inside `households.py`, which exits 1 on any failed gate.
+
+## On the account's count (audit row 4), 2026-09-29
+
+**Verdict:** Spread over the 39,712,493 members the case prices, instead of the published CPS union of 40,896,574, the household shares stand. No share of members in net-contributor households moves by more than its standard error under either convention. Under full allocation (A) the shares are **24.2% / 20.5%**, against 24.2% / 20.3%. Counting only individually used services (B) they are **31.0% / 29.8%**, against 31.1% / 29.6%. The education and generation gradients move by at most 0.5 points, and the legal-status split still flips with the imputation rule. The dollar figures rise, because the case's unchanged totals now fall on 2.9% fewer members. The mean per member rises by exactly that factor, 2.98%, and the Mexico-born members' own mean rises 10.7%. The median member's household costs **$9,097 / $10,405** per member, against $8,716 / $10,139; both moves exceed their SEs. The per-head school charge is $4,567 / $4,726, against $4,438 / $4,592. BA+ heads stay near zero (−$1,474 / +$1,098), and the costliest tenth of households carries 60.7% / 52.3% of the net cost (was 60.9% / 52.6%). The gates that add household charges up to the case's line totals close to float precision on both arms, because the spread rescales every line to its generation's total. The frame mismatch shows instead in the per-head lines: on the published weights the Mexico-born are charged 9.7% less per member than other members for the same line, and on row 4 the spread is 7.5e-11. [CALCULATION: `households.py --weights row4` → `derived/row4/net_positive_shares.csv`, `household_balance_quantiles.csv`, `concentration.csv`, `category_means.csv`] [FRAMING-SENSITIVE: the per-member denominator]
+
+claude-opus-5-5
+
+**Published → row 4.** Columns are the case's two ends under each convention. Shares are % of members; SEs are the published figure's replicate SE. An asterisk marks a change larger than that SE. The change is a reweighting to fixed ACS 2024 targets, so the mark compares its size with the figure's sampling noise; it is not a test of the change.
+
+| | A, low | A, high | B, low | B, high |
+|---|---|---|---|---|
+| Union members (m) | 40.90 → 39.71 | 40.90 → 39.71 | 40.90 → 39.71 | 40.90 → 39.71 |
+| **Members in net-contributor households** (SE 0.4–0.5) | **24.2 → 24.2** | **20.3 → 20.5** | **31.1 → 31.0** | **29.6 → 29.8** |
+| Head below high school | 12.4 → 12.0 | 9.4 → 9.2 | 16.5 → 16.1 | 15.9 → 15.4 |
+| Head high school | 20.4 → 20.3 | 16.3 → 16.7 | 27.0 → 26.7 | 25.6 → 26.0 |
+| Head some college | 25.8 → 25.8 | 22.1 → 22.1 | 34.2 → 34.1 | 32.9 → 33.0 |
+| Head BA or more | 46.2 → 46.3 | 41.1 → 41.4 | 55.6 → 55.9 | 52.4 → 52.6 |
+| Head Mexico-born | 18.2 → 17.8 | 14.1 → 14.3 | 24.8 → 24.3 | 23.4 → 23.5 |
+| Head second generation | 26.4 → 26.6 | 24.5 → 24.6 | 34.0 → 33.8 | 34.4 → 34.5 |
+| Head third-plus | 32.4 → 32.4 | 27.3 → 27.3 | 39.4 → 39.4 | 36.4 → 36.4 |
+| Head unauthorized, Borjas rules | 20.1 → 19.2 | 15.0 → 14.6 | 28.1 → 27.3 | 27.0 → 26.9 |
+| Head legal immigrant, Borjas rules | 17.2 → 17.1 | 13.6 → 14.1 | 22.9 → 22.8 | 21.5 → 21.7 |
+| Head unauthorized, no Medicaid rule | 16.5 → 15.6 | 12.3 → 11.9 | 23.9 → 23.1 | 22.9 → 22.8 |
+| Head legal immigrant, no Medicaid rule | 19.6 → 19.6 | 15.6 → 16.2 | 25.4 → 25.3 | 23.9 → 24.0 |
+| Households net-positive | 33.3 → 33.3 | 29.2 → 29.5 | 40.4 → 40.3 | 39.2 → 39.2 |
+| **Net cost per member, $** | | | | |
+| **Median member's household** | 8,716 → 9,097\* | 10,139 → 10,405\* | 5,773 → 6,003\* | 6,114 → 6,317 |
+| Mean, all members | 7,995 → 8,234\* | 9,599 → 9,885\* | 4,923 → 5,077\* | 5,347 → 5,513\* |
+| Mean, BA+ heads | −1,446 → −1,474 | +1,093 → +1,098 | −5,435 → −5,539 | −4,088 → −4,184 |
+| Mean, Mexico-born members (own generation) | 7,889 → 8,736\* | 6,625 → 7,336\* | 5,473 → 6,091\* | 3,254 → 3,633\* |
+| Mean, unauthorized-headed (Borjas rules) | 7,225 → 7,790\* | 8,652 → 9,403\* | 4,611 → 5,022 | 4,883 → 5,402\* |
+| Mean, legal-immigrant-headed (Borjas rules) | 10,539 → 11,063\* | 11,907 → 12,459\* | 7,665 → 8,046\* | 7,884 → 8,228\* |
+| **Concentration** | | | | |
+| Costliest 10% of households, share of the net cost | 60.9 → 60.7 | 52.6 → 52.3 | 86.9 → 86.4 | 79.5 → 78.9 |
+| Members in the costliest 10% | 18.5 → 18.7 | 18.6 → 18.7 | 17.7 → 17.8 | 17.7 → 17.8 |
+| Offset by net-contributor households, $bn | −128.6 → −128.4 | −109.6 → −109.5 | −164.8 → −164.5 | −155.8 → −155.5 |
+| **A with schools per head** | | | | |
+| School charge per member (the ladder's "about $4,400"), $ | 4,438 → 4,567 | 4,592 → 4,726 | | |
+| Members in net-contributor households | 19.6 → 19.7 | 14.9 → 15.2 | | |
+
+[CALCULATION: `derived/` against `derived/row4/`, same file and row]
+
+In the schools-per-head sensitivity, three high-end shares move by more than their SE: below-high-school heads 4.6% → 5.2%, Mexico-born heads 8.0% → 8.6% and Mexico-born members 10.2% → 11.1%. No share under A or B does.
+
+**What moved and why.**
+- **Dollars per member.** Row 4 removes 1,184,081 Mexico-born members outside California and Texas, and the case's line totals stay as they are. The same dollars therefore fall on fewer people. The union mean rises by the count factor, 1.029816. The Mexico-born members' own mean rises 10.73%, and the second and third-plus generations' own means do not move under A, since row 4 leaves their totals and counts. Medians rise 2.6–4.4%, and the 75th and 90th percentiles 2.0–3.4%.
+- **Shares barely move.** For the Mexico-born as a group, row 4 scales every category by the same factor. Their mean taxes, transfers, health and per-head charges each rise exactly 10.73%; only the two splits below differ. A balance scaled by a positive factor keeps its sign. Person by person the factors differ: each line's charge per Mexico-born person rises by the inverse of its key's fall, 5–18%, since their key totals fall to 0.848–0.953 of the published ones (median 0.908, across 84 key vectors). The shares move only through those differences, through the reweighting (17.18m members in Mexico-born-headed households instead of 18.23m) and through mixed households, where the Mexico-born members now carry more.
+- **BA+ heads.** Their balance is near zero, and it stays near zero when it is scaled.
+- **Concentration.** The costliest tenth's share falls 0.3–0.6 points, within its SE.
+- **Legal status.** The split still flips with the imputation rule. Under Borjas's rules, 19.2% of members in unauthorized-headed households live in net-contributor households at the low end, against 17.1% in legal-immigrant-headed ones. Without the Medicaid clause, the figures are 15.6% and 19.6%. Row 4 removes more of the imputed unauthorized than of the Mexico-born as a whole: the Mexico-born unauthorized aged 25–64 fall from 3.917m to 3.401m under Borjas's rules (−13.2%) and from 4.778m to 4.194m without the clause (−12.2%). All Mexico-born members fall 9.7%. The imputed unauthorized are all noncitizens, whom row 4 scales by 0.778 outside CA and TX, against 0.856 for naturalized citizens. The status rows remain the imputation's grouping, not a legal comparison.
+- **B's total moves; A's does not.** B's total rises $0.30bn / $0.29bn, to $201.6bn / $218.9bn, because two within-line splits follow the count:
+  - public order's per-head part moves $0.41bn to justice by use, a B item;
+  - the first generation's education line moves $0.11bn / $0.13bn from K-12 schools (B) to college and other education (A only), because row 4 removes more of the first generation's school key than of its college key.
+
+  A's total is unchanged. `control.csv` differs only in those four category rows.
+
+**The gates on both arms.** The spread rescales each line to its generation's total under whatever weights it is given. The gates that add household charges up to the case are therefore identities, and they close to float precision on both arms, published / row 4:
+- each generation's pieces against its cost: 8.5e-14 / 8.5e-14bn;
+- households plus the residual against the case: 6.3e-13 / 2.3e-12bn;
+- every replicate against the full sample: 9.8e-12 / 6.6e-12bn;
+- the key totals against their references: 5.8e-16 / 5.8e-16 (relative).
+
+On row 4 the key-total gate is re-pinned. G2 and G3+ reproduce `generation_keys.csv`, since row 4 leaves their weights, and the union reproduces `main_case_decomposition_2026_09_29/derived/age_bins.csv`, column row4. The row-4 union count equals `headcount.csv` exactly (39,712,493.331). The check that separates the two frames is new. The engine charges each per-head line the same amount per member in every generation on the row-4 count. On the published weights, the Mexico-born are charged 1/1.107 of what other members are charged for every per-head line with a nonzero charge (general government, parks and recreation, housing and community services, other state benefits, the enterprise surplus): a spread of 9.7%. On row 4 the widest spread is 7.5e-11, and the row-4 arm gates it at 1e-9. [CALCULATION: `households.py` gate lines]
+
+**What the row-4 arm changes beyond the weights.**
+- Public order's per-head part moves with each generation's share of the civilian frame: G1 −$0.820bn, G2 and G3+ +$0.036bn each. This reproduces the engine's own row-4 change to that part (`generation_account_2026_09_24/derived/stack_by_generation.json`, component `C_row4_weights`) within 5.3e-8bn, and it is gated.
+- Two inputs are kept at their published values, and both are sized:
+  - The production term's attribution. The generation terms fit the published labor shares to 1.8e-15bn. On row-4 labor shares they would leave 0.030bn / 0.020bn, so the generation lane attributed the term on the published weights, and the case keeps the term at its published value. Each generation-by-cell part is still spread over its workers at row-4 weights.
+  - G1's split of Medicaid with uninsured use, which follows the generation's uncorrected cells. A first-order row-4 update would move $0.085bn / $0.124bn inside G1 from uninsured to Medicaid-covered persons, both within health.
+- The status imputation's count gate stays on the published weights. The flag does not use them.
+
+**Would change it.** If the CPS rather than the ACS counts the Mexico-born outside CA and TX correctly (ladder 209), the fiscal case itself belongs on 40.90M and its line totals move with it. Neither arm here would then stand as it is.
+
+**Validation (2026-09-29, exit codes).** `export_lines.cjs` 0. `households.py --weights published` 0, and its six `derived/` files unchanged: `git status` shows only `derived/row4/` as new. `households.py --weights row4` 0. `scripts/rerun_lane.py` over the three commands 0: IDENTICAL, 15 of 15 files unchanged.
+
+**Files.** `households.py --weights row4` writes the same six files to `derived/row4/` and its household table to `_cache/row4/households.parquet` (ignored). The published run's outputs are unchanged.

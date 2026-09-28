@@ -30,15 +30,29 @@ government, public order per head, roads and parks, other per-head services and 
 age, college and other education, the capital return, the enterprise surplus and the production term are left out.
 Standard errors: the 160 ASEC replicate weights (successive difference, 4/160), re-running the within-generation
 spread and every statistic per replicate with the engine's line totals held fixed.
-Gates (exit 1): key totals reproduce generation_keys.csv (1e-9 relative); production cell parts close (1e-6 bn);
-every generation's assigned amounts plus its residual equal its cost (1e-6 bn); households plus the residual
-reproduce the case at both ends (1e-6 bn); one reference person per household; the status imputation
-reproduces its published Mexico-born 25-64 counts.
+Weights (--weights): `published`, the default, spreads over the ASEC person weights (union 40,896,574). `row4`
+spreads over audit row 4's weights, the count the case prices (union 39,712,493): the Mexico-born naturalized
+and noncitizen persons outside CA+TX scaled to their ACS 2024 cells by cps_imputation_keys_2026_09_23/
+combine_onbooks_lane.py weight_arms, arm "row4", called as population_basis_2026_09_29/frame_counts.py calls it
+but on all 161 columns (every step acts column by column, so the replicates come from the same call). Beyond the
+weights, two generation-level inputs follow the count: the per-head part of public order moves with each
+generation's share of the civilian frame, as the engine's row-4 correction moves it; the production term keeps
+the generation lane's attribution on the published weights, as the case keeps the term at its published value.
+Gates (exit 1, nothing written): the union count reproduces main_case_decomposition_2026_09_29/derived/
+headcount.csv (1 person); key totals reproduce generation_keys.csv by generation (1e-9 relative; on row 4, G2
+and G3+ there, whose weights row 4 leaves, and the union the decomposition lane's row-4 age_bins.csv);
+production cell parts close (1e-6 bn); every generation's assigned amounts plus its residual equal its cost
+(1e-6 bn); households plus the residual reproduce the case at both ends (1e-6 bn); on row 4, the per-head
+part's change reproduces the engine's (stack_by_generation.json, 1e-6 bn) and every per-head line charges each
+generation the same per member (1e-9 relative); one reference person per household; the status imputation
+reproduces its published Mexico-born 25-64 counts (on the published weights: the flag does not use weights).
 Sensitivity A_schools_per_head: convention A with the school dollars spread per head over the union instead of
 charged to the pupils' households.
 Writes derived/net_positive_shares.csv, concentration.csv, household_balance_quantiles.csv, control.csv,
-category_means.csv, line_scaling.csv and _cache/households.parquet. Run from the repository root:
+category_means.csv, line_scaling.csv and _cache/households.parquet; the row-4 run writes the same files to
+derived/row4/ and _cache/row4/. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --weights row4
 """
 from __future__ import annotations
 
@@ -46,6 +60,7 @@ import sys
 
 sys.dont_write_bytecode = True  # read-only imports from other lanes: write nothing beside them
 
+import argparse
 import csv
 import json
 from pathlib import Path
@@ -58,16 +73,19 @@ FISCAL = HERE.parent
 GENLANE = FISCAL / "generation_account_2026_09_24"
 sys.path.insert(0, str(GENLANE))
 sys.path.insert(0, str(FISCAL / "status_impute_2026_09_16"))
-import frame as F  # noqa: E402
+import frame as F  # noqa: E402  (puts the CPS lane on sys.path)
 import keys as K  # noqa: E402
 from impute_status import impute  # noqa: E402
+import combine_onbooks_lane as L  # noqa: E402  last: it puts two more lanes at the front of sys.path
 
 C = F.C
 OUT = HERE / "derived"
 CACHE = HERE / "_cache"
+DECOMP = FISCAL / "main_case_decomposition_2026_09_29/derived"
 GENS = F.GENS
 ENDS = ["low", "high"]
 PUBLISHED_MEX_25_64 = {"borjas_paper_rules": 3.9170610819750302, "no_medicaid_rule": 4.778136460024849}
+PER_HEAD_KEYS = {"population", "resident_population"}
 FAILS = []
 
 
@@ -109,16 +127,29 @@ def spending_category(row):
     return "other_shared"
 
 
-def main():
-    print("[frame]", flush=True)
+def main(arm):
+    print(f"[frame] weights: {arm}", flush=True)
     lines = json.loads((CACHE / "lines.json").read_text())
     d = F.load()
     civ, union, gens = F.masks(d)
-    W = d[F.REPS].to_numpy(float)
+    W_pub = d[F.REPS].to_numpy(float)
+    W = W_pub
+    if arm == "row4":
+        print("[row 4 weights]", flush=True)
+        arms, info = L.weight_arms(d, W_pub, L.acs_cells())
+        W = arms["row4"]
+        del arms
+        print(f"  row-4 factors: naturalized {info['factor_natz']:.6f}, noncitizen {info['factor_noncit']:.6f}", flush=True)
     w0 = W[:, 0]
+    w_pub = W_pub[:, 0]
+    out_dir, cache_dir = (OUT, CACHE) if arm == "published" else (OUT / arm, CACHE / arm)
     index = C.spm_index(d)
     age = d.A_AGE.to_numpy()
     lab = F.label(gens, len(d))
+    heads = pd.read_csv(DECOMP / "headcount.csv").query("cut == 'all' and group == 'union'")
+    n_union, want = float(w0[union].sum()), float(heads[arm].iloc[0])
+    gate(f"union count reproduces headcount.csv, column {arm} (1 person)", abs(n_union - want) <= 1.0,
+         f"{n_union:,.3f} vs {want:,.3f}")
 
     print("[key vectors]", flush=True)
     rk = C.receipt_keys(d, index)
@@ -139,30 +170,73 @@ def main():
         v[("spending", "school_operating")] = edu[a]["school"]
         vec[a] = v
     pub = pd.read_csv(GENLANE / "derived/generation_keys.csv").query("convention == 'a'")
+    # Row 4 moves no weight in G2 or G3+, so their rows keep generation_keys.csv; the union's row-4 totals are the
+    # decomposition lane's age bins (the same key vectors under the same weight_arms call), which pins G1 as well.
+    by_gen, union_ref = GENS, None
+    if arm != "published":
+        by_gen = GENS[1:]
+        union_ref = pd.read_csv(DECOMP / "age_bins.csv").query("weights == @arm").groupby(["allocation", "key"])["union"].sum()
     worst, checked = 0.0, 0
+
+    def pin(r, x):
+        nonlocal worst, checked
+        for g in by_gen:
+            want = getattr(r, g)
+            worst = max(worst, abs(float(x[gens[g]] @ w0[gens[g]]) - want) / max(abs(want), 1.0))
+        if union_ref is not None:
+            want = float(union_ref[("both", "extra|pop") if r.key == "resident_population"
+                                   else (r.allocation, f"{r.side}|{r.key}")])
+            worst = max(worst, abs(float(x[union] @ w0[union]) - want) / max(abs(want), 1.0))
+        checked += 1
+
     for r in pub.itertuples():
         key = (r.side, r.key)
         if r.allocation not in vec or key not in vec[r.allocation]:
             continue
-        x = vec[r.allocation][key]
-        for j, g in enumerate(GENS):
-            got = float(x[gens[g]] @ w0[gens[g]])
-            want = getattr(r, g)
-            worst = max(worst, abs(got - want) / max(abs(want), 1.0))
-        checked += 1
+        pin(r, vec[r.allocation][key])
     mix = {a: vec[a][("spending", "school_part")] + vec[a][("spending", "P_part")] for a in vec}
     for r in pub.query("key == 'education_mix'").itertuples():
-        for g in GENS:
-            want = getattr(r, g)
-            worst = max(worst, abs(float(mix[r.allocation][gens[g]] @ w0[gens[g]]) - want) / max(abs(want), 1.0))
-        checked += 1
-    gate(f"{checked} key rows reproduce generation_keys.csv by generation (1e-9 relative)", worst < 1e-9, f"worst {worst:.1e}")
+        pin(r, mix[r.allocation])
+    ref = ("generation_keys.csv by generation" if union_ref is None
+           else "G2 and G3+ generation_keys.csv, the union age_bins.csv")
+    gate(f"{checked} key rows reproduce their {arm} totals: {ref} (1e-9 relative)", worst < 1e-9, f"worst {worst:.1e}")
+    gaps = {"key totals (relative)": worst}
 
     shares = json.loads((GENLANE / "derived/generation_key_shares.json").read_text())
     use_parts = shares["meta"]["use_parts"]["a"]
     models = {g: json.loads((GENLANE / f"derived/model_{g}.json").read_text()) for g in GENS}
 
-    # Production: cell parts AS_s solved from the three generations' terms and their cell labor shares.
+    # The use key's per-head part is a per-head rate times each generation's population (keys.py); the engine's row-4
+    # correction moves it with the generation's share of the civilian frame. The factor is 1 on the published weights.
+    pop = np.array([w0[gens[g]].sum() for g in GENS])
+    pop_pub = np.array([w_pub[gens[g]].sum() for g in GENS])
+    per_head_factor = pop / pop_pub * (w_pub[civ].sum() / w0[civ].sum())
+    if arm != "published":
+        comp = json.loads((GENLANE / "derived/stack_by_generation.json").read_text())["components"]["C_row4_weights"]["a"]
+        engine = np.array([comp[g]["spending"]["public_order_safety"]["population"]["personal"] for g in GENS])
+        moved = np.array(use_parts["per_head"]) * (per_head_factor - 1)
+        gap = float(np.abs(moved - engine).max())
+        gate("row 4 moves public order's per-head part as the engine does (C_row4_weights, 1e-6 bn)", gap < 1e-6,
+             f"{', '.join(f'{g} {x:+.6f}' for g, x in zip(GENS, moved))} bn; max |diff| {gap:.1e}")
+    # Per-head lines: the case prices them for the row-4 count, so on its weights every generation pays the same per
+    # member; on the published weights the first generation pays less.
+    spread = 0.0
+    for end in ENDS:
+        rows_g = {g: {r["id"]: r for r in lines["generations"][g][end]["rows"]} for g in GENS}
+        for i, r in rows_g["G1"].items():
+            per_member = np.array([rows_g[g][i]["cost_bn"] for g in GENS]) * 1e9 / pop
+            if r["key"] in PER_HEAD_KEYS and np.any(per_member != 0):
+                spread = max(spread, float(np.ptp(per_member) / np.abs(per_member).max()))
+    if arm == "published":
+        print(f"  · per-head lines per member across generations: widest relative spread {spread:.2%}", flush=True)
+    else:
+        gate("every per-head line charges each generation the same per member (1e-9 relative)", spread < 1e-9,
+             f"widest spread {spread:.1e}")
+    gaps["per-head lines' spread (relative)"] = spread
+
+    # Production: cell parts AS_s solved from the three generations' terms and their cell labor shares. The case keeps
+    # the term at its published value and the generation lane attributes it on the published weights, so the parts are
+    # solved there on both arms; each part is then spread over its cell's workers at the arm's weights.
     print("[production cells]", flush=True)
     prod_parts = {}
     for end in ENDS:
@@ -170,8 +244,8 @@ def main():
         cut = 39 if dims["split"] == "hs_or_less" else 42
         earn = np.maximum(d[dims["proxy"]].to_numpy(float), 0)
         cells = [d.A_HGA.between(31, cut).to_numpy(), d.A_HGA.between(cut + 1, 46).to_numpy()]
-        L = np.array([[float((earn * w0)[gens[g] & c].sum()) for c in cells] for g in GENS])
-        A = L / L.sum(axis=0)
+        labor = np.array([[float((earn * w_pub)[gens[g] & c].sum()) for c in cells] for g in GENS])
+        A = labor / labor.sum(axis=0)
         y = np.array([lines["generations"][g][end]["production"]["cost_bn"] for g in GENS])
         AS, *_ = np.linalg.lstsq(A, y, rcond=None)
         resid = float(np.abs(A @ AS - y).max())
@@ -212,7 +286,7 @@ def main():
                 i = row["id"]
                 if i == "public_order_safety":
                     j = GENS.index(g)
-                    ph = use_parts["per_head"][j]
+                    ph = use_parts["per_head"][j] * per_head_factor[j]
                     rest = use_parts["custody"][j] + use_parts["arrest_like_custody"][j] + use_parts["ice_interior"][j]
                     f = ph / (ph + rest)
                     return [("justice_per_head", f, np.ones(len(d))),
@@ -261,6 +335,8 @@ def main():
                 add("production", pp["part"][GENS.index(g), s], pp["earn"] * cell, "production")
             # Gate: the generation's pieces plus its residual equal its cost.
             got = sum(p["bn"] for p in pieces[end] if p["g"] == g) + residual[end].get(g, 0.0)
+            gaps["generation pieces vs cost (bn)"] = max(gaps.get("generation pieces vs cost (bn)", 0.0),
+                                                         abs(got - G["cost_bn"]))
             gate(f"{g} {end}: pieces plus residual equal the generation's cost", abs(got - G["cost_bn"]) < 1e-6,
                  f"{got:.6f} vs {G['cost_bn']:.6f}")
 
@@ -285,10 +361,13 @@ def main():
         tot = sum((amt[end][c] * Wu).sum(axis=0) for c in cats) / 1e9
         res = sum(residual[end].values()) + unassigned[end][0]
         case = lines["union"][end]["cost_bn"]
+        gap_case, gap_reps = abs(tot[0] + res - case), float(np.abs(tot - tot[0]).max())
+        gaps["households + residual vs the case (bn)"] = max(gaps.get("households + residual vs the case (bn)", 0.0), gap_case)
+        gaps["replicates vs full sample (bn)"] = max(gaps.get("replicates vs full sample (bn)", 0.0), gap_reps)
         gate(f"{end}: persons' assigned amounts plus the residual reproduce the case (full sample)",
-             abs(tot[0] + res - case) < 1e-6, f"{tot[0]:.6f} + {res:.6f} = {tot[0] + res:.6f} vs {case:.6f}")
+             gap_case < 1e-6, f"{tot[0]:.6f} + {res:.6f} = {tot[0] + res:.6f} vs {case:.6f}, gap {gap_case:.1e}")
         gate(f"{end}: every replicate's assigned total equals the full sample's (line totals held)",
-             float(np.abs(tot - tot[0]).max()) < 1e-6, f"max |diff| {float(np.abs(tot - tot[0]).max()):.1e} bn")
+             gap_reps < 1e-6, f"max |diff| {gap_reps:.1e} bn")
         # Sensitivity: the same school dollars spread per head over the union instead of charged to the pupils.
         school_total = (amt[end]["schools"] * Wu).sum(axis=0)
         amt[end]["schools_per_head"] = np.tile(school_total / Wu.sum(axis=0), (len(rows_u), 1))
@@ -323,9 +402,10 @@ def main():
     for name, use_med in (("borjas_paper_rules", True), ("no_medicaid_rule", False)):
         s = impute(dd, hh, use_medicaid_rule=use_med)
         un = np.asarray(s["unauthorized"], bool)
-        got = w0[mex & un & (age >= 25) & (age <= 64)].sum() / 1e6
+        sel = mex & un & (age >= 25) & (age <= 64)
+        got = w_pub[sel].sum() / 1e6
         gate(f"status ({name}) reproduces the published Mexico-born 25-64 count", abs(got - PUBLISHED_MEX_25_64[name]) < 1e-9,
-             f"{got:.6f}M")
+             f"{got:.6f}M" + ("" if arm == "published" else f"; {w0[sel].sum() / 1e6:.6f}M on the {arm} weights"))
         s_status[name] = un
 
     hga = d.A_HGA.to_numpy()[head_rows]
@@ -442,14 +522,22 @@ def main():
                                       bn=float(total[0]) + sum(residual[end].values()) + float(unassigned[end][0]) - case,
                                       assigned=None))
 
-    OUT.mkdir(exist_ok=True)
+    print(f"  households: {H:,} with {len(rows_u):,} union person records; reference person outside the union: "
+          f"{int((~ref_in_union).sum())} households; union members all minors (head = reference person): {int(minor_only.sum())}")
+    gate("every head is an adult", bool((age[head_rows] >= 15).all()), f"youngest head {int(age[head_rows].min())}")
+    print(f"  worst gaps ({arm}): " + "; ".join(f"{k} {v:.1e}" for k, v in gaps.items()), flush=True)
+    if FAILS:
+        print(f"✗ {len(FAILS)} gate(s) failed, nothing written: {FAILS}")
+        sys.exit(1)
+
+    out_dir.mkdir(parents=True, exist_ok=True)
 
     def write(name, rows):
         df = pd.DataFrame(rows)
         for c in df.columns:
             if df[c].dtype == float:
                 df[c] = df[c].round(6)
-        df.to_csv(OUT / name, index=False, lineterminator="\n", quoting=csv.QUOTE_MINIMAL)
+        df.to_csv(out_dir / name, index=False, lineterminator="\n", quoting=csv.QUOTE_MINIMAL)
 
     write("net_positive_shares.csv", npos_rows)
     write("concentration.csv", conc_rows)
@@ -457,16 +545,13 @@ def main():
     write("control.csv", ctrl_rows)
     write("category_means.csv", mean_rows)
     write("line_scaling.csv", scaling)
-    CACHE.mkdir(exist_ok=True)
-    hh_out.to_parquet(CACHE / "households.parquet", index=False)
-    print(f"  households: {H:,} with {len(rows_u):,} union person records; reference person outside the union: "
-          f"{int((~ref_in_union).sum())} households; union members all minors (head = reference person): {int(minor_only.sum())}")
-    gate("every head is an adult", bool((age[head_rows] >= 15).all()), f"youngest head {int(age[head_rows].min())}")
-    if FAILS:
-        print(f"✗ {len(FAILS)} gate(s) failed: {FAILS}")
-        sys.exit(1)
-    print("  ✓ all household gates passed")
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    hh_out.to_parquet(cache_dir / "households.parquet", index=False)
+    print(f"  ✓ all household gates passed; wrote {out_dir.relative_to(HERE)}/ and {cache_dir.relative_to(HERE)}/households.parquet")
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="The September 27 case spread over the union's households.")
+    parser.add_argument("--weights", choices=["published", "row4"], default="published",
+                        help="published: ASEC person weights (derived/); row4: audit row 4's weights (derived/row4/)")
+    main(parser.parse_args().weights)
