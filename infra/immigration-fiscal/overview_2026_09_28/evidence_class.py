@@ -126,6 +126,8 @@ CLASS = {
     # reading
     58: ("count", "rule", None),
     270: ("sample", "model", None),
+    271: ("count", "tabulated", "Each test case held its decisive evidence. Real reviews, where the evidence sits "
+                                "elsewhere, will catch fewer errors."),
 }
 
 INPUTS = {

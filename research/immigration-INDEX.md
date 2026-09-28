@@ -108,6 +108,8 @@ Why it costs what it costs: half, $164–213bn, is what any 39.7M average reside
 
 What would overturn the conclusions: no single premise, swapped for its best-supported alternative, breaks more than two of the evidence map's nine. The budget horizon breaks two (first-year responses: the case −37%, the pairing about −29%). Counting pensions on accrual flips "taxes cover benefits" (+$62.0 / 49.4bn becomes −$15.3 / −24.2bn). Next observations worth making: budgets after population outflows, and the Mexico-born on-books share from SSA and ITIN records (ladder 270, [lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md)).
 
+How far to trust the review lanes: on 24 of the project's own fixed errors and 24 verified claims, both caught every error when the evidence was in the packet. GPT-6 Astra (xhigh) also accused a quarter of the sound claims at 0.90–0.99 confidence, Opus 5.5 one in 24. Neither was measurably harsher on claims that make the group look costlier, though the test is too small to rule out a moderate bias. Treat an Astra accusation as a lead to verify (ladder 271, [lane](../infra/immigration-fiscal/reviewer_calibration_2026_09_29/RESULT.md)).
+
 **September 26 schools case (the main case until 2026-09-27): $258–292bn/year conditional net cost to other US
 residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
 [decision](../decisions/2026-09-26-main-case-schools-full-cost.md), ladder 230). Schools are charged at
