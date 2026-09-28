@@ -35,9 +35,6 @@ def load_headcount():
     return priced, raw
 STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
 
-ORANGE, ORANGE_FILL = "#ca7a5e", "#f2cabc"
-BLUE, BLUE_FILL = "#5c97d2", "#bbd4ee"
-INK, GREY, GREY_FILL = "#111111", "#8d897e", "#e4e1d6"
 
 
 def fail(msg):
@@ -186,161 +183,162 @@ def waterfall_rows(s, stairs, social):
             if any(abs(a - b) > 1e-3 for a, b in zip(v, s[key])):
                 fail(f"{label} subtotal {v} != summary {s[key]}")
     rows = [r for r in rows if not r.get("total") or r.get("main")]
-    # Alternative and beside rows, typed from the ladder (entries 257, 195, 253, candidate v3 RESULT).
+    # Other ways to count, typed from the research record (pension accrual, property-tax receipts, social rows).
+    alt = [290.5, 355.8]
     rows += [
-        dict(label="Alternative: property taxes follow people", note="with smaller tax-key fixes (253, 249)", pending=True,
-             prev=list(tot), value=[290.5, 355.8]),
-        dict(label="+ pensions counted when earned", note="current-law benefits (257)", pending=True,
-             prev=[290.5, 355.8], value=[368.0, 429.0]),
-        dict(label="Main estimate + costs outside budgets", note="victims, traffic, housing, fear (195, 258)", beside=True,
-             prev=list(tot), value=list(social)),
+        dict(label="Property taxes follow people, with smaller tax fixes", alt=True, prev=list(tot), value=alt),
+        dict(label="Pensions counted when earned", alt=True, prev=alt, value=[368.0, 429.0]),
+        dict(label="Costs outside public budgets", beside=True, prev=list(tot), value=list(social)),
     ]
     return rows
 
 
-def tornado_rows(s, bands, social):
+# Ledger categories: (category, [(step label on the staircase, reader label, note)]). Items inside a category
+# are ranked by size at render time. Two staircase steps can share one reader label; they are summed.
+LEDGER = [
+    ("The group's own taxes and benefits", [
+        ("Taxes paid minus benefits received", "Taxes paid minus benefits received", "survey values"),
+        ("Taxes checked against records", "Taxes corrected with records", "off-books work, survey fill-ins, top incomes"),
+        ("Benefits and services checked against records", "Benefits and services corrected with records",
+         "tax credits, medical care, schools, care"),
+        ("Gain from their work", "Taxes on the gain from their work", "wages and profits of others"),
+        ("Consumption taxes on spending", "Sales and excise taxes", "net of saving and remittances"),
+    ]),
+    ("Schools and colleges", [
+        ("Schools, first-year budget response", "Schools, full cost per pupil",
+         "spending rises about 1% per 1% more pupils"),
+        ("Schools, long run: full cost per pupil", "Schools, full cost per pupil", None),
+        ("Colleges and other education", "Colleges and other education", ""),
+    ]),
+    ("Other public services", [
+        ("Police, courts and prisons", "Police, courts and prisons", "charged by use"),
+        ("General administration", "General administration", "0.60–0.85% per 1% more residents"),
+        ("Welfare administration, housing, community", "Welfare administration, housing, community", ""),
+        ("Public health services", "Public health", ""),
+        ("Roads, parks: long-run response", "Roads and parks", "0.73% and 0.95% per 1% more residents"),
+        ("Rental assistance at 1", "Rental assistance", ""),
+        ("Unpaid hospital care", "Unpaid hospital care", "charged by uninsured use"),
+    ]),
+    ("Public capital and enterprises", [
+        ("Return on public capital", "Return on public capital", "2% real at the low end, 3% at the high end"),
+        ("Government enterprises", "Government enterprises", "operating loss and capital return"),
+    ]),
+]
+
+
+def num(x, signed=True):
+    """Whole $bn with a true minus sign; '0' when it rounds to zero."""
+    r = round(x)
+    if r == 0:
+        return "0"
+    return (("+" if r > 0 else "−") if signed else ("" if r > 0 else "−")) + f"{abs(r)}"
+
+
+def cells(v, signed=True, cls=""):
+    tone = lambda x: "gain" if round(x) < 0 else ("cost" if round(x) > 0 else "")
+    return "".join(f'<td class="n {tone(x) if signed else ""} {cls}">{num(x, signed)}</td>' for x in v)
+
+
+def ledger_html(rows):
+    """Two-level ledger: category subtotals, items ranked by size, columns that sum to the main estimate."""
+    steps = {r["label"]: r["step"] for r in rows if "step" in r}
+    used = set()
+    body, total = [], [0.0, 0.0]
+    for cat, items in LEDGER:
+        merged = {}
+        for step_label, label, note in items:
+            if step_label not in steps:
+                fail(f"ledger item {step_label!r} is not a staircase step")
+            used.add(step_label)
+            m = merged.setdefault(label, dict(v=[0.0, 0.0], note=note))
+            m["v"] = [a + b for a, b in zip(m["v"], steps[step_label])]
+            if note is not None:
+                m["note"] = note
+        sub = [sum(m["v"][i] for m in merged.values()) for i in (0, 1)]
+        total = [total[i] + sub[i] for i in (0, 1)]
+        body.append(f'<tbody><tr class="cat"><th scope="rowgroup">{html.escape(cat)}</th>{cells(sub)}</tr>')
+        for label, m in sorted(merged.items(), key=lambda kv: -max(abs(kv[1]["v"][0]), abs(kv[1]["v"][1]))):
+            note = f'<span class="note">{html.escape(m["note"])}</span>' if m["note"] else ""
+            body.append(f'<tr class="item"><td>{html.escape(label)}{note}</td>{cells(m["v"])}</tr>')
+        body.append("</tbody>")
+    missing = set(steps) - used
+    if missing:
+        fail(f"staircase steps missing from the ledger: {sorted(missing)}")
+    main = next(r for r in rows if r.get("main"))["value"]
+    if any(abs(a - b) > 1e-3 for a, b in zip(total, main)):
+        fail(f"ledger sums to {total}, main estimate is {main}")
+    head = ('<thead><tr><th></th><th class="n">Low end</th><th class="n">High end</th></tr></thead>')
+    foot = f'<tfoot><tr class="total"><th>Main estimate</th>{cells(main, signed=False)}</tr></tfoot>'
+    return f'<table class="ledger">{head}{"".join(body)}{foot}</table>'
+
+
+def alternatives_html(rows):
+    """Other ways to count, as running sums from the main estimate."""
+    main = next(r for r in rows if r.get("main"))["value"]
+    out = [f'<tr class="cat"><th>Main estimate</th>{cells(main, signed=False)}</tr>']
+    for r in rows:
+        if r.get("alt") or r.get("beside"):
+            step = [r["value"][i] - r["prev"][i] for i in (0, 1)]
+            if r.get("beside"):
+                out.append('<tr class="cat"><th colspan="3">Separately, outside public budgets</th></tr>'
+                           f'<tr class="item"><td>Main estimate</td>{cells(main, signed=False)}</tr>')
+            out.append(f'<tr class="item"><td>{html.escape(r["label"])}</td>{cells(step)}</tr>')
+            out.append(f'<tr class="sub"><td>= total</td>{cells(r["value"], signed=False)}</tr>')
+    head = '<thead><tr><th></th><th class="n">Low end</th><th class="n">High end</th></tr></thead>'
+    return f'<table class="ledger alt">{head}<tbody>{"".join(out)}</tbody></table>'
+
+
+def assumption_rows(s, bands):
+    """(category, label, change at low end, change at high end, kind, link target). Link target: a finding's
+    ladder ref, or "§<group id>" when no single finding covers the assumption."""
     m = bands["adopted"]
 
     def d(key):
         return [bands[key][0] - m[0], bands[key][1] - m[1]]
 
-    rows = [
-        ("Capital return at 7%, not 2–3%", d("capital_return_at_7pct"), "beside", "238"),
-        ("Pensions counted when earned", [77.3, 73.6], "waiting", "257"),
-        ("Services other than schools held fixed", [bands["long_run_non_school_fixed:adopted"][i] - m[i] for i in (0, 1)], "arm", "§services"),
-        ("Costs outside budgets added", [social[0] - m[0], social[1] - m[1]], "beside", "§social"),
-        ("No return on public capital", d("without_capital_return"), "arm", "238"),
-        ("Roads and parks at CBO's lag of 0", [bands["cbo_category_lag_non_school_full:with_rental_assistance_capital_and_enterprises"][i] - m[i] for i in (0, 1)], "arm", "237"),
-        ("General administration fixed (earlier version)", [-28.5, -40.6], "arm", "211"),
-        ("Property taxes follow people", [-27.19, -27.19], "candidate", "253"),
-        ("Schools at within-district 0.836", d("school_within_district"), "arm", "230"),
-        ("Every service fully proportional", [bands["proportional_reference:adopted"][i] - m[i] for i in (0, 1)], "arm", "§services"),
-        ("Enterprises left out", d("enterprises_out_option_a"), "arm", "§conventions"),
-        ("Sampling noise (95%)", [20.8, 20.8], "noise", "184"),
-        ("Natives and immigrants poor substitutes, ε = 3", [-13.8, -9.1], "arm", "176"),
-        ("Survey data left uncorrected", d("uncorrected_at_adopted_responses"), "arm", "§data"),
-        ("Census income fill-ins left in", d("no_fill_in_correction"), "arm", "208"),
-        ("Rental assistance at 0", d("rental_assistance_at_0"), "arm", "§services"),
-        ("Income-tax shares matched to IRS", [-3.2, -3.1], "candidate", "249"),
+    resp, count, data, econ = ("How budgets respond to more people", "What the account counts",
+                               "Data corrections and noise", "How the economy responds")
+    return [
+        (resp, "Services other than schools held fixed", *d("long_run_non_school_fixed:adopted"), "", "§services"),
+        (resp, "Roads and parks respond only after years, as CBO assumes",
+         *d("cbo_category_lag_non_school_full:with_rental_assistance_capital_and_enterprises"), "", "237"),
+        (resp, "General administration held fixed", -28.5, -40.6, "approximate", "211"),
+        (resp, "Schools respond at the within-district 0.836", *d("school_within_district"), "", "230"),
+        (resp, "Every service grows fully with population", *d("proportional_reference:adopted"), "", "§services"),
+        (resp, "Rental assistance held fixed", *d("rental_assistance_at_0"), "", "§services"),
+        (count, "Public capital earns 7%, not 2–3%", *d("capital_return_at_7pct"), "", "238"),
+        (count, "No return on public capital", *d("without_capital_return"), "", "238"),
+        (count, "Government enterprises left out", *d("enterprises_out_option_a"), "", "§conventions"),
+        (data, "Sampling noise, 95% interval", 20.8, 20.8, "noise", "184"),
+        (data, "Survey answers left uncorrected", *d("uncorrected_at_adopted_responses"), "", "§data"),
+        (data, "Census income fill-ins left in", *d("no_fill_in_correction"), "", "208"),
+        (econ, "Natives and immigrants are poor substitutes (ε = 3)", -13.8, -9.1, "", "176"),
     ]
-    return sorted(rows, key=lambda r: -max(abs(r[1][0]), abs(r[1][1])))
 
 
-# ---------------------------------------------------------------- rendering
-
-def fmt(x):
-    return f"{abs(x):.0f}"
-
-
-def rng(a, b):
-    lo, hi = sorted((abs(a), abs(b)))
-    return fmt(lo) if round(lo) == round(hi) else f"{fmt(lo)}–{fmt(hi)}"
-
-
-def words(a, b):
-    if a >= 0 and b >= 0:
-        return f"worse off by {rng(a, b)}"
-    if a <= 0 and b <= 0:
-        return f"better off by {rng(a, b)}"
-    if max(abs(a), abs(b)) < 1:
-        return "about 0"
-    return f"{fmt(a)} / {fmt(b)}"
-
-
-def svg_waterfall(rows):
-    x0, x1 = -100.0, 540.0
-    lw, W, rh = 290, 800, 30
-    pw = W - lw - 20
-
-    def X(v):
-        return lw + (v - x0) / (x1 - x0) * pw
-
-    H = 40 + rh * len(rows) + 30
-    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Waterfall from taxes minus benefits to the main case" class="chart">']
-    for t in range(-100, 501, 100):
-        if t > x1:
-            break
-        out.append(f'<line x1="{X(t):.1f}" x2="{X(t):.1f}" y1="28" y2="{H - 26}" class="grid{" zero" if t == 0 else ""}"/>')
-        out.append(f'<text x="{X(t):.1f}" y="{H - 10}" class="tick" text-anchor="middle">{abs(t)}</text>')
-    out.append(f'<text x="{X(0) - 6:.1f}" y="18" class="axis" text-anchor="end">← everyone else better off</text>')
-    out.append(f'<text x="{X(0) + 6:.1f}" y="18" class="axis">everyone else worse off, $bn a year →</text>')
-    y = 36
+def assumptions_html(rows, labels, sections):
+    size = lambda r: max(abs(r[2]), abs(r[3]))
+    cats = {}
     for r in rows:
-        cls = "main" if r.get("main") else ("total" if r.get("total") else "")
-        out.append(f'<text x="{lw - 10}" y="{y + 13}" class="lab {cls}" text-anchor="end">{html.escape(r["label"])}</text>')
-        if r.get("note"):
-            out.append(f'<text x="{lw - 10}" y="{y + 25}" class="note" text-anchor="end">{html.escape(r["note"])}</text>')
-        v = r["value"]
-        if r.get("total"):
-            a, b = sorted(v)
-            out.append(f'<rect x="{X(0):.1f}" y="{y + 3}" width="{X(a) - X(0):.1f}" height="16" fill="{GREY_FILL}"/>')
-            out.append(f'<rect x="{X(a):.1f}" y="{y + 3}" width="{X(b) - X(a):.1f}" height="16" fill="{"#57544c" if r.get("main") else GREY}"/>')
-            out.append(f'<text x="{X(b) + 6:.1f}" y="{y + 15}" class="val {cls}">{fmt(a)}–{fmt(b)}</text>')
-        else:
-            p = r["prev"]
-            dash = ' stroke-dasharray="3 2"' if r.get("pending") or r.get("beside") else ""
-            for k, dy in ((0, 3), (1, 12)):
-                lo, hi = sorted((p[k], v[k]))
-                worse = v[k] >= p[k]
-                fill = "none" if dash else (ORANGE_FILL if worse else BLUE_FILL)
-                line = ORANGE if worse else BLUE
-                out.append(f'<rect x="{X(lo):.1f}" y="{y + dy}" width="{max(X(hi) - X(lo), 1):.1f}" height="8" fill="{fill}" stroke="{line}" stroke-width="1"{dash}/>')
-            steps = [v[0] - p[0], v[1] - p[1]]
-            txt = words(*steps)
-            if r.get("pending") or r.get("beside"):
-                txt = f"{fmt(v[0])}–{fmt(v[1])}"
-            xr = X(max(p[0], p[1], v[0], v[1])) + 6
-            out.append(f'<text x="{xr:.1f}" y="{y + 15}" class="val">{txt}</text>')
-        y += rh
-    out.append("</svg>")
-    return "\n".join(out)
-
-
-def svg_tornado(rows, labels, sections):
-    """Each row links to the finding that holds its ladder ref, or to a section ("§<id>") when no single
-    finding covers the assumption. An unknown target fails."""
-    x0, x1 = -70.0, 110.0
-    lw, W, rh = 330, 760, 24
-    pw = W - lw - 90
-
-    def X(v):
-        return lw + (v - x0) / (x1 - x0) * pw
-
-    H = 40 + rh * len(rows) + 26
-    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="How far each choice moves the main case" class="chart">']
-    for t in range(-60, 101, 20):
-        out.append(f'<line x1="{X(t):.1f}" x2="{X(t):.1f}" y1="28" y2="{H - 24}" class="grid{" zero" if t == 0 else ""}"/>')
-        out.append(f'<text x="{X(t):.1f}" y="{H - 8}" class="tick" text-anchor="middle">{abs(t)}</text>')
-    out.append(f'<text x="{X(0) - 6:.1f}" y="18" class="axis" text-anchor="end">← lower cost</text>')
-    out.append(f'<text x="{X(0) + 6:.1f}" y="18" class="axis">higher cost, $bn a year →</text>')
-    tag = {"waiting": "alternative", "candidate": "alternative", "beside": "beside", "arm": "", "noise": "noise"}
-    y = 34
-    for label, (a, b), status, ref in rows:
-        if ref.startswith("§") and ref[1:] in sections:
-            flabel, fid = f"§{sections[ref[1:]]}", ref[1:]
-        elif ref in labels:
-            flabel, fid = labels[ref]
-        else:
-            fail(f"tornado row {label!r} targets {ref}, which is neither a finding's ladder ref nor a section")
-        out.append(f'<a href="#{fid}"><text x="{lw - 10}" y="{y + 13}" class="lab" text-anchor="end">'
-                   f'{html.escape(label)}<tspan class="ref"> · {flabel}</tspan></text></a>')
-        for k, dy, v in ((0, 3, a), (1, 11, b)):
-            if status == "noise":
-                lo, hi = -v, v
-                col, fill = GREY, GREY_FILL
+        cats.setdefault(r[0], []).append(r)
+    body = []
+    for cat, items in sorted(cats.items(), key=lambda kv: -max(size(r) for r in kv[1])):
+        body.append(f'<tbody><tr class="cat"><th colspan="4" scope="rowgroup">{html.escape(cat)}</th></tr>')
+        for _c, label, lo, hi, kind, ref in sorted(items, key=lambda r: -size(r)):
+            if ref.startswith("§") and ref[1:] in sections:
+                flabel, fid = f"§{sections[ref[1:]]}", ref[1:]
+            elif ref in labels:
+                flabel, fid = labels[ref]
             else:
-                lo, hi = sorted((0, v))
-                col, fill = (ORANGE, ORANGE_FILL) if v > 0 else (BLUE, BLUE_FILL)
-            dash = ' stroke-dasharray="3 2"' if status in ("waiting", "candidate", "beside") else ""
-            if dash:
-                fill = "none"
-            out.append(f'<rect x="{X(lo):.1f}" y="{y + dy}" width="{max(X(hi) - X(lo), 1):.1f}" height="7" fill="{fill}" stroke="{col}"{dash}/>')
-        val = f"± {fmt(a)}" if status == "noise" else rng(a, b)
-        xr = X(max(0, a, b, (a if status == "noise" else 0))) + 6
-        out.append(f'<text x="{xr:.1f}" y="{y + 14}" class="val">{val}<tspan class="ref"> {tag[status]}</tspan></text>')
-        y += rh
-    out.append("</svg>")
-    return "\n".join(out)
+                fail(f"assumption {label!r} targets {ref}, which is neither a finding's ladder ref nor a section")
+            vals = (f'<td class="n noise" colspan="2">± {round(lo)}</td>' if kind == "noise" else cells([lo, hi]))
+            note = f'<span class="note">{kind}</span>' if kind in ("approximate",) else ""
+            body.append(f'<tr class="item"><td>{html.escape(label)}{note}</td>{vals}'
+                        f'<td class="ref"><a href="#{fid}">{flabel}</a></td></tr>')
+        body.append("</tbody>")
+    head = ('<thead><tr><th>Assumption changed</th><th class="n">Low end</th><th class="n">High end</th>'
+            '<th class="ref">Finding</th></tr></thead>')
+    return f'<table class="ledger assume">{head}{"".join(body)}</table>'
 
 
 
@@ -350,10 +348,12 @@ def main():
     s, bands, stairs = load_numbers()
     social = load_social()
     r = evidence.render(entries, fail)
+    wrows = waterfall_rows(s, stairs, social)
     page = (HERE / "template.html").read_text()
     subs = {
-        "{{WATERFALL}}": svg_waterfall(waterfall_rows(s, stairs, social)),
-        "{{TORNADO}}": svg_tornado(tornado_rows(s, bands, social), r["labels"], r["sections"]),
+        "{{LEDGER}}": ledger_html(wrows),
+        "{{ALTERNATIVES}}": alternatives_html(wrows),
+        "{{ASSUMPTIONS}}": assumptions_html(assumption_rows(s, bands), r["labels"], r["sections"]),
         "{{TOC}}": r["toc"],
         "{{GROUPS}}": r["groups"],
         "{{LEGEND}}": r["legend"],
