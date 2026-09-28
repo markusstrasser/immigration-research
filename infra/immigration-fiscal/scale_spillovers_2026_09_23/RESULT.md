@@ -7,6 +7,8 @@ human-capital spillovers are. The college-share estimates from 1970–2000 data 
 net cost of $109–677bn.
 [CALCULATION: `arms.py` → `derived/summary.csv`, `derived/joint_grid.csv`]
 
+[2026-09-28, the operator's decision: the net, +$13.9bn (95% −$56.6bn to +$84.4bn), joins the social rows of the fiscal-plus-social total from the September 27 case on, whole and as a negative cost, beside PM2.5, road crashes and congestion, the scale costs it answers. The fiscal main case is unchanged; its $6.0bn of induced receipts sits in the social rows with the rest ([decision](../../../decisions/2026-09-28-social-items-scale-benefits.md)).]
+
 - **Scale (agglomeration): +$38.6bn** (95% interval $32.3–45.0bn; $945 per member, $129 per
   other resident). Card, Rothstein & Yi (2023) measure commuting-zone wage premia with worker
   sorting removed. The premia rise 0.020 (high school or less) and 0.043 (some college or more) per log

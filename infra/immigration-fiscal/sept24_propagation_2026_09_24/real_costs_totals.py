@@ -45,6 +45,11 @@ PM2.5 harm to other residents from its consumption (air_pollution_2026_09_28, pm
 externality charged by fault (road_crash_externality_2026_09_28, road_crash_externality_fault_based), both at
 their absolute (with against without) figures, in the same way. Their normalized figures, against as many
 average residents, are reported beside and never added; so is the crash lane's but-for row, an alternative.
+Later still (decision 2026-09-28-social-items-scale-benefits) the matching benefits of scale join the same rows as
+negative costs: the scale lane's joint earnings effect (CZ 1990: bigger cities net of the group's schooling mix;
+its normalized figure is the schooling-mix part, which remains against average residents) and restaurant market
+size (disease_food_2026_09_28). Section 7b keeps only the cost items in its social rows, because its last column
+adds the scale net itself.
 
 Inputs: DIR/band_variants.csv (node band_variants.cjs --case CASE: engine bands on the September 23 case,
 September 24 and the case) and the channel lanes' derived files (PATHS). Reads only; writes
@@ -86,15 +91,20 @@ OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=FISCAL / "s
                 sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived")
 # Cases whose roads respond: congestion beside the account is the response lane's, by band end.
 LONG_RUN = dict(sept27=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json")
-# Cases whose social rows carry added social items for the union: (lane items.csv, item ids, decision) per
-# source. A source with a `measure` column adds its absolute rows and reports its normalized rows beside.
+# Cases whose social rows carry added social items for the union: (lane items.csv, item ids, decision, kind) per
+# source. A source with a `measure` column adds its absolute rows and reports its normalized rows beside. Benefits
+# are negative costs; the scale lane's summary is read through scale_rows().
 SOCIAL_ITEMS = dict(sept27=(
     (FISCAL / "social_costs_unpriced_2026_09_28/derived/items.csv",
-     ("fear_avoidance", "private_security", "school_disruption"), "decisions/2026-09-28-social-items-fear-security-schools.md"),
+     ("fear_avoidance", "private_security", "school_disruption"), "decisions/2026-09-28-social-items-fear-security-schools.md",
+     "cost"),
     (FISCAL / "air_pollution_2026_09_28/derived/items.csv", ("pm25_consumption",),
-     "decisions/2026-09-28-social-items-pollution-crashes.md"),
+     "decisions/2026-09-28-social-items-pollution-crashes.md", "cost"),
     (FISCAL / "road_crash_externality_2026_09_28/derived/items.csv", ("road_crash_externality_fault_based",),
-     "decisions/2026-09-28-social-items-pollution-crashes.md"),
+     "decisions/2026-09-28-social-items-pollution-crashes.md", "cost"),
+    (PATHS["scale"], ("scale_net_earnings",), "decisions/2026-09-28-social-items-scale-benefits.md", "benefit"),
+    (FISCAL / "disease_food_2026_09_28/derived/items.csv", ("restaurant_variety_market_size",),
+     "decisions/2026-09-28-social-items-scale-benefits.md", "benefit"),
 ))
 # Runs of band_variants.cjs beside a case, never in its band (the case's column; the row label, its note).
 BESIDE = dict(capital_at_7pct=("capital_at_7pct", "the return on public capital at the reported 7% on every component; "
@@ -182,12 +192,26 @@ def span_ends(c, low_fiscal, high_fiscal, congestion=None, items=(0.0, 0.0)):
     return low, high
 
 
+def scale_rows(path):
+    """The scale lane's summary as items.csv rows, gains as negative costs. The joint row (CZ 1990, as channels()
+    reads it) is the absolute item. Against as many average residents the size part cancels and the schooling-mix
+    part remains, so the composition row is its normalized figure."""
+    s = pd.read_csv(path)
+    rows = []
+    for measure, table in (("absolute", "joint_grid"), ("normalized", "composition_grid")):
+        r = one(s, (s.table == table) & (s.geography == "CZ 1990"), f"scale {table}, CZ 1990")
+        rows.append(dict(item="scale_net_earnings", group="mexican_origin", measure=measure, low_bn=-float(r.gain_high_bn),
+                         central_bn=-float(r.gain_bn), high_bn=-float(r.gain_low_bn)))
+    return pd.DataFrame(rows)
+
+
 def social_items(sources):
-    """The union's added social items from their lanes' items.csv: (central, stacked low, stacked high) summed,
-    $bn, and one record per item with its normalized figure where the lane reports one (beside, never added)."""
+    """The union's added social items from their lanes' items.csv: (central, stacked low, stacked high) summed over
+    all items and over the cost items, $bn, and one record per item with its normalized figure where the lane
+    reports one (beside, never added)."""
     detail = []
-    for path, ids, decision in sources:
-        frame = pd.read_csv(path)
+    for path, ids, decision, kind in sources:
+        frame = scale_rows(path) if path == PATHS["scale"] else pd.read_csv(path)
         union = frame[(frame.group == "mexican_origin") & frame["item"].isin(ids)]
         measure = union["measure"] if "measure" in union.columns else pd.Series("absolute", index=union.index)
         absolute, normalized = union[measure == "absolute"], union[measure == "normalized"]
@@ -195,13 +219,15 @@ def social_items(sources):
              sorted(absolute["item"]) == sorted(ids), f"{len(absolute)} rows")
         for r in absolute.itertuples():
             n = normalized[normalized["item"] == r.item]
-            detail.append(dict(item=r.item, source=rel(path), decision=decision, central_bn=float(r.central_bn),
+            detail.append(dict(item=r.item, kind=kind, source=rel(path), decision=decision, central_bn=float(r.central_bn),
                                low_bn=float(r.low_bn), high_bn=float(r.high_bn),
                                normalized_bn=None if n.empty else dict(
                                    central=float(n.central_bn.iloc[0]), low=float(n.low_bn.iloc[0]),
                                    high=float(n.high_bn.iloc[0]))))
     gate("social items: no item added twice", len({d["item"] for d in detail}) == len(detail))
-    return tuple(sum(d[k] for d in detail) for k in ("central_bn", "low_bn", "high_bn")), detail
+    gate("social items: every benefit is a gain at its central", all(d["central_bn"] < 0 for d in detail if d["kind"] == "benefit"))
+    sums = lambda ds: tuple(sum(d[k] for d in ds) for k in ("central_bn", "low_bn", "high_bn"))  # noqa: E731
+    return sums(detail), sums([d for d in detail if d["kind"] == "cost"]), detail
 
 
 def half_up(x, places):
@@ -240,7 +266,7 @@ def main():
     if case in LONG_RUN:
         paths.update(case_corrections=FISCAL / LANES[case] / "derived" / "corrections.json", congestion_long_run=LONG_RUN[case])
     if case in SOCIAL_ITEMS:
-        paths.update({f"social_items_{p.parent.parent.name}": p for p, _, _ in SOCIAL_ITEMS[case]})
+        paths.update({f"social_items_{p.parent.parent.name}": p for p, *_ in SOCIAL_ITEMS[case]})
     bands = pd.read_csv(paths["bands"]).set_index(["case", "variant"])
     meta = json.loads(paths["bands_meta"].read_text())
     summaries = dict(sept24=json.loads(paths["main24"].read_text()))
@@ -278,10 +304,15 @@ def main():
         for run in BESIDE:
             gate(f"band file has the {case}_{run} run beside the case", (f"{case}_{run}", "adopted") in bands.index)
     # The added social items by case: (central, stacked low, stacked high); zero before September 28.
+    # §7 carries every added item; §7b's social rows carry the cost items only (its last column adds the scale net).
     items = {k: (0.0, 0.0, 0.0) for k in cols}
+    cost_items = {k: (0.0, 0.0, 0.0) for k in cols}
     item_detail = []
     if case in SOCIAL_ITEMS:
-        items[case], item_detail = social_items(SOCIAL_ITEMS[case])
+        items[case], cost_items[case], item_detail = social_items(SOCIAL_ITEMS[case])
+        scale = [d for d in item_detail if d["item"] == "scale_net_earnings"]
+        gate("the scale item is the scale net §7b adds", all(abs(d["central_bn"] + c["scale_net"]) < 1e-9 for d in scale),
+             f"{[d['central_bn'] for d in scale]} / {c['scale_net']:.4f}")
 
     rows = []
 
@@ -356,9 +387,9 @@ def main():
     add("7", "full_span_with_package_range", "low end", lo_r, note=note)
     add("7", "full_span_with_package_range", "high end", hi_r, note=note)
     if case in SOCIAL_ITEMS:
-        note = ("the union's added social items, in every social row above: " + ", ".join(d["item"] for d in item_detail)
-                + "; property values stay out; normalized figures and the crash lane's but-for row sit beside, never "
-                "added; decisions 2026-09-28")
+        note = ("the union's added social items, costs and benefits (negative), in every §7 social row above: "
+                + ", ".join(d["item"] for d in item_detail) + "; property values stay out; normalized figures and the "
+                "crash lane's but-for row sit beside, never added; decisions 2026-09-28")
         for label, v in zip(("central, both ends", "stacked low, full span", "stacked high, full span"), items[case]):
             add("7", "social_items_2026_09_28", label, {case: v}, note=note)
         for d in item_detail:
@@ -389,7 +420,7 @@ def main():
                 add("7", column, f"published pairing per group member ({end})", {case: pairing[i] / pop_m}, unit="$k", note=note)
 
     print("[§7b: custody footing, benefits priced]")
-    soc = {k: social(c, c["victims_custody"], congestion=cong[k], items=items[k][0]) for k in cols}
+    soc = {k: social(c, c["victims_custody"], congestion=cong[k], items=cost_items[k][0]) for k in cols}
     soc_p = social(c, c["victims_custody"], printed=True)
     f23 = fiscal["sept23"]["custody"]
     fa = {k: fiscal[k]["custody"] for k in adopted}
@@ -460,8 +491,10 @@ def main():
     if case in SOCIAL_ITEMS:
         doc["social_items_in_the_social_rows"] = dict(
             case=case, central_bn=items[case][0], stacked_low_bn=items[case][1], stacked_high_bn=items[case][2],
+            cost_items_bn=dict(zip(("central", "stacked_low", "stacked_high"), cost_items[case])),
             items=item_detail, never_added=("property values; each item's normalized figure; the crash lane's "
-                                            "but-for row; CO2, ozone and government-services emissions; disease and food"))
+                                            "but-for row; CO2, ozone and government-services emissions; disease, food "
+                                            "safety and the cuisine mix"))
     (out_dir / "real_costs_totals.json").write_text(json.dumps(doc, indent=1) + "\n")
     print("\n[result]")
     fmt = lambda v: "" if v is None else f"{v:9.3f}"  # noqa: E731

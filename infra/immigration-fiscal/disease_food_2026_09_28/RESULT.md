@@ -231,6 +231,8 @@ Postel 2018 AER) [TRAINING-DATA] → 0.
 
 ## What can be added beside the account
 
+[2026-09-28, later: the operator added item 4, restaurant market size ($6.8bn benefit, $1.1–19.2bn), to the social rows of the fiscal-plus-social total with the scale lane's net, as the counterpart of the scale costs there; the normalized figure sits beside. The other items stay beside ([decision](../../../decisions/2026-09-28-social-items-scale-benefits.md)).]
+
 1. **Disease (TB, Chagas, neurocysticercosis, hepatitis A, measles):** $0.06bn absolute ($0.01–0.29bn), $0.02bn
    normalized. It can enter as one line; it moves nothing.
 2. **Food safety:** $0.23bn central is an assumption-driven figure; enter it only as a flagged arm ($0–1.6bn).
@@ -332,3 +334,4 @@ the Louisiana violation study beyond its abstract.
   hepatitis A travel share [SOURCE: CDC Surveillance Manual ch. 3]; CDC domestic TB $135m; contact investigations
   $9.94m (2022) [SOURCE: PMC12205448]; NAICS 722 2024 sales $1,144.4bn [SOURCE: Census advance monthly retail].
 - Verdict, table and sections above replace the stub. Remaining gaps are listed under "Gaps and next queries".
+- 2026-09-28 23:04 JST (lead): the operator added restaurant market size (item 4) to the social rows with the scale lane's net (decision 2026-09-28-social-items-scale-benefits); lane outputs unchanged.

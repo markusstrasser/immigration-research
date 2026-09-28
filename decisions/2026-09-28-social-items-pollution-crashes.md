@@ -107,6 +107,9 @@ scale: congestion ($13.0bn), PM2.5 and crashes. None of the matching scale benef
 Evidence-symmetry rule 5 asks that benefits be priced to the same standard as costs. Adding both benefits would
 lower the pairing by $20.7bn. That step is the operator's to take (see Revisit if).
 
+[Later on 2026-09-28 the operator added both, and the pairing is $466.1–540.6bn
+([decision](2026-09-28-social-items-scale-benefits.md)).]
+
 **Winners and losers.** The rerun changes only the published totals the lane quotes. The two items are not
 allocated among other residents. Their harm averages about $390 per other resident a year, spread across the
 295.8m others by exposure. So the lane's 17.8% of other residents who come out ahead is somewhat overstated
