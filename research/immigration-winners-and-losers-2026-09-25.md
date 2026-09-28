@@ -331,7 +331,9 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   $248–304bn: $247.7–298.4bn on the equal footing and $253.4–304.0bn on the custody footing
   ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)). [2026-09-26, later: on the
   schools case $305–350bn: $305.3–344.0bn and $311.0–349.7bn (4e66adb).] [2026-09-28: on the September 27
-  case $363–438bn: $363.4–432.2bn and $369.2–438.0bn (73cc30c).]
+  case $363–438bn: $363.4–432.2bn and $369.2–438.0bn (73cc30c).] [2026-09-28, later: with fear, security
+  and schools $371–446bn: $371.3–440.1bn and $377.1–445.9bn; the three items are not allocated
+  ([decision](../decisions/2026-09-28-social-items-fear-security-schools.md)).]
 
 - **Instrument.** The analysis ran through an LLM with known dispositions on charged topics
   ([caveat](../notes/llm-bias-caveat.md)). Every figure here comes from scripts the parent re-ran
