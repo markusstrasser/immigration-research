@@ -77,3 +77,15 @@ The bias is **weakest** on:
   Freedman–Owens–Bohn although the repo treats ethnicity coding as a bias elsewhere. The check that
   would have caught both is a symmetry test: name the flaw, then search the repo for the same flaw
   on the other side and grade both alike (proposed in the audit memo, awaiting the operator).
+
+- 2026-09-29, [reviewer calibration](../infra/immigration-fiscal/reviewer_calibration_2026_09_29/RESULT.md)
+  (ladder 271): the review lanes were tested on 24 errors this repo made and fixed (half mirrored
+  with the direction reversed) and 24 claims that survived verification. Both lanes caught every
+  error when the decisive evidence was in the packet. GPT-6 Astra (xhigh) accused 6 of 24 sound
+  claims at 0.90–0.99 confidence, Opus 5.5 (max) 1 of 24. Neither was harsher on claims that make
+  immigrants look costlier: sound claims in that direction drew 2 accusations in 24, and those in the
+  other direction 5 in 24, 3 of which found real defects in two synthetic mirrors. At this size
+  (12 sound claims per direction and reviewer) only a very large direction bias is ruled out; a
+  0.25-against-0.05 gap needs about 45–50 per direction. The test does not reach the audit's pattern
+  above, which is the repo overstating sources, not reviewers misjudging a claim with its evidence in
+  view.
