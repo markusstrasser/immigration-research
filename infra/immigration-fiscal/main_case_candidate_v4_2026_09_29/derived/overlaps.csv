@@ -1,0 +1,33 @@
+line,items,kind,rule,value,chosen,base,set_cost_spec48_bn,set_cost_spec11_bn,change_from_chosen_spec48_bn,change_from_chosen_spec11_bn
+"receipts:personal_motor_vehicle",state+roads,"both move the line",licence_rule,index_on_miles,yes,set,371.4146,434.8410,0.0000,0.0000
+"receipts:personal_motor_vehicle",state+roads,"both move the line",licence_rule,additive,no,set,371.3613,434.8128,-0.0533,-0.0281
+"receipts:personal_motor_vehicle",state+roads,"both move the line",licence_rule,miles_only,no,set,372.1085,435.5349,0.6939,0.6939
+"receipts:personal_motor_vehicle",state+roads,"both move the line",licence_rule,index_only,no,set,371.1580,434.7057,-0.2566,-0.1352
+"receipts:personal_motor_vehicle",state+roads,"both move the line",licence_rule,index_on_miles,yes,cash,294.7011,361.8175,0.0000,0.0000
+"receipts:personal_motor_vehicle",state+roads,"both move the line",licence_rule,additive,no,cash,294.6477,361.7894,-0.0533,-0.0281
+"receipts:personal_motor_vehicle",state+roads,"both move the line",licence_rule,miles_only,no,cash,295.3950,362.5114,0.6939,0.6939
+"receipts:personal_motor_vehicle",state+roads,"both move the line",licence_rule,index_only,no,cash,294.4445,361.6822,-0.2566,-0.1352
+"receipts:general_sales_tax",6a+state,"both move the line",sales_rule,multiplicative,yes,set,371.4146,434.8410,0.0000,0.0000
+"receipts:general_sales_tax",6a+state,"both move the line",sales_rule,additive,no,set,371.4474,434.8729,0.0328,0.0319
+"receipts:general_sales_tax",6a+state,"both move the line",sales_rule,multiplicative,yes,cash,294.7011,361.8175,0.0000,0.0000
+"receipts:general_sales_tax",6a+state,"both move the line",sales_rule,additive,no,cash,294.7339,361.8494,0.0328,0.0319
+"receipts:excise_selective_sales",6a+roads,"both move the line",excise_rule,gasoline_at_miles,yes,set,371.4146,434.8410,0.0000,0.0000
+"receipts:excise_selective_sales",6a+roads,"both move the line",excise_rule,additive,no,set,371.3808,434.8081,-0.0338,-0.0329
+"receipts:excise_selective_sales",6a+roads,"both move the line",excise_rule,multiplicative,no,set,371.3724,434.7999,-0.0422,-0.0410
+"receipts:excise_selective_sales",6a+roads,"both move the line",excise_rule,gasoline_at_miles,yes,cash,294.7011,361.8175,0.0000,0.0000
+"receipts:excise_selective_sales",6a+roads,"both move the line",excise_rule,additive,no,cash,294.6672,361.7846,-0.0338,-0.0329
+"receipts:excise_selective_sales",6a+roads,"both move the line",excise_rule,multiplicative,no,cash,294.6589,361.7765,-0.0422,-0.0410
+"road key (freight part) -> spending:roads_vmt_sl, roads_vmt_fed, capital:hwy_sl, hwy_fed",6a+roads,"roads reads a key 6a moves",freight_key,set,yes,set,371.4146,434.8410,0.0000,0.0000
+"road key (freight part) -> spending:roads_vmt_sl, roads_vmt_fed, capital:hwy_sl, hwy_fed",6a+roads,"roads reads a key 6a moves",freight_key,sept27,no,set,371.3861,434.7973,-0.0285,-0.0437
+"road key (freight part) -> spending:roads_vmt_sl, roads_vmt_fed, capital:hwy_sl, hwy_fed",6a+roads,"roads reads a key 6a moves",freight_key,set,yes,cash,294.7011,361.8175,0.0000,0.0000
+"road key (freight part) -> spending:roads_vmt_sl, roads_vmt_fed, capital:hwy_sl, hwy_fed",6a+roads,"roads reads a key 6a moves",freight_key,sept27,no,cash,294.6725,361.7738,-0.0285,-0.0437
+"receipts:federal_income_tax",3+6a+pension,"all three move the line",benefit_tax_rule,fixed,yes,set,371.4146,434.8410,0.0000,0.0000
+"receipts:federal_income_tax",3+6a+pension,"all three move the line",benefit_tax_rule,proportional,no,set,371.4693,434.8895,0.0547,0.0485
+"OASDI receipts -> spending:social_security",6a+pension,"the accrual reads receipts 6a moves",accrual_receipts,set,yes,set,371.4146,434.8410,0.0000,0.0000
+"OASDI receipts -> spending:social_security",6a+pension,"the accrual reads receipts 6a moves",accrual_receipts,sept27,no,set,371.9778,435.4239,0.5632,0.5829
+"HI receipts -> spending:medicare (Part A accrual)",6a+pension,"a read the switch does not make",part_a_rule,fixed,yes,set,371.4146,434.8410,0.0000,0.0000
+"HI receipts -> spending:medicare (Part A accrual)",6a+pension,"a read the switch does not make",part_a_rule,hi_scaled,no,set,371.2457,434.6526,-0.1689,-0.1884
+"receipts:federal_income_tax",3+6a,"6a's ratio after item 3's shift (v3's order)",item3_6a_order,ratio_on_rekeyed_amount,yes,set,371.4146,434.8410,0.0000,0.0000
+"receipts:federal_income_tax",3+6a,"6a's ratio after item 3's shift (v3's order)",item3_6a_order,additive,no,set,371.4064,434.8295,-0.0082,-0.0115
+"receipts:federal_income_tax",3+6a,"6a's ratio after item 3's shift (v3's order)",item3_6a_order,ratio_on_rekeyed_amount,yes,cash,294.7011,361.8175,0.0000,0.0000
+"receipts:federal_income_tax",3+6a,"6a's ratio after item 3's shift (v3's order)",item3_6a_order,additive,no,cash,294.6928,361.8060,-0.0082,-0.0115

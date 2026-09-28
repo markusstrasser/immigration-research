@@ -1,0 +1,16 @@
+item,label,alone_spec48_bn,alone_spec11_bn,marginal_in_set_spec48_bn,marginal_in_set_spec11_bn,interaction_in_set_spec48_bn,interaction_in_set_spec11_bn,marginal_in_cash_spec48_bn,marginal_in_cash_spec11_bn,interaction_in_cash_spec48_bn,interaction_in_cash_spec11_bn
+1,"public housing's deficit at the tenant key",-1.6912,-1.6912,-1.6912,-1.6912,0.0000,0.0000,-1.6912,-1.6912,0.0000,0.0000
+2,"production on the account's weights",1.6427,1.1074,1.6427,1.1074,0.0000,0.0000,1.6427,1.1074,-0.0000,0.0000
+3,"the IRS-matched income-tax key",-3.2005,-3.0966,-3.1923,-3.0851,0.0082,0.0115,-3.1923,-3.0851,0.0082,0.0115
+4,"public housing's capital at the tenant key",-0.3529,-0.5293,-0.3529,-0.5293,-0.0000,0.0000,-0.3529,-0.5293,-0.0000,0.0000
+5,"long-run property taxes",-27.1863,-27.1863,-27.1863,-27.1863,0.0000,0.0000,-27.1863,-27.1863,-0.0000,0.0000
+6a,"payroll compliance, the all-central items, proportional rule",0.3866,0.5272,-0.1389,0.0004,-0.5254,-0.5268,0.4243,0.5834,0.0378,0.0562
+7,"workers' compensation pooled over 2019-2024, workers' compensation line only",-0.9482,-0.7324,-0.9482,-0.7324,0.0000,0.0000,-0.9482,-0.7324,0.0000,0.0000
+pension,"pension accrual at payable benefits, net of the tax on benefits (switch)",77.2767,73.6064,76.7135,73.0235,-0.5632,-0.5829,,,,
+state,"state pricing, the lane's central package",2.1846,2.2713,2.2051,2.2675,0.0205,-0.0038,2.2051,2.2675,0.0205,-0.0038
+roads,"roads keyed by miles, fuel taxes and licences to match",1.9560,3.6931,2.0717,3.7978,0.1157,0.1047,2.0717,3.7978,0.1157,0.1047
+sum_alone,"sum of the items alone",50.0673,47.9696,,,,,-27.2094,-25.6369,,
+joint,"the set's change from the September 27 case (set; cash set)",49.5952,47.4709,,,,,-27.1183,-25.5526,,
+interaction_total,"joint less the sum alone (set; cash set)",-0.4721,-0.4986,,,,,0.0911,0.0843,,
+interaction_pairwise,"sum of the pairwise interactions on the September 27 case",-0.4721,-0.4986,,,,,0.0911,0.0843,,
+interaction_higher_order,"total less the pairwise sum",0.0000,-0.0000,,,,,0.0000,-0.0000,,

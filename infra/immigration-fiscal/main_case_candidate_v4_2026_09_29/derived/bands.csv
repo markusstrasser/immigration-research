@@ -1,0 +1,22 @@
+case,label,method,spec48_bn,spec11_bn,per_member_spec48_usd,per_member_spec11_usd,own_low_spec,own_high_spec,own_low_bn,own_high_bn
+sept27,"the September 27 case (adopted)",b_hotdeck_union_matched,318.5777,385.1137,8022,9698,48,11,318.5777,385.1137
+sept27,"the September 27 case (adopted)",b_matched_over_pooled,325.0610,389.6264,8185,9811,48,11,325.0610,389.6264
+sept27,"the September 27 case (adopted)",mean,321.8194,387.3701,8104,9754,48,11,321.8194,387.3701
+set,"candidate v4: the set with the pension switch (payable, net)",b_hotdeck_union_matched,367.3119,431.9708,9249,10877,48,11,367.3119,431.9708
+set,"candidate v4: the set with the pension switch (payable, net)",b_matched_over_pooled,375.5173,437.7111,9456,11022,48,11,375.5173,437.7111
+set,"candidate v4: the set with the pension switch (payable, net)",mean,371.4146,434.8410,9353,10950,48,11,371.4146,434.8410
+cash,"candidate v4: the cash set (pension switch off)",b_hotdeck_union_matched,291.3883,359.4591,7337,9052,48,11,291.3883,359.4591
+cash,"candidate v4: the cash set (pension switch off)",b_matched_over_pooled,298.0138,364.1759,7504,9170,48,11,298.0138,364.1759
+cash,"candidate v4: the cash set (pension switch off)",mean,294.7011,361.8175,7421,9111,48,11,294.7011,361.8175
+set_plus_8,"the set with item 8 (beside)",b_hotdeck_union_matched,367.4815,432.1516,9254,10882,48,11,367.4815,432.1516
+set_plus_8,"the set with item 8 (beside)",b_matched_over_pooled,375.6870,437.8919,9460,11027,48,11,375.6870,437.8919
+set_plus_8,"the set with item 8 (beside)",mean,371.5842,435.0218,9357,10954,48,11,371.5842,435.0218
+set_plus_10,"the set with item 10 (beside)",b_hotdeck_union_matched,365.7784,429.7284,9211,10821,48,11,365.7784,429.7284
+set_plus_10,"the set with item 10 (beside)",b_matched_over_pooled,373.9838,435.4687,9417,10966,48,11,373.9838,435.4687
+set_plus_10,"the set with item 10 (beside)",mean,369.8811,432.5986,9314,10893,48,11,369.8811,432.5986
+cash_plus_8,"the cash set with item 8 (beside)",b_hotdeck_union_matched,291.5580,359.6399,7342,9056,48,11,291.5580,359.6399
+cash_plus_8,"the cash set with item 8 (beside)",b_matched_over_pooled,298.1834,364.3567,7509,9175,48,11,298.1834,364.3567
+cash_plus_8,"the cash set with item 8 (beside)",mean,294.8707,361.9983,7425,9115,48,11,294.8707,361.9983
+cash_plus_10,"the cash set with item 10 (beside)",b_hotdeck_union_matched,289.8548,357.2167,7299,8995,48,11,289.8548,357.2167
+cash_plus_10,"the cash set with item 10 (beside)",b_matched_over_pooled,296.4803,361.9335,7466,9114,48,11,296.4803,361.9335
+cash_plus_10,"the cash set with item 10 (beside)",mean,293.1676,359.5751,7382,9054,48,11,293.1676,359.5751
