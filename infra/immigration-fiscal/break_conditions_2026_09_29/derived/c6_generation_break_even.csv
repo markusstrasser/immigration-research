@@ -1,0 +1,7 @@
+convention,generation,uncorrected_cost_low_end_bn,uncorrected_cost_high_end_bn,correction_low_end_bn,correction_high_end_bn,break_even_personal_least,break_even_personal_most,break_even_shared_least,break_even_shared_most
+a,G1,91.1385,76.7635,2.6341,1.5491,-0.1239,0.1076,-0.0633,0.0968
+a,G2,134.2928,161.3448,-6.7133,-8.3919,0.0627,0.1244,0.0050,0.0723
+a,G3plus,107.3180,160.1996,-6.8507,-4.0951,0.0269,0.0830,0.1467,0.2146
+b,G1,163.6534,196.5663,-4.6387,-5.7650,-0.1835,-0.0788,-0.1559,-0.0463
+b,G2,91.4357,99.1749,-4.1224,-4.1765,0.1745,0.2581,0.1505,0.2303
+b,G3plus,77.6601,102.5668,-2.1689,-0.9964,0.1312,0.2049,0.1904,0.2691

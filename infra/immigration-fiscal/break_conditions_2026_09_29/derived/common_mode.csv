@@ -1,0 +1,20 @@
+premise_id,premise,kind,C1,C2,C3,C4,C5,C6,C7,C8,C9,n_conclusions,rank,best_supported_alternative,effect_if_swapped
+P01,"Survey frame: CPS ASEC / ACS Mexican-origin self-ID and parental birthplace, 40.9M in three generations",measured (survey),1,1,1,1,1,1,1,1,1,9,1,"ACS level for the Mexico-born (CPS +9–13%, 209); NVSS births for the G2/G3 split (255)","C1 −$2.2–2.5bn (−0.7%) [DATA: 209]; C2 ≈0 (removed people pay about what they cost, 209); C6 moves young children from G3+ to G2, not computed [GAP], signs hold [INFERENCE]; C7 imputed unauthorized 4.57M → ~4.07M, contrast not recomputed [GAP]; C3, C4, C5, C8 < 1% [INFERENCE]; C9 unaffected. Breaks none."
+P02,"Removal counterfactual over one income year (2024), people alive in 2024, no lifetime",convention,1,1,1,1,1,1,1,1,0,8,2,First-year budget horizon (ladder 229),"C1 −37% BREAK; C4 pairing ≈ −29% BREAK [INFERENCE: add held fixed]; C2 sign holds; C5 winners within 0.1pt (226, Sept 26 base); C6 each generation within $1bn (224, Sept 26 base); C8 not rerun [GAP]. Breaks two."
+P08,"Dataset corrections, including an on-books share of 0.526 for flagged Mexico-born workers",measured in part; on-books share assumed,1,1,1,1,0,1,1,1,0,7,3,No corrections (uncorrected model),C1 +$10.9bn (+3%); C2 tally $66.4 / 54.5bn [CALCULATION: c2_tally.csv]; C3 is this premise; C6 −$8.4 to +$2.6bn per generation; C7 raw vs adjusted contrast changes direction (85). Breaks none.
+P03,"Service budgets respond at long-run average cost (schools 1, general government 0.60–0.85, roads/parks long run)",assumed (cross-section slopes),1,1,0,1,1,1,0,1,0,6,4,Schools at the within-district 0.836 (the only within-unit estimate),C1 −8% ($295.9–363.0bn); C2 sign holds; C4 pairing −6%; C6 holds [INFERENCE]; C8 −$11bn (−3%) [INFERENCE: 15% of the $72bn schools difference]. Breaks none.
+P05,"Social Security and Medicare counted as cash, not accrual",convention,1,1,0,1,1,1,0,1,0,6,5,Accrual at payable benefits (ladder 257),C2 clause 1 BREAK (tally −$15.3 / −24.2bn); C1 +21% (a break with any one more upward item); C4 pairing +17%; C5 SL share 85% → ≈70%; C6 not computed by generation [GAP]; C8 already on accrual ($317.6bn). Breaks one.
+P07,"Allocation keys: CBO incidence and income gradients, use keys for justice and care",convention + measured shares,1,1,1,1,0,1,0,1,0,6,6,,
+P04,Return on public capital at 2–3%,convention,1,1,0,1,1,1,0,0,0,5,7,,
+P09,Legal status imputed by residual rules (benefit receipt defines some legal),imputed,1,1,1,1,0,0,1,0,0,5,8,,
+P10,"Production nest: two skill groups, σ 2, ε infinite, capital adjusts",assumed (calibrated),1,0,0,1,1,1,0,0,0,4,9,,
+P06,Defense and existing interest at zero response,assumed,1,0,0,1,1,0,0,0,0,3,10,,
+P14,Reference group: third-plus non-Hispanic whites at national rates,convention,0,0,0,0,0,1,0,1,1,3,11,,
+P19,"Police-recorded offender ethnicity (NIBRS TX/AZ, SHR; arrests for use keys)",measured,1,0,0,1,0,0,0,0,1,3,12,,
+P15,Ethnic self-identification keeps descendants in the group,measured in part (232),0,0,0,0,0,1,0,0,1,2,13,,
+P16,Cross-sectional generations stand in for lineages,assumed,0,0,0,0,0,1,0,0,1,2,14,,
+P11,"Incidence among residents: where the state-local cost falls, financing rule, household pooling",convention,0,0,0,0,1,0,0,0,0,1,15,,
+P12,"Harm prices: VSL $13.7m, PM2.5 dose-response, Miller victim prices",assumed (published),0,0,0,1,0,0,0,0,0,1,16,,
+P13,Crash-volume elasticity transferred from other networks,assumed (published),0,0,0,1,0,0,0,0,0,1,17,,
+P17,ACS institutional counts identify custody by nativity and ethnicity,"measured, coding errors",0,0,0,0,0,0,0,0,1,1,18,,
+P18,Texas arrest status from DHS record matches,administrative,0,0,0,0,0,0,0,0,1,1,19,,
