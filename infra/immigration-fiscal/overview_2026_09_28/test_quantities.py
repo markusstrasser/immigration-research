@@ -4,7 +4,10 @@
 """
 
 import sys
+from decimal import Decimal
 from pathlib import Path
+
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import quantities as Q  # noqa: E402
@@ -67,3 +70,26 @@ def test_a_table_row_must_carry_the_record_unrounded():
     b = dict(file="build.py", locator="alternatives/x/value", quantity_id="t", view="pair")
     assert Q.value_binding_errors(b, (321.82, 387.37), "x", recs) == []
     assert "a typed number" in Q.value_binding_errors(b, (321.8, 387.4), "x", recs)[0]
+
+
+def test_allocate_makes_printed_parts_add_to_the_printed_total():
+    # the pairing's low end: 317.480153 + 96.264682 = 413.744835; rounded alone, 317.5 + 96.3 = 413.8
+    parts = Q.allocate([317.480153, 96.264682], Q.rounded(413.744835, 1), 1)
+    assert parts == [Decimal("317.5"), Decimal("96.2")] and sum(parts) == Decimal("413.7")
+
+
+def test_allocate_keeps_own_roundings_that_already_add():
+    assert Q.allocate([1.26, 2.33], Q.rounded(3.59, 1), 1) == [Decimal("1.3"), Decimal("2.3")]
+
+
+def test_allocate_moves_a_line_that_prints_alike_at_both_ends_last():
+    # the ledger's first category at the high end: rounded alone the lines add to −76.5, not −76.4
+    vals, total = [-60.2531, -53.5813, 50.2597, -8.7906, -4.0517], Q.rounded(-76.4170, 1)
+    assert Q.allocate(vals, total, 1)[4] == Decimal("-4.0")
+    kept = Q.allocate(vals, total, 1, last={4})
+    assert kept[4] == Decimal("-4.1") and kept[0] == Decimal("-60.2") and sum(kept) == total
+
+
+def test_allocate_refuses_a_total_the_parts_cannot_reach():
+    with pytest.raises(ValueError):
+        Q.allocate([1.0, 2.0], Decimal("5.0"), 1)

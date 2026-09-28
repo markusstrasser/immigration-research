@@ -265,20 +265,20 @@ infra/immigration-fiscal/overview_2026_09_28/groups.py,551,claims/f244/text,0,80
 infra/immigration-fiscal/overview_2026_09_28/groups.py,551,claims/f244/text,1,82,,"Rochester ""80 of 82 residents on visas"": the list counts medical schools, not visas.",mapped,dp
 infra/immigration-fiscal/overview_2026_09_28/groups.py,553,claims/f145/text,0,2003–2026,,Marginal Revolution 2003–2026: mostly agrees with these facts.,mapped,dp
 infra/immigration-fiscal/overview_2026_09_28/groups.py,571,method/f270/text,0,37%,%,The budget horizon breaks two: with first-year budget responses the cost falls by about 37%.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,231,"ledger/Schools, first-year budget response/note",0,1%,%,spending rises about 1% per 1% more pupils,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,231,"ledger/Schools, first-year budget response/note",1,1%,%,spending rises about 1% per 1% more pupils,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/build.py,238,ledger/General administration/note,0,0.59–0.84%,%,0.59–0.84% per 1% more residents,bound: q:gg.growth_elasticity|range,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,238,ledger/General administration/note,1,1%,%,0.59–0.84% per 1% more residents,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/build.py,242,"ledger/Roads, parks: long-run response/note",0,0.73%,%,0.73% and 0.95% per 1% more residents,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,242,"ledger/Roads, parks: long-run response/note",1,0.95%,%,0.73% and 0.95% per 1% more residents,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,242,"ledger/Roads, parks: long-run response/note",2,1%,%,0.73% and 0.95% per 1% more residents,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/build.py,247,ledger/Return on public capital/note,0,2%,%,"2% real at the low end, 3% at the high end",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,247,ledger/Return on public capital/note,1,3%,%,"2% real at the low end, 3% at the high end",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,339,assumptions/Schools respond at the within-district 0.836/label,0,0.836,,Schools respond at the within-district 0.836,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,342,"assumptions/Public capital earns 7%, not 2–3%/label",0,7%,%,"Public capital earns 7%, not 2–3%",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,342,"assumptions/Public capital earns 7%, not 2–3%/label",1,2–3%,%,"Public capital earns 7%, not 2–3%",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/build.py,345,"assumptions/Sampling noise, 95% interval/label",0,95%,%,"Sampling noise, 95% interval",mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/build.py,348,assumptions/Natives and immigrants are poor substitutes (ε = 3)/label,0,3,,Natives and immigrants are poor substitutes (ε = 3),mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,232,"ledger/Schools, first-year budget response/note",0,1%,%,spending rises about 1% per 1% more pupils,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,232,"ledger/Schools, first-year budget response/note",1,1%,%,spending rises about 1% per 1% more pupils,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/build.py,239,ledger/General administration/note,0,0.59–0.84%,%,0.59–0.84% per 1% more residents,bound: q:gg.growth_elasticity|range,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,239,ledger/General administration/note,1,1%,%,0.59–0.84% per 1% more residents,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/build.py,243,"ledger/Roads, parks: long-run response/note",0,0.73%,%,0.73% and 0.95% per 1% more residents,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,243,"ledger/Roads, parks: long-run response/note",1,0.95%,%,0.73% and 0.95% per 1% more residents,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,243,"ledger/Roads, parks: long-run response/note",2,1%,%,0.73% and 0.95% per 1% more residents,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/build.py,248,ledger/Return on public capital/note,0,2%,%,"2% real at the low end, 3% at the high end",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,248,ledger/Return on public capital/note,1,3%,%,"2% real at the low end, 3% at the high end",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,478,assumptions/Schools respond at the within-district 0.836/label,0,0.836,,Schools respond at the within-district 0.836,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,481,"assumptions/Public capital earns 7%, not 2–3%/label",0,7%,%,"Public capital earns 7%, not 2–3%",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,481,"assumptions/Public capital earns 7%, not 2–3%/label",1,2–3%,%,"Public capital earns 7%, not 2–3%",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/build.py,484,"assumptions/Sampling noise, 95% interval/label",0,95%,%,"Sampling noise, 95% interval",mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/build.py,487,assumptions/Natives and immigrants are poor substitutes (ε = 3)/label,0,3,,Natives and immigrants are poor substitutes (ε = 3),mapped,dp
 infra/immigration-fiscal/overview_2026_09_28/template.html,127,What the Mexican-origin population costs other US residents in 2024,0,2024,,"What the Mexican-origin population costs other US residents in 2024, and on what evidence.",mapped,skip
 infra/immigration-fiscal/overview_2026_09_28/template.html,143,Other US residents pay about $355bn a year (322–387).,0,$355bn,$bn,Other US residents pay about $355bn a year (322–387).,mapped,n5
 infra/immigration-fiscal/overview_2026_09_28/template.html,143,Other US residents pay about $355bn a year (322–387).,1,322–387,,Other US residents pay about $355bn a year (322–387).,mapped,dp
@@ -302,40 +302,40 @@ infra/immigration-fiscal/overview_2026_09_28/template.html,150,L150,0,$320bn,$bn
 infra/immigration-fiscal/overview_2026_09_28/template.html,150,L150,1,317–325,,"Against as many whites, the group costs about $320bn a year more (317–325).",bound: q:comparators.us_whites|range,dp
 infra/immigration-fiscal/overview_2026_09_28/template.html,155,Numbers show a rounded value first,0,$355bn,$bn,"Numbers show a rounded value first and the range in brackets: ""$355bn (322–387)"".",mapped,n5
 infra/immigration-fiscal/overview_2026_09_28/template.html,155,Numbers show a rounded value first,1,322–387,,"Numbers show a rounded value first and the range in brackets: ""$355bn (322–387)"".",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,173,The sign flips below a 3–14% response.,0,3–14%,%,The sign flips below a 3–14% response.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,179,"Past, 2005–2023",0,2005–2023,,"Past, 2005–2023 2024, the measured year Future",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,179,"Past, 2005–2023",1,2024,,"Past, 2005–2023 2024, the measured year Future",mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/template.html,181,L181,0,$3.2tn,$tn,"Cash Model of past gaps: about $3.2tn over 2015–2024 (2.8–3.7) Cash gap, all governments: ab",bound: q:backcast.10y|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,181,Model of past gaps:,1,2015–2024,,"Cash Model of past gaps: about $3.2tn over 2015–2024 (2.8–3.7) Cash gap, all governments: about $310bn (288",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,181,L181,2,2.8–3.7,,"Cash Model of past gaps: about $3.2tn over 2015–2024 (2.8–3.7) Cash gap, all governments: about $310bn (288–332) Lif",bound: q:backcast.10y|range,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,181,Model of past gaps:,3,$310bn,$bn,"r 2015–2024 (2.8–3.7) Cash gap, all governments: about $310bn (288–332) Lifetimes of people alive now and their chil",mapped,n5
-infra/immigration-fiscal/overview_2026_09_28/template.html,181,Model of past gaps:,4,288–332,,"024 (2.8–3.7) Cash gap, all governments: about $310bn (288–332) Lifetimes of people alive now and their children (sep",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,182,Return on public capital: about $45bn,0,$45bn,$bn,Not cash Return on public capital: about $45bn (34–56).,mapped,n5
-infra/immigration-fiscal/overview_2026_09_28/template.html,182,Return on public capital: about $45bn,1,34–56,,Not cash Return on public capital: about $45bn (34–56).,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,183,"Federal part, if borrowed: about $1.1tn",0,$1.1tn,$tn,"Debt Federal part, if borrowed: about $1.1tn (1.0–1.3) Interest on that debt: about $36bn (31–42).",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,183,"Federal part, if borrowed: about $1.1tn",1,1.0–1.3,,"Debt Federal part, if borrowed: about $1.1tn (1.0–1.3) Interest on that debt: about $36bn (31–42).",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,183,"Federal part, if borrowed: about $1.1tn",2,$36bn,$bn,"Debt Federal part, if borrowed: about $1.1tn (1.0–1.3) Interest on that debt: about $36bn (31–42).",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,183,"Federal part, if borrowed: about $1.1tn",3,31–42,,"Debt Federal part, if borrowed: about $1.1tn (1.0–1.3) Interest on that debt: about $36bn (31–42).",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,184,Pension rights earned in 2024,0,2024,,Promises Pension rights earned in 2024: about +$75bn if counted when earned.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/template.html,184,Pension rights earned in 2024,1,+$75bn,$bn,Promises Pension rights earned in 2024: about +$75bn if counted when earned.,mapped,n5
-infra/immigration-fiscal/overview_2026_09_28/template.html,185,L185,0,$100bn,$bn,"Outside budgets Pollution, crashes, victims, traffic, fear, net of gains: about $100bn (96–101).",bound: q:social.items|mid,n5
-infra/immigration-fiscal/overview_2026_09_28/template.html,185,L185,1,96–101,,"Outside budgets Pollution, crashes, victims, traffic, fear, net of gains: about $100bn (96–101).",bound: q:social.items|range,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,189,Plain text is inside the $355bn.,0,$355bn,$bn,Plain text is inside the $355bn.,mapped,n5
-infra/immigration-fiscal/overview_2026_09_28/template.html,192,The account covers 2024 only.,0,2024,,The account covers 2024 only.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/template.html,194,About 85% falls on state and local budgets,0,85%,%,"About 85% falls on state and local budgets, mostly through schools, police and local services.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,194,About 85% falls on state and local budgets,1,13–19%,%,The federal part is 13–19% of the 2024 cash gap.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,194,About 85% falls on state and local budgets,2,2024,,The federal part is 13–19% of the 2024 cash gap.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/template.html,198,taxpayers pay about $36bn a year in interest on it,0,$36bn,$bn,"If the federal part of past gaps was borrowed, taxpayers pay about $36bn a year in interest on it (31–42).",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,198,taxpayers pay about $36bn a year in interest on it,1,31–42,,"If the federal part of past gaps was borrowed, taxpayers pay about $36bn a year in interest on it (31–42).",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,198,taxpayers pay about $36bn a year in interest on it,2,2024,,Removing the group in 2024 does not remove the old debt.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/template.html,200,The total charges 2–3% a year.,0,2–3%,%,The total charges 2–3% a year.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,202,This young group pays about $65bn more payroll tax,0,$65bn,$bn,This young group pays about $65bn more payroll tax than it draws (63–68).,mapped,n5
-infra/immigration-fiscal/overview_2026_09_28/template.html,202,This young group pays about $65bn more payroll tax,1,63–68,,This young group pays about $65bn more payroll tax than it draws (63–68).,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,202,This young group pays about $65bn more payroll tax,2,$75bn,$bn,Counting the promise when it is earned adds about $75bn under current law.,mapped,n5
-infra/immigration-fiscal/overview_2026_09_28/template.html,204,Years before 2024 come from a model.,0,2024,,Years before 2024 come from a model.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/template.html,204,Years before 2024 come from a model.,1,2024,,It carries the 2024 position back on each year's national data.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/template.html,206,discount future years at 3%.,0,3%,%,They compare the group with whites and discount future years at 3%.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/template.html,212,L212,0,$450bn,$bn,The $450bn figure adds them.,bound: q:pairing.total|mid,n5
+infra/immigration-fiscal/overview_2026_09_28/template.html,174,The sign flips below a 3–14% response.,0,3–14%,%,The sign flips below a 3–14% response.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,180,"Past, 2005–2023",0,2005–2023,,"Past, 2005–2023 2024, the measured year Future",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,180,"Past, 2005–2023",1,2024,,"Past, 2005–2023 2024, the measured year Future",mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/template.html,182,L182,0,$3.2tn,$tn,"Cash Model of past gaps: about $3.2tn over 2015–2024 (2.8–3.7) Cash gap, all governments: ab",bound: q:backcast.10y|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,182,Model of past gaps:,1,2015–2024,,"Cash Model of past gaps: about $3.2tn over 2015–2024 (2.8–3.7) Cash gap, all governments: about $310bn (288",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,182,L182,2,2.8–3.7,,"Cash Model of past gaps: about $3.2tn over 2015–2024 (2.8–3.7) Cash gap, all governments: about $310bn (288–332) Lif",bound: q:backcast.10y|range,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,182,Model of past gaps:,3,$310bn,$bn,"r 2015–2024 (2.8–3.7) Cash gap, all governments: about $310bn (288–332) Lifetimes of people alive now and their chil",mapped,n5
+infra/immigration-fiscal/overview_2026_09_28/template.html,182,Model of past gaps:,4,288–332,,"024 (2.8–3.7) Cash gap, all governments: about $310bn (288–332) Lifetimes of people alive now and their children (sep",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,183,Return on public capital: about $45bn,0,$45bn,$bn,Not cash Return on public capital: about $45bn (34–56).,mapped,n5
+infra/immigration-fiscal/overview_2026_09_28/template.html,183,Return on public capital: about $45bn,1,34–56,,Not cash Return on public capital: about $45bn (34–56).,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,184,"Federal part, if borrowed: about $1.1tn",0,$1.1tn,$tn,"Debt Federal part, if borrowed: about $1.1tn (1.0–1.3) Interest on that debt: about $36bn (31–42).",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,184,"Federal part, if borrowed: about $1.1tn",1,1.0–1.3,,"Debt Federal part, if borrowed: about $1.1tn (1.0–1.3) Interest on that debt: about $36bn (31–42).",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,184,"Federal part, if borrowed: about $1.1tn",2,$36bn,$bn,"Debt Federal part, if borrowed: about $1.1tn (1.0–1.3) Interest on that debt: about $36bn (31–42).",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,184,"Federal part, if borrowed: about $1.1tn",3,31–42,,"Debt Federal part, if borrowed: about $1.1tn (1.0–1.3) Interest on that debt: about $36bn (31–42).",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,185,Pension rights earned in 2024,0,2024,,Promises Pension rights earned in 2024: about +$75bn if counted when earned.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/template.html,185,Pension rights earned in 2024,1,+$75bn,$bn,Promises Pension rights earned in 2024: about +$75bn if counted when earned.,mapped,n5
+infra/immigration-fiscal/overview_2026_09_28/template.html,186,L186,0,$100bn,$bn,"Outside budgets Pollution, crashes, victims, traffic, fear, net of gains: about $100bn (96–101).",bound: q:social.items|mid,n5
+infra/immigration-fiscal/overview_2026_09_28/template.html,186,L186,1,96–101,,"Outside budgets Pollution, crashes, victims, traffic, fear, net of gains: about $100bn (96–101).",bound: q:social.items|range,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,190,Plain text is inside the $355bn.,0,$355bn,$bn,Plain text is inside the $355bn.,mapped,n5
+infra/immigration-fiscal/overview_2026_09_28/template.html,193,The account covers 2024 only.,0,2024,,The account covers 2024 only.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/template.html,195,About 85% falls on state and local budgets,0,85%,%,"About 85% falls on state and local budgets, mostly through schools, police and local services.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,195,About 85% falls on state and local budgets,1,13–19%,%,The federal part is 13–19% of the 2024 cash gap.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,195,About 85% falls on state and local budgets,2,2024,,The federal part is 13–19% of the 2024 cash gap.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/template.html,199,taxpayers pay about $36bn a year in interest on it,0,$36bn,$bn,"If the federal part of past gaps was borrowed, taxpayers pay about $36bn a year in interest on it (31–42).",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,199,taxpayers pay about $36bn a year in interest on it,1,31–42,,"If the federal part of past gaps was borrowed, taxpayers pay about $36bn a year in interest on it (31–42).",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,199,taxpayers pay about $36bn a year in interest on it,2,2024,,Removing the group in 2024 does not remove the old debt.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/template.html,201,The total charges 2–3% a year.,0,2–3%,%,The total charges 2–3% a year.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,203,This young group pays about $65bn more payroll tax,0,$65bn,$bn,This young group pays about $65bn more payroll tax than it draws (63–68).,mapped,n5
+infra/immigration-fiscal/overview_2026_09_28/template.html,203,This young group pays about $65bn more payroll tax,1,63–68,,This young group pays about $65bn more payroll tax than it draws (63–68).,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,203,This young group pays about $65bn more payroll tax,2,$75bn,$bn,Counting the promise when it is earned adds about $75bn under current law.,mapped,n5
+infra/immigration-fiscal/overview_2026_09_28/template.html,205,Years before 2024 come from a model.,0,2024,,Years before 2024 come from a model.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/template.html,205,Years before 2024 come from a model.,1,2024,,It carries the 2024 position back on each year's national data.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/template.html,207,discount future years at 3%.,0,3%,%,They compare the group with whites and discount future years at 3%.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/template.html,213,L213,0,$450bn,$bn,The $450bn figure adds them.,bound: q:pairing.total|mid,n5
 research/immigration-INDEX.md,63,bn/year conditiona,0,$322–387bn,$bn,**Adopted main case (September 27): $322–387bn/year conditional net cost to other US,mapped,dp
 research/immigration-INDEX.md,64,bn; [lane](../infr,0,$321.8–387.4bn,$bn,"residents** ($321.8–387.4bn; [lane](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md),",mapped,dp
 research/immigration-INDEX.md,68,"- long-run road, p",0,+$19.4,$,"- long-run road, park and economic-administration responses, +$19.4 / +$29.6bn: across states, highway spending",mapped,dp

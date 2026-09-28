@@ -54,7 +54,7 @@ import io
 import json
 import math
 import re
-from decimal import ROUND_HALF_UP, Decimal
+from decimal import ROUND_FLOOR, ROUND_HALF_UP, Decimal
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -261,6 +261,29 @@ def _step(rnd):
     return re.fullmatch(r"n\d+", rnd) is not None
 
 
+def rounded(x, places):
+    """x as the page prints it at `places` decimals, as a Decimal; halves round away from zero."""
+    return Decimal(repr(float(x))).quantize(Decimal(1).scaleb(-places), rounding=ROUND_HALF_UP)
+
+
+def allocate(values, total, places, last=()):
+    """`values` rounded to `places` decimals so that they add to `total`, a sum already rounded to `places`
+    (largest remainder). Each value is rounded down or up, so it stays within one unit of itself; the values
+    nearest to rounding up are rounded up. Where the values' own roundings add to `total`, those are the
+    result (exact halves aside). The indices in `last` are rounded against their own rounding only when no
+    other value can be (so a line whose two ends round alike prints alike)."""
+    unit = Decimal(1).scaleb(-places)
+    exact = [Decimal(repr(float(v))) / unit for v in values]
+    low = [e.to_integral_value(rounding=ROUND_FLOOR) for e in exact]
+    need = Decimal(total) / unit - sum(low)
+    if need != need.to_integral_value() or not 0 <= need <= len(values):
+        raise ValueError(f"{values} cannot be rounded to {places} decimals to add to {total}")
+    own = [rounded(v, places) / unit - lo for v, lo in zip(values, low)]  # 1 where the value's own rounding is up
+    keep = [(1 - 2 * own[i]) if i in last else 0 for i in range(len(values))]  # -1 stays up, +1 stays down
+    up = set(sorted(range(len(values)), key=lambda i: (keep[i], low[i] - exact[i], i))[:int(need)])
+    return [(low[i] + (1 if i in up else 0)) * unit for i in range(len(values))]
+
+
 def _digits(x, rnd, unit):
     """(sign, digits) of x rounded by `rnd`: decimals ("0", "1", "2") or a step ("n5", "n10", "n100")."""
     d = Decimal(repr(float(x)))
@@ -269,7 +292,7 @@ def _digits(x, rnd, unit):
         v, places = (d / step).quantize(Decimal(1), rounding=ROUND_HALF_UP) * step, 0
     else:
         places = int(rnd)
-        v = d.quantize(Decimal(1).scaleb(-places), rounding=ROUND_HALF_UP)
+        v = rounded(x, places)
     body = f"{abs(v):.{places}f}" if unit == "year" else f"{abs(v):,.{places}f}"
     return ("−" if v < 0 else ""), body
 
