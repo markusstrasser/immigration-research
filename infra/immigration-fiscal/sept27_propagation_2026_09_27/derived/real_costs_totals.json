@@ -48,7 +48,9 @@
   "main_case_long_run_2026_09_27/derived/summary.json": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d",
   "main_case_long_run_2026_09_27/derived/corrections.json": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea",
   "service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
-  "social_costs_unpriced_2026_09_28/derived/items.csv": "c8ff8aa3f9fdecb63460cf4f5e2f44d2e7aaab40f555abedf402acdba62c64a0"
+  "social_costs_unpriced_2026_09_28/derived/items.csv": "c8ff8aa3f9fdecb63460cf4f5e2f44d2e7aaab40f555abedf402acdba62c64a0",
+  "air_pollution_2026_09_28/derived/items.csv": "738fbc088877d59210078f2b43bdc0d0839e5b2392bedee564edb947e6f30c03",
+  "road_crash_externality_2026_09_28/derived/items.csv": "b940a8c3ab8911b9a3899ce27048fc844194121addbaff55717a82b2b4cd0dff"
  },
  "congestion_by_band_end_bn": {
   "case": "sept27",
@@ -75,15 +77,64 @@
  },
  "social_items_in_the_social_rows": {
   "case": "sept27",
+  "central_bn": 123.4008,
+  "stacked_low_bn": 48.3879,
+  "stacked_high_bn": 233.564,
   "items": [
-   "fear_avoidance",
-   "private_security",
-   "school_disruption"
+   {
+    "item": "fear_avoidance",
+    "source": "social_costs_unpriced_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-fear-security-schools.md",
+    "central_bn": 10.49,
+    "low_bn": 5.24,
+    "high_bn": 30.31,
+    "normalized_bn": null
+   },
+   {
+    "item": "private_security",
+    "source": "social_costs_unpriced_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-fear-security-schools.md",
+    "central_bn": -0.6,
+    "low_bn": -2.93,
+    "high_bn": 0.39,
+    "normalized_bn": null
+   },
+   {
+    "item": "school_disruption",
+    "source": "social_costs_unpriced_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-fear-security-schools.md",
+    "central_bn": -1.95,
+    "low_bn": -11.71,
+    "high_bn": -0.54,
+    "normalized_bn": null
+   },
+   {
+    "item": "pm25_consumption",
+    "source": "air_pollution_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-pollution-crashes.md",
+    "central_bn": 69.6808,
+    "low_bn": 31.4979,
+    "high_bn": 122.484,
+    "normalized_bn": {
+     "central": -46.509,
+     "low": -81.8082,
+     "high": -17.9168
+    }
+   },
+   {
+    "item": "road_crash_externality_fault_based",
+    "source": "road_crash_externality_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-pollution-crashes.md",
+    "central_bn": 45.78,
+    "low_bn": 26.29,
+    "high_bn": 80.92,
+    "normalized_bn": {
+     "central": 0.01,
+     "low": -18.58,
+     "high": 20.02
+    }
+   }
   ],
-  "central_bn": 7.94,
-  "stacked_low_bn": -9.4,
-  "stacked_high_bn": 30.16,
-  "source": "social_costs_unpriced_2026_09_28/derived/items.csv",
-  "decision": "decisions/2026-09-28-social-items-fear-security-schools.md"
+  "never_added": "property values; each item's normalized figure; the crash lane's but-for row; CO2, ozone and government-services emissions; disease and food"
  }
 }

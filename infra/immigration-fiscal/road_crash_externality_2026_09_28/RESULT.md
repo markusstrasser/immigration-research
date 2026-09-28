@@ -212,6 +212,8 @@ m. [SOURCE: PNAS abstract and introduction; the effect's size was not read, GAP]
 
 ## What can be added beside the account
 
+[2026-09-28, later: the operator added the **fault-based** absolute row (`road_crash_externality_fault_based`, $45.8bn, $26.3–80.9bn) to the social rows of the fiscal-plus-social total, from the September 27 case on. It does not depend on the traffic-volume elasticity, and it charges crashes the way the account charges crime, by who causes them. The but-for row below and both normalized rows sit beside, never added ([decision](../../../decisions/2026-09-28-social-items-pollution-crashes.md)). The culpability odds ratio is being tested against California's crash records (`ccrs_nonfatal_involvement_2026_09_28`).]
+
 The but-for absolute, **$44.5bn ($5.7–145.1bn)**, can sit beside the fiscal account with the
 other social items, as congestion does. It is a real-resource loss borne by other residents,
 about 98% private (injury and life-quality losses, property) and about $1bn taxpayer-borne. It
@@ -291,3 +293,4 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/road
   - the positive control passes: kept 2019 base $1,328,059m against $1,328,060m;
   - central (a) $44.5bn, (b) −$2.6bn, fault-based $45.8bn;
   - scenarios written to `derived/scenarios.json`.
+- 2026-09-28 22:43 JST (lead): the operator added the fault-based row to the social rows of the fiscal-plus-social total (decision 2026-09-28-social-items-pollution-crashes); lane outputs unchanged.

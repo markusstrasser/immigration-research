@@ -40,6 +40,11 @@ September 28 (decision 2026-09-28-social-items-fear-security-schools): the cases
 union's fear and avoidance, private security and school disruption (social_costs_unpriced_2026_09_28,
 derived/items.csv) to the social rows, their central sum at both ends of the central values and their stacked
 low and high at the ends of the full span. Property values stay out. Earlier cases keep their rows.
+Later on September 28 (decision 2026-09-28-social-items-pollution-crashes) the same cases also add the union's
+PM2.5 harm to other residents from its consumption (air_pollution_2026_09_28, pm25_consumption) and its road-crash
+externality charged by fault (road_crash_externality_2026_09_28, road_crash_externality_fault_based), both at
+their absolute (with against without) figures, in the same way. Their normalized figures, against as many
+average residents, are reported beside and never added; so is the crash lane's but-for row, an alternative.
 
 Inputs: DIR/band_variants.csv (node band_variants.cjs --case CASE: engine bands on the September 23 case,
 September 24 and the case) and the channel lanes' derived files (PATHS). Reads only; writes
@@ -81,9 +86,16 @@ OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=FISCAL / "s
                 sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived")
 # Cases whose roads respond: congestion beside the account is the response lane's, by band end.
 LONG_RUN = dict(sept27=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json")
-# Cases whose social rows carry the union's three added social items (decision 2026-09-28).
-SOCIAL_ITEMS = dict(sept27=FISCAL / "social_costs_unpriced_2026_09_28/derived/items.csv")
-SOCIAL_ITEM_IDS = ("fear_avoidance", "private_security", "school_disruption")
+# Cases whose social rows carry added social items for the union: (lane items.csv, item ids, decision) per
+# source. A source with a `measure` column adds its absolute rows and reports its normalized rows beside.
+SOCIAL_ITEMS = dict(sept27=(
+    (FISCAL / "social_costs_unpriced_2026_09_28/derived/items.csv",
+     ("fear_avoidance", "private_security", "school_disruption"), "decisions/2026-09-28-social-items-fear-security-schools.md"),
+    (FISCAL / "air_pollution_2026_09_28/derived/items.csv", ("pm25_consumption",),
+     "decisions/2026-09-28-social-items-pollution-crashes.md"),
+    (FISCAL / "road_crash_externality_2026_09_28/derived/items.csv", ("road_crash_externality_fault_based",),
+     "decisions/2026-09-28-social-items-pollution-crashes.md"),
+))
 # Runs of band_variants.cjs beside a case, never in its band (the case's column; the row label, its note).
 BESIDE = dict(capital_at_7pct=("capital_at_7pct", "the return on public capital at the reported 7% on every component; "
                                "beside the central total, never in it"),
@@ -170,13 +182,26 @@ def span_ends(c, low_fiscal, high_fiscal, congestion=None, items=(0.0, 0.0)):
     return low, high
 
 
-def social_items(path):
-    """The union's added social items from the lane's items.csv: (central, stacked low, stacked high), $bn."""
-    items = pd.read_csv(path)
-    rows = items[(items.group == "mexican_origin") & items["item"].isin(SOCIAL_ITEM_IDS)]
-    gate("social items: one row per added item for the union", sorted(rows["item"]) == sorted(SOCIAL_ITEM_IDS),
-         f"{len(rows)} rows")
-    return float(rows.central_bn.sum()), float(rows.low_bn.sum()), float(rows.high_bn.sum())
+def social_items(sources):
+    """The union's added social items from their lanes' items.csv: (central, stacked low, stacked high) summed,
+    $bn, and one record per item with its normalized figure where the lane reports one (beside, never added)."""
+    detail = []
+    for path, ids, decision in sources:
+        frame = pd.read_csv(path)
+        union = frame[(frame.group == "mexican_origin") & frame["item"].isin(ids)]
+        measure = union["measure"] if "measure" in union.columns else pd.Series("absolute", index=union.index)
+        absolute, normalized = union[measure == "absolute"], union[measure == "normalized"]
+        gate(f"social items: one absolute row per added item for the union ({rel(path)})",
+             sorted(absolute["item"]) == sorted(ids), f"{len(absolute)} rows")
+        for r in absolute.itertuples():
+            n = normalized[normalized["item"] == r.item]
+            detail.append(dict(item=r.item, source=rel(path), decision=decision, central_bn=float(r.central_bn),
+                               low_bn=float(r.low_bn), high_bn=float(r.high_bn),
+                               normalized_bn=None if n.empty else dict(
+                                   central=float(n.central_bn.iloc[0]), low=float(n.low_bn.iloc[0]),
+                                   high=float(n.high_bn.iloc[0]))))
+    gate("social items: no item added twice", len({d["item"] for d in detail}) == len(detail))
+    return tuple(sum(d[k] for d in detail) for k in ("central_bn", "low_bn", "high_bn")), detail
 
 
 def half_up(x, places):
@@ -215,7 +240,7 @@ def main():
     if case in LONG_RUN:
         paths.update(case_corrections=FISCAL / LANES[case] / "derived" / "corrections.json", congestion_long_run=LONG_RUN[case])
     if case in SOCIAL_ITEMS:
-        paths["social_items"] = SOCIAL_ITEMS[case]
+        paths.update({f"social_items_{p.parent.parent.name}": p for p, _, _ in SOCIAL_ITEMS[case]})
     bands = pd.read_csv(paths["bands"]).set_index(["case", "variant"])
     meta = json.loads(paths["bands_meta"].read_text())
     summaries = dict(sept24=json.loads(paths["main24"].read_text()))
@@ -254,8 +279,9 @@ def main():
             gate(f"band file has the {case}_{run} run beside the case", (f"{case}_{run}", "adopted") in bands.index)
     # The added social items by case: (central, stacked low, stacked high); zero before September 28.
     items = {k: (0.0, 0.0, 0.0) for k in cols}
+    item_detail = []
     if case in SOCIAL_ITEMS:
-        items[case] = social_items(paths["social_items"])
+        items[case], item_detail = social_items(SOCIAL_ITEMS[case])
 
     rows = []
 
@@ -330,10 +356,17 @@ def main():
     add("7", "full_span_with_package_range", "low end", lo_r, note=note)
     add("7", "full_span_with_package_range", "high end", hi_r, note=note)
     if case in SOCIAL_ITEMS:
-        note = ("the union's fear and avoidance, private security and school disruption (social_costs_unpriced_2026_09_28), "
-                "in every social row above; property values stay out; decision 2026-09-28")
+        note = ("the union's added social items, in every social row above: " + ", ".join(d["item"] for d in item_detail)
+                + "; property values stay out; normalized figures and the crash lane's but-for row sit beside, never "
+                "added; decisions 2026-09-28")
         for label, v in zip(("central, both ends", "stacked low, full span", "stacked high, full span"), items[case]):
             add("7", "social_items_2026_09_28", label, {case: v}, note=note)
+        for d in item_detail:
+            for label, key in (("central, both ends", "central_bn"), ("low, full span", "low_bn"), ("high, full span", "high_bn")):
+                add("7", f"social_item_{d['item']}", label, {case: d[key]}, note=f"{d['source']}; {d['decision']}")
+            for end, v in (d["normalized_bn"] or {}).items():
+                add("7", f"social_item_{d['item']}", f"normalized {end}, beside", {case: v},
+                    note="against as many average residents; never added")
     if case in LONG_RUN:
         # The case's runs beside it: the same social items (the case's congestion), never in the central total.
         # The published pairing is the case's: decision 4's victims on the Hispanic footing at the low end, the
@@ -426,9 +459,9 @@ def main():
         doc["beside_the_central_total"] = {f"{case}_{run}": note for run, (column, note) in BESIDE.items()}
     if case in SOCIAL_ITEMS:
         doc["social_items_in_the_social_rows"] = dict(
-            case=case, items=list(SOCIAL_ITEM_IDS), central_bn=items[case][0], stacked_low_bn=items[case][1],
-            stacked_high_bn=items[case][2], source=rel(SOCIAL_ITEMS[case]),
-            decision="decisions/2026-09-28-social-items-fear-security-schools.md")
+            case=case, central_bn=items[case][0], stacked_low_bn=items[case][1], stacked_high_bn=items[case][2],
+            items=item_detail, never_added=("property values; each item's normalized figure; the crash lane's "
+                                            "but-for row; CO2, ozone and government-services emissions; disease and food"))
     (out_dir / "real_costs_totals.json").write_text(json.dumps(doc, indent=1) + "\n")
     print("\n[result]")
     fmt = lambda v: "" if v is None else f"{v:9.3f}"  # noqa: E731
