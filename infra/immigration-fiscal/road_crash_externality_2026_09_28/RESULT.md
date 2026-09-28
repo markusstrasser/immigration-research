@@ -1,4 +1,4 @@
-**Verdict:** [Revised 2026-09-28 with California's measured non-fatal culpability: $42.5bn but-for, $42.3bn fault-based; see the block below the model ID.] With its driving against without it, the Mexican-origin group's traffic adds about **$44bn a year** (2024 $) of crash losses borne by people outside the group. The full grid runs from $6bn to $145bn, and one input sets most of that range: how fast the crash rate per mile rises with traffic. Most of the $44bn comes from non-fatal multi-vehicle crashes ($35bn), with $8bn from pedestrians and cyclists and $2bn from single-vehicle crashes. That is $1,088 per group member and $150 per other resident. Against the average resident's driving, the normalized cost is about **zero (−$2.6bn; range −$39bn to +$15bn)**. The group drives 11% fewer miles per person than the average resident and is involved in about 6% more crashes per mile, and the two roughly cancel. Charging the group only for the crashes its drivers cause gives almost the same central, $46bn ($26–81bn), and a normalized cost of $0. This fault-based figure is an alternative to the $44bn, never an addition. [CALCULATION: `crash_model.py` → `derived/items.csv`, `derived/model.json`, `derived/grid.csv`]
+**Verdict:** [Revised 2026-09-28 with California's measured non-fatal culpability: $42.5bn but-for, $42.3bn fault-based. Revised again the same night with traffic elasticities graded from evidence and a composition term: but-for **$11.1bn** (−$57.7bn to +$74.3bn), fault-based unchanged at $42.3bn. See the blocks below the model ID.] With its driving against without it, the Mexican-origin group's traffic adds about **$44bn a year** (2024 $) of crash losses borne by people outside the group. The full grid runs from $6bn to $145bn, and one input sets most of that range: how fast the crash rate per mile rises with traffic. Most of the $44bn comes from non-fatal multi-vehicle crashes ($35bn), with $8bn from pedestrians and cyclists and $2bn from single-vehicle crashes. That is $1,088 per group member and $150 per other resident. Against the average resident's driving, the normalized cost is about **zero (−$2.6bn; range −$39bn to +$15bn)**. The group drives 11% fewer miles per person than the average resident and is involved in about 6% more crashes per mile, and the two roughly cancel. Charging the group only for the crashes its drivers cause gives almost the same central, $46bn ($26–81bn), and a normalized cost of $0. This fault-based figure is an alternative to the $44bn, never an addition. [CALCULATION: `crash_model.py` → `derived/items.csv`, `derived/model.json`, `derived/grid.csv`]
 claude-opus-5-5
 
 [2026-09-28 23:14 JST, lead revision: non-fatal culpability is now **measured**, from California's crash records (CCRS
@@ -14,6 +14,38 @@ Revised figures, $bn:
 The figures below are the pre-revision lane (`model.json` → `central_before_ccrs_revision`). `derived/scenarios.json`
 is now written by `crash_model.py`, which it was not before. Its named scenarios under the revision: Parry-style 4.6,
 2020 at face value 4.6, pairwise 91.3, uniform mixing 53.5, Mexican-coded fatal culpability 43.0.]
+
+[2026-09-28 23:46 JST, lead revision: the traffic-volume elasticities x are now **graded from transferable evidence**
+(`crash_volume_elasticity_2026_09_28`: natural experiments in London, Manhattan and German cities, national 2019→2020
+changes, panels and handbook values, weighted toward the congested metros where the group drives). Levels, low / central /
+high: x non-fatal −0.23 / +0.07 / +0.52 (was 0.2 / 0.6 / 1.0); x fatal −1.55 / −0.21 / −0.16 (was −0.3 / 0 / 1.0). The
+central comes from that lane's rule, the low and high from its bootstrap p10 and p90.
+
+The but-for also gains a **composition term**. The volume terms scale the group's whole involvement m by x, so at x = 0
+a group whose drivers cause more crashes than others would add nothing.
+- *Multi-vehicle crashes.* Let each driver cause crashes at a rate a·h(D) per mile, with the other party drawn from nearby
+  traffic, and let h's elasticity to density be x. With the group present, others' involvement per mile is higher by a
+  factor of 1 + q_o[x + (r − 1)/2], where q_o is the group's share of the traffic around them and r its at-fault odds.
+  In money that is s(1 − q)M[x + (r − 1)/2]. The volume term is s(1 − q)M·x(1 + r)/2, and the difference,
+  s(1 − q)M(r − 1)(1 − x)/2, is the composition term.
+- *Pedestrians and cyclists.* The term is F(r − 1)(1 − β) of the non-motorist base.
+
+It vanishes at r = 1, and for multi-vehicle crashes also at x = 1. At the central it adds $1.8bn, almost all of it from
+fatal crashes (r 1.13). Because the term is specific to the group, the normalized figure carries it whole. [DERIVATION]
+
+Revised figures, $bn:
+- but-for (a): **11.1** (−57.7 to +74.3), $270 per member; normalized +0.6 (−24.1 to +31.5);
+- components: non-fatal multi-vehicle 4.1, fatal multi-vehicle −2.8, non-motorist 7.7, single-vehicle 2.0;
+  the composition term, $1.8bn, sits inside these;
+- fault-based, unchanged (it uses neither x nor the term): 42.3 (23.8–73.3); normalized −3.4;
+- one input at a time: x non-fatal −4.8 to 35.6; x fatal −15.4 to 12.0; β 5.8–18.0; non-fatal culpability 6.9–17.8;
+- scenarios: the first x levels 44.0 (42.5 without the term), Parry-style 6.3, 2020 at face value 8.4, pairwise 91.3,
+  uniform mixing 13.5, Mexican-coded fatal culpability 15.8.
+
+**The two rows no longer agree: $11bn against $42bn.** Near x = 0, the crashes others have with the group's drivers
+would largely happen anyway without the group, as crashes among themselves on emptier, faster roads. The fault-based row
+still charges for them. [INFERENCE] `derived/model.json` keeps the figures before this revision in
+`central_before_x_revision`, and the evidence levels and the first levels in `x_levels`.]
 
 # Road-crash externality of the Mexican-origin group's driving (2024 $)
 
