@@ -2,7 +2,10 @@ claude-opus-5-5
 
 **Verdict:** No pre-registered check misses, so no key correction is proposed. The two checks with power hit:
 births to Mexican-origin mothers (14.43% of births predicted, 14.36% in NVSS 2024, and the state distribution within
-noise) and the group's share of Medicaid-paid births (18.9% predicted, 20.5% actual, inside ±10%). The three dollar
+noise) and the group's share of Medicaid-paid births (18.9% predicted, 20.5% actual, inside ±10%). The second is a
+hit by the tolerance rule only: the prediction is significantly low (+8.1%, z 2.4, 95% interval +1.5% to +14.8%), and
+the naive baseline 2 lands closer. Sized by the frozen rule it would be about +$0.2–0.3bn [TRAINING-DATA cost per
+birth], under the $2bn follow-up trigger. (Added after the cross-lab review.) The three dollar
 keys have no power. Refundable credits: δ +0.09 / +0.11, or +$1.6 / +$1.8bn at 48 / 11, with a 95% interval of
 about −$5 to +$8bn. SSI: δ +0.96 / +0.95 against SSA's federally administered total, driven by California's state
 supplement, which the line does not pay; against federal SSI alone δ is +0.17 / +0.15, a hit (+$0.8 / +$0.7bn).
@@ -80,7 +83,8 @@ As declared, the prediction beats a baseline when its error is smaller.
 The credit prediction's D has a sampling SE of 0.011, so its 0.005 gap to the no-rule baseline is noise
 [DATA: derived/dissimilarity.csv].
 
-The adopted reading beats the published one on the credits' state distribution, mainly in California. The
+The adopted reading does better than the published one in California; over the whole state distribution its D gain
+(0.007) is inside D's sampling SE (0.011). (Softened after the cross-lab review; it first said "beats".) The
 state-aware flag moved California's predicted share from 11.30% to 10.12%, and SOI's is 10.08%. California's error
 is −10.8% (z −2.3) in the published reading and −0.4% (z −0.1) in the adopted one, and D falls from 0.071 to
 0.064 [DATA: derived/state_errors.csv, derived/dissimilarity.csv]. By the declared reading, audit row 4 and the
