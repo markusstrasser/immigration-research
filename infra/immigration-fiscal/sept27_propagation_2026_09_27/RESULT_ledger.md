@@ -1,6 +1,6 @@
 **Verdict:** The real-costs totals and the winners ledger now run the September 27 case, and every earlier
 case still reproduces byte for byte. Fiscal and social costs together are **$363–438bn a year** at central
-values (schools case: $305–350bn), or $8.9–10.7k per group member. About one other resident in six comes out
+values [2026-09-28, later: $371–446bn with fear, security and schools, rows `social_items_2026_09_28`; [decision](../../../decisions/2026-09-28-social-items-fear-security-schools.md)] (schools case: $305–350bn), or $8.9–10.7k per group member. About one other resident in six comes out
 ahead: 17.8% pooled under tax-share financing and 17.0% under per-person cuts (was 20.5% and 19.0%). The
 fiscal channel now has three financing parts. Taxpayers carry $349.3bn at central values, of which $44.7bn is
 the return on public capital. The capped programs, $5.1bn, fall on eligible households that go without the

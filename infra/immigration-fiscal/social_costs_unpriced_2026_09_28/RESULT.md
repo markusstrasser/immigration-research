@@ -156,6 +156,8 @@ Cost = β × PV × outsider pupils × exposure × gap × κ × grade share. The 
 
 ## What can be added to fiscal and victim costs without double counting
 
+[2026-09-28, later: the operator adopted items 1, 2 and 4 into the social rows of the fiscal-plus-social total, from the September 27 case on; property values stay out ([decision](../../../decisions/2026-09-28-social-items-fear-security-schools.md)).]
+
 - **Can be added (central): items 1, 2 and 4.** That is about **+$7.9bn** for the Mexican-origin union, on top of the $322–387bn budget cost, $28.9bn of violent victim cost and $1.3–1.4bn of property crime. For the Black group it is about **+$51.0bn**, on top of a budget cost of $549–595bn in the rough comparator re-key [DATA: `black_comparator_rough_2026_09_28/RESULT.md`] and $72.9bn of violent victim cost. No property-crime victim cost has been computed for the Black group [GAP].
   - Fear is net of the victim cost by construction. At central φ it is also meant to exclude justice spending, which the fiscal account charges by use, and private security (item 2).
   - Security excludes government guards.
@@ -172,6 +174,7 @@ Cost = β × PV × outsider pupils × exposure × gap × κ × grade share. The 
 - The central values are carried by assumed parameters: φ (fear share), the crime share of security, κ (behaviour share of the suspension gap), the armed-robbery share and the equipment spend. Each appears in its own row of `derived/inputs.csv`.
 - The Black victim-cost inputs come from the comparator lane, whose NCVS offender shares cover all violent crime rather than each offence.
 - The Mexican-origin school item uses Hispanic pupils of any race.
+- Physical disorder (litter, dumping, graffiti) is not one of the four items, and this lane did not read the September 18 enclave lane. That lane measured disorder with city inspector audits, 311 data and AHS 2023. It found no Mexican-origin effect at equal income except slight litter, and street feces follow street homelessness [DATA: `enclave_quality_2026_09_18/RESULT.md`].
 - This analysis was run by an LLM on a politically charged comparison; see `notes/llm-bias-caveat.md`. The choices that move the Black–Mexican gap most are the offending-share inputs, which come from the repo and FBI data, and κ.
 
 ## Files
@@ -215,3 +218,4 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/soci
   - [GAP] Census 2022 EC API for NAICS 5616 returned HTTP 302 without key; BLS OES page blocked to curl (Exa returned the index page only).
 - 2026-09-28 19:07:08 JST: exposure (ACS 2020–24 tracts), FBI 2019 Table 43A, SAS revenues via FRED, BLS OES API and BFM Tables 6–7 in; `items.py` run (rc 0); security low set from the controlled guard regression; RESULT written.
 - 2026-09-28 19:30:03 JST (lead): the Black population and victim-cost inputs are now read from `black_comparator_rough_2026_09_28/derived/` rather than hard-coded scratch totals. The by-offence split replaces the borrowed Mexican-origin mix. CRDC Figure 12 was read from the primary PDF (Wayback copy; ed.gov 403): Hispanic girls are 14% of enrollment and 8% of out-of-school suspensions. Hispanic shares are set to 29% / 24%, and both groups carry the ±1-point rounding bound. The school envelope is taken over corners. `items.py` rc 0. Central addable: Mexican-origin $9.9bn → $7.9bn (school 0 → −$1.9bn); Black $50.8bn → $51.0bn.
+- 2026-09-28 20:20 JST (lead): the operator adopted items 1, 2 and 4 into the totals (decision 2026-09-28-social-items-fear-security-schools). Added a pointer to the enclave lane's disorder measurement, which this lane had missed.

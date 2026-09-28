@@ -36,6 +36,11 @@ case's fiscal row includes the return on public capital (band_variants.cjs). Row
 band at the reported 7% on every component, and option A (enterprises out), each with the case's social
 items.
 
+September 28 (decision 2026-09-28-social-items-fear-security-schools): the cases in SOCIAL_ITEMS add the
+union's fear and avoidance, private security and school disruption (social_costs_unpriced_2026_09_28,
+derived/items.csv) to the social rows, their central sum at both ends of the central values and their stacked
+low and high at the ends of the full span. Property values stay out. Earlier cases keep their rows.
+
 Inputs: DIR/band_variants.csv (node band_variants.cjs --case CASE: engine bands on the September 23 case,
 September 24 and the case) and the channel lanes' derived files (PATHS). Reads only; writes
 DIR/real_costs_totals.csv and .json. Run from the repository root, after band_variants.cjs:
@@ -76,6 +81,9 @@ OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=FISCAL / "s
                 sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived")
 # Cases whose roads respond: congestion beside the account is the response lane's, by band end.
 LONG_RUN = dict(sept27=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json")
+# Cases whose social rows carry the union's three added social items (decision 2026-09-28).
+SOCIAL_ITEMS = dict(sept27=FISCAL / "social_costs_unpriced_2026_09_28/derived/items.csv")
+SOCIAL_ITEM_IDS = ("fear_avoidance", "private_security", "school_disruption")
 # Runs of band_variants.cjs beside a case, never in its band (the case's column; the row label, its note).
 BESIDE = dict(capital_at_7pct=("capital_at_7pct", "the return on public capital at the reported 7% on every component; "
                                "beside the central total, never in it"),
@@ -136,9 +144,10 @@ def channels():
     return c
 
 
-def social(c, victims, printed=False, congestion=None):
+def social(c, victims, printed=False, congestion=None, items=0.0):
     """§7's social rows at the low and high end of the central values (low end: largest housing gain).
-    congestion: (low end, high end), the case's own when its roads respond; default the lane's central."""
+    congestion: (low end, high end), the case's own when its roads respond; default the lane's central.
+    items: the added social items' central sum, at both ends (0 for cases before September 28)."""
     if printed:
         r = lambda x: float(Decimal(repr(x)).quantize(Decimal("0.1"), ROUND_HALF_UP))  # noqa: E731
         return (r(victims) + r(c["property_low"]) + r(c["unreimbursed_low"]) + r(c["congestion"])
@@ -146,18 +155,28 @@ def social(c, victims, printed=False, congestion=None):
                 r(victims) + r(c["property_high"]) + r(c["unreimbursed_high"]) + r(c["congestion"])
                 - r(c["housing_gain_national"]))
     cong_low, cong_high = congestion or (c["congestion"], c["congestion"])
-    return (victims + c["property_low"] + c["unreimbursed_low"] + cong_low - c["housing_gain_metro_local"],
-            victims + c["property_high"] + c["unreimbursed_high"] + cong_high - c["housing_gain_national"])
+    return (victims + c["property_low"] + c["unreimbursed_low"] + cong_low - c["housing_gain_metro_local"] + items,
+            victims + c["property_high"] + c["unreimbursed_high"] + cong_high - c["housing_gain_national"] + items)
 
 
-def span_ends(c, low_fiscal, high_fiscal, congestion=None):
-    """congestion: (lowest at the low end, highest at the high end); default the lane's range."""
+def span_ends(c, low_fiscal, high_fiscal, congestion=None, items=(0.0, 0.0)):
+    """congestion: (lowest at the low end, highest at the high end); default the lane's range.
+    items: the added social items' stacked (low, high), 0 for cases before September 28."""
     cong_low, cong_high = congestion or (c["congestion_low"], c["congestion_high"])
     low = (low_fiscal + c["victims_envelope_low"] + c["property_low"] + c["unreimbursed_07_low"]
-           + cong_low - c["housing_gain_max"])
+           + cong_low - c["housing_gain_max"] + items[0])
     high = (high_fiscal + c["victims_envelope_high"] + c["property_high"] + c["unreimbursed_high"]
-            + cong_high - c["housing_gain_min"])
+            + cong_high - c["housing_gain_min"] + items[1])
     return low, high
+
+
+def social_items(path):
+    """The union's added social items from the lane's items.csv: (central, stacked low, stacked high), $bn."""
+    items = pd.read_csv(path)
+    rows = items[(items.group == "mexican_origin") & items["item"].isin(SOCIAL_ITEM_IDS)]
+    gate("social items: one row per added item for the union", sorted(rows["item"]) == sorted(SOCIAL_ITEM_IDS),
+         f"{len(rows)} rows")
+    return float(rows.central_bn.sum()), float(rows.low_bn.sum()), float(rows.high_bn.sum())
 
 
 def half_up(x, places):
@@ -195,6 +214,8 @@ def main():
         paths["main_case"] = FISCAL / LANES[case] / "derived" / "summary.json"
     if case in LONG_RUN:
         paths.update(case_corrections=FISCAL / LANES[case] / "derived" / "corrections.json", congestion_long_run=LONG_RUN[case])
+    if case in SOCIAL_ITEMS:
+        paths["social_items"] = SOCIAL_ITEMS[case]
     bands = pd.read_csv(paths["bands"]).set_index(["case", "variant"])
     meta = json.loads(paths["bands_meta"].read_text())
     summaries = dict(sept24=json.loads(paths["main24"].read_text()))
@@ -231,6 +252,10 @@ def main():
              f"{nc['b1_lanes_fixed_bn']:.4f}, {nc['b1_factorial_bn'][0]:.4f}-{nc['b1_factorial_bn'][1]:.4f}")
         for run in BESIDE:
             gate(f"band file has the {case}_{run} run beside the case", (f"{case}_{run}", "adopted") in bands.index)
+    # The added social items by case: (central, stacked low, stacked high); zero before September 28.
+    items = {k: (0.0, 0.0, 0.0) for k in cols}
+    if case in SOCIAL_ITEMS:
+        items[case] = social_items(paths["social_items"])
 
     rows = []
 
@@ -256,7 +281,7 @@ def main():
     per_member = lambda vals: {k: v / pop_m for k, v in vals.items()}  # noqa: E731
     print("[§7: central values on two footings]")
     for col in ("hispanic", "custody"):
-        soc = {k: social(c, victims[col], congestion=cong[k]) for k in cols}
+        soc = {k: social(c, victims[col], congestion=cong[k], items=items[k][0]) for k in cols}
         soc_p = social(c, victims[col], printed=True)
         f23 = fiscal["sept23"][col]
         for i, end in enumerate(("low", "high")):
@@ -271,21 +296,21 @@ def main():
         mv = {"hispanic": 28.9, "custody": 32.3}[col]
         add("7", col, "victims' harm, full cost", {k: victims[col] for k in cols}, mv, check(f"§7 {col} victims", victims[col], None, mv, 1))
     # Hispanic footing with ladder 218's mixed-group correction (decision 4 quotes $30.9bn beside the account).
-    socm = {k: social(c, c["victims_equal_mixed_group"], congestion=cong[k]) for k in adopted}
+    socm = {k: social(c, c["victims_equal_mixed_group"], congestion=cong[k], items=items[k][0]) for k in adopted}
     for i, end in enumerate(("low", "high")):
         t = {k: fiscal[k]["hispanic"][i] + socm[k][i] for k in adopted}
         add("7", "hispanic_mixed_group", f"total at central values ({end})", t,
             note="victims 30.93 (ladder 218 mixed-group correction); decision 4's figure")
         add("7", "hispanic_mixed_group", f"per group member ({end})", per_member(t), unit="$k")
     # Custody footing with the sister lane's scaled mixed-group victims.
-    socs = {k: social(c, c["victims_custody_mixed_scaled"], congestion=cong[k]) for k in adopted}
+    socs = {k: social(c, c["victims_custody_mixed_scaled"], congestion=cong[k], items=items[k][0]) for k in adopted}
     for i, end in enumerate(("low", "high")):
         add("7", "custody_mixed_scaled", f"total at central values ({end})", {k: fiscal[k]["custody"][i] + socs[k][i] for k in adopted},
             note="victims 34.58 = 30.93 x 32.34/28.92 (winners_losers_2026_09_24 crime_inputs; not a lane arm)")
 
     print("[§7: full span]")
     ends = {k: span_ends(c, band(k, "justice_grid_low_and_uncompensated_use_0.7")[0], band(k, "justice_grid_high")[1],
-                         congestion=cong_span[k]) for k in cols}
+                         congestion=cong_span[k], items=items[k][1:]) for k in cols}
     lo, hi = {k: e[0] for k, e in ends.items()}, {k: e[1] for k, e in ends.items()}
     add("7", "full_span", "low end", lo, 212, check("§7 full span low", lo["sept23"], None, 212, 0))
     add("7", "full_span", "high end", hi, 340, check("§7 full span high", hi["sept23"], None, 340, 0))
@@ -298,11 +323,17 @@ def main():
     for k in adopted:
         rng, a = summaries[k]["range"]["overall"], band(k, "adopted")
         lo_r[k], hi_r[k] = span_ends(c, rng[0] + band(k, "justice_grid_low_and_uncompensated_use_0.7")[0] - a[0],
-                                     rng[1] + band(k, "justice_grid_high")[1] - a[1], congestion=cong_span[k])
+                                     rng[1] + band(k, "justice_grid_high")[1] - a[1], congestion=cong_span[k],
+                                     items=items[k][1:])
     note = ("adds main_case_2026_09_24 range; may double count the arrest ratio" if not later else
             f"adds each case's own range ({', '.join(LANES[k] for k in adopted)}); may double count the arrest ratio")
     add("7", "full_span_with_package_range", "low end", lo_r, note=note)
     add("7", "full_span_with_package_range", "high end", hi_r, note=note)
+    if case in SOCIAL_ITEMS:
+        note = ("the union's fear and avoidance, private security and school disruption (social_costs_unpriced_2026_09_28), "
+                "in every social row above; property values stay out; decision 2026-09-28")
+        for label, v in zip(("central, both ends", "stacked low, full span", "stacked high, full span"), items[case]):
+            add("7", "social_items_2026_09_28", label, {case: v}, note=note)
     if case in LONG_RUN:
         # The case's runs beside it: the same social items (the case's congestion), never in the central total.
         # The published pairing is the case's: decision 4's victims on the Hispanic footing at the low end, the
@@ -311,8 +342,9 @@ def main():
         for run, (column, note) in BESIDE.items():
             k = f"{case}_{run}"
             f_cust, f_hisp = band(k, "adopted"), band(k, "justice_raw_coding")
-            s_cust, s_hisp = social(c, victims["custody"], congestion=cong[case]), social(c, victims["hispanic"], congestion=cong[case])
-            s_mixed = social(c, c["victims_equal_mixed_group"], congestion=cong[case])
+            s_cust = social(c, victims["custody"], congestion=cong[case], items=items[case][0])
+            s_hisp = social(c, victims["hispanic"], congestion=cong[case], items=items[case][0])
+            s_mixed = social(c, c["victims_equal_mixed_group"], congestion=cong[case], items=items[case][0])
             for i, end in enumerate(("low", "high")):
                 add("7", column, f"fiscal main case ({end})", {case: f_cust[i]}, note=note)
                 add("7", column, f"total at central values, custody footing ({end})", {case: f_cust[i] + s_cust[i]}, note=note)
@@ -324,7 +356,7 @@ def main():
                 add("7", column, f"published pairing per group member ({end})", {case: pairing[i] / pop_m}, unit="$k", note=note)
 
     print("[§7b: custody footing, benefits priced]")
-    soc = {k: social(c, c["victims_custody"], congestion=cong[k]) for k in cols}
+    soc = {k: social(c, c["victims_custody"], congestion=cong[k], items=items[k][0]) for k in cols}
     soc_p = social(c, c["victims_custody"], printed=True)
     f23 = fiscal["sept23"]["custody"]
     fa = {k: fiscal[k]["custody"] for k in adopted}
@@ -392,6 +424,11 @@ def main():
             earlier_cases=dict(central=c["congestion"], full_span=[c["congestion_low"], c["congestion_high"]]),
             source=rel(LONG_RUN[case]))
         doc["beside_the_central_total"] = {f"{case}_{run}": note for run, (column, note) in BESIDE.items()}
+    if case in SOCIAL_ITEMS:
+        doc["social_items_in_the_social_rows"] = dict(
+            case=case, items=list(SOCIAL_ITEM_IDS), central_bn=items[case][0], stacked_low_bn=items[case][1],
+            stacked_high_bn=items[case][2], source=rel(SOCIAL_ITEMS[case]),
+            decision="decisions/2026-09-28-social-items-fear-security-schools.md")
     (out_dir / "real_costs_totals.json").write_text(json.dumps(doc, indent=1) + "\n")
     print("\n[result]")
     fmt = lambda v: "" if v is None else f"{v:9.3f}"  # noqa: E731

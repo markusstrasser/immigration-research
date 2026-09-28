@@ -47,7 +47,8 @@
   "scale_spillovers_2026_09_23/derived/summary.csv": "385c45e73ab523c28ef38ff24b0b05704aa32c1a2630c11fb89d8443c56b54c0",
   "main_case_long_run_2026_09_27/derived/summary.json": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d",
   "main_case_long_run_2026_09_27/derived/corrections.json": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea",
-  "service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660"
+  "service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
+  "social_costs_unpriced_2026_09_28/derived/items.csv": "c8ff8aa3f9fdecb63460cf4f5e2f44d2e7aaab40f555abedf402acdba62c64a0"
  },
  "congestion_by_band_end_bn": {
   "case": "sept27",
@@ -71,5 +72,18 @@
  "beside_the_central_total": {
   "sept27_capital_at_7pct": "the return on public capital at the reported 7% on every component; beside the central total, never in it",
   "sept27_enterprises_out_option_a": "option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it"
+ },
+ "social_items_in_the_social_rows": {
+  "case": "sept27",
+  "items": [
+   "fear_avoidance",
+   "private_security",
+   "school_disruption"
+  ],
+  "central_bn": 7.94,
+  "stacked_low_bn": -9.4,
+  "stacked_high_bn": 30.16,
+  "source": "social_costs_unpriced_2026_09_28/derived/items.csv",
+  "decision": "decisions/2026-09-28-social-items-fear-security-schools.md"
  }
 }
