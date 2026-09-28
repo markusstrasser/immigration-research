@@ -58,7 +58,7 @@ GROUPS = [
                      "responses."),
             dict(refs=[184],
                  text="Sampling noise is about ±$21bn (95%).",
-                 why="The choices in the charts move the number more than the data noise does."),
+                 why="The assumptions in the tables above move the number more than the data noise does."),
             dict(refs=[269],
                  text="About $190bn (164–213) is what any 39.7M average residents would cost others under the "
                       "same rules. The group's own excess is about $165bn (158–175), and all of it comes from lower "

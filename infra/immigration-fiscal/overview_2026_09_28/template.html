@@ -39,18 +39,20 @@ strong { font-weight: 600; }
 .strokes li { padding-left: 0; }
 .strokes b { font-weight: 600; }
 .figure { overflow-x: auto; margin: 16px 0 8px; }
-.chart { width: 100%; min-width: 680px; height: auto; display: block; font-family: var(--serif); }
-.chart .grid { stroke: var(--grid); stroke-width: 1; }
-.chart .grid.zero { stroke: var(--soft); }
-.chart .tick { font-size: 11px; fill: var(--faint); font-variant-numeric: tabular-nums; }
-.chart .axis { font-size: 12px; fill: var(--soft); font-style: italic; }
-.chart .lab { font-size: 13px; fill: var(--ink); }
-.chart .lab.total { font-style: italic; fill: var(--soft); }
-.chart .lab.main { font-weight: 600; font-style: normal; fill: var(--ink); }
-.chart .note { font-size: 10.5px; fill: var(--faint); }
-.chart .val { font-size: 12px; fill: var(--soft); font-variant-numeric: tabular-nums; }
-.chart .val.main { font-weight: 600; fill: var(--ink); }
-.chart .ref { font-size: 10.5px; fill: var(--faint); }
+table.ledger { border-collapse: collapse; width: 100%; max-width: 640px; font-variant-numeric: tabular-nums; }
+table.ledger th, table.ledger td { padding: 3px 8px; text-align: left; vertical-align: baseline; }
+table.ledger thead th { font-weight: normal; font-style: italic; color: var(--faint); border-bottom: 1px solid var(--rule); }
+table.ledger .n { text-align: right; width: 5.5em; white-space: nowrap; }
+table.ledger tr.cat th, table.ledger tr.cat td { font-weight: 600; padding-top: 12px; }
+table.ledger tr.item td:first-child { padding-left: 1.6em; }
+table.ledger .note { display: block; font-size: 0.8em; color: var(--faint); }
+table.ledger td.cost { color: var(--orange); }
+table.ledger td.gain { color: var(--blue); }
+table.ledger tr.sub td { font-style: italic; color: var(--faint); }
+table.ledger tfoot tr.total th, table.ledger tfoot tr.total td { border-top: 2px solid var(--ink); font-weight: 600; padding-top: 6px; }
+table.ledger td.noise { text-align: center; }
+table.ledger .ref { text-align: right; font-size: 0.85em; }
+table.ledger .ref a { color: var(--faint); }
 .caption { font-size: 0.92rem; color: var(--soft); max-width: 66ch; }
 table { border-collapse: collapse; margin: 12px 0; font-variant-numeric: tabular-nums; width: 100%; }
 .tablewrap { overflow-x: auto; }
@@ -156,14 +158,18 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 <p class="prose">Open "Evidence" under a finding for the reasoning, what would change the number, the data and the sources.</p>
 
 <h2 id="build">How the total is built</h2>
-<p class="prose">The account is a sum. Each row adds one line to the row above. Orange means other residents are worse off. Blue means better off. Each row has two bars: the low end of the range above and the high end below. The grey row is the main estimate. Dashed rows are alternatives or costs outside the budget.</p>
-<div class="figure">{{WATERFALL}}</div>
-<p class="caption">The build checks that the rows sum to the main estimate.</p>
+<p class="prose">The account is a sum, in $bn a year. A plus is a cost to other residents. A minus is a gain to them. Each column is one full run of the account, so each column adds up to its total. Inside each group the largest line comes first.</p>
+<div class="tablewrap">{{LEDGER}}</div>
+<p class="caption">Lines are rounded. The columns add up before rounding.</p>
+
+<h3>Other ways to count</h3>
+<p class="prose">Two accounting rules and the costs outside public budgets, added one at a time.</p>
+<div class="tablewrap">{{ALTERNATIVES}}</div>
 
 <h2 id="assumptions">How each assumption changes the total</h2>
-<p class="prose">Each row changes one assumption and keeps the others. The bars show how far the $355bn moves. Dashed rows are alternatives or items beside the account. The number after each label links to the finding behind it.</p>
-<div class="figure">{{TORNADO}}</div>
-<p class="caption">One assumption is too large for this chart: whether services grow with population at all. With no growth, the account favours other residents. The sign flips below a 3–14% response. "Earlier version" rows come from an earlier version of the model and are close, not exact.</p>
+<p class="prose">Each line changes one assumption and keeps the others. The numbers are the change to the total, in $bn a year. The groups and the lines inside them are ranked by size. The last column links to the finding behind each line.</p>
+<div class="tablewrap">{{ASSUMPTIONS}}</div>
+<p class="caption">One assumption is too large for this table: whether services grow with population at all. With no growth, the account favours other residents. The sign flips below a 3–14% response.</p>
 
 <h2 id="objects">One year, debt, interest and pensions</h2>
 <p class="prose">These words name different numbers. Most errors come from adding numbers that do not add. The table puts each number in time.</p>
