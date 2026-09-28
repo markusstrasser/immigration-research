@@ -1,0 +1,5 @@
+model,end,spec,direct_receipts_bn,household_transfers_bn,tally_bn,accrual_move_bn,tally_on_accrual_bn
+corrected,low_end_48,48.0000,400.1585,338.1501,62.0084,77.2806,-15.2722
+corrected,high_end_11,11.0000,378.3143,328.8791,49.4352,73.6299,-24.1947
+uncorrected,low_end_48,48.0000,444.8138,378.3877,66.4261,77.2806,-10.8545
+uncorrected,high_end_11,11.0000,424.5223,370.0169,54.5055,73.6299,-19.1244
