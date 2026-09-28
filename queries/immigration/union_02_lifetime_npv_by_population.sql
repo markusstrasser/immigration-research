@@ -1,5 +1,6 @@
 -- requires: union
 -- backs: immigration-sweep-cycles-23-32-2026-06-15.md cycle 23, immigration-mexico-npv-population-synthesis-2026-06-15.md
+-- (backing memos deleted 2026-09-29; recover with `git show 8be9f94:research/<file>`)
 SELECT
   population_group,
   ROUND(MAX(CASE WHEN fiscal_layer = 'lifetime_npv' THEN value_per_adult_weighted END)) AS npv_per_adult,

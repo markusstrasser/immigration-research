@@ -324,8 +324,7 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | HUD CHAS 2018–2022 county CSV | `sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-050-csv.zip` | Local, acquired 2026-06-18 | County share with 1+ of 4 housing problems (Table 11) | Needs Playwright session fetch; not welfare scalar |
 | ACS state rent JSON | `sources/immigration-fiscal/data/external/origin/census_acs1_2023_state_median_gross_rent.json` | Local | Renter-side housing context | State-level only |
 | Zillow ZORI + ZHVI metro panels 2015–2026 | `external/urban_housing/zillow/metro_{zori,zhvi}_*.csv` | **Local, acquired 2026-06-25** (`setup-urban-housing.sh`) | 739-metro MONTHLY rent (ZORI, repeat-rent ACS-weighted) + home-value (ZHVI) panel — the Wilson-Zhou (2026) housing outcome var; join to ACS foreign-born-share by CBSA → the rent-incidence panel (E-001…E-008) | Asking-rent index (new leases) ≠ contract rent; CBSA-level → needs Geocorr PUMA↔CBSA for the warehouse PUMA bridge |
-| `msa_rent_elasticity_panel` (derived table) | context warehouse | Rebuilt 2026-09-05 (`build_msa_rent_elasticity_panel.py`) | Zillow rent/home-value trajectory × Saiz elasticity with a fixed January 2016–December 2025 window | Approximate first-city/state join is not a validated CBSA crosswalk; a bivariate null does not identify demand or immigration effects; see `immigration-msa-rent-elasticity-panel-2026-06-25.md` |
-| Local burden examples | `research/immigration-state-local-cost-examples-ny-ca-tx.md` | Memo, not raw data | Concrete burden illustrations | Not a reusable database |
+| `msa_rent_elasticity_panel` (derived table) | context warehouse | Rebuilt 2026-09-05 (`build_msa_rent_elasticity_panel.py`) | Zillow rent/home-value trajectory × Saiz elasticity with a fixed January 2016–December 2025 window | Approximate first-city/state join is not a validated CBSA crosswalk; a bivariate null does not identify demand or immigration effects; see `immigration-housing-supply-ca-tx-2026-09-22.md` for the current housing evidence |
 
 ## Program and household-transition data
 
@@ -435,7 +434,7 @@ If the question is:
 1. `What do we have locally?` Start with `sources/immigration-fiscal/data/MANIFEST.md`, then this file.
 2. `Can we run a state/origin query now?` Start with the unified **`warehouse/immigration.duckdb`** (one file: all context+lifetime+fiscal tables; `SELECT * FROM _catalog` for the inventory). The per-domain warehouses (`immigration_context.duckdb` etc.) still build as inputs. Rebuild the unified file with `reproduce.sh build unified`.
 3. `Can we build our own lifetime model?` Start with `research/immigration-lifetime-fiscal-data-stack-2026-04-10.md`.
-4. `What was actually acquired?` Start with `research/immigration-public-data-acquisition-2026-04-11.md` and `research/immigration-frontier-data-acquisition-2026-04-11.md`.
+4. `What was actually acquired?` Start with this register and `sources/immigration-fiscal/data/MANIFEST.md`, then `research/immigration-frontier-data-acquisition-2026-04-11.md`.
 5. `What school-side district layer now exists?` Start with `research/immigration-school-service-complexity-2026-04-11.md`.
 6. `What new receiver-node data was acquired?` Start with `research/immigration-receiver-data-acquisition-2026-04-23.md`.
 7. `What origin/channel data do we have?` Start with `research/immigration-origin-data-stack.md`.

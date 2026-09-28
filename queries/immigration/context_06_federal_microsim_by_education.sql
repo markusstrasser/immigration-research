@@ -1,5 +1,6 @@
 -- requires: context
 -- backs: immigration-federal-distribution-findings-2026-06-15.md §IV
+-- (backing memos deleted 2026-09-29; recover with `git show 8be9f94:research/<file>`)
 -- Employee OASDI/HI proxy minus allocated SNAP/TANF and individual SSI.
 -- These are matched ACS adults; donor weights do not count target adults.
 SELECT

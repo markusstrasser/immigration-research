@@ -11,9 +11,11 @@ before treating an old roadmap item or an uncomputed table as missing data.
 
 Instrument note: this topic is politically charged and much of the synthesis is LLM-assisted. Treat this index as a routing layer, not as a neutral substitute for the cited artifacts. Consult `notes/llm-bias-caveat.md` before writing headline claims.
 
-Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [material inference repair](../decisions/2026-09-05-material-inference-repair.md) are listed once, in the Historical section at the end, with their successors; their bodies are retained verbatim below a `historical-snapshot` marker for provenance and must not be cited as current. Index refreshed 2026-09-16 (session a73215f4). CA vs Texas routing added 2026-09-21.
+Status: rows without a tag are live. Superseded and cruft documents were deleted on 2026-09-29 ([decision](../decisions/2026-09-29-delete-superseded-and-cruft-docs.md)); the tombstone table at the end lists each deleted path with its last commit and successor, so `git show <last commit>:<path>` recovers it. Records (decision records, ladder entries, lane RESULTs, dated audits) stay as written; a record's link to a deleted file resolves through that table.
 
 ## Core State
+
+[Confidence ladder](immigration-confidence-ladder.md): the live claim register, one entry per finding with its rating and source; entries 52 onward are live, 1–51 sit below its historical-snapshot marker.
 
 [Measured school growth and pupil-level checks](immigration-school-peer-checks-2026-09-20.md):
 actual Texas/California enrollment and staffing; ECLS-K white US-born pupils'
@@ -509,8 +511,6 @@ NRC debt rule failed, no general optimistic schooling bias, and material
 education/parentage/exit sensitivities. These govern the older releases below.
 They are calculation notes, not a complete net-cost estimate or narrative essay.
 
-Fiscal scale and benefits: [population-normalized comparison, national reconciliation and production-benefit scenarios](immigration-benefits-and-macro-scale-2026-09-19.md) reports the per-person fiscal gap, macro anchors and remaining national coverage, and a same-population earnings extraction with an illustrative $13–26bn fixed-capital benefit channel. It is not a total welfare estimate or bound; sector price estimates cannot be added without matching populations and overlap.
-
 Education-specific fiscal evidence: [annual comparisons, lifetime uncertainty and methods](immigration-education-fiscal-and-methods-2026-09-19.md) separates below-HS from HS-only, five origin regions, current stocks and recent arrivals; retains same-education and all-education native references. Adds joint survey uncertainty, material healthcare-matching tests and explicit institutional-cost scenarios. Below-HS Mexican-born adults outperform below-HS natives in the baseline common-age comparison, while HS-only do worse; this qualifies blanket origin-based rankings. These remain resident-account models, not admission effects.
 
 Earlier repaired fiscal profiles: [yearly and lifetime results](immigration-yearly-lifetime-cost-repair-2026-09-19.md). The $217.32bn/$239.24bn annual source vintage is superseded by the finance refresh and September20 school correction above. Lifetime comparisons retain pinned age profiles, conditional survival and explicit discount/allocation assumptions; they are not validated admission forecasts. The [September19 cross-check](immigration-five-day-cross-check-2026-09-19.md) and birth-versus-arrival budget remain superseded/withdrawn. Narrative and essay writing are operator-owned.
@@ -628,10 +628,8 @@ Latest supplied-data audit: [immigration-new-datasets-and-conclusions-2026-09-17
 | `immigration-recent-narratives-2026-09-05.md` | Current essays/news and selective official X sample; counterexamples and claim checks | Repeating current public arguments |
 | `immigration-dataset-proxy-refresh-2026-09-05.md` | BLS/BPS/ICE acquisitions and BEA audit, provenance and principal checks | Using recent outcomes, capacity proxies or enforcement counts |
 | `immigration-conceptual-audit-2026-09-05.md` | Material audit: SIPP household/person and education errors; GDP/incumbent and CRS mistakes; Cato mischaracterization; global-gains arithmetic; conditional crime-bias sign | Reusing June fiscal-proxy figures or the dismantling synthesis; these corrections supersede the specified claims |
-| `immigration-main-question-reset.md` | What the repo is actually trying to answer | Reframing the project or proposing new scope |
 | `immigration-evidence-base-audit.md` | Which claims are well-supported vs thin | Repeating literature claims or writing summaries |
 | `immigration-glossary.md` | Definitions and term discipline | Using terms like `unauthorized`, `low-skill`, `surge`, `fiscal` |
-| `immigration-epistemic-check.md` | Framing-sensitive guardrails | Politically charged synthesis |
 | `immigration-economist-effects-matrix.md` | What economists are actually pricing vs omitting | Comparing Smith, Decker, Borjas, Clark poll economists |
 | `immigration-source-incentive-regrade-2026-06-23.md` | Source-incentive heuristics for prioritizing checks; grades are not truth probabilities or evidence weights | Assessing source incentives while verifying methods and primary tables |
 | `immigration-dataset-register.md` | Use-case-oriented data register | Asking "what data do we have?" |
@@ -678,13 +676,8 @@ Historical five-domain research/acquisition pass. DOI resolution checks bibliogr
 | File | Topic | Consult before |
 |------|-------|----------------|
 | `immigration-fiscal-impact-unauthorized-memo.md` | **[pre-repair, March 2026; status banner added 2026-09-21]** Literature memo: federal/state-local split, wage debate, child-attribution dispute. Its NAS "second generation net positive" statements are all-origin, not the Mexican-origin result | The literature and the child-attribution dispute; **not** a current fiscal bottom line (use Core State) |
-| `immigration-full-spectrum-costs-unauthorized-memo.md` | Non-ledger costs: congestion, courts, labor-law erosion, backlash | Claiming "hidden" costs beyond taxes/transfers |
-| `immigration-unified-scenarios-memo.md` | Scenario comparison across methods | Converting arguments into a bounded range |
-| `immigration-state-local-cost-examples-ny-ca-tx.md` | Concrete state/local examples | Generalizing from national ledgers to local burden |
 | `immigration-household-weighted-correction.md` | Household vs person correction issues | Reusing external figures without checking unit of analysis |
 | `immigration-nas-scope-and-bias-update-2026-04-10.md` | What NAS does and does not cover | Treating NAS as final or complete |
-| `immigration-adversarial-review.md` | Strongest case against our own position | Closing out a conclusion or writing a public-facing memo |
-| `immigration-path-to-minus-200k-scenario-audit.md` | Scenario audit of the `-$200k` per-person path; April model, see the fiscal account for current units | Reusing a lifetime scalar |
 
 ## Data Stack
 
@@ -696,22 +689,14 @@ Historical five-domain research/acquisition pass. DOI resolution checks bibliogr
 | `immigration-restrictionist-corpus-parse-2026-06-15.md` | **Full marker-modal parse** of 8 restrictionist PDFs → perspectives, narratives, generators S06–S14 | Deep read of restrictionist corpus; generator mining |
 | `immigration-restrictionist-corpus-full-extract-2026-06-15.md` | **Section-by-section full read** of all 9 papers (~220 claims, 62 sections) | Authoritative claim register after full parse |
 | `immigration-restrictionist-dataset-integration-2026-06-15.md` | **Paper → dataset → DuckDB** map; Tier A–C acquire list | Planning integration after restrictionist corpus read |
-| `immigration-thesis-generator-audit-2026-06-16.md` | Cross-disciplinary generator/self-prompt audit (economics, micro/macro, urbanism, psychology, narrative) | Running divergence/convergence loops; asking what to search next |
-| `immigration-knowledge-delta-agent-loop-2026-06-16.md` | Two-day delta + parent-controlled agent loop (claim inventory → probe → converge → review) | Starting a full immigration research epoch; pairing with generator audit |
-| `../notes/immigration-lifetime-sweep-protocol.md` | Mandatory post-sweep workflow (theory → 5 models → thesis burst → disconfirm → round N+1) | Structuring research cycles |
-| `../notes/immigration-lifetime-synthesis-diverge-cookbook.md` | **Prompt template / cookbook** — full diverge↔converge loop, subagent JSON schema, synthesis prompt | Running sweeps; adapting to new topics |
-| `immigration-public-data-acquisition-2026-04-11.md` | What public files were actually staged locally | Assuming a dataset has been acquired |
 | `immigration-origin-data-stack.md` | Origin/destination and ontology layer | Making claims by origin mix |
-| `immigration-next-data-upgrades.md` | Highest-value missing acquisitions | Planning the next data tranche |
 | `immigration-frontier-data-acquisition-2026-04-11.md` | Stage 4 local-capacity acquisition pass: `SAIPE`, court/interpreter docs, and NCES CCD file-tool artifacts | Building school-service or court-friction modules |
 | `immigration-school-service-complexity-2026-04-11.md` | Built district/state school-side context layer from `SAIPE` + school finance + current NCES directory, plus bounded `ELSi` probe | Doing district school-burden or school-service-complexity analysis |
 | `immigration-surge-threshold-dataset-frontier-2026-04-21.md` | Dataset frontier and research designs that can actually identify surge and threshold effects | Asking what data and empirical design would settle nonlinear local-capacity questions |
-| `immigration-prototype-progress.md` | Current prototype state | Claiming the model is further along than it is |
 | `immigration-public-mvp-meps-module-2026-04-11.md` | Built MEPS health-cost module for the public MVP | Using MEPS-derived health-cost outputs |
 | `immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md` | Weighted ACS stock cut by education bucket plus current lifetime-estimate status | Asking for `<HS` / `HS` / `some college` counts or state shares |
 | `immigration-local-burden-puma-layer.md` | PUMA/local burden layer | Moving from state averages to sub-state analysis |
 | `immigration-stage2-county-bridge-batch.md` | County bridge build status | County-level joining or school/housing overlays |
-| `immigration-next-agent-handoff-2026-04-11.md` | April 2026 next-agent handoff; process record, superseded in practice by the reproduce guide and the September memos | Assuming an April to-do list is still open |
 
 ## Interpretation & External Debate
 
@@ -721,12 +706,9 @@ Current cross-media coverage: [podcast, YouTube and Substack audit](immigration-
 |------|-------|----------------|
 | `immigration-clark-respondent-audit.md` | How to read the Clark poll without overclaiming | Saying "economists agree" |
 | `immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md` | Unified comparative audit with one quantitative framework across all three commentators | Wanting a more decisive first-principles comparison |
-| `immigration-claims-matrix-2026-04-11.md` | One-page verified/inferred/unresolved claim ledger for artifacts and commentators; 2026-06-16 scoped to quick ledger, not latest tensor | Making a quick final assertion; confirm latest fiscal/school rows in verified findings and running fixes |
 | `immigration-david-d-friedman-claims-audit-2026-04-11.md` | Named audit of David D. Friedman claims with a first-principles quantitative pass | Checking libertarian open-borders arguments against the repo and official sources |
 | `immigration-bryan-caplan-claims-audit-2026-04-21.md` | Claim-by-claim audit of Bryan Caplan with a causal graph tying his optimistic channels to current surge, housing, fiscal, and political-response evidence | Evaluating Caplan directly rather than treating him as generic open-borders rhetoric |
 | `immigration-sumner-claims-audit-2026-09-22.md` | Claim-by-claim audit of Scott Sumner's surge, wage, housing, Social Security and scale claims against his own pages, with the pasted AI critique graded cosign / throw out / complement; the Social Security "best solution" quote does not exist; the Trustees sensitivity is 0.38% of payroll (about $2.6tn of $22.6tn), not $1.5tn; CBO surge routed to FAQ 16 | Quoting Sumner; the "CBO says the surge shrinks the deficit" objection; the Social Security financing claim |
-| `immigration-economist-one-pager-2026-04-22.md` | Short public-facing one-pager on why the strongest pro-immigration economics rhetoric keeps answering the wrong question | Needing a concise forwardable version rather than a full memo |
-| `immigration-economist-debate-sheet-2026-04-22.md` | Quote-driven debate sheet mapping economist claims to the hidden move, failure mode, and strongest repo-backed counter | Wanting direct quotes and fast counters for debate or adversarial writing |
 | `immigration-economist-rhetorical-failures-2026-04-22.md` | Bounded memo on the strongest fair critique of mainstream pro-immigration economics rhetoric: ledger switching, upper-bound laundering, marginal-to-mass extrapolation, capacity erasure, denominator masking, and political-economy underspecification | Asking how to kill the strongest economist arguments without overclaiming beyond the repo's current evidence |
 | `immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md` | Named audit of Noah Smith and Nicholas Decker claims | Checking pundit or commentator claims against the repo and official sources |
 | `immigration-economist-dismantling-2026-06-25.md` | June dismantling pass (corrected 2026-09-05): fundamental fair-is-the-weapon dismantling of the pro-immigration canon across 3 tiers (Commentators: Smith/Decker/CATO; Academic Foundations: Card-Peri/Clemens; Popular Books: Hernandez/*Streets of Gold*); grants the repo-confirmed core, kills only the coordinate-switches, quotes the canon's own primary texts | Building any step-by-step takedown of pro-immigration arguments; wanting the synthesis across all 7 targets |
@@ -746,7 +728,7 @@ Current cross-media coverage: [podcast, YouTube and Substack audit](immigration-
 
 ## Causal-design layer (2026-04-18)
 
-April 2026 county/receiver causal layer. Its analyses were superseded on 2026-09-05 (causal-lever, threshold and receiver-node claims withdrawn) and are listed under Historical; the two provenance records below remain live. The analysis result files under `sources/immigration-causal/data` were lost with the SSD tree in August 2026 and are deliberately not rebuilt (see the [data availability memo](immigration-recent-cohort-data-availability-2026-09-05.md), Revisions).
+April 2026 county/receiver causal layer. Its analyses were superseded on 2026-09-05 (causal-lever, threshold and receiver-node claims withdrawn) and were deleted on 2026-09-29 (tombstone table at the end); the two provenance records below remain live. The analysis result files under `sources/immigration-causal/data` were lost with the SSD tree in August 2026 and are deliberately not rebuilt (see the [data availability memo](immigration-recent-cohort-data-availability-2026-09-05.md), Revisions).
 
 | File | Topic | Consult before |
 |------|-------|----------------|
@@ -775,62 +757,88 @@ If the question is:
 4. `What data do we have locally?` Start with `immigration-dataset-register.md`, then `immigration-recent-cohort-data-availability-2026-09-05.md`, then `../sources/immigration-fiscal/data/MANIFEST.md`.
 5. `Can we model this ourselves?` Start with `immigration-friend-reproduce-guide.md` and `../infra/immigration-fiscal/reproduce.sh`; the current model is described in `immigration-fiscal-account-2024-2026-09-05.md`; `immigration-lifetime-fiscal-data-stack-2026-04-10.md` is the April design note.
 6. `What is the current `<HS` / `HS` / `some college` stock split?` Start with `immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md` (April ACS cut; the fiscal account carries the current education definitions).
-7. `How do I run the next fiscal/generator sweep?` Start with `immigration-knowledge-delta-agent-loop-2026-06-16.md`, then `../notes/immigration-lifetime-synthesis-diverge-cookbook.md`, `../notes/immigration-lifetime-sweep-protocol.md` and `immigration-thesis-generator-audit-2026-06-16.md`; check `immigration-material-repair-report-2026-09-05.md` before reusing any June fiscal generator.
 
-## Historical (superseded 2026-09-05)
+## Superseded files kept, and deleted files
 
-Retained verbatim for source and correction provenance under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md). Each file keeps its dated corrections above a `<!-- historical-snapshot:start superseded=2026-09-05 -->` marker; do not cite the numbers or causal claims below that marker as current. Read the successor first.
+Superseded and cruft documents were deleted on 2026-09-29 ([decision](../decisions/2026-09-29-delete-superseded-and-cruft-docs.md)). The files below stay: two are builder specs that code cites, one is held by a HUMAN.md link, and six snapshot memos keep their corrected assessment above the `historical-snapshot` marker. None of them may be cited as current.
 
 | File | Former section | Was | Superseded by |
 |------|----------------|-----|---------------|
 | `immigration-verified-findings-report-2026-04-10.md` | Core State | Historical findings with September corrections and current-report link | `immigration-clarity-update-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` (September corrections sit above the snapshot marker) |
-| `immigration-confidence-ladder.md` | Core State | Claim confidence by tier | `immigration-clarity-update-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` (its September entries 52–64, above the snapshot marker, are live) |
-| `immigration-claims-evolution-ledger-2026-04-23.md` | Core State | Claim-by-claim evolution ledger with takeaways and recurring misunderstandings | `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-fiscal-welfare-ledger-map.md` | Core State | Unifying map — "positive vs negative?" decomposed into 4 coordinates × the full fiscal+benefit ledger set; maps generator clusters A–U | `immigration-second-order-effects-2026-09-05.md`, `immigration-fiscal-account-2024-2026-09-05.md` |
-| `immigration-conclusion-audit-running-fixes.md` | Core State | Live overclaim/denominator/layer fix ledger | `immigration-material-repair-report-2026-09-05.md` |
 | `immigration-urbanism-frontier-2026-06-25.md` | Frontier expansion (2026-06-25) | Biggest yield — Wilson-Zhou (2026) causal housing magnitudes (+2.2% prices/+1.4% rents) + the MSA rent×fb-share panel dataset map (Zillow acquired; WRLURI/Geocorr/LODES spec'd) | `immigration-second-order-effects-2026-09-05.md`, `immigration-recent-papers-2026-09-05.md` |
-| `immigration-costs-causal-analysis.md` | Fiscal Ledger | DAG and causal-path discipline | `immigration-second-order-effects-2026-09-05.md`, `../decisions/2026-09-05-material-inference-repair.md` |
-| `immigration-country-fiscal-tensor-2026-06-15.md` | Data Stack | Built country fiscal tensor + rollup anchors (union DuckDB) | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-federal-distribution-findings-2026-06-15.md` | Data Stack | Distribution pass — school units, federal proxy white vs Mexico | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-europe-caucasian-fiscal-findings-2026-06-15.md` | Data Stack | EU27 / UK / Caucasian natives / low-skill corridors — federal proxy + matched-education | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-school-burden-per-adult-2026-06-15.md` | Data Stack | per_pupil × kids/adult — three-layer annual (`v_three_layer_annual`) | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-sweep-cycles-13-22-2026-06-15.md` | Data Stack | Diverge/synthesis cycles 13–22 (school burden build) — rushed SQL pass, superseded by 23–32 and same-universe guard; do not cite old `$771/+748` origin school/net rows | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-sweep-cycles-23-32-2026-06-15.md` | Data Stack | Full protocol sweeps 23–32: NAS college+ NPV, school weights, lifetime flip, converge; origin school/net rows partly superseded by same-universe guard | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-mexico-npv-population-synthesis-2026-06-15.md` | Data Stack | Mexico NPV multiply-out, ACS denominator, Biden stock vs encounters, full ledger stack (Q+R) | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-lifetime-country-approx-brainstorm-2026-06-15.md` | Data Stack | Brainstorm: country lifetime +/- with 1st/2nd/3rd order stacks | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-lifetime-dataset-brainstorm-2026-06-15.md` | Data Stack | Brainstorm + tier map for lifetime proxies; `setup-lifetime.sh` acquisition | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-lifetime-fiscal-generators.md` | Data Stack | 563 DuckDB parameter claims; 106 MD / 104 DuckDB generators (MD-only Q06, S15) | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-lifetime-unified-theory-2026-06-15.md` | Data Stack | Living synthesis — unified theory + 5 formal models + critique matrix (update each sweep) | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
 | `immigration-net-negative-dataset-frontier-2026-06-15.md` | Data Stack | Datasets to test net-negative fiscal/local-cost claims (+ disconfirmation) | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-scenario-composition-2026-06-15.md` | Data Stack | Integrated SIPP+MEPS+federal+local scenario ledgers | `immigration-fiscal-account-2024-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
-| `immigration-public-mvp-readiness-2026-04-11.md` | Data Stack | What is ready for a public-use MVP | `immigration-material-repair-report-2026-09-05.md`, `immigration-fiscal-account-2024-2026-09-05.md` |
-| `immigration-public-mvp-sipp-meps-bridge-2026-04-11.md` | Data Stack | Completed SIPP-to-MEPS bridge and expected-health output | `immigration-material-repair-report-2026-09-05.md`, `immigration-fiscal-account-2024-2026-09-05.md` |
 | `immigration-dismantle-card-peri-2026-06-25.md` | Interpretation & External Debate | Published +0.6% native / −6.7% prior-immigrant model result; corrected local-design and QWI limits | `immigration-material-repair-report-2026-09-05.md`, `immigration-economist-dismantling-2026-06-25.md` |
 | `immigration-dismantle-clemens-2026-06-25.md` | Interpretation & External Debate | Corrected global model versions, fixed-gain arithmetic, rate/stock and housing scope | `immigration-material-repair-report-2026-09-05.md`, `immigration-conceptual-audit-2026-09-05.md` |
 | `immigration-dismantle-streets-of-gold-2026-06-25.md` | Interpretation & External Debate | Conditional mobility survives; corrected rank, convergence, sample and book-coverage objections | `immigration-material-repair-report-2026-09-05.md` |
 | `immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md` | Interpretation & External Debate | Audit of the Open Borders “double world GDP” slogan, cited papers, repo capacity constraints, and apartheid framing | `immigration-conceptual-audit-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-threshold-first-panel-2026-04-21.md` | Interpretation & External Debate | First joined-data threshold pass using BPS permits, HUD PIT/HIC, election shift, and receiver-city costs | `immigration-second-order-effects-2026-09-05.md`, `../decisions/2026-09-05-material-inference-repair.md` |
-| `immigration-threshold-causal-levers-2026-04-21.md` | Interpretation & External Debate | Normalized threshold associations and limits of causal lever identification | `immigration-second-order-effects-2026-09-05.md`, `../decisions/2026-09-05-material-inference-repair.md` |
-| `immigration-causal-synthesis-2026-04-18.md` | Causal-design layer (2026-04-18) | Cycle synthesis: Saiz × E-Verify findings, observed mandate-margin wage read; not global Card-vs-Borjas verdict | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-causal-everify-card-vs-borjas.md` | Causal-design layer (2026-04-18) | E-Verify staggered TWFE on QWI 2003-2023, native low-skill wages | `immigration-material-repair-report-2026-09-05.md`, `immigration-recent-papers-2026-09-05.md` |
-| `immigration-causal-saiz-elasticity-rent.md` | Causal-design layer (2026-04-18) | Saiz 2010 housing supply elasticity × ACS rent + foreign-born | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-causal-paradigm-escape-synthesis-2026-04-18.md` | Causal-design layer (2026-04-18) | Evening cycle synthesis: 5 verdict updates, 8-finding ladder | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-causal-internal-vs-immigrant-newcomers.md` | Causal-design layer (2026-04-18) | IRS SOI × ACS moved-from-abroad flow comparison for “newcomer burden” | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-causal-surge-2021-2024.md` | Causal-design layer (2026-04-18) | OHSS encounters + CHNV + city costs + 2024 election: surge analysis | `immigration-material-repair-report-2026-09-05.md`, `immigration-conduct-denominators-2026-09-05.md` |
-| `immigration-county-outcome-panel-2026-04-21.md` | Causal-design layer (2026-04-18) | QCEW + IRS domestic migration + threshold spine: county wages, employment, domestic migration, and political response in one frame | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-capacity-frontier-2026-04-21.md` | Causal-design layer (2026-04-18) | Stock vs flow vs flow-to-capacity comparison, threshold robustness grid, and a clearer statement of what still remains open on subgroups, voting, welfare, and receiver counterfactuals | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-capacity-falsification-2026-04-21.md` | Causal-design layer (2026-04-18) | Corrected falsification pass with clean `2017–2018` and `2018–2019` annual pre-COVID windows, `1,000`-draw permutation inference, division/state leave-out, explicit window metadata, and wage-threshold null benchmarking | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-frontier-rethink-2026-04-22.md` | Causal-design layer (2026-04-18) | Zoomed-out rethink after the corrected falsification pass; demotes the annual county panel to a screening surface and ranks the better next frontiers | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-receiver-failure-atlas-2026-04-22.md` | Causal-design layer (2026-04-18) | Receiver-node overload atlas joining shelter load, permits, spending, and political shift from `2018–2024` | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-resident-weighted-exposure-2026-04-22.md` | Causal-design layer (2026-04-18) | Resident-, renter-, and child-weighted correction to the newcomer and stress-exposure framing | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
 | `immigration-open-borders-break-even-bounds-2026-04-22.md` | Causal-design layer (2026-04-18) | Converts the repo’s conservative open-borders calibration into explicit break-even loss bounds and housing-absorption requirements | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-receiver-counterfactuals-2026-04-22.md` | Causal-design layer (2026-04-18) | National-CoC synthetic-control style counterfactuals for `NYC`, `Denver`, `Boston`, `Chicago`, and `Bexar`, including ratio outcomes, absolute-load checks, and donor-pool exclusions | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-receiver-node-kill-test-2026-04-23.md` | Causal-design layer (2026-04-18) | End-to-end nine-node kill test joining ACS 2024 exposure, PUMA bridge, EOIR broad/strict court pressure, QWI labor outcomes, shelter/capacity, and political shift | `immigration-second-order-effects-2026-09-05.md`, `immigration-material-repair-report-2026-09-05.md` |
-| `immigration-full-spectrum-costs-scoring-model.md` | (not previously indexed) | Full-spectrum fiscal and welfare channels: inclusion requires compatible evidence | `immigration-second-order-effects-2026-09-05.md` |
-| `immigration-msa-rent-elasticity-panel-2026-06-25.md` | (not previously indexed) | MSA rents and elasticity: descriptive correlations with an incomplete crosswalk | `immigration-second-order-effects-2026-09-05.md`, `immigration-recent-papers-2026-09-05.md` |
-| `immigration-public-mvp-profiling-findings-2026-04-11.md` | (not previously indexed) | Immigration public MVP profiling findings — 2026-04-11 | `immigration-material-repair-report-2026-09-05.md`, `immigration-fiscal-account-2024-2026-09-05.md` |
-| `immigration-public-mvp-variable-dictionary-2026-04-11.md` | (not previously indexed) | Immigration public MVP variable dictionary — 2026-04-11 | `immigration-material-repair-report-2026-09-05.md`, `immigration-fiscal-account-2024-2026-09-05.md` |
 | `immigration-theory-verdicts-2026-06-25.md` | (not previously indexed) | Generator-bank checks — corrected evidentiary status | `immigration-material-repair-report-2026-09-05.md` |
+
+### Deleted 2026-09-29 (tombstones)
+
+Recover a file with `git show <last commit>:<path>`. Every one is also on GitHub at origin/main 9a73476.
+
+| Path | Last commit | Successor |
+|---|---|---|
+| `CYCLE.md` | `39560e2` (2026-06-16) | — |
+| `notes/immigration-fiscal-political-economy.md` | `ab5d135` (2026-03-13) | — |
+| `notes/immigration-lifetime-sweep-protocol.md` | `39560e2` (2026-06-16) | — |
+| `notes/immigration-lifetime-synthesis-diverge-cookbook.md` | `75e5eff` (2026-06-24) | — |
+| `research/immigration-adversarial-review.md` | `b24c75c` (2026-09-16) | [adversarial-audit-2026-09-28](immigration-adversarial-audit-2026-09-28.md), [conceptual-audit-2026-09-27](immigration-conceptual-audit-2026-09-27.md) |
+| `research/immigration-benefits-and-macro-scale-2026-09-19.md` | `a04db1e` (2026-09-19) | [macro-reconciliation-2026-09-19](immigration-macro-reconciliation-2026-09-19.md), [matched-benefits-2026-09-19](immigration-matched-benefits-2026-09-19.md) |
+| `research/immigration-capacity-falsification-2026-04-21.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-capacity-frontier-2026-04-21.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-causal-everify-card-vs-borjas.md` | `080ddae` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md), [recent-papers-2026-09-05](immigration-recent-papers-2026-09-05.md) |
+| `research/immigration-causal-internal-vs-immigrant-newcomers.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-causal-saiz-elasticity-rent.md` | `080ddae` (2026-09-05) | [housing-supply-ca-tx-2026-09-22](immigration-housing-supply-ca-tx-2026-09-22.md) |
+| `research/immigration-causal-surge-2021-2024.md` | `080ddae` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md), [conduct-denominators-2026-09-05](immigration-conduct-denominators-2026-09-05.md) |
+| `research/immigration-causal-synthesis-2026-04-18.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-claims-evolution-ledger-2026-04-23.md` | `8be9f94` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-claims-matrix-2026-04-11.md` | `b24c75c` (2026-09-16) | [confidence-ladder](immigration-confidence-ladder.md), [objections-faq-2026-09-21](immigration-objections-faq-2026-09-21.md) |
+| `research/immigration-conclusion-audit-running-fixes.md` | `8be9f94` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-costs-causal-analysis.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [2026-09-05-material-inference-repair](../decisions/2026-09-05-material-inference-repair.md) |
+| `research/immigration-country-fiscal-tensor-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-county-outcome-panel-2026-04-21.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-economist-debate-sheet-2026-04-22.md` | `080ddae` (2026-09-05) | — |
+| `research/immigration-economist-one-pager-2026-04-22.md` | `080ddae` (2026-09-05) | — |
+| `research/immigration-epistemic-check.md` | `a6baa32` (2026-06-16) | [llm-bias-caveat](../notes/llm-bias-caveat.md), [quant-bias-checklist](../notes/quant-bias-checklist.md) |
+| `research/immigration-europe-caucasian-fiscal-findings-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-federal-distribution-findings-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-fiscal-welfare-ledger-map.md` | `36c4477` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md) |
+| `research/immigration-frontier-rethink-2026-04-22.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-full-spectrum-costs-scoring-model.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md) |
+| `research/immigration-full-spectrum-costs-unauthorized-memo.md` | `f96e3926` (2026-09-05) | [real-fiscal-and-social-costs-2026-09-23](immigration-real-fiscal-and-social-costs-2026-09-23.md) |
+| `research/immigration-knowledge-delta-agent-loop-2026-06-16.md` | `080ddae` (2026-09-05) | — |
+| `research/immigration-lifetime-country-approx-brainstorm-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-lifetime-dataset-brainstorm-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-lifetime-fiscal-generators.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-lifetime-unified-theory-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-main-question-reset.md` | `933b831` (2026-06-24) | [GOALS](../GOALS.md), this index |
+| `research/immigration-mexico-npv-population-synthesis-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-msa-rent-elasticity-panel-2026-06-25.md` | `080ddae` (2026-09-05) | [housing-supply-ca-tx-2026-09-22](immigration-housing-supply-ca-tx-2026-09-22.md) |
+| `research/immigration-next-agent-handoff-2026-04-11.md` | `933b831` (2026-06-24) | [friend-reproduce-guide](immigration-friend-reproduce-guide.md), this index |
+| `research/immigration-next-data-upgrades.md` | `933b831` (2026-06-24) | [dataset-register](immigration-dataset-register.md) |
+| `research/immigration-path-to-minus-200k-scenario-audit.md` | `b24c75c` (2026-09-16) | [lineage-cost-century-2026-09-19](immigration-lineage-cost-century-2026-09-19.md), [yearly-lifetime-cost-repair-2026-09-19](immigration-yearly-lifetime-cost-repair-2026-09-19.md) |
+| `research/immigration-prototype-progress.md` | `a6baa32` (2026-06-16) | — |
+| `research/immigration-public-data-acquisition-2026-04-11.md` | `933b831` (2026-06-24) | [dataset-register](immigration-dataset-register.md) |
+| `research/immigration-public-mvp-profiling-findings-2026-04-11.md` | `8be9f94` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md), [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md) |
+| `research/immigration-public-mvp-readiness-2026-04-11.md` | `8be9f94` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md), [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md) |
+| `research/immigration-public-mvp-sipp-meps-bridge-2026-04-11.md` | `8be9f94` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md), [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md) |
+| `research/immigration-public-mvp-variable-dictionary-2026-04-11.md` | `8be9f94` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md), [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md) |
+| `research/immigration-receiver-counterfactuals-2026-04-22.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-receiver-failure-atlas-2026-04-22.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-receiver-node-kill-test-2026-04-23.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-resident-weighted-exposure-2026-04-22.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+| `research/immigration-scenario-composition-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-school-burden-per-adult-2026-06-15.md` | `8be9f94` (2026-09-05) | [school-peer-checks-2026-09-20](immigration-school-peer-checks-2026-09-20.md), [four-fiscal-checks-2026-09-20](immigration-four-fiscal-checks-2026-09-20.md) |
+| `research/immigration-state-local-cost-examples-ny-ca-tx.md` | `b24c75c` (2026-09-16) | [complete-annual-account-2026-09-20](immigration-complete-annual-account-2026-09-20.md), [california-texas-fiscal-geography-2026-09-21](immigration-california-texas-fiscal-geography-2026-09-21.md) |
+| `research/immigration-sweep-cycles-13-22-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-sweep-cycles-23-32-2026-06-15.md` | `8be9f94` (2026-09-05) | [fiscal-account-2024-2026-09-05](immigration-fiscal-account-2024-2026-09-05.md), [conceptual-audit-2026-09-05](immigration-conceptual-audit-2026-09-05.md) |
+| `research/immigration-thesis-generator-audit-2026-06-16.md` | `6af9276` (2026-06-16) | — |
+| `research/immigration-threshold-causal-levers-2026-04-21.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [2026-09-05-material-inference-repair](../decisions/2026-09-05-material-inference-repair.md) |
+| `research/immigration-threshold-first-panel-2026-04-21.md` | `080ddae` (2026-09-05) | [second-order-effects-2026-09-05](immigration-second-order-effects-2026-09-05.md), [2026-09-05-material-inference-repair](../decisions/2026-09-05-material-inference-repair.md) |
+| `research/immigration-unified-scenarios-memo.md` | `b24c75c` (2026-09-16) | [complete-annual-account-2026-09-20](immigration-complete-annual-account-2026-09-20.md), [real-fiscal-and-social-costs-2026-09-23](immigration-real-fiscal-and-social-costs-2026-09-23.md) |
 
 <!-- knowledge-index
 generated: 2026-09-16T13:06:38Z

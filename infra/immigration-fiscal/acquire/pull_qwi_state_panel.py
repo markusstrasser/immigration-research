@@ -4,7 +4,8 @@
 Source: Census LEHD Quarterly Workforce Indicators, `se` (sex-by-education) endpoint.
         https://api.census.gov/data/timeseries/qwi/se
 
-Batching (matches the original 2026-04-18 pull recorded in repo CYCLE.md line 26):
+Batching (matches the original 2026-04-18 pull recorded in repo CYCLE.md line 26; that log was
+deleted 2026-09-29, recover with `git show 39560e2:CYCLE.md`):
     one API call per (industry x education) pair = 9 x 4 = 36 calls,
     each call covering all 51 state FIPS and the full 2003-Q1..2023-Q4 range.
     Full grid = 51 states x 84 quarters x 9 industries x 4 education = 154,224 rows.

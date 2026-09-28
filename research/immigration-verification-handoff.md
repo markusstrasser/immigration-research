@@ -80,8 +80,8 @@ and the child-attribution dispute.
 Use first:
 
 1. `research/immigration-fiscal-impact-unauthorized-memo.md`
-2. `research/immigration-full-spectrum-costs-unauthorized-memo.md`
-3. `research/immigration-unified-scenarios-memo.md`
+2. `research/immigration-real-fiscal-and-social-costs-2026-09-23.md`
+3. `research/immigration-complete-annual-account-2026-09-20.md`
 4. `sources/immigration-fiscal/fiscal_impact_synthesis_gpt54.md`
 
 What these can support:
@@ -104,7 +104,7 @@ Use first:
 
 1. `research/immigration-local-burden-puma-layer.md`
 2. `research/immigration-household-weighted-correction.md`
-3. `research/immigration-state-local-cost-examples-ny-ca-tx.md`
+3. `research/immigration-california-texas-fiscal-geography-2026-09-21.md`
 4. `research/immigration-verified-findings-report-2026-04-10.md`
 
 What these can support:
@@ -235,7 +235,7 @@ Local assets:
 1. `sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv`
 2. `sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.meta.json`
 3. `sources/immigration-fiscal/data/external/stage3/ahrq/meps/`
-4. `research/immigration-full-spectrum-costs-unauthorized-memo.md`
+4. `research/immigration-real-fiscal-and-social-costs-2026-09-23.md`
 
 Best for:
 
@@ -276,8 +276,7 @@ Not good for:
 Use cautiously:
 
 1. `research/immigration-lifetime-fiscal-data-stack-2026-04-10.md`
-2. `research/immigration-public-data-acquisition-2026-04-11.md`
-3. `research/immigration-prototype-progress.md`
+2. `research/immigration-dataset-register.md`
 
 Current blocker:
 
