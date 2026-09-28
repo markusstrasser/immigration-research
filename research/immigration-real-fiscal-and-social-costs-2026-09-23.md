@@ -8,7 +8,7 @@ care adds **$3.7–5.7bn**. Hispanic residents are 20.2% of people in prisons an
 20.7% share of working-age residents, and 23.4% in state and federal prisons. The account compares the group with
 the average other resident, not with whites; Hispanic adults are imprisoned at 2.6 times the white rate.
 
-Fiscal and social costs together come to **$413.7–488.1bn a year** at central values, or $10.4–12.3k per member of
+Fiscal and social costs together come to **$413.7–488.0bn a year** at central values, or $10.4–12.3k per member of
 the 39.7M people the account prices (ladder 274). The low end assumes Mexican-origin offending equals the Hispanic
 average; the high end assumes it sits above that average, as custody does (§7). Every social row is restated on the
 account's count; the lanes' own figures, on the CPS's 40.9M, give $416.2–490.7bn, and stacking every item's low and
@@ -47,7 +47,7 @@ component would add $84 / 74bn, and leaving out the government enterprises (opti
 | + PM2.5, crashes by fault, scale net, restaurants (September 28) | | $463–537bn ($267–755bn) | $11.3–13.1k | ladders 260, 261, 264 |
 | + volunteering, consumer-side scale, trade ties (September 28) | | $447–522bn ($224–755bn) | $10.9–12.8k | ladder 265 |
 | Crashes with against without (September 29) | | $416–491bn ($142–757bn) | $10.2–12.0k | ladder 266 |
-| Every row on the account's 39.7M (September 29) | | $413.7–488.1bn | $10.4–12.3k | ladder 274 |
+| Every row on the account's 39.7M (September 29) | | $413.7–488.0bn | $10.4–12.3k | ladder 274 |
 
 The first-year budget response, with CBO's 63–66% school response ($200.9–245.7bn), stays within $0.7bn of the
 September 24 totals: $248–303bn, full span $210–336bn; it was computed before the September 28–29 items.
@@ -447,7 +447,7 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 | [Main case, September 27](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md) | f3031ab, 7e94324 | $321.8–387.4bn (September 23: [lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md), 69eb31b, $203.2–249.6bn) |
 | [Congestion](../infra/immigration-fiscal/congestion_2026_09_23/RESULT.md) | dd3c45a | $19.2bn ($8.0–35.3bn); $14.0 / 12.0bn once roads respond (`service_response_long_run_2026_09_27`) |
 | Totals by case: `sept24_propagation_2026_09_24/real_costs_totals.py` | 73cc30c … b7f14e7 | the pairing and §7, §7b on each case |
-| [Population basis](../infra/immigration-fiscal/population_basis_2026_09_29/RESULT.md) | b7f14e7 | every row on the account's 39.7M: $413.7–488.1bn |
+| [Population basis](../infra/immigration-fiscal/population_basis_2026_09_29/RESULT.md) | b7f14e7 | every row on the account's 39.7M: $413.7–488.0bn |
 | [Income weights](../infra/immigration-fiscal/distribution_weights_2026_09_23/RESULT.md) | f5b6d67, 78766c2 | outside the budget: bottom four fifths −$80.7bn, top fifth +$46.0bn |
 
 ## Revisions
@@ -537,3 +537,4 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
   table and §3b; the pairing is on the account's 39.7M people (ladder 274). The September 23 figures stay in
   that table and in `real_costs_totals.csv`'s sept23 column. Concept affected: which case the memo states as
   current, and the population behind the social rows.
+- 2026-09-29 (number drift audit): the pairing's upper end is $488.0bn (488.047), not $488.1bn, which rounded 488.05 a second time. Concept affected: none; rounding only.

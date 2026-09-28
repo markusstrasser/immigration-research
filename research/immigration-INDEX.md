@@ -77,7 +77,7 @@ Beside the account:
 - capital at 7%: $406–462bn;
 - enterprises out: $305–364bn;
 - land [GAP]: $3.3 / $5.5bn per 10% of land-to-structure value;
-- congestion: $14.0 / $12.0bn, from $19.2bn, now that roads grow.
+- congestion: $13.6 / $11.6bn, from $19.2bn (road budgets fixed, on the CPS count), now that roads grow.
 - a typical budget year instead of 2024 (the average of 2015–2019 and 2022–2023, replayed on the back-cast): 10–20% less per member, $252–348bn at today's size ([FAQ entry 18](immigration-objections-faq-2026-09-21.md)).
 
 The low side, with schools at the within-district 0.836, is $296–363bn. The outer range is $259–436bn ($291–408bn
@@ -94,7 +94,7 @@ Candidates for the next revision, none adopted; the operator's go is pending
 - workers' compensation pooled over 2019–2024, −$1.5 to −$2.0bn (251);
 - payroll compliance of the survey keys, −$0.37 / −$0.16bn (254);
 - candidate v2's housing key and production weights (`main_case_candidate_v2_2026_09_28`);
-- services and taxes priced at the states where the group lives, +$2.19 / +$2.27bn net: its services cost $8.6bn
+- services and taxes priced at the states where the group lives, +$2.18 / +$2.27bn net: its services cost $8.6bn
   more there and its sales and vehicle taxes bring in $6.4bn more (267,
   [lane](../infra/immigration-fiscal/state_priced_services_2026_09_29/RESULT.md));
 - roads keyed by miles driven, fuel taxes to match, +$1.96 / +$3.69bn (273,
@@ -115,7 +115,7 @@ Why it costs what it costs: half, $164–213bn, is what any 39.7M average reside
 
 What would overturn the conclusions: no single premise, swapped for its best-supported alternative, breaks more than two of the evidence map's nine. The budget horizon breaks two (first-year responses: the case −37%, the pairing about −29%). Counting pensions on accrual flips "taxes cover benefits" (+$62.0 / 49.4bn becomes −$15.3 / −24.2bn). Next observations worth making: budgets after population outflows, and the Mexico-born on-books share from SSA and ITIN records (ladder 270, [lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md)).
 
-How far to trust the review lanes: on 24 of the project's own fixed errors and 24 verified claims, both caught every error when the evidence was in the packet. GPT-6 Astra (xhigh) also accused a quarter of the sound claims at 0.90–0.99 confidence, Opus 5.5 one in 24. Neither was measurably harsher on claims that make the group look costlier, though the test is too small to rule out a moderate bias. Treat an Astra accusation as a lead to verify (ladder 271, [lane](../infra/immigration-fiscal/reviewer_calibration_2026_09_29/RESULT.md)).
+How far to trust the review lanes: on 24 error cases and 24 sound claims, half of each taken from the project's own record and half synthetic mirrors of them, both caught every error when the evidence was in the packet. GPT-6 Astra (xhigh) also accused a quarter of the sound claims at 0.90–0.99 confidence, Opus 5.5 one in 24; three of those accusations (Astra's on V06m and V08m, Opus's on V08m) found real defects that the test's builder had put into two mirrors by mistake. Neither was measurably harsher on claims that make the group look costlier, though the test is too small to rule out a moderate bias. Treat an Astra accusation as a lead to verify (ladder 271, [lane](../infra/immigration-fiscal/reviewer_calibration_2026_09_29/RESULT.md)).
 
 **Earlier cases.** Each main case replaced the one before. The first-year budget response is kept as a named
 scenario of the current account, not as an earlier estimate.
@@ -165,7 +165,7 @@ channels the headline left out. Two are in the main case:
 - the government part of uncompensated hospital care, **+$3.7–5.7bn**.
 
 Beside the fiscal account, a **fiscal-plus-social total** adds other residents' social costs and benefits:
-**$413.7–488.1bn a year** at central values ($10.4–12.3k per member;
+**$413.7–488.0bn a year** at central values ($10.4–12.3k per member;
 [decision](../decisions/2026-09-29-crash-item-with-against-without.md), ladders 266 and 274). Its low end assumes
 Mexican-origin offending equals the Hispanic average, its high end that it sits above that average as custody
 does. Every row is on the 39.71M people the account prices, and the crash and congestion rows use the NHTS
@@ -178,7 +178,7 @@ $416.2–490.7bn, and their stacked full span is $142.2–756.5bn. It contains:
 - the housing net, **+$0.7–3.4bn** to other residents, while their renters pay $22–58bn more ($30bn central once
   cheaper construction is counted, ladder 200);
 - road congestion that remains once road budgets respond, $11.6–13.6bn in time and fuel ($19.2bn with road
-  budgets fixed, ladder 195);
+  budgets fixed, on the CPS count, ladder 195);
 - fine particles (PM2.5) from the group's consumption, $68.1bn, and road crashes with against without the group's
   traffic, $10.6bn (−$57.7bn to +$74.3bn in the lane); the crash figure charged by fault, $42.3bn, sits beside
   (ladders 264 and 266; [decision](../decisions/2026-09-28-social-items-pollution-crashes.md));
@@ -349,7 +349,7 @@ headline unchanged. Counting US-born aides, the nursing-home channel reaches the
 year of Medicaid saving, inside the main case (ladder 198). The 2025 municipal-bond paper cannot identify the
 service-response share. The production term's perfect-substitution assumption is executed (ladder 176): on this
 account's jobs the relevant elasticity is near 6, and the term rises by about half, to roughly $13–22bn; at the
-direct estimates of ladder 181 it rises $2–5bn. The removal model's $27–80bn is a different population and a
+direct estimates of ladder 181 it rises $1.5–4.7bn. The removal model's $27–80bn is a different population and a
 different elasticity (ladder 166).
 
 [Cumulative 2005–2024 back-cast](immigration-historical-backcast-2026-09-20.md): no past year is measured. Actual

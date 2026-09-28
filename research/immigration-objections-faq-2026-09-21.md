@@ -32,14 +32,14 @@ other, and the ledger's generation gaps must not be scaled onto the complete-acc
 headline. Cheaper household services ($21.8bn to consumers) price the same labour-supply shock on a
 different population; the two are not reconciled, so the services figure is neither added nor
 counted as included. Two care items sit inside the main case: taxes on native women's extra hours
-($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.1bn together (entries 4 and 13;
-ladders 198 and 219). The net of city size and schooling mix (+$13.9bn; 95% −$56.6bn to +$84.4bn,
-ladder 201) counts whole, its $6.0bn of induced receipts included, as a benefit in the
+($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.2bn together (entries 4 and 13;
+ladders 198 and 219). The net of city size and schooling mix (+$13.7bn; on the lane's CPS count, 95% −$56.6bn to +$84.4bn,
+ladder 201) counts whole, induced receipts included ($6.0bn on that count), as a benefit in the
 fiscal-plus-social total; the fiscal main case does not carry it. Mobility insurance ($0.65bn,
 ladder 203) sits beside both totals. The complementarity figure ($26.8–80.4bn) covers half of all
 unauthorized workers of every origin and is matched by other immigrants' losses. The account's own
 nest is a different object: at the elasticities its job distribution supports, it moves the
-production term by about $4–8bn at the job-overlap reading and $2–5bn at the direct low-skill
+production term by about $4–8bn at the job-overlap reading and $1.5–4.7bn at the direct low-skill
 estimates (entry 14). No ratio of "offsets to cost" can be formed from these.
 
 **The fiscal-plus-social total is its own object.** The $414–488bn adds other residents' social
@@ -92,7 +92,7 @@ about respond as follows ([decision](../decisions/2026-09-27-main-case-capital-r
   63–66% gives the first-year budget response ($201–246bn), and the within-district 0.836 gives
   the low side, $296–363bn ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).
 - **General public services** respond at 0.60–0.85 of average cost: removing a group that is 12%
-  of residents, at cross-state rates of 0.59–0.84, adds $28.3–40.0bn
+  of residents, at cross-state rates of 0.59–0.84, adds $28.2–40.0bn
   ([finite removal](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md), run C).
   That range is the cross-state scale of administration spending: 0.842 (SE 0.039) for state
   administration and 0.789 for financial administration, with the low end holding the federal
@@ -415,7 +415,7 @@ carries to the adopted one). The jobs on the same file put that elasticity
 near 6: low-cell natives and foreign-born share 0.644 of detailed-occupation earnings, and the
 sketch gives 5.7–7.6. At the computed neighbors ε = 5 and ε = 7 the term is $13–22bn and the
 band would fall by about $4–8bn. The direct low-skill estimates (8.7 and 17.9; ladder 181)
-move it $2–5bn. Size, not sign, and none applied. [SOURCE:
+move it $1.5–4.7bn. Size, not sign, and none applied. [SOURCE:
 [papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#3-the-removal-model-and-the-accounts-production-term); ladder 166; [executed nest](immigration-production-term-nativity-nest-2026-09-22.md), ladder 176]
 
 ## 15. "It's just California. Texas has the same Mexican-origin share and is doing fine."
@@ -731,3 +731,4 @@ they get more prominence.
   39.7M people the account prices, with the crash and congestion rows' driving ratios per person aged 5+: $414–488bn
   (was $416–491bn), $10.4–12.3k per member (was $10.2–12.0k). Concept affected: the population the social rows and
   the per-member figures use.
+- 2026-09-29 (number drift audit): entry 2's general government is $28.2–40.0bn (28.237); the care items named add to $4.2bn; the scale net is $13.7bn on the priced count, its interval and induced receipts on the lane's CPS count; the direct low-skill estimates move the production term $1.5–4.7bn (1.497 was rounded twice to $2bn). Concept affected: none; rounding and count basis only.
