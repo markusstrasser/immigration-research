@@ -134,6 +134,8 @@ Mexico-born **$159–191bn** ($13.6–16.3k per adult), the second generation **
 ($9.8–10.7k) and the third-plus **$75–102bn** ($9.2–12.4k). Counted in their own generation:
 $78–94bn, $128–153bn and $100–156bn (ladder 224).]
 
+[Against 40.9M third-plus whites](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md) (ladder 263): under the September 27 rules the union costs other residents $315–330bn a year more once cash accounting's age artefact is removed (pensions on accrual, or white rates at the union's ages); $155–157bn on raw cash at white ages; $406–412bn against local whites state by state (California $14.1k per member). The difference is taxes, schools and transfers, not scale effects. [Connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md) (ladder 262): counties with a larger Hispanic share have fewer cross-income friendships, mostly through residential separation; the payoff does not grow with county size, so no dollar figure. Reader-facing summary of the whole ladder: `infra/immigration-fiscal/overview_2026_09_28/` (`build.py` writes `derived/overview.html`; every new ladder entry must be placed in its `groups.py`).
+
 The September 23 case, **$203–250bn**, added three changes to the September 20 account:
 - general government responds at 0.59–0.84 instead of zero;
 - courts, police and prisons are charged by use;
