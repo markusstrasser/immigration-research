@@ -9,9 +9,11 @@ Steps, each gated (a failed gate stops with [BLOCKED] before anything is written
      cached parquet exactly, and attach the case's state-aware unauthorized flag (cps_ca_status.status_sets,
      imported), year of entry and Medicare coverage.
   4. Validate the lifetime model (lifetime_model.py) against TR 2025 Table V.C7 and Note 2025.7 Tables 1 and 3;
-     compute its grid of ratio factors (discount rate, mortality, career start, attribution); gate that the factor
-     is 1 on Note 2025.7's own basis and that the attributions add up to lifetime benefits.
-  5. OASDI accrual per dollar of the group's on-books OASDI tax under every combination of arms.
+     compute its grid of ratio factors (discount rate, mortality, career start, attribution) on scheduled and on
+     payable benefits; gate that the factor is 1 on Note 2025.7's own basis and that the attributions add up to
+     lifetime benefits.
+  5. OASDI accrual per dollar of the group's on-books OASDI tax under every combination of arms: each scenario's
+     Note 2025.7 ratio (Table 1 scheduled, Table 3 payable) times the model factor on the same scenario.
   6. Part A accrual per covered worker-year from the Part A present value at 65 (Medicare TR 2025 per-beneficiary
      costs, NVSS 2024 survival) and the probability of qualifying.
   7. Steady-state cross-check: the group's 2024 OASDI and Part A cash flows at stationary age structures (NVSS
@@ -23,6 +25,12 @@ Steps, each gated (a failed gate stops with [BLOCKED] before anything is written
      the timing of the accrued benefits and scaled by the group's 2024 rate relative to the nation's
      (benefit_tax.py); the case's receipts lose the tax on the group's 2024 benefits. The gross central stays as the
      arm gross_of_benefit_tax, the TR 2025 path as benefit_tax_tr2025_path.
+
+The central values the benefits current law will pay (the operator's decision of 2026-09-28): payable benefits, cut
+to what the OASDI and HI trust funds' income covers once their reserves are depleted (Note 2025.7 Table 3; Medicare
+TR 2025). Scheduled benefits, the formula paid in full, are the arm `scheduled`: the basis of CBO's baseline, by
+statute, and of the Statement of Social Insurance, and the central until 2026-09-28. The national check stays on the
+Statement's scheduled basis and compares with that arm.
 
 Run from the repository root, after case_lines.cjs and benefit_tax.py:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/pension_accrual_2026_09_28/pension_accrual.py
@@ -71,10 +79,13 @@ MODEL_LEVELS = np.array([0.25, 0.45, 1.00, 1.60])   # career level of Note 2025.
 RATES = ["new_issue", "tf", 0.02, 0.023, 0.03, "awi"]
 GRID = [(r, "general") for r in RATES] + [("new_issue", "hispanic")]   # (discount rate, mortality) model runs
 BASE = ("tf", "general")                   # Note 2025.7's own basis: trust-fund rates, the Trustees' mortality
+SCENARIOS = ("scheduled", "payable")       # the benefit formula paid in full, or what the trust funds' income pays
+MWR_TABLE = {"scheduled": 1, "payable": 3}   # each scenario's table in Note 2025.7
 ENTRIES = list(range(21, 61, 3))           # career start (US covered work) for the Mexico-born, floored to this grid
 BIRTHS = list(range(1950, 2008, 2))        # the model needs the AWI from age 21 (Note 2025.3 starts in 1970)
 BENEFIT_TAX = OUT / "benefit_tax.json"     # benefit_tax.py (Tax-Calculator on the CPS tax units), run before this script
 GROSS_8062DB1 = {"low": 437.828882, "high": 497.775764}   # the gross central at 8062db1, BRIEF_net_of_tax.md's gate
+NET_A238F19 = {"low": 433.458300, "high": 493.520586}     # the net central at a238f19; both scheduled: the arm `scheduled`
 
 
 def blocked(msg: str):
@@ -236,10 +247,11 @@ def validate_model(econ, prelim) -> tuple[pd.DataFrame, pd.DataFrame]:
     return v, t
 
 
-def model_grid(econ, prelim) -> dict:
+def model_grid(econ, prelim, payable: np.ndarray | None = None) -> dict:
     """k[method][g] (family, entry, birth, level, age): accrual per PV-dollar of tax at that age; mwr[g]
     (family, entry, birth, level): the lifetime money's-worth ratio; g = (discount rate, mortality) from GRID.
-    mwr[BASE][..., entry 21, ...] normalizes."""
+    mwr[BASE][..., entry 21, ...] normalizes. `payable` (payable_path) values the benefits the trust funds' income
+    pays; None values the scheduled benefits."""
     fams = list(L.FAMILY_SEXES)
     shape = (len(fams), len(ENTRIES), len(BIRTHS), len(MODEL_LEVELS))
     k = {m: {g: np.full(shape + (121,), np.nan) for g in GRID} for m in L.METHODS}
@@ -250,7 +262,7 @@ def model_grid(econ, prelim) -> dict:
             for bi, b in enumerate(BIRTHS):
                 for li, a in enumerate(adj):
                     for g in GRID:
-                        w = L.worker(b, a, entry, fam, econ, prelim, arm=g[0], population=g[1])
+                        w = L.worker(b, a, entry, fam, econ, prelim, arm=g[0], population=g[1], payable=payable)
                         mwr[g][fi, ei, bi, li] = w["mwr"]
                         for mth in L.METHODS:
                             k[mth][g][fi, ei, bi, li] = w["per_tax"][mth]
@@ -335,15 +347,16 @@ def note_mwr(p: pd.DataFrame, table: pd.DataFrame, level: np.ndarray, fam: np.nd
     return out
 
 
-def oasdi_arms(p: pd.DataFrame, grid: dict, u_long: float, u_2000: float, taus: dict) -> pd.DataFrame:
+def oasdi_arms(p: pd.DataFrame, grids: dict, u_long: float, u_2000: float, taus: dict) -> pd.DataFrame:
     """Accrual per dollar of the group's on-books OASDI tax, for every combination of arms, overall and by
-    generation. The model factor is 1 at EAN, trust-fund rates and full careers (Note 2025.7's own ratio).
+    generation. The model factor is 1 at EAN, trust-fund rates and full careers (Note 2025.7's own ratio); each
+    scenario's ratio takes the factor of the model grid on the same scenario (`grids`, keyed by scenario).
     The PATH_COLUMNS weight each person's accrual by the national tax-on-benefits share at the timing of their
     benefits (tob_timing), before the group's relative rate: accrual_tob_bn on the TR 2025 path, accrual_tob_obbba_bn
     on the path after the 2025 tax law (`taus`, keyed by path)."""
     q = p[p.union & (p.tax_oasdi > 0)].reset_index(drop=True)
     fam = ss.family_vector(q, "observed_family")
-    tables = {"scheduled": S.mwr_table(1), "payable": S.mwr_table(3)}
+    tables = {s: S.mwr_table(MWR_TABLE[s]) for s in SCENARIOS}
     w, tax = q.w.to_numpy(), q.tax_oasdi.to_numpy()
     birth_m = np.clip(ss.INCOME_YEAR - q.age.to_numpy(), BIRTHS[0], BIRTHS[-1]).astype(float)
     tob_p = {path: person_tau(taus[path], fam, birth_m) for path in PATH_COLUMNS}
@@ -360,8 +373,8 @@ def oasdi_arms(p: pd.DataFrame, grid: dict, u_long: float, u_2000: float, taus: 
             for g in GRID:
                 for entry_on in (True, False):
                     entry = arr if entry_on else np.full(len(q), 21.0)
-                    fac = model_factor(grid, method, g, fam, entry, birth_m, lvl_m, q.age.to_numpy().astype(float))
                     for scen, mwr in base.items():
+                        fac = model_factor(grids[scen], method, g, fam, entry, birth_m, lvl_m, q.age.to_numpy().astype(float))
                         tob = {path: t[(g, scen)] for path, t in tob_p.items()}
                         for uname, u in shares.items():
                             acc = tax * mwr * fac * np.where(unauth, u, 1.0)
@@ -476,7 +489,7 @@ def hi_accrual(p: pd.DataFrame, econ: L.Economy, u_long: float, u_2000: float,
     # with the legalization probability of the arm
     onbooks = u.onbooks.to_numpy()
     shares = {"none": 0.0, "note151_long_run": u_long, "note151_2000_cohort": u_2000, "full": 1.0}
-    runs = [(r, sc, "general") for r in RATES for sc in ["scheduled", "payable"]] + [("new_issue", "scheduled", "hispanic")]
+    runs = [(r, sc, "general") for r in RATES for sc in SCENARIOS] + [("new_issue", sc, "hispanic") for sc in SCENARIOS]
     rows = []
     for rate, scen, pop in runs:
         own = part_a_pv(u.age.to_numpy(), u.sex.to_numpy(), econ, rate, scen, pop)
@@ -495,8 +508,9 @@ def hi_accrual(p: pd.DataFrame, econ: L.Economy, u_long: float, u_2000: float,
                                      group=g, covered_workers_m=float((w * covered)[m].sum() / 1e6),
                                      hi_tax_bn=float((w * u.tax_hi.to_numpy())[m].sum() / 1e9),
                                      accrual_bn=float((w * acc)[m].sum() / 1e9)))
-    info["part_a_pv_at_2024"] = {f"{s}_age_{a}": float(part_a_pv(np.array([a]), np.array([k]), econ, "new_issue", "scheduled")[0])
-                                 for s, k in (("male", 1), ("female", 2)) for a in (25, 45, 64)}
+    for key, scen in (("part_a_pv_at_2024", "scheduled"), ("part_a_pv_at_2024_payable", "payable")):
+        info[key] = {f"{s}_age_{a}": float(part_a_pv(np.array([a]), np.array([k]), econ, "new_issue", scen)[0])
+                     for s, k in (("male", 1), ("female", 2)) for a in (25, 45, 64)}
     return pd.DataFrame(rows), info
 
 
@@ -575,7 +589,7 @@ def tob_timing(econ, prelim, share: np.ndarray, runs: list | None = None, last_y
     fams = list(L.FAMILY_SEXES)
     ages = np.arange(121)
     out = {}
-    for g, scen in runs or [(g, s) for g in GRID for s in ("scheduled", "payable")]:
+    for g, scen in runs or [(g, s) for g in GRID for s in SCENARIOS]:
         t = np.full((len(fams), len(BIRTHS)), np.nan)
         for fi, fam in enumerate(fams):
             for bi, b in enumerate(BIRTHS):
@@ -676,20 +690,22 @@ def spouse_status(p: pd.DataFrame) -> np.ndarray:
     return st
 
 
-def central_accrual(q: pd.DataFrame, grid: dict, u_long: float, tau: dict, fam: np.ndarray) -> tuple:
+def central_accrual(q: pd.DataFrame, grids: dict, u_long: float, tau: dict, fam: np.ndarray) -> tuple:
     """Per-person OASDI accrual and tax-on-benefits timing at the central settings, for a given family vector (the
-    oasdi_arms computation at CENTRAL, as national_check.group_ratio repeats it)."""
+    oasdi_arms computation at CENTRAL; national_check.group_ratio repeats it on scheduled benefits)."""
+    scen = CENTRAL["scenario"]
     level = career_levels(q, CENTRAL["mapping"])
     lvl = np.clip(level, MODEL_LEVELS[0], MODEL_LEVELS[-1])
     birth = np.clip(ss.INCOME_YEAR - q.age.to_numpy(), BIRTHS[0], BIRTHS[-1]).astype(float)
     entry = np.where(q.mexico_born & q.arrival_age.notna(), q.arrival_age.fillna(21), 21.0)
     g = (CENTRAL["rate"], CENTRAL["mortality"])
-    fac = model_factor(grid, CENTRAL["method"], g, fam, entry, birth, lvl, q.age.to_numpy().astype(float))
-    acc = q.tax_oasdi.to_numpy() * note_mwr(q, S.mwr_table(1), level, fam) * fac * np.where(q.unauth.to_numpy(), u_long, 1.0)
-    return acc, person_tau(tau, fam, birth)[(g, CENTRAL["scenario"])]
+    fac = model_factor(grids[scen], CENTRAL["method"], g, fam, entry, birth, lvl, q.age.to_numpy().astype(float))
+    acc = (q.tax_oasdi.to_numpy() * note_mwr(q, S.mwr_table(MWR_TABLE[scen]), level, fam) * fac
+           * np.where(q.unauth.to_numpy(), u_long, 1.0))
+    return acc, person_tau(tau, fam, birth)[(g, scen)]
 
 
-def spouse_arm(p: pd.DataFrame, grid: dict, u_long: float, tau: dict, arms: pd.DataFrame, beside: pd.DataFrame,
+def spouse_arm(p: pd.DataFrame, grids: dict, u_long: float, tau: dict, arms: pd.DataFrame, beside: pd.DataFrame,
                bt: dict) -> dict:
     """Item 4 (time-boxed): the one-earner couples whose spouse has own current work (SPOUSE_OWN_WORK)
     priced as two-earner couples; the bounds are the central (observed families) and every one-earner couple as
@@ -709,7 +725,7 @@ def spouse_arm(p: pd.DataFrame, grid: dict, u_long: float, tau: dict, arms: pd.D
     for name, move in (("central", np.zeros(len(q), bool)), ("spouse_own_work_as_two_earner", one & np.isin(st, SPOUSE_OWN_WORK)),
                        ("every_one_earner_as_two_earner", one)):
         f = np.where(move, "two_earner_couple", fam).astype(object)
-        acc, tob = central_accrual(q, grid, u_long, tau, f)
+        acc, tob = central_accrual(q, grids, u_long, tau, f)
         ratio, share = float((w * acc).sum() / tw.sum()), rel * float((w * acc * tob).sum() / (w * acc).sum())
         rec = dict(per_tax_dollar=ratio, future_share=share, case_on_accrual_bn={}, case_on_accrual_net_bn={})
         for e in ["low", "high"]:
@@ -771,14 +787,22 @@ def case_components(p: pd.DataFrame) -> pd.DataFrame:
 
 
 CENTRAL = dict(mapping="individual_age_adjusted", method="EAN", rate="new_issue", mortality="general",
-               career_start=True, scenario="scheduled", unauthorized="note151_long_run", spouse=False)
+               career_start=True, scenario="payable", unauthorized="note151_long_run", spouse=False)
+CENTRAL_SCENARIO_BASIS = (
+    "payable benefits, the operator's decision of 2026-09-28: current law pays what the trust funds' income covers "
+    "once their reserves are depleted (OASDI in 2034, HI in 2033; Note 2025.7 Table 3, the Medicare TR 2025 HI path); "
+    "the benefit formula paid in full is the arm `scheduled`")
+SCHEDULED_BASIS = (
+    "scheduled benefits, the formula paid in full after the reserves are depleted: the basis of CBO's baseline (by "
+    "statute, BBEDCA section 257(b)(1)) and of the Statement of Social Insurance; the central until 2026-09-28 (a238f19)")
 # The central and one change each. OASDI reads mapping, method, rate, mortality, career start, scenario and
 # unauthorized; Part A reads rate, mortality, scenario, unauthorized and spouse. A rate given per end applies at
 # that end (the case's own 2% / 3% return on public capital). Bridges are not candidates for the central and
 # stay out of the range.
 ARMS = {
     "central": {},
-    "payable": dict(scenario="payable"),
+    "scheduled": dict(scenario="scheduled"),   # SCHEDULED_BASIS; national_check's comparator
+    "payable": dict(scenario="payable"),       # now the central's scenario; kept by name
     "rate_trust_fund_effective": dict(rate="tf"),
     "rate_real_2.3_flat": dict(rate="0.023"),
     "rate_real_2": dict(rate="0.02"),
@@ -804,7 +828,8 @@ ARMS = {
     "benefit_tax_rate_high": dict(bt_rate="union_high"),
     "benefit_tax_after_obbba": dict(bt_path="obbba"),   # current law, now the central's path; kept by name
     "benefit_tax_tr2025_path": dict(bt_path="tr2025"),  # TCJA rates expire after 2025: the central until 2026-09-28
-    "gross_of_benefit_tax": dict(net=False),          # the gross central (8062db1), kept by name outside the ranges
+    "gross_of_benefit_tax": dict(net=False),          # the central gross of the tax, outside the ranges (8062db1's
+                                                      # gross central is the arm `scheduled` gross)
     "bridge_benefit_tax_national_rate": dict(bt_rate="national"),
     "bridge_benefit_tax_tax_lane_mapping": dict(bt_mapping="full"),   # misses retirees' distributions and gains
 }
@@ -827,6 +852,22 @@ def pick(df: pd.DataFrame, spec: dict, keys: list[str], group: str = "union") ->
     if sel.sum() != 1:
         blocked(f"{int(sel.sum())} rows for {group} {({k: spec[k] for k in keys})}")
     return df[sel].iloc[0]
+
+
+DECOMP_KEYS = ["oasdi_tax_bn", "accrual_per_tax_dollar", "oasdi_accrual_bn", "ss_benefits_removed_bn", "delta_oasdi_bn",
+               "hi_tax_bn", "part_a_accrual_bn", "part_a_removed_bn", "delta_part_a_bn", "delta_bn"]
+DECOMP_NET_KEYS = ["future_share", "accrual_per_tax_dollar_net", "oasdi_accrual_net_bn", "benefit_tax_on_accrual_bn",
+                   "benefit_tax_receipt_bn", "delta_oasdi_net_bn", "delta_net_bn", "case_on_accrual_net_bn"]
+
+
+def decomposition(beside: pd.DataFrame, arm: str, net: bool = False) -> dict:
+    """An arm's decomposition at each end from case_beside: gross, or net with its change from gross."""
+    r = beside[beside.arm == arm].set_index("end")
+    if not net:
+        return {e: {k: float(r.loc[e, k]) for k in DECOMP_KEYS} for e in ["low", "high"]}
+    return {e: {k: float(r.loc[e, k]) for k in DECOMP_NET_KEYS}
+            | {"change_from_gross_bn": float(r.loc[e, "case_on_accrual_net_bn"] - r.loc[e, "case_on_accrual_bn"])}
+            for e in ["low", "high"]}
 
 
 def case_beside(comp: pd.DataFrame, oasdi: pd.DataFrame, hi: pd.DataFrame, case: dict, bt: dict) -> pd.DataFrame:
@@ -930,30 +971,35 @@ def gate_inputs() -> dict:
     return case
 
 
-def gate_model(grid: dict, econ, prelim) -> dict:
-    """The factor is 1 on Note 2025.7's basis (EAN, trust-fund rates, entry 21), and EAN, PUC and ABO each add up
-    to the lifetime present value of benefits."""
+def gate_model(grids: dict, econ, prelim) -> dict:
+    """On each scenario's grid the factor is 1 on Note 2025.7's basis (EAN, trust-fund rates, entry 21), and EAN,
+    PUC and ABO each add up to the lifetime present value of benefits, scheduled and payable."""
     n = 64
-    fam = np.array(grid["fams"] * (n // len(grid["fams"])))
+    fams = grids["scheduled"]["fams"]
+    fam = np.array(fams * (n // len(fams)))
     rng = np.linspace(0, 1, n)
     birth = BIRTHS[0] + rng * (BIRTHS[-1] - BIRTHS[0])
     level = np.exp(np.log(MODEL_LEVELS[0]) + rng[::-1] * np.log(MODEL_LEVELS[-1] / MODEL_LEVELS[0]))
     age = np.clip(2024 - birth, 21, 74)
-    f = model_factor(grid, "EAN", BASE, fam, np.full(n, 21.0), birth, level, age)
-    if np.abs(f - 1).max() > 1e-12:
-        blocked(f"the EAN factor on Note 2025.7's basis is not 1 (max gap {np.abs(f - 1).max():.2e})")
+    gap = max(float(np.abs(model_factor(grid, "EAN", BASE, fam, np.full(n, 21.0), birth, level, age) - 1).max())
+              for grid in grids.values())
+    if gap > 1e-12:
+        blocked(f"the EAN factor on Note 2025.7's basis is not 1 (max gap {gap:.2e})")
     worst = 0.0
+    pay = payable_path(econ)
     for fam_i in L.FAMILY_SEXES:
         for b, adj, entry, g in ((1964, 1.221, 21, BASE), (1985, 0.549, 33, ("0.03", "general")),
                                  (2000, 1.953, 45, ("new_issue", "hispanic"))):
             rate = float(g[0]) if g[0][0].isdigit() else g[0]
-            w = L.worker(b, adj, entry, fam_i, econ, prelim, arm=rate, population=g[1])
-            for m in ("EAN", "PUC", "ABO"):
-                worst = max(worst, abs(w["acc"][m].sum() / w["pv_ben"] - 1))
+            for payable in (None, pay):
+                w = L.worker(b, adj, entry, fam_i, econ, prelim, arm=rate, population=g[1], payable=payable)
+                for m in ("EAN", "PUC", "ABO"):
+                    worst = max(worst, abs(w["acc"][m].sum() / w["pv_ben"] - 1))
     if worst > 1e-9:
         blocked(f"accruals do not add up to lifetime benefits (worst {worst:.2e})")
-    print(f"[gate 4] model factor = 1 on Note 2025.7's basis; EAN/PUC/ABO add up to lifetime benefits (worst {worst:.1e})")
-    return dict(factor_one_max_gap=float(np.abs(f - 1).max()), adding_up_worst=worst)
+    print(f"[gate 4] model factor = 1 on Note 2025.7's basis, scheduled and payable; EAN/PUC/ABO add up to lifetime "
+          f"benefits (worst {worst:.1e})")
+    return dict(factor_one_max_gap=gap, adding_up_worst=worst)
 
 
 def summarize(beside, st_case, arms, hi, hi_info, v, t, union_row, case, gates, p) -> dict:
@@ -976,12 +1022,9 @@ def summarize(beside, st_case, arms, hi, hi_info, v, t, union_row, case, gates, 
                         part_a_accrual_bn=[float(hfact.accrual_bn.min()), float(hfact.accrual_bn.max())])
     return dict(
         case_bn=case["case_bn"], ends=case["ends"],
-        central=CENTRAL,
+        central=CENTRAL, central_scenario_basis=CENTRAL_SCENARIO_BASIS,
         central_on_accrual_bn={e: float(cen.loc[e, "case_on_accrual_bn"]) for e in ["low", "high"]},
-        central_decomposition={e: {k: float(cen.loc[e, k]) for k in
-                                   ["oasdi_tax_bn", "accrual_per_tax_dollar", "oasdi_accrual_bn", "ss_benefits_removed_bn",
-                                    "delta_oasdi_bn", "hi_tax_bn", "part_a_accrual_bn", "part_a_removed_bn",
-                                    "delta_part_a_bn", "delta_bn"]} for e in ["low", "high"]},
+        central_decomposition=decomposition(beside, "central"),
         range_across_arms_bn=rng,
         every_combination_bn=env,
         steady_state_bn={f"{r.structure}_{r.end}": dict(delta_oasdi_bn=r.delta_oasdi_bn, delta_part_a_bn=r.delta_part_a_bn,
@@ -1001,16 +1044,23 @@ def summarize(beside, st_case, arms, hi, hi_info, v, t, union_row, case, gates, 
 def summarize_net(beside: pd.DataFrame, arms: pd.DataFrame, hi: pd.DataFrame, bt: dict, share: np.ndarray) -> dict:
     """The keys the net switch adds to summary.json (every existing key keeps its meaning): benefit_tax (the current
     and future benefit tax; the future shares on the central's path, with the TR 2025 path's in tr2025_path),
-    ratio_net, case_on_accrual_net_bn, the net central's decomposition, the net ranges, and the gate that the switch
-    with no tax reproduces the gross central."""
+    ratio_net, case_on_accrual_net_bn, the net central's decomposition, the net ranges, the scheduled arm, and the
+    gates that the switch with no tax reproduces the gross central and that the scheduled arm reproduces the
+    scheduled centrals of 8062db1 (gross) and a238f19 (net)."""
     cen = beside[beside.arm == "central"].set_index("end")
     gross = beside[beside.arm == "gross_of_benefit_tax"].set_index("end")
+    sch = beside[beside.arm == "scheduled"].set_index("end")
     gate = {}
     for e in ["low", "high"]:
         g0, gn = float(cen.loc[e, "case_on_accrual_bn"]), float(gross.loc[e, "case_on_accrual_net_bn"])
-        gate[e] = dict(gross_central_bn=g0, net_with_no_tax_bn=gn, at_8062db1_bn=GROSS_8062DB1[e])
-        if abs(gn - g0) > 1e-9 or abs(g0 - GROSS_8062DB1[e]) > 1e-6:
-            blocked(f"with no tax the net switch gives {gn} at {e}, not the gross central {g0} ({GROSS_8062DB1[e]} at 8062db1)")
+        s0, sn = float(sch.loc[e, "case_on_accrual_bn"]), float(sch.loc[e, "case_on_accrual_net_bn"])
+        gate[e] = dict(gross_central_bn=g0, net_with_no_tax_bn=gn, scheduled_gross_bn=s0, at_8062db1_bn=GROSS_8062DB1[e],
+                       scheduled_net_bn=sn, at_a238f19_bn=NET_A238F19[e])
+        if abs(gn - g0) > 1e-9:
+            blocked(f"with no tax the net switch gives {gn} at {e}, not the gross central {g0}")
+        if abs(s0 - GROSS_8062DB1[e]) > 1e-6 or abs(sn - NET_A238F19[e]) > 1e-6:
+            blocked(f"the scheduled arm gives {s0} gross / {sn} net at {e}, not 8062db1's {GROSS_8062DB1[e]} / "
+                    f"a238f19's {NET_A238F19[e]}")
     if abs(cen.loc["low", "future_share"] - cen.loc["high", "future_share"]) > 1e-15:
         blocked("the central's future benefit-tax share differs between the ends")
     m, j = bt["mapping"], bt["json"]
@@ -1092,13 +1142,14 @@ def summarize_net(beside: pd.DataFrame, arms: pd.DataFrame, hi: pd.DataFrame, bt
             census_filed_returns_with_benefits=j["results"][m]["census_filed_returns_with_benefits"]),
         ratio_net=float(cen.loc["low", "accrual_per_tax_dollar_net"]),
         case_on_accrual_net_bn={e: float(cen.loc[e, "case_on_accrual_net_bn"]) for e in ["low", "high"]},
-        central_decomposition_net={e: {k: float(cen.loc[e, k]) for k in
-                                       ["future_share", "accrual_per_tax_dollar_net", "oasdi_accrual_net_bn",
-                                        "benefit_tax_on_accrual_bn", "benefit_tax_receipt_bn", "delta_oasdi_net_bn",
-                                        "delta_net_bn", "case_on_accrual_net_bn"]}
-                                   | {"change_from_gross_bn": float(cen.loc[e, "case_on_accrual_net_bn"] - cen.loc[e, "case_on_accrual_bn"])}
-                                   for e in ["low", "high"]},
+        central_decomposition_net=decomposition(beside, "central", net=True),
         range_across_arms_net_bn=rng, every_combination_net_bn=env,
+        scheduled_arm=dict(basis=SCHEDULED_BASIS,
+                           case_on_accrual_bn={e: float(sch.loc[e, "case_on_accrual_bn"]) for e in ["low", "high"]},
+                           case_on_accrual_net_bn={e: float(sch.loc[e, "case_on_accrual_net_bn"]) for e in ["low", "high"]},
+                           ratio_net=float(sch.loc["low", "accrual_per_tax_dollar_net"]),
+                           decomposition=decomposition(beside, "scheduled"),
+                           decomposition_net=decomposition(beside, "scheduled", net=True)),
         gate_net_with_no_tax=gate,
     )
 
@@ -1115,13 +1166,13 @@ def main() -> None:
     print(f"[gate 3] benefit formula vs TR V.C7 (64 cells): max gap {v.gap_pp.abs().max():.3f} points; model / Note "
           f"2025.7 Table 1: {t.model_over_note.min():.3f}-{t.model_over_note.max():.3f}; payable haircut gap "
           f"{(t.model_payable_over_scheduled - t.note_payable_over_scheduled).abs().max():.3f}")
-    grid = model_grid(econ, prelim)
-    gates = dict(model=gate_model(grid, econ, prelim), quotes_verified=len(q))
+    grids = {s: model_grid(econ, prelim, payable_path(econ) if s == "payable" else None) for s in SCENARIOS}
+    gates = dict(model=gate_model(grids, econ, prelim), quotes_verified=len(q))
     u_long = q["note151_eligible_share"]["value"]["end_of_projection"]
     u_2000 = q["note151_eligible_share"]["value"]["age62_in_2000"]
     share = tob_share_path() * (1 + hi_over_oasdi_tob())      # OASDI plus HI, national, by year (TR 2025)
     taus = {"tr2025": tob_timing(econ, prelim, share), "obbba": tob_timing(econ, prelim, share * obbba_factor())}
-    arms = oasdi_arms(p, grid, u_long, u_2000, taus)
+    arms = oasdi_arms(p, grids, u_long, u_2000, taus)
     hi, hi_info = hi_accrual(p, econ, u_long, u_2000)
     st, st_info = steady_state(p)
     comp = case_components(p)
@@ -1130,7 +1181,7 @@ def main() -> None:
     qu = p[p.union & (p.tax_oasdi > 0)].reset_index(drop=True)
     u_c = pick(arms, CENTRAL, OASDI_KEYS)
     for path, col in PATH_COLUMNS.items():
-        acc_c, tob_c = central_accrual(qu, grid, u_long, taus[path], ss.family_vector(qu, "observed_family"))
+        acc_c, tob_c = central_accrual(qu, grids, u_long, taus[path], ss.family_vector(qu, "observed_family"))
         via = float((qu.w.to_numpy() * acc_c * tob_c).sum() / (qu.w.to_numpy() * acc_c).sum())
         if abs(via - u_c[col] / u_c.accrual_bn) > 1e-12:
             blocked(f"the central's {path} timing differs between central_accrual and oasdi_arms")
@@ -1156,7 +1207,7 @@ def main() -> None:
     t.to_csv(OUT / "model_check_mwr.csv", index=False, float_format="%.4f", lineterminator="\n")
     summary = summarize(beside, st_case, arms, hi, hi_info, v, t, union_row, case, gates, p)
     summary.update(summarize_net(beside, arms, hi, bt, share))
-    summary["spouse_own_record_arm"] = spouse_arm(p, grid, u_long, taus[BT_CENTRAL["bt_path"]], arms, beside, bt)
+    summary["spouse_own_record_arm"] = spouse_arm(p, grids, u_long, taus[BT_CENTRAL["bt_path"]], arms, beside, bt)
     summary["steady_state_structures"] = st_info
     summary["case_components_attrs"] = comp.attrs
     summary["coverage_check"] = coverage_check(pd.read_csv(OUT / "case_lines.csv"), comp.attrs["se_oasdi_share"])
