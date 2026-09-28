@@ -89,8 +89,9 @@ the survey keys, −$0.37 / −0.16bn, plus −$0.81bn at both ends for re-keyin
 The uninsured-use arm at 0.7×, −$1.53 / −$2.24bn, is weaker: its evidence is only between regions (256).
 Social Security and Part A on an accrual basis would add $116.0 / $110.4bn (ladder 257); the route passes a
 national check against SSA's Statement of Social Insurance, and adoption awaits the operator. The operator agreed
-to take the candidates in one revision: `main_case_candidate_v3_2026_09_28`, $288.0–353.6bn with the pension switch
-off.]
+to take the candidates in one revision: `main_case_candidate_v3_2026_09_28` (b4526f5) prices items 1–7 at
+$287.8–353.5bn on cash and $404.3–464.2bn with Social Security and Part A on accrual; transit's riders' key (+$0.2bn)
+and the 0.7× uninsured use stay beside. Both adoptions await the operator.]
 
 **September 26 schools case (the main case until 2026-09-27): $258–292bn/year conditional net cost to other US
 residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
