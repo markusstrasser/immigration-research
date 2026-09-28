@@ -34,6 +34,23 @@ fifth gains $46.0bn (§4). Priced to the same standard, the benefits the account
 $4.8bn a year, or $18.7bn with the proposed scale net (§7b); with all of them the total is
 $237–289bn. [CALCULATION: lanes and commits in "Sources"]
 
+**Update, 2026-09-28, later (four unpriced social items, ladder 258).** Four social costs are now
+priced, one method per item, and sit beside the totals below rather than in them. The operator
+decides whether to add them. For the Mexican-origin union they come to about **$7.9bn a year** at
+central values, with a stacked envelope of −$9.4bn to $30.2bn:
+- fear and avoidance by people who are not victims, $10.5bn, a share of the public's willingness to pay
+  above victims' own losses;
+- private security, −$0.6bn, because the group's offending share sits near its population share;
+- school disruption, −$1.9bn: Hispanic pupils are 29% of enrollment and 24% of out-of-school
+  suspensions, so the group's pupils lower the disruptive share;
+- property values, 0, because a price discount is a transfer between owners and buyers or capitalises
+  crime and schools already priced; a flagged taste arm is $18.5bn.
+
+On the September 27 pairing the four items would take the central total from $363–438bn to
+$371–446bn [CALCULATION: 363 + 7.9; 438 + 7.9]. Run the same way for non-Hispanic Black residents,
+they come to $51.0bn ($16.5–158.8bn). [CALCULATION:
+`infra/immigration-fiscal/social_costs_unpriced_2026_09_28/items.py` → `derived/items.csv`, fa791b1]
+
 **Update, 2026-09-28 (the September 27 case, $321.8–387.4bn; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)).** Fiscal and social
 costs together come to **$363–438bn a year** at central values (full span $325–474bn), or
 $8.9–10.7k per group member, on the same pairing; with this memo's $28.9bn the low end is $361bn. The
@@ -484,3 +501,8 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
   together are $363–438bn at central values (73cc30c). The 2026-09-26 block's statement that the social
   items do not depend on the case no longer holds: congestion moves by −$5.2bn and −$7.1bn at the ends.
   Concept affected: the fiscal-plus-social total and the congestion item.
+- 2026-09-28, later (four unpriced social items, ladder 258): a new update block prices fear and
+  avoidance, private security, property values and school disruption beside the account, +$7.9bn
+  central for the union, not added pending the operator
+  ([lane](../infra/immigration-fiscal/social_costs_unpriced_2026_09_28/RESULT.md)). Concept affected:
+  the social costs reported beside the fiscal headline.
