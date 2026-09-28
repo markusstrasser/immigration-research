@@ -532,6 +532,36 @@ linked tax and benefit records for the group (IRS, SSA and Census), evidence tha
 nonrespondents differ from respondents with the same characteristics, or an ACS 2025 count
 that confirms the CPS level.
 
+## 18. "2024 was an unusual year: after COVID, after the money printing, in the middle of the border surge."
+
+Steel-man: one year of a price surge, pandemic programmes and a migration wave could make any group look
+expensive. Finding: of the three, only the budget moves the figure, and by a tenth to a fifth.
+- **Prices.** Inflation raises the group's taxes and the cost of its services together. The $322–387bn is
+  1.1–1.3% of GDP ($29.30tn), or $262–316bn in 2019 dollars.
+- **Pandemic programmes.** They had ended by 2024. Per resident in real terms, 2021's refundable credits were
+  4.4 times their 2024 level and SNAP 1.8 times; in 2019 they were 0.86 and 0.70. The group received the pandemic
+  payments at about its population share per head (entry 8). Its relative use of SNAP, SSI and Social Security in
+  2019–2023 stays within 10% of 2024.
+- **The surge.** It barely touches this group. Mexico-born residents who arrived from 2016 through March 2025 are
+  2.4M of the 40.9M, and per person they cost others about 40% as much as the Mexico-born average ($2,318 against
+  $5,682 on the partial account with flat charges). The shelter bills of the receiving cities are charged by use,
+  and Mexican nationals were 0.5–0.8% of the people served.
+- **The budget.** This is the real 2024 effect. From 2019 to 2024, real government spending per resident rose
+  13.6% and receipts 9.7%, and 2024 spending ran 26% above receipts. A group that pays below-average taxes carries
+  more of that gap. Replayed through the average budget of 2015–2019 and 2022–2023, the same group costs 10% less
+  per member with its lower relative income of those years ($290–348bn at today's size), or 20% less with its
+  2024 income held fixed ($252–310bn). Against as many average residents, which cancels the deficit everyone
+  shares, the figure moves only 4–7%.
+
+About 60% of the rise in the group's largest lines since 2019 is Medicaid, Medicare and Social Security, which
+are still growing, so the years ahead look more like 2024 than 2019 [INFERENCE]. The group's own relative income
+was at its highest in 2024 (0.61 of the national figure, against 0.56 in 2019), which flatters the year. Before
+2024 only the group's income is measured; the replays are a model. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md),
+`historical_backcast_2026_09_20/derived/backcast_annual.csv` and `national_programme_index.csv`; arrival windows,
+`arrival_window_fiscal_2026_09_18/RESULT.md`; shelter, `migrant_shelter_costs_2026_09_23/RESULT.md`; GDP, BEA NIPA
+Table 1.1.5 as quoted in `labor_mobility_insurance_2026_09_23/RESULT.md`] Would change it: a second complete
+measured year, or a budget path that returns spending per resident to its 2019 level.
+
 ## Instrument
 
 LLM-assisted allocation and synthesis on a politically charged topic. Every answer above
@@ -687,3 +717,4 @@ they get more prominence.
   affected: the reliability of survey-keyed shares.
 - 2026-09-28: entry 4's innovation sentence gained a bracket. After the September 26 schooling correction the patent term is positive and imprecise, not a null (flagged by the [adversarial audit](immigration-adversarial-audit-2026-09-28.md) §4, which corrected the same sentence in the real-costs memo). Nothing is added. Concept affected: unpriced innovation benefits.
 - 2026-09-28: entry 8 gained the September 27 case's back-cast ($2.8–3.7tn over ten years; de468f2). Concept affected: the cumulative figure's anchor.
+- 2026-09-29: entry 18 added ("2024 was an unusual year"): prices and the pandemic do not move the figure, the surge barely touches the group, and the budget year moves it 10–20%. Concept affected: the representativeness of income-year 2024.
