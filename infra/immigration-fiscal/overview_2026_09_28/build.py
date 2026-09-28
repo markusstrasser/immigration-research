@@ -21,6 +21,7 @@ import evidence  # noqa: E402
 
 LADDER = ROOT / "research/immigration-confidence-ladder.md"
 MAIN = ROOT / "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived"
+SOCIAL = ROOT / "infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/real_costs_totals.csv"
 STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
 
 ORANGE, ORANGE_FILL = "#ca7a5e", "#f2cabc"
@@ -110,14 +111,30 @@ def load_numbers():
     return s, bands, stairs
 
 
-def waterfall_rows(s, stairs):
+# Reader-facing labels for the figures page's staircase rows: concepts, not the history of the analysis.
+RELABEL = {
+    "schools": ("Schools, first-year budget response", "63–66% of cost per pupil (CBO)"),
+    "gg": ("General administration", "0.60–0.85% per 1% more residents"),
+    "taxes": ("Taxes checked against records", "off-books work, survey fill-ins, top incomes"),
+    "benefits": ("Benefits and services checked against records", "credits, medical care, schools, care"),
+}
+
+
+def load_social():
+    """Fiscal plus social total at central values: Hispanic footing at the low end, custody at the high end."""
+    rows = {(r["column"], r["item"]): float(r["sept27"]) for r in csv.DictReader(SOCIAL.open()) if r["section"] == "7" and r["sept27"]}
+    return [rows[("hispanic", "total at central values (low)")], rows[("custody", "total at central values (high)")]]
+
+
+def waterfall_rows(s, stairs, social):
     c = s["change_at_fixed_specifications"]
     # The staircase's `step` pairs are sorted by size, not by end, so steps come from the running totals.
     rows, prev = [], [0.0, 0.0]
     for r in stairs:
         if r["beyond"]:
             continue
-        rows.append(dict(label=r["label"], note=r["note"] or "", step=[r["total"][0] - prev[0], r["total"][1] - prev[1]]))
+        label, note = RELABEL.get(r["id"], (r["label"], r["note"] or ""))
+        rows.append(dict(label=label, note=note, step=[r["total"][0] - prev[0], r["total"][1] - prev[1]]))
         prev = r["total"]
         if r["id"] == "gg":
             rows.append(dict(label="September 23 case", total=True))
@@ -130,14 +147,14 @@ def waterfall_rows(s, stairs):
     capital_total = s["capital_at_end_specifications"]["total_bn"]
     ent_capital = [t - core - block for t, core, block in zip(capital_total, c["capital_core"], c["capital_block"])]
     rows += [
-        dict(label="Finite removal, consumption key", note="Sept 26 corrections", step=d26),
-        dict(label="Schools at full cost per pupil", note="response 1, not CBO's 0.63–0.66", step=sch),
+        dict(label="Consumption taxes on spending", note="net of saving and remittances", step=d26),
+        dict(label="Schools, long run: full cost per pupil", note="spending rises ~1% per 1% more pupils", step=sch),
         dict(label="September 26 schools case", total=True),
         dict(label="Roads, parks: long-run response", note="0.73 and 0.95 across states", step=c["long_run_responses"]),
         dict(label="Rental assistance at 1", note="", step=c["rental_assistance"]),
         dict(label="Return on public capital", note="2% real low end, 3% high end", step=[a + b for a, b in zip(c["capital_core"], c["capital_block"])]),
         dict(label="Government enterprises", note="operating loss and capital return", step=[ent_surplus[0] + ent_capital[0], ent_surplus[1] + ent_capital[1]]),
-        dict(label="September 27 case (adopted)", total=True, main=True),
+        dict(label="Main estimate", total=True, main=True),
     ]
     tot = [0.0, 0.0]
     for r in rows:
@@ -155,19 +172,20 @@ def waterfall_rows(s, stairs):
             v = next(r for r in rows if r["label"] == label)["value"]
             if any(abs(a - b) > 1e-3 for a, b in zip(v, s[key])):
                 fail(f"{label} subtotal {v} != summary {s[key]}")
-    # Pending and beside rows, typed from the ladder (entries 257, 195, 253, candidate v3 RESULT).
+    rows = [r for r in rows if not r.get("total") or r.get("main")]
+    # Alternative and beside rows, typed from the ladder (entries 257, 195, 253, candidate v3 RESULT).
     rows += [
-        dict(label="Candidate revision, cash", note="mostly property taxes (ladder 253); v3 RESULT", pending=True,
+        dict(label="Alternative: property taxes follow people", note="with smaller tax-key fixes (253, 249)", pending=True,
              prev=list(tot), value=[290.5, 355.8]),
-        dict(label="+ pensions on accrual (current law)", note="ladder 257; awaits your go", pending=True,
+        dict(label="+ pensions counted when earned", note="current-law benefits (257)", pending=True,
              prev=[290.5, 355.8], value=[368.0, 429.0]),
-        dict(label="Adopted case + costs outside budgets", note="victims, traffic, housing, fear (ladder 195)", beside=True,
-             prev=list(tot), value=[371.3, 445.9]),
+        dict(label="Main estimate + costs outside budgets", note="victims, traffic, housing, fear (195, 258)", beside=True,
+             prev=list(tot), value=list(social)),
     ]
     return rows
 
 
-def tornado_rows(s, bands):
+def tornado_rows(s, bands, social):
     m = bands["adopted"]
 
     def d(key):
@@ -175,22 +193,22 @@ def tornado_rows(s, bands):
 
     rows = [
         ("Capital return at 7%, not 2–3%", d("capital_return_at_7pct"), "beside", "239"),
-        ("Pensions on accrual (current law)", [77.3, 73.6], "waiting", "257"),
-        ("Other services held fixed (schools still full)", [bands["long_run_non_school_fixed:adopted"][i] - m[i] for i in (0, 1)], "arm", "239"),
-        ("Costs outside budgets added", [371.3 - 321.8, 445.9 - 387.4], "beside", "195, 258"),
+        ("Pensions counted when earned", [77.3, 73.6], "waiting", "257"),
+        ("Services other than schools held fixed", [bands["long_run_non_school_fixed:adopted"][i] - m[i] for i in (0, 1)], "arm", "239"),
+        ("Costs outside budgets added", [social[0] - m[0], social[1] - m[1]], "beside", "195"),
         ("No return on public capital", d("without_capital_return"), "arm", "239"),
         ("Roads and parks at CBO's lag of 0", [bands["cbo_category_lag_non_school_full:with_rental_assistance_capital_and_enterprises"][i] - m[i] for i in (0, 1)], "arm", "239"),
-        ("General government at 0 (Sept 23 case)", [-28.5, -40.6], "arm", "193"),
-        ("Property taxes respond in the long run", [-27.19, -27.19], "candidate", "253"),
+        ("General administration fixed (earlier version)", [-28.5, -40.6], "arm", "211"),
+        ("Property taxes follow people", [-27.19, -27.19], "candidate", "253"),
         ("Schools at within-district 0.836", d("school_within_district"), "arm", "239"),
         ("Every service fully proportional", [bands["proportional_reference:adopted"][i] - m[i] for i in (0, 1)], "arm", "239"),
         ("Enterprises left out", d("enterprises_out_option_a"), "arm", "239"),
         ("Sampling noise (95%)", [20.8, 20.8], "noise", "184"),
-        ("Imperfect substitution, ε = 3 (Sept 20 calibration)", [-13.8, -9.1], "arm", "176"),
-        ("Data corrections switched off", d("uncorrected_at_adopted_responses"), "arm", "239"),
-        ("No fill-in correction for the CPS", d("no_fill_in_correction"), "arm", "239"),
+        ("Natives and immigrants poor substitutes, ε = 3", [-13.8, -9.1], "arm", "176"),
+        ("Survey data left uncorrected", d("uncorrected_at_adopted_responses"), "arm", "239"),
+        ("Census income fill-ins left in", d("no_fill_in_correction"), "arm", "208"),
         ("Rental assistance at 0", d("rental_assistance_at_0"), "arm", "239"),
-        ("IRS-matched income-tax key", [-3.2, -3.1], "candidate", "249"),
+        ("Income-tax shares matched to IRS", [-3.2, -3.1], "candidate", "249"),
     ]
     return sorted(rows, key=lambda r: -max(abs(r[1][0]), abs(r[1][1])))
 
@@ -280,7 +298,7 @@ def svg_tornado(rows):
         out.append(f'<text x="{X(t):.1f}" y="{H - 8}" class="tick" text-anchor="middle">{abs(t)}</text>')
     out.append(f'<text x="{X(0) - 6:.1f}" y="18" class="axis" text-anchor="end">← lower cost</text>')
     out.append(f'<text x="{X(0) + 6:.1f}" y="18" class="axis">higher cost, $bn a year →</text>')
-    tag = {"waiting": "awaits you", "candidate": "candidate", "beside": "beside", "arm": "", "noise": "noise"}
+    tag = {"waiting": "alternative", "candidate": "alternative", "beside": "beside", "arm": "", "noise": "noise"}
     y = 34
     for label, (a, b), status, ref in rows:
         out.append(f'<text x="{lw - 10}" y="{y + 13}" class="lab" text-anchor="end">{html.escape(label)}<tspan class="ref"> · {ref}</tspan></text>')
@@ -308,11 +326,12 @@ def svg_tornado(rows):
 def main():
     entries = parse_ladder()
     s, bands, stairs = load_numbers()
+    social = load_social()
     r = evidence.render(entries, fail)
     page = (HERE / "template.html").read_text()
     subs = {
-        "{{WATERFALL}}": svg_waterfall(waterfall_rows(s, stairs)),
-        "{{TORNADO}}": svg_tornado(tornado_rows(s, bands)),
+        "{{WATERFALL}}": svg_waterfall(waterfall_rows(s, stairs, social)),
+        "{{TORNADO}}": svg_tornado(tornado_rows(s, bands, social)),
         "{{GROUP_TABLE}}": r["table"],
         "{{GROUPS}}": r["groups"],
         "{{LEGEND}}": r["legend"],
@@ -327,6 +346,12 @@ def main():
         if k not in page:
             fail(f"template lacks {k}")
         page = page.replace(k, v)
+    add = [social[0] - s["main_case"][0], social[1] - s["main_case"][1]]
+    for k, v in {"{{SOCIAL_TOTAL}}": f"${social[0]:.0f}–{social[1]:.0f}bn",
+                 "{{SOCIAL_ADD}}": f"${add[0]:.0f}–{add[1]:.0f}bn"}.items():
+        page = page.replace(k, v)
+    if "{{" in page:
+        fail("unfilled placeholder: " + page[page.index("{{"):page.index("{{") + 30])
     out = HERE / "derived/overview.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(page)
