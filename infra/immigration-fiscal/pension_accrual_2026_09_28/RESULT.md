@@ -7,9 +7,11 @@ ratios applied to each year's taxes. The national check says those ratios, appli
 through the lane's frame, reproduce SSA's own aggregate. Against the Statement of Social Insurance at 1 January
 2025 the OASDI 15–61 ratio comes out 4.6% high and the HI 15–64 ratio 1.7% high, with levels 3.8–8.0% low, all
 within the declared tolerance. The check also cut the central by $5.9bn, because the Part A spouse credit counted
-dependents twice (bec1cd7: $443.8bn / $503.7bn). One setting at a time gives $377–460bn at 48 and $439–519bn at 11;
-every combination spans $348–519bn / $413–575bn. The lifetime model's own formula falls 20% short by construction and
-decides nothing. Whether accrual can rest on SSA's ratios or needs an extended formula model goes to the operator
+dependents twice (bec1cd7: $443.8bn / $503.7bn). One setting at a time gives $395–460bn at 48 and $457–519bn at 11;
+every combination spans $352–519bn / $416–575bn (the constant-rate arms now keep 1961–2024 at the historical rates;
+see "Corrections after the cross-lab review"). The central counts benefits before income tax on them, which SSA
+says may overstate its ratios; that correction is open and would lower the central. The lifetime model's own
+formula falls 20% short by construction and decides nothing. Whether accrual can rest on SSA's ratios or needs an extended formula model goes to the operator
 (recommended: SSA's ratios); until then the figure stays beside the case. [CALCULATION: `pension_accrual.py` →
 `derived/summary.json`, `derived/case_beside.csv`; `national_check.py` → `derived/national_score.json`]
 
@@ -38,7 +40,9 @@ Part A is the case's Medicare amount ($52.42bn) times the HI share of 2024 Medic
 `mtr_benefits_2024_bn`]
 
 **Central decomposition, $bn** (the two fill-in methods averaged) [CALCULATION: `derived/case_beside.csv`, arm
-`central`]
+`central`]. These are bec1cd7's values. The national check removed the Part A spouse credit, so Part A is now
+$45.35bn, its change +25.69, and the case on accrual $437.83bn / $497.78bn (see "Part A: the spouse credit counted
+dependents twice").
 
 | | Spec 48 | Spec 11 |
 |---|---:|---:|
@@ -73,7 +77,9 @@ population, so the Part A accrual is the same at both ends.
 ## Arms: one change from the central
 
 $bn, methods averaged. OASDI arms leave Part A at the central, and the reverse; rate, payable, unauthorized and
-mortality arms move both. [CALCULATION: `derived/case_beside.csv`]
+mortality arms move both. [CALCULATION: `derived/case_beside.csv`] The table holds bec1cd7's values. Every Part A
+and case column predates the spouse correction, and the four constant-rate rows predate the history fix. The
+current values are in `derived/case_beside.csv` and under "Corrections after the cross-lab review".
 
 | Arm | Per tax $ | ΔOASDI 48 / 11 | ΔPart A | Case 48 | Case 11 |
 |---|---:|---:|---:|---:|---:|
@@ -531,10 +537,12 @@ The rows beside:
 
 ### Level assignment and convexity
 
-The parent's premise holds for a person-weighted average of ratios. The accrual weights by tax dollars, and per tax
-dollar the credit is lifetime benefits per unit of level. That is concave, like the benefit formula's 90/32/15%
-brackets. Spread in the levels therefore lowers the tax-weighted ratio, and shrinking it raises the ratio.
-[INFERENCE, checked by the probes]
+The parent's premise holds for a person-weighted average of ratios. The accrual weights by tax dollars. With taxes
+proportional to the level L, the tax-weighted ratio is ΣB(L) / ΣL, and lifetime benefits B(L) are concave in L, like
+the benefit formula's 90/32/15% brackets. A spread in the levels that keeps ΣL therefore lowers the tax-weighted
+ratio, and shrinking it raises the ratio. (Corrected after the cross-lab review: this sentence first called the
+per-dollar credit B(L) / L concave; it is convex.) The probes shrink the variance of log levels, which also moves
+ΣL, so they fix the sign for these transformations only. [INFERENCE, checked by the probes]
 
 | Probe | 15–61 ratio (published 1.673) | Group, per tax $ |
 |---|---:|---:|
@@ -650,6 +658,50 @@ files:
 - `derived/national_probes.csv`: the level and family probes;
 - `derived/national_levels.csv`: the level distribution against Note 2025.3 Table 1.
 
+## Corrections after the cross-lab review
+
+GPT-6 Astra (xhigh) reviewed a packet of this lane on 2026-09-28. The parent checked each finding against these
+files and primary sources. What changed here, and what stays open:
+
+**The constant-rate arms keep history.** `lifetime_model.py` `discount()` applied a constant real rate to every year,
+so those arms also re-accumulated 1961–2024 taxes at that rate. Real new-issue rates were near zero or negative in
+2009–2021, so the arms overstated how much the valuation rate matters. They now take the historical new-issue rates
+through 2024, as the central does, and the constant rate from 2025. The central and every other arm are unchanged
+(the national check's outputs are identical). [CALCULATION: `derived/case_beside.csv`; parent's finding, not the
+reviewer's]
+
+| Arm, case on accrual at 48 / 11 ($bn) | Per tax $, before → after | Before | After |
+|---|---|---:|---:|
+| real 2% | 1.203 → 1.322 | 427.7 / 488.3 | 441.2 / 501.0 |
+| real 2.3% | 1.093 → 1.226 | 410.4 / 471.8 | 425.7 / 486.1 |
+| real 3% | 0.872 → 1.031 | 376.6 / 439.4 | 394.9 / 456.7 |
+| the case's rates, 2% at 48 and 3% at 11 | | 427.7 / 439.4 | 441.2 / 456.7 |
+
+One setting at a time now spans $394.9–460.3bn at 48 and $456.7–519.2bn at 11. The 3% rate stays the low end; the
+high end is the career-mean level mapping at 48 and full credit for unauthorized workers at 11. Every combination
+spans $352.4–519.2bn / $416.5–574.9bn. [CALCULATION: `derived/summary.json` `range_across_arms_bn`,
+`every_combination_bn`]
+
+**Open: benefits are valued before income tax on them.** SSA's ratios leave the tax out: "money's worth ratios
+that ignore these transfers may arguably be overstated. Due to the difficulty of determining the level of income
+tax on benefits, this factor is not addressed in this note." [SOURCE: SSA Actuarial Note 2025.7, footnote 2] The
+accrual inherits the omission, and whatever income tax the case credits on 2024 benefits stays in receipts. A net accrual
+subtracts the tax the group will pay on the benefits its 2024 work earns and drops today's tax on today's benefits.
+Nationally the tax returns 10.1% of the future benefits of today's 15–61 (5.85% to OASDI; HI receives 0.722 times
+OASDI's share). [CALCULATION: `derived/national_score.json` `stock_check.tob_share_15_61`,
+`derived/national_prediction.json` `kappa_hi_over_oasdi_tob`] The group's lower incomes put its rate below that.
+At 40–80% of the national rate, the net change is roughly −$4.5bn to −$9bn at 48; the national rate bounds it near
+−$11bn. [INFERENCE; unmeasured, the group's relative rate is assumed] Part A benefits are not taxed.
+
+**Open, already stated above:** the auxiliary assignment (the calibrated 1.24 against the central's 1.298, −$6.5bn /
+−$6.1bn); future disability before 65 in Part A (left out, so Part A is low); the 10% unauthorized credit (a
+population share at the end of Note 151's projection, not a measured probability for today's workers; the arms run
+from nothing to full credit); entry-age attribution, which the national check cannot test (it checks lifetime
+totals, not the split across years, and not the Part A divisor).
+
+**Corrected wording:** "Level assignment and convexity" called the per-dollar credit concave; it is convex, and the
+argument runs through the concavity of lifetime benefits in the level (fixed in place).
+
 ## Progress (append-only)
 
 - 2026-09-28. RESULT stubbed before any work.
@@ -693,3 +745,9 @@ files:
   (lane 0.77 of the implied accrued obligations for 15–61); the roll-forward stays skipped. No model extension.
 - 2026-09-28 11:15 JST. Two consecutive reruns after those edits: 30/30 files identical, rc 0; the prediction file
   kept its frozen sha256. 42 quotes verified.
+- 2026-09-28 12:13 JST (parent). After the cross-lab review: `lifetime_model.py` `discount()` keeps the historical new-issue
+  rates through 2024 in the constant-rate arms (probe first, then in place; the in-place `case_beside.csv` matched
+  the probe byte for byte). Changed outputs: `case_beside.csv`, `oasdi_arms.csv`, `hi_arms.csv`,
+  `oasdi_by_generation.csv`, `summary.json` (the rate arms and the ranges); the national check's outputs are
+  unchanged. Verdict, the two stale tables' captions and the convexity sentence edited; new section "Corrections
+  after the cross-lab review".
