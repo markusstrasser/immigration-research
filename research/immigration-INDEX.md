@@ -210,7 +210,7 @@ group. This is not an engine run (ladder 259,
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
 **$248–304bn a year** at central values ($210–337bn full span) on the September 24 case
-(September 23: $248–307bn, $212–340bn). [2026-09-28, latest: with PM2.5 and road crashes as costs and the scale benefits as gains **$463–537bn** ($267–755bn full span, $11.3–13.1k per member; the crash item on California's measured non-fatal fault, ladder 264; [decision](../decisions/2026-09-28-social-items-pollution-crashes.md), [decision](../decisions/2026-09-28-social-items-scale-benefits.md)).] [2026-09-28, later: with fear, security and schools **$371–446bn** ($316–504bn full span, $9.1–10.9k per
+(September 23: $248–307bn, $212–340bn). [2026-09-28, final: with volunteering, consumer-side scale and trade ties also counted as gains **$447–522bn** ($224–755bn full span, $10.9–12.8k per member; ladder 265; [decision](../decisions/2026-09-28-social-items-more-benefits.md)).] [2026-09-28, later: with PM2.5 and road crashes as costs and the scale benefits as gains $463–537bn ($267–755bn full span, $11.3–13.1k per member; the crash item on California's measured non-fatal fault, ladder 264; [decision](../decisions/2026-09-28-social-items-pollution-crashes.md), [decision](../decisions/2026-09-28-social-items-scale-benefits.md)).] [2026-09-28, later: with fear, security and schools **$371–446bn** ($316–504bn full span, $9.1–10.9k per
 member; [decision](../decisions/2026-09-28-social-items-fear-security-schools.md)).] [2026-09-28: on the September 27 case **$363–438bn**
 ($325–474bn full span, $8.9–10.7k per member); congestion now moves with the case (73cc30c).]
 [2026-09-26, later: on the schools case **$305–350bn**

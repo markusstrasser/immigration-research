@@ -49,6 +49,10 @@ Against as many average residents, pollution is −$46.5bn, crashes −$3.4bn, t
 unchanged. Three lanes are pricing further benefits: trade networks, consumer-side scale and a benefits
 inventory. [CALCULATION: `infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/real_costs_totals.csv` (cde7496)]
 
+[Later the same night the three benefit lanes landed and joined the social rows as gains: volunteering $6.2bn,
+consumer-side scale $2.2bn and trade ties with Mexico $6.8bn. Fiscal plus social is **$447–522bn** ($224–755bn full
+span; ladder 265; [decision](../decisions/2026-09-28-social-items-more-benefits.md)).]
+
 **Update, 2026-09-28, later (fear, security and schools added to the social rows; [decision](../decisions/2026-09-28-social-items-fear-security-schools.md)).**
 Fiscal and social costs together come to **$371–446bn a year** at central values (full span
 $316–504bn), or $9.1–10.9k per group member, on the same pairing. The operator added the union's fear
@@ -538,3 +542,5 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
   2026-09-28-social-items-scale-benefits): PM2.5 and road crashes join the social rows as costs, and the scale net and
   restaurant market size as gains. The crash item uses California's measured non-fatal fault. The pairing is
   $463–537bn. Concept affected: the fiscal-plus-social total.
+- 2026-09-28, final (benefit search; decision 2026-09-28-social-items-more-benefits): volunteering, consumer-side scale
+  and trade ties join the social rows as gains; the pairing is $447–522bn. Concept affected: the fiscal-plus-social total.
