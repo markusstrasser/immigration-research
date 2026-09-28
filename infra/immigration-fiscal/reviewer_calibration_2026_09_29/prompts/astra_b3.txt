@@ -1,0 +1,89 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE K8CCB
+CLAIM: Immigration does not push natives onto transfer programmes. With an ancestry-based instrument (first-stage F = 63.9), a 1-point rise in a county's immigrant share lowers the county's SSI receipt rate by 0.03 percentage points (SE 0.012) between 1990 and 2000: better evidence against native displacement into transfers than the earlier instrument gave.
+
+EVIDENCE:
+- Outcome: share of all households in the county receiving SSI, from the 1990 and 2000 census files; the 2000 file used has no nativity split.
+- In these counties, 1.9% of immigrant households and 4.6% of native households receive SSI.
+- Instrument: predicted immigrant inflow built from origin-by-county interaction terms for all other origins (leave-own-origin-out), divided by baseline population.
+
+=====
+
+CASE K6C71
+CLAIM: The CPS has put the Mexico-born population 9-13% below the ACS every year since 2019. About 13.4M, not the CPS's 12.2M, is the right level for early 2025.
+
+EVIDENCE:
+- The shortfall appears in every monthly CPS file from January 2024 (2024 mean 12.02M) and in the March basic sample alone (12.10M), so it is neither the ASEC oversample nor the January 2025 population controls.
+- It is composition inside the Hispanic control: in 2024 the CPS counted more Hispanics than the ACS in total but 1.22M fewer Mexico-born and 1.51M more other Hispanics, and CPS state weighting controls Hispanic origin only nationally.
+- The two surveys agreed within 4% from 2006 to 2016.
+- The whole ASEC 2025 shortfall (1.19M against the ACS 2024 in the same universe) lies outside California and Texas, and 76% of it is noncitizen.
+
+=====
+
+CASE K83F7
+CLAIM: Legalizing the founder after ten years raises the century fiscal cost of a Mexican immigrant lineage by 34%.
+
+EVIDENCE:
+- Code excerpt:
+```python
+def founder_profile(age, status):
+    # earnings, payroll and income taxes by age for unauthorized Mexico-born workers
+    p = unauthorized_profile(age)
+    if status == "legal":
+        p.benefits = statutory_benefits(age)   # Social Security, Medicare, Medicaid, SSI eligibility
+    return p                                   # earnings and taxes stay on the unauthorized profile
+```
+- Legalization at year 10 sets the founder's status to "legal" for the rest of life.
+- Studies of past legalizations report wage gains of 6-15% and a large shift of employment onto payroll records after legalization.
+
+=====
+
+CASE KEC7C
+CLAIM: The parole programme for Cubans, Haitians, Nicaraguans and Venezuelans cut the border workload: after it began, total southwest-border encounters of these four nationalities fell 91% relative to other nationalities.
+
+EVIDENCE:
+- Series: monthly southwest-border encounters by citizenship, parsed from the border agency's spreadsheet "Southwest Border Encounters by Agency and Selected Citizenship".
+- Sheet layout: three side-by-side blocks, left to right "Total", "Field Operations (at ports of entry)" and "Border Patrol (between ports of entry)". Every block has the same column headers: Month, Citizenship, Encounters.
+- Parser excerpt:
+```python
+series = {}
+for block in sheet.blocks:                 # left to right
+    for col in block.columns:
+        series[col.header] = col.values    # keyed by header text
+encounters = pd.DataFrame(series)          # used downstream as total encounters
+```
+- Programme participants and other appointment holders present at ports of entry and are recorded as Field Operations encounters; port presentations of these nationalities rose from about 3,000 to 25,000 a month after the programme began.
+- Design: difference-in-differences, the four programme nationalities against other nationalities, monthly, 2021-2023; the post-programme coefficient converts to -91%.
+
+=====
+
+CASE KA492
+CLAIM: The present value of lifetime earnings lost by incumbent pupils because of one school year's exposure to crowded classrooms can be booked as a one-year social-cost accrual in an annual account. This is not a stock/flow error, provided it is labeled as an accrual, kept separate from budget cash flows, and its future-tax consequence is not added a second time.
+
+EVIDENCE:
+- The annual account books each year's exposure once: the loss caused by 2024's exposure is the present value, at 2024, of the earnings reduction it causes over the pupils' working lives.
+- Each year's exposure is a new flow; next year's exposure is booked next year. A pupil's harm over 13 school years is the sum of 13 annual accruals, not 13 lifetimes.
+- The future income-tax loss from the lower earnings is excluded from the fiscal line and appears only inside the social accrual.
+
+=====
+
+CASE KE02D
+CLAIM: A blind back-test of the account's dollar keys against state administrative totals gives no reason to correct the SSI key. Against SSA's federal SSI payments by state, the estimated correction is delta = -0.48 (the Mexican-origin group's SSI would be 48% lower than the key assigns). But the account's SSI line pays federal SSI plus the state supplementary payments SSA administers for some states, chiefly California's $3.26bn, while this target table covers federal payments only, and the group is concentrated in California. Against the federally administered total including supplements, a comparison chosen after the data were seen, delta = -0.08 (-$0.40bn). No key correction follows.
+
+EVIDENCE:
+- Predictions, baselines and tolerances were committed before any target was opened; scoring used the frozen estimators.
+- State totals give the dollar keys little power, because take-up and error rates vary by state more than the group's share does: refundable credits delta -0.09 (-$1.6bn, 95% interval about -$8 to +5bn); Social Security delta +0.01.
+- The same frame predicts where births land: births to Mexican-origin mothers are 14.43% of US births in the frame against 14.36% in birth records.

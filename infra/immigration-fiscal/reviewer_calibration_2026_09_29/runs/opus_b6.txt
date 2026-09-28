@@ -1,0 +1,35 @@
+CASE KEAF8
+VERDICT: SOUND
+LOCATION: none
+WHY: Each year's exposure adds a new increment to human capital, so that increment is a flow for the year. Booking its present value once works the same way as a pension-service accrual, and 13 years of exposure give 13 increments, not 13 lifetimes. The tax gain is already inside the gross earnings gain, so leaving it out of the fiscal line prevents counting it twice.
+CONFIDENCE: 0.75
+
+CASE K922B
+VERDICT: ERROR
+LOCATION: Parser, `series[col.header] = col.values` inside the loop over the three blocks
+WHY: All three blocks use the same headers, so each block overwrites the one before it. The DataFrame therefore holds only the last block, Border Patrol encounters between ports, not Total. The programme moved these nationalities to ports of entry, where Field Operations encounters rose from about 3,000 to 25,000 a month. The -91% therefore records a shift from crossings between ports to presentations at ports, not a fall in total encounters or workload.
+CONFIDENCE: 0.9
+
+CASE KEA5F
+VERDICT: ERROR
+LOCATION: "about 24,000 noncitizen ballots … a lower bound", and the step from that figure to CA-13
+WHY: The 24,000 are record-match flags, many later cleared as naturalized citizens, and none are confirmed as ballots cast by noncitizens. That makes the figure at most an upper bound on flags, not a lower bound on ballots. California published no audit, so no evidence puts any flagged ballot in CA-13, let alone a net of more than 187 for the winner.
+CONFIDENCE: 0.93
+
+CASE KD529
+VERDICT: SOUND
+LOCATION: none
+WHY: The intervals match the stated SEs: 1.12 ± 0.29 gives 0.83–1.41, and 1.31 ± 0.20 gives 1.11–1.51. The correction is claimed only for 18-64, where the interval excludes 1. The donors include the group itself, which pulls the ratio toward 1, so the group's ratio against everyone else would be higher still and the understatement holds.
+CONFIDENCE: 0.7
+
+CASE K796E
+VERDICT: SOUND
+LOCATION: none
+WHY: The preregistered target includes state supplements that the account's federal-only SSI line never pays. California's supplement is concentrated where the group lives, so the +0.96 comes from comparing against the wrong definition. The federal-only comparison is the one definition that matches the account's line, not a favourable choice among several, and it is labelled as post hoc. Given how little power state totals have (the refundable-credit interval runs from about -$5bn to +$8bn), +0.17 does not justify a correction.
+CONFIDENCE: 0.6
+
+CASE KE81A
+VERDICT: ERROR
+LOCATION: "skip the income supplement at the same rate … so … fill-ins included"
+WHY: Equal skip rates do not prevent bias when donor cells are not matched on Hispanic origin or citizenship. The group's respondents report SSI and public assistance at 0.58 times the rate of others, but its filled-in records show 0.97 times, and the filled-in amounts are 37–41 log points higher. The fill-ins therefore inflate the group's receipt, and keys that allocate national totals by these CPS amounts give the group too large a share.
+CONFIDENCE: 0.92

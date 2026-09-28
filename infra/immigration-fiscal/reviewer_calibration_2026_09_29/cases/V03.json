@@ -1,0 +1,12 @@
+{
+ "id": "V03",
+ "type": "VALID",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "ssi",
+ "packet_text": "CLAIM: A blind back-test of the account's dollar keys against state administrative totals gives no reason to correct the SSI key. Against SSA's federally administered SSI payments by state, the estimated correction is delta = +0.96 (the Mexican-origin group's SSI would be 96% higher than the key assigns). But that target includes the state supplementary payments SSA administers for some states, chiefly California's $3.26bn, which the account's SSI line (federal SSI only) does not pay, and the group is concentrated in California. Against federal SSI alone, a comparison chosen after the data were seen, delta = +0.17 (+$0.80bn). No key correction follows.\n\nEVIDENCE:\n- Predictions, baselines and tolerances were committed before any target was opened; scoring used the frozen estimators.\n- State totals give the dollar keys little power, because take-up and error rates vary by state more than the group's share does: refundable credits delta +0.09 (+$1.6bn, 95% interval about -$5 to +8bn); Social Security delta -0.01.\n- The same frame predicts where births land: births to Mexican-origin mothers are 14.43% of US births in the frame against 14.36% in birth records.",
+ "ground_truth": "VALID. The target-definition mismatch is real (the federally administered total includes state supplements the\nline does not pay); the post-hoc federal-only comparison is labeled as such.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Ladder entry 255 (back-test against administrative totals) with its cross-lab bracket; lane backtest_admin_totals_2026_09_28."
+}

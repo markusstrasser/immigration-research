@@ -1,0 +1,12 @@
+{
+ "id": "E07",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "census",
+ "packet_text": "CLAIM: Each new Mexican arrival cohort is more positively selected on custody than the last. Among Mexico-born men aged 18-40 in their first five years in the US, the institutionalized share relative to US-born men of the same ages fell from 0.45 (1975-80 arrivals, 1980 census) to 0.42 (1985-90 arrivals, 1990 census) to 0.13 (1995-2000 arrivals, 2000 census).\n\nEVIDENCE:\n- IPUMS 5% census samples; institutional group quarters; SEs 0.05, 0.04 and 0.01.\n- Data notes from the same extract: in the 2000 census, birthplace was allocated (imputed; flag QBPL) for 68% of institutionalized Mexican-origin men aged 18-40, and 98% of the allocated cases were assigned a US birthplace. Among institutionalized Mexican-origin men who reported a birthplace, 38.5% were foreign-born. In 1980 and 1990, missing birthplaces were coded \"abroad, unknown\" and are dropped by the standard immigrant definition.",
+ "ground_truth": "ERROR. The 2000 drop is an allocation artifact: the census imputed a US birthplace for most institutionalized\nMexican-origin men, undercounting foreign-born inmates. Spreading allocated birthplaces in the reported mix raises\nthe 2000 ratios 2.1-2.6-fold; the same cohorts reappear at 0.49-0.51 in the 2006 ACS. The data do not show\nincreasingly positive selection.",
+ "locus_rubric": "HIT if the reviewer says the 2000 figure is driven by birthplace imputation/allocation that assigned most\ninstitutionalized men a US birthplace (undercounting the foreign-born), so the cohort trend is an instrument\nartifact. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: memory note immigration-2000-census-birthplace-allocation-trap; ladder entry 196; lane\ncrime_selection_cohorts_2026_09_23 (76bf5c3, external check a8260f6)."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "V01",
+ "type": "VALID",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "school",
+ "packet_text": "CLAIM: On state NAEP, white pupils did not lose ground where the Hispanic or immigrant-origin share of pupils rose: +0.087 SD (SE 0.027) and -0.019 SD (0.026) per 10 points of share, 2003-2019, 51 states, state and year fixed effects. The English-learner share gives the one negative, -0.035 (0.018). If causal, that is about $1bn of lifetime earnings per cohort of white pupils at the observed national rise in the English-learner share (8.6% to 10.4%).\n\nEVIDENCE:\n- NAEP is an absolute, low-stakes scale: a state that lowers its bar, grades leniently or drops an exit exam does not move it, whereas within-school or grade-year-standardized designs absorb such statewide shifts.\n- None of those mechanisms moves with the shares: NAEP-equivalent proficiency cut scores are unrelated to them (lower 95% bounds -7 to -13 points per 10 points of share, against a national rise of 15-20 points in 2015); the 11 states that dropped exit exams had no higher or faster-rising shares than the 13 that kept them.\n- The English-learner estimate fades with region-by-year effects or state trends; grade 4 against its own cohort's kindergarten-grade 1 share gives -0.070 (0.030), which holds with region-by-year effects and has no lead.\n- A level effect already in place by 2003, or a national shift, is absorbed by the fixed effects and not identified.",
+ "ground_truth": "VALID. Survived review: the mechanism checks and the fixed-effects limits are stated; a later within-district design\nneither confirms nor contradicts the state-level reading.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Ladder entry 248 (NAEP school test, 2026-09-28) and its later brackets; lane naep school test. Passed cross-lab review."
+}

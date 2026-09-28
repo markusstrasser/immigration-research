@@ -1,0 +1,35 @@
+CASE K32D1
+VERDICT: ERROR
+LOCATION: The inference from the returnee-versus-non-migrant gap (+1.2 years) to "US stayers' average schooling falls"
+WHY: Return migration lowers the US stayers' average only if returnees have more schooling than the migrants who remain in the US. Comparing them with people who never left Mexico cannot show that, and the limitation says the survey does not observe emigrants still in the US. If stayers average more than 10.8 years, return migration raises their mean.
+CONFIDENCE: 0.9
+
+CASE KE5E4
+VERDICT: SOUND
+LOCATION: none
+WHY: The figures agree with each other: 12.38 − 1.38 ≈ 11.0M and 12.2 − 1.16 ≈ 11.04M, which puts the CPS about 10–12.5% above the ACS. Two checks rule out the ASEC oversample and the 2025 population controls: the March basic sample alone still shows the excess, and so do the 2024 monthly files. The CPS controls Hispanic origin only nationally, so a composition shift inside that fixed Hispanic total is a coherent reason to prefer the ACS level. The excerpt shows no 2019–2023 values, but that does not change the early-2025 conclusion.
+CONFIDENCE: 0.6
+
+CASE K042E
+VERDICT: ERROR
+LOCATION: The outcome, which is receipt across all households with no nativity split, combined with the group-specific rates (6.9% for immigrant households, 4.2% for native ones)
+WHY: Composition alone predicts this result. A 1-point rise in immigrant share raises the all-household rate by 0.01 × (6.9 − 4.2) = 0.027 pp, which is nearly the whole 0.03 estimate. The implied effect on natives is about 0.003 pp (SE 0.012), so the data give no evidence that natives are pushed onto transfer programmes.
+CONFIDENCE: 0.9
+
+CASE K8AF8
+VERDICT: SOUND
+LOCATION: none
+WHY: The claims are limited to within-state changes, and the evidence states that level effects and national shifts are not identified. The weakness of the English-learner estimate is disclosed, and the cohort-aligned version is larger (−0.070) and robust. The $1bn roughly checks out: 0.035 × 0.18 ≈ 0.0063 SD, times about 10% earnings per SD, times about $1M present-value earnings, times about 1.9M white pupils per cohort ≈ $1bn. Using −0.070 instead would roughly double it.
+CONFIDENCE: 0.6
+
+CASE KAD14
+VERDICT: SOUND
+LOCATION: none
+WHY: With-against-without is the right counterfactual when crashes are replaced by other crashes, and a near-zero rate elasticity does imply that replacement for other residents' vehicles. Closing the $31bn gap to the $42.3bn fault figure would take a non-fatal elasticity of about 0.65, which is above the p90. The study weights were set in advance, the leave-one-out range is reported, and the reason the range crosses zero is given. I cannot rebuild the $11.1bn central from the components shown: the −0.21 fatal term should be negative, so another term, such as pedestrian crashes, must fill the gap. That uncertainty is why my confidence is low.
+CONFIDENCE: 0.55
+
+CASE K76EF
+VERDICT: ERROR
+LOCATION: Adding the aggravated-assault and robbery unit costs, which include a risk-of-homicide component, to the murder costs
+WHY: Assaults and robberies that end in death are recorded as murders, so those deaths are already in the $924. They are counted again through the homicide component: 76% of $380 plus 42% of $60 ≈ $314. With that removed, the gap is about $1,107 and murder's share is about 83%, not 65%.
+CONFIDENCE: 0.85

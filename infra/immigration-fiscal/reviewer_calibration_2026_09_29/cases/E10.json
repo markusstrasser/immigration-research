@@ -1,0 +1,12 @@
+{
+ "id": "E10",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "voting",
+ "packet_text": "CLAIM: Noncitizen voting is too small, by orders of magnitude, to have decided any federal or California contest. The largest published count of flagged noncitizen ballots, about 24,000 nationally, is an upper bound on the true number.\n\nEVIDENCE:\n- The 24,000 comes from state list-maintenance audits that match voter files against motor-vehicle and federal immigration-status records, in the states that published such audits. The audits do not cover every state or every noncitizen (people never recorded as noncitizens in the matched files cannot be flagged), and none reports an estimate of the cases it missed.\n- The count is before removing false positives; reviews cleared a large share of flags as citizens naturalized after their records were created.\n- Smallest recent US House margins: California's 13th district in 2024, 187 votes (105,554 to 105,367); Iowa's 2nd district in 2020, 6 votes.",
+ "ground_truth": "ERROR. A detected count is not an upper bound when undetected cases are unbounded (removing false positives cannot\nsupply that bound), and a national total cannot be compared with every local margin without geography and vote\ndirection; 187- and 6-vote margins defeat 'orders of magnitude' for any contest. Only the narrower statement - the\nevidence does not establish a decisive contribution - survives.",
+ "locus_rubric": "HIT if the reviewer says the flagged count is not an upper bound because coverage is incomplete/undetected cases\nare unbounded, OR that a national total does not show no contest could be decided given margins as small as 187\nor 6 votes (geography/concentration unknown). Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: research/immigration-weekly-conceptual-audit-2026-09-25.md section 7 and its revision (Iowa 2nd, 6\nvotes); notes/noncitizen-voting-evidence-2026-09-19.md."
+}

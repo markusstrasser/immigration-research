@@ -1,0 +1,12 @@
+{
+ "id": "V03m",
+ "type": "VALID",
+ "direction": "R",
+ "origin": "mirror",
+ "mirror_of": "V03",
+ "topic": "ssi",
+ "packet_text": "CLAIM: A blind back-test of the account's dollar keys against state administrative totals gives no reason to correct the SSI key. Against SSA's federal SSI payments by state, the estimated correction is delta = -0.48 (the Mexican-origin group's SSI would be 48% lower than the key assigns). But the account's SSI line pays federal SSI plus the state supplementary payments SSA administers for some states, chiefly California's $3.26bn, while this target table covers federal payments only, and the group is concentrated in California. Against the federally administered total including supplements, a comparison chosen after the data were seen, delta = -0.08 (-$0.40bn). No key correction follows.\n\nEVIDENCE:\n- Predictions, baselines and tolerances were committed before any target was opened; scoring used the frozen estimators.\n- State totals give the dollar keys little power, because take-up and error rates vary by state more than the group's share does: refundable credits delta -0.09 (-$1.6bn, 95% interval about -$8 to +5bn); Social Security delta +0.01.\n- The same frame predicts where births land: births to Mexican-origin mothers are 14.43% of US births in the frame against 14.36% in birth records.",
+ "ground_truth": "VALID (by construction): the same target-definition mismatch as V03 in the opposite direction; the post-hoc\ncomparison is labeled.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Synthetic mirror of V03."
+}

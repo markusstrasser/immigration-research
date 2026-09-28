@@ -1,0 +1,12 @@
+{
+ "id": "E12m",
+ "type": "ERROR",
+ "direction": "R",
+ "origin": "mirror",
+ "mirror_of": "E12",
+ "topic": "ancestryiv",
+ "packet_text": "CLAIM: Immigration pushes natives onto transfer programmes. With an ancestry-based instrument (first-stage F = 63.9), a 1-point rise in a county's immigrant share raises the county's public-assistance receipt rate by 0.03 percentage points (SE 0.012) between 1990 and 2000.\n\nEVIDENCE:\n- Outcome: share of all households in the county receiving public assistance, from the 1990 and 2000 census files; the 2000 file used has no nativity split.\n- In these counties, 6.9% of immigrant households and 4.2% of native households receive public assistance.\n- Instrument: predicted immigrant inflow built from origin-by-county interaction terms for all other origins (leave-own-origin-out), divided by baseline population.",
+ "ground_truth": "ERROR (by construction). The outcome is an all-household rate; adding higher-receipt immigrant households raises it\nmechanically (about 0.01 x (6.9 - 4.2) = +0.027 points per point of share) even if native receipt is unchanged.",
+ "locus_rubric": "HIT if the reviewer says (a) the outcome is an all-household rate, so adding high-receipt immigrant households\nraises it mechanically and the result cannot speak to natives; OR (b) names a specific exclusion violation (e.g.,\nlocal shocks drawing inflows and changing receipt at once). A generic 'IV assumptions may fail' is WRONG-LOCUS. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E12 (same composition error, direction reversed)."
+}

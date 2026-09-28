@@ -1,0 +1,12 @@
+{
+ "id": "V06m",
+ "type": "VALID",
+ "direction": "E",
+ "origin": "mirror",
+ "mirror_of": "V06",
+ "topic": "crimeprice",
+ "packet_text": "CLAIM: The account can add a consumer-price benefit from the Mexican-origin group's labour (lower prices paid by other residents, $9.4bn a year) to its fiscal receipts line without double counting, because the price line counts only other residents' consumer savings.\n\nEVIDENCE:\n- The price benefit is the fall in prices in industries employing the group, applied to other residents' consumption bundles; the group's own consumption is excluded.\n- Firms' higher profits are excluded from the price benefit; the taxes on those profits enter the fiscal account through the receipts lines, allocated by incidence.\n- Wage effects on other residents are priced in a separate wage line; the price line uses only the price change, not the wage change that caused it.",
+ "ground_truth": "VALID (by construction): two lines with a clean boundary, as in V06, defending a benefit instead of a cost.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Synthetic mirror of V06."
+}

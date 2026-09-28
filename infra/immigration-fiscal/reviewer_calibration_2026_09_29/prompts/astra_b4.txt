@@ -1,0 +1,78 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE K4050
+CLAIM: Scored on IRS tax year 2023, a year that no step of it used, the account's income-tax key misallocates tax across income bins. With the bins from $1M pooled, it misses IRS's distribution of income tax after credits by 8.4 percentage points of total variation: 8.4pp too much of the tax at $200k-$1M, where the Mexican-origin group's share of people is 2-4%, and 3.3pp too little at $50k-$200k, where it is 6-12%. Matching IRS's bin totals while keeping the group's within-bin shares raises the group's federal income tax by $3.2bn (SE 1.3) and lowers the net cost from $321.8bn to $318.6bn at the low end. A candidate for the next case, not adopted.
+
+EVIDENCE:
+- The key allocates national income tax to people using CPS incomes and a CBO rate gradient. IRS publishes only national totals by adjusted-gross-income bin, with no nativity; the group's share inside each bin stays the CPS's.
+- Frozen IRS 2022 shares miss 2023 by 2.4pp. The key scores worse against 2022 (10.3pp), the year the gradient rests on, so the held-out year shows no overfitting.
+- The unpooled 19-bin reading turns on 33 records above $1.5M, none in the group, and is not used; tax above $3.1M is outside the CPS (top-coding).
+- Pooling from $500k gives +$3.1bn (SE 0.5), leaning less on the 15 group records above $1M.
+
+=====
+
+CASE KA714
+CLAIM: The account can add a consumer-price benefit from the Mexican-origin group's labour (lower prices paid by other residents, $9.4bn a year) to its fiscal receipts line without double counting, because the price line counts only other residents' consumer savings.
+
+EVIDENCE:
+- The price benefit is the fall in prices in industries employing the group, applied to other residents' consumption bundles; the group's own consumption is excluded.
+- Firms' higher profits are excluded from the price benefit; the taxes on those profits enter the fiscal account through the receipts lines, allocated by incidence.
+- Wage effects on other residents are priced in a separate wage line; the price line uses only the price change, not the wage change that caused it.
+
+=====
+
+CASE K2AD6
+CLAIM: Return migration makes the Mexico-born population that remains in the US more negatively selected. Returnees from the US to Mexico have more schooling than comparable people who stayed in Mexico, so return migration removes the better-educated and the US stayers' average schooling falls.
+
+EVIDENCE:
+- Mexican national demographic survey (ENADID 2018 and 2023): returnees (lived in the US within the past five years, now in Mexico), men aged 25-54, mean schooling 10.8 years; people who never migrated, same ages and states, 9.6 years; difference +1.2 years (SE 0.2).
+- Limitation: the survey does not observe Mexican emigrants currently living in the US.
+
+=====
+
+CASE KE921
+CLAIM: In these incidence scenarios only a minority of other residents lose from the Mexican-origin group's presence. Across the wage model's substitution elasticities 1.5, 2.0 and 2.5, the share of other residents who come out ahead (pooled within households, taxes financed in proportion to tax shares) is 70.8%, 76.1% and 81.3%. The result is conditional on how channel totals are allocated to people.
+
+EVIDENCE:
+- Channel totals (wages, prices, taxes, public services) are allocated onto survey people; a winner is a person whose net is positive.
+- The wage channel's gross after-tax gains ($96.0bn) and losses ($95.8bn) almost cancel, so the count is sensitive to the wage allocation: halving each person's wage deviation from the mean, with the aggregate unchanged, gives 89.7% winners.
+- Enumerating the existing matched channel choices gives a minimum of 69.5% winners.
+
+=====
+
+CASE K5FED
+CLAIM: Off-the-books employment of the Mexican-origin group gives its employers about $6.43bn a year of cost advantage, including $4.53bn of unpaid payroll taxes. The account books this as a cost the Mexican-origin population imposes on other residents: competing employers and taxpayers.
+
+EVIDENCE:
+- The account's target population is the Mexican-origin population, all generations; other residents are everyone else.
+- Worker panel (acs_cells.py):
+```python
+panel = acs[(acs.imputed_unauthorized == 1) &
+            (acs.industry.isin(["construction", "agriculture",
+                                "food_services", "landscaping"]))]
+wage_base = (panel.wagp * panel.perwt).groupby(panel.industry).sum()
+```
+- `imputed_unauthorized` is assigned by a residual method to noncitizens of every birthplace.
+- edges.py applies each industry's estimated off-books share and the employer payroll-tax and compliance-cost rates to `wage_base`: $6.43bn, of which $4.53bn is payroll tax.
+- Mexico-born workers earn about half of the imputed-unauthorized wages in these four industries.
+
+=====
+
+CASE KF1DC
+CLAIM: Each new Mexican arrival cohort is more positively selected on custody than the last. Among Mexico-born men aged 18-40 in their first five years in the US, the institutionalized share relative to US-born men of the same ages fell from 0.45 (1975-80 arrivals, 1980 census) to 0.42 (1985-90 arrivals, 1990 census) to 0.13 (1995-2000 arrivals, 2000 census).
+
+EVIDENCE:
+- IPUMS 5% census samples; institutional group quarters; SEs 0.05, 0.04 and 0.01.
+- Data notes from the same extract: in the 2000 census, birthplace was allocated (imputed; flag QBPL) for 68% of institutionalized Mexican-origin men aged 18-40, and 98% of the allocated cases were assigned a US birthplace. Among institutionalized Mexican-origin men who reported a birthplace, 38.5% were foreign-born. In 1980 and 1990, missing birthplaces were coded "abroad, unknown" and are dropped by the standard immigrant definition.

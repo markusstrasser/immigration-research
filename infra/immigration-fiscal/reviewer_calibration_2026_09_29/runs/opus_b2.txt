@@ -1,0 +1,35 @@
+CASE KE5B7
+VERDICT: ERROR
+LOCATION: The 2009-to-2021 comparison, which puts a figure from the 2011 report (survey-ratio method) next to one from the 2022 report (administrative-record method).
+WHY: The method change alone moved the 31 Dec 2018 count from 168,900 to 121,500, a 28% drop, which is larger than the whole claimed 26% decline. On the new method the count fell only about 2.6% from 2018 to 2021, and on the old method it rose from 2009 to 2018. The white figure crosses the same break, so "fell faster than other groups" is an artefact of the method change.
+CONFIDENCE: 0.95
+
+CASE KBC67
+VERDICT: SOUND
+LOCATION: none
+WHY: The intervals match the standard errors: 0.89±0.29 gives 0.60–1.18, and 0.69±0.20 gives 0.49–0.89, which excludes 1. The all-ages 0.76 is a plausible spending-weighted blend once children are included. Each ratio compares the group with the same age × US-birth cells the transport uses, and the correction is claimed only for the band whose interval excludes 1, so the conclusion follows.
+CONFIDENCE: 0.65
+
+CASE KD150
+VERDICT: SOUND
+LOCATION: none
+WHY: The numbers are consistent. With a total variation of 8.4pp and all of the excess at $50k–$200k, the shortfalls must also sum to 8.4pp: 3.3pp at $200k–$1M and the remaining 5.1pp elsewhere, mostly in the pooled $1M+ bin. Moving tax from bins where the group is 6–12% of people to bins where it is 4% or less must lower the group's tax, and 321.8 + 3.2 = 325.0. The key scores better on the held-out year than on its own base year, the pooling sensitivity is shown, and the adjustment is not adopted.
+CONFIDENCE: 0.6
+
+CASE K1989
+VERDICT: ERROR
+LOCATION: Equating the "with-against-without effect" with damage in crashes where group drivers are at fault, net of their liability insurance.
+WHY: Fault attribution is a liability rule; it does not measure what would happen without the group's driving. The account's own elasticity of +1.4, on the networks carrying 65% of the group's driving, means the group's vehicles raise the crash rate for all other drivers, including in crashes where group drivers are not at fault or not involved, and liability insurance does not cover that. Removing about a tenth of urban traffic would cut other residents' crash costs by far more than $9.6bn, so the figure likely understates the effect several times over.
+CONFIDENCE: 0.85
+
+CASE K7572
+VERDICT: ERROR
+LOCATION: The outcome variable, which is the SSI receipt rate across all households because the 2000 file has no nativity split.
+WHY: Immigrant households receive SSI at 1.9% and native households at 4.6%, so a 1-point shift toward immigrant households lowers the all-household rate by about 0.027pp even if natives' receipt does not change. That accounts for nearly all of the −0.03 estimate. The implied effect on natives is about zero, with an interval reaching roughly +0.02pp. Arrivals after 1996 were largely ineligible for SSI, so the composition effect could exceed 0.03pp and hide some displacement. The estimate is not better evidence against displacement.
+CONFIDENCE: 0.8
+
+CASE K1863
+VERDICT: SOUND
+LOCATION: none
+WHY: The pre-committed test shows what the claim says: keys based on the uninsured fit state shares much better than a population key (0.134, and 0.126 for a plain count, against 0.210). The caveats are disclosed and handled. The person-year refinement adds nothing, the group-specific slope is confounded by region controls added after the data were seen and is not adopted, and insured patients' amounts in line 30 mostly tilt the benchmark toward the population key, which makes the test conservative. Because line 30 includes insured patients, the 0.88 ratio overstates agreement on the national total, but the claim draws no conclusion about that total.
+CONFIDENCE: 0.55

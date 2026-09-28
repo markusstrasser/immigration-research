@@ -1,0 +1,35 @@
+CASE K893A
+VERDICT: ERROR
+LOCATION: The 2000 data point (0.13), because of how the 2000 census imputed birthplace for institutionalized men (QBPL flag)
+WHY: In 2000, 68% of institutionalized Mexican-origin men had an imputed birthplace, and 98% of those were assigned a US birth, while 38.5% of the men who reported a birthplace were foreign-born. If the imputed men resemble the reporters, the census counts only about 0.32×0.385 + 0.68×0.02 ≈ 0.14 of the group as foreign-born against a true 0.385, an undercount of about 2.8×, which moves the 0.13 ratio to about 0.37. The 1980–1990 change (0.45 to 0.42) is within its SEs, and the censuses handle missing birthplace differently, so no cohort-by-cohort improvement is shown.
+CONFIDENCE: 0.9
+
+CASE K1FC8
+VERDICT: ERROR
+LOCATION: The step from equal skip rates (18.1% vs 18.2%) to "no bias", given that the income hot deck does not match on Hispanic origin
+WHY: Hot-deck bias depends on who the donors are, not on how often people skip. Without Hispanic origin in the match, the group's nonrespondents mostly get donors from outside the group. As a result, the fill-ins keep only 9% of the group's wage gap (DiD +0.139, about 3 SE) and raise Social Security, pension and interest income by 19–66 log points. Running those incomes through a tax calculator overstates the group's taxable income and tax.
+CONFIDENCE: 0.9
+
+CASE K3059
+VERDICT: SOUND
+LOCATION: none
+WHY: The evidence rules out the ASEC oversample and the January 2025 controls. It places the gap in the split between Mexico-born and other Hispanics under a Hispanic control that applies only nationally, and the CPS actually counts more Hispanics in total. The two surveys also agreed in earlier years, and the numbers are consistent: 12.2M + 1.19M ≈ 13.4M, a gap of about 9%. Two points are not proven here: the 2019–2023 years are not shown, and using the 2024 ACS level for early 2025 assumes little change, although the flat CPS series (12.02M to 12.10M) supports that.
+CONFIDENCE: 0.6
+
+CASE KD31B
+VERDICT: ERROR
+LOCATION: The panel filter in acs_cells.py (`imputed_unauthorized == 1` with no Mexican-origin condition)
+WHY: The panel includes imputed-unauthorized noncitizens from every birthplace, and Mexico-born workers earn only about half of those wages. The $6.43bn (and the $4.53bn of payroll tax) is therefore about twice what can be attributed to the Mexican-origin group, roughly $3.2bn and $2.3bn.
+CONFIDENCE: 0.9
+
+CASE KEECB
+VERDICT: SOUND
+LOCATION: none
+WHY: The price line counts only other residents' consumer savings. It leaves out the group's own consumption and firms' profits, whose taxes sit in receipts, and wage effects are booked separately. No dollar appears in both the price line and the receipts line. Counting other residents' wage losses and their price gains separately is the standard split of transfers and surplus, not double counting.
+CONFIDENCE: 0.65
+
+CASE K6EB8
+VERDICT: SOUND
+LOCATION: none
+WHY: The range follows from the stated slope: $72.1bn ± 4.2 × $5.4bn gives $49.4–94.8bn. The study weights were fixed before the results, and the leave-one-out range (1.02–1.39, about $62–82bn) stays above $42.3bn. The conclusion reverses only if the non-fatal elasticity is below about 0.65. The remaining check is that the source studies report per-mile crash-rate elasticities rather than crash-count elasticities (count elasticity = rate elasticity + 1); nothing in the excerpt suggests the two were mixed up.
+CONFIDENCE: 0.6

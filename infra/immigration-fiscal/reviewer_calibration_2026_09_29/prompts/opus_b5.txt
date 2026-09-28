@@ -1,0 +1,73 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE K32D1
+CLAIM: Return migration makes the Mexico-born population that remains in the US more negatively selected. Returnees from the US to Mexico have more schooling than comparable people who stayed in Mexico, so return migration removes the better-educated and the US stayers' average schooling falls.
+
+EVIDENCE:
+- Mexican national demographic survey (ENADID 2018 and 2023): returnees (lived in the US within the past five years, now in Mexico), men aged 25-54, mean schooling 10.8 years; people who never migrated, same ages and states, 9.6 years; difference +1.2 years (SE 0.2).
+- Limitation: the survey does not observe Mexican emigrants currently living in the US.
+
+=====
+
+CASE KE5E4
+CLAIM: The CPS has put the Mexico-born population 9-13% above the ACS every year since 2019. About 11.1M, not the CPS's 12.2M, is the right level for early 2025.
+
+EVIDENCE:
+- The excess appears in every monthly CPS file from January 2024 (2024 mean 12.38M) and in the March basic sample alone (12.05M), so it is neither the ASEC oversample nor the January 2025 population controls.
+- It is composition inside the Hispanic control: in 2024 the CPS counted fewer Hispanics than the ACS in total but 1.38M more Mexico-born and 1.81M fewer other Hispanics, and CPS state weighting controls Hispanic origin only nationally.
+- The two surveys agreed within 4% from 2006 to 2016.
+- The whole ASEC 2025 excess (1.16M against the ACS 2024 in the same universe) lies outside California and Texas, and 76% of it is noncitizen.
+
+=====
+
+CASE K042E
+CLAIM: Immigration pushes natives onto transfer programmes. With an ancestry-based instrument (first-stage F = 63.9), a 1-point rise in a county's immigrant share raises the county's public-assistance receipt rate by 0.03 percentage points (SE 0.012) between 1990 and 2000.
+
+EVIDENCE:
+- Outcome: share of all households in the county receiving public assistance, from the 1990 and 2000 census files; the 2000 file used has no nativity split.
+- In these counties, 6.9% of immigrant households and 4.2% of native households receive public assistance.
+- Instrument: predicted immigrant inflow built from origin-by-county interaction terms for all other origins (leave-own-origin-out), divided by baseline population.
+
+=====
+
+CASE K8AF8
+CLAIM: On state NAEP, white pupils did not lose ground where the Hispanic or immigrant-origin share of pupils rose: +0.087 SD (SE 0.027) and -0.019 SD (0.026) per 10 points of share, 2003-2019, 51 states, state and year fixed effects. The English-learner share gives the one negative, -0.035 (0.018). If causal, that is about $1bn of lifetime earnings per cohort of white pupils at the observed national rise in the English-learner share (8.6% to 10.4%).
+
+EVIDENCE:
+- NAEP is an absolute, low-stakes scale: a state that lowers its bar, grades leniently or drops an exit exam does not move it, whereas within-school or grade-year-standardized designs absorb such statewide shifts.
+- None of those mechanisms moves with the shares: NAEP-equivalent proficiency cut scores are unrelated to them (lower 95% bounds -7 to -13 points per 10 points of share, against a national rise of 15-20 points in 2015); the 11 states that dropped exit exams had no higher or faster-rising shares than the 13 that kept them.
+- The English-learner estimate fades with region-by-year effects or state trends; grade 4 against its own cohort's kindergarten-grade 1 share gives -0.070 (0.030), which holds with region-by-year effects and has no lead.
+- A level effect already in place by 2003, or a national shift, is absorbed by the fixed effects and not identified.
+
+=====
+
+CASE KAD14
+CLAIM: Charged with against without the Mexican-origin group's traffic, road crashes cost other residents $11.1bn a year (range -$57.7bn to +$74.3bn), not the $42.3bn charged by fault. Across transferable evidence, one more car on a fixed network barely changes other drivers' crash risk per mile: the cost-weighted elasticity of the non-fatal crash rate to traffic is about +0.07 (p10-p90 -0.23 to +0.52), and of the fatal rate -0.21. Near zero elasticity, the crashes other residents have with the group's drivers would largely happen anyway without the group, as crashes among themselves on emptier roads.
+
+EVIDENCE:
+- With-against-without = other residents' crash costs with the group's traffic minus without it; it includes a composition term for the group's higher fatal culpability ($1.8bn). Each 0.1 of non-fatal elasticity adds about $5.4bn.
+- Study weights (design; a 0.65 weight on congested settings, from the group's commute exposure) were set before the results; leaving out one study at a time keeps the non-fatal central between -0.10 and +0.31.
+- In dense traffic the studies disagree on sign (London: +1.4 against -0.36 for injury crashes), which is why the range crosses zero.
+
+=====
+
+CASE K76EF
+CLAIM: Crime by US-born Mexican-origin adults costs society $1,421 more per adult-year than crime by US-born non-Hispanic white adults, intangible costs included; 65% of the gap is murder.
+
+EVIDENCE:
+- Offending gap per adult-year from institutionalization rates times the offence mix, amortized over time served.
+- Unit costs (McCollister, French and Fang 2010, in 2024 dollars): murder $13.1M; aggravated assault $156k; robbery $62k; rape $352k.
+- Gap by offence, per adult-year: murder $924; aggravated assault $380; robbery $60; rape $57; total $1,421.
+- Source note on the unit costs: each offence's cost includes the expected cost of the deaths that result from it; the risk-of-homicide component is 76% of the aggravated-assault cost and 42% of the robbery cost. Murders are the offences recorded as murder.

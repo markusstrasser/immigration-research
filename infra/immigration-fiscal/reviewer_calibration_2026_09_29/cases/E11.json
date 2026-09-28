@@ -1,0 +1,12 @@
+{
+ "id": "E11",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "lineage",
+ "packet_text": "CLAIM: Legal status hardly matters for the long-run fiscal cost of a Mexican immigrant lineage: legalizing the founder after ten years changes the century fiscal gap by only 1.9%.\n\nEVIDENCE:\n- Code excerpt:\n```python\ndef founder_profile(age, status):\n    # pooled Mexico-born age profile: taxes, benefits and services by age, all statuses\n    p = pooled_profile(age)\n    if status == \"unauthorized\" and 18 <= age < 65:\n        p.net -= 870          # working-age adjustment for unauthorized status\n    return p                  # at 65+ the pooled profile applies whatever the status\n```\n- Legalization at year 10 sets the founder's status to \"legal\" for the rest of life.\n- Sensitivity run: setting every senior (65+) net cost to zero changes the undiscounted century gap by 34.4%.\n- Unauthorized immigrants are ineligible for Social Security retirement benefits, Medicare and non-emergency Medicaid; lawful permanent residents become eligible after qualifying periods.",
+ "ground_truth": "ERROR. The model fixes old-age costs at the pooled profile whatever the status, so legalization cannot change the\nchannel through which status matters most; the 1.9% is built in. Under statutory senior eligibility, legalizing\nat year ten widens the century gap by $417,886 - the sign of legalization's effect reverses.",
+ "locus_rubric": "HIT if the reviewer says the model holds 65+ benefits/eligibility fixed at the pooled profile regardless of status,\nso legalization cannot affect old-age eligibility and the small effect is an artifact of the model. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: research/immigration-weekly-conceptual-audit-2026-09-25.md section 4 and revision; lane\nlineage_cost_2026_09_19 founder_profile(). Code excerpt simplified."
+}

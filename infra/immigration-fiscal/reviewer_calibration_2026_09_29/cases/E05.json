@@ -1,0 +1,12 @@
+{
+ "id": "E05",
+ "type": "ERROR",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "crimeprice",
+ "packet_text": "CLAIM: Crime by US-born Mexican-origin adults costs society $1,421 more per adult-year than crime by US-born non-Hispanic white adults, intangible costs included; 65% of the gap is murder.\n\nEVIDENCE:\n- Offending gap per adult-year from institutionalization rates times the offence mix, amortized over time served.\n- Unit costs (McCollister, French and Fang 2010, in 2024 dollars): murder $13.1M; aggravated assault $156k; robbery $62k; rape $352k.\n- Gap by offence, per adult-year: murder $924; aggravated assault $380; robbery $60; rape $57; total $1,421.\n- Source note on the unit costs: each offence's cost includes the expected cost of the deaths that result from it; the risk-of-homicide component is 76% of the aggravated-assault cost and 42% of the robbery cost. Murders are the offences recorded as murder.",
+ "ground_truth": "ERROR. Deaths are counted twice: homicides are priced in the murder row and again through the risk-of-homicide\ncomponent of the assault and robbery prices. Removing that component takes about $314 (0.76 x 380 + 0.42 x 60)\noff the gap, to about $1,107; the figure is upper-biased.",
+ "locus_rubric": "HIT if the reviewer says deaths/homicides are double counted because the assault and robbery unit costs already\ninclude the risk-of-homicide component while murders are counted separately. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: commit e8eab52 ('Flag double-counted deaths in older crime-cost prices'); ladder entry 78 and its\n2026-09-23 qualification. Per-offence split of the $1,421 is illustrative (murder share 65% as published)."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "E01",
+ "type": "ERROR",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "bjs",
+ "packet_text": "CLAIM: The number of Hispanic prisoners held in state prisons for violent offences rose 36% from the end of 2009 to the end of 2021 (117,800 to 160,100), while the white count fell 34%. Hispanic violent-offence imprisonment grew while other groups' fell.\n\nEVIDENCE: Estimated counts of sentenced state prisoners by most serious offence and race/Hispanic origin, from the Bureau of Justice Statistics' annual Prisoners reports.\n\n| Reference date | Source | Hispanic, violent offence |\n|---|---|---|\n| 31 Dec 2009 | Prisoners in 2010, Appendix Table 16b | 117,800 |\n| 31 Dec 2021 | Prisoners in 2022, appendix table | 160,100 |\n\nNotes printed with the reports:\n- Prisoners in 2010: race and Hispanic-origin estimates are adjusted using the National Inmate Survey, 2008-09.\n- Prisoners in 2011 and later: race and Hispanic-origin estimates use ratios from the 2004 Survey of Inmates in State Correctional Facilities, and estimates for earlier years have been revised. Prisoners in 2011, Appendix Table 16, reports 159,800 Hispanic violent-offence state prisoners on 31 Dec 2009.",
+ "ground_truth": "ERROR. The two endpoints are on different estimation bases. On the basis used for 2021, the 31 Dec 2009 count is\n159,800, so the consistent-basis change is 159,800 -> 160,100 (+0.2%); the +36% is the method change (same-date\nrestatement +35.7%). Per capita, Hispanic violent imprisonment fell about as fast as white.",
+ "locus_rubric": "HIT if the reviewer says the 2009 and 2021 figures come from different estimation methods/bases (the 2009 figure\nwas revised to about 159,800 on the later basis), so the rise is a method artifact and the consistent change is\nabout zero. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: memo reading '+36% violent', withdrawn same day. Lane infra/immigration-fiscal/hisp_violent_stock_2026_09_16/RESULT.md\n(rows A-C); commit fd280dc; session memory 2026-09-16 (BJS 2010->2011 restatement trap)."
+}

@@ -1,0 +1,35 @@
+CASE KD1F7
+VERDICT: SOUND
+LOCATION: none
+WHY: The ratios correctly describe close agreement between estimates using the same target population and standardization. This supports replication across surveys, with the explicitly acknowledged limitation that neither survey validates the estimates against tax records.
+CONFIDENCE: 0.96
+
+CASE K9F68
+VERDICT: ERROR
+LOCATION: Equating uncharged spending with instructional resources forgone by incumbent pupils.
+WHY: Spending elasticity below one can reflect spare capacity or fixed costs, without reducing instructional quality. Multiplying the accounting residual by an instructional share and intervention effect estimates does not establish the claimed dilution or earnings loss.
+CONFIDENCE: 0.99
+
+CASE KB5AC
+VERDICT: ERROR
+LOCATION: Comparing custody ratios across the round-3 change in birthplace allocation.
+WHY: Round 3 assigns foreign birth disproportionately to institutionalized cases with missing birthplace, using household donors, whereas earlier rounds dropped missing cases. This measurement change can generate an apparent increase without worsening arrival-cohort selection; the small round-1-to-round-2 difference also does not establish a trend.
+CONFIDENCE: 0.99
+
+CASE K4C56
+VERDICT: SOUND
+LOCATION: none
+WHY: The specified victim costs exclude police, adjudication and corrections, so adding them to those fiscal spending lines does not duplicate those costs. The separate homicide treatment also removes the stated source of overlapping death valuation.
+CONFIDENCE: 0.99
+
+CASE K5620
+VERDICT: ERROR
+LOCATION: Identifying fault-attributed crash damage with the with-against-without effect of the group's driving.
+WHY: Harm in crashes assigned to a group's drivers is not the same as the change in other residents' total crash harm when that driving is removed. The traffic-volume evidence makes that distinction consequential, and subtracting liability payments does not supply the missing counterfactual.
+CONFIDENCE: 0.99
+
+CASE KC959
+VERDICT: SOUND
+LOCATION: none
+WHY: The prespecified comparison provides limited support for uninsured exposure over population weighting. It does not establish superiority over a simple uninsured count or validate the group's particular allocation, and the insured costs in S-10 limit comparability; those limits do not overturn the modest claim of support.
+CONFIDENCE: 0.88

@@ -1,0 +1,12 @@
+{
+ "id": "E10m",
+ "type": "ERROR",
+ "direction": "R",
+ "origin": "mirror",
+ "mirror_of": "E10",
+ "topic": "voting",
+ "packet_text": "CLAIM: Noncitizen voting decided at least one recent US House contest. State audits flagged about 24,000 noncitizen ballots nationally, a lower bound on the true number, and California's 13th district in 2024 was decided by 187 votes.\n\nEVIDENCE:\n- The 24,000 comes from state list-maintenance audits that match voter files against motor-vehicle and federal immigration-status records, in the states that published such audits; California did not publish one.\n- A flag is a record match, not a confirmed ballot: reviews cleared a large but unreported share of flags as citizens naturalized after their records were created, and no audit reports how many flags were confirmed as ballots cast by noncitizens.\n- Smallest recent US House margins: California's 13th district in 2024, 187 votes (105,554 to 105,367); Iowa's 2nd district in 2020, 6 votes.",
+ "ground_truth": "ERROR (by construction). Flags are not confirmed noncitizen ballots (false positives are unbounded, so 24,000 is not\na lower bound), and a national count locates no votes in any particular district or direction; the claim does\nnot follow.",
+ "locus_rubric": "HIT if the reviewer says the flagged count is not a lower bound on actual noncitizen votes (flags include\nunquantified false positives/are not confirmed ballots), OR that a national count does not place votes in the\n187-vote district (no California audit; geography and direction unknown). Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E10 (same misuse of detection counts as a bound plus national-vs-local leap)."
+}

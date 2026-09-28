@@ -1,0 +1,12 @@
+{
+ "id": "V02",
+ "type": "VALID",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "irskey",
+ "packet_text": "CLAIM: Scored on IRS tax year 2023, a year that no step of it used, the account's income-tax key misallocates tax across income bins. With the bins from $1M pooled, it misses IRS's distribution of income tax after credits by 8.4 percentage points of total variation: 8.4pp too much of the tax at $200k-$1M, where the Mexican-origin group's share of people is 2-4%, and 3.3pp too little at $50k-$200k, where it is 6-12%. Matching IRS's bin totals while keeping the group's within-bin shares raises the group's federal income tax by $3.2bn (SE 1.3) and lowers the net cost from $321.8bn to $318.6bn at the low end. A candidate for the next case, not adopted.\n\nEVIDENCE:\n- The key allocates national income tax to people using CPS incomes and a CBO rate gradient. IRS publishes only national totals by adjusted-gross-income bin, with no nativity; the group's share inside each bin stays the CPS's.\n- Frozen IRS 2022 shares miss 2023 by 2.4pp. The key scores worse against 2022 (10.3pp), the year the gradient rests on, so the held-out year shows no overfitting.\n- The unpooled 19-bin reading turns on 33 records above $1.5M, none in the group, and is not used; tax above $3.1M is outside the CPS (top-coding).\n- Pooling from $500k gives +$3.1bn (SE 0.5), leaning less on the 15 group records above $1M.",
+ "ground_truth": "VALID. Survived cross-lab review after its wording was narrowed to 'only the national totals by bin are IRS; the\ngroup's within-bin share stays the CPS's', which the packet states.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Ladder entry 249 (held-out tax key); lane tax_key_heldout_2026_09_28 (aec08a4); bracket after cross-lab review f41ca76."
+}

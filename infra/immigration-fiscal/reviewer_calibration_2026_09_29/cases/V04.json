@@ -1,0 +1,12 @@
+{
+ "id": "V04",
+ "type": "VALID",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "s10",
+ "packet_text": "CLAIM: A blind test against hospital cost reports (Medicare Worksheet S-10, FY2023) supports the account's uncompensated-care key, which charges the Mexican-origin group by its uninsured exposure: the key's predicted state shares of hospitals' charity care and bad debt sit at a total variation distance of 0.134 from the reports, against 0.210 for a population key. The national S-10 total is $43.0bn against the account's $48.9bn input (0.88).\n\nEVIDENCE:\n- Predictions and the scoring rule were committed before the reports were opened.\n- A slope test, expected to have no power, favors lower use by the uninsured (0.7 times; slope -0.60, 95% interval -1.14 to -0.07); region controls added after the data were seen take the slope to -0.11, so it cannot separate a regional factor from the group's use. It is a candidate, not adopted.\n- S-10 line 30 includes insured patients' charity care and bad debt.\n- A plain count of the uninsured scores 0.126, so the person-year key does no better than it.",
+ "ground_truth": "VALID. Survived cross-lab review; the non-blind and post-hoc parts are labeled; the claim is limited to the state\ndistribution.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Ladder entry 256 (back-test against published figures, check 1); lane backtest_published_2026_09_28."
+}

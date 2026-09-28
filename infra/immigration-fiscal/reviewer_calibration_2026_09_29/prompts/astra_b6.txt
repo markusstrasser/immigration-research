@@ -1,0 +1,71 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE KD1F7
+CLAIM: The Mexican-origin earnings gaps that drive the account's tax term are small, and they replicate on a second survey. Common-age wage gaps per standardized person against native non-Hispanic whites: Mexico-born -$6,241 on the ACS 2024 against -$6,518 on the CPS ASEC; US-born Mexican-origin -$1,473 against -$1,408 (ratios 0.96 and 1.05).
+
+EVIDENCE:
+- Same estimator on both surveys: wage and salary income of persons 18-64, standardized to a common age distribution, survey weights.
+- Mexican origin: self-identified Mexican origin; Mexico-born and US-born split by birthplace.
+- The two surveys ask about income differently and fill in missing answers separately, so agreement is a replication across instruments, not a validation against tax records.
+
+=====
+
+CASE K9F68
+CLAIM: Most of the school cost the account leaves uncharged is diluted instruction for other pupils: a low response of school spending to added enrollment cannot coexist with no dilution. The central harm is $16.1bn a year of present-value lifetime earnings lost by incumbent pupils (range -$2.1bn to +$35.5bn).
+
+EVIDENCE:
+- District spending responds to enrollment with an elasticity well below 1 in the first years; the fiscal account charges only the part of per-pupil cost that responds.
+- Calculation: uncharged spending x instructional share of spending (0.61) = instructional spending forgone per incumbent pupil; x effect of per-pupil spending on test scores, from a meta-analysis of school-spending interventions; x effect of test scores on lifetime earnings; discounted.
+- The same model with the longer-run spending response gives $3.6bn of harm; a class-size pathway gives $2.6bn.
+
+=====
+
+CASE KB5AC
+CLAIM: Each new Mexican arrival cohort is more negatively selected on custody than the last. Among Mexico-born men aged 18-40 in their first five years in the country, the institutionalized share relative to native-born men of the same ages rose from 0.45 (round 1 arrivals) to 0.48 (round 2) to 1.10 (round 3).
+
+EVIDENCE:
+- Microdata samples from three rounds of a national census; institutional group quarters; SEs 0.05, 0.05 and 0.06.
+- Data notes from the same extract: in round 3, birthplace was allocated (imputed; flagged) for 64% of institutionalized Mexican-origin men aged 18-40, and 91% of the allocated cases were assigned a foreign birthplace; the donor pool for group quarters drew on household residents of the same ethnicity and area. Among institutionalized Mexican-origin men who reported a birthplace, 38.5% were foreign-born. In rounds 1 and 2, missing birthplaces were coded "unknown" and dropped.
+
+=====
+
+CASE K4C56
+CLAIM: The account can add a victim-harm line for crimes by the Mexican-origin group's members against other residents ($4.5bn a year tangible, $28.9bn with quality of life) to its fiscal line for police, courts and corrections without double counting, because the victim line uses victim-only unit costs.
+
+EVIDENCE:
+- Victim-only unit costs cover medical care, lost productivity, property loss and damage, and the victim's pain, suffering and risk of death. Criminal-justice system costs (police, adjudication, corrections) are excluded from them.
+- Police, courts and corrections spending enters the fiscal account through the justice budget lines, allocated by use.
+- Deaths are counted once: the assault and robbery unit costs used here exclude the risk-of-homicide component, and homicides are priced in their own row.
+
+=====
+
+CASE K5620
+CLAIM: The Mexican-origin population's road traffic costs other US residents $42.3bn a year (range $23.8-73.3bn). This is the with-against-without effect of the group's driving on other residents, measured as the damage to other residents in crashes the group's drivers cause, net of the liability insurance the group's drivers pay out.
+
+EVIDENCE:
+- A crash between a group driver and another resident is assigned to the group when police records put the group driver at fault. Damage is valued at comprehensive unit costs by severity; liability insurance payments are subtracted.
+- The account charges crime the same way: harm to victims of offences the group's members commit.
+- Traffic-safety evidence assembled for the same account: the cost-weighted elasticity of the non-fatal crash rate per vehicle-mile to traffic volume is about +0.07 (p10-p90 -0.23 to +0.52); for the fatal rate it is -0.21. Adding vehicles to a given road network barely changes other drivers' crash risk per mile.
+
+=====
+
+CASE KC959
+CLAIM: A blind test against hospital cost reports (Medicare Worksheet S-10, FY2023) supports the account's uncompensated-care key, which charges the Mexican-origin group by its uninsured exposure: the key's predicted state shares of hospitals' charity care and bad debt sit at a total variation distance of 0.134 from the reports, against 0.210 for a population key. The national S-10 total is $43.0bn against the account's $48.9bn input (0.88).
+
+EVIDENCE:
+- Predictions and the scoring rule were committed before the reports were opened.
+- A slope test, expected to have no power, favors lower use by the uninsured (0.7 times; slope -0.60, 95% interval -1.14 to -0.07); region controls added after the data were seen take the slope to -0.11, so it cannot separate a regional factor from the group's use. It is a candidate, not adopted.
+- S-10 line 30 includes insured patients' charity care and bad debt.
+- A plain count of the uninsured scores 0.126, so the person-year key does no better than it.

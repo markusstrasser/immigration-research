@@ -1,0 +1,35 @@
+CASE KEBD1
+VERDICT: ERROR
+LOCATION: The 2009 baseline and cross-report comparison.
+WHY: The claim mixes estimates produced under different race/Hispanic-origin adjustments. Using the revised 2009 count of 159,800 gives growth to 160,100 of approximately 0.2%, not 36%.
+CONFIDENCE: 0.99
+
+CASE KF57F
+VERDICT: SOUND
+LOCATION: none
+WHY: An annual accrual can recognize the present value of future benefits caused by that year's exposure. The stated accounting assigns each incremental benefit once and avoids separately adding taxes already included in gross earnings.
+CONFIDENCE: 0.96
+
+CASE K5ECE
+VERDICT: SOUND
+LOCATION: none
+WHY: A with-versus-without calculation can include additional crashes among other residents that fault attribution omits. The stated elasticity sensitivity reproduces the dollar range: ±0.42 implies approximately ±$22.7bn around $72.1bn. No conclusion-changing error is demonstrated, although the studies' transferability cannot be independently established from this excerpt.
+CONFIDENCE: 0.79
+
+CASE K865C
+VERDICT: ERROR
+LOCATION: The parser's dictionary keys and the interpretation of the resulting encounters series.
+WHY: Repeated headers overwrite earlier blocks, leaving Field Operations encounters rather than total encounters. Those port encounters include programme participants, so their increase cannot establish that illegal crossings increased or that legal entry failed to substitute for them.
+CONFIDENCE: 1.00
+
+CASE K5482
+VERDICT: SOUND
+LOCATION: none
+WHY: The working-age ratio directly compares the group's observed spending with the spending assigned by its own cells' donor means, supporting overprediction on this survey file. The claim appropriately declines to infer a difference at 65+, where the interval includes 1.
+CONFIDENCE: 0.95
+
+CASE K9C07
+VERDICT: ERROR
+LOCATION: The inference about natives from an all-household outcome.
+WHY: The aggregate outcome cannot distinguish changes in natives' receipt from changes in household composition. At the supplied rates, a one-percentage-point increase in immigrant household share mechanically raises aggregate receipt by 0.027 percentage points with both groups' rates unchanged, nearly the reported effect. A strong first stage does not resolve this outcome mismatch.
+CONFIDENCE: 0.99

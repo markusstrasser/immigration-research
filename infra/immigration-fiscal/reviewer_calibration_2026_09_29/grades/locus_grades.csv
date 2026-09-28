@@ -1,0 +1,49 @@
+reviewer,case_id,grade,quote,reason
+astra,E01,HIT,"mixes estimates produced under different race/Hispanic-origin adjustments ... revised 2009 count of 159,800",names the basis change and the consistent +0.2%
+opus,E01,HIT,The 36% rise is an artifact of the method change,names the basis change and the consistent +0.2%
+astra,E02m,HIT,"Repeated headers overwrite earlier blocks, leaving Border Patrol data labeled as total encounters",names the header overwrite and the omitted port encounters
+opus,E02m,HIT,each block overwrites the one before it ... not a fall in total encounters,names the header overwrite and the omitted port encounters
+astra,E05m,HIT,Avoided institutional-care costs already constitute 61% of the care valuation,names the double count of avoided institutional care
+opus,E05m,HIT,the same avoided nursing-home cost is counted twice,names the double count of avoided institutional care
+astra,E08m,HIT,Equal nonresponse rates do not ensure that donors represent ... fill-ins substantially erase the observed within-cell receipt gap,names unmatched donors inflating the group's filled-in benefits
+opus,E08m,HIT,Equal skip rates do not prevent bias when donor cells are not matched on Hispanic origin or citizenship,names unmatched donors inflating the group's filled-in benefits
+astra,E10,HIT,Incomplete audits with unmeasured missed cases cannot supply an upper bound,names both loci: not an upper bound; national vs 187/6-vote margins
+opus,E10,HIT,"24,000 is not an upper bound ... ruling out any decided contest would need district-level counts",names both loci
+astra,E10m,HIT,"Flags include citizens and do not establish that anyone cast a ballot, so 24,000 is not a demonstrated lower bound",names both loci: not a lower bound; national count vs one district
+opus,E10m,HIT,none are confirmed as ballots ... no evidence puts any flagged ballot in CA-13,names both loci
+astra,E01m,HIT,The endpoints use different methods for assigning Hispanic origin,names the method break and the same-date revision
+opus,E01m,HIT,"The method change alone moved the 31 Dec 2018 count from 168,900 to 121,500",names the method break and the same-date revision
+astra,E02,HIT,"Repeated headers overwrite earlier blocks, leaving Field Operations encounters rather than total encounters",names the overwrite and the programme's own port presentations
+opus,E02,HIT,only the Field Operations (ports of entry) series survives ... the +787% mostly counts the legal pathway itself,names the overwrite and the programme's own port presentations
+astra,E03,HIT,Harm in crashes assigned to a group's drivers is not the same as the change in other residents' total crash harm when that driving is removed. The traffic-volume evidence makes that distinction consequential,"BORDERLINE: names fault vs counterfactual and ties it to the elasticity evidence, but does not spell out that the crashes would still occur"
+opus,E03,HIT,removing the group's vehicle-miles would barely change other residents' crash risk per mile ... other crashes would largely replace the removed ones,names the counterfactual mismatch and why
+astra,E03m,HIT,"Removing the group's driving also changes other drivers' crash risk, including crashes involving no group driver",names the omitted traffic externality
+opus,E03m,HIT,"the group's vehicles raise the crash rate for all other drivers, including in crashes where group drivers are not at fault or not involved",names the omitted traffic externality
+astra,E04,HIT,The filter includes imputed-unauthorized workers of every origin,names the all-origin panel charged to the Mexican-origin account
+opus,E04,HIT,The panel filter in acs_cells.py (imputed_unauthorized == 1 with no Mexican-origin condition),names the all-origin panel; about half
+astra,E04m,HIT,the panel filter lacks a Mexican-origin restriction,names the all-origin panel credited to the group
+opus,E04m,HIT,imputed_unauthorized covers noncitizens of every birthplace ... crediting the full $6.1bn about doubles it,names the all-origin panel credited to the group
+astra,E05,HIT,Adding murder costs to assault and robbery costs that already include resulting deaths. This counts homicide losses twice,names the double count
+opus,E05,HIT,They are counted again through the homicide component: 76% of $380 plus 42% of $60,names the double count
+astra,E06,HIT,"Spending elasticity below one can reflect spare capacity or fixed costs, without reducing instructional quality","names input-not-output (capacity, fixed costs)"
+opus,E06,HIT,Fixed costs and spare capacity make an extra pupil cost less than the average pupil ... elasticity below 1 with no dilution,"names input-not-output (capacity, fixed costs)"
+astra,E06m,HIT,Constant spending per pupil does not guarantee constant instructional provision when pupils have different resource needs,names that maintained spending does not mean incumbents' provision is maintained
+opus,E06m,HIT,Keeping average spending per pupil constant does not keep incumbents' spending constant when the added pupils draw above-average resources,names targeted resources
+astra,E07,HIT,The 2000 allocation procedure assigns almost all missing birthplaces to the US,names the allocation artifact
+opus,E07,HIT,98% of those were assigned a US birth ... an undercount of about 2.8x,names the allocation artifact
+astra,E07m,HIT,Round 3 assigns foreign birth disproportionately to institutionalized cases with missing birthplace,names the allocation artifact
+opus,E07m,HIT,the imputation roughly doubles the foreign-born count,names the allocation artifact
+astra,E08,HIT,"Income matching omits Hispanic origin, and the supplied comparisons show substantial attenuation of the group's wage gap",names unmatched donors pulling the group's incomes toward others'
+opus,E08,HIT,"Without Hispanic origin in the match, the group's nonrespondents mostly get donors from outside the group",names unmatched donors; overstated taxable income
+astra,E09,HIT,depends on returnees' schooling relative to migrants remaining in the US,names the wrong comparison group
+opus,E09,HIT,"depends on how returnees compare with the emigrants who stay in the US, not with people who never left Mexico",names the wrong comparison group
+astra,E09m,HIT,"Returnees are compared with never-migrants in Mexico, whereas the claim requires comparison with migrants remaining in the US",names the wrong comparison group
+opus,E09m,HIT,Comparing them with people who never left Mexico cannot show that,names the wrong comparison group
+astra,E11,HIT,status-independent treatment at ages 65+ ... mechanically suppressing its estimated fiscal effect,names the fixed 65+ profile
+opus,E11,HIT,The model gives an unauthorized founder and a legalized founder the same senior profile,names the fixed 65+ profile
+astra,E11m,HIT,legalization changes benefits but leaves earnings and taxes fixed,names earnings/taxes held on the unauthorized profile
+opus,E11m,HIT,"only p.benefits changes on legalization, and earnings and taxes stay on unauthorized_profile",names earnings/taxes held on the unauthorized profile
+astra,E12,HIT,increasing their share can lower the aggregate rate even if native receipt stays constant or rises,names the all-household composition locus (a)
+opus,E12,HIT,a 1-point shift toward immigrant households lowers the all-household rate by about 0.027pp even if natives' receipt does not change,names locus (a)
+astra,E12m,HIT,a one-percentage-point increase in immigrant household share mechanically raises aggregate receipt by 0.027 percentage points,names locus (a)
+opus,E12m,HIT,Composition alone predicts this result,names locus (a)

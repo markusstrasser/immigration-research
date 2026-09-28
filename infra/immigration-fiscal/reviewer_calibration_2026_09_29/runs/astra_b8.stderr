@@ -1,0 +1,2 @@
+[llmx] auth=subscription mode=chat transport=codex-cli model=gpt-6-astra effort=xhigh timeout=3600s
+ℹ Starting chat {"provider": "codex-cli", "transport": "codex-cli", "model": "gpt-6-astra", "stream": false, "requested_reasoning_effort": "xhigh", "effective_reasoning_effort": "xhigh", "reasoning_effort_source": "user-requested-cli-may-ignore", "timeout": 3600, "lite": "bare"}

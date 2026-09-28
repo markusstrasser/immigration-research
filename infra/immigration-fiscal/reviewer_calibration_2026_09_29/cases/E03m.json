@@ -1,0 +1,12 @@
+{
+ "id": "E03m",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "mirror",
+ "mirror_of": "E03",
+ "topic": "crash",
+ "packet_text": "CLAIM: The Mexican-origin population's road traffic costs other US residents $9.6bn a year (range $5.4-16.6bn). This is the with-against-without effect of the group's driving on other residents, measured as the damage to other residents in crashes the group's drivers cause, net of the liability insurance the group's drivers pay out.\n\nEVIDENCE:\n- A crash between a group driver and another resident is assigned to the group when police records put the group driver at fault. Damage is valued at comprehensive unit costs by severity; liability insurance payments are subtracted.\n- The account charges crime the same way: harm to victims of offences the group's members commit.\n- Traffic-safety evidence assembled for the same account: on the congested urban networks where 65% of the group's driving takes place, the cost-weighted elasticity of the non-fatal crash rate per vehicle-mile to traffic volume is about +1.4 (p10-p90 +0.9 to +1.9). Each added vehicle raises other drivers' crash risk per mile.",
+ "ground_truth": "ERROR (by construction). Fault attribution misses the traffic externality: with a large positive elasticity the\ngroup's traffic also raises crashes among other residents themselves, so the with-against-without cost exceeds the\nfault-based figure.",
+ "locus_rubric": "HIT if the reviewer says fault-based attribution is not the with-against-without effect because the group's traffic\nraises other residents' per-mile crash risk (including crashes not involving group drivers), so the figure is\nunderstated. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Synthetic mirror of E03 (same fault vs counterfactual mismatch, direction reversed via the elasticity)."
+}

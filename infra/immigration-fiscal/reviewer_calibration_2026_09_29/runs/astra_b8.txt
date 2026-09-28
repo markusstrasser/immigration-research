@@ -1,0 +1,35 @@
+CASE KC588
+VERDICT: ERROR
+LOCATION: `founder_profile`: status-independent treatment at ages 65+.
+WHY: The model omits retirement and healthcare eligibility differences that legalization can create, mechanically suppressing its estimated fiscal effect. The senior-cost sensitivity shows this omission could matter substantially; the 1.9% result does not establish that legal status hardly matters.
+CONFIDENCE: 0.99
+
+CASE KC689
+VERDICT: SOUND
+LOCATION: none
+WHY: The claim describes a negative association supported by the reported estimates and robustness checks, and explicitly conditions the earnings interpretation on causality. Remaining confounding limits a causal conclusion but does not contradict the stated association.
+CONFIDENCE: 0.94
+
+CASE KBDF6
+VERDICT: SOUND
+LOCATION: none
+WHY: The comparable estimators produce closely matching gaps, and the reported ratios are correct. This supports replication across survey instruments, with the explicit limitation that neither survey validates earnings against tax records.
+CONFIDENCE: 0.98
+
+CASE KBA61
+VERDICT: ERROR
+LOCATION: `acs_cells.py`: the `panel` filter lacks a Mexican-origin restriction.
+WHY: The calculation includes imputed unauthorized wage earners of every origin, then credits their entire withholding to the Mexican-origin population. Mexico-born workers earning about half of those wages demonstrates the material population mismatch, although the exact correction requires identifying Mexican origin.
+CONFIDENCE: 0.99
+
+CASE K9FA7
+VERDICT: SOUND
+LOCATION: none
+WHY: The population key has the smaller distance on the prespecified state-share comparison, supporting its stated status as a candidate. Insured patients in S-10 and the confounded slope limit conclusions about uninsured or Mexican-origin use; the different national totals do not invalidate a comparison of normalized state shares.
+CONFIDENCE: 0.92
+
+CASE K43DF
+VERDICT: ERROR
+LOCATION: Treating audit flags as confirmed ballots and comparing national flags with a district’s winning margin.
+WHY: Flags include citizens and do not establish that anyone cast a ballot, so 24,000 is not a demonstrated lower bound on noncitizen votes. Even confirmed national votes would not establish enough votes favoring the winner in any particular district to change its outcome.
+CONFIDENCE: 1.00

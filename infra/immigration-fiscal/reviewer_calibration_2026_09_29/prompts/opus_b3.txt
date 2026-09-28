@@ -1,0 +1,78 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE KEAC5
+CLAIM: Noncitizen voting is too small, by orders of magnitude, to have decided any federal or California contest. The largest published count of flagged noncitizen ballots, about 24,000 nationally, is an upper bound on the true number.
+
+EVIDENCE:
+- The 24,000 comes from state list-maintenance audits that match voter files against motor-vehicle and federal immigration-status records, in the states that published such audits. The audits do not cover every state or every noncitizen (people never recorded as noncitizens in the matched files cannot be flagged), and none reports an estimate of the cases it missed.
+- The count is before removing false positives; reviews cleared a large share of flags as citizens naturalized after their records were created.
+- Smallest recent US House margins: California's 13th district in 2024, 187 votes (105,554 to 105,367); Iowa's 2nd district in 2020, 6 votes.
+
+=====
+
+CASE KB00C
+CLAIM: The Mexican-origin earnings gaps that drive the account's tax term are small, and they replicate on a second survey. Common-age wage gaps per standardized person against native non-Hispanic whites: Mexico-born -$6,241 on the ACS 2024 against -$6,518 on the CPS ASEC; US-born Mexican-origin -$1,473 against -$1,408 (ratios 0.96 and 1.05).
+
+EVIDENCE:
+- Same estimator on both surveys: wage and salary income of persons 18-64, standardized to a common age distribution, survey weights.
+- Mexican origin: self-identified Mexican origin; Mexico-born and US-born split by birthplace.
+- The two surveys ask about income differently and fill in missing answers separately, so agreement is a replication across instruments, not a validation against tax records.
+
+=====
+
+CASE K4F6A
+CLAIM: The present value of lifetime earnings lost by incumbent pupils because of one school year's exposure to crowded classrooms can be booked as a one-year social-cost accrual in an annual account. This is not a stock/flow error, provided it is labeled as an accrual, kept separate from budget cash flows, and its future-tax consequence is not added a second time.
+
+EVIDENCE:
+- The annual account books each year's exposure once: the loss caused by 2024's exposure is the present value, at 2024, of the earnings reduction it causes over the pupils' working lives.
+- Each year's exposure is a new flow; next year's exposure is booked next year. A pupil's harm over 13 school years is the sum of 13 annual accruals, not 13 lifetimes.
+- The future income-tax loss from the lower earnings is excluded from the fiscal line and appears only inside the social accrual.
+
+=====
+
+CASE K03D1
+CLAIM: Mexican-origin home-care workers produce benefits for other residents worth $2,310 per worker-year beyond their wages.
+
+EVIDENCE:
+- Hours of home care supplied to other residents per worker-year x the social value of an hour of home care above the wage paid.
+- Unit value (published cost-benefit study, 2024 dollars): $21.70 per hour above the wage.
+- Benefit per worker-year: value of care hours $1,420; Medicaid savings from avoided nursing-home admissions $890; total $2,310.
+- Source note on the unit value: the social value of an hour of home care includes the avoided cost of the institutional care it replaces; that component is 61% of the unit value.
+
+=====
+
+CASE KCE0C
+CLAIM: In these incidence scenarios only a minority of other residents lose from the Mexican-origin group's presence. Across the wage model's substitution elasticities 1.5, 2.0 and 2.5, the share of other residents who come out ahead (pooled within households, taxes financed in proportion to tax shares) is 70.8%, 76.1% and 81.3%. The result is conditional on how channel totals are allocated to people.
+
+EVIDENCE:
+- Channel totals (wages, prices, taxes, public services) are allocated onto survey people; a winner is a person whose net is positive.
+- The wage channel's gross after-tax gains ($96.0bn) and losses ($95.8bn) almost cancel, so the count is sensitive to the wage allocation: halving each person's wage deviation from the mean, with the aggregate unchanged, gives 89.7% winners.
+- Enumerating the existing matched channel choices gives a minimum of 69.5% winners.
+
+=====
+
+CASE K163A
+CLAIM: The number of Hispanic prisoners held in state prisons for violent offences rose 36% from the end of 2009 to the end of 2021 (117,800 to 160,100), while the white count fell 34%. Hispanic violent-offence imprisonment grew while other groups' fell.
+
+EVIDENCE: Estimated counts of sentenced state prisoners by most serious offence and race/Hispanic origin, from the Bureau of Justice Statistics' annual Prisoners reports.
+
+| Reference date | Source | Hispanic, violent offence |
+|---|---|---|
+| 31 Dec 2009 | Prisoners in 2010, Appendix Table 16b | 117,800 |
+| 31 Dec 2021 | Prisoners in 2022, appendix table | 160,100 |
+
+Notes printed with the reports:
+- Prisoners in 2010: race and Hispanic-origin estimates are adjusted using the National Inmate Survey, 2008-09.
+- Prisoners in 2011 and later: race and Hispanic-origin estimates use ratios from the 2004 Survey of Inmates in State Correctional Facilities, and estimates for earlier years have been revised. Prisoners in 2011, Appendix Table 16, reports 159,800 Hispanic violent-offence state prisoners on 31 Dec 2009.

@@ -1,0 +1,35 @@
+CASE K4050
+VERDICT: SOUND
+LOCATION: none
+WHY: The evidence supports a national-bin discrepancy and a conditional recalculation that preserves the group's within-bin shares. Pooling and the alternative cutoff address the stated sparse-tail sensitivity; the recalculation does not independently validate the group's actual tax liability.
+CONFIDENCE: 0.85
+
+CASE KA714
+VERDICT: ERROR
+LOCATION: Adding consumer savings “to its fiscal receipts line”
+WHY: The exclusions can make consumer savings a distinct welfare benefit, but they do not make it government revenue. The $9.4bn belongs in a broader welfare balance; adding it to fiscal receipts would understate the fiscal cost.
+CONFIDENCE: 0.90
+
+CASE K2AD6
+VERDICT: ERROR
+LOCATION: The comparison group used to infer return-migration selection
+WHY: Returnees are compared with never-migrants in Mexico, whereas the claim requires comparison with migrants remaining in the US. Returnees could exceed never-migrants' schooling while having less schooling than US stayers, in which case their departure raises stayers' average.
+CONFIDENCE: 0.99
+
+CASE KE921
+VERDICT: SOUND
+LOCATION: none
+WHY: Every reported scenario, including the enumerated minimum, has a majority of winners. Allocation sensitivity limits generalization, but the claim explicitly confines its conclusion to these incidence scenarios.
+CONFIDENCE: 0.98
+
+CASE K5FED
+VERDICT: ERROR
+LOCATION: acs_cells.py panel filter and attribution of its totals
+WHY: The filter includes imputed-unauthorized workers of every origin, so the resulting $6.43bn and $4.53bn cannot be attributed entirely to the Mexican-origin population. The calculation needs a Mexican-origin restriction and recomputation using the industry-specific rates; the approximate Mexico-born wage share is not an exact correction.
+CONFIDENCE: 0.99
+
+CASE KF1DC
+VERDICT: ERROR
+LOCATION: Cross-census nativity classification underlying the custody ratios
+WHY: The 2000 allocation procedure assigns almost all missing birthplaces to the US, potentially removing foreign-born institutionalized men from the immigrant numerator and adding them to the native comparator. Earlier censuses handle missing birthplace differently, so these ratios cannot establish improving cohort selection without addressing the measurement break.
+CONFIDENCE: 0.99

@@ -1,0 +1,35 @@
+CASE KEAC5
+VERDICT: ERROR
+LOCATION: The claim that the 24,000 count "is an upper bound", and the claim that noncitizen voting is orders of magnitude too small, set against margins of 6 and 187 votes
+WHY: The audits leave out many states and cannot flag anyone never recorded as a noncitizen, so the true number could be higher. False positives push the other way, so the net direction is unknown and 24,000 is not an upper bound. Even taken at face value, 24,000 votes spread across 435 House districts averages about 55 per district, which is more than Iowa-2's 6-vote margin and within one order of magnitude of CA-13's 187, so ruling out any decided contest would need district-level counts.
+CONFIDENCE: 0.9
+
+CASE KB00C
+VERDICT: SOUND
+LOCATION: none
+WHY: The ratios check out (6,241/6,518 = 0.96; 1,473/1,408 = 1.05), both surveys use the same estimator, and the claim limits itself to agreement between two surveys rather than a check against tax records. Two limits remain. Both are Census household surveys, so they may share the same under-coverage of low earners. The CPS subgroup samples are small, so the close US-born match is weaker evidence than it looks. Neither limit overturns what the claim says.
+CONFIDENCE: 0.6
+
+CASE K4F6A
+VERDICT: SOUND
+LOCATION: none
+WHY: Booking, in the exposure year, the present value of the lifetime loss that year causes is standard incidence-based accrual, like a pension's normal cost. Each year's exposure is counted once, 13 years of harm is 13 one-year accruals, and the tax loss appears only inside the social loss. The stated conditions are the ones that prevent a stock/flow error or double counting. This holds if each year's effect is estimated as the effect of one extra year, which the evidence implies.
+CONFIDENCE: 0.65
+
+CASE K03D1
+VERDICT: ERROR
+LOCATION: Benefit per worker-year, where the $890 Medicaid savings from avoided nursing-home admissions is added to the $1,420 value of care hours
+WHY: The source note says 61% of the $21.70 unit value is already the avoided cost of institutional care. 61% of $1,420 is about $866, almost exactly the $890 Medicaid line, so the same avoided nursing-home cost is counted twice. The evidence supports about $1,420, and $2,310 overstates it by roughly 60%.
+CONFIDENCE: 0.88
+
+CASE KCE0C
+VERDICT: SOUND
+LOCATION: none
+WHY: The claim says its result depends on how channel totals are allocated, and every reported variant keeps winners in the majority: 70.8–81.3% across elasticities, a 69.5% minimum across the matched channel choices, and 89.7% when wage deviations are halved. The wage sensitivity test only compresses deviations, which is the direction that raises the winner share. A test that widens them would be a stronger check, but nothing in the evidence contradicts the claim that a minority lose.
+CONFIDENCE: 0.6
+
+CASE K163A
+VERDICT: ERROR
+LOCATION: The 2009 baseline of 117,800 from Prisoners in 2010, compared with a 2021 figure produced by the revised method
+WHY: The 117,800 figure uses the old method that BJS replaced. On the revised basis used from Prisoners in 2011 onward, the 2009 count is 159,800, so the change to 160,100 is +0.2%, essentially flat. The 36% rise is an artifact of the method change, so the contrast of Hispanic growth against other groups' decline fails, and the white figure needs the same same-basis check.
+CONFIDENCE: 0.92

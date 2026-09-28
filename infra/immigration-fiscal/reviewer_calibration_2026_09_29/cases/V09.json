@@ -1,0 +1,12 @@
+{
+ "id": "V09",
+ "type": "VALID",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "cpsincome",
+ "packet_text": "CLAIM: The Mexican-origin earnings gaps that drive the account's tax term replicate on a second survey. Common-age wage gaps per standardized person against native non-Hispanic whites: Mexico-born -$17,241 on the ACS 2024 against -$17,518 on the CPS ASEC; US-born Mexican-origin -$9,473 against -$9,208 (ratios 0.98 and 1.03).\n\nEVIDENCE:\n- Same estimator on both surveys: wage and salary income of persons 18-64, standardized to a common age distribution, survey weights.\n- Mexican origin: self-identified Mexican origin; Mexico-born and US-born split by birthplace.\n- The two surveys ask about income differently and fill in missing answers separately, so agreement is a replication across instruments, not a validation against tax records.",
+ "ground_truth": "VALID. A replication across instruments, stated as such.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Ladder entry 127 (earnings gaps replicate on ACS 2024)."
+}

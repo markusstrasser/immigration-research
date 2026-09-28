@@ -1,0 +1,12 @@
+{
+ "id": "E08",
+ "type": "ERROR",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "cpsincome",
+ "packet_text": "CLAIM: The Census Bureau's fill-ins for missing income answers in the CPS ASEC do not bias the Mexican-origin group's taxable income. The group and other adults skip the income supplement at the same rate (18.1% against 18.2%), so the account's tax keys can use published incomes, fill-ins included.\n\nEVIDENCE:\n- Missing incomes are filled by a hot deck: each nonrespondent receives the answers of a respondent donor matched on sex, age, schooling, race and labour-force status. Hispanic origin is a match variable only for the health-insurance fill-ins.\n- Within those donor cells, the group's respondents earn less than other respondents (log wage difference -0.153); among filled-in records the difference is -0.014, so fill-ins keep 9% of the group's own wage gap (difference-in-differences +0.139, SE 0.046).\n- The group's filled-in Social Security, pension and interest incomes are 19, 55 and 66 log points above the group's respondents in the same cells.\n- Federal income tax is computed from these incomes by a tax calculator.",
+ "ground_truth": "ERROR. Equal nonresponse does not make the fill-ins unbiased: donors are not matched on Hispanic origin or\nnativity, so the group's filled-in incomes are pulled toward other residents' higher incomes. The group's taxable\nincome and taxes are overstated and the account understates its net cost by about $9-15bn a year.",
+ "locus_rubric": "HIT if the reviewer says the imputation (donors not matched on Hispanic origin/group) pulls the group's filled-in\nincomes toward others', inflating its taxable income, so equal nonresponse rates do not make the incomes unbiased. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: ladder entry 208 (fill-ins give the group too much taxable income); lane cps_imputation_keys_2026_09_23.\nWithin-cell log differences -0.153/-0.014 are illustrative values reproducing the published +0.139 DiD."
+}

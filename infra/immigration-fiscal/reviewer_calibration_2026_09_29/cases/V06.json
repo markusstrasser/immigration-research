@@ -1,0 +1,12 @@
+{
+ "id": "V06",
+ "type": "VALID",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "crimeprice",
+ "packet_text": "CLAIM: The account can add a victim-harm line for crimes by the Mexican-origin group's members against other residents ($4.5bn a year tangible, $28.9bn with quality of life) to its fiscal line for police, courts and corrections without double counting, because the victim line uses victim-only unit costs.\n\nEVIDENCE:\n- Victim-only unit costs cover medical care, lost productivity, property loss and damage, and the victim's pain, suffering and risk of death. Criminal-justice system costs (police, adjudication, corrections) are excluded from them.\n- Police, courts and corrections spending enters the fiscal account through the justice budget lines, allocated by use.\n- Deaths are counted once: the assault and robbery unit costs used here exclude the risk-of-homicide component, and homicides are priced in their own row.",
+ "ground_truth": "VALID. The conceptual audit lists 'victim-only crime prices preserve the separation from justice spending' among\nobjections that did not survive.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "research/immigration-weekly-conceptual-audit-2026-09-25.md, 'Objections that did not survive'; lane\ncrime_victim_cost_2026_09_23 ($4.5bn/$28.9bn)."
+}

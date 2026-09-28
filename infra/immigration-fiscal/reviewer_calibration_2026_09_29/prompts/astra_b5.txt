@@ -1,0 +1,74 @@
+Below are 6 cases. Each case is a claim with the evidence, code or table excerpt behind it. The cases are independent; judge each one on its own.
+
+For each case: Review this claim and its evidence. Is there an error that changes the conclusion? Answer ERROR or SOUND, name the error's location and why, and give your confidence from 0 to 1.
+
+Answer every case, in this exact format:
+
+CASE <id>
+VERDICT: ERROR or SOUND
+LOCATION: <where the error is, or "none">
+WHY: <one to three sentences>
+CONFIDENCE: <a number from 0 to 1: your confidence in your verdict>
+
+=====
+
+CASE K7A2B
+CLAIM: On the medical expenditure survey file the account transports medical costs from, people of Mexican origin draw more public medical money per person than the all-donor mean of their own age x US-birth cell: 1.12 at 65+ (SE 0.15, 95% CI 0.83-1.41), 1.31 at 18-64 (SE 0.10, interval excludes 1) and 1.24 across all ages. The transport, which assigns each cell's all-donor mean, therefore understates the group's public medical spending at working ages.
+
+EVIDENCE:
+- Public medical money = Medicare + Medicaid + other public payers, per person-year, pooled survey years, survey weights, replicate-weight SEs.
+- Cells: age band x US-born/foreign-born; donors are all persons in the cell.
+- At 65+ the interval includes 1, so no correction is claimed there.
+
+=====
+
+CASE K84CF
+CLAIM: The data do not show each Mexican arrival cohort more positively selected on custody than the last. The 2000 census's low institutional share for recent Mexican arrivals (0.13 of US-born men's) reflects the census's birthplace allocation, not selection: spreading the allocated birthplaces in the reported mix raises the 2000 ratios 2.1-2.6-fold, and the same men reappear at 0.49-0.51 in the 2006 American Community Survey.
+
+EVIDENCE:
+- 2000 census: birthplace allocated for 68% of institutionalized Mexican-origin men aged 18-40, 98% of them assigned a US birthplace; among those reporting a birthplace, 38.5% were foreign-born.
+- The 2000 census count of institutionalized noncitizens (73,395, all institution types) is below the 89,676 noncitizens the Bureau of Justice Statistics counted in state and federal prisons alone at midyear 2000.
+- ACS at 6-10 years in the US: successive cohorts stand at 0.53, 0.58 and 0.61 (2006-19).
+- This measures custody, not crime; the allocation correction is a sensitivity without standard errors.
+
+=====
+
+CASE KD971
+CLAIM: Mexican-origin home-care workers produce benefits for other residents worth $2,310 per worker-year beyond their wages.
+
+EVIDENCE:
+- Hours of home care supplied to other residents per worker-year x the social value of an hour of home care above the wage paid.
+- Unit value (published cost-benefit study, 2024 dollars): $21.70 per hour above the wage.
+- Benefit per worker-year: value of care hours $1,420; Medicaid savings from avoided nursing-home admissions $890; total $2,310.
+- Source note on the unit value: the social value of an hour of home care includes the avoided cost of the institutional care it replaces; that component is 61% of the unit value.
+
+=====
+
+CASE K5C5D
+CLAIM: The Census Bureau's fill-ins for missing income answers in the CPS ASEC do not bias the Mexican-origin group's taxable income. The group and other adults skip the income supplement at the same rate (18.1% against 18.2%), so the account's tax keys can use published incomes, fill-ins included.
+
+EVIDENCE:
+- Missing incomes are filled by a hot deck: each nonrespondent receives the answers of a respondent donor matched on sex, age, schooling, race and labour-force status. Hispanic origin is a match variable only for the health-insurance fill-ins.
+- Within those donor cells, the group's respondents earn less than other respondents (log wage difference -0.153); among filled-in records the difference is -0.014, so fill-ins keep 9% of the group's own wage gap (difference-in-differences +0.139, SE 0.046).
+- The group's filled-in Social Security, pension and interest incomes are 19, 55 and 66 log points above the group's respondents in the same cells.
+- Federal income tax is computed from these incomes by a tax calculator.
+
+=====
+
+CASE K3FAD
+CLAIM: The Mexican-origin group's pupils impose no educational cost on other pupils. District spending kept pace with added enrollment (elasticity about 1.0 within two years), and full per-pupil funding cannot coexist with diluted instruction. The account's full per-pupil charge for the group's pupils therefore captures the whole school cost.
+
+EVIDENCE:
+- District spending responds to enrollment with an elasticity of about 1.0 within two years; the account charges full average cost per pupil.
+- 31% of the group's pupils are English learners; state formulas add 20-25% funding weights for them, spent on English-learner teachers and programmes.
+- Calculation: no shortfall in spending per pupil, so no forgone instructional spending per incumbent pupil, so zero dilution cost.
+
+=====
+
+CASE K3E51
+CLAIM: Charged with against without the Mexican-origin group's traffic, road crashes cost other residents $11.1bn a year (range -$57.7bn to +$74.3bn), not the $42.3bn charged by fault. Across transferable evidence, one more car on a fixed network barely changes other drivers' crash risk per mile: the cost-weighted elasticity of the non-fatal crash rate to traffic is about +0.07 (p10-p90 -0.23 to +0.52), and of the fatal rate -0.21. Near zero elasticity, the crashes other residents have with the group's drivers would largely happen anyway without the group, as crashes among themselves on emptier roads.
+
+EVIDENCE:
+- With-against-without = other residents' crash costs with the group's traffic minus without it; it includes a composition term for the group's higher fatal culpability ($1.8bn). Each 0.1 of non-fatal elasticity adds about $5.4bn.
+- Study weights (design; a 0.65 weight on congested settings, from the group's commute exposure) were set before the results; leaving out one study at a time keeps the non-fatal central between -0.10 and +0.31.
+- In dense traffic the studies disagree on sign (London: +1.4 against -0.36 for injury crashes), which is why the range crosses zero.

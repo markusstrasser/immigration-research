@@ -1,0 +1,12 @@
+{
+ "id": "V10m",
+ "type": "VALID",
+ "direction": "R",
+ "origin": "mirror",
+ "mirror_of": "V10",
+ "topic": "crash",
+ "packet_text": "CLAIM: Charged with against without the Mexican-origin group's traffic, road crashes cost other residents $72.1bn a year (range $49.4bn to $94.7bn), not the $42.3bn charged by fault. Across transferable evidence, one more car on a fixed network raises other drivers' crash risk per mile: the cost-weighted elasticity of the non-fatal crash rate to traffic is about +1.20 (p10-p90 +0.78 to +1.62), and of the fatal rate -0.21. With a large elasticity, the group's traffic also raises crashes among other residents themselves, which fault attribution does not count.\n\nEVIDENCE:\n- With-against-without = other residents' crash costs with the group's traffic minus without it; it includes a composition term for the group's higher fatal culpability ($1.8bn). Each 0.1 of non-fatal elasticity adds about $5.4bn.\n- Study weights (design; a 0.65 weight on congested settings, from the group's commute exposure) were set before the results; leaving out one study at a time keeps the non-fatal central between +1.02 and +1.39.\n- In the densest settings the studies differ in size (London: +1.4 against +0.9 for injury crashes), which is why the range is wide.",
+ "ground_truth": "VALID (by construction): the same with-against-without frame as V10 with a large elasticity; numbers consistent\n(11.1 + (1.20 - 0.07) x 54 = 72.1).",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Synthetic mirror of V10."
+}

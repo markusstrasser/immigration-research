@@ -1,0 +1,12 @@
+{
+ "id": "V08m",
+ "type": "VALID",
+ "direction": "E",
+ "origin": "mirror",
+ "mirror_of": "V08",
+ "topic": "census",
+ "packet_text": "CLAIM: The data do not show each Mexican arrival cohort more negatively selected on custody than the last. Round 3's high institutional share for recent Mexican arrivals (1.10 of native-born men's) reflects the census's birthplace allocation, not selection: spreading the allocated birthplaces in the reported mix lowers the round-3 ratios 2.1-2.6-fold, and the same men reappear at 0.49-0.51 in a later annual survey.\n\nEVIDENCE:\n- Round 3: birthplace allocated for 64% of institutionalized Mexican-origin men aged 18-40, 91% of them assigned a foreign birthplace; among those reporting a birthplace, 38.5% were foreign-born.\n- The round-3 count of institutionalized noncitizens is above the number of noncitizens the prison statistics agency counted in all prisons, jails and immigration detention at the same date.\n- Annual survey at 6-10 years in the country: successive cohorts stand at 0.53, 0.58 and 0.61.\n- This measures custody, not crime; the allocation correction is a sensitivity without standard errors.",
+ "ground_truth": "VALID (by construction): the same allocation correction as V08 in the opposite direction.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Synthetic mirror of V08 (census de-identified, as in E07m)."
+}

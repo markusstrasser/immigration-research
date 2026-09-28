@@ -1,0 +1,12 @@
+{
+ "id": "V10",
+ "type": "VALID",
+ "direction": "E",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "crash",
+ "packet_text": "CLAIM: Charged with against without the Mexican-origin group's traffic, road crashes cost other residents $11.1bn a year (range -$57.7bn to +$74.3bn), not the $42.3bn charged by fault. Across transferable evidence, one more car on a fixed network barely changes other drivers' crash risk per mile: the cost-weighted elasticity of the non-fatal crash rate to traffic is about +0.07 (p10-p90 -0.23 to +0.52), and of the fatal rate -0.21. Near zero elasticity, the crashes other residents have with the group's drivers would largely happen anyway without the group, as crashes among themselves on emptier roads.\n\nEVIDENCE:\n- With-against-without = other residents' crash costs with the group's traffic minus without it; it includes a composition term for the group's higher fatal culpability ($1.8bn). Each 0.1 of non-fatal elasticity adds about $5.4bn.\n- Study weights (design; a 0.65 weight on congested settings, from the group's commute exposure) were set before the results; leaving out one study at a time keeps the non-fatal central between -0.10 and +0.31.\n- In dense traffic the studies disagree on sign (London: +1.4 against -0.36 for injury crashes), which is why the range crosses zero.",
+ "ground_truth": "VALID. Adopted after the lead verified the key sources; reruns identical; the range is carried with the figure.",
+ "locus_rubric": "VALID case: any ERROR verdict is a false accusation; SOUND is a correct pass. Audit step: for each accusation, record whether the named defect is real and material in the packet as written (packet_defect yes/no); a yes is reported in a sensitivity analysis, never re-scored in the primary one.",
+ "source_ref": "Ladder entry 266; decisions/2026-09-29-crash-item-with-against-without.md; lanes crash_volume_elasticity_2026_09_28,\nroad_crash_externality_2026_09_28."
+}

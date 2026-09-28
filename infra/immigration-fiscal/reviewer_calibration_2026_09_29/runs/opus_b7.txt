@@ -1,0 +1,35 @@
+CASE K4161
+VERDICT: ERROR
+LOCATION: `founder_profile`. The status adjustment applies only at ages 18–64. At 65+ the pooled profile applies whatever the status.
+WHY: The model gives an unauthorized founder and a legalized founder the same senior profile. Legalization therefore cannot change Social Security, Medicare or Medicaid eligibility, which is where status matters most, and seniors carry 34.4% of the gap. The 1.9% result comes from how the model is built, not from the data.
+CONFIDENCE: 0.88
+
+CASE K3023
+VERDICT: ERROR
+LOCATION: The premise that a low spending response "cannot coexist with no dilution", and the calculation that multiplies all uncharged spending by the 0.61 instructional share.
+WHY: Fixed costs and spare capacity make an extra pupil cost less than the average pupil, which by itself produces an enrollment elasticity below 1 with no dilution. Those fixed costs are mostly non-instructional, so applying the 0.61 share overstates the harm. The $16.1bn assumes no economies of scale and uses only the first-years response. The long-run response gives $3.6bn, the direct class-size pathway gives $2.6bn, and the range crosses zero, so neither "most" nor the central figure is supported.
+CONFIDENCE: 0.68
+
+CASE K4D4C
+VERDICT: SOUND
+LOCATION: none
+WHY: The allocation figures imply about a 2.8× undercount (0.385 / (0.32×0.385 + 0.68×0.02)), so the 2.1–2.6× correction is conservative, and the BJS count separately shows the census undercounting institutionalized noncitizens. The corrected 0.27–0.34 still falls short of the ACS 0.49–0.51. For the same men, that remaining gap plausibly reflects added years in the US, which is also not cohort selection. ACS cohorts measured at the same duration rise from 0.53 to 0.58 to 0.61, which directly supports the claim.
+CONFIDENCE: 0.6
+
+CASE K1FDB
+VERDICT: ERROR
+LOCATION: The step from "returnees have less schooling than never-migrants" to "the US stayers' average schooling rises"
+WHY: Whether return migration raises the stayers' average depends on how returnees compare with the emigrants who stay in the US, not with people who never left Mexico. Mexican emigrants as a group already have less schooling than non-migrants, so returnees at 7.9 years could be above the stayers' mean. The survey does not observe the stayers, as its stated limitation says.
+CONFIDENCE: 0.87
+
+CASE K47B4
+VERDICT: SOUND
+LOCATION: none
+WHY: Both surveys use the same estimator, population definitions and reference group, and the ratios check out (17,241/17,518 = 0.984; 9,473/9,208 = 1.029). The claim is limited to replication across instruments and says outright that this is not validation against tax records. Small mismatches, such as wage and salary income versus total earnings or different reference periods, do not overturn it.
+CONFIDENCE: 0.75
+
+CASE K7F41
+VERDICT: SOUND
+LOCATION: none
+WHY: Every reported variant leaves winners in the minority: 18.7–29.2% across elasticities, 10.3% with halved wage dispersion and at most 30.5% across the channel choices. The claim is stated as conditional on allocation. The numbers are internally consistent, since a higher elasticity or halved dispersion shrinks wage deviations and cuts winners at about the rate the scaling predicts. The only untested direction is more wage dispersion, which the conditional wording covers.
+CONFIDENCE: 0.65

@@ -1,0 +1,12 @@
+{
+ "id": "E03",
+ "type": "ERROR",
+ "direction": "R",
+ "origin": "original",
+ "mirror_of": null,
+ "topic": "crash",
+ "packet_text": "CLAIM: The Mexican-origin population's road traffic costs other US residents $42.3bn a year (range $23.8-73.3bn). This is the with-against-without effect of the group's driving on other residents, measured as the damage to other residents in crashes the group's drivers cause, net of the liability insurance the group's drivers pay out.\n\nEVIDENCE:\n- A crash between a group driver and another resident is assigned to the group when police records put the group driver at fault. Damage is valued at comprehensive unit costs by severity; liability insurance payments are subtracted.\n- The account charges crime the same way: harm to victims of offences the group's members commit.\n- Traffic-safety evidence assembled for the same account: the cost-weighted elasticity of the non-fatal crash rate per vehicle-mile to traffic volume is about +0.07 (p10-p90 -0.23 to +0.52); for the fatal rate it is -0.21. Adding vehicles to a given road network barely changes other drivers' crash risk per mile.",
+ "ground_truth": "ERROR. Fault attribution does not measure with-against-without. With crash risk per mile roughly flat in traffic,\nthe crashes other residents have with the group's drivers would largely happen anyway without the group, as\ncrashes among themselves on emptier roads; the crime analogy fails there. The with-against-without figure is about\n$11.1bn (-$57.7bn to +$74.3bn), well below $42.3bn.",
+ "locus_rubric": "HIT if the reviewer says fault/causation-based attribution is not the with-against-without counterfactual here,\nbecause with a near-zero elasticity removing the group's drivers leaves others' per-mile risk unchanged (their\ncrashes would largely still occur), or says the crime analogy fails for this reason. Insurance netting, unit-cost\nvalues or police-culpability bias alone are WRONG-LOCUS. Generic caveats (sample size, causality in general, 'more data needed', data quality in general) and a different error are WRONG-LOCUS, not HIT. A SOUND verdict is a MISS whatever the text says.",
+ "source_ref": "Project error: decisions/2026-09-29-crash-item-with-against-without.md (fault-based $42.3bn replaced by but-for\n$11.1bn); ladder entry 266; lanes road_crash_externality_2026_09_28, crash_volume_elasticity_2026_09_28."
+}
