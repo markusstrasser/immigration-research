@@ -1,0 +1,3570 @@
+{
+ "lane": "main_case_candidate_v4_2026_09_29",
+ "case": "sept29_candidate_v4",
+ "status": "candidate, not adopted (the parent's brief, 2026-09-29)",
+ "imports": "main_case_candidate_v3_2026_09_28/package.cjs (f878343), which imports v2, the first candidate and main_case_long_run_2026_09_27/package.cjs; none edited",
+ "count": {
+  "value": 39712493.33118789,
+  "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+  "key": "populations.row4"
+ },
+ "bands": {
+  "sept27": {
+   "label": "the September 27 case (adopted)",
+   "at_48_11_bn": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "per_member_usd": [
+    8103.730841237694,
+    9754.362480312102
+   ],
+   "by_method": {
+    "b_hotdeck_union_matched": [
+     318.57770417909114,
+     385.1137172579758
+    ],
+    "b_matched_over_pooled": [
+     325.0610098016959,
+     389.62639264079166
+    ]
+   },
+   "own_ends": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ],
+   "own_band_bn": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "ends": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "low_cost": 318.57770417909114,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 385.1137172579758,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "low_cost": 325.0610098016959,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 389.62639264079166,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    }
+   ]
+  },
+  "set": {
+   "label": "candidate v4: the set with the pension switch (payable, net)",
+   "at_48_11_bn": [
+    371.4145997888867,
+    434.8409586241355
+   ],
+   "per_member_usd": [
+    9352.588282267312,
+    10949.726953624355
+   ],
+   "by_method": {
+    "b_hotdeck_union_matched": [
+     367.3118758120467,
+     431.9708099269958
+    ],
+    "b_matched_over_pooled": [
+     375.5173237657267,
+     437.7111073212753
+    ]
+   },
+   "own_ends": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ],
+   "own_band_bn": [
+    371.4145997888867,
+    434.8409586241355
+   ],
+   "ends": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "low_cost": 367.3118758120467,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 431.9708099269958,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "low_cost": 375.5173237657267,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 437.7111073212753,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    }
+   ]
+  },
+  "cash": {
+   "label": "candidate v4: the cash set (pension switch off)",
+   "at_48_11_bn": [
+    294.7010759802479,
+    361.81748180973545
+   ],
+   "per_member_usd": [
+    7420.865608274632,
+    9110.923325622192
+   ],
+   "by_method": {
+    "b_hotdeck_union_matched": [
+     291.3883435719682,
+     359.4590834173505
+    ],
+    "b_matched_over_pooled": [
+     298.0138083885276,
+     364.1758802021205
+    ]
+   },
+   "own_ends": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ],
+   "own_band_bn": [
+    294.7010759802479,
+    361.81748180973545
+   ],
+   "ends": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "low_cost": 291.3883435719682,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 359.4590834173505,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "low_cost": 298.0138083885276,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 364.1758802021205,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    }
+   ]
+  },
+  "set_plus_8": {
+   "label": "the set with item 8 (beside)",
+   "at_48_11_bn": [
+    371.5842284530852,
+    435.0217580272155
+   ],
+   "per_member_usd": [
+    9356.859700402254,
+    10954.27966205221
+   ],
+   "by_method": {
+    "b_hotdeck_union_matched": [
+     367.48150447624516,
+     432.15160933007576
+    ],
+    "b_matched_over_pooled": [
+     375.6869524299252,
+     437.8919067243553
+    ]
+   },
+   "own_ends": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ],
+   "own_band_bn": [
+    371.5842284530852,
+    435.0217580272155
+   ],
+   "ends": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "low_cost": 367.48150447624516,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 432.15160933007576,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "low_cost": 375.6869524299252,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 437.8919067243553,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086988
+    }
+   ]
+  },
+  "set_plus_10": {
+   "label": "the set with item 10 (beside)",
+   "at_48_11_bn": [
+    369.8810848518867,
+    432.5985789801356
+   ],
+   "per_member_usd": [
+    9313.972854013766,
+    10893.261608441939
+   ],
+   "by_method": {
+    "b_hotdeck_union_matched": [
+     365.7783608750467,
+     429.7284302829958
+    ],
+    "b_matched_over_pooled": [
+     373.9838088287267,
+     435.4687276772753
+    ]
+   },
+   "own_ends": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ],
+   "own_band_bn": [
+    369.8810848518867,
+    432.5985789801356
+   ],
+   "ends": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "low_cost": 365.7783608750467,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 429.7284302829958,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "low_cost": 373.9838088287267,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 435.4687276772753,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    }
+   ]
+  },
+  "cash_plus_8": {
+   "label": "the cash set with item 8 (beside)",
+   "at_48_11_bn": [
+    294.8707046444464,
+    361.99828121281547
+   ],
+   "per_member_usd": [
+    7425.137026409572,
+    9115.476034050047
+   ],
+   "by_method": {
+    "b_hotdeck_union_matched": [
+     291.5579722361667,
+     359.63988282043044
+    ],
+    "b_matched_over_pooled": [
+     298.18343705272605,
+     364.3566796052005
+    ]
+   },
+   "own_ends": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ],
+   "own_band_bn": [
+    294.8707046444464,
+    361.99828121281547
+   ],
+   "ends": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "low_cost": 291.5579722361667,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 359.63988282043044,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "low_cost": 298.18343705272605,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 364.3566796052005,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086988
+    }
+   ]
+  },
+  "cash_plus_10": {
+   "label": "the cash set with item 10 (beside)",
+   "at_48_11_bn": [
+    293.16756104324793,
+    359.57510216573553
+   ],
+   "per_member_usd": [
+    7382.250180021085,
+    9054.457980439774
+   ],
+   "by_method": {
+    "b_hotdeck_union_matched": [
+     289.8548286349682,
+     357.2167037733505
+    ],
+    "b_matched_over_pooled": [
+     296.4802934515276,
+     361.9335005581205
+    ]
+   },
+   "own_ends": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ],
+   "own_band_bn": [
+    293.16756104324793,
+    359.57510216573553
+   ],
+   "ends": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "low_cost": 289.8548286349682,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 357.2167037733505,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "low_cost": 296.4802934515276,
+     "low_runner_up": 56,
+     "low_margin": 0.7881038325277814,
+     "high": 11,
+     "high_cost": 361.9335005581205,
+     "high_runner_up": 3,
+     "high_margin": 0.8149316052086419
+    }
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "1",
+   "name": "public housing's deficit at the tenant key",
+   "options": {
+    "housing": "tenants",
+    "internal_transfer": "public_housing_operating"
+   }
+  },
+  {
+   "id": "2",
+   "name": "production on the account's weights",
+   "options": {
+    "production": "row4"
+   }
+  },
+  {
+   "id": "3",
+   "name": "the IRS-matched income-tax key",
+   "options": {
+    "tax_key": "irs_2023_raked"
+   }
+  },
+  {
+   "id": "4",
+   "name": "public housing's capital at the tenant key",
+   "options": {
+    "housing_capital": "tenants"
+   }
+  },
+  {
+   "id": "5",
+   "name": "long-run property taxes",
+   "options": {
+    "property": "long_run"
+   }
+  },
+  {
+   "id": "6a",
+   "name": "payroll compliance, the all-central items, proportional rule",
+   "options": {
+    "payroll_items": "central",
+    "payroll_rule": "proportional"
+   }
+  },
+  {
+   "id": "7",
+   "name": "workers' compensation pooled over 2019-2024, workers' compensation line only",
+   "options": {
+    "wc": "pooled_workers_compensation"
+   }
+  },
+  {
+   "id": "pension",
+   "name": "pension accrual at payable benefits, net of the tax on benefits (switch)",
+   "options": {
+    "pension4": "payable_net"
+   }
+  },
+  {
+   "id": "state",
+   "name": "state pricing, the lane's central package",
+   "options": {
+    "state_price": "central"
+   }
+  },
+  {
+   "id": "roads",
+   "name": "roads keyed by miles, fuel taxes and licences to match",
+   "options": {
+    "roads": "miles"
+   }
+  }
+ ],
+ "beside_items": [
+  {
+   "id": "8",
+   "name": "public transit at the riders' key (v3 item 8)",
+   "options": {
+    "transit": "state_deficit",
+    "transit_capital": true
+   }
+  },
+  {
+   "id": "10",
+   "name": "hospitals' uninsured use at 0.7x (v3 item 10)",
+   "options": {
+    "uninsured_use": "0.7x"
+   }
+  }
+ ],
+ "rules_chosen": {
+  "licence_rule": "index_on_miles",
+  "sales_rule": "multiplicative",
+  "excise_rule": "gasoline_at_miles",
+  "freight_key": "set",
+  "benefit_tax_rule": "fixed",
+  "accrual_receipts": "set",
+  "part_a_rule": "fixed"
+ },
+ "attribution": {
+  "items": [
+   {
+    "id": "1",
+    "name": "public housing's deficit at the tenant key",
+    "alone": [
+     -1.6912303084279756,
+     -1.6912303084279756
+    ],
+    "marginal_set": [
+     -1.6912303084279756,
+     -1.6912303084279756
+    ],
+    "interaction_set": [
+     0,
+     0
+    ],
+    "marginal_cash": [
+     -1.6912303084279756,
+     -1.6912303084279756
+    ],
+    "interaction_cash": [
+     0,
+     0
+    ]
+   },
+   {
+    "id": "2",
+    "name": "production on the account's weights",
+    "alone": [
+     1.642719449000026,
+     1.1073890110000093
+    ],
+    "marginal_set": [
+     1.642719449000026,
+     1.1073890110000093
+    ],
+    "interaction_set": [
+     0,
+     0
+    ],
+    "marginal_cash": [
+     1.6427194489999977,
+     1.1073890110000093
+    ],
+    "interaction_cash": [
+     -2.842170943040401e-14,
+     0
+    ]
+   },
+   {
+    "id": "3",
+    "name": "the IRS-matched income-tax key",
+    "alone": [
+     -3.20053533254827,
+     -3.096568163510142
+    ],
+    "marginal_set": [
+     -3.192303099363727,
+     -3.0850636180231277
+    ],
+    "interaction_set": [
+     0.008232233184543247,
+     0.011504545487014184
+    ],
+    "marginal_cash": [
+     -3.1923030993637553,
+     -3.0850636180231277
+    ],
+    "interaction_cash": [
+     0.008232233184514826,
+     0.011504545487014184
+    ]
+   },
+   {
+    "id": "4",
+    "name": "public housing's capital at the tenant key",
+    "alone": [
+     -0.35286942484674455,
+     -0.5293041372701452
+    ],
+    "marginal_set": [
+     -0.35286942484677297,
+     -0.5293041372701452
+    ],
+    "interaction_set": [
+     -2.842170943040401e-14,
+     0
+    ],
+    "marginal_cash": [
+     -0.35286942484677297,
+     -0.5293041372701452
+    ],
+    "interaction_cash": [
+     -2.842170943040401e-14,
+     0
+    ]
+   },
+   {
+    "id": "5",
+    "name": "long-run property taxes",
+    "alone": [
+     -27.18632552778587,
+     -27.18632552778587
+    ],
+    "marginal_set": [
+     -27.18632552778584,
+     -27.18632552778587
+    ],
+    "interaction_set": [
+     2.842170943040401e-14,
+     0
+    ],
+    "marginal_cash": [
+     -27.186325527785897,
+     -27.18632552778581
+    ],
+    "interaction_cash": [
+     -2.842170943040401e-14,
+     5.684341886080802e-14
+    ]
+   },
+   {
+    "id": "6a",
+    "name": "payroll compliance, the all-central items, proportional rule",
+    "alone": [
+     0.38655759584199245,
+     0.5271886469338654
+    ],
+    "marginal_set": [
+     -0.13885411570296924,
+     0.0004334186111236704
+    ],
+    "interaction_set": [
+     -0.5254117115449617,
+     -0.5267552283227417
+    ],
+    "marginal_cash": [
+     0.42434056491430283,
+     0.5833611213939491
+    ],
+    "interaction_cash": [
+     0.03778296907231038,
+     0.05617247446008378
+    ]
+   },
+   {
+    "id": "7",
+    "name": "workers' compensation pooled over 2019-2024, workers' compensation line only",
+    "alone": [
+     -0.9482477443084463,
+     -0.7324104515720933
+    ],
+    "marginal_set": [
+     -0.9482477443084179,
+     -0.7324104515720649
+    ],
+    "interaction_set": [
+     2.842170943040401e-14,
+     2.842170943040401e-14
+    ],
+    "marginal_cash": [
+     -0.9482477443084179,
+     -0.7324104515720649
+    ],
+    "interaction_cash": [
+     2.842170943040401e-14,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "id": "pension",
+    "name": "pension accrual at payable benefits, net of the tax on benefits (switch)",
+    "alone": [
+     77.27671848925613,
+     73.60640451718285
+    ],
+    "marginal_set": [
+     76.7135238086388,
+     73.02347681440006
+    ],
+    "interaction_set": [
+     -0.5631946806173289,
+     -0.582927702782797
+    ],
+    "marginal_cash": null,
+    "interaction_cash": null
+   },
+   {
+    "id": "state",
+    "name": "state pricing, the lane's central package",
+    "alone": [
+     2.184555874223747,
+     2.2713312150892477
+    ],
+    "marginal_set": [
+     2.2050708716455745,
+     2.2675278489183484
+    ],
+    "interaction_set": [
+     0.020514997421827275,
+     -0.0038033661708993804
+    ],
+    "marginal_cash": [
+     2.2050708716455745,
+     2.26752784891832
+    ],
+    "interaction_cash": [
+     0.020514997421827275,
+     -0.003803366170927802
+    ]
+   },
+   {
+    "id": "roads",
+    "name": "roads keyed by miles, fuel taxes and licences to match",
+    "alone": [
+     1.9559713235907736,
+     3.6930752793971635
+    ],
+    "marginal_set": [
+     2.071687294142464,
+     3.7977642186162655
+    ],
+    "interaction_set": [
+     0.11571597055169036,
+     0.10468893921910194
+    ],
+    "marginal_cash": [
+     2.071687294142464,
+     3.797764218616294
+    ],
+    "interaction_cash": [
+     0.11571597055169036,
+     0.10468893921913036
+    ]
+   }
+  ],
+  "sum_alone": {
+   "set": [
+    50.06731439399536,
+    47.969550081036914
+   ],
+   "cash": [
+    -27.209404095260766,
+    -25.63685443614594
+   ]
+  },
+  "joint": {
+   "set": [
+    49.59524279849319,
+    47.47090367475181
+   ],
+   "cash": [
+    -27.11828101014561,
+    -25.552573139648246
+   ]
+  },
+  "interaction": {
+   "set": [
+    -0.4720715955021717,
+    -0.49864640628510415
+   ],
+   "cash": [
+    0.09112308511515721,
+    0.08428129649769289
+   ]
+  },
+  "pairwise_sum": {
+   "set": [
+    -0.4720715955024275,
+    -0.4986464062847915
+   ],
+   "cash": [
+    0.0911230851150151,
+    0.084281296497835
+   ]
+  },
+  "higher_order": {
+   "set": [
+    2.5579538487363607e-13,
+    -3.126388037344441e-13
+   ],
+   "cash": [
+    1.4210854715202004e-13,
+    -1.4210854715202004e-13
+   ]
+  },
+  "pairs": [
+   {
+    "a": "1",
+    "b": "2",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "1",
+    "b": "3",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "1",
+    "b": "4",
+    "interaction": [
+     0,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "1",
+    "b": "5",
+    "interaction": [
+     2.842170943040401e-14,
+     0
+    ]
+   },
+   {
+    "a": "1",
+    "b": "6a",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "1",
+    "b": "7",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "1",
+    "b": "pension",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "1",
+    "b": "state",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "1",
+    "b": "roads",
+    "interaction": [
+     -2.842170943040401e-14,
+     0
+    ]
+   },
+   {
+    "a": "2",
+    "b": "3",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "2",
+    "b": "4",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "2",
+    "b": "5",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "2",
+    "b": "6a",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "2",
+    "b": "7",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "2",
+    "b": "pension",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "2",
+    "b": "state",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "2",
+    "b": "roads",
+    "interaction": [
+     -2.842170943040401e-14,
+     0
+    ]
+   },
+   {
+    "a": "3",
+    "b": "4",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "3",
+    "b": "5",
+    "interaction": [
+     2.842170943040401e-14,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "3",
+    "b": "6a",
+    "interaction": [
+     0.008232233184543247,
+     0.01150454548695734
+    ]
+   },
+   {
+    "a": "3",
+    "b": "7",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "3",
+    "b": "pension",
+    "interaction": [
+     0,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "3",
+    "b": "state",
+    "interaction": [
+     0,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "3",
+    "b": "roads",
+    "interaction": [
+     -2.842170943040401e-14,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "4",
+    "b": "5",
+    "interaction": [
+     0,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "4",
+    "b": "6a",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "4",
+    "b": "7",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "4",
+    "b": "pension",
+    "interaction": [
+     0,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "4",
+    "b": "state",
+    "interaction": [
+     0,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "4",
+    "b": "roads",
+    "interaction": [
+     -2.842170943040401e-14,
+     0
+    ]
+   },
+   {
+    "a": "5",
+    "b": "6a",
+    "interaction": [
+     -5.684341886080802e-14,
+     -2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "5",
+    "b": "7",
+    "interaction": [
+     2.842170943040401e-14,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "5",
+    "b": "pension",
+    "interaction": [
+     -5.684341886080802e-14,
+     5.684341886080802e-14
+    ]
+   },
+   {
+    "a": "5",
+    "b": "state",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "5",
+    "b": "roads",
+    "interaction": [
+     -2.842170943040401e-14,
+     -2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "6a",
+    "b": "7",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "6a",
+    "b": "pension",
+    "interaction": [
+     -0.5631946806173573,
+     -0.5829277027828255
+    ]
+   },
+   {
+    "a": "6a",
+    "b": "state",
+    "interaction": [
+     -0.0328251186210764,
+     -0.03191218820839481
+    ]
+   },
+   {
+    "a": "6a",
+    "b": "roads",
+    "interaction": [
+     0.06237585450887195,
+     0.07658011718160651
+    ]
+   },
+   {
+    "a": "7",
+    "b": "pension",
+    "interaction": [
+     -2.842170943040401e-14,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "7",
+    "b": "state",
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "a": "7",
+    "b": "roads",
+    "interaction": [
+     -2.842170943040401e-14,
+     0
+    ]
+   },
+   {
+    "a": "pension",
+    "b": "state",
+    "interaction": [
+     0,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "pension",
+    "b": "roads",
+    "interaction": [
+     0,
+     2.842170943040401e-14
+    ]
+   },
+   {
+    "a": "state",
+    "b": "roads",
+    "interaction": [
+     0.05334011604281841,
+     0.02810882203752385
+    ]
+   }
+  ]
+ },
+ "line_interactions": {
+  "set": [
+   {
+    "line": "receipts:federal_income_tax",
+    "items": [
+     "3",
+     "6a",
+     "pension"
+    ],
+    "change": [
+     -0.8151331262919115,
+     -0.8912612727349938
+    ],
+    "sum_alone": [
+     -0.8233653594764405,
+     -0.9027658182219369
+    ],
+    "interaction": [
+     0.008232233184529036,
+     0.01150454548694313
+    ]
+   },
+   {
+    "line": "receipts:state_local_income_tax",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.015631096666030686,
+     -0.006053248756582974
+    ],
+    "sum_alone": [
+     -0.015631096666030686,
+     -0.006053248756582974
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:personal_motor_vehicle",
+    "items": [
+     "state",
+     "roads"
+    ],
+    "change": [
+     -0.4906645156231808,
+     -0.5868230793322993
+    ],
+    "sum_alone": [
+     -0.5440046316660418,
+     -0.614931901369796
+    ],
+    "interaction": [
+     0.05334011604286104,
+     0.02810882203749676
+    ]
+   },
+   {
+    "line": "receipts:personal_property_tax",
+    "items": [
+     "5"
+    ],
+    "change": [
+     -1.325841016,
+     -1.325841016
+    ],
+    "sum_alone": [
+     -1.325841016,
+     -1.325841016
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:other_personal_tax",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.0002834003036520927,
+     -0.00010974869988761293
+    ],
+    "sum_alone": [
+     -0.0002834003036520927,
+     -0.00010974869988761293
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:employee_oasdi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.02539676403613811,
+     -0.027300069013413975
+    ],
+    "sum_alone": [
+     -0.02539676403613811,
+     -0.027300069013413975
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:employee_hi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.013496182416943725,
+     -0.01394514415103032
+    ],
+    "sum_alone": [
+     -0.013496182416943725,
+     -0.01394514415103032
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:self_employment_oasdi_hi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     0.7833754272816407,
+     0.8133565896969834
+    ],
+    "sum_alone": [
+     0.7833754272816407,
+     0.8133565896969834
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:employer_oasdi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.025616073607324097,
+     -0.02753581426112106
+    ],
+    "sum_alone": [
+     -0.025616073607324097,
+     -0.02753581426112106
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:employer_hi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.01200504389373691,
+     -0.012404401663768994
+    ],
+    "sum_alone": [
+     -0.01200504389373691,
+     -0.012404401663768994
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:other_domestic_social_contributions",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.023654555118650222,
+     -0.024783854280840956
+    ],
+    "sum_alone": [
+     -0.023654555118650222,
+     -0.024783854280840956
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:corporate_labor",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     0,
+     0
+    ],
+    "sum_alone": [
+     0,
+     0
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:general_sales_tax",
+    "items": [
+     "6a",
+     "state"
+    ],
+    "change": [
+     -5.96444911848215,
+     -5.9556057400764
+    ],
+    "sum_alone": [
+     -5.931623999861117,
+     -5.923693551867956
+    ],
+    "interaction": [
+     -0.032825118621033766,
+     -0.03191218820844455
+    ]
+   },
+   {
+    "line": "receipts:modeled_owner_property",
+    "items": [
+     "5"
+    ],
+    "change": [
+     -19.049721026856325,
+     -19.049721026856325
+    ],
+    "sum_alone": [
+     -19.049721026856325,
+     -19.049721026856325
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:remaining_production_property",
+    "items": [
+     "5"
+    ],
+    "change": [
+     0,
+     0
+    ],
+    "sum_alone": [
+     0,
+     0
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:excise_selective_sales",
+    "items": [
+     "6a",
+     "roads"
+    ],
+    "change": [
+     -1.5790042636413517,
+     -1.5750723373475495
+    ],
+    "sum_alone": [
+     -1.6128488258618283,
+     -1.6079756164455326
+    ],
+    "interaction": [
+     0.033844562220476604,
+     0.032903279097983074
+    ]
+   },
+   {
+    "line": "receipts:customs_duties",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.03956384557529091,
+     -0.038463498055405054
+    ],
+    "sum_alone": [
+     -0.03956384557529091,
+     -0.038463498055405054
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:personal_current_transfers",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.06676963972960337,
+     -0.06491264614336778
+    ],
+    "sum_alone": [
+     -0.06676963972960337,
+     -0.06491264614336778
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:enterprise_surplus",
+    "items": [
+     "1"
+    ],
+    "change": [
+     -4.721933248710872,
+     -4.721933248710872
+    ],
+    "sum_alone": [
+     -4.721933248710872,
+     -4.721933248710872
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:housing_enterprise_surplus",
+    "items": [
+     "1"
+    ],
+    "change": [
+     3.426128600542746,
+     3.426128600542746
+    ],
+    "sum_alone": [
+     3.426128600542746,
+     3.426128600542746
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:tenant_occupied_property",
+    "items": [
+     "5"
+    ],
+    "change": [
+     -6.810763484929574,
+     -6.810763484929574
+    ],
+    "sum_alone": [
+     -6.810763484929574,
+     -6.810763484929574
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:social_security",
+    "items": [
+     "pension"
+    ],
+    "change": [
+     53.14829882071868,
+     49.73255750920876
+    ],
+    "sum_alone": [
+     53.71149350133598,
+     50.3154852119916
+    ],
+    "interaction": [
+     -0.5631946806173005,
+     -0.5829277027828397
+    ]
+   },
+   {
+    "line": "spending:medicare",
+    "items": [
+     "pension"
+    ],
+    "change": [
+     21.474019183316173,
+     21.474019183316173
+    ],
+    "sum_alone": [
+     21.474019183316173,
+     21.474019183316173
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:workers_compensation",
+    "items": [
+     "7"
+    ],
+    "change": [
+     -0.9482477443084474,
+     -0.7324104515720729
+    ],
+    "sum_alone": [
+     -0.9482477443084474,
+     -0.7324104515720729
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:housing_subsidies",
+    "items": [
+     "1"
+    ],
+    "change": [
+     -0.3954256602598569,
+     -0.3954256602598569
+    ],
+    "sum_alone": [
+     -0.3954256602598569,
+     -0.3954256602598569
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:roads_vmt_sl",
+    "items": [
+     "roads"
+    ],
+    "change": [
+     2.2404372452002734,
+     3.030125881417808
+    ],
+    "sum_alone": [
+     2.2205784094338608,
+     3.0040079349573983
+    ],
+    "interaction": [
+     0.019858835766412675,
+     0.02611794646040977
+    ]
+   },
+   {
+    "line": "spending:roads_vmt_fed",
+    "items": [
+     "roads"
+    ],
+    "change": [
+     0,
+     0.027541802369843216
+    ],
+    "sum_alone": [
+     0,
+     0.027304407836457635
+    ],
+    "interaction": [
+     0,
+     0.00023739453338558064
+    ]
+   },
+   {
+    "line": "spending:state_price_public_order_safety",
+    "items": [
+     "state"
+    ],
+    "change": [
+     6.412327012068853,
+     6.412327012068853
+    ],
+    "sum_alone": [
+     6.412327012068853,
+     6.412327012068853
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:state_price_health_services",
+    "items": [
+     "state"
+    ],
+    "change": [
+     1.7996316210259964,
+     1.7996316210259964
+    ],
+    "sum_alone": [
+     1.7996316210259964,
+     1.7996316210259964
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:state_price_recreation_culture",
+    "items": [
+     "state"
+    ],
+    "change": [
+     0.3663641118384557,
+     0.42790815869861065
+    ],
+    "sum_alone": [
+     0.3663641118384557,
+     0.42790815869861065
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "capital:hwy_sl",
+    "items": [
+     "roads"
+    ],
+    "change": [
+     0.9784105587981085,
+     1.984907519649088
+    ],
+    "sum_alone": [
+     0.9697381022760965,
+     1.9677987557376682
+    ],
+    "interaction": [
+     0.008672456522011984,
+     0.0171087639114198
+    ]
+   },
+   {
+    "line": "capital:hwy_fed",
+    "items": [
+     "roads"
+    ],
+    "change": [
+     0,
+     0.024680665872424262
+    ],
+    "sum_alone": [
+     0,
+     0.024467932693972433
+    ],
+    "interaction": [
+     0,
+     0.00021273317845182937
+    ]
+   },
+   {
+    "line": "capital:ent_housing_sl",
+    "items": [
+     "4"
+    ],
+    "change": [
+     -0.3528694248467621,
+     -0.529304137270143
+    ],
+    "sum_alone": [
+     -0.3528694248467621,
+     -0.529304137270143
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "production:P",
+    "items": [
+     "2"
+    ],
+    "change": [
+     0.459157279,
+     0.301567896
+    ],
+    "sum_alone": [
+     0.459157279,
+     0.301567896
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "production:F",
+    "items": [
+     "2"
+    ],
+    "change": [
+     1.18356217,
+     0.8058211149999988
+    ],
+    "sum_alone": [
+     1.18356217,
+     0.8058211149999988
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   }
+  ],
+  "cash": [
+   {
+    "line": "receipts:federal_income_tax",
+    "items": [
+     "3",
+     "6a"
+    ],
+    "change": [
+     -2.906338930895828,
+     -2.7081613946100873
+    ],
+    "sum_alone": [
+     -2.914571164080371,
+     -2.7196659400970304
+    ],
+    "interaction": [
+     0.008232233184543247,
+     0.01150454548694313
+    ]
+   },
+   {
+    "line": "receipts:state_local_income_tax",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.015631096666030686,
+     -0.006053248756582974
+    ],
+    "sum_alone": [
+     -0.015631096666030686,
+     -0.006053248756582974
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:personal_motor_vehicle",
+    "items": [
+     "state",
+     "roads"
+    ],
+    "change": [
+     -0.4906645156231808,
+     -0.5868230793322993
+    ],
+    "sum_alone": [
+     -0.5440046316660418,
+     -0.614931901369796
+    ],
+    "interaction": [
+     0.05334011604286104,
+     0.02810882203749676
+    ]
+   },
+   {
+    "line": "receipts:personal_property_tax",
+    "items": [
+     "5"
+    ],
+    "change": [
+     -1.325841016,
+     -1.325841016
+    ],
+    "sum_alone": [
+     -1.325841016,
+     -1.325841016
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:other_personal_tax",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.0002834003036520927,
+     -0.00010974869988761293
+    ],
+    "sum_alone": [
+     -0.0002834003036520927,
+     -0.00010974869988761293
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:employee_oasdi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.02539676403613811,
+     -0.027300069013413975
+    ],
+    "sum_alone": [
+     -0.02539676403613811,
+     -0.027300069013413975
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:employee_hi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.013496182416943725,
+     -0.01394514415103032
+    ],
+    "sum_alone": [
+     -0.013496182416943725,
+     -0.01394514415103032
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:self_employment_oasdi_hi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     0.7833754272816407,
+     0.8133565896969834
+    ],
+    "sum_alone": [
+     0.7833754272816407,
+     0.8133565896969834
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:employer_oasdi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.025616073607324097,
+     -0.02753581426112106
+    ],
+    "sum_alone": [
+     -0.025616073607324097,
+     -0.02753581426112106
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:employer_hi",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.01200504389373691,
+     -0.012404401663768994
+    ],
+    "sum_alone": [
+     -0.01200504389373691,
+     -0.012404401663768994
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:other_domestic_social_contributions",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.023654555118650222,
+     -0.024783854280840956
+    ],
+    "sum_alone": [
+     -0.023654555118650222,
+     -0.024783854280840956
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:corporate_labor",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     0,
+     0
+    ],
+    "sum_alone": [
+     0,
+     0
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:general_sales_tax",
+    "items": [
+     "6a",
+     "state"
+    ],
+    "change": [
+     -5.96444911848215,
+     -5.9556057400764
+    ],
+    "sum_alone": [
+     -5.931623999861117,
+     -5.923693551867956
+    ],
+    "interaction": [
+     -0.032825118621033766,
+     -0.03191218820844455
+    ]
+   },
+   {
+    "line": "receipts:modeled_owner_property",
+    "items": [
+     "5"
+    ],
+    "change": [
+     -19.049721026856325,
+     -19.049721026856325
+    ],
+    "sum_alone": [
+     -19.049721026856325,
+     -19.049721026856325
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:remaining_production_property",
+    "items": [
+     "5"
+    ],
+    "change": [
+     0,
+     0
+    ],
+    "sum_alone": [
+     0,
+     0
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:excise_selective_sales",
+    "items": [
+     "6a",
+     "roads"
+    ],
+    "change": [
+     -1.5790042636413517,
+     -1.5750723373475495
+    ],
+    "sum_alone": [
+     -1.6128488258618283,
+     -1.6079756164455326
+    ],
+    "interaction": [
+     0.033844562220476604,
+     0.032903279097983074
+    ]
+   },
+   {
+    "line": "receipts:customs_duties",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.03956384557529091,
+     -0.038463498055405054
+    ],
+    "sum_alone": [
+     -0.03956384557529091,
+     -0.038463498055405054
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:personal_current_transfers",
+    "items": [
+     "6a"
+    ],
+    "change": [
+     -0.06676963972960337,
+     -0.06491264614336778
+    ],
+    "sum_alone": [
+     -0.06676963972960337,
+     -0.06491264614336778
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:enterprise_surplus",
+    "items": [
+     "1"
+    ],
+    "change": [
+     -4.721933248710872,
+     -4.721933248710872
+    ],
+    "sum_alone": [
+     -4.721933248710872,
+     -4.721933248710872
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:housing_enterprise_surplus",
+    "items": [
+     "1"
+    ],
+    "change": [
+     3.426128600542746,
+     3.426128600542746
+    ],
+    "sum_alone": [
+     3.426128600542746,
+     3.426128600542746
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "receipts:tenant_occupied_property",
+    "items": [
+     "5"
+    ],
+    "change": [
+     -6.810763484929574,
+     -6.810763484929574
+    ],
+    "sum_alone": [
+     -6.810763484929574,
+     -6.810763484929574
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:workers_compensation",
+    "items": [
+     "7"
+    ],
+    "change": [
+     -0.9482477443084474,
+     -0.7324104515720729
+    ],
+    "sum_alone": [
+     -0.9482477443084474,
+     -0.7324104515720729
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:housing_subsidies",
+    "items": [
+     "1"
+    ],
+    "change": [
+     -0.3954256602598569,
+     -0.3954256602598569
+    ],
+    "sum_alone": [
+     -0.3954256602598569,
+     -0.3954256602598569
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:roads_vmt_sl",
+    "items": [
+     "roads"
+    ],
+    "change": [
+     2.2404372452002734,
+     3.030125881417808
+    ],
+    "sum_alone": [
+     2.2205784094338608,
+     3.0040079349573983
+    ],
+    "interaction": [
+     0.019858835766412675,
+     0.02611794646040977
+    ]
+   },
+   {
+    "line": "spending:roads_vmt_fed",
+    "items": [
+     "roads"
+    ],
+    "change": [
+     0,
+     0.027541802369843216
+    ],
+    "sum_alone": [
+     0,
+     0.027304407836457635
+    ],
+    "interaction": [
+     0,
+     0.00023739453338558064
+    ]
+   },
+   {
+    "line": "spending:state_price_public_order_safety",
+    "items": [
+     "state"
+    ],
+    "change": [
+     6.412327012068853,
+     6.412327012068853
+    ],
+    "sum_alone": [
+     6.412327012068853,
+     6.412327012068853
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:state_price_health_services",
+    "items": [
+     "state"
+    ],
+    "change": [
+     1.7996316210259964,
+     1.7996316210259964
+    ],
+    "sum_alone": [
+     1.7996316210259964,
+     1.7996316210259964
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "spending:state_price_recreation_culture",
+    "items": [
+     "state"
+    ],
+    "change": [
+     0.3663641118384557,
+     0.42790815869861065
+    ],
+    "sum_alone": [
+     0.3663641118384557,
+     0.42790815869861065
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "capital:hwy_sl",
+    "items": [
+     "roads"
+    ],
+    "change": [
+     0.9784105587981085,
+     1.984907519649088
+    ],
+    "sum_alone": [
+     0.9697381022760965,
+     1.9677987557376682
+    ],
+    "interaction": [
+     0.008672456522011984,
+     0.0171087639114198
+    ]
+   },
+   {
+    "line": "capital:hwy_fed",
+    "items": [
+     "roads"
+    ],
+    "change": [
+     0,
+     0.024680665872424262
+    ],
+    "sum_alone": [
+     0,
+     0.024467932693972433
+    ],
+    "interaction": [
+     0,
+     0.00021273317845182937
+    ]
+   },
+   {
+    "line": "capital:ent_housing_sl",
+    "items": [
+     "4"
+    ],
+    "change": [
+     -0.3528694248467621,
+     -0.529304137270143
+    ],
+    "sum_alone": [
+     -0.3528694248467621,
+     -0.529304137270143
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "production:P",
+    "items": [
+     "2"
+    ],
+    "change": [
+     0.459157279,
+     0.301567896
+    ],
+    "sum_alone": [
+     0.459157279,
+     0.301567896
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   },
+   {
+    "line": "production:F",
+    "items": [
+     "2"
+    ],
+    "change": [
+     1.18356217,
+     0.8058211149999988
+    ],
+    "sum_alone": [
+     1.18356217,
+     0.8058211149999988
+    ],
+    "interaction": [
+     0,
+     0
+    ]
+   }
+  ]
+ },
+ "touch": {
+  "1": [
+   "receipts:enterprise_surplus",
+   "receipts:housing_enterprise_surplus",
+   "spending:housing_subsidies"
+  ],
+  "2": [
+   "production:F",
+   "production:P"
+  ],
+  "3": [
+   "receipts:federal_income_tax"
+  ],
+  "4": [
+   "capital:ent_housing_sl"
+  ],
+  "5": [
+   "receipts:modeled_owner_property",
+   "receipts:personal_property_tax",
+   "receipts:remaining_production_property",
+   "receipts:tenant_occupied_property"
+  ],
+  "7": [
+   "spending:workers_compensation"
+  ],
+  "8": [
+   "capital:ent_transit_sl",
+   "receipts:enterprise_surplus",
+   "receipts:transit_enterprise_surplus"
+  ],
+  "10": [
+   "spending:medicaid_and_chip_other_medical"
+  ],
+  "6a": [
+   "receipts:corporate_labor",
+   "receipts:customs_duties",
+   "receipts:employee_hi",
+   "receipts:employee_oasdi",
+   "receipts:employer_hi",
+   "receipts:employer_oasdi",
+   "receipts:excise_selective_sales",
+   "receipts:federal_income_tax",
+   "receipts:general_sales_tax",
+   "receipts:other_domestic_social_contributions",
+   "receipts:other_personal_tax",
+   "receipts:personal_current_transfers",
+   "receipts:self_employment_oasdi_hi",
+   "receipts:state_local_income_tax"
+  ],
+  "pension": [
+   "receipts:federal_income_tax",
+   "spending:medicare",
+   "spending:social_security"
+  ],
+  "state": [
+   "receipts:general_sales_tax",
+   "receipts:personal_motor_vehicle",
+   "spending:state_price_health_services",
+   "spending:state_price_public_order_safety",
+   "spending:state_price_recreation_culture"
+  ],
+  "roads": [
+   "capital:hwy_fed",
+   "capital:hwy_sl",
+   "receipts:excise_selective_sales",
+   "receipts:personal_motor_vehicle",
+   "spending:roads_vmt_fed",
+   "spending:roads_vmt_sl"
+  ]
+ },
+ "shared_lines": [
+  {
+   "line": "receipts:federal_income_tax",
+   "items": [
+    "3",
+    "6a",
+    "pension"
+   ]
+  },
+  {
+   "line": "receipts:excise_selective_sales",
+   "items": [
+    "6a",
+    "roads"
+   ]
+  },
+  {
+   "line": "receipts:general_sales_tax",
+   "items": [
+    "6a",
+    "state"
+   ]
+  },
+  {
+   "line": "receipts:personal_motor_vehicle",
+   "items": [
+    "state",
+    "roads"
+   ]
+  }
+ ],
+ "overlaps": [
+  {
+   "line": "receipts:personal_motor_vehicle",
+   "items": [
+    "state",
+    "roads"
+   ],
+   "kind": "both move the line",
+   "does": {
+    "state": "x the state index 1.2624 on the group's amount (California's vehicle licence fee)",
+    "roads": "re-keyed from the adults key to the group's share of driver miles"
+   },
+   "rule": "licence_rule",
+   "why": "the index is a price and the miles share a quantity: price x quantity. The index weights states by the group's adults, so it assumes the group's miles are spread across states like its adults",
+   "set_amount": [
+    3.338642331065027,
+    3.338642331065027
+   ],
+   "sept27_amount": [
+    2.8479778154418462,
+    2.751819251732728
+   ],
+   "item_changes": {
+    "state": [
+     0.7472882581684615,
+     0.7220569641630972
+    ],
+    "roads": [
+     -0.2032836265024196,
+     -0.10712506279330114
+    ]
+   },
+   "set_change": [
+    0.4906645156231808,
+    0.5868230793322993
+   ],
+   "line_interaction": [
+    0.05334011604286104,
+    0.02810882203749676
+   ],
+   "chosen": "index_on_miles",
+   "alternatives": [
+    {
+     "value": "additive",
+     "base": "set",
+     "cost": [
+      371.36125967284386,
+      434.81284980209796
+     ],
+     "change": [
+      -0.05334011604287525,
+      -0.028108822037552272
+     ]
+    },
+    {
+     "value": "additive",
+     "base": "cash",
+     "cost": [
+      294.64773586420506,
+      361.789372987698
+     ],
+     "change": [
+      -0.05334011604284683,
+      -0.02810882203749543
+     ]
+    },
+    {
+     "value": "miles_only",
+     "base": "set",
+     "cost": [
+      372.10854793101225,
+      435.5349067662611
+     ],
+     "change": [
+      0.6939481421255778,
+      0.6939481421255778
+     ]
+    },
+    {
+     "value": "miles_only",
+     "base": "cash",
+     "cost": [
+      295.39502412237346,
+      362.51142995186103
+     ],
+     "change": [
+      0.6939481421255778,
+      0.6939481421255778
+     ]
+    },
+    {
+     "value": "index_only",
+     "base": "set",
+     "cost": [
+      371.15797604634145,
+      434.70572473930474
+     ],
+     "change": [
+      -0.25662374254528686,
+      -0.13523388483076815
+     ]
+    },
+    {
+     "value": "index_only",
+     "base": "cash",
+     "cost": [
+      294.44445223770265,
+      361.6822479249047
+     ],
+     "change": [
+      -0.25662374254525844,
+      -0.135233884830825
+     ]
+    }
+   ]
+  },
+  {
+   "line": "receipts:general_sales_tax",
+   "items": [
+    "6a",
+    "state"
+   ],
+   "kind": "both move the line",
+   "does": {
+    "6a": "x 6a's ratio (1.0057 personal, 1.0058 shared: the group's measured consumption scaled for misreported income)",
+    "state": "x the state index 1.1151 (Texas, Arizona and others tax sales above the US rate)"
+   },
+   "rule": "sales_rule",
+   "why": "the ratio corrects the quantity (consumption) and the index the rate per dollar: both multiply",
+   "set_amount": [
+    55.01430479626933,
+    55.00546141786358
+   ],
+   "sept27_amount": [
+    49.04985567778718,
+    49.04985567778718
+   ],
+   "item_changes": {
+    "6a": [
+     0.2851453873200569,
+     0.2772149393268961
+    ],
+    "state": [
+     5.64647861254106,
+     5.64647861254106
+    ]
+   },
+   "set_change": [
+    5.96444911848215,
+    5.9556057400764
+   ],
+   "line_interaction": [
+    -0.032825118621033766,
+    -0.03191218820844455
+   ],
+   "chosen": "multiplicative",
+   "alternatives": [
+    {
+     "value": "additive",
+     "base": "set",
+     "cost": [
+      371.44742490750775,
+      434.87287081234393
+     ],
+     "change": [
+      0.032825118621019556,
+      0.03191218820839481
+     ]
+    },
+    {
+     "value": "additive",
+     "base": "cash",
+     "cost": [
+      294.73390109886896,
+      361.84939399794393
+     ],
+     "change": [
+      0.0328251186210764,
+      0.03191218820842323
+     ]
+    }
+   ]
+  },
+  {
+   "line": "receipts:excise_selective_sales",
+   "items": [
+    "6a",
+    "roads"
+   ],
+   "kind": "both move the line",
+   "does": {
+    "6a": "x 6a's ratio (1.0057 personal, 1.0058 shared) on the whole line",
+    "roads": "the gasoline part ($71.711bn of $371.262bn) re-keyed from the consumption key to the miles share"
+   },
+   "rule": "excise_rule",
+   "why": "the miles share is measured driving, not income-based consumption, so 6a's income-misreporting ratio has nothing to scale on the gasoline part; it stays on the rest",
+   "set_amount": [
+    31.719825912436157,
+    31.715893986142355
+   ],
+   "sept27_amount": [
+    30.140821648794805,
+    30.140821648794805
+   ],
+   "item_changes": {
+    "6a": [
+     0.17522001124017095,
+     0.17034680182387518
+    ],
+    "roads": [
+     1.4376288146216574,
+     1.4376288146216574
+    ]
+   },
+   "set_change": [
+    1.5790042636413517,
+    1.5750723373475495
+   ],
+   "line_interaction": [
+    0.033844562220476604,
+    0.032903279097983074
+   ],
+   "chosen": "gasoline_at_miles",
+   "alternatives": [
+    {
+     "value": "additive",
+     "base": "set",
+     "cost": [
+      371.3807552266662,
+      434.80805534503753
+     ],
+     "change": [
+      -0.03384456222050858,
+      -0.03290327909800794
+     ]
+    },
+    {
+     "value": "additive",
+     "base": "cash",
+     "cost": [
+      294.6672314180274,
+      361.7845785306375
+     ],
+     "change": [
+      -0.03384456222048016,
+      -0.03290327909800794
+     ]
+    },
+    {
+     "value": "multiplicative",
+     "base": "set",
+     "cost": [
+      371.372397745905,
+      434.7999303020764
+     ],
+     "change": [
+      -0.04220204298172803,
+      -0.04102832205916229
+     ]
+    },
+    {
+     "value": "multiplicative",
+     "base": "cash",
+     "cost": [
+      294.6588739372662,
+      361.77645348767635
+     ],
+     "change": [
+      -0.042202042981699606,
+      -0.04102832205916229
+     ]
+    }
+   ]
+  },
+  {
+   "line": "road key (freight part) -> spending:roads_vmt_sl, roads_vmt_fed, capital:hwy_sl, hwy_fed",
+   "items": [
+    "6a",
+    "roads"
+   ],
+   "kind": "roads reads a key 6a moves",
+   "does": {
+    "6a": "raises the group's consumption key (read from the excise line) by its ratio (1.0057 personal, 1.0058 shared)",
+    "roads": "keys freight's 28.3% of highway cost at the consumption key"
+   },
+   "rule": "freight_key",
+   "why": "one consumption key across the account: if the group consumes 6a's ratio more, it also buys that much more of what freight hauls",
+   "set_amount": null,
+   "sept27_amount": null,
+   "item_changes": null,
+   "set_change": null,
+   "line_interaction": null,
+   "chosen": "set",
+   "alternatives": [
+    {
+     "value": "sept27",
+     "base": "set",
+     "cost": [
+      371.38606849659834,
+      434.7972817860519
+     ],
+     "change": [
+      -0.028531292288391796,
+      -0.04367683808365541
+     ]
+    },
+    {
+     "value": "sept27",
+     "base": "cash",
+     "cost": [
+      294.6725446879595,
+      361.7738049716518
+     ],
+     "change": [
+      -0.028531292288420218,
+      -0.04367683808365541
+     ]
+    }
+   ]
+  },
+  {
+   "line": "receipts:federal_income_tax",
+   "items": [
+    "3",
+    "6a",
+    "pension"
+   ],
+   "kind": "all three move the line",
+   "does": {
+    "3": "adds the IRS-matched key's shift (stack factor x national x share change)",
+    "6a": "x 6a's ratio (0.9963 personal, 0.9974 shared), applied after item 3 (v3's order)",
+    "pension": "drops the tax the group's 2024 benefits carry ($2.091bn shared, $1.817bn personal)"
+   },
+   "rule": "benefit_tax_rule",
+   "why": "the brief's re-pin drops the lane's measured dollars; the lane measured them on the Census key, and neither item 3 (a re-key by AGI bin) nor 6a says how much of its change falls on benefits",
+   "set_amount": [
+    111.99255054228722,
+    102.3384177121643
+   ],
+   "sept27_amount": [
+    111.17741741599531,
+    101.4471564394293
+   ],
+   "item_changes": {
+    "3": [
+     3.20053533254827,
+     3.0965681635101134
+    ],
+    "6a": [
+     -0.28596416846789907,
+     -0.376902223413083
+    ],
+    "pension": [
+     -2.0912058046039306,
+     -1.8169001218750935
+    ]
+   },
+   "set_change": [
+    0.8151331262919115,
+    0.8912612727349938
+   ],
+   "line_interaction": [
+    0.008232233184529036,
+    0.01150454548694313
+   ],
+   "chosen": "fixed",
+   "alternatives": [
+    {
+     "value": "proportional",
+     "base": "set",
+     "cost": [
+      371.4692669414767,
+      434.8894613021861
+     ],
+     "change": [
+      0.05466715258995691,
+      0.04850267805056774
+     ]
+    }
+   ]
+  },
+  {
+   "line": "OASDI receipts -> spending:social_security",
+   "items": [
+    "6a",
+    "pension"
+   ],
+   "kind": "the accrual reads receipts 6a moves",
+   "does": {
+    "6a": "moves employee and employer OASDI (x 1.0005 personal, 1.0005 shared) and self-employment tax (x 0.8803 personal, 0.8937 shared)",
+    "pension": "sets social_security to ratio_net x the group's OASDI receipts"
+   },
+   "rule": "accrual_receipts",
+   "why": "payroll tax buys the accrual, so the accrual follows the receipts the set itself books (v3's rule)",
+   "set_amount": null,
+   "sept27_amount": null,
+   "item_changes": null,
+   "set_change": null,
+   "line_interaction": null,
+   "chosen": "set",
+   "alternatives": [
+    {
+     "value": "sept27",
+     "base": "set",
+     "cost": [
+      371.977794469504,
+      435.42388632691836
+     ],
+     "change": [
+      0.5631946806172721,
+      0.5829277027828539
+     ]
+    }
+   ]
+  },
+  {
+   "line": "HI receipts -> spending:medicare (Part A accrual)",
+   "items": [
+    "6a",
+    "pension"
+   ],
+   "kind": "a read the switch does not make",
+   "does": {
+    "6a": "moves employee and employer HI and self-employment tax",
+    "pension": "swaps Part A's cash share for the lane's Part A accrual, a fixed amount"
+   },
+   "rule": "part_a_rule",
+   "why": "the lane's Part A accrual comes from its lifetime model of covered workers, not from the case's HI receipts (v3's rule)",
+   "set_amount": null,
+   "sept27_amount": null,
+   "item_changes": null,
+   "set_change": null,
+   "line_interaction": null,
+   "chosen": "fixed",
+   "alternatives": [
+    {
+     "value": "hi_scaled",
+     "base": "set",
+     "cost": [
+      371.2456683503667,
+      434.65257997507433
+     ],
+     "change": [
+      -0.1689314385199907,
+      -0.18837864906120672
+     ]
+    }
+   ]
+  }
+ ],
+ "item3_6a_order": {
+  "rule": "6a's ratio applies after item 3's shift (v3's order)",
+  "additive_alternative_change_bn": [
+   -0.008232233184543247,
+   -0.01150454548695734
+  ]
+ },
+ "rules": [
+  {
+   "field": "licence_rule",
+   "value": "additive",
+   "chosen": "index_on_miles",
+   "base": "set",
+   "cost": [
+    371.36125967284386,
+    434.81284980209796
+   ],
+   "change": [
+    -0.05334011604287525,
+    -0.028108822037552272
+   ]
+  },
+  {
+   "field": "licence_rule",
+   "value": "additive",
+   "chosen": "index_on_miles",
+   "base": "cash",
+   "cost": [
+    294.64773586420506,
+    361.789372987698
+   ],
+   "change": [
+    -0.05334011604284683,
+    -0.02810882203749543
+   ]
+  },
+  {
+   "field": "licence_rule",
+   "value": "miles_only",
+   "chosen": "index_on_miles",
+   "base": "set",
+   "cost": [
+    372.10854793101225,
+    435.5349067662611
+   ],
+   "change": [
+    0.6939481421255778,
+    0.6939481421255778
+   ]
+  },
+  {
+   "field": "licence_rule",
+   "value": "miles_only",
+   "chosen": "index_on_miles",
+   "base": "cash",
+   "cost": [
+    295.39502412237346,
+    362.51142995186103
+   ],
+   "change": [
+    0.6939481421255778,
+    0.6939481421255778
+   ]
+  },
+  {
+   "field": "licence_rule",
+   "value": "index_only",
+   "chosen": "index_on_miles",
+   "base": "set",
+   "cost": [
+    371.15797604634145,
+    434.70572473930474
+   ],
+   "change": [
+    -0.25662374254528686,
+    -0.13523388483076815
+   ]
+  },
+  {
+   "field": "licence_rule",
+   "value": "index_only",
+   "chosen": "index_on_miles",
+   "base": "cash",
+   "cost": [
+    294.44445223770265,
+    361.6822479249047
+   ],
+   "change": [
+    -0.25662374254525844,
+    -0.135233884830825
+   ]
+  },
+  {
+   "field": "sales_rule",
+   "value": "additive",
+   "chosen": "multiplicative",
+   "base": "set",
+   "cost": [
+    371.44742490750775,
+    434.87287081234393
+   ],
+   "change": [
+    0.032825118621019556,
+    0.03191218820839481
+   ]
+  },
+  {
+   "field": "sales_rule",
+   "value": "additive",
+   "chosen": "multiplicative",
+   "base": "cash",
+   "cost": [
+    294.73390109886896,
+    361.84939399794393
+   ],
+   "change": [
+    0.0328251186210764,
+    0.03191218820842323
+   ]
+  },
+  {
+   "field": "excise_rule",
+   "value": "additive",
+   "chosen": "gasoline_at_miles",
+   "base": "set",
+   "cost": [
+    371.3807552266662,
+    434.80805534503753
+   ],
+   "change": [
+    -0.03384456222050858,
+    -0.03290327909800794
+   ]
+  },
+  {
+   "field": "excise_rule",
+   "value": "additive",
+   "chosen": "gasoline_at_miles",
+   "base": "cash",
+   "cost": [
+    294.6672314180274,
+    361.7845785306375
+   ],
+   "change": [
+    -0.03384456222048016,
+    -0.03290327909800794
+   ]
+  },
+  {
+   "field": "excise_rule",
+   "value": "multiplicative",
+   "chosen": "gasoline_at_miles",
+   "base": "set",
+   "cost": [
+    371.372397745905,
+    434.7999303020764
+   ],
+   "change": [
+    -0.04220204298172803,
+    -0.04102832205916229
+   ]
+  },
+  {
+   "field": "excise_rule",
+   "value": "multiplicative",
+   "chosen": "gasoline_at_miles",
+   "base": "cash",
+   "cost": [
+    294.6588739372662,
+    361.77645348767635
+   ],
+   "change": [
+    -0.042202042981699606,
+    -0.04102832205916229
+   ]
+  },
+  {
+   "field": "freight_key",
+   "value": "sept27",
+   "chosen": "set",
+   "base": "set",
+   "cost": [
+    371.38606849659834,
+    434.7972817860519
+   ],
+   "change": [
+    -0.028531292288391796,
+    -0.04367683808365541
+   ]
+  },
+  {
+   "field": "freight_key",
+   "value": "sept27",
+   "chosen": "set",
+   "base": "cash",
+   "cost": [
+    294.6725446879595,
+    361.7738049716518
+   ],
+   "change": [
+    -0.028531292288420218,
+    -0.04367683808365541
+   ]
+  },
+  {
+   "field": "benefit_tax_rule",
+   "value": "proportional",
+   "chosen": "fixed",
+   "base": "set",
+   "cost": [
+    371.4692669414767,
+    434.8894613021861
+   ],
+   "change": [
+    0.05466715258995691,
+    0.04850267805056774
+   ]
+  },
+  {
+   "field": "accrual_receipts",
+   "value": "sept27",
+   "chosen": "set",
+   "base": "set",
+   "cost": [
+    371.977794469504,
+    435.42388632691836
+   ],
+   "change": [
+    0.5631946806172721,
+    0.5829277027828539
+   ]
+  },
+  {
+   "field": "part_a_rule",
+   "value": "hi_scaled",
+   "chosen": "fixed",
+   "base": "set",
+   "cost": [
+    371.2456683503667,
+    434.65257997507433
+   ],
+   "change": [
+    -0.1689314385199907,
+    -0.18837864906120672
+   ]
+  }
+ ],
+ "beside": {
+  "items": [
+   {
+    "id": "8",
+    "name": "public transit at the riders' key (v3 item 8)",
+    "alone": [
+     0.16962866419854095,
+     0.18079940308004439
+    ],
+    "on_set": [
+     0.1696286641984841,
+     0.18079940307998754
+    ],
+    "on_cash": [
+     0.16962866419845568,
+     0.18079940307998754
+    ]
+   },
+   {
+    "id": "10",
+    "name": "hospitals' uninsured use at 0.7x (v3 item 10)",
+    "alone": [
+     -1.5335149370000067,
+     -2.2423796440000103
+    ],
+    "on_set": [
+     -1.5335149370000067,
+     -2.242379643999982
+    ],
+    "on_cash": [
+     -1.5335149370000067,
+     -2.242379643999982
+    ]
+   }
+  ],
+  "state_price_on_sl_capital_bn": {
+   "set": [
+    0.25897437701907433,
+    0.39390217868787686
+   ],
+   "cash": [
+    0.25897437701907433,
+    0.39390217868787686
+   ],
+   "sl_totals_bn": {
+    "public_order_safety": 440.09000004999996,
+    "health_services": 126.839,
+    "recreation_culture": 48.901
+   },
+   "by_line_set": {
+    "public_order_safety": [
+     0.08435526991995813,
+     0.1265329048799372
+    ],
+    "health_services": [
+     0.10385250294175659,
+     0.15577875441263486
+    ],
+    "recreation_culture": [
+     0.07076660415735964,
+     0.11159051939530477
+    ]
+   },
+   "rule": "sum over the three lines of the S&L capital return x (sum_f S&L_f (index_f - 1)) / the line's S&L total; not in the set"
+  },
+  "item5_lines_not_state_priced": [
+   {
+    "id": "tenant_occupied_property",
+    "amount": [
+     9.613707080075,
+     9.613707080075
+    ],
+    "effect": [
+     6.810763484929574,
+     6.810763484929574
+    ],
+    "response": [
+     0.708443,
+     0.708443
+    ]
+   },
+   {
+    "id": "personal_property_tax",
+    "amount": [
+     1.325841016,
+     1.325841016
+    ],
+    "effect": [
+     1.325841016,
+     1.325841016
+    ],
+    "response": [
+     1,
+     1
+    ]
+   }
+  ]
+ },
+ "gates_reproduced": {
+  "v3_rows": [
+   {
+    "key": "item1",
+    "set": "alone_1",
+    "d": [
+     -1.6912303084279756,
+     -1.6912303084279756
+    ],
+    "json": 0,
+    "csv": 0.00003030842797557831
+   },
+   {
+    "key": "item2",
+    "set": "alone_2",
+    "d": [
+     1.642719449000026,
+     1.1073890110000093
+    ],
+    "json": 5.684341886080802e-14,
+    "csv": 0.00004396038377763034
+   },
+   {
+    "key": "item3",
+    "set": "alone_3",
+    "d": [
+     -3.20053533254827,
+     -3.096568163510142
+    ],
+    "json": 0,
+    "csv": 0.000035332548270261555
+   },
+   {
+    "key": "item4",
+    "set": "alone_4",
+    "d": [
+     -0.35286942484674455,
+     -0.5293041372701452
+    ],
+    "json": 2.842170943040401e-14,
+    "csv": 0.00004918788641816718
+   },
+   {
+    "key": "item5",
+    "set": "alone_5",
+    "d": [
+     -27.18632552778587,
+     -27.18632552778587
+    ],
+    "json": 5.684341886080802e-14,
+    "csv": 0.00003146260763742248
+   },
+   {
+    "key": "item6a_proportional_rule",
+    "set": "alone_6a",
+    "d": [
+     0.38655759584199245,
+     0.5271886469338654
+    ],
+    "json": 2.842170943040401e-14,
+    "csv": 0.000043596317595984146
+   },
+   {
+    "key": "item7",
+    "set": "v3_item7_three_lines",
+    "d": [
+     -2.006884473487048,
+     -1.5500834802033125
+    ],
+    "json": 2.842170943040401e-14,
+    "csv": 0.000028530819577099464
+   },
+   {
+    "key": "item8",
+    "set": "alone_8",
+    "d": [
+     0.16962866419854095,
+     0.18079940308004439
+    ],
+    "json": 2.842170943040401e-14,
+    "csv": 0.000045647536239812325
+   },
+   {
+    "key": "item10",
+    "set": "alone_10",
+    "d": [
+     -1.5335149370000067,
+     -2.2423796440000103
+    ],
+    "json": 5.684341886080802e-14,
+    "csv": 0.00004205339348573034
+   },
+   {
+    "key": "candidate_switch_off",
+    "set": "v3_candidate",
+    "d": [
+     -33.81453417624712,
+     -33.73635340544777
+    ],
+    "json": 2.842170943040401e-14,
+    "csv": 0.000046594552230772024
+   }
+  ],
+  "state": {
+   "per_line": [
+    {
+     "id": "public_order_safety",
+     "got": [
+      6.412327012068853,
+      6.412327012068853
+     ],
+     "want": [
+      6.41232701303,
+      6.41232701303
+     ],
+     "gap": 9.61146717770589e-10
+    },
+    {
+     "id": "health_services",
+     "got": [
+      1.7996316210259964,
+      1.7996316210259964
+     ],
+     "want": [
+      1.799631617,
+      1.799631617
+     ],
+     "gap": 4.025996425127687e-9
+    },
+    {
+     "id": "recreation_culture",
+     "got": [
+      0.3663641118384557,
+      0.42790815869861065
+     ],
+     "want": [
+      0.366364112,
+      0.4279081589
+     ],
+     "gap": 2.0138934964109012e-10
+    }
+   ],
+   "receipts": [
+    {
+     "id": "general_sales_tax",
+     "got": [
+      5.646478612541063,
+      5.646478612541063
+     ],
+     "want": [
+      5.646478621,
+      5.646478621
+     ],
+     "gap": 8.458936662236738e-9
+    },
+    {
+     "id": "personal_motor_vehicle",
+     "got": [
+      0.7472882581684615,
+      0.7220569641630972
+     ],
+     "want": [
+      0.7472882574,
+      0.7220569634
+     ],
+     "gap": 7.684614056202577e-10
+    }
+   ]
+  },
+  "roads_parts": {
+   "opex_bn": [
+    2.2205784094338608,
+    3.031312342793856
+   ],
+   "capital_bn": [
+    0.9697381022760965,
+    1.9922666884316407
+   ],
+   "gasoline_bn": [
+    1.4376288146216556,
+    1.4376288146216556
+   ],
+   "licences_bn": [
+    -0.2032836265024196,
+    -0.10712506279330114
+   ]
+  },
+  "pension": {
+   "alone_bn": [
+    399.09607547964964,
+    460.97645946656655
+   ],
+   "change_bn": [
+    77.27671848925613,
+    73.60640451718285
+   ]
+  }
+ },
+ "pension": {
+  "file": "pension_accrual_2026_09_28/derived/summary.json",
+  "commit": "9ea1beb",
+  "sha256": "2397bb58f395b0fce3d0162d597f25e4093b49eb904b149f3cb7c5c59d86b8a0",
+  "same_at_head": true,
+  "same_in_working_tree": true,
+  "ratio_net": 0.9736673650311839,
+  "part_a_accrual_bn": 41.13712783048602,
+  "part_a_share": 0.3751126329068301,
+  "se_oasdi_share": 0.8034959757706692,
+  "receipt_bn": {
+   "shared": 2.0912058046039226,
+   "personal": 1.8169001218750982
+  },
+  "case_bn": [
+   321.81935699039354,
+   387.37005494938376
+  ],
+  "case_on_accrual_net_bn": [
+   399.0960754796496,
+   460.9764594665666
+  ],
+  "delta_net_bn": [
+   77.27671848925608,
+   73.60640451718287
+  ],
+  "central": {
+   "career_start": true,
+   "mapping": "individual_age_adjusted",
+   "method": "EAN",
+   "mortality": "general",
+   "rate": "new_issue",
+   "scenario": "payable",
+   "spouse": false,
+   "unauthorized": "note151_long_run"
+  },
+  "scheduled_ratio_net": 1.2405762664674715
+ },
+ "inputs": {
+  "pension_accrual_2026_09_28/derived/summary.json": "2397bb58f395b0fce3d0162d597f25e4093b49eb904b149f3cb7c5c59d86b8a0",
+  "state_priced_services_2026_09_29/derived/net_state_correction.csv": "934e350f41515bed8a242676958caecdac59f08d14cff9d801c5908278e12928",
+  "state_priced_services_2026_09_29/derived/corrections.csv": "faa2f7692b19e59d78db16eddf60d612839c501712819752e22441be42a2bde7",
+  "state_priced_services_2026_09_29/derived/receipts_corrections.csv": "4c28816fa601c25fc5d868db6be111ef12b96678b849b7672c31450f89184266",
+  "roads_mileage_key_2026_09_29/derived/inputs.json": "6ae66b18aab6d9ee5f88c45af6fc1d34ffc793ddbc7b7784e2aeca0b0eb0c1c5",
+  "roads_mileage_key_2026_09_29/derived/summary.json": "c700869ed1210f852e2f01a387e5bf06951c0634a30410c1fccc21b1b8993928",
+  "roads_mileage_key_2026_09_29/derived/keys.csv": "fdd66e3c5930bc97239c370c7e7c263fd28600c47ac1f45f5f4e304b8a3400e4",
+  "main_case_candidate_v3_2026_09_28/derived/summary.json": "ad68efe3fa0f49ac8867398e1567bece6d9c8c321404797177db9595ce4d3b8a",
+  "main_case_candidate_v3_2026_09_28/derived/fixed_specs.csv": "893ac70b5e3405f81fb87a4f1b81a5715158fc2d0159282f8e21684a358a28b8",
+  "main_case_long_run_2026_09_27/derived/summary.json": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d",
+  "main_case_long_run_2026_09_27/derived/per_spec.csv": "02819b547df9fb267031a5b1bd7434395c5ec7dbc47b6cac42ab71c5a8ce79c1",
+  "main_case_candidate_2026_09_28/derived/production_row4.json": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+  "main_case_candidate_v4_2026_09_29/package.cjs": "47dbc843a870cfa1461fcd7d8e8d8f765239189ef420468e1caf35effc74d68b",
+  "main_case_candidate_v3_2026_09_28/package.cjs": "8896705eab97ec3e6e177948cbd8003e09fc444aa0e3d59ca24a9cb1e5b17f72",
+  "main_case_candidate_v2_2026_09_28/package.cjs": "029cf65a0ec698f2786c30da06892ff2584c28ec5ad91c30124250550f30d3b8",
+  "main_case_candidate_2026_09_28/package.cjs": "ed7f3dc5d8d9cb2728a3ceca6c3dffbdb86083c147c6f6a153baad0c5ebd1ca5",
+  "main_case_long_run_2026_09_27/package.cjs": "b4f22b35371c715771d8e53436acfc6320c214ab5abf686714020eb2c8fe2a7a",
+  "receipt_side_long_run_2026_09_28/items.cjs": "b8a88b3aa38f0990ca2c3f1b5ef51d42b306ead1894d2d29b5816909dd7aec23",
+  "payroll_compliance_2026_09_28/derived/items.json": "813359ff693e1462d004259fd469c1fc1fa2d53656f6ec6875eae6971b6c8cb5",
+  "backcast_pandemic_measured_2026_09_28/derived/ratio_vs_2024.csv": "04e93220cc99e62e45d2063c776b34f3151df009382f9a0c3b4bd6b024a3f2ff",
+  "assumption_explorer_2026_09_21/engine.js": "091ca31219c678ec84ee89b7c0837f4e9d43dcefc6bd1fe47d82337956a666e0"
+ }
+}
