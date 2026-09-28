@@ -1,0 +1,217 @@
+{
+ "question": "the road part of economic_affairs_services keyed by driver VMT (passenger) and the consumption key (freight), gasoline taxes and personal motor vehicle licences keyed by the same VMT; a candidate, not an adoption",
+ "adopted_band_bn": [
+  321.819357,
+  387.370055
+ ],
+ "inputs": {
+  "highways_bn": {
+   "sl": 201.005,
+   "federal": 1.827
+  },
+  "gasoline_taxes_bn": 71.710986,
+  "gasoline_share_of_state_motor_fuel_tax": 0.758884,
+  "licences_bn": 26.125,
+  "passenger_share_of_cost": {
+   "all_levels": 0.7168094987312682,
+   "federal": 0.6037342958284168,
+   "state_local": 0.7505621237397548
+  },
+  "nhts_ratios": {
+   "2017_national": 0.8930224334206464,
+   "2017_southwest": 0.8743346355559202,
+   "2022_national": 0.6915187415244346
+  },
+  "under5_share": {
+   "group": 0.07969548582519363,
+   "others": 0.0518011264384497
+  },
+  "diesel_and_truck_taxes": "diesel (federal $10.379bn and the diesel part of State motor-fuel taxes) and the federal truck excises stay at the consumption key, which is where freight is keyed; business licences sit in other_production_taxes at response 0"
+ },
+ "by_ratio": {
+  "2017_southwest": {
+   "spending_bn": [
+    3.190317,
+    5.023579
+   ],
+   "receipts_bn": [
+    1.234345,
+    1.330504
+   ],
+   "cost_change_bn": [
+    1.955971,
+    3.693075
+   ],
+   "line_arithmetic_bn": [
+    1.955971,
+    3.693075
+   ],
+   "case_bn": [
+    323.775328,
+    391.06313
+   ],
+   "opex_bn": [
+    2.220578,
+    3.031312
+   ],
+   "capital_bn": [
+    0.969738,
+    1.992267
+   ],
+   "gasoline_bn": [
+    1.437629,
+    1.437629
+   ],
+   "licences_bn": [
+    -0.203284,
+    -0.107125
+   ]
+  },
+  "2017_national": {
+   "spending_bn": [
+    3.487245,
+    5.491132
+   ],
+   "receipts_bn": [
+    1.424194,
+    1.520352
+   ],
+   "cost_change_bn": [
+    2.063051,
+    3.97078
+   ],
+   "line_arithmetic_bn": [
+    2.063051,
+    3.97078
+   ],
+   "case_bn": [
+    323.882408,
+    391.340835
+   ],
+   "opex_bn": [
+    2.427252,
+    3.313442
+   ],
+   "capital_bn": [
+    1.059993,
+    2.17769
+   ],
+   "gasoline_bn": [
+    1.576782,
+    1.576782
+   ],
+   "licences_bn": [
+    -0.152589,
+    -0.05643
+   ]
+  },
+  "2022_national": {
+   "spending_bn": [
+    0.21634,
+    0.340657
+   ],
+   "receipts_bn": [
+    -0.667139,
+    -0.570981
+   ],
+   "cost_change_bn": [
+    0.88348,
+    0.911637
+   ],
+   "line_arithmetic_bn": [
+    0.88348,
+    0.911637
+   ],
+   "case_bn": [
+    322.702837,
+    388.281692
+   ],
+   "opex_bn": [
+    0.150581,
+    0.205558
+   ],
+   "capital_bn": [
+    0.065759,
+    0.135099
+   ],
+   "gasoline_bn": [
+    0.043895,
+    0.043895
+   ],
+   "licences_bn": [
+    -0.711034,
+    -0.614876
+   ]
+  }
+ },
+ "central_ratio": "2017_southwest",
+ "variants_central_ratio": [
+  {
+   "label": "central: all-levels passenger share, under-5 adjustment, licences at the VMT key",
+   "cost_change_bn": [
+    1.955971,
+    3.693075
+   ]
+  },
+  {
+   "label": "NHTS ratio applied per resident (no under-5 adjustment)",
+   "cost_change_bn": [
+    2.107684,
+    4.086531
+   ]
+  },
+  {
+   "label": "passenger share of S&L cost responsibility only (0.751)",
+   "cost_change_bn": [
+    2.100418,
+    3.920526
+   ]
+  },
+  {
+   "label": "passenger share of federal cost responsibility only (0.604)",
+   "cost_change_bn": [
+    1.472058,
+    2.931088
+   ]
+  },
+  {
+   "label": "licences left at the adults key",
+   "cost_change_bn": [
+    1.752688,
+    3.58595
+   ]
+  }
+ ],
+ "gates": [
+  {
+   "gate": "(1) probe reproduces the adopted band $321.8194 / $387.3701bn",
+   "pass": true,
+   "detail": "321.819357 / 387.370055"
+  },
+  {
+   "gate": "evaluation shares, road capital keys and responses are the model's cells and the adopted subfunction responses",
+   "pass": true,
+   "detail": "hotdeck low: k_old 0.080780 (resources), k_cons 0.081364, adults 0.109014, r_line 0.3840, r_sl 0.7392, r_fed 0; hotdeck high: k_old 0.080780 (resources), k_cons 0.081364, adults 0.105333, r_line 0.6386, r_sl 1.0000, r_fed 1; matched low: k_old 0.080440 (resources), k_cons 0.081006, adults 0.109014, r_line 0.3840, r_sl 0.7392, r_fed 0; matched high: k_old 0.080440 (resources), k_cons 0.081006, adults 0.105333, r_line 0.6386, r_sl 1.0000, r_fed 1"
+  },
+  {
+   "gate": "(3) all-resident shares sum to 1 under each new key (VMT, road blend; all ratios, allocations, methods, variants)",
+   "pass": true,
+   "detail": "passenger + freight cost responsibility = 1.0 (all levels 0.7168 passenger)"
+  },
+  {
+   "gate": "(2) engine delta equals line arithmetic to $0.01bn (2017_southwest)",
+   "pass": true,
+   "detail": "engine 1.955971 / 3.693075, lines 1.955971 / 3.693075, max |diff| 5.31e-14; synthetic responses and capital keys took; receipt totals hold"
+  },
+  {
+   "gate": "(2) engine delta equals line arithmetic to $0.01bn (2017_national)",
+   "pass": true,
+   "detail": "engine 2.063051 / 3.970780, lines 2.063051 / 3.970780, max |diff| 7.28e-14; synthetic responses and capital keys took; receipt totals hold"
+  },
+  {
+   "gate": "(2) engine delta equals line arithmetic to $0.01bn (2022_national)",
+   "pass": true,
+   "detail": "engine 0.883480 / 0.911637, lines 0.883480 / 0.911637, max |diff| 7.21e-14; synthetic responses and capital keys took; receipt totals hold"
+  }
+ ]
+}

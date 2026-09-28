@@ -1,0 +1,193 @@
+{
+ "cached_sources": {
+  "hcas_final_five.cfm.html": {
+   "sha256": "d497a4c6182d74313f1941b6acc8a9c0cab739cc56124449b8e1429d04267e8f",
+   "url": "https://www.fhwa.dot.gov/policy/hcas/final/five.cfm"
+  },
+  "hcas_table_v21.gif": {
+   "sha256": "854e57bfcb4af1944650ed8e6ecaa1d0aebd2e434de9e1ef277ed4d2a7a02190",
+   "url": "https://web.archive.org/web/2016id_/http://www.fhwa.dot.gov/policy/hcas/final/five/img27.gif"
+  },
+  "hs2023_mf1.xlsx": {
+   "sha256": "075082fc0fe3d96300ceaf40e1c5f420d006fc2549198f4817cac35d2611556f",
+   "url": "https://web.archive.org/web/2025id_/https://www.fhwa.dot.gov/policyinformation/statistics/2023/xls/mf1.xlsx"
+  },
+  "hs2023_mf121t.html": {
+   "sha256": "57f642fab6408248d7a5e4fbf650f6947ab0091fad1fe664ea6c4f66619eb494",
+   "url": "https://www.fhwa.dot.gov/policyinformation/statistics/2023/mf121t.cfm"
+  },
+  "hs2023_mf2.html": {
+   "sha256": "0e1c21d679ea4cdf509f971487ee2664209ff317ddf5cab8bdc2a7b887ad11da",
+   "url": "https://web.archive.org/web/2025id_/https://www.fhwa.dot.gov/policyinformation/statistics/2023/mf2.cfm"
+  }
+ },
+ "gates": [
+  {
+   "detail": "d497a4c6182d",
+   "gate": "cached source hcas_final_five.cfm.html is the pinned fetch",
+   "pass": true
+  },
+  {
+   "detail": "854e57bfcb4a",
+   "gate": "cached source hcas_table_v21.gif is the pinned fetch",
+   "pass": true
+  },
+  {
+   "detail": "075082fc0fe3",
+   "gate": "cached source hs2023_mf1.xlsx is the pinned fetch",
+   "pass": true
+  },
+  {
+   "detail": "0e1c21d679ea",
+   "gate": "cached source hs2023_mf2.html is the pinned fetch",
+   "pass": true
+  },
+  {
+   "detail": "57f642fab640",
+   "gate": "cached source hs2023_mf121t.html is the pinned fetch",
+   "pass": true
+  },
+  {
+   "detail": "69b5c7aefb38",
+   "gate": "BEA Section 3 workbook is the account's pinned vintage",
+   "pass": true
+  },
+  {
+   "detail": "Excise taxes B234RC 99964",
+   "gate": "NIPA T30500-A line 4 is Excise taxes (B234RC)",
+   "pass": true
+  },
+  {
+   "detail": "Gasoline B2000C 26864",
+   "gate": "NIPA T30500-A line 5 is Gasoline (B2000C)",
+   "pass": true
+  },
+  {
+   "detail": "Diesel fuel B2003C 10379",
+   "gate": "NIPA T30500-A line 8 is Diesel fuel (B2003C)",
+   "pass": true
+  },
+  {
+   "detail": "Excise taxes LA000239 271298",
+   "gate": "NIPA T30500-A line 23 is Excise taxes (LA000239)",
+   "pass": true
+  },
+  {
+   "detail": "Gasoline LA000241 59096",
+   "gate": "NIPA T30500-A line 25 is Gasoline (LA000241)",
+   "pass": true
+  },
+  {
+   "detail": "Motor vehicle licenses LA000356 15010",
+   "gate": "NIPA T30500-A line 40 is Motor vehicle licenses (LA000356)",
+   "pass": true
+  },
+  {
+   "detail": "Motor vehicle licenses S21030 26125",
+   "gate": "NIPA T30400-A line 10 is Motor vehicle licenses (S21030)",
+   "pass": true
+  },
+  {
+   "detail": "371.262",
+   "gate": "excise_selective_sales is Table 3.5 lines 4 + 23 ($371.262bn in model.json)",
+   "pass": true
+  },
+  {
+   "detail": "26.125",
+   "gate": "personal_motor_vehicle is Table 3.4 line 10 ($26.125bn in model.json)",
+   "pass": true
+  },
+  {
+   "detail": "51 rows; gasoline 139,277,196, special fuels 44,274,566 thousand gallons",
+   "gate": "MF-2 has 51 State rows whose gallons add to the printed total",
+   "pass": true
+  },
+  {
+   "detail": "51 States; missing []",
+   "gate": "MF-121T gives a gasoline and a diesel rate for every MF-2 State",
+   "pass": true
+  },
+  {
+   "detail": "62.11 vs 54.95 $bn (+13.0%)",
+   "gate": "gallons x rates are within 15% of MF-1 gross State motor-fuel collections (level control)",
+   "pass": true
+  },
+  {
+   "detail": "0.7589 vs 0.7588",
+   "gate": "gasoline share: rate-weighted and gallon-weighted agree within 1 point",
+   "pass": true
+  },
+  {
+   "detail": "11 class rows",
+   "gate": "V-21 rows: federal + state + local = total within rounding (2)",
+   "pass": true
+  },
+  {
+   "detail": "(17396, 50049, 22387, 89832) vs (17396, 50049, 22387, 89832)",
+   "gate": "V-21 'All Passenger Vehicles' row equals its class rows",
+   "pass": true
+  },
+  {
+   "detail": "(3153, 5551, 3447, 12151) vs (3153, 5551, 3447, 12151)",
+   "gate": "V-21 'All Single Unit Trucks' row equals its class rows",
+   "pass": true
+  },
+  {
+   "detail": "total 125,322m, autos 64,184m",
+   "gate": "V-21 total matches the page text ($125bn; autos $64bn of $125bn)",
+   "pass": true
+  },
+  {
+   "detail": "2017_national 0.8930, 2017_southwest 0.8743, 2022_national 0.6915",
+   "gate": "three NHTS driver-VMT ratios read",
+   "pass": true
+  },
+  {
+   "detail": "39,712,493.331",
+   "gate": "row-4 union headcount is the account's 39,712,493",
+   "pass": true
+  }
+ ],
+ "hcas_v21": {
+  "buses_share_all_levels": 0.006950096551283893,
+  "passenger_share": {
+   "all_levels": 0.7168094987312682,
+   "federal": 0.6037342958284168,
+   "state_local": 0.7505621237397548
+  },
+  "source": "FHWA, 1997 Federal Highway Cost Allocation Study, Table V-21 (2000, all levels of government), page five.cfm image img27.gif",
+  "total_m": [
+   28814,
+   66642,
+   29867,
+   125322
+  ]
+ },
+ "nhts_age_source": "congestion_2026_09_23/derived/nhts_ratios.csv (r_all_driver_vmt_per_person_H_vs_N); main_case_decomposition_2026_09_29/derived/age_bins.csv (row4, extra|pop, bins 0-4)",
+ "nhts_driver_vmt_ratio_per_person_5plus": {
+  "2017_national": 0.8930224334206464,
+  "2017_southwest": 0.8743346355559202,
+  "2022_national": 0.6915187415244346
+ },
+ "nipa_2024": {
+  "business_motor_vehicle_licences_bn": 15.01,
+  "federal_diesel_bn": 10.379,
+  "federal_excise_bn": 99.964,
+  "federal_gasoline_bn": 26.864,
+  "personal_motor_vehicle_licences_bn": 26.125,
+  "sl_excise_bn": 271.298,
+  "sl_motor_fuel_bn": 59.096,
+  "source": "Section3All_xls.xlsx (sha256 69b5c7aefb38), Table 3.5 lines 4, 5, 8, 23, 25, 40 and Table 3.4 line 10, 2024"
+ },
+ "state_fuel": {
+  "gasoline_share_of_state_motor_fuel_tax": 0.7588836214223513,
+  "gasoline_share_of_taxed_gallons": 0.7587897521790066,
+  "implied_state_motor_fuel_tax_bn": 62.110206724,
+  "mf1_gross_collections_bn": 54.951111987999994,
+  "source": "FHWA Highway Statistics 2023, MF-2 net volume taxed at prevailing rates x MF-121T rates (31 Dec 2023); control MF-1 gross tax collections"
+ },
+ "under5_share": {
+  "group": 0.07969548582519363,
+  "others": 0.0518011264384497
+ }
+}
