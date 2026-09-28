@@ -1,0 +1,33 @@
+figure,end,published_bn,row4_bn,move_bn,proportional_bn,published_per_member,row4_per_member,note
+cost: union rough,low,310.7556,317.0066,6.2510,301.7583,7598.5735,7982.5405,
+cost on accrual: union rough,low,395.2787,397.9665,2.6878,383.8342,9665.3257,10021.1927,
+cost: A1,low,153.6003,152.5477,-1.0526,149.1531,3755.8225,3841.3027,
+cost on accrual: A1,low,77.6731,79.0283,1.3552,75.4242,1899.2568,1990.0113,
+cost: A3,low,-19.4375,-8.3468,11.0907,-18.8747,-475.2842,-210.1796,
+cost on accrual: A3,low,76.5767,82.7389,6.1622,74.3596,1872.4485,2083.4473,
+"delta: A1, cash, white ages",low,157.1554,164.4589,7.3035,152.6052,3842.7510,4141.2378,
+"delta: A3, cash, union ages",low,330.1931,325.3533,-4.8398,320.6330,8073.8577,8192.7201,
+"delta: A1, accrual (payable)",low,317.6056,318.9382,1.3326,308.4100,7766.0689,8031.1813,the union's accrual per tax dollar on row-4 weights (white_accrual.py)
+delta: A1 against the engine's union,low,168.2191,169.2716,1.0526,163.3486,4113.2806,4262.4282,the engine's $321.8/387.4bn is on 39.71M already; only the white slice moves
+cost: union rough,high,359.0405,364.7342,5.6937,348.6452,8779.2327,9184.3703,
+cost on accrual: union rough,high,443.5636,445.6942,2.1306,430.7211,10845.9849,11223.0225,
+cost: A1,high,204.4200,202.6035,-1.8165,198.5014,4998.4634,5101.7574,
+cost on accrual: A1,high,128.4929,129.0841,0.5913,124.7726,3141.8977,3250.4661,
+cost: A3,high,32.7136,42.7394,10.0258,31.7664,799.9101,1076.2213,
+cost on accrual: A3,high,128.7278,133.8251,5.0973,125.0007,3147.6428,3369.8481,
+"delta: A1, cash, white ages",high,154.6205,162.1307,7.5102,150.1438,3780.7693,4082.6129,
+"delta: A3, cash, union ages",high,326.3270,321.9948,-4.3321,316.8788,7979.3226,8108.1490,
+"delta: A1, accrual (payable)",high,315.0708,316.6101,1.5393,305.9485,7704.0872,7972.5564,the union's accrual per tax dollar on row-4 weights (white_accrual.py)
+delta: A1 against the engine's union,high,182.9500,184.7665,1.8165,177.6531,4473.4805,4652.6050,the engine's $321.8/387.4bn is on 39.71M already; only the white slice moves
+state residual,low,-0.0000,-0.0000,-0.0000,-0.0000,-0.0000,-0.0001,"rough union less its region pieces, spread by persons (the lane's gate: under $1bn)"
+"delta: local whites, California",low,184.8974,186.8960,1.9986,179.5440,14132.8793,14285.6453,
+"delta: local whites, Texas",low,83.6278,85.1235,1.4957,81.2065,8567.1410,8720.3614,
+"delta: local whites, rest of US",low,143.7519,135.4709,-8.2810,139.5898,7963.0661,8031.1170,
+"delta: local whites, Los Angeles metro",low,84.7376,85.4591,0.7215,82.2842,18816.3864,18976.5984,
+"delta: local whites, sum of CA, TX and rest",low,412.2771,407.4904,-4.7868,400.3404,10080.9694,10261.0117,
+state residual,high,-0.0000,-0.0000,-0.0000,-0.0000,-0.0001,-0.0001,"rough union less its region pieces, spread by persons (the lane's gate: under $1bn)"
+"delta: local whites, California",high,181.9410,183.9905,2.0495,176.6733,13906.9060,14063.5598,
+"delta: local whites, Texas",high,82.3894,83.9213,1.5319,80.0040,8440.2699,8597.2071,
+"delta: local whites, rest of US",high,141.8233,133.9563,-7.8670,137.7170,7856.2303,7941.3272,
+"delta: local whites, Los Angeles metro",high,83.0467,83.7839,0.7372,80.6422,18440.9030,18604.6125,
+"delta: local whites, sum of CA, TX and rest",high,406.1537,401.8681,-4.2856,394.3943,9931.2394,10119.4376,

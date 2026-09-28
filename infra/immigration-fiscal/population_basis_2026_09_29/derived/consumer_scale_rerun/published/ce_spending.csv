@@ -1,0 +1,8 @@
+category,per_cu_all_usd,per_person_all_usd,per_person_mexican_ref_usd,ratio_mex_to_all,group_total_bn,others_total_bn
+food_home,6224.06,2540.03,2303.94,0.9071,94.2233,769.67
+electricity,1822.91,743.93,576.88,0.7754,23.5923,229.426
+natural_gas,521.12,212.67,147.71,0.6946,6.041,66.2894
+telephone,1449.26,591.44,512.95,0.8673,20.9779,180.1781
+reading,125.41,51.18,17.34,0.3388,0.7092,16.6976
+cable_satellite_tv,457.01,186.51,74.93,0.4018,3.0645,60.3681
+internet,694.34,283.36,205.03,0.7236,8.3851,87.9885

@@ -57,6 +57,14 @@ On September 29 (decision 2026-09-29-crash-item-with-against-without) the crash 
 from evidence plus the composition term). The fault-based row, damage in crashes the group's drivers cause, sits
 beside and is never added.
 
+Per-member rows divide by the population each column prices (September 29, population_basis_2026_09_29). The
+September 23 case priced the published CPS union (band_variants.json target_population, 40,896,574); the adopted
+cases price audit row 4's union (39,712,493; main_case_decomposition_2026_09_29/derived/headcount.csv). Their social
+rows stay on the lanes' published union, except in column pairing_on_priced_count: the population lane's restatement
+of the case's pairing with every row on row 4's count and the crash and congestion rows' NHTS ratios on persons aged
+5+ (restated_pairing.csv, section pairing_5plus), after gates that the lane started from this script's own pairing
+and divided by the same count.
+
 Inputs: DIR/band_variants.csv (node band_variants.cjs --case CASE: engine bands on the September 23 case,
 September 24 and the case) and the channel lanes' derived files (PATHS). Reads only; writes
 DIR/real_costs_totals.csv and .json. Run from the repository root, after band_variants.cjs:
@@ -89,6 +97,7 @@ PATHS = dict(
     care=FISCAL / "care_household_services_2026_09_23/derived/summary.csv",
     mobility=FISCAL / "labor_mobility_insurance_2026_09_23/derived/insurance_summary.json",
     scale=FISCAL / "scale_spillovers_2026_09_23/derived/summary.csv",
+    headcount=FISCAL / "main_case_decomposition_2026_09_29/derived/headcount.csv",
 )
 # Each case's main-case lane and default output directory (None: --out-dir only), as in band_variants.cjs.
 LANES = dict(sept24="main_case_2026_09_24", sept26="main_case_2026_09_26",
@@ -118,6 +127,8 @@ SOCIAL_ITEMS = dict(sept27=(
     (FISCAL / "trade_networks_2026_09_28/derived/items.csv", ("total_trade_travel_fdi",),
      "decisions/2026-09-28-social-items-more-benefits.md", "benefit"),
 ))
+# Cases whose published pairing is restated on the priced count (population_basis_2026_09_29).
+RESTATED = dict(sept27=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv")
 UNION = ("mexican_origin", "union")  # the lanes' labels for the same 40.9m group
 # Runs of band_variants.cjs beside a case, never in its band (the case's column; the row label, its note).
 BESIDE = dict(capital_at_7pct=("capital_at_7pct", "the return on public capital at the reported 7% on every component; "
@@ -247,6 +258,12 @@ def social_items(sources):
     return sums(detail), sums([d for d in detail if d["kind"] == "cost"]), detail
 
 
+def priced_count(path):
+    """(audit row 4's union, the published CPS union): the adopted cases price the first."""
+    row = next(r for r in csv.DictReader(path.open()) if r["cut"] == "all" and r["group"] == "union")
+    return float(row["row4"]), float(row["published"])
+
+
 def half_up(x, places):
     # Rounding to 9 places first removes float noise from sums of one-decimal rows (57.8 - 0.65).
     return float(Decimal(repr(round(float(x), 9))).quantize(Decimal(1).scaleb(-places), ROUND_HALF_UP))
@@ -284,19 +301,26 @@ def main():
         paths.update(case_corrections=FISCAL / LANES[case] / "derived" / "corrections.json", congestion_long_run=LONG_RUN[case])
     if case in SOCIAL_ITEMS:
         paths.update({f"social_items_{p.parent.parent.name}": p for p, *_ in SOCIAL_ITEMS[case]})
+    if case in RESTATED:
+        paths["restated"] = RESTATED[case]
     bands = pd.read_csv(paths["bands"]).set_index(["case", "variant"])
     meta = json.loads(paths["bands_meta"].read_text())
     summaries = dict(sept24=json.loads(paths["main24"].read_text()))
     if later:
         summaries[case] = json.loads(paths["main_case"].read_text())
     pop_m = meta["target_population"] / 1e6
-    band = lambda k, v: (float(bands.loc[(k, v), "cost_low_bn"]), float(bands.loc[(k, v), "cost_high_bn"]))  # noqa: E731
+    priced, published_union = priced_count(paths["headcount"])
+    pop = dict(sept23=pop_m, **{k: priced / 1e6 for k in adopted})  # the population each column prices, millions
+    band = lambda k, v:(float(bands.loc[(k, v), "cost_low_bn"]), float(bands.loc[(k, v), "cost_high_bn"]))  # noqa: E731
     print("[inputs]")
     c = channels()
     care24 = -meta["care_constant_bn"]
     gate("care constant is the package's -4.15 and the lane's total rounds to it", care24 == 4.15 and round(c["care"], 2) == 4.15,
          f"{care24} / {c['care']:.4f}")
     gate(f"band file is the {case} run", meta.get("case", "sept24") == case, rel(paths["bands_meta"]))
+    gate("the headcount's published union is the band file's target population, and row 4 prices fewer people",
+         abs(published_union - meta["target_population"]) < 1 and 39e6 < priced < published_union,
+         f"{published_union:,.1f} / {meta['target_population']:,.1f}; row 4 {priced:,.1f}")
     for k in adopted:
         gate(f"band file's adopted {k} band equals {LANES[k]} summary.json",
              all(abs(a - b) < 1e-9 for a, b in zip(band(k, "adopted"), summaries[k]["main_case"])))
@@ -352,7 +376,7 @@ def main():
     victims = {"hispanic": c["victims_equal"], "custody": c["victims_custody"]}
     memo7 = {"hispanic": dict(fiscal=(198.9, 245.4), total=(248, 300), per=(6.1, 7.3)),
              "custody": dict(fiscal=(203.2, 249.6), total=(256, 307), per=(6.3, 7.5))}
-    per_member = lambda vals: {k: v / pop_m for k, v in vals.items()}  # noqa: E731
+    per_member = lambda vals: {k: v / pop[k] for k, v in vals.items()}  # noqa: E731
     print("[§7: central values on two footings]")
     for col in ("hispanic", "custody"):
         soc = {k: social(c, victims[col], congestion=cong[k], items=items[k][0]) for k in cols}
@@ -434,7 +458,25 @@ def main():
             for i, end in enumerate(("low", "high")):
                 add("7", column, f"published pairing ({end})", {case: pairing[i]},
                     note=note + ("; decision 4's victims on the Hispanic footing" if i == 0 else "; custody footing"))
-                add("7", column, f"published pairing per group member ({end})", {case: pairing[i] / pop_m}, unit="$k", note=note)
+                add("7", column, f"published pairing per group member ({end})", {case: pairing[i] / pop[case]}, unit="$k", note=note)
+    if case in RESTATED:
+        # The pairing on the population the account prices: the population lane restates each row, then divides.
+        print("[§7: the pairing on the priced count]")
+        own = (fiscal[case]["hispanic"][0] + socm[case][0],
+               fiscal[case]["custody"][1] + social(c, victims["custody"], congestion=cong[case], items=items[case][0])[1])
+        lane = {(r["section"], r["end"]): r for r in csv.DictReader(paths["restated"].open())}
+        note = (f"{rel(paths['restated'])} section pairing_5plus: every row on audit row 4's count, the crash and "
+                "congestion rows' NHTS ratios on persons aged 5+; low end Hispanic footing with decision 4's mixed-group "
+                "victims, high end custody footing")
+        for i, end in enumerate(("low", "high")):
+            p5, m5 = lane[("pairing_5plus", end)], lane[("per_member_5plus", end)]
+            gate(f"the population lane restated this script's own pairing ({end})",
+                 abs(float(p5["published"]) - own[i]) < 1e-6, f"{p5['published']} / {own[i]:.6f}")
+            gate(f"the population lane divided by the priced count ({end})",
+                 abs(float(m5["restated"]) - float(p5["restated"]) / pop[case]) < 1e-6, f"{m5['restated']} $k")
+            add("7", "pairing_on_priced_count", f"published pairing ({end})", {case: float(p5["restated"])}, note=note)
+            add("7", "pairing_on_priced_count", f"published pairing per group member ({end})",
+                {case: float(p5["restated"]) / pop[case]}, unit="$k", note=note)
 
     print("[§7b: custody footing, benefits priced]")
     soc = {k: social(c, c["victims_custody"], congestion=cong[k], items=cost_items[k][0]) for k in cols}
@@ -495,7 +537,8 @@ def main():
         for r in rows:
             w.writerow({k: (f"{v:.6f}" if isinstance(v, float) else v) for k, v in r.items()})
     shas = {rel(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths.values()}
-    doc = dict(channels=c, target_population_m=pop_m, care_constant_bn=care24, sources_sha256=shas)
+    doc = dict(channels=c, target_population_m=pop_m, per_member_population_m=pop, care_constant_bn=care24,
+               sources_sha256=shas)
     if later:
         doc = dict(case=case, columns=list(cols), **doc)
     if case in LONG_RUN:
