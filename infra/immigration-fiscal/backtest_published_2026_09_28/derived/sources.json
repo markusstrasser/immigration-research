@@ -1,0 +1,163 @@
+{
+ "parsed": {
+  "hcris_tally": {
+   "begin_max": "2023-09-28",
+   "begin_min": "2022-10-01",
+   "counts_by_year": {
+    "2020": 6059,
+    "2021": 6053,
+    "2022": 6064,
+    "2023": 6103
+   },
+   "dropped_above_total_costs": 1,
+   "dropped_negative": 21,
+   "missing_total_costs": 78,
+   "providers_in_two_states": 0,
+   "providers_kept": 4407,
+   "reports_50_states_dc": 6034,
+   "reports_in_file": 6103,
+   "reports_kept": 4437,
+   "reports_with_line30": 4459,
+   "year": 2023
+  },
+  "nae_meta": {
+   "all_undocumented_m": 10.3,
+   "count_m": 4.2,
+   "household_count_stated": false,
+   "share_pct": 40.8
+  },
+  "nas_table_8_1": {
+   "1994": {
+    "outlays": [
+     13511.0,
+     18454.0,
+     13617.0
+    ],
+    "outlays_ratio": 0.9659244790303451,
+    "population_m": [
+     29.9,
+     20.8,
+     212.2
+    ],
+    "receipts": [
+     8985.0,
+     12681.0,
+     11635.0
+    ],
+    "receipts_ratio": 0.7870278483114655
+   },
+   "2013": {
+    "outlays": [
+     15908.0,
+     19194.0,
+     17894.0
+    ],
+    "outlays_ratio": 0.9017564216258334,
+    "population_m": [
+     55.5,
+     23.3,
+     237.3
+    ],
+    "receipts": [
+     10887.0,
+     14534.0,
+     14286.0
+    ],
+    "receipts_ratio": 0.7942371441459417
+   }
+  }
+ },
+ "sources": {
+  "acs_b06011_2013": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/census/B06011_us_2013.json",
+   "sha256": "9253ed8abef9d85754e698b155288cb7f3d3e7750ca9bf5bcc466c393debf97f",
+   "title": "ACS 2013 1-year, B06011 median income by place of birth, United States",
+   "url": "https://api.census.gov/data/2013/acs/acs1?get=NAME,B06011_001E,B06011_004E,B06011_005E&for=us:1 (key omitted)"
+  },
+  "acs_b06011_2024": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/census/B06011_us_2024.json",
+   "sha256": "8168defb53ce6843ac1ee09fd8892e84930f82f836f0378693638a4f2567b381",
+   "title": "ACS 2024 1-year, B06011 median income by place of birth, United States",
+   "url": "https://api.census.gov/data/2024/acs/acs1?get=NAME,B06011_001E,B06011_004E,B06011_005E&for=us:1 (key omitted)"
+  },
+  "hcris_2020": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/hcris/CostReport_2020_Final.csv",
+   "sha256": "d485aad82c62cd391118045f8c45c5ff18af0fcb315ef3935803343f1b88fb58",
+   "title": "CMS Hospital Provider Cost Report, 2020 (data.cms.gov)",
+   "url": "https://data.cms.gov/sites/default/files/2025-11/bd432d70-3689-4e8e-a8a5-5e7bf5232cb6/CostReport_2020_Final.csv"
+  },
+  "hcris_2021": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/hcris/CostReport_2021_Final.csv",
+   "sha256": "95c97a48cdd3cb52ed27c4f9e988c0c28e8f8a0796cf42588ead67d0e367c3ed",
+   "title": "CMS Hospital Provider Cost Report, 2021 (data.cms.gov)",
+   "url": "https://data.cms.gov/sites/default/files/2025-11/7e94fd9d-9ef2-4275-b993-299e30f5b371/CostReport_2021_Final.csv"
+  },
+  "hcris_2022": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/hcris/CostReport_2022_Final.csv",
+   "sha256": "a661e206201a405f57548f6705e66269f740e6694540e9645529f2591d839b89",
+   "title": "CMS Hospital Provider Cost Report, 2022 (data.cms.gov)",
+   "url": "https://data.cms.gov/sites/default/files/2025-11/c298e529-8bee-401a-bbd8-a38e74e19ab2/CostReport_2022_Final.csv"
+  },
+  "hcris_2023": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/hcris/CostReport_2023_Final.csv",
+   "sha256": "614f3d94dfeb84092ca775f90913ab4f843233a4fa90c3df3013efeb5221a757",
+   "title": "CMS Hospital Provider Cost Report, 2023 (data.cms.gov)",
+   "url": "https://data.cms.gov/sites/default/files/2026-01/3c39f483-c7e0-4025-8396-4df76942e10f/CostReport_2023_Final.csv"
+  },
+  "hcris_dictionary": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/hcris/dictionary_update_2024-03.pdf",
+   "sha256": "40342bb506d4c39ad6a3306d188f414e97e683c8c7241aa5e0975bdc59c87b81",
+   "title": "CMS, Hospital Provider Cost Report Data Dictionary (update, March 2024)",
+   "url": "https://data.cms.gov/sites/default/files/2024-03/9756088d-5280-4090-80b9-449d31ef25a3/Cost%20Report%20Data%20Dictionary%20Update.pdf"
+  },
+  "kff_dates": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/kff/dw_ZJUAA_5_dataset.csv",
+   "sha256": "0ac75d1cbb38913b3ff6648086d1ef2d84b1428963d0b788f758a1474a0f90b0",
+   "title": "KFF, Status of State Medicaid Expansion Decisions, map data (Datawrapper ZJUAA v5)",
+   "url": "https://datawrapper.dwcdn.net/ZJUAA/5/dataset.csv"
+  },
+  "kff_page": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/kff/status_of_expansion.html",
+   "sha256": "31fe12f4b5f180029ad7bb1c1e407afe16efcc3d2f854972c419b9cbdd3d3690",
+   "title": "KFF, Status of State Medicaid Expansion Decisions (published 21 August 2026), embedding ZJUAA",
+   "url": "https://www.kff.org/affordable-care-act/issue-brief/status-of-state-medicaid-expansion-decisions/"
+  },
+  "nae_2021": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/aic/wb_nae_undoc_by_country_2021.html",
+   "sha256": "ff404e07f325526c92b24411ff64e6416ebb2061de179921ee95e255e428b14a",
+   "title": "New American Economy, Examining the Economic Contributions of Undocumented Immigrants by Country of Origin (8 March 2021), Tables 4 and 5",
+   "url": "https://web.archive.org/web/20211227214554id_/https://research.newamericaneconomy.org/report/contributions-of-undocumented-immigrants-by-country/"
+  },
+  "nas_2017": {
+   "accessed": "2026-09-28",
+   "path": "sources/immigration-fiscal/data/external/nas_2016/23550.pdf",
+   "sha256": "c6fffc8f764e257b6a19794171e61e6b1bfc7e29f36187db0aaef532b475d68f",
+   "title": "National Academies, The Economic and Fiscal Consequences of Immigration (2017), Table 8-1, printed p. 389 (PDF page 414)",
+   "url": "https://doi.org/10.17226/23550"
+  },
+  "prm2_ch40": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/hcris/prm2_ch40_r18.pdf",
+   "sha256": "bcd279d6c175a9ee26dee9648725c3b8ffdba823bdf0f03cb5ec9e76e449842f",
+   "title": "CMS, Provider Reimbursement Manual Part 2, chapter 40, Transmittal 18 (12-22), section 4012",
+   "url": "https://www.cms.gov/files/document/r18p240ipdf.pdf"
+  },
+  "s10_qa": {
+   "accessed": "2026-09-28",
+   "path": "infra/immigration-fiscal/backtest_published_2026_09_28/_cache/hcris/s10_ucc_qandas.pdf",
+   "sha256": "fbd0127a92aaeec8cc7cc2fef346fb5e6e3e6fc504284d44525306b009ee9d35",
+   "title": "CMS, Worksheet S-10 questions and answers following the 2018 IPPS final rule",
+   "url": "https://www.cms.gov/medicare/medicare-fee-for-service-payment/acuteinpatientpps/downloads/worksheet-s-10-ucc-qandas.pdf"
+  }
+ }
+}
