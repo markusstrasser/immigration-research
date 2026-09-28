@@ -76,6 +76,7 @@ Beside the account:
 - enterprises out: $305–364bn;
 - land [GAP]: $3.3 / $5.5bn per 10% of land-to-structure value;
 - congestion: $14.0 / $12.0bn, from $19.2bn, now that roads grow.
+- a typical budget year instead of 2024 (the average of 2015–2019 and 2022–2023, replayed on the back-cast): 10–20% less per member, $252–348bn at today's size [2026-09-29; [FAQ entry 18](immigration-objections-faq-2026-09-21.md)].
 
 The low side, with schools at the within-district 0.836, is $296–363bn. The outer range is $259–436bn ($291–408bn
 in quadrature). The sign break-even falls from 5.8–17.0% to 2.8–13.6%. The capital return is an imputed resource
