@@ -1,0 +1,13 @@
+industry,flagged,cps_wages_bn,row2_off_books_bn,slope_low_bn,slope_central_bn,slope_high_bn
+Construction,mexico_born,44.253292,20.964177,23.975548,26.538699,39.134514
+Construction,other_latin_american_born,25.734337,11.578888,13.942349,15.432882,22.757646
+Landscaping services,mexico_born,6.269966,2.970280,1.836912,3.690314,3.690314
+Landscaping services,other_latin_american_born,2.290978,1.030801,0.671188,1.348401,1.348401
+Services to buildings and dwellings,mexico_born,3.301602,1.564073,1.038816,2.438365,2.438365
+Services to buildings and dwellings,other_latin_american_born,4.900154,2.204772,1.541785,3.618960,3.618960
+Restaurants and other food services,mexico_born,12.928922,6.124837,0.000000,0.098518,7.594190
+Restaurants and other food services,other_latin_american_born,12.494093,5.621583,0.000000,0.095205,7.338780
+all industries,mexico_born,136.765629,64.790181,,,
+outside the four,mexico_born,70.011848,33.166815,0.000000,0.000000,0.000000
+all industries,other_latin_american_born,140.494091,63.213804,,,
+outside the four,other_latin_american_born,95.074528,42.777761,0.000000,0.000000,0.000000
