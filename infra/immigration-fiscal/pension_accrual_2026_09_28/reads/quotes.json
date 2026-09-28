@@ -460,5 +460,46 @@
       "102.8 7.3 2.3",
       "47.8 3.4 1.1"
     ]
+  },
+  "note2025_1_transition_costs_2025": {
+    "doc": "an2025_1",
+    "value": {
+      "closed_group_transition_cost_tn": 52.2,
+      "maximum_transition_cost_tn": 54.1
+    },
+    "unit": "$tn at 1 January 2025, 100-year period; maximum transition cost = PV of accrued benefit obligations less reserves and the PV of taxes on those benefits; accrued obligations of workers under 62 = PIA as if disabled at the valuation date, wage-indexed to 62, x (age - 22) / 40",
+    "where": "Section 4, section 5 definitions, Table 3",
+    "fragments": [
+      "Table 3.—Closed-Group Transition Cost and Maximum Transition Cost for the",
+      "2025 4.755 52.2 7.6 2.6 54.1 7.8 2.7",
+      "The maximum transition cost concept excludes all future payroll taxes and includes the",
+      "(age as of the valuation date – 22) / 40.",
+      "(a) The present value of all future accrued benefit",
+      "(b) The value of the trust fund reserves on the valu-",
+      "from taxation of future accrued benefit obliga-"
+    ]
+  },
+  "note_mwr_benefit_scope": {
+    "doc": "an2025_7",
+    "value": "all retirement, disability and survivor benefits (not student or disabled-adult children); couples have two children, singles none; mortality and disability incidence graded by earnings",
+    "unit": "definitions",
+    "where": "text before Table A, and the discussion of Tables 1-3",
+    "fragments": [
+      "couples have two children, one on the joint 27th birthday",
+      "of retirement, disability, and survivor benefits, except for",
+      "This note does not include cases where a single",
+      "different levels of mortality and disability incidence"
+    ]
+  },
+  "note2025_1_abo_disability_proration": {
+    "doc": "an2025_1",
+    "value": "workers disabled before normal retirement age: PIA as if disabled today, indexed to the date of disability, x (age at valuation - 20) / (age at disability - 21)",
+    "unit": "definition",
+    "where": "Section 5, accrued benefit obligations, case b",
+    "fragments": [
+      "is indexed to the date of disability by the",
+      "(age as of the valuation date – 20) /",
+      "(age as of the date of disability – 21)."
+    ]
   }
 }

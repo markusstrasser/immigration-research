@@ -2,12 +2,15 @@ claude-opus-5-5
 
 **Verdict:** On an accrual basis for Social Security (OASDI) and Medicare Part A, the September 27 case becomes
 **$437.8bn / $497.8bn** at specifications 48 / 11 under the central arm, up $116.0bn / $110.4bn from
-$321.8bn / $387.4bn. The national check passes: against the Statement of Social Insurance at 1 January 2025, the
-lane's route predicts the OASDI 15–61 and HI 15–64 rows within the declared tolerance (ratios +4.6% and +1.7%,
-levels 3.8–8.0% low). The check also cut the central by $5.9bn, because the Part A spouse credit counted dependents
-twice (bec1cd7: $443.8bn / $503.7bn). One setting at a time gives $377–460bn at 48 and $439–519bn at 11; every
-combination spans $348–519bn / $413–575bn. The lifetime model's own formula fails both validations, so under the
-operator's rule the case stays on cash and this figure stays beside it. [CALCULATION: `pension_accrual.py` →
+$321.8bn / $387.4bn. The central is the ratio route, the route decision 2026-09-19 rejected: SSA's money's-worth
+ratios applied to each year's taxes. The national check says those ratios, applied to the actual population
+through the lane's frame, reproduce SSA's own aggregate. Against the Statement of Social Insurance at 1 January
+2025 the OASDI 15–61 ratio comes out 4.6% high and the HI 15–64 ratio 1.7% high, with levels 3.8–8.0% low, all
+within the declared tolerance. The check also cut the central by $5.9bn, because the Part A spouse credit counted
+dependents twice (bec1cd7: $443.8bn / $503.7bn). One setting at a time gives $377–460bn at 48 and $439–519bn at 11;
+every combination spans $348–519bn / $413–575bn. The lifetime model's own formula falls 20% short by construction and
+decides nothing. Whether accrual can rest on SSA's ratios or needs an extended formula model goes to the operator
+(recommended: SSA's ratios); until then the figure stays beside the case. [CALCULATION: `pension_accrual.py` →
 `derived/summary.json`, `derived/case_beside.csv`; `national_check.py` → `derived/national_score.json`]
 
 Lane `pension_accrual_2026_09_28` (worker W2, 2026-09-28): the September 27 case ($321.82–387.37bn at
@@ -207,8 +210,9 @@ September 19 ledger, a different object. They agree in direction and are not com
 
 Decision 2026-09-19 (program ownership) rejected "adding whole-career SSA money's-worth ratios as annual
 entitlement accrual". Its trigger for revisiting is "an independently validated pension accrual model". The lane's
-ratio route passes the independent national check; the lifetime model's own formula fails it and the model-worker
-check below (see "National check: score").
+ratio route, the construction that decision rejected, passes the independent national check. The lifetime model's
+own formula falls short of it by construction, as it falls short of the model-worker check below (see "National
+check: score").
 
 `lifetime_model.py` builds SSA's scaled workers from the benefit formula and the Trustees' 2025 assumptions:
 
@@ -444,6 +448,9 @@ DOCS `ssa_afr2025`, `cms_fr2025`; `reads/quotes.json` `afr_sosi_basis`, `cms_sos
 [SOURCE: SSA FY 2025 AFR, Statements of Social Insurance; CMS FY 2025 Financial Report, Statement of Social
 Insurance; CALCULATION: `derived/national_score.csv`]
 
+The two OASDI rows combined are **not blind** (TR Table VI.F2's $102.8tn / $47.8tn were seen before the freeze):
+cost 93.90 against 101.78 (−7.7%), income 43.61 against 47.77 (−8.7%). The split by age and the HI rows are blind.
+
 **The score leaves the central alone** under the declared rule, which scales only on a miss. Step d changes Part A
 for a different reason (below). For reference [CALCULATION: `derived/national_score.json` `central_mapping`]:
 
@@ -451,22 +458,36 @@ for a different reason (below). For reference [CALCULATION: `derived/national_sc
   (−$6.5bn at 48, −$6.1bn at 11).
 - Scaling Part A to the published 15–64 expenditures would give $48.3bn instead of $45.4bn (+$3.0bn).
 
-**The formula route fails,** as it failed Note 2025.7's model workers (0.667–0.825). Its cost falls 20% short for
-the reason named there: the lifetime model leaves out disability, child and young-survivor benefits, the family
-maximum and mortality by earnings. The ratio route carries them through Note 2025.7's published ratios.
+### The formula route: where its gap sits
+
+The lifetime model leaves out disability, children's and young survivors' benefits, the family maximum and
+mortality graded by earnings, so it misses the level by construction and decides nothing. It enters only the 15–61
+row; on the 62+ row both routes value CPS benefits the same way. [CALCULATION: `derived/national_score.json`
+`formula_gap`]
+
+- **Age row.** The formula route is $15.1tn short on the 15–61 row. Of that, $12.2tn (81%) is its distance from
+  the ratio route, the benefits the model leaves out; $2.9tn is common to both routes.
+- **Age band.** The left-out benefits are about 18% of the ratio route's cost for participants aged 15–34 and 15%
+  for those aged 45–61. Formula over ratio route: 0.820 (15–24), 0.819 (25–34), 0.830 (35–44), 0.845 (45–54),
+  0.847 (55–61). The young have more years exposed to disability and to death with young children. [INFERENCE]
+- **Benefit type.** The model-worker check, as model over Note 2025.7 Table 1 averaged over levels and cohorts:
+  single men 0.785, single women 0.768, one-earner couples 0.750, two-earner couples 0.743. Note 2025.7 gives
+  single workers no children, so their 21–23% is disability benefits with the mortality and disability incidence
+  graded by earnings. Couples lose 2–4 points more: children's and young survivors' benefits, net of the family
+  maximum. [SOURCE: `reads/quotes.json` `note_mwr_benefit_scope`; CALCULATION: `derived/model_check_mwr.csv`]
 
 ### Where the gaps come from
 
 The parent's named differences for OASDI 15–61 (ratio 4.6% high, income 8.0% low):
 
 - **DI and young-survivor benefits.** The ratio route has them; the formula route leaves them out, which fits its
-  −20%.
-  Disability benefits paid before 2025 sit inside lifetime ratios but outside the SOSI's future cost (frozen:
+  −20%. Disability benefits paid before 2025 sit inside lifetime ratios but outside the SOSI's future cost (frozen:
   published lower on the ratio, about 1%). Consistent in direction.
 - **Auxiliaries.** Note 2025.1 sets a participant's age by the worker on whose account benefits are paid. The
-  SOSI therefore books spouses', children's and survivors' benefits in the worker's row, as the ratio route does.
-  My frozen item on children under 15 ("published lower by 1–2%") was wrong and is withdrawn. [SOURCE:
-  `reads/quotes.json` `note2025_1_age_by_account`]
+  SOSI then books spouses', children's and survivors' benefits in the worker's row, as the ratio route does. The
+  AFR does not state its convention; reading it as Note 2025.1's is an inference from the shared closed-group
+  concept. On that reading my frozen item on children under 15 ("published lower by 1–2%") was wrong and is
+  withdrawn. [SOURCE: `reads/quotes.json` `note2025_1_age_by_account`; INFERENCE]
   - The one piece that can overstate is the one-earner couple: a spouse with no 2024 wages may still collect on
     their own record. Pricing every one-earner couple as a two-earner couple removes the spousal benefit and gives
     1.624, 2.9% below the published ratio. The lane's 1.751 is 4.6% above it. [CALCULATION:
@@ -492,8 +513,9 @@ The parent's named differences for OASDI 15–61 (ratio 4.6% high, income 8.0% l
 The rows beside:
 
 - **OASDI 62+, levels 19–21% low, ratio +1.9%.**
-  - The SOSI's row holds every future benefit on the accounts of workers now 62+, including survivor benefits their
-    younger spouses will draw. The prediction values only the step-up between linked spouses who both collect.
+  - On the same reading, the SOSI's row holds every future benefit on the accounts of workers now 62+, including
+    survivor benefits their younger spouses will draw. The prediction values only the step-up between linked
+    spouses who both collect.
   - The Social Security Fairness Act (enacted 5 January 2025) raised benefits for people with non-covered pensions.
     It is in the valuation (the SOSI books −$1,048bn for changes in law, open group), and CPS 2024 benefits predate
     it. [SOURCE: `reads/quotes.json` `afr_ssfa_in_valuation`]
@@ -568,19 +590,45 @@ Step d asked for a check that the spouse credit does not double count. It does, 
 
 The national HI check tests the construction without the credit: its 15–64 row counts each person once.
 
+### Accrued benefits at 1 January 2025 (step e, the stock only)
+
+OCACT's maximum transition cost at 1 January 2025 is $54.1tn. It is the present value of accrued benefit
+obligations less the reserves ($2.7tn) and the tax on those benefits. For a worker under 62 the accrued benefit is
+a PIA computed as if disabled on the valuation date, wage-indexed to 62, times (age − 22) / 40. A worker who will be
+disabled before normal retirement age accrues by service up to the date of disability. [SOURCE: `reads/quotes.json`
+`note2025_1_transition_costs_2025`, `note2025_1_abo_disability_proration`]
+
+- Take the 62+ row's published cost as its accrued obligations: $25.8tn after the cost loading. The MTC then
+  implies $34.3tn accrued by today's 15–61-year-olds, 46% of that row's published benefits.
+- The ratio route's entry-age attribution (past taxes × their ratio) gives $26.3tn, 36% of its own row, and 0.77 of
+  the implied figure.
+- The row totals nearly agree (−3.8%), so the difference is attribution. OCACT's measure puts more of the lifetime
+  on service to date than entry-age normal does, most visibly for disability [INFERENCE from the definitions]. It
+  is not a pass-or-fail test; the roll-forward stays skipped. [CALCULATION: `derived/national_score.json`
+  `stock_check`]
+
 ### Adoption
 
-The operator's rule (relayed 07:39) admits accrual to the case only if the formula model passes both validations. It
-fails both: 0.667–0.825 of Note 2025.7's model workers, and a cost 20% low with a ratio 11% low against the SOSI.
-**The case stays on cash, and the accrual stays beside it.**
+Under the operator's 07:39 condition, the formula model had to pass both checks. It falls short of both, by
+construction. The lead has since returned the question to the operator: can accrual rest on SSA's ratios now that
+the ratio route passes nationally, or does it need an extended formula model? The model is not extended here.
 
-The ratio route, which produces the figure, passes the national check. The operator's rule did not ask for that
-check. **Recommendation: treat the pass as meeting decision 2026-09-19's revisit trigger for the ratio route, and
-put that route into the next case revision with cash beside.** The formula model fails for omissions that the ratio
-route does not share (disability, young survivors, the family maximum). The one independent test that could have
-failed the ratio route did not. The check leaves two things open. It does not test the group-specific settings
-(careers from arrival, the 10% unauthorized credit). It brackets the auxiliary assignment but does not pin it
-(1.24 against 1.30).
+**Recommendation: rest accrual on SSA's ratios, and put the ratio route into the next case revision with cash
+beside.**
+
+- The ratio route passed the one independent test that could have failed it, with the prediction frozen before the
+  published rows were opened.
+- An extended formula model would rebuild what Note 2025.7 already publishes: disability, children's and young
+  survivors' benefits, the family maximum, and mortality and disability incidence graded by earnings. It would then
+  need its own validation against the same tables.
+- The lifetime model stays where the lane uses it now: for ratios to its own result (careers from arrival, the
+  discount rate, the attribution).
+
+The check leaves three things open:
+
+- the group-specific settings (careers from arrival, the 10% unauthorized credit);
+- the auxiliary assignment, which the check brackets but does not pin (1.24 against 1.30 per tax dollar);
+- the attribution, where entry-age normal puts less on service to date than OCACT's accrued-benefit measure.
 
 ### Reproduction
 
@@ -593,11 +641,12 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/pensi
   --allow-unrun infra/immigration-fiscal/pension_accrual_2026_09_28/sources.py
 ```
 
-This supersedes the command under "Gates and reproduction". The quote count there is now 39 (all verified). New
+This supersedes the command under "Gates and reproduction". The quote count there is now 42 (all verified). New
 files:
 
 - `derived/national_score.csv`: every row and measure against the published figure, with the test;
-- `derived/national_score.json`: the verdicts, the mapping to the central and the spouse check;
+- `derived/national_score.json`: the verdicts, the mapping to the central, the spouse check, the formula route's gap
+  and the stock comparison;
 - `derived/national_probes.csv`: the level and family probes;
 - `derived/national_levels.csv`: the level distribution against Note 2025.3 Table 1.
 
@@ -636,3 +685,11 @@ files:
   obligation, misses by 19%, so the comparison would test the annuity valuation rather than the attribution.
 - 2026-09-28 10:50 JST. Two consecutive reruns with `national_check.py` in the command (see "Reproduction" above):
   30/30 files identical, rc 0. The prediction file kept its frozen sha256 through both.
+- 2026-09-28 11:05 JST. Following the parent's settlement message (both routes frozen; the ratio route decides; the
+  formula model decides nothing): the Verdict now labels the ratio route as the route decision 2026-09-19 rejected
+  and says what the check shows; the formula route's gap is placed by age row, age band and benefit type; the
+  combined OASDI rows are marked not blind; the adoption question is put as SSA's ratios against an extended formula
+  model. The 1 January 2025 stock comparison against OCACT's maximum transition cost was cheap and is now run
+  (lane 0.77 of the implied accrued obligations for 15–61); the roll-forward stays skipped. No model extension.
+- 2026-09-28 11:15 JST. Two consecutive reruns after those edits: 30/30 files identical, rc 0; the prediction file
+  kept its frozen sha256. 42 quotes verified.
