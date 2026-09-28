@@ -192,6 +192,18 @@ Beside the fiscal headline, as social costs:
   222; [adopted 2026-09-25 as priced beside](../decisions/2026-09-25-school-dilution-priced-beside.md));
   it is not in the totals below. [2026-09-26: at the adopted school response of 1 nothing is left
   unfunded, so this applies only to the lower-response scenarios (ladder 230).]
+- [2026-09-28] fear and avoidance by non-victims, private security, property values and school
+  disruption, one method per item: **+$7.9bn** a year at central values (−$9.4bn to $30.2bn).
+  Fear is $10.5bn, security −$0.6bn and schools −$1.9bn, because Hispanic pupils are suspended
+  less often than others. Property values are 0, since a price discount is a transfer or already
+  priced. These items are not in the totals below and await the operator (ladder 258,
+  [lane](../infra/immigration-fiscal/social_costs_unpriced_2026_09_28/RESULT.md)).
+
+For comparison, a rough re-key of the September 27 case to non-Hispanic Black residents costs
+$549–595bn a year, $13.1–14.2k per member, 1.5–1.7× the Mexican-origin figure. The same four
+social items come to $51.0bn, and violent offences cost victims $185bn, $73bn of it outside the
+group. This is not an engine run (ladder 259,
+[lane](../infra/immigration-fiscal/black_comparator_rough_2026_09_28/RESULT.md)).
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
 **$248–304bn a year** at central values ($210–337bn full span) on the September 24 case
