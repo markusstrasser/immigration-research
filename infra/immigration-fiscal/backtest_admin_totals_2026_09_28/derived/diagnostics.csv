@@ -1,0 +1,43 @@
+frame,check,series,target,allocation,diagnostic,delta,se_hc3,gamma,slope,slope_se_hc1
+asec2025_adopted,1_refundable_credits,credits_ssn,soi_credits_total,shared,without CA,0.1388946971,0.3220908363,,,
+asec2025_adopted,1_refundable_credits,credits_ssn,soi_credits_total,shared,without TX,-0.0718648542,0.1442853183,,,
+asec2025_adopted,1_refundable_credits,credits_ssn,soi_credits_total,shared,other foreign-born control,0.1192839232,0.2024203124,0.4031030848,,
+asec2025_adopted,1_refundable_credits,credits_ssn,soi_credits_total,personal,without CA,0.1699968713,0.3393149371,,,
+asec2025_adopted,1_refundable_credits,credits_ssn,soi_credits_total,personal,without TX,-0.05883351445,0.1479101453,,,
+asec2025_adopted,1_refundable_credits,credits_ssn,soi_credits_total,personal,other foreign-born control,0.1346287292,0.2133274081,0.2052235571,,
+asec2025_adopted,1_refundable_credits,credits_ssn,soi_credits_total,,brief's slope on the group's share of residents,,,,0.2871366122,0.2622768797
+asec2025_published,1_refundable_credits,credits_ssn,soi_credits_total,shared,without CA,0.0815017061,0.3364057347,,,
+asec2025_published,1_refundable_credits,credits_ssn,soi_credits_total,shared,without TX,-0.2401318399,0.1034662704,,,
+asec2025_published,1_refundable_credits,credits_ssn,soi_credits_total,shared,other foreign-born control,-0.05246595871,0.2402122071,0.3443410641,,
+asec2025_published,1_refundable_credits,credits_ssn,soi_credits_total,personal,without CA,0.09690399145,0.3484263069,,,
+asec2025_published,1_refundable_credits,credits_ssn,soi_credits_total,personal,without TX,-0.2410333307,0.1091703987,,,
+asec2025_published,1_refundable_credits,credits_ssn,soi_credits_total,personal,other foreign-born control,-0.05001145598,0.2512391509,0.1695839041,,
+asec2025_published,1_refundable_credits,credits_ssn,soi_credits_total,,brief's slope on the group's share of residents,,,,0.06388843388,0.3671968366
+asec2025_adopted,2_ssi,ssi,ssa_ssi_fed_admin_2024,shared,without CA,0.1176267367,0.6125171186,,,
+asec2025_adopted,2_ssi,ssi,ssa_ssi_fed_admin_2024,shared,without TX,1.347633277,1.424958434,,,
+asec2025_adopted,2_ssi,ssi,ssa_ssi_fed_admin_2024,shared,other foreign-born control,0.7869739335,0.6148061988,1.28746133,,
+asec2025_adopted,2_ssi,ssi,ssa_ssi_fed_admin_2024,personal,without CA,0.09533682624,0.6205301698,,,
+asec2025_adopted,2_ssi,ssi,ssa_ssi_fed_admin_2024,personal,without TX,1.30960505,1.438256336,,,
+asec2025_adopted,2_ssi,ssi,ssa_ssi_fed_admin_2024,personal,other foreign-born control,0.7996456361,0.6120310324,1.169426665,,
+asec2025_adopted,2_ssi,ssi,ssa_ssi_fed_admin_2024,,brief's slope on the group's share of residents,,,,1.036482017,0.4380527218
+asec2025_published,2_ssi,ssi,ssa_ssi_fed_admin_2024,shared,without CA,0.1113761676,0.6095000482,,,
+asec2025_published,2_ssi,ssi,ssa_ssi_fed_admin_2024,shared,without TX,1.328247922,1.4282611,,,
+asec2025_published,2_ssi,ssi,ssa_ssi_fed_admin_2024,shared,other foreign-born control,0.7797045405,0.6151702096,1.293269993,,
+asec2025_published,2_ssi,ssi,ssa_ssi_fed_admin_2024,personal,without CA,0.08742102625,0.6154393698,,,
+asec2025_published,2_ssi,ssi,ssa_ssi_fed_admin_2024,personal,without TX,1.28526898,1.437983568,,,
+asec2025_published,2_ssi,ssi,ssa_ssi_fed_admin_2024,personal,other foreign-born control,0.7883604159,0.6142477161,1.174197815,,
+asec2025_published,2_ssi,ssi,ssa_ssi_fed_admin_2024,,brief's slope on the group's share of residents,,,,1.0247639,0.445844552
+asec2025_adopted,2_oasdi,social_security,ssa_oasdi_dec2024,shared,without CA,-0.05831106693,0.2624341734,,,
+asec2025_adopted,2_oasdi,social_security,ssa_oasdi_dec2024,shared,without TX,-0.04631248049,0.2667699641,,,
+asec2025_adopted,2_oasdi,social_security,ssa_oasdi_dec2024,shared,other foreign-born control,0.06070390778,0.2241290427,-0.3391275284,,
+asec2025_adopted,2_oasdi,social_security,ssa_oasdi_dec2024,personal,without CA,-0.07026725831,0.3095488714,,,
+asec2025_adopted,2_oasdi,social_security,ssa_oasdi_dec2024,personal,without TX,-0.05347712127,0.3062921716,,,
+asec2025_adopted,2_oasdi,social_security,ssa_oasdi_dec2024,personal,other foreign-born control,0.06089004783,0.2315395542,-0.2829606237,,
+asec2025_adopted,2_oasdi,social_security,ssa_oasdi_dec2024,,brief's slope on the group's share of residents,,,,0.002730149178,0.07276310762
+asec2025_published,2_oasdi,social_security,ssa_oasdi_dec2024,shared,without CA,-0.07813864607,0.2902969052,,,
+asec2025_published,2_oasdi,social_security,ssa_oasdi_dec2024,shared,without TX,-0.06765872569,0.2931089636,,,
+asec2025_published,2_oasdi,social_security,ssa_oasdi_dec2024,shared,other foreign-born control,0.04525864049,0.2286425325,-0.3287001751,,
+asec2025_published,2_oasdi,social_security,ssa_oasdi_dec2024,personal,without CA,-0.08979868058,0.3321365741,,,
+asec2025_published,2_oasdi,social_security,ssa_oasdi_dec2024,personal,without TX,-0.07363004212,0.3290236391,,,
+asec2025_published,2_oasdi,social_security,ssa_oasdi_dec2024,personal,other foreign-born control,0.04501962022,0.2364490893,-0.2729838407,,
+asec2025_published,2_oasdi,social_security,ssa_oasdi_dec2024,,brief's slope on the group's share of residents,,,,-0.003197329472,0.07682224004

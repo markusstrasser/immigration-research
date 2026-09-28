@@ -1,0 +1,7 @@
+check,call,statistics
+1_refundable_credits,no power,"{""delta_credits_ssn_shared"": ""no power"", ""delta_credits_ssn_personal"": ""no power""}"
+2_ssi,no power,"{""delta_ssi_shared"": ""no power"", ""delta_ssi_personal"": ""no power""}"
+2_oasdi,no power,"{""delta_social_security_shared"": ""no power"", ""delta_social_security_personal"": ""no power""}"
+3_births_mex_origin,national_share_relative: hit; distribution_children_0_2: hit,"{""national_share_relative"": ""hit"", ""distribution_children_0_2"": ""hit""}"
+3_births_mexico_born,national_share_relative: no power; distribution_children_0_2: no power,"{""national_share_relative"": ""no power"", ""distribution_children_0_2"": ""no power""}"
+3_medicaid_births_group_share,women_15_44_covered_union: hit,"{""women_15_44_covered_union"": ""hit""}"
