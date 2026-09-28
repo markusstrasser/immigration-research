@@ -246,6 +246,15 @@ September 20 account's 2024 lines on each key, $bn low / high.
     $1.54bn lower at the high end. The adopted case carries the same three lines ($5.41bn and $4.84bn).
   - [CALCULATION: `ratio_vs_2024.csv`, `account_2024_change_if_pooled_bn`; INFERENCE that 2024 is sampling
     noise, from its z against 2020 and 2022.]
+  - [Parent, after the cross-lab review. The table's z is (ratio − 1) / SE(ratio), with the delta-method SE taken
+    at each year's ratio, so it overstates cells far below 1. On the difference scale this key's extremes are
+    −2.60 (2020, shared) and −2.09 (2022, personal); on the log scale −3.01 / −2.23. 2024 against the 2019–23 mean
+    gives z +2.10 / +1.66, and the six years fit one mean (Cochran's Q p 0.075 / 0.25). That still supports pooling.
+    Two of the three lines should not take this key at all. The ASEC files state temporary sickness (DIS_SC1 code 9)
+    and black lung (DIS_SC1 code 8; survivor code 7) as disability or survivor income, while WC_VAL asks only about
+    workers' compensation [SOURCE: CPS ASEC 2025 data dictionary, `ddl25.txt`]. Temporary disability and black lung
+    carry $1.06bn / $0.82bn of the pooled change. CALCULATION: the verification agent's `wc_z.py` on
+    `ratio_vs_2024.csv`; the parent checked the 2020 shared cell by hand.]
   - No other key moves the 2024 account by more than $0.6bn on this test.
 - **Other federal benefits, 2020.**
   - NIPA 3.12 line 26 tripled in 2020, from $61.5bn to $191.7bn.

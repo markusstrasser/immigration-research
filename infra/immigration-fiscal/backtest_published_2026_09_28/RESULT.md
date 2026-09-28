@@ -9,8 +9,9 @@ claude-opus-5-5
 - **Check 1 (NAE 2021, shared method).** No finding on any of its three items, and agreement cannot validate the
   account.
 - **Check 2 (NAS 2017 Table 8-1, a disclosed comparison).** Partial. Outlays hit at 0.899 against 0.902. Receipts miss
-  at 0.853 against 0.794. After the fact, the gap fits the rise in the foreign-born's relative income between 2013
-  and 2024.
+  at 0.853 against 0.794. After the fact, the rise in the foreign-born's relative income between 2013 and 2024 is a
+  plausible explanation, not a reconciliation: the median ratio carries NAS's 0.794 to 0.855, the mean ratio to
+  0.887. (Softened after the cross-lab review; it first said the gap "fits".)
 
 # Do subsets of the account reproduce what others published? (pre-registered)
 
@@ -50,11 +51,14 @@ and never replaces a verdict. All numbers are [CALCULATION: `score.py`] unless t
     outgrow the average wage index by 5%. The declared year and survey gap covers it.
 - **Payroll share.** NAE's 0.1575 is 1.12 × the statutory rule on the frame (0.1405), inside the statutory band. NAE did
   not halve payroll.
-  - Post hoc: NAE's Medicare column implies earnings of 1.049 × its household income at 2.9%. Within one set of
-    households that is impossible, so NAE's payroll covers Mexican undocumented earners outside the counted
-    households. Its methods say "all individual wage earners".
-  - The frame's household members earn 0.949 of household income. The unit difference is the likely source of the
-    +12%. [INFERENCE]
+  - Post hoc: NAE's Medicare column implies earnings of 1.049 × its household income at 2.9%. That can happen within
+    one set of households, because ACS household income nets self-employment and investment losses. NAE's rule
+    counts "all individual wage earners in the households" [SOURCE: `reads/aic_methodology.md`], so the unit is the
+    household.
+  - The frame's household members earn 0.949 of household income. What carries the +12% is not settled: losses,
+    units or dollar years. Only NAE's components would settle it. [INFERENCE] (Corrected after the cross-lab
+    review. This note first called the 1.049 impossible and, quoting NAE's rule only in part, read it as covering
+    earners outside the counted households.)
 - **State distribution.** D = 0.074 against the population baseline's 0.097. The largest gaps (NAE minus account):
   TX +0.041, GA −0.020, IL +0.009.
 - **Tax ratios.** All run in the direction the conventions predict, since NAE halves CBO's and ITEP's average rates.
@@ -69,13 +73,15 @@ and never replaces a verdict. All numbers are [CALCULATION: `score.py`] unless t
 - **Receipts miss:** 0.856 / 0.850 against 0.794, a gap of +0.06. The freeze named four candidates: the eleven
   years, the dependent definition (NAS Box 8-2 also counts some 18–23-year-olds), the institutionalized and the
   receipt keys.
-- **Post hoc, the years carry the gap.**
+- **Post hoc, the years may carry the gap** (a plausible explanation, not a reconciliation; the heading first said
+  they do).
   - NAS's own first-generation receipts ratio barely moved from 1994 to 2013 (0.787 → 0.794).
   - The foreign-born's relative income rose after 2013. The ACS median of the foreign-born over all rose from 0.884
     (2013) to 0.952 (2024), +7.6% [SOURCE: ACS B06011, `reads/acs_b06011.md`]. The mean income of foreign-born adults
     over all adults rose from 0.858 (2010) to 0.958 (2023), +11.6% [DATA: local IPUMS ACS panel].
-  - NAS's 0.794 scaled by the median change is 0.855, the account's value.
-  - This assumes taxes move at least in proportion to income. [INFERENCE]
+  - NAS's 0.794 scaled by the median change is 0.855, the account's value. Scaled by the mean change it is 0.887,
+    past it. [CALCULATION]
+  - This assumes taxes move in proportion to income; progressive taxes move more. [INFERENCE]
   - The dependent and institutional differences are not quantified.
 
 ### Check 3: CMS HCRIS Worksheet S-10 line 30 by state (pre-registered)
