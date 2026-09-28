@@ -69,34 +69,35 @@ What they cannot settle cleanly:
 
 ## 2. Federal vs state/local fiscal claims
 
-**Routing correction, 2026-09-21:** items 1 and 3 below are March–April 2026 memos that
-predate the September 5 inference repair (each carries its own pre-repair note), and item 2
-is a cost inventory. For any current fiscal bottom line start with the
-[complete annual account](immigration-complete-annual-account-2026-09-20.md), the
-[generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and the
-[objections FAQ](immigration-objections-faq-2026-09-21.md). Use this list for the literature
-and the child-attribution dispute.
-
 Use first:
 
-1. `research/immigration-fiscal-impact-unauthorized-memo.md`
-2. `research/immigration-real-fiscal-and-social-costs-2026-09-23.md`
-3. `research/immigration-complete-annual-account-2026-09-20.md`
-4. `sources/immigration-fiscal/fiscal_impact_synthesis_gpt54.md`
+1. `research/immigration-complete-annual-account-2026-09-20.md`: every tax and spending line, federal and
+   state-local, with the adopted main case at the top ($322–387bn a year in 2024;
+   [main-case lane](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md))
+2. `research/immigration-objections-faq-2026-09-21.md`: the standard objections, each routed to its executed
+   table
+3. `research/immigration-yearly-lifetime-cost-repair-2026-09-19.md`: the generation ledger against third-plus
+   whites
+4. `research/immigration-real-fiscal-and-social-costs-2026-09-23.md`: costs and benefits outside the budget
+5. `research/immigration-education-fiscal-and-methods-2026-09-19.md`: below-HS against HS-only, with lifetime
+   uncertainty
+6. `research/immigration-fiscal-impact-unauthorized-memo.md`: the March–April literature review; it predates
+   the September 5 repair, so use it for the literature and the child-attribution dispute only
 
 What these can support:
 
 1. federal-positive / state-local-negative splits
 2. the child-attribution dispute
-3. the effect of average-cost vs marginal-cost accounting
-4. the point that local congestion and adaptation costs are real
-5. the point that the repo still does not have a defensible bucket-specific lifetime `NPV` for `<HS`, `HS / GED`, and `some college / associate`
+3. the effect of average-cost vs marginal-cost accounting (the account's service-response rules)
+4. local congestion and adaptation costs, priced beside the account
+5. comparisons by education bucket, as resident-account models rather than admission effects
 
 What they cannot settle cleanly:
 
 1. a single exact per-person lifetime NPV with high confidence
-2. a clean unauthorized-specific national number free of modeling assumptions
-3. a finished lifetime number by the three broad education buckets unless an agent explicitly builds and validates that scenario layer
+2. a clean unauthorized-specific national number free of modeling assumptions (the legal-status split does not
+   hold up, ladder 268)
+3. years before 2024, which are a model back-cast
 
 ## 3. Local burden, housing, and school-pressure claims
 
@@ -105,7 +106,6 @@ Use first:
 1. `research/immigration-local-burden-puma-layer.md`
 2. `research/immigration-household-weighted-correction.md`
 3. `research/immigration-california-texas-fiscal-geography-2026-09-21.md`
-4. `research/immigration-verified-findings-report-2026-04-10.md`
 
 What these can support:
 
@@ -134,6 +134,11 @@ What these can support:
 
 ## Datasets by question
 
+The current inventory is the [dataset register](immigration-dataset-register.md), with local paths in the
+[raw-file manifest](../sources/immigration-fiscal/data/MANIFEST.md). The routes below date from April–June;
+paths marked *not on disk* were absent from both `sources/immigration-fiscal/data/derived/` and the
+canonical derived root, `sources/immigration-fiscal/derived/`, on 2026-09-29.
+
 ### If the claim is about current composition, origin mix, household structure, language, commute, or education
 
 Use:
@@ -147,7 +152,7 @@ Local assets:
 1. `sources/immigration-fiscal/data/census/acs_pums_2023_person.zip`
 2. `sources/immigration-fiscal/data/census/acs_pums_2023_household.zip`
 3. `sources/immigration-fiscal/data/derived/immigration_context.duckdb`
-4. `sources/immigration-fiscal/data/derived/origin/`
+4. `sources/immigration-fiscal/data/derived/origin/` (*not on disk*)
 
 Best for:
 
@@ -206,9 +211,9 @@ Local assets:
 5. `sources/immigration-fiscal/data/external/stage4/saipe/`
 6. `sources/immigration-fiscal/data/external/stage4/courts/`
 7. `sources/immigration-fiscal/data/external/stage4/nces/`
-8. `sources/immigration-fiscal/data/derived/stage4/school_service_complexity_district_2023.csv`
-9. `sources/immigration-fiscal/data/derived/stage4/school_service_complexity_state_2023.csv`
-10. `sources/immigration-fiscal/data/derived/stage4/nces_elsi_district_english_columns_probe_2026-04-11.json`
+8. `sources/immigration-fiscal/data/derived/stage4/school_service_complexity_district_2023.csv` (*not on disk*)
+9. `sources/immigration-fiscal/data/derived/stage4/school_service_complexity_state_2023.csv` (*not on disk*)
+10. `sources/immigration-fiscal/data/derived/stage4/nces_elsi_district_english_columns_probe_2026-04-11.json` (*not on disk*)
 
 Best for:
 
@@ -258,7 +263,7 @@ Local assets:
 
 1. `sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip`
 2. `sources/immigration-fiscal/data/external/stage2/census/sipp/pu2023_csv.zip`
-3. `sources/immigration-fiscal/data/derived/stage2/sipp_foreign_low_skill_calibration_2023.csv`
+3. `sources/immigration-fiscal/data/derived/stage2/sipp_foreign_low_skill_calibration_2023.csv` (*not on disk*)
 
 Best for:
 
