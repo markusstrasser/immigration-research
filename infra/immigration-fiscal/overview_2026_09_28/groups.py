@@ -273,7 +273,7 @@ GROUPS = [
                  text="Three effects have no price and no bound: native births, city productivity and politics.",
                  why="The designs tried here cannot separate these effects from their causes."),
         ],
-        minor=[],
+        minor=[274],
     ),
     dict(
         id="whopays", part="beyond",
