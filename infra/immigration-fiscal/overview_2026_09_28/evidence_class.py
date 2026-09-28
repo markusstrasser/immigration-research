@@ -24,6 +24,7 @@ CLASS = {
     239: ("sample", "arithmetic", "Survey income for the group was too high. The account corrects it with records."),
     184: ("sample", "tabulated", None),
     161: ("sample", "arithmetic", None),
+    268: ("sample", "arithmetic", None),
     123: ("sample", "arithmetic", "Successful descendants stop reporting Mexican origin more often. That makes later "
                                   "generations look slightly worse, by about a tenth of the gap."),
     54: ("study", "extrapolated", None),
@@ -46,6 +47,8 @@ CLASS = {
     85: ("sample", "fitted", "Legal status is not asked. Rules impute it from other answers."),
     255: ("count", "tabulated", None),
     225: ("sample", "arithmetic", None),
+    267: ("count", "arithmetic", "Priced at state averages. The group's districts spend more than their state "
+                                "averages, so the service side is likely too low."),
     127: ("sample", "tabulated", None),
     # outside the budget
     260: ("study", "extrapolated", None),

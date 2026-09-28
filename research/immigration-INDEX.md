@@ -100,6 +100,9 @@ operator's decision ([decision](../decisions/2026-09-28-pension-accrual-payable-
 the trust funds' income will pay them once the reserves are depleted, and the income tax on them follows the 2025
 tax law: +$77.3 / $73.6bn. Scheduled benefits paid in full are an arm, +$111.6 / $106.2bn. The set is about $368 /
 $429bn with the accrual ($402 / $462bn at scheduled benefits). Item 5's land part is framing-sensitive.]
+[2026-09-29: one more candidate, pricing services and taxes at the states where the group lives: +$2.19 / +$2.27bn net. There, its services cost $8.6bn more and its sales and vehicle taxes bring in $6.4bn more (ladder 267, [lane](../infra/immigration-fiscal/state_priced_services_2026_09_29/RESULT.md)).]
+
+Inside the group, about a quarter of members live in households that pay more than they cost: 24.2% / 20.3% with every line allocated, 31.1% / 29.6% counting only services a household uses itself. At the low end the share rises with the head's education (12% below high school, 46% with a BA or more) and generation (18% Mexico-born, 32% third-plus). The costliest tenth of households carries 53–61% of the net cost. The legal-status split does not hold up (ladder 268, [lane](../infra/immigration-fiscal/within_group_distribution_2026_09_29/RESULT.md)).
 
 **September 26 schools case (the main case until 2026-09-27): $258–292bn/year conditional net cost to other US
 residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
