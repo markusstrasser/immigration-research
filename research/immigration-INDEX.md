@@ -104,6 +104,8 @@ $429bn with the accrual ($402 / $462bn at scheduled benefits). Item 5's land par
 
 Inside the group, about a quarter of members live in households that pay more than they cost: 24.2% / 20.3% with every line allocated, 31.1% / 29.6% counting only services a household uses itself. At the low end the share rises with the head's education (12% below high school, 46% with a BA or more) and generation (18% Mexico-born, 32% third-plus). The costliest tenth of households carries 53–61% of the net cost. The legal-status split does not hold up (ladder 268, [lane](../infra/immigration-fiscal/within_group_distribution_2026_09_29/RESULT.md)).
 
+Why it costs what it costs: half, $164–213bn, is what any 39.7M average residents would cost other residents under the same rules, mainly because governments spend more than they tax. The group's own excess over as many average residents is $158–175bn, and all of it comes from lower taxes at the same ages (+$287–295bn). Its young age mix (−$43–77bn) and its lower use of services at given ages (−$60–70bn) both reduce the cost (ladder 269, [lane](../infra/immigration-fiscal/main_case_decomposition_2026_09_29/RESULT.md)). The account prices 39.71M people, but the per-member figures divide by 40.90M; per account member the case is $8.1–9.8k a year.
+
 **September 26 schools case (the main case until 2026-09-27): $258–292bn/year conditional net cost to other US
 residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
 [decision](../decisions/2026-09-26-main-case-schools-full-cost.md), ladder 230). Schools are charged at

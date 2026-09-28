@@ -23,6 +23,7 @@ CLASS = {
     # the annual account
     239: ("sample", "arithmetic", "Survey income for the group was too high. The account corrects it with records."),
     184: ("sample", "tabulated", None),
+    269: ("sample", "arithmetic", None),
     161: ("sample", "arithmetic", None),
     268: ("sample", "arithmetic", None),
     123: ("sample", "arithmetic", "Successful descendants stop reporting Mexican origin more often. That makes later "
