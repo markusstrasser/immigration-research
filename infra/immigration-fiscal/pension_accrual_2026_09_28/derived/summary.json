@@ -1,0 +1,306 @@
+{
+ "case_bn": {
+  "high": 387.37005494938376,
+  "low": 321.81935699039354
+ },
+ "case_components_attrs": {
+  "part_a_share": 0.3751126329068301,
+  "se_oasdi_share": 0.8034959757706692
+ },
+ "central": {
+  "career_start": true,
+  "mapping": "individual_age_adjusted",
+  "method": "EAN",
+  "mortality": "general",
+  "rate": "new_issue",
+  "scenario": "scheduled",
+  "spouse": true,
+  "unauthorized": "note151_long_run"
+ },
+ "central_decomposition": {
+  "high": {
+   "accrual_per_tax_dollar": 1.297788427296778,
+   "delta_bn": 116.3349694244353,
+   "delta_oasdi_bn": 84.71530692705747,
+   "delta_part_a_bn": 31.619662497377835,
+   "hi_tax_bn": 29.14808674753598,
+   "oasdi_accrual_bn": 137.7377027300453,
+   "oasdi_tax_bn": 106.13263289529047,
+   "part_a_accrual_bn": 51.28277114454768,
+   "part_a_removed_bn": 19.663108647169846,
+   "ss_benefits_removed_bn": 53.02239580298783
+  },
+  "low": {
+   "accrual_per_tax_dollar": 1.297788427296778,
+   "delta_bn": 121.93878549933791,
+   "delta_oasdi_bn": 90.31912300196008,
+   "delta_part_a_bn": 31.619662497377835,
+   "hi_tax_bn": 31.27789059063945,
+   "oasdi_accrual_bn": 146.57781751235873,
+   "oasdi_tax_bn": 112.9443092798048,
+   "part_a_accrual_bn": 51.28277114454768,
+   "part_a_removed_bn": 19.663108647169846,
+   "ss_benefits_removed_bn": 56.258694510398655
+  }
+ },
+ "central_on_accrual_bn": {
+  "high": 503.705024373819,
+  "low": 443.7581424897314
+ },
+ "coverage_check": {
+  "case_national_oasdi_bn": 1296.4612875816993,
+  "group_se_oasdi_share": 0.8034959757706692,
+  "ratio": 1.0024443575208377,
+  "trustees_net_payroll_tax_2024_bn": 1293.3
+ },
+ "elderly_receipt": {
+  "G1": {
+   "benefit_per_recipient": 15501.645963087136,
+   "medicare_share": 0.8436469565444914,
+   "persons": 831,
+   "population_m": 1.6483331778131098,
+   "receiving_share": 0.622345401952226
+  },
+  "G2": {
+   "benefit_per_recipient": 19532.788031224896,
+   "medicare_share": 0.9372402789172234,
+   "persons": 261,
+   "population_m": 0.51819639154316,
+   "receiving_share": 0.8194668086829042
+  },
+  "G3plus": {
+   "benefit_per_recipient": 18506.414162002784,
+   "medicare_share": 0.9109632011980026,
+   "persons": 559,
+   "population_m": 0.99588898974118,
+   "receiving_share": 0.7568064004101468
+  },
+  "union": {
+   "benefit_per_recipient": 17305.716461054,
+   "medicare_share": 0.8801820408946841,
+   "persons": 1651,
+   "population_m": 3.1624185590974503,
+   "receiving_share": 0.6969894837416296
+  },
+  "white": {
+   "benefit_per_recipient": 22234.216539624806,
+   "medicare_share": 0.9518974526610877,
+   "persons": 15524,
+   "population_m": 40.41136015400027,
+   "receiving_share": 0.8346727531773568
+  }
+ },
+ "ends": {
+  "high": 11,
+  "low": 48
+ },
+ "every_combination_bn": {
+  "high": {
+   "max": 582.7024067706052,
+   "min": 412.70566500480584,
+   "part_a_accrual_bn": [
+    28.622769001747177,
+    64.91432181281604
+   ],
+   "per_tax_dollar": [
+    0.6538831988866269,
+    1.9136765848345927
+   ]
+  },
+  "low": {
+   "max": 526.95075570472,
+   "min": 348.37270908249155,
+   "part_a_accrual_bn": [
+    28.622769001747177,
+    64.91432181281604
+   ],
+   "per_tax_dollar": [
+    0.6538831988866269,
+    1.9136765848345927
+   ]
+  }
+ },
+ "gate_union_row": {
+  "accrual_only_bn": -188.13650797305468,
+  "accrual_per_tax_dollar": 1.5346559535701862,
+  "benefit_pp": 1253.3230602872632,
+  "cash_to_accrual_bn": -136.87988850116406,
+  "population": 40896574.152351856,
+  "tax_pp": 2997.6099450490487
+ },
+ "gates": {
+  "model": {
+   "adding_up_worst": 2.220446049250313e-16,
+   "factor_one_max_gap": 2.220446049250313e-16
+  },
+  "quotes_verified": 29
+ },
+ "model_checks": {
+  "model_over_note_table1": [
+   0.6670272191072216,
+   0.8253754102015914
+  ],
+  "payable_haircut_max_gap": 0.05584414867096954,
+  "v_c7_max_gap_points": 0.16441731115295966
+ },
+ "oasdi_per_tax_dollar_central_by_generation": {
+  "G1": 1.3220464582274438,
+  "G2": 1.2764477058123989,
+  "G3plus": 1.2972565761432733,
+  "union": 1.297788427296778
+ },
+ "part_a": {
+  "expected_covered_years": {
+   "G1": 32.87418934006524,
+   "G2": 34.01197501899155,
+   "G3plus": 34.6946059321743
+  },
+  "p_qualify_G1": 0.8933345959993599,
+  "p_qualify_G2": 0.9372402789172234,
+  "p_qualify_G3plus": 0.9109632011980026,
+  "part_a_pv_at_2024": {
+   "female_age_25": 93067.0947226374,
+   "female_age_45": 113615.30911018283,
+   "female_age_64": 138215.91166343744,
+   "male_age_25": 78984.5103362435,
+   "male_age_45": 96934.68215064539,
+   "male_age_64": 122201.9610685329
+  }
+ },
+ "range_across_arms_bn": {
+  "high": {
+   "max": 526.2697406792688,
+   "max_arm": "unauthorized_full",
+   "min": 443.9073322572011,
+   "min_arm": "rate_real_3"
+  },
+  "low": {
+   "max": 467.30173335702443,
+   "max_arm": "unauthorized_full",
+   "min": 381.0631256622224,
+   "min_arm": "rate_real_3"
+  }
+ },
+ "steady_state_bn": {
+  "stationary_hispanic_high": {
+   "delta_bn": 123.27513873414425,
+   "delta_oasdi_bn": 87.6874091019523,
+   "delta_part_a_bn": 35.58772963219195
+  },
+  "stationary_hispanic_low": {
+   "delta_bn": 128.7541515782325,
+   "delta_oasdi_bn": 93.05874530532785,
+   "delta_part_a_bn": 35.69540627290465
+  },
+  "stationary_total_high": {
+   "delta_bn": 103.74876773032108,
+   "delta_oasdi_bn": 73.74978718416403,
+   "delta_part_a_bn": 29.998980546157036
+  },
+  "stationary_total_low": {
+   "delta_bn": 108.33211741018431,
+   "delta_oasdi_bn": 78.26420413448098,
+   "delta_part_a_bn": 30.067913275703333
+  },
+  "white_ages_high": {
+   "delta_bn": 114.22415790265728,
+   "delta_oasdi_bn": 80.81561350464294,
+   "delta_part_a_bn": 33.40854439801434
+  },
+  "white_ages_low": {
+   "delta_bn": 119.09129136736203,
+   "delta_oasdi_bn": 85.74240870415505,
+   "delta_part_a_bn": 33.34888266320698
+  }
+ },
+ "steady_state_structures": {
+  "band_shares": {
+   "own": {
+    "0-17": 0.296443,
+    "18-24": 0.122828,
+    "25-34": 0.154076,
+    "35-44": 0.139217,
+    "45-54": 0.120335,
+    "55-64": 0.089773,
+    "65-74": 0.05013,
+    "75+": 0.027197
+   },
+   "stationary_hispanic": {
+    "0-17": 0.218647,
+    "18-24": 0.084666,
+    "25-34": 0.119953,
+    "35-44": 0.118209,
+    "45-54": 0.115562,
+    "55-64": 0.110627,
+    "65-74": 0.100649,
+    "75+": 0.131687
+   },
+   "stationary_total": {
+    "0-17": 0.226322,
+    "18-24": 0.087602,
+    "25-34": 0.124089,
+    "35-44": 0.122047,
+    "45-54": 0.118596,
+    "55-64": 0.111877,
+    "65-74": 0.098471,
+    "75+": 0.110996
+   },
+   "white_ages": {
+    "0-17": 0.180073,
+    "18-24": 0.079931,
+    "25-34": 0.122559,
+    "35-44": 0.127394,
+    "45-54": 0.118066,
+    "55-64": 0.138459,
+    "65-74": 0.133004,
+    "75+": 0.100514
+   }
+  },
+  "per_person_by_band": {
+   "hi_tax": [
+    9.3499,
+    496.6129,
+    1195.8736,
+    1297.3118,
+    1197.0558,
+    980.9074,
+    482.2598,
+    132.3142
+   ],
+   "medicare_covered": [
+    0.0034,
+    0.0055,
+    0.0091,
+    0.0147,
+    0.0195,
+    0.0574,
+    0.8553,
+    0.926
+   ],
+   "oasdi_tax": [
+    39.6132,
+    2102.411,
+    4909.0428,
+    5173.4026,
+    4865.1224,
+    3862.4857,
+    1752.6964,
+    512.9043
+   ],
+   "ss_benefit": [
+    72.0588,
+    222.1861,
+    155.6124,
+    303.4904,
+    503.3553,
+    1616.957,
+    11688.3787,
+    12750.3928
+   ]
+  }
+ },
+ "unauthorized": {
+  "note151_long_run": true,
+  "onbooks_share_mexico_born": 0.5262685374807583
+ }
+}

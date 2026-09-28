@@ -1,0 +1,5 @@
+method,end,spec,oasdi_tax_bn,hi_tax_bn,ss_benefits_bn,railroad_bn,medicare_bn,part_a_bn
+b_hotdeck_union_matched,high,11,105.891181,29.144041,53.324430,0.533736,52.419212,19.663109
+b_hotdeck_union_matched,low,48,112.679913,31.321036,56.815721,0.568681,52.419212,19.663109
+b_matched_over_pooled,high,11,106.374085,29.152132,52.720362,0.527690,52.419212,19.663109
+b_matched_over_pooled,low,48,113.208706,31.234745,55.701668,0.557530,52.419212,19.663109

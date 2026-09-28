@@ -1,0 +1,119 @@
+{
+ "case_lane": "main_case_long_run_2026_09_27",
+ "ends": {
+  "low": 48,
+  "high": 11
+ },
+ "case_bn": {
+  "low": 321.81935699039354,
+  "high": 387.37005494938376
+ },
+ "summary_main_case_bn": [
+  321.81935699039354,
+  387.37005494938376
+ ],
+ "max_abs_gap_bn": 0,
+ "methods": [
+  "b_hotdeck_union_matched",
+  "b_matched_over_pooled"
+ ],
+ "per_method": [
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "spec": 48,
+   "allocation": "shared",
+   "cost_bn": 318.57770417909114,
+   "engine_cost_bn": 284.7695002523916,
+   "capital_bn": 33.80820392669955,
+   "target_population": 40896574.152351856,
+   "resident_population": 340110988
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "spec": 11,
+   "allocation": "personal",
+   "cost_bn": 385.1137172579758,
+   "engine_cost_bn": 329.40121189512087,
+   "capital_bn": 55.71250536285491,
+   "target_population": 40896574.152351856,
+   "resident_population": 340110988
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "spec": 48,
+   "allocation": "shared",
+   "cost_bn": 325.0610098016959,
+   "engine_cost_bn": 291.27490565551,
+   "capital_bn": 33.78610414618591,
+   "target_population": 40896574.152351856,
+   "resident_population": 340110988
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "spec": 11,
+   "allocation": "personal",
+   "cost_bn": 389.62639264079166,
+   "engine_cost_bn": 333.95965166851187,
+   "capital_bn": 55.66674097227981,
+   "target_population": 40896574.152351856,
+   "resident_population": 340110988
+  }
+ ],
+ "frozen_files": [
+  {
+   "file": "infra/immigration-fiscal/main_case_long_run_2026_09_27/package.cjs",
+   "tracked": true,
+   "sha256": "b4f22b35371c715771d8e53436acfc6320c214ab5abf686714020eb2c8fe2a7a"
+  },
+  {
+   "file": "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived/summary.json",
+   "tracked": true,
+   "sha256": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d"
+  },
+  {
+   "file": "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived/corrections.json",
+   "tracked": true,
+   "sha256": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea"
+  },
+  {
+   "file": "infra/immigration-fiscal/main_case_schools_full_2026_09_26/package.cjs",
+   "tracked": true,
+   "sha256": "d8c5b71d3887459e232442cca458b329b8ee60885ae1ae33bb2f2910b135deb4"
+  },
+  {
+   "file": "infra/immigration-fiscal/main_case_2026_09_26/package.cjs",
+   "tracked": true,
+   "sha256": "2c2f13545f4241f5a632a14d5bb543ea03034c384b103a54d7e3a986e998541a"
+  },
+  {
+   "file": "infra/immigration-fiscal/main_case_2026_09_24/package.cjs",
+   "tracked": true,
+   "sha256": "be7b3a1cec727122bc1396008e5f7d2dc6fd4de71f675bdce1b312863b5f4907"
+  },
+  {
+   "file": "infra/immigration-fiscal/main_case_2026_09_24/derived/stack_line_deltas.json",
+   "tracked": true,
+   "sha256": "fa0f8520af8e51e26146843213df2830a6be4571117d0e8bc20b2c3b58b0cec7"
+  },
+  {
+   "file": "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js",
+   "tracked": true,
+   "sha256": "091ca31219c678ec84ee89b7c0837f4e9d43dcefc6bd1fe47d82337956a666e0"
+  },
+  {
+   "file": "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json",
+   "tracked": false,
+   "sha256": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd"
+  }
+ ],
+ "gates": {
+  "unchanged_before": true,
+  "unchanged_after": true,
+  "case_reproduced_1e9": true,
+  "ends_48_11": true
+ }
+}

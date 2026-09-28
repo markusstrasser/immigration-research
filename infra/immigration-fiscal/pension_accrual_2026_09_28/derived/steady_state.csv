@@ -1,0 +1,17 @@
+structure,flow,per_person,factor
+own,oasdi_tax,2780.574232,1.000000
+own,ss_benefit,1253.323060,1.000000
+own,hi_tax,688.514287,1.000000
+own,medicare_covered,0.080685,1.000000
+white_ages,oasdi_tax,2829.757049,1.017688
+white_ages,ss_benefit,3207.985844,2.559584
+white_ages,hi_tax,707.801489,1.028013
+white_ages,medicare_covered,0.221123,2.740572
+stationary_hispanic,oasdi_tax,2620.529080,0.942442
+stationary_hispanic,ss_benefit,3181.646587,2.538569
+stationary_hispanic,hi_tax,653.705022,0.949443
+stationary_hispanic,medicare_covered,0.220668,2.734929
+stationary_total,oasdi_tax,2672.324185,0.961069
+stationary_total,ss_benefit,2898.925615,2.312992
+stationary_total,hi_tax,666.229995,0.967634
+stationary_total,medicare_covered,0.199911,2.477670

@@ -1,0 +1,70 @@
+{
+ "documents": {
+  "an2025_3": {
+   "file": "pension_accrual_2026_09_28/_cache/an2025-3.pdf",
+   "sha256": "814567fa33574e7f99f5cff8ec3cf75db745708481f99e886338058e453c9d76",
+   "title": "SSA Actuarial Note 2025.3, Scaled factors for hypothetical earnings examples under the 2025 Trustees Report assumptions",
+   "url": "https://www.ssa.gov/OACT/NOTES/ran3/an2025-3.pdf",
+   "via": "https://web.archive.org/web/20260623234113id_/https://www.ssa.gov/oact/NOTES/ran3/an2025-3.pdf"
+  },
+  "an2025_7": {
+   "file": "lifetime_longevity_sstiming_2026_09_18/_cache/ssa_an2025-7.pdf",
+   "sha256": "478d40a0829dc7cdb586fefa2ea3e6eaf75bc18b3bd42564ed4897477e18e207",
+   "title": "SSA Actuarial Note 2025.7, Money's worth ratios under the OASDI program for hypothetical workers (December 2025)",
+   "url": "https://www.ssa.gov/OACT/NOTES/ran7/an2025-7.pdf",
+   "via": null
+  },
+  "mtr2025": {
+   "file": "pension_accrual_2026_09_28/_cache/mtr2025.pdf",
+   "sha256": "1b3de7a4faeee5ad42059e10740603182b716a5fa7b53b30d360b45b9e474d95",
+   "title": "2025 Annual Report of the Boards of Trustees of the Federal HI and SMI Trust Funds",
+   "url": "https://www.cms.gov/files/document/2025-medicare-trustees-report.pdf",
+   "via": null
+  },
+  "note151": {
+   "file": "lifetime_longevity_sstiming_2026_09_18/_cache/note151.pdf",
+   "sha256": "e303a40dc437b52e91c63bce484971c73e1e0b08d83ea900cf1e028c6a6f8458",
+   "title": "SSA Actuarial Note 151, Effects of unauthorized immigration on the actuarial status of the Social Security Trust Funds (April 2013)",
+   "url": "https://www.ssa.gov/oact/NOTES/pdf_notes/note151.pdf",
+   "via": null
+  },
+  "tr2025": {
+   "file": "pension_accrual_2026_09_28/_cache/tr2025.pdf",
+   "sha256": "e6603329ce1b8aaa3d64c13bfc2db3b4ca40b5b94838c1afbd707d86960b97fb",
+   "title": "The 2025 Annual Report of the Board of Trustees of the Federal OASI and DI Trust Funds",
+   "url": "https://www.ssa.gov/OACT/TR/2025/tr2025.pdf",
+   "via": "https://web.archive.org/web/20260919120748id_/https://www.ssa.gov/OACT/TR/2025/tr2025.pdf"
+  }
+ },
+ "quotes": [
+  "mtr_benefits_2024_bn",
+  "mtr_forty_quarters",
+  "mtr_hi_depletion_year",
+  "mtr_hi_growth_ultimate",
+  "mtr_hi_payable_path",
+  "mtr_hi_payroll_rate",
+  "mtr_projections_scheduled",
+  "mtr_real_growth_per_beneficiary",
+  "mtr_real_interest_rate",
+  "note151_conditions",
+  "note151_eligible_share",
+  "note151_suspense_file",
+  "note_mwr_effective_yields",
+  "note_payable_2034",
+  "note_payable_2035",
+  "note_payable_2099",
+  "note_payable_tables",
+  "note_scaled_worker",
+  "tr_cost_is_scheduled",
+  "tr_cpi_ultimate",
+  "tr_mortality_decline_65plus",
+  "tr_mortality_decline_total",
+  "tr_new_issue_rates",
+  "tr_oasdi_depletion_year",
+  "tr_oasdi_payroll_tax_2024_bn",
+  "tr_payable_2099",
+  "tr_payable_at_depletion",
+  "tr_pia_formula_2025",
+  "tr_real_rate_ultimate"
+ ]
+}
