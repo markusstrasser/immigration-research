@@ -81,6 +81,21 @@ ul.entries .ref { display: inline-block; width: 3em; text-indent: 0; }
 .st { font-size: 0.8em; font-style: italic; color: var(--faint); }
 .st.superseded { color: var(--orange); }
 .st.old { color: var(--faint); }
+.findings { padding-left: 0; list-style: none; max-width: 78ch; }
+.findings > li { margin: 10px 0; }
+.chips { display: inline-flex; gap: 2px; vertical-align: 1px; }
+.chip { display: inline-block; min-width: 1.25em; text-align: center; font-size: 0.72rem; font-style: normal; line-height: 1.35; border: 1px solid var(--rule); border-radius: 2px; color: var(--soft); text-decoration: none; font-variant-numeric: tabular-nums; }
+.chip.kS { color: #2f5f8f; border-color: #bbd4ee; }
+.chip.kA { color: #6b4f1d; border-color: #ecdcae; }
+.chip.kN { color: #57544c; border-color: #d9d5c7; }
+.chip.kM { color: #111; border-color: #8d897e; }
+.chip.kC { color: #8a4a33; border-color: #f2cabc; }
+.chip.kT { color: #2f6f4f; border-color: #bfdcc9; }
+.legend { list-style: none; padding: 0; display: grid; gap: 4px; font-size: 0.92rem; max-width: 70ch; }
+.how { color: var(--soft); font-size: 0.92em; }
+.findings details { margin: 2px 0 0; }
+.findings summary { font-size: 0.82rem; }
+.biblio li { padding-left: 0; text-indent: 0; }
 footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66ch; }
 </style>
 </head>
@@ -88,7 +103,7 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 <main>
 
 <h1>Evidence Map</h1>
-<p class="sub">Fiscal and social cost of the Mexican-origin population to other US residents. {{N_ENTRIES}} ladder entries in 15 groups. State of 28 September 2026.</p>
+<p class="sub">Fiscal and social cost of the Mexican-origin population to other US residents. {{N_ENTRIES}} ladder entries condensed to {{N_FINDINGS}} findings in 15 groups; {{N_RETIRED}} superseded entries retired. State of 28 September 2026.</p>
 
 <h2>The big strokes</h2>
 <ul class="strokes">
@@ -99,6 +114,7 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 <li><b>Outside the budgets</b> the group adds crime-victim, traffic, housing and fear costs. With them, the total is <b>$371–446bn</b> a year <span class="ref">195, 258</span>.</li>
 <li><b>State and local budgets pay about 85%.</b> About one other resident in six comes out ahead, mostly landlords and the top income tenth <span class="ref">226</span>.</li>
 <li><b>All three generations are net costs.</b> The second generation closes most of the school-completion gap. Progress then stalls: about 0.84 of the college gap stays in the third-plus generation <span class="ref">224, 178, 232</span>.</li>
+<li><b>Against an equal number of whites</b> the group costs about $315–330bn a year more, or $406–412bn with local whites by state <span class="ref">263</span>.</li>
 <li><b>Frame matters.</b> Other US residents lose. The group itself gains much by living here. At equal weights the world total is positive <span class="ref">250</span> [framing-sensitive].</li>
 </ul>
 
@@ -169,10 +185,12 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 </div>
 
 <h2>The ladder in groups</h2>
-<p class="prose">Each ladder entry is in one group. Groups are in order of how much they move the answer. "Current" counts entries 52–259; "old" counts the April–June layer (entries 1–51, marked o1–o51), which is mostly superseded. Status marks come from the entry's own text.</p>
+<p class="prose">Groups are in order of how much they move the answer. Each finding is one sentence and may merge several ladder entries; the numbers after it are the entries. Open "data and sources" for each entry's claim, its evidence rating, its sources and its files. Superseded entries are retired at the end.</p>
+<p class="prose">The letters show how an entry got its number. They are detected from the entries' own text.</p>
+<ul class="legend">{{LEGEND}}</ul>
 <div class="tablewrap">
 <table>
-<thead><tr><th></th><th>Group</th><th>How big</th><th class="num">Current</th><th class="num">Old</th></tr></thead>
+<thead><tr><th></th><th>Group</th><th>How big</th><th class="num">Findings</th><th class="num">Entries</th></tr></thead>
 <tbody>
 {{GROUP_TABLE}}
 </tbody>
@@ -180,6 +198,17 @@ footer { margin-top: 48px; color: var(--soft); font-size: 0.9rem; max-width: 66c
 </div>
 
 {{GROUPS}}
+
+<h2>Retired entries</h2>
+<details><summary>{{N_RETIRED}} superseded or withdrawn entries and their successors</summary>
+<ul class="entries">{{RETIRED}}</ul>
+</details>
+
+<h2>Sources</h2>
+<details><summary>{{N_BIB}} published sources cited by the findings above</summary>
+<p class="caption">As cited in the ladder entries. The links after each source go to the findings that use it.</p>
+<ul class="entries biblio">{{BIBLIO}}</ul>
+</details>
 
 <footer>
 <p>This page was written through an LLM. On a politically charged topic the instrument has its own leanings; see <code>notes/llm-bias-caveat.md</code>. Every number here comes from a ladder entry or a derived file named beside it. Claim lines in the entry lists are the first sentence of each entry, cut for length. Built by <code>infra/immigration-fiscal/overview_2026_09_28/build.py</code>.</p>

@@ -17,7 +17,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 sys.path.insert(0, str(HERE))
-from groups import GROUPS  # noqa: E402
+import evidence  # noqa: E402
 
 LADDER = ROOT / "research/immigration-confidence-ladder.md"
 MAIN = ROOT / "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived"
@@ -79,14 +79,16 @@ def parse_ladder():
         claim = strip_md(b.group(1) if b else rest)
         head = (" ".join(notes) + " " + claim[:400]).lower()
         status = "superseded" if re.search(r"supersed|withdrawn", head) else ("revised" if notes else "")
-        entries[str(n)] = dict(key=str(n), claim=first_sentence(claim), status=status)
+        entries[str(n)] = dict(key=str(n), claim=first_sentence(claim), status=status, body=body,
+                               rating=evidence.rating(rest))
     for line in lines[first_strong:old_end]:
         m = re.match(r"^(\d+)\. `([^`]+)`(.*)", line)
         if not m:
             continue
         tail = m.group(3).upper()
         status = "superseded" if re.search(r"INVALIDATED|SUPERSEDED", tail) else ("revised" if "QUALIFIED" in tail or "CORRECTED" in tail else "old")
-        entries[f"o{m.group(1)}"] = dict(key=f"o{m.group(1)}", claim=strip_md(m.group(2)), status=status)
+        entries[f"o{m.group(1)}"] = dict(key=f"o{m.group(1)}", claim=strip_md(m.group(2)), status=status,
+                                         body=line, rating="")
     return entries
 
 
@@ -301,56 +303,25 @@ def svg_tornado(rows):
     return "\n".join(out)
 
 
-def render_groups(entries):
-    seen = {}
-    for g in GROUPS:
-        for k in g["members"]:
-            key = str(k)
-            if key in seen:
-                fail(f"entry {key} is in both {seen[key]} and {g['id']}")
-            seen[key] = g["id"]
-    missing = sorted(set(entries) - set(seen), key=lambda k: (k[0] == "o", int(k.lstrip("o"))))
-    unknown = sorted(set(seen) - set(entries))
-    if missing or unknown:
-        fail(f"unassigned entries {missing}; assigned but not in the ladder {unknown}")
-
-    summary_rows, blocks = [], []
-    for i, g in enumerate(GROUPS, 1):
-        n_cur = sum(1 for k in g["members"] if not str(k).startswith("o"))
-        n_old = len(g["members"]) - n_cur
-        summary_rows.append(
-            f'<tr><td class="num">{i}</td><td><a href="#{g["id"]}">{html.escape(g["title"])}</a></td>'
-            f'<td>{html.escape(g["size"])}</td><td class="num">{n_cur}</td><td class="num">{n_old or ""}</td></tr>')
-        terms = "".join(f"<dt>{html.escape(t)}</dt><dd>{html.escape(m)}</dd>" for t, m in g["terms"])
-        points = "".join(f'<li><span class="ref">{html.escape(r)}</span> {html.escape(t)}</li>' for r, t in g["points"])
-        items = []
-        for k in sorted(g["members"], key=lambda k: (str(k).startswith("o"), int(str(k).lstrip("o")))):
-            e = entries[str(k)]
-            st = f' <span class="st {e["status"]}">{e["status"]}</span>' if e["status"] else ""
-            items.append(f'<li><span class="ref">{html.escape(e["key"])}</span> {html.escape(e["claim"])}{st}</li>')
-        blocks.append(f"""
-<section id="{g['id']}" class="group">
-  <h3><span class="gnum">{i}</span> {html.escape(g['title'])}</h3>
-  <p class="size">{html.escape(g['size'])}</p>
-  <p>{html.escape(g['why'])}</p>
-  <ul class="points">{points}</ul>
-  {f'<dl class="terms">{terms}</dl>' if terms else ''}
-  <details><summary>All {len(g['members'])} entries in this group</summary><ul class="entries">{''.join(items)}</ul></details>
-</section>""")
-    return "\n".join(summary_rows), "\n".join(blocks), len(entries)
 
 
 def main():
     entries = parse_ladder()
     s, bands, stairs = load_numbers()
-    summary_rows, blocks, n = render_groups(entries)
+    r = evidence.render(entries, fail)
     page = (HERE / "template.html").read_text()
     subs = {
         "{{WATERFALL}}": svg_waterfall(waterfall_rows(s, stairs)),
         "{{TORNADO}}": svg_tornado(tornado_rows(s, bands)),
-        "{{GROUP_TABLE}}": summary_rows,
-        "{{GROUPS}}": blocks,
-        "{{N_ENTRIES}}": str(n),
+        "{{GROUP_TABLE}}": r["table"],
+        "{{GROUPS}}": r["groups"],
+        "{{LEGEND}}": r["legend"],
+        "{{BIBLIO}}": r["biblio"],
+        "{{RETIRED}}": r["retired"],
+        "{{N_ENTRIES}}": str(len(entries)),
+        "{{N_FINDINGS}}": str(r["n_find"]),
+        "{{N_BIB}}": str(r["n_bib"]),
+        "{{N_RETIRED}}": str(r["n_retired"]),
     }
     for k, v in subs.items():
         if k not in page:
@@ -359,8 +330,8 @@ def main():
     out = HERE / "derived/overview.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(page)
-    print(f"wrote {out.relative_to(ROOT)}: {n} entries in {len(GROUPS)} groups")
-
+    print(f"wrote {out.relative_to(ROOT)}: {len(entries)} entries, {r['n_find']} findings, "
+          f"{r['n_retired']} retired, {r['n_bib']} sources")
 
 if __name__ == "__main__":
     main()
