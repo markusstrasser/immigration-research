@@ -61,6 +61,9 @@ Option 2, under the operator's instruction of 2026-09-28 to count benefits and f
 | Published pairing, central values | $462.6–537.2bn | **$447.5–522.0bn** ($10.9–12.8k per member) |
 | Full span | $267.2–755.0bn | $223.7–755.4bn |
 
+[2026-09-29: with road crashes charged with against without the group's traffic, the pairing is $416.2–490.7bn and
+the full span $142.2–756.5bn ([decision](2026-09-29-crash-item-with-against-without.md)).]
+
 The added social items net to $84.1bn at central values. The Sept 24 and schools-case outputs rerun
 byte-identical. The winners lane changes only the totals it quotes.
 

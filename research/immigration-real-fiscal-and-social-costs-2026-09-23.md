@@ -34,7 +34,16 @@ fifth gains $46.0bn (§4). Priced to the same standard, the benefits the account
 $4.8bn a year, or $18.7bn with the proposed scale net (§7b); with all of them the total is
 $237–289bn. [CALCULATION: lanes and commits in "Sources"]
 
-**Update, 2026-09-28, latest (PM2.5 and road crashes added as costs, the scale benefits as gains; [decision](../decisions/2026-09-28-social-items-pollution-crashes.md), [decision](../decisions/2026-09-28-social-items-scale-benefits.md)).**
+**Update, 2026-09-29, latest (road crashes charged with against without the group's traffic; [decision](../decisions/2026-09-29-crash-item-with-against-without.md)).**
+Fiscal and social costs together come to **$416–491bn a year** at central values (full span $142–757bn), or
+$10.2–12.0k per group member, on the same pairing. The crash item is now the crash lane's but-for, other residents
+with against without the group's traffic: $11.1bn (−$57.7bn to +$74.3bn), in place of the $42.3bn charged by fault.
+Graded evidence puts the response of the non-fatal crash rate to traffic near zero (+0.07) and of the fatal rate at
+−0.21, so the crashes other residents have with the group's drivers would largely happen anyway without the group
+(ladder 266). The fault-based $42.3bn sits beside and is never added. [CALCULATION:
+`infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/real_costs_totals.csv` (9574130)]
+
+**Update, 2026-09-28, night (PM2.5 and road crashes added as costs, the scale benefits as gains; [decision](../decisions/2026-09-28-social-items-pollution-crashes.md), [decision](../decisions/2026-09-28-social-items-scale-benefits.md)).**
 Fiscal and social costs together come to **$463–537bn a year** at central values (full span $267–755bn), or
 $11.3–13.1k per group member, on the same pairing. The operator added four items to the social rows from the
 September 27 case on:
@@ -544,3 +553,5 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
   $463–537bn. Concept affected: the fiscal-plus-social total.
 - 2026-09-28, final (benefit search; decision 2026-09-28-social-items-more-benefits): volunteering, consumer-side scale
   and trade ties join the social rows as gains; the pairing is $447–522bn. Concept affected: the fiscal-plus-social total.
+- 2026-09-29 (decision 2026-09-29-crash-item-with-against-without): road crashes move from fault-based attribution to with against without
+  the group's traffic; the pairing is $416–491bn. Concept affected: the fiscal-plus-social total.
