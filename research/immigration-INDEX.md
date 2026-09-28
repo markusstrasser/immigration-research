@@ -106,6 +106,8 @@ Inside the group, about a quarter of members live in households that pay more th
 
 Why it costs what it costs: half, $164–213bn, is what any 39.7M average residents would cost other residents under the same rules, mainly because governments spend more than they tax. The group's own excess over as many average residents is $158–175bn, and all of it comes from lower taxes at the same ages (+$287–295bn). Its young age mix (−$43–77bn) and its lower use of services at given ages (−$60–70bn) both reduce the cost (ladder 269, [lane](../infra/immigration-fiscal/main_case_decomposition_2026_09_29/RESULT.md)). The account prices 39.71M people, but the per-member figures divide by 40.90M; per account member the case is $8.1–9.8k a year.
 
+What would overturn the conclusions: no single premise, swapped for its best-supported alternative, breaks more than two of the evidence map's nine. The budget horizon breaks two (first-year responses: the case −37%, the pairing about −29%). Counting pensions on accrual flips "taxes cover benefits" (+$62.0 / 49.4bn becomes −$15.3 / −24.2bn). Next observations worth making: budgets after population outflows, and the Mexico-born on-books share from SSA and ITIN records (ladder 270, [lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md)).
+
 **September 26 schools case (the main case until 2026-09-27): $258–292bn/year conditional net cost to other US
 residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
 [decision](../decisions/2026-09-26-main-case-schools-full-cost.md), ladder 230). Schools are charged at

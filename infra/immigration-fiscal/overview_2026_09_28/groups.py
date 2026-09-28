@@ -526,6 +526,12 @@ GROUPS = [
         terms=[("non-significance ≠ zero", "a wide interval does not show that there is no effect")],
         findings=[
             dict(refs=[58, 60], text="Controls and placebo tests that pass do not by themselves show a cause.", why=""),
+            dict(refs=[270],
+                 text="No single premise overturns more than two of this page's conclusions. The budget horizon "
+                      "breaks two: with first-year budget responses the cost falls by about 37%.",
+                 why="Counting pensions on accrual would flip the claim that the group's taxes cover its benefits. "
+                     "The observations most worth making next are how budgets respond when people leave, and how "
+                     "much of the Mexico-born's pay is on the books."),
         ],
         minor=[],
     ),
