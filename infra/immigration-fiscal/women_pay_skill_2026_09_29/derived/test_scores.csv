@@ -1,0 +1,32 @@
+kind,sex,group,arm,stat,n_persons,n_ref_persons,estimate,se
+gap,men,G2 Hispanic,edu_afqt,total,309,1313,-0.0406388,0.0591666
+gap,men,G2 Hispanic,edu_afqt,employment,309,1313,-0.0272761,0.024528
+gap,men,G2 Hispanic,edu_afqt,hourly_pay,309,1313,0.00736958,0.0479134
+gap,men,G2 Hispanic,edu_math,total,309,1313,-0.0319613,0.0583839
+gap,men,G2 Hispanic,edu_math,employment,309,1313,-0.0240554,0.0249415
+gap,men,G2 Hispanic,edu_math,hourly_pay,309,1313,0.00895381,0.0471532
+gap,men,G2 Hispanic,edu_verbal,total,309,1313,-0.0444187,0.0593121
+gap,men,G2 Hispanic,edu_verbal,employment,309,1313,-0.0291016,0.0246854
+gap,men,G2 Hispanic,edu_verbal,hourly_pay,309,1313,0.00811329,0.0466567
+gap,women,G2 Hispanic,edu_afqt,total,324,1274,0.0934516,0.0685536
+gap,women,G2 Hispanic,edu_afqt,employment,324,1274,0.0309184,0.0303088
+gap,women,G2 Hispanic,edu_afqt,hourly_pay,324,1274,0.133598,0.0480933
+gap,women,G2 Hispanic,edu_math,total,324,1274,0.0806426,0.0687024
+gap,women,G2 Hispanic,edu_math,employment,324,1274,0.0246246,0.0305013
+gap,women,G2 Hispanic,edu_math,hourly_pay,324,1274,0.127319,0.0500186
+gap,women,G2 Hispanic,edu_verbal,total,324,1274,0.0684482,0.0664681
+gap,women,G2 Hispanic,edu_verbal,employment,324,1274,0.0198098,0.0304071
+gap,women,G2 Hispanic,edu_verbal,hourly_pay,324,1274,0.127325,0.0436937
+check,all,all with AFQT,afqt_rebuilt,corr with published,7093,0,0.99993,nan
+mean percentile,men,G3+ NH white,afqt,mean,1371,0,56.8145,1.13757
+mean percentile,men,G3+ NH white,math,mean,1371,0,56.2431,1.11447
+mean percentile,men,G3+ NH white,verbal,mean,1371,0,55.5705,1.08381
+mean percentile,men,G2 Hispanic,afqt,mean,269,0,35.5003,2.18551
+mean percentile,men,G2 Hispanic,math,mean,269,0,37.0853,2.27269
+mean percentile,men,G2 Hispanic,verbal,mean,269,0,34.5849,1.96772
+mean percentile,women,G3+ NH white,afqt,mean,1283,0,59.8877,1.00295
+mean percentile,women,G3+ NH white,math,mean,1283,0,57.9321,0.961256
+mean percentile,women,G3+ NH white,verbal,mean,1283,0,59.3707,1.02016
+mean percentile,women,G2 Hispanic,afqt,mean,262,0,37.9174,2.27897
+mean percentile,women,G2 Hispanic,math,mean,262,0,38.8293,2.26305
+mean percentile,women,G2 Hispanic,verbal,mean,262,0,37.8291,2.30224
