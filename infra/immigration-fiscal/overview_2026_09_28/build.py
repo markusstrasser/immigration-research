@@ -332,7 +332,7 @@ def main():
     subs = {
         "{{WATERFALL}}": svg_waterfall(waterfall_rows(s, stairs, social)),
         "{{TORNADO}}": svg_tornado(tornado_rows(s, bands, social)),
-        "{{GROUP_TABLE}}": r["table"],
+        "{{TOC}}": r["toc"],
         "{{GROUPS}}": r["groups"],
         "{{LEGEND}}": r["legend"],
         "{{BIBLIO}}": r["biblio"],
@@ -347,8 +347,10 @@ def main():
             fail(f"template lacks {k}")
         page = page.replace(k, v)
     add = [social[0] - s["main_case"][0], social[1] - s["main_case"][1]]
-    for k, v in {"{{SOCIAL_TOTAL}}": f"${social[0]:.0f}–{social[1]:.0f}bn",
-                 "{{SOCIAL_ADD}}": f"${add[0]:.0f}–{add[1]:.0f}bn"}.items():
+    mid = lambda v: round((v[0] + v[1]) / 2 / 5) * 5
+    for k, v in {"{{SOCIAL_TOTAL}}": f"about ${mid(social)}bn ({social[0]:.0f}–{social[1]:.0f})",
+                 "{{SOCIAL_ADD_WORDS}}": f"about ${mid(add)}bn",
+                 "{{SOCIAL_ADD}}": f"about ${mid(add)}bn ({add[0]:.0f}–{add[1]:.0f})"}.items():
         page = page.replace(k, v)
     if "{{" in page:
         fail("unfilled placeholder: " + page[page.index("{{"):page.index("{{") + 30])

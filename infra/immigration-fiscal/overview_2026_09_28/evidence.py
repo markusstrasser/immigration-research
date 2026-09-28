@@ -125,7 +125,8 @@ def detect(text):
         hit = [name for name, pat in pats if re.search(pat, text)]
         if hit:
             kinds.append(sym)
-            names += [n for n in hit if n not in names]
+            if sym in ("S", "A", "N"):  # datasets only; methods are shown by the evidence level
+                names += [n for n in hit if n not in names]
     return kinds, names
 
 
@@ -170,68 +171,94 @@ def check_coverage(entries, fail):
         fail(f"unplaced ladder entries {missing}; placed but not in the ladder {unknown}. Place new entries in groups.py")
 
 
+LEVELS = {
+    "records": ("■■■", "records", "administrative records or national accounts, checked against a second source"),
+    "survey": ("■■□", "survey", "survey answers with standard definitions (income, taxes, programme receipt)"),
+    "model": ("■□□", "model", "derived through a model or from other studies' estimates"),
+    "choice": ("◇", "choice", "an accounting rule or assumption, shown with a band"),
+}
+SOFT = ("⚑", "soft label", "the survey label is self-reported, imputed or politically loaded "
+        "(ethnic identity, generation, legal status, attitudes)")
+
+
+def level_tag(f):
+    sym, name, desc = LEVELS[f["level"]]
+    tag = f'<span class="lvl l-{f["level"]}" title="{html.escape(desc)}">{sym} {name}</span>'
+    if f.get("soft"):
+        tag += f' <span class="soft" title="{html.escape(SOFT[2])}">{SOFT[0]} {SOFT[1]}</span>'
+    return tag
+
+
 def render(entries, fail):
+    from groups import PARTS
     check_coverage(entries, fail)
     bib = {}
-    table, blocks = [], []
+    toc, blocks = [], []
     n_find = 0
-    for gi, g in enumerate(GROUPS, 1):
-        n_refs = sum(len(f["refs"]) for f in g["findings"]) + len(g["minor"])
-        table.append(f'<tr><td class="num">{gi}</td><td><a href="#{g["id"]}">{html.escape(g["title"])}</a></td>'
-                     f'<td>{html.escape(g["size"])}</td><td class="num">{len(g["findings"])}</td>'
-                     f'<td class="num">{n_refs}</td></tr>')
-        items = []
-        for fi, f in enumerate(g["findings"], 1):
-            n_find += 1
-            fid = f"{g['id']}-{fi}"
-            text_all = " ".join(entries[str(r)]["body"] for r in f["refs"])
-            kinds, names = detect(text_all)
-            fsrc = []
-            for r in f["refs"]:
-                e = entries[str(r)]
-                for s_ in source_spans(e["body"]):
-                    for part in re.split(r";\s+|,\s+(?=https?://)", s_):
-                        part = part.strip(" .,")
-                        if re.search(r"https?://", part) and not INTERNAL.search(part):
-                            k = re.sub(r"\W+", " ", part.lower())[:90]
-                            bib.setdefault(k, [cut(part, 220), []])[1].append(fid)
-                            fsrc.append(bib[k][0])
-                for c in citations(e["body"]):
-                    k = re.sub(r"\W+", " ", c.lower())
-                    bib.setdefault(k, [c, []])[1].append(fid)
-                    fsrc.append(c)
-            fsrc = list(dict.fromkeys(fsrc))
-            rows = []
-            if f.get("why"):
-                rows.append(f'<p>{html.escape(f["why"])}</p>')
-            if names:
-                rows.append(f'<p class="how"><b>Data:</b> {html.escape(", ".join(names))}</p>')
-            if fsrc:
-                rows.append(f'<p class="how"><b>Sources:</b> {html.escape("; ".join(fsrc))}</p>')
-            rows.append(f'<p class="how"><b>Ladder:</b> {", ".join(str(r) for r in f["refs"])}</p>')
-            items.append(
-                f'<li id="{fid}"><span class="chips">{chips(kinds)}</span> {html.escape(f["text"])}'
-                f'<details><summary>why and from what</summary>{"".join(rows)}</details></li>')
-        terms = "".join(f"<dt>{html.escape(t)}</dt><dd>{html.escape(m)}</dd>" for t, m in g["terms"])
-        minor = ""
-        if g["minor"]:
-            minor = (f'<p class="how">Narrower entries not summarised: '
-                     f'{", ".join(str(r) for r in g["minor"])}.</p>')
-        blocks.append(f"""
+    gi = 0
+    for pid, ptitle in PARTS:
+        groups = [g for g in GROUPS if g["part"] == pid]
+        if not groups:
+            continue
+        toc.append(f'<li><a href="#part-{pid}">{html.escape(ptitle)}</a><ol>')
+        blocks.append(f'<h2 id="part-{pid}">{html.escape(ptitle)}</h2>')
+        for g in groups:
+            gi += 1
+            toc.append(f'<li><a href="#{g["id"]}">{html.escape(g["claim"])}</a></li>')
+            items = []
+            for fi, f in enumerate(g["findings"], 1):
+                n_find += 1
+                fid = f"{g['id']}-{fi}"
+                text_all = " ".join(entries[str(r)]["body"] for r in f["refs"])
+                _kinds, names = detect(text_all)
+                fsrc = []
+                for r in f["refs"]:
+                    e = entries[str(r)]
+                    for s_ in source_spans(e["body"]):
+                        for part in re.split(r";\s+|,\s+(?=https?://)", s_):
+                            part = part.strip(" .,")
+                            if re.search(r"https?://", part) and not INTERNAL.search(part):
+                                k = re.sub(r"\W+", " ", part.lower())[:90]
+                                bib.setdefault(k, [cut(part, 220), []])[1].append(fid)
+                                fsrc.append(bib[k][0])
+                    for c in citations(e["body"]):
+                        k = re.sub(r"\W+", " ", c.lower())
+                        bib.setdefault(k, [c, []])[1].append(fid)
+                        fsrc.append(c)
+                fsrc = list(dict.fromkeys(fsrc))
+                rows = []
+                if f.get("why"):
+                    rows.append(f'<p>{html.escape(f["why"])}</p>')
+                if names:
+                    rows.append(f'<p class="how">Data: {html.escape(", ".join(names))}.</p>')
+                if fsrc:
+                    rows.append(f'<p class="how">Sources: {html.escape(" · ".join(fsrc))}.</p>')
+                rows.append(f'<p class="how">Ladder entries: {", ".join(str(r) for r in f["refs"])}.</p>')
+                items.append(
+                    f'<li id="{fid}"><p class="ftext">{html.escape(f["text"])}</p>'
+                    f'<p class="fmeta">{level_tag(f)}</p>'
+                    f'<details><summary>Evidence</summary>{"".join(rows)}</details></li>')
+            terms = "".join(f"<dt>{html.escape(t)}</dt><dd>{html.escape(m)}</dd>" for t, m in g["terms"])
+            minor = (f'<p class="how">Narrower analyses not summarised: {", ".join(str(r) for r in g["minor"])}.</p>'
+                     if g["minor"] else "")
+            blocks.append(f"""
 <section id="{g['id']}" class="group">
-  <h3><span class="gnum">{gi}</span> {html.escape(g['title'])}</h3>
-  <p class="size">{html.escape(g['size'])}</p>
+  <h3><span class="gnum">{gi}</span> {html.escape(g['claim'])}</h3>
+  {f'<p class="size">{html.escape(g["range"])}</p>' if g["range"] else ''}
   <p>{html.escape(g['why'])}</p>
   <ul class="findings">{''.join(items)}</ul>
-  {f'<details><summary>terms</summary><dl class="terms">{terms}</dl></details>' if terms else ''}
+  {f'<details><summary>Terms</summary><dl class="terms">{terms}</dl></details>' if terms else ''}
   {minor}
 </section>""")
-    legend = "".join(f'<li>{chips([s])} <b>{label}</b>: {html.escape(desc)}</li>' for s, label, desc, _ in KINDS)
+        toc.append("</ol></li>")
+    legend = "".join(f'<li><span class="lvl l-{k}">{sym} {name}</span> {html.escape(desc)}</li>'
+                     for k, (sym, name, desc) in LEVELS.items())
+    legend += f'<li><span class="soft">{SOFT[0]} {SOFT[1]}</span> {html.escape(SOFT[2])}</li>'
     bib_items = sorted(bib.values(), key=lambda v: v[0].lower())
     bibl = "".join(
         f'<li>{html.escape(t)} <span class="ref">{" ".join(f"<a href=#{x}>{x}</a>" for x in dict.fromkeys(ids))}</span></li>'
         for t, ids in bib_items)
     cur = [k for k in RETIRED if not str(k).startswith("o")]
     retired = "o1–o51, " + ", ".join(str(k) for k in cur)
-    return dict(table="\n".join(table), groups="\n".join(blocks), legend=legend, biblio=bibl,
+    return dict(toc="".join(toc), groups="\n".join(blocks), legend=legend, biblio=bibl,
                 retired=retired, n_find=n_find, n_bib=len(bib_items), n_retired=len(RETIRED))
