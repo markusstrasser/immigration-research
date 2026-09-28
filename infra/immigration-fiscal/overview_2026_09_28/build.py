@@ -121,9 +121,11 @@ RELABEL = {
 
 
 def load_social():
-    """Fiscal plus social total at central values: Hispanic footing at the low end, custody at the high end."""
+    """Fiscal plus social total at central values, the published pairing (RESULT_ledger.md):
+    the mixed-group Hispanic footing at the low end, custody at the high end."""
     rows = {(r["column"], r["item"]): float(r["sept27"]) for r in csv.DictReader(SOCIAL.open()) if r["section"] == "7" and r["sept27"]}
-    return [rows[("hispanic", "total at central values (low)")], rows[("custody", "total at central values (high)")]]
+    return [rows[("hispanic_mixed_group", "total at central values (low)")],
+            rows[("custody", "total at central values (high)")]]
 
 
 def waterfall_rows(s, stairs, social):

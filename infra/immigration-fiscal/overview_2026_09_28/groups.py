@@ -196,11 +196,11 @@ GROUPS = [
                  why="Per person the group causes 0.65 of an average resident's pollution because it consumes "
                      "less. Against as many average residents, the group is about $47bn better."),
             dict(refs=[264, 266],
-                 text="Road crashes caused by group drivers cost others about $42bn a year (24–73).",
-                 why="California crash records show Hispanic drivers are not at fault more often in injury "
-                     "crashes (odds 0.98). This counts crashes that group drivers cause. One more car barely changes "
-                     "other drivers' risk per mile, so the cost of the added traffic alone is about $11bn (−58 to "
-                     "+74)."),
+                 text="The group's traffic costs other residents about $11bn a year in road crashes (−58 to +74).",
+                 why="One more car barely changes other drivers' crash risk per mile. So most crashes that others "
+                     "have with group drivers would happen anyway, among the remaining drivers. Counting every "
+                     "crash that group drivers cause gives about $42bn (24–73). California records show Hispanic "
+                     "drivers are not at fault more often in injury crashes (odds 0.98)."),
             dict(refs=[189],
                  text="Violent crime by group members costs victims outside the group about $29bn a year.",
                  why="The full cost counts a death at a statistical value, plus pain. Tangible losses alone are "
