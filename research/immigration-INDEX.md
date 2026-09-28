@@ -760,7 +760,7 @@ If the question is:
 
 ## Superseded files kept, and deleted files
 
-Superseded and cruft documents were deleted on 2026-09-29 ([decision](../decisions/2026-09-29-delete-superseded-and-cruft-docs.md)). The files below stay: two are builder specs that code cites, one is held by a HUMAN.md link, and six snapshot memos keep their corrected assessment above the `historical-snapshot` marker. None of them may be cited as current.
+Superseded and cruft documents were deleted on 2026-09-29 ([decision](../decisions/2026-09-29-delete-superseded-and-cruft-docs.md)). The files below stay: two are builder specs that code cites, one is held by a HUMAN.md link, and six memos keep only their corrected assessment (their verbatim pre-repair analysis was removed on 2026-09-29; each memo's Revisions section names the commit to recover it from). None of them may be cited as current.
 
 | File | Former section | Was | Superseded by |
 |------|----------------|-----|---------------|
