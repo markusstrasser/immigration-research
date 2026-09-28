@@ -16,10 +16,14 @@ exposure) and `population`. The national arrest profile by age (FBI CIUS 2024 Ta
 is spread over the bins by national population and written beside the keys; decompose.cjs uses it for
 the justice key's non-per-head parts.
 
+Headcount: the union's members under both weight sets by generation (the generation lane's conventions a and
+b, `F.assignments`) and by region (California, Texas, the rest), for the per-member finding in RESULT.md.
+
 Gates (exit 1): every key's union and national totals under the published weights reproduce the
 generation lane's `derived/generation_keys.csv` (convention a, 1e-9 relative); bins add to totals; the
-row-4 union count reproduces 39.712M (the CPS lane's RESULT, to 0.001M).
-Outputs: derived/age_bins.csv, derived/arrest_profile.csv. Run from the repository root:
+row-4 union count reproduces 39.712M (the CPS lane's RESULT, to 0.001M); row 4 leaves G2, G3+, California
+and Texas unchanged and removes exactly the union's difference from G1.
+Outputs: derived/age_bins.csv, derived/arrest_profile.csv, derived/headcount.csv. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/main_case_decomposition_2026_09_29/profiles.py
 """
 from __future__ import annotations
@@ -92,7 +96,7 @@ def arrest_profile(pop_bins):
 def main():
     print("[frame]", flush=True)
     d = F.load()
-    civ, union, _ = F.masks(d)
+    civ, union, gens = F.masks(d)
     W = d[F.REPS].to_numpy(float)
     print("[row 4 weights]", flush=True)
     cells = L.acs_cells()
@@ -177,6 +181,28 @@ def main():
         out.writerow(["bin", "arrests_2024", "share"])
         for i in range(nb):
             out.writerow([EDGES[i], repr(float(arrests[i])), repr(float(arrests[i] / total))])
+
+    print("[headcount by generation and region]", flush=True)
+    omega, _, _ = F.assignments(d, civ, union, gens)
+    state = d.GESTFIPS.to_numpy()
+    heads = [(cut, group, float(weights["published"][m].sum()), float(weights["row4"][m].sum())) for cut, group, m in [
+        ("all", "union", union), ("all", "national frame", civ), ("region", "California", union & (state == 6)),
+        ("region", "Texas", union & (state == 48)), ("region", "outside CA and TX", union & ~np.isin(state, L.CA_TX))]]
+    for conv, om in omega.items():
+        per = {k: F.totals(np.ones(len(d)), weights[k], om) for k in ("published", "row4")}
+        heads += [(f"generation {conv}", g, float(per["published"][j]), float(per["row4"][j])) for j, g in enumerate(F.GENS)]
+    removed = heads[0][2] - heads[0][3]
+    kept = [abs(p - r) for cut, g, p, r in heads
+            if (cut == "generation a" and g != "G1") or (cut == "region" and g in ("California", "Texas"))]
+    gate("row 4 leaves G2, G3+, California and Texas unchanged (1e-6 persons)", max(kept) < 1e-6, f"worst {max(kept):.1e}")
+    g1 = next(p - r for cut, g, p, r in heads if cut == "generation a" and g == "G1")
+    gate("row 4 removes exactly the union's difference from G1 (convention a)", abs(g1 - removed) < 1e-6,
+         f"{removed:,.1f} persons")
+    with (OUT / "headcount.csv").open("w", newline="") as handle:
+        out = csv.writer(handle, lineterminator="\n")
+        out.writerow(["cut", "group", "published", "row4", "removed", "per_member_factor"])
+        for cut, group, p, r in heads:
+            out.writerow([cut, group, repr(p), repr(r), repr(p - r), repr(p / r)])
     print(f"  row-4 factors: naturalized {info['factor_natz']:.6f}, noncitizen {info['factor_noncit']:.6f}; "
           f"union {float(weights['published'][union].sum()) / 1e6:.6f}M published, {n4 / 1e6:.6f}M row 4; national "
           f"{float(weights['published'][civ].sum()) / 1e6:.6f}M / {float(weights['row4'][civ].sum()) / 1e6:.6f}M", flush=True)
