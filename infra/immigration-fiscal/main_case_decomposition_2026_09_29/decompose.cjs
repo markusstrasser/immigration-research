@@ -1,0 +1,620 @@
+/* Why the group costs what it costs: the September 27 main case ($321.8194–387.3701bn) in four additive parts at
+ * its two end specifications (48, the low end; 11, the high end):
+ *
+ *   1. shared            the account's own headcount at national per-capita taxes and service use;
+ *   2. age structure     from national ages to the group's, holding national per-age taxes and use;
+ *   3. taxes at given ages          the group's receipts profile against the national one;
+ *   4. service use at given ages    the group's spending profile against the national one.
+ *
+ * Parts 2-4 are an exact Shapley split over three factors, each either national (N) or the group's (G):
+ * A the age distribution, R the receipts profile by age, U the service-use profile by age. Every one of the
+ * eight states is a copy of the case's corrected union model (corrections.json applied to model.json) with the
+ * group's amounts replaced line by line, evaluated through the package's evaluateFull() (the engine at the
+ * specification's responses plus the return on public capital, whose components key off the state's own line
+ * amounts). State NNN is part 1; state GGG is the case itself.
+ *
+ * Amounts. For a line whose key has a per-person vector (profiles.py), on the row-4 frame the case's stack uses:
+ *   T_GG = union total; T_GN = sum_b n_G(b) x national key per person in b; T_NG = sum_b N_G pi_nat(b) x union key
+ *   per person in b; T_NN = N_G x national key per person. The uncorrected amount at a state is the model's
+ *   uncorrected cell times the state's key share over the published share. The case's corrections (every lane in
+ *   corrections.json, 278 edits) are the group's own measurements, so they enter only where the line's profile is
+ *   the group's: amount(alpha, G) = kappa x uncorrected(alpha, G), kappa = corrected / uncorrected(G, G) (the
+ *   correction scales with the group's own per-age profile); amount(alpha, N) = uncorrected(alpha, N).
+ * Lines held instead (no age or profile effect by construction): per-head keys (population, resident_population:
+ * general government, defense, interest, recreation, housing and community, the enterprise surplus by its re-key)
+ * at the case's corrected amount in every state; external and zero-response lines at the case's amounts (they
+ * carry no cost at the specification's responses). Special keys:
+ *   public_order_safety/use   per-head parts per head; the arrest-, court- and custody-keyed parts follow the
+ *                             national arrest profile by age (FBI CIUS 2024 Table 38) with a group relative risk
+ *                             calibrated to the case's administrative amount (indirect standardization);
+ *   Medicaid/uninsured_use_*  the MEPS Medicaid key plus the uncompensated-care arm g x (s - k) x n at the arm that
+ *                             sets the key (keys.py), recomputed from the state's own key totals;
+ *   school_reprice            the group's school correction, scaled with its school-key profile, 0 at U = N;
+ *   college_rekey             the group's education re-key, scaled with its education-mix profile, 0 at U = N;
+ *   lane_constants            audit row 8 (unallocable state-local spending, a per-head item) in every state; the
+ *                             rest (care work, shelter, rows 9-10, small items) the group's own, 0 at U = N;
+ *   production (P + F)        goes with the receipts factor: 0 at R = N (a slice with national per-age earnings is
+ *                             a proportional slice of labor, which moves no factor price under the model's constant
+ *                             returns with capital adjusting), and scaled by the group's earnings (wage key) at A = N.
+ *
+ * Gates (exit 1): corrections.json is the package's payload; (b) the union reproduces the case at both ends
+ * (1e-9) and the ends are specifications 48 and 11; the published-frame key shares reproduce model.json's
+ * uncorrected cells for every standardized line (to the nine decimals model.json stores), including the justice and uninsured keys;
+ * state GGG equals the union line by line and in cost; per-head lines' kappa is 1 within 1e-4; per-line
+ * contributions add to each state's cost (1e-9); (a) parts 1-4 add to the case at both ends in every order
+ * (1e-9; brief tolerance $0.1bn); (c) twice the average residents cost twice part 1 (1e-9).
+ * Outputs: derived/decomposition.csv, decomposition_lines.csv, states.csv, summary.json. Run from the repository
+ * root: node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs [--out-dir DIR]
+ */
+"use strict";
+const fs = require("fs");
+const path = require("path");
+
+const HERE = __dirname;
+const FISCAL = path.join(HERE, "..");
+const P = require(path.join(FISCAL, "main_case_long_run_2026_09_27", "package.cjs"));
+const { Engine, MODEL, readJson } = P;
+const argv = process.argv.slice(2);
+const argOf = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt : argv[i + 1]; };
+const IN = path.join(HERE, "derived");
+const OUT = path.resolve(argOf("--out-dir", IN));
+
+const fails = [];
+function gate(label, ok, detail) {
+  console.log(`  ${ok ? "PASS" : "FAIL"} ${label}${detail ? " — " + detail : ""}`);
+  if (!ok) fails.push(label);
+}
+const sum = (xs) => xs.reduce((a, b) => a + b, 0);
+const rel = (a, b) => Math.abs(a - b) / Math.max(Math.abs(b), 1e-12);
+const MEMBERS = MODEL.meta.target_population;  // the case's per-member denominator, 40,896,574
+const REF = MODEL.receipts.reference;
+
+// ---------------------------------------------------------------------------------------------------
+// The case.
+const CORR = readJson("main_case_long_run_2026_09_27/derived/corrections.json");
+const CASE = readJson("main_case_long_run_2026_09_27/derived/summary.json").main_case;
+console.log("[case]");
+gate("corrections.json is main_case_long_run_2026_09_27's payload", JSON.stringify(P.correctionsPayload()) === JSON.stringify(CORR),
+  `${CORR.lines.length} lines, ${CORR.edits.length} edits`);
+const UNION = Engine.applyCorrections(MODEL, CORR);
+const SPECS = P.MAIN_SPECS;
+const unionCost = SPECS.map((s) => P.evaluateFull(UNION, s).cost_bn);
+const LO = unionCost.indexOf(Math.min(...unionCost)), HI = unionCost.indexOf(Math.max(...unionCost));
+gate("(b) the corrected union reproduces the case at both ends", rel(unionCost[LO], CASE[0]) < 1e-12 && rel(unionCost[HI], CASE[1]) < 1e-12,
+  `${unionCost[LO].toFixed(4)} / ${unionCost[HI].toFixed(4)} vs ${CASE[0].toFixed(4)} / ${CASE[1].toFixed(4)}`);
+gate("the ends are specifications 48 (low) and 11 (high)", LO === 48 && HI === 11, `${LO} / ${HI}`);
+const ENDS = [["low", LO], ["high", HI]];
+
+// ---------------------------------------------------------------------------------------------------
+// Age profiles (profiles.py).
+function readCsv(file) {
+  const [head, ...rows] = fs.readFileSync(file, "utf8").trim().split("\n");
+  const keys = head.split(",");
+  return rows.map((r) => { const c = r.split(","); return Object.fromEntries(keys.map((k, i) => [k, c[i]])); });
+}
+const BINS = {};
+for (const r of readCsv(path.join(IN, "age_bins.csv"))) {
+  const t = ((BINS[r.weights] ||= {})[r.allocation] ||= {})[r.key] ||= { union: [], national: [], bins: [] };
+  t.union.push(Number(r.union)); t.national.push(Number(r.national)); t.bins.push(Number(r.bin));
+}
+const EDGES = BINS.published.both["extra|pop"].bins;
+const POP = { published: BINS.published.both["extra|pop"], row4: BINS.row4.both["extra|pop"] };
+const ARREST = readCsv(path.join(IN, "arrest_profile.csv")).map((r) => Number(r.share));
+const FRAME = Object.fromEntries(Object.entries(POP).map(([w, p]) => [w, { NG: sum(p.union), NC: sum(p.national) }]));
+const HF = FRAME.published.NC / MODEL.meta.resident_population;  // the account's household fraction on spending
+
+// Key totals at the four (age, profile) states on a frame.
+function stateTotals(u, n, pop) {
+  const NG = sum(pop.union), NC = sum(pop.national), V = sum(n);
+  return {
+    V, T: {
+      GG: sum(u),
+      GN: sum(n.map((x, b) => pop.union[b] * x / pop.national[b])),
+      NG: sum(u.map((x, b) => NG * pop.national[b] / NC * x / pop.union[b])),
+      NN: NG * V / NC,
+    },
+  };
+}
+function keyTotals(weights, allocation, name) {
+  const k = (BINS[weights][allocation] || {})[name];
+  if (!k) return null;
+  return stateTotals(k.union, k.national, POP[weights]);
+}
+
+// ---------------------------------------------------------------------------------------------------
+// Justice: the use key (cj_use_allocation_2026_09_23, its central split).
+const CJ = readJson("cj_use_allocation_2026_09_23/derived/summary.json").central;
+const CJROWS = Object.fromEntries(readCsv(path.join(FISCAL, "cj_use_allocation_2026_09_23/derived/central_split.csv"))
+  .map((r) => [r.component, Number(r.national_bn)]));
+if (!(CJ.police_key === "half" && CJ.court_criminal_share === 0.6 && CJ.cbp_border === "per_head")) {
+  throw new Error("[BLOCKED] the justice lane's central split changed: police half, courts 60% criminal, CBP per head expected");
+}
+const PH = CJROWS.fire + CJROWS.police_cbp + CJROWS.police_ice_border + 0.5 * CJROWS.police_non_border + 0.4 * CJROWS.law_courts;
+const NP = 0.5 * CJROWS.police_non_border + 0.6 * CJROWS.law_courts + CJROWS.prisons + CJROWS.police_ice_interior;
+const POS = MODEL.spending.lines.find((l) => l.id === "public_order_safety");
+gate("the justice components add to the public-order line", Math.abs(PH + NP - POS.national_bn) < 1e-5,
+  `per head ${PH.toFixed(3)} + keyed ${NP.toFixed(3)} = ${(PH + NP).toFixed(3)} vs ${POS.national_bn}`);
+const JUSTICE_PROFILES = {
+  arrests: ARREST,  // national arrests by age, all offenses (CIUS 2024 Table 38)
+  flat_18_64: (() => {  // the key's own base for the custody split: persons 18-64, flat
+    const p = POP.published.national.map((x, b) => (EDGES[b] >= 18 && EDGES[b] <= 64 ? x : 0));
+    return p.map((x) => x / sum(p));
+  })(),
+};
+// Key-unit totals (share = T / national) of the use key at the four states on a frame. The keyed parts are the
+// group's administrative amount at G (held fixed across weight sets, as the stack holds them) and the national
+// profile times a relative risk theta at the group's profile.
+function justiceTotals(weights, profile, groupKeyed) {
+  const pop = POP[weights], NG = sum(pop.union), NC = sum(pop.national);
+  const perPerson = profile.map((a, b) => NP * a / pop.national[b]);
+  const atGroupAges = sum(perPerson.map((j, b) => j * pop.union[b]));
+  const theta = groupKeyed / atGroupAges;
+  const ph = PH * NG / NC;
+  return { V: POS.national_bn, theta, T: { GG: ph + groupKeyed, GN: ph + atGroupAges, NG: ph + theta * NP * NG / NC, NN: (PH + NP) * NG / NC } };
+}
+
+// ---------------------------------------------------------------------------------------------------
+// Uncompensated care inside the Medicaid line (uncompensated_care_2026_09_23; keys.py's arms).
+const UC = readJson("uncompensated_care_2026_09_23/derived/summary.json");
+const OFFSETS = [
+  { year: 2013, total_uc: 84.9 - 8.1 - 2.1, programs: { medicaid: 13.5, medicare: 8.0, state_local: 9.8 + 7.3 + 3.0 + 1.5 + 0.1 } },
+  { year: 2017, total_uc: 42.4 - 10.3 - 2.3, programs: { medicaid: 9.8, state_local: 9.9 + 1.3 } },
+];
+const ARMS = OFFSETS.flatMap((o) => ["health_other", "per_head"].flatMap((sl) =>
+  [UC.aha_national_bn, UC.aha_national_bn * UC.uplift_2024].map((n) => ({ year: o.year, sl, n, o }))));
+const MEDICAID = "medicaid_and_chip_other_medical";
+const lineOf = (id) => MODEL.spending.lines.find((l) => l.id === id);
+// Arm value g x (s - k) x n from a state's uninsured person-years share and its program key shares.
+function armValue(arm, s, kg) {
+  const off = sum(Object.values(arm.o.programs));
+  const g = off / arm.o.total_uc;
+  const k = sum(Object.entries(arm.o.programs).map(([p, v]) => v / off * kg[p === "state_local" ? arm.sl : p]));
+  return g * (s - k) * arm.n;
+}
+
+// ---------------------------------------------------------------------------------------------------
+// The plan: every line's amount at each (age, profile) state for one specification.
+const SYN_IDS = new Set(P.SYN_LINES.map((l) => l.id));
+const ROW8 = P.CONSTANTS.row8.c * P.RESPONSES.row8_factor;
+const uncorrectedCell = (side, id, key, a) => (side === "receipt"
+  ? MODEL.receipts.lines.find((l) => l.id === id).cells[REF][a]
+  : lineOf(id).keys[key][a]);
+
+function planFor(spec, opts) {
+  const o = Object.assign({ frame: "row4", justice: "arrests", corrections: "ratio" }, opts || {});
+  const a = spec.allocation, W = o.frame;
+  const ev = P.evaluateFull(UNION, spec).evaluation;
+  const rows = [], checks = [];
+  // An uncorrected-amount function U(state) on the frame, from the model's uncorrected cell and a key-totals object.
+  function scaledOn(cell, pub, frame, label) {
+    const sharePub = pub.T.GG / pub.V;
+    // model.json stores shares to nine decimals.
+    checks.push({ label, ok: Math.abs(sharePub - cell.share) <= 5e-10, detail: `${sharePub} vs ${cell.share}` });
+    return (state) => cell.target_bn * (frame.T[state] / frame.V) / sharePub;
+  }
+  const withCorrections = (U, A) => {
+    const kappa = A / U("GG");
+    const amount = (alpha, pi) => {
+      if (o.corrections === "none") return U(alpha + pi);
+      if (alpha === "G" && pi === "G") return A;
+      if (pi === "N") return U(alpha + "N");
+      return o.corrections === "ratio" ? kappa * U(alpha + "G") : U(alpha + "G") + (A - U("GG"));
+    };
+    return { kappa, amount };
+  };
+  // Profile scalers for the synthetic lines and production (the group's own profile across ages, frame W).
+  const ratioOf = (allocation, name) => { const t = keyTotals(W, allocation, name); return (alpha) => (alpha === "G" ? 1 : t.T.NG / t.T.GG); };
+  const schoolRatio = ratioOf(a, "spending|school_operating"), mixRatio = ratioOf(a, "spending|education_mix");
+  const wageRatio = ratioOf("personal", "receipt|wage");
+  const edu = { school: keyTotals(W, a, "spending|school_operating"), mix: keyTotals(W, a, "spending|education_mix") };
+
+  for (const [side, list] of [["receipt", ev.receipts], ["spending", ev.spending]]) {
+    for (const r of list) {
+      const row = { side, id: r.id, key: r.key, response: r.response, A: r.amount_bn };
+      if (SYN_IDS.has(r.id)) {
+        row.cls = "synthetic";
+        if (o.corrections === "none") row.amount = () => (r.id === P.SYN.constants ? ROW8 : 0);
+        else if (r.id === P.SYN.school) row.amount = (alpha, pi) => (pi === "N" ? 0 : r.amount_bn * schoolRatio(alpha));
+        else if (r.id === P.SYN.college) row.amount = (alpha, pi) => (pi === "N" ? 0 : r.amount_bn * mixRatio(alpha));
+        else row.amount = (alpha, pi) => (pi === "N" ? ROW8 : r.amount_bn);
+      } else if (r.key === "external" || r.key === "none") {
+        row.cls = "zero"; row.amount = () => r.amount_bn;
+        if (r.amount_bn !== 0) throw new Error(`[BLOCKED] ${r.id} has an external key and a non-zero amount`);
+      } else if (r.key === "population" || r.key === "resident_population") {
+        row.cls = "per_head";
+        // The case's corrected per-head amount is the row-4 frame's; the published frame is model.json's.
+        const U0 = uncorrectedCell(side, r.id, r.key, a).target_bn;
+        const perHead = W === "row4" ? r.amount_bn : (r.id === P.ENTERPRISE_LINE
+          ? MODEL.receipts.lines.find((l) => l.id === r.id).national_bn * (lineOf(P.REKEY_LINE).keys.population[a].target_bn / lineOf(P.REKEY_LINE).national_bn)
+          : U0);
+        row.amount = () => perHead;
+        if (side === "spending" && r.key === "population") {
+          const t = keyTotals("row4", a, "spending|population"), tp = keyTotals("published", a, "spending|population");
+          row.kappa = r.amount_bn / (U0 * (t.T.GG / t.V) / (tp.T.GG / tp.V));
+        }
+      } else if (r.response === 0) {
+        row.cls = "held_zero_response"; row.amount = () => r.amount_bn;
+      } else if (side === "spending" && r.id === "public_order_safety" && r.key === "use") {
+        row.cls = "justice";
+        const cell = uncorrectedCell(side, r.id, r.key, a);
+        const pubPh = PH * FRAME.published.NG / FRAME.published.NC;
+        const groupKeyed = cell.share * POS.national_bn - pubPh;  // the group's administrative keyed parts, key units
+        const prof = JUSTICE_PROFILES[o.justice];
+        const pub = justiceTotals("published", prof, groupKeyed), fr = justiceTotals(W, prof, groupKeyed);
+        const U = scaledOn(cell, pub, fr, `${r.id}/${r.key}`);
+        Object.assign(row, withCorrections(U, r.amount_bn), { theta: fr.theta });
+      } else if (side === "spending" && r.id === MEDICAID && r.key.startsWith("uninsured_use")) {
+        row.cls = "uninsured";
+        const cell = uncorrectedCell(side, r.id, r.key, a);
+        const medCell = uncorrectedCell(side, r.id, "medicaid", a);
+        const program = (id, name) => {
+          const l = lineOf(id), c = l.keys[l.preferred_key].personal;
+          return { cell: c, national: l.national_bn, pub: keyTotals("published", "personal", name), fr: keyTotals(W, "personal", name) };
+        };
+        const progs = { medicaid: program(MEDICAID, "spending|medicaid"), medicare: program("medicare", "spending|medicare"),
+          health_other: program("health_services", "spending|health_other") };
+        const py = { pub: keyTotals("published", "personal", "extra|exposure_py"), fr: keyTotals(W, "personal", "extra|exposure_py") };
+        const frameOf = (w) => FRAME[w];
+        // kg for a frame and state: each program's uncorrected personal cell at the state over its national line;
+        // per head: 0.120245 (keys.py) scaled by the frame's headcount share.
+        const kgAt = (which, state) => {
+          const kg = {};
+          for (const [p, x] of Object.entries(progs)) {
+            const t = x[which];
+            kg[p] = x.cell.target_bn * (t.T[state] / t.V) / (x.pub.T.GG / x.pub.V) / x.national;
+          }
+          const f = frameOf(which === "pub" ? "published" : W);
+          kg.per_head = 0.120245 * (f.NG / f.NC) / (FRAME.published.NG / FRAME.published.NC);
+          return kg;
+        };
+        const sAt = (which, state) => py[which].T[state] / py[which].V;
+        // The arm that sets the key: argmin (low) or argmax (high) of the published union's arms.
+        const pubArms = ARMS.map((arm) => armValue(arm, sAt("pub", "GG"), kgAt("pub", "GG")));
+        const pick = r.key.endsWith("_low") ? pubArms.indexOf(Math.min(...pubArms)) : pubArms.indexOf(Math.max(...pubArms));
+        const medPub = keyTotals("published", a, "spending|medicaid"), medFr = keyTotals(W, a, "spending|medicaid");
+        const Umed = scaledOn(medCell, medPub, medFr, `${r.id}/medicaid`);
+        checks.push({ label: `${r.id}/${r.key} arm`, ok: Math.abs(medCell.target_bn + pubArms[pick] - cell.target_bn) < 1e-6,
+          detail: `${(medCell.target_bn + pubArms[pick]).toFixed(9)} vs ${cell.target_bn.toFixed(9)}` });
+        const U = (state) => Umed(state) + armValue(ARMS[pick], sAt("fr", state), kgAt("fr", state));
+        Object.assign(row, withCorrections(U, r.amount_bn), { arm: { year: ARMS[pick].year, sl: ARMS[pick].sl, n: ARMS[pick].n } });
+      } else {
+        const name = `${side}|${r.key}`;
+        const pub = keyTotals("published", a, name), fr = keyTotals(W, a, name);
+        if (!pub) throw new Error(`[BLOCKED] no age profile for ${side}/${r.id}/${r.key} (response ${r.response})`);
+        row.cls = "profile";
+        const cell = uncorrectedCell(side, r.id, r.key, a);
+        const U = scaledOn(cell, pub, fr, `${r.id}/${r.key}`);
+        Object.assign(row, withCorrections(U, r.amount_bn));
+      }
+      rows.push(row);
+    }
+  }
+  // Education: the school part of the line's key at each state (for the line split only).
+  const schoolFraction = (alpha, pi) => {
+    const st = alpha + (pi === "N" ? "N" : "G");
+    return edu.school.T[st] / edu.mix.T[st];
+  };
+  const production = (alpha, rho) => (rho === "N" ? 0 : wageRatio(alpha));
+  return { spec, a, rows, checks, production, schoolFraction, opts: o };
+}
+
+// ---------------------------------------------------------------------------------------------------
+// States.
+const STATES = ["N", "G"].flatMap((A) => ["N", "G"].flatMap((R) => ["N", "G"].map((U) => A + R + U)));
+function stateModel(plan, st) {
+  const [alpha, rho, ups] = st;
+  const m = Engine.clone(UNION);
+  const ri = new Map(m.receipts.lines.map((l, i) => [l.id, i])), si = new Map(m.spending.lines.map((l, i) => [l.id, i]));
+  for (const row of plan.rows) {
+    const v = row.amount(alpha, row.side === "receipt" ? rho : ups);
+    if (row.side === "receipt") m.receipts.lines[ri.get(row.id)].cells[REF][plan.a].target_bn = v;
+    else m.spending.lines[si.get(row.id)].keys[row.key][plan.a].target_bn = v;
+  }
+  const f = plan.production(alpha, rho);
+  m.production.private_wtp_bn = UNION.production.private_wtp_bn.map((x) => x * f);
+  m.production.induced_receipts_bn = UNION.production.induced_receipts_bn.map((x) => x * f);
+  return m;
+}
+
+// Line groups for the split of parts 3 and 4.
+const GROUPS = {
+  income_taxes: ["federal_income_tax", "state_local_income_tax", "other_personal_tax"],
+  payroll_taxes: ["employee_oasdi", "employee_hi", "self_employment_oasdi_hi", "employer_oasdi", "employer_hi",
+    "other_domestic_social_contributions", "medicare_supplementary_premiums"],
+  consumption_taxes: ["general_sales_tax", "excise_selective_sales", "customs_duties", "personal_current_transfers"],
+  other_receipts: ["personal_motor_vehicle", "personal_property_tax", "corporate_capital", "corporate_labor", "modeled_owner_property",
+    "remaining_production_property", "other_production_taxes", "rest_world_tax_contributions", "government_asset_income",
+    "business_current_transfers", "rest_world_current_transfers", "source_rounding"],
+  medicaid: [MEDICAID],
+  justice: ["public_order_safety"],
+  refundable_credits: ["refundable_tax_credits"],
+  social_security_medicare: ["social_security", "railroad_retirement", "medicare", "pension_guaranty"],
+  health_veterans: ["health_services", "veterans_pension_disability", "veterans_readjustment", "veterans_other",
+    "veterans_life_insurance", "military_medical"],
+  cash_food_housing_benefits: ["income_security_services", "snap", "ssi", "family_and_general_assistance", "other_state_welfare",
+    "energy_assistance", "unemployment", "other_federal_benefits", "housing_subsidies", "workers_compensation",
+    "temporary_disability", "black_lung", "employment_training"],
+  roads_economic_affairs: ["economic_affairs_services", "agricultural_subsidies", "transport_subsidies", "other_subsidies"],
+  per_head_government_and_enterprises: ["general_public_services", "recreation_culture", "housing_community_services",
+    "other_state_benefits", "defense", "domestic_interest", "foreign_interest", "foreign_territory_social_benefits",
+    "other_foreign_current_transfers", "enterprise_surplus"],
+  care_shelter_audit_constants: [P.SYN.constants],
+};
+const GROUP_OF = {};
+for (const [g, ids] of Object.entries(GROUPS)) for (const id of ids) GROUP_OF[id] = g;
+const CAPITAL_GROUP = (c) => {
+  if (c.id === "k12") return "schools";
+  if (c.id === "college") return "colleges_other_education";
+  if (c.part === "enterprise") return "per_head_government_and_enterprises";
+  const line = c.key.numerator_lines ? c.key.numerator_lines[0] : c.key.line;
+  return GROUP_OF[line];
+};
+const GROUP_NAMES = ["income_taxes", "payroll_taxes", "consumption_taxes", "production_term", "other_receipts", "schools",
+  "colleges_other_education", "medicaid", "justice", "refundable_credits", "social_security_medicare", "health_veterans",
+  "cash_food_housing_benefits", "roads_economic_affairs", "per_head_government_and_enterprises", "care_shelter_audit_constants"];
+
+function evaluateState(plan, st) {
+  const m = stateModel(plan, st);
+  const full = P.evaluateFull(m, plan.spec);
+  const ev = full.evaluation;
+  const g = Object.fromEntries(GROUP_NAMES.map((n) => [n, 0]));
+  const add = (name, v) => { if (!(name in g)) throw new Error("[BLOCKED] no group " + name); g[name] += v; };
+  for (const r of ev.receipts) add(GROUP_OF[r.id] || "unmapped", -r.effect_bn);
+  const sf = plan.schoolFraction(st[0], st[2]);
+  for (const s of ev.spending) {
+    const c = -s.effect_bn;
+    if (s.id === "education_services") { add("schools", c * sf); add("colleges_other_education", c * (1 - sf)); }
+    else if (s.id === P.SYN.school) add("schools", c);
+    else if (s.id === P.SYN.college || s.id === "education_benefits") add("colleges_other_education", c);
+    else add(GROUP_OF[s.id] || "unmapped", c);
+  }
+  add("production_term", -(ev.private_wtp_bn + ev.induced_receipts_bn));  // fiscal weight 1 (the package's state)
+  const comps = P.componentsFor(plan.spec.capital_variant);
+  for (const c of full.capital.components) add(CAPITAL_GROUP(comps.find((x) => x.id === c.id)), c.return_bn);
+  const zeroResponse = { receipts: sum(ev.receipts.filter((x) => x.response === 0).map((x) => x.amount_bn)),
+    spending: sum(ev.spending.filter((x) => x.response === 0).map((x) => x.amount_bn)) };
+  const parts = { receipts_bn: -sum(ev.receipts.map((x) => x.effect_bn)), operating_bn: -sum(ev.spending.map((x) => x.effect_bn)),
+    production_bn: -(ev.private_wtp_bn + ev.induced_receipts_bn), capital_bn: full.capital.total_bn };
+  return { cost: full.cost_bn, groups: g, model: m, full, zeroResponse, parts };
+}
+
+// ---------------------------------------------------------------------------------------------------
+// Orders and the Shapley mean.
+const FACTORS = ["A", "R", "U"];
+const PART_OF = { A: "age_structure", R: "taxes_at_given_ages", U: "service_use_at_given_ages" };
+const ORDERS = [["A", "R", "U"], ["A", "U", "R"], ["R", "A", "U"], ["R", "U", "A"], ["U", "A", "R"], ["U", "R", "A"]];
+const stateOf = (on) => FACTORS.map((f) => (on[f] ? "G" : "N")).join("");
+function decompose(values) {  // values: {state: number or {group: number}}
+  const isNum = typeof values.NNN === "number";
+  const minus = (x, y) => (isNum ? x - y : Object.fromEntries(Object.keys(x).map((k) => [k, x[k] - y[k]])));
+  const plus = (x, y) => (isNum ? x + y : Object.fromEntries(Object.keys(x).map((k) => [k, x[k] + y[k]])));
+  const times = (x, c) => (isNum ? x * c : Object.fromEntries(Object.keys(x).map((k) => [k, x[k] * c])));
+  const byOrder = {};
+  const shapley = {};
+  for (const order of ORDERS) {
+    const on = {}, parts = {};
+    let prev = "NNN";
+    for (const f of order) { on[f] = true; const next = stateOf(on); parts[f] = minus(values[next], values[prev]); prev = next; }
+    byOrder[order.join("-")] = parts;
+    for (const f of FACTORS) shapley[f] = shapley[f] === undefined ? times(parts[f], 1 / ORDERS.length) : plus(shapley[f], times(parts[f], 1 / ORDERS.length));
+  }
+  return { shared: values.NNN, byOrder, shapley };
+}
+
+function runEnd(spec, opts) {
+  const plan = planFor(spec, opts);
+  const out = {};
+  for (const st of STATES) out[st] = evaluateState(plan, st);
+  return { plan, states: out };
+}
+
+// ---------------------------------------------------------------------------------------------------
+// Main run.
+console.log("[decomposition]");
+const main = {};
+for (const [end, i] of ENDS) {
+  const r = runEnd(SPECS[i]);
+  main[end] = r;
+  const bad = r.plan.checks.filter((c) => !c.ok);
+  gate(`${end} end: published-frame key shares reproduce model.json's uncorrected cells (${r.plan.checks.length} checks)`, !bad.length,
+    bad.map((c) => `${c.label}: ${c.detail}`).join("; "));
+  const ggg = r.states.GGG;
+  const u = P.evaluateFull(UNION, SPECS[i]);
+  const sameLines = u.evaluation.receipts.every((x, k) => ggg.full.evaluation.receipts[k].amount_bn === x.amount_bn)
+    && u.evaluation.spending.every((x, k) => ggg.full.evaluation.spending[k].amount_bn === x.amount_bn);
+  gate(`${end} end: state GGG is the union, line by line and in cost`, sameLines && Math.abs(ggg.cost - u.cost_bn) < 1e-9,
+    `${ggg.cost.toFixed(6)} vs ${u.cost_bn.toFixed(6)}`);
+  const ph = r.plan.rows.filter((x) => x.kappa !== undefined && x.cls === "per_head");
+  gate(`${end} end: per-head lines' corrected amounts are the row-4 frame's (kappa within 1e-4 of 1)`,
+    ph.every((x) => Math.abs(x.kappa - 1) < 1e-4), ph.map((x) => `${x.id} ${x.kappa.toFixed(7)}`).join(", "));
+  const worstSum = Math.max(...STATES.map((st) => Math.abs(sum(Object.values(r.states[st].groups)) - r.states[st].cost)));
+  gate(`${end} end: line-group contributions add to each state's cost`, worstSum < 1e-9, `worst ${worstSum.toExponential(1)}`);
+}
+
+// Parts.
+const costs = Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(STATES.map((st) => [st, main[end].states[st].cost]))]));
+const groupVals = Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(STATES.map((st) => [st, main[end].states[st].groups]))]));
+const D = Object.fromEntries(ENDS.map(([end]) => [end, decompose(costs[end])]));
+const DG = Object.fromEntries(ENDS.map(([end]) => [end, decompose(groupVals[end])]));
+for (const [end] of ENDS) {
+  const total = costs[end].GGG, target = CASE[end === "low" ? 0 : 1];
+  const worst = Math.max(...Object.values(D[end].byOrder).map((p) => Math.abs(D[end].shared + p.A + p.R + p.U - target)));
+  const sh = D[end].shapley;
+  gate(`(a) ${end} end: parts 1-4 add to the case in all six orders and in the Shapley mean`,
+    worst < 1e-9 && Math.abs(D[end].shared + sh.A + sh.R + sh.U - target) < 1e-9, `worst ${worst.toExponential(1)}; case ${total.toFixed(4)}`);
+}
+
+// (c) Twice the average residents.
+console.log("[linearity]");
+const linearity = {};
+for (const [end, i] of ENDS) {
+  const plan = main[end].plan, spec = SPECS[i];
+  const m = stateModel(plan, "NNN");
+  const ri = new Map(m.receipts.lines.map((l, k) => [l.id, k])), si = new Map(m.spending.lines.map((l, k) => [l.id, k]));
+  for (const row of plan.rows) {
+    if (row.side === "receipt") m.receipts.lines[ri.get(row.id)].cells[REF][plan.a].target_bn *= 2;
+    else m.spending.lines[si.get(row.id)].keys[row.key][plan.a].target_bn *= 2;
+  }
+  const c2 = P.evaluateFull(m, spec).cost_bn;
+  gate(`(c) ${end} end: twice the average residents cost twice part 1`, Math.abs(c2 - 2 * D[end].shared) < 1e-9,
+    `${c2.toFixed(6)} vs 2 x ${D[end].shared.toFixed(6)}`);
+  linearity[end] = { part1_bn: D[end].shared, twice_bn: c2 };
+}
+// What the engine holds fixed that is not linear in substance: finite-removal responses computed at the case's s.
+const R26 = readJson("finite_response_2026_09_26/derived/r_values.json");
+const LRJ = P.LR;
+const rOf = (b, s) => (1 - Math.pow(1 - s, b)) / s;
+const S0 = R26.s_national_memo;
+{
+  for (const [end, i] of ENDS) {
+    const spec = SPECS[i], reading = spec.reading;
+    const b = reading === "low" ? R26.gg_low_b_unrounded : R26.gg_high_b;
+    const gg2 = rOf(b, 2 * S0);
+    // Long-run subfunctions whose reading is a finite removal (strictly between 0 and 1) are re-read at 2s.
+    const E = LRJ.elasticities;
+    const bFor = (sf) => (sf.id.includes("general_economic") ? E.administration_general_government.b
+      : sf.id.includes("recreation") ? E.parks.across_states.b : E.highways_nontoll.across_states.b);
+    const reread = {};
+    for (const line of P.LR_LINES) {
+      reread[line] = sum(LRJ.lines[line].subfunctions.map((sf) => {
+        const v = sf.response[reading];
+        if (v === 0 || v === 1) return sf.share_of_line * v;
+        if (sf.id.includes("general_economic")) return sf.share_of_line * rOf(R26.gg_high_b, 2 * S0);  // administration, b 0.842
+        return sf.share_of_line * rOf(bFor(sf), 2 * S0);
+      }));
+    }
+    const nn = main[end].states.NNN.full.evaluation;
+    const amt = (id) => nn.spending.find((x) => x.id === id).amount_bn;
+    const resp = (id) => nn.spending.find((x) => x.id === id).response;
+    const dGG = 2 * amt("general_public_services") * (gg2 - resp("general_public_services"));
+    const dLR = sum(P.LR_LINES.map((id) => 2 * amt(id) * (reread[id] - resp(id))));
+    linearity[end].finite_removal_at_2s = {
+      s: S0, general_government_response: [resp("general_public_services"), gg2], general_government_change_bn: dGG,
+      long_run_responses: Object.fromEntries(P.LR_LINES.map((id) => [id, [resp(id), reread[id]]])), long_run_change_bn: dLR,
+      note: "engine operating lines only; the capital return's long-run subfunction responses and row 8's finite factor are not re-read",
+    };
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------
+// Sensitivities: the justice profile flat over 18-64, corrections as fixed dollars, part 1 at 40.90M.
+console.log("[sensitivities]");
+const sens = {};
+for (const [name, opts] of [["justice_flat_18_64", { justice: "flat_18_64" }], ["corrections_fixed_dollars", { corrections: "fixed" }],
+  ["corrections_off", { corrections: "none" }]]) {
+  sens[name] = {};
+  for (const [end, i] of ENDS) {
+    const r = runEnd(SPECS[i], opts);
+    const d = decompose(Object.fromEntries(STATES.map((st) => [st, r.states[st].cost])));
+    sens[name][end] = { shared: d.shared, age_structure: d.shapley.A, taxes_at_given_ages: d.shapley.R, service_use_at_given_ages: d.shapley.U,
+      total: r.states.GGG.cost };
+    if (name === "corrections_off") {
+      // The case's corrections enter only where a profile is the group's: their share of each part.
+      sens[name][end].corrections_contribution = { age_structure: D[end].shapley.A - d.shapley.A,
+        taxes_at_given_ages: D[end].shapley.R - d.shapley.R, service_use_at_given_ages: D[end].shapley.U - d.shapley.U };
+      const dg = decompose(Object.fromEntries(STATES.map((st) => [st, r.states[st].groups])));
+      sens[name][end].corrections_contribution_by_group = Object.fromEntries(FACTORS.map((f) => [PART_OF[f],
+        Object.fromEntries(GROUP_NAMES.map((g) => [g, DG[end].shapley[f][g] - dg.shapley[f][g]]))]));
+      gate(`${name} ${end}: part 1 is unchanged without the corrections`, Math.abs(d.shared - D[end].shared) < 1e-9);
+    } else {
+      gate(`${name} ${end}: parts add to the case`, Math.abs(d.shared + d.shapley.A + d.shapley.R + d.shapley.U - CASE[end === "low" ? 0 : 1]) < 1e-9);
+    }
+  }
+}
+sens.part1_at_published_count = {};
+for (const [end, i] of ENDS) {
+  const r = planFor(SPECS[i], { frame: "published" });
+  const c = P.evaluateFull(stateModel(r, "NNN"), SPECS[i]).cost_bn;
+  sens.part1_at_published_count[end] = { part1_bn: c, part1_row4_bn: D[end].shared, difference_bn: c - D[end].shared };
+}
+
+// ---------------------------------------------------------------------------------------------------
+// Outputs.
+fs.mkdirSync(OUT, { recursive: true });
+const f6 = (x) => (Math.abs(x) < 5e-13 ? 0 : x).toFixed(6);
+const perMember = (bn) => Math.round(bn * 1e9 / MEMBERS);
+const lines = [["part", "order", "low_bn", "high_bn", "per_member_low", "per_member_high", "share_of_total", "share_low", "share_high"].join(",")];
+const shareRow = (lo, hi) => [f6((lo + hi) / (CASE[0] + CASE[1])), f6(lo / CASE[0]), f6(hi / CASE[1])];
+const row = (part, order, lo, hi) => lines.push([part, order, f6(lo), f6(hi), perMember(lo), perMember(hi), ...shareRow(lo, hi)].join(","));
+row("shared", "all", D.low.shared, D.high.shared);
+for (const f of FACTORS) {
+  for (const order of ORDERS) {
+    const k = order.join("-");
+    row(PART_OF[f], k, D.low.byOrder[k][f], D.high.byOrder[k][f]);
+  }
+  row(PART_OF[f], "shapley", D.low.shapley[f], D.high.shapley[f]);
+}
+row("total", "all", costs.low.GGG, costs.high.GGG);
+fs.writeFileSync(path.join(OUT, "decomposition.csv"), lines.join("\n") + "\n");
+
+const gl = [["part", "line_group", "low_bn", "high_bn"].join(",")];
+for (const g of GROUP_NAMES) gl.push(["shared", g, f6(DG.low.shared[g]), f6(DG.high.shared[g])].join(","));
+for (const f of FACTORS) for (const g of GROUP_NAMES) gl.push([PART_OF[f], g, f6(DG.low.shapley[f][g]), f6(DG.high.shapley[f][g])].join(","));
+for (const g of GROUP_NAMES) gl.push(["total", g, f6(groupVals.low.GGG[g]), f6(groupVals.high.GGG[g])].join(","));
+fs.writeFileSync(path.join(OUT, "decomposition_lines.csv"), gl.join("\n") + "\n");
+for (const [end] of ENDS) {
+  for (const f of FACTORS) {
+    const s = sum(Object.values(DG[end].shapley[f]));
+    gate(`${end} end: the ${PART_OF[f]} line groups add to the part`, Math.abs(s - D[end].shapley[f]) < 1e-9, `${s.toFixed(6)}`);
+  }
+}
+
+const sl = [["state", "age", "receipts", "use", "low_bn", "high_bn"].join(",")];
+for (const st of STATES) sl.push([st, st[0], st[1], st[2], f6(costs.low[st]), f6(costs.high[st])].join(","));
+fs.writeFileSync(path.join(OUT, "states.csv"), sl.join("\n") + "\n");
+
+const round = (x) => (typeof x === "number" ? Number(x.toPrecision(12)) : x);
+const deep = (o) => JSON.parse(JSON.stringify(o, (k, v) => round(v)));
+const lineTable = Object.fromEntries(ENDS.map(([end]) => [end, main[end].plan.rows.map((r) => ({
+  side: r.side, id: r.id, key: r.key, class: r.cls, response: r.response, corrected_bn: r.A,
+  kappa: r.kappa === undefined ? null : r.kappa, theta: r.theta === undefined ? null : r.theta, arm: r.arm || null,
+  amounts_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, r.amount(s[0], s[1])])),
+}))]));
+const summary = {
+  lane: "main_case_decomposition_2026_09_29",
+  case: { lane: "main_case_long_run_2026_09_27", bn: CASE, ends: { low: LO, high: HI } },
+  members: MEMBERS,
+  frame: { published: FRAME.published, row4: FRAME.row4, household_fraction: HF,
+    note: "row4: the stack's audit row 4 weights; the case's per-head lines are charged at this union count" },
+  parts: Object.fromEntries(ENDS.map(([end]) => [end, { shared: D[end].shared, shapley: Object.fromEntries(FACTORS.map((f) => [PART_OF[f], D[end].shapley[f]])),
+    by_order: Object.fromEntries(Object.entries(D[end].byOrder).map(([k, v]) => [k, Object.fromEntries(FACTORS.map((f) => [PART_OF[f], v[f]]))])) }])),
+  states_bn: costs,
+  production: Object.fromEntries(ENDS.map(([end]) => [end, {
+    group_P_plus_F_bn: main[end].states.GGG.full.evaluation.private_wtp_bn + main[end].states.GGG.full.evaluation.induced_receipts_bn,
+    at_national_ages_factor: main[end].plan.production("N", "G") }])),
+  row8_bn: ROW8,
+  // Receipts by group at the group's profile over the national profile, at the group's ages (GG / GN) and at
+  // national ages (NG / NN).
+  receipt_ratios: Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(["income_taxes", "payroll_taxes", "consumption_taxes"].map((g) => {
+    const rows = main[end].plan.rows.filter((r) => r.side === "receipt" && GROUP_OF[r.id] === g);
+    const tot = (st) => sum(rows.map((r) => r.amount(st[0], st[1])));
+    return [g, { at_group_ages: tot("GG") / tot("GN"), at_national_ages: tot("NG") / tot("NN"), GG: tot("GG"), GN: tot("GN"), NG: tot("NG"), NN: tot("NN") }];
+  }))])),
+  part1_composition: Object.fromEntries(ENDS.map(([end]) => [end, Object.assign({}, main[end].states.NNN.parts,
+    { amounts_at_zero_response_bn: main[end].states.NNN.zeroResponse })])),
+  // Lines the case holds at zero response, at average residents' shares (receipts N/Nciv, spending hf x N/Nciv on the
+  // row-4 frame): what the response conventions keep out of part 1.
+  zero_response_at_average_residents: Object.fromEntries(ENDS.map(([end]) => [end, (() => {
+    const f = FRAME.row4, sr = f.NG / f.NC, ss = HF * f.NG / f.NC;
+    const pick = (side) => main[end].plan.rows.filter((r) => r.side === side && r.response === 0 && r.cls !== "zero")
+      .map((r) => { const l = (side === "receipt" ? MODEL.receipts.lines : MODEL.spending.lines).find((x) => x.id === r.id);
+        return [r.id, l.national_bn * (side === "receipt" ? sr : ss)]; });
+    const rec = Object.fromEntries(pick("receipt")), spe = Object.fromEntries(pick("spending"));
+    return { receipts: rec, receipts_total_bn: sum(Object.values(rec)), spending: spe, spending_total_bn: sum(Object.values(spe)) };
+  })()])),
+  by_component: Object.fromEntries(ENDS.map(([end]) => [end, (() => {
+    const comp = decompose(Object.fromEntries(STATES.map((st) => [st, main[end].states[st].parts])));
+    return { shared: comp.shared, shapley: Object.fromEntries(FACTORS.map((f) => [PART_OF[f], comp.shapley[f]])) };
+  })()])),
+  linearity,
+  sensitivities: sens,
+  lines: lineTable,
+};
+fs.writeFileSync(path.join(OUT, "summary.json"), JSON.stringify(deep(summary), null, 1) + "\n");
+
+console.log("\nParts ($bn, Shapley mean; low / high):");
+console.log(`  shared ${D.low.shared.toFixed(2)} / ${D.high.shared.toFixed(2)}`);
+for (const f of FACTORS) console.log(`  ${PART_OF[f]} ${D.low.shapley[f].toFixed(2)} / ${D.high.shapley[f].toFixed(2)}`);
+console.log(`  total ${costs.low.GGG.toFixed(4)} / ${costs.high.GGG.toFixed(4)}`);
+if (fails.length) { console.log(`FAIL: ${fails.length} gate(s)`); process.exit(1); }
+console.log("all gates passed");
