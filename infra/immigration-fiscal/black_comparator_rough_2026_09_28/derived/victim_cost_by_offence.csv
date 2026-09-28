@@ -1,0 +1,61 @@
+arm,victim,offence,n,tangible_bn,full_bn
+ncvs_pooled_2022_2024,Black,Rape/sexual assault,38414.41,0.38388,8.08402
+ncvs_pooled_2022_2024,Black,Robbery,76448.06,0.61361,1.70396
+ncvs_pooled_2022_2024,Black,Aggravated assault,157759.38,1.04358,12.88853
+ncvs_pooled_2022_2024,Black,Simple assault,296174.58,1.04779,6.11702
+ncvs_pooled_2022_2024,Hispanic,Rape/sexual assault,14653.21,0.14643,3.08366
+ncvs_pooled_2022_2024,Hispanic,Robbery,24569.62,0.19721,0.54764
+ncvs_pooled_2022_2024,Hispanic,Aggravated assault,62055.88,0.41050,5.06980
+ncvs_pooled_2022_2024,Hispanic,Simple assault,201096.63,0.71143,4.15334
+ncvs_pooled_2022_2024,Other,Rape/sexual assault,39394.41,0.39368,8.29025
+ncvs_pooled_2022_2024,Other,Robbery,17292.69,0.13880,0.38544
+ncvs_pooled_2022_2024,Other,Aggravated assault,18004.00,0.11910,1.47088
+ncvs_pooled_2022_2024,Other,Simple assault,152015.80,0.53779,3.13965
+ncvs_pooled_2022_2024,White,Rape/sexual assault,49969.25,0.49935,10.51565
+ncvs_pooled_2022_2024,White,Robbery,60612.64,0.48651,1.35101
+ncvs_pooled_2022_2024,White,Aggravated assault,130538.37,0.86352,10.66464
+ncvs_pooled_2022_2024,White,Simple assault,382091.22,1.35174,7.89149
+ncvs_pooled_2022_2024,Hispanic,Murder,633.00,1.50151,5.67408
+ncvs_pooled_2022_2024,White,Murder,1000.07,2.37223,8.96443
+ncvs_pooled_2022_2024,Black,Murder,9321.86,22.11192,83.55894
+ncvs_pooled_2022_2024,Other,Murder,186.78,0.44304,1.67421
+ncvs_2019_by_crime_type,Black,Rape/sexual assault,43152.16,0.43123,9.08104
+ncvs_2019_by_crime_type,Black,Robbery,85876.59,0.68929,1.91412
+ncvs_2019_by_crime_type,Black,Aggravated assault,177216.26,1.17229,14.47810
+ncvs_2019_by_crime_type,Black,Simple assault,279016.87,0.98709,5.76266
+ncvs_2019_by_crime_type,Hispanic,Rape/sexual assault,16921.77,0.16910,3.56106
+ncvs_2019_by_crime_type,Hispanic,Robbery,28373.41,0.22774,0.63242
+ncvs_2019_by_crime_type,Hispanic,Aggravated assault,71663.17,0.47405,5.85469
+ncvs_2019_by_crime_type,Hispanic,Simple assault,299907.08,1.06099,6.19411
+ncvs_2019_by_crime_type,Other,Rape/sexual assault,39394.41,0.39368,8.29025
+ncvs_2019_by_crime_type,Other,Robbery,17292.69,0.13880,0.38544
+ncvs_2019_by_crime_type,Other,Aggravated assault,18004.00,0.11910,1.47088
+ncvs_2019_by_crime_type,Other,Simple assault,152015.80,0.53779,3.13965
+ncvs_2019_by_crime_type,White,Rape/sexual assault,41203.61,0.41175,8.67099
+ncvs_2019_by_crime_type,White,Robbery,49979.92,0.40116,1.11401
+ncvs_2019_by_crime_type,White,Aggravated assault,107639.23,0.71204,8.79384
+ncvs_2019_by_crime_type,White,Simple assault,430328.50,1.52239,8.88776
+ncvs_2019_by_crime_type,Hispanic,Murder,633.00,1.50151,5.67408
+ncvs_2019_by_crime_type,White,Murder,1000.07,2.37223,8.96443
+ncvs_2019_by_crime_type,Black,Murder,9321.86,22.11192,83.55894
+ncvs_2019_by_crime_type,Other,Murder,186.78,0.44304,1.67421
+national_all_offenders,Black,Rape/sexual assault,55387.00,0.55349,11.65577
+national_all_offenders,Black,Robbery,110225.00,0.88472,2.45682
+national_all_offenders,Black,Aggravated assault,227462.00,1.50467,18.58305
+national_all_offenders,Black,Simple assault,427033.00,1.51073,8.81970
+national_all_offenders,Hispanic,Rape/sexual assault,60889.00,0.60847,12.81363
+national_all_offenders,Hispanic,Robbery,102095.00,0.81947,2.27561
+national_all_offenders,Hispanic,Aggravated assault,257863.00,1.70577,21.06673
+national_all_offenders,Hispanic,Simple assault,835624.00,2.95621,17.25850
+national_all_offenders,Other,Rape/sexual assault,141447.00,1.41350,29.76645
+national_all_offenders,Other,Robbery,62090.00,0.49837,1.38393
+national_all_offenders,Other,Aggravated assault,64644.00,0.42762,5.28125
+national_all_offenders,Other,Simple assault,545818.00,1.93096,11.27301
+national_all_offenders,White,Rape/sexual assault,303166.00,3.02959,63.79898
+national_all_offenders,White,Robbery,367740.00,2.95167,8.19662
+national_all_offenders,White,Aggravated assault,791983.00,5.23899,64.70294
+national_all_offenders,White,Simple assault,2318167.00,8.20105,47.87810
+national_all_offenders,Hispanic,Murder,3790.48,8.99120,33.97693
+national_all_offenders,White,Murder,5089.44,12.07240,45.62051
+national_all_offenders,Black,Murder,10333.46,24.51150,92.62672
+national_all_offenders,Other,Murder,948.62,2.25018,8.50323

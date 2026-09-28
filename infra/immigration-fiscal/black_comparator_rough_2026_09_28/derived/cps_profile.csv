@@ -1,0 +1,4 @@
+group,population,under_18_share,age_65_plus_share,household_size,income_per_person,working_share_25_64,earnings_per_adult_25_64,earnings_per_worker_25_64
+mexican_origin,40896575,0.2964,0.0773,4.027,29230,0.7878,44477,56460
+nh_black,41954494,0.2433,0.1425,3.194,35726,0.7657,48324,63113
+all,336727811,0.2167,0.1826,3.262,48853,0.8033,64473,80259
