@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Bridge descriptive SIPP person-month cells to MEPS annual health-cost cells.
 
-Spec: research/immigration-public-mvp-sipp-meps-bridge-2026-04-11.md
+Spec: research/immigration-public-mvp-sipp-meps-bridge-2026-04-11.md (deleted 2026-09-29; recover with
+      `git show 8be9f94:research/immigration-public-mvp-sipp-meps-bridge-2026-04-11.md`)
 """
 from __future__ import annotations
 

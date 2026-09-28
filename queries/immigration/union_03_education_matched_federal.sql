@@ -1,5 +1,6 @@
 -- requires: union
 -- backs: immigration-federal-distribution-findings-2026-06-15.md, immigration-europe-caucasian-fiscal-findings-2026-06-15.md
+-- (backing memos deleted 2026-09-29; recover with `git show 8be9f94:research/<file>`)
 SELECT
   education_bucket,
   ROUND(n_mex) AS mexico_adults,

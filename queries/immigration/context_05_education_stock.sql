@@ -1,5 +1,6 @@
 -- requires: context
 -- backs: immigration-federal-distribution-findings-2026-06-15.md §III–IV
+-- (backing memos deleted 2026-09-29; recover with `git show 8be9f94:research/<file>`)
 -- Foreign-born all ages 25-64 education mix (ACS weighted)
 SELECT
   education_bucket,

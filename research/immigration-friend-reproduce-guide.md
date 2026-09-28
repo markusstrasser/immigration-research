@@ -87,7 +87,7 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 
 | Order | File | Why |
 |-------|------|-----|
-| 1 | `immigration-main-question-reset.md` | What question the repo actually asks |
+| 1 | `../GOALS.md` | What question the repo actually asks |
 | 2 | `immigration-glossary.md` | Terms: `low-skill`, `incidence`, `PUMA`, etc. |
 | 3 | `immigration-confidence-ladder.md` | Strong vs weak vs contextual-only metrics |
 | 4 | `immigration-material-repair-report-2026-09-05.md` | Recalculated results, material corrections and validation |
@@ -97,10 +97,9 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 
 | File | Topic |
 |------|-------|
-| `immigration-federal-distribution-findings-2026-06-15.md` | Mexico vs NH-white partial payroll/benefit projection; see current correction |
-| `immigration-country-fiscal-tensor-2026-06-15.md` | Tensor architecture + rollup views |
-| `immigration-school-burden-per-adult-2026-06-15.md` | Household school exposure scenario; native comparison and failed-coverage rows withheld |
-| `immigration-mexico-npv-population-synthesis-2026-06-15.md` | Mexico NPV × population (full ledger stack) |
+| `immigration-complete-annual-account-2026-09-20.md` | The annual account: every tax and spending line, with the current main case at the top |
+| `immigration-real-fiscal-and-social-costs-2026-09-23.md` | The account plus the costs and benefits outside the budget |
+| `immigration-adopted-account-by-generation-2026-09-25.md` | The same account split by generation |
 
 ### Local burden / housing
 
@@ -109,14 +108,6 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 | `immigration-local-burden-puma-layer.md` | PUMA rent exposure by origin |
 | `immigration-household-weighted-correction.md` | Why household WGTP correction matters |
 | `immigration-net-negative-dataset-frontier-2026-06-15.md` | Stage-5 cost datasets (SAFMR, SNAP, Medicaid, EL) |
-
-### Deep / historical (read with caution)
-
-| File | Status |
-|------|--------|
-| `immigration-sweep-cycles-23-32-2026-06-15.md` | Full protocol sweeps — **partially superseded** (see audit memo) |
-| `immigration-sweep-cycles-13-22-2026-06-15.md` | **Do not cite** old `$771/+748` origin school/net rows |
-| `immigration-lifetime-unified-theory-2026-06-15.md` | Living synthesis — update after each sweep |
 
 ---
 
@@ -137,7 +128,6 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 |---------|------|--------------|
 | Borjas supply-shock cells | <HS immigrant share 9.8% (1980) → 40.8% (2023) [2026-09-26: 10.2% → 44.1% with no-schooling records kept; see the Borjas memo. Rebuilt the same day: a fresh `build ipums` gives the kept series; release v2026-09-05 still has 40.8%], education×experience | `immigration-borjas-supply-shock-panel-2026-06-23.md` · `borjas_supply_shock_panel` |
 | Source-incentive re-grade | advocacy discounted on **both** sides; against-interest up-weighted | `immigration-source-incentive-regrade-2026-06-23.md` · `source_incentive_grades` |
-| Fiscal+welfare ledger map | "positive vs negative?" decomposed into 4 coordinates × the full ledger | `immigration-fiscal-welfare-ledger-map.md` |
 
 ---
 

@@ -103,11 +103,11 @@ The detailed reading order, the **canonical-vs-superseded claims table**, and wa
 definitions live in **[`research/immigration-friend-reproduce-guide.md`](research/immigration-friend-reproduce-guide.md)**.
 Shortest path into the reasoning:
 
-1. [`immigration-main-question-reset.md`](research/immigration-main-question-reset.md) — what the repo actually asks
+1. [`GOALS.md`](GOALS.md) — what the repo actually asks
 2. [`immigration-glossary.md`](research/immigration-glossary.md) — `low-skill`, `incidence`, `PUMA`, … defined
 3. [`immigration-confidence-ladder.md`](research/immigration-confidence-ladder.md) — strong vs weak vs contextual-only
-4. [`immigration-fiscal-welfare-ledger-map.md`](research/immigration-fiscal-welfare-ledger-map.md) — the unifying "positive vs negative?" decomposition
-5. [`immigration-conclusion-audit-running-fixes.md`](research/immigration-conclusion-audit-running-fixes.md) — what changed (read before citing any number)
+4. [`immigration-objections-faq-2026-09-21.md`](research/immigration-objections-faq-2026-09-21.md) — the standard objections, each routed to its executed table
+5. [`decisions/`](decisions/) — what changed and why (read before citing any number)
 
 ## Status & how to cite
 

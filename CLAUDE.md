@@ -81,7 +81,7 @@ notes/             — working notes, drafts, threads of analysis
 queries/immigration/ — checked-in SQL reproducing the headline numbers (`-- requires:`/`-- backs:`)
 scripts/reproduce-immigration-data.sh — init, doctor, download, verify, build, smoke, query
 casebank/          — verbatim example cases with induced principles
-HUMAN.md           — async asks to the operator; CYCLE.md is a finished April–June loop log
+HUMAN.md           — async asks to the operator
 ```
 
 ### Running analysis lanes

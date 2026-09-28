@@ -1,5 +1,6 @@
 -- requires: union
 -- backs: immigration-school-burden-per-adult-2026-06-15.md, immigration-conclusion-audit-running-fixes.md
+-- (backing memos deleted 2026-09-29; recover with `git show 8be9f94:research/<file>`)
 -- NOTE: origin school/net rows may be NULL after June 2026 same-universe guard
 SELECT
   population_group,
