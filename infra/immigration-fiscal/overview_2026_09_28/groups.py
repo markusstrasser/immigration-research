@@ -58,6 +58,13 @@ GROUPS = [
                       "is $4,093.",
                  why="Children cost now and pay later. Old people draw pensions. A one-year view charges this "
                      "group for schools and credits it on pensions. The pension effect is larger."),
+            dict(refs=[268],
+                 text="About 22% of members (20–24) live in households that pay more than they cost. The "
+                      "costliest tenth of households carries 53–61% of the net cost.",
+                 why="The share rises from about 11% when the head did not finish high school to about 44% with a "
+                     "degree. Households with three or more children almost never pay their way, because a "
+                     "one-year account charges each household for its children's schools. Counting only the "
+                     "services that a household uses itself, the share is about 30%."),
             dict(refs=[123, 125, 126, 128, 172, 119],
                  text="Against third-generation whites of the same ages, the gap is about $240bn a year "
                       "(190–290). Matching by state or metro makes it larger.",
@@ -173,6 +180,12 @@ GROUPS = [
                  text="Consumption taxes are charged on what households spend, not on their income.",
                  why="Saving and money sent home lower spending. Money sent home lowers sales tax by only about "
                      "$1.8bn (1.3–2.3)."),
+            dict(refs=[267],
+                 text="Prices where the group lives raise its service costs by about $9bn and its sales and "
+                      "vehicle taxes by about $6bn. The net is about $2bn. It is a candidate and not yet in the "
+                      "total.",
+                 why="The group lives where services cost more (California) and where sales taxes are high "
+                     "(Texas and Arizona). Schools already use state prices."),
             dict(refs=[127, 129],
                  text="A second survey gives the same earnings and income-tax gaps within 4%.",
                  why="ACS against CPS, with one tax calculator on both."),
