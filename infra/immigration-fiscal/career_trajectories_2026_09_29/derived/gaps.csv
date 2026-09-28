@@ -1,0 +1,769 @@
+window,weight,arm,sex,group,n_persons,n_person_years,n_worker_years,small_cell,unsupported_share,stat,estimate,se
+age 20-24,w_round,raw,men,G2 Hispanic,367,1315,955,False,0,total,-0.0581833,0.0373529
+age 20-24,w_round,raw,men,G2 Hispanic,367,1315,955,False,0,employment,-0.0933099,0.0237363
+age 20-24,w_round,raw,men,G2 Hispanic,367,1315,955,False,0,conditional,0.0351266,0.034598
+age 20-24,w_round,raw,men,G2 Hispanic,367,1315,955,False,0,weeks,0.0348648,0.0182461
+age 20-24,w_round,raw,men,G2 Hispanic,367,1315,955,False,0,hours_per_week,0.0720108,0.0184113
+age 20-24,w_round,raw,men,G2 Hispanic,367,1315,955,False,0,hourly_pay,0.0203272,0.0325582
+age 20-24,w_round,raw,men,G2 Hispanic,367,1315,955,False,0,bridge,-0.0920761,0.0180867
+age 20-24,w_round,raw,men,G2 Hispanic,367,1315,955,False,0,log_earnings_workers,0.127203,0.0394926
+age 20-24,w_round,raw,men,G3+ Hispanic,237,840,621,False,0,total,-0.150054,0.0582575
+age 20-24,w_round,raw,men,G3+ Hispanic,237,840,621,False,0,employment,-0.0958696,0.0340997
+age 20-24,w_round,raw,men,G3+ Hispanic,237,840,621,False,0,conditional,-0.0541841,0.0422168
+age 20-24,w_round,raw,men,G3+ Hispanic,237,840,621,False,0,weeks,-0.0270685,0.0258542
+age 20-24,w_round,raw,men,G3+ Hispanic,237,840,621,False,0,hours_per_week,0.0422725,0.0189596
+age 20-24,w_round,raw,men,G3+ Hispanic,237,840,621,False,0,hourly_pay,0.00412311,0.0384033
+age 20-24,w_round,raw,men,G3+ Hispanic,237,840,621,False,0,bridge,-0.0735112,0.0247617
+age 20-24,w_round,raw,men,G3+ Hispanic,237,840,621,False,0,log_earnings_workers,0.0193272,0.0449416
+age 20-24,w_round,raw,men,G1 Hispanic,157,567,432,False,0,total,-0.0561463,0.0665727
+age 20-24,w_round,raw,men,G1 Hispanic,157,567,432,False,0,employment,-0.0415678,0.0237354
+age 20-24,w_round,raw,men,G1 Hispanic,157,567,432,False,0,conditional,-0.0145785,0.0589027
+age 20-24,w_round,raw,men,G1 Hispanic,157,567,432,False,0,weeks,0.063958,0.0183763
+age 20-24,w_round,raw,men,G1 Hispanic,157,567,432,False,0,hours_per_week,0.0939497,0.0244161
+age 20-24,w_round,raw,men,G1 Hispanic,157,567,432,False,0,hourly_pay,-0.0468603,0.0441558
+age 20-24,w_round,raw,men,G1 Hispanic,157,567,432,False,0,bridge,-0.125626,0.0273201
+age 20-24,w_round,raw,men,G1 Hispanic,157,567,432,False,0,log_earnings_workers,0.111047,0.056999
+age 20-24,w_round,raw,women,G2 Hispanic,354,1303,925,False,0,total,-0.0449326,0.0545399
+age 20-24,w_round,raw,women,G2 Hispanic,354,1303,925,False,0,employment,-0.0862879,0.0307882
+age 20-24,w_round,raw,women,G2 Hispanic,354,1303,925,False,0,conditional,0.0413553,0.0427077
+age 20-24,w_round,raw,women,G2 Hispanic,354,1303,925,False,0,weeks,-0.00878535,0.0193774
+age 20-24,w_round,raw,women,G2 Hispanic,354,1303,925,False,0,hours_per_week,0.0491308,0.0241673
+age 20-24,w_round,raw,women,G2 Hispanic,354,1303,925,False,0,hourly_pay,0.0728589,0.0327078
+age 20-24,w_round,raw,women,G2 Hispanic,354,1303,925,False,0,bridge,-0.0718491,0.0238521
+age 20-24,w_round,raw,women,G2 Hispanic,354,1303,925,False,0,log_earnings_workers,0.113204,0.0467539
+age 20-24,w_round,raw,women,G3+ Hispanic,206,762,528,False,0,total,-0.0567446,0.081686
+age 20-24,w_round,raw,women,G3+ Hispanic,206,762,528,False,0,employment,-0.0866248,0.0336625
+age 20-24,w_round,raw,women,G3+ Hispanic,206,762,528,False,0,conditional,0.0298802,0.058351
+age 20-24,w_round,raw,women,G3+ Hispanic,206,762,528,False,0,weeks,-0.0103037,0.0258541
+age 20-24,w_round,raw,women,G3+ Hispanic,206,762,528,False,0,hours_per_week,0.0565897,0.0248598
+age 20-24,w_round,raw,women,G3+ Hispanic,206,762,528,False,0,hourly_pay,0.0161672,0.0427052
+age 20-24,w_round,raw,women,G3+ Hispanic,206,762,528,False,0,bridge,-0.0325731,0.0235569
+age 20-24,w_round,raw,women,G3+ Hispanic,206,762,528,False,0,log_earnings_workers,0.0624532,0.0679444
+age 20-24,w_round,raw,women,G1 Hispanic,188,675,405,False,0,total,-0.19506,0.0661473
+age 20-24,w_round,raw,women,G1 Hispanic,188,675,405,False,0,employment,-0.224425,0.0530502
+age 20-24,w_round,raw,women,G1 Hispanic,188,675,405,False,0,conditional,0.0293649,0.0534568
+age 20-24,w_round,raw,women,G1 Hispanic,188,675,405,False,0,weeks,-0.0305,0.0331481
+age 20-24,w_round,raw,women,G1 Hispanic,188,675,405,False,0,hours_per_week,0.0960679,0.039552
+age 20-24,w_round,raw,women,G1 Hispanic,188,675,405,False,0,hourly_pay,0.0311855,0.0403988
+age 20-24,w_round,raw,women,G1 Hispanic,188,675,405,False,0,bridge,-0.0673885,0.0417
+age 20-24,w_round,raw,women,G1 Hispanic,188,675,405,False,0,log_earnings_workers,0.0967534,0.0594116
+age 28-30,w_round,raw,men,G2 Hispanic,301,531,416,False,0,total,-0.218288,0.0635563
+age 28-30,w_round,raw,men,G2 Hispanic,301,531,416,False,0,employment,-0.0555821,0.022626
+age 28-30,w_round,raw,men,G2 Hispanic,301,531,416,False,0,conditional,-0.162706,0.0631629
+age 28-30,w_round,raw,men,G2 Hispanic,301,531,416,False,0,weeks,-0.0480519,0.034304
+age 28-30,w_round,raw,men,G2 Hispanic,301,531,416,False,0,hours_per_week,-0.0252634,0.025253
+age 28-30,w_round,raw,men,G2 Hispanic,301,531,416,False,0,hourly_pay,-0.046725,0.0458859
+age 28-30,w_round,raw,men,G2 Hispanic,301,531,416,False,0,bridge,-0.0426656,0.033028
+age 28-30,w_round,raw,men,G2 Hispanic,301,531,416,False,0,log_earnings_workers,-0.12004,0.0713702
+age 28-30,w_round,raw,men,G3+ Hispanic,211,392,321,False,0,total,-0.217183,0.0709986
+age 28-30,w_round,raw,men,G3+ Hispanic,211,392,321,False,0,employment,-0.0571133,0.0323128
+age 28-30,w_round,raw,men,G3+ Hispanic,211,392,321,False,0,conditional,-0.16007,0.0563927
+age 28-30,w_round,raw,men,G3+ Hispanic,211,392,321,False,0,weeks,-0.0121602,0.0171544
+age 28-30,w_round,raw,men,G3+ Hispanic,211,392,321,False,0,hours_per_week,0.0118516,0.0248875
+age 28-30,w_round,raw,men,G3+ Hispanic,211,392,321,False,0,hourly_pay,-0.12936,0.0583843
+age 28-30,w_round,raw,men,G3+ Hispanic,211,392,321,False,0,bridge,-0.0304012,0.0270745
+age 28-30,w_round,raw,men,G3+ Hispanic,211,392,321,False,0,log_earnings_workers,-0.129669,0.0565128
+age 28-30,w_round,raw,men,G1 Hispanic,129,225,194,False,0,total,-0.239481,0.0752686
+age 28-30,w_round,raw,men,G1 Hispanic,129,225,194,False,0,employment,0.010506,0.0223618
+age 28-30,w_round,raw,men,G1 Hispanic,129,225,194,False,0,conditional,-0.249987,0.0712924
+age 28-30,w_round,raw,men,G1 Hispanic,129,225,194,False,0,weeks,-0.00826538,0.0219934
+age 28-30,w_round,raw,men,G1 Hispanic,129,225,194,False,0,hours_per_week,-0.0219953,0.0303267
+age 28-30,w_round,raw,men,G1 Hispanic,129,225,194,False,0,hourly_pay,-0.154629,0.0581275
+age 28-30,w_round,raw,men,G1 Hispanic,129,225,194,False,0,bridge,-0.0650977,0.0358374
+age 28-30,w_round,raw,men,G1 Hispanic,129,225,194,False,0,log_earnings_workers,-0.184889,0.0652199
+age 28-30,w_round,raw,women,G2 Hispanic,318,589,446,False,0,total,-0.169434,0.0618428
+age 28-30,w_round,raw,women,G2 Hispanic,318,589,446,False,0,employment,-0.0212526,0.0299595
+age 28-30,w_round,raw,women,G2 Hispanic,318,589,446,False,0,conditional,-0.148181,0.0559003
+age 28-30,w_round,raw,women,G2 Hispanic,318,589,446,False,0,weeks,-0.0218709,0.0192199
+age 28-30,w_round,raw,women,G2 Hispanic,318,589,446,False,0,hours_per_week,0.0277873,0.0261892
+age 28-30,w_round,raw,women,G2 Hispanic,318,589,446,False,0,hourly_pay,-0.0695616,0.0428745
+age 28-30,w_round,raw,women,G2 Hispanic,318,589,446,False,0,bridge,-0.0845362,0.0270949
+age 28-30,w_round,raw,women,G2 Hispanic,318,589,446,False,0,log_earnings_workers,-0.0636452,0.0554233
+age 28-30,w_round,raw,women,G3+ Hispanic,180,317,227,False,0,total,-0.234247,0.0716191
+age 28-30,w_round,raw,women,G3+ Hispanic,180,317,227,False,0,employment,-0.0256514,0.037979
+age 28-30,w_round,raw,women,G3+ Hispanic,180,317,227,False,0,conditional,-0.208596,0.0605154
+age 28-30,w_round,raw,women,G3+ Hispanic,180,317,227,False,0,weeks,0.0144251,0.0266826
+age 28-30,w_round,raw,women,G3+ Hispanic,180,317,227,False,0,hours_per_week,-0.0153564,0.0310088
+age 28-30,w_round,raw,women,G3+ Hispanic,180,317,227,False,0,hourly_pay,-0.0859569,0.0533499
+age 28-30,w_round,raw,women,G3+ Hispanic,180,317,227,False,0,bridge,-0.121707,0.0356433
+age 28-30,w_round,raw,women,G3+ Hispanic,180,317,227,False,0,log_earnings_workers,-0.0868882,0.0644317
+age 28-30,w_round,raw,women,G1 Hispanic,167,285,189,False,0,total,-0.339669,0.0984546
+age 28-30,w_round,raw,women,G1 Hispanic,167,285,189,False,0,employment,-0.108887,0.0465141
+age 28-30,w_round,raw,women,G1 Hispanic,167,285,189,False,0,conditional,-0.230782,0.0840947
+age 28-30,w_round,raw,women,G1 Hispanic,167,285,189,False,0,weeks,-0.0141264,0.0267274
+age 28-30,w_round,raw,women,G1 Hispanic,167,285,189,False,0,hours_per_week,0.0408415,0.0525602
+age 28-30,w_round,raw,women,G1 Hispanic,167,285,189,False,0,hourly_pay,-0.202029,0.0785227
+age 28-30,w_round,raw,women,G1 Hispanic,167,285,189,False,0,bridge,-0.0554673,0.0327336
+age 28-30,w_round,raw,women,G1 Hispanic,167,285,189,False,0,log_earnings_workers,-0.175314,0.0958506
+age 31-33,w_round,raw,men,G2 Hispanic,279,371,294,False,0,total,-0.203608,0.0610465
+age 31-33,w_round,raw,men,G2 Hispanic,279,371,294,False,0,employment,-0.0638634,0.0335964
+age 31-33,w_round,raw,men,G2 Hispanic,279,371,294,False,0,conditional,-0.139744,0.0488396
+age 31-33,w_round,raw,men,G2 Hispanic,279,371,294,False,0,weeks,-0.0182977,0.0221831
+age 31-33,w_round,raw,men,G2 Hispanic,279,371,294,False,0,hours_per_week,-0.059345,0.031008
+age 31-33,w_round,raw,men,G2 Hispanic,279,371,294,False,0,hourly_pay,-0.0586132,0.0506448
+age 31-33,w_round,raw,men,G2 Hispanic,279,371,294,False,0,bridge,-0.00348832,0.0287456
+age 31-33,w_round,raw,men,G2 Hispanic,279,371,294,False,0,log_earnings_workers,-0.136256,0.054252
+age 31-33,w_round,raw,men,G3+ Hispanic,189,252,207,False,0,total,-0.178966,0.0761725
+age 31-33,w_round,raw,men,G3+ Hispanic,189,252,207,False,0,employment,-0.0136034,0.0268188
+age 31-33,w_round,raw,men,G3+ Hispanic,189,252,207,False,0,conditional,-0.165362,0.0710361
+age 31-33,w_round,raw,men,G3+ Hispanic,189,252,207,False,0,weeks,-0.00731799,0.0212365
+age 31-33,w_round,raw,men,G3+ Hispanic,189,252,207,False,0,hours_per_week,-0.0159837,0.0338461
+age 31-33,w_round,raw,men,G3+ Hispanic,189,252,207,False,0,hourly_pay,-0.112819,0.0564048
+age 31-33,w_round,raw,men,G3+ Hispanic,189,252,207,False,0,bridge,-0.0292412,0.033713
+age 31-33,w_round,raw,men,G3+ Hispanic,189,252,207,False,0,log_earnings_workers,-0.136121,0.0651853
+age 31-33,w_round,raw,men,G1 Hispanic,117,156,123,False,0,total,-0.288783,0.0989335
+age 31-33,w_round,raw,men,G1 Hispanic,117,156,123,False,0,employment,-0.0223197,0.0259147
+age 31-33,w_round,raw,men,G1 Hispanic,117,156,123,False,0,conditional,-0.266464,0.0958457
+age 31-33,w_round,raw,men,G1 Hispanic,117,156,123,False,0,weeks,-0.0103736,0.0305212
+age 31-33,w_round,raw,men,G1 Hispanic,117,156,123,False,0,hours_per_week,-0.0267352,0.0330479
+age 31-33,w_round,raw,men,G1 Hispanic,117,156,123,False,0,hourly_pay,-0.248638,0.0853873
+age 31-33,w_round,raw,men,G1 Hispanic,117,156,123,False,0,bridge,0.0192831,0.0474974
+age 31-33,w_round,raw,men,G1 Hispanic,117,156,123,False,0,log_earnings_workers,-0.285747,0.077621
+age 31-33,w_round,raw,women,G2 Hispanic,296,390,278,False,0,total,-0.202614,0.0788144
+age 31-33,w_round,raw,women,G2 Hispanic,296,390,278,False,0,employment,-0.0388148,0.0396774
+age 31-33,w_round,raw,women,G2 Hispanic,296,390,278,False,0,conditional,-0.1638,0.0648914
+age 31-33,w_round,raw,women,G2 Hispanic,296,390,278,False,0,weeks,-0.0553774,0.0282776
+age 31-33,w_round,raw,women,G2 Hispanic,296,390,278,False,0,hours_per_week,-0.0149036,0.0323925
+age 31-33,w_round,raw,women,G2 Hispanic,296,390,278,False,0,hourly_pay,-0.0606184,0.0540304
+age 31-33,w_round,raw,women,G2 Hispanic,296,390,278,False,0,bridge,-0.0329002,0.0344922
+age 31-33,w_round,raw,women,G2 Hispanic,296,390,278,False,0,log_earnings_workers,-0.130899,0.0617015
+age 31-33,w_round,raw,women,G3+ Hispanic,177,231,162,False,0,total,-0.180169,0.0863355
+age 31-33,w_round,raw,women,G3+ Hispanic,177,231,162,False,0,employment,-0.0236441,0.0471467
+age 31-33,w_round,raw,women,G3+ Hispanic,177,231,162,False,0,conditional,-0.156525,0.0721308
+age 31-33,w_round,raw,women,G3+ Hispanic,177,231,162,False,0,weeks,0.0087314,0.022502
+age 31-33,w_round,raw,women,G3+ Hispanic,177,231,162,False,0,hours_per_week,-0.0127386,0.0342461
+age 31-33,w_round,raw,women,G3+ Hispanic,177,231,162,False,0,hourly_pay,-0.103683,0.0688246
+age 31-33,w_round,raw,women,G3+ Hispanic,177,231,162,False,0,bridge,-0.0488342,0.0462242
+age 31-33,w_round,raw,women,G3+ Hispanic,177,231,162,False,0,log_earnings_workers,-0.10769,0.0756876
+age 31-33,w_round,raw,women,G1 Hispanic,146,190,114,False,0,total,-0.397086,0.111078
+age 31-33,w_round,raw,women,G1 Hispanic,146,190,114,False,0,employment,-0.119637,0.0836607
+age 31-33,w_round,raw,women,G1 Hispanic,146,190,114,False,0,conditional,-0.277449,0.0948409
+age 31-33,w_round,raw,women,G1 Hispanic,146,190,114,False,0,weeks,-0.0110166,0.0325546
+age 31-33,w_round,raw,women,G1 Hispanic,146,190,114,False,0,hours_per_week,-0.0354146,0.0589756
+age 31-33,w_round,raw,women,G1 Hispanic,146,190,114,False,0,hourly_pay,-0.252301,0.109459
+age 31-33,w_round,raw,women,G1 Hispanic,146,190,114,False,0,bridge,0.0212837,0.0637163
+age 31-33,w_round,raw,women,G1 Hispanic,146,190,114,False,0,log_earnings_workers,-0.298733,0.122988
+age 34-36,w_round,raw,men,G2 Hispanic,279,401,317,False,0,total,-0.232013,0.0739102
+age 34-36,w_round,raw,men,G2 Hispanic,279,401,317,False,0,employment,-0.0612869,0.0271636
+age 34-36,w_round,raw,men,G2 Hispanic,279,401,317,False,0,conditional,-0.170726,0.077775
+age 34-36,w_round,raw,men,G2 Hispanic,279,401,317,False,0,weeks,0.00352632,0.0144144
+age 34-36,w_round,raw,men,G2 Hispanic,279,401,317,False,0,hours_per_week,-0.0398526,0.0257797
+age 34-36,w_round,raw,men,G2 Hispanic,279,401,317,False,0,hourly_pay,-0.130723,0.055897
+age 34-36,w_round,raw,men,G2 Hispanic,279,401,317,False,0,bridge,-0.00367622,0.0407111
+age 34-36,w_round,raw,men,G2 Hispanic,279,401,317,False,0,log_earnings_workers,-0.16705,0.0673585
+age 34-36,w_round,raw,men,G3+ Hispanic,187,270,225,False,0,total,-0.295896,0.0793204
+age 34-36,w_round,raw,men,G3+ Hispanic,187,270,225,False,0,employment,-0.0589855,0.0315687
+age 34-36,w_round,raw,men,G3+ Hispanic,187,270,225,False,0,conditional,-0.23691,0.0741496
+age 34-36,w_round,raw,men,G3+ Hispanic,187,270,225,False,0,weeks,0.0355928,0.00908117
+age 34-36,w_round,raw,men,G3+ Hispanic,187,270,225,False,0,hours_per_week,-0.035574,0.0320864
+age 34-36,w_round,raw,men,G3+ Hispanic,187,270,225,False,0,hourly_pay,-0.197897,0.0768216
+age 34-36,w_round,raw,men,G3+ Hispanic,187,270,225,False,0,bridge,-0.0390323,0.027423
+age 34-36,w_round,raw,men,G3+ Hispanic,187,270,225,False,0,log_earnings_workers,-0.197878,0.0846237
+age 34-36,w_round,raw,men,G1 Hispanic,111,159,130,False,0,total,-0.338942,0.101429
+age 34-36,w_round,raw,men,G1 Hispanic,111,159,130,False,0,employment,-0.0200216,0.0317591
+age 34-36,w_round,raw,men,G1 Hispanic,111,159,130,False,0,conditional,-0.318921,0.0876005
+age 34-36,w_round,raw,men,G1 Hispanic,111,159,130,False,0,weeks,0.0134219,0.0163837
+age 34-36,w_round,raw,men,G1 Hispanic,111,159,130,False,0,hours_per_week,-0.0506748,0.0539142
+age 34-36,w_round,raw,men,G1 Hispanic,111,159,130,False,0,hourly_pay,-0.248514,0.0958973
+age 34-36,w_round,raw,men,G1 Hispanic,111,159,130,False,0,bridge,-0.0331544,0.0454162
+age 34-36,w_round,raw,men,G1 Hispanic,111,159,130,False,0,log_earnings_workers,-0.285766,0.0833279
+age 34-36,w_round,raw,women,G2 Hispanic,308,458,335,False,0,total,-0.150435,0.078705
+age 34-36,w_round,raw,women,G2 Hispanic,308,458,335,False,0,employment,-0.0224032,0.0364243
+age 34-36,w_round,raw,women,G2 Hispanic,308,458,335,False,0,conditional,-0.128032,0.0714822
+age 34-36,w_round,raw,women,G2 Hispanic,308,458,335,False,0,weeks,-0.0215724,0.0252911
+age 34-36,w_round,raw,women,G2 Hispanic,308,458,335,False,0,hours_per_week,0.0294115,0.0290351
+age 34-36,w_round,raw,women,G2 Hispanic,308,458,335,False,0,hourly_pay,-0.0677569,0.0538923
+age 34-36,w_round,raw,women,G2 Hispanic,308,458,335,False,0,bridge,-0.0681142,0.0490262
+age 34-36,w_round,raw,women,G2 Hispanic,308,458,335,False,0,log_earnings_workers,-0.0599178,0.0684013
+age 34-36,w_round,raw,women,G3+ Hispanic,178,267,196,False,0,total,-0.101197,0.137203
+age 34-36,w_round,raw,women,G3+ Hispanic,178,267,196,False,0,employment,-0.0285346,0.051321
+age 34-36,w_round,raw,women,G3+ Hispanic,178,267,196,False,0,conditional,-0.0726629,0.110937
+age 34-36,w_round,raw,women,G3+ Hispanic,178,267,196,False,0,weeks,-0.00010302,0.0196105
+age 34-36,w_round,raw,women,G3+ Hispanic,178,267,196,False,0,hours_per_week,0.0136908,0.0325441
+age 34-36,w_round,raw,women,G3+ Hispanic,178,267,196,False,0,hourly_pay,-0.0924191,0.094834
+age 34-36,w_round,raw,women,G3+ Hispanic,178,267,196,False,0,bridge,0.00616834,0.0627854
+age 34-36,w_round,raw,women,G3+ Hispanic,178,267,196,False,0,log_earnings_workers,-0.0788312,0.102607
+age 34-36,w_round,raw,women,G1 Hispanic,145,219,153,False,0,total,-0.0849843,0.178645
+age 34-36,w_round,raw,women,G1 Hispanic,145,219,153,False,0,employment,-0.0325734,0.0478326
+age 34-36,w_round,raw,women,G1 Hispanic,145,219,153,False,0,conditional,-0.0524109,0.163877
+age 34-36,w_round,raw,women,G1 Hispanic,145,219,153,False,0,weeks,0.0300185,0.0201966
+age 34-36,w_round,raw,women,G1 Hispanic,145,219,153,False,0,hours_per_week,0.00587609,0.072235
+age 34-36,w_round,raw,women,G1 Hispanic,145,219,153,False,0,hourly_pay,-0.101171,0.0994413
+age 34-36,w_round,raw,women,G1 Hispanic,145,219,153,False,0,bridge,0.0128654,0.115759
+age 34-36,w_round,raw,women,G1 Hispanic,145,219,153,False,0,log_earnings_workers,-0.0652763,0.11807
+age 37-39,w_round,raw,men,G2 Hispanic,266,355,295,False,0,total,-0.287514,0.0744848
+age 37-39,w_round,raw,men,G2 Hispanic,266,355,295,False,0,employment,-0.0769994,0.0283234
+age 37-39,w_round,raw,men,G2 Hispanic,266,355,295,False,0,conditional,-0.210514,0.0716116
+age 37-39,w_round,raw,men,G2 Hispanic,266,355,295,False,0,weeks,0.000573954,0.01686
+age 37-39,w_round,raw,men,G2 Hispanic,266,355,295,False,0,hours_per_week,0.0194746,0.0250149
+age 37-39,w_round,raw,men,G2 Hispanic,266,355,295,False,0,hourly_pay,-0.176147,0.0532247
+age 37-39,w_round,raw,men,G2 Hispanic,266,355,295,False,0,bridge,-0.0544154,0.0427473
+age 37-39,w_round,raw,men,G2 Hispanic,266,355,295,False,0,log_earnings_workers,-0.156099,0.0637513
+age 37-39,w_round,raw,men,G3+ Hispanic,191,251,218,False,0,total,-0.275475,0.0754462
+age 37-39,w_round,raw,men,G3+ Hispanic,191,251,218,False,0,employment,0.00456621,0.0194669
+age 37-39,w_round,raw,men,G3+ Hispanic,191,251,218,False,0,conditional,-0.280041,0.0763615
+age 37-39,w_round,raw,men,G3+ Hispanic,191,251,218,False,0,weeks,-0.0220089,0.0205619
+age 37-39,w_round,raw,men,G3+ Hispanic,191,251,218,False,0,hours_per_week,-0.0137227,0.023385
+age 37-39,w_round,raw,men,G3+ Hispanic,191,251,218,False,0,hourly_pay,-0.246102,0.0602259
+age 37-39,w_round,raw,men,G3+ Hispanic,191,251,218,False,0,bridge,0.00179244,0.0394943
+age 37-39,w_round,raw,men,G3+ Hispanic,191,251,218,False,0,log_earnings_workers,-0.281833,0.0698083
+age 37-39,w_round,raw,men,G1 Hispanic,114,152,132,False,0,total,-0.379829,0.123143
+age 37-39,w_round,raw,men,G1 Hispanic,114,152,132,False,0,employment,-0.0113125,0.0403012
+age 37-39,w_round,raw,men,G1 Hispanic,114,152,132,False,0,conditional,-0.368517,0.117791
+age 37-39,w_round,raw,men,G1 Hispanic,114,152,132,False,0,weeks,0.00652102,0.0163266
+age 37-39,w_round,raw,men,G1 Hispanic,114,152,132,False,0,hours_per_week,-0.0245296,0.0385921
+age 37-39,w_round,raw,men,G1 Hispanic,114,152,132,False,0,hourly_pay,-0.413686,0.0889393
+age 37-39,w_round,raw,men,G1 Hispanic,114,152,132,False,0,bridge,0.063178,0.0603067
+age 37-39,w_round,raw,men,G1 Hispanic,114,152,132,False,0,log_earnings_workers,-0.431695,0.0915767
+age 37-39,w_round,raw,women,G2 Hispanic,301,400,293,False,0,total,-0.22228,0.0716179
+age 37-39,w_round,raw,women,G2 Hispanic,301,400,293,False,0,employment,-0.0718215,0.0320489
+age 37-39,w_round,raw,women,G2 Hispanic,301,400,293,False,0,conditional,-0.150458,0.057729
+age 37-39,w_round,raw,women,G2 Hispanic,301,400,293,False,0,weeks,-0.0181274,0.0200323
+age 37-39,w_round,raw,women,G2 Hispanic,301,400,293,False,0,hours_per_week,-0.00647337,0.0264283
+age 37-39,w_round,raw,women,G2 Hispanic,301,400,293,False,0,hourly_pay,-0.0694014,0.0487491
+age 37-39,w_round,raw,women,G2 Hispanic,301,400,293,False,0,bridge,-0.0564559,0.0392689
+age 37-39,w_round,raw,women,G2 Hispanic,301,400,293,False,0,log_earnings_workers,-0.0940022,0.0594584
+age 37-39,w_round,raw,women,G3+ Hispanic,176,238,185,False,0,total,-0.157804,0.088707
+age 37-39,w_round,raw,women,G3+ Hispanic,176,238,185,False,0,employment,0.00492438,0.0416831
+age 37-39,w_round,raw,women,G3+ Hispanic,176,238,185,False,0,conditional,-0.162729,0.0768619
+age 37-39,w_round,raw,women,G3+ Hispanic,176,238,185,False,0,weeks,-0.0640687,0.0435956
+age 37-39,w_round,raw,women,G3+ Hispanic,176,238,185,False,0,hours_per_week,0.0173726,0.0372442
+age 37-39,w_round,raw,women,G3+ Hispanic,176,238,185,False,0,hourly_pay,-0.0490493,0.0665211
+age 37-39,w_round,raw,women,G3+ Hispanic,176,238,185,False,0,bridge,-0.0669833,0.0330915
+age 37-39,w_round,raw,women,G3+ Hispanic,176,238,185,False,0,log_earnings_workers,-0.0957455,0.0801619
+age 37-39,w_round,raw,women,G1 Hispanic,142,182,122,False,0,total,-0.299052,0.16658
+age 37-39,w_round,raw,women,G1 Hispanic,142,182,122,False,0,employment,-0.139101,0.0656952
+age 37-39,w_round,raw,women,G1 Hispanic,142,182,122,False,0,conditional,-0.159952,0.154227
+age 37-39,w_round,raw,women,G1 Hispanic,142,182,122,False,0,weeks,-0.0394871,0.0321969
+age 37-39,w_round,raw,women,G1 Hispanic,142,182,122,False,0,hours_per_week,-0.0139855,0.0477178
+age 37-39,w_round,raw,women,G1 Hispanic,142,182,122,False,0,hourly_pay,-0.279363,0.0893847
+age 37-39,w_round,raw,women,G1 Hispanic,142,182,122,False,0,bridge,0.172884,0.12192
+age 37-39,w_round,raw,women,G1 Hispanic,142,182,122,False,0,log_earnings_workers,-0.332835,0.0979264
+age 40-42,w_round,raw,men,G2 Hispanic,143,177,155,False,0,total,-0.213447,0.0848849
+age 40-42,w_round,raw,men,G2 Hispanic,143,177,155,False,0,employment,-0.00887518,0.0328317
+age 40-42,w_round,raw,men,G2 Hispanic,143,177,155,False,0,conditional,-0.204572,0.0792801
+age 40-42,w_round,raw,men,G2 Hispanic,143,177,155,False,0,weeks,-0.00667126,0.022333
+age 40-42,w_round,raw,men,G2 Hispanic,143,177,155,False,0,hours_per_week,0.0418164,0.0350153
+age 40-42,w_round,raw,men,G2 Hispanic,143,177,155,False,0,hourly_pay,-0.161871,0.0738624
+age 40-42,w_round,raw,men,G2 Hispanic,143,177,155,False,0,bridge,-0.0778457,0.0335618
+age 40-42,w_round,raw,men,G2 Hispanic,143,177,155,False,0,log_earnings_workers,-0.126726,0.0780624
+age 40-42,w_round,raw,men,G3+ Hispanic,112,141,127,False,0,total,-0.241482,0.110811
+age 40-42,w_round,raw,men,G3+ Hispanic,112,141,127,False,0,employment,0.026127,0.0265623
+age 40-42,w_round,raw,men,G3+ Hispanic,112,141,127,False,0,conditional,-0.267609,0.115391
+age 40-42,w_round,raw,men,G3+ Hispanic,112,141,127,False,0,weeks,-0.0398246,0.0283489
+age 40-42,w_round,raw,men,G3+ Hispanic,112,141,127,False,0,hours_per_week,-0.0463941,0.0341196
+age 40-42,w_round,raw,men,G3+ Hispanic,112,141,127,False,0,hourly_pay,-0.266707,0.0859578
+age 40-42,w_round,raw,men,G3+ Hispanic,112,141,127,False,0,bridge,0.0853173,0.0611842
+age 40-42,w_round,raw,men,G3+ Hispanic,112,141,127,False,0,log_earnings_workers,-0.352926,0.0894308
+age 40-42,w_round,raw,men,G1 Hispanic,57,68,59,True,0,total,-0.373217,0.108745
+age 40-42,w_round,raw,men,G1 Hispanic,57,68,59,True,0,employment,-0.0204266,0.0425954
+age 40-42,w_round,raw,men,G1 Hispanic,57,68,59,True,0,conditional,-0.352791,0.0990114
+age 40-42,w_round,raw,men,G1 Hispanic,57,68,59,True,0,weeks,0.0048606,0.0269761
+age 40-42,w_round,raw,men,G1 Hispanic,57,68,59,True,0,hours_per_week,-0.0360422,0.0402553
+age 40-42,w_round,raw,men,G1 Hispanic,57,68,59,True,0,hourly_pay,-0.283056,0.115697
+age 40-42,w_round,raw,men,G1 Hispanic,57,68,59,True,0,bridge,-0.0385534,0.0630069
+age 40-42,w_round,raw,men,G1 Hispanic,57,68,59,True,0,log_earnings_workers,-0.314237,0.113979
+age 40-42,w_round,raw,women,G2 Hispanic,177,224,188,False,0,total,-0.234932,0.0922937
+age 40-42,w_round,raw,women,G2 Hispanic,177,224,188,False,0,employment,0.014467,0.0353322
+age 40-42,w_round,raw,women,G2 Hispanic,177,224,188,False,0,conditional,-0.249399,0.0838713
+age 40-42,w_round,raw,women,G2 Hispanic,177,224,188,False,0,weeks,-0.0422397,0.0294524
+age 40-42,w_round,raw,women,G2 Hispanic,177,224,188,False,0,hours_per_week,-0.0485094,0.0446722
+age 40-42,w_round,raw,women,G2 Hispanic,177,224,188,False,0,hourly_pay,-0.116422,0.0700432
+age 40-42,w_round,raw,women,G2 Hispanic,177,224,188,False,0,bridge,-0.0422274,0.0439015
+age 40-42,w_round,raw,women,G2 Hispanic,177,224,188,False,0,log_earnings_workers,-0.207172,0.0789677
+age 40-42,w_round,raw,women,G3+ Hispanic,94,109,86,True,0,total,-0.19832,0.133728
+age 40-42,w_round,raw,women,G3+ Hispanic,94,109,86,True,0,employment,-0.0181945,0.0571208
+age 40-42,w_round,raw,women,G3+ Hispanic,94,109,86,True,0,conditional,-0.180125,0.103614
+age 40-42,w_round,raw,women,G3+ Hispanic,94,109,86,True,0,weeks,-0.0386797,0.041076
+age 40-42,w_round,raw,women,G3+ Hispanic,94,109,86,True,0,hours_per_week,0.0426837,0.0255807
+age 40-42,w_round,raw,women,G3+ Hispanic,94,109,86,True,0,hourly_pay,-0.0998634,0.0855663
+age 40-42,w_round,raw,women,G3+ Hispanic,94,109,86,True,0,bridge,-0.0842657,0.0555153
+age 40-42,w_round,raw,women,G3+ Hispanic,94,109,86,True,0,log_earnings_workers,-0.0958594,0.101753
+age 40-42,w_round,raw,women,G1 Hispanic,89,105,70,True,0,total,-0.451976,0.176519
+age 40-42,w_round,raw,women,G1 Hispanic,89,105,70,True,0,employment,-0.141148,0.0692992
+age 40-42,w_round,raw,women,G1 Hispanic,89,105,70,True,0,conditional,-0.310828,0.165939
+age 40-42,w_round,raw,women,G1 Hispanic,89,105,70,True,0,weeks,-0.0349076,0.0474993
+age 40-42,w_round,raw,women,G1 Hispanic,89,105,70,True,0,hours_per_week,-0.108852,0.0925962
+age 40-42,w_round,raw,women,G1 Hispanic,89,105,70,True,0,hourly_pay,-0.126315,0.0874656
+age 40-42,w_round,raw,women,G1 Hispanic,89,105,70,True,0,bridge,-0.0407529,0.0736692
+age 40-42,w_round,raw,women,G1 Hispanic,89,105,70,True,0,log_earnings_workers,-0.270075,0.152087
+age 25-27,w_round,raw,men,G2 Hispanic,326,769,611,False,0,total,-0.149578,0.0491645
+age 25-27,w_round,raw,men,G2 Hispanic,326,769,611,False,0,employment,-0.0516159,0.0198854
+age 25-27,w_round,raw,men,G2 Hispanic,326,769,611,False,0,conditional,-0.0979621,0.0451202
+age 25-27,w_round,raw,men,G2 Hispanic,326,769,611,False,0,weeks,0.0179438,0.0137002
+age 25-27,w_round,raw,men,G2 Hispanic,326,769,611,False,0,hours_per_week,0.00497336,0.0216472
+age 25-27,w_round,raw,men,G2 Hispanic,326,769,611,False,0,hourly_pay,-0.0641205,0.034605
+age 25-27,w_round,raw,men,G2 Hispanic,326,769,611,False,0,bridge,-0.0567588,0.0183857
+age 25-27,w_round,raw,men,G2 Hispanic,326,769,611,False,0,log_earnings_workers,-0.0412033,0.0464988
+age 25-27,w_round,edu25,men,G2 Hispanic,326,769,611,False,0,total,-0.0723371,0.0485245
+age 25-27,w_round,edu25,men,G2 Hispanic,326,769,611,False,0,employment,-0.0371779,0.0195416
+age 25-27,w_round,edu25,men,G2 Hispanic,326,769,611,False,0,conditional,-0.0351592,0.0446935
+age 25-27,w_round,edu25,men,G2 Hispanic,326,769,611,False,0,weeks,0.0261885,0.015117
+age 25-27,w_round,edu25,men,G2 Hispanic,326,769,611,False,0,hours_per_week,0.0038177,0.0221476
+age 25-27,w_round,edu25,men,G2 Hispanic,326,769,611,False,0,hourly_pay,-0.0134603,0.0334859
+age 25-27,w_round,edu25,men,G2 Hispanic,326,769,611,False,0,bridge,-0.0517051,0.0196867
+age 25-27,w_round,edu25,men,G2 Hispanic,326,769,611,False,0,log_earnings_workers,0.0165459,0.0468792
+age 25-27,w_round,edu_afqt,men,G2 Hispanic,326,769,611,False,0,total,-0.0466484,0.0503472
+age 25-27,w_round,edu_afqt,men,G2 Hispanic,326,769,611,False,0,employment,-0.0330797,0.0197225
+age 25-27,w_round,edu_afqt,men,G2 Hispanic,326,769,611,False,0,conditional,-0.0135687,0.0469875
+age 25-27,w_round,edu_afqt,men,G2 Hispanic,326,769,611,False,0,weeks,0.0253799,0.0165012
+age 25-27,w_round,edu_afqt,men,G2 Hispanic,326,769,611,False,0,hours_per_week,-0.00454247,0.0240135
+age 25-27,w_round,edu_afqt,men,G2 Hispanic,326,769,611,False,0,hourly_pay,0.00624063,0.0339185
+age 25-27,w_round,edu_afqt,men,G2 Hispanic,326,769,611,False,0,bridge,-0.0406468,0.0210099
+age 25-27,w_round,edu_afqt,men,G2 Hispanic,326,769,611,False,0,log_earnings_workers,0.0270781,0.0481685
+age 25-27,w_round,raw,men,G3+ Hispanic,214,513,425,False,0,total,-0.197113,0.0636119
+age 25-27,w_round,raw,men,G3+ Hispanic,214,513,425,False,0,employment,-0.0346709,0.0247941
+age 25-27,w_round,raw,men,G3+ Hispanic,214,513,425,False,0,conditional,-0.162442,0.0548134
+age 25-27,w_round,raw,men,G3+ Hispanic,214,513,425,False,0,weeks,0.00132349,0.0164502
+age 25-27,w_round,raw,men,G3+ Hispanic,214,513,425,False,0,hours_per_week,-0.0174447,0.0192634
+age 25-27,w_round,raw,men,G3+ Hispanic,214,513,425,False,0,hourly_pay,-0.158332,0.0457943
+age 25-27,w_round,raw,men,G3+ Hispanic,214,513,425,False,0,bridge,0.0120117,0.030407
+age 25-27,w_round,raw,men,G3+ Hispanic,214,513,425,False,0,log_earnings_workers,-0.174453,0.0548402
+age 25-27,w_round,edu25,men,G3+ Hispanic,214,513,425,False,0,total,-0.143861,0.0637184
+age 25-27,w_round,edu25,men,G3+ Hispanic,214,513,425,False,0,employment,-0.0255844,0.0255992
+age 25-27,w_round,edu25,men,G3+ Hispanic,214,513,425,False,0,conditional,-0.118276,0.053731
+age 25-27,w_round,edu25,men,G3+ Hispanic,214,513,425,False,0,weeks,0.0103829,0.0171095
+age 25-27,w_round,edu25,men,G3+ Hispanic,214,513,425,False,0,hours_per_week,-0.0166114,0.0194536
+age 25-27,w_round,edu25,men,G3+ Hispanic,214,513,425,False,0,hourly_pay,-0.125627,0.0432399
+age 25-27,w_round,edu25,men,G3+ Hispanic,214,513,425,False,0,bridge,0.0135796,0.0309015
+age 25-27,w_round,edu25,men,G3+ Hispanic,214,513,425,False,0,log_earnings_workers,-0.131856,0.0523742
+age 25-27,w_round,edu_afqt,men,G3+ Hispanic,214,513,425,False,0,total,-0.146352,0.0637819
+age 25-27,w_round,edu_afqt,men,G3+ Hispanic,214,513,425,False,0,employment,-0.0281755,0.0254137
+age 25-27,w_round,edu_afqt,men,G3+ Hispanic,214,513,425,False,0,conditional,-0.118176,0.0554024
+age 25-27,w_round,edu_afqt,men,G3+ Hispanic,214,513,425,False,0,weeks,0.00749536,0.0184219
+age 25-27,w_round,edu_afqt,men,G3+ Hispanic,214,513,425,False,0,hours_per_week,-0.0234121,0.020397
+age 25-27,w_round,edu_afqt,men,G3+ Hispanic,214,513,425,False,0,hourly_pay,-0.119984,0.0438323
+age 25-27,w_round,edu_afqt,men,G3+ Hispanic,214,513,425,False,0,bridge,0.0177246,0.0299269
+age 25-27,w_round,edu_afqt,men,G3+ Hispanic,214,513,425,False,0,log_earnings_workers,-0.135901,0.0523751
+age 25-27,w_round,raw,men,G1 Hispanic,144,319,263,False,0,total,-0.124548,0.0654859
+age 25-27,w_round,raw,men,G1 Hispanic,144,319,263,False,0,employment,0.00743997,0.0241051
+age 25-27,w_round,raw,men,G1 Hispanic,144,319,263,False,0,conditional,-0.131988,0.0566803
+age 25-27,w_round,raw,men,G1 Hispanic,144,319,263,False,0,weeks,0.00750881,0.0246418
+age 25-27,w_round,raw,men,G1 Hispanic,144,319,263,False,0,hours_per_week,0.0836656,0.0267244
+age 25-27,w_round,raw,men,G1 Hispanic,144,319,263,False,0,hourly_pay,-0.149595,0.0514599
+age 25-27,w_round,raw,men,G1 Hispanic,144,319,263,False,0,bridge,-0.0735673,0.0288665
+age 25-27,w_round,raw,men,G1 Hispanic,144,319,263,False,0,log_earnings_workers,-0.0584204,0.0599179
+age 25-27,w_round,edu25,men,G1 Hispanic,144,319,263,False,0,total,-0.0252116,0.0645924
+age 25-27,w_round,edu25,men,G1 Hispanic,144,319,263,False,0,employment,0.0259272,0.0258913
+age 25-27,w_round,edu25,men,G1 Hispanic,144,319,263,False,0,conditional,-0.0511388,0.0546126
+age 25-27,w_round,edu25,men,G1 Hispanic,144,319,263,False,0,weeks,0.0205114,0.0262761
+age 25-27,w_round,edu25,men,G1 Hispanic,144,319,263,False,0,hours_per_week,0.0834347,0.0276712
+age 25-27,w_round,edu25,men,G1 Hispanic,144,319,263,False,0,hourly_pay,-0.0868877,0.0489809
+age 25-27,w_round,edu25,men,G1 Hispanic,144,319,263,False,0,bridge,-0.0681971,0.0310882
+age 25-27,w_round,edu25,men,G1 Hispanic,144,319,263,False,0,log_earnings_workers,0.0170583,0.0587216
+age 25-27,w_round,edu_afqt,men,G1 Hispanic,144,319,263,False,0,total,0.00812597,0.0710472
+age 25-27,w_round,edu_afqt,men,G1 Hispanic,144,319,263,False,0,employment,0.0342373,0.0282036
+age 25-27,w_round,edu_afqt,men,G1 Hispanic,144,319,263,False,0,conditional,-0.0261113,0.0613726
+age 25-27,w_round,edu_afqt,men,G1 Hispanic,144,319,263,False,0,weeks,0.0175488,0.0281498
+age 25-27,w_round,edu_afqt,men,G1 Hispanic,144,319,263,False,0,hours_per_week,0.0745038,0.0295074
+age 25-27,w_round,edu_afqt,men,G1 Hispanic,144,319,263,False,0,hourly_pay,-0.0734656,0.0545439
+age 25-27,w_round,edu_afqt,men,G1 Hispanic,144,319,263,False,0,bridge,-0.0446983,0.0329134
+age 25-27,w_round,edu_afqt,men,G1 Hispanic,144,319,263,False,0,log_earnings_workers,0.018587,0.0648255
+age 25-27,w_round,raw,women,G2 Hispanic,330,790,618,False,0,total,-0.1345,0.0547784
+age 25-27,w_round,raw,women,G2 Hispanic,330,790,618,False,0,employment,-0.0153478,0.0302293
+age 25-27,w_round,raw,women,G2 Hispanic,330,790,618,False,0,conditional,-0.119152,0.0465526
+age 25-27,w_round,raw,women,G2 Hispanic,330,790,618,False,0,weeks,0.00131871,0.0185783
+age 25-27,w_round,raw,women,G2 Hispanic,330,790,618,False,0,hours_per_week,0.0113522,0.019373
+age 25-27,w_round,raw,women,G2 Hispanic,330,790,618,False,0,hourly_pay,-0.0884113,0.0349132
+age 25-27,w_round,raw,women,G2 Hispanic,330,790,618,False,0,bridge,-0.0434118,0.0226865
+age 25-27,w_round,raw,women,G2 Hispanic,330,790,618,False,0,log_earnings_workers,-0.0757403,0.0500698
+age 25-27,w_round,edu25,women,G2 Hispanic,330,790,618,False,0,total,0.0410933,0.0496836
+age 25-27,w_round,edu25,women,G2 Hispanic,330,790,618,False,0,employment,0.0358087,0.0312039
+age 25-27,w_round,edu25,women,G2 Hispanic,330,790,618,False,0,conditional,0.00528453,0.0419541
+age 25-27,w_round,edu25,women,G2 Hispanic,330,790,618,False,0,weeks,0.020824,0.0196026
+age 25-27,w_round,edu25,women,G2 Hispanic,330,790,618,False,0,hours_per_week,0.0445012,0.0193499
+age 25-27,w_round,edu25,women,G2 Hispanic,330,790,618,False,0,hourly_pay,-0.00772506,0.0338433
+age 25-27,w_round,edu25,women,G2 Hispanic,330,790,618,False,0,bridge,-0.0523157,0.0232989
+age 25-27,w_round,edu25,women,G2 Hispanic,330,790,618,False,0,log_earnings_workers,0.0576002,0.0478415
+age 25-27,w_round,edu_afqt,women,G2 Hispanic,330,790,618,False,0,total,0.112577,0.0549792
+age 25-27,w_round,edu_afqt,women,G2 Hispanic,330,790,618,False,0,employment,0.0778227,0.0331616
+age 25-27,w_round,edu_afqt,women,G2 Hispanic,330,790,618,False,0,conditional,0.0347542,0.0460537
+age 25-27,w_round,edu_afqt,women,G2 Hispanic,330,790,618,False,0,weeks,0.0228163,0.0199979
+age 25-27,w_round,edu_afqt,women,G2 Hispanic,330,790,618,False,0,hours_per_week,0.0277224,0.0207145
+age 25-27,w_round,edu_afqt,women,G2 Hispanic,330,790,618,False,0,hourly_pay,0.0210475,0.0363763
+age 25-27,w_round,edu_afqt,women,G2 Hispanic,330,790,618,False,0,bridge,-0.036832,0.0224456
+age 25-27,w_round,edu_afqt,women,G2 Hispanic,330,790,618,False,0,log_earnings_workers,0.0715862,0.0501736
+age 25-27,w_round,raw,women,G3+ Hispanic,190,439,319,False,0,total,-0.211663,0.0771528
+age 25-27,w_round,raw,women,G3+ Hispanic,190,439,319,False,0,employment,-0.0429511,0.0417265
+age 25-27,w_round,raw,women,G3+ Hispanic,190,439,319,False,0,conditional,-0.168712,0.0566289
+age 25-27,w_round,raw,women,G3+ Hispanic,190,439,319,False,0,weeks,-0.0739247,0.0304407
+age 25-27,w_round,raw,women,G3+ Hispanic,190,439,319,False,0,hours_per_week,0.010929,0.0262578
+age 25-27,w_round,raw,women,G3+ Hispanic,190,439,319,False,0,hourly_pay,-0.0727217,0.0485059
+age 25-27,w_round,raw,women,G3+ Hispanic,190,439,319,False,0,bridge,-0.0329943,0.0303671
+age 25-27,w_round,raw,women,G3+ Hispanic,190,439,319,False,0,log_earnings_workers,-0.135717,0.0678696
+age 25-27,w_round,edu25,women,G3+ Hispanic,190,439,319,False,0,total,-0.019932,0.077587
+age 25-27,w_round,edu25,women,G3+ Hispanic,190,439,319,False,0,employment,0.0167338,0.0427674
+age 25-27,w_round,edu25,women,G3+ Hispanic,190,439,319,False,0,conditional,-0.0366658,0.0573192
+age 25-27,w_round,edu25,women,G3+ Hispanic,190,439,319,False,0,weeks,-0.047962,0.0303666
+age 25-27,w_round,edu25,women,G3+ Hispanic,190,439,319,False,0,hours_per_week,0.0385382,0.027366
+age 25-27,w_round,edu25,women,G3+ Hispanic,190,439,319,False,0,hourly_pay,0.0150557,0.0492675
+age 25-27,w_round,edu25,women,G3+ Hispanic,190,439,319,False,0,bridge,-0.0422976,0.0309829
+age 25-27,w_round,edu25,women,G3+ Hispanic,190,439,319,False,0,log_earnings_workers,0.00563179,0.0667572
+age 25-27,w_round,edu_afqt,women,G3+ Hispanic,190,439,319,False,0,total,0.0108232,0.0823872
+age 25-27,w_round,edu_afqt,women,G3+ Hispanic,190,439,319,False,0,employment,0.0320336,0.0459466
+age 25-27,w_round,edu_afqt,women,G3+ Hispanic,190,439,319,False,0,conditional,-0.0212104,0.060016
+age 25-27,w_round,edu_afqt,women,G3+ Hispanic,190,439,319,False,0,weeks,-0.0466998,0.0312259
+age 25-27,w_round,edu_afqt,women,G3+ Hispanic,190,439,319,False,0,hours_per_week,0.0311007,0.0275945
+age 25-27,w_round,edu_afqt,women,G3+ Hispanic,190,439,319,False,0,hourly_pay,0.0270422,0.0525553
+age 25-27,w_round,edu_afqt,women,G3+ Hispanic,190,439,319,False,0,bridge,-0.0326536,0.0309839
+age 25-27,w_round,edu_afqt,women,G3+ Hispanic,190,439,319,False,0,log_earnings_workers,0.0114432,0.0702176
+age 25-27,w_round,raw,women,G1 Hispanic,177,425,268,False,0,total,-0.361273,0.111608
+age 25-27,w_round,raw,women,G1 Hispanic,177,425,268,False,0,employment,-0.204472,0.0571282
+age 25-27,w_round,raw,women,G1 Hispanic,177,425,268,False,0,conditional,-0.156801,0.0817894
+age 25-27,w_round,raw,women,G1 Hispanic,177,425,268,False,0,weeks,0.00179147,0.0238344
+age 25-27,w_round,raw,women,G1 Hispanic,177,425,268,False,0,hours_per_week,0.0585964,0.028623
+age 25-27,w_round,raw,women,G1 Hispanic,177,425,268,False,0,hourly_pay,-0.174867,0.0691955
+age 25-27,w_round,raw,women,G1 Hispanic,177,425,268,False,0,bridge,-0.0423214,0.0398327
+age 25-27,w_round,raw,women,G1 Hispanic,177,425,268,False,0,log_earnings_workers,-0.114479,0.0781223
+age 25-27,w_round,edu25,women,G1 Hispanic,177,425,268,False,0,total,-0.0387479,0.0855164
+age 25-27,w_round,edu25,women,G1 Hispanic,177,425,268,False,0,employment,-0.0960859,0.0549877
+age 25-27,w_round,edu25,women,G1 Hispanic,177,425,268,False,0,conditional,0.057338,0.0618567
+age 25-27,w_round,edu25,women,G1 Hispanic,177,425,268,False,0,weeks,0.0438267,0.0272848
+age 25-27,w_round,edu25,women,G1 Hispanic,177,425,268,False,0,hours_per_week,0.0991787,0.0304649
+age 25-27,w_round,edu25,women,G1 Hispanic,177,425,268,False,0,hourly_pay,-0.0329983,0.0610882
+age 25-27,w_round,edu25,women,G1 Hispanic,177,425,268,False,0,bridge,-0.0526691,0.0390586
+age 25-27,w_round,edu25,women,G1 Hispanic,177,425,268,False,0,log_earnings_workers,0.110007,0.0670621
+age 25-27,w_round,edu_afqt,women,G1 Hispanic,177,425,268,False,0,total,0.0312218,0.0965776
+age 25-27,w_round,edu_afqt,women,G1 Hispanic,177,425,268,False,0,employment,-0.0484771,0.0657
+age 25-27,w_round,edu_afqt,women,G1 Hispanic,177,425,268,False,0,conditional,0.0796989,0.0674801
+age 25-27,w_round,edu_afqt,women,G1 Hispanic,177,425,268,False,0,weeks,0.0366014,0.0290897
+age 25-27,w_round,edu_afqt,women,G1 Hispanic,177,425,268,False,0,hours_per_week,0.0794484,0.0317408
+age 25-27,w_round,edu_afqt,women,G1 Hispanic,177,425,268,False,0,hourly_pay,-0.00731719,0.068579
+age 25-27,w_round,edu_afqt,women,G1 Hispanic,177,425,268,False,0,bridge,-0.0290337,0.042741
+age 25-27,w_round,edu_afqt,women,G1 Hispanic,177,425,268,False,0,log_earnings_workers,0.108733,0.0753497
+age 25-27,w0,raw,men,G2 Hispanic,326,769,611,False,0,total,-0.150913,0.0493545
+age 25-27,w0,raw,men,G2 Hispanic,326,769,611,False,0,employment,-0.052397,0.0200337
+age 25-27,w0,raw,men,G2 Hispanic,326,769,611,False,0,conditional,-0.0985156,0.0452803
+age 25-27,w0,raw,men,G2 Hispanic,326,769,611,False,0,weeks,0.0166283,0.0139379
+age 25-27,w0,raw,men,G2 Hispanic,326,769,611,False,0,hours_per_week,0.00466847,0.0216645
+age 25-27,w0,raw,men,G2 Hispanic,326,769,611,False,0,hourly_pay,-0.0651615,0.0343634
+age 25-27,w0,raw,men,G2 Hispanic,326,769,611,False,0,bridge,-0.0546509,0.0183387
+age 25-27,w0,raw,men,G2 Hispanic,326,769,611,False,0,log_earnings_workers,-0.0438647,0.0468621
+age 25-27,w0,raw,men,G3+ Hispanic,214,513,425,False,0,total,-0.196443,0.0637974
+age 25-27,w0,raw,men,G3+ Hispanic,214,513,425,False,0,employment,-0.0352601,0.0249182
+age 25-27,w0,raw,men,G3+ Hispanic,214,513,425,False,0,conditional,-0.161183,0.0549041
+age 25-27,w0,raw,men,G3+ Hispanic,214,513,425,False,0,weeks,0.00268868,0.0161737
+age 25-27,w0,raw,men,G3+ Hispanic,214,513,425,False,0,hours_per_week,-0.0173608,0.0193061
+age 25-27,w0,raw,men,G3+ Hispanic,214,513,425,False,0,hourly_pay,-0.157572,0.0454074
+age 25-27,w0,raw,men,G3+ Hispanic,214,513,425,False,0,bridge,0.0110609,0.0300489
+age 25-27,w0,raw,men,G3+ Hispanic,214,513,425,False,0,log_earnings_workers,-0.172244,0.0546697
+age 25-27,w0,raw,men,G1 Hispanic,144,319,263,False,0,total,-0.125999,0.0655452
+age 25-27,w0,raw,men,G1 Hispanic,144,319,263,False,0,employment,0.00652463,0.0243725
+age 25-27,w0,raw,men,G1 Hispanic,144,319,263,False,0,conditional,-0.132524,0.0567709
+age 25-27,w0,raw,men,G1 Hispanic,144,319,263,False,0,weeks,0.00748258,0.0244484
+age 25-27,w0,raw,men,G1 Hispanic,144,319,263,False,0,hours_per_week,0.0819686,0.0268812
+age 25-27,w0,raw,men,G1 Hispanic,144,319,263,False,0,hourly_pay,-0.147768,0.0509006
+age 25-27,w0,raw,men,G1 Hispanic,144,319,263,False,0,bridge,-0.0742072,0.0288722
+age 25-27,w0,raw,men,G1 Hispanic,144,319,263,False,0,log_earnings_workers,-0.0583165,0.0596081
+age 25-27,w0,raw,women,G2 Hispanic,330,790,618,False,0,total,-0.135182,0.0545574
+age 25-27,w0,raw,women,G2 Hispanic,330,790,618,False,0,employment,-0.0146617,0.0297208
+age 25-27,w0,raw,women,G2 Hispanic,330,790,618,False,0,conditional,-0.12052,0.0465537
+age 25-27,w0,raw,women,G2 Hispanic,330,790,618,False,0,weeks,0.000627883,0.0188033
+age 25-27,w0,raw,women,G2 Hispanic,330,790,618,False,0,hours_per_week,0.0102148,0.0191988
+age 25-27,w0,raw,women,G2 Hispanic,330,790,618,False,0,hourly_pay,-0.0879508,0.0351718
+age 25-27,w0,raw,women,G2 Hispanic,330,790,618,False,0,bridge,-0.0434119,0.022574
+age 25-27,w0,raw,women,G2 Hispanic,330,790,618,False,0,log_earnings_workers,-0.0771081,0.0503562
+age 25-27,w0,raw,women,G3+ Hispanic,190,439,319,False,0,total,-0.212624,0.0774524
+age 25-27,w0,raw,women,G3+ Hispanic,190,439,319,False,0,employment,-0.043007,0.0412948
+age 25-27,w0,raw,women,G3+ Hispanic,190,439,319,False,0,conditional,-0.169617,0.0570786
+age 25-27,w0,raw,women,G3+ Hispanic,190,439,319,False,0,weeks,-0.0742476,0.0303197
+age 25-27,w0,raw,women,G3+ Hispanic,190,439,319,False,0,hours_per_week,0.0125829,0.0256416
+age 25-27,w0,raw,women,G3+ Hispanic,190,439,319,False,0,hourly_pay,-0.0751914,0.0486061
+age 25-27,w0,raw,women,G3+ Hispanic,190,439,319,False,0,bridge,-0.0327606,0.0303981
+age 25-27,w0,raw,women,G3+ Hispanic,190,439,319,False,0,log_earnings_workers,-0.136856,0.0682265
+age 25-27,w0,raw,women,G1 Hispanic,177,425,268,False,0,total,-0.365289,0.109131
+age 25-27,w0,raw,women,G1 Hispanic,177,425,268,False,0,employment,-0.205923,0.0570436
+age 25-27,w0,raw,women,G1 Hispanic,177,425,268,False,0,conditional,-0.159366,0.0799231
+age 25-27,w0,raw,women,G1 Hispanic,177,425,268,False,0,weeks,0.00184735,0.0234069
+age 25-27,w0,raw,women,G1 Hispanic,177,425,268,False,0,hours_per_week,0.0589779,0.0281695
+age 25-27,w0,raw,women,G1 Hispanic,177,425,268,False,0,hourly_pay,-0.175445,0.0686498
+age 25-27,w0,raw,women,G1 Hispanic,177,425,268,False,0,bridge,-0.0447463,0.0384897
+age 25-27,w0,raw,women,G1 Hispanic,177,425,268,False,0,log_earnings_workers,-0.11462,0.0769741
+age 35-40,w_round,raw,men,G2 Hispanic,309,698,568,False,0,total,-0.27147,0.062859
+age 35-40,w_round,raw,men,G2 Hispanic,309,698,568,False,0,employment,-0.0696187,0.0244194
+age 35-40,w_round,raw,men,G2 Hispanic,309,698,568,False,0,conditional,-0.201851,0.0621411
+age 35-40,w_round,raw,men,G2 Hispanic,309,698,568,False,0,weeks,0.00249309,0.0118063
+age 35-40,w_round,raw,men,G2 Hispanic,309,698,568,False,0,hours_per_week,5.90944e-05,0.0231251
+age 35-40,w_round,raw,men,G2 Hispanic,309,698,568,False,0,hourly_pay,-0.164582,0.0495197
+age 35-40,w_round,raw,men,G2 Hispanic,309,698,568,False,0,bridge,-0.0398214,0.0290682
+age 35-40,w_round,raw,men,G2 Hispanic,309,698,568,False,0,log_earnings_workers,-0.16203,0.0585436
+age 35-40,w_round,edu25,men,G2 Hispanic,309,698,568,False,0,total,-0.105135,0.056031
+age 35-40,w_round,edu25,men,G2 Hispanic,309,698,568,False,0,employment,-0.0442547,0.0237893
+age 35-40,w_round,edu25,men,G2 Hispanic,309,698,568,False,0,conditional,-0.0608808,0.0589015
+age 35-40,w_round,edu25,men,G2 Hispanic,309,698,568,False,0,weeks,0.015102,0.0125223
+age 35-40,w_round,edu25,men,G2 Hispanic,309,698,568,False,0,hours_per_week,0.000608875,0.0244298
+age 35-40,w_round,edu25,men,G2 Hispanic,309,698,568,False,0,hourly_pay,-0.0460815,0.0437838
+age 35-40,w_round,edu25,men,G2 Hispanic,309,698,568,False,0,bridge,-0.0305102,0.0303265
+age 35-40,w_round,edu25,men,G2 Hispanic,309,698,568,False,0,log_earnings_workers,-0.0303706,0.0547423
+age 35-40,w_round,edu_afqt,men,G2 Hispanic,309,698,568,False,0,total,-0.0406388,0.0591666
+age 35-40,w_round,edu_afqt,men,G2 Hispanic,309,698,568,False,0,employment,-0.0272761,0.024528
+age 35-40,w_round,edu_afqt,men,G2 Hispanic,309,698,568,False,0,conditional,-0.0133626,0.0607982
+age 35-40,w_round,edu_afqt,men,G2 Hispanic,309,698,568,False,0,weeks,0.0102973,0.0132822
+age 35-40,w_round,edu_afqt,men,G2 Hispanic,309,698,568,False,0,hours_per_week,-0.00832191,0.0242446
+age 35-40,w_round,edu_afqt,men,G2 Hispanic,309,698,568,False,0,hourly_pay,0.00736958,0.0479134
+age 35-40,w_round,edu_afqt,men,G2 Hispanic,309,698,568,False,0,bridge,-0.0227077,0.0302836
+age 35-40,w_round,edu_afqt,men,G2 Hispanic,309,698,568,False,0,log_earnings_workers,0.00934501,0.0568613
+age 35-40,w_round,raw,men,G3+ Hispanic,206,486,419,False,0,total,-0.296534,0.0652099
+age 35-40,w_round,raw,men,G3+ Hispanic,206,486,419,False,0,employment,-0.0139231,0.0203698
+age 35-40,w_round,raw,men,G3+ Hispanic,206,486,419,False,0,conditional,-0.282611,0.0653987
+age 35-40,w_round,raw,men,G3+ Hispanic,206,486,419,False,0,weeks,0.00523644,0.0127018
+age 35-40,w_round,raw,men,G3+ Hispanic,206,486,419,False,0,hours_per_week,-0.0380557,0.0190998
+age 35-40,w_round,raw,men,G3+ Hispanic,206,486,419,False,0,hourly_pay,-0.224529,0.0617129
+age 35-40,w_round,raw,men,G3+ Hispanic,206,486,419,False,0,bridge,-0.0252619,0.0266135
+age 35-40,w_round,raw,men,G3+ Hispanic,206,486,419,False,0,log_earnings_workers,-0.257349,0.0649862
+age 35-40,w_round,edu25,men,G3+ Hispanic,206,486,419,False,0,total,-0.183279,0.0600162
+age 35-40,w_round,edu25,men,G3+ Hispanic,206,486,419,False,0,employment,6.94961e-05,0.020793
+age 35-40,w_round,edu25,men,G3+ Hispanic,206,486,419,False,0,conditional,-0.183349,0.0608284
+age 35-40,w_round,edu25,men,G3+ Hispanic,206,486,419,False,0,weeks,0.0112608,0.0132602
+age 35-40,w_round,edu25,men,G3+ Hispanic,206,486,419,False,0,hours_per_week,-0.0384119,0.0193354
+age 35-40,w_round,edu25,men,G3+ Hispanic,206,486,419,False,0,hourly_pay,-0.13862,0.0582249
+age 35-40,w_round,edu25,men,G3+ Hispanic,206,486,419,False,0,bridge,-0.0175773,0.0282173
+age 35-40,w_round,edu25,men,G3+ Hispanic,206,486,419,False,0,log_earnings_workers,-0.165771,0.0615298
+age 35-40,w_round,edu_afqt,men,G3+ Hispanic,206,486,419,False,0,total,-0.168225,0.0607448
+age 35-40,w_round,edu_afqt,men,G3+ Hispanic,206,486,419,False,0,employment,0.00964441,0.0226635
+age 35-40,w_round,edu_afqt,men,G3+ Hispanic,206,486,419,False,0,conditional,-0.17787,0.0605217
+age 35-40,w_round,edu_afqt,men,G3+ Hispanic,206,486,419,False,0,weeks,0.00370761,0.0135288
+age 35-40,w_round,edu_afqt,men,G3+ Hispanic,206,486,419,False,0,hours_per_week,-0.0503432,0.0206565
+age 35-40,w_round,edu_afqt,men,G3+ Hispanic,206,486,419,False,0,hourly_pay,-0.111451,0.058971
+age 35-40,w_round,edu_afqt,men,G3+ Hispanic,206,486,419,False,0,bridge,-0.0197827,0.0309227
+age 35-40,w_round,edu_afqt,men,G3+ Hispanic,206,486,419,False,0,log_earnings_workers,-0.158087,0.0604805
+age 35-40,w_round,raw,men,G1 Hispanic,127,283,246,False,0,total,-0.341952,0.104161
+age 35-40,w_round,raw,men,G1 Hispanic,127,283,246,False,0,employment,-0.00768031,0.0241023
+age 35-40,w_round,raw,men,G1 Hispanic,127,283,246,False,0,conditional,-0.334272,0.09942
+age 35-40,w_round,raw,men,G1 Hispanic,127,283,246,False,0,weeks,0.00439666,0.0129809
+age 35-40,w_round,raw,men,G1 Hispanic,127,283,246,False,0,hours_per_week,-0.0345302,0.0380785
+age 35-40,w_round,raw,men,G1 Hispanic,127,283,246,False,0,hourly_pay,-0.323307,0.0862056
+age 35-40,w_round,raw,men,G1 Hispanic,127,283,246,False,0,bridge,0.0191692,0.0416516
+age 35-40,w_round,raw,men,G1 Hispanic,127,283,246,False,0,log_earnings_workers,-0.353441,0.0860608
+age 35-40,w_round,edu25,men,G1 Hispanic,127,283,246,False,0,total,-0.163878,0.102353
+age 35-40,w_round,edu25,men,G1 Hispanic,127,283,246,False,0,employment,0.017875,0.0251223
+age 35-40,w_round,edu25,men,G1 Hispanic,127,283,246,False,0,conditional,-0.181753,0.0986342
+age 35-40,w_round,edu25,men,G1 Hispanic,127,283,246,False,0,weeks,0.0153761,0.0139176
+age 35-40,w_round,edu25,men,G1 Hispanic,127,283,246,False,0,hours_per_week,-0.0336732,0.0395768
+age 35-40,w_round,edu25,men,G1 Hispanic,127,283,246,False,0,hourly_pay,-0.198415,0.0812819
+age 35-40,w_round,edu25,men,G1 Hispanic,127,283,246,False,0,bridge,0.0349591,0.0429466
+age 35-40,w_round,edu25,men,G1 Hispanic,127,283,246,False,0,log_earnings_workers,-0.216712,0.0839496
+age 35-40,w_round,edu_afqt,men,G1 Hispanic,127,283,246,False,0,total,-0.0901792,0.102425
+age 35-40,w_round,edu_afqt,men,G1 Hispanic,127,283,246,False,0,employment,0.0391443,0.0277905
+age 35-40,w_round,edu_afqt,men,G1 Hispanic,127,283,246,False,0,conditional,-0.129323,0.100201
+age 35-40,w_round,edu_afqt,men,G1 Hispanic,127,283,246,False,0,weeks,0.0106372,0.0160857
+age 35-40,w_round,edu_afqt,men,G1 Hispanic,127,283,246,False,0,hours_per_week,-0.0359147,0.040339
+age 35-40,w_round,edu_afqt,men,G1 Hispanic,127,283,246,False,0,hourly_pay,-0.142318,0.0856437
+age 35-40,w_round,edu_afqt,men,G1 Hispanic,127,283,246,False,0,bridge,0.0382721,0.0455742
+age 35-40,w_round,edu_afqt,men,G1 Hispanic,127,283,246,False,0,log_earnings_workers,-0.167596,0.08529
+age 35-40,w_round,raw,women,G2 Hispanic,324,806,598,False,0,total,-0.201504,0.0678186
+age 35-40,w_round,raw,women,G2 Hispanic,324,806,598,False,0,employment,-0.0511649,0.0300502
+age 35-40,w_round,raw,women,G2 Hispanic,324,806,598,False,0,conditional,-0.150339,0.0554101
+age 35-40,w_round,raw,women,G2 Hispanic,324,806,598,False,0,weeks,-0.031566,0.0179954
+age 35-40,w_round,raw,women,G2 Hispanic,324,806,598,False,0,hours_per_week,-0.0068671,0.0258376
+age 35-40,w_round,raw,women,G2 Hispanic,324,806,598,False,0,hourly_pay,-0.0443385,0.0459739
+age 35-40,w_round,raw,women,G2 Hispanic,324,806,598,False,0,bridge,-0.0675675,0.0322824
+age 35-40,w_round,raw,women,G2 Hispanic,324,806,598,False,0,log_earnings_workers,-0.0827715,0.054276
+age 35-40,w_round,edu25,women,G2 Hispanic,324,806,598,False,0,total,-0.0155428,0.0649328
+age 35-40,w_round,edu25,women,G2 Hispanic,324,806,598,False,0,employment,-0.0170321,0.0309784
+age 35-40,w_round,edu25,women,G2 Hispanic,324,806,598,False,0,conditional,0.0014893,0.0550939
+age 35-40,w_round,edu25,women,G2 Hispanic,324,806,598,False,0,weeks,-0.0129698,0.0199782
+age 35-40,w_round,edu25,women,G2 Hispanic,324,806,598,False,0,hours_per_week,-0.0031233,0.0266464
+age 35-40,w_round,edu25,women,G2 Hispanic,324,806,598,False,0,hourly_pay,0.0821379,0.0444199
+age 35-40,w_round,edu25,women,G2 Hispanic,324,806,598,False,0,bridge,-0.0645555,0.0343767
+age 35-40,w_round,edu25,women,G2 Hispanic,324,806,598,False,0,log_earnings_workers,0.0660448,0.0527467
+age 35-40,w_round,edu_afqt,women,G2 Hispanic,324,806,598,False,0,total,0.0934516,0.0685536
+age 35-40,w_round,edu_afqt,women,G2 Hispanic,324,806,598,False,0,employment,0.0309184,0.0303088
+age 35-40,w_round,edu_afqt,women,G2 Hispanic,324,806,598,False,0,conditional,0.0625333,0.0618238
+age 35-40,w_round,edu_afqt,women,G2 Hispanic,324,806,598,False,0,weeks,-0.00983766,0.0206134
+age 35-40,w_round,edu_afqt,women,G2 Hispanic,324,806,598,False,0,hours_per_week,-0.0134005,0.0267078
+age 35-40,w_round,edu_afqt,women,G2 Hispanic,324,806,598,False,0,hourly_pay,0.133598,0.0480933
+age 35-40,w_round,edu_afqt,women,G2 Hispanic,324,806,598,False,0,bridge,-0.0478266,0.0366196
+age 35-40,w_round,edu_afqt,women,G2 Hispanic,324,806,598,False,0,log_earnings_workers,0.11036,0.05652
+age 35-40,w_round,raw,women,G3+ Hispanic,192,459,352,False,0,total,-0.158132,0.093793
+age 35-40,w_round,raw,women,G3+ Hispanic,192,459,352,False,0,employment,-0.00344976,0.038935
+age 35-40,w_round,raw,women,G3+ Hispanic,192,459,352,False,0,conditional,-0.154682,0.0763495
+age 35-40,w_round,raw,women,G3+ Hispanic,192,459,352,False,0,weeks,-0.0406188,0.0247185
+age 35-40,w_round,raw,women,G3+ Hispanic,192,459,352,False,0,hours_per_week,0.0168972,0.0285121
+age 35-40,w_round,raw,women,G3+ Hispanic,192,459,352,False,0,hourly_pay,-0.0847382,0.0648107
+age 35-40,w_round,raw,women,G3+ Hispanic,192,459,352,False,0,bridge,-0.0462221,0.0305847
+age 35-40,w_round,raw,women,G3+ Hispanic,192,459,352,False,0,log_earnings_workers,-0.10846,0.0772412
+age 35-40,w_round,edu25,women,G3+ Hispanic,192,459,352,False,0,total,0.00874113,0.0973777
+age 35-40,w_round,edu25,women,G3+ Hispanic,192,459,352,False,0,employment,0.0304426,0.0401837
+age 35-40,w_round,edu25,women,G3+ Hispanic,192,459,352,False,0,conditional,-0.0217015,0.0802452
+age 35-40,w_round,edu25,women,G3+ Hispanic,192,459,352,False,0,weeks,-0.0226237,0.0244756
+age 35-40,w_round,edu25,women,G3+ Hispanic,192,459,352,False,0,hours_per_week,0.0216706,0.02856
+age 35-40,w_round,edu25,women,G3+ Hispanic,192,459,352,False,0,hourly_pay,0.0205677,0.0677188
+age 35-40,w_round,edu25,women,G3+ Hispanic,192,459,352,False,0,bridge,-0.0413162,0.0298692
+age 35-40,w_round,edu25,women,G3+ Hispanic,192,459,352,False,0,log_earnings_workers,0.0196147,0.0814274
+age 35-40,w_round,edu_afqt,women,G3+ Hispanic,192,459,352,False,0,total,0.0639808,0.097534
+age 35-40,w_round,edu_afqt,women,G3+ Hispanic,192,459,352,False,0,employment,0.0430885,0.0407863
+age 35-40,w_round,edu_afqt,women,G3+ Hispanic,192,459,352,False,0,conditional,0.0208923,0.0792319
+age 35-40,w_round,edu_afqt,women,G3+ Hispanic,192,459,352,False,0,weeks,-0.0208095,0.0255816
+age 35-40,w_round,edu_afqt,women,G3+ Hispanic,192,459,352,False,0,hours_per_week,0.0183522,0.0303112
+age 35-40,w_round,edu_afqt,women,G3+ Hispanic,192,459,352,False,0,hourly_pay,0.0472104,0.0672765
+age 35-40,w_round,edu_afqt,women,G3+ Hispanic,192,459,352,False,0,bridge,-0.0238608,0.0315666
+age 35-40,w_round,edu_afqt,women,G3+ Hispanic,192,459,352,False,0,log_earnings_workers,0.0447532,0.0802984
+age 35-40,w_round,raw,women,G1 Hispanic,158,371,249,False,0,total,-0.306347,0.143626
+age 35-40,w_round,raw,women,G1 Hispanic,158,371,249,False,0,employment,-0.121893,0.0453304
+age 35-40,w_round,raw,women,G1 Hispanic,158,371,249,False,0,conditional,-0.184454,0.132103
+age 35-40,w_round,raw,women,G1 Hispanic,158,371,249,False,0,weeks,-0.0157475,0.0190892
+age 35-40,w_round,raw,women,G1 Hispanic,158,371,249,False,0,hours_per_week,-0.0232577,0.0545042
+age 35-40,w_round,raw,women,G1 Hispanic,158,371,249,False,0,hourly_pay,-0.21562,0.0798987
+age 35-40,w_round,raw,women,G1 Hispanic,158,371,249,False,0,bridge,0.0701716,0.0996928
+age 35-40,w_round,raw,women,G1 Hispanic,158,371,249,False,0,log_earnings_workers,-0.254626,0.0840383
+age 35-40,w_round,edu25,women,G1 Hispanic,158,371,249,False,0,total,0.00960293,0.138496
+age 35-40,w_round,edu25,women,G1 Hispanic,158,371,249,False,0,employment,-0.0537022,0.0482114
+age 35-40,w_round,edu25,women,G1 Hispanic,158,371,249,False,0,conditional,0.0633052,0.127399
+age 35-40,w_round,edu25,women,G1 Hispanic,158,371,249,False,0,weeks,0.0197258,0.0205996
+age 35-40,w_round,edu25,women,G1 Hispanic,158,371,249,False,0,hours_per_week,-0.0141291,0.0552584
+age 35-40,w_round,edu25,women,G1 Hispanic,158,371,249,False,0,hourly_pay,-0.020426,0.0745233
+age 35-40,w_round,edu25,women,G1 Hispanic,158,371,249,False,0,bridge,0.0781345,0.101143
+age 35-40,w_round,edu25,women,G1 Hispanic,158,371,249,False,0,log_earnings_workers,-0.0148293,0.0909364
+age 35-40,w_round,edu_afqt,women,G1 Hispanic,158,371,249,False,0,total,0.130126,0.139579
+age 35-40,w_round,edu_afqt,women,G1 Hispanic,158,371,249,False,0,employment,-0.0139206,0.0490809
+age 35-40,w_round,edu_afqt,women,G1 Hispanic,158,371,249,False,0,conditional,0.144047,0.132623
+age 35-40,w_round,edu_afqt,women,G1 Hispanic,158,371,249,False,0,weeks,0.0230986,0.0231634
+age 35-40,w_round,edu_afqt,women,G1 Hispanic,158,371,249,False,0,hours_per_week,-0.0225708,0.0554916
+age 35-40,w_round,edu_afqt,women,G1 Hispanic,158,371,249,False,0,hourly_pay,0.0425991,0.0827967
+age 35-40,w_round,edu_afqt,women,G1 Hispanic,158,371,249,False,0,bridge,0.10092,0.107291
+age 35-40,w_round,edu_afqt,women,G1 Hispanic,158,371,249,False,0,log_earnings_workers,0.0431269,0.0954025
+age 35-40,w0,raw,men,G2 Hispanic,309,698,568,False,0,total,-0.26856,0.0621267
+age 35-40,w0,raw,men,G2 Hispanic,309,698,568,False,0,employment,-0.0690192,0.0242786
+age 35-40,w0,raw,men,G2 Hispanic,309,698,568,False,0,conditional,-0.199541,0.0616276
+age 35-40,w0,raw,men,G2 Hispanic,309,698,568,False,0,weeks,0.00259081,0.0116735
+age 35-40,w0,raw,men,G2 Hispanic,309,698,568,False,0,hours_per_week,-0.000939078,0.0230293
+age 35-40,w0,raw,men,G2 Hispanic,309,698,568,False,0,hourly_pay,-0.160438,0.0492169
+age 35-40,w0,raw,men,G2 Hispanic,309,698,568,False,0,bridge,-0.040755,0.0290935
+age 35-40,w0,raw,men,G2 Hispanic,309,698,568,False,0,log_earnings_workers,-0.158786,0.0582049
+age 35-40,w0,raw,men,G3+ Hispanic,206,486,419,False,0,total,-0.298184,0.0654745
+age 35-40,w0,raw,men,G3+ Hispanic,206,486,419,False,0,employment,-0.0141531,0.020132
+age 35-40,w0,raw,men,G3+ Hispanic,206,486,419,False,0,conditional,-0.28403,0.0655868
+age 35-40,w0,raw,men,G3+ Hispanic,206,486,419,False,0,weeks,0.00512552,0.0126434
+age 35-40,w0,raw,men,G3+ Hispanic,206,486,419,False,0,hours_per_week,-0.0357527,0.0187824
+age 35-40,w0,raw,men,G3+ Hispanic,206,486,419,False,0,hourly_pay,-0.227369,0.0616821
+age 35-40,w0,raw,men,G3+ Hispanic,206,486,419,False,0,bridge,-0.0260347,0.0269063
+age 35-40,w0,raw,men,G3+ Hispanic,206,486,419,False,0,log_earnings_workers,-0.257996,0.0650604
+age 35-40,w0,raw,men,G1 Hispanic,127,283,246,False,0,total,-0.346325,0.104118
+age 35-40,w0,raw,men,G1 Hispanic,127,283,246,False,0,employment,-0.00929472,0.0244584
+age 35-40,w0,raw,men,G1 Hispanic,127,283,246,False,0,conditional,-0.33703,0.0994716
+age 35-40,w0,raw,men,G1 Hispanic,127,283,246,False,0,weeks,0.00386416,0.0132699
+age 35-40,w0,raw,men,G1 Hispanic,127,283,246,False,0,hours_per_week,-0.0334985,0.0379653
+age 35-40,w0,raw,men,G1 Hispanic,127,283,246,False,0,hourly_pay,-0.327692,0.0858781
+age 35-40,w0,raw,men,G1 Hispanic,127,283,246,False,0,bridge,0.0202967,0.0417102
+age 35-40,w0,raw,men,G1 Hispanic,127,283,246,False,0,log_earnings_workers,-0.357327,0.0859812
+age 35-40,w0,raw,women,G2 Hispanic,324,806,598,False,0,total,-0.201154,0.0675995
+age 35-40,w0,raw,women,G2 Hispanic,324,806,598,False,0,employment,-0.0513904,0.0297379
+age 35-40,w0,raw,women,G2 Hispanic,324,806,598,False,0,conditional,-0.149763,0.05514
+age 35-40,w0,raw,women,G2 Hispanic,324,806,598,False,0,weeks,-0.0312566,0.0180842
+age 35-40,w0,raw,women,G2 Hispanic,324,806,598,False,0,hours_per_week,-0.00612898,0.0255704
+age 35-40,w0,raw,women,G2 Hispanic,324,806,598,False,0,hourly_pay,-0.0471563,0.0460672
+age 35-40,w0,raw,women,G2 Hispanic,324,806,598,False,0,bridge,-0.0652213,0.0324267
+age 35-40,w0,raw,women,G2 Hispanic,324,806,598,False,0,log_earnings_workers,-0.0845418,0.0542859
+age 35-40,w0,raw,women,G3+ Hispanic,192,459,352,False,0,total,-0.16493,0.0937714
+age 35-40,w0,raw,women,G3+ Hispanic,192,459,352,False,0,employment,-0.00659699,0.0387263
+age 35-40,w0,raw,women,G3+ Hispanic,192,459,352,False,0,conditional,-0.158333,0.0773585
+age 35-40,w0,raw,women,G3+ Hispanic,192,459,352,False,0,weeks,-0.0401263,0.0245283
+age 35-40,w0,raw,women,G3+ Hispanic,192,459,352,False,0,hours_per_week,0.0151544,0.0286253
+age 35-40,w0,raw,women,G3+ Hispanic,192,459,352,False,0,hourly_pay,-0.0920824,0.0649581
+age 35-40,w0,raw,women,G3+ Hispanic,192,459,352,False,0,bridge,-0.041279,0.0308337
+age 35-40,w0,raw,women,G3+ Hispanic,192,459,352,False,0,log_earnings_workers,-0.117054,0.0778053
+age 35-40,w0,raw,women,G1 Hispanic,158,371,249,False,0,total,-0.296796,0.146294
+age 35-40,w0,raw,women,G1 Hispanic,158,371,249,False,0,employment,-0.119166,0.0447705
+age 35-40,w0,raw,women,G1 Hispanic,158,371,249,False,0,conditional,-0.17763,0.134887
+age 35-40,w0,raw,women,G1 Hispanic,158,371,249,False,0,weeks,-0.0145601,0.0190028
+age 35-40,w0,raw,women,G1 Hispanic,158,371,249,False,0,hours_per_week,-0.0144027,0.0515178
+age 35-40,w0,raw,women,G1 Hispanic,158,371,249,False,0,hourly_pay,-0.215535,0.0798667
+age 35-40,w0,raw,women,G1 Hispanic,158,371,249,False,0,bridge,0.0668685,0.100186
+age 35-40,w0,raw,women,G1 Hispanic,158,371,249,False,0,log_earnings_workers,-0.244498,0.084258
+income year 2020 (ages 36-40),w_round,raw,men,G2 Hispanic,251,251,204,False,0,total,-0.36197,0.0801671
+income year 2020 (ages 36-40),w_round,raw,men,G2 Hispanic,251,251,204,False,0,employment,-0.078012,0.0330956
+income year 2020 (ages 36-40),w_round,raw,men,G2 Hispanic,251,251,204,False,0,conditional,-0.283958,0.0772498
+income year 2020 (ages 36-40),w_round,raw,men,G2 Hispanic,251,251,204,False,0,weeks,0.00468128,0.0204336
+income year 2020 (ages 36-40),w_round,raw,men,G2 Hispanic,251,251,204,False,0,hours_per_week,0.0415921,0.0266847
+income year 2020 (ages 36-40),w_round,raw,men,G2 Hispanic,251,251,204,False,0,hourly_pay,-0.258169,0.0624089
+income year 2020 (ages 36-40),w_round,raw,men,G2 Hispanic,251,251,204,False,0,bridge,-0.0720619,0.0296975
+income year 2020 (ages 36-40),w_round,raw,men,G2 Hispanic,251,251,204,False,0,log_earnings_workers,-0.211896,0.068465
+income year 2020 (ages 36-40),w_round,raw,men,G3+ Hispanic,164,164,143,False,0,total,-0.313743,0.0740805
+income year 2020 (ages 36-40),w_round,raw,men,G3+ Hispanic,164,164,143,False,0,employment,-0.00177659,0.0257161
+income year 2020 (ages 36-40),w_round,raw,men,G3+ Hispanic,164,164,143,False,0,conditional,-0.311967,0.076352
+income year 2020 (ages 36-40),w_round,raw,men,G3+ Hispanic,164,164,143,False,0,weeks,-0.0253412,0.0291017
+income year 2020 (ages 36-40),w_round,raw,men,G3+ Hispanic,164,164,143,False,0,hours_per_week,-0.0660939,0.0305289
+income year 2020 (ages 36-40),w_round,raw,men,G3+ Hispanic,164,164,143,False,0,hourly_pay,-0.245542,0.0770103
+income year 2020 (ages 36-40),w_round,raw,men,G3+ Hispanic,164,164,143,False,0,bridge,0.0250101,0.0457856
+income year 2020 (ages 36-40),w_round,raw,men,G3+ Hispanic,164,164,143,False,0,log_earnings_workers,-0.336977,0.0798532
+income year 2020 (ages 36-40),w_round,raw,men,G1 Hispanic,95,95,82,True,0,total,-0.407821,0.106106
+income year 2020 (ages 36-40),w_round,raw,men,G1 Hispanic,95,95,82,True,0,employment,0.00996929,0.0350683
+income year 2020 (ages 36-40),w_round,raw,men,G1 Hispanic,95,95,82,True,0,conditional,-0.41779,0.0946385
+income year 2020 (ages 36-40),w_round,raw,men,G1 Hispanic,95,95,82,True,0,weeks,-0.0039854,0.0241064
+income year 2020 (ages 36-40),w_round,raw,men,G1 Hispanic,95,95,82,True,0,hours_per_week,-0.038522,0.0341524
+income year 2020 (ages 36-40),w_round,raw,men,G1 Hispanic,95,95,82,True,0,hourly_pay,-0.382509,0.0836709
+income year 2020 (ages 36-40),w_round,raw,men,G1 Hispanic,95,95,82,True,0,bridge,0.00722584,0.0559915
+income year 2020 (ages 36-40),w_round,raw,men,G1 Hispanic,95,95,82,True,0,log_earnings_workers,-0.425016,0.094026
+income year 2020 (ages 36-40),w_round,raw,women,G2 Hispanic,292,292,217,False,0,total,-0.208357,0.0754259
+income year 2020 (ages 36-40),w_round,raw,women,G2 Hispanic,292,292,217,False,0,employment,-0.0576303,0.0366543
+income year 2020 (ages 36-40),w_round,raw,women,G2 Hispanic,292,292,217,False,0,conditional,-0.150727,0.0606487
+income year 2020 (ages 36-40),w_round,raw,women,G2 Hispanic,292,292,217,False,0,weeks,-0.0574197,0.0316452
+income year 2020 (ages 36-40),w_round,raw,women,G2 Hispanic,292,292,217,False,0,hours_per_week,0.0190715,0.0306089
+income year 2020 (ages 36-40),w_round,raw,women,G2 Hispanic,292,292,217,False,0,hourly_pay,-0.042523,0.0562051
+income year 2020 (ages 36-40),w_round,raw,women,G2 Hispanic,292,292,217,False,0,bridge,-0.0698559,0.0366769
+income year 2020 (ages 36-40),w_round,raw,women,G2 Hispanic,292,292,217,False,0,log_earnings_workers,-0.0808713,0.0626113
+income year 2020 (ages 36-40),w_round,raw,women,G3+ Hispanic,165,165,126,False,0,total,-0.17623,0.0973953
+income year 2020 (ages 36-40),w_round,raw,women,G3+ Hispanic,165,165,126,False,0,employment,0.000193047,0.0394699
+income year 2020 (ages 36-40),w_round,raw,women,G3+ Hispanic,165,165,126,False,0,conditional,-0.176424,0.0837742
+income year 2020 (ages 36-40),w_round,raw,women,G3+ Hispanic,165,165,126,False,0,weeks,-0.0221651,0.03184
+income year 2020 (ages 36-40),w_round,raw,women,G3+ Hispanic,165,165,126,False,0,hours_per_week,0.0317444,0.0300969
+income year 2020 (ages 36-40),w_round,raw,women,G3+ Hispanic,165,165,126,False,0,hourly_pay,-0.166002,0.0693307
+income year 2020 (ages 36-40),w_round,raw,women,G3+ Hispanic,165,165,126,False,0,bridge,-0.0200013,0.0427947
+income year 2020 (ages 36-40),w_round,raw,women,G3+ Hispanic,165,165,126,False,0,log_earnings_workers,-0.156422,0.0912105
+income year 2020 (ages 36-40),w_round,raw,women,G1 Hispanic,129,129,84,False,0,total,-0.406228,0.182271
+income year 2020 (ages 36-40),w_round,raw,women,G1 Hispanic,129,129,84,False,0,employment,-0.166311,0.0623785
+income year 2020 (ages 36-40),w_round,raw,women,G1 Hispanic,129,129,84,False,0,conditional,-0.239917,0.170195
+income year 2020 (ages 36-40),w_round,raw,women,G1 Hispanic,129,129,84,False,0,weeks,-0.0858035,0.0511518
+income year 2020 (ages 36-40),w_round,raw,women,G1 Hispanic,129,129,84,False,0,hours_per_week,0.018091,0.0516939
+income year 2020 (ages 36-40),w_round,raw,women,G1 Hispanic,129,129,84,False,0,hourly_pay,-0.212533,0.106268
+income year 2020 (ages 36-40),w_round,raw,women,G1 Hispanic,129,129,84,False,0,bridge,0.0403286,0.117531
+income year 2020 (ages 36-40),w_round,raw,women,G1 Hispanic,129,129,84,False,0,log_earnings_workers,-0.280245,0.106622
+income year 2022 (ages 38-42),w_round,raw,men,G2 Hispanic,234,234,201,False,0,total,-0.311873,0.0586099
+income year 2022 (ages 38-42),w_round,raw,men,G2 Hispanic,234,234,201,False,0,employment,-0.0628694,0.0322178
+income year 2022 (ages 38-42),w_round,raw,men,G2 Hispanic,234,234,201,False,0,conditional,-0.249003,0.0555136
+income year 2022 (ages 38-42),w_round,raw,men,G2 Hispanic,234,234,201,False,0,weeks,-0.0216415,0.0234281
+income year 2022 (ages 38-42),w_round,raw,men,G2 Hispanic,234,234,201,False,0,hours_per_week,0.0109129,0.0359514
+income year 2022 (ages 38-42),w_round,raw,men,G2 Hispanic,234,234,201,False,0,hourly_pay,-0.144555,0.0555844
+income year 2022 (ages 38-42),w_round,raw,men,G2 Hispanic,234,234,201,False,0,bridge,-0.0937196,0.0251905
+income year 2022 (ages 38-42),w_round,raw,men,G2 Hispanic,234,234,201,False,0,log_earnings_workers,-0.155284,0.0626877
+income year 2022 (ages 38-42),w_round,raw,men,G3+ Hispanic,169,169,150,False,0,total,-0.233173,0.0893822
+income year 2022 (ages 38-42),w_round,raw,men,G3+ Hispanic,169,169,150,False,0,employment,0.0112215,0.0219606
+income year 2022 (ages 38-42),w_round,raw,men,G3+ Hispanic,169,169,150,False,0,conditional,-0.244394,0.0909982
+income year 2022 (ages 38-42),w_round,raw,men,G3+ Hispanic,169,169,150,False,0,weeks,-0.049739,0.0261526
+income year 2022 (ages 38-42),w_round,raw,men,G3+ Hispanic,169,169,150,False,0,hours_per_week,-0.0192573,0.0325852
+income year 2022 (ages 38-42),w_round,raw,men,G3+ Hispanic,169,169,150,False,0,hourly_pay,-0.215455,0.0607849
+income year 2022 (ages 38-42),w_round,raw,men,G3+ Hispanic,169,169,150,False,0,bridge,0.040057,0.0528462
+income year 2022 (ages 38-42),w_round,raw,men,G3+ Hispanic,169,169,150,False,0,log_earnings_workers,-0.284452,0.0778023
+income year 2022 (ages 38-42),w_round,raw,men,G1 Hispanic,104,104,91,False,0,total,-0.2936,0.111698
+income year 2022 (ages 38-42),w_round,raw,men,G1 Hispanic,104,104,91,False,0,employment,-0.00237286,0.030017
+income year 2022 (ages 38-42),w_round,raw,men,G1 Hispanic,104,104,91,False,0,conditional,-0.291227,0.108999
+income year 2022 (ages 38-42),w_round,raw,men,G1 Hispanic,104,104,91,False,0,weeks,0.0159962,0.0203088
+income year 2022 (ages 38-42),w_round,raw,men,G1 Hispanic,104,104,91,False,0,hours_per_week,-0.0591399,0.0428764
+income year 2022 (ages 38-42),w_round,raw,men,G1 Hispanic,104,104,91,False,0,hourly_pay,-0.306075,0.10158
+income year 2022 (ages 38-42),w_round,raw,men,G1 Hispanic,104,104,91,False,0,bridge,0.0579916,0.0600057
+income year 2022 (ages 38-42),w_round,raw,men,G1 Hispanic,104,104,91,False,0,log_earnings_workers,-0.349219,0.0952744
+income year 2022 (ages 38-42),w_round,raw,women,G2 Hispanic,276,276,217,False,0,total,-0.233655,0.0725909
+income year 2022 (ages 38-42),w_round,raw,women,G2 Hispanic,276,276,217,False,0,employment,-0.037084,0.0292964
+income year 2022 (ages 38-42),w_round,raw,women,G2 Hispanic,276,276,217,False,0,conditional,-0.196571,0.0605422
+income year 2022 (ages 38-42),w_round,raw,women,G2 Hispanic,276,276,217,False,0,weeks,0.00980003,0.0148517
+income year 2022 (ages 38-42),w_round,raw,women,G2 Hispanic,276,276,217,False,0,hours_per_week,-0.0264042,0.0364056
+income year 2022 (ages 38-42),w_round,raw,women,G2 Hispanic,276,276,217,False,0,hourly_pay,-0.134265,0.0539667
+income year 2022 (ages 38-42),w_round,raw,women,G2 Hispanic,276,276,217,False,0,bridge,-0.0457022,0.0438142
+income year 2022 (ages 38-42),w_round,raw,women,G2 Hispanic,276,276,217,False,0,log_earnings_workers,-0.150869,0.0603525
+income year 2022 (ages 38-42),w_round,raw,women,G3+ Hispanic,161,161,128,False,0,total,-0.165081,0.101852
+income year 2022 (ages 38-42),w_round,raw,women,G3+ Hispanic,161,161,128,False,0,employment,-0.00219368,0.04206
+income year 2022 (ages 38-42),w_round,raw,women,G3+ Hispanic,161,161,128,False,0,conditional,-0.162887,0.0836984
+income year 2022 (ages 38-42),w_round,raw,women,G3+ Hispanic,161,161,128,False,0,weeks,-0.0785562,0.0503567
+income year 2022 (ages 38-42),w_round,raw,women,G3+ Hispanic,161,161,128,False,0,hours_per_week,0.0596396,0.03616
+income year 2022 (ages 38-42),w_round,raw,women,G3+ Hispanic,161,161,128,False,0,hourly_pay,-0.0381448,0.0680985
+income year 2022 (ages 38-42),w_round,raw,women,G3+ Hispanic,161,161,128,False,0,bridge,-0.105825,0.0380297
+income year 2022 (ages 38-42),w_round,raw,women,G3+ Hispanic,161,161,128,False,0,log_earnings_workers,-0.0570614,0.073002
+income year 2022 (ages 38-42),w_round,raw,women,G1 Hispanic,136,136,93,False,0,total,-0.207701,0.169464
+income year 2022 (ages 38-42),w_round,raw,women,G1 Hispanic,136,136,93,False,0,employment,-0.106651,0.0459993
+income year 2022 (ages 38-42),w_round,raw,women,G1 Hispanic,136,136,93,False,0,conditional,-0.101049,0.152184
+income year 2022 (ages 38-42),w_round,raw,women,G1 Hispanic,136,136,93,False,0,weeks,0.00382723,0.0299247
+income year 2022 (ages 38-42),w_round,raw,women,G1 Hispanic,136,136,93,False,0,hours_per_week,-0.00900693,0.0587296
+income year 2022 (ages 38-42),w_round,raw,women,G1 Hispanic,136,136,93,False,0,hourly_pay,-0.226217,0.0833745
+income year 2022 (ages 38-42),w_round,raw,women,G1 Hispanic,136,136,93,False,0,bridge,0.130347,0.125348
+income year 2022 (ages 38-42),w_round,raw,women,G1 Hispanic,136,136,93,False,0,log_earnings_workers,-0.231397,0.108694

@@ -1,0 +1,17 @@
+sex,group,seen_at_35_40,n_persons,mean_earnings_25_27,employment_share_25_27,mean_log_earnings_25_27_workers
+men,G1 Hispanic,False,25,24798.9,0.934411,9.78443
+men,G1 Hispanic,True,119,29585.8,0.925785,10.1503
+men,G2 Hispanic,False,45,25700.1,0.853838,10.0327
+men,G2 Hispanic,True,281,28743,0.868003,10.1317
+men,G3+ Hispanic,False,24,26216.7,0.846456,9.9381
+men,G3+ Hispanic,True,190,27994.5,0.880648,10.1053
+men,G3+ NH white,False,181,35004.2,0.924329,10.304
+men,G3+ NH white,True,1230,33863.4,0.916061,10.2353
+women,G1 Hispanic,False,25,15660.4,0.712324,9.76231
+women,G1 Hispanic,True,152,16863.9,0.660254,9.73793
+women,G2 Hispanic,False,24,26804.2,0.845513,10.0977
+women,G2 Hispanic,True,306,20294.8,0.802314,9.83144
+women,G3+ Hispanic,False,10,21425.1,0.65597,10.3452
+women,G3+ Hispanic,True,180,18925.5,0.807208,9.64384
+women,G3+ NH white,False,132,27458.3,0.839546,10.1103
+women,G3+ NH white,True,1192,23380.5,0.822803,9.8801

@@ -1,0 +1,9 @@
+sex,group,person_years_interviewed,valid,bracket_only_earnings,other_missing_earnings,missing_weeks_or_hours
+men,G1 Hispanic,1940,1646,214,6,74
+men,G2 Hispanic,4615,3919,539,37,120
+men,G3+ Hispanic,3141,2659,382,17,83
+men,G3+ NH white,19923,17532,1703,109,579
+women,G1 Hispanic,2444,2081,301,20,42
+women,G2 Hispanic,4847,4154,563,14,116
+women,G3+ Hispanic,2795,2363,364,10,58
+women,G3+ NH white,19136,16658,1998,67,413

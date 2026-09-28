@@ -1,0 +1,109 @@
+arm,sex,group,n_persons,n_workers_both,small_cell,stat,estimate,se
+base weight 1997,men,G2 Hispanic,281,238,False,earnings_gap_entry,-0.163943,0.0482209
+base weight 1997,men,G2 Hispanic,281,238,False,earnings_gap_late,-0.279486,0.0658284
+base weight 1997,men,G2 Hispanic,281,238,False,employment_gap_entry,-0.0538876,0.0229865
+base weight 1997,men,G2 Hispanic,281,238,False,employment_gap_late,-0.0664455,0.0246561
+base weight 1997,men,G2 Hispanic,281,238,False,log_earnings_gap_entry_workers_both,-0.0841055,0.0581346
+base weight 1997,men,G2 Hispanic,281,238,False,log_earnings_gap_late_workers_both,-0.134007,0.0632331
+base weight 1997,men,G2 Hispanic,281,238,False,earnings_growth_gap,-0.115543,0.0567625
+base weight 1997,men,G2 Hispanic,281,238,False,employment_growth_gap,-0.0125579,0.0255282
+base weight 1997,men,G2 Hispanic,281,238,False,within_person_log_growth_gap,-0.0499018,0.0524155
+base weight 1997,men,G3+ Hispanic,190,170,False,earnings_gap_entry,-0.190328,0.067835
+base weight 1997,men,G3+ Hispanic,190,170,False,earnings_gap_late,-0.29579,0.0910382
+base weight 1997,men,G3+ Hispanic,190,170,False,employment_gap_entry,-0.0394254,0.0305541
+base weight 1997,men,G3+ Hispanic,190,170,False,employment_gap_late,-0.0108289,0.0208294
+base weight 1997,men,G3+ Hispanic,190,170,False,log_earnings_gap_entry_workers_both,-0.144081,0.0679802
+base weight 1997,men,G3+ Hispanic,190,170,False,log_earnings_gap_late_workers_both,-0.223304,0.0816884
+base weight 1997,men,G3+ Hispanic,190,170,False,earnings_growth_gap,-0.105463,0.0865544
+base weight 1997,men,G3+ Hispanic,190,170,False,employment_growth_gap,0.0285965,0.0304321
+base weight 1997,men,G3+ Hispanic,190,170,False,within_person_log_growth_gap,-0.0792231,0.0869071
+base weight 1997,men,G1 Hispanic,119,111,False,earnings_gap_entry,-0.135042,0.0628795
+base weight 1997,men,G1 Hispanic,119,111,False,earnings_gap_late,-0.317767,0.0974753
+base weight 1997,men,G1 Hispanic,119,111,False,employment_gap_entry,0.0105584,0.0243138
+base weight 1997,men,G1 Hispanic,119,111,False,employment_gap_late,-0.00095518,0.0244523
+base weight 1997,men,G1 Hispanic,119,111,False,log_earnings_gap_entry_workers_both,-0.125341,0.0690328
+base weight 1997,men,G1 Hispanic,119,111,False,log_earnings_gap_late_workers_both,-0.247585,0.0864162
+base weight 1997,men,G1 Hispanic,119,111,False,earnings_growth_gap,-0.182725,0.0812575
+base weight 1997,men,G1 Hispanic,119,111,False,employment_growth_gap,-0.0115136,0.0330009
+base weight 1997,men,G1 Hispanic,119,111,False,within_person_log_growth_gap,-0.122245,0.0763401
+base weight 1997,women,G2 Hispanic,306,240,False,earnings_gap_entry,-0.141535,0.0522276
+base weight 1997,women,G2 Hispanic,306,240,False,earnings_gap_late,-0.200311,0.0682377
+base weight 1997,women,G2 Hispanic,306,240,False,employment_gap_entry,-0.0252157,0.0328243
+base weight 1997,women,G2 Hispanic,306,240,False,employment_gap_late,-0.0567625,0.033435
+base weight 1997,women,G2 Hispanic,306,240,False,log_earnings_gap_entry_workers_both,-0.0367232,0.0649573
+base weight 1997,women,G2 Hispanic,306,240,False,log_earnings_gap_late_workers_both,-0.102835,0.0706985
+base weight 1997,women,G2 Hispanic,306,240,False,earnings_growth_gap,-0.0587767,0.0602542
+base weight 1997,women,G2 Hispanic,306,240,False,employment_growth_gap,-0.0315468,0.0353281
+base weight 1997,women,G2 Hispanic,306,240,False,within_person_log_growth_gap,-0.0661113,0.0716752
+base weight 1997,women,G3+ Hispanic,180,136,False,earnings_gap_entry,-0.211393,0.0749315
+base weight 1997,women,G3+ Hispanic,180,136,False,earnings_gap_late,-0.136026,0.106829
+base weight 1997,women,G3+ Hispanic,180,136,False,employment_gap_entry,-0.0191351,0.0406642
+base weight 1997,women,G3+ Hispanic,180,136,False,employment_gap_late,-0.000977575,0.0381073
+base weight 1997,women,G3+ Hispanic,180,136,False,log_earnings_gap_entry_workers_both,-0.193357,0.10083
+base weight 1997,women,G3+ Hispanic,180,136,False,log_earnings_gap_late_workers_both,-0.103462,0.104456
+base weight 1997,women,G3+ Hispanic,180,136,False,earnings_growth_gap,0.0753667,0.111213
+base weight 1997,women,G3+ Hispanic,180,136,False,employment_growth_gap,0.0181575,0.0496075
+base weight 1997,women,G3+ Hispanic,180,136,False,within_person_log_growth_gap,0.0898952,0.117263
+base weight 1997,women,G1 Hispanic,152,100,False,earnings_gap_entry,-0.326727,0.116674
+base weight 1997,women,G1 Hispanic,152,100,False,earnings_gap_late,-0.197515,0.155173
+base weight 1997,women,G1 Hispanic,152,100,False,employment_gap_entry,-0.220091,0.0603376
+base weight 1997,women,G1 Hispanic,152,100,False,employment_gap_late,-0.08552,0.0377683
+base weight 1997,women,G1 Hispanic,152,100,False,log_earnings_gap_entry_workers_both,-0.158709,0.134141
+base weight 1997,women,G1 Hispanic,152,100,False,log_earnings_gap_late_workers_both,-0.267724,0.116382
+base weight 1997,women,G1 Hispanic,152,100,False,earnings_growth_gap,0.129212,0.17483
+base weight 1997,women,G1 Hispanic,152,100,False,employment_growth_gap,0.134571,0.0695568
+base weight 1997,women,G1 Hispanic,152,100,False,within_person_log_growth_gap,-0.109015,0.140925
+base weight x IPW,men,G2 Hispanic,281,238,False,earnings_gap_entry,-0.168339,0.0480981
+base weight x IPW,men,G2 Hispanic,281,238,False,earnings_gap_late,-0.280966,0.0649405
+base weight x IPW,men,G2 Hispanic,281,238,False,employment_gap_entry,-0.0551104,0.0234363
+base weight x IPW,men,G2 Hispanic,281,238,False,employment_gap_late,-0.0691624,0.0251459
+base weight x IPW,men,G2 Hispanic,281,238,False,log_earnings_gap_entry_workers_both,-0.088185,0.0590255
+base weight x IPW,men,G2 Hispanic,281,238,False,log_earnings_gap_late_workers_both,-0.13632,0.0638643
+base weight x IPW,men,G2 Hispanic,281,238,False,earnings_growth_gap,-0.112627,0.0557647
+base weight x IPW,men,G2 Hispanic,281,238,False,employment_growth_gap,-0.014052,0.0260994
+base weight x IPW,men,G2 Hispanic,281,238,False,within_person_log_growth_gap,-0.048135,0.0539488
+base weight x IPW,men,G3+ Hispanic,190,170,False,earnings_gap_entry,-0.191947,0.0677521
+base weight x IPW,men,G3+ Hispanic,190,170,False,earnings_gap_late,-0.293504,0.0920972
+base weight x IPW,men,G3+ Hispanic,190,170,False,employment_gap_entry,-0.040985,0.031407
+base weight x IPW,men,G3+ Hispanic,190,170,False,employment_gap_late,-0.0112361,0.0213714
+base weight x IPW,men,G3+ Hispanic,190,170,False,log_earnings_gap_entry_workers_both,-0.146426,0.0682281
+base weight x IPW,men,G3+ Hispanic,190,170,False,log_earnings_gap_late_workers_both,-0.2207,0.0823102
+base weight x IPW,men,G3+ Hispanic,190,170,False,earnings_growth_gap,-0.101557,0.0868696
+base weight x IPW,men,G3+ Hispanic,190,170,False,employment_growth_gap,0.0297489,0.0309977
+base weight x IPW,men,G3+ Hispanic,190,170,False,within_person_log_growth_gap,-0.0742742,0.0869503
+base weight x IPW,men,G1 Hispanic,119,111,False,earnings_gap_entry,-0.13381,0.0627421
+base weight x IPW,men,G1 Hispanic,119,111,False,earnings_gap_late,-0.311372,0.0986379
+base weight x IPW,men,G1 Hispanic,119,111,False,employment_gap_entry,0.011601,0.0245069
+base weight x IPW,men,G1 Hispanic,119,111,False,employment_gap_late,0.00114579,0.0244033
+base weight x IPW,men,G1 Hispanic,119,111,False,log_earnings_gap_entry_workers_both,-0.123846,0.0688311
+base weight x IPW,men,G1 Hispanic,119,111,False,log_earnings_gap_late_workers_both,-0.24299,0.088084
+base weight x IPW,men,G1 Hispanic,119,111,False,earnings_growth_gap,-0.177561,0.0820323
+base weight x IPW,men,G1 Hispanic,119,111,False,employment_growth_gap,-0.0104552,0.0329365
+base weight x IPW,men,G1 Hispanic,119,111,False,within_person_log_growth_gap,-0.119144,0.078198
+base weight x IPW,women,G2 Hispanic,306,240,False,earnings_gap_entry,-0.144681,0.0522225
+base weight x IPW,women,G2 Hispanic,306,240,False,earnings_gap_late,-0.204184,0.0679884
+base weight x IPW,women,G2 Hispanic,306,240,False,employment_gap_entry,-0.0258564,0.0325898
+base weight x IPW,women,G2 Hispanic,306,240,False,employment_gap_late,-0.056781,0.033454
+base weight x IPW,women,G2 Hispanic,306,240,False,log_earnings_gap_entry_workers_both,-0.0395444,0.0650405
+base weight x IPW,women,G2 Hispanic,306,240,False,log_earnings_gap_late_workers_both,-0.106434,0.0707321
+base weight x IPW,women,G2 Hispanic,306,240,False,earnings_growth_gap,-0.0595028,0.059893
+base weight x IPW,women,G2 Hispanic,306,240,False,employment_growth_gap,-0.0309246,0.0352608
+base weight x IPW,women,G2 Hispanic,306,240,False,within_person_log_growth_gap,-0.0668897,0.0716076
+base weight x IPW,women,G3+ Hispanic,180,136,False,earnings_gap_entry,-0.213373,0.0749651
+base weight x IPW,women,G3+ Hispanic,180,136,False,earnings_gap_late,-0.138807,0.106812
+base weight x IPW,women,G3+ Hispanic,180,136,False,employment_gap_entry,-0.019734,0.0406241
+base weight x IPW,women,G3+ Hispanic,180,136,False,employment_gap_late,-0.00121597,0.0381153
+base weight x IPW,women,G3+ Hispanic,180,136,False,log_earnings_gap_entry_workers_both,-0.195435,0.100994
+base weight x IPW,women,G3+ Hispanic,180,136,False,log_earnings_gap_late_workers_both,-0.106741,0.104842
+base weight x IPW,women,G3+ Hispanic,180,136,False,earnings_growth_gap,0.0745658,0.111279
+base weight x IPW,women,G3+ Hispanic,180,136,False,employment_growth_gap,0.018518,0.0496217
+base weight x IPW,women,G3+ Hispanic,180,136,False,within_person_log_growth_gap,0.088693,0.117621
+base weight x IPW,women,G1 Hispanic,152,100,False,earnings_gap_entry,-0.321604,0.118865
+base weight x IPW,women,G1 Hispanic,152,100,False,earnings_gap_late,-0.188906,0.159054
+base weight x IPW,women,G1 Hispanic,152,100,False,employment_gap_entry,-0.219023,0.0604778
+base weight x IPW,women,G1 Hispanic,152,100,False,employment_gap_late,-0.0850155,0.0379866
+base weight x IPW,women,G1 Hispanic,152,100,False,log_earnings_gap_entry_workers_both,-0.157517,0.135134
+base weight x IPW,women,G1 Hispanic,152,100,False,log_earnings_gap_late_workers_both,-0.265195,0.114916
+base weight x IPW,women,G1 Hispanic,152,100,False,earnings_growth_gap,0.132699,0.17936
+base weight x IPW,women,G1 Hispanic,152,100,False,employment_growth_gap,0.134007,0.0693918
+base weight x IPW,women,G1 Hispanic,152,100,False,within_person_log_growth_gap,-0.107678,0.141402
