@@ -8,72 +8,65 @@ wins exactly". [MODEL / FRAMING-SENSITIVE] Three choices shape the result:
 
 Every figure below names the choice it uses.
 
-**Update, 2026-09-28 (the September 27 case, $321.8–387.4bn; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)).** About one other
-US resident in six now comes out ahead. Pooled within households, 17.8% are ahead under tax-share
-financing and 17.0% under per-person cuts (schools case: 20.5% and 19.0%). Every choice at its least
-costly value gives 24%, and at its most costly 11%; with wages going to the earner alone, 16.9% under both.
-The fiscal channel now splits. Taxpayers carry $349.3bn at central values, 85% of it state and local and
-$44.7bn of it the return on public capital, which is never borrowed. Rental assistance and LIHEAP
-($5.1bn) fall on eligible households that go without the aid. The social net on today's residents is
-−$386.6bn, or −$1,307 per other resident. Who comes out where does not change:
-- behind: 97–99% in California and Texas, 98–99% of US-born adults with a high-school education or
-  less, 90–92% of renters, and from 83% to over 99% of each decile in the bottom half;
-- most often ahead: the top decile (31% under tax shares, 55% under per-person cuts) and landlords
-  (37–42%), whose pooled net under tax shares falls to −$701 a year (was −$227).
-
-Preferences are now an attribution under a stated proportional-replacement rule. White natives' part is
-−$0.58bn, and other recipients in the same pools, mostly in admissions, carry −$0.97bn; "with proposed"
-moves by 0.1 point. [CALCULATION: ledger lane, `--case sept27`, 62f1e5a; every old and new value in
-`infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/old_new_ledger.csv` (718 rows), 73cc30c]
-[FRAMING-SENSITIVE]
-
-**Update, 2026-09-26 (schools at full average cost, $258.5–292.0bn; [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).** About one other
-US resident in five now comes out ahead. Pooled within households, 20.5% are ahead under tax-share
-financing and 19.0% under per-person cuts (below: 23.9% and 21.4%). Every choice at its least
-costly value gives 27%, and at its most costly 12%; with wages going to the earner alone, 18.4% and
-18.3%. The fiscal channel is $275.0bn at central values (below: $223.4bn), 83% of it state and
-local, and the social net on today's residents is −$314.4bn, or −$1,063 per other resident. Who
-comes out where does not change:
-- behind: 96–98% in California and Texas, 97–99% of US-born adults with a high-school education or
-  less, 88–91% of renters, and from 81% to over 99% of each decile in the bottom half;
-- most often ahead: the top decile (36% under tax shares, 57% under per-person cuts) and landlords
-  (43–47%). Landlords' pooled net under tax shares turns negative, −$227 a year (was +$114).
-
-School dilution leaves the nets, since nothing is left unfunded at a school response of 1, and the
-consumption key sits inside the fiscal channel. The first-year budget response stays within 0.1 point of
-the September 24 shares. The sections below keep the September 24 figures. [CALCULATION: ledger
-lane, `--case sept26_schools`, fa1bd3a; every old and new value in
-`infra/immigration-fiscal/sept26_propagation_2026_09_26/derived/old_new_ledger.csv` (643 rows),
-d27dcb1] [FRAMING-SENSITIVE]
-
-**Verdict:** About one other US resident in four or five comes out ahead of the Mexican-origin
-group's presence, and the rest come out behind.
-- Counting each household's gains and costs as shared among its members, 23.9% come out ahead if the
-  fiscal cost is financed by tax shares, and 21.4% if by equal cuts per person.
-- Setting every choice at its least costly value gives 30%, and at its most costly 14%.
-- Giving wages to the earner alone, while taxes and rent stay shared, gives 20.1% and 19.9%.
+**Verdict (the September 27 case, $321.8–387.4bn; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)):**
+About one other US resident in six comes out ahead of the Mexican-origin group's presence, and the rest
+come out behind.
+- Counting each household's gains and costs as shared among its members, 17.8% come out ahead if the
+  fiscal cost is financed by tax shares, and 17.0% if by equal cuts per person.
+- Setting every choice at its least costly value gives 24%, and at its most costly 11%.
+- Giving wages to the earner alone, while taxes and rent stay shared, gives 16.9% under both.
 
 The count runs person by person over the 295.8m other residents in CPS ASEC 2025. It covers the
-adopted main case and the social items priced beside it, at central values.
+adopted main case and the social items the ledger allocates (§2), at central values. Taxpayers carry
+$349.3bn of the fiscal channel at central values, 85% of it state and local and $44.7bn of it the return
+on public capital, which is never borrowed. Rental assistance and LIHEAP ($5.1bn) fall on eligible
+households that go without the aid. The social net on today's residents is −$386.6bn, or −$1,307 per
+other resident.
 
 Who comes out where:
-- **Most often ahead:** households whose earners have some college or more and live outside
-  California and Texas, especially at the top of the income distribution. In the top decile, 41% are
-  ahead under tax-share financing and 60% under per-person cuts. About half of landlords are ahead.
-- **Behind:**
-  - nearly everyone in California and Texas (95–98%);
-  - US-born adults with a high-school education or less (97–98%);
-  - renters (87–90%);
-  - the bottom half of the income distribution (77–99% behind).
+- **Behind:** 97–99% in California and Texas, 98–99% of US-born adults with a high-school education or
+  less, 90–92% of renters, and from 83% to over 99% of each decile in the bottom half.
+- **Most often ahead:** households whose earners have some college or more and live outside California
+  and Texas: the top decile (31% under tax shares, 55% under per-person cuts) and landlords (37–42%),
+  whose pooled net under tax shares is −$701 a year.
 
-[CALCULATION: [ledger lane](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md),
-`winners_losers.py` → `derived/net_shares.csv`, `person_nets_by_cut.csv`; ladder 226]
+Preferences are an attribution under a stated proportional-replacement rule. White natives' part is
+−$0.58bn, and other recipients in the same pools, mostly in admissions, carry −$0.97bn; "with proposed"
+moves by 0.1 point. [CALCULATION: [ledger lane](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md),
+`--case sept27`, 62f1e5a; every old and new value in
+`infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/old_new_ledger.csv` (718 rows), 73cc30c;
+ladder 226] [FRAMING-SENSITIVE]
+
+**Earlier cases.** The share ahead falls as the case grows, and who comes out where does not change.
+The sections below keep the tables of the September 24 run.
+
+| | September 24, $200.9–246.3bn (the tables below) | Schools at full cost, September 26, $258.5–292.0bn | September 27, $321.8–387.4bn |
+|---|---|---|---|
+| Ahead: tax shares / per-person cuts | 23.9% / 21.4% | 20.5% / 19.0% | 17.8% / 17.0% |
+| Every choice least / most costly | 30% / 14% | 27% / 12% | 24% / 11% |
+| Wages to the earner alone | 20.1% / 19.9% | 18.4% / 18.3% | 16.9% / 16.9% |
+| Fiscal channel, central | $223.4bn | $275.0bn, 83% state and local | $349.3bn, 85% state and local |
+| Social net on today's residents | −$263.9bn | −$314.4bn (−$1,063 per other resident) | −$386.6bn (−$1,307) |
+| Behind in California and Texas | 95–98% | 96–98% | 97–99% |
+| Behind: US-born adults, high school or less | 97–98% | 97–99% | 98–99% |
+| Behind: renters | 87–90% | 88–91% | 90–92% |
+| Behind: each decile in the bottom half | 77–99% | 81% to over 99% | 83% to over 99% |
+| Ahead: top decile, tax shares / per-person cuts | 41% / 60% | 36% / 57% | 31% / 55% |
+| Ahead: landlords | about half | 43–47% | 37–42% |
+| Landlords' pooled net under tax shares | +$114 | −$227 | −$701 |
+
+School dilution leaves the nets from September 26 on, since nothing is left unfunded at a school
+response of 1, and the consumption key sits inside the fiscal channel. [CALCULATION: ledger lane,
+`--case sept26_schools`, fa1bd3a; every old and new value in
+`infra/immigration-fiscal/sept26_propagation_2026_09_26/derived/old_new_ledger.csv` (643 rows),
+d27dcb1; September 24: `winners_losers.py` → `derived/net_shares.csv`, `person_nets_by_cut.csv` at
+`--case sept24`] [FRAMING-SENSITIVE]
 
 ## 1. Object and frame
 
 The frame is the [complete annual account](immigration-complete-annual-account-2026-09-20.md) on the
-main case adopted September 24 ($200.9–246.3bn). [2026-09-26, later: the lane now runs the schools case, $258.5–292.0bn;
-see the update at the top.] It measures the effect of the 40.9m Mexican-origin
+main case adopted September 24 ($200.9–246.3bn) in the tables below; the verdict above is the lane's run on
+the September 27 case. It measures the effect of the 40.9m Mexican-origin
 residents, all generations, on all other US residents in 2024. It compares the year with and without
 the group.
 
@@ -229,7 +222,7 @@ person, the same under both counts; the share ahead is pooled.
 **Sensitivities.** Share of other residents ahead, social net, central values. [CALCULATION:
 `net_shares.csv`, columns `unit` and `stack`]
 
-[2026-09-25, weekly audit §2: the rows below move one choice at a time or stack choices by their
+The rows below move one choice at a time or stack choices by their
 dollars. The production nest's substitution elasticity alone moves the pooled share ahead from
 29.2% (σ 1.5) through 23.9% (σ 2, central) to 18.7% (σ 2.5) under tax shares, and 26.2%, 21.4% and
 17.7% under per-person cuts, while the net assigned to these people barely moves (−$260.1bn to
@@ -237,8 +230,8 @@ dollars. The production nest's substitution elasticity alone moves the pooled sh
 total that reconciles says little about who is ahead. The least- and most-costly rows stack dollar
 extremes; enumerating the existing channel choices gives 13.9–30.5% under tax shares and
 13.8–27.2% under per-person cuts. Pooling shares amounts among other-resident members only, and
-6.97m other residents live in households with a group member whose resources it leaves out. See
-Revisions.]
+6.97m other residents live in households with a group member whose resources it leaves out (weekly
+audit §2, 2026-09-25).
 
 | Variant | Pooled (a) | Pooled (b) | Person count (a) | Person count (b) |
 |---|---:|---:|---:|---:|
@@ -274,11 +267,11 @@ Notes on the table:
   residual wages, suggesting that Ro/Re = 1.03 … so that Re ≈ 2.46" [SOURCE: Clemens, Montenegro &
   Pritchett, "The Place Premium", HKS RWP09-004, sec. 3.3 and Table 8, quote verified in the corpus].
   The gain assumes the same employment and hours in both countries [INFERENCE]. The second and
-  third-plus generations have no counterfactual in Mexico, and none is invented. [2026-09-28: the
+  third-plus generations have no counterfactual in Mexico here, and none is invented. The
   [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md) (ladder 250) builds
   one for G2: the same people raised in Mexico by parents with the same schooling who stayed, a
   $252bn premium ($241–260bn). G3+ is bounded between no premium and $253bn. On gross pay and
-  measured employment in both places, G1's premium is $263bn ($242–285bn), against $224.6bn here.]
+  measured employment in both places, G1's premium is $263bn ($242–285bn), against $224.6bn here.
 - **Remittances.** Mexico received $62.8bn of remittances from the United States in 2024 [SOURCE:
   Banxico SIE table CE167, US-origin receipts, revised]. The corridor carries more than the CPS
   households send at surveyed amounts ([outside checks](immigration-outside-checks-2026-09-24.md),
@@ -295,10 +288,12 @@ Notes on the table:
   priced beside the account; it stays out of every total unless option 3 is chosen
   ([decision](../decisions/2026-09-25-school-dilution-priced-beside.md)).
 - **Preferences, the group's part, −$0.6bn** (proposed).
-- **City size and schooling mix, +$13.9bn** (ladder 201, proposed).
+- **City size and schooling mix, +$13.9bn** (ladder 201; in the fiscal-plus-social total since
+  September 28, and not allocated here).
 
-The consumption-key correction (ladder 225, proposed) would lower the fiscal cost by $4.1bn. It is
-listed in the lane's registry and not allocated.
+The consumption-key correction (ladder 225) would lower the September 24 run's fiscal cost by $4.1bn.
+That run lists it in the lane's registry and does not allocate it; since September 26 it is inside the
+fiscal channel.
 
 **Rows on other counterfactuals.** Three sister lanes price effects against other comparisons:
 - movers: the movers staying in California;
@@ -322,18 +317,17 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - **Pooling.** It treats each household as sharing everything and measures nothing about how families
   actually share. The truth for any family lies between the two counts.
 - **Kept out of every net.**
-  - The debt legacy's interest ($28.3–36.4bn) is a different object. [2026-09-26, later: $30.1–37.9bn on the
-    schools case.] [2026-09-28: $30.9–41.6bn on the September 27 case.]
+  - The debt legacy's interest ($30.9–41.6bn on the September 27 case; $28.3–36.4bn on September 24) is a
+    different object.
   - The owners' home-value gain is a stock ($1.3–2.9tn).
   - The consumer-price and care side views overlap the wage channel.
 - **The allocation base is not a total.** The lane's allocation base, the adopted fiscal band plus
-  decision 4's victims figure, mixes crime footings. The published fiscal-plus-social range stays
-  $248–304bn: $247.7–298.4bn on the equal footing and $253.4–304.0bn on the custody footing
-  ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)). [2026-09-26, later: on the
-  schools case $305–350bn: $305.3–344.0bn and $311.0–349.7bn (4e66adb).] [2026-09-28: on the September 27
-  case $363–438bn: $363.4–432.2bn and $369.2–438.0bn (73cc30c).] [2026-09-28, later: with fear, security
-  and schools $371–446bn: $371.3–440.1bn and $377.1–445.9bn; the three items are not allocated
-  ([decision](../decisions/2026-09-28-social-items-fear-security-schools.md)).]
+  decision 4's victims figure, mixes crime footings. It also leaves out the social items added from
+  September 28 on: fear, security, schools, pollution, crashes and five benefits. The published
+  fiscal-plus-social total is $413.7–488.1bn on the 39.7M people the account prices (ladder 274,
+  [INDEX](immigration-INDEX.md)). Before those items it was $248–304bn on September 24 ($247.7–298.4bn on
+  the equal footing, $253.4–304.0bn on the custody footing), $305–350bn on the schools case (4e66adb) and
+  $363–438bn on the September 27 case (73cc30c).
 
 - **Instrument.** The analysis ran through an LLM with known dispositions on charged topics
   ([caveat](../notes/llm-bias-caveat.md)). Every figure here comes from scripts the parent re-ran
@@ -384,3 +378,8 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   proportional replacement. Who comes out ahead and who behind is unchanged. Concept affected: the share
   of other residents ahead and the nets by cut (ladder 226).
 - 2026-09-28: the world ledger (ladder 250, e1910ec) builds the Mexico counterfactual this memo's group frame left out for G2 and bounds it for G3+; bracketed in §5. Concept affected: the group's own gain in the world frame.
+- 2026-09-29 (cleanup, [decision](../decisions/2026-09-29-delete-superseded-and-cruft-docs.md)): the verdict states the
+  September 27 run; the September 24 verdict and the schools-case update became one table of earlier cases;
+  dated notes are folded into the text. §6 no longer calls the scale net and the consumption key proposed, and §7
+  gives the current fiscal-plus-social total ($413.7–488.1bn, ladder 274). Concept affected: which run the memo
+  states as current.
