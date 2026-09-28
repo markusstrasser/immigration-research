@@ -497,8 +497,8 @@ The hiding story does not show where the group's benefit dollars are. In the sta
 Hispanics are of Mexican origin, the survey reports Hispanic SNAP receipt and Medicaid coverage
 at or above the administrative rate, and it over-reports housing assistance. California's SNAP
 records give Hispanic participants 44.0% of benefit dollars against the survey's 44.1%.
-Unemployment insurance and WIC are under-reported, as they are for everyone; re-keying on
-administrative records would add $2.2bn (proposed).
+Unemployment insurance and WIC are under-reported, as they are for everyone, so the main case
+keys them on administrative records (+$2.2bn).
 
 The count error runs the other way from the objection. Since 2019 the CPS has put the Mexico-born
 population 9–13% above the larger American Community Survey: 12.2M against about 11.1M. The
@@ -721,5 +721,7 @@ they get more prominence.
     September 20 account's −$274bn.
   - Entry 16: the −$2,318 is the partial account with flat charges, as entry 18 says, not the complete account.
   - Entry 18: against average residents the gap per member falls 4% or rises 11% ("4–7%" had no source).
+  - Entry 17: the administrative benefit keys (+$2.2bn) have been inside the case since September 24 (decision 6
+    of that day); the entry had called them proposed.
 
   Concept affected: which figures the FAQ states as current.
