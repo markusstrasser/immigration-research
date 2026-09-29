@@ -243,7 +243,7 @@ audit §2, 2026-09-25).
 | The same, least / most costly | 36.6 / 6.1% | 35.7 / 8.2% | 31.6 / 10.7% | 30.8 / 10.8% |
 | State and local cost charged nationally | — | — | 13.0% | 12.7% |
 | Housing at the national-uniform central (net +$0.71bn, not +$3.51bn) | — | — | 18.4% | 18.5% |
-| Victims' harm on the custody footing ($32.34bn, not $30.93bn) | — | — | 20.0% | 19.8% |
+| Victims' harm on the custody footing ($32.34bn, not $30.93bn, on the lanes' CPS count) | — | — | 20.0% | 19.8% |
 
 The last three variants were run on the person count only. Pooling each household's amounts with a
 plain mean instead of the weighted mean would put 24.3% and 21.7% ahead. That rule moves the totals

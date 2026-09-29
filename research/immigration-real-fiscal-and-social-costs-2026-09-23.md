@@ -142,19 +142,19 @@ Yes, use is the better key. It changes little because of what the account compar
 |---|---|---:|---|---|
 | Courts, police, prisons by use | reallocation inside the fiscal account | +5.9 adopted (+1.7 raw codes; grid −1.0 to +8.7) | measured shares, assumed keys | adopted into the main case |
 | Uncompensated hospital care | government offsets keyed below use; unreimbursed care outside any budget | +7.3 to +10.6: +3.7 to +5.7 inside, +3.2 to +5.6 outside budgets (+4.7 to +7.4 at 0.7× use) | measured uninsured share, published offsets, assumed use | inside part adopted; outside part a social item |
-| Crime victims' harm | losses of other residents who are victims; excludes justice costs and offenders | 28.9 full (one at a time 23.5–34.0; envelope 15.4–45.3; arrest shares 43.1); 4.5 tangible (1.3–6.0) | measured incidents, modelled prices (lives valued at VSL) | yes, as a social (Z) item |
+| Crime victims' harm | losses of other residents who are victims; excludes justice costs and offenders | 30.5 / 31.9 at the low / high end on the 39.7M (ladder 218); the first run's 28.9, before the mixed-group correction and on the CPS count, had one at a time 23.5–34.0, envelope 15.4–45.3 and arrest shares 43.1; 4.5 tangible (1.3–6.0) | measured incidents, modelled prices (lives valued at VSL) | yes, as a social (Z) item |
 | Property crime | same frame, arrest-share proxy | 1.3–1.4 | proxy | yes, as Z; separate from the violent figure |
 | Housing, net to other residents | rent the group pays to other residents' landlords, less the surplus triangle | −0.7 to −3.5, a gain (range −9.4 to +0.4) | modelled elasticities, measured rents | yes, as Z, long run only |
-| Road congestion | other residents' extra travel time and fuel | 14.0 / 12.0 at the low / high end once roads respond (full span 2.0–30.8); 19.2 (8.0–35.3) with road budgets fixed; network approaches 7–60 | measured traffic shares and delay, modelled speed response | yes, as Z beside the main case |
+| Road congestion | other residents' extra travel time and fuel | 13.6 / 11.6 at the low / high end once roads respond, on the 39.7M (14.0 / 12.0 and full span 2.0–30.8 on the CPS count); 19.2 (8.0–35.3) with road budgets fixed, on the CPS count; network approaches 7–60 | measured traffic shares and delay, modelled speed response | yes, as Z beside the main case |
 
 Sources: [victim harm](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md),
 [uncompensated care](../infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md),
 [housing](../infra/immigration-fiscal/housing_transfer_2026_09_23/RESULT.md),
 [congestion](../infra/immigration-fiscal/congestion_2026_09_23/RESULT.md).
 
-- **Congestion.** The central uses the cross-city estimate that a metro with more people is
-  slower on the same lanes (elasticity −0.12, SE 0.035, Couture, Duranton and Turner): $19.2bn,
-  94% of it time valued at USDOT's rates and 6% excess fuel. Approaches built on the Urban
+- **Congestion.** With road budgets fixed, the cross-city estimate that a metro with more people is
+  slower on the same lanes (elasticity −0.12, SE 0.035, Couture, Duranton and Turner) gives $19.2bn on
+  the CPS count, 94% of it time valued at USDOT's rates and 6% excess fuel. Approaches built on the Urban
   Mobility Report's delay (9.8bn hours, $269bn, reproduced) give $7–60bn. The spread comes from
   two inputs: how steeply delay rises with traffic (the link-level curve's 4 against 1.0–2.5 for
   whole networks) and how much of the freed road space other drivers refill (Duranton and
@@ -164,7 +164,8 @@ Sources: [victim harm](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/
   Under the proportional benchmark roads grow with population and only a $9.0bn residual
   remains. Since September 27 the main case lets road budgets respond in the long run, which takes
   part of the traffic cost into the account: $14.0bn remains at the low end and $12.0bn at the high
-  end (`service_response_long_run_2026_09_27`). Crashes and PM2.5 are priced in §3b; pavement wear
+  end on the CPS count, $13.6bn and $11.6bn on the account's 39.7M, the central the total carries
+  (`service_response_long_run_2026_09_27`, ladder 274). Crashes and PM2.5 are priced in §3b; pavement wear
   is not.
 
 - **Victims.** The central counts about 1,020 killings and 402,000 non-fatal violent
@@ -207,9 +208,9 @@ The operator added ten items to the social rows, costs and benefits, from the Se
 [decision](../decisions/2026-09-28-social-items-more-benefits.md),
 [decision](../decisions/2026-09-29-crash-item-with-against-without.md)). $bn a year; the central on the
 account's 39.7M people (ladder 274), the lanes' own central and range on the CPS's 40.9M, and the figure
-against as many average residents, which sits beside and is never added:
+against as many average residents on the lanes' counts, which sits beside and is never added:
 
-| Item | Central | Lane central (range) | Normalized, beside | Ladder |
+| Item | Central | Lane central (range) | Normalized, lane's count, beside | Ladder |
 |---|---:|---|---:|---|
 | Fear and avoidance among residents who are not victims | 10.3 | 10.5 (5.2 to 30.3) | — | 258 |
 | Private security | −0.5 | −0.6 (−2.9 to 0.4) | — | 258 |
@@ -390,8 +391,8 @@ priced. Each lane ruled whether its gain already sits inside the production term
 | Care: taxes on native women's extra hours; net elder-care Medicaid saving | +4.1 (2.6–13.3) | inside the fiscal account since September 24 | 198 |
 | Cheaper services to consumers | 21.8 (11.9 net of native wage gains) | inside P; side view, not added | 198 |
 | Cheaper construction (0.75%) | 0 | inside P; other renters' extra rent $33.5bn → $29.9bn | 200 |
-| City size and schooling mix, one regression (Card–Rothstein–Yi) | +13.9 (−56.6 to +84.4) | in the social rows since September 28 (§3b) | 201 |
-| Restaurants, volunteering, consumer-side scale, trade ties | +21.9 | in the social rows since September 28 (§3b) | 261, 265 |
+| City size and schooling mix, one regression (Card–Rothstein–Yi) | +13.7; on the CPS count +13.9 (−56.6 to +84.4) | in the social rows since September 28 (§3b) | 201 |
+| Restaurants, volunteering, consumer-side scale, trade ties | +21.7 | in the social rows since September 28 (§3b) | 261, 265 |
 | Mobility: local-shock insurance and Borjas's gain | +0.65 (0.18–2.46) | beside the account; fiscal slice 0.03 | 203 |
 | Innovation (patents) | not added | no response at the group's schooling; interval ±$500bn | 201 |
 
@@ -541,3 +542,4 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
   current, and the population behind the social rows.
 - 2026-09-29 (number drift audit): the pairing's upper end is $488.0bn (488.047), not $488.1bn, which rounded 488.05 a second time. Concept affected: none; rounding only.
 - 2026-09-29 (priced-count spans): §3b now gives the PM2.5 and crash ranges on the account's 39.7M, and the fault-based crash figure is $40.6bn ($23.0–69.8bn) on that count, $42.3bn on the lane's ([lane](../infra/immigration-fiscal/social_spans_priced_count_2026_09_29/RESULT.md)). Concept affected: none; the count the ranges are on.
+- 2026-09-29 (memo sweep): §3's table and congestion note now give victims' harm ($30.5 / 31.9bn), congestion ($13.6 / 11.6bn), and §7b the scale net ($13.7bn), on the account's 39.7M, and label the CPS-count figures; $19.2bn is the roads-fixed arm, not the central. The four smaller benefits add to $21.7bn on the priced count (was printed $21.9bn; $22.0bn on the lanes' counts). Concept affected: none; which count and arm each figure is on.
