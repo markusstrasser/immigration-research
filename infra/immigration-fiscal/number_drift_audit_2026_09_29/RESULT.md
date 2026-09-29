@@ -1,4 +1,4 @@
-**Verdict:** The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD ea3369a plus this lane's uncommitted changes, 665 of 802 numbers are checked (the rest are years and non-quantities): all 665 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. Five values are approximate and marked on the page: PM2.5 and crash figures scaled from the survey's 40.9M to the 39.7M the account prices.
+**Verdict:** The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 0a4d9dc plus this lane's uncommitted changes, 665 of 802 numbers are checked (the rest are years and non-quantities): all 665 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. The five PM2.5 and crash values the page marked approximate now come from `social_spans_priced_count_2026_09_29`, which reruns the air and crash lanes on the 39.7M the account prices. Two print differently, $45bn → $46bn and $40bn → $41bn, and no number on the page is approximate now.
 
 Model: claude-opus-5-5
 
@@ -6,7 +6,7 @@ Model: claude-opus-5-5
 
 This lane first audited the numbers on the evidence map and in the routing documents. It then built the map's
 build-time sourcing and applied every map fix through it. Nothing is committed; the team lead reviews and commits.
-The latest run read HEAD ea3369a and the working tree at 2026-09-29 07:28 JST. That working tree included the peer's
+The latest run read HEAD 0a4d9dc and the working tree at 2026-09-29 10:21 JST. That working tree included the peer's
 uncommitted CLAUDE.md edit, which this lane only read. `derived/inputs.json` holds the sha256 of every file read.
 
 Since the 263def3 run (05:24), these changes landed:
@@ -18,7 +18,9 @@ Since the 263def3 run (05:24), these changes landed:
 - eceab11 rewrote the dataset register, which is outside the audit's spans.
 - This lane moved the registry into the map's build and applied the fixes, below. The lead committed them as
   2ae6675 (the map) and b0bf4c2 (this lane), then the printed-sum gate as ea3369a. The prose sum and the capital
-  label (below) are uncommitted.
+  label followed as f058b8a (the map) and 0a4d9dc (this lane).
+- `social_spans_priced_count_2026_09_29` recomputed the five approximate values on the priced count, and their records
+  now read it (uncommitted).
 
 ## Result
 
@@ -44,8 +46,8 @@ each row) and 53 are years in the routing files.
 All files sit in `overview_2026_09_28/`:
 - [`quantities.py`](../overview_2026_09_28/quantities.py): the only resolver, renderer, lint and binding test. build.py,
   audit_numbers.py and registry_check.py import it; there is no second copy.
-- [`quantity_registry.csv`](../overview_2026_09_28/quantity_registry.csv): 79 records. By status: 66 file, 3
-  file+text, 3 text, 4 inference and 3 needs_file.
+- [`quantity_registry.csv`](../overview_2026_09_28/quantity_registry.csv): 79 records. By status: 71 file, 3
+  file+text, 3 text and 2 inference. No page site quotes the two inference records.
 - [`quantity_bindings.csv`](../overview_2026_09_28/quantity_bindings.csv): 66 map bindings, 38 in groups.py, 19 in
   template.html and 9 in build.py. The `replaced` column keeps what each site showed before.
 - [`test_quantities.py`](../overview_2026_09_28/test_quantities.py): 13 tests of the rendering, binding and allocation
@@ -60,7 +62,8 @@ On every run, build.py does the following:
    and the row's label must pass the lint.
 3. It fills every placeholder. A value with status `inference` or `needs_file` is wrapped as
    `<span class="approx" title="Approximate. …">`, and its `reader_note`, itself filled, becomes the tooltip. Such a
-   record without a `reader_note` stops the build. The page's how-to-read section explains the dotted underline.
+   record without a `reader_note` stops the build. The page's how-to-read section explains the dotted underline
+   only when some number carries it (`APPROX_NOTE` in build.py); none does now.
 4. It prints the ledger and the running sums so that the printed lines add to the printed totals, and reads the
    arithmetic back from the rendered tables (`displayed_sum_errors`). See "Printed sums" below.
 5. On any failure it exits 1 and writes no page, as it already did for an unfilled `{{`.
@@ -121,7 +124,7 @@ The main estimate at template 143 is now a placeholder too, so every part of the
 | status | `file`, `file+text` (plus a constant stated only in prose), `text`, `inference` (combined here under a stated assumption), `needs_file` (no file measures it in the page's frame; the value is interim) | `file` |
 | must_name, forbid | case-insensitive regular expressions the quoting sentence (or a table row's label) must match, or must not match | `white` for the `gap_vs_white.*` records |
 | supersedes, note | the value the record replaced and where it came from; caveats | ladder 208's estimate before adoption, $9–15bn |
-| reader_note | the page's tooltip for an approximate record; may hold placeholders | "Computed on the survey's count of {{q:headcount.raw\|value}} people and scaled to …" |
+| reader_note | the page's tooltip for an approximate record; may hold placeholders | empty: the record is not approximate |
 
 The views are:
 - one number: `mid`, `value`, `min`, `max`, `at_low_end`, `at_high_end`;
@@ -169,6 +172,7 @@ covered are now placeholders in the sources.
 | alternatives, beside | Costs outside public budgets +92 / +101 | Offending at the Hispanic average, low end −4 / 0; then costs outside public budgets +96 / +101 | `pairing.fiscal_footing`, `pairing.total` |
 | template 147 and 213, social why | the total with the costs outside the budget, $450bn (414–488), with no word on its footing; 213 printed "The $450bn figure adds them" | each adds "Its low end also prices offending at the Hispanic average, $4bn less."; 213 prints "The $414–488bn figure adds them" | `pairing.footing_reduction`, `pairing.total` |
 | template 183 | "Return on public capital: about $45bn (34–56)", the ledger line's name for a larger total | "Return on public capital, government enterprises' included: about $45bn (34–56)" | `capital_return.total` (must name enterprises) |
+| social/f260 and f264, the five values marked approximate above | 4,800; (31–120); $45bn; (−55 to +71); $40bn (23–70), each with a dotted underline | the same without the mark, except **$46bn** and **$41bn** (23–70) | `pm25.*_priced`, `crash.*_priced`, now reading `social_spans_priced_count_2026_09_29` |
 
 The other bound sites kept their values and are now placeholders or read rows. They are the headcount (39.7M), the
 per-member figure ($8.9k, 8.1–9.8), f268's 22%, 11%, 44% and 30%, f211's 0.7 and f253's $60bn. The rest are f264's
@@ -235,21 +239,29 @@ The beside block now reads:
 Two gates hold this together: the high end's fiscal case must be the main case, and the social step must equal
 `social.items`.
 
-### Approximate values on the page
+### Priced-count values, formerly approximate
 
-| Record | Shown | Status | How it is computed | What replaces it |
-|---|---|---|---|---|
-| `pm25.deaths_priced` | 4,800 | inference | the air lane's 4,938 deaths on the raw 40.90M × 0.977200, the PM2.5 row's restatement factor: 4,825 | the air lane rerun on the row-4 count |
-| `pm25.span_priced` | (31–120) | inference | the lane's 31.50–122.48 × 0.977200: 30.78–119.69 | the same rerun |
-| `pm25.normalized_priced` | $45bn | needs_file | the lane's 46.51 against as many average residents × 0.977200: 45.45; no file restates it | the same rerun |
-| `crash.span_priced` | (−55 to +71) | needs_file | the crash lane's −57.68 to +74.34 × 0.955917, the crash row's factor: −55.14 to +71.06 | the crash lane rerun on the row-4 count |
-| `crash.fault_based_priced` | $40bn (23–70) | needs_file | the fault-based 42.34 (23.80–73.25) × 0.955917: 40.47 (22.75–70.02) | the same rerun |
+Until this round the page marked five values approximate. Each was the air or crash lane's figure on the raw 40.90M,
+scaled by its row's central factor, because ladder 274 restated only the central values. The lane
+[`social_spans_priced_count_2026_09_29`](../social_spans_priced_count_2026_09_29/RESULT.md) now reruns both lanes' own
+functions over their full grids on the 39.71M the account prices. The crash figures also use the NHTS ratios per
+person aged 5+, as the pairing does. The five records read its `derived/priced_spans.csv` with status `file`.
 
-[DATA: population_basis_2026_09_29/derived/restated_pairing.csv, the factors; the lanes' own outputs]
+| Record | Scaled approximation | On the priced count | The page |
+|---|---|---|---|
+| `pm25.deaths_priced` | 4,825.46 | 4,825.46 | 4,800 |
+| `pm25.span_priced` | 30.78–119.69 | 30.78–119.71 | (31–120) |
+| `pm25.normalized_priced` | 45.45 | 45.53 | $45bn → **$46bn** |
+| `crash.span_priced` | −55.14 to +71.06 | −55.07 to +70.84 | (−55 to +71) |
+| `crash.fault_based_priced` | 40.47 (22.75–70.02) | 40.63 (22.96–69.84) | $40bn → **$41bn** (23–70) |
 
-Ladder 274 restated only each pairing row's central value, so no file holds these figures on the priced count. Each
-one carries a dotted underline, and its tooltip reads "Approximate. Computed on the survey's count of 40.9M people and
-scaled to the 39.7M the account prices."
+[DATA: social_spans_priced_count_2026_09_29/derived/priced_spans.csv; the approximations as registry_values.csv
+printed them at 0a4d9dc]
+
+Each end moves by its own factor, because the group's share enters both lanes nonlinearly. That lane's RESULT gives
+the reasons, and its `derived/end_factors.csv` splits each factor into its parts. The page now carries no approximate
+number. The how-to-read sentence on the dotted underline is filled only when a number carries the mark, so it has left
+the page too. A positive control, a template copy with one marked number, brings it back.
 
 ## Document numbers
 
@@ -326,24 +338,48 @@ Three controls each exit 1 and write no page:
 
 On the page, only the four sentences changed; line 143 renders as before.
 
+The priced-count rebinding was validated at 2026-09-29 10:21:40–10:23:51 JST on HEAD 0a4d9dc plus the working tree,
+with the same commands and one scratch script:
+- two runs of `social_spans_priced_count_2026_09_29/priced_spans.py` pass all 22 gates, and their three CSVs are
+  `cmp`-identical;
+- the builds are `cmp`-identical, with 66 bindings passing and no `class="approx"` on the page;
+- the audits are `cmp`-identical, 665 of 665 MATCH;
+- the registry checks are `cmp`-identical (79 records, 13 FIXED);
+- pytest passes 23 tests, and ruff passes on priced_spans.py, build.py and quantities.py;
+- no file changed in the lanes that priced_spans.py imports.
+
+A positive control builds from a template copy that carries one marked number (`--template`, `--out` to scratch). It
+exits 0, and the how-to-read sentence on the dotted underline is back on that page. On the real page, only the
+sentences holding the five values changed: they lost their marks, and two print $46bn and $41bn. The how-to-read
+paragraph also lost its last two sentences.
+
 ## Open items
 
 1. **Done:** the lead committed both table changes (the v4 alternatives and the pairing's footing row) in 2ae6675.
-2. **Five approximate values** stay until the air and crash lanes rerun on audit row 4's 39.71M. Their records then
-   change to `file`, and the dotted underlines go away without a text edit.
+2. **Done:** the five approximate values read `social_spans_priced_count_2026_09_29` on the priced count (see
+   "Priced-count values, formerly approximate").
 3. **Typed numbers remain.** 205 groups.py numbers, 9 build.py tokens and 30 template numbers are still typed. They
    MATCH through `source_map.csv`, but the build does not test them. One of them, services/why's "$55bn … (49–62)",
    equals `tally.corrected`, which template line 143 already quotes. Converting any of them means a placeholder, a
    binding, and removing its `source_map.csv` row.
 4. **Dead text.** `RELABEL["gg"]` in build.py holds the ledger note too, but only its label reaches the page.
 5. **evidence_class.py.** Its known-bias lines (28%, 36%, 62%) are unchanged, because no registry record covers them.
-6. **Unquoted records.** 16 records resolve on every run but no page or binding quotes them:
+6. **Unquoted records.** 21 records resolve on every run, but no placeholder, `q()` call, binding or other record's
+   `q:` selector reads them:
    - alternative readings: `balance.absolute_hull`, `gg.removal_response`;
-   - superseded or off-page rows: `candidate_v3.*` (3), `property_tax.long_run_change`, `tax_key.irs_change`;
+   - superseded or off-page rows: `candidate_v3.*` (3), `pension.accrual_payable_net`, `property_tax.long_run_change`,
+     `tax_key.irs_change`;
    - former document bindings: `backcast.typical_year_change`, `care.total`, `congestion.range`,
      `pairing.per_member_priced`;
-   - parts of the case: `case.main`, `case.schools_sept26`, `case.first_year_response`, `capital_return.total`,
-     `finite_removal.effect`, `finite_removal.general_government`.
+   - parts of the case: `case.schools_sept26`, `case.first_year_response`, `finite_removal.effect`,
+     `finite_removal.general_government`;
+   - the air and crash lanes' own-count figures, which the priced records no longer read: `pm25.deaths_lane`,
+     `pm25.span_lane`, `pm25.normalized_lane`, `crash.span_lane`, `crash.fault_based_lane`.
+
+   `case.main` and `capital_return.total` left this list when template 143 and 183 began quoting them (f058b8a). The
+   earlier list missed `pension.accrual_payable_net`. `congestion.range` was labelled as on the priced count, but it
+   holds the congestion lane's readings on the raw 40.90M. Its population now says so, and its `must_name` requires
+   that a quoting sentence says so too.
 
    They can stay, since ids are never reused, or be pruned.
 
@@ -545,3 +581,15 @@ uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q infra/imm
     $45bn (34–56)", bound to `capital_return.total`, which must name the enterprises. Its two source_map rows went too.
   - **Validation.** Everything was validated at 07:28:04–07:28:13, with three controls (see Validation). Template 186
     states no sum ("Beside the total"), so it takes no footing sentence. My earlier report listed it by mistake.
+- 2026-09-29 10:26:09 JST: the lead's last task: replace the five approximate values with file-backed ones on audit
+  row 4's 39,712,493 people.
+  - A new lane, `social_spans_priced_count_2026_09_29`, reruns air_items.py's `pm_grid` and crash_model.py's
+    `evaluate_split` over their full grids on row 4. The crash figures use the NHTS ratios per person aged 5+. All 22
+    gates pass: the positive controls, reeval.csv's centrals and restated_pairing.csv's factors.
+  - The five records now read its `derived/priced_spans.csv` with status `file`, and their reader_notes are gone. PM2.5
+    against average residents prints $46bn (was $45bn) and crashes by fault $41bn (was $40bn). The other three print
+    as before.
+  - `congestion.range` held the raw-count readings under a priced-count label. It now says raw, and quoting it must say
+    so.
+  - The how-to-read sentence is conditional on a marked number (`APPROX_NOTE`). Validation ran at 10:21:40–10:23:51
+    (see Validation).
