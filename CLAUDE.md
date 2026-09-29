@@ -51,21 +51,6 @@ sessions. A stale worktree keeps an old copy of this file and pre-integration dr
 search can mistake for current work. Before removing one, confirm its HEAD is on main and that
 its uncommitted and ignored files (`_cache/`, `raw/`) exist on main.
 
-## Tools Available
-
-### Skills
-
-Symlinked into `.claude/skills/` from `~/Projects/skills/`; each `SKILL.md` carries its own
-description, and the session's skill listing shows which are enabled.
-
-### MCP Servers (`.mcp.json`)
-- **exa** — semantic web search, entity enrichment, deep research
-- **research** (research-mcp) — Semantic Scholar, corpus management, claim verification, preprint surveillance
-- **firecrawl** — web scraping and structured extraction
-
-Only these three are configured in `.mcp.json` (checked 2026-09-21); brave-search,
-agent-infra, parallel and context7 are not available in this project.
-
 ## Structure
 
 ```
@@ -98,6 +83,13 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
   `ModuleNotFoundError`; drop the flag there (`uv run python3 …` builds from `uv.lock`).
 - Read a rerun's exit code before trusting an "outputs identical" check: a failed rerun (e.g. a
   missing `--with lxml`) leaves the old files untouched and they still compare identical.
+- Check a lane reproduces before committing it: `uv run --no-project python3 scripts/rerun_lane.py
+  infra/immigration-fiscal/<lane> "uv run --no-project python3 {lane}/<script>.py" …` must end
+  `IDENTICAL: n/n` with exit 0; exit 3 names a script no command runs (rules in its docstring).
+- Before committing a number edit to the INDEX, the FAQ or this file, run the drift audit's
+  `audit_numbers.py --out <scratch>` and `memo_sweep.py --worktree --out <scratch>`
+  (`infra/immigration-fiscal/number_drift_audit_2026_09_29/`; no MISMATCH or STALE). A new number
+  in an audited span needs a `source_map.csv` row; without `--out` the audit rewrites its tracked `derived/`.
 - Python `csv.writer` defaults to CRLF; pass `lineterminator="\n"`. The repo stores LF
   (`core.autocrlf=input`), so CRLF outputs never byte-match on rerun (cd96b04).
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
@@ -147,6 +139,12 @@ substituting a web summary or declaring a measurement unavailable:
   onto any account total. The adopted main case has its own split, computed on the account with
   no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_sept29.csv`
   (ladder 224; `generation_results.csv` keeps the September 27 case).
+- The account prices 39,712,493 people (dataset audit row 4); the CPS ASEC's published weights give
+  40.90M. A lane that sums CPS weights gates its total at row 4 (pattern:
+  `world_ledger_2026_09_27/population_basis.py`) or states why the published frame is right; five
+  v4 items used the published weights (ladder 275).
+- The evidence map (`overview_2026_09_28/`), assumption explorer (`assumption_explorer_2026_09_21/`)
+  and figures page (`figures_2026_09_22/`) move to a new main case only when the operator asks.
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
 - The headline's "CBO-informed" label covers CBO's tax-incidence rules and its category rule for
