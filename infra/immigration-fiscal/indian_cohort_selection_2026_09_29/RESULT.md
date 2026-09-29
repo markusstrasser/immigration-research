@@ -172,7 +172,9 @@ in the CPS (se of its mean percentile about 1.0–1.2) and 209 in the ledger.
 
 ## 4. Context (origin flow, primary sources)
 
-Collected by a sub-agent into `context/context_notes.md`, which records URLs, sha256 hashes and quoted lines. Summary:
+### 4a. Origin-flow context
+
+Collected by a sub-agent into `context/context_notes.md` (final version 23:37 JST, items 1–6), which records URLs, sha256 hashes and quoted lines. Everything confirmed there is merged here: 4a covers the origin-flow items and 4b the flow sources for 2015–2025. Summary:
 
 - **CBP encounters, citizenship India** (events, not persons) [DATA: `context/cbp_india_encounters_summary.csv`]:
   FY2020 19,883; FY2021 30,662; FY2022 63,927; FY2023 96,917; FY2024 90,415; FY2025 34,146. Southwest land border
@@ -195,6 +197,26 @@ Collected by a sub-agent into `context/context_notes.md`, which records URLs, sh
   576–582 against the US 531–537 (TY2010–14) and 577–583 against 547–563 (TY2016–20). The GRE for July 2024 to June 2025, by
   citizenship: India verbal 151.0, quant 158.6 (n 34,477); US 152.8 and 151.3 (n 80,508). Test-taking in India fell
   from 111k (2021–22) to 32k (2024–25). [GAP] No older GRE snapshot to compare with.
+
+### 4b. Last-ten-years data: flow sources for 2015–2025 Indian arrivals
+
+The sub-agent fetched each source from the primary publisher, archived it and tabulated it: `context/flows_2015_2025.csv`, with the file, the
+quoted row and the sha256 for each value; the details are in `context/context_notes.md` items 1–6. [DATA]
+
+| source | what it counts | what it says, 2015→latest |
+|---|---|---|
+| DHS Yearbook Table 10 (+ OHSS special tabulation for EB principals and derivatives) | India-born persons obtaining LPR status, by class | total 64.1k (FY2015) → 127.0k (FY2022 peak) → 66.8k (FY2024). Employment-based 27.5k → 96.3k (FY2022) → 18.8k. EB principals are 40–45% of EB grants. Immediate relatives 20.6k → 34.1k (FY2024). Family preference 14.6k → 9.7k. The FY2021–22 EB spike is mostly status adjustment of people already here [INFERENCE] |
+| USCIS H-1B characteristics reports | approved petitions, India-born beneficiaries (initial and continuing) | 195k (FY2015) → 284k (FY2025). Initial approvals 51k–80k a year, with no trend. India is 70–76% of all approvals. The master's share of all approvals is 54–58% in recent clean years |
+| ICE SEVP "SEVIS by the Numbers" (calendar years 2017–2024) | active F-1/M-1 student records, citizens of India; STEM OPT records | active 247k (2017) → 207k (2020) → 422k (2024). STEM OPT 49k → 78k (2019) → 48k (2023) → ~79k (2024, derived). [GAP] 2015–16 by country; [GAP] post-completion OPT by country |
+| DHS Yearbook FY2024 nonimmigrant tables | I-94 admissions (entries, not persons) of Indian citizens | all classes 1.90M (FY2015) → 0.54M (FY2021) → 2.94M (FY2024). FY2024 by class: H-1B 497k, H-4 215k, F-1 299k, L-1 65k, B-2 1.47M. [GAP] class by country for FY2015–23 |
+| CBP nationwide encounters | encounter events, citizenship India | 19.9k (FY2020) → 96.9k (FY2023) → 90.4k (FY2024) → 34.1k (FY2025). Southwest border 1.1k → 41.8k (FY2023); the northern border peaked at 43.8k (FY2024). FY2018–19 are available only as Border Patrol + ICE apprehensions (10.0k, 8.9k). [GAP] FY2019 on the encounters basis |
+| DHS OHSS / Pew / MPI unauthorized estimates | India-born unauthorized residents (residual method) | DHS 470k (2015) → 540k (2018) → revised 480k (2018) → 220k (2022). Pew 680k (2023). MPI gives only the Asia total (851k). The estimates disagree about threefold, and the disagreement turns on the count of legal temporary residents |
+
+These flows count different things: grants, petitions, records, entries, events and residual stocks. None of them measures
+new residents net of departures. The ACS arrival-year counts in §5.1 and §6a are the only resident-based series.
+Taken together: the legal high-skill channels (H-1B, F-1, STEM OPT) grew or held in 2015–2024. Family-sponsored
+green cards shifted toward immediate relatives (parents of citizens), which fits the older late-life arrivals
+in the 2015+ stock views. The irregular channel spiked in FY2022–24 and fell sharply in FY2025.
 
 ## 5. Disconfirmation and limits
 
@@ -253,7 +275,7 @@ The G2 is still mostly children, and these children descend from the 2000s H-1B 
 
 ## 7. India-born by language spoken at home
 
-ACS 2021–2024 pooled; the stock is the four-year mean of the weights. Outcomes are for adults 25–64, age-standardised to the
+ACS 2021–2024 pooled, using the Census PUMS language code `LANP` (2016+ code frame; the same languages as IPUMS `LANGUAGED`, which this lane does not hold). The stock is the four-year mean of the weights. Outcomes are for adults 25–64, age-standardised to the
 pooled India-born age mix. **Language is a proxy for home region in India. It does not measure caste or religion.**
 English-only households are mostly long-resident or mixed households, and the English-only share falls with arrival
 cohort partly because of duration. Trucking is SOC 53-30xx.
@@ -289,6 +311,18 @@ Malayalam speakers have the highest health-practitioner share (18% of employed, 
 | 2015–19 | 29.3% | 16.5% | 9.9% | 8.7% | 7.1% | 4.4% | 4.1% | 2.7% | 2.5% | 1.6% | 8.8% | 4.5% |
 | 2020+ | 31.9% | 20.7% | 9.6% | 6.4% | 4.6% | 3.7% | 4.4% | 3.4% | 2.2% | 1.6% | 7.3% | 4.0% |
 
+The post-2020 noncitizen arrivals aged 18+, split by degree (these rows are also in `language_by_cohort.csv`):
+
+| 2020+ noncitizens, 18+ | n | weighted (2021–24 mean) | Hindi | Telugu | Tamil | Gujarati | Punjabi | English only | other |
+|---|---|---|---|---|---|---|---|---|---|
+| BA+ | 9,094 | 277k | 33.2% | 22.8% | 10.3% | 5.4% | 2.3% | 6.9% | 3.0% |
+| no BA | 2,068 | 53k | 26.9% | 10.6% | 6.7% | 11.1% | **15.8%** | 7.7% | 9.5% |
+| no BA and no legal marker (Borjas residual) | 1,510 | 38k | 29.5% | 12.3% | 7.8% | 10.0% | **14.2%** | 8.2% | 6.3% |
+
+Among recent arrivals without a degree, Gujarati and Punjabi speakers are 27% of the total, against 8% among recent
+degree holders. The non-degree group the survey sees is small (53k on the 2021–24 mean weights), but its regional
+mix is the older one.
+
 The regional shift runs toward the high-selection groups. Telugu rose from 4–5% of the pre-1990 waves to 21% of 2020+
 arrivals, and Hindi from 20% to 32%. Gujarati fell from 17–19% to 6%, and Punjabi from 11% to 5%. Those are the two
 groups with the lowest education and the highest retail, trucking and self-employment shares. Part of the rise
@@ -298,26 +332,6 @@ would under-show them. The survey cannot test that.
 
 Parents' language for US-born children 0–17 with an India-born householder or spouse (2021–24 mean 803k): Hindi 23%, Telugu 17%, English
 only 13%, Tamil 10%, Gujarati 8%, Punjabi 7%, Malayalam 6%, other 16%.
-
-## 8. Last-ten-years data: flow sources for 2015–2025 Indian arrivals
-
-The sub-agent fetched each source from the primary publisher, archived it and tabulated it: `context/flows_2015_2025.csv`, with the file, the
-quoted row and the sha256 for each value; the details are in `context/context_notes.md` items 1–6. [DATA]
-
-| source | what it counts | what it says, 2015→latest |
-|---|---|---|
-| DHS Yearbook Table 10 (+ OHSS special tabulation for EB principals and derivatives) | India-born persons obtaining LPR status, by class | total 64.1k (FY2015) → 127.0k (FY2022 peak) → 66.8k (FY2024). Employment-based 27.5k → 96.3k (FY2022) → 18.8k. EB principals are 40–45% of EB grants. Immediate relatives 20.6k → 34.1k (FY2024). Family preference 14.6k → 9.7k. The FY2021–22 EB spike is mostly status adjustment of people already here [INFERENCE] |
-| USCIS H-1B characteristics reports | approved petitions, India-born beneficiaries (initial and continuing) | 195k (FY2015) → 284k (FY2025). Initial approvals 51k–80k a year, with no trend. India is 70–76% of all approvals. The master's share of all approvals is 54–58% in recent clean years |
-| ICE SEVP "SEVIS by the Numbers" (calendar years 2017–2024) | active F-1/M-1 student records, citizens of India; STEM OPT records | active 247k (2017) → 207k (2020) → 422k (2024). STEM OPT 49k → 78k (2019) → 48k (2023) → ~79k (2024, derived). [GAP] 2015–16 by country; [GAP] post-completion OPT by country |
-| DHS Yearbook FY2024 nonimmigrant tables | I-94 admissions (entries, not persons) of Indian citizens | all classes 1.90M (FY2015) → 0.54M (FY2021) → 2.94M (FY2024). FY2024 by class: H-1B 497k, H-4 215k, F-1 299k, L-1 65k, B-2 1.47M. [GAP] class by country for FY2015–23 |
-| CBP nationwide encounters | encounter events, citizenship India | 19.9k (FY2020) → 96.9k (FY2023) → 90.4k (FY2024) → 34.1k (FY2025). Southwest border 1.1k → 41.8k (FY2023); the northern border peaked at 43.8k (FY2024). FY2018–19 are available only as Border Patrol + ICE apprehensions (10.0k, 8.9k). [GAP] FY2019 on the encounters basis |
-| DHS OHSS / Pew / MPI unauthorized estimates | India-born unauthorized residents (residual method) | DHS 470k (2015) → 540k (2018) → revised 480k (2018) → 220k (2022). Pew 680k (2023). MPI gives only the Asia total (851k). The estimates disagree about threefold, and the disagreement turns on the count of legal temporary residents |
-
-These flows count different things: grants, petitions, records, entries, events and residual stocks. None of them measures
-new residents net of departures. The ACS arrival-year counts in §5.1 and §6a are the only resident-based series.
-Taken together: the legal high-skill channels (H-1B, F-1, STEM OPT) grew or held in 2015–2024. Family-sponsored
-green cards shifted toward immediate relatives (parents of citizens), which fits the older late-life arrivals
-in the 2015+ stock views. The irregular channel spiked in FY2022–24 and fell sharply in FY2025.
 
 ## Files
 

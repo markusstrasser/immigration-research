@@ -10,7 +10,9 @@ and India-born adults by language spoken at home.
    - ACS 2024: US-born children of the householder (any age, co-resident only) with an India-born
      householder or spouse, by that parent's arrival cohort (the earlier-arriving India-born parent
      when both are).
-3. Language at home (ACS 2021-2024 pooled; LANP 2016+ code frame; LANX 2 = English only). Language is
+3. Language at home (ACS 2021-2024 pooled; Census PUMS LANP, 2016+ code frame, which carries the same
+   languages as IPUMS LANGUAGED; LANX 2 = English only). The language x cohort table adds 2020+
+   noncitizen arrivals 18+ split by BA status. Language is
    a proxy for the home region in India, not for caste or religion. Adults 25-64 for outcomes, age-
    standardised to the pooled India-born 25-64 age mix; stock is the four-year mean of weights.
    Children: US-born children 0-17 of the householder, classified by their India-born parent's
@@ -151,6 +153,15 @@ def language(d: pd.DataFrame) -> tuple[list[dict], list[dict], list[dict]]:
         row = {"cohort": cl, "n": len(g), "weighted_avg_2021_24": float(tot / 4)}
         for lab in order:
             row[lab] = float(g.PWGTP[g.lang == lab].sum() / tot)
+        xt.append(row)
+    # the post-2020 inflow the surveys see least well: noncitizens 18+ arrived 2020+, by BA status
+    rec = a18[(a18.YOEP >= 2020) & (a18.CIT == 5)]
+    for lab, g in (("2020+ noncitizen, BA+", rec[rec.ba_plus]), ("2020+ noncitizen, no BA", rec[~rec.ba_plus]),
+                   ("2020+ noncitizen, no BA, status residual", rec[~rec.ba_plus & rec.status_unauth_residual])):
+        tot = g.PWGTP.sum()
+        row = {"cohort": lab, "n": len(g), "weighted_avg_2021_24": float(tot / 4)}
+        for ln in order:
+            row[ln] = float(g.PWGTP[g.lang == ln].sum() / tot)
         xt.append(row)
     # children: US-born children 0-17 of the householder, by India-born parent's language
     h = d[d.YEAR >= 2021].copy()
