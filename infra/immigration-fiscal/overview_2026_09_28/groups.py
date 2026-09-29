@@ -228,7 +228,8 @@ GROUPS = [
         range="about {{q:social.items|mid_range}}",
         why=("Some costs never pass through a budget: crime victims, pollution, crashes, traffic and fear. "
              "They are priced beside the account, net of gains from a larger economy. With them the total is "
-             "about {{q:pairing.total|mid_range}}."),
+             "about {{q:pairing.total|mid_range}}. Its low end also prices offending at the Hispanic average, "
+             "{{q:pairing.footing_reduction|at_low_end}} less."),
         terms=[("externality", "a cost that falls on people outside the transaction"),
                ("value of a statistical life", "the price that cost-benefit analysis uses for a death"),
                ("normalized", "the same item for as many average residents, taken away")],

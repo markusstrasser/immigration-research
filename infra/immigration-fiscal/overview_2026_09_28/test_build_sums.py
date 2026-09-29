@@ -48,3 +48,19 @@ def test_the_built_tables_add_and_rounding_each_line_alone_breaks_them():
         assert all(B.displayed_sum_errors(t) for t in tables())
     finally:
         B.ROUND_EACH = False
+
+
+def test_the_prose_sum_adds_as_printed_and_breaks_without_the_footing():
+    recs = B.Q.load_registry()
+    assert B.prose_sum_errors(recs) == []
+    moved = {k: dict(v) for k, v in recs.items()}
+    moved["pairing.footing_reduction"]["expr"] = "(0.0, 0.0)"
+    assert B.prose_sum_errors(moved) == [
+        "the main estimate, less the low end's offending at the Hispanic average, plus the costs outside the budget, "
+        "low end: the parts print as 418, pairing.total as 414"]
+
+
+def test_the_capital_return_total_must_say_the_enterprises_are_in():
+    [(rid, _view, _sentence, errs)] = B.Q.lint_unit("Return on public capital: about "
+                                                     "{{q:capital_return.total|mid_range}}. In the total.")
+    assert (rid, errs) == ("capital_return.total", ["names none of /enterprise/"])

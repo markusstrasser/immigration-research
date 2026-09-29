@@ -140,11 +140,11 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 
 <h2 id="summary">Summary</h2>
 <ul class="strokes">
-<li><b>Other US residents pay about $355bn a year (322–387).</b> That is about {{q:case.per_member|mid_range}} per group member. Only 2024 is measured.</li>
+<li><b>Other US residents pay about {{q:case.main|mid}} a year ({{q:case.main|range}}).</b> That is about {{q:case.per_member|mid_range}} per group member. Only 2024 is measured.</li>
 <li><b>Public services decide the sign.</b> After the checks against records, the group pays about {{q:tally.corrected|mid}} more in taxes than it gets in benefits ({{q:tally.corrected|range}}). Schools and other services reverse the sign. Schooling is the largest line.</li>
 <li><b>Assumptions matter more than data noise.</b> Sampling noise is about ±$21bn. The larger single assumptions move the total by {{q:assumptions.move_range_above_noise|range_unit}}.</li>
 <li><b>Two accounting choices move the total most.</b> If property taxes follow people, the total falls to about {{q:property_tax.alone_case|mid}} ({{q:property_tax.alone_case|range}}). If pensions count when earned, the total rises by about $75bn.</li>
-<li><b>Costs outside the budget add about {{q:social.items|mid_range}}.</b> These are pollution, road crashes, crime victims, traffic and fear, net of gains from a larger economy. The total with them is about {{q:pairing.total|mid_range}}.</li>
+<li><b>Costs outside the budget add about {{q:social.items|mid_range}}.</b> These are pollution, road crashes, crime victims, traffic and fear, net of gains from a larger economy. The total with them is about {{q:pairing.total|mid_range}}. Its low end also prices offending at the Hispanic average, {{q:pairing.footing_reduction|at_low_end}} less.</li>
 <li><b>State and local taxpayers pay about 85%.</b> About one other resident in six comes out ahead, mostly landlords and high earners.</li>
 <li><b>All three generations cost others.</b> The second generation closes most of the gap in finishing school but little of the college gap.</li>
 <li><b>Against as many whites, the group costs about {{q:comparators.us_whites|mid}} a year more ({{q:comparators.us_whites|range}}).</b></li>
@@ -180,7 +180,7 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 <thead><tr><th></th><th>Past, 2005–2023</th><th>2024, the measured year</th><th>Future</th></tr></thead>
 <tbody>
 <tr><td>Cash</td><td class="beside">Model of past gaps: about {{q:backcast.10y|mid}} over 2015–2024 ({{q:backcast.10y|range}})</td><td class="in">Cash gap, all governments: about $310bn (288–332)</td><td class="beside">Lifetimes of people alive now and their children (separate ledger)</td></tr>
-<tr><td>Not cash</td><td></td><td class="in">Return on public capital: about $45bn (34–56). In the total.</td><td></td></tr>
+<tr><td>Not cash</td><td></td><td class="in">Return on public capital, government enterprises' included: about {{q:capital_return.total|mid_range}}. In the total.</td><td></td></tr>
 <tr><td>Debt</td><td class="beside">Federal part, if borrowed: about $1.1tn (1.0–1.3)</td><td class="beside">Interest on that debt: about $36bn (31–42). Beside the total.</td><td class="beside">Interest continues while the debt stays</td></tr>
 <tr><td>Promises</td><td></td><td class="beside">Pension rights earned in 2024: about +$75bn if counted when earned. An alternative.</td><td class="beside">Paid later as benefits</td></tr>
 <tr><td>Outside budgets</td><td></td><td class="beside">Pollution, crashes, victims, traffic, fear, net of gains: about {{q:social.items|mid_range}}. Beside the total.</td><td></td></tr>
@@ -210,7 +210,7 @@ h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
 <table>
 <thead><tr><th>Combination</th><th>Adds?</th><th>Reason</th></tr></thead>
 <tbody>
-<tr><td>Total + costs outside the budget</td><td class="yes">Yes</td><td>Separate channels. The {{q:pairing.total|mid}} figure adds them.</td></tr>
+<tr><td>Total + costs outside the budget</td><td class="yes">Yes</td><td>Separate channels. The {{q:pairing.total|range_unit}} figure adds them. Its low end also prices offending at the Hispanic average, {{q:pairing.footing_reduction|at_low_end}} less.</td></tr>
 <tr><td>Total with pensions counted when earned</td><td class="yes">As a swap</td><td>It replaces the cash pension lines.</td></tr>
 <tr><td>Total + interest on old debt</td><td class="no">No</td><td>Past borrowing, not present presence.</td></tr>
 <tr><td>Capital return + debt or deficit</td><td class="no">No</td><td>The return is not cash and is never borrowed.</td></tr>
