@@ -75,3 +75,10 @@ session: adae2b38-fa63-4fd0-b727-08c73975b287
 - **New Immigrant Survey 2003** public-use files (ICPSR 38031, 38061; free ICPSR login): religion with earnings for new green-card holders.
   consumed: 2026-09-22 ICPSR 38031 v3 staged at `external/icpsr_nis_2003/`, lane `nis2003_religion_earnings_2026_09_22` (19/26 anchors exact), ladder 179, Muslim memo §2b; 38061 (Round 2) not downloaded, visa class stays restricted — session 87fa457f
 - **Propose, not enacted (analysis protocol):** for a contested cross-unit test, commit the lane README with outcomes, models and decision rule before downloading the predictors, and record deviations in RESULT.md. Done once in `admission_route_2026_09_21` (6df195d); worth making the rule?
+
+## Open asks, 2026-09-30
+session: 95a94bd8-dcdc-4501-bb8e-5f9906dddc53
+
+- **Row-4 consistency revision (recommend: yes, next session, as one set).** Five v4 items are summed on the survey's published 40.9M weights instead of the 39.71M the account prices: owner-occupied property (+$0.34bn), the Part A accrual (−$1.03bn), the benefit-tax receipt (−$0.03bn), state pricing's indexes (+$0.37bn) and the OASDI accrual ratio (+$0.15bn). Together the case moves to $371.2–434.6bn (headline still $371–435bn) and the cash set to $295.4–362.5bn. The social channels beside the account (housing, congestion, care, victims, scale, mobility) are also on 40.9M, about $1.3bn in the winners and world lanes. Evidence: `infra/immigration-fiscal/row4_class_2026_09_29/`. Recorded, not applied.
+- **Evidence map to v4 (recommend: yes).** It still states the September 27 claims: C2 "taxes cover benefits" is false on v4 (the group's taxes fall $3.4–12.6bn short of its household transfers with pensions on accrual), C1 says $355bn (v4 midpoint $403bn) and C5 85% (v4 68%). Evidence: `infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md`, section "v4 case (sept29)".
+- **Push (recommend: yes).** main is about 50 commits ahead of origin/main (3791d32), including the peer session's Indian-origin lanes; keyscan clean on every commit this session.
