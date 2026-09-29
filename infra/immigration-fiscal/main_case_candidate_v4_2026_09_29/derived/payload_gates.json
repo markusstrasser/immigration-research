@@ -1,0 +1,397 @@
+{
+ "lane": "main_case_candidate_v4_2026_09_29",
+ "status": "candidate v4's adoption payload, not adopted (2026-09-29)",
+ "payloads": {
+  "corrections_v4.json": {
+   "bytes": 317807,
+   "sha256": "406b4148c4645c6d2319993850d8e55bb5abd02b3a39ed32ed2bf1b8d4672238",
+   "lines": 8,
+   "edits": 416,
+   "receipt_lines": [
+    "housing_enterprise_surplus",
+    "tenant_occupied_property"
+   ],
+   "national_scale_edits": [
+    "receipt:remaining_production_property",
+    "receipt:enterprise_surplus",
+    "spending:housing_subsidies"
+   ],
+   "edits_added": 135,
+   "lines_added": [
+    "roads_vmt_sl",
+    "roads_vmt_fed",
+    "state_price_public_order_safety",
+    "state_price_health_services",
+    "state_price_recreation_culture"
+   ],
+   "production": "row4",
+   "responses_added": [
+    "housing_enterprise_surplus",
+    "modeled_owner_property",
+    "tenant_occupied_property",
+    "personal_property_tax",
+    "roads_vmt_sl",
+    "roads_vmt_fed",
+    "state_price_public_order_safety",
+    "state_price_health_services",
+    "state_price_recreation_culture"
+   ],
+   "capital_rekeyed": [
+    "ent_housing_sl",
+    "hwy_sl",
+    "hwy_fed"
+   ]
+  },
+  "corrections_v4_cash.json": {
+   "bytes": 315374,
+   "sha256": "8a2dd8a81cebcd059b64d811f2bf7d384dd8f2759c8f5fd9e47ded0a56bcfd70",
+   "lines": 8,
+   "edits": 414,
+   "receipt_lines": [
+    "housing_enterprise_surplus",
+    "tenant_occupied_property"
+   ],
+   "national_scale_edits": [
+    "receipt:remaining_production_property",
+    "receipt:enterprise_surplus",
+    "spending:housing_subsidies"
+   ],
+   "edits_added": 133,
+   "lines_added": [
+    "roads_vmt_sl",
+    "roads_vmt_fed",
+    "state_price_public_order_safety",
+    "state_price_health_services",
+    "state_price_recreation_culture"
+   ],
+   "production": "row4",
+   "responses_added": [
+    "housing_enterprise_surplus",
+    "modeled_owner_property",
+    "tenant_occupied_property",
+    "personal_property_tax",
+    "roads_vmt_sl",
+    "roads_vmt_fed",
+    "state_price_public_order_safety",
+    "state_price_health_services",
+    "state_price_recreation_culture"
+   ],
+   "capital_rekeyed": [
+    "ent_housing_sl",
+    "hwy_sl",
+    "hwy_fed"
+   ]
+  }
+ },
+ "g2": {
+  "set": {
+   "per_method": {
+    "b_hotdeck_union_matched": {
+     "csv_gap_bn": 0,
+     "package_gap_bn": 0,
+     "capital_gap": 0
+    },
+    "b_matched_over_pooled": {
+     "csv_gap_bn": 0,
+     "package_gap_bn": 0,
+     "capital_gap": 0
+    }
+   },
+   "mean": {
+    "csv_gap_bn": 1.7053025658242404e-13
+   },
+   "cell_gap_bn": 2.2737367544323206e-13,
+   "national_gap_bn": 4.547473508864641e-13
+  },
+  "cash": {
+   "per_method": {
+    "b_hotdeck_union_matched": {
+     "csv_gap_bn": 0,
+     "package_gap_bn": 0,
+     "capital_gap": 0
+    },
+    "b_matched_over_pooled": {
+     "csv_gap_bn": 0,
+     "package_gap_bn": 0,
+     "capital_gap": 0
+    }
+   },
+   "mean": {
+    "csv_gap_bn": 1.7053025658242404e-13
+   },
+   "cell_gap_bn": 4.547473508864641e-13,
+   "national_gap_bn": 1.1368683772161603e-13
+  }
+ },
+ "engine": {
+  "pinned": "d710a74",
+  "pinned_sha256": "091ca31219c678ec84ee89b7c0837f4e9d43dcefc6bd1fe47d82337956a666e0",
+  "earlier_payloads": [
+   {
+    "file": "main_case_2026_09_24/derived/corrections.json",
+    "same": true,
+    "states": 1
+   },
+   {
+    "file": "main_case_2026_09_26/derived/corrections.json",
+    "same": true,
+    "states": 64
+   },
+   {
+    "file": "main_case_schools_full_2026_09_26/derived/corrections.json",
+    "same": true,
+    "states": 64
+   },
+   {
+    "file": "main_case_long_run_2026_09_27/derived/corrections.json",
+    "same": true,
+    "states": 64
+   }
+  ],
+  "added": [
+   "receipt_lines",
+   "national-scale edits {side, line, national_bn}",
+   "production {dims, private_wtp_bn, induced_receipts_bn, sampling_se_bn}"
+  ]
+ },
+ "gates": [
+  {
+   "name": "the September 27 package's correctionsPayload() is the adopted corrections.json, byte for byte",
+   "pass": true,
+   "detail": "main_case_long_run_2026_09_27/derived/corrections.json d3b10f144ebf"
+  },
+  {
+   "name": "every item off: the builder finds no receipt line, national scale, edit, line, production grid, response or capital key",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every item off: the payload equals the adopted corrections.json as JSON (key order included)",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every item off: the payload equals the adopted corrections.json byte for byte",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every item off: both methods' models equal the September 27 models in every cell and grid",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set: the September 27 lines and edits come first, unchanged",
+   "pass": true,
+   "detail": "3 lines, 278 edits; then 5 lines, 3 national-scale and 135 cell edits, 2 receipt lines"
+  },
+  {
+   "name": "set: meta keeps every September 27 entry: the unchanged ones equal, every September 27 response and capital component but the re-keyed ones",
+   "pass": true,
+   "detail": "kept enterprise_receipt_rekey, beside_the_account; re-keyed ent_housing_sl, hwy_sl, hwy_fed"
+  },
+  {
+   "name": "set: not adopted (adopted and decision null)",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set: the payload moves exactly the lines, capital components and production terms its items touch (summary.json touch)",
+   "pass": true,
+   "detail": "35 entries"
+  },
+  {
+   "name": "set: the pension accrual block is present exactly when the switch is on",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash: the September 27 lines and edits come first, unchanged",
+   "pass": true,
+   "detail": "3 lines, 278 edits; then 5 lines, 3 national-scale and 133 cell edits, 2 receipt lines"
+  },
+  {
+   "name": "cash: meta keeps every September 27 entry: the unchanged ones equal, every September 27 response and capital component but the re-keyed ones",
+   "pass": true,
+   "detail": "kept enterprise_receipt_rekey, beside_the_account; re-keyed ent_housing_sl, hwy_sl, hwy_fed"
+  },
+  {
+   "name": "cash: not adopted (adopted and decision null)",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash: the payload moves exactly the lines, capital components and production terms its items touch (summary.json touch)",
+   "pass": true,
+   "detail": "33 entries"
+  },
+  {
+   "name": "cash: the pension accrual block is present exactly when the switch is on",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "the set and the cash set differ only in the pension switch's lines, edits and meta",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set, b_hotdeck_union_matched: the consumer's specifications are the package's, in order",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set, b_hotdeck_union_matched: the consumer's engine state equals the package's at all 64 specifications",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set, b_hotdeck_union_matched: capital components (key, response, return) equal the package's (1e-9)",
+   "pass": true,
+   "detail": "0.0e+0"
+  },
+  {
+   "name": "set, b_hotdeck_union_matched: the method's payload gives per_spec.csv set_cost_bn at all 64 specifications (1e-6)",
+   "pass": true,
+   "detail": "max |diff| 0.0e+0; against a fresh package run 0.0e+0"
+  },
+  {
+   "name": "set, b_matched_over_pooled: the consumer's specifications are the package's, in order",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set, b_matched_over_pooled: the consumer's engine state equals the package's at all 64 specifications",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set, b_matched_over_pooled: capital components (key, response, return) equal the package's (1e-9)",
+   "pass": true,
+   "detail": "0.0e+0"
+  },
+  {
+   "name": "set, b_matched_over_pooled: the method's payload gives per_spec.csv set_cost_bn at all 64 specifications (1e-6)",
+   "pass": true,
+   "detail": "max |diff| 0.0e+0; against a fresh package run 0.0e+0"
+  },
+  {
+   "name": "set: derived/corrections_v4.json gives the two methods' mean of per_spec.csv set_cost_bn at all 64 specifications (1e-6)",
+   "pass": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "name": "set: the payload model has v4's lines and national totals, and v4's production grid exactly",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set: every cell of the payload model is the two methods' mean model (group and other, 1e-9)",
+   "pass": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "name": "set: national totals hold: each cell's group + other - national is the September 27 payload's, scaled with its line (0 on a new line; 1e-9)",
+   "pass": true,
+   "detail": "4.5e-13"
+  },
+  {
+   "name": "cash, b_hotdeck_union_matched: the consumer's specifications are the package's, in order",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash, b_hotdeck_union_matched: the consumer's engine state equals the package's at all 64 specifications",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash, b_hotdeck_union_matched: capital components (key, response, return) equal the package's (1e-9)",
+   "pass": true,
+   "detail": "0.0e+0"
+  },
+  {
+   "name": "cash, b_hotdeck_union_matched: the method's payload gives per_spec.csv cash_cost_bn at all 64 specifications (1e-6)",
+   "pass": true,
+   "detail": "max |diff| 0.0e+0; against a fresh package run 0.0e+0"
+  },
+  {
+   "name": "cash, b_matched_over_pooled: the consumer's specifications are the package's, in order",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash, b_matched_over_pooled: the consumer's engine state equals the package's at all 64 specifications",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash, b_matched_over_pooled: capital components (key, response, return) equal the package's (1e-9)",
+   "pass": true,
+   "detail": "0.0e+0"
+  },
+  {
+   "name": "cash, b_matched_over_pooled: the method's payload gives per_spec.csv cash_cost_bn at all 64 specifications (1e-6)",
+   "pass": true,
+   "detail": "max |diff| 0.0e+0; against a fresh package run 0.0e+0"
+  },
+  {
+   "name": "cash: derived/corrections_v4_cash.json gives the two methods' mean of per_spec.csv cash_cost_bn at all 64 specifications (1e-6)",
+   "pass": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "name": "cash: the payload model has v4's lines and national totals, and v4's production grid exactly",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash: every cell of the payload model is the two methods' mean model (group and other, 1e-9)",
+   "pass": true,
+   "detail": "4.5e-13"
+  },
+  {
+   "name": "cash: national totals hold: each cell's group + other - national is the September 27 payload's, scaled with its line (0 on a new line; 1e-9)",
+   "pass": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "name": "every earlier payload applies and evaluates exactly as with the engine at d710a74",
+   "pass": true,
+   "detail": "main_case_2026_09_24 same (1 states); main_case_2026_09_26 same (64 states); main_case_schools_full_2026_09_26 same (64 states); main_case_long_run_2026_09_27 same (64 states)"
+  },
+  {
+   "name": "receipt_lines: a control line enters with its cells and moves the direct account by its group amount at its response",
+   "pass": true,
+   "detail": "direct +1"
+  },
+  {
+   "name": "a national-scale edit halves the line's national total and every cell's group and other amounts; shares hold",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "a national-scale edit applies in order with the other edits (an edit before it is scaled too)",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "production: the row-4 grid replaces model.json's arrays and the engine reads P and F from it",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "bad input fails loudly",
+   "pass": true,
+   "detail": "a receipt line that exists throws; a receipt line without a cell throws; a receipt line without a national total throws; a scale edit on an unknown line throws; a scale edit on a line at national 0 throws; a scale edit to a non-number throws; a production grid of other dimensions throws; a production grid of another length throws"
+  }
+ ],
+ "inputs": {
+  "main_case_long_run_2026_09_27/derived/corrections.json": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea",
+  "main_case_candidate_v4_2026_09_29/derived/per_spec.csv": "65f18c8e9848f3a7a8a473c61a6b6e67ef6e332e775a2d315ad8bd261d8c87eb",
+  "main_case_candidate_v4_2026_09_29/derived/summary.json": "2bfc6aad78fbe396bce4bdbdd80f387b959ebd34ec5e9d0c35332a345eafe3d1",
+  "main_case_candidate_2026_09_28/derived/production_row4.json": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+  "assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+  "assumption_explorer_2026_09_21/engine.js": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491"
+ }
+}
