@@ -47,6 +47,17 @@ each band end (node case_ends.cjs writes derived/case_ends_sept27.json; run it f
     conventions. TANF-type aid is a block grant that states can move to other uses, so it stays with the budget.
 The range variants of the fiscal channel carry the displaced beneficiaries at the same band end.
 
+--case sept29 (candidate v4, adopted 2026-09-29; SEPT29_LANE) writes derived/sept29/ and leaves the September 27
+files, the default, as they are (node case_ends.cjs --case sept29 first). Its payload also puts the engine's production
+term on the account's row-4 weights, which moves P and F, never A. So A moves by the case's change less the engine's
+change in P + F at each band end (case_ends_sept29.json production; gated against the engine's own A), and the lane's
+production scenarios are re-solved on row-4 weights (row4_nest_rows, gated against the case's grid): their P goes to
+the wage channel and their F to the fiscal channel. The published September 20 band keeps the published production.
+Two more splits follow the debt lane's financing columns: public housing's enterprise deficit (a receipt line at the
+rental line's key) is capped like rental assistance, on rental assistance's eligible non-recipients (CAPPED_KEY_OF);
+and the pension accrual (the case less its cash set, $76.7/73.0bn at the band ends) stays in the fiscal channel but
+leaves its cash part: fiscal_accrual_* reports it, so fiscal = cash + resource + accrual.
+
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
     infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py [--case sept24 --out-dir DIR]
@@ -159,13 +170,28 @@ class Case(NamedTuple):
     base: str                     # the lane's summary.json key and band variant for the case it starts from
     profile: str = "cbo_category_lag_non_school_full"   # the case's profile in main_case_bands.csv
     ends: str | None = None       # case_ends.cjs output in derived/: capital return and capped programs at the ends
+    out: str | None = None        # its files' directory under derived/ when they sit beside the default case's
+    summary: str | None = None    # the summary.json key for the case it starts from, where it is not `base`
 
 
-# Main cases after September 24, in adoption order. Adding a case is one entry here.
+# Main cases after September 24, in adoption order. Adding a case is one entry here. September 29 (candidate v4,
+# adopted 2026-09-29) writes derived/sept29/, beside the September 27 files, which stay the default.
+SEPT29_LANE = "main_case_2026_09_29"
 LATER_CASES = {"sept26": Case("main_case_2026_09_26", "adopted_2026_09_24"),
                "sept26_schools": Case("main_case_schools_full_2026_09_26", "adopted_2026_09_26"),
                "sept27": Case("main_case_long_run_2026_09_27", "schools_case", "long_run_non_school_full",
-                              "case_ends_sept27.json")}
+                              "case_ends_sept27.json"),
+               # Its summary.json names September 27 adopted_2026_09_27; its band variant is sept27_case.
+               "sept29": Case(SEPT29_LANE, "sept27_case", "long_run_non_school_full", "case_ends_sept29.json", "sept29",
+                              "adopted_2026_09_27")}
+DEFAULT_CASE = "sept27"
+# From September 29 the case's production grid is the account's row-4 weights (production_row4.json): the Mexico-born
+# outside California and Texas raked by citizenship to ACS 2024 totals. Its P and F move the wage and fiscal channels,
+# never A. The lane's own production scenarios are re-solved on those weights (row4_nest_rows).
+MEXICO_BIRTHPLACE = 303
+ROW4_STATUS = {4: "naturalized", 5: "noncitizen"}
+ROW4_EXCLUDED_STATES = (6, 48)     # California, Texas
+NEST_DIR = FISCAL / "production_nativity_nest_2026_09_22"
 
 # Capped programs (from the September 27 case). Rental assistance and LIHEAP are capped and rationed among
 # eligible households: without the group, eligible households who now go without take its slots. Each program's
@@ -184,6 +210,10 @@ CAPPED_SOURCES = CACHE / "capped"
 POVERTY_GUIDELINE_2024 = {"contiguous": (15_060, 5_380), 2: (18_810, 6_730), 15: (17_310, 6_190)}  # 2 AK, 15 HI
 RENTAL_INCOME_LIMIT = 0.5          # of the state median household money income
 LIHEAP_POVERTY_MULTIPLE = 1.5
+# From September 29 public housing's enterprise deficit (the receipt line housing_enterprise_surplus, at the rental
+# line's key) is capped too (case_ends.cjs). Its eligible non-recipients are rental assistance's: the same very-low-
+# income renters outside public or subsidized housing, on the same waiting lists.
+CAPPED_KEY_OF = {"housing_enterprise_surplus": "housing_subsidies"}
 GATES: dict[str, dict] = {}
 
 
@@ -380,7 +410,7 @@ def fiscal_totals(case="sept23"):
     prev_case, prev, prev_band, prev_rebuilt = "sept24", a24, band24, rebuilt
     kept, changes = dict(adopted_2026_09_23=ado, adopted_2026_09_24=a24), dict(sept24_change=change)
     for name, c in LATER_CASES.items():
-        lane, base_key = c.lane, c.base
+        lane, base_key, summary_key = c.lane, c.base, c.summary or c.base
         kept.setdefault(base_key, prev)
         b = pd.read_csv(FISCAL / lane / "derived/main_case_bands.csv")
         b = b[b.profile == c.profile].set_index("variant")
@@ -391,19 +421,32 @@ def fiscal_totals(case="sept23"):
         base = [float(b.loc[base_key, "cost_low_bn"]), float(b.loc[base_key, "cost_high_bn"])]
         band = [float(x) for x in s["main_case"]]
         gate(f"{name}_base_is_{prev_case}_adopted", np.allclose(base, prev_band, atol=1e-4)
-             and np.allclose(s[base_key], prev_band, rtol=0, atol=1e-9), **{f"{name}_file": base, f"{prev_case}_file": prev_band})
+             and np.allclose(s[summary_key], prev_band, rtol=0, atol=1e-9), **{f"{name}_file": base, f"{prev_case}_file": prev_band})
         gate(f"{name}_summary_matches_bands", np.allclose(band, [b.loc["adopted", "cost_low_bn"], b.loc["adopted", "cost_high_bn"]],
                                                          atol=1e-4), summary=band)
-        ch = [band[0] - s[base_key][0], band[1] - s[base_key][1]]
+        ch = [band[0] - s[summary_key][0], band[1] - s[summary_key][1]]
         gate(f"{name}_change_matches_summary", np.allclose(ch, s["change"], rtol=0, atol=1e-12), change=ch)
         now_rebuilt = [prev_rebuilt[0] + ch[0], prev_rebuilt[1] + ch[1]]
         gate(f"{name}_band_rebuilt_from_A", np.allclose(now_rebuilt, band, atol=1e-3), rebuilt=now_rebuilt, band=band)
         changes[f"{name}_change"] = ch
-        entry = dict(A_low_cost=prev["A_low_cost"] - ch[0], A_high_cost=prev["A_high_cost"] - ch[1], band=band,
-                     responses=responses, justice=ado["justice"], **changes)
+        ends = case_ends(name, c, band) if c.ends else {}
+        # A case that replaces the production grid moves P + F by d_pf at each end; since cost = -(P + F) - A,
+        # A moves by -(change + d_pf). Before September 29, d_pf = 0.
+        prod = ends.pop("production", None)
+        if prod and "production" in prev:
+            raise SystemExit(f"[BLOCKED] {name}: a production grid after another case's is not implemented")
+        d_pf = production_change(name, prod, pf) if prod else [0.0, 0.0]
+        entry = dict(A_low_cost=prev["A_low_cost"] - ch[0] - d_pf[0], A_high_cost=prev["A_high_cost"] - ch[1] - d_pf[1],
+                     band=band, responses=responses, justice=ado["justice"], **changes)
         entry["A_mid"] = (entry["A_low_cost"] + entry["A_high_cost"]) / 2
-        if c.ends:
-            entry.update(case_ends(name, c, band))
+        entry.update(ends)
+        if prod:
+            engine_A = [prod["ends"][e]["A_bn"] for e in ("low", "high")]
+            gate(f"{name}_A_is_the_engine_A_after_the_production_change",
+                 np.allclose([entry["A_low_cost"], entry["A_high_cost"]], engine_A, rtol=0, atol=1e-3),
+                 A=[entry["A_low_cost"], entry["A_high_cost"]], engine=engine_A,
+                 A_if_production_were_booked_in_A=[prev["A_low_cost"] - ch[0], prev["A_high_cost"] - ch[1]])
+            entry["production"] = dict(prod, change_P_plus_F_bn=d_pf)
         if name == case:
             out.update(adopted=entry, **kept, case=case)
             return out
@@ -420,14 +463,36 @@ def case_ends(name, c, band):
     ends = [e["ends"]["low"], e["ends"]["high"]]
     gate(f"{name}_case_ends_are_the_band", np.allclose([x["cost_bn"] for x in ends], band, rtol=0, atol=1e-9),
          case_ends=[x["cost_bn"] for x in ends], band=band)
-    return dict(capital_return=[x["capital_return_bn"] for x in ends],
-                capital_return_by_level={lv: [x["capital_return_by_level_bn"][lv] for x in ends]
-                                         for lv in ("state_local", "federal")},
-                capped_programs={k: [x["capped_bn"][k] for x in ends] for k in e["capped_lines"]},
-                block_grant={k: [x["block_grant_bn"][k] for x in ends] for k in (e["block_grant_line"],)})
+    out = dict(capital_return=[x["capital_return_bn"] for x in ends],
+               capital_return_by_level={lv: [x["capital_return_by_level_bn"][lv] for x in ends]
+                                        for lv in ("state_local", "federal")},
+               capped_programs={k: [x["capped_bn"][k] for x in ends] for k in e["capped_lines"]},
+               block_grant={k: [x["block_grant_bn"][k] for x in ends] for k in (e["block_grant_line"],)})
+    if "production" in e:     # the case replaces the production grid (September 29 on)
+        out["production"] = e["production"]
+    if "pension_accrual" in e:    # the pension switch's accrual inside A (September 29 on)
+        out["pension_accrual"] = [e["pension_accrual"]["ends"]["low"], e["pension_accrual"]["ends"]["high"]]
+    return out
 
 
-def nest_rows():
+def production_change(name, prod, pf):
+    """The case's P + F at each band end less model.json's at the same production cell, $bn (case_ends.cjs).
+
+    model.json's grid is every earlier case's, so its P + F at each end must be the account's production term for
+    that end's normalization (headline_cases.csv, from which fiscal_totals takes every earlier A); gated to 1e-8,
+    the grid's 1e-9 rounding of P and of F."""
+    d = []
+    for end in ("low", "high"):
+        x = prod["ends"][end]
+        base = x["model_json"]["P_bn"] + x["model_json"]["F_bn"]
+        account = float(pf.loc[x["normalization"], "min"])
+        gate(f"{name}_{end}_model_json_production_is_the_account_term", np.isclose(base, account, rtol=0, atol=1e-8),
+             model_json=base, account=account, normalization=x["normalization"])
+        d.append(x["case"]["P_bn"] + x["case"]["F_bn"] - base)
+    return d
+
+
+def nest_rows(normalization="cash"):
     cols = ["proxy", "split", "normalization", "labor_share", "sigma", "capital_adjustment",
             "labor_supply_elasticity", "capital_tax_retention", "excluded_capital_owner_share",
             "nest_option", "sigma_NI", "wage_pct_native_cell0", "wage_pct_native_cell1",
@@ -438,7 +503,7 @@ def nest_rows():
     s = pd.read_csv(PATHS["nest"], usecols=cols)
     return s[(s.excluded_capital_owner_share == 0) & (s.nest_option == "A_by_nativity")
              & (s.proxy == "PEARNVAL") & (s.labor_supply_elasticity == 0)
-             & (s.capital_tax_retention == 1.0) & (s.normalization == "cash")
+             & (s.capital_tax_retention == 1.0) & (s.normalization == normalization)
              & (s.labor_share == 0.65)].copy()
 
 
@@ -448,6 +513,154 @@ def pick(s, split, sigma, cap, eps):
     if len(r) != 1:
         raise SystemExit(f"[BLOCKED] nest row not unique: {split} {sigma} {cap} {eps} ({len(r)})")
     return r.iloc[0]
+
+
+# The lane's production scenarios (split, sigma, capital adjustment, sigma_NI); main() picks from them, and the
+# winners-losers lane also reads the account's split at sigma_NI 3.
+LANE_SCENARIOS = [("below_ba", 2.0, 1.0, np.inf), ("hs_or_less", 2.0, 1.0, np.inf), ("below_ba", 2.0, 1.0, 3.0),
+                  ("below_ba", 2.0, 0.0, np.inf)] + [(s, g, 1.0, np.inf) for s in ("hs_or_less", "below_ba") for g in (1.5, 2.5)] \
+                 + [("hs_or_less", 2.0, 1.0, 3.0)]
+
+
+def as_gdp(row, factor):
+    """A cash-normalized nest row at the GDP normalization: every $bn column times GDP over the cash scale (the nest
+    builder's two scales; row4_nest_rows gives the factor for each set of weights)."""
+    out = row.copy()
+    for k in out.index:
+        if k.endswith("_bn"):
+            out[k] = out[k] * factor
+    out["normalization"] = "gdp"
+    return out
+
+
+def grid_cell(grid, **cell):
+    """P and F of a production grid ({dims, private_wtp_bn, induced_receipts_bn}, engine order) at one cell."""
+    i = 0
+    for k, levels in grid["dims"].items():
+        i = i * len(levels) + next(j for j, x in enumerate(levels) if x == cell[k] or (
+            isinstance(x, float) and abs(x - cell[k]) < 1e-9))
+    return grid["private_wtp_bn"][i], grid["induced_receipts_bn"][i]
+
+
+def row4_nest_rows(d, nest, prod, lane):
+    """The lane's production scenarios on the case's production weights (September 29 on: the account's row 4).
+
+    Row 4 rakes the Mexico-born outside California and Texas to ACS 2024 household-population totals by citizenship
+    (the grid's source, production_row4.json row4_factors: naturalized x 0.856, noncitizen x 0.778, point factors), so
+    only the union's Mexico-born branch moves. The four-branch earnings by skill cell are rebuilt on this CPS frame,
+    on the published weights and on row 4, and every lane scenario is re-solved with the nest lane's own make_case and
+    solve_case (production_nativity_nest_2026_09_22/builder.py) and the account's tax partition
+    (matched_benefits_2026_09_19/model.py fiscal_and_private), as the nest builder builds its rows (point estimate).
+    Gates: the grid file is the one the case's payload pins (sha256); the frame's reweighted populations are the grid
+    file's (1e-9 relative) and no civilian outside the group is reweighted; the published four-branch earnings are
+    branch_composition.csv's (1e-9 relative); on the published weights every scenario reproduces its nest_scenarios.csv
+    row (1e-9); on row 4 every scenario with perfect native-immigrant substitution (sigma_NI infinite) has the case
+    grid's P and F at its cell (1e-6 bn; the grid rounds to 1e-9). Returns nest_rows()'s columns for LANE_SCENARIOS."""
+    grid_file = FISCAL / prod["grid"]["file"]
+    if sha(grid_file) != prod["grid"]["sha256"]:
+        raise SystemExit(f"[BLOCKED] {prod['grid']['file']} is not the grid the case's payload pins")
+    r4 = json.loads(grid_file.read_text())
+    grid = json.loads((FISCAL / lane / "derived/corrections.json").read_text())["production"]
+    spec = importlib.util.spec_from_file_location("nest_builder", NEST_DIR / "builder.py")
+    B = importlib.util.module_from_spec(spec)
+    sys.path.insert(0, str(NEST_DIR))
+    try:
+        spec.loader.exec_module(B)
+    finally:
+        sys.path.remove(str(NEST_DIR))
+    model = B.load(FISCAL / "matched_benefits_2026_09_19/model.py", "matched_stationary_model")
+    with zipfile.ZipFile(PATHS["cps"]) as z:
+        h = pd.read_csv(z.open("hhpub25.csv"), usecols=["H_SEQ", "GESTFIPS"]).set_index("H_SEQ").GESTFIPS
+    state = d.PH_SEQ.map(h).to_numpy()
+    pw, civ, target = d.pw.to_numpy(), d.civ.to_numpy(), d.target.to_numpy()
+    factor = np.ones(len(d))
+    for status, label in ROW4_STATUS.items():
+        m = (d.PENATVTY.eq(MEXICO_BIRTHPLACE) & d.PRCITSHP.eq(status)).to_numpy() & ~np.isin(state, ROW4_EXCLUDED_STATES)
+        f = r4["row4_factors"][label]
+        gate(f"row4_{label}_population_is_the_grid_file_s", np.isclose(pw[m].sum(), f["cps_population"], rtol=1e-9, atol=0),
+             frame=pw[m].sum(), grid_file=f["cps_population"], records=int(m.sum()))
+        gate(f"row4_{label}_reweights_only_the_group", not np.any(m & civ & ~target))
+        factor[m] = f["factor"]
+    weights = {"published": pw, "row4": pw * factor}
+    native = d.PRCITSHP.isin([1, 2, 3]).to_numpy()
+    branches = {"native_non_union": civ & native & ~target, "union_us_born": civ & native & target,
+                "other_foreign_born": civ & ~native & ~target, "union_mexico_born": civ & ~native & target}
+    earn = np.maximum(d.PEARNVAL.to_numpy(float), 0)
+    published = pd.read_csv(NEST_DIR / "derived/branch_composition.csv")
+    published = published[published.proxy == "PEARNVAL"].set_index(["split", "skill", "branch"]).earnings_estimate
+    cases = {}
+    for split in ("hs_or_less", "below_ba"):
+        cut = 39 if split == "hs_or_less" else 42
+        cells = [d.A_HGA.between(31, cut).to_numpy(), d.A_HGA.between(cut + 1, 46).to_numpy()]
+        for name, w in weights.items():
+            four = np.array([[(earn * mask * cell) @ w for cell in cells] for mask in branches.values()])[:, :, None]
+            if name == "published":
+                want = np.array([[published[(split, k, b)] for k in (0, 1)] for b in branches])
+                gate(f"row4_published_branches_{split}", np.allclose(four[:, :, 0], want, rtol=1e-9, atol=0),
+                     max_rel=float(np.max(np.abs(four[:, :, 0] / want - 1))))
+            total = four.sum(axis=0)
+            cases[(name, split)] = dict(shares=total / total.sum(axis=0), four_share=four / total[None, :, :],
+                                        union_share=(four[1] + four[3]) / total, national=total)
+    # The GDP normalization's factor over cash for each set of weights: GDP (the nest builder's gdp_billions) over the
+    # cash scale, labor income / labor share. Both splits cover the same earners, so the factor is one per weights.
+    gdp_bn = json.loads((NEST_DIR / "derived/audit.json").read_text())["gdp_billions"]
+    cash_scale = {name: cases[(name, "hs_or_less")]["national"].sum(axis=0)[0] / 0.65 for name in weights}
+    gate("row4_cash_scale_is_one_for_both_splits", all(np.isclose(cases[(name, "below_ba")]["national"].sum(axis=0)[0] / 0.65,
+                                                                  cash_scale[name], rtol=1e-12, atol=0) for name in weights))
+    gdp_factor = {name: float(gdp_bn * 1e9 / cash_scale[name]) for name in weights}
+    tau = np.asarray(B.TAU).reshape(2, 1)
+    rows = {"published": [], "row4": []}
+    for name in rows:
+        for split, sigma, cap, eps in LANE_SCENARIOS:
+            c = cases[(name, split)]
+            scale = c["national"].sum(axis=0)[0] / 0.65
+            res = B.solve_case(c, "A_by_nativity", eps, sigma, 0.65, cap, 0.0)
+            part = model.fiscal_and_private(res, B.TAU, B.CAPITAL_TAX, 1.0, 0.0)
+            private = ((1 - tau) * (res["labor_gain_by_branch"] - res["disutility_by_branch"])).sum(axis=1)
+            wage = res["wage_without_over_with"]
+            rows[name].append(dict(
+                proxy="PEARNVAL", split=split, normalization="cash", labor_share=0.65, sigma=sigma, capital_adjustment=cap,
+                labor_supply_elasticity=0.0, capital_tax_retention=1.0, excluded_capital_owner_share=0.0,
+                nest_option="A_by_nativity", sigma_NI=eps,
+                **{f"wage_pct_{b}_cell{k}": float(100 * (wage[i, k, 0] - 1)) for i, b in enumerate(("native", "other_fb"))
+                   for k in (0, 1)},
+                native_production_gain_bn=float(scale * private[0, 0] / 1e9),
+                other_immigrant_production_gain_bn=float(scale * private[1, 0] / 1e9),
+                induced_current_receipts_bn=float(scale * part["current_receipts_gain"][0] / 1e9),
+                private_plus_receipts_bn=float(scale * part["private_plus_receipts"][0] / 1e9),
+                capital_gain_bn=float(scale * res["capital_gain"][0] / 1e9),
+                capital_tax_gain_bn=float(scale * part["capital_tax_gain"][0] / 1e9),
+                capital_private_residual_bn=float(scale * (res["capital_gain"][0] - part["capital_tax_gain"][0]) / 1e9)))
+    out = {k: pd.DataFrame(v)[nest.columns] for k, v in rows.items()}
+    numeric = [c for c in nest.columns if c.endswith("_bn") or c.startswith("wage_pct")]
+    control = 0.0
+    for r in out["published"].itertuples(index=False):
+        ref = pick(nest, r.split, r.sigma, r.capital_adjustment, r.sigma_NI)
+        control = max(control, max(abs(getattr(r, k) - ref[k]) for k in numeric))
+    gate("row4_published_solve_reproduces_nest_scenarios", control < 1e-9, max_abs=control, rows=len(out["published"]))
+    # The published GDP factor reproduces nest_scenarios.csv's GDP rows (relative, the file's precision).
+    gdp_rows = nest_rows("gdp")
+    control_gdp = 0.0
+    for _, r in out["published"].iterrows():
+        g, ref = as_gdp(r, gdp_factor["published"]), pick(gdp_rows, r.split, r.sigma, r.capital_adjustment, r.sigma_NI)
+        control_gdp = max(control_gdp, max(abs(g[k] - ref[k]) / max(abs(ref[k]), 1.0) for k in numeric if k.endswith("_bn")))
+    gate("row4_published_gdp_factor_reproduces_nest_scenarios", control_gdp < 1e-9, max_rel=control_gdp,
+         factor=gdp_factor["published"])
+    worst = 0.0
+    for _, row in out["row4"].iterrows():
+        if np.isinf(row.sigma_NI):
+            for norm, r in (("cash", row), ("gdp", as_gdp(row, gdp_factor["row4"]))):
+                P, F = grid_cell(grid, proxy="PEARNVAL", split=r.split, normalization=norm, labor_share=0.65, sigma=r.sigma,
+                                 capital_adjustment=r.capital_adjustment, labor_supply_elasticity=0.0,
+                                 capital_tax_retention=1.0, excluded_capital_owner_share=0.0)
+                # The grid's P is the private total: the two branches' labor gains and the capital residual.
+                worst = max(worst, abs(r.native_production_gain_bn + r.other_immigrant_production_gain_bn
+                                       + r.capital_private_residual_bn - P), abs(r.induced_current_receipts_bn - F))
+    gate("row4_scenarios_are_the_case_grid", worst < 1e-6, max_abs_bn=worst)
+    return out["row4"], dict(weights="row4", grid=prod["grid"],
+                             factors={k: r4["row4_factors"][k]["factor"] for k in ROW4_STATUS.values()},
+                             gdp_factor=gdp_factor, published_solve_max_abs_diff_vs_nest_scenarios=control,
+                             published_gdp_factor_max_rel_diff=control_gdp, row4_max_abs_diff_vs_case_grid_bn=worst)
 
 
 # ------------------------------------------------------------------------- wages
@@ -851,14 +1064,16 @@ def by_bin(delta, d, R, nbin=5):
 
 def main():
     ap = argparse.ArgumentParser(description="Distribution of the account's channels among other residents.")
-    ap.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept23"), default=list(LATER_CASES)[-1],
-                    help="a case after September 24 (default: the last in LATER_CASES, sept27: long-run responses, "
-                         "rental assistance, government enterprises and the return on public capital; sept26_schools: "
-                         "schools at full average cost; sept26: CBO's one-year school response, 0.63-0.66), or an "
-                         "earlier adopted case")
-    ap.add_argument("--out-dir", type=Path, default=DERIVED)
+    ap.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept23"), default=DEFAULT_CASE,
+                    help="a case after September 24 (default sept27: long-run responses, rental assistance, government "
+                         "enterprises and the return on public capital; sept29: candidate v4, adopted 2026-09-29, "
+                         "written to derived/sept29/; sept26_schools: schools at full average cost; sept26: CBO's "
+                         "one-year school response, 0.63-0.66), or an earlier adopted case")
+    ap.add_argument("--out-dir", type=Path, default=None,
+                    help="default derived/, or derived/<dir> for a case whose files sit beside the default case's")
     args = ap.parse_args()
-    out_dir = args.out_dir
+    sub = LATER_CASES[args.case].out if args.case in LATER_CASES else None
+    out_dir = args.out_dir or (DERIVED / sub if sub else DERIVED)
     out_dir.mkdir(parents=True, exist_ok=True)
     verify_published_text()
     ncvs_verified = verify_ncvs_text()
@@ -873,26 +1088,43 @@ def main():
     if capped:
         capped_texts = verify_capped_text()
         capped_key, capped_info = capped_keys(d)
+        # Each capped program's key (public housing takes rental assistance's), in the case's order of programs.
+        program_key = {k: capped_key[CAPPED_KEY_OF.get(k, k)] for k in adopted["capped_programs"]}
         D_end = [sum(v[j] for v in adopted["capped_programs"].values()) for j in (0, 1)]
         D_mid = (D_end[0] + D_end[1]) / 2
         K_mid = (adopted["capital_return"][0] + adopted["capital_return"][1]) / 2
         budget_mid = adopted["A_mid"] + D_mid
 
-        def displaced(j=None, lines=tuple(capped_key)):
+        def displaced(j=None, lines=tuple(program_key)):
             """Per-person loss of eligible non-recipients: at band end j, or the mean of the two ends."""
             at = {k: (v[0] + v[1]) / 2 if j is None else v[j] for k, v in adopted["capped_programs"].items()}
-            return sum(per_person(d, capped_key[k], -at[k]) for k in lines)
+            return sum(per_person(d, program_key[k], -at[k]) for k in lines)
+    # The pension accrual (September 29 on) sits in A and is not financed today: the cash part leaves it out and
+    # fiscal_accrual_* reports it (a cost at each band end, ACC).
+    accrual = adopted.get("pension_accrual")
+    ACC_mid = (accrual[0] + accrual[1]) / 2 if accrual else 0.0
     F_total, S_total = bea_totals()
     rates = ncvs_rates()
 
-    # ---- production term: after-tax wages P to workers, induced receipts F to the budget
+    # ---- production term: after-tax wages P to workers, induced receipts F to the budget. From September 29 the
+    # case's production grid is on row-4 weights, so the lane's scenarios are re-solved on them (row4_nest_rows) and
+    # the case's P and F go to the wage and fiscal channels; the published September 20 band keeps the published ones.
     nest = nest_rows()
-    central = pick(nest, "below_ba", 2.0, 1.0, np.inf)
-    account = pick(nest, "hs_or_less", 2.0, 1.0, np.inf)
-    eps3 = pick(nest, "below_ba", 2.0, 1.0, 3.0)
-    short = pick(nest, "below_ba", 2.0, 0.0, np.inf)
-    gate("account_production_term", np.isclose(account.private_plus_receipts_bn, fiscal["PF_cash"], rtol=1e-9),
-         nest=account.private_plus_receipts_bn, account=fiscal["PF_cash"])
+    prod = adopted.get("production")
+    rows, prod_info = row4_nest_rows(d, nest, prod, LATER_CASES[args.case].lane) if prod else (nest, None)
+    central = pick(rows, "below_ba", 2.0, 1.0, np.inf)
+    account = pick(rows, "hs_or_less", 2.0, 1.0, np.inf)
+    eps3 = pick(rows, "below_ba", 2.0, 1.0, 3.0)
+    short = pick(rows, "below_ba", 2.0, 0.0, np.inf)
+    central_published = pick(nest, "below_ba", 2.0, 1.0, np.inf)
+    account_pf = fiscal["PF_cash"]
+    if prod:
+        grid = json.loads((FISCAL / LATER_CASES[args.case].lane / "derived/corrections.json").read_text())["production"]
+        account_pf = sum(grid_cell(grid, proxy="PEARNVAL", split="hs_or_less", normalization="cash", labor_share=0.65,
+                                   sigma=2.0, capital_adjustment=1.0, labor_supply_elasticity=0.0,
+                                   capital_tax_retention=1.0, excluded_capital_owner_share=0.0))
+    gate("account_production_term", np.isclose(account.private_plus_receipts_bn, account_pf, rtol=1e-9),
+         nest=account.private_plus_receipts_bn, account=account_pf)
     branches = pd.read_csv(PATHS["branches"])
     basis = {s: wage_basis(d, s) for s in ("below_ba", "hs_or_less")}
     for split in basis:
@@ -916,6 +1148,7 @@ def main():
              cps=rec, nest=row.induced_current_receipts_bn)
     F_c = float(central.induced_current_receipts_bn)
     P_c = float(central.native_production_gain_bn + central.other_immigrant_production_gain_bn)
+    F_published = float(central_published.induced_current_receipts_bn)   # F_c before September 29
 
     # ---- housing arms (long run, form A, central ownership, householder rule)
     ha = pd.read_csv(PATHS["housing_arms"]).drop_duplicates(["arm", "level", "form", "geography", "ownership"])
@@ -1017,9 +1250,11 @@ def main():
             # The three financing columns: cash financing and the resource cost (the capital return) by each
             # convention, the displaced beneficiaries by program; fiscal = cash + resource.
             for conv, key in keys.items():
-                ch[f"fiscal_cash_{conv}"] = per_person(d, key, budget_mid + K_mid + F_c)
+                ch[f"fiscal_cash_{conv}"] = per_person(d, key, budget_mid + K_mid + ACC_mid + F_c)
                 ch[f"fiscal_resource_{conv}"] = per_person(d, key, -K_mid)
-            for k in capped_key:
+                if accrual:
+                    ch[f"fiscal_accrual_{conv}"] = per_person(d, key, -ACC_mid)
+            for k in program_key:
                 ch[f"displaced_{k}"] = displaced(lines=(k,))
         for conv, key in keys.items():
             ch[f"fiscal_A_only_{conv}"] = per_person(d, key, budget_mid)
@@ -1027,12 +1262,14 @@ def main():
                                                 + sum(ch[p] for p in central_parts if p != "wages"))
             # Published September 20 band: fiscal A+F, the under-charged part of uncompensated
             # care financed by the same convention, crime on the equal footing (justice per head).
-            ch[f"fiscal_published_{conv}"] = per_person(d, key, fiscal["published"]["A_mid"] + F_c)
+            # Its production is the published one (the same as the case's before September 29).
+            ch[f"fiscal_published_{conv}"] = per_person(d, key, fiscal["published"]["A_mid"] + F_published)
             ch[f"uncomp_inside_published_{conv}"] = per_person(d, key, -(in_lo + in_hi) / 2)
         ch["crime_equal_footing"] = crime_split(keys_rank, crime_equal)
+        wages_published = ch["wages"] if not prod else wage_delta(basis["below_ba"], central_published, True)
         for conv in keys:
             ch[f"TOTAL_{conv}_published_band"] = (ch[f"fiscal_published_{conv}"] + ch[f"uncomp_inside_published_{conv}"]
-                                                  + ch["wages"] + ch["renters"] + ch["landlords"]
+                                                  + wages_published + ch["renters"] + ch["landlords"]
                                                   + ch["crime_equal_footing"] + ch["unreimbursed_care"])
         tan_custody = crime_custody * crime_tangible_equal / crime_equal
         ch["crime_tangible"] = crime_split(keys_rank, tan_custody, serious_share_tan)
@@ -1103,8 +1340,10 @@ def main():
         if capped:
             given["displaced_beneficiaries"] = -D_mid
             for conv in keys:
-                given[f"fiscal_cash_{conv}"] = budget_mid + K_mid + F_c
+                given[f"fiscal_cash_{conv}"] = budget_mid + K_mid + ACC_mid + F_c
                 given[f"fiscal_resource_{conv}"] = -K_mid
+                if accrual:
+                    given[f"fiscal_accrual_{conv}"] = -ACC_mid
             for k, v in adopted["capped_programs"].items():
                 given[f"displaced_{k}"] = -(v[0] + v[1]) / 2
         for name, tot in given.items():
@@ -1309,16 +1548,30 @@ def main():
                                         net=v["net_other_residents_welfare_bn"],
                                         owners_stock=v["other_owner_value_gain_stock_bn"])
                  for k, v in arms.items()})
+    if prod:
+        # September 29 on: the case's production scenarios are on row-4 weights; A moved by the case's change less the
+        # change in the engine's P + F at each band end (fiscal.adopted.production).
+        acct_pub = pick(nest, "hs_or_less", 2.0, 1.0, np.inf)
+        inputs["production"].update(
+            case_weights=prod_info,
+            published=dict(central_P=float(central_published.native_production_gain_bn
+                                           + central_published.other_immigrant_production_gain_bn),
+                           central_F=F_published, account_P_plus_F=float(acct_pub.private_plus_receipts_bn)),
+            engine_change_P_plus_F_at_band_ends_bn=adopted["production"]["change_P_plus_F_bn"])
     if capped:
         # Welfare signs (a cost is negative); cash + resource + displaced = A + F at each band end.
         inputs["financing_columns"] = {end: dict(
-            cash_financing_bn=a + D_end[j] + adopted["capital_return"][j] + F_c,
+            cash_financing_bn=a + D_end[j] + adopted["capital_return"][j] + (accrual[j] if accrual else 0.0) + F_c,
             resource_cost_bn=-adopted["capital_return"][j],
             resource_cost_federal_bn=-adopted["capital_return_by_level"]["federal"][j],
-            displaced_beneficiaries_bn=-D_end[j], A_plus_F_bn=a + F_c)
+            displaced_beneficiaries_bn=-D_end[j], **({"pension_accrual_bn": -accrual[j]} if accrual else {}),
+            A_plus_F_bn=a + F_c)
             for j, (end, a) in enumerate((("low_cost_end", adopted["A_low_cost"]), ("high_cost_end", adopted["A_high_cost"])))}
+        housing = "housing_enterprise_surplus" in adopted["capped_programs"]
         inputs["capped_programs"] = dict(
-            rule="rental assistance and LIHEAP fall on their eligible non-recipients among other residents, equal per "
+            rule=("rental assistance, public housing's enterprise deficit (rental assistance's key) and LIHEAP"
+                  if housing else "rental assistance and LIHEAP")
+                 + " fall on their eligible non-recipients among other residents, equal per "
                  "household, under both financing conventions; TANF-type aid (a block grant) stays with the budget",
             rental_assistance="renter households paying cash rent (H_TENURE 2), money income below 50% of the state's "
                               "median household money income (CPS ASEC 2025), neither HPUBLIC nor HLORENT; HUD's "

@@ -1,0 +1,108 @@
+{
+ "case": "sept29",
+ "lane": "main_case_2026_09_29",
+ "profile": "long_run_non_school_full",
+ "rule": "each fill-in method's end specifications of the case, averaged; capped programs = the group's amount x response",
+ "capped_lines": {
+  "housing_subsidies": "rental assistance",
+  "energy_assistance": "LIHEAP",
+  "housing_enterprise_surplus": "public housing"
+ },
+ "block_grant_line": "family_and_general_assistance",
+ "inputs": {
+  "main_case_2026_09_29/derived/summary.json": "c76c4d7135f5fccf9e60a064149fb94b62a561267b41d10c1c3b1bba021b7d71",
+  "main_case_2026_09_29/derived/main_case_bands.csv": "834fcb017c95bcc37768123abc39d78af30f4aeede487df13c257a0eda4dd46f",
+  "main_case_2026_09_29/package.cjs": "57ea6f9ebbf17244515a5aa6a0a6272007fd5c94237fdac7ea9799061ac994f0",
+  "main_case_2026_09_29/derived/corrections.json": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe"
+ },
+ "end_specifications": [
+  {
+   "method": "b_hotdeck_union_matched",
+   "low": 48,
+   "high": 11
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "low": 48,
+   "high": 11
+  }
+ ],
+ "ends": {
+  "low": {
+   "cost_bn": 371.4145997888867,
+   "capital_return_bn": 34.42269517039408,
+   "capital_return_by_level_bn": {
+    "state_local": 33.59523809931328,
+    "federal": 0.8274570710807956
+   },
+   "capped_bn": {
+    "housing_subsidies": 4.136640196219054,
+    "energy_assistance": 0.562300201139693,
+    "housing_enterprise_surplus": 3.426128600542746
+   },
+   "block_grant_bn": {
+    "family_and_general_assistance": 12.33615438994436
+   }
+  },
+  "high": {
+   "cost_bn": 434.8409586241355,
+   "capital_return_bn": 57.16990721581873,
+   "capital_return_by_level_bn": {
+    "state_local": 55.40548177654188,
+    "federal": 1.76442543927684
+   },
+   "capped_bn": {
+    "housing_subsidies": 4.136640196219054,
+    "energy_assistance": 0.562300201139693,
+    "housing_enterprise_surplus": 3.426128600542746
+   },
+   "block_grant_bn": {
+    "family_and_general_assistance": 11.686668294432202
+   }
+  }
+ },
+ "production": {
+  "rule": "the case's production grid (corrections.json production) moves P and F only: at each end, P and F on the case's grid and on model.json's at the end specification's production cell, and A = the engine's direct response less the capital return; cost = -(P + F) - A",
+  "grid": {
+   "grid": "row4",
+   "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+   "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+   "rule": "the production model on the account's row-4 weights replaces model.json's grid (private_wtp_bn, induced_receipts_bn, sampling_se_bn), scenario by scenario (item 2)"
+  },
+  "ends": {
+   "low": {
+    "normalization": "gdp",
+    "cell_index": 1716,
+    "case": {
+     "P_bn": -0.695081604,
+     "F_bn": 12.374960074
+    },
+    "model_json": {
+     "P_bn": -0.235924325,
+     "F_bn": 13.558522244
+    },
+    "A_bn": -383.09447825888674
+   },
+   "high": {
+    "normalization": "cash",
+    "cell_index": 1230,
+    "case": {
+     "P_bn": -0.457237452,
+     "F_bn": 8.140476138
+    },
+    "model_json": {
+     "P_bn": -0.155669556,
+     "F_bn": 8.946297253
+    },
+    "A_bn": -442.5241973101355
+   }
+  }
+ },
+ "pension_accrual": {
+  "rule": "the case less its cash set at the end specifications (summary.json cash_set, the pension switch off), change_at_fixed_specifications.item_pension; a cost inside A",
+  "ends": {
+   "low": 76.71352380863874,
+   "high": 73.02347681440006
+  }
+ }
+}

@@ -593,6 +593,137 @@ in higher-income states. Both programs target the poorest eligible households (7
 must be extremely low income, 24 CFR 982.201(b)(2); LIHEAP may prioritize the highest energy burdens), so the
 loss probably falls lower than an equal share per eligible household [INFERENCE].
 
+## v4 case (sept29), 2026-09-29
+
+`--case sept29` runs the adopted v4 main case (`main_case_2026_09_29/`, commit 40c4ba7; $371.41–434.84bn at
+specifications 48 / 11) and writes `derived/sept29/`, with the default's thirteen file names. Run
+`node case_ends.cjs --case sept29` first; it writes `derived/case_ends_sept29.json`. The default stays the
+September 27 case, and its files did not move. Run and gated 17:17–17:25 JST (log file times; `date` 17:23 JST).
+The run ends with "291 gates passed". Code: `case_ends.cjs`, `distribute.py`, `test_distribute.py`.
+
+**Three rules the case needed.** Each is designed here, with its alternative.
+
+1. *Production moves wages and F, never A.* v4 solves the production model again on the account's row-4 weights
+   (payload item 2). That moves P + F by −1.64bn at the low end and −1.11bn at the high end, and leaves A alone.
+   Every earlier case moved A by the whole change in the band, which was right only because P and F stayed fixed.
+   Here A moves by the case's change less the engine's change in P + F, and this lane's production scenarios are
+   solved again on row-4 weights (`row4_nest_rows`). Their P goes to the wage channel and their F to the fiscal
+   channel. Gates:
+   - A equals the engine's A at both ends (|diff| 4.9e-5 and 3.4e-5; the gate's tolerance is 1e-3).
+   - The re-solved scenarios equal the case's grid at their cells (5.0e-10bn).
+   - The same solve on the published weights reproduces the nest file (3.7e-12bn).
+
+   Alternative: book the change in A, as before. A would then miss the engine's by 1.64bn and 1.11bn, and the wage
+   channel would stay on the published weights: −$1.47bn central instead of −$1.61bn.
+2. *Public housing is a capped program.* v4 splits public housing's enterprise deficit out of the enterprise
+   surplus. The new receipt line, `housing_enterprise_surplus`, uses rental assistance's key at response 1 and costs
+   $3.43bn for the group. Public housing is rationed like vouchers: a fixed stock of units with waiting lists. So
+   without the group, eligible households who now go without would take those units [INFERENCE]. The amount
+   therefore falls on rental assistance's eligible non-recipients, not on the budget:
+   `displaced_housing_enterprise_surplus`, inside `displaced_beneficiaries`. `case_ends.cjs` gates that this capped
+   cost equals the case's receipt effect: 3.4261bn at both ends, to 1e-9.
+
+   Alternative: leave it in the budget under both conventions, as the enterprise surplus line was before. Q1 would
+   then carry 3.0% of it under tax shares, instead of 72.7% as a displaced loss. Limit: rental assistance's proxy
+   (very low income) is narrower than public housing's low-income eligibility.
+3. *The pension accrual stays in the fiscal channel and is reported apart.* The case charges the accrual of the
+   pension switch, the case less its cash set: $76.71bn and $73.02bn at the band ends. This lane distributes the
+   whole fiscal channel over today's residents under both conventions, and never splits off the borrowed part (the
+   winners lane does). So the accrual is distributed like the rest and reported alone, in `fiscal_accrual_*`, beside
+   `fiscal_cash_*` and `fiscal_resource_*`: fiscal = cash + resource + accrual.
+
+   Alternative: leave it out of today's distribution, as a claim that future taxpayers pay (the winners lane's
+   rule). Dropping `fiscal_accrual_a` gives that reading directly.
+
+Rental assistance falls to $4.14bn (September 27: $4.53bn). v4 item 1 moves public housing's $5.258bn operating
+subsidy out of the national line, which drops from $60.261bn to $55.003bn. LIHEAP stays at $0.56bn.
+
+**Four financing columns.** One decimal, so the parts add.
+
+| $bn a year (negative = cost) | Low-cost end | High-cost end | Middle, distributed |
+|---|---:|---:|---:|
+| Cash financing: A + F, less the capital return, the accrual and the capped programs | −254.9 | −295.2 | −275.0 |
+| Resource cost: return on public capital (federal part) | −34.4 (−0.8) | −57.2 (−1.8) | −45.8 |
+| Pension accrual | −76.7 | −73.0 | −74.9 |
+| Displaced beneficiaries: rental assistance, LIHEAP, public housing | −8.1 | −8.1 | −8.1 |
+| A + F | −374.1 | −433.5 | −403.8 |
+
+[CALCULATION: `derived/sept29/inputs.json` `financing_columns`]
+
+| SPM quintiles, $bn a year | Total (Sept 27) | Q1 | Q2 | Q3 | Q4 | Q5 | % of resources, Q1 / Q5 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Fiscal, (a) tax shares | −395.71 (−351.00) | −12.00 | −25.31 | −42.66 | −69.95 | −245.79 | −2.11 / −4.58 |
+| of which cash | −275.04 (−306.26) | −8.34 | −17.59 | −29.65 | −48.62 | −170.84 | −1.47 / −3.18 |
+| of which return on public capital | −45.80 (−44.74) | −1.39 | −2.93 | −4.94 | −8.09 | −28.45 | −0.24 / −0.53 |
+| of which pension accrual | −74.87 | −2.27 | −4.79 | −8.07 | −13.24 | −46.50 | −0.40 / −0.87 |
+| Fiscal, (b) per person | −395.71 (−351.00) | −79.15 | −79.14 | −79.14 | −79.14 | −79.14 | −13.95 / −1.47 |
+| Displaced beneficiaries | −8.13 (−5.09) | −6.03 | −1.86 | −0.24 | −0.00 | 0.00 | −1.06 / 0.00 |
+| of which public housing | −3.43 | −2.49 | −0.83 | −0.11 | 0.00 | 0.00 | −0.44 / 0.00 |
+| Central total, (a) | −438.67 (−390.80) | −40.66 | −50.22 | −64.48 | −82.05 | −201.26 | −7.17 / −3.75 |
+| Central total, (b) | −438.67 (−390.80) | −107.80 | −104.05 | −100.97 | −91.24 | −34.61 | −19.00 / −0.64 |
+
+Five quintile cells are rounded under control, one cent at most, so each row adds: fiscal (a) Q2, capital return Q4,
+fiscal (b) Q1, central total (a) Q3 and central total (b) Q1. Financed by tax shares, the $8.13bn of displaced
+beneficiaries would have cost Q1 $0.25bn; by per-person cuts, $1.63bn. At η = 1.3 the central total is −$580.4bn (a)
+and −$1,155.3bn (b) mean-normalized, or −$259.3bn and −$516.3bn as equal-split equivalents. For September 27 those
+were −$531.7bn, −$1,041.7bn, −$237.6bn and −$465.5bn. The displaced beneficiaries weigh −$44.2bn mean-normalized
+(equal split −$19.8bn). Renters (−$33.86bn), landlords (+$37.37bn) and crime (−$32.34bn) do not depend on the case
+and did not move; wages moved with the production rule. [CALCULATION: `distribute.py --case sept29` →
+`derived/sept29/channel_by_quintile.csv`, `weighted_totals.csv`]
+
+**Why this lane's fiscal channel differs from the winners lane's.** Both lanes take A at each band end from
+`fiscal_totals` (one definition), and both move the capped programs out. They differ only in the induced receipts F
+they add:
+- This lane adds the F of its central production scenario, which is also the scenario its wage channel uses:
+  below-BA split, σ = 2, capital adjusting, cash normalization.
+- The winners lane adds the engine's F at the band's end specifications, averaged over the two ends: the
+  high-school split, normalized to GDP at 48 and to cash at 11.
+
+| $bn a year, central (one decimal, so the parts add) | Sept 27 | sept29 |
+|---|---:|---:|
+| Case, middle of the band | 354.6 | 403.1 |
+| less the private production term at the ends, −P | −0.2 | −0.6 |
+| less the capped programs (displaced beneficiaries) | −5.1 | −8.1 |
+| = winners lane: taxpayers' fiscal channel, A + F at the band ends | 349.3 | 394.4 |
+| plus the engine's F less this lane's (11.25 − 9.56; 10.26 − 8.98) | +1.7 | +1.3 |
+| = this lane: fiscal channel, A + F of its central scenario | 351.0 | 395.7 |
+
+Both levels include the return on public capital: $44.7bn for September 27 and $45.8bn for sept29. Both exclude
+the capped programs, $5.09bn and $8.13bn, which sit beside them. For sept29, both include the pension accrual,
+$74.9bn. The winners lane assigns the accrual to future taxpayers; this lane reports it apart.
+
+The unrounded bridge is exact. The difference is 1.6966bn on September 27 and 1.2787bn on sept29, equal to the
+engine's F less this lane's to 1e-4. It reproduces the winners file's September 27 figure,
+`winners_losers_2026_09_24/derived/inputs.json` fiscal.central: cost 354.3989 less displaced 5.0944 = 349.3045. The sept29 figure is the
+same construction on this run's A and the adopted lane's grid at the ends; the winners run will confirm it.
+
+The two levels should be quoted as one number, the winners lane's. It uses the case's own production term, so the
+fiscal channel, the capped programs and the private production term add to the band's middle. This lane's F pairs
+the fiscal channel with its wage scenario. That pairing matters inside this lane's totals but not for the channel's
+level. Each convention allocates the total on a fixed key, so this lane's quintile shares apply unchanged to the
+winners level. This lane's printed levels stay as run.
+[CALCULATION: `derived/inputs.json` and `derived/sept29/inputs.json` (A, capped programs, production central_F),
+`derived/case_ends_sept29.json` production ends (the engine's P and F at 48 / 11), and
+`winners_losers_2026_09_24/derived/fiscal_specs.csv` for September 27's]
+
+**Gates.**
+
+| Gate | Result |
+|---|---|
+| 1. Existing outputs reproduce | `rerun_lane.py` with the four commands below: IDENTICAL, 33 of 33 files (19 tracked, 14 new); the tracked files equal HEAD |
+| 2. sept29 outputs exist and the lane's gates pass | `derived/case_ends_sept29.json` and `derived/sept29/` (13 files); 291 gates; `pytest` 8 passed, including the sept29 rebuild |
+| 3. Oracle | `case_ends_sept29.json` cost 371.4145998 / 434.8409586, against the oracle's 371.4146 / 434.8410. Less the accrual it gives 294.7010760 / 361.8174818, against 294.7011 / 361.8175. Tolerance 1e-4, the oracle's rounding; the lane itself gates the band to `summary.json` at 1e-9. A at 48 / 11 is −383.094429 / −442.524231, against the world ledger's cross-check of −383.0945 / −442.5242 (1e-4) |
+| 4. Two passes after the sept29 run | both IDENTICAL, 33 of 33 |
+
+```sh
+node infra/immigration-fiscal/distribution_weights_2026_09_23/case_ends.cjs --case sept29
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py --case sept29
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/distribution_weights_2026_09_23 \
+  "node {lane}/case_ends.cjs" "node {lane}/case_ends.cjs --case sept29" \
+  "uv run --no-project python3 {lane}/distribute.py" "uv run --no-project python3 {lane}/distribute.py --case sept29" \
+  --allow-unrun infra/immigration-fiscal/distribution_weights_2026_09_23/test_distribute.py
+```
+
 ## Revisions
 
 2026-09-23: Connecticut planning regions (09110–09190) now map to 2013 CBSAs in the shared crosswalk; the housing lane's metro-local inputs moved (renters' extra rent −$33.86bn → −$33.86bn, landlords $37.36bn → $37.37bn, +$0.002bn each). The verdict's figures are unchanged at $0.1bn (bottom four fifths −$80.7bn, top fifth +$46.0bn, total −$262.6bn; at η = 1.3, −$407.1bn and −$738.3bn); the largest unweighted flow move is $0.003bn (renters, metro-local high). Four weighted-table cells change in their last printed digit: (b) η = 1 per person −557.0 → −557.1 (also in the headline η table), (a) η = 1.4 floored quintiles −419.9 → −420.0, (a) η = 2 quintile bins −781.0 → −781.1, and (b) η = 2 quintile bins −1,567.4 → −1,567.5. Owner-occupiers' top-fifth stock goes $815bn → $816bn, or $31,892 → $31,895 per household. Detail: [`CT_PLANNING_REGIONS.md`](../hedonic_composition_2026_09_19/CT_PLANNING_REGIONS.md).
