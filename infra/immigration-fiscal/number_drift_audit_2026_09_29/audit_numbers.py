@@ -310,6 +310,7 @@ INDEX_SPANS = [
      "[decision](../decisions/2026-09-28-social-items-more-benefits.md))."),
     ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 7.7%."),
     ("The [world ledger]", "premium over being raised in Mexico. [FRAMING-SENSITIVE]"),
+    ("Benefits are priced to the same standard as the costs", "so both figures stand (ladder 199)."),
     ("The [debt legacy lane]", "nor the stock to an annual figure."),
     ("[Cumulative 2005–2024 back-cast]", "Not comparable with ladder 137's forward debt path."),
 ]
@@ -609,11 +610,14 @@ def audit(groups_path):
     scanned = {}
     for t in toks:
         scanned.setdefault(t["file"], {})[t["line"]] = t["line_text"]
-    for f, locs in anchors.items():
-        for a in locs:
+    bad = []  # every broken anchor at once, in a fixed order
+    for f, locs in sorted(anchors.items()):
+        for a in sorted(locs):
             n = sum(anchored(a, l) for l in scanned.get(f, {}).values())
             if n != 1:
-                raise SystemExit(f"[BLOCKED] anchor {a!r} picks {n} scanned lines of {f}")
+                bad.append(f"anchor {a!r} picks {n} scanned lines of {f}")
+    if bad:
+        raise SystemExit(f"[BLOCKED] {len(bad)} anchor(s): " + "; ".join(bad))
     seen, audited, extracted = set(), [], []
     free = [t for t in toks if not t["bound"]]
     paired = {id(t): p for t, p in zip(free, pair_tokens(free, cmap, anchors))}
