@@ -72,8 +72,8 @@ What they cannot settle cleanly:
 Use first:
 
 1. `research/immigration-complete-annual-account-2026-09-20.md`: every tax and spending line, federal and
-   state-local, with the adopted main case at the top ($322–387bn a year in 2024;
-   [main-case lane](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md))
+   state-local, with the adopted main case at the top ($371–435bn a year in 2024;
+   [main-case lane](../infra/immigration-fiscal/main_case_2026_09_29/RESULT.md))
 2. `research/immigration-objections-faq-2026-09-21.md`: the standard objections, each routed to its executed
    table
 3. `research/immigration-yearly-lifetime-cost-repair-2026-09-19.md`: the generation ledger against third-plus

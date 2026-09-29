@@ -3,21 +3,30 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-09-27): $321.8–387.4bn/year.** Four items held at zero by source classification
-or short-run budget conventions now carry their long-run cost:
-- long-run road, park and economic-administration responses: +$19.4 / +$29.6bn;
-- rental assistance at 1: +$4.5bn;
-- the return on public capital at 2% (low end) and 3% (high end), which BEA's depreciation-only lines leave
-  out: +$22.2 / +$38.3bn;
-- every government enterprise responding: their operating loss and the return on their capital,
-  +$17.2 / +$23.0bn.
+**Current main case (2026-09-29): $371.4–434.8bn/year.** It is the September 27 case with nine measured
+changes, run as one set:
+- the Social Security and Part A promises members earn as they work, at the benefits current law can pay and net
+  of the income tax on them: +$77.3 / +$73.6bn (ladder 257);
+- long-run property taxes: −$27.2bn (ladder 253);
+- the income-tax key matched to IRS totals by income bin: −$3.2 / −$3.1bn (ladder 249);
+- state and local prices where the group lives: +$2.2bn (ladder 267);
+- roads keyed by miles driven: +$2.0 / +$3.7bn (ladder 273);
+- five smaller keys: −$1.0 / −$1.3bn together; the items interact by −$0.5bn.
 
-The low side is $295.9–363.0bn, the outer range $258.6–436.1bn, and the sign break-even 2.8–13.6%. Capital at 7%
-($406.3–461.6bn), enterprises out ($304.6–364.4bn) and land [GAP] sit beside the account
-([main-case lane](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md), [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239).
+Counting benefits when paid, the cash set is $294.7–361.8bn. The low side is $345.5–410.5bn, the outer range
+$296.8–487.3bn, and the sign break-even −5.5% to 3.3%: the low end is a net cost at every service response. Capital
+at 7% ($457.5–511.1bn), enterprises out ($355.9–413.7bn) and land [GAP] sit beside the account
+([main-case lane](../infra/immigration-fiscal/main_case_2026_09_29/RESULT.md), [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275).
+
+The September 27 case, $321.8–387.4bn, had given four items held at zero by source classification or short-run
+budget conventions their long-run cost: long-run road, park and economic-administration responses (+$19.4 /
++$29.6bn); rental assistance at 1 (+$4.5bn); the return on public capital at 2% (low end) and 3% (high end), which
+BEA's depreciation-only lines leave out (+$22.2 / +$38.3bn); and every government enterprise responding, their
+operating loss and the return on their capital (+$17.2 / +$23.0bn)
+([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239).
 
 With CBO-style first-year budget responses the same account gives $200.9–245.7bn; with every service
-proportional, $347.3–400.5bn. The main cases between September 20 and 27 are listed, each with its decision, in the
+proportional, $398.1–448.0bn. The main cases between September 20 and 29 are listed, each with its decision, in the
 [topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
 [real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below is the account as
 published on September 20, kept as the calculation record.
@@ -99,7 +108,7 @@ and incidence rules, not a new survey observation proving an ethnic cost increas
    capital taxes. [2026-09-28: the production model carries capital taxes only at retention 1,
    where they are zero, and housing sits outside it. Under the September 27 case's long-run rule the group's
    owner-occupied, tenant-occupied and personal property taxes respond: −$27.2bn at both ends, a candidate
-   (ladder 253).] Residual personal/capital-financed tax overlap is exposed as O.
+   (ladder 253); adopted in the main case of 2026-09-29 (ladder 275).] Residual personal/capital-financed tax overlap is exposed as O.
 2. Household benefits and ordinary government services respond fully. Defense,
    general public services, existing interest and business subsidies stay fixed.
    Subsidies accruing to included owners cannot become a net cost without counting
@@ -344,6 +353,11 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-29, main case v4 (ladder 275): the header gives the September 29 case, $371.4–434.8bn, with its nine
+changes and the cash set ($294.7–361.8bn); the September 27 case's four additions stay listed beside it. The
+property-tax bracket in the response rules notes the adoption. Concept affected: the complete account's main case
+([decision](../decisions/2026-09-29-main-case-v4.md)).
 
 2026-09-29, cleanup ([decision](../decisions/2026-09-29-delete-superseded-and-cruft-docs.md)): the header keeps the
 current case and names the first-year and proportional scenarios. The four stacked paragraphs for the schools,

@@ -16,6 +16,9 @@ broader component sensitivity is **$258.6–436.1bn**; neither band is an empiri
 validated confidence interval. It concerns the observed Mexican-origin resident
 union, including US-born descendants, not all immigrants or a specified admission
 policy. [CALCULATION: [current case](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md)]
+[2026-09-29: the main case is now the September 29 case, $371.4–434.8bn (ladder 275,
+[lane](../infra/immigration-fiscal/main_case_2026_09_29/RESULT.md)); this audit's checks were run on the
+September 27 case.]
 
 ## 1. The useful cross-references we already have
 
