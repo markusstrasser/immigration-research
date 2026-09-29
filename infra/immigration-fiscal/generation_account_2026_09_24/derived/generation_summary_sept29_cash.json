@@ -1,0 +1,1301 @@
+{
+ "case": "sept29_cash",
+ "set": "cash",
+ "lane": "main_case_2026_09_29",
+ "payload": "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
+ "oracle": {
+  "source": "main_case_2026_09_29/derived/main_case_bands.csv (cash_set)",
+  "specs": [
+   48,
+   11
+  ],
+  "band": [
+   294.7011,
+   361.8175
+  ],
+  "uncorrected": [
+   313.2581,
+   378.9158
+  ]
+ },
+ "responses": {
+  "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+  "general_government": {
+   "low": 0.6000461560720316,
+   "high": 0.8503957662020014,
+   "elasticity": [
+    0.5939193086359557,
+    0.842
+   ],
+   "s": 0.12024478903339636
+  },
+  "school": {
+   "growth": 1,
+   "decline": 1,
+   "elasticity": null,
+   "s": null,
+   "set_directly": true,
+   "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+  },
+  "row8_factor": 0.9491629658844111,
+  "economic_affairs_services": {
+   "low": 0.38401510917541615,
+   "high": 0.638645582432123,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_highways",
+     "level": "federal",
+     "subfunction": "Highways",
+     "national_bn": 1.827,
+     "share_of_line": 0.00404261674798367,
+     "low": 0,
+     "high": 1,
+     "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_air",
+     "level": "federal",
+     "subfunction": "Air",
+     "national_bn": 30.604,
+     "share_of_line": 0.06771770276699082,
+     "low": 0,
+     "high": 1,
+     "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+    },
+    {
+     "id": "fed_water",
+     "level": "federal",
+     "subfunction": "Water",
+     "national_bn": 18.209,
+     "share_of_line": 0.04029119231747928,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_transit_and_railroad",
+     "level": "federal",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0.094,
+     "share_of_line": 0.00020799451248520252,
+     "low": 0,
+     "high": 1,
+     "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_space",
+     "level": "federal",
+     "subfunction": "Space",
+     "national_bn": 21.23,
+     "share_of_line": 0.04697578191554095,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_general_economic_and_labor_affairs",
+     "level": "federal",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 35.431,
+     "share_of_line": 0.07839844225386393,
+     "low": 0,
+     "high": 0.8503957662020014,
+     "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+    },
+    {
+     "id": "fed_agriculture",
+     "level": "federal",
+     "subfunction": "Agriculture",
+     "national_bn": 17.54,
+     "share_of_line": 0.038810890946706936,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_energy",
+     "level": "federal",
+     "subfunction": "Energy",
+     "national_bn": 23.406,
+     "share_of_line": 0.051790633608815424,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_natural_resources",
+     "level": "federal",
+     "subfunction": "Natural resources",
+     "national_bn": 32.036,
+     "share_of_line": 0.07088630002102073,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_postal_service",
+     "level": "federal",
+     "subfunction": "Postal service",
+     "national_bn": -0.177,
+     "share_of_line": -0.00039164924159447705,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_highways",
+     "level": "state_local",
+     "subfunction": "Highways",
+     "national_bn": 201.005,
+     "share_of_line": 0.4447652870434908,
+     "low": 0.739205240969296,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_transit_and_railroad",
+     "level": "state_local",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0.739205240969296,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_general_economic_and_labor_affairs",
+     "level": "state_local",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 29.358,
+     "share_of_line": 0.06496066912277208,
+     "low": 0.8503957662020014,
+     "high": 0.8503957662020014,
+     "basis": "general government's adopted response for state-local administration at both ends"
+    },
+    {
+     "id": "sl_agriculture",
+     "level": "state_local",
+     "subfunction": "Agriculture",
+     "national_bn": 10.007,
+     "share_of_line": 0.022142564749355546,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_energy",
+     "level": "state_local",
+     "subfunction": "Energy",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_natural_resources",
+     "level": "state_local",
+     "subfunction": "Natural resources",
+     "national_bn": 31.99,
+     "share_of_line": 0.07078451547235774,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_other_commercial_activities",
+     "level": "state_local",
+     "subfunction": "Other (commercial activities)",
+     "national_bn": -0.625,
+     "share_of_line": -0.0013829422372686338,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "recreation_culture": {
+   "low": 0.8561746355869265,
+   "high": 1,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_recreation_and_culture",
+     "level": "federal",
+     "subfunction": "Recreation and culture",
+     "national_bn": 5.43,
+     "share_of_line": 0.09994294233494688,
+     "low": 0,
+     "high": 1,
+     "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+    },
+    {
+     "id": "sl_recreation_and_culture",
+     "level": "state_local",
+     "subfunction": "Recreation and culture",
+     "national_bn": 48.901,
+     "share_of_line": 0.9000570576650531,
+     "low": 0.9512448441969144,
+     "high": 1,
+     "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "housing_subsidies": {
+   "low": 1,
+   "high": 1,
+   "key": "housing_support",
+   "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+   "overlap_netted_bn": 0,
+   "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+   "source": "dataset_integrity_2026_09_23/spending.md item 6"
+  },
+  "enterprise_surplus": {
+   "receipt": true,
+   "override": "receipt:enterprise_surplus",
+   "low": 1,
+   "high": 1,
+   "option": "D",
+   "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+   "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+   "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+  },
+  "housing_enterprise_surplus": {
+   "receipt": true,
+   "override": "receipt:housing_enterprise_surplus",
+   "low": 1,
+   "high": 1,
+   "rule": "public housing's enterprise deficit (NIPA 3.8 line 13, housing and urban renewal, -$40.298bn in 2024, less public housing's $5.258bn operating subsidy, consolidated with the rental line) as its own receipt line at the rental line's key; it responds as the enterprise receipt does, in every profile",
+   "source": "item 1: main_case_candidate_v2_2026_09_28/package.cjs splitHousing"
+  },
+  "modeled_owner_property": {
+   "receipt": true,
+   "override": "receipt:modeled_owner_property",
+   "low": 0.762903,
+   "high": 0.762903,
+   "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+  },
+  "tenant_occupied_property": {
+   "receipt": true,
+   "override": "receipt:tenant_occupied_property",
+   "low": 0.708443,
+   "high": 0.708443,
+   "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+  },
+  "personal_property_tax": {
+   "receipt": true,
+   "override": "receipt:personal_property_tax",
+   "low": 1,
+   "high": 1,
+   "rule": "household personal property tax (NIPA 3.4 line 11), re-keyed to the group's share of household vehicles, at response 1 like the motor-vehicle line, in every profile",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs rekey, CENTRAL_ITEMS.personal"
+  },
+  "roads_vmt_sl": {
+   "low": 0.739205240969296,
+   "high": 1,
+   "rule": "re-keys the S&L highways part of economic_affairs_services (national $201.005bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions sl_highways)",
+   "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+  },
+  "roads_vmt_fed": {
+   "low": 0,
+   "high": 1,
+   "rule": "re-keys the federal highways part of economic_affairs_services (national $1.827bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions fed_highways)",
+   "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+  },
+  "state_price_public_order_safety": {
+   "low": 1,
+   "high": 1,
+   "rule": "public order and safety's state-price gap (the sum over its S&L functions of amount x (price index - 1)) at the line's use key; it responds as its parent, which the case holds at 1 in every profile",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  },
+  "state_price_health_services": {
+   "low": 1,
+   "high": 1,
+   "rule": "health's state-price gap at the line's preferred key; it responds as its parent, which the case holds at 1 in every profile",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  },
+  "state_price_recreation_culture": {
+   "low": 0.8561746355869265,
+   "high": 1,
+   "rule": "recreation and culture's state-price gap at the line's preferred key; it responds as its parent, recreation_culture, at the specification's reading",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  }
+ },
+ "low_spec": {
+  "allocation": "shared",
+  "normalization": "gdp",
+  "share": 0.7153278156243373,
+  "school": 1,
+  "reading": "low",
+  "gg": 0.6000461560720316,
+  "uc": "uninsured_use_low"
+ },
+ "high_spec": {
+  "allocation": "personal",
+  "normalization": "cash",
+  "share": 0.8651608840454027,
+  "school": 1,
+  "reading": "high",
+  "gg": 0.8503957662020014,
+  "uc": "uninsured_use_high"
+ },
+ "specifications": {
+  "low": {
+   "allocation": "shared",
+   "normalization": "gdp",
+   "share": 0.7153278156243373,
+   "school": 1,
+   "reading": "low",
+   "gg": 0.6000461560720316,
+   "uc": "uninsured_use_low"
+  },
+  "high": {
+   "allocation": "personal",
+   "normalization": "cash",
+   "share": 0.8651608840454027,
+   "school": 1,
+   "reading": "high",
+   "gg": 0.8503957662020014,
+   "uc": "uninsured_use_high"
+  },
+  "low_index": 48,
+  "high_index": 11
+ },
+ "union": {
+  "cost_bn": [
+   294.70107598024805,
+   361.8174818097355
+  ],
+  "uncorrected_bn": [
+   313.258084456047,
+   378.9158095530165
+  ],
+  "uncorrected_own_ends_bn": [
+   313.258084456047,
+   378.9158095530165
+  ],
+  "population": 39712493.331187904,
+  "adults": 27664776.401490845,
+  "per_member_usd": [
+   7420.865608274634,
+   9110.92332562219
+  ]
+ },
+ "headcount_basis": "row-4 weights (v4_inputs.py headcount): the case's per-member basis, the union's 39,712,493",
+ "conventions": {
+  "a": {
+   "G1": {
+    "population": 11036701.061391935,
+    "adults": 10566524.710023813,
+    "cost_bn": [
+     87.20388497729577,
+     72.73376866842102
+    ],
+    "own_span_bn": [
+     57.577450518651624,
+     103.43703013376901
+    ],
+    "per_member_usd": [
+     7901.263655889737,
+     6590.172938800965
+    ],
+    "per_adult_usd": [
+     8252.844465935977,
+     6883.414430425073
+    ],
+    "uncorrected_cost_bn": [
+     85.82309593597728,
+     71.39111190938273
+    ],
+    "correction_bn": [
+     1.3807890413184936,
+     1.3426567590382916
+    ],
+    "sept27_cost_bn": [
+     93.7725916369799,
+     78.312584603511
+    ],
+    "change_from_sept27_bn": [
+     -6.568706659684125,
+     -5.5788159350899775
+    ]
+   },
+   "G2": {
+    "population": 14333217.663520353,
+    "adults": 8914882.943565348,
+    "cost_bn": [
+     117.71756615061454,
+     143.3282980226012
+    ],
+    "own_span_bn": [
+     117.71756615061454,
+     143.3282980226012
+    ],
+    "per_member_usd": [
+     8212.919730523521,
+     9999.729396937004
+    ],
+    "per_adult_usd": [
+     13204.611535093865,
+     16077.417833742145
+    ],
+    "uncorrected_cost_bn": [
+     127.7273754732579,
+     154.7988770004233
+    ],
+    "correction_bn": [
+     -10.009809322643349,
+     -11.4705789778221
+    ],
+    "sept27_cost_bn": [
+     127.57950286608664,
+     152.95293770801274
+    ],
+    "change_from_sept27_bn": [
+     -9.861936715472098,
+     -9.624639685411552
+    ]
+   },
+   "G3plus": {
+    "population": 14342574.606275609,
+    "adults": 8183368.747901681,
+    "cost_bn": [
+     89.77962485233628,
+     145.75541511871458
+    ],
+    "own_span_bn": [
+     89.77962485233628,
+     145.75541511871458
+    ],
+    "per_member_usd": [
+     6259.658904828225,
+     10162.43032509234
+    ],
+    "per_adult_usd": [
+     10970.986108301293,
+     17811.17527620738
+    ],
+    "uncorrected_cost_bn": [
+     99.70761304681182,
+     152.72582064321045
+    ],
+    "correction_bn": [
+     -9.927988194475532,
+     -6.970405524495874
+    ],
+    "sept27_cost_bn": [
+     100.46726248732563,
+     156.10453263786107
+    ],
+    "change_from_sept27_bn": [
+     -10.687637634989343,
+     -10.349117519146489
+    ]
+   }
+  },
+  "b": {
+   "G1": {
+    "population": 15672846.093122507,
+    "adults": 10566524.710023813,
+    "cost_bn": [
+     150.0492907930024,
+     183.06094556315634
+    ],
+    "own_span_bn": [
+     150.0492907930024,
+     183.06094556315634
+    ],
+    "per_member_usd": [
+     9573.838082851233,
+     11680.134193590173
+    ],
+    "per_adult_usd": [
+     14200.439114163984,
+     17324.612451764548
+    ],
+    "uncorrected_cost_bn": [
+     157.04665943031856,
+     189.92492327120073
+    ],
+    "correction_bn": [
+     -6.997368637316157,
+     -6.863977708044388
+    ],
+    "sept27_cost_bn": [
+     159.01473072091565,
+     190.80131223806558
+    ],
+    "change_from_sept27_bn": [
+     -8.965439927913252,
+     -7.7403666749092395
+    ]
+   },
+   "G2": {
+    "population": 12208153.065691093,
+    "adults": 8914882.943565348,
+    "cost_bn": [
+     77.83117547304686,
+     85.85919844420489
+    ],
+    "own_span_bn": [
+     70.60929206337346,
+     93.1746380369607
+    ],
+    "per_member_usd": [
+     6375.344006111616,
+     7032.939215473743
+    ],
+    "per_adult_usd": [
+     8730.476436510526,
+     9630.995604510657
+    ],
+    "uncorrected_cost_bn": [
+     85.24186547779709,
+     93.0131694882667
+    ],
+    "correction_bn": [
+     -7.410690004750236,
+     -7.153971044061805
+    ],
+    "sept27_cost_bn": [
+     87.31334994108622,
+     94.99840660921973
+    ],
+    "change_from_sept27_bn": [
+     -9.48217446803936,
+     -9.139208165014836
+    ]
+   },
+   "G3plus": {
+    "population": 11831494.172374293,
+    "adults": 8183368.747901681,
+    "cost_bn": [
+     66.82060971419736,
+     92.89733780237572
+    ],
+    "own_span_bn": [
+     66.82060971419736,
+     92.89733780237572
+    ],
+    "per_member_usd": [
+     5647.689864076406,
+     7851.699578172001
+    ],
+    "per_adult_usd": [
+     8165.415951875688,
+     11351.967712098489
+    ],
+    "uncorrected_cost_bn": [
+     70.96955954793151,
+     95.97771679354899
+    ],
+    "correction_bn": [
+     -4.14894983373415,
+     -3.0803789911732764
+    ],
+    "sept27_cost_bn": [
+     75.4912763283903,
+     101.57033610209963
+    ],
+    "change_from_sept27_bn": [
+     -8.670666614192939,
+     -8.672998299723915
+    ]
+   }
+  }
+ },
+ "change_from_sept27_by_item": {
+  "items": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6a",
+   "7",
+   "roads",
+   "state",
+   "pension"
+  ],
+  "specifications": {
+   "low": 48,
+   "high": 11
+  },
+  "rule": "sequential in candidate v4's order (package.cjs modelFor): each step is the model after the item, costed with the responses and capital keys of the items up to it and the row-4 grid from item 2 on; the parts add to change_bn. Item 2's part is the production grid, item 4's the housing capital key; the pension part is zero in the cash set",
+  "union": {
+   "low": {
+    "sept27_bn": 321.8193569903937,
+    "1_bn": -1.6912303084279756,
+    "2_bn": 1.642719449000026,
+    "3_bn": -3.20053533254827,
+    "4_bn": -0.3528694248468014,
+    "5_bn": -27.186325527785925,
+    "6a_bn": 0.3947898290265357,
+    "7_bn": -0.9482477443084463,
+    "roads_bn": 2.0183471780996456,
+    "state_bn": 2.205070871645546,
+    "pension_bn": 0,
+    "sept29_bn": 294.70107598024805,
+    "change_bn": -27.118281010145665
+   },
+   "high": {
+    "sept27_bn": 387.37005494938387,
+    "1_bn": -1.6912303084279756,
+    "2_bn": 1.1073890110000093,
+    "3_bn": -3.096568163510142,
+    "4_bn": -0.5293041372701737,
+    "5_bn": -27.18632552778587,
+    "6a_bn": 0.5386931924208511,
+    "7_bn": -0.7324104515720933,
+    "roads_bn": 3.7696553965787984,
+    "state_bn": 2.2675278489183484,
+    "pension_bn": 0,
+    "sept29_bn": 361.8174818097356,
+    "change_bn": -25.552573139648246
+   }
+  },
+  "a": {
+   "G1": {
+    "low": {
+     "sept27_bn": 93.7725916369799,
+     "1_bn": -0.7411778036421452,
+     "2_bn": 1.4039844556936316,
+     "3_bn": -1.0134031316362808,
+     "4_bn": -0.15464421609348733,
+     "5_bn": -7.650298574586117,
+     "6a_bn": 0.1535207149892983,
+     "7_bn": -0.22600023467619224,
+     "roads_bn": 0.9228582177246238,
+     "state_bn": 0.7364539125425438,
+     "pension_bn": 0,
+     "sept29_bn": 87.20388497729577,
+     "change_bn": -6.568706659684125
+    },
+    "high": {
+     "sept27_bn": 78.312584603511,
+     "1_bn": -0.741177803642131,
+     "2_bn": 0.9413017479842694,
+     "3_bn": -0.6654037615918327,
+     "4_bn": -0.231966324140231,
+     "5_bn": -7.748597893096132,
+     "6a_bn": 0.3363344916054132,
+     "7_bn": -0.23581313673412296,
+     "roads_bn": 2.0127272140010604,
+     "state_bn": 0.7537795305237296,
+     "pension_bn": 0,
+     "sept29_bn": 72.73376866842102,
+     "change_bn": -5.5788159350899775
+    }
+   },
+   "G2": {
+    "low": {
+     "sept27_bn": 127.57950286608664,
+     "1_bn": -0.7667240248326834,
+     "2_bn": 0.1301172678327589,
+     "3_bn": -1.4504400980567596,
+     "4_bn": -0.15997434785235498,
+     "5_bn": -9.372768265366318,
+     "6a_bn": 0.11168366807066832,
+     "7_bn": -0.19333616022450428,
+     "roads_bn": 0.8779884613608857,
+     "state_bn": 0.9615167835962097,
+     "pension_bn": 0,
+     "sept29_bn": 117.71756615061454,
+     "change_bn": -9.861936715472098
+    },
+    "high": {
+     "sept27_bn": 152.95293770801274,
+     "1_bn": -0.7667240248326834,
+     "2_bn": 0.09047650570471433,
+     "3_bn": -1.9216835244877757,
+     "4_bn": -0.2399615217785538,
+     "5_bn": -9.336823248241103,
+     "6a_bn": 0.11271036111276089,
+     "7_bn": -0.17069485143485963,
+     "roads_bn": 1.6240226294447098,
+     "state_bn": 0.984037989101239,
+     "pension_bn": 0,
+     "sept29_bn": 143.3282980226012,
+     "change_bn": -9.624639685411552
+    }
+   },
+   "G3plus": {
+    "low": {
+     "sept27_bn": 100.46726248732563,
+     "1_bn": -0.18332847995317536,
+     "2_bn": 0.10861772547360715,
+     "3_bn": -0.7366921028552724,
+     "4_bn": -0.03825086090093066,
+     "5_bn": -10.163258687833434,
+     "6a_bn": 0.12958544596654065,
+     "7_bn": -0.528911349407764,
+     "roads_bn": 0.21750049901416446,
+     "state_bn": 0.5071001755069204,
+     "pension_bn": 0,
+     "sept29_bn": 89.77962485233628,
+     "change_bn": -10.687637634989343
+    },
+    "high": {
+     "sept27_bn": 156.10453263786107,
+     "1_bn": -0.18332847995318957,
+     "2_bn": 0.07561075731098299,
+     "3_bn": -0.5094808774304909,
+     "4_bn": -0.0573762913514031,
+     "5_bn": -10.100904386448576,
+     "6a_bn": 0.08964833970264863,
+     "7_bn": -0.32590246340308227,
+     "roads_bn": 0.13290555313318464,
+     "state_bn": 0.5297103292934366,
+     "pension_bn": 0,
+     "sept29_bn": 145.75541511871458,
+     "change_bn": -10.349117519146489
+    }
+   }
+  },
+  "b": {
+   "G1": {
+    "low": {
+     "sept27_bn": 159.01473072091565,
+     "1_bn": -1.015833627997523,
+     "2_bn": 1.405767647289622,
+     "3_bn": -1.0704750231961953,
+     "4_bn": -0.21195021533446834,
+     "5_bn": -9.893357342401828,
+     "6a_bn": 0.2009338857385501,
+     "7_bn": -0.2816662018491911,
+     "roads_bn": 1.242611618871024,
+     "state_bn": 0.6585293309667577,
+     "pension_bn": 0,
+     "sept29_bn": 150.0492907930024,
+     "change_bn": -8.965439927913252
+    },
+    "high": {
+     "sept27_bn": 190.80131223806558,
+     "1_bn": -1.0158336279975515,
+     "2_bn": 0.9425358717997767,
+     "3_bn": -0.6730186581636417,
+     "4_bn": -0.3179253230017025,
+     "5_bn": -9.881500028253583,
+     "6a_bn": 0.2943558878806698,
+     "7_bn": -0.23581313673412296,
+     "roads_bn": 2.463723158546088,
+     "state_bn": 0.683109181014828,
+     "pension_bn": 0,
+     "sept29_bn": 183.06094556315634,
+     "change_bn": -7.7403666749092395
+    }
+   },
+   "G2": {
+    "low": {
+     "sept27_bn": 87.31334994108622,
+     "1_bn": -0.6105875032424706,
+     "2_bn": 0.12959007933351074,
+     "3_bn": -1.8459339544755267,
+     "4_bn": -0.12739699614776612,
+     "5_bn": -8.504470686152786,
+     "6a_bn": 0.09735367473587075,
+     "7_bn": -0.14119941252243962,
+     "roads_bn": 0.5893474089468782,
+     "state_bn": 0.9311229214853682,
+     "pension_bn": 0,
+     "sept29_bn": 77.83117547304686,
+     "change_bn": -9.48217446803936
+    },
+    "high": {
+     "sept27_bn": 94.99840660921973,
+     "1_bn": -0.6105875032424706,
+     "2_bn": 0.09011152833744518,
+     "3_bn": -1.9145332442945175,
+     "4_bn": -0.19109549422165628,
+     "5_bn": -8.52219151914744,
+     "6a_bn": 0.12494854770929464,
+     "7_bn": -0.17069485143485963,
+     "roads_bn": 1.104503616726106,
+     "state_bn": 0.9503307545532635,
+     "pension_bn": 0,
+     "sept29_bn": 85.85919844420489,
+     "change_bn": -9.139208165014836
+    }
+   },
+   "G3plus": {
+    "low": {
+     "sept27_bn": 75.4912763283903,
+     "1_bn": -0.0648091771880388,
+     "2_bn": 0.10736172237687924,
+     "3_bn": -0.28412635487654825,
+     "4_bn": -0.013522213364538516,
+     "5_bn": -8.78849749923134,
+     "6a_bn": 0.09650226855208643,
+     "7_bn": -0.5253821299367871,
+     "roads_bn": 0.18638815028172928,
+     "state_bn": 0.6154186191936191,
+     "pension_bn": 0,
+     "sept29_bn": 66.82060971419736,
+     "change_bn": -8.670666614192939
+    },
+    "high": {
+     "sept27_bn": 101.57033610209963,
+     "1_bn": -0.06480917718801038,
+     "2_bn": 0.07474161086275899,
+     "3_bn": -0.5090162610519542,
+     "4_bn": -0.020283320046800668,
+     "5_bn": -8.782633980384887,
+     "6a_bn": 0.11938875683097194,
+     "7_bn": -0.3259024634030965,
+     "roads_bn": 0.20142862130673223,
+     "state_bn": 0.6340879133503705,
+     "pension_bn": 0,
+     "sept29_bn": 92.89733780237572,
+     "change_bn": -8.672998299723915
+    }
+   }
+  }
+ },
+ "rules": {
+  "text": {
+   "1": "v2 splitHousing on each generation's model (the deficit at its rental-key share)",
+   "2": "row-4 attribution (v4_inputs.py)",
+   "3": "each generation's own change in the raked cells (tax_key_split.py) x its own stack factor on the line, the remainder by cells after the stack, per fill-in method, then the methods' mean (run_generations.cjs scaledSplit, as the CBO gradient)",
+   "4": "the component's key on each generation's evaluation",
+   "5_tenant": "the group's contract-rent share by state split by the generations' persons in cash-rent homes (v4_inputs.py)",
+   "5_personal": "the group's vehicle share x the generation's part of the licence line",
+   "6a_7_state": "the union's ratios and indexes on each generation's own amounts and keys (package functions)",
+   "roads": "the union's methods'-mean driver-mile share x the generation's persons aged 5 and over over the union's (row-4 weights)",
+   "pension": "the union's accrual split by the generations' net OASDI accrual per tax dollar x their OASDI receipts; Part A by their Part A accrual per HI tax dollar x their HI receipts; the benefit tax by their 2024 benefit tax (pension lane at 9ea1beb); convention (b) takes convention (a)'s ratios and shares"
+  },
+  "alternatives": {
+   "fit_by_amount": "item 3: the union's shift by the generations' September 27 amounts on the federal income-tax line",
+   "tenant_national": "tenant line: the generations' persons in cash-rent homes nationally (no state rent weights)",
+   "vehicles_by_population": "personal property: the group's vehicle share by the generations' population shares",
+   "roads_by_population": "roads: the driver-mile share by the generations' population key cells (the account's corrected population shares, the p of the union's formula; no age cut)",
+   "pension_union_rules": "pension: the union's ratio_net on each generation's OASDI receipts (the payload's literal rule), Part A by HI receipts, the benefit tax by the social_security key",
+   "part_a_lane_shares": "pension Part A: the pension lane's Part A accruals by generation as fixed shares of the union's (its own HI tax base, not the account's HI receipts; the same shares under both allocations)"
+  },
+  "parameters": {
+   "a": {
+    "G1": {
+     "fit_by_bn": {
+      "personal": 0.6654037615918366,
+      "shared": 1.0134031316362941
+     },
+     "tenant_share": 0.035189455143388025,
+     "vehicle_share": {
+      "personal": 0.03899008471274501,
+      "shared": 0.0314216123913693
+     },
+     "s_vmt": {
+      "personal": 0.030403572785455614,
+      "shared": 0.030403572785455614
+     },
+     "under5_share": 0.005453971886448849,
+     "persons_5plus": 10976507.204083964,
+     "pension_refs": null
+    },
+    "G2": {
+     "fit_by_bn": {
+      "personal": 1.9216835244877961,
+      "shared": 1.4504400980567476
+     },
+     "tenant_share": 0.04258097092988172,
+     "vehicle_share": {
+      "personal": 0.032895587784095875,
+      "shared": 0.035663143768482355
+     },
+     "s_vmt": {
+      "personal": 0.0365797471700405,
+      "shared": 0.0365797471700405
+     },
+     "under5_share": 0.07862473596809058,
+     "persons_5plus": 13206272.209152889,
+     "pension_refs": null
+    },
+    "G3plus": {
+     "fit_by_bn": {
+      "personal": 0.5094808774304703,
+      "shared": 0.7366921028552359
+     },
+     "tenant_share": 0.03689657392673025,
+     "vehicle_share": {
+      "personal": 0.030196327503159124,
+      "shared": 0.03499724384014835
+     },
+     "s_vmt": {
+      "personal": 0.03424899349673076,
+      "shared": 0.03424899349673076
+     },
+     "under5_share": 0.13789484747166492,
+     "persons_5plus": 12364807.46859226,
+     "pension_refs": null
+    }
+   },
+   "b": {
+    "G1": {
+     "fit_by_bn": {
+      "personal": 0.6730186581636517,
+      "shared": 1.0704750231962004
+     },
+     "tenant_share": 0.04973054547115622,
+     "vehicle_share": {
+      "personal": 0.038990084712745045,
+      "shared": 0.0399030285184313
+     },
+     "s_vmt": {
+      "personal": 0.040637547393276414,
+      "shared": 0.040637547393276414
+     },
+     "under5_share": 0.06390663825001655,
+     "persons_5plus": 14671247.187501146,
+     "pension_refs": null
+    },
+    "G2": {
+     "fit_by_bn": {
+      "personal": 1.9145332442945109,
+      "shared": 1.8459339544755298
+     },
+     "tenant_share": 0.035032523874920105,
+     "vehicle_share": {
+      "personal": 0.032895587784095855,
+      "shared": 0.03153118733793951
+     },
+     "s_vmt": {
+      "personal": 0.030898165247939462,
+      "shared": 0.030898165247939462
+     },
+     "under5_share": 0.08626077011012538,
+     "persons_5plus": 11155068.38062229,
+     "pension_refs": null
+    },
+    "G3plus": {
+     "fit_by_bn": {
+      "personal": 0.5090162610519406,
+      "shared": 0.28412635487654747
+     },
+     "tenant_share": 0.02990393065392371,
+     "vehicle_share": {
+      "personal": 0.03019632750315911,
+      "shared": 0.03064778414362919
+     },
+     "s_vmt": {
+      "personal": 0.029696600811011005,
+      "shared": 0.029696600811011005
+     },
+     "under5_share": 0.09383623424849474,
+     "persons_5plus": 10721271.313705679,
+     "pension_refs": null
+    }
+   }
+  },
+  "union": {
+   "fit_by_bn": {
+    "personal": 3.0965681635101032,
+    "shared": 3.2005353325482777
+   },
+   "s_vmt": {
+    "personal": 0.10123231345222687,
+    "shared": 0.10123231345222687
+   },
+   "oasdi_bn": {
+    "personal": 105.53394003187692,
+    "shared": 112.36588311410985
+   },
+   "pension": null
+  },
+  "item3_scaling_remainder_max_bn": 0.24195886945971568
+ },
+ "sensitivities": {
+  "fit_by_amount": {
+   "rule": "item 3: the union's shift by the generations' September 27 amounts on the federal income-tax line",
+   "a": {
+    "G1": {
+     "cost_bn": [
+      87.66112711178856,
+      72.79190417609888
+     ],
+     "move_bn": [
+      0.4572421344927875,
+      0.05813550767786069
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      118.21135331175887,
+      144.0570476681019
+     ],
+     "move_bn": [
+      0.49378716114432564,
+      0.7287496455006988
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      88.82859555669917,
+      144.96852996553605
+     ],
+     "move_bn": [
+      -0.9510292956371131,
+      -0.786885153178531
+     ]
+    }
+   },
+   "b": {
+    "G1": {
+     "cost_bn": [
+      150.46203406319216,
+      183.12589040436387
+     ],
+     "move_bn": [
+      0.41274327018976464,
+      0.06494484120753441
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      78.57170128912962,
+      86.58050482440176
+     ],
+     "move_bn": [
+      0.7405258160827657,
+      0.7213063801968644
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      65.66734062792486,
+      92.11108658097132
+     ],
+     "move_bn": [
+      -1.153269086272502,
+      -0.7862512214043988
+     ]
+    }
+   }
+  },
+  "tenant_national": {
+   "rule": "tenant line: the generations' persons in cash-rent homes nationally (no state rent weights)",
+   "a": {
+    "G1": {
+     "cost_bn": [
+      87.19252925157303,
+      72.72241294269828
+     ],
+     "move_bn": [
+      -0.01135572572273702,
+      -0.01135572572273702
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      117.76856785253176,
+      143.3792997245184
+     ],
+     "move_bn": [
+      0.051001701917215314,
+      0.051001701917215314
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      89.73997887614182,
+      145.71576914252012
+     ],
+     "move_bn": [
+      -0.03964597619446408,
+      -0.03964597619446408
+     ]
+    }
+   },
+   "b": {
+    "G1": {
+     "cost_bn": [
+      150.0402939272679,
+      183.0519486974219
+     ],
+     "move_bn": [
+      -0.008996865734502535,
+      -0.008996865734445691
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      77.88885682440018,
+      85.91687979555822
+     ],
+     "move_bn": [
+      0.05768135135332386,
+      0.05768135135332386
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      66.77192522857848,
+      92.84865331675684
+     ],
+     "move_bn": [
+      -0.04868448561887817,
+      -0.04868448561887817
+     ]
+    }
+   }
+  },
+  "vehicles_by_population": {
+   "rule": "personal property: the group's vehicle share by the generations' population shares",
+   "a": {
+    "G1": {
+     "cost_bn": [
+      87.24351765698167,
+      72.87170066661693
+     ],
+     "move_bn": [
+      0.039632679685894345,
+      0.13793199819590996
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      117.70223036031788,
+      143.2770172151793
+     ],
+     "move_bn": [
+      -0.015335790296660434,
+      -0.05128080742187535
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      89.75532796294708,
+      145.66876392794055
+     ],
+     "move_bn": [
+      -0.02429688938920549,
+      -0.0866511907740346
+     ]
+    }
+   },
+   "b": {
+    "G1": {
+     "cost_bn": [
+      150.04429780074707,
+      183.04409525675277
+     ],
+     "move_bn": [
+      -0.00499299225532468,
+      -0.016850306403568993
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      77.83312122397022,
+      85.87886502812295
+     ],
+     "move_bn": [
+      0.0019457509233689052,
+      0.019666583918052538
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      66.82365695552932,
+      92.89452152486126
+     ],
+     "move_bn": [
+      0.0030472413319557745,
+      -0.0028162775144551233
+     ]
+    }
+   }
+  },
+  "roads_by_population": {
+   "rule": "roads: the driver-mile share by the generations' population key cells (the account's corrected population shares, the p of the union's formula; no age cut)",
+   "a": {
+    "G1": {
+     "cost_bn": [
+      87.09420207155,
+      72.42452242909575
+     ],
+     "move_bn": [
+      -0.10968290574577111,
+      -0.30924623932527595
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      117.71551175268064,
+      143.32250573591048
+     ],
+     "move_bn": [
+      -0.0020543979339038287,
+      -0.005792286690706305
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      89.89136215601604,
+      146.07045364473055
+     ],
+     "move_bn": [
+      0.1117373036797602,
+      0.31503852601596805
+     ]
+    }
+   },
+   "b": {
+    "G1": {
+     "cost_bn": [
+      150.01616615434892,
+      182.96755206794455
+     ],
+     "move_bn": [
+      -0.03312463865347581,
+      -0.0933934952117852
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      77.84190440153479,
+      85.88944819702036
+     ],
+     "move_bn": [
+      0.010728928487935718,
+      0.030249752815464603
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      66.84300542436284,
+      92.96048154477205
+     ],
+     "move_bn": [
+      0.02239571016548325,
+      0.0631437423963348
+     ]
+    }
+   }
+  }
+ },
+ "not_computed": {
+  "state_generation_indexes": "state pricing by each generation's own state mix (the design's alternative) is not computed: the union's indexes on each generation's keys are the payload's rule",
+  "ledger_bridge": "compare_ledger.py's bridge to the September 19 ledger stays on the September 27 run"
+ },
+ "gates": {
+  "failed": []
+ }
+}

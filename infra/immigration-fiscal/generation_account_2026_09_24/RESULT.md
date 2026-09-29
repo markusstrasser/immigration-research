@@ -1,4 +1,18 @@
-**Verdict:** Split by generation, the September 27 main case ($321.8–387.4bn a year) leaves all three
+**Verdict:** Split by generation, the main case adopted on 2026-09-29 ($371.4–434.8bn a year, with the pension
+accrual) leaves all three Mexican-origin generations as net costs to other US residents at every one of its 64
+specifications, under both ways of counting children. Counted in their own generation, the Mexico-born cost others
+$97.2bn at the union's low end and $87.1bn at its high end ($8.8k / 7.9k per member). The second generation costs
+$151.6 / 179.3bn ($10.6k / 12.5k) and the third-plus $122.6 / 168.4bn ($8.5k / 11.7k). Counted with their parents
+they cost $169.4 / 197.4bn ($16.0k / 18.7k per adult), $110.6 / 121.8bn and $91.4 / 115.6bn. The change from
+September 27 (+$49.6 / +47.5bn) falls mostly on the US-born generations under (a): +$24.0 / 26.4bn and
++$22.1 / 12.3bn, against +$3.5 / 8.8bn for the Mexico-born. The pension switch books the accrual on this year's
+payroll taxes in place of this year's benefits. It adds $10.0bn to the Mexico-born at the low end and $33.9bn and
+$32.8bn to the second and third-plus generations. The cash set (switch off, $294.7–361.8bn) gives $87.2 / 72.7bn,
+$117.7 / 143.3bn and $89.8 / 145.8bn. [FRAMING-SENSITIVE] [CALCULATION: `run_generations_v4.cjs` →
+`derived/generation_summary_sept29.json`, `generation_summary_sept29_cash.json`; section "v4 case (sept29)" below]
+
+**September 27 case** (the default files, `derived/generation_results.csv`): Split by generation, the September 27
+main case ($321.8–387.4bn a year) leaves all three
 Mexican-origin generations as net costs to other US residents, at every one of its 64 specifications and
 under both ways of counting children. Counted in their own generation, the Mexico-born cost others
 $78–94bn a year ($6.4–7.7k per member), the second generation $128–153bn ($8.9–10.7k) and the third-plus
@@ -10,6 +24,217 @@ second and third-plus generations carry 75–78% of that; under (b) the Mexico-b
 public capital, an imputed cost of the capital rather than a payment, is $8.7–11.5bn of the Mexico-born's
 figure under (a) and $33.8–55.7bn of the union's. [FRAMING-SENSITIVE] [CALCULATION: `run_generations.cjs` →
 `derived/generation_summary.json`, `change_from_sept26_schools`]
+
+This paragraph's per-person figures divide by the CPS count (40.90m members, 28.77m adults). On the account's row-4
+count (39.71m and 27.66m; ladder 274) the Mexico-born cost $7.1–8.5k per member and, counted with their parents,
+$15.0–18.1k per adult. The US-born generations' figures do not change (section "v4 case (sept29)", 2026-09-29).
+
+## v4 case (sept29), 2026-09-29
+
+The operator adopted candidate v4 as the main case on 2026-09-29 at 15:12 JST (`main_case_2026_09_29`, case key
+`sept29`). It costs $371.4146–434.8410bn with the pension accrual at payable benefits, net of the tax on benefits. The
+cash set beside it, with the pension switch off, costs $294.7011–361.8175bn. Both have specifications 48 and 11 as
+their ends. Step 7 splits both by generation into `*_sept29` and `*_sept29_cash` files. The September 27 files keep
+their names and bytes (gate 1). Model self-report: claude-opus-5-5.
+
+The split reads the adopted lane, landed at 40c4ba7 (`v4_split.cjs` `V4_LANE`). Until then it ran on candidate v4's
+payload, which differs from the adopted `corrections.json` only in five meta stamps (`source`, `adopted`, `decision`,
+`case`, `status`). The repointed run's results files are byte for byte the candidate run's.
+
+**Resumed after the reboot.** The machine rebooted at about 20:51 JST, after this lane's gates had finished (20:35).
+The gate logs were lost with the scratchpad; every output parsed complete. From 21:05 step 7 ran again directly, with
+its gates printed, and `rerun_lane.py` gates 1 and 4 ran again (times below).
+
+**How the split works.** The case's payload is the September 27 `corrections.json` unchanged, then v4's part. That
+part is 2 receipt lines, 3 national-scale edits, 135 cell edits (133 in the cash set), 5 synthetic lines and the
+row-4 production grid. Its cell edits are the two fill-in methods' mean change. Every v4 item is linear in the cells
+it reads except the roads item's driver-mile share. The items applied once to the methods'-mean model (the September
+27 payload on `model.json`), with that share read off the payload's `meta.roads_mileage_key`, reproduce v4's part:
+every cell to 7.1e-15bn and the receipt lines to 4.4e-16bn.
+
+Each generation's payload is built in three parts:
+- its September 27 payload (`generation_corrections.json`);
+- the case's three national scales;
+- its own v4 tail.
+
+The tail is candidate v4's own item functions applied to the generation's September 27 model in the package's order,
+with each union input replaced by the generation's own (`v4_split.cjs`, which the late-arrival lane shares). The
+production grid is the generation's row-4 attribution. Costs come from candidate v4's `consumer.cjs`: `engine.js`
+with the payload's responses and capital rules, which also costs the item chain's part-built payloads. The adopted
+lane's `package.cjs` `evaluateFull` gives the same cost for every model here (difference 0).
+
+**Rules designed for this split.** Six items read a union input that needed a generation rule. The last column is the
+alternative's move on the Mexico-born, (a), low / high end, in the set:
+
+| Item | Rule used | Why | Alternative (key in `sensitivities`) | G1 move, $bn |
+|---|---|---|---|---|
+| 2 Production on the account's weights | `production.py`'s attribution re-run on the row-4 weights, all 3,888 scenarios (`v4_inputs.py`) | the union's grid is that attribution on the same weights; the generations add to it to 1.1e-13bn | none: exact | 0 |
+| 3 IRS-matched income-tax key | each generation's own change in the raked CBO-group × AGI-bin cells (`tax_key_split.py` re-runs the tax lane's raking with each generation's dollars in each cell) times its own stack factor on the line; the remainder (at most $0.24bn) goes by the cells after the stack; per method, then the methods' mean | the lane's rule for the CBO gradient, a ratio-type change of the same kind; the raked change is exact by generation (adds to the union's to 1e-15) | the union's shift by the generations' September 27 amounts on the line (`fit_by_amount`) | +0.46 / +0.06 |
+| 5 Tenant property tax | the group's contract-rent share by state (ACS group rent) split by the generations' persons in cash-rent homes in each state | the line is keyed on the rent the group pays where it lives | the same persons nationally (`tenant_national`) | −0.01 / −0.01 |
+| 5 Personal property tax | the group's vehicle share × the generation's part of the licence line (its adults key), per allocation | vehicle ownership follows adults, as licences do | the population key (`vehicles_by_population`) | +0.04 / +0.14 |
+| Roads keyed by miles | the union's methods'-mean driver-mile share × the generation's persons aged 5 and over over the union's (row-4 weights) | the union's formula puts every person aged 5+ at the group's miles; the split keeps that | the population key cells (`roads_by_population`) | −0.11 / −0.31 |
+| Pension switch (the set only) | Social Security: the union's accrual split by each generation's accrual per OASDI tax dollar, net of its future benefit-tax share at its own rate (pension lane at 9ea1beb: G1 1.041, G2 0.919, G3+ 0.962), × its OASDI receipts in the account. Part A: likewise, its Part A accrual per HI tax dollar (1.439, 1.593, 1.348) × its HI receipts. Tax on current benefits: its 2024 benefit tax (census-income mapping, per allocation) | the accrual per tax dollar differs by generation with age and earnings (the benefit formula is progressive); the account's own receipts carry the allocation | the payload's literal rule, the union's ratios on every generation (`pension_union_rules`) | −1.77 / −1.88 |
+| | | | the pension lane's Part A accruals as fixed shares (`part_a_lane_shares`) | +3.69 / +1.25 |
+
+The other items need no new rule, because their functions read the generation's own model:
+- item 1 puts the deficit at the generation's rental-key share;
+- item 4's capital key reads its evaluation;
+- the owner part of item 5 is a response;
+- 6a, 7 and state pricing apply the union's ratios and indexes to its own amounts.
+
+Convention (b) takes convention (a)'s pension ratios, which the pension lane measured by own generation.
+
+The Part A rule first used the lane's accruals as fixed shares. It was replaced before any output was kept, because
+fixed shares ignore the allocation. Under the shared allocation G1's HI receipts fall to 21.8% of the union's, yet
+it would keep 30.6% of the accrual. Fixed shares also import the lane's own HI tax base (G1 31.1% of it) in place of
+the account's (28.0%, personal). [CALCULATION: `v4_split.cjs` `split()`; the lane's `hi_arms.csv`, central row]
+
+**Results, the set** ($bn a year; low and high are the union's ends: 48, shared allocation, and 11, personal).
+Each column is rounded so the generations add to the printed union. [CALCULATION: `derived/generation_results_sept29.csv`]
+
+| (a) Children in their own generation | $bn, low end | $bn, high end | Own range over the 64 specifications, $bn | $ per member, low / high | $ per adult, low / high | Change from September 27, $bn |
+|---|---|---|---|---|---|---|
+| G1, born in Mexico | 97.2 | 87.1 | 72.0–113.5 | 8,810 / 7,893 | 9,202 / 8,244 | +3.5 / +8.8 |
+| G2, US-born, a parent born in Mexico | 151.6 | 179.3 | 151.6–179.3 | 10,575 / 12,513 | 17,002 / 20,118 | +24.0 / +26.4 |
+| G3+, US-born of US-born parents | 122.6 | 168.4 | 122.6–168.4 | 8,549 / 11,740 | 14,983 / 20,575 | +22.1 / +12.3 |
+| All three (the case) | 371.4 | 434.8 | | 9,353 / 10,950 | 13,426 / 15,718 | +49.6 / +47.5 |
+
+| (b) Minors with their parents (NAS 2017) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from September 27, $bn |
+|---|---|---|---|---|---|---|
+| G1 | 169.4 | 197.4 | 169.4–197.4 | 10,807 / 12,596 | 16,030 / 18,683 | +10.4 / +6.6 |
+| G2 | 110.6 | 121.8 | 106.6–126.0 | 9,064 / 9,978 | 12,413 / 13,664 | +23.3 / +26.8 |
+| G3+ | 91.4 | 115.6 | 91.4–115.6 | 7,724 / 9,771 | 11,167 / 14,127 | +15.9 / +14.1 |
+
+**Results, the cash set** (the pension switch off):
+
+| (a) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from September 27, $bn |
+|---|---|---|---|---|---|---|
+| G1 | 87.2 | 72.7 | 57.6–103.4 | 7,901 / 6,590 | 8,253 / 6,883 | −6.6 / −5.6 |
+| G2 | 117.7 | 143.3 | 117.7–143.3 | 8,213 / 10,000 | 13,205 / 16,077 | −9.8 / −9.6 |
+| G3+ | 89.8 | 145.8 | 89.8–145.8 | 6,260 / 10,162 | 10,971 / 17,811 | −10.7 / −10.4 |
+| All three | 294.7 | 361.8 | | 7,421 / 9,111 | 10,653 / 13,079 | −27.1 / −25.6 |
+
+| (b) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from September 27, $bn |
+|---|---|---|---|---|---|---|
+| G1 | 150.1 | 183.1 | 150.1–183.1 | 9,574 / 11,680 | 14,200 / 17,325 | −8.9 / −7.8 |
+| G2 | 77.8 | 85.8 | 70.6–93.2 | 6,375 / 7,033 | 8,730 / 9,631 | −9.5 / −9.1 |
+| G3+ | 66.8 | 92.9 | 66.8–92.9 | 5,648 / 7,852 | 8,165 / 11,352 | −8.7 / −8.7 |
+
+Per-member figures use the row-4 headcounts (`v4_inputs.py`): 39.71m members and 27.66m adults, the case's basis. The
+September 27 tables below use the corrected population key (40.90m and 28.77m), so per-member figures differ between
+the two sections by the basis as well as the case.
+
+The denominators, members / adults: (a) G1 11,036,701 / 10,566,525, G2 14,333,218 / 8,914,883, G3+ 14,342,575 /
+8,183,369; (b) G1 15,672,846, G2 12,208,153, G3+ 11,831,494, with the same adults; all three 39,712,493 / 27,664,776
+(ladder 274). Only the Mexico-born's count differs between the two bases: row 4 scales naturalized Mexico-born by
+0.856 and noncitizens by 0.778, and G2 and G3+ keep their CPS weights (under (b) the minors who move with them shift
+the counts by under 0.001m). The September 27 files (`generation_results.csv`, `generation_summary.json`) divide the
+Mexico-born's account totals by the CPS count, 12.22m members and 11.67m adults. They stay byte for byte (gate 1). On
+row 4 September 27's Mexico-born cost $8,496 / 7,096 per member under (a) and $15,049 / 18,057 per adult under (b);
+the September 27 section prints $7,673 / 6,408 and $13,620 / 16,343.
+[CALCULATION: `generation_results.csv` `cost_bn` ÷ `generation_results_sept29.csv` `population`, `adults`]
+
+**What moved from September 27, by item** ($bn, low / high end; the items in candidate v4's order, each costed after
+the ones before it, so they add to the change; [CALCULATION: `generation_summary_sept29.json` →
+`change_from_sept27_by_item`]):
+
+| Item | (a) G1 | (a) G2 | (a) G3+ | Union |
+|---|---:|---:|---:|---:|
+| 1 Public housing's deficit, tenant key | −0.75 / −0.74 | −0.76 / −0.77 | −0.18 / −0.18 | −1.69 / −1.69 |
+| 2 Production on the account's weights | +1.40 / +0.94 | +0.13 / +0.09 | +0.11 / +0.08 | +1.64 / +1.11 |
+| 3 IRS-matched income-tax key | −1.01 / −0.67 | −1.46 / −1.92 | −0.73 / −0.51 | −3.20 / −3.10 |
+| 4 Public housing's capital, tenant key | −0.15 / −0.23 | −0.16 / −0.24 | −0.04 / −0.06 | −0.35 / −0.53 |
+| 5 Long-run property taxes | −7.65 / −7.75 | −9.37 / −9.34 | −10.17 / −10.10 | −27.19 / −27.19 |
+| 6a Payroll compliance | +0.16 / +0.34 | +0.11 / +0.11 | +0.13 / +0.09 | +0.40 / +0.54 |
+| 7 Workers' compensation | −0.23 / −0.23 | −0.19 / −0.17 | −0.53 / −0.33 | −0.95 / −0.73 |
+| Roads keyed by miles | +0.92 / +2.01 | +0.88 / +1.63 | +0.22 / +0.13 | +2.02 / +3.77 |
+| State pricing | +0.74 / +0.75 | +0.96 / +0.99 | +0.51 / +0.53 | +2.21 / +2.27 |
+| Pension switch (the set only) | +10.03 / +14.38 | +33.85 / +36.02 | +32.83 / +22.62 | +76.71 / +73.02 |
+| **Change** | +3.46 / +8.80 | +23.99 / +26.40 | +22.15 / +12.27 | +49.60 / +47.47 |
+
+Rounded so each column adds to its change and each row to the union; one cell in a few moves by 0.01. The union
+column is candidate v4's attribution in this order (its marginals; its "alone" figures differ by the pairwise
+interactions it reports). Under (b) the pension switch adds $19.3 / 14.4bn to the Mexico-born, $32.8 / 36.0bn to G2
+and $24.6 / 22.7bn to G3+ (`change_from_sept27_by_item.b`).
+
+The pension switch moves most. The accrual follows the payroll taxes a generation pays this year. The benefits it
+replaces follow this year's beneficiaries. Under (a) the Mexico-born's Social Security and Medicare cost therefore
+rises less than the US-born generations'. The property item (5) lowers every generation's cost, by $7.7–10.2bn
+under (a).
+
+**Gates**, all passing (`run_generations_v4.cjs`: 27 in the set, 26 in the cash set; logs in the session scratchpad):
+- the union's items reproduce v4's part of the payload: 135 cells to 7.1e-15bn, receipt lines to 4.4e-16bn, with the
+  same synthetic lines;
+- the September 27 generation payloads add to its `corrections.json` in all 278 cells, and their models to the
+  union's;
+- item 3's generation shifts add to the union's in each method and in the mean (4.4e-16bn); the production grids add
+  to the payload's in all 3,888 scenarios (5.7e-14bn);
+- under each convention the generations' tails add to the union's (1.0e-12bn), and each payload gives the model its
+  item chain built (exact);
+- **oracle:** the union reproduces the adopted lane's band at specifications 48 / 11 (`main_case_bands.csv`, rows
+  `adopted` and `cash_set`): $371.4146–434.8410bn and $294.7011–361.8175bn, as the mean of the two fill-in methods.
+  The tolerance is 1e-4, the band's four decimals. The set also reproduces the lane's cost at all 64 specifications
+  (`per_spec.csv`, 1.7e-13bn). In both sets the uncorrected model reproduces the row
+  `uncorrected_at_adopted_responses`, $313.2581–378.9158bn (1e-4);
+- the adopted lane's `package.cjs` `evaluateFull` (for the cash set, on `forPayload` of its payload) gives the cost of
+  every model here, union and generations, corrected and uncorrected, at every specification (difference 0);
+- the generations add to the union in all 64 specifications, corrected and uncorrected (1.6e-12bn), and so do their
+  capital returns (total, by level, by part) and enterprise receipts;
+- the change by item starts at the September 27 band (4.5e-5) and at each generation's row of
+  `generation_results.csv` (half its last printed digit), ends at the case's cost (5.7e-14bn), and adds across
+  generations item by item (1.5e-12bn);
+- every alternative's split adds to the union's (1.0e-12bn).
+
+`rerun_lane.py` gates after the repoint (times from `date`, JST):
+- gate 1, the twelve September 27 commands: IDENTICAL, 48/48 files, exit 0 (20:16–20:18). The five v4 scripts were
+  allowed unrun.
+- gate 4, the twelve commands plus step 7's four: pass 1 IDENTICAL, 48/48, exit 0 (20:23–20:24); pass 2 IDENTICAL,
+  48/48, exit 0 (20:31–20:35). `v4_split.cjs`, a module, and `run_all.sh`, whose steps the list names, were allowed
+  unrun.
+
+Rerun after the reboot, with the same command lists:
+- step 7 directly (21:05): `v4_inputs.py` 20 gates and `tax_key_split.py` 9, all passing; `run_generations_v4.cjs` 27
+  and 26 gates, all passing, oracle as above.
+- gate 1: IDENTICAL, 48/48, exit 0 (21:05–21:09).
+- gate 4: pass 1 IDENTICAL, 48/48, exit 0 (21:09–21:11); pass 2 IDENTICAL, 48/48, exit 0 (21:11–21:13). No script
+  was reported NOT RUN. Of the tracked files, only `RESULT.md` and `run_all.sh` differ from HEAD.
+
+**Files.**
+- New scripts: `v4_inputs.py`, `tax_key_split.py`, `v4_split.cjs` (a module, shared with the late-arrival lane) and
+  `run_generations_v4.cjs`. `run_all.sh` gains step 7.
+- New outputs: `derived/v4_inputs.json` (`v4_inputs.py`), `derived/tax_key_by_generation.json` (`tax_key_split.py`),
+  both read by `run_generations_v4.cjs` (the tax file for item 3), and
+  `derived/generation_{results,summary,corrections}_sept29{,_cash}.*`.
+- `generation_results.csv`, `generation_summary.json` and `generation_corrections.json` keep the September 27
+  case.
+- For consumers such as the world ledger's pins: each sept29 file is the default name with `_sept29`, in the same
+  layout. `generation_corrections_sept29.json` applies to the same `model_*.json`. `generation_summary_sept29.json`
+  carries `low_spec` and `high_spec` as the default does, plus `specifications`, `rules`, `sensitivities` and
+  `change_from_sept27_by_item`. The results CSV adds three columns: `housing_enterprise_surplus_receipt_bn`,
+  `sept27_cost_bn` and `change_from_sept27_bn`.
+- Each sept29 corrections file names the case's lane in `meta.case_lane` (`main_case_2026_09_29`) and the union's
+  payload in `meta.union`. The set's is the adopted lane's `derived/corrections.json`. The cash set's is candidate
+  v4's `corrections_v4_cash.json`, which the adopted lane reads for its own `cash_set` row; that lane publishes no
+  cash payload.
+
+**Not computed.**
+- State pricing by each generation's own state mix. The payload's rule applies the union's price indexes to each
+  generation's keys; indexes by generation would need the state-pricing lane's inputs by generation.
+- The ledger bridge (`compare_ledger.py`) stays on the September 27 run.
+
+**Reproduce** (from the repository root; step 7 of `run_all.sh`):
+```
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/generation_account_2026_09_24/v4_inputs.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with xlrd python3 infra/immigration-fiscal/generation_account_2026_09_24/tax_key_split.py
+node infra/immigration-fiscal/generation_account_2026_09_24/run_generations_v4.cjs --case sept29
+node infra/immigration-fiscal/generation_account_2026_09_24/run_generations_v4.cjs --case sept29_cash
+```
+
+Log (times from `date`, JST): 15:17 brief read; 16:43 inputs built and gated (`v4_inputs.py`, `tax_key_split.py`);
+17:08 first sept29 outputs; 17:12 gate 1 IDENTICAL; 17:14 Part A rule replaced (per HI tax dollar); 17:21 outputs
+rebuilt; 20:15 repointed to the adopted lane (40c4ba7), `meta.union` on its payload; 20:16 outputs rebuilt, results
+unchanged; 20:16–20:35 `rerun_lane.py` gates 1 and 4; about 20:51 reboot; 21:05–21:13 step 7 and gates 1 and 4
+rerun.
 
 ## September 27 case (2026-09-27)
 

@@ -6,6 +6,9 @@
 # assistance, the return on public capital, the government enterprises). The last three steps re-run the
 # September 26 case, the schools case and the September 27 case, which must still pass and leave their
 # lanes byte-identical (check `git status` on all three afterwards); they write outside this lane.
+# Step 7 is the main case adopted on 2026-09-29 (candidate v4's set; v4_split.cjs names its lane): the row-4
+# and tax-key inputs, then --case sept29 and sept29_cash, which read step 5's outputs and write only
+# *_sept29* files beside them.
 #   bash infra/immigration-fiscal/generation_account_2026_09_24/run_all.sh
 # The schools case (--case sept26_schools, commit 0f22f0c), the one-year scenario (--case sept26,
 # main_case_2026_09_26) and the September 24 record (--case sept24, commit ba12f3c) reproduce their outputs
@@ -31,6 +34,10 @@ step "4 rules";        py "$LANE/correction_rules.py"
 step "4 consumption";  uv run --no-project --with openpyxl python3 "$LANE/consumption_split.py"
 step "5 generations";  node "$LANE/run_generations.cjs"
 step "6 ledger";       py "$LANE/compare_ledger.py"
+step "7 v4 inputs";    py "$LANE/v4_inputs.py"
+step "7 v4 tax key";   uv run --no-project --with openpyxl --with xlrd python3 "$LANE/tax_key_split.py"
+step "7 v4 case";      node "$LANE/run_generations_v4.cjs" --case sept29
+step "7 v4 cash set";  node "$LANE/run_generations_v4.cjs" --case sept29_cash
 step "main case, one-year scenario"; node "$LANE/../main_case_2026_09_26/main_case.cjs"
 step "main case, schools"; node "$LANE/../main_case_schools_full_2026_09_26/main_case.cjs"
 step "main case";      node "$LANE/../main_case_long_run_2026_09_27/main_case.cjs"

@@ -1,0 +1,51 @@
+{
+ "a": {
+  "G1": {
+   "personal": 0.000457907088331027,
+   "shared": 0.0006237092410889458
+  },
+  "G2": {
+   "personal": 0.0007930432913261579,
+   "shared": 0.0006035186595822022
+  },
+  "G3plus": {
+   "personal": 0.000210143151759358,
+   "shared": 0.0002568347285362531
+  }
+ },
+ "b": {
+  "G1": {
+   "personal": 0.0004623157964255692,
+   "shared": 0.0006375934179207055
+  },
+  "G2": {
+   "personal": 0.0007895853959426283,
+   "shared": 0.0007625058736674718
+  },
+  "G3plus": {
+   "personal": 0.00020919233904834536,
+   "shared": 8.39633376192063e-05
+  }
+ },
+ "meta": {
+  "frame": "infra/immigration-fiscal/generation_account_2026_09_24/frame.py",
+  "generations": [
+   "G1",
+   "G2",
+   "G3plus"
+  ],
+  "layout": "share change of the national line before the stack factor: union, then convention -> generation -> allocation; the package books national x change x the union's stack factor",
+  "line": "federal_income_tax",
+  "national_bn": 2403.242,
+  "raking_iterations": {
+   "personal": 180,
+   "shared": 179
+  },
+  "source": "generation_account_2026_09_24/tax_key_split.py",
+  "variant": "irs_2023_raked_with_cbo_groups"
+ },
+ "union": {
+  "personal": 0.0014610935314165324,
+  "shared": 0.001484062629207368
+ }
+}
