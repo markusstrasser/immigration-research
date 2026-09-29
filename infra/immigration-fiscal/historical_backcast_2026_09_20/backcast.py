@@ -22,6 +22,12 @@ sept26_schools adds the main case with schools at full average cost (`*_schools_
 (CBO's one-year school response, 0.63-0.66) adds the `*_sept26_*` concepts. Each case also writes
 every earlier case's concepts, which do not change value by value. An earlier case with --out-dir DIR
 writes the files as they stood on that case, byte for byte.
+
+sept29 (the main case adopted on 2026-09-29, candidate v4) adds the `*_sept29_*` concepts and writes
+derived/sept29/ beside the default files, which stay September 27's. Its base is again the schools case at the
+case's end specifications; its parts are September 27's four additions, the capital return at the case's values
+and the change from September 27 line by line (case_components.cjs --case sept29), each carried back with its
+own national series (V4_RECEIPT_CELLS and v4_series()).
 """
 from __future__ import annotations
 
@@ -53,15 +59,23 @@ class Case(NamedTuple):
     base_tag: str               # that case's tag
     base_receipts: str          # that case's key in the lane's summary.json group_receipts_bn
     parts: str | None = None    # additions carried back by their own series (case_components.cjs output)
+    rekeyed_receipts: str = "adopted"   # the group_receipts_bn key that differs from base_receipts by the re-key alone
+    out: str | None = None      # the case's own directory under derived/ (None: derived/)
 
 
 # Main cases after September 24, in adoption order. Receipts are matched by tag within concept names, so
-# no tag may contain another ("_sept26_" would also match "_sept26_schools_").
+# no tag may contain another ("_sept26_" would also match "_sept26_schools_"). The default run is DEFAULT_CASE's.
+SEPT29_LANE = "main_case_2026_09_29"
 LATER_CASES = {"sept26": Case("main_case_2026_09_26", "_sept26_", "adopted_2026_09_24", "_corrected_", "adopted_2026_09_24"),
                "sept26_schools": Case("main_case_schools_full_2026_09_26", "_schools_full_", "adopted_2026_09_26",
                                       "_sept26_", "adopted_2026_09_26"),
                "sept27": Case("main_case_long_run_2026_09_27", "_sept27_", "schools_case", "_schools_full_",
-                              "adopted_2026_09_26_schools", "case_components_sept27.json")}
+                              "adopted_2026_09_26_schools", "case_components_sept27.json"),
+               # Like September 27 it starts from the schools case; its receipts differ from the schools case's by
+               # September 27's re-key and by its own receipt changes, which its v4 parts carry.
+               "sept29": Case(SEPT29_LANE, "_sept29_", "schools_case", "_schools_full_", "adopted_2026_09_26_schools",
+                              "case_components_sept29.json", "adopted_2026_09_27", "sept29")}
+DEFAULT_CASE = "sept27"
 # A case's additions and the national series each is carried back with: the account's own source cell
 # (full_account_spending_2026_09_20/derived/categories.csv; the receipt in model.json), real, 2024 = 1,
 # times the group's population-share path, the share path this back-cast gives every line. The capital
@@ -80,6 +94,35 @@ CAPITAL_LINES = {"k12": (62, 56, 73), "college": (62,), "pos_sl": (63,), "pos_fe
                  "health_fed": (43,), "gps_sl": (59,), "gps_fed": (41,), "hwy_sl": (67,), "rec_sl": (64, 62),
                  "hwy_fed": (49,), "air_fed": (47,), "rec_fed": (46,)}
 ENTERPRISE_FA_LINE = 79
+# September 29: the national series of each part of the change from September 27 (case_components.cjs --case sept29),
+# NIPA cells summed ($ millions by year). A receipt line follows its own cells (NIPA 3.1, 3.4-3.6; the cells of the
+# debt lane's RECEIPT_SERIES_V4, both levels of government together), a spending line its categories.csv source cells,
+# a synthetic spending line (roads by miles, state pricing) its parent's. Four rules replace a line's own cells:
+#   - enterprise_surplus: its change is public housing's deficit moved to its own line (NIPA 3.8 line 13);
+#   - housing_enterprise_surplus: that deficit and the federal operating subsidy consolidated with it, a fixed part of
+#     federal housing subsidies (NIPA 3.13 line 4; the part is the line's national total less line 13);
+#   - the pension accrual (v4_*_accrual): its contributions, employees' and employers' plus the self-employed at
+#     se_oasdi_share (Medicare's Part A: HI, the rest of the self-employed), NIPA 3.6; the benefits it no longer
+#     charges (v4_*_cash) follow the line's own cells;
+#   - the production grid's change (P and F): nominal GDP, NIPA 1.1.5 line 1.
+V4_RECEIPT_CELLS = {
+    "federal_income_tax": "T30400-A:3", "state_local_income_tax": "T30400-A:9", "personal_motor_vehicle": "T30400-A:10",
+    "personal_property_tax": "T30400-A:11", "other_personal_tax": "T30400-A:12",
+    "employee_oasdi": "T30600-A:24", "employee_hi": "T30600-A:25", "self_employment_oasdi_hi": "T30600-A:26",
+    "employer_oasdi": "T30600-A:5", "employer_hi": "T30600-A:6", "medicare_supplementary_premiums": "T30600-A:27",
+    "other_domestic_social_contributions": "T30600-A:7;T30600-A:12;T30600-A:13;T30600-A:14;T30600-A:15;T30600-A:16;"
+                                           "T30600-A:28;T30600-A:29;T30600-A:30;T30600-A:17;T30600-A:31",
+    "corporate_capital": "T30100-A:5", "corporate_labor": "T30100-A:5",
+    "general_sales_tax": "T30500-A:20", "excise_selective_sales": "T30500-A:4;T30500-A:23", "customs_duties": "T30500-A:15",
+    "modeled_owner_property": "T30300-A:9", "remaining_production_property": "T30300-A:9",
+    "tenant_occupied_property": "T30300-A:9", "personal_current_transfers": "T30100-A:17"}
+# Receipt lines that are a part of their cell rather than all of it: the property-tax lines of S&L property taxes.
+V4_CARVED = ("modeled_owner_property", "remaining_production_property", "tenant_occupied_property")
+V4_HOUSING = ("T30800-A:13", "T31300-A:4")      # public housing's deficit; federal housing subsidies
+V4_ACCRUAL = {"oasdi": {"T30600-A:24": "employee_oasdi", "T30600-A:5": "employer_oasdi"},
+              "hi": {"T30600-A:25": "employee_hi", "T30600-A:6": "employer_hi"}}
+V4_SELF_EMPLOYED = ("T30600-A:26", "self_employment_oasdi_hi")
+V4_GDP = ("T10105-A:1", 29298.013)            # nominal GDP and its 2024 value in the pinned workbook, $bn
 
 
 def later_cases(case: str) -> list[str]:
@@ -219,7 +262,55 @@ def capital_paths(real: pd.Series, components: list[dict]) -> dict[str, pd.Serie
     return paths
 
 
-def carried_parts(case: str, book: pd.ExcelFile, real: pd.Series, share: pd.Series) -> dict[str, dict[str, pd.Series]]:
+def v4_series(data: dict, book: pd.ExcelFile, gdp_book: pd.ExcelFile, real: pd.Series, categories: pd.DataFrame,
+              receipt_national: dict[str, float]) -> dict[str, pd.Series]:
+    """Each September 29 part's national series, real, 2024 = 1 (V4_RECEIPT_CELLS). Gates: a line's own cells are
+    its national total in 2024 (1e-3; a spending line's categories.csv total, a receipt line's total in the case);
+    a carved line is a part of its cell; the enterprise surplus's move is NIPA 3.8 line 13; the consolidated operating
+    subsidy is a part of federal housing subsidies; the accrual's cells are its receipt lines' national totals; every
+    part has a series."""
+    parts = {k: v for concept in data["concepts"].values() for k, v in concept.get("v4_parts", {}).items()}
+    cells = lambda refs: sum(line(gdp_book if ref.startswith("T1") else book, ref) for ref in refs.split(";")) / 1e3  # noqa: E731
+    out = {}
+    for part, p in parts.items():
+        lid, want = p["line"], p["national_bn"]
+        if p["rule"] == "production":
+            nominal, want = cells(V4_GDP[0]), V4_GDP[1]
+        elif p["rule"] == "accrual":
+            own = V4_ACCRUAL[p["contributions"]]
+            se = data["pension_accrual"]["se_oasdi_share"]
+            se = se if p["contributions"] == "oasdi" else 1 - se
+            nominal = cells(";".join(own)) + se * cells(V4_SELF_EMPLOYED[0])
+            want = sum(receipt_national[x] for x in own.values()) + se * receipt_national[V4_SELF_EMPLOYED[1]]
+        elif p["side"] == "spending":
+            source = p["parent"] or lid
+            nominal = cells(categories.loc[source, "source_cells"])
+            want = categories.loc[source, "national_bn"]
+        elif lid == "enterprise_surplus":
+            nominal = cells(V4_HOUSING[0])
+            want = -data["v4_enterprise_surplus_national_move_bn"]
+        elif lid == "housing_enterprise_surplus":
+            deficit, subsidies = cells(V4_HOUSING[0]), cells(V4_HOUSING[1])
+            subsidy = (want - deficit[2024]) / subsidies[2024]
+            if not -1 < subsidy < 0:
+                raise ValueError(f"[BLOCKED] {lid}: the consolidated subsidy is not a part of housing subsidies ({subsidy})")
+            nominal = deficit + subsidy * subsidies
+        elif lid in V4_RECEIPT_CELLS:
+            nominal = cells(V4_RECEIPT_CELLS[lid])
+            if lid in V4_CARVED:
+                if not 0 < want <= nominal[2024] + 1e-3:
+                    raise ValueError(f"[BLOCKED] {lid} {want} is not a part of {V4_RECEIPT_CELLS[lid]} {nominal[2024]}")
+                want = nominal[2024]
+        else:
+            raise ValueError(f"[BLOCKED] {part}: no national series for the {p['side']} line {lid}")
+        if abs(nominal[2024] - want) > 1e-3:
+            raise ValueError(f"[BLOCKED] {part}: its cells' 2024 value {nominal[2024]} is not {want}")
+        out[part] = nominal.reindex(YEARS) * real / nominal[2024]
+    return out
+
+
+def carried_parts(case: str, book: pd.ExcelFile, real: pd.Series, share: pd.Series,
+                  gdp_book: pd.ExcelFile) -> dict[str, dict[str, pd.Series]]:
     """Concept name -> {part: $bn by year} for a case carried back by component: each addition at its 2024
     value times its national series (real, 2024 = 1) times the group's population-share path; the capital
     return by part (core, block, enterprise) from its components' stock paths."""
@@ -237,12 +328,16 @@ def carried_parts(case: str, book: pd.ExcelFile, real: pd.Series, share: pd.Seri
         if abs(nominal[2024] - want) > 1e-3:
             raise ValueError(f"[BLOCKED] {cell} 2024 is {nominal[2024]}, the account's {lid} {want}")
         index[part] = nominal.reindex(YEARS) * real / nominal[2024]
+    index.update(v4_series(data, book, gdp_book, real, categories, receipt_national))
     components = next(iter(data["concepts"].values()))["components"]
     stock = capital_paths(real, components)
     out = {}
     for concept, v in data["concepts"].items():
         for end, e in v["ends"].items():
-            parts = {part: e["additions_bn"][part] * index[part] * share for part in ADDITIONS}
+            missing = [part for part in e["additions_bn"] if part not in index]
+            if missing:
+                raise ValueError(f"[BLOCKED] {concept}: no national series for {', '.join(missing)}")
+            parts = {part: e["additions_bn"][part] * index[part] * share for part in e["additions_bn"]}
             for group in ("core", "block", "enterprise"):
                 parts[f"capital_{group}"] = sum(e["capital_bn"][k["id"]] * stock[k["id"]] for k in components
                                                 if k["part"] == group) * share
@@ -270,17 +365,22 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--bea-dir", type=Path,
                         default=ROOT / "sources/immigration-fiscal/data/external/bea_nipa")
-    parser.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24"), default=list(LATER_CASES)[-1],
-                        help="a case after September 24 (default: the last in LATER_CASES, sept27: long-run road "
-                             "and park responses, rental assistance, the enterprises and the return on public "
-                             "capital; sept26_schools: schools at full average cost; sept26: CBO's one-year school "
-                             "response, 0.63-0.66) or sept24: the files as of 2026-09-24")
-    parser.add_argument("--out-dir", type=Path, default=HERE / "derived")
+    parser.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24"), default=DEFAULT_CASE,
+                        help="a case after September 24 (default: sept27, long-run road and park responses, rental "
+                             "assistance, the enterprises and the return on public capital; sept29: the main case "
+                             "adopted 2026-09-29, candidate v4; sept26_schools: schools at full average cost; sept26: "
+                             "CBO's one-year school response, 0.63-0.66) or sept24: the files as of 2026-09-24")
+    parser.add_argument("--out-dir", type=Path, default=None,
+                        help="default: derived/, or the case's own directory under it (sept29: derived/sept29/)")
     args = parser.parse_args()
+    if args.out_dir is None:
+        own = LATER_CASES[args.case].out if args.case in LATER_CASES else None
+        args.out_dir = HERE / "derived" / (own or "")
     section3 = workbook(args.bea_dir / "Section3All_xls.xlsx")
     receipts = series(section3, "T30100-A", "Current receipts")
     spending = series(section3, "T30100-A", "Current expenditures")
-    deflator = series(workbook(args.bea_dir / "Section1All_xls.xlsx"), "T10109-A", "Gross domestic product")
+    section1 = workbook(args.bea_dir / "Section1All_xls.xlsx")
+    deflator = series(section1, "T10109-A", "Gross domestic product")
     people = series(workbook(HERE / "_cache/Section7All_xls.xlsx"), "T70100-A", "Population (midperiod, thousands)")
     if abs(receipts[2024] - 8008290) > 0.5 or abs(spending[2024] - 10061458) > 0.5:
         raise ValueError("[BLOCKED] BEA 2024 totals differ from the complete account's")
@@ -325,11 +425,13 @@ def main() -> None:
         if c.parts is not None:
             # The base part splits on the starting case's receipts. The case's receipts differ from them only
             # by the enterprise receipt's re-key, which the enterprise_surplus part carries with its own series.
+            # September 29's also differ by its own receipt changes, which its v4 parts carry: its lane records
+            # September 27's receipts (rekeyed_receipts), which must differ from the schools case's by the re-key.
             move = summary_c["enterprises"]["receipt_rekey"]["reference_edit_bn"]["shared"]
-            if abs(after_c["adopted"]["shared"] - after_c[c.base_receipts]["shared"] - move) > 1e-9:
+            if abs(after_c[c.rekeyed_receipts]["shared"] - after_c[c.base_receipts]["shared"] - move) > 1e-9:
                 raise ValueError(f"[BLOCKED] {c.lane} receipts move by more than the enterprise re-key")
             receipts_for[c.tag] = receipts_for[c.base_tag]
-            carried.update(carried_parts(later, section3, real, share))
+            carried.update(carried_parts(later, section3, real, share, section1))
     for name, value in concepts.items():
         # cost = spending charged to the group under this response case, less its receipts
         g_receipts = next((v for tag, v in receipts_for.items() if tag in name), group_receipts)

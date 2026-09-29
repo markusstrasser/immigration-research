@@ -74,6 +74,80 @@ The flat rule holds every part per person. `derived/case_parts_windows.csv` give
 cash part only).
 The capital return is an imputed resource cost, not a payment. `--case sept26_schools` reproduces c0297e4.
 
+## v4 case (sept29), 2026-09-29
+
+`--case sept29` carries back the adopted v4 main case (`main_case_2026_09_29/`, commit 40c4ba7) as the
+`*_sept29_*` concepts. It writes `derived/sept29/`: `backcast_annual.csv`, `backcast_windows.csv`,
+`case_parts_annual.csv` and `case_parts_windows.csv`, with the default's names. The default stays `--case sept27`,
+and its files did not move. Run `node case_components.cjs --case sept29` first; it writes
+`derived/case_components_sept29.json`. Run and gated 17:17–17:21 JST (log file times). Code: `case_components.cjs`,
+`backcast.py`, `test_backcast.py`.
+
+**The rule designed here: v4's change is carried back line by line.** The base and September 27's four additions
+are carried back as above, at September 27's values at the case's end specifications. The capital return takes the
+case's values. The change from September 27 is split by engine line: `v4_<line>` is the line's effect less
+September 27's, 32 parts with the split ones. Each part follows its own national series times the group's population-share path
+(`V4_RECEIPT_CELLS`, `v4_series()`):
+
+- A receipt line follows its NIPA cells. Personal current taxes: 3.4 lines 3 and 9–12. Social contributions: 3.6 lines 5–7,
+  12–17 and 24–31. Sales taxes and customs: 3.5 lines 4, 15, 20 and 23. Property taxes: 3.3 line 9; the three
+  property lines are parts of that cell. Corporate taxes: 3.1 line 5. Personal current transfers: 3.1 line 17.
+- A spending line follows its category's source cells in `full_account_spending_2026_09_20/derived/categories.csv`.
+  The synthetic lines, roads by miles and state pricing, follow their parent's cells.
+- The pension switch is split in two:
+  - The accrual it charges follows the contributions that earn it. `v4_social_security_accrual` is ratio_net × the
+    group's OASDI receipts; it follows NIPA 3.6 lines 24 and 5, plus the self-employed at se_oasdi_share of line 26.
+    `v4_medicare_part_a_accrual` follows lines 25 and 6, plus the rest of line 26.
+  - The benefits it no longer charges (`v4_*_cash`) follow the benefit lines' own cells.
+- The production grid's change, `v4_production_private` (−dP) and `v4_production_receipts` (−dF), follows nominal
+  GDP, NIPA 1.1.5 line 1.
+- The enterprise surplus's change is public housing's deficit moving to its own line, so it follows that deficit,
+  NIPA 3.8 line 13. The national move of $40.298bn equals that line.
+- `v4_housing_enterprise_surplus` follows the deficit plus the consolidated operating subsidy, as a fixed part of
+  federal housing subsidies (NIPA 3.13 line 4).
+
+Each series must equal its line's national total in 2024 (1e-3), or the run stops.
+
+Alternative: carry v4's change back as one block with the whole-budget rules. That would carry the pension accrual,
+which moves with payroll contributions, and the property-tax receipts, which move with NIPA 3.3 line 9, on national
+current expenditure and receipts. The accrual parts are the largest carried item. Over 2015–2024 at the low end
+(flat rule), the two accrual parts carry +$1.44tn and the benefits no longer charged −$0.72tn.
+
+**Headline.** The 10-year total for 2015–2024, `net_cost_cbo_informed_sept29`, low / high end, 2024 dollars:
+
+| Rule | sept29 | September 27 |
+|---|---:|---:|
+| flat | $3.54tn / $4.15tn | $3.07tn / $3.69tn |
+| ratio | $3.21tn / $3.77tn | $2.77tn / $3.35tn |
+| income | $3.50tn / $4.07tn | $3.07tn / $3.65tn |
+
+The 15-year totals (2010–2024) are $5.16tn / $6.05tn and the 20-year totals $6.56tn / $7.68tn, flat. v4's
+line-by-line change carries $0.47tn / $0.44tn of the 10-year flat total. The proportional reference,
+`net_cost_full_proportional_sept29`, gives $3.80tn / $4.27tn. The cash set is not carried back as a concept of its
+own. Its pension difference includes the federal income tax on benefits, and that tax sits inside
+`v4_federal_income_tax` with the line's other changes. Splitting it out would need a new part and series (about
+$2.1bn in 2024, at the low end).
+[CALCULATION: `backcast.py --case sept29` → `derived/sept29/backcast_windows.csv`, `case_parts_windows.csv`]
+
+**Gates.**
+
+| Gate | Result |
+|---|---|
+| 1. Existing outputs reproduce | `rerun_lane.py` with the five commands below: IDENTICAL, 20 of 20 files (15 tracked, 5 new); the tracked files equal HEAD |
+| 2. sept29 outputs exist and the lane's gates pass | `derived/case_components_sept29.json` (17 gates) and `derived/sept29/` (4 files). `backcast.py`'s guards stop on any failure. `pytest` 7 passed, including the rebuild of both case_components files and of `derived/sept29/` |
+| 3. Oracle | Year 2024 of `net_cost_cbo_informed_sept29` is 371.4146 / 434.8410 under every rule, equal to the oracle at the file's 4-decimal rounding (tolerance 1e-4). `case_components.cjs` gates the parts' sum to the case's cost at 1e-9. The cash set, 294.7011 / 361.8175, is not a concept here (above) |
+| 4. Two passes after the sept29 run | both IDENTICAL, 20 of 20 |
+
+```sh
+node infra/immigration-fiscal/historical_backcast_2026_09_20/case_components.cjs --case sept29
+uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/backcast.py --case sept29
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/historical_backcast_2026_09_20 \
+  "node {lane}/case_components.cjs" "node {lane}/case_components.cjs --case sept29" \
+  "uv run --no-project python3 {lane}/backcast.py" "uv run --no-project python3 {lane}/backcast.py --case sept29" \
+  "cd {lane} && uv run --no-project python3 backcast_categories.py" \
+  --allow-unrun infra/immigration-fiscal/historical_backcast_2026_09_20/test_backcast.py
+```
+
 ## Rules
 
 The ACS self-identified count is scaled by 40.897m / 38.990m to the account's
