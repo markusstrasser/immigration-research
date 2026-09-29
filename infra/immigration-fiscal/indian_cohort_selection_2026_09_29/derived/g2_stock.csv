@@ -1,0 +1,11 @@
+source,group,parent_cohort,n,weighted,age_0-17,age_18-24,age_25-34,age_35-44,age_45-54,age_55-64,age_65+
+CPS ASEC 2024-25,either parent India-born,not observed,1276,1.61732e+06,0.612013,0.141939,0.112605,0.0762991,0.0286895,0.017941,0.0105143
+CPS ASEC 2024-25,both parents India-born,not observed,1070,1.34865e+06,0.612494,0.14377,0.108423,0.086161,0.0273616,0.0161214,0.0056691
+ACS 2024 co-resident,"US-born child of householder, India-born parent",all,9462,1.02332e+06,0.807679,0.120455,0.0556249,0.0116884,0.00428899,0.000263848,0
+ACS 2024 co-resident,"US-born child of householder, India-born parent",pre-1980,459,45530,0.319262,0.242346,0.210828,0.13725,0.0890841,0.00122996,0
+ACS 2024 co-resident,"US-born child of householder, India-born parent",1980-89,1064,110438,0.510658,0.191347,0.252956,0.043246,0.00104131,0.000751553,0
+ACS 2024 co-resident,"US-born child of householder, India-born parent",1990-99,2190,218883,0.642407,0.28078,0.0736649,0.00232544,0.000223864,0.000598493,0
+ACS 2024 co-resident,"US-born child of householder, India-born parent",2000-09,3410,365684,0.925116,0.065748,0.00750648,0.00116767,0.000462148,0,0
+ACS 2024 co-resident,"US-born child of householder, India-born parent",2010-14,1268,154792,0.978571,0.0196005,0.00182826,0,0,0,0
+ACS 2024 co-resident,"US-born child of householder, India-born parent",2015-19,681,81107,0.980384,0.0189379,0.000678117,0,0,0,0
+ACS 2024 co-resident,"US-born child of householder, India-born parent",2020+,390,46884,0.974256,0.0219051,0.00383926,0,0,0,0

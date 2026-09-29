@@ -1,0 +1,37 @@
+fiscal_year,land_border_region,component,encounters,source_file
+2020,Northern Land Border,Office of Field Operations,2999,ne-fy20-fy23-aor.csv
+2020,Northern Land Border,U.S. Border Patrol,129,ne-fy20-fy23-aor.csv
+2020,Other,Office of Field Operations,15629,ne-fy20-fy23-aor.csv
+2020,Other,U.S. Border Patrol,6,ne-fy20-fy23-aor.csv
+2020,Southwest Land Border,Office of Field Operations,28,ne-fy20-fy23-aor.csv
+2020,Southwest Land Border,U.S. Border Patrol,1092,ne-fy20-fy23-aor.csv
+2021,Northern Land Border,Office of Field Operations,2183,ne-fy20-fy23-aor.csv
+2021,Northern Land Border,U.S. Border Patrol,42,ne-fy20-fy23-aor.csv
+2021,Other,Office of Field Operations,25848,ne-fy20-fy23-aor.csv
+2021,Other,U.S. Border Patrol,1,ne-fy20-fy23-aor.csv
+2021,Southwest Land Border,Office of Field Operations,33,ne-fy20-fy23-aor.csv
+2021,Southwest Land Border,U.S. Border Patrol,2555,ne-fy20-fy23-aor.csv
+2022,Northern Land Border,Office of Field Operations,17094,nationwide-encounters-fy22-fy25-aor.csv
+2022,Northern Land Border,U.S. Border Patrol,237,nationwide-encounters-fy22-fy25-aor.csv
+2022,Other,Office of Field Operations,28281,nationwide-encounters-fy22-fy25-aor.csv
+2022,Other,U.S. Border Patrol,7,nationwide-encounters-fy22-fy25-aor.csv
+2022,Southwest Land Border,Office of Field Operations,72,nationwide-encounters-fy22-fy25-aor.csv
+2022,Southwest Land Border,U.S. Border Patrol,18236,nationwide-encounters-fy22-fy25-aor.csv
+2023,Northern Land Border,Office of Field Operations,28380,nationwide-encounters-fy22-fy25-aor.csv
+2023,Northern Land Border,U.S. Border Patrol,1630,nationwide-encounters-fy22-fy25-aor.csv
+2023,Other,Office of Field Operations,25128,nationwide-encounters-fy22-fy25-aor.csv
+2023,Other,U.S. Border Patrol,9,nationwide-encounters-fy22-fy25-aor.csv
+2023,Southwest Land Border,Office of Field Operations,51,nationwide-encounters-fy22-fy25-aor.csv
+2023,Southwest Land Border,U.S. Border Patrol,41719,nationwide-encounters-fy22-fy25-aor.csv
+2024,Northern Land Border,Office of Field Operations,29567,nationwide-encounters-fy22-fy25-aor.csv
+2024,Northern Land Border,U.S. Border Patrol,14197,nationwide-encounters-fy22-fy25-aor.csv
+2024,Other,Office of Field Operations,21027,nationwide-encounters-fy22-fy25-aor.csv
+2024,Other,U.S. Border Patrol,8,nationwide-encounters-fy22-fy25-aor.csv
+2024,Southwest Land Border,Office of Field Operations,87,nationwide-encounters-fy22-fy25-aor.csv
+2024,Southwest Land Border,U.S. Border Patrol,25529,nationwide-encounters-fy22-fy25-aor.csv
+2025,Northern Land Border,Office of Field Operations,12474,nationwide-encounters-fy22-fy25-aor.csv
+2025,Northern Land Border,U.S. Border Patrol,1580,nationwide-encounters-fy22-fy25-aor.csv
+2025,Other,Office of Field Operations,15036,nationwide-encounters-fy22-fy25-aor.csv
+2025,Other,U.S. Border Patrol,9,nationwide-encounters-fy22-fy25-aor.csv
+2025,Southwest Land Border,Office of Field Operations,85,nationwide-encounters-fy22-fy25-aor.csv
+2025,Southwest Land Border,U.S. Border Patrol,4962,nationwide-encounters-fy22-fy25-aor.csv

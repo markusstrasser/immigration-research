@@ -1,0 +1,11 @@
+percentile,sample,n,dollars_per_point,se
+earn,all adults 25-64,70855,485.476,7.04497
+earn,India-born and India G2,1441,425.807,30.4438
+earn,"pct 50-90, all adults",26000,501.605,12.3769
+earn,calibration india_born: mean pct / ledger gap,1232,60.7029,10732.3
+earn,calibration india_second_gen: mean pct / ledger gap,209,63.4882,20571.6
+edu,all adults 25-64,70855,298.779,5.50572
+edu,India-born and India G2,1441,323.586,56.5327
+edu,"pct 50-90, all adults",25299,301.544,20.1735
+edu,calibration india_born: mean pct / ledger gap,1232,76.8999,10732.3
+edu,calibration india_second_gen: mean pct / ledger gap,209,74.4373,20571.6

@@ -1,0 +1,32 @@
+{
+ "exit_codes": {
+  "acs_cohorts.py": 0,
+  "acs_extract.py": 0,
+  "census_ysm.py": 0,
+  "cps_cohorts.py": 0,
+  "project_g2.py": 0,
+  "stock_language.py": 0
+ },
+ "gate_india_g1_edu": {
+  "india_g1_edu_2015_2025": 73.48310979431751,
+  "selection_curve": 73.4831,
+  "status": "PASS"
+ },
+ "outputs": {
+  "acs_calibration.csv": "IDENTICAL",
+  "acs_cohorts.csv": "IDENTICAL",
+  "acs_future_g2_parents.csv": "IDENTICAL",
+  "acs_recent_arrivals.csv": "IDENTICAL",
+  "census_ysm.csv": "IDENTICAL",
+  "cps_cohorts.csv": "IDENTICAL",
+  "fiscal_gradient.csv": "IDENTICAL",
+  "g2_stock.csv": "IDENTICAL",
+  "gate.json": "IDENTICAL",
+  "language_by_cohort.csv": "IDENTICAL",
+  "language_children.csv": "IDENTICAL",
+  "language_profile.csv": "IDENTICAL",
+  "projection.csv": "IDENTICAL",
+  "stock_by_cohort.csv": "IDENTICAL"
+ },
+ "status": "PASS"
+}

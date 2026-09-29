@@ -1,0 +1,13 @@
+outcome,measure,x_then,x_now,dx,g2_now_observed,acs_to_cps_shift,arm,slope_or_step,d_g2,g2_future
+education,"(a) all India-born 25-64, CPS 2021-25 vs 1994-2004",71.0581,74.4917,3.43364,73.0555,0,"cross-origin slope, all origins (0.52)",0.522453,1.79392,74.8494
+education,"(a) all India-born 25-64, CPS 2021-25 vs 1994-2004",71.0581,74.4917,3.43364,73.0555,0,"cross-origin slope, without Mexico",0.356924,1.22555,74.281
+education,"(a) all India-born 25-64, CPS 2021-25 vs 1994-2004",71.0581,74.4917,3.43364,73.0555,0,India's observed step k=(G2-50)/(G1-50),1.09485,3.75933,76.8148
+education,"(b) parents of US-born children, ACS 2023-24 vs 2005",74.1418,74.5177,0.375927,73.0555,2.35151,"cross-origin slope, all origins (0.52)",0.522453,0.196404,73.2519
+education,"(b) parents of US-born children, ACS 2023-24 vs 2005",74.1418,74.5177,0.375927,73.0555,2.35151,"cross-origin slope, without Mexico",0.356924,0.134177,73.1897
+education,"(b) parents of US-born children, ACS 2023-24 vs 2005",74.1418,74.5177,0.375927,73.0555,2.35151,India's observed step k=(G2-50)/(G1-50),1.09485,0.411584,73.4671
+wage earnings,"(a) all India-born 25-64, CPS 2021-25 vs 1994-2004",54.0382,61.6313,7.59312,61.9256,0,"cross-origin slope, all origins",0.550433,4.1795,66.1051
+wage earnings,"(a) all India-born 25-64, CPS 2021-25 vs 1994-2004",54.0382,61.6313,7.59312,61.9256,0,"cross-origin slope, without Mexico",0.301121,2.28645,64.212
+wage earnings,"(a) all India-born 25-64, CPS 2021-25 vs 1994-2004",54.0382,61.6313,7.59312,61.9256,0,India's observed step k=(G2-50)/(G1-50),2.9532,22.424,84.3496
+wage earnings,"(b) parents of US-born children, ACS 2023-24 vs 2005",57.4636,65.6836,8.22001,61.9256,0.639504,"cross-origin slope, all origins",0.550433,4.52456,66.4502
+wage earnings,"(b) parents of US-born children, ACS 2023-24 vs 2005",57.4636,65.6836,8.22001,61.9256,0.639504,"cross-origin slope, without Mexico",0.301121,2.47522,64.4008
+wage earnings,"(b) parents of US-born children, ACS 2023-24 vs 2005",57.4636,65.6836,8.22001,61.9256,0.639504,India's observed step k=(G2-50)/(G1-50),2.9532,24.2753,86.2009
