@@ -181,9 +181,11 @@ $416.2–490.7bn, and their stacked full span is $142.2–756.5bn. It contains:
   cheaper construction is counted, ladder 200);
 - road congestion that remains once road budgets respond, $11.6–13.6bn in time and fuel ($19.2bn with road
   budgets fixed, on the CPS count, ladder 195);
-- fine particles (PM2.5) from the group's consumption, $68.1bn, and road crashes with against without the group's
-  traffic, $10.6bn (−$57.7bn to +$74.3bn in the lane); the crash figure charged by fault, $42.3bn, sits beside
-  (ladders 264 and 266; [decision](../decisions/2026-09-28-social-items-pollution-crashes.md));
+- fine particles (PM2.5) from the group's consumption, $68.1bn ($30.8–119.7bn across the lane's grid), and road
+  crashes with against without the group's traffic, $10.6bn (−$55.1bn to +$70.8bn); the crash figure charged by
+  fault, $40.6bn, sits beside (ladders 264 and 266;
+  [decision](../decisions/2026-09-28-social-items-pollution-crashes.md); ranges on the 39.71M,
+  [lane](../infra/immigration-fiscal/social_spans_priced_count_2026_09_29/RESULT.md));
 - fear and avoidance by non-victims $10.3bn, private security −$0.5bn and school disruption −$1.9bn, because
   Hispanic pupils are suspended less often than others; property values are 0, since a price discount is a
   transfer or already priced (ladder 258, [decision](../decisions/2026-09-28-social-items-fear-security-schools.md),

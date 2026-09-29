@@ -223,7 +223,9 @@ against as many average residents, which sits beside and is never added:
 | Trade, travel and investment ties with Mexico (gain) | −6.8 | −6.8 (−23.8 to −1.1) | 0.8 | 265 |
 | **Net of the ten** | **51.2** | **52.8** (−182.8 to 282.9) | | |
 
-Charging crashes by fault instead gives $42.3bn, which sits beside and is never added: graded evidence
+Rerun on the account's 39.7M, the PM2.5 range is $30.8–119.7bn (normalized −$45.5bn) and the crash range
+−$55.1bn to +$70.8bn ([lane](../infra/immigration-fiscal/social_spans_priced_count_2026_09_29/RESULT.md)). Charging crashes by fault instead gives $40.6bn ($23.0–69.8bn; $42.3bn on
+the lane's count), which sits beside and is never added: graded evidence
 puts the response of the non-fatal crash rate to traffic near zero (+0.07) and of the fatal rate at
 −0.21, so most crashes other residents have with the group's drivers would happen anyway (ladder 266).
 Property values stay out: a price discount is a transfer between owners and buyers, or capitalises
@@ -538,3 +540,4 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
   that table and in `real_costs_totals.csv`'s sept23 column. Concept affected: which case the memo states as
   current, and the population behind the social rows.
 - 2026-09-29 (number drift audit): the pairing's upper end is $488.0bn (488.047), not $488.1bn, which rounded 488.05 a second time. Concept affected: none; rounding only.
+- 2026-09-29 (priced-count spans): §3b now gives the PM2.5 and crash ranges on the account's 39.7M, and the fault-based crash figure is $40.6bn ($23.0–69.8bn) on that count, $42.3bn on the lane's ([lane](../infra/immigration-fiscal/social_spans_priced_count_2026_09_29/RESULT.md)). Concept affected: none; the count the ranges are on.
