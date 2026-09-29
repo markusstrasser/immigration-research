@@ -1,6 +1,6 @@
 # Reader inputs, joins and normalization
 
-Updated 2026-09-19. This guide connects source acquisition to the existing analysis recipes. It covers the core fiscal warehouse and the named September survey/ledger lanes below; it is not a claim that every research memo is included in one build. No AWS mirror URL is registered here yet.
+Updated 2026-09-29. This guide connects source acquisition to the existing analysis recipes. It covers the adopted main case (the headline), the core fiscal warehouse and the named September survey/ledger lanes below; it is not a claim that every research memo is included in one build. No AWS mirror URL is registered here yet.
 
 ## Get the exact inputs
 
@@ -98,6 +98,36 @@ There is no person identifier shared across ACS, CPS, SIPP, MEPS, Pew and NLSY97
 Start with the lane that produced the figure being reproduced. The core `build all` command does not execute every September lane. The source recipe, its input records and its validator together define reproduction; the detailed lane rules below are not a new harmonization algorithm.
 
 Commands run from the repository root; replace `/path/to/` placeholders with verified inputs. `uv` resolves script-declared dependencies; explicit `--with` options supply additional dependencies.
+
+#### The adopted main case (the headline)
+
+The headline is one engine run, `node infra/immigration-fiscal/main_case_2026_09_29/main_case.cjs`, with 53 gates.
+Every file it reads is committed except two that the assumption explorer generates. Checked on 2026-09-29 from a clean
+checkout: the run stops at the first missing file, and with only these two copied in it passes and reproduces
+`main_case_bands.csv`, `summary.json`, `corrections.json`, `per_spec.csv` and `components.csv` byte for byte.
+
+1. `assumption_explorer_2026_09_21/derived/model.json`. `build_model.py` compiles it from the `derived/` outputs of the
+   four `full_account_*_2026_09_20` lanes, which are not committed, and stops on a stale upstream hash. Run
+   [receipts](full_account_receipts_2026_09_20/README.md), [spending](full_account_spending_2026_09_20/README.md) and
+   [benefits](full_account_benefits_2026_09_20/README.md), then [the account](full_account_2026_09_20/README.md)
+   (`builder.py`, `welfare.py`, `service_response.py`), each with the command in its README. They read the CPS ASEC
+   2025 inputs of the next recipe.
+2. `assumption_explorer_2026_09_21/derived/scaling_check.json`. `scaling_check.py` reads the Census 2022 State and
+   Local Government Finance table at `_cache/slf2022.xlsx` (it prints the URL and checks the pinned hash) and
+   `sources/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv`.
+
+```bash
+cd infra/immigration-fiscal/assumption_explorer_2026_09_21
+uv run --no-project --with duckdb --with pandas --with numpy python3 build_model.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with numpy python3 scaling_check.py
+cd ../../..
+node infra/immigration-fiscal/main_case_2026_09_29/main_case.cjs
+```
+
+In a checkout that already holds the inputs, `uv run --no-project python3 scripts/rerun_lane.py --allow-unrun
+infra/immigration-fiscal/main_case_2026_09_29/package.cjs infra/immigration-fiscal/main_case_2026_09_29
+"node {lane}/main_case.cjs"` reruns the lane and compares every output byte for byte. Earlier cases stay runnable in
+their own lanes, for example `main_case_long_run_2026_09_27/main_case.cjs` for September 27.
 
 #### CPS fiscal accounts: ASEC 2025, calendar year 2024
 

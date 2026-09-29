@@ -47,7 +47,7 @@ single well-sourced falsification beats ten plausible syntheses.
 | `research/immigration-*.md` | The memo stack — about 185 sourced memos with confidence tiers and supersession notes. Start at the [topic index](research/immigration-INDEX.md). |
 | `warehouse/immigration.duckdb` | **The unified data warehouse** — all cleaned/joined panels in one schema-namespaced file (`context` / `lifetime` / `fiscal`) with a self-describing `_catalog` table. *(Built locally; gitignored.)* |
 | `infra/immigration-fiscal/` | The acquisition + build pipeline (acquire → parse → warehouse). See its [`REPRODUCE.md`](infra/immigration-fiscal/REPRODUCE.md). |
-| `queries/immigration/` | Checked-in SQL that reproduces the headline numbers (each file has `-- requires:` and `-- backs:` headers). |
+| `queries/immigration/` | Checked-in warehouse queries: descriptive checks of the September 5 warehouses (each file has `-- requires:` and `-- backs:` headers). The headline is one engine run of the [main-case lane](infra/immigration-fiscal/main_case_2026_09_29/); [REPRODUCTION_INPUTS](infra/immigration-fiscal/REPRODUCTION_INPUTS.md#the-adopted-main-case-the-headline) gives its inputs. |
 | `decisions/` | Concept-level pivots — when an interpretation shifted or a method was adopted/dropped. |
 | `notes/` | Cross-topic working notes (instrument bias, quant-bias checklist, fact-check templates). |
 | `GOALS.md` · `CLAUDE.md` | Human-owned mission / the research constitution + agent operating rules. |
@@ -95,7 +95,7 @@ uv run --with playwright python -m playwright install chromium
 # Or: ./scripts/reproduce-immigration-data.sh all standard  # ~50 GB attempts
 
 ./scripts/reproduce-immigration-data.sh smoke    # sanity-check the warehouse
-./scripts/reproduce-immigration-data.sh query    # rerun the headline SQL
+./scripts/reproduce-immigration-data.sh query    # rerun the warehouse queries
 ```
 
 `scripts/reproduce-immigration-data.sh` is a thin wrapper over

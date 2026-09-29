@@ -101,8 +101,11 @@ Local end-to-end:
 
 ```bash
 ./reproduce.sh smoke   # minimal download + context build + DuckDB probe
-./reproduce.sh query   # rerun headline SQL after full build
+./reproduce.sh query   # rerun the warehouse queries after full build
 ```
+
+The headline is not in the SQL pack: it is one engine run of the main-case lane, whose inputs are in
+[REPRODUCTION_INPUTS](REPRODUCTION_INPUTS.md#the-adopted-main-case-the-headline).
 
 ## Share reasoning with someone else
 

@@ -1,6 +1,6 @@
 # Immigration research — friend reproduce guide
 
-**Purpose:** Read the reasoning in order, know which claims are canonical vs superseded, and rerun the headline SQL. **Setup/quickstart now lives in the root [`README.md`](../README.md)** — this is the deep companion (reading order, claim status, warehouse query definitions).
+**Purpose:** Read the reasoning in order, know which claims are canonical vs superseded, and rerun the headline and the warehouse queries. **Setup/quickstart now lives in the root [`README.md`](../README.md)** — this is the deep companion (reading order, claim status, warehouse query definitions).
 
 **Reader inputs (2026-09-19):** [Acquisition, joins and normalization](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md) supplies official-download, cleared-mirror and browser/manual routes, plus the current lane recipes. The core warehouse build does not reproduce every September analysis, and no AWS mirror URL is registered in that guide yet.
 
@@ -69,7 +69,9 @@ On the inspected machine, raw inputs are at `/Volumes/2TBPNY/research-data/immig
 
 ---
 
-## 3. Rerun headline numbers
+## 3. Rerun the headline and the warehouse queries
+
+The headline is one engine run of the main-case lane; [REPRODUCTION_INPUTS](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md#the-adopted-main-case-the-headline) gives the inputs it needs and the commands. The checked-in SQL checks the warehouses:
 
 ```bash
 ./scripts/reproduce-immigration-data.sh query        # all checked-in SQL
@@ -202,3 +204,12 @@ Lists after download: `$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANU
 | Topic index | `research/immigration-INDEX.md` |
 | Agent handoff (dense) | `research/immigration-verification-handoff.md` |
 | SQL query pack | `queries/immigration/` |
+
+<!-- knowledge-index
+generated: 2026-09-29T08:07:31Z
+hash: 935f11505c9b
+
+cross_refs: decisions/2026-09-26-acs-no-schooling-break.md, research/immigration-INDEX.md, research/immigration-dataset-register.md, research/immigration-verification-handoff.md
+table_claims: 6
+
+end-knowledge-index -->

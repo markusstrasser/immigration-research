@@ -21,7 +21,7 @@ import openpyxl
 HERE = Path(__file__).resolve().parent
 SLF_URL = "https://www2.census.gov/programs-surveys/gov-finances/tables/2022/22slsstab1.xlsx"
 SLF_SHA256 = "4dd123c5ad520e33d9692f622d389a020e2d3a7e6e782763663854dd84643b9b"
-POP = Path("/Users/alien/research-data/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv")
+POP = HERE.parents[2]/"sources/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv"
 FUNCTIONS = {  # label -> Census line codes summed
     "Governmental administration (financial, judicial, buildings, other)": ["106", "107", "108", "109"],
     "Financial administration": ["106"], "Judicial and legal": ["107"], "Other governmental administration": ["109"],

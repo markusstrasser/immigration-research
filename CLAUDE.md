@@ -78,7 +78,7 @@ warehouse/         — DuckDB warehouses (context, lifetime evidence); not a ful
 sources/           — archived source material, data files; ignored, a real directory here
                      (`~/research-data` is a symlink to it, not a second copy)
 notes/             — working notes, drafts, threads of analysis
-queries/immigration/ — checked-in SQL reproducing the headline numbers (`-- requires:`/`-- backs:`)
+queries/immigration/ — checked-in warehouse checks (`-- requires:`/`-- backs:`); the headline is the main-case lane
 scripts/reproduce-immigration-data.sh — init, doctor, download, verify, build, smoke, query
 casebank/          — verbatim example cases with induced principles
 HUMAN.md           — async asks to the operator
