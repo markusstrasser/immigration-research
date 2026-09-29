@@ -363,3 +363,170 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/state_white.py
 ```
 
 Every script was run twice. All 16 files in `derived/` were byte-identical across the two full runs (sha256), and every gate passed on both. `state_white.py` (Part F) was run twice after the `keyed()` refactor of `rekey_white.py`. Its two outputs and all 16 earlier files were byte-identical. Nothing was written to other lanes, and nothing was committed.
+
+## v4 case (sept29), 2026-09-29
+
+claude-opus-5-5
+
+**Status, 2026-09-29 21:44 JST (from `date`): done; every gate passed; nothing committed (the lead commits).** The run was resumed after the machine rebooted at 20:51 JST. In this run the sept29 steps and every gate, both `rerun_lane.py` passes included, were rerun, and three outputs were added: `rule_alternatives_sept29.csv`, `attribution_sept29.csv` and `attribution_buckets_sept29.csv`. The log is at the end of this section.
+
+**Verdict (sept29).** On the adopted v4 case, with both sides on the 39,712,493 people the account prices, the Mexican-origin union costs other residents more a year than the same number of third-plus-generation non-Hispanic white residents by the amounts below. The central comparison moves from $318.9 / 316.6bn on September 27 (ladder 274) to **$351.2 / 350.5bn**. [CALCULATION: `rekey_sept29.py` → `derived/headline_sept29.csv`]
+
+| Union less whites, $bn a year, spec 48 / 11 | sept29 | Per union member | September 27, row 4 (ladder 274) |
+|---|---|---|---|
+| **Age artefact removed: A1 (whites at their own ages) on the case's accrual basis** | **351.2 / 350.5** | **$8,844 / 8,826** | 318.9 / 316.6 (A1 on accrual) |
+| Age artefact removed the September 27 way: A3 (white rates at union ages), cash set | 351.9 / 350.9 | $8,862 / 8,837 | 325.4 / 322.0 |
+| A3 on the accrual basis | 341.4 / 340.5 | $8,598 / 8,573 | — |
+| **Raw cash at white ages: A1, cash set** | **197.1 / 196.4** | **$4,964 / 4,946** | 164.5 / 162.1 |
+| **Local whites state by state, union ages, accrual basis** | **410.4 / 408.0** | **$10,334 / 10,273** | — |
+| Local whites state by state, union ages, cash set | 437.7 / 435.2 | $11,021 / 10,960 | 407.5 / 401.9 |
+| **California, union ages, accrual basis** | **189.5 / 188.2** | **$14,488 / 14,383** | — |
+| California, union ages, cash set | 204.7 / 203.4 | $15,648 / 15,544 | 186.9 / 184.0 ($14,286 / 14,064) |
+
+Per-member figures divide by 39,712,493, the account's row-4 count; every white slice is scaled to it. California's divide by its 13,082,783 union members on row-4 weights. On the accrual basis the other state pieces are Texas $8,908 / 8,849, the rest of the US $7,939 / 7,910 and Los Angeles $18,902 / 18,717 per member. [CALCULATION: `derived/state_summary_sept29.csv`]
+
+- With the two convention arms (the CPS top tail of income tax spread in proportion, and capital-side taxes responding), A1 is $453.2 / 452.5bn on accrual and $299.1 / 298.4bn on the cash set. [CALCULATION: `derived/rekey_summary_sept29.csv`]
+- Against the engine's union instead of the rough union, A1 is $347.2 / 360.8bn. The rough keys put the union at $375.5 / 424.6bn on accrual, against the engine's $371.4 / 434.8bn (+1.1% / −2.4%). On the cash set they put it at $294.9 / 344.0bn, against $294.7 / 361.8bn. [CALCULATION]
+- Against 39.7M average residents (the all-residents slice), the union costs $209.0 / 209.3bn more on accrual, and third-plus whites cost $142.2 / 141.2bn less. [CALCULATION]
+
+### What the accrual does to the age-artefact arm
+
+On the cash set, charging white per-age rates at the union's ages (A3) raises the A1 delta by $154.8 / 154.5bn, from $197.1 / 196.4bn to $351.9 / 350.9bn. The case's accrual basis raises A1 by $154.1bn at both ends, to $351.2 / 350.5bn. That is within $0.7 / 0.4bn of A3 on cash, so the accrual already does what the A3 arm did. [CALCULATION]
+
+With the accrual in, A3 comes out $9.8 / 10.1bn *below* A1. At the union's ages the white slice costs other residents more than at its own. The table gives A3's cost less A1's at the low end, by bucket. [CALCULATION: `derived/rekey_buckets_sept29.csv`]
+
+| Bucket, $bn | Cash set | Accrual (the case) |
+|---|---|---|
+| Social Security | −145.0 | −7.0 |
+| Medicare | −104.4 | −67.6 |
+| Medicaid | −14.4 | −14.4 |
+| Veterans and military medical | −11.2 | −11.2 |
+| Per-head lines | −17.0 | −17.0 |
+| Schools and colleges | +73.7 | +73.7 |
+| Income, payroll, sales and property taxes | +56.0 | +45.8 |
+| Police, welfare and the capital return | +7.5 | +7.5 |
+| **A3 less A1** | **−154.8** | **+9.8** |
+
+On accrual, Social Security is each group's accrual per tax dollar times its payroll taxes, so it no longer follows the age mix. Medicare Parts B and D (62.5% of the line under the case's rule) and Medicaid's long-term care stay on current benefits, so they still fall at the union's younger ages. The schooling and the lower taxes that come with those younger ages now outweigh them. On sept29 the age-artefact figure is therefore A1 on the accrual basis. A3 remains a sensitivity: it re-prices the white slice at a younger age mix, and on accrual that favours the union by $9.8 / 10.1bn. [CALCULATION; the reading is INFERENCE] The state arm shows the same thing. On accrual, local whites at their own ages give $424.8 / 422.7bn, above the $410.4 / 408.0bn at union ages. On the cash set, own ages give $286.1 / 284.0bn. [CALCULATION: `derived/state_summary_sept29.csv`]
+
+### From September 27 to sept29
+
+The table walks the A1 delta from ladder 263's figure to the sept29 case, in $bn. It uses two decimals with controlled rounding, so the printed steps add to the printed total. [CALCULATION: `derived/attribution_sept29.csv`, `derived/attribution_buckets_sept29.csv`]
+
+| Step | Low | High |
+|---|---|---|
+| September 27 case, published weights (ladder 263) | 157.16 | 154.62 |
+| Audit row-4 weights (ladder 274: 164.46 / 162.13) | +7.30 | +7.51 |
+| sept29's lines, nationals and responses; no group state-priced or miles-keyed | +26.76 | +26.54 |
+| State prices and road miles for every group (rule 4), giving the cash set's 197.13 / 196.41 | +5.91 | +7.74 |
+| The pension accrual (rule 3) | +154.11 | +154.11 |
+| **sept29 case** | **351.24** | **350.52** |
+
+- **sept29's lines** add $24.9bn at the low end through capital, property and production taxes. Item 5 lets owner-occupied property tax respond at 0.763, where September 27 held it at 0, and the white slice holds more home value. A line-level check through this library breaks the bucket down [CALCULATION: scratch check, not a lane output]:
+  - owner-occupied property +$21.9bn (whites' receipts lost rise by $42.0bn, the union's by $20.2bn);
+  - public housing's split (item 1) +$3.5bn;
+  - personal property +$0.9bn;
+  - tenant-occupied property −$1.4bn.
+
+  The rest of the step (+$1.9bn) is mostly the union's production term on row-4 weights (item 2, +$1.6bn).
+- **Rule 4** adds $5.9 / 7.7bn. At the low end:
+  - the union lives where police, courts and prisons cost more: +$9.1bn;
+  - it lives where health services cost more, and its road key exceeds its earnings key (per-head lines): +$5.4bn;
+  - road capital keyed by miles: +$0.9bn;
+  - it pays more sales, gasoline and licence tax in those states: −$9.5bn.
+- **The accrual** adds $154.1bn. On Social Security (+$128.1bn) the union's cost rises $52.0bn as its workers' accruals replace its small current benefits, and whites' cost falls $76.1bn as their retirees' benefits give way to their workers' accruals. Medicare adds +$40.2bn. The tax on benefits leaving income-tax receipts, most of it whites', subtracts $14.2bn. [CALCULATION: `derived/attribution_buckets_sept29.csv`]
+
+### Rules designed, with the alternative beside each
+
+The rules are stated in `rekey_sept29.py`'s docstring. Each alternative is priced in `derived/rule_alternatives_sept29.csv`. [CALCULATION] The changes below are to the A1 delta on the accrual basis, at spec 48 / 11.
+
+1. **Lines, responses, capital and group keys.**
+   - The case's lines, responses, capital stocks and rates are used as they are. Each group's shares are the September 27 rough keys on row-4 weights.
+   - The rough Mexican-origin run keeps the engine's medical and justice shares, read from the cash set. The accrual set's Medicare amount already carries the accrual, and taking shares from it would apply the Part A accrual twice.
+   - No alternative is priced, because the accrual set's shares would be a double count, not a different choice.
+2. **The two receipt lines v4 splits out** (the brief's second trap: `rekey.py` raises a KeyError on them).
+   - `housing_enterprise_surplus` is keyed on housing subsidies, where the case keys it on housing support.
+   - `tenant_occupied_property` is keyed on cash renters' consumption (`H_TENURE` 2). The case uses contract rent, which the CPS lacks. The proxy holds for the union: 11.67% against the engine's 11.47%.
+   - The housing-subsidy key gives the rough union 12.48% of public housing against the engine's 7.52%. That is the same over-assignment as on the rough `housing_subsidies` line.
+   - *Alternative:* the keys of the lines v4 split them from: per head, as inside `enterprise_surplus`, and capital income, as inside `remaining_production_property`. It adds **+$5.5bn** at both ends and on both bases: the union's cost rises $4.4bn and A1's falls $1.1bn.
+3. **The pension accrual for every group at its own accrual per tax dollar** (the case's central).
+   - Social Security is the group's net OASDI ratio times its OASDI taxes: employee, employer and the case's self-employment share.
+   - Medicare swaps the Part A share (37.5%) of its cash amount for the group's Part A ratio times its HI taxes.
+   - Federal income tax loses the tax on the group's 2024 benefits.
+   - The ratios, on payable benefits:
+
+     | Group | Net OASDI ratio | Part A per HI tax dollar | Source |
+     |---|---|---|---|
+     | Third-plus whites | 0.9346 | 0.9938 | `accrual_ratios.csv` |
+     | NH Black (the `nh_black_rough` rows) | 1.0396 | 1.5522 | the Black lane's `accrual_ratios.csv` |
+     | All residents | 0.9496 | 1.1403 | the Black lane's `accrual_ratios.csv` |
+     | The union | 0.9737 | 1.4609 | the case's own ratios |
+   - *Alternative 3a:* every group at the union's ratios, keeping its own benefit-tax rate and timing: **−$23.4bn** at both ends. Whites' Part A ratio is 0.99 against the union's 1.46.
+   - *3b:* the tax on benefits uses the case's low-end (shared) receipt per benefit dollar at both ends, because the rough income-tax key shares a tax unit's tax among its members. The case's own rule at each end (personal at spec 11) gives **+$0.0 / +1.1bn**.
+4. **State prices (item 9) and road miles (item 10) for every group, from its own residence and driving.**
+   - The group's state indexes weight the state lane's per-state relatives by its CPS persons: adults for licences, and persons times the state's imprisonment rate for corrections.
+   - Its miles share uses NHTS 2017 driver miles per person aged 5+ at its own age structure. Relative to all residents, NH whites drive 1.100 and NH Black residents 0.773. The union keeps the case's own ratio of 0.874 to the non-Hispanic average.
+   - The engine prices these lines for the union only. Their national is 0, so `rekey.py`'s national × share would have priced them at 0 for every group, silently (the brief's first trap).
+   - *Alternative:* other groups at national prices and the September 27 road keys, with the union keeping its terms: **−$2.1 / −2.0bn**.
+5. **The union-only corrections stay as on September 27.**
+   - School reprice, college re-key and lane constants are at the engine's amounts for the union and absent for other groups.
+   - The production gain is the union's only; item 2 moves it +$1.6bn.
+   - Items 3 (IRS key), 5's vehicle key for personal property tax, 6a (payroll compliance) and 7 (workers' compensation) refine the engine's union keys. They have no counterpart in the rough CPS keys that every group shares.
+   - No alternative is priced. The gap between the rough and the engine's union bounds what these refinements do: A1 against the engine's union is $347.2 / 360.8bn, against $351.2 / 350.5bn like for like.
+
+**Frame.** Row-4 weights are set as ladder 274's `population_basis_2026_09_29/white_count.py` set them: the engine's factors on the Mexico-born outside California and Texas. The row-4 union has 39,712,494.5 CPS persons against the account's 39,712,493.3 (gate: within 2). Two setup gates catch both traps if a later case adds lines: one fails when a line of either dump lacks a key, the other when a national-0 line with an amount lacks a rule.
+
+### Limits of the sept29 figures
+
+- This is the rough re-key, not an engine run. The rough union lands +1.1% / −2.4% off the engine's union on accrual, and +0.1% / −4.9% on the cash set.
+- Third-plus whites' relative benefit-tax rate stays at the lane's assumed 1.0. The statutory proxy, calibrated to the union's measured rate, gives 0.974 (`black_comparator_rough_2026_09_28/derived/benefit_tax_proxy.csv`); section A found a 0.1 change worth about $0.3bn.
+- Medicare Parts B and D and Medicaid's long-term care stay on current benefits in the case's rule. That is why an age effect survives on accrual.
+- Driver miles by group are NHTS 2017's, by race, ethnicity and five-year age band.
+
+### Gates (this run, after the reboot)
+
+1. **Old cases unchanged.** `rerun_lane.py` with the lane's eight September 27 commands (`v4_inputs.py` and `rekey_sept29.py` allowed unrun) reports **IDENTICAL, 43/43 files** (21:40–21:41 JST).
+   - Two earlier attempts, at 21:13 and 21:35, stopped at `spillovers_white.py`: its `uv run --with statsmodels` hit a PyPI connect timeout.
+   - The passing run set `UV_OFFLINE=1`, which takes statsmodels 0.15.0 from uv's cache. The same command online passed in all four gate-4 passes. This was a transport failure, not a lane failure.
+2. **sept29 outputs.** Each step exits 0 with no failed gate:
+   - `engine_lines.cjs sept29` and `sept29_cash`;
+   - `v4_inputs.py` (10 gates);
+   - the Black lane's `accrual_black.py`;
+   - `rekey_sept29.py` (151 gates).
+3. **Oracle.**
+   - The dumps' costs equal `main_case_bands.csv`'s `adopted` row, $371.4146 / 434.8410bn, and its `cash_set` row, $294.7011 / 361.8175bn. The tolerance is 5e-5 against the CSV's four decimals.
+   - The lane's cost formula on the engine's amounts reproduces each dump to 1e-9.
+   - The case's pension rule, applied to the cash set's union amounts, reproduces the accrual set's Social Security, Medicare and income-tax amounts to 1e-9.
+4. **Two passes after the sept29 run.** Two `rerun_lane.py` passes with all twelve commands, September 27 and sept29, run after the sept29 run, report **IDENTICAL, 43/43 files, both passes** (21:37–21:38 and 21:38–21:39 JST). An earlier cycle, before the bucket file was added, also passed twice (42/42, 21:16–21:24).
+
+### Reproduce (sept29), after the September 27 list
+
+```sh
+L=infra/immigration-fiscal/white_replacement_2026_09_28
+B=infra/immigration-fiscal/black_comparator_rough_2026_09_28
+node $L/engine_lines.cjs sept29
+node $L/engine_lines.cjs sept29_cash
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/v4_inputs.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $B/accrual_black.py   # rekey_sept29.py reads its accrual_ratios.csv
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/rekey_sept29.py
+```
+
+**New files (no existing output moved).**
+- Scripts: `v4_inputs.py` and `rekey_sept29.py`.
+- In `derived/`: `engine_lines_sept29.json`, `engine_lines_sept29_cash.json`, `v4_state_relatives.csv`, `v4_nhts_vmt.csv`, `rekey_summary_sept29.csv`, `rekey_buckets_sept29.csv`, `state_summary_sept29.csv`, `state_buckets_sept29.csv`, `headline_sept29.csv`, `v4_group_terms_sept29.csv`, `rule_alternatives_sept29.csv`, `attribution_sept29.csv` and `attribution_buckets_sept29.csv`.
+
+`engine_lines.cjs` gained a case argument; its default output, `engine_lines.json`, is byte-identical (gate 1). The Black lane imports `rekey_sept29.py` as its library, and this lane reads that lane's `accrual_ratios.csv`, so commit the two lanes together.
+
+### Log
+
+- 2026-09-29 20:14 JST: resumed after the weekly usage limit stopped the run at 17:24 JST (per the lead). Only this stub had been written; the reads and probes before the stop were not saved in the lane.
+- 2026-09-29 20:35 JST: confirmed so far [CALCULATION]:
+  - `engine_lines.cjs` (kept identical to the Black lane's) takes a case argument; the default output is byte-identical; `engine_lines_sept29.json` and `engine_lines_sept29_cash.json` hold the case ($371.41 / 434.84bn) and its cash set ($294.70 / 361.82bn).
+  - `v4_inputs.py` → `derived/v4_state_relatives.csv`, `v4_nhts_vmt.csv`. Gates: the union's nine state indexes reproduce the state lane (1e-8); NHTS 2017 Hispanic / non-Hispanic driver miles per person 5+ reproduce the congestion lane's 0.8930224334. Driver miles per person 5+ relative to all residents: NH white 1.100, NH Black 0.773, Hispanic 0.910. Third-plus NH whites live where police cost 0.94 and health 0.91 of the national per-resident level (union 1.115 and 1.251).
+- 2026-09-29 20:42 JST: first sept29 run, all gates passed [CALCULATION: `rekey_sept29.py` → `derived/headline_sept29.csv`]: against 39.71M third-plus whites the union costs other residents $351.2 / 350.5bn more a year on the case's accrual basis (A3, white rates at union ages: $341.4 / 340.5bn); on the cash set at white ages $197.1 / 196.4bn; against local whites state by state at union ages $410.4 / 408.0bn on accrual ($437.7 / 435.2bn on the cash set); California $14,488 / 14,383 per union member on accrual ($15,648 / 15,544 on the cash set). With other groups at national prices and the September 27 road keys (the alternative to rule 4) the A1 delta is $349.2 / 348.5bn.
+- 2026-09-29 21:03 JST: the machine rebooted at 20:51 JST during the gate-4 run of 20:48, and the scratch logs were lost. Resumed from the recovered transcript: the sept29 code and outputs were on disk; every sept29 CSV parsed with the expected row count; tracked outputs matched HEAD.
+- 2026-09-29 21:12 JST: added the rule alternatives and the attribution to `rekey_sept29.py`. `run29`'s `local` flag became `rule4` ("all", "union", "none"). The headline and summary values printed the same as before the change, at four decimals.
+- 2026-09-29 21:13–21:26 JST: first full gate cycle. Gate 1 Black IDENTICAL; gate 1 white stopped on the PyPI timeout; sept29 run clean; gate 4 IDENTICAL twice for each lane (42/42 white, 23/23 Black).
+- 2026-09-29 21:27 JST: added `attribution_buckets_sept29.csv`, with a gate that every step's buckets add to its cost (1e-9).
+- 2026-09-29 21:35–21:41 JST: second full cycle, the one reported under Gates above.
+- 2026-09-29 21:47 JST: this section written; status line set.

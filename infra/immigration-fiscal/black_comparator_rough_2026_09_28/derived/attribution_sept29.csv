@@ -1,0 +1,21 @@
+step,description,basis,end,group,cost_bn,population,cost_per_member,change_bn,delta_like_for_like_bn,delta_change_bn
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,mexican_origin_rough,310.7556,40896574,7599,,0.0000,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,nh_black_rough,549.0033,41954494,13086,,-238.2477,
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,mexican_origin_rough,317.0066,39712493,7983,6.2510,0.0000,0.0000
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,nh_black_rough,552.1548,41954494,13161,3.1515,-235.1482,3.0994
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,low,mexican_origin_rough,291.0518,39712493,7329,-25.9548,0.0000,0.0000
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,low,nh_black_rough,530.7329,41954494,12650,-21.4220,-239.6810,-4.5328
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,low,mexican_origin_rough,294.8778,39712493,7425,3.8259,0.0000,0.0000
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,low,nh_black_rough,525.7916,41954494,12532,-4.9412,-230.9139,8.7672
+3,+ the pension accrual (rule 3): the sept29 case,accrual,low,mexican_origin_rough,375.4752,39712493,9455,80.5974,0.0000,0.0000
+3,+ the pension accrual (rule 3): the sept29 case,accrual,low,nh_black_rough,542.0855,41954494,12921,16.2939,-166.6104,64.3035
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,mexican_origin_rough,359.0405,40896574,8779,,0.0000,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,nh_black_rough,595.2311,41954494,14188,,-236.1905,
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,mexican_origin_rough,364.7342,39712493,9184,5.6937,0.0000,0.0000
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,nh_black_rough,599.1069,41954494,14280,3.8759,-234.3727,1.8178
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,high,mexican_origin_rough,338.2762,39712493,8518,-26.4581,0.0000,0.0000
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,high,nh_black_rough,578.5724,41954494,13790,-20.5345,-240.2963,-5.9236
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,high,mexican_origin_rough,343.9825,39712493,8662,5.7063,0.0000,0.0000
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,high,nh_black_rough,573.7600,41954494,13676,-4.8125,-229.7775,10.5188
+3,+ the pension accrual (rule 3): the sept29 case,accrual,high,mexican_origin_rough,424.5799,39712493,10691,80.5974,0.0000,0.0000
+3,+ the pension accrual (rule 3): the sept29 case,accrual,high,nh_black_rough,590.0539,41954494,14064,16.2939,-165.4739,64.3035

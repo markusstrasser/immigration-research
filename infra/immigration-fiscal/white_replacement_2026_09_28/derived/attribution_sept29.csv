@@ -1,0 +1,51 @@
+step,description,basis,end,group,cost_bn,population,cost_per_member,change_bn,delta_like_for_like_bn,delta_change_bn
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,mexican_origin_rough,310.7556,40896574,7599,,0.0000,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,A1_third_plus_nh_white,153.6003,40896574,3756,,157.1554,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,A3_third_plus_nh_white_at_union_ages,-19.4375,40896574,-475,,330.1931,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,nh_black_rough,549.0033,41954494,13086,,-238.2477,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,all_residents_slice,224.1257,40896574,5480,,86.6299,
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,mexican_origin_rough,317.0066,39712493,7983,6.2510,0.0000,0.0000
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,A1_third_plus_nh_white,152.5477,39712493,3841,-1.0526,164.4589,7.3035
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,A3_third_plus_nh_white_at_union_ages,-8.3468,39712493,-210,11.0907,325.3533,-4.8398
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,nh_black_rough,552.1548,41954494,13161,3.1515,-235.1482,3.0994
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,all_residents_slice,221.4056,39712493,5575,-2.7201,95.6010,8.9711
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,low,mexican_origin_rough,291.0518,39712493,7329,-25.9548,0.0000,0.0000
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,low,A1_third_plus_nh_white,99.8393,39712493,2514,-52.7084,191.2125,26.7536
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,low,A3_third_plus_nh_white_at_union_ages,-53.8165,39712493,-1355,-45.4697,344.8683,19.5149
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,low,nh_black_rough,530.7329,41954494,12650,-21.4220,-239.6810,-4.5328
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,low,all_residents_slice,177.2433,39712493,4463,-44.1623,113.8085,18.2075
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,low,mexican_origin_rough,294.8778,39712493,7425,3.8259,0.0000,0.0000
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,low,A1_third_plus_nh_white,97.7524,39712493,2462,-2.0869,197.1254,5.9128
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,low,A3_third_plus_nh_white_at_union_ages,-57.0645,39712493,-1437,-3.2481,351.9423,7.0740
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,low,nh_black_rough,525.7916,41954494,12532,-4.9412,-230.9139,8.7672
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,low,all_residents_slice,176.4537,39712493,4443,-0.7896,118.4240,4.6155
+3,+ the pension accrual (rule 3): the sept29 case,accrual,low,mexican_origin_rough,375.4752,39712493,9455,80.5974,0.0000,0.0000
+3,+ the pension accrual (rule 3): the sept29 case,accrual,low,A1_third_plus_nh_white,24.2382,39712493,610,-73.5141,351.2369,154.1116
+3,+ the pension accrual (rule 3): the sept29 case,accrual,low,A3_third_plus_nh_white_at_union_ages,34.0254,39712493,857,91.0899,341.4497,-10.4925
+3,+ the pension accrual (rule 3): the sept29 case,accrual,low,nh_black_rough,542.0855,41954494,12921,16.2939,-166.6104,64.3035
+3,+ the pension accrual (rule 3): the sept29 case,accrual,low,all_residents_slice,166.4255,39712493,4191,-10.0283,209.0497,90.6257
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,mexican_origin_rough,359.0405,40896574,8779,,0.0000,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,A1_third_plus_nh_white,204.4200,40896574,4998,,154.6205,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,A3_third_plus_nh_white_at_union_ages,32.7136,40896574,800,,326.3270,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,nh_black_rough,595.2311,41954494,14188,,-236.1905,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,all_residents_slice,273.8458,40896574,6696,,85.1947,
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,mexican_origin_rough,364.7342,39712493,9184,5.6937,0.0000,0.0000
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,A1_third_plus_nh_white,202.6035,39712493,5102,-1.8165,162.1307,7.5102
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,A3_third_plus_nh_white_at_union_ages,42.7394,39712493,1076,10.0258,321.9948,-4.3321
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,nh_black_rough,599.1069,41954494,14280,3.8759,-234.3727,1.8178
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,all_residents_slice,270.4107,39712493,6809,-3.4351,94.3235,9.1288
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,high,mexican_origin_rough,338.2762,39712493,8518,-26.4581,0.0000,0.0000
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,high,A1_third_plus_nh_white,149.6069,39712493,3767,-52.9966,188.6693,26.5386
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,high,A3_third_plus_nh_white_at_union_ages,-3.0307,39712493,-76,-45.7701,341.3068,19.3120
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,high,nh_black_rough,578.5724,41954494,13790,-20.5345,-240.2963,-5.9236
+1,"sept29 cash set: its lines, nationals, responses and two new receipt lines; no group state-priced or miles-keyed",cash,high,all_residents_slice,226.2534,39712493,5697,-44.1573,112.0228,17.6993
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,high,mexican_origin_rough,343.9825,39712493,8662,5.7063,0.0000,0.0000
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,high,A1_third_plus_nh_white,147.5761,39712493,3716,-2.0308,196.4064,7.7371
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,high,A3_third_plus_nh_white_at_union_ages,-6.9674,39712493,-175,-3.9367,350.9499,9.6431
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,high,nh_black_rough,573.7600,41954494,13676,-4.8125,-229.7775,10.5188
+2,+ state prices and road miles for every group (rule 4): the sept29 cash set,cash,high,all_residents_slice,225.2769,39712493,5673,-0.9765,118.7056,6.6828
+3,+ the pension accrual (rule 3): the sept29 case,accrual,high,mexican_origin_rough,424.5799,39712493,10691,80.5974,0.0000,0.0000
+3,+ the pension accrual (rule 3): the sept29 case,accrual,high,A1_third_plus_nh_white,74.0620,39712493,1865,-73.5141,350.5180,154.1116
+3,+ the pension accrual (rule 3): the sept29 case,accrual,high,A3_third_plus_nh_white_at_union_ages,84.1225,39712493,2118,91.0899,340.4574,-10.4925
+3,+ the pension accrual (rule 3): the sept29 case,accrual,high,nh_black_rough,590.0539,41954494,14064,16.2939,-165.4739,64.3035
+3,+ the pension accrual (rule 3): the sept29 case,accrual,high,all_residents_slice,215.2487,39712493,5420,-10.0283,209.3312,90.6257

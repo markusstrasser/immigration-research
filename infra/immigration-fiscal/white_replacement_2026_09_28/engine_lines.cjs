@@ -1,12 +1,21 @@
-// Read-only dump of the adopted September 27 case at specs 48 / 11, methods averaged: every receipt and spending
-// line (national, group amount, response, effect), the scalars, and the capital-return components.
-// Output: derived/engine_lines.json, the input of rekey.py.
+// Read-only dump of an adopted case at specs 48 / 11, methods averaged: every receipt and spending line (national,
+// group amount, response, effect), the scalars, and the capital-return components.
+// Cases (first argument): none = the September 27 case -> derived/engine_lines.json, the input of rekey.py;
+// "sept29" = the v4 case adopted 2026-09-29 -> derived/engine_lines_sept29.json; "sept29_cash" = its cash set (pension
+// switch off) -> derived/engine_lines_sept29_cash.json. The sept29 files are the input of rekey_sept29.py.
 "use strict";
 const fs = require("fs");
 const path = require("path");
 const FISCAL = path.resolve(__dirname, "..");
-const P = require(path.join(FISCAL, "main_case_long_run_2026_09_27", "package.cjs"));
-const oo = P.withCentral({});
+const CASES = {
+  sept27: { lane: "main_case_long_run_2026_09_27", options: {}, out: "engine_lines.json" },
+  sept29: { lane: "main_case_2026_09_29", options: {}, out: "engine_lines_sept29.json" },
+  sept29_cash: { lane: "main_case_2026_09_29", options: { pension4: "cash" }, out: "engine_lines_sept29_cash.json" },
+};
+const CASE = CASES[process.argv[2] || "sept27"];
+if (!CASE) throw new Error(`[BLOCKED] unknown case ${process.argv[2]}: one of ${Object.keys(CASES).join(", ")}`);
+const P = require(path.join(FISCAL, CASE.lane, "package.cjs"));
+const oo = P.withCentral(CASE.options);
 const specs = P.specsFor(oo);
 const models = P.METHODS.map((m) => P.modelFor("central", m, oo));
 const ENDS = { low: 48, high: 11 };
@@ -38,5 +47,5 @@ for (const [end, idx] of Object.entries(ENDS)) {
   out[end] = { spec: idx, rate: specs[idx].rate, cost_bn: cost, capital_bn: capTotal, welfare_bn: welfare,
     target_population: pop, resident_population: res, lines: Object.values(acc), capital: Object.values(cap) };
 }
-fs.writeFileSync(path.join(__dirname, "derived", "engine_lines.json"), JSON.stringify(out, null, 1) + "\n");
+fs.writeFileSync(path.join(__dirname, "derived", CASE.out), JSON.stringify(out, null, 1) + "\n");
 for (const [end, o] of Object.entries(out)) console.log(`${end}: spec ${o.spec} cost ${o.cost_bn.toFixed(2)} capital ${o.capital_bn.toFixed(2)}`);
