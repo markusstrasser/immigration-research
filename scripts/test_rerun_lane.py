@@ -93,3 +93,28 @@ def test_new_committable_output_is_listed(tmp_path: Path) -> None:
     r = rerun(repo)
     assert r.returncode == 1, r.stdout
     assert "NEW lane/extra.csv" in r.stdout
+
+
+def rerun_env(repo: Path, env_extra: dict[str, str], *args: str) -> subprocess.CompletedProcess:
+    import os
+    env = {k: v for k, v in os.environ.items() if k != "UV_OFFLINE"} | env_extra
+    (repo / "lane" / "envcheck.py").write_text(
+        "import os, sys\nsys.exit(0 if os.environ.get('UV_OFFLINE', 'unset') == sys.argv[1] else 7)\n")
+    return subprocess.run([sys.executable, "scripts/rerun_lane.py", "lane", f"{sys.executable} {{lane}}/build.py",
+                           *args], cwd=repo, capture_output=True, text=True, env=env)
+
+
+def test_uv_runs_offline_by_default(tmp_path: Path) -> None:
+    # 2026-09-29: a PyPI connect timeout at `uv run --with statsmodels` failed two white_replacement reruns.
+    repo = lane_repo(tmp_path)
+    r = rerun_env(repo, {}, f"{sys.executable} {{lane}}/envcheck.py 1")
+    assert r.returncode == 0, r.stdout
+    assert "[rerun] uv offline" in r.stdout
+
+
+def test_online_flag_and_caller_value_win(tmp_path: Path) -> None:
+    repo = lane_repo(tmp_path)
+    assert rerun_env(repo, {}, f"{sys.executable} {{lane}}/envcheck.py unset", "--online").returncode == 0
+    assert rerun_env(repo, {"UV_OFFLINE": "0"}, f"{sys.executable} {{lane}}/envcheck.py 0").returncode == 0
+    r = rerun_env(repo, {}, f"{sys.executable} {{lane}}/envcheck.py unset")
+    assert r.returncode == 1 and "FAILED at command 2" in r.stdout, r.stdout

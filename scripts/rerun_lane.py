@@ -19,6 +19,12 @@ New or modified scripts in the lane that no command names are listed as NOT RUN,
 3. Such a script is either still being written by a worker, or missing from the reproduce list; either
 way the rerun does not cover it (3589a4f took a half-written script from a running worker). Check
 `ListAgents` and the RESULT, then add a command or pass `--allow-unrun <path>` (repeatable).
+
+Commands run with UV_OFFLINE=1, so `uv run --with <pkg>` takes packages from uv's cache instead of
+asking PyPI on every call. On 2026-09-29 a PyPI connect timeout failed two white_replacement reruns
+at `uv run --with statsmodels`: a transport failure, not a lane failure. A package missing from the
+cache fails loudly with a hint; pass `--online` to resolve against the index. A UV_OFFLINE the caller
+sets wins.
 """
 from __future__ import annotations
 
@@ -61,12 +67,24 @@ def output_files(lane: Path) -> set[Path]:
     return {p for p in files if (ROOT / p).is_file() and "__pycache__" not in p.parts}
 
 
+def child_env(online: bool) -> dict[str, str]:
+    """The commands' environment: single-threaded BLAS, no bytecode, and uv offline unless asked."""
+    env = dict(os.environ, OPENBLAS_NUM_THREADS="1", PYTHONDONTWRITEBYTECODE="1")
+    if online:
+        env.pop("UV_OFFLINE", None)
+    else:
+        env.setdefault("UV_OFFLINE", "1")
+    return env
+
+
 def main(argv: list[str]) -> int:
     allowed: set[str] = set()
     while "--allow-unrun" in argv:
         i = argv.index("--allow-unrun")
         allowed.add(argv[i + 1])
         del argv[i:i + 2]
+    online = "--online" in argv
+    argv = [a for a in argv if a != "--online"]
     if len(argv) < 2:
         print(__doc__)
         return 2
@@ -79,7 +97,9 @@ def main(argv: list[str]) -> int:
     for p in before:
         (backup / p).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ROOT / p, backup / p)
-    env = dict(os.environ, OPENBLAS_NUM_THREADS="1", PYTHONDONTWRITEBYTECODE="1")
+    env = child_env(online)
+    print(f"[rerun] uv {'online' if env.get('UV_OFFLINE') in (None, '0', 'false') else 'offline'}"
+          f" (UV_OFFLINE={env.get('UV_OFFLINE', 'unset')})")
     for i, cmd in enumerate(argv[1:], 1):
         cmd = cmd.replace("{lane}", str(lane))
         r = subprocess.run(cmd, shell=True, cwd=ROOT, env=env, capture_output=True, text=True)
@@ -87,6 +107,9 @@ def main(argv: list[str]) -> int:
         if r.returncode != 0:
             tail = (r.stderr or r.stdout).strip().splitlines()[-6:]
             print("\n".join("    " + t for t in tail))
+            text = (r.stderr + r.stdout).lower()
+            if not online and ("offline" in text or "network connectivity is disabled" in text):
+                print("[rerun] hint: reruns run uv offline; a package missing from uv's cache needs --online")
             print(f"[rerun] FAILED at command {i}; outputs not compared (backup: {backup})")
             return 1
     old, new = before, output_files(lane)
