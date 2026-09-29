@@ -168,7 +168,9 @@ for (const a of ["personal", "shared"]) {
 }
 const GEN = readCsv("generation_account_2026_09_24/derived/generation_results.csv");
 const genRows = [["convention", "generation", "uncorrected_cost_low_end_bn", "uncorrected_cost_high_end_bn", "correction_low_end_bn",
-  "correction_high_end_bn", "break_even_personal_least", "break_even_personal_most", "break_even_shared_least", "break_even_shared_most"]];
+  "correction_high_end_bn", "break_even_personal_most", "break_even_personal_least", "break_even_shared_most", "break_even_shared_least"]];
+// breakEven returns [most adverse, least adverse] (main_case_2026_09_24/sign_reversal.cjs:56-63); the header followed
+// the other order until 2026-09-29, found by the v4 rerun.
 for (const conv of ["a", "b"]) for (const g of ["G1", "G2", "G3plus"]) {
   const file = path.join(ROOT, "generation_account_2026_09_24", "derived", conv === "a" ? `model_${g}.json` : `model_b_${g}.json`);
   const raw = JSON.parse(fs.readFileSync(file, "utf8"));
