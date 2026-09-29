@@ -1,7 +1,7 @@
 # Research — Goals
 
 **Owner:** human (agent may propose changes, must not modify without explicit approval)
-**Last revised:** 2026-06-15
+**Last revised:** 2026-09-29
 
 ---
 
@@ -47,7 +47,7 @@ No time-based deadlines. Done when the evidence is solid enough to publish or wh
 Autonomous agent with human gating on:
 - Structural changes (constitution, causal tree, analysis protocol)
 - Publication or external sharing
-- Deletion of research files
+- Deletion of records or analysis lanes (superseded and cruft documents may be deleted with an INDEX tombstone once their last version is on GitHub)
 
 Everything else — running analyses, writing memos, downloading data, committing findings — is autonomous.
 
