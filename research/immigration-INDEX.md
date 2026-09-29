@@ -264,8 +264,8 @@ figure. The defects are real, run both ways and nearly cancel:
 
 The [debt legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) (ladder 207) prices interest
 on the group's past federal gaps. On the main case, cash flows only, the 2005–2023 gaps leave $0.95–1.28tn of
-debt, on which 2024 taxpayers pay **$30.8–41.5bn** of interest ($774–1,044 per member; September 27:
-$30.9–41.6bn, $8.2–42.5bn across rules); the pension accrual, the capital return and the capped programmes are
+debt, on which 2024 taxpayers pay **$30.8–41.5bn** of interest ($774–1,044 per member; $7.8–42.3bn across
+rules; September 27: $30.9–41.6bn, $8.2–42.5bn across rules); the pension accrual, the capital return and the capped programmes are
 reported beside it, never compounded. Compounding the accrual as if it were borrowing would give $61.3–70.5bn. That answers a historical question; the main
 case's static comparison treats existing interest as sunk. The line is proposed, not adopted. If adopted it enters
 as its own history line, not as the interest row's response, since removing the group in 2024 leaves past debt in
