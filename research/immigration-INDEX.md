@@ -240,7 +240,8 @@ nothing: the group makes construction 0.75% cheaper, which trims other renters' 
 year, but that gain is inside the production term. The
 [scale lane](../infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md) (ladder 201) measures city size and
 schooling mix in one regression: bigger cities add $38.6bn to other residents' earnings and the group's lower
-schooling takes back $24.9bn, leaving **+$13.9bn** (95% −$56.6bn to +$84.4bn), which counts in the
+schooling takes back $24.9bn. Computed jointly, the net is +$13.9bn on the lane's CPS count, $0.2bn above the
+parts' difference (95% −$56.6bn to +$84.4bn), and **+$13.7bn** on the account's 39.7M, which counts in the
 fiscal-plus-social total; the 1970–2000 college-share studies would make it a $109–677bn cost instead. The
 [mobility lane](../infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md) (ladder 203) is worth
 $0.65bn a year beside both totals: the Mexico-born no longer move more than natives within the US. The ancestry
