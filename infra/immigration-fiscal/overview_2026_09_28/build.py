@@ -36,6 +36,10 @@ LADDER = ROOT / "research/immigration-confidence-ladder.md"
 MAIN = ROOT / "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived"
 STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
 OV = "infra/immigration-fiscal/overview_2026_09_28"
+# how to read the dotted underline that quantities.fill puts on an approximate number; the page carries it only
+# when some number does
+APPROX_NOTE = (' A number with a dotted underline is <span class="approx" title="Approximate. Each such number '
+               'carries its reason here.">approximate</span>. Its tooltip gives the reason.')
 
 
 def q(rid):
@@ -649,6 +653,7 @@ def main():
             fail(f"template lacks {k}")
         page = page.replace(k, v)
     page, _ = Q.fill(page, markup=True)
+    page = page.replace("{{APPROX_NOTE}}", APPROX_NOTE if 'class="approx"' in page else "")
     if "{{" in page:
         fail("unfilled placeholder: " + page[page.index("{{"):page.index("{{") + 30])
     out = args.out.resolve()
