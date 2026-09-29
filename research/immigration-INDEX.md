@@ -224,14 +224,15 @@ Security and Medicare, so the social net on today's residents is $360.6bn (Septe
 school or less, and renters come out behind. The top income decile and landlords come out ahead most often. Where
 the state and local cost falls is the largest single choice: charged nationally, the share ahead falls to 7.9%.
 
-The [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md) (ladder 250, on the September 27 case)
-sets the account against the group living in Mexico. The transfer leaks in part: raising revenue costs payers
-1.16–1.5 per dollar, and about $50bn of the $335–396bn direct cost buys the group nothing it values. Measured
-welfare weights rank the group's dollar above the payers', not below. At equal weights the world gains $364bn
-centrally in the measured year; over generations the sign turns on how fast descendants catch up (ladder 154).
-The US plus the group comes out behind only if the group's welfare counts for less than 0.61 of other residents'
-(0.45 counting Mexico's residents). The second generation costs other residents $128–153bn a year against a
-$252bn premium over being raised in Mexico. [FRAMING-SENSITIVE]
+The [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md) (ladder 250) sets the account
+against the group living in Mexico, on the 39.71M people the account prices. The transfer leaks in part: raising
+revenue costs payers 1.16–1.5 per dollar, and about $58bn of the $383–443bn direct cost buys the group nothing it
+values. Measured welfare weights rank the group's dollar above the payers', not below. At equal weights the world
+gains $328bn centrally in the measured year (September 27: $364bn on the survey's 40.9M, $337bn on the account's
+count); over generations the sign turns on how fast descendants catch up (ladder 154). The US plus the group comes
+out behind only if the group's welfare counts for less than 0.66 of other residents' (0.51 counting Mexico's
+residents). With every low choice and λ 1.5, the world comes out behind by $40bn. The second generation costs other
+residents $152–179bn a year against a $252bn premium over being raised in Mexico. [FRAMING-SENSITIVE]
 
 Benefits are priced to the same standard as the costs (evidence-symmetry rule 5). The
 [care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md) (ladder 198) puts **$4.1bn a
