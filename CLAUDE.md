@@ -214,11 +214,3 @@ New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` 
 | `notes/quant-bias-checklist.md` | Quant-bias gate, project instance + self-audit record (canonical list: research skill `references/quant-bias-checklist.md`) | Committing any memo with numbers doing argumentative work, causal language, or welfare conclusions |
 | `notes/fact-check-prompt-template.md` | Multi-agent fact-check template | Running fact-check sweeps |
 | `notes/exa-answer-evaluation.md` | Exa /answer accuracy evaluation | Choosing Exa vs alternatives |
-
-<!-- knowledge-index
-generated: 2026-04-19T04:06:29Z
-hash: ff7356d91502
-
-cross_refs: decisions/.template.md, decisions/YYYY-MM-DD-slug.md, research/<topic>-INDEX.md, research/immigration-INDEX.md, research/iq-sex-differences-INDEX.md
-
-end-knowledge-index -->
