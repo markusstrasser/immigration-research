@@ -8,32 +8,37 @@ wins exactly". [MODEL / FRAMING-SENSITIVE] Three choices shape the result:
 
 Every figure below names the choice it uses.
 
-**Verdict (the September 27 case, $321.8–387.4bn; [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)):**
+**Verdict (2026-09-29, the main case of that date, $371.4–434.8bn; [decision](../decisions/2026-09-29-main-case-v4.md)):**
 About one other US resident in six comes out ahead of the Mexican-origin group's presence, and the rest
 come out behind.
-- Counting each household's gains and costs as shared among its members, 17.8% come out ahead if the
-  fiscal cost is financed by tax shares, and 17.0% if by equal cuts per person.
+- Counting each household's gains and costs as shared among its members, 17.9% come out ahead if the
+  fiscal cost is financed by tax shares, and 17.1% if by equal cuts per person (September 27: 17.8% /
+  17.0%). The share barely moves: the pension accrual leaves today's persons, and the rest of the case's
+  rise falls on the same payers in the same proportions.
 - Setting every choice at its least costly value gives 24%, and at its most costly 11%.
 - Giving wages to the earner alone, while taxes and rent stay shared, gives 16.9% under both.
 
 The count runs person by person over the 295.8m other residents in CPS ASEC 2025. It covers the
 adopted main case and the social items the ledger allocates (§2), at central values. Taxpayers carry
-$349.3bn of the fiscal channel at central values, 85% of it state and local and $44.7bn of it the return
-on public capital, which is never borrowed. Rental assistance and LIHEAP ($5.1bn) fall on eligible
-households that go without the aid. The social net on today's residents is −$386.6bn, or −$1,307 per
-other resident.
+$394.4bn of the fiscal channel at central values. $74.9bn of it is the pension accrual: the Social
+Security and Part A benefits the group's 2024 work earns, which nothing finances in 2024. It falls on the
+future payers of those benefits and, like the borrowed federal part ($13.1bn), is allocated to no one
+alive today. With the accrual, 68% of the channel is state and local; without it, 84%. $45.8bn is the
+return on public capital, which is never borrowed. Rental assistance, LIHEAP and public housing ($8.1bn)
+fall on eligible households that go without the aid. The social net on today's residents is −$360.6bn,
+or −$1,219 per other resident (September 27: −$386.6bn).
 
 Who comes out where:
-- **Behind:** 97–99% in California and Texas, 98–99% of US-born adults with a high-school education or
+- **Behind:** 97–98% in California and Texas, 98–99% of US-born adults with a high-school education or
   less, 90–92% of renters, and from 83% to over 99% of each decile in the bottom half.
 - **Most often ahead:** households whose earners have some college or more and live outside California
-  and Texas: the top decile (31% under tax shares, 55% under per-person cuts) and landlords (37–42%),
-  whose pooled net under tax shares is −$701 a year.
+  and Texas: the top decile (31% under tax shares, 55% under per-person cuts) and landlords (39–43%),
+  whose pooled net under tax shares is −$524 a year.
 
 Preferences are an attribution under a stated proportional-replacement rule. White natives' part is
 −$0.58bn, and other recipients in the same pools, mostly in admissions, carry −$0.97bn; "with proposed"
 moves by 0.1 point. [CALCULATION: [ledger lane](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md),
-`--case sept27`, 62f1e5a; every old and new value in
+`--case sept29` → `derived/sept29/`, 858f77a; the September 27 run `--case sept27`, 62f1e5a, with every old and new value in
 `infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/old_new_ledger.csv` (718 rows), 73cc30c;
 ladder 226] [FRAMING-SENSITIVE]
 
@@ -66,8 +71,8 @@ d27dcb1; September 24: `winners_losers.py` → `derived/net_shares.csv`, `person
 
 The frame is the [complete annual account](immigration-complete-annual-account-2026-09-20.md) on the
 main case adopted September 24 ($200.9–246.3bn) in the tables below; the verdict above is the lane's run on
-the September 27 case. It measures the effect of the 40.9m Mexican-origin
-residents, all generations, on all other US residents in 2024. It compares the year with and without
+the main case of 2026-09-29. It measures the effect of the Mexican-origin residents (39.7m as the account
+prices them; 40.9m in the September 24 tables), all generations, on all other US residents in 2024. It compares the year with and without
 the group.
 
 A person is "ahead" when their sum over the priced channels is positive. Unpriced effects are not in
@@ -317,15 +322,15 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - **Pooling.** It treats each household as sharing everything and measures nothing about how families
   actually share. The truth for any family lies between the two counts.
 - **Kept out of every net.**
-  - The debt legacy's interest ($30.9–41.6bn on the September 27 case; $28.3–36.4bn on September 24) is a
-    different object.
+  - The debt legacy's interest ($30.8–41.5bn on the main case, $30.9–41.6bn on the September 27 case,
+    $28.3–36.4bn on September 24) is a different object.
   - The owners' home-value gain is a stock ($1.3–2.9tn).
   - The consumer-price and care side views overlap the wage channel.
 - **The allocation base is not a total.** The lane's allocation base, the adopted fiscal band plus
   decision 4's victims figure, mixes crime footings. It also leaves out the social items added from
   September 28 on: fear, security, schools, pollution, crashes and five benefits. The published
-  fiscal-plus-social total is $413.7–488.0bn on the 39.7M people the account prices (ladder 274,
-  [INDEX](immigration-INDEX.md)). Before those items it was $248–304bn on September 24 ($247.7–298.4bn on
+  fiscal-plus-social total is $463.0–535.5bn on the 39.7M people the account prices (ladders 274, 275,
+  [INDEX](immigration-INDEX.md)); on the September 27 case it was $413.7–488.0bn. Before those items it was $248–304bn on September 24 ($247.7–298.4bn on
   the equal footing, $253.4–304.0bn on the custody footing), $305–350bn on the schools case (4e66adb) and
   $363–438bn on the September 27 case (73cc30c).
 
@@ -384,3 +389,4 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   gives the current fiscal-plus-social total ($413.7–488.1bn, ladder 274). Concept affected: which run the memo
   states as current.
 - 2026-09-29 (number drift audit): the pairing's upper end is $488.0bn (488.047), not $488.1bn, and the scale net is $13.7bn on the priced count ($13.9bn on the CPS count). Concept affected: none; rounding and count basis only.
+- 2026-09-29, later (main case v4, [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275): the verdict runs the main case of that date (858f77a). 17.9% / 17.1% of other residents come out ahead, pooled; the $74.9bn pension accrual falls on the future payers of Social Security and Medicare, so the social net on today's residents falls to −$360.6bn while the case rises. Landlords ahead 39–43% (pooled net −$524); California and Texas 97–98% behind. Concept affected: who comes out ahead, and who bears the pension accrual.
