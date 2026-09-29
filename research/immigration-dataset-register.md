@@ -1220,13 +1220,8 @@ corrected method.
 These come from the June 2026 roadmaps and were checked on 2026-09-29. Since June the project has acquired
 Light/He/Robey, the USSC 2024 tables and the USSC offender files, SPI2016, SCAAP, NIS Round 1, CILS, NCVS, NIBRS, the
 GSS, Zillow, the OI tables and the state E-Verify mandate dates (coded in `compliance_gap_2026_09_24/everify.py`); all
-appear above. The scouting records remain in the June memos:
-[additions](immigration-dataset-roadmap-additions-2026-06-24.md), [batch 3](immigration-dataset-roadmap-batch3-2026-06-24.md),
-[batch 4 US](immigration-dataset-roadmap-batch4-us-2026-06-24.md),
-[batch 4 international](immigration-dataset-roadmap-batch4-intl-2026-06-24.md),
-[batch 5 benefit](immigration-dataset-roadmap-batch5-benefit-2026-06-24.md),
-[batch 5 cost](immigration-dataset-roadmap-batch5-cost-2026-06-24.md) and the
-[gated-data specifications](immigration-gated-data-specs-2026-06-25.md).
+appear above. The June scouting memos were deleted on 2026-09-29; the INDEX tombstones give the commits to recover
+them from. The [gated-data specifications](immigration-gated-data-specs-2026-06-25.md) stay.
 
 | Lead | What it would add | Status and route |
 |---|---|---|

@@ -200,7 +200,6 @@ Use:
 2. `NCES per-pupil spending`
 3. school-finance and local context overlays
 4. `research/immigration-frontier-data-acquisition-2026-04-11.md`
-5. `research/immigration-school-service-complexity-2026-04-11.md`
 
 Local assets:
 
@@ -211,9 +210,9 @@ Local assets:
 5. `sources/immigration-fiscal/data/external/stage4/saipe/`
 6. `sources/immigration-fiscal/data/external/stage4/courts/`
 7. `sources/immigration-fiscal/data/external/stage4/nces/`
-8. `sources/immigration-fiscal/data/derived/stage4/school_service_complexity_district_2023.csv` (*not on disk*)
-9. `sources/immigration-fiscal/data/derived/stage4/school_service_complexity_state_2023.csv` (*not on disk*)
-10. `sources/immigration-fiscal/data/derived/stage4/nces_elsi_district_english_columns_probe_2026-04-11.json` (*not on disk*)
+
+The April school-service tables and the ELSi probe built from these were lost in August 2026 and not rebuilt
+([register, Lost](immigration-dataset-register.md#lost-not-rebuilt-or-on-the-ssd-only)).
 
 Best for:
 
@@ -263,7 +262,9 @@ Local assets:
 
 1. `sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip`
 2. `sources/immigration-fiscal/data/external/stage2/census/sipp/pu2023_csv.zip`
-3. `sources/immigration-fiscal/data/derived/stage2/sipp_foreign_low_skill_calibration_2023.csv` (*not on disk*)
+
+The April SIPP low-skill calibration extract was lost in August 2026 and not rebuilt
+([register, Lost](immigration-dataset-register.md#lost-not-rebuilt-or-on-the-ssd-only)).
 
 Best for:
 
