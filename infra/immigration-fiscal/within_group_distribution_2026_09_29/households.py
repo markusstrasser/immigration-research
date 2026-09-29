@@ -48,11 +48,35 @@ generation the same per member (1e-9 relative); one reference person per househo
 reproduces its published Mexico-born 25-64 counts (on the published weights: the flag does not use weights).
 Sensitivity A_schools_per_head: convention A with the school dollars spread per head over the union instead of
 charged to the pupils' households.
+--case sept29 (the main case adopted on 2026-09-29, main_case_2026_09_29; with --weights row4 only, the count the case
+prices) reads _cache/sept29/lines.json (export_lines.cjs --case sept29) and writes derived/sept29/ and _cache/sept29/;
+the September 27 files do not move. Its new lines take these person rules, each carried down from the generation
+account's own v4 split (run_generations_v4.cjs, v4_split.cjs):
+  - the pension switch (a new category, pension_accrual, in B: the members' own contributions earn it): social_security
+    is the accrual, spread by the persons' OASDI receipts (employee and employer OASDI on their key plus
+    se_oasdi_share of self-employment tax on its key), since each generation's accrual is its accrual per tax dollar
+    times its OASDI receipts; medicare's Part A accrual likewise by HI receipts, its benefits (the cash set's less the
+    Part A share) by the Medicare key; the federal income tax falls by the tax on benefits, spread by the Social
+    Security benefit key, and the rest stays on its own key;
+  - roads keyed by miles (roads_vmt_*): the driver-mile piece over persons aged 5 and over (each at the union's miles),
+    the freight piece on the excise line's consumption key and the old-key piece on economic affairs' key (candidate
+    v4's withRoads formula, split and gated in the export);
+  - state pricing (state_price_*): the parent line's split (public order: per head and by use), since each
+    generation's gap is the union's price index on its own parent amount;
+  - public housing's deficit (receipt housing_enterprise_surplus): the housing-assistance key, as a transfer;
+  - the tax on tenant-occupied housing (receipt tenant_occupied_property): persons in homes rented for cash, weighted
+    by their state's group rent per such union member (the generation account's rule, v4_inputs.py tenant_share;
+    gated to its generation shares);
+  - part-rekeyed capital (the highway components): the parent line's part by the parent's split and the correction
+    line's part by the road line's pieces;
+  - production: the cell parts are solved on the row-4 labor shares, where the generation account attributes the
+    case's row-4 grid (v4_inputs.py).
 Writes derived/net_positive_shares.csv, concentration.csv, household_balance_quantiles.csv, control.csv,
 category_means.csv, line_scaling.csv and _cache/households.parquet; the row-4 run writes the same files to
 derived/row4/ and _cache/row4/. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --weights row4
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4
 """
 from __future__ import annotations
 
@@ -87,6 +111,50 @@ ENDS = ["low", "high"]
 PUBLISHED_MEX_25_64 = {"borjas_paper_rules": 3.9170610819750302, "no_medicaid_rule": 4.778136460024849}
 PER_HEAD_KEYS = {"population", "resident_population"}
 FAILS = []
+# The September 29 case (export_lines.cjs --case sept29): its lines, its tenant key's inputs and its new category.
+CASE_DIRS = {"sept27": None, "sept29": "sept29"}
+STATES_CSV = FISCAL / "receipt_side_long_run_2026_09_28/derived/states.csv"
+V4_INPUTS = GENLANE / "derived/v4_inputs.json"
+CASH_RENT = 2  # H_TENURE: rented for cash
+PENSION = "pension_accrual"
+# Keys the decomposition lane's row-4 age bins do not carry: on row 4 they are pinned for G2 and G3+ only.
+NO_UNION_ROW4_PIN = {("receipt", "modeled_owner_property")}
+STATE_PRICE_PARENT = {"state_price_public_order_safety": "public_order_safety",
+                      "state_price_health_services": "health_services",
+                      "state_price_recreation_culture": "recreation_culture"}
+FIPS = {1: "AL", 2: "AK", 4: "AZ", 5: "AR", 6: "CA", 8: "CO", 9: "CT", 10: "DE", 11: "DC", 12: "FL", 13: "GA", 15: "HI",
+        16: "ID", 17: "IL", 18: "IN", 19: "IA", 20: "KS", 21: "KY", 22: "LA", 23: "ME", 24: "MD", 25: "MA", 26: "MI",
+        27: "MN", 28: "MS", 29: "MO", 30: "MT", 31: "NE", 32: "NV", 33: "NH", 34: "NJ", 35: "NM", 36: "NY", 37: "NC",
+        38: "ND", 39: "OH", 40: "OK", 41: "OR", 42: "PA", 44: "RI", 45: "SC", 46: "SD", 47: "TN", 48: "TX", 49: "UT",
+        50: "VT", 51: "VA", 53: "WA", 54: "WV", 55: "WI", 56: "WY"}  # GESTFIPS; v4_inputs.py STATES
+
+
+def tenant_key(d, union, gens, w0):
+    """The tax on tenant-occupied housing by person: union members in homes rented for cash, each weighted by the
+    group's rent in their state (states.csv group_rent) over the union's members in such homes there (row-4 weights).
+    A state without such members would spread its rent nationally, as the generation account's rule does. Gated to
+    that rule's generation shares (v4_inputs.json tenant_share, convention a)."""
+    with STATES_CSV.open() as f:
+        group = {r["state"]: float(r["group_rent"]) for r in csv.DictReader(f)}
+    gate("states.csv covers the 50 states and DC, as the FIPS map", sorted(group) == sorted(FIPS.values()), f"{len(group)} rows")
+    rent = (d.H_TENURE.eq(CASH_RENT).to_numpy() & union).astype(float)
+    st = d.GESTFIPS.to_numpy()
+    x, spread = np.zeros(len(d)), 0.0
+    n_nat = float(rent @ w0)
+    for fips, abbr in FIPS.items():
+        here = rent * (st == fips)
+        n = float(here @ w0)
+        if n > 0:
+            x += group[abbr] * here / n
+        else:
+            spread += group[abbr] / n_nat
+    x += spread * rent
+    ref = json.loads(V4_INPUTS.read_text())["tenant_share"]
+    total = float(x @ w0)
+    worst = max(abs(float(x[gens[g]] @ w0[gens[g]]) / total - ref["rule"]["a"][g] / ref["rent_share"]) for g in GENS)
+    gate("the tenant key's generation shares are the generation account's (v4_inputs.json tenant_share, 1e-12)",
+         worst < 1e-12, f"max |diff| {worst:.1e}")
+    return x
 
 
 def gate(label, ok, detail=""):
@@ -127,9 +195,17 @@ def spending_category(row):
     return "other_shared"
 
 
-def main(arm):
-    print(f"[frame] weights: {arm}", flush=True)
-    lines = json.loads((CACHE / "lines.json").read_text())
+def main(arm, case="sept27"):
+    sub = CASE_DIRS[case]
+    if sub and arm != "row4":
+        raise SystemExit(f"[BLOCKED] --case {case} runs on the row-4 weights only, the count the case prices")
+    print(f"[frame] weights: {arm}" + (f"; case {case}" if sub else ""), flush=True)
+    lines = json.loads(((CACHE / sub if sub else CACHE) / "lines.json").read_text())
+    v4 = case == "sept29"
+    if v4 and lines["meta"]["case"] != "main_case_2026_09_29":
+        raise SystemExit(f"[BLOCKED] _cache/{sub}/lines.json is {lines['meta']['case']}'s; run export_lines.cjs --case {case}")
+    PA = lines["meta"]["pension_accrual"] if v4 else None
+    b_cats = B_CATS + ([PENSION] if v4 else [])   # the pension accrual is the members' own claim, so in B
     d = F.load()
     civ, union, gens = F.masks(d)
     W_pub = d[F.REPS].to_numpy(float)
@@ -143,6 +219,8 @@ def main(arm):
     w0 = W[:, 0]
     w_pub = W_pub[:, 0]
     out_dir, cache_dir = (OUT, CACHE) if arm == "published" else (OUT / arm, CACHE / arm)
+    if sub:     # a later case writes its own directory, on the row-4 weights
+        out_dir, cache_dir = OUT / sub, CACHE / sub
     index = C.spm_index(d)
     age = d.A_AGE.to_numpy()
     lab = F.label(gens, len(d))
@@ -154,7 +232,7 @@ def main(arm):
     print("[key vectors]", flush=True)
     rk = C.receipt_keys(d, index)
     sk = C.spending_vectors(d, index)
-    _, params = K.owner_property(d)
+    owner, params = K.owner_property(d)
     medical, _, _, _ = K.meps_keys(d)
     edu = K.school_keys(d, civ, params)
     exposure_py = d.NOCOV_CYR.eq(3).to_numpy(float) + 0.5 * d.NOCOV_CYR.eq(2).to_numpy(float)
@@ -169,6 +247,15 @@ def main(arm):
         v[("spending", "postsecondary")] = edu[a]["P"]
         v[("spending", "school_operating")] = edu[a]["school"]
         vec[a] = v
+    if v4:
+        # The case's receipt keys that respond from September 29: public housing's deficit on the housing-assistance
+        # key, the tax on tenant-occupied housing on the tenant key, and owner-occupied property tax on the generation
+        # account's owner key (keys.py owner_property, SPM-shared; at response 0 until then, so never spread).
+        tenant = tenant_key(d, union, gens, w0)
+        for a in vec:
+            vec[a][("receipt", "housing_support")] = vec[a][("spending", "housing_support")]
+            vec[a][("receipt", "renter_contract_rent")] = tenant
+            vec[a][("receipt", "modeled_owner_property")] = owner
     pub = pd.read_csv(GENLANE / "derived/generation_keys.csv").query("convention == 'a'")
     # Row 4 moves no weight in G2 or G3+, so their rows keep generation_keys.csv; the union's row-4 totals are the
     # decomposition lane's age bins (the same key vectors under the same weight_arms call), which pins G1 as well.
@@ -183,7 +270,7 @@ def main(arm):
         for g in by_gen:
             want = getattr(r, g)
             worst = max(worst, abs(float(x[gens[g]] @ w0[gens[g]]) - want) / max(abs(want), 1.0))
-        if union_ref is not None:
+        if union_ref is not None and (r.side, r.key) not in NO_UNION_ROW4_PIN:
             want = float(union_ref[("both", "extra|pop") if r.key == "resident_population"
                                    else (r.allocation, f"{r.side}|{r.key}")])
             worst = max(worst, abs(float(x[union] @ w0[union]) - want) / max(abs(want), 1.0))
@@ -236,15 +323,18 @@ def main(arm):
 
     # Production: cell parts AS_s solved from the three generations' terms and their cell labor shares. The case keeps
     # the term at its published value and the generation lane attributes it on the published weights, so the parts are
-    # solved there on both arms; each part is then spread over its cell's workers at the arm's weights.
+    # solved there on both arms; each part is then spread over its cell's workers at the arm's weights. The
+    # September 29 case puts the grid on the row-4 weights and the generation lane attributes it there (v4_inputs.py),
+    # so its parts are solved on the row-4 labor shares.
     print("[production cells]", flush=True)
     prod_parts = {}
+    w_labor = w0 if v4 else w_pub
     for end in ENDS:
         dims = lines["union"][end]["production"]["dims"]
         cut = 39 if dims["split"] == "hs_or_less" else 42
         earn = np.maximum(d[dims["proxy"]].to_numpy(float), 0)
         cells = [d.A_HGA.between(31, cut).to_numpy(), d.A_HGA.between(cut + 1, 46).to_numpy()]
-        labor = np.array([[float((earn * w_pub)[gens[g] & c].sum()) for c in cells] for g in GENS])
+        labor = np.array([[float((earn * w_labor)[gens[g] & c].sum()) for c in cells] for g in GENS])
         A = labor / labor.sum(axis=0)
         y = np.array([lines["generations"][g][end]["production"]["cost_bn"] for g in GENS])
         AS, *_ = np.linalg.lstsq(A, y, rcond=None)
@@ -281,6 +371,51 @@ def main(arm):
                     return [("education_other", vec[a][("spending", "P_part")])]
                 return [(spending_category(row), vec[a][("spending", k)])]
 
+            def row_of(side, i):
+                return next(r for r in G["rows"] if r["side"] == side and r["id"] == i)
+
+            def receipts_of(parts):
+                """Persons' amounts of receipt lines within the generation: each (line, weight)'s generation amount
+                spread on its key vector."""
+                x = np.zeros(len(d))
+                for lid, wt in parts:
+                    r = row_of("receipt", lid)
+                    v = np.where(m, vec[a][("receipt", r["key"])], 0.0)
+                    x += wt * r["amount_bn"] * v / float(v @ w0)
+                return x
+
+            def v4_split(row):
+                """[(category, share of the line, vector)] for a line the September 29 case adds or changes, else None."""
+                i, side = row["id"], row["side"]
+                if side == "spending" and i in STATE_PRICE_PARENT:
+                    return line_split(row_of("spending", STATE_PRICE_PARENT[i]))
+                if side == "spending" and i in G["roads"]:
+                    rp = G["roads"][i]
+                    got = rp["driver_miles_bn"] + rp["freight_bn"] + rp["old_key_bn"]
+                    if abs(got - row["amount_bn"]) > 1e-9:
+                        raise SystemExit(f"[BLOCKED] {g} {end} {i}: its pieces do not add to its amount")
+                    return [("roads_parks", rp["driver_miles_bn"] / row["amount_bn"], (age >= 5).astype(float)),
+                            ("roads_parks", rp["freight_bn"] / row["amount_bn"], vec[a][("receipt", rp["freight_key"])]),
+                            ("roads_parks", rp["old_key_bn"] / row["amount_bn"], vec[a][("spending", rp["old_key"])])]
+                pen = G["pension"]
+                if side == "spending" and i == "social_security":
+                    return [(PENSION, 1.0, receipts_of([(x, 1.0) for x in PA["oasdi_lines"]]
+                                                       + [(PA["se_line"], PA["se_oasdi_share"])]))]
+                if side == "spending" and i == "medicare":
+                    if abs(pen["medicare_benefits_bn"] + pen["part_a_accrual_bn"] - row["amount_bn"]) > 1e-9:
+                        raise SystemExit(f"[BLOCKED] {g} {end} medicare: benefits and the Part A accrual do not add to it")
+                    hi = receipts_of([(x, 1.0) for x in PA["hi_lines"]] + [(PA["se_line"], 1 - PA["se_oasdi_share"])])
+                    return [("health", pen["medicare_benefits_bn"] / row["amount_bn"], vec[a][("spending", row["key"])]),
+                            (PENSION, pen["part_a_accrual_bn"] / row["amount_bn"], hi)]
+                if side == "receipt" and i == "federal_income_tax":
+                    if abs(pen["fit_cash_bn"] - pen["benefit_tax_bn"] - row["amount_bn"]) > 1e-9:
+                        raise SystemExit(f"[BLOCKED] {g} {end} federal_income_tax: the cash set's less the tax on benefits is not it")
+                    return [("taxes", pen["fit_cash_bn"] / row["amount_bn"], vec[a][("receipt", row["key"])]),
+                            ("taxes", -pen["benefit_tax_bn"] / row["amount_bn"], vec[a][("spending", "social_security")])]
+                if side == "receipt" and i == "housing_enterprise_surplus":
+                    return [("transfers", 1.0, vec[a][("receipt", row["key"])])]
+                return None
+
             def line_split(row):
                 """[(category, share of the line, vector)] for one line of this generation."""
                 i = row["id"]
@@ -295,6 +430,10 @@ def main(arm):
                     line = next(x for x in models[g]["spending"]["lines"] if x["id"] == i)
                     med = line["keys"]["medicaid"][a]["target_bn"] / line["keys"][row["key"]][a]["target_bn"]
                     return [("health", med, vec[a][("spending", "medicaid")]), ("health", 1 - med, exposure_py)]
+                if v4:
+                    split = v4_split(row)
+                    if split is not None:
+                        return split
                 parts = line_parts(row)
                 # One coefficient per line: split the line by the parts' shares of its key total.
                 total = sum(float(np.where(m, x, 0) @ w0) for _, x in parts)
@@ -322,7 +461,16 @@ def main(arm):
             for c in G["capital"]:
                 rule = c["rule"]
                 if rule["kind"] == "receipt_amount_over_national":
+                    if rule["line"] != "enterprise_surplus":
+                        raise SystemExit(f"[BLOCKED] {c['id']}: a receipt key other than the per-head enterprise surplus")
                     add("capital", c["cost_bn"], np.ones(len(d)), c["id"])
+                    continue
+                if rule["kind"] == "part_rekeyed":
+                    # The parent line's share and the road line's share of the key (the export's split of keyOf).
+                    sh = c["shares"]
+                    for lid, s_ in ((rule["parent_line"], sh["parent"]), (rule["correction_line"], sh["part"])):
+                        for _, share, x in line_split(row_of("spending", lid)):
+                            add("capital", c["cost_bn"] * s_ / (sh["parent"] + sh["part"]) * share, x, c["id"])
                     continue
                 nums = rule["numerator_lines"]
                 den = sum(amount[n] for n in nums)
@@ -344,7 +492,7 @@ def main(arm):
     print("[person amounts]", flush=True)
     rows_u = np.flatnonzero(union)
     Wu = W[rows_u]
-    cats = B_CATS + A_ONLY
+    cats = b_cats + A_ONLY
     amt = {e: {c: np.zeros((len(rows_u), W.shape[1])) for c in cats} for e in ENDS}
     unassigned = {e: np.zeros(W.shape[1]) for e in ENDS}
     for end in ENDS:
@@ -429,7 +577,7 @@ def main(arm):
                    "head_status_no_medicaid_rule": status_lab["no_medicaid_rule"]}
     own_gen = np.array(GENS)[lab[rows_u]]
 
-    conv_cats = {"A": cats, "B": B_CATS, "A_schools_per_head": [c for c in cats if c != "schools"] + ["schools_per_head"]}
+    conv_cats = {"A": cats, "B": b_cats, "A_schools_per_head": [c for c in cats if c != "schools"] + ["schools_per_head"]}
     mean_rows = []
     for end in ENDS:
         for name, labels in list(head_breaks.items()) + [("own_generation", None)]:
@@ -439,7 +587,7 @@ def main(arm):
                 wsel = Wu[sel]
                 for c in cats + ["schools_per_head"]:
                     mean = (amt[end][c][sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
-                    mean_rows.append(dict(end=end, breakdown=name, cell=cell, category=c, in_B=c in B_CATS,
+                    mean_rows.append(dict(end=end, breakdown=name, cell=cell, category=c, in_B=c in b_cats,
                                           net_cost_per_member_usd=mean[0], se=sdr(mean)))
     npos_rows, conc_rows, q_rows, ctrl_rows = [], [], [], []
     hh_out = pd.DataFrame({"PH_SEQ": hh_ids, "union_members": members, "weight": Wh[:, 0], **{k: v for k, v in head_breaks.items() if k != "all"},
@@ -551,7 +699,11 @@ def main(arm):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="The September 27 case spread over the union's households.")
+    parser = argparse.ArgumentParser(description="An adopted main case spread over the union's households.")
     parser.add_argument("--weights", choices=["published", "row4"], default="published",
                         help="published: ASEC person weights (derived/); row4: audit row 4's weights (derived/row4/)")
-    main(parser.parse_args().weights)
+    parser.add_argument("--case", choices=list(CASE_DIRS), default="sept27",
+                        help="sept27 (default): the September 27 case; sept29: the main case adopted on 2026-09-29, "
+                             "row-4 weights only, written to derived/sept29/")
+    args = parser.parse_args()
+    main(args.weights, args.case)

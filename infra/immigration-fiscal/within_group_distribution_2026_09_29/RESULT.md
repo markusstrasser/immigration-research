@@ -291,6 +291,9 @@ mixed-household results.
 node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --weights row4
+# the case adopted on 2026-09-29 (row-4 weights only), written to derived/sept29/
+node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs --case sept29
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4
 ```
 
 Both scripts stop with exit 1 on a failed gate. Together they run in about ten seconds.
@@ -384,3 +387,158 @@ On row 4 the key-total gate is re-pinned. G2 and G3+ reproduce `generation_keys.
 **Validation (2026-09-29, exit codes).** `export_lines.cjs` 0. `households.py --weights published` 0, and its six `derived/` files unchanged: `git status` shows only `derived/row4/` as new. `households.py --weights row4` 0. `scripts/rerun_lane.py` over the three commands 0: IDENTICAL, 15 of 15 files unchanged.
 
 **Files.** `households.py --weights row4` writes the same six files to `derived/row4/` and its household table to `_cache/row4/households.parquet` (ignored). The published run's outputs are unchanged.
+
+## v4 case (sept29), 2026-09-29
+
+**Verdict:** Spread over the 39,712,493 members it prices (audit row 4), the v4 main case ($371.4146 / $434.8410bn) leaves **16.2% (SE 0.4) / 12.3% (0.4)** of the union's members in households that pay more than they cost under full allocation (A). The September 27 case on the same weights leaves 24.2% / 20.5%. Under B, which now counts the members' own pension accrual beside their taxes and individually used services, the shares are **23.8% (0.5) / 22.1% (0.5)**, against 31.0% / 29.8%. The costliest tenth of households carries **53.2% (0.5) / 47.5% (0.5)** of the net cost, against 60.7% / 52.3%, and the costliest fifth 79.4% / 72.1%. The pension switch drives the change. The case now charges each worker the benefits their payroll taxes earn: 97.4 cents per OASDI tax dollar (ratio_net 0.9737) plus the Part A accrual, $150.5bn / $143.9bn in all. It no longer charges retirees their current Social Security benefits or Medicare's Part A share. A working household's payroll taxes therefore mostly stop counting as a net contribution, and retiree households get cheaper. At the low end, members with a BA+ head fall from 46.3% to 36.2% net-positive, and members with a head aged 65 or over rise from 6.5% to 9.8%. The member at the median lives in a household costing **$9,755 / $11,160** per member, against $9,097 / $10,405. [CALCULATION: `export_lines.cjs --case sept29`, `households.py --case sept29 --weights row4` → `derived/sept29/net_positive_shares.csv`, `concentration.csv`, `household_balance_quantiles.csv`, `category_means.csv`] [FRAMING-SENSITIVE: the accrual convention, and its spread inside a generation]
+
+claude-opus-5-5
+
+The run was resumed after the 20:51 JST reboot. The code was written before it, and every step below was rerun after it (log at the end).
+
+**What runs.**
+- `export_lines.cjs --case sept29` evaluates the adopted payload (`main_case_2026_09_29/derived/corrections.json`, through the adopted package at its main profile) and the generation account's v4 split (`generation_corrections_sept29.json`) at specifications 48 and 11. It also evaluates the cash set, the pension switch off, at the same specifications. Its payload is candidate v4's `corrections_v4_cash.json`, from which the adopted lane builds its cash-set row. The pension lines are split into their parts from the difference. The script writes `_cache/sept29/lines.json`.
+- `households.py --case sept29 --weights row4` spreads the lines over persons and households. It writes the six files to `derived/sept29/` and the household table to `_cache/sept29/households.parquet` (ignored).
+- The case runs on the row-4 weights only: `--case sept29` without `--weights row4` stops with [BLOCKED]. The September 27 files in `derived/` and `derived/row4/` do not move.
+
+**Positive control (A reproduces the case).** $bn, one decimal. Two parts carry controlled rounding so that the printed parts add to the printed totals: roads and parks at the low end (22.05, printed 22.1) and health at the high end (173.55, printed 173.5).
+
+| $bn | Low end (spec 48) | High end (spec 11) | Sept 27 on row 4, low / high |
+|---|---|---|---|
+| Taxes and receipts (except the enterprise surplus) | −435.6 | −413.9 | −400.2 / −378.3 |
+| Transfers keyed to own receipt | +136.5 | +127.2 | +190.7 / +177.9 |
+| Health | +171.6 | +173.5 | +189.4 / +191.4 |
+| Pension accrual (new; in B) | +150.5 | +143.9 | — |
+| K-12 schools (incl. reprice) | +181.4 | +187.7 | +181.4 / +187.7 |
+| Justice by use | +44.0 | +44.0 | +40.3 / +40.3 |
+| Justice per head | +32.1 | +32.1 | +29.4 / +29.4 |
+| General government | +28.2 | +40.0 | +28.2 / +40.0 |
+| Roads and parks | +22.1 | +33.1 | +19.4 / +29.6 |
+| Capital return | +34.4 | +57.2 | +33.8 / +55.7 |
+| College and other education | +11.1 | +10.9 | +11.1 / +10.9 |
+| Per-head and age-keyed transfers | +9.5 | +9.5 | +9.5 / +9.5 |
+| Enterprise surplus (receipt) | +0.8 | +0.8 | +5.6 / +5.6 |
+| Housing and community services | +1.7 | +1.7 | +1.7 / +1.7 |
+| Production term | −11.7 | −7.7 | −13.3 / −8.8 |
+| **Households, sum** | **376.6** | **440.0** | 327.0 / 392.6 |
+| Not assigned: lane constants | −5.2 | −5.2 | −5.2 / −5.2 |
+| **Households + not assigned = the case** | **371.4146** (difference 1.5e-12) | **434.8410** (4.5e-13) | 321.8194 / 387.3701 |
+
+[CALCULATION: `derived/sept29/control.csv` against `derived/row4/control.csv`]
+
+Against September 27 on the same weights:
+- Taxes and receipts rise $35.5bn / $35.6bn. Most of the rise is item 5's property taxes, $27.2bn: the owner-occupied tax $19.0bn, the tax on tenant-occupied housing $6.8bn and personal property $1.3bn. Sales and excise taxes add $7.5bn.
+- Transfers fall $54.2bn / $50.7bn. Social Security benefits leave the account ($56.3bn / $53.0bn), and workers' compensation and housing subsidies fall $1.3bn / $1.1bn. Public housing's deficit enters at $3.4bn.
+- Health falls $17.9bn. Medicare's Part A share of benefits leaves ($19.7bn), and state pricing adds $1.8bn to health services.
+- The pension accrual enters: OASDI $109.4bn / $102.8bn and Part A $41.1bn.
+- State pricing of public order adds $6.4bn to justice. Roads by miles and state pricing of recreation add $2.6bn / $3.5bn to roads and parks, and the capital return rises $0.6bn / $1.5bn. The enterprise surplus falls $4.7bn, of which $3.4bn is public housing's deficit, now keyed as a transfer. The production term moves to the row-4 grid.
+
+**September 27 → September 29, both on row 4.** The same persons and weights; only the case changes. Shares are % of members. The SEs of the sept29 shares in the headline row are in brackets; those of the other rows are in `net_positive_shares.csv`.
+
+| | A, low | A, high | B, low | B, high |
+|---|---|---|---|---|
+| Union members (m) | 39.71 → 39.71 | 39.71 → 39.71 | 39.71 → 39.71 | 39.71 → 39.71 |
+| Net cost assigned to households, $bn | 327.0 → 376.6 | 392.6 → 440.0 | 201.6 → 248.4 | 218.9 → 262.4 |
+| **Members in net-contributor households** | **24.2 → 16.2 (0.4)** | **20.5 → 12.3 (0.4)** | **31.0 → 23.8 (0.5)** | **29.8 → 22.1 (0.5)** |
+| Head below high school | 12.0 → 7.1 | 9.2 → 4.2 | 16.1 → 10.8 | 15.4 → 10.0 |
+| Head high school | 20.3 → 12.0 | 16.7 → 8.4 | 26.7 → 17.8 | 26.0 → 16.8 |
+| Head some college | 25.8 → 16.9 | 22.1 → 13.5 | 34.1 → 27.0 | 33.0 → 24.7 |
+| Head BA or more | 46.3 → 36.2 | 41.4 → 29.7 | 55.9 → 49.1 | 52.6 → 45.6 |
+| Head Mexico-born | 17.8 → 11.0 | 14.3 → 7.1 | 24.3 → 17.0 | 23.5 → 15.8 |
+| Head second generation | 26.6 → 18.0 | 24.6 → 15.7 | 33.8 → 26.7 | 34.5 → 26.1 |
+| Head third-plus | 32.4 → 22.9 | 27.3 → 17.9 | 39.4 → 32.2 | 36.4 → 29.0 |
+| Head under 30 | 29.8 → 16.4 | 24.1 → 12.1 | 37.5 → 27.0 | 36.4 → 24.8 |
+| Head 30–44 | 23.6 → 16.4 | 20.2 → 12.6 | 30.1 → 22.2 | 28.1 → 20.5 |
+| Head 45–64 | 27.4 → 17.9 | 23.6 → 13.6 | 35.3 → 27.0 | 34.9 → 25.2 |
+| Head 65 and over | 6.5 → 9.8 | 5.8 → 7.8 | 8.8 → 14.3 | 8.1 → 13.5 |
+| No union children | 42.8 → 30.3 | 39.0 → 24.4 | 51.4 → 43.7 | 52.4 → 42.3 |
+| One or two union children | 15.6 → 9.1 | 11.0 → 5.6 | 22.4 → 14.0 | 19.2 → 11.5 |
+| Three or more | 2.4 → 1.2 | 1.1 → 1.0 | 5.0 → 2.0 | 3.3 → 1.3 |
+| Head unauthorized, Borjas rules | 19.2 → 10.0 | 14.6 → 6.5 | 27.3 → 16.3 | 26.9 → 15.0 |
+| Head legal immigrant, Borjas rules | 17.1 → 11.6 | 14.1 → 7.4 | 22.8 → 17.3 | 21.7 → 16.2 |
+| Head unauthorized, no Medicaid rule | 15.6 → 8.3 | 11.9 → 5.5 | 23.1 → 13.3 | 22.8 → 12.3 |
+| Head legal immigrant, no Medicaid rule | 19.6 → 13.2 | 16.2 → 8.3 | 25.3 → 19.9 | 24.0 → 18.5 |
+| Households net-positive | 33.3 → 24.2 | 29.5 → 18.7 | 40.3 → 33.4 | 39.2 → 31.2 |
+| **Net cost per member, $** | | | | |
+| **Median member's household** | 9,097 → 9,755 | 10,405 → 11,160 | 6,003 → 6,597 | 6,317 → 6,952 |
+| P10 | −9,859 → −3,790 | −7,708 → −1,628 | −12,467 → −6,661 | −12,048 → −5,881 |
+| P90 | 24,321 → 22,207 | 25,877 → 23,627 | 21,041 → 18,525 | 21,320 → 18,629 |
+| Mean, all members | 8,234 → 9,483 | 9,885 → 11,081 | 5,077 → 6,254 | 5,513 → 6,606 |
+| Mean, BA+ heads | −1,474 → +1,481 | 1,098 → 3,809 | −5,539 → −2,376 | −4,184 → −1,193 |
+| Mean, below-high-school heads | 13,244 → 13,067 | 14,478 → 14,333 | 10,474 → 10,077 | 10,512 → 10,065 |
+| Mean, heads 65 and over | 20,146 → 10,114 | 21,116 → 11,312 | 17,077 → 6,960 | 16,945 → 7,010 |
+| Mean, heads 30–44 | 8,162 → 11,064 | 10,251 → 12,916 | 4,850 → 7,689 | 5,692 → 8,263 |
+| Mean, Mexico-born members (own generation) | 8,736 → 9,049 | 7,336 → 8,133 | 6,091 → 6,189 | 3,633 → 4,178 |
+| Mean, unauthorized-headed (Borjas rules) | 7,790 → 9,966 | 9,403 → 11,524 | 5,022 → 7,009 | 5,402 → 7,277 |
+| Mean, legal-immigrant-headed (Borjas rules) | 11,063 → 11,254 | 12,459 → 12,636 | 8,046 → 8,091 | 8,228 → 8,208 |
+| **Concentration** | | | | |
+| Costliest 10% of households, share of the net cost | 60.7 → 53.2 | 52.3 → 47.5 | 86.4 → 69.7 | 78.9 → 65.4 |
+| Costliest 20% | 90.6 → 79.4 | 79.4 → 72.1 | 126.1 → 100.9 | 116.1 → 95.6 |
+| Members in the costliest 10% | 18.7 → 19.6 | 18.7 → 19.6 | 17.8 → 19.0 | 17.8 → 18.9 |
+| Gross cost of net-cost households, $bn | 455.4 → 454.0 | 502.1 → 505.9 | 366.1 → 350.7 | 374.4 → 358.1 |
+| Offset by net-contributor households, $bn | −128.4 → −77.4 | −109.5 → −65.8 | −164.5 → −102.3 | −155.5 → −95.8 |
+| **A with schools per head** | | | | |
+| Members in net-contributor households | 19.7 → 11.2 | 15.2 → 8.3 | | |
+
+[CALCULATION: `derived/row4/` against `derived/sept29/`, same file and row]
+
+The per-member figures divide by the row-4 count: 39,712,493 members in all, of whom G1 11,036,701, G2 14,333,218 and G3+ 14,342,575 (`net_positive_shares.csv`, own generation).
+
+**What moved and why.** Per member, A, low end, $ (`category_means.csv`):
+
+| Head | Taxes | Transfers | Health | Pension accrual | Net cost (all categories) |
+|---|---|---|---|---|---|
+| All members | −10,076 → −10,970 | 4,802 → 3,438 | 4,770 → 4,320 | 0 → 3,791 | 8,234 → 9,483 |
+| Aged 65 and over | −9,028 → −10,007 | 12,828 → 4,091 | 11,269 → 8,585 | 0 → 2,233 | 20,146 → 10,114 |
+| Aged 30–44 | −9,993 → −10,843 | 3,772 → 3,561 | 3,719 → 3,618 | 0 → 3,920 | 8,162 → 11,064 |
+| BA or more | −18,753 → −20,215 | 3,500 → 2,022 | 4,776 → 4,355 | 0 → 6,425 | −1,474 → +1,481 |
+| Below high school | −5,970 → −6,637 | 5,453 → 3,859 | 5,184 → 4,561 | 0 → 2,403 | 13,244 → 13,067 |
+
+- The accrual follows OASDI and HI receipts, so it lands where the payroll taxes are: $6,425 per member with a BA+ head, against $2,403 below high school.
+- The benefits it replaces sat with retirees. Heads aged 65 and over lose $8,737 of transfers and $2,684 of health per member and gain $2,233 of accrual; their net cost halves.
+- Net contributors are mostly working households whose taxes exceed their services. The accrual takes back 97 cents of each OASDI dollar they pay, so many of them cross zero: BA+ heads fall from 46.3% to 36.2%, and households without children from 42.8% to 30.3%.
+- The cost becomes less concentrated. Retirees and large families were the costliest households; retirees' charge falls, and the accrual spreads cost over working households. The offset by net contributors shrinks from $128.4bn to $77.4bn at the low end.
+- The status rows no longer flip with the imputation rule: unauthorized-headed households are less often net-positive under both. This is not evidence about status, because the accrual is spread without regard to it (rule 1, below).
+
+**Rules designed for the case's new lines.** Each generation's line is carried down to its persons; the alternative is beside each.
+1. **The pension switch** (social_security, medicare, federal_income_tax; new category `pension_accrual`, in B).
+   - Rule: Social Security's line is now the OASDI accrual. Inside a generation it follows the persons' OASDI receipts: employee and employer OASDI on their keys, plus 80.3% (se_oasdi_share) of the self-employment tax. Medicare's line has two parts. Its remaining benefits (the cash set's Medicare less the Part A share, 37.5%) follow the Medicare key, and the Part A accrual follows HI receipts (employee and employer HI plus the rest of the self-employment tax). The federal income tax loses the tax on current benefits, on the Social Security benefit key.
+   - Why: the generation account (`v4_split.cjs`) sets each generation's accrual at its own accrual per tax dollar times its OASDI receipts, and gives a cell inside a generation its generation's ratio on the cell's own receipts. The pension lane's ratios are G1 1.077, G2 0.973 and G3+ 1.011, gross of the benefit tax. This carries the same rule down to the person. B keeps the accrual because it is the members' own claim, earned by their own contributions, as the current benefits it replaces were in B on September 27.
+   - Gates: the generations' accruals add to ratio_net times the union's OASDI receipts ($109.406993bn / $102.754953bn), the Part A accruals to $41.137128bn and the benefit tax to $2.091206bn / $1.816900bn (1e-9bn). The set and the cash set differ in these three lines only.
+   - Alternative, and why it matters: each worker's own accrual from the pension lane's person-level model (`pension_accrual_2026_09_28/pension_accrual.py` central_accrual). That model has two features the flat ratio drops. Benefits are progressive in earnings (Note 2025.7's ratio at the worker's career level, birth year and family type), so the flat ratio charges high earners too much accrual and low earners too little. And the unauthorized accrue at 10% of the rate (Note 151's long-run eligible share), so inside G1 the flat ratio charges unauthorized workers an accrual they will mostly not receive, and legal immigrants too little. Under that model, the education gradient in the shares would be steeper, the overall share probably a little higher (most net contributors are high earners), and unauthorized-headed households cheaper than shown [INFERENCE; not computed: the pension lane keeps no person-level accruals, and computing them means running its model grid on this frame]. G1's total does not move either way.
+2. **Roads keyed by miles** (roads_vmt_sl, roads_vmt_fed). Each generation's line splits into the pieces of candidate v4's formula, highway national × (FP s_vmt + (1 − FP) k_cons − k_old). The driver-mile piece goes over members aged 5 and over at equal miles, the generation account's rule (`v4_inputs.py`). The freight piece follows the excise line's consumption key, and the old-key piece, negative, economic affairs' resources key. Gate: the freight piece's implied key equals the generation's excise share before the gasoline shift (1e-9). Alternative: the generation account's roads_by_population, per head with no age cut.
+3. **State pricing** (state_price_public_order_safety, _health_services, _recreation_culture). Each line follows its parent line's split; public order's is per head and by use. The generation account prices each generation's gap as the union's index on the generation's own parent amount. Alternative: each member's own state index on their parent amount. It would move the charge toward high-price states such as California [INFERENCE]; the account carries no index by person.
+4. **Public housing's deficit** (receipt housing_enterprise_surplus, $3.4bn): the housing-assistance key, as a transfer (in B), since it funds the recipients' units. Alternative: per head, like the enterprise surplus it is split from (A only).
+5. **The tax on tenant-occupied housing** (receipt tenant_occupied_property, key renter_contract_rent, −$6.8bn). It goes to union members in homes rented for cash, each weighted by their state's group rent per such member on the row-4 weights. This is the generation account's rule carried to the person, and it is gated to that rule's generation shares (`v4_inputs.json` tenant_share, 2.2e-16). Alternative: the account's tenant_national, the same persons with no state weights.
+6. **The owner-occupied property tax** (modeled_owner_property, now at response 0.763, −$19.0bn) and **the personal property tax** (capital key, −$1.3bn) use keys the lane already builds (`keys.py` owner_property and the CPS capital key). On row 4 the owner key is pinned for G2 and G3+ only, because the decomposition lane's row-4 age bins do not carry it.
+7. **Part-rekeyed capital** (the highway components). The return splits in the proportions of the key's two parts (the adopted package's keyOf): the parent's part on economic affairs' key and the road line's part on its three pieces. Gate: the two parts add to the component's key (1e-12).
+8. **Production.** The cell parts are solved on the row-4 labor shares, because the case puts the grid on row 4 and the generation account attributes it there (`v4_inputs.py`). The September 27 runs keep the published attribution. Residual 8.9e-16bn.
+
+**The count.** No sept29 figure reads the published 40.9M frame. Every step uses the row-4 weights: the union count reproduces `headcount.csv` (39,712,493.331), the per-member figures divide by it, and the tenant key and the production labor shares use it. The per-head lines charge each generation the same per member (widest spread 7.5e-11). The 40.9M frame stands beside it as the September 27 case's published arm (`derived/`). One step still reads the published weights and moves no figure: the status imputation's count gate, since the flag itself does not use weights.
+
+**Gates, printed in this run.**
+- `export_lines.cjs --case sept29`: exit 0, 53 gates. The union reproduces the adopted band at specifications 48 / 11, 371.414600 / 434.840959 (tolerance 1e-4, the oracle's rounding), and the cash set 294.7010760 / 361.8174818 (1e-4). Each generation's rows add to `generation_results_sept29.csv` and `generation_results_sept29_cash.csv` (1e-6bn), and the generations add to the union (1e-9bn). The pension, road and capital gates are under the rules above.
+- `households.py --case sept29 --weights row4`: exit 0. The union count matches (1 person), 90 key rows match (worst 5.8e-16 relative), and public order's per-head part moves as the engine's does (5.3e-8bn). The per-head lines charge each generation the same per member (7.5e-11) and the production cells close (8.9e-16bn). Each generation's pieces plus its residual equal its cost (1.1e-13bn). Households plus the residual reproduce the case, 1.5e-12 / 4.5e-13bn against a tolerance of 1e-6bn, and every replicate matches the full sample (6.8e-12bn). There is one reference person per household, and the status counts match.
+- Old cases unchanged and repeatable: `scripts/rerun_lane.py` over the five commands, twice after the sept29 run, exit 0 and IDENTICAL, 21 of 21 files both times. The tracked files in `derived/` and `derived/row4/` equal HEAD.
+- The six sept29 files and `_cache/sept29/lines.json` are byte-identical to the ones written before the reboot.
+
+**Inputs not yet committed.** The generation account's v4 files, written by that lane and uncommitted at this run (sha256 prefixes): `generation_corrections_sept29.json` 818adc171564, `generation_corrections_sept29_cash.json` 50c3500e2a54, `generation_results_sept29.csv` d3c15b7cf47c, `generation_results_sept29_cash.csv` 1e7465f06809, `generation_summary_sept29.json` e2939a26d0b5, `v4_inputs.json` 31a77369be8b. If any of them changes before it is committed, rerun the two sept29 commands.
+
+**Limits and what would change it.**
+- The accrual convention is the case's; the cash set would charge retirees their benefits and leave workers' payroll taxes as contributions. This lane does not spread the cash set, though `_cache/sept29/lines.json` carries its pension amounts by generation. [FRAMING-SENSITIVE]
+- The person-level accrual (rule 1) would move the education gradient and the status rows.
+- The September 27 limits carry over:
+  - justice by use follows generation and age, not individual offending;
+  - the status-based corrections, and now the accrual, are spread over all Mexico-born persons by key;
+  - the lane constants (−$5.2bn) are not assigned;
+  - G1's split of Medicaid with uninsured use follows the published cells;
+  - one year is not a lifetime.
+
+**Files.** New: `derived/sept29/` (the six files) and `_cache/sept29/` (ignored). Changed: `export_lines.cjs` (the `--case` switch, capRule from the payload's meta.capital_return with a gate that it equals the capital lane's rules on September 27, and the sept29 splits) and `households.py` (`--case sept29`, the rules above).
+
+**Log (sept29; times from `date` calls).**
+- 20:58 JST — resumed after the reboot. The code (export_lines.cjs, households.py) and `derived/sept29/` (20:48) were in the working tree, uncommitted.
+- 20:58–21:05 — reran `export_lines.cjs` (exit 0; `_cache/lines.json` byte-identical to the pre-reboot copy), `export_lines.cjs --case sept29` (exit 0, 53 gates) and `households.py --case sept29 --weights row4` (exit 0, 13 s). All outputs are byte-identical to the pre-reboot ones.
+- 21:07–21:09 — `rerun_lane.py` pass 1: exit 0, IDENTICAL 21/21.
+- 21:10–21:11 — `rerun_lane.py` pass 2: exit 0, IDENTICAL 21/21. `households.py --case sept29` without `--weights row4`: [BLOCKED], exit 1.
+- 21:54–21:55 — after the RESULT and a docstring line in `households.py` (its sept29 run command), `rerun_lane.py` pass 3: exit 0, IDENTICAL 21/21.
