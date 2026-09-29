@@ -30,7 +30,7 @@ the September 27 files rerun byte-identical] [FRAMING-SENSITIVE]
 
 The ends are specifications 48 (shared allocation, 2%, the low long-run readings) and 11 (personal, 3%, the high
 readings). Per-person figures divide by the account's row-4 counts (ladder 274); only the Mexico-born's count differs
-from the CPS's. Beside the account, never in the range, without the capital return (a) is $88.1 / 74.9bn,
+from the CPS's. Beside the account, never in the range, without the capital return (a) is $88.2 / 74.9bn,
 $138.8 / 156.7bn and $110.1 / 146.1bn. The lane did not split the 7% arm on this case (the whole case at 7%:
 $457.5–511.1bn). State pricing applies the union's price indexes to each generation's keys; indexes from each
 generation's own state mix are not computed.

@@ -1550,3 +1550,4 @@ Log (times from `date`):
   scripts/rerun_lane.py]
 - 2026-09-29 23:32 JST: the phase 2 sections written from the derived files (scratch scripts in the parent's
   scratchpad, `v4-world-lane/`); no code or output changed after the reruns.
+- 2026-09-30 01:12 JST (the lead, from the number drift audit 05e0f12e): the $57.6–58.0bn in "Phase 2 results" is $57.5–58.0bn. `valuation_by_class_sept29.csv` sums to 57.549 / 58.017; the 57.6 came from rounding twice (57.549 → 57.55 → 57.6). No output changes.
