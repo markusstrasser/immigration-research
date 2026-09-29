@@ -53,11 +53,28 @@
    * label}], edits: [{side: "receipt", line, scenario, by} | {side: "spending", line, key, by}]},
    * by = {personal, shared} in $bn of the group's target. Each edit moves the same amount out of
    * other residents' share, so national totals hold, and rescales the cell's share of its fixed base
-   * (target / share is unchanged). Unknown lines, keys or rules fail loudly. */
+   * (target / share is unchanged). Unknown lines, keys or rules fail loudly.
+   *
+   * Three optional parts serve a revision that splits a line out or re-weights production; a payload
+   * without them is applied as before. receipt_lines: [{id, national_bn, cells}] adds receipt lines with
+   * a cell for every executed incidence rule and allocation. An edit {side, line, national_bn} scales the
+   * line's national total, and every cell's target and other amounts, to that total (shares hold), in order
+   * with the other edits. production: {dims, private_wtp_bn, induced_receipts_bn, sampling_se_bn} replaces
+   * the production arrays of a grid with the same dimensions. */
   function applyCorrections(model, payload) {
     var m = clone(model), allocations = ["personal", "shared"];
     delete m.corrected;
     function zero() { return { target_bn: 0, other_bn: 0, share: 0 }; }
+    (payload.receipt_lines || []).forEach(function (l) {
+      if (m.receipts.lines.some(function (x) { return x.id === l.id; })) throw new Error("Correction receipt line exists already: " + l.id);
+      if (typeof l.national_bn !== "number" || !isFinite(l.national_bn)) throw new Error("Correction receipt line lacks a national total: " + l.id);
+      m.receipts.scenarios.forEach(function (sc) {
+        allocations.forEach(function (a) {
+          if (!l.cells || !l.cells[sc] || !l.cells[sc][a]) throw new Error("Correction receipt line lacks an executed cell: " + l.id + "/" + sc + "/" + a);
+        });
+      });
+      m.receipts.lines.push(clone(l));
+    });
     (payload.lines || []).forEach(function (l) {
       if (m.spending.lines.some(function (x) { return x.id === l.id; })) throw new Error("Correction line exists already: " + l.id);
       m.spending.lines.push({ id: l.id, family: l.family, national_bn: 0, response_class: l.response_class, label: l.label,
@@ -65,6 +82,7 @@
     });
     payload.edits.forEach(function (e) {
       var cell;
+      if (e.national_bn !== undefined) { scaleLine(m, e); return; }
       if (e.side === "receipt") {
         var r = m.receipts.lines.filter(function (x) { return x.id === e.line; })[0];
         if (!r || !r.cells[e.scenario]) throw new Error("Not an executed receipt cell: " + e.line + "/" + e.scenario);
@@ -80,8 +98,36 @@
         cell[a].target_bn = next; cell[a].other_bn -= e.by[a];
       });
     });
+    if (payload.production) {
+      PRODUCTION_DIMS.forEach(function (d) {
+        if (!payload.production.dims || JSON.stringify(payload.production.dims[d]) !== JSON.stringify(m.production.dims[d])) {
+          throw new Error("Not this model's production grid: dimension " + d);
+        }
+      });
+      ["private_wtp_bn", "induced_receipts_bn", "sampling_se_bn"].forEach(function (k) {
+        var xs = payload.production[k];
+        if (!Array.isArray(xs) || xs.length !== m.production[k].length) throw new Error("Not this model's production grid: " + k);
+        m.production[k] = xs.slice();
+      });
+    }
     m.corrections = payload.meta || {};
     return m;
+  }
+
+  /* A national-scale edit: the line's national total becomes e.national_bn, and every cell's target and
+   * other amounts scale by the same factor. */
+  function scaleLine(m, e) {
+    var lines = e.side === "receipt" ? m.receipts.lines : e.side === "spending" ? m.spending.lines : null;
+    var line = lines && lines.filter(function (x) { return x.id === e.line; })[0];
+    if (!line) throw new Error("Not an executed line to scale: " + e.side + "/" + e.line);
+    if (typeof e.national_bn !== "number" || !isFinite(e.national_bn) || !line.national_bn) {
+      throw new Error("Not a national total to scale to: " + e.line + " " + e.national_bn);
+    }
+    var f = e.national_bn / line.national_bn, cells = e.side === "receipt" ? line.cells : line.keys;
+    Object.keys(cells).forEach(function (k) {
+      ["personal", "shared"].forEach(function (a) { cells[k][a].target_bn *= f; cells[k][a].other_bn *= f; });
+    });
+    line.national_bn = e.national_bn;
   }
 
   function schoolShareBounds(model) {
