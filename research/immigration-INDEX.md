@@ -163,7 +163,7 @@ channels the headline left out. Two are in the main case:
 - the government part of uncompensated hospital care, **+$3.7–5.7bn**.
 
 Beside the fiscal account, a **fiscal-plus-social total** adds other residents' social costs and benefits:
-**$463.0–535.5bn a year** at central values ($11.7–13.5k per member;
+**$462.9–535.5bn a year** at central values ($11.7–13.5k per member;
 [decision](../decisions/2026-09-29-crash-item-with-against-without.md), ladders 266 and 274,
 [lane](../infra/immigration-fiscal/sept24_propagation_2026_09_24/RESULT.md)). On the September 27 case it was
 $413.7–488.0bn; only the fiscal row moved. Counting benefits when paid, it is $386.2–462.5bn. Its low end assumes

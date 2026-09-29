@@ -8,7 +8,7 @@ care adds **$3.7–5.7bn**. Hispanic residents are 20.2% of people in prisons an
 20.7% share of working-age residents, and 23.4% in state and federal prisons. The account compares the group with
 the average other resident, not with whites; Hispanic adults are imprisoned at 2.6 times the white rate.
 
-Fiscal and social costs together come to **$463.0–535.5bn a year** at central values, or $11.7–13.5k per member of
+Fiscal and social costs together come to **$462.9–535.5bn a year** at central values, or $11.7–13.5k per member of
 the 39.7M people the account prices (ladders 274, 275); counting benefits when paid, $386.2–462.5bn. The low end
 assumes Mexican-origin offending equals the Hispanic average; the high end assumes it sits above that average, as
 custody does (§7). Every social row is restated on the account's count; the lanes' own figures, on the CPS's 40.9M,
@@ -49,7 +49,7 @@ component would add $86 / 76bn, and leaving out the government enterprises (opti
 | + volunteering, consumer-side scale, trade ties (September 28) | | $447–522bn ($224–755bn) | $10.9–12.8k | ladder 265 |
 | Crashes with against without (September 29) | | $416–491bn ($142–757bn) | $10.2–12.0k | ladder 266 |
 | Every row on the account's 39.7M (September 29) | | $413.7–488.0bn | $10.4–12.3k | ladder 274 |
-| September 29, main case v4 (current) | $371.4–434.8bn | $463.0–535.5bn | $11.7–13.5k | only the fiscal row moves; $386.2–462.5bn counting benefits when paid; ladder 275 |
+| September 29, main case v4 (current) | $371.4–434.8bn | $462.9–535.5bn | $11.7–13.5k | only the fiscal row moves; $386.2–462.5bn counting benefits when paid; ladder 275 |
 
 The first-year budget response, with CBO's 63–66% school response ($200.9–245.7bn), stays within $0.7bn of the
 September 24 totals: $248–303bn, full span $210–336bn; it was computed before the September 28–29 items.
@@ -371,17 +371,18 @@ crash and congestion rows' driving ratios per person aged 5+ (ladder 274).
 |---|---:|---:|
 | Fiscal main case | 366.7 (justice +1.7) | **434.8** (justice +5.9) |
 | + crime victims' harm, full cost | +30.5 | +31.9 |
-| + property crime, arrest-share proxy | +1.3 | +1.4 |
+| + property crime, arrest-share proxy | +1.2 | +1.4 |
 | + unreimbursed hospital care, outside budgets | +3.1 | +5.3 |
 | + road congestion, time and fuel, roads responding | +13.6 | +11.6 |
 | − housing net gain | −3.4 | −0.7 |
 | + the ten items of §3b, net | +51.2 | +51.2 |
-| **= total at central values** | **463.0** | **535.5** |
+| **= total at central values** | **462.9** | **535.5** |
 | Per member of the 39.7M priced | $11.7k | $13.5k |
 
 At the low end the fiscal row is the case with justice on the census codes as recorded, $4.7bn below the case's
 $371.4bn: v4 prices public order and safety at the states' price level, and that line follows the justice key
-($6.0bn on the recorded codes, $6.4bn on custody). Counting benefits when paid, the total is $386.2–462.5bn.
+($6.0bn on the recorded codes, $6.4bn on custody). Property crime's low end, $1.25bn, shows as 1.2 so the column
+adds. Counting benefits when paid, the total is $386.2–462.5bn.
 
 On the custody footing alone the total is $471.5–538.2bn on the lanes' counts. Stacking every low
 choice, then every high one, spans $191.1–804.2bn on the lanes' counts. The low end takes the justice
@@ -561,3 +562,4 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 - 2026-09-29 (priced-count spans): §3b now gives the PM2.5 and crash ranges on the account's 39.7M, and the fault-based crash figure is $40.6bn ($23.0–69.8bn) on that count, $42.3bn on the lane's ([lane](../infra/immigration-fiscal/social_spans_priced_count_2026_09_29/RESULT.md)). Concept affected: none; the count the ranges are on.
 - 2026-09-29 (memo sweep): §3's table and congestion note now give victims' harm ($30.5 / 31.9bn), congestion ($13.6 / 11.6bn), and §7b the scale net ($13.7bn), on the account's 39.7M, and label the CPS-count figures; $19.2bn is the roads-fixed arm, not the central. The four smaller benefits add to $21.7bn on the priced count (was printed $21.9bn; $22.0bn on the lanes' counts). Concept affected: none; which count and arm each figure is on.
 - 2026-09-29, later (main case v4, [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275): the verdict, §1, §4 and §7 state the main case of that date, $371.4–434.8bn. The pairing is $463.0–535.5bn ($11.7–13.5k per member), only the fiscal row moving, and $386.2–462.5bn counting benefits when paid. §4's fiscal rows carry the pension accrual and put public housing among the capped programmes; wages move slightly with the production model re-solved on the account's weights, so outside the budget the bottom four fifths lose $79.4bn and the top fifth gains $44.5bn. §4's table now adds by row and column. The sign's break-even is −5.5% to 3.3%, so the low end no longer turns at any service response. Concept affected: the fiscal-plus-social total, its distribution by income and the sign condition.
+- 2026-09-29, later (number drift audit): the pairing's low end is $462.9bn (462.95), not the $463.0bn printed earlier that day, which was the sum of §7's rounded rows. §7 shows property crime's low end, $1.25bn, as 1.2 so the column adds. Concept affected: the fiscal-plus-social total's printed low end; no figure moved.

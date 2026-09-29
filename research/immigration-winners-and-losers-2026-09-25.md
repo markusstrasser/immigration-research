@@ -329,7 +329,7 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - **The allocation base is not a total.** The lane's allocation base, the adopted fiscal band plus
   decision 4's victims figure, mixes crime footings. It also leaves out the social items added from
   September 28 on: fear, security, schools, pollution, crashes and five benefits. The published
-  fiscal-plus-social total is $463.0–535.5bn on the 39.7M people the account prices (ladders 274, 275,
+  fiscal-plus-social total is $462.9–535.5bn on the 39.7M people the account prices (ladders 274, 275,
   [INDEX](immigration-INDEX.md)); on the September 27 case it was $413.7–488.0bn. Before those items it was $248–304bn on September 24 ($247.7–298.4bn on
   the equal footing, $253.4–304.0bn on the custody footing), $305–350bn on the schools case (4e66adb) and
   $363–438bn on the September 27 case (73cc30c).
