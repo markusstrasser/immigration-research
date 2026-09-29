@@ -38,7 +38,7 @@
  "care_constant_bn": 4.15,
  "sources_sha256": {
   "sept27_propagation_2026_09_27/derived/band_variants.csv": "3193ba6cc713e4ca6669c3af9e247f9861ab2ac73afc7b21c71eee749b05ce99",
-  "sept27_propagation_2026_09_27/derived/band_variants.json": "141869a7f685454a4a47df41e96cc3c70f2f76e169f396fa9eebb02528a65bd4",
+  "sept27_propagation_2026_09_27/derived/band_variants.json": "2a2e0978a0653d5164d854801ee1b855d14c7d58451bd59470530c83629cb919",
   "main_case_2026_09_24/derived/summary.json": "3887e678c53e93f7f31bf48d5e56e005dcfd3b71f2d76b6dfcf62415489bfb75",
   "crime_victim_cost_2026_09_23/derived/cost_by_offence_central.csv": "8b5caa0ea78a39a501be80baf2887b1fd8457f0f07b9c0fe9a82d6c1692448a8",
   "crime_victim_cost_2026_09_23/derived/arms.csv": "dd5c2c6b30841f62712441be76e43babe032ae4bdcc67bc4594098af78aa8ff7",

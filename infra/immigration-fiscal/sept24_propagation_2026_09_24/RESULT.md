@@ -490,3 +490,18 @@ Log (append-only; times from `date`):
   Gate 4: two `rerun_lane.py` passes over the lane's sept24 and sept29 commands, IDENTICAL 23/23, rc 0 each
   (21:09–21:13). No tracked file in `derived/` differs from HEAD. Every figure in the table above matches the fresh
   outputs.
+- 2026-09-29 22:55 JST (after the lead committed 911afa6 and handed over the two stale files for this task). These
+  scripts rebuilt them in place at 22:02:
+  - `real_costs_totals.py --case sept26 --out-dir ../sept26_propagation_2026_09_26/derived/sept26` now puts per member
+    on the priced 39,712,493, as b7f14e7e did for the other cases. Against HEAD, 14 of 56 CSV rows change, every one a
+    "per group member" row of §7 or §7b, in the sept24, sept26 and change columns only. Each new value is the old one
+    × 40,896,574 / 39,712,493 (1.029816; largest gap 9.1e-7, the six-decimal printing). The sept23 column stays on
+    the published union. The JSON gains two keys, `per_member_population_m` and the `sources_sha256` entry for
+    `main_case_decomposition_2026_09_29/derived/headcount.csv` (the divisor and its source).
+  - `band_variants.cjs --case sept27` and `real_costs_totals.py --case sept27`: one key each changes, the
+    `sources_sha256` entry for `main_case_long_run_2026_09_27/derived/main_case_bands.csv` (6e550bd3… → 46443c0c…,
+    that file's sha256 since b3f4d849) and, in `real_costs_totals.json`, the entry for the refreshed
+    `band_variants.json` (141869a7… → 2a2e0978…). Both CSVs are unchanged.
+  - Nothing else in either lane moved: `rerun_lane.py` over each with all its commands, IDENTICAL 11/11 (sept27) and
+    20/20 (sept26), and `git status` shows the four files only. Only sept27's own `real_costs_totals.json` records
+    a hash of any of the four.
