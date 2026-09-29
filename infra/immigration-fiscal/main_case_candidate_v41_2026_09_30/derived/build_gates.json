@@ -1,0 +1,317 @@
+{
+ "lane": "main_case_candidate_v41_2026_09_30",
+ "status": "candidate v4.1, not adopted (2026-09-30): the operator decides",
+ "payloads": {
+  "corrections_v41.json": {
+   "bytes": 326192,
+   "sha256": "88bb3a0affade2b1079fa7fff64f19a45df05e4b02620b02c2ae1777c56dccdd",
+   "lines": 8,
+   "edits": 424,
+   "rekeys": [
+    "owner",
+    "part_a",
+    "benefit_tax",
+    "state_index",
+    "oasdi_ratio"
+   ],
+   "at_48_11_bn": [
+    371.21461320054647,
+    434.6300462410392
+   ],
+   "adopted_at_48_11_bn": [
+    371.41459978888685,
+    434.8409586241356
+   ]
+  },
+  "corrections_v41_cash.json": {
+   "bytes": 321542,
+   "sha256": "b97acc0adf182547101f98f9b604ed13ef85ddc7be77b2694ec963c7d0067d3a",
+   "lines": 8,
+   "edits": 422,
+   "rekeys": [
+    "owner",
+    "state_index"
+   ],
+   "at_48_11_bn": [
+    295.4035592284645,
+    362.5192834153855
+   ],
+   "adopted_at_48_11_bn": [
+    294.70107598024805,
+    361.8174818097355
+   ]
+  }
+ },
+ "inputs_published": {
+  "kappa_owner": 1,
+  "part_a_accrual_bn": 41.13712783048602,
+  "receipt_bn": {
+   "shared": 2.0912058046039226,
+   "personal": 1.8169001218750982
+  },
+  "ratio_net": 0.9736673650311839,
+  "sp_pre": {
+   "public_order_safety": 47.792083915813166,
+   "health_services": 31.793560518156994,
+   "recreation_culture": 3.651860810353005
+  },
+  "sp_factor": {
+   "general_sales_tax": 0.11511713000000001,
+   "personal_motor_vehicle": 0.2623925840000001
+  }
+ },
+ "inputs_row4": {
+  "kappa_owner": 1.01797579099,
+  "part_a_accrual_bn": 40.10909866122974,
+  "receipt_bn": {
+   "shared": 2.063956523453724,
+   "personal": 1.7886975846985365
+  },
+  "ratio_net": 0.9750272850497411,
+  "sp_pre": {
+   "public_order_safety": 49.965888287437586,
+   "health_services": 33.5811510095513,
+   "recreation_culture": 3.6115351137909086
+  },
+  "sp_factor": {
+   "general_sales_tax": 0.11485963736775728,
+   "personal_motor_vehicle": 0.27578086426817117
+  }
+ },
+ "gates": [
+  {
+   "name": "Part A accrual: the rerun's published total is the pension summary's (v4's input; 1e-9)",
+   "pass": true,
+   "detail": "41.13712783048602 -> row 4 40.10909866122974"
+  },
+  {
+   "name": "benefit-tax receipt: the rerun's published receipts are v4's (1e-9)",
+   "pass": true,
+   "detail": "personal 1.816900 -> 1.788698; shared 2.091206 -> 2.063957"
+  },
+  {
+   "name": "ratio_net: the rerun's published ratio is v4's (1e-9)",
+   "pass": true,
+   "detail": "0.9736673650311839 -> row 4 0.9750272850497411"
+  },
+  {
+   "name": "ratio_net on row 4 is price_rekeys.json's oasdi_ratio.row4",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "state pricing: the rerun's published gaps are v4's CSV-based SP_PRE (1e-7)",
+   "pass": true,
+   "detail": "public_order_safety 47.792084 -> 49.965888; health_services 31.793561 -> 33.581151; recreation_culture 3.651861 -> 3.611535"
+  },
+  {
+   "name": "state pricing: the rerun's published receipt factors are v4's (1e-9)",
+   "pass": true,
+   "detail": "general_sales_tax 0.115117 -> 0.114860; personal_motor_vehicle 0.262393 -> 0.275781"
+  },
+  {
+   "name": "owner kappa is the decomposition lane's (summary_sept29.json v4.kappas), the same at both ends",
+   "pass": true,
+   "detail": "1.01797579099"
+  },
+  {
+   "name": "every row4_class output was written with its gates passed",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set: this lane's modelFor with v4's inputs is candidate v4's modelFor, both methods (JSON)",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash: this lane's modelFor with v4's inputs is candidate v4's modelFor, both methods (JSON)",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set: the builder's payload, stamped by the adopted package's adopt(), is main_case_2026_09_29/derived/corrections.json byte for byte",
+   "pass": true,
+   "detail": "317957 bytes, sha256 ba72adb198a4"
+  },
+  {
+   "name": "cash: the builder's payload is main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json byte for byte",
+   "pass": true,
+   "detail": "sha256 8a2dd8a81ceb"
+  },
+  {
+   "name": "set: $371.4146 / 434.8410bn, the adopted summary.json's main_case (1e-9)",
+   "pass": true,
+   "detail": "371.4146 / 434.8410"
+  },
+  {
+   "name": "cash: $294.7011 / 361.8175bn, the adopted summary.json's cash_set (1e-9)",
+   "pass": true,
+   "detail": "294.7011 / 361.8175"
+  },
+  {
+   "name": "owner: price_rekeys.csv's row (1e-6) and price_rekeys.json's (1e-9)",
+   "pass": true,
+   "detail": "set 0.3364 / 0.3364, cash 0.3364 / 0.3364; max |diff| csv 3.9e-7, json 0.0e+0"
+  },
+  {
+   "name": "part_a: price_rekeys.csv's row (1e-6) and price_rekeys.json's (1e-9)",
+   "pass": true,
+   "detail": "set -1.0280 / -1.0280, cash 0.0000 / 0.0000; max |diff| csv 4.5e-7, json 0.0e+0"
+  },
+  {
+   "name": "benefit_tax: price_rekeys.csv's row (1e-6) and price_rekeys.json's (1e-9)",
+   "pass": true,
+   "detail": "set -0.0272 / -0.0282, cash 0.0000 / 0.0000; max |diff| csv 4.9e-7, json 0.0e+0"
+  },
+  {
+   "name": "state_index: price_rekeys.csv's row (1e-6) and price_rekeys.json's (1e-9)",
+   "pass": true,
+   "detail": "set 0.3661 / 0.3654, cash 0.3661 / 0.3654; max |diff| csv 3.8e-7, json 9.7e-12"
+  },
+  {
+   "name": "oasdi_ratio: price_rekeys.csv's row (1e-6) and price_rekeys.json's (1e-9)",
+   "pass": true,
+   "detail": "set 0.1528 / 0.1435, cash 0.0000 / 0.0000; max |diff| csv 4.0e-7, json 0.0e+0"
+  },
+  {
+   "name": "joint_published_frame: price_rekeys.csv's row (1e-6) and price_rekeys.json's (1e-9)",
+   "pass": true,
+   "detail": "set -0.7189 / -0.7198, cash 0.3364 / 0.3364; max |diff| csv 4.7e-7, json 0.0e+0"
+  },
+  {
+   "name": "joint_with_ratios: price_rekeys.csv's row (1e-6) and price_rekeys.json's (1e-9)",
+   "pass": true,
+   "detail": "set -0.2000 / -0.2109, cash 0.7025 / 0.7018; max |diff| csv 4.1e-7, json 9.7e-12"
+  },
+  {
+   "name": "set: $371.2146 / 434.6300bn (1e-4)",
+   "pass": true,
+   "detail": "371.2146 / 434.6300"
+  },
+  {
+   "name": "cash: $295.4036 / 362.5193bn (1e-4)",
+   "pass": true,
+   "detail": "295.4036 / 362.5193"
+  },
+  {
+   "name": "set: lines, receipt lines, production grid, meta.responses and meta.capital_return are v4's; v4's edits keep their order, and the owner line adds one edit per incidence rule",
+   "pass": true,
+   "detail": "416 -> 424 edits"
+  },
+  {
+   "name": "set: the edits that move are exactly the re-keyed lines'",
+   "pass": true,
+   "detail": "federal_income_tax, general_sales_tax, medicare, modeled_owner_property, personal_motor_vehicle, social_security, state_price_health_services, state_price_public_order_safety, state_price_recreation_culture"
+  },
+  {
+   "name": "set: not adopted (adopted and decision null), candidate v4.1 in case and status",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash: lines, receipt lines, production grid, meta.responses and meta.capital_return are v4's; v4's edits keep their order, and the owner line adds one edit per incidence rule",
+   "pass": true,
+   "detail": "414 -> 422 edits"
+  },
+  {
+   "name": "cash: the edits that move are exactly the re-keyed lines'",
+   "pass": true,
+   "detail": "general_sales_tax, modeled_owner_property, personal_motor_vehicle, state_price_health_services, state_price_public_order_safety, state_price_recreation_culture"
+  },
+  {
+   "name": "cash: not adopted (adopted and decision null), candidate v4.1 in case and status",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "set: meta.pension_accrual carries the row-4 ratio_net, Part A accrual and benefit-tax receipt",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "cash: no pension accrual block (the switch is off)",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "sept29: the payload model gives the two methods' mean at every specification (1e-9)",
+   "pass": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "name": "sept29: consumer.cjs (engine.js, model.json and the payload, no package) gives the same at every specification (1e-9)",
+   "pass": true,
+   "detail": "max |diff| 0.0e+0"
+  },
+  {
+   "name": "sept29: both methods' ends are specifications 48 / 11",
+   "pass": true,
+   "detail": "48/11, 48/11"
+  },
+  {
+   "name": "v41: the payload model gives the two methods' mean at every specification (1e-9)",
+   "pass": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "name": "v41: consumer.cjs (engine.js, model.json and the payload, no package) gives the same at every specification (1e-9)",
+   "pass": true,
+   "detail": "max |diff| 0.0e+0"
+  },
+  {
+   "name": "v41: both methods' ends are specifications 48 / 11",
+   "pass": true,
+   "detail": "48/11, 48/11"
+  },
+  {
+   "name": "sept29_cash: the payload model gives the two methods' mean at every specification (1e-9)",
+   "pass": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "name": "sept29_cash: consumer.cjs (engine.js, model.json and the payload, no package) gives the same at every specification (1e-9)",
+   "pass": true,
+   "detail": "max |diff| 0.0e+0"
+  },
+  {
+   "name": "sept29_cash: both methods' ends are specifications 48 / 11",
+   "pass": true,
+   "detail": "48/11, 48/11"
+  },
+  {
+   "name": "v41_cash: the payload model gives the two methods' mean at every specification (1e-9)",
+   "pass": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "name": "v41_cash: consumer.cjs (engine.js, model.json and the payload, no package) gives the same at every specification (1e-9)",
+   "pass": true,
+   "detail": "max |diff| 0.0e+0"
+  },
+  {
+   "name": "v41_cash: both methods' ends are specifications 48 / 11",
+   "pass": true,
+   "detail": "48/11, 48/11"
+  },
+  {
+   "name": "the adopted case's per-method ends are candidate v4's bands.csv (1e-4)",
+   "pass": true,
+   "detail": null
+  }
+ ],
+ "inputs": {
+  "main_case_2026_09_29/derived/corrections.json": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe",
+  "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json": "8a2dd8a81cebcd059b64d811f2bf7d384dd8f2759c8f5fd9e47ded0a56bcfd70",
+  "main_case_2026_09_29/derived/summary.json": "c76c4d7135f5fccf9e60a064149fb94b62a561267b41d10c1c3b1bba021b7d71",
+  "main_case_candidate_v4_2026_09_29/derived/bands.csv": "0e263f4105563b38229e4209b746c595deb0beddd7998aa81e50820651fe22c0",
+  "row4_class_2026_09_29/derived/row4_parta.json": "ae6cdf074766f6e76676e3957f00bb4cfd78417d6d7004f3b1fc3e2613b51a01",
+  "row4_class_2026_09_29/derived/row4_benefit_tax.json": "d988e0357d5ca00014de35527d60e1233eaaa71cbb1b36a5eb49c2c938550371",
+  "row4_class_2026_09_29/derived/row4_state_index.json": "45efd3718d780f1e2a8c6bc9c951b51b18a34825eb7cf3efd8cd5e17fd157b75",
+  "row4_class_2026_09_29/derived/row4_oasdi_ratio.json": "a5eee0ad85c2b16b9525536b9e259ceff944297ace8c163f5d12ece952b1d379",
+  "row4_class_2026_09_29/derived/price_rekeys.json": "4a852c514d247f72d71e052d1cac216ca71798f46c0f45a25c8b56e8677b9612",
+  "row4_class_2026_09_29/derived/price_rekeys.csv": "7c20e196645b0f8d2b0e8d69f083b6d1a6ea6d5e55dc3c0e1b9976c5e8351a02",
+  "assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+  "assumption_explorer_2026_09_21/engine.js": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491"
+ }
+}

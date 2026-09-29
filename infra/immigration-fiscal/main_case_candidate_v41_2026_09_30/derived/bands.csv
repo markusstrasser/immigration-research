@@ -1,0 +1,13 @@
+case,label,method,spec48_bn,spec11_bn,per_member_spec48_usd,per_member_spec11_usd,own_low_spec,own_high_spec,own_low_bn,own_high_bn
+sept29,"the adopted v4 case (main_case_2026_09_29)",b_hotdeck_union_matched,367.3119,431.9708,9249,10877,48,11,367.3119,431.9708
+sept29,"the adopted v4 case (main_case_2026_09_29)",b_matched_over_pooled,375.5173,437.7111,9456,11022,48,11,375.5173,437.7111
+sept29,"the adopted v4 case (main_case_2026_09_29)",mean,371.4146,434.8410,9353,10950,48,11,371.4146,434.8410
+v41,"candidate v4.1: v4 with the five published-weight inputs on audit row 4",b_hotdeck_union_matched,367.1116,431.7596,9244,10872,48,11,367.1116,431.7596
+v41,"candidate v4.1: v4 with the five published-weight inputs on audit row 4",b_matched_over_pooled,375.3176,437.5005,9451,11017,48,11,375.3176,437.5005
+v41,"candidate v4.1: v4 with the five published-weight inputs on audit row 4",mean,371.2146,434.6300,9348,10944,48,11,371.2146,434.6300
+sept29_cash,"the adopted case's cash set (pension switch off)",b_hotdeck_union_matched,291.3883,359.4591,7337,9052,48,11,291.3883,359.4591
+sept29_cash,"the adopted case's cash set (pension switch off)",b_matched_over_pooled,298.0138,364.1759,7504,9170,48,11,298.0138,364.1759
+sept29_cash,"the adopted case's cash set (pension switch off)",mean,294.7011,361.8175,7421,9111,48,11,294.7011,361.8175
+v41_cash,"candidate v4.1's cash set: owner property and state pricing on row 4",b_hotdeck_union_matched,292.0909,360.1609,7355,9069,48,11,292.0909,360.1609
+v41_cash,"candidate v4.1's cash set: owner property and state pricing on row 4",b_matched_over_pooled,298.7163,364.8777,7522,9188,48,11,298.7163,364.8777
+v41_cash,"candidate v4.1's cash set: owner property and state pricing on row 4",mean,295.4036,362.5193,7439,9129,48,11,295.4036,362.5193
