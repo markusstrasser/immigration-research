@@ -112,8 +112,10 @@ What would overturn the conclusions: on the main case one of the evidence map's 
 
 How far to trust the review lanes: on 24 error cases and 24 sound claims, half of each taken from the project's own record and half synthetic mirrors of them, both caught every error when the evidence was in the packet. GPT-6 Astra (xhigh) also accused a quarter of the sound claims at 0.90–0.99 confidence, Opus 5.5 one in 24; three of those accusations (Astra's on V06m and V08m, Opus's on V08m) found real defects that the test's builder had put into two mirrors by mistake. Neither was measurably harsher on claims that make the group look costlier, though the test is too small to rule out a moderate bias. Treat an Astra accusation as a lead to verify (ladder 271, [lane](../infra/immigration-fiscal/reviewer_calibration_2026_09_29/RESULT.md)).
 
-**Earlier cases.** Each main case replaced the one before. The first-year budget response is kept as a named
-scenario of the current account, not as an earlier estimate.
+**Earlier cases.** Each main case replaced the one before. The first-year budget response is a named scenario
+of the current account, not an earlier estimate: on the September 29 case, with CBO's year-to-year responses, no long-run
+road, park or property-tax response and no capital return, it is $277.3–318.3bn, and $200.6–245.3bn counting benefits
+when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md), ladder 270). The September 26 run in the table gave $200.9–245.7bn.
 
 | Case | Net cost to other residents | What it changed | Record |
 |---|---|---|---|

@@ -25,7 +25,8 @@ BEA's depreciation-only lines leave out (+$22.2 / +$38.3bn); and every governmen
 operating loss and the return on their capital (+$17.2 / +$23.0bn)
 ([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239).
 
-With CBO-style first-year budget responses the same account gives $200.9–245.7bn; with every service
+With CBO-style first-year budget responses the same account gives $277.3–318.3bn, and $200.6–245.3bn counting
+benefits when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md); the September 26 run gave $200.9–245.7bn); with every service
 proportional, $398.1–448.0bn. The main cases between September 20 and 29 are listed, each with its decision, in the
 [topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
 [real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below is the account as
@@ -353,6 +354,10 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-29, later (break conditions lane, beead07): the first-year budget response is the current account's,
+$277.3–318.3bn, and $200.6–245.3bn counting benefits when paid; the $200.9–245.7bn quoted before was the
+September 26 run. Concept affected: the first-year scenario.
 
 2026-09-29, main case v4 (ladder 275): the header gives the September 29 case, $371.4–434.8bn, with its nine
 changes and the cash set ($294.7–361.8bn); the September 27 case's four additions stay listed beside it. The

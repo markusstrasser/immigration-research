@@ -11,8 +11,8 @@ conditional net cost to other residents at $371–435bn a year ($371.4–434.8bn
 Social Security and Part A promises members earn as they work, at the benefits current law can
 pay; counting benefits when paid, it is $295–362bn. It charges the return on public capital, lets
 roads, parks, rental assistance and government enterprises respond, and takes long-run property
-taxes. On the same account, CBO-style first-year budget responses give $201–246bn and fully
-proportional services $398–448bn; other residents' social costs and benefits bring the total to
+taxes. On the same account, CBO-style first-year budget responses give $277–318bn ($201–245bn
+counting benefits when paid) and fully proportional services $398–448bn; other residents' social costs and benefits bring the total to
 $463–536bn. The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
 −$7,521, third-plus −$6,195 per person, standard errors 384, 615 and 457).
@@ -51,8 +51,8 @@ Mexican-origin offending equals the Hispanic average (fiscal $366.7bn, victims $
 end assumes it sits above that average, as custody does (fiscal $434.8bn, victims $31.9bn).
 Figures normalized against the average resident and the crash figure charged by fault ($40.6bn)
 sit beside it and are never added. Property values stay out. The first-year budget response
-($201–246bn) and fully proportional services ($398–448bn) are scenarios of the same account, not
-earlier estimates.
+($277–318bn, or $201–245bn counting benefits when paid) and fully proportional services ($398–448bn)
+are scenarios of the same account, not earlier estimates.
 
 **A result refutes a claim only when population, horizon and outcome match.** Entry 5 compares
 Mexican-origin generations alive in 2024 with whites at common ages. The National Academies
@@ -98,7 +98,7 @@ about respond as follows ([decision](../decisions/2026-09-27-main-case-capital-r
   stock gives far less and stays beside.
 - **Schools** are charged at their full average cost per pupil: across 2019 districts spending
   rises 1.004% per 1% more pupils (pupil-weighted) and across states 0.973%. CBO's year-to-year
-  63–66% gives the first-year budget response ($201–246bn), and the within-district 0.836 gives
+  63–66% belongs to the first-year budget response ($277–318bn), and the within-district 0.836 gives
   the low side, $346–410bn ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).
 - **General public services** respond at 0.60–0.85 of average cost: removing a group that is 12%
   of residents, at cross-state rates of 0.59–0.84, adds $28.2–40.0bn
@@ -148,7 +148,8 @@ $7.7bn (cash scaling) to $11.7bn (GDP scaling) on the account's own weights ($6�
 parameter grid on the survey's weights). Omitted benefits would have to reach $371–435bn a year to
 offset the main case. That threshold is conditional on the service-response share, which is
 assumed and unmeasured.
-- It is $201–246bn with CBO's first-year responses and $314–403bn if non-school education budgets
+- It is $277–318bn with CBO's first-year responses ($201–245bn counting benefits when paid) and
+  $314–403bn if non-school education budgets
   are also held fixed.
 - At the high end it reaches zero where 1.5–3.3% of assigned service costs are incremental; at the
   low end no service response brings it to zero (entry 2).
@@ -341,7 +342,8 @@ No. The account describes a resident stock in a stationary comparison. It is not
 of an admission rule, a removal policy or one more arrival, it contains no transition costs,
 and most of the people in it are US-born citizens. In the first years, budgets would not shed the
 full average cost of the group's pupils, nor the long-run road and park costs. With CBO's
-year-to-year responses and no capital response, the same account gives $201–246bn. The return on
+year-to-year responses, no capital response and benefits counted when paid, the same account gives
+$201–245bn ($277–318bn with the pension accrual). The return on
 public capital ($34–57bn of the case) is an opportunity cost, and the pension accrual ($73–77bn) a
 promise of future benefits; neither is cash that a removal would free in the year.
 Lifetime and lineage values need their own
@@ -480,7 +482,8 @@ all ages and generations in income-year 2024, state and local services included:
 −435bn in the main case. That case charges the return on public capital, long-run road and park
 responses, rental assistance, government enterprises and the pension promises members earn as they
 work, none of which CBO's projection carries;
-with CBO-style first-year budget responses the same account gives −$201 to −246bn (entry 2).
+with CBO-style first-year budget responses the same account gives −$277 to −318bn, or −$201 to
+−245bn counting benefits when paid (entry 2).
 Where the two overlap they agree: a young recent inflow is net positive on the measured items
 here too, +$3,495 per person for Mexico-born arrivals of 2016–2025 on the partial account, and
 about break-even (−$2,318) once the remaining items are charged flat per person, which is not the
@@ -756,3 +759,4 @@ they get more prominence.
 - 2026-09-29, later (v4 consumer lanes: pairing 911afa6, generation aa1f53b): the fiscal-plus-social total (anchors, combining rules, entry 4) is $463–536bn on the main case, fiscal $366.7bn / $434.8bn at its footings; entry 5 gives the v4 generation split on the account's 39.71M, and where the pension accrual lands. Concept affected: the fiscal-plus-social total and the generation split.
 - 2026-09-29, later: the income split outside the budget is the main case's, $79.4bn lost by the bottom four fifths and $44.5bn gained by the top fifth (wages move with the production model re-solved on the account's weights). Concept affected: none; the figures follow the case.
 - 2026-09-29, later (v4 comparators, 6665297): entry 6's gap against as many average residents is the main case's, −$270–293bn counting benefits when paid, on cash flows only. Concept affected: none; the figure follows the case.
+- 2026-09-29, later (break conditions lane beead07; number drift audit): the first-year budget response (anchors, combining rules, entries 2, 4, 11 and 16) is the current account's, $277–318bn and $201–245bn counting benefits when paid. The $201–246bn quoted before was the September 26 run, not a scenario of the current account. Concept affected: the first-year scenario.
