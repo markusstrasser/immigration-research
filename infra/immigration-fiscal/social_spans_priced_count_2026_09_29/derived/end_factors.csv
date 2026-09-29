@@ -1,0 +1,45 @@
+item,measure,statistic,part,published,priced,factor
+pm25_consumption,absolute,low,population share s,0.121452918,0.118352664,0.974473614
+pm25_consumption,absolute,low,1 - sigma (others' share of the deaths),0.771341074,0.773387242,1.002652740
+pm25_consumption,absolute,central,population share s,0.121452918,0.118352664,0.974473614
+pm25_consumption,absolute,central,1 - sigma (others' share of the deaths),0.806582276,0.808839261,1.002798208
+pm25_consumption,absolute,high,population share s,0.121452918,0.118352664,0.974473614
+pm25_consumption,absolute,high,1 - sigma (others' share of the deaths),0.836855827,0.839297277,1.002917408
+pm25_consumption,normalized,low,population share s,0.121452918,0.118352664,0.974473614
+pm25_consumption,normalized,low,r (1 - sigma) - (1 - s),-0.408029027,-0.409881119,1.004539118
+pm25_consumption,normalized,central,population share s,0.121452918,0.118352664,0.974473614
+pm25_consumption,normalized,central,r (1 - sigma) - (1 - s),-0.351668988,-0.353294928,1.004623494
+pm25_consumption,normalized,high,population share s,0.121452918,0.118352664,0.974473614
+pm25_consumption,normalized,high,r (1 - sigma) - (1 - s),-0.267642328,-0.268960324,1.004924466
+pm25_consumption,deaths_among_others,central,population share s,0.121452918,0.118352664,0.974473614
+pm25_consumption,deaths_among_others,central,1 - sigma (others' share of the deaths),0.806582276,0.808839261,1.002798208
+road_crash_externality,absolute,low,traffic share s,0.109885468,0.104223656,0.948475332
+road_crash_externality,absolute,low,1 - q (other traffic in the areas the group drives),0.890114532,0.895776344,1.006360768
+road_crash_externality,absolute,low,1 - h (non-motorist victims outside the group),0.842129814,0.844042139,1.002270819
+road_crash_externality,absolute,low,component mv_nonfatal,-20.830447364,-19.882836232,0.954508364
+road_crash_externality,absolute,low,component mv_fatal,-39.807844564,-37.996920583,0.954508364
+road_crash_externality,absolute,low,component nonmotorist,1.998869073,1.900183204,0.950629148
+road_crash_externality,absolute,low,component single_vehicle,0.957477167,0.908143474,0.948475332
+road_crash_externality,absolute,central,traffic share s,0.107799513,0.102232835,0.948360821
+road_crash_externality,absolute,central,1 - q (other traffic in the areas the group drives),0.701206197,0.710445441,1.013176215
+road_crash_externality,absolute,central,1 - h (non-motorist victims outside the group),0.842129814,0.844042139,1.002270819
+road_crash_externality,absolute,central,component mv_nonfatal,4.118790826,3.957567460,0.960856627
+road_crash_externality,absolute,central,component mv_fatal,-2.838009081,-2.726919833,0.960856627
+road_crash_externality,absolute,central,component nonmotorist,7.754865422,7.421927025,0.957067160
+road_crash_externality,absolute,central,component single_vehicle,2.017999248,1.913791424,0.948360821
+road_crash_externality,absolute,high,traffic share s,0.109885468,0.104223656,0.948475332
+road_crash_externality,absolute,high,1 - q (other traffic in the areas the group drives),0.890114532,0.895776344,1.006360768
+road_crash_externality,absolute,high,1 - h (non-motorist victims outside the group),0.842129814,0.844042139,1.002270819
+road_crash_externality,absolute,high,component mv_nonfatal,46.250043900,44.146053731,0.954508364
+road_crash_externality,absolute,high,component mv_fatal,1.793696677,1.712098480,0.954508364
+road_crash_externality,absolute,high,component nonmotorist,21.518206041,20.455833881,0.950629148
+road_crash_externality,absolute,high,component single_vehicle,4.775443740,4.529390587,0.948475332
+road_crash_externality_fault_based,absolute,low,traffic share s,0.087311525,0.082704757,0.947237574
+road_crash_externality_fault_based,absolute,low,1 - q (other traffic in the areas the group drives),0.611568056,0.623579073,1.019639706
+road_crash_externality_fault_based,absolute,low,1 - h (non-motorist victims outside the group),0.842129814,0.844042139,1.002270819
+road_crash_externality_fault_based,absolute,central,traffic share s,0.107799513,0.102232835,0.948360821
+road_crash_externality_fault_based,absolute,central,1 - q (other traffic in the areas the group drives),0.701206197,0.710445441,1.013176215
+road_crash_externality_fault_based,absolute,central,1 - h (non-motorist victims outside the group),0.842129814,0.844042139,1.002270819
+road_crash_externality_fault_based,absolute,high,traffic share s,0.109885468,0.104223656,0.948475332
+road_crash_externality_fault_based,absolute,high,1 - q (other traffic in the areas the group drives),0.890114532,0.895776344,1.006360768
+road_crash_externality_fault_based,absolute,high,1 - h (non-motorist victims outside the group),0.842129814,0.844042139,1.002270819

@@ -1,0 +1,14 @@
+item,measure,statistic,basis,lane_printed,published,priced,factor,cell,cell_on_published_count
+pm25_consumption,absolute,low,row 4,31.4979,31.497850536,30.775246987,0.977058639,i_crf=0 i_tr=0 i_r=0 i_E=0 i_io=0 i_L=0 i_m=0,same
+pm25_consumption,absolute,central,row 4,69.6808,69.680798370,68.092103594,0.977200394,i_crf=1 i_tr=1 i_r=1 i_E=1 i_io=1 i_L=1 i_m=1,same
+pm25_consumption,absolute,high,row 4,122.4840,122.483986557,119.705627308,0.977316551,i_crf=2 i_tr=2 i_r=2 i_E=2 i_io=2 i_L=2 i_m=2,same
+pm25_consumption,normalized,low,row 4,-81.8082,-81.808205825,-80.081796149,0.978896864,i_crf=2 i_tr=2 i_r=0 i_E=0 i_io=0 i_L=0 i_m=2,same
+pm25_consumption,normalized,central,row 4,-46.5090,-46.509004913,-45.531343168,0.978979087,i_crf=1 i_tr=1 i_r=1 i_E=1 i_io=1 i_L=1 i_m=1,same
+pm25_consumption,normalized,high,row 4,-17.9168,-17.916757836,-17.545386013,0.979272376,i_crf=0 i_tr=0 i_r=2 i_E=2 i_io=2 i_L=2 i_m=0,same
+pm25_consumption,deaths_among_others,central,row 4,4938.05,4938.048215589,4825.462659946,0.977200394,i_crf=1 i_tr=1 i_r=1 i_E=1 i_io=1 i_L=1 i_m=1,same
+road_crash_externality,absolute,low,row 4; NHTS ratios per person aged 5+,-57.68,-57.681945688,-55.071430137,0.954742935,vmt=2 r_c=0 q_mult=2 x_nonfatal=0 x_fatal=0 beta=0 liab=0 e_sv=0 r_nf=0,same
+road_crash_externality,absolute,central,row 4; NHTS ratios per person aged 5+,11.05,11.053646415,10.566366076,0.955916779,vmt=1 r_c=1 q_mult=1 x_nonfatal=1 x_fatal=1 beta=1 liab=1 e_sv=1 r_nf=1,same
+road_crash_externality,absolute,high,row 4; NHTS ratios per person aged 5+,74.34,74.337390358,70.843376679,0.952997897,vmt=2 r_c=2 q_mult=2 x_nonfatal=2 x_fatal=2 beta=2 liab=2 e_sv=2 r_nf=2,same
+road_crash_externality_fault_based,absolute,low,row 4; NHTS ratios per person aged 5+,23.80,23.801443117,22.964665824,0.964843422,vmt=0 r_c=0 q_mult=0 x_nonfatal=0 x_fatal=0 beta=0 liab=2 e_sv=0 r_nf=0,same
+road_crash_externality_fault_based,absolute,central,row 4; NHTS ratios per person aged 5+,42.34,42.339858373,40.633431583,0.959696918,vmt=1 r_c=1 q_mult=1 x_nonfatal=1 x_fatal=1 beta=1 liab=1 e_sv=1 r_nf=1,same
+road_crash_externality_fault_based,absolute,high,row 4; NHTS ratios per person aged 5+,73.25,73.247123201,69.844530547,0.953546399,vmt=2 r_c=2 q_mult=2 x_nonfatal=0 x_fatal=0 beta=0 liab=0 e_sv=2 r_nf=2,same

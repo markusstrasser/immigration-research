@@ -1,0 +1,23 @@
+gate,result,detail
+age bins are on the row-4 union and frame,PASS,"39,712,493.33, 335,543,722.18"
+under-5 shares equal the roads lane's keys.csv,PASS,"u_g 0.079695, u_o 0.051801"
+air lane's union and frame are the published CPS counts,PASS,
+pm25 absolute low / central / high reproduce items.csv,PASS,31.4979 / 69.6808 / 122.4840
+pm25 normalized low / central / high reproduce items.csv,PASS,-81.8082 / -46.5090 / -17.9168
+pm25 deaths among others reproduce items_detail.csv,PASS,4938.048216
+pm25 grid keeps its cells in order,PASS,
+pm25 central on the priced count reproduces reeval.csv,PASS,68.092103594
+pm25 factor and restated figure reproduce restated_pairing.csv (row),PASS,x0.977200394; 69.680800 x factor = 68.092105 vs 68.092105
+crash lane's union and frame are the published CPS counts,PASS,
+congestion lane's TARGET is the published CPS union,PASS,
+congestion exposures at the lane's scale reproduce crash_model.py's q,PASS,0.298793803
+crash absolute span reproduces model.json spans.total and items.csv,PASS,-57.681946 / 11.053646 / 74.337390
+crash fault_based span reproduces model.json spans.fault_total and items.csv,PASS,23.801443 / 42.339858 / 73.247123
+crash central on row 4 alone reproduces reeval.csv,PASS,10.876623930; q 0.298794 -> 0.289555
+crash central on the priced count reproduces reeval.csv,PASS,10.566366076
+crash factor and restated figure reproduce restated_pairing.csv (row_5plus),PASS,x0.955916779; 11.050000 x factor = 10.562880 vs 10.562880
+fault-based central uses neither x nor the composition term (crash_model.py main()'s check),PASS,
+pm25_consumption absolute span holds its central on the priced count,PASS,30.775247 <= 68.092104 <= 119.705627
+pm25_consumption normalized span holds its central on the priced count,PASS,-80.081796 <= -45.531343 <= -17.545386
+road_crash_externality absolute span holds its central on the priced count,PASS,-55.071430 <= 10.566366 <= 70.843377
+road_crash_externality_fault_based absolute span holds its central on the priced count,PASS,22.964666 <= 40.633432 <= 69.844531
