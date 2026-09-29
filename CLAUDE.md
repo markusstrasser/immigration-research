@@ -145,8 +145,8 @@ substituting a web summary or declaring a measurement unavailable:
   `age_profile_components.csv`, `age_normalizations*.csv`). The finance-refresh and
   enrollment accounts carry the all-generation union only; do not flat-scale the ledger's split
   onto any account total. The adopted main case has its own split, computed on the account with
-  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results.csv`
-  (ladder 224).
+  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_sept29.csv`
+  (ladder 224; `generation_results.csv` keeps the September 27 case).
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
 - The headline's "CBO-informed" label covers CBO's tax-incidence rules and its category rule for
