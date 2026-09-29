@@ -1,0 +1,443 @@
+{
+ "arms": {
+  "adopted": {
+   "largest_change": 0.0,
+   "movers_on_paper_flag": 0.0,
+   "r_cal_raw": {
+    "corporate_labor": {
+     "personal": 1.0009474002216134,
+     "shared": 1.0008549028348408
+    },
+    "customs_duties": {
+     "personal": 1.0056516973494876,
+     "shared": 1.005813378722115
+    },
+    "employee_hi": {
+     "personal": 1.0009474002216405,
+     "shared": 1.0008549028348892
+    },
+    "employee_oasdi": {
+     "personal": 1.0005447018077753,
+     "shared": 1.0004766599882537
+    },
+    "employer_hi": {
+     "personal": 1.000947400221627,
+     "shared": 1.000854902834904
+    },
+    "employer_oasdi": {
+     "personal": 1.0005447018077684,
+     "shared": 1.0004766599882475
+    },
+    "excise_selective_sales": {
+     "personal": 1.0056516973494876,
+     "shared": 1.005813378722115
+    },
+    "federal_income_tax": {
+     "personal": 0.996284743341839,
+     "shared": 0.9974278574272156
+    },
+    "general_sales_tax": {
+     "personal": 1.0056516973494876,
+     "shared": 1.005813378722115
+    },
+    "other_domestic_social_contributions": {
+     "personal": 1.002499511440126,
+     "shared": 1.002297707978078
+    },
+    "other_personal_tax": {
+     "personal": 1.0002539582904844,
+     "shared": 1.0005997812066165
+    },
+    "personal_current_transfers": {
+     "personal": 1.0056516973494876,
+     "shared": 1.005813378722115
+    },
+    "self_employment_oasdi_hi": {
+     "personal": 0.8803335259297693,
+     "shared": 0.893727377749548
+    },
+    "state_local_income_tax": {
+     "personal": 1.0002539582906327,
+     "shared": 1.0005997812066127
+    }
+   }
+  },
+  "cms": {
+   "largest_change": 0.0009417074345342558,
+   "movers_on_paper_flag": 595212.7325694433,
+   "r_cal_raw": {
+    "corporate_labor": {
+     "personal": 1.0010299925077528,
+     "shared": 1.0009409719148998
+    },
+    "customs_duties": {
+     "personal": 1.0057470704253282,
+     "shared": 1.0059349812705474
+    },
+    "employee_hi": {
+     "personal": 1.0010299925077781,
+     "shared": 1.000940971914945
+    },
+    "employee_oasdi": {
+     "personal": 1.0006421381928825,
+     "shared": 1.0005781003057106
+    },
+    "employer_hi": {
+     "personal": 1.0010299925077655,
+     "shared": 1.0009409719149587
+    },
+    "employer_oasdi": {
+     "personal": 1.000642138192876,
+     "shared": 1.0005781003057048
+    },
+    "excise_selective_sales": {
+     "personal": 1.0057470704253282,
+     "shared": 1.0059349812705474
+    },
+    "federal_income_tax": {
+     "personal": 0.9962596415172587,
+     "shared": 0.997431840444091
+    },
+    "general_sales_tax": {
+     "personal": 1.0057470704253282,
+     "shared": 1.0059349812705474
+    },
+    "other_domestic_social_contributions": {
+     "personal": 1.0028175811091367,
+     "shared": 1.0026452811990552
+    },
+    "other_personal_tax": {
+     "personal": 1.0002673236942887,
+     "shared": 1.0006332631588388
+    },
+    "personal_current_transfers": {
+     "personal": 1.0057470704253282,
+     "shared": 1.0059349812705474
+    },
+    "self_employment_oasdi_hi": {
+     "personal": 0.8810605149277512,
+     "shared": 0.8946690851840823
+    },
+    "state_local_income_tax": {
+     "personal": 1.000267323694437,
+     "shared": 1.000633263158827
+    }
+   }
+  },
+  "cms_proportional": {
+   "largest_change": 0.0004892998391372583,
+   "movers_on_paper_flag": 554399.2611655667,
+   "r_cal_raw": {
+    "corporate_labor": {
+     "personal": 1.0007942848875353,
+     "shared": 1.000696100604995
+    },
+    "customs_duties": {
+     "personal": 1.0061181192263615,
+     "shared": 1.0063026785612523
+    },
+    "employee_hi": {
+     "personal": 1.000794284887567,
+     "shared": 1.0006961006050514
+    },
+    "employee_oasdi": {
+     "personal": 1.0003861969214554,
+     "shared": 1.000309246035501
+    },
+    "employer_hi": {
+     "personal": 1.000794284887551,
+     "shared": 1.0006961006050688
+    },
+    "employer_oasdi": {
+     "personal": 1.0003861969214476,
+     "shared": 1.0003092460354939
+    },
+    "excise_selective_sales": {
+     "personal": 1.0061181192263615,
+     "shared": 1.0063026785612523
+    },
+    "federal_income_tax": {
+     "personal": 0.9962720880958656,
+     "shared": 0.9974175867011627
+    },
+    "general_sales_tax": {
+     "personal": 1.0061181192263615,
+     "shared": 1.0063026785612523
+    },
+    "other_domestic_social_contributions": {
+     "personal": 1.0024421229827347,
+     "shared": 1.0022053844851617
+    },
+    "other_personal_tax": {
+     "personal": 1.000217139859854,
+     "shared": 1.0005601642686797
+    },
+    "personal_current_transfers": {
+     "personal": 1.0061181192263615,
+     "shared": 1.0063026785612523
+    },
+    "self_employment_oasdi_hi": {
+     "personal": 0.8800400105824471,
+     "shared": 0.8935723860014749
+    },
+    "state_local_income_tax": {
+     "personal": 1.0002171398599342,
+     "shared": 1.0005601642687256
+    }
+   }
+  },
+  "dhs": {
+   "largest_change": 0.0005618988456886909,
+   "movers_on_paper_flag": 236762.95103004598,
+   "r_cal_raw": {
+    "corporate_labor": {
+     "personal": 1.001040544201824,
+     "shared": 1.0009445195049274
+    },
+    "customs_duties": {
+     "personal": 1.0056205264309235,
+     "shared": 1.0057914348634247
+    },
+    "employee_hi": {
+     "personal": 1.0010405442018488,
+     "shared": 1.0009445195049718
+    },
+    "employee_oasdi": {
+     "personal": 1.000647454168934,
+     "shared": 1.0005764043085246
+    },
+    "employer_hi": {
+     "personal": 1.0010405442018364,
+     "shared": 1.0009445195049855
+    },
+    "employer_oasdi": {
+     "personal": 1.0006474541689279,
+     "shared": 1.0005764043085188
+    },
+    "excise_selective_sales": {
+     "personal": 1.0056205264309235,
+     "shared": 1.0057914348634247
+    },
+    "federal_income_tax": {
+     "personal": 0.9962644996119232,
+     "shared": 0.9974214279779557
+    },
+    "general_sales_tax": {
+     "personal": 1.0056205264309235,
+     "shared": 1.0057914348634247
+    },
+    "other_domestic_social_contributions": {
+     "personal": 1.0027001413280303,
+     "shared": 1.0025133878673003
+    },
+    "other_personal_tax": {
+     "personal": 1.0002585891614553,
+     "shared": 1.0006152585269454
+    },
+    "personal_current_transfers": {
+     "personal": 1.0056205264309235,
+     "shared": 1.0057914348634247
+    },
+    "self_employment_oasdi_hi": {
+     "personal": 0.8808143738922884,
+     "shared": 0.8942892765952367
+    },
+    "state_local_income_tax": {
+     "personal": 1.0002585891616171,
+     "shared": 1.0006152585269283
+    }
+   }
+  },
+  "dhs_proportional": {
+   "largest_change": 0.00019135722471430583,
+   "movers_on_paper_flag": 216726.38837942109,
+   "r_cal_raw": {
+    "corporate_labor": {
+     "personal": 1.0008877357543846,
+     "shared": 1.0007930204666706
+    },
+    "customs_duties": {
+     "personal": 1.0058341246702915,
+     "shared": 1.0060047359468294
+    },
+    "employee_hi": {
+     "personal": 1.0008877357544135,
+     "shared": 1.0007930204667221
+    },
+    "employee_oasdi": {
+     "personal": 1.0004829539132973,
+     "shared": 1.0004114392217267
+    },
+    "employer_hi": {
+     "personal": 1.0008877357543988,
+     "shared": 1.000793020466738
+    },
+    "employer_oasdi": {
+     "personal": 1.00048295391329,
+     "shared": 1.00041143922172
+    },
+    "excise_selective_sales": {
+     "personal": 1.0058341246702915,
+     "shared": 1.0060047359468294
+    },
+    "federal_income_tax": {
+     "personal": 0.9962797424158086,
+     "shared": 0.9974238302917747
+    },
+    "general_sales_tax": {
+     "personal": 1.0058341246702915,
+     "shared": 1.0060047359468294
+    },
+    "other_domestic_social_contributions": {
+     "personal": 1.0024770872285411,
+     "shared": 1.0022616574602967
+    },
+    "other_personal_tax": {
+     "personal": 1.0002395434558955,
+     "shared": 1.0005843264775154
+    },
+    "personal_current_transfers": {
+     "personal": 1.0058341246702915,
+     "shared": 1.0060047359468294
+    },
+    "self_employment_oasdi_hi": {
+     "personal": 0.8802229154494791,
+     "shared": 0.8936704166389156
+    },
+    "state_local_income_tax": {
+     "personal": 1.0002395434560174,
+     "shared": 1.000584326477531
+    }
+   }
+  },
+  "pew": {
+   "largest_change": 0.0006205138661425913,
+   "movers_on_paper_flag": 264010.1902113214,
+   "r_cal_raw": {
+    "corporate_labor": {
+     "personal": 1.001096751967128,
+     "shared": 1.0010295815251622
+    },
+    "customs_duties": {
+     "personal": 1.0050563705223665,
+     "shared": 1.0051928648559725
+    },
+    "employee_hi": {
+     "personal": 1.001096751967151,
+     "shared": 1.001029581525202
+    },
+    "employee_oasdi": {
+     "personal": 1.0007089178478563,
+     "shared": 1.0006692646664574
+    },
+    "employer_hi": {
+     "personal": 1.0010967519671394,
+     "shared": 1.0010295815252142
+    },
+    "employer_oasdi": {
+     "personal": 1.0007089178478505,
+     "shared": 1.0006692646664521
+    },
+    "excise_selective_sales": {
+     "personal": 1.0050563705223665,
+     "shared": 1.0051928648559725
+    },
+    "federal_income_tax": {
+     "personal": 0.9963651235517721,
+     "shared": 0.9975188313989833
+    },
+    "general_sales_tax": {
+     "personal": 1.0050563705223665,
+     "shared": 1.0051928648559725
+    },
+    "other_domestic_social_contributions": {
+     "personal": 1.0025477318391849,
+     "shared": 1.0023929234577131
+    },
+    "other_personal_tax": {
+     "personal": 1.0003309314661495,
+     "shared": 1.0007003672761763
+    },
+    "personal_current_transfers": {
+     "personal": 1.0050563705223665,
+     "shared": 1.0051928648559725
+    },
+    "self_employment_oasdi_hi": {
+     "personal": 0.880739844148519,
+     "shared": 0.8939153856333141
+    },
+    "state_local_income_tax": {
+     "personal": 1.0003309314663489,
+     "shared": 1.000700367276122
+    }
+   }
+  },
+  "pew_proportional": {
+   "largest_change": 0.00046755761633976434,
+   "movers_on_paper_flag": 304763.17737853795,
+   "r_cal_raw": {
+    "corporate_labor": {
+     "personal": 1.001019810342333,
+     "shared": 1.000929583943677
+    },
+    "customs_duties": {
+     "personal": 1.0051960352636362,
+     "shared": 1.0053458211057753
+    },
+    "employee_hi": {
+     "personal": 1.0010198103423578,
+     "shared": 1.0009295839437216
+    },
+    "employee_oasdi": {
+     "personal": 1.0006304642560861,
+     "shared": 1.00056376760375
+    },
+    "employer_hi": {
+     "personal": 1.0010198103423453,
+     "shared": 1.000929583943735
+    },
+    "employer_oasdi": {
+     "personal": 1.00063046425608,
+     "shared": 1.0005637676037442
+    },
+    "excise_selective_sales": {
+     "personal": 1.0051960352636362,
+     "shared": 1.0053458211057753
+    },
+    "federal_income_tax": {
+     "personal": 0.9962346320045253,
+     "shared": 0.9973768616464544
+    },
+    "general_sales_tax": {
+     "personal": 1.0051960352636362,
+     "shared": 1.0053458211057753
+    },
+    "other_domestic_social_contributions": {
+     "personal": 1.0024994588534235,
+     "shared": 1.002303266880237
+    },
+    "other_personal_tax": {
+     "personal": 1.000180604396652,
+     "shared": 1.0005352751629593
+    },
+    "personal_current_transfers": {
+     "personal": 1.0051960352636362,
+     "shared": 1.0053458211057753
+    },
+    "self_employment_oasdi_hi": {
+     "personal": 0.8807819090266509,
+     "shared": 0.8941237110522735
+    },
+    "state_local_income_tax": {
+     "personal": 1.0001806043967887,
+     "shared": 1.000535275162956
+    }
+   }
+  }
+ },
+ "meta": {
+  "field": "items.all.central.lines.<line>.<allocation>.r_cal_raw",
+  "gate_largest_difference": 0.0,
+  "source": "payroll_compliance_2026_09_28/derived/items.json"
+ }
+}

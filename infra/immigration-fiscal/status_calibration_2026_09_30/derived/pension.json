@@ -1,0 +1,129 @@
+{
+ "arms": {
+  "adopted": {
+   "accrual_per_tax_dollar": 1.0183778513366615,
+   "change_part_a_accrual_bn": 0.0,
+   "change_ratio_net": 0.0,
+   "change_se_oasdi_share": 0.0,
+   "future_share": 0.04390363188554548,
+   "oasdi_tax_bn": 113.71596028295752,
+   "p_qualify_g1": 0.8933345959993599,
+   "part_a_accrual_bn": 41.13712783048602,
+   "ratio_net": 0.9736673650311839,
+   "se_oasdi_share": 0.8034959757706692,
+   "unauthorized_share_of_oasdi_tax": 0.08671053896225128
+  },
+  "cms": {
+   "accrual_per_tax_dollar": 1.003548978803353,
+   "change_part_a_accrual_bn": -0.9249106199653099,
+   "change_ratio_net": -0.014172446996061572,
+   "change_se_oasdi_share": -4.9005204177943185e-05,
+   "future_share": 0.043898266750030786,
+   "oasdi_tax_bn": 112.95066607322124,
+   "p_qualify_g1": 0.894296101286646,
+   "part_a_accrual_bn": 40.21221721052071,
+   "ratio_net": 0.9594949180351223,
+   "se_oasdi_share": 0.8034469705664913,
+   "unauthorized_share_of_oasdi_tax": 0.0948249207187609
+  },
+  "cms_proportional": {
+   "accrual_per_tax_dollar": 1.0038599096584293,
+   "change_part_a_accrual_bn": -0.8258162969278686,
+   "change_ratio_net": -0.013892271159946845,
+   "change_se_oasdi_share": -4.080426909813806e-05,
+   "future_share": 0.04391530667082066,
+   "oasdi_tax_bn": 112.93232210546732,
+   "p_qualify_g1": 0.8909944142271115,
+   "part_a_accrual_bn": 40.311311533558154,
+   "ratio_net": 0.959775093871237,
+   "se_oasdi_share": 0.8034551715015711,
+   "unauthorized_share_of_oasdi_tax": 0.09502077066284523
+  },
+  "dhs": {
+   "accrual_per_tax_dollar": 1.013114640018333,
+   "change_part_a_accrual_bn": -0.3497233382629972,
+   "change_ratio_net": -0.005029734727368673,
+   "change_se_oasdi_share": -2.0295366596534414e-05,
+   "future_share": 0.043901260486881324,
+   "oasdi_tax_bn": 113.45540229604526,
+   "p_qualify_g1": 0.8933345959993599,
+   "part_a_accrual_bn": 40.787404492223025,
+   "ratio_net": 0.9686376303038152,
+   "se_oasdi_share": 0.8034756804040727,
+   "unauthorized_share_of_oasdi_tax": 0.08946093361510546
+  },
+  "dhs_proportional": {
+   "accrual_per_tax_dollar": 1.0127263665485553,
+   "change_part_a_accrual_bn": -0.32274438707013076,
+   "change_ratio_net": -0.005407926335067481,
+   "change_se_oasdi_share": -1.584493603568049e-05,
+   "future_share": 0.04390813680894414,
+   "oasdi_tax_bn": 113.40961955723829,
+   "p_qualify_g1": 0.8924620177731563,
+   "part_a_accrual_bn": 40.81438344341589,
+   "ratio_net": 0.9682594386961164,
+   "se_oasdi_share": 0.8034801308346335,
+   "unauthorized_share_of_oasdi_tax": 0.08994551187249245
+  },
+  "pew": {
+   "accrual_per_tax_dollar": 1.0305999252932878,
+   "change_part_a_accrual_bn": 0.48158074556243946,
+   "change_ratio_net": 0.01170976931858092,
+   "change_se_oasdi_share": 6.390755504204204e-05,
+   "future_share": 0.043880064255441775,
+   "oasdi_tax_bn": 114.31572133883729,
+   "p_qualify_g1": 0.882240345037419,
+   "part_a_accrual_bn": 41.61870857604846,
+   "ratio_net": 0.9853771343497648,
+   "se_oasdi_share": 0.8035598833257113,
+   "unauthorized_share_of_oasdi_tax": 0.0804272344720196
+  },
+  "pew_proportional": {
+   "accrual_per_tax_dollar": 1.0282922682007545,
+   "change_part_a_accrual_bn": 0.6878265088073547,
+   "change_ratio_net": 0.009478938348054688,
+   "change_se_oasdi_share": 3.874718263907617e-05,
+   "future_share": 0.043903826001249285,
+   "oasdi_tax_bn": 114.30825230446649,
+   "p_qualify_g1": 0.8898374316456328,
+   "part_a_accrual_bn": 41.82495433929338,
+   "ratio_net": 0.9831463033792386,
+   "se_oasdi_share": 0.8035347229533083,
+   "unauthorized_share_of_oasdi_tax": 0.0805050772166536
+  }
+ },
+ "meta": {
+  "credit_unauthorized": 0.1,
+  "gate": {
+   "accrual_per_tax_dollar": {
+    "difference": 0.0,
+    "recomputed": 1.0183778513366615,
+    "summary_9ea1beb": 1.0183778513366615
+   },
+   "future_share": {
+    "difference": 6.938893903907228e-18,
+    "recomputed": 0.04390363188554548,
+    "summary_9ea1beb": 0.043903631885545476
+   },
+   "part_a_accrual_bn": {
+    "difference": 0.0,
+    "recomputed": 41.13712783048602,
+    "summary_9ea1beb": 41.13712783048602
+   },
+   "ratio_net": {
+    "difference": 0.0,
+    "recomputed": 0.9736673650311839,
+    "summary_9ea1beb": 0.9736673650311839
+   },
+   "se_oasdi_share": {
+    "difference": 0.0,
+    "recomputed": 0.8034959757706692,
+    "summary_9ea1beb": 0.8034959757706692
+   }
+  },
+  "relative_rate": 0.5233824966647924,
+  "s_mex": 0.5262685374807583,
+  "source": "infra/immigration-fiscal/pension_accrual_2026_09_28/derived/summary.json at 9ea1beb",
+  "weights": "the pension lane's frame (published CPS weights)"
+ }
+}

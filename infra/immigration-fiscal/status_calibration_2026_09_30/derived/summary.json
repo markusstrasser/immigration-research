@@ -1,0 +1,756 @@
+{
+ "case": {
+  "set": [
+   371.4146,
+   434.841
+  ],
+  "cash": [
+   294.7011,
+   361.8175
+  ]
+ },
+ "ends": [
+  48,
+  11
+ ],
+ "gates": [
+  {
+   "gate": "rebuilt inputs (adopted flag): the set at 48 / 11 is the case's 371.4146 / 434.841 (1e-4), ends 48 / 11 in both methods",
+   "pass": true,
+   "detail": "371.414600 / 434.840959"
+  },
+  {
+   "gate": "rebuilt inputs (adopted flag): the cash at 48 / 11 is the case's 294.7011 / 361.8175 (1e-4), ends 48 / 11 in both methods",
+   "pass": true,
+   "detail": "294.701076 / 361.817482"
+  },
+  {
+   "gate": "no substitution (--arm none): the set at 48 / 11 is the case's 371.4146 / 434.841 (1e-4), ends 48 / 11 in both methods",
+   "pass": true,
+   "detail": "371.414600 / 434.840959"
+  },
+  {
+   "gate": "no substitution (--arm none): the cash at 48 / 11 is the case's 294.7011 / 361.8175 (1e-4), ends 48 / 11 in both methods",
+   "pass": true,
+   "detail": "294.701076 / 361.817482"
+  },
+  {
+   "gate": "the hooks reached the package in every substituted arm (one stack, pension and payroll read each)",
+   "pass": true,
+   "detail": "adopted 1/1/1, pew 1/1/1, pew_proportional 1/1/1, dhs 1/1/1, dhs_proportional 1/1/1, cms 1/1/1, cms_proportional 1/1/1"
+  },
+  {
+   "gate": "the rebuilt inputs give the adopted case at every specification of both sets (1e-9)",
+   "pass": true,
+   "detail": "max |diff| 0.0e+0"
+  },
+  {
+   "gate": "every other arm moves the group's federal income tax receipt",
+   "pass": true,
+   "detail": "pew 0.3642, pew_proportional 0.2502, dhs -0.0654, dhs_proportional -0.0972, cms -0.1885, cms_proportional -0.2488"
+  }
+ ],
+ "arms": {
+  "adopted": {
+   "rule": "adopted",
+   "unauthorized_m": 4.607452947057,
+   "set_at_48_11_bn": [
+    371.4145997888867,
+    434.8409586241355
+   ],
+   "cash_at_48_11_bn": [
+    294.7010759802479,
+    361.81748180973545
+   ],
+   "set_move_bn": [
+    0,
+    0
+   ],
+   "cash_move_bn": [
+    0,
+    0
+   ],
+   "set_band_bn": [
+    371.4145997888867,
+    434.8409586241355
+   ],
+   "cash_band_bn": [
+    294.7010759802479,
+    361.81748180973545
+   ],
+   "group_amounts_at_48_11_bn": {
+    "receipts:federal_income_tax": [
+     111.99255054228722,
+     102.3384177121643
+    ],
+    "receipts:state_local_income_tax": [
+     26.076962284928705,
+     23.841655313569518
+    ],
+    "receipts:employee_oasdi": [
+     53.30606781254909,
+     50.1465921729141
+    ],
+    "receipts:employer_oasdi": [
+     53.766383578560735,
+     50.579624807553024
+    ],
+    "receipts:employee_hi": [
+     15.800298923212676,
+     14.733325436127501
+    ],
+    "receipts:employer_hi": [
+     14.054587900791738,
+     13.105499991684606
+    ],
+    "receipts:self_employment_oasdi_hi": [
+     6.588000292002532,
+     5.983506073939578
+    ],
+    "receipts:other_domestic_social_contributions": [
+     10.318502875416772,
+     9.940263288769504
+    ],
+    "receipts:general_sales_tax": [
+     55.01430479626933,
+     55.00546141786358
+    ],
+    "spending:social_security": [
+     109.40699333111733,
+     102.75495331219659
+    ],
+    "spending:medicare": [
+     73.89323123383045,
+     73.89323123383045
+    ],
+    "spending:refundable_tax_credits": [
+     36.33134236895243,
+     32.62802705558531
+    ],
+    "spending:medicaid_and_chip_other_medical": [
+     117.74341665484393,
+     119.73606494840452
+    ],
+    "spending:snap": [
+     13.588726924902996,
+     13.588726924902996
+    ]
+   },
+   "pension": {
+    "accrual_per_tax_dollar": 1.0183778513366615,
+    "change_part_a_accrual_bn": 0,
+    "change_ratio_net": 0,
+    "change_se_oasdi_share": 0,
+    "future_share": 0.04390363188554548,
+    "oasdi_tax_bn": 113.71596028295752,
+    "p_qualify_g1": 0.8933345959993599,
+    "part_a_accrual_bn": 41.13712783048602,
+    "ratio_net": 0.9736673650311839,
+    "se_oasdi_share": 0.8034959757706692,
+    "unauthorized_share_of_oasdi_tax": 0.08671053896225128
+   },
+   "payroll_largest_ratio_change": 0
+  },
+  "pew": {
+   "rule": "tiers",
+   "unauthorized_m": 4.3,
+   "set_at_48_11_bn": [
+    372.8660350561247,
+    436.2155800513871
+   ],
+   "cash_at_48_11_bn": [
+    293.8427986166531,
+    360.9727673920265
+   ],
+   "set_move_bn": [
+    1.4514352672380255,
+    1.3746214272516113
+   ],
+   "cash_move_bn": [
+    -0.858277363594766,
+    -0.8447144177089285
+   ],
+   "set_band_bn": [
+    372.8660350561247,
+    436.2155800513871
+   ],
+   "cash_band_bn": [
+    293.8427986166531,
+    360.9727673920265
+   ],
+   "group_amounts_at_48_11_bn": {
+    "receipts:federal_income_tax": [
+     112.35675084066054,
+     102.6834836366622
+    ],
+    "receipts:state_local_income_tax": [
+     26.14022318533877,
+     23.899895113217347
+    ],
+    "receipts:employee_oasdi": [
+     53.546261080330034,
+     50.38134301849847
+    ],
+    "receipts:employer_oasdi": [
+     54.008650995733255,
+     50.81640280538876
+    ],
+    "receipts:employee_hi": [
+     15.87128048775843,
+     14.80221031455378
+    ],
+    "receipts:employer_hi": [
+     14.117726999809868,
+     13.166774058939131
+    ],
+    "receipts:self_employment_oasdi_hi": [
+     6.634138560741601,
+     6.030192132422286
+    ],
+    "receipts:other_domestic_social_contributions": [
+     10.378500394621398,
+     9.997960727311327
+    ],
+    "receipts:general_sales_tax": [
+     54.98036496241501,
+     54.97289922271536
+    ],
+    "spending:social_security": [
+     111.23512521638776,
+     104.49270841159468
+    ],
+    "spending:medicare": [
+     74.37481197939289,
+     74.37481197939289
+    ],
+    "spending:refundable_tax_credits": [
+     36.56705567279718,
+     32.84041714802529
+    ],
+    "spending:medicaid_and_chip_other_medical": [
+     117.74341665484393,
+     119.73606494840452
+    ],
+    "spending:snap": [
+     13.588726924902996,
+     13.588726924902996
+    ]
+   },
+   "pension": {
+    "accrual_per_tax_dollar": 1.0305999252932878,
+    "change_part_a_accrual_bn": 0.48158074556243946,
+    "change_ratio_net": 0.01170976931858092,
+    "change_se_oasdi_share": 0.00006390755504204204,
+    "future_share": 0.043880064255441775,
+    "oasdi_tax_bn": 114.31572133883729,
+    "p_qualify_g1": 0.882240345037419,
+    "part_a_accrual_bn": 41.61870857604846,
+    "ratio_net": 0.9853771343497648,
+    "se_oasdi_share": 0.8035598833257113,
+    "unauthorized_share_of_oasdi_tax": 0.0804272344720196
+   },
+   "payroll_largest_ratio_change": 0.0006205138661425913
+  },
+  "pew_proportional": {
+   "rule": "proportional",
+   "unauthorized_m": 4.3,
+   "set_at_48_11_bn": [
+    373.07410219710243,
+    436.4146991923843
+   ],
+   "cash_at_48_11_bn": [
+    294.16146309769584,
+    361.2605864806796
+   ],
+   "set_move_bn": [
+    1.659502408215758,
+    1.5737405682488088
+   ],
+   "cash_move_bn": [
+    -0.539612882552035,
+    -0.5568953290558625
+   ],
+   "set_band_bn": [
+    373.07410219710243,
+    436.4146991923843
+   ],
+   "cash_band_bn": [
+    294.16146309769584,
+    361.2605864806796
+   ],
+   "group_amounts_at_48_11_bn": {
+    "receipts:federal_income_tax": [
+     112.2427809246121,
+     102.59659360747008
+    ],
+    "receipts:state_local_income_tax": [
+     26.15166221107859,
+     23.916253052145024
+    ],
+    "receipts:employee_oasdi": [
+     53.51365734930686,
+     50.35292718215378
+    ],
+    "receipts:employer_oasdi": [
+     53.97576572056237,
+     50.787741588770885
+    ],
+    "receipts:employee_hi": [
+     15.859164230303195,
+     14.791943770973639
+    ],
+    "receipts:employer_hi": [
+     14.106949418559145,
+     13.157641824170447
+    ],
+    "receipts:self_employment_oasdi_hi": [
+     6.633550583492669,
+     6.027512831659725
+    ],
+    "receipts:other_domestic_social_contributions": [
+     10.370440047331554,
+     9.991265769376884
+    ],
+    "receipts:general_sales_tax": [
+     54.988731108586016,
+     54.98053837209242
+    ],
+    "spending:social_security": [
+     110.91828211307777,
+     104.19776270069397
+    ],
+    "spending:medicare": [
+     74.58105774263781,
+     74.58105774263781
+    ],
+    "spending:refundable_tax_credits": [
+     36.700498435649365,
+     32.98466157759247
+    ],
+    "spending:medicaid_and_chip_other_medical": [
+     117.74341665484393,
+     119.73606494840452
+    ],
+    "spending:snap": [
+     13.588726924902996,
+     13.588726924902996
+    ]
+   },
+   "pension": {
+    "accrual_per_tax_dollar": 1.0282922682007545,
+    "change_part_a_accrual_bn": 0.6878265088073547,
+    "change_ratio_net": 0.009478938348054688,
+    "change_se_oasdi_share": 0.00003874718263907617,
+    "future_share": 0.043903826001249285,
+    "oasdi_tax_bn": 114.30825230446649,
+    "p_qualify_g1": 0.8898374316456328,
+    "part_a_accrual_bn": 41.82495433929338,
+    "ratio_net": 0.9831463033792386,
+    "se_oasdi_share": 0.8035347229533083,
+    "unauthorized_share_of_oasdi_tax": 0.0805050772166536
+   },
+   "payroll_largest_ratio_change": 0.00046755761633976434
+  },
+  "dhs": {
+   "rule": "tiers",
+   "unauthorized_m": 4.8,
+   "set_at_48_11_bn": [
+    370.2795575640765,
+    433.741868010247
+   ],
+   "cash_at_48_11_bn": [
+    294.64352076603,
+    361.7565032977328
+   ],
+   "set_move_bn": [
+    -1.1350422248101495,
+    -1.0990906138885066
+   ],
+   "cash_move_bn": [
+    -0.0575552142178708,
+    -0.06097851200263449
+   ],
+   "set_band_bn": [
+    370.2795575640765,
+    433.741868010247
+   ],
+   "cash_band_bn": [
+    294.64352076603,
+    361.7565032977328
+   ],
+   "group_amounts_at_48_11_bn": {
+    "receipts:federal_income_tax": [
+     111.92710606363799,
+     102.2718184684037
+    ],
+    "receipts:state_local_income_tax": [
+     26.0503377741177,
+     23.814875444497876
+    ],
+    "receipts:employee_oasdi": [
+     53.22620139137618,
+     50.06935963070117
+    ],
+    "receipts:employer_oasdi": [
+     53.68582748406594,
+     50.50172533644604
+    ],
+    "receipts:employee_hi": [
+     15.77785980914759,
+     14.711595783952482
+    ],
+    "receipts:employer_hi": [
+     14.03462799354116,
+     13.086171160753816
+    ],
+    "receipts:self_employment_oasdi_hi": [
+     6.578913177909602,
+     5.974259098991269
+    ],
+    "receipts:other_domestic_social_contributions": [
+     10.296403060822765,
+     9.9184393949678
+    ],
+    "receipts:general_sales_tax": [
+     55.013104547638775,
+     55.003756482881656
+    ],
+    "spending:social_security": [
+     108.67922965878802,
+     102.0665645485737
+    ],
+    "spending:medicare": [
+     73.54350789556746,
+     73.54350789556746
+    ],
+    "spending:refundable_tax_credits": [
+     35.94519940053692,
+     32.24313029121075
+    ],
+    "spending:medicaid_and_chip_other_medical": [
+     117.74341665484393,
+     119.73606494840452
+    ],
+    "spending:snap": [
+     13.588726924902996,
+     13.588726924902996
+    ]
+   },
+   "pension": {
+    "accrual_per_tax_dollar": 1.013114640018333,
+    "change_part_a_accrual_bn": -0.3497233382629972,
+    "change_ratio_net": -0.005029734727368673,
+    "change_se_oasdi_share": -0.000020295366596534414,
+    "future_share": 0.043901260486881324,
+    "oasdi_tax_bn": 113.45540229604526,
+    "p_qualify_g1": 0.8933345959993599,
+    "part_a_accrual_bn": 40.787404492223025,
+    "ratio_net": 0.9686376303038152,
+    "se_oasdi_share": 0.8034756804040727,
+    "unauthorized_share_of_oasdi_tax": 0.08946093361510546
+   },
+   "payroll_largest_ratio_change": 0.0005618988456886909
+  },
+  "dhs_proportional": {
+   "rule": "proportional",
+   "unauthorized_m": 4.8,
+   "set_at_48_11_bn": [
+    370.5154263242814,
+    433.98897334396315
+   ],
+   "cash_at_48_11_bn": [
+    294.9634189596151,
+    362.09306539550164
+   ],
+   "set_move_bn": [
+    -0.8991734646052691,
+    -0.8519852801723573
+   ],
+   "cash_move_bn": [
+    0.26234297936724715,
+    0.275583585766185
+   ],
+   "set_band_bn": [
+    370.5154263242814,
+    433.98897334396315
+   ],
+   "cash_band_bn": [
+    294.9634189596151,
+    362.09306539550164
+   ],
+   "group_amounts_at_48_11_bn": {
+    "receipts:federal_income_tax": [
+     111.89530139546079,
+     102.23915338534829
+    ],
+    "receipts:state_local_income_tax": [
+     26.047194381058773,
+     23.812714420304104
+    ],
+    "receipts:employee_oasdi": [
+     53.196410711368024,
+     50.03575594506118
+    ],
+    "receipts:employer_oasdi": [
+     53.65577955154865,
+     50.46783147171499
+    ],
+    "receipts:employee_hi": [
+     15.769231350745239,
+     14.701562019562214
+    ],
+    "receipts:employer_hi": [
+     14.02695285855468,
+     13.077245986345275
+    ],
+    "receipts:self_employment_oasdi_hi": [
+     6.565204445967937,
+     5.959791073730155
+    ],
+    "receipts:other_domestic_social_contributions": [
+     10.293384199075852,
+     9.915167094615663
+    ],
+    "receipts:general_sales_tax": [
+     55.02477133500117,
+     55.015439523585954
+    ],
+    "spending:social_security": [
+     108.56822127421502,
+     101.9501288333282
+    ],
+    "spending:medicare": [
+     73.57048684676032,
+     73.57048684676032
+    ],
+    "spending:refundable_tax_credits": [
+     36.156931466742726,
+     32.4597640730562
+    ],
+    "spending:medicaid_and_chip_other_medical": [
+     117.74341665484393,
+     119.73606494840452
+    ],
+    "spending:snap": [
+     13.588726924902996,
+     13.588726924902996
+    ]
+   },
+   "pension": {
+    "accrual_per_tax_dollar": 1.0127263665485553,
+    "change_part_a_accrual_bn": -0.32274438707013076,
+    "change_ratio_net": -0.005407926335067481,
+    "change_se_oasdi_share": -0.00001584493603568049,
+    "future_share": 0.04390813680894414,
+    "oasdi_tax_bn": 113.40961955723829,
+    "p_qualify_g1": 0.8924620177731563,
+    "part_a_accrual_bn": 40.81438344341589,
+    "ratio_net": 0.9682594386961164,
+    "se_oasdi_share": 0.8034801308346335,
+    "unauthorized_share_of_oasdi_tax": 0.08994551187249245
+   },
+   "payroll_largest_ratio_change": 0.00019135722471430583
+  },
+  "cms": {
+   "rule": "tiers",
+   "unauthorized_m": 5.1,
+   "set_at_48_11_bn": [
+    368.5058209586758,
+    432.04129931665045
+   ],
+   "cash_at_48_11_bn": [
+    294.81987065955377,
+    361.94212180043075
+   ],
+   "set_move_bn": [
+    -2.9087788302108493,
+    -2.799659307485058
+   ],
+   "cash_move_bn": [
+    0.11879467930589271,
+    0.12463999069530018
+   ],
+   "set_band_bn": [
+    368.5058209586758,
+    432.04129931665045
+   ],
+   "cash_band_bn": [
+    294.81987065955377,
+    361.94212180043075
+   ],
+   "group_amounts_at_48_11_bn": {
+    "receipts:federal_income_tax": [
+     111.80400880967267,
+     102.14546138841139
+    ],
+    "receipts:state_local_income_tax": [
+     26.003742131869128,
+     23.7688621118857
+    ],
+    "receipts:employee_oasdi": [
+     53.05852286554552,
+     49.90267657240314
+    ],
+    "receipts:employer_oasdi": [
+     53.51670099795085,
+     50.333602914059455
+    ],
+    "receipts:employee_hi": [
+     15.730798148057236,
+     14.664279428940143
+    ],
+    "receipts:employer_hi": [
+     13.992765984742718,
+     13.044082598133093
+    ],
+    "receipts:self_employment_oasdi_hi": [
+     6.545496501520039,
+     5.940257295656723
+    ],
+    "receipts:other_domestic_social_contributions": [
+     10.25547240369782,
+     9.877778572759425
+    ],
+    "receipts:general_sales_tax": [
+     55.020956009908936,
+     55.01067797550205
+    ],
+    "spending:social_security": [
+     107.30433044156597,
+     100.75556463398148
+    ],
+    "spending:medicare": [
+     72.96832061386515,
+     72.96832061386515
+    ],
+    "spending:refundable_tax_credits": [
+     35.46419906744639,
+     31.768006718080013
+    ],
+    "spending:medicaid_and_chip_other_medical": [
+     117.74341665484393,
+     119.73606494840452
+    ],
+    "spending:snap": [
+     13.588726924902996,
+     13.588726924902996
+    ]
+   },
+   "pension": {
+    "accrual_per_tax_dollar": 1.003548978803353,
+    "change_part_a_accrual_bn": -0.9249106199653099,
+    "change_ratio_net": -0.014172446996061572,
+    "change_se_oasdi_share": -0.000049005204177943185,
+    "future_share": 0.043898266750030786,
+    "oasdi_tax_bn": 112.95066607322124,
+    "p_qualify_g1": 0.894296101286646,
+    "part_a_accrual_bn": 40.21221721052071,
+    "ratio_net": 0.9594949180351223,
+    "se_oasdi_share": 0.8034469705664913,
+    "unauthorized_share_of_oasdi_tax": 0.0948249207187609
+   },
+   "payroll_largest_ratio_change": 0.0009417074345342558
+  },
+  "cms_proportional": {
+   "rule": "proportional",
+   "unauthorized_m": 5.1,
+   "set_at_48_11_bn": [
+    369.1115039619401,
+    432.65922323635175
+   ],
+   "cash_at_48_11_bn": [
+    295.3710605431951,
+    362.5215043654839
+   ],
+   "set_move_bn": [
+    -2.30309582694656,
+    -2.1817353877837604
+   ],
+   "cash_move_bn": [
+    0.6699845629472065,
+    0.7040225557484519
+   ],
+   "set_band_bn": [
+    369.1115039619401,
+    432.65922323635175
+   ],
+   "cash_band_bn": [
+    295.3710605431951,
+    362.5215043654839
+   ],
+   "group_amounts_at_48_11_bn": {
+    "receipts:federal_income_tax": [
+     111.74378590899778,
+     102.08450895194505
+    ],
+    "receipts:state_local_income_tax": [
+     26.000810835611574,
+     23.767623170387452
+    ],
+    "receipts:employee_oasdi": [
+     53.02546833245138,
+     49.86298347800211
+    ],
+    "receipts:employer_oasdi": [
+     53.483361027882,
+     50.293567056481244
+    ],
+    "receipts:employee_hi": [
+     15.720804220011699,
+     14.652052358559155
+    ],
+    "receipts:employer_hi": [
+     13.983876245322552,
+     13.033206447227895
+    ],
+    "receipts:self_employment_oasdi_hi": [
+     6.529595072372018,
+     5.922752172032897
+    ],
+    "receipts:other_domestic_social_contributions": [
+     10.254218479556933,
+     9.876038176081032
+    ],
+    "receipts:general_sales_tax": [
+     55.04106770383898,
+     55.03097298476139
+    ],
+    "spending:social_security": [
+     107.25972923815146,
+     100.69501166559223
+    ],
+    "spending:medicare": [
+     73.06741493690258,
+     73.06741493690258
+    ],
+    "spending:refundable_tax_credits": [
+     35.88372280499211,
+     32.19633570358653
+    ],
+    "spending:medicaid_and_chip_other_medical": [
+     117.74341665484393,
+     119.73606494840452
+    ],
+    "spending:snap": [
+     13.588726924902996,
+     13.588726924902996
+    ]
+   },
+   "pension": {
+    "accrual_per_tax_dollar": 1.0038599096584293,
+    "change_part_a_accrual_bn": -0.8258162969278686,
+    "change_ratio_net": -0.013892271159946845,
+    "change_se_oasdi_share": -0.00004080426909813806,
+    "future_share": 0.04391530667082066,
+    "oasdi_tax_bn": 112.93232210546732,
+    "p_qualify_g1": 0.8909944142271115,
+    "part_a_accrual_bn": 40.311311533558154,
+    "ratio_net": 0.959775093871237,
+    "se_oasdi_share": 0.8034551715015711,
+    "unauthorized_share_of_oasdi_tax": 0.09502077066284523
+   },
+   "payroll_largest_ratio_change": 0.0004892998391372583
+  }
+ },
+ "note": "beside the case, not adopted: status re-assigned among the group's Mexico-born noncitizens to external totals"
+}
