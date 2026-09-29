@@ -1,0 +1,11 @@
+line,function,gap_bn,index,wage_level_index,real_index,wage_share_of_gap,quantity_share,quantity_bn,source,qcew_fallback_states
+state_price_public_order_safety,police,2.581262086,1.115374959,1.077065130,1.016577162,0.856319238,0.143680762,0.370877703,wage_demarcation.csv (FY2024 direct),AK;DE;DC;MD;WY
+state_price_public_order_safety,judicial,0.094468158,1.011142274,1.091046118,0.916863302,8.461376197,-7.461376197,-0.704862466,wage_demarcation.csv (FY2024 direct),DE;DC;IL
+state_price_public_order_safety,fire,1.504216829,1.146983881,1.135093621,0.894200307,1.719804733,-0.719804733,-1.082742393,wage_demarcation.csv (FY2024 direct),DE;DC;MD;RI
+state_price_public_order_safety,corrections_per_inmate,1.004264777,1.103137799,1.010930705,1.017586117,0.829489115,0.170510885,0.171238076,"computed per prisoner: all S&L government pay (QCEW NAICS 10), the lane's fallback",
+state_price_public_order_safety,protective_inspection,1.228115163,1.381978106,0.728044240,1.095565231,0.749814899,0.250185101,0.307256116,wage_demarcation.csv (FY2024 direct),CT;DE;DC;LA;NH;ND;RI;SC;VT;WY
+state_price_health_services,health,1.799631617,1.250660763,1.054327394,1.093630263,0.626466217,0.373533783,0.672223206,wage_demarcation.csv (FY2024 direct),DC;RI
+state_price_recreation_culture,parks_libraries,0.427908159,1.074678653,1.057080562,1.005367615,0.928123837,0.071876163,0.030756396,wage_demarcation.csv (FY2024 direct),
+state_price_public_order_safety,all,6.412327013,,,,,-0.146317080,-0.938232963,sum of the line's functions,
+state_price_health_services,all,1.799631617,,,,,0.373533783,0.672223206,sum of the line's functions,
+state_price_recreation_culture,all,0.427908159,,,,,0.071876163,0.030756396,sum of the line's functions,

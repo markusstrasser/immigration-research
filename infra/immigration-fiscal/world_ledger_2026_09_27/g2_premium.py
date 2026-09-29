@@ -23,10 +23,13 @@ Selection: the first generation sits at the 56th percentile of Mexico's residual
 The children inherit none of it (delta 0) or all of it (delta 0.028).
 
 Outputs (derived/): g2_premium.csv (G1 check, G2, G3+ bound), g2_premium_by_age.csv, parents_schooling.csv,
-group_ages.csv, g2_meta.json.
+group_ages.csv, g2_meta.json. --basis row4 counts the group on the account's row-4 persons (population_basis.py)
+and writes g2_premium_row4.csv, group_ages_row4.csv and g2_meta_row4.json; the other two files do not depend on the
+basis (IPUMS parents; G2 by age, whose records row 4 leaves alone).
 Run from the repository root:
-    OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/g2_premium.py
+    OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/g2_premium.py [--basis row4]
 """
+import argparse
 import hashlib
 import importlib.util
 import json
@@ -36,6 +39,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+from population_basis import BASES, reweight, row4, suffixed
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
@@ -93,11 +98,14 @@ def emovi_cohort(birth_year):
 
 
 # ------------------------------------------------------------------ US side: CPS ASEC 2025
-def load_asec():
+def load_asec(basis="cps"):
     spec = importlib.util.spec_from_file_location("dist_base", FISCAL / "distribution_weights_2026_09_23/distribute.py")
     B = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(B)
     d = B.load_cps()
+    d["pw_cps"] = d.pw
+    if basis == "row4":
+        d = reweight(d, B.PATHS["cps"], gate)
     extra = ["PH_SEQ", "PPPOS", "A_SEX", "WORKYN", "HRSWK", "PEINUSYR"]
     with zipfile.ZipFile(B.PATHS["cps"]) as z:
         p = pd.read_csv(z.open("pppub25.csv"), usecols=extra)
@@ -310,11 +318,12 @@ def summarize(gen, convention, people, e, delta, extra):
                                          if (w * emp_mx)[adult].sum() > 0 else np.nan))
 
 
-def main():
+def main(basis="cps"):
     DERIVED.mkdir(exist_ok=True)
-    d = load_asec()
+    d = load_asec(basis)
     parents, match_rate = parents_schooling()
-    parents.to_csv(DERIVED / "parents_schooling.csv", index=False, lineterminator="\n", float_format="%.6g")
+    if basis == "cps":
+        parents.to_csv(DERIVED / "parents_schooling.csv", index=False, lineterminator="\n", float_format="%.6g")
     trans = transitions()
     rows, by_age = [], []
     for ppp in ("gdp", "consumption"):
@@ -363,19 +372,32 @@ def main():
             rows.append(summarize("G3+", "bound_upper_g2_ratio", g3, e3, 0.0,
                                   dict(ppp=ppp, diploma_reread=0.25, mishra=False, selection="none")))
     out = pd.DataFrame(rows)
-    out.to_csv(DERIVED / "g2_premium.csv", index=False, lineterminator="\n", float_format="%.6g")
-    pd.DataFrame(by_age).to_csv(DERIVED / "g2_premium_by_age.csv", index=False, lineterminator="\n",
-                                float_format="%.6g")
+    out.to_csv(suffixed(DERIVED / "g2_premium.csv", basis), index=False, lineterminator="\n", float_format="%.6g")
+    if basis == "cps":
+        pd.DataFrame(by_age).to_csv(DERIVED / "g2_premium_by_age.csv", index=False, lineterminator="\n",
+                                    float_format="%.6g")
     ages = d[d.gen.ne("")].groupby(["gen", "A_AGE"]).pw.sum().rename("persons").reset_index()
-    ages.rename(columns={"gen": "generation", "A_AGE": "age"}).to_csv(DERIVED / "group_ages.csv", index=False,
-                                                                      lineterminator="\n", float_format="%.6g")
+    ages.rename(columns={"gen": "generation", "A_AGE": "age"}).to_csv(
+        suffixed(DERIVED / "group_ages.csv", basis), index=False, lineterminator="\n", float_format="%.6g")
     meta = dict(ipums_children_matched_share=match_rate,
                 persons_m={g: float(d.pw[d.gen.eq(g)].sum() / 1e6) for g in ("G1", "G2", "G3+")})
-    json.dump(meta, open(DERIVED / "g2_meta.json", "w"), indent=1, sort_keys=True)
-    gate("g1_members", abs(meta["persons_m"]["G1"] - 12.22) < 0.05, got=meta["persons_m"]["G1"])
+    if basis != "cps":
+        meta["basis"] = basis
+    json.dump(meta, open(suffixed(DERIVED / "g2_meta.json", basis), "w"), indent=1, sort_keys=True)
+    if basis == "cps":
+        gate("g1_members", abs(meta["persons_m"]["G1"] - 12.22) < 0.05, got=meta["persons_m"]["G1"])
+    else:
+        # Row 4 removes Mexico-born union members only, so G1 falls by the union's fall and G2, G3+ keep theirs.
+        pop = row4()["populations"]
+        fall = float((d.pw_cps - d.pw)[d.gen.eq("G1")].sum())
+        gate("row4_g1_falls_by_the_unions_fall", abs(fall - (pop["published"] - pop["row4"])) < 1e-3
+             and float((d.pw_cps - d.pw)[d.gen.isin(["G2", "G3+"])].abs().sum()) == 0.0, g1_fall=fall,
+             union_fall=pop["published"] - pop["row4"])
     gate("g2_members", abs(meta["persons_m"]["G2"] - 14.33) < 0.05, got=meta["persons_m"]["G2"])
     print(json.dumps(meta, indent=1), file=sys.stderr)
 
 
 if __name__ == "__main__":
-    main()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--basis", default="cps", choices=BASES)
+    main(ap.parse_args().basis)

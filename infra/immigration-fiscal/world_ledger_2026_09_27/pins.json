@@ -1,5 +1,11 @@
 {
- "_note": "Inputs each case reads, as git commits, so peers' uncommitted reruns never leak in. model: the winners lane's case name; winners, distribution, generation: commits holding that case's derived files. sept27: all four pins sent by the parent on 2026-09-28 (winners round 2 at 62f1e5a).",
+ "_note": "Inputs each case reads, as git commits, so peers' uncommitted reruns never leak in. model: the winners lane's case name; winners, distribution, generation: commits holding that case's derived files. sept27: all four pins sent by the parent on 2026-09-28 (winners round 2 at 62f1e5a). sept29 (the v4 case adopted on 2026-09-29): all four pins sent by the lead on 2026-09-29 (distribution 492bf32, generation aa1f53b, winners 858f77a, main case 40c4ba7). valuation.py skips a case without a winners pin, and the other scripts stop on an empty pin. Where a lane writes a case beside its default case's files, the case adds dirs (lane: directory) or files (lane: {default name: the case's name}); valuation.py lane_file() reads both. main_case: the case lane's commit; generation_lines.cjs stops unless the lane and every module its package loads are that commit's. basis: the population the case's person-based rows count (population_basis.py; default cps; sept29 row4, the account's 39.71M, approved by the lead on 2026-09-29).",
  "sept26_schools": {"model": "adopted_2026_09_26_schools", "winners": "fa1bd3a", "distribution": "39b854b", "generation": "2441ac8"},
- "sept27": {"model": "adopted_2026_09_27", "winners": "62f1e5a", "distribution": "78766c2", "generation": "8654a0c"}
+ "sept27": {"model": "adopted_2026_09_27", "winners": "62f1e5a", "distribution": "78766c2", "generation": "8654a0c"},
+ "sept29": {"model": "adopted_2026_09_29", "winners": "858f77a", "distribution": "492bf32", "generation": "aa1f53b",
+            "main_case": "40c4ba7", "basis": "row4",
+            "dirs": {"winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/sept29",
+                     "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/sept29"},
+            "files": {"generation": {"generation_corrections.json": "generation_corrections_sept29.json",
+                                     "generation_results.csv": "generation_results_sept29.csv"}}}
 }

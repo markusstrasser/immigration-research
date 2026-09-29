@@ -28,6 +28,29 @@ points the same way (section D).
   Counting only the fiscal channels, the US plus the second generation comes out behind only if its welfare weighs
   less than 0.47 of other residents' (0.64 if all of other residents' non-fiscal costs were charged to it).
   [CALCULATION: A and D; FRAMING-SENSITIVE]
+- [2026-09-29, on the account's own count. The ledger's person-based rows counted the published CPS union of 40.9M,
+  and its US budget rows count the 39.71M the account prices (audit row 4, ladder 274). The person-based rows are
+  G1's place premium, Mexico's budget and taxes, and the generations' shares of care and victims. On 39.71M (section
+  "Population basis" under "v4 case (sept29)"):
+  - G1's place premium is $26.5bn lower, $236.4bn central;
+  - the world total at equal weights is $337.3bn, not $363.8bn, and at Hendren's weights $358.4bn, not $386.6bn;
+  - the US plus the group comes out behind when w is below 0.63 (0.72 at λ 1.16, 0.90 at λ 1.5), not 0.61 (0.69,
+    0.87); counting Mexico's residents, below 0.45–0.71, not 0.43–0.68;
+  - **one sign changes: in the low outer span at λ 1.5 the world total is −$10.0bn, not +$14.4bn.**
+
+  The second generation's break-even w moves by less than 0.001 and its row by −$0.17bn. From sept29 the ledger
+  counts on 39.71M.
+  [CALCULATION: world_ledger.py --case sept27 --basis row4 → derived/world_ledger_sept27_row4.csv]]
+- [2026-09-29, the v4 case (sept29, the account of $371–435bn adopted that day), on the account's 39.71M. The world
+  total at equal weights is **+$327.6bn** a year, central. Sept 27 gave $363.8bn as published and $337.3bn on
+  39.71M, so the recount moves it −$26.55bn and v4 −$9.72bn. The US plus the group comes out behind when w is below
+  0.66 (0.76 at λ 1.16, 0.96 at λ 1.5); counting Mexico's residents, below 0.49–0.78. **In the low outer span at
+  λ 1.5 the world total is −$39.9bn** (Sept 27: +$14.4bn as published, −$10.0bn on 39.71M). The part of the account
+  that buys the group nothing it values rises from about $50bn to about $58bn, mostly the state-price gap in public
+  order, which costs others $6.4bn and is worth −$1.0bn to the group (rule 2). The two verdicts stand: Hendren's
+  weights still give the group's dollars 1.02–1.05 against the payers' 0.98, and the saving leak is $8.1–88.0bn.
+  Section "Phase 2 results" under "v4 case (sept29)". [CALCULATION: world_ledger.py --case sept29 →
+  derived/world_ledger_sept29.csv]]
 
 Model: claude-opus-5-5. Lane: `infra/immigration-fiscal/world_ledger_2026_09_27/`. Brief: `BRIEF.md` (5296013,
 corrected 2104b9e). Nothing here is committed.
@@ -284,7 +307,8 @@ span holds every row at its least (most) favourable value. The three generations
 exception: they move together, at the account end where the group's valued total is lowest (highest), so an
 outer span never mixes the two ends' allocations (judgment call 18). The alternative world is the same for every
 row: the group's 40.9m people in Mexico (descendants raised there by parents who stayed), and the US without them
-as the account removes them. The window is one year, 2024.
+as the account removes them. The window is one year, 2024. [2026-09-29: the account removes 39.71M; the note below
+the first table gives the ledger on that count, and sept29 counts on it.]
 
 Central scenario: G3+ premium at its lower bound (zero), public goods at average cost, Mexican taxes at the
 central (withheld taxes plus consumption taxes). $bn a year, sept27. [CALCULATION: derived/world_ledger.csv;
@@ -301,6 +325,20 @@ FRAMING-SENSITIVE: every weighted total]
 | World total | +363.8 | +314.3 | +209.1 | +275.2 | +386.6 | +393.3 | +2,449.7 | +1,987.3 |
 | Break-even w, world | 0.45 | 0.52 | 0.68 | 0.58 | 0.44 | 0.43 | none | none |
 | Break-even w, US residents only | 0.61 | 0.69 | 0.87 | 0.76 | 0.61 | 0.60 | 0.27 | 0.51 |
+
+[2026-09-29: this table counts the group's person-based rows on the published 40.9M, while its budget rows count
+the 39.71M the account prices. On 39.71M (`world_ledger_sept27_row4.csv`; section "Population basis" under "v4 case
+(sept29)"):
+- G1's place premium is $236.4bn, $26.5bn lower, and G1's row is +239.9 at equal weights;
+- the world total is +337.3 at equal weights, +287.6 at λ 1.16, +182.0 at λ 1.5 and +358.4 at Hendren a;
+- break-even w is 0.47 / 0.55 / 0.71 / 0.46 (world) and 0.63 / 0.72 / 0.90 / 0.64 (US residents only);
+- Mexico's residents +101.5.
+
+In the low outer span at λ 1.5 the world total turns negative, −10.0 against +14.4.]
+
+[2026-09-29: the v4 case (sept29), on 39.71M, is in section "Phase 2 results" under "v4 case (sept29)": the world
+total is +327.6 at equal weights and +350.2 at Hendren a; break-even w is 0.51 (world) and 0.66 (US residents only);
+in the low outer span at λ 1.5 it is −39.9.]
 
 The same on the schools case (sept26_schools) [CALCULATION: derived/world_ledger.csv; FRAMING-SENSITIVE]:
 
@@ -930,3 +968,585 @@ Skipped, with reasons:
 - 2026-09-28: labels only. The central's row labels and the case meta's `mexico_consumption_tax.source` now name
   the fuel excise. `world_ledger_rows.csv` and both case metas change in text; no number moves. Two builds are
   byte-identical, and the checker reports 57 of 57 files identical. [CALCULATION: world_ledger.py]
+
+## v4 case (sept29), 2026-09-29
+
+claude-opus-5-5
+
+**Status (phase 2 done, 2026-09-29 23:24 JST).** sept29 ran on its four pins (distribution 492bf32, generation
+aa1f53b, winners 858f77a, main case 40c4ba7), with the group's person-based rows on the account's 39.71M and the run
+on the published 40.9M beside it. Every gate passes, and two full reruns after the sept29 run are IDENTICAL, 84/84
+files (section "Phase 2 checks"). The headline is in section "Phase 2 results": the world total at equal weights is
++$327.6bn, central. The lead ruled on rules 1–3 and 6 and on the basis. Rule 7, the pension accrual's payer, came
+with the winners lane's new channel; it is designed below with its alternative and awaits the lead's review. This
+run resumed after the 20:51 JST reboot, and every sept29 step and both reruns ran after it (log).
+
+### Files changed
+
+- `generation_lines.cjs`:
+  - the case table gains `sept29`, whose lane is one constant, `SEPT29 = "main_case_2026_09_29"`;
+  - `FULL` (sept27 and sept29) replaces `ON27`, so sept29 is evaluated with `evaluateFull()`, as
+    `run_generations.cjs` evaluates the cases with a capital return;
+  - two gates for every case. The oracle: the generations' union at the band ends equals the case lane's adopted
+    band (`main_case_bands.csv`, main profile), within 5.01e-5, half the last printed digit. And each capital
+    component's stock × rate × key × response equals its return, since the rows read those fields;
+  - a third gate where the case's pins name the case lane's commit (`"main_case"`, sept29 only): the package and
+    the band file are read from the working tree, so the lane there, and every module the package loads outside
+    this lane, must equal that commit's (13 modules at 40c4ba7: the adopted and candidate packages, the Sept 27 and
+    earlier packages, and the engine).
+- `split_residual.py`:
+  - the case choices come from `pins.json`;
+  - the correction-only lines include the payloads' `receipt_lines`;
+  - `edit_cost` replays the generation's edits on the uncorrected model's cell in payload order, as `engine.js`
+    applies them: a cell edit adds its `by`, and a national-scale edit (`{side, line, national_bn}`) scales the
+    running cell by the new national total over the running one. HEAD's rule summed `by` and would stop on the
+    scale edits.
+- `valuation.py`:
+  - classes for the five synthetic lines (all eight payload lines now take a class: the three of September 24 did
+    already), `RECEIPT_CLASS` for one receipt, and the quantity share on the three state-price lines, with justice's
+    class applied function by function (`JUSTICE_FUNCTION_SHARE`) (rules 1–3 below);
+  - the state-price lines' value and its two extremes by end go to the case's meta as `state_price_value_bn`, which
+    is written only for a case that has these lines, so `valuation_meta.json` does not change;
+  - `SHARED_OUTPUTS` and `case_path()`: sept26_schools and sept27 stay in the multi-case files, and a later case
+    writes the same files with a `_<case>` suffix. `world_ledger.py` imports both, so the rule has one definition.
+  - `lane_file()`: a pinned lane's file for a case is in that lane's `derived/` under the default case's name,
+    unless the case's pins name another directory (`"dirs"`) or rename the file (`"files"`: lane → {default name:
+    the case's name}). From sept29 the upstream lanes write the case beside their default case's files: the
+    distribution lane's draft in `derived/sept29/`, the generation lane's draft as `generation_corrections_sept29.json`
+    and `generation_results_sept29.csv` (its uncorrected models stay `model_G*.json`). A lane named in `"dirs"` or
+    `"files"` that is not one of the three stops the scripts, since a misspelt lane would read the default case's
+    file at the new pin. `split_residual.py` and `world_ledger.py` import `lane_file()` and `PINS`, and
+    `generation_lines.cjs` reads the same two entries.
+- `world_ledger.py`: it reads its case's inputs through `lane_file()` and its valuation files through `case_path()`.
+  `write_case()` merges only the shared cases; a later case's rows go alone to its own file. A new gate: a later
+  case's distribution percentiles must differ from every other case's. They carry no case key and no other gate ties
+  them to the case's totals, so a missing `"dirs"` entry would otherwise read September 27's channels unnoticed.
+- `pins.json`: the `sept29` entry holds all four pins as the lead sent them (distribution 492bf32, generation
+  aa1f53b, winners 858f77a, main case 40c4ba7), the winners case `adopted_2026_09_29`, the three lanes' folders and
+  file names, and `"basis": "row4"`.
+- `world_ledger.py`, phase 2 (rule 7): for a case whose winners channels carry `future_pension_accrual`, the accrual
+  leaves `fiscal_others` for a row on the future taxpayers, `fiscal_pension_accrual`, weighted as the borrowed part
+  (`future`; λ applies, as to every budget row). `load()` gates the channel against the case lane's `summary.json`
+  at the pins' `main_case` commit (`CASE_LANES`, one constant): the accrual must be the case less its cash set, to
+  1e-6. The case's meta adds `pension_accrual_payer`, the rule's totals beside the alternative's. The old cases
+  lack the channel, so none of their outputs moves.
+- `state_price_quantity.py` (new): each state-price line's quantity share (rule 2), written to
+  `derived/state_price_quantity.csv`. It reads the state-pricing lane at its commit ea41242, and imports that
+  lane's `state_price.py` read-only after a gate that the working tree holds the pinned file.
+- `population_basis.py` (new), with `--basis row4` in `g2_premium.py` and `weights.py`, a Mexico budget on both
+  bases in `valuation.py` (`mexico_budget_row4.csv`), and `--basis` in `world_ledger.py`. These count the group's
+  person-based rows on the account's 39.71M (section "Population basis" below). A case's own basis is its pins'
+  `"basis"`, else cps, and `world_ledger.py --basis` runs the other basis beside it into `_<case>_<basis>` files.
+  Every cps file is unchanged.
+- `run_all.sh`: runs `state_price_quantity.py` before `valuation.py`, the two row-4 steps after their cps runs, and
+  the beside runs (Sept 27 on row 4, sept29 on cps). The phase-2 run is `sh run_all.sh sept26_schools sept27 sept29`.
+
+### Where the sept29 outputs go
+
+Only new files, and no existing file changes:
+- `generation_lines_sept29.csv`, `generation_lines_uncorrected_sept29.csv` and `generation_split_residual_sept29.csv`
+  (these scripts already name their files by case);
+- `valuation_sept29.csv`, `valuation_by_class_sept29.csv`, `valuation_by_generation_sept29.csv` and
+  `valuation_meta_sept29.json`;
+- `world_ledger_sept29.csv`, `world_ledger_rows_sept29.csv`, `generation_split_check_sept29.csv` and
+  `world_ledger_meta_sept29.json`;
+- the same four with `_sept29_<basis>` for the run on the other population basis. Sept 27's restatement on row 4 is
+  in `_sept27_row4` files, and the group's row-4 inputs are in `g2_premium_row4.csv`, `group_ages_row4.csv`,
+  `g2_meta_row4.json`, `income_positions_row4.csv` and `mexico_budget_row4.csv` (section "Population basis").
+
+`state_price_quantity.csv` is new too, and only sept29's lines use it. The seven multi-case files keep exactly
+sept26_schools and sept27, and `mexico_budget.csv` is case-independent. New case-keyed rows were the other option. They were not taken because the drift audit pins `world_ledger.csv` by sha256
+(`number_drift_audit_2026_09_29/derived/inputs.json`), so new rows would break that pin without moving a number.
+
+### Rules designed
+
+1. **The five synthetic lines take their parent line's class.** Each re-keys or re-prices part of one parent line,
+   and the lane's precedent is that such a line takes its parent's class, as `school_reprice` and `college_rekey`
+   take education's.
+   - `roads_vmt_sl` and `roads_vmt_fed` are public goods at average cost. The re-key by vehicle miles and freight
+     changes the quantity of road attributed to the group, so the group values that quantity, as it values the
+     parent line.
+   - `state_price_public_order_safety` takes justice's class (protection at average cost, offender processing at 0),
+     applied function by function (rule 2). `state_price_health_services` takes health services' (at cost), and
+     `state_price_recreation_culture` takes public goods' (average cost).
+2. **Only the quantity part of a state-price gap is valued, at the parent's class (the lead's rulings,
+   2026-09-29).** My first rule valued the whole gap. The lead ruled that each gap splits into a wage level and a
+   quantity, using the state-pricing lane's demarcation (`state_priced_services_2026_09_29` at ea41242,
+   `derived/wage_demarcation.csv`, RESULT "Wage demarcation"):
+   - the wage part buys the group the same service at a higher price, so it is worth 0 to the group;
+   - the quantity part is more service, valued at the parent's class.
+
+   On public order and safety, justice's class applies function by function, because the gap's mix of functions is
+   not the line's (my recommendation; the lead agreed). Fire is all protection (1). Police and protective inspection
+   take police's per-head share (0.460), the courts their civil share (0.362), and state prisons are offender
+   processing (0). These are the central split `valuation.py` already holds (`JUSTICE`, from cj_use_allocation); the
+   parent line as a whole takes 0.4247.
+
+   `state_price_quantity.py` writes each function's quantity share, (real index − 1) / (index − 1), and each line's
+   sum (`derived/state_price_quantity.csv`). `valuation.py` values each function's quantity part at its class weight
+   and scales the sum to the line's amount. The cost to other residents keeps the whole gap. Rows are FY2024 direct
+   expenditure. The police, judicial and health wage shares match the lead's figures (86%, all of it, 63%).
+   [CALCULATION: state_price_quantity.py; valuation.py]
+
+   | Line | Function | Gap $bn | Wage share | Quantity share | Quantity $bn | Class weight | Value $bn |
+   |---|---|---:|---:|---:|---:|---:|---:|
+   | public order and safety | police | 2.581 | 0.856 | 0.144 | +0.371 | 0.460 | +0.171 |
+   | | judicial | 0.094 | 8.461 | −7.461 | −0.705 | 0.362 | −0.255 |
+   | | fire | 1.504 | 1.720 | −0.720 | −1.083 | 1 | −1.083 |
+   | | state prisons, per prisoner (fallback) | 1.004 | 0.829 | 0.171 | +0.171 | 0 | 0 |
+   | | protective inspection | 1.228 | 0.750 | 0.250 | +0.307 | 0.460 | +0.141 |
+   | | **line** | **6.412** | | **−0.146** | **−0.938** | | **−1.026** |
+   | health | health (E32) | 1.800 | 0.626 | 0.374 | +0.672 | 1 | +0.672 |
+   | recreation | parks and libraries | 0.428 | 0.928 | 0.072 | +0.031 | 1 | +0.031 |
+   | **three lines** | | **8.640** | | | **−0.235** | | **−0.323** |
+
+   - **The fallback.** Only state prisons had no demarcation row. The central package prices them per prisoner
+     (`corrections_per_inmate`), while the demarcation file's `corrections` row prices corrections per resident.
+     As the ruling directs, the lane's method was applied to the per-prisoner index with the lane's fallback wage:
+     all state and local government pay (QCEW 2023 NAICS 10). The lane's own weights (the group located as each
+     state imprisons) and costs per prisoner were used, with the all-prisoner weighting as the base. Gates: the
+     index reproduces the lane's 1.1031 to 1e-9, and the all-prisoner index is 1. At class 0, prisons' share moves
+     no value.
+   - **Suppressed QCEW cells.** Inside the demarcation rows, suppressed cells use the same fallback state by state.
+     The lane lists them: police AK, DE, DC, MD, WY; judicial DE, DC, IL; fire DE, DC, MD, RI; protective inspection
+     CT, DE, DC, LA, NH, ND, RI, SC, VT, WY; health DC, RI. Parks and libraries use NAICS 10 throughout.
+   - **Negative quantity shares.** The negative shares of the courts (−7.46) and fire (−0.72) are coherent: the
+     group lives where court and fire input per resident is below average while pay is above it, so the value falls
+     below the parent line's at national prices.
+   - **Value to the group on the v4 union, the same at each end.** The central rule gives **−$0.32bn**: public order
+     −$1.03bn, health +$0.67bn, parks +$0.03bn. The two extremes beside it:
+     - the whole gap at the parent's class: +$5.52bn (public order $3.29bn, health $1.80bn, parks $0.43bn). With the
+       line's 0.4247 in place of the function-level classes it is +$4.95bn ($2.72bn + $1.80bn + $0.43bn), the
+       figure in the lead's ruling;
+     - V = 0: $0.
+
+     The world total at equal weights moves one for one with this value. `valuation_meta_sept29.json` carries the
+     central value and both extremes by end (`state_price_value_bn`). [CALCULATION: stand-in dry run, union lines]
+   - **Superseded within the rule.** With the line's 0.4247, the central value was +$0.30bn (public order −$0.40bn).
+     The function-level classes lower it by $0.63bn. With prisons at class 0, the corrections-pay alternative moves V
+     by exactly 0, since V sums class weight × quantity. That alternative valued prisons with corrections pay (NAICS
+     922140+922150, the demarcation file's `corrections` series): a quantity share of 1.077, which was +$0.39bn at the
+     line's 0.4247. Its row was dropped from `state_price_quantity.csv`.
+3. **`housing_enterprise_surplus` is a housing voucher (V/G 0.83 / 1 / 1), not a tax. The lead accepted this on
+   2026-09-29.** It is a negative receipt: public housing's enterprise deficit, split out of `enterprise_surplus`
+   and keyed at the rental line's key. It is in-kind housing aid, below-market rent to public-housing tenants.
+   The lane already values rental assistance (`housing_subsidies`) and the return on public housing's capital
+   (`ent_housing_sl`) as housing vouchers.
+   - **Alternative:** $1 per $1, the `enterprise_surplus` receipt's rule, under which these dollars were valued
+     through sept27.
+   - Only V_low differs: $2.84bn against $3.43bn at each end on the union (the group's share is −$3.43bn). The
+     central and high columns are unchanged.
+4. `split_residual.py`'s replay follows the engine's semantics, so it is a definition rather than a choice.
+5. The file rule is given in "Where the sept29 outputs go".
+6. **The pension accrual takes its lines' classes: Social Security as cash, Medicare at cost (V/G = 1). The lead
+   approved it on 2026-09-29.** This rule needed no code, but it gives an old class a new kind of flow, so it is
+   stated here. Through Sept 27 these lines held the benefits paid this year. From sept29 `social_security`, and
+   Medicare's Part A inside `medicare`, hold instead the present value of the benefits the group accrues this year,
+   at the benefits current law can pay and net of the tax on them. In candidate v4's RESULT, `social_security` is 0.974 × the group's OASDI receipts, and
+   the Part A accrual is $41.137bn. The lane's cash class rests on HSK's rule that recipients value a transfer at
+   its mechanical cost; the accrual is that cost for a deferred transfer.
+   - Effect in the dry run below: the two lines rise by $74.6bn at the low end and $71.2bn at the high end (Social
+     Security +$53.1 / +49.7bn, Medicare +$21.5bn). V rises by the same, so at equal weights the accrual moves no
+     world total; it matters only under unequal weights.
+   - **Alternative beside:** V on the benefits paid this year, as through Sept 27, while G carries the accrual. V is
+     then lower by $74.6 / 71.2bn. It mixes two footings, since others pay for the accrual and the group would be
+     credited with the payments. A middle reading would discount the promise at the group's own rate, which the
+     record has no evidence for.
+   - **Why the classes (approved):** the accrual is the present value of the benefits current law can pay,
+     weighted by survival, and the group values it as it values cash. Pricing it below its cost would turn a
+     transfer into a world loss through a timing convention. The alternative, which mixes the two footings, is
+     worse still. The alternative stays beside the rule: V lower by $74.6 / 71.2bn at the low / high end.
+7. **The pension accrual falls on the future payers of Social Security and Medicare, beside the borrowed part
+   (designed in phase 2, for the lead's review).** The winners lane's sept29 channels (858f77a) add one that Sept
+   27's lack, `future_pension_accrual`: the case less its cash set, −$76.71bn at the low end and −$73.02bn at the high
+   end, −$74.87bn central, inside the fiscal channel. Nothing finances it in 2024, so that lane gives it to the
+   future payers of Social Security and Medicare and allocates none of it to today's persons [FRAMING-SENSITIVE: the
+   accrual's payer]. The ledger takes other residents' parties from that lane's channels and already holds the
+   borrowed federal part on the future taxpayers, so it follows the lane. The accrual leaves "other residents today"
+   for `fiscal_pension_accrual` on the future taxpayers, weighted as the borrowed part: λ applies, Hendren's g is 1,
+   and the log weight is the tax-share payers', 0.768. The row's columns follow the band ends, as `fiscal_others`'
+   do, so the three fiscal rows add to the direct cost at every end. Its low column (the dearer end, −$73.02bn) is
+   therefore above its high column (−$76.71bn).
+   - **Gate:** the channel equals the case less its cash set in the adopted lane's `summary.json` at 40c4ba7, max
+     |diff| 2.1e-7 (tolerance 1e-6, the channel file's six decimals). The case less the accrual is 294.701076 /
+     361.817482, against the cash set's 294.7011 / 361.8175.
+   - **Alternative beside (the distribution lane's reading):** keep the accrual with today's taxpayers, at today's
+     fiscal weights. The distribution lane spreads it over today's residents in proportion to the fiscal channel
+     (0.1892 of the channel in every decile, under both conventions), so today's fiscal weights stay as they are.
+   - **What the choice moves** (sept29 on 39.71M, central; `pension_accrual_payer` in the case's meta). At equal
+     weights, λ 1.16, λ 1.5, λ_h, Hendren a and log a every total is the same under both, so no headline figure or
+     break-even w at those weights depends on it. Other residents today carry −$360.6bn under the rule and −$435.4bn
+     under the alternative. Only the per-person-cut columns move: Hendren b gives +$356.3bn under the rule against
+     +$357.8bn, since those cuts weigh today's payers at 0.98 against the future payers' 1; log b gives +$1,972.3bn
+     against +$1,869.3bn, since they put the accrual on today's poorer residents at a log weight of 2.145 against
+     0.768.
+   - **Why the rule:** the ledger's parties for other residents are the winners lane's channels, and that lane (the
+     lead committed it at 858f77a) takes the accrual out of today's persons. Keeping it on today's taxpayers would
+     make the ledger's "other residents today" differ from that lane's social net on today's residents (−$360.6bn)
+     by the whole accrual.
+
+`tenant_occupied_property` is a tax the group pays through rent ($1 per $1). The scaled lines keep their classes:
+`housing_subsidies` is a housing voucher, and `enterprise_surplus` and `remaining_production_property` are taxes.
+
+### Population basis: the person-based rows on the account's count (found 2026-09-29)
+
+**The defect (ladder 250, every case so far).** The ledger's US budget rows by generation come from the account.
+The account has priced audit row 4's 39,712,493 people since the Sept 24 case, 11.04M of them in G1 (ladder 274).
+The lane's person-based rows count the published CPS union of 40,896,574, 12.22M in G1: the place premium, Mexico's
+budget forgone and saved, and Mexican taxes avoided and lost (`g2_premium.py`, `valuation.py`'s Mexico budget), and
+the generations' shares of care and in-group victims (`group_ages.csv`). So on the cps basis G1's rows count 1.18M
+people whose US budget flows are not in the account; the audit found them over-counted (ladder 209). Remittances
+are Banxico's measured total and do not depend on the count. [CALCULATION: g2_meta.json, g2_meta_row4.json]
+
+**The fix.** `population_basis.py` reweights the CPS records as the account does: the Mexico-born outside
+California and Texas, raked to ACS 2024 by citizenship with `production_row4.json`'s factors (read at c313b53:
+naturalized 0.8556, noncitizen 0.7781), the reweight `generation_account_2026_09_24/v4_inputs.py` applies. Its
+gates:
+- the mask's records and CPS population equal `production_row4.json`'s;
+- no civilian outside the union moves;
+- the union sums to 39,712,493.33, the account's row 4;
+- G1 falls by exactly the union's fall, while G2 and G3+ keep their weights.
+
+The other residents' distribution does not move, so only the group's files get a `_row4` twin.
+
+**Sept 27 on both bases, $bn a year** (world_ledger.csv against `world_ledger_sept27_row4.csv`; average-cost public
+goods, withheld plus consumption taxes in Mexico):
+
+| Central scenario | cps (published) | row 4 | Change |
+|---|---:|---:|---:|
+| G1, equal weights | 264.89 | 239.85 | −25.03 |
+| Group total | 661.21 | 635.84 | −25.37 |
+| Mexico's residents | 102.67 | 101.49 | −1.18 |
+| World total, equal weights | 363.84 | 337.29 | −26.55 |
+| World total, λ 1.16 / 1.5 | 314.33 / 209.12 | 287.59 / 181.98 | −26.74 / −27.14 |
+| World total, Hendren (a) | 386.60 | 358.43 | −28.17 |
+| Break-even w, equal / λ 1.16 / λ 1.5 | 0.45 / 0.52 / 0.68 | 0.47 / 0.55 / 0.71 | |
+| Break-even w, US only, equal / λ 1.16 / λ 1.5 | 0.61 / 0.69 / 0.87 | 0.63 / 0.72 / 0.90 | |
+
+G1's place premium falls by $26.5bn (−$24.4bn to −$28.8bn over the range). Mexico would spend $3.4bn less and
+collect $2.2bn less tax on the smaller group. One sign changes: in the low outer scenario at λ 1.5, the world total
+goes from +$14.4bn to −$10.0bn. Ladder 250's "the US plus the group comes out behind when w is below 0.61" becomes
+0.63 on the account's count. [CALCULATION: world_ledger.py --case sept27 --basis row4; the same figures from a
+scratch run with the CPS loader wrapped, max |diff| 0]
+
+**For sept29 (the lead approved it on 2026-09-29, following ladder 274's rule).** sept29 counts on row 4
+(`"basis": "row4"` in `pins.json`). The cps run sits beside it (`world_ledger.py --case sept29 --basis cps`,
+`_sept29_cps` files), so the move from Sept 27 separates v4 from the basis change. The Sept 27 files stay as
+published. The lead writes the bracketed note on ladder 250. Gates beside the reweight's own:
+1. In a case whose own basis is row 4, `world_ledger.py` requires G1 in the person-based rows to equal G1 in the
+   generation lane's pinned results, to one person, and prints both. The generation lane's v4 results carry the
+   row-4 headcounts (G1 11,036,701.06 in its `v4_inputs.json`, and 11,036,701.06 here in `g2_meta_row4.json`). A
+   basis beside prints both without the gate. Sept 27's generation results give the CPS 12,220,781.88, although
+   their dollars are row 4's.
+2. Sept 27's outputs stay byte for byte (gate 1, `rerun_lane.py`).
+3. Positive control: the cps run, Sept 27's pins without a `"basis"`, reproduces the tracked files. That covers
+   `world_ledger.csv`, `world_ledger_rows.csv` with G1's old rows, `generation_split_check.csv`, `g2_premium.csv`,
+   `group_ages.csv`, `g2_meta.json`, `income_positions.csv`, `mexico_budget.csv` and `valuation_meta.json`; each
+   equals HEAD.
+
+### Phase 2 results (sept29), 2026-09-29
+
+The sept29 case on its pins, with the group's person-based rows on the account's count: 39,712,493 people, G1
+11,036,701 (`world_ledger_sept29.csv`). The run on the published 40,896,574 sits beside it
+(`world_ledger_sept29_cps.csv`). Central scenario: G3+ premium at its lower bound (zero), public goods at average
+cost, Mexican taxes at the central (withheld plus consumption taxes). $bn a year. [CALCULATION: world_ledger.py
+--case sept29; FRAMING-SENSITIVE: every weighted total]
+
+| Party | equal | λ 1.16 | λ 1.5 | λ_h | Hendren a | Hendren b | log a | log b |
+|---|---|---|---|---|---|---|---|---|
+| Other residents today | −360.5 | −409.6 | −513.8 | −448.3 | −381.0 | −374.9 | −507.4 | −929.2 |
+| Future taxpayers (borrowed part and accrual) | −88.0 | −102.1 | −132.0 | −113.2 | −88.0 | −88.0 | −67.6 | −67.6 |
+| G1 | +242.7 | +242.7 | +242.7 | +242.7 | +255.3 | +255.3 | +633.8 | +633.8 |
+| G2 | +321.6 | +321.6 | +321.6 | +321.6 | +335.1 | +335.1 | +1,066.8 | +1,066.8 |
+| G3+ (lower bound) | +110.3 | +110.4 | +110.4 | +110.3 | +112.1 | +112.1 | +230.1 | +230.1 |
+| Mexico's residents | +101.5 | +107.7 | +120.8 | +112.6 | +116.7 | +116.7 | +1,038.4 | +1,038.4 |
+| World total | +327.6 | +270.7 | +149.7 | +225.7 | +350.2 | +356.3 | +2,394.1 | +1,972.3 |
+| Break-even w, world | 0.51 | 0.60 | 0.78 | 0.67 | 0.50 | 0.49 | none | none |
+| Break-even w, US residents only | 0.66 | 0.76 | 0.96 | 0.83 | 0.67 | 0.66 | 0.30 | 0.52 |
+
+Controlled rounding keeps each column adding: other residents today at equal weights prints −360.5 (unrounded
+−360.556, which the winners lane prints as −360.6), and G3+ at λ 1.16 and λ 1.5 prints +110.4 (110.342).
+
+**The move from Sept 27, equal weights, central.** Two decimals; the moves are differences of the printed levels,
+and US residents' sept29 level prints −448.58 (unrounded −448.5715) so its column adds.
+
+| $bn a year | Sept 27, 40.9M | Sept 27, 39.71M | sept29, 39.71M | the recount | v4 |
+|---|---:|---:|---:|---:|---:|
+| US residents, today and future | −400.04 | −400.04 | −448.58 | 0.00 | −48.54 |
+| The group (G1, G2, G3+) | +661.21 | +635.84 | +674.66 | −25.37 | +38.82 |
+| Mexico's residents | +102.67 | +101.49 | +101.49 | −1.18 | 0.00 |
+| World total | +363.84 | +337.29 | +327.57 | −26.55 | −9.72 |
+
+- **The recount, −$26.55bn,** is the same on v4 as on Sept 27: sept29 on the published count gives +$354.12bn. v4
+  does not touch the person-based rows, and the recount does not touch the budget rows. G1's place premium carries
+  most of it (section "Population basis").
+- **v4, −$9.72bn.** The direct cost A rises $47.16bn at the band's middle, and the group's valuation of its US
+  budget rises $38.82bn (G1 +2.83, G2 +22.04, G3+ +13.95). The gap of $8.34bn, by class on the union, mean of the
+  two ends:
+  - the state-price lines cost others $8.61bn and are worth −$0.32bn to the group (rule 2), which widens the gap by
+    $8.93bn;
+  - the roads edits narrow it by $0.59bn: roads keyed by vehicle miles and freight, and the larger return on highway
+    capital, which the group values at average cost, above what they cost others;
+  - the transfers valued at their cost move nothing at equal weights: the accrual in Social Security and Part A
+    (+$74.62 / 71.21bn at the low / high end, rule 6), the group's higher property and sales taxes, and public
+    housing's deficit.
+
+  The production re-solve on row 4 (payload item 2) costs other residents $1.38bn more, through lower induced
+  receipts F and lower wages, so v4 moves the world total by −(8.34 + 1.38). The part of the account that buys the group nothing it values (justice's cost above
+  its value, plus Medicaid's shortfall) rises from $50.1–50.6bn to $57.6–58.0bn.
+- **Other residents today move +$26.08bn** only because the accrual, $74.87bn central, now sits with the future
+  taxpayers (rule 7). The future taxpayers carry −$88.02bn: the borrowed part, −$13.15bn, and the accrual.
+
+**Other weightings and spans, world total, $bn a year:**
+
+| | Sept 27, 40.9M | Sept 27, 39.71M | sept29, 39.71M | sept29, 40.9M (beside) |
+|---|---:|---:|---:|---:|
+| Central, λ 1.16 | +314.33 | +287.59 | +270.66 | +297.39 |
+| Central, λ 1.5 | +209.12 | +181.98 | +149.71 | +176.84 |
+| Central, Hendren a | +386.60 | +358.43 | +350.19 | +378.36 |
+| Low outer, equal | +192.20 | +168.11 | +160.26 | +184.34 |
+| Low outer, λ 1.16 | +135.29 | +111.11 | +96.20 | +120.38 |
+| **Low outer, λ 1.5** | **+14.37** | **−10.01** | **−39.93** | **−15.56** |
+| High outer, equal | +782.18 | +753.08 | +741.05 | +770.15 |
+
+The recount's sign change holds on v4 and widens. In the low outer span at λ 1.5 the world total is −$39.93bn on
+39.71M and −$15.56bn on the published count. v4 moves it by −$29.92bn on 39.71M, because λ scales v4's new cost to
+taxpayers and not the group's gain.
+
+**Break-even w** on sept29 (39.71M), world / US residents only:
+- central: 0.51 / 0.66 at equal weights, 0.60 / 0.76 at λ 1.16 and 0.78 / 0.96 at λ 1.5 (Sept 27 on 39.71M: 0.47 /
+  0.63 at equal weights);
+- the low outer span: 0.74 / 0.88 at equal weights, and 1.07 / 1.23 at λ 1.5. Above 1, the world comes out behind
+  even with the group's welfare weighted like other residents';
+- the high outer span: 0.21 / 0.38 at equal weights.
+
+By generation, counting the fiscal channels only, G1 comes out at 0.38 (Sept 27 on 39.71M: 0.36), G2 at 0.51
+(0.47), and G3+ at 1.32 at its lower bound and 0.46 at its upper. With all of other residents' non-fiscal costs
+charged to the one generation, G1 is 0.60 and G2 0.68. [CALCULATION: world_ledger_meta_sept29.json
+generation_breakeven]
+
+**Per member**, on the account's count (39,712,493 in all; G1 11,036,701): at equal weights, central, the group's
+row is $16,989 per member and G1's $21,989 per G1 member. US residents bear $11,295 per group member.
+
+**Carried from upstream.** Other residents' channels outside the budget (renters, landlords, crime victims, property
+crime, unreimbursed care, congestion, mobility) come from lanes that price the published 40.9M. The winners lane
+takes them as published, and so does the ledger. If each were linear in the count, scaling by 39.71 / 40.90 would
+shrink their central sum, −$45.44bn, by $1.32bn and raise the world total by as much. [INFERENCE; not computed; the
+winners lane gives the same estimate]
+
+### Phase 1 checks
+
+- **Gate 1, old cases unchanged:** IDENTICAL after every edit (log below). The count is 59/59 since
+  `state_price_quantity.py` and its CSV joined the lane; the 57 tracked files equal HEAD.
+- **Replay against the engine.** `split_residual.edit_cost` was run on every cell that v4's payloads edit, 550 cells in
+  each payload with 38 of them on scaled lines. It equals `engine.js`'s `applyCorrections` exactly (max |diff| 0).
+  HEAD's rule, the sum of `by`, misses by up to $6.06bn, so the old gate would have stopped on sept29, as the
+  consumer table said.
+- **Classes.** Every spending line of the v4 corrected model and all 24 capital components (the same ids as sept27)
+  take a class. The first run stopped on `state_price_health_services`, which I had left out, and it was then added.
+- **Dry run on a stand-in.**
+  - Inputs, built with the adopted lane's draft package: G1 is the whole union (`model.json` with the adopted payload).
+    G2 and G3plus are zero models, and their payloads are zeroed copies of the same shape, scale edits kept. Stand-ins
+    for the winners lane's `fiscal_lines_band_ends.csv` and `fiscal_specs.csv` come from the union's evaluation.
+  - How the scripts ran: the real `generation_lines.cjs` ran through a `--require` hook that serves the stand-in for
+    `pins.json`, `git show` and the band file, and sends its writes to scratch. `split_residual.py` and
+    `valuation.py` ran unmodified, with their input functions and output folder redirected at run time.
+  - Results, all gates passing:
+    - the oracle: 371.414600 / 434.840959 against 371.4146 / 434.8410, at specs 48 / 11;
+    - every line moves by its correction edit, max |diff| 8.6e-10, which is the CSV's rounding;
+    - the lines reproduce A;
+    - the generations add to the union;
+    - the costs equal the stand-in's `generation_results.csv`;
+    - the state-price lines are valued at −$0.3231bn at each end, the same in the generation split, with the whole
+      gap at +$5.5181bn beside (rule 2);
+    - every output went to a `_sept29` file, and the lane's `derived/` did not change.
+
+    Scripts and inputs: the parent's scratchpad, `wl/test/`.
+  - `world_ledger.py` was not dry-run, because it needs the winners and distribution lanes' sept29 channels. Its new
+    code is `write_case()`'s routing. A unit test covers it: the shared file keeps the two old cases, a later case
+    gets its own file, and a rerun replaces that file's rows rather than appending to them.
+- **Dry run on the upstream drafts (17:02–17:08 JST, outputs to scratch only).** The winners lane's draft `specs.cjs
+  --case sept29` and the generation lane's draft `run_generations_v4.cjs --case sept29` were run with `--out-dir` in
+  the parent's scratchpad (`wl/dry29/`); neither lane's files were touched. The generation draft still names the
+  candidate's payload in its `meta.union`, which `generation_lines.cjs` rejects. For the dry run only, the copy
+  names the adopted lane. The two payloads are identical except for their meta stamps (adoption date, case,
+  decision, source, status), so this hides no difference. The generation lane's phase 2 repoint removes the need.
+  - `generation_lines.cjs`: every gate passes. The pin gate (13 modules at 40c4ba7) fails as it should when pinned
+    to 0692c901. The oracle gives 371.414600 / 434.840959 against 371.4146 / 434.8410. Every generation's
+    corrected and uncorrected cost equals the draft's `generation_results_sept29.csv`. The lines add to the
+    engine's A, and the capital components to their returns.
+  - `split_residual.py`: every line moves by its correction edit (max |diff| 9.6e-10 bn), now on a real
+    three-generation split whose G2 and G3+ cells carry the scale edits and production grids.
+  - `valuation.py`: every gate passes. The lines reproduce the draft's A, −383.0945 / −442.5242, the reference
+    above, and each generation's net cost plus production equals the draft's cost.
+  - On the union, sept27 against sept29, $bn at the low / high end [CALCULATION: dry run, draft inputs; UNVERIFIED
+    until the pinned run]:
+
+    | | sept27 | sept29 | change |
+    |---|---:|---:|---:|
+    | G, the cost to other residents (A) | 335.14 / 396.16 | 383.09 / 442.52 | +47.95 / +46.36 |
+    | V, what the group values it at (central) | 222.11 / 245.12 | 262.34 / 282.52 | +40.23 / +37.40 |
+    | G − V | 113.03 / 151.04 | 120.76 / 160.00 | +7.72 / +8.96 |
+
+    The two big items are transfers valued at V = G: the accrual (+$74.6 / 71.2bn, rule 6), and the group's
+    property and sales taxes (−$27.2bn property, −$6.0bn general sales). The gap G − V grows mainly through the
+    state-price lines: their gaps cost others $8.6bn while the group values them at −$0.32bn (rule 2).
+    `world_ledger.py` did not run, because the winners lane's sept29 channels and the distribution lane's sept29
+    percentiles do not exist yet. [2026-09-29 23:08 JST: the pinned run gives the same union figures, A
+    383.0945 / 442.5242 and V 262.34 / 282.52.]
+- **Reference for phase 2**, from the adopted lane's draft package:
+  - On the union at specs 48 / 11: cost $371.414600 / $434.840959bn. The direct cost plus the capital return, before
+    production, is $383.0945 / $442.5242bn, so the winners lane's sept29 `A_bn` should be −383.0945 / −442.5242.
+  - The uncorrected model evaluates at $313.2581 / $378.9158bn. The package drops the overrides of the two receipt
+    lines that model lacks, so `generation_lines.cjs` can evaluate the generations' uncorrected models.
+
+### Reproduce
+
+The lane's checker with every step. Phase 1 ran it without the two sept29 commands (gate 1). Phase 2 runs it whole,
+twice (gate 4).
+
+```sh
+L=infra/immigration-fiscal/world_ledger_2026_09_27
+uv run --no-project python3 scripts/rerun_lane.py $L \
+  "uv run --no-project python3 {lane}/acquire.py" \
+  "uv run --no-project python3 {lane}/mexico.py" \
+  "uv run --no-project python3 {lane}/g2_premium.py" \
+  "uv run --no-project python3 {lane}/g2_premium.py --basis row4" \
+  "uv run --no-project python3 {lane}/weights.py" \
+  "uv run --no-project python3 {lane}/weights.py --basis row4" \
+  "node {lane}/generation_lines.cjs --case sept26_schools" \
+  "uv run --no-project python3 {lane}/split_residual.py --case sept26_schools" \
+  "node {lane}/generation_lines.cjs --case sept27" \
+  "uv run --no-project python3 {lane}/split_residual.py --case sept27" \
+  "node {lane}/generation_lines.cjs --case sept29" \
+  "uv run --no-project python3 {lane}/split_residual.py --case sept29" \
+  "uv run --no-project python3 {lane}/state_price_quantity.py" \
+  "uv run --no-project python3 {lane}/valuation.py" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept26_schools" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept27" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept27 --basis row4" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept29" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept29 --basis cps" \
+  --allow-unrun $L/run_all.sh --allow-unrun $L/population_basis.py
+```
+
+### Phase 2 checks
+
+Every gate below ran after the 20:51 JST reboot. `generation_lines.cjs` prints each gate; the Python scripts stop on
+any failed gate and print the figures they check.
+1. **Old cases unchanged.** Both full reruns are IDENTICAL, 84/84 files, and no tracked file under `derived/` differs
+   from HEAD, so every Sept 26 and Sept 27 output is byte for byte what it was. The positive control is inside
+   them: the cps steps rebuild the tracked 12.22M files (`world_ledger.csv`, `world_ledger_rows.csv` with G1's old
+   rows, `g2_premium.csv`, `mexico_budget.csv` and the rest), and each equals HEAD.
+2. **sept29 runs, and the lane's gates pass on it:**
+   - `generation_lines.cjs --case sept29`: the adopted lane and the 13 modules its package loads are 40c4ba7's; the
+     corrections at aa1f53b name `main_case_2026_09_29/derived/corrections.json`; each generation's corrected and
+     uncorrected cost equals `generation_results_sept29.csv` at both ends (corrected, low / high: G1 97.233633 /
+     87.112857, G2 151.567892 / 179.353199, G3+ 122.613075 / 168.374903); the lines add to the engine's A (max
+     |diff| 1.1e-13bn); each capital component's amount times its response is its return.
+   - `split_residual.py --case sept29`: every line moves by its correction edit, max |diff| 9.6e-10bn.
+   - `valuation.py`: every line takes a class; the lines reproduce the winners lane's A, −383.094478 / −442.524197
+     (tolerance 1e-3; the lines give the same to 1e-6); the generations add to the case's lines, and each
+     generation's net cost plus production equals `generation_results_sept29.csv` (1e-6).
+   - `world_ledger.py --case sept29`: the fiscal channel is A − D + F; the distribution percentiles are sept29's
+     own; the accrual is the case less its cash set (rule 7); G1 in the person-based rows is 11,036,701.06, the
+     generation lane's G1 at aa1f53b to one person, with both printed. The cps run beside it prints 12,220,781.88
+     against the same 11,036,701.06, ungated.
+3. **Oracle.** The generations' union at specs 48 / 11 is 371.414600 / 434.840959, against the adopted
+   371.4146 / 434.8410 (tolerance 5.01e-5, half the last printed digit). The cash set: the case less the accrual is
+   294.701076 / 361.817482, against 294.7011 / 361.8175 (tolerance 1e-6, against the adopted lane's unrounded
+   summary).
+4. **Two reruns after the sept29 run**, with the 19 commands of "Reproduce": pass 1 ran 23:13:03–23:18:56 JST and
+   pass 2 23:19:16–23:23:37 JST, each IDENTICAL, 84/84 files, exit 0.
+
+Beyond the gates: the winners lane's sept29 channel ids are Sept 27's plus `future_pension_accrual` (rule 7). Its
+engine A at 48 / 11 is the reference, −383.094478 / −442.524197; its fiscal channel's own A, −383.094429 /
+−442.524231, is within the ledger's 1e-3 gate.
+
+Log (times from `date`):
+- 2026-09-29 15:43 JST: baseline before any edit: `rerun_lane.py` with the lane's eleven commands (section "The sept27 run", item
+  3) reports IDENTICAL, 57/57 files, exit 0, in 41.5 s. [CALCULATION: scripts/rerun_lane.py]
+- 2026-09-29 16:09 JST: phase 1 code in place (generation_lines.cjs, split_residual.py, valuation.py, world_ledger.py, pins.json;
+  details in the section's body when it is written). Gate 1, old cases unchanged: the same eleven commands report
+  IDENTICAL, 57/57 files, exit 0. A first attempt stopped at valuation.py (exit 1, outputs not compared): my edit
+  had written the winners lane's `capital_return` rows with their own side instead of "spending", so the union no
+  longer matched the generation lines. Fixed before the passing run. [CALCULATION: scripts/rerun_lane.py]
+- 2026-09-29 16:22 JST: after the last phase-1 edit (`state_price_health_services` added to LINES), gate 1 again:
+  IDENTICAL, 57/57 files, exit 0. The replay test, the class test and the stand-in dry run (section above) ran
+  between 16:09 and 16:21; the stand-in used the adopted lane's draft `package.cjs` of 16:10 JST.
+  [CALCULATION: scripts/rerun_lane.py; scratchpad wl/test/]
+- 2026-09-29 16:26 JST: per-case input directories added (`lane_file()`, `"dirs"` in `pins.json`) after reading the
+  distribution lane's draft, which writes sept29 to `derived/sept29/`. The stand-in dry run passes again, and gate 1
+  is IDENTICAL again, 57/57 files, exit 0. [CALCULATION: scripts/rerun_lane.py; scratchpad wl/test/]
+- 2026-09-29 16:36 JST: the lead's rulings arrived. Rule 1 is now quantity only (rule 2 in the section), and the
+  housing voucher rule is accepted. Changes: `state_price_quantity.py` was added, `valuation.py` applies the share,
+  and `run_all.sh` runs the new script. Its first two runs stopped on gates, nothing written. The all-prisoner
+  control was set at 1e-12, which the lane's CSV rounding cannot meet; it is now 1e-9. `out.index` read the row
+  number where the "index" column was meant, and the lane's wage shares caught it, max diff inf. After both fixes it
+  passes, and the lane's wage shares are reproduced to 2.4e-7, the CSV's rounding. The stand-in dry run gives
+  state-price V +$0.3045bn at each end. Gate 1: IDENTICAL, 59/59, exit 0. [CALCULATION: scripts/rerun_lane.py;
+  state_price_quantity.py; scratchpad wl/test/]
+- 2026-09-29 16:47 JST: on the lead's word, justice's class now applies function by function on the public-order
+  gap (`JUSTICE_FUNCTION_SHARE` in `valuation.py`), and the prisons corrections-pay row is dropped from
+  `state_price_quantity.csv`, since at class 0 it moves nothing. The case meta carries the value and its extremes.
+  The stand-in dry run gives state-price V −$0.3231bn at each end, with the whole gap at +$5.5181bn and 0 beside;
+  the generation split adds to the same. Gate 1 (16:43–16:45): IDENTICAL, 59/59, exit 0. [CALCULATION:
+  scripts/rerun_lane.py; state_price_quantity.py; scratchpad wl/test/]
+- 2026-09-29 16:56 JST: the generation lane's draft (`run_generations_v4.cjs`) names its sept29 files
+  `generation_corrections_sept29.json` and `generation_results_sept29.csv` in `derived/`, which `"dirs"` cannot
+  express. `pins.json` now takes `"files"` (per-lane renames), read by `lane_file()` and `generation_lines.cjs`;
+  `world_ledger.py` imports `PINS` from `valuation.py` and gates that a later case's distribution percentiles are
+  its own. A stand-in with the generation files renamed and the default names absent reproduces the dry run's
+  outputs byte for byte; the new gate stops a pin set that reads September 27's or the schools case's
+  percentiles. Gate 1 (16:55–16:56): IDENTICAL, 59/59, exit 0. [CALCULATION: scripts/rerun_lane.py; scratchpad
+  wl/test/]
+- 2026-09-29 17:08 JST: phase 2 message: the adopted lane landed at 40c4ba7; it is pinned (`"main_case"`, with a
+  gate on the lane and its package's modules), and final outputs wait for the three upstream SHAs. The dry run on
+  the upstream drafts passes every gate of `generation_lines.cjs`, `split_residual.py` and `valuation.py` (the
+  section above). It surfaced rule 6, the accrual's classes. Gate 1 (17:06–17:08):
+  IDENTICAL, 59/59, exit 0. [CALCULATION: scripts/rerun_lane.py; scratchpad wl/dry29/]
+- 2026-09-29 17:15 JST: the lead approved rule 6 (the accrual at its lines' classes, the benefits-paid
+  alternative beside it) and confirmed the distribution lane's sept29 folder. The winners layout and the three
+  SHAs are still to come.
+- 2026-09-29 17:17 JST: `pins.json` sept29 now carries the known layout with its SHAs still empty: distribution
+  `"dirs"` → `…/distribution_weights_2026_09_23/derived/sept29`, and generation `"files"` →
+  `generation_corrections_sept29.json` and `generation_results_sept29.csv`. The winners entries wait for its
+  layout. Gate 1 (17:16–17:17): IDENTICAL, 59/59, exit 0. [CALCULATION: scripts/rerun_lane.py]
+- 2026-09-29 20:14 JST: v4-dist-lane gave the winners layout. All four files are in
+  `winners_losers_2026_09_24/derived/sept29/`, and the case is `adopted_2026_09_29`, whose A_bn at 48 / 11 in its dev
+  run is −383.094478 / −442.524197, the reference. `pins.json` sept29 now has `model` and winners `"dirs"`; only the
+  three SHAs remain empty. Gate 1 was not rerun, because old cases read none of sept29's pin fields.
+- 2026-09-29 20:39 JST: v4-gen-lane's sept29 layout matches `pins.json`'s `"files"`. Its headcounts are row 4's
+  (G1 11.04M), which showed that the ledger's person-based rows count the published 40.9M while its budget rows count
+  row 4's 39.71M (section "Population basis"). Sent to the lead with a recommendation, then built. The row-4 path
+  (`population_basis.py`, `--basis`) reproduces the scratch restatement exactly: Sept 27's world total at equal
+  weights is $337.3bn on row 4 against $363.8bn published. Gate 1 with the row-4 steps and the Sept 27 beside run
+  (20:34–20:38): IDENTICAL, 69/69, exit 0; every cps file equals its tracked version. [CALCULATION:
+  scripts/rerun_lane.py; world_ledger.py --case sept27 --basis row4]
+- 2026-09-29 20:47 JST: the lead approved the row-4 basis for sept29, with the cps run beside it, and pinned
+  distribution at 492bf32 (`derived/sept29/`; its percentiles differ from Sept 27's, fiscal (a) −$395.7bn). Set in
+  `pins.json`: `"basis": "row4"` and `"distribution": "492bf32"`. Added gate 1 of the section above (G1 equals the
+  generation lane's G1 in the row-4 case). Dated notes on the row-4 Sept 27 figures now sit in the verdict and
+  section D, including the sign change in the low outer span at λ 1.5 (+14.4 → −10.0). Gate 1 (20:45–20:47):
+  IDENTICAL, 69/69, exit 0; the positive control's nine cps files equal HEAD. Waiting for the generation and winners
+  SHAs. [CALCULATION: scripts/rerun_lane.py; git diff HEAD]
+- 2026-09-29 22:57 JST: relaunched after the 20:51 JST reboot, which ended the earlier run and wiped `/private/tmp`
+  (the scratch dry runs and the gate logs). The working tree held this lane's code as it stood at 20:48: every script
+  compiles, `pins.json` parses, this file ends at the 20:47 entry, and no tracked file under `derived/` differs from
+  HEAD. Nothing written before the reboot is relied on: every sept29 step and both reruns ran after it.
+- 2026-09-29 23:06 JST: the lead's last pins, generation aa1f53b and winners 858f77a, are in `pins.json`. Checked
+  first: each commit holds the files the pins name; no commit after 40c4ba7 touches the adopted lane or the engine;
+  the adopted lane, the engine, the candidate lanes and the three pinned lanes have no uncommitted change; the winners
+  case `adopted_2026_09_29` gives A −383.094478 / −442.524197 at 48 / 11; its channels add one,
+  `future_pension_accrual` (rule 7).
+- 2026-09-29 23:07–23:08 JST: `generation_lines.cjs` and `split_residual.py` for sept29, then
+  `state_price_quantity.py` and `valuation.py`, all exit 0 with every gate passing (section "Phase 2 checks"). The
+  state-price value is −$0.3231bn at each end (whole gap +$5.5181bn, 0 beside), and the accrual raises G and V
+  alike, by $74.62 / 71.21bn, as in the dry runs. [CALCULATION: valuation_meta_sept29.json; valuation_sept29.csv]
+- 2026-09-29 23:09–23:11 JST: rule 7 added to `world_ledger.py` (23:09–23:10). `world_ledger.py --case sept29`
+  (23:10:31–23:10:44) and `--basis cps` (23:10:58–23:11:26): exit 0, every gate passing. [CALCULATION:
+  world_ledger.py]
+- 2026-09-29 23:13–23:24 JST: the two full reruns, each IDENTICAL, 84/84 files, exit 0. [CALCULATION:
+  scripts/rerun_lane.py]
+- 2026-09-29 23:32 JST: the phase 2 sections written from the derived files (scratch scripts in the parent's
+  scratchpad, `v4-world-lane/`); no code or output changed after the reruns.

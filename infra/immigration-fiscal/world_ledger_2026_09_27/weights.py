@@ -13,7 +13,10 @@ Log-income weights are y_ref / max(y, floor) with y_ref the other residents' mea
 percentile, the distribution lane's normalization. Mexico (ENIGH 2024): household current income over the square
 root of household size, in PPP dollars. Log weights use income per head on both sides (see income_positions).
 Outputs (derived/): hendren_g.csv, income_positions.csv, log_weights_by_percentile.csv, weights_meta.json.
+--basis row4 counts the group on the account's row-4 persons (population_basis.py) and writes only
+income_positions_row4.csv: row 4 moves no other resident, so the other files do not depend on the basis.
 """
+import argparse
 import importlib.util
 import json
 import subprocess
@@ -24,6 +27,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from PIL import Image
+
+from population_basis import BASES, reweight, suffixed
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
@@ -102,7 +107,7 @@ def g_at(quantile, gtab):
     return np.interp(np.clip(quantile, 1, 100), gtab["quantile"], gtab["g"])
 
 
-def income_positions(gtab):
+def income_positions(gtab, basis="cps"):
     """Each party's position on two US scales: 'money' (household money income over the square root of household
     size, the scale Mexico's incomes can be put on) and 'spm' (SPM resources over the SPM equivalence scale). Both
     rank persons on other residents' distribution, as the distribution lane's channel_by_percentile does."""
@@ -110,6 +115,8 @@ def income_positions(gtab):
     B = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(B)
     d = B.load_cps()
+    if basis == "row4":
+        d = reweight(d, B.PATHS["cps"], gate)
     other, tgt = d.other.to_numpy(), d.target.to_numpy()
     w = d.pw.to_numpy(float)
     usb = d.PRCITSHP.isin([1, 2, 3]).to_numpy()
@@ -189,9 +196,15 @@ def mexico_incomes():
     return out
 
 
-def main():
+def main(basis="cps"):
     DERIVED.mkdir(exist_ok=True)
     gtab, gmeta = digitize_g()
+    if basis != "cps":
+        pos, _, _ = income_positions(gtab, basis)
+        pos.to_csv(suffixed(DERIVED / "income_positions.csv", basis), index=False, lineterminator="\n",
+                   float_format="%.6g")
+        print(pos.round(3).to_string(), file=sys.stderr)
+        return
     gtab.to_csv(DERIVED / "hendren_g.csv", index=False, lineterminator="\n")
     pos, ref, lw = income_positions(gtab)
     pos.to_csv(DERIVED / "income_positions.csv", index=False, lineterminator="\n", float_format="%.6g")
@@ -205,4 +218,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--basis", default="cps", choices=BASES)
+    main(ap.parse_args().basis)

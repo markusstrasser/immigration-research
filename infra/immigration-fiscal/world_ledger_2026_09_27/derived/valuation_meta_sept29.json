@@ -1,0 +1,87 @@
+{
+ "cases": {
+  "sept29": {
+   "high": {
+    "A_bn": 442.52419731013646,
+    "V_central_bn": 282.5223355678951,
+    "V_high_bn": 301.68010595963995,
+    "V_low_bn": 257.16159187481065
+   },
+   "low": {
+    "A_bn": 383.09447825888645,
+    "V_central_bn": 262.33842413007426,
+    "V_high_bn": 281.1773707948493,
+    "V_low_bn": 237.3502535580175
+   }
+  }
+ },
+ "generations": {
+  "sept29": {
+   "high|G1": {
+    "V_central_bn": 90.97140962520021,
+    "net_cost_bn": 91.99356275100001
+   },
+   "high|G2": {
+    "V_central_bn": 96.23848352771816,
+    "net_cost_bn": 180.86569747799996
+   },
+   "high|G3+": {
+    "V_central_bn": 95.31244241527482,
+    "net_cost_bn": 169.66493708099998
+   },
+   "low|G1": {
+    "V_central_bn": 80.49378362971606,
+    "net_cost_bn": 104.65316707400001
+   },
+   "low|G2": {
+    "V_central_bn": 100.52848079796718,
+    "net_cost_bn": 153.86715655099994
+   },
+   "low|G3+": {
+    "V_central_bn": 81.31615970093515,
+    "net_cost_bn": 124.574154635
+   }
+  }
+ },
+ "medicaid_vg": [
+  0.76,
+  0.92,
+  1.08
+ ],
+ "mexico_budget_bn_known": 153.9297932691746,
+ "pins": {
+  "sept29": {
+   "basis": "row4",
+   "dirs": {
+    "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/sept29",
+    "winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/sept29"
+   },
+   "distribution": "492bf32",
+   "files": {
+    "generation": {
+     "generation_corrections.json": "generation_corrections_sept29.json",
+     "generation_results.csv": "generation_results_sept29.csv"
+    }
+   },
+   "generation": "aa1f53b",
+   "main_case": "40c4ba7",
+   "model": "adopted_2026_09_29",
+   "winners": "858f77a"
+  }
+ },
+ "protection_share": 0.42467763366851674,
+ "state_price_value_bn": {
+  "sept29": {
+   "high": {
+    "quantity_bn": -0.3231269302065924,
+    "whole_gap_bn": 5.518078247359883,
+    "zero_bn": 0.0
+   },
+   "low": {
+    "quantity_bn": -0.3231269302065924,
+    "whole_gap_bn": 5.518078247359883,
+    "zero_bn": 0.0
+   }
+  }
+ }
+}

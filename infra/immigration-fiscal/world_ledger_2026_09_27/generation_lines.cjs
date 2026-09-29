@@ -6,7 +6,7 @@
  * case package's engine state at every specification. This script repeats that evaluation at the case's two band
  * ends and writes every line, so the world ledger values the generation lane's own split and never a second one.
  * The band ends are the union's cheapest and dearest specifications, the first on a tie, as that lane picks them
- * (48 and 11 in both cases here). The allocation of household flows is the specification's: shared at the low
+ * (48 and 11 in every case here). The allocation of household flows is the specification's: shared at the low
  * end, personal at the high end.
  *
  * It also evaluates the uncorrected models at the same specifications, for split_residual.py, which shows how the
@@ -15,13 +15,14 @@
  * Inputs: the generation lane's files at the case's generation pin (pins.json), read with git show; the case's
  * package (read-only, as run_generations.cjs reads it). Rows: every spending line and receipt with the engine's key
  * (receipts: scenario:key), its amount, response and effect (the engine's signs: receipts +, spending -), each
- * capital-return component (under sept27; amount = stock x rate x key, effect = -return), and per generation the
- * totals: the direct fiscal response, the capital return, the production term and the cost. Gates: the corrected
- * cost equals generation_results.csv convention (a) `cost_bn`, and the uncorrected cost its `uncorrected_same_spec_bn`,
- * to 1e-6.
+ * capital-return component (under sept27 and sept29; amount = stock x rate x key, effect = -return), and per
+ * generation the totals: the direct fiscal response, the capital return, the production term and the cost. Gates:
+ * the corrected cost equals generation_results.csv convention (a) `cost_bn`, and the uncorrected cost its
+ * `uncorrected_same_spec_bn`, to 1e-6; the generations' union at the band ends equals the case's adopted band (its
+ * lane's main_case_bands.csv, main profile, four decimals) to half a unit in the fourth decimal.
  *
  * Run from the repository root:
- *   node infra/immigration-fiscal/world_ledger_2026_09_27/generation_lines.cjs --case sept26_schools|sept27
+ *   node infra/immigration-fiscal/world_ledger_2026_09_27/generation_lines.cjs --case sept26_schools|sept27|sept29
  * Output: derived/generation_lines_<case>.csv, derived/generation_lines_uncorrected_<case>.csv.
  */
 "use strict";
@@ -34,15 +35,23 @@ const FISCAL = path.join(HERE, "..");
 const REPO = path.join(FISCAL, "..", "..");
 const argv = process.argv.slice(2);
 const arg = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt : argv[i + 1]; };
-// The package lane of each case, as run_generations.cjs maps them.
-const CASES = { sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
+// The package lane of each case, as run_generations.cjs maps them. SEPT29 is the case adopted on 2026-09-29
+// (candidate v4): a payload-first successor to the September 27 lane with the same package API.
+const SEPT29 = "main_case_2026_09_29";
+const CASES = { sept29: SEPT29, sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
 const CASE = arg("--case", "sept26_schools");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
-const ON27 = CASE === "sept27";
-const PIN = JSON.parse(fs.readFileSync(path.join(HERE, "pins.json"), "utf8"))[CASE].generation;
+// The cases that carry the return on public capital, which the lane evaluates with evaluateFull().
+const FULL = CASE === "sept27" || CASE === "sept29";
+const PINNED = JSON.parse(fs.readFileSync(path.join(HERE, "pins.json"), "utf8"))[CASE];
+const PIN = PINNED.generation;
 if (!PIN) throw new Error(`[BLOCKED] no generation pin for ${CASE}`);
-const GREL = "infra/immigration-fiscal/generation_account_2026_09_24/derived";
-const show = (f) => execFileSync("git", ["-C", REPO, "show", `${PIN}:${GREL}/${f}`], { maxBuffer: 1 << 30 }).toString("utf8");
+// The generation lane's files for the case: its derived/ under the default case's names, unless the case's pins name
+// another directory ("dirs") or rename a file ("files"), as valuation.py's lane_file() reads them.
+const GREL = (PINNED.dirs || {}).generation || "infra/immigration-fiscal/generation_account_2026_09_24/derived";
+const GFILES = (PINNED.files || {}).generation || {};
+const gfile = (f) => GFILES[f] || f;
+const show = (f) => execFileSync("git", ["-C", REPO, "show", `${PIN}:${GREL}/${gfile(f)}`], { maxBuffer: 1 << 30 }).toString("utf8");
 const P = require(path.join(FISCAL, CASES[CASE], "package.cjs"));
 const { Engine, MAIN_SPECS } = P;
 const GENS = ["G1", "G2", "G3plus"];
@@ -53,22 +62,51 @@ function gate(label, ok, detail) {
   if (!ok) fails.push(label);
 }
 
+// The case lane's commit, where the case's pins name one ("main_case"): the package and the band file are read from
+// the working tree, so the lane there, and every module the package loads, must be that commit's.
+if (PINNED.main_case) {
+  const git = (...a) => execFileSync("git", ["-C", REPO, ...a]).toString("utf8").trim();
+  const lane = `infra/immigration-fiscal/${CASES[CASE]}`;
+  let laneClean = true;
+  try { execFileSync("git", ["-C", REPO, "diff", "--quiet", PINNED.main_case, "--", lane]); } catch (e) { laneClean = false; }
+  const untracked = git("ls-files", "--others", "--exclude-standard", "--", lane);
+  const modules = Object.keys(require.cache).filter((f) => f.startsWith(REPO + path.sep) && !f.startsWith(HERE + path.sep))
+    .map((f) => path.relative(REPO, f));
+  const moved = modules.filter((f) => {
+    try { return git("rev-parse", `${PINNED.main_case}:${f}`) !== git("hash-object", f); } catch (e) { return true; }
+  });
+  gate(`${lane} and the ${modules.length} modules its package loads are commit ${PINNED.main_case}'s`,
+    laneClean && !untracked && moved.length === 0,
+    [laneClean ? "" : "the lane differs", untracked ? `untracked: ${untracked}` : "",
+      moved.length ? `modules differ: ${moved.join(" ")}` : ""].filter(Boolean).join("; "));
+}
+
 const corr = JSON.parse(show("generation_corrections.json"));
-gate(`generation_corrections.json at ${PIN} is the ${CASE} case's (${corr.meta.union})`, corr.meta.union.startsWith(CASES[CASE] + "/"));
+gate(`${gfile("generation_corrections.json")} at ${PIN} is the ${CASE} case's (${corr.meta.union})`, corr.meta.union.startsWith(CASES[CASE] + "/"));
 const raw = Object.fromEntries(GENS.map((g) => [g, show(`model_${g}.json`)]));
 // Each model is parsed on its own, so the corrected model never shares objects with the uncorrected one.
 const MODELS = {
   corrected: Object.fromEntries(GENS.map((g) => [g, Engine.applyCorrections(JSON.parse(raw[g]), corr.payloads.a[g])])),
   uncorrected: Object.fromEntries(GENS.map((g) => [g, JSON.parse(raw[g])])),
 };
-// run_generations.cjs's partsAt(): evaluateFull() under sept27, the engine on stateFor() otherwise.
-const partsAt = (m, spec) => (ON27 ? P.evaluateFull(m, spec, P.MAIN_PROFILE)
+// run_generations.cjs's partsAt(): evaluateFull() under the cases with the capital return, the engine on stateFor()
+// otherwise.
+const partsAt = (m, spec) => (FULL ? P.evaluateFull(m, spec, P.MAIN_PROFILE)
   : { evaluation: Engine.evaluate(m, P.stateFor(m, spec, P.MAIN_PROFILE)), capital: { total_bn: 0, components: [] } });
 const costOf = (r) => -r.evaluation.welfare_bn + r.capital.total_bn;
 
 const union = MAIN_SPECS.map((s) => GENS.reduce((t, g) => t + costOf(partsAt(MODELS.corrected[g], s)), 0));
 const lo = union.indexOf(Math.min(...union)), hi = union.indexOf(Math.max(...union));
-const results = execFileSync("git", ["-C", REPO, "show", `${PIN}:${GREL}/generation_results.csv`]).toString("utf8")
+// Oracle: the generations' union at the band ends is the case's adopted band, as its lane publishes it.
+const [bandHead, ...bandRows] = fs.readFileSync(path.join(FISCAL, CASES[CASE], "derived", "main_case_bands.csv"), "utf8")
+  .trim().split("\n").map((l) => l.split(","));
+const bc = Object.fromEntries(bandHead.map((k, i) => [k, i]));
+const adopted = bandRows.filter((r) => r[bc.profile] === P.MAIN_PROFILE && r[bc.variant] === "adopted");
+gate(`the generations' union at the band ends (specs ${lo} and ${hi}) is ${CASES[CASE]}'s adopted band (main_case_bands.csv, `
+  + `${P.MAIN_PROFILE}; tolerance 5e-5, half the last printed digit)`, adopted.length === 1
+  && Math.abs(union[lo] - Number(adopted[0][bc.cost_low_bn])) < 5.01e-5 && Math.abs(union[hi] - Number(adopted[0][bc.cost_high_bn])) < 5.01e-5,
+  `${union[lo].toFixed(6)} / ${union[hi].toFixed(6)} against ${adopted.map((r) => `${r[bc.cost_low_bn]} / ${r[bc.cost_high_bn]}`).join("; ")}`);
+const results = show("generation_results.csv")
   .trim().split("\n").map((l) => l.split(","));
 const col = Object.fromEntries(results[0].map((k, i) => [k, i]));
 const laneRow = (g, end) => {
@@ -81,7 +119,7 @@ const laneRow = (g, end) => {
 const f = (x) => x.toFixed(9);
 const HEAD = ["case", "band_end", "spec", "allocation", "generation", "side", "line", "key", "amount_bn", "response", "effect_bn"].join(",");
 const out = { corrected: [HEAD], uncorrected: [HEAD] };
-let worst = 0;
+let worst = 0, capWorst = 0;
 for (const [end, i] of [["low", lo], ["high", hi]]) {
   const spec = MAIN_SPECS[i];
   for (const g of GENS) {
@@ -94,7 +132,11 @@ for (const [end, i] of [["low", lo], ["high", hi]]) {
         out[which].push([CASE, end, i, spec.allocation, g, side, id, key, f(amount), f(response), f(effect)].join(","));
       for (const x of ev.spending) put("spending", x.id, x.key, x.amount_bn, x.response, x.effect_bn);
       for (const x of ev.receipts) put("receipt", x.id, `${scenario}:${x.key}`, x.amount_bn, x.response, x.effect_bn);
-      for (const c of r.capital.components) put("capital", `capital_${c.id}`, "", c.stock_charged_bn * spec.rate * c.key, c.response, -c.return_bn);
+      for (const c of r.capital.components) {
+        const amount = c.stock_charged_bn * spec.rate * c.key;
+        capWorst = Math.max(capWorst, Math.abs(amount * c.response - c.return_bn));
+        put("capital", `capital_${c.id}`, "", amount, c.response, -c.return_bn);
+      }
       // Totals, as positive costs to other residents: the direct response (spending less receipts), the capital
       // return, the production term (private gain plus induced receipts, signed as a cost) and the cost itself.
       const lines = ev.spending.reduce((t, x) => t - x.effect_bn, 0) - ev.receipts.reduce((t, x) => t + x.effect_bn, 0);
@@ -111,6 +153,8 @@ for (const [end, i] of [["low", lo], ["high", hi]]) {
   }
 }
 gate("the lines add to the engine's direct response", worst < 1e-9, `max |diff| ${worst.toExponential(2)} bn`);
+// The package's capital components carry the fields the rows read: stock x rate x key x response is the return.
+gate("each capital component's amount times its response is its return", capWorst < 1e-9, `max |diff| ${capWorst.toExponential(2)} bn`);
 if (fails.length) {
   console.log(`✗ ${fails.length} gate(s) failed, nothing written`);
   process.exit(1);

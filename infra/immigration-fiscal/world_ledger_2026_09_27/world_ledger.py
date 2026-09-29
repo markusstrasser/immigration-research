@@ -32,10 +32,12 @@ Weightings (columns):
 - break-even w: the moral weight on the group at which W = N + wM = 0.
 
 Run: OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/world_ledger.py
-     [--case sept26_schools|sept27]
+     [--case sept26_schools|sept27|sept29] [--basis cps|row4]
 Outputs: derived/world_ledger.csv (party x weighting, per scenario), derived/world_ledger_rows.csv (row detail),
 derived/world_ledger_meta_<case>.json, derived/generation_split_check.csv (this lane's generation split beside the
-generation lane's).
+generation lane's). The three CSVs hold the cases of valuation.py's SHARED_OUTPUTS; a later case writes them with a
+_<case> suffix (world_ledger_sept29.csv and so on). --basis runs the case's person-based rows on a population other
+than its own (population_basis.py; a case's own is its pins' "basis", else cps), into _<case>_<basis> files.
 """
 import argparse
 import io
@@ -47,11 +49,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from population_basis import BASES, suffixed
+from valuation import PINS, SHARED_OUTPUTS, basis_of, case_path, lane_file
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 DERIVED = HERE / "derived"
-FISCAL_REL = "infra/immigration-fiscal"
-PINS = {k: v for k, v in json.load(open(HERE / "pins.json")).items() if not k.startswith("_")}
 GENS = ["G1", "G2", "G3+"]
 PARTIES = ["others_today", "future_taxpayers", "G1", "G2", "G3+", "mexico_residents"]
 GROUP = ["G1", "G2", "G3+"]
@@ -76,6 +79,9 @@ MISHRA = dict(shock=0.16, stayers_gain=0.059, owners_loss=0.064, net_loss=0.005)
 MSS_SAVING = ((1, 50, 0.0), (51, 90, 0.12), (91, 99, 0.20), (100, 100, 0.54))
 CAPITAL_TAX = (0.093, 0.29)
 RETURN_OVER_DISCOUNT = (1.0, 3.5)
+# The case lane of a case whose winners channels carry the pension accrual (sept29, adopted on 2026-09-29): its
+# summary, read at the pins' "main_case" commit, holds the case and its cash set, which the accrual must bridge.
+CASE_LANES = {"sept29": "infra/immigration-fiscal/main_case_2026_09_29"}
 
 
 def gate(name, ok, **detail):
@@ -93,31 +99,67 @@ def pinned_csv(commit, rel):
 
 
 # ------------------------------------------------------------------ inputs
-def load(case):
+def load(case, basis):
     pin = PINS[case]
     if not pin["winners"]:
         raise SystemExit(f"[BLOCKED] no pins for case {case}; the parent sends them")
-    w = f"{FISCAL_REL}/winners_losers_2026_09_24/derived"
-    ch = pinned_csv(pin["winners"], f"{w}/channels.csv").set_index("id")
-    specs = pinned_csv(pin["winners"], f"{w}/fiscal_specs.csv")
+    w = lambda name: lane_file(case, "winners", name)
+    ch = pinned_csv(pin["winners"], w("channels.csv")).set_index("id")
+    specs = pinned_csv(pin["winners"], w("fiscal_specs.csv"))
     specs = specs[(specs.case == pin["model"]) & specs.band_end.notna()].drop_duplicates("band_end").set_index("band_end")
-    gf = pinned_csv(pin["winners"], f"{w}/group_frame.csv")
-    dist = pinned_csv(pin["distribution"], f"{FISCAL_REL}/distribution_weights_2026_09_23/derived/channel_by_percentile.csv")
-    gen = pinned_csv(pin["generation"], f"{FISCAL_REL}/generation_account_2026_09_24/derived/generation_results.csv")
-    val = pd.read_csv(DERIVED / "valuation.csv")
+    # A case that charges the pension accrual (rule 7): the winners lane's future_pension_accrual must be the case
+    # less its cash set, as the case lane's summary gives both at the pinned commit (unrounded; the channel file
+    # prints 6 decimals, so the tolerance is 1e-6).
+    if "future_pension_accrual" in ch.index:
+        s = json.loads(git_show(pin["main_case"], f"{CASE_LANES[case]}/derived/summary.json"))
+        pen, mc = ch.loc["future_pension_accrual"], ch.loc["main_case"]
+        ends = (("low", 0), ("high", 1))
+        diff = max([abs(-mc[f"bn_{e}"] - s["main_case"][i]) for e, i in ends]
+                   + [abs(pen[f"bn_{e}"] - s["cash_set"]["change_from_main_case_bn"][i]) for e, i in ends]
+                   + [abs(-mc[f"bn_{e}"] + pen[f"bn_{e}"] - s["cash_set"]["band_bn"][i]) for e, i in ends])
+        gate("pension_accrual_is_the_case_less_its_cash_set", diff < 1e-6, max_abs_diff=diff)
+        print(f"  pension accrual {-pen.bn_low:.6f} / {-pen.bn_high:.6f}: the case less it is "
+              f"{-mc.bn_low + pen.bn_low:.6f} / {-mc.bn_high + pen.bn_high:.6f}, the cash set "
+              f"{s['cash_set']['band_bn'][0]:.6f} / {s['cash_set']['band_bn'][1]:.6f} ({CASE_LANES[case]} at "
+              f"{pin['main_case']}; max |diff| {diff:.1e})", file=sys.stderr)
+    gf = pinned_csv(pin["winners"], w("group_frame.csv"))
+    dist_rel = lane_file(case, "distribution", "channel_by_percentile.csv")
+    dist = pinned_csv(pin["distribution"], dist_rel)
+    # The percentiles carry no case key, and no other gate ties them to the case's totals: a later case whose pins
+    # miss the lane's directory would read the default case's channels unnoticed. They must be the case's own.
+    if case not in SHARED_OUTPUTS:
+        same = [c for c, p in PINS.items() if c != case and p["distribution"] and git_show(
+            p["distribution"], lane_file(c, "distribution", "channel_by_percentile.csv")) == git_show(
+            pin["distribution"], dist_rel)]
+        gate("distribution_channels_are_the_cases_own", not same, same_as=same, file=dist_rel)
+    gen = pinned_csv(pin["generation"], lane_file(case, "generation", "generation_results.csv"))
+    # G1's persons in this run's person-based rows beside the generation lane's G1, whose budget rows the ledger
+    # values. A case whose own basis is row 4 must count the same people (the generation lane's v4 results carry the
+    # row-4 headcounts); on a basis beside it they differ by the audit's 1.18M, printed.
+    g1 = json.load(open(suffixed(DERIVED / "g2_meta.json", basis)))["persons_m"]["G1"] * 1e6
+    g1_gen = gen[(gen.convention == "a") & (gen.generation == "G1")].population.unique()
+    print(f"  G1 persons: {g1:,.2f} in the {basis} person-based rows, {', '.join(f'{x:,.2f}' for x in g1_gen)} "
+          f"in the generation lane's results at {pin['generation']}", file=sys.stderr)
+    if basis == "row4" and basis_of(case) == "row4":
+        gate("row4_g1_is_the_generation_lanes_g1", len(g1_gen) == 1 and abs(g1 - g1_gen[0]) < 1.0, ledger=g1,
+             generation_lane=list(g1_gen))
+    val = pd.read_csv(case_path("valuation.csv", case))
     val = val[val.case == case]
     gate("valuation_has_case", len(val) > 0, case=case)
-    vgen = pd.read_csv(DERIVED / "valuation_by_generation.csv")
+    vgen = pd.read_csv(case_path("valuation_by_generation.csv", case))
     vgen = vgen[vgen.case == case]
     gate("valuation_by_generation_has_case", len(vgen) > 0, case=case)
     glines = pd.read_csv(DERIVED / f"generation_lines_{case}.csv").replace({"generation": {"G3plus": "G3+"}})
     return dict(ch=ch, specs=specs, gf=gf, dist=dist, gen=gen, val=val, vgen=vgen, glines=glines,
-                g2=pd.read_csv(DERIVED / "g2_premium.csv"), ages=pd.read_csv(DERIVED / "group_ages.csv"),
-                mxb=pd.read_csv(DERIVED / "mexico_budget.csv"), gtab=pd.read_csv(DERIVED / "hendren_g.csv"),
-                pos=pd.read_csv(DERIVED / "income_positions.csv"),
+                # the group's person-based inputs, on the run's population basis
+                g2=pd.read_csv(suffixed(DERIVED / "g2_premium.csv", basis)),
+                ages=pd.read_csv(suffixed(DERIVED / "group_ages.csv", basis)),
+                mxb=pd.read_csv(suffixed(DERIVED / "mexico_budget.csv", basis)),
+                gtab=pd.read_csv(DERIVED / "hendren_g.csv"),
+                pos=pd.read_csv(suffixed(DERIVED / "income_positions.csv", basis)),
                 wmeta=json.load(open(DERIVED / "weights_meta.json")),
                 # The Medicaid class (valuation.py), applied to hospital care received and Mexico's public health.
-                health_vg=tuple(json.load(open(DERIVED / "valuation_meta.json"))["medicaid_vg"]))
+                health_vg=tuple(json.load(open(case_path("valuation_meta.json", case)))["medicaid_vg"]))
 
 
 def lh(lo, mid, hi):
@@ -299,7 +341,7 @@ def row_basis(rid):
 
 
 def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="withheld_consumption",
-               g3_central="zero"):
+               g3_central="zero", accrual_today=False):
     rows = []
 
     def add(rid, label, party, kind, vals, **meta):
@@ -337,14 +379,31 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
          and np.isclose(fisc.bn_high, -(A["high"] - D["high"] - F["high"]), atol=1e-3),
          fiscal=[fisc.bn_low, fisc.bn_high], A=A, D=D, F=F)
     T = {e: A[e] - D[e] for e in ("low", "high")}               # the part taxpayers finance
-    add("fiscal_others", "Other residents today: the direct fiscal cost less the borrowed federal part", "others_today",
-        "transfer", lh(-(T["high"]) - fut.bn_high, -np.mean(list(T.values())) - fut.bn_central,
-                       -(T["low"]) - fut.bn_low), initial="with the group", alternative="without the group",
-        window="2024", comparator="measured (account)", weight="others:fiscal", tag="[DATA: winners channels]")
+    # From sept29 the case charges the pension accrual, the case less its cash set (Social Security and Medicare's
+    # Part A at the accrual). Nothing finances it in 2024: the winners lane gives it to the future payers of Social
+    # Security and Medicare (future_pension_accrual), beside the borrowed part, and so does the ledger (rule 7).
+    # accrual_today leaves it with today's taxpayers, the distribution lane's reading, for the meta's alternative.
+    pen = ch.loc["future_pension_accrual"] if "future_pension_accrual" in ch.index and not accrual_today else None
+    Pn = {e: 0.0 if pen is None else pen[f"bn_{e}"] for e in ("low", "central", "high")}   # the channel's sign
+    add("fiscal_others", "Other residents today: the direct fiscal cost less the borrowed federal part"
+        + ("" if pen is None else " and the pension accrual"), "others_today",
+        "transfer", lh(-(T["high"]) - fut.bn_high - Pn["high"], -np.mean(list(T.values())) - fut.bn_central
+                       - Pn["central"], -(T["low"]) - fut.bn_low - Pn["low"]), initial="with the group",
+        alternative="without the group", window="2024", comparator="measured (account)", weight="others:fiscal",
+        tag="[DATA: winners channels]")
     add("fiscal_future", "Future taxpayers: the federal part financed by borrowing (FY2024 deficit / outlays)",
         "future_taxpayers", "transfer", lh(fut.bn_high, fut.bn_central, fut.bn_low), initial="with the group",
         alternative="without the group", window="2024 flow, paid later", comparator="measured (account)",
         weight="future", tag="[DATA: winners channels]")
+    if pen is not None:
+        # Its columns follow the band ends, as fiscal_others' do (low outer: the dearer end, where the accrual is the
+        # smaller), so the three fiscal rows add to the direct cost at every end.
+        add("fiscal_pension_accrual", "Future payers of Social Security and Medicare: the pension accrual (benefits "
+            "the group accrues in 2024, at the benefits current law can pay, paid later)", "future_taxpayers",
+            "transfer", lh(pen.bn_high, pen.bn_central, pen.bn_low), initial="with the group",
+            alternative="without the group", window="2024 accrual, paid later",
+            comparator="measured (account: the case less its cash set)", weight="future",
+            tag="[DATA: winners channels; FRAMING-SENSITIVE: the accrual's payer]")
     add("induced_receipts", "Other residents: induced receipts F (taxes on the production gain)", "others_today",
         "transfer", lh(min(F.values()), np.mean(list(F.values())), max(F.values())), initial="with the group",
         alternative="without the group", window="2024", comparator="measured (account)",
@@ -617,7 +676,7 @@ def row_weight(r, col, fac, pos, I, prem, conv):
         # Revenue other residents (today and later) must raise, and Mexico's budget savings and lost taxes, carry
         # lambda.
         lam = fac["_lambda"][col]
-        budget = (r.row in ("fiscal_others", "fiscal_future", "induced_receipts")
+        budget = (r.row in ("fiscal_others", "fiscal_future", "fiscal_pension_accrual", "induced_receipts")
                   or r.row.startswith(("mexico_budget_saved", "mexico_taxes_lost")))
         return lam if budget else 1.0
     kind = "g" if col.startswith("hendren") else "log"
@@ -723,11 +782,13 @@ def totals(rows, prem, I, end, fac, pos):
     return pd.DataFrame(res)
 
 
-def write_case(path, new, case):
-    """Replace one case's rows in a file holding several cases, keeping the others, cases in sorted order and
-    columns in this code's order, so a rebuild and a first build agree. A first write takes the new rows alone:
-    concatenating a column-only frame would change the dtypes and the format."""
-    if path.exists():
+def write_case(name, new, case, basis):
+    """A shared case (SHARED_OUTPUTS) replaces its rows in the file holding those cases, keeping the others, cases
+    in sorted order and columns in this code's order, so a rebuild and a first build agree. A first write takes the
+    new rows alone: concatenating a column-only frame would change the dtypes and the format. A later case writes
+    its rows alone to its own _<case> file."""
+    path = case_path(name, case, basis)
+    if case in SHARED_OUTPUTS and basis == basis_of(case) and path.exists():
         old = pd.read_csv(path)
         new = pd.concat([old[old.case != case], new]).sort_values("case", kind="mergesort")[list(new.columns)]
     new.to_csv(path, index=False, lineterminator="\n", float_format="%.6f")
@@ -736,8 +797,10 @@ def write_case(path, new, case):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--case", default="sept26_schools", choices=sorted(PINS))
+    ap.add_argument("--basis", default=None, choices=BASES, help="default: the case's own (pins 'basis', else cps)")
     args = ap.parse_args()
-    I = load(args.case)
+    basis = args.basis or basis_of(args.case)
+    I = load(args.case, basis)
     pos = I["pos"]
     out, detail = [], []
     for measure in ("money",):
@@ -759,9 +822,9 @@ def main():
                             case=args.case, pg_convention=pgc, mexico_taxes=mtx, scenario=scen))
     res = pd.concat(out)[["case", "pg_convention", "mexico_taxes", "scenario", "weighting", "party", "bn",
                           "unknown_rows"]]
-    write_case(DERIVED / "world_ledger.csv", res, args.case)
-    write_case(DERIVED / "world_ledger_rows.csv", pd.concat(detail), args.case)
-    write_case(DERIVED / "generation_split_check.csv", generation_split_check(I, args.case), args.case)
+    write_case("world_ledger.csv", res, args.case, basis)
+    write_case("world_ledger_rows.csv", pd.concat(detail), args.case, basis)
+    write_case("generation_split_check.csv", generation_split_check(I, args.case), args.case, basis)
     rows_c, prem_c, _ = build_rows(I)
     rate, rate_inputs = mexico_consumption_tax_rate()
     meta = dict(case=args.case, pins=PINS[args.case], channel_factors=channel_factors(I, "money"),
@@ -776,7 +839,24 @@ def main():
                            "pay (mexico.py)",
                     wdi_check=dict(rate=rate, inputs=rate_inputs, basis="rate x take-home pay", by_generation_bn={
                         g: {e: rate * prem_c[g]["home"][e] for e in ("low", "central", "high")} for g in GROUP})))
-    json.dump(meta, open(DERIVED / f"world_ledger_meta_{args.case}.json", "w"), indent=1, sort_keys=True,
+    if basis != "cps":
+        meta["basis"] = basis
+    if "future_pension_accrual" in I["ch"].index:
+        # Rule 7 beside its alternative, on the default rows (average-cost public goods, withheld plus consumption
+        # taxes in Mexico): the accrual on the future payers of Social Security and Medicare (the rule, as in the
+        # tables), or on today's taxpayers at today's fiscal weights (the distribution lane's reading).
+        payer = {}
+        for key, today in (("rule_future_payers", False), ("alternative_today", True)):
+            rows_p, prem_p, _ = build_rows(I, accrual_today=today)
+            payer[key] = {}
+            for end, scen in (("low", "low_outer"), ("central", "central_g3_zero"), ("high", "high_outer")):
+                t = totals(rows_p, prem_p, I, end, fac, pos).set_index(["weighting", "party"]).bn
+                payer[key][scen] = {wt: {p: float(t[(wt, p)]) for p in (
+                    "others_today", "future_taxpayers", "world_total", "breakeven_w", "breakeven_w_us_only")}
+                    for wt in t.index.get_level_values("weighting").unique()}
+        meta["pension_accrual_payer"] = payer
+    tail = "" if basis == basis_of(args.case) else f"_{basis}"
+    json.dump(meta, open(DERIVED / f"world_ledger_meta_{args.case}{tail}.json", "w"), indent=1, sort_keys=True,
               default=float)
     show = res[(res.pg_convention == "average_cost") & (res.mexico_taxes == "withheld_consumption")
                & res.party.isin(PARTIES + ["world_total", "breakeven_w", "breakeven_w_us_only"])]
