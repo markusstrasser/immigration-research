@@ -146,7 +146,7 @@ def main():
     cols = ["arm", "description", "a", "tau", "c", "a_needed_for_positive_mstar",
             "mstar", "mstar_over_observed", "sign", "reverses_headline", "note"]
     with open(os.path.join(OUT, "arms.csv"), "w", encoding="utf-8", newline="") as fh:
-        w = csv.DictWriter(fh, cols)
+        w = csv.DictWriter(fh, cols, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
 

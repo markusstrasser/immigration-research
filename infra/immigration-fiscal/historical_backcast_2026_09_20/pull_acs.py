@@ -78,7 +78,7 @@ def main() -> None:
                                                             for tag in ("mexican", "total")]
     target = HERE / "inputs/acs_mexican_origin.csv"
     with target.open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows({k: r.get(k, "") for k in fields} for r in rows)
     print(f"[written] {target}: {len(rows)} years")
