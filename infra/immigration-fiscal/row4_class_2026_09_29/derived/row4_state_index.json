@@ -1,0 +1,90 @@
+{
+ "functions": {
+  "police": {
+   "line": "public_order_safety",
+   "sl_amount_bn": 166.7480819,
+   "index_published": 1.1153749594082667,
+   "index_row4": 1.1202253717380255
+  },
+  "judicial": {
+   "line": "public_order_safety",
+   "sl_amount_bn": 63.19052051,
+   "index_published": 1.011142273651428,
+   "index_row4": 1.012171164067718
+  },
+  "fire": {
+   "line": "public_order_safety",
+   "sl_amount_bn": 76.27479316,
+   "index_published": 1.1469838809095199,
+   "index_row4": 1.1518058476519473
+  },
+  "corrections_per_inmate": {
+   "line": "public_order_safety",
+   "sl_amount_bn": 72.57226523,
+   "index_published": 1.103137798602751,
+   "index_row4": 1.1101845870422429
+  },
+  "protective_inspection": {
+   "line": "public_order_safety",
+   "sl_amount_bn": 23.96298568,
+   "index_published": 1.3819781059458447,
+   "index_row4": 1.3995383293977983
+  },
+  "health": {
+   "line": "health_services",
+   "sl_amount_bn": 126.839,
+   "index_published": 1.250660762507289,
+   "index_row4": 1.264754144573377
+  },
+  "parks_libraries": {
+   "line": "recreation_culture",
+   "sl_amount_bn": 48.901,
+   "index_published": 1.074678653033285,
+   "index_row4": 1.073854013525298
+  }
+ },
+ "lines": {
+  "health_services": {
+   "sp_pre_published_bn": 31.793560455662025,
+   "sp_pre_row4_bn": 33.58115094354256,
+   "ratio": 1.0562249229800302
+  },
+  "public_order_safety": {
+   "sp_pre_published_bn": 47.79208392483609,
+   "sp_pre_row4_bn": 49.965888296870915,
+   "ratio": 1.045484611540556
+  },
+  "recreation_culture": {
+   "sp_pre_published_bn": 3.6518608119806713,
+   "sp_pre_row4_bn": 3.6115351154006015,
+   "ratio": 0.9889574935474613
+  }
+ },
+ "receipts": {
+  "general_sales_tax": {
+   "weights": "group",
+   "index_published": 1.1151171301780591,
+   "index_row4": 1.1148596375458164,
+   "factor_published": 0.11511713017805913,
+   "factor_row4": 0.1148596375458164
+  },
+  "personal_motor_vehicle": {
+   "weights": "group_adults",
+   "index_published": 1.2623925837272516,
+   "index_row4": 1.2757808639954227,
+   "factor_published": 0.2623925837272516,
+   "factor_row4": 0.2757808639954227
+  }
+ },
+ "shares": {
+  "CA": [
+   0.3198992197089336,
+   0.3294374405303694
+  ],
+  "TX": [
+   0.23868655419615492,
+   0.24580331135205538
+  ]
+ },
+ "gates_failed": []
+}

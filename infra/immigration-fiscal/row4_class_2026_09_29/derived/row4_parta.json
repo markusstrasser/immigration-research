@@ -1,0 +1,58 @@
+{
+ "factors": {
+  "natz": 0.8556255897504617,
+  "noncit": 0.7781269999470055
+ },
+ "row4_union_pension_frame": 39712493.33118789,
+ "central": {
+  "union": {
+   "published_bn": 41.13712783048602,
+   "row4_bn": 40.10909866122974,
+   "kappa": 1.0256308220221861,
+   "covered_workers_published_m": 20.531695766369978,
+   "covered_workers_row4_m": 19.72213987748485
+  },
+  "G1": {
+   "published_bn": 12.584952348071656,
+   "row4_bn": 11.556923178815376,
+   "kappa": 1.0889535348941946,
+   "covered_workers_published_m": 7.98985063332217,
+   "covered_workers_row4_m": 7.18029474443704
+  },
+  "G2": {
+   "published_bn": 15.497781005666779,
+   "row4_bn": 15.497781005666779,
+   "kappa": 1.0,
+   "covered_workers_published_m": 6.69240574772574,
+   "covered_workers_row4_m": 6.69240574772574
+  },
+  "G3plus": {
+   "published_bn": 13.054394476747582,
+   "row4_bn": 13.054394476747582,
+   "kappa": 1.0,
+   "covered_workers_published_m": 5.84943938532207,
+   "covered_workers_row4_m": 5.84943938532207
+  }
+ },
+ "info_published": {
+  "p_qualify_G1": 0.8933345959993599,
+  "p_qualify_G2": 0.9372402789172234,
+  "p_qualify_G3plus": 0.9109632011980026,
+  "expected_covered_years": {
+   "G1": 32.87418934006524,
+   "G2": 34.01197501899155,
+   "G3plus": 34.6946059321743
+  }
+ },
+ "info_row4": {
+  "p_qualify_G1": 0.8949699420761404,
+  "p_qualify_G2": 0.9372402789172234,
+  "p_qualify_G3plus": 0.9109632011980026,
+  "expected_covered_years": {
+   "G1": 32.805744854319805,
+   "G2": 34.01197501899155,
+   "G3plus": 34.6946059321743
+  }
+ },
+ "gates_failed": []
+}

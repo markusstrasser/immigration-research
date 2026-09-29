@@ -1,0 +1,25 @@
+{
+ "shared": {
+  "end": "low",
+  "group_published_bn": 1.7563648869436936,
+  "group_row4_bn": 1.7310383988013869,
+  "national_key_published_bn": 2018.4382877742605,
+  "national_key_row4_bn": 2015.5968094962232,
+  "receipt_published_bn": 2.0912058046039226,
+  "receipt_row4_bn": 2.063956523453724,
+  "kappa": 1.0132024491991725
+ },
+ "personal": {
+  "end": "high",
+  "group_published_bn": 1.4977597077135605,
+  "group_row4_bn": 1.4721335199361023,
+  "national_key_published_bn": 1981.1100192839317,
+  "national_key_row4_bn": 1977.9157387941284,
+  "receipt_published_bn": 1.8169001218750978,
+  "receipt_row4_bn": 1.7886975846985365,
+  "kappa": 1.0157670795878637
+ },
+ "relative_rate_published": 0.5233824966647924,
+ "relative_rate_row4": 0.5263507724676347,
+ "gates_failed": []
+}
