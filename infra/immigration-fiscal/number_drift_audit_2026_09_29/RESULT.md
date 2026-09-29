@@ -1,4 +1,4 @@
-**Verdict:** The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 0a4d9dc plus this lane's uncommitted changes, 665 of 802 numbers are checked (the rest are years and non-quantities): all 665 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. The five PM2.5 and crash values the page marked approximate now come from `social_spans_priced_count_2026_09_29`, which reruns the air and crash lanes on the 39.7M the account prices. Two print differently, $45bn → $46bn and $40bn → $41bn, and no number on the page is approximate now.
+**Verdict:** The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 856bd5a plus this lane's uncommitted changes, 684 of 824 numbers are checked (the rest are years and non-quantities): all 684 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. The five PM2.5 and crash values the page marked approximate now come from `social_spans_priced_count_2026_09_29`, which reruns the air and crash lanes on the 39.7M the account prices. Two print differently, $45bn → $46bn and $40bn → $41bn, and no number on the page is approximate now. The INDEX paragraph where 869c7aa put the scale net on the priced count is now an audited span, and its 16 numbers MATCH. `memo_sweep.py` extends the check to the living topic memos. On HEAD 8aaf046 it flagged 11 quotes of a record's raw-count or other-arm value, on 9 lines in 4 memos, with no false positive on a hand check of all 11 (2 borderline). The lead fixed nine in 869c7aa. The borderline two are in the outside-checks memo, whose header keeps its figures as computed on the September 23 case; the sweep now exempts it while that sentence stands. On HEAD 856bd5a the sweep reads 178 memos and flags 0. The 48 registry records that carried the default treatment "cash; capital return in" now state their own basis; 11 keep the default, where it is true. The page, the audit's findings and the registry check are byte-identical before and after that edit.
 
 Model: claude-opus-5-5
 
@@ -6,8 +6,9 @@ Model: claude-opus-5-5
 
 This lane first audited the numbers on the evidence map and in the routing documents. It then built the map's
 build-time sourcing and applied every map fix through it. Nothing is committed; the team lead reviews and commits.
-The latest run read HEAD 0a4d9dc and the working tree at 2026-09-29 10:21 JST. That working tree included the peer's
-uncommitted CLAUDE.md edit, which this lane only read. `derived/inputs.json` holds the sha256 of every file read.
+The map audit last read HEAD 856bd5a and the working tree at 2026-09-29 11:48 JST. That working tree included the
+peer's uncommitted CLAUDE.md edit, which this lane only read. `derived/inputs.json` holds the sha256 of every file
+read. The memo sweep's derived files read the memos at HEAD 856bd5a at 11:49 JST.
 
 Since the 263def3 run (05:24), these changes landed:
 - ebf8808 applied the document fixes this lane sent. All 13 document bindings now test FIXED.
@@ -20,7 +21,16 @@ Since the 263def3 run (05:24), these changes landed:
   2ae6675 (the map) and b0bf4c2 (this lane), then the printed-sum gate as ea3369a. The prose sum and the capital
   label followed as f058b8a (the map) and 0a4d9dc (this lane).
 - `social_spans_priced_count_2026_09_29` recomputed the five approximate values on the priced count, and their records
-  now read it (uncommitted).
+  now read it (8bdf62a, db03667, 5ccf86d).
+- The lead fixed the documents' lane-count crash and PM2.5 figures by hand in 8aaf046. `memo_sweep.py` then extended
+  the audit to the topic memos (uncommitted; see "Memo sweep, 2026-09-29"), and the lead fixed its flags in 869c7aa.
+- 8aaf046 rewrote three audited INDEX and FAQ lines, which stopped the audit. I re-anchored them (see "Document
+  numbers").
+- Each registry record that carried the default treatment now states its own basis (uncommitted; see "Registry
+  treatments, 2026-09-29").
+- 869c7aa also put the scale net on the priced count in an INDEX paragraph that no span covered. It is now the ninth
+  INDEX span (see "Document numbers"). The sweep exempts the outside-checks memo (see "Memo sweep, 2026-09-29").
+- db5840f and 856bd5a (candidate v4's engine and payload) changed no file the build, the audit or the sweep reads.
 
 ## Result
 
@@ -29,17 +39,17 @@ Since the 263def3 run (05:24), these changes landed:
 | overview_2026_09_28/groups.py | 267 | 251 | 46 | 251 |
 | overview_2026_09_28/build.py (hand-typed text and rows) | 14 | 10 | 1 | 10 |
 | overview_2026_09_28/template.html | 59 | 50 | 24 | 50 |
-| research/immigration-INDEX.md (current-result spans) | 247 | 214 | 0 | 214 |
-| research/immigration-objections-faq-2026-09-21.md | 201 | 126 | 0 | 126 |
+| research/immigration-INDEX.md (current-result spans) | 268 | 232 | 0 | 232 |
+| research/immigration-objections-faq-2026-09-21.md | 202 | 127 | 0 | 127 |
 | CLAUDE.md (main-case paragraph) | 14 | 14 | 0 | 14 |
-| Total | 802 | 665 | 71 | 665 |
+| Total | 824 | 684 | 71 | 684 |
 
 [CALCULATION: `audit_numbers.py` → `derived/number_audit.csv`, `derived/extracted_numbers.csv`]
 
 A bound number is the rendering of a `{{q:<id>|<view>}}` placeholder. The audit checks it against its record and lints
-the sentence around it, as the build does. The other 594 audited numbers are typed and checked through
-`source_map.csv`, as before. Of the 137 numbers not audited, 84 are marked `skip` in `source_map.csv` (the reason is on
-each row) and 53 are years in the routing files.
+the sentence around it, as the build does. The other 613 audited numbers are typed and checked through
+`source_map.csv`, as before. Of the 140 numbers not audited, 86 are marked `skip` in `source_map.csv` (the reason is on
+each row) and 54 are years in the routing files.
 
 ## Build-time sourcing as built
 
@@ -120,11 +130,15 @@ The main estimate at template 143 is now a placeholder too, so every part of the
 | unit | `$bn`, `$tn`, `$k`, `$`, `%`, `x` (a ratio or count), `year`, `M` | `$bn` |
 | shape | `scalar`; `ends` (low end, high end); `interval` (min, max); `central_interval` (central, min, max) | `ends` |
 | mid_round, ends_round | display rounding: decimals `0`–`2`, or a step `n5`, `n10`, `n100` | `1`, `1`: "$7.0bn (6.7–7.3)" |
-| case, period, population, comparison, treatment | what the number measures | September 27 main case; income year 2024; the union, priced 39.71M; none; cash, capital return in |
+| case, period, population, comparison, treatment | what the number measures | September 27 main case; income year 2024; the union, priced 39.71M; none: the group removed; cash; capital return in |
 | status | `file`, `file+text` (plus a constant stated only in prose), `text`, `inference` (combined here under a stated assumption), `needs_file` (no file measures it in the page's frame; the value is interim) | `file` |
 | must_name, forbid | case-insensitive regular expressions the quoting sentence (or a table row's label) must match, or must not match | `white` for the `gap_vs_white.*` records |
 | supersedes, note | the value the record replaced and where it came from; caveats | ladder 208's estimate before adoption, $9–15bn |
 | reader_note | the page's tooltip for an approximate record; may hold placeholders | empty: the record is not approximate |
+
+In `treatment`, "cash" means Social Security and Part A on their 2024 cash flows, not accrued (candidate v4's pension
+switch). The production term's cash and GDP measures are named as such. "Capital return in" means the 2–3% return on
+public capital that the September 27 case added. A record that is not a fiscal figure says what it measures.
 
 The views are:
 - one number: `mid`, `value`, `min`, `max`, `at_low_end`, `at_high_end`;
@@ -265,11 +279,226 @@ the page too. A positive control, a template copy with one marked number, brings
 
 ## Document numbers
 
-All 13 document bindings (`doc_bindings.csv`) test "FIXED: passes now" at 923dfbd, and the audit finds no flagged
+All 13 document bindings (`doc_bindings.csv`) test "FIXED: passes now" at 856bd5a, and the audit finds no flagged
 number in the INDEX, the FAQ or the CLAUDE.md paragraph. **No document fix is pending.** Since ebf8808, the INDEX
 edits for candidate v4 (f40e47e, 923dfbd) rewrote the lines that six INDEX anchors picked. I re-anchored them, dropped
 the rows whose text is gone, and mapped the new v4 numbers to the v4 lane's bands.csv and attribution.csv. All
 of them MATCH.
+
+8aaf046 put the PM2.5 and crash ranges and the fault-based crash figure on the priced 39.71M in the INDEX and the
+FAQ. Its rewrite broke three anchors, two in the INDEX and one in the FAQ, and the audit stopped with `[BLOCKED]`
+from then on. I re-anchored two rows, re-pointed five to
+`social_spans_priced_count_2026_09_29/derived/priced_spans.csv` (the crash range and the $40.6bn), and mapped the
+three new numbers: the PM2.5 range in both files and the INDEX's "39.71M". 869c7aa moved INDEX lines without
+changing an audited number. On 869c7aa all 668 audited numbers MATCH, and the 13 bindings still test FIXED.
+[CALCULATION: scratch `reanchor_8aaf046.py` → `source_map.csv`; `audit_numbers.py` → `derived/`]
+
+869c7aa also changed a paragraph outside the spans, "Benefits are priced to the same standard as the costs"
+(INDEX:233–247). It now gives the scale net on the account's count, +$13.7bn, beside the lane's +$13.9bn. The
+paragraph is now the INDEX's ninth span (`INDEX_SPANS`). Its 19 tokens are one year (1970–2000), two skips (the
+rule number 5 and the interval's 95%) and 16 numbers, all MATCH:
+
+| Printed | Source | Value |
+|---|---|---:|
+| $4.1bn ($2.6–13.3bn) | care lane, summary.csv: the additive channels' total | 4.1476 (2.5965–13.3496) |
+| $2.7bn; $1.5bn | the same file: native women's hours taxes; the elder-care Medicaid saving, net | 2.69; 1.49 |
+| $21.8bn | the care lane's partA_side_view_union_frame.csv: the gross consumer gain | 21.84 |
+| 0.75%; $34bn to $30bn | construction lane, supply_headline.csv, case A central: the cost fall; other renters' extra rent without and with the supply response, metro-local | 0.751; 33.86 → 30.42 |
+| $38.6bn; $24.9bn; +$13.9bn | scale lane, summary.csv, CZ 1990: the scale arm, the composition arm, the joint net | 38.65; −24.93; 13.93 |
+| $0.2bn | the joint net less the parts' difference, 13.927 − (38.647 − 24.929) | 0.21 |
+| −$56.6bn to +$84.4bn | the joint net's 95% interval | −56.57 to +84.42 |
+| +$13.7bn; 39.7M | restated_pairing.csv, the scale net on the priced count (`scale.net`); audit row 4's headcount | 13.67; 39.71M |
+| $109–677bn | scale lane, net_grid.csv: the central scale gain with the Moretti and the Iranzo–Peri college-share estimates | 109.3–676.9 |
+| $0.65bn | mobility lane, insurance_summary.json | 0.65 |
+
+[CALCULATION: scratch `map_benefits_span.py` → `source_map.csv`; `audit_numbers.py` → `derived/number_audit.csv`]
+
+"$34bn to $30bn" holds only as the metro-local pair. Its start is ladder 190's $34bn, the housing lane's long-run
+central, which is metro-local (33.86 in housing_transfer's arms_headline.csv). The construction lane's headline,
+which ladder 200 and real-costs:393 print, is the national-uniform pair, $33.5bn → $29.9bn, and 33.47 rounds to
+$33bn. The commit that wrote the INDEX pair, 66e098f, gives $33.5bn → $29.9bn in its body. Neither document names
+its geography.
+
+Against HEAD's `source_map.csv`, no row was dropped unaccounted for:
+- **6 keys went.** Two were re-anchored with the same number ($68.1bn and $10.6bn). Four held numbers that 8aaf046
+  replaced: the lane's crash range and $42.3bn, in the INDEX and the FAQ. Each replacement has its own row now.
+- **27 keys came in:** the two re-anchored rows, 7 for 8aaf046's new numbers and 18 for the benefits span.
+- **1 row changed:** the FAQ's $42.3bn under "Figures normalized" became $40.6bn, re-pointed to priced_spans.csv.
+
+Every scanned token has a row and every row a token: the audit prints no unused rows, and no token is UNMAPPED.
+`doc_bindings.csv` needed no change; no binding's anchor broke.
+
+The audit used to stop at the first broken anchor, and which one it named changed from run to run with set order. It
+now lists every broken anchor, sorted. Run on the source_map before the re-anchoring, it names all three, the same
+way twice.
+
+## Memo sweep, 2026-09-29
+
+The audit above reads the map and the INDEX and FAQ spans. The topic memos drift the same way, so `memo_sweep.py`
+reads every `research/immigration-*.md` except the confidence ladder, the 19 dated audits (a name holding "audit"
+and a date) and one memo exempt by its header (see "Exemption" below). Within a memo it skips fenced code, HTML
+comments, `Revisions` sections, bracketed record notes and source tags. It resolves the registry through
+`quantities.py`.
+
+A record's other values are the numbers a memo may still quote after the record moved on:
+- the sibling on the lane's own count (`X_lane` beside `X_priced`);
+- each number its `supersedes` names, tagged by what it differs by: the count (the raw 40.90M), an arm (road budgets
+  fixed, before the mixed-group correction) or a vintage;
+- the current value of a record that `supersedes` names by id (`case.main` names `case.schools_sept26`).
+
+27 records have 74 other values. A memo number quotes one when it rounds to it as printed, does not round to the
+current value, carries the record's unit and sits in a sentence naming the item. The item test keeps "Colombia 46.5%"
+and "Colombia's output grew by $46.5bn" off the PM2.5 records. The sweep flags a quote in two cases:
+- **Unlabelled.** Nothing near it names its basis in a label of its kind. A count takes the lane's `must_name` or a
+  count phrase ("on the CPS's 40.9M", "the lanes' own figure"), an arm takes its arm, and any kind takes a date, a past
+  tense or "from" just before it. In a table, a caption clause labels only the columns whose header shares a word with
+  it.
+- **Presented as current.** "Now" or "the adopted main case" stands just before it, or it is a range in the parenthesis
+  after a number that reads as the item's current value: "$10.6bn (−$57.7bn to +$74.3bn in the lane)". A label does
+  not clear this case.
+
+`derived/memo_sweep.csv` gives per quote: file, line, quoted value, record, current value, class, suggested wording,
+the other value with its origin, the label found and the sentence. `derived/memo_sweep_meta.json` records the
+revision, the memos read and skipped, the other values per record and the registry's sha256.
+
+### Result on HEAD 8aaf046
+
+Of 35 quotes of an other value, 11 are flagged, on 9 lines in 4 memos, and 24 pass as labelled (count 11, arm 10,
+vintage 3). [CALCULATION: memo_sweep.py → derived/memo_sweep.csv]
+
+| Class | Quotes | Where |
+|---|---:|---|
+| count_unlabelled | 9 | INDEX:243 +$13.9bn; outside-checks:256 and 281 $30.9bn; real-costs:148 14.0 / 12.0, :217 −46.5, :393 +13.9; winners:246 $32.34bn and $30.93bn |
+| arm_unlabelled | 2 | real-costs:145 28.9 (before the mixed-group correction); real-costs:156 $19.2bn (road budgets fixed) |
+
+The memos are `immigration-INDEX.md`, `immigration-outside-checks-2026-09-24.md`,
+`immigration-real-fiscal-and-social-costs-2026-09-23.md` and `immigration-winners-and-losers-2026-09-25.md`.
+
+**Hand check of all 11.** No false positives; two are borderline.
+- INDEX:243: "+$13.9bn … which counts in the fiscal-plus-social total". The total carries $13.7bn (real-costs:27).
+- real-costs:145: "28.9 full" in §3's table. The memo's summary table (line 19) prints 30.5 / 31.9.
+- real-costs:148: "14.0 / 12.0 … once roads respond". The summary table (line 23) prints 13.6 / 11.6.
+- real-costs:156: "The central … $19.2bn". Since September 27 the central lets roads respond (13.6 / 11.6), and
+  $19.2bn holds road budgets fixed.
+- real-costs:217: the column "Normalized, beside" prints the lane's −46.5. The caption's count label speaks to the
+  lane column only, and the sentence under the table gives −$45.5bn.
+- real-costs:393: "+13.9 … in the social rows since September 28". The social rows carry 13.7.
+- winners:246: "$32.34bn, not $30.93bn" are the lanes' raw-count values. The shares in that row were computed from
+  them, so the fix is to name the basis, not to swap the numbers.
+- outside-checks:256 and 281, $30.9bn: borderline. The sentences name no count, but the memo's header says "The
+  proposals below are kept as computed on the September 23 case". The sweep never reads a document header as a label.
+
+**Against the lead's list,** on 5ccf86d, before the 8aaf046 hand fix: 17 flagged. They include 7 of the 9 values the
+lead listed: $42.3bn at INDEX:185, FAQ:49, FAQ:168 and real-costs:226; the lane range after "$10.6bn" at INDEX:185 and
+FAQ:168 (count_as_current); and real-costs:217's −46.5. The other two, 217's 31.5 to 122.5 and 218's −57.7 to 74.3,
+sit in the column "Lane central (range)" under a caption naming "the lanes' own central and range on the CPS's
+40.9M". They pass as labelled, and 8aaf046 kept them. The remaining 10 flags at 5ccf86d are still open on HEAD, as is
+the −46.5, which 8aaf046 left.
+
+**After the fixes.** 869c7aa fixed six sites in three memos. On it the sweep finds 34 quotes, and flags only
+outside-checks:256 and 281, the borderline pair. [CALCULATION: memo_sweep.py --rev 869c7aa, to scratch]
+
+**Exemption.** The outside-checks memo is a dated audit whose name lacks "audit", so the name rule reads it. Its
+header says "The proposals below are kept as computed on the September 23 case.", so its figures are that case's by
+declaration, and the lead keeps them unedited. `EXEMPT` in memo_sweep.py maps the memo's path to that sentence and
+the reason, which memo_sweep_meta.json lists among the skipped memos. The exemption lasts only while the sentence
+stands. If the memo loses it, or the file is gone, the sweep stops with `[BLOCKED]`, so a memo rewritten to current
+values is swept again. `test_memo_sweep.py` tests both the skip and the stop.
+
+**Result on HEAD 856bd5a.** Of the 199 topic memos, the sweep reads 178 and skips 21: the 19 dated audits, the ladder
+and the exempt memo. It finds 31 quotes of an other value, all labelled (count 17, arm 11, vintage 3), and flags 0.
+Without the exemption it reads 179 memos and finds 34 quotes, 2 flagged: the exempt memo holds the two borderline
+$30.9bn quotes and one labelled $28.9bn. `derived/` holds the exempt pass. [CALCULATION: memo_sweep.py →
+derived/memo_sweep.csv, derived/memo_sweep_meta.json; scratch `sweep_noex.py` for the pass without it]
+
+**The lead's hand fixes, checked.** The sweep reads only other values, so I checked the numbers 8aaf046 and 869c7aa
+wrote into the real-costs memo against their sources. All 20 resolve:
+
+| Line | Printed | Source | Value |
+|---|---|---|---:|
+| 145 | 30.5 / 31.9 on the 39.7M | `victims.harm`; `headcount.priced` | 30.48 / 31.87; 39.71 |
+| 148, 167 | 13.6 / 11.6 | `congestion.item` | 13.63 / 11.64 |
+| 227 | $30.8–119.7bn (normalized −$45.5bn) | `pm25.span_priced`; priced_spans.csv's normalized central, whose magnitude is `pm25.normalized_priced` | 30.78–119.71; −45.53 |
+| 228 | −$55.1bn to +$70.8bn | `crash.span_priced` | −55.07 to +70.84 |
+| 228 | $40.6bn ($23.0–69.8bn); $42.3bn on the lane's count | `crash.fault_based_priced`; `crash.fault_based_lane` | 40.63 (22.96–69.84); 42.34 |
+| 394 | +13.7 | `scale.net` | 13.67 |
+| 395, 545 | +21.7; $22.0bn on the lanes' counts | restated_pairing.csv: restaurant variety 6.79, volunteering 5.98, consumer-side scale 2.13 and trade ties 6.78, restated; the published column | 21.69; 21.96 |
+
+[CALCULATION: scratch `verify_memo_changes.py` on HEAD 856bd5a]
+
+No registry record covers the four smaller benefits, so the sweep cannot see their sum drift (open item 7).
+
+**Limits.**
+- It sees only numbers the registry records as another value. Raw-count figures without a record pass: real-costs:145's
+  sensitivities (23.5–34.0, 15.4–45.3, 43.1), real-costs:148's "full span 2.0–30.8", and the scale lane's interval
+  (−56.6 to +84.4), printed beside the scale net at INDEX:244 (audited as a document number) and real-costs:394.
+  `scale.span_lane` has no priced sibling, so its value is a current one.
+- A statement of vintage or count at the head of a memo does not label its sentences. `EXEMPT` names the one memo
+  where such a statement covers the whole memo.
+- Pairing a caption clause with a column by a shared word is a heuristic. A clause that shares no word with any header
+  labels the whole table.
+- A number whose unit is written only on its partner ("$14.0 / 12.0bn") needs "bn" or "billion" as a word in its
+  clause. Real-costs:450's "$14.0" is not read; its partner is, and passes on the row's commit.
+- The controls pin current registry values, such as crashes by fault at $40.6bn. A registry change that moves one
+  stops the run with `[BLOCKED]` until the control is updated. `test_memo_sweep.py` runs the controls.
+
+**Validation,** 2026-09-29 11:21:30–11:23:01 JST on HEAD 8aaf046, which last changed the INDEX (after 5ccf86d), with
+the scratch script `memo_sweep_validate.sh`:
+- all 19 positive controls pass on every run. A failed control stops the run with `[BLOCKED]` and writes nothing;
+- two passes on HEAD give `cmp`-identical memo_sweep.csv and memo_sweep_meta.json, with `registry_equals_rev: true`;
+- a `--worktree` pass gives an identical CSV;
+- the pass on 5ccf86d is the comparison above;
+- pytest passes 5 tests (test_pairing.py 4, test_memo_sweep.py 1), and `ruff check --select F,E9` passes.
+
+A first run at 11:17:37–11:19:11 gave the same outputs; only the docstring changed between the two runs.
+
+The controls:
+- an unlabelled lane-count value is flagged, and the same value "on the CPS's 40.90M" is not;
+- another arm's value is flagged, a count label does not clear it, and its arm does;
+- an earlier case is flagged unless dated;
+- "from" marks only the number after it;
+- another unit, another item and the current value match nothing;
+- a lane range after the current central is flagged, on one line and across a line break, but not in a clause of its
+  own;
+- a dated case after "now" is flagged;
+- a caption's count label reaches only its column;
+- a Revisions section and a bracketed note are skipped.
+
+## Registry treatments, 2026-09-29
+
+48 of the registry's 79 records carried the default treatment "cash; capital return in", whatever they measured.
+Each now states its own basis. 11 keep the default because it is true for them: the September 27 case and the changes
+measured on it, both candidates' cash sets, the per-member figure and the tornado's spread.
+
+| Treatment now | Records |
+|---|---|
+| cash; no capital return (added September 27) | 8: the September 26 cases (`case.schools_sept26`, `case.first_year_response`, `schools.first_year_effect`) and the five runs measured on the September 24 case (`consumption_key.effect`, `finite_removal.*`) |
+| accrual at payable benefits, net of income tax on benefits (current law); capital return in | 3: `candidate_v3.revised_set_accrual_payable`, `candidate_v3.items_1_7_accrual_payable`, `candidate_v4.set_accrual_payable` |
+| a share of members, or of the net cost, from household balances on the September 27 case | 5: `household.*` |
+| a social cost beside the fiscal account (in deaths for one) | 4: the air and crash lanes' own-count records |
+| not a fiscal figure: a head count, a year, or a count or rate of calibration cases | 6: `headcount.*`, `instrument.power_lost_year`, `review.*` |
+| a basis of its own | 11: `capital_return.total` (an imputed resource cost, never a debt flow), `balance.absolute_hull` (the practitioner hull, no capital return), `scale.span_lane`, `scale.induced_receipts_lane`, `care.total`, `care.named_items`, `nest.direct_low_skill_change`, `comparators.us_whites` (A1 accrual or A3 cash, capital return in), `congestion.range`, `backcast.typical_year_change`, `ir5.lifetime_cost_55_65` |
+
+The same default was untrue in other columns of six records, and 14 fields changed with the treatments:
+- `review.*` (3): case "not a case: the reviewer calibration lane", period "the lane's run, 2026-09-29",
+  comparison "none";
+- `instrument.power_lost_year`: case "not a case: ladder 136's instrument test", period "the inflow window
+  2005–2023", comparison "none";
+- `backcast.typical_year_change`: case "complete account, September 20". The back-cast anchors its gap against the
+  average resident on the September 20 complete account (`backcast.py`, `anchors("shared")`), not on the September
+  27 case. The FAQ's "falls 4% or rises 11%" already calls it a gap against average residents.
+- `ir5.lifetime_cost_55_65`: case "IR-5 lifetime lanes (ladder 247)".
+
+Each record's basis was read from its source: the September 27 summary.json (its schools and first-year cases carry
+no capital return), the September 24 runs, the within-group, white-replacement, back-cast, scale and care lanes, the
+ladder, and v3's and v4's pension switch. The edit script refuses to write unless the 48 default records are exactly
+the 37 it changes plus the 11 it keeps, and each other field holds its expected old value. It writes through the csv
+module, which round-trips the file byte for byte. [CALCULATION: scratch `set_treatments.py` →
+`overview_2026_09_28/quantity_registry.csv`, 51 fields]
+
+No code reads `treatment`. With the committed registry swapped back in, the page, `number_audit.csv`,
+`extracted_numbers.csv`, `registry_values.csv` and `binding_tests.csv` come out byte-identical. The only difference is
+the registry's sha256 in `inputs.json` (see Validation).
 
 ## Validation
 
@@ -353,6 +582,40 @@ exits 0, and the how-to-read sentence on the dotted underline is back on that pa
 sentences holding the five values changed: they lost their marks, and two print $46bn and $41bn. The how-to-read
 paragraph also lost its last two sentences.
 
+The registry treatments and the re-anchored audit were validated at 2026-09-29 11:38:42–11:39:29 JST on HEAD 869c7aa
+plus the working tree, with the scratch script `treatment_validate2.sh`. It first swapped the committed registry
+back in and wrote a build, an audit and a registry check to scratch, then restored the edited registry (`cmp` rc 0):
+- two builds with the edited registry are `cmp`-identical, and identical to the build with the committed one (66
+  bindings pass);
+- two audits are `cmp`-identical, 668 of 668 MATCH. Against the committed registry, `number_audit.csv` and
+  `extracted_numbers.csv` are identical, and `inputs.json` differs in one line, the registry's sha256;
+- two registry checks are `cmp`-identical and identical to the committed registry's (79 records, 13 FIXED);
+- pytest passes 24 tests on the overview and this lane, and `ruff check --select F,E9` passes on audit_numbers.py;
+- the memo sweep's CSV on 8aaf046 is unchanged, and on 869c7aa it flags 2.
+
+Against the committed derived files, line numbers aside, `number_audit.csv` changes only at the lines 8aaf046
+rewrote (8 rows out, 11 in). `extracted_numbers.csv` changes there too, and at four year tokens whose locator moved
+with their lines (12 rows out, 15 in). `inputs.json` records the new HEAD and the new hashes of the registry, the
+INDEX, the FAQ, the ladder and source_map.csv.
+
+The final state was validated at 2026-09-29 11:48:26–11:49:13 JST on HEAD 856bd5a plus the working tree, with the
+scratch script `final_validate.sh`. It first swapped the committed registry in and wrote a build, an audit, a registry
+check and a sweep to scratch, then restored the edited registry (`cmp` rc 0). Every step below exited 0:
+- two builds are `cmp`-identical, and identical to the build on the committed registry (66 bindings pass);
+- two audits are `cmp`-identical: "audited 684 numbers (824 tokens): MATCH 684". On the committed registry,
+  `number_audit.csv` and `extracted_numbers.csv` are identical, and `inputs.json` differs in one line, the registry's
+  sha256;
+- two registry checks are `cmp`-identical and identical to the committed registry's (79 records, 13 FIXED);
+- two sweeps are `cmp`-identical: "swept 178 memos at 856bd5a (21 skipped): 31 quotes of other values, 0 flagged".
+  On the committed registry `memo_sweep.csv` is identical, and `memo_sweep_meta.json` differs in the registry's
+  sha256 and `registry_equals_rev`;
+- pytest passes 25 tests on both runs: the overview's `test_quantities.py` (13) and `test_build_sums.py` (6), and
+  this lane's `test_pairing.py` (4) and `test_memo_sweep.py` (2);
+- `ruff check --select F,E9` passes on audit_numbers.py, memo_sweep.py and test_memo_sweep.py.
+
+The control for the anchor check ran HEAD's `source_map.csv` against the current INDEX and FAQ. It stops with
+"[BLOCKED] 3 anchor(s): …" and names all three broken anchors.
+
 ## Open items
 
 1. **Done:** the lead committed both table changes (the v4 alternatives and the pairing's footing row) in 2ae6675.
@@ -382,6 +645,9 @@ paragraph also lost its last two sentences.
    that a quoting sentence says so too.
 
    They can stay, since ids are never reused, or be pruned.
+7. **The four smaller benefits have no record.** Real-costs:395 prints their sum on the priced count, +21.7 (21.69;
+   21.96 on the lanes' counts). Until 869c7aa it printed +21.9, which neither rounds to. A record reading the four
+   rows of restated_pairing.csv, with the lanes' counts as its other value, would let the sweep see that sum drift.
 
 ## Coverage
 
@@ -390,14 +656,17 @@ paragraph also lost its last two sentences.
 - build.py: the hand-typed text that reaches the page (LEDGER labels and notes, table labels), 14 tokens. Its table
   values are now all read from files and tested by the build's value bindings.
 - template.html: the body, lines 123–237, 57 tokens.
-- INDEX: 8 current-result spans, 247 tokens.
-- FAQ: 8 spans, 201 tokens.
+- INDEX: 9 current-result spans, 268 tokens.
+- FAQ: 8 spans, 202 tokens.
 - CLAUDE.md: the main-case paragraph, 14 tokens, read only.
+- Topic memos: 178 of the 199 `research/immigration-*.md` files, through memo_sweep.py, for the other values of 27
+  records only.
 
 **Not audited, with reasons:**
-- 84 tokens mapped as `skip`; `source_map.csv` gives the reason for each. They include ladder and entry references,
+- 86 tokens mapped as `skip`; `source_map.csv` gives the reason for each. They include ladder and entry references,
   chosen elasticities, interval labels, "per 1%" definitions and FAQ offsets outside the brief's scope.
-- 53 years in the routing files.
+- 54 years in the routing files.
+- The outside-checks memo, exempt from the sweep while its header keeps its figures on the September 23 case.
 - evidence_class.py's known-bias lines, 8 number tokens, outside the assigned scope.
 - The INDEX's bracketed history, per-lane table rows and sections after the back-cast.
 - Numbers inside the ladder text itself. A ladder entry that is stale against its own lane would pass.
@@ -414,6 +683,9 @@ paragraph also lost its last two sentences.
   prints 7.7%.
 - The FAQ calls the 0.47 panel "the only within-state test". gg_response_county_iv_2026_09_23 is a later county IV
   with state fixed effects that cannot test 0.59–0.84.
+- The INDEX's "$34bn to $30bn" is the construction lane's metro-local pair; real-costs:393's "$33.5bn → $29.9bn" is
+  its national-uniform headline. Both are the lane's numbers, and neither sentence names its geography (see
+  "Document numbers").
 
 ## How to rerun
 
@@ -421,6 +693,7 @@ paragraph also lost its last two sentences.
 OPENBLAS_NUM_THREADS=1 uv run --no-project --offline python3 infra/immigration-fiscal/overview_2026_09_28/build.py
 uv run --no-project --offline python3 infra/immigration-fiscal/number_drift_audit_2026_09_29/audit_numbers.py
 uv run --no-project --offline python3 infra/immigration-fiscal/number_drift_audit_2026_09_29/registry_check.py
+uv run --no-project --offline python3 infra/immigration-fiscal/number_drift_audit_2026_09_29/memo_sweep.py
 uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q infra/immigration-fiscal/overview_2026_09_28/ \
   infra/immigration-fiscal/number_drift_audit_2026_09_29/
 ```
@@ -438,6 +711,11 @@ uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q infra/imm
   unit's numbers and rows are aligned by the number as shown (`_align`, `pair_tokens`; `test_pairing.py`).
 - **Document bindings.** registry_check.py tests the INDEX and FAQ numbers that should equal a record. It exits 1 when
   a record fails to resolve or a verdict is WRONG.
+- **The memo sweep.** `memo_sweep.py` reads the memos at `--rev` (default HEAD) or on disk (`--worktree`) and writes
+  to `derived/` or `--out DIR`. It exits 0 with flags; the flags are the output. A failed control, or a record with
+  other values but no entry in `ITEM`, stops it with `[BLOCKED]`.
+- **Exempting a memo.** Add its path to `EXEMPT` with a sentence the memo must keep and the reason. The sweep stops
+  with `[BLOCKED]` if the sentence or the file goes.
 - **Editing the CSVs.** The registry, the bindings and `source_map.csv` are the source of truth. Edit them directly;
   the scratch generators that first wrote them are not kept.
 
@@ -593,3 +871,31 @@ uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q infra/imm
     so.
   - The how-to-read sentence is conditional on a marked number (`APPROX_NOTE`). Validation ran at 10:21:40–10:23:51
     (see Validation).
+- 2026-09-29 11:20:48 JST: the lead's task: extend the audit to the living topic memos, which it did not reach. The lead
+  committed the priced-count work (8bdf62a, db03667, 5ccf86d) and fixed the listed document sites in 8aaf046.
+  - Wrote `memo_sweep.py` and `test_memo_sweep.py`. Built on 5ccf86d, the revision the lead's list describes, then run
+    on HEAD 8aaf046.
+  - Fixes while building: "ladder N" is not a vintage label; a caption labels only its own column; "from" marks only
+    the number after it; a bare "$" is not a unit, which dropped a "+$464" per-household match; signed memo numbers
+    match the registry's magnitude records; the presented-as-current test covers a range on the next line.
+  - Result, hand check and validation (11:17:37–11:19:11) are in "Memo sweep, 2026-09-29".
+- 2026-09-29 11:23:38 JST: corrected memo_sweep.py's docstring on units and caption scope and reran the validation at
+  11:21:30–11:23:01. The outputs are byte-identical to the 11:17 run.
+- 2026-09-29 11:39:38 JST: the lead's added task: give each registry record carrying the default treatment its own
+  basis, then show that the outputs do not move. Meanwhile the lead committed 869c7aa, which fixed the sweep's flags.
+  - A first validation at 11:30:34 found the audit `[BLOCKED]` before and after the edit, on two different anchors.
+    8aaf046 had broken three (2 INDEX, 1 FAQ), and the audit named whichever its set order met first. I re-anchored
+    them, re-pointed five rows to priced_spans.csv and mapped three new numbers. The audit now lists every broken
+    anchor, sorted.
+  - 48 records carried the default: 37 changed, 11 kept, plus 14 adjacent fields (see "Registry treatments,
+    2026-09-29"). Validation ran at 11:38:42–11:39:29.
+- 2026-09-29 11:58:51 JST: the lead's task on HEAD 869c7aa or later: repair the anchors for the new text, exempt the
+  outside-checks memo, refresh derived/ on HEAD and validate everything twice. HEAD is 856bd5a; db5840f and 856bd5a
+  touch no input of this lane.
+  - The 8aaf046 anchors were already repaired. 869c7aa's scale net sits in the INDEX's benefits paragraph, which no
+    span covered. It is now a ninth span, with 18 rows mapped: 16 MATCH, 2 skips. "$34bn to $30bn" matched only as
+    the construction lane's metro-local pair; the lane's headline pair is national-uniform (see "Document numbers").
+  - The sweep exempts the outside-checks memo under its header sentence and stops if the sentence goes; a second
+    test covers it. The 20 numbers the lead's commits wrote into the real-costs memo resolve to their sources.
+  - Validation ran at 11:48:26–11:49:13: 684 of 684 MATCH, 0 flagged in 178 memos, 25 tests, every output
+    identical on its second run.
