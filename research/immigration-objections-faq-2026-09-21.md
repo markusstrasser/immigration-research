@@ -46,7 +46,7 @@ estimates (entry 14). No ratio of "offsets to cost" can be formed from these.
 costs and benefits to the fiscal account at central values (entry 4). Its low end assumes
 Mexican-origin offending equals the Hispanic average (fiscal $317.5bn, victims $30.5bn); its high
 end assumes it sits above that average, as custody does (fiscal $387.4bn, victims $31.9bn).
-Figures normalized against the average resident and the crash figure charged by fault ($42.3bn)
+Figures normalized against the average resident and the crash figure charged by fault ($40.6bn)
 sit beside it and are never added. Property values stay out. The first-year budget response
 ($201–246bn) and fully proportional services ($347–401bn) are scenarios of the same account, not
 earlier estimates.
@@ -163,9 +163,9 @@ stacked full span of $142–757bn. It contains:
 - the group's unreimbursed hospital care, borne by hospitals, physicians and private payers,
   $3.1–5.3bn;
 - the congestion that remains once road budgets respond, $11.6–13.6bn;
-- fine particles (PM2.5) from the group's consumption, $68.1bn;
+- fine particles (PM2.5) from the group's consumption, $68.1bn ($30.8–119.7bn across the lane's grid);
 - road crashes, other residents' losses with the group's traffic against without it, $10.6bn
-  (−$57.7bn to +$74.3bn in the lane); the figure that charges crashes by fault, $42.3bn, sits beside it;
+  (−$55.1bn to +$70.8bn across the lane's grid); the figure that charges crashes by fault, $40.6bn, sits beside it;
 - fear and avoidance among residents who are not victims, $10.3bn, while private security and
   school disruption come out slightly below the group's share (−$0.5bn and −$1.9bn);
 - the housing net, a small gain to other residents of $0.7–3.4bn, although their renters pay
@@ -732,3 +732,4 @@ they get more prominence.
   (was $416–491bn), $10.4–12.3k per member (was $10.2–12.0k). Concept affected: the population the social rows and
   the per-member figures use.
 - 2026-09-29 (number drift audit): entry 2's general government is $28.2–40.0bn (28.237); the care items named add to $4.2bn; the scale net is $13.7bn on the priced count, its interval and induced receipts on the lane's CPS count; the direct low-skill estimates move the production term $1.5–4.7bn (1.497 was rounded twice to $2bn). Concept affected: none; rounding and count basis only.
+- 2026-09-29 (priced-count spans): the PM2.5 and crash ranges and the fault-based crash figure are now on the 39.71M the account prices, like the central values: crashes −$55.1bn to +$70.8bn (was −$57.7bn to +$74.3bn on the CPS count), by fault $40.6bn (was $42.3bn), PM2.5 $30.8–119.7bn ([lane](../infra/immigration-fiscal/social_spans_priced_count_2026_09_29/RESULT.md)). Concept affected: none; the count the ranges are on.
