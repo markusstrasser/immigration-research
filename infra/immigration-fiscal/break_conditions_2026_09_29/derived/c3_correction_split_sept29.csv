@@ -1,0 +1,5 @@
+reading,end,spec,v4_items_only_bn,receipt_edits_only_bn,spending_edits_only_bn,all_edits_bn,tax_side_move_bn,spending_side_move_bn,interaction_bn,net_move_bn,taxes_move_by_line_type_bn,spending_move_by_line_type_bn,oasdi_receipts_move_bn,accrual_follow_through_bn
+pension_rebuilt,low_end_48,48.0000,382.1430,415.9127,337.6449,371.4146,33.7697,-44.4981,-0.0000,-10.7284,44.4304,-55.1589,-10.9490,-10.6607
+pension_rebuilt,high_end_11,11.0000,446.1504,480.5246,400.4668,434.8410,34.3742,-45.6836,0.0000,-11.3094,45.8421,-57.1515,-11.7780,-11.4679
+increments_held,low_end_48,48.0000,382.2765,426.7070,326.9842,371.4146,44.4304,-55.2924,-0.0000,-10.8619,44.4304,-55.2924,-10.9490,-10.6607
+increments_held,high_end_11,11.0000,445.9097,491.7517,388.9989,434.8410,45.8421,-56.9108,-0.0000,-11.0687,45.8421,-56.9108,-11.7780,-11.4679
