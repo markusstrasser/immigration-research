@@ -489,6 +489,12 @@ GROUPS = [
             dict(refs=[150, 168, 171],
                  text="India-born adults have a balance of about +$24k a year each. For whites it is +$13k.",
                  why="How well degrees pay depends on the admission route more than on the origin country."),
+            dict(refs=[276, 277],
+                 text="On the full account with social costs, Indian-origin residents benefit others by about "
+                      "$10k per member a year (9.3–10.8), and by about $7.7k (7.1–8.4) at white ages.",
+                 why="Arrivals since 1995 are as selected as earlier ones. Home region splits the group: "
+                     "south-Indian speakers near the 80th percentile, Punjabi speakers at the 47th. "
+                     "Irregular arrivals are under-counted."),
             dict(refs=[71, 72, 73],
                  text="In Europe, composition explains most of the immigrant crime gap but not the gap of "
                       "their children.",

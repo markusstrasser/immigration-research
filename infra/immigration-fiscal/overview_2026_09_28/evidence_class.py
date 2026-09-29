@@ -111,6 +111,8 @@ CLASS = {
     263: ("sample", "arithmetic", None),
     259: ("sample", "arithmetic", None),
     150: ("sample", "arithmetic", None),
+    276: ("sample", "arithmetic", "Surveys under-count recent irregular arrivals, the least-selected part of the flow. "
+                                  "That makes the group look slightly better than it is."),
     71: ("count", "tabulated", None),
     # status
     157: ("sample", "fitted", "Status is imputed. Assumptions about how many new arrivals the survey misses move "
