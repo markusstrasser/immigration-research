@@ -306,6 +306,23 @@ def test_cases_chain_and_configure(tmp_path):
     assert not any(k in wl.PATHS for k in wl.CASE_PATHS)
 
 
+def test_sept29_dry_run_never_writes_derived(tmp_path, monkeypatch):
+    """--dev-unpinned reads a case's uncommitted upstream files from the working tree and writes outside derived/ only;
+    September 29's group frame is on the account's count."""
+    monkeypatch.setitem(wl.CASES, "sept29", dict(wl.CASES["sept29"]))
+    for out in (None, wl.HERE / "derived", wl.HERE / "derived" / "sept29"):
+        with pytest.raises(SystemExit, match="outside derived"):
+            wl.configure("sept29", out, dev_unpinned=True)
+    wl.configure("sept29", tmp_path, dev_unpinned=True)
+    assert wl.DERIVED == tmp_path.resolve() and wl.PATHS["specs"] == tmp_path.resolve() / "fiscal_specs.csv"
+    assert all(wl.CASE[k] is not None for k in ("base", "debt", "debt_files", "gen"))
+    assert wl.CASE["group_weights"] == "row4" and wl.counterfactual() == wl.CF_ROW4 and "39.7m" in wl.CF_ROW4
+    rel = "infra/immigration-fiscal/winners_losers_2026_09_24/key_map.csv"
+    assert wl.git_show(rel, wl.WORKTREE) == (wl.ROOT / rel).read_bytes()
+    wl.configure("sept27", tmp_path)
+    assert wl.counterfactual() == wl.CF and wl.DEV["unpinned"] == []
+
+
 def test_page_rows_follow_the_case():
     wl.configure("sept26_schools")
     assert wl.page_rows() == wl.PAGE

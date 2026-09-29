@@ -565,3 +565,89 @@ gates (−21). These gates are new:
 - Nothing outside this directory was edited, and nothing was committed.
 
 Model self-report: claude-opus-5-5[1m], lane agent, 2026-09-24/25.
+
+## v4 case (sept29), 2026-09-29
+
+**Verdict:** On the v4 case ($371.4146 / $434.8410bn), pooled within SPM units, 17.9% of other residents come out ahead under tax-share financing (a) and 17.1% under per-person cuts (b), against 17.8% and 17.0% on September 27; the stacks give 11.1–24.4% under (a). The person count gives 16.9% under both, as on September 27. Taxpayers' fiscal channel is $394.4bn at central values (September 27: $349.3bn). Of it, $74.9bn is the pension accrual, which nothing finances in 2024. It sits with the future payers of Social Security and Medicare, beside the borrowed part ($13.1bn), and is not allocated to anyone living today. So the social net on today's residents falls in size, from −$386.6bn to −$360.6bn, while the case rises $48.5bn. The capped programs, now including public housing's deficit, fall on eligible households without the aid: $8.1bn (was $5.1bn). The group's own rows are now on the account's count, 39.71m members, with the CPS's 40.9m beside them. [CALCULATION: `specs.cjs --case sept29` and `winners_losers.py --case sept29`, pinned; `derived/sept29/`] [FRAMING-SENSITIVE: the accrual's payer]
+
+claude-opus-5-5
+
+**What runs.** `node specs.cjs --case sept29` evaluates the September 27 case (its band variant `sept27_case` in the adopted lane's `main_case_bands.csv`) and the adopted case with their own packages. `winners_losers.py --case sept29` allocates the adopted case and keeps September 27 as the positive control. Both write to `derived/sept29/`; `derived/` keeps the September 27 run. Pins in `CASES["sept29"]`:
+- the distribution lane at 492bf32 (`derived/sept29/`, `case_ends_sept29.json`);
+- the debt lane at 7e1b500 (`derived/sept29/`: `stocks.csv`, `summary.json` and the per-correction files);
+- the generation account at aa1f53b (`generation_results_sept29.csv`);
+- the propagation lane at 911afa6 (`sept24_propagation_2026_09_24/derived/sept29/`). As for every case, its real-costs totals and band variants are read from the working tree, which equals 911afa6 (`git diff 911afa6` empty; `sources_manifest.csv` holds their sha256);
+- the debt lane's legacy interest (`SEPT29_INTEREST`): 30.7514 / 41.4794, gated at 5e-4 against `stocks.csv` at 7e1b500 (30.751354 / 41.479394);
+- the ladder entry is 275 (d40e085), as the lead set; there is no new number.
+
+`--dev-unpinned` is for dry runs before an upstream commit lands. It reads the missing pins' files from the working tree and stops unless `--out-dir` lies outside `derived/` (tested). The dry run used it; the final run does not.
+
+Reproduce, from the repository root:
+- `node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case sept29`
+- `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case sept29`
+
+**Channels, central values, $bn a year** (`derived/sept29/channels.csv`):
+
+| Channel | September 27 | September 29 |
+|---|---:|---:|
+| Adopted main case, other residents' net (fiscal + wages) | −354.6 | −403.1 |
+| Fiscal channel (taxpayers) | −349.3 | −394.4 |
+| — cash financed today | −291.2 | −260.6 |
+| — return on public capital (never borrowed) | −44.7 | −45.8 |
+| — federal part financed by borrowing (future taxpayers) | −13.4 | −13.1 |
+| — pension accrual (future payers of Social Security and Medicare) | — | −74.9 |
+| Displaced beneficiaries of the capped programs | −5.1 | −8.1 |
+| Wages (production on row 4) | −0.2 | −0.6 |
+| Social net on today's residents | −386.6 | −360.6 |
+| Debt legacy interest (beside, never added) | 30.9–41.6 | 30.8–41.5 |
+
+The channels outside the budget do not change: renters −33.9, landlords +37.4, victims −30.9, congestion −13.0, unreimbursed care −4.4 and the rest. Each is taken as its lane publishes it. Those lanes price the CPS's 40.9m, not the account's 39.71m: each pins the union at 40,896,574 (housing_transfer `arms.py` TARGET, which scales the ACS metro counts to it; congestion and its long-run re-derivation; care; scale spillovers; labor mobility; the victim lane's target population). This lane does not re-estimate them. Where a channel is linear in the count, the first-order correction is × 0.971 (39.712 / 40.897), about $1.3bn on the social net of today's residents. [INFERENCE; not computed]
+
+**Share of other residents ahead** (`net_shares.csv`, the social net, central; stacks least to most costly in brackets):
+
+| Count | (a) tax-share | (b) per person |
+|---|---|---|
+| Pooled within SPM units | 17.8 → **17.9** (11.1–24.4) | 17.0 → **17.1** (11.4–22.4) |
+| Person | 16.9 → **16.9** (12.5–20.9) | 16.9 → **16.9** (12.5–20.8) |
+
+The share barely moves. The accrual leaves today's persons, and the rest of the case's rise falls on the same payers in the same proportions.
+
+**The group itself, on the account's count** (`group_frame.csv`; the CPS's published weights in `group_frame_cps_published.csv`):
+
+| Item | Row 4 (39.71m) | CPS published (40.90m) |
+|---|---|---|
+| Direct fiscal transfer received (A, sign flipped), $bn | +412.8 (383.1–442.5) | the same |
+| — per member | $10,395 | $10,094 |
+| First generation's market gain over its Mexico earnings, $bn | +201.9 (176.6–218.2) on $340.1bn of US earnings, 11.04m members | +224.6 (196.5–242.8) on $378.4bn, 12.22m |
+| — per Mexico-born member | $18,290 | $18,377 |
+| Wage competition among the group's own workers, high school or less (ε ∞), $bn | −18.4 (−14.6 to −22.2) | −19.5 |
+| Same, ε 3 | −31.6 | −34.7 |
+| Wage gain of the group's workers with some college or more (ε ∞) | +5.3 | +5.5 |
+| Victims inside the group, per member | −$506 | −$492 |
+| The account's split by generation (minors with their parents), $bn | G1 169.4–197.4, G2 110.7–121.8, G3+ 91.4–115.6 | the same (the account's own rows, on row 4) |
+
+[CALCULATION: `derived/sept29/group_frame.csv` against `group_frame_cps_published.csv`]
+
+**Rules designed.**
+- **The group frame's count** (the lead's question of 11:23). Every person-based group row is on the account's row-4 weights: A per member, the first generation's earnings and market gain, the group's own wage rows, the victims per member and the member counts. `row4_group_weights` uses the base lane's row-4 rule, the same mask and factors as `v4_inputs.py` (production_row4.json: the Mexico-born naturalized × 0.8556 and noncitizens × 0.7781 outside California and Texas; no other resident moves). It gates the grid file's sha256, each cell's records and CPS population, that only group records move, and the group's count, 39,712,493.33. The published 40.9m frame stays beside it in `group_frame_cps_published.csv`. The counterfactual label names 39.7m. The other residents, the payers, are the same persons on the same weights under both frames. Alternative: keep the published 40.9m frame; its per-member A would divide the 39.71m account's total by 40.90m, 2.9% too low. The one other place the group's weights enter, the cut of the ten states with the most members, keeps its set on row 4: CA, TX, AZ, IL, CO, WA, FL, NC, GA and NV (Nevada and Georgia swap ranks; the cut is membership, so it does not move).
+- **The pension accrual** is a fourth financing part (the debt lane's `accrual_bn`, all federal). It goes to the future payers of Social Security and Medicare (`future_pension_accrual`) and is left out of today's persons. Alternative: allocate it today on the federal tax key, as if the trust funds' later outlays were prefunded now (registry note).
+- **Production on row 4.** The case's wages and F come from the base lane's row-4 re-solve, gated there against the case's grid; the September 27 control keeps the published rows.
+- **Public housing's deficit** is capped like rental assistance, on rental assistance's key (the base's `CAPPED_KEY_OF`).
+
+**The two fiscal-channel centrals.** This lane's $394.4bn is the case's mid, $403.1bn, less −P ($0.6bn) and the capped programs ($8.1bn). The distribution lane's $395.7bn adds $1.3bn of F difference (its central scenario's F, 10.26 against the engine's 8.98 at 48 / 11). The bridge is in the distribution lane's RESULT.
+
+**Gates.**
+- Cross-check: at 48 / 11 the fiscal channel's A is −383.094429 / −442.524231 (the base's one definition), and the engine's is −383.094478 / −442.524197. That matches −383.0945 / −442.5242 at the oracle's rounding, 1e-4.
+- `specs.cjs --case sept29`: 25 PASS. The band is 371.4146–434.8410 against `main_case_bands.csv` (adopted), the September 27 control gives 321.8194–387.3701 (`sept27_case`), and each has its payload's 13 and 4 line responses.
+- `winners_losers.py --case sept29`: exit 0, 524 gates: the dry run's 523 and `debt_legacy_pinned_sept29`. Every figure equals the dry run's; only provenance strings differ (the pins' commits in place of the working tree in `channels.csv`, `group_frame*.csv`, `sources_manifest.csv` and `inputs.json`).
+- `scripts/rerun_lane.py` over the four commands (`specs.cjs` and `winners_losers.py`, the default and `--case sept29`), twice: IDENTICAL, 59/59 files both times. The first pass exited 3 only because `test_winners_losers.py` is not a rerun command; the second passed `--allow-unrun` for it and exited 0.
+- Old outputs unchanged: no file under `derived/` outside `derived/sept29/` differs from HEAD.
+- pytest: 17 passed, including the dry-run test.
+
+**Log (times from `date` calls).**
+- 20:58 JST: resumed after the 20:51 reboot. `specs.cjs` and `winners_losers.py` carried the sept29 edits made before it.
+- 22:05: `specs.cjs --case sept29` into scratch, 25 PASS.
+- 22:05–22:08: `winners_losers.py --case sept29 --dev-unpinned`. The first run stopped on a merge bug in `inputs.json`'s production metadata (a duplicate `weights` key); after the fix, exit 0 with 523 gates.
+- 22:17–22:18: rerun_lane on the default case, IDENTICAL 35/35. pytest 17 passed.
+- 22:33: the pins landed (debt 7e1b500, generation aa1f53b, propagation 911afa6); `SEPT29_INTEREST` set from `stocks.csv` at 7e1b500. `specs.cjs --case sept29` (25 PASS; both files identical to the dry run's) and `winners_losers.py --case sept29` (exit 0, 524 gates) into `derived/sept29/`, finished before 22:35:40.
+- 22:35:40–22:39:14: rerun_lane pass 1, IDENTICAL 59/59 (exit 3: the test file). 22:39:26–22:47:15: pass 2 with `--allow-unrun`, IDENTICAL 59/59, exit 0. 22:47:20: pytest 17 passed.

@@ -17,7 +17,12 @@
  *                          (main_case_schools_full_2026_09_26: schools at full average cost, response 1);
  *   --case sept27          adopted_2026_09_26_schools and adopted_2026_09_27 (main_case_long_run_2026_09_27:
  *                          long-run road and park responses, rental assistance at 1, every government
- *                          enterprise and the return on public capital).
+ *                          enterprise and the return on public capital);
+ *   --case sept29          adopted_2026_09_27 (its lane's package, at its band variant sept27_case in SEPT29_LANE's
+ *                          main_case_bands.csv) and adopted_2026_09_29 (SEPT29_LANE: candidate v4, adopted
+ *                          2026-09-29), written to derived/sept29/ beside the default files.
+ * A payload's line responses are the meta.responses entries with a low and a high other than general government
+ * (a receipt under its override id): four on September 27, thirteen on September 29.
  * The specification grid and responses come from the packages, whose MAIN_SPECS carry the responses
  * of their payload's meta.responses (gated). Each model's engine state is its package's stateFor(), the
  * one definition (main_case_2026_09_24/package.cjs; the September 27 package adds the long-run lines,
@@ -46,7 +51,7 @@
  * lane's per_spec.csv (the mean of the two fill-in methods) in cost, engine cost and every capital column
  * at every specification.
  * Run: node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs [--case sept26_schools] [--out-dir DIR]
- * (default output: derived/, the file names winners_losers.py reads).
+ * (default output: derived/, the file names winners_losers.py reads; a case with its own directory, derived/<out>).
  */
 "use strict";
 const fs = require("fs");
@@ -54,6 +59,7 @@ const path = require("path");
 
 const HERE = __dirname;
 const FISCAL = path.join(HERE, "..");
+const SEPT29_LANE = "main_case_2026_09_29";
 // case -> its main-case lane, and its two models in the order written: [name, payload lane or null for
 // the explorer model, variant in the lane's main_case_bands.csv, the package whose MAIN_SPECS it uses].
 const CASES = {
@@ -69,6 +75,9 @@ const CASES = {
   sept27: { lane: "main_case_long_run_2026_09_27", models: (P) => [
     ["adopted_2026_09_26_schools", "main_case_schools_full_2026_09_26", "schools_case", P.PSCHOOLS],
     ["adopted_2026_09_27", "main_case_long_run_2026_09_27", "adopted", P]] },
+  sept29: { lane: SEPT29_LANE, out: "sept29", models: (P) => [
+    ["adopted_2026_09_27", "main_case_long_run_2026_09_27", "sept27_case", P.SEPT27],
+    ["adopted_2026_09_29", SEPT29_LANE, "adopted", P]] },
 };
 const opt = (name, fallback) => {
   const i = process.argv.indexOf(name);
@@ -79,7 +88,7 @@ if (!CASES[CASE]) {
   console.error(`unknown case ${CASE}; one of ${Object.keys(CASES).join(", ")}`);
   process.exit(2);
 }
-const OUT = path.resolve(opt("--out-dir", path.join(HERE, "derived")));
+const OUT = path.resolve(opt("--out-dir", path.join(HERE, "derived", CASES[CASE].out || "")));
 const P = require(path.join(FISCAL, CASES[CASE].lane, "package.cjs"));
 const { Engine, MODEL } = P;
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(FISCAL, rel), "utf8"));
@@ -145,11 +154,15 @@ for (const [caseName, payloadLane, variant, pkg] of CASES[CASE].models(P)) {
       && [r.school.growth, r.school.decline].includes(s.school)));
     const cap = payload.meta.capital_return;
     if (cap) {
-      // Line and receipt responses at the specification's reading, and the rate of the return.
+      // Line and receipt responses at the specification's reading, and the rate of the return. The line responses
+      // are exactly the meta.responses entries with a low and a high other than general government.
+      const ids = JSON.stringify(Object.entries(r)
+        .filter(([k, v]) => v && typeof v === "object" && "low" in v && "high" in v && k !== "general_government")
+        .map(([k, v]) => v.override || k).sort());
       const want = (s, id) => (id.startsWith("receipt:") ? r[id.slice(8)].low : r[id][s.reading]);
       gate(`${caseName}: every specification's line responses and rate are the payload's meta`, specs.every((s) =>
-        Object.keys(s.line_responses).length === 4 && Object.entries(s.line_responses).every(([id, v]) => v === want(s, id))
-        && s.rate === cap.rates[s.reading] && s.enterprises === cap.enterprises));
+        JSON.stringify(Object.keys(s.line_responses).sort()) === ids && Object.entries(s.line_responses).every(([id, v]) => v === want(s, id))
+        && s.rate === cap.rates[s.reading] && s.enterprises === cap.enterprises), `${JSON.parse(ids).length} line responses`);
     }
   }
   const results = specs.map((spec) => Object.assign({ spec }, evaluate(pkg, m, spec)));
