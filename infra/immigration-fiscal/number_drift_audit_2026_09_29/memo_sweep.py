@@ -8,6 +8,12 @@ A record's other values are the numbers a memo may still quote after the record 
                 earlier vintage)
     referenced  the current value of a record that `supersedes` names by id (case.main supersedes
                 case.schools_sept26)
+    registry    the registry's own value of a record in ADOPTED. The registry follows the evidence map, which stays on
+                the September 27 case until the operator moves it; the main case adopted on 2026-09-29 is current
+                for the memos. A record in ADOPTED takes its current value from the adopted lane (the pairing's
+                from the propagation lane's run of that case), and its registry value becomes an earlier vintage
+                ("$322–387bn" as the main case is flagged, "$371–435bn" passes; "$414–488bn" as the pairing is
+                flagged, "$463–536bn" passes).
 An other value that equals the record's current value at the precision it is printed with is dropped.
 
 A memo number quotes an other value when, after the audit's masks (dates, ladder and item references, hashes):
@@ -19,10 +25,10 @@ A memo number quotes an other value when, after the audit's masks (dates, ladder
       unit);
     - its sentence names the item (ITEM, by record prefix; ITEM_EXTRA for single records).
 Its kind is what the other value differs by: count (a sibling; a superseded number on the raw 40.90M), arm (a
-superseded number whose `supersedes` piece names an arm) or vintage (the rest, and referenced records). It names its
-basis when its clause (the sentence up to a ";"; in a table, the cell's clause, the row's first cell and the column's
-header, and for all but the past-tense test the caption's clauses that speak to its column: caption_for) carries a
-label of its kind:
+superseded number whose `supersedes` piece names an arm) or vintage (the rest, and referenced and registry values).
+It names its basis when its clause (the sentence up to a ";"; in a table, the cell's clause, the row's first cell and
+the column's header, and for all but the past-tense test the caption's clauses that speak to its column:
+caption_for) carries a label of its kind:
     count     COUNT_LABEL or the sibling's must_name
     arm       ARM_LABEL
     vintage   the referenced record's must_name, COUNT_LABEL or ARM_LABEL
@@ -47,7 +53,9 @@ Positive controls run first (CONTROLS), and a failed control writes nothing:
     - the same value "on the CPS's 40.90M" is not;
     - a lane range in the parenthesis after the current central, and a dated value after "now", are flagged;
     - "Colombia 46.5%" and the current value match nothing;
-    - a Revisions section and a bracketed note are skipped.
+    - a Revisions section and a bracketed note are skipped;
+    - the adopted case passes as the main case, and the September 27 case is flagged as current, unlabelled or
+      after "now", and passes when named (total and per member).
 The memos are read at a git revision (`--rev`, default HEAD), or on disk with `--worktree`. The registry is read on
 disk through quantities.py; derived/memo_sweep_meta.json records whether it equals the revision's. Writes
 derived/memo_sweep.csv and derived/memo_sweep_meta.json (or to `--out DIR`). Exits 0 with flags; the flags are
@@ -80,6 +88,37 @@ EXEMPT = {
         "a dated audit: its header keeps its proposals as computed on the September 23 case, so its figures are "
         "that case's by declaration"),
 }
+
+# the main case adopted on 2026-09-29 (ladder 275), current for the memos while the registry follows the evidence map
+# on September 27: record id → (path, field, expr), on the adopted lane's summary or, for the pairing, on the
+# propagation lane's run of that case (911afa6)
+ADOPTED_LANE = "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json"
+PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv"
+_PAIR = "csv:section=7&column=pairing_on_priced_count&item=published pairing"
+ADOPTED = {
+    "case.main": (ADOPTED_LANE, "a=json:main_case", "(a[0], a[1])"),
+    "case.per_member": (ADOPTED_LANE, "a=json:main_case ;; p=@infra/immigration-fiscal/main_case_decomposition_2026_09_29/"
+                        "derived/headcount.csv@csv:cut=all&group=union|row4", "(a[0]*1e6/p, a[1]*1e6/p)"),
+    "pairing.total": (PAIRING_LANE, f"l={_PAIR} (low)|sept29 ;; h={_PAIR} (high)|sept29", "(l, h)"),
+    "pairing.per_member_priced": (PAIRING_LANE, f"l={_PAIR} per group member (low)|sept29 ;; "
+                                  f"h={_PAIR} per group member (high)|sept29", "(l, h)"),
+    "pairing.fiscal_footing": (PAIRING_LANE, "f=csv:section=7&column=hispanic&item=fiscal main case (low)|sept29 ;; "
+                               "g=csv:section=7&column=custody&item=fiscal main case (high)|sept29", "(f, g)"),
+}
+
+
+def current_values(recs):
+    """({record id: current value}, {record id: the registry's value}) — the registry's values, except the records in
+    ADOPTED, which take the adopted case's. Stops once the registry itself reads that file (drop the record)."""
+    values = {rid: Q.record_value(rid, recs) for rid in recs}
+    registry = {}
+    for rid, (path, field, expr) in ADOPTED.items():
+        if recs[rid]["source_path"] == path:
+            raise SystemExit(f"[BLOCKED] the registry's {rid} already reads {path}: remove it from ADOPTED")
+        registry[rid] = values[rid]
+        values[rid] = Q.resolve(path, field, expr)
+    return values, registry
+
 
 # ---------------------------------------------------------------- what a sentence must name
 
@@ -244,14 +283,21 @@ def kind_of(piece):
     return "arm" if ARM_LABEL.search(piece) else "vintage"
 
 
-def other_values(recs, values):
+def other_values(recs, values, registry=None):
     """{record id: [other value]}; each is a dict(origin, kind, parts, printed, source, labels). A sibling differs by
-    its count, a referenced record by its vintage, and a superseded number as its piece of `supersedes` says (the
-    text is cut at ";" and "=", so "the lane's 31.50–122.48 × factor = 30.78–119.69" gives two pieces)."""
+    its count, a referenced record and a registry value (`registry`, from current_values) by its vintage, and a
+    superseded number as its piece of `supersedes` says (the text is cut at ";" and "=", so "the lane's 31.50–122.48
+    × factor = 30.78–119.69" gives two pieces)."""
     out = {}
     for rid, rec in recs.items():
         cur = _parts(values[rid], rec["shape"])
         others = []
+        if registry and rid in registry:
+            others.append(dict(origin="registry", kind="vintage", parts=_parts(registry[rid], rec["shape"]),
+                               printed=Q.render(rec, registry[rid], "range_unit" if rec["shape"] in ("ends", "interval")
+                                                else "value"),
+                               source=f"{rid}: the registry's {rec['case']}, which the evidence map still shows",
+                               labels=""))
         if rid.endswith("_priced") and rid[:-len("_priced")] + "_lane" in recs:
             lane = rid[:-len("_priced")] + "_lane"
             others.append(dict(origin="sibling", kind="count", parts=_parts(values[lane], recs[lane]["shape"]),
@@ -563,6 +609,28 @@ CONTROLS = [
     ("a Revisions section", "## Revisions\n\n- Crashes that group drivers cause were $42.3bn a year.\n", set()),
     ("a bracketed note", "Crashes charged by fault [2026-09-29: $42.3bn on the\nlane's count] now cost $40.6bn.",
      set()),
+    ("the adopted case as the main case", "The main case costs other residents $371–435bn a year.", set()),
+    ("the September 27 case quoted as current", "The main case costs other residents $322–387bn a year.",
+     {("case.main", "vintage_unlabelled")}),
+    ("the September 27 case named", "The September 27 case cost other residents $322–387bn a year.",
+     {("case.main", "vintage_labelled")}),
+    ("the September 27 case after \"now\"", "The main case now costs $322–387bn a year.",
+     {("case.main", "vintage_as_current")}),
+    ("the adopted case per member", "The main case is $9.4–10.9k a year per member.", set()),
+    ("the September 27 case per member quoted as current", "The main case is $8.1–9.8k a year per member.",
+     {("case.per_member", "vintage_unlabelled")}),
+    ("the September 27 case per member named",
+     "The main case is $9.4–10.9k a year per member (September 27: $8.1–9.8k).",
+     {("case.per_member", "vintage_labelled")}),
+    ("the adopted pairing", "Fiscal and social costs together come to $463–536bn a year.", set()),
+    ("the September 27 pairing quoted as current", "Fiscal and social costs together come to $414–488bn a year.",
+     {("pairing.total", "vintage_unlabelled")}),
+    ("the September 27 pairing named",
+     "Fiscal and social costs together come to $463–536bn a year (September 27: $414–488bn).",
+     {("pairing.total", "vintage_labelled")}),
+    ("the September 27 pairing per member quoted as current",
+     "Fiscal and social costs together are $10.4–12.3k a year per member.",
+     {("pairing.per_member_priced", "vintage_unlabelled")}),
 ]
 
 
@@ -629,8 +697,8 @@ def main():
                     help="read the EXEMPT memos too (reproduces a pass made before their exemption)")
     args = ap.parse_args()
     recs = Q.load_registry()
-    values = {rid: Q.record_value(rid, recs) for rid in recs}
-    others = other_values(recs, values)
+    values, registry = current_values(recs)
+    others = other_values(recs, values, registry)
     missing = sorted({rid.split(".")[0] for rid in others} - set(ITEM))
     if missing:
         raise SystemExit(f"[BLOCKED] records with other values but no ITEM context: {missing}")
@@ -651,6 +719,8 @@ def main():
     for r in rows:
         counts[r["class"]] = counts.get(r["class"], 0) + 1
     meta = dict(rev=rev or "worktree", memos_read=len(docs), memos_skipped=[f"{n}: {why}" for n, why in skipped],
+                adopted={rid: dict(lane=ADOPTED[rid][0], value=list(values[rid]), registry_value=list(registry[rid]),
+                                   registry_case=recs[rid]["case"]) for rid in sorted(registry)},
                 records_with_other_values={rid: len(o) for rid, o in sorted(others.items())},
                 registry_sha256=hashlib.sha256(on_disk).hexdigest(),
                 registry_equals_rev=(None if rev is None else on_disk == git("show", f"{rev}:{REGISTRY}").encode()),

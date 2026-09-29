@@ -1,6 +1,6 @@
 {
- "rev": "b1b7210",
- "memos_read": 178,
+ "rev": "74d8d3e5",
+ "memos_read": 165,
  "memos_skipped": [
   "research/immigration-adversarial-audit-2026-09-28.md: a dated audit",
   "research/immigration-aggregate-and-generation-audit-2026-09-17.md: a dated audit",
@@ -24,11 +24,74 @@
   "research/immigration-weekly-conceptual-audit-2026-09-25.md: a dated audit",
   "research/immigration-yglesias-claims-audit-2026-09-21.md: a dated audit"
  ],
+ "adopted": {
+  "case.main": {
+   "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+   "value": [
+    371.4145997888867,
+    434.8409586241355
+   ],
+   "registry_value": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "registry_case": "September 27 main case"
+  },
+  "case.per_member": {
+   "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+   "value": [
+    9.352588282267313,
+    10.949726953624355
+   ],
+   "registry_value": [
+    8.103730841237693,
+    9.754362480312103
+   ],
+   "registry_case": "September 27 main case"
+  },
+  "pairing.fiscal_footing": {
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "value": [
+    366.681996,
+    434.840959
+   ],
+   "registry_value": [
+    317.480153,
+    387.370055
+   ],
+   "registry_case": "September 27 main case"
+  },
+  "pairing.per_member_priced": {
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "value": [
+    11.657457,
+    13.484874
+   ],
+   "registry_value": [
+    10.418506,
+    12.289509
+   ],
+   "registry_case": "September 27 main case"
+  },
+  "pairing.total": {
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "value": [
+    462.946678,
+    535.517968
+   ],
+   "registry_value": [
+    413.744835,
+    488.047064
+   ],
+   "registry_case": "September 27 main case"
+  }
+ },
  "records_with_other_values": {
   "candidate_v3.items_1_7_accrual_payable": 3,
   "candidate_v4.set_accrual_payable": 4,
   "candidate_v4.set_cash": 4,
-  "case.main": 2,
+  "case.main": 3,
+  "case.per_member": 1,
   "comparators.us_whites": 1,
   "congestion.item": 4,
   "congestion.range": 1,
@@ -39,8 +102,9 @@
   "gg.fixed_change": 3,
   "household.net_contributor_share": 3,
   "household.top10_cost_share": 3,
-  "pairing.per_member_priced": 6,
-  "pairing.total": 3,
+  "pairing.fiscal_footing": 1,
+  "pairing.per_member_priced": 7,
+  "pairing.total": 4,
   "pension.accrual_payable_net": 3,
   "pm25.cost": 1,
   "pm25.deaths_priced": 2,
@@ -57,7 +121,7 @@
  "registry_equals_rev": true,
  "rows_by_class": {
   "arm_labelled": 11,
-  "count_labelled": 17,
-  "vintage_labelled": 3
+  "count_labelled": 16,
+  "vintage_labelled": 17
  }
 }

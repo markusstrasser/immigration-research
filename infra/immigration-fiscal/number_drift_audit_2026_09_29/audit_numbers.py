@@ -3,8 +3,9 @@
     uv run --no-project --offline python3 infra/immigration-fiscal/number_drift_audit_2026_09_29/audit_numbers.py
 
 Reads the reader-facing texts (the evidence map's groups.py, template.html and build.py's hand-typed
-table rows and notes; chosen spans of the topic INDEX, the objections FAQ and CLAUDE.md), extracts every
-number token, and matches each one to its source. A number the map quotes through a placeholder,
+table rows and notes; chosen spans of the topic INDEX, the objections FAQ, CLAUDE.md and three research memos
+restated on the adopted case), extracts every number token, and matches each one to its source. A number the
+map quotes through a placeholder,
 `{{q:<id>|<view>}}`, is rendered by the map's `quantities.py` exactly as the build renders it and is
 checked against its registry record: the rendering against the value, and the sentence against the
 record's must_name and forbid. Every other number is matched to the source that `source_map.csv` names
@@ -37,8 +38,9 @@ a tuple must match every element (a figure said to hold at both ends). Rounding 
 (within half a unit of the last digit shown; an exact half passes either way, since the source's
 own rounding is unknown), int (to a whole number, for chart values the page prints as
 whole numbers), n5 / n10 / n100 (nearest 5, 10, 100), sigN (N significant figures), via1 (to one decimal,
-then to the decimals shown), relNN (within NN% of the source; word numbers), skip (not a
-quantity: listed in extracted_numbers.csv, not audited).
+then to the decimals shown), alloc (within one unit of the last digit shown: a part the text says it printed by
+controlled rounding, so that the printed parts add to the printed total), relNN (within NN% of the source; word
+numbers), skip (not a quantity: listed in extracted_numbers.csv, not audited).
 
 Options (for the positive control): --groups PATH reads another copy of groups.py; --out DIR
 writes the outputs there instead of derived/.
@@ -70,6 +72,9 @@ LADDER = Q.LADDER
 INDEX = "research/immigration-INDEX.md"
 FAQ = "research/immigration-objections-faq-2026-09-21.md"
 CLAUDE = "CLAUDE.md"
+REAL_COSTS = "research/immigration-real-fiscal-and-social-costs-2026-09-23.md"
+BY_GENERATION = "research/immigration-adopted-account-by-generation-2026-09-25.md"
+WINNERS = "research/immigration-winners-and-losers-2026-09-25.md"
 
 # ---------------------------------------------------------------- number tokens
 
@@ -302,17 +307,20 @@ def span_lines(path, spans):
 
 # Markdown spans in scope: current results only (coverage and reasons in RESULT.md).
 INDEX_SPANS = [
-    ("**Adopted main case (September 27): $322–387bn/year", "Treat an Astra accusation as a lead to verify"),
+    ("**Adopted main case (September 29): $371–435bn/year", "Treat an Astra accusation as a lead to verify"),
     ("**Earlier cases.** Each main case replaced the one before.", "too (−$51.0 / −$53.6bn)."),
-    ("[By generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224)",
+    ("[By generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224,",
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
     ("[Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) (ladder 188–193)",
      "[decision](../decisions/2026-09-28-social-items-more-benefits.md))."),
-    ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 7.7%."),
+    ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 7.9%."),
     ("The [world ledger]", "premium over being raised in Mexico. [FRAMING-SENSITIVE]"),
     ("Benefits are priced to the same standard as the costs", "so both figures stand (ladder 199)."),
     ("The [debt legacy lane]", "nor the stock to an annual figure."),
     ("[Cumulative 2005–2024 back-cast]", "Not comparable with ladder 137's forward debt path."),
+    # the rough Black comparison, restated on the adopted case (d6a5a2f)
+    ("For comparison, a rough re-key of the main case to non-Hispanic Black residents costs",
+     "group. This is not an engine run (ladder 259,"),
 ]
 FAQ_SPANS = [
     ("Anchors: the [complete annual account]", "−$8k. [SOURCE: [CA–TX geography]"),
@@ -322,14 +330,40 @@ FAQ_SPANS = [
      "The 1970–2000 college-share studies"),
     ("Finding: only income-year 2024 is a complete account.", "of other programmes before 2024 is unmeasured."),
     ("No. The account describes a resident stock in a stationary comparison.",
-     "is an opportunity cost, not cash that a removal would free."),
-    ("figures are not the $322–387bn complete account. [SOURCE:", "figures are not the $322–387bn complete account. [SOURCE:"),
+     "neither is cash that a removal would free in the year."),
+    ("figures are not the $371–435bn complete account. [SOURCE:", "figures are not the $371–435bn complete account. [SOURCE:"),
     ("Two later corrections also nearly cancel:", "No combination changes the sign."),
     ("Steel-man: one year of a price surge, pandemic programmes and a migration wave", "which flatters the year."),
+    # entry 5's split of the adopted account by generation (in scope since the v4 restatement, 5e9112e)
+    ("On the adopted account itself, with no reference group", "on the US-born generations counted"),
+    # entry 4's income split of the transfers (6157bb1) and entry 6's gap (1572b90), restated on the adopted case
+    ("the renters' payments cancel in dollars but not by income",
+     "fifths of other residents lose $79.4bn a year and the top fifth gains $44.5bn (ladder 194)."),
+    ("many average residents, the main case's gap counting benefits when paid", "has no national total to share out."),
 ]
 CLAUDE_SPANS = [
     ("Since\n  2026-09-23 the main case lets general public services", "business subsidies stay at **zero response by assumption**"),
 ]
+# Memo passages restated on the adopted case (6157bb1, ebc15cc, 05312de). The real-costs memo's §4 bullets on
+# housing, wages, crime and prices are left out: they did not move with the case.
+MEMO_SPANS = {
+    REAL_COSTS: [
+        ("| Channel | Bottom fifth | 2nd | 3rd | 4th | Top fifth | Total |",
+         "fifths lose $79.4bn a year and the top fifth gains $44.5bn."),
+        ("**The fiscal cost's incidence is a financing convention.**", "and 19.0% and 0.64% under"),
+        ("**Weighted by income.**", "weight (2.24), not a larger harm."),
+    ],
+    BY_GENERATION: [
+        ("**Verdict (2026-09-29, the main case of that date):** On the main case of $371.4–434.8bn a year",
+         "generation's own state mix are not computed."),
+    ],
+    WINNERS: [
+        ("**Verdict (2026-09-29, the main case of that date, $371.4–434.8bn;",
+         "whose pooled net under tax shares is −$524 a year."),
+    ],
+}
+# Every markdown file in scope with its spans. A year in any of them needs no map row.
+MARKDOWN = {INDEX: INDEX_SPANS, FAQ: FAQ_SPANS, CLAUDE: CLAUDE_SPANS, **MEMO_SPANS}
 
 
 def check_sites(g, groups_path):
@@ -357,7 +391,7 @@ def units(groups_path):
     tpl = ROOT / OVERVIEW / "template.html"
     for line, text in html_lines(tpl):
         yield f"{OVERVIEW}/template.html", f"L{line}", [(line, text)], None, None
-    for rel, spans in ((INDEX, INDEX_SPANS), (FAQ, FAQ_SPANS), (CLAUDE, CLAUDE_SPANS)):
+    for rel, spans in MARKDOWN.items():
         if spans:
             for line, text, clean in span_lines(ROOT / rel, spans):
                 yield rel, f"L{line}", [(line, text)], None, clean
@@ -468,6 +502,9 @@ def rounds_to(value, shown, rule):
         return abs(v - d) <= q / 2
     if rule == "via1":
         return v.quantize(Decimal("0.1"), rounding=ROUND_HALF_UP).quantize(q, rounding=ROUND_HALF_UP) == d
+    if rule == "alloc":
+        # controlled rounding moves a part by less than one unit of its last digit ("$2.27bn shows as $2.2bn")
+        return abs(v - d) < q
     if rule == "int":
         # a hand-typed chart value the page prints as a whole number ("368.0" shows as 368)
         return v.quantize(Decimal(1), rounding=ROUND_HALF_UP) == d.quantize(Decimal(1), rounding=ROUND_HALF_UP)
@@ -563,7 +600,7 @@ def _align(a, b):
 def pair_tokens(toks, cmap, anchors):
     """Each token's map key (None when it has no row) and a note when its number moved within its unit
     since mapping. A unit is one structural locator or one anchored line, and one kind of token (digits,
-    words). A routing file's unmapped years fill the gaps between its rows' positions."""
+    words). A markdown file's unmapped years fill the gaps between its rows' positions."""
     keys = [map_key(t, anchors) for t in toks]
     rows, units = {}, {}
     for f, loc, o in cmap:
@@ -576,10 +613,10 @@ def pair_tokens(toks, cmap, anchors):
         if not have:
             continue
         pre = "w" if word else ""
-        routing = f in (INDEX, FAQ, CLAUDE)
+        markdown = f in MARKDOWN
 
         def norm(raw):
-            return _YEAR if routing and YEAR_RE.fullmatch(raw) else raw
+            return _YEAR if markdown and YEAR_RE.fullmatch(raw) else raw
         n = max(int(o[len(pre):]) for o in have) + 1
         a = [norm(cmap[(f, loc, f"{pre}{i}")]["shown"]) if f"{pre}{i}" in have else _YEAR for i in range(n)]
         b = [norm(toks[j]["raw"]) for j in idx]
@@ -635,9 +672,9 @@ def audit(groups_path):
         else:
             key = map_key(t, anchors)
         rule = r["rounding_rule"] if r else ""
-        year = not r and t["file"] in (INDEX, FAQ, CLAUDE) and YEAR_RE.fullmatch(t["raw"])
+        year = not r and t["file"] in MARKDOWN and YEAR_RE.fullmatch(t["raw"])
         extracted.append([t["file"], t["line"], key[1], key[2], t["raw"], t["unit"], t["text"],
-                          "mapped" if r else ("year in a routing file, not audited" if year else "UNMAPPED"), rule])
+                          "mapped" if r else ("year in a markdown file, not audited" if year else "UNMAPPED"), rule])
         if (r and rule == "skip") or year:
             continue
         row = dict(file=t["file"], line=t["line"], quoted_text=t["text"], number_as_shown=t["raw"],
@@ -708,7 +745,7 @@ def file_hashes(groups_path):
     files = {f"{OVERVIEW}/groups.py": groups_path, f"{OVERVIEW}/build.py": ROOT / OVERVIEW / "build.py",
              f"{OVERVIEW}/template.html": ROOT / OVERVIEW / "template.html",
              f"{OVERVIEW}/quantity_registry.csv": Q.REGISTRY,
-             INDEX: ROOT / INDEX, FAQ: ROOT / FAQ, CLAUDE: ROOT / CLAUDE, LADDER: ROOT / LADDER,
+             **{rel: ROOT / rel for rel in MARKDOWN}, LADDER: ROOT / LADDER,
              "source_map.csv": MAP_PATH}
     rows = list(csv.DictReader(MAP_PATH.open())) + [
         dict(source_path=r["source_path"], source_field=r["field"]) for r in Q.load_registry().values()]

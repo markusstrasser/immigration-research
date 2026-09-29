@@ -1,4 +1,4 @@
-**Verdict:** The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 856bd5a plus this lane's changes, which a3e6371, 4555486 and b1b7210 committed, 684 of 824 numbers are checked (the rest are years and non-quantities): all 684 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. The five PM2.5 and crash values the page marked approximate now come from `social_spans_priced_count_2026_09_29`, which reruns the air and crash lanes on the 39.7M the account prices. Two print differently, $45bn → $46bn and $40bn → $41bn, and no number on the page is approximate now. The INDEX paragraph where 869c7aa put the scale net on the priced count is now an audited span, and its 16 numbers MATCH. `memo_sweep.py` extends the check to the living topic memos. On HEAD 8aaf046 it flagged 11 quotes of a record's raw-count or other-arm value, on 9 lines in 4 memos, with no false positive on a hand check of all 11 (2 borderline). The lead fixed nine in 869c7aa. The borderline two are in the outside-checks memo, whose header keeps its figures as computed on the September 23 case; the sweep now exempts it while that sentence stands. On HEAD b1b7210 the sweep reads 178 memos and flags 0. The 48 registry records that carried the default treatment "cash; capital return in" now state their own basis; 11 keep the default, where it is true. The page, the audit's findings and the registry check are byte-identical before and after that edit.
+**Verdict:** [2026-09-30: re-anchored on the main case adopted on 2026-09-29 (v4) and on both rounds of its restatement, with three research memos now in scope. At HEAD 74d8d3e, 910 of 917 audited numbers MATCH. The two MISMATCHes are document defects reported to the lead: INDEX:109's "about one in six", where the sentence's own 16.2% / 12.3% average one in seven, and the by-generation memo's $88.1bn, which the source prints as $88.2bn. The five UNSOURCEABLE numbers are the evidence map's new Indian-origin entry (d217e7b), typed into groups.py where the map wants registry placeholders. The memo sweep treats v4 as current for the main case and the pairing and flags 0 of 165 memos. See "v4 re-anchoring, 2026-09-29".] The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 856bd5a plus this lane's changes, which a3e6371, 4555486 and b1b7210 committed, 684 of 824 numbers are checked (the rest are years and non-quantities): all 684 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. The five PM2.5 and crash values the page marked approximate now come from `social_spans_priced_count_2026_09_29`, which reruns the air and crash lanes on the 39.7M the account prices. Two print differently, $45bn → $46bn and $40bn → $41bn, and no number on the page is approximate now. The INDEX paragraph where 869c7aa put the scale net on the priced count is now an audited span, and its 16 numbers MATCH. `memo_sweep.py` extends the check to the living topic memos. On HEAD 8aaf046 it flagged 11 quotes of a record's raw-count or other-arm value, on 9 lines in 4 memos, with no false positive on a hand check of all 11 (2 borderline). The lead fixed nine in 869c7aa. The borderline two are in the outside-checks memo, whose header keeps its figures as computed on the September 23 case; the sweep now exempts it while that sentence stands. On HEAD b1b7210 the sweep reads 178 memos and flags 0. The 48 registry records that carried the default treatment "cash; capital return in" now state their own basis; 11 keep the default, where it is true. The page, the audit's findings and the registry check are byte-identical before and after that edit.
 
 Model: claude-opus-5-5
 
@@ -932,3 +932,277 @@ uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q infra/imm
   b1b7210 (validated at 12:03:17–12:05:14). Meanwhile the lead's uncommitted INDEX and source_map edits print the
   construction pair as $33.5bn to $29.9bn. Audited to scratch, they give 684 of 684 MATCH, and this lane left them
   untouched.
+
+## v4 re-anchoring, 2026-09-29
+
+claude-opus-5-5
+
+The lead's brief: re-anchor the audit to the documents restated on the main case adopted on 2026-09-29 (ladder 275;
+`main_case_2026_09_29`, 40c4ba7), keep the evidence map's rows on the September 27 case, and teach the memo sweep
+that v4 is current. Stage 1 was e53c514 (INDEX, README), 9e56f24 (CLAUDE.md), 10bf3c2 (FAQ) and 3659519 (five
+memos). 5e9112e, 6157bb1 (the INDEX income split) and d6a5a2f (the comparison with third-plus whites) landed while I
+worked and are mapped with it, and FAQ entry 5 became a ninth FAQ span at the lead's request.
+
+Stage 2 maps the second restatement round: 6157bb1's real-costs memo §4, ebc15cc (the by-generation memo's verdict),
+d6a5a2f's Black comparison, 1572b90 (FAQ entry 6's gap) and 05312de (the household split, the break conditions and
+the winners, in the INDEX and in the winners memo). It also maps the follow-ups that landed during it: b14921e (the
+pairing's low end, $462.9bn), 8988c45 and 9d469a0 (the first-year budget response on v4), f2ec7ea (the debt lane's
+range across rules), 4eeeb79 (the world ledger) and 74d8d3e (the five row-4 key errors). The final gates and
+derived/ ran in a detached worktree of HEAD 74d8d3e with this lane's files copied in, so every document is HEAD's:
+the main checkout's CLAUDE.md holds a peer's uncommitted edit, 15 lines above the audited span (read only).
+
+### Result
+
+| File | Tokens | Audited | MATCH | MISMATCH | UNSOURCEABLE |
+|---|---:|---:|---:|---:|---:|
+| overview_2026_09_28/groups.py | 272 | 256 | 251 | 0 | 5 |
+| overview_2026_09_28/build.py | 14 | 10 | 10 | 0 | 0 |
+| overview_2026_09_28/template.html | 59 | 50 | 50 | 0 | 0 |
+| research/immigration-INDEX.md | 302 | 265 | 264 | 1 | 0 |
+| research/immigration-objections-faq-2026-09-21.md | 240 | 164 | 164 | 0 | 0 |
+| CLAUDE.md | 18 | 18 | 18 | 0 | 0 |
+| research/immigration-real-fiscal-and-social-costs-2026-09-23.md | 82 | 70 | 70 | 0 | 0 |
+| research/immigration-adopted-account-by-generation-2026-09-25.md | 58 | 56 | 55 | 1 | 0 |
+| research/immigration-winners-and-losers-2026-09-25.md | 31 | 28 | 28 | 0 | 0 |
+| Total | 1076 | 917 | 910 | 2 | 5 |
+
+[CALCULATION: `audit_numbers.py` → `derived/number_audit.csv`] No map row is unused and no number moved within its
+unit. The five unmapped tokens are all in the evidence map's new Indian-origin entry (below). The other 159 tokens
+are 61 years in the markdown files and 98 mapped as not quantities (`skip`), among them the η and λ values the memos
+name. The evidence map's 311 mapped numbers are unchanged and all MATCH.
+
+Both mismatches are document defects. I reported them to the lead and left the text alone:
+- **INDEX:109 (107 before 74d8d3e), "about one in six"** of the group's members live in a household that pays more
+  than it costs. The sentence's own figures are 16.2% / 12.3% with every line allocated
+  (`within_group_distribution_2026_09_29/derived/sept29/net_positive_shares.csv`, convention A, 0.162294 /
+  0.123429). Their midpoint, 14.3%, is one in seven. The row keeps the rule the September 27 wording passed under
+  ("about a quarter" against A's midpoint, within 15% of it), and 1/6 lies 16.7% above 14.3%. "About one in seven"
+  would pass, and so would a phrase naming the range.
+- **By-generation memo, line 33, "$88.1"**, the Mexico-born's cost without the capital return at the low end.
+  `generation_results_sept29.csv` (a, G1, low) gives 97.2336 less a capital return of 9.0781, 88.1555, which prints
+  $88.2bn. The three generations add to the case's `without_capital_return` row (336.99), and $88.1bn is what
+  controlled rounding would print if that total stood beside them. The sentence prints no total.
+
+The five UNSOURCEABLE numbers are the evidence map's Indian-origin entry, which d217e7b added (groups.py:494–495,
+ladder 276–277): "$10k per member a year (9.3–10.8)", "$7.7k (7.1–8.4) at white ages" and "since 1995". They are
+typed into the text, where the map's rule wants registry placeholders, so I did not map them: the brief keeps the
+evidence map's rows as they are, and a map row would hide the missing binding. Two points for whoever binds them:
+- The actual-ages figures agree with `indian_full_account_2026_09_29/derived/combined.csv` (`indian_origin`, accrual,
+  −10,763 / −9,305 per member, midpoint 10.0k). The white-ages figures hold only on the lane's RESULT and memo
+  (−8,419 / −7,069, midpoint 7.7k). combined.csv gives −8,433 / −7,084 (midpoint 7.8k), because its social rows are
+  1,453 / 1,511 per member against the RESULT's 1,467 / 1,525; its totals, −51.27 / −43.07bn, print −51.3 / −43.1
+  against the RESULT's −51.2 / −43.0.
+- The entry's "80th" and "47th" percentiles are ordinals, which the audit's tokenizer does not read. The six
+  ordinals in scope are these two, the §4 table's column heads and the weighting's 5th-percentile floor.
+
+Stage 1's mismatch, INDEX:166's $463.0bn, is gone: b14921e prints $462.9bn and shows §7's property-crime low end as
+1.2, so the column adds.
+
+### The anchors and the map
+
+`audit_numbers.py`, stage 1:
+- INDEX span 1 now starts at "**Adopted main case (September 29): $371–435bn/year", and span 3 at "[By
+  generation](…) (ladder 224," (5e9112e added a lane link after the ladder number).
+- FAQ span 5 now ends at "neither is cash that a removal would free in the year.", and span 6 is "figures are not
+  the $371–435bn complete account. [SOURCE:".
+- FAQ span 9 is new: entry 5's paragraph from "On the adopted account itself, with no reference group" to "on the
+  US-born generations counted". Its opening holds "with no reference group", so the row for line 27's
+  "$34.4–57.2bn" moved from the anchor "h no reference gro" to "with no reference group. Its return on public
+  capital".
+- A new rounding rule, `alloc`: within one unit of the last digit shown, for a part the text says it printed by
+  controlled rounding. The INDEX says so for state pricing's high end ($2.27bn shown as $2.2bn) and the change
+  ($47.47bn shown as $47.4bn).
+
+`audit_numbers.py`, stage 2:
+- The markdown files in scope are one table, `MARKDOWN` (the INDEX, the FAQ, CLAUDE.md and `MEMO_SPANS`). The unit
+  reader, the year rule and the input hashes all read it, so a year in any of them needs no row (the extract says
+  "year in a markdown file"; it said "routing file").
+- New spans:
+  - INDEX: the rough Black comparison, from "For comparison, a rough re-key of the main case" to "(ladder 259,";
+  - FAQ: entry 4's income split, from "the renters' payments cancel" to "the top fifth gains $44.5bn (ladder
+    194)."; entry 6's gap, from "many average residents, the main case's gap" to "has no national total to share
+    out.";
+  - the real-costs memo's §4: the table, the paragraph on its fiscal rows and the income split (lines 273–291), the
+    financing paragraph (303–308) and the weighting paragraph (311–319). The bullets on housing, wages, crime and
+    prices (293–301) are left out, because they did not move with the case;
+  - the by-generation memo's verdict and its table (lines 3–36);
+  - the winners memo's verdict (lines 11–36).
+- The world ledger paragraph now names the 39.71M, which gave the pairing paragraph's anchor "M people the accou" a
+  second line. That row now anchors at "Every row is on the".
+- 74d8d3e replaced the INDEX's one recorded key error, owner-occupied property tax at +$0.34bn, with five items
+  summed on the survey's weights, and prints the case and the cash set with all five applied: $371.2–434.6bn and
+  $295.4–362.5bn (INDEX:90–91). The $0.34bn row went with its text. The two new rows read the row-4 lane's
+  `derived/price_rekeys.json` (`rows.joint_with_ratios`, 75d1ae0) and carry no stale selector, because nothing was
+  printed at their place before.
+- The lead named a source for each world ledger number. Each is the file the map reads, or a file in the same lane
+  with the same value, except the second generation's $152–179bn: it read the generation account (a, G2), and now
+  reads the world ledger's own `world_ledger_meta_sept29.json` (`generation_breakeven.G2.fiscal_cost_ends_bn`,
+  151.567892 / 179.353199, the same numbers), with the same lane's September 27 run on the account's count as its
+  stale selector (127.58 / 152.95, the old $128–153bn).
+
+`source_map.csv` has 939 rows: 699 at HEAD and 737 after stage 1. Against HEAD, by key, 95 rows went, 335 came and
+117 changed. Since stage 1, 20 went, 222 came and 26 changed, and no evidence-map row changed. The rows that went hold
+numbers the text no longer prints: the cash tally (+$62.0 / 49.4bn) in the break-conditions paragraph, the
+owner-occupied key's $0.34bn, and old keys re-keyed under a new anchor or ordinal. The new and changed rows read the
+lanes' committed sept29 outputs: the household split (ccbb8e8), the break conditions (beead07), the winners
+(858f77a), the comparators (6665297), the distribution lane (492bf32), the generation account (aa1f53b), the debt
+lane (24a95a4), the world ledger (2966364), the row-4 re-keys (75d1ae0) and the adopted lane. Ladder 258's four
+social items read `social_costs_unpriced_2026_09_28/derived/items.csv` (fa791b1).
+
+A re-pointed row takes its old source as its stale selector: "the September 27 case", or "the September 26 run
+(entry 229)" for the first-year budget response. The 122 stale selectors that are new or changed in stage 2 all
+resolve, each to the number the text printed before. Examples are 12%, 46%, 18%, 32% and 52–61% for the household
+cells, −$15.3 / −24.2bn and −37% / −29% for the break conditions, and the September 27 version of the §4 table.
+
+Stage 1 needed five choices:
+- **"64"** (FAQ entry 5: "a net cost at all 64 specifications"). The count comes from the uncertainty lane's grid.
+  The row returns 64 only while every generation's own minimum over the specifications, under both conventions, is
+  a net cost (`generation_summary_sept29.json` `own_span_bn`), so it fails when the claim does.
+- **"$0.34bn"** (INDEX:89, the owner-occupied key recorded but not applied). No file prints it. The row derives it
+  from the decomposition lane's stored parts: `modeled_owner_property`'s group amount 24.970 × (1 − 1/κ, κ = 1.01798)
+  × its response 0.763 = 0.336 at both ends. That is the lane RESULT's engine figure ($371.75 / 435.18bn).
+  [CALCULATION: `summary_sept29.json` lines[15], `v4.kappas`] [Gone in 74d8d3e, see stage 2. The row-4 lane's
+  engine run of the same re-key moves the case by 0.336387 at both ends (`price_rekeys.json` `rows.owner`), the
+  figure this row derived.]
+- **"$394.4bn"** (INDEX, the winners construction). It follows the distribution lane's RESULT bridge: the band's
+  middle 403.13, plus the production term's P at the ends (−0.58), less the capped programmes 8.13
+  (`case_ends_sept29.json`). "13.9%" is the lane's 13.95% scaled to that level (× 394.43 / 395.71); unscaled it
+  also prints 13.9%.
+- **"$79.4bn" and "$44.5bn"** (INDEX, outside the budget, by income). They are the SPM fifths of wages, the housing
+  net, crime (custody footing) and unreimbursed care in `distribution_weights_2026_09_23/derived/sept29/
+  channel_by_quintile.csv`. They replace ladder 194's $80.7 / $46.0bn, which is now the stale selector.
+- **The first-year budget response.** In stage 1, $201–246bn read v4's `first_year_response`, which carries entry
+  229's September 26 figure. I reported that the FAQ called it "the same account". 8988c45 and 9d469a0 now print the
+  v4 run, $277–318bn and $201–245bn counting benefits when paid, so those rows read
+  `break_conditions_2026_09_29/derived/c1_arms_sept29.csv` (`first_year_horizon`, `first_year_horizon_cash`). The
+  September 26 run is quoted only where it is labelled (INDEX:120 and the table row at INDEX:127; CLAUDE.md:175).
+
+Stage 2 needed these:
+- **"about one in six"** keeps the September 27 rule and fails (defect 1 above).
+- **"−21%"**, the pairing at the first-year horizon, is an inference the break-conditions lane states: the
+  first-year fiscal case plus the social rows held (`tables_sept29.py`, −21.1%).
+- **"1.5–1.6×"**, the September 27 Black ratio, matches only with the case per member on the account's 39.71M.
+  That is ladder 274's re-basing (`population_basis_2026_09_29/derived/restated_pairing.csv`, 1.454–1.615). The
+  comparator lane's RESULT gives 1.66× / 1.50× on the CPS's 40.90M, which prints 1.5–1.7×. The v4 ratio, 1.3–1.4×,
+  is on 39.71M, so the INDEX compares like with like.
+- **The two tables** use `alloc`. Seven cells of the real-costs §4 table and two of the by-generation table sit
+  0.05–0.1 from their source, and each table's printed parts add to its printed totals. In §4 the grand total,
+  −34.84, prints −34.9, and crime's total, −32.34, prints −32.4. A rounding that keeps them at −34.8 and −32.3 also
+  adds, with crime's fourth fifth at −5.0 and the outside-the-budget fourth fifth at −12.0.
+- **"$58bn"** (the world ledger's direct cost that buys the group nothing it values) is justice's cost above its
+  value plus Medicaid's shortfall: 57.55 / 58.02 at the two ends, and both print $58bn. The same sum over
+  `valuation_by_class.csv` gives 50.11 / 50.58, the lane RESULT's September 27 "$50.1–50.6bn", so the construction is
+  the lane's. Its v4 "$57.6–58.0bn" (RESULT line 1296) should read $57.5–58.0bn: 57.549 rounds to 57.5, and 57.6
+  follows only from rounding twice (57.549 → 57.55 → 57.6).
+- **"over 99%"** (the winners memo) returns 99 only while the largest share behind among deciles 1–5 exceeds 99%.
+  "64" in the by-generation memo returns 64 only while every generation's own minimum is a net cost under both
+  conventions, in the set and in the cash set.
+- **The debt range across rules** binds the 22 rows (11 back-cast rules × 2 ends) one by one, because a csv
+  selector reads one row.
+- **The winners memo's cells** are SPM-pooled shares under (a) and (b), from the smaller to the larger. Behind:
+  California and Texas 96.8–98.4%, US-born adults with high school or less 97.6–98.6%, renters 90.3–91.7%, and
+  deciles 1–5 from 83.1% to 99.6%. Ahead: the top decile 31.1% (a) and 54.8% (b), and landlords 38.6–43.3%, whose
+  pooled net under (a) is −$524.
+
+### Memo sweep
+
+The sweep took its current values from the registry, which follows the evidence map and so still gave the September
+27 case ($321.8–387.4bn) as current. A memo quoting $322–387bn as the main case would have passed. `memo_sweep.py`
+now takes `case.main` and `case.per_member` from the adopted lane (`ADOPTED`, `current_values`). Each record's
+registry value becomes one of its other values, of kind vintage and origin "registry". "$322–387bn" as the main case
+is now flagged when unlabelled or after "now", and passes when its clause names September 27. The override stops with
+`[BLOCKED]` once the registry itself reads the same file.
+
+Stage 2 moves the pairing too. `pairing.total`, `pairing.per_member_priced` and `pairing.fiscal_footing` take the
+propagation lane's sept29 run (`PAIRING_LANE`, 911afa6), so "$414–488bn" as the current pairing is flagged and
+"$463–536bn" passes. `ADOPTED` now names each record's file. Eleven controls were added over the two stages (30 in
+all), and a test checks the case's and the pairing's values on both sides of the override.
+
+At HEAD 74d8d3e the sweep read 165 memos (d217e7b added the Indian full-account memo) and skipped 21.
+It found 44 quotes of other values and flagged none. The 17 labelled vintage quotes include five of the September 27
+pairing ($414–488bn, $413.7–488.0bn, $10.4–12.3k), and each is dated or names its case.
+
+### Bindings
+
+The restatement took the text away from two `doc_bindings.csv` rows (registry_check: CHANGED), so I re-keyed them.
+State pricing now reads "+$2.2bn" (`state_priced.net` at the low end, 2.18), and the September 27 pairing sits at
+INDEX:173 (169 before 8988c45 and 74d8d3e each added two lines above it). The line column is a note: registry_check
+finds each line by its anchor. All 13 bindings are FIXED.
+
+### Gates
+
+Each gate ran twice to scratch between 00:48:32 and 00:50:03 JST on 2026-09-30, in a detached worktree of HEAD
+74d8d3e (under `.claude/worktrees/`, removed afterwards) holding this lane's files and copies of the map's two
+ignored inputs (`crime_cost_2026_09_16/_cache/cpi_2016_2025.json`, `full_account_2026_09_20/derived/
+service_response_summary.csv`). Every output was identical on the second pass:
+- `audit_numbers.py`: 910 MATCH of 917 audited (1,076 tokens), 2 MISMATCH and 5 UNSOURCEABLE (above);
+- `memo_sweep.py` at HEAD, its default: 30 of 30 controls pass; 165 memos, 0 flagged;
+- `registry_check.py`: 79 records resolve, and 13 of 13 bindings are FIXED;
+- pytest on the lane: 7 passed. `ruff --select F,E9`: clean.
+
+derived/ is that gate pass's output, copied in at 00:51:09 JST. Against the working-tree run of 00:36 it differs in
+CLAUDE.md's line numbers (15 higher: HEAD keeps the section the peer's edit removes), the G2 row's source, the
+sweep's revision (74d8d3e5, where the working-tree run records "worktree") and three hashes in `inputs.json`:
+CLAUDE.md, and two files whose working-tree copies end their lines in CRLF while HEAD's blobs use LF
+(`clemens_pritchett_calibration_2026_09_19/derived/arms.csv`, `historical_backcast_2026_09_20/inputs/
+acs_mexican_origin.csv`; `git status` hides the difference under `core.autocrlf=input`). The committed
+`inputs.json` from b1b7210 had recorded the CRLF bytes; a fresh clone reproduces the new hashes. I edited the CSVs
+through guarded scratch scripts, which are not kept (see "Editing the CSVs").
+
+### Left for the lead
+
+- The evidence map's Indian-origin entry (groups.py:494–495, d217e7b) has five typed numbers, UNSOURCEABLE here.
+  Binding them to registry records needs the Indian lane to settle its white-ages figures first (see Result).
+- Two evidence-map rows, groups.py `social/f195/text` 0 and 1, carry a stale selector with two names and no
+  stale_expr. It would stop the audit with `[BLOCKED]` if their main check ever failed. The fix is stale_expr
+  "(a+b)/2" and "(b, a)", their main expressions. One more, `conventions/range` 1, still reads candidate v3's
+  RESULT. I left all three because the brief keeps the map's rows as they are.
+- The decomposition lane's cash summary names its payload in `main_case_candidate_v4_2026_09_29`
+  (`corrections_v4_cash.json`). Its totals equal the adopted lane's cash set.
+- The world ledger lane's RESULT (line 1296) and ladder 250's note print the part that buys the group nothing it
+  values as $57.6–58.0bn. The source gives 57.549–58.017, which prints $57.5–58.0bn. The INDEX's "about $58bn" is
+  right.
+- The main checkout's copies of `clemens_pritchett_calibration_2026_09_19/derived/arms.csv` and
+  `historical_backcast_2026_09_20/inputs/acs_mexican_origin.csv` end their lines in CRLF; HEAD's blobs are LF. A
+  `git checkout --` of the two paths would restore the committed bytes. They are other lanes' files, so I left them.
+- The audit has no ladder spans: ladder 250's note and the other ladder notes are read only as sources (`re:L<n>:`),
+  never audited.
+
+### Log
+
+- 2026-09-29 21:24:55 JST: on HEAD 3659519 the audit stopped at the INDEX's first span anchor, "**Adopted main case
+  (September 27): $322–387bn/year".
+- 2026-09-29 22:07:44 JST: resumed after a context compaction. 5e9112e had landed, and a probe then found three more
+  broken anchors from it.
+- 2026-09-29 22:49:14–22:50:30 JST: gates, two passes, identical (HEAD 1572b90 for the audit): 703 of 704 MATCH.
+- 2026-09-29 22:51:36–22:52:49 JST: derived/ refreshed on HEAD 65ceea7; report sent to the lead.
+- 2026-09-29 22:56 JST onward: the lead's heads-up asked for FAQ entry 5 on the sept29 files too. It lay outside
+  every span, so it became the ninth FAQ span (18 rows).
+- 2026-09-29 23:03:01–23:04:10 JST: gates, two passes, identical (HEAD 083ec4c): 721 of 722 MATCH.
+- 2026-09-29 23:04:34–23:05:46 JST: derived/ refreshed on HEAD 083ec4c.
+- 2026-09-29 23:14:40 JST: stage 2 resumed after a second compaction, on HEAD 05312de. Then, in order: the stage-2
+  mapping; b14921e, 8988c45, 9d469a0 and f2ec7ea landed and broke five anchors in the FAQ and CLAUDE.md; 4eeeb79
+  landed and broke four in the world ledger paragraph. Each was re-anchored and mapped, and no row was dropped to get
+  past a block.
+- 2026-09-30 00:07:36–00:09:40 JST: gates, two passes, identical (HEAD de25f77): 909 of 911 MATCH.
+- 2026-09-30 00:10:03–00:11:11 JST: derived/ refreshed; then the sweep's pairing override and its four controls.
+- 2026-09-30 00:15:52–00:17:16 JST: gates, two passes, identical (HEAD de25f77): 909 of 911 MATCH; sweep 30 of 30
+  controls, 0 flagged.
+- 2026-09-30 00:17:27–00:18:21 JST: derived/ refreshed on HEAD de25f77.
+- 2026-09-30 00:22:26–00:25:35 JST: gates, two passes, identical (HEAD d217e7b): 909 of 916 MATCH and 5
+  UNSOURCEABLE, the evidence map's new Indian-origin entry.
+- 2026-09-30 00:25:35–00:26:32 JST: derived/ refreshed (`inputs.json` at d217e7b; 75d1ae0 landed meanwhile, before
+  any document quoted its lane).
+- 2026-09-30 00:30:47 JST: HEAD was 74d8d3e. The audit then stopped at the INDEX anchor "on the account's own
+  weights the case is": the one recorded key error had become five. Its row went with its text, and the two new
+  numbers are mapped.
+- 2026-09-30 00:36:01–00:36:32 JST: gates, two passes, identical (HEAD 74d8d3e): 910 of 917 MATCH, 2 MISMATCH, 5
+  UNSOURCEABLE; sweep 30 of 30 controls, 165 memos, 0 flagged.
+- 2026-09-30 00:36:42–00:37:16 JST: derived/ refreshed on HEAD 74d8d3e.
+- 2026-09-30 00:41:05 JST onward: three of the lead's messages, sent while I worked, arrived together. Everything
+  they list was already mapped. Two things followed: the G2 row now reads the world ledger's meta, as the lead named,
+  and the lead asked for HEAD's content to be audited, since the main checkout's CLAUDE.md holds the peer's edit.
+  A worktree under scratch was refused by a hook (unmanaged location), so it went under `.claude/worktrees/`.
+- 2026-09-30 00:48:32–00:50:03 JST: gates, two passes, identical, in the HEAD worktree (74d8d3e): 910 of 917 MATCH,
+  2 MISMATCH, 5 UNSOURCEABLE; sweep at HEAD 30 of 30 controls, 165 memos, 0 flagged.
+- 2026-09-30 00:51:09 JST: derived/ copied from that gate pass; the worktree was then removed.
