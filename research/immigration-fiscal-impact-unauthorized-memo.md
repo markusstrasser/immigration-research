@@ -133,12 +133,18 @@ Senate Budget Committee testimony, September 2023.
 
 **Specific criticized moves (catalogued for reuse):** favorable headline selection ($14.5T = immigrants-alone + $3.9T interest add-on; $7.9T with children exists but didn't lead), interest-savings amplification (27% of headline), backward window over the fastest foreign-born-growth period (taxes in-window, entitlement draw outside), marginal-cost public-goods attribution (makes any taxpayer a "fiscal asset" in a deficit country — MI's reductio), and frozen no-adjustment counterfactual ("205% of GDP without immigrants"). Generalized with historical anchors in [notes/quant-bias-checklist.md](../notes/quant-bias-checklist.md); the same-session self-audit found two of these moves (amplifier add-on, plausibility-assertion) in our own artifacts — see checklist self-audit table.
 
-### Manhattan Institute (Di Martino, Oct 2025)
-*Lifetime Fiscal Impact of Immigrants*
+### Manhattan Institute (Di Martino, Sep 2024)
+*The Lifetime Fiscal Impact of Immigrants*, published 2024-09-19
 
-- Average immigrant: modest positive **$10,000** in present value over lifetime (federal only) [SOURCE: Cato WP 82 reviewing MI report]
+- Average immigrant: "the average new immigrant (lawful or unlawful) has a positive fiscal impact and reduces the federal budget deficit by over $10,000 during his lifetime" (federal only) [SOURCE: https://manhattan.institute/article/the-lifetime-fiscal-impact-of-immigrants, read 2026-09-30]
 - Immigrants without bachelor's degree: "extremely fiscally negative" [SOURCE: Cato WP 82]
-- Recent migration surge: projected cost of **$1.1 trillion** over a century (federal) [SOURCE: Cato WP 82]
+- Recent migration surge: "the border crisis will cost an estimated $1.15 trillion over the lifetime of the new unlawful immigrants" (federal) [SOURCE: same page]
+
+### Manhattan Institute (Di Martino, Oct 2025)
+*The Fiscal Impact of Immigration: 2025 Update*, published 2025-10-23
+
+- A different analysis from the 2024 report: CBO's 10- and 30-year windows in nominal dollars, federal only, descendants included, defense excluded as a pure public good, CPS and ACS data, results for 11 origin countries.
+- Mexico: "Mexicans, who, on average, increase the national debt by $10,000 each over 30 years." This is the only Mexico-specific fiscal figure the 2026-09-30 literature check found. It is not comparable with the repo's annual all-government account of the Mexican-origin population. [SOURCE: https://manhattan.institute/article/the-fiscal-impact-of-immigration-2025-update, read 2026-09-30]
 
 ---
 
@@ -308,3 +314,5 @@ Heritage counts the costs but uses a short horizon that excludes the contributio
 - **2026-03-13:** Added a source audit for the January 2024 Camarota/CIS testimony and downgraded it from "another estimate" to "adversarial briefing with reusable subclaims only". Trigger: [2026-03-13-treat-cis-camarota-as-advocacy-not-baseline](decisions/2026-03-13-treat-cis-camarota-as-advocacy-not-baseline.md).
 
 - **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-fiscal-account-2024-2026-09-05.md](immigration-fiscal-account-2024-2026-09-05.md), [immigration-clarity-update-2026-09-05.md](immigration-clarity-update-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+- **2026-09-30 — source date corrected.** The section headed "Manhattan Institute (Di Martino, Oct 2025)" carried the September 2024 lifetime report's figures, taken from Cato WP 82, which reviewed that report. The heading now reads Sep 2024 and quotes the report's own page. The October 2025 update, a different 30-year federal analysis with a Mexico row (+$10,000 of debt per Mexican immigrant), has its own section. No claim in this memo changed sign or size. Found by the literature-completeness check (`notes/immigration-published-accounts-comparison-2026-09-30.md`).
