@@ -33,7 +33,7 @@ Truth is the objective. Not consensus, not novelty, not volume. A single well-so
 
 **Propose first:** restructure the docs index, change the analysis protocol, modify the causal tree, reframe the central question.
 
-**Never without human:** delete research files, publish or share findings externally, modify this constitution.
+**Never without human:** delete records (ladder entries, decisions, lane RESULTs, dated audits) or analysis lanes, publish or share findings externally, modify this constitution. Superseded and cruft documents may be deleted autonomously, with an INDEX tombstone, once their last version is on GitHub.
 
 ## Git Workflow
 
