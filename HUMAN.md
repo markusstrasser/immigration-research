@@ -25,9 +25,11 @@ the bottleneck is a BUILD, not more search.** Three things for you:
 ### B. Gated pulls that unblock the deepest tests (login-gated, you pull; loaders/specs ready)
 - **IPUMS-CPS** 2nd-gen extract → cluster-V V02 (loader `load_cps_second_gen.py` ready; uses PARENTAL
   birthplace, so it's already robust to the ethnic-attrition bias the sociology pass flagged).
+  consumed: 2026-09-29 — the same ask is repeated in the 2026-06-25 section below; its receipt (2026-09-22, extract staged, loader fixed in 0ef9f5a) covers this one — session 95a94bd8
 - **openICPSR 120490** (Abramitzky mobility) → also the econ-disconfirmer pre-reg P2.
 - **WRLURI2018 + Geocorr2022 PUMA↔CBSA crosswalk** (one-time DL / on-demand generator) → the full urban
   panel beyond the 1/10 cut. Exact pointers + Geocorr query spec in `setup-urban-housing.sh` MANUAL_ACQUIRE.md.
+  consumed: 2026-09-29 Geocorr — the 2022 PUMA allocation factors are held (lane `displacement_transfers_2026_09_18`; register, "Housing, labor and local economy"); WRLURI 2018 deferred: not held, listed in the register's Open leads (the 2006 index is in the Saiz file) — session 95a94bd8
 
 
 ## 2026-06-25 — after the test/red-team/spec/harness-repair run
@@ -67,6 +69,7 @@ border-gateway split only ~10% (modest — CA is a high-cost border outlier).** 
 session: adae2b38-fa63-4fd0-b727-08c73975b287
 
 - **Push is blocked** by GitHub push protection on a false-positive AWS key ID in a974758 (`mr_archive_2026_09_18/derived/mr_posts.jsonl:597`, a 2016 presigned third-party URL; nothing to rotate). Choose: open the unblock link GitHub printed and mark it a false positive, or say "rewrite" (history rewrite was rehearsed in a scratch clone, not applied; main has advanced since, so it needs a fresh rehearsal).
+  consumed: 2026-09-29 a974758 — reached origin/main in the 2026-09-22 push (cbc44e3) with no history rewrite; nothing left to do — session 95a94bd8
 - **Pew 2017 Survey of US Muslims microdata** need a free Pew account (religion × nativity × income × attitudes; the only US religion-observed file we can get quickly).
   consumed: 2026-09-22 zip staged at `external/pew/Pew-2017-US-Muslims.zip`, lane `pew_muslims_2017_2026_09_22` (report reproduced within 0.5 points), ladder 177, Muslim memo §2a — session 87fa457f
 - **New Immigrant Survey 2003** public-use files (ICPSR 38031, 38061; free ICPSR login): religion with earnings for new green-card holders.

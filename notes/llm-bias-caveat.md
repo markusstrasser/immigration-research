@@ -76,7 +76,8 @@ The bias is **weakest** on:
   contaminated the other way were rated robust; and an ethnicity proxy for status was accepted in
   Freedman–Owens–Bohn although the repo treats ethnicity coding as a bias elsewhere. The check that
   would have caught both is a symmetry test: name the flaw, then search the repo for the same flaw
-  on the other side and grade both alike (proposed in the audit memo, awaiting the operator).
+  on the other side and grade both alike (adopted on 2026-09-23 as the evidence-symmetry rules,
+  [decision](../decisions/2026-09-23-evidence-symmetry-rules.md)).
 
 - 2026-09-29, [reviewer calibration](../infra/immigration-fiscal/reviewer_calibration_2026_09_29/RESULT.md)
   (ladder 271): the review lanes were tested on 24 errors this repo made and fixed (half mirrored
