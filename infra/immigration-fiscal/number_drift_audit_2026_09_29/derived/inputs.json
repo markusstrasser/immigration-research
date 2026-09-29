@@ -1,5 +1,5 @@
 {
- "head": "856bd5afc19e2677c2a11b9646d313d01c616ef5",
+ "head": "b1b72101377f59c54af8ce3a2d0c1a0c5f9581bd",
  "sha256": {
   "CLAUDE.md": "ee95f7caf60f38ab895ab8b701df061f6355a41062ef5b83a6a3f2eaaf63048d",
   "decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md": "3d89e32090e59e8c903f046f503bc29a2002d9696d249d139f7adf1d3a8bbf99",
@@ -66,10 +66,10 @@
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/row4/concentration.csv": "a39362314422e969d85e03040cbf5b462ee29ccd290ca0faf6ff8f899ef016fb",
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/row4/net_positive_shares.csv": "4e09b07e54349996c8b6ca9632686219fcb34fdb4d8ba9929e3f281400e671de",
   "infra/immigration-fiscal/world_ledger_2026_09_27/derived/world_ledger.csv": "13d29e9b909184884f5c9e2649ec84cefe50435ab6dc5778da9bfbc952b2be6e",
-  "research/immigration-INDEX.md": "b3eb954a4d3fb6fe7fe75563c3690f0ebb295f5fb2f67e85cc611f92698bc24d",
+  "research/immigration-INDEX.md": "9f7c3ea8c4b666be0366b5f1049d82ea4c5c70d64e8d05036d615bdbcff08718",
   "research/immigration-administration-response-test-2026-09-20.md": "e63b1d3d3f0988a86aba945b3f85bc8c63708e4f5214d94e20bc581b171b2fd8",
   "research/immigration-confidence-ladder.md": "fa402727bee11ad7095bad02ab3dabb9763ccd69f844a42cf8248b5fa6ec5533",
   "research/immigration-objections-faq-2026-09-21.md": "befc5146780cd9552f13d19ef388343d0e60a4912d735c313c5c33fc6cd22250",
-  "source_map.csv": "264bea2d1ec985ea2eb05642c1026a7ba6c4456a8b7bf6df35611b3ed598f009"
+  "source_map.csv": "df95ff46134357c7dd8238fc991296589287e7880024a962a348cbf9a9152001"
  }
 }
