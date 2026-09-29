@@ -669,6 +669,10 @@ The sweep was validated again at 2026-09-29 12:03:17–12:05:14 JST on HEAD b1b7
 7. **The four smaller benefits have no record.** Real-costs:395 prints their sum on the priced count, +21.7 (21.69;
    21.96 on the lanes' counts). Until 869c7aa it printed +21.9, which neither rounds to. A record reading the four
    rows of restated_pairing.csv, with the lanes' counts as its other value, would let the sweep see that sum drift.
+   [2026-09-29, the lead: not taken. Such a record would let the sweep flag only the lanes'-count value, 21.96, if it
+   were quoted unlabelled. The drift that happened, +21.9, matched neither count, and only an audit that reads the
+   memo's tables would catch that. No page quotes the sum. So no rerunnable check covers +21.7 today. The
+   21.69 / 21.96 check was a one-off scratch script, `verify_memo_changes.py`.]
 
 ## Coverage
 
