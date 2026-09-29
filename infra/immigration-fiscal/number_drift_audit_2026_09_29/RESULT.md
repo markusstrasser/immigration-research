@@ -1,4 +1,4 @@
-**Verdict:** The evidence map now takes its flagged numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 923dfbd plus this lane's uncommitted map changes, 662 of 799 numbers are checked (the rest are years and non-quantities): 662 MATCH and 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (78 records). build.py lints and tests all 60 bindings and refuses the page on any failure. General administration held fixed now reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. Two table changes need the lead's confirmation. The alternatives now read candidate v4's one-set run (295 / 362, then 371 / 435 with pensions). A new row separates the pairing's low-end offending assumption (−4 / 0), so the social step reads +96 / +101, as the prose does. Five values are approximate and marked on the page: PM2.5 and crash figures scaled from the survey's 40.9M to the 39.7M the account prices.
+**Verdict:** The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD ea3369a plus this lane's uncommitted changes, 665 of 802 numbers are checked (the rest are years and non-quantities): all 665 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. Five values are approximate and marked on the page: PM2.5 and crash figures scaled from the survey's 40.9M to the 39.7M the account prices.
 
 Model: claude-opus-5-5
 
@@ -6,7 +6,7 @@ Model: claude-opus-5-5
 
 This lane first audited the numbers on the evidence map and in the routing documents. It then built the map's
 build-time sourcing and applied every map fix through it. Nothing is committed; the team lead reviews and commits.
-The final run read HEAD 923dfbd and the working tree at 2026-09-29 06:49 JST. That working tree included the peer's
+The latest run read HEAD ea3369a and the working tree at 2026-09-29 07:28 JST. That working tree included the peer's
 uncommitted CLAUDE.md edit, which this lane only read. `derived/inputs.json` holds the sha256 of every file read.
 
 Since the 263def3 run (05:24), these changes landed:
@@ -16,24 +16,26 @@ Since the 263def3 run (05:24), these changes landed:
 - f40e47e and 923dfbd ran the pending bundle as one set (candidate v4) and restated the INDEX on it. I re-anchored the
   INDEX anchors those edits moved and mapped the new v4 numbers.
 - eceab11 rewrote the dataset register, which is outside the audit's spans.
-- This lane moved the registry into the map's build and applied the fixes, below.
+- This lane moved the registry into the map's build and applied the fixes, below. The lead committed them as
+  2ae6675 (the map) and b0bf4c2 (this lane), then the printed-sum gate as ea3369a. The prose sum and the capital
+  label (below) are uncommitted.
 
 ## Result
 
 | File | Tokens | Audited | of which bound | MATCH |
 |---|---:|---:|---:|---:|
-| overview_2026_09_28/groups.py | 266 | 250 | 45 | 250 |
+| overview_2026_09_28/groups.py | 267 | 251 | 46 | 251 |
 | overview_2026_09_28/build.py (hand-typed text and rows) | 14 | 10 | 1 | 10 |
-| overview_2026_09_28/template.html | 57 | 48 | 18 | 48 |
+| overview_2026_09_28/template.html | 59 | 50 | 24 | 50 |
 | research/immigration-INDEX.md (current-result spans) | 247 | 214 | 0 | 214 |
 | research/immigration-objections-faq-2026-09-21.md | 201 | 126 | 0 | 126 |
 | CLAUDE.md (main-case paragraph) | 14 | 14 | 0 | 14 |
-| Total | 799 | 662 | 64 | 662 |
+| Total | 802 | 665 | 71 | 665 |
 
 [CALCULATION: `audit_numbers.py` → `derived/number_audit.csv`, `derived/extracted_numbers.csv`]
 
 A bound number is the rendering of a `{{q:<id>|<view>}}` placeholder. The audit checks it against its record and lints
-the sentence around it, as the build does. The other 598 audited numbers are typed and checked through
+the sentence around it, as the build does. The other 594 audited numbers are typed and checked through
 `source_map.csv`, as before. Of the 137 numbers not audited, 84 are marked `skip` in `source_map.csv` (the reason is on
 each row) and 53 are years in the routing files.
 
@@ -42,11 +44,12 @@ each row) and 53 are years in the routing files.
 All files sit in `overview_2026_09_28/`:
 - [`quantities.py`](../overview_2026_09_28/quantities.py): the only resolver, renderer, lint and binding test. build.py,
   audit_numbers.py and registry_check.py import it; there is no second copy.
-- [`quantity_registry.csv`](../overview_2026_09_28/quantity_registry.csv): 78 records. By status: 65 file, 3
+- [`quantity_registry.csv`](../overview_2026_09_28/quantity_registry.csv): 79 records. By status: 66 file, 3
   file+text, 3 text, 4 inference and 3 needs_file.
-- [`quantity_bindings.csv`](../overview_2026_09_28/quantity_bindings.csv): 60 map bindings, 37 in groups.py, 14 in
+- [`quantity_bindings.csv`](../overview_2026_09_28/quantity_bindings.csv): 66 map bindings, 38 in groups.py, 19 in
   template.html and 9 in build.py. The `replaced` column keeps what each site showed before.
-- [`test_quantities.py`](../overview_2026_09_28/test_quantities.py): 9 tests of the rendering and binding rules.
+- [`test_quantities.py`](../overview_2026_09_28/test_quantities.py): 13 tests of the rendering, binding and allocation
+  rules; [`test_build_sums.py`](../overview_2026_09_28/test_build_sums.py): 6 tests of the printed-sum gates.
 
 On every run, build.py does the following:
 1. It reads each table value through `q(<id>)` from the registry, or through `d(<variant>)` from
@@ -92,6 +95,15 @@ step and running. It checks each sum on the printed numbers, and a table with no
 `build.py --round-each` rounds every number on its own. That is the positive control: it fails with the 7 broken
 sums above. `test_build_sums.py` runs the gate on the operator's example and on the built tables, both allocated and
 rounded each on its own. The assumptions table has no sums and still prints whole billions.
+
+Sums stated in prose have a gate of their own, `PROSE_SUMS` in build.py, because the table gate cannot read them. The
+one sum now listed is the main estimate, less `pairing.footing_reduction`, plus `social.items`, which must equal
+`pairing.total`. The gate checks it at each end, on the values the page prints (`Q.printed_value`). Stated as
+"$355bn (322–387)" plus "$100bn (96–101)" against "$450bn (414–488)", the low end read 322 + 96 = 414. The
+missing $4bn is the pairing's low-end fiscal case, which prices offending at the Hispanic average. Three sentences
+now say so: template 147 and 213, and the social group's why. They quote `pairing.footing_reduction` (4.34 at the
+low end, 0 at the high end), and bindings keep each one in place. The central values stay "about", rounded to 5.
+The main estimate at template 143 is now a placeholder too, so every part of the sum is bound.
 
 ### Record format
 
@@ -155,6 +167,8 @@ covered are now placeholders in the sources.
 | assumptions | General administration held fixed, −28.5 / −40.6, "approximate" | −30.27 / −44.34 | `gg.fixed_change` (engine arm) |
 | alternatives | v3's hand sums: 290.5 / 355.8, then 368.0 / 429.0 | v4's run: 294.70 / 361.82, then 371.41 / 434.84 | `candidate_v4.set_cash`, `…set_accrual_payable` |
 | alternatives, beside | Costs outside public budgets +92 / +101 | Offending at the Hispanic average, low end −4 / 0; then costs outside public budgets +96 / +101 | `pairing.fiscal_footing`, `pairing.total` |
+| template 147 and 213, social why | the total with the costs outside the budget, $450bn (414–488), with no word on its footing; 213 printed "The $450bn figure adds them" | each adds "Its low end also prices offending at the Hispanic average, $4bn less."; 213 prints "The $414–488bn figure adds them" | `pairing.footing_reduction`, `pairing.total` |
+| template 183 | "Return on public capital: about $45bn (34–56)", the ledger line's name for a larger total | "Return on public capital, government enterprises' included: about $45bn (34–56)" | `capital_return.total` (must name enterprises) |
 
 The other bound sites kept their values and are now placeholders or read rows. They are the headcount (39.7M), the
 per-member figure ($8.9k, 8.1–9.8), f268's 22%, 11%, 44% and 30%, f211's 0.7 and f253's $60bn. The rest are f264's
@@ -192,7 +206,7 @@ into three parts [DATA: finite_response_2026_09_26/derived/runs.json]:
 The build stops if the remainder differs from run I (general government with row 8) by more than 1e-3. The total does
 not change.
 
-### Other ways to count: candidate v4 (needs confirmation)
+### Other ways to count: candidate v4 (committed in 2ae6675)
 
 At the lead's commit 923dfbd the INDEX restates the pending revision on candidate v4's one-set run, so the map's two
 alternative rows now read it [DATA: main_case_candidate_v4_2026_09_29/derived/bands.csv, method mean]:
@@ -205,7 +219,7 @@ The label changes from "with smaller tax fixes" to "with smaller corrections". S
 public housing's keys (items 1 and 4), the production weights (item 2), workers' compensation (item 7), state
 pricing and roads keyed by miles [DATA: v4 attribution.csv].
 
-### The pairing's footing (new, needs confirmation)
+### The pairing's footing (committed in 2ae6675)
 
 The pairing's low end, $413.7bn, assumes Mexican-origin offending equals the Hispanic average. That puts its fiscal
 case at $317.5bn, not the adopted $321.8bn [DATA: real_costs_totals.csv §7, `hispanic` fiscal main case (low);
@@ -295,9 +309,26 @@ Against b0bf4c2's outputs, the audit's `number_audit.csv` differs only in the li
 `extracted_numbers.csv`, plus five template locators that moved down one line. The captions, the two summed tables
 and the new caption line are the only changes on the page. The assumptions table is byte-identical.
 
+The prose sum and the capital label were validated at 2026-09-29 07:28:04–07:28:13 JST on HEAD ea3369a plus the
+working tree, with the same commands:
+- the builds are `cmp`-identical, with 66 bindings passing;
+- the audits are `cmp`-identical, 665 of 665 MATCH;
+- the registry checks are `cmp`-identical (79 records, 13 FIXED);
+- pytest passes 23 tests, and ruff passes.
+
+Three controls each exit 1 and write no page:
+- **Footing record at 0** (registry in place, restored, `cmp` rc 0): "the parts print as 418, pairing.total as
+  414".
+- **Template copy without the footing sentence at 147** (`--template`): "{{q:pairing.footing_reduction|at_low_end}}
+  is not at its site".
+- **Template copy whose line 183 drops "government enterprises' included"**: "names none of /enterprise/", and
+  its anchor picks 0 lines.
+
+On the page, only the four sentences changed; line 143 renders as before.
+
 ## Open items
 
-1. **Two table changes to confirm:** the v4 alternatives, and the pairing's footing row. Both are above.
+1. **Done:** the lead committed both table changes (the v4 alternatives and the pairing's footing row) in 2ae6675.
 2. **Five approximate values** stay until the air and crash lanes rerun on audit row 4's 39.71M. Their records then
    change to `file`, and the dotted underlines go away without a text edit.
 3. **Typed numbers remain.** 205 groups.py numbers, 9 build.py tokens and 30 template numbers are still typed. They
@@ -504,3 +535,13 @@ uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q infra/imm
   - `displayed_sum_errors` reads the printed tables back and refuses the page on a broken sum.
   - `--round-each` is the positive control: it fails with 7 broken sums. Validation ran at 07:18:41–07:18:52 (see
     Validation).
+- 2026-09-29 07:29:45 JST: the lead approved both same-class fixes.
+  - **Prose sum.** Added `pairing.footing_reduction` (4.34 at the low end, from `case.main` less
+    `pairing.fiscal_footing`) and the sentence "Its low end also prices offending at the Hispanic average, $4bn less."
+    It sits at template 147, template 213 (which now prints the range, $414–488bn) and the social group's why.
+    `PROSE_SUMS` checks 322 − 4 + 96 = 414 and 387 + 101 = 488 on the printed values. Template 143's "$355bn a year
+    (322–387)" became placeholders, and its two source_map rows went.
+  - **Capital label.** Template 183 now reads "Return on public capital, government enterprises' included: about
+    $45bn (34–56)", bound to `capital_return.total`, which must name the enterprises. Its two source_map rows went too.
+  - **Validation.** Everything was validated at 07:28:04–07:28:13, with three controls (see Validation). Template 186
+    states no sum ("Beside the total"), so it takes no footing sentence. My earlier report listed it by mistake.

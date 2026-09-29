@@ -1,5 +1,5 @@
 {
- "head": "b0bf4c2d20bd8e9a6fe7ca35fbc0610cfb0ad07c",
+ "head": "ea3369a2686146eb281e2c1b9aac60bedfeb6942",
  "sha256": {
   "CLAUDE.md": "ee95f7caf60f38ab895ab8b701df061f6355a41062ef5b83a6a3f2eaaf63048d",
   "decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md": "3d89e32090e59e8c903f046f503bc29a2002d9696d249d139f7adf1d3a8bbf99",
@@ -35,10 +35,10 @@
   "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived/sign_reversal.csv": "7fc3587f3a64fb7f197270c59298ba85b37d06ae2daa9077aabff53d4e27f7a6",
   "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived/summary.json": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d",
   "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/summary.json": "864246c1da7c988040d76ed60816072036b5a89c37b8fd792b68f22a601c5ada",
-  "infra/immigration-fiscal/overview_2026_09_28/build.py": "fec7e4c9f4870391f1e4b563b4da816536df4169670fe7ab0f2839058185cfa0",
-  "infra/immigration-fiscal/overview_2026_09_28/groups.py": "71862b7cfee89c34519bc8577b29baa9d196d5b008e69f11f8673ec03bbbd9cc",
-  "infra/immigration-fiscal/overview_2026_09_28/quantity_registry.csv": "3ac58101961d61fcc75467a32e3ad05b481f8019f7af2f04b21d4c3c805f7559",
-  "infra/immigration-fiscal/overview_2026_09_28/template.html": "3488870b654465bd82d316950392ee9702d824db4b5d5e8addd848555017ff88",
+  "infra/immigration-fiscal/overview_2026_09_28/build.py": "3e92ec285fc78adef943954edc3726c55a8070b4d35c37601ad94febcbe438a7",
+  "infra/immigration-fiscal/overview_2026_09_28/groups.py": "9c940d788eacb0306f94f99c0ceafd758d627b47e8bb2103fb33f8c4aa2c6bba",
+  "infra/immigration-fiscal/overview_2026_09_28/quantity_registry.csv": "ea03ca6d5a3a84abfbdd871d1a017579e70213ce1ff5e293075923844183b153",
+  "infra/immigration-fiscal/overview_2026_09_28/template.html": "ab81479c976cf72d4b0d6447ccddaa3109770c031c917f6ff904d5ac0a5adca2",
   "infra/immigration-fiscal/pension_accrual_2026_09_28/derived/case_beside.csv": "0ef13fc0148e02edeec7fa2048fa6a9134b52a36a8c905406aafe2e714a082c4",
   "infra/immigration-fiscal/population_basis_2026_09_29/derived/restated_pairing.csv": "62d5e50b52226b3f9e965292ff7fd68aa4b49c6b9057b80f44eb798038eb10c1",
   "infra/immigration-fiscal/population_basis_2026_09_29/derived/white_count.csv": "f4f7c83e0b3af50016f547b3bf0de64ff1b70198df82ee7b3886c6022e4c8385",
@@ -65,6 +65,6 @@
   "research/immigration-administration-response-test-2026-09-20.md": "e63b1d3d3f0988a86aba945b3f85bc8c63708e4f5214d94e20bc581b171b2fd8",
   "research/immigration-confidence-ladder.md": "1d5edeceadf7c9c2929ba17709460ed679976462be832274591ab3613d14d3c7",
   "research/immigration-objections-faq-2026-09-21.md": "434d8f75bdd6636f05594b4939ecd50d072bde4e434b48597e5408641381bff4",
-  "source_map.csv": "747396d2d33159343cf9157bc4ce43228a697d980811b55c9de85f274ea2ce62"
+  "source_map.csv": "85cdb38da43682d142f72e14bf88571243c33f7ee5fc1692985c0f85b379cc16"
  }
 }
