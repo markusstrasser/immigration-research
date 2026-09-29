@@ -114,3 +114,29 @@ held out, because it is the high-leverage point (without it the slopes fall to 0
 
 A cross-lab attack on this draft (the causal structure in §1–2 and the identification in §3–4)
 comes before any estimation run.
+
+## Revision 1 — after the cross-lab attack (2026-09-29)
+
+GPT-6 Astra, xhigh, [attack_astra.md](attack_astra.md). Each finding checked against the design and
+the selection-curve outputs; the one numerical claim was verified: the B0 education line is
+28.72 + 0.522·G1 (`selection_curve_2026_09_27/derived/slopes.csv`), fixed point 60.1, so §1's
+"B alone assumes regression toward the US mean" is wrong — B0 already regresses toward about 60.
+
+| # | Finding | Verdict | Change |
+|---|---|---|---|
+| 1 | c is estimable but not a mechanism; US conditions tied to origin load on it | accept | B1's estimand is renamed "incremental association of origin conditions with G2"; no reversion claim from B1 alone |
+| 2, 7 | the national mean is the wrong reference; with a fixed India mean the c term cancels for any within-India change in selection | accept, decisive | the projection for India needs **sub-population means** (state × caste × language from IHDS/NSS/PLFS) and the migrant mixture over them (ACS home language by arrival cohort, being built in `indian_cohort_selection_2026_09_29`); national μ stays only as a contextual predictor |
+| 3 | percentile means don't recover latent transmission; b and c are composites | accept | percentile models are predictive only; the Clark calibration of λ is dropped |
+| 4 | route contrasts are not randomized; conditioning on parent standing opens a collider | accept | B2 is predictive heterogeneity only |
+| 5 | reliability measures stability, not transmission; ACS gives no within-person repeats | accept | B3 relabelled descriptively; repeat-measure reliability dropped as an identification route |
+| 6 | the out-of-time test needs parent arrival years for adult G2, which CPS/ACS do not carry | accept, gate | **step 0 is a linkage audit** (NLSY97 parent linkage, CILS, co-resident ACS/CPS); if no file links adult G2 to parents' arrival, the test becomes an explicit synthetic-cohort exercise and makes no forecast-validation claim |
+| 8, 9, 10 | context, assortative mating, return migration and period effects | accept | both parents' characteristics; childhood destination; attrition bounds; claims limited to residents |
+| 11, 12 | permutation and planted-effect controls pass under confounding | accept | conditional-null simulation on the fixed predictor matrix, plus zero-reversion scenarios with subgroup mixtures and destination effects |
+| 13, 14 | weighting target and decision rule gaps | accept | loss targets India's future cohorts; the decision rule separates "forecasts better" from "mechanism supported"; numeric predictions written before fitting |
+
+What survives: the question is now two separable pieces. (a) **Composition:** has the Indian flow
+shifted toward sub-populations with lower home means (region, caste, route)? Measurable from ACS
+language × cohort and India-side sub-population data. (b) **Transmission:** given a family's
+standing, how far do its children fall back, and toward what? Only linked parent–child data
+answer that, and step 0 decides whether we have any. No estimation lane runs before the
+composition result and the linkage audit are in.
