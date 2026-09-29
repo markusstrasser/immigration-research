@@ -103,11 +103,13 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
   been state-priced since 2026-09-20, not national-average). The adopted case is one engine
   run plus a post-engine return on public capital:
-  `infra/immigration-fiscal/main_case_long_run_2026_09_27/main_case.cjs`, whose package imports the
-  schools case's (`main_case_schools_full_2026_09_26`). The line and receipt responses and the capital
+  `infra/immigration-fiscal/main_case_2026_09_29/main_case.cjs`, whose package builds on the
+  September 27 case's (`main_case_long_run_2026_09_27`). The line and receipt responses and the capital
   return travel in `derived/corrections.json` → `meta.responses` and `meta.capital_return`. A consumer
-  that applies the payload must set all of them. One that builds engine state calls the package's
-  `stateFor`; one that needs the full cost calls `evaluateFull`.
+  that applies the payload must set all of them. The payload adds eight spending and two receipt lines
+  that `model.json` lacks: evaluate as `Engine.evaluate(withSyntheticLines(m), stateFor(m, spec,
+  profile))`, or call `evaluateFull` for the full cost. Consumer lanes key the case `sept29`, beside
+  their `sept27` outputs.
 
 - Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
   verify stored source hashes, including upstream
@@ -160,15 +162,19 @@ substituting a web summary or declaring a measurement unavailable:
   are charged at their full average cost per pupil
   ([decision](decisions/2026-09-26-main-case-schools-full-cost.md)). Since 2026-09-27 the main case also
   takes long-run road and park responses, rental assistance at 1, a 2–3% real return on public capital
-  and every government enterprise: **$322–387bn**. Earlier and companion figures:
-  - $321.8–387.4bn unrounded;
-  - low side with the within-district 0.836: $296–363bn;
-  - the schools case: $258–292bn;
+  and every government enterprise
+  ([decision](decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)). Since
+  2026-09-29 it counts the Social Security and Part A promises members earn as they work, at the
+  benefits current law can pay, and takes long-run property taxes, the IRS income-tax key, state
+  prices, roads by miles and five smaller keys: **$371–435bn**
+  ([decision](decisions/2026-09-29-main-case-v4.md)). Earlier and companion figures:
+  - $371.4–434.8bn unrounded; counting benefits when paid (the cash set), $294.7–361.8bn;
+  - low side with the within-district 0.836: $346–410bn;
+  - September 27: $322–387bn; the schools case: $258–292bn;
   - first-year budget response with CBO's 0.63–0.66: $201–246bn;
   - September 24: $201–246bn; September 23: $203–250bn; September 20: $165–197bn.
 
-  ([decision](decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md).) The capital
-  return is an imputed resource cost, never a debt flow. Defense,
+  The capital return is an imputed resource cost, never a debt flow. Defense,
   existing interest and business subsidies stay at **zero response by assumption**; see the
   [complete annual account](research/immigration-complete-annual-account-2026-09-20.md)
   and FAQ entry 2 for the sensitivity.
