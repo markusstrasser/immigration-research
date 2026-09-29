@@ -137,7 +137,7 @@ generation, $87–97bn, $152–179bn and $123–168bn. Per-person figures divide
 The pension accrual follows this year's payroll taxes, so it lands mostly on the US-born generations. The split is
 computed on the account itself, with no reference group, and is not the September 19 ledger's gaps against whites.
 
-[Against 39.7M third-plus whites](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md) (ladder 263, both sides on the account's count, ladder 274): under the September 27 rules the union costs other residents $317–325bn a year more once cash accounting's age artefact is removed (pensions on accrual, or white rates at the union's ages); $162–164bn on raw cash at white ages; $402–407bn against local whites state by state (California $14.3k per member). The difference is taxes, schools and transfers, not scale effects. [Connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md) (ladder 262): counties with a larger Hispanic share have fewer cross-income friendships, mostly through residential separation; the payoff does not grow with county size, so no dollar figure. Reader-facing summary of the whole ladder: `infra/immigration-fiscal/overview_2026_09_28/` (`build.py` writes `derived/overview.html`; every new ladder entry must be placed in its `groups.py`).
+[Against 39.7M third-plus whites](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md) (ladder 263, both sides on the account's count, ladder 274): on the main case the union costs other residents $351bn a year more once cash accounting's age artefact is removed, which the case's pension accrual now does (white rates at the union's ages on cash give $351–352bn); $196–197bn on raw cash at white ages; $408–410bn against local whites state by state (California $14.4–14.5k per member). On September 27 these were $317–325bn, $162–164bn and $402–407bn. The difference is taxes, schools and transfers, not scale effects. [Connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md) (ladder 262): counties with a larger Hispanic share have fewer cross-income friendships, mostly through residential separation; the payoff does not grow with county size, so no dollar figure. Reader-facing summary of the whole ladder: `infra/immigration-fiscal/overview_2026_09_28/` (`build.py` writes `derived/overview.html`; every new ladder entry must be placed in its `groups.py`).
 
 Production is held fully adjusted while service responses vary; these transferred short-run assumptions do not
 identify a long-run effect. The production term's perfect-substitution assumption has an executed sensitivity: a
@@ -198,8 +198,10 @@ Diluted instruction would cost other residents' pupils about **$16bn** a year in
 unfunded, so it applies only to the first-year scenario and is in no total (ladders 222 and 230;
 [decision](../decisions/2026-09-25-school-dilution-priced-beside.md)).
 
-For comparison, a rough re-key of the September 27 case to non-Hispanic Black residents costs
-$549–595bn a year, $13.1–14.2k per member, 1.5–1.6× the Mexican-origin figure per member. Ladder 258's four
+For comparison, a rough re-key of the main case to non-Hispanic Black residents costs $542–590bn a year,
+$12.9–14.1k per member, 1.3–1.4× the Mexican-origin figure per member; counting benefits when paid it is
+1.5–1.7× (September 27: $549–595bn, 1.5–1.6×). The pension accrual narrows the ratio because it charges the
+young Mexican-origin workforce's accruing promises in place of its few retirees' benefits. Ladder 258's four
 social items (fear, security, property values, school disruption) come to $51.0bn, and violent offences cost victims $185bn, $73bn of it outside the
 group. This is not an engine run (ladder 259,
 [lane](../infra/immigration-fiscal/black_comparator_rough_2026_09_28/RESULT.md)).
