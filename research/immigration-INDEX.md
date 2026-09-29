@@ -236,7 +236,7 @@ year** ($2.6–13.3bn) inside the fiscal account: native women's hours taxes of 
 saving of $1.5bn net. Cheaper services, worth $21.8bn to consumers, overlap the production gain without being
 reconciled with it, so they are neither added nor counted as included. The
 [construction lane](../infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md) (ladder 200) adds
-nothing: the group makes construction 0.75% cheaper, which trims other renters' extra rent from $34bn to $30bn a
+nothing: the group makes construction 0.75% cheaper, which trims other renters' extra rent from $33.5bn to $29.9bn a
 year, but that gain is inside the production term. The
 [scale lane](../infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md) (ladder 201) measures city size and
 schooling mix in one regression: bigger cities add $38.6bn to other residents' earnings and the group's lower
