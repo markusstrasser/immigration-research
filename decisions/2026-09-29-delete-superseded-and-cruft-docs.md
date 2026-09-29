@@ -67,3 +67,7 @@ revision.
 
 The constitution (CLAUDE.md "Never without human") and GOALS.md ("Deletion of research files") still carry the old
 rule. Changing them is the operator's call; new wording is proposed to him, not edited.
+
+[2026-09-29 15:12 JST: the operator approved the proposed wording ("2 ok do"). CLAUDE.md and GOALS.md now let
+superseded and cruft documents go with an INDEX tombstone once their last version is on GitHub; deleting records or
+analysis lanes still needs him (bd2235d).]
