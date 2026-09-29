@@ -240,6 +240,122 @@ the old gradient by the corrected dollar level without the ratio's derivative. A
 would double count the shared donors and ignore their covariance, so it is not added; the medical bridge's
 joint error is unresolved.
 
+## v4 case (sept29), 2026-09-29
+
+claude-opus-5-5 (the v4 consumer lane; its fork B began this section and stopped at the usage limit, and the lane
+finished it). **Verdict:** on the main case adopted 2026-09-29 (`../main_case_2026_09_29/`, $371.41–434.84bn at
+specifications 48 / 11), the per-case SE is **$9.41–9.59bn** (sources independent, CPS block joint with the benefit
+keys), and the 95% intervals of the 64 specifications span **$352.6–453.3bn** ($339.4–466.1bn at the correlated upper
+bound). The SE is $1.1bn below September 27's $10.55–10.66bn for two reasons. The pension accrual moves with the
+payroll taxes that buy it, and Part A's accrual replaces a Medicare amount that carried MEPS error. Both follow from
+rules this section had to design; the alternatives are beside them.
+
+`node sept24_specs.cjs` costs the case through the adopted package (`main_case_2026_09_29/package.cjs`,
+`evaluateFull`) on its 64 specifications. It uses two models: the uncorrected model with the payload's synthetic lines
+at zero (`withSyntheticLines`), and the model with its payload. The payload model gives the methods' mean of the case
+lane's `per_spec.csv` at every specification, in cost and capital return (max |diff| 1.7e-13). The costs span
+`main_case` ($371.4146–434.8410bn) and `uncorrected_at_adopted_responses` ($313.2581–378.9158bn) exactly (1e-9).
+Every specification sets the case's 13 line responses, and each engine row takes its specification's. The script
+gains three things:
+
+- **Each model's own capital derivatives.** The payload rescales rental assistance's national total by 0.9127
+  (public housing split out), so the return's derivative on that line differs between the models, by up to 0.020.
+  `spec_costs.csv` carries `kcoef_<model>_<line>` for both, and each rebuilds its model's return (2.8e-14).
+- **The production term's SE on each model's grid** (`production_se_<model>_bn`). The payload's production grid
+  uses the account's row-4 weights; the uncorrected model's SE equals the published CES scenario's (1e-9).
+- **Line targets for the payload's new receipt lines, and a national-scale column in `benefit_factors.csv`.**
+  Rental assistance's benefit shift is scaled by the same 0.9127, because every national-scale edit on the line
+  follows its cell edits (gated).
+
+`propagate.py --case sept29` is now the default, as the last entry of `later_cases.json`. It rebuilds each uncorrected
+specification from its September 20 case (1e-6), with the receipt responses added, and carries the errors through
+four rules this section designed:
+
+1. **The pension switch.** The payload defines Social Security's group amount as ratio_net (0.9737) times the
+   group's OASDI receipts: employee and employer OASDI, plus 0.8035 of the self-employment tax. On each replicate the
+   line therefore deviates by ratio_net times those receipts' deviation, in place of its own key's, and the group's
+   payroll taxes and the promises they buy move together. A gate checks the rule on the payload's targets (1e-9).
+   Beside it: the accrual held fixed (CPS SE $8.15–8.47bn, combined $9.85–10.10bn), and the lane's generic rule,
+   social_security's own key scaled like every corrected line ($8.94–9.05bn, combined $10.51–10.59bn).
+2. **Part A's accrual carries no error.** The payload swaps Part A's share of the Medicare line (0.3751) for a fixed
+   $41.14bn, which the pension lane counts from covered workers, not from Medicare use
+   (`pension_accrual_2026_09_28/RESULT.md`). The Medicare line's CPS and MEPS errors scale with the rest of its
+   amount. A gate checks that the line less the accrual is 0.6249 of the cash set's (the candidate's
+   `corrections_v4_cash.json`, which the adopted lane reads for its cash row), to 1e-9. Beside it, in a scratch run
+   that is not a lane output: if the accrual carried the line's MEPS error in proportion to its amount, the MEPS SE
+   would be $7.13bn, the combined SE $10.80–10.94bn and the 95% union $350.0–456.0bn. The accrual's own sampling
+   error, in the count of covered workers, is not modelled.
+3. **Receipt responses.** The case sets responses on four receipt lines besides the enterprises. Personal property
+   tax sits on the account's capital-income key, which this lane replicates, and carries that key's spread ($0.07–0.08bn
+   of SE). Public housing's operating result (`housing_enterprise_surplus`, national −$45.56bn, a payload line) sits at
+   rental assistance's key share (gated to 1e-12) and moves with it. Owner-occupied and tenant-occupied property taxes
+   sit on keys this lane does not replicate (the modeled owner-property key and renters' contract rent) and carry none.
+4. **Correction lines with no amount on the uncorrected model** (roads by miles and the three state prices) enter the
+   cost at their responses and carry no sampling error; their ranges are the package's. A gate checks that none has an
+   amount on the uncorrected model.
+
+Two `sept29` runs are byte-identical, and the older cases rerun with no tracked change. A test pins the production
+term's SE to each model's grid and the pension alternatives' combination with the other sources
+(`test_payload_production_grid_and_pension_switch`).
+
+| $bn | September 27 | September 29 (v4) |
+|---|---:|---:|
+| **Per-case SE, sources independent, CPS block joint with the benefit keys** | 10.55–10.66 | **9.41–9.59** |
+| Per-case SE, benefit keys' SE appended as if independent (the published method) | 10.98–11.07 | 9.86–10.00 |
+| Per-case SE, all positively correlated | 17.65–18.09 | 15.89–16.36 |
+| CPS block, joint | 8.42–8.57 | 7.62–7.86 |
+| CPS keys of the account alone | 8.87–8.99 | 8.08–8.27 |
+| of which the capital return's own CPS part | 0.20–0.35 | 0.20–0.34 |
+| of which rental assistance and the enterprises | 0.44–0.46 | 0.75–0.78 |
+| of which the receipt responses | — | 0.07–0.08 |
+| Benefit keys' own replicate SE | 1.20–1.23 | 1.34–1.38 |
+| Their correlation with the account's CPS deviation | −0.43 to −0.40 | −0.42 to −0.37 |
+| Production term | 0.74–1.12 | 0.68–1.03 |
+| School correction | 2.07–2.29 | 2.07–2.29 |
+| MEPS donors | 5.88–5.89 | 4.98–4.99 |
+| Pension accrual held fixed, combined (CPS block) | — | 9.85–10.10 (8.15–8.47) |
+| Generic rule on social_security's own key, combined (CPS block) | — | 10.51–10.59 (8.94–9.05) |
+| 95% intervals of the 64 specifications, union | 300.9–408.1 | 352.6–453.3 |
+| At the correlated upper bound | 286.5–422.1 | 339.4–466.1 |
+| With the benefit keys appended as if independent, union | 300.1–408.9 | 351.8–454.2 |
+| Uncorrected model at the adopted responses, SE (control; no benefit keys) | 12.26–12.33 | 12.27–12.34 |
+
+[CALCULATION: `sept24_specs.cjs` → `derived/sept29/spec_costs.csv`, `line_targets.csv`, `benefit_factors.csv`;
+`propagate.py --case sept29` → `derived/sept29/case_uncertainty.csv`, `derived/sept29/summary.json`; the September 27
+column from `derived/sept27/`; the Part A alternative from a scratch copy of `propagate.py` with no fixed dollars on
+the Medicare line.]
+
+The CPS block falls $0.7–0.8bn against September 27. On social_security's own key (the generic rule) it would be
+$8.94–9.05bn, $0.5bn above September 27; the accrual rule takes $1.2–1.3bn off that, and holding the accrual fixed takes
+$0.6–0.8bn. With the accrual at ratio_net of the receipts, about 3% of the employee and employer OASDI receipts'
+deviation survives on the replicates. The MEPS SE falls $0.9bn because 37.5% of the Medicare line leaves the
+MEPS-keyed amount; the scratch run above shows that this rule decides it. The rental and enterprise part rises
+because rental assistance's key now also carries public housing's operating deficit (0.828 of the line's national
+total) and its capital derivative (0.153–0.229). Its weight on the replicates is 1.98–2.06 against September 27's 1,
+and the benefit keys' rental change carries the same weight.
+
+**No error model here:** the Part A accrual's count of covered workers; the state-price lines' key shares (each line
+is a national gap times the parent line's key share, and that share's replicate error is not carried; the parent
+line's own error is); roads by miles (a mileage key); the payload's constants (ratio_net, part_a_share, the accrual,
+the benefit tax); and everything the September 27 section lists. The same caveat holds: the SE is a partial sampling
+approximation, not a bound in either direction.
+
+Log (times from `date`):
+- 2026-09-29 17:03 JST: brief read; stub written. Files in scope: `sept24_specs.cjs`, `later_cases.json`,
+  `propagate.py`, `test_uncertainty.py`, this section, `derived/sept29/` (new).
+- 2026-09-29 17:13 JST: gate 1 baseline (run before any edit): `rerun_lane.py` with `node {lane}/sept24_specs.cjs`,
+  `propagate.py --case sept24|sept26|sept26_schools|sept27` and `audit.py`: IDENTICAL, 38/38 files, rc 0 (61 s).
+- 2026-09-29 21:09 JST (the lane, resumed after the machine rebooted at about 20:51). Fork B stopped at the usage
+  limit partway through `propagate.py`. Before the reboot the lane finished that edit (the rebuild block and the
+  per-case deviation block, as the four rules above describe) and wrote this section; its final gates were running
+  when the machine went down, and their logs were lost, so every gate was rerun and printed. The five pre-reboot files
+  in `derived/sept29/` all parse. A fresh `sept24_specs.cjs` and `propagate.py --case sept29` (21:04) wrote all five
+  byte-identical to them. The run's own gates pass: the payload model rebuilds the case lane's `per_spec.csv`, and
+  the specifications span `main_case` $371.4146–434.8410bn exactly (1e-9). Gate 1: the old commands above,
+  IDENTICAL 43/43, rc 0; the five more files than the 17:13 baseline are `derived/sept29/`. Gate 4: two passes with
+  `propagate.py --case sept29` added, IDENTICAL 43/43, rc 0 each (21:04–21:09). No tracked file in `derived/`
+  differs from HEAD. pytest: 17 passed. Every figure in the table above matches the fresh outputs.
+
 ## Coverage: what carries uncertainty and what does not
 
 **Carries sampling or donor error:**

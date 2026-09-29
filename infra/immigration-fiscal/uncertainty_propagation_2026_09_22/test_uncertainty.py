@@ -177,3 +177,30 @@ def test_joint_case_carries_the_benefit_keys_in_the_cps_block():
         f = pd.read_csv(OUT / name / "benefit_factors.csv")
         np.testing.assert_allclose(f.shift_bn, f.delta_bn * f.stack_factor, rtol=1e-12)
     assert found >= 1
+
+
+def test_payload_production_grid_and_pension_switch():
+    """sept29 (candidate v4 adopted): the production term's SE is each model's own grid's at the specification's
+    production cell, the uncorrected model's being the published CES scenario's; the pension switch's two
+    alternatives (the accrual held fixed; the generic rule on social_security's own key) sit on the case's rows only
+    and combine with the other sources as the primary CPS error does."""
+    pf = pd.read_csv(HERE.parent / "full_account_benefits_2026_09_20/derived/benefit_scenarios.csv").query(
+        "scenario_id in ['ces_0086_owner000', 'ces_0248_owner000']").set_index("normalization")
+    found = 0
+    for name in json.loads((HERE / "later_cases.json").read_text()):
+        s = pd.read_csv(OUT / name / "spec_costs.csv")
+        if "production_se_uncorrected_bn" not in s.columns:
+            continue
+        found += 1
+        u = pd.read_csv(OUT / name / "case_uncertainty.csv")
+        c, base = u[u.case == name].reset_index(drop=True), u[u.case != name].reset_index(drop=True)
+        np.testing.assert_array_equal(c.se_production_term_bn, s[f"production_se_{name}_bn"])
+        np.testing.assert_array_equal(base.se_production_term_bn, s.production_se_uncorrected_bn)
+        np.testing.assert_allclose(base.se_production_term_bn,
+                                   pf.loc[base.normalization].private_plus_receipts_se_sampling_bn.to_numpy(), atol=1e-9)
+        other = c.se_production_term_bn ** 2 + c.se_school_correction_bn ** 2 + c.se_meps_donor_bn ** 2
+        for alt in ("fixed", "generic"):
+            np.testing.assert_allclose(c[f"se_combined_pension_{alt}_bn"],
+                                       np.sqrt(c[f"se_cps_pension_{alt}_bn"] ** 2 + other), atol=1e-9)
+            assert base[f"se_cps_pension_{alt}_bn"].isna().all()
+    assert found >= 1
