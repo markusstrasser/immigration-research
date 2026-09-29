@@ -13,7 +13,15 @@
  *     the schools package's shift lists unchanged; its payload adds the enterprise receipt's re-key, which
  *     each cell's model gets as rekeyEdits(corrected cell model) (the package's rule for per-generation
  *     models, RESULT "For consumers" 2), and its cost() adds the capital return, keyed by each cell's own
- *     evaluation (evaluateFull).
+ *     evaluation (evaluateFull);
+ *   - --case sept29 | sept29_cash (the main case adopted on 2026-09-29, candidate v4's set, and the cash set beside
+ *     it): the sept27 steps above, unchanged, give each cell's September 27 payload; the v4 part then goes on each
+ *     cell's September 27 model by the generation lane's rules (generation_account_2026_09_24/v4_split.cjs, whose
+ *     V4_LANE constant names the adopted lane). Item 3 is split in two levels by scaledSplit, as a ratio-type change:
+ *     each cell's own change in the raked cells (tax_key_by_generation.json) times its own stack factor. The other
+ *     inputs are this lane's own (v4_inputs.json: row-4 production, tenant shares, row-4 headcounts); run_split.sh
+ *     step 7 writes both. Costs and parts come from v4_split.cjs's evaluator, and the union is gated on the case's
+ *     published band (1e-4).
  * Outputs: _cache/cells_<case>_<def>.json (per cell, convention, band end: cost and programme parts).
  * Run from the repository root:
  *   node infra/immigration-fiscal/late_arrival_account_line_2026_09_27/run_cells.cjs --case sept27 --def central
@@ -28,10 +36,14 @@ const arg = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt 
 // The case switch: each case's package lane. Repointing the lane is the default below. Every case after
 // sept24 is built on main_case_2026_09_26/package.cjs (row 8's finite factor, the consumption key) and
 // they differ only in their responses, which come from the package's MAIN_SPECS and meta.responses.
-const CASES = { sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
+// sept29 and sept29_cash build their September 27 part on the September 27 package; their v4 part is v4Part()'s.
+const CASES = { sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26",
+  sept29: "main_case_long_run_2026_09_27", sept29_cash: "main_case_long_run_2026_09_27" };
 const CASE = arg("--case", "sept26_schools");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 const ON26 = CASE !== "sept24";
+const V4SET = { sept29: "set", sept29_cash: "cash" }[CASE];
+const ON29 = V4SET !== undefined;
 const MAIN = CASES[CASE];
 const P = require(path.join(HERE, "..", MAIN, "package.cjs"));
 const { Engine, MODEL, ALLOCS, SYN, SYN_LINES, MEDICAID, MAIN_SPECS, METHODS, STACKS, CENTRAL, LTSS_CENTRAL,
@@ -406,31 +418,166 @@ for (const conv of CONVS) {
 }
 
 // ---------------------------------------------------------------------------------------------------
+// sept29 / sept29_cash: the v4 part on each cell's September 27 model (v4_split.cjs), gated as the generation lane's
+// run_generations_v4.cjs gates its three generations. Each cell's payload is its September 27 payload above, the
+// case's national-scale edits and its own v4 tail; its production grid is its row-4 attribution.
+const V = ON29 ? v4Part() : null;
+function v4Part() {
+  console.log("[v4 part]");
+  const X = require(path.join(HERE, "..", "generation_account_2026_09_24", "v4_split.cjs"));
+  const C = X.loadCase(V4SET);
+  console.log(`  · ${C.rel} (adopted-case lane constant: ${X.V4_LANE})`);
+  gate("v4_split.cjs runs on this package's engine and model, and the case's payload starts with its corrections.json",
+    X.P === P && X.Engine === Engine && X.MODEL === MODEL && JSON.stringify(C.base) === JSON.stringify(corrections));
+  const U = X.unionRun(C);
+  gate("the union's items on the methods' mean model reproduce the payload's v4 part: every cell edit, receipt line and synthetic line",
+    U.worst < 1e-9 && U.worstRl < 1e-12 && U.sameLines, `${U.cellsCompared} cells; max |diff| ${e(U.worst)} bn, receipt lines ${e(U.worstRl)}`);
+  const models27 = Object.fromEntries(CONVS.map((c) => [c, Object.fromEntries(GENS.map((g) =>
+    [g, Engine.applyCorrections(models[c][g], payloads[c][g])]))]));
+  // Item 3, per fill-in method: the union's shift split by scaledSplit in two levels, each cell's own change in the
+  // raked cells (national line x its share change) times its own stack factor on the line, the remainder by the cells
+  // after the stack; then the methods' mean, as the payload averages them.
+  const TK = load("tax_key_by_generation.json");
+  const FITN = X.lineOf(MODEL, "receipts", X.FIT).national_bn;
+  gate("tax_key_by_generation.json is the payload's key change on model.json's line, over this lane's nine cells",
+    TK.meta.line === X.FIT && TK.meta.national_bn === FITN && JSON.stringify(TK.meta.generations) === JSON.stringify(GENS)
+    && C.options.tax_key === "irs_2023_raked" && TK.meta.variant === X.V4.TAX_KEYS[C.options.tax_key]
+    && ALLOCS.every((a) => TK.union[a] === X.V4.TAX.share_change[TK.meta.variant][a]), `${TK.meta.variant}, national ${FITN}`);
+  SCALING = "own";
+  worstResidual = 0;
+  const fitBy = {};
+  let worstFit = 0;
+  for (const conv of CONVS) {
+    const deltas = Object.fromEntries(GENS.map((g) => [g, X.byAlloc((a) => FITN * TK[conv][g][a])]));
+    const per = METHODS.map((m) => {
+      const ub = X.V4.taxEditOf("central", m, C.options.tax_key);
+      const s = scaledSplit(ub, deltas, models[conv], stackGen.payloads[m][conv], "receipt", X.FIT, null);
+      worstFit = Math.max(worstFit, ...ALLOCS.map((a) => Math.abs(GENS.reduce((t, g) => t + s[g][a], 0) - ub[a])));
+      return s;
+    });
+    fitBy[conv] = Object.fromEntries(GENS.map((g) => [g, X.byAlloc((a) => X.sum(per.map((s) => s[g][a])) / per.length)]));
+    worstFit = Math.max(worstFit, ...ALLOCS.map((a) => Math.abs(GENS.reduce((t, g) => t + fitBy[conv][g][a], 0) - U.fitBy[a])));
+  }
+  const fitResidual = worstResidual;
+  gate("item 3: the cells' shifts add to the union's in each fill-in method and in the methods' mean", worstFit < 1e-12,
+    `max |diff| ${e(worstFit)} bn; non-additive remainder spread by cells, max ${fitResidual.toFixed(4)} bn`);
+  const VI = load("v4_inputs.json");
+  gate("v4_inputs.json is this lane's nine cells", JSON.stringify(VI.meta.generations) === JSON.stringify(GENS));
+  const grids = {};
+  let worstGrid = 0;
+  for (const conv of CONVS) {
+    grids[conv] = Object.fromEntries(GENS.map((g) => [g, X.gridOf(C, VI.production.series[conv][g])]));
+    for (const k of ["private_wtp_bn", "induced_receipts_bn"]) {
+      C.production[k].forEach((v, i) => { worstGrid = Math.max(worstGrid, Math.abs(GENS.reduce((t, g) => t + grids[conv][g][k][i], 0) - v)); });
+    }
+  }
+  gate("the cells' row-4 production grids add to the payload's in every scenario, both conventions", worstGrid < 1e-12, `max |diff| ${e(worstGrid)} bn`);
+  const cellsOf = (m) => {
+    const out = new Map();
+    for (const l of m.receipts.lines) for (const sc of Object.keys(l.cells)) out.set(`r|${l.id}|${sc}`, l.cells[sc]);
+    for (const l of m.spending.lines) for (const k of Object.keys(l.keys)) out.set(`s|${l.id}|${k}`, l.keys[k]);
+    return out;
+  };
+  const S = {}, v4Payloads = {};
+  for (const conv of CONVS) {
+    S[conv] = X.split(C, { gens: GENS, top: TOP, models27: models27[conv], union: U, fitBy: fitBy[conv],
+      tenant: VI.tenant_share.rule[conv], persons5: Object.fromEntries(GENS.map((g) => [g, VI.headcount[conv][g].persons_5plus])) });
+    const add = X.additivity(C, GENS, S[conv].tails, U);
+    gate(`(${conv}) the cells' v4 tails add to the union's: cell edits, receipt-line cells, the same lines`,
+      add.edits < 1e-9 && add.receipt_lines < 1e-12 && add.sameLines, `${add.cells} cells; max |diff| ${e(add.edits)} bn, receipt lines ${e(add.receipt_lines)}`);
+    v4Payloads[conv] = Object.fromEntries(GENS.map((g) => [g, X.payloadOf(C, payloads[conv][g], S[conv].tails[g], grids[conv][g])]));
+    let worst = 0;
+    for (const g of GENS) {
+      const a1 = cellsOf(Engine.applyCorrections(models[conv][g], v4Payloads[conv][g])), b1 = cellsOf(S[conv].final[g]);
+      if (a1.size !== b1.size) worst = Infinity;
+      for (const [k, c] of b1) for (const a of ALLOCS) worst = Math.max(worst, Math.abs(a1.get(k)[a].target_bn - c[a].target_bn));
+    }
+    gate(`(${conv}) each cell's payload gives the model its item chain built`, worst < 1e-9, `max |diff| ${e(worst)} bn`);
+  }
+  const ev = X.evaluator(C.payload);
+  const FIELDS = ["allocation", "normalization", "share", "school", "reading", "gg", "uc"];
+  gate("the consumer's specifications are this package's MAIN_SPECS, in order", ev.specs.length === MAIN_SPECS.length
+    && ev.specs.every((s, i) => FIELDS.every((k) => s[k] === MAIN_SPECS[i][k])));
+  return { X, C, U, ev, S, fitBy, fitResidual, VI, models27, payloads: v4Payloads, O: X.oracle(C.set) };
+}
+
+// ---------------------------------------------------------------------------------------------------
 console.log("[engine]");
-const unionModel = Engine.applyCorrections(MODEL, corrections);
-const uCost = MAIN_SPECS.map((s) => cost(unionModel, s));
-const u0Cost = MAIN_SPECS.map((s) => cost(MODEL, s));
+// The case's specifications and evaluator: the package's, or under sept29 the v4 consumer's (v4Part).
+const SPECS = ON29 ? V.ev.specs : MAIN_SPECS;
+const CE = ON29 ? { cost: V.ev.cost, full: V.ev.evaluateFull, fw: (full) => full.state.fiscal_weight }
+  : { cost, full: evaluateCase, fw: (full, m, spec) => P.stateFor(m, spec).fiscal_weight };
+const unionModel = Engine.applyCorrections(MODEL, ON29 ? V.C.payload : corrections);
+const uCost = SPECS.map((s) => CE.cost(unionModel, s));
+const u0Cost = SPECS.map((s) => CE.cost(MODEL, s));
 const lo = uCost.indexOf(Math.min(...uCost)), hi = uCost.indexOf(Math.max(...uCost));
-gate(`the corrected union reproduces the adopted main case${ON26 ? " (main_case_bands.csv adopted)" : ""}`,
-  near(uCost[lo], gateAdopted[0], 1e-4) && near(uCost[hi], gateAdopted[1], 1e-4), `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)}`);
 const lo0 = u0Cost.indexOf(Math.min(...u0Cost)), hi0 = u0Cost.indexOf(Math.max(...u0Cost));
-gate(`the uncorrected union reproduces ${ON26 ? "the uncorrected model at the adopted responses (main_case_bands.csv)" : "the September 23 case"}`,
-  near(u0Cost[lo0], gateUncorrected[0], 1e-4) && near(u0Cost[hi0], gateUncorrected[1], 1e-4),
-  `${u0Cost[lo0].toFixed(4)}–${u0Cost[hi0].toFixed(4)}`);
+if (ON29) {
+  gate(`the corrected union reproduces the case's band at its end specifications (${V.O.source}, four decimals)`,
+    lo === V.O.specs[0] && hi === V.O.specs[1] && near(uCost[lo], V.O.band[0], 1e-4) && near(uCost[hi], V.O.band[1], 1e-4),
+    `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)} at ${lo} / ${hi}`);
+  const PS = V.X.perSpec(V.C.set);
+  if (PS) {
+    let worst = 0;
+    for (const [i, c] of PS.cost) worst = Math.max(worst, Math.abs(uCost[i] - c));
+    gate(`the corrected union reproduces ${PS.source} at each of its specifications (mean of the two methods)`,
+      PS.cost.size > 0 && worst < 1e-9, `${PS.cost.size} specifications; max |diff| ${e(worst)} bn`);
+  }
+  if (V.O.uncorrected) {
+    gate(`the uncorrected union reproduces the uncorrected model at the case's responses (${V.O.source.replace(/ \(.*\)$/, "")} uncorrected_at_adopted_responses, 1e-4)`,
+      near(u0Cost[lo0], V.O.uncorrected[0], 1e-4) && near(u0Cost[hi0], V.O.uncorrected[1], 1e-4), `${u0Cost[lo0].toFixed(4)}–${u0Cost[hi0].toFixed(4)}`);
+  } else console.log(`  · the uncorrected model at the case's responses: ${u0Cost[lo0].toFixed(4)}–${u0Cost[hi0].toFixed(4)} (no published row)`);
+} else {
+  gate(`the corrected union reproduces the adopted main case${ON26 ? " (main_case_bands.csv adopted)" : ""}`,
+    near(uCost[lo], gateAdopted[0], 1e-4) && near(uCost[hi], gateAdopted[1], 1e-4), `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)}`);
+  gate(`the uncorrected union reproduces ${ON26 ? "the uncorrected model at the adopted responses (main_case_bands.csv)" : "the September 23 case"}`,
+    near(u0Cost[lo0], gateUncorrected[0], 1e-4) && near(u0Cost[hi0], gateUncorrected[1], 1e-4),
+    `${u0Cost[lo0].toFixed(4)}–${u0Cost[hi0].toFixed(4)}`);
+}
 const res = {};
 for (const conv of CONVS) {
   res[conv] = {};
   for (const g of GENS) {
     const m0 = models[conv][g];
-    const m1 = Engine.applyCorrections(m0, payloads[conv][g]);
-    res[conv][g] = { corrected: MAIN_SPECS.map((s) => cost(m1, s)), uncorrected: MAIN_SPECS.map((s) => cost(m0, s)), model: m1 };
+    const m1 = Engine.applyCorrections(m0, (ON29 ? V.payloads : payloads)[conv][g]);
+    res[conv][g] = { corrected: SPECS.map((s) => CE.cost(m1, s)), uncorrected: SPECS.map((s) => CE.cost(m0, s)), model: m1 };
   }
   for (const kind of ["corrected", "uncorrected"]) {
     const ref = kind === "corrected" ? uCost : u0Cost;
-    const worst = Math.max(...MAIN_SPECS.map((_, i) => Math.abs(GENS.reduce((t, g) => t + res[conv][g][kind][i], 0) - ref[i])));
-    gate(`(${conv}) ${kind}: the nine cells add to the union in all ${MAIN_SPECS.length} specifications`, worst < 1e-9,
+    const worst = Math.max(...SPECS.map((_, i) => Math.abs(GENS.reduce((t, g) => t + res[conv][g][kind][i], 0) - ref[i])));
+    gate(`(${conv}) ${kind}: the nine cells add to the union in all ${SPECS.length} specifications`, worst < 1e-9,
       `max |diff| ${e(worst)} bn (brief's gate $0.01bn)`);
   }
+}
+// sept29: the adopted lane's own package on every model costed here, as its other consumers call it (only once
+// v4_split.cjs names the adopted lane).
+const AP = ON29 ? V.X.adoptedPackage(V.C) : null;
+if (AP) {
+  const FIELDS = ["allocation", "normalization", "share", "school", "reading", "gg", "uc"];
+  gate(`${AP.source}: its specifications are the consumer's`, AP.specs.length === SPECS.length
+    && AP.specs.every((s, i) => FIELDS.every((k) => s[k] === SPECS[i][k])));
+  let worst = 0;
+  SPECS.forEach((_, i) => {
+    worst = Math.max(worst, Math.abs(AP.cost(unionModel, i) - uCost[i]), Math.abs(AP.cost(MODEL, i) - u0Cost[i]));
+    for (const conv of CONVS) for (const g of GENS) {
+      worst = Math.max(worst, Math.abs(AP.cost(res[conv][g].model, i) - res[conv][g].corrected[i]),
+        Math.abs(AP.cost(models[conv][g], i) - res[conv][g].uncorrected[i]));
+    }
+  });
+  gate(`${AP.source} evaluateFull gives every model's cost here (union and cells, corrected and uncorrected, all specifications)`,
+    worst < 1e-9, `max |diff| ${e(worst)} bn`);
+} else if (ON29) console.log(`  · cross-check against the adopted lane's package skipped: v4_split.cjs V4_LANE is ${V.X.V4_LANE}`);
+// sept29: each cell's September 27 cost at the same specifications (the September 27 package on its September 27
+// model), the union's gated on the September 27 band; the change is the v4 part's.
+const sept27At = ON29 ? Object.fromEntries(CONVS.map((conv) => [conv, Object.fromEntries(GENS.map((g) =>
+  [g, [cost(V.models27[conv][g], MAIN_SPECS[lo]), cost(V.models27[conv][g], MAIN_SPECS[hi])]]))])) : null;
+if (ON29) {
+  const u27 = [cost(Engine.applyCorrections(MODEL, corrections), MAIN_SPECS[lo]), cost(Engine.applyCorrections(MODEL, corrections), MAIN_SPECS[hi])];
+  let worst = 0;
+  for (const conv of CONVS) for (const k of [0, 1]) worst = Math.max(worst, Math.abs(GENS.reduce((t, g) => t + sept27At[conv][g][k], 0) - u27[k]));
+  gate("the cells' September 27 costs at the case's ends add to the September 27 union, which is main_case_bands.csv adopted (1e-4)",
+    worst < 1e-9 && near(u27[0], gateAdopted[0], 1e-4) && near(u27[1], gateAdopted[1], 1e-4),
+    `${u27.map((x) => x.toFixed(4)).join("–")}; cells max |diff| ${e(worst)} bn`);
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -438,12 +585,16 @@ for (const conv of CONVS) {
 // cost = -P - fw (receipts' effects + spending effects + F) + capital return (engine.js evaluate; evaluateFull).
 // A receipt line's part is -fw x its effect (taxes paid lower the cost), a spending line's +fw x response x
 // amount. Parts are grouped below; every line of the model falls in exactly one group (gate).
+// sept29 adds two receipt lines: tenant_occupied_property (the property tax on rented homes, split out of
+// remaining_production_property) is a property tax; housing_enterprise_surplus (public housing's operating deficit)
+// falls with the other enterprise receipts in taxes_other_receipts. Its five synthetic spending lines are services.
 const RECEIPT_GROUPS = {
   taxes_income: ["federal_income_tax", "state_local_income_tax"],
   taxes_payroll: ["employee_oasdi", "employee_hi", "self_employment_oasdi_hi", "employer_oasdi", "employer_hi",
     "medicare_supplementary_premiums", "other_domestic_social_contributions"],
   taxes_consumption: ["general_sales_tax", "excise_selective_sales", "customs_duties"],
-  taxes_property: ["personal_property_tax", "modeled_owner_property", "remaining_production_property", "personal_motor_vehicle"],
+  taxes_property: ["personal_property_tax", "modeled_owner_property", "remaining_production_property", "personal_motor_vehicle",
+    "tenant_occupied_property"],
 };
 const SPENDING_GROUPS = {
   medicaid: ["medicaid_and_chip_other_medical"], medicare: ["medicare"], social_security: ["social_security"], ssi: ["ssi"],
@@ -469,36 +620,42 @@ function evaluateCase(m, spec) {
 }
 let partsWorst = 0;
 function partsOf(m, spec) {
-  const full = evaluateCase(m, spec);
+  const full = CE.full(m, spec);
   const ev = full.evaluation;
-  const fw = P.stateFor(m, spec).fiscal_weight;
+  const fw = CE.fw(full, m, spec);
   const out = Object.fromEntries(PROGRAMS.map((k) => [k, 0]));
   for (const r of ev.receipts) out[groupOfReceipt(r.id)] -= fw * r.effect_bn;
   for (const r of ev.spending) out[groupOfSpending(r)] -= fw * r.effect_bn;
   out.capital_return = full.capital.total_bn;
   out.production = -ev.private_wtp_bn - fw * ev.induced_receipts_bn;
   const total = PROGRAMS.reduce((s, k) => s + out[k], 0);
-  partsWorst = Math.max(partsWorst, Math.abs(total - full.cost_bn), Math.abs(full.cost_bn - cost(m, spec)));
+  partsWorst = Math.max(partsWorst, Math.abs(total - full.cost_bn), Math.abs(full.cost_bn - CE.cost(m, spec)));
   // Programme inputs beside the parts: the Medicaid line's amount and response (for the pricing check).
   const mcd = ev.spending.find((r) => r.id === MEDICAID);
   return { cost_bn: full.cost_bn, parts: out, medicaid_amount_bn: mcd.amount_bn, medicaid_response: mcd.response,
     medicaid_key: mcd.key };
 }
 console.log("[programme parts]");
-const cells = { case: CASE, main: MAIN, def: DEF, low_spec: MAIN_SPECS[lo], high_spec: MAIN_SPECS[hi], lo, hi,
+// sept29: the lane of the adopted case and per-member figures on the row-4 headcounts (v4_inputs.json), the case's basis.
+const cells = { case: CASE, main: ON29 ? V.X.V4_LANE : MAIN, def: DEF, low_spec: SPECS[lo], high_spec: SPECS[hi], lo, hi,
   union_band_bn: [uCost[lo], uCost[hi]], programs: PROGRAMS, conventions: {} };
 for (const conv of CONVS) {
   cells.conventions[conv] = {};
   GENS.forEach((g, j) => {
     const m1 = res[conv][g].model;
     cells.conventions[conv][g] = {
-      population: keyMeta.population[conv][j], adults: keyMeta.adults_18plus[conv][j],
+      population: ON29 ? V.VI.headcount[conv][g].population : keyMeta.population[conv][j],
+      adults: ON29 ? V.VI.headcount[conv][g].adults : keyMeta.adults_18plus[conv][j],
       own_span_bn: [Math.min(...res[conv][g].corrected), Math.max(...res[conv][g].corrected)],
-      low: partsOf(m1, MAIN_SPECS[lo]), high: partsOf(m1, MAIN_SPECS[hi]),
+      low: partsOf(m1, SPECS[lo]), high: partsOf(m1, SPECS[hi]),
     };
+    if (ON29) {
+      Object.assign(cells.conventions[conv][g], { sept27_cost_bn: sept27At[conv][g],
+        change_from_sept27_bn: [res[conv][g].corrected[lo] - sept27At[conv][g][0], res[conv][g].corrected[hi] - sept27At[conv][g][1]] });
+    }
   });
   // The union's parts from the corrected union model, against which the cells' parts must add.
-  cells.conventions[conv].union = { low: partsOf(unionModel, MAIN_SPECS[lo]), high: partsOf(unionModel, MAIN_SPECS[hi]) };
+  cells.conventions[conv].union = { low: partsOf(unionModel, SPECS[lo]), high: partsOf(unionModel, SPECS[hi]) };
   let worst = 0;
   for (const end of ["low", "high"]) {
     for (const k of PROGRAMS) {
@@ -511,6 +668,18 @@ for (const conv of CONVS) {
 gate("programme parts add to evaluateFull's cost, which is the package's cost()", partsWorst < 1e-9, `max |diff| ${e(partsWorst)} bn`);
 cells.stack_scaling_remainder_max_bn = mainResidual;
 cells.consumption_key_scaling_remainder_max_bn = ckMainResidual;
+if (ON29) {
+  const S = V.S;
+  cells.v4 = { set: V.C.set, payload: V.C.rel, oracle: V.O, uncorrected_own_ends_bn: [u0Cost[lo0], u0Cost[hi0]],
+    uncorrected_own_ends: [lo0, hi0], item3_scaling_remainder_max_bn: V.fitResidual,
+    rules: "generation_account_2026_09_24/v4_split.cjs (the generation lane's rules, its RESULT \"v4 case (sept29)\"); item 3 in two "
+      + "levels by scaledSplit; this lane's row-4 inputs (v4_inputs.json, tax_key_by_generation.json)",
+    parameters: Object.fromEntries(CONVS.map((conv) => [conv, Object.fromEntries(GENS.map((g) => [g, {
+      fit_by_bn: V.fitBy[conv][g], tenant_share: V.VI.tenant_share.rule[conv][g], vehicle_share: S[conv].vehicle[g],
+      s_vmt: S[conv].s_vmt[g], persons_5plus: V.VI.headcount[conv][g].persons_5plus,
+      pension_refs: S[conv].pension ? S[conv].pension.refs[g] : null }]))])),
+    union: { fit_by_bn: V.U.fitBy, s_vmt: V.U.sbar, oasdi_bn: V.U.oasdi } };
+}
 const outFile = path.join(OUT, `cells_${CASE}_${DEF}.json`);
 fs.writeFileSync(outFile, JSON.stringify(cells, null, 1) + "\n");
 console.log(`  wrote ${path.relative(process.cwd(), outFile)}`);

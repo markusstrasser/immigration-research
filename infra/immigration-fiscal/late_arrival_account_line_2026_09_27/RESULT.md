@@ -3,9 +3,22 @@ claude-opus-5-5
 **Verdict:** About 399,000 Mexico-born residents arrived at 50 or older (central reading; 327,000–505,000
 across the entry-year grouping). They are 13.7% of Mexico-born seniors; the ACS lane finds 13.6%.
 
+In the main case adopted on 2026-09-29 ($371.4–434.8bn, with the pension accrual), they cost other US residents
+**$4.4bn at the union's low end and $4.1bn at its high end** ($12.1k / 11.4k a head on the case's row-4 headcount,
+362,200). The grouping bounds give $3.7–5.6bn. That is 4.5–4.7% of the Mexico-born line and 1.0–1.2% of the case.
+The pension switch lowers their cost by $1.1 / 1.5bn. It replaces the Social Security and Part A benefits their 65+
+draw this year with the accrual on the payroll taxes they pay this year. In the cash set (the switch off,
+$294.7–361.8bn) they cost $5.5 / 5.6bn ($15.1k / 15.5k). Late arrivals plus the rest of the Mexico-born reproduce the
+generation lane's G1 to 9e-11bn in both sets. Under the set the proposed Medicare re-key shrinks to −$0.21bn and the
+net correction to −$0.18bn, since only Parts B and D are still priced by the key (section 6).
+[CALCULATION: `run_cells.cjs --case sept29|sept29_cash` → `derived/late_arrival_line_sept29.csv`] The September 27
+figures follow.
+
 In the adopted September 27 case ($321.8–387.4bn), they cost other US residents **$5.7–5.8bn a year
 ($14.2–14.5k a head)**. The grouping bounds give $4.9–7.4bn. That is 6–7% of the Mexico-born line and
-1.5–1.8% of the case.
+1.5–1.8% of the case. The September 27 per-head figures in this verdict divide by the CPS count (399,300; 226,600 at
+65+). On the account's row-4 count (362,200) they are $15.6–16.0k, and $21.4–23.7k at 65+ against
+$22.9–25.7k for younger arrivals (section 6).
 
 The 227,000 of them now 65+ cost $4.4–4.9bn ($19.6–21.6k a head). That is **less** per head than
 Mexico-born seniors who arrived younger ($21.7–24.3k), because the account also charges them less Social
@@ -17,8 +30,9 @@ arrivals Medicare that a quarter of them lack. Re-keyed by ACS coverage inside t
 Medicaid rises $0.03–0.04bn and their Medicare falls $0.34bn: a proposed net **−$0.31bn**. The Medicare part
 is a floor, because both surveys edit Medicaid seniors into Medicare.
 
-On the schools case, late arrivals plus the rest of the Mexico-born reproduce the generation lane's G1 to
-2e-10bn. The generation lane has not yet run the September 27 case.
+On the September 27 case and the schools case, late arrivals plus the rest of the Mexico-born reproduce the
+generation lane's G1 to 2e-10bn (`verify.py`; the schools check dates from 2026-09-27, when the generation lane held
+that case).
 
 This is an annual line. Never add it to the per-admission lifetime value (ladder 235). [CALCULATION:
 `run_cells.cjs`, `build_line.py`, `medicaid_check.py`, `verify.py` → `derived/`] [FRAMING-SENSITIVE]
@@ -99,7 +113,9 @@ matches the generation lane's G1 at both ends, both conventions and all three re
 1.9e-10bn. The generation lane has not yet run `--case sept27` (`sept27_propagation_2026_09_27/RESULT_generation.md`
 is pending). For sept27, the G1 identity therefore holds by construction, and the cells are checked against
 the case's published band. **[PENDING]** Re-run `verify.py` once the generation lane's summary carries
-`case: sept27`.
+`case: sept27`. [Done 2026-09-29: the summary has carried `case: sept27` since 8654a0ce. `verify.py` matches the
+generation lane's G1 at both ends, both conventions and all three readings, max |diff| 1.9e-10bn. The schools case is
+now the one it reports [PENDING], since the generation lane holds one case.]
 
 ## 3. The late-arrival line in the main case
 
@@ -276,6 +292,146 @@ The per-admission lifetime value of a sponsored parent is ladder 235 (the sister
 undiscounted, $270–286k at 3%). It is a separate object: it counts one admission's remaining life. This
 line is one year's cost of everyone who arrived at 50+ and is here now. **Never add the two.**
 [FRAMING-SENSITIVE]
+
+## 6. v4 case (sept29), 2026-09-29
+
+The operator adopted candidate v4 as the main case on 2026-09-29 at 15:12 JST (`main_case_2026_09_29`, case key
+`sept29`). It costs $371.4146–434.8410bn with the pension accrual; the cash set beside it (the switch off) costs
+$294.7011–361.8175bn. `run_cells.cjs` runs both as `--case sept29` and `--case sept29_cash`. Model self-report:
+claude-opus-5-5.
+
+The v4 part reads the adopted lane, landed at 40c4ba7: `generation_account_2026_09_24/v4_split.cjs` `V4_LANE` and
+`verify.py` `V4_LANE` name `main_case_2026_09_29`. The first sept29 run (17:03–17:21) read candidate v4's payloads, which
+differ from the adopted ones only in five meta stamps. The repointed run (20:16) gives the figures below. The machine
+rebooted at about 20:51 JST during this lane's `rerun_lane.py` gates; the run resumed at 21:13, and every step and gate
+ran again (gates below).
+
+**Method.** The September 27 steps run unchanged and give each cell's September 27 payload. The v4 part then goes on
+each cell's September 27 model by the generation lane's rules. They live in `v4_split.cjs`, shared with that lane,
+and its RESULT section "v4 case (sept29)" gives each rule with the alternative beside it. Two things are this lane's
+own:
+- **Item 3** (the IRS-matched income-tax key) goes through `scaledSplit` in two levels, as this lane splits every
+  ratio-type change. Each cell's own change in the raked cells times its own stack factor, first over G1 (the cells
+  summed), G2 and G3+, then inside G1. The non-additive remainder is at most $0.24bn.
+- **Inputs by cell.** `run_split.sh` step 7 runs the generation lane's `v4_inputs.py` and `tax_key_split.py` on this
+  lane's frame (`V4_LANE_DIR`) for each reading. They give the row-4 production grid, tenant shares, row-4 headcounts
+  and the tax-key change by cell.
+
+Inside G1 each cell takes G1's pension ratios on its own OASDI and HI receipts, and G1's benefit tax by its own
+Social Security key. Every rule is linear in a cell's inputs, so the seven G1 cells add to the generation lane's G1.
+The property tax on rented homes (`tenant_occupied_property`, new in v4) joins "taxes, property". Public housing's
+deficit line (`housing_enterprise_surplus`) joins the other enterprise receipts under "other receipts". The five new
+spending lines are services. Per-person figures use the row-4 headcounts (`v4_inputs.json`), the case's basis. The
+row-4 weights scale naturalized Mexico-born by 0.856 and noncitizens by 0.778, so the late arrivals count 362,200
+here, against 399,300 in the September 27 tables.
+
+Section 3's September 27 tables divide by the CPS weights. On the row-4 count, the September 27 case costs $15,634 /
+16,008 a head for late arrivals, $21,441 / 23,665 for those now 65+ and $22,901 / 25,719 for younger arrivals now 65+.
+At 65+ late arrivals therefore still cost less a head on September 27. The Mexico-born cost $8,496 / 7,096 a head.
+[CALCULATION: `late_arrival_line_sept29.csv`, rows `sept27_total`]
+
+**The set, central reading, (a)** ($bn a year at the union's ends; [CALCULATION: `derived/late_arrival_line_sept29.csv`]):
+
+| Subgroup | Persons (row 4) | $bn low / high | $ per person low / high | Lower-edge reading $bn | Upper-edge reading $bn | Change from September 27, $bn |
+|---|---|---|---|---|---|---|
+| Arrived at 50+, all ages | 362,200 | 4.38 / 4.13 | 12,093 / 11,403 | 3.69 / 3.68 | 5.59 / 5.23 | −1.28 / −1.67 |
+| of them 65+ | 207,100 | 3.09 / 2.98 | 14,933 / 14,390 | 2.86 / 2.74 | 3.85 / 3.69 | −1.35 / −1.92 |
+| of them 50–64 | 155,100 | 1.29 / 1.15 | 8,299 / 7,412 | 0.83 / 0.94 | 1.74 / 1.54 | +0.07 / +0.25 |
+| Arrived at 55+ | 210,700 | 2.98 / 2.88 | 14,136 / 13,686 | 2.45 / 2.37 | 3.42 / 3.27 | −1.03 / −1.31 |
+| of them 65+ | 153,300 | 2.50 / 2.34 | 16,272 / 15,258 | 2.15 / 1.99 | 2.81 / 2.62 | −1.01 / −1.36 |
+| Arrived younger, now 50+ | 4,631,100 | 42.01 / 38.15 | 9,071 / 8,237 | | | −8.78 / −10.86 |
+| Arrived younger, now 65+ | 1,344,800 | 17.00 / 15.75 | 12,640 / 11,712 | | | −13.80 / −18.84 |
+| Arrived younger, now 50–64 | 3,286,300 | 25.01 / 22.40 | 7,611 / 6,815 | | | +5.02 / +7.98 |
+| All Mexico-born | 11,036,700 | 97.23 / 87.11 | 8,810 / 7,893 | | | +3.46 / +8.80 |
+
+- **Share.** $4.4 / 4.1bn is 4.5% / 4.7% of the Mexico-born line and 1.18% / 0.95% of the case.
+- **Convention (b):** 418,400 members and $5.11 / 5.31bn; the 65+ part is $3.31 / 3.33bn ($15.1k / 15.2k).
+- **The change from September 27** is the pension switch for the 65+. It moves $−1.09 / −1.48bn onto the late
+  line (set less cash set). At 65+ it cuts Social Security from $4,118 / 5,783 a head to $1,934 / 1,008 and
+  Medicare from $12,064 to $8,208 / 7,880. Late arrivals now 65+ pay payroll tax on a small base, and the accrual
+  follows that base. Younger arrivals now 65+ fall further ($21.8k / 24.6k cash to $12.6k / 11.7k), because
+  they draw larger benefits. Younger arrivals aged 50–64 rise, because they pay in.
+- **At 65+ the late arrivals now cost more a head than earlier arrivals** ($14.9k / 14.4k against $12.6k /
+  11.7k). The pension switch removes the Social Security gap that made them cheaper on the September 27 case.
+  What remains are their lower taxes (−$7.6k / −6.1k against −$9.1k / −9.0k a head) and higher Medicaid.
+
+**The cash set, central reading, (a):**
+
+| Subgroup | Persons (row 4) | $bn low / high | $ per person low / high | Lower-edge reading $bn | Upper-edge reading $bn | Change from September 27, $bn |
+|---|---|---|---|---|---|---|
+| Arrived at 50+, all ages | 362,200 | 5.47 / 5.61 | 15,095 / 15,475 | 4.77 / 5.15 | 7.02 / 7.17 | −0.20 / −0.19 |
+| of them 65+ | 207,100 | 4.32 / 4.81 | 20,849 / 23,188 | 3.98 / 4.41 | 5.43 / 6.05 | −0.12 / −0.10 |
+| of them 50–64 | 155,100 | 1.15 / 0.80 | 7,408 / 5,172 | 0.79 / 0.74 | 1.59 / 1.12 | −0.08 / −0.09 |
+| Arrived younger, now 65+ | 1,344,800 | 29.27 / 33.13 | 21,768 / 24,638 | | | −1.52 / −1.45 |
+| All Mexico-born | 11,036,700 | 87.20 / 72.73 | 7,901 / 6,590 | | | −6.57 / −5.58 |
+
+In both tables the two age parts add to "arrived at 50+": where rounding each cell breaks the sum, the part nearest its
+rounding boundary moves by one unit of its last digit (persons 207,100 for 207,163; set, upper edge 3.85 for 3.844;
+cash set 4.81 for 4.804, 3.98 for 3.986 and −0.08 for −0.073).
+
+Without the pension switch v4 moves the late line by −$0.2bn, mostly the long-run property taxes (−$0.26bn, against
++$0.10–0.11bn more services). The 65+ still cost less a head than earlier arrivals ($20.8k / 23.2k against
+$21.8k / 24.6k), as on September 27.
+
+**Medicaid check** (`medicaid_check.py --set sept29` → `derived/medicaid_check_sept29.csv`). v4 leaves the Medicaid
+line alone: every cell's Medicaid part equals September 27's. Under the set the pension switch books Part A at its
+accrual on each cell's HI receipts and removes Part A's share (0.3751) of current spending from the key. Only Parts
+B and D, (1 − 0.3751) × the cash set's charge, are still priced by the MEPS key, so only they are re-keyed; the
+accrual is reported beside them (`account_medicare_part_a_accrual_bn`). For the late arrivals now 65+:
+- the set: Medicaid +$0.038 / +0.031bn, Medicare −$0.215bn, net **−$0.177 / −0.184bn** (three decimals, so the parts
+  add);
+- the cash set: unchanged from September 27, net −$0.31bn.
+
+**Gates**, all passing (`run_cells.cjs`: 33 per run in the set and 32 in the cash set, which has no per-specification
+file, at each of the three readings; `verify.py --set sept29`: 78 checks; `medicaid_check.py --set sept29`: 11):
+- the September 27 steps' gates, unchanged (the netted edits add to `corrections.json` in all 278 cells);
+- the union's items reproduce v4's part of the payload: 135 cells to 7.1e-15bn;
+- item 3's cell shifts add to the union's (4.4e-16bn); the row-4 production grids add to the payload's (1.1e-13bn);
+- the cells' v4 tails add to the union's (1.1e-12bn), and each payload gives the model its chain built (exact);
+- **oracle:** the union reproduces the adopted lane's band at 48 / 11 (`main_case_bands.csv`, rows `adopted` and
+  `cash_set`), $371.4146–434.8410bn and $294.7011–361.8175bn (tolerance 1e-4, the band's four decimals), and for the
+  set its per-specification cost (`per_spec.csv`, 1.7e-13bn). The uncorrected union reproduces the row
+  `uncorrected_at_adopted_responses`, $313.2581–378.9158bn (1e-4). The adopted `package.cjs` `evaluateFull` (for the
+  cash set, on `forPayload` of its payload) gives every model's cost, union and cells (difference 0);
+- the nine cells add to the union in all 64 specifications, corrected and uncorrected (1.4e-12bn), and every
+  programme part adds to the union's at both ends (1.5e-12bn);
+- the cells' September 27 costs at the same ends add to the September 27 band (1e-4);
+- `verify.py --set sept29`: in both sets, all three readings, both conventions and both ends, late + younger equals
+  the generation lane's G1 (`generation_summary_sept29{,_cash}.json`) to 9e-11bn. The cells add to the published
+  band (5.01e-5), and `late_arrival_line_sept29.csv` adds within 1e-5.
+
+`rerun_lane.py` gates (times from `date`, JST). The thirteen September 27 commands are `counts.py`, `run_split.sh` at
+each reading, `run_cells.cjs --case sept27` and `--case sept26_schools` at each reading, `build_line.py`,
+`medicaid_check.py` and `verify.py`. The nine sept29 commands are `run_cells.cjs --case sept29` and `--case sept29_cash`
+at each reading, then the three scripts with `--set sept29`.
+- Before the reboot: at 17:12 the old commands reproduced all 22 derived and lane files; `run_cells.cjs` showed as
+  CHANGED only because it was edited during the pass. After the repoint, gate 1 was IDENTICAL, 23/23 (20:18–20:23). A
+  gate label in `run_cells.cjs` was then corrected (20:31), and gate 1 was running again when the machine rebooted.
+- After the reboot, with `UV_OFFLINE=1`: the first attempt (21:16) stopped when uv could not reach PyPI to resolve
+  `--with openpyxl --with xlrd` (a connect timeout, not a lane failure), and uv's cache resolves both packages. Every
+  command ran directly, all passing (21:25–21:35). Gate 1: IDENTICAL, 23/23, exit 0 (21:35–21:39). Gate 4, the
+  thirteen commands and the nine: pass 1 IDENTICAL, 23/23, exit 0 (21:39–21:43); pass 2 IDENTICAL, 23/23, exit 0
+  (21:43–21:48). No script was reported NOT RUN. Of the tracked files, only `RESULT.md` and the five changed scripts
+  differ from HEAD.
+
+**Files.**
+- Changed: `run_split.sh` (step 7), `run_cells.cjs` (`--case sept29|sept29_cash`; `tenant_occupied_property` under
+  property taxes), and `build_line.py`, `verify.py` and `medicaid_check.py` (`--set sept29`).
+- New outputs: `derived/late_arrival_line_sept29.csv` and `derived/medicaid_check_sept29.csv`, beside the default
+  files, which keep their two cases. `late_arrival_line_sept29.csv` adds two rows beside each total, never added to
+  it: `sept27_total` and `change_from_sept27`.
+- New intermediates, ignored: `_cache/cells_sept29{,_cash}_<reading>.json`, and `_cache/split_<reading>/v4_inputs.json`
+  and `tax_key_by_generation.json`.
+- Rebuild, after `LATE_DEF=<r> bash run_split.sh` for each reading: `node run_cells.cjs --case sept29|sept29_cash
+  --def <r>`, then `build_line.py --set sept29`, `medicaid_check.py --set sept29` and `verify.py --set sept29`.
+  `verify.py` needs the generation lane's step 7 first.
+- `run_cells.cjs` loads the generation lane's `v4_split.cjs`, and `run_split.sh` runs its `v4_inputs.py` and
+  `tax_key_split.py`: that lane's v4 files go in the same commit or an earlier one.
+
+Log (times from `date`, JST): 15:17 brief read; 17:03 first sept29 run gated; 17:07 line and check built; 17:14 late
+lane wired end to end; 17:21 rebuilt with the Part A rule per HI tax dollar; 20:15 repointed to the adopted lane
+(40c4ba7); 20:16 rebuilt; 20:18–20:23 gate 1; 20:31 gate label corrected; about 20:51 reboot; 21:13 resumed; 21:16
+PyPI timeout; 21:25–21:35 every command directly; 21:35–21:48 gates 1 and 4 (two passes).
 
 ## Files
 

@@ -26,8 +26,15 @@ The check (convention a, the central age-at-arrival reading, both band ends of e
      the key; reported, never applied.
 Output: derived/medicaid_check.csv (case, spec, subgroup, item, value, unit). Proposed corrections only: the
 case is not edited.
+--set sept29 checks the v4 cases (sept29, the main case adopted on 2026-09-29, and sept29_cash, its cash set) and
+writes derived/medicaid_check_sept29.csv, leaving the default file alone. Under sept29 the pension switch books
+Medicare Part A at its accrual on each cell's HI receipts (the payload's meta.pension_accrual) and removes Part A's
+share of current spending (part_a_share) from the key. Only the rest, (1 - part_a_share) x the cell's current-spending
+charge (the cash set's, which the switch leaves alone), is priced by the MEPS key. That part is `account_medicare_bn`
+and is what the re-key moves; the accrual is reported beside it (`account_medicare_part_a_accrual_bn`, zero elsewhere)
+and left alone, since it does not depend on coverage. v4 leaves the Medicaid line alone.
 Run from the repository root:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/medicaid_check.py
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/medicaid_check.py [--set sept29]
 """
 from __future__ import annotations
 
@@ -54,6 +61,9 @@ SUBGROUPS = {"late50_65p": ["G1_L50_65p", "G1_L55_65p"], "late55_65p": ["G1_L55_
              "younger_65p": ["G1_Y_65p"], "mexico_born_65p": ["G1_Y_65p", "G1_L50_65p", "G1_L55_65p"],
              "late50_50_64": ["G1_L50_50_64", "G1_L55_55_64"], "younger_50_64": ["G1_Y_50_64"]}
 OLD = ["G1_Y_65p", "G1_L50_65p", "G1_L55_65p"]
+# Each set of cases and its file: the default two, and the v4 cases in a file of their own.
+SETS = {"default": (("sept27", "sept26_schools"), "medicaid_check.csv"),
+        "sept29": (("sept29", "sept29_cash"), "medicaid_check_sept29.csv")}
 FAILS = []
 
 
@@ -66,6 +76,10 @@ def gate(label, ok, detail=""):
 def main():
     if F.LATE_DEF != "central":
         sys.exit("[BLOCKED] the check runs on the central reading")
+    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "default"
+    if which not in SETS:
+        sys.exit(f"--set must be one of {', '.join(SETS)}")
+    cases, out_name = SETS[which]
     d = F.load()
     civ, union, gens = F.masks(d)
     w = d.pwwgt0.to_numpy(float)
@@ -119,19 +133,34 @@ def main():
     # LTSS users' charge per cell (correction_rules.py: L_c x share_c x the users' generation fractions).
     sh = pd.read_csv(LTSS / "shares.csv").query("variant == 'central'").set_index("category")
     growth = json.loads((LTSS / "summary.json").read_text())["bea_growth_2024_over_2023"]
-    for case in ("sept27", "sept26_schools"):
+    for case in cases:
         c = json.loads((F.HERE / "_cache" / f"cells_{case}_central.json").read_text())
         rules = json.loads((F.OUT / "correction_rules.json").read_text())["rules"]["ltss"]["users_generation"]
         ltss = {g: sum(float(sh.loc[k, "L2023"]) * growth * float(sh.loc[k, "share"]) * rules[k]["a"][j] for k in CATS)
                 for j, g in enumerate(F.GENS)}
         cells = c["conventions"]["a"]
+        # The set with the pension switch: the MEPS-keyed Medicare charge is (1 - part_a_share) x the cash set's.
+        accrual_case = "v4" in c and c["v4"]["set"] == "set"
+        if accrual_case:
+            cash = json.loads((F.HERE / "_cache" / "cells_sept29_cash_central.json").read_text())
+            pension = json.loads((F.FISCAL / c["v4"]["payload"]).read_text())["meta"]["pension_accrual"]
+            gate(f"{case}: the cash set's cells are the same lane's, at the same specifications",
+                 cash["main"] == c["main"] and cash["low_spec"] == c["low_spec"] and cash["high_spec"] == c["high_spec"])
         for end in ("low", "high"):
             spec = f"{end}_{c['low_spec' if end == 'low' else 'high_spec']['allocation']}"
             part = {g: cells[g][end]["parts"] for g in F.GENS}
             amt = {g: cells[g][end]["medicaid_amount_bn"] * cells[g][end]["medicaid_response"] for g in F.GENS}
             gate(f"{case} {end}: the Medicaid part is the line's amount x response", max(abs(amt[g] - part[g]["medicaid"]) for g in F.GENS) < 1e-12)
             comm = {g: amt[g] - ltss[g] for g in F.GENS}
-            medicare = {g: part[g]["medicare"] for g in F.GENS}
+            if accrual_case:
+                medicare = {g: cash["conventions"]["a"][g][end]["parts"]["medicare"] * (1 - pension["part_a_share"]) for g in F.GENS}
+                alloc = c["low_spec" if end == "low" else "high_spec"]["allocation"]
+                refs = {g: c["v4"]["parameters"]["a"][g]["pension_refs"]["partAScale"][alloc] for g in F.GENS}
+                gate(f"{case} {end}: each cell's Medicare part less its keyed charge is its Part A accrual (part_a_accrual x its scale)",
+                     max(abs(part[g]["medicare"] - medicare[g] - pension["part_a_accrual_bn"] * refs[g]) for g in F.GENS) < 1e-9)
+            else:
+                medicare = {g: part[g]["medicare"] for g in F.GENS}
+            accrual = {g: part[g]["medicare"] - medicare[g] for g in F.GENS}
             # 3. Re-key inside the Mexico-born 65+.
             old = np.logical_or.reduce([gens[g] for g in OLD])
             wt_caid = w * old * r_caid
@@ -152,6 +181,8 @@ def main():
                 put(case, spec, sub, "account_medicaid_ltss_users_bn", a_ltss, "bn")
                 put(case, spec, sub, "account_medicaid_community_bn", a_comm, "bn")
                 put(case, spec, sub, "account_medicare_bn", a_care, "bn")
+                if which == "sept29":
+                    put(case, spec, sub, "account_medicare_part_a_accrual_bn", sum(accrual[g] for g in members), "bn")
                 put(case, spec, sub, "account_medicaid_per_person_usd", a_all * 1e9 / n, "usd")
                 put(case, spec, sub, "account_medicaid_community_per_covered_usd", a_comm * 1e9 / ncaid, "usd")
                 put(case, spec, sub, "account_medicare_per_person_usd", a_care * 1e9 / n, "usd")
@@ -187,11 +218,11 @@ def main():
             put("ltss_variants", variant, sub, "ltss_users_charge_bn", val, "bn")
     put("mcbs_2023", "", "hispanic_65p", "medicaid_per_beneficiary_with_medicaid_usd", m_dual, "usd")
     put("mcbs_2023", "", "hispanic_65p", "public_per_beneficiary_usd", public, "usd")
-    with (F.HERE / "derived/medicaid_check.csv").open("w", newline="") as fh:
+    with (F.HERE / "derived" / out_name).open("w", newline="") as fh:
         wr = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
         wr.writeheader()
         wr.writerows(rows)
-    print(f"  wrote derived/medicaid_check.csv ({len(rows)} rows)")
+    print(f"  wrote derived/{out_name} ({len(rows)} rows)")
     if FAILS:
         sys.exit(f"✗ {len(FAILS)} gate(s) failed")
 

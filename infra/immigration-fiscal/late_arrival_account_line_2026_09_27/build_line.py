@@ -10,8 +10,13 @@ the cost), a spending line positive, the production term negative; `total` is th
 `taxes_total` and `services_total` are sums of the lines above them, reported beside the total, never added
 to it again.
 
+--set sept29 reads cases sept29 (the main case adopted on 2026-09-29) and sept29_cash (its cash set) and writes
+derived/late_arrival_line_sept29.csv, leaving the default file alone. Its per-person figures use the row-4
+headcounts (the case's basis), and two more rows sit beside the total, never added to it: `sept27_total`, the same
+persons' cost on the September 27 case at the same specification, and `change_from_sept27`.
+
 Run from the repository root:
-  uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/build_line.py
+  uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/build_line.py [--set sept29]
 """
 from __future__ import annotations
 
@@ -22,6 +27,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 CASES = ["sept27", "sept26_schools"]
+# Each set of cases and its file: the default two, and the v4 cases in a file of their own.
+SETS = {"default": (CASES, "late_arrival_line.csv"), "sept29": (["sept29", "sept29_cash"], "late_arrival_line_sept29.csv")}
 READINGS = ["central", "lower", "upper"]
 SUBGROUPS = {
     "late50": ["G1_L50_50_64", "G1_L50_65p", "G1_L55_55_64", "G1_L55_65p"],
@@ -43,8 +50,12 @@ SERVICES = ["education", "services_other"]
 
 
 def main():
+    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "default"
+    if which not in SETS:
+        sys.exit(f"--set must be one of {', '.join(SETS)}")
+    cases, out_name = SETS[which]
     rows = []
-    for case in CASES:
+    for case in cases:
         for reading in READINGS:
             f = HERE / "_cache" / f"cells_{case}_{reading}.json"
             if not f.exists():
@@ -67,17 +78,21 @@ def main():
                             sys.exit(f"[BLOCKED] cells do not add to the case: {case} {reading} {conv} {end}")
                         out = {**parts, "taxes_total": sum(parts[k] for k in TAXES),
                                "services_total": sum(parts[k] for k in SERVICES), "total": total}
+                        if which == "sept29":
+                            k = 0 if end == "low" else 1
+                            out["sept27_total"] = sum(cells[g]["sept27_cost_bn"][k] for g in members)
+                            out["change_from_sept27"] = total - out["sept27_total"]
                         for k, v in out.items():
                             rows.append(dict(case=case, reading=reading, convention=conv, spec=end,
                                              allocation=spec["allocation"], subgroup=name, program=k,
                                              bn=f"{v:.6f}", per_person_usd=f"{v * 1e9 / pop:.2f}",
                                              population=f"{pop:.1f}"))
     (HERE / "derived").mkdir(exist_ok=True)
-    with (HERE / "derived/late_arrival_line.csv").open("w", newline="") as fh:
+    with (HERE / "derived" / out_name).open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
-    print(f"  ✓ wrote derived/late_arrival_line.csv ({len(rows)} rows)")
+    print(f"  ✓ wrote derived/{out_name} ({len(rows)} rows)")
 
 
 if __name__ == "__main__":
