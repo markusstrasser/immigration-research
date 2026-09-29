@@ -445,3 +445,270 @@ failed gate. Two runs gave byte-identical outputs (`diff -r` over `derived/`).
 - Reran both scripts in place with `scripts/rerun_lane.py`: rc 0, 9 of 9 files byte-identical.
 - The per-head share divides the union by the US resident population, not the household frame: 39,712,493 / 0.117176 = 338.91M and 40,896,574 / 0.120245 = 340.11M. The second matches Census's July 2024 resident population (340,110,988). The lane's early message quoting a 335.54M denominator was loose wording; the code reproduces the case's cell exactly.
 - Part 1's composition checks by hand: 846.3 + 33.4 − 716.0 = 163.7 at the low end; 872.5 + 56.0 − 716.0 = 212.5 at the high end.
+
+
+claude-opus-5-5
+
+## v4 case (sept29), 2026-09-29
+
+**Verdict:** On the adopted v4 case ($371.4146–434.8410bn at specifications 48 / 11), 39.71M average residents would
+cost other residents **$102.49 / 152.76bn** under the case's own rules, pension accrual included. The group's excess
+over them is **$268.92 / 282.08bn**. It splits into taxes at given ages **+$247.68 / 242.43bn**, age structure
+**+$12.96 / 48.62bn** and service use at given ages **+$8.28 / −8.97bn** (Shapley means, low / high end).
+
+"All of the excess comes from lower taxes at the same ages" no longer holds on the accrual central. Those taxes are 92% /
+86% of the excess, and the group's young age mix now adds to its cost instead of lowering it. The statement still holds
+in the cash set ($294.70–361.82bn), where taxes at given ages are 171% / 150% of a $175.16 / 193.54bn excess.
+
+The accrual lands on both ages and rates. Against the cash set, the pension switch adds $86.0 / 87.3bn to the age part
+and $59.2 / 49.7bn to use at given ages. It takes $51.5 / 48.5bn from taxes at given ages and $17.0 / 15.5bn from part 1.
+The reason is how accrual charges pensions. Social Security and Part A are charged as the pensions this year's work
+earns, so they follow the payroll taxes of people of working age, not the benefits of retirees. The group's few retirees
+therefore stop lowering its cost, and its lower payroll taxes at given ages now also earn smaller pensions.
+[CALCULATION: `decompose.cjs --case sept29` and `--case sept29_cash` → `derived/*_sept29.*`, `derived/*_sept29_cash.*`]
+[FRAMING-SENSITIVE]
+
+Status: proposed; the lead commits. The run was resumed after the reboot at about 20:51 JST, and every gate below was
+rerun after it.
+
+### The parts
+
+Shapley means at the case's end specifications 48 (low) and 11 (high). Per account member divides by the 39,712,493
+people the account prices (the row-4 union; this lane's finding above, which the v4 decision adopts). The September 27
+files keep the record's 40,896,574, as written.
+
+| Part | $bn, low / high | $ per account member | Share of the case | Cash set, $bn | September 27, $bn |
+|---|---|---|---|---|---|
+| 1. Shared | 102.49 / 152.76 | 2,581 / 3,847 | 28% / 35% | 119.54 / 168.28 | 163.76 / 212.50 |
+| 2. Age structure | 12.96 / 48.62 | 326 / 1,224 | 3% / 11% | −73.08 / −38.66 | −76.87 / −42.53 |
+| 3. Taxes at given ages (with the production term) | 247.68 / 242.43 | 6,237 / 6,105 | 67% / 56% | 299.21 / 290.88 | 294.85 / 286.98 |
+| 4. Service use at given ages | 8.28 / −8.97 | 209 / −226 | 2% / −2% | −50.97 / −58.68 | −59.92 / −69.58 |
+| **The case** | **371.41 / 434.84** | **9,353 / 10,950** | 100% | 294.70 / 361.82 | 321.82 / 387.37 |
+
+[CALCULATION: `derived/decomposition_sept29.csv`, `decomposition_sept29_cash.csv`, `decomposition.csv`; printed by
+largest remainder so each column adds. The September 27 column prints 163.76 and −69.58 where the section above
+prints 163.75 and −69.59. Those parts add to 321.81 / 387.36, not to the case.]
+
+**Part 1 on v4.** At national per-capita shares, the group would pay $749.2bn of the taxes the case counts, draw
+$818.3 / 846.0bn of operating spending and carry $33.4 / 56.0bn of the return on public capital (`summary_sept29.json`
+→ `part1_composition`). Part 1 is $44.2bn below September 27's even in the cash set. Item 5 now counts the property
+taxes that average residents would pay: property taxes are $44.2bn of part 1 (table below). The pension switch lowers
+part 1 by a further $17.0 / 15.5bn. At national ages, Social Security accrues $149.3bn for 39.7M people, against the
+$169.7bn of benefits they would draw. The same people's Medicare Part A accrual is $7.1 / 5.6bn below their Part A
+benefits. The tax on current benefits, which the accrual's net ratio already counts, leaves the receipts: +$10.4bn.
+
+**The lines held at zero response** would now carry $167.9bn of receipts at average residents' shares, against
+$226.1bn on September 27, because item 5 makes property taxes respond. The spending side is unchanged at $235.2bn.
+Letting both respond at 1 would raise part 1 by $67.3bn (September 27: $9.1bn). [CALCULATION: `summary_sept29.json`
+→ `zero_response_at_average_residents`]
+
+**The order matters**, as on September 27 (six orders, `decomposition_sept29.csv`):
+
+| Part | Low end, $bn | High end, $bn |
+|---|---|---|
+| Age structure | 2.9 to 23.1 | 26.3 to 70.9 |
+| Taxes at given ages | 242.8 to 252.6 | 226.4 to 258.5 |
+| Service use at given ages | 3.1 to 13.5 | −15.2 to −2.7 |
+
+The age part is positive in every order at both ends. So is the conclusion below: in every order, taxes at given ages
+fall short of the excess.
+
+### Where the pension accrual lands
+
+The pension switch by part is the v4 case less its cash set. The two differ in this one option only, and no other line
+moves (largest other change 9.1e-10bn). Figures are $bn, low / high:
+
+| Line | 1. Shared | 2. Age | 3. Taxes at given ages | 4. Use at given ages | Change |
+|---|---|---|---|---|---|
+| Social Security (accrual for benefits) | −20.3 / −20.3 | 65.6 / 69.1 | −44.7 / −42.1 | 52.5 / 43.0 | 53.1 / 49.7 |
+| Medicare (Part A accrual for Part A benefits) | −7.1 / −5.6 | 23.6 / 21.9 | −1.7 / −1.5 | 6.7 / 6.7 | 21.5 / 21.5 |
+| Federal income tax (less the tax on current benefits) | 10.4 / 10.4 | −3.2 / −3.7 | −5.1 / −4.9 | 0.0 / 0.0 | 2.1 / 1.8 |
+| **The pension switch** | **−17.0 / −15.5** | **86.0 / 87.3** | **−51.5 / −48.5** | **59.2 / 49.7** | **76.7 / 73.0** |
+
+[CALCULATION: `summary_sept29.json` and `summary_sept29_cash.json` → `v4.line_parts`; one decimal, controlled rounding
+so that rows and columns add]
+
+Why each line moves as it does:
+
+- **Social Security.** In the cash set, the group's few retirees save $60.8 / 73.6bn (age). Its retirees also draw less
+  than average retirees, which saves another $52.6 / 43.1bn (use). On accrual, the line is the payload's own rule, 0.974
+  (`ratio_net`) × the OASDI taxes the members pay, read at each state's ages and tax profile.
+  - Its age part is +$4.8 / −4.4bn. The group's age mix holds about as many payroll taxpayers per member as the nation's:
+    it has more children than the nation and fewer retirees, and neither group pays payroll tax.
+  - Its tax part is −$44.7 / 42.1bn. The group pays 70% / 72% of average OASDI taxes at given ages, so it also accrues
+    70% / 72% of average pensions.
+  - Nothing is left for use at given ages.
+- **Medicare.** The line keeps −$35.4 / 37.1bn of age and −$11.1bn of use in the accrual case, from Parts B and D, which
+  stay on cash. The Part A accrual follows covered workers, so its tax part is only −$1.7 / 1.5bn.
+- **Federal income tax.** The case drops the tax on current benefits from receipts, because the accrual's net ratio
+  already counts the tax on future benefits. That removes $10.4bn at average residents and $8.3 / 8.6bn less for the
+  group, which pays less of that tax at its ages and rates.
+
+Read on its own, the accrual sits in part 1 and in taxes at given ages, with almost nothing on ages. Social Security's
+accrual is $149.3bn in part 1, +$4.8 / −4.4bn in age and −$44.7 / 42.1bn in taxes at given ages (`v4.line_parts`). The
+switch from cash moves the age and use parts because it removes the benefits that the cash view charges to retirees.
+
+### Does all the excess still come from lower taxes at the same ages?
+
+| Case | Excess over part 1, $bn | Taxes at given ages | Age structure | Use at given ages |
+|---|---|---|---|---|
+| v4 (accrual) | 268.92 / 282.08 | 247.68 / 242.43 (92% / 86%) | 12.96 / 48.62 (5% / 17%) | 8.28 / −8.97 (3% / −3%) |
+| Cash set | 175.16 / 193.54 | 299.21 / 290.88 (171% / 150%) | −73.08 / −38.66 (−42% / −20%) | −50.97 / −58.68 (−29% / −30%) |
+| September 27 | 158.06 / 174.87 | 294.85 / 286.98 (187% / 164%) | −76.87 / −42.53 (−49% / −24%) | −59.92 / −69.58 (−38% / −40%) |
+
+**No, not on the accrual central.** Most of the excess, 86–92%, still comes from lower taxes at the same ages, and they
+remain the largest part at both ends. The age mix now adds $13.0 / 48.6bn (5% / 17%): schools add $29.6 / 54.2bn, and
+Social Security's age saving is gone. Use at given ages adds 3% / −3%. The result holds under every alternative rule
+below: taxes at given ages are 85–93% of the excess in each. In the cash set, the September 27 reading stands. There,
+taxes at given ages exceed the whole excess, because the age mix and use at given ages lower the cost.
+
+### By line
+
+Shapley means, $bn, low / high:
+
+| Line group | 1. Shared | 2. Age | 3. Taxes at given ages | 4. Use at given ages | In the case |
+|---|---|---|---|---|---|
+| Income taxes (federal, state, other personal) | −338.6 / −338.7 | 4.3 / 23.3 | 195.8 / 188.8 | — | −138.5 / −126.6 |
+| Payroll taxes and contributions | −227.6 / −227.6 | 0.3 / 15.0 | 65.9 / 60.9 | — | −161.4 / −151.7 |
+| Consumption taxes | −141.8 / −141.8 | 5.2 / 5.2 | 31.5 / 31.5 | — | −105.1 / −105.1 |
+| Property taxes (item 5's three lines) | −44.2 / −44.2 | 3.8 / 3.8 | 13.2 / 13.2 | — | −27.2 / −27.2 |
+| Production term (P + F) | — | 0.2 / 0.1 | −11.9 / −7.8 | — | −11.7 / −7.7 |
+| Other receipts | −3.1 / −3.1 | 0.2 / 0.4 | −0.4 / −0.6 | — | −3.3 / −3.3 |
+| Schools (with K-12 capital) | 139.5 / 142.8 | 29.6 / 54.2 | — | 21.0 / 4.0 | 190.1 / 201.0 |
+| Colleges, other education, education benefits | 20.4 / 21.6 | 0.4 / 1.3 | — | 2.9 / 2.7 | 23.7 / 25.6 |
+| Medicaid (with uncompensated care) | 111.8 / 111.8 | 5.9 / 6.4 | — | 0.0 / 1.5 | 117.7 / 119.7 |
+| Justice (with its capital and state price) | 61.7 / 62.2 | 3.6 / 3.7 | — | 11.8 / 11.8 | 77.1 / 77.7 |
+| Refundable tax credits | 26.8 / 26.8 | 6.0 / 0.9 | — | 3.5 / 4.9 | 36.3 / 32.6 |
+| Social Security and Medicare | 273.2 / 274.7 | −31.3 / −42.4 | −46.4 / −43.6 | −11.6 / −11.5 | 183.9 / 177.2 |
+| Health services and veterans (with state price) | 64.8 / 65.4 | −13.3 / −15.1 | — | −17.8 / −18.7 | 33.7 / 31.6 |
+| Cash, food and housing benefits (with public housing's deficit) | 78.6 / 78.7 | −1.0 / −6.4 | — | 10.1 / 12.1 | 87.7 / 84.4 |
+| Roads and other economic affairs (with the miles lines) | 27.9 / 49.6 | −1.0 / −1.8 | — | −4.5 / −8.6 | 22.4 / 39.2 |
+| Per-head government and enterprises | 51.2 / 72.7 | 0.0 / 0.0 | — | 0.0 / −0.1 | 51.2 / 72.6 |
+| Care, shelter and audit constants | 1.9 / 1.9 | — | — | −7.1 / −7.1 | −5.2 / −5.2 |
+| **Total** | **102.5 / 152.8** | **12.9 / 48.6** | **247.7 / 242.4** | **8.3 / −9.0** | **371.4 / 434.8** |
+
+[CALCULATION: `derived/decomposition_lines_sept29.csv`. The groups add to each part within 2.6e-13bn. The table is
+printed at one decimal with controlled rounding: the totals row is the parts rounded by largest remainder, and 5 / 8
+cells sit 0.1 off their nearest rounding, so that every row and column adds. The age total prints 12.9 for 12.96.]
+
+v4's new lines sit with their parents: the state-price lines with justice, health and recreation, the miles lines with
+roads, public housing's deficit with housing benefits. The cash set's table (`decomposition_lines_sept29_cash.csv`)
+differs only in the Social Security and Medicare row and in income taxes, by the amounts in the pension table above.
+Against September 27, three v4 items change the parts line by line:
+- **State prices** add $8.7 / 8.8bn to use at given ages (justice +$6.3bn, health +$2.1bn, recreation +$0.4bn), plus
+  small age terms. The group lives where public services cost more, and at national use the price index is 1.
+- **Roads.** Their use part is −$4.5 / 8.6bn against −$7.7 / 13.7bn on September 27; the miles lines add $2.3 / 3.1bn
+  of the change. The September 27 section expected a mileage key to move it this way.
+- **Receipts' rate parts.** Income taxes' part moves from +$203.9 / 196.5bn to +$200.9 / 193.6bn in the cash set (item
+  3's IRS key raises the group's federal income tax). Consumption taxes' part moves from +$39.3bn to +$31.5bn. Several
+  items touch those lines (state prices on sales taxes, miles on fuel taxes, 6a's sales rule), and this lane does not
+  split them.
+
+### Rules designed for v4
+
+Every rule applies only to v4's payload. A September 27 payload has no receipt lines, national scales, accrual or new
+correction lines, and its outputs are unchanged (gate 1).
+
+| Line(s) | Rule used | Why | Alternative beside | Its effect, $bn low / high |
+|---|---|---|---|---|
+| `social_security` (accrual) | 0.974 (`ratio_net`) × the OASDI receipts at the state's ages and tax profile (factors A and R, never U) | the payload's own rule, read at every state: the accrual is earned by the tax paid | the national money's worth at national per-age taxes, 0.901 [INFERENCE: a bridge from the group's gross 1.018 by the pension lane's national-to-group ratio on scheduled benefits at trust-fund rates, 1.237 / 1.281, net of the national 8.4% of future benefits taxed, against the group's 4.4%] | part 1 −11.2 / −11.2; taxes +11.4 / +11.0; taxes are then 92.5% / 86.4% of the excess |
+| `medicare` | Parts B and D (1 − the Part A share) on the Medicare key at (A, U), with the line's correction ratio; the Part A accrual ($41.1bn) × covered workers (`positive_fica_worker` key) at (A, R) over GG | Part A turns on insured status (40 covered quarters), not on the tax paid | the Part A accrual scaled by the group's HI receipts | part 1 +19.4 / +22.4; taxes −19.7 / −20.4; age +0.3 / −2.0 |
+| `federal_income_tax` | its key at (A, R), corrected on the cash amount (the case + the benefit tax), less the tax on current benefits on the Social Security benefit key: the payload's $2.09 / 1.82bn at R = G, the pension lane's national rate (`current_rate_nation`) on the national line at R = N | the payload removes the tax on current benefits because the net ratio counts the tax on future benefits | the group's rate at every state | at most the line's move in the pension table, $10.4bn between part 1 and parts 2–3 |
+| `modeled_owner_property` | the account's CPS key (`keys.py` `owner_property`) under both weight sets (`profiles_sept29.py`) | the line's own key, which reproduces model.json's cell (1e-6) | none needed | see the finding below |
+| `tenant_occupied_property`, `personal_property_tax` | ACS 2024 contract rent and household vehicles per person by age: household amounts shared per member, the group as HISP 02 or POBP 303, as the receipt-side lane builds its shares. Each is times the CPS frame's headcount by age, and a correction ratio (0.980, 0.980) carries the measured share over the standardized one | the CPS has neither rent nor vehicles; the receipt-side lane keys both on the ACS | per head, all in part 1 | their age and rate parts are −0.2 / +0.5 and +0.1 / +0.1: any rule moves under $0.5bn |
+| `housing_enterprise_surplus` | its national over `housing_subsidies`' × that line's amount at (A, U) | item 1 keys public housing's deficit at the tenant key, the rental line's | per head | its age and use parts, −0.1 and −1.9, would move to part 1 |
+| `state_price_*` (3 lines) | the parent line's amount at (A, U = G) × the line's ratio to its parent at GG; 0 at U = N | the price where the group lives is the group's own; at national use the index is 1 | none computed | +8.7 / +8.8 in use; −0.1 / −0.1 in age |
+| `roads_vmt_sl`, `roads_vmt_fed` | the case's amount × the group's persons aged 5+ at national ages over its own at A = N; 0 at U = N | the roads lane prices miles per person aged 5+ and has no age profile of miles | none computed | +2.3 / +3.1 in use; −0.03 / −0.04 in age |
+| National-scale edits (3 lines) | a scaled line's uncorrected cell is model.json's × the payload's national over model.json's | national per-age amounts must add to the national line the case uses | none: the only consistent reading | exact (the key-share gates pass on every line) |
+| Per member | 39,712,493 (row-4 union) | the account's count (the finding above) | 40,896,574 | × 0.971 |
+| Sensitivities | no corrections-off run on v4; the accrual's two alternatives instead | v4's edits carry the items and the accrual, which reads the corrected receipts, and not only dataset corrections. The cash set is decomposed as its own case | — | — |
+
+### Would change it
+
+| Rule | 1. Shared | 2. Age | 3. Taxes | 4. Use | The case |
+|---|---|---|---|---|---|
+| Central (this section) | 102.5 / 152.8 | 12.9 / 48.6 | 247.7 / 242.4 | 8.3 / −9.0 | 371.4 / 434.8 |
+| National money's worth at national per-age taxes (0.901 for 0.974) | 91.3 / 141.6 | 12.7 / 48.8 | 259.1 / 253.4 | 8.3 / −9.0 | 371.4 / 434.8 |
+| Part A accrual scaled by HI receipts instead of covered workers | 121.9 / 175.1 | 13.3 / 46.7 | 227.9 / 222.0 | 8.3 / −9.0 | 371.4 / 434.8 |
+| Justice profile flat over 18–64 | 102.5 / 152.8 | 10.6 / 46.2 | 247.7 / 242.4 | 10.6 / −6.6 | 371.4 / 434.8 |
+| Corrections as fixed dollars | 102.5 / 152.8 | 9.6 / 45.3 | 247.6 / 241.4 | 11.7 / −4.7 | 371.4 / 434.8 |
+
+[CALCULATION: `summary_sept29.json` → `sensitivities`; each row printed by largest remainder so that it adds]
+
+- **The money's-worth ratio at national profile** decides how much of the ratio gap sits in part 1. The central gives
+  average residents the group's 0.974. The bridge gives them 0.901. The national ratio on the central's basis (payable
+  benefits) is not measured. The bridge assumes the payable cut falls alike on the nation and on the younger group,
+  which probably understates the nation's ratio. On a like-for-like basis the nation's ratio is 3.5% below the group's,
+  and more of its future benefits are taxed. If the nation's ratio lies between the two rules, part 1 lies at
+  $91.3–102.5bn at the low end [INFERENCE]. The pension lane measured ratios by generation (G1 1.041, G2 0.919, G3+
+  0.962; the generation lane uses them), not for the nation.
+- **The accrual's age profile.** Every state's accrual is its OASDI receipts × one ratio, so a tax dollar earns the
+  same pension at every age. A ratio by age would move dollars between parts 2 and 3 [GAP: no per-age ratio in the
+  pension lane's outputs].
+- **Part 1 at the published count** (40.90M on the published frame) would be $103.97 / 155.17bn (+$1.47 / 2.41bn;
+  September 27: +$4.24 / 5.52bn).
+- **Finding: item 5's owner-occupied property tax is on the published weights, not the row-4 frame.** The case's group
+  amount for `modeled_owner_property`, $24.970bn, is model.json's published cell (share 0.063237). On the row-4 frame
+  that the rest of the account uses, the key gives 0.062121 of the same national line (correction ratio 1.01798). The
+  line was at zero response on September 27, so row 4 never needed to move it. Item 5 now makes it respond at 0.763. Put
+  on row 4, the case rises by $0.34bn at both ends ($371.75 / 435.18bn). [CALCULATION: engine run, `summary_sept29.json`
+  → `v4.kappas`] The fix belongs to the adopted lane's payload and was not made here.
+
+### Controls and gates
+
+`decompose.cjs` gates (exit 1 on any failure): sept29 35 PASS, sept29_cash 29 PASS, sept27 28 PASS (unchanged).
+- (b) the oracle: the corrected union reproduces $371.4146 / 434.8410bn (relative 1e-12, the lane's tolerance), and the
+  cash set $294.7011 / 361.8175bn. The ends are specifications 48 / 11. The payload equals the package's
+  `correctionsPayload()`.
+- Pension inputs:
+  - `pension_accrual_2026_09_28/derived/summary.json` has the payload's pinned sha256 (9ea1beb).
+  - `ratio_net` is the central's gross ratio × (1 − the group's future share taxed), to 1e-12.
+- The accrual rules reproduce the case's Social Security, Medicare and federal income tax at GGG (1e-9). Public
+  housing's deficit reproduces too (1e-9).
+- Key shares reproduce model.json's uncorrected cells: 50 checks per end, 47 in the cash set.
+- State GGG is the union line by line; per-head lines' correction ratios are 1; the line groups add (2.6e-13).
+- (a) Parts 1–4 add to the case in all six orders and the Shapley mean (worst 1.7e-13).
+- (c) Twice the average residents cost exactly twice part 1 ($204.99 / 305.51bn).
+
+The brief's gates:
+1. **Old case unchanged:** `scripts/rerun_lane.py --allow-unrun profiles_sept29.py` with the September 27 commands
+   (`profiles.py`, `decompose.cjs`, `production_check.py`) gave IDENTICAL, 23/23 files, rc 0 (21:03 JST). `git diff
+   --quiet` on `derived/` gave rc 0: the tracked outputs are HEAD's bytes.
+2. **sept29 outputs:** the ten new files exist (eight decomposition outputs, two profile files), and the lane's gates
+   pass on both cases (35 and 29).
+3. **Oracle:** gate (b), above.
+4. **Two passes** of `rerun_lane.py` with all six commands, after the sept29 run, gave IDENTICAL, 23/23 files, rc 0
+   (21:03 and 21:03 JST).
+
+### Files
+
+Written (this lane only):
+- `decompose.cjs` (modified): `--case sept29 | sept29_cash`. The September 27 default and its four outputs are
+  unchanged.
+- `profiles_sept29.py` (new, 5 gates): the three property keys by age → `derived/age_bins_sept29.csv`,
+  `derived/acs_rates_sept29.csv`.
+- New outputs: `derived/decomposition_sept29.csv`, `decomposition_lines_sept29.csv`, `states_sept29.csv`,
+  `summary_sept29.json`, and the same four with `_sept29_cash`.
+
+Read, not edited:
+- `main_case_2026_09_29`: `package.cjs`, `corrections.json` and `summary.json`.
+- `main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json`: the cash payload, read through `forPayload`.
+- `pension_accrual_2026_09_28/derived/`: `summary.json` (hash-pinned), `national_prediction.json` and `oasdi_arms.csv`.
+- `receipt_side_long_run_2026_09_28/derived/housing.json`.
+- The ACS 2024 1-year PUMS housing and person files, at the receipt-side lane's pinned hashes.
+
+### Reproduce
+
+```sh
+# from the repository root, after profiles.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/main_case_decomposition_2026_09_29/profiles_sept29.py
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case sept29
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case sept29_cash
+```
+
+### Log
+
+- 2026-09-29 20:14 JST: resumed after the usage-limit stop at 17:24 JST. Only this stub existed; no code or derived file of the lane had been changed. Design read: the adopted package (40c4ba7), its payload (8 correction lines, 2 receipt lines, 3 national-scale edits, row-4 production grid, pension accrual meta), candidate v4 package options (pension4 cash|payable_net, property none|long_run, property_reading low|central|high).
+- 2026-09-29 21:02 JST: resumed after the machine reboot of about 20:51 JST (the run had stopped mid-work). The code (decompose.cjs, profiles_sept29.py) and the sept29 outputs were in the working tree, complete (written 20:30–20:33 JST, before the reboot). Rerun here to a scratch directory: all three cases (sept27, sept29, sept29_cash) reproduce the working-tree files byte for byte, rc 0, 28 / 35 / 29 gates PASS. The gate logs were lost with /private/tmp, so every brief gate is rerun below.
+- 2026-09-29 21:03 JST: the brief's gates rerun (the logs of 20:30 were lost): gate 1 IDENTICAL 23/23 rc 0 and the tracked `derived/` equal to HEAD; gate 4 passes 1 and 2 IDENTICAL 23/23 rc 0.
+- 2026-09-29 21:23 JST: tables rebuilt (the helper was lost with /private/tmp) with printed parts that add, read back and checked; the owner-property frame probe rerun (+$0.34bn); this section written. No code or output changed after the gates.

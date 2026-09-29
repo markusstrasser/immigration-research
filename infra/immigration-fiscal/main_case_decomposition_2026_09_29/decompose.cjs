@@ -44,7 +44,27 @@
  * contributions add to each state's cost (1e-9); (a) parts 1-4 add to the case at both ends in every order
  * (1e-9; brief tolerance $0.1bn); (c) twice the average residents cost twice part 1 (1e-9).
  * Outputs: derived/decomposition.csv, decomposition_lines.csv, states.csv, summary.json. Run from the repository
- * root: node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs [--out-dir DIR]
+ * root: node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs [--out-dir DIR] [--case KEY]
+ *
+ * Cases (--case). sept27, the default: the September 27 case above, whose outputs keep their names. sept29: the main
+ * case adopted on 2026-09-29 (v4, main_case_2026_09_29, its corrections.json through its package); sept29_cash: its
+ * cash set (candidate v4's corrections_v4_cash.json through the same package's forPayload). Their outputs carry the key
+ * (decomposition_sept29.csv, ...), and they read profiles_sept29.py's keys beside profiles.py's. v4's parts take these
+ * rules (RESULT.md, "v4 case (sept29)"); a September 27 payload has none of them:
+ *   pension accrual       social_security is the payload's ratio_net x the OASDI receipts at the state's ages and
+ *                         receipts profile (the payload's own rule, read at every state): it moves with A and R, never
+ *                         with U. medicare keeps its Parts B and D share on the medicare key (U) and carries the Part A
+ *                         accrual scaled by covered workers (positive_fica_worker; A and R). federal_income_tax keeps
+ *                         its key (R) less the tax on current Social Security benefits, on the benefit key at the
+ *                         receipts profile: the payload's dollars at R = G, the national rate (the pension lane's
+ *                         current_rate_nation) on the national line at R = N;
+ *   property taxes        item 5's responsive receipts on their own keys: owner-occupied on the account's CPS key,
+ *                         tenant-occupied on ACS contract rent, personal on ACS household vehicles (profiles_sept29.py);
+ *   housing_enterprise_surplus  public housing's deficit follows housing_subsidies, the rental line that keys it (U);
+ *   state_price_*         the parent line's amount at the group's profile times the line's ratio to it; 0 at U = N;
+ *   roads_vmt_*           the group's persons aged 5 and over across ages (the roads lane's miles are per person 5+),
+ *                         0 at U = N;
+ *   national-scale edits  a scaled line's uncorrected amount is model.json's cell times the payload's scale.
  */
 "use strict";
 const fs = require("fs");
@@ -52,12 +72,22 @@ const path = require("path");
 
 const HERE = __dirname;
 const FISCAL = path.join(HERE, "..");
-const P = require(path.join(FISCAL, "main_case_long_run_2026_09_27", "package.cjs"));
-const { Engine, MODEL, readJson } = P;
 const argv = process.argv.slice(2);
 const argOf = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt : argv[i + 1]; };
+const CASES = {
+  sept27: { lane: "main_case_long_run_2026_09_27", suffix: "" },
+  sept29: { lane: "main_case_2026_09_29", suffix: "_sept29" },
+  sept29_cash: { lane: "main_case_2026_09_29", suffix: "_sept29_cash", payload: "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json" },
+};
+const CASE_KEY = argOf("--case", "sept27");
+const CASE_DEF = CASES[CASE_KEY];
+if (!CASE_DEF) throw new Error(`[BLOCKED] unknown case ${CASE_KEY}: ${Object.keys(CASES).join(", ")}`);
+const P0 = require(path.join(FISCAL, CASE_DEF.lane, "package.cjs"));
+const P = CASE_DEF.payload ? P0.forPayload(P0.readJson(CASE_DEF.payload)) : P0;
+const { Engine, MODEL, readJson } = P;
 const IN = path.join(HERE, "derived");
 const OUT = path.resolve(argOf("--out-dir", IN));
+const SUFFIX = CASE_DEF.suffix;
 
 const fails = [];
 function gate(label, ok, detail) {
@@ -71,11 +101,13 @@ const REF = MODEL.receipts.reference;
 
 // ---------------------------------------------------------------------------------------------------
 // The case.
-const CORR = readJson("main_case_long_run_2026_09_27/derived/corrections.json");
-const CASE = readJson("main_case_long_run_2026_09_27/derived/summary.json").main_case;
-console.log("[case]");
-gate("corrections.json is main_case_long_run_2026_09_27's payload", JSON.stringify(P.correctionsPayload()) === JSON.stringify(CORR),
-  `${CORR.lines.length} lines, ${CORR.edits.length} edits`);
+const CORR_FILE = CASE_DEF.payload || `${CASE_DEF.lane}/derived/corrections.json`;
+const CORR = readJson(CORR_FILE);
+const CASE_SUMMARY = readJson(`${CASE_DEF.lane}/derived/summary.json`);
+const CASE = CASE_KEY === "sept29_cash" ? CASE_SUMMARY.cash_set.band_bn : CASE_SUMMARY.main_case;
+console.log(CASE_KEY === "sept27" ? "[case]" : `[case ${CASE_KEY}]`);
+gate(CASE_KEY === "sept27" ? "corrections.json is main_case_long_run_2026_09_27's payload" : `${CORR_FILE} is the package's payload`,
+  JSON.stringify(P.correctionsPayload()) === JSON.stringify(CORR), `${CORR.lines.length} lines, ${CORR.edits.length} edits`);
 const UNION = Engine.applyCorrections(MODEL, CORR);
 const SPECS = P.MAIN_SPECS;
 const unionCost = SPECS.map((s) => P.evaluateFull(UNION, s).cost_bn);
@@ -93,11 +125,16 @@ function readCsv(file) {
   return rows.map((r) => { const c = r.split(","); return Object.fromEntries(keys.map((k, i) => [k, c[i]])); });
 }
 const BINS = {};
-for (const r of readCsv(path.join(IN, "age_bins.csv"))) {
-  const t = ((BINS[r.weights] ||= {})[r.allocation] ||= {})[r.key] ||= { union: [], national: [], bins: [] };
-  t.union.push(Number(r.union)); t.national.push(Number(r.national)); t.bins.push(Number(r.bin));
+for (const file of ["age_bins.csv"].concat(SUFFIX ? ["age_bins_sept29.csv"] : [])) {
+  for (const r of readCsv(path.join(IN, file))) {
+    const t = ((BINS[r.weights] ||= {})[r.allocation] ||= {})[r.key] ||= { union: [], national: [], bins: [] };
+    t.union.push(Number(r.union)); t.national.push(Number(r.national)); t.bins.push(Number(r.bin));
+  }
 }
 const EDGES = BINS.published.both["extra|pop"].bins;
+for (const [w, byA] of Object.entries(BINS)) for (const [a, byK] of Object.entries(byA)) for (const [k, t] of Object.entries(byK)) {
+  if (t.bins.length !== EDGES.length) throw new Error(`[BLOCKED] ${w}/${a}/${k}: ${t.bins.length} bins, not ${EDGES.length} (a key in both profile files?)`);
+}
 const POP = { published: BINS.published.both["extra|pop"], row4: BINS.row4.both["extra|pop"] };
 const ARREST = readCsv(path.join(IN, "arrest_profile.csv")).map((r) => Number(r.share));
 const FRAME = Object.fromEntries(Object.entries(POP).map(([w, p]) => [w, { NG: sum(p.union), NC: sum(p.national) }]));
@@ -176,9 +213,50 @@ function armValue(arm, s, kg) {
 // The plan: every line's amount at each (age, profile) state for one specification.
 const SYN_IDS = new Set(P.SYN_LINES.map((l) => l.id));
 const ROW8 = P.CONSTANTS.row8.c * P.RESPONSES.row8_factor;
-const uncorrectedCell = (side, id, key, a) => (side === "receipt"
-  ? MODEL.receipts.lines.find((l) => l.id === id).cells[REF][a]
-  : lineOf(id).keys[key][a]);
+const unionLine = (side, id) => (side === "receipt" ? UNION.receipts.lines : UNION.spending.lines).find((l) => l.id === id);
+// A national-scale edit's factor on a line's uncorrected cell: 1 on every line the payload does not scale (every line of
+// a September 27 payload).
+const natScale = (side, id) => unionLine(side, id).national_bn / (side === "receipt" ? MODEL.receipts.lines : MODEL.spending.lines)
+  .find((l) => l.id === id).national_bn;
+const uncorrectedCell = (side, id, key, a) => {
+  const cell = side === "receipt" ? MODEL.receipts.lines.find((l) => l.id === id).cells[REF][a] : lineOf(id).keys[key][a];
+  const f = natScale(side, id);
+  return f === 1 ? cell : Object.assign({}, cell, { target_bn: cell.target_bn * f });
+};
+
+// v4's parts (see the header). A September 27 payload has no receipt lines, correction lines beyond the three, national
+// scales or accrual, so none of this moves its plan.
+const IS_V4 = Array.isArray(CORR.receipt_lines);
+const ACCRUAL = CORR.meta.pension_accrual || null;
+const STATE_PRICE_PARENT = Object.fromEntries(((CORR.meta.state_pricing || {}).lines || []).map((x) => [x.line, x.parent]));
+const ROAD_LINES = new Set(P.componentsFor(null).filter((c) => c.key.kind === "part_rekeyed").map((c) => c.key.correction_line));
+const HOUSING_ENTERPRISE = "housing_enterprise_surplus", RENTAL_LINE = "housing_subsidies";
+const V4_KEYS = { tenant_occupied_property: "receipt|renter_contract_rent", personal_property_tax: "receipt|household_vehicles" };
+const PENSION_FILE = "pension_accrual_2026_09_28/derived/summary.json";
+const PENSION = ACCRUAL ? readJson(PENSION_FILE) : null;
+let RATIO_NATIONAL = null;
+if (IS_V4) {
+  gate("v4's correction lines are the state-price and road lines", CORR.lines.filter((l) => !SYN_IDS.has(l.id))
+    .every((l) => STATE_PRICE_PARENT[l.id] || ROAD_LINES.has(l.id)), CORR.lines.map((l) => l.id).join(", "));
+  gate("v4's receipt lines are public housing's deficit and tenant-occupied property",
+    CORR.receipt_lines.map((l) => l.id).sort().join() === [HOUSING_ENTERPRISE, "tenant_occupied_property"].sort().join());
+}
+if (ACCRUAL) {
+  const sha = require("crypto").createHash("sha256").update(fs.readFileSync(path.join(FISCAL, PENSION_FILE))).digest("hex");
+  gate(`${PENSION_FILE} is the payload's pinned file (${ACCRUAL.source.commit})`, sha === ACCRUAL.source.sha256, sha.slice(0, 16));
+  const gross = PENSION.central_decomposition.low.accrual_per_tax_dollar;
+  gate("ratio_net is the central's gross ratio net of the group's share of future benefits taxed",
+    Math.abs(gross * (1 - PENSION.benefit_tax.future_share_group) - ACCRUAL.ratio_net) < 1e-12, `${gross} x (1 - ${PENSION.benefit_tax.future_share_group})`);
+  // The sensitivity's national money's worth [INFERENCE: a bridge]: the group's gross ratio times the national-to-group
+  // ratio at trust-fund rates on scheduled benefits (the lane's national check, all 2024 taxpayers 15+, against the
+  // group's arm at the same rates), net of the national share of future benefits returned as benefit tax.
+  const nat = readJson("pension_accrual_2026_09_28/derived/national_prediction.json").oasdi_15_61.national_per_tax_dollar_ratio_route;
+  const arm = fs.readFileSync(path.join(FISCAL, "pension_accrual_2026_09_28/derived/oasdi_arms.csv"), "utf8").trim().split("\n")
+    .map((l) => l.split(",")).find((c) => c.slice(0, 7).join() === "individual_age_adjusted,EAN,tf,general,True,scheduled,note151_long_run");
+  RATIO_NATIONAL = { ratio_net: gross * (nat / Number(arm[9])) * (1 - PENSION.benefit_tax.future_share_national_timing),
+    inputs: { group_gross_central: gross, national_trust_fund_scheduled: nat, group_trust_fund_scheduled: Number(arm[9]),
+      national_future_share_taxed: PENSION.benefit_tax.future_share_national_timing, group_future_share_taxed: PENSION.benefit_tax.future_share_group } };
+}
 
 function planFor(spec, opts) {
   const o = Object.assign({ frame: "row4", justice: "arrests", corrections: "ratio" }, opts || {});
@@ -207,6 +285,13 @@ function planFor(spec, opts) {
   const schoolRatio = ratioOf(a, "spending|school_operating"), mixRatio = ratioOf(a, "spending|education_mix");
   const wageRatio = ratioOf("personal", "receipt|wage");
   const edu = { school: keyTotals(W, a, "spending|school_operating"), mix: keyTotals(W, a, "spending|education_mix") };
+  // v4's road lines: the group's persons aged 5 and over at national ages over its own (frame W).
+  const fivePlus = (() => {
+    const p = POP[W], NG = sum(p.union), NC = sum(p.national);
+    const g = sum(p.union.filter((_, b) => EDGES[b] >= 5)), n = NG * sum(p.national.filter((_, b) => EDGES[b] >= 5)) / NC;
+    return (alpha) => (alpha === "G" ? 1 : n / g);
+  })();
+  const accrualFacts = {};
 
   for (const [side, list] of [["receipt", ev.receipts], ["spending", ev.spending]]) {
     for (const r of list) {
@@ -225,7 +310,7 @@ function planFor(spec, opts) {
         // The case's corrected per-head amount is the row-4 frame's; the published frame is model.json's.
         const U0 = uncorrectedCell(side, r.id, r.key, a).target_bn;
         const perHead = W === "row4" ? r.amount_bn : (r.id === P.ENTERPRISE_LINE
-          ? MODEL.receipts.lines.find((l) => l.id === r.id).national_bn * (lineOf(P.REKEY_LINE).keys.population[a].target_bn / lineOf(P.REKEY_LINE).national_bn)
+          ? unionLine("receipt", r.id).national_bn * (lineOf(P.REKEY_LINE).keys.population[a].target_bn / lineOf(P.REKEY_LINE).national_bn)
           : U0);
         row.amount = () => perHead;
         if (side === "spending" && r.key === "population") {
@@ -277,6 +362,20 @@ function planFor(spec, opts) {
           detail: `${(medCell.target_bn + pubArms[pick]).toFixed(9)} vs ${cell.target_bn.toFixed(9)}` });
         const U = (state) => Umed(state) + armValue(ARMS[pick], sAt("fr", state), kgAt("fr", state));
         Object.assign(row, withCorrections(U, r.amount_bn), { arm: { year: ARMS[pick].year, sl: ARMS[pick].sl, n: ARMS[pick].n } });
+      } else if (STATE_PRICE_PARENT[r.id]) {
+        row.cls = "state_price"; row.parent = STATE_PRICE_PARENT[r.id];  // its amounts read the parent's row, below
+      } else if (ROAD_LINES.has(r.id)) {
+        row.cls = "roads_vmt";
+        row.amount = (alpha, pi) => (pi === "N" ? 0 : r.amount_bn * fivePlus(alpha));
+      } else if (r.id === HOUSING_ENTERPRISE) {
+        row.cls = "follows_rental"; row.factor = "U";  // its amounts read the rental line's row, below
+      } else if (IS_V4 && V4_KEYS[r.id]) {
+        // An ACS key (profiles_sept29.py): the national line on the national per-age profile; kappa carries the
+        // measured share over the frame's standardized one.
+        row.cls = "profile_acs"; row.key = V4_KEYS[r.id].split("|")[1];
+        const fr = keyTotals(W, a, V4_KEYS[r.id]), national = unionLine(side, r.id).national_bn;
+        const U = (state) => national * fr.T[state] / fr.V;
+        Object.assign(row, withCorrections(U, r.amount_bn), { U });
       } else {
         const name = `${side}|${r.key}`;
         const pub = keyTotals("published", a, name), fr = keyTotals(W, a, name);
@@ -284,10 +383,69 @@ function planFor(spec, opts) {
         row.cls = "profile";
         const cell = uncorrectedCell(side, r.id, r.key, a);
         const U = scaledOn(cell, pub, fr, `${r.id}/${r.key}`);
-        Object.assign(row, withCorrections(U, r.amount_bn));
+        Object.assign(row, withCorrections(U, r.amount_bn), { U });
       }
       rows.push(row);
     }
+  }
+  // v4's rows that read other rows.
+  const rowOf = (id) => rows.find((x) => x.id === id);
+  for (const row of rows) {
+    if (row.cls === "state_price") {
+      const parent = rowOf(row.parent), A0 = parent.amount("G", "G");
+      row.amount = (alpha, pi) => (pi === "N" ? 0 : row.A * parent.amount(alpha, "G") / A0);
+    } else if (row.cls === "follows_rental") {
+      const hs = rowOf(RENTAL_LINE), f = unionLine("receipt", row.id).national_bn / unionLine("spending", RENTAL_LINE).national_bn;
+      row.amount = (alpha, pi) => f * hs.amount(alpha, pi);
+      checks.push({ label: `${row.id} is its national over ${RENTAL_LINE}'s times ${RENTAL_LINE}'s amount`,
+        ok: Math.abs(row.amount("G", "G") - row.A) < 1e-9, detail: `${row.amount("G", "G")} vs ${row.A}` });
+    }
+  }
+  if (ACCRUAL) {
+    if (o.corrections === "none") throw new Error("[BLOCKED] the accrual reads the corrected receipts: no corrections-off run on v4");
+    const ss = rowOf("social_security"), med = rowOf("medicare"), fit = rowOf("federal_income_tax");
+    const oasdi = ACCRUAL.oasdi_lines.map(rowOf), se = rowOf(ACCRUAL.se_line), hi = ["employee_hi", "employer_hi"].map(rowOf);
+    const share = ACCRUAL.se_oasdi_share;
+    const oasdiAt = (alpha, rho) => sum(oasdi.map((x) => x.amount(alpha, rho))) + share * se.amount(alpha, rho);
+    const hiAt = (alpha, rho) => sum(hi.map((x) => x.amount(alpha, rho))) + (1 - share) * se.amount(alpha, rho);
+    // Social Security: ratio_net x the OASDI receipts of the state's ages and receipts profile (factor R).
+    const ratioAt = (rho) => (rho === "N" && o.accrual === "national_ratio" ? RATIO_NATIONAL.ratio_net : ACCRUAL.ratio_net);
+    Object.assign(ss, { cls: "accrual", factor: "R", kappa: undefined });
+    ss.amount = (alpha, rho) => ratioAt(rho) * oasdiAt(alpha, rho);
+    // Medicare: Parts B and D on the medicare key at the use profile, the Part A accrual at the ages and receipts
+    // profile, scaled by covered workers (Part A turns on insured status, not on the tax paid) or, as the alternative,
+    // by the HI receipts.
+    const sA = ACCRUAL.part_a_share, PA = ACCRUAL.part_a_accrual_bn;
+    const covered = keyTotals(W, a, "receipt|positive_fica_worker");
+    const partA = (alpha, rho) => PA * (o.part_a === "hi_scaled" ? hiAt(alpha, rho) / hiAt("G", "G") : covered.T[alpha + rho] / covered.T.GG);
+    const cashMed = withCorrections(med.U, (med.A - PA) / (1 - sA));
+    Object.assign(med, { cls: "medicare_accrual", kappa: cashMed.kappa });
+    med.at = (alpha, rho, ups) => (1 - sA) * cashMed.amount(alpha, ups) + partA(alpha, rho);
+    med.amount = (alpha, pi) => med.at(alpha, pi, pi);
+    // Federal income tax: its key at the receipts profile, less the tax on current Social Security benefits (the benefit
+    // key): the payload's dollars at R = G; at R = N the national rate on the national line.
+    const btKey = keyTotals(W, a, "spending|social_security"), BT = ACCRUAL.benefit_tax_receipt_bn[a];
+    const btNational = PENSION.benefit_tax.current_rate_nation * lineOf("social_security").national_bn;
+    const bt = (alpha, rho) => (rho === "G" ? BT * btKey.T[alpha + "G"] / btKey.T.GG : btNational * btKey.T[alpha + "N"] / btKey.V);
+    const cashFit = withCorrections(fit.U, fit.A + BT);
+    Object.assign(fit, { cls: "income_tax_less_benefit_tax", kappa: cashFit.kappa });
+    fit.amount = (alpha, rho) => cashFit.amount(alpha, rho) - bt(alpha, rho);
+    for (const [row, v] of [[ss, ss.amount("G", "G")], [med, med.at("G", "G", "G")], [fit, fit.amount("G", "G")]]) {
+      checks.push({ label: `${row.id}: the accrual rule reproduces the case's amount`, ok: Math.abs(v - row.A) < 1e-9, detail: `${v} vs ${row.A}` });
+    }
+    Object.assign(accrualFacts, { benefit_tax_national_bn: btNational, part_a_scaler: o.part_a === "hi_scaled" ? "hi_receipts" : "positive_fica_worker",
+      oasdi_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, oasdiAt(s[0], s[1])])),
+      part_a_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, partA(s[0], s[1])])),
+      benefit_tax_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, bt(s[0], s[1])])),
+      medicare_cash_kappa: cashMed.kappa, income_tax_cash_kappa: cashFit.kappa });
+  }
+  // A row that reads other rows returns the case's own amount at the group's state, as withCorrections does (its
+  // formula there is gated above to 1e-9).
+  for (const row of rows) {
+    if (!["state_price", "follows_rental", "accrual", "medicare_accrual", "income_tax_less_benefit_tax"].includes(row.cls)) continue;
+    const f = row.amount, g = row.at;
+    row.amount = (alpha, pi) => (alpha === "G" && pi === "G" ? row.A : f(alpha, pi));
+    if (g) row.at = (alpha, rho, ups) => (alpha === "G" && rho === "G" && ups === "G" ? row.A : g(alpha, rho, ups));
   }
   // Education: the school part of the line's key at each state (for the line split only).
   const schoolFraction = (alpha, pi) => {
@@ -295,7 +453,7 @@ function planFor(spec, opts) {
     return edu.school.T[st] / edu.mix.T[st];
   };
   const production = (alpha, rho) => (rho === "N" ? 0 : wageRatio(alpha));
-  return { spec, a, rows, checks, production, schoolFraction, opts: o };
+  return { spec, a, rows, checks, production, schoolFraction, opts: o, accrual: accrualFacts };
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -306,7 +464,9 @@ function stateModel(plan, st) {
   const m = Engine.clone(UNION);
   const ri = new Map(m.receipts.lines.map((l, i) => [l.id, i])), si = new Map(m.spending.lines.map((l, i) => [l.id, i]));
   for (const row of plan.rows) {
-    const v = row.amount(alpha, row.side === "receipt" ? rho : ups);
+    // A row's profile factor is its side's (R for receipts, U for spending) unless it names another; the Medicare
+    // accrual reads both.
+    const v = row.at ? row.at(alpha, rho, ups) : row.amount(alpha, (row.factor || (row.side === "receipt" ? "R" : "U")) === "R" ? rho : ups);
     if (row.side === "receipt") m.receipts.lines[ri.get(row.id)].cells[REF][plan.a].target_bn = v;
     else m.spending.lines[si.get(row.id)].keys[row.key][plan.a].target_bn = v;
   }
@@ -340,18 +500,27 @@ const GROUPS = {
     "other_foreign_current_transfers", "enterprise_surplus"],
   care_shelter_audit_constants: [P.SYN.constants],
 };
+if (IS_V4) {
+  // Item 5's responsive property taxes in a group of their own; v4's new lines with their parents.
+  GROUPS.property_taxes = ["modeled_owner_property", "tenant_occupied_property", "personal_property_tax"];
+  GROUPS.other_receipts = GROUPS.other_receipts.filter((id) => !GROUPS.property_taxes.includes(id));
+  GROUPS.cash_food_housing_benefits.push(HOUSING_ENTERPRISE);
+  GROUPS.roads_economic_affairs.push(...ROAD_LINES);
+  for (const [line, parent] of Object.entries(STATE_PRICE_PARENT)) GROUPS[Object.keys(GROUPS).find((g) => GROUPS[g].includes(parent))].push(line);
+}
 const GROUP_OF = {};
 for (const [g, ids] of Object.entries(GROUPS)) for (const id of ids) GROUP_OF[id] = g;
 const CAPITAL_GROUP = (c) => {
   if (c.id === "k12") return "schools";
   if (c.id === "college") return "colleges_other_education";
   if (c.part === "enterprise") return "per_head_government_and_enterprises";
-  const line = c.key.numerator_lines ? c.key.numerator_lines[0] : c.key.line;
+  const line = c.key.numerator_lines ? c.key.numerator_lines[0] : c.key.parent_line || c.key.line;
   return GROUP_OF[line];
 };
 const GROUP_NAMES = ["income_taxes", "payroll_taxes", "consumption_taxes", "production_term", "other_receipts", "schools",
   "colleges_other_education", "medicaid", "justice", "refundable_credits", "social_security_medicare", "health_veterans",
   "cash_food_housing_benefits", "roads_economic_affairs", "per_head_government_and_enterprises", "care_shelter_audit_constants"];
+if (IS_V4) GROUP_NAMES.splice(GROUP_NAMES.indexOf("production_term"), 0, "property_taxes");
 
 function evaluateState(plan, st) {
   const m = stateModel(plan, st);
@@ -500,8 +669,12 @@ const S0 = R26.s_national_memo;
 // Sensitivities: the justice profile flat over 18-64, corrections as fixed dollars, part 1 at 40.90M.
 console.log("[sensitivities]");
 const sens = {};
-for (const [name, opts] of [["justice_flat_18_64", { justice: "flat_18_64" }], ["corrections_fixed_dollars", { corrections: "fixed" }],
-  ["corrections_off", { corrections: "none" }]]) {
+// v4: no corrections-off run (its payload's edits carry the accrual and the items, not only the dataset corrections; the
+// cash set is decomposed as its own case); the accrual's two alternative rules instead.
+const SENS = [["justice_flat_18_64", { justice: "flat_18_64" }], ["corrections_fixed_dollars", { corrections: "fixed" }]]
+  .concat(IS_V4 ? [] : [["corrections_off", { corrections: "none" }]])
+  .concat(ACCRUAL ? [["accrual_national_ratio", { accrual: "national_ratio" }], ["part_a_hi_scaled", { part_a: "hi_scaled" }]] : []);
+for (const [name, opts] of SENS) {
   sens[name] = {};
   for (const [end, i] of ENDS) {
     const r = runEnd(SPECS[i], opts);
@@ -532,7 +705,11 @@ for (const [end, i] of ENDS) {
 // Outputs.
 fs.mkdirSync(OUT, { recursive: true });
 const f6 = (x) => (Math.abs(x) < 5e-13 ? 0 : x).toFixed(6);
-const perMember = (bn) => Math.round(bn * 1e9 / MEMBERS);
+// Per member: the September 27 outputs divide by the record's 40,896,574, as they were written; v4's divide by the
+// 39,712,493 people the account prices (the row-4 union, this lane's finding, which the decision of 2026-09-29 adopts).
+const PER_MEMBER = SUFFIX ? FRAME.row4.NG : MEMBERS;
+if (SUFFIX) gate("v4's per-member count is the account's 39,712,493 (the row-4 union)", Math.round(PER_MEMBER) === 39712493, PER_MEMBER.toFixed(2));
+const perMember = (bn) => Math.round(bn * 1e9 / PER_MEMBER);
 const lines = [["part", "order", "low_bn", "high_bn", "per_member_low", "per_member_high", "share_of_total", "share_low", "share_high"].join(",")];
 const shareRow = (lo, hi) => [f6((lo + hi) / (CASE[0] + CASE[1])), f6(lo / CASE[0]), f6(hi / CASE[1])];
 const row = (part, order, lo, hi) => lines.push([part, order, f6(lo), f6(hi), perMember(lo), perMember(hi), ...shareRow(lo, hi)].join(","));
@@ -545,13 +722,13 @@ for (const f of FACTORS) {
   row(PART_OF[f], "shapley", D.low.shapley[f], D.high.shapley[f]);
 }
 row("total", "all", costs.low.GGG, costs.high.GGG);
-fs.writeFileSync(path.join(OUT, "decomposition.csv"), lines.join("\n") + "\n");
+fs.writeFileSync(path.join(OUT, `decomposition${SUFFIX}.csv`), lines.join("\n") + "\n");
 
 const gl = [["part", "line_group", "low_bn", "high_bn"].join(",")];
 for (const g of GROUP_NAMES) gl.push(["shared", g, f6(DG.low.shared[g]), f6(DG.high.shared[g])].join(","));
 for (const f of FACTORS) for (const g of GROUP_NAMES) gl.push([PART_OF[f], g, f6(DG.low.shapley[f][g]), f6(DG.high.shapley[f][g])].join(","));
 for (const g of GROUP_NAMES) gl.push(["total", g, f6(groupVals.low.GGG[g]), f6(groupVals.high.GGG[g])].join(","));
-fs.writeFileSync(path.join(OUT, "decomposition_lines.csv"), gl.join("\n") + "\n");
+fs.writeFileSync(path.join(OUT, `decomposition_lines${SUFFIX}.csv`), gl.join("\n") + "\n");
 for (const [end] of ENDS) {
   for (const f of FACTORS) {
     const s = sum(Object.values(DG[end].shapley[f]));
@@ -561,7 +738,7 @@ for (const [end] of ENDS) {
 
 const sl = [["state", "age", "receipts", "use", "low_bn", "high_bn"].join(",")];
 for (const st of STATES) sl.push([st, st[0], st[1], st[2], f6(costs.low[st]), f6(costs.high[st])].join(","));
-fs.writeFileSync(path.join(OUT, "states.csv"), sl.join("\n") + "\n");
+fs.writeFileSync(path.join(OUT, `states${SUFFIX}.csv`), sl.join("\n") + "\n");
 
 const round = (x) => (typeof x === "number" ? Number(x.toPrecision(12)) : x);
 const deep = (o) => JSON.parse(JSON.stringify(o, (k, v) => round(v)));
@@ -572,8 +749,8 @@ const lineTable = Object.fromEntries(ENDS.map(([end]) => [end, main[end].plan.ro
 }))]));
 const summary = {
   lane: "main_case_decomposition_2026_09_29",
-  case: { lane: "main_case_long_run_2026_09_27", bn: CASE, ends: { low: LO, high: HI } },
-  members: MEMBERS,
+  case: Object.assign({ lane: CASE_DEF.lane, bn: CASE, ends: { low: LO, high: HI } }, SUFFIX ? { key: CASE_KEY, payload: CORR_FILE } : {}),
+  members: PER_MEMBER,
   frame: { published: FRAME.published, row4: FRAME.row4, household_fraction: HF,
     note: "row4: the stack's audit row 4 weights; the case's per-head lines are charged at this union count" },
   parts: Object.fromEntries(ENDS.map(([end]) => [end, { shared: D[end].shared, shapley: Object.fromEntries(FACTORS.map((f) => [PART_OF[f], D[end].shapley[f]])),
@@ -597,8 +774,7 @@ const summary = {
   zero_response_at_average_residents: Object.fromEntries(ENDS.map(([end]) => [end, (() => {
     const f = FRAME.row4, sr = f.NG / f.NC, ss = HF * f.NG / f.NC;
     const pick = (side) => main[end].plan.rows.filter((r) => r.side === side && r.response === 0 && r.cls !== "zero")
-      .map((r) => { const l = (side === "receipt" ? MODEL.receipts.lines : MODEL.spending.lines).find((x) => x.id === r.id);
-        return [r.id, l.national_bn * (side === "receipt" ? sr : ss)]; });
+      .map((r) => [r.id, unionLine(side, r.id).national_bn * (side === "receipt" ? sr : ss)]);
     const rec = Object.fromEntries(pick("receipt")), spe = Object.fromEntries(pick("spending"));
     return { receipts: rec, receipts_total_bn: sum(Object.values(rec)), spending: spe, spending_total_bn: sum(Object.values(spe)) };
   })()])),
@@ -610,7 +786,43 @@ const summary = {
   sensitivities: sens,
   lines: lineTable,
 };
-fs.writeFileSync(path.join(OUT, "summary.json"), JSON.stringify(deep(summary), null, 1) + "\n");
+if (IS_V4) {
+  const rowsOf = (end, cls) => main[end].plan.rows.filter((r) => r.cls === cls);
+  summary.v4 = {
+    rules: {
+      pension_accrual: ACCRUAL ? "social_security = ratio_net x OASDI receipts at (A, R); medicare = (1 - part_a_share) x the medicare key at (A, U), "
+        + "corrected by its September 27 kappa, + the Part A accrual x covered workers at (A, R) / at GG; federal_income_tax = its key at (A, R) "
+        + "with kappa on the cash amount (case + benefit tax) - the benefit tax on the Social Security benefit key at (A, R): the payload's "
+        + "dollars at R = G, current_rate_nation x the national Social Security line at R = N" : null,
+      property_taxes: "modeled_owner_property on the account's CPS key (profiles_sept29.py; published-share gate); tenant_occupied_property on ACS "
+        + "contract rent and personal_property_tax on ACS household vehicles (per-person rates by age x the frame's headcount; kappa = the "
+        + "measured share over the standardized one); factor R",
+      housing_enterprise_surplus: "its national over housing_subsidies' national x housing_subsidies' amount at (A, U); factor U",
+      state_price: "the parent's amount at (A, G) x the line's amount over the parent's at GG; 0 at U = N",
+      roads_vmt: "the case's amount x the group's persons 5+ at national ages over its own at A = N; 0 at U = N",
+      national_scale: "a scaled line's uncorrected cell is model.json's x (payload national / model.json national)",
+    },
+    accrual: ACCRUAL ? Object.fromEntries(ENDS.map(([end]) => [end, main[end].plan.accrual])) : null,
+    accrual_national_ratio: RATIO_NATIONAL,
+    kappas: Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(main[end].plan.rows
+      .filter((r) => ["profile_acs", "medicare_accrual", "income_tax_less_benefit_tax"].includes(r.cls) || r.id === "modeled_owner_property")
+      .map((r) => [r.id, r.kappa]))])),
+    // Each named line's own cost contribution (-effect) over the eight states, split the same way (Shapley means).
+    line_parts: Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(["social_security", "medicare", "federal_income_tax",
+      "modeled_owner_property", "tenant_occupied_property", "personal_property_tax", HOUSING_ENTERPRISE, RENTAL_LINE, ...ROAD_LINES,
+      ...Object.keys(STATE_PRICE_PARENT)].map((id) => {
+      const at = (st) => { const ev = main[end].states[st].full.evaluation;
+        const x = ev.receipts.find((r) => r.id === id) || ev.spending.find((r) => r.id === id); return -x.effect_bn; };
+      const d = decompose(Object.fromEntries(STATES.map((st) => [st, at(st)])));
+      return [id, { shared: d.shared, age_structure: d.shapley.A, taxes_at_given_ages: d.shapley.R, service_use_at_given_ages: d.shapley.U, total: at("GGG") }];
+    }))])),
+    state_price_parents: STATE_PRICE_PARENT,
+    road_lines: [...ROAD_LINES],
+    classes: Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(["state_price", "roads_vmt", "follows_rental", "profile_acs", "accrual",
+      "medicare_accrual", "income_tax_less_benefit_tax"].map((c) => [c, rowsOf(end, c).map((r) => r.id)]))])),
+  };
+}
+fs.writeFileSync(path.join(OUT, `summary${SUFFIX}.json`), JSON.stringify(deep(summary), null, 1) + "\n");
 
 console.log("\nParts ($bn, Shapley mean; low / high):");
 console.log(`  shared ${D.low.shared.toFixed(2)} / ${D.high.shared.toFixed(2)}`);
