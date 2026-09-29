@@ -1,0 +1,197 @@
+{
+ "gate": "G2: every September 27 derived file exists here with its columns, rows and keys; every difference listed",
+ "files": {
+  "components.csv": {
+   "columns_same_order": true,
+   "columns_added": [],
+   "columns_missing": [],
+   "rows": {
+    "sept27": 19,
+    "here": 21,
+    "missing": [],
+    "added": [
+     "property_long_run",
+     "payroll_compliance"
+    ],
+    "order_kept": true
+   }
+  },
+  "corrections.json": {
+   "key_paths": {
+    "sept27": 190,
+    "here": 566,
+    "added": 376
+   },
+   "missing": [],
+   "type_changed": [],
+   "relocated": [],
+   "added_subtrees": [
+    "meta.builds_on.file",
+    "meta.builds_on.sha256",
+    "meta.responses.housing_enterprise_surplus",
+    "meta.responses.modeled_owner_property",
+    "meta.responses.tenant_occupied_property",
+    "meta.responses.personal_property_tax",
+    "meta.responses.roads_vmt_sl",
+    "meta.responses.roads_vmt_fed",
+    "meta.responses.state_price_public_order_safety",
+    "meta.responses.state_price_health_services",
+    "meta.responses.state_price_recreation_culture",
+    "meta.capital_return.rule_kinds.part_rekeyed",
+    "meta.capital_return.components.[].key.parent_line",
+    "meta.capital_return.components.[].key.correction_line",
+    "meta.capital_return.components.[].key.part_national_bn",
+    "meta.status",
+    "meta.candidate_v4",
+    "meta.production",
+    "meta.pension_accrual",
+    "meta.state_pricing",
+    "meta.roads_mileage_key",
+    "receipt_lines",
+    "edits.[].national_bn",
+    "production"
+   ]
+  },
+  "main_case_bands.csv": {
+   "columns_same_order": true,
+   "columns_added": [],
+   "columns_missing": [],
+   "rows": {
+    "sept27": 26,
+    "here": 28,
+    "missing": [],
+    "added": [
+     "long_run_non_school_full|sept27_case",
+     "long_run_non_school_full|cash_set"
+    ],
+    "order_kept": true
+   }
+  },
+  "per_spec.csv": {
+   "columns_same_order": true,
+   "columns_added": [],
+   "columns_missing": [],
+   "rows": {
+    "sept27": 128,
+    "here": 128,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   }
+  },
+  "sign_reversal.csv": {
+   "columns_same_order": true,
+   "columns_added": [
+    "sept29_low",
+    "sept29_high"
+   ],
+   "columns_missing": [],
+   "rows": {
+    "sept27": 6,
+    "here": 6,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   }
+  },
+  "summary.json": {
+   "key_paths": {
+    "sept27": 579,
+    "here": 834,
+    "added": 252
+   },
+   "missing": [],
+   "type_changed": [],
+   "relocated": [
+    "change_at_fixed_specifications.long_run_responses -> change_at_fixed_specifications.sept27_case.long_run_responses",
+    "change_at_fixed_specifications.rental_assistance -> change_at_fixed_specifications.sept27_case.rental_assistance",
+    "change_at_fixed_specifications.capital_core -> change_at_fixed_specifications.sept27_case.capital_core",
+    "change_at_fixed_specifications.capital_block -> change_at_fixed_specifications.sept27_case.capital_block",
+    "change_at_fixed_specifications.enterprise_rekey -> change_at_fixed_specifications.sept27_case.enterprise_rekey",
+    "change_at_fixed_specifications.enterprise_rekey_receipt_move -> change_at_fixed_specifications.sept27_case.enterprise_rekey_receipt_move",
+    "change_at_fixed_specifications.enterprise_surplus_receipt -> change_at_fixed_specifications.sept27_case.enterprise_surplus_receipt",
+    "change_at_fixed_specifications.capital_enterprise -> change_at_fixed_specifications.sept27_case.capital_enterprise",
+    "change_at_fixed_specifications.of_which_public_housing -> change_at_fixed_specifications.sept27_case.of_which_public_housing",
+    "change_at_fixed_specifications.enterprise_rekey_against_model_json_share -> change_at_fixed_specifications.sept27_case.enterprise_rekey_against_model_json_share"
+   ],
+   "added_subtrees": [
+    "adopted_2026_09_27",
+    "cash_set",
+    "change_at_fixed_specifications.item_1",
+    "change_at_fixed_specifications.item_2",
+    "change_at_fixed_specifications.item_3",
+    "change_at_fixed_specifications.item_4",
+    "change_at_fixed_specifications.item_5",
+    "change_at_fixed_specifications.item_6a",
+    "change_at_fixed_specifications.item_7",
+    "change_at_fixed_specifications.item_pension",
+    "change_at_fixed_specifications.item_state",
+    "change_at_fixed_specifications.item_roads",
+    "end_specifications.[].low_end.line_responses.receipt:housing_enterprise_surplus",
+    "end_specifications.[].low_end.line_responses.receipt:modeled_owner_property",
+    "end_specifications.[].low_end.line_responses.receipt:tenant_occupied_property",
+    "end_specifications.[].low_end.line_responses.receipt:personal_property_tax",
+    "end_specifications.[].low_end.line_responses.roads_vmt_sl",
+    "end_specifications.[].low_end.line_responses.roads_vmt_fed",
+    "end_specifications.[].low_end.line_responses.state_price_public_order_safety",
+    "end_specifications.[].low_end.line_responses.state_price_health_services",
+    "end_specifications.[].low_end.line_responses.state_price_recreation_culture",
+    "end_specifications.[].high_end.line_responses.receipt:housing_enterprise_surplus",
+    "end_specifications.[].high_end.line_responses.receipt:modeled_owner_property",
+    "end_specifications.[].high_end.line_responses.receipt:tenant_occupied_property",
+    "end_specifications.[].high_end.line_responses.receipt:personal_property_tax",
+    "end_specifications.[].high_end.line_responses.roads_vmt_sl",
+    "end_specifications.[].high_end.line_responses.roads_vmt_fed",
+    "end_specifications.[].high_end.line_responses.state_price_public_order_safety",
+    "end_specifications.[].high_end.line_responses.state_price_health_services",
+    "end_specifications.[].high_end.line_responses.state_price_recreation_culture",
+    "lines_at_end_specifications.roads_vmt_sl",
+    "lines_at_end_specifications.roads_vmt_fed",
+    "lines_at_end_specifications.state_price_public_order_safety",
+    "lines_at_end_specifications.state_price_health_services",
+    "lines_at_end_specifications.state_price_recreation_culture",
+    "receipts_at_end_specifications",
+    "enterprises.receipt_at_end_specifications.of_which_rekey_bn",
+    "enterprises.receipt_at_end_specifications.of_which_public_housing_split_bn",
+    "enterprises.public_housing",
+    "responses.housing_enterprise_surplus",
+    "responses.modeled_owner_property",
+    "responses.tenant_occupied_property",
+    "responses.personal_property_tax",
+    "responses.roads_vmt_sl",
+    "responses.roads_vmt_fed",
+    "responses.state_price_public_order_safety",
+    "responses.state_price_health_services",
+    "responses.state_price_recreation_culture",
+    "each_addition.item_1",
+    "each_addition.item_2",
+    "each_addition.item_3",
+    "each_addition.item_4",
+    "each_addition.item_5",
+    "each_addition.item_6a",
+    "each_addition.item_7",
+    "each_addition.item_pension",
+    "each_addition.item_state",
+    "each_addition.item_roads",
+    "beside_the_account.congestion.not_recomputed",
+    "beside_the_account.transit_at_riders_key_item_8",
+    "beside_the_account.uninsured_use_0_7x_item_10",
+    "by_side_vs_uncorrected_at_adopted_responses.production",
+    "group_receipts_bn.adopted_2026_09_27",
+    "components.[].variants.low responses",
+    "components.[].variants.1 everywhere, case-scaled tenant national",
+    "components.[].variants.low-cost readings",
+    "components.[].variants.high-cost readings",
+    "v4"
+   ]
+  }
+ },
+ "files_missing": [],
+ "files_added": [],
+ "gate_records": [
+  "api_check.json",
+  "contract.json",
+  "generality.json"
+ ],
+ "pass": true
+}

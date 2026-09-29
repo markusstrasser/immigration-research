@@ -1,0 +1,63 @@
+{
+ "gate": "G3: with the September 27 corrections.json as the payload, this package reproduces the September 27 lane's derived outputs byte for byte",
+ "pass": true,
+ "method": "the September 27 lane's main_case.cjs and sign_reversal.cjs, unmodified, each run in a child process with require(\"./package.cjs\") resolved to package.cjs forPayload(main_case_long_run_2026_09_27/derived/corrections.json) with HERE that lane's directory; the scripts' fs sends their writes into that lane's derived/ to a temporary directory and stops any other write; every other require resolves as in that lane",
+ "payload": {
+  "file": "main_case_long_run_2026_09_27/derived/corrections.json",
+  "sha256": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea"
+ },
+ "runs": [
+  {
+   "script": "main_case_long_run_2026_09_27/main_case.cjs",
+   "exit_code": 0,
+   "gates_passed": 63,
+   "gates_failed": 0,
+   "all_gates_passed": true
+  },
+  {
+   "script": "main_case_long_run_2026_09_27/sign_reversal.cjs",
+   "exit_code": 0,
+   "gates_passed": 8,
+   "gates_failed": 0,
+   "all_gates_passed": true
+  }
+ ],
+ "files": [
+  {
+   "file": "components.csv",
+   "identical": true,
+   "bytes": 2337,
+   "sha256": "1ae4e20b6060ab84f60f8cfbca00113bb69280e6b0a970edb8ba52bc14b1bca4"
+  },
+  {
+   "file": "corrections.json",
+   "identical": true,
+   "bytes": 83603,
+   "sha256": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea"
+  },
+  {
+   "file": "main_case_bands.csv",
+   "identical": true,
+   "bytes": 1923,
+   "sha256": "46443c0cc86de4eceeb008aee289820feb6c8b0be1b015eacdea8bef03f73cdb"
+  },
+  {
+   "file": "per_spec.csv",
+   "identical": true,
+   "bytes": 105554,
+   "sha256": "02819b547df9fb267031a5b1bd7434395c5ec7dbc47b6cac42ab71c5a8ce79c1"
+  },
+  {
+   "file": "sign_reversal.csv",
+   "identical": true,
+   "bytes": 508,
+   "sha256": "7fc3587f3a64fb7f197270c59298ba85b37d06ae2daa9077aabff53d4e27f7a6"
+  },
+  {
+   "file": "summary.json",
+   "identical": true,
+   "bytes": 47105,
+   "sha256": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d"
+  }
+ ]
+}

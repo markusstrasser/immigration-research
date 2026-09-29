@@ -1,0 +1,355 @@
+{
+ "gate": "G4: consumers' call patterns, as written, run against this package; a failing check is a package defect",
+ "pass": true,
+ "generation_pin": {
+  "commit": "8654a0c",
+  "files": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_{G1,G2,G3plus}.json, generation_corrections.json",
+  "source": "world_ledger_2026_09_27/pins.json sept27.generation"
+ },
+ "patterns": [
+  {
+   "consumer": "distribution_weights_2026_09_23/case_ends.cjs",
+   "lines": "63-94, 98-122 (working tree)",
+   "calls": "modelFor(\"central\", m, withCentral({})), evaluateFull(m, s, MAIN_PROFILE) over MAIN_SPECS, stateFor(m, s, MAIN_PROFILE).production",
+   "checks": [
+    {
+     "check": "the band equals summary.json main_case (1e-9)",
+     "pass": true,
+     "detail": "371.4146 / 434.8410, ends [[48,11],[48,11]]"
+    },
+    {
+     "check": "the band equals main_case_bands.csv's adopted row (1e-4)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "the capital return equals capital_at_end_specifications, in total and by level (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "rental assistance equals lines_at_end_specifications.housing_subsidies.added_bn (1e-9)",
+     "pass": true,
+     "detail": "4.1366 / 4.1366"
+    },
+    {
+     "check": "both capped lines respond at 1 at every end specification",
+     "pass": true,
+     "detail": "8 rows"
+    },
+    {
+     "check": "low end: one production cell; P and F are the payload grid's there (exact); cost = -(P + F) - A (1e-9)",
+     "pass": true,
+     "detail": "cell 1716, normalization gdp: P -0.6951 (model.json -0.2359), F 12.3750"
+    },
+    {
+     "check": "high end: one production cell; P and F are the payload grid's there (exact); cost = -(P + F) - A (1e-9)",
+     "pass": true,
+     "detail": "cell 1230, normalization cash: P -0.4572 (model.json -0.1557), F 8.1405"
+    }
+   ]
+  },
+  {
+   "consumer": "uncertainty_propagation_2026_09_22/sept24_specs.cjs",
+   "lines": "94-150, 205-209",
+   "calls": "its own models (MODEL; Engine.applyCorrections(MODEL, payload)), evaluateFull(m, spec, MAIN_PROFILE), componentsFor(null)",
+   "checks": [
+    {
+     "check": "payload responses equal summary.json responses (:207)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted responses replace the September 24 ones one for one; no specification field beyond EXTRA (:102-104)",
+     "pass": true,
+     "detail": "64 specifications"
+    },
+    {
+     "check": "componentsFor(null) is meta.capital_return.components (:107)",
+     "pass": true,
+     "detail": "24 components"
+    },
+    {
+     "check": "each line takes its specification's response (engine rows, :133-137)",
+     "pass": true,
+     "detail": "64 specifications, both models"
+    },
+    {
+     "check": "the benefit keys' transfer lines respond fully (:138)",
+     "pass": true,
+     "detail": "snap, other_state_welfare, family_and_general_assistance, unemployment"
+    },
+    {
+     "check": "derivatives with every key kind rebuild the capital return on both models (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 2.1e-14"
+    },
+    {
+     "check": "the uncorrected model spans the published band (uncorrected_at_adopted_responses, 1e-9)",
+     "pass": true,
+     "detail": "313.2581 / 378.9158"
+    },
+    {
+     "check": "the payload model spans the published band (main_case, 1e-9)",
+     "pass": true,
+     "detail": "371.4146 / 434.8410"
+    }
+   ]
+  },
+  {
+   "consumer": "world_ledger_2026_09_27/generation_lines.cjs",
+   "lines": "57-66, 109 (run_generations.cjs partsAt)",
+   "calls": "its own models: the generation lane's model_G*.json at 8654a0c; evaluateFull(m, spec, MAIN_PROFILE), stateFor(m, spec, MAIN_PROFILE).receipt_scenario",
+   "checks": [
+    {
+     "check": "the oracle holds under the September 27 package: the generations add to model.json at every specification (1e-9)",
+     "pass": true,
+     "detail": "cost 1.1e-13, capital 2.1e-14"
+    },
+    {
+     "check": "under this package the generations add to model.json at every specification (1e-9)",
+     "pass": true,
+     "detail": "cost 1.1e-13, capital 2.1e-14"
+    },
+    {
+     "check": "each capital component's stock x rate x key x response is its return (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "the payload's correction lines enter the generation models at zero (withSyntheticLines)",
+     "pass": true,
+     "detail": "8 lines"
+    },
+    {
+     "check": "stateFor(m, spec, MAIN_PROFILE).receipt_scenario is set",
+     "pass": true,
+     "detail": "cbo_collective"
+    },
+    {
+     "check": "forPayload(main_case_long_run_2026_09_27 corrections.json) on the corrected generation models at 8654a0c is the September 27 package (exact)",
+     "pass": true,
+     "detail": "main_case_long_run_2026_09_27/derived/corrections.json; max |diff| 0"
+    }
+   ]
+  },
+  {
+   "consumer": "winners_losers_2026_09_24/specs.cjs",
+   "lines": "100-108, 130-160",
+   "calls": "each case's payload applied by the consumer; pkg.RESPONSES; pkg.evaluateFull(m, spec) (no profile); the previous case through SEPT27",
+   "checks": [
+    {
+     "check": "adopted_2026_09_27: the package's responses are the payload's meta.responses (:142)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_09_27: every specification carries the payload's responses (:144-146)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_09_27: every line response, the rate and the enterprise option are the payload's meta (:149-152 without the count)",
+     "pass": true,
+     "detail": "4 line responses"
+    },
+    {
+     "check": "adopted_2026_09_27: band reproduces main_case_bands.csv (sept27_case, 1e-4)",
+     "pass": true,
+     "detail": "321.8194 / 387.3701"
+    },
+    {
+     "check": "adopted_2026_09_27: capitalColumns() finds every component's level and part (:112-120)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "adopted_2026_09_29: the package's responses are the payload's meta.responses (:142)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_09_29: every specification carries the payload's responses (:144-146)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_09_29: every line response, the rate and the enterprise option are the payload's meta (:149-152 without the count)",
+     "pass": true,
+     "detail": "13 line responses"
+    },
+    {
+     "check": "adopted_2026_09_29: band reproduces main_case_bands.csv (adopted, 1e-4)",
+     "pass": true,
+     "detail": "371.4146 / 434.8410"
+    },
+    {
+     "check": "adopted_2026_09_29: capitalColumns() finds every component's level and part (:112-120)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    }
+   ]
+  },
+  {
+   "consumer": "main_case_decomposition_2026_09_29/decompose.cjs",
+   "lines": "74-82, 177-178, 356-373",
+   "calls": "correctionsPayload(), evaluateFull(UNION, s) (no profile), componentsFor(spec.capital_variant), SYN, SYN_LINES, CONSTANTS, RESPONSES.row8_factor",
+   "checks": [
+    {
+     "check": "correctionsPayload() is derived/corrections.json (:77)",
+     "pass": true,
+     "detail": "8 lines, 2 receipt lines, 416 edits"
+    },
+    {
+     "check": "the union with no profile spans summary.json main_case (1e-9)",
+     "pass": true,
+     "detail": "371.4146 / 434.8410"
+    },
+    {
+     "check": "componentsFor(spec.capital_variant) names every component the evaluation returns (:372-373)",
+     "pass": true,
+     "detail": "24 components"
+    },
+    {
+     "check": "SYN, SYN_LINES, REKEY_LINE, ENTERPRISE_LINE, LR, LR_LINES and CONSTANTS.row8.c x RESPONSES.row8_factor are defined (:177-178, :227-228, :465-478)",
+     "pass": true,
+     "detail": "row 8 1.8983; SYN_LINES school_reprice, college_rekey, lane_constants"
+    }
+   ]
+  },
+  {
+   "consumer": "within_group_distribution_2026_09_29/export_lines.cjs",
+   "lines": "37-73",
+   "calls": "dump(): evaluateFull(m, spec), stateFor(withSyntheticLines(m), spec): fiscal_weight, receipt_scenario, production, count_production",
+   "checks": [
+    {
+     "check": "the corrected union reproduces the adopted case (:40-41, 1e-4 against the adopted row)",
+     "pass": true,
+     "detail": "371.4146 / 434.8410 at 48 / 11"
+    },
+    {
+     "check": "rows, capital and production sum to evaluateFull()'s cost, on the union and the generation models (:71, :80, :92; 1e-9)",
+     "pass": true,
+     "detail": "8 dumps, max |diff| 5.7e-14"
+    }
+   ]
+  },
+  {
+   "consumer": "sept24_propagation_2026_09_24/band_variants.cjs",
+   "lines": "96-212",
+   "calls": "specifications rebuilt from P24.MAIN_SPECS and meta.responses, P.specsFor({rates}), P.specsFor({enterprises: \"A\"}), Engine.applyCorrections(MODEL, payload)",
+   "checks": [
+    {
+     "check": "the payload's meta.responses equal the case's summary.json responses (:145)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "specifications rebuilt from every meta.responses entry (P.LINE_RESPONSES) at the reading equal MAIN_SPECS",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "the 0.07 specifications differ from the case's in the rate alone (:169-170)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "the payload model at capital_return_at_7pct's specifications gives main_case_bands.csv's capital_return_at_7pct row (1e-4)",
+     "pass": true,
+     "detail": "457.4713 / 511.0675"
+    },
+    {
+     "check": "the payload model at enterprises_out_option_a's specifications gives main_case_bands.csv's enterprises_out_option_a row (1e-4)",
+     "pass": true,
+     "detail": "355.8774 / 413.6679"
+    },
+    {
+     "check": "the payload model at the rebuilt specifications gives main_case_bands.csv's adopted row (1e-4)",
+     "pass": true,
+     "detail": "371.4146 / 434.8410"
+    },
+    {
+     "check": "on the September 27 payload the rebuild as written equals forPayload()'s MAIN_SPECS (:156)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "forPayload(September 27 payload): the variant runs on the uncorrected and the corrected model print as the published band_variants.csv rows (toPrecision(15))",
+     "pass": true,
+     "detail": "14 of 14 rows"
+    },
+    {
+     "check": "this case: the uncorrected run reproduces uncorrected_at_adopted_responses and the corrected run main_case (summary.json 1e-9, main_case_bands.csv 1e-4) (:192-199)",
+     "pass": true,
+     "detail": "313.2581 / 378.9158; 371.4146 / 434.8410"
+    },
+    {
+     "check": "this case: every variant moves every specification by the same amount on the uncorrected and the corrected model (:200-206, 1e-9)",
+     "pass": true,
+     "detail": "6 variants, max gap 1.1e-13"
+    }
+   ]
+  },
+  {
+   "consumer": "main_case_2026_09_29/package.cjs",
+   "lines": "225-245 (the guard)",
+   "calls": "an item variant through the package's API: withCentral(o), modelFor, specsFor(o), evaluateFull",
+   "checks": [
+    {
+     "check": "the roads item off ({\"roads\":\"resources\"}): evaluateFull on its model and specsFor(o)'s specifications is candidate v4's (exact)",
+     "pass": true,
+     "detail": "64 specifications; specification fields 12, as MAIN_SPECS' 12"
+    },
+    {
+     "check": "a copy of the variant's specification stops ([BLOCKED])",
+     "pass": true,
+     "detail": "[BLOCKED] a model built for other item options than the case's, with a specification specsFor() did not build for them"
+    },
+    {
+     "check": "the case's specification on the variant's model stops ([BLOCKED])",
+     "pass": true,
+     "detail": "[BLOCKED] a specification for {\"wc\":\"pooled_workers_compensation\",\"pension4\":\"payable_net\",\"state_price\":\"central\",\"roads\":\"miles\",\"licence_rule\":\"index_on_miles\",\"sales_rule\":\"multiplicative\",\"excise_rule\":\"gasoline_at_miles\",\"freight_key\":\"set\",\"benefit_tax_rule\":\"fixed\",\"accrual_receipts\":\"set\",\"part_a_rule\":\"fixed\"} on a model built for {\"wc\":\"pooled_workers_compensation\",\"pension4\":\"payable_net\",\"state_price\":\"central\",\"roads\":\"resources\",\"licence_rule\":\"index_on_miles\",\"sales_rule\":\"multiplicative\",\"excise_rule\":\"gasoline_at_miles\",\"freight_key\":\"set\",\"benefit_tax_rule\":\"fixed\",\"accrual_receipts\":\"set\",\"part_a_rule\":\"fixed\"}"
+    }
+   ]
+  }
+ ],
+ "consumer_code": [
+  {
+   "consumer": "uncertainty_propagation_2026_09_22/sept24_specs.cjs",
+   "line": ":86, :122, :125",
+   "today": "stops: [BLOCKED] capital key kind part_rekeyed has no derivative here",
+   "change": "a part_rekeyed branch (parent line over its national, correction line over part_national_bn) and housing_subsidies, roads_vmt_sl, roads_vmt_fed in KLINES"
+  },
+  {
+   "consumer": "uncertainty_propagation_2026_09_22/sept24_specs.cjs",
+   "line": ":144-146",
+   "today": "the model-independence gate (1e-12) fails: relative coefficient change between the models, housing_subsidies 8.73e-2; receipt:enterprise_surplus 8.49e-1",
+   "change": "the payload's national-scale edits move these keys' national totals (housing_subsidies 60.261 -> 55.003; receipt:enterprise_surplus -47.46 -> -7.162), so a coefficient per unit of amount differs between the uncorrected and the corrected model; compare the coefficients within a model, or per unit of national share"
+  },
+  {
+   "consumer": "winners_losers_2026_09_24/specs.cjs",
+   "line": ":151",
+   "today": "the gate requires exactly 4 line_responses; adopted_2026_09_29 has 13",
+   "change": "require one entry per meta.responses line or receipt override (P.LINE_RESPONSES); every receipt override has low = high, so :149's .low stays right"
+  },
+  {
+   "consumer": "main_case_decomposition_2026_09_29/decompose.cjs",
+   "line": ":177, :216-218",
+   "today": "SYN_LINES holds the September 24 package's three lines; the payload's five new lines (PAYLOAD_LINES) fall to the generic per-line treatment",
+   "change": "give roads_vmt_sl, roads_vmt_fed and the three state_price_* lines their age treatment (read P.PAYLOAD_LINES), and the receipt lines tenant_occupied_property and housing_enterprise_surplus theirs"
+  },
+  {
+   "consumer": "within_group_distribution_2026_09_29/export_lines.cjs",
+   "line": ":29-30",
+   "today": "capRule reads the capital lane's engine_components.json; its key rule differs from the case's for hwy_sl, hwy_fed, ent_housing_sl (silent: the rows carry the wrong rule text)",
+   "change": "read the rules from P.componentsFor(spec.capital_variant) (meta.capital_return.components)"
+  },
+  {
+   "consumer": "sept24_propagation_2026_09_24/band_variants.cjs",
+   "line": ":152-156",
+   "today": "the rebuild sets the long-run lines, rental assistance and the enterprise receipt only (4 of 13 line responses), so the MAIN_SPECS gate fails",
+   "change": "build line_responses from every meta.responses entry: a spending line under its id, a receipt override (receipt: true) under its override key, at the reading"
+  }
+ ]
+}
