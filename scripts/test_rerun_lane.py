@@ -63,6 +63,19 @@ def test_modified_tracked_script_is_flagged_and_can_be_allowed(tmp_path: Path) -
     assert rerun(repo, "--allow-unrun", "lane/fetch.py").returncode == 0
 
 
+def test_scripts_a_wrapper_runs_are_covered(tmp_path: Path) -> None:
+    # 2026-09-29: `sh {lane}/run_all.sh` ran every world ledger script, and eight showed as NOT RUN.
+    repo = lane_repo(tmp_path)
+    (repo / "lane" / "run_all.sh").write_text(f"{sys.executable} lane/build.py\n{sys.executable} lane/step.py\n")
+    (repo / "lane" / "step.py").write_text("x = 1\n")
+    (repo / "lane" / "orphan.py").write_text("x = 1\n")
+    r = subprocess.run([sys.executable, "scripts/rerun_lane.py", "lane", "sh {lane}/run_all.sh"],
+                       cwd=repo, capture_output=True, text=True)
+    assert r.returncode == 3, r.stdout
+    assert "NOT RUN lane/orphan.py" in r.stdout
+    assert "NOT RUN lane/step.py" not in r.stdout and "NOT RUN lane/run_all.sh" not in r.stdout
+
+
 def test_cache_files_are_ignored(tmp_path: Path) -> None:
     repo = lane_repo(tmp_path)
     (repo / "lane" / "_cache").mkdir()

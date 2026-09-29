@@ -16,7 +16,7 @@ missing-pyreadr trap). After a clean run, the same set is compared with its copy
 changed files are listed. Exit 0 only when every command succeeded and every output is identical.
 
 New or modified scripts in the lane that no command names are listed as NOT RUN, and the exit code is
-3. Such a script is either still being written by a worker, or missing from the reproduce list; either
+3; a shell script a command runs (a run_all.sh) counts its text as named. Such a script is either still being written by a worker, or missing from the reproduce list; either
 way the rerun does not cover it (3589a4f took a half-written script from a running worker). Check
 `ListAgents` and the RESULT, then add a command or pass `--allow-unrun <path>` (repeatable).
 
@@ -40,10 +40,18 @@ ROOT = Path(__file__).resolve().parent.parent
 SCRIPT_SUFFIXES = {".py", ".cjs", ".mjs", ".js", ".R", ".sh"}
 
 
+def wrapper_texts(cmds: list[str]) -> list[str]:
+    """The text of each shell script a command runs. A wrapper such as run_all.sh names the lane's scripts itself:
+    on 2026-09-29 `sh {lane}/run_all.sh` ran all of the world ledger's scripts and eight of them showed as NOT RUN."""
+    return [(ROOT / tok).read_text() for c in cmds for tok in c.split()
+            if tok.endswith(".sh") and (ROOT / tok).is_file()]
+
+
 def unrun_scripts(lane: Path, cmds: list[str], allowed: set[str]) -> list[str]:
-    """New or modified scripts under the lane that no command names."""
+    """New or modified scripts under the lane that no command, or shell script a command runs, names."""
     r = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all", "--", str(lane)],
                        cwd=ROOT, capture_output=True, text=True, check=True)
+    cmds = cmds + wrapper_texts(cmds)
     out = []
     for line in r.stdout.splitlines():
         path = line[3:].split(" -> ")[-1].strip().strip('"')
