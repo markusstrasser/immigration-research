@@ -32,7 +32,7 @@ trade). Rules per item (DEGRADED where the Indian-specific input does not exist)
   volunteering                    persons 16+ per member x the formal volunteering rate over the Hispanic 16.9%: no
                                   Asian rate was found, so the all-resident 28.3% (CEV 2023) is the central for Indians
                                   and whites, the Hispanic rate the low [UNVERIFIED]
-  trade, visits, FDI              trade: the union's central x US-India over US-Mexico non-travel trade (Census c5330 goods
+  trade, visits, FDI              (a subgroup takes its share of the India-born) trade: the union's central x US-India over US-Mexico non-travel trade (Census c5330 goods
                                   2024: $41.58bn exports, $87.28bn imports; USTR services 2024: $41.8bn exports, $43.1bn
                                   imports, of which 75% non-travel central, 50-100%) [ASSUMPTION on travel];
                                   visits: x India-born / Mexico-born persons; FDI: x the BEA USDIA position in India
@@ -84,7 +84,10 @@ ITEMS = ["victims", "property_crime", "unreimbursed_care", "congestion", "housin
          "restaurant_variety_market_size", "formal_volunteering_outside_group", "total_consumer_scale",
          "total_trade_travel_fdi"]
 GROUPS = ["mexican_origin_rough", "mexican_origin_rough_white_ages", "indian_origin", "indian_origin_white_ages",
-          "india_born", "india_born_white_ages", "A1_third_plus_nh_white"]
+          "india_born", "india_born_white_ages", "A1_third_plus_nh_white",
+          "indian_origin_g2_pooled", "indian_origin_g2_pooled_white_ages", "india_born_self_employed_adults",
+          "india_born_wage_salary_adults", "india_born_other", "indian_origin_self_employed_households",
+          "indian_origin_wage_salary_households"]
 LABEL = {"mexican_origin_rough": "mexican_origin", "mexican_origin_rough_white_ages": "mexican_origin_white_ages"}
 
 S_SECURITY = 74.438                        # social_costs_unpriced components.csv security_crime_driven_bn_central
@@ -232,6 +235,7 @@ def main():
             g1 = float(DRV.loc["india_born", "population"])
             t = {k: TRADE_U["trade"] * x / MX_NONTRAVEL for k, x in in_nt.items()}
             v = t["central"] + TRADE_U["vfr"] * g1 / MEXBORN + TRADE_U["fdi"] * USDIA["india"] / USDIA["mexico_net"]
+            v *= float(dg.india_born_persons) / g1      # a subgroup carries its India-born members' part
             note["total_trade_travel_fdi"] = (f"trade {t['central']:.3f} ({t['high']:.3f} to {t['low']:.3f} over the travel "
                                               f"share); visits {TRADE_U['vfr'] * g1 / MEXBORN:.3f}; FDI "
                                               f"{TRADE_U['fdi'] * USDIA['india'] / USDIA['mexico_net']:.3f}")

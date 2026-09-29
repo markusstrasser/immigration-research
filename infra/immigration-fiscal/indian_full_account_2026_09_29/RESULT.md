@@ -1,6 +1,6 @@
 claude-opus-5-5
 
-**Verdict:** On the adopted v4 account plus the social rows the Mexican-origin union carries, Indian-origin residents (the India-born and the US-born children of an India-born parent, 6.08M in CPS ASEC 2025) benefit other residents by about **$9,300–10,800 per member a year, $57–65bn in all**. The fiscal part is a benefit of $10,600–12,000 (SE about $1,150), and the social rows are a cost of $1,250–1,350. At the age structure of third-plus non-Hispanic whites, the aged group still benefits others by **$7,100–8,400 per member**: a fiscal benefit of $8,600–9,900 against social rows of $1,470–1,530. On the same footing, the Mexican-origin union costs others **$11,800–13,500 per member** ($12,200–13,900 at white ages), and third-plus whites cost **$2,900–4,200**. Per member, the Indian-origin group is therefore about **$13,500 better than whites** and **$22,500–22,800 better than the union**. Ageing to white ages removes about a sixth of its lead over whites. This is a rough re-key through the key library the Black and white comparators use, not an engine run. Its offending, long-term-care and driving inputs are proxies [DEGRADED]. On the union, the rough method comes out 2.4% below the engine at the high end and 1.1% above it at the low end. [CALCULATION: `rekey_indian.py`, `social_rows.py` → `derived/combined.csv`]
+**Verdict:** On the adopted v4 account plus the social rows the Mexican-origin union carries, Indian-origin residents (the India-born and the US-born children of an India-born parent, 6.08M in CPS ASEC 2025) benefit other residents by about **$9,300–10,800 per member a year, $57–65bn in all**. The fiscal part is a benefit of $10,600–12,000 (SE about $1,150), and the social rows are a cost of $1,250–1,350. At the age structure of third-plus non-Hispanic whites, the aged group still benefits others by **$7,100–8,400 per member**: a fiscal benefit of $8,600–9,900 against social rows of $1,470–1,530. On the same footing, the Mexican-origin union costs others **$11,800–13,500 per member** ($12,200–13,900 at white ages), and third-plus whites cost **$2,900–4,200**. Per member, the Indian-origin group is therefore about **$13,500 better than whites** and **$22,500–22,800 better than the union**. Ageing to white ages removes about a sixth of its lead over whites. This is a rough re-key through the key library the Black and white comparators use, not an engine run. Its offending, long-term-care and driving inputs are proxies [DEGRADED]. On the union, the rough method comes out 2.4% below the engine at the high end and 1.1% above it at the low end. Two robustness checks leave the result standing. Pooling the thin second-generation cell over five ASEC files (941 adults instead of 209) moves the total by only $136 per member. Self-employed and wage-earning India-born adults both benefit others by about $17,000–20,000 per person, and the two are not distinguishable at n = 68. [CALCULATION: `rekey_indian.py`, `social_rows.py` → `derived/combined.csv`]
 
 Lane `infra/immigration-fiscal/indian_full_account_2026_09_29/`, written 2026-09-29 by a teammate for the team lead. Nothing here is committed or adopted. Figures are 2024 dollars a year. A positive figure means the group's presence costs other residents; a negative figure means it benefits them. Each pair is the case's low / high end (specs 48 / 11).
 
@@ -33,6 +33,38 @@ Lane `infra/immigration-fiscal/indian_full_account_2026_09_29/`, written 2026-09
 
 - **Cash against accrual.** On the cash set the young Indian group looks about $5,000 better than on accrual, because accrual books the pension promises its payroll taxes buy. At white ages the two bases differ by about $1,600.
 - **The top tail.** The central charges each group only the income tax the CPS records. The CPS misses the top tail, and this group's income is concentrated there. Spreading the missing tail in proportion to CPS income-tax dollars improves the Indian figures by about $2,600 per member, so the central is conservative for this group. [DATA: `derived/rekey_summary.csv`, columns `cost_top_tail_proportional_*`]
+
+## Robustness: the second generation pooled over five ASEC files
+
+The 2025 file has only 209 second-generation adults aged 25–64. `pooled_asec.py` stacks ASEC 2022–2026 (income years 2021–2025, n = 941, CPI-U to 2024 dollars) on the re-key's own tax and earnings keys. [CALCULATION: `derived/g2_pooled.csv`]
+
+| G2 adults 25–64, per person, 2024 $ | ASEC 2025 (SE, 160 replicates) | Pooled 2022–26 (SE across years) | Pooled / 2025 |
+|---|---:|---:|---:|
+| Federal income tax (tax-unit share) | 18,296 (2,601) | 16,887 (785) | 0.923 |
+| State income tax | 5,069 (651) | 4,759 (242) | 0.939 |
+| Earnings | 115,293 (12,321) | 117,604 (2,979) | 1.020 |
+| OASDI earnings | 85,193 (4,143) | 86,612 (2,688) | 1.017 |
+
+Scaling the 2025 G2 adults' keys to the pooled means (`indian_origin_g2_pooled`) moves the full account by only $136 per member. The whole Indian-origin group comes to −$11,870 / −10,498 fiscal and −$10,627 / −9,169 in total, against −$10,763 / −9,305 centrally. At white ages the total is −$8,326 / −6,976. The CPS replicate SE is $1,148 / 1,137, and the pooled means' own SE adds ±$90 per member. The 2025 G2 cell pays slightly more income tax than the five-year pool and earns about the same, so the thin cell does not drive the result. [CALCULATION: `derived/rekey_summary.csv`, `cost_per_member_se_pooled_mean`; `derived/combined.csv`]
+
+## The India-born by class of worker
+
+This split uses the class of each person's longest job last year (LJCW): self-employed (incorporated or not), wage and salary, and everyone else (children and adults who did not work). The three person-level parts add to the India-born total to within $0.01bn; the small gap comes from the state-price rule. The household rows put each Indian-origin person, children included, in the class of their household's highest-earning India-born worker. They are the fairer comparison, because a worker's children otherwise land in "other". Per member, accrual basis, low / high. [CALCULATION: `derived/combined.csv`, `derived/rekey_summary.csv`]
+
+| India-born, 2025 | Sampled | Persons | Earnings per adult worker | of which self-employment income | Fiscal (SE) | Social | **Total** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Self-employed adults | 68 | 0.17M | $150,840 | $37,284 | −19,044 / −17,373 (4,918) | +654 / +702 | **−18,390 / −16,672** |
+| Wage and salary adults | 1,028 | 2.68M | $127,039 | $232 | −20,078 / −18,447 (1,213) | +278 / +394 | **−19,800 / −18,052** |
+| Everyone else (children, non-workers) | 511 | 1.44M | | | +3,352 / +4,372 (1,400) | +2,090 / +2,173 | **+5,442 / +6,545** |
+| Households led by a self-employed India-born worker | 136 | 0.36M | $125,341 | $26,851 | −18,817 / −17,453 (11,866) | +1,411 / +1,446 | **−17,405 / −16,008** |
+| Households led by a wage-earning India-born worker | 1,810 | 4.72M | $124,325 | $344 | −12,582 / −11,198 (1,025) | +1,159 / +1,246 | **−11,423 / −9,952** |
+
+- **Self-employed and wage workers are the same within sampling error.** Person by person the two are about $1,000 apart, with an SE of $4,900 on 68 self-employed persons. By household, the self-employed look $6,000 better, but that SE is $11,900: one or two very high-income households in 136 sampled persons drive it.
+- **Motels and convenience stores are rare in the CPS.** Pooled over 2022–2026, only 27 of 350 sampled self-employed India-born adults work in traveler accommodation, grocery or convenience stores, or gasoline stations; 2025 has two. More India-born adults in those industries are wage workers (108 pooled). A full-account row for motel and convenience-store owners cannot be estimated from these files. [DATA: `derived/g1_class_pooled.csv`; the industry codes are Census 2017 codes, INFERENCE]
+- **Self-employment income is under-reported, and this bias is not measured here.** Survey respondents and tax filers both understate self-employment income; income without third-party reporting has the largest misreporting rates in the IRS tax-gap studies [TRAINING-DATA]. Two things follow:
+  - The CPS keys use reported income and the CPS tax model's tax on it, so the self-employed rows could be wrong in either direction. True income is higher than reported, while taxes actually paid may be lower than the model's.
+  - Incorporated owners (LJCW 5) pay themselves partly in wages, so self-employment income ($37,284 of $150,840) is a lower bound on business income.
+- **Proxies shared with the whole group.** MEPS cannot split by class of worker, so all India-born subgroups share the India-born medical shares. They also share the institutionalization proxy [DEGRADED].
 
 ## Where the fiscal gap comes from (accrual, low end, per member)
 
@@ -123,14 +155,15 @@ Lane `infra/immigration-fiscal/indian_full_account_2026_09_29/`, written 2026-09
 - `acs_custody.py` → `derived/acs_institutional.csv`, `acs_institutional_cells.csv`
 - `accrual_indian.py` → `derived/accrual_ratios.csv`, `benefit_tax_proxy.csv`. It imports the Black lane's `accrual_black.py` read-only.
 - `nhts_asian.py` → `derived/nhts_vmt_asian.csv`
+- `pooled_asec.py` → `derived/g2_pooled.csv`, `g1_class_pooled.csv`. It reads the ASEC 2022–2024 and 2026 zips from other lanes' caches.
 - `rekey_indian.py` → `derived/rekey_summary.csv`, `rekey_buckets.csv`, `rekey_replicates.csv`, `keys.csv`, `age_structures.csv`, `drivers.csv`. It imports the white lane's `rekey_sept29.py` read-only; that file is uncommitted peer work in this checkout, so it must be committed before this lane is.
 - `social_rows.py` → `derived/social_rows.csv`, `combined.csv`. It imports `air_pollution_2026_09_28/air_items.py` read-only.
 
-Reproduce from the repository root, in order (about 4 minutes):
+Reproduce from the repository root, in order (4–20 minutes, depending on machine load):
 
 ```sh
 L=infra/immigration-fiscal/indian_full_account_2026_09_29
-for s in acs_custody accrual_indian nhts_asian rekey_indian social_rows; do
+for s in acs_custody accrual_indian nhts_asian pooled_asec rekey_indian social_rows; do
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/$s.py; done
 ```
 
@@ -142,3 +175,5 @@ Times come from `date`.
 - 2026-09-29 22:25 JST: `rekey_indian.py` exits 0 with all gates passing; `social_rows.py` exits 0 with all 23 gates passing.
 - 2026-09-29 22:33 JST: began a from-scratch rerun of all five scripts to byte-compare `derived/`.
 - 2026-09-29 22:36 JST: the rerun ended. All five scripts exit 0, and all 13 files in `derived/` are byte-identical to the first run (`cmp`).
+- 2026-09-29 22:50 JST: the operator's two additions were run: the G2 cell pooled over ASEC 2022–2026 (`pooled_asec.py`) and the India-born split by class of worker; all gates pass.
+- 2026-09-29 23:18 JST: a second from-scratch rerun of all six scripts ended (started 22:58). All exit 0, and all 15 files in `derived/` are byte-identical (`cmp`).

@@ -58,7 +58,7 @@ indian_origin_white_ages,scale_net_earnings,6079644,-10.0468,-10.0468,-1653,-165
 indian_origin_white_ages,restaurant_variety_market_size,6079644,-1.9917,-1.9917,-328,-328,x1.9152 per member
 indian_origin_white_ages,formal_volunteering_outside_group,6079644,-1.7579,-1.7579,-289,-289,x1.9199 per member
 indian_origin_white_ages,total_consumer_scale,6079644,-0.6244,-0.6244,-103,-103,x1.9152 per member
-indian_origin_white_ages,total_trade_travel_fdi,6079644,-1.5603,-1.5603,-257,-257,trade -1.348 (-1.497 to -1.200 over the travel share); visits -0.164; FDI -0.048
+indian_origin_white_ages,total_trade_travel_fdi,6079644,-1.6460,-1.6460,-271,-271,trade -1.348 (-1.497 to -1.200 over the travel share); visits -0.164; FDI -0.048
 india_born,victims,4281770,0.3247,0.3395,76,79,x0.0988 per member
 india_born,property_crime,4281770,0.0134,0.0144,3,3,x0.0988 per member
 india_born,unreimbursed_care,4281770,0.1617,0.2771,38,65,x0.4855 per member
@@ -104,3 +104,108 @@ A1_third_plus_nh_white,restaurant_variety_market_size,39712493,-11.0831,-11.0831
 A1_third_plus_nh_white,formal_volunteering_outside_group,39712493,-11.4711,-11.4711,-289,-289,x1.9180 per member
 A1_third_plus_nh_white,total_consumer_scale,39712493,-3.4747,-3.4747,-87,-87,x1.6315 per member
 A1_third_plus_nh_white,total_trade_travel_fdi,39712493,0.0000,0.0000,0,0,no origin-country ties
+indian_origin_g2_pooled,victims,6079644,0.3485,0.3644,57,60,x0.0747 per member
+indian_origin_g2_pooled,property_crime,6079644,0.0143,0.0155,2,3,x0.0747 per member
+indian_origin_g2_pooled,unreimbursed_care,6079644,0.2013,0.3449,33,57,x0.4256 per member
+indian_origin_g2_pooled,congestion,6079644,2.0864,1.7819,343,293,per member as the union; by driver miles 1.827 at the low end
+indian_origin_g2_pooled,housing_gain,6079644,-0.8433,-0.1709,-139,-28,x1.6238 per member
+indian_origin_g2_pooled,fear_avoidance,6079644,0.1182,0.1182,19,19,x0.0747 per member
+indian_origin_g2_pooled,private_security,6079644,-1.2519,-1.2519,-206,-206,74.438 x 0.01812 x (0.0718 - 1)
+indian_origin_g2_pooled,school_disruption,6079644,-0.7849,-0.7849,-129,-129,gap -0.0443 vs Hispanic -0.0121; x2.6447 per member
+indian_origin_g2_pooled,pm25_consumption,6079644,23.6398,23.6398,3888,3888,grid 10.807-40.952; r x1.9271
+indian_origin_g2_pooled,road_crash_externality,6079644,1.4161,1.4161,233,233,x0.8757 per member
+indian_origin_g2_pooled,scale_net_earnings,6079644,-11.5189,-11.5189,-1895,-1895,"scale -6.625, composition -4.894"
+indian_origin_g2_pooled,restaurant_variety_market_size,6079644,-2.0041,-2.0041,-330,-330,x1.9271 per member
+indian_origin_g2_pooled,formal_volunteering_outside_group,6079644,-1.6787,-1.6787,-276,-276,x1.8334 per member
+indian_origin_g2_pooled,total_consumer_scale,6079644,-0.6283,-0.6283,-103,-103,x1.9271 per member
+indian_origin_g2_pooled,total_trade_travel_fdi,6079644,-1.5603,-1.5603,-257,-257,trade -1.348 (-1.497 to -1.200 over the travel share); visits -0.164; FDI -0.048
+indian_origin_g2_pooled_white_ages,victims,6079644,0.3004,0.3141,49,52,x0.0644 per member
+indian_origin_g2_pooled_white_ages,property_crime,6079644,0.0124,0.0134,2,2,x0.0644 per member
+indian_origin_g2_pooled_white_ages,unreimbursed_care,6079644,0.1812,0.3106,30,51,x0.3833 per member
+indian_origin_g2_pooled_white_ages,congestion,6079644,2.0864,1.7819,343,293,per member as the union; by driver miles 1.657 at the low end
+indian_origin_g2_pooled_white_ages,housing_gain,6079644,-0.6450,-0.1308,-106,-22,x1.2420 per member
+indian_origin_g2_pooled_white_ages,fear_avoidance,6079644,0.1019,0.1019,17,17,x0.0644 per member
+indian_origin_g2_pooled_white_ages,private_security,6079644,-1.2652,-1.2652,-208,-208,74.438 x 0.01812 x (0.0619 - 1)
+indian_origin_g2_pooled_white_ages,school_disruption,6079644,-0.6523,-0.6523,-107,-107,gap -0.0443 vs Hispanic -0.0121; x2.1978 per member
+indian_origin_g2_pooled_white_ages,pm25_consumption,6079644,23.4937,23.4937,3864,3864,grid 10.740-40.699; r x1.9152
+indian_origin_g2_pooled_white_ages,road_crash_externality,6079644,1.2842,1.2842,211,211,x0.7941 per member
+indian_origin_g2_pooled_white_ages,scale_net_earnings,6079644,-10.0517,-10.0517,-1653,-1653,"scale -6.054, composition -3.998"
+indian_origin_g2_pooled_white_ages,restaurant_variety_market_size,6079644,-1.9917,-1.9917,-328,-328,x1.9152 per member
+indian_origin_g2_pooled_white_ages,formal_volunteering_outside_group,6079644,-1.7579,-1.7579,-289,-289,x1.9199 per member
+indian_origin_g2_pooled_white_ages,total_consumer_scale,6079644,-0.6244,-0.6244,-103,-103,x1.9152 per member
+indian_origin_g2_pooled_white_ages,total_trade_travel_fdi,6079644,-1.6460,-1.6460,-271,-271,trade -1.348 (-1.497 to -1.200 over the travel share); visits -0.164; FDI -0.048
+india_born_self_employed_adults,victims,165419,0.0125,0.0131,76,79,x0.0988 per member
+india_born_self_employed_adults,property_crime,165419,0.0005,0.0006,3,3,x0.0988 per member
+india_born_self_employed_adults,unreimbursed_care,165419,0.0070,0.0121,43,73,x0.5471 per member
+india_born_self_employed_adults,congestion,165419,0.0568,0.0485,343,293,per member as the union; by driver miles 0.068 at the low end
+india_born_self_employed_adults,housing_gain,165419,-0.0131,-0.0027,-79,-16,x0.9272 per member
+india_born_self_employed_adults,fear_avoidance,165419,0.0043,0.0043,26,26,x0.0988 per member
+india_born_self_employed_adults,private_security,165419,-0.0332,-0.0332,-201,-201,74.438 x 0.00049 x (0.0950 - 1)
+india_born_self_employed_adults,school_disruption,165419,-0.0000,-0.0000,-0,-0,gap -0.0443 vs Hispanic -0.0121; x0.0000 per member
+india_born_self_employed_adults,pm25_consumption,165419,0.6578,0.6578,3977,3977,grid 0.300-1.140; r x1.9447
+india_born_self_employed_adults,road_crash_externality,165419,0.0525,0.0525,317,317,x1.1925 per member
+india_born_self_employed_adults,scale_net_earnings,165419,-0.4477,-0.4477,-2706,-2706,"scale -0.321, composition -0.127"
+india_born_self_employed_adults,restaurant_variety_market_size,165419,-0.0550,-0.0550,-333,-333,x1.9447 per member
+india_born_self_employed_adults,formal_volunteering_outside_group,165419,-0.0566,-0.0566,-342,-342,x2.2735 per member
+india_born_self_employed_adults,total_consumer_scale,165419,-0.0173,-0.0173,-104,-104,x1.9447 per member
+india_born_self_employed_adults,total_trade_travel_fdi,165419,-0.0603,-0.0603,-364,-364,trade -1.348 (-1.497 to -1.200 over the travel share); visits -0.164; FDI -0.048
+india_born_wage_salary_adults,victims,2680496,0.2033,0.2125,76,79,x0.0988 per member
+india_born_wage_salary_adults,property_crime,2680496,0.0084,0.0090,3,3,x0.0988 per member
+india_born_wage_salary_adults,unreimbursed_care,2680496,0.0679,0.1164,25,43,x0.3259 per member
+india_born_wage_salary_adults,congestion,2680496,0.9199,0.7856,343,293,per member as the union; by driver miles 1.122 at the low end
+india_born_wage_salary_adults,housing_gain,2680496,-0.4859,-0.0985,-181,-37,x2.1221 per member
+india_born_wage_salary_adults,fear_avoidance,2680496,0.0689,0.0689,26,26,x0.0988 per member
+india_born_wage_salary_adults,private_security,2680496,-0.5381,-0.5381,-201,-201,74.438 x 0.00799 x (0.0950 - 1)
+india_born_wage_salary_adults,school_disruption,2680496,-0.0000,-0.0000,-0,-0,gap -0.0443 vs Hispanic -0.0121; x0.0000 per member
+india_born_wage_salary_adults,pm25_consumption,2680496,12.0267,12.0267,4487,4487,grid 5.495-20.843; r x2.2066
+india_born_wage_salary_adults,road_crash_externality,2680496,0.8694,0.8694,324,324,x1.2194 per member
+india_born_wage_salary_adults,scale_net_earnings,2680496,-9.1716,-9.1716,-3422,-3422,"scale -5.187, composition -3.984"
+india_born_wage_salary_adults,restaurant_variety_market_size,2680496,-1.0117,-1.0117,-377,-377,x2.2066 per member
+india_born_wage_salary_adults,formal_volunteering_outside_group,2680496,-0.9178,-0.9178,-342,-342,x2.2735 per member
+india_born_wage_salary_adults,total_consumer_scale,2680496,-0.3172,-0.3172,-118,-118,x2.2066 per member
+india_born_wage_salary_adults,total_trade_travel_fdi,2680496,-0.9768,-0.9768,-364,-364,trade -1.348 (-1.497 to -1.200 over the travel share); visits -0.164; FDI -0.048
+india_born_other,victims,1435855,0.1089,0.1139,76,79,x0.0988 per member
+india_born_other,property_crime,1435855,0.0045,0.0048,3,3,x0.0988 per member
+india_born_other,unreimbursed_care,1435855,0.0867,0.1486,60,103,x0.7764 per member
+india_born_other,congestion,1435855,0.4927,0.4208,343,293,per member as the union; by driver miles 0.350 at the low end
+india_born_other,housing_gain,1435855,-0.1551,-0.0314,-108,-22,x1.2644 per member
+india_born_other,fear_avoidance,1435855,0.0369,0.0369,26,26,x0.0988 per member
+india_born_other,private_security,1435855,-0.2883,-0.2883,-201,-201,74.438 x 0.00428 x (0.0950 - 1)
+india_born_other,school_disruption,1435855,-0.2315,-0.2315,-161,-161,gap -0.0443 vs Hispanic -0.0121; x3.3026 per member
+india_born_other,pm25_consumption,1435855,4.0602,4.0602,2828,2828,grid 1.855-7.038; r x1.3868
+india_born_other,road_crash_externality,1435855,0.2715,0.2715,189,189,x0.7108 per member
+india_born_other,scale_net_earnings,1435855,-0.0120,-0.0120,-8,-8,"scale -0.012, composition 0.000"
+india_born_other,restaurant_variety_market_size,1435855,-0.3406,-0.3406,-237,-237,x1.3868 per member
+india_born_other,formal_volunteering_outside_group,1435855,-0.4033,-0.4033,-281,-281,x1.8652 per member
+india_born_other,total_consumer_scale,1435855,-0.1068,-0.1068,-74,-74,x1.3868 per member
+india_born_other,total_trade_travel_fdi,1435855,-0.5232,-0.5232,-364,-364,trade -1.348 (-1.497 to -1.200 over the travel share); visits -0.164; FDI -0.048
+indian_origin_self_employed_households,victims,362547,0.0208,0.0217,57,60,x0.0747 per member
+indian_origin_self_employed_households,property_crime,362547,0.0009,0.0009,2,3,x0.0747 per member
+indian_origin_self_employed_households,unreimbursed_care,362547,0.0111,0.0190,31,52,x0.3925 per member
+indian_origin_self_employed_households,congestion,362547,0.1244,0.1063,343,293,per member as the union; by driver miles 0.106 at the low end
+indian_origin_self_employed_households,housing_gain,362547,-0.0273,-0.0055,-75,-15,x0.8800 per member
+indian_origin_self_employed_households,fear_avoidance,362547,0.0070,0.0070,19,19,x0.0747 per member
+indian_origin_self_employed_households,private_security,362547,-0.0747,-0.0747,-206,-206,74.438 x 0.00108 x (0.0718 - 1)
+indian_origin_self_employed_households,school_disruption,362547,-0.0500,-0.0500,-138,-138,gap -0.0443 vs Hispanic -0.0121; x2.8263 per member
+indian_origin_self_employed_households,pm25_consumption,362547,1.3627,1.3627,3759,3759,grid 0.622-2.362; r x1.8389
+indian_origin_self_employed_households,road_crash_externality,362547,0.0821,0.0821,226,226,x0.8515 per member
+indian_origin_self_employed_households,scale_net_earnings,362547,-0.6108,-0.6108,-1685,-1685,"scale -0.433, composition -0.178"
+indian_origin_self_employed_households,restaurant_variety_market_size,362547,-0.1140,-0.1140,-315,-315,x1.8389 per member
+indian_origin_self_employed_households,formal_volunteering_outside_group,362547,-0.0942,-0.0942,-260,-260,x1.7260 per member
+indian_origin_self_employed_households,total_consumer_scale,362547,-0.0358,-0.0358,-99,-99,x1.8389 per member
+indian_origin_self_employed_households,total_trade_travel_fdi,362547,-0.0906,-0.0906,-250,-250,trade -1.348 (-1.497 to -1.200 over the travel share); visits -0.164; FDI -0.048
+indian_origin_wage_salary_households,victims,4723102,0.2707,0.2831,57,60,x0.0747 per member
+indian_origin_wage_salary_households,property_crime,4723102,0.0111,0.0120,2,3,x0.0747 per member
+indian_origin_wage_salary_households,unreimbursed_care,4723102,0.1303,0.2234,28,47,x0.3548 per member
+indian_origin_wage_salary_households,congestion,4723102,1.6208,1.3843,343,293,per member as the union; by driver miles 1.429 at the low end
+indian_origin_wage_salary_households,housing_gain,4723102,-0.6774,-0.1373,-143,-29,x1.6791 per member
+indian_origin_wage_salary_households,fear_avoidance,4723102,0.0918,0.0918,19,19,x0.0747 per member
+indian_origin_wage_salary_households,private_security,4723102,-0.9725,-0.9725,-206,-206,74.438 x 0.01408 x (0.0718 - 1)
+indian_origin_wage_salary_households,school_disruption,4723102,-0.6669,-0.6669,-141,-141,gap -0.0443 vs Hispanic -0.0121; x2.8924 per member
+indian_origin_wage_salary_households,pm25_consumption,4723102,18.8027,18.8027,3981,3981,grid 8.594-32.578; r x1.9670
+indian_origin_wage_salary_households,road_crash_externality,4723102,1.1073,1.1073,234,234,x0.8814 per member
+indian_origin_wage_salary_households,scale_net_earnings,4723102,-9.5571,-9.5571,-2023,-2023,"scale -5.443, composition -4.114"
+indian_origin_wage_salary_households,restaurant_variety_market_size,4723102,-1.5891,-1.5891,-336,-336,x1.9670 per member
+indian_origin_wage_salary_households,formal_volunteering_outside_group,4723102,-1.2743,-1.2743,-270,-270,x1.7915 per member
+indian_origin_wage_salary_households,total_consumer_scale,4723102,-0.4982,-0.4982,-105,-105,x1.9670 per member
+indian_origin_wage_salary_households,total_trade_travel_fdi,4723102,-1.3255,-1.3255,-281,-281,trade -1.348 (-1.497 to -1.200 over the travel share); visits -0.164; FDI -0.048

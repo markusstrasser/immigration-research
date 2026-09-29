@@ -18,6 +18,12 @@ Groups (cost = what the group's presence costs other residents, $bn a year, 2024
   indian_origin                  India-born (PENATVTY 210, PRCITSHP 4-5) or native with an India-born parent, own ages
   indian_origin_white_ages       the same per-age rates at third-plus NH white ages, on its own count
   india_born, india_born_white_ages  the first generation alone
+  indian_origin_g2_pooled[_white_ages]  robustness: the 2025 G2 adults' (25-64) income-tax, OASDI and earnings keys
+                                 scaled to the ASEC 2022-2026 pooled means (pooled_asec.py; with_pooled_g2)
+  india_born_self_employed_adults / india_born_wage_salary_adults / india_born_other  the India-born split by the
+                                 longest job's class (LJCW 5-6 / 1-4 / the rest, children and non-workers included)
+  indian_origin_self_employed_households / _wage_salary_households  Indian-origin persons in households classed by
+                                 the highest-earning India-born adult worker's class
   A1_third_plus_nh_white         the white lane's A1 (third-plus NH white, own ages, scaled to the union's count)
   nh_black_rough                 the Black lane's group (a positive control only)
 External keys for the Indian-origin groups (the rough CPS keys are shared by every group):
@@ -77,6 +83,23 @@ G1 = (d.PRCITSHP.isin([4, 5]) & d.PENATVTY.eq(INDIA)).to_numpy()
 G2 = (native & (d.PEFNTVTY.eq(INDIA) | d.PEMNTVTY.eq(INDIA))).to_numpy()
 R.MASK["ind"] = G1 | G2
 R.MASK["ind1"] = G1
+# India-born adults by the class of their longest job (LJCW 5-6 self-employed, 1-4 wage and salary), and households
+# classed by their highest-earning India-born adult worker (members: the household's Indian-origin persons).
+with zipfile.ZipFile(R.ZIP) as _z:
+    _x = pd.read_csv(_z.open("pppub25.csv"), usecols=["LJCW", "SEMP_VAL", "INDUSTRY"])
+ADULT = d.A_AGE.ge(18).to_numpy()
+SEMP = _x.SEMP_VAL.to_numpy(float)
+SE = _x.LJCW.isin([5, 6]).to_numpy()
+WAGE = _x.LJCW.isin([1, 2, 3, 4]).to_numpy()
+R.MASK["ind1se"] = G1 & ADULT & SE
+R.MASK["ind1wage"] = G1 & ADULT & WAGE
+R.MASK["ind1oth"] = G1 & ~(ADULT & (SE | WAGE))
+_lead = pd.DataFrame({"hh": d.PH_SEQ, "earn": np.where(G1 & ADULT & (SE | WAGE), R.earn, -1.0),
+                      "se": SE}).sort_values(["hh", "earn"], ascending=[True, False]).drop_duplicates("hh")
+_lead = _lead[_lead.earn >= 0].set_index("hh").se
+_hh_se = d.PH_SEQ.map(_lead)
+R.MASK["hhse"] = (R.MASK["ind"] & _hh_se.eq(True)).to_numpy()
+R.MASK["hhwage"] = (R.MASK["ind"] & _hh_se.eq(False)).to_numpy()
 OLD65 = (d.A_AGE.to_numpy() >= 65).astype(float)
 API = (d.PEHSPNON.eq(2) & d.PRDTRACE.isin([4, 5])).to_numpy()
 
@@ -90,21 +113,50 @@ MD2 = pd.DataFrame(_rows)
 _ind_m = (MD2.RACEV2X.eq(4) & MD2.HISPNCAT.eq(9)).to_numpy()
 R.MMASK["ind"] = _ind_m
 R.MMASK["ind1"] = _ind_m & MD2.BORNUSA.eq(2).to_numpy()
+for _g in ("ind1se", "ind1wage", "ind1oth"):
+    R.MMASK[_g] = R.MMASK["ind1"]          # MEPS cannot split by class of worker [DEGRADED]
+for _g in ("hhse", "hhwage"):
+    R.MMASK[_g] = R.MMASK["ind"]
 MEX_MEPS = MD2.HISPNCAT.eq(1).to_numpy()
 
 INST = pd.read_csv(DER / "acs_institutional.csv").set_index("group")
 REL_INST = {"ind": float(INST.loc["indian_origin", "per_member_over_all"]),
             "ind1": float(INST.loc["india_born", "per_member_over_all"])}
+for _g in ("ind1se", "ind1wage", "ind1oth"):
+    REL_INST[_g] = REL_INST["ind1"]
+for _g in ("hhse", "hhwage"):
+    REL_INST[_g] = REL_INST["ind"]
 _taf = pd.read_csv(R.TAF)
 _taf = _taf[(_taf.year == 2023) & (_taf.category == "LTSS") & (_taf.measure == "expenditures") & (_taf.state == "National")]
 API_LTSS = float(_taf.set_index("group").loc["api_nh", "value"] / _taf.total.iloc[0])
 NHTS = pd.read_csv(DER / "nhts_vmt_asian.csv", dtype={"band": str})
 W.VRATE["nh_asian"] = (NHTS[(NHTS.group == "nh_asian") & (NHTS.band != "all")].assign(band=lambda x: x.band.astype(int))
                        .set_index("band").vmt_per_person)
-for g in ("ind", "ind1"):
+for g in ("ind", "ind1", "ind1se", "ind1wage", "ind1oth", "hhse", "hhwage"):
     W.RACE_RATES[g] = "nh_asian"
-W.GROUP_OF.update({"ind": "indian_origin", "ind1": "india_born"})
-LABEL = {"ind": "indian_origin", "ind1": "india_born"}
+W.GROUP_OF.update({"ind": "indian_origin", "ind1": "india_born", "ind1se": "india_born", "ind1wage": "india_born",
+                   "ind1oth": "india_born", "hhse": "indian_origin", "hhwage": "indian_origin"})
+LABEL = {"ind": "indian_origin", "ind1": "india_born", "ind1se": "india_born_self_employed_adults",
+         "ind1wage": "india_born_wage_salary_adults", "ind1oth": "india_born_other",
+         "hhse": "indian_origin_self_employed_households", "hhwage": "indian_origin_wage_salary_households"}
+G2POOL = pd.read_csv(DER / "g2_pooled.csv")
+G2POOL = G2POOL[G2POOL.asec_year == "pooled_2022_2026"].set_index("key")
+G2ADULT = G2 & d.A_AGE.between(25, 64).to_numpy()
+POOL_KEY = {"fit": "fit", "sit": "sit", "oasdi": "oasdi", "hi": "earn"}
+
+
+def with_pooled_g2(sc, shift=0.0):
+    """The robustness row: the 2025 G2 adults' (25-64) tax and earnings keys scaled to the 2022-2026 pooled means
+    (pooled_asec.py), each ratio moved by `shift` of its across-year SE."""
+    sc = {**sc, "share": dict(sc["share"]), "cps_bn": dict(sc["cps_bn"])}
+    cw = sc["cps_w"]
+    for k, pk in POOL_KEY.items():
+        r = float(G2POOL.loc[pk, "ratio_pooled_over_2025"]) + shift * float(G2POOL.loc[pk, "ratio_se"])
+        delta = float((cw * R.K[k])[G2ADULT].sum()) * (r - 1)
+        sc["share"][k] += delta / R.KTOT[k]
+        if k in sc["cps_bn"]:
+            sc["cps_bn"][k] += delta / 1e9
+    return sc
 
 
 def mean_crime(cw):
@@ -208,6 +260,14 @@ def evaluate(sc, end, basis, top="cps"):
     return r, bk, terms
 
 
+def per_worker(sc, v):
+    """Mean of v over the scenario's adults with earnings ('' when it has none)."""
+    if sc is None:
+        return ""
+    wk = sc["cps_w"] * (R.earn > 0) * ADULT
+    return f"{float((wk * v).sum() / wk.sum()):.0f}" if wk.sum() > 0 else ""
+
+
 def replicate_weights():
     with zipfile.ZipFile(R.ZIP) as z:
         pos = pd.read_csv(z.open("pppub25.csv"), usecols=["PH_SEQ", "PPPOS"])
@@ -270,6 +330,7 @@ def drivers(scen, res):
                     "renter_consumption_pm": float((cw * R.K["rent"]).sum()) / n,
                     "uninsured_py_pm": float((cw * unins).sum()) / n,
                     "under5_share": float((cw * (age < 5)).sum()) / n,
+                    "india_born_persons": float((cw * G1).sum()),
                     "miles_share": terms["s_vmt"] if terms else np.nan, "miles_rho": terms["rho"] if terms else np.nan,
                     "miles_pm": (terms["s_vmt"] / n) if terms else np.nan,
                     "crime_age_mean_pm": mean_crime(cw), "old65_pm": float((cw * OLD65).sum()) / n,
@@ -293,6 +354,9 @@ def main():
             "mexican_origin_rough_white_ages": union_white_ages(),
             "indian_origin": ind_scenario("ind"), "indian_origin_white_ages": ind_scenario("ind", "w3"),
             "india_born": ind_scenario("ind1"), "india_born_white_ages": ind_scenario("ind1", "w3"),
+            "indian_origin_g2_pooled": with_pooled_g2(ind_scenario("ind")),
+            "indian_origin_g2_pooled_white_ages": with_pooled_g2(ind_scenario("ind", "w3")),
+            **{LABEL[g]: ind_scenario(g) for g in ("ind1se", "ind1wage", "ind1oth", "hhse", "hhwage")},
             "A1_third_plus_nh_white": R.scenario("w3"), "nh_black_rough": R.scenario("blk", scaled=False)}
     for lab, sc in scen.items():
         if lab.endswith("white_ages"):
@@ -316,6 +380,18 @@ def main():
                 got = res[(b, lab, end)][0]["cost"]
                 W.gate(f"{b} {end} {lab} reproduces its lane's rekey_summary_sept29.csv (5e-5)", abs(got - want) < 5e-5,
                        f"{got:.4f} vs {want:.4f}")
+    for b in BASES:
+        for end in ENDS:
+            parts = sum(res[(b, LABEL[g], end)][0]["cost"] for g in ("ind1se", "ind1wage", "ind1oth"))
+            # not exact: state-price indexes are per-group averages times the group's key share (rule 4)
+            W.gate(f"{b} {end}: the three India-born parts add to the India-born cost ($0.05bn)",
+                   abs(parts - res[(b, "india_born", end)][0]["cost"]) < 0.05, f"{parts:.4f}")
+    pooled_shift = {}
+    for b in BASES:
+        for end in ENDS:
+            up = evaluate(with_pooled_g2(scen["indian_origin"], 1.0), end, b)[0]["cost"]
+            dn = evaluate(with_pooled_g2(scen["indian_origin"], -1.0), end, b)[0]["cost"]
+            pooled_shift[(b, end)] = abs(up - dn) / 2 * 1e9 / scen["indian_origin"]["population"]
     W.stop_if_failed()
 
     print("[replicate weights: the Indian-origin groups]", flush=True)
@@ -324,11 +400,15 @@ def main():
            float(np.abs(rw[:, 0] - W.PUBLISHED_W).max()) < 0.0051)
     W.stop_if_failed()
     reps = []
-    for g in ("ind", "ind1"):
-        for ages in ("own", "w3"):
-            lab = LABEL[g] + ("" if ages == "own" else "_white_ages")
+    runs = [(g, a, False) for g in ("ind", "ind1") for a in ("own", "w3")]
+    runs += [("ind", a, True) for a in ("own", "w3")]
+    runs += [(g, "own", False) for g in ("ind1se", "ind1wage", "ind1oth", "hhse", "hhwage")]
+    for g, ages, pooled in runs:
+        if True:
+            lab = LABEL[g] + ("_g2_pooled" if pooled else "") + ("" if ages == "own" else "_white_ages")
             for i in range(N_REP + 1):
                 sc = ind_scenario(g, ages, rw[:, i])
+                sc = with_pooled_g2(sc) if pooled else sc
                 for b in BASES:
                     for end in ENDS:
                         r = evaluate(sc, end, b)[0]
@@ -344,11 +424,13 @@ def main():
             v = x[col].to_numpy()
             se[(lab, b, end, col)] = float(np.sqrt(4 / N_REP * ((v[1:] - v[0]) ** 2).sum()))
     samples = {"indian_origin": int((R.MASK["ind"] & R.civ).sum()), "india_born": int((G1 & R.civ).sum()),
-               "indian_origin_g2": int((G2 & R.civ).sum())}
+               "indian_origin_g2": int((G2 & R.civ).sum()), "indian_origin_g2_pooled": int((R.MASK["ind"] & R.civ).sum()),
+               **{LABEL[g]: int((R.MASK[g] & R.civ).sum()) for g in ("ind1se", "ind1wage", "ind1oth", "hhse", "hhwage")}}
     print(f"  CPS sample persons: {samples}; adults 25-64 India-born "
           f"{int((G1 & R.civ & d.A_AGE.between(25, 64).to_numpy()).sum())}, G2 "
           f"{int((G2 & R.civ & d.A_AGE.between(25, 64).to_numpy()).sum())}")
 
+    sc_of = {lab: sc for lab, sc in scen.items() if sc != "eng" and (lab.startswith("indian") or lab.startswith("india"))}
     summary, buckets = [], []
     for (b, lab, end), (r, bk, terms) in res.items():
         base = lab.replace("_white_ages", "")
@@ -358,6 +440,9 @@ def main():
                         "cost_bn": f"{r['cost']:.4f}", "cost_per_member": f"{r['cost'] * 1e9 / r['population']:.0f}",
                         "cost_per_member_se": f"{se[(lab, b, end, 'cost_per_member')]:.0f}" if (lab, b, end, "cost_per_member") in se else "",
                         "cost_bn_se": f"{se[(lab, b, end, 'cost_bn')]:.4f}" if (lab, b, end, "cost_bn") in se else "",
+                        "cost_per_member_se_pooled_mean": f"{pooled_shift[(b, end)]:.0f}" if lab == "indian_origin_g2_pooled" else "",
+                        "earnings_per_adult_worker": per_worker(sc_of.get(lab), R.earn),
+                        "semp_per_adult_worker": per_worker(sc_of.get(lab), SEMP),
                         "cost_top_tail_proportional_bn": f"{r['cost_top_tail_proportional']:.4f}",
                         "cost_top_tail_proportional_per_member": f"{r['cost_top_tail_proportional'] * 1e9 / r['population']:.0f}",
                         "taxes_lost_bn": f"{r['taxes_lost']:.4f}", "spending_saved_bn": f"{r['spending_saved']:.4f}",
