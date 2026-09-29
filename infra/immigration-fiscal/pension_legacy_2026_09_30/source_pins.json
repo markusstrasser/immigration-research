@@ -1,0 +1,38 @@
+{
+ "Section3All_xls.xlsx": {
+  "bytes": 2785842,
+  "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e"
+ },
+ "Section6All_xls.xlsx": {
+  "bytes": 315658,
+  "sha256": "07fe01381f56f3cc67ce72a0c8e5497ded2efe2a71d55749c9a39e1da93c7cce"
+ },
+ "Section7All_xls.xlsx": {
+  "bytes": 1003641,
+  "sha256": "ce107c8ce92393613c0abae38156afcfaef8ab571eedf0302dc09ca44738b9ef"
+ },
+ "aspep_2024.json": {
+  "bytes": 11065,
+  "sha256": "095f216d7f00eb79372f3e94084beb7646e094c0ce59438c285983ff24576722"
+ },
+ "c2010br-04.pdf": {
+  "bytes": 1603597,
+  "sha256": "1b47af51d702422b5ac180909f05b88671ca22821a2ba83b8bfa21b87ebfad6d"
+ },
+ "c2kbr01-3.pdf": {
+  "bytes": 512317,
+  "sha256": "aad05e524c44d11257c8047e9343ecef5d85cfeb7e6a158b3b61fcbf07a022b3"
+ },
+ "fr2025_note13.pdf": {
+  "bytes": 316839,
+  "sha256": "deed540cf26fc8d8d77a6468019b1781c02ebca70a0f267318c3ca899de3cd55"
+ },
+ "we-02r.pdf": {
+  "bytes": 123257,
+  "sha256": "c842a60b4cd52e900ee8e846aec30150aa973126afd7a403c173174214323828"
+ },
+ "z1_csv_files.zip": {
+  "bytes": 8336582,
+  "sha256": "b63af9755437df0fb88b7cf346f8f9eaeb22bf1aa2b5df1709334135c43de4b6"
+ }
+}
