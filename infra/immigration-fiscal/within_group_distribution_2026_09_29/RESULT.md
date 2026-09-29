@@ -542,3 +542,153 @@ The per-member figures divide by the row-4 count: 39,712,493 members in all, of 
 - 21:07–21:09 — `rerun_lane.py` pass 1: exit 0, IDENTICAL 21/21.
 - 21:10–21:11 — `rerun_lane.py` pass 2: exit 0, IDENTICAL 21/21. `households.py --case sept29` without `--weights row4`: [BLOCKED], exit 1.
 - 21:54–21:55 — after the RESULT and a docstring line in `households.py` (its sept29 run command), `rerun_lane.py` pass 3: exit 0, IDENTICAL 21/21.
+
+## Person-level accrual, 2026-09-30
+
+**Verdict:** Spreading each generation's pension accrual by the pension lane's own person model, instead of by payroll receipts, leaves **17.0% (SE 0.4) / 13.7% (0.4)** of members in net-contributor households under A, against 16.2% / 12.3% under the flat rule (paired difference +0.8 ± 0.3 / +1.4 ± 0.3), and **23.4% (0.5) / 22.0% (0.5)** under B, against 23.8% / 22.1% (−0.4 ± 0.3 / −0.1 ± 0.4). The headline barely moves; the status rows reverse. Under the flat rule, members with a legal-immigrant head are more often in net-contributor households than members with an unauthorized head (A, low: 12.6% against 8.8%). Under the person rule the unauthorized are ahead (16.0% against 10.5%), at both ends, under both conventions and under the lane's two imputation rules. Legal status does this, not the benefit formula's progressivity. The model credits the unauthorized only on their on-books wages (+3.1 points at A, low) and at Note 151's 10% claim share (+4.0), so the accrual of their households falls from $2,823 to $857 per member and their generation's accrual moves onto legal immigrants ($3,201 → $4,435). Progressivity lifts BA+ heads under A (its step +1.6 / +1.6), and the model's age gradient lifts heads under 30 (+2.3 / +1.3). The arm's own bias favours the unauthorized: it moves their accrual to the on-books base but leaves their payroll taxes on all their wages. Keying the payroll taxes on on-books wages too keeps the reversal at every end but narrows it, to 13.2% against 11.7% at A, low. I recommend that pair as the lane's central. [CALCULATION: `person_accrual.py`; `households.py --case sept29 --weights row4 --accrual person` → `derived/sept29/person_accrual_arms.csv`, `net_positive_shares_person_accrual.csv`] [FRAMING-SENSITIVE: the accrual convention and the claim share]
+
+claude-opus-5-5
+
+**What runs.**
+- `person_accrual.py` imports `pension_accrual_2026_09_28` read-only at 9ea1beb, the commit the adopted payload pins (`main_case_candidate_v4_2026_09_29/package.cjs` PENSION_COMMIT). It stops unless that lane's code in the working tree is the commit's and its stage cache exists, so nothing is written in that lane. It computes every person's Social Security and Part A accrual at the lane's central and writes `_cache/sept29/person_accrual.parquet` (ignored) and `derived/sept29/person_accrual_model.json`. The model grid is the lane's `model_grid` for the two runs the central reads, computed in parallel and cached in `_cache/sept29/`.
+- `households.py --case sept29 --weights row4 --accrual person` spreads each generation's two pension pieces by the person model; every other line keeps its rule. The same run computes the flat arm and stops unless it reproduces the flat run's six files in `derived/sept29/` byte for byte. It writes only new files.
+
+Reproduce from the repository root, after the flat commands above:
+- `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/person_accrual.py`
+- `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4 --accrual person`
+
+**The rule.** Each generation keeps the accrual the case gives it: the generation account's split, its net accrual per tax dollar on its OASDI receipts plus its Part A. The person model decides only who inside the generation carries it. In every replicate a member's part of the generation's accrual is their model accrual over the generation's replicate-weighted total.
+- **Social Security.** The member's on-books OASDI tax, times Note 2025.7's payable money's-worth ratio at the member's career earnings level, birth year and family type, times the lane's model factor (entry-age normal attribution, the Trustees' new-issue rates, US careers from arrival for the Mexico-born). The unauthorized are credited 10%. The result is net of the future income tax on the benefits, at the generation's own relative rate, the rate the generation account splits by.
+- **Part A.** Per covered worker-year: P(qualify | generation) × the present value of Part A from 65 at the member's age and sex ÷ the generation's expected covered years from career start. Then × the on-books share and, for the unauthorized, 10%. It does not scale with earnings.
+- **Non-members.** At the low end the account splits each SPM unit's receipts equally among its members, so a member's OASDI receipts include part of a non-member's tax: 6% of the first generation's shared OASDI key, 11% of the second's and 22% of the third-plus's. The person vectors keep that convention. Everyone with covered earnings gets the model's accrual; a non-member takes the union's benefit-tax rate and its pooled Part A qualification and coverage. Alternative: count only the members' own accrual. That would drop the account's own sharing rule at the low end.
+- **Part A's total.** The arm spreads the case's $41.137bn, summed over the published 40.90M frame, as the flat arm does. On row 4 it would be $40.109bn (`row4_class_2026_09_29`, 75d1ae0: −$1.028bn). The case does not apply that correction, so this arm does not either.
+
+**The arms.** Each step changes one thing, in this order. The steps are sequential, so a step's size depends on the order.
+1. Flat: the committed rule, one accrual per tax dollar inside a generation on the payroll receipts keys.
+2. On-books base: the same flat rate on each person's on-books OASDI and HI tax, the pension lane's tax base. The unauthorized's wages count at the case's on-books share, 0.526 for the Mexico-born (`onbooks_share_2026_09_23`).
+3. Claim share: the unauthorized credited 10% (Note 151's long-run share, the pension lane's central).
+4. Benefit formula: Social Security by the person model; Part A as in step 3.
+5. Person: Part A per covered worker-year by the person model. This is the arm.
+- Diagnostic, payroll on the books: the person arm, with the payroll taxes (employee and employer OASDI and HI, and the self-employment tax) spread inside each generation on on-books wages instead of all wages. Each generation keeps its tax total.
+
+**What the model does inside a generation.** Net accrual per on-books OASDI tax dollar, tax-weighted over union members on the pension lane's frame, lawful members only in the first three rows (`person_accrual_model.json`, formula_members):
+- by career earnings level, the formula's progressivity: 1.92 below 0.45 × AWI, 1.25 at 0.45–1.0, 0.92 at 1.0–1.6 and 0.70 above 1.6;
+- by family type: one-earner couples 1.76, single women 1.00, two-earner couples 0.99 and single men 0.83;
+- by age: 0.76 under 30, 0.99 at 30–44, 1.28 at 45–64 and 1.54 at 65 and over. Part of this is Note 2025.7's cohort pattern: its ratios fall for birth years after 1973, more so under payable benefits: 0.98 for a medium-earning single man born in 1973 against 0.77 for one born in 1997, and 1.22 against 1.07 when benefits are scheduled [SOURCE: SSA Actuarial Note 2025.7, Tables 1 and 3, as `pension_accrual_2026_09_28/sources.py` reads them];
+- by status: 0.14 per on-books tax dollar for unauthorized members, 1.39 for lawful Mexico-born members and 0.94 for the US-born. The unauthorized pay 8.7% of the union's on-books OASDI tax.
+
+Part A per HI tax dollar, lawful members under 65, is 6.72, 2.71, 1.62 and 0.76 by weighted quarter of HI tax: it accrues per covered year, not per dollar.
+
+**Shares against the flat rule.** % of members in net-contributor households, flat → person, with the paired difference ± its replicate SE (160 replicates). The differences are those of the printed shares; the unrounded ones are in `person_accrual_arms.csv` (diff_vs_flat, se_diff). The person arm's headline SEs are 0.4 / 0.4 / 0.5 / 0.5. Status is the case's own flag on the head, the one the claim share reads (`head_status_case_flag`, new in these files): unauthorized is the state-aware flag on the Mexico-born, legal immigrant the other Mexico-born heads. Heads outside the union (0.58M members) are not shown.
+
+| Head's cell | Members (m) | A, low | A, high | B, low | B, high |
+|---|---:|---|---|---|---|
+| All members | 39.71 | 16.2 → 17.0 (+0.8 ± 0.3) | 12.3 → 13.7 (+1.4 ± 0.3) | 23.8 → 23.4 (−0.4 ± 0.3) | 22.1 → 22.0 (−0.1 ± 0.4) |
+
+| Head's status (the case's flag) | Members (m) | A, low | A, high | B, low | B, high |
+|---|---:|---|---|---|---|
+| Unauthorized | 6.94 | 8.8 → 16.0 (+7.2 ± 0.9) | 5.8 → 12.7 (+6.9 ± 0.8) | 14.2 → 23.6 (+9.4 ± 1.3) | 13.2 → 22.2 (+9.0 ± 1.3) |
+| Legal immigrant | 10.23 | 12.6 → 10.5 (−2.1 ± 0.5) | 7.9 → 7.3 (−0.6 ± 0.5) | 18.9 → 15.2 (−3.7 ± 0.6) | 17.5 → 14.1 (−3.4 ± 0.7) |
+| US-born | 21.96 | 20.4 → 20.6 (+0.2 ± 0.5) | 16.8 → 17.3 (+0.5 ± 0.5) | 29.4 → 27.3 (−2.1 ± 0.4) | 27.5 → 26.1 (−1.4 ± 0.4) |
+
+| Head's education | Members (m) | A, low | A, high | B, low | B, high |
+|---|---:|---|---|---|---|
+| Below high school | 9.84 | 7.1 → 8.1 (+1.0 ± 0.5) | 4.2 → 6.0 (+1.8 ± 0.5) | 10.8 → 11.9 (+1.1 ± 0.7) | 10.0 → 11.3 (+1.3 ± 0.8) |
+| High school | 13.13 | 12.0 → 13.1 (+1.1 ± 0.5) | 8.4 → 10.0 (+1.6 ± 0.5) | 17.8 → 17.6 (−0.2 ± 0.6) | 16.8 → 17.0 (+0.2 ± 0.5) |
+| Some college | 9.76 | 16.9 → 16.9 (+0.0 ± 0.8) | 13.5 → 13.7 (+0.2 ± 0.6) | 27.0 → 25.7 (−1.3 ± 0.8) | 24.7 → 23.9 (−0.8 ± 0.7) |
+| Bachelor's or more | 6.97 | 36.2 → 37.2 (+1.0 ± 0.7) | 29.7 → 31.6 (+1.9 ± 0.9) | 49.1 → 47.1 (−2.0 ± 0.9) | 45.6 → 43.8 (−1.8 ± 1.0) |
+
+| Head's age | Members (m) | A, low | A, high | B, low | B, high |
+|---|---:|---|---|---|---|
+| Under 30 | 7.08 | 16.4 → 18.9 (+2.5 ± 0.9) | 12.1 → 13.8 (+1.7 ± 0.6) | 27.0 → 27.5 (+0.5 ± 1.0) | 24.8 → 25.5 (+0.7 ± 0.9) |
+| 30–44 | 15.44 | 16.4 → 17.2 (+0.8 ± 0.4) | 12.6 → 14.0 (+1.4 ± 0.5) | 22.2 → 22.5 (+0.3 ± 0.5) | 20.5 → 20.9 (+0.4 ± 0.6) |
+| 45–64 | 13.11 | 17.9 → 18.2 (+0.3 ± 0.6) | 13.6 → 15.0 (+1.4 ± 0.5) | 27.0 → 25.2 (−1.8 ± 0.7) | 25.2 → 24.2 (−1.0 ± 0.7) |
+| 65 and over | 4.08 | 9.8 → 9.4 (−0.4 ± 0.4) | 7.8 → 8.0 (+0.2 ± 0.5) | 14.3 → 13.5 (−0.8 ± 0.7) | 13.5 → 13.3 (−0.2 ± 0.7) |
+
+[CALCULATION: `derived/sept29/person_accrual_arms.csv`, arms flat and person]
+
+The lane's two imputation rules regroup the same households; the claim share still follows the case's flag. Both show the reversal at every end (flat → person; A low / A high, B low / B high):
+- Borjas rules: unauthorized 10.0 → 18.4 / 6.5 → 14.6, 16.3 → 26.5 / 15.0 → 24.9; legal immigrant 11.6 → 9.7 / 7.4 → 6.9, 17.3 → 14.5 / 16.2 → 13.5.
+- No-Medicaid rule: unauthorized 8.3 → 14.7 / 5.5 → 11.8, 13.3 → 21.9 / 12.3 → 20.5; legal immigrant 13.2 → 11.1 / 8.3 → 7.7, 19.9 → 16.0 / 18.5 → 14.9.
+
+Pension accrual per member, flat → person, low / high end: unauthorized-headed $2,823 → $857 / $2,672 → $821, legal-immigrant-headed $3,201 → $4,435 / $3,008 → $4,251, US-born-headed $4,394 → $4,434 / $4,305 → $4,309 (`pension_accrual_per_member_usd`).
+
+**Why each row moves.** Steps in points, in the order on-books base / claim share / benefit formula / Part A per worker; they add to the row's change above. The SEs of single steps are not computed.
+
+| Head's cell | A, low | A, high | B, low | B, high |
+|---|---|---|---|---|
+| All members | +0.1 / −0.2 / +0.8 / +0.1 | +0.2 / +0.2 / +0.7 / +0.3 | +0.1 / −0.1 / −0.1 / −0.3 | +0.1 / +0.0 / +0.2 / −0.4 |
+| Unauthorized | +3.1 / +4.0 / +0.1 / +0.0 | +2.4 / +4.5 / +0.1 / −0.1 | +4.3 / +4.8 / +0.6 / −0.3 | +3.8 / +6.2 / +0.1 / −1.1 |
+| Legal immigrant | −1.2 / −2.6 / +1.3 / +0.4 | −0.9 / −2.0 / +1.6 / +0.7 | −1.6 / −2.3 / +0.1 / +0.1 | −2.2 / −3.6 / +1.8 / +0.6 |
+| US-born | −0.3 / −0.4 / +0.9 / +0.0 | −0.1 / +0.0 / +0.4 / +0.2 | −0.4 / −0.6 / −0.5 / −0.6 | +0.0 / −0.3 / −0.4 / −0.7 |
+| Below high school | +0.1 / +0.5 / +0.4 / +0.0 | +0.7 / +0.6 / +0.4 / +0.1 | +0.6 / +0.8 / −0.1 / −0.2 | +0.6 / +0.7 / +0.3 / −0.3 |
+| High school | +0.4 / +0.2 / +0.6 / −0.1 | +0.4 / +0.7 / +0.3 / +0.2 | +0.1 / +0.2 / +0.0 / −0.5 | −0.1 / +0.3 / +0.3 / −0.3 |
+| Some college | −0.7 / −0.5 / +0.9 / +0.3 | −0.4 / −0.6 / +0.8 / +0.4 | −0.2 / +0.0 / −0.5 / −0.6 | +0.1 / +0.3 / −0.6 / −0.6 |
+| Bachelor's or more | +0.2 / −1.3 / +1.6 / +0.5 | −0.3 / +0.0 / +1.6 / +0.6 | −0.2 / −2.1 / −0.1 / +0.4 | −0.6 / −1.8 / +1.3 / −0.7 |
+| Under 30 | −0.1 / +0.9 / +2.3 / −0.6 | +0.2 / +0.4 / +1.3 / −0.2 | −0.3 / +0.1 / +2.0 / −1.3 | +0.7 / +0.5 / +1.2 / −1.7 |
+| 30–44 | +0.1 / −0.3 / +0.6 / +0.4 | +0.4 / −0.1 / +0.7 / +0.4 | +0.4 / +0.2 / −0.2 / −0.1 | +0.2 / +0.1 / +0.6 / −0.5 |
+| 45–64 | +0.3 / −0.5 / +0.4 / +0.1 | −0.1 / +0.7 / +0.4 / +0.4 | +0.3 / −0.7 / −1.0 / −0.4 | −0.4 / −0.2 / −0.4 / +0.0 |
+| 65 and over | −0.6 / −0.4 / +0.2 / +0.4 | −0.3 / −0.2 / +0.3 / +0.4 | −0.8 / +0.3 / −1.1 / +0.8 | −0.1 / −0.1 / −0.8 / +0.8 |
+
+[CALCULATION: `person_accrual_arms.csv`, arms flat, tax_base, claim_share, oasdi_formula and person]
+
+**Which rows flip, and why.**
+1. **Legal status.** The order of unauthorized- and legal-immigrant-headed members reverses at every end and under every status rule. The status terms do it, not progressivity: the formula step for unauthorized-headed members is +0.1 to +0.6. The on-books base nearly halves their accrual (+3.1 / +2.4 / +4.3 / +3.8 points), and the claim share cuts what is left to a tenth (+4.0 / +4.5 / +4.8 / +6.2). Legal-immigrant heads lose because G1's accrual moves onto them (the two status steps together −3.8 / −2.9 / −3.9 / −5.8). The formula gives part of it back at three ends (+1.3 / +1.6 / +0.1 / +1.8), presumably through progressivity: the legal-immigrant households near zero are those with higher earnings [INFERENCE].
+2. **Age.** Heads under 30 now rank above heads aged 45–64 at three ends: A, low 18.9 against 18.2, B, low 27.5 against 25.2, and B, high 25.5 against 24.2. Under the flat rule the pairs were 16.4 against 17.9, 27.0 against 27.0 and 24.8 against 25.2. The formula's age gradient does it (step for heads under 30 +2.3 / +1.3 / +2.0 / +1.2, for heads 45–64 +0.4 / +0.4 / −1.0 / −0.4), and Part A per worker takes part of it back from the young (−0.6 / −0.2 / −1.3 / −1.7). The gaps are within 2.3 points, and their SEs are not computed.
+3. **Education.** No order changes. Under A both ends of the gradient rise: below-high-school heads mostly through the status terms (+0.6 / +1.3, formula +0.4 / +0.4) and BA+ heads through progressivity (formula step +1.6 / +1.6). Under B the gap between BA+ and below-high-school heads narrows by 3.1 points at both ends. BA+ heads lose through the claim share (−2.1 / −1.8). That step moves accrual only from the unauthorized to the lawful members of their generation. At the high end, where no receipts are shared, it reaches a household only through its Mexico-born earners, and it raises the accrual of the lawful ones.
+4. **The head's generation** (not asked; from the same file). No order changes. Mexico-born heads gain 1.6 to 2.4 points at every end; second- and third-plus-generation heads lose 1.2 to 2.2 points under B.
+5. **The headline.** Under A the formula lifts it (+0.8 / +0.7); under B, Part A per worker lowers it (−0.3 / −0.4). B counts fewer costs, so its zero line falls among households that pay less tax, and the model charges lower earners more accrual per tax dollar and more Part A per HI tax dollar [INFERENCE on the mechanism].
+
+**Concentration and the median.** The person rule widens the distribution. The member at the median lives in a household costing $10,366 / $11,707 per member under A (flat $9,755 / $11,160) and $7,179 / $7,399 under B ($6,597 / $6,952). At A, low, P10 falls from −$3,790 to −$5,171. Net-contributor households offset $94.0bn / $81.0bn under A instead of $77.4bn / $65.8bn. The costliest tenth of households carries 54.1% / 48.2% of the net cost under A (flat 53.2% / 47.5%) and 71.2% / 66.8% under B (69.7% / 65.4%). [CALCULATION: `concentration_person_accrual.csv`, `household_balance_quantiles_person_accrual.csv` against the flat files]
+
+**The rule's own bias.**
+- **Taxes stay status-blind inside a generation.** The case counts the unauthorized's payroll taxes at the on-books share (audit row 2, `onbooks_share_2026_09_23`), but this lane spreads each generation's payroll receipts over all its wages. The person arm moves the accrual to the on-books base and leaves the taxes on the full one, which flatters the unauthorized. The diagnostic below measures how much.
+- **One year's earnings stand for a career.** The model maps each member's 2024 earnings, adjusted for age, to a career level. One year's earnings vary more than a career's, so the arm overstates the formula's spread, and with it the formula step (+0.8 / +0.7 on the A headline) [INFERENCE].
+- **The family type is the current year's.** A spouse without earnings in 2024 makes a one-earner couple, which accrues 1.76 per tax dollar. Couples in which the spouse works later are charged too much accrual.
+- **Part A accrues per covered year, whatever the earnings.** A part-year or low-hours worker carries a full year's Part A. This lowers young and low-earning households: the Part A step for heads under 30 is −0.6 / −0.2 / −1.3 / −1.7.
+- **One claim share for every unauthorized member.** Those who regularize would claim in full. A higher share shrinks the claim step, which is +4.0 to +6.2 points for unauthorized-headed members.
+- **Generation totals are held.** The arm moves accrual only inside a generation, so it cannot test the account's split between generations.
+- **Part A's total** is the case's $41.137bn over the published frame, not row 4's $40.109bn (above). The flat arm carries the same total, so the comparison does not depend on it.
+
+**The diagnostic: payroll taxes on the books.** The person arm with the payroll taxes keyed on on-books wages as well (person → diagnostic):
+
+| Head's cell | A, low | A, high | B, low | B, high |
+|---|---|---|---|---|
+| All members | 17.0 → 16.9 | 13.7 → 13.7 | 23.4 → 23.3 | 22.0 → 22.0 |
+| Unauthorized | 16.0 → 13.2 | 12.7 → 10.9 | 23.6 → 20.5 | 22.2 → 19.9 |
+| Legal immigrant | 10.5 → 11.7 | 7.3 → 8.5 | 15.2 → 17.0 | 14.1 → 15.5 |
+| US-born | 20.6 → 20.6 | 17.3 → 17.4 | 27.3 → 27.4 | 26.1 → 26.2 |
+| Below high school | 8.1 → 7.2 | 6.0 → 6.1 | 11.9 → 11.3 | 11.3 → 11.0 |
+| High school | 13.1 → 12.8 | 10.0 → 9.8 | 17.6 → 17.2 | 17.0 → 16.8 |
+| Some college | 16.9 → 17.2 | 13.7 → 13.6 | 25.7 → 25.4 | 23.9 → 24.0 |
+| Bachelor's or more | 37.2 → 37.7 | 31.6 → 31.9 | 47.1 → 48.9 | 43.8 → 44.7 |
+| Under 30 | 18.9 → 18.2 | 13.8 → 13.8 | 27.5 → 27.2 | 25.5 → 25.5 |
+| 30–44 | 17.2 → 17.2 | 14.0 → 14.1 | 22.5 → 22.4 | 20.9 → 21.1 |
+| 45–64 | 18.2 → 18.0 | 15.0 → 14.9 | 25.2 → 25.4 | 24.2 → 24.0 |
+| 65 and over | 9.4 → 9.6 | 8.0 → 8.1 | 13.5 → 13.3 | 13.3 → 13.2 |
+
+[CALCULATION: `person_accrual_arms.csv`, arms person and person_payroll_onbooks]
+
+The reversal holds at every end but narrows. Against the flat rule, unauthorized-headed members gain +4.4 ± 0.7 / +5.1 ± 0.7 / +6.3 ± 0.9 / +6.7 ± 1.0 points under the diagnostic, and legal-immigrant-headed members move −0.9 ± 0.6 / +0.6 ± 0.6 / −1.9 ± 0.7 / −2.0 ± 0.7. With both on the books, what separates them is mainly the claim share: the unauthorized pay the on-books tax and are credited a tenth of what it earns [INFERENCE: an arm with both keys on the books and a full claim share was not run]. Income taxes are not re-keyed; to the extent the unauthorized's pay is off the books, their income taxes are overstated the same way [INFERENCE].
+
+**The v4 section's inference, measured.** Rule 1's alternative above expected a steeper education gradient, a slightly higher overall share and cheaper unauthorized-headed households [INFERENCE, 2026-09-29]. The last two hold under A: the overall share rises +0.8 / +1.4, and unauthorized-headed members gain +7.2 / +6.9. Under B the overall share falls slightly (−0.4 / −0.1). The first fails: the education gradient keeps its width under A and narrows by 3.1 points under B, because the status terms, not progressivity, move most rows.
+
+**Recommendation.** Make the person accrual the lane's central, with the payroll taxes keyed on on-books wages (the diagnostic), and keep the flat rule as an arm. The case builds its pension lines from this model, whose generation ratios already include the 10% claim share, and it counts the unauthorized's payroll taxes on the books. The flat rule's spread contradicts both inputs on exactly the status rows. The pair keeps the headline within 1.4 points of the flat rule: 16.9% / 13.7% under A and 23.3% / 22.0% under B. Adopting it means writing the pair's five files, a small change in `households.py` since the arm is already computed; `person_accrual_arms.csv` carries its shares and SEs for every row. [FRAMING-SENSITIVE: the claim share is the pension lane's central, Note 151's long-run 10%]
+
+**Gates, printed.**
+- `person_accrual.py`: exit 0, 23 gates. The pension lane's code is 9ea1beb's, and its stage cache exists. On the lane's frame the model reproduces the lane's central (1e-12 relative): the OASDI accrual per tax dollar, 1.018377851337 for the union and 1.077072 / 0.972982 / 1.010780 by generation; the future benefit-tax shares; and each generation's members' net ratio, 1.040917 / 0.918980 / 0.961763, which the generation account splits by. The union's net ratio is the payload's ratio_net, 0.973667365031184 (1e-12). Part A's P(qualify) and expected covered years reproduce the lane's (1e-12). Its accrual by generation reproduces `hi_arms.csv` (12.584952 / 15.497781 / 13.054394bn, to the file's six decimals), and the union's is the payload's part_a_accrual_bn, 41.137127830bn.
+- `households.py --case sept29 --weights row4 --accrual person`: exit 0. At specifications 48 / 11 the union's Social Security accrual is ratio_net × its OASDI receipts, 109.406993 = 0.973667 × 112.365883bn and 102.754953 = 0.973667 × 105.533940bn (1e-9 relative). Its Part A is 41.137127830bn at both ends (1e-9bn). Every arm keeps each generation's accrual in every replicate (worst 4.6e-13bn). Under every arm, the diagnostic included, convention A reproduces the case in every replicate: worst gap 7.0e-12bn against a tolerance of 1e-9bn. The flat arm reproduces the six committed files in `derived/sept29/` byte for byte. The run's other gates are the flat run's (above).
+- `scripts/rerun_lane.py` over the seven commands, the five above and the two here, with `--allow-unrun` for the test file only: exit 0 and IDENTICAL, 30 of 30 files, in both passes (02:12–02:18, and 02:29–02:36 after this RESULT). The tracked files in `derived/`, `derived/row4/` and `derived/sept29/` equal HEAD, and nothing in `pension_accrual_2026_09_28` changed.
+- `test_person_accrual.py`: 3 passed. It checks that the arms file repeats the flat and person files' shares, that the flat arm is its own baseline, and that the model record carries the payload's ratio_net and Part A.
+
+**Files.** New: `person_accrual.py` and `test_person_accrual.py`. In `derived/sept29/`: `person_accrual_model.json`; `person_accrual_arms.csv`, every arm and row at both conventions and ends, with the paired difference from the flat arm; and the person arm's `net_positive_shares_person_accrual.csv`, `concentration_person_accrual.csv`, `household_balance_quantiles_person_accrual.csv`, `category_means_person_accrual.csv` and `control_person_accrual.csv`, whose totals are the flat control's. Ignored: `_cache/sept29/person_accrual.parquet`, `households_person_accrual.parquet` and the model grid `pension_grid_7660d97f808b5c75.npz`. Changed: `households.py`, with `--accrual person`; its statistics moved into one function so that every arm runs through the same code, and the flat runs are unchanged byte for byte.
+
+**Log (person accrual; times from `date` calls and file times).**
+- 01:17 JST — task received from the lead.
+- 01:28 — first `person_accrual.py` run: the model grid computed on 8 processes and cached; the gates passed.
+- 01:34 — `households.py --case sept29 --weights row4` with the statistics moved into one function: the six flat files are byte-identical to HEAD.
+- 01:39–01:52 — `--accrual person` runs. The first shared-allocation vectors left out the taxes of non-members in the same SPM unit, because the model then covered members only; at the low end they moved 12.9% of G2's and 17.9% of G3+'s accrual between persons for no reason. The model now covers every person of the frame, non-members at the union's rates.
+- 01:54–01:58 — `rerun_lane.py` over the seven commands: exit 0, IDENTICAL 30/30. Superseded when the model record gained the formula profiles (01:58; `person_accrual.py` exit 0, the parquet unchanged).
+- 02:12–02:18 — `rerun_lane.py` pass 1: exit 0, IDENTICAL 30/30. 02:18 — pytest: 3 passed.
+- 02:28 — this section appended.
+- 02:29–02:36 — `rerun_lane.py` pass 2: exit 0, IDENTICAL 30/30. 02:36 — pytest: 3 passed. `git status`: `households.py` and this RESULT changed, the new files untracked, the pension lane unchanged.

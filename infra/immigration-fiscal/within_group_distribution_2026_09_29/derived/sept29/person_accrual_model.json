@@ -1,0 +1,233 @@
+{
+ "benefit_tax_path": "obbba",
+ "central": {
+  "career_start": true,
+  "mapping": "individual_age_adjusted",
+  "method": "EAN",
+  "mortality": "general",
+  "rate": "new_issue",
+  "scenario": "payable",
+  "spouse": false,
+  "unauthorized": "note151_long_run"
+ },
+ "dispersion": {
+  "G1": {
+   "oasdi_net_per_tax_dollar": {
+    "mean": 0.9870639061342424,
+    "others": 1.7118242039765796,
+    "p10": 0.10232218771619819,
+    "p50": 0.739923194405903,
+    "p90": 2.3262320207249103,
+    "unauthorized": 0.16527823034534486
+   },
+   "part_a_per_covered_worker_usd": 1659.1568882335255,
+   "part_a_per_hi_tax_dollar": {
+    "p10": 0.16225105537338141,
+    "p50": 0.9507455846450727,
+    "p90": 4.959011470855455
+   },
+   "unauthorized_tax_share": 0.27799867579874327
+  },
+  "G2": {
+   "oasdi_net_per_tax_dollar": {
+    "mean": 1.094253306603116,
+    "others": 1.094253306603116,
+    "p10": 0.6211358815288515,
+    "p50": 0.9808079915490415,
+    "p90": 1.7326252072813884,
+    "unauthorized": null
+   },
+   "part_a_per_covered_worker_usd": 2348.01676404162,
+   "part_a_per_hi_tax_dollar": {
+    "p10": 0.8625375138387639,
+    "p50": 2.046961698624036,
+    "p90": 8.909396522069255
+   },
+   "unauthorized_tax_share": 0.0
+  },
+  "G3plus": {
+   "oasdi_net_per_tax_dollar": {
+    "mean": 1.1583877899406405,
+    "others": 1.1583877899406405,
+    "p10": 0.6374034575899069,
+    "p50": 1.0407663463123846,
+    "p90": 1.8117623892512682,
+    "unauthorized": null
+   },
+   "part_a_per_covered_worker_usd": 2322.223734130187,
+   "part_a_per_hi_tax_dollar": {
+    "p10": 0.7184038734317145,
+    "p50": 1.7759189812631497,
+    "p90": 7.518032378536987
+   },
+   "unauthorized_tax_share": 0.0
+  }
+ },
+ "formula_members": {
+  "age": {
+   "30_44": {
+    "net_per_tax_dollar": 0.9139603202189165,
+    "net_per_tax_dollar_lawful": 0.9860812943763904,
+    "tax_share": 0.3995646619513588
+   },
+   "45_64": {
+    "net_per_tax_dollar": 1.152859759311525,
+    "net_per_tax_dollar_lawful": 1.2846765293091653,
+    "tax_share": 0.3352513379423361
+   },
+   "65_plus": {
+    "net_per_tax_dollar": 1.510109125426934,
+    "net_per_tax_dollar_lawful": 1.5386444827026944,
+    "tax_share": 0.03661566584800698
+   },
+   "under_30": {
+    "net_per_tax_dollar": 0.7204408283454069,
+    "net_per_tax_dollar_lawful": 0.758015546754564,
+    "tax_share": 0.22856833425829823
+   }
+  },
+  "career_level_x_awi": {
+   "0.45_1.0": {
+    "net_per_tax_dollar": 1.1305886336865176,
+    "net_per_tax_dollar_lawful": 1.2528818910897064,
+    "tax_share": 0.3594816474861714
+   },
+   "1.0_1.6": {
+    "net_per_tax_dollar": 0.8685712393271834,
+    "net_per_tax_dollar_lawful": 0.9162668656502393,
+    "tax_share": 0.27118143578434967
+   },
+   "1.6_plus": {
+    "net_per_tax_dollar": 0.675853257260579,
+    "net_per_tax_dollar_lawful": 0.7046705910596002,
+    "tax_share": 0.28011221530535846
+   },
+   "under_0.45": {
+    "net_per_tax_dollar": 1.5731811770734208,
+    "net_per_tax_dollar_lawful": 1.9220603673010657,
+    "tax_share": 0.08922470142412062
+   }
+  },
+  "family": {
+   "one_earner_couple": {
+    "net_per_tax_dollar": 1.568251395088952,
+    "net_per_tax_dollar_lawful": 1.7563492803276537,
+    "tax_share": 0.1374459581272863
+   },
+   "single_man": {
+    "net_per_tax_dollar": 0.7361560069597184,
+    "net_per_tax_dollar_lawful": 0.8323294314624673,
+    "tax_share": 0.2751754471350716
+   },
+   "single_woman": {
+    "net_per_tax_dollar": 0.9484504719588484,
+    "net_per_tax_dollar_lawful": 1.0006214504522337,
+    "tax_share": 0.21464739314553216
+   },
+   "two_earner_couple": {
+    "net_per_tax_dollar": 0.9388624766705324,
+    "net_per_tax_dollar_lawful": 0.9850062444304128,
+    "tax_share": 0.37273120159211004
+   }
+  },
+  "part_a_per_hi_tax_dollar_lawful": {
+   "age": {
+    "30_44": 1.3067749916700446,
+    "45_64": 1.7452610793772647,
+    "under_30": 2.0963718050990874
+   },
+   "hi_tax_quarter": {
+    "q1": 6.715693510191366,
+    "q2": 2.7122291563861585,
+    "q3": 1.6235555447256582,
+    "q4": 0.7582383100691699
+   }
+  },
+  "status": {
+   "G1_lawful": {
+    "net_per_tax_dollar": 1.3871903930955,
+    "net_per_tax_dollar_lawful": 1.3871903930955,
+    "tax_share": 0.22519936029577706
+   },
+   "unauthorized": {
+    "net_per_tax_dollar": 0.141595296602084,
+    "tax_share": 0.0867105389622513
+   },
+   "us_born": {
+    "net_per_tax_dollar": 0.9402481448831397,
+    "net_per_tax_dollar_lawful": 0.9402481448831397,
+    "tax_share": 0.6880901007419717
+   }
+  }
+ },
+ "gates_passed": true,
+ "grid_cache": "pension_grid_7660d97f808b5c75.npz",
+ "members_with_oasdi_tax": 9264,
+ "non_members_with_oasdi_tax": 63028,
+ "note": "oasdi.*.per_tax_dollar_net nets each member at their generation's relative rate, as the generation account splits the accrual; the payload's ratio_net nets the union at the union's rate",
+ "oasdi": {
+  "G1": {
+   "future_share_own_rate": 0.033568017003201805,
+   "per_tax_dollar_gross": 1.0770717691493983,
+   "per_tax_dollar_net": 1.0409166056889225,
+   "timing": 0.0824521301962472
+  },
+  "G2": {
+   "future_share_own_rate": 0.05550162110531114,
+   "per_tax_dollar_gross": 0.97298162923092,
+   "per_tax_dollar_net": 0.9189795715029172,
+   "timing": 0.08507766527963143
+  },
+  "G3plus": {
+   "future_share_own_rate": 0.048494255103720414,
+   "per_tax_dollar_gross": 1.0107797586479441,
+   "per_tax_dollar_net": 0.9617627471783939,
+   "timing": 0.08411415344693303
+  },
+  "union": {
+   "future_share_own_rate": 0.04390363188554548,
+   "per_tax_dollar_gross": 1.0183778513366615,
+   "per_tax_dollar_net": 0.9716476343515321,
+   "timing": 0.08388440990158709
+  }
+ },
+ "part_a_bn": {
+  "G1": 12.584952348071656,
+  "G2": 15.497781005666779,
+  "G3plus": 13.054394476747582,
+  "union": 41.13712783048602
+ },
+ "part_a_inputs": {
+  "expected_covered_years": {
+   "G1": 32.87418934006524,
+   "G2": 34.01197501899155,
+   "G3plus": 34.6946059321743,
+   "union": 34.0970394444795
+  },
+  "p_qualify_G1": 0.8933345959993599,
+  "p_qualify_G2": 0.9372402789172234,
+  "p_qualify_G3plus": 0.9109632011980026,
+  "p_qualify_union": 0.9064610514984114
+ },
+ "payload": {
+  "part_a_accrual_bn": 41.13712783048602,
+  "ratio_net": 0.9736673650311839
+ },
+ "pension_commit": "9ea1beb",
+ "pension_files_sha256": {
+  "benefit_tax.json": "d0190656e4c425c764a7933368791f3f28e78ab2deea2e5bdcc9530c65023f07",
+  "hi_arms.csv": "24471035d6d308a61e1021c24776f873446d0d921e2a3c87213effde906074b0",
+  "summary.json": "2397bb58f395b0fce3d0162d597f25e4093b49eb904b149f3cb7c5c59d86b8a0"
+ },
+ "pension_lane": "infra/immigration-fiscal/pension_accrual_2026_09_28",
+ "persons": 142125,
+ "relative_benefit_tax_rate": {
+  "G1": 0.40712128265583186,
+  "G2": 0.6523641771655301,
+  "G3plus": 0.5765290752681125,
+  "union": 0.5233824966647924
+ },
+ "stage_cache": "stage_88ee8aa858d73421.parquet",
+ "unauthorized_credit": 0.1,
+ "union_members": 18331
+}

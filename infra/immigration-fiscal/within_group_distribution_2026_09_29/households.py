@@ -71,12 +71,26 @@ account's own v4 split (run_generations_v4.cjs, v4_split.cjs):
     line's part by the road line's pieces;
   - production: the cell parts are solved on the row-4 labor shares, where the generation account attributes the
     case's row-4 grid (v4_inputs.py).
+--accrual person (with --case sept29; the lead's arm of 2026-09-30) spreads each generation's two pension pieces, its
+Social Security accrual and its Part A accrual, over its members by the pension lane's person model instead
+(person_accrual.py: _cache/sept29/person_accrual.parquet), and beside it by three steps between the rules
+(PERSON_ARMS: the on-books tax base, the unauthorized's 10% claim share, the benefit formula for Social Security) and
+one diagnostic of the rule's bias (PAYROLL_DIAGNOSTIC: the person arm with the payroll taxes also keyed on on-books
+wages, where the account keys them on all wages). Each generation keeps its accrual, so the union keeps the case's:
+Social Security ratio_net x the account's OASDI receipts, Part A the payload's part_a_accrual_bn. The run computes the
+flat arm too, stops unless it reproduces the files the flat run wrote in derived/sept29/ byte for byte, and writes
+only new files there: net_positive_shares, concentration, household_balance_quantiles, category_means and control
+with the suffix _person_accrual, and person_accrual_arms.csv (every arm's shares, each against the flat arm with its
+replicate standard error). Its status rows add the case's own flag (head_status_case_flag: the state-aware status the
+case's on-books share and the accrual's 10% claim share read, cps_ca_status via the pension lane's frame).
 Writes derived/net_positive_shares.csv, concentration.csv, household_balance_quantiles.csv, control.csv,
 category_means.csv, line_scaling.csv and _cache/households.parquet; the row-4 run writes the same files to
 derived/row4/ and _cache/row4/. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --weights row4
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/person_accrual.py
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4 --accrual person
 """
 from __future__ import annotations
 
@@ -86,6 +100,7 @@ sys.dont_write_bytecode = True  # read-only imports from other lanes: write noth
 
 import argparse
 import csv
+import io
 import json
 from pathlib import Path
 
@@ -117,6 +132,14 @@ STATES_CSV = FISCAL / "receipt_side_long_run_2026_09_28/derived/states.csv"
 V4_INPUTS = GENLANE / "derived/v4_inputs.json"
 CASH_RENT = 2  # H_TENURE: rented for cash
 PENSION = "pension_accrual"
+# --accrual person: the arms beside the flat rule, each a person vector for the two pension pieces (person_vectors),
+# and a diagnostic of the rule's bias (PAYROLL_DIAGNOSTIC: the person arm with the payroll taxes on on-books wages).
+PERSON_ARMS = ["tax_base", "claim_share", "oasdi_formula", "person"]
+PAYROLL_DIAGNOSTIC = "person_payroll_onbooks"
+PERSON_SUFFIX = "_person_accrual"
+FLAT_FILES = ["net_positive_shares.csv", "concentration.csv", "household_balance_quantiles.csv", "control.csv",
+              "category_means.csv", "line_scaling.csv"]
+CASE_FLAG = "head_status_case_flag"
 # Keys the decomposition lane's row-4 age bins do not carry: on row 4 they are pinned for G2 and G3+ only.
 NO_UNION_ROW4_PIN = {("receipt", "modeled_owner_property")}
 STATE_PRICE_PARENT = {"state_price_public_order_safety": "public_order_safety",
@@ -157,6 +180,43 @@ def tenant_key(d, union, gens, w0):
     return x
 
 
+def person_vectors(d, union, gens, index):
+    """The two pension pieces' person vectors under each arm of PERSON_ARMS, by piece (oasdi, part_a) and allocation.
+    Within a generation each vector spreads the generation's accrual, as the flat rule's receipts do:
+      tax_base       the pension lane's on-books OASDI (HI) tax: one accrual per tax dollar, as the flat rule, but the
+                     unauthorized pay on the on-books share of their wages (the case's status stack), not on all of them;
+      claim_share    the same, with the unauthorized's at Note 151's long-run 10%;
+      oasdi_formula  Social Security by the person model (the benefit formula: progressivity, family type, career
+                     start, benefit-tax timing), Part A still as claim_share;
+      person         the person model's net Social Security and its Part A accrual (person_accrual.py), Part A per
+                     covered worker rather than per tax dollar.
+    Every person of the frame carries a value, members or not: the shared allocation splits each SPM unit's total
+    equally, as the account's shared receipt keys do, so a member's share includes the unit's non-members. Returns
+    the vectors, the persons' on-books factor and state-aware unauthorized flag (the case's), and the model's record."""
+    pa = pd.read_parquet(CACHE / "sept29/person_accrual.parquet")
+    model = json.loads((OUT / "sept29/person_accrual_model.json").read_text())
+    m = d[["PH_SEQ", "A_LINENO"]].merge(pa, on=["PH_SEQ", "A_LINENO"], how="left", validate="one_to_one",
+                                        indicator=True)
+    found = (m.pop("_merge") == "both").to_numpy()
+    gate("the person model covers every person of the frame", bool(found.all()) and len(pa) == len(d),
+         f"{int(found.sum()):,} of {len(d):,}")
+    lab = F.label(gens, len(d))
+    same = (np.array_equal(m.union.to_numpy(bool), union)
+            and np.array_equal(m.gen.to_numpy()[union].astype(str), np.array(GENS)[lab[union]]))
+    gate("its union and generations are the account's", same)
+    u = float(model["unauthorized_credit"])
+    unauth = m.unauth.fillna(False).to_numpy(bool)
+    num = {c: m[c].fillna(0.0).to_numpy(float) for c in ("tax_oasdi", "tax_hi", "oasdi_net", "part_a")}
+    claim = np.where(unauth, u, 1.0)
+    personal = {"tax_base": {"oasdi": num["tax_oasdi"], "part_a": num["tax_hi"]},
+                "claim_share": {"oasdi": num["tax_oasdi"] * claim, "part_a": num["tax_hi"] * claim},
+                "oasdi_formula": {"oasdi": num["oasdi_net"], "part_a": num["tax_hi"] * claim},
+                "person": {"oasdi": num["oasdi_net"], "part_a": num["part_a"]}}
+    out = {arm: {piece: {"personal": v, "shared": C.unit_equal(v, index)} for piece, v in parts.items()}
+           for arm, parts in personal.items()}
+    return out, m.onbooks.fillna(1.0).to_numpy(float), unauth, model
+
+
 def gate(label, ok, detail=""):
     print(f"  {'✓' if ok else '✗'} {label}{' — ' + detail if detail else ''}", flush=True)
     if not ok:
@@ -195,11 +255,14 @@ def spending_category(row):
     return "other_shared"
 
 
-def main(arm, case="sept27"):
+def main(arm, case="sept27", accrual="flat"):
     sub = CASE_DIRS[case]
     if sub and arm != "row4":
         raise SystemExit(f"[BLOCKED] --case {case} runs on the row-4 weights only, the count the case prices")
-    print(f"[frame] weights: {arm}" + (f"; case {case}" if sub else ""), flush=True)
+    if accrual != "flat" and case != "sept29":
+        raise SystemExit("[BLOCKED] --accrual person needs --case sept29, the case that carries the pension accrual")
+    print(f"[frame] weights: {arm}" + (f"; case {case}" if sub else "") + (f"; accrual {accrual}" if accrual != "flat" else ""),
+          flush=True)
     lines = json.loads(((CACHE / sub if sub else CACHE) / "lines.json").read_text())
     v4 = case == "sept29"
     if v4 and lines["meta"]["case"] != "main_case_2026_09_29":
@@ -256,6 +319,18 @@ def main(arm, case="sept27"):
             vec[a][("receipt", "housing_support")] = vec[a][("spending", "housing_support")]
             vec[a][("receipt", "renter_contract_rent")] = tenant
             vec[a][("receipt", "modeled_owner_property")] = owner
+    alt = unauth_case = person_model = None
+    payroll = set()
+    if accrual == "person":
+        print("[person accrual]", flush=True)
+        alt, onbooks, unauth_case, person_model = person_vectors(d, union, gens, index)
+        # PAYROLL_DIAGNOSTIC: each payroll line on its own key times the person's on-books share (the status stack's
+        # 0.53 for the unauthorized), shared as the account shares its keys.
+        payroll = set(PA["oasdi_lines"] + PA["hi_lines"] + [PA["se_line"]])
+        onbooks_key = {}
+        for k in {"wage_oasdi", "wage", "self_payroll"}:
+            v = vec["personal"][("receipt", k)] * onbooks
+            onbooks_key[k] = {"personal": v, "shared": C.unit_equal(v, index)}
     pub = pd.read_csv(GENLANE / "derived/generation_keys.csv").query("convention == 'a'")
     # Row 4 moves no weight in G2 or G3+, so their rows keep generation_keys.csv; the union's row-4 totals are the
     # decomposition lane's age bins (the same key vectors under the same weight_arms call), which pins G1 as well.
@@ -355,7 +430,18 @@ def main(arm, case="sept27"):
 
             def add(cat, bn, x, pid):
                 x = np.where(m, x, 0.0)
-                pieces[end].append(dict(g=g, cat=cat, bn=bn, x=x, id=pid))
+                piece = dict(g=g, cat=cat, bn=bn, x=x, id=pid)
+                if alt is not None and cat == PENSION:
+                    # The pension pieces: Social Security (the social_security line) and Part A (part of medicare).
+                    part = {"social_security": "oasdi", "medicare": "part_a"}[pid]
+                    piece["alt"] = {k: np.where(m, alt[k][part][a], 0.0) for k in PERSON_ARMS}
+                    piece["part"] = part
+                if pid in payroll:
+                    key = row_of("receipt", pid)["key"]
+                    if cat != "taxes" or key not in onbooks_key:
+                        raise SystemExit(f"[BLOCKED] payroll line {pid}: category {cat}, key {key}")
+                    piece["alt_tax"] = np.where(m, onbooks_key[key][a], 0.0)
+                pieces[end].append(piece)
 
             def line_parts(row):
                 """[(category, vector)] whose sum is the line's key vector."""
@@ -520,6 +606,57 @@ def main(arm, case="sept27"):
         school_total = (amt[end]["schools"] * Wu).sum(axis=0)
         amt[end]["schools_per_head"] = np.tile(school_total / Wu.sum(axis=0), (len(rows_u), 1))
 
+    # --accrual person: the pension pieces again under each arm; every other category is the flat arm's.
+    arms = {"flat": amt}
+    if alt is not None:
+        print("[person accrual arms]", flush=True)
+        for end in ENDS:
+            oasdi = sum(r["amount_bn"] * (1.0 if r["id"] in PA["oasdi_lines"] else PA["se_oasdi_share"])
+                        for g in GENS for r in lines["generations"][g][end]["rows"]
+                        if r["side"] == "receipt" and (r["id"] in PA["oasdi_lines"] or r["id"] == PA["se_line"]))
+            part_bn = {k: sum(p["bn"] for p in pieces[end] if p.get("part") == k) for k in ("oasdi", "part_a")}
+            gap = abs(part_bn["oasdi"] - PA["ratio_net"] * oasdi) / (PA["ratio_net"] * oasdi)
+            gate(f"{end}: the union's Social Security accrual is ratio_net x its OASDI receipts in the account (1e-9 relative)",
+                 gap < 1e-9, f"{part_bn['oasdi']:.6f} = {PA['ratio_net']:.6f} x {oasdi:.6f} bn")
+            gate(f"{end}: the union's Part A accrual is the payload's part_a_accrual_bn (1e-9 bn)",
+                 abs(part_bn["part_a"] - PA["part_a_accrual_bn"]) < 1e-9, f"{part_bn['part_a']:.9f} bn")
+        for k_arm in PERSON_ARMS:
+            pen = {e: np.zeros((len(rows_u), W.shape[1])) for e in ENDS}
+            worst = 0.0
+            for end in ENDS:
+                for p in pieces[end]:
+                    if "alt" not in p:
+                        continue
+                    x = p["alt"][k_arm][rows_u]
+                    k = x @ Wu
+                    if not np.any(x) or np.any(k <= 0):
+                        raise SystemExit(f"[BLOCKED] {k_arm}: {p['g']} {end} {p['id']}: no member carries the piece")
+                    part = np.outer(x, p["bn"] * 1e9 / k)
+                    worst = max(worst, float(np.abs((part * Wu).sum(axis=0) / 1e9 - p["bn"]).max()))
+                    pen[end] += part
+            gate(f"{k_arm}: every pension piece keeps its generation's accrual in every replicate (1e-9 bn)",
+                 worst < 1e-9, f"max |diff| {worst:.1e}")
+            arms[k_arm] = {e: {**amt[e], PENSION: pen[e]} for e in ENDS}
+        # The diagnostic: the person arm with each payroll piece moved from its key to its on-books key.
+        taxes = {e: amt[e]["taxes"].copy() for e in ENDS}
+        for end in ENDS:
+            for p in pieces[end]:
+                if "alt_tax" not in p:
+                    continue
+                x0, x1 = p["x"][rows_u], p["alt_tax"][rows_u]
+                k0, k1 = x0 @ Wu, x1 @ Wu
+                if not (np.any(x0) and np.all(k0 != 0) and np.any(x1) and np.all(k1 > 0)):
+                    raise SystemExit(f"[BLOCKED] {PAYROLL_DIAGNOSTIC}: {p['g']} {end} {p['id']} cannot be re-keyed")
+                taxes[end] += np.outer(x1, p["bn"] * 1e9 / k1) - np.outer(x0, p["bn"] * 1e9 / k0)
+        arms[PAYROLL_DIAGNOSTIC] = {e: {**arms["person"][e], "taxes": taxes[e]} for e in ENDS}
+        for k_arm in PERSON_ARMS + [PAYROLL_DIAGNOSTIC]:
+            for end in ENDS:
+                tot = sum((arms[k_arm][end][c] * Wu).sum(axis=0) for c in cats) / 1e9
+                res = sum(residual[end].values()) + unassigned[end][0]
+                gap_case = float(np.abs(tot + res - lines["union"][end]["cost_bn"]).max())
+                gate(f"{k_arm} {end}: convention A reproduces the case in every replicate (1e-9 bn)", gap_case < 1e-9,
+                     f"max |gap| {gap_case:.1e}")
+
     print("[households]", flush=True)
     du = d.iloc[rows_u].reset_index(drop=True)
     hh_code, hh_ids = pd.factorize(du.PH_SEQ, sort=True)
@@ -578,124 +715,177 @@ def main(arm, case="sept27"):
     own_gen = np.array(GENS)[lab[rows_u]]
 
     conv_cats = {"A": cats, "B": b_cats, "A_schools_per_head": [c for c in cats if c != "schools"] + ["schools_per_head"]}
-    mean_rows = []
-    for end in ENDS:
-        for name, labels in list(head_breaks.items()) + [("own_generation", None)]:
-            lab_p = own_gen if labels is None else labels[hh_code]
-            for cell in sorted(set(lab_p)):
-                sel = lab_p == cell
-                wsel = Wu[sel]
-                for c in cats + ["schools_per_head"]:
-                    mean = (amt[end][c][sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
-                    mean_rows.append(dict(end=end, breakdown=name, cell=cell, category=c, in_B=c in b_cats,
-                                          net_cost_per_member_usd=mean[0], se=sdr(mean)))
-    npos_rows, conc_rows, q_rows, ctrl_rows = [], [], [], []
-    hh_out = pd.DataFrame({"PH_SEQ": hh_ids, "union_members": members, "weight": Wh[:, 0], **{k: v for k, v in head_breaks.items() if k != "all"},
-                           "head_is_reference_person": head_is_ref, "reference_person_in_union": ref_in_union})
-    for conv, cs in conv_cats.items():
+
+    def household_stats(amt, breaks):
+        """One arm's statistics from its person amounts: the rows of the files and, for the arms' comparison, the
+        replicate vectors of each cell's net-positive share and pension accrual per member."""
+        reps = {"share": {}, "pension": {}}
+        mean_rows = []
         for end in ENDS:
-            person = sum(amt[end][c] for c in cs)  # n_u x 161, $ per person
-            hcost = np.stack([np.bincount(hh_code, weights=person[:, r], minlength=H) for r in range(person.shape[1])], axis=1)
-            hweighted = np.stack([np.bincount(hh_code, weights=person[:, r] * Wu[:, r], minlength=H) for r in range(person.shape[1])], axis=1)
-            per_member = hcost / members[:, None]
-            hh_out[f"{conv}_{end}_household_cost_usd"] = hcost[:, 0]
-            hh_out[f"{conv}_{end}_per_member_usd"] = per_member[:, 0]
-            for c in cs:
-                hh_out[f"{conv}_{end}_{c}_usd"] = np.bincount(hh_code, weights=amt[end][c][:, 0], minlength=H)
-            npos_p = hcost[hh_code] < 0  # members in net-contributor households, per replicate
-            total = hweighted.sum(axis=0) / 1e9
-            # Net-positive shares by breakdown (members weighted by their person weights).
-            breaks = dict(head_breaks)
             for name, labels in list(breaks.items()) + [("own_generation", None)]:
                 lab_p = own_gen if labels is None else labels[hh_code]
                 for cell in sorted(set(lab_p)):
                     sel = lab_p == cell
                     wsel = Wu[sel]
-                    share = (npos_p[sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
-                    mean_pm = (person[sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
-                    hsel = np.zeros(H, bool)
-                    hsel[np.unique(hh_code[sel])] = True
-                    hshare = ((hcost[hsel] < 0) * Wh[hsel]).sum(axis=0) / Wh[hsel].sum(axis=0)
-                    cell_bn = (person[sel] * wsel).sum(axis=0) / 1e9
-                    npos_rows.append(dict(convention=conv, end=end, breakdown=name, cell=cell, records=int(sel.sum()),
-                                          households=int(hsel.sum()), members_m=wsel[:, 0].sum() / 1e6,
-                                          share_members_net_positive=share[0], se=sdr(share),
-                                          share_households_net_positive=hshare[0], se_households=sdr(hshare),
-                                          net_cost_per_member_usd=mean_pm[0], se_per_member=sdr(mean_pm),
-                                          cell_net_cost_bn=cell_bn[0], se_cell_bn=sdr(cell_bn),
-                                          small_cell=bool(sel.sum() < 200)))
-            # Concentration: households ranked by household net cost, counted by household weight.
-            stats = {k: np.zeros(W.shape[1]) for k in ("top10_share_of_total", "top20_share_of_total",
-                                                        "top10_members_share", "top20_members_share",
-                                                        "net_cost_households_bn", "net_contributor_households_bn",
-                                                        "share_households_net_positive")}
-            for r in range(W.shape[1]):
-                order = np.argsort(-hcost[:, r], kind="stable")
-                cw = np.cumsum(Wh[order, r]) / Wh[:, r].sum()
-                contrib = hweighted[order, r]
-                mem = (members * Wh[:, r])[order]
-                for p, key in ((0.1, "10"), (0.2, "20")):
-                    full = cw <= p
-                    j = int(full.sum())
-                    prev = cw[j - 1] if j else 0.0
-                    frac = (p - prev) / (cw[j] - prev) if j < H else 0.0
-                    stats[f"top{key}_share_of_total"][r] = (contrib[full].sum() + frac * contrib[j]) / contrib.sum()
-                    stats[f"top{key}_members_share"][r] = (mem[full].sum() + frac * mem[j]) / mem.sum()
-                stats["net_cost_households_bn"][r] = hweighted[hcost[:, r] > 0, r].sum() / 1e9
-                stats["net_contributor_households_bn"][r] = hweighted[hcost[:, r] < 0, r].sum() / 1e9
-                stats["share_households_net_positive"][r] = Wh[hcost[:, r] < 0, r].sum() / Wh[:, r].sum()
-            stats["total_bn"] = total
-            for k, v in stats.items():
-                conc_rows.append(dict(convention=conv, end=end, statistic=k, value=v[0], se=sdr(v)))
-            # Quantiles: per member (members weighted by person weights) and per household (household weights).
-            for unit, vals, wts in (("per_member", per_member[hh_code], Wu), ("household", hcost, Wh)):
-                for q in (0.1, 0.25, 0.5, 0.75, 0.9):
-                    qs = np.zeros(W.shape[1])
-                    for r in range(W.shape[1]):
-                        o = np.argsort(vals[:, r], kind="stable")
-                        cwq = np.cumsum(wts[o, r]) / wts[:, r].sum()
-                        qs[r] = vals[o, r][min(int(np.searchsorted(cwq, q)), len(o) - 1)]
-                    q_rows.append(dict(convention=conv, end=end, unit=unit, quantile=q, net_cost_usd=qs[0], se=sdr(qs)))
-            if conv == "A":
-                case = lines["union"][end]["cost_bn"]
+                    for c in cats + ["schools_per_head"]:
+                        mean = (amt[end][c][sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
+                        mean_rows.append(dict(end=end, breakdown=name, cell=cell, category=c, in_B=c in b_cats,
+                                              net_cost_per_member_usd=mean[0], se=sdr(mean)))
+                        if c == PENSION:
+                            reps["pension"][(end, name, cell)] = mean
+        npos_rows, conc_rows, q_rows, ctrl_rows = [], [], [], []
+        hh_out = pd.DataFrame({"PH_SEQ": hh_ids, "union_members": members, "weight": Wh[:, 0], **{k: v for k, v in breaks.items() if k != "all"},
+                               "head_is_reference_person": head_is_ref, "reference_person_in_union": ref_in_union})
+        for conv, cs in conv_cats.items():
+            for end in ENDS:
+                person = sum(amt[end][c] for c in cs)  # n_u x 161, $ per person
+                hcost = np.stack([np.bincount(hh_code, weights=person[:, r], minlength=H) for r in range(person.shape[1])], axis=1)
+                hweighted = np.stack([np.bincount(hh_code, weights=person[:, r] * Wu[:, r], minlength=H) for r in range(person.shape[1])], axis=1)
+                per_member = hcost / members[:, None]
+                hh_out[f"{conv}_{end}_household_cost_usd"] = hcost[:, 0]
+                hh_out[f"{conv}_{end}_per_member_usd"] = per_member[:, 0]
                 for c in cs:
-                    ctrl_rows.append(dict(end=end, item=c, bn=float((amt[end][c][:, 0] * Wu[:, 0]).sum() / 1e9),
-                                          assigned=True))
-                for g in GENS:
-                    ctrl_rows.append(dict(end=end, item=f"lane_constants_{g}", bn=residual[end].get(g, 0.0), assigned=False))
-                ctrl_rows.append(dict(end=end, item="unassignable_pieces", bn=float(unassigned[end][0]), assigned=False))
-                ctrl_rows.append(dict(end=end, item="households_sum", bn=float(total[0]), assigned=True))
-                ctrl_rows.append(dict(end=end, item="case", bn=case, assigned=None))
-                ctrl_rows.append(dict(end=end, item="households_sum_plus_residual_minus_case",
-                                      bn=float(total[0]) + sum(residual[end].values()) + float(unassigned[end][0]) - case,
-                                      assigned=None))
+                    hh_out[f"{conv}_{end}_{c}_usd"] = np.bincount(hh_code, weights=amt[end][c][:, 0], minlength=H)
+                npos_p = hcost[hh_code] < 0  # members in net-contributor households, per replicate
+                total = hweighted.sum(axis=0) / 1e9
+                # Net-positive shares by breakdown (members weighted by their person weights).
+                for name, labels in list(breaks.items()) + [("own_generation", None)]:
+                    lab_p = own_gen if labels is None else labels[hh_code]
+                    for cell in sorted(set(lab_p)):
+                        sel = lab_p == cell
+                        wsel = Wu[sel]
+                        share = (npos_p[sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
+                        mean_pm = (person[sel] * wsel).sum(axis=0) / wsel.sum(axis=0)
+                        hsel = np.zeros(H, bool)
+                        hsel[np.unique(hh_code[sel])] = True
+                        hshare = ((hcost[hsel] < 0) * Wh[hsel]).sum(axis=0) / Wh[hsel].sum(axis=0)
+                        cell_bn = (person[sel] * wsel).sum(axis=0) / 1e9
+                        npos_rows.append(dict(convention=conv, end=end, breakdown=name, cell=cell, records=int(sel.sum()),
+                                              households=int(hsel.sum()), members_m=wsel[:, 0].sum() / 1e6,
+                                              share_members_net_positive=share[0], se=sdr(share),
+                                              share_households_net_positive=hshare[0], se_households=sdr(hshare),
+                                              net_cost_per_member_usd=mean_pm[0], se_per_member=sdr(mean_pm),
+                                              cell_net_cost_bn=cell_bn[0], se_cell_bn=sdr(cell_bn),
+                                              small_cell=bool(sel.sum() < 200)))
+                        reps["share"][(conv, end, name, cell)] = share
+                # Concentration: households ranked by household net cost, counted by household weight.
+                stats = {k: np.zeros(W.shape[1]) for k in ("top10_share_of_total", "top20_share_of_total",
+                                                            "top10_members_share", "top20_members_share",
+                                                            "net_cost_households_bn", "net_contributor_households_bn",
+                                                            "share_households_net_positive")}
+                for r in range(W.shape[1]):
+                    order = np.argsort(-hcost[:, r], kind="stable")
+                    cw = np.cumsum(Wh[order, r]) / Wh[:, r].sum()
+                    contrib = hweighted[order, r]
+                    mem = (members * Wh[:, r])[order]
+                    for p, key in ((0.1, "10"), (0.2, "20")):
+                        full = cw <= p
+                        j = int(full.sum())
+                        prev = cw[j - 1] if j else 0.0
+                        frac = (p - prev) / (cw[j] - prev) if j < H else 0.0
+                        stats[f"top{key}_share_of_total"][r] = (contrib[full].sum() + frac * contrib[j]) / contrib.sum()
+                        stats[f"top{key}_members_share"][r] = (mem[full].sum() + frac * mem[j]) / mem.sum()
+                    stats["net_cost_households_bn"][r] = hweighted[hcost[:, r] > 0, r].sum() / 1e9
+                    stats["net_contributor_households_bn"][r] = hweighted[hcost[:, r] < 0, r].sum() / 1e9
+                    stats["share_households_net_positive"][r] = Wh[hcost[:, r] < 0, r].sum() / Wh[:, r].sum()
+                stats["total_bn"] = total
+                for k, v in stats.items():
+                    conc_rows.append(dict(convention=conv, end=end, statistic=k, value=v[0], se=sdr(v)))
+                # Quantiles: per member (members weighted by person weights) and per household (household weights).
+                for unit, vals, wts in (("per_member", per_member[hh_code], Wu), ("household", hcost, Wh)):
+                    for q in (0.1, 0.25, 0.5, 0.75, 0.9):
+                        qs = np.zeros(W.shape[1])
+                        for r in range(W.shape[1]):
+                            o = np.argsort(vals[:, r], kind="stable")
+                            cwq = np.cumsum(wts[o, r]) / wts[:, r].sum()
+                            qs[r] = vals[o, r][min(int(np.searchsorted(cwq, q)), len(o) - 1)]
+                        q_rows.append(dict(convention=conv, end=end, unit=unit, quantile=q, net_cost_usd=qs[0], se=sdr(qs)))
+                if conv == "A":
+                    case = lines["union"][end]["cost_bn"]
+                    for c in cs:
+                        ctrl_rows.append(dict(end=end, item=c, bn=float((amt[end][c][:, 0] * Wu[:, 0]).sum() / 1e9),
+                                              assigned=True))
+                    for g in GENS:
+                        ctrl_rows.append(dict(end=end, item=f"lane_constants_{g}", bn=residual[end].get(g, 0.0), assigned=False))
+                    ctrl_rows.append(dict(end=end, item="unassignable_pieces", bn=float(unassigned[end][0]), assigned=False))
+                    ctrl_rows.append(dict(end=end, item="households_sum", bn=float(total[0]), assigned=True))
+                    ctrl_rows.append(dict(end=end, item="case", bn=case, assigned=None))
+                    ctrl_rows.append(dict(end=end, item="households_sum_plus_residual_minus_case",
+                                          bn=float(total[0]) + sum(residual[end].values()) + float(unassigned[end][0]) - case,
+                                          assigned=None))
+        return dict(npos=npos_rows, conc=conc_rows, q=q_rows, ctrl=ctrl_rows, means=mean_rows, hh=hh_out, reps=reps)
+
+    breaks = dict(head_breaks)
+    if alt is not None:
+        # The case's own status flag (state-aware, the one its on-books share and the accrual's claim share read).
+        breaks[CASE_FLAG] = np.where(head_lab == 0, np.where(unauth_case[head_rows], "unauthorized", "legal_immigrant"),
+                                     np.where(head_lab > 0, "us_born", "outside_union"))
+    results = {name: household_stats(a_, breaks) for name, a_ in arms.items()}
 
     print(f"  households: {H:,} with {len(rows_u):,} union person records; reference person outside the union: "
           f"{int((~ref_in_union).sum())} households; union members all minors (head = reference person): {int(minor_only.sum())}")
     gate("every head is an adult", bool((age[head_rows] >= 15).all()), f"youngest head {int(age[head_rows].min())}")
     print(f"  worst gaps ({arm}): " + "; ".join(f"{k} {v:.1e}" for k, v in gaps.items()), flush=True)
+
+    def frame_of(rows):
+        df = pd.DataFrame(rows)
+        for c in df.columns:
+            if df[c].dtype == float:
+                df[c] = df[c].round(6)
+        return df
+
+    def write(name, rows):
+        frame_of(rows).to_csv(out_dir / name, index=False, lineterminator="\n", quoting=csv.QUOTE_MINIMAL)
+
+    flat = results["flat"]
+    files = dict(zip(FLAT_FILES, [flat["npos"], flat["conc"], flat["q"], flat["ctrl"], flat["means"], scaling]))
+    if alt is not None:
+        # The flat arm without the case-flag rows is the flat run's output, byte for byte.
+        differ = []
+        for name, rows in files.items():
+            rows = [r for r in rows if r.get("breakdown") != CASE_FLAG]
+            text = frame_of(rows).to_csv(index=False, lineterminator="\n", quoting=csv.QUOTE_MINIMAL).encode()
+            if not (out_dir / name).exists() or (out_dir / name).read_bytes() != text:
+                differ.append(name)
+        gate(f"the flat arm reproduces the flat run's {len(files)} files in {out_dir.relative_to(HERE)}/ byte for byte",
+             not differ, ", ".join(differ) or "identical")
     if FAILS:
         print(f"✗ {len(FAILS)} gate(s) failed, nothing written: {FAILS}")
         sys.exit(1)
 
     out_dir.mkdir(parents=True, exist_ok=True)
-
-    def write(name, rows):
-        df = pd.DataFrame(rows)
-        for c in df.columns:
-            if df[c].dtype == float:
-                df[c] = df[c].round(6)
-        df.to_csv(out_dir / name, index=False, lineterminator="\n", quoting=csv.QUOTE_MINIMAL)
-
-    write("net_positive_shares.csv", npos_rows)
-    write("concentration.csv", conc_rows)
-    write("household_balance_quantiles.csv", q_rows)
-    write("control.csv", ctrl_rows)
-    write("category_means.csv", mean_rows)
-    write("line_scaling.csv", scaling)
     cache_dir.mkdir(parents=True, exist_ok=True)
-    hh_out.to_parquet(cache_dir / "households.parquet", index=False)
-    print(f"  ✓ all household gates passed; wrote {out_dir.relative_to(HERE)}/ and {cache_dir.relative_to(HERE)}/households.parquet")
+    if alt is None:
+        for name, rows in files.items():
+            write(name, rows)
+        flat["hh"].to_parquet(cache_dir / "households.parquet", index=False)
+        print(f"  ✓ all household gates passed; wrote {out_dir.relative_to(HERE)}/ and {cache_dir.relative_to(HERE)}/households.parquet")
+        return
+
+    person = results["person"]
+    for name, rows in zip(FLAT_FILES[:5], [person["npos"], person["conc"], person["q"], person["ctrl"], person["means"]]):
+        write(name.replace(".csv", f"{PERSON_SUFFIX}.csv"), rows)
+    # Every arm's net-positive shares against the flat arm's, conventions A and B; the difference's standard error
+    # from the same replicates.
+    base = flat["reps"]
+    info = {(r["convention"], r["end"], r["breakdown"], r["cell"]): r for r in flat["npos"]}
+    arm_rows = []
+    for name in ["flat"] + PERSON_ARMS + [PAYROLL_DIAGNOSTIC]:
+        reps = results[name]["reps"]
+        for (conv, end, bname, cell), share in reps["share"].items():
+            if conv not in ("A", "B"):
+                continue
+            diff = share - base["share"][(conv, end, bname, cell)]
+            pen = reps["pension"][(end, bname, cell)]
+            r0 = info[(conv, end, bname, cell)]
+            arm_rows.append(dict(arm=name, convention=conv, end=end, breakdown=bname, cell=cell, records=r0["records"],
+                                 members_m=r0["members_m"], share_members_net_positive=share[0], se=sdr(share),
+                                 diff_vs_flat=diff[0], se_diff=sdr(diff), pension_accrual_per_member_usd=pen[0],
+                                 se_pension_accrual=sdr(pen), small_cell=r0["small_cell"]))
+    write("person_accrual_arms.csv", arm_rows)
+    person["hh"].to_parquet(cache_dir / f"households{PERSON_SUFFIX}.parquet", index=False)
+    print(f"  ✓ all household gates passed; wrote the person-accrual files in {out_dir.relative_to(HERE)}/ "
+          f"(*{PERSON_SUFFIX}.csv, person_accrual_arms.csv) and {cache_dir.relative_to(HERE)}/households{PERSON_SUFFIX}.parquet")
 
 
 if __name__ == "__main__":
@@ -705,5 +895,9 @@ if __name__ == "__main__":
     parser.add_argument("--case", choices=list(CASE_DIRS), default="sept27",
                         help="sept27 (default): the September 27 case; sept29: the main case adopted on 2026-09-29, "
                              "row-4 weights only, written to derived/sept29/")
+    parser.add_argument("--accrual", choices=["flat", "person"], default="flat",
+                        help="flat (default): the pension accrual by OASDI and HI receipts; person: by the pension "
+                             "lane's person model (person_accrual.py), new *_person_accrual files beside the flat ones "
+                             "(--case sept29 only)")
     args = parser.parse_args()
-    main(args.weights, args.case)
+    main(args.weights, args.case, args.accrual)
