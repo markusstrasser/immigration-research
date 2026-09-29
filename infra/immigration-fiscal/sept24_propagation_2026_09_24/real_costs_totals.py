@@ -67,10 +67,20 @@ of the case's pairing with every row on row 4's count and the crash and congesti
 5+ (restated_pairing.csv, section pairing_5plus), after gates that the lane started from this script's own pairing
 and divided by the same count.
 
+September 29 (sept29, main_case_2026_09_29, candidate v4 adopted; derived/sept29/). The social rows are the
+September 27 case's: the same items, and the long-run congestion figures, which the adopted lane flags as not
+recomputed since v4 keyed roads by vehicle miles (summary.json beside_the_account.congestion.not_recomputed; the flag
+is carried into the notes). The fiscal rows are the case's, from band_variants.cjs: its Hispanic footing re-prices the
+state-priced justice line on the raw-coded key. Column pairing_on_priced_count takes the population lane's restated
+social rows (section pairing_5plus less its fiscal row, which is the September 27 case's) and adds the case's own
+fiscal rows, after gates that the lane's fiscal rows are the September 27 bands and its published social rows are this
+script's social rows for the case. The cash set (the pension switch off) runs beside the case, with its own pairing on
+the priced count, never in the central total.
+
 Inputs: DIR/band_variants.csv (node band_variants.cjs --case CASE: engine bands on the September 23 case,
 September 24 and the case) and the channel lanes' derived files (PATHS). Reads only; writes
 DIR/real_costs_totals.csv and .json. Run from the repository root, after band_variants.cjs:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py [--case sept24|sept26|sept26_schools|sept27] [--out-dir DIR]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py [--case sept24|sept26|sept26_schools|sept27|sept29] [--out-dir DIR]
 """
 from __future__ import annotations
 
@@ -103,11 +113,13 @@ PATHS = dict(
 )
 # Each case's main-case lane and default output directory (None: --out-dir only), as in band_variants.cjs.
 LANES = dict(sept24="main_case_2026_09_24", sept26="main_case_2026_09_26",
-             sept26_schools="main_case_schools_full_2026_09_26", sept27="main_case_long_run_2026_09_27")
+             sept26_schools="main_case_schools_full_2026_09_26", sept27="main_case_long_run_2026_09_27",
+             sept29="main_case_2026_09_29")
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=FISCAL / "sept26_propagation_2026_09_26" / "derived",
-                sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived")
+                sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29")
 # Cases whose roads respond: congestion beside the account is the response lane's, by band end.
-LONG_RUN = dict(sept27=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json")
+LONG_RUN = dict(sept27=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
+                sept29=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json")
 # Cases whose social rows carry added social items for the union: (lane items.csv, item ids, decision, kind) per
 # source. A source with a `measure` column adds its absolute rows and reports its normalized rows beside. Benefits
 # are negative costs; the scale lane's summary is read through scale_rows().
@@ -129,14 +141,25 @@ SOCIAL_ITEMS = dict(sept27=(
     (FISCAL / "trade_networks_2026_09_28/derived/items.csv", ("total_trade_travel_fdi",),
      "decisions/2026-09-28-social-items-more-benefits.md", "benefit"),
 ))
+SOCIAL_ITEMS["sept29"] = SOCIAL_ITEMS["sept27"]
 # Cases whose published pairing is restated on the priced count (population_basis_2026_09_29).
-RESTATED = dict(sept27=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv")
+RESTATED = dict(sept27=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv",
+                sept29=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv")
+# A case whose social rows the population lane restated on another case's pairing: that case. The restated social
+# rows (pairing less its fiscal row) then carry over, and the case adds its own fiscal rows.
+RESTATED_BASE = dict(sept29="sept27")
 UNION = ("mexican_origin", "union")  # the lanes' labels for the same 40.9m group
 # Runs of band_variants.cjs beside a case, never in its band (the case's column; the row label, its note).
 BESIDE = dict(capital_at_7pct=("capital_at_7pct", "the return on public capital at the reported 7% on every component; "
                                "beside the central total, never in it"),
               enterprises_out_option_a=("enterprises_out_option_a", "option A: no enterprise capital, the enterprise "
                                         "surplus receipt at 0; beside the central total, never in it"))
+# The runs beside each case (BESIDE's entries, plus the cash set from September 29).
+BESIDE_RUNS = dict(sept27=BESIDE, sept29=dict(BESIDE, cash_set=(
+    "cash_set", "the cash set: the pension switch off, social security and Medicare's Part A at the group's current "
+    "benefits (main_case_2026_09_29 band row cash_set); beside the central total, never in it")))
+# Beside runs whose pairing is also restated on the priced count.
+RESTATED_BESIDE = dict(sept29=("cash_set",))
 MIXED_METHOD = ("theta 0.4977 of each group attributed Hispanic "
                 "(NIBRS TX+AZ mean Hispanic fraction of mixed groups)")
 FAILURES: list[str] = []
@@ -274,8 +297,9 @@ def half_up(x, places):
 def parse_args():
     ap = argparse.ArgumentParser(description="Real-costs totals (memo §7, §7b) on an adopted main case.")
     ap.add_argument("--case", choices=tuple(LANES), default="sept27",
-                    help="sept27: the main case (default); sept26_schools: schools at full average cost; sept26: the "
-                         "one-year scenario (--out-dir only); sept24: the committed September 24 run")
+                    help="sept27: the September 27 case (default); sept29: the main case adopted 2026-09-29; "
+                         "sept26_schools: schools at full average cost; sept26: the one-year scenario (--out-dir only); "
+                         "sept24: the committed September 24 run")
     ap.add_argument("--out-dir", type=Path, default=None,
                     help="the directory band_variants.cjs wrote this case's bands to; the outputs go there too")
     args = ap.parse_args()
@@ -344,8 +368,15 @@ def main():
              abs(nc["b1_lanes_fixed_bn"] - c["congestion"]) < 1e-9
              and all(abs(a - b) < 1e-9 for a, b in zip(nc["b1_factorial_bn"], (c["congestion_low"], c["congestion_high"]))),
              f"{nc['b1_lanes_fixed_bn']:.4f}, {nc['b1_factorial_bn'][0]:.4f}-{nc['b1_factorial_bn'][1]:.4f}")
-        for run in BESIDE:
+        for run in BESIDE_RUNS[case]:
             gate(f"band file has the {case}_{run} run beside the case", (f"{case}_{run}", "adopted") in bands.index)
+    # A case whose summary flags its congestion figure as carried over, not recomputed (September 29: roads by miles).
+    stale_congestion = (summaries[case].get("beside_the_account", {}).get("congestion", {}).get("not_recomputed")
+                        if later else None)
+    if stale_congestion:
+        gate("the flagged congestion figure is the one this case uses", cong[case] == (
+            summaries[case]["beside_the_account"]["congestion"]["low_end"]["congestion_bn"],
+            summaries[case]["beside_the_account"]["congestion"]["high_end"]["congestion_bn"]), stale_congestion)
     # The added social items by case: (central, stacked low, stacked high); zero before September 28.
     # §7 carries every added item; §7b's social rows carry the cost items only (its last column adds the scale net).
     items = {k: (0.0, 0.0, 0.0) for k in cols}
@@ -446,7 +477,7 @@ def main():
         # The published pairing is the case's: decision 4's victims on the Hispanic footing at the low end, the
         # custody footing at the high end.
         print("[§7: variants beside the central total]")
-        for run, (column, note) in BESIDE.items():
+        for run, (column, note) in BESIDE_RUNS[case].items():
             k = f"{case}_{run}"
             f_cust, f_hisp = band(k, "adopted"), band(k, "justice_raw_coding")
             s_cust = social(c, victims["custody"], congestion=cong[case], items=items[case][0])
@@ -464,21 +495,72 @@ def main():
     if case in RESTATED:
         # The pairing on the population the account prices: the population lane restates each row, then divides.
         print("[§7: the pairing on the priced count]")
-        own = (fiscal[case]["hispanic"][0] + socm[case][0],
-               fiscal[case]["custody"][1] + social(c, victims["custody"], congestion=cong[case], items=items[case][0])[1])
+        own_social = (socm[case][0], social(c, victims["custody"], congestion=cong[case], items=items[case][0])[1])
+        own = (fiscal[case]["hispanic"][0] + own_social[0], fiscal[case]["custody"][1] + own_social[1])
         lane = {(r["section"], r["end"]): r for r in csv.DictReader(paths["restated"].open())}
         note = (f"{rel(paths['restated'])} section pairing_5plus: every row on audit row 4's count, the crash and "
                 "congestion rows' NHTS ratios on persons aged 5+; low end Hispanic footing with decision 4's mixed-group "
                 "victims, high end custody footing")
-        for i, end in enumerate(("low", "high")):
-            p5, m5 = lane[("pairing_5plus", end)], lane[("per_member_5plus", end)]
-            gate(f"the population lane restated this script's own pairing ({end})",
-                 abs(float(p5["published"]) - own[i]) < 1e-6, f"{p5['published']} / {own[i]:.6f}")
-            gate(f"the population lane divided by the priced count ({end})",
-                 abs(float(m5["restated"]) - float(p5["restated"]) / pop[case]) < 1e-6, f"{m5['restated']} $k")
-            add("7", "pairing_on_priced_count", f"published pairing ({end})", {case: float(p5["restated"])}, note=note)
-            add("7", "pairing_on_priced_count", f"published pairing per group member ({end})",
-                {case: float(p5["restated"]) / pop[case]}, unit="$k", note=note)
+        base = RESTATED_BASE.get(case)
+        if base is None:
+            for i, end in enumerate(("low", "high")):
+                p5, m5 = lane[("pairing_5plus", end)], lane[("per_member_5plus", end)]
+                gate(f"the population lane restated this script's own pairing ({end})",
+                     abs(float(p5["published"]) - own[i]) < 1e-6, f"{p5['published']} / {own[i]:.6f}")
+                gate(f"the population lane divided by the priced count ({end})",
+                     abs(float(m5["restated"]) - float(p5["restated"]) / pop[case]) < 1e-6, f"{m5['restated']} $k")
+                add("7", "pairing_on_priced_count", f"published pairing ({end})", {case: float(p5["restated"])}, note=note)
+                add("7", "pairing_on_priced_count", f"published pairing per group member ({end})",
+                    {case: float(p5["restated"]) / pop[case]}, unit="$k", note=note)
+        else:
+            # The lane restated the base case's pairing. Its fiscal row is the base case's band (factor 1), so the
+            # pairing less that row is the restated social rows, which this case shares; the case adds its own fiscal
+            # rows. Tolerance 2e-6: the lane prints six decimals, and each social figure is a difference of two.
+            by_item = {(r["section"], r["item"], r["end"]): r for r in csv.DictReader(paths["restated"].open())}
+            paths["restated_base_bands"] = OUT_DIRS[base] / "band_variants.csv"
+            base_bands = pd.read_csv(paths["restated_base_bands"]).set_index(["case", "variant"])
+            base_fiscal = (float(base_bands.loc[(base, "justice_raw_coding"), "cost_low_bn"]),
+                           float(base_bands.loc[(base, "adopted"), "cost_high_bn"]))
+            restated_social = []
+            for i, end in enumerate(("low", "high")):
+                p5, fr = lane[("pairing_5plus", end)], by_item[("row", "fiscal", end)]
+                gate(f"the population lane's fiscal row is the {base} case's band, unrestated ({end})",
+                     abs(float(fr["published"]) - base_fiscal[i]) < 1e-6 and fr["restated"] == fr["published"],
+                     f"{fr['published']} / {base_fiscal[i]:.6f}")
+                soc_published = float(p5["published"]) - float(fr["published"])
+                gate(f"the population lane's published social rows are this case's social rows ({end}, 2e-6)",
+                     abs(soc_published - own_social[i]) < 2e-6, f"{soc_published:.6f} / {own_social[i]:.6f}")
+                restated_social.append(float(p5["restated"]) - float(fr["restated"]))
+            note_case = (f"the case's fiscal rows (band_variants.csv: justice_raw_coding low, adopted high) plus the "
+                         f"social rows of {rel(paths['restated'])} section pairing_5plus less its fiscal row (the {base} "
+                         "case's): every social row on audit row 4's count, the crash and congestion rows' NHTS ratios on "
+                         "persons aged 5+; low end Hispanic footing with decision 4's mixed-group victims, high end custody "
+                         "footing")
+            for i, end in enumerate(("low", "high")):
+                total = own[i] - own_social[i] + restated_social[i]
+                add("7", "pairing_on_priced_count", f"published pairing ({end})", {case: total}, note=note_case)
+                add("7", "pairing_on_priced_count", f"published pairing per group member ({end})", {case: total / pop[case]},
+                    unit="$k", note=note_case)
+                add("7", "pairing_on_priced_count", f"social rows on the priced count ({end})", {case: restated_social[i]},
+                    note=f"{rel(paths['restated'])} pairing_5plus less row fiscal, {end}")
+            held = (case, "justice_raw_coding_state_price_held")
+            if held in bands.index:
+                # The alternative to band_variants.cjs's re-pricing: the state-priced justice line held at the case's key.
+                low_held = band(*held)[0] + restated_social[0]
+                note_held = ("alternative, beside: the low end with the state-priced justice line held at the case's use-key "
+                             "amount (band_variants.csv justice_raw_coding_state_price_held); the central re-prices it on the "
+                             "raw-coded key")
+                add("7", "pairing_on_priced_count_state_price_held", "published pairing (low)", {case: low_held}, note=note_held)
+                add("7", "pairing_on_priced_count_state_price_held", "published pairing per group member (low)",
+                    {case: low_held / pop[case]}, unit="$k", note=note_held)
+            for run in RESTATED_BESIDE.get(case, ()):
+                k, (column, note_run) = f"{case}_{run}", BESIDE_RUNS[case][run]
+                f_run = (band(k, "justice_raw_coding")[0], band(k, "adopted")[1])
+                for i, end in enumerate(("low", "high")):
+                    add("7", f"pairing_on_priced_count_{column}", f"published pairing ({end})",
+                        {case: f_run[i] + restated_social[i]}, note=f"{note_run}; the social rows as in pairing_on_priced_count")
+                    add("7", f"pairing_on_priced_count_{column}", f"published pairing per group member ({end})",
+                        {case: (f_run[i] + restated_social[i]) / pop[case]}, unit="$k", note=note_run)
 
     print("[§7b: custody footing, benefits priced]")
     soc = {k: social(c, c["victims_custody"], congestion=cong[k], items=cost_items[k][0]) for k in cols}
@@ -549,7 +631,9 @@ def main():
             full_span=dict(zip(("low_end_lowest", "high_end_highest"), cong_span[case])),
             earlier_cases=dict(central=c["congestion"], full_span=[c["congestion_low"], c["congestion_high"]]),
             source=rel(LONG_RUN[case]))
-        doc["beside_the_central_total"] = {f"{case}_{run}": note for run, (column, note) in BESIDE.items()}
+        doc["beside_the_central_total"] = {f"{case}_{run}": note for run, (column, note) in BESIDE_RUNS[case].items()}
+        if stale_congestion:
+            doc["congestion_by_band_end_bn"]["not_recomputed"] = stale_congestion
     if case in SOCIAL_ITEMS:
         doc["social_items_in_the_social_rows"] = dict(
             case=case, central_bn=items[case][0], stacked_low_bn=items[case][1], stacked_high_bn=items[case][2],

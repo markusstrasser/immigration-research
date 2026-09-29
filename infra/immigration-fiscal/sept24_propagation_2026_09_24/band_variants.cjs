@@ -20,8 +20,10 @@
  *   sept26          main_case_2026_09_26, the one-year scenario        -> --out-dir DIR only
  *   sept26_schools  main_case_schools_full_2026_09_26, schools at full
  *                   average cost                                       -> ../sept26_propagation_2026_09_26/derived/
- *   sept27          main_case_long_run_2026_09_27, the main case       -> ../sept27_propagation_2026_09_27/derived/
- *                   (default)
+ *   sept27          main_case_long_run_2026_09_27, the September 27    -> ../sept27_propagation_2026_09_27/derived/
+ *                   case (default)
+ *   sept29          main_case_2026_09_29, the main case adopted        -> derived/sept29/
+ *                   2026-09-29 (candidate v4)
  * From September 27 a specification also carries its reading, the two long-run lines' responses, rental
  * assistance, the enterprise receipt's response and the rate of the return on public capital, all from
  * meta.responses and meta.capital_return; cost() is the package's evaluateFull() cost, the engine's cost
@@ -39,7 +41,22 @@
  * From September 27 the 7% and option A runs reproduce summary.json's beside_the_account bands (1e-9) and
  * main_case_bands.csv's capital_return_at_7pct and enterprises_out_option_a rows (1e-4).
  *
- * Run from anywhere: node band_variants.cjs [--case sept24|sept26|sept26_schools|sept27] [--out-dir DIR]
+ * September 29 (v4). A specification's line_responses are rebuilt from every entry of meta.responses (13 entries:
+ * the four above, four more receipt overrides and five correction lines), not from three named ones. Two things
+ * are new:
+ *   - State prices follow the justice key. The payload prices public order and safety at the states' price level
+ *     with a correction line whose group amount is national_gap_bn x the parent line's key share on its evaluated
+ *     key (meta.state_pricing). A justice variant evaluates the parent on another key (raw coding) or moves its use
+ *     key (the grid ends, CBP held fixed), so it re-prices that line on the variant's key, as the rule states
+ *     (statePriced). Gates: the rule rebuilds the payload's amounts on the case's own key (1e-9); each variant then
+ *     moves the corrected model by the uncorrected model's move plus the re-pricing's own effect (1e-9). The
+ *     alternative, the line held at the case's key, is written beside as <variant>_state_price_held.
+ *   - The cash set runs beside the case, never in its band: the payload with the pension switch off (the
+ *     adopted lane reads the candidate's corrections_v4_cash.json, main_case.cjs), costed through the package's
+ *     forPayload() of it. Gates: its responses, capital rules and state pricing equal the case payload's; its
+ *     adopted variant reproduces summary.json's cash_set band (1e-9) and main_case_bands.csv's cash_set row (1e-4).
+ *
+ * Run from anywhere: node band_variants.cjs [--case sept24|sept26|sept26_schools|sept27|sept29] [--out-dir DIR]
  *   -> DIR/band_variants.csv, DIR/band_variants.json
  */
 "use strict";
@@ -54,6 +71,9 @@ const CASES = {
     out: path.join(__dirname, "..", "sept26_propagation_2026_09_26", "derived") },
   sept27: { lane: "main_case_long_run_2026_09_27",
     out: path.join(__dirname, "..", "sept27_propagation_2026_09_27", "derived") },
+  // cash: the cash set's payload, which the adopted lane's main_case.cjs reads from the candidate lane.
+  sept29: { lane: "main_case_2026_09_29", out: path.join(__dirname, "derived", "sept29"),
+    cash: "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json" },
 };
 const argv = process.argv.slice(2);
 function opt(name, dflt) {
@@ -95,6 +115,7 @@ if (LATER) {
   Object.assign(SOURCES, { case_corrections: `${LANE}/derived/corrections.json`, case_summary: `${LANE}/derived/summary.json`,
     case_bands: `${LANE}/derived/main_case_bands.csv` });
 }
+if (CASES[CASE].cash) SOURCES.cash_corrections = CASES[CASE].cash;
 const cj = readJson(SOURCES.justice);
 const JUSTICE = { central: cj.central.change_bn, raw_coding: cj.one_at_a_time_change_bn.scaling_raw,
   grid_low: cj.range_change_bn[0], grid_high: cj.range_change_bn[1], cbp_fixed: cj.one_at_a_time_change_bn.cbp_zero };
@@ -114,16 +135,50 @@ function specsWith(specs, change) {
     ...(change.justice ? { justice: change.justice } : {}),
     ...(change.uc ? { uc: change.uc[s.uc] } : {}) }));
 }
+// State-priced correction lines (September 29 on; meta.state_pricing.lines on the model the payload corrected): each
+// line's group amount is national_gap_bn x its parent's key share on the parent's evaluated key. statePriced(m,
+// parent, key) re-prices the lines of that parent on `key` of model m, in both allocations; other residents' amount
+// moves the other way, as a payload edit moves it. A model without such lines (every case before September 29, and
+// every uncorrected model) comes back unchanged.
+const JUSTICE_LINE = "public_order_safety";
+function statePriced(m, parent, key) {
+  const lines = ((m.corrections && m.corrections.state_pricing) || {}).lines || [];
+  const mine = lines.filter((l) => l.parent === parent);
+  if (!mine.length) return m;
+  const out = JSON.parse(JSON.stringify(m));
+  const p = out.spending.lines.find((l) => l.id === parent);
+  if (!p || !p.keys[key]) throw new Error(`[BLOCKED] state pricing: no key ${parent}/${key}`);
+  for (const sp of mine) {
+    const line = out.spending.lines.find((l) => l.id === sp.line);
+    if (!line || !line.keys.k || !Number.isFinite(sp.national_gap_bn)) throw new Error(`[BLOCKED] state pricing: unreadable line ${sp.line}`);
+    for (const a of ["personal", "shared"]) {
+      const next = sp.national_gap_bn * p.keys[key][a].target_bn / p.national_bn;
+      line.keys.k[a].other_bn -= next - line.keys.k[a].target_bn;
+      line.keys.k[a].target_bn = next;
+    }
+  }
+  return out;
+}
+// The justice variants re-price the state-priced justice line on the key they evaluate (the payload's rule).
+const onKey = (key, change) => (m) => statePriced(change ? change(m) : m, JUSTICE_LINE, key);
 const grid = (end) => (m) => shiftKey(m, "public_order_safety", "use", JUSTICE[end] - JUSTICE.central);
 const VARIANTS = [
   // name, spec change, model change, September 23 row it must reproduce (null: none published)
   ["adopted", {}, null, "adopted"],
-  ["justice_raw_coding", RAW, null, "adopted_justice_raw_coding"],
-  ["justice_grid_low", {}, grid("grid_low"), "adopted_justice_grid_low"],
-  ["justice_grid_high", {}, grid("grid_high"), "adopted_justice_grid_high"],
-  ["justice_cbp_fixed", {}, grid("cbp_fixed"), "adopted_justice_cbp_fixed"],
+  ["justice_raw_coding", RAW, onKey(RAW.justice), "adopted_justice_raw_coding"],
+  ["justice_grid_low", {}, onKey("use", grid("grid_low")), "adopted_justice_grid_low"],
+  ["justice_grid_high", {}, onKey("use", grid("grid_high")), "adopted_justice_grid_high"],
+  ["justice_cbp_fixed", {}, onKey("use", grid("cbp_fixed")), "adopted_justice_cbp_fixed"],
   ["uncompensated_use_0.7", UC07, null, "adopted_uncompensated_use_0.7"],
-  ["justice_grid_low_and_uncompensated_use_0.7", UC07, grid("grid_low"), null],
+  ["justice_grid_low_and_uncompensated_use_0.7", UC07, onKey("use", grid("grid_low")), null],
+];
+// Beside a state-priced run, each justice variant with the justice line held at the case's key (the alternative).
+const HELD = [
+  ["justice_raw_coding", RAW, null],
+  ["justice_grid_low", {}, grid("grid_low")],
+  ["justice_grid_high", {}, grid("grid_high")],
+  ["justice_cbp_fixed", {}, grid("cbp_fixed")],
+  ["justice_grid_low_and_uncompensated_use_0.7", UC07, grid("grid_low")],
 ];
 
 const published23 = {};
@@ -132,10 +187,29 @@ csvRows(SOURCES.bands23).filter((r) => r.profile === "cbo_category_lag_non_schoo
 const summary24 = readJson(SOURCES.summary24);
 const corrected = Engine.applyCorrections(MODEL, readJson(SOURCES.corrections));
 
-// Runs: [name, model, specifications]. A later case's specifications are the September 24 ones with the
-// responses of its meta.responses in place of 0.59/0.84 and 0.63/0.66, value for value.
+// Every line and receipt response in meta.responses at a reading, keyed as stateFor takes them: a receipt entry sets
+// its override ("receipt:<id>"), an entry named for a spending line of the payload's model sets that line. On
+// September 27 that is the two long-run lines, rental assistance and the enterprise receipt; on September 29 also
+// v4's four receipt overrides and five correction lines. general_government is the specifications' gg; any other
+// entry with a reading that names no line stops the run.
+function lineResponsesAt(r, spendingIds, reading) {
+  const out = {};
+  for (const [id, e] of Object.entries(r)) {
+    if (!e || typeof e !== "object" || id === "general_government") continue;
+    if (e.receipt === true) {
+      if (e.override !== `receipt:${id}`) throw new Error(`[BLOCKED] meta.responses.${id}: override ${e.override}`);
+      out[e.override] = e[reading];
+    } else if (spendingIds.has(id)) out[id] = e[reading];
+    else if ("low" in e || "high" in e) throw new Error(`[BLOCKED] meta.responses.${id} has a reading but names no line`);
+  }
+  for (const [id, v] of Object.entries(out)) if (!Number.isFinite(v)) throw new Error(`[BLOCKED] meta.responses: ${id} has no ${reading} response`);
+  return out;
+}
+
+// Runs: [name, model, specifications, cost function]. A later case's specifications are the September 24 ones with
+// the responses of its meta.responses in place of 0.59/0.84 and 0.63/0.66, value for value.
 const RUNS = [["sept23", MODEL, P24.MAIN_SPECS], ["sept24", corrected, P24.MAIN_SPECS]];
-let payload = null, summary = null, published = null;
+let payload = null, summary = null, published = null, cashPayload = null;
 if (LATER) {
   console.log(`[${CASE}: ${LANE}]`);
   payload = readJson(SOURCES.case_corrections);
@@ -143,6 +217,7 @@ if (LATER) {
   const r = payload.meta.responses;
   const cap = payload.meta.capital_return || null;   // September 27 on
   gate("the payload's meta.responses equal the case's summary.json responses", JSON.stringify(r) === JSON.stringify(summary.responses));
+  const spendingIds = new Set(MODEL.spending.lines.map((l) => l.id).concat((payload.lines || []).map((l) => l.id)));
   const specs = P24.MAIN_SPECS.map((s) => {
     const low = s.gg === P.GG24[0];
     const spec = { ...s, gg: low ? r.general_government.low : r.general_government.high,
@@ -150,8 +225,7 @@ if (LATER) {
     if (!cap) return spec;
     const reading = low ? "low" : "high";
     return { ...spec, reading, rate: cap.rates[reading], long_run: r[P.LR_LINES[0]].variant, enterprises: cap.enterprises,
-      line_responses: { ...Object.fromEntries(P.LR_LINES.map((id) => [id, r[id][reading]])),
-        [P.RENTAL]: r[P.RENTAL][reading], [r[P.ENTERPRISE_LINE].override]: r[P.ENTERPRISE_LINE][reading] } };
+      line_responses: lineResponsesAt(r, spendingIds, reading) };
   });
   gate("the specifications at meta.responses equal the package's MAIN_SPECS", canon(specs) === canon(P.MAIN_SPECS),
     `general government ${r.general_government.low}/${r.general_government.high}, schools ${r.school.growth}/${r.school.decline}` +
@@ -170,16 +244,55 @@ if (LATER) {
       canon(specs7) === canon(specs.map((s) => ({ ...s, rate }))));
     RUNS.push([`${CASE}_capital_at_7pct`, corrected, specs7], [`${CASE}_enterprises_out_option_a`, corrected, P.specsFor({ enterprises: "A" })]);
   }
+  const sp = (payload.meta.state_pricing || {}).lines || [];
+  if (sp.length) {
+    // The rule, read on the case's own key, rebuilds the payload's state-priced lines.
+    const rebuilt = statePriced(corrected, JUSTICE_LINE, "use");
+    let gap = 0;
+    for (const l of sp.filter((x) => x.parent === JUSTICE_LINE)) {
+      const [a, b] = [corrected, rebuilt].map((mm) => mm.spending.lines.find((x) => x.id === l.line).keys.k);
+      for (const al of ["personal", "shared"]) gap = Math.max(gap, Math.abs(a[al].target_bn - b[al].target_bn), Math.abs(a[al].other_bn - b[al].other_bn));
+    }
+    gate(`state pricing: national_gap_bn x ${JUSTICE_LINE}'s use-key share rebuilds the payload's justice line (1e-9)`, gap < 1e-9,
+      `${sp.filter((x) => x.parent === JUSTICE_LINE).map((x) => x.line).join(", ")}; max |diff| ${gap.toExponential(1)}`);
+    const keyLines = new Set(P.componentsFor(null).flatMap((c) => [c.key.line, c.key.parent_line, c.key.correction_line,
+      c.key.denominator_line, c.response.line].concat(c.key.numerator_lines || [])));
+    gate("no capital component is keyed on, or responds as, a state-priced line", sp.every((l) => !keyLines.has(l.line)));
+  }
+  if (CASES[CASE].cash) {
+    // Beside the case, never in its band: the cash set (the pension switch off), through the package's forPayload().
+    cashPayload = readJson(SOURCES.cash_corrections);
+    for (const k of ["responses", "capital_return", "state_pricing"]) {
+      gate(`the cash set's payload has the case payload's meta.${k}`, JSON.stringify(cashPayload.meta[k]) === JSON.stringify(payload.meta[k]));
+    }
+    const PC = P.forPayload(cashPayload);
+    gate("the cash set's specifications are the case's", canon(PC.MAIN_SPECS) === canon(specs));
+    RUNS.push([`${CASE}_cash_set`, Engine.applyCorrections(MODEL, cashPayload), specs, PC.cost]);
+  }
 }
+
+// The justice line's state-price re-pricing, one specification: the change in each state-priced line's group amount
+// times its response. It is the whole of a re-priced variant's extra move when no capital component reads the line.
+function repricing(base, m, spec) {
+  const sp = ((base.corrections && base.corrections.state_pricing) || {}).lines || [];
+  return sp.filter((l) => l.parent === JUSTICE_LINE).reduce((acc, l) => {
+    const t = (mm) => mm.spending.lines.find((x) => x.id === l.line).keys.k[spec.allocation].target_bn;
+    if (!Number.isFinite(spec.line_responses[l.line])) throw new Error(`[BLOCKED] no response for ${l.line}`);
+    return acc + (t(m) - t(base)) * spec.line_responses[l.line];
+  }, 0);
+}
+const hasStatePrice = (m) => (((m.corrections && m.corrections.state_pricing) || {}).lines || []).some((l) => l.parent === JUSTICE_LINE);
 
 const rows = [];
 const bands = {};
 const perSpec = {};
-for (const [caseName, base, specs] of RUNS) {
+const extra = {};   // a re-priced variant's move beyond its held alternative, by specification
+for (const [caseName, base, specs, costOf] of RUNS) {
   console.log(`[${caseName}]`);
+  const price = costOf || cost;
   for (const [name, change, modelChange, ref] of VARIANTS) {
     const m = modelChange ? modelChange(base) : base;
-    const costs = specsWith(specs, change).map((s) => cost(m, s));
+    const costs = specsWith(specs, change).map((s) => price(m, s));
     const b = span(costs);
     bands[`${caseName}|${name}`] = b;
     perSpec[`${caseName}|${name}`] = costs;
@@ -190,6 +303,20 @@ for (const [caseName, base, specs] of RUNS) {
     } else {
       console.log(`  ${name.padEnd(44)} ${f4(b)}`);
     }
+    if (hasStatePrice(base) && modelChange) extra[`${caseName}|${name}`] = specsWith(specs, change).map((s) => repricing(base, m, s));
+  }
+  if (!hasStatePrice(base)) continue;
+  for (const [name, change, modelChange] of HELD) {
+    const m = modelChange ? modelChange(base) : base;
+    const costs = specsWith(specs, change).map((s) => price(m, s));
+    const b = span(costs), held = `${name}_state_price_held`;
+    bands[`${caseName}|${held}`] = b;
+    perSpec[`${caseName}|${held}`] = costs;
+    rows.push({ case: caseName, variant: held, low: b[0], high: b[1] });
+    console.log(`  ${held.padEnd(44)} ${f4(b)}`);
+    const gap = Math.max(...costs.map((x, i) => Math.abs(perSpec[`${caseName}|${name}`][i] - x - extra[`${caseName}|${name}`][i])));
+    gate(`${caseName}: ${name} re-priced less held is the justice line's re-pricing alone, at every specification (1e-9)`, gap < 1e-9,
+      `max |diff| ${gap.toExponential(1)}`);
   }
 }
 const a24 = bands["sept24|adopted"];
@@ -208,11 +335,18 @@ if (LATER) {
       near(b[0], published[label][0], 1e-4) && near(b[1], published[label][1], 1e-4), `${f4(b)} vs ${f4(published[label])}`);
   }
   for (const [name] of VARIANTS.slice(1)) {
-    const move = (run) => perSpec[`${run}|${name}`].map((x, i) => x - perSpec[`${run}|adopted`][i]);
+    // A re-priced justice variant moves the corrected model by its state-price re-pricing more (September 29 on).
+    const move = (run) => perSpec[`${run}|${name}`].map((x, i) => x - perSpec[`${run}|adopted`][i] - ((extra[`${run}|${name}`] || [])[i] || 0));
     const [mu, mc] = [move(unc), move(cor)];
     const gap = Math.max(...mu.map((x, i) => Math.abs(x - mc[i])));
-    gate(`${name} moves every specification by the same amount on the uncorrected and corrected ${CASE} model`, gap < 1e-9,
-      `max gap ${gap.toExponential(1)}`);
+    gate(`${name} moves every specification by the same amount on the uncorrected and corrected ${CASE} model` +
+      (extra[`${cor}|${name}`] ? ", beyond the justice line's state-price re-pricing" : ""), gap < 1e-9, `max gap ${gap.toExponential(1)}`);
+  }
+  if (cashPayload) {
+    const b = bands[`${CASE}_cash_set|adopted`], want = summary.cash_set.band_bn;
+    gate(`${CASE}_cash_set reproduces ${LANE} cash_set (summary.json, 1e-9)`, near(b[0], want[0], 1e-9) && near(b[1], want[1], 1e-9), f4(b));
+    gate(`${CASE}_cash_set reproduces ${LANE} main_case_bands.csv cash_set (1e-4)`,
+      near(b[0], published.cash_set[0], 1e-4) && near(b[1], published.cash_set[1], 1e-4), `${f4(b)} vs ${f4(published.cash_set)}`);
   }
   if (payload.meta.capital_return) {
     for (const [run, key, row] of [[`${CASE}_capital_at_7pct`, "rate_7pct", "capital_return_at_7pct"],
@@ -245,7 +379,16 @@ if (LATER) {
       [`${CASE}_enterprises_out_option_a`]: "beside the case, never in its band: option A, no enterprise capital and the enterprise_surplus receipt at 0 (package specsFor enterprises A)" });
     meta.capital_return = { rates: payload.meta.capital_return.rates, enterprises: payload.meta.capital_return.enterprises };
   }
+  if (hasStatePrice(Engine.applyCorrections(MODEL, payload))) {
+    meta.state_price_justice = {
+      rule: `each justice variant re-prices the state-priced correction line of ${JUSTICE_LINE} on the key it evaluates: national_gap_bn x the parent's target on that key over its national total (meta.state_pricing.rule, "on its evaluated key"); raw coding on use_raw_coding, the grid ends and CBP held fixed on the shifted use key`,
+      alternative: "<variant>_state_price_held: the line held at the case's use-key amount",
+      lines: payload.meta.state_pricing.lines.filter((l) => l.parent === JUSTICE_LINE) };
+  }
+  if (cashPayload) {
+    meta.runs[`${CASE}_cash_set`] = `beside the case, never in its band: the cash set (the pension switch off), ${CASES[CASE].cash}, which ${LANE}/main_case.cjs reads, costed through the package's forPayload() of it`;
+  }
 }
-meta.sources_sha256 = Object.fromEntries(Object.values(SOURCES).map((rel) => [rel, sha(rel)]));
+meta.sources_sha256 =Object.fromEntries(Object.values(SOURCES).map((rel) => [rel, sha(rel)]));
 fs.writeFileSync(path.join(OUT, "band_variants.json"), JSON.stringify(meta, null, 1) + "\n");
 console.log(`all gates passed; ${rows.length} bands -> ${path.relative(process.cwd(), path.join(OUT, "band_variants.csv"))}`);

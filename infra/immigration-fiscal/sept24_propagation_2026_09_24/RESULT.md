@@ -381,3 +381,112 @@ Old values are the committed files (git HEAD). For the real-costs rows they are 
   confirms each 2024 difference. The `--case sept23` reproduction is now a permanent test in the
   debt legacy lane (pinned at 96a5c3b) and the distribution lane (pinned at 5b8957e); both pass.
   [CALCULATION]
+
+## v4 case (sept29), 2026-09-29
+
+**Verdict.** On the main case adopted 2026-09-29 (candidate v4, `../main_case_2026_09_29/`, $371.41–434.84bn), the
+fiscal-plus-social pairing on the 39,712,493 people the account prices is **$462.95–535.52bn a year**, or
+**$11,657–13,485 per member**. On the September 27 case it was $413.74–488.05bn and $10,419–12,290. The low end
+prices offending at the Hispanic average: the case run with justice keyed on the raw census codes, $366.68bn, plus the
+social rows at the low end. The high end is the custody footing: the case's $434.84bn plus the social rows at the high
+end. The social rows are the population lane's restatement on the priced count, $96.26bn and $100.68bn, unchanged from
+September 27. Beside it, never in it, the cash set (the pension switch off) pairs to $386.23–462.49bn
+($9,726–11,646). [CALCULATION: `band_variants.cjs` → `real_costs_totals.py` → `derived/sept29/real_costs_totals.csv`,
+column `pairing_on_priced_count`]
+
+### What changed, and where the outputs go
+
+The three scripts take `--case sept29` and write to `derived/sept29/` in this lane. Their September 27 runs write
+into `../sept27_propagation_2026_09_27/derived/`, a lane this task did not own, so the new case sits here, one
+constant per script (`CASES`, `OUT_DIRS`). Every default and every earlier case is unchanged.
+
+- **`band_variants.cjs`.**
+  - A specification's `line_responses` are rebuilt from every entry of `meta.responses`: 13 on September 29 (the
+    September 27 four, four more receipt overrides and five correction lines). An entry with a reading that names no
+    line stops the run. The rebuild equals the package's `MAIN_SPECS` (gate).
+  - **Designed rule: state prices follow the justice key.** v4 prices public order and safety at the states' price
+    level with a correction line, `state_price_public_order_safety`. Its group amount is national_gap_bn × the parent's
+    key share "on its evaluated key" (`meta.state_pricing.rule`): $47.79bn × 69.655 / 519.153 = $6.412bn on the
+    case's use key. A justice variant evaluates the parent on another key (raw coding) or moves its use key (the grid
+    ends, CBP held fixed). The script therefore re-prices that line on the variant's key. Raw coding lowers the key share
+    by 6.1% (65.382 / 69.655), so the line falls $0.393bn at every specification.
+    - Justification: the gap is a price applied to the group's quantity of justice services. The Hispanic footing says
+      that quantity is the Hispanic average, so the price gap applies to that quantity. The payload's own rule states
+      the evaluated key.
+    - Alternative, written beside as `<variant>_state_price_held`: the line held at the case's use-key amount. The
+      pairing's low end would be $463.34bn ($11,667 per member) instead of $462.95bn ($11,657); the high end does not
+      use a justice variant.
+    - No capital component is keyed on or responds as a state-priced line (gate), so the re-pricing's whole effect is
+      the line's own amount.
+  - **The cash set runs beside the case.** Its payload is the candidate's `corrections_v4_cash.json`, which the
+    adopted lane's `main_case.cjs` reads. It is costed through the package's `forPayload()` of it, with every variant.
+    It is never in the case's band.
+- **`real_costs_totals.py`.**
+  - The case's social rows are September 27's: the same items, and the long-run congestion figures ($13.99bn at the
+    low end, $12.02bn at the high end).
+  - **Designed rule: the pairing on the priced count.** The population lane restated the September 27 pairing, so its
+    rows cannot be read for September 29 as they stand. The script takes its section `pairing_5plus` less its fiscal
+    row, which leaves the restated social rows, and adds the case's own fiscal rows. Gates: the lane's fiscal rows are
+    the September 27 bands, unrestated (1e-6), and its published social rows are this script's social rows for the case
+    (2e-6: the lane prints six decimals, and each social figure is a difference of two). Alternative: a rerun of the
+    population lane on the new case. It would give the same social rows unless a row reads something v4 moves. In
+    that lane's `basis.csv` only congestion does: its lane cut is held at the adopted case's key share (below).
+    Trade reads the CPS consumption key, which v4 does not change.
+  - **The congestion figure is carried over, not recomputed.** The adopted summary flags it
+    (`beside_the_account.congestion.not_recomputed`), and the script carries the flag into its JSON. v4 keys highways
+    by vehicle miles and raises the group's share of highway spending from the economic-affairs key, 8.06%, to the
+    road key, 9.57%. With the network following spending, a larger removed share offsets more of the decongestion, so
+    the carried $13.99bn / 12.02bn is probably too high [INFERENCE, direction only; the size needs
+    `service_response_long_run_2026_09_27/congestion.py` rerun on the road key].
+  - The runs beside the case (7% on capital, option A and the cash set) each get their totals, and the cash set also
+    gets its pairing on the priced count.
+- **`constant_choices.py`.** It runs `debt_legacy.py --case sept29` (the debt lane's September 29 port) for the base
+  split and with each of the ledger lane's choices. The results are as on September 27: row 8 at 0 moves the 2024
+  federal part by −$0.027bn, the stock by −$0.35bn and 2024 interest by −$0.011bn. Row 10 on family and general
+  assistance leaves 2024 alone and moves the stock by +$2.03bn and interest by +$0.066bn. The re-run gate holds.
+  [CALCULATION: `derived/sept29/constant_choices.csv`, `constant_choices_stock.csv`]
+
+### The September 29 figures ($bn a year; per member on 39,712,493)
+
+| | Low end | High end |
+|---|---:|---:|
+| Fiscal main case (custody footing) | 371.4146 | 434.8410 |
+| Fiscal, Hispanic footing (raw coding; the state-priced justice line re-priced) | 366.6820 | 430.0755 |
+| Fiscal, Hispanic footing, the justice line held (alternative) | 367.0754 | 430.4689 |
+| Social rows on the priced count (population lane, 5+ traffic basis) | 96.2647 | 100.6770 |
+| **Pairing on the priced count** | **462.9467** | **535.5180** |
+| Per member | $11,657 | $13,485 |
+| Same pairing with the social rows on the published 40.90M union (the record's old basis) | 465.3947 | 538.2073 |
+| Cash set, pairing on the priced count (beside) | 386.2332 | 462.4945 |
+| Cash set, per member | $9,726 | $11,646 |
+| September 27 case, pairing on the priced count | 413.7448 | 488.0471 |
+
+The pairing moves +$49.20bn at the low end and +$47.47bn at the high end. The fiscal case moves +$49.60 / +47.47bn; the
+low end moves $0.39bn less, the justice line's re-pricing. [CALCULATION: `derived/sept29/real_costs_totals.csv`,
+`band_variants.csv`; the September 27 row from `../sept27_propagation_2026_09_27/derived/real_costs_totals.csv`]
+
+Log (append-only; times from `date`):
+- 2026-09-29 17:19 JST: section written by v4-debt-lane (claude-opus-5-5). The sept29 runs of `band_variants.cjs` (53
+  gates pass), `real_costs_totals.py` and `constant_choices.py` exit 0. Gate 1: HEAD's and the edited
+  `band_variants.cjs` and `real_costs_totals.py` write byte-identical files for sept24, sept26, sept26_schools and
+  sept27 (16/16, into one scratch directory in turn). Nothing is committed, staged or stashed.
+- 2026-09-29 21:15 JST (resumed after the machine rebooted at about 20:51; the earlier gate logs were lost with
+  `/private/tmp`, so every gate was rerun and printed). The six pre-reboot files in `derived/sept29/` all parse. Fresh
+  sept29 runs of the three scripts (21:04, rc 0 each; `band_variants.cjs` 53 gates pass, `real_costs_totals.py` 43,
+  `constant_choices.py` its re-run gate) wrote all six byte-identical to them. Gate 3: `sept29` reproduces the adopted
+  lane's `main_case`, $371.4146–434.8410bn, and `sept29_cash_set` its `cash_set`, $294.7011–361.8175bn, at 1e-9
+  against `summary.json` and 1e-4 against `main_case_bands.csv`. Gate 1, into scratch output directories only:
+  HEAD's `band_variants.cjs` and `real_costs_totals.py` and the edited ones write byte-identical files for sept24,
+  sept26, sept26_schools and sept27 (16/16), and `constant_choices.py` writes the tracked files for all four cases
+  (8/8). Against the tracked files, the edited scripts' outputs are identical in 10 of 16. The other six differ for
+  reasons that predate this change, since HEAD's scripts write the same bytes:
+  - two JSONs record the scratch directory as an input path (sept24 and sept26_schools `real_costs_totals.json`;
+    identical once the path is mapped back);
+  - `../sept26_propagation_2026_09_26/derived/sept26/real_costs_totals.csv` and `.json` were not rebuilt by b7f14e7e,
+    which moved every adopted column's per-member divisor to the priced 39,712,493: the tracked file divides by
+    40,896,574 (per member, low, 6.0088 against 6.1879 now);
+  - `../sept27_propagation_2026_09_27/derived/band_variants.json` records `main_case_bands.csv`'s hash from before
+    b3f4d849 (6e550bd3…; now 46443c0c…), and its `real_costs_totals.json` records that JSON's hash. The CSVs match.
+  Gate 4: two `rerun_lane.py` passes over the lane's sept24 and sept29 commands, IDENTICAL 23/23, rc 0 each
+  (21:09–21:13). No tracked file in `derived/` differs from HEAD. Every figure in the table above matches the fresh
+  outputs.

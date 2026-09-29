@@ -21,15 +21,18 @@ it in row 8, and the ledger lane's choice zeroes it with row 8.
   sept24          the case adopted 2026-09-24 (the committed run)                -> derived/
   sept26          the one-year scenario, main_case_2026_09_26                    -> --out-dir DIR only
   sept26_schools  schools at full average cost                                   -> ../sept26_propagation_2026_09_26/derived/
-  sept27          the main case, main_case_long_run_2026_09_27 (default)         -> ../sept27_propagation_2026_09_27/derived/
+  sept27          the September 27 case, main_case_long_run_2026_09_27 (default) -> ../sept27_propagation_2026_09_27/derived/
+  sept29          the main case adopted 2026-09-29, main_case_2026_09_29          -> derived/sept29/
 The federal part compared is the run's main profile (its summary.json case.main_profile; before September 27
 cbo_category_lag_non_school_full). From September 27 the debt lane's fiscal_gap_bn and federal_bn are the
 cash part only: the return on public capital and the displaced beneficiaries of capped programs sit in their
-own columns and are never compounded. Both constants are cash, so the comparison is unchanged.
+own columns and are never compounded. Both constants are cash, so the comparison is unchanged. From September 29
+the debt lane compounds the cash set's flows and reports the pension accrual in its own column; both payloads carry
+the two constants alike.
 
 Writes constant_choices.csv (2024 split) and constant_choices_stock.csv (re-runs), after every gate.
 Run from the repository root:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py [--case sept24|sept26|sept26_schools|sept27] [--out-dir DIR]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py [--case sept24|sept26|sept26_schools|sept27|sept29] [--out-dir DIR]
 """
 from __future__ import annotations
 
@@ -48,7 +51,7 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 LANE = HERE.parent / "debt_legacy_2026_09_23"
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=HERE.parent / "sept26_propagation_2026_09_26" / "derived",
-                sept27=HERE.parent / "sept27_propagation_2026_09_27" / "derived")
+                sept27=HERE.parent / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29")
 OLD_PROFILE = "cbo_category_lag_non_school_full"         # the main profile of every case before September 27
 CENTRAL = dict(benchmark="main", rule="programme_income_pandemic_per_head", convention="central",
                rate_path="effective", window_start=2005, financing="all_borrowed")
