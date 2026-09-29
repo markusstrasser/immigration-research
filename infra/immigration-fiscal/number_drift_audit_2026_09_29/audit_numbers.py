@@ -91,7 +91,8 @@ _PARSE = re.compile(rf"^(?P<sign>[+\-−±~]?)\$?(?P<num>{_N})(?P<suf>bn|tn|k|M|
 WORDS = {"one resident in six": 1 / 6, "one other resident in six": 1 / 6, "about twice": 2,
          "About half": 0.5, "would double": 2, "Eight versions": 8, "Nine pooled": 9,
          "about a tenth": 0.1, "ten years": 10, "Two tests": 2, "top tenth": 0.1, "recent doubling": 2,
-         "one in nine": 1 / 9, "one in four": 1 / 4, "one in six": 1 / 6, "about a quarter": 0.25,
+         "one in nine": 1 / 9, "one in four": 1 / 4, "one in six": 1 / 6, "one in seven": 1 / 7,
+         "about a quarter": 0.25,
          "a quarter of the sound claims": 0.25, "costs what it costs: half": 0.5}
 WORD_RE = re.compile(r"\b(?:" + "|".join(sorted(map(re.escape, WORDS), key=len, reverse=True)) + r")\b")
 

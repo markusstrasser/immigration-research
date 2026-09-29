@@ -1,5 +1,5 @@
 {
- "head": "74d8d3e53e8c096e7f51a4c84f2985cfe0fbf7bc",
+ "head": "e961aee30e11dfae19b70a6161b75e69e8101ca7",
  "sha256": {
   "CLAUDE.md": "0f08317ba0445bdd2bd70ea1bd5f82b5f85596e736f091e63af51e8a6c88c478",
   "decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md": "3d89e32090e59e8c903f046f503bc29a2002d9696d249d139f7adf1d3a8bbf99",
@@ -107,13 +107,13 @@
   "infra/immigration-fiscal/world_ledger_2026_09_27/derived/world_ledger_rows_sept29.csv": "dfafcac79c861d9dae79376a0308a0b056cf4fdfee158d504c4ffed37f6c1857",
   "infra/immigration-fiscal/world_ledger_2026_09_27/derived/world_ledger_sept27_row4.csv": "995d7ae1ee4f50ed5841ae57a09e9c38752c5ee172f2c1debfa3cadab964383d",
   "infra/immigration-fiscal/world_ledger_2026_09_27/derived/world_ledger_sept29.csv": "886dadc465e8a1b2d1d9ab261cec93498107e9bc093d116c69480b9b42c395a7",
-  "research/immigration-INDEX.md": "7b8dabfb33d4e1f13ef97ac8b5271529ccbe8aca96d47cdf0e413b6cfa15fce3",
+  "research/immigration-INDEX.md": "a0dde6211bed1e3595da155e1e94c02e17d6626e80bca7e1528767ff8a77d777",
   "research/immigration-administration-response-test-2026-09-20.md": "e63b1d3d3f0988a86aba945b3f85bc8c63708e4f5214d94e20bc581b171b2fd8",
-  "research/immigration-adopted-account-by-generation-2026-09-25.md": "bf7646778e9b0b6162b3921038188e1cd3a829baa0e11c146c1975ac48dd416f",
-  "research/immigration-confidence-ladder.md": "78380378d30d98bd70ebb85638aef902028653f8d7986b89d5d0b108bfb1e264",
+  "research/immigration-adopted-account-by-generation-2026-09-25.md": "f34e4ffde69c9220ab05a270b54705e8993a4c765aa2dcf63c7ad18abbbbcd27",
+  "research/immigration-confidence-ladder.md": "7e0ecff3416660f945e39b9412b45c09aed87e33dd90467dfaccda72ac57ec11",
   "research/immigration-objections-faq-2026-09-21.md": "b4e0a8dec3a8846eb2dcf5e342fd04567016693c83638975609b2cb1bed1dba2",
   "research/immigration-real-fiscal-and-social-costs-2026-09-23.md": "4e771fdd9484e8826d3e08050a8a92ff76b94d12a980f7a5bbbd0f015a89a67b",
   "research/immigration-winners-and-losers-2026-09-25.md": "abed49021535f0994164483d40c54b7b5530f5c1ac207c0575797657c0a2dd95",
-  "source_map.csv": "c23560e5691c960d508b3e0459a36ea352b9128b05a986ca7435cf7f158beb9f"
+  "source_map.csv": "09d10f587bd7caaaf4fb7f274318720c8c6c107cdbba43abeb5b1f76c543b372"
  }
 }
