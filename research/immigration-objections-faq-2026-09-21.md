@@ -191,7 +191,7 @@ case; only the fiscal row moved). Counting benefits when paid, it is $386–462b
 The 1970–2000 college-share studies would turn the scale net into a $109–677bn cost. Mobility across
 local labour markets ($0.65bn) sits beside both totals, and property values stay out. Transfers like
 the renters' payments cancel in dollars but not by income: outside the budget the bottom four
-fifths of other residents lose $80.7bn a year and the top fifth gains $46.0bn (ladder 194).
+fifths of other residents lose $79.4bn a year and the top fifth gains $44.5bn (ladder 194).
 [SOURCE: complete account;
 [prices and hours](immigration-consumer-price-and-native-hours-2026-09-18.md);
 [real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)]
@@ -752,3 +752,4 @@ they get more prominence.
 - 2026-09-29 (priced-count spans): the PM2.5 and crash ranges and the fault-based crash figure are now on the 39.71M the account prices, like the central values: crashes −$55.1bn to +$70.8bn (was −$57.7bn to +$74.3bn on the CPS count), by fault $40.6bn (was $42.3bn), PM2.5 $30.8–119.7bn ([lane](../infra/immigration-fiscal/social_spans_priced_count_2026_09_29/RESULT.md)). Concept affected: none; the count the ranges are on.
 - 2026-09-29 (main case v4 adopted; [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275): the anchors, the combining rules and entries 2, 4, 8, 11 and 15–18 restate the main case as $371–435bn, with the cash set ($295–362bn) beside. Entry 2 gains the property-tax response and the v4 sign break-even (the low end stays a net cost with every service frozen); entry 8 the v4 back-cast; entry 18 the v4 replay. The fiscal-plus-social total (entries 4 and the combining rules), the generation split (entry 5) and the average-resident gap (entry 6) say "on the September 27 case" until their v4 reruns land. Concept affected: the headline main case.
 - 2026-09-29, later (v4 consumer lanes: pairing 911afa6, generation aa1f53b): the fiscal-plus-social total (anchors, combining rules, entry 4) is $463–536bn on the main case, fiscal $366.7bn / $434.8bn at its footings; entry 5 gives the v4 generation split on the account's 39.71M, and where the pension accrual lands. Concept affected: the fiscal-plus-social total and the generation split.
+- 2026-09-29, later: the income split outside the budget is the main case's, $79.4bn lost by the bottom four fifths and $44.5bn gained by the top fifth (wages move with the production model re-solved on the account's weights). Concept affected: none; the figures follow the case.

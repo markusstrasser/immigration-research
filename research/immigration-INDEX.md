@@ -205,7 +205,7 @@ group. This is not an engine run (ladder 259,
 [lane](../infra/immigration-fiscal/black_comparator_rough_2026_09_28/RESULT.md)).
 
 Wages move **$66–166bn** from less- to more-educated natives. The transfers are not added, but they run from poorer
-to richer residents: outside the budget the bottom four fifths lose $80.7bn a year and the top fifth gains $46.0bn.
+to richer residents: outside the budget the bottom four fifths lose $79.4bn a year and the top fifth gains $44.5bn.
 The fiscal cost is progressive if financed by tax shares and regressive if by equal cuts per person (ladder 194).
 On the main case the fiscal channel is $394.4bn, of which $74.9bn is the pension accrual and $45.8bn the return on
 public capital, and per-person cuts take 13.9% of the bottom fifth's resources; the capped programmes ($8.1bn),
