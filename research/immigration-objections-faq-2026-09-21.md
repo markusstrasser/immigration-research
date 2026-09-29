@@ -260,10 +260,12 @@ ladder 224]
 ## 6. "Comparing with whites is cherry-picking."
 
 Finding: against all natives the same-age gaps are −$5,404, −$5,342 and −$4,015; against as
-many average residents, the September 27 case's gap is −$273–296bn, about −$6,700 to −$7,200 per
-person. The net-cost headline compares with no reference group at all: it is the change for
+many average residents, the main case's gap counting benefits when paid is −$270–293bn, about −$6,800 to
+−$7,400 per person (September 27: −$273–296bn). The gap is defined on cash flows only: an accrued pension
+has no national total to share out. The net-cost headline compares with no reference group at all: it is the change for
 all other residents, other immigrants included. [SOURCE: `derived/complete_gaps.csv`;
-[program gaps](../infra/immigration-fiscal/black_comparator_rough_2026_09_28/RESULT.md), ladder 259]
+[program gaps](../infra/immigration-fiscal/black_comparator_rough_2026_09_28/RESULT.md), ladder 259;
+`derived/rekey_summary_sept29.csv`, 6665297]
 
 ## 7. "Is this just low education? Poor natives cost money too."
 
@@ -753,3 +755,4 @@ they get more prominence.
 - 2026-09-29 (main case v4 adopted; [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275): the anchors, the combining rules and entries 2, 4, 8, 11 and 15–18 restate the main case as $371–435bn, with the cash set ($295–362bn) beside. Entry 2 gains the property-tax response and the v4 sign break-even (the low end stays a net cost with every service frozen); entry 8 the v4 back-cast; entry 18 the v4 replay. The fiscal-plus-social total (entries 4 and the combining rules), the generation split (entry 5) and the average-resident gap (entry 6) say "on the September 27 case" until their v4 reruns land. Concept affected: the headline main case.
 - 2026-09-29, later (v4 consumer lanes: pairing 911afa6, generation aa1f53b): the fiscal-plus-social total (anchors, combining rules, entry 4) is $463–536bn on the main case, fiscal $366.7bn / $434.8bn at its footings; entry 5 gives the v4 generation split on the account's 39.71M, and where the pension accrual lands. Concept affected: the fiscal-plus-social total and the generation split.
 - 2026-09-29, later: the income split outside the budget is the main case's, $79.4bn lost by the bottom four fifths and $44.5bn gained by the top fifth (wages move with the production model re-solved on the account's weights). Concept affected: none; the figures follow the case.
+- 2026-09-29, later (v4 comparators, 6665297): entry 6's gap against as many average residents is the main case's, −$270–293bn counting benefits when paid, on cash flows only. Concept affected: none; the figure follows the case.
