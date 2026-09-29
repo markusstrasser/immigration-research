@@ -1,0 +1,152 @@
+{
+ "debt_held_by_public_end_fy2023_bn": 26235.592,
+ "extended_equals_standard_2005_2024": "all groups, bases, ends and conventions within 1e-9",
+ "member_count_m": 39.712493331,
+ "parity": {
+  "max_abs_diff": 4.98e-07,
+  "rows": [
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "central",
+    "end": "low",
+    "interest_bn": 30.751353758,
+    "lane_interest_bn": 30.751354,
+    "lane_stock_bn": 951.141872,
+    "max_abs_diff": 4.87e-07,
+    "stock_bn": 951.141871681
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "low",
+    "end": "low",
+    "interest_bn": 18.31099832,
+    "lane_interest_bn": 18.310998,
+    "lane_stock_bn": 566.360667,
+    "max_abs_diff": 4.85e-07,
+    "stock_bn": 566.36066662
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "high",
+    "end": "low",
+    "interest_bn": 35.080243922,
+    "lane_interest_bn": 35.080244,
+    "lane_stock_bn": 1085.034796,
+    "max_abs_diff": 4.87e-07,
+    "stock_bn": 1085.034796354
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "central",
+    "end": "high",
+    "interest_bn": 41.479394045,
+    "lane_interest_bn": 41.479394,
+    "lane_stock_bn": 1282.96103,
+    "max_abs_diff": 4.84e-07,
+    "stock_bn": 1282.961029893
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "low",
+    "end": "high",
+    "interest_bn": 28.795545451,
+    "lane_interest_bn": 28.795545,
+    "lane_stock_bn": 890.648562,
+    "max_abs_diff": 4.51e-07,
+    "stock_bn": 890.648561739
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "high",
+    "end": "high",
+    "interest_bn": 48.157028221,
+    "lane_interest_bn": 48.157028,
+    "lane_stock_bn": 1489.500798,
+    "max_abs_diff": 4.87e-07,
+    "stock_bn": 1489.500797803
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "central",
+    "end": "low",
+    "interest_bn": 61.269310868,
+    "lane_interest_bn": 61.269311,
+    "lane_stock_bn": 1895.064766,
+    "max_abs_diff": 4.98e-07,
+    "stock_bn": 1895.064766057
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "low",
+    "end": "low",
+    "interest_bn": 48.828955429,
+    "lane_interest_bn": 48.828955,
+    "lane_stock_bn": 1510.283561,
+    "max_abs_diff": 4.86e-07,
+    "stock_bn": 1510.283560995
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "high",
+    "end": "low",
+    "interest_bn": 65.598201032,
+    "lane_interest_bn": 65.598201,
+    "lane_stock_bn": 2028.957691,
+    "max_abs_diff": 4.81e-07,
+    "stock_bn": 2028.957690729
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "central",
+    "end": "high",
+    "interest_bn": 70.526618363,
+    "lane_interest_bn": 70.526618,
+    "lane_stock_bn": 2181.394039,
+    "max_abs_diff": 4.6e-07,
+    "stock_bn": 2181.39403946
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "low",
+    "end": "high",
+    "interest_bn": 57.842769769,
+    "lane_interest_bn": 57.84277,
+    "lane_stock_bn": 1789.081571,
+    "max_abs_diff": 4.97e-07,
+    "stock_bn": 1789.081571306
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "high",
+    "end": "high",
+    "interest_bn": 77.204252539,
+    "lane_interest_bn": 77.204253,
+    "lane_stock_bn": 2387.933807,
+    "max_abs_diff": 4.98e-07,
+    "stock_bn": 2387.93380737
+   }
+  ],
+  "tolerance": 1e-06
+ },
+ "pre2005_population": {
+  "census_1990_m": 13.393208,
+  "census_2000_m": 20.640711,
+  "scale_factor": 1.049e-06
+ },
+ "pre2005_zero_cells": {
+  "series_audited": 58,
+  "zero_before_2005": []
+ }
+}

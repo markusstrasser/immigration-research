@@ -1,0 +1,79 @@
+series,year,value,source
+per_capita_income_nh_white,2008,32242.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2008,41.100000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2008,27589.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2008,36.900000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2008,1.168654,CALCULATION: 451 / 001
+per_capita_income_nh_white,2009,30996.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2009,41.200000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2009,26409.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2009,36.800000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2009,1.173691,CALCULATION: 451 / 001
+per_capita_income_nh_white,2011,31708.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2011,42.300000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2011,26708.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2011,37.300000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2011,1.187210,CALCULATION: 451 / 001
+per_capita_income_nh_white,2012,32498.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2012,42.600000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2012,27319.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2012,37.400000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2012,1.189575,CALCULATION: 451 / 001
+per_capita_income_nh_white,2013,33537.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2013,42.800000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2013,28184.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2013,37.500000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2013,1.189930,CALCULATION: 451 / 001
+per_capita_income_nh_white,2014,34393.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2014,43.100000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2014,28889.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2014,37.700000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2014,1.190522,CALCULATION: 451 / 001
+per_capita_income_nh_white,2015,35707.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2015,43.300000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2015,29979.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2015,37.800000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2015,1.191067,CALCULATION: 451 / 001
+per_capita_income_nh_white,2016,36938.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2016,43.400000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2016,31128.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2016,37.900000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2016,1.186649,CALCULATION: 451 / 001
+per_capita_income_nh_white,2017,38437.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2017,43.500000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2017,32397.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2017,38.100000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2017,1.186437,CALCULATION: 451 / 001
+per_capita_income_nh_white,2018,40027.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2018,43.600000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2018,33831.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2018,38.200000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2018,1.183146,CALCULATION: 451 / 001
+per_capita_income_nh_white,2019,42106.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2019,43.700000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2019,35672.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2019,38.500000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2019,1.180366,CALCULATION: 451 / 001
+per_capita_income_nh_white,2021,45175.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2021,43.900000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2021,38332.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2021,38.800000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2021,1.178519,CALCULATION: 451 / 001
+per_capita_income_nh_white,2022,49045.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2022,44.100000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2022,41804.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2022,39.000000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2022,1.173213,CALCULATION: 451 / 001
+per_capita_income_nh_white,2023,50675.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2023,44.200000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2023,43313.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2023,39.200000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2023,1.169972,CALCULATION: 451 / 001
+per_capita_income_nh_white,2024,53079.000000,ACS 1-year S0201 POPGROUP 451
+median_age_nh_white,2024,44.400000,ACS 1-year S0201 POPGROUP 451
+per_capita_income_total,2024,45256.000000,ACS 1-year S0201 POPGROUP 001
+median_age_total,2024,39.200000,ACS 1-year S0201 POPGROUP 001
+relative_per_capita_income_nh_white,2024,1.172861,CALCULATION: 451 / 001
+mexican_origin_count,2000,20640711,Census 2000 SF1 PCT011004 (Census API)
+total_population_census,2000,281421906,Census 2000 SF1 PCT011001 (Census API)
+mexican_origin_count,1990,13393208,"1990 CP-3-3 Table 1 (printed p. 4, PDF p. 18), Mexican, All persons (sample)"
