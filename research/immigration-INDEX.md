@@ -85,8 +85,10 @@ the case is $49.6 / $47.4bn above September 27's $321.8–387.4bn. Printed to on
 both touch vehicle licences; the case applies the state index to the miles-keyed amount. Counting benefits when paid
 rather than when earned, the cash set is $294.7–361.8bn ($7.4–9.1k per member). The uninsured-use arm at 0.7×
 ($369.9–432.6bn; its evidence is only between regions, ladder 256) and transit's riders' key ($371.6–435.0bn) stay
-beside. One key error is known and not yet applied: owner-occupied property tax is keyed on the survey's weights;
-on the account's own weights the case is $0.34bn higher at both ends (ladder 275).
+beside. Five items are known to be summed on the survey's weights instead of the account's, and are not yet
+applied: owner-occupied property tax, the Part A accrual, the tax on benefits, state pricing's indexes and the
+Social Security accrual ratio. On the account's own weights the case would be $371.2–434.6bn and the cash set
+$295.4–362.5bn ([lane](../infra/immigration-fiscal/row4_class_2026_09_29/RESULT.md), ladder 275).
 
 Beside the account:
 - capital at 7%: $457–511bn;
