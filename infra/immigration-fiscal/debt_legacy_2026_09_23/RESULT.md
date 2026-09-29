@@ -606,3 +606,229 @@ beneficiaries. The lines and per-correction files add a `financing` column.
   private capital, other residents lose the return on that capital, which is at least the interest;
   if foreigners hold it, the interest leaves the country. The size of either effect is not
   modelled. [INFERENCE] [Decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).
+
+## v4 case (sept29), 2026-09-29
+
+claude-opus-5-5 (fork A of the v4 consumer lane "v4-debt-lane"). The case runs on the adopted lane
+(`../main_case_2026_09_29/`, 40c4ba75): the set is its `derived/corrections.json`, and the cash set is the candidate's
+`../main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json`, which the adopted lane reads too (it writes no
+cash payload). `SEPT29` in `debt_legacy.py` names the lane, the payloads, whether the lane writes the September 27
+contract, the payload consumer, the headcount file and the printed bands in one place. Phase 1 ran on the candidate
+lane; phase 2, below, switched to the adopted one and moved no number.
+
+`debt_legacy.py --case sept29` writes `derived/sept29/` (16 files: the default run's 15 names for this case, plus
+`sept29_bridge_2024.csv`). The default run (`--case sept27`, `derived/`) is unchanged, and so are the four earlier cases.
+The sept27, sept26_schools and sept26 bridges in `derived/sept29/` are byte-identical to those in `derived/`.
+[CALCULATION: `debt_legacy.py --case sept29` → `derived/sept29/`]
+
+**Headline (central rule `programme_income_pandemic_per_head`, central payer convention, effective rate, 2005 window,
+all borrowed; cash set compounded; low / high end, $bn).**
+
+| Quantity | Sept 27 | Sept 29 | File |
+|---|---:|---:|---|
+| legacy interest, 2024 | 30.93 / 41.63 | **30.75 / 41.48** | `derived/sept29/stocks.csv` |
+| interest per group member, $ | 756 / 1,018 (40.90m) | **774 / 1,044** (39.71m); 752 / 1,014 at 40.90m | same |
+| legacy stock entering 2024 | 956.8 / 1,287.7 | **951.1 / 1,283.0** | same |
+| federal part of the 2024 cash gap | 37.26 / 62.21 | **36.28 / 61.27** | `derived/sept29/federal_split_2024.csv` |
+| federal share of the 2024 cash gap | 13.2% / 19.1% | **14.4% / 20.7%** | same |
+| pension accrual beside, 2024, all federal, never compounded | — | **76.71 / 73.02** | same |
+| legacy interest across the programme rules | 8.20 to 42.45 | 7.77 to 42.30 | `derived/sept29/stocks.csv` |
+| legacy interest, every specification (programme rules) | −4.25 to 66.29 | −5.15 to 65.73 | same |
+| legacy interest, proportional benchmark | 38.59 / 46.32 | 38.48 / 46.16 | same |
+
+The 2024 cash gap falls by $31.2 / 30.4bn, mostly state-local: the long-run property taxes (−27.19) and public
+housing's deficit leaving the cash gap (−4.72). The federal part falls $0.98 / 0.94bn: the IRS-matched income-tax key
+(−2.91 / −2.71, with payroll compliance on the same line) outweighs production on the account's weights (+1.05 / +0.71)
+and state pricing (+0.81). Per member rises because the divisor is now the headcount the account prices. [CALCULATION:
+`derived/sept29/summary.json` `case.v4.headline_2024`; the Sept 27 column is `derived/stocks.csv` and
+`derived/federal_split_2024.csv`]
+
+**The engine port against engine.js (gate 2).** `engine_parity()` runs the candidate's `consumer.cjs` `evaluateAll`
+(node; engine.js, model.json and the payload only) on each payload and compares every one of the 64 specifications:
+
+| Payload | Band at 48 / 11, $bn | Largest difference: cost, engine cost | capital by component, P and F, every line's amount and response | Tolerance |
+|---|---:|---:|---:|---:|
+| set (with the pension accrual) | 371.414600 / 434.840959 | 1.1e-13 | 0 | 1e-9 |
+| cash set | 294.701076 / 361.817482 | 2.8e-13 | 0 | 1e-9 |
+
+Both bands equal the printed $371.4146 / 434.8410bn and $294.7011 / 361.8175bn at specifications 48 / 11 (5e-5, the
+printing's rounding). The port applies engine.js's three optional parts as it does (receipt lines, the national-scale
+edits in payload order, the production grid; its dimensions compared as JSON.stringify compares them, since
+JavaScript writes 1.0 as 1), sets every `meta.responses` entry as `consumer.cjs` `lineResponses` does, and reads the
+`part_rekeyed` capital key. The adopted lane's own files gate the port as well (phase 2, below). [CALCULATION:
+`derived/sept29/summary.json` `case.v4.engine_parity`]
+
+**Four columns (only cash is compounded).** The corners are the set's end specifications (48 and 11 on the main profile);
+the cash set is split at the same corners (a gate: its own ends are the same specifications, every profile).
+
+| 2024, main profile, central convention, $bn | Low end | High end | Federal part, low / high |
+|---|---:|---:|---:|
+| Cash financing: the cash set's lines less the capped programs | 251.46 | 296.07 | 36.28 / 61.27 |
+| Resource cost: the return on public capital, never compounded | 34.42 | 57.17 | 0.83 / 1.76 |
+| Displaced beneficiaries: rental assistance, LIHEAP and public housing, never compounded | 8.13 | 8.13 | 5.05 / 5.05 |
+| Pension accrual: the set less the cash set, never compounded | 76.71 | 73.02 | 76.71 / 73.02 |
+| Sum: the set's net cost + P | 370.72 | 434.38 | |
+
+Under the low convention the cash federal part is $9.06 / 33.95bn (displaced $4.53bn), under the high one $47.73 /
+78.86bn. The accrual is on three lines, all federal: social security +53.15 / +49.73, Medicare +21.47 / +21.47 (the
+Part A accrual is fixed) and the tax on benefits +2.09 / +1.82. [CALCULATION: `derived/sept29/federal_split_2024.csv`,
+`derived/sept29/federal_split_2024_lines.csv`, side `pension_accrual`]
+
+**Rules designed for this case, each with its alternative.**
+
+1. *Cash against accrual (the directive's choice, made here).* The pension switch values social security and Medicare
+   Part A at the benefits the group's 2024 payroll taxes earn, payable later, instead of the benefits paid in 2024.
+   That is a liability accruing in 2024, not a 2024 cash flow, so nothing of it is borrowed in 2024. **Rule:** the split,
+   the annual flows and the stocks run on the cash set; the accrual (set less cash set, line by line) is a fourth
+   column beside, never compounded. Identity gate: cash + resource cost + displaced + accrual = the set's net cost + P
+   (1e-6), at every corner and convention. **Alternative** (benchmark `main_with_accrual`, programme rules only): the set
+   compounded, the accrual carried back with its lines' own series as if it had been borrowed each year. It gives
+   **$61.27 / 70.53bn** of 2024 interest on a stock of **$1,895.1 / 2,181.4bn** ($1,543 / 1,776 per member): the accrual
+   adds $30.52 / 29.05bn of interest and $943.9 / 898.4bn of stock. [FRAMING-SENSITIVE] Compounding the accrual counts
+   benefits not yet paid as if the Treasury had borrowed for them each year since 2005.
+2. *Public housing's enterprise deficit* (receipt line `housing_enterprise_surplus`, at the rental line's key, response
+   1). **Rule:** a capped program like rental assistance: its units go to eligible households without the group, so
+   there is no budget response and nothing is borrowed (displaced beneficiaries, $3.43bn, $0.40bn of it federal).
+   **Alternative** (benchmark `main_housing_as_cash`): the line in the cash gap, carried with NIPA 3.13 line 4 and 3.8
+   line 13, not scaled by income: 2024 interest $30.92 / 41.64bn (+$0.16 / 0.16bn), stock $956.2 / 1,288.0bn.
+3. *Federal shares of the lines the case adds or re-scales* (`v4_shares`, in every convention unless noted; 2024):
+   - `modeled_owner_property`, `tenant_occupied_property`, `personal_property_tax`: 0, state-local property taxes (NIPA
+     3.3 line 9, 3.4 line 11). The first and third respond for the first time (0.763 and 1); the second is new (0.708).
+   - `housing_enterprise_surplus`: 11.5%, the $5.258bn operating subsidy that left rental assistance (federal, NIPA
+     3.13 line 4) over the line's −$45.556bn; the $40.298bn deficit that left the enterprise surplus is state-local (NIPA
+     3.8 line 13, gated). Alternative: the enterprise surplus's September 27 share, 3.84% (−$0.26bn on the displaced
+     federal part; nothing compounded either way).
+   - `enterprise_surplus`: the line's key times the federal enterprises' surplus, t32(23) = −$1.822bn, which the split
+     leaves in the line: 25.4% of the line after the split (−$7.162bn), 3.84% before it. The re-key edits move the key
+     at the share before the split; the national-scale edit, which removes a state-local deficit, moves no federal
+     dollars (so item 1 moves the federal cash part by 0, in the bridge and in the corrections file alike). Alternative:
+     the September 27 share 3.84% on the split line, $0.18bn less federal a year.
+   - `housing_subsidies` (re-scaled to $55.003bn): federal, as before.
+   - `roads_vmt_fed`: 1 (federal highways). `roads_vmt_sl`: state-local highways, federal only through grants at
+     economic affairs' state-local grant share, 7.1% (0 under the low convention), as `long_run_fraction` splits the
+     state-local subfunctions.
+   - `state_price_<line>`: the state-price gaps are state-local spending, federal only through the grants each
+     convention gives state-local consumption of the function: public order 0.8%, recreation 1.6% (0 under the low
+     convention), health 41.9% (29.0% low; 0 high, because the high convention puts every health grant on Medicaid).
+   The programme rule carries each synthetic line with its parent's national series (`SYNTHETIC_CARRY`) at its own
+   federal share by year; the property taxes with the state-local property-tax series; the enterprise surplus with NIPA
+   3.2 line 23 (federal) and 3.8 lines 8–12, 14 and 15 (state-local without housing, gated to add to 3.3 line 22 less
+   line 13). NIPA 3.17 line 61's 2020–2021 economic-affairs grants (flagged in the September 27 section) also raise
+   `roads_vmt_sl`'s federal share in those two years.
+4. *Per member.* The headcount the account prices, audit row 4's union, 39,712,493 (the adopted case's divisor,
+   `main_case_candidate_2026_09_28/derived/production_row4.json`, gated to the account's 40.9m target). Per-head shares
+   (OMB net interest, the debt increase, the pandemic credits) stay at the account's population key, 40.9m / 340.1m,
+   as its population-keyed lines and the back-cast's group series do.
+
+**Bridge from September 27** (`derived/sept29/sept29_bridge_2024.csv`, central convention, $bn, low / high end). Each
+line's move is assigned to the items that move it (`meta.candidate_v4.items_by_line`); a line two items move is one
+step named for both.
+
+| Step | Cash | Federal cash | Resource cost (federal) | Displaced (federal) | Accrual |
+|---|---:|---:|---:|---:|---:|
+| September 27 case | 282.69 / 326.43 | 37.26 / 62.21 | 33.80 / 55.69 (0.83 / 1.74) | 5.09 (5.05) | |
+| 1: public housing's deficit at the rental key | −4.72 | 0 | | +3.03 (0) | |
+| 2: production on the account's weights (F) | +1.18 / +0.81 | +1.05 / +0.71 | | | |
+| 3 + 6a: IRS-matched income-tax key, payroll compliance (federal income tax) | −2.91 / −2.71 | −2.91 / −2.71 | | | |
+| 4: public housing's capital at the rental key | | | −0.35 / −0.53 (0) | | |
+| 5: long-run property taxes | −27.19 | 0 | | | |
+| 6a: payroll compliance (payroll taxes) | +0.56 / +0.60 | +0.64 / +0.66 | | | |
+| 6a + roads (excise) | −1.58 / −1.58 | −0.43 / −0.42 | | | |
+| 6a + state (general sales tax) | −5.96 | 0 | | | |
+| 7: workers' compensation, pooled | −0.95 / −0.73 | −0.30 / −0.24 | | | |
+| roads keyed by miles | +2.24 / +3.06 | +0.16 / +0.24 | +0.98 / +2.01 (0 / 0.02) | | |
+| state pricing | +8.58 / +8.64 | +0.81 / +0.81 | | | |
+| state + roads (motor-vehicle licences) | −0.49 / −0.59 | 0 | | | |
+| constant line's federal share | | −0.001 | | | |
+| pension accrual | | | | | +76.71 / +73.02 |
+| September 29 case | 251.46 / 296.07 | 36.28 / 61.27 | 34.42 / 57.17 (0.83 / 1.76) | 8.13 (5.05) | 76.71 / 73.02 |
+
+Gates: the September 27 corner reproduces its split (1e-9); every line that moves has an item, and none changes
+financing; at the matched specification the steps add to its split in every column (1e-9); the whole moves by the set's
+band change plus the change in P (1e-6); the range ends do not move (both cases end at 48 and 11). Items 1, 4, 5 and 7
+match the candidate's alone-columns exactly (−1.691, −0.353 / −0.529, −27.186, −0.948 / −0.732); item 2's total with P
+is its +1.643 / +1.107. `derived/sept29/corrections_federal_by_component_2024.csv` splits the payload's edits the same
+way, at the case's responses (items `v4_<items>`; the production grid's change in F is item 2's row); property taxes
+that already existed but did not respond enter there through `before`, so item 5 is −7.73 there and −27.19 here.
+
+**Consumers.** `derived/sept29/federal_split_2024_lines.csv` lists every line of the case, the new ones included
+(`roads_vmt_fed` responds at 0 at the low end and is absent there, as other zero-response lines are), the capital
+components (side `capital_return`) and the accrual (side and financing `pension_accrual`, federal = gap). The production
+row is −F at the induced-receipt share. `winners_losers_2026_09_24` stops on the financing value `pension_accrual`
+until it maps it (or drops those rows when it evaluates the cash set).
+
+**[DEGRADED] Not run for sept29: the whole-budget rules** (whole_flat, whole_ratio, whole_income and their
+federal-series variants). They take the back-cast's concept less the parts that are not cash. The back-cast's sept29
+concept is the set, the pension accrual included, being written to `../historical_backcast_2026_09_20/derived/sept29/`
+on 2026-09-29 by another lane; the rules need its parts by financing column (the capital return, rental assistance,
+public housing and the accrual). For sept27 the whole-budget rules lay inside the programme rules' range (8.20 to
+42.45), so the headline and the ranges above do not depend on them. [DATA: `derived/sept29/summary.json`
+`case.whole_budget_rules.not_run`]
+
+### Phase 2: the adopted lane (2026-09-29)
+
+`SEPT29` now points at `main_case_2026_09_29` (40c4ba75) and reads its September 27 contract. The payloads:
+- **the set:** `main_case_2026_09_29/derived/corrections.json`. A gate in `case_payload` checks that it is the
+  candidate's `corrections_v4.json` in everything but the adoption's five meta stamps (source, adopted, decision, case,
+  status), and that `adopted` is set. A positive control, pointing the gate at the cash payload, stops it.
+- **the cash set:** the candidate's `corrections_v4_cash.json`. The adopted lane writes no cash payload: its
+  `main_case.cjs:78` reads the same file and gates it against its package's pension4 "cash" option.
+
+The adopted lane's files gate the port as they gate sept27 (`per_spec_gates`, `v4_anchors`, `case_split`):
+
+| Check against `main_case_2026_09_29/derived/` | Largest difference | Tolerance |
+|---|---:|---:|
+| `per_spec.csv`, methods' mean, 64 specifications: cost and engine cost | 2.8e-13 | 1e-6 |
+| capital return in total, by level, by part and by component | 1.4e-14 | 1e-9 |
+| enterprise receipt's response, amount and cost; the three lines' responses and amounts | 7.1e-15 | 1e-9 |
+| the receipt alone at 1 | 1.1e-15 | 1e-9 |
+| federal plus state and local equals cost + P (every specification and convention) | 1.7e-13 | 1e-6 |
+| capital's federal and state-local parts | 7.1e-15 | 1e-9 |
+| `main_case_bands.csv`: `adopted` and `uncorrected_at_adopted_responses` (three profiles), `cash_set` (main profile) | 4.1e-5 | 1e-4 (the file's rounding) |
+| `summary.json`: `main_case`, `uncorrected_at_adopted_responses` and `other_profiles`; `cash_set` band | within 1e-6 | 1e-6 |
+| `summary.json` `end_specifications` (both methods) and `cash_set` ends | 48 / 11 | exact |
+
+The uncorrected model here is model.json. The adopted package adds the payload's two receipt lines and eight
+correction lines to it at zero, which adds nothing to a cost or a capital key, and the uncorrected bands match. Every
+CSV in `derived/sept29/` is byte-identical to phase 1; only `summary.json` changed (the lane, the payload files and
+hashes, `bands_source` and the new `per_spec_gates`). [CALCULATION: `derived/sept29/summary.json`
+`case.per_spec_gates`, `case.v4.payloads`]
+
+Reproduce (from the repository root; `test_debt_legacy.py` `test_sept29_rebuilds_its_directory` rebuilds it byte for
+byte):
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py --case sept29
+```
+
+Log (append-only; times from `date`):
+- 2026-09-29 15:33 JST: stub written. Phase 1 points the case at the candidate lane
+  (`main_case_candidate_v4_2026_09_29`, payloads `corrections_v4.json` and `corrections_v4_cash.json`); phase 2 switches
+  to `main_case_2026_09_29`. The default run (`--case sept27`, `derived/`) must stay byte-identical.
+- 2026-09-29 17:00 JST: phase 1 done on the candidate lane. Gate 1: the default rerun (before `derived/sept29/`
+  existed) is identical but for one line of `derived/summary.json`, the provenance hash of
+  `main_case_long_run_2026_09_27/derived/main_case_bands.csv`, which b3f4d849 edited after this lane's last build; the
+  same line differed before this change. pytest: 6 passed (with that line refreshed). Gate 2: parity with engine.js on
+  both payloads, 64 specifications, largest difference 2.8e-13; the printed bands at 48 / 11. Gate 3: the lane's own
+  gates pass on sept29. Gate 4: two `rerun_lane.py` passes with both commands, IDENTICAL, 36/36 files.
+- 2026-09-29 17:12 JST: phase 2 done on the adopted lane (40c4ba75). The set is its `derived/corrections.json`, gated
+  equal to the candidate's `corrections_v4.json` but for five meta stamps; the cash set is still the candidate's
+  `corrections_v4_cash.json`. The adopted lane's `per_spec.csv`, `summary.json` and `main_case_bands.csv` gates pass
+  (largest 4.1e-5 on the bands file, tolerance 1e-4; everything else ≤ 2.8e-13). No number moved: every CSV in
+  `derived/sept29/` is byte-identical to phase 1. Gate 1: the default rerun is identical but for the same
+  `derived/summary.json` provenance line as at 17:00. pytest: 6 passed with that line refreshed. Gate 4: two passes with
+  both commands, IDENTICAL, 36/36. `derived/summary.json` is back to its committed bytes; the refreshed copy is in the
+  session's scratchpad (`forkA/summary_default_refreshed.json`).
+- 2026-09-29 20:43 JST (the lane, after the lead's revive): `derived/summary.json` now carries the refreshed copy. Its
+  one changed line is the build-time hash of `main_case_long_run_2026_09_27/derived/main_case_bands.csv`, 6e550bd3… →
+  46443c0c…, which is that file's sha256 since b3f4d849 (checked). Every CSV of the default run is unchanged. Gates after
+  the refresh (20:32–20:42): two `rerun_lane.py` passes with both commands and `--allow-unrun` for the test file,
+  IDENTICAL 36/36, rc 0 each; pytest 6 passed.
+- 2026-09-29 21:09 JST (the lane, resumed after the machine rebooted at about 20:51; the gate logs above were lost
+  with `/private/tmp`, so every gate was rerun and printed): the 16 pre-reboot files in `derived/sept29/` and
+  `derived/summary.json` all parse. A fresh `--case sept29` run (21:04) wrote all 16 byte-identical to the pre-reboot
+  files, so none was truncated. Gate 2 ran inside it: parity with engine.js on both payloads, 64 specifications,
+  largest difference 1.1e-13 (the set) and 2.8e-13 (the cash set), tolerance 1e-9. Gate 3: the bands at 48 / 11 are
+  $371.4146 / 434.8410bn and $294.7011 / 361.8175bn. Gates 1 and 4: two `rerun_lane.py` passes with both commands
+  and `--allow-unrun` for the test file, IDENTICAL 36/36, rc 0 each (21:04–21:07). The default run's `derived/`
+  differs from HEAD only in `summary.json`'s provenance line above. pytest: 6 passed.
