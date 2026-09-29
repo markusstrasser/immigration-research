@@ -9,8 +9,9 @@ twice, or if the staircase and the main case disagree. Writes `derived/overview.
 Numbers that the text quotes from a file come from `quantity_registry.csv` through placeholders,
 `{{q:<id>|<view>}}`, which `quantities.py` renders. The build lints every sentence that quotes a
 record, runs the binding tests in `quantity_bindings.csv`, and refuses to write on any failure.
-`--groups PATH` reads another copy of groups.py and `--out PATH` writes elsewhere (the positive
-controls use both).
+`--groups PATH` and `--template PATH` read other copies of groups.py and template.html, `--out PATH`
+writes elsewhere, and `--round-each` rounds every table number on its own (the positive controls use
+these).
 """
 
 import argparse
@@ -460,6 +461,31 @@ def displayed_sum_errors(table):
     return errs
 
 
+# Sums the prose states in words: (what, [(record, sign)], total record). At each end, the parts as printed must
+# add to the total as printed. The bindings keep every sentence that states the sum quoting its records.
+PROSE_SUMS = [
+    ("the main estimate, less the low end's offending at the Hispanic average, plus the costs outside the budget",
+     [("case.main", 1), ("pairing.footing_reduction", -1), ("social.items", 1)], "pairing.total"),
+]
+
+
+def prose_sum_errors(recs=None):
+    """The prose sums at each end, on the values the page prints (each record's ends rounding)."""
+    recs = recs if recs is not None else Q.load_registry()
+
+    def end(rid, view):
+        p = Q.parts(Q.record_value(rid, recs), recs[rid]["shape"])
+        return Q.printed_value(p[view], recs[rid]["ends_round"])
+    errs = []
+    for what, parts, total in PROSE_SUMS:
+        for view in ("at_low_end", "at_high_end"):
+            got, want = sum(sign * end(rid, view) for rid, sign in parts), end(total, view)
+            if got != want:
+                errs.append(f"{what}, {view.replace('at_', '').replace('_', ' ')}: the parts print as {got}, "
+                            f"{total} as {want}")
+    return errs
+
+
 def assumption_rows(s, bands):
     """(category, label, change at low end, change at high end, kind, link target). Link target: a finding's
     ladder ref, or "§<group id>" when no single finding covers the assumption."""
@@ -582,6 +608,7 @@ def main():
     global evidence, ROUND_EACH
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--groups", type=Path, default=HERE / "groups.py", help="another copy of groups.py")
+    ap.add_argument("--template", type=Path, default=HERE / "template.html", help="another copy of template.html")
     ap.add_argument("--out", type=Path, default=HERE / "derived/overview.html", help="where to write the page")
     ap.add_argument("--round-each", action="store_true",
                     help="round every table number on its own (the positive control for the printed-sum gate)")
@@ -594,11 +621,12 @@ def main():
     r = evidence.render(entries, fail)
     wrows = waterfall_rows(s, stairs)
     arows = assumption_rows(s, bands)
-    page = (HERE / "template.html").read_text()
+    page = args.template.read_text()
     n_bind = check_quantities(page, sys.modules["groups"].GROUPS, wrows, arows)
     (ledger, ledger_note), (alts, alts_note) = ledger_html(wrows), alternatives_html(wrows)
     errs = [f"ledger: {e}" for e in displayed_sum_errors(ledger)] + \
-        [f"other ways to count: {e}" for e in displayed_sum_errors(alts)]
+        [f"other ways to count: {e}" for e in displayed_sum_errors(alts)] + \
+        [f"prose: {e}" for e in prose_sum_errors()]
     if errs:
         fail(f"{len(errs)} printed sum(s) do not add up:\n  " + "\n  ".join(errs))
     subs = {

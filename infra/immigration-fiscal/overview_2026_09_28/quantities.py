@@ -284,15 +284,18 @@ def allocate(values, total, places, last=()):
     return [(low[i] + (1 if i in up else 0)) * unit for i in range(len(values))]
 
 
-def _digits(x, rnd, unit):
-    """(sign, digits) of x rounded by `rnd`: decimals ("0", "1", "2") or a step ("n5", "n10", "n100")."""
-    d = Decimal(repr(float(x)))
+def printed_value(x, rnd):
+    """x as the page prints it under `rnd`, decimals ("0", "1", "2") or a step ("n5", "n10", "n100"), as a
+    Decimal: the value a reader adds up."""
     if _step(rnd):
         step = Decimal(rnd[1:])
-        v, places = (d / step).quantize(Decimal(1), rounding=ROUND_HALF_UP) * step, 0
-    else:
-        places = int(rnd)
-        v = rounded(x, places)
+        return (Decimal(repr(float(x))) / step).quantize(Decimal(1), rounding=ROUND_HALF_UP) * step
+    return rounded(x, int(rnd))
+
+
+def _digits(x, rnd, unit):
+    """(sign, digits) of x rounded by `rnd`: decimals ("0", "1", "2") or a step ("n5", "n10", "n100")."""
+    v, places = printed_value(x, rnd), 0 if _step(rnd) else int(rnd)
     body = f"{abs(v):.{places}f}" if unit == "year" else f"{abs(v):,.{places}f}"
     return ("−" if v < 0 else ""), body
 

@@ -49,7 +49,7 @@ infra/immigration-fiscal/overview_2026_09_28/template.html,Against as many white
 infra/immigration-fiscal/overview_2026_09_28/template.html,Model of past gaps:,backcast.10y,mid,$3.3tn,
 infra/immigration-fiscal/overview_2026_09_28/template.html,Model of past gaps:,backcast.10y,range,2.8–3.7,
 infra/immigration-fiscal/overview_2026_09_28/template.html,"Pollution, crashes, victims, traffic, fear, net of gains:",social.items,mid_range,{{SOCIAL_ADD}},
-infra/immigration-fiscal/overview_2026_09_28/template.html,Separate channels. The,pairing.total,mid,{{SOCIAL_TOTAL}},
+infra/immigration-fiscal/overview_2026_09_28/template.html,Separate channels. The,pairing.total,range_unit,{{SOCIAL_TOTAL}},the central alone ($450bn) cannot show the sum; the ends add as printed with the footing
 infra/immigration-fiscal/overview_2026_09_28/build.py,ledger/General administration/note,gg.growth_elasticity,range,0.60–0.85%,
 infra/immigration-fiscal/overview_2026_09_28/build.py,ledger/Sales and excise taxes/value,consumption_key.effect,pair,"0, −1",the whole September 26 step; its finite-removal part now sits in schools and general administration
 infra/immigration-fiscal/overview_2026_09_28/build.py,assumptions/General administration held fixed/value,gg.fixed_change,pair,"-28.5, -40.6",
@@ -59,3 +59,9 @@ infra/immigration-fiscal/overview_2026_09_28/build.py,"alternatives/Property tax
 infra/immigration-fiscal/overview_2026_09_28/build.py,alternatives/Pensions counted when earned/value,candidate_v4.set_accrual_payable,pair,"368.0, 429.0",v3's hand sum
 infra/immigration-fiscal/overview_2026_09_28/build.py,"alternatives/Offending at the Hispanic average, low end/value",pairing.fiscal_footing,pair,(new row),the costs row's low-end step was +92: the social items' 96.3 less this row's −4.3
 infra/immigration-fiscal/overview_2026_09_28/build.py,alternatives/Costs outside public budgets/value,pairing.total,pair,load_social(),
+infra/immigration-fiscal/overview_2026_09_28/template.html,Other US residents pay about,case.main,mid,$355bn,the first part of the prose sum that PROSE_SUMS checks
+infra/immigration-fiscal/overview_2026_09_28/template.html,Other US residents pay about,case.main,range,322–387,the first part of the prose sum that PROSE_SUMS checks
+infra/immigration-fiscal/overview_2026_09_28/template.html,Costs outside the budget add,pairing.footing_reduction,at_low_end,(new sentence),"without it, 322 + 96 read as 414"
+infra/immigration-fiscal/overview_2026_09_28/template.html,Separate channels. The,pairing.footing_reduction,at_low_end,(new sentence),"without it, 355 + 100 read as 450"
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/why,pairing.footing_reduction,at_low_end,(new sentence),"without it, the total with the social items did not add"
+infra/immigration-fiscal/overview_2026_09_28/template.html,"Return on public capital, government enterprises' included",capital_return.total,mid_range,"$45bn (34–56), labelled like the ledger line",the ledger's line of the same name leaves the enterprises' capital out
