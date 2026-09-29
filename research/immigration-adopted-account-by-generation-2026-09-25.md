@@ -1,9 +1,44 @@
 # The adopted account by generation
 
-**Verdict (2026-09-27, the September 27 case):** On the main case of $321.8–387.4bn a year
-([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 239), all
-three Mexican-origin generations remain net costs to other US residents. That holds at every one of its 64
-specifications and under both ways of counting children.
+**Verdict (2026-09-29, the main case of that date):** On the main case of $371.4–434.8bn a year
+([decision](../decisions/2026-09-29-main-case-v4.md), ladder 275), all three Mexican-origin generations remain net
+costs to other US residents. That holds at every one of its 64 specifications, under both ways of counting children,
+and when benefits are counted as paid.
+- **Counted with their parents** (NAS): the Mexico-born cost others $169–197bn a year ($16.0–18.7k per adult of the
+  27.7M adults among the 39.7M the account prices), the second generation $111–122bn ($12.4–13.7k per adult) and the
+  third-plus $91–116bn ($11.2–14.1k per adult).
+- **Counted in their own generation:** $87–97bn, $152–179bn and $123–168bn.
+- **Counting benefits when paid** (the cash set, $294.7–361.8bn): with their parents $150–183bn, $78–86bn and
+  $67–93bn; in their own generation $73–87bn, $118–143bn and $90–146bn.
+
+v4's changes add $49.6bn (low end) and $47.5bn (high end) to the September 27 case. The pension switch moves most,
+and it lands mostly on the US-born: the accrual follows the payroll taxes a generation pays this year, while the
+benefits it replaces follow this year's beneficiaries. Counted in their own generation, it adds $33.9 / 36.0bn to the
+second generation and $32.8 / 22.6bn to the third-plus, against $10.0 / 14.4bn to the Mexico-born. Long-run property
+taxes lower every generation's cost, by $7.7–10.2bn under (a).
+[CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md),
+`run_generations_v4.cjs --case sept29` and `--case sept29_cash` → `derived/generation_results_sept29.csv`,
+`generation_results_sept29_cash.csv`, `generation_summary_sept29.json` `change_from_sept27_by_item`; commit aa1f53b;
+the September 27 files rerun byte-identical] [FRAMING-SENSITIVE]
+
+| $bn a year, low / high end | (a) own generation | (b) minors with parents |
+|---|---|---|
+| G1, born in Mexico | 97.2 / 87.1 | 169.4 / 197.4 |
+| G2, US-born, a parent born in Mexico | 151.6 / 179.3 | 110.6 / 121.8 |
+| G3+, US-born of US-born parents | 122.6 / 168.4 | 91.4 / 115.6 |
+| All three (the main case) | 371.4 / 434.8 | 371.4 / 434.8 |
+
+The ends are specifications 48 (shared allocation, 2%, the low long-run readings) and 11 (personal, 3%, the high
+readings). Per-person figures divide by the account's row-4 counts (ladder 274); only the Mexico-born's count differs
+from the CPS's. Beside the account, never in the range, without the capital return (a) is $88.1 / 74.9bn,
+$138.8 / 156.7bn and $110.1 / 146.1bn. The lane did not split the 7% arm on this case (the whole case at 7%:
+$457.5–511.1bn). State pricing applies the union's price indexes to each generation's keys; indexes from each
+generation's own state mix are not computed.
+
+**The September 27 case** ($321.8–387.4bn a year;
+[decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 239) left all
+three Mexican-origin generations net costs to other US residents, at every one of its 64 specifications and
+under both ways of counting children.
 - **Counted with their parents** (NAS): the Mexico-born cost others $159–191bn a year ($15.0–18.1k per
   adult of the 39.7M the account prices, ladder 274), the second generation $87–95bn ($9.8–10.7k per adult)
   and the third-plus $75–102bn ($9.2–12.4k per adult).
@@ -27,7 +62,7 @@ generations carry 75–78% of the move, and under the NAS count the Mexico-born 
 | G1, born in Mexico | 93.8 / 78.3 | 159.0 / 190.8 |
 | G2, US-born, a parent born in Mexico | 127.6 / 153.0 | 87.3 / 95.0 |
 | G3+, US-born of US-born parents | 100.5 / 156.1 | 75.5 / 101.6 |
-| All three (the main case) | 321.8 / 387.4 | 321.8 / 387.4 |
+| All three (the September 27 case) | 321.8 / 387.4 | 321.8 / 387.4 |
 
 The ends are specifications 48 (shared allocation, 2%, the low long-run readings) and 11 (personal, 3%, the
 high readings), as in the schools case. Beside the account, never in the range:
@@ -181,9 +216,22 @@ case itself, which moves every generation.
 - Parent rerun, 2026-09-25: `run_all.sh` passes every gate (masks, keys, models to 5.7e-14bn,
   production, correction splits, engine per generation) and rewrites all 19 derived files
   byte-identical; `main_case.cjs` still passes and its lane is unchanged. [CALCULATION]
+- v4 split, 2026-09-29: step 7 of `run_all.sh` (`v4_inputs.py`, `tax_key_split.py`, `run_generations_v4.cjs`)
+  → `derived/generation_{results,summary,corrections}_sept29{,_cash}.*` (aa1f53b); 27 and 26 gates; the union
+  reproduces the adopted band, $371.4146–434.8410bn and $294.7011–361.8175bn. [CALCULATION]
 
 ## Revisions
 
+- 2026-09-29, later (main case v4, [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275): the split now
+  runs on the main case of $371.4–434.8bn (commit aa1f53b), with the cash set beside it.
+  - Every generation's cost rises, and all three remain net costs at every specification, also on the cash set.
+  - Counted with their parents, the Mexico-born cost $169–197bn, the second generation $111–122bn and the
+    third-plus $91–116bn; per person on the account's row-4 counts.
+  - The pension switch lands mostly on the US-born generations under the own-generation count.
+  - Concept affected: the adopted account's split by generation (ladder 224). At the high end the second generation
+    now costs more than the third-plus under both conventions: under (a) $179.3bn against $168.4bn, where on
+    September 27 the third-plus led by $3.1bn; under (b) $121.8bn against $115.6bn, where the third-plus led by
+    $6.6bn. The low-end ordering is unchanged.
 - 2026-09-27 (the return on public capital, long-run roads and parks, rental assistance and enterprises,
   [decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)): the split now runs
   on the main case of $321.8–387.4bn (commit 8654a0c).
