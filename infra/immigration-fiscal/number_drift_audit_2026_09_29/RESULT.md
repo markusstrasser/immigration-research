@@ -1,14 +1,14 @@
-**Verdict:** The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 856bd5a plus this lane's uncommitted changes, 684 of 824 numbers are checked (the rest are years and non-quantities): all 684 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. The five PM2.5 and crash values the page marked approximate now come from `social_spans_priced_count_2026_09_29`, which reruns the air and crash lanes on the 39.7M the account prices. Two print differently, $45bn → $46bn and $40bn → $41bn, and no number on the page is approximate now. The INDEX paragraph where 869c7aa put the scale net on the priced count is now an audited span, and its 16 numbers MATCH. `memo_sweep.py` extends the check to the living topic memos. On HEAD 8aaf046 it flagged 11 quotes of a record's raw-count or other-arm value, on 9 lines in 4 memos, with no false positive on a hand check of all 11 (2 borderline). The lead fixed nine in 869c7aa. The borderline two are in the outside-checks memo, whose header keeps its figures as computed on the September 23 case; the sweep now exempts it while that sentence stands. On HEAD 856bd5a the sweep reads 178 memos and flags 0. The 48 registry records that carried the default treatment "cash; capital return in" now state their own basis; 11 keep the default, where it is true. The page, the audit's findings and the registry check are byte-identical before and after that edit.
+**Verdict:** The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 856bd5a plus this lane's changes, which a3e6371, 4555486 and b1b7210 committed, 684 of 824 numbers are checked (the rest are years and non-quantities): all 684 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. The five PM2.5 and crash values the page marked approximate now come from `social_spans_priced_count_2026_09_29`, which reruns the air and crash lanes on the 39.7M the account prices. Two print differently, $45bn → $46bn and $40bn → $41bn, and no number on the page is approximate now. The INDEX paragraph where 869c7aa put the scale net on the priced count is now an audited span, and its 16 numbers MATCH. `memo_sweep.py` extends the check to the living topic memos. On HEAD 8aaf046 it flagged 11 quotes of a record's raw-count or other-arm value, on 9 lines in 4 memos, with no false positive on a hand check of all 11 (2 borderline). The lead fixed nine in 869c7aa. The borderline two are in the outside-checks memo, whose header keeps its figures as computed on the September 23 case; the sweep now exempts it while that sentence stands. On HEAD b1b7210 the sweep reads 178 memos and flags 0. The 48 registry records that carried the default treatment "cash; capital return in" now state their own basis; 11 keep the default, where it is true. The page, the audit's findings and the registry check are byte-identical before and after that edit.
 
 Model: claude-opus-5-5
 
 # Reader-facing number drift audit, 2026-09-29
 
 This lane first audited the numbers on the evidence map and in the routing documents. It then built the map's
-build-time sourcing and applied every map fix through it. Nothing is committed; the team lead reviews and commits.
+build-time sourcing and applied every map fix through it. This lane commits nothing; the team lead reviews and commits.
 The map audit last read HEAD 856bd5a and the working tree at 2026-09-29 11:48 JST. That working tree included the
 peer's uncommitted CLAUDE.md edit, which this lane only read. `derived/inputs.json` holds the sha256 of every file
-read. The memo sweep's derived files read the memos at HEAD 856bd5a at 11:49 JST.
+read. The memo sweep's derived files read the memos at HEAD b1b7210 at 12:03 JST.
 
 Since the 263def3 run (05:24), these changes landed:
 - ebf8808 applied the document fixes this lane sent. All 13 document bindings now test FIXED.
@@ -23,14 +23,17 @@ Since the 263def3 run (05:24), these changes landed:
 - `social_spans_priced_count_2026_09_29` recomputed the five approximate values on the priced count, and their records
   now read it (8bdf62a, db03667, 5ccf86d).
 - The lead fixed the documents' lane-count crash and PM2.5 figures by hand in 8aaf046. `memo_sweep.py` then extended
-  the audit to the topic memos (uncommitted; see "Memo sweep, 2026-09-29"), and the lead fixed its flags in 869c7aa.
+  the audit to the topic memos (see "Memo sweep, 2026-09-29"), and the lead fixed its flags in 869c7aa.
 - 8aaf046 rewrote three audited INDEX and FAQ lines, which stopped the audit. I re-anchored them (see "Document
   numbers").
-- Each registry record that carried the default treatment now states its own basis (uncommitted; see "Registry
-  treatments, 2026-09-29").
+- Each registry record that carried the default treatment now states its own basis (see "Registry treatments,
+  2026-09-29").
 - 869c7aa also put the scale net on the priced count in an INDEX paragraph that no span covered. It is now the ninth
   INDEX span (see "Document numbers"). The sweep exempts the outside-checks memo (see "Memo sweep, 2026-09-29").
 - db5840f and 856bd5a (candidate v4's engine and payload) changed no file the build, the audit or the sweep reads.
+- The lead committed the registry treatments (a3e6371), the memo sweep (4555486) and the re-anchored audit
+  (b1b7210). 4555486 already carries the sweep's `--no-exempt` flag, which reproduces the 8aaf046 pass. derived/
+  holds the sweep's b1b7210 pass.
 
 ## Result
 
@@ -364,7 +367,11 @@ revision, the memos read and skipped, the other values per record and the regist
 ### Result on HEAD 8aaf046
 
 Of 35 quotes of an other value, 11 are flagged, on 9 lines in 4 memos, and 24 pass as labelled (count 11, arm 10,
-vintage 3). [CALCULATION: memo_sweep.py → derived/memo_sweep.csv]
+vintage 3). [CALCULATION: `memo_sweep.py --rev 8aaf046 --no-exempt --out DIR` reproduces this pass; its
+memo_sweep.csv is byte-identical to the validated 11:22 pass. `derived/` now holds the HEAD pass.]
+
+The flag `--no-exempt` reads the exempt memo too, as the sweep did at 11:22. Without the flag, the same revision gives
+32 quotes and 9 flagged, because the exempt memo's three quotes drop out (see "Exemption" below).
 
 | Class | Quotes | Where |
 |---|---:|---|
@@ -392,8 +399,8 @@ The memos are `immigration-INDEX.md`, `immigration-outside-checks-2026-09-24.md`
 lead listed: $42.3bn at INDEX:185, FAQ:49, FAQ:168 and real-costs:226; the lane range after "$10.6bn" at INDEX:185 and
 FAQ:168 (count_as_current); and real-costs:217's −46.5. The other two, 217's 31.5 to 122.5 and 218's −57.7 to 74.3,
 sit in the column "Lane central (range)" under a caption naming "the lanes' own central and range on the CPS's
-40.9M". They pass as labelled, and 8aaf046 kept them. The remaining 10 flags at 5ccf86d are still open on HEAD, as is
-the −46.5, which 8aaf046 left.
+40.9M". They pass as labelled, and 8aaf046 kept them. The remaining 10 flags at 5ccf86d are still open on 8aaf046, as
+is the −46.5, which 8aaf046 left.
 
 **After the fixes.** 869c7aa fixed six sites in three memos. On it the sweep finds 34 quotes, and flags only
 outside-checks:256 and 281, the borderline pair. [CALCULATION: memo_sweep.py --rev 869c7aa, to scratch]
@@ -405,11 +412,13 @@ the reason, which memo_sweep_meta.json lists among the skipped memos. The exempt
 stands. If the memo loses it, or the file is gone, the sweep stops with `[BLOCKED]`, so a memo rewritten to current
 values is swept again. `test_memo_sweep.py` tests both the skip and the stop.
 
-**Result on HEAD 856bd5a.** Of the 199 topic memos, the sweep reads 178 and skips 21: the 19 dated audits, the ladder
-and the exempt memo. It finds 31 quotes of an other value, all labelled (count 17, arm 11, vintage 3), and flags 0.
-Without the exemption it reads 179 memos and finds 34 quotes, 2 flagged: the exempt memo holds the two borderline
-$30.9bn quotes and one labelled $28.9bn. `derived/` holds the exempt pass. [CALCULATION: memo_sweep.py →
-derived/memo_sweep.csv, derived/memo_sweep_meta.json; scratch `sweep_noex.py` for the pass without it]
+**Result on HEAD b1b7210.** No memo changed after 856bd5a, and both revisions give the same memo_sweep.csv. Of the
+199 topic memos, the sweep reads 178 and skips 21: the 19 dated audits, the ladder and the exempt memo. All three
+kinds of skip go to one list, `memos_skipped` in memo_sweep_meta.json, with their reasons. It finds 31 quotes of an
+other value, all labelled (count 17, arm 11, vintage 3), and flags 0. With `--no-exempt` it reads 179 memos and
+finds 34 quotes, 2 flagged. The exempt memo holds the two borderline $30.9bn quotes and one labelled $28.9bn.
+`derived/` holds the pass with the exemption. [CALCULATION: memo_sweep.py → derived/memo_sweep.csv,
+derived/memo_sweep_meta.json; `--no-exempt --out DIR` for the pass without the exemption]
 
 **The lead's hand fixes, checked.** The sweep reads only other values, so I checked the numbers 8aaf046 and 869c7aa
 wrote into the real-costs memo against their sources. All 20 resolve:
@@ -616,6 +625,18 @@ check and a sweep to scratch, then restored the edited registry (`cmp` rc 0). Ev
 The control for the anchor check ran HEAD's `source_map.csv` against the current INDEX and FAQ. It stops with
 "[BLOCKED] 3 anchor(s): …" and names all three broken anchors.
 
+The sweep was validated again at 2026-09-29 12:03:17–12:05:14 JST on HEAD b1b7210, with the scratch script
+`sweep_head_validate.sh`. Every step exited 0:
+- two sweeps on HEAD, one into derived/, are `cmp`-identical: "swept 178 memos at b1b7210 (21 skipped): 31 quotes
+  of other values, 0 flagged", with all 19 controls passing. memo_sweep.csv equals the 856bd5a pass; the meta
+  differs in the revision and in `registry_equals_rev`, now true because a3e6371 committed the registry;
+- `--rev 8aaf046 --no-exempt` gives "35 quotes of other values, 11 flagged". Its memo_sweep.csv is `cmp`-identical
+  to the validated 11:22 pass. Its meta differs in the registry's sha256 and `registry_equals_rev`, because the
+  registry has changed since;
+- `--rev 8aaf046` with the exemption gives 32 quotes and 9 flagged;
+- pytest passes 25 tests on both runs, and `ruff check --select F,E9` passes on memo_sweep.py and
+  test_memo_sweep.py.
+
 ## Open items
 
 1. **Done:** the lead committed both table changes (the v4 alternatives and the pairing's footing row) in 2ae6675.
@@ -715,7 +736,8 @@ uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q infra/imm
   to `derived/` or `--out DIR`. It exits 0 with flags; the flags are the output. A failed control, or a record with
   other values but no entry in `ITEM`, stops it with `[BLOCKED]`.
 - **Exempting a memo.** Add its path to `EXEMPT` with a sentence the memo must keep and the reason. The sweep stops
-  with `[BLOCKED]` if the sentence or the file goes.
+  with `[BLOCKED]` if the sentence or the file goes. `--no-exempt` reads the exempt memos too, which reproduces a
+  pass made before their exemption (`--rev 8aaf046 --no-exempt` gives the 11 flagged).
 - **Editing the CSVs.** The registry, the bindings and `source_map.csv` are the source of truth. Edit them directly;
   the scratch generators that first wrote them are not kept.
 
@@ -899,3 +921,10 @@ uv run --no-project --offline python3 -m pytest -p no:cacheprovider -q infra/imm
     test covers it. The 20 numbers the lead's commits wrote into the real-costs memo resolve to their sources.
   - Validation ran at 11:48:26–11:49:13: 684 of 684 MATCH, 0 flagged in 178 memos, 25 tests, every output
     identical on its second run.
+- 2026-09-29 12:07:45 JST: the lead asked again for the exemption in the same skip list as the other 20 and for
+  derived/ on HEAD, with the 8aaf046 pass kept as prose and a command that reproduces it. The exemption already went
+  through `memos()`'s skip list, and the lead committed it in 4555486. Added `--no-exempt`, so
+  `--rev 8aaf046 --no-exempt` reproduces the 11 flagged byte for byte, and reran the sweep into derived/ on
+  b1b7210 (validated at 12:03:17–12:05:14). Meanwhile the lead's uncommitted INDEX and source_map edits print the
+  construction pair as $33.5bn to $29.9bn. Audited to scratch, they give 684 of 684 MATCH, and this lane left them
+  untouched.
