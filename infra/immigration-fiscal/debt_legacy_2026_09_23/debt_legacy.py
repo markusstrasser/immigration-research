@@ -77,7 +77,8 @@ The alternative, the set compounded as if the accrual were borrowed, is the benc
 Public housing's enterprise deficit (receipt line housing_enterprise_surplus, at the rental key) is a capped
 program like rental assistance: displaced beneficiaries (the alternative, the line as cash, is the benchmark
 main_housing_as_cash). The new lines' federal shares are in v4_shares(); the bridge from September 27 is v4_bridge().
-The whole-budget rules are not run for this case (backcast_family), and summary.json says so.
+The whole-budget rules take the back-cast's concept for the case, the set (its derived/sept29/, backcast_case), less
+its parts that are not cash, the accrual among them (cash_whole): the cash set carried back line by line.
 
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py
@@ -360,8 +361,16 @@ ENTERPRISE_RECEIPT = "enterprise_surplus"
 # September 29: public housing's enterprise deficit, split out of the enterprise surplus at the rental line's key
 # (a receipt line of the payload). Public housing is rationed like rental assistance, so it is capped (later_fields).
 HOUSING_ENTERPRISE = "housing_enterprise_surplus"
-BACKCAST_PARTS = BACKCAST / "derived/case_parts_annual.csv"
 CAPITAL_PARTS = ("capital_core", "capital_block", "capital_enterprise")
+# September 29: the back-cast's v4 parts (historical_backcast_2026_09_20/README.md, v4 case) that leave the set's
+# concept for its cash part. With the displaced beneficiaries: rental assistance's change (public housing's operating
+# subsidy split out) and public housing's deficit. With the pension accrual, by accrual line: the accrual each line
+# charges less the benefits it no longer charges; the tax on benefits has no part of its own, it sits inside the
+# federal income tax part, so it leaves on that part's series (V4_BENEFIT_TAX).
+V4_DISPLACED_PARTS = ("v4_housing_subsidies", "v4_housing_enterprise_surplus")
+V4_ACCRUAL_PARTS = {"social_security": ("v4_social_security_accrual", "v4_social_security_cash"),
+                    "medicare": ("v4_medicare_part_a_accrual", "v4_medicare_cash")}
+V4_BENEFIT_TAX = ("federal_income_tax", "v4_federal_income_tax")    # (accrual line, the part that carries it)
 R_VALUES = FISCAL / "finite_response_2026_09_26/derived/r_values.json"
 CK_PAYLOADS = FISCAL / "consumption_key_2026_09_24/derived/payloads.json"
 COMPONENTS: dict = {}                     # the running case's payload by component (set in main())
@@ -2001,21 +2010,18 @@ def rekey_edits(payload: dict, first: dict) -> list[dict]:
     return extra
 
 
-def backcast_family(case: str) -> str | None:
-    """The back-cast's concept tag for a framed case, from the back-cast's own case table.
-
-    None for a case with two payloads (September 29): the back-cast's concept for it is the set, the pension accrual
-    included, written to its own directory (derived/<case>/ of the back-cast, in progress on 2026-09-29), and the
-    whole-budget rules would need its parts by financing column (the capital return, rental assistance, public
-    housing and the accrual) to take the cash part. They are not run; main() names them in summary.json."""
+def backcast_case(case: str) -> tuple[str, Path]:
+    """The back-cast's concept tag for a framed case and the directory holding its backcast_annual.csv and
+    case_parts_annual.csv, from the back-cast's own case table: derived/, or the case's own directory under it
+    (September 29: derived/sept29/, whose concept is the set, the pension accrual included; cash_whole takes its cash
+    part)."""
     if case == "sept24":
-        return "corrected"
-    if LATER_CASES[case].payloads:
-        return None
+        return "corrected", BACKCAST / "derived"
     spec = importlib.util.spec_from_file_location("backcast_cases", BACKCAST / "backcast.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    return module.LATER_CASES[case][1].strip("_")
+    entry = module.LATER_CASES[case]
+    return entry.tag.strip("_"), BACKCAST / "derived" / (entry.out or "")
 
 
 def per_spec_gates(case: str, corrected: dict, meta: dict, shares: dict, extras: dict, jf: dict, ucf: dict,
@@ -2725,11 +2731,12 @@ def pre_existing_gap(wb: Workbook) -> dict:
 
 
 def three_column_summary(run: dict, split: pd.DataFrame, added_shares: dict, wb: Workbook,
-                         whole_parts: dict, v4_rules: dict | None = None) -> dict:
+                         whole_parts: dict, v4_rules: dict | None = None, parts_file: Path | None = None) -> dict:
     """summary.json's September 27 additions: the three columns at each band end and convention, the
     enterprise surplus's own row, the capped programs, the per_spec.csv gates and the pre-existing gap. From
     September 29 (v4_rules) the enterprise surplus takes its share after public housing's split, public housing's
-    receipt line is a capped program, and a whole-budget rule the back-cast cannot run yet is named."""
+    receipt line is a capped program, and the whole-budget rules take the set's concept less the accrual too
+    (parts_file: the case's case_parts_annual.csv)."""
     prof = run["main_profile"]
     main = split[split.profile == prof].set_index(["end", "convention"])
     lines = run["lines"].set_index(["end", "convention", "side", "line"])
@@ -2751,16 +2758,18 @@ def three_column_summary(run: dict, split: pd.DataFrame, added_shares: dict, wb:
     whole = dict(
         rule="the back-cast's concept less its capital return and rental assistance (their own series, "
              "historical_backcast_2026_09_20/derived/case_parts_annual.csv) and less LIHEAP, which follows the base "
-             "at its 2024 share of the base's fiscal gap; the cash part's 2024 federal share is held",
+             "at its 2024 share of the base's fiscal gap; the cash part's 2024 federal share is held" if not v4_rules else
+             "the back-cast's concept, the set, less the parts that are not cash, each on its own series ("
+             f"{parts_file.relative_to(FISCAL)}): the capital return; the displaced beneficiaries, rental assistance "
+             "with its v4 change, public housing's deficit, and LIHEAP, which follows the base at its 2024 share of the "
+             "base's fiscal gap (the base carries September 27's P); and the pension accrual, social security's and "
+             "Medicare Part A's accrual less the benefits they no longer charge, and the tax on benefits, which the "
+             "back-cast carries inside v4_federal_income_tax and which leaves on that part's series. That is the cash "
+             "set carried back line by line. The cash part's 2024 federal share is held",
         window_sums_tn={f"{name}|{rule}": {k: {str(s): float(v.loc[s:LAST].sum()) / 1e3 for s in WINDOW_STARTS}
                                            for k, v in d.items()} for (name, rule), d in sorted(whole_parts.items())})
     if v4_rules and not whole_parts:
-        whole["not_run"] = ("[DEGRADED] the whole-budget rules (whole_flat, whole_ratio, whole_income and their "
-                            "federal-series variants) are not run for this case; the programme rules are. They take the "
-                            "back-cast's concept less the parts that are not cash, and historical_backcast_2026_09_20's "
-                            "concept for this case (the set, the pension accrual included, in its derived/sept29/, in "
-                            "progress on 2026-09-29) would need its parts by financing column: the capital return, "
-                            "rental assistance, public housing and the accrual (backcast_family)")
+        raise SystemExit("[BLOCKED] the whole-budget rules did not run on a case with two payloads")
     return dict(
         profiles={p: dict(lane_profile=b, long_run_lines_take_the_specification=lr)
                   for p, (b, lr) in case_profiles(run["case"]).items()},
@@ -2996,9 +3005,14 @@ def main() -> None:
     s_f = fed_exp * 1e9 * hist.real / residents
     indirect = indirect_receipt_shares(wb)
     n = hist.group
-    # The back-cast's concepts for the case: Sept 24 re-run in da2b107, later cases from its LATER_CASES. A case the
-    # back-cast does not carry yet (None) runs the programme rules only; summary.json names what is not run.
-    family = backcast_family(args.case) if framed else None
+    # The back-cast's concepts for the case: Sept 24 re-run in da2b107, later cases from its LATER_CASES, each in its
+    # directory there. Its group and income series are the ones History read (gate), so only the concepts differ.
+    family, backcast_dir = backcast_case(args.case) if framed else (None, BACKCAST / "derived")
+    concepts = pd.read_csv(backcast_dir / "backcast_annual.csv").set_index("year")
+    for col in ("group_millions", "relative_per_capita_income"):
+        if not concepts[col].equals(hist.annual[col]):
+            raise SystemExit(f"[BLOCKED] {backcast_dir.relative_to(FISCAL)}/backcast_annual.csv: {col} is not the "
+                             "back-cast's default series")
     main_prof = run["main_profile"]
     benchmarks = ({"main": (main_prof, f"net_cost_cbo_informed_{family}" if family else None),
                    "proportional": ("proportional_reference", f"net_cost_full_proportional_{family}" if family else None)}
@@ -3025,30 +3039,62 @@ def main() -> None:
             h = main_lines.loc[(end, conv, "receipt", HOUSING_ENTERPRISE)]
             return gap + float(h.gap_bn), fed + float(h.federal_bn)
         return gap, fed
-    parts_annual = pd.read_csv(BACKCAST_PARTS) if three and family else None
+    parts_file = backcast_dir / "case_parts_annual.csv"
+    parts_annual = pd.read_csv(parts_file) if three and family else None
     whole_parts = {}
 
-    def cash_whole(column: str, end: str, rule: str, corner: dict, p: float, p_t: pd.Series, row: pd.Series) -> pd.Series:
+    def cash_whole(column: str, end: str, rule: str, corner: dict, p: float, p_t: pd.Series, row: pd.Series,
+                   set_corner: dict | None = None) -> pd.Series:
         """A whole-budget rule's cash gap by year (September 27 on): the back-cast's concept plus P, less
         the capital return and rental assistance, each carried back by its own series (the back-cast's
         case_parts_annual.csv), and less LIHEAP, which sits in the base and follows it at its 2024 share of
         the base's fiscal gap. Gates: the parts add to the concept (1e-3, the file's rounding) and the 2024
-        values are this split's cash, resource cost and displaced beneficiaries (1e-3)."""
+        values are this split's cash, resource cost and displaced beneficiaries (1e-3).
+
+        From September 29 (set_corner: the set's corner beside the cash corner) the concept is the set. Rental
+        assistance's v4 change and public housing's deficit leave with the displaced beneficiaries, and the base's
+        fiscal gap is on September 27's P, which the base carries (v4_production_private carries the change, -dP).
+        The pension accrual leaves as the fourth column, line by line as accrual_rows splits it at the two corners:
+        social security's and Medicare Part A's accrual parts less the benefits they no longer charge, and the tax on
+        benefits at its 2024 amount on v4_federal_income_tax's series, the part the back-cast carries it in (gate: that
+        part's path is the same at both band ends, one series). What is left is the cash set carried back line by
+        line. Gates as above, and the accrual's 2024 value, line by line and in total, is this split's (1e-3)."""
         name = f"{column}_{end}"
         k = parts_annual[(parts_annual.concept == name) & (parts_annual.rule == rule)].pivot(
             index="year", columns="part", values="value_bn").reindex(YEARS)
-        total = hist.annual[f"{name}__{rule}"].reindex(YEARS)
+        total = concepts[f"{name}__{rule}"].reindex(YEARS)
         if k.isna().any().any() or (k.sum(axis=1) - total).abs().max() > 1e-3:
-            raise SystemExit(f"[BLOCKED] {BACKCAST_PARTS.name}: {name}/{rule} parts do not add to the back-cast's concept")
+            raise SystemExit(f"[BLOCKED] {parts_file.name}: {name}/{rule} parts do not add to the back-cast's concept")
         t = lines_at(corner).set_index(["side", "id"])
         liheap = float(t.responsive_bn[("spending", "energy_assistance")])
         resource = k[list(CAPITAL_PARTS)].sum(axis=1)
-        displaced = k.rental_assistance + liheap / (k.base[LAST] + p) * (k.base + p_t)
-        cash = total + p_t - resource - displaced
-        for got, want in ((cash, row.fiscal_gap_bn), (resource, row.resource_cost_bn), (displaced, row.displaced_bn)):
+        p_base = p if set_corner is None else p + k.v4_production_private[LAST]
+        displaced = k.rental_assistance + liheap / (k.base[LAST] + p_base) * (k.base + p_base * n / n[LAST])
+        accrual = pd.Series(0.0, index=YEARS)
+        checks = [(resource, row.resource_cost_bn)]
+        if set_corner is not None:
+            displaced = displaced + k[list(V4_DISPLACED_PARTS)].sum(axis=1)
+            acc = accrual_rows(set_corner, corner).set_index("id").responsive_bn
+            tax_line, tax_part = V4_BENEFIT_TAX
+            if sorted(acc.index) != sorted([*V4_ACCRUAL_PARTS, tax_line]):
+                raise SystemExit(f"[BLOCKED] the accrual lines {sorted(acc.index)} are not the back-cast's parts' lines")
+            other = parts_annual[(parts_annual.concept == f"{column}_{'high' if end == 'low' else 'low'}")
+                                 & (parts_annual.rule == rule) & (parts_annual.part == tax_part)]
+            other = other.set_index("year").value_bn.reindex(YEARS)
+            path = k[tax_part] / k[tax_part][LAST]
+            if min(abs(k[tax_part][LAST]), abs(other[LAST])) < 0.1 or (path - other / other[LAST]).abs().max() > 1e-4:
+                raise SystemExit(f"[BLOCKED] {name}/{rule}: {tax_part} does not follow one series at both band ends")
+            by_line = {line: k[list(ps)].sum(axis=1) for line, ps in V4_ACCRUAL_PARTS.items()}
+            by_line[tax_line] = acc[tax_line] * path
+            checks += [(by_line[line], acc[line]) for line in by_line]
+            accrual = sum(by_line.values())
+            checks.append((accrual, row.accrual_bn))
+        cash = total + p_t - resource - displaced - accrual
+        for got, want in [(cash, row.fiscal_gap_bn), (displaced, row.displaced_bn)] + checks:
             if abs(got[LAST] - want) > 1e-3:
                 raise SystemExit(f"[BLOCKED] {name}/{rule}: the 2024 parts are not this split's ({got[LAST]} vs {want})")
-        whole_parts[(name, rule)] = dict(resource=resource, displaced=displaced)
+        whole_parts[(name, rule)] = dict(resource=resource, displaced=displaced,
+                                         **({"accrual": accrual} if set_corner is not None else {}))
         return cash
     for bench, (prof, column) in benchmarks.items():
         bench_split = split[split.profile == prof].set_index(["end", "convention"])
@@ -3092,8 +3138,9 @@ def main() -> None:
                 # Whole-budget rules hold the 2024 split (the brief's rule where no category series exists).
                 # From September 27 they hold the cash part's split, on the cash part of the concept.
                 row = bench_split.loc[(end, conv)]
-                whole = {rule: (cash_whole(column, end, rule, corner, p, p_t, row) if three
-                                else hist.annual[f"{column}_{end}__{rule}"].reindex(YEARS) + p_t)
+                whole = {rule: (cash_whole(column, end, rule, corner, p, p_t, row,
+                                           run["set_anchors"][prof][end] if v4 else None) if three
+                                else concepts[f"{column}_{end}__{rule}"].reindex(YEARS) + p_t)
                          for rule in ("flat", "ratio", "income")}
                 for rule in ("flat", "ratio", "income"):
                     gap = whole[rule]
@@ -3246,11 +3293,13 @@ def main() -> None:
                 general_government_low_end_components=dict(zip(("federal_tax_collection", "state_local"),
                                                                map(float, gg_components))))
         if three:
-            summary["case"].update(three_column_summary(run, split, added_shares, wb, whole_parts, v4_rules))
+            summary["case"].update(three_column_summary(run, split, added_shares, wb, whole_parts, v4_rules, parts_file))
             contract = (case_file(args.case, "per_spec.csv"), case_file(args.case, "main_case_bands.csv")) \
                 if main_summary is not None else ()
+            # A case in its own back-cast directory (September 29) also reads its concepts from there.
+            own_concepts = (backcast_dir / "backcast_annual.csv",) if family and backcast_dir != BACKCAST / "derived" else ()
             summary["case"]["lane_sha256"].update({str(q.relative_to(ROOT)): sha(q) for q in (
-                *contract, *((BACKCAST_PARTS,) if family else ()))})
+                *contract, *((parts_file,) if family else ()), *own_concepts)})
         if v4:
             summary["case"]["v4"] = plain(v4_summary(run, split, v4_rules, pd.DataFrame(stock_rows), count_m, family))
     (out / "summary.json").write_text(json.dumps(summary, indent=1, sort_keys=True) + "\n")

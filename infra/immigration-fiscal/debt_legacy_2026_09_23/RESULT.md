@@ -763,7 +763,8 @@ concept is the set, the pension accrual included, being written to `../historica
 on 2026-09-29 by another lane; the rules need its parts by financing column (the capital return, rental assistance,
 public housing and the accrual). For sept27 the whole-budget rules lay inside the programme rules' range (8.20 to
 42.45), so the headline and the ranges above do not depend on them. [DATA: `derived/sept29/summary.json`
-`case.whole_budget_rules.not_run`]
+`case.whole_budget_rules.not_run`] [Resolved later the same day: the back-cast's sept29 parts landed at c4dd711 and
+the rules now run on this case; see "Whole-budget rules on sept29" below. `not_run` has left `summary.json`.]
 
 ### Phase 2: the adopted lane (2026-09-29)
 
@@ -793,6 +794,66 @@ correction lines to it at zero, which adds nothing to a cost or a capital key, a
 CSV in `derived/sept29/` is byte-identical to phase 1; only `summary.json` changed (the lane, the payload files and
 hashes, `bands_source` and the new `per_spec_gates`). [CALCULATION: `derived/sept29/summary.json`
 `case.per_spec_gates`, `case.v4.payloads`]
+
+### Whole-budget rules on sept29 (2026-09-29, later)
+
+The back-cast's concept for this case and its parts by line landed at c4dd711
+(`../historical_backcast_2026_09_20/derived/sept29/`). The whole-budget rules now run on sept29 for the main and
+proportional benchmarks, as on September 27. `backcast_case()` reads the concept's tag and directory from the
+back-cast's own case table. A gate checks that the group and income series there are the ones `History` reads, so
+only the concepts come from the new directory.
+
+**Designed rule: the cash part of the set's concept.** The back-cast carries the set, the pension accrual included,
+with v4's change line by line. `cash_whole()` takes out each part that is not cash, on the series the back-cast
+carries it with:
+- the capital return (resource cost), as on September 27;
+- the displaced beneficiaries: rental assistance with its v4 change (`v4_housing_subsidies`), public housing's
+  deficit (`v4_housing_enterprise_surplus`), and LIHEAP, which follows the base at its 2024 share of the base's fiscal
+  gap. The base carries September 27's P, so that share uses P less the production grid's change;
+- the pension accrual, line by line as `accrual_rows` splits it:
+  - social security's and Medicare Part A's accrual parts, less the benefits they no longer charge;
+  - the tax on benefits ($2.09 / 1.82bn in 2024), which has no part of its own. It sits inside
+    `v4_federal_income_tax`, so it leaves at its 2024 amount on that part's series. A gate checks that the part follows
+    one series at both band ends.
+
+What is left is the cash set carried back line by line. The series the set's concept gives the tax on benefits does
+not matter: taking the tax out on the same series leaves only the cash set's own lines. Splitting the tax into a part
+of its own (the back-cast's README names that option) would leave the cash part unchanged. Gates (1e-3, the file's
+rounding): the parts add to the concept, and in 2024 the cash part, the resource cost, the displaced beneficiaries and
+the accrual (in total and on each of its three lines) are this split's. A case with two payloads whose whole-budget
+rules do not run now stops the run, where it wrote `not_run` before.
+
+Alternative, named and not run: the whole-budget rules on the set, with the accrual compounded as if borrowed. That is
+the whole-budget form of the benchmark `main_with_accrual`, whose programme rules give $61.27 / 70.53bn of 2024
+interest (above).
+
+**Results** (central convention, effective rate, 2005 window, all borrowed; $bn, low / high end):
+
+| Rule | Sept 27 interest | Sept 29 interest | Sept 29 stock entering 2024 |
+|---|---:|---:|---:|
+| programme_income_pandemic_per_head (central, unchanged) | 30.93 / 41.63 | 30.75 / 41.48 | 951.1 / 1,283.0 |
+| whole_flat | 18.73 / 31.27 | 18.24 / 30.80 | 564.0 / 952.6 |
+| whole_ratio | 15.52 / 26.11 | 14.92 / 25.48 | 461.3 / 788.0 |
+| whole_income | 18.76 / 30.79 | 18.46 / 30.56 | 570.9 / 945.2 |
+| whole_ratio_federal_series | 10.90 / 21.33 | 10.45 / 20.91 | 323.3 / 646.6 |
+| whole_income_federal_series | 26.55 / 36.98 | 26.21 / 36.67 | 810.8 / 1,134.2 |
+| **all 11 back-cast rules, both ends** | **8.20 to 42.45** | **7.77 to 42.30** | |
+| the five whole-budget rules alone | 10.90 to 36.98 | 10.45 to 36.67 | |
+| every specification, main benchmark | −4.25 to 66.29 | −5.15 to 65.73 | |
+| the whole-budget rules, proportional benchmark | 17.48 to 41.05 | 17.07 to 40.74 | |
+
+As on September 27, the whole-budget rules lie inside the programme rules' range. The range across rules is therefore
+the programme rules' range, **$7.8–42.3bn**; the INDEX printed $8.2–42.5bn for September 27. Each whole-budget rule
+falls $0.23–0.63bn against September 27. The rules hold the 2024 federal share of the cash gap, and the federal part of
+that gap falls $0.98 / 0.94bn (above). [CALCULATION: `debt_legacy.py --case sept29` → `derived/sept29/stocks.csv`, rows
+`benchmark` main and proportional; the September 27 column from `derived/stocks.csv`]
+
+Files: in `derived/sept29/`, `stocks.csv` gains 1,440 rows, `federal_gap_annual.csv` 1,200 and
+`adopted_backcast_windows.csv` 36, all whole-budget rules; every committed row is unchanged and in place.
+`summary.json` changes in 17 key paths, all under `case.whole_budget_rules` (the rule, the window sums with the
+accrual beside, `not_run` gone), `case.lane_sha256` (the back-cast's sept29 `backcast_annual.csv` and
+`case_parts_annual.csv`) and `case.v4.backcast_concept` (sept29). The other 12 files are byte-identical. The headline
+does not move.
 
 Reproduce (from the repository root; `test_debt_legacy.py` `test_sept29_rebuilds_its_directory` rebuilds it byte for
 byte):
@@ -832,3 +893,17 @@ Log (append-only; times from `date`):
   $371.4146 / 434.8410bn and $294.7011 / 361.8175bn. Gates 1 and 4: two `rerun_lane.py` passes with both commands
   and `--allow-unrun` for the test file, IDENTICAL 36/36, rc 0 each (21:04–21:07). The default run's `derived/`
   differs from HEAD only in `summary.json`'s provenance line above. pytest: 6 passed.
+- 2026-09-29 23:04 JST (the lane, after the lead's commit 7e1b500): the whole-budget rules run on sept29 (section
+  above), from the back-cast's `derived/sept29/` at c4dd711. The new gates in `cash_whole` pass at both ends, every
+  rule and both benchmarks: parts add to the concept; in 2024 the cash part, the resource cost, the displaced
+  beneficiaries and the accrual on each of its three lines match the split; the benefit tax's part follows one
+  series. Against HEAD, `derived/sept29/` changes in four files: three CSVs gain whole-budget rows only, with every
+  committed row unchanged and in place, and `summary.json` in 17 key paths. The other 12 files are byte-identical,
+  and the scratch and in-place runs agree 16/16.
+  - Gate 1: pytest 6 passed. That covers the four earlier cases against their commits, the default run against
+    `derived/` and sept29 against its directory. The default `derived/` equals HEAD.
+  - `constant_choices.py` imports this script. The sept24_propagation pass is IDENTICAL 23/23, and its sept26,
+    sept26_schools and sept27 files are identical to the tracked ones.
+  - Gate 4: two `rerun_lane.py` passes with both commands, IDENTICAL 36/36, rc 0 each (22:55–23:04). Two earlier
+    passes (22:33–22:35) flagged only this RESULT.md, which I was editing while they ran; every output was
+    unchanged, 35/36.

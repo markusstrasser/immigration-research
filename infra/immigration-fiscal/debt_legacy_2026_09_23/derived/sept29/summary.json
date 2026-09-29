@@ -350,6 +350,8 @@
    "infra/immigration-fiscal/care_household_services_2026_09_23/derived/summary.csv": "ea351ee9aac908ba97599fdfb59e7b2d642ab5e6acb65e86ce48a9a016a2ceef",
    "infra/immigration-fiscal/consumption_key_2026_09_24/derived/payloads.json": "80eb474e2c3fb104871acab549706dbbb32a6fe99e7ce4ebe917d313770c1917",
    "infra/immigration-fiscal/finite_response_2026_09_26/derived/r_values.json": "70c90edd6ae4b8ff7d8262756af7d49c3f982ce99de7bbdcff1355ec8251977b",
+   "infra/immigration-fiscal/historical_backcast_2026_09_20/derived/sept29/backcast_annual.csv": "b0cd5c5a61851eb3f7c3b7e2552a81a6984c9fa5d77b6b8f4e0fd591537cff36",
+   "infra/immigration-fiscal/historical_backcast_2026_09_20/derived/sept29/case_parts_annual.csv": "ebbbf92c1854441b8dff5d1b69f548ff4f5efe1ce9c0cb4abbe32b383f77676d",
    "infra/immigration-fiscal/main_case_2026_09_26/derived/corrections.json": "ad37c1f94cbc43496696a42d7714851bf64e6d4e723bfcfc18c8fd8ccf351f39",
    "infra/immigration-fiscal/main_case_2026_09_29/derived/main_case_bands.csv": "834fcb017c95bcc37768123abc39d78af30f4aeede487df13c257a0eda4dd46f",
    "infra/immigration-fiscal/main_case_2026_09_29/derived/per_spec.csv": "562d681b55054394bfd8281314ee7861c855fe79cf6c2592a59b1428e82b249f",
@@ -748,7 +750,7 @@
    }
   },
   "v4": {
-   "backcast_concept": null,
+   "backcast_concept": "sept29",
    "central": {
     "benchmark": "main",
     "convention": "central",
@@ -997,9 +999,213 @@
    }
   },
   "whole_budget_rules": {
-   "not_run": "[DEGRADED] the whole-budget rules (whole_flat, whole_ratio, whole_income and their federal-series variants) are not run for this case; the programme rules are. They take the back-cast's concept less the parts that are not cash, and historical_backcast_2026_09_20's concept for this case (the set, the pension accrual included, in its derived/sept29/, in progress on 2026-09-29) would need its parts by financing column: the capital return, rental assistance, public housing and the accrual (backcast_family)",
-   "rule": "the back-cast's concept less its capital return and rental assistance (their own series, historical_backcast_2026_09_20/derived/case_parts_annual.csv) and less LIHEAP, which follows the base at its 2024 share of the base's fiscal gap; the cash part's 2024 federal share is held",
-   "window_sums_tn": {}
+   "rule": "the back-cast's concept, the set, less the parts that are not cash, each on its own series (historical_backcast_2026_09_20/derived/sept29/case_parts_annual.csv): the capital return; the displaced beneficiaries, rental assistance with its v4 change, public housing's deficit, and LIHEAP, which follows the base at its 2024 share of the base's fiscal gap (the base carries September 27's P); and the pension accrual, social security's and Medicare Part A's accrual less the benefits they no longer charge, and the tax on benefits, which the back-cast carries inside v4_federal_income_tax and which leaves on that part's series. That is the cash set carried back line by line. The cash part's 2024 federal share is held",
+   "window_sums_tn": {
+    "net_cost_cbo_informed_sept29_high|flat": {
+     "accrual": {
+      "2005": 1.2901973275541025,
+      "2010": 1.015416100502791,
+      "2015": 0.6962167602453844
+     },
+     "displaced": {
+      "2005": 0.14355578264672153,
+      "2010": 0.11298182812548953,
+      "2015": 0.077465623271961
+     },
+     "resource": {
+      "2005": 1.010092427,
+      "2010": 0.7949668589999999,
+      "2015": 0.5450664510000001
+     }
+    },
+    "net_cost_cbo_informed_sept29_high|income": {
+     "accrual": {
+      "2005": 1.1515494305506448,
+      "2010": 0.8916723440955063,
+      "2015": 0.6527066364787847
+     },
+     "displaced": {
+      "2005": 0.12691888298593465,
+      "2010": 0.10073782641100384,
+      "2015": 0.06943932662485977
+     },
+     "resource": {
+      "2005": 0.8564757959999999,
+      "2010": 0.701232236,
+      "2015": 0.49924799100000006
+     }
+    },
+    "net_cost_cbo_informed_sept29_high|ratio": {
+     "accrual": {
+      "2005": 1.1515494305506448,
+      "2010": 0.8916723440955063,
+      "2015": 0.6527066364787847
+     },
+     "displaced": {
+      "2005": 0.12534682192794858,
+      "2010": 0.09961135405634167,
+      "2015": 0.06886576555947187
+     },
+     "resource": {
+      "2005": 0.8564757959999999,
+      "2010": 0.701232236,
+      "2015": 0.49924799100000006
+     }
+    },
+    "net_cost_cbo_informed_sept29_low|flat": {
+     "accrual": {
+      "2005": 1.3553940127408648,
+      "2010": 1.0667274484140326,
+      "2015": 0.731398219638451
+     },
+     "displaced": {
+      "2005": 0.14355578263829685,
+      "2010": 0.11298182811666216,
+      "2015": 0.0774656232679286
+     },
+     "resource": {
+      "2005": 0.6081889149999999,
+      "2010": 0.47865919900000004,
+      "2015": 0.328191129
+     }
+    },
+    "net_cost_cbo_informed_sept29_low|income": {
+     "accrual": {
+      "2005": 1.2091010367018709,
+      "2010": 0.9362541610567932,
+      "2015": 0.6855991098534063
+     },
+     "displaced": {
+      "2005": 0.1270950519482506,
+      "2010": 0.1008789488948932,
+      "2015": 0.06950024265219029
+     },
+     "resource": {
+      "2005": 0.513702842,
+      "2010": 0.42086055099999997,
+      "2015": 0.300034894
+     }
+    },
+    "net_cost_cbo_informed_sept29_low|ratio": {
+     "accrual": {
+      "2005": 1.2091010367018709,
+      "2010": 0.9362541610567932,
+      "2015": 0.6855991098534063
+     },
+     "displaced": {
+      "2005": 0.1253187828038535,
+      "2010": 0.09960614967387615,
+      "2015": 0.06885217696805251
+     },
+     "resource": {
+      "2005": 0.513702842,
+      "2010": 0.42086055099999997,
+      "2015": 0.300034894
+     }
+    },
+    "net_cost_full_proportional_sept29_high|flat": {
+     "accrual": {
+      "2005": 1.2901973275541025,
+      "2010": 1.015416100502791,
+      "2015": 0.6962167602453844
+     },
+     "displaced": {
+      "2005": 0.14355578264888,
+      "2010": 0.11298182812594294,
+      "2015": 0.07746562327370628
+     },
+     "resource": {
+      "2005": 1.010092427,
+      "2010": 0.7949668589999999,
+      "2015": 0.5450664510000001
+     }
+    },
+    "net_cost_full_proportional_sept29_high|income": {
+     "accrual": {
+      "2005": 1.1515494305506448,
+      "2010": 0.8916723440955063,
+      "2015": 0.6527066364787847
+     },
+     "displaced": {
+      "2005": 0.12674501907937538,
+      "2010": 0.10059862491051119,
+      "2015": 0.06937923346097993
+     },
+     "resource": {
+      "2005": 0.8564757959999999,
+      "2010": 0.701232236,
+      "2015": 0.49924799100000006
+     }
+    },
+    "net_cost_full_proportional_sept29_high|ratio": {
+     "accrual": {
+      "2005": 1.1515494305506448,
+      "2010": 0.8916723440955063,
+      "2015": 0.6527066364787847
+     },
+     "displaced": {
+      "2005": 0.12537403371947728,
+      "2010": 0.0996162348847958,
+      "2015": 0.06887903417292955
+     },
+     "resource": {
+      "2005": 0.8564757959999999,
+      "2010": 0.701232236,
+      "2015": 0.49924799100000006
+     }
+    },
+    "net_cost_full_proportional_sept29_low|flat": {
+     "accrual": {
+      "2005": 1.3553940127408648,
+      "2010": 1.0667274484140326,
+      "2015": 0.731398219638451
+     },
+     "displaced": {
+      "2005": 0.14355578264301713,
+      "2010": 0.11298182812193461,
+      "2015": 0.0774656232724959
+     },
+     "resource": {
+      "2005": 0.6523362259999999,
+      "2010": 0.5134041869999999,
+      "2015": 0.352013917
+     }
+    },
+    "net_cost_full_proportional_sept29_low|income": {
+     "accrual": {
+      "2005": 1.2091010367018709,
+      "2010": 0.9362541610567932,
+      "2015": 0.6855991098534063
+     },
+     "displaced": {
+      "2005": 0.12687676989137125,
+      "2010": 0.10070417394403854,
+      "2015": 0.06942479337058136
+     },
+     "resource": {
+      "2005": 0.5543034250000001,
+      "2010": 0.453796492,
+      "2015": 0.32296686900000005
+     }
+    },
+    "net_cost_full_proportional_sept29_low|ratio": {
+     "accrual": {
+      "2005": 1.2091010367018709,
+      "2010": 0.9362541610567932,
+      "2015": 0.6855991098534063
+     },
+     "displaced": {
+      "2005": 0.12535301288760234,
+      "2010": 0.09961231423065121,
+      "2015": 0.06886885587428042
+     },
+     "resource": {
+      "2005": 0.5543034250000001,
+      "2010": 0.453796492,
+      "2015": 0.32296686900000005
+     }
+    }
+   }
   }
  },
  "debt_increase_fy2005_2023_bn": 21940.048000000003,
