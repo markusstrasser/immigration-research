@@ -692,3 +692,85 @@ The reversal holds at every end but narrows. Against the flat rule, unauthorized
 - 02:12–02:18 — `rerun_lane.py` pass 1: exit 0, IDENTICAL 30/30. 02:18 — pytest: 3 passed.
 - 02:28 — this section appended.
 - 02:29–02:36 — `rerun_lane.py` pass 2: exit 0, IDENTICAL 30/30. 02:36 — pytest: 3 passed. `git status`: `households.py` and this RESULT changed, the new files untracked, the pension lane unchanged.
+
+## Central, 2026-09-30
+
+**Verdict:** The lead adopted the recommendation above: this lane's central is the person accrual with the payroll taxes keyed on on-books wages. Under it **16.9% (SE 0.4) / 13.7% (0.4)** of members live in net-contributor households under A and **23.3% (0.5) / 22.0% (0.5)** under B, against 16.2% / 12.3% and 23.8% / 22.1% under the flat rule. Members with an unauthorized head are more often in net-contributor households than members with a legal-immigrant head at every end (A, low: 13.2% against 11.7%). A test arm keeps both keys on the books but credits the unauthorized in full. Under it the order is the flat rule's again (9.3% against 12.7%), so the reversal comes from the 10% claim share, not from on-books pay. [CALCULATION: `households.py --case sept29 --weights row4 --accrual person --payroll onbooks` → `derived/sept29/*_person_onbooks.csv`; arm `person_payroll_onbooks_full_claim` in `person_accrual_arms.csv`] [FRAMING-SENSITIVE: the claim share]
+
+claude-opus-5-5
+
+**What runs.**
+- `households.py --case sept29 --weights row4 --accrual person --payroll onbooks` writes the central's five files, with the suffix `_person_onbooks`, and `_cache/sept29/households_person_onbooks.parquet`. It stops unless its flat arm, its person arm and its arms comparison reproduce the files the flat and `--accrual person` runs wrote, byte for byte.
+- The full-claim arm (`person_payroll_onbooks_full_claim`, in `person_accrual_arms.csv`) is the central with the unauthorized's Social Security and Part A at a claim share of 1. `person_accrual.py` computes it with the same model (`oasdi_net_full_claim`, `part_a_full_claim`). In both arms each generation keeps the case's accrual and payroll taxes, so they only redistribute within generations.
+
+**Shares under the central.** % of members in net-contributor households (SE).
+
+| Head's cell | Members (m) | A, low | A, high | B, low | B, high |
+|---|---:|---|---|---|---|
+| All members | 39.71 | 16.9 (0.4) | 13.7 (0.4) | 23.3 (0.5) | 22.0 (0.5) |
+| Head unauthorized | 6.94 | 13.2 (1.0) | 10.9 (1.0) | 20.5 (1.3) | 19.9 (1.4) |
+| Head legal immigrant | 10.23 | 11.7 (0.8) | 8.5 (0.6) | 17.0 (0.9) | 15.5 (1.0) |
+| Head US-born | 21.96 | 20.6 (0.6) | 17.4 (0.6) | 27.4 (0.7) | 26.2 (0.7) |
+| Head below high school | 9.84 | 7.2 (0.7) | 6.1 (0.7) | 11.3 (0.9) | 11.0 (0.9) |
+| Head high school | 13.13 | 12.8 (0.9) | 9.8 (0.7) | 17.2 (1.0) | 16.8 (0.9) |
+| Head some college | 9.76 | 17.2 (1.2) | 13.6 (1.0) | 25.4 (1.3) | 24.0 (1.2) |
+| Head bachelor's or more | 6.97 | 37.7 (1.5) | 31.9 (1.5) | 48.9 (1.7) | 44.7 (1.7) |
+| Head Mexico-born | 17.18 | 12.3 (0.6) | 9.5 (0.5) | 18.4 (0.7) | 17.3 (0.7) |
+| Head second generation | 11.19 | 18.7 (0.9) | 16.2 (0.8) | 24.9 (1.1) | 25.1 (1.0) |
+| Head third-plus generation | 10.77 | 22.6 (1.1) | 18.6 (0.9) | 30.0 (1.2) | 27.4 (1.0) |
+| Head under 30 | 7.08 | 18.2 (1.4) | 13.8 (1.1) | 27.2 (1.5) | 25.5 (1.5) |
+| Head 30–44 | 15.44 | 17.2 (0.7) | 14.1 (0.7) | 22.4 (0.8) | 21.1 (0.8) |
+| Head 45–64 | 13.11 | 18.0 (0.9) | 14.9 (0.8) | 25.4 (1.1) | 24.0 (1.1) |
+| Head 65 and over | 4.08 | 9.6 (1.1) | 8.1 (1.0) | 13.3 (1.6) | 13.2 (1.4) |
+
+[CALCULATION: `net_positive_shares_person_onbooks.csv`; the status rows are the case's flag, `head_status_case_flag`]
+
+The distribution, per member of the household (SE), central against flat:
+
+| | A, low | A, high | B, low | B, high |
+|---|---|---|---|---|
+| Median member's household, $ | 10,345 (186); flat 9,755 | 11,714 (179); flat 11,160 | 7,208 (186); flat 6,597 | 7,388 (180); flat 6,952 |
+| P10, $ | −5,114 (268); flat −3,790 | −3,063 (297); flat −1,628 | −7,955 (381); flat −6,661 | −7,150 (363); flat −5,881 |
+| Costliest tenth of households, % of the net cost | 54.2 (0.5); flat 53.2 | 48.2 (0.5); flat 47.5 | 71.3 (0.7); flat 69.7 | 66.7 (0.7); flat 65.4 |
+
+[CALCULATION: `household_balance_quantiles_person_onbooks.csv`, `concentration_person_onbooks.csv` against the flat files]
+
+**The status rows under the full claim.** % of members, flat / central / full claim:
+
+| Head's status (the case's flag) | A, low | A, high | B, low | B, high |
+|---|---|---|---|---|
+| Unauthorized | 8.8 / 13.2 / 9.3 | 5.8 / 10.9 / 7.1 | 14.2 / 20.5 / 13.3 | 13.2 / 19.9 / 13.0 |
+| Legal immigrant | 12.6 / 11.7 / 12.7 | 7.9 / 8.5 / 10.4 | 18.9 / 17.0 / 19.6 | 17.5 / 15.5 / 18.6 |
+| US-born | 20.4 / 20.6 / 21.0 | 16.8 / 17.4 / 17.5 | 29.4 / 27.4 / 28.0 | 27.5 / 26.2 / 26.3 |
+| All members | 16.2 / 16.9 / 16.6 | 12.3 / 13.7 / 13.6 | 23.8 / 23.3 / 23.0 | 22.1 / 22.0 / 21.7 |
+
+[CALCULATION: `person_accrual_arms.csv`, arms flat, person_payroll_onbooks and person_payroll_onbooks_full_claim]
+
+Under the full claim, unauthorized-headed members are within 1.3 points of the flat rule at every end; the unrounded paired differences are +0.5 ± 0.5, +1.3 ± 0.4, −0.9 ± 0.6 and −0.1 ± 0.7. Their accrual is $2,244 per member at the low end, against $857 under the central and $2,823 under the flat rule. The lane's two imputation rules agree. At full claim, legal-immigrant heads lead at every end: 11.7 against 10.6 at A, low under the Borjas rules, and 13.4 against 8.8 under the no-Medicaid rule. The reversal depends on the claim share alone: with the accrual and the payroll taxes both on on-books pay, only the unauthorized's 10% credit (Note 151's long-run share, an assumption the pension lane carries) makes their households more often net contributors than legal immigrants'.
+
+**Gates, printed.**
+- `person_accrual.py`: exit 0, 24 gates. The new gate: the full claim moves only the unauthorized's accrual, by 1 / 0.1 (1e-12 relative). Lawful persons' Social Security, its timing and their Part A are the central's to the bit. On the pension lane's frame, before the case's generation totals, members' gross Social Security is $128.815898bn against $115.805815bn and Part A $46.681304bn against $41.137128bn. The model record is unchanged.
+- `households.py --accrual person`, and the same with `--payroll onbooks`: exit 0.
+  - The full claim's pension pieces keep each generation's accrual in every replicate (3.3e-13bn). Every payroll piece keeps its generation's total in every replicate (2.4e-13bn).
+  - Both on-books arms keep each generation's taxes and pension accrual in every replicate (1.6e-12bn). Under every arm, convention A reproduces the case in every replicate: worst 7.0e-12bn against a tolerance of 1e-9bn.
+  - The flat arm reproduces the six flat files byte for byte. The `--payroll onbooks` run also reproduces the five `_person_accrual` files and `person_accrual_arms.csv` byte for byte.
+  - The `_person_accrual` files equal HEAD (73c7ff51). `person_accrual_arms.csv` gains the full claim's 136 rows, with every earlier row unchanged.
+- `scripts/rerun_lane.py` over the eight commands, the seven above and `--payroll onbooks`, with `--allow-unrun` for the test file only: exit 0 and IDENTICAL, 35 of 35 files, in both passes (03:17–03:19, and 03:25–03:31 after this RESULT). Tracked files equal HEAD except `person_accrual_arms.csv` (136 rows added), and nothing in `pension_accrual_2026_09_28` changed.
+- `test_person_accrual.py`: 5 passed.
+
+**Files.** New in `derived/sept29/`: `net_positive_shares_person_onbooks.csv`, `concentration_person_onbooks.csv`, `household_balance_quantiles_person_onbooks.csv`, `category_means_person_onbooks.csv` and `control_person_onbooks.csv`, whose totals are the flat control's. Ignored: `_cache/sept29/households_person_onbooks.parquet`. Changed:
+- `households.py`: `--payroll onbooks`, the full-claim arm and the gates above;
+- `person_accrual.py`: the full-claim columns and their gate;
+- `test_person_accrual.py`: two tests, that every arm keeps the union's accrual and that the central keeps the case's totals;
+- `person_accrual_arms.csv`: 136 rows added.
+
+**Log (central; times from `date` calls and file times).**
+- 02:40 JST — the lead's adoption and brief received (73c7ff51 committed).
+- 02:44 — `person_accrual.py` with the full-claim columns: exit 0, 24 gates, the model record unchanged.
+- 02:47–02:49 — first `--accrual person` run with the new flag. The `--payroll` parameter was shadowed by the set of payroll lines, so the run wrote the central's files instead of the person files; no committed file changed. Renamed to `payroll_base`, with a fail-loud check before the writes.
+- 02:56–02:57 — `--accrual person`: exit 0; `person_accrual_arms.csv` gains 136 rows.
+- 02:58–02:59 — `--accrual person --payroll onbooks`: exit 0, the five files written.
+- 03:14 — pytest: 5 passed.
+- 03:17–03:19 — `rerun_lane.py` pass 1: exit 0, IDENTICAL 35/35.
+- 03:24 — this section appended.
+- 03:25–03:31 — `rerun_lane.py` pass 2: exit 0, IDENTICAL 35/35. 03:31 — pytest: 5 passed. `git status`: the three scripts, this RESULT and the arms file changed, the five central files untracked, the pension lane unchanged.

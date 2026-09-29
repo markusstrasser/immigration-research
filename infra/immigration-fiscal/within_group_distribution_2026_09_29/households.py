@@ -74,15 +74,20 @@ account's own v4 split (run_generations_v4.cjs, v4_split.cjs):
 --accrual person (with --case sept29; the lead's arm of 2026-09-30) spreads each generation's two pension pieces, its
 Social Security accrual and its Part A accrual, over its members by the pension lane's person model instead
 (person_accrual.py: _cache/sept29/person_accrual.parquet), and beside it by three steps between the rules
-(PERSON_ARMS: the on-books tax base, the unauthorized's 10% claim share, the benefit formula for Social Security) and
-one diagnostic of the rule's bias (PAYROLL_DIAGNOSTIC: the person arm with the payroll taxes also keyed on on-books
-wages, where the account keys them on all wages). Each generation keeps its accrual, so the union keeps the case's:
-Social Security ratio_net x the account's OASDI receipts, Part A the payload's part_a_accrual_bn. The run computes the
-flat arm too, stops unless it reproduces the files the flat run wrote in derived/sept29/ byte for byte, and writes
-only new files there: net_positive_shares, concentration, household_balance_quantiles, category_means and control
-with the suffix _person_accrual, and person_accrual_arms.csv (every arm's shares, each against the flat arm with its
-replicate standard error). Its status rows add the case's own flag (head_status_case_flag: the state-aware status the
-case's on-books share and the accrual's 10% claim share read, cps_ca_status via the pension lane's frame).
+(PERSON_ARMS: the on-books tax base, the unauthorized's 10% claim share, the benefit formula for Social Security).
+Two arms also key the payroll taxes on on-books wages, where the account keys them on all wages: ONBOOKS_CENTRAL, the
+person arm so keyed (the lane's central since 2026-09-30), and FULL_CLAIM, the same with the unauthorized credited in
+full, which asks whether the status rows turn on the 10% claim share or on on-books pay. Each generation keeps its
+accrual and its payroll taxes, so the union keeps the case's: Social Security ratio_net x the account's OASDI
+receipts, Part A the payload's part_a_accrual_bn. The run computes the flat arm too, stops unless it reproduces the
+files the flat run wrote in derived/sept29/ byte for byte, and writes only new files there: net_positive_shares,
+concentration, household_balance_quantiles, category_means and control with the suffix _person_accrual, and
+person_accrual_arms.csv (every arm's shares, each against the flat arm with its replicate standard error). Its status
+rows add the case's own flag (head_status_case_flag: the state-aware status the case's on-books share and the
+accrual's 10% claim share read, cps_ca_status via the pension lane's frame).
+--accrual person --payroll onbooks writes the central's five files instead, with the suffix _person_onbooks, and
+_cache/sept29/households_person_onbooks.parquet. It stops unless its flat arm, its person arm and its arms comparison
+reproduce, byte for byte, the files the two runs before it wrote.
 Writes derived/net_positive_shares.csv, concentration.csv, household_balance_quantiles.csv, control.csv,
 category_means.csv, line_scaling.csv and _cache/households.parquet; the row-4 run writes the same files to
 derived/row4/ and _cache/row4/. Run from the repository root:
@@ -91,6 +96,7 @@ derived/row4/ and _cache/row4/. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/person_accrual.py
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4 --accrual person
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4 --accrual person --payroll onbooks
 """
 from __future__ import annotations
 
@@ -132,11 +138,18 @@ STATES_CSV = FISCAL / "receipt_side_long_run_2026_09_28/derived/states.csv"
 V4_INPUTS = GENLANE / "derived/v4_inputs.json"
 CASH_RENT = 2  # H_TENURE: rented for cash
 PENSION = "pension_accrual"
-# --accrual person: the arms beside the flat rule, each a person vector for the two pension pieces (person_vectors),
-# and a diagnostic of the rule's bias (PAYROLL_DIAGNOSTIC: the person arm with the payroll taxes on on-books wages).
+# --accrual person: the arms beside the flat rule, each a person vector for the two pension pieces (person_vectors).
+# Two arms also key the payroll taxes on on-books wages, each with its pension vectors: ONBOOKS_CENTRAL (the person
+# arm; the lane's central since 2026-09-30, written by --payroll onbooks) and FULL_CLAIM (the unauthorized credited in
+# full).
 PERSON_ARMS = ["tax_base", "claim_share", "oasdi_formula", "person"]
-PAYROLL_DIAGNOSTIC = "person_payroll_onbooks"
+PENSION_VECTORS = PERSON_ARMS + ["person_full_claim"]
+ONBOOKS_CENTRAL = "person_payroll_onbooks"
+FULL_CLAIM = "person_payroll_onbooks_full_claim"
+ONBOOKS_ARMS = {ONBOOKS_CENTRAL: "person", FULL_CLAIM: "person_full_claim"}
+ARM_ORDER = ["flat"] + PERSON_ARMS + list(ONBOOKS_ARMS)
 PERSON_SUFFIX = "_person_accrual"
+ONBOOKS_SUFFIX = "_person_onbooks"
 FLAT_FILES = ["net_positive_shares.csv", "concentration.csv", "household_balance_quantiles.csv", "control.csv",
               "category_means.csv", "line_scaling.csv"]
 CASE_FLAG = "head_status_case_flag"
@@ -181,19 +194,24 @@ def tenant_key(d, union, gens, w0):
 
 
 def person_vectors(d, union, gens, index):
-    """The two pension pieces' person vectors under each arm of PERSON_ARMS, by piece (oasdi, part_a) and allocation.
-    Within a generation each vector spreads the generation's accrual, as the flat rule's receipts do:
-      tax_base       the pension lane's on-books OASDI (HI) tax: one accrual per tax dollar, as the flat rule, but the
-                     unauthorized pay on the on-books share of their wages (the case's status stack), not on all of them;
-      claim_share    the same, with the unauthorized's at Note 151's long-run 10%;
-      oasdi_formula  Social Security by the person model (the benefit formula: progressivity, family type, career
-                     start, benefit-tax timing), Part A still as claim_share;
-      person         the person model's net Social Security and its Part A accrual (person_accrual.py), Part A per
-                     covered worker rather than per tax dollar.
+    """The two pension pieces' person vectors under each set of PENSION_VECTORS, by piece (oasdi, part_a) and
+    allocation. Within a generation each vector spreads the generation's accrual, as the flat rule's receipts do:
+      tax_base           the pension lane's on-books OASDI (HI) tax: one accrual per tax dollar, as the flat rule, but
+                         the unauthorized pay on the on-books share of their wages (the case's status stack), not on all
+                         of them;
+      claim_share        the same, with the unauthorized's at Note 151's long-run 10%;
+      oasdi_formula      Social Security by the person model (the benefit formula: progressivity, family type, career
+                         start, benefit-tax timing), Part A still as claim_share;
+      person             the person model's net Social Security and its Part A accrual (person_accrual.py), Part A per
+                         covered worker rather than per tax dollar;
+      person_full_claim  the person model with the unauthorized credited in full (FULL_CLAIM's accrual).
     Every person of the frame carries a value, members or not: the shared allocation splits each SPM unit's total
     equally, as the account's shared receipt keys do, so a member's share includes the unit's non-members. Returns
     the vectors, the persons' on-books factor and state-aware unauthorized flag (the case's), and the model's record."""
     pa = pd.read_parquet(CACHE / "sept29/person_accrual.parquet")
+    stale = {"oasdi_net_full_claim", "part_a_full_claim"} - set(pa.columns)
+    if stale:
+        raise SystemExit(f"[BLOCKED] _cache/sept29/person_accrual.parquet has no {sorted(stale)}: run person_accrual.py")
     model = json.loads((OUT / "sept29/person_accrual_model.json").read_text())
     m = d[["PH_SEQ", "A_LINENO"]].merge(pa, on=["PH_SEQ", "A_LINENO"], how="left", validate="one_to_one",
                                         indicator=True)
@@ -206,12 +224,14 @@ def person_vectors(d, union, gens, index):
     gate("its union and generations are the account's", same)
     u = float(model["unauthorized_credit"])
     unauth = m.unauth.fillna(False).to_numpy(bool)
-    num = {c: m[c].fillna(0.0).to_numpy(float) for c in ("tax_oasdi", "tax_hi", "oasdi_net", "part_a")}
+    num = {c: m[c].fillna(0.0).to_numpy(float)
+           for c in ("tax_oasdi", "tax_hi", "oasdi_net", "part_a", "oasdi_net_full_claim", "part_a_full_claim")}
     claim = np.where(unauth, u, 1.0)
     personal = {"tax_base": {"oasdi": num["tax_oasdi"], "part_a": num["tax_hi"]},
                 "claim_share": {"oasdi": num["tax_oasdi"] * claim, "part_a": num["tax_hi"] * claim},
                 "oasdi_formula": {"oasdi": num["oasdi_net"], "part_a": num["tax_hi"] * claim},
-                "person": {"oasdi": num["oasdi_net"], "part_a": num["part_a"]}}
+                "person": {"oasdi": num["oasdi_net"], "part_a": num["part_a"]},
+                "person_full_claim": {"oasdi": num["oasdi_net_full_claim"], "part_a": num["part_a_full_claim"]}}
     out = {arm: {piece: {"personal": v, "shared": C.unit_equal(v, index)} for piece, v in parts.items()}
            for arm, parts in personal.items()}
     return out, m.onbooks.fillna(1.0).to_numpy(float), unauth, model
@@ -255,14 +275,16 @@ def spending_category(row):
     return "other_shared"
 
 
-def main(arm, case="sept27", accrual="flat"):
+def main(arm, case="sept27", accrual="flat", payroll_base="all"):
     sub = CASE_DIRS[case]
     if sub and arm != "row4":
         raise SystemExit(f"[BLOCKED] --case {case} runs on the row-4 weights only, the count the case prices")
     if accrual != "flat" and case != "sept29":
         raise SystemExit("[BLOCKED] --accrual person needs --case sept29, the case that carries the pension accrual")
-    print(f"[frame] weights: {arm}" + (f"; case {case}" if sub else "") + (f"; accrual {accrual}" if accrual != "flat" else ""),
-          flush=True)
+    if payroll_base != "all" and accrual != "person":
+        raise SystemExit("[BLOCKED] --payroll onbooks needs --accrual person: the central pairs the two")
+    print(f"[frame] weights: {arm}" + (f"; case {case}" if sub else "") + (f"; accrual {accrual}" if accrual != "flat" else "")
+          + (f"; payroll {payroll_base}" if payroll_base != "all" else ""), flush=True)
     lines = json.loads(((CACHE / sub if sub else CACHE) / "lines.json").read_text())
     v4 = case == "sept29"
     if v4 and lines["meta"]["case"] != "main_case_2026_09_29":
@@ -324,8 +346,8 @@ def main(arm, case="sept27", accrual="flat"):
     if accrual == "person":
         print("[person accrual]", flush=True)
         alt, onbooks, unauth_case, person_model = person_vectors(d, union, gens, index)
-        # PAYROLL_DIAGNOSTIC: each payroll line on its own key times the person's on-books share (the status stack's
-        # 0.53 for the unauthorized), shared as the account shares its keys.
+        # ONBOOKS_ARMS: each payroll line on its own key times the person's on-books share (the status stack's 0.53
+        # for the unauthorized), shared as the account shares its keys.
         payroll = set(PA["oasdi_lines"] + PA["hi_lines"] + [PA["se_line"]])
         onbooks_key = {}
         for k in {"wage_oasdi", "wage", "self_payroll"}:
@@ -434,7 +456,7 @@ def main(arm, case="sept27", accrual="flat"):
                 if alt is not None and cat == PENSION:
                     # The pension pieces: Social Security (the social_security line) and Part A (part of medicare).
                     part = {"social_security": "oasdi", "medicare": "part_a"}[pid]
-                    piece["alt"] = {k: np.where(m, alt[k][part][a], 0.0) for k in PERSON_ARMS}
+                    piece["alt"] = {k: np.where(m, alt[k][part][a], 0.0) for k in PENSION_VECTORS}
                     piece["part"] = part
                 if pid in payroll:
                     key = row_of("receipt", pid)["key"]
@@ -620,25 +642,29 @@ def main(arm, case="sept27", accrual="flat"):
                  gap < 1e-9, f"{part_bn['oasdi']:.6f} = {PA['ratio_net']:.6f} x {oasdi:.6f} bn")
             gate(f"{end}: the union's Part A accrual is the payload's part_a_accrual_bn (1e-9 bn)",
                  abs(part_bn["part_a"] - PA["part_a_accrual_bn"]) < 1e-9, f"{part_bn['part_a']:.9f} bn")
-        for k_arm in PERSON_ARMS:
+        pen_by = {}
+        for k_vec in PENSION_VECTORS:
             pen = {e: np.zeros((len(rows_u), W.shape[1])) for e in ENDS}
             worst = 0.0
             for end in ENDS:
                 for p in pieces[end]:
                     if "alt" not in p:
                         continue
-                    x = p["alt"][k_arm][rows_u]
+                    x = p["alt"][k_vec][rows_u]
                     k = x @ Wu
                     if not np.any(x) or np.any(k <= 0):
-                        raise SystemExit(f"[BLOCKED] {k_arm}: {p['g']} {end} {p['id']}: no member carries the piece")
+                        raise SystemExit(f"[BLOCKED] {k_vec}: {p['g']} {end} {p['id']}: no member carries the piece")
                     part = np.outer(x, p["bn"] * 1e9 / k)
                     worst = max(worst, float(np.abs((part * Wu).sum(axis=0) / 1e9 - p["bn"]).max()))
                     pen[end] += part
-            gate(f"{k_arm}: every pension piece keeps its generation's accrual in every replicate (1e-9 bn)",
+            gate(f"{k_vec}: every pension piece keeps its generation's accrual in every replicate (1e-9 bn)",
                  worst < 1e-9, f"max |diff| {worst:.1e}")
-            arms[k_arm] = {e: {**amt[e], PENSION: pen[e]} for e in ENDS}
-        # The diagnostic: the person arm with each payroll piece moved from its key to its on-books key.
+            pen_by[k_vec] = pen
+            if k_vec in PERSON_ARMS:
+                arms[k_vec] = {e: {**amt[e], PENSION: pen[e]} for e in ENDS}
+        # ONBOOKS_ARMS: each payroll piece moved from its key to its on-books key, beside their pension vectors.
         taxes = {e: amt[e]["taxes"].copy() for e in ENDS}
+        worst = 0.0
         for end in ENDS:
             for p in pieces[end]:
                 if "alt_tax" not in p:
@@ -646,10 +672,26 @@ def main(arm, case="sept27", accrual="flat"):
                 x0, x1 = p["x"][rows_u], p["alt_tax"][rows_u]
                 k0, k1 = x0 @ Wu, x1 @ Wu
                 if not (np.any(x0) and np.all(k0 != 0) and np.any(x1) and np.all(k1 > 0)):
-                    raise SystemExit(f"[BLOCKED] {PAYROLL_DIAGNOSTIC}: {p['g']} {end} {p['id']} cannot be re-keyed")
-                taxes[end] += np.outer(x1, p["bn"] * 1e9 / k1) - np.outer(x0, p["bn"] * 1e9 / k0)
-        arms[PAYROLL_DIAGNOSTIC] = {e: {**arms["person"][e], "taxes": taxes[e]} for e in ENDS}
-        for k_arm in PERSON_ARMS + [PAYROLL_DIAGNOSTIC]:
+                    raise SystemExit(f"[BLOCKED] on-books payroll: {p['g']} {end} {p['id']} cannot be re-keyed")
+                moved = np.outer(x1, p["bn"] * 1e9 / k1)
+                worst = max(worst, float(np.abs((moved * Wu).sum(axis=0) / 1e9 - p["bn"]).max()))
+                taxes[end] += moved - np.outer(x0, p["bn"] * 1e9 / k0)
+        gate("on-books payroll: every payroll piece keeps its generation's total in every replicate (1e-9 bn)",
+             worst < 1e-9, f"max |diff| {worst:.1e}")
+        own = lab[rows_u]
+        for k_arm, k_vec in ONBOOKS_ARMS.items():
+            arms[k_arm] = {e: {**amt[e], PENSION: pen_by[k_vec][e], "taxes": taxes[e]} for e in ENDS}
+            worst = 0.0
+            for end in ENDS:
+                for gi in range(len(GENS)):
+                    m = own == gi
+                    for c in ("taxes", PENSION):
+                        got = (arms[k_arm][end][c][m] * Wu[m]).sum(axis=0)
+                        want = (amt[end][c][m] * Wu[m]).sum(axis=0)
+                        worst = max(worst, float(np.abs(got - want).max()) / 1e9)
+            gate(f"{k_arm}: each generation keeps its taxes and its pension accrual in every replicate (1e-9 bn)",
+                 worst < 1e-9, f"max |diff| {worst:.1e} bn")
+        for k_arm in ARM_ORDER[1:]:
             for end in ENDS:
                 tot = sum((arms[k_arm][end][c] * Wu).sum(axis=0) for c in cats) / 1e9
                 res = sum(residual[end].values()) + unassigned[end][0]
@@ -837,18 +879,47 @@ def main(arm, case="sept27", accrual="flat"):
     def write(name, rows):
         frame_of(rows).to_csv(out_dir / name, index=False, lineterminator="\n", quoting=csv.QUOTE_MINIMAL)
 
+    def same_as_written(label, named_rows):
+        differ = []
+        for name, rows in named_rows.items():
+            text = frame_of(rows).to_csv(index=False, lineterminator="\n", quoting=csv.QUOTE_MINIMAL).encode()
+            if not (out_dir / name).exists() or (out_dir / name).read_bytes() != text:
+                differ.append(name)
+        gate(f"{label} {len(named_rows)} file(s) in {out_dir.relative_to(HERE)}/ byte for byte", not differ,
+             ", ".join(differ) or "identical")
+
+    def five(res, suffix):
+        return {name.replace(".csv", f"{suffix}.csv"): rows
+                for name, rows in zip(FLAT_FILES[:5], [res["npos"], res["conc"], res["q"], res["ctrl"], res["means"]])}
+
     flat = results["flat"]
     files = dict(zip(FLAT_FILES, [flat["npos"], flat["conc"], flat["q"], flat["ctrl"], flat["means"], scaling]))
     if alt is not None:
         # The flat arm without the case-flag rows is the flat run's output, byte for byte.
-        differ = []
-        for name, rows in files.items():
-            rows = [r for r in rows if r.get("breakdown") != CASE_FLAG]
-            text = frame_of(rows).to_csv(index=False, lineterminator="\n", quoting=csv.QUOTE_MINIMAL).encode()
-            if not (out_dir / name).exists() or (out_dir / name).read_bytes() != text:
-                differ.append(name)
-        gate(f"the flat arm reproduces the flat run's {len(files)} files in {out_dir.relative_to(HERE)}/ byte for byte",
-             not differ, ", ".join(differ) or "identical")
+        same_as_written("the flat arm reproduces the flat run's",
+                        {name: [r for r in rows if r.get("breakdown") != CASE_FLAG] for name, rows in files.items()})
+        # Every arm's net-positive shares against the flat arm's, conventions A and B; the difference's standard
+        # error from the same replicates.
+        base = flat["reps"]
+        info = {(r["convention"], r["end"], r["breakdown"], r["cell"]): r for r in flat["npos"]}
+        arm_rows = []
+        for name in ARM_ORDER:
+            reps = results[name]["reps"]
+            for (conv, end, bname, cell), share in reps["share"].items():
+                if conv not in ("A", "B"):
+                    continue
+                diff = share - base["share"][(conv, end, bname, cell)]
+                pen = reps["pension"][(end, bname, cell)]
+                r0 = info[(conv, end, bname, cell)]
+                arm_rows.append(dict(arm=name, convention=conv, end=end, breakdown=bname, cell=cell, records=r0["records"],
+                                     members_m=r0["members_m"], share_members_net_positive=share[0], se=sdr(share),
+                                     diff_vs_flat=diff[0], se_diff=sdr(diff), pension_accrual_per_member_usd=pen[0],
+                                     se_pension_accrual=sdr(pen), small_cell=r0["small_cell"]))
+        person_files = five(results["person"], PERSON_SUFFIX)
+        if payroll_base == "onbooks":
+            same_as_written("the person arm reproduces the --accrual person run's", person_files)
+            same_as_written("the arms comparison reproduces the --accrual person run's",
+                            {"person_accrual_arms.csv": arm_rows})
     if FAILS:
         print(f"✗ {len(FAILS)} gate(s) failed, nothing written: {FAILS}")
         sys.exit(1)
@@ -862,30 +933,17 @@ def main(arm, case="sept27", accrual="flat"):
         print(f"  ✓ all household gates passed; wrote {out_dir.relative_to(HERE)}/ and {cache_dir.relative_to(HERE)}/households.parquet")
         return
 
-    person = results["person"]
-    for name, rows in zip(FLAT_FILES[:5], [person["npos"], person["conc"], person["q"], person["ctrl"], person["means"]]):
-        write(name.replace(".csv", f"{PERSON_SUFFIX}.csv"), rows)
-    # Every arm's net-positive shares against the flat arm's, conventions A and B; the difference's standard error
-    # from the same replicates.
-    base = flat["reps"]
-    info = {(r["convention"], r["end"], r["breakdown"], r["cell"]): r for r in flat["npos"]}
-    arm_rows = []
-    for name in ["flat"] + PERSON_ARMS + [PAYROLL_DIAGNOSTIC]:
-        reps = results[name]["reps"]
-        for (conv, end, bname, cell), share in reps["share"].items():
-            if conv not in ("A", "B"):
-                continue
-            diff = share - base["share"][(conv, end, bname, cell)]
-            pen = reps["pension"][(end, bname, cell)]
-            r0 = info[(conv, end, bname, cell)]
-            arm_rows.append(dict(arm=name, convention=conv, end=end, breakdown=bname, cell=cell, records=r0["records"],
-                                 members_m=r0["members_m"], share_members_net_positive=share[0], se=sdr(share),
-                                 diff_vs_flat=diff[0], se_diff=sdr(diff), pension_accrual_per_member_usd=pen[0],
-                                 se_pension_accrual=sdr(pen), small_cell=r0["small_cell"]))
-    write("person_accrual_arms.csv", arm_rows)
-    person["hh"].to_parquet(cache_dir / f"households{PERSON_SUFFIX}.parquet", index=False)
-    print(f"  ✓ all household gates passed; wrote the person-accrual files in {out_dir.relative_to(HERE)}/ "
-          f"(*{PERSON_SUFFIX}.csv, person_accrual_arms.csv) and {cache_dir.relative_to(HERE)}/households{PERSON_SUFFIX}.parquet")
+    if payroll_base not in ("all", "onbooks"):   # fail loud: an earlier draft shadowed it with the payroll line set
+        raise SystemExit(f"[BLOCKED] payroll_base is {payroll_base!r}, not 'all' or 'onbooks'")
+    name, suffix = ("person", PERSON_SUFFIX) if payroll_base == "all" else (ONBOOKS_CENTRAL, ONBOOKS_SUFFIX)
+    for fname, rows in five(results[name], suffix).items():
+        write(fname, rows)
+    if payroll_base == "all":
+        write("person_accrual_arms.csv", arm_rows)
+    results[name]["hh"].to_parquet(cache_dir / f"households{suffix}.parquet", index=False)
+    print(f"  ✓ all household gates passed; wrote the {name} arm's files in {out_dir.relative_to(HERE)}/ "
+          f"(*{suffix}.csv{', person_accrual_arms.csv' if payroll_base == 'all' else ''}) and "
+          f"{cache_dir.relative_to(HERE)}/households{suffix}.parquet")
 
 
 if __name__ == "__main__":
@@ -899,5 +957,8 @@ if __name__ == "__main__":
                         help="flat (default): the pension accrual by OASDI and HI receipts; person: by the pension "
                              "lane's person model (person_accrual.py), new *_person_accrual files beside the flat ones "
                              "(--case sept29 only)")
+    parser.add_argument("--payroll", choices=["all", "onbooks"], default="all",
+                        help="all (default): the payroll taxes on all wages, as the account keys them; onbooks (with "
+                             "--accrual person): on on-books wages, the lane's central, written to *_person_onbooks")
     args = parser.parse_args()
-    main(args.weights, args.case, args.accrual)
+    main(args.weights, args.case, args.accrual, args.payroll)

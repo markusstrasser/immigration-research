@@ -23,6 +23,8 @@ the Mexico-born, the unauthorized credited at Note 151's long-run 10%.
     person vectors keep that convention, so every person of the frame with on-books tax gets the model's accrual: a
     non-member at the union's benefit-tax rate and, for Part A, the union's pooled P(qualify) and coverage curve,
     careers from 21 (the rates the case applies to the group's accrual).
+  - Full claim (households.py FULL_CLAIM, the lead's test of 2026-09-30): the same model with the unauthorized
+    credited in full (claim share 1), to ask whether the status rows turn on the 10% claim share or on on-books pay.
 The model grid is model_grid's, for the two (rate, mortality) runs the central reads: the central run on every
 family, career start, birth year and level, and Note 2025.7's own basis (trust-fund rates) on careers from 21, which
 normalizes the factor. It is computed in parallel and cached in _cache/sept29/ under a key of the lane's code.
@@ -35,10 +37,12 @@ Gates (exit 1 before anything is written):
     union's at its rate and each generation's at its own (1e-12 relative), Part A's P(qualify) and expected covered
     years (1e-12 relative) and its accrual by generation (hi_arms.csv, written to 6 decimals: 1e-6 bn);
   - the payload's ratio_net and Part A accrual (export_lines.cjs's _cache/sept29/lines.json meta): the union's net
-    accrual per tax dollar is ratio_net (1e-12 relative) and its Part A is part_a_accrual_bn (1e-6 bn).
+    accrual per tax dollar is ratio_net (1e-12 relative) and its Part A is part_a_accrual_bn (1e-6 bn);
+  - the full claim moves only the unauthorized's accrual: lawful persons' Social Security, its timing and their Part A
+    are the central's, and the unauthorized's are the central's over the claim share (1e-12 relative).
 Writes _cache/sept29/person_accrual.parquet (one row per person of the frame: PH_SEQ, A_LINENO, the tax bases and the
-accruals) and derived/sept29/person_accrual_model.json (inputs, gates, and the members' dispersion the flat rule leaves
-out). Run from the
+accruals, the full claim's in oasdi_net_full_claim and part_a_full_claim) and derived/sept29/person_accrual_model.json
+(inputs, gates, and the members' dispersion the flat rule leaves out). Run from the
 repository root after export_lines.cjs --case sept29 (a few minutes on the first run; the grid is then cached):
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/person_accrual.py
 """
@@ -288,20 +292,39 @@ def main():
     gate("the union's Part A accrual is the payload's part_a_accrual_bn (1e-6 bn)",
          abs(part_a_bn["union"] - meta["part_a_accrual_bn"]) < 1e-6,
          f"{part_a_bn['union']:.9f} vs {meta['part_a_accrual_bn']:.9f}")
+
+    print("[full claim]", flush=True)
+    # households.py FULL_CLAIM: the same model with the unauthorized credited in full.
+    acc_full, tob_full = PA.central_accrual(q, {SCEN: grid}, 1.0, tau, fam)
+    net_full = acc_full * (1 - r_g * tob_full)
+    part_a_full, _ = part_a(p, econ, 1.0)
+    un_q, un_p = q.unauth.to_numpy(bool), p.unauth.to_numpy(bool)
+    lawful_same = (np.array_equal(acc_full[~un_q], acc[~un_q]) and np.array_equal(tob_full, tob)
+                   and np.array_equal(part_a_full[~un_p], part_a_all[~un_p]))
+    scaled = (np.allclose(acc_full[un_q] * u_long, acc[un_q], rtol=1e-12, atol=0)
+              and np.allclose(part_a_full[un_p] * u_long, part_a_all[un_p], rtol=1e-12, atol=0))
+    members = p.union.to_numpy(bool)
+    gate(f"the full claim moves only the unauthorized's accrual, by 1 / {u_long:g} (1e-12 relative)",
+         lawful_same and scaled,
+         f"members' gross Social Security {(w * acc_full)[in_union].sum() / 1e9:.6f} vs {(w * acc)[in_union].sum() / 1e9:.6f} bn, "
+         f"Part A {(wp * part_a_full)[members].sum() / 1e9:.6f} vs {(wp * part_a_all)[members].sum() / 1e9:.6f} bn "
+         "(the pension lane's frame, before the case's generation totals)")
     if FAILS:
         print(f"✗ {len(FAILS)} gate(s) failed, nothing written: {FAILS}")
         sys.exit(1)
 
     # One row per person of the frame: the Social Security columns are zero without on-books OASDI tax.
     ssc = pd.DataFrame({"PH_SEQ": q.PH_SEQ.to_numpy(), "A_LINENO": q.A_LINENO.to_numpy(), "family": fam,
-                        "oasdi_gross": acc, "tob": tob, "benefit_tax_rate": r_g, "oasdi_net": net})
+                        "oasdi_gross": acc, "tob": tob, "benefit_tax_rate": r_g, "oasdi_net": net,
+                        "oasdi_net_full_claim": net_full})
     out = p[["PH_SEQ", "A_LINENO", "union", "gen", "w", "age", "sex", "mexico_born", "unauth", "onbooks", "tax_oasdi",
              "tax_hi"]].merge(ssc, on=["PH_SEQ", "A_LINENO"], how="left", validate="one_to_one")
-    for col in ["oasdi_gross", "tob", "benefit_tax_rate", "oasdi_net"]:
+    for col in ["oasdi_gross", "tob", "benefit_tax_rate", "oasdi_net", "oasdi_net_full_claim"]:
         out[col] = out[col].fillna(0.0)
     out["family"] = out.family.fillna("")
     out["unauth"] = out.unauth.astype(bool)
     out["part_a"] = part_a_all
+    out["part_a_full_claim"] = part_a_full
     out["hi_covered"] = (out.tax_hi > 0).to_numpy()
 
     # The dispersion the flat rule leaves out (the pension lane's frame and weights): members' net accrual per tax
