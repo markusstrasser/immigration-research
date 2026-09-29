@@ -3565,6 +3565,6 @@
   "receipt_side_long_run_2026_09_28/items.cjs": "b8a88b3aa38f0990ca2c3f1b5ef51d42b306ead1894d2d29b5816909dd7aec23",
   "payroll_compliance_2026_09_28/derived/items.json": "813359ff693e1462d004259fd469c1fc1fa2d53656f6ec6875eae6971b6c8cb5",
   "backcast_pandemic_measured_2026_09_28/derived/ratio_vs_2024.csv": "04e93220cc99e62e45d2063c776b34f3151df009382f9a0c3b4bd6b024a3f2ff",
-  "assumption_explorer_2026_09_21/engine.js": "091ca31219c678ec84ee89b7c0837f4e9d43dcefc6bd1fe47d82337956a666e0"
+  "assumption_explorer_2026_09_21/engine.js": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491"
  }
 }

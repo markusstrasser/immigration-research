@@ -272,7 +272,9 @@ v3's items 8 and 10, not in the set [CALCULATION: `derived/bands.csv`, `summary.
   - roads' NHTS ratio: +$0.88 to +$2.06bn at the low end;
   - state pricing's jails and county level;
   - the pension lane's scheduled arm and the unpriced interest on the existing liability.
-- **Adoption payload** (specified, not built). It would need four things beyond v3's D–G:
+- **Adoption payload** (specified, not built). [Built on 2026-09-29: see "Adoption payload (built, 2026-09-29)" below.
+  Beyond this list it needed engine.js's three optional parts and a new capital key kind, `part_rekeyed`.] It would
+  need four things beyond v3's D–G:
   - item 7 as one spending edit;
   - the pension as spending edits, a receipt edit on federal income tax, and v3's accrual block in `meta` with
     `ratio_net` and the benefit-tax receipt;
@@ -295,12 +297,243 @@ v3's items 8 and 10, not in the set [CALCULATION: `derived/bands.csv`, `summary.
   - `overlaps.csv`: every rule chosen and each alternative, on the set and the cash set;
   - `summary.json`: everything, with input hashes.
 
-Nothing outside this directory was edited; nothing was committed, staged or stashed.
+Nothing outside this directory was edited; nothing was committed, staged or stashed. [True of the first task. The
+adoption-payload task edited `assumption_explorer_2026_09_21/engine.js`; see "Adoption payload (built, 2026-09-29)".]
 
 ```sh
 L=infra/immigration-fiscal/main_case_candidate_v4_2026_09_29
 node $L/main_case.cjs
 uv run --no-project python3 scripts/rerun_lane.py $L --allow-unrun package.cjs "node {lane}/main_case.cjs"
+```
+
+## Adoption payload (built, 2026-09-29)
+
+Candidate v4's adoption payload is built in the adopted schema, and all 46 of its gates pass. Nothing is adopted:
+`meta.adopted` and `meta.decision` are null. `payload.cjs` writes two payloads:
+- `derived/corrections_v4.json`: the set, with pension accrual;
+- `derived/corrections_v4_cash.json`: the cash set.
+
+A fresh process that loads only `engine.js`, `model.json` and a payload gives these results, with the ends at
+specifications 48 and 11:
+- the set: $371.4146–434.8410bn, or $9,353–10,950 per member;
+- the cash set: $294.7011–361.8175bn.
+
+[CALCULATION: payload.cjs; consumer.cjs]
+
+### What a payload holds
+
+Each payload starts with the adopted `main_case_long_run_2026_09_27/derived/corrections.json`, whose 3 lines and 278
+edits are unchanged and come first. v4's parts follow.
+
+- **`receipt_lines`** (a new field) adds two lines:
+  - `housing_enterprise_surplus` (item 1): national −$45.555811bn, at the rental line's key;
+  - `tenant_occupied_property` (item 5): national $83.840225bn, at the rent key 0.114667.
+- **Three national-scale edits** (a new edit shape, `{side, line, national_bn}`):
+  - `remaining_production_property` to $273.445297bn;
+  - `enterprise_surplus` to −$7.162bn;
+  - `housing_subsidies` to $55.003189bn.
+- **Cell edits:** 135 in the set and 133 in the cash set. They cover:
+  - 16 receipt lines;
+  - `social_security` and `medicare`, in the set only;
+  - `workers_compensation`;
+  - the five synthetic lines.
+- **`lines`** adds `roads_vmt_sl`, `roads_vmt_fed`, `state_price_public_order_safety`, `state_price_health_services` and
+  `state_price_recreation_culture`.
+- **`production`** (a new field) holds the row-4 grid with its dimensions. It accounts for most of the 317,807 bytes
+  (the cash set: 315,374).
+- **`meta`** adds:
+  - nine `responses`: four receipt overrides, each equal at both readings (owner-occupied property 0.762903, tenant
+    property 0.708443, personal property 1, public housing 1), and the five synthetic lines at their readings;
+  - in `capital_return`:
+    - `ent_housing_sl` is keyed at the rental line's key (item 4);
+    - `hwy_sl` and `hwy_fed` use a new key kind, `part_rekeyed`, defined in `rule_kinds`;
+  - `pension_accrual` (the set only):
+    - `ratio_net` 0.973667, the Part A accrual $41.137bn and the Part A share 0.375113;
+    - the OASDI share of self-employment tax, 0.803496;
+    - the benefit-tax receipt: $2.091bn shared, $1.817bn personal;
+    - the rule, and the source, 9ea1beb with its sha256;
+  - provenance blocks: `production`, `state_pricing` and `roads_mileage_key` (constants, rules, `k_road` by method);
+  - `candidate_v4` (items, rules, parts, and the items that move each line) and `status`.
+
+The identity fields (`source`, `adopted`, `decision`, `case`, `builds_on`, `previous`) now describe v4, and
+`builds_on` pins the adopted file by hash. Every other September 27 meta entry is kept. Of the September 27 responses
+and capital components, only the three re-keyed components change.
+
+**Each edit is the two fill-in methods' mean change** in its cell, from the September 27 case's model to v4's
+(`package.cjs` `modelFor`), beyond any national scale. On a cell that several items touch, the edit is their
+composition under the package's rules. The engine's cost is linear in every cell amount and in the production grid.
+The mean payload therefore gives the methods' mean cost at each specification, as the adopted payload does. G2
+confirms it.
+
+**The road key is a rule, not a constant.**
+- The package keys `hwy_sl` and `hwy_fed` by `k_road`, a number stored on its models for each method and allocation.
+- The payload states the key as a rule on the evaluation instead. `part_rekeyed` is the parent line's amount over its
+  national total, plus the correction line's amount over the part's national total ($201.005bn for S&L highways,
+  $1.827bn for federal).
+- Each synthetic line carries the part's national × (`k_road` − the economic-affairs key), so the rule returns `k_road`.
+  It also follows a consumer's own evaluation, a generation's for example.
+- The kind lives in `meta`, not in the engine. `consumer.cjs` implements it in one line.
+
+### Engine change
+
+`assumption_explorer_2026_09_21/engine.js` `applyCorrections` gains three optional parts (47 lines added, 1 changed). A
+payload without them applies exactly as before.
+- **`receipt_lines`:** new receipt lines, each with a national total and a cell for every incidence rule and allocation.
+- **A national-scale edit, `{side, line, national_bn}`:** it scales the line's national total and every cell's group
+  and other amounts, in order with the other edits. Shares hold.
+- **`production`, `{dims, private_wtp_bn, induced_receipts_bn, sampling_se_bn}`:** it replaces the grid's arrays when
+  the dimensions match.
+
+Eight kinds of bad input throw, and each is gated. `test_engine.js` was not edited, because it belongs to the explorer
+lane. The explorer's page (`derived/explorer.html`, ignored) inlines `engine.js` and was not rebuilt.
+
+### Gates (46, all pass; `derived/payload_gates.json`)
+
+- **G1.** With every item off, the builder finds nothing to add and returns the adopted payload, equal as JSON (key
+  order included) and byte for byte.
+  - The September 27 package's `correctionsPayload()` equals the file byte for byte.
+  - Both methods' models equal the September 27 models in every cell.
+- **G2.** `consumer.cjs` checked the payloads against `per_spec.csv`. It uses `engine.js`, `model.json` and the payload
+  alone, with no package.
+  - A payload built the same way on one method's models gives that method's set and cash costs at all 64
+    specifications exactly: max |diff| 0.
+  - The written payloads give the two methods' mean: max |diff| 1.7e-13.
+  - The consumer's engine state equals the package's at every specification. Its capital components (key, response,
+    return) equal the package's exactly.
+  - The payload model equals the methods' mean model in every cell: 2.3e-13 in the set, 4.5e-13 in the cash set.
+    National totals hold: each cell's group + other − national equals the September 27 payload's, scaled with its line
+    (4.5e-13). The production grid is v4's exactly.
+  - The payload moves exactly what the task-1 scan (`summary.json` `touch`) says its items touch: 35 entries in the
+    set, 33 in the cash set. The two payloads differ only on federal income tax, social security and medicare.
+- **G3.** Before the engine change, `rerun_lane.py` was IDENTICAL on:
+  - `main_case_long_run_2026_09_27`: `main_case.cjs` and `sign_reversal.cjs`, 11/11 files;
+  - `main_case_schools_full_2026_09_26`: 7/7 files.
+
+  It was IDENTICAL on both again after the change.
+  - `test_engine.js` prints the same bytes before and after: PASS, worst gap 4.28e-9.
+  - Every earlier payload (09-24, 09-26, the schools case, 09-27) applies and evaluates exactly as with the engine at
+    d710a74, the last commit that touched it. The check uses the case's 64 states; the 09-24 payload, which lacks the
+    meta to build them, uses the default state.
+- **G4.** Two passes of `rerun_lane.py` on this lane were IDENTICAL (15/15 files). The first pass after the engine change
+  rewrote one line of `derived/summary.json`: the recorded `engine.js` hash went from 091ca312… to 055e0503….
+  `payload_gates.json`, which records `summary.json`'s hash, followed. No number changed.
+
+### Consumers
+
+No consumer that follows the adopted case takes v4 unchanged. [INFERENCE: this comes from code reading, and no
+consumer was run. A read-only survey by a subagent (claude-opus-5-5) read the 99 files that meet the brief's criteria at
+each line cited here.
+- I re-read these citations, and each matched: `band_variants.cjs:150-156`, winners `specs.cjs:140-152`,
+  `sept24_specs.cjs:118-126`, `distribute.py:376-400`, `debt_legacy.py:494-502`, `run_generations.cjs:160-172`,
+  `case_components.cjs:110-117`, `split_residual.py:64-100`, `generation_lines.cjs:36-42`, `export_lines.cjs:24-31` and
+  this lane's `package.cjs:325-328`.
+- The criteria: code that reads a `corrections.json`, `meta.responses` or `meta.capital_return`, reads the September 27
+  lane's `main_case_bands.csv`, `summary.json` or `per_spec.csv`, or calls `stateFor` or `evaluateFull`.]
+
+Two preconditions come before any consumer can change.
+1. **A payload-first package for the adopted case.**
+   - Nine consumers apply `corrections.json` themselves and then call the package's `evaluateFull` or `stateFor` on
+     their own models: `run_generations`, `run_cells`, `band_variants`, `sept24_specs`, winners `specs`,
+     `generation_lines`, `decompose`, `export_lines` and `engine_breaks`.
+   - v4's `package.cjs` cannot serve them. Its `evaluateFull` rejects any model it did not build (`:325-328`), and it
+     reads the road key from a stored constant.
+   - `consumer.cjs` is the evaluator such a package needs: the state from `meta.responses`, the capital return from
+     `meta.capital_return`, `part_rekeyed` included.
+   - The package must also export the September 27 API the consumers destructure (`MAIN_SPECS`, `RESPONSES`,
+     `correctionsPayload`, `componentsFor`, `withSyntheticLines` with the five new synthetic lines, and the rest).
+2. **The September 27 output contract.** The adopted lane must write:
+   - the `summary.json` fields the consumers read (bands, `responses`, `change_at_fixed_specifications`,
+     `capital_at_end_specifications`, the enterprise fields, `end_specifications`);
+   - `main_case_bands.csv` rows by name, with the first four columns in place, because `case_ends.cjs:74` reads them by
+     position;
+   - `per_spec.csv` with its capital columns.
+
+`$F` is `infra/immigration-fiscal`, and `<case>` is the new case key. Commands run from the repository root.
+
+| Consumer | Change at adoption | Rerun |
+|---|---|---|
+| `assumption_explorer_2026_09_21/engine.js` | Done here. A positive control for the three new parts belongs in the explorer lane's `test_engine.js`. | `node test_engine.js` in its directory |
+| `generation_account_2026_09_24/run_generations.cjs` | Large code change:<br>• case table `:91-93`;<br>• the payload gate `:164-171` requires the tail to be the 8 re-key edits;<br>• netting `:420-449` reads `by`, which a scale edit lacks;<br>• `:499` needs a generation split of every v4 edit (tax key, payroll, property, housing split, state pricing, roads, workers' compensation, and the accrual through `meta.pension_accrual`);<br>• `:565` needs a row-4 production grid per generation;<br>• `PARTS27 :984` and `run_all.sh:36` need v4 steps. | `bash $F/generation_account_2026_09_24/run_all.sh` |
+| `late_arrival_account_line_2026_09_27/run_cells.cjs` | Large code change. It copies the generation split over nine cells, so it needs the same rules:<br>• case table `:31`, with the default still `sept26_schools`;<br>• netting `:385-405`;<br>• `:431` needs row-4 production per cell;<br>• `RECEIPT_GROUPS :441` would file the tenant property tax under other receipts. | `LATE_DEF=<central\|lower\|upper> bash $F/late_arrival_account_line_2026_09_27/run_split.sh` |
+| `late_arrival_account_line_2026_09_27/verify.py` (with `build_line.py:24`, `medicaid_check.py:122`) | Config: `MAIN :22`. | `uv run --no-project python3 $F/late_arrival_account_line_2026_09_27/verify.py` |
+| `debt_legacy_2026_09_23/debt_legacy.py` (its own engine port) | Large code change:<br>• `apply_corrections :326` needs the three new parts;<br>• `production() :372` reads model.json's grid;<br>• the synthetic lines' responses never reach `line_responses` (`:576-595`);<br>• `capital_rows :500` stops on `part_rekeyed`;<br>• `split_corner :983` has no federal share for the new lines;<br>• `:1584` and `:1597` stop on the payload tail;<br>• case table `:299`. | `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $F/debt_legacy_2026_09_23/debt_legacy.py`; then pytest |
+| `sept24_propagation_2026_09_24/band_variants.cjs` | Small code change:<br>• case table `:50-57`;<br>• it rebuilds line responses from three named entries (`:152-154`) and gates them against the package's specs (`:155`). Build them from every `meta.responses` entry instead. | `node $F/sept24_propagation_2026_09_24/band_variants.cjs --case <case>` |
+| `sept24_propagation_2026_09_24/real_costs_totals.py` | Config:<br>• case tables `:105-133`;<br>• it quotes `meta.beside_the_account.congestion` (`:336`), which v4 did not recompute for roads by miles. | `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $F/sept24_propagation_2026_09_24/real_costs_totals.py --case <case>` |
+| `sept24_propagation_2026_09_24/constant_choices.py` | Config: `:50-51`. It runs after `debt_legacy.py`. | `... constant_choices.py --case <case>` |
+| `uncertainty_propagation_2026_09_22/sept24_specs.cjs` | Code change:<br>• a `later_cases.json` entry;<br>• `lineTargets :62` fails on a new receipt line;<br>• `KLINES :86` lacks `housing_subsidies` and the road lines, so `:122` throws;<br>• `:125` throws on `part_rekeyed`;<br>• the model gate `:146` meets the new `housing_subsidies` national. | `node $F/uncertainty_propagation_2026_09_22/sept24_specs.cjs` |
+| `uncertainty_propagation_2026_09_22/propagate.py` (with `test_uncertainty.py`) | Code change:<br>• `KCOEF_LINES :241`;<br>• the corrected enterprise national meets model.json's at `:416`;<br>• the base rebuild ignores the receipt overrides (`:440-452`);<br>• the capital rebuild `:501`;<br>• silent: the production error (`:745`) comes from model.json's grid. | `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $F/uncertainty_propagation_2026_09_22/propagate.py --case <case>`; then pytest |
+| `winners_losers_2026_09_24/specs.cjs` | Small code change:<br>• case table `:59`;<br>• `:151` requires exactly 4 line responses, and v4 has 13;<br>• the `RESPONSES` gate `:142`;<br>• `:149` reads receipt overrides at `.low`, which holds because v4's are equal at both readings. | `node $F/winners_losers_2026_09_24/specs.cjs` |
+| `winners_losers_2026_09_24/winners_losers.py` (with tests `:279`, `:298-299`) | Code change:<br>• `CASES :176` and the pins `:128-130`;<br>• `wages_equal_engine_P :1843` compares CPS wages with the engine's P, which row 4 moves;<br>• lines without a debt fraction stop it at `:537`. | `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $F/winners_losers_2026_09_24/winners_losers.py`; `old_new.py`; then pytest |
+| `historical_backcast_2026_09_20/case_components.cjs` | Code change:<br>• `CASES :27`;<br>• the fixed additions (`:62-63`) and the "no other line moves" gate (`:115`) fail on v4's lines;<br>• production is not an addition. | `node $F/historical_backcast_2026_09_20/case_components.cjs --case <case>` |
+| `historical_backcast_2026_09_20/backcast.py` | Code change:<br>• `LATER_CASES :60`;<br>• `ADDITIONS :69` needs a national series for each v4 addition. | `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $F/historical_backcast_2026_09_20/backcast.py`; then pytest |
+| `distribution_weights_2026_09_23/case_ends.cjs` | Path swap (`CASES :24`), once the two preconditions hold. | `node $F/distribution_weights_2026_09_23/case_ends.cjs --case <case>` |
+| `distribution_weights_2026_09_23/distribute.py` | Code change, and a silent risk:<br>• `LATER_CASES :165`;<br>• `:378-400` books the whole change in the fiscal channel A on the premise that P and F never move, so v4's production item (+$1.643 / +1.107bn alone) would land in A with no gate. | `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $F/distribution_weights_2026_09_23/distribute.py`; then pytest |
+| `world_ledger_2026_09_27/generation_lines.cjs` | Tiny code change:<br>• `CASES :38`;<br>• `ON27 :41` uses `evaluateFull` only for sept27;<br>• a `pins.json` entry. | `node $F/world_ledger_2026_09_27/generation_lines.cjs --case <case>` |
+| `world_ledger_2026_09_27/split_residual.py` | Code change:<br>• `choices :78`;<br>• `edit_cost :67` reads `by`;<br>• the correction-only set (`:88`) comes from `lines`, so the new receipt lines fail `:99`;<br>• `:127` expects every line to move by its `by` edits. | `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $F/world_ledger_2026_09_27/split_residual.py --case <case>` |
+| `world_ledger_2026_09_27/valuation.py` | Code change, 5 entries: `LINES :84` has no class for the synthetic lines, so `:137` stops them as unclassified. | `sh $F/world_ledger_2026_09_27/run_all.sh sept26_schools sept27 <case>` |
+| `overview_2026_09_28/build.py` | Code change:<br>• `MAIN :36`;<br>• the waterfall's fixed steps (`:152`) and its sum gate (`:199`);<br>• named band rows (`:505-518`);<br>• about 20 registry rows bind September 27 paths. | `uv run --no-project python3 $F/overview_2026_09_28/build.py`; then pytest |
+
+Some dated analyses follow the September 27 case by name. A rebase is optional; without one they stay dated records.
+- `main_case_decomposition_2026_09_29/decompose.cjs`:
+  - its payload gate (`:77`);
+  - age rules for the new and scaled lines.
+- `within_group_distribution_2026_09_29/export_lines.cjs` and `households.py`:
+  - silent: `capRule` (`:29-30`) takes the capital lane's keys, not `meta.capital_return`'s;
+  - `households.py` has no key vector for the synthetic lines.
+- `break_conditions_2026_09_29/engine_breaks.cjs`:
+  - its additions (`:65`) already hold items 5 and the pension, which would count twice;
+  - `:130` passes only `lines` and `edits`.
+- The Black and white comparators' `engine_lines.cjs`:
+  - silent: `rekey.py:218` prices a line as national × share, so the synthetic lines, at national 0, drop out.
+
+**Nothing needed:**
+- 32 files are pinned by design:
+  - the September 27 lane;
+  - candidates v1–v3;
+  - v4's item lanes, each priced on the September 27 base;
+  - the audits and dated checks.
+- 35 files read older payloads:
+  - the explorer UI and figures;
+  - the consumption-key lanes;
+  - the older producers;
+  - the September 23/24 readers.
+- Five hits were false positives.
+
+**v2's and v3's tables missed** the candidate package's model guard, `propagate.py`, `winners_losers.py`, `valuation.py`,
+`backcast.py`, `overview/build.py`, the late-arrival `verify.py` and the dated analyses. v3's "none" for
+`debt_legacy.py`'s capital keys no longer holds, because of `part_rekeyed`.
+
+### What an adoption still needs
+
+1. **A payload-first package** and the September 27 output contract, both described above. `payload.cjs` exports
+   `build()`, so the adopting lane can rebuild the payload with its own `adopted` and `decision`.
+2. **Code in 15 consumers**, mostly generation splits of v4's edits and a row-4 production grid per generation and
+   cell.
+3. **The engine change committed before `pension_accrual_2026_09_28/case_lines.cjs` runs.** Its frozen-file check
+   stops while `engine.js` differs from HEAD.
+4. **A note on provenance hashes.**
+   - `capital_return_services_2026_09_27`, `school_capital_return_2026_09_26` and the pension lane record `engine.js`'s
+     sha256, and a rerun rewrites it.
+   - The adopted payload's `meta.capital_return.source` pins the capital lane's `engine_components.json` by hash.
+   - So a rerun of the capital lane would ripple into the September 27 payload's meta. Only provenance would change.
+
+### Files (this task)
+
+- `payload.cjs`: the builder, with gates G1, G2 and the engine gates. It writes the two payloads and
+  `derived/payload_gates.json` (gates, sizes, hashes and the G2 gaps), and exports `build()`.
+- `consumer.cjs`: the payload consumer with no package, which generalizes the September 27 lane's independent path.
+- `derived/corrections_v4.json`, `derived/corrections_v4_cash.json`, `derived/payload_gates.json`.
+- `derived/summary.json`: only its recorded `engine.js` hash changed.
+- Outside the lane: `assumption_explorer_2026_09_21/engine.js`.
+
+Nothing was committed, staged or stashed.
+
+```sh
+L=infra/immigration-fiscal/main_case_candidate_v4_2026_09_29
+uv run --no-project python3 scripts/rerun_lane.py $L --allow-unrun consumer.cjs "node {lane}/main_case.cjs" "node {lane}/payload.cjs"
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/main_case_long_run_2026_09_27 "node {lane}/main_case.cjs" "node {lane}/sign_reversal.cjs"
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/main_case_schools_full_2026_09_26 "node {lane}/main_case.cjs"
+(cd infra/immigration-fiscal/assumption_explorer_2026_09_21 && node test_engine.js)
 ```
 
 ## Log (append-only; times from `date`)
@@ -339,3 +572,17 @@ uv run --no-project python3 scripts/rerun_lane.py $L --allow-unrun package.cjs "
   b3f4d84 (the peer's general-government row) touched only `main_case_long_run_2026_09_27/main_case.cjs` and
   `main_case_bands.csv`. This lane reads neither; it reads that lane's `package.cjs`, `summary.json` and
   `per_spec.csv`.
+- 2026-09-29 10:36 JST: second task from the parent: build the adoption payload (`payload.cjs` →
+  `derived/corrections_v4.json`, `corrections_v4_cash.json`), a consumer table and gates G1–G4. Stub section added.
+- 2026-09-29 11:21 JST: the consumer survey came back from a read-only subagent (claude-opus-5-5): 99 files, 21
+  follow the adopted case. Ten of its citations were re-read and matched.
+- 2026-09-29 11:26 JST: baseline before the engine change. `rerun_lane.py` was IDENTICAL on the September 27 lane
+  (11/11) and the schools lane (7/7); `test_engine.js` output saved.
+- 2026-09-29 11:35 JST: `engine.js` gained its optional parts; `consumer.cjs` and `payload.cjs` written. The first run
+  passed all 46 gates and wrote `derived/corrections_v4.json`, `corrections_v4_cash.json` and `payload_gates.json`.
+- 2026-09-29 11:36 JST: G3 held after the change: both lanes IDENTICAL and `test_engine.js` byte-identical. G4's first
+  pass rewrote `summary.json`'s recorded `engine.js` hash, and the second pass was IDENTICAL (15/15).
+- 2026-09-29 11:38 JST: a fresh process loading only `consumer.cjs` and `engine.js` gave $371.4146–434.8410bn from the
+  set payload and $294.7011–361.8175bn from the cash payload, with the ends at 48 and 11.
+- 2026-09-29 11:40 JST: the section "Adoption payload (built, 2026-09-29)" was written, with bracketed pointers on the
+  old bullet and on the Files line.
