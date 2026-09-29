@@ -1,0 +1,374 @@
+{
+ "lane": "ssi_key_bound_2026_09_30",
+ "package": "main_case_2026_09_29/package.cjs",
+ "cash_payload": "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
+ "national_bn": 65.134,
+ "household_fraction": 0.9900527030312051,
+ "ends": {
+  "low": 48,
+  "high": 11
+ },
+ "oracle": {
+  "set": {
+   "low_bn": 371.41459978888685,
+   "high_bn": 434.8409586241356
+  },
+  "cash": {
+   "low_bn": 294.70107598024805,
+   "high_bn": 361.8174818097355
+  }
+ },
+ "case_amount_bn": {
+  "set": {
+   "personal": 5.094042274592522,
+   "shared": 5.175675857246652
+  },
+  "cash": {
+   "personal": 5.094042274592522,
+   "shared": 5.175675857246652
+  }
+ },
+ "variants": {
+  "admin_state_age": {
+   "share": {
+    "personal": 0.1020946702,
+    "shared": 0.1032689217
+   },
+   "amount_bn": {
+    "set": {
+     "personal": 6.583686372740655,
+     "shared": 6.659409263892326
+    },
+    "cash": {
+     "personal": 6.583686372740655,
+     "shared": 6.659409263892326
+    }
+   },
+   "edit_bn": {
+    "set": {
+     "personal": 1.4896440981481334,
+     "shared": 1.4837334066456735
+    },
+    "cash": {
+     "personal": 1.4896440981481334,
+     "shared": 1.4837334066456735
+    }
+   },
+   "move_se_bn": {
+    "personal": 0.5484854368927387,
+    "shared": 0.5328711538281873
+   },
+   "set": {
+    "low_bn": 372.89833319553253,
+    "high_bn": 436.33060272228374,
+    "move_low_bn": 1.4837334066456833,
+    "move_high_bn": 1.4896440981481192
+   },
+   "cash": {
+    "low_bn": 296.18480938689373,
+    "high_bn": 363.3071259078837,
+    "move_low_bn": 1.4837334066456833,
+    "move_high_bn": 1.489644098148176
+   }
+  },
+  "admin_state_age_additive": {
+   "share": {
+    "personal": 0.1020946702,
+    "shared": 0.1032689217
+   },
+   "amount_bn": {
+    "set": {
+     "personal": 6.428140515668844,
+     "shared": 6.572325876561578
+    },
+    "cash": {
+     "personal": 6.428140515668844,
+     "shared": 6.572325876561578
+    }
+   },
+   "edit_bn": {
+    "set": {
+     "personal": 1.3340982410763218,
+     "shared": 1.3966500193149254
+    },
+    "cash": {
+     "personal": 1.3340982410763218,
+     "shared": 1.3966500193149254
+    }
+   },
+   "move_se_bn": {
+    "personal": 0.5484854368927387,
+    "shared": 0.5328711538281873
+   },
+   "set": {
+    "low_bn": 372.8112498082018,
+    "high_bn": 436.17505686521196,
+    "move_low_bn": 1.3966500193149614,
+    "move_high_bn": 1.3340982410763331
+   },
+   "cash": {
+    "low_bn": 296.097725999563,
+    "high_bn": 363.15158005081184,
+    "move_low_bn": 1.3966500193149614,
+    "move_high_bn": 1.3340982410763331
+   }
+  },
+  "admin_state_only": {
+   "share": {
+    "personal": 0.112555691,
+    "shared": 0.1125659582
+   },
+   "amount_bn": {
+    "set": {
+     "personal": 7.258276730405737,
+     "shared": 7.258938822017314
+    },
+    "cash": {
+     "personal": 7.258276730405737,
+     "shared": 7.258938822017314
+    }
+   },
+   "edit_bn": {
+    "set": {
+     "personal": 2.164234455813215,
+     "shared": 2.083262964770662
+    },
+    "cash": {
+     "personal": 2.164234455813215,
+     "shared": 2.083262964770662
+    }
+   },
+   "move_se_bn": {
+    "personal": 0.548270309352711,
+    "shared": 0.5324048661120254
+   },
+   "set": {
+    "low_bn": 373.4978627536575,
+    "high_bn": 437.0051930799488,
+    "move_low_bn": 2.083262964770654,
+    "move_high_bn": 2.1642344558131867
+   },
+   "cash": {
+    "low_bn": 296.7843389450187,
+    "high_bn": 363.98171626554876,
+    "move_low_bn": 2.083262964770654,
+    "move_high_bn": 2.1642344558132436
+   }
+  },
+  "admin_with_supplement": {
+   "share": {
+    "personal": 0.1101013516,
+    "shared": 0.1115927159
+   },
+   "amount_bn": {
+    "set": {
+     "personal": 7.100005972194692,
+     "shared": 7.196178228782304
+    },
+    "cash": {
+     "personal": 7.100005972194692,
+     "shared": 7.196178228782304
+    }
+   },
+   "edit_bn": {
+    "set": {
+     "personal": 2.00596369760217,
+     "shared": 2.0205023715356516
+    },
+    "cash": {
+     "personal": 2.00596369760217,
+     "shared": 2.0205023715356516
+    }
+   },
+   "move_se_bn": {
+    "personal": 0.5511626212066117,
+    "shared": 0.5359237300020624
+   },
+   "set": {
+    "low_bn": 373.4351021604225,
+    "high_bn": 436.8469223217378,
+    "move_low_bn": 2.020502371535656,
+    "move_high_bn": 2.0059636976021693
+   },
+   "cash": {
+    "low_bn": 296.7215783517837,
+    "high_bn": 363.8234455073377,
+    "move_low_bn": 2.020502371535656,
+    "move_high_bn": 2.0059636976021693
+   }
+  },
+  "admin_unauthorized_barred": {
+   "share": {
+    "personal": 0.09395195252,
+    "shared": 0.09461588216
+   },
+   "amount_bn": {
+    "set": {
+     "personal": 6.058594325115917,
+     "shared": 6.101408553466562
+    },
+    "cash": {
+     "personal": 6.058594325115917,
+     "shared": 6.101408553466562
+    }
+   },
+   "edit_bn": {
+    "set": {
+     "personal": 0.9645520505233947,
+     "shared": 0.9257326962199093
+    },
+    "cash": {
+     "personal": 0.9645520505233947,
+     "shared": 0.9257326962199093
+    }
+   },
+   "move_se_bn": {
+    "personal": 0.5469152270378355,
+    "shared": 0.5312852746265768
+   },
+   "set": {
+    "low_bn": 372.3403324851068,
+    "high_bn": 435.805510674659,
+    "move_low_bn": 0.9257326962199386,
+    "move_high_bn": 0.9645520505233662
+   },
+   "cash": {
+    "low_bn": 295.626808676468,
+    "high_bn": 362.78203386025893,
+    "move_low_bn": 0.9257326962199386,
+    "move_high_bn": 0.9645520505234231
+   }
+  },
+  "admin_citizens_only": {
+   "share": {
+    "personal": 0.09097192738,
+    "shared": 0.09100919375
+   },
+   "amount_bn": {
+    "set": {
+     "personal": 5.866424147513025,
+     "shared": 5.868827310105646
+    },
+    "cash": {
+     "personal": 5.866424147513025,
+     "shared": 5.868827310105646
+    }
+   },
+   "edit_bn": {
+    "set": {
+     "personal": 0.7723818729205032,
+     "shared": 0.6931514528589933
+    },
+    "cash": {
+     "personal": 0.7723818729205032,
+     "shared": 0.6931514528589933
+    }
+   },
+   "move_se_bn": {
+    "personal": 0.5431297625505861,
+    "shared": 0.5266346362160166
+   },
+   "set": {
+    "low_bn": 372.10775124174586,
+    "high_bn": 435.61334049705613,
+    "move_low_bn": 0.6931514528590128,
+    "move_high_bn": 0.772381872920505
+   },
+   "cash": {
+    "low_bn": 295.39422743310706,
+    "high_bn": 362.589863682656,
+    "move_low_bn": 0.6931514528590128,
+    "move_high_bn": 0.772381872920505
+   }
+  },
+  "hybrid_cps_within_cell": {
+   "share": {
+    "personal": 0.07903390342,
+    "shared": 0.08004101652
+   },
+   "amount_bn": {
+    "set": {
+     "personal": 5.096587627066501,
+     "shared": 5.161532415852141
+    },
+    "cash": {
+     "personal": 5.096587627066501,
+     "shared": 5.161532415852141
+    }
+   },
+   "edit_bn": {
+    "set": {
+     "personal": 0.0025453524739793565,
+     "shared": -0.014143441394510958
+    },
+    "cash": {
+     "personal": 0.0025453524739793565,
+     "shared": -0.014143441394510958
+    }
+   },
+   "move_se_bn": {
+    "personal": 0.33405185131310383,
+    "shared": 0.33554437960851696
+   },
+   "set": {
+    "low_bn": 371.40045634749237,
+    "high_bn": 434.8435039766096,
+    "move_low_bn": -0.01414344139448076,
+    "move_high_bn": 0.00254535247398735
+   },
+   "cash": {
+    "low_bn": 294.68693253885357,
+    "high_bn": 361.8200271622095,
+    "move_low_bn": -0.01414344139448076,
+    "move_high_bn": 0.00254535247398735
+   }
+  },
+  "case_row4_share": {
+   "share": {
+    "personal": 0.08140651587,
+    "shared": 0.08161076322
+   },
+   "amount_bn": {
+    "set": {
+     "personal": 5.249588133598916,
+     "shared": 5.262759247156843
+    },
+    "cash": {
+     "personal": 5.249588133598916,
+     "shared": 5.262759247156843
+    }
+   },
+   "edit_bn": {
+    "set": {
+     "personal": 0.15554585900639406,
+     "shared": 0.08708338991019104
+    },
+    "cash": {
+     "personal": 0.15554585900639406,
+     "shared": 0.08708338991019104
+    }
+   },
+   "move_se_bn": {
+    "personal": 0,
+    "shared": 0
+   },
+   "set": {
+    "low_bn": 371.50168317879707,
+    "high_bn": 434.996504483142,
+    "move_low_bn": 0.08708338991021947,
+    "move_high_bn": 0.15554585900639495
+   },
+   "cash": {
+    "low_bn": 294.78815937015827,
+    "high_bn": 361.9730276687419,
+    "move_low_bn": 0.08708338991021947,
+    "move_high_bn": 0.15554585900639495
+   }
+  }
+ },
+ "gates": [
+  "set: oracle 371.4146 / 434.8410; SSI keyed ssi, response 1, national 65.134; zero edit exact",
+  "cash: oracle 294.7011 / 361.8175; SSI keyed ssi, response 1, national 65.134; zero edit exact",
+  "every move equals its edit at the specification's allocation (1e-9)"
+ ]
+}

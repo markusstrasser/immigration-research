@@ -1,0 +1,73 @@
+{
+ "frame": {
+  "flagged_m": 9.992830839426174,
+  "flagged_union_m": 4.607452947057153,
+  "household_fraction": 0.9900527030312051,
+  "persons": 142125,
+  "row4_factors": {
+   "factor_native_mexican": 0.9601052020829933,
+   "factor_natz": 0.8556255897504617,
+   "factor_noncit": 0.7781269999470055
+  },
+  "union_persons": 39712493.33118789
+ },
+ "gate_case_shares_max_abs": {
+  "se": 4.5205852949870007e-13,
+  "share": 4.414718590695088e-12
+ },
+ "household_fraction": 0.9900527030312051,
+ "hybrid_cells_without_reports": {
+  "personal": {
+   "cells": 0,
+   "dollars_share": 0.0
+  },
+  "shared": {
+   "cells": 0,
+   "dollars_share": 0.0
+  }
+ },
+ "line": {
+  "id": "ssi",
+  "key": "ssi",
+  "note": "price_arm.cjs reads the national total from the adopted payload model"
+ },
+ "sources": {
+  "ssa_ssi_asr24.xlsx": {
+   "path": "infra/immigration-fiscal/backtest_admin_totals_2026_09_28/_cache/ssa_ssi_asr24.xlsx",
+   "retrieved": "2026-09-28",
+   "route": "browser download (SSA refuses scripted requests)",
+   "sha256": "e7a977a33cabbda27af8da83767f8fbf982066891381caeab2e1ae984db11d1c",
+   "url": "https://www.ssa.gov/policy/docs/statcomps/ssi_asr/2024/ssi_asr24.xlsx"
+  },
+  "ssa_supplement2025_7b.xlsx": {
+   "path": "infra/immigration-fiscal/backtest_admin_totals_2026_09_28/_cache/ssa_supplement2025_7b.xlsx",
+   "retrieved": "2026-09-28",
+   "route": "browser download (SSA refuses scripted requests)",
+   "sha256": "6363d2efb1e9f76a672ef380ad41e6a2426ebe63c86a31d5dd78534a3aa31bd6",
+   "url": "https://www.ssa.gov/policy/docs/statcomps/supplement/2025/7b.xlsx"
+  }
+ },
+ "ssa": {
+  "all_areas_7b7_k": [
+   63079493.0,
+   59665127.0,
+   3414366.0
+  ],
+  "federal_cy2024_51_areas_k": 59655194.0,
+  "gates": {
+   "b7_areas_max_k": 1.0,
+   "b7_parts_max_k": 1.0,
+   "dec_federal_vs_7b3_max": 0.0014127986420403582,
+   "dec_total_vs_table11_max": 0.0006106447654414815,
+   "key_state_vs_7b7_federal_max_k": 9.313225746154785e-10,
+   "key_state_vs_7b7_total_max_k": 1.862645149230957e-09
+  },
+  "supplement_dec2024_by_age_k_table5": [
+   10593.0,
+   128835.0,
+   155002.0
+  ],
+  "supplementation_cy2024_51_areas_k": 3414366.0,
+  "total_cy2024_51_areas_k": 63069561.0
+ }
+}

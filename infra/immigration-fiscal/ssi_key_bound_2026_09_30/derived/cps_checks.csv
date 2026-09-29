@@ -1,0 +1,14 @@
+quantity,value,note
+cps_reported_ssi_bn,58.63590571,"row 4 civilians, SSI_VAL (income 2024)"
+ssa_federally_administered_cy2024_bn,63.069561,"7.B7 total, 51 areas (respondents report SSI with any supplement)"
+reporting_ratio_all,0.9297021381,"CPS over SSA, all ages"
+reporting_ratio_under_65,1.01919099,CPS 15-64 (children's SSI on parents' records) over SSA under 65
+reporting_ratio_65_plus,0.6927026181,CPS 65+ over SSA 65+ (SSA's age split from December payments)
+group_ssi_imputed_share,0.3630382121,share of the group's reported SSI dollars that the CPS imputed (lane rule: SSI flags or whole-supplement imputation)
+others_ssi_imputed_share,0.3716886647,the same for civilians outside the group
+group_ssi_on_noncitizens_share,0.07406274584,share of the group's reported SSI dollars on noncitizens
+group_ssi_on_flagged_share,0,share of the group's reported SSI dollars on the state-aware flag (imputed unauthorized)
+group_noncitizen_pop_share,0.1809722733,noncitizens' share of the group
+group_flagged_pop_share,0.1160202385,flagged share of the group
+group_ssi_recipients_sample,203,unweighted group persons reporting SSI
+cps_ssi_recipients_sample,2252,unweighted civilians reporting SSI
