@@ -12,8 +12,8 @@ Social Security and Part A promises members earn as they work, at the benefits c
 pay; counting benefits when paid, it is $295–362bn. It charges the return on public capital, lets
 roads, parks, rental assistance and government enterprises respond, and takes long-run property
 taxes. On the same account, CBO-style first-year budget responses give $201–246bn and fully
-proportional services $398–448bn. On the September 27 case ($322–387bn), other residents' social
-costs and benefits brought the total to $414–488bn. The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
+proportional services $398–448bn; other residents' social costs and benefits bring the total to
+$463–536bn. The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
 −$7,521, third-plus −$6,195 per person, standard errors 384, 615 and 457).
 
@@ -45,10 +45,10 @@ nest is a different object: at the elasticities its job distribution supports, i
 production term by about $4–8bn at the job-overlap reading and $1.5–4.7bn at the direct low-skill
 estimates (entry 14). No ratio of "offsets to cost" can be formed from these.
 
-**The fiscal-plus-social total is its own object.** The $414–488bn, on the September 27 case, adds
-other residents' social costs and benefits to the fiscal account at central values (entry 4). Its low end assumes
-Mexican-origin offending equals the Hispanic average (fiscal $317.5bn, victims $30.5bn); its high
-end assumes it sits above that average, as custody does (fiscal $387.4bn, victims $31.9bn).
+**The fiscal-plus-social total is its own object.** The $463–536bn adds other residents' social
+costs and benefits to the fiscal account at central values (entry 4). Its low end assumes
+Mexican-origin offending equals the Hispanic average (fiscal $366.7bn, victims $30.5bn); its high
+end assumes it sits above that average, as custody does (fiscal $434.8bn, victims $31.9bn).
 Figures normalized against the average resident and the crash figure charged by fault ($40.6bn)
 sit beside it and are never added. Property values stay out. The first-year budget response
 ($201–246bn) and fully proportional services ($398–448bn) are scenarios of the same account, not
@@ -166,9 +166,10 @@ So the response share moves the result more than any offset listed here.
   ±$490bn, and is not added (ladder 201). Institutions remain unpriced in both directions.
 
 Beside the fiscal account, a fiscal-plus-social total adds other residents' social costs and
-benefits. On the September 27 case it is $414–488bn a year at central values, $10.4–12.3k per member. Every row is on the 39.7M
-people the account prices; the lanes' own figures, on the survey's raw 40.9M, give $416–491bn and a
-stacked full span of $142–757bn. It contains:
+benefits: $463–536bn a year at central values, $11.7–13.5k per member ($414–488bn on the September 27
+case; only the fiscal row moved). Counting benefits when paid, it is $386–462bn. Every row is on the
+39.7M people the account prices; on the September 27 case the lanes' own figures, on the survey's raw
+40.9M, gave $416–491bn and a stacked full span of $142–757bn. It contains:
 - victims' harm from crimes by group members against other residents, $30.5–31.9bn (entry 12),
   and property crime, $1.3–1.4bn;
 - the group's unreimbursed hospital care, borne by hospitals, physicians and private payers,
@@ -238,18 +239,21 @@ flat fiscal gap above. Descriptive, cross-sectional generations; the third-plus 
 subject to ethnic attrition; standard errors are lower bounds. [CALCULATION:
 [second generation by origin](immigration-second-generation-by-origin-2026-09-22.md), ladder 178]
 
-On the adopted account itself (the September 27 case), with no reference group, every generation
-alive in 2024 is a net cost at all 64 specifications. Counted with their children, as the National Academies count them,
-a second-generation adult costs other residents $9.8–10.7k a year, against $13.6–16.3k per
-Mexico-born adult and $9.2–12.4k per third-plus adult; the second generation's total is $87–95bn
-and the third-plus's $75–102bn. So the second generation costs less than the first but is not a
+On the adopted account itself, with no reference group, every generation alive in 2024 is a net
+cost at all 64 specifications. Counted with their children, as the National Academies count them,
+a second-generation adult costs other residents $12.4–13.7k a year, against $16.0–18.7k per
+Mexico-born adult and $11.2–14.1k per third-plus adult; the second generation's total is $111–122bn
+and the third-plus's $91–116bn. So the second generation costs less than the first but is not a
 net contributor in this year's account; whether today's children pay more as adults needs a cohort
 account, which this one-year split is not. Counted in their own generation, children push the
-second generation's total to $128–153bn, above the first's $78–94bn. Where children are counted
-decides who carries the costs that follow residents and pupils, such as the return on public
-capital, roads, parks, rental assistance and enterprises: counted with their parents, the
-Mexico-born carry 37% of them; counted in their own generation, the second and third-plus
-generations carry 75–78%.
+second generation's total to $152–179bn, above the first's $87–97bn. Per-person figures divide by
+the account's count (27.66M adults of 39.71M members). Where children are counted decides who
+carries the costs that follow residents and workers. The pension accrual follows this year's payroll
+taxes, so counted in their own generation it adds $33.9 / 36.0bn to the second generation and
+$32.8 / 22.6bn to the third-plus, against $10.0 / 14.4bn to the Mexico-born. The September 27
+case's additions (the return on public capital, roads, parks, rental assistance and enterprises)
+fall 37% on the Mexico-born counted with their parents and 75–78% on the US-born generations counted
+in their own.
 [CALCULATION: [adopted account by generation](immigration-adopted-account-by-generation-2026-09-25.md),
 ladder 224]
 
@@ -747,3 +751,4 @@ they get more prominence.
 - 2026-09-29 (number drift audit): entry 2's general government is $28.2–40.0bn (28.237); the care items named add to $4.2bn; the scale net is $13.7bn on the priced count, its interval and induced receipts on the lane's CPS count; the direct low-skill estimates move the production term $1.5–4.7bn (1.497 was rounded twice to $2bn). Concept affected: none; rounding and count basis only.
 - 2026-09-29 (priced-count spans): the PM2.5 and crash ranges and the fault-based crash figure are now on the 39.71M the account prices, like the central values: crashes −$55.1bn to +$70.8bn (was −$57.7bn to +$74.3bn on the CPS count), by fault $40.6bn (was $42.3bn), PM2.5 $30.8–119.7bn ([lane](../infra/immigration-fiscal/social_spans_priced_count_2026_09_29/RESULT.md)). Concept affected: none; the count the ranges are on.
 - 2026-09-29 (main case v4 adopted; [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275): the anchors, the combining rules and entries 2, 4, 8, 11 and 15–18 restate the main case as $371–435bn, with the cash set ($295–362bn) beside. Entry 2 gains the property-tax response and the v4 sign break-even (the low end stays a net cost with every service frozen); entry 8 the v4 back-cast; entry 18 the v4 replay. The fiscal-plus-social total (entries 4 and the combining rules), the generation split (entry 5) and the average-resident gap (entry 6) say "on the September 27 case" until their v4 reruns land. Concept affected: the headline main case.
+- 2026-09-29, later (v4 consumer lanes: pairing 911afa6, generation aa1f53b): the fiscal-plus-social total (anchors, combining rules, entry 4) is $463–536bn on the main case, fiscal $366.7bn / $434.8bn at its footings; entry 5 gives the v4 generation split on the account's 39.71M, and where the pension accrual lands. Concept affected: the fiscal-plus-social total and the generation split.
