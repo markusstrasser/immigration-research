@@ -2,11 +2,10 @@
 
 State-local and federal defined-benefit plans owe benefits already earned by past service that their
 assets do not cover. BEA books the interest accruing on that shortfall inside government interest
-payments; the main case holds that interest row (Table 3.1 line 28, $1,118.87bn) at zero response, and
-the federal debt legacy lane covers Treasury debt held by the public only. This lane measures the
-shortfall and its 2024 interest from pinned primary files and attributes it to three groups of the
-union's size (the Mexican-origin union, third-plus-generation non-Hispanic whites, an all-residents
-slice) by their use of the services the plans' employees provided.
+payments; the main case holds that interest row (Table 3.1 line 28, $1,118.87bn) at zero response.
+The federal legacy model capitalizes NIPA gaps, so its pension financing overlap is unreconciled.
+This lane measures the shortfall and its 2024 interest from pinned primary files and attributes it
+to equal-sized groups by their use of public services, retaining engine and matched union keys.
 
 Run from the repository root (a worktree drops --no-project):
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py
@@ -357,7 +356,10 @@ def function_mixes(aspep: dict, m: dict) -> dict[str, dict[str, float]]:
 
 
 # ----------------------------------------------------------------------------------------------- group shares
-GROUPS = ["mexican_origin", "A1_third_plus_nh_white", "all_residents_slice"]
+GROUP_SOURCES = {"mexican_origin": "mexican_origin_engine", "mexican_origin_rough": "mexican_origin_rough",
+                 "A1_third_plus_nh_white": "A1_third_plus_nh_white", "all_residents_slice": "all_residents_slice"}
+GROUPS = list(GROUP_SOURCES)
+GROUP_LINES = FISCAL / "legacy_comparators_2026_09_30/derived/group_lines_sept29.csv"
 OVERLAY = {"public_order_safety": ("state_price_public_order_safety", 519.153),
            "health_services": ("state_price_health_services", 306.539),
            "recreation_culture": ("state_price_recreation_culture", 54.331)}
@@ -365,13 +367,29 @@ HIGHWAYS_NATIONAL = 201.005        # S&L highways inside economic affairs, the n
 
 
 def group_shares() -> tuple[dict, dict]:
-    """share[group][end][line] and response[end][line]. The union's shares are the engine's (sept29 dump, each end);
-    the white slice and the all-residents slice take the September 27 rough keys (unchanged base lines) plus their own
-    sept29 state-price and road-mile terms, as the white lane priced them."""
+    """Read the white lane's gated sept29 line export on audit row 4, including each group's overlays.
+
+    Keep the engine union as an anchor; use the rough union for comparisons on identical keys.
+    The export's producer runs rekey_sept29.setup(), checks every cost, and records each slice's count.
+    Reject a different population, line definition or engine amount before attributing any liability.
+    """
     dump = json.loads((FISCAL / "white_replacement_2026_09_28/derived/engine_lines_sept29.json").read_text())
-    rekey29 = {r["line"]: r for r in csv.DictReader(open(FISCAL / "black_comparator_rough_2026_09_28/derived/rekey_line_shares_sept29.csv"))}
-    white = {r["line"]: r for r in csv.DictReader(open(FISCAL / "white_replacement_2026_09_28/derived/rekey_line_shares.csv"))}
-    terms = {(r["group"], r["end"]): r for r in csv.DictReader(open(FISCAL / "white_replacement_2026_09_28/derived/v4_group_terms_sept29.csv"))}
+    with GROUP_LINES.open() as f:
+        rows = [r for r in csv.DictReader(f) if r["basis"] == "accrual" and r["group"] in GROUP_SOURCES.values()]
+    source = {(r["group"], r["end"], r["side"], r["line"]): r for r in rows}
+    if len(source) != len(rows):
+        raise ValueError("[BLOCKED] duplicate group line in row-4 export")
+
+    def value(group, end, line, field):
+        side = "scalar" if line == "population" else "receipt" if line == "enterprise_surplus" else "spending"
+        try:
+            v = float(source[(GROUP_SOURCES[group], end, side, line)][field])
+        except (KeyError, ValueError) as e:
+            raise ValueError(f"[BLOCKED] missing or invalid {group}/{end}/{line}/{field}") from e
+        if not math.isfinite(v):
+            raise ValueError(f"[BLOCKED] nonfinite {group}/{end}/{line}/{field}")
+        return v
+
     base = ["general_public_services", "defense", "public_order_safety", "economic_affairs_services", "housing_community_services",
             "health_services", "recreation_culture", "education_services", "income_security_services"]
     share, response = {g: {} for g in GROUPS}, {}
@@ -383,25 +401,23 @@ def group_shares() -> tuple[dict, dict]:
         resp["highways"] = lines["roads_vmt_sl"]["response"]
         resp["enterprises"] = lines["enterprise_surplus"]["response"]
         response[end] = resp
-        mex = {l: lines[l]["amount_bn"] / lines[l]["national_bn"] for l in base}
-        for line, (ov, nat) in OVERLAY.items():
-            if abs(lines[line]["national_bn"] - nat) > 1e-9:
-                raise ValueError(f"[BLOCKED] {line} national changed")
-            mex[line] += lines[ov]["amount_bn"] / nat
-        mex["highways"] = mex["economic_affairs_services"] + lines["roads_vmt_sl"]["amount_bn"] / HIGHWAYS_NATIONAL
-        mex["enterprises"] = lines["enterprise_surplus"]["amount_bn"] / lines["enterprise_surplus"]["national_bn"]
-        if end == "low":     # the brief's file: the engine's low-end amounts over the nationals
-            for l in base:
-                if abs(float(rekey29[l]["share_mexican_origin_engine"]) - lines[l]["amount_bn"] / lines[l]["national_bn"]) > 5e-7:
-                    raise ValueError(f"[BLOCKED] rekey_line_shares_sept29 {l} differs from the engine dump")
-        share["mexican_origin"][end] = mex
-        for g in GROUPS[1:]:
-            t = terms[(g, end)]
-            s = {l: float(white[l][f"share_{g}"]) for l in base}
+        needed = base + [v[0] for v in OVERLAY.values()] + ["roads_vmt_sl", "enterprise_surplus"]
+        for g in GROUPS:
+            if abs(value(g, end, "population", "amount_bn") - UNION_ROW4) > 0.01:
+                raise ValueError(f"[BLOCKED] {g}/{end} population is not audit row 4")
+            for l in needed:
+                for field in ("national_bn", "response"):
+                    if abs(value(g, end, l, field) - lines[l][field]) > 1e-8:
+                        raise ValueError(f"[BLOCKED] {g}/{end}/{l} {field} differs from the case")
+                if g == "mexican_origin" and abs(value(g, end, l, "amount_bn") - lines[l]["amount_bn"]) > 1e-8:
+                    raise ValueError(f"[BLOCKED] {end}/{l} differs from the engine dump")
+            s = {l: value(g, end, l, "amount_bn") / lines[l]["national_bn"] for l in base}
             for line, (ov, nat) in OVERLAY.items():
-                s[line] += float(t[f"{ov}_bn"]) / nat
-            s["highways"] = s["economic_affairs_services"] + float(t["roads_vmt_sl_bn"]) / HIGHWAYS_NATIONAL
-            s["enterprises"] = s["general_public_services"]        # per head: the case's population key
+                if abs(lines[line]["national_bn"] - nat) > 1e-9:
+                    raise ValueError(f"[BLOCKED] {line} national changed")
+                s[line] += value(g, end, ov, "amount_bn") / nat
+            s["highways"] = s["economic_affairs_services"] + value(g, end, "roads_vmt_sl", "amount_bn") / HIGHWAYS_NATIONAL
+            s["enterprises"] = value(g, end, "enterprise_surplus", "amount_bn") / lines["enterprise_surplus"]["national_bn"]
             share[g][end] = s
     for g in GROUPS:
         for end in ("low", "high"):
@@ -536,9 +552,9 @@ def main() -> None:
 
     # --- measured_2024.csv
     rows = [[k, x, src] for k, (x, src) in m.items()]
-    rows += [["sl_normal_cost_employer", nc_sl, "BEA T7.24 lines 5+6"],
-             ["fed_civilian_normal_cost_employer", nc_civ, "BEA T7.23 lines 6+9"],
-             ["fed_military_normal_cost_employer", nc_mil, "BEA T7.23 lines 7+10"],
+    rows += [["sl_employer_pension_compensation", nc_sl, "BEA T7.24 lines 5+6, including service charges"],
+             ["fed_civilian_employer_pension_compensation", nc_civ, "BEA T7.23 lines 6+9, including service charges"],
+             ["fed_military_employer_pension_compensation", nc_mil, "BEA T7.23 lines 7+10, including service charges"],
              ["sl_implied_funding_from_holding_gains", holding, "BEA T7.24 line 31 - lines 12,13,14"]]
     for y in (y0, y1):
         rows += [[f"z1_sl_claims_on_sponsor_{y}q4", z1[y]["FL223073045.Q"], "Z.1 FL223073045.Q (S129s1.3.s line 19)"],
@@ -547,7 +563,7 @@ def main() -> None:
                  [f"z1_fed_entitlements_{y}q4", z1[y]["FL344190045.Q"], "Z.1 FL344190045.Q (S129s1.2.s line 11)"],
                  [f"z1_fed_treasury_nonmarketable_{y}q4", z1[y]["FL343069245.Q"], "Z.1 FL343069245.Q (S129s1.2.s)"],
                  [f"z1_fed_total_assets_{y}q4", z1[y]["FL344090045.Q"], "Z.1 FL344090045.Q (S129s1.2.s line 1)"]]
-    rows += [["fed_consolidated_unfunded_2023q4", fed_consolidated, "Z.1 entitlements less assets other than sponsor claims and Treasury securities"]]
+    rows += [["fed_consolidated_unfunded_2023q4", fed_consolidated, "Z.1 entitlements less assets other than sponsor claims and nonmarketable Treasury securities"]]
     for k, d in fr.items():
         for part, x in d.items():
             rows.append([f"fr_{k}_{part}", x, "Financial Report FY2025 Note 13, FY2024 column"])
@@ -636,8 +652,9 @@ def main() -> None:
                 srows.append([name, basis, tarm, rarm, e, g, parts["state_local"][1], parts["federal_civilian"][1] + parts["federal_military"][1],
                               stock, parts["state_local"][2], parts["federal_civilian"][2] + parts["federal_military"][2], inter,
                               inter * 1e9 / UNION_ROW4])
-            d = [tot["mexican_origin"][i] - tot["A1_third_plus_nh_white"][i] for i in (0, 1)]
-            srows.append([name, basis, tarm, rarm, e, "mexican_origin_minus_A1_white", "", "", d[0], "", "", d[1], d[1] * 1e9 / UNION_ROW4])
+            for g in ("mexican_origin", "mexican_origin_rough"):
+                d = [tot[g][i] - tot["A1_third_plus_nh_white"][i] for i in (0, 1)]
+                srows.append([name, basis, tarm, rarm, e, f"{g}_minus_A1_white", "", "", d[0], "", "", d[1], d[1] * 1e9 / UNION_ROW4])
     write(out / "summary.csv", ["arm", "federal_basis", "time_weighting", "responses", "end", "group", "stock_sl_bn", "stock_federal_bn",
                                 "stock_total_bn", "interest_sl_bn", "interest_federal_bn", "interest_total_bn", "interest_per_member"], srows)
 

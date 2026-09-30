@@ -29,9 +29,9 @@ fed_consumption_health_services,179.700000,BEA T3.17 line 17
 fed_consumption_recreation_culture,5.430000,BEA T3.17 line 18
 fed_consumption_education_services,11.954000,BEA T3.17 line 19
 fed_consumption_income_security_services,30.536000,BEA T3.17 line 20
-sl_normal_cost_employer,172.711000,BEA T7.24 lines 5+6
-fed_civilian_normal_cost_employer,58.719000,BEA T7.23 lines 6+9
-fed_military_normal_cost_employer,47.443000,BEA T7.23 lines 7+10
+sl_employer_pension_compensation,172.711000,"BEA T7.24 lines 5+6, including service charges"
+fed_civilian_employer_pension_compensation,58.719000,"BEA T7.23 lines 6+9, including service charges"
+fed_military_employer_pension_compensation,47.443000,"BEA T7.23 lines 7+10, including service charges"
 sl_implied_funding_from_holding_gains,163.041000,"BEA T7.24 line 31 - lines 12,13,14"
 z1_sl_claims_on_sponsor_2023q4,3125.593000,Z.1 FL223073045.Q (S129s1.3.s line 19)
 z1_sl_entitlements_2023q4,8942.670000,Z.1 FL224190043.Q (S129s1.3.s line 21)
@@ -45,7 +45,7 @@ z1_fed_claims_on_sponsor_2024q4,961.965000,Z.1 FL343073045.Q (S129s1.2.s line 10
 z1_fed_entitlements_2024q4,3871.937000,Z.1 FL344190045.Q (S129s1.2.s line 11)
 z1_fed_treasury_nonmarketable_2024q4,2881.156000,Z.1 FL343069245.Q (S129s1.2.s)
 z1_fed_total_assets_2024q4,3871.937000,Z.1 FL344090045.Q (S129s1.2.s line 1)
-fed_consolidated_unfunded_2023q4,3803.095000,Z.1 entitlements less assets other than sponsor claims and Treasury securities
+fed_consolidated_unfunded_2023q4,3803.095000,Z.1 entitlements less assets other than sponsor claims and nonmarketable Treasury securities
 fr_pension_end_fy24_civilian,2882.800000,"Financial Report FY2025 Note 13, FY2024 column"
 fr_pension_end_fy24_military,2814.900000,"Financial Report FY2025 Note 13, FY2024 column"
 fr_pension_end_fy24_total,5697.700000,"Financial Report FY2025 Note 13, FY2024 column"

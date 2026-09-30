@@ -100,3 +100,47 @@ def test_rebuild_reproduces_derived(tmp_path):
     assert [n for n in names if (tmp_path / n).read_bytes() != (HERE / "derived" / n).read_bytes()] == []
     for n in names:
         assert b"\r\n" not in (HERE / "derived" / n).read_bytes(), n
+
+
+@pytest.mark.parametrize("corruption", ["published_count", "response", "nonfinite", "duplicate"])
+def test_group_export_rejects_wrong_frame_or_line(corruption, monkeypatch, tmp_path):
+    with pl.GROUP_LINES.open() as f:
+        reader = csv.DictReader(f)
+        fields, rows = reader.fieldnames, list(reader)
+    group = "A1_third_plus_nh_white"
+    target = next(r for r in rows if r["group"] == group and r["basis"] == "accrual"
+                  and r["end"] == "low" and r["line"] == "education_services")
+    if corruption == "published_count":
+        population = next(r for r in rows if r["group"] == group and r["basis"] == "accrual"
+                          and r["end"] == "low" and r["line"] == "population")
+        population["amount_bn"] = "40900000"
+    elif corruption == "response":
+        target["response"] = "0"
+    elif corruption == "nonfinite":
+        target["amount_bn"] = "nan"
+    else:
+        rows.append(target.copy())
+    path = tmp_path / "group_lines.csv"
+    with path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    monkeypatch.setattr(pl, "GROUP_LINES", path)
+    with pytest.raises(ValueError, match=r"\[BLOCKED\]"):
+        pl.group_shares()
+
+
+def test_same_keys_pension_gap_uses_row4_and_differs_from_engine():
+    share, _ = pl.group_shares()
+    # Source anchors independently reconstructed from the current row-4 CPS/MEPS export.
+    rows = list(csv.DictReader(open(HERE / "derived/summary.csv")))
+    def interest(group, end):
+        return float(next(r["interest_total_bn"] for r in rows
+                          if r["arm"] == "adopted" and r["group"] == group and r["end"] == end))
+    for end in ("low", "high"):
+        assert share["A1_third_plus_nh_white"][end]["education_services"] < 0.103
+        assert interest("mexican_origin_rough_minus_A1_white", end) == pytest.approx(
+            interest("mexican_origin_rough", end) - interest("A1_third_plus_nh_white", end), abs=2e-6)
+        assert interest("mexican_origin_minus_A1_white", end) > interest("mexican_origin_rough_minus_A1_white", end)
+    assert interest("mexican_origin_rough_minus_A1_white", "low") == pytest.approx(4.8918, abs=0.0001)
+    assert interest("mexican_origin_rough_minus_A1_white", "high") == pytest.approx(4.6828, abs=0.0001)
