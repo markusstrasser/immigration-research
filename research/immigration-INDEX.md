@@ -268,13 +268,36 @@ figure. The defects are real, run both ways and nearly cancel:
   many, which is worth −$2.2–2.5bn once the tax corrections are in (ladder 209).
 
 The [debt legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) (ladder 207) prices interest
-on the group's past federal gaps. On the main case, cash flows only, the 2005–2023 gaps leave $0.95–1.28tn of
-debt, on which 2024 taxpayers pay **$30.8–41.5bn** of interest ($774–1,044 per member; $7.8–42.3bn across
+on the group's past federal gaps. On the main case's cash-benefit convention, the 2005–2023 gaps leave $0.95–1.28tn of
+modeled debt, with **$30.8–41.5bn** of 2024 interest under the all-borrowed rule ($774–1,044 per member; $7.8–42.3bn across
 rules; September 27: $30.9–41.6bn, $8.2–42.5bn across rules); the pension accrual, the capital return and the capped programmes are
 reported beside it, never compounded. Compounding the accrual as if it were borrowing would give $61.3–70.5bn. That answers a historical question; the main
-case's static comparison treats existing interest as sunk. The line is proposed, not adopted. If adopted it enters
-as its own history line, not as the interest row's response, since removing the group in 2024 leaves past debt in
-place; it must never be added to the assigned balance, nor the stock to an annual figure.
+case's static comparison treats existing interest as sunk. These are conditional financing attributions; even the
+cash-benefit convention retains NIPA's accrued public-employee compensation. They are stated as separate history
+lines, since removing the group in 2024 leaves past obligations in place; they must never be added to the assigned
+balance, nor the stock to an annual figure.
+
+**Legacy comparisons, stated separately (September 30).** For the federal line, use 2005–2023:
+annual ACS headcounts begin in 2005; earlier starts require more interpolation. Every comparison uses
+the same headcount path, ending at 39.71M people, and matched CPS/MEPS group keys. These are modeled
+2024 annual charges over third-plus non-Hispanic whites, under the main case's paired specifications:
+
+| Legacy component | Excess over whites, $bn in 2024 | Interpretation |
+|---|---:|---|
+| Federal gaps, accrued promises capitalized as if borrowed | **72.4–72.6** | Treasury-rate financing equivalent; **63.5–63.7** when accrual follows payroll rather than benefits |
+| Public-employee pensions, service years 1980–2023 | **4.7–4.9** | Attributed interest expense on prior liabilities, including imputed interest |
+
+The federal accrual levels on those matched keys are Mexican-origin $60.2–67.7bn, whites −$12.5 to −$4.7bn,
+and an average-resident slice $15.4–22.8bn. The white negative is a modeled financing credit, not observed
+debt repayment. The federal gap is $1.8k per member; it becomes $87.7–87.8bn starting in 2000 and
+$112.8bn starting in 1990. Counting Social Security and Medicare when paid gives $11.3–11.5bn over whites.
+The pension comparison corrects stale comparator weights and uses the same keys on both sides.
+**Do not sum the two rows:** the federal simulation retains accrued public-employee compensation,
+so a common pension/borrowing reconciliation is still needed. Both stay outside the fiscal and
+fiscal-plus-social headlines. [CALCULATION: [federal comparison](../infra/immigration-fiscal/legacy_comparators_2026_09_30/RESULT.md),
+[pension comparison](../infra/immigration-fiscal/pension_legacy_2026_09_30/RESULT.md), ladders 278–279;
+[source verification](../infra/immigration-fiscal/legacy_comparators_2026_09_30/verification-2026-09-30.md);
+[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]
 
 The [status-benefits sweep](immigration-status-benefits-sweep-2026-09-24.md) (September 24) follows
 the City Journal article on California. It covers benefits paid regardless of status, improper
@@ -795,6 +818,10 @@ is also on GitHub at origin/main 3791d32.
 | `research/immigration-school-service-complexity-2026-04-11.md` | `933b831` (2026-06-24) | [dataset-register § Lost](immigration-dataset-register.md#lost-not-rebuilt-or-on-the-ssd-only) |
 | `research/immigration-surge-threshold-dataset-frontier-2026-04-21.md` | `2618b0d` (2026-06-16) | [dataset-register § Lost](immigration-dataset-register.md#lost-not-rebuilt-or-on-the-ssd-only) |
 | `research/immigration-theory-verdicts-2026-06-25.md` | `36c4477` (2026-09-05) | [material-repair-report-2026-09-05](immigration-material-repair-report-2026-09-05.md) |
+
+## Revisions
+
+- 2026-09-30 ([decision](../decisions/2026-09-30-legacy-comparisons-separate.md)): adopted separate legacy comparisons with a 2005 federal start after source verification. Corrected the pension comparator frame and distinguished financing-equivalent accrual charges from cash interest. Concept affected: historical financing attribution; no combined legacy total is adopted while the pension/borrowing bridge is unreconciled.
 
 <!-- knowledge-index
 generated: 2026-09-29T07:51:14Z

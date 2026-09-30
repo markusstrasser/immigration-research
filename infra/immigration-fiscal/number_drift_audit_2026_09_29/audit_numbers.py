@@ -318,6 +318,8 @@ INDEX_SPANS = [
     ("The [world ledger]", "premium over being raised in Mexico. [FRAMING-SENSITIVE]"),
     ("Benefits are priced to the same standard as the costs", "so both figures stand (ladder 199)."),
     ("The [debt legacy lane]", "nor the stock to an annual figure."),
+    ("**Legacy comparisons, stated separately (September 30).**",
+     "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
     ("[Cumulative 2005–2024 back-cast]", "Not comparable with ladder 137's forward debt path."),
     # the rough Black comparison, restated on the adopted case (d6a5a2f)
     ("For comparison, a rough re-key of the main case to non-Hispanic Black residents costs",
@@ -341,6 +343,8 @@ FAQ_SPANS = [
     ("the renters' payments cancel in dollars but not by income",
      "fifths of other residents lose $79.4bn a year and the top fifth gains $44.5bn (ladder 194)."),
     ("many average residents, the main case's gap counting benefits when paid", "has no national total to share out."),
+    ("**What about obligations left by past years?**",
+     "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
 ]
 CLAUDE_SPANS = [
     ("Since\n  2026-09-23 the main case lets general public services", "business subsidies stay at **zero response by assumption**"),

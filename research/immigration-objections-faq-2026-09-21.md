@@ -59,6 +59,12 @@ Mexican-origin generations alive in 2024 with whites at common ages. The Nationa
 results it is usually set against are all origins, followed from arrival, with descendants,
 discounted, under a budget rule. Neither refutes the other.
 
+**Legacy financing charges stay separate.** The federal comparison capitalizes earlier gaps,
+including accrued promises, as if borrowed; the public-employee pension comparison allocates
+interest on prior liabilities. Neither belongs in the annual fiscal or fiscal-plus-social total.
+They also must not be summed with each other until unpaid pension compensation already inside
+the federal simulation is reconciled to pension financing. Entry 2 gives both estimates and their windows.
+
 **California and Texas per-person gaps are the shared all-age ledger.** The −$12,133 /
 −$7,479 (CA/TX vs local third-plus NH whites) and metro figures (Los Angeles −$17,196,
 Houston −$7,493) are from the September 17 stress and metro-match tables (entry 15). They
@@ -115,6 +121,25 @@ GDP in FY1986, 2.9% in 2000, 4.7% in 2010 and 3.2% in 2024, moving with threats 
 output. It stays at zero, with that bound beside (ladder 253). Charging all three fixed functions
 per capita would move the *assigned balance* by $286bn on the September 20 account; that is a
 convention, not part of the net-cost headline.
+
+**What about obligations left by past years?** They are now stated beside the account (ladders 278–279),
+against third-plus non-Hispanic whites on matched keys and the same headcount path,
+ending at 39.71M people. The federal comparison uses **2005–2023**, the annual ACS headcount
+window; earlier starts rely more on interpolation. In 2024 the modeled excess annual financing
+charge is **$72.4–72.6bn** with past accrued Social Security and Part A promises capitalized as if
+borrowed. Carrying those accruals with payroll instead of benefits gives **$63.5–63.7bn**;
+counting benefits when paid gives **$11.3–11.5bn**. Earlier starts on the original accrual carry
+give **$87.7–87.8bn** (2000) and **$112.8bn** (1990). These are model outputs, not measured group debt.
+
+The public-employee pension excess is **$4.7–4.9bn** of attributed interest expense, including
+imputed interest, using a service-year kernel covering **1980–2023**. Its comparator weights have
+been corrected to the account's headcount. **There is no combined legacy total:** the federal
+simulation retains NIPA consumption containing accrued public-employee compensation, so distinct
+interest categories do not establish that the underlying financing costs are disjoint. Both rows
+stay outside the current headline. [CALCULATION: [federal comparison](../infra/immigration-fiscal/legacy_comparators_2026_09_30/RESULT.md),
+[pensions](../infra/immigration-fiscal/pension_legacy_2026_09_30/RESULT.md);
+SOURCE: [BEA pension accounting](https://www.bea.gov/index.php/news/blog/2013-06-17/bea-move-accrual-accounting-defined-benefit-pension-plans);
+[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]
 
 The sign turns on ordinary service budgets, and only at one end. With the enterprises and the
 capital return moving with their lines, the high end turns positive only if fewer than 1.5–3.3% of
@@ -760,3 +785,4 @@ they get more prominence.
 - 2026-09-29, later: the income split outside the budget is the main case's, $79.4bn lost by the bottom four fifths and $44.5bn gained by the top fifth (wages move with the production model re-solved on the account's weights). Concept affected: none; the figures follow the case.
 - 2026-09-29, later (v4 comparators, 6665297): entry 6's gap against as many average residents is the main case's, −$270–293bn counting benefits when paid, on cash flows only. Concept affected: none; the figure follows the case.
 - 2026-09-29, later (break conditions lane beead07; number drift audit): the first-year budget response (anchors, combining rules, entries 2, 4, 11 and 16) is the current account's, $277–318bn and $201–245bn counting benefits when paid. The $201–246bn quoted before was the September 26 run, not a scenario of the current account. Concept affected: the first-year scenario.
+- 2026-09-30 ([decision](../decisions/2026-09-30-legacy-comparisons-separate.md)): added the verified federal and corrected pension legacy comparisons to entry 2 and the combining rules. The federal window starts in 2005; earlier starts and the payroll-carry alternative stay beside it. Concept affected: historical financing attribution; the proposed combined sum is not adopted because pension financing overlap is unreconciled.

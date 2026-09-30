@@ -1,6 +1,6 @@
 claude-opus-5-5
 
-**Verdict:** On the same rules, the Mexican-origin union's debt legacy exceeds its comparators' on both bases. On the accrual basis, which the adopted $371–435bn uses, 2024 interest on the debt left by the 2005–2023 federal gaps is **$60.2 / 67.8bn** for the union on the comparators' keys ($61.3 / 70.5bn on the engine's). For 39.7M third-plus-generation non-Hispanic whites it is **−$12.5 / −4.7bn**: their past gaps paid debt down. For an average-resident slice of the same size it is **$15.4 / 22.8bn**. The union's excess is **$72.6 / 72.4bn a year over the white slice** ($1,829 / 1,823 per member) and **$44.8 / 44.9bn over the average slice** ($1,127 / 1,131). On the cash basis, which counts only what the Treasury borrowed, the excess is $11.5 / 11.3bn over whites and $8.9 / 9.0bn over the average slice. Starting the window in 2000 or 1990 widens every difference. [CALCULATION: `legacy.py` → `derived/legacy_main.csv`, `derived/legacy_differences.csv`]
+**Verdict (verified 2026-09-30):** The modeled federal legacy charge exceeds both comparators' on both benefit conventions. Capitalizing the 2005–2023 accrual gaps as if borrowed gives a **2024 financing-equivalent charge of $60.2 / $67.7bn** for the union on matched keys ($61.3 / $70.5bn on engine keys), **−$12.5 / −$4.7bn** for third-plus non-Hispanic whites and **$15.4 / $22.8bn** for an average-resident slice. The white negative is a modeled credit, not observed debt repayment. The matched union exceeds whites by **$72.6 / $72.4bn** ($1,829 / $1,823 per member); payroll carry instead gives **$63.7 / $63.5bn**. Its excess over the average slice is $44.8 / $44.9bn. The cash-benefit convention gives $11.5 / $11.3bn over whites and $8.9 / $9.0bn over average residents. These are conditional model outputs, not measured group borrowing. [CALCULATION: `legacy.py` → `derived/legacy_main.csv`, `derived/legacy_differences.csv`; [source verification](verification-2026-09-30.md)]
 
 Lane `infra/immigration-fiscal/legacy_comparators_2026_09_30/`, 2026-09-30. Low / high = the case's end specifications 48 / 11. The central specification is the debt lane's: rule `programme_income_pandemic_per_head`, central payer convention, OMB effective rates, all gaps borrowed. Per member divides by the 39,712,493 people the account prices (audit row 4). Every slice is scaled to that count. All figures are $bn unless marked $.
 
@@ -52,7 +52,7 @@ The stock differences, 2005 window, rough − A1: $356.9 / 349.8bn on cash and $
 
 ## The two bases
 
-- **Cash** compounds what the Treasury actually borrowed. Each year's federal gap charges the Social Security and Medicare benefits paid that year. The stock is explicit debt held by the public, and the interest is a real 2024 outlay. This is the debt lane's headline.
+- **Cash-benefit convention** compounds modeled federal gaps under the all-borrowed assumption. Social Security and Medicare follow benefits paid rather than promises earned. Other NIPA accruals remain, including public-employee pension compensation, so this is not a complete conversion to Treasury cash borrowing. National interest and debt inputs are measured; the group attribution is modeled. This is the original debt lane's headline convention.
 - **Accrual** charges Social Security and Part A at the promises each year's payroll taxes earn, valued at payable benefits, in place of the benefits paid. The adopted case does the same for 2024. The stock is therefore partly **implicit** debt: promises counted when earned, compounded at the Treasury's effective rate as if borrowed. It is the lane's benchmark `main_with_accrual`, now run for every group. **The accrual basis matches the adopted $371–435bn**, since that case charges the 2024 accrual. Cash matches the cash set, $295–362bn.
 
 The basis matters most for an old group. On cash, the white slice's 2024 federal gap is $55.2 / 71.3bn, above the union's $36.3 / 61.3bn (engine), because its retirees draw Social Security and Medicare now. On accrual it is −$18.3 / −2.2bn, against the union's $113.0 / 134.3bn. [CALCULATION: `derived/federal_gap_by_group.csv`, year 2024]
@@ -114,7 +114,7 @@ Non-Hispanic whites' median age exceeded the nation's by 4.2 years in 2008 (41.1
 - On **accrual**, Social Security follows taxes, not age, so the bias shrinks to Medicare B and D (62.5% of the line) and long-term care. Its direction is the same.
 - The school lines run the other way: a younger past means more pupils. K-12 is 5–10% federal by year, so this is small in a federal legacy.
 - The income rule already carries the slice's measured relative income, which was flat. That absorbs part of the receipt side.
-- **Net direction: the white legacy is overstated, and the difference is conservative.** The size is not computed; it would need the CPS by year.
+- **Net comparison bias is unquantified.** The white-age mechanism alone does not establish that the union-minus-white difference is conservative: both groups aged, median age does not identify programme use, and school and receipt channels can offset. Historical group-specific profiles are needed.
 
 The lane's own limit is unchanged for the union. It was younger in 2008 (median 25.7 against 29.8 in 2024), and the direction for it is unknown.
 
@@ -126,6 +126,7 @@ The lane's own limit is unchanged for the union. It was younger in 2008 (median 
 - **Pension accrual.** The accrual legacy compounds past years' accruals. The adopted case charges 2024's accrual ($76.7 / 73.0bn for the union). These are different years, but the accrual legacy is interest on promises, not on Treasury borrowing. **Pick one basis.** Cash and accrual legacies are alternatives and never add.
 - **Not debt held by the public.** On accrual, part of the stock is an implicit liability. The Treasury's effective rate is an assumption for it.
 - **Not a policy scenario.** It is an accounting attribution on a resident-stock account, with the per-capita positions of 2024 carried back. [FRAMING-SENSITIVE]
+- **Not established as additive to public-employee pension interest.** The simulation compounds NIPA consumption containing accrued public-employee compensation. Separate interest categories do not reconcile the underlying financing. State both rows separately under the [decision](../../../decisions/2026-09-30-legacy-comparisons-separate.md).
 
 ## Validation
 

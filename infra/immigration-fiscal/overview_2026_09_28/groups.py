@@ -383,7 +383,7 @@ GROUPS = [
                  why="Per person, late arrivals cost less than seniors who arrived young. Their lower Social "
                      "Security outweighs their lower taxes."),
         ],
-        minor=[],
+        minor=[278, 279],
     ),
     dict(
         id="generations", part="time",
