@@ -1,0 +1,30 @@
+{
+  "source_hashes": {
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/rekey_summary_sept29.csv": "e61524ac39114aaa8cf03216573a64c8dff8578bcdbc0629693cd8ccab78937c",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/engine_lines_sept29.json": "1cecabd25125c8787717afbec7283daa2f116997c7d2f33dfaeeba1fe79ac653",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/engine_lines_sept29_cash.json": "616a060be37d285e17a7330015b7254995178e146746350ed053edfe82813ed0",
+    "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/sept29/person_accrual.parquet": "30e3499e847aee10b2b3a6105bdb0ab3c3a038bf4ea814a98e232d1ea3760ad0",
+    "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/sept29/households_person_onbooks.parquet": "88100edc03b1fe2fcc08db8c386fca44e451138a79c30a8e55af03d87f6b1b5c",
+    "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9",
+    "sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be",
+    "infra/immigration-fiscal/ltss_share_2026_09_23/derived/taf_race_ethn.csv": "fecb8765780cb3989b6f9160e5e186236d37e2b2de807d6bd2502f83382afd95",
+    "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/fbi_2019_table43c_adult_arrests.csv": "fc89a8182663fa76bdfdc04e552fe2c726b56c1de3fcc3b0651089164a734ed4",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/accrual_ratios.csv": "5ef6ea35ffdd976ff4867e90470a6142ad37e2d752e4743b96f32277a5f88bb9",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/v4_state_relatives.csv": "523c16e331811a630bbd8ac68b9ec2399461d357022e001edb4e6ba197225813",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/derived/v4_nhts_vmt.csv": "9fa7f41d4480ca5e4c32106b298976e3bdb525fc113109edba852c6798a15793",
+    "infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe",
+    "infra/immigration-fiscal/cj_use_allocation_2026_09_23/derived/central_split.csv": "9814f7a17cd18f0189722c5a8cebf14937859e03f32feb98b2136fbb19430d36",
+    "infra/immigration-fiscal/net_contributor_comparison_2026_10_01/compare.py": "e21fbae098c2ed7548f51dfd92259bd7fb6cd718c76b6f7f428d315284622ebb",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/rekey_white.py": "c8ef4a4b3cdac2b80fe9cfaf44441fb26923dd181ce4e314e7d031217ab09193",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/rekey_sept29.py": "b498a316cf5c6257cc5042b928108ec95fdf162e428edd051f8d392fb6b0b3fb",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/state_white.py": "330d9a9a5f08ce5472d632e43b506fa8f9f241fc664e22b9dc81587f0bbc04fc",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/v4_inputs.py": "d171c8e7ae13a5419f0d5569e7f4e0abfd2ed22362cae91fcc93b80e956bd7f9"
+  },
+  "gates": "PASS",
+  "basis": "income-year 2024, September 29 accrual case, full allocation, actual ages",
+  "white": "US-born non-Hispanic white with US-born parents; rough comparator",
+  "mexican": "Mexican-origin union, all generations; person accrual plus on-books payroll",
+  "unit": "resident-weighted household balance per group member; positive means net contribution",
+  "interval": "two main-case specifications, not a confidence interval"
+}
