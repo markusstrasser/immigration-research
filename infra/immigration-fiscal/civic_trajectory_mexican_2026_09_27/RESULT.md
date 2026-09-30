@@ -99,6 +99,11 @@ Script `asec_intermarriage.py`; outputs `derived/intermarriage.csv`, `derived/ch
 checked against its register SHA-256; persons joined to the 160 replicate weights on
 (PH_SEQ, PPPOS), `pwwgt0` = `MARSUPWT/100` asserted.
 
+Related extension: [cross-group marital sorting conditional on peer composition](../marriage_sorting_2026_10_01/README.md)
+adds native white/black and G2 comparisons, matched partner characteristics and
+pool sensitivities. It has a stricter both-spouse age universe; retain the rates below
+on their original universe.
+
 **Universe and definitions.** Married, spouse present (`A_MARITL` 1–2), ages 25–54, spouse found
 through `A_SPOUSE` in the same household. 131,639 married persons; every one has a spouse record
 (100.00%, and every spouse pointer is reciprocal), so the ≥ 99% gate passes. 1,828 same-sex couples
