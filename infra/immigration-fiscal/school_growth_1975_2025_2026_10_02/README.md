@@ -157,3 +157,59 @@ It does not measure today's LA share, include all descendants, isolate LAUSD
 or LA city, or project LA to2035. Multiplying the national partial-lineage
 projection by this historical parent-status ratio would mix incompatible
 definitions and is deliberately not done. [INFERENCE]
+
+## National total versus partial removal (2026-10-02)
+
+Run `counterfactual.py` after `project.py` with the same Python prefix; add
+`--fetch` once if its three cached NCES HTML tables are missing. It never
+overwrites cached raw inputs. Outputs: `us_enrollment_counterfactual.{png,svg}`,
+`us_enrollment_counterfactual.csv`, `us_enrollment_sources.json` under `derived/`.
+BeautifulSoup parses the source HTML directly; inputs and the upstream model
+are hashed in the receipt. [CALCULATION]
+
+Total enrollment uses [NCES Digest 2003 table 3](https://nces.ed.gov/programs/digest/d03/tables/dt003.asp)
+for annual 1975–1989 and [Digest 2025 table 203.10](https://nces.ed.gov/programs/digest/d25/tables/dt25_203.10.asp)
+where available through 2024. The universe is public **pre-K–12 and ungraded**
+enrollment in the 50 states and DC. All source values are thousands, converted
+to pupils. The newer table supplies 1980 and 1985 as well as annual 1990–2024;
+it supersedes the older table for overlapping years. Observed enrollment rises
+from 44.819m in 1975 to 49.387m in 2024. Early pre-K reporting is incomplete;
+2024 includes state pre-K imputations. [SOURCE]
+
+The [Digest 2023 table 203.10](https://nces.ed.gov/programs/digest/d23/tables/dt23_203.10.asp)
+has an older projection ending in 2031. To avoid presenting its forecast error
+as an observed fall, add the 2024 actual-minus-forecast difference of 680,000
+to its 2025–2031 levels. After 2031, extend its final annual change of −50,000
+through 2035. This is **our total-enrollment scenario using NCES projected
+changes**, not an official 2035 forecast. It gives 48.908m in 2025 and 47.370m
+in 2035. Neither the permanent level correction nor the extended slope is
+estimated from a new demographic model. [ASSUMPTION]
+
+Subtract each existing partial ages 5–17 demand scenario from that total. The
+central remaining count is 44.596m in 2024 and 41.578m in 2035. The 2035 gap is
+5.792m, with chosen demand scenarios of 3.253–9.125m; the remaining-population
+band consequently spans 38.245–44.117m. It varies the removed population only,
+not the baseline forecast. All numbers are pupil counts, not net costs or
+causal effects. [CALCULATION]
+
+This is a **mechanical partial-removal comparison**, not a native-only or
+all-descendant counterfactual. Lawful immigration, other families' fertility,
+residential choices and school participation stay fixed. Preschool/older pupils,
+omitted lineages and pre-existing 1975 demand stay in the residual. The initial
+zero gap is imposed, not observed. U.S.-born citizenship does not remove a child
+from the maternal-lineage model; mixed parentage follows the mother. The
+remaining curve cannot be read as all natives or as all lawful residents.
+[FRAMING-SENSITIVE] [ASSUMPTION]
+
+The central residual in 2024 is close to the 1975 total, but this arithmetic does
+not establish that unauthorized immigration caused all net enrollment growth.
+The observed decline in recent total enrollment also contradicts a story of
+uninterrupted nationwide growth; local capacity shortages can differ. Comparing
+this gap to a count of schools or average spending does not identify schools
+built or budget savings. The original exclusions and uncertainty remain. [INFERENCE]
+
+Validation: source anchors, complete annual coverage, residual conservation and
+scenario ordering pass. The full lane rerun is identical for 26/26 files. Two
+blind readers each recovered the 2035 gap and correctly rejected complete-lineage,
+observed-2035 and lawful-immigration-removal interpretations (8/8 graded answers).
+The figure was visually inspected; the user requested the time-series view.

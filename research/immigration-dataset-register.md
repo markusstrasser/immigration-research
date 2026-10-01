@@ -1336,3 +1336,21 @@ enrollment by ages3–4,5–11,12–14,15–17. ACS2009–13 pooled with SIPP200
 **Quirks:** enrollment combines public/private schools; historical, not current.
 Parent-status children require a co-resident parent; not all descendants.
 **Used in:** `school_growth_1975_2025_2026_10_02/los_angeles.py`, matched LA County/US shares.
+
+### NCES_PUBLIC_ENROLLMENT_HISTORY_PROJECTION — National enrollment context
+
+**Source:** NCES Digest 2003 table 3; Digest 2023/2025 table 203.10.
+**Acquired:** 2026-10-02. **License:** public published aggregates.
+**Official:** [Historical table](https://nces.ed.gov/programs/digest/d03/tables/dt003.asp),
+[latest observed table](https://nces.ed.gov/programs/digest/d25/tables/dt25_203.10.asp),
+[projection table](https://nces.ed.gov/programs/digest/d23/tables/dt23_203.10.asp).
+**Local:** `school_growth_1975_2025_2026_10_02/_cache/nces_{d03,d23,d25}_20310.html`
+under `infra/immigration-fiscal/`; three HTML tables including source notes.
+**Variables:** fall year, public pre-K–12/ungraded enrollment, grade counts;
+source counts in thousands. Annual observed totals 1975–2024; old projections
+through 2031. `counterfactual.py` parses and hashes the raw inputs.
+**Quirks:** early pre-K underreporting and recent state imputations; old forecast
+levels differ from recent observations. Rebased/extended values through 2035
+are our scenario. No immigration status in these tables. The subtracted demand
+model is partial and covers ages 5–17, so its residual is not native-only.
+**Used in:** [national school comparison](../infra/immigration-fiscal/school_growth_1975_2025_2026_10_02/README.md#national-total-versus-partial-removal-2026-10-02).
