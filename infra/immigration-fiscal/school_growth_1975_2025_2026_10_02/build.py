@@ -44,7 +44,7 @@ def descendant_births(parent_births, fertility, peak, loss):
     ages = np.arange(18, 41)
     weights = np.exp(-.5 * ((ages - peak) / 4.) ** 2)
     weights /= weights.sum()
-    result = np.zeros(len(YEARS))
+    result = np.zeros(len(parent_births))
     for age, weight in zip(ages, weights):
         # Equal sex ratio; fertility applies per woman. Retention/survival
         # until motherhood is separate from her child's later retention.
@@ -53,7 +53,7 @@ def descendant_births(parent_births, fertility, peak, loss):
 
 
 def pupils(births, public, loss):
-    result = np.zeros(len(YEARS))
+    result = np.zeros(len(births))
     for age in range(5, 18):
         result[age:] += births[:-age] * public * (1-loss)**age
     return result

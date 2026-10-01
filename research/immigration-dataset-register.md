@@ -1324,3 +1324,15 @@ and births to lawful mothers with unauthorized fathers. No parental arrival-wind
 **Used in:** [School-demand reconstruction](../infra/immigration-fiscal/school_growth_1975_2025_2026_10_02/README.md).
 `extract_births.py` reproduces the table from cached HTML; `build.py` ages cohorts and
 models subsequent maternal descendants. No education or ethnicity proxy is used.
+
+### MPI_CHILDREN_UNAUTHORIZED_COUNTIES_2016 — Enrollment and parent status
+
+**Source:** Migration Policy Institute,2016. **Acquired:**2026-10-02.
+**Official:** [County workbook](https://www.migrationpolicy.org/sites/default/files/publications/Children-of-Unauthorized-CountyData.xlsx).
+**Local:** `infra/immigration-fiscal/school_growth_1975_2025_2026_10_02/_cache/Children-of-Unauthorized-CountyData.xlsx`.
+**Documentation:** workbook cover sheet; public published aggregate tables.
+**Variables:** county/national child counts, parent-status groups, citizenship,
+enrollment by ages3–4,5–11,12–14,15–17. ACS2009–13 pooled with SIPP2008 status imputation.
+**Quirks:** enrollment combines public/private schools; historical, not current.
+Parent-status children require a co-resident parent; not all descendants.
+**Used in:** `school_growth_1975_2025_2026_10_02/los_angeles.py`, matched LA County/US shares.

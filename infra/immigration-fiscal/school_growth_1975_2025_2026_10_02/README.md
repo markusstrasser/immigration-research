@@ -15,7 +15,7 @@ uv run --no-project --with matplotlib python3 infra/immigration-fiscal/school_gr
 
 Outputs: `derived/school_burden.png`, `.svg`, `annual_scenarios.csv`, `audit.json`.
 The build verifies age windows, cohort conservation, totals, source anchors,
-finite values, ordered scenarios and source hashes. Derived files are ignored.
+finite values and ordered scenarios, and records source hashes. Derived files are ignored.
 
 ## Sources and measured inputs
 
@@ -103,3 +103,57 @@ are intended to expose framing and modeling choices rather than hide them.
 user clarified the scope. It requested parent links and schooling for an
 education-based analysis. It is **unused** here; Census microdata do not directly
 identify unauthorized status. No raw microdata download is needed for this graph.
+
+## Extension to2035 (2026-10-02)
+
+Run `project.py` with the same `uv run --no-project --with matplotlib python3`
+prefix after `build.py`. Outputs are `derived/school_burden_2035.{png,svg}`,
+`projection_2035.csv` and `projection_assumptions.json`. The historical2025
+result is preserved and checked against the prior calculation. [CALCULATION]
+
+The central **continuation scenario** keeps births to unauthorized mothers at
+300,000/year after2023 and foreign-born unauthorized minors at1.5m through2035.
+These are assumptions, not forecasts of border policy or net migration. Low/high
+births move linearly from300,000 in2023 to150,000/450,000 in2030, then stay flat.
+Low/high foreign-born minor stocks move linearly from1.2m/1.8m in2025 to0.6m/2.4m
+in2035. All original fertility, retention and enrollment sensitivities remain.
+The stock paths implicitly require arrivals, departures, aging and status
+changes; the model does not separately identify those flows. [ASSUMPTION]
+
+The2035 direct-child school cohorts were born in2018–2030. The chart separates
+births through2023, which have source estimates, from assumed births2024–2030.
+Later descendants remain modeled, including descendants born after2023.
+No post2023 direct birth can produce a school-age grandchild by2035 under the
+model's minimum maternal age18 and school-entry age5. [CALCULATION]
+
+Central2035:5.792m pupils and$102.044bn gross annual operating cost at the same
+FY2024 unit price; chosen scenarios3.253–9.125m and$57.320–160.782bn. Central
+growth from2025 is22.1%. This is neither nominal2035 spending nor a confidence
+interval. The original partial-lineage exclusions continue to apply. [CALCULATION]
+
+## Los Angeles County comparison (2026-10-02)
+
+Run `los_angeles.py` with the same Python prefix. The primary source is MPI's
+[county workbook](https://www.migrationpolicy.org/sites/default/files/publications/Children-of-Unauthorized-CountyData.xlsx),
+downloaded2026-10-02 into `_cache/Children-of-Unauthorized-CountyData.xlsx`.
+The cover sheet is its documentation. The build reads the `Enrollment by age group`
+sheet, verifies age-group headers and selects county/national rows by exact names.
+It sums ages5–11,12–14,15–17. [DATA]
+
+For2009–2013 pooled estimates, LA has343,000 enrolled children with at least one
+unauthorized parent out of1,609,000 enrolled children in the study population:
+21.32%. The national comparison is3,397,000/49,775,000=6.82%, a ratio of3.12.
+These are **public and private enrollment combined**, ages5–17, within MPI's
+study population. The numerator requires a co-resident parent; the source
+does not explicitly resolve nonparent-household exclusions from the denominator.
+Legal status is imputed using SIPP/ACS, not observed in a
+school administrative register. “Local population” here means all enrolled
+children in the same county/sample universe, including the focal children;
+it is not a race or citizenship comparator. [CALCULATION]
+
+Outputs: `la_school_comparison.{png,svg}`, `la_enrollment_comparison.csv`,
+`la_source.json`. The chart answers the historical concentration question.
+It does not measure today's LA share, include all descendants, isolate LAUSD
+or LA city, or project LA to2035. Multiplying the national partial-lineage
+projection by this historical parent-status ratio would mix incompatible
+definitions and is deliberately not done. [INFERENCE]
