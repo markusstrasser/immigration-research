@@ -1,0 +1,34 @@
+{
+  "number": 18,
+  "spec": {
+    "description": "Historical public-school children and parental education; 1975+ immigration",
+    "dataFormat": "csv",
+    "dataStructure": {
+      "rectangular": {
+        "on": "P"
+      }
+    },
+    "samples": {
+      "us1980b": {},
+      "us1990b": {},
+      "us2000g": {},
+      "us2010a": {},
+      "us2024a": {}
+    },
+    "variables": {
+      "AGE": {},
+      "SEX": {},
+      "BPL": {},
+      "CITIZEN": {},
+      "YRIMMIG": {},
+      "EDUC": {},
+      "EDUCD": {},
+      "MOMLOC": {},
+      "POPLOC": {},
+      "SCHOOL": {},
+      "SCHLTYPE": {},
+      "GQ": {},
+      "STATEFIP": {}
+    }
+  }
+}

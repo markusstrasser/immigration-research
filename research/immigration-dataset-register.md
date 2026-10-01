@@ -1308,3 +1308,19 @@ These categories are high-risk for bad inference:
   directories that the register had not named were added; 13 more unnamed lanes hold only literature or
   derived caches. Concept affected: which datasets the project holds and
   where.
+
+### PEW_UNAUTHORIZED_MOTHER_BIRTHS_2026 — Annual births, 1990–2023
+
+**Source:** Pew Research Center, March 31, 2026. **Acquired:** 2026-10-02.
+**Official:** [Published birth table](https://www.pewresearch.org/chart/sr_26-04-31_birthrightscotus/).
+**Local:** `infra/immigration-fiscal/school_growth_1975_2025_2026_10_02/inputs/pew_births.csv`;
+raw HTML in that lane's ignored `_cache/pew_births.html`.
+**Size:** 34 annual rows, three columns. Public published aggregate table.
+**Variables:** Year; all births to unauthorized mothers; subset whose father is
+neither a citizen nor lawful permanent resident. Both count columns are in **thousands**.
+**Quirks:** Rounded to 5,000; survey/imputation estimates, not individual observed status.
+Births are not surviving resident children; excludes births after maternal legalization
+and births to lawful mothers with unauthorized fathers. No parental arrival-window filter.
+**Used in:** [School-demand reconstruction](../infra/immigration-fiscal/school_growth_1975_2025_2026_10_02/README.md).
+`extract_births.py` reproduces the table from cached HTML; `build.py` ages cohorts and
+models subsequent maternal descendants. No education or ethnicity proxy is used.
