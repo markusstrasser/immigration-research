@@ -43,3 +43,12 @@ per-member figure.
 each, with children counted in their parents' generation [DATA:
 `generation_account_2026_09_24/derived/generation_results_sept29.csv`, convention b, G3plus]. Then they add
 +$14.0 / +17.7bn. Their schooling makes this an upper bound, not an estimate.
+
+**Correction, 2026-10-05.** The identity-loss pricing above uses the Duncan–Trejo schooling convention for every
+added person. carryover_identity_2026_09_27 §2 measured that later losses (parent identifies, adult child does not)
+close none of the gap, and the pooled IPUMS-CPS test now puts the G3-rate closing share at c = 0.56 (SE 0.29). By
+that rule the central 1.81M add **+$11.7 / 15.0bn**, not +$4.7 / 7.0bn, and the excess over as many average
+residents rises by $7.0 / 8.1bn instead of staying put; the 3.03–5.33M bounds add +$21.1–49.4bn. The rows remain a
+lineage figure beside the account, never added to it.
+[CALCULATION: [g3_identity_pooled_2026_10_05](../infra/immigration-fiscal/g3_identity_pooled_2026_10_05/RESULT.md),
+`derived/attriter_pricing.csv`]

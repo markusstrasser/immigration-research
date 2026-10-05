@@ -430,7 +430,7 @@ GROUPS = [
                  text="With measured assimilation rates, a leading pro-migration model loses its Mexico result.",
                  why="Clemens and Pritchett assume faster convergence than the data show."),
         ],
-        minor=[103, 107, 109, 111, 112],
+        minor=[103, 107, 109, 111, 112, 280],
     ),
     dict(
         id="crime", part="other",

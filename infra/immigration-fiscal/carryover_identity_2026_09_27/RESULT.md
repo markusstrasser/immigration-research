@@ -585,3 +585,8 @@ Two full runs leave `derived/` byte-identical: the SHA-256 lists differ in nothi
 - 2026-09-28, phase 3 (§5): the projection back-test's lineage copy takes §E; its no-exit lineage at 3% and
   100 intervals goes from −$318,369.84 to −$316,023.02, and the second run is identical (21/21). The sponsorship
   probe runs the audited a72fd62 code (rc 0) and checks the current lane's −1,288,162.18. [CALCULATION]
+
+[2026-10-05: the pooled IPUMS-CPS ASEC 1994–2026 version of Design 1 (325 unique G3 non-identifiers at 25+,
+gate reproduces the 2022–25 cells) gives c = 0.56 (SE 0.29), so ρ\* = 0.863 (0.047) against the composite's
+0.841. The 2022–26 value was high partly by chance. The ~540 target was not reached on unique persons.
+[CALCULATION: [g3_identity_pooled_2026_10_05](../g3_identity_pooled_2026_10_05/RESULT.md)]]
