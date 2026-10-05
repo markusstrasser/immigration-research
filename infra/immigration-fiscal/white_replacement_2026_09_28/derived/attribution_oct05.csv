@@ -1,0 +1,61 @@
+step,description,basis,end,group,cost_bn,population,cost_per_member,change_bn,delta_like_for_like_bn,delta_change_bn
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,mexican_origin_rough,310.7556,40896574,7599,,0.0000,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,A1_third_plus_nh_white,153.6003,40896574,3756,,157.1554,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,A3_third_plus_nh_white_at_union_ages,-19.4375,40896574,-475,,330.1931,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,nh_black_rough,549.0033,41954494,13086,,-238.2477,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,low,all_residents_slice,224.1257,40896574,5480,,86.6299,
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,mexican_origin_rough,317.0066,39712493,7983,6.2510,0.0000,0.0000
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,A1_third_plus_nh_white,152.5477,39712493,3841,-1.0526,164.4589,7.3035
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,A3_third_plus_nh_white_at_union_ages,-8.3468,39712493,-210,11.0907,325.3533,-4.8398
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,nh_black_rough,552.1548,41954494,13161,3.1515,-235.1482,3.0994
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,low,all_residents_slice,221.4056,39712493,5575,-2.7201,95.6010,8.9711
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,low,mexican_origin_rough,290.7330,39712493,7321,-26.2736,0.0000,0.0000
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,low,A1_third_plus_nh_white,99.2834,39712493,2500,-53.2643,191.4496,26.9908
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,low,A3_third_plus_nh_white_at_union_ages,-54.2844,39712493,-1367,-45.9377,345.0174,19.6641
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,low,nh_black_rough,530.3737,41954494,12642,-21.7812,-239.6406,-4.4924
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,low,all_residents_slice,176.7437,39712493,4451,-44.6618,113.9893,18.3883
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,low,mexican_origin_rough,294.5633,39712493,7417,3.8303,0.0000,0.0000
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,low,A1_third_plus_nh_white,97.1966,39712493,2448,-2.0868,197.3667,5.9170
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,low,A3_third_plus_nh_white_at_union_ages,-57.5341,39712493,-1449,-3.2497,352.0974,7.0799
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,low,nh_black_rough,525.4328,41954494,12524,-4.9409,-230.8695,8.7712
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,low,all_residents_slice,175.9537,39712493,4431,-0.7900,118.6096,4.6203
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,low,mexican_origin_rough,375.1607,39712493,9447,80.5974,0.0000,0.0000
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,low,A1_third_plus_nh_white,23.6825,39712493,596,-73.5141,351.4782,154.1116
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,low,A3_third_plus_nh_white_at_union_ages,33.5559,39712493,845,91.0899,341.6049,-10.4925
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,low,nh_black_rough,541.7267,41954494,12912,16.2939,-166.5660,64.3035
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,low,all_residents_slice,165.9255,39712493,4178,-10.0283,209.2352,90.6257
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,low,mexican_origin_rough,394.3384,42752213,9224,19.1776,0.0000,0.0000
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,low,A1_third_plus_nh_white,25.4952,42752213,596,1.8127,368.8432,17.3649
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,low,A3_third_plus_nh_white_at_union_ages,40.4474,42752213,946,6.8916,353.8909,12.2861
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,low,nh_black_rough,541.7267,41954494,12912,0.0000,-147.3883,19.1776
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,low,all_residents_slice,178.6259,42752213,4178,12.7005,215.7124,6.4772
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,mexican_origin_rough,359.0405,40896574,8779,,0.0000,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,A1_third_plus_nh_white,204.4200,40896574,4998,,154.6205,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,A3_third_plus_nh_white_at_union_ages,32.7136,40896574,800,,326.3270,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,nh_black_rough,595.2311,41954494,14188,,-236.1905,
+a,"September 27 case, published weights (the union at 40,896,574; ladders 259 and 263)",cash,high,all_residents_slice,273.8458,40896574,6696,,85.1947,
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,mexican_origin_rough,364.7342,39712493,9184,5.6937,0.0000,0.0000
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,A1_third_plus_nh_white,202.6035,39712493,5102,-1.8165,162.1307,7.5102
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,A3_third_plus_nh_white_at_union_ages,42.7394,39712493,1076,10.0258,321.9948,-4.3321
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,nh_black_rough,599.1069,41954494,14280,3.8759,-234.3727,1.8178
+0,"September 27 case, audit row-4 weights (the union at 39,712,493; ladder 274)",cash,high,all_residents_slice,270.4107,39712493,6809,-3.4351,94.3235,9.1288
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,high,mexican_origin_rough,337.9446,39712493,8510,-26.7897,0.0000,0.0000
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,high,A1_third_plus_nh_white,149.0253,39712493,3753,-53.5782,188.9192,26.7885
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,high,A3_third_plus_nh_white_at_union_ages,-3.5226,39712493,-89,-46.2620,341.4672,19.4723
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,high,nh_black_rough,578.1971,41954494,13782,-20.9098,-240.2526,-5.8799
+1,"oct05 cash set on the identified union (39,712,493): sept29's lines and nationals at v5's responses, the two new receipt lines; no group state-priced or miles-keyed",cash,high,all_residents_slice,225.7311,39712493,5684,-44.6796,112.2135,17.8899
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,high,mexican_origin_rough,343.6509,39712493,8653,5.7063,0.0000,0.0000
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,high,A1_third_plus_nh_white,146.9946,39712493,3701,-2.0308,196.6563,7.7371
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,high,A3_third_plus_nh_white_at_union_ages,-7.4593,39712493,-188,-3.9367,351.1102,9.6431
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,high,nh_black_rough,573.3847,41954494,13667,-4.8125,-229.7338,10.5188
+2,+ state prices and road miles for every group (rule 4): that cash set,cash,high,all_residents_slice,224.7546,39712493,5660,-0.9765,118.8963,6.6828
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,high,mexican_origin_rough,424.2483,39712493,10683,80.5974,0.0000,0.0000
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,high,A1_third_plus_nh_white,73.4804,39712493,1850,-73.5141,350.7679,154.1116
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,high,A3_third_plus_nh_white_at_union_ages,83.6306,39712493,2106,91.0899,340.6177,-10.4925
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,high,nh_black_rough,589.6786,41954494,14055,16.2939,-165.4303,64.3035
+3,+ the pension accrual (rule 3): the oct05 case on the identified union,accrual,high,all_residents_slice,214.7264,39712493,5407,-10.0283,209.5219,90.6257
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,high,mexican_origin_rough,450.9660,42752213,10548,26.7176,0.0000,0.0000
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,high,A1_third_plus_nh_white,79.1049,42752213,1850,5.6244,371.8611,21.0932
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,high,A3_third_plus_nh_white_at_union_ages,94.1524,42752213,2202,10.5218,356.8136,16.1959
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,high,nh_black_rough,589.6786,41954494,14055,0.0000,-138.7126,26.7176
+4,"+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, every scaled slice on 42,752,213 and at the lineage's ages",accrual,high,all_residents_slice,231.1622,42752213,5407,16.4358,219.8037,10.2818

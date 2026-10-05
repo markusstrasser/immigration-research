@@ -530,3 +530,92 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/rekey_sept29.py
 - 2026-09-29 21:27 JST: added `attribution_buckets_sept29.csv`, with a gate that every step's buckets add to its cost (1e-9).
 - 2026-09-29 21:35–21:41 JST: second full cycle, the one reported under Gates above.
 - 2026-09-29 21:47 JST: this section written; status line set.
+
+## v5 case (oct05), 2026-10-05
+
+[2026-10-05: on main case v5 (`oct05`, `../main_case_2026_10_05/`), with both sides on the lineage's 42,752,213, the
+union costs other residents **$368.8 / 371.9bn** a year more than the same number of third-plus non-Hispanic whites on
+the case's accrual basis (A1), **$8,627 / 8,698 per member**. On the September 29 case (`sept29`, both sides on
+39,712,493) it was $351.2 / 350.5bn, $8,844 / 8,826 per member. The total rises with the 3.04M added people and the
+gap per member falls, because the added people cost $6,309 / 8,790 each (the case lane's +$19.18 / 26.72bn) against
+the identified union's $9,447 / 10,683 on the rough keys. [CALCULATION: `rekey_sept29.py --case oct05` →
+`derived/headline_oct05.csv`]]
+
+claude-opus-5-5 (v5consC)
+
+**The rule (the case lane's Consumers row: both sides on 42.75M).** The CPS keys cannot see the 3,039,720 descendants
+v5 adds, who no longer report Mexican origin. So:
+- **The union's side** is the rough union on the identified 39,712,493 at v5's responses, plus the added people at
+  the case lane's own amounts. `engine_lines.cjs` writes four oct05 dumps. `oct05` and `oct05_cash` are the case and
+  its cash set. `oct05_union` and `oct05_union_cash` are the identified union at v5's responses: the base's v4 models
+  plus audit row 8's change only, at v5's specifications. Their difference, line by line, is the added people's
+  amount, capital return and production term. The library adds it to the union's side (the engine and the rough
+  union) after the pension rule, which the added people do not follow: their accrual is the lane's.
+- **Every scaled slice** (A1, A2, A3, A4, the all-residents slice) is on 42,752,213. The NH Black group keeps its own
+  count.
+- [ASSUMPTION] **A3's union ages are the lineage's**: the union's age structure, with the added people at the
+  identified G3+ members' ages, as the lineage lane prices them (the G3+ records' weights scaled by 3,039,720 /
+  14,342,574.76 on this frame).
+- [ASSUMPTION] **The state arm** gives each union piece the added people's cost in proportion to its share of the
+  identified G3+ persons, and its white pieces the piece's lineage count at the piece's lineage ages. California's
+  union becomes 13.95M (13.08M on sept29).
+- The same comparison **on the identified 39,712,493 at v5's responses** (the overlay off, every slice on 39.71M) is
+  computed beside, in `headline_oct05.csv` (`identified_bn`) and as attribution steps 1–3.
+
+**Headline** ($bn a year, spec 48 / 11; per member on 42,752,213, California's on its 13,949,823):
+
+| Union less whites | oct05 | Per member | Identified 39.71M at v5's responses | sept29 |
+|---|---|---|---|---|
+| **A1, accrual (central)** | **368.8 / 371.9** | **$8,627 / 8,698** | 351.5 / 350.8 ($8,851 / 8,833) | 351.2 / 350.5 ($8,844 / 8,826) |
+| A3 (white rates at the lineage's ages), accrual | 353.9 / 356.8 | $8,278 / 8,346 | 341.6 / 340.6 | 341.4 / 340.5 |
+| A3, cash set | 363.0 / 367.3 | $8,491 / 8,592 | 352.1 / 351.1 | 351.9 / 350.9 |
+| **A1, cash set (raw cash at white ages)** | **202.9 / 207.3** | **$4,746 / 4,849** | 197.4 / 196.7 | 197.1 / 196.4 |
+| **Local whites state by state, union ages, accrual** | **427.7 / 429.1** | **$10,003 / 10,036** | 410.7 / 408.3 | 410.4 / 408.0 |
+| Local whites, cash set | 454.4 / 457.2 | $10,628 / 10,694 | 438.0 / 435.6 | 437.7 / 435.2 |
+| **California, union ages, accrual** | **197.2 / 196.8** | **$14,133 / 14,110** | 189.7 / 188.4 ($14,502 / 14,397) | 189.5 / 188.2 ($14,488 / 14,383) |
+| California, cash set | 212.6 / 212.7 | $15,243 / 15,248 | 204.9 / 203.5 | 204.7 / 203.4 |
+
+[CALCULATION: `derived/headline_oct05.csv`, `rekey_summary_oct05.csv`, `state_summary_oct05.csv`]
+
+- Step 4 of the attribution moves A1 by +$17.36 / +21.09bn. The union's side gains the added people, +$19.18 /
+  26.72bn. The white slice grows by 42,752,213 / 39,712,493 = 1.076543, +$1.81 / 5.62bn. v5's responses alone (step
+  3 against sept29) move A1 by +$0.24 / +0.25bn. [CALCULATION: `derived/attribution_oct05.csv`]
+- A3 is now $15.0 / 15.0bn below A1 (sept29 $9.8 / 10.1bn). The lineage's ages are younger than the identified
+  union's, and white rates at younger ages charge more schooling. [CALCULATION]
+- Against the engine's union, A1 is $364.8 / 382.1bn. With the two convention arms it is $480.9 / 484.9bn on accrual.
+  Against 42.75M average residents the union costs $215.7 / 219.8bn more. [CALCULATION: `rekey_summary_oct05.csv`]
+- On the rough keys the identified union is $375.2 / 424.2bn against the engine's $371.1 / 434.5bn at v5's responses.
+  The union's side on 42.75M is $394.3 / 451.0bn against the case's $390.3 / 461.2bn.
+
+**Gates (`rekey_sept29.py --case oct05`: 177 gates, exit 0).**
+- The case dumps are `main_case_bands.csv`'s `adopted` and `cash_set` rows (5e-5). The lane's cost formula reproduces
+  the case dumps (1e-9) with the added people's amounts on the union dumps, and each union dump on its own amounts.
+- Each union dump is the September 29 case plus the union's response move, and each case dump less its union dump is
+  the lane's G3+ and white parts, at both ends (`summary.json` `change_at_fixed_specifications`, 1e-9). The
+  payload's pension, state-price and road meta are the September 29 payload's.
+- The frame's identified G3+ is the lineage's `identified_g3plus`: 14,342,574.76 against 14,342,574.61 (1 person).
+  The union plus the added people at G3+ weights is the lineage population within 2 persons, the frame's union gate:
+  42,752,214.13 against 42,752,212.92.
+- Step 4 moves the union by exactly the added people's cost and the NH Black group not at all. It moves every slice
+  at fixed ages by 1.076543 (1e-9 relative; the re-key is linear in a slice's weights).
+- `rekey_sept29.py` (sept29) rewrites its files byte for byte (151 gates).
+- `rerun_lane.py --online` with all eighteen commands (the eight September 27 ones, the five sept29 ones with the
+  Black lane's `accrual_black.py`, and the five oct05 ones below): **IDENTICAL 56/56, exit 0** (2026-10-06
+  00:32:24–00:33:45 JST). `--online` lets uv fetch statsmodels for `spillovers_white.py`; the offline pass stopped
+  there because statsmodels was not in uv's cache.
+- In `attribution_oct05.csv`, steps 1–3 are labelled as the identified union at v5's responses (`STEPS_IDENTIFIED`),
+  since on oct05 step 1 also carries v5's response move.
+
+**Reproduce (oct05), after the sept29 list.**
+
+```sh
+L=infra/immigration-fiscal/white_replacement_2026_09_28
+for c in oct05 oct05_cash oct05_union oct05_union_cash; do node $L/engine_lines.cjs $c; done
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/rekey_sept29.py --case oct05
+```
+
+New in `derived/`: the four `engine_lines_oct05*.json` dumps and `rekey_summary_oct05.csv`, `rekey_buckets_oct05.csv`,
+`state_summary_oct05.csv`, `state_buckets_oct05.csv`, `headline_oct05.csv`, `v4_group_terms_oct05.csv`,
+`rule_alternatives_oct05.csv`, `attribution_oct05.csv` and `attribution_buckets_oct05.csv`. `rekey_sept29.py` gained
+`use_case()` (sept29 at import), the overlay in `run29()`, `on_lineage()`, `identified()`, `lineage_setup()`,
+`lineage_gates()`, `headline_lineage()` and `--case`; importers call `use_case()` before `setup()`.
