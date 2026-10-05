@@ -215,14 +215,14 @@ Primary dedupe, `cores_one`, BA+ at 25+. [CALCULATION: `derived/monthly_counts.c
 | c3 candidate: monthly + NLSY97 | 0.557 (0.246) | 0.864 (0.044) |
 | ASEC 1994–2026 (second frame; this script's draws) | 0.563 (0.298) | 0.863 (0.048) |
 
-**c3 candidate** (`derived/c3_candidate.csv`; columns measure, source, c, se, n):
+**c3 candidate** (`derived/c3_candidate.csv`; columns measure, key, source, c, se, n; one row per measure and key):
 - **Rule.** It applies the inverse-variance rule of carryover_identity's `corrected_step.pooled_g3`, with T13 and T2
   imported from that lane. The bootstrap SE stands in for the SDR SE, and n counts non-identifiers.
 - **Raw rows** carry the SE that enters the weights, the SD of the bootstrap draws (monthly B = 500, ASEC B = 400).
 - **Who reads it.** The propagation reads `cps_monthly_1994_2026_raw` and pools it in `pooled_g3()` itself. The
   pooled rows are its check. Recomputed from the CSV, they match to 0.
 
-| source | BA+ c (SE), n | years c (SE), n |
+| key | BA+ c (SE), n | years c (SE), n |
 |---|---|---|
 | `cps_monthly_1994_2026_raw` | 0.572 (0.256), 526 | 0.686 (0.231), 526 |
 | `nlsy97_table13` (G3 cross-section, not Hispanic) | 0.372 (0.884), 11 | 0.719 (1.361), 11 |

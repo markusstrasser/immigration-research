@@ -456,12 +456,16 @@ def main():
 
     # c3 candidate: the CPS c pooled with NLSY97 Table 13 by corrected_step.pooled_g3's inverse-variance rule, the
     # bootstrap SE in place of the SDR SE. The propagation reads the raw monthly row and pools it itself; the pooled
-    # rows are its check. Raw rows carry the SE that enters the weights; n counts G3 non-identifiers.
-    #   cps_monthly_1994_2026_raw     the monthly frame's c (this script, B = 500)
-    #   nlsy97_table13                the NLSY97 G3 cross-section, not Hispanic (IZA DP12704 Tables 2 and 13)
-    #   cps_monthly_1994_2026_pooled  monthly raw + NLSY97
-    #   cps_asec_1994_2026_raw        the ASEC frame's published c (analyze.py, B = 400)
-    #   cps_asec_1994_2026_pooled     ASEC raw + NLSY97
+    # rows are its check. Raw rows carry the SE that enters the weights; n counts G3 non-identifiers. One row per
+    # (measure, key); `key` is the machine label, `source` the description.
+    sources = {"cps_monthly_1994_2026_raw": "CPS basic monthly MIS 1/5 1994-2026 (this script, B = 500), co-resident "
+                                            "G3 adults 25+, not Mexican",
+               "nlsy97_table13": "NLSY97 G3 cross-section, not Hispanic (IZA DP12704 Tables 2 and 13)",
+               "cps_monthly_1994_2026_pooled": "inverse-variance pool of the monthly c and NLSY97 "
+                                               "(corrected_step.pooled_g3 rule)",
+               "cps_asec_1994_2026_raw": "CPS ASEC 1994-2026 (analyze.py, B = 400), co-resident G3 adults 25+, "
+                                         "not Mexican",
+               "cps_asec_1994_2026_pooled": "inverse-variance pool of the ASEC c and NLSY97 (corrected_step.pooled_g3 rule)"}
     asec_con = pd.read_csv(DERIVED / "contrasts.csv").query(
         "label == 'pooled_1994_2026_dedup' and links == 'all' and frame == 'cores_one' "
         "and contrast == 'G3anc: closing share, not Mexican'").set_index("measure")
@@ -479,13 +483,16 @@ def main():
                "cps_asec_1994_2026": (float(asec_con.value[m]), float(asec_con.se[m]), int(asec_n[m]))}
         for frame_name, (cv, cse, n) in raw.items():
             wts = np.array([1 / cse ** 2, 1 / nl_se ** 2])
-            c3.append(dict(measure=m, source=f"{frame_name}_raw", c=cv, se=cse, n=n))
+            c3.append(dict(measure=m, key=f"{frame_name}_raw", c=cv, se=cse, n=n))
             if frame_name == "cps_monthly_1994_2026":
-                c3.append(dict(measure=m, source="nlsy97_table13", c=nl, se=nl_se, n=11))
-            c3.append(dict(measure=m, source=f"{frame_name}_pooled", c=float((wts * [cv, nl]).sum() / wts.sum()),
+                c3.append(dict(measure=m, key="nlsy97_table13", c=nl, se=nl_se, n=11))
+            c3.append(dict(measure=m, key=f"{frame_name}_pooled", c=float((wts * [cv, nl]).sum() / wts.sum()),
                            se=float(1 / math.sqrt(wts.sum())), n=n + 11))
+    c3 = [dict(measure=r["measure"], key=r["key"], source=sources[r["key"]], c=r["c"], se=r["se"], n=r["n"]) for r in c3]
+    if len({(r["measure"], r["key"]) for r in c3}) != len(c3):
+        raise ValueError("c3_candidate: duplicate (measure, key)")
     write(c3, DERIVED / "c3_candidate.csv")
-    c3_main = next(r for r in c3 if r["measure"] == "ba_plus" and r["source"] == "cps_monthly_1994_2026_pooled")
+    c3_main = next(r for r in c3 if r["measure"] == "ba_plus" and r["key"] == "cps_monthly_1994_2026_pooled")
 
     # Corrected step, rho* = rho (1 - a c), BA+ (carryover_identity RESULT §1).
     step = []

@@ -1,11 +1,11 @@
-measure,source,c,se,n
-ba_plus,cps_monthly_1994_2026_raw,0.572145750372478,0.2557701172729513,526
-ba_plus,nlsy97_table13,0.371756185878093,0.8839217392458713,11
-ba_plus,cps_monthly_1994_2026_pooled,0.5566637638520002,0.24569120305377237,537
-ba_plus,cps_asec_1994_2026_raw,0.5634638251762688,0.2904836006991555,325
-ba_plus,cps_asec_1994_2026_pooled,0.5447778373613427,0.2759638124538633,336
-educ_years,cps_monthly_1994_2026_raw,0.6857372877295151,0.23141242602412918,526
-educ_years,nlsy97_table13,0.7191011235955058,1.36140647770075,11
-educ_years,cps_monthly_1994_2026_pooled,0.6866742095332873,0.22814003172543681,537
-educ_years,cps_asec_1994_2026_raw,0.5577640525166725,0.2902997159471605,325
-educ_years,cps_asec_1994_2026_pooled,0.5647808753255267,0.2839167292881003,336
+measure,key,source,c,se,n
+ba_plus,cps_monthly_1994_2026_raw,"CPS basic monthly MIS 1/5 1994-2026 (this script, B = 500), co-resident G3 adults 25+, not Mexican",0.572145750372478,0.2557701172729513,526
+ba_plus,nlsy97_table13,"NLSY97 G3 cross-section, not Hispanic (IZA DP12704 Tables 2 and 13)",0.371756185878093,0.8839217392458713,11
+ba_plus,cps_monthly_1994_2026_pooled,inverse-variance pool of the monthly c and NLSY97 (corrected_step.pooled_g3 rule),0.5566637638520002,0.24569120305377237,537
+ba_plus,cps_asec_1994_2026_raw,"CPS ASEC 1994-2026 (analyze.py, B = 400), co-resident G3 adults 25+, not Mexican",0.5634638251762688,0.2904836006991555,325
+ba_plus,cps_asec_1994_2026_pooled,inverse-variance pool of the ASEC c and NLSY97 (corrected_step.pooled_g3 rule),0.5447778373613427,0.2759638124538633,336
+educ_years,cps_monthly_1994_2026_raw,"CPS basic monthly MIS 1/5 1994-2026 (this script, B = 500), co-resident G3 adults 25+, not Mexican",0.6857372877295151,0.23141242602412918,526
+educ_years,nlsy97_table13,"NLSY97 G3 cross-section, not Hispanic (IZA DP12704 Tables 2 and 13)",0.7191011235955058,1.36140647770075,11
+educ_years,cps_monthly_1994_2026_pooled,inverse-variance pool of the monthly c and NLSY97 (corrected_step.pooled_g3 rule),0.6866742095332873,0.22814003172543681,537
+educ_years,cps_asec_1994_2026_raw,"CPS ASEC 1994-2026 (analyze.py, B = 400), co-resident G3 adults 25+, not Mexican",0.5577640525166725,0.2902997159471605,325
+educ_years,cps_asec_1994_2026_pooled,inverse-variance pool of the ASEC c and NLSY97 (corrected_step.pooled_g3 rule),0.5647808753255267,0.2839167292881003,336
