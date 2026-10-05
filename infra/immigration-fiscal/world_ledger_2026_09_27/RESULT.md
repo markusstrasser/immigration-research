@@ -51,6 +51,24 @@ points the same way (section D).
   weights still give the group's dollars 1.02–1.05 against the payers' 0.98, and the saving leak is $8.1–88.0bn.
   Section "Phase 2 results" under "v4 case (sept29)". [CALCULATION: world_ledger.py --case sept29 →
   derived/world_ledger_sept29.csv]]
+- [2026-10-05: on main case v5 (`oct05`, the account of $390–461bn adopted that day). The group's person-based rows
+  count the case's 42.75M, with the 3.04M descendants who no longer report Mexican origin in G3+ at the identified
+  G3+'s records [ASSUMPTION]. The world total at equal weights is **+$318.9bn** a year, central (sept29:
+  +$327.6bn). v5's budget rows and channels move it −$12.03bn, and the added people's person rows +$3.37bn.
+  - The US plus the group comes out behind when w is below 0.68 (0.78 at λ 1.16, 0.98 at λ 1.5), against 0.66,
+    0.76 and 0.96 on sept29.
+  - Counting Mexico's residents, the threshold is 0.52–0.81 (sept29: 0.49–0.78). Under log b it is 0.01, because
+    the parties other than the group now lose on net.
+  - **In the low outer span at λ 1.5 the world total is −$70.5bn** (sept29: −$39.9bn).
+  - The part of the account that buys the group nothing it values (justice above its value, Medicaid's shortfall)
+    rises to $61.2–61.7bn (sept29: $57.5–58.0bn).
+  - Schooling is not in that part. Its return sits in the place premium, and G3+'s premium is at its lower bound in
+    the central. So the added people's schooling adds $19.10bn to the gap between the cost to others and the
+    group's value [FRAMING-SENSITIVE].
+  - The two verdicts stand. Hendren's weights give the group's dollars 1.02–1.05 against the payers' 0.98, and the
+    saving leak is $8.5–92.9bn.
+
+  Section "v5 case (oct05)". [CALCULATION: world_ledger.py --case oct05 → derived/world_ledger_oct05.csv]]
 
 Model: claude-opus-5-5. Lane: `infra/immigration-fiscal/world_ledger_2026_09_27/`. Brief: `BRIEF.md` (5296013,
 corrected 2104b9e). Nothing here is committed.
@@ -1551,3 +1569,330 @@ Log (times from `date`):
 - 2026-09-29 23:32 JST: the phase 2 sections written from the derived files (scratch scripts in the parent's
   scratchpad, `v4-world-lane/`); no code or output changed after the reruns.
 - 2026-09-30 01:12 JST (the lead, from the number drift audit 05e0f12e): the $57.6–58.0bn in "Phase 2 results" is $57.5–58.0bn. `valuation_by_class_sept29.csv` sums to 57.549 / 58.017; the 57.6 came from rounding twice (57.549 → 57.55 → 57.6). No output changes.
+
+## v5 case (oct05), 2026-10-05
+
+claude-opus-5-5
+
+**Status (phase 2 done, 2026-10-06 01:09 JST).** oct05 ran on four pins: distribution fecaae7, generation e5ca5ef,
+winners c1c259e and main case 4bf0206. The group's person-based rows count the case's 42,752,213 people. Beside it,
+a second run counts those rows on row 4's 39,712,493. Every gate passes. Two full reruns after the oct05 run are
+IDENTICAL, 104/104 files, and so is `run_all.sh` with the four cases. The world total at equal weights is
+**+$318.9bn**, central (sept29: +$327.6bn). Section "Results (oct05)" gives the figures.
+
+v5 is v4 plus 3,039,720 people: descendants of Mexican immigrants who no longer report Mexican origin, counted whole
+(`main_case_lineage_2026_10_05`, arm b). The case's consumer table asks three things of this lane:
+- the person rows count 42.75M;
+- the G3+ line carries the lineage through `withLineage`;
+- the new generation split is pinned.
+
+### Files changed
+
+- `pins.json`, the `oct05` entry:
+  - pins: generation e5ca5ef (the generation account's split; its derived files are unchanged at 86af8f7),
+    distribution fecaae7, winners c1c259e and main case 4bf0206, each as the lead committed it;
+  - the winners case `adopted_2026_10_05`, the three lanes' folders and file names, and `"basis": "lineage"`.
+- `population_basis.py`, a third basis, `lineage` (rule 1):
+  - row 4's weights, then every identified G3+ record's weight times 1 + 3,039,719.6 / 14,342,574.6 = 1.211937;
+  - the counts come from main_case_2026_10_05's payload (`meta.lineage.counts`) at 4bf0206;
+  - gates: the frame's G3+ equals the case's identified G3+, and its row-4 union equals the case's account union, to
+    1e-3 persons. After the factor, the union is the lineage, 42,752,212.92.
+- `g2_premium.py` and `weights.py`:
+  - `--basis lineage` writes `g2_premium_lineage.csv`, `group_ages_lineage.csv`, `g2_meta_lineage.json` and
+    `income_positions_lineage.csv`;
+  - a gate requires the factor to scale exactly each script's own G3+ records and no others.
+- `valuation.py`: Mexico's budget on the lineage too (`mexico_budget_lineage.csv`).
+- `generation_lines.cjs`: `oct05` joins the case table and is evaluated with `evaluateFull()`, as sept29 is. Its pin
+  gate covers the 14 modules the v5 package loads, at 4bf0206.
+- `world_ledger.py`:
+  - `CASE_LANES` gains oct05, so rule 7's gate reads main_case_2026_10_05's summary at 4bf0206;
+  - on the lineage, G1 and G3+ in the person rows must equal the generation lane's results to one person. G3+ is
+    17,382,294.20: the identified 14,342,574.61 plus the added people.
+- `run_all.sh`: the two lineage steps, and oct05's beside run on row 4.
+
+`split_residual.py` needs no change.
+
+### Where the oct05 outputs go
+
+Only new files are written, and no existing file changes:
+- `generation_lines_oct05.csv`, `generation_lines_uncorrected_oct05.csv` and `generation_split_residual_oct05.csv`;
+- `valuation_oct05.csv`, `valuation_by_class_oct05.csv`, `valuation_by_generation_oct05.csv` and
+  `valuation_meta_oct05.json`;
+- `world_ledger_oct05.csv`, `world_ledger_rows_oct05.csv`, `generation_split_check_oct05.csv` and
+  `world_ledger_meta_oct05.json`, and the same four with `_oct05_row4` for the beside run;
+- the lineage basis files: `g2_premium_lineage.csv`, `group_ages_lineage.csv`, `g2_meta_lineage.json`,
+  `income_positions_lineage.csv` and `mexico_budget_lineage.csv`.
+
+### Rules
+
+1. **The person rows count 42.75M, with the identified G3+ records standing in for the added people
+   [ASSUMPTION].** The CPS holds the added people as other residents and cannot find them, as the distribution lane
+   notes. So every identified G3+ record is scaled by 1.211937, the placement the generation account's per-member
+   figures and the winners lane's group frame (`group_weights` "lineage") use. What the factor moves, central, $bn a
+   year:
+   - Mexico's budget on G3+, priced by age, rises with the factor: Mexico's residents would save $64.79bn, not
+     $53.46bn, and G3+ would forgo $45.49bn, not $37.54bn;
+   - the Mexican taxes G3+ avoids, and Mexico's residents lose, are $79.22bn, not $65.37bn. This transfer cancels at
+     equal weights;
+   - care received and in-group victims are split by the generations' population shares, and G3+'s share becomes
+     0.4066, not 0.3612. Their totals do not move;
+   - G3+'s premium at its upper bound is $306.21bn, not $252.66bn. It enters only the high outer span and the
+     `central_g3_upper` scenario;
+   - G3+'s income position does not move, since the factor is uniform: Hendren's g is 1.016 and the log weight 2.72.
+
+   **Alternative, not computed [GAP].** The case prices 1,082,721 of the added people as third-plus non-Hispanic
+   whites at G3+ ages. Mexico's budget rows depend only on age, so they would come out the same, and so would the
+   world total at equal weights, central. Whites' higher pay would raise G3+'s upper bound and the Mexican taxes on
+   that part, and their positions would lower G3+'s Hendren weight. [INFERENCE]
+2. **The G3+ line carries the lineage: the generation lane's split at e5ca5ef, valued with the union's classes.**
+   - G3+'s payload holds the lineage's cell edits and production, as `withLineage()` adds them; that lane gates this
+     against the package.
+   - Every generation takes its share of audit row 8's change, by the September 29 union's `lane_constants` k cell.
+   - The v5 payload's lines are v4's, so no line needs a new class.
+   - The state-price lines are valued at −$0.3275bn at each end (sept29: −$0.3231bn). The whole gap at the parent's
+     class would be +$5.7371bn.
+3. **The added people's schooling is valued at zero, as every generation's is [FRAMING-SENSITIVE; the lane's
+   existing rule].** Schooling's return sits inside the place premium, and in the central G3+'s premium is at its
+   lower bound, zero. So in the central, the added people's schooling buys nothing the ledger counts; the high outer
+   span takes G3+'s upper bound. From sept29 to oct05, mean of the two ends, G − V (the cost to others less the
+   group's value) widens by $12.25bn:
+   - schooling adds $19.10bn of G at V = 0;
+   - public goods narrow the gap by $10.40bn. Valued at average cost, the added amount is worth $16.45bn to the
+     group, while its response costs others $6.04bn;
+   - justice adds $3.04bn, Medicaid $0.67bn and public health $0.05bn;
+   - the audit constants subtract $0.20bn;
+   - the transfers valued at cost (cash, Medicare, SNAP, housing, services and taxes) move nothing.
+4. **Rules 6 and 7 carry over unchanged.** The oct05 accrual, the case less its cash set, is −$82.92bn at the low end
+   and −$77.83bn at the high end, −$80.38bn central (sept29: −$76.71 / −73.02bn). It sits with the future payers of
+   Social Security and Medicare.
+   - Gate: it equals main_case_2026_10_05's summary at 4bf0206, max |diff| 4.3e-7. The case less the accrual is
+     307.376376 / 383.409252, the cash set.
+   - Under the alternative payer, today's taxpayers, other residents today carry −$458.6bn rather than −$378.2bn.
+     At equal weights, the three λ columns, Hendren a and log a, every total is the same. Hendren b gives +$349.1bn
+     against +$347.5bn, and log b +$1,830.2bn against +$1,940.8bn.
+5. **The beside run on row 4** (`world_ledger.py --case oct05 --basis row4`) counts the person rows on 39.71M, while
+   the budget rows still carry the added people. It splits v5's move into its budget rows and channels and the added
+   people's person rows. G1's gate holds there. G3+ prints 14,342,574.61 against the generation lane's
+   17,382,294.20, ungated.
+6. **The added people also stay among the payers.** This is the distribution lane's [ASSUMPTION]: the 295.83M other
+   residents include them. It reaches the Hendren and log columns through that lane's percentiles, and moves nothing
+   at equal weights.
+
+### Results (oct05), 2026-10-06
+
+Main case v5 on its pins, with the group's person rows on the case's 42,752,213 people (G1 11,036,701; G3+
+17,382,294). Central scenario: G3+'s premium at its lower bound (zero), public goods at average cost, and Mexican
+taxes at the central (withheld plus consumption taxes). $bn a year. [CALCULATION: world_ledger.py --case oct05;
+FRAMING-SENSITIVE: every weighted total]
+
+| Party | equal | λ 1.16 | λ 1.5 | λ_h | Hendren a | Hendren b | log a | log b |
+|---|---|---|---|---|---|---|---|---|
+| Other residents today | −378.2 | −430.0 | −539.9 | −470.8 | −399.2 | −392.7 | −525.6 | −970.8 |
+| Future taxpayers (borrowed part and accrual) | −93.0 | −107.9 | −139.5 | −119.6 | −93.0 | −93.0 | −71.5 | −71.5 |
+| G1 | +242.9 | +242.9 | +242.9 | +242.9 | +255.5 | +255.5 | +634.1 | +634.1 |
+| G2 | +321.9 | +321.9 | +321.9 | +321.9 | +335.5 | +335.5 | +1,067.3 | +1,067.3 |
+| G3+ (lower bound) | +126.3 | +126.4 | +126.3 | +126.4 | +128.4 | +128.4 | +265.6 | +265.6 |
+| Mexico's residents | +99.0 | +104.8 | +117.1 | +109.3 | +113.8 | +113.8 | +1,016.1 | +1,016.1 |
+| World total | +318.9 | +258.1 | +128.8 | +210.1 | +341.0 | +347.5 | +2,386.0 | +1,940.8 |
+| Break-even w, world | 0.54 | 0.63 | 0.81 | 0.70 | 0.53 | 0.52 | none | 0.01 |
+| Break-even w, US residents only | 0.68 | 0.78 | 0.98 | 0.85 | 0.68 | 0.68 | 0.30 | 0.53 |
+
+Controlled rounding keeps each column adding:
+- G3+ prints +126.4 at λ 1.16 and λ_h (unrounded 126.338);
+- Mexico's residents print +104.8 at λ 1.16 (104.749) and +117.1 at λ 1.5 (117.046);
+- G2 prints +335.5 under both Hendren columns (335.440).
+
+Under log b the parties other than the group now lose $26.2bn net (on sept29 they gained $41.6bn). So the world's
+break-even w there is 0.01 rather than none.
+
+**The move from sept29, equal weights, central.** Two decimals. The moves are differences of the printed levels, and
+so that each column adds:
+- US residents print −448.58 on sept29 (unrounded −448.5715, as in the v4 table) and −471.22 on oct05 (−471.2122);
+- oct05's world total prints +318.91 (318.9177).
+
+| $bn a year | sept29, 39.71M | oct05, 39.71M (beside) | oct05, 42.75M | v5's budget rows and channels | the added people's person rows |
+|---|---:|---:|---:|---:|---:|
+| US residents, today and future | −448.58 | −471.22 | −471.22 | −22.64 | 0.00 |
+| The group (G1, G2, G3+) | +674.66 | +685.27 | +691.17 | +10.61 | +5.90 |
+| Mexico's residents | +101.49 | +101.49 | +98.96 | 0.00 | −2.53 |
+| World total | +327.57 | +315.54 | +318.91 | −12.03 | +3.37 |
+
+- **v5's budget rows and channels, −$12.03bn.**
+  - At the band's middle, the direct cost A rises $22.86bn, from 383.09 / 442.52 to 402.24 / 469.10. $0.69bn of the
+    rise falls on the capped programs' displaced beneficiaries ($8.81bn; sept29 $8.13bn), and the rest on taxpayers.
+  - The group's valuation of its US budget rises $10.61bn: G3+ +10.83, G1 −0.10, G2 −0.12.
+  - Induced receipts F add $0.23bn, and wages −$0.01bn.
+
+  Rule 3 gives the widened gap by class.
+- **The added people's person rows, +$3.37bn.**
+  - Mexico's residents would spend $11.33bn more on G3+'s schools, health, cash and public services, while G3+
+    forgoes $7.96bn more of the health, cash and public services it would value.
+  - The Mexican taxes on G3+ move another $13.85bn from Mexico's residents to the group. At equal weights that
+    transfer cancels in the world total.
+  - The group's row rises $5.90bn: G3+ +$5.17bn, and G1 and G2 +$0.73bn together. Their population shares fall as
+    G3+'s rises from 0.3612 to 0.4066. The in-group victimization they shed (−$20.11bn in all) outweighs the care
+    received they shed (+$4.05bn in all).
+- **Other residents today** carry −$378.23bn (sept29 −$360.56bn). The future taxpayers carry −$92.99bn: the
+  borrowed part, −$12.61bn (sept29 −$13.15bn), and the accrual, −$80.38bn.
+- **The part of the account that buys the group nothing it values** is justice's cost above its value plus Medicaid's
+  shortfall. It rises from $57.5–58.0bn to $61.2–61.7bn.
+
+**Other weightings and spans, world total, $bn a year:**
+
+| | sept29, 39.71M | oct05, 39.71M (beside) | oct05, 42.75M |
+|---|---:|---:|---:|
+| Central, λ 1.16 | +270.66 | +255.12 | +258.09 |
+| Central, λ 1.5 | +149.71 | +126.70 | +128.82 |
+| Central, Hendren a | +350.19 | +337.87 | +340.98 |
+| Low outer, equal | +160.26 | +141.53 | +144.09 |
+| Low outer, λ 1.16 | +96.20 | +73.35 | +75.43 |
+| **Low outer, λ 1.5** | **−39.93** | **−71.52** | **−70.46** |
+| High outer, equal | +741.05 | +735.25 | +792.99 |
+
+- **Low outer span at λ 1.5:** the world total falls from −$39.93bn to −$70.46bn. v5's budget rows move it −$31.58bn
+  and the added people's person rows +$1.05bn.
+- **High outer span:** it rises $51.94bn, because it takes G3+'s premium at its upper bound on 17.38M members.
+
+**Break-even w** on oct05 (42.75M), world / US residents only:
+- central: 0.54 / 0.68 at equal weights, 0.63 / 0.78 at λ 1.16 and 0.81 / 0.98 at λ 1.5 (sept29: 0.51 / 0.66,
+  0.60 / 0.76, 0.78 / 0.96);
+- the low outer span: 0.77 / 0.91 at equal weights, 0.88 / 1.02 at λ 1.16 and 1.11 / 1.27 at λ 1.5 (sept29:
+  0.74 / 0.88, 0.84 / 0.99, 1.07 / 1.23). The US-only figure at λ 1.16 now passes 1;
+- the high outer span: 0.21 / 0.38 at equal weights, as on sept29.
+
+**By generation, fiscal channels only.**
+- Break-even w: G1 comes out at 0.38 and G2 at 0.51; G3+ is at 1.33 at its lower bound and 0.45 at its upper. On
+  sept29 they were 0.38, 0.51, 1.32 and 0.46.
+- With all of other residents' non-fiscal costs charged to the one generation, G1 is 0.60 and G2 0.68, as on
+  sept29.
+- G3+'s fiscal cost is $168.33bn central (sept29 $145.49bn), and its row at its lower bound is $126.34bn (sept29
+  $110.34bn).
+
+[CALCULATION: world_ledger_meta_oct05.json generation_breakeven]
+
+**Per member,** on the case's count, at equal weights, central:
+- the group's row is $16,167 per member (sept29: $16,989 on 39.71M);
+- G1's is $22,009 per G1 member (sept29: $21,989), and G3+'s $7,268 per G3+ member (sept29: $7,693);
+- US residents bear $11,022 per group member (sept29: $11,295).
+
+**The two verdicts stand.**
+- Hendren's weights still give the group's dollars more weight than the payers': 1.02–1.05 against 0.98. G3+ is at
+  1.016 with or without the added people.
+- The saving leak is $8.5–92.9bn under tax shares (sept29: $8.1–88.0bn).
+
+**Carried from upstream, as on v4.** Seven of other residents' channels lie outside the budget: renters, landlords,
+crime victims, property crime, unreimbursed care, congestion and mobility. They come from lanes that price the
+published 40.9M, and the winners lane takes them as published (c1c259e). Their central sum, −$45.44bn, does not move
+with v5. If each were linear in the count, scaling them to the lineage's 42.75M would deepen that sum by $2.06bn and
+lower the world total by as much. [INFERENCE; not computed]
+
+### Phase 1 checks (before the winners pin)
+
+- **Baseline:** before any edit, the 19 commands of the v4 "Reproduce" gave IDENTICAL, 84/84 files, exit 0.
+- **After the phase-1 code**, with the lineage steps and the oct05 generation lines and split added (23 commands):
+  IDENTICAL, 92/92 files, exit 0, and no tracked file under `derived/` changed.
+- **oct05 before the winners pin:**
+  - `generation_lines.cjs --case oct05` passes every gate. The lane and the 14 modules its package loads are
+    4bf0206's. The generations' union at specs 48 / 11 is 390.293958 / 461.243125 against the adopted
+    390.2940 / 461.2431. Each generation's corrected and uncorrected cost equals `generation_results_oct05.csv`.
+    Corrected, low / high: G1 97.147966 / 87.022132, G2 151.466475 / 179.245670, G3+ 141.679517 / 194.975323. The
+    lines add to the engine's A (1.4e-13). Each capital component's amount times its response is its return.
+  - `split_residual.py --case oct05`: every line moves by its correction edit, max |diff| 1.5e-9.
+- **Dry run on the winners lane's draft.** The draft, `derived/oct05/` before it was committed, was read from the
+  working tree by a scratch wrapper. `valuation.py` and `world_ledger.py` wrote to a scratch copy of `derived/`, and
+  every gate passed. The pinned run's outputs equal the dry run's byte for byte, except that the three metas carry
+  the winners pin.
+
+### Checks
+
+1. **Old cases unchanged.** Both full reruns are IDENTICAL, 104/104 files, and no tracked file under `derived/`
+   differs from HEAD. Every Sept 26, Sept 27 and sept29 output is byte for byte what it was, the cps and row-4 files
+   included.
+2. **oct05 runs, and the lane's gates pass on it:**
+   - `generation_lines.cjs` and `split_residual.py`: as in the phase-1 checks;
+   - `valuation.py`: every line takes a class, and the lines reproduce the winners lane's A, −402.241420 /
+     −469.102384 (tolerance 1e-3). The generations add to the case's lines, and each generation's net cost plus
+     production equals `generation_results_oct05.csv` (1e-6);
+   - `world_ledger.py --case oct05`:
+     - the fiscal channel is A − D + F, and the distribution percentiles are oct05's own;
+     - the accrual is the case less its cash set (4.3e-7);
+     - G1 and G3+ in the person rows are the generation lane's, 11,036,701.06 and 17,382,294.20;
+     - the log-weight bins match the pinned channels.
+
+     The run on row 4 prints G3+ 14,342,574.61 against 17,382,294.20, ungated.
+3. **The lineage basis.**
+   - The frame's G3+ is the case's identified G3+, 14,342,574.61, and its row-4 union is the account's
+     39,712,493.33 (1e-3 persons). After the factor, 1.211937, the union is 42,752,212.92.
+   - In `g2_premium.py` and `weights.py` the factor scales exactly their G3+ records. G1 falls by the union's row-4
+     fall, and G2 keeps its weights.
+4. **Oracle.** The generations' union at specs 48 / 11 is 390.293958 / 461.243125, against the adopted
+   390.2940 / 461.2431 (tolerance 5.01e-5). Less the accrual it is 307.376376 / 383.409252, the cash set.
+5. **Reruns after the oct05 run,** with the 25 commands of "Reproduce": pass 1 ran 01:06:14–01:07:11 JST and pass 2
+   01:07:11–01:08:07 JST, each IDENTICAL, 104/104 files, exit 0. `run_all.sh sept26_schools sept27 sept29 oct05`
+   under the same checker (01:08:16–01:09:12) is IDENTICAL, 104/104, exit 0.
+
+### Reproduce
+
+The lane's checker with every step: the v4 list, plus the two lineage steps, the oct05 generation lines and split,
+and the oct05 ledger on its own basis and on row 4.
+
+```sh
+L=infra/immigration-fiscal/world_ledger_2026_09_27
+uv run --no-project python3 scripts/rerun_lane.py $L \
+  "uv run --no-project python3 {lane}/acquire.py" \
+  "uv run --no-project python3 {lane}/mexico.py" \
+  "uv run --no-project python3 {lane}/g2_premium.py" \
+  "uv run --no-project python3 {lane}/g2_premium.py --basis row4" \
+  "uv run --no-project python3 {lane}/g2_premium.py --basis lineage" \
+  "uv run --no-project python3 {lane}/weights.py" \
+  "uv run --no-project python3 {lane}/weights.py --basis row4" \
+  "uv run --no-project python3 {lane}/weights.py --basis lineage" \
+  "node {lane}/generation_lines.cjs --case sept26_schools" \
+  "uv run --no-project python3 {lane}/split_residual.py --case sept26_schools" \
+  "node {lane}/generation_lines.cjs --case sept27" \
+  "uv run --no-project python3 {lane}/split_residual.py --case sept27" \
+  "node {lane}/generation_lines.cjs --case sept29" \
+  "uv run --no-project python3 {lane}/split_residual.py --case sept29" \
+  "node {lane}/generation_lines.cjs --case oct05" \
+  "uv run --no-project python3 {lane}/split_residual.py --case oct05" \
+  "uv run --no-project python3 {lane}/state_price_quantity.py" \
+  "uv run --no-project python3 {lane}/valuation.py" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept26_schools" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept27" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept27 --basis row4" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept29" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case sept29 --basis cps" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case oct05" \
+  "uv run --no-project python3 {lane}/world_ledger.py --case oct05 --basis row4" \
+  --allow-unrun $L/run_all.sh --allow-unrun $L/population_basis.py
+```
+
+The whole lane is `sh run_all.sh sept26_schools sept27 sept29 oct05`.
+
+Log (times from `date`):
+- 2026-10-06 00:50:58–00:51:37 JST: baseline before any edit. `rerun_lane.py` with the v4 section's 19 commands
+  reports IDENTICAL, 84/84 files, exit 0. [CALCULATION: scripts/rerun_lane.py]
+- 2026-10-06 00:54:10–00:54:33 JST: with the phase-1 code in place, four steps ran and every gate passed:
+  `generation_lines.cjs --case oct05`, `split_residual.py --case oct05`, `g2_premium.py --basis lineage` and
+  `weights.py --basis lineage`. The lineage files scale G3+ alone: G1 and G2 equal row 4's, and the income
+  positions differ from row 4's only in G3+'s persons.
+- 2026-10-06 00:55:17 JST: `valuation.py`, with oct05 still unpinned, writes `mexico_budget_lineage.csv`. No
+  tracked file changed.
+- 2026-10-06 00:55:53–00:56:49 JST: gate 1 after phase 1, 23 commands: IDENTICAL, 92/92 files, exit 0.
+- 2026-10-06 00:58:46–00:58:56 JST: dry run on the winners lane's draft, outputs to scratch; every gate passes.
+  The draft's `channels.csv` was rewritten at 00:59:44, and a second dry run (between the `date` calls at 01:00:01 and
+  01:01:38) gave the same outputs byte for byte.
+- 2026-10-06 01:05:21 JST (the `date` at the check): the winners lane's oct05 is committed at c1c259e
+  (`derived/oct05/`, case `adopted_2026_10_05`). Checked first:
+  - the commit holds the files the pins name, and the working tree equals it;
+  - the four files the ledger reads equal the dry run's inputs;
+  - no commit after 4bf0206 touches main_case_2026_10_05;
+  - the generation and distribution files last changed at e5ca5ef and fecaae7.
+
+  `pins.json`'s oct05 winners pin is now c1c259e.
+- 2026-10-06 01:05:44–01:05:47 JST: `valuation.py`, then `world_ledger.py --case oct05` and `--basis row4`, all
+  exit 0 with every gate passing. The outputs equal the dry run's byte for byte, except for the winners pin in the
+  three metas.
+- 2026-10-06 01:06:14–01:09:12 JST: the two full reruns and `run_all.sh`, each IDENTICAL, 104/104 files, exit 0.
+- 2026-10-06 01:10 JST: this section written from the derived files (scratch scripts in the parent's scratchpad,
+  `v5b/`). No code or output changed after the reruns.

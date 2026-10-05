@@ -1,0 +1,87 @@
+{
+ "cases": {
+  "oct05": {
+   "high": {
+    "A_bn": 469.1023844386772,
+    "V_central_bn": 294.26171301105023,
+    "V_high_bn": 314.7592141545334,
+    "V_low_bn": 267.08409499983946
+   },
+   "low": {
+    "A_bn": 402.2414197027762,
+    "V_central_bn": 271.82225261969126,
+    "V_high_bn": 291.99674322704567,
+    "V_low_bn": 245.02595013016582
+   }
+  }
+ },
+ "generations": {
+  "oct05": {
+   "high|G1": {
+    "V_central_bn": 90.87436931820021,
+    "net_cost_bn": 91.90283747500001
+   },
+   "high|G2": {
+    "V_central_bn": 96.11918324871816,
+    "net_cost_bn": 180.75816826899998
+   },
+   "high|G3+": {
+    "V_central_bn": 107.26816044448368,
+    "net_cost_bn": 196.441378694
+   },
+   "low|G1": {
+    "V_central_bn": 80.39674332271606,
+    "net_cost_bn": 104.56749964500003
+   },
+   "low|G2": {
+    "V_central_bn": 100.40918051896718,
+    "net_cost_bn": 153.76574031099997
+   },
+   "low|G3+": {
+    "V_central_bn": 91.01632877604692,
+    "net_cost_bn": 143.908179742
+   }
+  }
+ },
+ "medicaid_vg": [
+  0.76,
+  0.92,
+  1.08
+ ],
+ "mexico_budget_bn_known": 166.33541555156995,
+ "pins": {
+  "oct05": {
+   "basis": "lineage",
+   "dirs": {
+    "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/oct05",
+    "winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct05"
+   },
+   "distribution": "fecaae7",
+   "files": {
+    "generation": {
+     "generation_corrections.json": "generation_corrections_oct05.json",
+     "generation_results.csv": "generation_results_oct05.csv"
+    }
+   },
+   "generation": "e5ca5ef",
+   "main_case": "4bf0206",
+   "model": "adopted_2026_10_05",
+   "winners": "c1c259e"
+  }
+ },
+ "protection_share": 0.42467763366851674,
+ "state_price_value_bn": {
+  "oct05": {
+   "high": {
+    "quantity_bn": -0.3274523025519074,
+    "whole_gap_bn": 5.7371491962454195,
+    "zero_bn": 0.0
+   },
+   "low": {
+    "quantity_bn": -0.3274523025519074,
+    "whole_gap_bn": 5.7371491962454195,
+    "zero_bn": 0.0
+   }
+  }
+ }
+}

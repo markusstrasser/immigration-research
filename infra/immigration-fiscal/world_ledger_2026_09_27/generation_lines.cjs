@@ -15,14 +15,20 @@
  * Inputs: the generation lane's files at the case's generation pin (pins.json), read with git show; the case's
  * package (read-only, as run_generations.cjs reads it). Rows: every spending line and receipt with the engine's key
  * (receipts: scenario:key), its amount, response and effect (the engine's signs: receipts +, spending -), each
- * capital-return component (under sept27 and sept29; amount = stock x rate x key, effect = -return), and per
+ * capital-return component (from sept27; amount = stock x rate x key, effect = -return), and per
  * generation the totals: the direct fiscal response, the capital return, the production term and the cost. Gates:
  * the corrected cost equals generation_results.csv convention (a) `cost_bn`, and the uncorrected cost its
  * `uncorrected_same_spec_bn`, to 1e-6; the generations' union at the band ends equals the case's adopted band (its
  * lane's main_case_bands.csv, main profile, four decimals) to half a unit in the fourth decimal.
  *
+ * oct05 (main case v5, adopted 2026-10-05) is the sept29 case plus the descendants who no longer report Mexican
+ * origin, counted whole. The generation lane's split puts them on G3+: G3+'s payload carries the lineage's cell edits
+ * and production, as the case package's withLineage() adds them, and every generation takes its share of audit row
+ * 8's change (generation_account_2026_09_24/run_generations_v5.cjs). This script evaluates those payloads with the v5
+ * package, so the G3+ lines carry the lineage.
+ *
  * Run from the repository root:
- *   node infra/immigration-fiscal/world_ledger_2026_09_27/generation_lines.cjs --case sept26_schools|sept27|sept29
+ *   node infra/immigration-fiscal/world_ledger_2026_09_27/generation_lines.cjs --case sept26_schools|sept27|sept29|oct05
  * Output: derived/generation_lines_<case>.csv, derived/generation_lines_uncorrected_<case>.csv.
  */
 "use strict";
@@ -36,13 +42,15 @@ const REPO = path.join(FISCAL, "..", "..");
 const argv = process.argv.slice(2);
 const arg = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt : argv[i + 1]; };
 // The package lane of each case, as run_generations.cjs maps them. SEPT29 is the case adopted on 2026-09-29
-// (candidate v4): a payload-first successor to the September 27 lane with the same package API.
+// (candidate v4): a payload-first successor to the September 27 lane with the same package API. OCT05 is main case v5,
+// adopted on 2026-10-05, whose package keeps that API (run_generations_v5.cjs costs every generation with it).
 const SEPT29 = "main_case_2026_09_29";
-const CASES = { sept29: SEPT29, sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
+const OCT05 = "main_case_2026_10_05";
+const CASES = { oct05: OCT05, sept29: SEPT29, sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
 const CASE = arg("--case", "sept26_schools");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 // The cases that carry the return on public capital, which the lane evaluates with evaluateFull().
-const FULL = CASE === "sept27" || CASE === "sept29";
+const FULL = CASE === "sept27" || CASE === "sept29" || CASE === "oct05";
 const PINNED = JSON.parse(fs.readFileSync(path.join(HERE, "pins.json"), "utf8"))[CASE];
 const PIN = PINNED.generation;
 if (!PIN) throw new Error(`[BLOCKED] no generation pin for ${CASE}`);

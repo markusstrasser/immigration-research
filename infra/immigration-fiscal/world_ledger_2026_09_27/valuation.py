@@ -30,9 +30,9 @@ Inputs are read at pinned commits (PINS), so peers' uncommitted reruns never lea
 Run: OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/valuation.py
 Every case with pins is valued. Outputs: derived/valuation.csv, derived/valuation_by_class.csv,
 derived/valuation_by_generation.csv and derived/valuation_meta.json (one block per case of SHARED_OUTPUTS; each
-later case writes the same four files with a _<case> suffix), derived/mexico_budget.csv and
-derived/mexico_budget_row4.csv (case-independent; the group on the cps and row4 population bases,
-population_basis.py).
+later case writes the same four files with a _<case> suffix), derived/mexico_budget.csv,
+derived/mexico_budget_row4.csv and derived/mexico_budget_lineage.csv (case-independent; the group on the cps, row4
+and lineage population bases, population_basis.py).
 """
 import io
 import json
@@ -331,8 +331,8 @@ def value_generations(case, union):
 
 def mexico_budget(basis="cps"):
     """The group's alternative world: what Mexico's budget would spend on the same people, by class, at the
-    group's own ages (CPS ASEC 2025; 40.9m on the cps basis, the account's 39.71m on row4), priced with Mexico's
-    2024 per-person spending (mexico.py). Case-independent."""
+    group's own ages (CPS ASEC 2025; 40.9m on the cps basis, the account's 39.71m on row4, main case v5's 42.75m on
+    lineage), priced with Mexico's 2024 per-person spending (mexico.py). Case-independent."""
     ages = pd.read_csv(suffixed(DERIVED / "group_ages.csv", basis))
     comp = pd.read_csv(DERIVED / "mexico_comparators_by_age.csv").set_index("age")
     meta = json.load(open(DERIVED / "mexico_meta.json"))["comparators"]
@@ -408,7 +408,7 @@ def value_block(cases, mx):
 def main():
     DERIVED.mkdir(exist_ok=True)
     cases = [c for c, pin in PINS.items() if pin["winners"]]
-    # Mexico's budget on both bases (g2_premium.py runs on both first); world_ledger.py reads the one it runs on.
+    # Mexico's budget on every basis (g2_premium.py runs on each first); world_ledger.py reads the one it runs on.
     mxs = {b: mexico_budget(b) for b in BASES}
     for b, mx in mxs.items():
         mx.to_csv(suffixed(DERIVED / "mexico_budget.csv", b), index=False, lineterminator="\n", float_format="%.6f")

@@ -32,12 +32,14 @@ Weightings (columns):
 - break-even w: the moral weight on the group at which W = N + wM = 0.
 
 Run: OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/world_ledger.py
-     [--case sept26_schools|sept27|sept29] [--basis cps|row4]
+     [--case sept26_schools|sept27|sept29|oct05] [--basis cps|row4|lineage]
 Outputs: derived/world_ledger.csv (party x weighting, per scenario), derived/world_ledger_rows.csv (row detail),
 derived/world_ledger_meta_<case>.json, derived/generation_split_check.csv (this lane's generation split beside the
 generation lane's). The three CSVs hold the cases of valuation.py's SHARED_OUTPUTS; a later case writes them with a
 _<case> suffix (world_ledger_sept29.csv and so on). --basis runs the case's person-based rows on a population other
 than its own (population_basis.py; a case's own is its pins' "basis", else cps), into _<case>_<basis> files.
+oct05 (main case v5) counts them on the lineage, 42.75M: the generation lane's G3+ carries the 3.04M added people in
+its budget rows, and the group's person-based rows count them in G3+ too.
 """
 import argparse
 import io
@@ -79,9 +81,11 @@ MISHRA = dict(shock=0.16, stayers_gain=0.059, owners_loss=0.064, net_loss=0.005)
 MSS_SAVING = ((1, 50, 0.0), (51, 90, 0.12), (91, 99, 0.20), (100, 100, 0.54))
 CAPITAL_TAX = (0.093, 0.29)
 RETURN_OVER_DISCOUNT = (1.0, 3.5)
-# The case lane of a case whose winners channels carry the pension accrual (sept29, adopted on 2026-09-29): its
-# summary, read at the pins' "main_case" commit, holds the case and its cash set, which the accrual must bridge.
-CASE_LANES = {"sept29": "infra/immigration-fiscal/main_case_2026_09_29"}
+# The case lane of a case whose winners channels carry the pension accrual (sept29, adopted on 2026-09-29; oct05,
+# main case v5, adopted on 2026-10-05): its summary, read at the pins' "main_case" commit, holds the case and its cash
+# set, which the accrual must bridge.
+CASE_LANES = {"sept29": "infra/immigration-fiscal/main_case_2026_09_29",
+              "oct05": "infra/immigration-fiscal/main_case_2026_10_05"}
 
 
 def gate(name, ok, **detail):
@@ -135,14 +139,24 @@ def load(case, basis):
     gen = pinned_csv(pin["generation"], lane_file(case, "generation", "generation_results.csv"))
     # G1's persons in this run's person-based rows beside the generation lane's G1, whose budget rows the ledger
     # values. A case whose own basis is row 4 must count the same people (the generation lane's v4 results carry the
-    # row-4 headcounts); on a basis beside it they differ by the audit's 1.18M, printed.
-    g1 = json.load(open(suffixed(DERIVED / "g2_meta.json", basis)))["persons_m"]["G1"] * 1e6
+    # row-4 headcounts); on a basis beside it they differ by the audit's 1.18M, printed. On the lineage (oct05) G1 is
+    # row 4's, and G3+ must also be the generation lane's: the identified G3+ plus the added people.
+    persons = json.load(open(suffixed(DERIVED / "g2_meta.json", basis)))["persons_m"]
+    g1 = persons["G1"] * 1e6
     g1_gen = gen[(gen.convention == "a") & (gen.generation == "G1")].population.unique()
     print(f"  G1 persons: {g1:,.2f} in the {basis} person-based rows, {', '.join(f'{x:,.2f}' for x in g1_gen)} "
           f"in the generation lane's results at {pin['generation']}", file=sys.stderr)
     if basis == "row4" and basis_of(case) == "row4":
         gate("row4_g1_is_the_generation_lanes_g1", len(g1_gen) == 1 and abs(g1 - g1_gen[0]) < 1.0, ledger=g1,
              generation_lane=list(g1_gen))
+    if basis == "lineage" or basis_of(case) == "lineage":
+        g3 = persons["G3+"] * 1e6
+        g3_gen = gen[(gen.convention == "a") & (gen.generation == "G3plus")].population.unique()
+        print(f"  G3+ persons: {g3:,.2f} in the {basis} person-based rows, {', '.join(f'{x:,.2f}' for x in g3_gen)} "
+              f"in the generation lane's results at {pin['generation']}", file=sys.stderr)
+        if basis == basis_of(case):
+            gate("lineage_g1_and_g3plus_are_the_generation_lanes", len(g1_gen) == 1 and abs(g1 - g1_gen[0]) < 1.0
+                 and len(g3_gen) == 1 and abs(g3 - g3_gen[0]) < 1.0, g1=[g1, list(g1_gen)], g3=[g3, list(g3_gen)])
     val = pd.read_csv(case_path("valuation.csv", case))
     val = val[val.case == case]
     gate("valuation_has_case", len(val) > 0, case=case)

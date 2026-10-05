@@ -10,8 +10,10 @@ run() { OPENBLAS_NUM_THREADS=1 uv run --no-project python3 "$@"; }
 run "$L/mexico.py"
 run "$L/g2_premium.py"
 run "$L/g2_premium.py" --basis row4
+run "$L/g2_premium.py" --basis lineage
 run "$L/weights.py"
 run "$L/weights.py" --basis row4
+run "$L/weights.py" --basis lineage
 for c in "${@:-sept26_schools}"; do
   node "$L/generation_lines.cjs" --case "$c"
   run "$L/split_residual.py" --case "$c"
@@ -21,9 +23,11 @@ run "$L/valuation.py"
 for c in "${@:-sept26_schools}"; do
   run "$L/world_ledger.py" --case "$c"
   # The other population basis beside the case's own (population_basis.py): Sept 27 restated on the account's row-4
-  # count, and sept29 on the published CPS count it replaces.
+  # count, sept29 on the published CPS count it replaces, and oct05 on row 4, without the added people in its
+  # person-based rows.
   case "$c" in
     sept27) run "$L/world_ledger.py" --case "$c" --basis row4 ;;
     sept29) run "$L/world_ledger.py" --case "$c" --basis cps ;;
+    oct05) run "$L/world_ledger.py" --case "$c" --basis row4 ;;
   esac
 done

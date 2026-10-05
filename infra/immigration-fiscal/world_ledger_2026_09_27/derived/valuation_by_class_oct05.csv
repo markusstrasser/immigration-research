@@ -1,0 +1,29 @@
+case,end,side,cls,amount_bn,G_bn,V_low_bn,V_central_bn,V_high_bn,third_party_bn,net_cost_bn,source
+oct05,high,receipt,housing_voucher,-3.716514,3.716514,3.084707,3.716514,3.716514,0.000000,3.716514,"HSK Table II: HCV Chicago Lottery WTP 0.83, HCV RCT to Welfare 1.00 per $1"
+oct05,high,receipt,tax,532.678710,-453.105010,-453.105010,-453.105010,-453.105010,0.000000,-453.105010,"tax paid, $1 per $1"
+oct05,high,spending,cash,194.696361,194.696361,194.696361,194.696361,194.696361,0.000000,194.696361,envelope theorem on observed flows: 'individuals are willing to pay for the mechanical cost' (HSK 2020 p.20); behavioral costs are already in observed earnings [INFERENCE]
+oct05,high,spending,correction,-5.400108,-5.400108,0.000000,0.000000,0.000000,0.000000,-5.400108,"account correction rows (care-work taxes, shelter, audit constants)"
+oct05,high,spending,education,243.636480,247.436958,0.000000,0.000000,0.000000,0.000000,247.436958,investment; its return is in the G2 premium; custodial value in both places
+oct05,high,spending,health_services,23.721331,23.721331,22.541298,22.541298,22.541298,0.000000,23.721331,public health and hospitals at cost (convention)
+oct05,high,spending,housing_voucher,5.516157,5.516157,4.578411,5.516157,5.516157,0.000000,5.516157,"HSK Table II: HCV Chicago Lottery WTP 0.83, HCV RCT to Welfare 1.00 per $1"
+oct05,high,spending,justice,82.737847,82.737847,31.252788,31.252788,31.252788,0.000000,82.737847,"protection share 0.4247 at average cost, the rest (offender processing, enforcement) at 0; cj_use_allocation central split"
+oct05,high,spending,medicaid,128.109382,128.109382,97.363130,117.860632,138.358133,76.580942,128.109382,"FHL JPE 2019 (author manuscript): willingness to pay if the uninsured had no implicit insurance, $2,749-3,875 per G = $3,600 (0.76-1.08), the midpoint central; their (gamma + 0.6G)/G bridge gives 0.8-1.1. The Mexico alternative has no US implicit insurance [INFERENCE on the bridge]"
+oct05,high,spending,medicare,79.085448,79.085448,79.085448,79.085448,79.085448,0.000000,79.085448,convention at cost; HSK's Medicare Intro WTP 2.00 per $1 includes insurance value and is not used [INFERENCE]
+oct05,high,spending,not_a_service,144.095581,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,"interest, business subsidies, foreign lines: no service to the group"
+oct05,high,spending,public_good,231.476153,100.953461,231.063482,231.063482,231.063482,0.000000,100.953461,"average cost, the brief's convention for public goods and general services [FRAMING-SENSITIVE]"
+oct05,high,spending,services,47.032435,47.032435,47.032435,47.032435,47.032435,0.000000,47.032435,social services at cost (convention)
+oct05,high,spending,snap,14.601608,14.601608,9.491045,14.601608,14.601608,0.000000,14.601608,"low: Whitmore (2002) trade value 'at least 65%' (HSK fn 38); central/high: inframarginal, cash-equivalent [INFERENCE]"
+oct05,low,receipt,housing_voucher,-3.716514,3.716514,3.084707,3.716514,3.716514,0.000000,3.716514,"HSK Table II: HCV Chicago Lottery WTP 0.83, HCV RCT to Welfare 1.00 per $1"
+oct05,low,receipt,tax,567.316001,-479.586272,-479.586272,-479.586272,-479.586272,0.000000,-479.586272,"tax paid, $1 per $1"
+oct05,low,spending,cash,211.832666,211.832666,211.832666,211.832666,211.832666,0.000000,211.832666,envelope theorem on observed flows: 'individuals are willing to pay for the mechanical cost' (HSK 2020 p.20); behavioral costs are already in observed earnings [INFERENCE]
+oct05,low,spending,correction,-5.356197,-5.356197,0.000000,0.000000,0.000000,0.000000,-5.356197,"account correction rows (care-work taxes, shelter, audit constants)"
+oct05,low,spending,education,229.698491,231.444336,0.000000,0.000000,0.000000,0.000000,231.444336,investment; its return is in the G2 premium; custodial value in both places
+oct05,low,spending,health_services,23.431288,23.431288,22.251255,22.251255,22.251255,0.000000,23.431288,public health and hospitals at cost (convention)
+oct05,low,spending,housing_voucher,5.173187,5.173187,4.293745,5.173187,5.173187,0.000000,5.173187,"HSK Table II: HCV Chicago Lottery WTP 0.83, HCV RCT to Welfare 1.00 per $1"
+oct05,low,spending,justice,82.165251,82.165251,31.009619,31.009619,31.009619,0.000000,82.165251,"protection share 0.4247 at average cost, the rest (offender processing, enforcement) at 0; cj_use_allocation central split"
+oct05,low,spending,medicaid,126.090566,126.090566,95.828830,116.003321,136.177812,75.374139,126.090566,"FHL JPE 2019 (author manuscript): willingness to pay if the uninsured had no implicit insurance, $2,749-3,875 per G = $3,600 (0.76-1.08), the midpoint central; their (gamma + 0.6G)/G bridge gives 0.8-1.1. The Mexico alternative has no US implicit insurance [INFERENCE on the bridge]"
+oct05,low,spending,medicare,79.544374,79.544374,79.544374,79.544374,79.544374,0.000000,79.544374,convention at cost; HSK's Medicare Intro WTP 2.00 per $1 includes insurance value and is not used [INFERENCE]
+oct05,low,spending,not_a_service,144.150130,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,"interest, business subsidies, foreign lines: no service to the group"
+oct05,low,spending,public_good,224.453316,65.948763,224.040645,224.040645,224.040645,0.000000,65.948763,"average cost, the brief's convention for public goods and general services [FRAMING-SENSITIVE]"
+oct05,low,spending,services,43.235336,43.235336,43.235336,43.235336,43.235336,0.000000,43.235336,social services at cost (convention)
+oct05,low,spending,snap,14.601608,14.601608,9.491045,14.601608,14.601608,0.000000,14.601608,"low: Whitmore (2002) trade value 'at least 65%' (HSK fn 38); central/high: inframarginal, cash-equivalent [INFERENCE]"

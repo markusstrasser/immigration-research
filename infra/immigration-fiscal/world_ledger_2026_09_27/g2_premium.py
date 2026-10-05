@@ -25,9 +25,10 @@ The children inherit none of it (delta 0) or all of it (delta 0.028).
 Outputs (derived/): g2_premium.csv (G1 check, G2, G3+ bound), g2_premium_by_age.csv, parents_schooling.csv,
 group_ages.csv, g2_meta.json. --basis row4 counts the group on the account's row-4 persons (population_basis.py)
 and writes g2_premium_row4.csv, group_ages_row4.csv and g2_meta_row4.json; the other two files do not depend on the
-basis (IPUMS parents; G2 by age, whose records row 4 leaves alone).
+basis (IPUMS parents; G2 by age, whose records row 4 leaves alone). --basis lineage counts it on main case v5's
+42.75M (row 4, with the G3+ records carrying the added people) and writes the same three files with _lineage.
 Run from the repository root:
-    OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/g2_premium.py [--basis row4]
+    OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/world_ledger_2026_09_27/g2_premium.py [--basis row4|lineage]
 """
 import argparse
 import hashlib
@@ -40,7 +41,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from population_basis import BASES, reweight, row4, suffixed
+from population_basis import BASES, lineage, reweight, row4, suffixed
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
@@ -104,8 +105,8 @@ def load_asec(basis="cps"):
     spec.loader.exec_module(B)
     d = B.load_cps()
     d["pw_cps"] = d.pw
-    if basis == "row4":
-        d = reweight(d, B.PATHS["cps"], gate)
+    if basis != "cps":
+        d = reweight(d, B.PATHS["cps"], gate, basis)
     extra = ["PH_SEQ", "PPPOS", "A_SEX", "WORKYN", "HRSWK", "PEINUSYR"]
     with zipfile.ZipFile(B.PATHS["cps"]) as z:
         p = pd.read_csv(z.open("pppub25.csv"), usecols=extra)
@@ -383,15 +384,30 @@ def main(basis="cps"):
                 persons_m={g: float(d.pw[d.gen.eq(g)].sum() / 1e6) for g in ("G1", "G2", "G3+")})
     if basis != "cps":
         meta["basis"] = basis
+    if basis == "lineage":
+        # The lineage factor must scale exactly this script's G3+ records, and the group must then be the case's
+        # lineage: the identified G3+ plus the added people.
+        c = lineage()
+        g3 = d.gen.eq("G3+").to_numpy()
+        f = 1.0 + c["added"] / float(d.pw_row4[g3].sum())
+        gate("lineage_scales_exactly_g3plus", np.array_equal(d.pw.to_numpy()[g3], d.pw_row4.to_numpy()[g3] * f)
+             and np.array_equal(d.pw.to_numpy()[~g3], d.pw_row4.to_numpy()[~g3]), factor=f)
+        gate("lineage_group_is_the_cases_lineage",
+             abs(float(d.pw[d.gen.ne("")].sum()) - c["lineage_population"]) < 1e-3
+             and abs(float(d.pw[g3].sum()) - c["identified_g3plus"] - c["added"]) < 1e-3,
+             group=float(d.pw[d.gen.ne("")].sum()), lineage=c["lineage_population"])
+        meta["lineage"] = dict(factor=f, added=c["added"], identified_g3plus_m=float(d.pw_row4[g3].sum() / 1e6))
     json.dump(meta, open(suffixed(DERIVED / "g2_meta.json", basis), "w"), indent=1, sort_keys=True)
     if basis == "cps":
         gate("g1_members", abs(meta["persons_m"]["G1"] - 12.22) < 0.05, got=meta["persons_m"]["G1"])
     else:
-        # Row 4 removes Mexico-born union members only, so G1 falls by the union's fall and G2, G3+ keep theirs.
+        # Row 4 removes Mexico-born union members only, so G1 falls by the union's fall and G2, G3+ keep theirs (on
+        # the lineage, their row-4 weights, before G3+ takes the factor).
         pop = row4()["populations"]
-        fall = float((d.pw_cps - d.pw)[d.gen.eq("G1")].sum())
+        r4 = d.pw if basis == "row4" else d.pw_row4
+        fall = float((d.pw_cps - r4)[d.gen.eq("G1")].sum())
         gate("row4_g1_falls_by_the_unions_fall", abs(fall - (pop["published"] - pop["row4"])) < 1e-3
-             and float((d.pw_cps - d.pw)[d.gen.isin(["G2", "G3+"])].abs().sum()) == 0.0, g1_fall=fall,
+             and float((d.pw_cps - r4)[d.gen.isin(["G2", "G3+"])].abs().sum()) == 0.0, g1_fall=fall,
              union_fall=pop["published"] - pop["row4"])
     gate("g2_members", abs(meta["persons_m"]["G2"] - 14.33) < 0.05, got=meta["persons_m"]["G2"])
     print(json.dumps(meta, indent=1), file=sys.stderr)

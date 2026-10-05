@@ -14,7 +14,9 @@ percentile, the distribution lane's normalization. Mexico (ENIGH 2024): househol
 root of household size, in PPP dollars. Log weights use income per head on both sides (see income_positions).
 Outputs (derived/): hendren_g.csv, income_positions.csv, log_weights_by_percentile.csv, weights_meta.json.
 --basis row4 counts the group on the account's row-4 persons (population_basis.py) and writes only
-income_positions_row4.csv: row 4 moves no other resident, so the other files do not depend on the basis.
+income_positions_row4.csv: row 4 moves no other resident, so the other files do not depend on the basis. --basis
+lineage (main case v5's 42.75M: row 4, with the G3+ records carrying the added people) writes only
+income_positions_lineage.csv, for the same reason.
 """
 import argparse
 import importlib.util
@@ -28,7 +30,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-from population_basis import BASES, reweight, suffixed
+from population_basis import BASES, lineage, reweight, suffixed
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
@@ -115,14 +117,22 @@ def income_positions(gtab, basis="cps"):
     B = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(B)
     d = B.load_cps()
-    if basis == "row4":
-        d = reweight(d, B.PATHS["cps"], gate)
+    if basis != "cps":
+        d = reweight(d, B.PATHS["cps"], gate, basis)
     other, tgt = d.other.to_numpy(), d.target.to_numpy()
     w = d.pw.to_numpy(float)
     usb = d.PRCITSHP.isin([1, 2, 3]).to_numpy()
     mexpar = d.PEFNTVTY.eq(303).to_numpy() | d.PEMNTVTY.eq(303).to_numpy()
     gen = np.select([tgt & ~usb & d.PENATVTY.eq(303).to_numpy(), tgt & usb & mexpar, tgt & usb & ~mexpar,
                      tgt, other], ["G1", "G2", "G3+", "group_other_foreign_born", "other_residents"], "")
+    if basis == "lineage":
+        # The lineage factor scales exactly this script's G3+ records and moves no other resident, so the scale the
+        # parties are ranked on is row 4's.
+        g3 = gen == "G3+"
+        r4 = d.pw_row4.to_numpy(float)
+        f = 1.0 + lineage()["added"] / r4[g3].sum()
+        gate("lineage_scales_exactly_g3plus", np.array_equal(w[g3], r4[g3] * f) and np.array_equal(w[~g3], r4[~g3]),
+             factor=f)
     rows, ref = [], {}
     # Log-income weights must use the income each person's consumption comes from: household money income per
     # head (money_pc). A household's relative change is its loss over its income, i.e. a per-person loss over
