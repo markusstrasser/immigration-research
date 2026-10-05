@@ -3,6 +3,13 @@ claude-opus-5-5
 
 Status: proposed; the parent commits. No total changes; no other lane's file was edited.
 
+[2026-10-05: on main case v5 (`oct05`: $390.29–461.24bn, 42.75M members), part 1 is $109.8 / 163.8bn (September 29:
+$102.5 / 152.8bn). Taxes at given ages are +$255.3 / 248.3bn (+$247.7 / 242.4bn), age structure +$17.1 / 59.4bn
+(+$12.9 / 48.6bn) and service use at given ages +$8.1 / −10.3bn (+$8.3 / −9.0bn), printed so that the parts add. Lower taxes at the same ages are 91% /
+83% of the excess over part 1, against 92% / 86% on September 29. The 3.04M people v5 adds are placed at the identified
+G3+'s ages (section "v5 case (oct05)" at the end). [CALCULATION: `decompose.cjs --case oct05|oct05_cash` →
+`derived/decomposition_oct05.csv`, `derived/decomposition_oct05_cash.csv`]]
+
 ## The parts
 
 Shapley means at the case's end specifications: 48 (shared allocation, low end) and 11 (personal allocation, high end).
@@ -712,3 +719,191 @@ node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs -
 - 2026-09-29 21:02 JST: resumed after the machine reboot of about 20:51 JST (the run had stopped mid-work). The code (decompose.cjs, profiles_sept29.py) and the sept29 outputs were in the working tree, complete (written 20:30–20:33 JST, before the reboot). Rerun here to a scratch directory: all three cases (sept27, sept29, sept29_cash) reproduce the working-tree files byte for byte, rc 0, 28 / 35 / 29 gates PASS. The gate logs were lost with /private/tmp, so every brief gate is rerun below.
 - 2026-09-29 21:03 JST: the brief's gates rerun (the logs of 20:30 were lost): gate 1 IDENTICAL 23/23 rc 0 and the tracked `derived/` equal to HEAD; gate 4 passes 1 and 2 IDENTICAL 23/23 rc 0.
 - 2026-09-29 21:23 JST: tables rebuilt (the helper was lost with /private/tmp) with printed parts that add, read back and checked; the owner-property frame probe rerun (+$0.34bn); this section written. No code or output changed after the gates.
+
+## v5 case (oct05), 2026-10-05
+
+**Verdict:** On the adopted v5 case ($390.2940–461.2431bn at specifications 48 / 11), 42.75M average residents would
+cost other residents **$109.8 / 163.8bn**. The group's excess over them is **$280.5 / 297.4bn**: taxes at given ages
+**+$255.3 / 248.3bn**, age structure **+$17.1 / 59.4bn** and service use at given ages **+$8.1 / −10.3bn** (Shapley
+means, low / high end). The September 29 reading holds. Lower taxes at the same ages are 91% / 83% of the excess
+(September 29: 92% / 86%), and the young age mix adds to the cost in every order. In the cash set ($307.38–383.41bn),
+taxes at given ages are 172% / 147% of a $179.4 / 203.0bn excess (September 29: 171% / 150%).
+
+v5 adds 3.04M people and moves the larger group's responses: +$18.88 / 26.40bn on the case. Part 1 takes $7.28 /
+11.04bn of it, age structure $4.15 / 10.78bn, taxes at given ages $7.65 / 5.88bn and use −$0.20 / −1.30bn. The added
+people are placed at the identified G3+'s ages, where 43% are children. [CALCULATION: `decompose.cjs --case oct05` and
+`--case oct05_cash` → `derived/*_oct05.*`, `derived/*_oct05_cash.*`] [FRAMING-SENSITIVE]
+
+Status: proposed; the lead commits. Model self-report: claude-opus-5-5.
+
+### The parts
+
+Shapley means at the case's end specifications 48 (low) and 11 (high). Per member divides by the 42,752,213 people v5
+prices: the row-4 union plus the added people.
+
+| Part | $bn, low / high | $ per member | Share of the case | Cash set, $bn | September 29, $bn | Change, $bn |
+|---|---|---|---|---|---|---|
+| 1. Shared | 109.77 / 163.80 | 2,568 / 3,832 | 28.1% / 35.5% | 128.00 / 180.45 | 102.49 / 152.76 | +7.28 / +11.04 |
+| 2. Age structure | 17.11 / 59.40 | 400 / 1,389 | 4.4% / 12.9% | −76.44 / −33.61 | 12.96 / 48.62 | +4.15 / +10.78 |
+| 3. Taxes at given ages (with the production term) | 255.33 / 248.31 | 5,972 / 5,808 | 65.4% / 53.8% | 308.71 / 297.77 | 247.68 / 242.43 | +7.65 / +5.88 |
+| 4. Service use at given ages | 8.08 / −10.27 | 189 / −240 | 2.1% / −2.2% | −52.89 / −61.20 | 8.28 / −8.97 | −0.20 / −1.30 |
+| **The case** | **390.29 / 461.24** | **9,129 / 10,789** | 100% | 307.38 / 383.41 | 371.41 / 434.84 | +18.88 / +26.40 |
+
+[CALCULATION: `derived/decomposition_oct05.csv`, `decomposition_oct05_cash.csv`, `decomposition_sept29.csv`. Each
+column is printed by largest remainder so that it adds: part 1 prints 109.77 for 109.777, $3,832 for $3,831.4, and the
+cash set's 128.00 for 127.993.] September 29 was $9,353 / 10,950 per member on 39.71M.
+
+The change holds the 3.04M added people and the larger group's responses, which move the identified union by −$0.30 /
+−0.32bn (the lineage lane's arm b). The order matters as before (six orders, `decomposition_oct05.csv`):
+
+| Part | Low end, $bn | High end, $bn |
+|---|---|---|
+| Age structure | 6.2 to 28.1 | 34.5 to 84.2 |
+| Taxes at given ages | 249.6 to 261.1 | 229.7 to 266.9 |
+| Service use at given ages | 2.9 to 13.3 | −16.5 to −4.0 |
+
+The age part is positive in every order at both ends, and in every order taxes at given ages fall short of the excess.
+
+### Where the change lands
+
+The change from September 29 by line group, Shapley means, $bn, low / high:
+
+| Line group | 1. Shared | 2. Age | 3. Taxes at given ages | 4. Use at given ages | Change in the case |
+|---|---|---|---|---|---|
+| Income taxes (federal, state, other personal) | −25.9 / −25.9 | 1.7 / 5.8 | 6.4 / 4.9 | — | −17.8 / −15.2 |
+| Payroll taxes and contributions | −17.4 / −17.5 | 0.8 / 4.1 | 2.3 / 1.2 | — | −14.3 / −12.2 |
+| Consumption taxes | −10.9 / −10.9 | 0.9 / 0.9 | 0.3 / 0.3 | — | −9.7 / −9.7 |
+| Property taxes (item 5's three lines) | −4.0 / −4.0 | 0.5 / 0.5 | 0.7 / 0.7 | — | −2.8 / −2.8 |
+| Production term (P + F) | — | 0.1 / 0.0 | −0.4 / −0.2 | — | −0.3 / −0.2 |
+| Other receipts | −0.2 / −0.2 | 0.0 / 0.1 | 0.0 / −0.1 | — | −0.2 / −0.2 |
+| Schools (with K-12 capital) | 10.7 / 10.9 | 3.7 / 8.4 | — | 1.3 / −0.6 | 15.7 / 18.7 |
+| Colleges, other education, education benefits | 1.5 / 1.6 | 0.1 / 0.2 | — | 0.2 / 0.1 | 1.8 / 1.9 |
+| Medicaid (with uncompensated care) | 8.6 / 8.6 | 0.8 / 0.8 | — | −1.0 / −1.0 | 8.4 / 8.4 |
+| Justice (with its capital and state price) | 4.7 / 4.8 | −0.1 / −0.1 | — | 0.4 / 0.4 | 5.0 / 5.1 |
+| Refundable tax credits | 2.0 / 2.1 | 0.8 / −0.4 | — | −0.4 / 0.2 | 2.4 / 1.9 |
+| Social Security and Medicare | 21.1 / 21.1 | −3.6 / −6.4 | −1.7 / −0.9 | −0.5 / −0.5 | 15.3 / 13.3 |
+| Health services and veterans (with state price) | 5.0 / 5.0 | −1.5 / −1.8 | — | −0.3 / −0.2 | 3.2 / 3.0 |
+| Cash, food and housing benefits (with public housing's deficit) | 6.0 / 6.0 | 0.2 / −1.0 | — | 0.5 / 0.9 | 6.7 / 5.9 |
+| Roads and other economic affairs (with the miles lines) | 2.2 / 3.8 | −0.2 / −0.3 | — | −0.2 / −0.4 | 1.8 / 3.1 |
+| Per-head government and enterprises | 3.9 / 5.6 | 0.0 / 0.0 | — | 0.0 / 0.0 | 3.9 / 5.6 |
+| Care, shelter and audit constants | 0.0 / 0.0 | — | — | −0.2 / −0.2 | −0.2 / −0.2 |
+| **Total** | **7.3 / 11.0** | **4.2 / 10.8** | **7.6 / 5.9** | **−0.2 / −1.3** | **18.9 / 26.4** |
+
+[CALCULATION: `decomposition_lines_oct05.csv` less `decomposition_lines_sept29.csv`. One decimal, controlled rounding
+so that every row and column adds: 7 / 4 cells sit 0.1 off their nearest rounding.]
+
+- **Part 1** takes $7.3 / 11.0bn: 3.04M more people at national per-capita taxes and use.
+- **Age structure** takes $4.2 / 10.8bn. The added people's children add $3.7 / 8.4bn of schools. Their working-age share
+  is lower than the nation's, which adds $2.5 / 9.9bn of income and payroll taxes not paid. Social Security and Medicare
+  take $3.6 / 6.4bn off. Medicare gives $3.4 / 4.0bn of it: Parts B and D follow their few retirees, and the Part A
+  accrual their smaller share of covered workers. Social Security's accrual gives $0.1 / 2.3bn, since children accrue no
+  pensions (`summary_oct05.json` → `v4.line_parts`).
+- **Taxes at given ages** take $7.6 / 5.9bn, $2.5k / 1.9k per added person against the union's $6.2k / 6.1k: the added
+  people fall short of national per-age taxes by less than the union does [INFERENCE: the rule below spreads their
+  amounts over the group's profile].
+- **Use at given ages** gives −$0.2 / 1.3bn: Medicaid −$1.0bn, as the added people draw less of it than the union does
+  at the same ages.
+
+In the cash set the change is +$12.68 / 21.59bn: part 1 +$8.46 / 12.16bn, age −$3.36 / +5.06bn, taxes at given ages
++$9.50 / 6.89bn and use −$1.92 / 2.52bn. Its age part differs from the set's mainly in Social Security and Medicare.
+Charged as benefits, the added people's few retirees save $11.4 / 12.5bn there, against $3.6 / 6.4bn in the set, so the
+age part falls at the low end. [CALCULATION: `decomposition_lines_oct05_cash.csv` less
+`decomposition_lines_sept29_cash.csv`]
+
+### Rules designed for v5
+
+v4's rules (section above) apply to v5's payload. The rules below apply only to v5's payload, and the September 27 and 29
+outputs are unchanged (gates below).
+
+| Line(s) | Rule used | Why | Alternative beside | Its effect, $bn low / high |
+|---|---|---|---|---|
+| The added people, every line | Placed at the identified G3+'s ages (`profiles_oct05.py`: convention a, the ASEC person weights, this lane's bins). Every row-4 union key vector is scaled by (union + added) / union in each bin, so each added person carries the union's per-person key at their age. Their own amounts (the lineage's edits) enter through each line's kappa, as the corrections do. [ASSUMPTION] | The Consumers row of `main_case_2026_10_05`: they are priced at G3+'s ages. This lane has no per-age keys for G3+ members or third-plus whites | each added person at G3+ members' or whites' own per-age keys | not computed [GAP]. It moves dollars among parts 2–4 only: part 1 and the case stay |
+| `public_order_safety` (justice) | the added people's keyed parts at the union's relative risk, theta 1.101 | the same indirect standardization as the union's | none | — |
+| `social_security` (accrual) | one ratio for the whole group: the case's amount over its OASDI receipts, 0.9724 / 0.9722 (the union's ratio_net 0.9737, the lineage's own 0.958 / 0.953) [ASSUMPTION] | the payload's rule, read at every state, at the group's ratio | two ratios, the union's and the lineage's | not computed: it needs the lineage's receipts by age |
+| `medicare` | the Part A accrual is $44.45 / 44.00bn: the union's $41.14bn plus the lineage's $3.31 / 2.86bn (its set Medicare less 0.625 × its cash Medicare) | the lineage's Parts B and D are its cash ones, as the union's are | none | — |
+| `federal_income_tax` | the tax on current benefits is $2.38 / 2.07bn: the union's $2.09 / 1.82bn plus the lineage's $0.29 / 0.25bn (its cash less its set income tax) | the payload's rule | none | — |
+| `lane_constants` | the lineage's edit (−$0.19bn) is the added people's own, 0 at U = N; at U = N row 8 is c × v5's factor, $1.890bn | it is their share of the line | split out the $0.07bn of the edit that is G3+'s per-member share of row 8 | part 1 +0.07, use −0.07 |
+| Per member | 42,752,213 | the count v5 prices | 39,712,493 | per-member figures × 1.077 |
+| Part 1 at the published count | not computed | the added people are counted on the account's frame only | — | — |
+| Linearity note | doubles v5's group share, 0.1292 | the note doubles the case's own group | — | — |
+
+[CALCULATION: `summary_oct05.json` → `v5`; the printed accrual amounts are rounded so that they add (the lineage's
+Part A accrual prints 3.31 for 3.317, its benefit tax 0.29 for 0.285).]
+
+### Would change it
+
+| Rule | 1. Shared | 2. Age | 3. Taxes | 4. Use | The case |
+|---|---|---|---|---|---|
+| Central (this section) | 109.8 / 163.8 | 17.1 / 59.4 | 255.3 / 248.3 | 8.1 / −10.3 | 390.3 / 461.2 |
+| National money's worth at national per-age taxes (0.901 for the group's 0.972) | 97.9 / 152.0 | 16.9 / 59.7 | 267.4 / 259.8 | 8.1 / −10.3 | 390.3 / 461.2 |
+| Part A accrual scaled by HI receipts instead of covered workers | 129.6 / 186.6 | 17.4 / 57.1 | 235.2 / 227.8 | 8.1 / −10.3 | 390.3 / 461.2 |
+| Justice profile flat over 18–64 | 109.8 / 163.8 | 14.4 / 56.6 | 255.3 / 248.3 | 10.8 / −7.5 | 390.3 / 461.2 |
+| Corrections, the lineage's amounts with them, as fixed dollars | 109.8 / 163.8 | 13.8 / 55.9 | 255.4 / 247.6 | 11.3 / −6.1 | 390.3 / 461.2 |
+
+[CALCULATION: `summary_oct05.json` → `sensitivities`; each row printed by largest remainder so that it adds]
+
+Under every rule, taxes at given ages are 90–92% of the excess at the low end and 83–84% at the high end. Each rule moves
+the parts by about what it moved them on September 29.
+
+### Controls and gates
+
+`decompose.cjs` gates (exit 1 on any failure): oct05 41 PASS, oct05_cash 35 PASS. sept29 (35), sept29_cash (29) and
+sept27 (28) are unchanged. The new gates:
+- The age file's G3+ is the payload's identified_g3plus, 14,342,574.6. The row-4 frame held the account's 39,712,493.3
+  and now holds the lineage's 42,752,212.9 (1e-3 persons).
+- The payload's last 336 edits are the package's lineage edits (`meta.lineage.edits`), row 8's last.
+- The set's and the cash set's lineage edits are the same cells and differ on Social Security, Medicare and federal
+  income tax only.
+- The lineage's v4 group share is the finite-removal memo's s.
+- Row 8 is v4's $1.898bn plus the lineage's row-8 edit (−$0.0080bn), c × v5's factor (1e-12).
+- The per-member count is the lineage's 42,752,213. This gate replaces v4's.
+- Two checks per end join the key-share checks (52 per end in the set, 47 in the cash set). The September 29 union's
+  Social Security is ratio_net × its OASDI receipts (1e-9), and the lineage's Part A accrual and benefit tax are
+  positive.
+
+The other gates pass as before:
+- (b) the corrected union reproduces $390.2940 / 461.2431bn and the cash set $307.3764 / 383.4093bn (relative 1e-12).
+- Per-head lines' kappa is 1.0000000 on v5's frame: the lineage prices per-head lines at the union's per-capita amounts.
+- (a) the parts add in all six orders (worst 1.1e-13).
+- (c) twice part 1 holds (1e-9).
+
+`profiles_oct05.py` has 4 gates:
+- G3+ (convention a) is the generation lane's 14,342,574.606276 (1e-3 persons).
+- The bins add.
+- Every bin holds members (the smallest holds 64,752).
+- The five-year shares reproduce `white_lines.json`'s g3plus structure (worst 1.4e-8).
+
+`scripts/rerun_lane.py` ran nine commands: the six of September 29, plus `profiles_oct05.py`, `decompose.cjs --case oct05`
+and `--case oct05_cash`. Result: IDENTICAL, 33/33 files, rc 0 (23:52:29–23:52:52 JST, offline). `git diff --quiet` on
+`derived/` gave rc 0: the tracked September 27 and 29 outputs are HEAD's bytes.
+
+### Files
+
+Written (this lane only):
+- `decompose.cjs` (modified): `--case oct05 | oct05_cash`. The September 27 and 29 outputs are unchanged.
+- `profiles_oct05.py` (new, 4 gates) → `derived/g3plus_ages_oct05.csv`.
+- New outputs: `derived/decomposition_oct05.csv`, `decomposition_lines_oct05.csv`, `states_oct05.csv`,
+  `summary_oct05.json`, and the same four with `_oct05_cash`. `summary_oct05*.json` → `v5` holds the rules, the added
+  people by bin, the lineage's accrual amounts and row 8's part in its lane-constants edit.
+
+Read, not edited:
+- `main_case_2026_10_05`: `package.cjs`, `corrections.json`, `corrections_cash.json` and `summary.json`.
+- `main_case_lineage_2026_10_05/derived/white_lines.json`.
+- The generation lane's `frame.py`, a read-only import through `profiles.py`.
+
+### Reproduce
+
+```sh
+# from the repository root, after the September 29 commands
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/main_case_decomposition_2026_09_29/profiles_oct05.py
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct05
+node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs --case oct05_cash
+```
+
+### Log (times from `date`, JST)
+
+- 2026-10-05 23:46:56: `profiles_oct05.py` run, 4 gates passing.
+- 23:51:28: first `--case oct05` run to scratch, all gates passing; then oct05_cash; both written to `derived/`, byte-equal
+  to the scratch runs.
+- 23:52:29–23:52:52: `rerun_lane.py` IDENTICAL 33/33, rc 0.
+- 2026-10-06 00:00:30: tables computed from the derived files; this section written after.

@@ -65,6 +65,20 @@
  *   roads_vmt_*           the group's persons aged 5 and over across ages (the roads lane's miles are per person 5+),
  *                         0 at U = N;
  *   national-scale edits  a scaled line's uncorrected amount is model.json's cell times the payload's scale.
+ * oct05: the main case adopted on 2026-10-05 (v5, main_case_2026_10_05, its corrections.json through its package);
+ * oct05_cash: its cash set (corrections_cash.json through the package's CASH). v5 is v4 plus the 3.04M people the lineage
+ * adds (meta.lineage.counts.added), whose amounts are its edits (meta.lineage.edits). v4's rules apply, and these
+ * (RESULT.md, "v5 case (oct05)"):
+ *   the added people  placed at the identified G3+'s ages (profiles_oct05.py), each at the union's per-person key in
+ *                     its age bin: every row-4 union key vector is scaled by (union + added) / union in each bin. The
+ *                     lineage's measured amounts enter through kappa, as the corrections do. The published frame stays
+ *                     model.json's (its key shares are gated);
+ *   justice           the added people's keyed parts at the union's relative risk theta;
+ *   pension accrual   social_security at one ratio for the whole group, the case's amount over its OASDI receipts; the
+ *                     lineage's Part A accrual is its set amount less (1 - part_a_share) x its cash amount, and its tax
+ *                     on current benefits its cash income tax less its set income tax (the two payloads' lineage edits
+ *                     differ on these three lines only, gated);
+ *   finite removal    the linearity note doubles v5's group share (meta.lineage.s.v5).
  */
 "use strict";
 const fs = require("fs");
@@ -78,12 +92,14 @@ const CASES = {
   sept27: { lane: "main_case_long_run_2026_09_27", suffix: "" },
   sept29: { lane: "main_case_2026_09_29", suffix: "_sept29" },
   sept29_cash: { lane: "main_case_2026_09_29", suffix: "_sept29_cash", payload: "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json" },
+  oct05: { lane: "main_case_2026_10_05", suffix: "_oct05", lineage: true },
+  oct05_cash: { lane: "main_case_2026_10_05", suffix: "_oct05_cash", lineage: true, cash: "main_case_2026_10_05/derived/corrections_cash.json" },
 };
 const CASE_KEY = argOf("--case", "sept27");
 const CASE_DEF = CASES[CASE_KEY];
 if (!CASE_DEF) throw new Error(`[BLOCKED] unknown case ${CASE_KEY}: ${Object.keys(CASES).join(", ")}`);
 const P0 = require(path.join(FISCAL, CASE_DEF.lane, "package.cjs"));
-const P = CASE_DEF.payload ? P0.forPayload(P0.readJson(CASE_DEF.payload)) : P0;
+const P = CASE_DEF.payload ? P0.forPayload(P0.readJson(CASE_DEF.payload)) : CASE_DEF.cash ? P0.CASH : P0;
 const { Engine, MODEL, readJson } = P;
 const IN = path.join(HERE, "derived");
 const OUT = path.resolve(argOf("--out-dir", IN));
@@ -101,10 +117,10 @@ const REF = MODEL.receipts.reference;
 
 // ---------------------------------------------------------------------------------------------------
 // The case.
-const CORR_FILE = CASE_DEF.payload || `${CASE_DEF.lane}/derived/corrections.json`;
+const CORR_FILE = CASE_DEF.payload || CASE_DEF.cash || `${CASE_DEF.lane}/derived/corrections.json`;
 const CORR = readJson(CORR_FILE);
 const CASE_SUMMARY = readJson(`${CASE_DEF.lane}/derived/summary.json`);
-const CASE = CASE_KEY === "sept29_cash" ? CASE_SUMMARY.cash_set.band_bn : CASE_SUMMARY.main_case;
+const CASE = CASE_KEY.endsWith("_cash") ? CASE_SUMMARY.cash_set.band_bn : CASE_SUMMARY.main_case;
 console.log(CASE_KEY === "sept27" ? "[case]" : `[case ${CASE_KEY}]`);
 gate(CASE_KEY === "sept27" ? "corrections.json is main_case_long_run_2026_09_27's payload" : `${CORR_FILE} is the package's payload`,
   JSON.stringify(P.correctionsPayload()) === JSON.stringify(CORR), `${CORR.lines.length} lines, ${CORR.edits.length} edits`);
@@ -135,10 +151,30 @@ const EDGES = BINS.published.both["extra|pop"].bins;
 for (const [w, byA] of Object.entries(BINS)) for (const [a, byK] of Object.entries(byA)) for (const [k, t] of Object.entries(byK)) {
   if (t.bins.length !== EDGES.length) throw new Error(`[BLOCKED] ${w}/${a}/${k}: ${t.bins.length} bins, not ${EDGES.length} (a key in both profile files?)`);
 }
+// v5: the lineage's added people at the identified G3+'s ages (profiles_oct05.py), each at the union's per-person key in
+// its age bin. Only the row-4 frame, the one the case's stack uses, takes them; the published frame stays model.json's.
+const LINEAGE = CASE_DEF.lineage ? (() => {
+  const L = CORR.meta.lineage, rows = readCsv(path.join(IN, "g3plus_ages_oct05.csv"));
+  if (rows.map((r) => Number(r.bin)).join() !== EDGES.join()) throw new Error("[BLOCKED] g3plus_ages_oct05.csv is not in the age bins");
+  const g3 = rows.map((r) => Number(r.g3plus)), G3 = sum(g3), M = L.counts.added;
+  const pop4 = BINS.row4.both["extra|pop"].union.slice();
+  const added = g3.map((x) => M * x / G3);
+  const scale = pop4.map((p, b) => (p + added[b]) / p);
+  for (const byK of Object.values(BINS.row4)) for (const t of Object.values(byK)) t.union = t.union.map((x, b) => x * scale[b]);
+  return { L, M, G3, pop4, added, scale };
+})() : null;
 const POP = { published: BINS.published.both["extra|pop"], row4: BINS.row4.both["extra|pop"] };
 const ARREST = readCsv(path.join(IN, "arrest_profile.csv")).map((r) => Number(r.share));
 const FRAME = Object.fromEntries(Object.entries(POP).map(([w, p]) => [w, { NG: sum(p.union), NC: sum(p.national) }]));
 const HF = FRAME.published.NC / MODEL.meta.resident_population;  // the account's household fraction on spending
+if (LINEAGE) {
+  const c = LINEAGE.L.counts;
+  gate("v5: the ages' G3+ is the payload's identified_g3plus (1e-6 persons)", Math.abs(LINEAGE.G3 - c.identified_g3plus) < 1e-6,
+    `${LINEAGE.G3.toFixed(6)} vs ${c.identified_g3plus}`);
+  gate("v5: the row-4 frame held the account's union, and now holds the lineage (1e-3 persons)",
+    Math.abs(sum(LINEAGE.pop4) - c.account_union) < 1e-3 && Math.abs(FRAME.row4.NG - c.lineage_population) < 1e-3,
+    `${sum(LINEAGE.pop4).toFixed(4)} + ${LINEAGE.M.toFixed(4)} = ${FRAME.row4.NG.toFixed(4)} vs ${c.lineage_population}`);
+}
 
 // Key totals at the four (age, profile) states on a frame.
 function stateTotals(u, n, pop) {
@@ -188,6 +224,12 @@ function justiceTotals(weights, profile, groupKeyed) {
   const theta = groupKeyed / atGroupAges;
   const ph = PH * NG / NC;
   return { V: POS.national_bn, theta, T: { GG: ph + groupKeyed, GN: ph + atGroupAges, NG: ph + theta * NP * NG / NC, NN: (PH + NP) * NG / NC } };
+}
+// v5: the added people's keyed parts at the union's relative risk (theta held on the row-4 frame).
+function lineageKeyed(weights, profile, groupKeyed) {
+  if (!LINEAGE || weights !== "row4") return groupKeyed;
+  const pop = POP.row4, perPerson = profile.map((x, b) => NP * x / pop.national[b]);
+  return groupKeyed * sum(perPerson.map((j, b) => j * pop.union[b])) / sum(perPerson.map((j, b) => j * LINEAGE.pop4[b]));
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -257,6 +299,22 @@ if (ACCRUAL) {
     inputs: { group_gross_central: gross, national_trust_fund_scheduled: nat, group_trust_fund_scheduled: Number(arm[9]),
       national_future_share_taxed: PENSION.benefit_tax.future_share_national_timing, group_future_share_taxed: PENSION.benefit_tax.future_share_group } };
 }
+// v5: the lineage's edits, the set's and the cash set's. A line's lineage amount is the sum of its edits at an allocation
+// (receipts at the reference incidence rule).
+const LINEAGE_EDITS = LINEAGE ? { set: P0.LINEAGE_EDITS, cash: P0.CASH.LINEAGE_EDITS } : null;
+const lineageAmount = (which, side, id, key, a) => sum(LINEAGE_EDITS[which].filter((e) => e.side === side && e.line === id
+  && (side === "receipt" ? e.scenario === REF : e.key === key)).map((e) => e.by[a]));
+if (LINEAGE) {
+  const E = LINEAGE.L.edits;
+  gate(`v5: ${CORR_FILE}'s last ${E.count} edits are the package's lineage edits (meta.lineage.edits), row 8's last`,
+    E.first + E.count === CORR.edits.length && JSON.stringify(CORR.edits.slice(E.first)) === JSON.stringify(P.LINEAGE_EDITS)
+    && E.row8_edit_index === CORR.edits.length - 1 && CORR.edits[E.row8_edit_index].line === P.SYN.constants, `${E.first} + ${E.count}`);
+  const S = LINEAGE_EDITS.set, C = LINEAGE_EDITS.cash;
+  const differ = [...new Set(S.flatMap((e, i) => (Object.keys(e.by).some((k) => e.by[k] !== C[i].by[k]) ? [e.line] : [])))].sort();
+  gate("v5: the set's and the cash set's lineage edits are the same cells and differ on the three accrual lines only",
+    S.length === C.length && S.every((e, i) => e.side === C[i].side && e.line === C[i].line && e.key === C[i].key && e.scenario === C[i].scenario)
+    && differ.join() === "federal_income_tax,medicare,social_security", differ.join(", "));
+}
 
 function planFor(spec, opts) {
   const o = Object.assign({ frame: "row4", justice: "arrests", corrections: "ratio" }, opts || {});
@@ -325,7 +383,7 @@ function planFor(spec, opts) {
         const pubPh = PH * FRAME.published.NG / FRAME.published.NC;
         const groupKeyed = cell.share * POS.national_bn - pubPh;  // the group's administrative keyed parts, key units
         const prof = JUSTICE_PROFILES[o.justice];
-        const pub = justiceTotals("published", prof, groupKeyed), fr = justiceTotals(W, prof, groupKeyed);
+        const pub = justiceTotals("published", prof, groupKeyed), fr = justiceTotals(W, prof, lineageKeyed(W, prof, groupKeyed));
         const U = scaledOn(cell, pub, fr, `${r.id}/${r.key}`);
         Object.assign(row, withCorrections(U, r.amount_bn), { theta: fr.theta });
       } else if (side === "spending" && r.id === MEDICAID && r.key.startsWith("uninsured_use")) {
@@ -405,17 +463,35 @@ function planFor(spec, opts) {
     if (o.corrections === "none") throw new Error("[BLOCKED] the accrual reads the corrected receipts: no corrections-off run on v4");
     const ss = rowOf("social_security"), med = rowOf("medicare"), fit = rowOf("federal_income_tax");
     const oasdi = ACCRUAL.oasdi_lines.map(rowOf), se = rowOf(ACCRUAL.se_line), hi = ["employee_hi", "employer_hi"].map(rowOf);
-    const share = ACCRUAL.se_oasdi_share;
+    const share = ACCRUAL.se_oasdi_share, sA = ACCRUAL.part_a_share;
     const oasdiAt = (alpha, rho) => sum(oasdi.map((x) => x.amount(alpha, rho))) + share * se.amount(alpha, rho);
     const hiAt = (alpha, rho) => sum(hi.map((x) => x.amount(alpha, rho))) + (1 - share) * se.amount(alpha, rho);
+    // v5: the lineage's own amounts on the accrual lines. Social Security takes one ratio for the whole group, the
+    // case's amount over its OASDI receipts; the lineage's Part A accrual is its set Medicare less its Parts B and D
+    // ((1 - part_a_share) x its cash Medicare); its tax on current benefits is its cash income tax less its set one.
+    const lin = LINEAGE ? (() => {
+      const at = (which, row) => lineageAmount(which, row.side, row.id, row.key, a);
+      const oasdiLin = sum(oasdi.map((x) => at("set", x))) + share * at("set", se), oasdiGG = oasdiAt("G", "G");
+      const x = { social_security_bn: at("set", ss), oasdi_receipts_bn: oasdiLin, ratio_group: ss.A / oasdiGG,
+        medicare_set_bn: at("set", med), medicare_cash_bn: at("cash", med), income_tax_set_bn: at("set", fit), income_tax_cash_bn: at("cash", fit) };
+      Object.assign(x, { ratio_lineage: x.social_security_bn / oasdiLin, part_a_accrual_bn: x.medicare_set_bn - (1 - sA) * x.medicare_cash_bn,
+        benefit_tax_bn: x.income_tax_cash_bn - x.income_tax_set_bn });
+      const union29 = ACCRUAL.ratio_net * (oasdiGG - oasdiLin);
+      checks.push({ label: "v5: the September 29 union's Social Security is ratio_net x its OASDI receipts (the case less the lineage)",
+        ok: Math.abs(ss.A - x.social_security_bn - union29) < 1e-9, detail: `${ss.A - x.social_security_bn} vs ${union29}` });
+      checks.push({ label: "v5: the lineage's Part A accrual and tax on current benefits are positive", ok: x.part_a_accrual_bn > 0 && x.benefit_tax_bn > 0,
+        detail: `${x.part_a_accrual_bn}, ${x.benefit_tax_bn}` });
+      return x;
+    })() : null;
     // Social Security: ratio_net x the OASDI receipts of the state's ages and receipts profile (factor R).
-    const ratioAt = (rho) => (rho === "N" && o.accrual === "national_ratio" ? RATIO_NATIONAL.ratio_net : ACCRUAL.ratio_net);
+    const ratioGroup = lin ? lin.ratio_group : ACCRUAL.ratio_net;
+    const ratioAt = (rho) => (rho === "N" && o.accrual === "national_ratio" ? RATIO_NATIONAL.ratio_net : ratioGroup);
     Object.assign(ss, { cls: "accrual", factor: "R", kappa: undefined });
     ss.amount = (alpha, rho) => ratioAt(rho) * oasdiAt(alpha, rho);
     // Medicare: Parts B and D on the medicare key at the use profile, the Part A accrual at the ages and receipts
     // profile, scaled by covered workers (Part A turns on insured status, not on the tax paid) or, as the alternative,
     // by the HI receipts.
-    const sA = ACCRUAL.part_a_share, PA = ACCRUAL.part_a_accrual_bn;
+    const PA = ACCRUAL.part_a_accrual_bn + (lin ? lin.part_a_accrual_bn : 0);
     const covered = keyTotals(W, a, "receipt|positive_fica_worker");
     const partA = (alpha, rho) => PA * (o.part_a === "hi_scaled" ? hiAt(alpha, rho) / hiAt("G", "G") : covered.T[alpha + rho] / covered.T.GG);
     const cashMed = withCorrections(med.U, (med.A - PA) / (1 - sA));
@@ -424,7 +500,7 @@ function planFor(spec, opts) {
     med.amount = (alpha, pi) => med.at(alpha, pi, pi);
     // Federal income tax: its key at the receipts profile, less the tax on current Social Security benefits (the benefit
     // key): the payload's dollars at R = G; at R = N the national rate on the national line.
-    const btKey = keyTotals(W, a, "spending|social_security"), BT = ACCRUAL.benefit_tax_receipt_bn[a];
+    const btKey = keyTotals(W, a, "spending|social_security"), BT = ACCRUAL.benefit_tax_receipt_bn[a] + (lin ? lin.benefit_tax_bn : 0);
     const btNational = PENSION.benefit_tax.current_rate_nation * lineOf("social_security").national_bn;
     const bt = (alpha, rho) => (rho === "G" ? BT * btKey.T[alpha + "G"] / btKey.T.GG : btNational * btKey.T[alpha + "N"] / btKey.V);
     const cashFit = withCorrections(fit.U, fit.A + BT);
@@ -437,7 +513,8 @@ function planFor(spec, opts) {
       oasdi_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, oasdiAt(s[0], s[1])])),
       part_a_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, partA(s[0], s[1])])),
       benefit_tax_bn: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, bt(s[0], s[1])])),
-      medicare_cash_kappa: cashMed.kappa, income_tax_cash_kappa: cashFit.kappa });
+      medicare_cash_kappa: cashMed.kappa, income_tax_cash_kappa: cashFit.kappa }, lin ? { lineage: Object.assign(lin, {
+      group_part_a_accrual_bn: PA, group_benefit_tax_bn: BT }) } : {});
   }
   // A row that reads other rows returns the case's own amount at the group's state, as withCorrections does (its
   // formula there is gated above to 1e-9).
@@ -633,7 +710,10 @@ for (const [end, i] of ENDS) {
 const R26 = readJson("finite_response_2026_09_26/derived/r_values.json");
 const LRJ = P.LR;
 const rOf = (b, s) => (1 - Math.pow(1 - s, b)) / s;
-const S0 = R26.s_national_memo;
+// v5 doubles its own group share; v4's is the memo's.
+if (LINEAGE) gate("v5: the lineage's v4 group share is the finite-removal memo's s", LINEAGE.L.s.v4 === R26.s_national_memo,
+  `${LINEAGE.L.s.v4} vs ${R26.s_national_memo}; v5 ${LINEAGE.L.s.v5}`);
+const S0 = LINEAGE ? LINEAGE.L.s.v5 : R26.s_national_memo;
 {
   for (const [end, i] of ENDS) {
     const spec = SPECS[i], reading = spec.reading;
@@ -694,8 +774,9 @@ for (const [name, opts] of SENS) {
     }
   }
 }
-sens.part1_at_published_count = {};
-for (const [end, i] of ENDS) {
+// v5's added people are counted on the account's frame (row 4) only, so part 1 has no published-count reading.
+sens.part1_at_published_count = LINEAGE ? { not_computed: "the lineage's added people are counted on the account's frame (audit row 4) only" } : {};
+for (const [end, i] of LINEAGE ? [] : ENDS) {
   const r = planFor(SPECS[i], { frame: "published" });
   const c = P.evaluateFull(stateModel(r, "NNN"), SPECS[i]).cost_bn;
   sens.part1_at_published_count[end] = { part1_bn: c, part1_row4_bn: D[end].shared, difference_bn: c - D[end].shared };
@@ -707,8 +788,11 @@ fs.mkdirSync(OUT, { recursive: true });
 const f6 = (x) => (Math.abs(x) < 5e-13 ? 0 : x).toFixed(6);
 // Per member: the September 27 outputs divide by the record's 40,896,574, as they were written; v4's divide by the
 // 39,712,493 people the account prices (the row-4 union, this lane's finding, which the decision of 2026-09-29 adopts).
+// v5's divide by the lineage's 42,752,213, the row-4 union plus the added people.
 const PER_MEMBER = SUFFIX ? FRAME.row4.NG : MEMBERS;
-if (SUFFIX) gate("v4's per-member count is the account's 39,712,493 (the row-4 union)", Math.round(PER_MEMBER) === 39712493, PER_MEMBER.toFixed(2));
+if (SUFFIX && !LINEAGE) gate("v4's per-member count is the account's 39,712,493 (the row-4 union)", Math.round(PER_MEMBER) === 39712493, PER_MEMBER.toFixed(2));
+if (LINEAGE) gate("v5's per-member count is the lineage's 42,752,213 (the row-4 union plus the added people)",
+  Math.round(PER_MEMBER) === 42752213 && Math.abs(PER_MEMBER - LINEAGE.L.counts.lineage_population) < 1e-3, PER_MEMBER.toFixed(2));
 const perMember = (bn) => Math.round(bn * 1e9 / PER_MEMBER);
 const lines = [["part", "order", "low_bn", "high_bn", "per_member_low", "per_member_high", "share_of_total", "share_low", "share_high"].join(",")];
 const shareRow = (lo, hi) => [f6((lo + hi) / (CASE[0] + CASE[1])), f6(lo / CASE[0]), f6(hi / CASE[1])];
@@ -820,6 +904,40 @@ if (IS_V4) {
     road_lines: [...ROAD_LINES],
     classes: Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(["state_price", "roads_vmt", "follows_rental", "profile_acs", "accrual",
       "medicare_accrual", "income_tax_less_benefit_tax"].map((c) => [c, rowsOf(end, c).map((r) => r.id)]))])),
+  };
+}
+if (LINEAGE) {
+  const E = LINEAGE.L.edits, row8v4 = P.CONSTANTS.row8.c * P0.SEPT29.RESPONSES.row8_factor;
+  gate("v5: row 8 is v4's plus the lineage's row-8 edit (c x row8_factor at each share)", Math.abs(row8v4 + E.row8_edit_bn - ROW8) < 1e-12,
+    `${row8v4} + ${E.row8_edit_bn} vs ${ROW8}`);
+  // The lineage's lane-constants edit prices G3+ members at G3+'s share of the September 29 cell, row 8 included (whites
+  // carry none): the part of it that is row 8.
+  const row8InLineage = Object.fromEntries(ENDS.map(([end]) => {
+    const a = main[end].plan.a, all = lineageAmount(CASE_DEF.cash ? "cash" : "set", "spending", P.SYN.constants, "k", a);
+    const cell29 = UNION.spending.lines.find((l) => l.id === P.SYN.constants).keys.k[a].target_bn - all, people = all - E.row8_edit_bn;
+    return [end, { allocation: a, lineage_edit_bn: people, september_29_cell_bn: cell29, row8_part_bn: people * row8v4 / cell29 }];
+  }));
+  summary.v5 = {
+    rules: {
+      added_people: "meta.lineage.counts.added placed at the identified G3+'s ages (profiles_oct05.py: convention a, the ASEC person weights, "
+        + "this lane's bins); every row-4 union key vector is scaled by (union + added) / union in each bin, so the added people carry the "
+        + "union's per-person key at their ages; the lineage's own amounts (its edits) enter through each line's kappa, as the corrections "
+        + "do; the published frame stays model.json's",
+      justice: "the added people's keyed parts at the union's relative risk theta on the row-4 frame (theta held)",
+      pension_accrual: "social_security = the group's ratio (the case's amount over its OASDI receipts) x the OASDI receipts at (A, R); "
+        + "medicare's Part A accrual = part_a_accrual_bn + the lineage's set Medicare less (1 - part_a_share) x its cash Medicare; the tax on "
+        + "current benefits = benefit_tax_receipt_bn + the lineage's cash less its set federal income tax",
+      lane_constants: "the lineage's edit is the added people's own (0 at U = N), as the line's amount beyond row 8; at U = N row 8 is c x "
+        + "v5's row8_factor (row8_in_lineage gives the part of the edit that is G3+'s share of row 8)",
+      finite_removal_note: "the linearity note's 2s is twice v5's group share (meta.lineage.s.v5)",
+      part1_at_published_count: "not computed: the lineage's added people are counted on the account's frame only",
+    },
+    added: { persons: LINEAGE.M, members: PER_MEMBER, identified_g3plus: LINEAGE.G3,
+      by_bin: Object.fromEntries(EDGES.map((e, b) => [e, LINEAGE.added[b]])), scale_by_bin: Object.fromEntries(EDGES.map((e, b) => [e, LINEAGE.scale[b]])) },
+    accrual: ACCRUAL ? Object.fromEntries(ENDS.map(([end]) => [end, main[end].plan.accrual.lineage])) : null,
+    justice_theta: Object.fromEntries(ENDS.map(([end]) => [end, main[end].plan.rows.find((r) => r.cls === "justice").theta])),
+    row8: { v4_bn: row8v4, v5_bn: ROW8, lineage_edit_bn: E.row8_edit_bn },
+    row8_in_lineage: row8InLineage,
   };
 }
 fs.writeFileSync(path.join(OUT, `summary${SUFFIX}.json`), JSON.stringify(deep(summary), null, 1) + "\n");
