@@ -42,11 +42,20 @@ other row is its central. Disease and food safety are outside the total, as for 
 Outputs: derived/social_rows.csv (item x group: low, high, per member), derived/combined.csv (the main table).
 Run from the repository root after rekey_indian.py and acs_custody.py:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/social_rows.py
+
+--case oct05 (after rekey_indian.py --case oct05) reads and writes derived/oct05/. The union's own rows add the 3,039,720
+added people's social rows of the v5 pairing (sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.json,
+lineage_social_rows: each restated row times their share of its engine key [ASSUMPTION there]), so the union's row is on
+the lineage's 42,752,213, as its fiscal row is. Every other group's rows keep this script's rules against the identified
+union's per-member row and drivers (the added people are not in the CPS). The union at white ages stays on the identified
+union: its fiscal row is calibrated on rekey_indian.py's mexican_origin_*_identified rows. Gates added: the pairing's
+union rows equal this lane's (1e-6) and the union's own rows rebuild the restated rows plus the added people's (1e-3).
 """
 from __future__ import annotations
 
 import csv
 import importlib.util
+import json
 import sys
 from pathlib import Path
 
@@ -74,10 +83,23 @@ PAIR = pd.read_csv(FISCAL / "population_basis_2026_09_29/derived/restated_pairin
 FRAME = pd.read_csv(FISCAL / "population_basis_2026_09_29/derived/frame_counts.csv").set_index("count")
 N_U = float(FRAME.loc["union|all", "row4"])
 N_ALL = float(FRAME.loc["cps_all_civilian|all", "row4"])
-DRV = pd.read_csv(DER / "drivers.csv").set_index("group")
-KEYS = pd.read_csv(DER / "keys.csv").set_index(["group", "key"]).value
 INST = pd.read_csv(DER / "acs_institutional.csv").set_index("group")
-FIS = pd.read_csv(DER / "rekey_summary.csv")
+# The case's inputs (load()): this lane's re-key on it, and for oct05 the added people's social rows and count
+OUT = DRV = KEYS = FIS = LIN_SOC = N_LINEAGE = None
+SUFFIX = ""      # oct05: the union rows that calibrate the union at white ages are the identified ones
+
+
+def load(case):
+    global OUT, DRV, KEYS, FIS, LIN_SOC, N_LINEAGE, SUFFIX
+    OUT = DER if case == "sept29" else DER / case
+    DRV = pd.read_csv(OUT / "drivers.csv").set_index("group")
+    KEYS = pd.read_csv(OUT / "keys.csv").set_index(["group", "key"]).value
+    FIS = pd.read_csv(OUT / "rekey_summary.csv")
+    if case == "oct05":
+        lin = json.loads((FISCAL / "sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.json").read_text())
+        LIN_SOC = {r["item"]: r for r in lin["lineage_social_rows"]["rows"]}
+        meta = json.loads((FISCAL / "main_case_2026_10_05/derived/corrections.json").read_text())["meta"]["lineage"]
+        N_LINEAGE, SUFFIX = meta["counts"]["lineage_population"], "_identified"
 
 ITEMS = ["victims", "property_crime", "unreimbursed_care", "congestion", "housing_gain", "fear_avoidance",
          "private_security", "school_disruption", "pm25_consumption", "road_crash_externality", "scale_net_earnings",
@@ -164,7 +186,8 @@ def pm25(g, n, cons_ratio):
     return float(cen.others * cen.morb * AIR.VSL_DOT_2024 / 1e9), float(vals.min()), float(vals.max())
 
 
-def main():
+def main(case="sept29"):
+    load(case)
     u = DRV.loc["mexican_origin_rough"]
     uni = {it: {e: pair_value(it, e) for e in ("low", "high")} for it in ITEMS}
     print("[gates]", flush=True)
@@ -183,6 +206,11 @@ def main():
     k_c = SCALE_CZ["composition"] * joint * SCALE_ROW4 / float(nat.composition_gain_national_bn)
     gate("scale net: the union's parts at the CZ level and row-4 factor give the pairing's row (1e-3)",
          abs(-(k_s * nat.scale_gain_national_bn + k_c * nat.composition_gain_national_bn) - uni["scale_net_earnings"]["low"]) < 1e-3)
+    if LIN_SOC is not None:
+        gate("oct05: the v5 pairing prices the added people on exactly this lane's items", set(LIN_SOC) == set(ITEMS))
+        worst = max(abs(float(LIN_SOC[it][f"union_{e}_bn"]) - uni[it][e]) for it in ITEMS for e in ("low", "high"))
+        gate("oct05: the v5 pairing's union rows are this lane's restated rows (1e-6)", worst < 1e-6, f"max |diff| {worst:.1e}")
+    added = {it: {e: (float(LIN_SOC[it][f"added_{e}_bn"]) if LIN_SOC is not None else 0.0) for e in ("low", "high")} for it in ITEMS}
     if FAILS:
         print(f"FAIL: {FAILS}")
         sys.exit(1)
@@ -242,6 +270,12 @@ def main():
         val["total_trade_travel_fdi"] = {"low": v, "high": v}
         cong_alt = uni["congestion"]["low"] * per * ratio["road_crash_externality"]
         note["congestion"] = f"per member as the union; by driver miles {cong_alt:.3f} at the low end"
+        if LIN_SOC is not None and g == "mexican_origin_rough":
+            # oct05: the union's rows carry the added people's (the v5 pairing's), on the lineage's count
+            for it in ITEMS:
+                val[it] = {e: val[it][e] + added[it][e] for e in ("low", "high")}
+                note[it] = (note.get(it, "") + "; " if note.get(it) else "") + "plus the added people's row (v5 pairing)"
+            n = N_LINEAGE
         for it in ITEMS:
             rows.append({"group": LABEL.get(g, g), "item": it, "population": f"{n:.0f}",
                          "low_bn": f"{val[it]['low']:.4f}", "high_bn": f"{val[it]['high']:.4f}",
@@ -255,18 +289,20 @@ def main():
         if it not in ("private_security", "school_disruption", "pm25_consumption", "scale_net_earnings"):
             continue
         gate(f"the union's own-age {it} rebuilds its pairing row (1e-3)",
-             abs(u_rows.loc[it, "low_bn"] - uni[it]["low"]) < 1e-3, f"{u_rows.loc[it, 'low_bn']:.4f} vs {uni[it]['low']:.4f}")
+             abs(u_rows.loc[it, "low_bn"] - uni[it]["low"] - added[it]["low"]) < 1e-3,
+             f"{u_rows.loc[it, 'low_bn']:.4f} vs {uni[it]['low'] + added[it]['low']:.4f}")
     for it in ITEMS:
         gate(f"the union's own-age {it} equals the pairing (1e-3)",
-             max(abs(u_rows.loc[it, "low_bn"] - uni[it]["low"]), abs(u_rows.loc[it, "high_bn"] - uni[it]["high"])) < 1e-3)
+             max(abs(u_rows.loc[it, "low_bn"] - uni[it]["low"] - added[it]["low"]),
+                 abs(u_rows.loc[it, "high_bn"] - uni[it]["high"] - added[it]["high"])) < 1e-3)
     if FAILS:
         print(f"FAIL: {FAILS}")
         sys.exit(1)
 
     # combined: fiscal (accrual: the case; cash beside) + social
     comb = []
-    eng = FIS[(FIS.group == "mexican_origin_engine")].set_index(["basis", "end"])
-    rough = FIS[(FIS.group == "mexican_origin_rough")].set_index(["basis", "end"])
+    eng = FIS[(FIS.group == "mexican_origin_engine" + SUFFIX)].set_index(["basis", "end"])
+    rough = FIS[(FIS.group == "mexican_origin_rough" + SUFFIX)].set_index(["basis", "end"])
     for g in GROUPS + ["mexican_origin_engine"]:
         sg = "mexican_origin" if g == "mexican_origin_engine" else LABEL.get(g, g)
         s = soc[soc.group == sg]
@@ -291,7 +327,7 @@ def main():
     for name, data in (("social_rows.csv", soc.assign(low_bn=soc.low_bn.map("{:.4f}".format),
                                                         high_bn=soc.high_bn.map("{:.4f}".format)).to_dict("records")),
                        ("combined.csv", comb)):
-        with open(DER / name, "w", newline="") as fh:
+        with open(OUT / name, "w", newline="") as fh:
             wr = csv.DictWriter(fh, fieldnames=list(data[0]), lineterminator="\n")
             wr.writeheader()
             wr.writerows(data)
@@ -302,4 +338,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--case", default="sept29", choices=["sept29", "oct05"], help="sept29 (default, derived/) or oct05 (derived/oct05/)")
+    main(ap.parse_args().case)

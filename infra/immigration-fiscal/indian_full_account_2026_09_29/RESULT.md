@@ -1,6 +1,9 @@
 claude-opus-5-5
 
-**Verdict:** On the adopted v4 account plus the social rows the Mexican-origin union carries, Indian-origin residents (the India-born and the US-born children of an India-born parent, 6.08M in CPS ASEC 2025) benefit other residents by about **$9,300–10,800 per member a year, $57–65bn in all**. The fiscal part is a benefit of $10,600–12,000 (SE about $1,150), and the social rows are a cost of $1,250–1,350. At the age structure of third-plus non-Hispanic whites, the aged group still benefits others by **$7,100–8,400 per member**: a fiscal benefit of $8,600–9,900 against social rows of $1,470–1,530. On the same footing, the Mexican-origin union costs others **$11,800–13,500 per member** ($12,200–13,900 at white ages), and third-plus whites cost **$2,900–4,200**. Per member, the Indian-origin group is therefore about **$13,500 better than whites** and **$22,500–22,800 better than the union**. Ageing to white ages removes about a sixth of its lead over whites. This is a rough re-key through the key library the Black and white comparators use, not an engine run. Its offending, long-term-care and driving inputs are proxies [DEGRADED]. On the union, the rough method comes out 2.4% below the engine at the high end and 1.1% above it at the low end. Two robustness checks leave the result standing. Pooling the thin second-generation cell over five ASEC files (941 adults instead of 209) moves the total by only $136 per member. Self-employed and wage-earning India-born adults both benefit others by about $17,000–20,000 per person, and the two are not distinguishable at n = 68. [CALCULATION: `rekey_indian.py`, `social_rows.py` → `derived/combined.csv`]
+**Verdict:** [2026-10-05: on main case v5 (`oct05`), Indian-origin residents benefit others by $9,325–10,782 per
+member, the Mexican-origin union (the 42.75M lineage) costs others $11,581–13,349 per member with its social rows, and
+the gap between the two is $22,400–22,700. See "v5 case (oct05)" below.] On the adopted v4 account plus the social rows the Mexican-origin union carries, Indian-origin residents (the India-born and the US-born children of an India-born parent, 6.08M in CPS ASEC 2025) benefit other residents by about **$9,300–10,800 per member a year, $57–65bn in all**. The fiscal part is a benefit of $10,600–12,000 (SE about $1,150), and the social rows are a cost of $1,250–1,350. At the age structure of third-plus non-Hispanic whites, the aged group still benefits others by **$7,100–8,400 per member**: a fiscal benefit of $8,600–9,900 against social rows of $1,450–1,510 (corrected 2026-10-06 from the first run's
+$1,470–1,530; see the correction at the end of the v5 section). On the same footing, the Mexican-origin union costs others **$11,800–13,500 per member** ($12,200–13,900 at white ages), and third-plus whites cost **$2,900–4,200**. Per member, the Indian-origin group is therefore about **$13,500 better than whites** and **$22,500–22,800 better than the union**. Ageing to white ages removes about a sixth of its lead over whites. This is a rough re-key through the key library the Black and white comparators use, not an engine run. Its offending, long-term-care and driving inputs are proxies [DEGRADED]. On the union, the rough method comes out 2.4% below the engine at the high end and 1.1% above it at the low end. Two robustness checks leave the result standing. Pooling the thin second-generation cell over five ASEC files (941 adults instead of 209) moves the total by only $136 per member. Self-employed and wage-earning India-born adults both benefit others by about $17,000–20,000 per person, and the two are not distinguishable at n = 68. [CALCULATION: `rekey_indian.py`, `social_rows.py` → `derived/combined.csv`]
 
 Lane `infra/immigration-fiscal/indian_full_account_2026_09_29/`, written 2026-09-29 by a teammate for the team lead. Nothing here is committed or adopted. Figures are 2024 dollars a year. A positive figure means the group's presence costs other residents; a negative figure means it benefits them. Each pair is the case's low / high end (specs 48 / 11).
 
@@ -8,9 +11,9 @@ Lane `infra/immigration-fiscal/indian_full_account_2026_09_29/`, written 2026-09
 
 | Group | Persons | Fiscal, per member | Social rows, per member | **Total, per member** | Total, $bn |
 |---|---:|---:|---:|---:|---:|
-| Indian-origin, actual ages | 6.08M | −12,006 / −10,635 (SE 1,158 / 1,147) | +1,243 / +1,329 | **−10,763 / −9,305** | −65.4 / −56.6 |
-| Indian-origin, third-plus white ages | 6.08M | −9,886 / −8,594 (SE 1,055 / 1,042) | +1,467 / +1,525 | **−8,419 / −7,069** | −51.2 / −43.0 |
-| India-born only, actual ages | 4.28M | −12,179 / −10,751 (SE 1,099 / 1,085) | +888 / +990 | **−11,292 / −9,761** | −48.3 / −41.8 |
+| Indian-origin, actual ages | 6.08M | −12,006 / −10,635 (SE 1,158 / 1,147) | +1,243 / +1,330 | **−10,763 / −9,305** | −65.4 / −56.6 |
+| Indian-origin, third-plus white ages | 6.08M | −9,886 / −8,594 (SE 1,055 / 1,042) | +1,453 / +1,510 | **−8,433 / −7,084** | −51.3 / −43.1 |
+| India-born only, actual ages | 4.28M | −12,179 / −10,751 (SE 1,099 / 1,085) | +887 / +990 | **−11,292 / −9,761** | −48.3 / −41.8 |
 | India-born only, white ages | 4.28M | −7,492 / −6,212 (SE 979 / 967) | +1,256 / +1,328 | **−6,236 / −4,884** | −26.7 / −20.9 |
 | Mexican-origin union, actual ages (engine) | 39.71M | +9,353 / +10,950 | +2,424 / +2,535 | **+11,777 / +13,485** | +467.7 / +535.5 |
 | Mexican-origin union, white ages | 39.71M | +9,748 / +11,313 | +2,440 / +2,538 | **+12,188 / +13,851** | +484.0 / +550.0 |
@@ -97,19 +100,19 @@ This split uses the class of each person's longest job last year (LJCW): self-em
 | PM2.5 from consumption | +1,715 | +3,888 | +3,864 | +3,015 | air lane's grid; consumption per member 1.93× the union's; own-group share ι 0.10 assumed |
 | Congestion | +343 | +343 | +343 | +343 | per member as the union [DEGRADED] |
 | Road crashes (with against without) | +266 | +233 | +211 | +339 | driver-miles share, NHTS Asian rates [DEGRADED] |
-| Violent-crime victims | +768 | +57 | +49 | +376 | ACS institutionalization 0.075× the union's [DEGRADED]; whites: the white lane's NCVS ratio 0.49 |
-| Fear and avoidance | +260 | +19 | +17 | +128 | as victims |
+| Violent-crime victims | +768 | +57 | +50 | +376 | ACS institutionalization 0.075× the union's [DEGRADED]; whites: the white lane's NCVS ratio 0.49 |
+| Fear and avoidance | +260 | +20 | +17 | +128 | as victims |
 | Property crime | +32 | +2 | +2 | +15 | as victims |
 | Unreimbursed care | +78 | +33 | +30 | +24 | uninsured person-years per member (the lane's driver) |
 | Private security | −12 | −206 | −208 | −103 | lane formula: $74.4bn × population share × (relative offending − 1) |
 | School disruption | −49 | −129 | −107 | −65 | lane formula; CRDC Asian pupils: 6% of enrollment, about 1% of suspensions [DEGRADED] |
-| Housing net | −85 | −139 | −106 | −68 | renters' consumption [DEGRADED] |
-| Scale net (agglomeration + schooling) | −344 | −1,895 | −1,653 | −1,095 | scale lane's joint formula on the CPS, carried to its CZ level |
-| Restaurant market size | −171 | −330 | −328 | −279 | consumption per member |
+| Housing net | −86 | −139 | −106 | −68 | renters' consumption [DEGRADED] |
+| Scale net (agglomeration + schooling) | −344 | −1,895 | −1,652 | −1,095 | scale lane's joint formula on the CPS, carried to its CZ level |
+| Restaurant market size | −171 | −329 | −328 | −279 | consumption per member |
 | Volunteering | −151 | −276 | −289 | −289 | 16+ count × the all-resident rate of 28.3% [UNVERIFIED: no Asian rate found] |
 | Consumer-side scale | −54 | −103 | −103 | −87 | consumption per member |
-| Trade, visits, FDI with the origin country | −171 | −257 | −257 | 0 | union's central × US–India / US–Mexico non-travel trade (0.22) |
-| **Sum** | **+2,424** | **+1,243** | **+1,467** | **+2,254** | |
+| Trade, visits, FDI with the origin country | −171 | −256 | −271 | 0 | union's central × US–India / US–Mexico non-travel trade (0.22) |
+| **Sum** | **+2,424** | **+1,243** | **+1,453** | **+2,254** | |
 
 [DATA: `derived/social_rows.csv`, with each row's rule and its high end]
 
@@ -177,3 +180,79 @@ Times come from `date`.
 - 2026-09-29 22:36 JST: the rerun ended. All five scripts exit 0, and all 13 files in `derived/` are byte-identical to the first run (`cmp`).
 - 2026-09-29 22:50 JST: the operator's two additions were run: the G2 cell pooled over ASEC 2022–2026 (`pooled_asec.py`) and the India-born split by class of worker; all gates pass.
 - 2026-09-29 23:18 JST: a second from-scratch rerun of all six scripts ended (started 22:58). All exit 0, and all 15 files in `derived/` are byte-identical (`cmp`).
+
+## v5 case (oct05), 2026-10-05
+
+[2026-10-05: on main case v5 (`oct05`, `../main_case_2026_10_05/`), Indian-origin residents benefit other residents by
+**$9,325–10,782 per member a year** on the accrual basis (sept29 $9,305–10,763), $56.7–65.6bn in all; the Mexican-origin
+union, now the lineage's 42,752,213, costs others **$11,581–13,349 per member** with its social rows (sept29
+$11,777–13,485 on 39,712,493) and third-plus whites on 42.75M **$2,834–4,128** (sept29 $2,864–4,159). The Indian-origin
+group is about $13,500 per member better than whites, as before, and **$22,400–22,700 better than the union** (sept29
+$22,500–22,800). [CALCULATION: `rekey_indian.py --case oct05`, `social_rows.py --case oct05` → `derived/oct05/combined.csv`]]
+
+claude-opus-5-5 (v5consC)
+
+**Rules (the case lane's Consumers row: both sides on 42.75M).**
+- The union's fiscal rows (engine and rough) carry the 3,039,720 added people at the case lane's amounts, through the
+  white lane's library (its section "v5 case (oct05)"). A1 is on 42,752,213, as in the white lane's oct05 run.
+- The union's social rows add the added people's rows from the v5 pairing (`sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.json`,
+  `lineage_social_rows`: $8.56 / 8.76bn, each restated row times their share of its engine key, an [ASSUMPTION] of
+  that lane), so the union's social rows are $104.8 / 109.4bn on 42.75M (sept29 $96.3 / 100.7bn).
+- [ASSUMPTION] The Indian-origin groups keep their own CPS counts; only v5's responses move their fiscal rows ($18–19
+  per member better), and their social rows do not move.
+- [ASSUMPTION] **The union at white ages stays on the identified 39,712,493** at v5's responses. Its fiscal row is the
+  identified engine union plus the rough method's age effect, as before; the case lane does not output the added
+  people's amounts by age, so the age effect cannot be taken on them. Its per-member figure is the comparable one.
+- Every other group's social rows keep this lane's rules against the identified union's per-member rows and drivers.
+  A1's move from 39.71M to 42.75M changes two non-linear rows per member: PM2.5 −$22, scale +$6.
+- The same comparison on the identified 39.71M at v5's responses is written beside, as `mexican_origin_engine_identified`
+  ($371.12 / 434.53bn, $9,345 / 10,942 per member) and `mexican_origin_rough_identified` ($375.16 / 424.25bn).
+
+**Main table on oct05** (accrual, per member, spec 48 / 11; parts add to totals with controlled rounding):
+
+| Group | Persons | Fiscal | Social rows | **Total** | Total, $bn | sept29 total |
+|---|---:|---:|---:|---:|---:|---:|
+| Indian-origin, actual ages | 6.08M | −12,024 / −10,654 (SE 1,159 / 1,147) | +1,242 / +1,329 | **−10,782 / −9,325** | −65.6 / −56.7 | −10,763 / −9,305 |
+| Indian-origin, third-plus white ages | 6.08M | −9,906 / −8,615 (SE 1,056 / 1,043) | +1,453 / +1,511 | **−8,453 / −7,104** | −51.4 / −43.2 | −8,433 / −7,084 |
+| India-born only, actual ages | 4.28M | −12,197 / −10,770 (SE 1,100 / 1,085) | +887 / +990 | **−11,310 / −9,780** | −48.4 / −41.9 | −11,292 / −9,761 |
+| India-born only, white ages | 4.28M | −7,510 / −6,230 (SE 979 / 968) | +1,255 / +1,328 | **−6,255 / −4,902** | −26.8 / −21.0 | −6,236 / −4,884 |
+| Mexican-origin union (engine), 42.75M | 42.75M | +9,129 / +10,789 | +2,452 / +2,560 | **+11,581 / +13,349** | +495.1 / +570.7 | +11,777 / +13,485 |
+| Mexican-origin union, white ages (identified) | 39.71M | +9,739 / +11,303 | +2,440 / +2,538 | **+12,179 / +13,841** | +483.7 / +549.7 | +12,188 / +13,851 |
+| Third-plus NH whites (a 42.75M slice) | 42.75M | +596 / +1,850 | +2,238 / +2,278 | **+2,834 / +4,128** | +121.2 / +176.5 | +2,864 / +4,159 |
+
+[DATA: `derived/oct05/combined.csv`, `derived/oct05/rekey_summary.csv`, `derived/oct05/social_rows.csv`]
+
+- The union's per-member total falls by $196 / 136 because the added people cost $6,309 / 8,790 each on the fiscal
+  side against the identified union's $9,345 / 10,942; their social rows add $28 / 25 per member.
+- On the cash set the union is +$9,642 / +11,528 per member (sept29 +$9,845 / +11,646) and the Indian-origin group
+  −$15,770 / −14,313 (sept29 −$15,751 / −14,293). [DATA: `derived/oct05/combined.csv`]
+- The rough method on the union, both sides with the added people, is 1.0% above the engine at the low end ($394.3bn
+  against $390.3bn) and 2.2% below it at the high end ($451.0bn against $461.2bn); on the identified 39.71M it is 1.1%
+  above and 2.4% below, as on sept29.
+- The pooled second generation moves the total by $136 / 137 per member, as before (−10,646 / −9,188).
+
+**Gates.** `rekey_indian.py --case oct05`: 101 gates, exit 0. Beside the sept29 gates: the union, A1 and NH Black rows
+reproduce the white and Black lanes' `rekey_summary_oct05.csv` (5e-5), and the identified engine union is the union
+dump (1e-9). `social_rows.py --case oct05`: 25 gates, exit 0. Beside the sept29 gates: the v5 pairing prices the added
+people on exactly this lane's items, and its union rows are this lane's restated rows (1e-6). The sept29 runs rewrite
+`derived/` byte for byte (83 and 23 gates). `rerun_lane.py` with all eight commands (the six of the default list
+and the two oct05 ones): **IDENTICAL 30/30, exit 0** (2026-10-06 00:40:08–00:42:42 JST).
+
+**Reproduce (oct05)**, after the default list and the white and Black lanes' oct05 runs:
+
+```sh
+L=infra/immigration-fiscal/indian_full_account_2026_09_29
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/rekey_indian.py --case oct05
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/social_rows.py --case oct05
+```
+
+New: `derived/oct05/` with `rekey_summary.csv`, `rekey_buckets.csv`, `rekey_replicates.csv`, `keys.csv`,
+`age_structures.csv` (with a `lineage` column), `drivers.csv`, `social_rows.csv` and `combined.csv`.
+`rekey_indian.py` and `social_rows.py` gained `--case`; their default output is unchanged.
+
+**Correction to the sept29 sections (2026-10-06).** The verdict, the main table's white-ages row and the social-rows
+table carried the first run's values for the Indian-origin group at white ages. Commit f14d3d76 changed the trade row
+for subgroups (−$257 to −$271 per member at white ages), and `derived/combined.csv` has carried the new values since.
+The text now matches it: social rows $1,453 / 1,510, total −$8,433 / −7,084 per member (the verdict's "$1,470–1,530"
+becomes "$1,450–1,510"). The two tables also now use controlled rounding, so printed parts add to printed totals; eight
+cells moved by $1. [DATA: `derived/combined.csv`, `derived/social_rows.csv`]

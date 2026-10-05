@@ -52,6 +52,15 @@ derived/age_structures.csv, derived/drivers.csv (per-member drivers of the socia
 formula evaluated nationally on the CPS for each group; see drivers()).
 Run from the repository root after acs_custody.py, accrual_indian.py and nhts_asian.py (about 6 min):
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/rekey_indian.py
+
+--case oct05 re-keys the v5 case adopted 2026-10-05 (main_case_2026_10_05) through the library's oct05 rules and writes
+the same files to derived/oct05/. The union's rows (engine and rough) carry the 3,039,720 added people at the case
+lane's amounts, on 42,752,213; A1 is on 42,752,213 as in the white lane's oct05 run; the Indian-origin groups and the NH
+Black group keep their own counts. Two rows are added: mexican_origin_engine_identified and
+mexican_origin_rough_identified, the union on the identified 39,712,493 at v5's responses (the library's overlay off).
+mexican_origin_rough_white_ages stays on the identified union [ASSUMPTION: the added people's per-age amounts are not
+in the case lane's output]; social_rows.py --case oct05 calibrates it on the identified rows. The gates read the white
+and Black lanes' rekey_summary_oct05.csv. Run it after those lanes' oct05 runs.
 """
 from __future__ import annotations
 
@@ -341,7 +350,9 @@ def drivers(scen, res):
     return out
 
 
-def main():
+def main(case="sept29"):
+    W.use_case(case)
+    out = DER if case == "sept29" else DER / case
     W.setup()
     print("[this lane: groups and gates]", flush=True)
     rows = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(DER / "accrual_ratios.csv"))}
@@ -350,6 +361,8 @@ def main():
     R.PI["w3"] = R.structure(R.MASK["w3"], R.w, R.cage)
     W.gate("MEPS re-read matches the library's frame row for row",
            len(MD2) == len(R.md) and bool(np.allclose(MD2.PERWT24F.to_numpy(), R.md.PERWT24F.to_numpy())))
+    with W.on_lineage():     # oct05: A1 on the lineage's count, as in the white lane's oct05 run
+        a1 = R.scenario("w3")
     scen = {"mexican_origin_engine": "eng", "mexican_origin_rough": W.UNION_SC,
             "mexican_origin_rough_white_ages": union_white_ages(),
             "indian_origin": ind_scenario("ind"), "indian_origin_white_ages": ind_scenario("ind", "w3"),
@@ -357,7 +370,7 @@ def main():
             "indian_origin_g2_pooled": with_pooled_g2(ind_scenario("ind")),
             "indian_origin_g2_pooled_white_ages": with_pooled_g2(ind_scenario("ind", "w3")),
             **{LABEL[g]: ind_scenario(g) for g in ("ind1se", "ind1wage", "ind1oth", "hhse", "hhwage")},
-            "A1_third_plus_nh_white": R.scenario("w3"), "nh_black_rough": R.scenario("blk", scaled=False)}
+            "A1_third_plus_nh_white": a1, "nh_black_rough": R.scenario("blk", scaled=False)}
     for lab, sc in scen.items():
         if lab.endswith("white_ages"):
             got = R.structure(np.ones(len(d), bool), sc["cps_w"], R.cage)
@@ -370,15 +383,24 @@ def main():
                 r, bk, terms = evaluate(sc, end, b)
                 r["cost_top_tail_proportional"] = r["cost"] if sc == "eng" else evaluate(sc, end, b, "prop")[0]["cost"]
                 res[(b, lab, end)] = (r, bk, terms)
-    wl = pd.read_csv(FISCAL / "white_replacement_2026_09_28/derived/rekey_summary_sept29.csv")
-    bl = pd.read_csv(FISCAL / "black_comparator_rough_2026_09_28/derived/rekey_summary_sept29.csv")
+            if W.LINEAGE_ON:     # oct05: the union on the identified 39,712,493 at v5's responses, beside
+                with W.identified():
+                    for lab, sc in (("mexican_origin_engine_identified", "eng"), ("mexican_origin_rough_identified", W.UNION_SC)):
+                        r, bk, terms = evaluate(sc, end, b)
+                        r["cost_top_tail_proportional"] = r["cost"] if sc == "eng" else evaluate(sc, end, b, "prop")[0]["cost"]
+                        res[(b, lab, end)] = (r, bk, terms)
+                got = res[(b, "mexican_origin_engine_identified", end)][0]["cost"]
+                W.gate(f"{b} {end}: the identified engine union is the union dump (1e-9)",
+                       abs(got - W.DUMP[b][end]["cost_bn"]) < 1e-9, f"{got:.6f}")
+    wl = pd.read_csv(FISCAL / f"white_replacement_2026_09_28/derived/rekey_summary_{case}.csv")
+    bl = pd.read_csv(FISCAL / f"black_comparator_rough_2026_09_28/derived/rekey_summary_{case}.csv")
     for b in BASES:
         for end in ENDS:
             for lab, ref in (("A1_third_plus_nh_white", wl), ("nh_black_rough", bl), ("mexican_origin_rough", wl),
                              ("mexican_origin_engine", wl)):
                 want = float(ref.query("basis == @b and group == @lab and end == @end").cost.iloc[0])
                 got = res[(b, lab, end)][0]["cost"]
-                W.gate(f"{b} {end} {lab} reproduces its lane's rekey_summary_sept29.csv (5e-5)", abs(got - want) < 5e-5,
+                W.gate(f"{b} {end} {lab} reproduces its lane's rekey_summary_{case}.csv (5e-5)", abs(got - want) < 5e-5,
                        f"{got:.4f} vs {want:.4f}")
     for b in BASES:
         for end in ENDS:
@@ -467,24 +489,29 @@ def main():
     ages = []
     pis = {"third_plus_nh_white": R.PI["w3"], "union": R.structure(R.MASK["mex"], R.w, R.cage),
            "indian_origin": R.structure(R.MASK["ind"], R.w, R.cage), "india_born": R.structure(G1, R.w, R.cage)}
+    if W.LINEAGE_ON:
+        pis["lineage"] = W.PI_LINEAGE      # oct05: the union with the added people at the identified G3+'s ages
     for i, bnd in enumerate(R.BANDS):
         ages.append({"band": f"{bnd}+" if bnd == 80 else f"{bnd}-{bnd + 4}", **{k: f"{v[i]:.6f}" for k, v in pis.items()},
                      "indian_origin_sample": int((R.MASK["ind"] & R.civ & (R.cage == bnd)).sum()),
                      "india_born_sample": int((G1 & R.civ & (R.cage == bnd)).sum())})
     drv = drivers(scen, res)
-    DER.mkdir(exist_ok=True)
+    out.mkdir(exist_ok=True)
     for name, data in (("rekey_summary.csv", summary), ("rekey_buckets.csv", buckets), ("keys.csv", keys),
                        ("age_structures.csv", ages), ("drivers.csv", [{k: (f"{v:.8g}" if isinstance(v, float) else v)
                                                                         for k, v in r.items()} for r in drv])):
-        with open(DER / name, "w", newline="") as f:
+        with open(out / name, "w", newline="") as f:
             wr = csv.DictWriter(f, fieldnames=list(data[0]), lineterminator="\n")
             wr.writeheader()
             wr.writerows(data)
-    rp.to_csv(DER / "rekey_replicates.csv", index=False, lineterminator="\n", float_format="%.6f")
+    rp.to_csv(out / "rekey_replicates.csv", index=False, lineterminator="\n", float_format="%.6f")
     s = pd.DataFrame(summary)
     print(s[["basis", "group", "end", "population", "cost_bn", "cost_per_member", "cost_per_member_se",
              "cost_top_tail_proportional_per_member", "old_age_net_bn", "capital_bn"]].to_string(index=False))
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--case", default="sept29", choices=list(W.CASES), help="sept29 (default, derived/) or oct05 (derived/oct05/)")
+    main(ap.parse_args().case)
