@@ -15,7 +15,9 @@ equal the lineage lane's arm-b bands to 1e-9. All five gates pass:
 - G5, reproduction: `scripts/rerun_lane.py` over the five scripts, IDENTICAL 17/17 files, exit 0.
 
 A consumer moves from `sept29` to this case by reading `main_case_2026_10_05` and keying the case `oct05`; what each
-must do with the added people is in [Consumers](#consumers). Nothing is committed.
+must do with the added people is in [Consumers](#consumers). Nothing is committed. [2026-10-06: the lane is committed
+(27950256, 796e0762) and adopted (4bf02069); every consumer in the table now keys `oct05`, with its commit listed
+under the table.]
 
 ## What the lane is
 
@@ -188,6 +190,30 @@ The lanes themselves are not edited here.
 Also keying `sept29`, outside that list: the row-4 class, pension legacy, the net-contributor comparison, candidate v4.1
 and the number drift audit. Each needs the same call when it moves.
 
+**Done (2026-10-06, the lead).** Each consumer adds `oct05` beside `sept29`; in every one the earlier cases rebuild byte
+for byte and `rerun_lane.py` is IDENTICAL with exit 0 (each lane's RESULT or README, section "v5 case (oct05)"). The rule
+each lane chose for the added people is tagged [ASSUMPTION] there.
+
+| Consumer | Commit |
+|---|---|
+| Generation account | e5ca5efe (log times 86af8f7e) |
+| Late-arrival line | e74f786e |
+| Debt legacy | 604b09e1 |
+| Sept 24 propagation and pairing, with `constant_choices.py` | 72f2e3bc |
+| Uncertainty | 9d37757d |
+| Winners and losers | c1c259ef |
+| Back-cast | 6ec08a13 |
+| Distribution | fecaae7e |
+| World ledger | 2848d367 |
+| Household split | 751a5a9a |
+| Comparators: white replacement, Black rough, Indian full account, legacy comparators | 536b6971, 126722fe, 594b67a4, 0c94eee0 |
+| Break conditions | 16f2a063 |
+| Decomposition | c76e28b5 |
+| Pension legacy (outside the list) | fba2f93f |
+| Number drift audit (outside the list) | 8d8590c6, 9ac8854f; the consumer figures follow in the docs commit |
+
+The row-4 class, the net-contributor comparison and candidate v4.1 stay records of the September 29 case.
+
 ## For the parent
 
 - **Decision filename.** `DECISION` is `decisions/2026-10-05-main-case-v5.md`, an assumed filename stamped into the
@@ -195,6 +221,7 @@ and the number drift audit. Each needs the same call when it moves.
 - **Commit 9f3ce4dd.** Its body says "221 gates". `derived/gates.json` at that commit records 175, and 176 now, after
   the fractional fix.
 - **The draft decision is stale.** It cites "153 gates" for the lineage lane, the 16:25 count; the current count is 176.
+- [2026-10-06, the lead: both resolved. The decision landed at that filename in 4bf02069 and cites 176 gates.]
 
 ## Files
 
@@ -222,3 +249,5 @@ Run order: `node main_case.cjs && node sign_reversal.cjs && node generality.cjs 
   parameter and for consumer rows on comparators, the household split and break conditions. Added `COUNTING` /
   `COUNTINGS` and `meta.lineage.counting` (whole people only), and the three rows. All five scripts pass again;
   `rerun_lane.py` IDENTICAL 17/17, exit 0 (18:18:27).
+- 2026-10-06 01:15 JST (the lead): every consumer is committed on `oct05` (Consumers, "Done"); the verdict's
+  "Nothing is committed" and the two notes for the parent are marked resolved. No script or output changed.
