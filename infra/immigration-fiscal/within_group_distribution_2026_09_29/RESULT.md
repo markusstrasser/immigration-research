@@ -294,6 +294,12 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/with
 # the case adopted on 2026-09-29 (row-4 weights only), written to derived/sept29/
 node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs --case sept29
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4
+# the case adopted on 2026-10-05 (v5, the lineage placed on G3+), written to derived/oct05/; the person arms read
+# _cache/sept29/person_accrual.parquet, so person_accrual.py runs first (section "v5 case (oct05)")
+node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs --case oct05
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct05 --weights row4
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct05 --weights row4 --accrual person
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case oct05 --weights row4 --accrual person --payroll onbooks
 ```
 
 Both scripts stop with exit 1 on a failed gate. Together they run in about ten seconds.
@@ -774,3 +780,123 @@ Under the full claim, unauthorized-headed members are within 1.3 points of the f
 - 03:17–03:19 — `rerun_lane.py` pass 1: exit 0, IDENTICAL 35/35.
 - 03:24 — this section appended.
 - 03:25–03:31 — `rerun_lane.py` pass 2: exit 0, IDENTICAL 35/35. 03:31 — pytest: 5 passed. `git status`: the three scripts, this RESULT and the arms file changed, the five central files untracked, the pension lane unchanged.
+
+## v5 case (oct05), 2026-10-05
+
+[2026-10-05: on main case v5 (`oct05`, `../main_case_2026_10_05/`, $390.2940–461.2431bn on 42,752,213 members), under
+the lane's central (person accrual, payroll taxes on on-books wages) **17.4% (SE 0.4) / 14.1% (0.4)** of members live in
+net-contributor households under A and **23.9% (0.5) / 22.6% (0.5)** under B. On the September 29 case (`sept29`,
+39,712,493 members) the shares were 16.9% / 13.7% and 23.3% / 22.0%. The costliest tenth of households carries
+**55.6% (0.5) / 49.0% (0.5)** of the net cost (sept29 54.2% / 48.2%), the costliest fifth 83.0% / 74.5% (81.1% / 73.3%).
+The member at the median lives in a household costing **$10,272 / $11,622** per member (sept29 $10,345 / $11,714).
+The 3.04M added people are placed at the identified G3+ members' composition [ASSUMPTION]. [CALCULATION:
+`export_lines.cjs --case oct05`, `households.py --case oct05 --weights row4 --accrual person --payroll onbooks` →
+`derived/oct05/net_positive_shares_person_onbooks.csv`, `concentration_person_onbooks.csv`,
+`household_balance_quantiles_person_onbooks.csv`] [FRAMING-SENSITIVE: the placement rule]]
+
+claude-opus-5-5 (v5consC)
+
+**What runs.**
+- `export_lines.cjs --case oct05` evaluates the adopted v5 payload (`main_case_2026_10_05/derived/corrections.json`) and
+  the generation account's v5 split (`generation_corrections_oct05.json`) at specifications 48 and 11. The cash set is
+  the case lane's `corrections_cash.json`, costed through the package's `CASH` (gate: `CASH` has that payload exactly),
+  with the generation split `generation_corrections_oct05_cash.json`. It writes `_cache/oct05/lines.json`, whose
+  `meta.lineage` carries the counts, the lineage's production term and its own pension parts.
+- `households.py --case oct05 --weights row4`, with `--accrual person` and `--payroll onbooks` as for sept29, writes
+  `derived/oct05/` and `_cache/oct05/` (ignored). The person arms reuse `_cache/sept29/person_accrual.parquet`: the
+  person-level accrual model is a property of the CPS persons, which are the same records.
+- The `sept27` and `sept29` files do not move: `rerun_lane.py` compares all 52 files across the twelve commands.
+
+**Rules for the added people.** The Consumers row of the case lane: the 3.04M are not in the CPS as Mexican-origin;
+place them in households at the G3+ composition, or leave them out of the split and state the count. They are placed.
+- [ASSUMPTION] **Placement.** Every identified G3+ record's weight, in every replicate, is scaled by
+  f = 1 + 3,039,719.593 / 14,342,574.606 = 1.211937. The added people therefore sit in the same households, ages, keys
+  and legal-status flags as the identified G3+ members, including the G3+ children of G1- and G2-headed households. Only
+  the G3+ records are scaled, so a household's other members keep their weights. Members by the head's generation
+  become 17.34M (G1 head), 11.82M (G2), 12.92M (third-plus) and 0.66M (head outside the union), against 17.18M, 11.19M,
+  10.77M and 0.58M. A descendant who stopped identifying more likely lives in a household whose head does not identify
+  either, so this rule keeps them closer to the Mexican-origin households than they are.
+- [ASSUMPTION] **Blended amounts.** G3+'s lines, which carry the lineage, are spread over the scaled records by each
+  line's key. Each G3+ record therefore carries the blend of the identified members' and the added people's amounts.
+  The added people cost $6,309 / $8,790 per member at the two ends (the case lane's +$19.18 / +26.72bn, G3+ and white
+  parts, over 3.04M). The identified G3+ cost $8,549 / $11,740 on sept29, so the blend lowers G3+'s cost per member to
+  $8,151 / $11,217.
+- [ASSUMPTION] **Production.** The lineage's production term (−$0.268 / −0.176bn, all on G3+) is set apart before the
+  production cells are solved, so the identified union's cell parts are the September 29 solve. It then goes to G3+'s
+  two cells in proportion to G3+'s own parts. Gate: the cell parts add to the generations' terms (1e-9bn).
+- **Per-head tolerance.** The lineage lane priced the added people's per-head lines for about 0.03 fewer people than
+  `counts.added`, so G3+ pays 1.9e-9 less per member on every per-head line. The equal-per-member gate's tolerance is
+  1e-8 for oct05 and stays 1e-9 for the other cases.
+- **Pension gates.** The lineage's accrual per OASDI dollar is not ratio_net (0.9487 against 0.9737). The union's
+  Social Security accrual is therefore gated as ratio_net × (OASDI receipts less the lineage's) plus the lineage's own
+  accrual. Part A is the payload's `part_a_accrual_bn` plus the lineage's. In `export_lines.cjs`, the union less the
+  lineage's own parts reproduces the September 29 payload's accrual, Part A and benefit tax (1e-9bn).
+
+**Shares under the central.** % of members in net-contributor households (SE), oct05; sept29 in brackets.
+
+| Head's cell | Members (m) | A, low | A, high | B, low | B, high |
+|---|---:|---|---|---|---|
+| All members | 42.75 [39.71] | 17.4 (0.4) [16.9] | 14.1 (0.4) [13.7] | 23.9 (0.5) [23.3] | 22.6 (0.5) [22.0] |
+| Head Mexico-born | 17.34 [17.18] | 12.3 (0.6) [12.3] | 9.4 (0.5) [9.5] | 18.4 (0.7) [18.4] | 17.3 (0.7) [17.3] |
+| Head second generation | 11.82 [11.19] | 18.7 (0.8) [18.7] | 16.1 (0.8) [16.2] | 24.8 (1.1) [24.9] | 25.2 (1.0) [25.1] |
+| Head third-plus generation | 12.92 [10.77] | 23.4 (1.2) [22.6] | 19.3 (1.0) [18.6] | 31.1 (1.2) [30.0] | 28.3 (1.0) [27.4] |
+| Head unauthorized | 6.98 [6.94] | 13.3 (1.0) [13.2] | 10.9 (0.9) [10.9] | 20.5 (1.3) [20.5] | 19.9 (1.4) [19.9] |
+| Head legal immigrant | 10.36 [10.23] | 11.6 (0.8) [11.7] | 8.4 (0.6) [8.5] | 17.0 (0.9) [17.0] | 15.5 (0.9) [15.5] |
+| Head US-born | 24.75 [21.96] | 21.2 (0.7) [20.6] | 17.8 (0.6) [17.4] | 28.1 (0.7) [27.4] | 26.8 (0.7) [26.2] |
+
+[CALCULATION: `derived/oct05/net_positive_shares_person_onbooks.csv` against `derived/sept29/`; status rows are
+`head_status_case_flag`]
+
+The union-wide shares rise by about half a point for two reasons. The added weight goes to G3+ members, whose
+households are the most often net contributors. And the blend makes each G3+ record cheaper. Inside the immigrant-
+headed cells nothing moves by more than 0.1 point, and the status order of the central (unauthorized above legal
+immigrant at every end of A) holds.
+
+**The distribution, oct05 against sept29**, per member of the household (SE in brackets):
+
+| Arm | | A, low | A, high | B, low | B, high |
+|---|---|---|---|---|---|
+| Central (person, on-books) | median member's household, $ | 10,272 (190); 10,345 | 11,622 (191); 11,714 | 7,111 (202); 7,208 | 7,331 (184); 7,388 |
+| | P10, $ | −5,452; −5,114 | −3,482; −3,063 | −8,503; −7,955 | −7,654; −7,150 |
+| | costliest tenth, % of the net cost | 55.6; 54.2 | 49.0; 48.2 | 74.1; 71.3 | 68.5; 66.7 |
+| | costliest fifth, % | 83.0; 81.1 | 74.5; 73.3 | 107.5; 103.6 | 100.4; 97.8 |
+| | % of members net-positive | 17.4; 16.9 | 14.1; 13.7 | 23.9; 23.3 | 22.6; 22.0 |
+| Person accrual | % of members net-positive | 17.5; 17.0 | 14.1; 13.7 | 24.0; 23.4 | 22.6; 22.0 |
+| Flat | % of members net-positive | 16.8; 16.2 | 13.0; 12.3 | 24.5; 23.8 | 22.8; 22.1 |
+| | costliest tenth, % | 54.5; 53.2 | 48.3; 47.5 | 72.4; 69.7 | 67.2; 65.4 |
+| | median member's household, $ | 9,700; 9,755 | 11,095; 11,160 | 6,556; 6,597 | 6,853; 6,952 |
+
+Under B the costliest fifth carries more than the whole net cost, because the net-contributor households' balances
+are negative. [CALCULATION: `concentration*.csv`, `household_balance_quantiles*.csv`, `net_positive_shares*.csv` in
+`derived/oct05/` and `derived/sept29/`]
+
+**Positive control.** On oct05, A reproduces the case: the households' sum plus the lane constants is
+$390.293958 / 461.243125bn (`control.csv`, residual 0.0). The lane constants, which no household carries, are at the
+low end −2.646 (G1), −1.138 (G2) and −1.572bn (G3+), against −2.642, −1.136 and −1.382bn on sept29.
+
+**Gates, printed (logs in the session scratchpad).**
+- `export_lines.cjs --case oct05`: exit 0, 68 gates. The union reproduces $390.2940 / 461.2431bn; each generation's rows
+  add to `generation_results_oct05.csv` and the three add to the union; the lineage's production term is all on G3+;
+  the union less the lineage's own pension parts is the September 29 payload's; G1's and G2's solved miles shares are
+  the September 29 summary's (1e-9). G3+'s solved miles share is 0.041482 (sept29 0.034249).
+- `households.py --case oct05 --weights row4`: exit 0, 27 gates, including identified G3+ = the lineage's
+  `identified_g3plus` (14,342,574.606) and the placed union = 42,752,212.924 (1 person). Worst gaps: key totals 5.8e-16
+  relative, per-head spread 2.0e-9 relative, generation pieces against cost 8.5e-14bn, households plus residual
+  against the case 2.3e-12bn, replicates against the full sample 9.3e-12bn.
+- `--accrual person`: exit 0, 54 gates; `--accrual person --payroll onbooks`: exit 0, 56 gates. The on-books run
+  reproduces the flat run's 6 files, the person run's 5 files and the arms file byte for byte.
+- `scripts/rerun_lane.py` over the twelve commands (sept27, sept29 with `person_accrual.py` and both person arms, and the
+  four oct05 commands), `--allow-unrun` for `test_person_accrual.py` only: IDENTICAL 52/52, exit 0. `git status`: no
+  tracked file under `derived/` changed; `derived/oct05/` is new.
+
+**Inputs** (the generation account's oct05 files, written by another worker the same evening and uncommitted at the
+run); sha256 prefixes at the run: `generation_corrections_oct05.json` 72bfa0846bb5750e, `generation_results_oct05.csv`
+a06928a5e1cbe558, `generation_summary_oct05.json` 7114fd450a3adb20, `generation_corrections_oct05_cash.json`
+430792922d067b50, `generation_results_oct05_cash.csv` 136a10bff6f36b66, `generation_summary_oct05_cash.json`
+b3e734547b674644. All six are the files committed in e5ca5efe (checked 2026-10-06 by the lead).
+
+**Log (times from `date` calls and file times).**
+- 23:20 JST — `export_lines.cjs` for sept27, sept29 and oct05: exit 0; sept27 and sept29 caches byte-identical.
+- 23:23–23:26 — the three oct05 `households.py` runs: exit 0.
+- 23:32 — `rerun_lane.py`: IDENTICAL 52/52, rc 0.
+- 23:37 — this section written. Nothing is committed.

@@ -18,7 +18,21 @@
  * the highway national x (FP s_vmt + (1 - FP) k_cons - k_old)); and each part-rekeyed capital component into its parent
  * line's part and its correction line's part (the adopted package's keyOf). Writes _cache/sept29/lines.json.
  *
- * Both cases read capRule, each capital component's key rule, from the case's payload (meta.capital_return
+ * --case oct05: the main case adopted on 2026-10-05 (v5, main_case_2026_10_05: the v4 case plus the lineage, the 3.04M
+ * descendants who no longer report Mexican origin), on the generation account's v5 split
+ * (derived/generation_corrections_oct05.json, run_generations_v5.cjs: the lineage's edits and production on G3+). It
+ * runs as sept29, with three differences:
+ *   - the cash set is the case lane's own corrections_cash.json, through the package's CASH (gated equal to the file);
+ *   - the generation summary carries no road parameters, so each generation's driver-mile share s_vmt and pre-roads
+ *     consumption key k_cons are solved from its own model's road and excise cells (candidate v4's withRoads formula
+ *     on the state-local road line), gated on the federal line (1e-9) and, for G1 and G2, which the lineage leaves
+ *     alone, against the September 29 summary's s_vmt (1e-9);
+ *   - meta.lineage carries the added people's counts and the lineage's production term at each end: the case's union
+ *     term less the September 29 union's at the same specification, gated equal to G3+'s change, with G1 and G2
+ *     unchanged (1e-9). households.py places the added people and spreads that term.
+ * Writes _cache/oct05/lines.json.
+ *
+ * Every case reads capRule, each capital component's key rule, from the case's payload (meta.capital_return
  * components); on September 27 it must equal the capital lane's engine_components.json, whose rules the committed
  * outputs used.
  *
@@ -33,8 +47,9 @@
  * union amounts (the accrual ratio_net x OASDI receipts, the Part A accrual, the tax on benefits; 1e-9 bn); the road
  * pieces' implied freight key is the generation's excise share before the gasoline shift (1e-9); the part-rekeyed
  * shares add to the component's key (1e-12).
- * Writes _cache/lines.json (September 27) or _cache/sept29/lines.json. Run from the repository root:
- *   node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs [--case sept27|sept29]
+ * Writes _cache/lines.json (September 27), _cache/sept29/lines.json or _cache/oct05/lines.json. Run from the repository
+ * root:
+ *   node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs [--case sept27|sept29|oct05]
  */
 "use strict";
 const fs = require("fs");
@@ -51,12 +66,20 @@ const CASES = {
       genCorrections: "generation_corrections_sept29_cash.json", genResults: "generation_results_sept29_cash.csv",
       band: [294.7011, 361.8175] },
     summary: "generation_summary_sept29.json" },
+  // package: the cash set's package (default: the package's forPayload() of the cash payload); lineage: the case adds
+  // the lineage on G3+ (meta.lineage).
+  oct05: { lane: "main_case_2026_10_05", genCorrections: "generation_corrections_oct05.json",
+    genResults: "generation_results_oct05.csv", band: [390.2940, 461.2431], out: "oct05/lines.json",
+    cash: { payload: "main_case_2026_10_05/derived/corrections_cash.json", package: "CASH",
+      genCorrections: "generation_corrections_oct05_cash.json", genResults: "generation_results_oct05_cash.csv",
+      band: [307.3764, 383.4093] },
+    summary: "generation_summary_oct05.json", lineage: true },
 };
 const argv = process.argv.slice(2);
 const CASE = argv.includes("--case") ? argv[argv.indexOf("--case") + 1] : "sept27";
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 const C = CASES[CASE];
-const V4 = CASE === "sept29";
+const V4 = CASE !== "sept27";   // the v4 rules: sept29 and every case built on it
 const P = require(path.join(FISCAL, C.lane, "package.cjs"));
 const { Engine, MODEL, MAIN_SPECS } = P;
 const PROFILE = V4 ? P.MAIN_PROFILE : undefined;
@@ -159,6 +182,29 @@ for (const end of ["low", "high"]) {
   gate(`${end}: the three generations add to the union`, Math.abs(s - out.union[end].cost_bn) < 1e-9, `${s.toFixed(6)}`);
 }
 
+if (C.lineage) {
+  // The lineage (meta.lineage): the added people's counts, and the lineage's production term at each end, the case's
+  // union term less the September 29 union's at the same specification. The generation account puts all of it on G3+.
+  console.log("[lineage: the added people's production term]");
+  const L = corrections.meta.lineage, P29 = P.SEPT29;
+  const prodOf = (m, spec) => {
+    const e = P29.evaluateFull(m, spec, PROFILE).evaluation;
+    return -(e.private_wtp_bn + P29.stateFor(m, spec, PROFILE).fiscal_weight * e.induced_receipts_bn);
+  };
+  const pay29 = read(path.join(GEN, CASES.sept29.genCorrections)).payloads.a;
+  out.meta.lineage = { counts: L.counts, members: L.members, c3: L.c3.value, production_bn: {} };
+  for (const [end, i] of [["low", lo], ["high", hi]]) {
+    const s29 = P29.MAIN_SPECS[i];
+    gate(`${end}: the September 29 specification ${i} has the case's production dimensions`,
+      JSON.stringify(P29.stateFor(P29.payloadModel(), s29, PROFILE).production) === JSON.stringify(out.union[end].production.dims));
+    const dU = out.union[end].production.cost_bn - prodOf(P29.payloadModel(), s29);
+    const dG = GENS.map((g) => out.generations[g][end].production.cost_bn - prodOf(Engine.applyCorrections(models[g].m0, pay29[g]), s29));
+    gate(`${end}: the lineage's production term is all on G3+, which moves by the union's change; G1 and G2 do not move (1e-9 bn)`,
+      Math.abs(dG[2] - dU) < 1e-9 && Math.abs(dG[0]) < 1e-9 && Math.abs(dG[1]) < 1e-9, `${dU.toFixed(6)} bn`);
+    out.meta.lineage.production_bn[end] = dU;
+  }
+}
+
 if (V4) {
   const V = P.V4PKG;
   const PA = corrections.meta.pension_accrual;
@@ -172,7 +218,11 @@ if (V4) {
 
   // The cash set at the same specifications: the pension switch's parts.
   console.log("[cash set: the pension switch's parts]");
-  const PC = P.forPayload(read(path.join(FISCAL, C.cash.payload)));
+  const cashPayload = read(path.join(FISCAL, C.cash.payload));
+  const PC = C.cash.package ? P[C.cash.package] : P.forPayload(cashPayload);
+  if (C.cash.package) {
+    gate(`the package's cash set (${C.cash.package}) has the cash payload, exactly`, JSON.stringify(PC.correctionsPayload()) === JSON.stringify(cashPayload));
+  }
   const uCash = [lo, hi].map((i) => PC.evaluateFull(PC.payloadModel(), MAIN_SPECS[i], PROFILE).cost_bn);
   gate("the cash set's union reproduces its band at the same specifications (1e-4)",
     Math.abs(uCash[0] - C.cash.band[0]) < 1e-4 && Math.abs(uCash[1] - C.cash.band[1]) < 1e-4, `${uCash[0].toFixed(7)} / ${uCash[1].toFixed(7)}`);
@@ -218,23 +268,70 @@ if (V4) {
     const amt = (id) => rows.find((r) => r.side === "receipt" && r.id === id).amount_bn;
     const oasdi = PA.oasdi_lines.reduce((s, id) => s + amt(id), 0) + PA.se_oasdi_share * amt(PA.se_line);
     gate(`${end}: the three generations' cash sets add to the union's (1e-9 bn)`, Math.abs(cashSum[j] - uCash[j]) < 1e-9, `${cashSum[j].toFixed(6)}`);
-    gate(`${end}: the generations' accruals add to ratio_net x the union's OASDI receipts (1e-9 bn)`,
-      Math.abs(tot.accrual[j] - PA.ratio_net * oasdi) < 1e-9, `${tot.accrual[j].toFixed(6)} vs ${(PA.ratio_net * oasdi).toFixed(6)}`);
-    gate(`${end}: the generations' Part A accruals add to part_a_accrual_bn (1e-9 bn)`, Math.abs(tot.part_a[j] - PA.part_a_accrual_bn) < 1e-9,
-      `${tot.part_a[j].toFixed(6)}`);
-    gate(`${end}: the generations' tax on benefits adds to benefit_tax_receipt_bn.${a} (1e-9 bn)`,
-      Math.abs(tot.benefit_tax[j] - PA.benefit_tax_receipt_bn[a]) < 1e-9, `${tot.benefit_tax[j].toFixed(6)}`);
+    if (!C.lineage) {
+      gate(`${end}: the generations' accruals add to ratio_net x the union's OASDI receipts (1e-9 bn)`,
+        Math.abs(tot.accrual[j] - PA.ratio_net * oasdi) < 1e-9, `${tot.accrual[j].toFixed(6)} vs ${(PA.ratio_net * oasdi).toFixed(6)}`);
+      gate(`${end}: the generations' Part A accruals add to part_a_accrual_bn (1e-9 bn)`, Math.abs(tot.part_a[j] - PA.part_a_accrual_bn) < 1e-9,
+        `${tot.part_a[j].toFixed(6)}`);
+      gate(`${end}: the generations' tax on benefits adds to benefit_tax_receipt_bn.${a} (1e-9 bn)`,
+        Math.abs(tot.benefit_tax[j] - PA.benefit_tax_receipt_bn[a]) < 1e-9, `${tot.benefit_tax[j].toFixed(6)}`);
+      continue;
+    }
+    // oct05: the payload's pension figures are the September 29 union's. The lineage adds its own parts, priced on the
+    // G3+ and white cells (the whites' accrual per OASDI dollar is not ratio_net). Gates: the generations' parts add to
+    // the union's, read on the union's set and cash models the same way; the union's less the lineage's own (its edits
+    // on the evaluated keys) are the payload's figures (1e-9 bn).
+    const spec = MAIN_SPECS[[lo, hi][j]];
+    const ue = P.evaluateFull(unionModel, spec, PROFILE).evaluation, uc = PC.evaluateFull(PC.payloadModel(), spec, PROFILE).evaluation;
+    const row = (ev, side, id) => ev[side === "receipt" ? "receipts" : "spending"].find((r) => r.id === id);
+    const sc = P.stateFor(unionModel, spec, PROFILE).receipt_scenario;
+    const lin = (edits, side, id, key) => edits.filter((e) => e.side === side && e.line === id && (side === "receipt" ? e.scenario === key : e.key === key))
+      .reduce((s, e) => s + e.by[a], 0);
+    const union = { accrual: row(ue, "spending", "social_security").amount_bn,
+      part_a: row(ue, "spending", "medicare").amount_bn - (1 - PA.part_a_share) * row(uc, "spending", "medicare").amount_bn,
+      benefit_tax: row(uc, "receipt", "federal_income_tax").amount_bn - row(ue, "receipt", "federal_income_tax").amount_bn };
+    const LS = P.LINEAGE_EDITS, LC = PC.LINEAGE_EDITS;
+    const linOasdi = PA.oasdi_lines.reduce((s, id) => s + lin(LS, "receipt", id, sc), 0) + PA.se_oasdi_share * lin(LS, "receipt", PA.se_line, sc);
+    const own = { accrual: lin(LS, "spending", "social_security", row(ue, "spending", "social_security").key),
+      part_a: lin(LS, "spending", "medicare", row(ue, "spending", "medicare").key) - (1 - PA.part_a_share) * lin(LC, "spending", "medicare", row(uc, "spending", "medicare").key),
+      benefit_tax: lin(LC, "receipt", "federal_income_tax", sc) - lin(LS, "receipt", "federal_income_tax", sc) };
+    const want = { accrual: PA.ratio_net * (oasdi - linOasdi), part_a: PA.part_a_accrual_bn, benefit_tax: PA.benefit_tax_receipt_bn[a] };
+    for (const k of ["accrual", "part_a", "benefit_tax"]) {
+      gate(`${end}: the generations' ${k} adds to the union's (its set and cash models, 1e-9 bn)`, Math.abs(tot[k][j] - union[k]) < 1e-9,
+        `${tot[k][j].toFixed(6)} vs ${union[k].toFixed(6)}`);
+      gate(`${end}: the union's ${k} less the lineage's own (${own[k].toFixed(6)}) is the September 29 payload's (1e-9 bn)`,
+        Math.abs(union[k] - own[k] - want[k]) < 1e-9, `${(union[k] - own[k]).toFixed(6)} vs ${want[k].toFixed(6)}`);
+    }
+    out.meta.lineage.pension_bn = Object.assign(out.meta.lineage.pension_bn || {}, { [end]: Object.assign({ oasdi_receipts_bn: linOasdi }, own) });
   }
 
   // Roads: each generation's road line in its three pieces, with the driver-mile share from the generation account.
   console.log("[road lines: driver-mile, freight and old-key pieces]");
   const EXCISE = "excise_selective_sales", EA = "economic_affairs_services";
+  // oct05: the summary carries no road parameters; s_vmt is solved from the model's state-local road line and excise
+  // cell (road = N (FP s + (1 - FP) k - k_old), excise = k (X - GAS) + GAS s), and the federal line's gate below checks it.
+  const SUM29 = C.lineage ? read(path.join(GEN, CASES.sept29.summary)) : null;
+  function solvedSvmt(m1, a) {
+    const ea = m1.spending.lines.find((l) => l.id === EA), ex = m1.receipts.lines.find((l) => l.id === EXCISE);
+    const road = m1.spending.lines.find((l) => l.id === "roads_vmt_sl").keys.k[a].target_bn;
+    const kOld = ea.keys[ea.preferred_key][a].target_bn / ea.national_bn, X = ex.national_bn, E = ex.cells[V.REF][a].target_bn;
+    return (road / V.HWY_N.sl + kOld - (1 - V.FP) * E / (X - V.GAS)) / (V.FP - (1 - V.FP) * V.GAS / (X - V.GAS));
+  }
+  if (C.lineage) {
+    for (const g of GENS.filter((x) => x !== "G3plus")) for (const a of ["personal", "shared"]) {
+      const s = solvedSvmt(models[g].m1, a), want = SUM29.rules.parameters.a[g].s_vmt[a];
+      gate(`${g} ${a}: s_vmt solved from the model is the September 29 summary's (1e-9; the lineage leaves ${g} alone)`,
+        Math.abs(s - want) < 1e-9, `${s.toFixed(12)} vs ${want.toFixed(12)}`);
+    }
+    out.meta.lineage.s_vmt_g3plus = Object.fromEntries(["personal", "shared"].map((a) => [a, solvedSvmt(models.G3plus.m1, a)]));
+    out.meta.lineage.s_vmt_g3plus_sept29 = SUM29.rules.parameters.a.G3plus.s_vmt;
+  }
   for (const g of GENS) {
     const m1 = models[g].m1;
     const ea = m1.spending.lines.find((l) => l.id === EA), ex = m1.receipts.lines.find((l) => l.id === EXCISE);
     for (const [end, i] of [["low", lo], ["high", hi]]) {
       const a = MAIN_SPECS[i].allocation;
-      const svmt = SUM.rules.parameters.a[g].s_vmt[a];
+      const svmt = C.lineage ? solvedSvmt(m1, a) : SUM.rules.parameters.a[g].s_vmt[a];
       const kOld = ea.keys[ea.preferred_key][a].target_bn / ea.national_bn;
       // The final excise cell carries the gasoline shift GAS (s_vmt - k_cons) on the pre-roads cell k_cons x national.
       const kCons = (ex.cells[V.REF][a].target_bn - V.GAS * svmt) / (ex.national_bn - V.GAS);

@@ -88,6 +88,18 @@ accrual's 10% claim share read, cps_ca_status via the pension lane's frame).
 --accrual person --payroll onbooks writes the central's five files instead, with the suffix _person_onbooks, and
 _cache/sept29/households_person_onbooks.parquet. It stops unless its flat arm, its person arm and its arms comparison
 reproduce, byte for byte, the files the two runs before it wrote.
+--case oct05 (the main case adopted on 2026-10-05, main_case_2026_10_05: v4 plus the lineage, 3.04M descendants who no
+longer report Mexican origin, priced on G3+) runs as sept29 on _cache/oct05/lines.json (export_lines.cjs --case oct05)
+and writes derived/oct05/ and _cache/oct05/; every --accrual and --payroll arm runs on it too. The added people are not
+in the CPS as Mexican-origin, so they are placed [ASSUMPTION] at the identified G3+ members' composition: every G3+
+record's weight, in every replicate, is scaled by f = 1 + added / identified G3+ (1.2119), so they sit in the same
+households, ages, keys and statuses. G3+'s lines, which carry the lineage, are spread over the scaled records, so each
+G3+ record carries the blend of the identified and the added people's per-member amounts. The gates on the key vectors,
+the tenant key, public order's per-head part and the production solve run on the identified weights, as on sept29. The
+lineage's production term (lines.json meta.lineage) is set apart before the cell parts are solved and goes to G3+'s
+two cells in proportion to its own parts. The pension gates add the lineage's own accrual, Part A and OASDI receipts
+(meta.lineage.pension_bn), whose accrual per OASDI dollar is not ratio_net. The person-accrual arms reuse
+_cache/sept29/person_accrual.parquet: the persons are the same.
 Writes derived/net_positive_shares.csv, concentration.csv, household_balance_quantiles.csv, control.csv,
 category_means.csv, line_scaling.csv and _cache/households.parquet; the row-4 run writes the same files to
 derived/row4/ and _cache/row4/. Run from the repository root:
@@ -97,6 +109,7 @@ derived/row4/ and _cache/row4/. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/person_accrual.py
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4 --accrual person
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4 --accrual person --payroll onbooks
+  (the same three households.py commands with --case oct05, after export_lines.cjs --case oct05)
 """
 from __future__ import annotations
 
@@ -133,7 +146,10 @@ PUBLISHED_MEX_25_64 = {"borjas_paper_rules": 3.9170610819750302, "no_medicaid_ru
 PER_HEAD_KEYS = {"population", "resident_population"}
 FAILS = []
 # The September 29 case (export_lines.cjs --case sept29): its lines, its tenant key's inputs and its new category.
-CASE_DIRS = {"sept27": None, "sept29": "sept29"}
+# oct05 (v5) runs on the same rules, with the lineage placed on G3+ (LINEAGE_CASES).
+CASE_DIRS = {"sept27": None, "sept29": "sept29", "oct05": "oct05"}
+CASE_LANES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05"}
+LINEAGE_CASES = ("oct05",)
 STATES_CSV = FISCAL / "receipt_side_long_run_2026_09_28/derived/states.csv"
 V4_INPUTS = GENLANE / "derived/v4_inputs.json"
 CASH_RENT = 2  # H_TENURE: rented for cash
@@ -279,16 +295,17 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
     sub = CASE_DIRS[case]
     if sub and arm != "row4":
         raise SystemExit(f"[BLOCKED] --case {case} runs on the row-4 weights only, the count the case prices")
-    if accrual != "flat" and case != "sept29":
-        raise SystemExit("[BLOCKED] --accrual person needs --case sept29, the case that carries the pension accrual")
+    if accrual != "flat" and case not in CASE_LANES:
+        raise SystemExit("[BLOCKED] --accrual person needs --case sept29 or oct05, the cases that carry the pension accrual")
     if payroll_base != "all" and accrual != "person":
         raise SystemExit("[BLOCKED] --payroll onbooks needs --accrual person: the central pairs the two")
     print(f"[frame] weights: {arm}" + (f"; case {case}" if sub else "") + (f"; accrual {accrual}" if accrual != "flat" else "")
           + (f"; payroll {payroll_base}" if payroll_base != "all" else ""), flush=True)
     lines = json.loads(((CACHE / sub if sub else CACHE) / "lines.json").read_text())
-    v4 = case == "sept29"
-    if v4 and lines["meta"]["case"] != "main_case_2026_09_29":
+    v4 = case in CASE_LANES
+    if v4 and lines["meta"]["case"] != CASE_LANES[case]:
         raise SystemExit(f"[BLOCKED] _cache/{sub}/lines.json is {lines['meta']['case']}'s; run export_lines.cjs --case {case}")
+    lineage = lines["meta"]["lineage"] if case in LINEAGE_CASES else None
     PA = lines["meta"]["pension_accrual"] if v4 else None
     b_cats = B_CATS + ([PENSION] if v4 else [])   # the pension accrual is the members' own claim, so in B
     d = F.load()
@@ -313,6 +330,23 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
     n_union, want = float(w0[union].sum()), float(heads[arm].iloc[0])
     gate(f"union count reproduces headcount.csv, column {arm} (1 person)", abs(n_union - want) <= 1.0,
          f"{n_union:,.3f} vs {want:,.3f}")
+    # w_id: the identified union's weights. With the lineage (oct05) W and w0 place the added people on G3+'s records;
+    # the gates on the key vectors, the tenant key, public order's per-head part and the production solve keep w_id.
+    w_id = w0
+    if lineage:
+        g3 = gens["G3plus"]
+        n_g3, counts = float(w0[g3].sum()), lineage["counts"]
+        gate("the identified G3+ count is the lineage's identified_g3plus (1 person)", abs(n_g3 - counts["identified_g3plus"]) <= 1.0,
+             f"{n_g3:,.3f} vs {counts['identified_g3plus']:,.3f}")
+        lineage_f = 1.0 + counts["added"] / n_g3
+        w_id = w0.copy()
+        if W is W_pub:
+            W = W.copy()
+        W[g3, :] *= lineage_f   # [ASSUMPTION] the added people at the identified G3+ members' composition, every replicate
+        w0 = W[:, 0]
+        n_scaled = float(w0[union].sum())
+        gate("the placed union is the lineage population (1 person)", abs(n_scaled - counts["lineage_population"]) <= 1.0,
+             f"{n_scaled:,.3f} = {n_union:,.3f} + {counts['added']:,.3f}; G3+ records x {lineage_f:.6f}")
 
     print("[key vectors]", flush=True)
     rk = C.receipt_keys(d, index)
@@ -336,7 +370,7 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
         # The case's receipt keys that respond from September 29: public housing's deficit on the housing-assistance
         # key, the tax on tenant-occupied housing on the tenant key, and owner-occupied property tax on the generation
         # account's owner key (keys.py owner_property, SPM-shared; at response 0 until then, so never spread).
-        tenant = tenant_key(d, union, gens, w0)
+        tenant = tenant_key(d, union, gens, w_id)
         for a in vec:
             vec[a][("receipt", "housing_support")] = vec[a][("spending", "housing_support")]
             vec[a][("receipt", "renter_contract_rent")] = tenant
@@ -366,11 +400,11 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
         nonlocal worst, checked
         for g in by_gen:
             want = getattr(r, g)
-            worst = max(worst, abs(float(x[gens[g]] @ w0[gens[g]]) - want) / max(abs(want), 1.0))
+            worst = max(worst, abs(float(x[gens[g]] @ w_id[gens[g]]) - want) / max(abs(want), 1.0))
         if union_ref is not None and (r.side, r.key) not in NO_UNION_ROW4_PIN:
             want = float(union_ref[("both", "extra|pop") if r.key == "resident_population"
                                    else (r.allocation, f"{r.side}|{r.key}")])
-            worst = max(worst, abs(float(x[union] @ w0[union]) - want) / max(abs(want), 1.0))
+            worst = max(worst, abs(float(x[union] @ w_id[union]) - want) / max(abs(want), 1.0))
         checked += 1
 
     for r in pub.itertuples():
@@ -393,8 +427,9 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
     # The use key's per-head part is a per-head rate times each generation's population (keys.py); the engine's row-4
     # correction moves it with the generation's share of the civilian frame. The factor is 1 on the published weights.
     pop = np.array([w0[gens[g]].sum() for g in GENS])
+    pop_id = np.array([w_id[gens[g]].sum() for g in GENS])
     pop_pub = np.array([w_pub[gens[g]].sum() for g in GENS])
-    per_head_factor = pop / pop_pub * (w_pub[civ].sum() / w0[civ].sum())
+    per_head_factor = pop_id / pop_pub * (w_pub[civ].sum() / w_id[civ].sum())
     if arm != "published":
         comp = json.loads((GENLANE / "derived/stack_by_generation.json").read_text())["components"]["C_row4_weights"]["a"]
         engine = np.array([comp[g]["spending"]["public_order_safety"]["population"]["personal"] for g in GENS])
@@ -414,7 +449,11 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
     if arm == "published":
         print(f"  · per-head lines per member across generations: widest relative spread {spread:.2%}", flush=True)
     else:
-        gate("every per-head line charges each generation the same per member (1e-9 relative)", spread < 1e-9,
+        # With the lineage, G3+'s per-head lines carry the added people's per-head amounts, which the lineage lane priced
+        # for about 0.03 fewer people than meta.lineage counts.added: G3+ pays 1.9e-9 less per member on every per-head
+        # line. The tolerance is 1e-8 there.
+        tol = 1e-8 if lineage else 1e-9
+        gate(f"every per-head line charges each generation the same per member ({tol:.0e} relative)", spread < tol,
              f"widest spread {spread:.1e}")
     gaps["per-head lines' spread (relative)"] = spread
 
@@ -425,7 +464,7 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
     # so its parts are solved on the row-4 labor shares.
     print("[production cells]", flush=True)
     prod_parts = {}
-    w_labor = w0 if v4 else w_pub
+    w_labor = w_id if v4 else w_pub
     for end in ENDS:
         dims = lines["union"][end]["production"]["dims"]
         cut = 39 if dims["split"] == "hs_or_less" else 42
@@ -434,11 +473,22 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
         labor = np.array([[float((earn * w_labor)[gens[g] & c].sum()) for c in cells] for g in GENS])
         A = labor / labor.sum(axis=0)
         y = np.array([lines["generations"][g][end]["production"]["cost_bn"] for g in GENS])
+        y_all = y.copy()
+        if lineage:     # the lineage's production term is set apart: the identified union's terms are September 29's
+            y[GENS.index("G3plus")] -= lineage["production_bn"][end]
         AS, *_ = np.linalg.lstsq(A, y, rcond=None)
         resid = float(np.abs(A @ AS - y).max())
         gate(f"production {end}: cell parts reproduce the three generations' terms", resid < 1e-6,
              f"AS = {AS.round(4).tolist()} bn, max residual {resid:.1e}")
-        prod_parts[end] = dict(earn=earn, cells=cells, part=A * AS)  # generation x cell, $bn
+        part = A * AS  # generation x cell, $bn
+        if lineage:
+            # [ASSUMPTION] the added people's production term splits over G3+'s two cells as G3+'s own parts do.
+            j3 = GENS.index("G3plus")
+            part[j3] += lineage["production_bn"][end] * part[j3] / part[j3].sum()
+            gap = float(np.abs(part.sum(axis=1) - y_all).max())
+            gate(f"production {end}: with the lineage's term on G3+ the cell parts add to the generations' terms (1e-9 bn)",
+                 gap < 1e-9, f"lineage {lineage['production_bn'][end]:.6f} bn; max |diff| {gap:.1e}")
+        prod_parts[end] = dict(earn=earn, cells=cells, part=part)
 
     # Pieces: (generation, category, amount_bn, vector restricted to the generation).
     print("[pieces]", flush=True)
@@ -637,11 +687,16 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
                         for g in GENS for r in lines["generations"][g][end]["rows"]
                         if r["side"] == "receipt" and (r["id"] in PA["oasdi_lines"] or r["id"] == PA["se_line"]))
             part_bn = {k: sum(p["bn"] for p in pieces[end] if p.get("part") == k) for k in ("oasdi", "part_a")}
-            gap = abs(part_bn["oasdi"] - PA["ratio_net"] * oasdi) / (PA["ratio_net"] * oasdi)
-            gate(f"{end}: the union's Social Security accrual is ratio_net x its OASDI receipts in the account (1e-9 relative)",
-                 gap < 1e-9, f"{part_bn['oasdi']:.6f} = {PA['ratio_net']:.6f} x {oasdi:.6f} bn")
-            gate(f"{end}: the union's Part A accrual is the payload's part_a_accrual_bn (1e-9 bn)",
-                 abs(part_bn["part_a"] - PA["part_a_accrual_bn"]) < 1e-9, f"{part_bn['part_a']:.9f} bn")
+            # oct05: the lineage's own accrual and Part A sit beside the September 29 union's (export_lines.cjs gates them).
+            own = lineage["pension_bn"][end] if lineage else dict(oasdi_receipts_bn=0.0, accrual=0.0, part_a=0.0)
+            want = PA["ratio_net"] * (oasdi - own["oasdi_receipts_bn"]) + own["accrual"]
+            gap = abs(part_bn["oasdi"] - want) / want
+            gate(f"{end}: the union's Social Security accrual is ratio_net x its OASDI receipts in the account (1e-9 relative)"
+                 + (", plus the lineage's own on its receipts" if lineage else ""),
+                 gap < 1e-9, f"{part_bn['oasdi']:.6f} = {PA['ratio_net']:.6f} x {oasdi - own['oasdi_receipts_bn']:.6f}"
+                 + (f" + {own['accrual']:.6f}" if lineage else "") + " bn")
+            gate(f"{end}: the union's Part A accrual is the payload's part_a_accrual_bn (1e-9 bn)" + (", plus the lineage's" if lineage else ""),
+                 abs(part_bn["part_a"] - PA["part_a_accrual_bn"] - own["part_a"]) < 1e-9, f"{part_bn['part_a']:.9f} bn")
         pen_by = {}
         for k_vec in PENSION_VECTORS:
             pen = {e: np.zeros((len(rows_u), W.shape[1])) for e in ENDS}
@@ -951,12 +1006,12 @@ if __name__ == "__main__":
     parser.add_argument("--weights", choices=["published", "row4"], default="published",
                         help="published: ASEC person weights (derived/); row4: audit row 4's weights (derived/row4/)")
     parser.add_argument("--case", choices=list(CASE_DIRS), default="sept27",
-                        help="sept27 (default): the September 27 case; sept29: the main case adopted on 2026-09-29, "
-                             "row-4 weights only, written to derived/sept29/")
+                        help="sept27 (default): the September 27 case; sept29: the main case adopted on 2026-09-29; oct05: on 2026-10-05; "
+                             "the later cases on the row-4 weights only, written to derived/<case>/")
     parser.add_argument("--accrual", choices=["flat", "person"], default="flat",
                         help="flat (default): the pension accrual by OASDI and HI receipts; person: by the pension "
                              "lane's person model (person_accrual.py), new *_person_accrual files beside the flat ones "
-                             "(--case sept29 only)")
+                             "(--case sept29 or oct05)")
     parser.add_argument("--payroll", choices=["all", "onbooks"], default="all",
                         help="all (default): the payroll taxes on all wages, as the account keys them; onbooks (with "
                              "--accrual person): on on-books wages, the lane's central, written to *_person_onbooks")
