@@ -1,0 +1,43 @@
+{
+ "meta": {
+  "source": "main_case_lineage_2026_10_05/fractional.py",
+  "rule": "share of Mexican-immigrant ancestry: Mexico-born 1; each US-born person half of each parent's share (lineage_cost_2026_09_19 per_capita, TFR/2); a parent born abroad elsewhere or a US-born parent not of Mexican origin 0; unknown ancestors bounded by 0 and their full weight",
+  "weights": "pwwgt0 (US-born keep CPS weights under audit row 4)",
+  "costs": "not split here: lineage_case.cjs prices each generation's share at its average cost"
+ },
+ "shares": {
+  "G1": {
+   "low": 1.0,
+   "central": 1.0,
+   "high": 1.0,
+   "population": 11036701.061392
+  },
+  "G2": {
+   "low": 0.8677927289303603,
+   "central": 0.9247601761431614,
+   "high": 0.9548416588943237,
+   "population": 14333217.66352,
+   "unknown_other_parent_central": 0.8393867439022711,
+   "co_resident_us_born_other_parent_share": 0.6787734878045422
+  },
+  "G3plus": {
+   "low": 0.12698935853371607,
+   "central": 0.6155849283900978,
+   "high": 0.9096112120958108,
+   "population": 14342574.606276,
+   "central_rule": "the identified third-generation children's quarter-per-grandparent mix (population lane convention), applied to every identified third-plus member",
+   "seen_low": 0.3045779055325375,
+   "seen_high": 0.7610349769943143,
+   "seen_rule": "members with both biological parents at home (grandparents seen): low counts only Mexico-born grandparents (the strict quarter rule), high gives every US-born grandparent of a Mexican-origin parent full Mexican-immigrant ancestry",
+   "seen_share_of_g3plus": 0.3043663809562807,
+   "seen_with_no_mexico_born_grandparent": 0.5193150115478272,
+   "share_with_no_parent_at_home": 0.4640080926322611
+  },
+  "added": {
+   "low": 0.40754236199207944,
+   "central": 0.40754236199207944,
+   "high": 0.40754236199207944,
+   "rule": "the hidden third generation's quarter-per-grandparent mix (population.json); later losses take it too"
+  }
+ }
+}

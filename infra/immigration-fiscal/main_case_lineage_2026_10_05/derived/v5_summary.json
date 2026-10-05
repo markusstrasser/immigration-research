@@ -1,0 +1,3067 @@
+{
+ "meta": {
+  "source": "main_case_lineage_2026_10_05/lineage_case.cjs",
+  "status": "candidate v5, not adopted",
+  "central_arm": "b",
+  "c3": {
+   "label": "pooled with CPS monthly 1994-2026 (central)",
+   "measure": "ba_plus",
+   "value": 0.5567,
+   "se": 0.2457,
+   "every_entry": {
+    "pooled with CPS monthly 1994-2026 (central)": {
+     "c3": 0.5567,
+     "se": 0.2457
+    },
+    "pooled with CPS 2022-26 (sensitivity)": {
+     "c3": 0.907,
+     "se": 0.6122
+    }
+   },
+   "override": false,
+   "source": "generation_carryover_2026_09_27/summarize.py SPLIT_C3 (imported)"
+  },
+  "profile": "long_run_non_school_full",
+  "population": {
+   "source": "main_case_lineage_2026_10_05/population.py",
+   "account_union": 39712493.3312,
+   "frame_factor": 0.9971889122261052,
+   "frame_rule": "the account's civilian G3+ (generation_results_sept29.csv, convention a) over the population lane's self-identified third-plus (all person records): row 4 leaves US-born weights alone",
+   "union_ratio_not_used": 0.9693529096154301,
+   "g3_account": 14342574.606276,
+   "self_id_third_plus_cps": 14383006.5,
+   "p3": 0.8881107577872976,
+   "split_rule": "bounds_coverage_fiscal.py arm 5 (identity_loss_propagation population_arms.csv): G3-rate = min(added, (1 - p3) x corrected third-plus), later losses = the rest",
+   "s_v4": 0.12024478903339636,
+   "s_rule": "(40.896574m + added) / 340.110988m, finite_response_2026_09_26 s_national_memo",
+   "acs_proxy_group": 39429519,
+   "central_arm": "b"
+  },
+  "fractional_ancestry": {
+   "hidden_third_generation": 0.40754236199207944,
+   "identified_third_generation": 0.6155849283900978,
+   "all_third_generation": 0.5915887669521136,
+   "rule": "a quarter per Mexico-born grandparent; hidden = children - self-identified per cell (arm3_grandparent_counts.csv); later losses take the same weight, an upper bound"
+  },
+  "fractional_shares": {
+   "G1": {
+    "low": 1,
+    "central": 1,
+    "high": 1,
+    "population": 11036701.061392
+   },
+   "G2": {
+    "low": 0.8677927289303603,
+    "central": 0.9247601761431614,
+    "high": 0.9548416588943237,
+    "population": 14333217.66352,
+    "unknown_other_parent_central": 0.8393867439022711,
+    "co_resident_us_born_other_parent_share": 0.6787734878045422
+   },
+   "G3plus": {
+    "low": 0.12698935853371607,
+    "central": 0.6155849283900978,
+    "high": 0.9096112120958108,
+    "population": 14342574.606276,
+    "central_rule": "the identified third-generation children's quarter-per-grandparent mix (population lane convention), applied to every identified third-plus member",
+    "seen_low": 0.3045779055325375,
+    "seen_high": 0.7610349769943143,
+    "seen_rule": "members with both biological parents at home (grandparents seen): low counts only Mexico-born grandparents (the strict quarter rule), high gives every US-born grandparent of a Mexican-origin parent full Mexican-immigrant ancestry",
+    "seen_share_of_g3plus": 0.3043663809562807,
+    "seen_with_no_mexico_born_grandparent": 0.5193150115478272,
+    "share_with_no_parent_at_home": 0.4640080926322611
+   },
+   "added": {
+    "low": 0.40754236199207944,
+    "central": 0.40754236199207944,
+    "high": 0.40754236199207944,
+    "rule": "the hidden third generation's quarter-per-grandparent mix (population.json); later losses take it too"
+   }
+  },
+  "note": "low / high are the band's ends, specifications 48 (shared allocation) / 11 (personal); every arm's ends are v4's (gate)"
+ },
+ "sets": {
+  "set": {
+   "v4": {
+    "band_bn": [
+     371.41459978888685,
+     434.8409586241356
+    ],
+    "ends": [
+     48,
+     11
+    ]
+   },
+   "g3_member_usd": [
+    8548.888773237093,
+    11739.517311585098
+   ],
+   "white_reconciliation_per_person_at_v4": {
+    "g3plus_ages": {
+     "low": {
+      "lines_usd": 1359.2653165755548,
+      "capital_case_rules_usd": 926.1752028046751,
+      "capital_lane_keys_usd": 919.3127301273606,
+      "cost_case_rules_usd": 2285.44051938023,
+      "cost_lane_usd": 2278.578046702908
+     },
+     "high": {
+      "lines_usd": 1963.300802150719,
+      "capital_case_rules_usd": 1520.2838804158484,
+      "capital_lane_keys_usd": 1509.990171399877,
+      "cost_case_rules_usd": 3483.5846825665676,
+      "cost_lane_usd": 3473.290973550587
+     }
+    },
+    "own": {
+     "low": {
+      "lines_usd": -192.19905545079982,
+      "capital_case_rules_usd": 802.6751523236142,
+      "capital_lane_keys_usd": 802.542079712368,
+      "cost_case_rules_usd": 610.4760968728143,
+      "cost_lane_usd": 610.3430242615693
+     },
+     "high": {
+      "lines_usd": 502.455982988446,
+      "capital_case_rules_usd": 1362.6971751462036,
+      "capital_lane_keys_usd": 1362.4975662293346,
+      "cost_case_rules_usd": 1865.1531581346494,
+      "cost_lane_usd": 1864.9535492177747
+     }
+    }
+   },
+   "arms": {
+    "floor": {
+     "added": 799442.2624571284,
+     "g3_rate": 799442.2624571284,
+     "later": 0,
+     "m_g3plus": 354392.754947245,
+     "m_white": 445049.5075098834,
+     "population": 40511935.59365713,
+     "band_bn": [
+      375.38061640801055,
+      440.46634605844287
+     ],
+     "ends": [
+      48,
+      11
+     ],
+     "per_member_usd": [
+      9265.926470982618,
+      10872.5080548214
+     ],
+     "change_from_v4_bn": [
+      3.9660166191237067,
+      5.6253874343072425
+     ],
+     "of_which_union_response_move_bn": [
+      -0.07875355429530373,
+      -0.08325995941845576
+     ],
+     "of_which_g3plus_part_bn": [
+      3.028952526039662,
+      4.15964921110629
+     ],
+     "of_which_white_part_bn": [
+      1.015817647379639,
+      1.5489981826197068
+     ],
+     "added_per_person_usd": [
+      5059.490051210445,
+      7140.78759881904
+     ],
+     "g3plus_member_usd": [
+      8546.880498419197,
+      11737.399122974442
+     ],
+     "white_person_usd": [
+      2282.4823536223785,
+      3480.507576081988
+     ],
+     "white_person_own_ages_usd": [
+      606.7799312165087,
+      1861.2870818955919
+     ],
+     "g3_rate_attriter_usd": [
+      5059.490051210809,
+      7140.787598819414
+     ],
+     "c3_line": {
+      "rule": "v5 = intercept_bn + slope_bn x C3 at the arm's responses and ends (C3 does not move s)",
+      "low": {
+       "intercept_bn": 378.1685837171985,
+       "slope_bn": -5.008024625808606
+      },
+      "high": {
+       "intercept_bn": 444.14107157495016,
+       "slope_bn": -6.600908059110842
+      }
+     },
+     "route": {
+      "rule": "post_engine_bn: v4 + m_G G3+ members + m_W whites per line at v4's responses; gap_bn = this lane's band - post_engine_bn",
+      "post_engine_bn": [
+       375.46139821056516,
+       440.5517261532844
+      ],
+      "gap_bn": [
+       -0.0807818025546112,
+       -0.08538009484152553
+      ]
+     },
+     "responses": {
+      "s": 0.12259532250824288,
+      "k_metro": 1.0202752222885887,
+      "general_government": {
+       "low": 0.6001721600204292,
+       "high": 0.850568379663874
+      },
+      "row8_factor": 0.9481157255890309,
+      "owner_property": 0.7654892225547498,
+      "tenant_property": 0.711198305080786,
+      "economic_affairs_services": {
+       "low": 0.38414210266163085,
+       "high": 0.6386703281446288
+      },
+      "recreation_culture": {
+       "low": 0.8562315192029101,
+       "high": 1
+      },
+      "sl_highways": {
+       "low": 0.7394655589473503,
+       "high": 1,
+       "across_high": 0.7394655589473503
+      },
+      "sl_recreation_and_culture": {
+       "low": 0.951308044207957,
+       "high": 1,
+       "across_high": 0.951308044207957
+      }
+     },
+     "row8_edit_bn": -0.002094480590760339
+    },
+    "a": {
+     "added": 1806958.6613715945,
+     "g3_rate": 1806958.6613715945,
+     "later": 0,
+     "m_g3plus": 801024.774586028,
+     "m_white": 1005933.8867855666,
+     "population": 41519451.9925716,
+     "band_bn": [
+      380.3739935499582,
+      447.5507077381198
+     ],
+     "ends": [
+      48,
+      11
+     ],
+     "per_member_usd": [
+      9161.344268657793,
+      10779.301899702163
+     ],
+     "change_from_v4_bn": [
+      8.95939376107134,
+      12.709749113984174
+     ],
+     "of_which_union_response_move_bn": [
+      -0.17716896831660733,
+      -0.18736980125811442
+     ],
+     "of_which_g3plus_part_bn": [
+      6.844253617953199,
+      9.399826824451763
+     ],
+     "of_which_white_part_bn": [
+      2.292309111434828,
+      3.4972920907906166
+     ],
+     "added_per_person_usd": [
+      5056.320836057603,
+      7137.473142552453
+     ],
+     "g3plus_member_usd": [
+      8544.371953402228,
+      11734.751686437692
+     ],
+     "white_person_usd": [
+      2278.7870470889866,
+      3476.6619722555674
+     ],
+     "white_person_own_ages_usd": [
+      602.1630601591213,
+      1856.4555138661278
+     ],
+     "g3_rate_attriter_usd": [
+      5056.320836057646,
+      7137.473142552502
+     ],
+     "c3_line": {
+      "rule": "v5 = intercept_bn + slope_bn x C3 at the arm's responses and ends (C3 does not move s)",
+      "low": {
+       "intercept_bn": 386.6767577277509,
+       "slope_bn": -11.321652915021843
+      },
+      "high": {
+       "intercept_bn": 455.857800021731,
+       "slope_bn": -14.922026735425066
+      }
+     },
+     "route": {
+      "rule": "post_engine_bn: v4 + m_G G3+ members + m_W whites per line at v4's responses; gap_bn = this lane's band - post_engine_bn",
+      "post_engine_bn": [
+       380.5614735561075,
+       447.74885871207766
+      ],
+      "gap_bn": [
+       -0.1874800061493147,
+       -0.19815097395786552
+      ]
+     },
+     "responses": {
+      "s": 0.12555763902979694,
+      "k_metro": 1.0458275603456282,
+      "general_government": {
+       "low": 0.600331325973319,
+       "high": 0.8507864188583619
+      },
+      "row8_factor": 0.9467927701602116,
+      "owner_property": 0.7687215743925017,
+      "tenant_property": 0.7146578388314696,
+      "economic_affairs_services": {
+       "low": 0.38430255019598064,
+       "high": 0.6387015860497958
+      },
+      "recreation_culture": {
+       "low": 0.8563033572975493,
+       "high": 1
+      },
+      "sl_highways": {
+       "low": 0.7397944595307416,
+       "high": 1,
+       "across_high": 0.7397944595307416
+      },
+      "sl_recreation_and_culture": {
+       "low": 0.9513878592530449,
+       "high": 1,
+       "across_high": 0.9513878592530449
+      }
+     },
+     "row8_edit_bn": -0.004740391448398995
+    },
+    "b": {
+     "added": 3039719.593185237,
+     "g3_rate": 1944891.7263696424,
+     "later": 1094827.8668155947,
+     "m_g3plus": 1956998.3691152572,
+     "m_white": 1082721.22406998,
+     "population": 42752212.92438524,
+     "band_bn": [
+      390.2939582020253,
+      461.24312471796566
+     ],
+     "ends": [
+      48,
+      11
+     ],
+     "per_member_usd": [
+      9129.210665476623,
+      10788.754386439707
+     ],
+     "change_from_v4_bn": [
+      18.879358413138448,
+      26.402166093830033
+     ],
+     "of_which_union_response_move_bn": [
+      -0.29828842771320296,
+      -0.31547983366840526
+     ],
+     "of_which_g3plus_part_bn": [
+      16.715279715970965,
+      22.95851396786717
+     ],
+     "of_which_white_part_bn": [
+      2.4623671248807737,
+      3.7591319596312447
+     ],
+     "added_per_person_usd": [
+      6309.018398883277,
+      8789.510054610586
+     ],
+     "g3plus_member_usd": [
+      8541.28443833492,
+      11731.49366406806
+     ],
+     "white_person_usd": [
+      2274.2392687423876,
+      3471.929686111223
+     ],
+     "white_person_own_ages_usd": [
+      596.4811642627278,
+      1850.510063287354
+     ],
+     "g3_rate_attriter_usd": [
+      5052.420392422758,
+      7133.39439753949
+     ],
+     "c3_line": {
+      "rule": "v5 = intercept_bn + slope_bn x C3 at the arm's responses and ends (C3 does not move s)",
+      "low": {
+       "intercept_bn": 397.07942101934844,
+       "slope_bn": -12.188724299125349
+      },
+      "high": {
+       "intercept_bn": 470.18592993846335,
+       "slope_bn": -16.063957644148985
+      }
+     },
+     "route": {
+      "rule": "post_engine_bn: v4 + m_G G3+ members + m_W whites per line at v4's responses; gap_bn = this lane's band - post_engine_bn",
+      "post_engine_bn": [
+       390.6192561325421,
+       461.5869259287679
+      ],
+      "gap_bn": [
+       -0.3252979305167969,
+       -0.343801210802269
+      ]
+     },
+     "responses": {
+      "s": 0.12918222328408055,
+      "k_metro": 1.0770924847748014,
+      "general_government": {
+       "low": 0.6005266346459308,
+       "high": 0.8510539647701243
+      },
+      "row8_factor": 0.9451692510510525,
+      "owner_property": 0.7726986463443216,
+      "tenant_property": 0.7189123969969125,
+      "economic_affairs_services": {
+       "low": 0.3844994797314016,
+       "high": 0.6387399411939584
+      },
+      "recreation_culture": {
+       "low": 0.8563914832367988,
+       "high": 1
+      },
+      "sl_highways": {
+       "low": 0.7401981546463505,
+       "high": 1,
+       "across_high": 0.7401981546463505
+      },
+      "sl_recreation_and_culture": {
+       "low": 0.9514857707559868,
+       "high": 1,
+       "across_high": 0.9514857707559868
+      }
+     },
+     "row8_edit_bn": -0.00798742966671706
+    },
+    "c": {
+     "added": 4272480.52499888,
+     "g3_rate": 2082824.3924921257,
+     "later": 2189656.1325067542,
+     "m_g3plus": 3112972.185698514,
+     "m_white": 1159508.3393003664,
+     "population": 43984973.856198885,
+     "band_bn": [
+      400.2063393868142,
+      474.92750783549945
+     ],
+     "ends": [
+      48,
+      11
+     ],
+     "per_member_usd": [
+      9098.705860215316,
+      10797.494375879163
+     ],
+     "change_from_v4_bn": [
+      28.791739597927346,
+      40.08654921136383
+     ],
+     "of_which_union_response_move_bn": [
+      -0.419182445404374,
+      -0.4433899918222437
+     ],
+     "of_which_g3plus_part_bn": [
+      26.5791878216804,
+      36.5096876759689
+     ],
+     "of_which_white_part_bn": [
+      2.6317342216513846,
+      4.020251527217263
+     ],
+     "added_per_person_usd": [
+      6836.993608844918,
+      9486.278279336731
+     ],
+     "g3plus_member_usd": [
+      8538.20279660364,
+      11728.24088943042
+     ],
+     "white_person_usd": [
+      2269.698399270972,
+      3467.20363360477
+     ],
+     "white_person_own_ages_usd": [
+      590.8074142470448,
+      1844.5718066733266
+     ],
+     "g3_rate_attriter_usd": [
+      5048.526398608545,
+      7129.321449112282
+     ],
+     "c3_line": {
+      "rule": "v5 = intercept_bn + slope_bn x C3 at the arm's responses and ends (C3 does not move s)",
+      "low": {
+       "intercept_bn": 407.47472251046247,
+       "slope_bn": -13.056193863208634
+      },
+      "high": {
+       "intercept_bn": 484.5062494249004,
+       "slope_bn": -17.206289903719878
+      }
+     },
+     "route": {
+      "rule": "post_engine_bn: v4 + m_G G3+ members + m_W whites per line at v4's responses; gap_bn = this lane's band - post_engine_bn",
+      "post_engine_bn": [
+       400.67704009980054,
+       475.4249949787212
+      ],
+      "gap_bn": [
+       -0.47070071298634275,
+       -0.4974871432217469
+      ]
+     },
+     "responses": {
+      "s": 0.13280680753836416,
+      "k_metro": 1.1083574092039743,
+      "general_government": {
+       "low": 0.6007225622963238,
+       "high": 0.8513223534045431
+      },
+      "row8_factor": 0.9435404175788836,
+      "owner_property": 0.7766727586364475,
+      "tenant_property": 0.7231577744571134,
+      "economic_affairs_services": {
+       "low": 0.3846970868765249,
+       "high": 0.6387784171500924
+      },
+      "recreation_culture": {
+       "low": 0.8564798609522404,
+       "high": 1
+      },
+      "sl_highways": {
+       "low": 0.7406032501992074,
+       "high": 1,
+       "across_high": 0.7406032501992074
+      },
+      "sl_recreation_and_culture": {
+       "low": 0.951583961992519,
+       "high": 1,
+       "across_high": 0.951583961992519
+      }
+     },
+     "row8_edit_bn": -0.011245096611054883
+    }
+   }
+  },
+  "cash": {
+   "v4": {
+    "band_bn": [
+     294.70107598024805,
+     361.8174818097355
+    ],
+    "ends": [
+     48,
+     11
+    ]
+   },
+   "g3_member_usd": [
+    6259.658904828055,
+    10162.430325092062
+   ],
+   "white_reconciliation_per_person_at_v4": {
+    "g3plus_ages": {
+     "low": {
+      "lines_usd": -233.0551053787758,
+      "capital_case_rules_usd": 926.1752028046751,
+      "capital_lane_keys_usd": 919.3127301273606,
+      "cost_case_rules_usd": 693.1200974258993,
+      "cost_lane_usd": 686.2576247485757
+     },
+     "high": {
+      "lines_usd": 370.98038019638744,
+      "capital_case_rules_usd": 1520.2838804158484,
+      "capital_lane_keys_usd": 1509.990171399877,
+      "cost_case_rules_usd": 1891.264260612236,
+      "cost_lane_usd": 1880.9705515962576
+     }
+    },
+    "own": {
+     "low": {
+      "lines_usd": 1658.9600741066388,
+      "capital_case_rules_usd": 802.6751523236142,
+      "capital_lane_keys_usd": 802.542079712368,
+      "cost_case_rules_usd": 2461.6352264302527,
+      "cost_lane_usd": 2461.502153819
+     },
+     "high": {
+      "lines_usd": 2353.615112545883,
+      "capital_case_rules_usd": 1362.6971751462036,
+      "capital_lane_keys_usd": 1362.4975662293346,
+      "cost_case_rules_usd": 3716.3122876920866,
+      "cost_lane_usd": 3716.1126787752114
+     }
+    }
+   },
+   "arms": {
+    "floor": {
+     "added": 799442.2624571284,
+     "g3_rate": 799442.2624571284,
+     "later": 0,
+     "m_g3plus": 354392.754947245,
+     "m_white": 445049.5075098834,
+     "population": 40511935.59365713,
+     "band_bn": [
+      297.1471447000101,
+      366.1752996225194
+     ],
+     "ends": [
+      48,
+      11
+     ],
+     "per_member_usd": [
+      7334.80492466358,
+      9038.7016630193
+     ],
+     "change_from_v4_bn": [
+      2.4460687197620246,
+      4.357817812783878
+     ],
+     "of_which_union_response_move_bn": [
+      -0.07875355429530373,
+      -0.08325995941851261
+     ],
+     "of_which_g3plus_part_bn": [
+      2.217666046266664,
+      3.600741009171574
+     ],
+     "of_which_white_part_bn": [
+      0.30715622779093454,
+      0.8403367630310015
+     ],
+     "added_per_person_usd": [
+      3158.229671642768,
+      5555.220158804842
+     ],
+     "g3plus_member_usd": [
+      6257.65063001016,
+      10160.312136481405
+     ],
+     "white_person_usd": [
+      690.1619316680479,
+      1888.187154127656
+     ],
+     "white_person_own_ages_usd": [
+      2457.9390607739506,
+      3712.4462114530293
+     ],
+     "g3_rate_attriter_usd": [
+      3158.2296716431065,
+      5555.220158805073
+     ],
+     "c3_line": {
+      "rule": "v5 = intercept_bn + slope_bn x C3 at the arm's responses and ends (C3 does not move s)",
+      "low": {
+       "intercept_bn": 299.62495280327437,
+       "slope_bn": -4.450885761207111
+      },
+      "high": {
+       "intercept_bn": 369.85680477197633,
+       "slope_bn": -6.613086311221014
+      }
+     },
+     "route": {
+      "rule": "post_engine_bn: v4 + m_G G3+ members + m_W whites per line at v4's responses; gap_bn = this lane's band - post_engine_bn",
+      "post_engine_bn": [
+       297.22792650256474,
+       366.2606797173608
+      ],
+      "gap_bn": [
+       -0.08078180255466805,
+       -0.08538009484141185
+      ]
+     },
+     "responses": {
+      "s": 0.12259532250824288,
+      "k_metro": 1.0202752222885887,
+      "general_government": {
+       "low": 0.6001721600204292,
+       "high": 0.850568379663874
+      },
+      "row8_factor": 0.9481157255890309,
+      "owner_property": 0.7654892225547498,
+      "tenant_property": 0.711198305080786,
+      "economic_affairs_services": {
+       "low": 0.38414210266163085,
+       "high": 0.6386703281446288
+      },
+      "recreation_culture": {
+       "low": 0.8562315192029101,
+       "high": 1
+      },
+      "sl_highways": {
+       "low": 0.7394655589473503,
+       "high": 1,
+       "across_high": 0.7394655589473503
+      },
+      "sl_recreation_and_culture": {
+       "low": 0.951308044207957,
+       "high": 1,
+       "across_high": 0.951308044207957
+      }
+     },
+     "row8_edit_bn": -0.002094480590760339
+    },
+    "a": {
+     "added": 1806958.6613715945,
+     "g3_rate": 1806958.6613715945,
+     "later": 0,
+     "m_g3plus": 801024.774586028,
+     "m_white": 1005933.8867855666,
+     "population": 41519451.9925716,
+     "band_bn": [
+      300.22497083093697,
+      371.6621761047971
+     ],
+     "ends": [
+      48,
+      11
+     ],
+     "per_member_usd": [
+      7230.947337278231,
+      8951.51930645165
+     ],
+     "change_from_v4_bn": [
+      5.523894850688919,
+      9.844694295061572
+     ],
+     "of_which_union_response_move_bn": [
+      -0.17716896831660733,
+      -0.18736980125817126
+     ],
+     "of_which_g3plus_part_bn": [
+      5.01052377863525,
+      8.136541076593621
+     ],
+     "of_which_white_part_bn": [
+      0.690540040370275,
+      1.8955230197260617
+     ],
+     "added_per_person_usd": [
+      3155.0604564899463,
+      5551.905702538198
+     ],
+     "g3plus_member_usd": [
+      6255.142084993193,
+      10157.664699944655
+     ],
+     "white_person_usd": [
+      686.466625134656,
+      1884.3415503012352
+     ],
+     "white_person_own_ages_usd": [
+      2453.3221897165595,
+      3707.614643423565
+     ],
+     "g3_rate_attriter_usd": [
+      3155.060456489946,
+      5551.9057025381635
+     ],
+     "c3_line": {
+      "rule": "v5 = intercept_bn + slope_bn x C3 at the arm's responses and ends (C3 does not move s)",
+      "low": {
+       "intercept_bn": 305.82669018051985,
+       "slope_bn": -10.062366354558831
+      },
+      "high": {
+       "intercept_bn": 379.98459221735084,
+       "slope_bn": -14.9495529235743
+      }
+     },
+     "route": {
+      "rule": "post_engine_bn: v4 + m_G G3+ members + m_W whites per line at v4's responses; gap_bn = this lane's band - post_engine_bn",
+      "post_engine_bn": [
+       300.41245083708617,
+       371.8603270787549
+      ],
+      "gap_bn": [
+       -0.18748000614920102,
+       -0.19815097395780867
+      ]
+     },
+     "responses": {
+      "s": 0.12555763902979694,
+      "k_metro": 1.0458275603456282,
+      "general_government": {
+       "low": 0.600331325973319,
+       "high": 0.8507864188583619
+      },
+      "row8_factor": 0.9467927701602116,
+      "owner_property": 0.7687215743925017,
+      "tenant_property": 0.7146578388314696,
+      "economic_affairs_services": {
+       "low": 0.38430255019598064,
+       "high": 0.6387015860497958
+      },
+      "recreation_culture": {
+       "low": 0.8563033572975493,
+       "high": 1
+      },
+      "sl_highways": {
+       "low": 0.7397944595307416,
+       "high": 1,
+       "across_high": 0.7397944595307416
+      },
+      "sl_recreation_and_culture": {
+       "low": 0.9513878592530449,
+       "high": 1,
+       "across_high": 0.9513878592530449
+      }
+     },
+     "row8_edit_bn": -0.004740391448398995
+    },
+    "b": {
+     "added": 3039719.593185237,
+     "g3_rate": 1944891.7263696424,
+     "later": 1094827.8668155947,
+     "m_g3plus": 1956998.3691152572,
+     "m_white": 1082721.22406998,
+     "population": 42752212.92438524,
+     "band_bn": [
+      307.37637615801015,
+      383.4092521266758
+     ],
+     "ends": [
+      48,
+      11
+     ],
+     "per_member_usd": [
+      7189.718499523264,
+      8968.173245319536
+     ],
+     "change_from_v4_bn": [
+      12.675300177762097,
+      21.591770316940313
+     ],
+     "of_which_union_response_move_bn": [
+      -0.29828842771320296,
+      -0.31547983366840526
+     ],
+     "of_which_g3plus_part_bn": [
+      12.23526059696455,
+      19.8721573073474
+     ],
+     "of_which_white_part_bn": [
+      0.7383280085107542,
+      2.035092843261223
+     ],
+     "added_per_person_usd": [
+      4268.021509142111,
+      7206.997053189608
+     ],
+     "g3plus_member_usd": [
+      6252.0545699258855,
+      10154.406677575025
+     ],
+     "white_person_usd": [
+      681.918846788057,
+      1879.609264156891
+     ],
+     "white_person_own_ages_usd": [
+      2447.6402938201663,
+      3701.669192844788
+     ],
+     "g3_rate_attriter_usd": [
+      3151.1600128550563,
+      5547.82695752515
+     ],
+     "c3_line": {
+      "rule": "v5 = intercept_bn + slope_bn x C3 at the arm's responses and ends (C3 does not move s)",
+      "low": {
+       "intercept_bn": 313.40728032640186,
+       "slope_bn": -10.833310882686748
+      },
+      "high": {
+       "intercept_bn": 392.3685509110629,
+       "slope_bn": -16.093585026741845
+      }
+     },
+     "route": {
+      "rule": "post_engine_bn: v4 + m_G G3+ members + m_W whites per line at v4's responses; gap_bn = this lane's band - post_engine_bn",
+      "post_engine_bn": [
+       307.70167408852683,
+       383.75305333747804
+      ],
+      "gap_bn": [
+       -0.3252979305166832,
+       -0.34380121080221215
+      ]
+     },
+     "responses": {
+      "s": 0.12918222328408055,
+      "k_metro": 1.0770924847748014,
+      "general_government": {
+       "low": 0.6005266346459308,
+       "high": 0.8510539647701243
+      },
+      "row8_factor": 0.9451692510510525,
+      "owner_property": 0.7726986463443216,
+      "tenant_property": 0.7189123969969125,
+      "economic_affairs_services": {
+       "low": 0.3844994797314016,
+       "high": 0.6387399411939584
+      },
+      "recreation_culture": {
+       "low": 0.8563914832367988,
+       "high": 1
+      },
+      "sl_highways": {
+       "low": 0.7401981546463505,
+       "high": 1,
+       "across_high": 0.7401981546463505
+      },
+      "sl_recreation_and_culture": {
+       "low": 0.9514857707559868,
+       "high": 1,
+       "across_high": 0.9514857707559868
+      }
+     },
+     "row8_edit_bn": -0.00798742966671706
+    },
+    "c": {
+     "added": 4272480.52499888,
+     "g3_rate": 2082824.3924921257,
+     "later": 2189656.1325067542,
+     "m_g3plus": 3112972.185698514,
+     "m_white": 1159508.3393003664,
+     "population": 43984973.856198885,
+     "band_bn": [
+      314.52019786305345,
+      395.14829428962514
+     ],
+     "ends": [
+      48,
+      11
+     ],
+     "per_member_usd": [
+      7150.6282779960675,
+      8983.711018710454
+     ],
+     "change_from_v4_bn": [
+      19.819121882805405,
+      33.33081247988963
+     ],
+     "of_which_union_response_move_bn": [
+      -0.419182445404374,
+      -0.4433899918222437
+     ],
+     "of_which_g3plus_part_bn": [
+      19.4528789146528,
+      31.60025975258899
+     ],
+     "of_which_white_part_bn": [
+      0.7854254135570599,
+      2.173942719122937
+     ],
+     "added_per_person_usd": [
+      4736.897970580002,
+      7905.057091330036
+     ],
+     "g3plus_member_usd": [
+      6248.972928194605,
+      10151.153902937385
+     ],
+     "white_person_usd": [
+      677.3779773166411,
+      1874.8832116504384
+     ],
+     "white_person_own_ages_usd": [
+      2441.966543804483,
+      3695.7309362307637
+     ],
+     "g3_rate_attriter_usd": [
+      3147.266019040843,
+      5543.754009097942
+     ],
+     "c3_line": {
+      "rule": "v5 = intercept_bn + slope_bn x C3 at the arm's responses and ends (C3 does not move s)",
+      "low": {
+       "intercept_bn": 320.98050867180035,
+       "slope_bn": -11.60465386877459
+      },
+      "high": {
+       "intercept_bn": 404.7446991744796,
+       "slope_bn": -17.23801847468012
+      }
+     },
+     "route": {
+      "rule": "post_engine_bn: v4 + m_G G3+ members + m_W whites per line at v4's responses; gap_bn = this lane's band - post_engine_bn",
+      "post_engine_bn": [
+       314.9908985760398,
+       395.64578143284683
+      ],
+      "gap_bn": [
+       -0.47070071298634275,
+       -0.4974871432216901
+      ]
+     },
+     "responses": {
+      "s": 0.13280680753836416,
+      "k_metro": 1.1083574092039743,
+      "general_government": {
+       "low": 0.6007225622963238,
+       "high": 0.8513223534045431
+      },
+      "row8_factor": 0.9435404175788836,
+      "owner_property": 0.7766727586364475,
+      "tenant_property": 0.7231577744571134,
+      "economic_affairs_services": {
+       "low": 0.3846970868765249,
+       "high": 0.6387784171500924
+      },
+      "recreation_culture": {
+       "low": 0.8564798609522404,
+       "high": 1
+      },
+      "sl_highways": {
+       "low": 0.7406032501992074,
+       "high": 1,
+       "across_high": 0.7406032501992074
+      },
+      "sl_recreation_and_culture": {
+       "low": 0.951583961992519,
+       "high": 1,
+       "across_high": 0.951583961992519
+      }
+     },
+     "row8_edit_bn": -0.011245096611054883
+    }
+   }
+  }
+ },
+ "replacement": {
+  "rule": "[FRAMING-SENSITIVE] the band net of r x W x added persons (a native parent's replacement child); W the C3 blend's third-plus non-Hispanic white per person at the arm's responses; band = min / max over the 64 specifications",
+  "rows": [
+   {
+    "set": "set",
+    "arm": "floor",
+    "r": 1,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     2282.4823536223785,
+     3480.507576081988
+    ],
+    "deduction_bn": [
+     1.8247128567983457,
+     2.7824648511221604
+    ],
+    "band_bn": [
+     373.5559035512122,
+     437.6838812073207
+    ],
+    "lineage_line_net_bn": [
+     2.1413037623253786,
+     2.8429225831851
+    ],
+    "per_member_usd": [
+     9220.885106504245,
+     10803.825460165079
+    ]
+   },
+   {
+    "set": "set",
+    "arm": "floor",
+    "r": 0.5,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     2282.4823536223785,
+     3480.507576081988
+    ],
+    "deduction_bn": [
+     0.9123564283991729,
+     1.3912324255610802
+    ],
+    "band_bn": [
+     374.4682599796114,
+     439.07511363288177
+    ],
+    "lineage_line_net_bn": [
+     3.0536601907245426,
+     4.234155008746143
+    ],
+    "per_member_usd": [
+     9243.405788743432,
+     10838.166757493238
+    ]
+   },
+   {
+    "set": "set",
+    "arm": "a",
+    "r": 1,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     2278.7870470889866,
+     3476.6619722555674
+    ],
+    "deduction_bn": [
+     4.117673992158844,
+     6.282184463428448
+    ],
+    "band_bn": [
+     376.2563195577993,
+     441.26852327469135
+    ],
+    "lineage_line_net_bn": [
+     4.841719768912469,
+     6.427564650555723
+    ],
+    "per_member_usd": [
+     9062.169693981432,
+     10627.994881860202
+    ]
+   },
+   {
+    "set": "set",
+    "arm": "a",
+    "r": 0.5,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     2278.7870470889866,
+     3476.6619722555674
+    ],
+    "deduction_bn": [
+     2.058836996079422,
+     3.141092231714224
+    ],
+    "band_bn": [
+     378.31515655387875,
+     444.4096155064056
+    ],
+    "lineage_line_net_bn": [
+     6.900556764991904,
+     9.568656882269977
+    ],
+    "per_member_usd": [
+     9111.756981319611,
+     10703.648390781183
+    ]
+   },
+   {
+    "set": "set",
+    "arm": "b",
+    "r": 1,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     2274.2392687423876,
+     3471.929686111223
+    ],
+    "deduction_bn": [
+     6.9130496647875015,
+     10.553692693033755
+    ],
+    "band_bn": [
+     383.3809085372378,
+     450.6894320249319
+    ],
+    "lineage_line_net_bn": [
+     11.966308748350968,
+     15.848473400796252
+    ],
+    "per_member_usd": [
+     8967.51027169784,
+     10541.897160319044
+    ]
+   },
+   {
+    "set": "set",
+    "arm": "b",
+    "r": 0.5,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     2274.2392687423876,
+     3471.929686111223
+    ],
+    "deduction_bn": [
+     3.4565248323937507,
+     5.276846346516877
+    ],
+    "band_bn": [
+     386.8374333696315,
+     455.96627837144877
+    ],
+    "lineage_line_net_bn": [
+     15.42283358074468,
+     21.125319747313142
+    ],
+    "per_member_usd": [
+     9048.36046858723,
+     10665.325773379376
+    ]
+   },
+   {
+    "set": "set",
+    "arm": "c",
+    "r": 1,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     2269.698399270972,
+     3467.20363360477
+    ],
+    "deduction_bn": [
+     9.69724220850636,
+     14.813560000781733
+    ],
+    "band_bn": [
+     390.50909717830785,
+     460.11394783471775
+    ],
+    "lineage_line_net_bn": [
+     19.094497389421008,
+     25.272989210582125
+    ],
+    "per_member_usd": [
+     8878.238701584965,
+     10460.70754387576
+    ]
+   },
+   {
+    "set": "set",
+    "arm": "c",
+    "r": 0.5,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     2269.698399270972,
+     3467.20363360477
+    ],
+    "deduction_bn": [
+     4.84862110425318,
+     7.406780000390866
+    ],
+    "band_bn": [
+     395.357718282561,
+     467.5207278351086
+    ],
+    "lineage_line_net_bn": [
+     23.94311849367415,
+     32.67976921097295
+    ],
+    "per_member_usd": [
+     8988.47228090014,
+     10629.10095987746
+    ]
+   },
+   {
+    "set": "cash",
+    "arm": "floor",
+    "r": 1,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     690.1619316680479,
+     1888.187154127656
+    ],
+    "deduction_bn": [
+     0.5517446161144863,
+     1.5094966104382999
+    ],
+    "band_bn": [
+     296.5954000838956,
+     364.6658030120811
+    ],
+    "lineage_line_net_bn": [
+     1.8943241036475342,
+     2.8483212023455735
+    ],
+    "per_member_usd": [
+     7321.185614501543,
+     9001.441122679313
+    ]
+   },
+   {
+    "set": "cash",
+    "arm": "floor",
+    "r": 0.5,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     690.1619316680479,
+     1888.187154127656
+    ],
+    "deduction_bn": [
+     0.27587230805724317,
+     0.7547483052191499
+    ],
+    "band_bn": [
+     296.87127239195286,
+     365.42055131730024
+    ],
+    "lineage_line_net_bn": [
+     2.170196411704808,
+     3.603069507564726
+    ],
+    "per_member_usd": [
+     7327.995269582562,
+     9020.071392849306
+    ]
+   },
+   {
+    "set": "cash",
+    "arm": "a",
+    "r": 1,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     686.466625134656,
+     1884.3415503012352
+    ],
+    "deduction_bn": [
+     1.2404168140295944,
+     3.404927285299195
+    ],
+    "band_bn": [
+     298.9845540169074,
+     368.2572488194979
+    ],
+    "lineage_line_net_bn": [
+     4.283478036659346,
+     6.439767009762363
+    ],
+    "per_member_usd": [
+     7201.071778847174,
+     8869.51130485499
+    ]
+   },
+   {
+    "set": "cash",
+    "arm": "a",
+    "r": 0.5,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     686.466625134656,
+     1884.3415503012352
+    ],
+    "deduction_bn": [
+     0.6202084070147972,
+     1.7024636426495976
+    ],
+    "band_bn": [
+     299.6047624239222,
+     369.9597124621475
+    ],
+    "lineage_line_net_bn": [
+     4.9036864436741325,
+     8.142230652411968
+    ],
+    "per_member_usd": [
+     7216.009558062702,
+     8910.51530565332
+    ]
+   },
+   {
+    "set": "cash",
+    "arm": "b",
+    "r": 1,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     681.918846788057,
+     1879.609264156891
+    ],
+    "deduction_bn": [
+     2.0728420795439386,
+     5.713485107790188
+    ],
+    "band_bn": [
+     305.3035340784662,
+     377.69576701888565
+    ],
+    "lineage_line_net_bn": [
+     10.602458098218165,
+     15.878285209150135
+    ],
+    "per_member_usd": [
+     7141.233475292819,
+     8834.531388747211
+    ]
+   },
+   {
+    "set": "cash",
+    "arm": "b",
+    "r": 0.5,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     681.918846788057,
+     1879.609264156891
+    ],
+    "deduction_bn": [
+     1.0364210397719693,
+     2.856742553895094
+    ],
+    "band_bn": [
+     306.33995511823815,
+     380.5525095727807
+    ],
+    "lineage_line_net_bn": [
+     11.638879137990102,
+     18.735027763045196
+    ],
+    "per_member_usd": [
+     7165.475987408041,
+     8901.352317033374
+    ]
+   },
+   {
+    "set": "cash",
+    "arm": "c",
+    "r": 1,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     677.3779773166411,
+     1874.8832116504384
+    ],
+    "deduction_bn": [
+     2.8940842161484825,
+     8.010402008423851
+    ],
+    "band_bn": [
+     311.62611364690497,
+     387.1378922812013
+    ],
+    "lineage_line_net_bn": [
+     16.92503766665692,
+     25.320410471465777
+    ],
+    "per_member_usd": [
+     7084.83116679145,
+     8801.594234132783
+    ]
+   },
+   {
+    "set": "cash",
+    "arm": "c",
+    "r": 0.5,
+    "ends": [
+     48,
+     11
+    ],
+    "w_per_person_usd": [
+     677.3779773166411,
+     1874.8832116504384
+    ],
+    "deduction_bn": [
+     1.4470421080742413,
+     4.0052010042119255
+    ],
+    "band_bn": [
+     313.0731557549792,
+     391.1430932854132
+    ],
+    "lineage_line_net_bn": [
+     18.372079774731162,
+     29.325611475677704
+    ],
+    "per_member_usd": [
+     7117.729722393758,
+     8892.652626421617
+    ]
+   }
+  ]
+ },
+ "fractional": {
+  "rule": "[FRAMING-SENSITIVE] the people-conserving lineage count (lineage_cost_2026_09_19 per_capita, TFR/2): each generation at its share of Mexican-immigrant ancestry, priced at that generation's cost at the arm's responses; band = min / max over the 64 specifications; derived/fractional_lineage.csv",
+  "rows": [
+   {
+    "set": "set",
+    "arm": "v4",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0,
+    "fractional_population": 33120562.714541078,
+    "low_bn": 312.87634430007205,
+    "high_bn": 356.67083227567446,
+    "spec_low": 48,
+    "spec_high": 43,
+    "per_member_low_usd": 9446.589026783306,
+    "per_member_high_usd": 10768.863903362473,
+    "whole_person_low_bn": 371.41459978888685,
+    "whole_person_high_bn": 434.8409586241356,
+    "g1_bn_at_ends": "97.2336 / 113.4668",
+    "g2_bn_at_ends": "151.5679 / 169.5696",
+    "g3plus_bn_at_ends": "122.6131 / 140.3427",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "set",
+    "arm": "v4",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0,
+    "fractional_population": 32304035.89390491,
+    "low_bn": 303.76385468229074,
+    "high_bn": 347.01088535928113,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9403.278763060209,
+    "per_member_high_usd": 10742.028844289229,
+    "whole_person_low_bn": 371.41459978888685,
+    "whole_person_high_bn": 434.8409586241356,
+    "g1_bn_at_ends": "71.9565 / 113.4668",
+    "g2_bn_at_ends": "160.7084 / 169.5696",
+    "g3plus_bn_at_ends": "150.0130 / 140.3427",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "v4",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0,
+    "fractional_population": 33551727.15445491,
+    "low_bn": 317.4357312185312,
+    "high_bn": 362.0158153461447,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9461.084663606742,
+    "per_member_high_usd": 10789.78181002754,
+    "whole_person_low_bn": 371.41459978888685,
+    "whole_person_high_bn": 434.8409586241356,
+    "g1_bn_at_ends": "97.2336 / 87.1129",
+    "g2_bn_at_ends": "151.5679 / 179.3532",
+    "g3plus_bn_at_ends": "122.6131 / 168.3749",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "set",
+    "arm": "v4",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0,
+    "fractional_population": 28659921.28613073,
+    "low_bn": 266.26390793090906,
+    "high_bn": 313.02326943174415,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9290.461940653026,
+    "per_member_high_usd": 10921.986362301146,
+    "whole_person_low_bn": 371.41459978888685,
+    "whole_person_high_bn": 434.8409586241356,
+    "g1_bn_at_ends": "71.9565 / 113.4668",
+    "g2_bn_at_ends": "160.7084 / 169.5696",
+    "g3plus_bn_at_ends": "150.0130 / 140.3427",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "v4",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0,
+    "fractional_population": 35206690.88813352,
+    "low_bn": 330.7104220228301,
+    "high_bn": 381.1107429987641,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9393.396927692987,
+    "per_member_high_usd": 10824.952115202006,
+    "whole_person_low_bn": 371.41459978888685,
+    "whole_person_high_bn": 434.8409586241356,
+    "g1_bn_at_ends": "97.2336 / 87.1129",
+    "g2_bn_at_ends": "151.5679 / 179.3532",
+    "g3plus_bn_at_ends": "122.6131 / 168.3749",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "v4",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0,
+    "fractional_population": 25296317.480943818,
+    "low_bn": 230.46817154039866,
+    "high_bn": 278.44006774678115,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9110.740000555992,
+    "per_member_high_usd": 11007.138408842915,
+    "whole_person_low_bn": 371.41459978888685,
+    "whole_person_high_bn": 434.8409586241356,
+    "g1_bn_at_ends": "71.9565 / 113.4668",
+    "g2_bn_at_ends": "160.7084 / 169.5696",
+    "g3plus_bn_at_ends": "150.0130 / 140.3427",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "v4",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0,
+    "fractional_population": 37768821.06471017,
+    "low_bn": 353.4871980035989,
+    "high_bn": 411.52246231016636,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9359.233040341962,
+    "per_member_high_usd": 10895.824934675502,
+    "whole_person_low_bn": 371.41459978888685,
+    "whole_person_high_bn": 434.8409586241356,
+    "g1_bn_at_ends": "97.2336 / 87.1129",
+    "g2_bn_at_ends": "151.5679 / 179.3532",
+    "g3plus_bn_at_ends": "122.6131 / 168.3749",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   },
+   {
+    "set": "set",
+    "arm": "floor",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33446369.302459147,
+    "low_bn": 314.45930884119355,
+    "high_bn": 358.87789101525846,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9401.896690116164,
+    "per_member_high_usd": 10729.950619449506,
+    "whole_person_low_bn": 375.38061640801055,
+    "whole_person_high_bn": 440.46634605844287,
+    "g1_bn_at_ends": "97.2110 / 87.0889",
+    "g2_bn_at_ends": "151.5411 / 179.3248",
+    "g3plus_bn_at_ends": "122.5837 / 168.3440",
+    "added_bn_at_ends": "4.0448 / 5.7086",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "set",
+    "arm": "floor",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 32629842.48182298,
+    "low_bn": 305.6242631840611,
+    "high_bn": 348.98750184786377,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9366.403265793097,
+    "per_member_high_usd": 10695.347427505154,
+    "whole_person_low_bn": 375.38061640801055,
+    "whole_person_high_bn": 440.46634605844287,
+    "g1_bn_at_ends": "71.9339 / 113.4428",
+    "g2_bn_at_ends": "160.6816 / 169.5412",
+    "g3plus_bn_at_ends": "149.9836 / 140.3118",
+    "added_bn_at_ends": "4.7218 / 5.0160",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "floor",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33877533.74237298,
+    "low_bn": 319.01789028215677,
+    "high_bn": 364.27224749062515,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9416.797949584476,
+    "per_member_high_usd": 10752.620018351707,
+    "whole_person_low_bn": 375.38061640801055,
+    "whole_person_high_bn": 440.46634605844287,
+    "g1_bn_at_ends": "97.2110 / 87.0889",
+    "g2_bn_at_ends": "151.5411 / 179.3248",
+    "g3plus_bn_at_ends": "122.5837 / 168.3440",
+    "added_bn_at_ends": "4.0448 / 5.7086",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "set",
+    "arm": "floor",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 28985727.8740488,
+    "low_bn": 268.13192410254504,
+    "high_bn": 315.0078923119935,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9250.480970071003,
+    "per_member_high_usd": 10867.689563663607,
+    "whole_person_low_bn": 375.38061640801055,
+    "whole_person_high_bn": 440.46634605844287,
+    "g1_bn_at_ends": "71.9339 / 113.4428",
+    "g2_bn_at_ends": "160.6816 / 169.5412",
+    "g3plus_bn_at_ends": "149.9836 / 140.3118",
+    "added_bn_at_ends": "4.7218 / 5.0160",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "floor",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 35532497.47605159,
+    "low_bn": 332.2891154626919,
+    "high_bn": 383.363528177376,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9351.696026620424,
+    "per_member_high_usd": 10789.09605033414,
+    "whole_person_low_bn": 375.38061640801055,
+    "whole_person_high_bn": 440.46634605844287,
+    "g1_bn_at_ends": "97.2110 / 87.0889",
+    "g2_bn_at_ends": "151.5411 / 179.3248",
+    "g3plus_bn_at_ends": "122.5837 / 168.3440",
+    "added_bn_at_ends": "4.0448 / 5.7086",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "floor",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 25622124.068861887,
+    "low_bn": 232.34292841717405,
+    "high_bn": 280.43180195677064,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9068.058830436164,
+    "per_member_high_usd": 10944.908439405086,
+    "whole_person_low_bn": 375.38061640801055,
+    "whole_person_high_bn": 440.46634605844287,
+    "g1_bn_at_ends": "71.9339 / 113.4428",
+    "g2_bn_at_ends": "160.6816 / 169.5412",
+    "g3plus_bn_at_ends": "149.9836 / 140.3118",
+    "added_bn_at_ends": "4.7218 / 5.0160",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "floor",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 38094627.65262824,
+    "low_bn": 355.0607230650858,
+    "high_bn": 413.7697964294656,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9320.493333148232,
+    "per_member_high_usd": 10861.631204339086,
+    "whole_person_low_bn": 375.38061640801055,
+    "whole_person_high_bn": 440.46634605844287,
+    "g1_bn_at_ends": "97.2110 / 87.0889",
+    "g2_bn_at_ends": "151.5411 / 179.3248",
+    "g3plus_bn_at_ends": "122.5837 / 168.3440",
+    "added_bn_at_ends": "4.0448 / 5.7086",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   },
+   {
+    "set": "set",
+    "arm": "a",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33856974.915418506,
+    "low_bn": 316.45263534249295,
+    "high_bn": 361.7209275502109,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9346.748672409598,
+    "per_member_high_usd": 10683.793471031067,
+    "whole_person_low_bn": 380.3739935499582,
+    "whole_person_high_bn": 447.5507077381198,
+    "g1_bn_at_ends": "97.1828 / 87.0590",
+    "g2_bn_at_ends": "151.5077 / 179.2893",
+    "g3plus_bn_at_ends": "122.5470 / 168.3053",
+    "added_bn_at_ends": "9.1366 / 12.8971",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "set",
+    "arm": "a",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33040448.094782334,
+    "low_bn": 307.82163097624425,
+    "high_bn": 351.50727180179797,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9316.508967832513,
+    "per_member_high_usd": 10638.69566155512,
+    "whole_person_low_bn": 380.3739935499582,
+    "whole_person_high_bn": 447.5507077381198,
+    "g1_bn_at_ends": "97.1828 / 87.0590",
+    "g2_bn_at_ends": "151.5077 / 179.2893",
+    "g3plus_bn_at_ends": "122.5470 / 168.3053",
+    "added_bn_at_ends": "9.1366 / 12.8971",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "a",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34288139.35533234,
+    "low_bn": 321.01021026767194,
+    "high_bn": 367.11421659956034,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9362.13560441418,
+    "per_member_high_usd": 10706.74068356726,
+    "whole_person_low_bn": 380.3739935499582,
+    "whole_person_high_bn": 447.5507077381198,
+    "g1_bn_at_ends": "97.1828 / 87.0590",
+    "g2_bn_at_ends": "151.5077 / 179.2893",
+    "g3plus_bn_at_ends": "122.5470 / 168.3053",
+    "added_bn_at_ends": "9.1366 / 12.8971",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "set",
+    "arm": "a",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 29396333.487008154,
+    "low_bn": 270.4843942625242,
+    "high_bn": 317.5072009047922,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9201.296970660167,
+    "per_member_high_usd": 10800.911652642531,
+    "whole_person_low_bn": 380.3739935499582,
+    "whole_person_high_bn": 447.5507077381198,
+    "g1_bn_at_ends": "71.9057 / 113.4129",
+    "g2_bn_at_ends": "160.6482 / 169.5057",
+    "g3plus_bn_at_ends": "149.9469 / 140.2731",
+    "added_bn_at_ends": "10.6668 / 11.3315",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "a",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 35943103.08901095,
+    "low_bn": 334.2771057560913,
+    "high_bn": 386.2009384425446,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9300.173803254384,
+    "per_member_high_usd": 10744.78565431986,
+    "whole_person_low_bn": 380.3739935499582,
+    "whole_person_high_bn": 447.5507077381198,
+    "g1_bn_at_ends": "97.1828 / 87.0590",
+    "g2_bn_at_ends": "151.5077 / 179.2893",
+    "g3plus_bn_at_ends": "122.5470 / 168.3053",
+    "added_bn_at_ends": "9.1366 / 12.8971",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "a",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 26032729.681821242,
+    "low_bn": 234.70382057955243,
+    "high_bn": 282.94000088746975,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9015.72072726,
+    "per_member_high_usd": 10868.625931496068,
+    "whole_person_low_bn": 380.3739935499582,
+    "whole_person_high_bn": 447.5507077381198,
+    "g1_bn_at_ends": "71.9057 / 113.4129",
+    "g2_bn_at_ends": "160.6482 / 169.5057",
+    "g3plus_bn_at_ends": "149.9469 / 140.2731",
+    "added_bn_at_ends": "10.6668 / 11.3315",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "a",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 38505233.2655876,
+    "low_bn": 357.04225594263517,
+    "high_bn": 416.6003920723101,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9272.564419489607,
+    "per_member_high_usd": 10819.318745554227,
+    "whole_person_low_bn": 380.3739935499582,
+    "whole_person_high_bn": 447.5507077381198,
+    "g1_bn_at_ends": "97.1828 / 87.0590",
+    "g2_bn_at_ends": "151.5077 / 179.2893",
+    "g3plus_bn_at_ends": "122.5470 / 168.3053",
+    "added_bn_at_ends": "9.1366 / 12.8971",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   },
+   {
+    "set": "set",
+    "arm": "b",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34359377.21734139,
+    "low_bn": 320.44413868833294,
+    "high_bn": 367.24685155406615,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9326.249910216731,
+    "per_member_high_usd": 10688.402447781107,
+    "whole_person_low_bn": 390.2939582020253,
+    "whole_person_high_bn": 461.24312471796566,
+    "g1_bn_at_ends": "97.1480 / 87.0221",
+    "g2_bn_at_ends": "151.4665 / 179.2457",
+    "g3plus_bn_at_ends": "122.5019 / 168.2577",
+    "added_bn_at_ends": "19.1776 / 26.7176",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "set",
+    "arm": "b",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33542850.396705225,
+    "low_bn": 311.81548024560493,
+    "high_bn": 357.03568333478916,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9296.03407455895,
+    "per_member_high_usd": 10644.166465049711,
+    "whole_person_low_bn": 390.2939582020253,
+    "whole_person_high_bn": 461.24312471796566,
+    "g1_bn_at_ends": "97.1480 / 87.0221",
+    "g2_bn_at_ends": "151.4665 / 179.2457",
+    "g3plus_bn_at_ends": "122.5019 / 168.2577",
+    "added_bn_at_ends": "19.1776 / 26.7176",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "b",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34790541.657255225,
+    "low_bn": 325.0004748559165,
+    "high_bn": 372.6388270714169,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9341.633081132006,
+    "per_member_high_usd": 10710.923409659154,
+    "whole_person_low_bn": 390.2939582020253,
+    "whole_person_high_bn": 461.24312471796566,
+    "g1_bn_at_ends": "97.1480 / 87.0221",
+    "g2_bn_at_ends": "151.4665 / 179.2457",
+    "g3plus_bn_at_ends": "122.5019 / 168.2577",
+    "added_bn_at_ends": "19.1776 / 26.7176",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "set",
+    "arm": "b",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 29898735.788931046,
+    "low_bn": 275.3899427703717,
+    "high_bn": 322.12715743769996,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9210.755421716698,
+    "per_member_high_usd": 10773.939062565856,
+    "whole_person_low_bn": 390.2939582020253,
+    "whole_person_high_bn": 461.24312471796566,
+    "g1_bn_at_ends": "71.8709 / 113.3760",
+    "g2_bn_at_ends": "160.6070 / 169.4621",
+    "g3plus_bn_at_ends": "149.9018 / 140.2255",
+    "added_bn_at_ends": "22.9163 / 22.8927",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "b",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 36445505.390933834,
+    "low_bn": 338.26204167365137,
+    "high_bn": 391.7199389297846,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9281.31022043111,
+    "per_member_high_usd": 10748.100066880363,
+    "whole_person_low_bn": 390.2939582020253,
+    "whole_person_high_bn": 461.24312471796566,
+    "g1_bn_at_ends": "97.1480 / 87.0221",
+    "g2_bn_at_ends": "151.4665 / 179.2457",
+    "g3plus_bn_at_ends": "122.5019 / 168.2577",
+    "added_bn_at_ends": "19.1776 / 26.7176",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "b",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 26535131.983744133,
+    "low_bn": 239.61973430874517,
+    "high_bn": 287.57089758296576,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9030.282361344207,
+    "per_member_high_usd": 10837.3645082729,
+    "whole_person_low_bn": 390.2939582020253,
+    "whole_person_high_bn": 461.24312471796566,
+    "g1_bn_at_ends": "71.8709 / 113.3760",
+    "g2_bn_at_ends": "160.6070 / 169.4621",
+    "g3plus_bn_at_ends": "149.9018 / 140.2255",
+    "added_bn_at_ends": "22.9163 / 22.8927",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "b",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 39007635.567510486,
+    "low_bn": 361.01924451929233,
+    "high_bn": 422.1110067024321,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9255.09170876242,
+    "per_member_high_usd": 10821.240522817256,
+    "whole_person_low_bn": 390.2939582020253,
+    "whole_person_high_bn": 461.24312471796566,
+    "g1_bn_at_ends": "97.1480 / 87.0221",
+    "g2_bn_at_ends": "151.4665 / 179.2457",
+    "g3plus_bn_at_ends": "122.5019 / 168.2577",
+    "added_bn_at_ends": "19.1776 / 26.7176",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   },
+   {
+    "set": "set",
+    "arm": "c",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34861779.51926428,
+    "low_bn": 324.4326475865319,
+    "high_bn": 372.7695865442586,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9306.256079304661,
+    "per_member_high_usd": 10692.787106242517,
+    "whole_person_low_bn": 400.2063393868142,
+    "whole_person_high_bn": 474.92750783549945,
+    "g1_bn_at_ends": "97.1132 / 86.9853",
+    "g2_bn_at_ends": "151.4254 / 179.2021",
+    "g3plus_bn_at_ends": "122.4568 / 168.2101",
+    "added_bn_at_ends": "29.2109 / 40.5299",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "set",
+    "arm": "c",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34045252.69862811,
+    "low_bn": 315.806330418708,
+    "high_bn": 362.5609017234161,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9276.075381618,
+    "per_member_high_usd": 10649.382013194041,
+    "whole_person_low_bn": 400.2063393868142,
+    "whole_person_high_bn": 474.92750783549945,
+    "g1_bn_at_ends": "97.1132 / 86.9853",
+    "g2_bn_at_ends": "151.4254 / 179.2021",
+    "g3plus_bn_at_ends": "122.4568 / 168.2101",
+    "added_bn_at_ends": "29.2109 / 40.5299",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "c",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 35292943.95917811,
+    "low_bn": 328.98774745120755,
+    "high_bn": 378.1602507108148,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9321.629497152011,
+    "per_member_high_usd": 10714.89675523292,
+    "whole_person_low_bn": 400.2063393868142,
+    "whole_person_high_bn": 474.92750783549945,
+    "g1_bn_at_ends": "97.1132 / 86.9853",
+    "g2_bn_at_ends": "151.4254 / 179.2021",
+    "g3plus_bn_at_ends": "122.4568 / 168.2101",
+    "added_bn_at_ends": "29.2109 / 40.5299",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "set",
+    "arm": "c",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 30401138.090853933,
+    "low_bn": 280.2924716838711,
+    "high_bn": 326.74390225273567,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9219.801931303224,
+    "per_member_high_usd": 10747.752313622605,
+    "whole_person_low_bn": 400.2063393868142,
+    "whole_person_high_bn": 474.92750783549945,
+    "g1_bn_at_ends": "71.8362 / 113.3392",
+    "g2_bn_at_ends": "160.5659 / 169.4185",
+    "g3plus_bn_at_ends": "149.8567 / 140.1779",
+    "added_bn_at_ends": "35.1579 / 34.4457",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "c",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 36947907.69285672,
+    "low_bn": 342.2439949821003,
+    "high_bn": 397.2357609355306,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9262.878911226348,
+    "per_member_high_usd": 10751.238317408963,
+    "whole_person_low_bn": 400.2063393868142,
+    "whole_person_high_bn": 474.92750783549945,
+    "g1_bn_at_ends": "97.1132 / 86.9853",
+    "g2_bn_at_ends": "151.4254 / 179.2021",
+    "g3plus_bn_at_ends": "122.4568 / 168.2101",
+    "added_bn_at_ends": "29.2109 / 40.5299",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "set",
+    "arm": "c",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 27037534.28566702,
+    "low_bn": 244.53260934303418,
+    "high_bn": 292.198565568262,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 9044.19044870761,
+    "per_member_high_usd": 10807.145447547728,
+    "whole_person_low_bn": 400.2063393868142,
+    "whole_person_high_bn": 474.92750783549945,
+    "g1_bn_at_ends": "71.8362 / 113.3392",
+    "g2_bn_at_ends": "160.5659 / 169.4185",
+    "g3plus_bn_at_ends": "149.8567 / 140.1779",
+    "added_bn_at_ends": "35.1579 / 34.4457",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "set",
+    "arm": "c",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 39510037.86943337,
+    "low_bn": 364.9932650345036,
+    "high_bn": 427.61845579080307,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 9237.988235816847,
+    "per_member_high_usd": 10823.033306217776,
+    "whole_person_low_bn": 400.2063393868142,
+    "whole_person_high_bn": 474.92750783549945,
+    "g1_bn_at_ends": "97.1132 / 86.9853",
+    "g2_bn_at_ends": "151.4254 / 179.2021",
+    "g3plus_bn_at_ends": "122.4568 / 168.2101",
+    "added_bn_at_ends": "29.2109 / 40.5299",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "v4",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0,
+    "fractional_population": 33120562.714541078,
+    "low_bn": 251.30130423617447,
+    "high_bn": 295.1258740971001,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7587.470853139958,
+    "per_member_high_usd": 8910.653983772128,
+    "whole_person_low_bn": 294.70107598024805,
+    "whole_person_high_bn": 361.8174818097355,
+    "g1_bn_at_ends": "57.5775 / 103.4370",
+    "g2_bn_at_ends": "124.6835 / 135.7193",
+    "g3plus_bn_at_ends": "127.3935 / 107.5092",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "cash",
+    "arm": "v4",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0,
+    "fractional_population": 32304035.89390491,
+    "low_bn": 244.19840369624552,
+    "high_bn": 287.3942938120314,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7559.377549550104,
+    "per_member_high_usd": 8896.54452947957,
+    "whole_person_low_bn": 294.70107598024805,
+    "whole_person_high_bn": 361.8174818097355,
+    "g1_bn_at_ends": "57.5775 / 103.4370",
+    "g2_bn_at_ends": "124.6835 / 135.7193",
+    "g3plus_bn_at_ends": "127.3935 / 107.5092",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "v4",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0,
+    "fractional_population": 33551727.15445491,
+    "low_bn": 254.87250505716614,
+    "high_bn": 299.3144352971444,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7596.404914830885,
+    "per_member_high_usd": 8920.984422627622,
+    "whole_person_low_bn": 294.70107598024805,
+    "whole_person_high_bn": 361.8174818097355,
+    "g1_bn_at_ends": "87.2039 / 72.7338",
+    "g2_bn_at_ends": "117.7176 / 143.3283",
+    "g3plus_bn_at_ends": "89.7796 / 145.7554",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "v4",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0,
+    "fractional_population": 28659921.28613073,
+    "low_bn": 211.68102986080055,
+    "high_bn": 261.6897448433495,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7385.959917595392,
+    "per_member_high_usd": 9130.860557177728,
+    "whole_person_low_bn": 294.70107598024805,
+    "whole_person_high_bn": 361.8174818097355,
+    "g1_bn_at_ends": "57.5775 / 103.4370",
+    "g2_bn_at_ends": "124.6835 / 135.7193",
+    "g3plus_bn_at_ends": "127.3935 / 107.5092",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "v4",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0,
+    "fractional_population": 35206690.88813352,
+    "low_bn": 264.38983691993826,
+    "high_bn": 316.2030397857689,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7509.647463319291,
+    "per_member_high_usd": 8981.333712687714,
+    "whole_person_low_bn": 294.70107598024805,
+    "whole_person_high_bn": 361.8174818097355,
+    "g1_bn_at_ends": "87.2039 / 72.7338",
+    "g2_bn_at_ends": "117.7176 / 143.3283",
+    "g3plus_bn_at_ends": "89.7796 / 145.7554",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "v4",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0,
+    "fractional_population": 25296317.480943818,
+    "low_bn": 181.954502068442,
+    "high_bn": 234.86575449988194,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7192.924511858759,
+    "per_member_high_usd": 9284.582812372222,
+    "whole_person_low_bn": 294.70107598024805,
+    "whole_person_high_bn": 361.8174818097355,
+    "g1_bn_at_ends": "57.5775 / 103.4370",
+    "g2_bn_at_ends": "124.6835 / 135.7193",
+    "g3plus_bn_at_ends": "127.3935 / 107.5092",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "v4",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0,
+    "fractional_population": 37768821.06471017,
+    "low_bn": 281.2700745049916,
+    "high_bn": 342.1703583344836,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7447.149965922561,
+    "per_member_high_usd": 9059.598597166574,
+    "whole_person_low_bn": 294.70107598024805,
+    "whole_person_high_bn": 361.8174818097355,
+    "g1_bn_at_ends": "87.2039 / 72.7338",
+    "g2_bn_at_ends": "117.7176 / 143.3283",
+    "g3plus_bn_at_ends": "89.7796 / 145.7554",
+    "added_bn_at_ends": "0.0000 / 0.0000",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "floor",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33446369.302459147,
+    "low_bn": 252.29490750560842,
+    "high_bn": 296.7436050794473,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7543.267408910014,
+    "per_member_high_usd": 8872.22174687969,
+    "whole_person_low_bn": 297.1471447000101,
+    "whole_person_high_bn": 366.1752996225194,
+    "g1_bn_at_ends": "87.1813 / 72.7098",
+    "g2_bn_at_ends": "117.6908 / 143.2999",
+    "g3plus_bn_at_ends": "89.7503 / 145.7245",
+    "added_bn_at_ends": "2.5248 / 4.4411",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "cash",
+    "arm": "floor",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 32629842.48182298,
+    "low_bn": 245.54222388047086,
+    "high_bn": 288.7514671436033,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7525.081496095313,
+    "per_member_high_usd": 8849.30619277299,
+    "whole_person_low_bn": 297.1471447000101,
+    "whole_person_high_bn": 366.1752996225194,
+    "g1_bn_at_ends": "57.5548 / 103.4131",
+    "g2_bn_at_ends": "124.6567 / 135.6909",
+    "g3plus_bn_at_ends": "127.3641 / 107.4783",
+    "added_bn_at_ends": "3.4542 / 3.4960",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "floor",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33877533.74237298,
+    "low_bn": 255.83522096378107,
+    "high_bn": 301.0542791240799,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7551.766398030038,
+    "per_member_high_usd": 8886.546506410248,
+    "whole_person_low_bn": 297.1471447000101,
+    "whole_person_high_bn": 366.1752996225194,
+    "g1_bn_at_ends": "87.1813 / 72.7098",
+    "g2_bn_at_ends": "117.6908 / 143.2999",
+    "g3plus_bn_at_ends": "89.7503 / 145.7245",
+    "added_bn_at_ends": "2.5248 / 4.4411",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "floor",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 28985727.8740488,
+    "low_bn": 213.0324577148916,
+    "high_bn": 263.05492456658806,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7349.563848821668,
+    "per_member_high_usd": 9075.32581930101,
+    "whole_person_low_bn": 297.1471447000101,
+    "whole_person_high_bn": 366.1752996225194,
+    "g1_bn_at_ends": "57.5548 / 103.4131",
+    "g2_bn_at_ends": "124.6567 / 135.6909",
+    "g3plus_bn_at_ends": "127.3641 / 107.4783",
+    "added_bn_at_ends": "3.4542 / 3.4960",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "floor",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 35532497.47605159,
+    "low_bn": 265.34908720278935,
+    "high_bn": 317.93923664683575,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7467.786000171559,
+    "per_member_high_usd": 8947.843783317578,
+    "whole_person_low_bn": 297.1471447000101,
+    "whole_person_high_bn": 366.1752996225194,
+    "g1_bn_at_ends": "87.1813 / 72.7098",
+    "g2_bn_at_ends": "117.6908 / 143.2999",
+    "g3plus_bn_at_ends": "89.7503 / 145.7245",
+    "added_bn_at_ends": "2.5248 / 4.4411",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "floor",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 25622124.068861887,
+    "low_bn": 183.31267062767236,
+    "high_bn": 236.23804555286068,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7154.4681516256105,
+    "per_member_high_usd": 9220.080463194563,
+    "whole_person_low_bn": 297.1471447000101,
+    "whole_person_high_bn": 366.1752996225194,
+    "g1_bn_at_ends": "57.5548 / 103.4131",
+    "g2_bn_at_ends": "124.6567 / 135.6909",
+    "g3plus_bn_at_ends": "127.3641 / 107.4783",
+    "added_bn_at_ends": "3.4542 / 3.4960",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "floor",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 38094627.65262824,
+    "low_bn": 282.22415640946787,
+    "high_bn": 343.9011041362378,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7408.502820475699,
+    "per_member_high_usd": 9027.548642085525,
+    "whole_person_low_bn": 297.1471447000101,
+    "whole_person_high_bn": 366.1752996225194,
+    "g1_bn_at_ends": "87.1813 / 72.7098",
+    "g2_bn_at_ends": "117.6908 / 143.2999",
+    "g3plus_bn_at_ends": "89.7503 / 145.7245",
+    "added_bn_at_ends": "2.5248 / 4.4411",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "a",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33856974.915418506,
+    "low_bn": 253.50756582336012,
+    "high_bn": 298.9355987238043,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7487.602376073844,
+    "per_member_high_usd": 8829.365277630537,
+    "whole_person_low_bn": 300.22497083093697,
+    "whole_person_high_bn": 371.6621761047971,
+    "g1_bn_at_ends": "87.1530 / 72.6799",
+    "g2_bn_at_ends": "117.6573 / 143.2644",
+    "g3plus_bn_at_ends": "89.7136 / 145.6858",
+    "added_bn_at_ends": "5.7011 / 10.0321",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "cash",
+    "arm": "a",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33040448.094782334,
+    "low_bn": 246.80492808843601,
+    "high_bn": 290.77418960761236,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7469.781504791723,
+    "per_member_high_usd": 8800.552243525133,
+    "whole_person_low_bn": 300.22497083093697,
+    "whole_person_high_bn": 371.6621761047971,
+    "g1_bn_at_ends": "87.1530 / 72.6799",
+    "g2_bn_at_ends": "117.6573 / 143.2644",
+    "g3plus_bn_at_ends": "89.7136 / 145.6858",
+    "added_bn_at_ends": "5.7011 / 10.0321",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "a",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34288139.35533234,
+    "low_bn": 257.04687276574845,
+    "high_bn": 303.2452053424196,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7496.670207208945,
+    "per_member_high_usd": 8844.026273920876,
+    "whole_person_low_bn": 300.22497083093697,
+    "whole_person_high_bn": 371.6621761047971,
+    "g1_bn_at_ends": "87.1530 / 72.6799",
+    "g2_bn_at_ends": "117.6573 / 143.2644",
+    "g3plus_bn_at_ends": "89.7136 / 145.6858",
+    "added_bn_at_ends": "5.7011 / 10.0321",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "a",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 29396333.487008154,
+    "low_bn": 214.73388498427516,
+    "high_bn": 264.7735649758391,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7304.784628299914,
+    "per_member_high_usd": 9007.026848870693,
+    "whole_person_low_bn": 300.22497083093697,
+    "whole_person_high_bn": 371.6621761047971,
+    "g1_bn_at_ends": "57.5266 / 103.3831",
+    "g2_bn_at_ends": "124.6233 / 135.6554",
+    "g3plus_bn_at_ends": "127.3274 / 107.4396",
+    "added_bn_at_ends": "7.8018 / 7.8960",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "a",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 35943103.08901095,
+    "low_bn": 266.556409312641,
+    "high_bn": 320.12560402140883,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7416.065570424734,
+    "per_member_high_usd": 8906.454271036,
+    "whole_person_low_bn": 300.22497083093697,
+    "whole_person_high_bn": 371.6621761047971,
+    "g1_bn_at_ends": "87.1530 / 72.6799",
+    "g2_bn_at_ends": "117.6573 / 143.2644",
+    "g3plus_bn_at_ends": "89.7136 / 145.6858",
+    "added_bn_at_ends": "5.7011 / 10.0321",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "a",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 26032729.681821242,
+    "low_bn": 185.0225198994553,
+    "high_bn": 237.9655763000121,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7107.3038502242525,
+    "per_member_high_usd": 9141.015145491423,
+    "whole_person_low_bn": 300.22497083093697,
+    "whole_person_high_bn": 371.6621761047971,
+    "g1_bn_at_ends": "57.5266 / 103.3831",
+    "g2_bn_at_ends": "124.6233 / 135.6554",
+    "g3plus_bn_at_ends": "127.3274 / 107.4396",
+    "added_bn_at_ends": "7.8018 / 7.8960",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "a",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 38505233.2655876,
+    "low_bn": 283.4250211034694,
+    "high_bn": 346.0806568884868,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7360.688329000941,
+    "per_member_high_usd": 8987.886256951508,
+    "whole_person_low_bn": 300.22497083093697,
+    "whole_person_high_bn": 371.6621761047971,
+    "g1_bn_at_ends": "87.1530 / 72.6799",
+    "g2_bn_at_ends": "117.6573 / 143.2644",
+    "g3plus_bn_at_ends": "89.7136 / 145.6858",
+    "added_bn_at_ends": "5.7011 / 10.0321",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "b",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34359377.21734139,
+    "low_bn": 256.37076396257686,
+    "high_bn": 303.6687138787697,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7461.4496747393005,
+    "per_member_high_usd": 8838.015658953977,
+    "whole_person_low_bn": 307.37637615801015,
+    "whole_person_high_bn": 383.4092521266758,
+    "g1_bn_at_ends": "87.1182 / 72.6430",
+    "g2_bn_at_ends": "117.6161 / 143.2208",
+    "g3plus_bn_at_ends": "89.6684 / 145.6382",
+    "added_bn_at_ends": "12.9736 / 21.9073",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "cash",
+    "arm": "b",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 33542850.396705225,
+    "low_bn": 249.6704721511735,
+    "high_bn": 295.50979229171367,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7443.329031324589,
+    "per_member_high_usd": 8809.918918540698,
+    "whole_person_low_bn": 307.37637615801015,
+    "whole_person_high_bn": 383.4092521266758,
+    "g1_bn_at_ends": "87.1182 / 72.6430",
+    "g2_bn_at_ends": "117.6161 / 143.2208",
+    "g3plus_bn_at_ends": "89.6684 / 145.6382",
+    "added_bn_at_ends": "12.9736 / 21.9073",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "b",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34790541.657255225,
+    "low_bn": 259.9088321473698,
+    "high_bn": 307.97700696538635,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7470.675067606152,
+    "per_member_high_usd": 8852.31997821341,
+    "whole_person_low_bn": 307.37637615801015,
+    "whole_person_high_bn": 383.4092521266758,
+    "g1_bn_at_ends": "87.1182 / 72.6430",
+    "g2_bn_at_ends": "117.6161 / 143.2208",
+    "g3plus_bn_at_ends": "89.6684 / 145.6382",
+    "added_bn_at_ends": "12.9736 / 21.9073",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "b",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 29898735.788931046,
+    "low_bn": 218.84662464323284,
+    "high_bn": 268.26521630212363,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7319.594587148166,
+    "per_member_high_usd": 8972.460180120372,
+    "whole_person_low_bn": 307.37637615801015,
+    "whole_person_high_bn": 383.4092521266758,
+    "g1_bn_at_ends": "57.4918 / 103.3463",
+    "g2_bn_at_ends": "124.5821 / 135.6117",
+    "g3plus_bn_at_ends": "127.2823 / 107.3920",
+    "added_bn_at_ends": "18.1059 / 16.6887",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "b",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 36445505.390933834,
+    "low_bn": 269.4130400235779,
+    "high_bn": 324.85179565975903,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7392.215778974955,
+    "per_member_high_usd": 8913.356864590743,
+    "whole_person_low_bn": 307.37637615801015,
+    "whole_person_high_bn": 383.4092521266758,
+    "g1_bn_at_ends": "87.1182 / 72.6430",
+    "g2_bn_at_ends": "117.6161 / 143.2208",
+    "g3plus_bn_at_ends": "89.6684 / 145.6382",
+    "added_bn_at_ends": "12.9736 / 21.9073",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "b",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 26535131.983744133,
+    "low_bn": 189.14562477975815,
+    "high_bn": 241.4681677888849,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7128.120745569758,
+    "per_member_high_usd": 9099.942217615964,
+    "whole_person_low_bn": 307.37637615801015,
+    "whole_person_high_bn": 383.4092521266758,
+    "g1_bn_at_ends": "57.4918 / 103.3463",
+    "g2_bn_at_ends": "124.5821 / 135.6117",
+    "g3plus_bn_at_ends": "127.2823 / 107.3920",
+    "added_bn_at_ends": "18.1059 / 16.6887",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "b",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 39007635.567510486,
+    "low_bn": 286.27370447350347,
+    "high_bn": 350.798462669719,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7338.914556306541,
+    "per_member_high_usd": 8993.071678558736,
+    "whole_person_low_bn": 307.37637615801015,
+    "whole_person_high_bn": 383.4092521266758,
+    "g1_bn_at_ends": "87.1182 / 72.6430",
+    "g2_bn_at_ends": "117.6161 / 143.2208",
+    "g3plus_bn_at_ends": "89.6684 / 145.6382",
+    "added_bn_at_ends": "12.9736 / 21.9073",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "c",
+    "scenario": "central",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34861779.51926428,
+    "low_bn": 259.2309675910848,
+    "high_bn": 308.39864002145083,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7435.96486369367,
+    "per_member_high_usd": 8846.325238533298,
+    "whole_person_low_bn": 314.52019786305345,
+    "whole_person_high_bn": 395.14829428962514,
+    "g1_bn_at_ends": "87.0835 / 72.6063",
+    "g2_bn_at_ends": "117.5751 / 143.1772",
+    "g3plus_bn_at_ends": "89.6233 / 145.5907",
+    "added_bn_at_ends": "20.2383 / 33.7742",
+    "rule": "[FRAMING-SENSITIVE] G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"
+   },
+   {
+    "set": "cash",
+    "arm": "c",
+    "scenario": "g2_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 34045252.69862811,
+    "low_bn": 252.53301705458554,
+    "high_bn": 300.24220183282927,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7417.569177413144,
+    "per_member_high_usd": 8818.91535629365,
+    "whole_person_low_bn": 314.52019786305345,
+    "whole_person_high_bn": 395.14829428962514,
+    "g1_bn_at_ends": "87.0835 / 72.6063",
+    "g2_bn_at_ends": "117.5751 / 143.1772",
+    "g3plus_bn_at_ends": "89.6233 / 145.5907",
+    "added_bn_at_ends": "20.2383 / 33.7742",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "c",
+    "scenario": "g2_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.6155849283900978,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 35292943.95917811,
+    "low_bn": 262.76779947296984,
+    "high_bn": 312.70562175727287,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7445.33524256017,
+    "per_member_high_usd": 8860.287260789764,
+    "whole_person_low_bn": 314.52019786305345,
+    "whole_person_high_bn": 395.14829428962514,
+    "g1_bn_at_ends": "87.0835 / 72.6063",
+    "g2_bn_at_ends": "117.5751 / 143.1772",
+    "g3plus_bn_at_ends": "89.6233 / 145.5907",
+    "added_bn_at_ends": "20.2383 / 33.7742",
+    "rule": "[FRAMING-SENSITIVE] G2's unknown ancestors at their full weight"
+   },
+   {
+    "set": "cash",
+    "arm": "c",
+    "scenario": "g3plus_seen_low",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.3045779055325375,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 30401138.090853933,
+    "low_bn": 222.95634470922087,
+    "high_bn": 271.7536558474682,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7333.815728967609,
+    "per_member_high_usd": 8938.930346467005,
+    "whole_person_low_bn": 314.52019786305345,
+    "whole_person_high_bn": 395.14829428962514,
+    "g1_bn_at_ends": "57.4571 / 103.3095",
+    "g2_bn_at_ends": "124.5410 / 135.5682",
+    "g3plus_bn_at_ends": "127.2372 / 107.3445",
+    "added_bn_at_ends": "28.4022 / 25.4731",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "c",
+    "scenario": "g3plus_seen_high",
+    "s_g2": 0.9247601761431614,
+    "s_g3plus": 0.7610349769943143,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 36947907.69285672,
+    "low_bn": 272.26668806233573,
+    "high_bn": 329.5748088179937,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7368.933860224352,
+    "per_member_high_usd": 8919.985714961382,
+    "whole_person_low_bn": 314.52019786305345,
+    "whole_person_high_bn": 395.14829428962514,
+    "g1_bn_at_ends": "87.0835 / 72.6063",
+    "g2_bn_at_ends": "117.5751 / 143.1772",
+    "g3plus_bn_at_ends": "89.6233 / 145.5907",
+    "added_bn_at_ends": "20.2383 / 33.7742",
+    "rule": "[FRAMING-SENSITIVE] G3+ at the high bound of members whose grandparents are seen, applied to all"
+   },
+   {
+    "set": "cash",
+    "arm": "c",
+    "scenario": "bound_low",
+    "s_g2": 0.8677927289303603,
+    "s_g3plus": 0.12698935853371607,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 27037534.28566702,
+    "low_bn": 193.26569096653586,
+    "high_bn": 244.96753050449,
+    "spec_low": 16,
+    "spec_high": 43,
+    "per_member_low_usd": 7148.05162795443,
+    "per_member_high_usd": 9060.276278016623,
+    "whole_person_low_bn": 314.52019786305345,
+    "whole_person_high_bn": 395.14829428962514,
+    "g1_bn_at_ends": "57.4571 / 103.3095",
+    "g2_bn_at_ends": "124.5410 / 135.5682",
+    "g3plus_bn_at_ends": "127.2372 / 107.3445",
+    "added_bn_at_ends": "28.4022 / 25.4731",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at nothing"
+   },
+   {
+    "set": "cash",
+    "arm": "c",
+    "scenario": "bound_high",
+    "s_g2": 0.9548416588943237,
+    "s_g3plus": 0.9096112120958108,
+    "s_added": 0.40754236199207944,
+    "fractional_population": 39510037.86943337,
+    "low_bn": 289.1194197190237,
+    "high_bn": 355.5131029105785,
+    "spec_low": 48,
+    "spec_high": 11,
+    "per_member_low_usd": 7317.619402807473,
+    "per_member_high_usd": 8998.045106547934,
+    "whole_person_low_bn": 314.52019786305345,
+    "whole_person_high_bn": 395.14829428962514,
+    "g1_bn_at_ends": "87.0835 / 72.6063",
+    "g2_bn_at_ends": "117.5751 / 143.1772",
+    "g3plus_bn_at_ends": "89.6233 / 145.5907",
+    "added_bn_at_ends": "20.2383 / 33.7742",
+    "rule": "[FRAMING-SENSITIVE] every unknown ancestor at its full weight"
+   }
+  ]
+ }
+}

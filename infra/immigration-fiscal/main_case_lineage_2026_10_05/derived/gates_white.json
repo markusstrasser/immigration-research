@@ -1,0 +1,134 @@
+{
+ "gates": [
+  {
+   "gate": "rekey_sept29.setup(): every positive control of the white lane passes",
+   "passed": true,
+   "detail": "57 passes"
+  },
+  {
+   "gate": "the row-4 frame is the account's 39,712,493 (2 persons)",
+   "passed": true,
+   "detail": "39,712,493.3312"
+  },
+  {
+   "gate": "the lane's frame holds the account's G3+ (generation_results_sept29.csv, 14,342,575; 50 persons)",
+   "passed": true,
+   "detail": "14,342,574.8 vs 14,342,574.6"
+  },
+  {
+   "gate": "g3plus_ages: the slice is scaled to the account's count (2 persons)",
+   "passed": true,
+   "detail": "39,712,493.3312"
+  },
+  {
+   "gate": "own: the slice is scaled to the account's count (2 persons)",
+   "passed": true,
+   "detail": "39,712,493.3312"
+  },
+  {
+   "gate": "union_ages_control: the slice is scaled to the account's count (2 persons)",
+   "passed": true,
+   "detail": "39,712,493.3312"
+  },
+  {
+   "gate": "g3plus_ages accrual: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "gate": "g3plus_ages accrual: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "gate": "g3plus_ages cash: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "gate": "g3plus_ages cash: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "gate": "own accrual low: run29 reproduces rekey_summary_sept29.csv A1_third_plus_nh_white cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 24.2382 vs 24.2382"
+  },
+  {
+   "gate": "own accrual high: run29 reproduces rekey_summary_sept29.csv A1_third_plus_nh_white cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 74.0620 vs 74.0620"
+  },
+  {
+   "gate": "own accrual: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "gate": "own accrual: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "gate": "own cash low: run29 reproduces rekey_summary_sept29.csv A1_third_plus_nh_white cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 97.7524 vs 97.7524"
+  },
+  {
+   "gate": "own cash high: run29 reproduces rekey_summary_sept29.csv A1_third_plus_nh_white cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 147.5761 vs 147.5761"
+  },
+  {
+   "gate": "own cash: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "gate": "own cash: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "gate": "union_ages_control accrual low: run29 reproduces rekey_summary_sept29.csv A3_third_plus_nh_white_at_union_ages cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 34.0254 vs 34.0254"
+  },
+  {
+   "gate": "union_ages_control accrual high: run29 reproduces rekey_summary_sept29.csv A3_third_plus_nh_white_at_union_ages cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 84.1225 vs 84.1225"
+  },
+  {
+   "gate": "union_ages_control accrual: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "gate": "union_ages_control accrual: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "gate": "union_ages_control cash low: run29 reproduces rekey_summary_sept29.csv A3_third_plus_nh_white_at_union_ages cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost -57.0645 vs -57.0645"
+  },
+  {
+   "gate": "union_ages_control cash high: run29 reproduces rekey_summary_sept29.csv A3_third_plus_nh_white_at_union_ages cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost -6.9674 vs -6.9674"
+  },
+  {
+   "gate": "union_ages_control cash: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "gate": "union_ages_control cash: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  }
+ ]
+}

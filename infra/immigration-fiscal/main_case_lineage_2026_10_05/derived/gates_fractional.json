@@ -1,0 +1,44 @@
+{
+ "gates": [
+  {
+   "gate": "G2: the frame's weights give generation_results_sept29.csv's population (1 person)",
+   "passed": true,
+   "detail": "14,333,217.66 vs 14,333,217.66"
+  },
+  {
+   "gate": "G3plus: the frame's weights give generation_results_sept29.csv's population (1 person)",
+   "passed": true,
+   "detail": "14,342,574.61 vs 14,342,574.61"
+  },
+  {
+   "gate": "G2: every member is in exactly one class (two Mexico-born parents, other abroad, US-born seen, US-born unseen)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "G3plus: with both parents at home the low bound is a quarter per Mexico-born grandparent (exact)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the convention's 0.6156 is population.json's identified third-generation mix (1e-12)",
+   "passed": true,
+   "detail": "0.615585"
+  },
+  {
+   "gate": "positive control: the population lane's linkage on this frame reproduces arm3_grandparent_counts.csv's cells (0.1 person, the file's rounding) and its identified mix (1e-6)",
+   "passed": true,
+   "detail": "max |diff| 0.04 persons; mix 0.615585"
+  },
+  {
+   "gate": "G2 shares lie between 1/2 and 1 and G3plus shares between 0 and 1, low <= central <= high",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the classes cover G2 and G3plus exactly (1 person)",
+   "passed": true,
+   "detail": "28,675,792.2"
+  }
+ ]
+}

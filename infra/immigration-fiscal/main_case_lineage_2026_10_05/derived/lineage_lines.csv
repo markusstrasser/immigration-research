@@ -1,0 +1,1665 @@
+set,arm,end,spec,item,group,v4_bn,union_response_move_bn,g3plus_part_bn,white_part_bn,lineage_bn,v5_bn
+set,floor,low,48.000000,receipt|federal_income_tax,receipts,-111.992551,0.000000,-1.440495,-2.676193,-4.116688,-116.109238
+set,floor,low,48.000000,receipt|state_local_income_tax,receipts,-26.076962,0.000000,-0.289618,-0.705830,-0.995448,-27.072410
+set,floor,low,48.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.027910,-0.026279,-0.054189,-3.392831
+set,floor,low,48.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.011231,-0.015794,-0.027025,-1.352866
+set,floor,low,48.000000,receipt|other_personal_tax,receipts,-0.472790,0.000000,-0.005251,-0.011072,-0.016323,-0.489113
+set,floor,low,48.000000,receipt|employee_oasdi,receipts,-53.306068,0.000000,-0.568619,-0.667098,-1.235717,-54.541785
+set,floor,low,48.000000,receipt|employee_hi,receipts,-15.800299,0.000000,-0.173964,-0.212854,-0.386818,-16.187117
+set,floor,low,48.000000,receipt|self_employment_oasdi_hi,receipts,-6.588000,0.000000,-0.054818,-0.094923,-0.149741,-6.737742
+set,floor,low,48.000000,receipt|employer_oasdi,receipts,-53.766384,0.000000,-0.573529,-0.672859,-1.246388,-55.012771
+set,floor,low,48.000000,receipt|employer_hi,receipts,-14.054588,0.000000,-0.154744,-0.189336,-0.344080,-14.398668
+set,floor,low,48.000000,receipt|medicare_supplementary_premiums,receipts,-7.600356,0.000000,-0.072100,-0.079825,-0.151925,-7.752282
+set,floor,low,48.000000,receipt|other_domestic_social_contributions,receipts,-10.318503,0.000000,-0.096401,-0.105323,-0.201724,-10.520227
+set,floor,low,48.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,receipt|general_sales_tax,receipts,-55.014305,0.000000,-0.570124,-0.780100,-1.350224,-56.364529
+set,floor,low,48.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.064578,-0.186373,-0.367566,-0.618517,-19.668238
+set,floor,low,48.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,receipt|excise_selective_sales,receipts,-31.719826,0.000000,-0.314072,-0.466689,-0.780761,-32.500587
+set,floor,low,48.000000,receipt|customs_duties,receipts,-6.845218,0.000000,-0.070938,-0.109167,-0.180105,-7.025323
+set,floor,low,48.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,receipt|personal_current_transfers,receipts,-11.552283,0.000000,-0.119719,-0.184234,-0.303953,-11.856236
+set,floor,low,48.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.007489,0.009405,0.016894,0.856104
+set,floor,low,48.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.042515,0.022859,0.065374,3.491503
+set,floor,low,48.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.026489,-0.054361,-0.062102,-0.142951,-6.953715
+set,floor,low,48.000000,spending|general_public_services,spending,28.237313,0.005930,0.252042,0.316516,0.574487,28.811800
+set,floor,low,48.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|public_order_safety,spending,69.655444,0.000000,0.598628,0.582029,1.180657,70.836101
+set,floor,low,48.000000,spending|economic_affairs_services,spending,13.989872,0.004626,0.144146,0.187818,0.336591,14.326463
+set,floor,low,48.000000,spending|housing_community_services,spending,1.703378,0.000000,0.015201,0.019089,0.034290,1.737669
+set,floor,low,48.000000,spending|health_services,spending,17.351227,0.000000,0.181348,0.199015,0.380363,17.731590
+set,floor,low,48.000000,spending|recreation_culture,spending,5.450626,0.000362,0.048644,0.061088,0.110095,5.560721
+set,floor,low,48.000000,spending|education_services,spending,191.857732,0.000000,1.717701,2.604471,4.322172,196.179904
+set,floor,low,48.000000,spending|income_security_services,spending,29.589136,0.000000,0.324591,0.164376,0.488967,30.078103
+set,floor,low,48.000000,spending|social_security,spending,109.406993,0.000000,1.151328,1.323604,2.474932,111.881925
+set,floor,low,48.000000,spending|medicare,spending,73.893231,0.000000,0.667932,0.806780,1.474712,75.367944
+set,floor,low,48.000000,spending|unemployment,spending,5.060153,0.000000,0.038392,0.033711,0.072103,5.132256
+set,floor,low,48.000000,spending|railroad_retirement,spending,0.563106,0.000000,0.006307,0.008619,0.014926,0.578031
+set,floor,low,48.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.000306,0.000459,0.000764,0.038887
+set,floor,low,48.000000,spending|veterans_life_insurance,spending,0.028358,0.000000,0.000408,0.000385,0.000793,0.029152
+set,floor,low,48.000000,spending|workers_compensation,spending,1.607301,0.000000,0.022152,0.009104,0.031256,1.638557
+set,floor,low,48.000000,spending|military_medical,spending,0.312891,0.000000,0.003696,0.008190,0.011886,0.324777
+set,floor,low,48.000000,spending|veterans_pension_disability,spending,11.401810,0.000000,0.164082,0.154789,0.318872,11.720682
+set,floor,low,48.000000,spending|veterans_readjustment,spending,0.719446,0.000000,0.010353,0.009767,0.020121,0.739567
+set,floor,low,48.000000,spending|veterans_other,spending,1.597251,0.000000,0.021931,0.024320,0.046251,1.643502
+set,floor,low,48.000000,spending|snap,spending,13.588727,0.000000,0.141396,0.095394,0.236790,13.825517
+set,floor,low,48.000000,spending|black_lung,spending,0.037080,0.000000,0.000511,0.000132,0.000643,0.037724
+set,floor,low,48.000000,spending|ssi,spending,5.175676,0.000000,0.067027,0.048906,0.115933,5.291609
+set,floor,low,48.000000,spending|refundable_tax_credits,spending,36.331342,0.000000,0.308324,0.296206,0.604530,36.935872
+set,floor,low,48.000000,spending|other_federal_benefits,spending,3.942937,0.000000,0.045429,0.051397,0.096826,4.039763
+set,floor,low,48.000000,spending|temporary_disability,spending,2.815969,0.000000,0.038810,0.010032,0.048842,2.864811
+set,floor,low,48.000000,spending|medicaid_and_chip_other_medical,spending,117.743417,0.000000,1.141559,0.839903,1.981462,119.724879
+set,floor,low,48.000000,spending|family_and_general_assistance,spending,12.336154,0.000000,0.135327,0.045100,0.180426,12.516581
+set,floor,low,48.000000,spending|energy_assistance,spending,0.562300,0.000000,0.006246,0.004584,0.010830,0.573130
+set,floor,low,48.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.057216,0.016008,0.073224,5.287117
+set,floor,low,48.000000,spending|education_benefits,spending,8.944509,0.000000,0.081369,0.077293,0.158662,9.103171
+set,floor,low,48.000000,spending|employment_training,spending,0.166636,0.000000,0.001203,0.001808,0.003011,0.169648
+set,floor,low,48.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.003006,0.003775,0.006782,0.343661
+set,floor,low,48.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.051332,0.027599,0.078931,4.215571
+set,floor,low,48.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|school_reprice,spending,1.489491,0.000000,0.015582,0.000000,0.015582,1.505072
+set,floor,low,48.000000,spending|college_rekey,spending,-0.904583,0.000000,-0.007192,0.000000,-0.007192,-0.911775
+set,floor,low,48.000000,spending|lane_constants,spending,-5.159674,-0.002094,-0.034142,0.000000,-0.036236,-5.195910
+set,floor,low,48.000000,spending|roads_vmt_sl,spending,2.240437,0.000789,0.002357,0.006297,0.009443,2.249880
+set,floor,low,48.000000,spending|roads_vmt_fed,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.055108,-0.030290,0.024819,6.437146
+set,floor,low,48.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.018809,-0.008165,0.010644,1.810276
+set,floor,low,48.000000,spending|state_price_recreation_culture,spending,0.366364,0.000024,0.003270,-0.001537,0.001757,0.368122
+set,floor,low,48.000000,capital|k12,capital return,8.652057,0.000000,0.077602,0.116191,0.193793,8.845850
+set,floor,low,48.000000,capital|college,capital return,3.703234,0.000000,0.033218,0.051118,0.084336,3.787570
+set,floor,low,48.000000,capital|pos_sl,capital return,0.776779,0.000000,0.006676,0.006491,0.013166,0.789946
+set,floor,low,48.000000,capital|pos_fed,capital return,0.295714,0.000000,0.002541,0.002471,0.005012,0.300726
+set,floor,low,48.000000,capital|health_sl,capital return,0.414315,0.000000,0.004330,0.004752,0.009082,0.423397
+set,floor,low,48.000000,capital|health_fed,capital return,0.120021,0.000000,0.001254,0.001377,0.002631,0.122652
+set,floor,low,48.000000,capital|gps_sl,capital return,1.818146,0.000382,0.016228,0.020380,0.036990,1.855137
+set,floor,low,48.000000,capital|gps_fed,capital return,0.213983,0.000045,0.001910,0.002399,0.004353,0.218337
+set,floor,low,48.000000,capital|hwy_sl,capital return,6.208989,0.002187,0.054924,0.072974,0.130084,6.339073
+set,floor,low,48.000000,capital|rec_sl,capital return,0.947615,0.000063,0.008457,0.010620,0.019140,0.966755
+set,floor,low,48.000000,capital|hwy_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,capital|air_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,capital|rec_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,low,48.000000,capital|ent_housing_sl,capital return,0.632346,0.000000,0.007847,0.004219,0.012066,0.644412
+set,floor,low,48.000000,capital|ent_transit_sl,capital return,1.185343,0.000000,0.010578,0.013284,0.023862,1.209205
+set,floor,low,48.000000,capital|ent_airports_sl,capital return,1.396295,0.000000,0.012460,0.015648,0.028108,1.424404
+set,floor,low,48.000000,capital|ent_ports_sl,capital return,0.221306,0.000000,0.001975,0.002480,0.004455,0.225761
+set,floor,low,48.000000,capital|ent_power_sl,capital return,1.270315,0.000000,0.011336,0.014236,0.025572,1.295887
+set,floor,low,48.000000,capital|ent_water_sl,capital return,2.146527,0.000000,0.019156,0.024056,0.043211,2.189739
+set,floor,low,48.000000,capital|ent_sewer_sl,capital return,2.870553,0.000000,0.025617,0.032170,0.057786,2.928339
+set,floor,low,48.000000,capital|ent_tolls_sl,capital return,1.174528,0.000000,0.010481,0.013163,0.023644,1.198172
+set,floor,low,48.000000,capital|ent_power_fed,capital return,0.064834,0.000000,0.000579,0.000727,0.001305,0.066139
+set,floor,low,48.000000,capital|ent_other_sl,capital return,0.176889,0.000000,0.001579,0.001982,0.003561,0.180450
+set,floor,low,48.000000,capital|ent_other_fed,capital return,0.132905,0.000000,0.001186,0.001489,0.002675,0.135580
+set,floor,low,48.000000,production|gain,production gain,-11.679878,0.000000,-0.048457,0.000000,-0.048457,-11.728335
+set,floor,high,11.000000,receipt|federal_income_tax,receipts,-102.338418,0.000000,-1.041273,-2.676193,-3.717466,-106.055884
+set,floor,high,11.000000,receipt|state_local_income_tax,receipts,-23.841655,0.000000,-0.215569,-0.705830,-0.921399,-24.763055
+set,floor,high,11.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.027910,-0.026279,-0.054189,-3.392831
+set,floor,high,11.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.009691,-0.015794,-0.025485,-1.351326
+set,floor,high,11.000000,receipt|other_personal_tax,receipts,-0.432262,0.000000,-0.003908,-0.011072,-0.014981,-0.447243
+set,floor,high,11.000000,receipt|employee_oasdi,receipts,-50.146592,0.000000,-0.440282,-0.667098,-1.107381,-51.253973
+set,floor,high,11.000000,receipt|employee_hi,receipts,-14.733325,0.000000,-0.131222,-0.212854,-0.344076,-15.077401
+set,floor,high,11.000000,receipt|self_employment_oasdi_hi,receipts,-5.983506,0.000000,-0.036324,-0.094923,-0.131247,-6.114753
+set,floor,high,11.000000,receipt|employer_oasdi,receipts,-50.579625,0.000000,-0.444084,-0.672859,-1.116943,-51.696568
+set,floor,high,11.000000,receipt|employer_hi,receipts,-13.105500,0.000000,-0.116724,-0.189336,-0.306060,-13.411560
+set,floor,high,11.000000,receipt|medicare_supplementary_premiums,receipts,-7.169537,0.000000,-0.061196,-0.079825,-0.141021,-7.310558
+set,floor,high,11.000000,receipt|other_domestic_social_contributions,receipts,-9.940263,0.000000,-0.078723,-0.105323,-0.184046,-10.124309
+set,floor,high,11.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,receipt|general_sales_tax,receipts,-55.005461,0.000000,-0.570032,-0.780100,-1.350132,-56.355594
+set,floor,high,11.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.064578,-0.186373,-0.367566,-0.618517,-19.668238
+set,floor,high,11.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,receipt|excise_selective_sales,receipts,-31.715894,0.000000,-0.314031,-0.466689,-0.780720,-32.496614
+set,floor,high,11.000000,receipt|customs_duties,receipts,-6.844118,0.000000,-0.070927,-0.109167,-0.180093,-7.024211
+set,floor,high,11.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,receipt|personal_current_transfers,receipts,-11.550426,0.000000,-0.119699,-0.184234,-0.303933,-11.854360
+set,floor,high,11.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.007489,0.009405,0.016894,0.856104
+set,floor,high,11.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.042515,0.022859,0.065374,3.491503
+set,floor,high,11.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.026489,-0.054361,-0.062102,-0.142951,-6.953715
+set,floor,high,11.000000,spending|general_public_services,spending,40.018407,0.008123,0.357195,0.448569,0.813887,40.832294
+set,floor,high,11.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,spending|public_order_safety,spending,69.655444,0.000000,0.598628,0.582029,1.180657,70.836101
+set,floor,high,11.000000,spending|economic_affairs_services,spending,23.266194,0.000901,0.239656,0.312264,0.552821,23.819015
+set,floor,high,11.000000,spending|housing_community_services,spending,1.703378,0.000000,0.015201,0.019089,0.034290,1.737669
+set,floor,high,11.000000,spending|health_services,spending,17.351227,0.000000,0.181348,0.199015,0.380363,17.731590
+set,floor,high,11.000000,spending|recreation_culture,spending,6.366255,0.000000,0.056812,0.071345,0.128157,6.494413
+set,floor,high,11.000000,spending|education_services,spending,198.014032,0.000000,2.192551,2.604471,4.797022,202.811054
+set,floor,high,11.000000,spending|income_security_services,spending,28.031298,0.000000,0.257225,0.164376,0.421602,28.452899
+set,floor,high,11.000000,spending|social_security,spending,102.754953,0.000000,0.882778,1.323604,2.206382,104.961335
+set,floor,high,11.000000,spending|medicare,spending,73.893231,0.000000,0.584825,0.806780,1.391605,75.284837
+set,floor,high,11.000000,spending|unemployment,spending,4.763741,0.000000,0.027756,0.033711,0.061467,4.825208
+set,floor,high,11.000000,spending|railroad_retirement,spending,0.530713,0.000000,0.005258,0.008619,0.013877,0.544590
+set,floor,high,11.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.000306,0.000459,0.000764,0.038887
+set,floor,high,11.000000,spending|veterans_life_insurance,spending,0.022716,0.000000,0.000302,0.000385,0.000687,0.023403
+set,floor,high,11.000000,spending|workers_compensation,spending,1.555579,0.000000,0.017103,0.009104,0.026208,1.581787
+set,floor,high,11.000000,spending|military_medical,spending,0.312891,0.000000,0.003696,0.008190,0.011886,0.324777
+set,floor,high,11.000000,spending|veterans_pension_disability,spending,9.133043,0.000000,0.121470,0.154789,0.276260,9.409302
+set,floor,high,11.000000,spending|veterans_readjustment,spending,0.576289,0.000000,0.007665,0.009767,0.017432,0.593720
+set,floor,high,11.000000,spending|veterans_other,spending,1.597251,0.000000,0.021931,0.024320,0.046251,1.643502
+set,floor,high,11.000000,spending|snap,spending,13.588727,0.000000,0.141396,0.095394,0.236790,13.825517
+set,floor,high,11.000000,spending|black_lung,spending,0.033198,0.000000,0.000365,0.000132,0.000497,0.033695
+set,floor,high,11.000000,spending|ssi,spending,5.094042,0.000000,0.060117,0.048906,0.109023,5.203065
+set,floor,high,11.000000,spending|refundable_tax_credits,spending,32.628027,0.000000,0.209232,0.296206,0.505438,33.133465
+set,floor,high,11.000000,spending|other_federal_benefits,spending,3.662654,0.000000,0.037436,0.051397,0.088833,3.751487
+set,floor,high,11.000000,spending|temporary_disability,spending,2.521144,0.000000,0.027720,0.010032,0.037752,2.558896
+set,floor,high,11.000000,spending|medicaid_and_chip_other_medical,spending,119.736065,0.000000,1.146298,0.839903,1.986201,121.722266
+set,floor,high,11.000000,spending|family_and_general_assistance,spending,11.686668,0.000000,0.107241,0.045100,0.152341,11.839009
+set,floor,high,11.000000,spending|energy_assistance,spending,0.562300,0.000000,0.006246,0.004584,0.010830,0.573130
+set,floor,high,11.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.057216,0.016008,0.073224,5.287117
+set,floor,high,11.000000,spending|education_benefits,spending,8.944509,0.000000,0.081369,0.077293,0.158662,9.103171
+set,floor,high,11.000000,spending|employment_training,spending,0.166636,0.000000,0.001203,0.001808,0.003011,0.169648
+set,floor,high,11.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.003006,0.003775,0.006782,0.343661
+set,floor,high,11.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.051332,0.027599,0.078931,4.215571
+set,floor,high,11.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,floor,high,11.000000,spending|school_reprice,spending,1.160765,0.000000,-0.022894,0.000000,-0.022894,1.137871
+set,floor,high,11.000000,spending|college_rekey,spending,-0.552470,0.000000,-0.011766,0.000000,-0.011766,-0.564237
+set,floor,high,11.000000,spending|lane_constants,spending,-5.201474,-0.002094,-0.034524,0.000000,-0.036619,-5.238093
+set,floor,high,11.000000,spending|roads_vmt_sl,spending,3.030126,0.000000,0.003179,0.008516,0.011695,3.041821
+set,floor,high,11.000000,spending|roads_vmt_fed,spending,0.027542,0.000000,0.000029,0.000077,0.000106,0.027648
+set,floor,high,11.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.055108,-0.030290,0.024819,6.437146
+set,floor,high,11.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.018809,-0.008165,0.010644,1.810276
+set,floor,high,11.000000,spending|state_price_recreation_culture,spending,0.427908,0.000000,0.003819,-0.001795,0.002024,0.429932
+set,floor,high,11.000000,capital|k12,capital return,13.340496,0.000000,0.144950,0.174286,0.319237,13.659733
+set,floor,high,11.000000,capital|college,capital return,5.709022,0.000000,0.061981,0.076677,0.138658,5.847680
+set,floor,high,11.000000,capital|pos_sl,capital return,1.165169,0.000000,0.010014,0.009736,0.019750,1.184919
+set,floor,high,11.000000,capital|pos_fed,capital return,0.443570,0.000000,0.003812,0.003706,0.007519,0.451089
+set,floor,high,11.000000,capital|health_sl,capital return,0.621472,0.000000,0.006495,0.007128,0.013624,0.635096
+set,floor,high,11.000000,capital|health_fed,capital return,0.180032,0.000000,0.001882,0.002065,0.003947,0.183978
+set,floor,high,11.000000,capital|gps_sl,capital return,3.865063,0.000785,0.034499,0.043324,0.078607,3.943670
+set,floor,high,11.000000,capital|gps_fed,capital return,0.454891,0.000092,0.004060,0.005099,0.009251,0.464143
+set,floor,high,11.000000,capital|hwy_sl,capital return,12.598830,0.000000,0.111408,0.148026,0.259434,12.858265
+set,floor,high,11.000000,capital|rec_sl,capital return,1.494276,0.000000,0.013335,0.016746,0.030081,1.524357
+set,floor,high,11.000000,capital|hwy_fed,capital return,0.156656,0.000000,0.001385,0.001841,0.003226,0.159882
+set,floor,high,11.000000,capital|air_fed,capital return,0.085622,0.000000,0.000882,0.001149,0.002031,0.087653
+set,floor,high,11.000000,capital|rec_fed,capital return,0.147045,0.000000,0.001312,0.001648,0.002960,0.150005
+set,floor,high,11.000000,capital|ent_housing_sl,capital return,0.948519,0.000000,0.011770,0.006328,0.018099,0.966617
+set,floor,high,11.000000,capital|ent_transit_sl,capital return,1.778014,0.000000,0.015867,0.019926,0.035793,1.813807
+set,floor,high,11.000000,capital|ent_airports_sl,capital return,2.094443,0.000000,0.018691,0.023472,0.042163,2.136605
+set,floor,high,11.000000,capital|ent_ports_sl,capital return,0.331958,0.000000,0.002962,0.003720,0.006683,0.338641
+set,floor,high,11.000000,capital|ent_power_sl,capital return,1.905472,0.000000,0.017004,0.021354,0.038359,1.943831
+set,floor,high,11.000000,capital|ent_water_sl,capital return,3.219791,0.000000,0.028733,0.036084,0.064817,3.284608
+set,floor,high,11.000000,capital|ent_sewer_sl,capital return,4.305829,0.000000,0.038425,0.048255,0.086680,4.392509
+set,floor,high,11.000000,capital|ent_tolls_sl,capital return,1.761792,0.000000,0.015722,0.019744,0.035466,1.797258
+set,floor,high,11.000000,capital|ent_power_fed,capital return,0.097251,0.000000,0.000868,0.001090,0.001958,0.099209
+set,floor,high,11.000000,capital|ent_other_sl,capital return,0.265334,0.000000,0.002368,0.002974,0.005341,0.270675
+set,floor,high,11.000000,capital|ent_other_fed,capital return,0.199357,0.000000,0.001779,0.002234,0.004013,0.203370
+set,floor,high,11.000000,production|gain,production gain,-7.683239,0.000000,-0.031876,0.000000,-0.031876,-7.715114
+set,a,low,48.000000,receipt|federal_income_tax,receipts,-111.992551,0.000000,-3.255914,-6.048929,-9.304842,-121.297393
+set,a,low,48.000000,receipt|state_local_income_tax,receipts,-26.076962,0.000000,-0.654616,-1.595369,-2.249986,-28.326948
+set,a,low,48.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.063084,-0.059397,-0.122481,-3.461123
+set,a,low,48.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.025386,-0.035699,-0.061085,-1.386926
+set,a,low,48.000000,receipt|other_personal_tax,receipts,-0.472790,0.000000,-0.011869,-0.025027,-0.036895,-0.509685
+set,a,low,48.000000,receipt|employee_oasdi,receipts,-53.306068,0.000000,-1.285234,-1.507825,-2.793059,-56.099127
+set,a,low,48.000000,receipt|employee_hi,receipts,-15.800299,0.000000,-0.393207,-0.481108,-0.874315,-16.674613
+set,a,low,48.000000,receipt|self_employment_oasdi_hi,receipts,-6.588000,0.000000,-0.123905,-0.214552,-0.338456,-6.926457
+set,a,low,48.000000,receipt|employer_oasdi,receipts,-53.766384,0.000000,-1.296332,-1.520846,-2.817178,-56.583562
+set,a,low,48.000000,receipt|employer_hi,receipts,-14.054588,0.000000,-0.349763,-0.427952,-0.777715,-14.832303
+set,a,low,48.000000,receipt|medicare_supplementary_premiums,receipts,-7.600356,0.000000,-0.162967,-0.180426,-0.343393,-7.943749
+set,a,low,48.000000,receipt|other_domestic_social_contributions,receipts,-10.318503,0.000000,-0.217893,-0.238058,-0.455951,-10.774454
+set,a,low,48.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,receipt|general_sales_tax,receipts,-55.014305,0.000000,-1.288636,-1.763240,-3.051876,-58.066181
+set,a,low,48.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.145290,-0.423034,-0.834308,-1.402631,-20.452352
+set,a,low,48.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,receipt|excise_selective_sales,receipts,-31.719826,0.000000,-0.709888,-1.054845,-1.764733,-33.484559
+set,a,low,48.000000,receipt|customs_duties,receipts,-6.845218,0.000000,-0.160340,-0.246746,-0.407086,-7.252304
+set,a,low,48.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,receipt|personal_current_transfers,receipts,-11.552283,0.000000,-0.270597,-0.416420,-0.687016,-12.239299
+set,a,low,48.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.016927,0.021258,0.038185,0.877395
+set,a,low,48.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.096096,0.051667,0.147763,3.573892
+set,a,low,48.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.059748,-0.123468,-0.141050,-0.324266,-7.135029
+set,a,low,48.000000,spending|general_public_services,spending,28.237313,0.013420,0.569834,0.715603,1.298857,29.536169
+set,a,low,48.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|public_order_safety,spending,69.655444,0.000000,1.353064,1.315545,2.668609,72.324052
+set,a,low,48.000000,spending|economic_affairs_services,spending,13.989872,0.010472,0.325946,0.424697,0.761115,14.750987
+set,a,low,48.000000,spending|housing_community_services,spending,1.703378,0.000000,0.034358,0.043147,0.077505,1.780884
+set,a,low,48.000000,spending|health_services,spending,17.351227,0.000000,0.409897,0.449829,0.859726,18.210952
+set,a,low,48.000000,spending|recreation_culture,spending,5.450626,0.000819,0.109959,0.138087,0.248866,5.699492
+set,a,low,48.000000,spending|education_services,spending,191.857732,0.000000,3.882476,5.886818,9.769294,201.627025
+set,a,low,48.000000,spending|income_security_services,spending,29.589136,0.000000,0.733664,0.371536,1.105200,30.694336
+set,a,low,48.000000,spending|social_security,spending,109.406993,0.000000,2.602317,2.991707,5.594024,115.001018
+set,a,low,48.000000,spending|medicare,spending,73.893231,0.000000,1.509709,1.823545,3.333254,77.226485
+set,a,low,48.000000,spending|unemployment,spending,5.060153,0.000000,0.086776,0.076196,0.162972,5.223125
+set,a,low,48.000000,spending|railroad_retirement,spending,0.563106,0.000000,0.014255,0.019481,0.033736,0.596842
+set,a,low,48.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.000692,0.001036,0.001728,0.039850
+set,a,low,48.000000,spending|veterans_life_insurance,spending,0.028358,0.000000,0.000922,0.000870,0.001793,0.030151
+set,a,low,48.000000,spending|workers_compensation,spending,1.607301,0.000000,0.050070,0.020578,0.070648,1.677949
+set,a,low,48.000000,spending|military_medical,spending,0.312891,0.000000,0.008354,0.018511,0.026866,0.339757
+set,a,low,48.000000,spending|veterans_pension_disability,spending,11.401810,0.000000,0.370871,0.349866,0.720737,12.122548
+set,a,low,48.000000,spending|veterans_readjustment,spending,0.719446,0.000000,0.023402,0.022076,0.045478,0.764924
+set,a,low,48.000000,spending|veterans_other,spending,1.597251,0.000000,0.049570,0.054970,0.104540,1.701791
+set,a,low,48.000000,spending|snap,spending,13.588727,0.000000,0.319594,0.215616,0.535210,14.123937
+set,a,low,48.000000,spending|black_lung,spending,0.037080,0.000000,0.001155,0.000299,0.001454,0.038534
+set,a,low,48.000000,spending|ssi,spending,5.175676,0.000000,0.151500,0.110541,0.262041,5.437717
+set,a,low,48.000000,spending|refundable_tax_credits,spending,36.331342,0.000000,0.696897,0.669506,1.366403,37.697746
+set,a,low,48.000000,spending|other_federal_benefits,spending,3.942937,0.000000,0.102682,0.116171,0.218853,4.161790
+set,a,low,48.000000,spending|temporary_disability,spending,2.815969,0.000000,0.087722,0.022675,0.110397,2.926365
+set,a,low,48.000000,spending|medicaid_and_chip_other_medical,spending,117.743417,0.000000,2.580237,1.898411,4.478648,122.222065
+set,a,low,48.000000,spending|family_and_general_assistance,spending,12.336154,0.000000,0.305876,0.101937,0.407813,12.743967
+set,a,low,48.000000,spending|energy_assistance,spending,0.562300,0.000000,0.014118,0.010361,0.024478,0.586779
+set,a,low,48.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.129323,0.036183,0.165506,5.379399
+set,a,low,48.000000,spending|education_benefits,spending,8.944509,0.000000,0.183917,0.174703,0.358620,9.303128
+set,a,low,48.000000,spending|employment_training,spending,0.166636,0.000000,0.002719,0.004087,0.006806,0.173443
+set,a,low,48.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.006795,0.008533,0.015328,0.352208
+set,a,low,48.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.116025,0.062381,0.178406,4.315046
+set,a,low,48.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|school_reprice,spending,1.489491,0.000000,0.035219,0.000000,0.035219,1.524709
+set,a,low,48.000000,spending|college_rekey,spending,-0.904583,0.000000,-0.016256,0.000000,-0.016256,-0.920839
+set,a,low,48.000000,spending|lane_constants,spending,-5.159674,-0.004740,-0.077170,0.000000,-0.081910,-5.241584
+set,a,low,48.000000,spending|roads_vmt_sl,spending,2.240437,0.001786,0.005329,0.014240,0.021355,2.261792
+set,a,low,48.000000,spending|roads_vmt_fed,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.124560,-0.068463,0.056097,6.468424
+set,a,low,48.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.042514,-0.018455,0.024059,1.823690
+set,a,low,48.000000,spending|state_price_recreation_culture,spending,0.366364,0.000055,0.007391,-0.003473,0.003973,0.370337
+set,a,low,48.000000,capital|k12,capital return,8.652057,0.000000,0.175402,0.262623,0.438025,9.090082
+set,a,low,48.000000,capital|college,capital return,3.703234,0.000000,0.075081,0.115541,0.190622,3.893856
+set,a,low,48.000000,capital|pos_sl,capital return,0.776779,0.000000,0.015089,0.014671,0.029760,0.806539
+set,a,low,48.000000,capital|pos_fed,capital return,0.295714,0.000000,0.005744,0.005585,0.011329,0.307043
+set,a,low,48.000000,capital|health_sl,capital return,0.414315,0.000000,0.009788,0.010741,0.020529,0.434844
+set,a,low,48.000000,capital|health_fed,capital return,0.120021,0.000000,0.002835,0.003112,0.005947,0.125968
+set,a,low,48.000000,capital|gps_sl,capital return,1.818146,0.000864,0.036691,0.046076,0.083631,1.901777
+set,a,low,48.000000,capital|gps_fed,capital return,0.213983,0.000102,0.004318,0.005423,0.009843,0.223826
+set,a,low,48.000000,capital|hwy_sl,capital return,6.208989,0.004949,0.124199,0.165014,0.294162,6.503150
+set,a,low,48.000000,capital|rec_sl,capital return,0.947615,0.000142,0.019117,0.024007,0.043266,0.990881
+set,a,low,48.000000,capital|hwy_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,capital|air_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,capital|rec_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,low,48.000000,capital|ent_housing_sl,capital return,0.632346,0.000000,0.017736,0.009536,0.027272,0.659618
+set,a,low,48.000000,capital|ent_transit_sl,capital return,1.185343,0.000000,0.023909,0.030025,0.053934,1.239277
+set,a,low,48.000000,capital|ent_airports_sl,capital return,1.396295,0.000000,0.028164,0.035369,0.063533,1.459828
+set,a,low,48.000000,capital|ent_ports_sl,capital return,0.221306,0.000000,0.004464,0.005606,0.010070,0.231375
+set,a,low,48.000000,capital|ent_power_sl,capital return,1.270315,0.000000,0.025623,0.032178,0.057801,1.328115
+set,a,low,48.000000,capital|ent_water_sl,capital return,2.146527,0.000000,0.043297,0.054372,0.097669,2.244197
+set,a,low,48.000000,capital|ent_sewer_sl,capital return,2.870553,0.000000,0.057901,0.072712,0.130613,3.001166
+set,a,low,48.000000,capital|ent_tolls_sl,capital return,1.174528,0.000000,0.023691,0.029751,0.053442,1.227970
+set,a,low,48.000000,capital|ent_power_fed,capital return,0.064834,0.000000,0.001308,0.001642,0.002950,0.067784
+set,a,low,48.000000,capital|ent_other_sl,capital return,0.176889,0.000000,0.003568,0.004481,0.008049,0.184938
+set,a,low,48.000000,capital|ent_other_fed,capital return,0.132905,0.000000,0.002681,0.003367,0.006047,0.138952
+set,a,low,48.000000,production|gain,production gain,-11.679878,0.000000,-0.109525,0.000000,-0.109525,-11.789404
+set,a,high,11.000000,receipt|federal_income_tax,receipts,-102.338418,0.000000,-2.353563,-6.048929,-8.402492,-110.740910
+set,a,high,11.000000,receipt|state_local_income_tax,receipts,-23.841655,0.000000,-0.487246,-1.595369,-2.082615,-25.924271
+set,a,high,11.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.063084,-0.059397,-0.122481,-3.461123
+set,a,high,11.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.021904,-0.035699,-0.057602,-1.383443
+set,a,high,11.000000,receipt|other_personal_tax,receipts,-0.432262,0.000000,-0.008834,-0.025027,-0.033861,-0.466123
+set,a,high,11.000000,receipt|employee_oasdi,receipts,-50.146592,0.000000,-0.995159,-1.507825,-2.502984,-52.649576
+set,a,high,11.000000,receipt|employee_hi,receipts,-14.733325,0.000000,-0.296597,-0.481108,-0.777705,-15.511031
+set,a,high,11.000000,receipt|self_employment_oasdi_hi,receipts,-5.983506,0.000000,-0.082102,-0.214552,-0.296654,-6.280160
+set,a,high,11.000000,receipt|employer_oasdi,receipts,-50.579625,0.000000,-1.003752,-1.520846,-2.524598,-53.104223
+set,a,high,11.000000,receipt|employer_hi,receipts,-13.105500,0.000000,-0.263827,-0.427952,-0.691780,-13.797280
+set,a,high,11.000000,receipt|medicare_supplementary_premiums,receipts,-7.169537,0.000000,-0.138320,-0.180426,-0.318747,-7.488283
+set,a,high,11.000000,receipt|other_domestic_social_contributions,receipts,-9.940263,0.000000,-0.177936,-0.238058,-0.415995,-10.356258
+set,a,high,11.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,receipt|general_sales_tax,receipts,-55.005461,0.000000,-1.288429,-1.763240,-3.051669,-58.057130
+set,a,high,11.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.145290,-0.423034,-0.834308,-1.402631,-20.452352
+set,a,high,11.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,receipt|excise_selective_sales,receipts,-31.715894,0.000000,-0.709796,-1.054845,-1.764641,-33.480535
+set,a,high,11.000000,receipt|customs_duties,receipts,-6.844118,0.000000,-0.160314,-0.246746,-0.407061,-7.251178
+set,a,high,11.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,receipt|personal_current_transfers,receipts,-11.550426,0.000000,-0.270553,-0.416420,-0.686973,-12.237399
+set,a,high,11.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.016927,0.021258,0.038185,0.877395
+set,a,high,11.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.096096,0.051667,0.147763,3.573892
+set,a,high,11.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.059748,-0.123468,-0.141050,-0.324266,-7.135029
+set,a,high,11.000000,spending|general_public_services,spending,40.018407,0.018384,0.807566,1.014148,1.840098,41.858505
+set,a,high,11.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,spending|public_order_safety,spending,69.655444,0.000000,1.353064,1.315545,2.668609,72.324052
+set,a,high,11.000000,spending|economic_affairs_services,spending,23.266194,0.002040,0.541715,0.705836,1.249592,24.515786
+set,a,high,11.000000,spending|housing_community_services,spending,1.703378,0.000000,0.034358,0.043147,0.077505,1.780884
+set,a,high,11.000000,spending|health_services,spending,17.351227,0.000000,0.409897,0.449829,0.859726,18.210952
+set,a,high,11.000000,spending|recreation_culture,spending,6.366255,0.000000,0.128411,0.161260,0.289671,6.655926
+set,a,high,11.000000,spending|education_services,spending,198.014032,0.000000,4.955767,5.886818,10.842585,208.856617
+set,a,high,11.000000,spending|income_security_services,spending,28.031298,0.000000,0.581400,0.371536,0.952935,28.984233
+set,a,high,11.000000,spending|social_security,spending,102.754953,0.000000,1.995321,2.991707,4.987028,107.741981
+set,a,high,11.000000,spending|medicare,spending,73.893231,0.000000,1.321865,1.823545,3.145410,77.038641
+set,a,high,11.000000,spending|unemployment,spending,4.763741,0.000000,0.062737,0.076196,0.138932,4.902673
+set,a,high,11.000000,spending|railroad_retirement,spending,0.530713,0.000000,0.011884,0.019481,0.031365,0.562078
+set,a,high,11.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.000692,0.001036,0.001728,0.039850
+set,a,high,11.000000,spending|veterans_life_insurance,spending,0.022716,0.000000,0.000683,0.000870,0.001553,0.024269
+set,a,high,11.000000,spending|workers_compensation,spending,1.555579,0.000000,0.038658,0.020578,0.059236,1.614815
+set,a,high,11.000000,spending|military_medical,spending,0.312891,0.000000,0.008354,0.018511,0.026866,0.339757
+set,a,high,11.000000,spending|veterans_pension_disability,spending,9.133043,0.000000,0.274556,0.349866,0.624422,9.757465
+set,a,high,11.000000,spending|veterans_readjustment,spending,0.576289,0.000000,0.017324,0.022076,0.039401,0.615689
+set,a,high,11.000000,spending|veterans_other,spending,1.597251,0.000000,0.049570,0.054970,0.104540,1.701791
+set,a,high,11.000000,spending|snap,spending,13.588727,0.000000,0.319594,0.215616,0.535210,14.123937
+set,a,high,11.000000,spending|black_lung,spending,0.033198,0.000000,0.000825,0.000299,0.001124,0.034322
+set,a,high,11.000000,spending|ssi,spending,5.094042,0.000000,0.135880,0.110541,0.246422,5.340464
+set,a,high,11.000000,spending|refundable_tax_credits,spending,32.628027,0.000000,0.472922,0.669506,1.142428,33.770455
+set,a,high,11.000000,spending|other_federal_benefits,spending,3.662654,0.000000,0.084616,0.116171,0.200787,3.863441
+set,a,high,11.000000,spending|temporary_disability,spending,2.521144,0.000000,0.062654,0.022675,0.085329,2.606474
+set,a,high,11.000000,spending|medicaid_and_chip_other_medical,spending,119.736065,0.000000,2.590948,1.898411,4.489359,124.225424
+set,a,high,11.000000,spending|family_and_general_assistance,spending,11.686668,0.000000,0.242394,0.101937,0.344332,12.031000
+set,a,high,11.000000,spending|energy_assistance,spending,0.562300,0.000000,0.014118,0.010361,0.024478,0.586779
+set,a,high,11.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.129323,0.036183,0.165506,5.379399
+set,a,high,11.000000,spending|education_benefits,spending,8.944509,0.000000,0.183917,0.174703,0.358620,9.303128
+set,a,high,11.000000,spending|employment_training,spending,0.166636,0.000000,0.002719,0.004087,0.006806,0.173443
+set,a,high,11.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.006795,0.008533,0.015328,0.352208
+set,a,high,11.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.116025,0.062381,0.178406,4.315046
+set,a,high,11.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,a,high,11.000000,spending|school_reprice,spending,1.160765,0.000000,-0.051747,0.000000,-0.051747,1.109018
+set,a,high,11.000000,spending|college_rekey,spending,-0.552470,0.000000,-0.026595,0.000000,-0.026595,-0.579066
+set,a,high,11.000000,spending|lane_constants,spending,-5.201474,-0.004740,-0.078034,0.000000,-0.082774,-5.284248
+set,a,high,11.000000,spending|roads_vmt_sl,spending,3.030126,0.000000,0.007186,0.019249,0.026434,3.056560
+set,a,high,11.000000,spending|roads_vmt_fed,spending,0.027542,0.000000,0.000065,0.000175,0.000240,0.027782
+set,a,high,11.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.124560,-0.068463,0.056097,6.468424
+set,a,high,11.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.042514,-0.018455,0.024059,1.823690
+set,a,high,11.000000,spending|state_price_recreation_culture,spending,0.427908,0.000000,0.008631,-0.004056,0.004575,0.432483
+set,a,high,11.000000,capital|k12,capital return,13.340496,0.000000,0.327628,0.393934,0.721562,14.062058
+set,a,high,11.000000,capital|college,capital return,5.709022,0.000000,0.140094,0.173311,0.313405,6.022427
+set,a,high,11.000000,capital|pos_sl,capital return,1.165169,0.000000,0.022634,0.022006,0.044639,1.209809
+set,a,high,11.000000,capital|pos_fed,capital return,0.443570,0.000000,0.008616,0.008377,0.016994,0.460564
+set,a,high,11.000000,capital|health_sl,capital return,0.621472,0.000000,0.014681,0.016112,0.030793,0.652265
+set,a,high,11.000000,capital|health_fed,capital return,0.180032,0.000000,0.004253,0.004667,0.008920,0.188952
+set,a,high,11.000000,capital|gps_sl,capital return,3.865063,0.001776,0.077996,0.097949,0.177721,4.042783
+set,a,high,11.000000,capital|gps_fed,capital return,0.454891,0.000209,0.009180,0.011528,0.020916,0.475808
+set,a,high,11.000000,capital|hwy_sl,capital return,12.598830,0.000000,0.251813,0.334580,0.586393,13.185223
+set,a,high,11.000000,capital|rec_sl,capital return,1.494276,0.000000,0.030140,0.037851,0.067991,1.562267
+set,a,high,11.000000,capital|hwy_fed,capital return,0.156656,0.000000,0.003131,0.004160,0.007291,0.163947
+set,a,high,11.000000,capital|air_fed,capital return,0.085622,0.000000,0.001993,0.002597,0.004591,0.090213
+set,a,high,11.000000,capital|rec_fed,capital return,0.147045,0.000000,0.002966,0.003725,0.006691,0.153736
+set,a,high,11.000000,capital|ent_housing_sl,capital return,0.948519,0.000000,0.026604,0.014304,0.040908,0.989427
+set,a,high,11.000000,capital|ent_transit_sl,capital return,1.778014,0.000000,0.035864,0.045038,0.080901,1.858916
+set,a,high,11.000000,capital|ent_airports_sl,capital return,2.094443,0.000000,0.042246,0.053053,0.095299,2.189742
+set,a,high,11.000000,capital|ent_ports_sl,capital return,0.331958,0.000000,0.006696,0.008409,0.015104,0.347063
+set,a,high,11.000000,capital|ent_power_sl,capital return,1.905472,0.000000,0.038435,0.048266,0.086701,1.992173
+set,a,high,11.000000,capital|ent_water_sl,capital return,3.219791,0.000000,0.064945,0.081559,0.146504,3.366295
+set,a,high,11.000000,capital|ent_sewer_sl,capital return,4.305829,0.000000,0.086851,0.109068,0.195920,4.501749
+set,a,high,11.000000,capital|ent_tolls_sl,capital return,1.761792,0.000000,0.035536,0.044627,0.080163,1.841955
+set,a,high,11.000000,capital|ent_power_fed,capital return,0.097251,0.000000,0.001962,0.002463,0.004425,0.101676
+set,a,high,11.000000,capital|ent_other_sl,capital return,0.265334,0.000000,0.005352,0.006721,0.012073,0.277407
+set,a,high,11.000000,capital|ent_other_fed,capital return,0.199357,0.000000,0.004021,0.005050,0.009071,0.208428
+set,a,high,11.000000,production|gain,production gain,-7.683239,0.000000,-0.072048,0.000000,-0.072048,-7.755286
+set,b,low,48.000000,receipt|federal_income_tax,receipts,-111.992551,0.000000,-7.954582,-6.510670,-14.465252,-126.457803
+set,b,low,48.000000,receipt|state_local_income_tax,receipts,-26.076962,0.000000,-1.599305,-1.717151,-3.316456,-29.393418
+set,b,low,48.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.154121,-0.063931,-0.218052,-3.556695
+set,b,low,48.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.062021,-0.038424,-0.100445,-1.426286
+set,b,low,48.000000,receipt|other_personal_tax,receipts,-0.472790,0.000000,-0.028996,-0.026937,-0.055933,-0.528723
+set,b,low,48.000000,receipt|employee_oasdi,receipts,-53.306068,0.000000,-3.139978,-1.622924,-4.762903,-58.068970
+set,b,low,48.000000,receipt|employee_hi,receipts,-15.800299,0.000000,-0.960650,-0.517833,-1.478483,-17.278782
+set,b,low,48.000000,receipt|self_employment_oasdi_hi,receipts,-6.588000,0.000000,-0.302714,-0.230929,-0.533643,-7.121643
+set,b,low,48.000000,receipt|employer_oasdi,receipts,-53.766384,0.000000,-3.167093,-1.636939,-4.804032,-58.570416
+set,b,low,48.000000,receipt|employer_hi,receipts,-14.054588,0.000000,-0.854512,-0.460620,-1.315132,-15.369720
+set,b,low,48.000000,receipt|medicare_supplementary_premiums,receipts,-7.600356,0.000000,-0.398147,-0.194199,-0.592346,-8.192702
+set,b,low,48.000000,receipt|other_domestic_social_contributions,receipts,-10.318503,0.000000,-0.532339,-0.256230,-0.788569,-11.107072
+set,b,low,48.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,receipt|general_sales_tax,receipts,-55.014305,0.000000,-3.148290,-1.897836,-5.046126,-60.060431
+set,b,low,48.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.244598,-1.038868,-0.902640,-2.186106,-21.235827
+set,b,low,48.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,receipt|excise_selective_sales,receipts,-31.719826,0.000000,-1.734341,-1.135366,-2.869707,-34.589533
+set,b,low,48.000000,receipt|customs_duties,receipts,-6.845218,0.000000,-0.391730,-0.265582,-0.657311,-7.502529
+set,b,low,48.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,receipt|personal_current_transfers,receipts,-11.552283,0.000000,-0.661100,-0.448207,-1.109307,-12.661590
+set,b,low,48.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.041356,0.022880,0.064236,0.903446
+set,b,low,48.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.234775,0.055611,0.290385,3.716514
+set,b,low,48.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.100650,-0.303443,-0.152721,-0.556814,-7.367577
+set,b,low,48.000000,spending|general_public_services,spending,28.237313,0.022611,1.392625,0.770478,2.185714,30.423027
+set,b,low,48.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|public_order_safety,spending,69.655444,0.000000,3.305696,1.415966,4.721662,74.377105
+set,b,low,48.000000,spending|economic_affairs_services,spending,13.989872,0.017646,0.796734,0.457350,1.271730,15.261602
+set,b,low,48.000000,spending|housing_community_services,spending,1.703378,0.000000,0.083941,0.046441,0.130382,1.833760
+set,b,low,48.000000,spending|health_services,spending,17.351227,0.000000,1.001426,0.484166,1.485593,18.836819
+set,b,low,48.000000,spending|recreation_culture,spending,5.450626,0.001381,0.268670,0.148643,0.418694,5.869321
+set,b,low,48.000000,spending|education_services,spending,191.857732,0.000000,9.485347,6.336185,15.821532,207.679264
+set,b,low,48.000000,spending|income_security_services,spending,29.589136,0.000000,1.792428,0.399897,2.192325,31.781461
+set,b,low,48.000000,spending|social_security,spending,109.406993,0.000000,6.357770,3.220077,9.577847,118.984840
+set,b,low,48.000000,spending|medicare,spending,73.893231,0.000000,3.688399,1.962744,5.651143,79.544374
+set,b,low,48.000000,spending|unemployment,spending,5.060153,0.000000,0.212004,0.082012,0.294016,5.354169
+set,b,low,48.000000,spending|railroad_retirement,spending,0.563106,0.000000,0.034826,0.020968,0.055794,0.618900
+set,b,low,48.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.001690,0.001115,0.002805,0.040927
+set,b,low,48.000000,spending|veterans_life_insurance,spending,0.028358,0.000000,0.002254,0.000937,0.003190,0.031549
+set,b,low,48.000000,spending|workers_compensation,spending,1.607301,0.000000,0.122327,0.022149,0.144476,1.751776
+set,b,low,48.000000,spending|military_medical,spending,0.312891,0.000000,0.020411,0.019924,0.040335,0.353226
+set,b,low,48.000000,spending|veterans_pension_disability,spending,11.401810,0.000000,0.906083,0.376573,1.282656,12.684466
+set,b,low,48.000000,spending|veterans_readjustment,spending,0.719446,0.000000,0.057173,0.023761,0.080935,0.800381
+set,b,low,48.000000,spending|veterans_other,spending,1.597251,0.000000,0.121106,0.059166,0.180272,1.777523
+set,b,low,48.000000,spending|snap,spending,13.588727,0.000000,0.780806,0.232075,1.012881,14.601608
+set,b,low,48.000000,spending|black_lung,spending,0.037080,0.000000,0.002822,0.000321,0.003143,0.040224
+set,b,low,48.000000,spending|ssi,spending,5.175676,0.000000,0.370132,0.118979,0.489112,5.664787
+set,b,low,48.000000,spending|refundable_tax_credits,spending,36.331342,0.000000,1.702603,0.720612,2.423215,38.754557
+set,b,low,48.000000,spending|other_federal_benefits,spending,3.942937,0.000000,0.250863,0.125039,0.375902,4.318839
+set,b,low,48.000000,spending|temporary_disability,spending,2.815969,0.000000,0.214315,0.024406,0.238721,3.054689
+set,b,low,48.000000,spending|medicaid_and_chip_other_medical,spending,117.743417,0.000000,6.303825,2.043325,8.347150,126.090566
+set,b,low,48.000000,spending|family_and_general_assistance,spending,12.336154,0.000000,0.747290,0.109719,0.857009,13.193163
+set,b,low,48.000000,spending|energy_assistance,spending,0.562300,0.000000,0.034491,0.011152,0.045643,0.607943
+set,b,low,48.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.315952,0.038945,0.354896,5.568790
+set,b,low,48.000000,spending|education_benefits,spending,8.944509,0.000000,0.449331,0.188039,0.637369,9.581878
+set,b,low,48.000000,spending|employment_training,spending,0.166636,0.000000,0.006643,0.004399,0.011043,0.177679
+set,b,low,48.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.016601,0.009185,0.025786,0.362665
+set,b,low,48.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.283462,0.067143,0.350606,4.487246
+set,b,low,48.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|school_reprice,spending,1.489491,0.000000,0.086043,0.000000,0.086043,1.575534
+set,b,low,48.000000,spending|college_rekey,spending,-0.904583,0.000000,-0.039716,0.000000,-0.039716,-0.944298
+set,b,low,48.000000,spending|lane_constants,spending,-5.159674,-0.007987,-0.188535,0.000000,-0.196523,-5.356197
+set,b,low,48.000000,spending|roads_vmt_sl,spending,2.240437,0.003009,0.013026,0.015336,0.031371,2.271808
+set,b,low,48.000000,spending|roads_vmt_fed,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.304315,-0.073689,0.230626,6.642953
+set,b,low,48.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.103866,-0.019863,0.084002,1.883634
+set,b,low,48.000000,spending|state_price_recreation_culture,spending,0.366364,0.000093,0.018059,-0.003739,0.014413,0.380777
+set,b,low,48.000000,capital|k12,capital return,8.652057,0.000000,0.428527,0.282670,0.711197,9.363254
+set,b,low,48.000000,capital|college,capital return,3.703234,0.000000,0.183431,0.124361,0.307792,4.011026
+set,b,low,48.000000,capital|pos_sl,capital return,0.776779,0.000000,0.036864,0.015790,0.052655,0.829434
+set,b,low,48.000000,capital|pos_fed,capital return,0.295714,0.000000,0.014034,0.006011,0.020045,0.315759
+set,b,low,48.000000,capital|health_sl,capital return,0.414315,0.000000,0.023912,0.011561,0.035473,0.449788
+set,b,low,48.000000,capital|health_fed,capital return,0.120021,0.000000,0.006927,0.003349,0.010276,0.130297
+set,b,low,48.000000,capital|gps_sl,capital return,1.818146,0.001456,0.089668,0.049610,0.140734,1.958880
+set,b,low,48.000000,capital|gps_fed,capital return,0.213983,0.000171,0.010553,0.005839,0.016563,0.230547
+set,b,low,48.000000,capital|hwy_sl,capital return,6.208989,0.008340,0.303598,0.177707,0.489645,6.698634
+set,b,low,48.000000,capital|rec_sl,capital return,0.947615,0.000240,0.046709,0.025842,0.072792,1.020407
+set,b,low,48.000000,capital|hwy_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,capital|air_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,capital|rec_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,low,48.000000,capital|ent_housing_sl,capital return,0.632346,0.000000,0.043331,0.010264,0.053595,0.685941
+set,b,low,48.000000,capital|ent_transit_sl,capital return,1.185343,0.000000,0.058413,0.032317,0.090730,1.276073
+set,b,low,48.000000,capital|ent_airports_sl,capital return,1.396295,0.000000,0.068808,0.038069,0.106877,1.503172
+set,b,low,48.000000,capital|ent_ports_sl,capital return,0.221306,0.000000,0.010906,0.006034,0.016939,0.238245
+set,b,low,48.000000,capital|ent_power_sl,capital return,1.270315,0.000000,0.062600,0.034634,0.097234,1.367549
+set,b,low,48.000000,capital|ent_water_sl,capital return,2.146527,0.000000,0.105779,0.058523,0.164302,2.310829
+set,b,low,48.000000,capital|ent_sewer_sl,capital return,2.870553,0.000000,0.141458,0.078263,0.219721,3.090274
+set,b,low,48.000000,capital|ent_tolls_sl,capital return,1.174528,0.000000,0.057880,0.032022,0.089902,1.264430
+set,b,low,48.000000,capital|ent_power_fed,capital return,0.064834,0.000000,0.003195,0.001768,0.004963,0.069797
+set,b,low,48.000000,capital|ent_other_sl,capital return,0.176889,0.000000,0.008717,0.004823,0.013540,0.190429
+set,b,low,48.000000,capital|ent_other_fed,capital return,0.132905,0.000000,0.006549,0.003624,0.010173,0.143077
+set,b,low,48.000000,production|gain,production gain,-11.679878,0.000000,-0.267583,0.000000,-0.267583,-11.947462
+set,b,high,11.000000,receipt|federal_income_tax,receipts,-102.338418,0.000000,-5.750034,-6.510670,-12.260704,-114.599121
+set,b,high,11.000000,receipt|state_local_income_tax,receipts,-23.841655,0.000000,-1.190399,-1.717151,-2.907550,-26.749206
+set,b,high,11.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.154121,-0.063931,-0.218052,-3.556695
+set,b,high,11.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.053513,-0.038424,-0.091937,-1.417778
+set,b,high,11.000000,receipt|other_personal_tax,receipts,-0.432262,0.000000,-0.021583,-0.026937,-0.048520,-0.480782
+set,b,high,11.000000,receipt|employee_oasdi,receipts,-50.146592,0.000000,-2.431290,-1.622924,-4.054215,-54.200807
+set,b,high,11.000000,receipt|employee_hi,receipts,-14.733325,0.000000,-0.724622,-0.517833,-1.242455,-15.975781
+set,b,high,11.000000,receipt|self_employment_oasdi_hi,receipts,-5.983506,0.000000,-0.200585,-0.230929,-0.431514,-6.415020
+set,b,high,11.000000,receipt|employer_oasdi,receipts,-50.579625,0.000000,-2.452285,-1.636939,-4.089224,-54.668849
+set,b,high,11.000000,receipt|employer_hi,receipts,-13.105500,0.000000,-0.644562,-0.460620,-1.105181,-14.210681
+set,b,high,11.000000,receipt|medicare_supplementary_premiums,receipts,-7.169537,0.000000,-0.337933,-0.194199,-0.532132,-7.701669
+set,b,high,11.000000,receipt|other_domestic_social_contributions,receipts,-9.940263,0.000000,-0.434720,-0.256230,-0.690950,-10.631213
+set,b,high,11.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,receipt|general_sales_tax,receipts,-55.005461,0.000000,-3.147784,-1.897836,-5.045620,-60.051082
+set,b,high,11.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.244598,-1.038868,-0.902640,-2.186106,-21.235827
+set,b,high,11.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,receipt|excise_selective_sales,receipts,-31.715894,0.000000,-1.734116,-1.135366,-2.869482,-34.585376
+set,b,high,11.000000,receipt|customs_duties,receipts,-6.844118,0.000000,-0.391667,-0.265582,-0.657248,-7.501366
+set,b,high,11.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,receipt|personal_current_transfers,receipts,-11.550426,0.000000,-0.660993,-0.448207,-1.109200,-12.659626
+set,b,high,11.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.041356,0.022880,0.064236,0.903446
+set,b,high,11.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.234775,0.055611,0.290385,3.716514
+set,b,high,11.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.100650,-0.303443,-0.152721,-0.556814,-7.367577
+set,b,high,11.000000,spending|general_public_services,spending,40.018407,0.030974,1.973600,1.091906,3.096480,43.114887
+set,b,high,11.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,spending|public_order_safety,spending,69.655444,0.000000,3.305696,1.415966,4.721662,74.377105
+set,b,high,11.000000,spending|economic_affairs_services,spending,23.266194,0.003438,1.323554,0.759761,2.086753,25.352947
+set,b,high,11.000000,spending|housing_community_services,spending,1.703378,0.000000,0.083941,0.046441,0.130382,1.833760
+set,b,high,11.000000,spending|health_services,spending,17.351227,0.000000,1.001426,0.484166,1.485593,18.836819
+set,b,high,11.000000,spending|recreation_culture,spending,6.366255,0.000000,0.313724,0.173570,0.487293,6.853549
+set,b,high,11.000000,spending|education_services,spending,198.014032,0.000000,12.107525,6.336185,18.443710,216.457742
+set,b,high,11.000000,spending|income_security_services,spending,28.031298,0.000000,1.420428,0.399897,1.820324,29.851622
+set,b,high,11.000000,spending|social_security,spending,102.754953,0.000000,4.874805,3.220077,8.094882,110.849835
+set,b,high,11.000000,spending|medicare,spending,73.893231,0.000000,3.229473,1.962744,5.192217,79.085448
+set,b,high,11.000000,spending|unemployment,spending,4.763741,0.000000,0.153273,0.082012,0.235285,4.999026
+set,b,high,11.000000,spending|railroad_retirement,spending,0.530713,0.000000,0.029034,0.020968,0.050003,0.580716
+set,b,high,11.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.001690,0.001115,0.002805,0.040927
+set,b,high,11.000000,spending|veterans_life_insurance,spending,0.022716,0.000000,0.001668,0.000937,0.002605,0.025321
+set,b,high,11.000000,spending|workers_compensation,spending,1.555579,0.000000,0.094447,0.022149,0.116596,1.672175
+set,b,high,11.000000,spending|military_medical,spending,0.312891,0.000000,0.020411,0.019924,0.040335,0.353226
+set,b,high,11.000000,spending|veterans_pension_disability,spending,9.133043,0.000000,0.670773,0.376573,1.047346,10.180389
+set,b,high,11.000000,spending|veterans_readjustment,spending,0.576289,0.000000,0.042325,0.023761,0.066087,0.642375
+set,b,high,11.000000,spending|veterans_other,spending,1.597251,0.000000,0.121106,0.059166,0.180272,1.777523
+set,b,high,11.000000,spending|snap,spending,13.588727,0.000000,0.780806,0.232075,1.012881,14.601608
+set,b,high,11.000000,spending|black_lung,spending,0.033198,0.000000,0.002016,0.000321,0.002337,0.035535
+set,b,high,11.000000,spending|ssi,spending,5.094042,0.000000,0.331972,0.118979,0.450951,5.544994
+set,b,high,11.000000,spending|refundable_tax_credits,spending,32.628027,0.000000,1.155406,0.720612,1.876018,34.504045
+set,b,high,11.000000,spending|other_federal_benefits,spending,3.662654,0.000000,0.206727,0.125039,0.331766,3.994420
+set,b,high,11.000000,spending|temporary_disability,spending,2.521144,0.000000,0.153071,0.024406,0.177477,2.698622
+set,b,high,11.000000,spending|medicaid_and_chip_other_medical,spending,119.736065,0.000000,6.329992,2.043325,8.373317,128.109382
+set,b,high,11.000000,spending|family_and_general_assistance,spending,11.686668,0.000000,0.592198,0.109719,0.701916,12.388585
+set,b,high,11.000000,spending|energy_assistance,spending,0.562300,0.000000,0.034491,0.011152,0.045643,0.607943
+set,b,high,11.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.315952,0.038945,0.354896,5.568790
+set,b,high,11.000000,spending|education_benefits,spending,8.944509,0.000000,0.449331,0.188039,0.637369,9.581878
+set,b,high,11.000000,spending|employment_training,spending,0.166636,0.000000,0.006643,0.004399,0.011043,0.177679
+set,b,high,11.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.016601,0.009185,0.025786,0.362665
+set,b,high,11.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.283462,0.067143,0.350606,4.487246
+set,b,high,11.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,b,high,11.000000,spending|school_reprice,spending,1.160765,0.000000,-0.126424,0.000000,-0.126424,1.034341
+set,b,high,11.000000,spending|college_rekey,spending,-0.552470,0.000000,-0.064976,0.000000,-0.064976,-0.617446
+set,b,high,11.000000,spending|lane_constants,spending,-5.201474,-0.007987,-0.190646,0.000000,-0.198634,-5.400108
+set,b,high,11.000000,spending|roads_vmt_sl,spending,3.030126,0.000000,0.017555,0.020718,0.038273,3.068399
+set,b,high,11.000000,spending|roads_vmt_fed,spending,0.027542,0.000000,0.000160,0.000188,0.000348,0.027890
+set,b,high,11.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.304315,-0.073689,0.230626,6.642953
+set,b,high,11.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.103866,-0.019863,0.084002,1.883634
+set,b,high,11.000000,spending|state_price_recreation_culture,spending,0.427908,0.000000,0.021087,-0.004366,0.016721,0.444629
+set,b,high,11.000000,capital|k12,capital return,13.340496,0.000000,0.800433,0.424005,1.224439,14.564935
+set,b,high,11.000000,capital|college,capital return,5.709022,0.000000,0.342266,0.186541,0.528807,6.237829
+set,b,high,11.000000,capital|pos_sl,capital return,1.165169,0.000000,0.055296,0.023686,0.078982,1.244151
+set,b,high,11.000000,capital|pos_fed,capital return,0.443570,0.000000,0.021051,0.009017,0.030068,0.473638
+set,b,high,11.000000,capital|health_sl,capital return,0.621472,0.000000,0.035868,0.017341,0.053210,0.674682
+set,b,high,11.000000,capital|health_fed,capital return,0.180032,0.000000,0.010391,0.005024,0.015414,0.195446
+set,b,high,11.000000,capital|gps_sl,capital return,3.865063,0.002992,0.190614,0.105459,0.299065,4.164127
+set,b,high,11.000000,capital|gps_fed,capital return,0.454891,0.000352,0.022434,0.012412,0.035198,0.490089
+set,b,high,11.000000,capital|hwy_sl,capital return,12.598830,0.000000,0.615209,0.360120,0.975329,13.574159
+set,b,high,11.000000,capital|rec_sl,capital return,1.494276,0.000000,0.073637,0.040740,0.114377,1.608653
+set,b,high,11.000000,capital|hwy_fed,capital return,0.156656,0.000000,0.007650,0.004478,0.012127,0.168783
+set,b,high,11.000000,capital|air_fed,capital return,0.085622,0.000000,0.004870,0.002796,0.007666,0.093288
+set,b,high,11.000000,capital|rec_fed,capital return,0.147045,0.000000,0.007246,0.004009,0.011255,0.158300
+set,b,high,11.000000,capital|ent_housing_sl,capital return,0.948519,0.000000,0.064997,0.015396,0.080393,1.028912
+set,b,high,11.000000,capital|ent_transit_sl,capital return,1.778014,0.000000,0.087619,0.048476,0.136095,1.914109
+set,b,high,11.000000,capital|ent_airports_sl,capital return,2.094443,0.000000,0.103212,0.057103,0.160315,2.254758
+set,b,high,11.000000,capital|ent_ports_sl,capital return,0.331958,0.000000,0.016359,0.009051,0.025409,0.357368
+set,b,high,11.000000,capital|ent_power_sl,capital return,1.905472,0.000000,0.093900,0.051951,0.145851,2.051323
+set,b,high,11.000000,capital|ent_water_sl,capital return,3.219791,0.000000,0.158669,0.087784,0.246453,3.466244
+set,b,high,11.000000,capital|ent_sewer_sl,capital return,4.305829,0.000000,0.212188,0.117394,0.329582,4.635411
+set,b,high,11.000000,capital|ent_tolls_sl,capital return,1.761792,0.000000,0.086820,0.048033,0.134853,1.896645
+set,b,high,11.000000,capital|ent_power_fed,capital return,0.097251,0.000000,0.004792,0.002651,0.007444,0.104695
+set,b,high,11.000000,capital|ent_other_sl,capital return,0.265334,0.000000,0.013075,0.007234,0.020310,0.285643
+set,b,high,11.000000,capital|ent_other_fed,capital return,0.199357,0.000000,0.009824,0.005435,0.015259,0.214616
+set,b,high,11.000000,production|gain,production gain,-7.683239,0.000000,-0.176021,0.000000,-0.176021,-7.859260
+set,c,low,48.000000,receipt|federal_income_tax,receipts,-111.992551,0.000000,-12.653252,-6.972410,-19.625662,-131.618212
+set,c,low,48.000000,receipt|state_local_income_tax,receipts,-26.076962,0.000000,-2.543994,-1.838932,-4.382926,-30.459889
+set,c,low,48.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.245158,-0.068465,-0.313624,-3.652266
+set,c,low,48.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.098656,-0.041149,-0.139805,-1.465646
+set,c,low,48.000000,receipt|other_personal_tax,receipts,-0.472790,0.000000,-0.046124,-0.028848,-0.074972,-0.547761
+set,c,low,48.000000,receipt|employee_oasdi,receipts,-53.306068,0.000000,-4.994723,-1.738023,-6.732746,-60.038814
+set,c,low,48.000000,receipt|employee_hi,receipts,-15.800299,0.000000,-1.528094,-0.554558,-2.082652,-17.882951
+set,c,low,48.000000,receipt|self_employment_oasdi_hi,receipts,-6.588000,0.000000,-0.481523,-0.247307,-0.728830,-7.316830
+set,c,low,48.000000,receipt|employer_oasdi,receipts,-53.766384,0.000000,-5.037854,-1.753031,-6.790886,-60.557269
+set,c,low,48.000000,receipt|employer_hi,receipts,-14.054588,0.000000,-1.359261,-0.493287,-1.852549,-15.907136
+set,c,low,48.000000,receipt|medicare_supplementary_premiums,receipts,-7.600356,0.000000,-0.633327,-0.207972,-0.841298,-8.441655
+set,c,low,48.000000,receipt|other_domestic_social_contributions,receipts,-10.318503,0.000000,-0.846784,-0.274402,-1.121186,-11.439689
+set,c,low,48.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,receipt|general_sales_tax,receipts,-55.014305,0.000000,-5.007945,-2.032431,-7.040377,-62.054681
+set,c,low,48.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.343831,-1.661014,-0.971627,-2.976473,-22.026194
+set,c,low,48.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,receipt|excise_selective_sales,receipts,-31.719826,0.000000,-2.758794,-1.215887,-3.974681,-35.694507
+set,c,low,48.000000,receipt|customs_duties,receipts,-6.845218,0.000000,-0.623119,-0.284417,-0.907536,-7.752754
+set,c,low,48.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,receipt|personal_current_transfers,receipts,-11.552283,0.000000,-1.051603,-0.479994,-1.531597,-13.083880
+set,c,low,48.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.065784,0.024503,0.090287,0.929497
+set,c,low,48.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.373453,0.059555,0.433008,3.859136
+set,c,low,48.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.141464,-0.485534,-0.164518,-0.791515,-7.602279
+set,c,low,48.000000,spending|general_public_services,spending,28.237313,0.031831,2.215954,0.825390,3.073175,31.310488
+set,c,low,48.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|public_order_safety,spending,69.655444,0.000000,5.258328,1.516387,6.774715,76.430158
+set,c,low,48.000000,spending|economic_affairs_services,spending,13.989872,0.024845,1.268006,0.490037,1.782888,15.772760
+set,c,low,48.000000,spending|housing_community_services,spending,1.703378,0.000000,0.133524,0.049735,0.183258,1.886637
+set,c,low,48.000000,spending|health_services,spending,17.351227,0.000000,1.592956,0.518504,2.111459,19.462686
+set,c,low,48.000000,spending|recreation_culture,spending,5.450626,0.001943,0.427415,0.159202,0.588559,6.039186
+set,c,low,48.000000,spending|education_services,spending,191.857732,0.000000,15.088220,6.785550,21.873770,213.731502
+set,c,low,48.000000,spending|income_security_services,spending,29.589136,0.000000,2.851193,0.428257,3.279450,32.868586
+set,c,low,48.000000,spending|social_security,spending,109.406993,0.000000,10.113223,3.448446,13.561669,122.968662
+set,c,low,48.000000,spending|medicare,spending,73.893231,0.000000,5.867088,2.101943,7.969031,81.862262
+set,c,low,48.000000,spending|unemployment,spending,5.060153,0.000000,0.337232,0.087828,0.425060,5.485214
+set,c,low,48.000000,spending|railroad_retirement,spending,0.563106,0.000000,0.055397,0.022455,0.077853,0.640958
+set,c,low,48.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.002688,0.001195,0.003882,0.042004
+set,c,low,48.000000,spending|veterans_life_insurance,spending,0.028358,0.000000,0.003585,0.001003,0.004588,0.032946
+set,c,low,48.000000,spending|workers_compensation,spending,1.607301,0.000000,0.194584,0.023720,0.218303,1.825604
+set,c,low,48.000000,spending|military_medical,spending,0.312891,0.000000,0.032467,0.021337,0.053805,0.366696
+set,c,low,48.000000,spending|veterans_pension_disability,spending,11.401810,0.000000,1.441294,0.403280,1.844574,13.246384
+set,c,low,48.000000,spending|veterans_readjustment,spending,0.719446,0.000000,0.090945,0.025447,0.116391,0.835837
+set,c,low,48.000000,spending|veterans_other,spending,1.597251,0.000000,0.192641,0.063362,0.256004,1.853254
+set,c,low,48.000000,spending|snap,spending,13.588727,0.000000,1.242018,0.248534,1.490552,15.079279
+set,c,low,48.000000,spending|black_lung,spending,0.037080,0.000000,0.004489,0.000344,0.004833,0.041914
+set,c,low,48.000000,spending|ssi,spending,5.175676,0.000000,0.588765,0.127417,0.716182,5.891858
+set,c,low,48.000000,spending|refundable_tax_credits,spending,36.331342,0.000000,2.708308,0.771718,3.480027,39.811369
+set,c,low,48.000000,spending|other_federal_benefits,spending,3.942937,0.000000,0.399045,0.133907,0.532952,4.475889
+set,c,low,48.000000,spending|temporary_disability,spending,2.815969,0.000000,0.340908,0.026137,0.367045,3.183013
+set,c,low,48.000000,spending|medicaid_and_chip_other_medical,spending,117.743417,0.000000,10.027413,2.188239,12.215651,129.959068
+set,c,low,48.000000,spending|family_and_general_assistance,spending,12.336154,0.000000,1.188705,0.117500,1.306205,13.642359
+set,c,low,48.000000,spending|energy_assistance,spending,0.562300,0.000000,0.054864,0.011943,0.066807,0.629107
+set,c,low,48.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.502580,0.041707,0.544287,5.758180
+set,c,low,48.000000,spending|education_benefits,spending,8.944509,0.000000,0.714744,0.201374,0.916119,9.860627
+set,c,low,48.000000,spending|employment_training,spending,0.166636,0.000000,0.010568,0.004711,0.015279,0.181915
+set,c,low,48.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.026407,0.009836,0.036243,0.373122
+set,c,low,48.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.450900,0.071905,0.522805,4.659445
+set,c,low,48.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|school_reprice,spending,1.489491,0.000000,0.136868,0.000000,0.136868,1.626358
+set,c,low,48.000000,spending|college_rekey,spending,-0.904583,0.000000,-0.063175,0.000000,-0.063175,-0.967758
+set,c,low,48.000000,spending|lane_constants,spending,-5.159674,-0.011245,-0.299901,0.000000,-0.311146,-5.470820
+set,c,low,48.000000,spending|roads_vmt_sl,spending,2.240437,0.004237,0.020731,0.016432,0.041401,2.281838
+set,c,low,48.000000,spending|roads_vmt_fed,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.484070,-0.078916,0.405154,6.817481
+set,c,low,48.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.165218,-0.021272,0.143946,1.943577
+set,c,low,48.000000,spending|state_price_recreation_culture,spending,0.366364,0.000131,0.028729,-0.004004,0.024855,0.391219
+set,c,low,48.000000,capital|k12,capital return,8.652057,0.000000,0.681652,0.302717,0.984369,9.636427
+set,c,low,48.000000,capital|college,capital return,3.703234,0.000000,0.291782,0.133180,0.424962,4.128196
+set,c,low,48.000000,capital|pos_sl,capital return,0.776779,0.000000,0.058640,0.016910,0.075550,0.852329
+set,c,low,48.000000,capital|pos_fed,capital return,0.295714,0.000000,0.022324,0.006438,0.028761,0.324475
+set,c,low,48.000000,capital|health_sl,capital return,0.414315,0.000000,0.038037,0.012381,0.050418,0.464733
+set,c,low,48.000000,capital|health_fed,capital return,0.120021,0.000000,0.011019,0.003587,0.014605,0.134627
+set,c,low,48.000000,capital|gps_sl,capital return,1.818146,0.002050,0.142681,0.053145,0.197876,2.016022
+set,c,low,48.000000,capital|gps_fed,capital return,0.213983,0.000241,0.016793,0.006255,0.023289,0.237272
+set,c,low,48.000000,capital|hwy_sl,capital return,6.208989,0.011743,0.483194,0.190414,0.685351,6.894339
+set,c,low,48.000000,capital|rec_sl,capital return,0.947615,0.000338,0.074308,0.027678,0.102324,1.049938
+set,c,low,48.000000,capital|hwy_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,capital|air_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,capital|rec_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,low,48.000000,capital|ent_housing_sl,capital return,0.632346,0.000000,0.068927,0.010992,0.079918,0.712264
+set,c,low,48.000000,capital|ent_transit_sl,capital return,1.185343,0.000000,0.092916,0.034609,0.127525,1.312868
+set,c,low,48.000000,capital|ent_airports_sl,capital return,1.396295,0.000000,0.109452,0.040768,0.150221,1.546516
+set,c,low,48.000000,capital|ent_ports_sl,capital return,0.221306,0.000000,0.017348,0.006462,0.023809,0.245115
+set,c,low,48.000000,capital|ent_power_sl,capital return,1.270315,0.000000,0.099577,0.037090,0.136667,1.406982
+set,c,low,48.000000,capital|ent_water_sl,capital return,2.146527,0.000000,0.168261,0.062673,0.230935,2.377462
+set,c,low,48.000000,capital|ent_sewer_sl,capital return,2.870553,0.000000,0.225016,0.083813,0.308829,3.179382
+set,c,low,48.000000,capital|ent_tolls_sl,capital return,1.174528,0.000000,0.092069,0.034293,0.126362,1.300890
+set,c,low,48.000000,capital|ent_power_fed,capital return,0.064834,0.000000,0.005082,0.001893,0.006975,0.071810
+set,c,low,48.000000,capital|ent_other_sl,capital return,0.176889,0.000000,0.013866,0.005165,0.019031,0.195920
+set,c,low,48.000000,capital|ent_other_fed,capital return,0.132905,0.000000,0.010418,0.003880,0.014299,0.147203
+set,c,low,48.000000,production|gain,production gain,-11.679878,0.000000,-0.425641,0.000000,-0.425641,-12.105519
+set,c,high,11.000000,receipt|federal_income_tax,receipts,-102.338418,0.000000,-9.146505,-6.972410,-16.118915,-118.457332
+set,c,high,11.000000,receipt|state_local_income_tax,receipts,-23.841655,0.000000,-1.893553,-1.838932,-3.732485,-27.574140
+set,c,high,11.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.245158,-0.068465,-0.313624,-3.652266
+set,c,high,11.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.085123,-0.041149,-0.126271,-1.452112
+set,c,high,11.000000,receipt|other_personal_tax,receipts,-0.432262,0.000000,-0.034331,-0.028848,-0.063179,-0.495441
+set,c,high,11.000000,receipt|employee_oasdi,receipts,-50.146592,0.000000,-3.867422,-1.738023,-5.605445,-55.752037
+set,c,high,11.000000,receipt|employee_hi,receipts,-14.733325,0.000000,-1.152647,-0.554558,-1.707205,-16.440531
+set,c,high,11.000000,receipt|self_employment_oasdi_hi,receipts,-5.983506,0.000000,-0.319068,-0.247307,-0.566375,-6.549881
+set,c,high,11.000000,receipt|employer_oasdi,receipts,-50.579625,0.000000,-3.900819,-1.753031,-5.653850,-56.233475
+set,c,high,11.000000,receipt|employer_hi,receipts,-13.105500,0.000000,-1.025296,-0.493287,-1.518583,-14.624083
+set,c,high,11.000000,receipt|medicare_supplementary_premiums,receipts,-7.169537,0.000000,-0.537545,-0.207972,-0.745517,-7.915054
+set,c,high,11.000000,receipt|other_domestic_social_contributions,receipts,-9.940263,0.000000,-0.691503,-0.274402,-0.965905,-10.906168
+set,c,high,11.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,receipt|general_sales_tax,receipts,-55.005461,0.000000,-5.007140,-2.032431,-7.039572,-62.045033
+set,c,high,11.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.343831,-1.661014,-0.971627,-2.976473,-22.026194
+set,c,high,11.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,receipt|excise_selective_sales,receipts,-31.715894,0.000000,-2.758437,-1.215887,-3.974323,-35.690217
+set,c,high,11.000000,receipt|customs_duties,receipts,-6.844118,0.000000,-0.623019,-0.284417,-0.907436,-7.751554
+set,c,high,11.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,receipt|personal_current_transfers,receipts,-11.550426,0.000000,-1.051434,-0.479994,-1.531428,-13.081854
+set,c,high,11.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.065784,0.024503,0.090287,0.929497
+set,c,high,11.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.373453,0.059555,0.433008,3.859136
+set,c,high,11.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.141464,-0.485534,-0.164518,-0.791515,-7.602279
+set,c,high,11.000000,spending|general_public_services,spending,40.018407,0.043604,3.140370,1.169713,4.353687,44.372094
+set,c,high,11.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,spending|public_order_safety,spending,69.655444,0.000000,5.258328,1.516387,6.774715,76.430158
+set,c,high,11.000000,spending|economic_affairs_services,spending,23.266194,0.004839,2.105487,0.813693,2.924019,26.190213
+set,c,high,11.000000,spending|housing_community_services,spending,1.703378,0.000000,0.133524,0.049735,0.183258,1.886637
+set,c,high,11.000000,spending|health_services,spending,17.351227,0.000000,1.592956,0.518504,2.111459,19.462686
+set,c,high,11.000000,spending|recreation_culture,spending,6.366255,0.000000,0.499036,0.185879,0.684915,7.051171
+set,c,high,11.000000,spending|education_services,spending,198.014032,0.000000,19.259285,6.785550,26.044835,224.058867
+set,c,high,11.000000,spending|income_security_services,spending,28.031298,0.000000,2.259457,0.428257,2.687714,30.719012
+set,c,high,11.000000,spending|social_security,spending,102.754953,0.000000,7.754290,3.448446,11.202736,113.957689
+set,c,high,11.000000,spending|medicare,spending,73.893231,0.000000,5.137081,2.101943,7.239024,81.132255
+set,c,high,11.000000,spending|unemployment,spending,4.763741,0.000000,0.243810,0.087828,0.331638,5.095379
+set,c,high,11.000000,spending|railroad_retirement,spending,0.530713,0.000000,0.046185,0.022455,0.068640,0.599353
+set,c,high,11.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.002688,0.001195,0.003882,0.042004
+set,c,high,11.000000,spending|veterans_life_insurance,spending,0.022716,0.000000,0.002654,0.001003,0.003657,0.026372
+set,c,high,11.000000,spending|workers_compensation,spending,1.555579,0.000000,0.150236,0.023720,0.173955,1.729534
+set,c,high,11.000000,spending|military_medical,spending,0.312891,0.000000,0.032467,0.021337,0.053805,0.366696
+set,c,high,11.000000,spending|veterans_pension_disability,spending,9.133043,0.000000,1.066990,0.403280,1.470270,10.603313
+set,c,high,11.000000,spending|veterans_readjustment,spending,0.576289,0.000000,0.067326,0.025447,0.092773,0.669062
+set,c,high,11.000000,spending|veterans_other,spending,1.597251,0.000000,0.192641,0.063362,0.256004,1.853254
+set,c,high,11.000000,spending|snap,spending,13.588727,0.000000,1.242018,0.248534,1.490552,15.079279
+set,c,high,11.000000,spending|black_lung,spending,0.033198,0.000000,0.003206,0.000344,0.003550,0.036749
+set,c,high,11.000000,spending|ssi,spending,5.094042,0.000000,0.528064,0.127417,0.655481,5.749523
+set,c,high,11.000000,spending|refundable_tax_credits,spending,32.628027,0.000000,1.837889,0.771718,2.609607,35.237634
+set,c,high,11.000000,spending|other_federal_benefits,spending,3.662654,0.000000,0.328838,0.133907,0.462745,4.125399
+set,c,high,11.000000,spending|temporary_disability,spending,2.521144,0.000000,0.243489,0.026137,0.269626,2.790770
+set,c,high,11.000000,spending|medicaid_and_chip_other_medical,spending,119.736065,0.000000,10.069037,2.188239,12.257276,131.993341
+set,c,high,11.000000,spending|family_and_general_assistance,spending,11.686668,0.000000,0.942001,0.117500,1.059501,12.746170
+set,c,high,11.000000,spending|energy_assistance,spending,0.562300,0.000000,0.054864,0.011943,0.066807,0.629107
+set,c,high,11.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.502580,0.041707,0.544287,5.758180
+set,c,high,11.000000,spending|education_benefits,spending,8.944509,0.000000,0.714744,0.201374,0.916119,9.860627
+set,c,high,11.000000,spending|employment_training,spending,0.166636,0.000000,0.010568,0.004711,0.015279,0.181915
+set,c,high,11.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.026407,0.009836,0.036243,0.373122
+set,c,high,11.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.450900,0.071905,0.522805,4.659445
+set,c,high,11.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+set,c,high,11.000000,spending|school_reprice,spending,1.160765,0.000000,-0.201101,0.000000,-0.201101,0.959664
+set,c,high,11.000000,spending|college_rekey,spending,-0.552470,0.000000,-0.103356,0.000000,-0.103356,-0.655826
+set,c,high,11.000000,spending|lane_constants,spending,-5.201474,-0.011245,-0.303258,0.000000,-0.314504,-5.515978
+set,c,high,11.000000,spending|roads_vmt_sl,spending,3.030126,0.000000,0.027925,0.022188,0.050112,3.080238
+set,c,high,11.000000,spending|roads_vmt_fed,spending,0.027542,0.000000,0.000254,0.000202,0.000455,0.027997
+set,c,high,11.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.484070,-0.078916,0.405154,6.817481
+set,c,high,11.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.165218,-0.021272,0.143946,1.943577
+set,c,high,11.000000,spending|state_price_recreation_culture,spending,0.427908,0.000000,0.033543,-0.004675,0.028867,0.456776
+set,c,high,11.000000,capital|k12,capital return,13.340496,0.000000,1.273239,0.454076,1.727315,15.067811
+set,c,high,11.000000,capital|college,capital return,5.709022,0.000000,0.544438,0.199771,0.744208,6.453231
+set,c,high,11.000000,capital|pos_sl,capital return,1.165169,0.000000,0.087959,0.025366,0.113325,1.278494
+set,c,high,11.000000,capital|pos_fed,capital return,0.443570,0.000000,0.033485,0.009656,0.043142,0.486712
+set,c,high,11.000000,capital|health_sl,capital return,0.621472,0.000000,0.057055,0.018571,0.075627,0.697099
+set,c,high,11.000000,capital|health_fed,capital return,0.180032,0.000000,0.016528,0.005380,0.021908,0.201940
+set,c,high,11.000000,capital|gps_sl,capital return,3.865063,0.004211,0.303304,0.112973,0.420488,4.285551
+set,c,high,11.000000,capital|gps_fed,capital return,0.454891,0.000496,0.035697,0.013296,0.049489,0.504380
+set,c,high,11.000000,capital|hwy_sl,capital return,12.598830,0.000000,0.978605,0.385660,1.364265,13.963095
+set,c,high,11.000000,capital|rec_sl,capital return,1.494276,0.000000,0.117133,0.043629,0.160762,1.655038
+set,c,high,11.000000,capital|hwy_fed,capital return,0.156656,0.000000,0.012168,0.004795,0.016963,0.173619
+set,c,high,11.000000,capital|air_fed,capital return,0.085622,0.000000,0.007747,0.002994,0.010741,0.096363
+set,c,high,11.000000,capital|rec_fed,capital return,0.147045,0.000000,0.011527,0.004293,0.015820,0.162865
+set,c,high,11.000000,capital|ent_housing_sl,capital return,0.948519,0.000000,0.103390,0.016488,0.119878,1.068396
+set,c,high,11.000000,capital|ent_transit_sl,capital return,1.778014,0.000000,0.139375,0.051914,0.191288,1.969303
+set,c,high,11.000000,capital|ent_airports_sl,capital return,2.094443,0.000000,0.164179,0.061153,0.225331,2.319774
+set,c,high,11.000000,capital|ent_ports_sl,capital return,0.331958,0.000000,0.026021,0.009692,0.035714,0.367672
+set,c,high,11.000000,capital|ent_power_sl,capital return,1.905472,0.000000,0.149366,0.055635,0.205001,2.110473
+set,c,high,11.000000,capital|ent_water_sl,capital return,3.219791,0.000000,0.252392,0.094010,0.346402,3.566193
+set,c,high,11.000000,capital|ent_sewer_sl,capital return,4.305829,0.000000,0.337524,0.125720,0.463244,4.769073
+set,c,high,11.000000,capital|ent_tolls_sl,capital return,1.761792,0.000000,0.138103,0.051440,0.189543,1.951335
+set,c,high,11.000000,capital|ent_power_fed,capital return,0.097251,0.000000,0.007623,0.002840,0.010463,0.107714
+set,c,high,11.000000,capital|ent_other_sl,capital return,0.265334,0.000000,0.020799,0.007747,0.028546,0.293880
+set,c,high,11.000000,capital|ent_other_fed,capital return,0.199357,0.000000,0.015627,0.005821,0.021448,0.220805
+set,c,high,11.000000,production|gain,production gain,-7.683239,0.000000,-0.279994,0.000000,-0.279994,-7.963233
+cash,floor,low,48.000000,receipt|federal_income_tax,receipts,-114.083756,0.000000,-1.465143,-2.737349,-4.202492,-118.286249
+cash,floor,low,48.000000,receipt|state_local_income_tax,receipts,-26.076962,0.000000,-0.289618,-0.705830,-0.995448,-27.072410
+cash,floor,low,48.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.027910,-0.026279,-0.054189,-3.392831
+cash,floor,low,48.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.011231,-0.015794,-0.027025,-1.352866
+cash,floor,low,48.000000,receipt|other_personal_tax,receipts,-0.472790,0.000000,-0.005251,-0.011072,-0.016323,-0.489113
+cash,floor,low,48.000000,receipt|employee_oasdi,receipts,-53.306068,0.000000,-0.568619,-0.667098,-1.235717,-54.541785
+cash,floor,low,48.000000,receipt|employee_hi,receipts,-15.800299,0.000000,-0.173964,-0.212854,-0.386818,-16.187117
+cash,floor,low,48.000000,receipt|self_employment_oasdi_hi,receipts,-6.588000,0.000000,-0.054818,-0.094923,-0.149741,-6.737742
+cash,floor,low,48.000000,receipt|employer_oasdi,receipts,-53.766384,0.000000,-0.573529,-0.672859,-1.246388,-55.012771
+cash,floor,low,48.000000,receipt|employer_hi,receipts,-14.054588,0.000000,-0.154744,-0.189336,-0.344080,-14.398668
+cash,floor,low,48.000000,receipt|medicare_supplementary_premiums,receipts,-7.600356,0.000000,-0.072100,-0.079825,-0.151925,-7.752282
+cash,floor,low,48.000000,receipt|other_domestic_social_contributions,receipts,-10.318503,0.000000,-0.096401,-0.105323,-0.201724,-10.520227
+cash,floor,low,48.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,receipt|general_sales_tax,receipts,-55.014305,0.000000,-0.570124,-0.780100,-1.350224,-56.364529
+cash,floor,low,48.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.064578,-0.186373,-0.367566,-0.618517,-19.668238
+cash,floor,low,48.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,receipt|excise_selective_sales,receipts,-31.719826,0.000000,-0.314072,-0.466689,-0.780761,-32.500587
+cash,floor,low,48.000000,receipt|customs_duties,receipts,-6.845218,0.000000,-0.070938,-0.109167,-0.180105,-7.025323
+cash,floor,low,48.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,receipt|personal_current_transfers,receipts,-11.552283,0.000000,-0.119719,-0.184234,-0.303953,-11.856236
+cash,floor,low,48.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.007489,0.009405,0.016894,0.856104
+cash,floor,low,48.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.042515,0.022859,0.065374,3.491503
+cash,floor,low,48.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.026489,-0.054361,-0.062102,-0.142951,-6.953715
+cash,floor,low,48.000000,spending|general_public_services,spending,28.237313,0.005930,0.252042,0.316516,0.574487,28.811800
+cash,floor,low,48.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|public_order_safety,spending,69.655444,0.000000,0.598628,0.582029,1.180657,70.836101
+cash,floor,low,48.000000,spending|economic_affairs_services,spending,13.989872,0.004626,0.144146,0.187818,0.336591,14.326463
+cash,floor,low,48.000000,spending|housing_community_services,spending,1.703378,0.000000,0.015201,0.019089,0.034290,1.737669
+cash,floor,low,48.000000,spending|health_services,spending,17.351227,0.000000,0.181348,0.199015,0.380363,17.731590
+cash,floor,low,48.000000,spending|recreation_culture,spending,5.450626,0.000362,0.048644,0.061088,0.110095,5.560721
+cash,floor,low,48.000000,spending|education_services,spending,191.857732,0.000000,1.717701,2.604471,4.322172,196.179904
+cash,floor,low,48.000000,spending|income_security_services,spending,29.589136,0.000000,0.324591,0.164376,0.488967,30.078103
+cash,floor,low,48.000000,spending|social_security,spending,56.258695,0.000000,0.630081,0.861105,1.491185,57.749880
+cash,floor,low,48.000000,spending|medicare,spending,52.419212,0.000000,0.402541,0.621775,1.024316,53.443528
+cash,floor,low,48.000000,spending|unemployment,spending,5.060153,0.000000,0.038392,0.033711,0.072103,5.132256
+cash,floor,low,48.000000,spending|railroad_retirement,spending,0.563106,0.000000,0.006307,0.008619,0.014926,0.578031
+cash,floor,low,48.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.000306,0.000459,0.000764,0.038887
+cash,floor,low,48.000000,spending|veterans_life_insurance,spending,0.028358,0.000000,0.000408,0.000385,0.000793,0.029152
+cash,floor,low,48.000000,spending|workers_compensation,spending,1.607301,0.000000,0.022152,0.009104,0.031256,1.638557
+cash,floor,low,48.000000,spending|military_medical,spending,0.312891,0.000000,0.003696,0.008190,0.011886,0.324777
+cash,floor,low,48.000000,spending|veterans_pension_disability,spending,11.401810,0.000000,0.164082,0.154789,0.318872,11.720682
+cash,floor,low,48.000000,spending|veterans_readjustment,spending,0.719446,0.000000,0.010353,0.009767,0.020121,0.739567
+cash,floor,low,48.000000,spending|veterans_other,spending,1.597251,0.000000,0.021931,0.024320,0.046251,1.643502
+cash,floor,low,48.000000,spending|snap,spending,13.588727,0.000000,0.141396,0.095394,0.236790,13.825517
+cash,floor,low,48.000000,spending|black_lung,spending,0.037080,0.000000,0.000511,0.000132,0.000643,0.037724
+cash,floor,low,48.000000,spending|ssi,spending,5.175676,0.000000,0.067027,0.048906,0.115933,5.291609
+cash,floor,low,48.000000,spending|refundable_tax_credits,spending,36.331342,0.000000,0.308324,0.296206,0.604530,36.935872
+cash,floor,low,48.000000,spending|other_federal_benefits,spending,3.942937,0.000000,0.045429,0.051397,0.096826,4.039763
+cash,floor,low,48.000000,spending|temporary_disability,spending,2.815969,0.000000,0.038810,0.010032,0.048842,2.864811
+cash,floor,low,48.000000,spending|medicaid_and_chip_other_medical,spending,117.743417,0.000000,1.141559,0.839903,1.981462,119.724879
+cash,floor,low,48.000000,spending|family_and_general_assistance,spending,12.336154,0.000000,0.135327,0.045100,0.180426,12.516581
+cash,floor,low,48.000000,spending|energy_assistance,spending,0.562300,0.000000,0.006246,0.004584,0.010830,0.573130
+cash,floor,low,48.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.057216,0.016008,0.073224,5.287117
+cash,floor,low,48.000000,spending|education_benefits,spending,8.944509,0.000000,0.081369,0.077293,0.158662,9.103171
+cash,floor,low,48.000000,spending|employment_training,spending,0.166636,0.000000,0.001203,0.001808,0.003011,0.169648
+cash,floor,low,48.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.003006,0.003775,0.006782,0.343661
+cash,floor,low,48.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.051332,0.027599,0.078931,4.215571
+cash,floor,low,48.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|school_reprice,spending,1.489491,0.000000,0.015582,0.000000,0.015582,1.505072
+cash,floor,low,48.000000,spending|college_rekey,spending,-0.904583,0.000000,-0.007192,0.000000,-0.007192,-0.911775
+cash,floor,low,48.000000,spending|lane_constants,spending,-5.159674,-0.002094,-0.034142,0.000000,-0.036236,-5.195910
+cash,floor,low,48.000000,spending|roads_vmt_sl,spending,2.240437,0.000789,0.002357,0.006297,0.009443,2.249880
+cash,floor,low,48.000000,spending|roads_vmt_fed,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.055108,-0.030290,0.024819,6.437146
+cash,floor,low,48.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.018809,-0.008165,0.010644,1.810276
+cash,floor,low,48.000000,spending|state_price_recreation_culture,spending,0.366364,0.000024,0.003270,-0.001537,0.001757,0.368122
+cash,floor,low,48.000000,capital|k12,capital return,8.652057,0.000000,0.077602,0.116191,0.193793,8.845850
+cash,floor,low,48.000000,capital|college,capital return,3.703234,0.000000,0.033218,0.051118,0.084336,3.787570
+cash,floor,low,48.000000,capital|pos_sl,capital return,0.776779,0.000000,0.006676,0.006491,0.013166,0.789946
+cash,floor,low,48.000000,capital|pos_fed,capital return,0.295714,0.000000,0.002541,0.002471,0.005012,0.300726
+cash,floor,low,48.000000,capital|health_sl,capital return,0.414315,0.000000,0.004330,0.004752,0.009082,0.423397
+cash,floor,low,48.000000,capital|health_fed,capital return,0.120021,0.000000,0.001254,0.001377,0.002631,0.122652
+cash,floor,low,48.000000,capital|gps_sl,capital return,1.818146,0.000382,0.016228,0.020380,0.036990,1.855137
+cash,floor,low,48.000000,capital|gps_fed,capital return,0.213983,0.000045,0.001910,0.002399,0.004353,0.218337
+cash,floor,low,48.000000,capital|hwy_sl,capital return,6.208989,0.002187,0.054924,0.072974,0.130084,6.339073
+cash,floor,low,48.000000,capital|rec_sl,capital return,0.947615,0.000063,0.008457,0.010620,0.019140,0.966755
+cash,floor,low,48.000000,capital|hwy_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,capital|air_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,capital|rec_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,low,48.000000,capital|ent_housing_sl,capital return,0.632346,0.000000,0.007847,0.004219,0.012066,0.644412
+cash,floor,low,48.000000,capital|ent_transit_sl,capital return,1.185343,0.000000,0.010578,0.013284,0.023862,1.209205
+cash,floor,low,48.000000,capital|ent_airports_sl,capital return,1.396295,0.000000,0.012460,0.015648,0.028108,1.424404
+cash,floor,low,48.000000,capital|ent_ports_sl,capital return,0.221306,0.000000,0.001975,0.002480,0.004455,0.225761
+cash,floor,low,48.000000,capital|ent_power_sl,capital return,1.270315,0.000000,0.011336,0.014236,0.025572,1.295887
+cash,floor,low,48.000000,capital|ent_water_sl,capital return,2.146527,0.000000,0.019156,0.024056,0.043211,2.189739
+cash,floor,low,48.000000,capital|ent_sewer_sl,capital return,2.870553,0.000000,0.025617,0.032170,0.057786,2.928339
+cash,floor,low,48.000000,capital|ent_tolls_sl,capital return,1.174528,0.000000,0.010481,0.013163,0.023644,1.198172
+cash,floor,low,48.000000,capital|ent_power_fed,capital return,0.064834,0.000000,0.000579,0.000727,0.001305,0.066139
+cash,floor,low,48.000000,capital|ent_other_sl,capital return,0.176889,0.000000,0.001579,0.001982,0.003561,0.180450
+cash,floor,low,48.000000,capital|ent_other_fed,capital return,0.132905,0.000000,0.001186,0.001489,0.002675,0.135580
+cash,floor,low,48.000000,production|gain,production gain,-11.679878,0.000000,-0.048457,0.000000,-0.048457,-11.728335
+cash,floor,high,11.000000,receipt|federal_income_tax,receipts,-104.155318,0.000000,-1.060418,-2.737349,-3.797768,-107.953085
+cash,floor,high,11.000000,receipt|state_local_income_tax,receipts,-23.841655,0.000000,-0.215569,-0.705830,-0.921399,-24.763055
+cash,floor,high,11.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.027910,-0.026279,-0.054189,-3.392831
+cash,floor,high,11.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.009691,-0.015794,-0.025485,-1.351326
+cash,floor,high,11.000000,receipt|other_personal_tax,receipts,-0.432262,0.000000,-0.003908,-0.011072,-0.014981,-0.447243
+cash,floor,high,11.000000,receipt|employee_oasdi,receipts,-50.146592,0.000000,-0.440282,-0.667098,-1.107381,-51.253973
+cash,floor,high,11.000000,receipt|employee_hi,receipts,-14.733325,0.000000,-0.131222,-0.212854,-0.344076,-15.077401
+cash,floor,high,11.000000,receipt|self_employment_oasdi_hi,receipts,-5.983506,0.000000,-0.036324,-0.094923,-0.131247,-6.114753
+cash,floor,high,11.000000,receipt|employer_oasdi,receipts,-50.579625,0.000000,-0.444084,-0.672859,-1.116943,-51.696568
+cash,floor,high,11.000000,receipt|employer_hi,receipts,-13.105500,0.000000,-0.116724,-0.189336,-0.306060,-13.411560
+cash,floor,high,11.000000,receipt|medicare_supplementary_premiums,receipts,-7.169537,0.000000,-0.061196,-0.079825,-0.141021,-7.310558
+cash,floor,high,11.000000,receipt|other_domestic_social_contributions,receipts,-9.940263,0.000000,-0.078723,-0.105323,-0.184046,-10.124309
+cash,floor,high,11.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,receipt|general_sales_tax,receipts,-55.005461,0.000000,-0.570032,-0.780100,-1.350132,-56.355594
+cash,floor,high,11.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.064578,-0.186373,-0.367566,-0.618517,-19.668238
+cash,floor,high,11.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,receipt|excise_selective_sales,receipts,-31.715894,0.000000,-0.314031,-0.466689,-0.780720,-32.496614
+cash,floor,high,11.000000,receipt|customs_duties,receipts,-6.844118,0.000000,-0.070927,-0.109167,-0.180093,-7.024211
+cash,floor,high,11.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,receipt|personal_current_transfers,receipts,-11.550426,0.000000,-0.119699,-0.184234,-0.303933,-11.854360
+cash,floor,high,11.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.007489,0.009405,0.016894,0.856104
+cash,floor,high,11.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.042515,0.022859,0.065374,3.491503
+cash,floor,high,11.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.026489,-0.054361,-0.062102,-0.142951,-6.953715
+cash,floor,high,11.000000,spending|general_public_services,spending,40.018407,0.008123,0.357195,0.448569,0.813887,40.832294
+cash,floor,high,11.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,spending|public_order_safety,spending,69.655444,0.000000,0.598628,0.582029,1.180657,70.836101
+cash,floor,high,11.000000,spending|economic_affairs_services,spending,23.266194,0.000901,0.239656,0.312264,0.552821,23.819015
+cash,floor,high,11.000000,spending|housing_community_services,spending,1.703378,0.000000,0.015201,0.019089,0.034290,1.737669
+cash,floor,high,11.000000,spending|health_services,spending,17.351227,0.000000,0.181348,0.199015,0.380363,17.731590
+cash,floor,high,11.000000,spending|recreation_culture,spending,6.366255,0.000000,0.056812,0.071345,0.128157,6.494413
+cash,floor,high,11.000000,spending|education_services,spending,198.014032,0.000000,2.192551,2.604471,4.797022,202.811054
+cash,floor,high,11.000000,spending|income_security_services,spending,28.031298,0.000000,0.257225,0.164376,0.421602,28.452899
+cash,floor,high,11.000000,spending|social_security,spending,53.022396,0.000000,0.525299,0.861105,1.386404,54.408799
+cash,floor,high,11.000000,spending|medicare,spending,52.419212,0.000000,0.402541,0.621775,1.024316,53.443528
+cash,floor,high,11.000000,spending|unemployment,spending,4.763741,0.000000,0.027756,0.033711,0.061467,4.825208
+cash,floor,high,11.000000,spending|railroad_retirement,spending,0.530713,0.000000,0.005258,0.008619,0.013877,0.544590
+cash,floor,high,11.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.000306,0.000459,0.000764,0.038887
+cash,floor,high,11.000000,spending|veterans_life_insurance,spending,0.022716,0.000000,0.000302,0.000385,0.000687,0.023403
+cash,floor,high,11.000000,spending|workers_compensation,spending,1.555579,0.000000,0.017103,0.009104,0.026208,1.581787
+cash,floor,high,11.000000,spending|military_medical,spending,0.312891,0.000000,0.003696,0.008190,0.011886,0.324777
+cash,floor,high,11.000000,spending|veterans_pension_disability,spending,9.133043,0.000000,0.121470,0.154789,0.276260,9.409302
+cash,floor,high,11.000000,spending|veterans_readjustment,spending,0.576289,0.000000,0.007665,0.009767,0.017432,0.593720
+cash,floor,high,11.000000,spending|veterans_other,spending,1.597251,0.000000,0.021931,0.024320,0.046251,1.643502
+cash,floor,high,11.000000,spending|snap,spending,13.588727,0.000000,0.141396,0.095394,0.236790,13.825517
+cash,floor,high,11.000000,spending|black_lung,spending,0.033198,0.000000,0.000365,0.000132,0.000497,0.033695
+cash,floor,high,11.000000,spending|ssi,spending,5.094042,0.000000,0.060117,0.048906,0.109023,5.203065
+cash,floor,high,11.000000,spending|refundable_tax_credits,spending,32.628027,0.000000,0.209232,0.296206,0.505438,33.133465
+cash,floor,high,11.000000,spending|other_federal_benefits,spending,3.662654,0.000000,0.037436,0.051397,0.088833,3.751487
+cash,floor,high,11.000000,spending|temporary_disability,spending,2.521144,0.000000,0.027720,0.010032,0.037752,2.558896
+cash,floor,high,11.000000,spending|medicaid_and_chip_other_medical,spending,119.736065,0.000000,1.146298,0.839903,1.986201,121.722266
+cash,floor,high,11.000000,spending|family_and_general_assistance,spending,11.686668,0.000000,0.107241,0.045100,0.152341,11.839009
+cash,floor,high,11.000000,spending|energy_assistance,spending,0.562300,0.000000,0.006246,0.004584,0.010830,0.573130
+cash,floor,high,11.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.057216,0.016008,0.073224,5.287117
+cash,floor,high,11.000000,spending|education_benefits,spending,8.944509,0.000000,0.081369,0.077293,0.158662,9.103171
+cash,floor,high,11.000000,spending|employment_training,spending,0.166636,0.000000,0.001203,0.001808,0.003011,0.169648
+cash,floor,high,11.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.003006,0.003775,0.006782,0.343661
+cash,floor,high,11.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.051332,0.027599,0.078931,4.215571
+cash,floor,high,11.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,floor,high,11.000000,spending|school_reprice,spending,1.160765,0.000000,-0.022894,0.000000,-0.022894,1.137871
+cash,floor,high,11.000000,spending|college_rekey,spending,-0.552470,0.000000,-0.011766,0.000000,-0.011766,-0.564237
+cash,floor,high,11.000000,spending|lane_constants,spending,-5.201474,-0.002094,-0.034524,0.000000,-0.036619,-5.238093
+cash,floor,high,11.000000,spending|roads_vmt_sl,spending,3.030126,0.000000,0.003179,0.008516,0.011695,3.041821
+cash,floor,high,11.000000,spending|roads_vmt_fed,spending,0.027542,0.000000,0.000029,0.000077,0.000106,0.027648
+cash,floor,high,11.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.055108,-0.030290,0.024819,6.437146
+cash,floor,high,11.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.018809,-0.008165,0.010644,1.810276
+cash,floor,high,11.000000,spending|state_price_recreation_culture,spending,0.427908,0.000000,0.003819,-0.001795,0.002024,0.429932
+cash,floor,high,11.000000,capital|k12,capital return,13.340496,0.000000,0.144950,0.174286,0.319237,13.659733
+cash,floor,high,11.000000,capital|college,capital return,5.709022,0.000000,0.061981,0.076677,0.138658,5.847680
+cash,floor,high,11.000000,capital|pos_sl,capital return,1.165169,0.000000,0.010014,0.009736,0.019750,1.184919
+cash,floor,high,11.000000,capital|pos_fed,capital return,0.443570,0.000000,0.003812,0.003706,0.007519,0.451089
+cash,floor,high,11.000000,capital|health_sl,capital return,0.621472,0.000000,0.006495,0.007128,0.013624,0.635096
+cash,floor,high,11.000000,capital|health_fed,capital return,0.180032,0.000000,0.001882,0.002065,0.003947,0.183978
+cash,floor,high,11.000000,capital|gps_sl,capital return,3.865063,0.000785,0.034499,0.043324,0.078607,3.943670
+cash,floor,high,11.000000,capital|gps_fed,capital return,0.454891,0.000092,0.004060,0.005099,0.009251,0.464143
+cash,floor,high,11.000000,capital|hwy_sl,capital return,12.598830,0.000000,0.111408,0.148026,0.259434,12.858265
+cash,floor,high,11.000000,capital|rec_sl,capital return,1.494276,0.000000,0.013335,0.016746,0.030081,1.524357
+cash,floor,high,11.000000,capital|hwy_fed,capital return,0.156656,0.000000,0.001385,0.001841,0.003226,0.159882
+cash,floor,high,11.000000,capital|air_fed,capital return,0.085622,0.000000,0.000882,0.001149,0.002031,0.087653
+cash,floor,high,11.000000,capital|rec_fed,capital return,0.147045,0.000000,0.001312,0.001648,0.002960,0.150005
+cash,floor,high,11.000000,capital|ent_housing_sl,capital return,0.948519,0.000000,0.011770,0.006328,0.018099,0.966617
+cash,floor,high,11.000000,capital|ent_transit_sl,capital return,1.778014,0.000000,0.015867,0.019926,0.035793,1.813807
+cash,floor,high,11.000000,capital|ent_airports_sl,capital return,2.094443,0.000000,0.018691,0.023472,0.042163,2.136605
+cash,floor,high,11.000000,capital|ent_ports_sl,capital return,0.331958,0.000000,0.002962,0.003720,0.006683,0.338641
+cash,floor,high,11.000000,capital|ent_power_sl,capital return,1.905472,0.000000,0.017004,0.021354,0.038359,1.943831
+cash,floor,high,11.000000,capital|ent_water_sl,capital return,3.219791,0.000000,0.028733,0.036084,0.064817,3.284608
+cash,floor,high,11.000000,capital|ent_sewer_sl,capital return,4.305829,0.000000,0.038425,0.048255,0.086680,4.392509
+cash,floor,high,11.000000,capital|ent_tolls_sl,capital return,1.761792,0.000000,0.015722,0.019744,0.035466,1.797258
+cash,floor,high,11.000000,capital|ent_power_fed,capital return,0.097251,0.000000,0.000868,0.001090,0.001958,0.099209
+cash,floor,high,11.000000,capital|ent_other_sl,capital return,0.265334,0.000000,0.002368,0.002974,0.005341,0.270675
+cash,floor,high,11.000000,capital|ent_other_fed,capital return,0.199357,0.000000,0.001779,0.002234,0.004013,0.203370
+cash,floor,high,11.000000,production|gain,production gain,-7.683239,0.000000,-0.031876,0.000000,-0.031876,-7.715114
+cash,a,low,48.000000,receipt|federal_income_tax,receipts,-114.083756,0.000000,-3.311625,-6.187160,-9.498784,-123.582541
+cash,a,low,48.000000,receipt|state_local_income_tax,receipts,-26.076962,0.000000,-0.654616,-1.595369,-2.249986,-28.326948
+cash,a,low,48.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.063084,-0.059397,-0.122481,-3.461123
+cash,a,low,48.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.025386,-0.035699,-0.061085,-1.386926
+cash,a,low,48.000000,receipt|other_personal_tax,receipts,-0.472790,0.000000,-0.011869,-0.025027,-0.036895,-0.509685
+cash,a,low,48.000000,receipt|employee_oasdi,receipts,-53.306068,0.000000,-1.285234,-1.507825,-2.793059,-56.099127
+cash,a,low,48.000000,receipt|employee_hi,receipts,-15.800299,0.000000,-0.393207,-0.481108,-0.874315,-16.674613
+cash,a,low,48.000000,receipt|self_employment_oasdi_hi,receipts,-6.588000,0.000000,-0.123905,-0.214552,-0.338456,-6.926457
+cash,a,low,48.000000,receipt|employer_oasdi,receipts,-53.766384,0.000000,-1.296332,-1.520846,-2.817178,-56.583562
+cash,a,low,48.000000,receipt|employer_hi,receipts,-14.054588,0.000000,-0.349763,-0.427952,-0.777715,-14.832303
+cash,a,low,48.000000,receipt|medicare_supplementary_premiums,receipts,-7.600356,0.000000,-0.162967,-0.180426,-0.343393,-7.943749
+cash,a,low,48.000000,receipt|other_domestic_social_contributions,receipts,-10.318503,0.000000,-0.217893,-0.238058,-0.455951,-10.774454
+cash,a,low,48.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,receipt|general_sales_tax,receipts,-55.014305,0.000000,-1.288636,-1.763240,-3.051876,-58.066181
+cash,a,low,48.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.145290,-0.423034,-0.834308,-1.402631,-20.452352
+cash,a,low,48.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,receipt|excise_selective_sales,receipts,-31.719826,0.000000,-0.709888,-1.054845,-1.764733,-33.484559
+cash,a,low,48.000000,receipt|customs_duties,receipts,-6.845218,0.000000,-0.160340,-0.246746,-0.407086,-7.252304
+cash,a,low,48.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,receipt|personal_current_transfers,receipts,-11.552283,0.000000,-0.270597,-0.416420,-0.687016,-12.239299
+cash,a,low,48.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.016927,0.021258,0.038185,0.877395
+cash,a,low,48.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.096096,0.051667,0.147763,3.573892
+cash,a,low,48.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.059748,-0.123468,-0.141050,-0.324266,-7.135029
+cash,a,low,48.000000,spending|general_public_services,spending,28.237313,0.013420,0.569834,0.715603,1.298857,29.536169
+cash,a,low,48.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|public_order_safety,spending,69.655444,0.000000,1.353064,1.315545,2.668609,72.324052
+cash,a,low,48.000000,spending|economic_affairs_services,spending,13.989872,0.010472,0.325946,0.424697,0.761115,14.750987
+cash,a,low,48.000000,spending|housing_community_services,spending,1.703378,0.000000,0.034358,0.043147,0.077505,1.780884
+cash,a,low,48.000000,spending|health_services,spending,17.351227,0.000000,0.409897,0.449829,0.859726,18.210952
+cash,a,low,48.000000,spending|recreation_culture,spending,5.450626,0.000819,0.109959,0.138087,0.248866,5.699492
+cash,a,low,48.000000,spending|education_services,spending,191.857732,0.000000,3.882476,5.886818,9.769294,201.627025
+cash,a,low,48.000000,spending|income_security_services,spending,29.589136,0.000000,0.733664,0.371536,1.105200,30.694336
+cash,a,low,48.000000,spending|social_security,spending,56.258695,0.000000,1.424155,1.946332,3.370487,59.629182
+cash,a,low,48.000000,spending|medicare,spending,52.419212,0.000000,0.909853,1.405381,2.315234,54.734446
+cash,a,low,48.000000,spending|unemployment,spending,5.060153,0.000000,0.086776,0.076196,0.162972,5.223125
+cash,a,low,48.000000,spending|railroad_retirement,spending,0.563106,0.000000,0.014255,0.019481,0.033736,0.596842
+cash,a,low,48.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.000692,0.001036,0.001728,0.039850
+cash,a,low,48.000000,spending|veterans_life_insurance,spending,0.028358,0.000000,0.000922,0.000870,0.001793,0.030151
+cash,a,low,48.000000,spending|workers_compensation,spending,1.607301,0.000000,0.050070,0.020578,0.070648,1.677949
+cash,a,low,48.000000,spending|military_medical,spending,0.312891,0.000000,0.008354,0.018511,0.026866,0.339757
+cash,a,low,48.000000,spending|veterans_pension_disability,spending,11.401810,0.000000,0.370871,0.349866,0.720737,12.122548
+cash,a,low,48.000000,spending|veterans_readjustment,spending,0.719446,0.000000,0.023402,0.022076,0.045478,0.764924
+cash,a,low,48.000000,spending|veterans_other,spending,1.597251,0.000000,0.049570,0.054970,0.104540,1.701791
+cash,a,low,48.000000,spending|snap,spending,13.588727,0.000000,0.319594,0.215616,0.535210,14.123937
+cash,a,low,48.000000,spending|black_lung,spending,0.037080,0.000000,0.001155,0.000299,0.001454,0.038534
+cash,a,low,48.000000,spending|ssi,spending,5.175676,0.000000,0.151500,0.110541,0.262041,5.437717
+cash,a,low,48.000000,spending|refundable_tax_credits,spending,36.331342,0.000000,0.696897,0.669506,1.366403,37.697746
+cash,a,low,48.000000,spending|other_federal_benefits,spending,3.942937,0.000000,0.102682,0.116171,0.218853,4.161790
+cash,a,low,48.000000,spending|temporary_disability,spending,2.815969,0.000000,0.087722,0.022675,0.110397,2.926365
+cash,a,low,48.000000,spending|medicaid_and_chip_other_medical,spending,117.743417,0.000000,2.580237,1.898411,4.478648,122.222065
+cash,a,low,48.000000,spending|family_and_general_assistance,spending,12.336154,0.000000,0.305876,0.101937,0.407813,12.743967
+cash,a,low,48.000000,spending|energy_assistance,spending,0.562300,0.000000,0.014118,0.010361,0.024478,0.586779
+cash,a,low,48.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.129323,0.036183,0.165506,5.379399
+cash,a,low,48.000000,spending|education_benefits,spending,8.944509,0.000000,0.183917,0.174703,0.358620,9.303128
+cash,a,low,48.000000,spending|employment_training,spending,0.166636,0.000000,0.002719,0.004087,0.006806,0.173443
+cash,a,low,48.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.006795,0.008533,0.015328,0.352208
+cash,a,low,48.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.116025,0.062381,0.178406,4.315046
+cash,a,low,48.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|school_reprice,spending,1.489491,0.000000,0.035219,0.000000,0.035219,1.524709
+cash,a,low,48.000000,spending|college_rekey,spending,-0.904583,0.000000,-0.016256,0.000000,-0.016256,-0.920839
+cash,a,low,48.000000,spending|lane_constants,spending,-5.159674,-0.004740,-0.077170,0.000000,-0.081910,-5.241584
+cash,a,low,48.000000,spending|roads_vmt_sl,spending,2.240437,0.001786,0.005329,0.014240,0.021355,2.261792
+cash,a,low,48.000000,spending|roads_vmt_fed,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.124560,-0.068463,0.056097,6.468424
+cash,a,low,48.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.042514,-0.018455,0.024059,1.823690
+cash,a,low,48.000000,spending|state_price_recreation_culture,spending,0.366364,0.000055,0.007391,-0.003473,0.003973,0.370337
+cash,a,low,48.000000,capital|k12,capital return,8.652057,0.000000,0.175402,0.262623,0.438025,9.090082
+cash,a,low,48.000000,capital|college,capital return,3.703234,0.000000,0.075081,0.115541,0.190622,3.893856
+cash,a,low,48.000000,capital|pos_sl,capital return,0.776779,0.000000,0.015089,0.014671,0.029760,0.806539
+cash,a,low,48.000000,capital|pos_fed,capital return,0.295714,0.000000,0.005744,0.005585,0.011329,0.307043
+cash,a,low,48.000000,capital|health_sl,capital return,0.414315,0.000000,0.009788,0.010741,0.020529,0.434844
+cash,a,low,48.000000,capital|health_fed,capital return,0.120021,0.000000,0.002835,0.003112,0.005947,0.125968
+cash,a,low,48.000000,capital|gps_sl,capital return,1.818146,0.000864,0.036691,0.046076,0.083631,1.901777
+cash,a,low,48.000000,capital|gps_fed,capital return,0.213983,0.000102,0.004318,0.005423,0.009843,0.223826
+cash,a,low,48.000000,capital|hwy_sl,capital return,6.208989,0.004949,0.124199,0.165014,0.294162,6.503150
+cash,a,low,48.000000,capital|rec_sl,capital return,0.947615,0.000142,0.019117,0.024007,0.043266,0.990881
+cash,a,low,48.000000,capital|hwy_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,capital|air_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,capital|rec_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,low,48.000000,capital|ent_housing_sl,capital return,0.632346,0.000000,0.017736,0.009536,0.027272,0.659618
+cash,a,low,48.000000,capital|ent_transit_sl,capital return,1.185343,0.000000,0.023909,0.030025,0.053934,1.239277
+cash,a,low,48.000000,capital|ent_airports_sl,capital return,1.396295,0.000000,0.028164,0.035369,0.063533,1.459828
+cash,a,low,48.000000,capital|ent_ports_sl,capital return,0.221306,0.000000,0.004464,0.005606,0.010070,0.231375
+cash,a,low,48.000000,capital|ent_power_sl,capital return,1.270315,0.000000,0.025623,0.032178,0.057801,1.328115
+cash,a,low,48.000000,capital|ent_water_sl,capital return,2.146527,0.000000,0.043297,0.054372,0.097669,2.244197
+cash,a,low,48.000000,capital|ent_sewer_sl,capital return,2.870553,0.000000,0.057901,0.072712,0.130613,3.001166
+cash,a,low,48.000000,capital|ent_tolls_sl,capital return,1.174528,0.000000,0.023691,0.029751,0.053442,1.227970
+cash,a,low,48.000000,capital|ent_power_fed,capital return,0.064834,0.000000,0.001308,0.001642,0.002950,0.067784
+cash,a,low,48.000000,capital|ent_other_sl,capital return,0.176889,0.000000,0.003568,0.004481,0.008049,0.184938
+cash,a,low,48.000000,capital|ent_other_fed,capital return,0.132905,0.000000,0.002681,0.003367,0.006047,0.138952
+cash,a,low,48.000000,production|gain,production gain,-11.679878,0.000000,-0.109525,0.000000,-0.109525,-11.789404
+cash,a,high,11.000000,receipt|federal_income_tax,receipts,-104.155318,0.000000,-2.396836,-6.187160,-8.583996,-112.739314
+cash,a,high,11.000000,receipt|state_local_income_tax,receipts,-23.841655,0.000000,-0.487246,-1.595369,-2.082615,-25.924271
+cash,a,high,11.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.063084,-0.059397,-0.122481,-3.461123
+cash,a,high,11.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.021904,-0.035699,-0.057602,-1.383443
+cash,a,high,11.000000,receipt|other_personal_tax,receipts,-0.432262,0.000000,-0.008834,-0.025027,-0.033861,-0.466123
+cash,a,high,11.000000,receipt|employee_oasdi,receipts,-50.146592,0.000000,-0.995159,-1.507825,-2.502984,-52.649576
+cash,a,high,11.000000,receipt|employee_hi,receipts,-14.733325,0.000000,-0.296597,-0.481108,-0.777705,-15.511031
+cash,a,high,11.000000,receipt|self_employment_oasdi_hi,receipts,-5.983506,0.000000,-0.082102,-0.214552,-0.296654,-6.280160
+cash,a,high,11.000000,receipt|employer_oasdi,receipts,-50.579625,0.000000,-1.003752,-1.520846,-2.524598,-53.104223
+cash,a,high,11.000000,receipt|employer_hi,receipts,-13.105500,0.000000,-0.263827,-0.427952,-0.691780,-13.797280
+cash,a,high,11.000000,receipt|medicare_supplementary_premiums,receipts,-7.169537,0.000000,-0.138320,-0.180426,-0.318747,-7.488283
+cash,a,high,11.000000,receipt|other_domestic_social_contributions,receipts,-9.940263,0.000000,-0.177936,-0.238058,-0.415995,-10.356258
+cash,a,high,11.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,receipt|general_sales_tax,receipts,-55.005461,0.000000,-1.288429,-1.763240,-3.051669,-58.057130
+cash,a,high,11.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.145290,-0.423034,-0.834308,-1.402631,-20.452352
+cash,a,high,11.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,receipt|excise_selective_sales,receipts,-31.715894,0.000000,-0.709796,-1.054845,-1.764641,-33.480535
+cash,a,high,11.000000,receipt|customs_duties,receipts,-6.844118,0.000000,-0.160314,-0.246746,-0.407061,-7.251178
+cash,a,high,11.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,receipt|personal_current_transfers,receipts,-11.550426,0.000000,-0.270553,-0.416420,-0.686973,-12.237399
+cash,a,high,11.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.016927,0.021258,0.038185,0.877395
+cash,a,high,11.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.096096,0.051667,0.147763,3.573892
+cash,a,high,11.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.059748,-0.123468,-0.141050,-0.324266,-7.135029
+cash,a,high,11.000000,spending|general_public_services,spending,40.018407,0.018384,0.807566,1.014148,1.840098,41.858505
+cash,a,high,11.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,spending|public_order_safety,spending,69.655444,0.000000,1.353064,1.315545,2.668609,72.324052
+cash,a,high,11.000000,spending|economic_affairs_services,spending,23.266194,0.002040,0.541715,0.705836,1.249592,24.515786
+cash,a,high,11.000000,spending|housing_community_services,spending,1.703378,0.000000,0.034358,0.043147,0.077505,1.780884
+cash,a,high,11.000000,spending|health_services,spending,17.351227,0.000000,0.409897,0.449829,0.859726,18.210952
+cash,a,high,11.000000,spending|recreation_culture,spending,6.366255,0.000000,0.128411,0.161260,0.289671,6.655926
+cash,a,high,11.000000,spending|education_services,spending,198.014032,0.000000,4.955767,5.886818,10.842585,208.856617
+cash,a,high,11.000000,spending|income_security_services,spending,28.031298,0.000000,0.581400,0.371536,0.952935,28.984233
+cash,a,high,11.000000,spending|social_security,spending,53.022396,0.000000,1.187320,1.946332,3.133652,56.156048
+cash,a,high,11.000000,spending|medicare,spending,52.419212,0.000000,0.909853,1.405381,2.315234,54.734446
+cash,a,high,11.000000,spending|unemployment,spending,4.763741,0.000000,0.062737,0.076196,0.138932,4.902673
+cash,a,high,11.000000,spending|railroad_retirement,spending,0.530713,0.000000,0.011884,0.019481,0.031365,0.562078
+cash,a,high,11.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.000692,0.001036,0.001728,0.039850
+cash,a,high,11.000000,spending|veterans_life_insurance,spending,0.022716,0.000000,0.000683,0.000870,0.001553,0.024269
+cash,a,high,11.000000,spending|workers_compensation,spending,1.555579,0.000000,0.038658,0.020578,0.059236,1.614815
+cash,a,high,11.000000,spending|military_medical,spending,0.312891,0.000000,0.008354,0.018511,0.026866,0.339757
+cash,a,high,11.000000,spending|veterans_pension_disability,spending,9.133043,0.000000,0.274556,0.349866,0.624422,9.757465
+cash,a,high,11.000000,spending|veterans_readjustment,spending,0.576289,0.000000,0.017324,0.022076,0.039401,0.615689
+cash,a,high,11.000000,spending|veterans_other,spending,1.597251,0.000000,0.049570,0.054970,0.104540,1.701791
+cash,a,high,11.000000,spending|snap,spending,13.588727,0.000000,0.319594,0.215616,0.535210,14.123937
+cash,a,high,11.000000,spending|black_lung,spending,0.033198,0.000000,0.000825,0.000299,0.001124,0.034322
+cash,a,high,11.000000,spending|ssi,spending,5.094042,0.000000,0.135880,0.110541,0.246422,5.340464
+cash,a,high,11.000000,spending|refundable_tax_credits,spending,32.628027,0.000000,0.472922,0.669506,1.142428,33.770455
+cash,a,high,11.000000,spending|other_federal_benefits,spending,3.662654,0.000000,0.084616,0.116171,0.200787,3.863441
+cash,a,high,11.000000,spending|temporary_disability,spending,2.521144,0.000000,0.062654,0.022675,0.085329,2.606474
+cash,a,high,11.000000,spending|medicaid_and_chip_other_medical,spending,119.736065,0.000000,2.590948,1.898411,4.489359,124.225424
+cash,a,high,11.000000,spending|family_and_general_assistance,spending,11.686668,0.000000,0.242394,0.101937,0.344332,12.031000
+cash,a,high,11.000000,spending|energy_assistance,spending,0.562300,0.000000,0.014118,0.010361,0.024478,0.586779
+cash,a,high,11.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.129323,0.036183,0.165506,5.379399
+cash,a,high,11.000000,spending|education_benefits,spending,8.944509,0.000000,0.183917,0.174703,0.358620,9.303128
+cash,a,high,11.000000,spending|employment_training,spending,0.166636,0.000000,0.002719,0.004087,0.006806,0.173443
+cash,a,high,11.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.006795,0.008533,0.015328,0.352208
+cash,a,high,11.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.116025,0.062381,0.178406,4.315046
+cash,a,high,11.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,a,high,11.000000,spending|school_reprice,spending,1.160765,0.000000,-0.051747,0.000000,-0.051747,1.109018
+cash,a,high,11.000000,spending|college_rekey,spending,-0.552470,0.000000,-0.026595,0.000000,-0.026595,-0.579066
+cash,a,high,11.000000,spending|lane_constants,spending,-5.201474,-0.004740,-0.078034,0.000000,-0.082774,-5.284248
+cash,a,high,11.000000,spending|roads_vmt_sl,spending,3.030126,0.000000,0.007186,0.019249,0.026434,3.056560
+cash,a,high,11.000000,spending|roads_vmt_fed,spending,0.027542,0.000000,0.000065,0.000175,0.000240,0.027782
+cash,a,high,11.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.124560,-0.068463,0.056097,6.468424
+cash,a,high,11.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.042514,-0.018455,0.024059,1.823690
+cash,a,high,11.000000,spending|state_price_recreation_culture,spending,0.427908,0.000000,0.008631,-0.004056,0.004575,0.432483
+cash,a,high,11.000000,capital|k12,capital return,13.340496,0.000000,0.327628,0.393934,0.721562,14.062058
+cash,a,high,11.000000,capital|college,capital return,5.709022,0.000000,0.140094,0.173311,0.313405,6.022427
+cash,a,high,11.000000,capital|pos_sl,capital return,1.165169,0.000000,0.022634,0.022006,0.044639,1.209809
+cash,a,high,11.000000,capital|pos_fed,capital return,0.443570,0.000000,0.008616,0.008377,0.016994,0.460564
+cash,a,high,11.000000,capital|health_sl,capital return,0.621472,0.000000,0.014681,0.016112,0.030793,0.652265
+cash,a,high,11.000000,capital|health_fed,capital return,0.180032,0.000000,0.004253,0.004667,0.008920,0.188952
+cash,a,high,11.000000,capital|gps_sl,capital return,3.865063,0.001776,0.077996,0.097949,0.177721,4.042783
+cash,a,high,11.000000,capital|gps_fed,capital return,0.454891,0.000209,0.009180,0.011528,0.020916,0.475808
+cash,a,high,11.000000,capital|hwy_sl,capital return,12.598830,0.000000,0.251813,0.334580,0.586393,13.185223
+cash,a,high,11.000000,capital|rec_sl,capital return,1.494276,0.000000,0.030140,0.037851,0.067991,1.562267
+cash,a,high,11.000000,capital|hwy_fed,capital return,0.156656,0.000000,0.003131,0.004160,0.007291,0.163947
+cash,a,high,11.000000,capital|air_fed,capital return,0.085622,0.000000,0.001993,0.002597,0.004591,0.090213
+cash,a,high,11.000000,capital|rec_fed,capital return,0.147045,0.000000,0.002966,0.003725,0.006691,0.153736
+cash,a,high,11.000000,capital|ent_housing_sl,capital return,0.948519,0.000000,0.026604,0.014304,0.040908,0.989427
+cash,a,high,11.000000,capital|ent_transit_sl,capital return,1.778014,0.000000,0.035864,0.045038,0.080901,1.858916
+cash,a,high,11.000000,capital|ent_airports_sl,capital return,2.094443,0.000000,0.042246,0.053053,0.095299,2.189742
+cash,a,high,11.000000,capital|ent_ports_sl,capital return,0.331958,0.000000,0.006696,0.008409,0.015104,0.347063
+cash,a,high,11.000000,capital|ent_power_sl,capital return,1.905472,0.000000,0.038435,0.048266,0.086701,1.992173
+cash,a,high,11.000000,capital|ent_water_sl,capital return,3.219791,0.000000,0.064945,0.081559,0.146504,3.366295
+cash,a,high,11.000000,capital|ent_sewer_sl,capital return,4.305829,0.000000,0.086851,0.109068,0.195920,4.501749
+cash,a,high,11.000000,capital|ent_tolls_sl,capital return,1.761792,0.000000,0.035536,0.044627,0.080163,1.841955
+cash,a,high,11.000000,capital|ent_power_fed,capital return,0.097251,0.000000,0.001962,0.002463,0.004425,0.101676
+cash,a,high,11.000000,capital|ent_other_sl,capital return,0.265334,0.000000,0.005352,0.006721,0.012073,0.277407
+cash,a,high,11.000000,capital|ent_other_fed,capital return,0.199357,0.000000,0.004021,0.005050,0.009071,0.208428
+cash,a,high,11.000000,production|gain,production gain,-7.683239,0.000000,-0.072048,0.000000,-0.072048,-7.755286
+cash,b,low,48.000000,receipt|federal_income_tax,receipts,-114.083756,0.000000,-8.090691,-6.659453,-14.750144,-128.833900
+cash,b,low,48.000000,receipt|state_local_income_tax,receipts,-26.076962,0.000000,-1.599305,-1.717151,-3.316456,-29.393418
+cash,b,low,48.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.154121,-0.063931,-0.218052,-3.556695
+cash,b,low,48.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.062021,-0.038424,-0.100445,-1.426286
+cash,b,low,48.000000,receipt|other_personal_tax,receipts,-0.472790,0.000000,-0.028996,-0.026937,-0.055933,-0.528723
+cash,b,low,48.000000,receipt|employee_oasdi,receipts,-53.306068,0.000000,-3.139978,-1.622924,-4.762903,-58.068970
+cash,b,low,48.000000,receipt|employee_hi,receipts,-15.800299,0.000000,-0.960650,-0.517833,-1.478483,-17.278782
+cash,b,low,48.000000,receipt|self_employment_oasdi_hi,receipts,-6.588000,0.000000,-0.302714,-0.230929,-0.533643,-7.121643
+cash,b,low,48.000000,receipt|employer_oasdi,receipts,-53.766384,0.000000,-3.167093,-1.636939,-4.804032,-58.570416
+cash,b,low,48.000000,receipt|employer_hi,receipts,-14.054588,0.000000,-0.854512,-0.460620,-1.315132,-15.369720
+cash,b,low,48.000000,receipt|medicare_supplementary_premiums,receipts,-7.600356,0.000000,-0.398147,-0.194199,-0.592346,-8.192702
+cash,b,low,48.000000,receipt|other_domestic_social_contributions,receipts,-10.318503,0.000000,-0.532339,-0.256230,-0.788569,-11.107072
+cash,b,low,48.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,receipt|general_sales_tax,receipts,-55.014305,0.000000,-3.148290,-1.897836,-5.046126,-60.060431
+cash,b,low,48.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.244598,-1.038868,-0.902640,-2.186106,-21.235827
+cash,b,low,48.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,receipt|excise_selective_sales,receipts,-31.719826,0.000000,-1.734341,-1.135366,-2.869707,-34.589533
+cash,b,low,48.000000,receipt|customs_duties,receipts,-6.845218,0.000000,-0.391730,-0.265582,-0.657311,-7.502529
+cash,b,low,48.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,receipt|personal_current_transfers,receipts,-11.552283,0.000000,-0.661100,-0.448207,-1.109307,-12.661590
+cash,b,low,48.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.041356,0.022880,0.064236,0.903446
+cash,b,low,48.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.234775,0.055611,0.290385,3.716514
+cash,b,low,48.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.100650,-0.303443,-0.152721,-0.556814,-7.367577
+cash,b,low,48.000000,spending|general_public_services,spending,28.237313,0.022611,1.392625,0.770478,2.185714,30.423027
+cash,b,low,48.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|public_order_safety,spending,69.655444,0.000000,3.305696,1.415966,4.721662,74.377105
+cash,b,low,48.000000,spending|economic_affairs_services,spending,13.989872,0.017646,0.796734,0.457350,1.271730,15.261602
+cash,b,low,48.000000,spending|housing_community_services,spending,1.703378,0.000000,0.083941,0.046441,0.130382,1.833760
+cash,b,low,48.000000,spending|health_services,spending,17.351227,0.000000,1.001426,0.484166,1.485593,18.836819
+cash,b,low,48.000000,spending|recreation_culture,spending,5.450626,0.001381,0.268670,0.148643,0.418694,5.869321
+cash,b,low,48.000000,spending|education_services,spending,191.857732,0.000000,9.485347,6.336185,15.821532,207.679264
+cash,b,low,48.000000,spending|income_security_services,spending,29.589136,0.000000,1.792428,0.399897,2.192325,31.781461
+cash,b,low,48.000000,spending|social_security,spending,56.258695,0.000000,3.479379,2.094904,5.574284,61.832978
+cash,b,low,48.000000,spending|medicare,spending,52.419212,0.000000,2.222879,1.512660,3.735539,56.154751
+cash,b,low,48.000000,spending|unemployment,spending,5.060153,0.000000,0.212004,0.082012,0.294016,5.354169
+cash,b,low,48.000000,spending|railroad_retirement,spending,0.563106,0.000000,0.034826,0.020968,0.055794,0.618900
+cash,b,low,48.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.001690,0.001115,0.002805,0.040927
+cash,b,low,48.000000,spending|veterans_life_insurance,spending,0.028358,0.000000,0.002254,0.000937,0.003190,0.031549
+cash,b,low,48.000000,spending|workers_compensation,spending,1.607301,0.000000,0.122327,0.022149,0.144476,1.751776
+cash,b,low,48.000000,spending|military_medical,spending,0.312891,0.000000,0.020411,0.019924,0.040335,0.353226
+cash,b,low,48.000000,spending|veterans_pension_disability,spending,11.401810,0.000000,0.906083,0.376573,1.282656,12.684466
+cash,b,low,48.000000,spending|veterans_readjustment,spending,0.719446,0.000000,0.057173,0.023761,0.080935,0.800381
+cash,b,low,48.000000,spending|veterans_other,spending,1.597251,0.000000,0.121106,0.059166,0.180272,1.777523
+cash,b,low,48.000000,spending|snap,spending,13.588727,0.000000,0.780806,0.232075,1.012881,14.601608
+cash,b,low,48.000000,spending|black_lung,spending,0.037080,0.000000,0.002822,0.000321,0.003143,0.040224
+cash,b,low,48.000000,spending|ssi,spending,5.175676,0.000000,0.370132,0.118979,0.489112,5.664787
+cash,b,low,48.000000,spending|refundable_tax_credits,spending,36.331342,0.000000,1.702603,0.720612,2.423215,38.754557
+cash,b,low,48.000000,spending|other_federal_benefits,spending,3.942937,0.000000,0.250863,0.125039,0.375902,4.318839
+cash,b,low,48.000000,spending|temporary_disability,spending,2.815969,0.000000,0.214315,0.024406,0.238721,3.054689
+cash,b,low,48.000000,spending|medicaid_and_chip_other_medical,spending,117.743417,0.000000,6.303825,2.043325,8.347150,126.090566
+cash,b,low,48.000000,spending|family_and_general_assistance,spending,12.336154,0.000000,0.747290,0.109719,0.857009,13.193163
+cash,b,low,48.000000,spending|energy_assistance,spending,0.562300,0.000000,0.034491,0.011152,0.045643,0.607943
+cash,b,low,48.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.315952,0.038945,0.354896,5.568790
+cash,b,low,48.000000,spending|education_benefits,spending,8.944509,0.000000,0.449331,0.188039,0.637369,9.581878
+cash,b,low,48.000000,spending|employment_training,spending,0.166636,0.000000,0.006643,0.004399,0.011043,0.177679
+cash,b,low,48.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.016601,0.009185,0.025786,0.362665
+cash,b,low,48.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.283462,0.067143,0.350606,4.487246
+cash,b,low,48.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|school_reprice,spending,1.489491,0.000000,0.086043,0.000000,0.086043,1.575534
+cash,b,low,48.000000,spending|college_rekey,spending,-0.904583,0.000000,-0.039716,0.000000,-0.039716,-0.944298
+cash,b,low,48.000000,spending|lane_constants,spending,-5.159674,-0.007987,-0.188535,0.000000,-0.196523,-5.356197
+cash,b,low,48.000000,spending|roads_vmt_sl,spending,2.240437,0.003009,0.013026,0.015336,0.031371,2.271808
+cash,b,low,48.000000,spending|roads_vmt_fed,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.304315,-0.073689,0.230626,6.642953
+cash,b,low,48.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.103866,-0.019863,0.084002,1.883634
+cash,b,low,48.000000,spending|state_price_recreation_culture,spending,0.366364,0.000093,0.018059,-0.003739,0.014413,0.380777
+cash,b,low,48.000000,capital|k12,capital return,8.652057,0.000000,0.428527,0.282670,0.711197,9.363254
+cash,b,low,48.000000,capital|college,capital return,3.703234,0.000000,0.183431,0.124361,0.307792,4.011026
+cash,b,low,48.000000,capital|pos_sl,capital return,0.776779,0.000000,0.036864,0.015790,0.052655,0.829434
+cash,b,low,48.000000,capital|pos_fed,capital return,0.295714,0.000000,0.014034,0.006011,0.020045,0.315759
+cash,b,low,48.000000,capital|health_sl,capital return,0.414315,0.000000,0.023912,0.011561,0.035473,0.449788
+cash,b,low,48.000000,capital|health_fed,capital return,0.120021,0.000000,0.006927,0.003349,0.010276,0.130297
+cash,b,low,48.000000,capital|gps_sl,capital return,1.818146,0.001456,0.089668,0.049610,0.140734,1.958880
+cash,b,low,48.000000,capital|gps_fed,capital return,0.213983,0.000171,0.010553,0.005839,0.016563,0.230547
+cash,b,low,48.000000,capital|hwy_sl,capital return,6.208989,0.008340,0.303598,0.177707,0.489645,6.698634
+cash,b,low,48.000000,capital|rec_sl,capital return,0.947615,0.000240,0.046709,0.025842,0.072792,1.020407
+cash,b,low,48.000000,capital|hwy_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,capital|air_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,capital|rec_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,low,48.000000,capital|ent_housing_sl,capital return,0.632346,0.000000,0.043331,0.010264,0.053595,0.685941
+cash,b,low,48.000000,capital|ent_transit_sl,capital return,1.185343,0.000000,0.058413,0.032317,0.090730,1.276073
+cash,b,low,48.000000,capital|ent_airports_sl,capital return,1.396295,0.000000,0.068808,0.038069,0.106877,1.503172
+cash,b,low,48.000000,capital|ent_ports_sl,capital return,0.221306,0.000000,0.010906,0.006034,0.016939,0.238245
+cash,b,low,48.000000,capital|ent_power_sl,capital return,1.270315,0.000000,0.062600,0.034634,0.097234,1.367549
+cash,b,low,48.000000,capital|ent_water_sl,capital return,2.146527,0.000000,0.105779,0.058523,0.164302,2.310829
+cash,b,low,48.000000,capital|ent_sewer_sl,capital return,2.870553,0.000000,0.141458,0.078263,0.219721,3.090274
+cash,b,low,48.000000,capital|ent_tolls_sl,capital return,1.174528,0.000000,0.057880,0.032022,0.089902,1.264430
+cash,b,low,48.000000,capital|ent_power_fed,capital return,0.064834,0.000000,0.003195,0.001768,0.004963,0.069797
+cash,b,low,48.000000,capital|ent_other_sl,capital return,0.176889,0.000000,0.008717,0.004823,0.013540,0.190429
+cash,b,low,48.000000,capital|ent_other_fed,capital return,0.132905,0.000000,0.006549,0.003624,0.010173,0.143077
+cash,b,low,48.000000,production|gain,production gain,-11.679878,0.000000,-0.267583,0.000000,-0.267583,-11.947462
+cash,b,high,11.000000,receipt|federal_income_tax,receipts,-104.155318,0.000000,-5.855754,-6.659453,-12.515207,-116.670525
+cash,b,high,11.000000,receipt|state_local_income_tax,receipts,-23.841655,0.000000,-1.190399,-1.717151,-2.907550,-26.749206
+cash,b,high,11.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.154121,-0.063931,-0.218052,-3.556695
+cash,b,high,11.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.053513,-0.038424,-0.091937,-1.417778
+cash,b,high,11.000000,receipt|other_personal_tax,receipts,-0.432262,0.000000,-0.021583,-0.026937,-0.048520,-0.480782
+cash,b,high,11.000000,receipt|employee_oasdi,receipts,-50.146592,0.000000,-2.431290,-1.622924,-4.054215,-54.200807
+cash,b,high,11.000000,receipt|employee_hi,receipts,-14.733325,0.000000,-0.724622,-0.517833,-1.242455,-15.975781
+cash,b,high,11.000000,receipt|self_employment_oasdi_hi,receipts,-5.983506,0.000000,-0.200585,-0.230929,-0.431514,-6.415020
+cash,b,high,11.000000,receipt|employer_oasdi,receipts,-50.579625,0.000000,-2.452285,-1.636939,-4.089224,-54.668849
+cash,b,high,11.000000,receipt|employer_hi,receipts,-13.105500,0.000000,-0.644562,-0.460620,-1.105181,-14.210681
+cash,b,high,11.000000,receipt|medicare_supplementary_premiums,receipts,-7.169537,0.000000,-0.337933,-0.194199,-0.532132,-7.701669
+cash,b,high,11.000000,receipt|other_domestic_social_contributions,receipts,-9.940263,0.000000,-0.434720,-0.256230,-0.690950,-10.631213
+cash,b,high,11.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,receipt|general_sales_tax,receipts,-55.005461,0.000000,-3.147784,-1.897836,-5.045620,-60.051082
+cash,b,high,11.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.244598,-1.038868,-0.902640,-2.186106,-21.235827
+cash,b,high,11.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,receipt|excise_selective_sales,receipts,-31.715894,0.000000,-1.734116,-1.135366,-2.869482,-34.585376
+cash,b,high,11.000000,receipt|customs_duties,receipts,-6.844118,0.000000,-0.391667,-0.265582,-0.657248,-7.501366
+cash,b,high,11.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,receipt|personal_current_transfers,receipts,-11.550426,0.000000,-0.660993,-0.448207,-1.109200,-12.659626
+cash,b,high,11.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.041356,0.022880,0.064236,0.903446
+cash,b,high,11.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.234775,0.055611,0.290385,3.716514
+cash,b,high,11.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.100650,-0.303443,-0.152721,-0.556814,-7.367577
+cash,b,high,11.000000,spending|general_public_services,spending,40.018407,0.030974,1.973600,1.091906,3.096480,43.114887
+cash,b,high,11.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,spending|public_order_safety,spending,69.655444,0.000000,3.305696,1.415966,4.721662,74.377105
+cash,b,high,11.000000,spending|economic_affairs_services,spending,23.266194,0.003438,1.323554,0.759761,2.086753,25.352947
+cash,b,high,11.000000,spending|housing_community_services,spending,1.703378,0.000000,0.083941,0.046441,0.130382,1.833760
+cash,b,high,11.000000,spending|health_services,spending,17.351227,0.000000,1.001426,0.484166,1.485593,18.836819
+cash,b,high,11.000000,spending|recreation_culture,spending,6.366255,0.000000,0.313724,0.173570,0.487293,6.853549
+cash,b,high,11.000000,spending|education_services,spending,198.014032,0.000000,12.107525,6.336185,18.443710,216.457742
+cash,b,high,11.000000,spending|income_security_services,spending,28.031298,0.000000,1.420428,0.399897,1.820324,29.851622
+cash,b,high,11.000000,spending|social_security,spending,53.022396,0.000000,2.900763,2.094904,4.995668,58.018063
+cash,b,high,11.000000,spending|medicare,spending,52.419212,0.000000,2.222879,1.512660,3.735539,56.154751
+cash,b,high,11.000000,spending|unemployment,spending,4.763741,0.000000,0.153273,0.082012,0.235285,4.999026
+cash,b,high,11.000000,spending|railroad_retirement,spending,0.530713,0.000000,0.029034,0.020968,0.050003,0.580716
+cash,b,high,11.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.001690,0.001115,0.002805,0.040927
+cash,b,high,11.000000,spending|veterans_life_insurance,spending,0.022716,0.000000,0.001668,0.000937,0.002605,0.025321
+cash,b,high,11.000000,spending|workers_compensation,spending,1.555579,0.000000,0.094447,0.022149,0.116596,1.672175
+cash,b,high,11.000000,spending|military_medical,spending,0.312891,0.000000,0.020411,0.019924,0.040335,0.353226
+cash,b,high,11.000000,spending|veterans_pension_disability,spending,9.133043,0.000000,0.670773,0.376573,1.047346,10.180389
+cash,b,high,11.000000,spending|veterans_readjustment,spending,0.576289,0.000000,0.042325,0.023761,0.066087,0.642375
+cash,b,high,11.000000,spending|veterans_other,spending,1.597251,0.000000,0.121106,0.059166,0.180272,1.777523
+cash,b,high,11.000000,spending|snap,spending,13.588727,0.000000,0.780806,0.232075,1.012881,14.601608
+cash,b,high,11.000000,spending|black_lung,spending,0.033198,0.000000,0.002016,0.000321,0.002337,0.035535
+cash,b,high,11.000000,spending|ssi,spending,5.094042,0.000000,0.331972,0.118979,0.450951,5.544994
+cash,b,high,11.000000,spending|refundable_tax_credits,spending,32.628027,0.000000,1.155406,0.720612,1.876018,34.504045
+cash,b,high,11.000000,spending|other_federal_benefits,spending,3.662654,0.000000,0.206727,0.125039,0.331766,3.994420
+cash,b,high,11.000000,spending|temporary_disability,spending,2.521144,0.000000,0.153071,0.024406,0.177477,2.698622
+cash,b,high,11.000000,spending|medicaid_and_chip_other_medical,spending,119.736065,0.000000,6.329992,2.043325,8.373317,128.109382
+cash,b,high,11.000000,spending|family_and_general_assistance,spending,11.686668,0.000000,0.592198,0.109719,0.701916,12.388585
+cash,b,high,11.000000,spending|energy_assistance,spending,0.562300,0.000000,0.034491,0.011152,0.045643,0.607943
+cash,b,high,11.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.315952,0.038945,0.354896,5.568790
+cash,b,high,11.000000,spending|education_benefits,spending,8.944509,0.000000,0.449331,0.188039,0.637369,9.581878
+cash,b,high,11.000000,spending|employment_training,spending,0.166636,0.000000,0.006643,0.004399,0.011043,0.177679
+cash,b,high,11.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.016601,0.009185,0.025786,0.362665
+cash,b,high,11.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.283462,0.067143,0.350606,4.487246
+cash,b,high,11.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,b,high,11.000000,spending|school_reprice,spending,1.160765,0.000000,-0.126424,0.000000,-0.126424,1.034341
+cash,b,high,11.000000,spending|college_rekey,spending,-0.552470,0.000000,-0.064976,0.000000,-0.064976,-0.617446
+cash,b,high,11.000000,spending|lane_constants,spending,-5.201474,-0.007987,-0.190646,0.000000,-0.198634,-5.400108
+cash,b,high,11.000000,spending|roads_vmt_sl,spending,3.030126,0.000000,0.017555,0.020718,0.038273,3.068399
+cash,b,high,11.000000,spending|roads_vmt_fed,spending,0.027542,0.000000,0.000160,0.000188,0.000348,0.027890
+cash,b,high,11.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.304315,-0.073689,0.230626,6.642953
+cash,b,high,11.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.103866,-0.019863,0.084002,1.883634
+cash,b,high,11.000000,spending|state_price_recreation_culture,spending,0.427908,0.000000,0.021087,-0.004366,0.016721,0.444629
+cash,b,high,11.000000,capital|k12,capital return,13.340496,0.000000,0.800433,0.424005,1.224439,14.564935
+cash,b,high,11.000000,capital|college,capital return,5.709022,0.000000,0.342266,0.186541,0.528807,6.237829
+cash,b,high,11.000000,capital|pos_sl,capital return,1.165169,0.000000,0.055296,0.023686,0.078982,1.244151
+cash,b,high,11.000000,capital|pos_fed,capital return,0.443570,0.000000,0.021051,0.009017,0.030068,0.473638
+cash,b,high,11.000000,capital|health_sl,capital return,0.621472,0.000000,0.035868,0.017341,0.053210,0.674682
+cash,b,high,11.000000,capital|health_fed,capital return,0.180032,0.000000,0.010391,0.005024,0.015414,0.195446
+cash,b,high,11.000000,capital|gps_sl,capital return,3.865063,0.002992,0.190614,0.105459,0.299065,4.164127
+cash,b,high,11.000000,capital|gps_fed,capital return,0.454891,0.000352,0.022434,0.012412,0.035198,0.490089
+cash,b,high,11.000000,capital|hwy_sl,capital return,12.598830,0.000000,0.615209,0.360120,0.975329,13.574159
+cash,b,high,11.000000,capital|rec_sl,capital return,1.494276,0.000000,0.073637,0.040740,0.114377,1.608653
+cash,b,high,11.000000,capital|hwy_fed,capital return,0.156656,0.000000,0.007650,0.004478,0.012127,0.168783
+cash,b,high,11.000000,capital|air_fed,capital return,0.085622,0.000000,0.004870,0.002796,0.007666,0.093288
+cash,b,high,11.000000,capital|rec_fed,capital return,0.147045,0.000000,0.007246,0.004009,0.011255,0.158300
+cash,b,high,11.000000,capital|ent_housing_sl,capital return,0.948519,0.000000,0.064997,0.015396,0.080393,1.028912
+cash,b,high,11.000000,capital|ent_transit_sl,capital return,1.778014,0.000000,0.087619,0.048476,0.136095,1.914109
+cash,b,high,11.000000,capital|ent_airports_sl,capital return,2.094443,0.000000,0.103212,0.057103,0.160315,2.254758
+cash,b,high,11.000000,capital|ent_ports_sl,capital return,0.331958,0.000000,0.016359,0.009051,0.025409,0.357368
+cash,b,high,11.000000,capital|ent_power_sl,capital return,1.905472,0.000000,0.093900,0.051951,0.145851,2.051323
+cash,b,high,11.000000,capital|ent_water_sl,capital return,3.219791,0.000000,0.158669,0.087784,0.246453,3.466244
+cash,b,high,11.000000,capital|ent_sewer_sl,capital return,4.305829,0.000000,0.212188,0.117394,0.329582,4.635411
+cash,b,high,11.000000,capital|ent_tolls_sl,capital return,1.761792,0.000000,0.086820,0.048033,0.134853,1.896645
+cash,b,high,11.000000,capital|ent_power_fed,capital return,0.097251,0.000000,0.004792,0.002651,0.007444,0.104695
+cash,b,high,11.000000,capital|ent_other_sl,capital return,0.265334,0.000000,0.013075,0.007234,0.020310,0.285643
+cash,b,high,11.000000,capital|ent_other_fed,capital return,0.199357,0.000000,0.009824,0.005435,0.015259,0.214616
+cash,b,high,11.000000,production|gain,production gain,-7.683239,0.000000,-0.176021,0.000000,-0.176021,-7.859260
+cash,c,low,48.000000,receipt|federal_income_tax,receipts,-114.083756,0.000000,-12.869759,-7.131744,-20.001503,-134.085259
+cash,c,low,48.000000,receipt|state_local_income_tax,receipts,-26.076962,0.000000,-2.543994,-1.838932,-4.382926,-30.459889
+cash,c,low,48.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.245158,-0.068465,-0.313624,-3.652266
+cash,c,low,48.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.098656,-0.041149,-0.139805,-1.465646
+cash,c,low,48.000000,receipt|other_personal_tax,receipts,-0.472790,0.000000,-0.046124,-0.028848,-0.074972,-0.547761
+cash,c,low,48.000000,receipt|employee_oasdi,receipts,-53.306068,0.000000,-4.994723,-1.738023,-6.732746,-60.038814
+cash,c,low,48.000000,receipt|employee_hi,receipts,-15.800299,0.000000,-1.528094,-0.554558,-2.082652,-17.882951
+cash,c,low,48.000000,receipt|self_employment_oasdi_hi,receipts,-6.588000,0.000000,-0.481523,-0.247307,-0.728830,-7.316830
+cash,c,low,48.000000,receipt|employer_oasdi,receipts,-53.766384,0.000000,-5.037854,-1.753031,-6.790886,-60.557269
+cash,c,low,48.000000,receipt|employer_hi,receipts,-14.054588,0.000000,-1.359261,-0.493287,-1.852549,-15.907136
+cash,c,low,48.000000,receipt|medicare_supplementary_premiums,receipts,-7.600356,0.000000,-0.633327,-0.207972,-0.841298,-8.441655
+cash,c,low,48.000000,receipt|other_domestic_social_contributions,receipts,-10.318503,0.000000,-0.846784,-0.274402,-1.121186,-11.439689
+cash,c,low,48.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,receipt|general_sales_tax,receipts,-55.014305,0.000000,-5.007945,-2.032431,-7.040377,-62.054681
+cash,c,low,48.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.343831,-1.661014,-0.971627,-2.976473,-22.026194
+cash,c,low,48.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,receipt|excise_selective_sales,receipts,-31.719826,0.000000,-2.758794,-1.215887,-3.974681,-35.694507
+cash,c,low,48.000000,receipt|customs_duties,receipts,-6.845218,0.000000,-0.623119,-0.284417,-0.907536,-7.752754
+cash,c,low,48.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,receipt|personal_current_transfers,receipts,-11.552283,0.000000,-1.051603,-0.479994,-1.531597,-13.083880
+cash,c,low,48.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.065784,0.024503,0.090287,0.929497
+cash,c,low,48.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.373453,0.059555,0.433008,3.859136
+cash,c,low,48.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.141464,-0.485534,-0.164518,-0.791515,-7.602279
+cash,c,low,48.000000,spending|general_public_services,spending,28.237313,0.031831,2.215954,0.825390,3.073175,31.310488
+cash,c,low,48.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|public_order_safety,spending,69.655444,0.000000,5.258328,1.516387,6.774715,76.430158
+cash,c,low,48.000000,spending|economic_affairs_services,spending,13.989872,0.024845,1.268006,0.490037,1.782888,15.772760
+cash,c,low,48.000000,spending|housing_community_services,spending,1.703378,0.000000,0.133524,0.049735,0.183258,1.886637
+cash,c,low,48.000000,spending|health_services,spending,17.351227,0.000000,1.592956,0.518504,2.111459,19.462686
+cash,c,low,48.000000,spending|recreation_culture,spending,5.450626,0.001943,0.427415,0.159202,0.588559,6.039186
+cash,c,low,48.000000,spending|education_services,spending,191.857732,0.000000,15.088220,6.785550,21.873770,213.731502
+cash,c,low,48.000000,spending|income_security_services,spending,29.589136,0.000000,2.851193,0.428257,3.279450,32.868586
+cash,c,low,48.000000,spending|social_security,spending,56.258695,0.000000,5.534604,2.243476,7.778080,64.036775
+cash,c,low,48.000000,spending|medicare,spending,52.419212,0.000000,3.535905,1.619939,5.155843,57.575055
+cash,c,low,48.000000,spending|unemployment,spending,5.060153,0.000000,0.337232,0.087828,0.425060,5.485214
+cash,c,low,48.000000,spending|railroad_retirement,spending,0.563106,0.000000,0.055397,0.022455,0.077853,0.640958
+cash,c,low,48.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.002688,0.001195,0.003882,0.042004
+cash,c,low,48.000000,spending|veterans_life_insurance,spending,0.028358,0.000000,0.003585,0.001003,0.004588,0.032946
+cash,c,low,48.000000,spending|workers_compensation,spending,1.607301,0.000000,0.194584,0.023720,0.218303,1.825604
+cash,c,low,48.000000,spending|military_medical,spending,0.312891,0.000000,0.032467,0.021337,0.053805,0.366696
+cash,c,low,48.000000,spending|veterans_pension_disability,spending,11.401810,0.000000,1.441294,0.403280,1.844574,13.246384
+cash,c,low,48.000000,spending|veterans_readjustment,spending,0.719446,0.000000,0.090945,0.025447,0.116391,0.835837
+cash,c,low,48.000000,spending|veterans_other,spending,1.597251,0.000000,0.192641,0.063362,0.256004,1.853254
+cash,c,low,48.000000,spending|snap,spending,13.588727,0.000000,1.242018,0.248534,1.490552,15.079279
+cash,c,low,48.000000,spending|black_lung,spending,0.037080,0.000000,0.004489,0.000344,0.004833,0.041914
+cash,c,low,48.000000,spending|ssi,spending,5.175676,0.000000,0.588765,0.127417,0.716182,5.891858
+cash,c,low,48.000000,spending|refundable_tax_credits,spending,36.331342,0.000000,2.708308,0.771718,3.480027,39.811369
+cash,c,low,48.000000,spending|other_federal_benefits,spending,3.942937,0.000000,0.399045,0.133907,0.532952,4.475889
+cash,c,low,48.000000,spending|temporary_disability,spending,2.815969,0.000000,0.340908,0.026137,0.367045,3.183013
+cash,c,low,48.000000,spending|medicaid_and_chip_other_medical,spending,117.743417,0.000000,10.027413,2.188239,12.215651,129.959068
+cash,c,low,48.000000,spending|family_and_general_assistance,spending,12.336154,0.000000,1.188705,0.117500,1.306205,13.642359
+cash,c,low,48.000000,spending|energy_assistance,spending,0.562300,0.000000,0.054864,0.011943,0.066807,0.629107
+cash,c,low,48.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.502580,0.041707,0.544287,5.758180
+cash,c,low,48.000000,spending|education_benefits,spending,8.944509,0.000000,0.714744,0.201374,0.916119,9.860627
+cash,c,low,48.000000,spending|employment_training,spending,0.166636,0.000000,0.010568,0.004711,0.015279,0.181915
+cash,c,low,48.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.026407,0.009836,0.036243,0.373122
+cash,c,low,48.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.450900,0.071905,0.522805,4.659445
+cash,c,low,48.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|school_reprice,spending,1.489491,0.000000,0.136868,0.000000,0.136868,1.626358
+cash,c,low,48.000000,spending|college_rekey,spending,-0.904583,0.000000,-0.063175,0.000000,-0.063175,-0.967758
+cash,c,low,48.000000,spending|lane_constants,spending,-5.159674,-0.011245,-0.299901,0.000000,-0.311146,-5.470820
+cash,c,low,48.000000,spending|roads_vmt_sl,spending,2.240437,0.004237,0.020731,0.016432,0.041401,2.281838
+cash,c,low,48.000000,spending|roads_vmt_fed,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.484070,-0.078916,0.405154,6.817481
+cash,c,low,48.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.165218,-0.021272,0.143946,1.943577
+cash,c,low,48.000000,spending|state_price_recreation_culture,spending,0.366364,0.000131,0.028729,-0.004004,0.024855,0.391219
+cash,c,low,48.000000,capital|k12,capital return,8.652057,0.000000,0.681652,0.302717,0.984369,9.636427
+cash,c,low,48.000000,capital|college,capital return,3.703234,0.000000,0.291782,0.133180,0.424962,4.128196
+cash,c,low,48.000000,capital|pos_sl,capital return,0.776779,0.000000,0.058640,0.016910,0.075550,0.852329
+cash,c,low,48.000000,capital|pos_fed,capital return,0.295714,0.000000,0.022324,0.006438,0.028761,0.324475
+cash,c,low,48.000000,capital|health_sl,capital return,0.414315,0.000000,0.038037,0.012381,0.050418,0.464733
+cash,c,low,48.000000,capital|health_fed,capital return,0.120021,0.000000,0.011019,0.003587,0.014605,0.134627
+cash,c,low,48.000000,capital|gps_sl,capital return,1.818146,0.002050,0.142681,0.053145,0.197876,2.016022
+cash,c,low,48.000000,capital|gps_fed,capital return,0.213983,0.000241,0.016793,0.006255,0.023289,0.237272
+cash,c,low,48.000000,capital|hwy_sl,capital return,6.208989,0.011743,0.483194,0.190414,0.685351,6.894339
+cash,c,low,48.000000,capital|rec_sl,capital return,0.947615,0.000338,0.074308,0.027678,0.102324,1.049938
+cash,c,low,48.000000,capital|hwy_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,capital|air_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,capital|rec_fed,capital return,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,low,48.000000,capital|ent_housing_sl,capital return,0.632346,0.000000,0.068927,0.010992,0.079918,0.712264
+cash,c,low,48.000000,capital|ent_transit_sl,capital return,1.185343,0.000000,0.092916,0.034609,0.127525,1.312868
+cash,c,low,48.000000,capital|ent_airports_sl,capital return,1.396295,0.000000,0.109452,0.040768,0.150221,1.546516
+cash,c,low,48.000000,capital|ent_ports_sl,capital return,0.221306,0.000000,0.017348,0.006462,0.023809,0.245115
+cash,c,low,48.000000,capital|ent_power_sl,capital return,1.270315,0.000000,0.099577,0.037090,0.136667,1.406982
+cash,c,low,48.000000,capital|ent_water_sl,capital return,2.146527,0.000000,0.168261,0.062673,0.230935,2.377462
+cash,c,low,48.000000,capital|ent_sewer_sl,capital return,2.870553,0.000000,0.225016,0.083813,0.308829,3.179382
+cash,c,low,48.000000,capital|ent_tolls_sl,capital return,1.174528,0.000000,0.092069,0.034293,0.126362,1.300890
+cash,c,low,48.000000,capital|ent_power_fed,capital return,0.064834,0.000000,0.005082,0.001893,0.006975,0.071810
+cash,c,low,48.000000,capital|ent_other_sl,capital return,0.176889,0.000000,0.013866,0.005165,0.019031,0.195920
+cash,c,low,48.000000,capital|ent_other_fed,capital return,0.132905,0.000000,0.010418,0.003880,0.014299,0.147203
+cash,c,low,48.000000,production|gain,production gain,-11.679878,0.000000,-0.425641,0.000000,-0.425641,-12.105519
+cash,c,high,11.000000,receipt|federal_income_tax,receipts,-104.155318,0.000000,-9.314673,-7.131744,-16.446418,-120.601736
+cash,c,high,11.000000,receipt|state_local_income_tax,receipts,-23.841655,0.000000,-1.893553,-1.838932,-3.732485,-27.574140
+cash,c,high,11.000000,receipt|personal_motor_vehicle,receipts,-3.338642,0.000000,-0.245158,-0.068465,-0.313624,-3.652266
+cash,c,high,11.000000,receipt|personal_property_tax,receipts,-1.325841,0.000000,-0.085123,-0.041149,-0.126271,-1.452112
+cash,c,high,11.000000,receipt|other_personal_tax,receipts,-0.432262,0.000000,-0.034331,-0.028848,-0.063179,-0.495441
+cash,c,high,11.000000,receipt|employee_oasdi,receipts,-50.146592,0.000000,-3.867422,-1.738023,-5.605445,-55.752037
+cash,c,high,11.000000,receipt|employee_hi,receipts,-14.733325,0.000000,-1.152647,-0.554558,-1.707205,-16.440531
+cash,c,high,11.000000,receipt|self_employment_oasdi_hi,receipts,-5.983506,0.000000,-0.319068,-0.247307,-0.566375,-6.549881
+cash,c,high,11.000000,receipt|employer_oasdi,receipts,-50.579625,0.000000,-3.900819,-1.753031,-5.653850,-56.233475
+cash,c,high,11.000000,receipt|employer_hi,receipts,-13.105500,0.000000,-1.025296,-0.493287,-1.518583,-14.624083
+cash,c,high,11.000000,receipt|medicare_supplementary_premiums,receipts,-7.169537,0.000000,-0.537545,-0.207972,-0.745517,-7.915054
+cash,c,high,11.000000,receipt|other_domestic_social_contributions,receipts,-9.940263,0.000000,-0.691503,-0.274402,-0.965905,-10.906168
+cash,c,high,11.000000,receipt|corporate_capital,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,receipt|corporate_labor,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,receipt|general_sales_tax,receipts,-55.005461,0.000000,-5.007140,-2.032431,-7.039572,-62.045033
+cash,c,high,11.000000,receipt|modeled_owner_property,receipts,-19.049721,-0.343831,-1.661014,-0.971627,-2.976473,-22.026194
+cash,c,high,11.000000,receipt|remaining_production_property,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,receipt|excise_selective_sales,receipts,-31.715894,0.000000,-2.758437,-1.215887,-3.974323,-35.690217
+cash,c,high,11.000000,receipt|customs_duties,receipts,-6.844118,0.000000,-0.623019,-0.284417,-0.907436,-7.751554
+cash,c,high,11.000000,receipt|other_production_taxes,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,receipt|rest_world_tax_contributions,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,receipt|government_asset_income,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,receipt|business_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,receipt|personal_current_transfers,receipts,-11.550426,0.000000,-1.051434,-0.479994,-1.531428,-13.081854
+cash,c,high,11.000000,receipt|rest_world_current_transfers,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,receipt|enterprise_surplus,receipts,0.839210,0.000000,0.065784,0.024503,0.090287,0.929497
+cash,c,high,11.000000,receipt|source_rounding,receipts,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,receipt|housing_enterprise_surplus,receipts,3.426129,0.000000,0.373453,0.059555,0.433008,3.859136
+cash,c,high,11.000000,receipt|tenant_occupied_property,receipts,-6.810763,-0.141464,-0.485534,-0.164518,-0.791515,-7.602279
+cash,c,high,11.000000,spending|general_public_services,spending,40.018407,0.043604,3.140370,1.169713,4.353687,44.372094
+cash,c,high,11.000000,spending|defense,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,spending|public_order_safety,spending,69.655444,0.000000,5.258328,1.516387,6.774715,76.430158
+cash,c,high,11.000000,spending|economic_affairs_services,spending,23.266194,0.004839,2.105487,0.813693,2.924019,26.190213
+cash,c,high,11.000000,spending|housing_community_services,spending,1.703378,0.000000,0.133524,0.049735,0.183258,1.886637
+cash,c,high,11.000000,spending|health_services,spending,17.351227,0.000000,1.592956,0.518504,2.111459,19.462686
+cash,c,high,11.000000,spending|recreation_culture,spending,6.366255,0.000000,0.499036,0.185879,0.684915,7.051171
+cash,c,high,11.000000,spending|education_services,spending,198.014032,0.000000,19.259285,6.785550,26.044835,224.058867
+cash,c,high,11.000000,spending|income_security_services,spending,28.031298,0.000000,2.259457,0.428257,2.687714,30.719012
+cash,c,high,11.000000,spending|social_security,spending,53.022396,0.000000,4.614207,2.243476,6.857683,59.880079
+cash,c,high,11.000000,spending|medicare,spending,52.419212,0.000000,3.535905,1.619939,5.155843,57.575055
+cash,c,high,11.000000,spending|unemployment,spending,4.763741,0.000000,0.243810,0.087828,0.331638,5.095379
+cash,c,high,11.000000,spending|railroad_retirement,spending,0.530713,0.000000,0.046185,0.022455,0.068640,0.599353
+cash,c,high,11.000000,spending|pension_guaranty,spending,0.038122,0.000000,0.002688,0.001195,0.003882,0.042004
+cash,c,high,11.000000,spending|veterans_life_insurance,spending,0.022716,0.000000,0.002654,0.001003,0.003657,0.026372
+cash,c,high,11.000000,spending|workers_compensation,spending,1.555579,0.000000,0.150236,0.023720,0.173955,1.729534
+cash,c,high,11.000000,spending|military_medical,spending,0.312891,0.000000,0.032467,0.021337,0.053805,0.366696
+cash,c,high,11.000000,spending|veterans_pension_disability,spending,9.133043,0.000000,1.066990,0.403280,1.470270,10.603313
+cash,c,high,11.000000,spending|veterans_readjustment,spending,0.576289,0.000000,0.067326,0.025447,0.092773,0.669062
+cash,c,high,11.000000,spending|veterans_other,spending,1.597251,0.000000,0.192641,0.063362,0.256004,1.853254
+cash,c,high,11.000000,spending|snap,spending,13.588727,0.000000,1.242018,0.248534,1.490552,15.079279
+cash,c,high,11.000000,spending|black_lung,spending,0.033198,0.000000,0.003206,0.000344,0.003550,0.036749
+cash,c,high,11.000000,spending|ssi,spending,5.094042,0.000000,0.528064,0.127417,0.655481,5.749523
+cash,c,high,11.000000,spending|refundable_tax_credits,spending,32.628027,0.000000,1.837889,0.771718,2.609607,35.237634
+cash,c,high,11.000000,spending|other_federal_benefits,spending,3.662654,0.000000,0.328838,0.133907,0.462745,4.125399
+cash,c,high,11.000000,spending|temporary_disability,spending,2.521144,0.000000,0.243489,0.026137,0.269626,2.790770
+cash,c,high,11.000000,spending|medicaid_and_chip_other_medical,spending,119.736065,0.000000,10.069037,2.188239,12.257276,131.993341
+cash,c,high,11.000000,spending|family_and_general_assistance,spending,11.686668,0.000000,0.942001,0.117500,1.059501,12.746170
+cash,c,high,11.000000,spending|energy_assistance,spending,0.562300,0.000000,0.054864,0.011943,0.066807,0.629107
+cash,c,high,11.000000,spending|other_state_welfare,spending,5.213894,0.000000,0.502580,0.041707,0.544287,5.758180
+cash,c,high,11.000000,spending|education_benefits,spending,8.944509,0.000000,0.714744,0.201374,0.916119,9.860627
+cash,c,high,11.000000,spending|employment_training,spending,0.166636,0.000000,0.010568,0.004711,0.015279,0.181915
+cash,c,high,11.000000,spending|other_state_benefits,spending,0.336879,0.000000,0.026407,0.009836,0.036243,0.373122
+cash,c,high,11.000000,spending|foreign_territory_social_benefits,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,spending|other_foreign_current_transfers,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,spending|domestic_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,spending|foreign_interest,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,spending|agricultural_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,spending|housing_subsidies,spending,4.136640,0.000000,0.450900,0.071905,0.522805,4.659445
+cash,c,high,11.000000,spending|transport_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,spending|other_subsidies,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,spending|source_rounding,spending,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000
+cash,c,high,11.000000,spending|school_reprice,spending,1.160765,0.000000,-0.201101,0.000000,-0.201101,0.959664
+cash,c,high,11.000000,spending|college_rekey,spending,-0.552470,0.000000,-0.103356,0.000000,-0.103356,-0.655826
+cash,c,high,11.000000,spending|lane_constants,spending,-5.201474,-0.011245,-0.303258,0.000000,-0.314504,-5.515978
+cash,c,high,11.000000,spending|roads_vmt_sl,spending,3.030126,0.000000,0.027925,0.022188,0.050112,3.080238
+cash,c,high,11.000000,spending|roads_vmt_fed,spending,0.027542,0.000000,0.000254,0.000202,0.000455,0.027997
+cash,c,high,11.000000,spending|state_price_public_order_safety,spending,6.412327,0.000000,0.484070,-0.078916,0.405154,6.817481
+cash,c,high,11.000000,spending|state_price_health_services,spending,1.799632,0.000000,0.165218,-0.021272,0.143946,1.943577
+cash,c,high,11.000000,spending|state_price_recreation_culture,spending,0.427908,0.000000,0.033543,-0.004675,0.028867,0.456776
+cash,c,high,11.000000,capital|k12,capital return,13.340496,0.000000,1.273239,0.454076,1.727315,15.067811
+cash,c,high,11.000000,capital|college,capital return,5.709022,0.000000,0.544438,0.199771,0.744208,6.453231
+cash,c,high,11.000000,capital|pos_sl,capital return,1.165169,0.000000,0.087959,0.025366,0.113325,1.278494
+cash,c,high,11.000000,capital|pos_fed,capital return,0.443570,0.000000,0.033485,0.009656,0.043142,0.486712
+cash,c,high,11.000000,capital|health_sl,capital return,0.621472,0.000000,0.057055,0.018571,0.075627,0.697099
+cash,c,high,11.000000,capital|health_fed,capital return,0.180032,0.000000,0.016528,0.005380,0.021908,0.201940
+cash,c,high,11.000000,capital|gps_sl,capital return,3.865063,0.004211,0.303304,0.112973,0.420488,4.285551
+cash,c,high,11.000000,capital|gps_fed,capital return,0.454891,0.000496,0.035697,0.013296,0.049489,0.504380
+cash,c,high,11.000000,capital|hwy_sl,capital return,12.598830,0.000000,0.978605,0.385660,1.364265,13.963095
+cash,c,high,11.000000,capital|rec_sl,capital return,1.494276,0.000000,0.117133,0.043629,0.160762,1.655038
+cash,c,high,11.000000,capital|hwy_fed,capital return,0.156656,0.000000,0.012168,0.004795,0.016963,0.173619
+cash,c,high,11.000000,capital|air_fed,capital return,0.085622,0.000000,0.007747,0.002994,0.010741,0.096363
+cash,c,high,11.000000,capital|rec_fed,capital return,0.147045,0.000000,0.011527,0.004293,0.015820,0.162865
+cash,c,high,11.000000,capital|ent_housing_sl,capital return,0.948519,0.000000,0.103390,0.016488,0.119878,1.068396
+cash,c,high,11.000000,capital|ent_transit_sl,capital return,1.778014,0.000000,0.139375,0.051914,0.191288,1.969303
+cash,c,high,11.000000,capital|ent_airports_sl,capital return,2.094443,0.000000,0.164179,0.061153,0.225331,2.319774
+cash,c,high,11.000000,capital|ent_ports_sl,capital return,0.331958,0.000000,0.026021,0.009692,0.035714,0.367672
+cash,c,high,11.000000,capital|ent_power_sl,capital return,1.905472,0.000000,0.149366,0.055635,0.205001,2.110473
+cash,c,high,11.000000,capital|ent_water_sl,capital return,3.219791,0.000000,0.252392,0.094010,0.346402,3.566193
+cash,c,high,11.000000,capital|ent_sewer_sl,capital return,4.305829,0.000000,0.337524,0.125720,0.463244,4.769073
+cash,c,high,11.000000,capital|ent_tolls_sl,capital return,1.761792,0.000000,0.138103,0.051440,0.189543,1.951335
+cash,c,high,11.000000,capital|ent_power_fed,capital return,0.097251,0.000000,0.007623,0.002840,0.010463,0.107714
+cash,c,high,11.000000,capital|ent_other_sl,capital return,0.265334,0.000000,0.020799,0.007747,0.028546,0.293880
+cash,c,high,11.000000,capital|ent_other_fed,capital return,0.199357,0.000000,0.015627,0.005821,0.021448,0.220805
+cash,c,high,11.000000,production|gain,production gain,-7.683239,0.000000,-0.279994,0.000000,-0.279994,-7.963233
