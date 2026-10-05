@@ -166,7 +166,9 @@ node infra/immigration-fiscal/generation_account_2026_09_24/run_generations_v5.c
 
 Log (times from `date`, JST): 23:04 brief read; 23:07 first oct05 outputs (scratch), all gates passing; 23:08 written
 to `derived/`; 23:08–23:09 rerun offline, stopped at `tax_key_split.py` (uv cache); 23:09:56–23:10:51 rerun
-`--online` IDENTICAL 56/56, exit 0; 23:12 this section.
+`--online` IDENTICAL 56/56, exit 0; 23:12 this section. (Correction, 23:28 by `date`: 23:04 is an `uptime` reading
+taken after the brief was read; 23:07–23:08 are the times of the `derived/` files, not of scratch outputs; 23:12 was an
+estimate, and the section was written after 23:10:51.)
 
 ## v4 case (sept29), 2026-09-29
 
