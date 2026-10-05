@@ -1,0 +1,7 @@
+measure,sept26_low,sept26_high,sept27_low,sept27_high,sept29_low,sept29_high,oct05_low,oct05_high
+service_break_even_personal,0.0575,0.1387,-0.0287,0.0680,-0.1097,-0.0239,-0.0876,-0.0037
+service_break_even_personal__enterprises_at_s,0.0575,0.1387,0.0283,0.1083,-0.0546,0.0150,-0.0338,0.0343
+service_break_even_shared,0.0876,0.1697,-0.0021,0.0965,-0.0932,-0.0059,-0.0687,0.0171
+service_break_even_shared__enterprises_at_s,0.0876,0.1697,0.0540,0.1360,-0.0383,0.0327,-0.0151,0.0549
+frozen_services_capital_fixed_welfare_bn_cbo_preferred,-21.6362,81.5243,-53.4864,57.7743,-86.6625,17.7766,-82.7242,28.2000
+frozen_services_capital_fixed_welfare_bn_cbo_preferred__enterprises_at_s,-21.6362,81.5243,-30.4882,74.9601,-65.4894,33.3137,-59.8946,44.9597

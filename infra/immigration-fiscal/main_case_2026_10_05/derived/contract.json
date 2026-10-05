@@ -1,0 +1,129 @@
+{
+ "gate": "G2: every September 29 derived file exists here with its columns, rows and keys; every difference listed",
+ "files": {
+  "components.csv": {
+   "columns_same_order": true,
+   "columns_added": [],
+   "columns_missing": [],
+   "rows": {
+    "sept29": 21,
+    "here": 21,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   }
+  },
+  "corrections.json": {
+   "key_paths": {
+    "sept29": 566,
+    "here": 606,
+    "added": 40
+   },
+   "missing": [],
+   "type_changed": [],
+   "relocated": [],
+   "added_subtrees": [
+    "meta.lineage"
+   ]
+  },
+  "main_case_bands.csv": {
+   "columns_same_order": true,
+   "columns_added": [],
+   "columns_missing": [],
+   "rows": {
+    "sept29": 28,
+    "here": 30,
+    "missing": [],
+    "added": [
+     "long_run_non_school_full|sept29_case",
+     "long_run_non_school_full|sept29_cash_set"
+    ],
+    "order_kept": true
+   }
+  },
+  "per_spec.csv": {
+   "columns_same_order": true,
+   "columns_added": [],
+   "columns_missing": [],
+   "rows": {
+    "sept29": 128,
+    "here": 128,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   }
+  },
+  "sign_reversal.csv": {
+   "columns_same_order": true,
+   "columns_added": [
+    "oct05_low",
+    "oct05_high"
+   ],
+   "columns_missing": [],
+   "rows": {
+    "sept29": 6,
+    "here": 6,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   }
+  },
+  "summary.json": {
+   "key_paths": {
+    "sept29": 834,
+    "here": 944,
+    "added": 107
+   },
+   "missing": [],
+   "type_changed": [],
+   "relocated": [
+    "change_at_fixed_specifications.item_1 -> change_at_fixed_specifications.sept29_case.item_1",
+    "change_at_fixed_specifications.item_2 -> change_at_fixed_specifications.sept29_case.item_2",
+    "change_at_fixed_specifications.item_3 -> change_at_fixed_specifications.sept29_case.item_3",
+    "change_at_fixed_specifications.item_4 -> change_at_fixed_specifications.sept29_case.item_4",
+    "change_at_fixed_specifications.item_5 -> change_at_fixed_specifications.sept29_case.item_5",
+    "change_at_fixed_specifications.item_6a -> change_at_fixed_specifications.sept29_case.item_6a",
+    "change_at_fixed_specifications.item_7 -> change_at_fixed_specifications.sept29_case.item_7",
+    "change_at_fixed_specifications.item_pension -> change_at_fixed_specifications.sept29_case.item_pension",
+    "change_at_fixed_specifications.item_state -> change_at_fixed_specifications.sept29_case.item_state",
+    "change_at_fixed_specifications.item_roads -> change_at_fixed_specifications.sept29_case.item_roads",
+    "change_at_fixed_specifications.sept27_case -> change_at_fixed_specifications.sept29_case.sept27_case",
+    "change_at_fixed_specifications.sept27_case.long_run_responses -> change_at_fixed_specifications.sept29_case.sept27_case.long_run_responses",
+    "change_at_fixed_specifications.sept27_case.rental_assistance -> change_at_fixed_specifications.sept29_case.sept27_case.rental_assistance",
+    "change_at_fixed_specifications.sept27_case.capital_core -> change_at_fixed_specifications.sept29_case.sept27_case.capital_core",
+    "change_at_fixed_specifications.sept27_case.capital_block -> change_at_fixed_specifications.sept29_case.sept27_case.capital_block",
+    "change_at_fixed_specifications.sept27_case.enterprise_rekey -> change_at_fixed_specifications.sept29_case.sept27_case.enterprise_rekey",
+    "change_at_fixed_specifications.sept27_case.enterprise_rekey_receipt_move -> change_at_fixed_specifications.sept29_case.sept27_case.enterprise_rekey_receipt_move",
+    "change_at_fixed_specifications.sept27_case.enterprise_surplus_receipt -> change_at_fixed_specifications.sept29_case.sept27_case.enterprise_surplus_receipt",
+    "change_at_fixed_specifications.sept27_case.capital_enterprise -> change_at_fixed_specifications.sept29_case.sept27_case.capital_enterprise",
+    "change_at_fixed_specifications.sept27_case.total -> change_at_fixed_specifications.sept29_case.sept27_case.total",
+    "change_at_fixed_specifications.sept27_case.of_which_public_housing -> change_at_fixed_specifications.sept29_case.sept27_case.of_which_public_housing",
+    "change_at_fixed_specifications.sept27_case.enterprise_rekey_against_model_json_share -> change_at_fixed_specifications.sept29_case.sept27_case.enterprise_rekey_against_model_json_share",
+    "change_at_fixed_specifications.sept27_case.note -> change_at_fixed_specifications.sept29_case.sept27_case.note"
+   ],
+   "added_subtrees": [
+    "adopted_2026_09_29",
+    "cash_set.change_from_the_september_29_cash_set_bn",
+    "change_at_fixed_specifications.union_response_move",
+    "change_at_fixed_specifications.g3plus_members",
+    "change_at_fixed_specifications.whites",
+    "range.first_order",
+    "range.at_the_case_data",
+    "each_addition.lineage",
+    "beside_the_account.congestion.not_recomputed_v5",
+    "group_receipts_bn.adopted_2026_09_29",
+    "v5"
+   ]
+  }
+ },
+ "files_missing": [],
+ "files_added": [
+  "corrections_cash.json"
+ ],
+ "gate_records": [
+  "api_check.json",
+  "contract.json",
+  "generality.json"
+ ],
+ "pass": true
+}

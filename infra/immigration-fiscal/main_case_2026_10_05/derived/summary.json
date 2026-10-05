@@ -1,0 +1,2804 @@
+{
+ "lane": "main_case_2026_10_05",
+ "decision": "decisions/2026-10-05-main-case-v5.md",
+ "adopted_2026_09_23": [
+  203.20701712400069,
+  249.63995572733106
+ ],
+ "adopted_2026_09_24": [
+  200.8752025157866,
+  246.31843608620045
+ ],
+ "adopted_2026_09_26": [
+  200.91801681307095,
+  245.69489442324326
+ ],
+ "adopted_2026_09_26_schools": [
+  258.48849537573153,
+  291.9547733238526
+ ],
+ "adopted_2026_09_27": [
+  321.81935699039354,
+  387.37005494938376
+ ],
+ "adopted_2026_09_29": [
+  371.4145997888867,
+  434.8409586241355
+ ],
+ "first_year_response": [
+  200.91801681307095,
+  245.69489442324326
+ ],
+ "schools_case": [
+  258.48849537573153,
+  291.9547733238526
+ ],
+ "uncorrected_at_adopted_responses": [
+  313.0645791648988,
+  378.7098497950922
+ ],
+ "without_capital_return": [
+  353.14611523987026,
+  399.3853183707018
+ ],
+ "main_case": [
+  390.29395820202535,
+  461.24312471796554
+ ],
+ "cash_set": {
+  "band_bn": [
+   307.37637615801015,
+   383.40925212667577
+  ],
+  "by_method_bn": {
+   "b_hotdeck_union_matched": [
+    304.06366167907515,
+    381.0508609962857
+   ],
+   "b_matched_over_pooled": [
+    310.68909063694514,
+    385.76764325706586
+   ]
+  },
+  "end_specifications": [
+   [
+    48,
+    11
+   ],
+   [
+    48,
+    11
+   ]
+  ],
+  "change_from_main_case_bn": [
+   -82.9175820440152,
+   -77.83387259128978
+  ],
+  "change_from_the_september_29_cash_set_bn": [
+   12.675300177762267,
+   21.591770316940313
+  ],
+  "note": "the set with the pension switch off (pension4 \"cash\"): social security and Medicare's Part A at the group's current benefits instead of the accrual at payable benefits net of the tax on benefits; the payload is derived/corrections_cash.json (main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json with main_case_lineage_2026_10_05/derived/lineage_payload_cash.json merged in)"
+ },
+ "change": [
+  18.879358413138675,
+  26.402166093830033
+ ],
+ "change_at_fixed_specifications": {
+  "union_response_move": [
+   -0.29828842771317454,
+   -0.3154798336684337
+  ],
+  "g3plus_members": [
+   16.715279715970965,
+   22.95851396786717
+  ],
+  "whites": [
+   2.4623671248807737,
+   3.7591319596312447
+  ],
+  "total": [
+   18.879358413138647,
+   26.402166093830004
+  ],
+  "note": "the change from the September 29 case at each method's end specifications (48 low, 11 high in both cases), averaged, by part of the lineage line: union_response_move is v4's model with audit row 8's change evaluated at v5's group-size responses less v4; g3plus_members and whites are the added people (1.9570M priced as identified G3+ members, 1.0827M as third-plus non-Hispanic whites at the G3+'s ages), split as the lineage lane splits them (main_case_lineage_2026_10_05/derived/v5_summary.json). The parts add to total, which is change because the ends do not move. sept29_case holds the September 29 case's own change from the September 27 case, by v4 item, with the September 27 case's parts under sept29_case.sept27_case",
+  "sept29_case": {
+   "item_1": [
+    -1.6912303084279756,
+    -1.6912303084279756
+   ],
+   "item_2": [
+    1.6427194489999692,
+    1.1073890110000093
+   ],
+   "item_3": [
+    -3.20053533254827,
+    -3.096568163510142
+   ],
+   "item_4": [
+    -0.35286942484674455,
+    -0.5293041372701737
+   ],
+   "item_5": [
+    -27.18632552778581,
+    -27.18632552778581
+   ],
+   "item_6a": [
+    0.394789829026422,
+    0.5386931924207374
+   ],
+   "item_7": [
+    -0.9482477443083894,
+    -0.7324104515720364
+   ],
+   "item_pension": [
+    76.71352380863874,
+    73.02347681440006
+   ],
+   "item_state": [
+    2.1517307556027845,
+    2.239419026880853
+   ],
+   "item_roads": [
+    2.071687294142407,
+    3.797764218616237
+   ],
+   "total": [
+    49.59524279849313,
+    47.47090367475175
+   ],
+   "note": "the change from the September 27 case at each method's end specifications (48 low, 11 high in both), averaged, by v4 item added in the brief's order (1, 2, 3, 4, 5, 6a, 7, pension, state, roads): each part is the case with that item and the ones before it less the case with the ones before it (package.cjs options over candidate v4's OFF). The parts add to total, which is change because the ends do not move. Each item alone is in each_addition; the items' interactions are in the candidate lane (derived/attribution.csv). sept27_case holds the September 27 case's own change from the schools case, by its additions",
+   "sept27_case": {
+    "long_run_responses": [
+     19.440498439596922,
+     29.63244931934139
+    ],
+    "rental_assistance": [
+     4.53206585647888,
+     4.5320658564789085
+    ],
+    "capital_core": [
+     15.994250944515937,
+     25.779716608423808
+    ],
+    "capital_block": [
+     6.178193127855973,
+     12.472841613037318
+    ],
+    "enterprise_rekey": [
+     0,
+     0
+    ],
+    "enterprise_rekey_receipt_move": [
+     0.14567442685651955,
+     0.14567442685651955
+    ],
+    "enterprise_surplus_receipt": [
+     5.5611432821434805,
+     5.5611432821434805
+    ],
+    "capital_enterprise": [
+     11.624709964070824,
+     17.43706494610623
+    ],
+    "total": [
+     63.33086161466201,
+     95.41528162553112
+    ],
+    "of_which_public_housing": [
+     0.9852152372944304,
+     1.4778228559416455
+    ],
+    "enterprise_rekey_against_model_json_share": [
+     -0.45018428669541777,
+     -0.6024392166148402
+    ],
+    "note": "each method's end specifications (48 low, 11 high in both), averaged, in the order long-run responses, rental assistance, capital core, capital block, then the enterprises (the receipt's re-key, the surplus at 1, the enterprise returns). long_run_responses and rental_assistance are each addition alone less the old settings (engine, capital off); enterprise_rekey is the old settings on the re-keyed models less the schools case, 0 because the receipt is still at 0; capital_core, capital_block and capital_enterprise are the return's parts on the new case; enterprise_surplus_receipt is the receipt's cost at response 1. These parts add to total. Not in the sum: enterprise_rekey_receipt_move (the receipt's own move under the re-key, the group's enterprise_surplus amount against the schools case's; an amount, not a cost: at response 1 it is why the surplus costs national x the corrected share and not national x model.json's share), of_which_public_housing (inside capital_enterprise) and enterprise_rekey_against_model_json_share (the case less the same case with the receipt at model.json's share). change is the difference of band ends from the schools case, equal to total because the ends do not move"
+   }
+  }
+ },
+ "end_specifications": [
+  {
+   "method": "b_hotdeck_union_matched",
+   "low_end": {
+    "index": 48,
+    "allocation": "shared",
+    "normalization": "gdp",
+    "share": 0.7153278156243373,
+    "school": 1,
+    "gg": 0.6005266346459308,
+    "uc": "uninsured_use_low",
+    "justice": "use",
+    "reading": "low",
+    "rate": 0.02,
+    "long_run": "adopted",
+    "enterprises": "D",
+    "line_responses": {
+     "economic_affairs_services": 0.3844994797314016,
+     "recreation_culture": 0.8563914832367988,
+     "housing_subsidies": 1,
+     "receipt:enterprise_surplus": 1,
+     "receipt:housing_enterprise_surplus": 1,
+     "receipt:modeled_owner_property": 0.7726986463443216,
+     "receipt:tenant_occupied_property": 0.7189123969969125,
+     "receipt:personal_property_tax": 1,
+     "roads_vmt_sl": 0.7401981546463505,
+     "roads_vmt_fed": 0,
+     "state_price_public_order_safety": 1,
+     "state_price_health_services": 1,
+     "state_price_recreation_culture": 0.8563914832367988
+    }
+   },
+   "high_end": {
+    "index": 11,
+    "allocation": "personal",
+    "normalization": "cash",
+    "share": 0.8651608840454027,
+    "school": 1,
+    "gg": 0.8510539647701243,
+    "uc": "uninsured_use_high",
+    "justice": "use",
+    "reading": "high",
+    "rate": 0.03,
+    "long_run": "adopted",
+    "enterprises": "D",
+    "line_responses": {
+     "economic_affairs_services": 0.6387399411939584,
+     "recreation_culture": 1,
+     "housing_subsidies": 1,
+     "receipt:enterprise_surplus": 1,
+     "receipt:housing_enterprise_surplus": 1,
+     "receipt:modeled_owner_property": 0.7726986463443216,
+     "receipt:tenant_occupied_property": 0.7189123969969125,
+     "receipt:personal_property_tax": 1,
+     "roads_vmt_sl": 1,
+     "roads_vmt_fed": 1,
+     "state_price_public_order_safety": 1,
+     "state_price_health_services": 1,
+     "state_price_recreation_culture": 1
+    }
+   }
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "low_end": {
+    "index": 48,
+    "allocation": "shared",
+    "normalization": "gdp",
+    "share": 0.7153278156243373,
+    "school": 1,
+    "gg": 0.6005266346459308,
+    "uc": "uninsured_use_low",
+    "justice": "use",
+    "reading": "low",
+    "rate": 0.02,
+    "long_run": "adopted",
+    "enterprises": "D",
+    "line_responses": {
+     "economic_affairs_services": 0.3844994797314016,
+     "recreation_culture": 0.8563914832367988,
+     "housing_subsidies": 1,
+     "receipt:enterprise_surplus": 1,
+     "receipt:housing_enterprise_surplus": 1,
+     "receipt:modeled_owner_property": 0.7726986463443216,
+     "receipt:tenant_occupied_property": 0.7189123969969125,
+     "receipt:personal_property_tax": 1,
+     "roads_vmt_sl": 0.7401981546463505,
+     "roads_vmt_fed": 0,
+     "state_price_public_order_safety": 1,
+     "state_price_health_services": 1,
+     "state_price_recreation_culture": 0.8563914832367988
+    }
+   },
+   "high_end": {
+    "index": 11,
+    "allocation": "personal",
+    "normalization": "cash",
+    "share": 0.8651608840454027,
+    "school": 1,
+    "gg": 0.8510539647701243,
+    "uc": "uninsured_use_high",
+    "justice": "use",
+    "reading": "high",
+    "rate": 0.03,
+    "long_run": "adopted",
+    "enterprises": "D",
+    "line_responses": {
+     "economic_affairs_services": 0.6387399411939584,
+     "recreation_culture": 1,
+     "housing_subsidies": 1,
+     "receipt:enterprise_surplus": 1,
+     "receipt:housing_enterprise_surplus": 1,
+     "receipt:modeled_owner_property": 0.7726986463443216,
+     "receipt:tenant_occupied_property": 0.7189123969969125,
+     "receipt:personal_property_tax": 1,
+     "roads_vmt_sl": 1,
+     "roads_vmt_fed": 1,
+     "state_price_public_order_safety": 1,
+     "state_price_health_services": 1,
+     "state_price_recreation_culture": 1
+    }
+   }
+  }
+ ],
+ "lines_at_end_specifications": {
+  "economic_affairs_services": {
+   "response": [
+    0.3844994797314016,
+    0.6387399411939584
+   ],
+   "group_amount_bn": [
+    39.692126680840246,
+    39.692126680840246
+   ],
+   "added_bn": [
+    15.261602058215956,
+    25.352946661983044
+   ]
+  },
+  "recreation_culture": {
+   "response": [
+    0.8563914832367988,
+    1
+   ],
+   "group_amount_bn": [
+    6.853548550461788,
+    6.853548550461788
+   ],
+   "added_bn": [
+    5.869320608565383,
+    6.853548550461788
+   ]
+  },
+  "housing_subsidies": {
+   "response": [
+    1,
+    1
+   ],
+   "group_amount_bn": [
+    4.487245877254198,
+    4.487245877254198
+   ],
+   "added_bn": [
+    4.487245877254198,
+    4.487245877254198
+   ]
+  },
+  "roads_vmt_sl": {
+   "response": [
+    0.7401981546463505,
+    1
+   ],
+   "group_amount_bn": [
+    3.069189045881913,
+    3.068399133701652
+   ],
+   "added_bn": [
+    2.2718080680225854,
+    3.068399133701652
+   ]
+  },
+  "roads_vmt_fed": {
+   "response": [
+    0,
+    1
+   ],
+   "group_amount_bn": [
+    0.027896860211568147,
+    0.027889680442142822
+   ],
+   "added_bn": [
+    0,
+    0.027889680442142822
+   ]
+  },
+  "state_price_public_order_safety": {
+   "response": [
+    1,
+    1
+   ],
+   "group_amount_bn": [
+    6.642952584568894,
+    6.642952584568894
+   ],
+   "added_bn": [
+    6.642952584568894,
+    6.642952584568894
+   ]
+  },
+  "state_price_health_services": {
+   "response": [
+    1,
+    1
+   ],
+   "group_amount_bn": [
+    1.8836338918763793,
+    1.8836338918763793
+   ],
+   "added_bn": [
+    1.8836338918763793,
+    1.8836338918763793
+   ]
+  },
+  "state_price_recreation_culture": {
+   "response": [
+    0.8563914832367988,
+    1
+   ],
+   "group_amount_bn": [
+    0.444629422994033,
+    0.444629422994033
+   ],
+   "added_bn": [
+    0.38077685104858194,
+    0.444629422994033
+   ]
+  }
+ },
+ "receipts_at_end_specifications": {
+  "enterprise_surplus": {
+   "response": [
+    1,
+    1
+   ],
+   "group_amount_bn": [
+    -0.9034458176863407,
+    -0.9034458176863407
+   ],
+   "national_bn": -7.161999999999999,
+   "effect_bn": [
+    -0.9034458176863407,
+    -0.9034458176863407
+   ]
+  },
+  "housing_enterprise_surplus": {
+   "response": [
+    1,
+    1
+   ],
+   "group_amount_bn": [
+    -3.716514056934434,
+    -3.716514056934434
+   ],
+   "national_bn": -45.555811000000006,
+   "effect_bn": [
+    -3.716514056934434,
+    -3.716514056934434
+   ]
+  },
+  "modeled_owner_property": {
+   "response": [
+    0.7726986463443216,
+    0.7726986463443216
+   ],
+   "group_amount_bn": [
+    27.482676682613643,
+    27.482676682613643
+   ],
+   "national_bn": 394.862477949,
+   "effect_bn": [
+    21.235827070574214,
+    21.235827070574214
+   ]
+  },
+  "tenant_occupied_property": {
+   "response": [
+    0.7189123969969125,
+    0.7189123969969125
+   ],
+   "group_amount_bn": [
+    10.248226874355845,
+    10.248226874355845
+   ],
+   "national_bn": 83.840225,
+   "effect_bn": [
+    7.367577347211337,
+    7.367577347211337
+   ]
+  },
+  "personal_property_tax": {
+   "response": [
+    1,
+    1
+   ],
+   "group_amount_bn": [
+    1.4262859577767066,
+    1.4177779130589885
+   ],
+   "national_bn": 12.988,
+   "effect_bn": [
+    1.4262859577767066,
+    1.4177779130589885
+   ]
+  }
+ },
+ "capital_at_end_specifications": {
+  "rates": {
+   "low": 0.02,
+   "high": 0.03
+  },
+  "total_bn": [
+   37.1478429621551,
+   61.85780634726378
+  ],
+  "by_level_bn": {
+   "state_local": [
+    36.258365596660575,
+    59.95894932620443
+   ],
+   "federal": [
+    0.8894773654945259,
+    1.8988570210593516
+   ]
+  },
+  "by_part_bn": {
+   "core": [
+    17.28898631474326,
+    28.044898334634063
+   ],
+   "block": [
+    7.719040412654333,
+    15.603183660493471
+   ],
+   "enterprise": [
+    12.139816234757507,
+    18.20972435213626
+   ]
+  },
+  "by_component": {
+   "k12": {
+    "label": "K-12 schools: educational structures x K-12 key plus K-12 equipment and software (school lane)",
+    "part": "core",
+    "level": "state_local",
+    "stock_charged_bn": 2723.9194975692117,
+    "key": [
+     0.17187098290524078,
+     0.17823501274472778
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     9.3632544280394,
+     14.564934790945827
+    ]
+   },
+   "college": {
+    "label": "colleges and other education: non-K-12 educational structures; higher education and libraries in full; museums and zoos (recreation) and preschool not charged",
+    "part": "core",
+    "level": "state_local",
+    "stock_charged_bn": 1198.387599270317,
+    "key": [
+     0.16735095123104693,
+     0.17350616206820493
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     4.011026093627565,
+     6.237828990585679
+    ]
+   },
+   "pos_sl": {
+    "label": "public order and safety (state and local): public safety structures",
+    "part": "core",
+    "level": "state_local",
+    "stock_charged_bn": 289.47299999999996,
+    "key": [
+     0.14326625322295253,
+     0.14326625322295253
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     0.8294342423841546,
+     1.244151363576232
+    ]
+   },
+   "pos_fed": {
+    "label": "public order and safety (federal nondefense): public safety structures",
+    "part": "core",
+    "level": "federal",
+    "stock_charged_bn": 110.2,
+    "key": [
+     0.14326625322295253,
+     0.14326625322295253
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     0.3157588221033874,
+     0.4736382331550811
+    ]
+   },
+   "health_sl": {
+    "label": "health (state and local): health care structures in full",
+    "part": "core",
+    "level": "state_local",
+    "stock_charged_bn": 365.979,
+    "key": [
+     0.061449992621739384,
+     0.061449992621739384
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     0.44978813699423115,
+     0.6746822054913467
+    ]
+   },
+   "health_fed": {
+    "label": "health (federal nondefense): health care structures",
+    "part": "core",
+    "level": "federal",
+    "stock_charged_bn": 106.019,
+    "key": [
+     0.061449992621739384,
+     0.061449992621739384
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     0.13029733535528376,
+     0.1954460030329256
+    ]
+   },
+   "gps_sl": {
+    "label": "general government (state and local): office structures incl. city halls; capitols; courthouses; administration buildings",
+    "part": "core",
+    "level": "state_local",
+    "stock_charged_bn": 1292.9385000000002,
+    "key": [
+     0.1261443476244542,
+     0.1261443476244542
+    ],
+    "response": [
+     0.6005266346459308,
+     0.8510539647701243
+    ],
+    "return_bn": [
+     1.9588804526034378,
+     4.164127482909507
+    ]
+   },
+   "gps_fed": {
+    "label": "general government (federal nondefense): office structures",
+    "part": "core",
+    "level": "federal",
+    "stock_charged_bn": 152.17000000000002,
+    "key": [
+     0.1261443476244542,
+     0.1261443476244542
+    ],
+    "response": [
+     0.6005266346459308,
+     0.8510539647701243
+    ],
+    "return_bn": [
+     0.2305468036357995,
+     0.4900892649374581
+    ]
+   },
+   "hwy_sl": {
+    "label": "state and local highways and streets less toll facilities, in full",
+    "part": "block",
+    "level": "state_local",
+    "stock_charged_bn": 4388.9962727707125,
+    "key": [
+     0.10309628697023668,
+     0.10309235715664863
+    ],
+    "response": [
+     0.7401981546463505,
+     1
+    ],
+    "return_bn": [
+     6.6986337017076085,
+     13.57415913935034
+    ]
+   },
+   "rec_sl": {
+    "label": "state and local parks and recreation structures plus museums and zoos, in full",
+    "part": "block",
+    "level": "state_local",
+    "stock_charged_bn": 425.0824916531727,
+    "key": [
+     0.1261443476185196,
+     0.1261443476185196
+    ],
+    "response": [
+     0.9514857707559868,
+     1
+    ],
+    "return_bn": [
+     1.0204067109467245,
+     1.6086526078093282
+    ]
+   },
+   "hwy_fed": {
+    "label": "federal highways and streets (roads on federal land)",
+    "part": "block",
+    "level": "federal",
+    "stock_charged_bn": 54.573499999999996,
+    "key": [
+     0.10309628697023668,
+     0.10309235715664863
+    ],
+    "response": [
+     0,
+     1
+    ],
+    "return_bn": [
+     0,
+     0.16878332259865092
+    ]
+   },
+   "air_fed": {
+    "label": "federal transportation structures (air traffic facilities)",
+    "part": "block",
+    "level": "federal",
+    "stock_charged_bn": 35.406,
+    "key": [
+     0.08782706955832198,
+     0.08782706955832198
+    ],
+    "response": [
+     0,
+     1
+    ],
+    "return_bn": [
+     0,
+     0.09328815674345843
+    ]
+   },
+   "rec_fed": {
+    "label": "federal amusement and recreation structures (national parks)",
+    "part": "block",
+    "level": "federal",
+    "stock_charged_bn": 41.8305,
+    "key": [
+     0.1261443476185196,
+     0.1261443476185196
+    ],
+    "response": [
+     0,
+     1
+    ],
+    "return_bn": [
+     0,
+     0.1583004339916945
+    ]
+   },
+   "ent_housing_sl": {
+    "label": "public housing (S&L residential structures)",
+    "part": "enterprise",
+    "level": "state_local",
+    "stock_charged_bn": 420.402,
+    "key": [
+     0.08158155843026116,
+     0.08158155843026116
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     0.6859410065439729,
+     1.0289115098159596
+    ]
+   },
+   "ent_transit_sl": {
+    "label": "public transit (land share of S&L transportation)",
+    "part": "enterprise",
+    "level": "state_local",
+    "stock_charged_bn": 505.7986332941459,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     1.2760727725246113,
+     1.9141091587869166
+    ]
+   },
+   "ent_airports_sl": {
+    "label": "airports (air share of S&L transportation)",
+    "part": "enterprise",
+    "level": "state_local",
+    "stock_charged_bn": 595.8142303973117,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     1.5031719479767025,
+     2.2547579219650533
+    ]
+   },
+   "ent_ports_sl": {
+    "label": "ports (water share of S&L transportation)",
+    "part": "enterprise",
+    "level": "state_local",
+    "stock_charged_bn": 94.43351434918577,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     0.23824508122925145,
+     0.3573676218438771
+    ]
+   },
+   "ent_power_sl": {
+    "label": "electric and gas utilities (S&L power structures)",
+    "part": "enterprise",
+    "level": "state_local",
+    "stock_charged_bn": 542.057,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     1.3675485328053754,
+     2.0513227992080627
+    ]
+   },
+   "ent_water_sl": {
+    "label": "water systems",
+    "part": "enterprise",
+    "level": "state_local",
+    "stock_charged_bn": 915.9465,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     2.3108294740280426,
+     3.4662442110420635
+    ]
+   },
+   "ent_sewer_sl": {
+    "label": "sewer systems",
+    "part": "enterprise",
+    "level": "state_local",
+    "stock_charged_bn": 1224.8960000000002,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     3.090274136556069,
+     4.635411204834103
+    ]
+   },
+   "ent_tolls_sl": {
+    "label": "toll facilities (toll share of S&L highways)",
+    "part": "enterprise",
+    "level": "state_local",
+    "stock_charged_bn": 501.1837272292877,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     1.2644298862266177,
+     1.8966448293399265
+    ]
+   },
+   "ent_power_fed": {
+    "label": "federal power (TVA and the power marketing administrations)",
+    "part": "enterprise",
+    "level": "federal",
+    "stock_charged_bn": 27.6655,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     0.06979692898408675,
+     0.10469539347613012
+    ]
+   },
+   "ent_other_sl": {
+    "label": "other S&L enterprise capital: equipment, software and structures of other types (Postal Service, parking, liquor stores, lotteries), net of the listed types' general-government parts",
+    "part": "enterprise",
+    "level": "state_local",
+    "stock_charged_bn": 75.4805887275022,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     0.1904289924668099,
+     0.28564348870021483
+    ]
+   },
+   "ent_other_fed": {
+    "label": "other federal enterprise capital: equipment, software and structures of other types (Postal Service, parking, liquor stores, lotteries), net of the listed types' general-government parts",
+    "part": "enterprise",
+    "level": "federal",
+    "stock_charged_bn": 56.71180600256709,
+    "key": [
+     0.12614434762445417,
+     0.12614434762445417
+    ],
+    "response": [
+     1,
+     1
+    ],
+    "return_bn": [
+     0.1430774754159686,
+     0.21461621312395285
+    ]
+   }
+  },
+  "k12_key": {
+   "account_key": [
+    0.17187098290524078,
+    0.17823501274472778
+   ],
+   "pupil_share": 0.17480600215120404,
+   "pupil_share_minus_account_bn": [
+    0.15989512299640474,
+    -0.2802104643921215
+   ],
+   "note": "the case keys K-12 by the account's school key from the evaluation, which counts the added people; the capital lane's variant k12_at_pupil_share uses its pupil share, a constant measured on the identified group without them"
+  }
+ },
+ "enterprises": {
+  "option": "D",
+  "allowed_by_file": [
+   "D",
+   "A"
+  ],
+  "receipt_response": 1,
+  "receipt_at_end_specifications": {
+   "group_amount_bn": [
+    -0.9034458176863407,
+    -0.9034458176863407
+   ],
+   "national_bn": -7.161999999999999,
+   "cost_bn": [
+    0.9034458176863407,
+    0.9034458176863407
+   ],
+   "move_from_the_schools_case_bn": [
+    4.80337189131366,
+    4.80337189131366
+   ],
+   "of_which_rekey_bn": [
+    -0.042252635388447986,
+    -0.042252635388447986
+   ],
+   "of_which_public_housing_split_bn": [
+    4.845624526702108,
+    4.845624526702108
+   ]
+  },
+  "returns_at_end_specifications_bn": [
+   12.139816234757507,
+   18.20972435213626
+  ],
+  "public_housing_return_bn": [
+   0.6859410065439729,
+   1.0289115098159596
+  ],
+  "receipt_rekey": {
+   "line": "enterprise_surplus",
+   "share_line": "general_public_services (population cell)",
+   "share": {
+    "personal": 0.11717537467643237,
+    "shared": 0.11717537467643237
+   },
+   "from_share": {
+    "personal": 0.12024478948588285,
+    "shared": 0.12024478948588285
+   },
+   "reference_edit_bn": {
+    "personal": 0.14567442685651955,
+    "shared": 0.14567442685651955
+   },
+   "edits": 8,
+   "rule": "one receipt shift to the corrected population share on the reference incidence rule, carried to the eight rules proportionally as every receipt shift is; the last edits of the payload"
+  },
+  "rekey_effect_at_fixed_specifications_bn": [
+   -0.300685246209639,
+   -0.44003629488190654
+  ],
+  "option_A_band_bn": [
+   373.53418209264703,
+   438.4134404912085
+  ],
+  "at_model_json_share_band_bn": [
+   390.594643448235,
+   461.68316101284745
+  ],
+  "capital_lane_rows_before_rental_assistance": {
+   "option D: long-run responses + core + block + enterprises": [
+    317.73747542061005,
+    383.4404283095197
+   ],
+   "option A: long-run responses + core + block": [
+    300.10143788770034,
+    359.83978086465515
+   ],
+   "option D, enterprises at the spending lines' population key": [
+    317.2872911339146,
+    382.8379890929048
+   ]
+  },
+  "overlap_with_rental_assistance": {
+   "rental_key": [
+    0.08158155843026116,
+    0.08158155843026116
+   ],
+   "population_share": 0.1261443476244542,
+   "rental_national_bn": 55.003189000000006,
+   "upper_bound_bn": [
+    2.451095516415358,
+    2.451095516415358
+   ],
+   "netted_bn": 0,
+   "note": "item 1 consolidates public housing's federal operating subsidy ($5.258bn, HUD FY2024) out of both legs and keys public housing's deficit (housing_enterprise_surplus) by the rental line's key, so that transfer no longer meets two keys. Other federal payments to housing authorities stay in housing_subsidies at the rental key and, under option D, inside the rest of the enterprise surplus at the population share: upper_bound_bn if all of the line went to enterprises. Not netted."
+  },
+  "interest": "not added: NIPA's enterprise surplus excludes interest, which sits in the account's interest row, held at 0. BEA, Government Transactions (NIPA Methodology Paper 5, 2005), p. I-16: \"Interest received and paid are ignored in the calculation of the current surplus of government enterprises.\"",
+  "proportional_reference": "the receipt, public housing's deficit and every enterprise component respond at 1 in every profile, the proportional reference included",
+  "public_housing": "item 1 splits public housing's deficit (NIPA 3.8 line 13, -$40.298bn national, less the $5.258bn operating subsidy) out of the enterprise line into its own receipt, housing_enterprise_surplus, at the rental line's key; item 4 keys public housing's capital (ent_housing_sl) the same way. The enterprise line's national is national_bn; move_from_the_schools_case_bn is the re-key plus that split"
+ },
+ "school": {
+  "rules": {
+   "average": "full average cost per pupil (response 1): a school system sized for the group's pupils",
+   "within_district": "within-district elasticity 0.836 read over a removal of the pupil share, r = [1 - (1 - s)^b] / s",
+   "within_district_as_response": "within-district elasticity 0.836 taken as the response (r = b)"
+  },
+  "within_district": [
+   362.2659133694093,
+   434.64888483412005
+  ],
+  "within_district_as_response": [
+   359.8060451340358,
+   432.45551140251325
+  ],
+  "end_specifications": {
+   "average": [
+    [
+     48,
+     11
+    ],
+    [
+     48,
+     11
+    ]
+   ],
+   "within_district": [
+    [
+     56,
+     3
+    ],
+    [
+     56,
+     3
+    ]
+   ],
+   "within_district_as_response": [
+    [
+     56,
+     3
+    ],
+    [
+     56,
+     3
+    ]
+   ]
+  },
+  "note": "the schools case's low side on this case: every specification re-run with that school rule (the K-12 capital return follows the school response); the within-district response is read at v4's pupil share, without the added people's pupils; end_specifications are [low end, high end] per fill-in method",
+  "sign_break_even": "derived/sign_reversal.csv (sign_reversal.cjs): schools move with the common share"
+ },
+ "rental_assistance": {
+  "group_amount_by_method_bn": {
+   "b_hotdeck_union_matched": {
+    "personal": 4.420297697682818,
+    "shared": 4.420297697682818
+   },
+   "b_matched_over_pooled": {
+    "personal": 4.554194056825578,
+    "shared": 4.554194056825578
+   }
+  },
+  "uncorrected_group_amount_bn": {
+   "personal": 7.541813009,
+   "shared": 7.541813009
+  },
+  "note": "the corrections re-key the line (tax-records stack and administrative benefit keys) and item 1 takes public housing's operating subsidy out of it (national 60.261 to 55.003189000000006), so the move is the corrected amount, not the uncorrected $7.54bn; the corrected amount includes the added people's",
+  "overlap_netted_bn": 0
+ },
+ "responses": {
+  "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+  "general_government": {
+   "low": 0.6005266346459308,
+   "high": 0.8510539647701243,
+   "elasticity": [
+    0.5939193086359557,
+    0.842
+   ],
+   "s": 0.12918222328408055
+  },
+  "school": {
+   "growth": 1,
+   "decline": 1,
+   "elasticity": null,
+   "s": null,
+   "set_directly": true,
+   "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+  },
+  "row8_factor": 0.9451692510510525,
+  "economic_affairs_services": {
+   "low": 0.3844994797314016,
+   "high": 0.6387399411939584,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_highways",
+     "level": "federal",
+     "subfunction": "Highways",
+     "national_bn": 1.827,
+     "share_of_line": 0.00404261674798367,
+     "low": 0,
+     "high": 1,
+     "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_air",
+     "level": "federal",
+     "subfunction": "Air",
+     "national_bn": 30.604,
+     "share_of_line": 0.06771770276699082,
+     "low": 0,
+     "high": 1,
+     "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+    },
+    {
+     "id": "fed_water",
+     "level": "federal",
+     "subfunction": "Water",
+     "national_bn": 18.209,
+     "share_of_line": 0.04029119231747928,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_transit_and_railroad",
+     "level": "federal",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0.094,
+     "share_of_line": 0.00020799451248520252,
+     "low": 0,
+     "high": 1,
+     "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_space",
+     "level": "federal",
+     "subfunction": "Space",
+     "national_bn": 21.23,
+     "share_of_line": 0.04697578191554095,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_general_economic_and_labor_affairs",
+     "level": "federal",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 35.431,
+     "share_of_line": 0.07839844225386393,
+     "low": 0,
+     "high": 0.8510539647701243,
+     "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+    },
+    {
+     "id": "fed_agriculture",
+     "level": "federal",
+     "subfunction": "Agriculture",
+     "national_bn": 17.54,
+     "share_of_line": 0.038810890946706936,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_energy",
+     "level": "federal",
+     "subfunction": "Energy",
+     "national_bn": 23.406,
+     "share_of_line": 0.051790633608815424,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_natural_resources",
+     "level": "federal",
+     "subfunction": "Natural resources",
+     "national_bn": 32.036,
+     "share_of_line": 0.07088630002102073,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_postal_service",
+     "level": "federal",
+     "subfunction": "Postal service",
+     "national_bn": -0.177,
+     "share_of_line": -0.00039164924159447705,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_highways",
+     "level": "state_local",
+     "subfunction": "Highways",
+     "national_bn": 201.005,
+     "share_of_line": 0.4447652870434908,
+     "low": 0.7401981546463505,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_transit_and_railroad",
+     "level": "state_local",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0.7401981546463505,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_general_economic_and_labor_affairs",
+     "level": "state_local",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 29.358,
+     "share_of_line": 0.06496066912277208,
+     "low": 0.8510539647701243,
+     "high": 0.8510539647701243,
+     "basis": "general government's adopted response for state-local administration at both ends"
+    },
+    {
+     "id": "sl_agriculture",
+     "level": "state_local",
+     "subfunction": "Agriculture",
+     "national_bn": 10.007,
+     "share_of_line": 0.022142564749355546,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_energy",
+     "level": "state_local",
+     "subfunction": "Energy",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_natural_resources",
+     "level": "state_local",
+     "subfunction": "Natural resources",
+     "national_bn": 31.99,
+     "share_of_line": 0.07078451547235774,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_other_commercial_activities",
+     "level": "state_local",
+     "subfunction": "Other (commercial activities)",
+     "national_bn": -0.625,
+     "share_of_line": -0.0013829422372686338,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "recreation_culture": {
+   "low": 0.8563914832367988,
+   "high": 1,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_recreation_and_culture",
+     "level": "federal",
+     "subfunction": "Recreation and culture",
+     "national_bn": 5.43,
+     "share_of_line": 0.09994294233494688,
+     "low": 0,
+     "high": 1,
+     "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+    },
+    {
+     "id": "sl_recreation_and_culture",
+     "level": "state_local",
+     "subfunction": "Recreation and culture",
+     "national_bn": 48.901,
+     "share_of_line": 0.9000570576650531,
+     "low": 0.9514857707559868,
+     "high": 1,
+     "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "housing_subsidies": {
+   "low": 1,
+   "high": 1,
+   "key": "housing_support",
+   "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+   "overlap_netted_bn": 0,
+   "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+   "source": "dataset_integrity_2026_09_23/spending.md item 6"
+  },
+  "enterprise_surplus": {
+   "receipt": true,
+   "override": "receipt:enterprise_surplus",
+   "low": 1,
+   "high": 1,
+   "option": "D",
+   "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+   "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+   "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+  },
+  "housing_enterprise_surplus": {
+   "receipt": true,
+   "override": "receipt:housing_enterprise_surplus",
+   "low": 1,
+   "high": 1,
+   "rule": "public housing's enterprise deficit (NIPA 3.8 line 13, housing and urban renewal, -$40.298bn in 2024, less public housing's $5.258bn operating subsidy, consolidated with the rental line) as its own receipt line at the rental line's key; it responds as the enterprise receipt does, in every profile",
+   "source": "item 1: main_case_candidate_v2_2026_09_28/package.cjs splitHousing"
+  },
+  "modeled_owner_property": {
+   "receipt": true,
+   "override": "receipt:modeled_owner_property",
+   "low": 0.7726986463443216,
+   "high": 0.7726986463443216,
+   "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+  },
+  "tenant_occupied_property": {
+   "receipt": true,
+   "override": "receipt:tenant_occupied_property",
+   "low": 0.7189123969969125,
+   "high": 0.7189123969969125,
+   "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+  },
+  "personal_property_tax": {
+   "receipt": true,
+   "override": "receipt:personal_property_tax",
+   "low": 1,
+   "high": 1,
+   "rule": "household personal property tax (NIPA 3.4 line 11), re-keyed to the group's share of household vehicles, at response 1 like the motor-vehicle line, in every profile",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs rekey, CENTRAL_ITEMS.personal"
+  },
+  "roads_vmt_sl": {
+   "low": 0.7401981546463505,
+   "high": 1,
+   "rule": "re-keys the S&L highways part of economic_affairs_services (national $201.005bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions sl_highways)",
+   "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+  },
+  "roads_vmt_fed": {
+   "low": 0,
+   "high": 1,
+   "rule": "re-keys the federal highways part of economic_affairs_services (national $1.827bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions fed_highways)",
+   "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+  },
+  "state_price_public_order_safety": {
+   "low": 1,
+   "high": 1,
+   "rule": "public order and safety's state-price gap (the sum over its S&L functions of amount x (price index - 1)) at the line's use key; it responds as its parent, which the case holds at 1 in every profile",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  },
+  "state_price_health_services": {
+   "low": 1,
+   "high": 1,
+   "rule": "health's state-price gap at the line's preferred key; it responds as its parent, which the case holds at 1 in every profile",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  },
+  "state_price_recreation_culture": {
+   "low": 0.8563914832367988,
+   "high": 1,
+   "rule": "recreation and culture's state-price gap at the line's preferred key; it responds as its parent, recreation_culture, at the specification's reading",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  }
+ },
+ "range": {
+  "low_end": [
+   312.39014818961505,
+   458.2668867925248
+  ],
+  "high_end": [
+   355.5737989947183,
+   515.3513194905805
+  ],
+  "overall": [
+   312.39014818961505,
+   515.3513194905805
+  ],
+  "quadrature": [
+   354.5695716358214,
+   483.745876345382
+  ],
+  "note": "every component re-runs the whole case, the added people included, at every specification; the band's ends are minima and maxima over the specifications; option A, 7% and items 8 and 10 are beside the range, not in it. The components are the September 29 case's; transit_key moves nothing (item 8 is beside the case). The added people's own amounts are the case's in every variant (package.cjs); first_order lists the variants whose own group-size reading is moved at first order or kept at v4's group",
+  "first_order": {
+   "finite_removal/engine population key": "general government's response and row 8's factor at the engine key's group share: moved by the case's change (first order)",
+   "property_long_run/low responses": "the receipt-side lane's low property readings: moved by the case's change (first order)",
+   "school_response/within district, finite r": "the within-district school response at v4's pupil share (the added people's pupils are not in it)",
+   "school_response/within district, r = b": "the within-district elasticity as the response (does not depend on the group's size)",
+   "capital_definition/k12_at_pupil_share": "K-12 capital keyed at v4's pupil share, a constant (the added people's pupils are not in it)"
+  },
+  "at_the_case_data": {
+   "components": [
+    "tax_block",
+    "income_tax",
+    "medical",
+    "ltss",
+    "education",
+    "benefits",
+    "justice",
+    "row8",
+    "row9",
+    "row10",
+    "small",
+    "shelter",
+    "care",
+    "consumption_key",
+    "payroll_compliance"
+   ],
+   "added_share": 0.07654315652845424,
+   "range_ends_move_if_proportional_bn": [
+    -2.3766483632773876,
+    2.335782380933128
+   ],
+   "note": "these components re-run the union's data with the added people's amounts at the case's, so each deviates as on the September 29 case (within $0.001bn); range_ends_move_if_proportional_bn is how far the range's low and high ends would move had the added people's amounts moved in proportion to the union's (the added share of each component's deviation), an indication of the omission, not a bound"
+  }
+ },
+ "other_profiles": {
+  "long_run_non_school_fixed": {
+   "schools_case": [
+    204.7765,
+    265.8072
+   ],
+   "uncorrected_at_adopted_responses": [
+    254.22361720786643,
+    345.9245280130264
+   ],
+   "adopted": [
+    328.10672093194887,
+    426.4357710812293
+   ]
+  },
+  "proportional_reference": {
+   "schools_case": [
+    301.2853,
+    334.7516
+   ],
+   "uncorrected_at_adopted_responses": [
+    338.44565731859603,
+    391.8094163468932
+   ],
+   "adopted": [
+    419.28127245225437,
+    475.5823047368227
+   ]
+  }
+ },
+ "old_main_profile": {
+  "profile": "cbo_category_lag_non_school_full",
+  "schools_case": [
+   258.48849537573153,
+   291.9547733238526
+  ],
+  "with_rental_assistance_capital_and_enterprises": [
+   358.79141020351847,
+   409.8925276078895
+  ]
+ },
+ "audit_row3_instead_of_cbo_income_tax": [
+  388.8386421613019,
+  461.1396252841446
+ ],
+ "no_fill_in_correction": [
+  382.01494684960807,
+  452.0863293811997
+ ],
+ "each_addition": {
+  "long_run_responses_alone": [
+   277.92899381532845,
+   321.58722264319397
+  ],
+  "rental_assistance_alone": [
+   263.0205612322104,
+   296.4868391803315
+  ],
+  "long_run_responses_and_capital_return_option_a": [
+   300.10143788770034,
+   359.83978086465515
+  ],
+  "long_run_responses_capital_return_and_enterprises": [
+   317.2872911339146,
+   382.8379890929048
+  ],
+  "core_return_alone_on_the_schools_case": [
+   274.48274632024743,
+   317.73448993227646
+  ],
+  "item_1": [
+   320.12812668196557,
+   385.6788246409558
+  ],
+  "item_2": [
+   323.4620764393935,
+   388.47744396038377
+  ],
+  "item_3": [
+   318.6188216578453,
+   384.2734867858736
+  ],
+  "item_4": [
+   321.4664875655468,
+   386.8407508121136
+  ],
+  "item_5": [
+   294.6330314626076,
+   360.18372942159783
+  ],
+  "item_6a": [
+   322.2059145862355,
+   387.8972435963176
+  ],
+  "item_7": [
+   320.8711092460851,
+   386.6376444978116
+  ],
+  "item_pension": [
+   399.09607547964964,
+   460.97645946656655
+  ],
+  "item_state": [
+   324.0039128646173,
+   389.641386164473
+  ],
+  "item_roads": [
+   323.7753283139843,
+   391.0631302287809
+  ],
+  "lineage": [
+   390.29395820202535,
+   461.24312471796554
+  ]
+ },
+ "beside_the_account": {
+  "rate_7pct": {
+   "band_bn": [
+    483.1635656074131,
+    543.7201998476506
+   ],
+   "return_at_end_specifications_bn": [
+    130.0174503675429,
+    144.3348814769489
+   ],
+   "note": "A-4 (2003)'s private-capital rate on every component, enterprises included, reported beside the account only (operator, 2026-09-27 15:21 JST)"
+  },
+  "land_per_10pct_of_land_to_structure_value": {
+   "per_10pct_bn": [
+    3.6608187448719147,
+    6.103687316152551
+   ],
+   "by_part_per_10pct_bn": {
+    "core": [
+     1.7082837290682709,
+     2.7724224885488424
+    ],
+    "block": [
+     0.7719040404457151,
+     1.5603183645668137
+    ],
+    "enterprise": [
+     1.180630975357929,
+     1.7709464630368932
+    ]
+   },
+   "note": "[GAP] BEA measures produced assets only; the capital lane's conversion per 10% of land-to-structure value (gaps.csv core, block and enterprise rows), priced at this case's keys and responses at the end specifications (2% low, 3% high; highways at the road key, public housing at the rental line's key, the other enterprise land at the corrected population share); not an estimate"
+  },
+  "enterprises_out_option_A": {
+   "band_bn": [
+    373.53418209264703,
+    438.4134404912085
+   ],
+   "change_at_fixed_specifications_bn": [
+    -16.75977610937835,
+    -22.829684226757024
+   ],
+   "note": "option A, a labelled variant beside the range: no enterprise capital, and the enterprise_surplus receipt and public housing's deficit at 0; everything else as the case"
+  },
+  "rental_assistance_at_0": {
+   "band_bn": [
+    385.8067123247712,
+    456.7558788407114
+   ],
+   "note": "rental assistance at 0 on this case; public housing's deficit and capital stay (enterprises under option D)"
+  },
+  "congestion": {
+   "source": "service_response_long_run_2026_09_27/derived/net_change.json",
+   "sha256": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
+   "before_bn": 19.162711110731056,
+   "low_end": {
+    "congestion_bn": 13.992562864050909,
+    "change_bn": -5.170148246680148,
+    "range_bn": [
+     2.014861874519616,
+     32.04934035817931
+    ]
+   },
+   "high_end": {
+    "congestion_bn": 12.01805628378483,
+    "change_bn": -7.144654826946226,
+    "range_bn": [
+     -0.9235617873055264,
+     30.828298311580397
+    ]
+   },
+   "note": "net_change = the account's move at the band end's fixed specification + the change in the congestion item beside it (central inputs, network follows spending, uniform cut)",
+   "not_recomputed": "the September 27 figure (the payload's meta.candidate_v4.not_recomputed): derived with roads on economic_affairs_services' key, before v4 keyed roads by vehicle miles",
+   "not_recomputed_v5": "the September 27 figure, carried by the September 29 lane; not recomputed with the added people"
+  },
+  "transit_at_riders_key_item_8": {
+   "band_bn": [
+    390.46358686622375,
+    461.4239241210455
+   ],
+   "change_at_fixed_specifications_bn": [
+    0.16962866419839884,
+    0.18079940307995912
+   ],
+   "options": {
+    "transit": "state_deficit",
+    "transit_capital": true
+   },
+   "note": "public transit at the riders' key (v3 item 8): beside the case (candidate v4's BESIDE_ITEMS), not in it"
+  },
+  "uninsured_use_0_7x_item_10": {
+   "band_bn": [
+    388.721097580232,
+    458.9432119123724
+   ],
+   "change_at_fixed_specifications_bn": [
+    -1.5728606217932963,
+    -2.2999128055931237
+   ],
+   "options": {
+    "uninsured_use": "0.7x"
+   },
+   "note": "hospitals' uninsured use at 0.7x (v3 item 10): beside the case (candidate v4's BESIDE_ITEMS), not in it"
+  }
+ },
+ "by_side_vs_uncorrected_at_adopted_responses": {
+  "receipts": [
+   -16.45006359629332,
+   -10.07082656212259
+  ],
+  "spending": [
+   92.30430621517138,
+   91.67273350870784
+  ],
+  "production": [
+   1.3751364182484735,
+   0.9313679762881861
+  ]
+ },
+ "group_receipts_bn": {
+  "adopted_2026_09_23": {
+   "personal": 517.100247895,
+   "shared": 545.118771322
+  },
+  "adopted_2026_09_24": {
+   "personal": 458.90626374089595,
+   "shared": 488.4638010201364
+  },
+  "adopted": {
+   "personal": 528.9621964380893,
+   "shared": 563.599486500313
+  },
+  "adopted_2026_09_26": {
+   "personal": 462.95798613228317,
+   "shared": 492.5155234115235
+  },
+  "adopted_2026_09_26_schools": {
+   "personal": 462.95798613228317,
+   "shared": 492.5155234115235
+  },
+  "adopted_2026_09_27": {
+   "personal": 463.1036605591397,
+   "shared": 492.66119783838
+  },
+  "adopted_2026_09_29": {
+   "personal": 481.2998075555117,
+   "shared": 510.16263247515866
+  }
+ },
+ "components": [
+  {
+   "name": "tax_block",
+   "label": "tax block: on-books share (low/central/high) x fill-in method",
+   "lo": [
+    -5.459970319634522,
+    -4.245893155775093
+   ],
+   "hi": [
+    5.574357422596734,
+    4.359665426371919
+   ],
+   "variants": {
+    "low/b_hotdeck_union_matched": [
+     -2.7271565901031636,
+     -1.4766069480646138
+    ],
+    "low/b_matched_over_pooled": [
+     5.574357422596734,
+     4.359665426371919
+    ],
+    "central/b_hotdeck_union_matched": [
+     -4.1027060474951895,
+     -2.870141435144774
+    ],
+    "central/b_matched_over_pooled": [
+     4.1027060474951895,
+     2.870141435144774
+    ],
+    "high/b_hotdeck_union_matched": [
+     -5.459970319634522,
+     -4.245893155775093
+    ],
+    "high/b_matched_over_pooled": [
+     2.653928009120307,
+     1.4028489899499732
+    ]
+   }
+  },
+  {
+   "name": "income_tax",
+   "label": "CBO income gradients: 2018/2019/2022 data, scaled or not by the stack's factor",
+   "lo": [
+    -1.336180538761937,
+    -1.249838514926978
+   ],
+   "hi": [
+    1.9385492704957414,
+    2.0251017074983793
+   ],
+   "variants": {
+    "2018": [
+     0.4779033277305871,
+     0.4415913442300621
+    ],
+    "2019": [
+     -1.336180538761937,
+     -1.249838514926978
+    ],
+    "2022": [
+     0,
+     0
+    ],
+    "2018 unscaled": [
+     1.9385492704957414,
+     2.0251017074983793
+    ],
+    "2019 unscaled": [
+     -0.07895591791179868,
+     0.11081263296961197
+    ],
+    "2022 unscaled": [
+     1.403614659071991,
+     1.520570599950247
+    ]
+   }
+  },
+  {
+   "name": "medical",
+   "label": "decision 2: medical-ethnicity specifications and the MCBS 65+ bound",
+   "lo": [
+    -1.1666062715250973,
+    -1.1751152172162165
+   ],
+   "hi": [
+    8.47924217527634,
+    8.498122342200645
+   ],
+   "variants": {
+    "plain": [
+     4.758364562995553,
+     4.760837961530001
+    ],
+    "winsor_p999": [
+     -0.00897628956920471,
+     -0.001847184398002355
+    ],
+    "two_part_lognormal": [
+     -1.1666062715250973,
+     -1.1751152172162165
+    ],
+    "pooled_excl_2020_2021": [
+     8.47924217527634,
+     8.498122342200645
+    ],
+    "pooled_cpi_all_items": [
+     3.984159889498187,
+     3.98569700139376
+    ],
+    "pooled_year_normalized": [
+     2.97347561694005,
+     2.972173177097943
+    ],
+    "MCBS as truth": [
+     7.821675684665593,
+     7.819839710829513
+    ],
+    "MCBS precision-weighted": [
+     0.9347856306063704,
+     0.9345662093430747
+    ]
+   }
+  },
+  {
+   "name": "ltss",
+   "label": "long-term-care carve-out: extremes of the lane's 960 combinations",
+   "lo": [
+    -1.4078076340186954,
+    -1.4078076340186954
+   ],
+   "hi": [
+    2.992192365981282,
+    2.992192365981282
+   ],
+   "variants": {
+    "-12.5": [
+     -1.4078076340186954,
+     -1.4078076340186954
+    ],
+    "-8.1": [
+     2.992192365981282,
+     2.992192365981282
+    ]
+   }
+  },
+  {
+   "name": "education",
+   "label": "audit row 6 weight w (0.77/0.82) x school price k (low/high)",
+   "lo": [
+    -2.387820548451998,
+    -3.05991577021706
+   ],
+   "hi": [
+    2.3411083352742708,
+    3.000672142970984
+   ],
+   "variants": {
+    "w 0.77 k low": [
+     -2.387820548451998,
+     -3.05991577021706
+    ],
+    "w 0.77 k preferred": [
+     -0.7516226197290052,
+     -0.9847775227210604
+    ],
+    "w 0.77 k high": [
+     0.7409432351123542,
+     0.9081966938550181
+    ],
+    "w 0.82 k low": [
+     -0.9908219277422745,
+     -1.2251099616252645
+    ],
+    "w 0.82 k preferred": [
+     0.7516226197289484,
+     0.9847775227211173
+    ],
+    "w 0.82 k high": [
+     2.3411083352742708,
+     3.000672142970984
+    ]
+   }
+  },
+  {
+   "name": "benefits",
+   "label": "benefit keys: central +/- 1.96 SE (package_se.csv)",
+   "lo": [
+    -2.302731970908326,
+    -2.2527416565265526
+   ],
+   "hi": [
+    2.302731970908326,
+    2.2527416565264957
+   ],
+   "variants": {
+    "-1.96 SE": [
+     -2.302731970908326,
+     -2.2527416565265526
+    ],
+    "+1.96 SE": [
+     2.302731970908326,
+     2.2527416565264957
+    ]
+   }
+  },
+  {
+   "name": "justice",
+   "label": "row 7 on 2023 arrests; booking factor Texas only or Arizona only",
+   "lo": [
+    -1.0044966521275,
+    -1.0114794887226708
+   ],
+   "hi": [
+    0.2533877310770549,
+    0.2551491755953066
+   ],
+   "variants": {
+    "row 7 2023": [
+     0.2533877310770549,
+     0.2551491755953066
+    ],
+    "booking Texas": [
+     0.09576400558938758,
+     0.09642971652169763
+    ],
+    "booking Arizona": [
+     -1.0044966521275,
+     -1.0114794887226708
+    ]
+   }
+  },
+  {
+   "name": "row8",
+   "label": "audit row 8: unallocable S&L spending at the all-spending elasticity",
+   "lo": [
+    0,
+    0
+   ],
+   "hi": [
+    0,
+    0
+   ],
+   "variants": {
+    "lo": [
+     0,
+     0
+    ],
+    "hi": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "name": "row9",
+   "label": "audit row 9: MEPS donor filter (non-LTSS remainder)",
+   "lo": [
+    -0.8000000000000114,
+    -0.8000000000000114
+   ],
+   "hi": [
+    0.8000000000000114,
+    0.7999999999999545
+   ],
+   "variants": {
+    "lo": [
+     -0.8000000000000114,
+     -0.8000000000000114
+    ],
+    "hi": [
+     0.8000000000000114,
+     0.7999999999999545
+    ]
+   }
+  },
+  {
+   "name": "row10",
+   "label": "audit row 10: foster care keyed by WIC",
+   "lo": [
+    -0.5,
+    -0.5
+   ],
+   "hi": [
+    0.5,
+    0.5
+   ],
+   "variants": {
+    "lo": [
+     -0.5,
+     -0.5
+    ],
+    "hi": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "name": "small",
+   "label": "audit small items (origin allocation, grants, top-codes, flags)",
+   "lo": [
+    -0.39999999999997726,
+    -0.4000000000000341
+   ],
+   "hi": [
+    0.5,
+    0.5
+   ],
+   "variants": {
+    "lo": [
+     -0.39999999999997726,
+     -0.4000000000000341
+    ],
+    "hi": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "name": "shelter",
+   "label": "shelter keying (mapping A, central outlays, NYC June 2025 share)",
+   "lo": [
+    -0.33099999999996044,
+    -0.28920000000005075
+   ],
+   "hi": [
+    0.06299999999998818,
+    0.10479999999995471
+   ],
+   "variants": {
+    "lo": [
+     -0.33099999999996044,
+     -0.28920000000005075
+    ],
+    "hi": [
+     0.06299999999998818,
+     0.10479999999995471
+    ]
+   }
+  },
+  {
+   "name": "care",
+   "label": "care and household services (hours taxes, elder-care Medicaid, output)",
+   "lo": [
+    -9.199999999999989,
+    -9.200000000000045
+   ],
+   "hi": [
+    1.5500000000000114,
+    1.5499999999999545
+   ],
+   "variants": {
+    "lo": [
+     -9.199999999999989,
+     -9.200000000000045
+    ],
+    "hi": [
+     1.5500000000000114,
+     1.5499999999999545
+    ]
+   }
+  },
+  {
+   "name": "finite_removal",
+   "label": "general government's removal response: r = b (fixed plus constant marginal cost); engine-key population share",
+   "lo": [
+    -0.4620023921651182,
+    -0.5107903289540445
+   ],
+   "hi": [
+    0.002439366629005235,
+    0.0039013734536297306
+   ],
+   "variants": {
+    "r = b": [
+     -0.4620023921651182,
+     -0.5107903289540445
+    ],
+    "engine population key": [
+     0.002439366629005235,
+     0.0039013734536297306
+    ]
+   }
+  },
+  {
+   "name": "consumption_key",
+   "label": "consumption key: the lane's twelve saving-and-remittance specifications",
+   "lo": [
+    -4.093371207900873,
+    -3.7415582574976156
+   ],
+   "hi": [
+    1.3585588630345455,
+    1.241938468000285
+   ],
+   "variants": {
+    "both_corridor_net_h2": [
+     0,
+     0
+    ],
+    "both_corridor_net_h2_dollar_for_dollar": [
+     -0.04967234666651166,
+     -0.046458645616326066
+    ],
+    "both_survey_cemla": [
+     -2.433533851059451,
+     -2.223725046009008
+    ],
+    "both_bea": [
+     -2.498052763702958,
+     -2.282681062200311
+    ],
+    "both_corridor_full": [
+     0.23638875615608868,
+     0.2160084206573174
+    ],
+    "both_corridor_net_h2_illicit": [
+     -0.2775107045781624,
+     -0.2535849540744266
+    ],
+    "both_corridor_net_h2_others_bea": [
+     0.965693221193078,
+     0.8827975198893228
+    ],
+    "both_corridor_net_h2_others_zero": [
+     1.3585588630345455,
+     1.241938468000285
+    ],
+    "both_rank_x_size_corridor_net_h2": [
+     -1.624300959043353,
+     -1.4853344169152365
+    ],
+    "both_rank_x_size_survey_cemla": [
+     -4.093371207900873,
+     -3.7415582574976156
+    ],
+    "both_rank_x_size_x_age_corridor_net_h2": [
+     -1.1852748546942848,
+     -1.0842295430412605
+    ],
+    "both_rank_x_size_x_age_survey_cemla": [
+     -3.6496905515745084,
+     -3.3362120472504557
+    ]
+   }
+  },
+  {
+   "name": "school_response",
+   "label": "school response: within-district elasticity 0.836 read over the removal (0.8489) or taken as the response",
+   "lo": [
+    -30.487913067989552,
+    -28.78761331545229
+   ],
+   "hi": [
+    0,
+    0
+   ],
+   "variants": {
+    "within district, finite r": [
+     -28.028044832616047,
+     -26.59423988384549
+    ],
+    "within district, r = b": [
+     -30.487913067989552,
+     -28.78761331545229
+    ]
+   }
+  },
+  {
+   "name": "long_run_response",
+   "label": "long-run responses: r = b; within-state uncapped; federal fixed at the high end; across-state at the high end; held-at-zero lines at 1",
+   "lo": [
+    -0.453424283457764,
+    -10.167489880930987
+   ],
+   "hi": [
+    13.491643117271167,
+    19.083578113104863
+   ],
+   "variants": {
+    "marginal_r_equals_b": [
+     -0.453424283457764,
+     -0.051519123933076116
+    ],
+    "within_states_uncapped": [
+     0,
+     19.083578113104863
+    ],
+    "federal_fixed_at_high_end": [
+     0,
+     -6.682548906326133
+    ],
+    "across_states_at_high_end": [
+     0,
+     -10.167489880930987
+    ],
+    "held_at_zero_at_1": [
+     13.491643117271167,
+     13.491643117271167
+    ]
+   }
+  },
+  {
+   "name": "capital_rate",
+   "label": "return on public capital: 2% at both ends; 3% at both ends",
+   "lo": [
+    0,
+    -20.619268782421216
+   ],
+   "hi": [
+    18.57392148107749,
+    0
+   ],
+   "variants": {
+    "2% at both ends": [
+     0,
+     -20.619268782421216
+    ],
+    "3% at both ends": [
+     18.57392148107749,
+     0
+    ]
+   }
+  },
+  {
+   "name": "capital_definition",
+   "label": "return on public capital: the capital lane's definition variants (engine_components.json variants), each re-run at every specification",
+   "lo": [
+    -1.5207232924985306,
+    -1.6420872615179292
+   ],
+   "hi": [
+    1.4564181233417912,
+    1.1136528197358757
+   ],
+   "variants": {
+    "block_equipment_and_software_added": [
+     0.04031778388400653,
+     0.14041510370395827
+    ],
+    "block_toll_share_at_its_highest_year": [
+     -0.5237387041767079,
+     -1.0613078479150317
+    ],
+    "block_toll_share_at_its_lowest_year": [
+     0.23088218760000245,
+     0.46786131269209363
+    ],
+    "college_by_account_school_fraction": [
+     -1.5207232924985306,
+     -1.6420872615179292
+    ],
+    "end_2024_stocks": [
+     0.31188462006849704,
+     0.5061996283672556
+    ],
+    "equipment_and_software": [
+     0.6975181376312776,
+     1.1136528197358757
+    ],
+    "higher_ed_auxiliaries_fee_financed": [
+     -0.7868085935596696,
+     -1.223621422644385
+    ],
+    "k12_at_pupil_share": [
+     0.15989512299637454,
+     -0.2802104643920984
+    ],
+    "offices_at_response_1": [
+     1.4564181233417912,
+     0.8145513215246751
+    ],
+    "public_housing_at_rental_assistance_key": [
+     0,
+     0
+    ],
+    "public_housing_at_uncorrected_rental_key": [
+     0.3663459693142386,
+     0.5495189539714147
+    ],
+    "sl_office_at_unallocable_response": [
+     0.37153325223664524,
+     0.5572998783549679
+    ]
+   }
+  },
+  {
+   "name": "property_long_run",
+   "label": "long-run property taxes: the receipt-side lane's low responses, and 1 everywhere with the case-scaled tenant national",
+   "lo": [
+    -13.929964460550991,
+    -13.929964460550934
+   ],
+   "hi": [
+    3.3911746081444107,
+    3.3911746081445244
+   ],
+   "variants": {
+    "low responses": [
+     3.3911746081444107,
+     3.3911746081445244
+    ],
+    "1 everywhere, case-scaled tenant national": [
+     -13.929964460550991,
+     -13.929964460550934
+    ]
+   }
+  },
+  {
+   "name": "payroll_compliance",
+   "label": "payroll compliance: the lane's low-cost and high-cost readings at row 2's central shares",
+   "lo": [
+    -0.6597973724194617,
+    -0.6785619985188305
+   ],
+   "hi": [
+    2.4042037593912937,
+    2.4355045730309257
+   ],
+   "variants": {
+    "low-cost readings": [
+     -0.6597973724194617,
+     -0.6785619985188305
+    ],
+    "high-cost readings": [
+     2.4042037593912937,
+     2.4355045730309257
+    ]
+   }
+  }
+ ],
+ "v4": {
+  "adopted": "2026-09-29 15:12 JST, the operator (\"1 ok do\"), through the parent's brief",
+  "candidate_lane": "main_case_candidate_v4_2026_09_29",
+  "items": [
+   {
+    "id": "1",
+    "name": "public housing's deficit at the tenant key",
+    "options": {
+     "housing": "tenants",
+     "internal_transfer": "public_housing_operating"
+    }
+   },
+   {
+    "id": "2",
+    "name": "production on the account's weights",
+    "options": {
+     "production": "row4"
+    }
+   },
+   {
+    "id": "3",
+    "name": "the IRS-matched income-tax key",
+    "options": {
+     "tax_key": "irs_2023_raked"
+    }
+   },
+   {
+    "id": "4",
+    "name": "public housing's capital at the tenant key",
+    "options": {
+     "housing_capital": "tenants"
+    }
+   },
+   {
+    "id": "5",
+    "name": "long-run property taxes",
+    "options": {
+     "property": "long_run"
+    }
+   },
+   {
+    "id": "6a",
+    "name": "payroll compliance, the all-central items, proportional rule",
+    "options": {
+     "payroll_items": "central",
+     "payroll_rule": "proportional"
+    }
+   },
+   {
+    "id": "7",
+    "name": "workers' compensation pooled over 2019-2024, workers' compensation line only",
+    "options": {
+     "wc": "pooled_workers_compensation"
+    }
+   },
+   {
+    "id": "pension",
+    "name": "pension accrual at payable benefits, net of the tax on benefits (switch)",
+    "options": {
+     "pension4": "payable_net"
+    }
+   },
+   {
+    "id": "state",
+    "name": "state pricing, the lane's central package",
+    "options": {
+     "state_price": "central"
+    }
+   },
+   {
+    "id": "roads",
+    "name": "roads keyed by miles, fuel taxes and licences to match",
+    "options": {
+     "roads": "miles"
+    }
+   }
+  ],
+  "beside_items": [
+   {
+    "id": "8",
+    "name": "public transit at the riders' key (v3 item 8)",
+    "options": {
+     "transit": "state_deficit",
+     "transit_capital": true
+    }
+   },
+   {
+    "id": "10",
+    "name": "hospitals' uninsured use at 0.7x (v3 item 10)",
+    "options": {
+     "uninsured_use": "0.7x"
+    }
+   }
+  ],
+  "rules": {
+   "licence_rule": "index_on_miles",
+   "sales_rule": "multiplicative",
+   "excise_rule": "gasoline_at_miles",
+   "freight_key": "set",
+   "benefit_tax_rule": "fixed",
+   "accrual_receipts": "set",
+   "part_a_rule": "fixed"
+  },
+  "payload": {
+   "file": "derived/corrections.json",
+   "from": "main_case_candidate_v4_2026_09_29/derived/corrections_v4.json",
+   "from_sha256": "406b4148c4645c6d2319993850d8e55bb5abd02b3a39ed32ed2bf1b8d4672238",
+   "stamped": [
+    "source",
+    "adopted",
+    "decision",
+    "case",
+    "status"
+   ],
+   "builder": "main_case_candidate_v4_2026_09_29/payload.cjs build()"
+  },
+  "correction_lines": {
+   "state_price_public_order_safety": {
+    "parent": "public_order_safety",
+    "follows_long_run_profiles": false
+   },
+   "state_price_health_services": {
+    "parent": "health_services",
+    "follows_long_run_profiles": false
+   },
+   "state_price_recreation_culture": {
+    "parent": "recreation_culture",
+    "follows_long_run_profiles": true
+   },
+   "roads_vmt_sl": {
+    "parent": "economic_affairs_services",
+    "follows_long_run_profiles": true
+   },
+   "roads_vmt_fed": {
+    "parent": "economic_affairs_services",
+    "follows_long_run_profiles": true
+   }
+  },
+  "enterprise_splits": [
+   "housing_enterprise_surplus"
+  ],
+  "items_alone_at_fixed_specifications_bn": {
+   "item_1": [
+    -1.6912303084279756,
+    -1.6912303084279756
+   ],
+   "item_2": [
+    1.6427194489999692,
+    1.1073890110000093
+   ],
+   "item_3": [
+    -3.20053533254827,
+    -3.096568163510142
+   ],
+   "item_4": [
+    -0.35286942484674455,
+    -0.5293041372701737
+   ],
+   "item_5": [
+    -27.186325527785925,
+    -27.186325527785925
+   ],
+   "item_6a": [
+    0.38655759584196403,
+    0.5271886469338369
+   ],
+   "item_7": [
+    -0.9482477443084463,
+    -0.7324104515721501
+   ],
+   "item_pension": [
+    77.2767184892561,
+    73.6064045171828
+   ],
+   "item_state": [
+    2.184555874223747,
+    2.2713312150892193
+   ],
+   "item_roads": [
+    1.9559713235907452,
+    3.693075279397135
+   ]
+  },
+  "history": "first_year_response, schools_case, adopted_2026_09_2x, each_addition's September 27 entries, change_at_fixed_specifications.sept27_case, enterprises.capital_lane_rows_before_rental_assistance and beside_the_account.congestion are the September 27 lane's values (its summary.json), re-derived through this package on its payload where they are bands",
+  "range_components_skipped": [
+   "transit_key"
+  ],
+  "inputs": {
+   "main_case_candidate_v4_2026_09_29/derived/summary.json": "2bfc6aad78fbe396bce4bdbdd80f387b959ebd34ec5e9d0c35332a345eafe3d1",
+   "main_case_candidate_v4_2026_09_29/derived/bands.csv": "0e263f4105563b38229e4209b746c595deb0beddd7998aa81e50820651fe22c0",
+   "main_case_candidate_v4_2026_09_29/derived/corrections_v4.json": "406b4148c4645c6d2319993850d8e55bb5abd02b3a39ed32ed2bf1b8d4672238",
+   "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json": "8a2dd8a81cebcd059b64d811f2bf7d384dd8f2759c8f5fd9e47ded0a56bcfd70",
+   "main_case_long_run_2026_09_27/derived/summary.json": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d",
+   "main_case_long_run_2026_09_27/derived/corrections.json": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea",
+   "main_case_schools_full_2026_09_26/derived/summary.json": "864246c1da7c988040d76ed60816072036b5a89c37b8fd792b68f22a601c5ada",
+   "main_case_schools_full_2026_09_26/derived/main_case_bands.csv": "396ea0bf0b59f3e388817a7d4f271524577f01a402bc82c5118b91bd28de1768",
+   "assumption_explorer_2026_09_21/engine.js": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491",
+   "assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd"
+  }
+ },
+ "v5": {
+  "adopted": "2026-10-05, the operator (whole people, arm b), through the parent's brief",
+  "lineage_lane": "main_case_lineage_2026_10_05",
+  "lineage": {
+   "lane": "main_case_lineage_2026_10_05",
+   "payload": "main_case_lineage_2026_10_05/derived/lineage_payload.json",
+   "builds_on": "main_case_2026_09_29/derived/corrections.json",
+   "arm": "b",
+   "source_arm": "b_one_step",
+   "rho": 0.5,
+   "generation": "G3plus",
+   "counts": {
+    "added": 3039719.593185237,
+    "at_g3_rate": 1944891.7263696424,
+    "later_losses": 1094827.8668155947,
+    "lineage_population": 42752212.92438524,
+    "account_union": 39712493.3312,
+    "identified_g3plus": 14342574.606276
+   },
+   "c3": {
+    "value": 0.5567,
+    "se": 0.2457,
+    "label": "pooled with CPS monthly 1994-2026 (central)",
+    "measure": "ba_plus",
+    "source": "generation_carryover_2026_09_27/summarize.py SPLIT_C3 (imported)",
+    "override": false
+   },
+   "members": {
+    "g3plus": 1956998.3691152572,
+    "white": 1082721.22406998,
+    "rule": "later losses priced as identified G3+ members; G3-rate attriters at (1 - C3) G3+ member + C3 third-plus non-Hispanic white at the G3+'s ages: m_G = later + (1 - C3) x at_g3_rate G3+ members, m_W = C3 x at_g3_rate whites"
+   },
+   "frame_factor": 0.9971889122261052,
+   "s": {
+    "v4": 0.12024478903339636,
+    "v5": 0.12918222328408055
+   },
+   "k_metro": 1.0770924847748014,
+   "edits": {
+    "first": 416,
+    "count": 336,
+    "row8_edit_index": 751,
+    "row8_edit_bn": -0.00798742966671706
+   },
+   "production": "the union's grid plus the added G3+ members' P and F (whites carry none)",
+   "responses_changed": [
+    "general_government",
+    "row8_factor",
+    "economic_affairs_services",
+    "recreation_culture",
+    "roads_vmt_sl",
+    "roads_vmt_fed",
+    "state_price_recreation_culture",
+    "modeled_owner_property",
+    "tenant_occupied_property",
+    "capital_return long_run_subfunction values"
+   ],
+   "g3plus_model": "generation_account_2026_09_24/derived/model_G3plus.json + generation_corrections_sept29.json payloads.a.G3plus",
+   "white": "main_case_lineage_2026_10_05/derived/white_lines.json (g3plus_ages, accrual)"
+  },
+  "per_member_usd": {
+   "set": [
+    9129.210665476625,
+    10788.754386439705
+   ],
+   "cash": [
+    7189.718499523264,
+    8968.173245319535
+   ],
+   "population": 42752212.92438524
+  },
+  "change_from_the_september_29_case_bn": [
+   18.879358413138647,
+   26.402166093830004
+  ],
+  "lineage_by_variant_row_bn": {
+   "uncorrected_at_adopted_responses": [
+    -0.19352083510119655,
+    -0.20595020490776506
+   ],
+   "without_capital_return": [
+    16.15421523987027,
+    21.714218370701758
+   ],
+   "school_within_district": [
+    16.72661336940928,
+    24.188884834120074
+   ],
+   "school_within_district_as_response": [
+    16.539745134035797,
+    24.00451140251323
+   ],
+   "adopted": [
+    18.879358202025344,
+    26.402124717965535
+   ],
+   "cash_set": [
+    12.67527615801015,
+    21.59175212667577
+   ],
+   "enterprises_out_option_a": [
+    17.656782092647006,
+    24.745540491208544
+   ],
+   "enterprise_receipt_at_model_json_share": [
+    18.879343448234977,
+    26.402161012847444
+   ],
+   "capital_return_at_7pct": [
+    25.692265607413105,
+    32.65269984765064
+   ],
+   "rental_assistance_at_0": [
+    18.528712324771163,
+    26.051578840711386
+   ],
+   "general_government_fixed": [
+    16.536303833160048,
+    22.971421217801606
+   ],
+   "k12_capital_at_pupil_share": [
+    18.168153325021706,
+    25.17771425357347
+   ],
+   "audit_row3_instead_of_cbo_income_tax": [
+    18.879342161301906,
+    26.402125284144574
+   ],
+   "no_fill_in_correction": [
+    18.87954684960806,
+    26.402229381199675
+   ]
+  },
+  "payload": {
+   "file": "derived/corrections.json",
+   "cash": "derived/corrections_cash.json",
+   "stamped": [
+    "source",
+    "adopted",
+    "decision",
+    "case",
+    "status",
+    "lineage"
+   ],
+   "from": {
+    "set": [
+     "main_case_2026_09_29/derived/corrections.json",
+     "main_case_lineage_2026_10_05/derived/lineage_payload.json"
+    ],
+    "cash": [
+     "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
+     "main_case_lineage_2026_10_05/derived/lineage_payload_cash.json"
+    ]
+   },
+   "merged_by": "main_case_2026_10_05/package.cjs merge(), adoptLineage()"
+  },
+  "variants_rule": "an option that changes the union's data leaves the added people's amounts at the case's; an option that changes a line's national total scales the added people's amount on it, and a part split off a line takes that line's key (package.cjs followNationals: item 8's transit split and the property range's case-scaled tenant national, gated); candidate v4's route (item options) keys the road capital on the evaluation, as the case does (package.cjs viaCandidate, gated equal to the case at its own options)",
+  "group_size_rule": "a specification's reading moves as package.cjs moveSpec() sets: the case's v4 reading becomes v5's; 0 and 1 stay; general government without finite removal stays; the long-run lines, road lines and recreation's state price are re-derived for the specification's long-run variant at v5's subfunction responses; any other reading moves by the case's change (first order)",
+  "history": "first_year_response, schools_case, sept27_case, sept29_case, sept29_cash_set, adopted_2026_09_2x, the three September 27 additions, each_addition's earlier entries, change_at_fixed_specifications.sept29_case, the schools_case rows of the other profiles, enterprises.capital_lane_rows_before_rental_assistance, enterprises.interest, beside_the_account.congestion and the v4 block are the September 29 lane's values (its summary.json and main_case_bands.csv)",
+  "inputs": {
+   "main_case_2026_09_29/derived/summary.json": "c76c4d7135f5fccf9e60a064149fb94b62a561267b41d10c1c3b1bba021b7d71",
+   "main_case_2026_09_29/derived/main_case_bands.csv": "834fcb017c95bcc37768123abc39d78af30f4aeede487df13c257a0eda4dd46f",
+   "main_case_2026_09_29/derived/per_spec.csv": "562d681b55054394bfd8281314ee7861c855fe79cf6c2592a59b1428e82b249f",
+   "main_case_2026_09_29/derived/corrections.json": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe",
+   "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json": "8a2dd8a81cebcd059b64d811f2bf7d384dd8f2759c8f5fd9e47ded0a56bcfd70",
+   "main_case_lineage_2026_10_05/derived/lineage_payload.json": "b359ac7ab71e3d1e899900a114a2f4709cc8e853f80018dff6c3952140c290b3",
+   "main_case_lineage_2026_10_05/derived/lineage_payload_cash.json": "5d36a5584056335acb5051d9c5e7204423880cb2b621c928b67ed65957c864d5",
+   "main_case_lineage_2026_10_05/derived/population.json": "3d4ba08461260a8419ca5c7933e3c69d9ee2dd3bea1c2d3b238addacb0159468",
+   "main_case_lineage_2026_10_05/derived/v5_summary.json": "4dd9340bbcb0ca42984601301ab856246cced7b899379680e1008a0cf407d89a",
+   "assumption_explorer_2026_09_21/engine.js": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491",
+   "assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd"
+  }
+ }
+}

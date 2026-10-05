@@ -1,0 +1,68 @@
+{
+ "gate": "G3: with the lineage off (the September 29 payload as the case), this package reproduces the September 29 lane's derived outputs byte for byte",
+ "pass": true,
+ "method": "the September 29 lane's main_case.cjs and sign_reversal.cjs, unmodified, each run in a child process with require(\"./package.cjs\") resolved to package.cjs forCase(SEPT29, SEPT29.correctionsPayload()) with HERE that lane's directory; the scripts' fs sends their writes into that lane's derived/ to a temporary directory and stops any other write; every other require resolves as in that lane",
+ "not_compared": [
+  "main_case_2026_09_29/derived/api_check.json (that lane's own gate record; its script is not run here)",
+  "main_case_2026_09_29/derived/contract.json (that lane's own gate record; its script is not run here)",
+  "main_case_2026_09_29/derived/generality.json (that lane's own gate record; its script is not run here)"
+ ],
+ "payload": {
+  "file": "main_case_2026_09_29/derived/corrections.json",
+  "sha256": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe"
+ },
+ "runs": [
+  {
+   "script": "main_case_2026_09_29/main_case.cjs",
+   "exit_code": 0,
+   "gates_passed": 53,
+   "gates_failed": 0,
+   "all_gates_passed": true
+  },
+  {
+   "script": "main_case_2026_09_29/sign_reversal.cjs",
+   "exit_code": 0,
+   "gates_passed": 12,
+   "gates_failed": 0,
+   "all_gates_passed": true
+  }
+ ],
+ "files": [
+  {
+   "file": "components.csv",
+   "identical": true,
+   "bytes": 2645,
+   "sha256": "bea5fa3bd2e2c2c39afcd54b73f815fceebfe91521f71b7a58bc867675e87d96"
+  },
+  {
+   "file": "corrections.json",
+   "identical": true,
+   "bytes": 317957,
+   "sha256": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe"
+  },
+  {
+   "file": "main_case_bands.csv",
+   "identical": true,
+   "bytes": 2050,
+   "sha256": "834fcb017c95bcc37768123abc39d78af30f4aeede487df13c257a0eda4dd46f"
+  },
+  {
+   "file": "per_spec.csv",
+   "identical": true,
+   "bytes": 105260,
+   "sha256": "562d681b55054394bfd8281314ee7861c855fe79cf6c2592a59b1428e82b249f"
+  },
+  {
+   "file": "sign_reversal.csv",
+   "identical": true,
+   "bytes": 627,
+   "sha256": "199042021281eb4542d82b05066f09b1e1bcd1c160957d16a947c8ecf36f7fa4"
+  },
+  {
+   "file": "summary.json",
+   "identical": true,
+   "bytes": 66220,
+   "sha256": "c76c4d7135f5fccf9e60a064149fb94b62a561267b41d10c1c3b1bba021b7d71"
+  }
+ ]
+}
