@@ -1,0 +1,13 @@
+{
+ "bootstrap": "cluster = CPSID household (both ASEC years), stratum = first year; clusters with analysis rows",
+ "bootstrap_reps": 400,
+ "cpi": "infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/derived/cpi_u_annual.csv",
+ "dedupe_g3anc_dropped": 2001,
+ "dedupe_rows_dropped": 76906,
+ "rows_analysis": 283599,
+ "rows_extract": 5856362,
+ "seed": 20261005,
+ "sha256": "59e1c80d8738f8f3938b235db66f1656bce480b3cee276fcb1ed6ba748822e7e",
+ "source": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/asec_pooled.csv.gz",
+ "weights": "ASECWT; 2014 halved (3/8 and 5/8 files each sum to the population)"
+}
