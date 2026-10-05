@@ -80,8 +80,19 @@ main_housing_as_cash). The new lines' federal shares are in v4_shares(); the bri
 The whole-budget rules take the back-cast's concept for the case, the set (its derived/sept29/, backcast_case), less
 its parts that are not cash, the accrual among them (cash_whole): the cash set carried back line by line.
 
+oct05 is the main case adopted 2026-10-05, v5 (main_case_2026_10_05; OCT05 names it as SEPT29 does), and writes
+derived/oct05/: the September 29 case plus the descendants of Mexican immigrants who no longer report Mexican origin,
+3.04M people counted whole (the lineage, main_case_lineage_2026_10_05 arm b). Its two payloads are September 29's
+with the lineage's cell edits, production and group-size responses merged in (v5_parts gates that). The lineage's
+lines split by government as the union's lines do; its part of the constant line splits as the union's parts in
+proportion, and audit row 8's change at the larger group as row 8 (constant_parts). The programme rules carry the
+lineage on the identified third-plus generation's path, as the back-cast does (lineage_programme); per member is the
+lineage's 42.75M and the per-head shares are the case's population key, meta.responses.general_government.s. One
+more bridge, from September 29 (lineage_bridge): the union's response move, then the added people.
+
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py
+  ... debt_legacy.py --case oct05                           # the main case of 2026-10-05 -> derived/oct05/
   ... debt_legacy.py --case sept29                          # the main case of 2026-09-29 -> derived/sept29/
   ... debt_legacy.py --case sept26_schools --out-dir <dir>   # the schools case (sept26, sept24, sept23 likewise)
 """
@@ -352,6 +363,23 @@ LATER_CASES["sept29"] = Case(SEPT29["lane"],
                              "long-run property taxes, payroll compliance, workers' compensation pooled, the pension "
                              "accrual at payable benefits, state pricing and roads keyed by miles",
                              dict(LATER_CASES["sept27"].profiles), SEPT29["payloads"])
+# The main case adopted on 2026-10-05 (v5), in one place as SEPT29: its lane, which writes both payloads and the
+# September 27 output contract; the payload consumer (candidate v4's reads any payload; the v5 lane gates it on its
+# own); the lineage lane's population file (the count, gated against meta.lineage.counts); and the adopted bands as
+# the decision printed them ($bn to 4 decimals, at the end specifications).
+OCT05 = dict(lane="main_case_2026_10_05",
+             payloads={"set": "main_case_2026_10_05/derived/corrections.json",
+                       "cash": "main_case_2026_10_05/derived/corrections_cash.json"},
+             stamps=("source", "adopted", "decision", "case", "status"),
+             contract=True,
+             consumer=SEPT29["consumer"],
+             lineage=FISCAL / "main_case_lineage_2026_10_05/derived/population.json",
+             oracle=dict(set=(390.2940, 461.2431), cash=(307.3764, 383.4093), ends=(48, 11)))
+LATER_CASES["oct05"] = Case(OCT05["lane"],
+                            "main case adopted 2026-10-05 (v5): the September 29 case plus the descendants of Mexican "
+                            "immigrants who no longer report Mexican origin (the lineage, 3.04M people counted whole)",
+                            dict(LATER_CASES["sept27"].profiles), OCT05["payloads"])
+CASE_CONFIG = {"sept29": SEPT29, "oct05": OCT05}
 LONG_RUN_LINES = ("economic_affairs_services", "recreation_culture")
 LONG_RUN_FUNCTIONS = {"economic_affairs_services": "econ", "recreation_culture": "recreation"}
 # Capped and rationed programs: without the group their slots go to eligible households who now go
@@ -371,7 +399,16 @@ V4_DISPLACED_PARTS = ("v4_housing_subsidies", "v4_housing_enterprise_surplus")
 V4_ACCRUAL_PARTS = {"social_security": ("v4_social_security_accrual", "v4_social_security_cash"),
                     "medicare": ("v4_medicare_part_a_accrual", "v4_medicare_cash")}
 V4_BENEFIT_TAX = ("federal_income_tax", "v4_federal_income_tax")    # (accrual line, the part that carries it)
-R_VALUES = FISCAL / "finite_response_2026_09_26/derived/r_values.json"
+# October 5: the back-cast's lineage parts (v5_, README v5 case) that leave the set's concept for its cash part, as the
+# v4 parts do: the lineage's rental assistance, public housing and LIHEAP (its own part, so the base's LIHEAP share
+# leaves it out); its accrual less the benefits each accrual line no longer charges; its tax on benefits inside
+# v5_federal_income_tax. The lineage's identified third-plus path is the back-cast's input (cps_g3plus_path.py).
+V5_DISPLACED_PARTS = ("v5_housing_subsidies", "v5_housing_enterprise_surplus", "v5_energy_assistance")
+V5_ACCRUAL_PARTS = {"social_security": ("v5_social_security_accrual", "v5_social_security_cash"),
+                    "medicare": ("v5_medicare_part_a_accrual", "v5_medicare_cash")}
+V5_BENEFIT_TAX_PART = "v5_federal_income_tax"
+G3PLUS_PATH = BACKCAST / "inputs/cps_g3plus_path.csv"
+R_VALUES =FISCAL / "finite_response_2026_09_26/derived/r_values.json"
 CK_PAYLOADS = FISCAL / "consumption_key_2026_09_24/derived/payloads.json"
 COMPONENTS: dict = {}                     # the running case's payload by component (set in main())
 SHELTER_PARTS = FISCAL / "migrant_shelter_costs_2026_09_23/derived/account_keying_parts.csv"
@@ -779,6 +816,8 @@ def frame_corners(profile: str, model: dict, responses: dict | None = None, case
                         shift={}, keys={"public_order_safety": "use", MEDICAID: uc}, model=model))
         if case is not None and LATER_CASES[case].profiles:
             out[-1].update(later_fields(meta, long_run, out[-1]["gg_end"], model))
+            if meta.get("lineage"):         # October 5: the constant line carries the lineage's two edits
+                out[-1]["lineage_constants"] = ("row8", "constants")
     return out
 
 
@@ -1415,6 +1454,22 @@ def constant_parts(corner: dict, conv: str, shares: dict, extras: dict, base_sha
         medicaid = name == "elder_care_medicaid"
         parts.append(dict(part="care", sub=name, amount=comp["care"]["by"][a] * v / sum(channels.values()),
                           share=phi[MEDICAID] if medicaid else extras["labour_share"], carry=MEDICAID if medicaid else None))
+    lineage = corner.get("lineage_constants") or ()
+    if lineage:
+        # October 5 (the corner's model carries the lineage's constant-line edits, COMPONENTS["lineage"]): audit row 8's
+        # change at the larger group splits and carries as row 8 (a row8_finite part); the added people's part of the
+        # line is the union's parts in proportion, each with its part's share and series [APPROX: the generation
+        # account splits the line by one ratio per generation, not part by part].
+        lc = COMPONENTS.get("lineage")
+        if not lc:
+            raise SystemExit("[BLOCKED] a corner carries the lineage's constant-line edits, but COMPONENTS has none")
+        union, total = list(parts), sum(p["amount"] for p in parts)
+        if "row8" in lineage:
+            parts.append(dict(union[0], part="row8_finite", component="v5_union_response:row8", amount=lc["row8"][a],
+                              lineage="row8"))
+        if "constants" in lineage:
+            parts += [dict(p, component="v5_lineage:constants", amount=lc["constants"][a] * p["amount"] / total,
+                           lineage="constants") for p in union]
     return parts
 
 
@@ -1463,9 +1518,10 @@ def correction_split(corner: dict, shares: pd.DataFrame, extras: dict, conv: str
         elif line == ENTERPRISE_RECEIPT and "_enterprise_federal_bn" in phi.index:
             # September 29: the line's federal part is its key times t32(23). A cell edit moves the key on the line as
             # the model has it (v4_components gates that every cell edit precedes the scale edit); the national-scale
-            # edit removes public housing's state-local deficit and moves no federal dollars.
+            # edit removes public housing's state-local deficit and moves no federal dollars. October 5: the lineage's
+            # edits follow the scale edit (post_scale), so they move the key on the line after the split.
             share = 0.0 if e.get("scale") else phi["_enterprise_federal_bn"] / next(
-                x for x in MODEL["receipts"]["lines"] if x["id"] == line)["national_bn"]
+                x for x in (model if e.get("post_scale") else MODEL)["receipts"]["lines"] if x["id"] == line)["national_bn"]
         else:
             share = phi[line]
         rows.append(dict(component=e["component"], side=e["side"], line=line,
@@ -1687,7 +1743,8 @@ def programme_federal(hist: History, corner: dict, end: str, conv: str, shares: 
     for y in (2020, 2021, 2022):
         trend[y] = idx[2019] + (idx[2023] - idx[2019]) * (y - 2019) / 4
     key = t.amount_bn[rtc] / t.national_bn[rtc]
-    rtc_excess = t.responsive_bn[rtc] * (idx - trend) * hist.share * (1 - TARGET_M / RESIDENTS_M / key)
+    per_head = corner.get("per_head", TARGET_M / RESIDENTS_M)     # October 5: the case's population key (main())
+    rtc_excess = t.responsive_bn[rtc] * (idx - trend) * hist.share * (1 - per_head / key)
     # Audit: the September 20 method carries receipts by Table 3.1 group, not by own-government series.
     rec = t[t.side == "receipt"]
     rec = rec[~rec.index.isin(corner.get("capped", ()))]
@@ -1700,11 +1757,43 @@ def programme_federal(hist: History, corner: dict, end: str, conv: str, shares: 
                             receipts_grouped=receipts_grouped, rtc_excess=rtc_excess,
                             rtc_excess_fed=rtc_excess * phi[rtc], population=population,
                             population_fed=population_fed, population_grouped=population_grouped))
+    programme_gaps(out, hist)
+    out.attrs["rtc_key_share"] = float(key)
+    return out
+
+
+PROGRAMME_FLOWS = ("spending", "spending_fed", "receipts", "receipts_fed", "induced", "induced_fed", "receipts_grouped",
+                   "rtc_excess", "rtc_excess_fed", "population", "population_fed", "population_grouped")
+
+
+def programme_gaps(out: pd.DataFrame, hist: History) -> None:
+    """The programme and income rules' gaps from programme_federal's flows, in place."""
     for rule, scale in (("programme", 1.0), ("income", hist.income)):
         out[f"gap_{rule}"] = out.spending - out.receipts * scale - out.population - out.induced
         out[f"federal_{rule}"] = out.spending_fed - out.receipts_fed * scale - out.population_fed - out.induced_fed
         out[f"gap_{rule}_grouped"] = out.spending - out.receipts_grouped * scale - out.population_grouped - out.induced
-    out.attrs["rtc_key_share"] = float(key)
+
+
+def lineage_programme(hist: History, hist_l: History, corner: dict, twin: dict, end: str, conv: str, shares: dict,
+                      extras: dict, jf: dict, ucf: dict, parts: list, **kw) -> pd.DataFrame:
+    """October 5: the programme rules with the lineage on its own path. The union's lines carry as programme_federal
+    carries them, on the twin (the union at the case: union_model); the lineage's, the case less its twin at the same
+    specification, carry on the identified third-plus generation's path (hist_l: its population share, and its count
+    where programme_federal follows the group's size), as the back-cast carries the lineage. Every flow is linear in the
+    lines' amounts at fixed responses and shares (the pandemic credits' per-head part too, at each corner's per_head),
+    so the lineage's part is the rule on hist_l at the case less the rule on hist_l at the twin. Gate: in 2024, where
+    every path is 1, the result is programme_federal at the case (1e-9). [ASSUMPTION] The lineage's relative income is
+    the union's (the income rule scales its receipts by hist.income)."""
+    twin_parts = [p for p in parts if p.get("lineage") != "constants"]
+    base = programme_federal(hist, twin, end, conv, shares, extras, jf, ucf, twin_parts, **kw)
+    full_l = programme_federal(hist_l, corner, end, conv, shares, extras, jf, ucf, parts, **kw)
+    twin_l = programme_federal(hist_l, twin, end, conv, shares, extras, jf, ucf, twin_parts, **kw)
+    out = base[list(PROGRAMME_FLOWS)] + (full_l[list(PROGRAMME_FLOWS)] - twin_l[list(PROGRAMME_FLOWS)])
+    programme_gaps(out, hist)
+    whole = programme_federal(hist, corner, end, conv, shares, extras, jf, ucf, parts, **kw)
+    if (out.loc[LAST] - whole.loc[LAST, out.columns]).abs().max() > 1e-9:
+        raise SystemExit(f"[BLOCKED] {end}/{conv}: the union and the lineage do not add to the case in 2024")
+    out.attrs["rtc_key_share"] = whole.attrs["rtc_key_share"]
     return out
 
 
@@ -1869,6 +1958,25 @@ def finite_components(responses: dict) -> tuple[float, float]:
     return r_tax, r_sl
 
 
+def later_state(case: str, wb: Workbook) -> dict:
+    """A later case's federal shares at its own responses: general government's low end from its finite-removal
+    responses (finite_components), the September 27 additions (case_shares, in place, where the case has profiles of
+    its own) and, for a case with two payloads, a copy with the lines September 29 adds (v4_shares, run_shares)."""
+    responses = case_payload(case)["meta"]["responses"]
+    gg_components = finite_components(responses)
+    shares, extras = federal_shares(wb, Grants(), *gg_components)
+    added_shares = None
+    if LATER_CASES[case].profiles is not None:
+        added_shares = dict(case_shares(shares, wb), subfunction_levels_2024=subfunction_levels(responses, extras))
+    run_shares, v4_rules, cash_meta = shares, None, None
+    if LATER_CASES[case].payloads is not None:
+        cash_payload = case_payload(case, "cash")
+        cash_meta = cash_payload["meta"]
+        run_shares, v4_rules = v4_shares(shares, extras, wb, apply_corrections(MODEL, cash_payload), cash_meta)
+    return dict(responses=responses, gg_components=gg_components, shares=shares, extras=extras,
+                added_shares=added_shares, run_shares=run_shares, v4_rules=v4_rules, cash_meta=cash_meta)
+
+
 def case_file(case: str, name: str) -> Path:
     return FISCAL / LATER_CASES[case][0] / "derived" / name
 
@@ -1885,16 +1993,20 @@ def case_payload(case: str, which: str = "set") -> dict:
     except the enterprise receipt's re-key edits a case records in meta.enterprise_receipt_rekey
     (rekey_edits), which follow them. A case with two payloads (September 29) is gated by v4_parts instead:
     the previous case's payload comes first, unchanged; and its set is the candidate's (SEPT29["candidate_set"])
-    in everything but the adoption's meta stamps."""
+    in everything but the adoption's meta stamps. A case with the lineage (October 5) is gated by v5_parts."""
     payload = json.loads(payload_file(case, which).read_text())
     if LATER_CASES[case].payloads:
-        v4_parts(case, payload)
-        if which == "set" and SEPT29.get("candidate_set"):
-            strip = lambda p: dict(p, meta={k: v for k, v in p["meta"].items() if k not in SEPT29["stamps"]})  # noqa: E731
-            candidate = json.loads((FISCAL / SEPT29["candidate_set"]).read_text())
+        conf = CASE_CONFIG[case]
+        if conf.get("lineage"):
+            v5_parts(case, payload, which)
+        else:
+            v4_parts(case, payload)
+        if which == "set" and conf.get("candidate_set"):
+            strip = lambda p: dict(p, meta={k: v for k, v in p["meta"].items() if k not in conf["stamps"]})  # noqa: E731
+            candidate = json.loads((FISCAL / conf["candidate_set"]).read_text())
             if strip(payload) != strip(candidate) or not payload["meta"].get("adopted"):
-                raise SystemExit(f"[BLOCKED] {payload_file(case).name} is not {SEPT29['candidate_set']} with the "
-                                 f"adoption's stamps {SEPT29['stamps']}")
+                raise SystemExit(f"[BLOCKED] {payload_file(case).name} is not {conf['candidate_set']} with the "
+                                 f"adoption's stamps {conf['stamps']}")
         return payload
     if payload["meta"]["responses"] != json.loads(case_file(case, "summary.json").read_text())["responses"]:
         raise SystemExit(f"[BLOCKED] the payload's responses differ from {LATER_CASES[case][0]} summary.json")
@@ -1928,10 +2040,99 @@ def v4_parts(case: str, payload: dict) -> dict:
     scale = [e for e in edits if "national_bn" in e]
     if any(("by" in e) == ("national_bn" in e) for e in edits) or not payload.get("production"):
         raise SystemExit("[BLOCKED] the September 29 edits are neither cell edits nor national-scale edits, or no grid")
-    if SEPT29["contract"] and payload["meta"]["responses"] != json.loads(case_file(case, "summary.json").read_text())["responses"]:
+    if CASE_CONFIG[case]["contract"] and \
+            payload["meta"]["responses"] != json.loads(case_file(case, "summary.json").read_text())["responses"]:
         raise SystemExit(f"[BLOCKED] the payload's responses differ from {LATER_CASES[case][0]} summary.json")
     return dict(previous=prev, lines=lines, receipt_lines=receipt_lines, edits=edits, scale_edits=scale,
                 counts=dict(previous_lines=n_lines, previous_edits=n_edits, edits=len(edits), scale_edits=len(scale)))
+
+
+# October 5: the payload's meta keys that may differ from September 29's (the adoption's stamps, the moved group-size
+# responses, the capital return's long-run values, and the lineage).
+V5_META_KEYS = ("source", "adopted", "decision", "case", "status", "responses", "capital_return", "lineage")
+
+
+def v5_parts(case: str, payload: dict, which: str = "set") -> dict:
+    """The lineage a v5 payload (October 5) adds to the previous case's payload of the same kind (the set or the cash
+    set): main_case_2026_10_05's merge of the lineage lane's addition. Gates: the previous payload's lines, receipt
+    lines and edits come first, unchanged, and no line is added; the addition is meta.lineage.edits.count cell edits
+    from meta.lineage.edits.first, the last of them, at row8_edit_index, on the constant line at row8_edit_bn in both
+    allocations (audit row 8's change at the larger group), and one other on the constant line (the added people's part
+    of it); the production grid keeps the previous dimensions and standard errors; meta differs
+    only in V5_META_KEYS; the payload's responses are the lane's summary.json's; the counts are the lineage lane's
+    population file's arm, and the lineage is the union plus the added people (1e-6 people)."""
+    prev = case_payload(previous_case(case), which)
+    lin = payload["meta"].get("lineage") or {}
+    e = lin.get("edits") or {}
+    first, count, at = e.get("first"), e.get("count"), e.get("row8_edit_index")
+    edits = payload["edits"]
+    if (payload["lines"], payload.get("receipt_lines")) != (prev["lines"], prev.get("receipt_lines")) \
+            or first != len(prev["edits"]) or edits[:first] != prev["edits"] or len(edits) != first + count \
+            or at != len(edits) - 1:
+        raise SystemExit(f"[BLOCKED] {payload_file(case, which).name}: the previous case's payload does not come first, "
+                         "or the lineage's edits are not meta.lineage.edits")
+    added = edits[first:]
+    constants = [i for i, x in enumerate(added) if x["line"] == "lane_constants"]
+    row8 = edits[at]
+    if any("by" not in x or "national_bn" in x for x in added) or len(constants) != 2 or first + constants[1] != at \
+            or row8["by"] != {"personal": e["row8_edit_bn"], "shared": e["row8_edit_bn"]}:
+        raise SystemExit("[BLOCKED] the lineage's edits are not cell edits with two on the constant line, row 8's last")
+    grid, grid0 = payload["production"], prev["production"]
+    if not same_json(grid["dims"], grid0["dims"]) or grid["sampling_se_bn"] != grid0["sampling_se_bn"] or \
+            any(len(grid[k]) != len(grid0[k]) for k in ("private_wtp_bn", "induced_receipts_bn")):
+        raise SystemExit("[BLOCKED] the lineage's production grid is not on the previous grid's dimensions")
+    moved = {k for k in set(payload["meta"]) | set(prev["meta"]) if payload["meta"].get(k) != prev["meta"].get(k)}
+    if moved - set(V5_META_KEYS) or not payload["meta"].get("adopted"):
+        raise SystemExit(f"[BLOCKED] the payload's meta moves {sorted(moved - set(V5_META_KEYS))} beyond {V5_META_KEYS}")
+    if CASE_CONFIG[case]["contract"] and \
+            payload["meta"]["responses"] != json.loads(case_file(case, "summary.json").read_text())["responses"]:
+        raise SystemExit(f"[BLOCKED] the payload's responses differ from {LATER_CASES[case][0]} summary.json")
+    counts = lin["counts"]
+    arm = json.loads(CASE_CONFIG[case]["lineage"].read_text())["arms"][lin["arm"]]
+    if abs(counts["lineage_population"] - counts["account_union"] - counts["added"]) > 1e-6 or \
+            abs(arm["added"] - counts["added"]) > 1e-6 or abs(arm["population"] - counts["lineage_population"]) > 1e-6 \
+            or arm["s"] != payload["meta"]["responses"]["general_government"]["s"]:
+        raise SystemExit("[BLOCKED] meta.lineage: the lineage is not the union plus the added people of its arm, or the "
+                         "group-size s is not the arm's")
+    return dict(previous=prev, edits=added, row8=row8["by"], constants=added[constants[0]]["by"], counts=counts,
+                first=first, row8_index=at)
+
+
+def v5_components(case: str, payload: dict, which: str = "cash") -> list[dict]:
+    """A v5 payload's lineage as component edits for correction_split: every cell edit as it is, component v5_lineage
+    (the added people, priced as identified G3+ members and as third-plus whites, merged cell by cell in the payload),
+    and audit row 8's change, v5_union_response (the union's response move; correction_split leaves both constant-line
+    edits to constant_parts). Gate: the previous case's model plus the components gives the corrected model, cell by
+    cell (1e-9)."""
+    parts = v5_parts(case, payload, which)
+    out = [dict(component="v5_union_response" if i == len(parts["edits"]) - 1 else "v5_lineage", post_scale=True, **x)
+           for i, x in enumerate(parts["edits"])]
+    rebuilt = apply_corrections(MODEL, parts["previous"])
+    got = apply_corrections(MODEL, payload)
+    worst = 0.0
+    net = cell_net(out)
+    for side, cells_of in (("receipts", "cells"), ("spending", "keys")):
+        lines0 = {x["id"]: x for x in rebuilt[side]["lines"]}
+        for line in got[side]["lines"]:
+            for k, cell in line[cells_of].items():
+                add = net.get(("receipt" if side == "receipts" else "spending", line["id"], k), {})
+                for a in ("personal", "shared"):
+                    want = lines0[line["id"]][cells_of][k][a]["target_bn"] + add.get(a, 0.0)
+                    worst = max(worst, abs(cell[a]["target_bn"] - want))
+    if worst > 1e-9:
+        raise SystemExit(f"[BLOCKED] the lineage's components do not rebuild the corrected model ({worst:.2e})")
+    return out
+
+
+def union_model(case: str, which: str) -> dict:
+    """October 5: the union at the case, the previous case's payload (the same kind) plus audit row 8's change at the
+    larger group, without the added people's cell edits and production. At the case's responses it is the lineage
+    lane's union response move (v4's model with row 8's change at v5's group-size responses); a corner of the case less
+    its twin on this model is the added people."""
+    parts = v5_parts(case, case_payload(case, which), which)
+    prev = parts["previous"]
+    return apply_corrections(MODEL, dict(prev, edits=prev["edits"] + [
+        dict(side="spending", line="lane_constants", key="k", by=dict(parts["row8"]))]))
 
 
 def v4_components(case: str, payload: dict) -> list[dict]:
@@ -2133,7 +2334,7 @@ process.stdout.write(JSON.stringify(C.evaluateAll(payload).map((r) => ({ spec: r
 
 
 def engine_parity(case: str, payloads: dict[str, dict], responses: dict) -> dict:
-    """The port against engine.js on each payload (September 29): the payload consumer (SEPT29["consumer"], which
+    """The port against engine.js on each payload (September 29 on): the payload consumer (CASE_CONFIG's, which
     loads only engine.js, model.json and the payload) evaluates the case's 64 specifications; the port's corners
     of the main profile must be the same specifications, in order, and give the same cost, engine cost, P and F,
     capital return by component, and every line's amount and response (1e-9). Returns each payload's band, its
@@ -2141,7 +2342,7 @@ def engine_parity(case: str, payloads: dict[str, dict], responses: dict) -> dict
     prof = main_profile(case)
     out = {}
     for name, payload in payloads.items():
-        run = subprocess.run(["node", "-e", PARITY_JS, str(SEPT29["consumer"]), str(payload_file(case, name))],
+        run = subprocess.run(["node", "-e", PARITY_JS, str(CASE_CONFIG[case]["consumer"]), str(payload_file(case, name))],
                              capture_output=True, text=True)
         if run.returncode != 0:
             raise SystemExit(f"[BLOCKED] the payload consumer failed on {name}: {run.stderr.strip()[-500:]}")
@@ -2179,7 +2380,8 @@ def engine_parity(case: str, payloads: dict[str, dict], responses: dict) -> dict
             raise SystemExit(f"[BLOCKED] the port does not reproduce engine.js on {name}: {worst}")
         lo, hi = int(np.argmin(costs)), int(np.argmax(costs))
         out[name] = dict(band_bn=[costs[lo], costs[hi]], end_specifications=[lo, hi], specifications=len(costs),
-                         max_abs_diff=worst, tolerance=1e-9, consumer=str(SEPT29["consumer"].relative_to(ROOT)))
+                         max_abs_diff=worst, tolerance=1e-9,
+                         consumer=str(CASE_CONFIG[case]["consumer"].relative_to(ROOT)))
     return out
 
 
@@ -2260,7 +2462,7 @@ def case_split(case: str, shares: dict, extras: dict, jf: dict, ucf: dict) -> di
     framed = case != "sept23"
     responses, meta, gates = None, None, None
     v4 = case in LATER_CASES and LATER_CASES[case].payloads is not None
-    set_anchors, parity, v4_edits, corrected_cash, f_item = None, None, None, None, None
+    set_anchors, parity, v4_edits, corrected_cash, f_steps, union = None, None, None, None, None, None
     if case in LATER_CASES:
         payload = case_payload(case)
         responses, meta = payload["meta"]["responses"], payload["meta"]
@@ -2270,9 +2472,10 @@ def case_split(case: str, shares: dict, extras: dict, jf: dict, ucf: dict) -> di
             if cash_payload["meta"]["responses"] != responses:
                 raise SystemExit("[BLOCKED] the set's and the cash set's responses differ")
             corrected_cash = apply_corrections(MODEL, cash_payload)
-            main_summary = json.loads(case_file(case, "summary.json").read_text()) if SEPT29["contract"] else None
+            main_summary = json.loads(case_file(case, "summary.json").read_text()) if CASE_CONFIG[case]["contract"] \
+                else None
             parity = engine_parity(case, {"set": payload, "cash": cash_payload}, responses)
-            oracle = SEPT29["oracle"]
+            oracle = CASE_CONFIG[case]["oracle"]
             for name in ("set", "cash"):        # the adopted bands as printed (4 decimals)
                 if parity[name]["end_specifications"] != list(oracle["ends"]) or \
                         max(abs(g - w) for g, w in zip(parity[name]["band_bn"], oracle[name])) > 5e-5:
@@ -2282,8 +2485,21 @@ def case_split(case: str, shares: dict, extras: dict, jf: dict, ucf: dict) -> di
                     for prof in case_profiles(case)}
             anchors = {prof: b[0] for prof, b in both.items()}
             set_anchors = {prof: b[1] for prof, b in both.items()}
-            v4_edits = v4_components(case, cash_payload)
             f_item = "v4_" + "+".join(cash_payload["meta"]["candidate_v4"]["items_by_line"]["production:F"])
+            if CASE_CONFIG[case].get("lineage"):
+                # October 5: September 29's parts, then the lineage's; the grid's change in F in the same two steps.
+                # Each corner has a twin, the union at the case (union_model), for the bridge and the programme rules.
+                prev_cash = case_payload(previous_case(case), "cash")
+                v4_edits = v4_components(previous_case(case), prev_cash) + v5_components(case, cash_payload, "cash")
+                f_steps = [(f_item, apply_corrections(MODEL, prev_cash)), ("v5_lineage", corrected_cash)]
+                union_models = {"set": union_model(case, "set"), "cash": union_model(case, "cash")}
+                twin = lambda c, kind: dict(c, model=union_models[kind], lineage_constants=("row8",))  # noqa: E731
+                union = dict(models=union_models,
+                             anchors={p: {e: twin(c, "cash") for e, c in ends.items()} for p, ends in anchors.items()},
+                             set_anchors={p: {e: twin(c, "set") for e, c in ends.items()} for p, ends in set_anchors.items()})
+            else:
+                v4_edits = v4_components(case, cash_payload)
+                f_steps = [(f_item, corrected_cash)]
         else:
             main_summary = json.loads(case_file(case, "summary.json").read_text())
             anchors = {prof: case_anchors(prof, corrected, main_summary, responses, case, meta)
@@ -2338,13 +2554,19 @@ def case_split(case: str, shares: dict, extras: dict, jf: dict, ucf: dict) -> di
                     cs = correction_split(corner, shares[conv], extras, conv, LAST, parts[(prof, end, conv)],
                                           COMPONENTS["edits"] + (v4_edits or []))
                     if v4:              # the production grid's change in F (row-4 weights), as a correction of its own
-                        f0 = production(corner["normalization"])[1]
-                        effect = -(production(corner["normalization"], corner["model"])[1] - f0)
-                        fed_f = effect * shares[conv].loc[LAST, "_induced_receipts"]
-                        cs = pd.concat([cs, pd.DataFrame([dict(component=f_item, side="production", line="induced_receipts_F",
-                                                               cell="grid", effect_bn=effect, federal_bn=fed_f,
-                                                               state_local_bn=effect - fed_f, financing="cash")])],
-                                       ignore_index=True)
+                        f0 = production(corner["normalization"])[1]     # (October 5: then the lineage's members)
+                        for item, model in f_steps:
+                            f1 = production(corner["normalization"], model)[1]
+                            effect = -(f1 - f0)
+                            f0 = f1
+                            fed_f = effect * shares[conv].loc[LAST, "_induced_receipts"]
+                            cs = pd.concat([cs, pd.DataFrame([dict(component=item, side="production",
+                                                                   line="induced_receipts_F", cell="grid",
+                                                                   effect_bn=effect, federal_bn=fed_f,
+                                                                   state_local_bn=effect - fed_f, financing="cash")])],
+                                           ignore_index=True)
+                        if f1 != production(corner["normalization"], corner["model"])[1]:
+                            raise SystemExit("[BLOCKED] the grid's steps in F do not end at the corner's F")
                     if (cs.federal_bn + cs.state_local_bn - cs.effect_bn).abs().max() > 1e-12:
                         raise SystemExit("[BLOCKED] a correction's federal and state-local parts do not add to it")
                     groups = [("cash", cash_part(cs), cash_part(table), cash_part(before))]
@@ -2384,7 +2606,7 @@ def case_split(case: str, shares: dict, extras: dict, jf: dict, ucf: dict) -> di
     return dict(anchors=anchors, corrected=corrected, main_summary=main_summary, responses=responses, parts=parts,
                 split=pd.DataFrame(split_rows), lines=pd.DataFrame(line_rows), meta=meta, per_spec=gates,
                 main_profile=main_prof, case=case, corrections=pd.DataFrame(correction_rows) if framed else None,
-                set_anchors=set_anchors, corrected_cash=corrected_cash, parity=parity)
+                set_anchors=set_anchors, corrected_cash=corrected_cash, parity=parity, union=union)
 
 
 EDUCATION_LINES = {"education_services", "school_reprice", "college_rekey"}
@@ -2700,6 +2922,101 @@ def v4_bridge(prev: dict, run: dict, shares_prev: dict, shares_new: dict, extras
     return out
 
 
+def lineage_bridge(prev: dict, run: dict, prev_state: dict, state: dict, jf: dict, ucf: dict) -> pd.DataFrame:
+    """The 2024 split from the September 29 case to the October 5 one (v5), main profile, each band end, in
+    v4_bridge's four columns, each with its federal part. Only cash is compounded.
+
+    Steps, at the previous case's specifications (the October 5 corner with the same specification; general
+    government takes the case's response at the same reading):
+      previous_case          the previous split;
+      union_response_move    the union at the case (the twin, union_model: September 29's payloads plus audit row 8's
+                             change) at the case's group-size responses, with their federal shares (general government's
+                             low-end federal fraction moves with s);
+      v5_lineage             the added people: the case less its twin, every column (their lines, their induced receipts
+                             F, their capital key, their accrual);
+      range_ends_move        to the new case's corners;
+      this_case.
+    Gates: the previous corner reproduces the previous split (1e-9); the union step moves cash + resource cost +
+    displaced + accrual by the case lane's union_response_move, and the lineage step by its g3plus_members + whites plus
+    the added people's P (change_at_fixed_specifications, 1e-6); the whole moves by the set's band change plus the
+    change in P (1e-6); the range ends do not move where the corners share their specification (1e-9)."""
+    new_prof, old_prof = run["main_profile"], prev["main_profile"]
+    spec_keys = ("allocation", "normalization", "school_share", "school_response", "gg_end", "uc_key", "reading")
+    change = [run["parity"]["set"]["band_bn"][i] - prev["parity"]["set"]["band_bn"][i] for i in range(2)]
+    lane = run["main_summary"]["change_at_fixed_specifications"]
+    keys = ("cash_bn", "cash_federal_bn") + V4_BRIDGE_COLUMNS[2:]
+    rows = []
+    for i, end in enumerate(("low", "high")):
+        c0, c1 = prev["anchors"][old_prof][end], run["anchors"][new_prof][end]
+        set0 = prev["set_anchors"][old_prof][end]
+        cands = [c for c in frame_corners(new_prof, run["corrected_cash"], run["responses"], run["case"], run["meta"])
+                 if all(c[k] == c0[k] for k in spec_keys)]
+        if not cands:
+            raise SystemExit(f"[BLOCKED] {end}: no October 5 corner at the previous case's specification")
+        matched = cands[0]
+        twin = dict(matched, model=run["union"]["models"]["cash"], lineage_constants=("row8",))
+        corners_at = {"matched": (matched, dict(matched, model=run["corrected"])),
+                      "twin": (twin, dict(twin, model=run["union"]["models"]["set"]))}
+        p0, p1 = production(c0["normalization"], c0["model"])[0], production(c1["normalization"], c1["model"])[0]
+        p_twin, p_matched = (production(corners_at[k][0]["normalization"], corners_at[k][0]["model"])[0]
+                             for k in ("twin", "matched"))
+        if p_twin != p0:
+            raise SystemExit(f"[BLOCKED] {end}: the twin's P is not the previous case's")
+        for conv in CONVENTIONS:
+            pick = lambda s, prof: s[(s.profile == prof) & (s.end == end) & (s.convention == conv)].iloc[0]  # noqa: E731
+            old, new = pick(prev["split"], old_prof), pick(run["split"], new_prof)
+            t0 = split_corner(c0, prev_state["run_shares"][conv], prev_state["extras"], conv, LAST, jf, ucf, end,
+                              prev["parts"][(old_prof, end, conv)])
+            acc0 = accrual_rows(set0, c0)
+            start = dict(three_columns(t0, capital_split(c0)), accrual_bn=float(acc0.responsive_bn.sum()),
+                         accrual_federal_bn=float(acc0.federal_bn.sum()))
+            want0 = dict(cash_bn=old.fiscal_gap_bn, cash_federal_bn=old.federal_bn, resource_cost_bn=old.resource_cost_bn,
+                         resource_cost_federal_bn=old.resource_cost_federal_bn, displaced_bn=old.displaced_bn,
+                         displaced_federal_bn=old.displaced_federal_bn, accrual_bn=old.accrual_bn,
+                         accrual_federal_bn=old.accrual_federal_bn)
+            if max(abs(start[k] - want0[k]) for k in keys) > 1e-9:
+                raise SystemExit(f"[BLOCKED] {end}/{conv}: the previous corner does not reproduce the previous split")
+            at = {}
+            for name, (cash_c, set_c) in corners_at.items():
+                shares = state["run_shares"]
+                before = cash_part(split_corner(dict(cash_c, model=MODEL), shares[conv], state["extras"], conv, LAST, jf,
+                                                ucf, end))
+                parts = constant_parts(cash_c, conv, shares, state["extras"],
+                                       before.federal_bn.sum() / before.responsive_bn.sum())
+                t = split_corner(cash_c, shares[conv], state["extras"], conv, LAST, jf, ucf, end, parts)
+                acc = accrual_rows(set_c, cash_c)
+                at[name] = dict(three_columns(t, capital_split(cash_c)), accrual_bn=float(acc.responsive_bn.sum()),
+                                accrual_federal_bn=float(acc.federal_bn.sum()))
+            new_cols = dict(cash_bn=new.fiscal_gap_bn, cash_federal_bn=new.federal_bn, resource_cost_bn=new.resource_cost_bn,
+                            resource_cost_federal_bn=new.resource_cost_federal_bn, displaced_bn=new.displaced_bn,
+                            displaced_federal_bn=new.displaced_federal_bn, accrual_bn=new.accrual_bn,
+                            accrual_federal_bn=new.accrual_federal_bn)
+            steps = {"union_response_move": {k: at["twin"][k] - start[k] for k in keys},
+                     "v5_lineage": {k: at["matched"][k] - at["twin"][k] for k in keys},
+                     "range_ends_move": {k: new_cols[k] - at["matched"][k] for k in keys}}
+            total = lambda cols: sum(cols[k] for k in ("cash_bn", "resource_cost_bn", "displaced_bn", "accrual_bn"))  # noqa: E731
+            lineage_want = lane["g3plus_members"][i] + lane["whites"][i] + p_matched - p_twin
+            if abs(total(steps["union_response_move"]) - lane["union_response_move"][i]) > 1e-6 or \
+                    abs(total(steps["v5_lineage"]) - lineage_want) > 1e-6:
+                raise SystemExit(f"[BLOCKED] {end}/{conv}: the union step {total(steps['union_response_move']):.6f} or the "
+                                 f"lineage step {total(steps['v5_lineage']):.6f} is not the case lane's "
+                                 f"({lane['union_response_move'][i]:.6f}, {lineage_want:.6f})")
+            if all(c0[k] == c1[k] for k in spec_keys) and max(abs(v) for v in steps["range_ends_move"].values()) > 1e-9:
+                raise SystemExit(f"[BLOCKED] {end}/{conv}: the range ends move although the corners share their specification")
+            if abs(total(new_cols) - total(start) - (change[i] + p1 - p0)) > 1e-6:
+                raise SystemExit(f"[BLOCKED] {end}/{conv}: the total moves {total(new_cols) - total(start):.6f}, the set's "
+                                 f"band change plus P {change[i] + p1 - p0:.6f}")
+            for name, cols in [("previous_case", start)] + list(steps.items()) + [("this_case", new_cols)]:
+                rows.append(dict(end=end, convention=conv, step=name, cash_gap_bn=cols["cash_bn"],
+                                 cash_federal_bn=cols["cash_federal_bn"],
+                                 cash_state_local_bn=cols["cash_bn"] - cols["cash_federal_bn"],
+                                 **{k: cols[k] for k in V4_BRIDGE_COLUMNS[2:]}))
+    out = pd.DataFrame(rows)
+    number = out.select_dtypes("number").columns
+    out[number] = out[number].round(6) + 0.0             # no negative zeros in the file
+    return out
+
+
 def pre_existing_gap(wb: Workbook) -> dict:
     """The gap this lane names and does not repair: the engine compounds current spending, which includes
     depreciation (consumption of fixed capital), not gross investment and net capital transfers. The
@@ -2731,12 +3048,13 @@ def pre_existing_gap(wb: Workbook) -> dict:
 
 
 def three_column_summary(run: dict, split: pd.DataFrame, added_shares: dict, wb: Workbook,
-                         whole_parts: dict, v4_rules: dict | None = None, parts_file: Path | None = None) -> dict:
+                         whole_parts: dict, v4_rules: dict | None = None, parts_file: Path | None = None,
+                         lineage: bool = False) -> dict:
     """summary.json's September 27 additions: the three columns at each band end and convention, the
     enterprise surplus's own row, the capped programs, the per_spec.csv gates and the pre-existing gap. From
     September 29 (v4_rules) the enterprise surplus takes its share after public housing's split, public housing's
     receipt line is a capped program, and the whole-budget rules take the set's concept less the accrual too
-    (parts_file: the case's case_parts_annual.csv)."""
+    (parts_file: the case's case_parts_annual.csv); from October 5 (lineage) the lineage's parts leave the same way."""
     prof = run["main_profile"]
     main = split[split.profile == prof].set_index(["end", "convention"])
     lines = run["lines"].set_index(["end", "convention", "side", "line"])
@@ -2765,7 +3083,12 @@ def three_column_summary(run: dict, split: pd.DataFrame, added_shares: dict, wb:
              "base's fiscal gap (the base carries September 27's P); and the pension accrual, social security's and "
              "Medicare Part A's accrual less the benefits they no longer charge, and the tax on benefits, which the "
              "back-cast carries inside v4_federal_income_tax and which leaves on that part's series. That is the cash "
-             "set carried back line by line. The cash part's 2024 federal share is held",
+             "set carried back line by line. The cash part's 2024 federal share is held" + (
+                 ". October 5: the lineage's parts (v5_, on the identified third-plus generation's path) leave the same "
+                 "way: its rental assistance, public housing and LIHEAP with the displaced beneficiaries (the base's "
+                 "LIHEAP share leaves out the lineage's own), its accrual less the benefits each accrual line no longer "
+                 "charges, and its tax on benefits (the case's less the union twin's) on v5_federal_income_tax's series; "
+                 "the base carries September 27's P less v4's and the lineage's changes" if lineage else ""),
         window_sums_tn={f"{name}|{rule}": {k: {str(s): float(v.loc[s:LAST].sum()) / 1e3 for s in WINDOW_STARTS}
                                            for k, v in d.items()} for (name, rule), d in sorted(whole_parts.items())})
     if v4_rules and not whole_parts:
@@ -2806,14 +3129,20 @@ def three_column_summary(run: dict, split: pd.DataFrame, added_shares: dict, wb:
         pre_existing_gap=pre_existing_gap(wb))
 
 
-def member_count() -> float:
-    """The headcount the September 29 case prices, millions: audit row 4's union (SEPT29["count"],
-    populations.row4), the adopted case's per-member divisor. Gate: the file's published count is the account's
-    target (1e-9)."""
+def member_count(case: str = "sept29") -> float:
+    """The headcount a case with two payloads prices, millions, the adopted case's per-member divisor: September 29's
+    is audit row 4's union (SEPT29["count"], populations.row4); October 5's is the lineage, the union plus the added
+    people (meta.lineage.counts.lineage_population). Gates: the file's published count is the account's target (1e-9);
+    the lineage's union is row 4's (1e-3 people: the lineage lane records it to 4 decimals)."""
     pop = json.loads(SEPT29["count"].read_text())["populations"]
     if abs(pop["published"] / 1e6 - TARGET_M) > 1e-9:
         raise SystemExit(f"[BLOCKED] {SEPT29['count'].name}: the published count is not the account's target")
-    return pop["row4"] / 1e6
+    if not CASE_CONFIG[case].get("lineage"):
+        return pop["row4"] / 1e6
+    counts = case_payload(case, "cash")["meta"]["lineage"]["counts"]
+    if abs(counts["account_union"] - pop["row4"]) > 1e-3:
+        raise SystemExit(f"[BLOCKED] the lineage's union {counts['account_union']} is not audit row 4's {pop['row4']}")
+    return counts["lineage_population"] / 1e6
 
 
 CENTRAL = dict(rule="programme_income_pandemic_per_head", convention="central", rate_path="effective",
@@ -2847,15 +3176,16 @@ def v4_summary(run: dict, split: pd.DataFrame, v4_rules: dict, stocks: pd.DataFr
             alternative_public_housing_as_cash={k: as_cash[k] for k in cols})
     payloads = {w: dict(file=str(payload_file(run["case"], w).relative_to(ROOT)), sha256=sha(payload_file(run["case"], w)))
                 for w in ("set", "cash")}
-    if SEPT29.get("candidate_set"):
-        payloads["set"].update(candidate=str((FISCAL / SEPT29["candidate_set"]).relative_to(ROOT)),
-                               candidate_sha256=sha(FISCAL / SEPT29["candidate_set"]),
-                               rule="the candidate's set but for the adoption's meta stamps " + ", ".join(SEPT29["stamps"]))
+    conf = CASE_CONFIG[run["case"]]
+    if conf.get("candidate_set"):
+        payloads["set"].update(candidate=str((FISCAL / conf["candidate_set"]).relative_to(ROOT)),
+                               candidate_sha256=sha(FISCAL / conf["candidate_set"]),
+                               rule="the candidate's set but for the adoption's meta stamps " + ", ".join(conf["stamps"]))
     return dict(
-        lane=SEPT29["lane"], lane_writes_contract=SEPT29["contract"], payloads=payloads,
-        consumer=dict(file=str(SEPT29["consumer"].relative_to(ROOT)), sha256=sha(SEPT29["consumer"]),
+        lane=conf["lane"], lane_writes_contract=conf["contract"], payloads=payloads,
+        consumer=dict(file=str(conf["consumer"].relative_to(ROOT)), sha256=sha(conf["consumer"]),
                       engine_sha256=sha(FISCAL / "assumption_explorer_2026_09_21/engine.js")),
-        engine_parity=run["parity"], oracle=SEPT29["oracle"],
+        engine_parity=run["parity"], oracle=conf["oracle"],
         central=dict(CENTRAL, benchmark="main"),
         headline_2024=headline,
         pension_accrual=dict(
@@ -2883,43 +3213,74 @@ def v4_summary(run: dict, split: pd.DataFrame, v4_rules: dict, stocks: pd.DataFr
         members=dict(count_m=count_m, source=str(SEPT29["count"].relative_to(ROOT)) + " populations.row4",
                      rule="per member: the headcount the account prices (the adopted case's divisor); per-head shares "
                           "(OMB net interest, the debt increase, the pandemic credits) stay at the account's population "
-                          "key, TARGET_M / RESIDENTS_M"),
+                          "key, TARGET_M / RESIDENTS_M") if not conf.get("lineage") else dict(
+            count_m=count_m, source=str(payload_file(run["case"], "cash").relative_to(ROOT))
+            + " meta.lineage.counts.lineage_population",
+            rule="per member: the lineage, the union the account prices (audit row 4) plus the added people counted "
+                 "whole (the adopted case's divisor); per-head shares (OMB net interest, the debt increase, the pandemic "
+                 "credits) at the case's population key, meta.responses.general_government.s (summary.case.v5)"),
         backcast_concept=family)
+
+
+def v5_summary(run: dict, lineage: dict, per_head: float, hist: History, hist_l: History, count_m: float) -> dict:
+    """summary.json's October 5 additions: the lineage as the payload records it, the path its programme rules carry it
+    on, the per-head key, and the rules this lane chose for it."""
+    return dict(
+        lineage={k: lineage[k] for k in ("lane", "arm", "counting", "counts", "edits", "c3", "members")},
+        count_m=count_m, per_head_share=per_head, per_head_share_union=TARGET_M / RESIDENTS_M,
+        path=dict(source=str(G3PLUS_PATH.relative_to(ROOT)) + " g3plus_persons",
+                  rule="the identified Mexican-origin third-plus generation by year (CPS ASEC, survey year t + 1), the "
+                       "back-cast's path for the lineage: its population share where the union's lines follow the "
+                       "union's, its count where they follow the group's size [ASSUMPTION: the lineage's 2024 ratio to "
+                       "the identified third-plus generation holds in every year; its own count by year is not measured]",
+                  share_index={str(y): float(hist_l.share[y]) for y in (FIRST, 2010, 2015, 2020, LAST)},
+                  union_share_index={str(y): float(hist.share[y]) for y in (FIRST, 2010, 2015, 2020, LAST)}),
+        rules=dict(
+            programme="the union at the case (the twin: September 29's payloads plus audit row 8's change, at the case's "
+                      "responses) on the union's paths, the lineage (the case less the twin, every line, P's induced "
+                      "receipts and the constant line) on the third-plus path; the income rule scales the lineage's "
+                      "receipts by the union's relative income [ASSUMPTION]",
+            whole_budget="the back-cast's oct05 concept, which carries the lineage's parts on the same path, less the "
+                         "parts that are not cash (cash_whole)",
+            constant_line="audit row 8's change at the larger group splits and carries as row 8; the added people's part "
+                          "of the line as the union's parts in proportion [APPROX]",
+            pandemic_per_head="the lineage's 2020-2022 refundable-credit excess goes per head at its share of the case's "
+                              "key, per_head_share less per_head_share_union",
+            bridge=f"{run['case']}_bridge_2024.csv: previous case, the union's response move, the lineage, range ends"))
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Debt legacy of past federal gaps on an adopted main case.")
     parser.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept23"), default=DEFAULT_CASE,
                         help="a case from September 26 on (default: sept27: long-run road and park responses, rental "
-                             "assistance, the return on public capital and the enterprises; sept29: the main case of "
+                             "assistance, the return on public capital and the enterprises; oct05: the main case of "
+                             "2026-10-05 (v5, the lineage), written to derived/oct05/; sept29: the main case of "
                              "2026-09-29, written to derived/sept29/; sept26_schools: schools at full average cost; "
                              "sept26: CBO's one-year school response, 0.63-0.66); sept24: the case adopted 2026-09-24; "
                              "sept23: this lane's first result")
     parser.add_argument("--out-dir", type=Path, default=None,
-                        help="default derived/, and derived/<case>/ for a case with two payloads (sept29)")
+                        help="default derived/, and derived/<case>/ for a case with two payloads (sept29, oct05)")
     args = parser.parse_args()
     framed = args.case != "sept23"          # on the September 24 frame, with a corrections payload
     later = args.case in LATER_CASES        # September 26 on: responses from the payload's meta.responses
     three = later and LATER_CASES[args.case].profiles is not None   # September 27 on: the three columns
     v4 = later and LATER_CASES[args.case].payloads is not None      # September 29 on: the set and the cash set
+    lineage_run = v4 and bool(CASE_CONFIG[args.case].get("lineage"))   # October 5: the lineage
     pins = check_pins()
     wb = Workbook(BEA / "Section3All_xls.xlsx")
     responses, gg_components, added_shares = None, None, None
+    # The case's shares (later_state): from September 29 a copy with the lines it adds (v4_shares); the earlier cases a
+    # run rebuilds for its bridges keep `shares`. An October 5 run rebuilds them, September 29 included, on September
+    # 29's state (prev_state): general government's federal fraction moves with the group-size responses.
+    run_shares, v4_rules, cash_meta, state, prev_state = None, None, None, None, None
     if later:
-        responses = case_payload(args.case)["meta"]["responses"]
-        gg_components = finite_components(responses)
-        shares, extras = federal_shares(wb, Grants(), *gg_components)
-        if three:
-            added_shares = dict(case_shares(shares, wb), subfunction_levels_2024=subfunction_levels(responses, extras))
+        state = later_state(args.case, wb)
+        prev_state = later_state(previous_case(args.case), wb) if lineage_run else state
+        responses, gg_components, shares, extras, added_shares, run_shares, v4_rules, cash_meta = (state[k] for k in (
+            "responses", "gg_components", "shares", "extras", "added_shares", "run_shares", "v4_rules", "cash_meta"))
     else:
         shares, extras = federal_shares(wb, Grants())
-    # The case's shares: from September 29 a copy with the lines it adds (v4_shares); the earlier cases a run
-    # rebuilds for its bridges keep `shares`.
-    run_shares, v4_rules, cash_meta = shares, None, None
-    if v4:
-        cash_payload = case_payload(args.case, "cash")
-        cash_meta = cash_payload["meta"]
-        run_shares, v4_rules = v4_shares(shares, extras, wb, apply_corrections(MODEL, cash_payload), cash_meta)
+        run_shares = shares
     jf = justice_federal(wb)
     ucf = uncompensated_federal(float(shares["central"].loc[LAST, "medicaid_and_chip_other_medical"]))
     hist = History(wb)
@@ -2937,11 +3298,18 @@ def main() -> None:
     if later:
         first = case_payload(next(iter(LATER_CASES)))
         COMPONENTS.update(sept26_components(json.loads(CORRECTIONS_FILE.read_text()), first))
-        # September 27 on: the enterprise receipt's re-key, a component of its own (from September 29 the previous
-        # case's; the case's own parts are v4_components).
-        rekeyed = previous_case(args.case) if v4 else args.case
+        # September 27 on: the enterprise receipt's re-key, a component of its own (from September 29 the last case's
+        # with one payload; the case's own parts are v4_components, and from October 5 v5_components too).
+        before = list(LATER_CASES)[:list(LATER_CASES).index(args.case) + 1]
+        rekeyed = next(c for c in reversed(before) if not LATER_CASES[c].payloads)
         COMPONENTS["edits"] = COMPONENTS["edits"] + [dict(component="enterprise_rekey", **e)
                                                      for e in rekey_edits(case_payload(rekeyed), first)]
+        if lineage_run:     # the lineage's two constant-line edits, which constant_parts splits
+            lin = v5_parts(args.case, case_payload(args.case, "cash"), "cash")
+            set_lin = v5_parts(args.case, case_payload(args.case), "set")
+            if (set_lin["row8"], set_lin["constants"]) != (lin["row8"], lin["constants"]):
+                raise SystemExit("[BLOCKED] the set's and the cash set's constant-line edits differ")
+            COMPONENTS["lineage"] = dict(row8=lin["row8"], constants=lin["constants"])
     elif framed:
         COMPONENTS.update(json.loads(COMPONENTS_FILE.read_text()))
     run = case_split(args.case, run_shares, extras, jf, ucf)
@@ -2964,19 +3332,24 @@ def main() -> None:
         chain = list(LATER_CASES)[:list(LATER_CASES).index(args.case) + 1]
         runs = {args.case: run}
         for i, case in enumerate(chain):
+            st = state if case == args.case else prev_state
             if case not in runs:
-                runs[case] = case_split(case, shares, extras, jf, ucf)
+                runs[case] = case_split(case, st["run_shares"] if LATER_CASES[case].payloads else st["shares"],
+                                        st["extras"], jf, ucf)
             if i == 0:
                 extras24 = federal_shares(wb, Grants())[1]       # general government at the elasticities
                 r0 = runs[case]
-                bridge = sept26_bridge(r0["anchors"][MAIN], shares, extras, extras24, jf, ucf, r0["corrections"],
-                                       r0["main_summary"], r0["split"])
+                bridge = sept26_bridge(r0["anchors"][MAIN], st["shares"], st["extras"], extras24, jf, ucf,
+                                       r0["corrections"], r0["main_summary"], r0["split"])
+            elif LATER_CASES[case].payloads and CASE_CONFIG[case].get("lineage"):
+                bridge = lineage_bridge(runs[chain[i - 1]], runs[case], prev_state, state, jf, ucf)
             elif LATER_CASES[case].payloads:
-                bridge = v4_bridge(runs[chain[i - 1]], runs[case], shares, run_shares, extras, jf, ucf, cash_meta)
+                bridge = v4_bridge(runs[chain[i - 1]], runs[case], st["shares"], st["run_shares"], st["extras"], jf, ucf,
+                                   st["cash_meta"])
             elif LATER_CASES[case].profiles:
-                bridge = capital_bridge(runs[chain[i - 1]], runs[case], shares, extras, jf, ucf)
+                bridge = capital_bridge(runs[chain[i - 1]], runs[case], st["shares"], st["extras"], jf, ucf)
             else:
-                bridge = response_bridge(runs[chain[i - 1]], runs[case], shares, extras, jf, ucf)
+                bridge = response_bridge(runs[chain[i - 1]], runs[case], st["shares"], st["extras"], jf, ucf)
             bridge.round(6).to_csv(out / f"{case}_bridge_2024.csv", index=False)
 
     # 2. Annual federal gaps by benchmark, rule, anchor and convention (real 2024 $bn and nominal). The
@@ -3013,6 +3386,22 @@ def main() -> None:
         if not concepts[col].equals(hist.annual[col]):
             raise SystemExit(f"[BLOCKED] {backcast_dir.relative_to(FISCAL)}/backcast_annual.csv: {col} is not the "
                              "back-cast's default series")
+    # October 5: the lineage's path, the identified third-plus generation by year (the back-cast's input, gated against
+    # its column to the file's rounding): its population share where History uses the group's, its count where History
+    # uses the group's size. Per head, the case's population key: meta.responses.general_government.s, the account's
+    # target plus the added people over its residents.
+    hist_l, per_head, lineage = None, TARGET_M / RESIDENTS_M, None
+    if lineage_run:
+        g3 = pd.read_csv(G3PLUS_PATH).set_index("year").g3plus_persons.reindex(YEARS) / 1e6
+        if g3.isna().any() or (concepts["g3plus_millions_cps"].reindex(YEARS) - g3).abs().max() > 5e-5:
+            raise SystemExit(f"[BLOCKED] {G3PLUS_PATH.name} is not the back-cast's third-plus path for {args.case}")
+        hist_l = copy.copy(hist)
+        share_l = g3 / (hist.people.reindex(YEARS) / 1e3)
+        hist_l.share, hist_l.group = share_l / share_l[LAST], g3
+        lineage = run["meta"]["lineage"]
+        per_head = responses["general_government"]["s"]
+        if abs(per_head - (TARGET_M + lineage["counts"]["added"] / 1e6) / RESIDENTS_M) > 1e-8:
+            raise SystemExit(f"[BLOCKED] the case's s {per_head} is not the account's target plus the added people")
     main_prof = run["main_profile"]
     benchmarks = ({"main": (main_prof, f"net_cost_cbo_informed_{family}" if family else None),
                    "proportional": ("proportional_reference", f"net_cost_full_proportional_{family}" if family else None)}
@@ -3044,7 +3433,7 @@ def main() -> None:
     whole_parts = {}
 
     def cash_whole(column: str, end: str, rule: str, corner: dict, p: float, p_t: pd.Series, row: pd.Series,
-                   set_corner: dict | None = None) -> pd.Series:
+                   set_corner: dict | None = None, twins: tuple | None = None) -> pd.Series:
         """A whole-budget rule's cash gap by year (September 27 on): the back-cast's concept plus P, less
         the capital return and rental assistance, each carried back by its own series (the back-cast's
         case_parts_annual.csv), and less LIHEAP, which sits in the base and follows it at its 2024 share of
@@ -3058,7 +3447,13 @@ def main() -> None:
         social security's and Medicare Part A's accrual parts less the benefits they no longer charge, and the tax on
         benefits at its 2024 amount on v4_federal_income_tax's series, the part the back-cast carries it in (gate: that
         part's path is the same at both band ends, one series). What is left is the cash set carried back line by
-        line. Gates as above, and the accrual's 2024 value, line by line and in total, is this split's (1e-3)."""
+        line. Gates as above, and the accrual's 2024 value, line by line and in total, is this split's (1e-3).
+
+        From October 5 (twins: the union's set and cash corners at the case, union_model) the lineage's parts (v5_)
+        leave the same way: its rental assistance, public housing and LIHEAP with the displaced beneficiaries (the
+        base's LIHEAP share leaves out the lineage's own part), its accrual parts with the accrual, and its tax on
+        benefits, the case's accrual on the income tax less the twin's, on v5_federal_income_tax's series (the union's
+        stays on v4_federal_income_tax's). The base carries September 27's P, less v4's and the lineage's changes."""
         name = f"{column}_{end}"
         k = parts_annual[(parts_annual.concept == name) & (parts_annual.rule == rule)].pivot(
             index="year", columns="part", values="value_bn").reindex(YEARS)
@@ -3069,23 +3464,36 @@ def main() -> None:
         liheap = float(t.responsive_bn[("spending", "energy_assistance")])
         resource = k[list(CAPITAL_PARTS)].sum(axis=1)
         p_base = p if set_corner is None else p + k.v4_production_private[LAST]
+        if twins is not None:
+            p_base = p_base + k.v5_production_private[LAST]
+            liheap = liheap - k.v5_energy_assistance[LAST]
         displaced = k.rental_assistance + liheap / (k.base[LAST] + p_base) * (k.base + p_base * n / n[LAST])
         accrual = pd.Series(0.0, index=YEARS)
         checks = [(resource, row.resource_cost_bn)]
+
+        def one_series(part: str) -> pd.Series:
+            other = parts_annual[(parts_annual.concept == f"{column}_{'high' if end == 'low' else 'low'}")
+                                 & (parts_annual.rule == rule) & (parts_annual.part == part)]
+            other = other.set_index("year").value_bn.reindex(YEARS)
+            path = k[part] / k[part][LAST]
+            if min(abs(k[part][LAST]), abs(other[LAST])) < 0.1 or (path - other / other[LAST]).abs().max() > 1e-4:
+                raise SystemExit(f"[BLOCKED] {name}/{rule}: {part} does not follow one series at both band ends")
+            return path
         if set_corner is not None:
             displaced = displaced + k[list(V4_DISPLACED_PARTS)].sum(axis=1)
             acc = accrual_rows(set_corner, corner).set_index("id").responsive_bn
             tax_line, tax_part = V4_BENEFIT_TAX
             if sorted(acc.index) != sorted([*V4_ACCRUAL_PARTS, tax_line]):
                 raise SystemExit(f"[BLOCKED] the accrual lines {sorted(acc.index)} are not the back-cast's parts' lines")
-            other = parts_annual[(parts_annual.concept == f"{column}_{'high' if end == 'low' else 'low'}")
-                                 & (parts_annual.rule == rule) & (parts_annual.part == tax_part)]
-            other = other.set_index("year").value_bn.reindex(YEARS)
-            path = k[tax_part] / k[tax_part][LAST]
-            if min(abs(k[tax_part][LAST]), abs(other[LAST])) < 0.1 or (path - other / other[LAST]).abs().max() > 1e-4:
-                raise SystemExit(f"[BLOCKED] {name}/{rule}: {tax_part} does not follow one series at both band ends")
+            path = one_series(tax_part)
             by_line = {line: k[list(ps)].sum(axis=1) for line, ps in V4_ACCRUAL_PARTS.items()}
             by_line[tax_line] = acc[tax_line] * path
+            if twins is not None:
+                displaced = displaced + k[list(V5_DISPLACED_PARTS)].sum(axis=1)
+                for line, ps in V5_ACCRUAL_PARTS.items():
+                    by_line[line] = by_line[line] + k[list(ps)].sum(axis=1)
+                union_tax = float(accrual_rows(*twins).set_index("id").responsive_bn[tax_line])
+                by_line[tax_line] = union_tax * path + (acc[tax_line] - union_tax) * one_series(V5_BENEFIT_TAX_PART)
             checks += [(by_line[line], acc[line]) for line in by_line]
             accrual = sum(by_line.values())
             checks.append((accrual, row.accrual_bn))
@@ -3103,9 +3511,20 @@ def main() -> None:
             p_t = p * n / n[LAST]
             shared_receipts = lines_at(dict(corner, allocation="shared"))
             shared_receipts = shared_receipts[shared_receipts.side == "receipt"].set_index("id").amount_bn
+            twins = None
+            if lineage_run:     # October 5: the union at the case beside each corner (lineage_programme, cash_whole)
+                kind = "set" if bench == "main_with_accrual" else "cash"
+                if corner["model"] is not (run["corrected"] if kind == "set" else run["corrected_cash"]):
+                    raise SystemExit(f"[BLOCKED] {bench} {end}: the corner is not on the {kind} payload's model")
+                twin = dict(corner, model=run["union"]["models"][kind], lineage_constants=("row8",))
+                twins = (dict(twin, model=run["union"]["models"]["set"]), dict(twin, model=run["union"]["models"]["cash"]))
             for conv in CONVENTIONS:
-                prog = programme_federal(hist, corner, end, conv, run_shares, extras, jf, ucf, parts.get((prof, end, conv)),
-                                         **series_kw)
+                if lineage_run:
+                    prog = lineage_programme(hist, hist_l, dict(corner, per_head=per_head), twin, end, conv, run_shares,
+                                             extras, jf, ucf, parts.get((prof, end, conv)), **series_kw)
+                else:
+                    prog = programme_federal(hist, corner, end, conv, run_shares, extras, jf, ucf,
+                                             parts.get((prof, end, conv)), **series_kw)
                 want_gap, want_fed = anchor_2024(bench, end, conv, bench_split.loc[(end, conv)])
                 if abs(prog.loc[LAST, "gap_programme"] - want_gap) > 1e-6 or \
                         abs(prog.loc[LAST, "federal_programme"] - want_fed) > 1e-6:
@@ -3139,7 +3558,7 @@ def main() -> None:
                 # From September 27 they hold the cash part's split, on the cash part of the concept.
                 row = bench_split.loc[(end, conv)]
                 whole = {rule: (cash_whole(column, end, rule, corner, p, p_t, row,
-                                           run["set_anchors"][prof][end] if v4 else None) if three
+                                           run["set_anchors"][prof][end] if v4 else None, twins) if three
                                 else concepts[f"{column}_{end}__{rule}"].reindex(YEARS) + p_t)
                          for rule in ("flat", "ratio", "income")}
                 for rule in ("flat", "ratio", "income"):
@@ -3169,13 +3588,18 @@ def main() -> None:
     row_allocation = interest_row["keys"][interest_row["preferred_key"]]["personal"]["target_bn"]
     # Per member: the account's target (40.9m) through September 27; from September 29 the headcount the account
     # prices (audit row 4's union, the adopted case's per-member divisor). The per-head shares stay at the account's
-    # population key, TARGET_M / RESIDENTS_M, as its population-keyed lines and the back-cast's group series do.
-    count_m = member_count() if v4 else TARGET_M
-    per_head_net_interest = rates.loc[LAST, "net_interest_bn"] * TARGET_M / RESIDENTS_M
+    # population key, TARGET_M / RESIDENTS_M, as its population-keyed lines and the back-cast's group series do. From
+    # October 5 the lineage (42.75m) per member, and per head the case's key (per_head), the lineage on its own path.
+    count_m = member_count(args.case) if v4 else TARGET_M
+    per_head_net_interest = (rates.loc[LAST, "net_interest_bn"] * per_head if lineage_run
+                             else rates.loc[LAST, "net_interest_bn"] * TARGET_M / RESIDENTS_M)
     # Scale reference only: the group's per-head share of each year's increase in debt held by the public.
     public_debt = omb_debt_held_by_public()
     per_head_increase = sum(TARGET_M / RESIDENTS_M * hist.share[t] * (public_debt[t] - public_debt[t - 1])
                             for t in range(FIRST, LAST))
+    if lineage_run:
+        per_head_increase += sum((per_head - TARGET_M / RESIDENTS_M) * hist_l.share[t] * (public_debt[t] - public_debt[t - 1])
+                                 for t in range(FIRST, LAST))
     stock_rows = []
     debt_end_2023 = rates.loc[2023, "debt_held_by_public_bn"]
     for (bench, rule, end, conv), block in annual.groupby(["benchmark", "rule", "end", "convention"], sort=True):
@@ -3261,7 +3685,7 @@ def main() -> None:
                    induced_receipts_federal_share_2024=float(extras["labour_share"][LAST]),
                    gps_federal_fraction_2024={c: [float(a[LAST]), float(b[LAST])]
                                               for c, (a, b) in extras["gps"].items()},
-                   refundable_credit_key_share_2024=plain(rtc_keys), per_head_share=TARGET_M / RESIDENTS_M,
+                   refundable_credit_key_share_2024=plain(rtc_keys), per_head_share=per_head,
                    proposed_benefits=plain(benefits), account_interest_row_bn=float(interest_row["national_bn"]),
                    account_interest_allocation_bn=float(row_allocation),
                    per_head_share_of_omb_net_interest_bn=float(per_head_net_interest),
@@ -3276,7 +3700,7 @@ def main() -> None:
         lanes = (SHELTER_PARTS, SHELTER_KEYING, CARE_SUMMARY) + ((CK_PAYLOADS, R_VALUES) if later else ()) + (
             (case_file(first, "corrections.json"),) if later and args.case != first else ())
         # September 29 without the lane's September 27 contract: the band is engine.js's through the payload consumer.
-        bands_source = (SEPT29["consumer"] if v4 and main_summary is None
+        bands_source = (CASE_CONFIG[args.case]["consumer"] if v4 and main_summary is None
                         else case_file(args.case, "summary.json") if later else MAIN24_SUMMARY)
         summary["case"] = dict(
             name=LATER_CASES[args.case][1] if later else "main case adopted 2026-09-24",
@@ -3293,15 +3717,19 @@ def main() -> None:
                 general_government_low_end_components=dict(zip(("federal_tax_collection", "state_local"),
                                                                map(float, gg_components))))
         if three:
-            summary["case"].update(three_column_summary(run, split, added_shares, wb, whole_parts, v4_rules, parts_file))
+            summary["case"].update(three_column_summary(run, split, added_shares, wb, whole_parts, v4_rules, parts_file,
+                                                        lineage_run))
             contract = (case_file(args.case, "per_spec.csv"), case_file(args.case, "main_case_bands.csv")) \
                 if main_summary is not None else ()
             # A case in its own back-cast directory (September 29) also reads its concepts from there.
             own_concepts = (backcast_dir / "backcast_annual.csv",) if family and backcast_dir != BACKCAST / "derived" else ()
+            lineage_files = (CASE_CONFIG[args.case]["lineage"], G3PLUS_PATH) if lineage_run else ()
             summary["case"]["lane_sha256"].update({str(q.relative_to(ROOT)): sha(q) for q in (
-                *contract, *((parts_file,) if family else ()), *own_concepts)})
+                *contract, *((parts_file,) if family else ()), *own_concepts, *lineage_files)})
         if v4:
             summary["case"]["v4"] = plain(v4_summary(run, split, v4_rules, pd.DataFrame(stock_rows), count_m, family))
+        if lineage_run:
+            summary["case"]["v5"] = plain(v5_summary(run, lineage, per_head, hist, hist_l, count_m))
     (out / "summary.json").write_text(json.dumps(summary, indent=1, sort_keys=True) + "\n")
     print(split[split.profile == main_prof].round(3).to_string(index=False))
     print(f"programme control max |diff| {control_gap:.6f}bn")

@@ -909,3 +909,123 @@ Log (append-only; times from `date`):
   - Gate 4: two `rerun_lane.py` passes with both commands, IDENTICAL 36/36, rc 0 each (22:55–23:04). Two earlier
     passes (22:33–22:35) flagged only this RESULT.md, which I was editing while they ran; every output was
     unchanged, 35/36.
+
+## v5 case (oct05), 2026-10-05
+
+claude-opus-5-5 (teammate v5consB of the v5 consumer lanes). [2026-10-05: on main case v5 (`oct05`), the 2024 legacy
+interest on the central rule is **$30.63 / 42.62bn** on a stock of **$947.4 / 1,318.4bn**, **$716 / 997 per member** at
+the lineage's 42.75m, against $30.75 / 41.48bn, $951.1 / 1,283.0bn and $774 / 1,044 at 39.71m for sept29. Across the
+11 back-cast rules it is $5.76 to 43.42bn (sept29: 7.77 to 42.30).] The case is `../main_case_2026_10_05/` (`OCT05` in
+`debt_legacy.py`): the September 29 case plus 3.04M descendants of Mexican immigrants who no longer report Mexican
+origin, counted whole (`../main_case_lineage_2026_10_05/`, arm b). Both payloads are the lane's own
+(`derived/corrections.json`, `derived/corrections_cash.json`). `debt_legacy.py --case oct05` writes `derived/oct05/`:
+sept29's 16 file names plus `oct05_bridge_2024.csv`. Its four earlier bridges are byte-identical to those in
+`derived/sept29/`. [CALCULATION: `debt_legacy.py --case oct05` → `derived/oct05/`]
+
+**Headline** (central rule `programme_income_pandemic_per_head`, central payer convention, effective rate, 2005 window,
+all borrowed; cash set compounded; low / high end, $bn):
+
+| Quantity | Sept 29 | v5 (oct05) | File |
+|---|---:|---:|---|
+| legacy interest, 2024 | 30.75 / 41.48 | **30.63 / 42.62** | `derived/oct05/stocks.csv` |
+| interest per group member, $ | 774 / 1,044 (39.71m) | **716 / 997** (42.75m) | same |
+| legacy stock entering 2024 | 951.1 / 1,283.0 | **947.4 / 1,318.4** | same |
+| federal part of the 2024 cash gap | 36.28 / 61.27 | **32.40 / 61.18** | `derived/oct05/federal_split_2024.csv` |
+| federal share of the 2024 cash gap | 14.4% / 20.7% | **12.4% / 19.6%** | same |
+| 2024 cash gap (all governments) | 251.46 / 296.07 | 260.71 / 312.28 | same |
+| resource cost (federal) | 34.42 / 57.17 (0.83 / 1.76) | 37.15 / 61.86 (0.89 / 1.90) | same |
+| displaced beneficiaries (federal) | 8.13 (5.05) | 8.81 (5.48) | same |
+| pension accrual beside, all federal | 76.71 / 73.02 | 82.92 / 77.83 | same |
+| legacy interest across the 11 back-cast rules | 7.77 to 42.30 | 5.76 to 43.42 | `derived/oct05/stocks.csv` |
+| the five whole-budget rules alone | 10.45 to 36.67 | 8.33 to 37.80 | same |
+| every specification, main benchmark (programme rules) | −5.15 to 65.73 | −8.90 to 67.78 | same |
+| proportional benchmark | 38.48 / 46.16 | 38.96 / 47.68 | same |
+| alternative: the set compounded (`main_with_accrual`) | 61.27 / 70.53 | 63.33 / 73.36 | same |
+| alternative: public housing as cash | 30.92 / 41.64 | 30.81 / 42.80 | same |
+
+The lineage adds $9.56 / 16.53bn to the 2024 cash gap, but it lowers the federal part by $3.89bn at the low end and
+by $0.11bn at the high end (central convention). The added people pay more in federal taxes than they draw in federal
+spending, so their net cost falls on state and local budgets: schools, Medicaid's state share and the long-run lines.
+The legacy interest therefore barely moves at the low end and rises $1.14bn at the high end. Per member falls because
+the divisor grows by 3.04m and the federal legacy does not. [CALCULATION: `derived/oct05/oct05_bridge_2024.csv`]
+
+Whole-budget rules (central, low / high, interest $bn): whole_flat 16.22 / 30.56 (sept29 18.24 / 30.80); whole_ratio
+13.32 / 25.38 (14.92 / 25.48); whole_income 16.37 / 30.19 (18.46 / 30.56); whole_ratio_federal_series 8.33 / 20.36
+(10.45 / 20.91); whole_income_federal_series 25.76 / 37.80 (26.21 / 36.67). They lie inside the programme rules' range,
+as before.
+
+**Bridge from September 29** (`derived/oct05/oct05_bridge_2024.csv`, central convention, $bn, low / high end):
+
+| Step | Cash | Federal cash | Resource cost (federal) | Displaced (federal) | Accrual |
+|---|---:|---:|---:|---:|---:|
+| September 29 case | 251.46 / 296.07 | 36.28 / 61.27 | 34.42 / 57.17 (0.83 / 1.76) | 8.13 (5.05) | 76.71 / 73.02 |
+| the union's response move (group-size responses, row 8) | −0.31 / −0.32 | +0.005 / +0.010 | +0.01 / +0.003 | 0 | 0 |
+| the lineage: the added people | +9.56 / +16.53 | −3.89 / −0.11 | +2.71 / +4.68 (0.06 / 0.13) | +0.69 (0.43) | +6.20 / +4.81 |
+| v5 case | 260.71 / 312.28 | 32.40 / 61.18 | 37.15 / 61.86 (0.89 / 1.90) | 8.81 (5.48) | 82.92 / 77.83 |
+
+Under the low convention the lineage's federal cash step is −5.98 / −2.27; under the high one −3.18 / +1.16.
+
+**Rules this case needed** (each tagged; the Consumers row of `../main_case_2026_10_05/RESULT.md` asks for the case,
+42.75m per member and the moved `meta.responses`):
+1. *Shares at the case's own group size.* General government's low-end federal fraction follows the finite-removal
+   responses at v5's s (0.1292 against 0.1202): 0.11434 against 0.11431 in 2024 (central). The earlier cases a run
+   rebuilds for its bridges, September 29 included, keep September 29's shares (`later_state`), so their bridges are
+   unchanged.
+2. *The lineage's path* [ASSUMPTION]. The programme rules carry the union on its own series and the lineage (the case
+   less its twin, the union at the case, every line, the induced receipts F and the constant line) on the identified
+   third-plus generation's path. They use its population share where the union's lines use the union's, and its count
+   where they use the group's size. This is the back-cast's choice (`../historical_backcast_2026_09_20/README.md`, v5
+   case; `inputs/cps_g3plus_path.csv`). The path's share index is 0.655 in 2005 against the union's 0.789. The rule is
+   linear in the lines' amounts, so the lineage's part is the rule on that path at the case less at the twin
+   (`lineage_programme`; gate: the 2024 values are the case's, 1e-9). Carried on the union's own path instead, the
+   central interest is $30.57 / 42.73bn (−0.06 / +0.11); the choice barely matters. The income rule scales the lineage's
+   receipts by the union's relative income [ASSUMPTION: its own is not measured].
+3. *The constant line.* Audit row 8's change at the larger group (−$0.008bn) splits and carries as row 8 (a
+   `row8_finite` part, component `v5_union_response`). The added people's part of the line (−$0.19bn) is the union's
+   parts in proportion, each with its part's share and series [APPROX: the generation account splits the line by one
+   ratio per generation, not part by part]. The parts keep their names, so the ledger lane's choices in
+   `../sept24_propagation_2026_09_24/constant_choices.py` reach them too.
+4. *Per member and per head.* Per member is the lineage, 42,752,212.9 (`meta.lineage.counts.lineage_population`;
+   gate: its union is audit row 4's). Per-head shares are taken at the case's population key,
+   `meta.responses.general_government.s` = 0.12918 (40.90m + 3.04m over 340.11m; gate 1e-8): OMB net interest per head
+   is $113.66bn (sept29 105.80), and the pandemic credits' per-head part gets the lineage's own share.
+5. *Whole-budget rules.* The back-cast's oct05 concept, the set, carries the lineage's parts (`v5_`) on the same path.
+   `cash_whole` takes them out as it takes out v4's. The lineage's rental assistance, public housing and LIHEAP go with
+   the displaced beneficiaries; the base's LIHEAP share leaves out the lineage's own part. Its accrual parts go with
+   the accrual. Its tax on benefits (the case's accrual on the income tax less the twin's) goes on
+   `v5_federal_income_tax`'s series. [APPROX] P is added back on the union's group path for the whole case, as on
+   September 29 for v4's change in P.
+6. *The enterprise surplus.* The lineage's cell edits on the enterprise surplus follow the national-scale edit, so they
+   move the key at the line's share after public housing's split (25.4%), not before (`post_scale`). Before this fix the
+   corrections split missed the federal move by $0.014bn, and the gate stopped the run.
+
+**Gates** (all pass; the run stops on any failure):
+- `v5_parts`: September 29's payload comes first, unchanged, in both payloads; there are 336 lineage cell edits, two on
+  the constant line, row 8's last at `row8_edit_bn`; production is on v4's dimensions; meta moves only the adoption
+  stamps, responses, capital return and lineage; the responses are the lane's `summary.json`'s; the counts are the
+  lineage lane's arm b.
+- `v5_components`: September 29's model plus the lineage's edits rebuilds the case, cell by cell (1e-9).
+- Parity with engine.js through the payload consumer, 64 specifications, both payloads: largest difference 1.7e-13
+  (set) and 1.1e-13 (cash). Bands $390.2940 / 461.2431bn and $307.3764 / 383.4093bn at 48 / 11.
+- The lane's `per_spec.csv`, `main_case_bands.csv` (largest 5.0e-5, tolerance 1e-4) and `summary.json` gates, as on
+  September 29.
+- `lineage_bridge`: the union step equals the lane's `union_response_move` (−0.298 / −0.315), and the lineage step its
+  `g3plus_members + whites` plus the added people's P (1e-6). The whole moves by the set's band change plus P (1e-6).
+- `cash_whole`: in 2024 the cash part, resource cost, displaced and accrual (each line and the total) are this split's
+  (1e-3); `v5_federal_income_tax` follows one series at both ends.
+- `derived/sept29/` and the default `derived/` rebuild byte for byte with the changed script; so does
+  `constant_choices.py --case sept29` (its two CSVs).
+
+Reproduce (from the repository root; `test_debt_legacy.py` `test_oct05_rebuilds_its_directory` rebuilds it byte for
+byte):
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py --case oct05
+```
+
+Log (append-only; times from `date`):
+- 2026-10-06 00:05 JST: `--case oct05` written to `derived/oct05/` (17 files; a scratch run gives the same bytes).
+  `--case sept29` into a scratch directory is byte-identical to `derived/sept29/` (16/16), and so is the default run to
+  `derived/` (15/15). pytest: 7 passed (the four old cases against their commits, the default, sept29, oct05).
+  `rerun_lane.py` over the default, sept29 and oct05 commands, with `--allow-unrun` for the test file: IDENTICAL 53/53,
+  exit 0. Not committed (the lead's brief).
