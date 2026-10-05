@@ -77,10 +77,24 @@ fiscal rows, after gates that the lane's fiscal rows are the September 27 bands 
 script's social rows for the case. The cash set (the pension switch off) runs beside the case, with its own pairing on
 the priced count, never in the central total.
 
+October 5 (oct05, main_case_2026_10_05, v5 adopted; derived/oct05/). The fiscal rows price the lineage of 42.75M: the
+union plus 3.04M descendants who no longer report Mexican origin. The pairing on the priced count adds their social
+rows: each of the population lane's restated rows (the September 27 rows on audit row 4's union, crash and congestion
+on the 5+ basis) times the added people's share of the engine key the row scales with, at the band end's
+specification (band_variants.json lineage_social_keys: their amount over the union's on that key, priced at G3+
+members' and third-plus whites' cells as the case prices them). The keys are in LINEAGE_ROW_KEYS [ASSUMPTION]: crime
+rows on the justice key of each end's footing (raw coding at the low end, the custody key at the high end),
+unreimbursed care on the uninsured-use key, congestion and crashes on the road key, PM2.5, consumer scale and trade on
+the consumption key, schools on the K-12 operating key, volunteering on the adults key, housing and the scale net on
+the head count, and restaurant variety, which the population lane found carries no head count, at 0. Gate: the
+restated rows add to the restated social rows (2e-6). Every per-member figure of the case divides by the lineage
+population (meta.lineage). The record-basis rows of section 7 (the lanes' published social rows) carry the union's
+social rows only; the pairing on the priced count is the case's figure.
+
 Inputs: DIR/band_variants.csv (node band_variants.cjs --case CASE: engine bands on the September 23 case,
 September 24 and the case) and the channel lanes' derived files (PATHS). Reads only; writes
 DIR/real_costs_totals.csv and .json. Run from the repository root, after band_variants.cjs:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py [--case sept24|sept26|sept26_schools|sept27|sept29] [--out-dir DIR]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py [--case sept24|sept26|sept26_schools|sept27|sept29|oct05] [--out-dir DIR]
 """
 from __future__ import annotations
 
@@ -114,12 +128,14 @@ PATHS = dict(
 # Each case's main-case lane and default output directory (None: --out-dir only), as in band_variants.cjs.
 LANES = dict(sept24="main_case_2026_09_24", sept26="main_case_2026_09_26",
              sept26_schools="main_case_schools_full_2026_09_26", sept27="main_case_long_run_2026_09_27",
-             sept29="main_case_2026_09_29")
+             sept29="main_case_2026_09_29", oct05="main_case_2026_10_05")
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=FISCAL / "sept26_propagation_2026_09_26" / "derived",
-                sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29")
+                sept27=FISCAL / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29",
+                oct05=HERE / "derived" / "oct05")
 # Cases whose roads respond: congestion beside the account is the response lane's, by band end.
 LONG_RUN = dict(sept27=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
-                sept29=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json")
+                sept29=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json",
+                oct05=FISCAL / "service_response_long_run_2026_09_27/derived/net_change.json")
 # Cases whose social rows carry added social items for the union: (lane items.csv, item ids, decision, kind) per
 # source. A source with a `measure` column adds its absolute rows and reports its normalized rows beside. Benefits
 # are negative costs; the scale lane's summary is read through scale_rows().
@@ -142,12 +158,30 @@ SOCIAL_ITEMS = dict(sept27=(
      "decisions/2026-09-28-social-items-more-benefits.md", "benefit"),
 ))
 SOCIAL_ITEMS["sept29"] = SOCIAL_ITEMS["sept27"]
+SOCIAL_ITEMS["oct05"] = SOCIAL_ITEMS["sept27"]
 # Cases whose published pairing is restated on the priced count (population_basis_2026_09_29).
 RESTATED = dict(sept27=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv",
-                sept29=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv")
+                sept29=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv",
+                oct05=FISCAL / "population_basis_2026_09_29/derived/restated_pairing.csv")
 # A case whose social rows the population lane restated on another case's pairing: that case. The restated social
 # rows (pairing less its fiscal row) then carry over, and the case adds its own fiscal rows.
-RESTATED_BASE = dict(sept29="sept27")
+RESTATED_BASE = dict(sept29="sept27", oct05="sept27")
+# Cases that carry the lineage (October 5 on). Each restated social row prices the added people at their share of one
+# engine key (band_variants.json lineage_social_keys), at the low end and at the high end; None: not priced (0).
+# [ASSUMPTION] the row scales with the key at the margin, and the added people's amount on the key is the case's.
+LINEAGE_CASES = ("oct05",)
+CRIME = ("justice_use_raw_coding", "justice_use")   # the low end's footing (raw coding), the high end's (custody)
+LINEAGE_ROW_KEYS = dict(
+    victims=CRIME, property_crime=CRIME, fear_avoidance=CRIME, private_security=CRIME,
+    unreimbursed_care=("uninsured_use", "uninsured_use"),
+    congestion=("road", "road"), road_crash_externality=("road", "road"),
+    housing_gain=("head_count", "head_count"), scale_net_earnings=("head_count", "head_count"),
+    school_disruption=("pupils", "pupils"),
+    pm25_consumption=("consumption", "consumption"), total_consumer_scale=("consumption", "consumption"),
+    total_trade_travel_fdi=("consumption", "consumption"),
+    formal_volunteering_outside_group=("adults", "adults"),
+    restaurant_variety_market_size=(None, None),   # the population lane: no head count in the item (factor 1)
+)
 UNION = ("mexican_origin", "union")  # the lanes' labels for the same 40.9m group
 # Runs of band_variants.cjs beside a case, never in its band (the case's column; the row label, its note).
 BESIDE = dict(capital_at_7pct=("capital_at_7pct", "the return on public capital at the reported 7% on every component; "
@@ -158,8 +192,11 @@ BESIDE = dict(capital_at_7pct=("capital_at_7pct", "the return on public capital 
 BESIDE_RUNS = dict(sept27=BESIDE, sept29=dict(BESIDE, cash_set=(
     "cash_set", "the cash set: the pension switch off, social security and Medicare's Part A at the group's current "
     "benefits (main_case_2026_09_29 band row cash_set); beside the central total, never in it")))
+BESIDE_RUNS["oct05"] = dict(BESIDE, cash_set=(
+    "cash_set", "the cash set: the pension switch off, social security and Medicare's Part A at the group's current "
+    "benefits (main_case_2026_10_05 band row cash_set); beside the central total, never in it"))
 # Beside runs whose pairing is also restated on the priced count.
-RESTATED_BESIDE = dict(sept29=("cash_set",))
+RESTATED_BESIDE = dict(sept29=("cash_set",), oct05=("cash_set",))
 MIXED_METHOD = ("theta 0.4977 of each group attributed Hispanic "
                 "(NIBRS TX+AZ mean Hispanic fraction of mixed groups)")
 FAILURES: list[str] = []
@@ -283,6 +320,39 @@ def social_items(sources):
     return sums(detail), sums([d for d in detail if d["kind"] == "cost"]), detail
 
 
+def lineage_social_rows(path, keys, restated_social):
+    """The added people's social rows (October 5 on): each row of the population lane's restatement on audit row 4's
+    union (section row; crash and congestion from row_5plus, the pairing's 5+ basis) times the added people's share of
+    its key (LINEAGE_ROW_KEYS) at each band end. Gates: every row has a key, and the rows add to the restated social
+    rows (2e-6: six printed decimals per row). Returns (detail, (low, high))."""
+    union = {}
+    for r in csv.DictReader(path.open()):
+        if r["section"] == "row" and r["item"] != "fiscal":
+            union.setdefault(r["item"], {})[r["end"]] = float(r["restated"])
+    for r in csv.DictReader(path.open()):
+        if r["section"] == "row_5plus":
+            gate(f"lineage social rows: the 5+ row {r['item']} replaces a restated row at its end", r["end"] in union.get(r["item"], {}))
+            union[r["item"]][r["end"]] = float(r["restated"])
+    gate("lineage social rows: every restated social row has a key, and every key a row",
+         sorted(union) == sorted(LINEAGE_ROW_KEYS), f"{len(union)} rows")
+    detail, totals = [], [0.0, 0.0]
+    for item, by_end in union.items():
+        rec = dict(item=item, keys=dict(zip(("low", "high"), LINEAGE_ROW_KEYS[item])))
+        for i, end in enumerate(("low", "high")):
+            v = by_end.get(end, by_end.get("both"))
+            key = LINEAGE_ROW_KEYS[item][i]
+            share = 0.0 if key is None else (keys["head_count"] if key == "head_count" else keys[f"{end}_end"][key])
+            amount = 0.0 if key is None else v * share
+            rec[f"union_{end}_bn"], rec[f"share_{end}"], rec[f"added_{end}_bn"] = v, share, amount
+            totals[i] += amount
+        detail.append(rec)
+    for i, end in enumerate(("low", "high")):
+        s = sum(d[f"union_{end}_bn"] for d in detail)
+        gate(f"lineage social rows: the restated rows add to the restated social rows ({end}, 2e-6)",
+             abs(s - restated_social[i]) < 2e-6, f"{s:.6f} / {restated_social[i]:.6f}")
+    return detail, tuple(totals)
+
+
 def priced_count(path):
     """(audit row 4's union, the published CPS union): the adopted cases price the first."""
     row = next(r for r in csv.DictReader(path.open()) if r["cut"] == "all" and r["group"] == "union")
@@ -297,7 +367,8 @@ def half_up(x, places):
 def parse_args():
     ap = argparse.ArgumentParser(description="Real-costs totals (memo §7, §7b) on an adopted main case.")
     ap.add_argument("--case", choices=tuple(LANES), default="sept27",
-                    help="sept27: the September 27 case (default); sept29: the main case adopted 2026-09-29; "
+                    help="sept27: the September 27 case (default); oct05: the main case adopted 2026-10-05; "
+                         "sept29: the main case adopted 2026-09-29; "
                          "sept26_schools: schools at full average cost; sept26: the one-year scenario (--out-dir only); "
                          "sept24: the committed September 24 run")
     ap.add_argument("--out-dir", type=Path, default=None,
@@ -337,6 +408,18 @@ def main():
     pop_m = meta["target_population"] / 1e6
     priced, published_union = priced_count(paths["headcount"])
     pop = dict(sept23=pop_m, **{k: priced / 1e6 for k in adopted})  # the population each column prices, millions
+    lineage_keys, lineage_doc = None, None
+    if case in LINEAGE_CASES:
+        # The case prices the lineage: the union (audit row 4) plus the added people (meta.lineage, through the band file).
+        counts, lineage_keys = meta["lineage"]["counts"], meta["lineage_social_keys"]
+        v5 = summaries[case]["v5"]["per_member_usd"]["population"]
+        gate("the lineage population is the union (row 4) plus the added people, and the case's per-member population",
+             abs(counts["account_union"] - priced) < 1e-3 and abs(counts["lineage_population"] - priced - counts["added"]) < 1e-3
+             and abs(counts["lineage_population"] - v5) < 1e-3, f"{counts['lineage_population']:,.1f} = {priced:,.1f} + {counts['added']:,.1f}")
+        gate("the band file's head-count share is the added people over the union",
+             abs(lineage_keys["head_count"] - counts["added"] / priced) < 1e-12, f"{lineage_keys['head_count']:.6f}")
+        gate("the lineage case's pairing is restated on another case's social rows (RESTATED_BASE)", case in RESTATED_BASE)
+        pop[case] = counts["lineage_population"] / 1e6
     band = lambda k, v:(float(bands.loc[(k, v), "cost_low_bn"]), float(bands.loc[(k, v), "cost_high_bn"]))  # noqa: E731
     print("[inputs]")
     c = channels()
@@ -536,17 +619,43 @@ def main():
                          "case's): every social row on audit row 4's count, the crash and congestion rows' NHTS ratios on "
                          "persons aged 5+; low end Hispanic footing with decision 4's mixed-group victims, high end custody "
                          "footing")
+            # October 5 on: the added people's social rows join the pairing (lineage_social_rows()).
+            added = (0.0, 0.0)
+            if lineage_keys:
+                lineage_detail, added = lineage_social_rows(paths["restated"], lineage_keys, restated_social)
+                note_case += ("; plus the added people's social rows, each restated row times their share of its engine key "
+                              "(band_variants.json lineage_social_keys); per member on the lineage population")
+                lineage_doc = dict(
+                    rule=("each restated social row (population lane, audit row 4's union, 5+ basis) times the added people's "
+                          "share of the engine key it scales with at the band end's specification [ASSUMPTION]; restaurant "
+                          "variety carries no head count and is not priced"),
+                    keys=lineage_keys, rows=lineage_detail, union_social_bn=dict(zip(("low", "high"), restated_social)),
+                    added_social_bn=dict(zip(("low", "high"), added)),
+                    record_basis_rows="the section 7 rows on the lanes' published social rows carry the union's social rows only")
             for i, end in enumerate(("low", "high")):
                 total = own[i] - own_social[i] + restated_social[i]
+                if lineage_keys:
+                    total += added[i]
                 add("7", "pairing_on_priced_count", f"published pairing ({end})", {case: total}, note=note_case)
                 add("7", "pairing_on_priced_count", f"published pairing per group member ({end})", {case: total / pop[case]},
                     unit="$k", note=note_case)
                 add("7", "pairing_on_priced_count", f"social rows on the priced count ({end})", {case: restated_social[i]},
                     note=f"{rel(paths['restated'])} pairing_5plus less row fiscal, {end}")
+                if lineage_keys:
+                    add("7", "pairing_on_priced_count", f"the added people's social rows ({end})", {case: added[i]},
+                        note="the 3.04M at their share of each row's engine key; lineage_social_* rows below")
+            if lineage_keys:
+                for d in lineage_detail:
+                    for end in ("low", "high"):
+                        add("7", f"lineage_social_{d['item']}", f"added people ({end})", {case: d[f"added_{end}_bn"]},
+                            note=f"restated union row {d[f'union_{end}_bn']:.6f} x share {d[f'share_{end}']:.6f} "
+                                 f"({d['keys'][end] or 'not priced: no head count in the item'})")
             held = (case, "justice_raw_coding_state_price_held")
             if held in bands.index:
                 # The alternative to band_variants.cjs's re-pricing: the state-priced justice line held at the case's key.
                 low_held = band(*held)[0] + restated_social[0]
+                if lineage_keys:
+                    low_held += added[0]
                 note_held = ("alternative, beside: the low end with the state-priced justice line held at the case's use-key "
                              "amount (band_variants.csv justice_raw_coding_state_price_held); the central re-prices it on the "
                              "raw-coded key")
@@ -557,10 +666,13 @@ def main():
                 k, (column, note_run) = f"{case}_{run}", BESIDE_RUNS[case][run]
                 f_run = (band(k, "justice_raw_coding")[0], band(k, "adopted")[1])
                 for i, end in enumerate(("low", "high")):
+                    t_run = f_run[i] + restated_social[i]
+                    if lineage_keys:
+                        t_run += added[i]
                     add("7", f"pairing_on_priced_count_{column}", f"published pairing ({end})",
-                        {case: f_run[i] + restated_social[i]}, note=f"{note_run}; the social rows as in pairing_on_priced_count")
+                        {case: t_run}, note=f"{note_run}; the social rows as in pairing_on_priced_count")
                     add("7", f"pairing_on_priced_count_{column}", f"published pairing per group member ({end})",
-                        {case: (f_run[i] + restated_social[i]) / pop[case]}, unit="$k", note=note_run)
+                        {case: t_run / pop[case]}, unit="$k", note=note_run)
 
     print("[§7b: custody footing, benefits priced]")
     soc = {k: social(c, c["victims_custody"], congestion=cong[k], items=cost_items[k][0]) for k in cols}
@@ -634,6 +746,11 @@ def main():
         doc["beside_the_central_total"] = {f"{case}_{run}": note for run, (column, note) in BESIDE_RUNS[case].items()}
         if stale_congestion:
             doc["congestion_by_band_end_bn"]["not_recomputed"] = stale_congestion
+        stale_v5 = summaries[case].get("beside_the_account", {}).get("congestion", {}).get("not_recomputed_v5")
+        if stale_v5:
+            doc["congestion_by_band_end_bn"]["not_recomputed_v5"] = stale_v5
+    if lineage_doc:
+        doc["lineage_social_rows"] = lineage_doc
     if case in SOCIAL_ITEMS:
         doc["social_items_in_the_social_rows"] = dict(
             case=case, central_bn=items[case][0], stacked_low_bn=items[case][1], stacked_high_bn=items[case][2],

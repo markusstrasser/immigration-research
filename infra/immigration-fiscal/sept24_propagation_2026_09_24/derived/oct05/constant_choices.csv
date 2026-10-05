@@ -1,0 +1,13 @@
+end,convention,item,amount_bn,federal_this_lane_bn,federal_ledger_lane_bn,federal_difference_bn,share_this_lane,share_ledger_lane,basis
+low,central,row 8,1.959704,0.027963,0.000000,0.027963,0.014269,0.000000,grant share of state-local general government vs 0; with its finite-removal piece; with the lineage's parts
+low,central,row 10,-1.554810,-1.042243,-1.042243,-0.000000,0.670335,0.670334,other_state_welfare fraction vs family_and_general_assistance fraction; with the lineage's part
+low,low,row 8,1.959704,0.000000,0.000000,0.000000,0.000000,0.000000,grant share of state-local general government vs 0; with its finite-removal piece; with the lineage's parts
+low,low,row 10,-1.554810,-0.699096,-0.699095,-0.000001,0.449634,0.449634,other_state_welfare fraction vs family_and_general_assistance fraction; with the lineage's part
+low,high,row 8,1.959704,0.027963,0.000000,0.027963,0.014269,0.000000,grant share of state-local general government vs 0; with its finite-removal piece; with the lineage's parts
+low,high,row 10,-1.554810,-1.042243,-1.042243,-0.000000,0.670335,0.670334,other_state_welfare fraction vs family_and_general_assistance fraction; with the lineage's part
+high,central,row 8,1.959917,0.027966,0.000000,0.027966,0.014269,0.000000,grant share of state-local general government vs 0; with its finite-removal piece; with the lineage's parts
+high,central,row 10,-1.554979,-1.042356,-1.042356,-0.000000,0.670334,0.670334,other_state_welfare fraction vs family_and_general_assistance fraction; with the lineage's part
+high,low,row 8,1.959917,0.000000,0.000000,0.000000,0.000000,0.000000,grant share of state-local general government vs 0; with its finite-removal piece; with the lineage's parts
+high,low,row 10,-1.554979,-0.699171,-0.699171,0.000000,0.449634,0.449634,other_state_welfare fraction vs family_and_general_assistance fraction; with the lineage's part
+high,high,row 8,1.959917,0.027966,0.000000,0.027966,0.014269,0.000000,grant share of state-local general government vs 0; with its finite-removal piece; with the lineage's parts
+high,high,row 10,-1.554979,-1.042356,-1.042356,-0.000000,0.670334,0.670334,other_state_welfare fraction vs family_and_general_assistance fraction; with the lineage's part

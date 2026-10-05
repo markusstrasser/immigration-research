@@ -23,6 +23,10 @@ it in row 8, and the ledger lane's choice zeroes it with row 8.
   sept26_schools  schools at full average cost                                   -> ../sept26_propagation_2026_09_26/derived/
   sept27          the September 27 case, main_case_long_run_2026_09_27 (default) -> ../sept27_propagation_2026_09_27/derived/
   sept29          the main case adopted 2026-09-29, main_case_2026_09_29          -> derived/sept29/
+  oct05           the main case adopted 2026-10-05 (v5), main_case_2026_10_05    -> derived/oct05/
+On oct05 each row also carries the lineage's parts of it: audit row 8's change at the larger group
+(v5_union_response:row8) and the added people's copies of the row 8, finite and row 10 parts
+(v5_lineage:constants on their lines), which the ledger lane's choice moves alike.
 The federal part compared is the run's main profile (its summary.json case.main_profile; before September 27
 cbo_category_lag_non_school_full). From September 27 the debt lane's fiscal_gap_bn and federal_bn are the
 cash part only: the return on public capital and the displaced beneficiaries of capped programs sit in their
@@ -32,7 +36,7 @@ the two constants alike.
 
 Writes constant_choices.csv (2024 split) and constant_choices_stock.csv (re-runs), after every gate.
 Run from the repository root:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py [--case sept24|sept26|sept26_schools|sept27|sept29] [--out-dir DIR]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py [--case sept24|sept26|sept26_schools|sept27|sept29|oct05] [--out-dir DIR]
 """
 from __future__ import annotations
 
@@ -51,7 +55,10 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 LANE = HERE.parent / "debt_legacy_2026_09_23"
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=HERE.parent / "sept26_propagation_2026_09_26" / "derived",
-                sept27=HERE.parent / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29")
+                sept27=HERE.parent / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29",
+                oct05=HERE / "derived" / "oct05")
+LINEAGE_ROW8 = "v5_union_response:row8"                  # October 5: the per-correction split's lineage components
+LINEAGE_CONSTANTS = "v5_lineage:constants"
 OLD_PROFILE = "cbo_category_lag_non_school_full"         # the main profile of every case before September 27
 CENTRAL = dict(benchmark="main", rule="programme_income_pandemic_per_head", convention="central",
                rate_path="effective", window_start=2005, financing="all_borrowed")
@@ -73,12 +80,23 @@ def split_2024(base: Path):
         r10 = part[part.component == "lane_constants:row10"].iloc[0]
         if not np.isclose(r10.federal_bn / r10.effect_bn, frac("other_state_welfare"), rtol=0, atol=1e-6):
             raise SystemExit(f"[BLOCKED] row 10 share is not other_state_welfare's line fraction ({end}, {conv})")
-        alt10 = r10.effect_bn * frac("family_and_general_assistance")
+        # October 5: the lineage's parts of both rows follow the same choice (debt_legacy constant_parts: audit row 8's
+        # change at the larger group, a row8_finite part, and the added people's copy of each union part, which keeps
+        # the part's name, line and share). None on earlier cases.
+        lin8 = part[(part.component == LINEAGE_ROW8) | ((part.component == LINEAGE_CONSTANTS) & (part.line == r8.line.iloc[0]))]
+        lin10 = part[(part.component == LINEAGE_CONSTANTS) & (part.line == "other_state_welfare")]
+        # on amounts: the split file rounds to 6 decimals, coarse against the lineage's $0.05bn
+        if len(lin10) and not np.allclose(lin10.federal_bn, lin10.effect_bn * frac("other_state_welfare"), rtol=0, atol=1.5e-6):
+            raise SystemExit(f"[BLOCKED] the lineage's row 10 share is not other_state_welfare's line fraction ({end}, {conv})")
+        amount10 = r10.effect_bn + lin10.effect_bn.sum()
+        alt10 = amount10 * frac("family_and_general_assistance")
         for item, amount, ours, theirs, basis in (
-                ("row 8", r8.effect_bn.sum(), r8.federal_bn.sum(), 0.0, "grant share of state-local general government vs 0"
-                 + ("; with its finite-removal piece" if finite else "")),
-                ("row 10", r10.effect_bn, r10.federal_bn, alt10,
-                 "other_state_welfare fraction vs family_and_general_assistance fraction")):
+                ("row 8", r8.effect_bn.sum() + lin8.effect_bn.sum(), r8.federal_bn.sum() + lin8.federal_bn.sum(), 0.0,
+                 "grant share of state-local general government vs 0" + ("; with its finite-removal piece" if finite else "")
+                 + ("; with the lineage's parts" if len(lin8) else "")),
+                ("row 10", amount10, r10.federal_bn + lin10.federal_bn.sum(), alt10,
+                 "other_state_welfare fraction vs family_and_general_assistance fraction"
+                 + ("; with the lineage's part" if len(lin10) else ""))):
             rows.append(dict(end=end, convention=conv, item=item, amount_bn=amount, federal_this_lane_bn=ours,
                              federal_ledger_lane_bn=theirs, federal_difference_bn=ours - theirs,
                              share_this_lane=ours / amount, share_ledger_lane=theirs / amount, basis=basis))

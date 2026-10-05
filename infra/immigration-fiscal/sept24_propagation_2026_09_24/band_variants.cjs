@@ -56,7 +56,28 @@
  *     forPayload() of it. Gates: its responses, capital rules and state pricing equal the case payload's; its
  *     adopted variant reproduces summary.json's cash_set band (1e-9) and main_case_bands.csv's cash_set row (1e-4).
  *
- * Run from anywhere: node band_variants.cjs [--case sept24|sept26|sept26_schools|sept27|sept29] [--out-dir DIR]
+ * October 5 (v5, oct05: main_case_2026_10_05 -> derived/oct05/). The payload is the September 29 payload plus the
+ * lineage's cell edits (meta.lineage: the 3.04M descendants who no longer report Mexican origin, priced at G3+ members'
+ * and third-plus whites' amounts in every engine cell). Three things are new:
+ *   - The cash set is that lane's own derived/corrections_cash.json, costed through the package's CASH (forPayload()
+ *     of it would cost the lineage at v4's long-run capital responses). Gate: CASH's payload is the file.
+ *   - State prices with the lineage. The added people's state-price amount is the lineage's edit on the line (priced on
+ *     their G3+ and white cells), not national_gap_bn x their key share. statePriced() therefore re-prices the union's
+ *     part by the rule and scales the added people's own amount by their own amount on the evaluated key over theirs
+ *     on the parent key [ASSUMPTION]. Gate: on the case's key it rebuilds the payload's line (1e-9).
+ *   - A variant that picks another key (raw coding, uncompensated care at 0.7x use) moves the added people's own cells
+ *     on that key, so the corrected model no longer moves as the uncorrected one does. The gate splits the move: the
+ *     September 29 payload (P.SEPT29), evaluated at the case's specifications as a gate-only run, moves every
+ *     specification as the uncorrected model does (1e-9, the old gate), and the case moves by that plus the lineage's
+ *     own move, which is its edits on the variant's key less those on the case's key, times the line's response, plus
+ *     the return on the capital keyed on that line (1e-9). The lineage's own move at the band ends goes to the JSON.
+ *   - The added people's share of the engine keys the social rows scale with (meta.lineage_social_keys), at the band
+ *     ends' specifications: the justice key of each end's footing, the uninsured-use key, the road key (hwy_sl's key on
+ *     the evaluation), the consumption key, the K-12 operating key, the adults key and the head count. Each is the
+ *     added people's amount over the union's (the September 29 payload's) on the same key. real_costs_totals.py
+ *     prices the added people's social rows with them.
+ *
+ * Run from anywhere: node band_variants.cjs [--case sept24|sept26|sept26_schools|sept27|sept29|oct05] [--out-dir DIR]
  *   -> DIR/band_variants.csv, DIR/band_variants.json
  */
 "use strict";
@@ -74,6 +95,9 @@ const CASES = {
   // cash: the cash set's payload, which the adopted lane's main_case.cjs reads from the candidate lane.
   sept29: { lane: "main_case_2026_09_29", out: path.join(__dirname, "derived", "sept29"),
     cash: "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json" },
+  // cashPackage: the package that costs the cash set (default: the package's forPayload() of the cash payload).
+  oct05: { lane: "main_case_2026_10_05", out: path.join(__dirname, "derived", "oct05"),
+    cash: "main_case_2026_10_05/derived/corrections_cash.json", cashPackage: (pkg) => pkg.CASH },
 };
 const argv = process.argv.slice(2);
 function opt(name, dflt) {
@@ -141,6 +165,15 @@ function specsWith(specs, change) {
 // moves the other way, as a payload edit moves it. A model without such lines (every case before September 29, and
 // every uncorrected model) comes back unchanged.
 const JUSTICE_LINE = "public_order_safety";
+// A model that carries the lineage (October 5 on; meta.lineage names its payload file): the lineage's edits, the case's
+// or the cash set's. Every other model: null.
+function lineageEditsOf(m) {
+  const lin = m.corrections && m.corrections.lineage;
+  if (!lin) return null;
+  for (const pkg of [P, P.CASH]) if (pkg && pkg.LINEAGE_META && pkg.LINEAGE_META.payload === lin.payload) return pkg.LINEAGE_EDITS;
+  throw new Error(`[BLOCKED] state pricing: no package has the lineage payload ${lin.payload}`);
+}
+const editsOn = (edits, line, key, a) => edits.filter((e) => e.side === "spending" && e.line === line && e.key === key).reduce((s, e) => s + e.by[a], 0);
 function statePriced(m, parent, key) {
   const lines = ((m.corrections && m.corrections.state_pricing) || {}).lines || [];
   const mine = lines.filter((l) => l.parent === parent);
@@ -148,11 +181,17 @@ function statePriced(m, parent, key) {
   const out = JSON.parse(JSON.stringify(m));
   const p = out.spending.lines.find((l) => l.id === parent);
   if (!p || !p.keys[key]) throw new Error(`[BLOCKED] state pricing: no key ${parent}/${key}`);
+  const L = lineageEditsOf(m);
   for (const sp of mine) {
     const line = out.spending.lines.find((l) => l.id === sp.line);
     if (!line || !line.keys.k || !Number.isFinite(sp.national_gap_bn)) throw new Error(`[BLOCKED] state pricing: unreadable line ${sp.line}`);
     for (const a of ["personal", "shared"]) {
-      const next = sp.national_gap_bn * p.keys[key][a].target_bn / p.national_bn;
+      // With the lineage the rule prices the union's part; the added people keep their own state-price amount (the
+      // lineage's edit on the line, priced on their G3+ and white cells), scaled by their own amount on the evaluated key
+      // over theirs on the line's parent key [ASSUMPTION: their price gap per unit of justice service holds].
+      const own = L ? (ln, k) => editsOn(L, ln, k, a) : null;
+      const next = !L ? sp.national_gap_bn * p.keys[key][a].target_bn / p.national_bn
+        : sp.national_gap_bn * (p.keys[key][a].target_bn - own(parent, key)) / p.national_bn + own(sp.line, "k") * own(parent, key) / own(parent, sp.parent_key);
       line.keys.k[a].other_bn -= next - line.keys.k[a].target_bn;
       line.keys.k[a].target_bn = next;
     }
@@ -265,9 +304,20 @@ if (LATER) {
     for (const k of ["responses", "capital_return", "state_pricing"]) {
       gate(`the cash set's payload has the case payload's meta.${k}`, JSON.stringify(cashPayload.meta[k]) === JSON.stringify(payload.meta[k]));
     }
-    const PC = P.forPayload(cashPayload);
+    const PC = CASES[CASE].cashPackage ? CASES[CASE].cashPackage(P) : P.forPayload(cashPayload);
+    if (CASES[CASE].cashPackage) gate("the package's cash set (CASH) has the cash set's payload, exactly", canon(PC.correctionsPayload()) === canon(cashPayload));
     gate("the cash set's specifications are the case's", canon(PC.MAIN_SPECS) === canon(specs));
     RUNS.push([`${CASE}_cash_set`, Engine.applyCorrections(MODEL, cashPayload), specs, PC.cost]);
+  }
+  if (payload.meta.lineage) {
+    // October 5 on: the September 29 payload at the case's specifications, a gate-only run (never written). The case's
+    // payload is it with the lineage's edits appended.
+    const p29 = P.SEPT29.correctionsPayload(), n29 = p29.edits.length;
+    gate("the case's payload is the September 29 payload with the lineage's edits appended (meta.lineage.edits)",
+      canon(payload.edits.slice(0, n29)) === canon(p29.edits) && payload.edits.length === n29 + P.LINEAGE_EDITS.length
+        && canon(payload.edits.slice(n29)) === canon(P.LINEAGE_EDITS) && payload.meta.lineage.edits.first === n29,
+      `${n29} + ${P.LINEAGE_EDITS.length} edits`);
+    RUNS.push([`${CASE}_sept29_payload`, Engine.applyCorrections(MODEL, p29), specs, null, true]);
   }
 }
 
@@ -283,12 +333,60 @@ function repricing(base, m, spec) {
 }
 const hasStatePrice = (m) => (((m.corrections && m.corrections.state_pricing) || {}).lines || []).some((l) => l.parent === JUSTICE_LINE);
 
+// October 5 on (meta.lineage). lineageBy: the lineage's edits on one spending cell, summed.
+const lineageMoves = {};
+let lineageKeys = null;
+const lineageBy = (line, key, allocation) => P.LINEAGE_EDITS
+  .filter((e) => e.side === "spending" && e.line === line && e.key === key).reduce((a, e) => a + e.by[allocation], 0);
+// The lineage's own move under a variant at one specification, from its edits: for each line whose key the variant
+// changes, the edits on the new key less those on the case's key, times the line's response and the fiscal weight; plus
+// the return on each capital component whose key is lines over a national that reads the line (stock x rate x response
+// x the key's move).
+function lineageOwnMove(m5, modelChange, change, spec) {
+  const [vs] = specsWith([spec], change);
+  const a = P.evaluateFull(m5, spec), v = P.evaluateFull(modelChange ? modelChange(m5) : m5, vs);
+  const fw = P.stateFor(P.withSyntheticLines(m5), spec, P.MAIN_PROFILE).fiscal_weight;
+  const moved = {};
+  let own = 0;
+  for (const row of v.evaluation.spending) {
+    const r0 = a.evaluation.spending.find((x) => x.id === row.id);
+    if (row.key === r0.key) continue;
+    if (row.response !== r0.response) throw new Error(`[BLOCKED] ${row.id}: the variant moves its response`);
+    moved[row.id] = lineageBy(row.id, row.key, spec.allocation) - lineageBy(row.id, r0.key, spec.allocation);
+    own += fw * row.response * moved[row.id];
+  }
+  const rules = new Map(P.componentsFor(spec.capital_variant).map((c) => [c.id, c.key]));
+  for (const c of v.capital.components) {
+    const k = rules.get(c.id);
+    if (!k || k.kind !== "lines_amount_over_national") continue;
+    const d = k.numerator_lines.reduce((acc, l) => acc + (moved[l] || 0), 0);
+    if (!d) continue;
+    own += c.stock_charged_bn * spec.rate * c.response * d / v.evaluation.spending.find((x) => x.id === k.denominator_line).national_bn;
+  }
+  return own;
+}
+// The added people's share of the keys the social rows scale with, at one specification: the lineage model's amount
+// over the September 29 payload's, less 1, on each key at the specification's allocation (the road key is hwy_sl's on
+// each evaluation; the consumption key is the general sales tax at the specification's receipt scenario).
+function lineageSocialKeys(m5, m4, spec) {
+  const cell = (m, line, key) => m.spending.lines.find((l) => l.id === line).keys[key][spec.allocation].target_bn;
+  const ratio = (line, key) => cell(m5, line, key) / cell(m4, line, key) - 1;
+  const road = (m) => P.evaluateFull(m, spec).capital.components.find((c) => c.id === "hwy_sl").key;
+  const sc = P.stateFor(P.withSyntheticLines(m5), spec, P.MAIN_PROFILE).receipt_scenario;
+  const rcell = (m) => m.receipts.lines.find((l) => l.id === "general_sales_tax").cells[sc][spec.allocation].target_bn;
+  return { receipt_scenario: sc,
+    justice_use: ratio("public_order_safety", "use"), justice_use_raw_coding: ratio("public_order_safety", "use_raw_coding"),
+    uninsured_use: ratio("medicaid_and_chip_other_medical", spec.uc), road: road(m5) / road(m4) - 1,
+    consumption: rcell(m5) / rcell(m4) - 1, pupils: ratio("education_services", "school_operating"),
+    adults: ratio("public_order_safety", "adults") };
+}
+
 const rows = [];
 const bands = {};
 const perSpec = {};
 const extra = {};   // a re-priced variant's move beyond its held alternative, by specification
-for (const [caseName, base, specs, costOf] of RUNS) {
-  console.log(`[${caseName}]`);
+for (const [caseName, base, specs, costOf, gateOnly] of RUNS) {
+  console.log(`[${caseName}]${gateOnly ? " (gate only, not written)" : ""}`);
   const price = costOf || cost;
   for (const [name, change, modelChange, ref] of VARIANTS) {
     const m = modelChange ? modelChange(base) : base;
@@ -296,7 +394,7 @@ for (const [caseName, base, specs, costOf] of RUNS) {
     const b = span(costs);
     bands[`${caseName}|${name}`] = b;
     perSpec[`${caseName}|${name}`] = costs;
-    rows.push({ case: caseName, variant: name, low: b[0], high: b[1] });
+    if (!gateOnly) rows.push({ case: caseName, variant: name, low: b[0], high: b[1] });
     if (caseName === "sept23" && ref) {
       const want = published23[ref];
       gate(`${name} reproduces ${ref}`, near(b[0], want[0], 1e-4) && near(b[1], want[1], 1e-4), `${f4(b)} vs ${f4(want)}`);
@@ -312,7 +410,7 @@ for (const [caseName, base, specs, costOf] of RUNS) {
     const b = span(costs), held = `${name}_state_price_held`;
     bands[`${caseName}|${held}`] = b;
     perSpec[`${caseName}|${held}`] = costs;
-    rows.push({ case: caseName, variant: held, low: b[0], high: b[1] });
+    if (!gateOnly) rows.push({ case: caseName, variant: held, low: b[0], high: b[1] });
     console.log(`  ${held.padEnd(44)} ${f4(b)}`);
     const gap = Math.max(...costs.map((x, i) => Math.abs(perSpec[`${caseName}|${name}`][i] - x - extra[`${caseName}|${name}`][i])));
     gate(`${caseName}: ${name} re-priced less held is the justice line's re-pricing alone, at every specification (1e-9)`, gap < 1e-9,
@@ -334,13 +432,45 @@ if (LATER) {
     gate(`${run} reproduces ${LANE} main_case_bands.csv ${label} (1e-4)`,
       near(b[0], published[label][0], 1e-4) && near(b[1], published[label][1], 1e-4), `${f4(b)} vs ${f4(published[label])}`);
   }
-  for (const [name] of VARIANTS.slice(1)) {
+  const L29 = payload.meta.lineage ? `${CASE}_sept29_payload` : null;
+  const [, m5, specs5] = RUNS.find((r) => r[0] === cor);
+  for (const [name, change, modelChange] of VARIANTS.slice(1)) {
     // A re-priced justice variant moves the corrected model by its state-price re-pricing more (September 29 on).
     const move = (run) => perSpec[`${run}|${name}`].map((x, i) => x - perSpec[`${run}|adopted`][i] - ((extra[`${run}|${name}`] || [])[i] || 0));
     const [mu, mc] = [move(unc), move(cor)];
-    const gap = Math.max(...mu.map((x, i) => Math.abs(x - mc[i])));
-    gate(`${name} moves every specification by the same amount on the uncorrected and corrected ${CASE} model` +
-      (extra[`${cor}|${name}`] ? ", beyond the justice line's state-price re-pricing" : ""), gap < 1e-9, `max gap ${gap.toExponential(1)}`);
+    const beyond = extra[`${cor}|${name}`] ? ", beyond the justice line's state-price re-pricing" : "";
+    if (!L29) {
+      const gap = Math.max(...mu.map((x, i) => Math.abs(x - mc[i])));
+      gate(`${name} moves every specification by the same amount on the uncorrected and corrected ${CASE} model` + beyond, gap < 1e-9, `max gap ${gap.toExponential(1)}`);
+      continue;
+    }
+    // October 5 on: the September 29 payload moves as the uncorrected model does; the lineage adds its own cells' move.
+    const m29 = move(L29);
+    const gap29 = Math.max(...mu.map((x, i) => Math.abs(x - m29[i])));
+    gate(`${name} moves every specification by the same amount on the uncorrected model and the September 29 payload at the ${CASE} specifications` + beyond,
+      gap29 < 1e-9, `max gap ${gap29.toExponential(1)}`);
+    const own = specs5.map((s) => lineageOwnMove(m5, modelChange, change, s));
+    const gapL = Math.max(...mc.map((x, i) => Math.abs(x - m29[i] - own[i])));
+    gate(`${name} moves the ${CASE} model by that plus the lineage's own move: its edits on the variant's key less the case's key, times the response, and the capital keyed on that line (1e-9)`,
+      gapL < 1e-9, `max gap ${gapL.toExponential(1)}; own move ${Math.min(...own).toFixed(4)} to ${Math.max(...own).toFixed(4)}bn`);
+    lineageMoves[name] = own;
+  }
+  if (L29) {
+    // The band ends of the case, and the added people's share of the social rows' keys there.
+    const costs = perSpec[`${cor}|adopted`];
+    const lo = costs.indexOf(Math.min(...costs)), hi = costs.indexOf(Math.max(...costs));
+    const ends = summary.end_specifications;
+    gate(`the ${CASE} band's end specifications are the case's in both fill-in methods (summary.json end_specifications)`,
+      Array.isArray(ends) && ends.length === 2 && ends.every((e) => e.low_end.index === lo && e.high_end.index === hi), `${lo} / ${hi}`);
+    const m29model = RUNS.find((r) => r[0] === L29)[1];
+    const c = payload.meta.lineage.counts;
+    lineageKeys = { rule: "the added people's amount over the union's (the September 29 payload's) on the key a social row scales with, at the band end's specification",
+      head_count: c.added / c.account_union };
+    for (const [end, i] of [["low_end", lo], ["high_end", hi]]) {
+      lineageKeys[end] = Object.assign({ specification: i, allocation: specs5[i].allocation, uc: specs5[i].uc, justice: specs5[i].justice },
+        lineageSocialKeys(m5, m29model, specs5[i]));
+    }
+    for (const [name, own] of Object.entries(lineageMoves)) lineageMoves[name] = { low_end_bn: own[lo], high_end_bn: own[hi], range_bn: [Math.min(...own), Math.max(...own)] };
   }
   if (cashPayload) {
     const b = bands[`${CASE}_cash_set|adopted`], want = summary.cash_set.band_bn;
@@ -386,7 +516,16 @@ if (LATER) {
       lines: payload.meta.state_pricing.lines.filter((l) => l.parent === JUSTICE_LINE) };
   }
   if (cashPayload) {
-    meta.runs[`${CASE}_cash_set`] = `beside the case, never in its band: the cash set (the pension switch off), ${CASES[CASE].cash}, which ${LANE}/main_case.cjs reads, costed through the package's forPayload() of it`;
+    meta.runs[`${CASE}_cash_set`] = `beside the case, never in its band: the cash set (the pension switch off), ${CASES[CASE].cash}, which ${LANE}/main_case.cjs ` +
+      (CASES[CASE].cashPackage ? "writes, costed through the package's CASH" : "reads, costed through the package's forPayload() of it");
+  }
+  if (lineageKeys) {
+    meta.lineage = {
+      counts: payload.meta.lineage.counts, arm: payload.meta.lineage.arm, counting: payload.meta.lineage.counting.rule,
+      gate_only_run: `${CASE}_sept29_payload: the September 29 payload (P.SEPT29) at the case's specifications, never written`,
+      variant_rule: "a variant that picks another key moves the case by the September 29 payload's move (the uncorrected model's) plus the lineage's own move: its edits on the variant's key less the case's key, times the line's response, plus the capital keyed on the line",
+      own_move_bn: lineageMoves };
+    meta.lineage_social_keys = lineageKeys;
   }
 }
 meta.sources_sha256 =Object.fromEntries(Object.values(SOURCES).map((rel) => [rel, sha(rel)]));
