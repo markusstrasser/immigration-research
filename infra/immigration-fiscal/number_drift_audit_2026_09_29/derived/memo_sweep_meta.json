@@ -1,5 +1,5 @@
 {
- "rev": "e961aee3",
+ "rev": "8d8590c6",
  "memos_read": 165,
  "memos_skipped": [
   "research/immigration-adversarial-audit-2026-09-28.md: a dated audit",
@@ -26,10 +26,10 @@
  ],
  "adopted": {
   "case.main": {
-   "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+   "lane": "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json",
    "value": [
-    371.4145997888867,
-    434.8409586241355
+    390.29395820202535,
+    461.24312471796554
    ],
    "registry_value": [
     321.81935699039354,
@@ -38,10 +38,10 @@
    "registry_case": "September 27 main case"
   },
   "case.per_member": {
-   "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+   "lane": "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json",
    "value": [
-    9.352588282267313,
-    10.949726953624355
+    9.129210665476625,
+    10.788754386439704
    ],
    "registry_value": [
     8.103730841237693,
@@ -86,12 +86,30 @@
    "registry_case": "September 27 main case"
   }
  },
+ "earlier": {
+  "case.main": {
+   "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+   "value": [
+    371.4145997888867,
+    434.8409586241355
+   ],
+   "case": "the September 29 case (v4)"
+  },
+  "case.per_member": {
+   "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+   "value": [
+    9.352588282267313,
+    10.949726953624355
+   ],
+   "case": "the September 29 case (v4), per member of the 39.71M union"
+  }
+ },
  "records_with_other_values": {
   "candidate_v3.items_1_7_accrual_payable": 3,
   "candidate_v4.set_accrual_payable": 4,
   "candidate_v4.set_cash": 4,
-  "case.main": 3,
-  "case.per_member": 1,
+  "case.main": 4,
+  "case.per_member": 2,
   "comparators.us_whites": 1,
   "congestion.item": 4,
   "congestion.range": 1,
@@ -122,6 +140,6 @@
  "rows_by_class": {
   "arm_labelled": 11,
   "count_labelled": 16,
-  "vintage_labelled": 17
+  "vintage_labelled": 28
  }
 }
