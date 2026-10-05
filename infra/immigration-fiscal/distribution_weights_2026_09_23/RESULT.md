@@ -1,4 +1,10 @@
-**Verdict:** [2026-09-27: the script now defaults to the main case of that day (`--case sept27`). The budget's fiscal channel is $351.0bn: cash financing $306.3bn plus the capital return's resource cost $44.7bn. Rental assistance and LIHEAP ($5.1bn) now fall on eligible households without the slots, $3.8bn of it on the bottom fifth. The central total with the social items is $390.8bn; the channels outside the budget do not move. `--case sept26_schools` reproduces 39b854b. See "The September 27 case" below.] [2026-09-26, later: the script now defaults to the main case with schools at full cost (`--case sept26_schools`). The fiscal channel is $276.7bn and the central total with the social items $311.4bn; the channels outside the budget do not move. `--case sept26` gives the one-year scenario ($224.8bn, $259.5bn). `--case sept24` and `--case sept23` with `--out-dir DIR` reproduce the runs described below.] [2026-09-25: the script now defaults to the main case adopted September 24: fiscal channel $225.1bn (text below: $227.9bn), central total $259.8bn (below: $262.6bn); the channels outside the budget do not move. `distribute.py --case sept23 --out-dir DIR` reproduces the run this text describes, byte for byte (`test_distribute.py`). See `../sept24_propagation_2026_09_24/RESULT.md`.] Relative to income, every channel except tax-financed fiscal cost falls hardest on
+**Verdict:** [2026-10-05: on main case v5 (`oct05`, $390.29–461.24bn, which adds 3.04M descendants who no longer
+report Mexican origin), `--case oct05` writes `derived/oct05/` beside `derived/sept29/`, which did not move. The fiscal
+channel is $417.58bn (September 29: $395.71bn): cash $287.70bn, the return on public capital $49.50bn and the pension
+accrual $80.38bn ($275.04bn, $45.80bn, $74.87bn). Displaced beneficiaries carry $8.81bn ($8.13bn) and the wage channel
+−$1.66bn (−$1.61bn); the central total is $461.28bn ($438.67bn), or $603.3bn at η = 1.3 mean-normalized ($580.4bn).
+Under tax shares the bottom fifth carries $41.99bn ($40.66bn), 7.40% of its resources (7.17%); under per-person cuts,
+$112.84bn ($107.80bn). See "v5 case (oct05)" below.] [2026-09-27: the script now defaults to the main case of that day (`--case sept27`). The budget's fiscal channel is $351.0bn: cash financing $306.3bn plus the capital return's resource cost $44.7bn. Rental assistance and LIHEAP ($5.1bn) now fall on eligible households without the slots, $3.8bn of it on the bottom fifth. The central total with the social items is $390.8bn; the channels outside the budget do not move. `--case sept26_schools` reproduces 39b854b. See "The September 27 case" below.] [2026-09-26, later: the script now defaults to the main case with schools at full cost (`--case sept26_schools`). The fiscal channel is $276.7bn and the central total with the social items $311.4bn; the channels outside the budget do not move. `--case sept26` gives the one-year scenario ($224.8bn, $259.5bn). `--case sept24` and `--case sept23` with `--out-dir DIR` reproduce the runs described below.] [2026-09-25: the script now defaults to the main case adopted September 24: fiscal channel $225.1bn (text below: $227.9bn), central total $259.8bn (below: $262.6bn); the channels outside the budget do not move. `distribute.py --case sept23 --out-dir DIR` reproduces the run this text describes, byte for byte (`test_distribute.py`). See `../sept24_propagation_2026_09_24/RESULT.md`.] Relative to income, every channel except tax-financed fiscal cost falls hardest on
 the bottom of the income distribution. Outside the budget the channels nearly cancel in dollars
 but move money up the income scale. The bottom four fifths of other residents lose $80.7bn a year
 and the top fifth gains $46.0bn, for a net of −$34.7bn. Weighted by income, those channels are
@@ -723,6 +729,141 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/distr
   "uv run --no-project python3 {lane}/distribute.py" "uv run --no-project python3 {lane}/distribute.py --case sept29" \
   --allow-unrun infra/immigration-fiscal/distribution_weights_2026_09_23/test_distribute.py
 ```
+
+## v5 case (oct05), 2026-10-05
+
+`--case oct05` runs the adopted v5 main case (`main_case_2026_10_05/`, adopted in 4bf02069; $390.29–461.24bn at
+specifications 48 / 11) and writes `derived/oct05/`, with the default's thirteen file names. Run
+`node case_ends.cjs --case oct05` first; it writes `derived/case_ends_oct05.json`. The default (September 27) and
+`derived/sept29/` did not move. The run ends with "303 gates passed". Code: `case_ends.cjs`, `distribute.py`,
+`test_distribute.py`.
+
+v5 is v4 plus 3,039,720 people: descendants of Mexican immigrants who no longer report Mexican origin, counted whole
+at G3+ members' and third-plus whites' amounts (`../main_case_lineage_2026_10_05/`). The case's consumer table asks
+this lane to split the change into A and P + F as for the union, with the lineage's production delta belonging to
+the added G3+ members.
+
+**Four rules the case needed.**
+
+1. *A moves by the change less the lineage's production delta.* v5's production grid is v4's plus the added G3+
+   members' P and F; the added whites carry none. At the band's end cells that raises P + F by $0.2676bn (low) and
+   $0.1760bn (high). A falls by the change in the band plus that delta, 18.8794 + 0.2676 = 19.1470 and
+   26.4022 + 0.1760 = 26.5782, so A goes from −383.0944 / −442.5242 to −402.2414 / −469.1024. `case_ends.cjs` reads v4's grid at the same cell
+   (`previous`); `distribute.py` gates that it is v4's own P and F at its ends, exactly. Gate: A equals the engine's
+   A at both ends (|diff| 4.9e-5 and 3.4e-5; tolerance 1e-3).
+
+   Alternative: book the whole change in A, as before September 29. A would miss the engine's by 0.27bn and 0.18bn.
+2. *The lane's production scenarios take the lineage's delta.* They are solved on row-4 weights as for v4, gated
+   against v4's grid (5.0e-10bn). Each scenario's wage changes in skill cell c are then scaled by λ_c and its capital
+   columns by κ, so that its P and F equal v5's grid at its cell [ASSUMPTION: the added members' wage effects fall
+   on other residents' skill cells as the union's do]. With capital adjusting there are no capital terms, and the
+   unknowns are λ_0 and λ_1. With capital fixed there is one λ for both cells, plus κ. The σ_NI = 3 scenarios
+   take their σ_NI-infinite sibling's factors.
+
+   The factors are λ = 1.0336 in both cells for the below-BA split and 1.0222 / 1.0223 for high school or less. The
+   capital-fixed scenario takes λ = 1.0467 and κ = 1.0464. Gates:
+   - the parts reproduce each scenario (2.3e-13bn);
+   - the scenarios start from v4's grid (4.7e-10bn) and reach v5's (2.9e-14bn);
+   - every factor is within 10% of 1 (largest deviation 0.0467).
+
+   The central scenario's P goes from −1.609 to −1.662 and its F from 8.979 to 9.282. The wage channel is −$1.66bn
+   (v4: −$1.61bn).
+
+   Alternative: leave the scenarios on v4's grid. Their P and F would then not be the case's at their cells, and
+   the wage channel would stay at −$1.61bn.
+3. *The pension accrual is the case less its cash set, read from the cash set.* v5's summary has no `item_pension`.
+   `case_ends.cjs` therefore takes the accrual as −`cash_set.change_from_main_case_bn` at the case's end
+   specifications, and gates that the cash set's band is the case's plus that change (1e-9). The definition is v4's:
+   $82.92bn and $77.83bn at the band ends (v4: $76.71bn and $73.02bn).
+4. *The added people stay among the payers.* They do not report Mexican origin, so the CPS frame holds them as
+   natives among the 295.83M other residents. The lane cannot find them and leaves them there [ASSUMPTION: about
+   3.04M of the frame's other residents, 1.03%, are the added people]. Under per-person financing (b) they carry
+   1.03% of the fiscal channel, $4.29bn of $417.58bn [CALCULATION: 417.5785 × 3,039,719.6 / 295,831,228.8]. Under
+   tax shares (a), their part depends on incomes the frame cannot attach to them.
+
+The capped programs rise with the added people's use, to $8.81bn (v4: $8.13bn). Rental assistance is $4.49bn, LIHEAP
+$0.61bn and public housing $3.72bn (v4: $4.14bn, $0.56bn, $3.43bn).
+
+**Four financing columns.** One decimal, so the parts add; the low end's resource cost (−37.1478) is rounded under
+control.
+
+| $bn a year (negative = cost) | Low-cost end | High-cost end | Middle, distributed | sept29 middle |
+|---|---:|---:|---:|---:|
+| Cash financing: A + F, less the capital return, the accrual and the capped programs | −264.1 | −311.3 | −287.7 | −275.0 |
+| Resource cost: return on public capital (federal part) | −37.2 (−0.9) | −61.9 (−1.9) | −49.5 | −45.8 |
+| Pension accrual | −82.9 | −77.8 | −80.4 | −74.9 |
+| Displaced beneficiaries: rental assistance, LIHEAP, public housing | −8.8 | −8.8 | −8.8 | −8.1 |
+| A + F | −393.0 | −459.8 | −426.4 | −403.8 |
+
+[CALCULATION: `derived/oct05/inputs.json` `financing_columns`; sept29's ends are in the v4 table above]
+
+| SPM quintiles, $bn a year | Total (sept29) | Q1 | Q2 | Q3 | Q4 | Q5 | % of resources, Q1 / Q5 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Fiscal, (a) tax shares | −417.58 (−395.71) | −12.66 | −26.70 | −45.02 | −73.82 | −259.38 | −2.23 / −4.83 |
+| of which cash | −287.70 (−275.04) | −8.72 | −18.40 | −31.01 | −50.86 | −178.71 | −1.54 / −3.33 |
+| of which return on public capital | −49.50 (−45.80) | −1.50 | −3.16 | −5.34 | −8.75 | −30.75 | −0.26 / −0.57 |
+| of which pension accrual | −80.38 (−74.87) | −2.44 | −5.14 | −8.67 | −14.21 | −49.92 | −0.43 / −0.93 |
+| Fiscal, (b) per person | −417.58 (−395.71) | −83.52 | −83.51 | −83.52 | −83.52 | −83.51 | −14.72 / −1.56 |
+| Displaced beneficiaries | −8.81 (−8.13) | −6.54 | −2.01 | −0.26 | −0.00 | 0.00 | −1.15 / 0.00 |
+| of which public housing | −3.72 (−3.43) | −2.70 | −0.90 | −0.12 | 0.00 | 0.00 | −0.48 / 0.00 |
+| Central total, (a) | −461.28 (−438.67) | −41.99 | −52.13 | −67.24 | −86.05 | −213.87 | −7.40 / −3.99 |
+| Central total, (b) | −461.28 (−438.67) | −112.84 | −108.94 | −105.74 | −95.75 | −38.01 | −19.89 / −0.71 |
+
+Four quintile cells are rounded under control, one cent at most, so each row adds and the three parts add to the
+fiscal row: the capital return's Q2, the accrual's Q3 and Q5, and fiscal (b) Q5. The same procedure on
+`derived/sept29/` reproduces the v4 table's five controlled cells. Financed by tax shares, the $8.81bn of displaced
+beneficiaries would have cost Q1 $0.27bn; by per-person cuts, $1.76bn (v4: $0.25bn and $1.63bn).
+
+At η = 1.3 the central total is −$603.3bn (a) and −$1,210.0bn (b) mean-normalized, or −$269.6bn and −$540.7bn as
+equal-split equivalents. For v4 those were −$580.4bn, −$1,155.3bn, −$259.3bn and −$516.3bn. The displaced
+beneficiaries weigh −$47.9bn mean-normalized (equal split −$21.4bn; v4 −$44.2bn and −$19.8bn).
+
+The central total moves by −$22.61bn: fiscal −$21.87bn, displaced beneficiaries −$0.69bn and wages −$0.05bn. Renters
+(−$33.86bn), landlords (+$37.37bn), crime (−$32.34bn), unreimbursed care and the published-band channels do not
+depend on the case and did not move. [CALCULATION: `distribute.py --case oct05` → `derived/oct05/channel_by_quintile.csv`,
+`weighted_totals.csv`; every channel's total compared with `derived/sept29/`]
+
+**Bridge to the winners lane's level.** This is the v4 construction on this run's A and v5's grid at the band ends.
+
+| $bn a year, central (one decimal, so the parts add) | sept29 | oct05 |
+|---|---:|---:|
+| Case, middle of the band | 403.1 | 425.8 |
+| less the private production term at the ends, −P | −0.6 | −0.6 |
+| less the capped programs (displaced beneficiaries) | −8.1 | −8.8 |
+| = winners lane: taxpayers' fiscal channel, A + F at the band ends | 394.4 | 416.4 |
+| plus the engine's F less this lane's (10.26 − 8.98; 10.49 − 9.28) | +1.3 | +1.2 |
+| = this lane: fiscal channel, A + F of its central scenario | 395.7 | 417.6 |
+
+The unrounded difference is 1.2069bn, the engine's F less this lane's to 7.6e-6, as on v4. The winners run on v5 will
+confirm the oct05 level.
+
+**Gates.**
+
+| Gate | Result |
+|---|---|
+| 1. Existing outputs reproduce | `rerun_lane.py` with the seven commands below: IDENTICAL, 47 of 47 files, exit 0. The tracked files, the default's and `derived/sept29/`, equal HEAD |
+| 2. The lane's gates on oct05 | 303 pass (sept29: 291). The twelve new ones: v5's base is the adopted sept29; the summary's band is `main_case_bands.csv`'s; the change is the summary's; the band is rebuilt from A; the case ends are the band; the previous grid is sept29's at both ends; A is the engine's; and the four `lineage_rows` gates |
+| 3. Oracle | `case_ends_oct05.json` band 390.2939582 / 461.2431247 against the case's 390.2940 / 461.2431. Less the accrual it gives 307.3763762 / 383.4092521, against the cash set's 307.3764 / 383.4093 |
+| 4. `pytest` | 10 passed: the sept23–sept26 rebuilds, `case_ends` for sept27, sept29 and oct05, the default, and the sept29 and oct05 directories |
+| 5. JSON | `derived/oct05/inputs.json` parses in Node. The first run wrote infinite σ_NI as `Infinity`; it is now `"inf"`, as `nest_scenarios.csv` writes it |
+
+```sh
+node infra/immigration-fiscal/distribution_weights_2026_09_23/case_ends.cjs --case oct05
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py --case oct05
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/distribution_weights_2026_09_23 \
+  "node {lane}/case_ends.cjs" "node {lane}/case_ends.cjs --case sept29" "node {lane}/case_ends.cjs --case oct05" \
+  "uv run --no-project python3 {lane}/distribute.py" "uv run --no-project python3 {lane}/distribute.py --case sept29" \
+  "uv run --no-project python3 {lane}/distribute.py --case oct05" \
+  "uv run --no-project python3 -m pytest {lane}/test_distribute.py -q --import-mode=importlib -p no:cacheprovider"
+```
+
+Log, 2026-10-06 JST, times from `date`:
+- 00:14:39–00:17:29: first rerun, IDENTICAL 47 of 47 but exit 3. Its pytest command named the directory, so
+  `test_distribute.py` showed as NOT RUN.
+- 00:18:35–00:18:54: `--case oct05` again after the σ_NI fix; 303 gates. Only `inputs.json` changed, at its seven
+  σ_NI tokens.
+- 00:19:13–00:21:13: `pytest`, 10 passed in 120 s.
+- 00:21:22–00:24:11: the rerun above, IDENTICAL, exit 0.
 
 ## Revisions
 

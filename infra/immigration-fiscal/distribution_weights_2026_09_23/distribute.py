@@ -58,6 +58,18 @@ rental line's key) is capped like rental assistance, on rental assistance's elig
 and the pension accrual (the case less its cash set, $76.7/73.0bn at the band ends) stays in the fiscal channel but
 leaves its cash part: fiscal_accrual_* reports it, so fiscal = cash + resource + accrual.
 
+--case oct05 (main case v5, adopted 2026-10-05; OCT05_LANE) writes derived/oct05/ (node case_ends.cjs --case oct05
+first). v5 adds 3.04M people, descendants who no longer report Mexican origin, priced at G3+ members' and third-plus
+whites' amounts; its production grid is September 29's plus the added G3+ members' P and F (whites carry none). So A
+moves by the change from September 29 less that production delta at each band end (case_ends_oct05.json production
+`previous`, the September 29 grid at the same cell). The lane's production scenarios are solved on row-4 weights as for
+September 29 (gated against September 29's grid) and then take the lineage's delta (lineage_rows): within each scenario
+the wage changes by skill cell and the capital columns are scaled so that P and F reach the v5 grid at the scenario's
+cell [ASSUMPTION: the added members' effects fall on other residents' cells as the union's do].
+The added people cannot be found in the CPS frame: they do not report Mexican origin, so they sit there among the
+other residents, as natives, and this lane leaves them there [ASSUMPTION: about 3.04M of the frame's other residents,
+about 1%, are the added people].
+
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
     infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py [--case sept24 --out-dir DIR]
@@ -172,18 +184,25 @@ class Case(NamedTuple):
     ends: str | None = None       # case_ends.cjs output in derived/: capital return and capped programs at the ends
     out: str | None = None        # its files' directory under derived/ when they sit beside the default case's
     summary: str | None = None    # the summary.json key for the case it starts from, where it is not `base`
+    grid_base: str | None = None  # the lane whose production grid the row-4 solve reproduces, where the case's adds to it
 
 
 # Main cases after September 24, in adoption order. Adding a case is one entry here. September 29 (candidate v4,
-# adopted 2026-09-29) writes derived/sept29/, beside the September 27 files, which stay the default.
+# adopted 2026-09-29) writes derived/sept29/, beside the September 27 files, which stay the default; so does October 5
+# (main case v5, derived/oct05/).
 SEPT29_LANE = "main_case_2026_09_29"
+OCT05_LANE = "main_case_2026_10_05"
 LATER_CASES = {"sept26": Case("main_case_2026_09_26", "adopted_2026_09_24"),
                "sept26_schools": Case("main_case_schools_full_2026_09_26", "adopted_2026_09_26"),
                "sept27": Case("main_case_long_run_2026_09_27", "schools_case", "long_run_non_school_full",
                               "case_ends_sept27.json"),
                # Its summary.json names September 27 adopted_2026_09_27; its band variant is sept27_case.
                "sept29": Case(SEPT29_LANE, "sept27_case", "long_run_non_school_full", "case_ends_sept29.json", "sept29",
-                              "adopted_2026_09_27")}
+                              "adopted_2026_09_27"),
+               # v5's summary.json names September 29 adopted_2026_09_29; its band variant is sept29_case. Its grid is
+               # September 29's plus the lineage's production delta.
+               "oct05": Case(OCT05_LANE, "sept29_case", "long_run_non_school_full", "case_ends_oct05.json", "oct05",
+                             "adopted_2026_09_29", SEPT29_LANE)}
 DEFAULT_CASE = "sept27"
 # From September 29 the case's production grid is the account's row-4 weights (production_row4.json): the Mexico-born
 # outside California and Texas raked by citizenship to ACS 2024 totals. Its P and F move the wage and fiscal channels,
@@ -431,11 +450,13 @@ def fiscal_totals(case="sept23"):
         changes[f"{name}_change"] = ch
         ends = case_ends(name, c, band) if c.ends else {}
         # A case that replaces the production grid moves P + F by d_pf at each end; since cost = -(P + F) - A,
-        # A moves by -(change + d_pf). Before September 29, d_pf = 0.
+        # A moves by -(change + d_pf). Before September 29, d_pf = 0. A grid after another case's (October 5 on
+        # September 29's) moves P + F by its difference from that grid at the same cell.
         prod = ends.pop("production", None)
         if prod and "production" in prev:
-            raise SystemExit(f"[BLOCKED] {name}: a production grid after another case's is not implemented")
-        d_pf = production_change(name, prod, pf) if prod else [0.0, 0.0]
+            d_pf = production_change_after(name, prod, prev["production"], prev_case)
+        else:
+            d_pf = production_change(name, prod, pf) if prod else [0.0, 0.0]
         entry = dict(A_low_cost=prev["A_low_cost"] - ch[0] - d_pf[0], A_high_cost=prev["A_high_cost"] - ch[1] - d_pf[1],
                      band=band, responses=responses, justice=ado["justice"], **changes)
         entry["A_mid"] = (entry["A_low_cost"] + entry["A_high_cost"]) / 2
@@ -489,6 +510,22 @@ def production_change(name, prod, pf):
         gate(f"{name}_{end}_model_json_production_is_the_account_term", np.isclose(base, account, rtol=0, atol=1e-8),
              model_json=base, account=account, normalization=x["normalization"])
         d.append(x["case"]["P_bn"] + x["case"]["F_bn"] - base)
+    return d
+
+
+def production_change_after(name, prod, prev_prod, prev_case):
+    """A grid built on an earlier case's: the case's P + F at each band end less the earlier grid's at the same cell, $bn.
+
+    case_ends.cjs gives the earlier grid's P and F there (`previous`); they must be the earlier case's own P and F at its
+    end (same cell, exact), so A moves only by what the later grid adds (October 5: the lineage's production delta)."""
+    d = []
+    for end in ("low", "high"):
+        x, y = prod["ends"][end], prev_prod["ends"][end]
+        gate(f"{name}_{end}_previous_grid_is_{prev_case}_s_production",
+             x["previous"]["lane"] == LATER_CASES[name].grid_base and x["cell_index"] == y["cell_index"]
+             and x["normalization"] == y["normalization"] and x["previous"]["P_bn"] == y["case"]["P_bn"]
+             and x["previous"]["F_bn"] == y["case"]["F_bn"], previous=x["previous"], earlier_case=y["case"], cell=x["cell_index"])
+        d.append(x["case"]["P_bn"] + x["case"]["F_bn"] - x["previous"]["P_bn"] - x["previous"]["F_bn"])
     return d
 
 
@@ -661,6 +698,87 @@ def row4_nest_rows(d, nest, prod, lane):
                              factors={k: r4["row4_factors"][k]["factor"] for k in ROW4_STATUS.values()},
                              gdp_factor=gdp_factor, published_solve_max_abs_diff_vs_nest_scenarios=control,
                              published_gdp_factor_max_rel_diff=control_gdp, row4_max_abs_diff_vs_case_grid_bn=worst)
+
+
+def lineage_rows(d, rows, base_lane, lane):
+    """The lane's production scenarios with the lineage's production delta (October 5 on September 29's grid).
+
+    The case's grid is the base case's plus the added G3+ members' P and F (main_case_lineage_2026_10_05: G3+'s
+    first-order attribution per member times the added members; whites carry none). A scenario on the grid takes it
+    as follows [ASSUMPTION: the added members' wage effects fall on other residents' skill cells as the union's do]:
+    its wage changes, both branches, are scaled by lambda_c in skill cell c and its capital columns by kappa, two
+    unknowns solved so that
+      P = sum_c (1 - tau_c) lambda_c W_c + kappa x the capital residual,  F = sum_c tau_c lambda_c W_c + kappa x the
+      capital tax gain
+    are the case grid's P and F at the scenario's cell (W_c: the cell's pre-tax wage change of other residents on the
+    CPS earnings bases). Without capital terms (capital adjusting) the unknowns are lambda_0 and lambda_1 (kappa 1);
+    with them (capital fixed) one lambda for both cells and kappa. A scenario off the grid (sigma_NI 3) takes the
+    factors of its sibling at sigma_NI infinite.
+    Gates: every row's labor and tax parts reproduce it on the CPS bases (1e-6 bn); every grid row is the base grid's
+    P and F at its cell before (1e-6 bn) and the case grid's after (1e-9 bn); every lambda and kappa is within 10% of 1."""
+    base = json.loads((FISCAL / base_lane / "derived/corrections.json").read_text())["production"]
+    grid = json.loads((FISCAL / lane / "derived/corrections.json").read_text())["production"]
+    pw, tau = d.pw.to_numpy(), np.asarray(TAU, float)
+    bases = {s: {k: float((pw * e).sum() / 1e9) for k, e in wage_basis(d, s).items()} for s in ("below_ba", "hs_or_less")}
+    out, info, factors = [], [], {}
+    worst_parts = worst_before = worst_after = 0.0
+    for _, r in rows.iterrows():
+        L = {(tag, c): -r[f"wage_pct_{tag}_cell{c}"] / 100 * bases[r.split][(tag, c)] for tag in ("native", "other_fb") for c in (0, 1)}
+        W = np.array([L[("native", c)] + L[("other_fb", c)] for c in (0, 1)])
+        gains = {tag: sum((1 - tau[c]) * L[(tag, c)] for c in (0, 1)) for tag in ("native", "other_fb")}
+        worst_parts = max(worst_parts, abs(gains["native"] - r.native_production_gain_bn),
+                          abs(gains["other_fb"] - r.other_immigrant_production_gain_bn),
+                          abs(float(tau @ W) + r.capital_tax_gain_bn - r.induced_current_receipts_bn))
+        key = (r.split, r.sigma, r.capital_adjustment)
+        if np.isinf(r.sigma_NI):
+            cell = dict(proxy="PEARNVAL", split=r.split, normalization="cash", labor_share=0.65, sigma=r.sigma,
+                        capital_adjustment=r.capital_adjustment, labor_supply_elasticity=0.0, capital_tax_retention=1.0,
+                        excluded_capital_owner_share=0.0)
+            (P0, F0), (P1, F1) = grid_cell(base, **cell), grid_cell(grid, **cell)
+            P = r.native_production_gain_bn + r.other_immigrant_production_gain_bn + r.capital_private_residual_bn
+            worst_before = max(worst_before, abs(P - P0), abs(r.induced_current_receipts_bn - F0))
+            if r.capital_private_residual_bn == 0 and r.capital_tax_gain_bn == 0:
+                kappa, lam = 1.0, np.linalg.solve(np.array([(1 - tau) * W, tau * W]), np.array([P1, F1]))
+            else:
+                one, kappa = np.linalg.solve(np.array([[float((1 - tau) @ W), r.capital_private_residual_bn],
+                                                       [float(tau @ W), r.capital_tax_gain_bn]]), np.array([P1, F1]))
+                lam = np.array([one, one])
+            factors[key] = (lam, float(kappa), (P1, F1))
+        if key not in factors:
+            raise SystemExit(f"[BLOCKED] lineage_rows: no sigma_NI-infinite sibling for {key}")
+        lam, kappa, target = factors[key]
+        new = r.copy()
+        for tag in ("native", "other_fb"):
+            for c in (0, 1):
+                new[f"wage_pct_{tag}_cell{c}"] = r[f"wage_pct_{tag}_cell{c}"] * lam[c]
+        new["native_production_gain_bn"] = sum((1 - tau[c]) * lam[c] * L[("native", c)] for c in (0, 1))
+        new["other_immigrant_production_gain_bn"] = sum((1 - tau[c]) * lam[c] * L[("other_fb", c)] for c in (0, 1))
+        for k in ("capital_gain_bn", "capital_tax_gain_bn", "capital_private_residual_bn"):
+            new[k] = r[k] * kappa
+        new["induced_current_receipts_bn"] = float(tau @ (lam * W)) + new["capital_tax_gain_bn"]
+        P_new = new["native_production_gain_bn"] + new["other_immigrant_production_gain_bn"] + new["capital_private_residual_bn"]
+        new["private_plus_receipts_bn"] = P_new + new["induced_current_receipts_bn"]
+        if np.isinf(r.sigma_NI):
+            worst_after = max(worst_after, abs(P_new - target[0]), abs(new["induced_current_receipts_bn"] - target[1]))
+        # JSON has no infinity: an infinite sigma_NI is written "inf", as nest_scenarios.csv writes it.
+        info.append(dict(split=r.split, sigma=float(r.sigma), capital_adjustment=float(r.capital_adjustment),
+                         sigma_NI="inf" if np.isinf(r.sigma_NI) else float(r.sigma_NI),
+                         lambda_cell0=float(lam[0]), lambda_cell1=float(lam[1]), kappa=float(kappa),
+                         delta_P_bn=float(P_new - (r.native_production_gain_bn + r.other_immigrant_production_gain_bn
+                                                    + r.capital_private_residual_bn)),
+                         delta_F_bn=float(new["induced_current_receipts_bn"] - r.induced_current_receipts_bn)))
+        out.append(new)
+    gate("lineage_rows_parts_reproduce_each_scenario", worst_parts < 1e-6, max_abs_bn=worst_parts)
+    gate("lineage_rows_start_from_the_base_grid", worst_before < 1e-6, max_abs_bn=worst_before, base=base_lane)
+    gate("lineage_rows_reach_the_case_grid", worst_after < 1e-9, max_abs_bn=worst_after, case=lane)
+    spread = max(max(abs(x["lambda_cell0"] - 1), abs(x["lambda_cell1"] - 1), abs(x["kappa"] - 1)) for x in info)
+    gate("lineage_rows_factors_within_10pct_of_1", spread < 0.1, max_abs_deviation=spread)
+    return pd.DataFrame(out)[rows.columns], dict(
+        rule="the case's grid less the base's at each scenario's cell: the wage changes of skill cell c scaled by lambda_c "
+             "and the capital columns by kappa so that P and F are the case grid's (two lambdas without capital terms, one "
+             "lambda and kappa with them); sigma_NI 3 takes its sigma_NI-infinite sibling's factors [ASSUMPTION: the added "
+             "members' effects fall on other residents' cells as the union's do]", base=base_lane, scenarios=info,
+        max_abs_diff_vs_case_grid_bn=worst_after)
 
 
 # ------------------------------------------------------------------------- wages
@@ -1067,7 +1185,8 @@ def main():
     ap.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept23"), default=DEFAULT_CASE,
                     help="a case after September 24 (default sept27: long-run responses, rental assistance, government "
                          "enterprises and the return on public capital; sept29: candidate v4, adopted 2026-09-29, "
-                         "written to derived/sept29/; sept26_schools: schools at full average cost; sept26: CBO's "
+                         "written to derived/sept29/; oct05: main case v5, adopted 2026-10-05, written to "
+                         "derived/oct05/; sept26_schools: schools at full average cost; sept26: CBO's "
                          "one-year school response, 0.63-0.66), or an earlier adopted case")
     ap.add_argument("--out-dir", type=Path, default=None,
                     help="default derived/, or derived/<dir> for a case whose files sit beside the default case's")
@@ -1111,7 +1230,11 @@ def main():
     # the case's P and F go to the wage and fiscal channels; the published September 20 band keeps the published ones.
     nest = nest_rows()
     prod = adopted.get("production")
-    rows, prod_info = row4_nest_rows(d, nest, prod, LATER_CASES[args.case].lane) if prod else (nest, None)
+    # October 5 on: the row-4 solve reproduces the base case's grid, and the lineage's production delta is added to it.
+    case_def = LATER_CASES.get(args.case)
+    rows, prod_info = row4_nest_rows(d, nest, prod, case_def.grid_base or case_def.lane) if prod else (nest, None)
+    if prod and case_def.grid_base:
+        rows, prod_info["lineage"] = lineage_rows(d, rows, case_def.grid_base, case_def.lane)
     central = pick(rows, "below_ba", 2.0, 1.0, np.inf)
     account = pick(rows, "hs_or_less", 2.0, 1.0, np.inf)
     eps3 = pick(rows, "below_ba", 2.0, 1.0, 3.0)

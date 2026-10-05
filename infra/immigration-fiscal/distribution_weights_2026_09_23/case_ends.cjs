@@ -18,6 +18,12 @@
  * the pension accrual (the case less its cash set, a `pension_accrual` block) is recorded at each end, as the debt lane
  * books both (displaced beneficiaries; an accrual never financed today).
  *
+ * October 5 (OCT05_LANE, main case v5) adds 3.04M people whose payload builds on September 29's: its production grid is
+ * September 29's plus the added G3+ members' P and F (meta.lineage.production). The production block then also gives P
+ * and F on the previous case's grid at the same cell (`previous`), so distribute.py moves A by the change less the
+ * lineage's production delta. v5's summary has no item_pension: its accrual is the case less its cash set read from
+ * cash_set (change_from_main_case_bn, at the same end specifications).
+ *
  * Gates (exit 1, nothing written): the band equals summary.json's main_case (1e-9) and main_case_bands.csv's
  * adopted row (1e-4); the capital return equals summary.json's capital_at_end_specifications, in total and by level
  * (1e-9); rental assistance equals lines_at_end_specifications.housing_subsidies.added_bn (1e-9); both capped lines
@@ -25,7 +31,10 @@
  * production cell at each end, P and F there are the payload's grid values and model.json's (exact), and
  * cost = -(P + F) - A at each end (1e-9).
  *
- * Run from anywhere: node case_ends.cjs [--case sept27|sept29] [--out-dir DIR] -> derived/case_ends_<case>.json
+ * With a previous case's grid: the two grids have the same cells. Without item_pension: the cash set's end
+ * specifications are the case's, and its band is the case's plus change_from_main_case_bn (1e-9).
+ *
+ * Run from anywhere: node case_ends.cjs [--case sept27|sept29|oct05] [--out-dir DIR] -> derived/case_ends_<case>.json
  * (the default case is sept27, whose file the evidence map's readers take).
  */
 "use strict";
@@ -35,7 +44,10 @@ const crypto = require("crypto");
 
 const FISCAL = path.resolve(__dirname, "..");
 const SEPT29_LANE = "main_case_2026_09_29";
-const CASES = { sept27: "main_case_long_run_2026_09_27", sept29: SEPT29_LANE };
+const OCT05_LANE = "main_case_2026_10_05";
+const CASES = { sept27: "main_case_long_run_2026_09_27", sept29: SEPT29_LANE, oct05: OCT05_LANE };
+// A case whose payload builds on an earlier case's production grid: that case's lane.
+const PREVIOUS_GRID = { oct05: SEPT29_LANE };
 const DEFAULT_CASE = "sept27";
 const argv = process.argv.slice(2);
 const opt = (name, dflt) => (argv.includes(name) ? argv[argv.indexOf(name) + 1] : dflt);
@@ -117,9 +129,15 @@ for (const id of cappedReceipts) {
 // production cell of the end specification (every method's end must read one cell), and the engine's A.
 const PAYLOAD_REL = `${LANE}/derived/corrections.json`;
 const payload = readJson(PAYLOAD_REL);
+const PREVIOUS_REL = PREVIOUS_GRID[CASE] ? `${PREVIOUS_GRID[CASE]}/derived/corrections.json` : null;
 let production = null;
 if (payload.production) {
   const { Engine, MODEL } = P;
+  const previous = PREVIOUS_REL ? readJson(PREVIOUS_REL).production : null;
+  if (previous) {
+    gate(`the case's production grid has ${PREVIOUS_REL}'s cells`, JSON.stringify(previous.dims) === JSON.stringify(payload.production.dims)
+      && ["private_wtp_bn", "induced_receipts_bn"].every((k) => previous[k].length === payload.production[k].length));
+  }
   production = { rule: "the case's production grid (corrections.json production) moves P and F only: at each end, P and F "
     + "on the case's grid and on model.json's at the end specification's production cell, and A = the engine's direct "
     + "response less the capital return; cost = -(P + F) - A", grid: payload.meta.production || null, ends: {} };
@@ -137,19 +155,28 @@ if (payload.production) {
     production.ends[name] = { normalization: cells[0].normalization, cell_index: index,
       case: { P_bn: caseP, F_bn: caseF }, model_json: { P_bn: MODEL.production.private_wtp_bn[index], F_bn: MODEL.production.induced_receipts_bn[index] },
       A_bn: A };
+    if (previous) production.ends[name].previous = { lane: PREVIOUS_GRID[CASE], P_bn: previous.private_wtp_bn[index], F_bn: previous.induced_receipts_bn[index] };
   });
 }
 // A payload with the pension switch (September 29): the accrual is the case less its cash set at the end specifications
 // (social security and Medicare at the accrual, federal income tax net of the tax on benefits). It sits inside A; it is
 // not financed today, so distribute.py reports it apart from the cash part of the fiscal channel.
 let pensionAccrual = null;
-if (payload.meta.pension_accrual) {
+if (payload.meta.pension_accrual && summary.change_at_fixed_specifications.item_pension) {
   const item = summary.change_at_fixed_specifications.item_pension, cash = summary.cash_set;
   gate("the pension accrual is change_at_fixed_specifications.item_pension, the case less its cash set (1e-9)",
     JSON.stringify(cash.end_specifications) === JSON.stringify(ends) && worst(item.map((x, j) => x + cash.change_from_main_case_bn[j])) < 1e-9,
     item.map((x) => x.toFixed(4)).join(" / "));
   pensionAccrual = { rule: "the case less its cash set at the end specifications (summary.json cash_set, the pension switch off), "
     + "change_at_fixed_specifications.item_pension; a cost inside A", ends: { low: item[0], high: item[1] } };
+} else if (payload.meta.pension_accrual) {
+  // v5: no item_pension; the case less its cash set, from cash_set itself.
+  const cash = summary.cash_set, item = cash.change_from_main_case_bn.map((x) => -x);
+  gate("the pension accrual is the case less its cash set (cash_set at the case's end specifications; its band is the case's "
+    + "plus change_from_main_case_bn, 1e-9)", JSON.stringify(cash.end_specifications) === JSON.stringify(ends)
+    && worst(cash.band_bn.map((x, j) => x - band[j] - cash.change_from_main_case_bn[j])) < 1e-9, item.map((x) => x.toFixed(4)).join(" / "));
+  pensionAccrual = { rule: "the case less its cash set at the end specifications (summary.json cash_set, the pension switch off, "
+    + "-change_from_main_case_bn); a cost inside A", ends: { low: item[0], high: item[1] } };
 }
 if (failed) {
   console.error(`${failed} gate(s) failed; nothing written`);
@@ -159,7 +186,7 @@ const out = { case: CASE, lane: LANE, profile: P.MAIN_PROFILE,
   rule: "each fill-in method's end specifications of the case, averaged; capped programs = the group's amount x response",
   capped_lines: cappedLines, block_grant_line: BLOCK_GRANT,
   inputs: Object.fromEntries([`${LANE}/derived/summary.json`, `${LANE}/derived/main_case_bands.csv`, `${LANE}/package.cjs`,
-    ...(production ? [PAYLOAD_REL] : [])].map((rel) => [rel, sha256(rel)])),
+    ...(production ? [PAYLOAD_REL] : []), ...(production && PREVIOUS_REL ? [PREVIOUS_REL] : [])].map((rel) => [rel, sha256(rel)])),
   end_specifications: ends.map((ij, m) => ({ method: METHODS[m], low: ij[0], high: ij[1] })),
   ends: Object.fromEntries(END.map(({ name, ...x }) => [name, x])) };
 if (production) out.production = production;
