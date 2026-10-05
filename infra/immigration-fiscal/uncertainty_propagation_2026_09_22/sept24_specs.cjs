@@ -242,12 +242,15 @@ function capitalCase(name, lane, PC, payload, sum) {
 // every cell edit on the line (sept29: housing_subsidies, candidate v4 item 1); 1 on a line it does not rescale.
 const TRANSFER_LINES = ["snap", "other_state_welfare", "family_and_general_assistance", "unemployment"];
 function nationalScales(PC, payload) {
-  const scales = payload.edits.map((e, i) => [e, i]).filter(([e]) => e.national_bn !== undefined);
+  // A payload with the lineage (oct05) appends the added people's cell edits after September 29's; they are not
+  // benefit shifts and no scale edit follows them, so the gate reads the edits before them (meta.lineage.edits.first).
+  const edits = payload.meta.lineage ? payload.edits.slice(0, payload.meta.lineage.edits.first) : payload.edits;
+  const scales = edits.map((e, i) => [e, i]).filter(([e]) => e.national_bn !== undefined);
   if (!scales.length) return null;
   return (line) => {
     const own = scales.filter(([e]) => e.side === "spending" && e.line === line);
     if (!own.length) return 1;
-    const lastCell = Math.max(-1, ...payload.edits.map((e, i) => (e.line === line && e.national_bn === undefined ? i : -1)));
+    const lastCell = Math.max(-1, ...edits.map((e, i) => (e.line === line && e.national_bn === undefined ? i : -1)));
     gate(`${line}: every national-scale edit follows every cell edit on the line, so it scales the benefit shift`,
       own.every(([, i]) => i > lastCell), `cell edits up to ${lastCell}, scale edits at ${own.map(([, i]) => i).join(", ")}`);
     return own[own.length - 1][0].national_bn / PC.MODEL.spending.lines.find((l) => l.id === line).national_bn;

@@ -1,4 +1,4 @@
-**Verdict:** [2026-09-27: `propagate.py` now defaults to the main case of that day (`--case sept27`, `derived/sept27/`). Its CPS block carries the administrative benefit keys jointly with the account, on the same replicates (conceptual audit, section A). They correlate at −0.43 to −0.40, so the per-case SE is $10.6–10.7bn, against $11.0–11.1bn with their SE appended as if independent. The 64 specifications' 95% intervals together run $301–408bn ($286–422bn at the correlated upper bound). The capital return's own CPS part is $0.20–0.35bn. The SE is a partial sampling approximation whose net error is unresolved: the covariances still omitted can go either way. See "The September 27 case" below.] [2026-09-26, later: `propagate.py` now defaults to the main case with schools at full cost (`--case sept26_schools`, `derived/sept26_schools/`). The per-case SE is $10.9–11.0bn, and the 64 specifications' 95% intervals together run $237–313bn. `--case sept26` (`derived/sept26/`) gives the one-year scenario, $10.8–11.0bn and $179–267bn.] [2026-09-25: `propagate.py --case sept24` carries the same sources through the main case adopted September 24: per-case SE $10.8–10.9bn, the 64 specifications' 95% intervals $180–268bn together; most corrections carry ranges, not sampling errors, and are outside the SE (`derived/sept24/summary.json`; wording revised 2026-09-27, see Revisions). The September 20 outputs this text describes are unchanged. See `../sept24_propagation_2026_09_24/RESULT.md`.] The complete annual account's headline cases have a statistical standard error of about **$12bn** ($12.0–12.3bn across the 60 executed cases, sampling plus donor error, assuming the sources are independent). If every source were perfectly positively correlated, the standard error would be **$17.5–20.3bn**. For the main CBO-informed band of **$165–197bn**, the 95% sampling intervals of its 16 cases together run from **$141bn to $221bn** ($127–235bn at the correlated upper bound). The expected finding holds only in part. **Within** one response construction the statistical interval is wider than the arm spread. The main band spans $32bn, against a 95% interval width of $48bn per case (ratio 0.67). The education-fixed band gives 0.82 and the proportional benchmark 0.39. **Across** constructions the arms dominate: 3.5× the interval width across the three headline constructions ($121–289bn); 2.0× across the proportional receipt, spending and production grid; 7.0× across ownership endpoints; and 9.7× across the service/capital capacity path, which crosses zero. CPS sampling of the incidence keys supplies about two thirds of the variance and MEPS donor means about 31%. The production term and the school correction together supply about 2–4%. At ε = 5 or 7, the nest lowers the main band to $157–192bn or $159–194bn. Those rows are sensitivities only; no headline changed. The formula audit reproduces all 73 published headline values to within 1e-13. The ledger and the complete account do **not** use opposite arithmetic signs for general services: both book costs as negative. They differ in treatment. The ledger charges state-local general administration (about $15bn) and interest on general debt (about $12bn) at full cost inside item G. The complete account holds general public services ($48.3bn assigned) and domestic interest ($134.5bn assigned) at zero response.
+**Verdict:** [2026-10-05: on main case v5 (`oct05`, now the default; `derived/oct05/`) the per-case SE is $10.22–10.47bn (September 29, `sept29`: $9.41–9.59bn), and the 64 specifications' 95% intervals together run $369.8–481.3bn (sept29: $352.6–453.3bn); at the correlated upper bound they run $355.6–495.0bn (sept29: $339.4–466.1bn). The lineage's own uncertainty sits beside the propagation: C3's SE moves the ends by $3.0bn and $3.9bn, which makes the 95% interval at the end specifications $369.0–482.7bn; across the count's arms a to c it runs $359.2–496.6bn. See "v5 case (oct05)" below.] [2026-09-27: `propagate.py` now defaults to the main case of that day (`--case sept27`, `derived/sept27/`). Its CPS block carries the administrative benefit keys jointly with the account, on the same replicates (conceptual audit, section A). They correlate at −0.43 to −0.40, so the per-case SE is $10.6–10.7bn, against $11.0–11.1bn with their SE appended as if independent. The 64 specifications' 95% intervals together run $301–408bn ($286–422bn at the correlated upper bound). The capital return's own CPS part is $0.20–0.35bn. The SE is a partial sampling approximation whose net error is unresolved: the covariances still omitted can go either way. See "The September 27 case" below.] [2026-09-26, later: `propagate.py` now defaults to the main case with schools at full cost (`--case sept26_schools`, `derived/sept26_schools/`). The per-case SE is $10.9–11.0bn, and the 64 specifications' 95% intervals together run $237–313bn. `--case sept26` (`derived/sept26/`) gives the one-year scenario, $10.8–11.0bn and $179–267bn.] [2026-09-25: `propagate.py --case sept24` carries the same sources through the main case adopted September 24: per-case SE $10.8–10.9bn, the 64 specifications' 95% intervals $180–268bn together; most corrections carry ranges, not sampling errors, and are outside the SE (`derived/sept24/summary.json`; wording revised 2026-09-27, see Revisions). The September 20 outputs this text describes are unchanged. See `../sept24_propagation_2026_09_24/RESULT.md`.] The complete annual account's headline cases have a statistical standard error of about **$12bn** ($12.0–12.3bn across the 60 executed cases, sampling plus donor error, assuming the sources are independent). If every source were perfectly positively correlated, the standard error would be **$17.5–20.3bn**. For the main CBO-informed band of **$165–197bn**, the 95% sampling intervals of its 16 cases together run from **$141bn to $221bn** ($127–235bn at the correlated upper bound). The expected finding holds only in part. **Within** one response construction the statistical interval is wider than the arm spread. The main band spans $32bn, against a 95% interval width of $48bn per case (ratio 0.67). The education-fixed band gives 0.82 and the proportional benchmark 0.39. **Across** constructions the arms dominate: 3.5× the interval width across the three headline constructions ($121–289bn); 2.0× across the proportional receipt, spending and production grid; 7.0× across ownership endpoints; and 9.7× across the service/capital capacity path, which crosses zero. CPS sampling of the incidence keys supplies about two thirds of the variance and MEPS donor means about 31%. The production term and the school correction together supply about 2–4%. At ε = 5 or 7, the nest lowers the main band to $157–192bn or $159–194bn. Those rows are sensitivities only; no headline changed. The formula audit reproduces all 73 published headline values to within 1e-13. The ledger and the complete account do **not** use opposite arithmetic signs for general services: both book costs as negative. They differ in treatment. The ledger charges state-local general administration (about $15bn) and interest on general debt (about $12bn) at full cost inside item G. The complete account holds general public services ($48.3bn assigned) and domestic interest ($134.5bn assigned) at zero response.
 
 Date: 2026-09-22. Status: [CALCULATION] on published derived outputs and the pinned CPS ASEC 2025 and MEPS 2024 files; [MODEL] because every interval is conditional on the account's declared assumptions. This work was not committed; the parent integrates it.
 
@@ -6,7 +6,7 @@ Date: 2026-09-22. Status: [CALCULATION] on published derived outputs and the pin
 
 - `propagate.py` rebuilds every CPS incidence key used by the headline under all 161 CPS ASEC 2025 weights. It checks replicate 0 against both producers and carries the replicate spread through the headline formula. It also builds the MEPS payer-mean covariance and combines the error sources.
 - `audit.py` runs the formula-chain audit, the ledger replicate check, the ε sensitivity, the comparison of arms with sampling error, the SE catalog and the general-services comparison.
-- `test_uncertainty.py` holds 10 tests, all passing (14 since 2026-09-27, with one per later case and the capital return): `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/uncertainty_propagation_2026_09_22/ -q --import-mode=importlib`.
+- `test_uncertainty.py` holds 10 tests, all passing (14 since 2026-09-27, with one per later case and the capital return; 19 since 2026-10-05, with `oct05` and the lineage component): `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/uncertainty_propagation_2026_09_22/ -q --import-mode=importlib`.
 - `derived/` contains `case_uncertainty.csv` (60 cases), `component_sampling.csv`, `component_replicates.npz`, `key_replicate_check.csv`, `meps_donor_contribution.csv`, `variance_shares.csv`, `arms_vs_sampling.csv`, `epsilon_cases.csv`, `epsilon_bands.csv`, `formula_audit.csv`, `headline_recomputed.csv`, `ledger_replicate_check.csv`, `se_catalog.csv`, `general_services.csv` and `propagation_meta.json`.
 
 Run order: `propagate.py` (about 7 s), then `audit.py`, then the tests. No existing `.py` file was edited. Upstream builders are imported or read only: the spending builder's `canonical_target`/`equal_unit_share`, and `build/meps_health_transport_2024.py`'s `read_meps`/`donor_model`.
@@ -355,6 +355,100 @@ Log (times from `date`):
   IDENTICAL 43/43, rc 0; the five more files than the 17:13 baseline are `derived/sept29/`. Gate 4: two passes with
   `propagate.py --case sept29` added, IDENTICAL 43/43, rc 0 each (21:04–21:09). No tracked file in `derived/`
   differs from HEAD. pytest: 17 passed. Every figure in the table above matches the fresh outputs.
+
+## v5 case (oct05), 2026-10-05
+
+claude-opus-5-5 (v5 consumer lane B). **Verdict:** on main case v5 (`../main_case_2026_10_05/`, $390.29–461.24bn at
+specifications 48 / 11, the lineage's 3.04M added people counted whole), the per-case SE is **$10.22–10.47bn**
+(sept29: $9.41–9.59bn). The 95% intervals of the 64 specifications span **$369.8–481.3bn** (sept29: $352.6–453.3bn),
+and $355.6–495.0bn at the correlated upper bound (sept29: $339.4–466.1bn). The lineage's own uncertainty is outside
+what the CPS ASEC replicates can see, so it sits beside them. At the end specifications, C3's SE adds $3.0bn to the
+low end's error and $3.9bn to the high end's. The SE there becomes $10.88bn and $10.96bn, and the 95% interval
+$369.0–482.7bn. Taking the union over the count's arms a, b and c widens it to **$359.2–496.6bn**.
+
+`later_cases.json` gains `oct05` → `main_case_2026_10_05`. `propagate.py` reads the cash set from that lane's
+`derived/corrections_cash.json` (`CASH_PAYLOADS`), and `oct05` is the default, as the last entry.
+`sept24_specs.cjs` takes the national-scale factors from the union's edits only: the lineage's cell edits come after
+the payload's national-scale edits, and a scale ratio over them would book the added people's amounts as a scale
+change. The case's costs span `main_case` exactly (1e-9), and the uncorrected model at v5's responses spans
+$313.065–378.710bn. The rules for the added people are these:
+
+1. **Their dollars carry each line's error in proportion.** [ASSUMPTION] The lineage's cell edits ride each line's
+   first-order ratio (the case's target over the uncorrected one), which is this lane's rule for every correction.
+   The added people have no CPS records of their own. This is why the SE rises by $0.8–0.9bn: the added people's
+   amounts add a median 7% to the spending lines' targets and 9% to the receipt lines'. The school SE goes from $2.07–2.29bn to
+   $2.24–2.50bn, and the MEPS SE from $4.98–4.99bn to $5.35–5.36bn. [INFERENCE] If their dollars carried no error,
+   the SE would stay close to September 29's, because the union's amounts and responses barely move (its response
+   move is −$0.30bn at the low end and −$0.32bn at the high end).
+2. **The pension rules hold on the union's part.** The gates now check the case's targets less the lineage's edits:
+   social_security equals ratio_net times the union's OASDI receipts, and Medicare less $41.14bn equals 0.6249 of
+   the cash set's (1e-9). The lineage's social_security comes from its parts' own accrual per tax dollar (G3+ members
+   at their generation's rate in `v4_split.cjs`, whites at theirs in `white_lines.py`). It equals k = 0.9534
+   (personal) or 0.9582 (shared) times the lineage's OASDI receipts, against the union's 0.9737, and it moves with
+   those receipts at k. The lineage's Part A accrual is $2.86bn (personal) or $3.32bn (shared): its set Medicare
+   edit less 0.6249 of its cash edit. [ASSUMPTION] It is fixed, as the union's $41.14bn is (the payload's
+   part_a_rule "fixed").
+3. **The lineage's own uncertainty is a component beside the SE** (`summary.json` → `oct05.lineage`). C3 is 0.5567
+   with SE 0.2457, from the pooled monthly CPS of 1994–2026. The lineage lane's band is linear in C3 at each arm's
+   responses and end specifications (`v5_summary.json` `c3_line`). Arm b's slopes are −$12.19bn and −$16.06bn per
+   unit of C3, so at C3 ± 1 SE the band runs $387.30–457.30bn to $393.29–465.19bn. [ASSUMPTION] C3's error is
+   independent of the ASEC replicates: it enters the combined error in quadrature and the envelope linearly. Arms a
+   (1.81M added) and c (4.27M added) are alternative counts, so they give a range, not an SE. Their bands are
+   $380.37–447.55bn and $400.21–474.93bn, each with its own C3 error. [APPROX] Their other errors are arm b's at the
+   same end specifications, because the propagation runs on arm b only.
+
+| $bn | September 29 (v4) | v5 (`oct05`) |
+|---|---:|---:|
+| **Per-case SE, sources independent, CPS block joint with the benefit keys** | 9.41–9.59 | **10.22–10.47** |
+| Per-case SE, benefit keys' SE appended as if independent (the published method) | 9.86–10.00 | 10.66–10.87 |
+| Per-case SE, all positively correlated | 15.89–16.36 | 17.19–17.72 |
+| CPS block, joint | 7.62–7.86 | 8.31–8.65 |
+| CPS keys of the account alone | 8.08–8.27 | 8.78–9.06 |
+| of which the capital return's own CPS part | 0.20–0.34 | 0.21–0.37 |
+| of which rental assistance and the enterprises | 0.75–0.78 | 0.81–0.85 |
+| of which the receipt responses | 0.07–0.08 | 0.08–0.08 |
+| Benefit keys' own replicate SE | 1.34–1.38 | 1.34–1.39 |
+| Their correlation with the account's CPS deviation | −0.42 to −0.37 | −0.41 to −0.37 |
+| Production term (the payload's grid) | 0.68–1.03 | 0.68–1.03 |
+| School correction | 2.07–2.29 | 2.24–2.50 |
+| MEPS donors | 4.98–4.99 | 5.35–5.36 |
+| Pension accrual held fixed, combined (CPS block) | 9.85–10.10 (8.15–8.47) | 10.70–11.04 (8.90–9.33) |
+| Generic rule on social_security's own key, combined (CPS block) | 10.51–10.59 (8.94–9.05) | 11.41–11.55 (9.73–9.93) |
+| 95% intervals of the 64 specifications, union | 352.6–453.3 | 369.8–481.3 |
+| At the correlated upper bound | 339.4–466.1 | 355.6–495.0 |
+| With the benefit keys appended as if independent, union | 351.8–454.2 | 369.0–482.1 |
+| Uncorrected model at the adopted responses, SE (control; no benefit keys) | 12.27–12.34 | 12.27–12.34 |
+| *The lineage beside (low end / high end)* | | |
+| C3's SE at the ends (arm b) | — | 2.99 / 3.95 |
+| SE at the ends, without / with C3 | — | 10.46 / 10.22 → 10.88 / 10.96 |
+| 95% interval at the ends, without / with C3 | — | 369.8–481.3 → 369.0–482.7 |
+| Arm a / arm c band (central C3) | — | 380.37–447.55 / 400.21–474.93 |
+| 95% interval with C3, union over arms a–c | — | 359.2–496.6 |
+| The same at the correlated upper bound | — | 340.3–517.0 |
+
+[CALCULATION: `sept24_specs.cjs` → `derived/oct05/spec_costs.csv`, `line_targets.csv`, `benefit_factors.csv`;
+`propagate.py --case oct05` → `derived/oct05/case_uncertainty.csv`, `derived/oct05/summary.json` (`lineage`);
+the September 29 column from `derived/sept29/`.]
+
+**No error model here:** the attrition count's sampling error beyond C3 (the arms are its range); the lineage's
+white per-person amounts (the white lane's CPS and MEPS persons at G3+ ages), which this lane scales with the union's
+lines instead of replicating; the arms' own CPS errors; and everything the September 29 section lists. The SE is a
+partial sampling approximation, not a bound in either direction.
+
+Reproduce (repository root):
+`uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/uncertainty_propagation_2026_09_22
+"node {lane}/sept24_specs.cjs" "uv run --no-project python3 {lane}/propagate.py --case sept24"` and the same for
+`sept26`, `sept26_schools`, `sept27`, `sept29` and `oct05`, then
+`"uv run --no-project python3 {lane}/audit.py"` and
+`"uv run --no-project python3 -m pytest {lane}/test_uncertainty.py -q --import-mode=importlib"`.
+
+Log (times from `date`):
+- 2026-10-05 (v5 consumer lane B): `later_cases.json`, `CASH_PAYLOADS` and the `sept24_specs.cjs` slice added;
+  `node sept24_specs.cjs` passes its gates and writes `derived/oct05/`, and the earlier cases' files are unchanged.
+  The first `propagate.py --case oct05` stopped at `[BLOCKED] social_security/personal is not ratio_net x the OASDI
+  receipts`. The lineage's own accrual ratio is 0.9534 against 0.9737, so rule 2 above was added.
+- 2026-10-06 00:19 JST: `rerun_lane.py` with the nine commands above gave IDENTICAL, 48/48 files, rc 0 (49 s). No
+  tracked file in `derived/` differs from HEAD. pytest: 19 passed.
 
 ## Coverage: what carries uncertainty and what does not
 

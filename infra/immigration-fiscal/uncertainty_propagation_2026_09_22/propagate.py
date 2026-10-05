@@ -23,9 +23,10 @@ cases of September 23 and 24, specification by specification, after
 later case in later_cases.json does the same for its main case and the
 uncorrected model at its responses, from derived/<case>/ (written by the same
 script): --case sept26 (CBO's one-year school response, 0.63-0.66) and --case
-sept26_schools (schools at full average cost), then --case sept27 (the return on public capital) and --case
-sept29 (candidate v4, adopted 2026-09-29; the default, as the last entry). The September 20 outputs are written
-as before and do not change.
+sept26_schools (schools at full average cost), then --case sept27 (the return on public capital), --case
+sept29 (candidate v4, adopted 2026-09-29) and --case oct05 (main case v5, adopted 2026-10-05: the lineage's
+added people counted whole; the default, as the last entry). The September 20 outputs are written as before and do
+not change.
 
 From sept27 on, the administrative benefit keys' re-keying is recomputed on the same 161 CPS weights and its
 replicate deviation joins the account's before the variance is taken (conceptual audit 2026-09-27, section A):
@@ -248,7 +249,8 @@ MODEL_FILE = FISCAL / "assumption_explorer_2026_09_21/derived/model.json"
 RECEIPTS_FILE = FISCAL / "full_account_receipts_2026_09_20/derived/category_allocations.csv"
 # The cash set's payload beside a case with the pension switch, for the gate on the Medicare line's Part A swap (the
 # adopted lane's main_case.cjs reads the same file for its cash_set row).
-CASH_PAYLOADS = {"sept29": "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json"}
+CASH_PAYLOADS = {"sept29": "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
+                 "oct05": "main_case_2026_10_05/derived/corrections_cash.json"}
 # Later cases, case -> main-case lane, one line each; sept24_specs.cjs reads the same file.
 LATER_CASES = json.loads((HERE / "later_cases.json").read_text())
 # Per --case: the main case's summary, then (row label, band in that summary, column tag in
@@ -315,6 +317,53 @@ def benefit_replicates():
     return out
 
 
+def lineage_component(f, lin):
+    """The lineage's own uncertainty beside the propagation (oct05; main_case_2026_10_05 RESULT, Consumers): C3's SE
+    and the count's arms a and c, which the CPS ASEC replicates do not see.
+
+    The lineage lane's band is linear in C3 at each arm's responses and end specifications (v5_summary.json c3_line),
+    so C3 +- 1 SE moves each end by |slope| x SE. C3 is measured on the pooled monthly CPS, a sample apart from the ASEC
+    2025 replicates: its error joins each end's combined error in quadrature and the all-positive envelope linearly
+    [ASSUMPTION]. Arms a and c are the count's alternatives, a range beside: each arm's band (central C3) with its own
+    C3 error and the central arm's other errors at the same end specifications [APPROX: the propagation runs on the
+    central arm only]; the 95% union over the arms spans them. f: the case's rows of case_uncertainty.csv.
+    """
+    s = json.loads((FISCAL / lin["lane"] / "derived/v5_summary.json").read_text())
+    c3, se = lin["c3"]["value"], lin["c3"]["se"]
+    if (s["meta"]["c3"]["value"], s["meta"]["c3"]["se"], s["meta"]["central_arm"]) != (c3, se, lin["arm"]):
+        raise ValueError("[BLOCKED] the payload's C3 or arm is not the lineage lane's")
+    ends = [f.loc[f.net_cost_bn.idxmin()], f.loc[f.net_cost_bn.idxmax()]]
+    arms = s["sets"]["set"]["arms"]
+    if not np.allclose([e.net_cost_bn for e in ends], arms[lin["arm"]]["band_bn"], rtol=0, atol=1e-6):
+        raise ValueError("[BLOCKED] the case's band is not the lineage lane's central arm's")
+    out = dict(source=f"{lin['lane']}/derived/v5_summary.json (sets.set.arms.<arm>: band_bn, c3_line)",
+               c3=c3, c3_se=se, c3_label=lin["c3"]["label"], central_arm=lin["arm"],
+               se_independent_at_ends_bn=[e.se_combined_independent_bn for e in ends],
+               se_positive_correlation_at_ends_bn=[e.se_all_positive_correlation_bn for e in ends],
+               ci95_at_ends_bn=[ends[0].net_cost_bn - 1.96 * ends[0].se_combined_independent_bn,
+                                ends[1].net_cost_bn + 1.96 * ends[1].se_combined_independent_bn], arms={})
+    for arm in ("a", lin["arm"], "c"):
+        v = arms[arm]
+        lines = [v["c3_line"][end] for end in ("low", "high")]
+        if not np.allclose([x["intercept_bn"] + x["slope_bn"] * c3 for x in lines], v["band_bn"], rtol=0, atol=1e-6):
+            raise ValueError(f"[BLOCKED] arm {arm}: the C3 line does not give its band at C3")
+        se_c3 = [abs(x["slope_bn"]) * se for x in lines]
+        indep = [float(np.hypot(e.se_combined_independent_bn, x)) for e, x in zip(ends, se_c3)]
+        env = [e.se_all_positive_correlation_bn + x for e, x in zip(ends, se_c3)]
+        out["arms"][arm] = dict(
+            added_persons=v["added"], population=v["population"], band_bn=v["band_bn"],
+            band_at_c3_minus_1se_bn=[x["intercept_bn"] + x["slope_bn"] * (c3 - se) for x in lines],
+            band_at_c3_plus_1se_bn=[x["intercept_bn"] + x["slope_bn"] * (c3 + se) for x in lines],
+            se_c3_bn=se_c3, se_independent_with_c3_bn=indep, se_positive_correlation_with_c3_bn=env,
+            ci95_with_c3_bn=[v["band_bn"][0] - 1.96 * indep[0], v["band_bn"][1] + 1.96 * indep[1]],
+            ci95_envelope_with_c3_bn=[v["band_bn"][0] - 1.96 * env[0], v["band_bn"][1] + 1.96 * env[1]])
+    out["ci95_with_c3_over_arms_bn"] = [min(v["ci95_with_c3_bn"][0] for v in out["arms"].values()),
+                                        max(v["ci95_with_c3_bn"][1] for v in out["arms"].values())]
+    out["ci95_envelope_with_c3_over_arms_bn"] = [min(v["ci95_envelope_with_c3_bn"][0] for v in out["arms"].values()),
+                                                 max(v["ci95_envelope_with_c3_bn"][1] for v in out["arms"].values())]
+    return out
+
+
 def adopted_cases(ctx, name, joint=None):
     """The lane's error sources on the adopted main cases, specification by specification.
 
@@ -371,6 +420,17 @@ def adopted_cases(ctx, name, joint=None):
       national total (benefit_factors.csv national_scale).
     - the payload's production grid: each model's production-term SE at the specification's production cell
       (production_se_<tag>_bn); the uncorrected model's equals the published CES scenario's (1e-9).
+
+    oct05 (main case v5, adopted 2026-10-05: v4 plus the lineage's 3.04M added people, meta.lineage) adds:
+    - the lineage's cell edits ride each line's first-order ratio like every correction: their dollars carry the
+      line's CPS and MEPS error in proportion [ASSUMPTION: the lane's rule for replacement dollars; the added people
+      have no CPS records of their own].
+    - the pension rules on the union's part (the target less the lineage's edits; gates 1e-9). The lineage's
+      social_security moves with its own OASDI receipts at its own ratio k (its edit over theirs, the G3+ members' and
+      whites' accrual per tax dollar), and its Part A accrual (its set Medicare edit less (1 - part_a_share) of its
+      cash one) is fixed like the union's.
+    - the lineage's own uncertainty beside the propagation (summary.json lineage; lineage_component): C3's SE and the
+      count's arms a and c, from the lineage lane's C3 lines and bands at the end specifications.
     """
     summary_file, ((base, base_band, base_tag), (adopted, adopted_band, adopted_tag)) = ADOPTED[name]
     tag = {base: base_tag, adopted: adopted_tag}
@@ -389,6 +449,9 @@ def adopted_cases(ctx, name, joint=None):
     lane_dir = LATER_CASES.get(name)
     payload = json.loads((FISCAL / lane_dir / "derived/corrections.json").read_text()) if lane_dir else {"meta": {}}
     pa = payload["meta"].get("pension_accrual")                  # sept29: the pension switch at payable benefits
+    lin = payload["meta"].get("lineage")                         # oct05: the lineage's edits after the union's (v5)
+    if lin and not pa:
+        raise ValueError("[BLOCKED] a lineage payload without the pension switch: this lane splits the two only together")
     if pa and (pa["rules"]["part_a_rule"] != "fixed" or pa["rules"]["accrual_receipts"] != "set"):
         raise ValueError(f"[BLOCKED] pension accrual rules {pa['rules']}: this lane carries part_a_rule fixed and "
                          "accrual_receipts set only")
@@ -415,6 +478,7 @@ def adopted_cases(ctx, name, joint=None):
         cut = len(f"kcoef_{t}_") if own else len("kcoef_")
         return {c[cut:]: getattr(s, c) for c in (own or [c for c in specs.columns if c.startswith("kcoef_")])}
 
+    ss_weight = {}                                               # oct05: social_security's weight on each OASDI line
     if pa:
         # The payload's rule holds on its targets: social_security = ratio_net x the group's OASDI receipts (1e-9),
         # and the Medicare line less its Part A accrual is (1 - part_a_share) of the cash set's (the cash payload,
@@ -426,13 +490,49 @@ def adopted_cases(ctx, name, joint=None):
             return {a: sum(e["by"][a] for e in p["edits"] if e.get("line") == line and e.get("key") == key
                            and "national_bn" not in e) for a in ("personal", "shared")}
         set_m, cash_m = cell_edits(payload, "medicare", "medicare"), cell_edits(cash, "medicare", "medicare")
+        if lin:
+            # v5: the rule holds on the union's part, the case's target less the lineage's cell edits. The lineage's
+            # parts (G3+ members, whites) carry each its own accrual per tax dollar (v4_split.cjs; white_lines.py), so its
+            # social_security moves with its OASDI receipts at its own ratio, k = its edit over theirs; its Part A
+            # accrual, its set Medicare edit less (1 - part_a_share) of its cash one, is fixed like the union's.
+            def lineage_cells(p, side, line, key):
+                e = p["meta"]["lineage"]["edits"]
+                if e["first"] + e["count"] != len(p["edits"]) or e["row8_edit_index"] != len(p["edits"]) - 1:
+                    raise ValueError("[BLOCKED] the lineage's edits are not the payload's last, row 8's move last")
+                return {a: sum(x["by"][a] for x in p["edits"][e["first"]:e["row8_edit_index"]]
+                               if x.get("side") == side and x.get("line") == line and "national_bn" not in x
+                               and (x.get("scenario") if side == "receipt" else x.get("key")) == key)
+                        for a in ("personal", "shared")}
+            lc = {line: lineage_cells(payload, side, line, key) for side, line, key in
+                  [("spending", "social_security", "social_security"), ("spending", "medicare", "medicare")]
+                  + [("receipt", line, "cbo_collective") for line, _ in oasdi]}
+            lc_cash = {line: lineage_cells(cash, side, line, key) for side, line, key in
+                       [("spending", "medicare", "medicare")] + [("receipt", line, "cbo_collective") for line, _ in oasdi]}
+            if any(lc_cash[line] != lc[line] for line, _ in oasdi):
+                raise ValueError("[BLOCKED] the set's and the cash set's lineage differ on the OASDI receipts")
+        lineage_k, lineage_part_a = {}, {}
         for a in ("personal", "shared"):
             ss = target(adopted, "spending", "social_security", "social_security", a)
-            if not np.isclose(ss, pa["ratio_net"] * sum(c * target(adopted, "receipt", line, "cbo_collective", a)
-                                                         for line, c in oasdi), rtol=0, atol=1e-9):
-                raise ValueError(f"[BLOCKED] social_security/{a} is not ratio_net x the OASDI receipts")
+            receipts = {line: target(adopted, "receipt", line, "cbo_collective", a) for line, _ in oasdi}
             med = target(adopted, "spending", "medicare", "medicare", a)
             med_cash = med - set_m[a] + cash_m[a]
+            if lin:
+                lin_oasdi = sum(c * lc[line][a] for line, c in oasdi)
+                lineage_k[a] = lc["social_security"][a] / lin_oasdi
+                lineage_part_a[a] = lc["medicare"][a] - (1 - pa["part_a_share"]) * lc_cash["medicare"][a]
+                if not (0.9 < lineage_k[a] < 1.0 and 0 < lineage_part_a[a] < lc["medicare"][a]):
+                    raise ValueError(f"[BLOCKED] {a}: the lineage's accrual ratio {lineage_k[a]} or Part A accrual "
+                                     f"{lineage_part_a[a]} is out of range")
+                ss -= lc["social_security"][a]
+                receipts = {line: v - lc[line][a] for line, v in receipts.items()}
+                med -= lc["medicare"][a]
+                med_cash -= lc_cash["medicare"][a]
+                for line, _ in oasdi:
+                    ss_weight[(a, line)] = ((pa["ratio_net"] * receipts[line] + lineage_k[a] * lc[line][a])
+                                            / target(base, "receipt", line, "cbo_collective", a))
+                fixed[(a, "medicare")] += lineage_part_a[a]
+            if not np.isclose(ss, pa["ratio_net"] * sum(c * receipts[line] for line, c in oasdi), rtol=0, atol=1e-9):
+                raise ValueError(f"[BLOCKED] social_security/{a} is not ratio_net x the OASDI receipts")
             if not np.isclose(med - pa["part_a_accrual_bn"], (1 - pa["part_a_share"]) * med_cash, rtol=0, atol=1e-9):
                 raise ValueError(f"[BLOCKED] medicare/{a} is not (1 - part_a_share) of the cash set's plus the accrual")
 
@@ -604,7 +704,11 @@ def adopted_cases(ctx, name, joint=None):
             if switch and pension == "accrual":
                 for line, c in oasdi:
                     rep = ctx["line_reps"][(a, "receipt", line)]
-                    dev -= pa["ratio_net"] * c * ratio(case, "receipt", line, a) * (rep - rep[0])
+                    if lin:
+                        # oct05: the union's accrual at ratio_net on its OASDI receipts, the lineage's at its own k.
+                        dev -= c * ss_weight[(a, line)] * (rep - rep[0])
+                    else:
+                        dev -= pa["ratio_net"] * c * ratio(case, "receipt", line, a) * (rep - rep[0])
             return dev
 
         def meps_se(case, kc):
@@ -765,19 +869,29 @@ def adopted_cases(ctx, name, joint=None):
             summary[case].update(production_term_se_bn=[f.se_production_term_bn.min(), f.se_production_term_bn.max()],
                                  **{c: [f[c].min(), f[c].max()] for alt in ("fixed", "generic")
                                     for c in (f"se_cps_pension_{alt}_bn", f"se_combined_pension_{alt}_bn")})
+        if lin and case == adopted:
+            summary[case]["lineage"] = lineage_component(f, lin)
     (sub / "summary.json").write_text(json.dumps(summary, indent=2, default=float) + "\n")
     for case, v in summary.items():
         print(f"[{case}] cost {v['net_cost_band_bn'][0]:.1f}-{v['net_cost_band_bn'][1]:.1f}  "
               f"SE {v['se_independent_bn'][0]:.2f}-{v['se_independent_bn'][1]:.2f}  "
               f"95% union {v['ci95_union_bn'][0]:.1f}-{v['ci95_union_bn'][1]:.1f}  "
               f"envelope {v['ci95_envelope_union_bn'][0]:.1f}-{v['ci95_envelope_union_bn'][1]:.1f}", flush=True)
+        if "lineage" in v:
+            g = v["lineage"]
+            b = g["arms"][g["central_arm"]]
+            print(f"[{case} lineage] C3 {g['c3']} SE {g['c3_se']}: SE at the ends {b['se_c3_bn'][0]:.2f} / "
+                  f"{b['se_c3_bn'][1]:.2f}; 95% with C3 {b['ci95_with_c3_bn'][0]:.1f}-{b['ci95_with_c3_bn'][1]:.1f}; "
+                  f"over arms a-c {g['ci95_with_c3_over_arms_bn'][0]:.1f}-{g['ci95_with_c3_over_arms_bn'][1]:.1f}",
+                  flush=True)
 
 
 def main():
     ap = argparse.ArgumentParser(description="Propagate sampling and donor errors onto the account's cases.")
     ap.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept20"), default=list(LATER_CASES)[-1],
-                    help="a later case (default: the last in later_cases.json, sept29: candidate v4 adopted "
-                         "2026-09-29; sept27: the return on public capital; sept26_schools: schools at full average "
+                    help="a later case (default: the last in later_cases.json, oct05: main case v5 adopted "
+                         "2026-10-05; sept29: candidate v4 adopted 2026-09-29; sept27: the return on public capital; "
+                         "sept26_schools: schools at full average "
                          "cost; sept26: CBO's one-year school response, 0.63-0.66) or sept24: also that adopted case; "
                          "sept20: its files only")
     args = ap.parse_args()

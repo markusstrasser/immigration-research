@@ -204,3 +204,33 @@ def test_payload_production_grid_and_pension_switch():
                                        np.sqrt(c[f"se_cps_pension_{alt}_bn"] ** 2 + other), atol=1e-9)
             assert base[f"se_cps_pension_{alt}_bn"].isna().all()
     assert found >= 1
+
+
+def test_lineage_component_beside_the_propagation():
+    """oct05 (main case v5): the lineage's own uncertainty sits beside the propagation. Each arm's C3 error at an end
+    is the lineage lane's |slope| x C3's SE, it joins the end specification's combined error in quadrature, and the
+    central arm's band is the case's."""
+    found = 0
+    for name, lane in json.loads((HERE / "later_cases.json").read_text()).items():
+        s = json.loads((OUT / name / "summary.json").read_text())[name]
+        if "lineage" not in s:
+            continue
+        found += 1
+        g = s["lineage"]
+        meta = json.loads((HERE.parent / lane / "derived/corrections.json").read_text())["meta"]["lineage"]
+        arms = json.loads((HERE.parent / meta["lane"] / "derived/v5_summary.json").read_text())["sets"]["set"]["arms"]
+        c = pd.read_csv(OUT / name / "case_uncertainty.csv").query("case == @name")
+        ends = [c.loc[c.net_cost_bn.idxmin()], c.loc[c.net_cost_bn.idxmax()]]
+        assert (g["c3"], g["c3_se"], g["central_arm"]) == (meta["c3"]["value"], meta["c3"]["se"], meta["arm"])
+        np.testing.assert_allclose(g["arms"][g["central_arm"]]["band_bn"], s["net_cost_band_bn"], atol=1e-6)
+        assert set(g["arms"]) == {"a", meta["arm"], "c"}
+        for arm, v in g["arms"].items():
+            slopes = [abs(arms[arm]["c3_line"][e]["slope_bn"]) for e in ("low", "high")]
+            np.testing.assert_allclose(v["se_c3_bn"], [x * g["c3_se"] for x in slopes], rtol=1e-12)
+            np.testing.assert_allclose(v["se_independent_with_c3_bn"],
+                                       [np.hypot(e.se_combined_independent_bn, x) for e, x in zip(ends, v["se_c3_bn"])],
+                                       rtol=1e-12)
+        b = g["arms"][g["central_arm"]]["ci95_with_c3_bn"]
+        assert g["ci95_with_c3_over_arms_bn"][0] < b[0] < g["ci95_at_ends_bn"][0]
+        assert g["ci95_with_c3_over_arms_bn"][1] > b[1] > g["ci95_at_ends_bn"][1]
+    assert found >= 1
