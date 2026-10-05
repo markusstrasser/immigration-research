@@ -314,7 +314,7 @@ INDEX_SPANS = [
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
     ("[Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) (ladder 188–193)",
      "[decision](../decisions/2026-09-28-social-items-more-benefits.md))."),
-    ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 7.9%."),
+    ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 7.5%."),
     ("The [world ledger]", "premium over being raised in Mexico. [FRAMING-SENSITIVE]"),
     ("Benefits are priced to the same standard as the costs", "so both figures stand (ladder 199)."),
     ("The [debt legacy lane]", "nor the stock to an annual figure."),
@@ -341,7 +341,7 @@ FAQ_SPANS = [
     ("On the adopted account itself, with no reference group", "on the US-born generations counted"),
     # entry 4's income split of the transfers (6157bb1) and entry 6's gap (1572b90), restated on the adopted case
     ("the renters' payments cancel in dollars but not by income",
-     "fifths of other residents lose $79.4bn a year and the top fifth gains $44.5bn (ladder 194)."),
+     "fifths of other residents lose $80.4bn a year and the top fifth gains $45.5bn (ladder 194)."),
     ("many average residents, the main case's gap counting benefits when paid", "has no national total to share out."),
     ("**What about obligations left by past years?**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
@@ -356,17 +356,17 @@ CLAUDE_SPANS = [
 MEMO_SPANS = {
     REAL_COSTS: [
         ("| Channel | Bottom fifth | 2nd | 3rd | 4th | Top fifth | Total |",
-         "fifths lose $79.4bn a year and the top fifth gains $44.5bn."),
-        ("**The fiscal cost's incidence is a financing convention.**", "and 19.0% and 0.64% under"),
+         "fifths lose $80.4bn a year and the top fifth gains $45.5bn."),
+        ("**The fiscal cost's incidence is a financing convention.**", "and 19.9% and 0.71% under"),
         ("**Weighted by income.**", "weight (2.24), not a larger harm."),
     ],
     BY_GENERATION: [
-        ("**Verdict (2026-09-29, the main case of that date):** On the main case of $371.4–434.8bn a year",
-         "generation's own state mix are not computed."),
+        ("**Verdict (2026-10-05, main case v5):** On the main case of $390.3–461.2bn a year",
+         "whose adults take the identified third-plus's adult"),
     ],
     WINNERS: [
-        ("**Verdict (2026-09-29, the main case of that date, $371.4–434.8bn;",
-         "whose pooled net under tax shares is −$524 a year."),
+        ("**Verdict (2026-10-05, main case v5, $390.3–461.2bn;",
+         "whose pooled net under tax shares is −$632 a year."),
     ],
 }
 # Every markdown file in scope with its spans. A year in any of them needs no map row.

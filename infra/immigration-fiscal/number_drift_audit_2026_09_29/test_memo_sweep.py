@@ -18,7 +18,7 @@ def test_positive_controls_pass():
     assert M.controls(recs, values, M.other_values(recs, values, registry, M.earlier_values())) == []
 
 
-def test_the_adopted_case_is_current_and_the_registry_and_september_29_cases_are_earlier():
+def test_the_adopted_case_and_pairing_are_current_and_the_registry_and_september_29_values_are_earlier():
     recs = M.Q.load_registry()
     values, registry = M.current_values(recs)
     earlier = M.earlier_values()
@@ -28,13 +28,18 @@ def test_the_adopted_case_is_current_and_the_registry_and_september_29_cases_are
     assert [round(x, 1) for x in registry["case.main"]] == [321.8, 387.4]
     assert [round(x, 1) for x in earlier["case.main"][0]] == [371.4, 434.8]
     assert [round(x, 2) for x in earlier["case.per_member"][0]] == [9.35, 10.95]
-    # the pairing stays on the propagation lane's September 29 run until its v5 run is recorded
-    assert [round(x, 1) for x in values["pairing.total"]] == [462.9, 535.5]
+    # the pairing is the propagation lane's v5 run; its September 29 run is the earlier vintage
+    assert [round(x, 1) for x in values["pairing.total"]] == [490.2, 570.7]
+    assert [round(x, 2) for x in values["pairing.per_member_priced"]] == [11.47, 13.35]
+    assert [round(x, 1) for x in values["pairing.fiscal_footing"]] == [385.4, 461.2]
     assert [round(x, 1) for x in registry["pairing.total"]] == [413.7, 488.0]
+    assert [round(x, 1) for x in earlier["pairing.total"][0]] == [462.9, 535.5]
+    assert [round(x, 2) for x in earlier["pairing.per_member_priced"][0]] == [11.66, 13.48]
+    assert [round(x, 1) for x in earlier["pairing.fiscal_footing"][0]] == [366.7, 434.8]
     others = M.other_values(recs, values, registry, earlier)
     for rid in ("case.main", "pairing.total"):
         assert any(o["origin"] == "registry" and o["kind"] == "vintage" for o in others[rid])
-    for rid in ("case.main", "case.per_member"):
+    for rid in ("case.main", "case.per_member", "pairing.total", "pairing.per_member_priced", "pairing.fiscal_footing"):
         assert any(o["origin"] == "earlier" and o["kind"] == "vintage" for o in others[rid])
 
 

@@ -11,11 +11,12 @@ A record's other values are the numbers a memo may still quote after the record 
     registry    the registry's own value of a record in ADOPTED. The registry follows the evidence map, which stays on
                 the September 27 case until the operator moves it; the main case adopted on 2026-10-05 (v5) is
                 current for the memos. A record in ADOPTED takes its current value from the adopted lane (the
-                pairing's from the propagation lane's run of the September 29 case, until its run of v5 is
-                recorded), and its registry value becomes an earlier vintage ("$322–387bn" as the main case is
-                flagged, "$390–461bn" passes; "$414–488bn" as the pairing is flagged, "$463–536bn" passes).
+                pairing's from the propagation lane's run of v5), and its registry value becomes an earlier
+                vintage ("$322–387bn" as the main case is flagged, "$390–461bn" passes; "$414–488bn" as the
+                pairing is flagged, "$490–571bn" passes).
     earlier     the value a record in EARLIER held on the case v5 replaced, the September 29 case (v4), also an
-                earlier vintage ("$371–435bn" as the main case is flagged, and passes when named).
+                earlier vintage ("$371–435bn" as the main case and "$463–536bn" as the pairing are flagged, and
+                pass when named).
 An other value that equals the record's current value at the precision it is printed with is dropped.
 
 A memo number quotes an other value when, after the audit's masks (dates, ladder and item references, hashes):
@@ -94,19 +95,27 @@ EXEMPT = {
 
 # the main case adopted on 2026-10-05 (v5, ladder 281), current for the memos while the registry follows the evidence
 # map on September 27: record id → (path, field, expr), on the adopted lane's summary (per member of the 42.75M
-# lineage) or, for the pairing, on the propagation lane's run of the September 29 case (911afa6) until its run of v5
-# is recorded
+# lineage) or, for the pairing, on the propagation lane's run of v5 (72f2e3bc)
 ADOPTED_LANE = "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json"
-PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv"
+PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv"
 _PAIR = "csv:section=7&column=pairing_on_priced_count&item=published pairing"
+
+
+def _pairing(case):
+    """The pairing records' (field, expr) on one case's column of the propagation lane's real-costs totals."""
+    return {
+        "pairing.total": (f"l={_PAIR} (low)|{case} ;; h={_PAIR} (high)|{case}", "(l, h)"),
+        "pairing.per_member_priced": (f"l={_PAIR} per group member (low)|{case} ;; "
+                                      f"h={_PAIR} per group member (high)|{case}", "(l, h)"),
+        "pairing.fiscal_footing": (f"f=csv:section=7&column=hispanic&item=fiscal main case (low)|{case} ;; "
+                                   f"g=csv:section=7&column=custody&item=fiscal main case (high)|{case}", "(f, g)"),
+    }
+
+
 ADOPTED = {
     "case.main": (ADOPTED_LANE, "a=json:main_case", "(a[0], a[1])"),
     "case.per_member": (ADOPTED_LANE, "a=json:v5.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
-    "pairing.total": (PAIRING_LANE, f"l={_PAIR} (low)|sept29 ;; h={_PAIR} (high)|sept29", "(l, h)"),
-    "pairing.per_member_priced": (PAIRING_LANE, f"l={_PAIR} per group member (low)|sept29 ;; "
-                                  f"h={_PAIR} per group member (high)|sept29", "(l, h)"),
-    "pairing.fiscal_footing": (PAIRING_LANE, "f=csv:section=7&column=hispanic&item=fiscal main case (low)|sept29 ;; "
-                               "g=csv:section=7&column=custody&item=fiscal main case (high)|sept29", "(f, g)"),
+    **{rid: (PAIRING_LANE, field, expr) for rid, (field, expr) in _pairing("oct05").items()},
 }
 
 
@@ -124,13 +133,17 @@ def current_values(recs):
 
 
 # the main case adopted on 2026-09-29 (v4, ladder 275), which v5 replaced: record id → (path, field, expr, label), an
-# earlier vintage beside the registry's
+# earlier vintage beside the registry's; the pairing on the propagation lane's run of that case (911afa6)
 EARLIER_LANE = "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json"
+EARLIER_PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv"
 EARLIER = {
     "case.main": (EARLIER_LANE, "a=json:main_case", "(a[0], a[1])", "the September 29 case (v4)"),
     "case.per_member": (EARLIER_LANE, "a=json:main_case ;; p=@infra/immigration-fiscal/main_case_decomposition_2026_09_29/"
                         "derived/headcount.csv@csv:cut=all&group=union|row4", "(a[0]*1e6/p, a[1]*1e6/p)",
                         "the September 29 case (v4), per member of the 39.71M union"),
+    **{rid: (EARLIER_PAIRING_LANE, field, expr, "the September 29 case (v4)" + (
+        ", per member of the 39.71M union" if rid == "pairing.per_member_priced" else ""))
+       for rid, (field, expr) in _pairing("sept29").items()},
 }
 
 
@@ -660,11 +673,23 @@ CONTROLS = [
     ("the September 27 case per member named",
      "The main case is $9.1–10.8k a year per member (September 27: $8.1–9.8k).",
      {("case.per_member", "vintage_labelled")}),
-    ("the adopted pairing", "Fiscal and social costs together come to $463–536bn a year.", set()),
+    ("the adopted pairing", "Fiscal and social costs together come to $490–571bn a year.", set()),
+    ("the adopted pairing per member", "Fiscal and social costs together are $11.5–13.3k a year per member.", set()),
+    ("the September 29 pairing quoted as current", "Fiscal and social costs together come to $463–536bn a year.",
+     {("pairing.total", "vintage_unlabelled")}),
+    ("the September 29 pairing named",
+     "Fiscal and social costs together come to $490–571bn a year (September 29: $463–536bn).",
+     {("pairing.total", "vintage_labelled")}),
+    ("the September 29 pairing per member quoted as current",
+     "Fiscal and social costs together are $11.7–13.5k a year per member.",
+     {("pairing.per_member_priced", "vintage_unlabelled")}),
+    ("the September 29 pairing's fiscal footing quoted as current",
+     "The pairing's low end takes the fiscal main case at the Hispanic footing, $366.7bn.",
+     {("pairing.fiscal_footing", "vintage_unlabelled")}),
     ("the September 27 pairing quoted as current", "Fiscal and social costs together come to $414–488bn a year.",
      {("pairing.total", "vintage_unlabelled")}),
     ("the September 27 pairing named",
-     "Fiscal and social costs together come to $463–536bn a year (September 27: $414–488bn).",
+     "Fiscal and social costs together come to $490–571bn a year (September 27: $414–488bn).",
      {("pairing.total", "vintage_labelled")}),
     ("the September 27 pairing per member quoted as current",
      "Fiscal and social costs together are $10.4–12.3k a year per member.",

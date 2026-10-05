@@ -34,12 +34,13 @@ BEA's depreciation-only lines leave out (+$22.2 / +$38.3bn); and every governmen
 operating loss and the return on their capital (+$17.2 / +$23.0bn)
 ([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239).
 
-With CBO-style first-year budget responses the September 29 case gives $277.3–318.3bn, and $200.6–245.3bn counting
-benefits when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md); the September 26 run gave $200.9–245.7bn); with every service
-proportional, the current case gives $419.3–475.6bn. The main cases since September 20 are listed, each with its decision, in the
-[topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
-[real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below is the account as
-published on September 20, kept as the calculation record.
+With CBO-style first-year budget responses the main case gives $289.1–335.3bn, and $206.2–257.5bn counting
+benefits when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md); on the
+September 29 case $277.3–318.3bn and $200.6–245.3bn; the September 26 run gave $200.9–245.7bn); with every
+service proportional, the current case gives $419.3–475.6bn. The main cases since September 20 are listed, each
+with its decision, in the [topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and
+benefits are in the [real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below
+is the account as published on September 20, kept as the calculation record.
 
 **Result as published September 20:** The source-centered model gives **$165–197bn/year of conditional net
 cost to other US residents** when CBO-informed school and delayed-service budget
@@ -363,6 +364,10 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-10-05, later (break conditions lane, 16f2a063): the first-year budget response is v5's, $289.1–335.3bn,
+and $206.2–257.5bn counting benefits when paid; the September 29 case's $277.3–318.3bn and $200.6–245.3bn stay
+beside it. Concept affected: the first-year scenario.
 
 2026-10-05, main case v5 (ladder 281): the header gives the October 5 case, $390.3–461.2bn, which counts the 3.04M
 descendants who no longer report Mexican origin as whole people, with the cash set ($307.4–383.4bn), the case's

@@ -183,8 +183,8 @@ substituting a web summary or declaring a measurement unavailable:
   - low side with the within-district 0.836: $362–435bn;
   - September 29: $371.4–434.8bn, $294.7–361.8bn counting benefits when paid;
   - September 27: $322–387bn; the schools case: $258–292bn;
-  - first-year budget response with CBO's 0.63–0.66: $277–318bn, $201–245bn counting benefits when paid
-    (ladder 270's lane, on the September 29 case; the September 26 run gave $201–246bn);
+  - first-year budget response with CBO's 0.63–0.66: $289–335bn, $206–258bn counting benefits when paid
+    (ladder 270's lane; on the September 29 case $277–318bn and $201–245bn; the September 26 run gave $201–246bn);
   - September 24: $201–246bn; September 23: $203–250bn; September 20: $165–197bn.
 
   The capital return is an imputed resource cost, never a debt flow. Defense,

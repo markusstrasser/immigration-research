@@ -2,6 +2,9 @@
 
 Date: 2026-09-20. [MODEL / FRAMING-SENSITIVE] Calculation record; narrative authorship remains operator-owned.
 
+**Main case v5 (adopted 2026-10-05: the September 29 case plus the 3.04M descendants of Mexican immigrants who no longer report Mexican origin, counted as whole people; [decision](../decisions/2026-10-05-main-case-v5.md)):** on the $390–461bn anchor the whole-budget rules give **$3.4–4.4tn over 2015–2024, $4.8–6.4tn over 2010–2024 and $5.8–8.1tn over 2005–2024**. The September 29 case is carried back as before and v5's lineage line by line, each part on its line's national series. The lineage's own count by year is not measured, so it follows the identified third-plus generation's count, held at its 2024 ratio of 3.04M to 14.34M [ASSUMPTION]. That count, from the CPS ASEC, grows ×1.75 over 2005–2024 against ×1.46 for the group, so the lineage weighs less in the early years than it would on the group's path. The lineage adds $0.17 / 0.23tn to the ten-year total under the flat rule. The return on public capital is $0.32–0.54tn of the ten years under the ratio rule ($0.35–0.59tn flat).
+[CALCULATION: `backcast.py --case oct05` → `derived/oct05/backcast_windows.csv`, concepts `*_oct05_*`; `derived/oct05/case_parts_windows.csv`; lane README section "v5 case (oct05)" (6ec08a13)]
+
 **The September 29 case (main case v4, adopted 2026-09-29 and replaced by v5 on 2026-10-05: the September 27 case with the pension accrual at payable benefits, long-run property taxes, the IRS income-tax key, state prices, roads by miles and five smaller keys; [decision](../decisions/2026-09-29-main-case-v4.md)):** on the $371–435bn anchor the whole-budget rules give **$3.2–4.1tn over 2015–2024, $4.5–6.0tn over 2010–2024 and $5.6–7.7tn over 2005–2024**. The September 27 case is carried back as before and v4's change line by line, each part on its own NIPA series: the pension accrual follows the OASDI and HI contributions that earn it, and the benefits it no longer charges follow their own benefit lines. The return on public capital is an imputed resource cost, not a cash flow, and is $0.30–0.50tn of the ten-year total under the ratio rule ($0.33–0.55tn flat). The cash set is not carried back as a concept of its own, and the programme-by-programme version below stays on the September 27 case.
 [CALCULATION: `backcast.py --case sept29` → `derived/sept29/backcast_windows.csv`, concepts `*_sept29_*`; `derived/sept29/case_parts_windows.csv` (c4dd711)]
 
@@ -185,6 +188,8 @@ income series. The repository holds 2022–2026 only.
 series and each assumption are separately inspectable.
 
 ## Revisions
+
+2026-10-05, later: main case v5 is carried back (6ec08a13): $3.4–4.4tn over ten years, up from $3.2–4.1tn on the September 29 case. The 3.04M added descendants follow the identified third-plus generation's count, the rule the case lane asks for; the lineage adds $0.17 / 0.23tn of the ten years under the flat rule. The September 29 paragraph stays below as the record of v4's carry-back. Concept affected: the cumulative figure's anchor.
 
 2026-10-05: main case v5 ($390–461bn; [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281) replaces v4, so the header names the September 29 case as v4 instead of the adopted case; its back-cast figures are unchanged, and v5's back-cast is added when its run is recorded. Concept affected: which case the header calls adopted. [SOURCE: `infra/immigration-fiscal/main_case_2026_10_05/RESULT.md`]
 

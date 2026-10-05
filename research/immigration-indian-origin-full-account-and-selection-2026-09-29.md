@@ -5,9 +5,9 @@
 [indian_cohort_selection_2026_09_29](../infra/immigration-fiscal/indian_cohort_selection_2026_09_29/RESULT.md),
 design [percentile_mapping_design_2026_09_29](../infra/immigration-fiscal/percentile_mapping_design_2026_09_29/DESIGN.md).
 
-**Verdict:** On the main case and the same social rows the Mexican-origin union carries, Indian-origin
-residents benefit other residents by about $9,300–10,800 per member a year ($57–65bn), and by
-$7,100–8,400 at the third-plus white age distribution. The flow the household surveys see is not
+**Verdict:** On main case v5 and the same social rows the Mexican-origin union carries, Indian-origin
+residents benefit other residents by about $9,300–10,800 per member a year ($57–66bn), and by
+$7,100–8,500 at the third-plus white age distribution. The flow the household surveys see is not
 becoming less selected: each arrival cohort since 1995 sits at the 75th–78th percentile of US white
 education at arrival. "Indian" is several populations: south-Indian and Hindi-speaking professionals
 sit near the 80th percentile, Punjabi speakers at the 47th. The unmeasured risk is the post-2021
@@ -26,22 +26,28 @@ lost selection; split the group by home region.
 
 ## 2. The full account
 
-Per member a year, low / high end of the case; positive costs others, negative benefits them
-[CALCULATION: `indian_full_account_2026_09_29/derived/combined.csv`]:
+Per member a year, low / high end of main case v5; positive costs others, negative benefits them. Parts add to
+totals under controlled rounding [CALCULATION: `indian_full_account_2026_09_29/derived/oct05/combined.csv`,
+594b67a4; the September 29 table in `derived/combined.csv`]:
 
 | Group | Fiscal | Social rows | Total |
 |---|---:|---:|---:|
-| Indian-origin, actual ages (6.08M, CPS) | −12,006 / −10,635 | +1,243 / +1,329 | **−10,763 / −9,305** |
-| Indian-origin, white ages | −9,886 / −8,594 | +1,467 / +1,525 | **−8,419 / −7,069** |
-| India-born, actual ages | −12,179 / −10,751 | +888 / +990 | −11,292 / −9,761 |
-| India-born, white ages | −7,492 / −6,212 | +1,256 / +1,328 | −6,236 / −4,884 |
-| Mexican-origin union, actual ages | +9,353 / +10,950 | +2,424 / +2,535 | +11,777 / +13,485 |
-| Third-plus whites | +610 / +1,865 | +2,254 / +2,294 | +2,864 / +4,159 |
+| Indian-origin, actual ages (6.08M, CPS) | −12,024 / −10,654 | +1,242 / +1,329 | **−10,782 / −9,325** |
+| Indian-origin, white ages | −9,906 / −8,615 | +1,453 / +1,511 | **−8,453 / −7,104** |
+| India-born, actual ages | −12,197 / −10,770 | +887 / +990 | −11,310 / −9,780 |
+| India-born, white ages | −7,510 / −6,230 | +1,255 / +1,328 | −6,255 / −4,902 |
+| Mexican-origin union, actual ages, the 42.75M lineage | +9,129 / +10,789 | +2,452 / +2,560 | +11,581 / +13,349 |
+| Third-plus whites, a 42.75M slice | +596 / +1,850 | +2,238 / +2,278 | +2,834 / +4,128 |
 
+- The union carries the 3.04M added descendants at the case lane's amounts and their own social rows ($8.56 /
+  8.76bn, from the v5 pairing); the Indian-origin groups keep their CPS counts, so only v5's responses move them,
+  by about $19 per member [ASSUMPTION]. On September 29 the union was +$11,777 / +13,485 and whites +$2,864 /
+  +4,159 on 39.71M, and the Indian-origin group −$10,763 / −9,305.
 - Fiscal standard errors for the Indian rows are about $1,000–1,150 (160 CPS replicate weights).
 - Ageing to white ages removes about a sixth of the group's lead over whites; the India-born alone
-  lose about half of their benefit (−$11.3k → −$6.2k at the low end), because their old age is still ahead of them.
-- The gate: the same code reproduces the adopted union account, $371.4146 / 434.8410bn, exactly.
+  lose about half of their benefit (−$11.3k → −$6.3k at the low end), because their old age is still ahead of them.
+- The gate: the engine union is the case, $390.2940 / 461.2431bn, and the union rows reproduce the white
+  and Black lanes' v5 re-keys (5e-5).
 - Pooling ASEC 2022–26 for the second generation (941 adults, not 209) moves the total by $136 per
   member. Self-employed and wage-earning India-born adults do not differ measurably
   (−$18.4k/−16.7k, SE 4.9k, against −$19.8k/−18.1k). Motel, grocery and gas-station owners are 27
@@ -145,3 +151,8 @@ points and the projected G2 about 1 point [CALCULATION: §5 of the cohort lane].
    BOP citizenship) to replace the institutionalization proxy.
 7. **Reconcile the count.** CPS 4.28M against ACS 2.94M India-born: needed before any $bn total is
    quoted.
+
+## Revisions
+
+- 2026-10-05, later (main case v5, [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281; 594b67a4): the verdict and §2's table run main case v5. Indian-origin residents benefit others by $9,325–10,782 per member; the union, on the 42.75M lineage with the added descendants' social rows, costs $11,581–13,349, so the gap to it is $22,400–22,700 per member (September 29: $22,500–22,800). The lead over third-plus whites, about $13,500, does not move. Concept affected: the full-account comparison (ladder 276).
+- 2026-10-06 (correction to the September 29 table): its white-ages row carried the first run's values, social rows +1,467 / +1,525 and total −8,419 / −7,069 (about $1,470–1,530 and $7,100–8,400). Commit f14d3d76 changed the trade row for subgroups, and `derived/combined.csv` has carried the new values since: social rows +1,453 / +1,510, total −8,433 / −7,084 (about $1,450–1,510). The verdict's rounded $7,100–8,400 was unaffected. Concept affected: none; a stale table row.

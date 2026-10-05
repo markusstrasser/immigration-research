@@ -1,9 +1,47 @@
 # The adopted account by generation
 
-**Verdict (2026-09-29, the main case of that date):** On the main case of $371.4–434.8bn a year
-([decision](../decisions/2026-09-29-main-case-v4.md), ladder 275), all three Mexican-origin generations remain net
-costs to other US residents. That holds at every one of its 64 specifications, under both ways of counting children,
-and when benefits are counted as paid.
+**Verdict (2026-10-05, main case v5):** On the main case of $390.3–461.2bn a year
+([decision](../decisions/2026-10-05-main-case-v5.md), ladder 281), which counts the 3.04M descendants of Mexican
+immigrants who no longer report Mexican origin as whole people, all three Mexican-origin generations remain net costs
+to other US residents. That holds at every one of its 64 specifications, under both ways of counting children, and
+when benefits are counted as paid. The added people are counted in the third-plus generation.
+- **Counted with their parents** (NAS): the Mexico-born cost others $169–197bn a year ($16.0–18.7k per adult of the
+  29.4M adults among the lineage's 42.75M members), the second generation $111–122bn ($12.4–13.7k per adult) and the
+  third-plus $110–142bn ($11.1–14.3k per adult).
+- **Counted in their own generation:** $87–97bn, $151–179bn and $142–195bn.
+- **Counting benefits when paid** (the cash set, $307.4–383.4bn): with their parents $150–183bn, $78–86bn and
+  $80–115bn; in their own generation $73–87bn, $118–143bn and $103–168bn.
+
+The added people raise the third-plus by $19.1 / 26.6bn under (a), and the case by $18.9 / 26.4bn; the Mexico-born and
+the second generation move only by the larger group's responses, −$0.09 to −0.12bn. The third-plus's cost per member
+falls to $8,151 / 11,217 from $8,549 / 11,740, because an added person costs less than an identified member: 1.08M of
+the 3.04M are priced as third-plus whites, the rest as identified third-plus members at their age mix. Under (b) the
+added people stay in the third-plus, since their parents' generation is not observed [ASSUMPTION]; had their minors
+moved to the second generation as the identified third-plus's do, about $4.9 / 8.4bn would move from the third-plus to
+the second, an indication rather than a bound. The pension switch adds $39.0 / 27.4bn to the third-plus counted in its
+own generation (September 29: $32.8 / 22.6bn); the Mexico-born's $10.0 / 14.4bn and the second generation's
+$33.9 / 36.0bn do not move.
+[CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md), section "v5 case
+(oct05)": `run_generations_v5.cjs` → `derived/generation_results_oct05.csv`, `generation_results_oct05_cash.csv`,
+`generation_summary_oct05.json` `change_from_sept29_by_part`; commits e5ca5efe, 86af8f7e; the September 29 and
+September 27 files keep their bytes] [FRAMING-SENSITIVE]
+
+| $bn a year, low / high end | (a) own generation | (b) minors with parents |
+|---|---|---|
+| G1, born in Mexico | 97.1 / 87.0 | 169.3 / 197.3 |
+| G2, US-born, a parent born in Mexico | 151.5 / 179.2 | 110.6 / 121.7 |
+| G3+, US-born of US-born parents, with the added people | 141.7 / 195.0 | 110.4 / 142.2 |
+| All three (the main case) | 390.3 / 461.2 | 390.3 / 461.2 |
+
+The ends are specifications 48 and 11, as on September 29. The cells are rounded under control so that each column
+adds to the case: (b)'s third-plus low end, 110.46, prints as 110.4. Per-person figures divide by the row-4 counts, the
+third-plus's with the added people (17.38M members under (a)), whose adults take the identified third-plus's adult
+share [ASSUMPTION].
+
+**The September 29 case** ($371.4–434.8bn a year; [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275),
+before the descendants who no longer report Mexican origin were added, left all three Mexican-origin generations
+net costs to other US residents, at every one of its 64 specifications, under both ways of counting children and
+when benefits were counted as paid.
 - **Counted with their parents** (NAS): the Mexico-born cost others $169–197bn a year ($16.0–18.7k per adult of the
   27.7M adults among the 39.7M the account prices), the second generation $111–122bn ($12.4–13.7k per adult) and the
   third-plus $91–116bn ($11.2–14.1k per adult).
@@ -219,9 +257,24 @@ case itself, which moves every generation.
 - v4 split, 2026-09-29: step 7 of `run_all.sh` (`v4_inputs.py`, `tax_key_split.py`, `run_generations_v4.cjs`)
   → `derived/generation_{results,summary,corrections}_sept29{,_cash}.*` (aa1f53b); 27 and 26 gates; the union
   reproduces the adopted band, $371.4146–434.8410bn and $294.7011–361.8175bn. [CALCULATION]
+- v5 split, 2026-10-05: step 8 of `run_all.sh` (`run_generations_v5.cjs`, with `v5_split.cjs`)
+  → `derived/generation_{results,summary,corrections}_oct05{,_cash}.*` (e5ca5efe, 86af8f7e); 28 and 25 gates; the
+  union reproduces the adopted band, $390.2940–461.2431bn and $307.3764–383.4093bn. [CALCULATION]
 
 ## Revisions
 
+- 2026-10-05, later (main case v5, [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281): the split now
+  runs on the main case of $390.3–461.2bn (commits e5ca5efe, 86af8f7e), which counts the 3.04M descendants who no
+  longer report Mexican origin as whole people, with the cash set beside it.
+  - The added people go on the third-plus: counted in its own generation it costs $142–195bn (was $123–168bn), with
+    its parents $110–142bn (was $91–116bn). The Mexico-born and the second generation move only by the larger group's
+    responses, by about $0.1bn. All three remain net costs at every specification, also on the cash set.
+  - Per-person figures divide by the lineage's 42.75M members and 29.4M adults; the third-plus's cost per member falls,
+    because an added person costs less than an identified member.
+  - Concept affected: the adopted account's split by generation (ladder 224). At the high end the third-plus again
+    costs more than the second generation under both conventions: under (a) $195.0bn against $179.2bn, under (b)
+    $142.2bn against $121.7bn. At the low end the second generation still leads, under (b) by $0.1bn ($110.56bn
+    against $110.46bn).
 - 2026-09-29, later (main case v4, [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275): the split now
   runs on the main case of $371.4–434.8bn (commit aa1f53b), with the cash set beside it.
   - Every generation's cost rises, and all three remain net costs at every specification, also on the cash set.

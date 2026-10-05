@@ -22,9 +22,8 @@ Mexican-origin population (a 42.75M-person lineage, all generations, counting th
 no longer report Mexican origin) to other US residents at **$390–461bn a
 year**, counting the pension promises members earn as they work, or $307–383bn counting benefits
 when paid ([lane](infra/immigration-fiscal/main_case_2026_10_05/RESULT.md),
-[decision](decisions/2026-10-05-main-case-v5.md)). On the September 29 case ($371–435bn, the 39.7M people who
-report Mexican birth, parentage or origin), other residents' social costs and benefits outside the public budget
-brought it to $463–536bn. Only 2024 is measured;
+[decision](decisions/2026-10-05-main-case-v5.md)). Other residents' social costs and benefits outside the public
+budget bring it to $490–571bn (on the September 29 case, $463–536bn). Only 2024 is measured;
 earlier years are a model back-cast. The [objections FAQ](research/immigration-objections-faq-2026-09-21.md)
 routes the standard objections to their executed tables, and the
 [evidence map](infra/immigration-fiscal/overview_2026_09_28/) (`build.py` writes the reader page)
