@@ -11,6 +11,15 @@ $32.8bn to the second and third-plus generations. The cash set (switch off, $294
 $117.7 / 143.3bn and $89.8 / 145.8bn. [FRAMING-SENSITIVE] [CALCULATION: `run_generations_v4.cjs` →
 `derived/generation_summary_sept29.json`, `generation_summary_sept29_cash.json`; section "v4 case (sept29)" below]
 
+[2026-10-05: on main case v5 (`oct05`, $390.29–461.24bn), which adds 3.04M descendants who no longer report Mexican
+origin to G3+, counted in their own generation the Mexico-born cost $97.15 / 87.02bn (September 29: 97.23 / 87.11), the
+second generation $151.46 / 179.25bn (151.57 / 179.35) and the third-plus $141.68 / 194.97bn (122.61 / 168.38). G3+
+costs $8,151 / 11,217 per member of 17.38M, against $8,549 / 11,740 of 14.34M. Counted with their parents: $169.27 /
+197.30bn, $110.56 / 121.72bn and $110.46 / 142.22bn [ASSUMPTION: the added people stay in G3+ under (b)]. The cash set,
+(a): $87.12 / 72.64bn, $117.62 / 143.22bn and $102.64 / 167.55bn. G1 and G2 move only by the larger group's responses
+(−$0.09 to −0.11bn). [CALCULATION: `run_generations_v5.cjs` → `derived/generation_summary_oct05.json`,
+`generation_summary_oct05_cash.json`; section "v5 case (oct05)" below]]
+
 **September 27 case** (the default files, `derived/generation_results.csv`): Split by generation, the September 27
 main case ($321.8–387.4bn a year) leaves all three
 Mexican-origin generations as net costs to other US residents, at every one of its 64 specifications and
@@ -28,6 +37,136 @@ figure under (a) and $33.8–55.7bn of the union's. [FRAMING-SENSITIVE] [CALCULA
 This paragraph's per-person figures divide by the CPS count (40.90m members, 28.77m adults). On the account's row-4
 count (39.71m and 27.66m; ladder 274) the Mexico-born cost $7.1–8.5k per member and, counted with their parents,
 $15.0–18.1k per adult. The US-born generations' figures do not change (section "v4 case (sept29)", 2026-09-29).
+
+## v5 case (oct05), 2026-10-05
+
+The operator adopted main case v5 on 2026-10-05 at 22:54 JST (`main_case_2026_10_05`, case key `oct05`;
+decisions/2026-10-05-main-case-v5.md). It is the September 29 case plus the descendants of Mexican immigrants who no
+longer report Mexican origin: 3,039,720 people on the account's frame (arm b), counted whole, a lineage of 42.75M. It
+costs $390.2940–461.2431bn; the cash set beside it costs $307.3764–383.4093bn. Both keep specifications 48 and 11 as
+their ends. Step 8 (`run_generations_v5.cjs`) splits both by generation into `*_oct05` and `*_oct05_cash` files. The
+September 29 and September 27 files keep their names and bytes. Model self-report: claude-opus-5-5.
+
+**How the split works.** The v5 payload is the September 29 payload of the same set, unchanged, plus 336 lineage edits,
+the lineage's production grid and its meta. The meta carries the group-size responses at the larger group. Each
+generation's payload is its September 29 payload (`generation_corrections_sept29*.json`) plus its v5 part
+(`v5_split.cjs`, which the late-arrival lane shares):
+- **The added people go on G3+.** G3+ takes the lineage's 335 cell edits and the production grid's change, as the case's
+  `package.cjs` `withLineage()` adds them. The added people are priced as 1.96M identified G3+ members and 1.08M
+  third-plus non-Hispanic whites at G3+ ages.
+- **Row 8 is split.** The lineage's last edit is audit row 8's change at the larger group (−$0.0080bn on
+  `lane_constants`), part of the union's response move. Each generation takes it times its share of the September 29
+  union's `lane_constants` k cell, per allocation; this is the lineage lane's `generationCosts()` rule. The shares under
+  (a) are G1 0.510, G2 0.221 and G3+ 0.269 (personal); under (b) they are 0.549, 0.217 and 0.234.
+- **The responses need no rule.** Every generation is evaluated at the case's responses, which move with the group's
+  size.
+
+Costs come from candidate v4's `consumer.cjs` on the v5 payload. The v5 package's `evaluateFull` gives the same cost for
+every model here (difference 0).
+
+**Rules chosen here** [ASSUMPTION]:
+- **Under (b) the added people stay in G3+.** Convention (b) counts minors with their parents, but the added people's
+  parents' generation is not observed. Had their minors moved to G2 as the identified G3+'s do, about $4.89 / 8.38bn of
+  their cost would move from G3+ to G2 (cash set $3.32 / 7.95bn). That figure is the added people's cost times the
+  identified G3+'s fall from (a) to (b) at v5's responses: 25.5% / 31.3%. It is an indication, not a bound, and the union
+  is unchanged (`summary` → `b_rule_indication`).
+- **Adults among the added people.** They take the identified G3+'s adult share, 0.5706: 1,734,357 adults. The case
+  prices them at the identified G3+'s age mix. Only per-adult figures use this.
+- **Row 8 by `lane_constants` share** (the Consumers row's rule). The alternative puts the whole edit on G3+, as
+  `withLineage()` does on the model it is given and as `main_case_2026_10_05` `api_check.json` pattern 3 prints. It moves
+  G1 by +$0.0041bn, G2 by +$0.0018bn and G3+ by −$0.0058bn under (a); a gate reproduces pattern 3's print at its four
+  decimals (`sensitivities.row8_on_g3plus`).
+
+**Results, the set** ($bn a year; low and high are the union's ends: 48, shared allocation, and 11, personal). Each
+cost and change column is rounded so the generations add to the printed union; the own range is rounded on its own.
+[CALCULATION: `derived/generation_results_oct05.csv`, `generation_summary_oct05.json`]
+
+| (a) Children in their own generation | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from September 29, $bn |
+|---|---|---|---|---|---|---|
+| G1, born in Mexico | 97.15 | 87.02 | 71.9–113.4 | 8,802 / 7,885 | 9,194 / 8,236 | −0.09 / −0.09 |
+| G2, US-born, a parent born in Mexico | 151.46 | 179.25 | 151.5–179.2 | 10,568 / 12,506 | 16,990 / 20,106 | −0.10 / −0.11 |
+| G3+, US-born of US-born parents, with the added people | 141.68 | 194.97 | 141.7–195.0 | 8,151 / 11,217 | 14,285 / 19,659 | +19.07 / +26.60 |
+| All three (the case) | 390.29 | 461.24 | | 9,129 / 10,789 | 13,276 / 15,689 | +18.88 / +26.40 |
+
+| (b) Minors with their parents (NAS 2017) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from September 29, $bn |
+|---|---|---|---|---|---|---|
+| G1 | 169.27 | 197.30 | 169.3–197.3 | 10,800 / 12,589 | 16,019 / 18,672 | −0.11 / −0.12 |
+| G2 | 110.56 | 121.72 | 106.5–125.9 | 9,057 / 9,970 | 12,402 / 13,653 | −0.09 / −0.10 |
+| G3+ | 110.46 | 142.22 | 110.5–142.2 | 7,428 / 9,564 | 11,138 / 14,340 | +19.08 / +26.62 |
+
+**Results, the cash set** (the pension switch off; [CALCULATION: `derived/generation_results_oct05_cash.csv`]):
+
+| (a) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from September 29, $bn |
+|---|---|---|---|---|---|---|
+| G1 | 87.12 | 72.64 | 57.5–103.3 | 7,894 / 6,582 | 8,245 / 6,875 | −0.08 / −0.09 |
+| G2 | 117.62 | 143.22 | 117.6–143.2 | 8,206 / 9,992 | 13,193 / 16,065 | −0.10 / −0.11 |
+| G3+ | 102.64 | 167.55 | 102.6–167.5 | 5,905 / 9,639 | 10,349 / 16,894 | +12.86 / +21.79 |
+| All three | 307.38 | 383.41 | | 7,190 / 8,968 | 10,455 / 13,042 | +12.68 / +21.59 |
+
+| (b) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from September 29, $bn |
+|---|---|---|---|---|---|---|
+| G1 | 149.94 | 182.95 | 149.9–182.9 | 9,567 / 11,673 | 14,190 / 17,314 | −0.11 / −0.12 |
+| G2 | 77.74 | 85.76 | 70.5–93.1 | 6,368 / 7,025 | 8,720 / 9,620 | −0.09 / −0.10 |
+| G3+ | 79.70 | 114.70 | 79.7–114.7 | 5,359 / 7,713 | 8,036 / 11,565 | +12.88 / +21.81 |
+
+Per-member figures add the 3,039,720 people to G3+ under both conventions: 17,382,294 members under (a), 14,871,214
+under (b), and 42,752,213 for the union. The other generations keep the September 29 denominators. G3+'s cost per member
+falls, because the added people cost less than an identified member: 1.08M of the 3.04M are priced as third-plus
+whites. The
+`uncorrected` columns are the identified generations' own models, so G3+'s `correction_bn` includes the added people.
+
+**What moved from September 29, by part** ($bn, low / high end; the set, (a); [CALCULATION:
+`generation_summary_oct05.json` → `change_from_sept29_by_part`]):
+
+| Part | G1 | G2 | G3+ | Union |
+|---|---:|---:|---:|---:|
+| The responses at the larger group, with row 8's share | −0.09 / −0.09 | −0.10 / −0.11 | −0.11 / −0.12 | −0.30 / −0.32 |
+| The added people | 0 | 0 | +19.18 / +26.72 | +19.18 / +26.72 |
+| **Change** | −0.09 / −0.09 | −0.10 / −0.11 | +19.07 / +26.60 | +18.88 / +26.40 |
+
+Row 8 is −$0.008bn of the union's response move. The union's parts are the lineage lane's arm b: the response move,
+and the G3+ part (+16.72 / +22.96) plus the white part (+2.46 / +3.76) together, all to 1e-13bn. The response move is
+the same in the cash set; there the added people add +12.97 / +21.91bn.
+
+**Gates**, all passing (`run_generations_v5.cjs`: 28 in the set, 25 in the cash set):
+- the September 29 generation models add to the union's September 29 model in all 335 cells (1.3e-12bn) and grid
+  (5.7e-14bn), both conventions;
+- the row-8 shares add to 1 (2.2e-16);
+- each generation's v5 payload gives its September 29 model plus its part. G3+'s equals the package's `withLineage()`
+  with row 8 moved to its share, exactly;
+- the three v5 models add to the case's payload model in every cell (1.3e-12bn) and grid (5.7e-14bn);
+- **oracle:** the union reproduces `main_case_2026_10_05/derived/main_case_bands.csv` (`adopted`, `cash_set`) at
+  specifications 48 / 11 to 1e-4, and the set's `per_spec.csv` at all 64 specifications (1.7e-13bn). The uncorrected
+  model reproduces `uncorrected_at_adopted_responses`, $313.0646–378.7098bn;
+- the generations add to the union in all 64 specifications, corrected and uncorrected (1.6e-12bn), and so do their
+  capital returns and enterprise receipts; the v5 package's `evaluateFull` gives every model's cost (difference 0);
+- the parts start at the September 29 band (4.1e-5) and at `generation_results_sept29*.csv` (half its last digit), end
+  at the v5 cost (exact), add across generations (1.5e-12bn), and equal the lineage lane's `v5_summary.json` and the
+  case lane's `change_at_fixed_specifications` (2.0e-13bn);
+- the alternative adds to the union (1.3e-12bn) and reproduces `api_check.json` pattern 3's print (4.5e-5bn).
+
+`rerun_lane.py` over the lane's 18 commands (steps 0–8 of `run_all.sh`, the two modules and `run_all.sh` allowed
+unrun): IDENTICAL, 56/56 files, exit 0 (23:09:56–23:10:51 JST). It needed `--online`. With uv offline, the first
+attempt stopped at `tax_key_split.py`, because uv's cache cannot resolve `--with openpyxl --with xlrd`. That was a
+transport failure, and no outputs were compared. The September 29 files are byte for byte unchanged.
+
+**Files.**
+- New scripts: `v5_split.cjs` (a module, for the late-arrival lane too) and `run_generations_v5.cjs`. `run_all.sh`
+  gains step 8.
+- New outputs: `derived/generation_{results,summary,corrections}_oct05{,_cash}.*`. Each file uses the sept29 file's
+  layout. `generation_corrections_oct05*.json` applies to the same `model_*.json`; its `meta.union` is the v5 payload and
+  `meta.builds_on` the sept29 file. The results CSV replaces the sept29 file's `sept27_cost_bn` and
+  `change_from_sept27_bn` with `sept29_cost_bn` and `change_from_sept29_bn`, and adds `response_move_bn` and `lineage_bn`.
+
+**Reproduce** (from the repository root; step 8 of `run_all.sh`, after step 7):
+```
+node infra/immigration-fiscal/generation_account_2026_09_24/run_generations_v5.cjs --case oct05
+node infra/immigration-fiscal/generation_account_2026_09_24/run_generations_v5.cjs --case oct05_cash
+```
+
+Log (times from `date`, JST): 23:04 brief read; 23:07 first oct05 outputs (scratch), all gates passing; 23:08 written
+to `derived/`; 23:08–23:09 rerun offline, stopped at `tax_key_split.py` (uv cache); 23:09:56–23:10:51 rerun
+`--online` IDENTICAL 56/56, exit 0; 23:12 this section.
 
 ## v4 case (sept29), 2026-09-29
 

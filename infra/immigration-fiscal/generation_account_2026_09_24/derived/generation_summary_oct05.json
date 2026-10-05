@@ -1,0 +1,992 @@
+{
+ "case": "oct05",
+ "set": "set",
+ "lane": "main_case_2026_10_05",
+ "payload": "main_case_2026_10_05/derived/corrections.json",
+ "builds_on": {
+  "payload": "main_case_2026_09_29/derived/corrections.json",
+  "generation_payloads": "generation_account_2026_09_24/derived/generation_corrections_sept29.json"
+ },
+ "oracle": {
+  "source": "main_case_2026_10_05/derived/main_case_bands.csv (adopted)",
+  "specs": [
+   48,
+   11
+  ],
+  "band": [
+   390.294,
+   461.2431
+  ],
+  "uncorrected": [
+   313.0646,
+   378.7098
+  ]
+ },
+ "responses": {
+  "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+  "general_government": {
+   "low": 0.6005266346459308,
+   "high": 0.8510539647701243,
+   "elasticity": [
+    0.5939193086359557,
+    0.842
+   ],
+   "s": 0.12918222328408055
+  },
+  "school": {
+   "growth": 1,
+   "decline": 1,
+   "elasticity": null,
+   "s": null,
+   "set_directly": true,
+   "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+  },
+  "row8_factor": 0.9451692510510525,
+  "economic_affairs_services": {
+   "low": 0.3844994797314016,
+   "high": 0.6387399411939584,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_highways",
+     "level": "federal",
+     "subfunction": "Highways",
+     "national_bn": 1.827,
+     "share_of_line": 0.00404261674798367,
+     "low": 0,
+     "high": 1,
+     "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_air",
+     "level": "federal",
+     "subfunction": "Air",
+     "national_bn": 30.604,
+     "share_of_line": 0.06771770276699082,
+     "low": 0,
+     "high": 1,
+     "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+    },
+    {
+     "id": "fed_water",
+     "level": "federal",
+     "subfunction": "Water",
+     "national_bn": 18.209,
+     "share_of_line": 0.04029119231747928,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_transit_and_railroad",
+     "level": "federal",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0.094,
+     "share_of_line": 0.00020799451248520252,
+     "low": 0,
+     "high": 1,
+     "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_space",
+     "level": "federal",
+     "subfunction": "Space",
+     "national_bn": 21.23,
+     "share_of_line": 0.04697578191554095,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_general_economic_and_labor_affairs",
+     "level": "federal",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 35.431,
+     "share_of_line": 0.07839844225386393,
+     "low": 0,
+     "high": 0.8510539647701243,
+     "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+    },
+    {
+     "id": "fed_agriculture",
+     "level": "federal",
+     "subfunction": "Agriculture",
+     "national_bn": 17.54,
+     "share_of_line": 0.038810890946706936,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_energy",
+     "level": "federal",
+     "subfunction": "Energy",
+     "national_bn": 23.406,
+     "share_of_line": 0.051790633608815424,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_natural_resources",
+     "level": "federal",
+     "subfunction": "Natural resources",
+     "national_bn": 32.036,
+     "share_of_line": 0.07088630002102073,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_postal_service",
+     "level": "federal",
+     "subfunction": "Postal service",
+     "national_bn": -0.177,
+     "share_of_line": -0.00039164924159447705,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_highways",
+     "level": "state_local",
+     "subfunction": "Highways",
+     "national_bn": 201.005,
+     "share_of_line": 0.4447652870434908,
+     "low": 0.7401981546463505,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_transit_and_railroad",
+     "level": "state_local",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0.7401981546463505,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_general_economic_and_labor_affairs",
+     "level": "state_local",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 29.358,
+     "share_of_line": 0.06496066912277208,
+     "low": 0.8510539647701243,
+     "high": 0.8510539647701243,
+     "basis": "general government's adopted response for state-local administration at both ends"
+    },
+    {
+     "id": "sl_agriculture",
+     "level": "state_local",
+     "subfunction": "Agriculture",
+     "national_bn": 10.007,
+     "share_of_line": 0.022142564749355546,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_energy",
+     "level": "state_local",
+     "subfunction": "Energy",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_natural_resources",
+     "level": "state_local",
+     "subfunction": "Natural resources",
+     "national_bn": 31.99,
+     "share_of_line": 0.07078451547235774,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_other_commercial_activities",
+     "level": "state_local",
+     "subfunction": "Other (commercial activities)",
+     "national_bn": -0.625,
+     "share_of_line": -0.0013829422372686338,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "recreation_culture": {
+   "low": 0.8563914832367988,
+   "high": 1,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_recreation_and_culture",
+     "level": "federal",
+     "subfunction": "Recreation and culture",
+     "national_bn": 5.43,
+     "share_of_line": 0.09994294233494688,
+     "low": 0,
+     "high": 1,
+     "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+    },
+    {
+     "id": "sl_recreation_and_culture",
+     "level": "state_local",
+     "subfunction": "Recreation and culture",
+     "national_bn": 48.901,
+     "share_of_line": 0.9000570576650531,
+     "low": 0.9514857707559868,
+     "high": 1,
+     "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "housing_subsidies": {
+   "low": 1,
+   "high": 1,
+   "key": "housing_support",
+   "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+   "overlap_netted_bn": 0,
+   "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+   "source": "dataset_integrity_2026_09_23/spending.md item 6"
+  },
+  "enterprise_surplus": {
+   "receipt": true,
+   "override": "receipt:enterprise_surplus",
+   "low": 1,
+   "high": 1,
+   "option": "D",
+   "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+   "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+   "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+  },
+  "housing_enterprise_surplus": {
+   "receipt": true,
+   "override": "receipt:housing_enterprise_surplus",
+   "low": 1,
+   "high": 1,
+   "rule": "public housing's enterprise deficit (NIPA 3.8 line 13, housing and urban renewal, -$40.298bn in 2024, less public housing's $5.258bn operating subsidy, consolidated with the rental line) as its own receipt line at the rental line's key; it responds as the enterprise receipt does, in every profile",
+   "source": "item 1: main_case_candidate_v2_2026_09_28/package.cjs splitHousing"
+  },
+  "modeled_owner_property": {
+   "receipt": true,
+   "override": "receipt:modeled_owner_property",
+   "low": 0.7726986463443216,
+   "high": 0.7726986463443216,
+   "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+  },
+  "tenant_occupied_property": {
+   "receipt": true,
+   "override": "receipt:tenant_occupied_property",
+   "low": 0.7189123969969125,
+   "high": 0.7189123969969125,
+   "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+  },
+  "personal_property_tax": {
+   "receipt": true,
+   "override": "receipt:personal_property_tax",
+   "low": 1,
+   "high": 1,
+   "rule": "household personal property tax (NIPA 3.4 line 11), re-keyed to the group's share of household vehicles, at response 1 like the motor-vehicle line, in every profile",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs rekey, CENTRAL_ITEMS.personal"
+  },
+  "roads_vmt_sl": {
+   "low": 0.7401981546463505,
+   "high": 1,
+   "rule": "re-keys the S&L highways part of economic_affairs_services (national $201.005bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions sl_highways)",
+   "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+  },
+  "roads_vmt_fed": {
+   "low": 0,
+   "high": 1,
+   "rule": "re-keys the federal highways part of economic_affairs_services (national $1.827bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions fed_highways)",
+   "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+  },
+  "state_price_public_order_safety": {
+   "low": 1,
+   "high": 1,
+   "rule": "public order and safety's state-price gap (the sum over its S&L functions of amount x (price index - 1)) at the line's use key; it responds as its parent, which the case holds at 1 in every profile",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  },
+  "state_price_health_services": {
+   "low": 1,
+   "high": 1,
+   "rule": "health's state-price gap at the line's preferred key; it responds as its parent, which the case holds at 1 in every profile",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  },
+  "state_price_recreation_culture": {
+   "low": 0.8563914832367988,
+   "high": 1,
+   "rule": "recreation and culture's state-price gap at the line's preferred key; it responds as its parent, recreation_culture, at the specification's reading",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  }
+ },
+ "low_spec": {
+  "allocation": "shared",
+  "normalization": "gdp",
+  "share": 0.7153278156243373,
+  "school": 1,
+  "reading": "low",
+  "gg": 0.6005266346459308,
+  "uc": "uninsured_use_low"
+ },
+ "high_spec": {
+  "allocation": "personal",
+  "normalization": "cash",
+  "share": 0.8651608840454027,
+  "school": 1,
+  "reading": "high",
+  "gg": 0.8510539647701243,
+  "uc": "uninsured_use_high"
+ },
+ "specifications": {
+  "low": {
+   "allocation": "shared",
+   "normalization": "gdp",
+   "share": 0.7153278156243373,
+   "school": 1,
+   "reading": "low",
+   "gg": 0.6005266346459308,
+   "uc": "uninsured_use_low"
+  },
+  "high": {
+   "allocation": "personal",
+   "normalization": "cash",
+   "share": 0.8651608840454027,
+   "school": 1,
+   "reading": "high",
+   "gg": 0.8510539647701243,
+   "uc": "uninsured_use_high"
+  },
+  "low_index": 48,
+  "high_index": 11
+ },
+ "union": {
+  "cost_bn": [
+   390.2939582020253,
+   461.24312471796566
+  ],
+  "uncorrected_bn": [
+   313.0645791648988,
+   378.7098497950922
+  ],
+  "uncorrected_own_ends_bn": [
+   313.0645791648988,
+   378.7098497950922
+  ],
+  "population": 42752212.92437314,
+  "adults": 29399133.516870417,
+  "per_member_usd": [
+   9129.210665479206,
+   10788.75438644276
+  ],
+  "per_adult_usd": [
+   13275.695964918787,
+   15689.004046778644
+  ]
+ },
+ "headcount_basis": "row-4 weights (v4_inputs.py headcount), the union's 39,712,493, plus the case's 3,039,720 added people in G3+ (meta.lineage.counts.added) under both conventions; their adults at the identified G3+'s adult share (convention a) [ASSUMPTION: the case prices them at the identified G3+'s age mix]",
+ "lineage": {
+  "arm": "b",
+  "counting": "whole",
+  "added": 3039719.593185237,
+  "at_g3_rate": 1944891.7263696424,
+  "later_losses": 1094827.8668155947,
+  "added_adults": 1734357.1153795733,
+  "adult_share": 0.5705648373842894,
+  "members": {
+   "g3plus": 1956998.3691152572,
+   "white": 1082721.22406998
+  },
+  "c3": {
+   "value": 0.5567,
+   "se": 0.2457,
+   "label": "pooled with CPS monthly 1994-2026 (central)",
+   "measure": "ba_plus",
+   "source": "generation_carryover_2026_09_27/summarize.py SPLIT_C3 (imported)",
+   "override": false
+  },
+  "row8_edit_bn": -0.00798742966671706,
+  "row8_shares": {
+   "a": {
+    "G1": {
+     "personal": 0.509992103666145,
+     "shared": 0.512016970645964
+    },
+    "G2": {
+     "personal": 0.221387886329846,
+     "shared": 0.22018508800649855
+    },
+    "G3plus": {
+     "personal": 0.26862001000400904,
+     "shared": 0.2677979413475373
+    }
+   },
+   "b": {
+    "G1": {
+     "personal": 0.5493464116603083,
+     "shared": 0.5507212574308893
+    },
+    "G2": {
+     "personal": 0.2165935244549852,
+     "shared": 0.21579588097412333
+    },
+    "G3plus": {
+     "personal": 0.23406006388470632,
+     "shared": 0.23348286159498707
+    }
+   }
+  }
+ },
+ "conventions": {
+  "a": {
+   "G1": {
+    "population": 11036701.061391935,
+    "adults": 10566524.710023813,
+    "cost_bn": [
+     97.14796567288926,
+     87.02213168527527
+    ],
+    "own_span_bn": [
+     71.87088729568306,
+     113.376036809483
+    ],
+    "per_member_usd": [
+     8802.264837336916,
+     7884.795574439537
+    ],
+    "per_adult_usd": [
+     9193.93730094919,
+     8235.643607847973
+    ],
+    "uncorrected_cost_bn": [
+     85.77155137951794,
+     71.3364133409555
+    ],
+    "correction_bn": [
+     11.376414293371312,
+     15.685718344319767
+    ],
+    "sept29_cost_bn": [
+     97.23363310267213,
+     87.11285696145507
+    ],
+    "change_from_sept29_bn": [
+     -0.08566742978287323,
+     -0.09072527617979631
+    ],
+    "response_move_bn": [
+     -0.08566742978287323,
+     -0.09072527617979631
+    ],
+    "lineage_bn": [
+     0,
+     0
+    ]
+   },
+   "G2": {
+    "population": 14333217.663520353,
+    "adults": 8914882.943565348,
+    "cost_bn": [
+     151.46647541526266,
+     179.24566956867994
+    ],
+    "own_span_bn": [
+     151.46647541526266,
+     179.24566956867994
+    ],
+    "per_member_usd": [
+     10567.513797042366,
+     12505.612750504743
+    ],
+    "per_adult_usd": [
+     16990.293240427716,
+     20106.340229408983
+    ],
+    "uncorrected_cost_bn": [
+     127.66279410053828,
+     154.73041557509
+    ],
+    "correction_bn": [
+     23.803681314724386,
+     24.515253993589937
+    ],
+    "sept29_cost_bn": [
+     151.56789165530617,
+     179.35319877960393
+    ],
+    "change_from_sept29_bn": [
+     -0.10141624004350547,
+     -0.10752921092398537
+    ],
+    "response_move_bn": [
+     -0.10141624004350547,
+     -0.10752921092398537
+    ],
+    "lineage_bn": [
+     0,
+     0
+    ]
+   },
+   "G3plus": {
+    "population": 17382294.199460845,
+    "adults": 9917725.863281254,
+    "cost_bn": [
+     141.6795171138732,
+     194.97532346401175
+    ],
+    "own_span_bn": [
+     141.6795171138732,
+     194.97532346401175
+    ],
+    "per_member_usd": [
+     8150.795026715618,
+     11216.892386395082
+    ],
+    "per_adult_usd": [
+     14285.484300228369,
+     19659.277353680016
+    ],
+    "uncorrected_cost_bn": [
+     99.63023368484255,
+     152.64302087904667
+    ],
+    "correction_bn": [
+     42.04928342903065,
+     42.33230258496508
+    ],
+    "sept29_cost_bn": [
+     122.61307503090832,
+     168.3749028830779
+    ],
+    "change_from_sept29_bn": [
+     19.066442082964883,
+     26.600420580933843
+    ],
+    "response_move_bn": [
+     -0.11120475788690953,
+     -0.11722534656456673
+    ],
+    "lineage_bn": [
+     19.177646840851793,
+     26.71764592749841
+    ]
+   }
+  },
+  "b": {
+   "G1": {
+    "population": 15672846.093122507,
+    "adults": 10566524.710023813,
+    "cost_bn": [
+     169.26737932510284,
+     197.30253621911166
+    ],
+    "own_span_bn": [
+     169.26737932510284,
+     197.30253621911166
+    ],
+    "per_member_usd": [
+     10800.040931900687,
+     12588.813483320757
+    ],
+    "per_adult_usd": [
+     16019.21009700846,
+     18672.415163326394
+    ],
+    "uncorrected_cost_bn": [
+     156.98359255828055,
+     189.8581654317462
+    ],
+    "correction_bn": [
+     12.283786766822288,
+     7.444370787365472
+    ],
+    "sept29_cost_bn": [
+     169.376662778678,
+     197.41837013946457
+    ],
+    "change_from_sept29_bn": [
+     -0.10928345357515923,
+     -0.1158339203529124
+    ],
+    "response_move_bn": [
+     -0.10928345357515923,
+     -0.1158339203529124
+    ],
+    "lineage_bn": [
+     0,
+     0
+    ]
+   },
+   "G2": {
+    "population": 12208153.065691093,
+    "adults": 8914882.943565348,
+    "cost_bn": [
+     110.56417691846163,
+     121.71671419484636
+    ],
+    "own_span_bn": [
+     106.47208806540577,
+     125.90235889474916
+    ],
+    "per_member_usd": [
+     9056.585080767309,
+     9970.1169816514
+    ],
+    "per_adult_usd": [
+     12402.201758382647,
+     13653.20385756719
+    ],
+    "uncorrected_cost_bn": [
+     85.18016373422275,
+     92.94751974034654
+    ],
+    "correction_bn": [
+     25.38401318423888,
+     28.769194454499825
+    ],
+    "sept29_cost_bn": [
+     110.65696313945045,
+     121.81478737458268
+    ],
+    "change_from_sept29_bn": [
+     -0.0927862209888275,
+     -0.09807317973631768
+    ],
+    "response_move_bn": [
+     -0.0927862209888275,
+     -0.09807317973631768
+    ],
+    "lineage_bn": [
+     0,
+     0
+    ]
+   },
+   "G3plus": {
+    "population": 14871213.76555953,
+    "adults": 9917725.863281254,
+    "cost_bn": [
+     110.46240195846075,
+     142.22387430400912
+    ],
+    "own_span_bn": [
+     110.46240195846075,
+     142.22387430400912
+    ],
+    "per_member_usd": [
+     7427.934511591939,
+     9563.703174880557
+    ],
+    "per_adult_usd": [
+     11137.876110029376,
+     14340.371599760545
+    ],
+    "uncorrected_cost_bn": [
+     70.90082287239552,
+     95.90416462299939
+    ],
+    "correction_bn": [
+     39.56157908606522,
+     46.319709681009726
+    ],
+    "sept29_cost_bn": [
+     91.38097387075821,
+     115.60780111008991
+    ],
+    "change_from_sept29_bn": [
+     19.081428087702534,
+     26.616073193919206
+    ],
+    "response_move_bn": [
+     -0.09621875314924466,
+     -0.1015727335792036
+    ],
+    "lineage_bn": [
+     19.17764684085178,
+     26.71764592749841
+    ]
+   }
+  }
+ },
+ "change_from_sept29_by_part": {
+  "parts": [
+   "sept29_bn",
+   "responses_bn",
+   "row8_bn",
+   "response_move_bn",
+   "lineage_bn",
+   "oct05_bn",
+   "change_bn"
+  ],
+  "specifications": {
+   "low": 48,
+   "high": 11
+  },
+  "rule": "at the end specifications, which are the September 29 case's: sept29_bn is the September 29 model at the September 29 specification; responses_bn the same model at v5's (the group-size responses move); row8_bn its share of audit row 8's change; response_move_bn their sum (the union's response move); lineage_bn the added people (G3+ only); oct05_bn = sept29_bn + response_move_bn + lineage_bn; change_bn = oct05_bn - sept29_bn",
+  "union": {
+   "low": {
+    "sept29_bn": 371.41459978888685,
+    "responses_bn": -0.29030099804651854,
+    "row8_bn": -0.00798742966668442,
+    "response_move_bn": -0.29828842771320296,
+    "lineage_bn": 19.17764684085165,
+    "oct05_bn": 390.2939582020253,
+    "change_bn": 18.879358413138448
+   },
+   "high": {
+    "sept29_bn": 434.8409586241356,
+    "responses_bn": -0.307492404001664,
+    "row8_bn": -0.007987429666741264,
+    "response_move_bn": -0.31547983366840526,
+    "lineage_bn": 26.717645927498438,
+    "oct05_bn": 461.24312471796566,
+    "change_bn": 26.402166093830033
+   }
+  },
+  "a": {
+   "G1": {
+    "low": {
+     "sept29_bn": 97.23363310267213,
+     "responses_bn": -0.08157773024166204,
+     "row8_bn": -0.004089699541211189,
+     "response_move_bn": -0.08566742978287323,
+     "lineage_bn": 0,
+     "oct05_bn": 97.14796567288926,
+     "change_bn": -0.08566742978287323
+    },
+    "high": {
+     "sept29_bn": 87.11285696145507,
+     "responses_bn": -0.08665175012119164,
+     "row8_bn": -0.004073526058604671,
+     "response_move_bn": -0.09072527617979631,
+     "lineage_bn": 0,
+     "oct05_bn": 87.02213168527527,
+     "change_bn": -0.09072527617979631
+    }
+   },
+   "G2": {
+    "low": {
+     "sept29_bn": 151.56789165530617,
+     "responses_bn": -0.09965752713938514,
+     "row8_bn": -0.0017587129041203298,
+     "response_move_bn": -0.10141624004350547,
+     "lineage_bn": 0,
+     "oct05_bn": 151.46647541526266,
+     "change_bn": -0.10141624004350547
+    },
+    "high": {
+     "sept29_bn": 179.35319877960393,
+     "responses_bn": -0.10576089075283335,
+     "row8_bn": -0.0017683201711520269,
+     "response_move_bn": -0.10752921092398537,
+     "lineage_bn": 0,
+     "oct05_bn": 179.24566956867994,
+     "change_bn": -0.10752921092398537
+    }
+   },
+   "G3plus": {
+    "low": {
+     "sept29_bn": 122.61307503090832,
+     "responses_bn": -0.10906574066548558,
+     "row8_bn": -0.0021390172214239556,
+     "response_move_bn": -0.11120475788690953,
+     "lineage_bn": 19.177646840851793,
+     "oct05_bn": 141.6795171138732,
+     "change_bn": 19.066442082964883
+    },
+    "high": {
+     "sept29_bn": 168.3749028830779,
+     "responses_bn": -0.11507976312759638,
+     "row8_bn": -0.0021455834369703553,
+     "response_move_bn": -0.11722534656456673,
+     "lineage_bn": 26.71764592749841,
+     "oct05_bn": 194.97532346401175,
+     "change_bn": 26.600420580933843
+    }
+   }
+  },
+  "b": {
+   "G1": {
+    "low": {
+     "sept29_bn": 169.376662778678,
+     "responses_bn": -0.1048846062654718,
+     "row8_bn": -0.004398847309687426,
+     "response_move_bn": -0.10928345357515923,
+     "lineage_bn": 0,
+     "oct05_bn": 169.26737932510284,
+     "change_bn": -0.10928345357515923
+    },
+    "high": {
+     "sept29_bn": 197.41837013946457,
+     "responses_bn": -0.11144605452710721,
+     "row8_bn": -0.004387865825805193,
+     "response_move_bn": -0.1158339203529124,
+     "lineage_bn": 0,
+     "oct05_bn": 197.30253621911166,
+     "change_bn": -0.1158339203529124
+    }
+   },
+   "G2": {
+    "low": {
+     "sept29_bn": 110.65696313945045,
+     "responses_bn": -0.0910625665671887,
+     "row8_bn": -0.0017236544216387983,
+     "response_move_bn": -0.0927862209888275,
+     "lineage_bn": 0,
+     "oct05_bn": 110.56417691846163,
+     "change_bn": -0.0927862209888275
+    },
+    "high": {
+     "sept29_bn": 121.81478737458268,
+     "responses_bn": -0.09634315419346251,
+     "row8_bn": -0.0017300255428551736,
+     "response_move_bn": -0.09807317973631768,
+     "lineage_bn": 0,
+     "oct05_bn": 121.71671419484636,
+     "change_bn": -0.09807317973631768
+    }
+   },
+   "G3plus": {
+    "low": {
+     "sept29_bn": 91.38097387075821,
+     "responses_bn": -0.09435382521387226,
+     "row8_bn": -0.0018649279353724069,
+     "response_move_bn": -0.09621875314924466,
+     "lineage_bn": 19.17764684085178,
+     "oct05_bn": 110.46240195846075,
+     "change_bn": 19.081428087702534
+    },
+    "high": {
+     "sept29_bn": 115.60780111008991,
+     "responses_bn": -0.09970319528113691,
+     "row8_bn": -0.0018695382980666864,
+     "response_move_bn": -0.1015727335792036,
+     "lineage_bn": 26.71764592749841,
+     "oct05_bn": 142.22387430400912,
+     "change_bn": 26.616073193919206
+    }
+   }
+  }
+ },
+ "rules": {
+  "lineage": "the added people (meta.lineage: m_G identified-G3+ members and m_W third-plus whites at G3+ ages, every engine cell, and the production grid's change) go on G3+ under both conventions, as the case's package.cjs withLineage() adds them",
+  "row8": "audit row 8's change at the larger group (the lineage's last edit, the union's response move) times each generation's share of the September 29 union's lane_constants k cell, per allocation (main_case_lineage_2026_10_05 lineage_case.cjs generationCosts)",
+  "responses": "every generation at the case's responses (the payload's meta.responses), which move with the group's size",
+  "convention_b": "[ASSUMPTION] the added people stay in G3+ under (b): their parents' generation is not observed. b_rule_indication gives the move had their minors followed the identified G3+'s"
+ },
+ "b_rule_indication": {
+  "rule": "the added people's cost (lineage_bn) times the identified G3+'s fall from (a) to (b) at v5's responses ((a - b) / a, the share of its cost that (b) sends to G2 with the minors of second-generation parents): an indication of the move from G3+ to G2 under (b), not a bound; the union is unchanged",
+  "low": {
+   "identified_g3plus_a_bn": 122.50187027302141,
+   "identified_g3plus_b_bn": 91.28475511760897,
+   "share_moving": 0.25482970248403947,
+   "lineage_bn": 19.17764684085178,
+   "move_to_g2_bn": 4.887034038798238
+  },
+  "high": {
+   "identified_g3plus_a_bn": 168.25767753651334,
+   "identified_g3plus_b_bn": 115.5062283765107,
+   "share_moving": 0.31351585218781547,
+   "lineage_bn": 26.71764592749841,
+   "move_to_g2_bn": 8.376405531411981
+  }
+ },
+ "alternatives": {
+  "row8_on_g3plus": "row 8: the whole edit on the G3+ model (the package's withLineage() on that model alone; main_case_2026_10_05 api_check.cjs pattern 3 prints the split this way)"
+ },
+ "sensitivities": {
+  "row8_on_g3plus": {
+   "rule": "row 8: the whole edit on the G3+ model (the package's withLineage() on that model alone; main_case_2026_10_05 api_check.cjs pattern 3 prints the split this way)",
+   "a": {
+    "G1": {
+     "cost_bn": [
+      97.15205537243047,
+      87.02620521133387
+     ],
+     "move_bn": [
+      0.004089699541211189,
+      0.004073526058604671
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      151.46823412816678,
+      179.2474378888511
+     ],
+     "move_bn": [
+      0.0017587129041203298,
+      0.0017683201711520269
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      141.67366870142789,
+      194.969481617782
+     ],
+     "move_bn": [
+      -0.005848412445317308,
+      -0.005841846229742487
+     ]
+    }
+   },
+   "b": {
+    "G1": {
+     "cost_bn": [
+      169.27177817241252,
+      197.30692408493746
+     ],
+     "move_bn": [
+      0.004398847309687426,
+      0.004387865825805193
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      110.56590057288327,
+      121.71844422038922
+     ],
+     "move_bn": [
+      0.0017236544216387983,
+      0.0017300255428551736
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      110.4562794567294,
+      142.21775641264048
+     ],
+     "move_bn": [
+      -0.006122501731340435,
+      -0.006117891368631945
+     ]
+    }
+   }
+  }
+ },
+ "gates": {
+  "failed": []
+ }
+}
