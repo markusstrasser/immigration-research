@@ -95,7 +95,7 @@ def test_rebuild_reproduces_derived(tmp_path):
     run = subprocess.run([sys.executable, str(HERE / "pension_legacy.py"), "--out-dir", str(tmp_path)],
                          capture_output=True, text=True, env={**os.environ, "OPENBLAS_NUM_THREADS": "1"})
     assert run.returncode == 0, run.stderr[-2000:]
-    names = sorted(p.name for p in (HERE / "derived").iterdir())
+    names = sorted(p.name for p in (HERE / "derived").iterdir() if p.is_file())   # later cases sit in derived/<case>/
     assert sorted(p.name for p in tmp_path.iterdir()) == names
     assert [n for n in names if (tmp_path / n).read_bytes() != (HERE / "derived" / n).read_bytes()] == []
     for n in names:

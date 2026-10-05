@@ -10,6 +10,8 @@ to equal-sized groups by their use of public services, retaining engine and matc
 Run from the repository root (a worktree drops --no-project):
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --fetch
+  uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct05
+(--case oct05: the v5 case adopted 2026-10-05, after group_lines.py --case oct05; writes derived/oct05/; see CASES)
 `--fetch` downloads every input to `_cache/` (ignored; ASPEP needs CENSUS_API_KEY in the environment,
 never written) and then runs. A default run reads `_cache/` and stops unless every file matches its pin.
 
@@ -47,6 +49,16 @@ FISCAL = HERE.parent
 CACHE = HERE / "_cache"
 UNION_ROW4 = 39_712_493.33          # dataset audit row 4: the people the account prices (per-member denominator)
 RESIDENTS = 340_110_988              # the account's 2024 resident control
+# The case the groups' lines come from (--case). oct05, the v5 case adopted 2026-10-05: group_lines.py --case oct05,
+# whose union rows carry the 3,039,720 added people at the case lane's amounts and whose slices are on the lineage's
+# 42,752,213; per member divides by that count, and the per-head key is the case's (0.117175 x the count's ratio).
+# The headcount path stays the union's: the added people's population share is taken to move as the union's
+# [ASSUMPTION; the back-cast instead carries them on the identified third-plus path].
+CASES = {"sept29": dict(lines="group_lines_sept29.csv", dump="engine_lines_sept29.json"),
+         "oct05": dict(lines="group_lines_oct05.csv", dump="engine_lines_oct05.json",
+                       lineage="main_case_2026_10_05/derived/corrections.json")}
+CASE = "sept29"
+POPULATION = UNION_ROW4              # the case's priced count (use_case())
 
 PINS = {
     "Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
@@ -360,6 +372,19 @@ GROUP_SOURCES = {"mexican_origin": "mexican_origin_engine", "mexican_origin_roug
                  "A1_third_plus_nh_white": "A1_third_plus_nh_white", "all_residents_slice": "all_residents_slice"}
 GROUPS = list(GROUP_SOURCES)
 GROUP_LINES = FISCAL / "legacy_comparators_2026_09_30/derived/group_lines_sept29.csv"
+DUMP_FILE = FISCAL / "white_replacement_2026_09_28/derived/engine_lines_sept29.json"
+
+
+def use_case(case: str) -> None:
+    """Point the group shares at a case's line export, engine dump and priced count."""
+    global CASE, POPULATION, GROUP_LINES, DUMP_FILE
+    conf = CASES[case]
+    CASE = case
+    GROUP_LINES = FISCAL / "legacy_comparators_2026_09_30/derived" / conf["lines"]
+    DUMP_FILE = FISCAL / "white_replacement_2026_09_28/derived" / conf["dump"]
+    POPULATION = UNION_ROW4
+    if "lineage" in conf:
+        POPULATION = json.loads((FISCAL / conf["lineage"]).read_text())["meta"]["lineage"]["counts"]["lineage_population"]
 OVERLAY = {"public_order_safety": ("state_price_public_order_safety", 519.153),
            "health_services": ("state_price_health_services", 306.539),
            "recreation_culture": ("state_price_recreation_culture", 54.331)}
@@ -373,7 +398,7 @@ def group_shares() -> tuple[dict, dict]:
     The export's producer runs rekey_sept29.setup(), checks every cost, and records each slice's count.
     Reject a different population, line definition or engine amount before attributing any liability.
     """
-    dump = json.loads((FISCAL / "white_replacement_2026_09_28/derived/engine_lines_sept29.json").read_text())
+    dump = json.loads(DUMP_FILE.read_text())
     with GROUP_LINES.open() as f:
         rows = [r for r in csv.DictReader(f) if r["basis"] == "accrual" and r["group"] in GROUP_SOURCES.values()]
     source = {(r["group"], r["end"], r["side"], r["line"]): r for r in rows}
@@ -403,8 +428,8 @@ def group_shares() -> tuple[dict, dict]:
         response[end] = resp
         needed = base + [v[0] for v in OVERLAY.values()] + ["roads_vmt_sl", "enterprise_surplus"]
         for g in GROUPS:
-            if abs(value(g, end, "population", "amount_bn") - UNION_ROW4) > 0.01:
-                raise ValueError(f"[BLOCKED] {g}/{end} population is not audit row 4")
+            if abs(value(g, end, "population", "amount_bn") - POPULATION) > 0.01:
+                raise ValueError(f"[BLOCKED] {g}/{end} population is not the case's priced count ({POPULATION:,.2f})")
             for l in needed:
                 for field in ("national_bn", "response"):
                     if abs(value(g, end, l, field) - lines[l][field]) > 1e-8:
@@ -419,10 +444,11 @@ def group_shares() -> tuple[dict, dict]:
             s["highways"] = s["economic_affairs_services"] + value(g, end, "roads_vmt_sl", "amount_bn") / HIGHWAYS_NATIONAL
             s["enterprises"] = value(g, end, "enterprise_surplus", "amount_bn") / lines["enterprise_surplus"]["national_bn"]
             share[g][end] = s
+    key = 0.117175 * POPULATION / UNION_ROW4      # the case's per-head key: 0.117175 on audit row 4's count
     for g in GROUPS:
         for end in ("low", "high"):
-            if abs(share[g][end]["defense"] - 0.117175) > 5e-7 or abs(share[g][end]["enterprises"] - 0.117175) > 5e-7:
-                raise ValueError(f"[BLOCKED] {g} per-head key is not the case's 0.117175")
+            if abs(share[g][end]["defense"] - key) > 5e-7 or abs(share[g][end]["enterprises"] - key) > 5e-7:
+                raise ValueError(f"[BLOCKED] {g} per-head key is not the case's {key:.6f}")
     return share, response
 
 
@@ -498,11 +524,13 @@ def main() -> None:
     ap.add_argument("--fetch", action="store_true", help="download every input to _cache/ and rewrite source_pins.json")
     ap.add_argument("--census-env", type=Path, default=FISCAL / "acquire/config.local.env",
                     help="file holding CENSUS_API_KEY=... when the variable is not set (only --fetch reads it)")
-    ap.add_argument("--out-dir", type=Path, default=HERE / "derived")
+    ap.add_argument("--out-dir", type=Path, default=None, help="default derived/ (sept29) or derived/<case>/")
+    ap.add_argument("--case", default="sept29", choices=list(CASES), help="sept29 (default) or oct05 (v5, the lineage)")
     args = ap.parse_args()
     if args.fetch:
         fetch(args.census_env if args.census_env.exists() else None)
-    out = args.out_dir
+    use_case(args.case)
+    out = args.out_dir or (HERE / "derived" if args.case == "sept29" else HERE / "derived" / args.case)
     out.mkdir(parents=True, exist_ok=True)
 
     m, extra = measure_bea()
@@ -614,7 +642,7 @@ def main() -> None:
                             phi = F * sum(mix[plan][l] * share[g][e][l] * rf(e, l) for l in LINES)
                             key = (g, plan, basis, tarm, rarm, e)
                             res[key] = (phi, phi * stock, phi * interest)
-                            rows.append([g, plan, basis, tarm, rarm, e, phi, phi * stock, phi * interest, phi * interest * 1e9 / UNION_ROW4])
+                            rows.append([g, plan, basis, tarm, rarm, e, phi, phi * stock, phi * interest, phi * interest * 1e9 / POPULATION])
     write(out / "attribution.csv", ["group", "plan", "basis", "time_weighting", "responses", "end", "fraction",
                                     "stock_end2023_bn", "interest_2024_bn", "interest_per_member"], rows)
 
@@ -651,10 +679,10 @@ def main() -> None:
                 tot[g] = (stock, inter)
                 srows.append([name, basis, tarm, rarm, e, g, parts["state_local"][1], parts["federal_civilian"][1] + parts["federal_military"][1],
                               stock, parts["state_local"][2], parts["federal_civilian"][2] + parts["federal_military"][2], inter,
-                              inter * 1e9 / UNION_ROW4])
+                              inter * 1e9 / POPULATION])
             for g in ("mexican_origin", "mexican_origin_rough"):
                 d = [tot[g][i] - tot["A1_third_plus_nh_white"][i] for i in (0, 1)]
-                srows.append([name, basis, tarm, rarm, e, f"{g}_minus_A1_white", "", "", d[0], "", "", d[1], d[1] * 1e9 / UNION_ROW4])
+                srows.append([name, basis, tarm, rarm, e, f"{g}_minus_A1_white", "", "", d[0], "", "", d[1], d[1] * 1e9 / POPULATION])
     write(out / "summary.csv", ["arm", "federal_basis", "time_weighting", "responses", "end", "group", "stock_sl_bn", "stock_federal_bn",
                                 "stock_total_bn", "interest_sl_bn", "interest_federal_bn", "interest_total_bn", "interest_per_member"], srows)
 

@@ -196,6 +196,63 @@ The test file is named as a second rerun command so that the harness does not fl
 - 2026-09-30 05:51 JST: RESULT drafted.
 - 2026-09-30 05:55 JST: final run after the footnote wording was gated. pytest passes 4/4 and `rerun_lane.py` reports IDENTICAL 13/13, both with exit 0.
 
+## v5 case (oct05), 2026-10-05
+
+[2026-10-05: on main case v5 (`oct05`, `../main_case_2026_10_05/`), the adopted arm gives the engine's union
+**$454.6 / 485.1bn** of attributed pension stock and **$22.57 / 23.99bn** of 2024 interest, **$528 / 561 per member** of
+the lineage's 42,752,213 (sept29: $421.8 / 447.9bn, $20.94 / 22.15bn, $527 / 558 on 39,712,493). On matched keys the
+union exceeds third-plus whites by **$5.32 / 5.24bn** ($124 / 122 per member; sept29 $4.89 / 4.68bn, $123 / 118); the
+engine union exceeds them by $5.64 / 5.85bn (sept29 $5.21 / 5.30bn). [CALCULATION: `pension_legacy.py --case oct05` →
+`derived/oct05/summary.csv`, arm `adopted`]]
+
+claude-opus-5-5 (v5consC)
+
+**Rules (the case lane's Consumers row: both sides on 42.75M).**
+- The groups' line amounts are `legacy_comparators_2026_09_30/derived/group_lines_oct05.csv`. Both union rows carry the
+  3,039,720 added people at the case lane's amounts on every line; A1 and the all-residents slice are on 42,752,213.
+  The engine union's amounts are gated against the white lane's `engine_lines_oct05.json` (the case, not its union dump).
+- Per member divides by 42,752,213, and the per-head key (defense, enterprises) is 0.117175 × 42,752,213 / 39,712,493
+  = 0.126144, gated for every group.
+- [ASSUMPTION] **The added people follow the union's headcount path** back to 1946, so the time factors are
+  unchanged (0.828 state-local, 0.812 federal). The back-cast, debt legacy and legacy comparator lanes carry them on
+  the identified third-plus generation's path instead, measured only for 2005–2024 (`historical_backcast_2026_09_20/inputs/cps_g3plus_path.csv`), where most
+  of this kernel's weight before 2005 has no measurement. On that path, with its 2005 ratio to the union's path held
+  before 2005, the time factor is 0.723 state-local and 0.707 federal, and the union's interest would be about
+  **$0.21 / 0.23bn lower** [CALCULATION: scratch check, not a lane output; the added people's part approximated as the
+  oct05 less sept29 interest by plan].
+
+| Adopted arm, $bn (per member $) | oct05 | sept29 |
+|---|---:|---:|
+| Engine union, stock | 454.6 / 485.1 | 421.8 / 447.9 |
+| Engine union, interest | **22.57 / 23.99** ($528 / 561) | 20.94 / 22.15 ($527 / 558) |
+| Matched (rough) union, interest | 22.25 / 23.37 ($520 / 547) | 20.61 / 21.53 ($519 / 542) |
+| Third-plus whites (A1), interest | 16.93 / 18.14 ($396 / 424) | 15.72 / 16.85 ($396 / 424) |
+| All-residents slice, interest | 20.22 / 21.38 ($473 / 500) | 18.78 / 19.86 ($473 / 500) |
+| **Matched union − A1, interest** | **5.32 / 5.24** ($124 / 122) | 4.89 / 4.68 ($123 / 118) |
+| Engine union − A1, interest | 5.64 / 5.85 ($132 / 137) | 5.21 / 5.30 ($131 / 133) |
+
+[CALCULATION: `derived/oct05/summary.csv`; every arm in `derived/oct05/attribution.csv`]
+
+The slices' interest grows by 7.67%, about the count's ratio (1.076543), and the engine union's by 7.8%, so the added
+people's attributed interest per head is close to the identified union's and per-member figures barely move. The
+other arms move alike: the simple arm gives the engine union $27.33 / 29.05bn (sept29 $25.35 / 26.82bn) and the
+average-cost arm $34.64bn at the low end (sept29 $32.14bn).
+
+**Gates.** `pension_legacy.py --case oct05` exits 0 with every gate of the sept29 run (the BEA, Z.1 and Financial Report
+parses; the export's counts, lines, responses and engine amounts against the case; the per-head key). The sept29 run
+rewrites `derived/` byte for byte, and the lane's tests pass, 9 of 9 (the rebuild test now compares the files in
+`derived/` only, since the oct05 outputs sit in `derived/oct05/`). `rerun_lane.py` with the sept29 run, the oct05 run
+and pytest: **IDENTICAL 22/22, exit 0** (2026-10-06 00:44:02–00:44:06 JST).
+
+**Reproduce (oct05)**, after `group_lines.py --case oct05` and the white lane's oct05 dumps:
+
+```sh
+uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct05
+```
+
+New: `derived/oct05/` with the nine files of `derived/`. `pension_legacy.py` gained `--case` and `use_case()`;
+`test_pension_legacy.py` lists only the files in `derived/`.
+
 ## Revisions
 
 - 2026-09-30, source verification: corrected both comparator frames and added a matched union. The original $4.88–4.94bn difference mixed keys and counts; the current matched difference is $4.89 / $4.68bn, while the engine-union difference is $5.21 / $5.30bn. National inputs and the engine union are unchanged. Corrected cash-payment and no-overlap claims, and distinguished employer normal cost from compensation including service charges. The [decision](../../../decisions/2026-09-30-legacy-comparisons-separate.md) keeps the two legacies separate. Earlier logs and the original by-line description are preserved as historical evidence.
