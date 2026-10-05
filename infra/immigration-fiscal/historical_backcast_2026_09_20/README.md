@@ -148,6 +148,77 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/histo
   --allow-unrun infra/immigration-fiscal/historical_backcast_2026_09_20/test_backcast.py
 ```
 
+## v5 case (oct05), 2026-10-05
+
+[2026-10-05: on main case v5 (`oct05`), the 10-year total for 2015–2024, `net_cost_cbo_informed_oct05`, is
+$3.71tn / $4.38tn flat, $3.37tn / $3.99tn ratio and $3.66tn / $4.28tn income, against $3.54tn / $4.15tn, $3.21tn /
+$3.77tn and $3.50tn / $4.07tn for sept29. The lineage adds $0.17tn / $0.23tn under the flat rule.]
+
+`--case oct05` carries back the adopted v5 main case (`main_case_2026_10_05/`): September 29 plus the 3.04M descendants of
+Mexican immigrants who no longer report Mexican origin, counted whole. It writes the `*_oct05_*` concepts to
+`derived/oct05/` (the four files of sept29) and `derived/case_components_oct05.json`. The default and `derived/sept29/`
+did not move.
+
+**The rule: the lineage at the identified third-plus generation's path.** Every September 29 part is carried back as
+`--case sept29` carries it, at September 29's values at the case's end specifications (48 / 11, as on September 29).
+The lineage line, v5 less September 29 at the same specifications, is added line by line (`case_components.cjs --case
+oct05`):
+
+- `v5_<line>` is the line's effect less September 29's: 67 parts. Each follows its line's national series under
+  September 29's rules (`v4_series(..., "v5")`). The lineage's change in the capital return (`v5_capital_bn`) sits
+  inside the three capital parts and follows each component's stock.
+- Every lineage part takes the identified third-plus generation's population-share path instead of the group's.
+  The Consumers row of the case lane asks for exactly this: the lineage's own count by year (the third-plus by year times
+  the attrition rate) is not measured, so its 2024 ratio to the identified third-plus (3.04M to 14.34M) is held
+  [ASSUMPTION]. Under the flat rule the lineage keeps its 2024 value per identified third-plus person.
+- The third-plus by year is the CPS ASEC weighted count of self-identified Mexican-origin people born in the United
+  States to two parents born there, survey year t + 1 for year t, as the account's 2024 is ASEC 2025
+  (`cps_g3plus_path.py` → `inputs/cps_g3plus_path.csv`; IPUMS-CPS extract 4 of `g3_identity_pooled_2026_10_05`, 0.32%
+  below the population lane's 14.38M on the Census file). It runs from 8.17M in 2005 to 14.34M in 2024, ×1.75, against
+  ×1.46 for the group's ACS count. So the lineage weighs less in the early years than it would on the group's path.
+  - The 2024 value is 9.6% above 2023's (13.08M), a larger step than the series takes in any other year.
+    Every earlier year is read against it, so a smoother anchor would raise the lineage's back years.
+- The pension lines are split three ways. Social security and Medicare each have the accrual the set charges (on the
+  OASDI or HI contributions), the benefits the cash set charges, and minus the benefits the set does not charge (on the
+  benefit lines' cells). Their sum is the set's change. The split keeps the set less the cash set separable for
+  `debt_legacy_2026_09_23`.
+- Two series rules are the lineage's own:
+  - its enterprise surplus part follows NIPA 3.1 line 19 less 3.8 line 13, the line after public housing's deficit left
+    it;
+  - `lane_constants`, whose parts the back-cast does not see, is held per person.
+- A cell BEA leaves blank counts as zero, as `backcast_categories.py` counts it. `veterans_other` (NIPA 3.12 line 20)
+  starts in 2015.
+- [APPROX] The union's own response move (−$0.30bn / −0.32bn in 2024) is inside the line-by-line change, so it rides the
+  third-plus path too.
+
+| Rule, 2015–2024 ($tn, low / high) | oct05 | sept29 | Lineage |
+|---|---:|---:|---:|
+| flat | 3.71 / 4.38 | 3.54 / 4.15 | +0.17 / +0.23 |
+| ratio | 3.37 / 3.99 | 3.21 / 3.77 | +0.16 / +0.22 |
+| income | 3.66 / 4.28 | 3.50 / 4.07 | +0.16 / +0.21 |
+
+The lineage column is the difference of the printed totals (unrounded, flat: +0.1659 / +0.2320). Over 2010–2024 the
+flat rule gives $5.40tn / $6.38tn and over 2005–2024 $6.86tn / $8.10tn (lineage +0.24 / +0.33 and +0.30 / +0.42). The
+proportional reference, `net_cost_full_proportional_oct05`, gives $3.98tn / $4.51tn flat over 2015–2024.
+[CALCULATION: `backcast.py --case oct05` → `derived/oct05/backcast_windows.csv`, `case_parts_windows.csv`]
+
+**Gates.**
+- `case_components.cjs --case oct05` passes 29 gates. September 29's parts and capital return equal September 29's cost at
+  every end specification (1e-9). The case less the lineage is the case lane's `sept29_case` row, 371.4146 / 434.8410, and
+  September 29's proportional band, 398.1491 / 448.0053 (1e-4). The lineage's parts and capital change equal
+  `change_at_fixed_specifications.total`, 18.8794 / 26.4022 (1e-9). The set and the cash set differ only on federal
+  income tax, social security and Medicare.
+- `backcast.py` gives 2024 = 390.2940 / 461.2431 under every rule, and 419.2813 / 475.5823 for the proportional
+  reference. Each lineage series equals its line's national total in 2024 (1e-3).
+- `cps_g3plus_path.py` checks the extract's hash and that ASEC 2025 is within 0.5% of the population lane's count.
+- `test_backcast.py` rebuilds both new files. `rerun_lane.py` over the commands below is IDENTICAL, exit 0.
+
+```sh
+uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/cps_g3plus_path.py
+node infra/immigration-fiscal/historical_backcast_2026_09_20/case_components.cjs --case oct05
+uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/backcast.py --case oct05
+```
+
 ## Rules
 
 The ACS self-identified count is scaled by 40.897m / 38.990m to the account's

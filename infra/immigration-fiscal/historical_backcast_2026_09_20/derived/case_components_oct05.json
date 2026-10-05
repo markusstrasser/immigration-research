@@ -1,0 +1,2373 @@
+{
+ "case": "oct05",
+ "lane": "main_case_2026_10_05",
+ "rule": "each fill-in method's end specifications of the case, averaged; base = the schools case's cost at those specifications",
+ "inputs": {
+  "main_case_2026_10_05/derived/summary.json": "28a7cc36530d8a3c8897e511367b67d348396ecf21bce5c310b73a4198100d9c",
+  "main_case_2026_10_05/derived/main_case_bands.csv": "31d4d473bdf57242520caa5a8bebd9c36a378072a3c8f0748f68a37761d1bcf2",
+  "main_case_2026_10_05/derived/corrections.json": "c21a6b97bce653b114544ced5fc48c28385b193a7a8f66405a18c562840272dc",
+  "main_case_2026_10_05/package.cjs": "17f9e22bbc727e4b76e1df2906d614b9028a2819ffafc120511916f16d90ea0a",
+  "main_case_long_run_2026_09_27/package.cjs": "b4f22b35371c715771d8e53436acfc6320c214ab5abf686714020eb2c8fe2a7a",
+  "main_case_long_run_2026_09_27/derived/corrections.json": "d3b10f144ebf438c444a72a8fa964089adf4340959980979ec5d057932bc32ea",
+  "main_case_2026_10_05/derived/corrections_cash.json": "585c1eb10f6597f86870ccf046331c866b5f91b0e607623af0a8417a28b5547f",
+  "main_case_2026_09_29/package.cjs": "57ea6f9ebbf17244515a5aa6a0a6272007fd5c94237fdac7ea9799061ac994f0",
+  "main_case_2026_09_29/derived/corrections.json": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe",
+  "main_case_2026_09_29/derived/main_case_bands.csv": "834fcb017c95bcc37768123abc39d78af30f4aeede487df13c257a0eda4dd46f",
+  "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json": "8a2dd8a81cebcd059b64d811f2bf7d384dd8f2759c8f5fd9e47ded0a56bcfd70",
+  "main_case_lineage_2026_10_05/derived/lineage_payload.json": "b359ac7ab71e3d1e899900a114a2f4709cc8e853f80018dff6c3952140c290b3",
+  "main_case_lineage_2026_10_05/derived/lineage_payload_cash.json": "5d36a5584056335acb5051d9c5e7204423880cb2b621c928b67ed65957c864d5"
+ },
+ "concepts": {
+  "net_cost_cbo_informed": {
+   "profile": "long_run_non_school_full",
+   "base_profile": "cbo_category_lag_non_school_full",
+   "end_specifications": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "high": 11
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "high": 11
+    }
+   ],
+   "ends": {
+    "low": {
+     "cost_bn": 390.29395820202535,
+     "base_bn": 258.48849537573153,
+     "additions_bn": {
+      "long_run_economic_affairs_services": 13.989872144130057,
+      "long_run_recreation_culture": 5.450626295466896,
+      "rental_assistance": 4.532065856478911,
+      "enterprise_surplus": 5.5611432821434805,
+      "v4_federal_income_tax": -0.8151331262919186,
+      "v4_state_local_income_tax": -0.015631096666030686,
+      "v4_personal_motor_vehicle": -0.4906645156231808,
+      "v4_personal_property_tax": -1.325841016,
+      "v4_other_personal_tax": -0.0002834003036520927,
+      "v4_employee_oasdi": -0.025396764036134556,
+      "v4_employee_hi": -0.013496182416942837,
+      "v4_self_employment_oasdi_hi": 0.7833754272816407,
+      "v4_employer_oasdi": -0.025616073607324097,
+      "v4_employer_hi": -0.012005043893737799,
+      "v4_other_domestic_social_contributions": -0.02365455511865111,
+      "v4_general_sales_tax": -5.964449118482154,
+      "v4_modeled_owner_property": -19.049721026856325,
+      "v4_excise_selective_sales": -1.57900426364135,
+      "v4_customs_duties": -0.039563845575290024,
+      "v4_personal_current_transfers": -0.06676963972960337,
+      "v4_enterprise_surplus": -4.721933248710872,
+      "v4_housing_enterprise_surplus": 3.426128600542746,
+      "v4_tenant_occupied_property": -6.810763484929574,
+      "v4_social_security_accrual": 109.40699333111733,
+      "v4_social_security_cash": -56.258694510398655,
+      "v4_medicare_part_a_accrual": 41.13712783048602,
+      "v4_medicare_cash": -19.66310864716985,
+      "v4_workers_compensation": -0.9482477443084476,
+      "v4_housing_subsidies": -0.3954256602598569,
+      "v4_roads_vmt_sl": 2.2404372452002734,
+      "v4_state_price_public_order_safety": 6.412327012068853,
+      "v4_state_price_health_services": 1.7996316210259964,
+      "v4_state_price_recreation_culture": 0.3663641118384557,
+      "v4_production_private": 0.459157279,
+      "v4_production_receipts": 1.18356217,
+      "v5_federal_income_tax": -14.465252243274549,
+      "v5_state_local_income_tax": -3.3164561547320517,
+      "v5_personal_motor_vehicle": -0.21805237725128856,
+      "v5_personal_property_tax": -0.1004449417767066,
+      "v5_other_personal_tax": -0.055933444424938805,
+      "v5_employee_oasdi": -4.762902675827135,
+      "v5_employee_hi": -1.4784834394027975,
+      "v5_self_employment_oasdi_hi": -0.5336430031126422,
+      "v5_employer_oasdi": -4.804031937170116,
+      "v5_employer_hi": -1.315131793379674,
+      "v5_medicare_supplementary_premiums": -0.592345601449312,
+      "v5_other_domestic_social_contributions": -0.7885688372070678,
+      "v5_general_sales_tax": -5.046126421026273,
+      "v5_modeled_owner_property": -2.1861060437178885,
+      "v5_excise_selective_sales": -2.869707397760479,
+      "v5_customs_duties": -0.6573112022907064,
+      "v5_personal_current_transfers": -1.1093065279453267,
+      "v5_enterprise_surplus": 0.06423578425373222,
+      "v5_housing_enterprise_surplus": 0.2903854563916881,
+      "v5_tenant_occupied_property": -0.5568138622817624,
+      "v5_general_public_services": 2.185714350146011,
+      "v5_public_order_safety": 4.721661568406958,
+      "v5_economic_affairs_services": 1.271729914085899,
+      "v5_housing_community_services": 0.13038195976025402,
+      "v5_health_services": 1.485592546538097,
+      "v5_recreation_culture": 0.41869431309848704,
+      "v5_education_services": 15.82153211760587,
+      "v5_income_security_services": 2.1923248900364083,
+      "v5_social_security_benefits": 5.574283824453342,
+      "v5_social_security_accrual": 9.577846526360005,
+      "v5_social_security_cash": -5.574283824453342,
+      "v5_medicare_benefits": 3.735538684709759,
+      "v5_medicare_part_a_accrual": 3.3168515775048215,
+      "v5_medicare_cash": -1.4012477513467951,
+      "v5_unemployment": 0.2940160054929546,
+      "v5_railroad_retirement": 0.05579423225059765,
+      "v5_pension_guaranty": 0.002805047387112819,
+      "v5_veterans_life_insurance": 0.0031902082891893287,
+      "v5_workers_compensation": 0.14447565703090426,
+      "v5_military_medical": 0.04033511681720037,
+      "v5_veterans_pension_disability": 1.2826555575720846,
+      "v5_veterans_readjustment": 0.0809346598180678,
+      "v5_veterans_other": 0.1802721539403771,
+      "v5_snap": 1.012880852944793,
+      "v5_black_lung": 0.0031434536093631407,
+      "v5_ssi": 0.48911157839890773,
+      "v5_refundable_tax_credits": 2.423215037052728,
+      "v5_other_federal_benefits": 0.37590237356974066,
+      "v5_temporary_disability": 0.2387207730511589,
+      "v5_medicaid_and_chip_other_medical": 8.347149641121135,
+      "v5_family_and_general_assistance": 0.8570088980699957,
+      "v5_energy_assistance": 0.04564254213488472,
+      "v5_other_state_welfare": 0.3548962979520818,
+      "v5_education_benefits": 0.6373691981366854,
+      "v5_employment_training": 0.011042556690123564,
+      "v5_other_state_benefits": 0.025785797237109775,
+      "v5_housing_subsidies": 0.35060568103514367,
+      "v5_school_reprice": 0.08604322198254177,
+      "v5_college_rekey": -0.03971552385713917,
+      "v5_lane_constants": -0.19652280450202841,
+      "v5_roads_vmt_sl": 0.03137082282231174,
+      "v5_state_price_public_order_safety": 0.230625572500041,
+      "v5_state_price_health_services": 0.08400227085038292,
+      "v5_state_price_recreation_culture": 0.014412739210126257,
+      "v5_production_private": 0.010918859851627438,
+      "v5_production_receipts": -0.27850189060320396,
+      "v4_roads_vmt_fed": 0,
+      "v5_roads_vmt_fed": 0
+     },
+     "capital_bn": {
+      "k12": 8.652057499006602,
+      "college": 3.703234282450358,
+      "pos_sl": 0.7767794936225577,
+      "pos_fed": 0.2957135905497434,
+      "health_sl": 0.4143149557944839,
+      "health_fed": 0.12002125066841372,
+      "gps_sl": 1.8181464914619134,
+      "gps_fed": 0.21398338096186276,
+      "hwy_sl": 6.208988788493565,
+      "rec_sl": 0.9476148981605165,
+      "hwy_fed": 0,
+      "air_fed": 0,
+      "rec_fed": 0,
+      "ent_housing_sl": 0.6323458124476683,
+      "ent_transit_sl": 1.1853428873413794,
+      "ent_airports_sl": 1.396295113687104,
+      "ent_ports_sl": 0.2213056485175619,
+      "ent_power_sl": 1.2703146414196582,
+      "ent_water_sl": 2.1465274864213373,
+      "ent_sewer_sl": 2.8705529547932667,
+      "ent_tolls_sl": 1.1745278203964533,
+      "ent_power_fed": 0.06483430656221681,
+      "ent_other_sl": 0.17688932529885534,
+      "ent_other_fed": 0.1329045423385589
+     },
+     "v5_capital_bn": {
+      "k12": 0.7111969290327984,
+      "college": 0.30779181117720666,
+      "pos_sl": 0.052654748761596926,
+      "pos_fed": 0.020045231553644016,
+      "health_sl": 0.03547318119974724,
+      "health_fed": 0.010276084686870038,
+      "gps_sl": 0.14073396114152437,
+      "gps_fed": 0.016563422673936734,
+      "hwy_sl": 0.4896449132140437,
+      "rec_sl": 0.07279181278620805,
+      "hwy_fed": 0,
+      "air_fed": 0,
+      "rec_fed": 0,
+      "ent_housing_sl": 0.053595194096304644,
+      "ent_transit_sl": 0.09072988518323188,
+      "ent_airports_sl": 0.10687683428959849,
+      "ent_ports_sl": 0.016939432711689545,
+      "ent_power_sl": 0.09723389138571714,
+      "ent_water_sl": 0.16430198760670534,
+      "ent_sewer_sl": 0.21972118176280242,
+      "ent_tolls_sl": 0.08990206583016436,
+      "ent_power_fed": 0.004962622421869942,
+      "ent_other_sl": 0.013539667167954544,
+      "ent_other_fed": 0.010172933077409713
+     }
+    },
+    "high": {
+     "cost_bn": 461.24312471796554,
+     "base_bn": 291.9547733238526,
+     "additions_bn": {
+      "long_run_economic_affairs_services": 23.26619403810387,
+      "long_run_recreation_culture": 6.366255281237539,
+      "rental_assistance": 4.532065856478911,
+      "enterprise_surplus": 5.5611432821434805,
+      "v4_federal_income_tax": -0.8912612727349938,
+      "v4_state_local_income_tax": -0.006053248756581198,
+      "v4_personal_motor_vehicle": -0.5868230793322993,
+      "v4_personal_property_tax": -1.325841016,
+      "v4_other_personal_tax": -0.00010974869988761293,
+      "v4_employee_oasdi": -0.027300069013413975,
+      "v4_employee_hi": -0.01394514415103032,
+      "v4_self_employment_oasdi_hi": 0.8133565896969834,
+      "v4_employer_oasdi": -0.02753581426111751,
+      "v4_employer_hi": -0.012404401663768994,
+      "v4_other_domestic_social_contributions": -0.02478385428083918,
+      "v4_general_sales_tax": -5.955605740076404,
+      "v4_modeled_owner_property": -19.049721026856325,
+      "v4_excise_selective_sales": -1.5750723373475477,
+      "v4_customs_duties": -0.03846349805540461,
+      "v4_personal_current_transfers": -0.06491264614336689,
+      "v4_enterprise_surplus": -4.721933248710872,
+      "v4_housing_enterprise_surplus": 3.426128600542746,
+      "v4_tenant_occupied_property": -6.810763484929574,
+      "v4_social_security_accrual": 102.75495331219659,
+      "v4_social_security_cash": -53.02239580298783,
+      "v4_medicare_part_a_accrual": 41.13712783048602,
+      "v4_medicare_cash": -19.66310864716985,
+      "v4_workers_compensation": -0.7324104515720732,
+      "v4_housing_subsidies": -0.3954256602598569,
+      "v4_roads_vmt_sl": 3.030125881417808,
+      "v4_state_price_public_order_safety": 6.412327012068853,
+      "v4_state_price_health_services": 1.7996316210259964,
+      "v4_state_price_recreation_culture": 0.42790815869861065,
+      "v4_production_private": 0.301567896,
+      "v4_production_receipts": 0.8058211149999988,
+      "v5_federal_income_tax": -12.26070366002267,
+      "v5_state_local_income_tax": -2.907550233269294,
+      "v5_personal_motor_vehicle": -0.21805237725128856,
+      "v5_personal_property_tax": -0.09193689705898844,
+      "v5_other_personal_tax": -0.04851975718353341,
+      "v5_employee_oasdi": -4.054214626410122,
+      "v5_employee_hi": -1.2424551964901838,
+      "v5_self_employment_oasdi_hi": -0.43151419512912437,
+      "v5_employer_oasdi": -4.089224128862412,
+      "v5_employer_hi": -1.1051813548798677,
+      "v5_medicare_supplementary_premiums": -0.5321316830850069,
+      "v5_other_domestic_social_contributions": -0.6909498488743662,
+      "v5_general_sales_tax": -5.045620343131908,
+      "v5_modeled_owner_property": -2.1861060437178885,
+      "v5_excise_selective_sales": -2.8694824768510045,
+      "v5_customs_duties": -0.6572482329671763,
+      "v5_personal_current_transfers": -1.1092002582188893,
+      "v5_enterprise_surplus": 0.06423578425373222,
+      "v5_housing_enterprise_surplus": 0.2903854563916881,
+      "v5_tenant_occupied_property": -0.5568138622817624,
+      "v5_general_public_services": 3.0964798695435647,
+      "v5_public_order_safety": 4.721661568406958,
+      "v5_economic_affairs_services": 2.086752623879173,
+      "v5_housing_community_services": 0.13038195976025402,
+      "v5_health_services": 1.485592546538097,
+      "v5_recreation_culture": 0.4872932692242493,
+      "v5_education_services": 18.44370982598383,
+      "v5_income_security_services": 1.8203244662014448,
+      "v5_social_security_benefits": 4.9956675475865495,
+      "v5_social_security_accrual": 8.094881804649063,
+      "v5_social_security_cash": -4.9956675475865495,
+      "v5_medicare_benefits": 3.735538684709759,
+      "v5_medicare_part_a_accrual": 2.857925820347206,
+      "v5_medicare_cash": -1.4012477513467951,
+      "v5_unemployment": 0.23528537703030317,
+      "v5_railroad_retirement": 0.0500027347233819,
+      "v5_pension_guaranty": 0.002805047387112819,
+      "v5_veterans_life_insurance": 0.002604949153871279,
+      "v5_workers_compensation": 0.11659596687792018,
+      "v5_military_medical": 0.04033511681720037,
+      "v5_veterans_pension_disability": 1.0473461926632446,
+      "v5_veterans_readjustment": 0.06608680502744568,
+      "v5_veterans_other": 0.1802721539403771,
+      "v5_snap": 1.012880852944793,
+      "v5_black_lung": 0.0023370063228840224,
+      "v5_ssi": 0.45095123982236895,
+      "v5_refundable_tax_credits": 1.8760177782843144,
+      "v5_other_federal_benefits": 0.331766129089198,
+      "v5_temporary_disability": 0.1774773932838154,
+      "v5_medicaid_and_chip_other_medical": 8.373317198365797,
+      "v5_family_and_general_assistance": 0.7019163443406189,
+      "v5_energy_assistance": 0.04564254213488472,
+      "v5_other_state_welfare": 0.3548962979520818,
+      "v5_education_benefits": 0.6373691981366854,
+      "v5_employment_training": 0.011042556690123564,
+      "v5_other_state_benefits": 0.025785797237109775,
+      "v5_housing_subsidies": 0.35060568103514367,
+      "v5_school_reprice": -0.12642398620029227,
+      "v5_college_rekey": -0.06497574090796687,
+      "v5_lane_constants": -0.19863362591435063,
+      "v5_roads_vmt_sl": 0.03827325228384382,
+      "v5_state_price_public_order_safety": 0.230625572500041,
+      "v5_state_price_health_services": 0.08400227085038292,
+      "v5_state_price_recreation_culture": 0.016721264295422367,
+      "v5_production_private": 0.007182626656456914,
+      "v5_production_receipts": -0.18320366136829414,
+      "v4_roads_vmt_fed": 0.027541802369843216,
+      "v5_roads_vmt_fed": 0.00034787807229960666
+     },
+     "capital_bn": {
+      "k12": 13.34049618809315,
+      "college": 5.709022204874874,
+      "pos_sl": 1.1651692404338365,
+      "pos_fed": 0.4435703858246151,
+      "health_sl": 0.6214724336917258,
+      "health_fed": 0.1800318760026206,
+      "gps_sl": 3.865062869818543,
+      "gps_fed": 0.4548914096844418,
+      "hwy_sl": 12.598830297381497,
+      "rec_sl": 1.4942760067633336,
+      "hwy_fed": 0.15665592370168507,
+      "air_fed": 0.08562243540734621,
+      "rec_fed": 0.1470451353049678,
+      "ent_housing_sl": 0.9485187186715025,
+      "ent_transit_sl": 1.7780143310120686,
+      "ent_airports_sl": 2.094442670530656,
+      "ent_ports_sl": 0.33195847277634283,
+      "ent_power_sl": 1.905471962129487,
+      "ent_water_sl": 3.2197912296320057,
+      "ent_sewer_sl": 4.305829432189899,
+      "ent_tolls_sl": 1.7617917305946798,
+      "ent_power_fed": 0.0972514598433252,
+      "ent_other_sl": 0.265333987948283,
+      "ent_other_fed": 0.19935681350783832
+     },
+     "v5_capital_bn": {
+      "k12": 1.2244386028526772,
+      "college": 0.5288067857108043,
+      "pos_sl": 0.0789821231423955,
+      "pos_fed": 0.03006784733046597,
+      "health_sl": 0.05320977179962094,
+      "health_fed": 0.015414127030305008,
+      "gps_sl": 0.29906461309096377,
+      "gps_fed": 0.035197855253016275,
+      "hwy_sl": 0.9753288419688433,
+      "rec_sl": 0.11437660104599456,
+      "hwy_fed": 0.012127398896965819,
+      "air_fed": 0.007665721336112222,
+      "rec_fed": 0.0112552986867267,
+      "ent_housing_sl": 0.08039279114445702,
+      "ent_transit_sl": 0.13609482777484794,
+      "ent_airports_sl": 0.1603152514343975,
+      "ent_ports_sl": 0.025409149067534276,
+      "ent_power_sl": 0.1458508370785756,
+      "ent_water_sl": 0.24645298141005778,
+      "ent_sewer_sl": 0.32958177264420385,
+      "ent_tolls_sl": 0.13485309874524676,
+      "ent_power_fed": 0.007443933632804919,
+      "ent_other_sl": 0.02030950075193183,
+      "ent_other_fed": 0.015259399616114527
+     }
+    }
+   },
+   "components": [
+    {
+     "id": "k12",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "college",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "pos_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "pos_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "health_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "health_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "gps_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "gps_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "hwy_sl",
+     "part": "block",
+     "level": "state_local"
+    },
+    {
+     "id": "rec_sl",
+     "part": "block",
+     "level": "state_local"
+    },
+    {
+     "id": "hwy_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "air_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "rec_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "ent_housing_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_transit_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_airports_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_ports_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_power_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_water_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_sewer_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_tolls_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_power_fed",
+     "part": "enterprise",
+     "level": "federal"
+    },
+    {
+     "id": "ent_other_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_other_fed",
+     "part": "enterprise",
+     "level": "federal"
+    }
+   ],
+   "v4_parts": {
+    "v4_federal_income_tax": {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "national_bn": 2403.242,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_state_local_income_tax": {
+     "side": "receipt",
+     "line": "state_local_income_tax",
+     "national_bn": 536.167,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_personal_motor_vehicle": {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "national_bn": 26.125,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_personal_property_tax": {
+     "side": "receipt",
+     "line": "personal_property_tax",
+     "national_bn": 12.988,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_other_personal_tax": {
+     "side": "receipt",
+     "line": "other_personal_tax",
+     "national_bn": 9.721,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_employee_oasdi": {
+     "side": "receipt",
+     "line": "employee_oasdi",
+     "national_bn": 610.399,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_employee_hi": {
+     "side": "receipt",
+     "line": "employee_hi",
+     "national_bn": 196.749,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_self_employment_oasdi_hi": {
+     "side": "receipt",
+     "line": "self_employment_oasdi_hi",
+     "national_bn": 86.855,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_employer_oasdi": {
+     "side": "receipt",
+     "line": "employer_oasdi",
+     "national_bn": 615.67,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_employer_hi": {
+     "side": "receipt",
+     "line": "employer_hi",
+     "national_bn": 175.011,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_other_domestic_social_contributions": {
+     "side": "receipt",
+     "line": "other_domestic_social_contributions",
+     "national_bn": 93.35,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_general_sales_tax": {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "national_bn": 602.43,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_modeled_owner_property": {
+     "side": "receipt",
+     "line": "modeled_owner_property",
+     "national_bn": 394.862477949,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_excise_selective_sales": {
+     "side": "receipt",
+     "line": "excise_selective_sales",
+     "national_bn": 371.262,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_customs_duties": {
+     "side": "receipt",
+     "line": "customs_duties",
+     "national_bn": 83.587,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_personal_current_transfers": {
+     "side": "receipt",
+     "line": "personal_current_transfers",
+     "national_bn": 141.065,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_enterprise_surplus": {
+     "side": "receipt",
+     "line": "enterprise_surplus",
+     "national_bn": -7.161999999999999,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_housing_enterprise_surplus": {
+     "side": "receipt",
+     "line": "housing_enterprise_surplus",
+     "national_bn": -45.555811000000006,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_tenant_occupied_property": {
+     "side": "receipt",
+     "line": "tenant_occupied_property",
+     "national_bn": 83.840225,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_social_security_accrual": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "accrual",
+     "contributions": "oasdi"
+    },
+    "v4_social_security_cash": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v4_medicare_part_a_accrual": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "accrual",
+     "contributions": "hi"
+    },
+    "v4_medicare_cash": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v4_workers_compensation": {
+     "side": "spending",
+     "line": "workers_compensation",
+     "national_bn": 11.923,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_housing_subsidies": {
+     "side": "spending",
+     "line": "housing_subsidies",
+     "national_bn": 55.003189000000006,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_roads_vmt_sl": {
+     "side": "spending",
+     "line": "roads_vmt_sl",
+     "national_bn": 0,
+     "parent": "economic_affairs_services",
+     "rule": "line"
+    },
+    "v4_state_price_public_order_safety": {
+     "side": "spending",
+     "line": "state_price_public_order_safety",
+     "national_bn": 0,
+     "parent": "public_order_safety",
+     "rule": "line"
+    },
+    "v4_state_price_health_services": {
+     "side": "spending",
+     "line": "state_price_health_services",
+     "national_bn": 0,
+     "parent": "health_services",
+     "rule": "line"
+    },
+    "v4_state_price_recreation_culture": {
+     "side": "spending",
+     "line": "state_price_recreation_culture",
+     "national_bn": 0,
+     "parent": "recreation_culture",
+     "rule": "line"
+    },
+    "v4_production_private": {
+     "side": "production",
+     "line": "private_wtp_bn",
+     "national_bn": null,
+     "parent": null,
+     "rule": "production"
+    },
+    "v4_production_receipts": {
+     "side": "production",
+     "line": "induced_receipts_bn",
+     "national_bn": null,
+     "parent": null,
+     "rule": "production"
+    },
+    "v4_roads_vmt_fed": {
+     "side": "spending",
+     "line": "roads_vmt_fed",
+     "national_bn": 0,
+     "parent": "economic_affairs_services",
+     "rule": "line"
+    }
+   },
+   "v5_parts": {
+    "v5_federal_income_tax": {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "national_bn": 2403.242,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_state_local_income_tax": {
+     "side": "receipt",
+     "line": "state_local_income_tax",
+     "national_bn": 536.167,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_personal_motor_vehicle": {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "national_bn": 26.125,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_personal_property_tax": {
+     "side": "receipt",
+     "line": "personal_property_tax",
+     "national_bn": 12.988,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_personal_tax": {
+     "side": "receipt",
+     "line": "other_personal_tax",
+     "national_bn": 9.721,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employee_oasdi": {
+     "side": "receipt",
+     "line": "employee_oasdi",
+     "national_bn": 610.399,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employee_hi": {
+     "side": "receipt",
+     "line": "employee_hi",
+     "national_bn": 196.749,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_self_employment_oasdi_hi": {
+     "side": "receipt",
+     "line": "self_employment_oasdi_hi",
+     "national_bn": 86.855,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employer_oasdi": {
+     "side": "receipt",
+     "line": "employer_oasdi",
+     "national_bn": 615.67,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employer_hi": {
+     "side": "receipt",
+     "line": "employer_hi",
+     "national_bn": 175.011,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_medicare_supplementary_premiums": {
+     "side": "receipt",
+     "line": "medicare_supplementary_premiums",
+     "national_bn": 145.117,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_domestic_social_contributions": {
+     "side": "receipt",
+     "line": "other_domestic_social_contributions",
+     "national_bn": 93.35,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_general_sales_tax": {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "national_bn": 602.43,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_modeled_owner_property": {
+     "side": "receipt",
+     "line": "modeled_owner_property",
+     "national_bn": 394.862477949,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_excise_selective_sales": {
+     "side": "receipt",
+     "line": "excise_selective_sales",
+     "national_bn": 371.262,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_customs_duties": {
+     "side": "receipt",
+     "line": "customs_duties",
+     "national_bn": 83.587,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_personal_current_transfers": {
+     "side": "receipt",
+     "line": "personal_current_transfers",
+     "national_bn": 141.065,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_enterprise_surplus": {
+     "side": "receipt",
+     "line": "enterprise_surplus",
+     "national_bn": -7.161999999999999,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_housing_enterprise_surplus": {
+     "side": "receipt",
+     "line": "housing_enterprise_surplus",
+     "national_bn": -45.555811000000006,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_tenant_occupied_property": {
+     "side": "receipt",
+     "line": "tenant_occupied_property",
+     "national_bn": 83.840225,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_general_public_services": {
+     "side": "spending",
+     "line": "general_public_services",
+     "national_bn": 401.608,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_public_order_safety": {
+     "side": "spending",
+     "line": "public_order_safety",
+     "national_bn": 519.153,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_economic_affairs_services": {
+     "side": "spending",
+     "line": "economic_affairs_services",
+     "national_bn": 451.935,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_housing_community_services": {
+     "side": "spending",
+     "line": "housing_community_services",
+     "national_bn": 14.537,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_health_services": {
+     "side": "spending",
+     "line": "health_services",
+     "national_bn": 306.539,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_recreation_culture": {
+     "side": "spending",
+     "line": "recreation_culture",
+     "national_bn": 54.331,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_education_services": {
+     "side": "spending",
+     "line": "education_services",
+     "national_bn": 1221.159,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_income_security_services": {
+     "side": "spending",
+     "line": "income_security_services",
+     "national_bn": 167.818,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_social_security_benefits": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v5_social_security_accrual": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "accrual",
+     "contributions": "oasdi"
+    },
+    "v5_social_security_cash": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v5_medicare_benefits": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v5_medicare_part_a_accrual": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "accrual",
+     "contributions": "hi"
+    },
+    "v5_medicare_cash": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v5_unemployment": {
+     "side": "spending",
+     "line": "unemployment",
+     "national_bn": 36.468,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_railroad_retirement": {
+     "side": "spending",
+     "line": "railroad_retirement",
+     "national_bn": 14.493,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_pension_guaranty": {
+     "side": "spending",
+     "line": "pension_guaranty",
+     "national_bn": 0.771,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_veterans_life_insurance": {
+     "side": "spending",
+     "line": "veterans_life_insurance",
+     "national_bn": 0.449,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_workers_compensation": {
+     "side": "spending",
+     "line": "workers_compensation",
+     "national_bn": 11.923,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_military_medical": {
+     "side": "spending",
+     "line": "military_medical",
+     "national_bn": 7.157,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_veterans_pension_disability": {
+     "side": "spending",
+     "line": "veterans_pension_disability",
+     "national_bn": 180.525,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_veterans_readjustment": {
+     "side": "spending",
+     "line": "veterans_readjustment",
+     "national_bn": 11.391,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_veterans_other": {
+     "side": "spending",
+     "line": "veterans_other",
+     "national_bn": 37.526,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_snap": {
+     "side": "spending",
+     "line": "snap",
+     "national_bn": 97.391,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_black_lung": {
+     "side": "spending",
+     "line": "black_lung",
+     "national_bn": 0.173,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_ssi": {
+     "side": "spending",
+     "line": "ssi",
+     "national_bn": 65.134,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_refundable_tax_credits": {
+     "side": "spending",
+     "line": "refundable_tax_credits",
+     "national_bn": 228.809,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_federal_benefits": {
+     "side": "spending",
+     "line": "other_federal_benefits",
+     "national_bn": 86.425,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_temporary_disability": {
+     "side": "spending",
+     "line": "temporary_disability",
+     "national_bn": 13.138,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_medicaid_and_chip_other_medical": {
+     "side": "spending",
+     "line": "medicaid_and_chip_other_medical",
+     "national_bn": 954.2,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_family_and_general_assistance": {
+     "side": "spending",
+     "line": "family_and_general_assistance",
+     "national_bn": 63.065,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_energy_assistance": {
+     "side": "spending",
+     "line": "energy_assistance",
+     "national_bn": 5.218,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_state_welfare": {
+     "side": "spending",
+     "line": "other_state_welfare",
+     "national_bn": 22.385,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_education_benefits": {
+     "side": "spending",
+     "line": "education_benefits",
+     "national_bn": 64.479,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employment_training": {
+     "side": "spending",
+     "line": "employment_training",
+     "national_bn": 1.377,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_state_benefits": {
+     "side": "spending",
+     "line": "other_state_benefits",
+     "national_bn": 2.875,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_housing_subsidies": {
+     "side": "spending",
+     "line": "housing_subsidies",
+     "national_bn": 55.003189000000006,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_school_reprice": {
+     "side": "spending",
+     "line": "school_reprice",
+     "national_bn": 0,
+     "parent": "education_services",
+     "rule": "line"
+    },
+    "v5_college_rekey": {
+     "side": "spending",
+     "line": "college_rekey",
+     "national_bn": 0,
+     "parent": "education_services",
+     "rule": "line"
+    },
+    "v5_lane_constants": {
+     "side": "spending",
+     "line": "lane_constants",
+     "national_bn": 0,
+     "parent": null,
+     "rule": "per_person"
+    },
+    "v5_roads_vmt_sl": {
+     "side": "spending",
+     "line": "roads_vmt_sl",
+     "national_bn": 0,
+     "parent": "economic_affairs_services",
+     "rule": "line"
+    },
+    "v5_state_price_public_order_safety": {
+     "side": "spending",
+     "line": "state_price_public_order_safety",
+     "national_bn": 0,
+     "parent": "public_order_safety",
+     "rule": "line"
+    },
+    "v5_state_price_health_services": {
+     "side": "spending",
+     "line": "state_price_health_services",
+     "national_bn": 0,
+     "parent": "health_services",
+     "rule": "line"
+    },
+    "v5_state_price_recreation_culture": {
+     "side": "spending",
+     "line": "state_price_recreation_culture",
+     "national_bn": 0,
+     "parent": "recreation_culture",
+     "rule": "line"
+    },
+    "v5_production_private": {
+     "side": "production",
+     "line": "private_wtp_bn",
+     "national_bn": null,
+     "parent": null,
+     "rule": "production"
+    },
+    "v5_production_receipts": {
+     "side": "production",
+     "line": "induced_receipts_bn",
+     "national_bn": null,
+     "parent": null,
+     "rule": "production"
+    },
+    "v5_roads_vmt_fed": {
+     "side": "spending",
+     "line": "roads_vmt_fed",
+     "national_bn": 0,
+     "parent": "economic_affairs_services",
+     "rule": "line"
+    }
+   }
+  },
+  "net_cost_full_proportional": {
+   "profile": "proportional_reference",
+   "base_profile": "proportional_reference",
+   "end_specifications": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low": 48,
+     "high": 11
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low": 48,
+     "high": 11
+    }
+   ],
+   "ends": {
+    "low": {
+     "cost_bn": 419.28127245225437,
+     "base_bn": 301.28527594064883,
+     "additions_bn": {
+      "long_run_economic_affairs_services": 0,
+      "long_run_recreation_culture": 0,
+      "rental_assistance": 4.532065856478911,
+      "enterprise_surplus": 5.5611432821434805,
+      "v4_federal_income_tax": -0.8151331262919186,
+      "v4_state_local_income_tax": -0.015631096666030686,
+      "v4_personal_motor_vehicle": -0.4906645156231808,
+      "v4_personal_property_tax": -1.325841016,
+      "v4_other_personal_tax": -0.0002834003036520927,
+      "v4_employee_oasdi": -0.025396764036134556,
+      "v4_employee_hi": -0.013496182416942837,
+      "v4_self_employment_oasdi_hi": 0.7833754272816407,
+      "v4_employer_oasdi": -0.025616073607324097,
+      "v4_employer_hi": -0.012005043893737799,
+      "v4_other_domestic_social_contributions": -0.02365455511865111,
+      "v4_general_sales_tax": -5.964449118482154,
+      "v4_modeled_owner_property": -19.049721026856325,
+      "v4_excise_selective_sales": -1.57900426364135,
+      "v4_customs_duties": -0.039563845575290024,
+      "v4_personal_current_transfers": -0.06676963972960337,
+      "v4_enterprise_surplus": -4.721933248710872,
+      "v4_housing_enterprise_surplus": 3.426128600542746,
+      "v4_tenant_occupied_property": -6.810763484929574,
+      "v4_social_security_accrual": 109.40699333111733,
+      "v4_social_security_cash": -56.258694510398655,
+      "v4_medicare_part_a_accrual": 41.13712783048602,
+      "v4_medicare_cash": -19.66310864716985,
+      "v4_workers_compensation": -0.9482477443084476,
+      "v4_housing_subsidies": -0.3954256602598569,
+      "v4_roads_vmt_sl": 3.030873052607772,
+      "v4_roads_vmt_fed": 0.02754859365246834,
+      "v4_state_price_public_order_safety": 6.412327012068853,
+      "v4_state_price_health_services": 1.7996316210259964,
+      "v4_state_price_recreation_culture": 0.42790815869861065,
+      "v4_production_private": 0.459157279,
+      "v4_production_receipts": 1.18356217,
+      "v5_federal_income_tax": -14.465252243274549,
+      "v5_state_local_income_tax": -3.3164561547320517,
+      "v5_personal_motor_vehicle": -0.21805237725128856,
+      "v5_personal_property_tax": -0.1004449417767066,
+      "v5_other_personal_tax": -0.055933444424938805,
+      "v5_employee_oasdi": -4.762902675827135,
+      "v5_employee_hi": -1.4784834394027975,
+      "v5_self_employment_oasdi_hi": -0.5336430031126422,
+      "v5_employer_oasdi": -4.804031937170116,
+      "v5_employer_hi": -1.315131793379674,
+      "v5_medicare_supplementary_premiums": -0.592345601449312,
+      "v5_other_domestic_social_contributions": -0.7885688372070678,
+      "v5_general_sales_tax": -5.046126421026273,
+      "v5_modeled_owner_property": -2.1861060437178885,
+      "v5_excise_selective_sales": -2.869707397760479,
+      "v5_customs_duties": -0.6573112022907064,
+      "v5_personal_current_transfers": -1.1093065279453267,
+      "v5_enterprise_surplus": 0.06423578425373222,
+      "v5_housing_enterprise_surplus": 0.2903854563916881,
+      "v5_tenant_occupied_property": -0.5568138622817624,
+      "v5_general_public_services": 2.185714350146011,
+      "v5_public_order_safety": 4.721661568406958,
+      "v5_economic_affairs_services": 3.2616013971604403,
+      "v5_housing_community_services": 0.13038195976025402,
+      "v5_health_services": 1.485592546538097,
+      "v5_recreation_culture": 0.4872932692242493,
+      "v5_education_services": 15.82153211760587,
+      "v5_income_security_services": 2.1923248900364083,
+      "v5_social_security_benefits": 5.574283824453342,
+      "v5_social_security_accrual": 9.577846526360005,
+      "v5_social_security_cash": -5.574283824453342,
+      "v5_medicare_benefits": 3.735538684709759,
+      "v5_medicare_part_a_accrual": 3.3168515775048215,
+      "v5_medicare_cash": -1.4012477513467951,
+      "v5_unemployment": 0.2940160054929546,
+      "v5_railroad_retirement": 0.05579423225059765,
+      "v5_pension_guaranty": 0.002805047387112819,
+      "v5_veterans_life_insurance": 0.0031902082891893287,
+      "v5_workers_compensation": 0.14447565703090426,
+      "v5_military_medical": 0.04033511681720037,
+      "v5_veterans_pension_disability": 1.2826555575720846,
+      "v5_veterans_readjustment": 0.0809346598180678,
+      "v5_veterans_other": 0.1802721539403771,
+      "v5_snap": 1.012880852944793,
+      "v5_black_lung": 0.0031434536093631407,
+      "v5_ssi": 0.48911157839890773,
+      "v5_refundable_tax_credits": 2.423215037052728,
+      "v5_other_federal_benefits": 0.37590237356974066,
+      "v5_temporary_disability": 0.2387207730511589,
+      "v5_medicaid_and_chip_other_medical": 8.347149641121135,
+      "v5_family_and_general_assistance": 0.8570088980699957,
+      "v5_energy_assistance": 0.04564254213488472,
+      "v5_other_state_welfare": 0.3548962979520818,
+      "v5_education_benefits": 0.6373691981366854,
+      "v5_employment_training": 0.011042556690123564,
+      "v5_other_state_benefits": 0.025785797237109775,
+      "v5_housing_subsidies": 0.35060568103514367,
+      "v5_school_reprice": 0.08604322198254177,
+      "v5_college_rekey": -0.03971552385713917,
+      "v5_lane_constants": -0.19652280450202841,
+      "v5_roads_vmt_sl": 0.03831599327414148,
+      "v5_roads_vmt_fed": 0.00034826655909980797,
+      "v5_state_price_public_order_safety": 0.230625572500041,
+      "v5_state_price_health_services": 0.08400227085038292,
+      "v5_state_price_recreation_culture": 0.016721264295422367,
+      "v5_production_private": 0.010918859851627438,
+      "v5_production_receipts": -0.27850189060320396
+     },
+     "capital_bn": {
+      "k12": 8.652057499006602,
+      "college": 3.703234282450358,
+      "pos_sl": 0.7767794936225577,
+      "pos_fed": 0.2957135905497434,
+      "health_sl": 0.4143149557944839,
+      "health_fed": 0.12002125066841372,
+      "gps_sl": 1.8181464914619134,
+      "gps_fed": 0.21398338096186276,
+      "hwy_sl": 8.399546491786122,
+      "rec_sl": 0.9961840045088891,
+      "hwy_fed": 0.10444133965511729,
+      "air_fed": 0.05708162360489748,
+      "rec_fed": 0.09803009020331187,
+      "ent_housing_sl": 0.6323458124476683,
+      "ent_transit_sl": 1.1853428873413794,
+      "ent_airports_sl": 1.396295113687104,
+      "ent_ports_sl": 0.2213056485175619,
+      "ent_power_sl": 1.2703146414196582,
+      "ent_water_sl": 2.1465274864213373,
+      "ent_sewer_sl": 2.8705529547932667,
+      "ent_tolls_sl": 1.1745278203964533,
+      "ent_power_fed": 0.06483430656221681,
+      "ent_other_sl": 0.17688932529885534,
+      "ent_other_fed": 0.1329045423385589
+     },
+     "v5_capital_bn": {
+      "k12": 0.7111969290327984,
+      "college": 0.30779181117720666,
+      "pos_sl": 0.052654748761596926,
+      "pos_fed": 0.020045231553644016,
+      "health_sl": 0.03547318119974724,
+      "health_fed": 0.010276084686870038,
+      "gps_sl": 0.14073396114152437,
+      "gps_fed": 0.016563422673936734,
+      "hwy_sl": 0.6502378931912496,
+      "rec_sl": 0.07625106736399634,
+      "hwy_fed": 0.008085164684286925,
+      "air_fed": 0.005110480890741481,
+      "rec_fed": 0.007503532457817819,
+      "ent_housing_sl": 0.053595194096304644,
+      "ent_transit_sl": 0.09072988518323188,
+      "ent_airports_sl": 0.10687683428959849,
+      "ent_ports_sl": 0.016939432711689545,
+      "ent_power_sl": 0.09723389138571714,
+      "ent_water_sl": 0.16430198760670534,
+      "ent_sewer_sl": 0.21972118176280242,
+      "ent_tolls_sl": 0.08990206583016436,
+      "ent_power_fed": 0.004962622421869942,
+      "ent_other_sl": 0.013539667167954544,
+      "ent_other_fed": 0.010172933077409713
+     }
+    },
+    "high": {
+     "cost_bn": 475.5823047368227,
+     "base_bn": 334.75155388877,
+     "additions_bn": {
+      "long_run_economic_affairs_services": 0,
+      "long_run_recreation_culture": 0,
+      "rental_assistance": 4.532065856478911,
+      "enterprise_surplus": 5.5611432821434805,
+      "v4_federal_income_tax": -0.8912612727349938,
+      "v4_state_local_income_tax": -0.006053248756581198,
+      "v4_personal_motor_vehicle": -0.5868230793322993,
+      "v4_personal_property_tax": -1.325841016,
+      "v4_other_personal_tax": -0.00010974869988761293,
+      "v4_employee_oasdi": -0.027300069013413975,
+      "v4_employee_hi": -0.01394514415103032,
+      "v4_self_employment_oasdi_hi": 0.8133565896969834,
+      "v4_employer_oasdi": -0.02753581426111751,
+      "v4_employer_hi": -0.012404401663768994,
+      "v4_other_domestic_social_contributions": -0.02478385428083918,
+      "v4_general_sales_tax": -5.955605740076404,
+      "v4_modeled_owner_property": -19.049721026856325,
+      "v4_excise_selective_sales": -1.5750723373475477,
+      "v4_customs_duties": -0.03846349805540461,
+      "v4_personal_current_transfers": -0.06491264614336689,
+      "v4_enterprise_surplus": -4.721933248710872,
+      "v4_housing_enterprise_surplus": 3.426128600542746,
+      "v4_tenant_occupied_property": -6.810763484929574,
+      "v4_social_security_accrual": 102.75495331219659,
+      "v4_social_security_cash": -53.02239580298783,
+      "v4_medicare_part_a_accrual": 41.13712783048602,
+      "v4_medicare_cash": -19.66310864716985,
+      "v4_workers_compensation": -0.7324104515720732,
+      "v4_housing_subsidies": -0.3954256602598569,
+      "v4_roads_vmt_sl": 3.030125881417808,
+      "v4_roads_vmt_fed": 0.027541802369843216,
+      "v4_state_price_public_order_safety": 6.412327012068853,
+      "v4_state_price_health_services": 1.7996316210259964,
+      "v4_state_price_recreation_culture": 0.42790815869861065,
+      "v4_production_private": 0.301567896,
+      "v4_production_receipts": 0.8058211149999988,
+      "v5_federal_income_tax": -12.26070366002267,
+      "v5_state_local_income_tax": -2.907550233269294,
+      "v5_personal_motor_vehicle": -0.21805237725128856,
+      "v5_personal_property_tax": -0.09193689705898844,
+      "v5_other_personal_tax": -0.04851975718353341,
+      "v5_employee_oasdi": -4.054214626410122,
+      "v5_employee_hi": -1.2424551964901838,
+      "v5_self_employment_oasdi_hi": -0.43151419512912437,
+      "v5_employer_oasdi": -4.089224128862412,
+      "v5_employer_hi": -1.1051813548798677,
+      "v5_medicare_supplementary_premiums": -0.5321316830850069,
+      "v5_other_domestic_social_contributions": -0.6909498488743662,
+      "v5_general_sales_tax": -5.045620343131908,
+      "v5_modeled_owner_property": -2.1861060437178885,
+      "v5_excise_selective_sales": -2.8694824768510045,
+      "v5_customs_duties": -0.6572482329671763,
+      "v5_personal_current_transfers": -1.1092002582188893,
+      "v5_enterprise_surplus": 0.06423578425373222,
+      "v5_housing_enterprise_surplus": 0.2903854563916881,
+      "v5_tenant_occupied_property": -0.5568138622817624,
+      "v5_general_public_services": 3.0964798695435647,
+      "v5_public_order_safety": 4.721661568406958,
+      "v5_economic_affairs_services": 3.2616013971604403,
+      "v5_housing_community_services": 0.13038195976025402,
+      "v5_health_services": 1.485592546538097,
+      "v5_recreation_culture": 0.4872932692242493,
+      "v5_education_services": 18.44370982598383,
+      "v5_income_security_services": 1.8203244662014448,
+      "v5_social_security_benefits": 4.9956675475865495,
+      "v5_social_security_accrual": 8.094881804649063,
+      "v5_social_security_cash": -4.9956675475865495,
+      "v5_medicare_benefits": 3.735538684709759,
+      "v5_medicare_part_a_accrual": 2.857925820347206,
+      "v5_medicare_cash": -1.4012477513467951,
+      "v5_unemployment": 0.23528537703030317,
+      "v5_railroad_retirement": 0.0500027347233819,
+      "v5_pension_guaranty": 0.002805047387112819,
+      "v5_veterans_life_insurance": 0.002604949153871279,
+      "v5_workers_compensation": 0.11659596687792018,
+      "v5_military_medical": 0.04033511681720037,
+      "v5_veterans_pension_disability": 1.0473461926632446,
+      "v5_veterans_readjustment": 0.06608680502744568,
+      "v5_veterans_other": 0.1802721539403771,
+      "v5_snap": 1.012880852944793,
+      "v5_black_lung": 0.0023370063228840224,
+      "v5_ssi": 0.45095123982236895,
+      "v5_refundable_tax_credits": 1.8760177782843144,
+      "v5_other_federal_benefits": 0.331766129089198,
+      "v5_temporary_disability": 0.1774773932838154,
+      "v5_medicaid_and_chip_other_medical": 8.373317198365797,
+      "v5_family_and_general_assistance": 0.7019163443406189,
+      "v5_energy_assistance": 0.04564254213488472,
+      "v5_other_state_welfare": 0.3548962979520818,
+      "v5_education_benefits": 0.6373691981366854,
+      "v5_employment_training": 0.011042556690123564,
+      "v5_other_state_benefits": 0.025785797237109775,
+      "v5_housing_subsidies": 0.35060568103514367,
+      "v5_school_reprice": -0.12642398620029227,
+      "v5_college_rekey": -0.06497574090796687,
+      "v5_lane_constants": -0.19863362591435063,
+      "v5_roads_vmt_sl": 0.03827325228384382,
+      "v5_roads_vmt_fed": 0.00034787807229960666,
+      "v5_state_price_public_order_safety": 0.230625572500041,
+      "v5_state_price_health_services": 0.08400227085038292,
+      "v5_state_price_recreation_culture": 0.016721264295422367,
+      "v5_production_private": 0.007182626656456914,
+      "v5_production_receipts": -0.18320366136829414
+     },
+     "capital_bn": {
+      "k12": 13.34049618809315,
+      "college": 5.709022204874874,
+      "pos_sl": 1.1651692404338365,
+      "pos_fed": 0.4435703858246151,
+      "health_sl": 0.6214724336917258,
+      "health_fed": 0.1800318760026206,
+      "gps_sl": 3.865062869818543,
+      "gps_fed": 0.4548914096844418,
+      "hwy_sl": 12.598830297381497,
+      "rec_sl": 1.4942760067633336,
+      "hwy_fed": 0.15665592370168507,
+      "air_fed": 0.08562243540734621,
+      "rec_fed": 0.1470451353049678,
+      "ent_housing_sl": 0.9485187186715025,
+      "ent_transit_sl": 1.7780143310120686,
+      "ent_airports_sl": 2.094442670530656,
+      "ent_ports_sl": 0.33195847277634283,
+      "ent_power_sl": 1.905471962129487,
+      "ent_water_sl": 3.2197912296320057,
+      "ent_sewer_sl": 4.305829432189899,
+      "ent_tolls_sl": 1.7617917305946798,
+      "ent_power_fed": 0.0972514598433252,
+      "ent_other_sl": 0.265333987948283,
+      "ent_other_fed": 0.19935681350783832
+     },
+     "v5_capital_bn": {
+      "k12": 1.2244386028526772,
+      "college": 0.5288067857108043,
+      "pos_sl": 0.0789821231423955,
+      "pos_fed": 0.03006784733046597,
+      "health_sl": 0.05320977179962094,
+      "health_fed": 0.015414127030305008,
+      "gps_sl": 0.29906461309096377,
+      "gps_fed": 0.035197855253016275,
+      "hwy_sl": 0.9753288419688433,
+      "rec_sl": 0.11437660104599456,
+      "hwy_fed": 0.012127398896965819,
+      "air_fed": 0.007665721336112222,
+      "rec_fed": 0.0112552986867267,
+      "ent_housing_sl": 0.08039279114445702,
+      "ent_transit_sl": 0.13609482777484794,
+      "ent_airports_sl": 0.1603152514343975,
+      "ent_ports_sl": 0.025409149067534276,
+      "ent_power_sl": 0.1458508370785756,
+      "ent_water_sl": 0.24645298141005778,
+      "ent_sewer_sl": 0.32958177264420385,
+      "ent_tolls_sl": 0.13485309874524676,
+      "ent_power_fed": 0.007443933632804919,
+      "ent_other_sl": 0.02030950075193183,
+      "ent_other_fed": 0.015259399616114527
+     }
+    }
+   },
+   "components": [
+    {
+     "id": "k12",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "college",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "pos_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "pos_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "health_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "health_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "gps_sl",
+     "part": "core",
+     "level": "state_local"
+    },
+    {
+     "id": "gps_fed",
+     "part": "core",
+     "level": "federal"
+    },
+    {
+     "id": "hwy_sl",
+     "part": "block",
+     "level": "state_local"
+    },
+    {
+     "id": "rec_sl",
+     "part": "block",
+     "level": "state_local"
+    },
+    {
+     "id": "hwy_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "air_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "rec_fed",
+     "part": "block",
+     "level": "federal"
+    },
+    {
+     "id": "ent_housing_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_transit_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_airports_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_ports_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_power_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_water_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_sewer_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_tolls_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_power_fed",
+     "part": "enterprise",
+     "level": "federal"
+    },
+    {
+     "id": "ent_other_sl",
+     "part": "enterprise",
+     "level": "state_local"
+    },
+    {
+     "id": "ent_other_fed",
+     "part": "enterprise",
+     "level": "federal"
+    }
+   ],
+   "v4_parts": {
+    "v4_federal_income_tax": {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "national_bn": 2403.242,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_state_local_income_tax": {
+     "side": "receipt",
+     "line": "state_local_income_tax",
+     "national_bn": 536.167,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_personal_motor_vehicle": {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "national_bn": 26.125,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_personal_property_tax": {
+     "side": "receipt",
+     "line": "personal_property_tax",
+     "national_bn": 12.988,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_other_personal_tax": {
+     "side": "receipt",
+     "line": "other_personal_tax",
+     "national_bn": 9.721,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_employee_oasdi": {
+     "side": "receipt",
+     "line": "employee_oasdi",
+     "national_bn": 610.399,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_employee_hi": {
+     "side": "receipt",
+     "line": "employee_hi",
+     "national_bn": 196.749,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_self_employment_oasdi_hi": {
+     "side": "receipt",
+     "line": "self_employment_oasdi_hi",
+     "national_bn": 86.855,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_employer_oasdi": {
+     "side": "receipt",
+     "line": "employer_oasdi",
+     "national_bn": 615.67,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_employer_hi": {
+     "side": "receipt",
+     "line": "employer_hi",
+     "national_bn": 175.011,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_other_domestic_social_contributions": {
+     "side": "receipt",
+     "line": "other_domestic_social_contributions",
+     "national_bn": 93.35,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_general_sales_tax": {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "national_bn": 602.43,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_modeled_owner_property": {
+     "side": "receipt",
+     "line": "modeled_owner_property",
+     "national_bn": 394.862477949,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_excise_selective_sales": {
+     "side": "receipt",
+     "line": "excise_selective_sales",
+     "national_bn": 371.262,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_customs_duties": {
+     "side": "receipt",
+     "line": "customs_duties",
+     "national_bn": 83.587,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_personal_current_transfers": {
+     "side": "receipt",
+     "line": "personal_current_transfers",
+     "national_bn": 141.065,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_enterprise_surplus": {
+     "side": "receipt",
+     "line": "enterprise_surplus",
+     "national_bn": -7.161999999999999,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_housing_enterprise_surplus": {
+     "side": "receipt",
+     "line": "housing_enterprise_surplus",
+     "national_bn": -45.555811000000006,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_tenant_occupied_property": {
+     "side": "receipt",
+     "line": "tenant_occupied_property",
+     "national_bn": 83.840225,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_social_security_accrual": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "accrual",
+     "contributions": "oasdi"
+    },
+    "v4_social_security_cash": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v4_medicare_part_a_accrual": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "accrual",
+     "contributions": "hi"
+    },
+    "v4_medicare_cash": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v4_workers_compensation": {
+     "side": "spending",
+     "line": "workers_compensation",
+     "national_bn": 11.923,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_housing_subsidies": {
+     "side": "spending",
+     "line": "housing_subsidies",
+     "national_bn": 55.003189000000006,
+     "parent": null,
+     "rule": "line"
+    },
+    "v4_roads_vmt_sl": {
+     "side": "spending",
+     "line": "roads_vmt_sl",
+     "national_bn": 0,
+     "parent": "economic_affairs_services",
+     "rule": "line"
+    },
+    "v4_roads_vmt_fed": {
+     "side": "spending",
+     "line": "roads_vmt_fed",
+     "national_bn": 0,
+     "parent": "economic_affairs_services",
+     "rule": "line"
+    },
+    "v4_state_price_public_order_safety": {
+     "side": "spending",
+     "line": "state_price_public_order_safety",
+     "national_bn": 0,
+     "parent": "public_order_safety",
+     "rule": "line"
+    },
+    "v4_state_price_health_services": {
+     "side": "spending",
+     "line": "state_price_health_services",
+     "national_bn": 0,
+     "parent": "health_services",
+     "rule": "line"
+    },
+    "v4_state_price_recreation_culture": {
+     "side": "spending",
+     "line": "state_price_recreation_culture",
+     "national_bn": 0,
+     "parent": "recreation_culture",
+     "rule": "line"
+    },
+    "v4_production_private": {
+     "side": "production",
+     "line": "private_wtp_bn",
+     "national_bn": null,
+     "parent": null,
+     "rule": "production"
+    },
+    "v4_production_receipts": {
+     "side": "production",
+     "line": "induced_receipts_bn",
+     "national_bn": null,
+     "parent": null,
+     "rule": "production"
+    }
+   },
+   "v5_parts": {
+    "v5_federal_income_tax": {
+     "side": "receipt",
+     "line": "federal_income_tax",
+     "national_bn": 2403.242,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_state_local_income_tax": {
+     "side": "receipt",
+     "line": "state_local_income_tax",
+     "national_bn": 536.167,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_personal_motor_vehicle": {
+     "side": "receipt",
+     "line": "personal_motor_vehicle",
+     "national_bn": 26.125,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_personal_property_tax": {
+     "side": "receipt",
+     "line": "personal_property_tax",
+     "national_bn": 12.988,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_personal_tax": {
+     "side": "receipt",
+     "line": "other_personal_tax",
+     "national_bn": 9.721,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employee_oasdi": {
+     "side": "receipt",
+     "line": "employee_oasdi",
+     "national_bn": 610.399,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employee_hi": {
+     "side": "receipt",
+     "line": "employee_hi",
+     "national_bn": 196.749,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_self_employment_oasdi_hi": {
+     "side": "receipt",
+     "line": "self_employment_oasdi_hi",
+     "national_bn": 86.855,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employer_oasdi": {
+     "side": "receipt",
+     "line": "employer_oasdi",
+     "national_bn": 615.67,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employer_hi": {
+     "side": "receipt",
+     "line": "employer_hi",
+     "national_bn": 175.011,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_medicare_supplementary_premiums": {
+     "side": "receipt",
+     "line": "medicare_supplementary_premiums",
+     "national_bn": 145.117,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_domestic_social_contributions": {
+     "side": "receipt",
+     "line": "other_domestic_social_contributions",
+     "national_bn": 93.35,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_general_sales_tax": {
+     "side": "receipt",
+     "line": "general_sales_tax",
+     "national_bn": 602.43,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_modeled_owner_property": {
+     "side": "receipt",
+     "line": "modeled_owner_property",
+     "national_bn": 394.862477949,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_excise_selective_sales": {
+     "side": "receipt",
+     "line": "excise_selective_sales",
+     "national_bn": 371.262,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_customs_duties": {
+     "side": "receipt",
+     "line": "customs_duties",
+     "national_bn": 83.587,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_personal_current_transfers": {
+     "side": "receipt",
+     "line": "personal_current_transfers",
+     "national_bn": 141.065,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_enterprise_surplus": {
+     "side": "receipt",
+     "line": "enterprise_surplus",
+     "national_bn": -7.161999999999999,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_housing_enterprise_surplus": {
+     "side": "receipt",
+     "line": "housing_enterprise_surplus",
+     "national_bn": -45.555811000000006,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_tenant_occupied_property": {
+     "side": "receipt",
+     "line": "tenant_occupied_property",
+     "national_bn": 83.840225,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_general_public_services": {
+     "side": "spending",
+     "line": "general_public_services",
+     "national_bn": 401.608,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_public_order_safety": {
+     "side": "spending",
+     "line": "public_order_safety",
+     "national_bn": 519.153,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_economic_affairs_services": {
+     "side": "spending",
+     "line": "economic_affairs_services",
+     "national_bn": 451.935,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_housing_community_services": {
+     "side": "spending",
+     "line": "housing_community_services",
+     "national_bn": 14.537,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_health_services": {
+     "side": "spending",
+     "line": "health_services",
+     "national_bn": 306.539,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_recreation_culture": {
+     "side": "spending",
+     "line": "recreation_culture",
+     "national_bn": 54.331,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_education_services": {
+     "side": "spending",
+     "line": "education_services",
+     "national_bn": 1221.159,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_income_security_services": {
+     "side": "spending",
+     "line": "income_security_services",
+     "national_bn": 167.818,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_social_security_benefits": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v5_social_security_accrual": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "accrual",
+     "contributions": "oasdi"
+    },
+    "v5_social_security_cash": {
+     "side": "spending",
+     "line": "social_security",
+     "national_bn": 1447.965,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v5_medicare_benefits": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v5_medicare_part_a_accrual": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "accrual",
+     "contributions": "hi"
+    },
+    "v5_medicare_cash": {
+     "side": "spending",
+     "line": "medicare",
+     "national_bn": 1102.358,
+     "parent": null,
+     "rule": "benefits"
+    },
+    "v5_unemployment": {
+     "side": "spending",
+     "line": "unemployment",
+     "national_bn": 36.468,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_railroad_retirement": {
+     "side": "spending",
+     "line": "railroad_retirement",
+     "national_bn": 14.493,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_pension_guaranty": {
+     "side": "spending",
+     "line": "pension_guaranty",
+     "national_bn": 0.771,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_veterans_life_insurance": {
+     "side": "spending",
+     "line": "veterans_life_insurance",
+     "national_bn": 0.449,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_workers_compensation": {
+     "side": "spending",
+     "line": "workers_compensation",
+     "national_bn": 11.923,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_military_medical": {
+     "side": "spending",
+     "line": "military_medical",
+     "national_bn": 7.157,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_veterans_pension_disability": {
+     "side": "spending",
+     "line": "veterans_pension_disability",
+     "national_bn": 180.525,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_veterans_readjustment": {
+     "side": "spending",
+     "line": "veterans_readjustment",
+     "national_bn": 11.391,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_veterans_other": {
+     "side": "spending",
+     "line": "veterans_other",
+     "national_bn": 37.526,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_snap": {
+     "side": "spending",
+     "line": "snap",
+     "national_bn": 97.391,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_black_lung": {
+     "side": "spending",
+     "line": "black_lung",
+     "national_bn": 0.173,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_ssi": {
+     "side": "spending",
+     "line": "ssi",
+     "national_bn": 65.134,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_refundable_tax_credits": {
+     "side": "spending",
+     "line": "refundable_tax_credits",
+     "national_bn": 228.809,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_federal_benefits": {
+     "side": "spending",
+     "line": "other_federal_benefits",
+     "national_bn": 86.425,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_temporary_disability": {
+     "side": "spending",
+     "line": "temporary_disability",
+     "national_bn": 13.138,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_medicaid_and_chip_other_medical": {
+     "side": "spending",
+     "line": "medicaid_and_chip_other_medical",
+     "national_bn": 954.2,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_family_and_general_assistance": {
+     "side": "spending",
+     "line": "family_and_general_assistance",
+     "national_bn": 63.065,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_energy_assistance": {
+     "side": "spending",
+     "line": "energy_assistance",
+     "national_bn": 5.218,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_state_welfare": {
+     "side": "spending",
+     "line": "other_state_welfare",
+     "national_bn": 22.385,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_education_benefits": {
+     "side": "spending",
+     "line": "education_benefits",
+     "national_bn": 64.479,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_employment_training": {
+     "side": "spending",
+     "line": "employment_training",
+     "national_bn": 1.377,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_other_state_benefits": {
+     "side": "spending",
+     "line": "other_state_benefits",
+     "national_bn": 2.875,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_housing_subsidies": {
+     "side": "spending",
+     "line": "housing_subsidies",
+     "national_bn": 55.003189000000006,
+     "parent": null,
+     "rule": "line"
+    },
+    "v5_school_reprice": {
+     "side": "spending",
+     "line": "school_reprice",
+     "national_bn": 0,
+     "parent": "education_services",
+     "rule": "line"
+    },
+    "v5_college_rekey": {
+     "side": "spending",
+     "line": "college_rekey",
+     "national_bn": 0,
+     "parent": "education_services",
+     "rule": "line"
+    },
+    "v5_lane_constants": {
+     "side": "spending",
+     "line": "lane_constants",
+     "national_bn": 0,
+     "parent": null,
+     "rule": "per_person"
+    },
+    "v5_roads_vmt_sl": {
+     "side": "spending",
+     "line": "roads_vmt_sl",
+     "national_bn": 0,
+     "parent": "economic_affairs_services",
+     "rule": "line"
+    },
+    "v5_roads_vmt_fed": {
+     "side": "spending",
+     "line": "roads_vmt_fed",
+     "national_bn": 0,
+     "parent": "economic_affairs_services",
+     "rule": "line"
+    },
+    "v5_state_price_public_order_safety": {
+     "side": "spending",
+     "line": "state_price_public_order_safety",
+     "national_bn": 0,
+     "parent": "public_order_safety",
+     "rule": "line"
+    },
+    "v5_state_price_health_services": {
+     "side": "spending",
+     "line": "state_price_health_services",
+     "national_bn": 0,
+     "parent": "health_services",
+     "rule": "line"
+    },
+    "v5_state_price_recreation_culture": {
+     "side": "spending",
+     "line": "state_price_recreation_culture",
+     "national_bn": 0,
+     "parent": "recreation_culture",
+     "rule": "line"
+    },
+    "v5_production_private": {
+     "side": "production",
+     "line": "private_wtp_bn",
+     "national_bn": null,
+     "parent": null,
+     "rule": "production"
+    },
+    "v5_production_receipts": {
+     "side": "production",
+     "line": "induced_receipts_bn",
+     "national_bn": null,
+     "parent": null,
+     "rule": "production"
+    }
+   }
+  }
+ },
+ "change_rule": "September 27's four additions from its package at the same specifications; the capital return at the case's values; the change from September 27 line by line, v4_<line> = -(effect - September 27's effect), social security and Medicare split into the accrual the pension switch charges and the benefits it no longer charges, and the production grid's change in P and F",
+ "pension_accrual": {
+  "ratio_net": 0.9736673650311839,
+  "part_a_accrual_bn": 41.13712783048602,
+  "part_a_share": 0.3751126329068301,
+  "se_oasdi_share": 0.8034959757706692,
+  "oasdi_lines": [
+   "employee_oasdi",
+   "employer_oasdi"
+  ],
+  "se_line": "self_employment_oasdi_hi"
+ },
+ "v5_change_rule": "every September 29 part from September 29's package at the same specifications, and the capital return at September 29's values (capital_bn); the lineage's change from September 29 line by line, v5_<line> = -(effect - September 29's effect), social security and Medicare split into the accrual the set charges, the benefits the cash set charges and minus the benefits the set does not charge, the production grid's change in P and F, and the capital return's change by component (v5_capital_bn)",
+ "lineage": {
+  "arm": "b",
+  "generation": "G3plus",
+  "counting": "whole",
+  "added": 3039719.593185237,
+  "at_g3_rate": 1944891.7263696424,
+  "later_losses": 1094827.8668155947,
+  "lineage_population": 42752212.92438524,
+  "account_union": 39712493.3312,
+  "identified_g3plus": 14342574.606276
+ },
+ "v4_enterprise_surplus_national_move_bn": 40.298
+}

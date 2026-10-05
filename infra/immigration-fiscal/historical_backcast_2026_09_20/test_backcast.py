@@ -1,7 +1,9 @@
 """Permanent gates: `backcast.py --case sept24`, `--case sept26` and `--case sept26_schools` rebuild the
 files committed for those cases byte for byte, and the default run (the main case of 2026-09-27) rebuilds
 the derived/ files, its case_components.cjs input included. The main case adopted on 2026-09-29 (`--case sept29`)
-writes derived/sept29/ and derived/case_components_sept29.json beside them; its run rebuilds both.
+writes derived/sept29/ and derived/case_components_sept29.json beside them; its run rebuilds both. So does the main
+case adopted on 2026-10-05 (`--case oct05`, derived/oct05/), whose third-plus path input (inputs/cps_g3plus_path.csv)
+rebuilds from the pooled CPS extract when that ignored file is on disk.
 
 The files of each earlier case are the ones committed at its commit below, the last commit whose derived/
 held that run. debt_legacy.py reads each case's concept columns, so they must keep their values.
@@ -46,7 +48,7 @@ def test_old_case_rebuilds_committed_files(tmp_path, case, commit):
     assert not any((tmp_path / n).exists() for n in PARTS)
 
 
-@pytest.mark.parametrize("case", ["sept27", "sept29"])
+@pytest.mark.parametrize("case", ["sept27", "sept29", "oct05"])
 def test_case_components_rebuild(tmp_path, case):
     run = subprocess.run(["node", str(HERE / "case_components.cjs"), "--case", case, "--out-dir", str(tmp_path)], cwd=ROOT,
                          capture_output=True, text=True)
@@ -61,8 +63,23 @@ def test_default_rebuilds_derived(tmp_path):
     assert not differ, differ
 
 
-def test_sept29_rebuilds_its_directory(tmp_path):
-    rebuild(tmp_path, "--case", "sept29")
-    assert sorted(p.name for p in tmp_path.iterdir()) == sorted(p.name for p in (HERE / "derived" / "sept29").iterdir())
-    differ = [n for n in DEFAULT_NAMES if (tmp_path / n).read_bytes() != (HERE / "derived" / "sept29" / n).read_bytes()]
+@pytest.mark.parametrize("case", ["sept29", "oct05"])
+def test_case_rebuilds_its_directory(tmp_path, case):
+    rebuild(tmp_path, "--case", case)
+    assert sorted(p.name for p in tmp_path.iterdir()) == sorted(p.name for p in (HERE / "derived" / case).iterdir())
+    differ = [n for n in DEFAULT_NAMES if (tmp_path / n).read_bytes() != (HERE / "derived" / case / n).read_bytes()]
     assert not differ, differ
+
+
+@pytest.mark.skipif(not (HERE.parent / "g3_identity_pooled_2026_10_05/_cache/asec_pooled.csv.gz").exists(),
+                    reason="the pooled CPS ASEC extract (ignored) is not on disk")
+def test_g3plus_path_rebuilds(tmp_path):
+    path = HERE / "inputs/cps_g3plus_path.csv"
+    kept = path.read_bytes()
+    try:
+        run = subprocess.run([sys.executable, str(HERE / "cps_g3plus_path.py")], cwd=ROOT,
+                             env={**os.environ, "OPENBLAS_NUM_THREADS": "1"}, capture_output=True, text=True)
+        assert run.returncode == 0, run.stdout[-2000:] + run.stderr[-2000:]
+        assert path.read_bytes() == kept
+    finally:
+        path.write_bytes(kept)
