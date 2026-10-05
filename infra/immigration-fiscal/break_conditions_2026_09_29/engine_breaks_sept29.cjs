@@ -26,14 +26,37 @@
  * Additive items are figures priced beside the account, not engine runs; they are marked "additive" in the outputs.
  * Run from anywhere: node engine_breaks_sept29.cjs  ->  derived/c1_arms_sept29.csv, c1_min_cuts_sept29.csv,
  * c2_tally_sept29.csv, c2_break_even_sept29.csv, c3_correction_split_sept29.csv, c6_generation_break_even_sept29.csv
+ *
+ * --case oct05 runs the same on main case v5 (main_case_2026_10_05, adopted 2026-10-05: v4 plus the lineage's 3.04M
+ * added people, counted whole) and writes the same files with the suffix _oct05. Its package has v4's API; a pension
+ * switch other than the case's is its cash set's package (P.CASH), so the cash arms run there. The lineage's edits
+ * (meta.lineage.edits, after v4's) are one more item held in every C3 run, and the pension switch is rebuilt on the
+ * union's part only (the lineage keeps its own accrual, each part at its own ratio). C1 adds the lineage's alternatives
+ * (main_case_lineage_2026_10_05: arms a and c, C3 +- 1 SE, the ancestry-share count, the replacement child), each the
+ * change of its band from the central on the set (or the cash set with cash pensions), added to the engine part
+ * [APPROX: additive], at most one per combination. The scheduled-benefits item raises the lineage's accrual in the
+ * union's proportion [ASSUMPTION]. C6 reads the generation account's oct05 files (G3+ carries the lineage).
  */
 "use strict";
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const ROOT = path.join(__dirname, "..");
-const LANE = "main_case_2026_09_29";
+const CASES = {
+  sept29: { lane: "main_case_2026_09_29", band: [371.4146, 434.8410], cash: "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json" },
+  oct05: { lane: "main_case_2026_10_05", band: [390.2940, 461.2431], cash: "main_case_2026_10_05/derived/corrections_cash.json" },
+};
+const CASE_ARG = process.argv.indexOf("--case");
+const CASE = CASE_ARG > 0 ? process.argv[CASE_ARG + 1] : "sept29";
+if (!CASES[CASE]) throw new Error(`[BLOCKED] --case ${CASE}: not one of ${Object.keys(CASES).join(", ")}`);
+const LANE = CASES[CASE].lane;
 const P = require(path.join(ROOT, LANE, "package.cjs"));
+const LIN = CASE === "sept29" ? null : P.correctionsPayload().meta.lineage;   // oct05: the lineage's meta
+if (CASE !== "sept29" && !(LIN && P.CASH)) throw new Error(`[BLOCKED] ${LANE}: no lineage or no cash package`);
+const PC_ = LIN ? P.CASH : null;             // the cash set's package where the case's package runs one pension switch only
+// An option set's band: a pension switch other than the case's runs on the cash set's package (oct05).
+const centralOf = (o) => (PC_ && o.pension4 === "cash"
+  ? PC_.central(Object.fromEntries(Object.entries(o).filter(([k]) => k !== "pension4"))) : P.central(o));
 const S24 = require(path.join(ROOT, "main_case_2026_09_24", "sign_reversal.cjs"));
 const { Engine, MODEL, RATES, ENTERPRISES, ENTERPRISE_RECEIPT, RENTAL, MAIN_SPECS, readJson } = P;
 const REF = MODEL.receipts.reference;
@@ -77,9 +100,10 @@ const sha256 = (rel) => crypto.createHash("sha256").update(fs.readFileSync(path.
 const ENDS = [["low_end_48", 48], ["high_end_11", 11]];
 
 // ------------------------------------------------------------------------------------------------ C1
-console.log("[C1 the account's magnitude, sept29]");
+console.log(`[C1 the account's magnitude, ${CASE}]`);
 const MAIN = P.central({});
-gate("the adopted case reproduces ($371.4146–434.8410bn)", near(MAIN[0], 371.4146, 1e-4) && near(MAIN[1], 434.8410, 1e-4),
+const [B0, B1] = CASES[CASE].band;
+gate(`the adopted case reproduces ($${B0.toFixed(4)}–${B1.toFixed(4)}bn)`, near(MAIN[0], B0, 1e-4) && near(MAIN[1], B1, 1e-4),
   `${MAIN[0].toFixed(4)}–${MAIN[1].toFixed(4)}`);
 const M = mid(MAIN);
 const LOW_CUT = 0.75 * M, HIGH_CUT = 1.25 * M;
@@ -128,12 +152,35 @@ const oasdiOf = (m, alloc) => {
   return sum(ACC.oasdi_lines.map(cell)) + ACC.se_oasdi_share * cell(ACC.se_line);
 };
 const PA_SCHED = PEN.scheduled_arm.decomposition.low.part_a_accrual_bn;
-const schedAdd = (m) => ENDS.map(([, i]) => (ACC.scheduled_benefits_arm.ratio_net - ACC.ratio_net) * oasdiOf(m, MAIN_SPECS[i].allocation)
-  + (PA_SCHED - ACC.part_a_accrual_bn));
+// oct05: the lineage's cell edits (after v4's, before row 8's move) in the set and in the cash set. Its parts carry their
+// own accrual per tax dollar, so its Social Security is linSS (k x its OASDI receipts, k its own) and its Part A accrual
+// its set Medicare edit less (1 - part_a_share) of its cash one.
+const linEdits = (p) => (LIN ? p.edits.slice(p.meta.lineage.edits.first, p.meta.lineage.edits.row8_edit_index) : []);
+const LIN_SET = linEdits(payload), LIN_CASH = LIN ? linEdits(PC_.correctionsPayload()) : [];
+const prefKeyOf = (id) => MODEL.spending.lines.find((l) => l.id === id).preferred_key;
+const linCell = (edits, side, line, a) => sum(edits.filter((e) => e.side === side && e.line === line && !("national_bn" in e)
+  && (side === "receipt" ? e.scenario === REF : e.key === prefKeyOf(line))).map((e) => e.by[a]));
+const linOasdi = (a) => sum(ACC.oasdi_lines.map((l) => linCell(LIN_SET, "receipt", l, a))) + ACC.se_oasdi_share * linCell(LIN_SET, "receipt", ACC.se_line, a);
+const linSS = (a) => linCell(LIN_SET, "spending", "social_security", a);
+const linPA = (a) => linCell(LIN_SET, "spending", "medicare", a) - (1 - ACC.part_a_share) * linCell(LIN_CASH, "spending", "medicare", a);
+if (LIN) {
+  gate("the lineage's accrual is its own ratio of its OASDI receipts (0.9-1) and its Part A accrual is positive", P.ALLOCS.every((a) =>
+    linSS(a) / linOasdi(a) > 0.9 && linSS(a) / linOasdi(a) < 1 && linPA(a) > 0), P.ALLOCS.map((a) =>
+    `${a} k ${(linSS(a) / linOasdi(a)).toFixed(4)}, Part A ${linPA(a).toFixed(4)}`).join("; "));
+}
+// At scheduled benefits: the union's rule on the union's OASDI receipts; the lineage's accrual (on a model that carries
+// it) rises in the union's proportion [ASSUMPTION: its parts' ratios move as the union's].
+const schedAdd = (m, lineage = Boolean(LIN)) => ENDS.map(([, i]) => {
+  const a = MAIN_SPECS[i].allocation;
+  if (!lineage) return (ACC.scheduled_benefits_arm.ratio_net - ACC.ratio_net) * oasdiOf(m, a) + (PA_SCHED - ACC.part_a_accrual_bn);
+  return (ACC.scheduled_benefits_arm.ratio_net - ACC.ratio_net) * (oasdiOf(m, a) - linOasdi(a))
+    + (ACC.scheduled_benefits_arm.ratio_net / ACC.ratio_net - 1) * linSS(a)
+    + (PA_SCHED - ACC.part_a_accrual_bn) * (1 + linPA(a) / ACC.part_a_accrual_bn);
+});
 {
   // Positive control: the same rule on the September 27 payload's receipts gives the pension lane's scheduled less payable.
   const m27 = Engine.applyCorrections(MODEL, readJson("main_case_long_run_2026_09_27/derived/corrections.json"));
-  const got = schedAdd(m27);
+  const got = schedAdd(m27, false);
   const lane = [PEN.scheduled_arm.case_on_accrual_net_bn.low - PEN.case_on_accrual_net_bn.low,
     PEN.scheduled_arm.case_on_accrual_net_bn.high - PEN.case_on_accrual_net_bn.high];
   gate("the scheduled-benefits rule on the September 27 receipts reproduces the pension lane's scheduled less payable (1e-6)",
@@ -141,14 +188,15 @@ const schedAdd = (m) => ENDS.map(([, i]) => (ACC.scheduled_benefits_arm.ratio_ne
 }
 const ADD = {
   care_low: { dir: "down", by: [+CARE.range_dev_low_end_lo, +CARE.range_dev_high_end_lo], src: "components.csv care: low tail of the care and household-services envelope" },
-  pension_scheduled: { dir: "up", by: schedAdd(m29), src: "decision 2026-09-29 alternative 3: the accrual at scheduled benefits (net ratio 1.2406 for 0.9737 on the case's OASDI receipts; Part A 45.35 for 41.14), beside the account" },
+  pension_scheduled: { dir: "up", by: schedAdd(m29), src: "decision 2026-09-29 alternative 3: the accrual at scheduled benefits (net ratio 1.2406 for 0.9737 on the case's OASDI receipts; Part A 45.35 for 41.14), beside the account"
+    + (LIN ? "; the lineage's own accrual raised in the same proportion" : "") },
   defense_gdp_share: { dir: "up", by: [60, 60], src: "groups.py conventions (ladder 253 row): defense bounded by share of GDP, about $60bn (47–72)" },
   medical_mcbs65: { dir: "up", by: [+MED.range_dev_low_end_hi, +MED.range_dev_high_end_hi], src: "components.csv medical: the MCBS 65+ bound" },
 };
 gate("every additive item is a finite pair", Object.values(ADD).every((a) => a.by.length === 2 && a.by.every(Number.isFinite)),
   Object.entries(ADD).map(([id, a]) => `${id} ${a.by.map(f4).join(" / ")}`).join("; "));
 for (const [id, a] of Object.entries(Object.assign({}, ARMS, LISTED))) {
-  a.band = P.central(a.o);
+  a.band = centralOf(a.o);
   if (a.want) gate(`${id} reproduces its published row (0.01)`, near(a.band[0], a.want[0], 0.01) && near(a.band[1], a.want[1], 0.01),
     `${a.band[0].toFixed(2)}–${a.band[1].toFixed(2)}`);
 }
@@ -157,7 +205,9 @@ for (const [id, a] of Object.entries(Object.assign({}, ARMS, LISTED))) {
 // resources; beside it, item 5 kept and the cash set.
 const FIRST = { long_run: false, rental: 0, capital: false, enterprise_receipt: 0, school_rule: "one_year", roads: "resources" };
 const s27 = readJson("main_case_long_run_2026_09_27/derived/summary.json");
-const fyOff = P.central(Object.assign({}, P.V4PKG.OFF, FIRST));
+// The rule's positive control runs on the September 29 package (oct05: its base, the lineage off).
+const PB = P.BASE || P;
+const fyOff = PB.central(Object.assign({}, PB.V4PKG.OFF, FIRST));
 gate("the first-year rule with every v4 item off gives the September 27 lane's first_year_response (1e-9)",
   near(fyOff[0], s27.first_year_response[0], 1e-9) && near(fyOff[1], s27.first_year_response[1], 1e-9), `${fyOff[0].toFixed(4)}–${fyOff[1].toFixed(4)}`);
 const HORIZON = {
@@ -165,7 +215,44 @@ const HORIZON = {
   first_year_horizon_property_long_run: { o: FIRST, src: "the same, item 5's long-run property response kept" },
   first_year_horizon_cash: { o: Object.assign({}, FIRST, { property: "none", pension4: "cash" }), src: "the same, pensions on cash" },
 };
-for (const h of Object.values(HORIZON)) h.band = P.central(h.o);
+for (const h of Object.values(HORIZON)) h.band = centralOf(h.o);
+// oct05: the lineage's alternatives (main_case_lineage_2026_10_05), each the change of its band from the central arm's,
+// on the set or, with cash pensions, on the cash set: v5_bands.csv's arms a and c and replacement rows, the C3 line at
+// C3 -+ 1 SE (v5_summary.json), and the ancestry-share count of the whole lineage (v5_summary.json fractional) at the
+// stated bound's low end, searched, and at its high end and the population lane's convention, listed.
+const LINEAGE = {};
+const LINEAGE_LISTED = {};
+if (LIN) {
+  const LL = LIN.lane;
+  const vb = readCsv(`${LL}/derived/v5_bands.csv`).filter((r) => r.arm === LIN.arm || r.arm === "a" || r.arm === "c");
+  const v5s = readJson(`${LL}/derived/v5_summary.json`);
+  const bandOf = (set, arm, variant) => { const r = vb.find((x) => x.set === set && x.arm === arm && x.variant === variant); return [+r.low_bn, +r.high_bn]; };
+  const C0 = { set: bandOf("set", LIN.arm, "central"), cash: bandOf("cash", LIN.arm, "central") };
+  const CASH_BAND = bandRow("cash_set");
+  gate("the lineage lane's central arm is the case (5e-6, its six decimals) and its cash set (5e-5, the bands' four)",
+    C0.set.every((x, j) => near(x, MAIN[j], 5e-6)) && C0.cash.every((x, j) => near(x, CASH_BAND[j], 5e-5)),
+    `${C0.set.map(f4).join("–")}; ${C0.cash.map(f4).join("–")}`);
+  const c3At = (set, c3) => ["low", "high"].map((e) => { const l = v5s.sets[set].arms[LIN.arm].c3_line[e]; return l.intercept_bn + l.slope_bn * c3; });
+  gate("the C3 line gives the central arm at C3 on both sets (1e-6)", ["set", "cash"].every((s) => c3At(s, LIN.c3.value).every((x, j) => near(x, C0[s][j], 1e-6))));
+  const frac = (set, scenario) => { const r = v5s.fractional.rows.find((x) => x.set === set && x.arm === LIN.arm && x.scenario === scenario); return [r.low_bn, r.high_bn]; };
+  const delta = (f) => Object.fromEntries(["set", "cash"].map((s) => [s, f(s).map((x, j) => x - C0[s][j])]));
+  const C3V = LIN.c3.value, C3SE = LIN.c3.se;
+  Object.assign(LINEAGE, {
+    lineage_arm_a: { dir: "down", by: delta((s) => bandOf(s, "a", "central")), src: `${LL} v5_bands.csv: arm a, the smaller count (1.81M added)` },
+    lineage_c3_plus_1se: { dir: "down", by: delta((s) => c3At(s, C3V + C3SE)), src: `${LL} v5_summary.json c3_line: C3 ${C3V} + 1 SE (${C3SE})` },
+    ancestry_share_low: { dir: "down", by: delta((s) => frac(s, "g4_at_nothing")), src: `[FRAMING-SENSITIVE] ${LL} v5_summary.json fractional: the whole lineage counted by ancestry share, the stated bound's low end (G4+ at nothing)` },
+    ancestry_share_convention: { dir: "down", by: delta((s) => frac(s, "convention")), src: `[FRAMING-SENSITIVE] ${LL} v5_summary.json fractional: the same count, every third-plus member at the population lane's convention (0.6156), inside the bound` },
+    ancestry_share_high: { dir: "down", by: delta((s) => frac(s, "g4_at_bound")), src: `[FRAMING-SENSITIVE] ${LL} v5_summary.json fractional: the same count, the stated bound's high end (G4+ at its measured high bound)` },
+    replacement_r1: { dir: "down", by: delta((s) => bandOf(s, LIN.arm, "replacement_r1")), src: `[FRAMING-SENSITIVE] ${LL} v5_bands.csv: net of a native parent's replacement child, r = 1` },
+    lineage_arm_c: { dir: "up", by: delta((s) => bandOf(s, "c", "central")), src: `${LL} v5_bands.csv: arm c, the larger count (4.27M added)` },
+    lineage_c3_minus_1se: { dir: "up", by: delta((s) => c3At(s, C3V - C3SE)), src: `${LL} v5_summary.json c3_line: C3 ${C3V} - 1 SE (${C3SE})` },
+  });
+  Object.assign(LINEAGE_LISTED, {
+    replacement_r05: { dir: "down", by: delta((s) => bandOf(s, LIN.arm, "replacement_r0.5")), src: `[FRAMING-SENSITIVE] ${LL} v5_bands.csv: replacement child, r = 0.5; dominated by replacement_r1` },
+  });
+  gate("every lineage alternative is a finite pair on both sets, in its direction at the midpoint", Object.values(Object.assign({}, LINEAGE, LINEAGE_LISTED))
+    .every((x) => ["set", "cash"].every((s) => x.by[s].every(Number.isFinite) && (x.dir === "down" ? mid(x.by[s]) < 0 : mid(x.by[s]) > 0))));
+}
 
 const armRows = [["arm", "direction", "kind", "cost_low_bn", "cost_high_bn", "midpoint_bn", "move_pct_of_midpoint", "source"]];
 armRows.push(["adopted", "", "engine", MAIN[0], MAIN[1], M, 0, `${LANE} summary.json`]);
@@ -179,27 +266,36 @@ for (const [id, a] of Object.entries(ADD)) {
   armRows.push([id, a.dir, "additive", b[0], b[1], mid(b), 100 * (mid(b) / M - 1), `"${a.src}"`]);
 }
 for (const [id, h] of Object.entries(HORIZON)) armRows.push([id, "horizon", "engine", h.band[0], h.band[1], mid(h.band), 100 * (mid(h.band) / M - 1), `"${h.src}"`]);
-outputs["c1_arms_sept29.csv"] = csvText(armRows);
+for (const [id, x] of Object.entries(Object.assign({}, LINEAGE, LINEAGE_LISTED))) {
+  const b = [MAIN[0] + x.by.set[0], MAIN[1] + x.by.set[1]];
+  armRows.push([id, x.dir, id in LINEAGE_LISTED ? "lineage (listed)" : "lineage", b[0], b[1], mid(b), 100 * (mid(b) / M - 1), `"${x.src}"`]);
+}
+outputs[`c1_arms_${CASE}.csv`] = csvText(armRows);
 
 // Every subset of one direction's elements; the engine part is one joint run (cached by its arms), the additive part is
-// added.
+// added, and a lineage alternative (oct05; at most one per subset) adds its change on the set or, with cash pensions, on
+// the cash set.
 const joint = new Map();
 function subsetBand(ids) {
   const o = {};
   const engineIds = ids.filter((id) => ARMS[id]);
   for (const id of engineIds) Object.assign(o, ARMS[id].o);
   const key = engineIds.join("+");
-  if (!joint.has(key)) joint.set(key, P.central(o));
+  if (!joint.has(key)) joint.set(key, centralOf(o));
   const b = joint.get(key).slice();
   for (const id of ids) if (ADD[id]) { b[0] += ADD[id].by[0]; b[1] += ADD[id].by[1]; }
+  const which = o.pension4 === "cash" ? "cash" : "set";
+  for (const id of ids) if (LINEAGE[id]) { b[0] += LINEAGE[id].by[which][0]; b[1] += LINEAGE[id].by[which][1]; }
   return b;
 }
 const cutRows = [["direction", "set", "size", "cost_low_bn", "cost_high_bn", "midpoint_bn", "move_pct_of_midpoint", "minimal"]];
 for (const dir of ["down", "up"]) {
-  const ids = Object.keys(ARMS).filter((k) => ARMS[k].dir === dir).concat(Object.keys(ADD).filter((k) => ADD[k].dir === dir));
+  const lin = Object.keys(LINEAGE).filter((k) => LINEAGE[k].dir === dir);
+  const ids = Object.keys(ARMS).filter((k) => ARMS[k].dir === dir).concat(Object.keys(ADD).filter((k) => ADD[k].dir === dir)).concat(lin);
   const breaks = [];
   for (let mask = 1; mask < 1 << ids.length; mask += 1) {
     const set = ids.filter((_, i) => mask & (1 << i));
+    if (set.filter((id) => LINEAGE[id]).length > 1) continue;
     const b = subsetBand(set);
     const crosses = dir === "down" ? mid(b) < LOW_CUT : mid(b) > HIGH_CUT;
     if (crosses) breaks.push({ set, b });
@@ -207,24 +303,33 @@ for (const dir of ["down", "up"]) {
   const minimal = breaks.filter((x) => !breaks.some((y) => y !== x && y.set.length < x.set.length && y.set.every((s) => x.set.includes(s))));
   minimal.sort((x, y) => x.set.length - y.set.length || x.set.join("+").localeCompare(y.set.join("+")));
   for (const x of minimal) cutRows.push([dir, x.set.join("+"), x.set.length, x.b[0], x.b[1], mid(x.b), 100 * (mid(x.b) / M - 1), "yes"]);
-  const all = subsetBand(ids);
-  cutRows.push([dir, "ALL:" + ids.join("+"), ids.length, all[0], all[1], mid(all), 100 * (mid(all) / M - 1), "stack"]);
+  // The stack: every engine and additive alternative; then (oct05) with the lineage alternative that moves the set most.
+  const pick = lin.length ? [lin.reduce((p, q) => (Math.abs(mid(LINEAGE[q].by.set)) > Math.abs(mid(LINEAGE[p].by.set)) ? q : p))] : [];
+  const base = ids.filter((id) => !LINEAGE[id]);
+  for (const stack of pick.length ? [base, base.concat(pick)] : [base]) {
+    const all = subsetBand(stack);
+    cutRows.push([dir, "ALL:" + stack.join("+"), stack.length, all[0], all[1], mid(all), 100 * (mid(all) / M - 1), "stack"]);
+  }
 }
-outputs["c1_min_cuts_sept29.csv"] = csvText(cutRows);
+outputs[`c1_min_cuts_${CASE}.csv`] = csvText(cutRows);
 console.log(`  thresholds: midpoint ${M.toFixed(2)}, a quarter down ${LOW_CUT.toFixed(2)}, up ${HIGH_CUT.toFixed(2)}`);
 
 // ------------------------------------------------------------------------------------------------ C2 and C3
-console.log("[C2 taxes against benefits; C3 corrections by side, sept29]");
+console.log(`[C2 taxes against benefits; C3 corrections by side, ${CASE}]`);
 const p27 = readJson("main_case_long_run_2026_09_27/derived/corrections.json");
 const N27 = p27.edits.length;
 gate(`v4's payload opens with the September 27 payload's ${N27} edits, unchanged`,
   payload.edits.slice(0, N27).every((e, k) => JSON.stringify(e) === JSON.stringify(p27.edits[k])), `${payload.edits.length} edits in all`);
-const DATASET = payload.edits.slice(0, N27), TAIL = payload.edits.slice(N27);
+// oct05: the lineage's edits (its cells, then row 8's move) close the payload and are held in every run, after v4's items.
+const LIN_FIRST = LIN ? LIN.edits.first : payload.edits.length;
+if (LIN) gate("the lineage's edits close the payload, row 8's move last", LIN.edits.first + LIN.edits.count === payload.edits.length
+  && LIN.edits.row8_edit_index === payload.edits.length - 1);
+const DATASET = payload.edits.slice(0, N27), TAIL = payload.edits.slice(N27, LIN_FIRST), LINT = payload.edits.slice(LIN_FIRST);
 gate("the dataset corrections have only receipt and spending edits", DATASET.every((e) => (e.side === "receipt" || e.side === "spending") && e.by));
 // v4's items with a subset of the dataset corrections, in the payload's order (the tail's national-scale edits scale the
 // dataset edits on their lines, as in the case).
 const withDataset = (keep) => Engine.applyCorrections(MODEL, { lines: payload.lines, receipt_lines: payload.receipt_lines,
-  production: payload.production, edits: DATASET.filter(keep).concat(TAIL), meta: payload.meta });
+  production: payload.production, edits: DATASET.filter(keep).concat(TAIL).concat(LINT), meta: payload.meta });
 const mBase = withDataset(() => false), mRec = withDataset((e) => e.side === "receipt"), mSp = withDataset((e) => e.side === "spending");
 const mAll = withDataset(() => true);
 gate("all the dataset corrections with v4's items is the case at both ends (1e-9)",
@@ -242,10 +347,17 @@ const prefKey = (id) => MODEL.spending.lines.find((l) => l.id === id).preferred_
 gate("the tail's pension switch is one Social Security and one Medicare edit, each on the line's preferred key",
   TAIL_SS.length === 1 && TAIL_MED.length === 1 && TAIL_SS[0].key === prefKey("social_security") && TAIL_MED[0].key === prefKey("medicare"));
 const benefit = (m, id, a) => { const l = m.spending.lines.find((x) => x.id === id); return l.keys[l.preferred_key][a].target_bn; };
+// oct05: the switch is rebuilt on the union's part; the lineage keeps its own accrual (its edits, held).
 function pensionRebuilt(m) {
   const by = (f) => Object.fromEntries(ALLOCS.map((a) => [a, f(a)]));
-  const ss = by((a) => ACC.ratio_net * oasdiOf(m, a) - benefit(m, "social_security", a));
+  const ss = by((a) => (LIN ? ACC.ratio_net * (oasdiOf(m, a) - linOasdi(a)) + linSS(a) : ACC.ratio_net * oasdiOf(m, a))
+    - benefit(m, "social_security", a));
   const med = by((a) => {
+    if (LIN) {
+      const own = linCell(LIN_SET, "spending", "medicare", a);
+      const preU = benefit(m, "medicare", a) - TAIL_MED[0].by[a] - own;
+      return (1 - ACC.part_a_share) * preU + ACC.part_a_accrual_bn + own - benefit(m, "medicare", a);
+    }
     const pre = benefit(m, "medicare", a) - TAIL_MED[0].by[a];
     return (1 - ACC.part_a_share) * pre + ACC.part_a_accrual_bn - benefit(m, "medicare", a);
   });
@@ -254,25 +366,56 @@ function pensionRebuilt(m) {
 }
 const R = { base: pensionRebuilt(mBase), rec: pensionRebuilt(mRec), sp: pensionRebuilt(mSp), all: pensionRebuilt(mAll) };
 gate("rebuilt on the full payload, the pension switch moves nothing (1e-9)", R.all.shift.every((x) => ALLOCS.every((a) => Math.abs(x[a]) < 1e-9)));
-const cashPayload = readJson("main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json");
-const PC = P.forPayload(cashPayload);
+const cashPayload = readJson(CASES[CASE].cash);
+if (PC_) gate(`the cash package's payload is ${CASES[CASE].cash}`, JSON.stringify(PC_.correctionsPayload()) === JSON.stringify(cashPayload));
+const PC = PC_ || P.forPayload(cashPayload);
 const mCash = PC.payloadModel();
 const CASH = ENDS.map(([, i]) => PC.evaluateFull(mCash, PC.MAIN_SPECS[i]).cost_bn);
 gate("the cash payload is the cash set at both ends (main_case_bands.csv cash_set, 1e-4)", CASH.every((x, j) => near(x, bandRow("cash_set")[j], 1e-4)),
   `${CASH[0].toFixed(4)}–${CASH[1].toFixed(4)}`);
 // The tally at scheduled benefits moves by the scheduled rule on each model's own OASDI receipts.
+// oct05 adds the union alone at the case's responses (v4's payload with row 8's move): the case less it is the lineage's.
 const tallyRows = [["model", "end", "spec", "direct_receipts_bn", "household_transfers_bn", "tally_bn", "scheduled_move_bn", "tally_at_scheduled_bn"]];
-for (const [lab, pkg, m, accrual] of [["case_accrual", P, m29, true], ["cash_set", PC, mCash, false],
+const tallyModels = [["case_accrual", P, m29, true], ["cash_set", PC, mCash, false],
   ["v4_items_without_dataset_corrections", P, R.base.m, true], ["v4_items_without_dataset_corrections_increments_held", P, mBase, true],
-  ["uncorrected_no_v4_items", P, MODEL, false]]) {
-  const sched = accrual ? schedAdd(m) : null;
+  ["uncorrected_no_v4_items", P, MODEL, false]];
+if (LIN) {
+  const mU = Engine.applyCorrections(P.SEPT29.payloadModel(), { lines: [], receipt_lines: [], edits: [payload.edits[LIN.edits.row8_edit_index]] });
+  tallyModels.push(["union_at_case_responses", P, mU, "union"]);
+}
+for (const [lab, pkg, m, accrual] of tallyModels) {
+  const sched = accrual ? schedAdd(m, accrual === true && Boolean(LIN)) : null;
   ENDS.forEach(([end, i], j) => {
     const ev = pkg.evaluateFull(m, pkg.MAIN_SPECS[i]).evaluation;
     const rec = ev.classes.direct_receipts.responsive_bn, tr = ev.classes.household_transfer.responsive_bn;
     tallyRows.push([lab, end, i, rec, tr, rec - tr, accrual ? sched[j] : "", accrual ? rec - tr - sched[j] : ""]);
   });
 }
-outputs["c2_tally_sept29.csv"] = csvText(tallyRows);
+if (LIN) {
+  // The tally at the lineage lane's arms a, b and c from its per-line costs at the arm's responses and ends
+  // (lineage_lines.csv v5_bn: v4's line, the union's response move and the added people's parts), classed as the case's
+  // evaluation classes each line at that end. Arm b's must be the case's tally (1e-4: the file's six decimals).
+  const LLINES = readCsv(`${LIN.lane}/derived/lineage_lines.csv`).filter((r) => r.set === "set");
+  for (const arm of ["a", LIN.arm, "c"]) {
+    ENDS.forEach(([end, i], j) => {
+      const ev = P.evaluateFull(m29, MAIN_SPECS[i]).evaluation;
+      const direct = new Set(ev.receipts.filter((r) => r.group === "direct_receipts").map((r) => "receipt|" + r.id));
+      const transfer = new Set(ev.spending.filter((r) => r.response_class === "household_transfer").map((r) => "spending|" + r.id));
+      const lines = LLINES.filter((r) => r.arm === arm && r.end === ["low", "high"][j]);
+      if (!lines.length || lines.some((r) => +r.spec !== i)) throw new Error(`[BLOCKED] lineage_lines.csv: arm ${arm} at ${end} is not specification ${i}`);
+      const rec = -sum(lines.filter((r) => direct.has(r.item)).map((r) => +r.v5_bn));
+      const tr = sum(lines.filter((r) => transfer.has(r.item)).map((r) => +r.v5_bn));
+      if (arm === LIN.arm) {
+        const t = tallyRows.find((r) => r[0] === "case_accrual" && r[1] === end);
+        gate(`lineage_lines.csv's arm ${arm} gives the case's tally at ${end} (1e-4)`, near(rec, t[3], 1e-4) && near(tr, t[4], 1e-4),
+          `${f4(rec)} - ${f4(tr)} vs ${f4(t[3])} - ${f4(t[4])}`);
+      } else {
+        tallyRows.push([`lineage_arm_${arm}`, end, i, rec, tr, rec - tr, "", ""]);
+      }
+    });
+  }
+}
+outputs[`c2_tally_${CASE}.csv`] = csvText(tallyRows);
 
 // Clause 2: the service break-even, main_case_2026_09_24's definition inside a copy of main_case_2026_09_29/
 // sign_reversal.cjs's withCase (rental assistance at 1; the enterprise receipts at 1, or at s in the variant; every other
@@ -307,12 +450,12 @@ for (const [lab, pkg, m] of [["case_accrual", P, m29], ["cash_set", PC, mCash]])
     if (lab === "case_accrual") {
       const want = pubSR.find((r) => r.measure === `service_break_even_${a}${variant === "enterprises_at_s" ? "__enterprises_at_s" : ""}`);
       gate(`case break-even, ${a}, ${variant}, reproduces ${LANE} sign_reversal.csv (1e-4)`,
-        near(be[0], +want.sept29_low, 1e-4) && near(be[1], +want.sept29_high, 1e-4), `${(100 * be[0]).toFixed(2)}% to ${(100 * be[1]).toFixed(2)}%`);
+        near(be[0], +want[`${CASE}_low`], 1e-4) && near(be[1], +want[`${CASE}_high`], 1e-4), `${(100 * be[0]).toFixed(2)}% to ${(100 * be[1]).toFixed(2)}%`);
     }
     beRows.push([lab, variant, a, be[0], be[1]]);
   }
 }
-outputs["c2_break_even_sept29.csv"] = csvText(beRows);
+outputs[`c2_break_even_${CASE}.csv`] = csvText(beRows);
 
 // C3: the dataset corrections by side on v4, v4's items in every run: the pension switch rebuilt on each subset (the
 // reading the RESULT quotes), and beside it every tail increment held. The tax and spending side columns split by the
@@ -336,16 +479,16 @@ for (const [end, i] of ENDS) {
   }
 }
 splitRows.splice(1, splitRows.length - 1, ...splitRows.slice(1).sort((x, y) => (x[0] === y[0] ? 0 : x[0] === "pension_rebuilt" ? -1 : 1)));
-outputs["c3_correction_split_sept29.csv"] = csvText(splitRows);
+outputs[`c3_correction_split_${CASE}.csv`] = csvText(splitRows);
 
 // ------------------------------------------------------------------------------------------------ C6
-console.log("[C6 generations on the sept29 payloads]");
+console.log(`[C6 generations on the ${CASE} payloads]`);
 const GEN = "generation_account_2026_09_24/derived";
 const genRows = [["case", "convention", "generation", "cost_low_end_bn", "cost_high_end_bn", "break_even_personal_most", "break_even_personal_least",
   "break_even_shared_most", "break_even_shared_least"]];
 const genHashes = [["file", "sha256"]];
-for (const [lab, pkg, file, results] of [["case_accrual", P, "generation_corrections_sept29.json", "generation_results_sept29.csv"],
-  ["cash_set", PC, "generation_corrections_sept29_cash.json", "generation_results_sept29_cash.csv"]]) {
+for (const [lab, pkg, file, results] of [["case_accrual", P, `generation_corrections_${CASE}.json`, `generation_results_${CASE}.csv`],
+  ["cash_set", PC, `generation_corrections_${CASE}_cash.json`, `generation_results_${CASE}_cash.csv`]]) {
   genHashes.push([`${GEN}/${file}`, sha256(`${GEN}/${file}`)], [`${GEN}/${results}`, sha256(`${GEN}/${results}`)]);
   const gp = readJson(`${GEN}/${file}`).payloads;
   const res = readCsv(`${GEN}/${results}`);
@@ -369,8 +512,8 @@ for (const [lab, pkg, file, results] of [["case_accrual", P, "generation_correct
       `${costs.low.toFixed(4)} / ${costs.high.toFixed(4)}`);
   }
 }
-outputs["c6_generation_break_even_sept29.csv"] = csvText(genRows);
-outputs["c6_inputs_sept29.csv"] = genHashes.map((r) => r.join(",")).join("\n") + "\n";
+outputs[`c6_generation_break_even_${CASE}.csv`] = csvText(genRows);
+outputs[`c6_inputs_${CASE}.csv`] = genHashes.map((r) => r.join(",")).join("\n") + "\n";
 
 if (failures) {
   console.error(`[BLOCKED] ${failures} gate(s) failed; nothing written`);
@@ -379,5 +522,6 @@ if (failures) {
 fs.mkdirSync(OUT, { recursive: true });
 for (const [name, text] of Object.entries(outputs)) fs.writeFileSync(path.join(OUT, name), text);
 console.log("\n[written] " + Object.keys(outputs).join(", "));
-for (const name of ["c1_min_cuts_sept29.csv", "c2_tally_sept29.csv", "c2_break_even_sept29.csv", "c3_correction_split_sept29.csv",
-  "c6_generation_break_even_sept29.csv"]) console.log(fs.readFileSync(path.join(OUT, name), "utf8"));
+for (const name of ["c1_min_cuts", "c2_tally", "c2_break_even", "c3_correction_split", "c6_generation_break_even"]) {
+  console.log(fs.readFileSync(path.join(OUT, `${name}_${CASE}.csv`), "utf8"));
+}

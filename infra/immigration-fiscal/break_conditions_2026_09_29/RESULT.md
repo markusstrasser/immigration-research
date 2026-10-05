@@ -1,4 +1,4 @@
-**Verdict:** No premise, swapped for its best-supported alternative, overturns more than two of the nine conclusions. The survey frame carries all nine, but its credible alternatives move none by more than about 1%. The conclusions nearest to breaking are C8's $320bn (one reference choice moves it +28%), C2's "taxes cover benefits" (it flips when pensions are counted on accrual), C5's "one in six gains" and C4's ~$100bn social add. Each of these breaks on one convention or on one item's published range. C1's $355bn breaks on the first-year horizon alone; inside the long-run frame it takes three of the case's own alternatives, or two conventions priced beside the account. [CALCULATION: `engine_breaks.cjs`, `tables.py` → `derived/`]
+**Verdict:** [2026-10-05: on main case v5 (`oct05`), C2 splits by end. Direct taxes exceed benefits counted on accrual by $6.5bn at the low end and fall $4.4bn short at the high end (sept29: −$3.4 / −12.6bn, broken at both ends), because the added people's own tally is +$9.9 / 8.2bn. C1 restates to a $425.8bn midpoint ($390.3–461.2bn; sept29 $403.1bn) and still breaks on the first-year horizon alone (−26.7%; sept29 −26.1%). Counting the lineage by ancestry share at the stated bound's low end also breaks it alone (−29.8%) [FRAMING-SENSITIVE]. The lineage's other alternatives (arms a and c, C3 ± 1 SE, the replacement child) each move C1 by less than 3%. The other conclusions hold as on v4; C8 and C5's winner share are not rerun here. See "v5 case (oct05)" below.] No premise, swapped for its best-supported alternative, overturns more than two of the nine conclusions. The survey frame carries all nine, but its credible alternatives move none by more than about 1%. The conclusions nearest to breaking are C8's $320bn (one reference choice moves it +28%), C2's "taxes cover benefits" (it flips when pensions are counted on accrual), C5's "one in six gains" and C4's ~$100bn social add. Each of these breaks on one convention or on one item's published range. C1's $355bn breaks on the first-year horizon alone; inside the long-run frame it takes three of the case's own alternatives, or two conventions priced beside the account. [CALCULATION: `engine_breaks.cjs`, `tables.py` → `derived/`]
 
 claude-opus-5-5
 
@@ -231,3 +231,180 @@ uv run --no-project --offline python3 infra/immigration-fiscal/break_conditions_
   of other residents ahead, against 17.8% / 17.0% on September 27: "one in six gains" holds.
 - Checked: `sign_reversal.cjs:56-63` returns [most adverse, least adverse], confirming the swapped September 27
   header in `c6_generation_break_even.csv` (fixed separately; no figure in `conclusions.csv` reads the labels).
+
+## v5 case (oct05), 2026-10-05
+
+claude-opus-5-5 (v5 consumer lane B). **Verdict (v5).** Main case v5 (`../main_case_2026_10_05/`, $390.29–461.24bn) adds
+3.04M descendants who no longer report Mexican origin, counted whole. One conclusion changes status: C2 now splits by
+end. The added people's direct taxes exceed their household transfers by $9.9 / 8.2bn, which lifts the tally from
+v4's −$3.4 / −12.6bn to +$6.5bn at the low end and −$4.4bn at the high end. The split holds under arms a and c, and one
+tail decides each end. C1 restates to $390.3–461.2bn (+20.1% on September 27's $354.6bn midpoint, against v4's +13.7%).
+The first-year horizon alone still breaks it (−26.7%), and so does the ancestry-share count at its stated bound's low
+end (−29.8%) [FRAMING-SENSITIVE]. The lineage's own alternatives each move C1 by less than 3%: arms a and c, C3 ± 1 SE
+and the replacement child. C3 is v4's to $0.01bn, and C4, C5 and C6 hold with v5's figures. C7 and C9 take no v5 input.
+C8 and C5's winner share belong to other lanes' oct05 runs and are not rerun here [GAP]. [CALCULATION:
+`engine_breaks_sept29.cjs --case oct05`, `tables_oct05.py` → `derived/*_oct05.csv`]
+
+### The nine conclusions on v5
+
+The claims are still the map's, on the September 27 case. Full cells are in `derived/conclusions_oct05.csv`, and the
+premise matrix is in `derived/common_mode_oct05.csv`.
+
+| | Claim (the map) | On v4 (sept29) | On v5 (oct05) | Status on v5 |
+|---|---|---|---|---|
+| C1 | about $355bn a year | $371.4–434.8bn, midpoint $403.1bn | $390.3–461.2bn, midpoint $425.8bn | holds, restated |
+| C2 | taxes cover benefits; services decide the sign | tally −$3.4 / −12.6bn; break-even −11.0% to +3.3% | tally +$6.5 / −4.4bn; break-even −8.8% to +5.5% | **breaks at the high end**, holds at the low end |
+| C3 | ~$50bn each, net ~$11bn | +$44.43 / 45.84bn, −$55.16 / 57.15bn, net −$10.73 / 11.31bn | the same | holds |
+| C4 | the add, about $100bn | $96.3 / 100.7bn; pairing $462.9–535.5bn | $104.8 / 109.4bn; pairing $490.2–570.7bn | holds |
+| C5 | most (85%); one in six gains | 67.9% / 67.5% state and local | 68.8% / 68.2% | holds on "most"; winners not rerun here |
+| C6 | each generation costs others | each at least $87.1bn; break-evens at most 18.5% | at least $87.0bn; at most 21.6% | holds |
+| C7 | status explains little | no v4 input | no v5 input | unchanged |
+| C8 | $320–405bn more than as many whites | $351.2 / 350.5bn (lead verification) | not rerun here [GAP] | — |
+| C9 | offending and custody | no v4 input | no v5 input | unchanged |
+
+### C2 on v5
+
+| $bn, ends 48 / 11 | Direct receipts | Household transfers | Tally |
+|---|---:|---:|---:|
+| v5 case: accrual at payable benefits | 450.5 / 424.0 | 444.0 / 428.4 | **+6.5 / −4.4** |
+| cash set: pensions as 2024 cash | 452.8 / 426.0 | 363.4 / 352.6 | +89.4 / +73.4 |
+| v5's items without the dataset corrections (the union's accrual rebuilt) | 495.1 / 470.2 | 484.0 / 469.8 | +11.1 / +0.4 |
+| uncorrected, no v4 items, no lineage | 444.8 / 424.5 | 378.4 / 370.0 | +66.4 / +54.5 |
+
+The cash set's high-end receipts (426.06) print as 426.0 and the uncorrected-items transfers (484.06) as 484.0, so the
+rows add. The tally splits into the union alone at v5's responses, −$3.4 / −12.6bn, and the added people's own,
++$9.9 / +8.2bn. Arm a (1.81M added) gives +$4.6 / −5.3bn and arm c (4.27M) gives +$8.4 / −3.5bn. At scheduled benefits
+the transfers rise another $37.2 / 34.9bn and the tally is −$30.7 / −39.3bn. [CALCULATION: `c2_tally_oct05.csv`]
+
+One tail decides each end [INFERENCE: additive, `components.csv`]. At the high end, care's favorable tail alone restores
+clause 1 (+$4.8bn). The tax block's favorable tail falls $0.15bn short alone and restores it with any one more tax or
+transfer tail (+$1.0bn or more). At the low end, the MCBS 65+ bound on medical alone breaks it (−$2.0bn).
+
+| Break-even service response | Personal, most / least adverse | Shared, most / least adverse |
+|---|---:|---:|
+| v5 case, enterprise surplus at 1 | −8.8% / −0.4% | −6.9% / +1.7% |
+| v5 case, enterprise surplus at s | −3.4% / +3.4% | −1.5% / +5.5% |
+| cash set, enterprise surplus at 1 | 9.0% / 17.9% | 12.3% / 21.5% |
+| cash set, enterprise surplus at s | 13.5% / 21.0% | 16.7% / 24.5% |
+
+Clause 2 survives only at the least adverse end: below a 1.7% response with the enterprise surplus at 1 (shared), or
+3.4–5.5% with it at s. [CALCULATION: `c2_break_even_oct05.csv`; the case's rows reproduce
+`main_case_2026_10_05/derived/sign_reversal.csv` (`oct05_low`, `oct05_high`) at 1e-4]
+
+### What moved in the other conclusions
+
+- **C1.** The cut is a quarter of the $425.8bn midpoint: below $319.3bn or above $532.2bn.
+  - **Downward, one step.** The first-year horizon alone gives $289.1–335.3bn (−26.7%; −33.7% with item 5's long-run
+    response kept, −45.5% with cash pensions as well). The ancestry-share count at its stated bound's low end alone gives
+    $275.4–322.1bn (−29.8%) [FRAMING-SENSITIVE].
+  - **Downward with whole people.** Cash pensions plus one alternative break it: no capital return (−30.5%), first-year
+    roads and parks (−28.3%), or schools at 0.836 (−25.3%; new on v5). Without cash pensions it takes four. At the
+    population lane's convention for ancestry share (−19.2% alone), one more alternative breaks it.
+  - **Upward.** It takes two, both with 7% capital: + defense by GDP share (+34.7%), + scheduled benefits (+29.1%) or
+    + property taxes at zero (+27.6%). Without 7% it takes three.
+  - **The lineage's own alternatives.** Arms a and c move it −2.8% / +2.8%, C3 ± 1 SE ∓0.8%, the replacement child (r = 1)
+    −2.1% [FRAMING-SENSITIVE], and the ancestry-share count −17.5% to −29.8% across its bound. Stacks: all 8 downward
+    alternatives −50.8% (−74.7% with the ancestry share), all 6 upward +55.4% (+58.1% with arm c).
+  - [CALCULATION: `c1_arms_oct05.csv`, `c1_min_cuts_oct05.csv`]
+- **C3.** The corrections' split is v4's within $0.01bn: the lineage's edits are held in every run. Taxes move
+  +$44.43 / 45.84bn, spending −$55.16 / 57.15bn and the net −$10.73 / 11.31bn. The tails findings are unchanged. [GAP]
+  The added G3+ members are priced on the corrected G3+ model, so the split leaves out the corrections their amounts
+  carry. [CALCULATION: `c3_correction_split_oct05.csv`]
+- **C4.** The social rows rise to $104.8 / 109.4bn: the added people's own rows are $8.6 / 8.8bn, each restated row times
+  their share of its key. The pairing rises to $490.2–570.7bn ($11,466–13,349 per member of 42.75M). One item at a range
+  end still breaks the add. The pairing (below $397.8bn or above $663.1bn) needs crashes and scale net together
+  (−26.2% / +25.2%); PM2.5 high plus crashes high reaches +21.9%. The first-year horizon moves the pairing about −21.4%,
+  and the cash set pairs to $407.3–492.8bn (−15.2%). [DATA: `sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv`;
+  INFERENCE: additive]
+- **C5.** State and local taxpayers pay 68.8% / 68.2%. The accrual ($82.9 / 77.8bn) is all federal; on the cash set the
+  share is 87.4% / 82.1%. "Most" survives defense by GDP share, legacy interest ($30.6 / 42.6bn) and scheduled benefits
+  together (51.8% / 52.5%). It fails with defense and old interest at average cost (40.6% / 43.0%). [CALCULATION:
+  additive on `debt_legacy_2026_09_23/derived/oct05/federal_split_2024.csv`, central convention]
+- **C6.** Every generation costs others at both ends under both conventions: at least $87.0bn, or $72.6bn on the cash
+  set. G3+ carries the added people: $141.7 / 195.0bn under convention a, against v4's $122.6 / 168.4bn. Its largest
+  break-even rises 3.5 / 3.2 points to 16.9% (a) and 21.6% (b), because 1.08M of the added people are priced as
+  third-plus whites at G3+ ages. [CALCULATION: `c6_generation_break_even_oct05.csv`, from
+  `generation_account_2026_09_24/derived/generation_corrections_oct05.json` and `generation_results_oct05.csv`]
+- **C7 and C9** take no v5 input.
+- **C8 and C5's winner share** are not rerun here: the comparators' and the winners lane's oct05 runs belong to other
+  lanes [GAP].
+  - An added person costs others $6,309–8,790 against $2,274–3,472 for a third-plus white at the same ages, so putting
+    both sides on 42.75M widens C8's gap [INFERENCE: direction only].
+
+### Premises on v5
+
+| Rank | Premise | Conclusions | Swapped for its best-supported alternative |
+|---|---|---|---|
+| 1 | P01 survey frame, 39.71M identified | 9 | Not rerun on v5; on September 27, C1 −0.7%. Breaks none [INFERENCE]. |
+| 2 | P02 one income year | 8 | First-year horizon: **C1 −26.7%, breaks**; the pairing, about −21%, holds. **Breaks one.** |
+| 3 | P08 dataset corrections | 7 | Uncorrected, the union's accrual rebuilt: C1 +2.6%; C2 tally +$11.1 / 0.4bn, which holds at both ends. Breaks none. |
+| 4 | P03 long-run responses, property levies included | 6 | Schools at 0.836: C1 −6.4% (property taxes at zero instead, +7.1%). Breaks none. |
+| 5 | P05 pensions on accrual at payable benefits | 6 | Cash: **restores C2** (tally +$89.4 / 73.4bn), C1 −18.9%, C5 82–87%. Breaks none. Scheduled benefits instead: C1 +8.5%, tally −$30.7 / −39.3bn. |
+| 7 | P20 the lineage count (new on v5) | 6 | Arms a and c: C1 −2.8% / +2.8%; C2's split holds. Breaks none. By ancestry share: C1 −17.5% to −29.8%, a break at the bound's low end [FRAMING-SENSITIVE]. |
+
+P07 (keys) ties at 6 and ranks sixth, as before. P20 ranks seventh on the tie-break. [CALCULATION and INFERENCE as marked
+in `common_mode_oct05.csv`]
+
+### Rules for v5
+
+1. **A case flag in `engine_breaks_sept29.cjs`, and a new `tables_oct05.py`.** `--case oct05` swaps the package path to
+   `main_case_2026_10_05`, the oracle band, the cash payload and the generation files, and writes `*_oct05.csv`. The
+   sept29 run is byte-identical (rerun gate). Justification: v5 has v4's package API, so the engine computations are
+   v4's plus the lineage's handling; a copy would duplicate about 400 gated lines. This departs from v4's rule 1 (separate
+   scripts), whose reason was new arms and gates for a new item set. The conclusions' prose is per case, so it gets its
+   own script. Alternative: `engine_breaks_oct05.cjs` as a copy.
+2. **Cash pensions run on the cash set's package.** v5's package blocks `pension4: "cash"` (its lineage is priced with
+   the pension switch on), so the cash arm, its combinations and the first-year cash row run on `P.CASH` with the other
+   options. Gate: `P.CASH`'s payload is `derived/corrections_cash.json`.
+3. **The lineage's alternatives enter C1 as band changes.** Each is the change of its band from the central arm's in the
+   lineage lane: on the set, or on the cash set when cash pensions are in the combination. Each is added to the engine
+   part [APPROX: additive; the change at the case's options], at most one per combination, since they are alternative
+   counts. Searched: arms a and c, C3 ± 1 SE (from the C3 line), the ancestry-share count at its bound's two ends and
+   at the population lane's convention, and the replacement child at r = 1. The replacement child at r = 0.5 is listed,
+   dominated. The ancestry-share and replacement rows are [FRAMING-SENSITIVE] readings, beside the whole-person central.
+   Gates: the central arm is the case (5e-6) and its cash set (5e-5); the C3 line gives both at C3 (1e-6).
+4. **Scheduled benefits raise the lineage's accrual in the union's proportion** [ASSUMPTION]. The union's rule applies
+   to the union's OASDI receipts (the case's, less the lineage's). The lineage's Social Security accrual (k = 0.9534 /
+   0.9582 of its OASDI receipts) is raised by 1.2406 / 0.9737, and its Part A accrual by 45.35 / 41.14. The result is
+   +$37.17 / 34.90bn, against +$34.21 / 32.38bn on v4.
+5. **C3 holds the lineage's edits in every run.** The union's pension switch is rebuilt on each subset, and the
+   lineage keeps its own accrual. Social Security is ratio_net × (the model's OASDI receipts less the lineage's) plus
+   the lineage's; Medicare is (1 − part_a_share) × the union's pre-switch amount plus the Part A accrual plus the
+   lineage's edit. Gate: the rebuild moves nothing on the full payload (1e-9). [GAP] The lineage's amounts are not
+   re-priced without the corrections.
+6. **C2 at arms a and c from the lineage lane's per-line costs.** `lineage_lines.csv` (v5_bn: v4's line, the union's
+   response move and the added people's parts, at each arm's responses and ends) is classed as the case's evaluation
+   classes each line. Gate: arm b gives the case's receipts and transfers at both ends (1e-4, the file's six decimals).
+   `union_at_case_responses` is v4's payload with row 8's move, at v5's specifications.
+7. **The first-year rule's positive control runs on the September 29 package** (`P.BASE`). With the lineage on and every
+   v4 item off, the September 27 row has no meaning.
+8. **Inputs from other lanes' oct05 runs, uncommitted at this run.** C4 reads `sept24_propagation_2026_09_24/derived/oct05/`
+   (consumer group C), and C5 reads `debt_legacy_2026_09_23/derived/oct05/` (this group). C6 reads the generation account's
+   oct05 files (committed in e5ca5efe; sha256 in `c6_inputs_oct05.csv`). `tables_oct05.py` recomputes every quoted
+   number, so a changed input stops the build. [2026-10-06, the lead: both were then committed, the debt legacy in
+   604b09e1 and the pairing in 72f2e3bc; on them the two oct05 commands pass and rewrite every `*_oct05.csv` byte for
+   byte.]
+
+### Gates
+
+1. `engine_breaks_sept29.cjs --case oct05`: 49 of 49 gates, including the oracle 390.2940 / 461.2431 and the cash set
+   307.3764 / 383.4093 at 1e-4. The September 29 run passes 41 of 41, and its seven files are byte-identical.
+2. `tables_oct05.py`: every check passes. Two text figures were wrong on the first build (52.6% for 52.5%, and 3.6 points
+   for 3.5); the checks stopped the build, and both were fixed in the text.
+3. `scripts/rerun_lane.py` with the six commands below: IDENTICAL 31/31 files, rc 0 (2026-10-06 00:41 JST). No tracked
+   file in `derived/` differs from HEAD.
+
+### Reproduce
+
+```sh
+node infra/immigration-fiscal/break_conditions_2026_09_29/engine_breaks_sept29.cjs --case oct05
+uv run --no-project --offline python3 infra/immigration-fiscal/break_conditions_2026_09_29/tables_oct05.py
+# the whole lane: engine_breaks.cjs, tables.py, engine_breaks_sept29.cjs, tables_sept29.py, then the two lines above
+```
+
+### Log (append-only; times from `date`)
+
+- 2026-10-06, after 00:21 JST (the last `date` before this lane started): scripts read, and the September 29 run
+  reproduced in a scratch copy (41 gates, seven files identical).
+- 2026-10-06 00:41 JST: `--case oct05` passes 49 gates and `tables_oct05.py` builds; the rerun is IDENTICAL 31/31, rc 0.
+- 2026-10-06 00:43 JST: this section written.
