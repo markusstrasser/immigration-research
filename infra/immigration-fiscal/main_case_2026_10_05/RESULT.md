@@ -1,6 +1,6 @@
 claude-opus-5-5
 
-**Verdict:** Main case v5 (PENDING: the operator has not yet chosen the counting rule, whole people or ancestry share; as of 2026-10-05 17:45 JST) is built as a payload-first successor to
+**Verdict:** Main case v5, adopted 2026-10-05 22:54 JST with whole-person counting (the operator: "A then"; decisions/2026-10-05-main-case-v5.md), is built as a payload-first successor to
 `main_case_2026_09_29/`, with the same package API and the same output contract. It is the September 29 case plus the
 descendants of Mexican immigrants who no longer report Mexican origin, arm b of `main_case_lineage_2026_10_05/`:
 3.04M added people, a lineage of 42.75M, counted whole [FRAMING-SENSITIVE: whole people; the fractional and replacement
