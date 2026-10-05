@@ -14,6 +14,13 @@ net correction to −$0.18bn, since only Parts B and D are still priced by the k
 [CALCULATION: `run_cells.cjs --case sept29|sept29_cash` → `derived/late_arrival_line_sept29.csv`] The September 27
 figures follow.
 
+[2026-10-05: on main case v5 (`oct05`, $390.3–461.2bn), the late arrivals cost $4.38 / 4.13bn ($12,085 / 11,394 a
+head), against $4.38 / 4.13bn on September 29 ($4.3806 / 4.1305): v5 moves them by −$0.003bn. The 3.04M people v5
+adds are third-plus, with no arrival year, so the Mexico-born move only by the larger group's responses and their
+share of audit row 8 (−$0.09bn in all). They are 4.5% / 4.7% of the Mexico-born line and 1.1% / 0.9% of the case. The
+cash set: $5.47 / 5.60bn. The Medicaid check is unchanged. [CALCULATION: `run_cells.cjs --case oct05|oct05_cash` →
+`derived/late_arrival_line_oct05.csv`; section 7]]
+
 In the adopted September 27 case ($321.8–387.4bn), they cost other US residents **$5.7–5.8bn a year
 ($14.2–14.5k a head)**. The grouping bounds give $4.9–7.4bn. That is 6–7% of the Mexico-born line and
 1.5–1.8% of the case. The September 27 per-head figures in this verdict divide by the CPS count (399,300; 226,600 at
@@ -432,6 +439,80 @@ Log (times from `date`, JST): 15:17 brief read; 17:03 first sept29 run gated; 17
 lane wired end to end; 17:21 rebuilt with the Part A rule per HI tax dollar; 20:15 repointed to the adopted lane
 (40c4ba7); 20:16 rebuilt; 20:18–20:23 gate 1; 20:31 gate label corrected; about 20:51 reboot; 21:13 resumed; 21:16
 PyPI timeout; 21:25–21:35 every command directly; 21:35–21:48 gates 1 and 4 (two passes).
+
+## 7. v5 case (oct05), 2026-10-05
+
+The operator adopted main case v5 on 2026-10-05 at 22:54 JST (`main_case_2026_10_05`, case key `oct05`). It is the
+September 29 case plus 3.04M descendants of Mexican immigrants who no longer report Mexican origin, counted whole:
+$390.2940–461.2431bn, and $307.3764–383.4093bn in the cash set. `run_cells.cjs` runs both as `--case oct05` and
+`--case oct05_cash`. Model self-report: claude-opus-5-5.
+
+**Method.** The sept29 steps run unchanged and give each cell's September 29 payload. The v5 part then goes on each
+cell by the generation lane's `v5_split.cjs` (its RESULT section "v5 case (oct05)"):
+- **The added people go on the G3plus cell.** That cell takes the lineage's cell edits and the production grid's change.
+  The added people are third-plus by construction and have no arrival year, so no G1 cell takes any of them.
+- **Row 8 is split by share.** Every cell takes audit row 8's change at the larger group (−$0.0080bn) times its share of
+  the September 29 union's `lane_constants` k cell.
+- **The responses follow the group's size.** Every cell is evaluated at v5's responses, which move with the group's
+  size.
+
+The G1 cells therefore move only by the response move and their row-8 share. Per-person figures keep the row-4
+headcounts; the third-plus row counts the added people (17.38M), its adults at the identified G3+'s adult share
+[ASSUMPTION, as in the generation lane]. The change is now measured from the September 29 case.
+
+**The set, central reading, (a)** ($bn a year at the union's ends, 48 / 11; [CALCULATION:
+`derived/late_arrival_line_oct05.csv`]):
+
+| Subgroup | Persons (row 4) | $bn low / high | $ per person low / high | Lower-edge reading $bn | Upper-edge reading $bn | Change from September 29, $bn |
+|---|---|---|---|---|---|---|
+| Arrived at 50+, all ages | 362,200 | 4.38 / 4.13 | 12,085 / 11,394 | 3.69 / 3.68 | 5.58 / 5.23 | −0.003 / −0.003 |
+| of them 65+ | 207,100 | 3.09 / 2.98 | 14,925 / 14,381 | 2.86 / 2.74 | 3.84 / 3.69 | −0.002 / −0.002 |
+| of them 50–64 | 155,100 | 1.29 / 1.15 | 8,291 / 7,404 | 0.83 / 0.94 | 1.74 / 1.54 | −0.001 / −0.001 |
+| Arrived at 55+ | 210,700 | 2.98 / 2.88 | 14,128 / 13,677 | 2.45 / 2.37 | 3.42 / 3.27 | −0.002 / −0.002 |
+| Arrived younger, now 50+ | 4,631,100 | 41.97 / 38.10 | 9,062 / 8,227 | | | −0.04 / −0.05 |
+| All Mexico-born | 11,036,700 | 97.15 / 87.02 | 8,802 / 7,885 | | | −0.09 / −0.09 |
+
+The age parts add to "arrived at 50+" as in section 6 (persons 207,100 for 207,163; no dollar cell needed moving).
+
+- **Convention (b):** 418,400 members and $5.11 / 5.31bn; the 65+ part is $3.30 / 3.33bn.
+- **The cash set**, central, (a): arrived at 50+ $5.47 / 5.60bn ($15,086 / 15,467), of them 65+ $4.32 / 4.80bn; the
+  change from the September 29 cash set is the same −$0.003bn.
+- **Share.** $4.38 / 4.13bn is 4.5% / 4.7% of the Mexico-born line and 1.12% / 0.89% of the case (1.18% / 0.95% on
+  September 29: the case grew, the line did not).
+- **Medicaid check** (`medicaid_check.py --set oct05` → `derived/medicaid_check_oct05.csv`). v5 touches neither the
+  Medicaid nor the Medicare line of a G1 cell, so the file equals `medicaid_check_sept29.csv` but for its case labels:
+  net −$0.177 / −0.184bn in the set, −$0.31bn in the cash set. A new gate holds every G1 cell's two parts at their
+  sept29 values (1e-12). The Part A accrual gate now covers the eight cells without the added people. The added
+  people's own Part A accrual sits in their cell edits, not in `meta.pension_accrual`.
+
+**Gates**, all passing:
+- `run_cells.cjs`: 37 per run in the set and 36 in the cash set, at each of the three readings. They add four to the
+  sept29 runs: the v5 payload builds on the September 29 payload built here; the row-8 shares add to 1, and the nine
+  v5 models add to the case's payload model (cells 1.4e-12bn, grid 1.1e-13bn), per convention; the specifications are
+  the v5 package's. The oracle is the v5 lane's `main_case_bands.csv` (`adopted`, `cash_set`) at 48 / 11 to 1e-4, and
+  `per_spec.csv` for the set (1.7e-13bn). The v5 package's `evaluateFull` gives every model's cost (difference 0), and
+  the cells' September 29 costs add to the September 29 band (1e-4).
+- `verify.py --set oct05`: 102 checks. In both sets, all readings, conventions and ends, late + younger equals the
+  generation lane's G1 (`generation_summary_oct05*.json`) to 9e-11bn. The G3plus cell, with the added people, equals
+  the generation lane's G3plus in cost, members and adults (1e-6).
+- `medicaid_check.py --set oct05`: 15 gates.
+
+`rerun_lane.py --online` over 31 commands: the thirteen September 27 commands, the nine sept29 commands, and the nine
+oct05 commands. The oct05 commands are `run_cells.cjs --case oct05` and `--case oct05_cash` at each reading, then
+`build_line.py`, `medicaid_check.py` and `verify.py` with `--set oct05`. Result: IDENTICAL, 25/25 files, exit 0
+(23:20:27–23:24:25 JST), with no script NOT RUN. `--online` was needed because uv's offline cache cannot resolve
+`run_split.sh`'s `--with openpyxl --with xlrd`.
+
+**Files.**
+- Changed: `run_cells.cjs` (`--case oct05|oct05_cash`, `v5Part()`), and `build_line.py`, `verify.py` and
+  `medicaid_check.py` (`--set oct05`).
+- New outputs: `derived/late_arrival_line_oct05.csv` (rows `sept29_total` and `change_from_sept29` beside each total)
+  and `derived/medicaid_check_oct05.csv`. Ignored intermediates: `_cache/cells_oct05{,_cash}_<reading>.json`.
+- `run_cells.cjs` loads the generation lane's `v5_split.cjs`, and `verify.py` reads its `generation_summary_oct05*.json`.
+  That lane's v5 files (commit e5ca5efe) come first.
+
+Log (times from `date` and file times, JST): by 23:18 the six oct05 runs, line, check and verify, and the edited
+scripts compiled (their `.pyc` times); 23:20:27–23:24:25 `rerun_lane.py` IDENTICAL 25/25, exit 0; 23:28 this section.
 
 ## Files
 

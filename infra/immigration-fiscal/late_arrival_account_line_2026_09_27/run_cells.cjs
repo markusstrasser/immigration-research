@@ -21,7 +21,14 @@
  *     each cell's own change in the raked cells (tax_key_by_generation.json) times its own stack factor. The other
  *     inputs are this lane's own (v4_inputs.json: row-4 production, tenant shares, row-4 headcounts); run_split.sh
  *     step 7 writes both. Costs and parts come from v4_split.cjs's evaluator, and the union is gated on the case's
- *     published band (1e-4).
+ *     published band (1e-4);
+ *   - --case oct05 | oct05_cash (main case v5, adopted on 2026-10-05, main_case_2026_10_05, and its cash set): the
+ *     sept29 steps above, unchanged, give each cell's September 29 payload; the v5 part then goes on each cell by the
+ *     generation lane's v5_split.cjs: the G3plus cell takes the lineage's cell edits and production (the 3.04M added
+ *     people are third-plus, with no arrival year), and every cell takes audit row 8's change at the larger group times
+ *     its lane_constants k share. The G1 cells move only by the larger group's responses and their row-8 share. Costs
+ *     come from the v4 consumer on the v5 payload, gated on the v5 band (1e-4) and the v5 package (every model); per-member
+ *     figures add the added people to G3plus (adults at G3plus's adult share), and the change is from sept29.
  * Outputs: _cache/cells_<case>_<def>.json (per cell, convention, band end: cost and programme parts).
  * Run from the repository root:
  *   node infra/immigration-fiscal/late_arrival_account_line_2026_09_27/run_cells.cjs --case sept27 --def central
@@ -37,13 +44,17 @@ const arg = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt 
 // sept24 is built on main_case_2026_09_26/package.cjs (row 8's finite factor, the consumption key) and
 // they differ only in their responses, which come from the package's MAIN_SPECS and meta.responses.
 // sept29 and sept29_cash build their September 27 part on the September 27 package; their v4 part is v4Part()'s.
+// oct05 and oct05_cash build the same September 29 part of their set; their v5 part is v5Part()'s.
 const CASES = { sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26",
-  sept29: "main_case_long_run_2026_09_27", sept29_cash: "main_case_long_run_2026_09_27" };
+  sept29: "main_case_long_run_2026_09_27", sept29_cash: "main_case_long_run_2026_09_27",
+  oct05: "main_case_long_run_2026_09_27", oct05_cash: "main_case_long_run_2026_09_27" };
 const CASE = arg("--case", "sept26_schools");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 const ON26 = CASE !== "sept24";
-const V4SET = { sept29: "set", sept29_cash: "cash" }[CASE];
+const V4SET = { sept29: "set", sept29_cash: "cash", oct05: "set", oct05_cash: "cash" }[CASE];
 const ON29 = V4SET !== undefined;
+const V5SET = { oct05: "set", oct05_cash: "cash" }[CASE];
+const ON05 = V5SET !== undefined;
 const MAIN = CASES[CASE];
 const P = require(path.join(HERE, "..", MAIN, "package.cjs"));
 const { Engine, MODEL, ALLOCS, SYN, SYN_LINES, MEDICAID, MAIN_SPECS, METHODS, STACKS, CENTRAL, LTSS_CENTRAL,
@@ -502,30 +513,75 @@ function v4Part() {
 }
 
 // ---------------------------------------------------------------------------------------------------
+// oct05 / oct05_cash: the v5 part on each cell's September 29 model (v5_split.cjs), gated as the generation lane's
+// run_generations_v5.cjs gates its three generations. Each cell's payload is its September 29 payload above plus its v5
+// part: the lineage's cell edits and production on the G3plus cell, and audit row 8's change at its lane_constants k
+// share on every cell.
+const W = ON05 ? v5Part() : null;
+function v5Part() {
+  console.log("[v5 part]");
+  const V5 = require(path.join(HERE, "..", "generation_account_2026_09_24", "v5_split.cjs"));
+  const L = V5.loadCase(V5SET);
+  console.log(`  · ${L.rel}: ${L.baseRel} plus ${L.lineage.edits.count} lineage edits`);
+  gate("v5_split.cjs runs on v4_split.cjs's engine and model, and the case builds on the September 29 payload above",
+    V5.X === V.X && L.baseRel === V.C.rel && JSON.stringify(L.base) === JSON.stringify(V.C.payload));
+  const cellsOf = (m) => {
+    const out = new Map();
+    for (const l of m.receipts.lines) for (const sc of Object.keys(l.cells)) out.set(`r|${l.id}|${sc}`, l.cells[sc]);
+    for (const l of m.spending.lines) for (const k of Object.keys(l.keys)) out.set(`s|${l.id}|${k}`, l.keys[k]);
+    return out;
+  };
+  const GRID = ["private_wtp_bn", "induced_receipts_bn"];
+  const union29 = Engine.applyCorrections(MODEL, V.C.payload), union5 = Engine.applyCorrections(MODEL, L.payload);
+  const models29 = {}, payloads5 = {}, layers = {};
+  for (const conv of CONVS) {
+    models29[conv] = Object.fromEntries(GENS.map((g) => [g, Engine.applyCorrections(models[conv][g], V.payloads[conv][g])]));
+    const lay = V5.layer(L, GENS, TOP, models29[conv], union29);
+    layers[conv] = lay;
+    payloads5[conv] = Object.fromEntries(GENS.map((g) => [g, V5.payloadOf(V.payloads[conv][g], lay.parts[g])]));
+    const m5 = GENS.map((g) => Engine.applyCorrections(models[conv][g], payloads5[conv][g]));
+    const u = cellsOf(union5), parts = m5.map(cellsOf);
+    let worst = parts.some((p) => p.size !== u.size) ? Infinity : 0, grid = 0;
+    for (const [k, c] of u) for (const a of ALLOCS) worst = Math.max(worst, Math.abs(parts.reduce((t, p) => t + p.get(k)[a].target_bn, 0) - c[a].target_bn));
+    for (const k of GRID) union5.production[k].forEach((v, i) => { grid = Math.max(grid, Math.abs(m5.reduce((t, m) => t + m.production[k][i], 0) - v)); });
+    gate(`(${conv}) the cells' row-8 shares add to 1, the lineage goes on ${lay.g3plus}, and the nine v5 models add to the case's payload model (cells 1e-9, grid 1e-12)`,
+      lay.share_sum_error < 1e-12 && worst < 1e-9 && grid < 1e-12, `shares ${e(lay.share_sum_error)}; cells ${e(worst)} bn, grid ${e(grid)} bn`);
+  }
+  const ev = V.X.evaluator(L.payload);
+  const AP = V5.adoptedPackage(L);
+  const FIELDS = ["allocation", "normalization", "share", "school", "reading", "gg", "uc"];
+  gate(`the consumer's specifications are ${AP.source}'s MAIN_SPECS, in order`, ev.specs.length === AP.specs.length
+    && ev.specs.every((s, i) => FIELDS.every((k) => s[k] === AP.specs[i][k])));
+  return { V5, L, ev, AP, layers, models29, payloads: payloads5, O: V5.oracle(L.set) };
+}
+
+// ---------------------------------------------------------------------------------------------------
 console.log("[engine]");
-// The case's specifications and evaluator: the package's, or under sept29 the v4 consumer's (v4Part).
-const SPECS = ON29 ? V.ev.specs : MAIN_SPECS;
-const CE = ON29 ? { cost: V.ev.cost, full: V.ev.evaluateFull, fw: (full) => full.state.fiscal_weight }
+// The case's specifications and evaluator: the package's, under sept29 the v4 consumer's (v4Part), under oct05 the v4
+// consumer's on the v5 payload (v5Part). CV is the part whose payload is the case.
+const CV = ON05 ? W : V;
+const SPECS = ON29 ? CV.ev.specs : MAIN_SPECS;
+const CE = ON29 ? { cost: CV.ev.cost, full: CV.ev.evaluateFull, fw: (full) => full.state.fiscal_weight }
   : { cost, full: evaluateCase, fw: (full, m, spec) => P.stateFor(m, spec).fiscal_weight };
-const unionModel = Engine.applyCorrections(MODEL, ON29 ? V.C.payload : corrections);
+const unionModel = Engine.applyCorrections(MODEL, ON05 ? W.L.payload : ON29 ? V.C.payload : corrections);
 const uCost = SPECS.map((s) => CE.cost(unionModel, s));
 const u0Cost = SPECS.map((s) => CE.cost(MODEL, s));
 const lo = uCost.indexOf(Math.min(...uCost)), hi = uCost.indexOf(Math.max(...uCost));
 const lo0 = u0Cost.indexOf(Math.min(...u0Cost)), hi0 = u0Cost.indexOf(Math.max(...u0Cost));
 if (ON29) {
-  gate(`the corrected union reproduces the case's band at its end specifications (${V.O.source}, four decimals)`,
-    lo === V.O.specs[0] && hi === V.O.specs[1] && near(uCost[lo], V.O.band[0], 1e-4) && near(uCost[hi], V.O.band[1], 1e-4),
+  gate(`the corrected union reproduces the case's band at its end specifications (${CV.O.source}, four decimals)`,
+    lo === CV.O.specs[0] && hi === CV.O.specs[1] && near(uCost[lo], CV.O.band[0], 1e-4) && near(uCost[hi], CV.O.band[1], 1e-4),
     `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)} at ${lo} / ${hi}`);
-  const PS = V.X.perSpec(V.C.set);
+  const PS = ON05 ? W.V5.perSpec(W.L.set) : V.X.perSpec(V.C.set);
   if (PS) {
     let worst = 0;
     for (const [i, c] of PS.cost) worst = Math.max(worst, Math.abs(uCost[i] - c));
     gate(`the corrected union reproduces ${PS.source} at each of its specifications (mean of the two methods)`,
       PS.cost.size > 0 && worst < 1e-9, `${PS.cost.size} specifications; max |diff| ${e(worst)} bn`);
   }
-  if (V.O.uncorrected) {
-    gate(`the uncorrected union reproduces the uncorrected model at the case's responses (${V.O.source.replace(/ \(.*\)$/, "")} uncorrected_at_adopted_responses, 1e-4)`,
-      near(u0Cost[lo0], V.O.uncorrected[0], 1e-4) && near(u0Cost[hi0], V.O.uncorrected[1], 1e-4), `${u0Cost[lo0].toFixed(4)}–${u0Cost[hi0].toFixed(4)}`);
+  if (CV.O.uncorrected) {
+    gate(`the uncorrected union reproduces the uncorrected model at the case's responses (${CV.O.source.replace(/ \(.*\)$/, "")} uncorrected_at_adopted_responses, 1e-4)`,
+      near(u0Cost[lo0], CV.O.uncorrected[0], 1e-4) && near(u0Cost[hi0], CV.O.uncorrected[1], 1e-4), `${u0Cost[lo0].toFixed(4)}–${u0Cost[hi0].toFixed(4)}`);
   } else console.log(`  · the uncorrected model at the case's responses: ${u0Cost[lo0].toFixed(4)}–${u0Cost[hi0].toFixed(4)} (no published row)`);
 } else {
   gate(`the corrected union reproduces the adopted main case${ON26 ? " (main_case_bands.csv adopted)" : ""}`,
@@ -539,7 +595,7 @@ for (const conv of CONVS) {
   res[conv] = {};
   for (const g of GENS) {
     const m0 = models[conv][g];
-    const m1 = Engine.applyCorrections(m0, (ON29 ? V.payloads : payloads)[conv][g]);
+    const m1 = Engine.applyCorrections(m0, (ON05 ? W.payloads : ON29 ? V.payloads : payloads)[conv][g]);
     res[conv][g] = { corrected: SPECS.map((s) => CE.cost(m1, s)), uncorrected: SPECS.map((s) => CE.cost(m0, s)), model: m1 };
   }
   for (const kind of ["corrected", "uncorrected"]) {
@@ -550,8 +606,8 @@ for (const conv of CONVS) {
   }
 }
 // sept29: the adopted lane's own package on every model costed here, as its other consumers call it (only once
-// v4_split.cjs names the adopted lane).
-const AP = ON29 ? V.X.adoptedPackage(V.C) : null;
+// v4_split.cjs names the adopted lane); oct05: the v5 package (v5_split.cjs adoptedPackage).
+const AP = ON05 ? W.AP : ON29 ? V.X.adoptedPackage(V.C) : null;
 if (AP) {
   const FIELDS = ["allocation", "normalization", "share", "school", "reading", "gg", "uc"];
   gate(`${AP.source}: its specifications are the consumer's`, AP.specs.length === SPECS.length
@@ -569,15 +625,28 @@ if (AP) {
 } else if (ON29) console.log(`  · cross-check against the adopted lane's package skipped: v4_split.cjs V4_LANE is ${V.X.V4_LANE}`);
 // sept29: each cell's September 27 cost at the same specifications (the September 27 package on its September 27
 // model), the union's gated on the September 27 band; the change is the v4 part's.
-const sept27At = ON29 ? Object.fromEntries(CONVS.map((conv) => [conv, Object.fromEntries(GENS.map((g) =>
+const sept27At = ON29 && !ON05 ? Object.fromEntries(CONVS.map((conv) => [conv, Object.fromEntries(GENS.map((g) =>
   [g, [cost(V.models27[conv][g], MAIN_SPECS[lo]), cost(V.models27[conv][g], MAIN_SPECS[hi])]]))])) : null;
-if (ON29) {
+if (ON29 && !ON05) {
   const u27 = [cost(Engine.applyCorrections(MODEL, corrections), MAIN_SPECS[lo]), cost(Engine.applyCorrections(MODEL, corrections), MAIN_SPECS[hi])];
   let worst = 0;
   for (const conv of CONVS) for (const k of [0, 1]) worst = Math.max(worst, Math.abs(GENS.reduce((t, g) => t + sept27At[conv][g][k], 0) - u27[k]));
   gate("the cells' September 27 costs at the case's ends add to the September 27 union, which is main_case_bands.csv adopted (1e-4)",
     worst < 1e-9 && near(u27[0], gateAdopted[0], 1e-4) && near(u27[1], gateAdopted[1], 1e-4),
     `${u27.map((x) => x.toFixed(4)).join("–")}; cells max |diff| ${e(worst)} bn`);
+}
+// oct05: each cell's September 29 cost at the same specifications (the v4 consumer on its September 29 model; the
+// September 29 case has the same ends), the union's gated on the September 29 band; the change is the v5 part's.
+const sept29At = ON05 ? Object.fromEntries(CONVS.map((conv) => [conv, Object.fromEntries(GENS.map((g) =>
+  [g, [V.ev.cost(W.models29[conv][g], V.ev.specs[lo]), V.ev.cost(W.models29[conv][g], V.ev.specs[hi])]]))])) : null;
+if (ON05) {
+  const m29 = Engine.applyCorrections(MODEL, V.C.payload);
+  const u29 = [V.ev.cost(m29, V.ev.specs[lo]), V.ev.cost(m29, V.ev.specs[hi])];
+  let worst = 0;
+  for (const conv of CONVS) for (const k of [0, 1]) worst = Math.max(worst, Math.abs(GENS.reduce((t, g) => t + sept29At[conv][g][k], 0) - u29[k]));
+  gate(`the cells' September 29 costs at the case's ends, which are the September 29 case's, add to the September 29 union, which is ${V.O.source} (1e-4)`,
+    V.O.specs[0] === lo && V.O.specs[1] === hi && worst < 1e-9 && near(u29[0], V.O.band[0], 1e-4) && near(u29[1], V.O.band[1], 1e-4),
+    `${u29.map((x) => x.toFixed(4)).join("–")}; cells max |diff| ${e(worst)} bn`);
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -637,21 +706,32 @@ function partsOf(m, spec) {
 }
 console.log("[programme parts]");
 // sept29: the lane of the adopted case and per-member figures on the row-4 headcounts (v4_inputs.json), the case's basis.
-const cells = { case: CASE, main: ON29 ? V.X.V4_LANE : MAIN, def: DEF, low_spec: SPECS[lo], high_spec: SPECS[hi], lo, hi,
+// oct05: the v5 lane; the G3plus cell also counts the added people, its adults at its identified adult share (convention
+// a) [ASSUMPTION: the case prices them at the identified G3+'s age mix].
+const ADDED = ON05 ? (() => {
+  const g = W.layers.a.g3plus, h = V.VI.headcount.a[g], n = W.L.lineage.counts.added;
+  return { cell: g, population: n, adults: n * h.adults / h.population, adult_share: h.adults / h.population };
+})() : null;
+const plus = (g, k) => (ADDED && g === ADDED.cell ? ADDED[k] : 0);
+const cells = { case: CASE, main: ON05 ? W.V5.V5_LANE : ON29 ? V.X.V4_LANE : MAIN, def: DEF, low_spec: SPECS[lo], high_spec: SPECS[hi], lo, hi,
   union_band_bn: [uCost[lo], uCost[hi]], programs: PROGRAMS, conventions: {} };
 for (const conv of CONVS) {
   cells.conventions[conv] = {};
   GENS.forEach((g, j) => {
     const m1 = res[conv][g].model;
     cells.conventions[conv][g] = {
-      population: ON29 ? V.VI.headcount[conv][g].population : keyMeta.population[conv][j],
-      adults: ON29 ? V.VI.headcount[conv][g].adults : keyMeta.adults_18plus[conv][j],
+      population: ON29 ? V.VI.headcount[conv][g].population + plus(g, "population") : keyMeta.population[conv][j],
+      adults: ON29 ? V.VI.headcount[conv][g].adults + plus(g, "adults") : keyMeta.adults_18plus[conv][j],
       own_span_bn: [Math.min(...res[conv][g].corrected), Math.max(...res[conv][g].corrected)],
       low: partsOf(m1, SPECS[lo]), high: partsOf(m1, SPECS[hi]),
     };
-    if (ON29) {
+    if (ON29 && !ON05) {
       Object.assign(cells.conventions[conv][g], { sept27_cost_bn: sept27At[conv][g],
         change_from_sept27_bn: [res[conv][g].corrected[lo] - sept27At[conv][g][0], res[conv][g].corrected[hi] - sept27At[conv][g][1]] });
+    }
+    if (ON05) {
+      Object.assign(cells.conventions[conv][g], { sept29_cost_bn: sept29At[conv][g],
+        change_from_sept29_bn: [res[conv][g].corrected[lo] - sept29At[conv][g][0], res[conv][g].corrected[hi] - sept29At[conv][g][1]] });
     }
   });
   // The union's parts from the corrected union model, against which the cells' parts must add.
@@ -679,6 +759,14 @@ if (ON29) {
       s_vmt: S[conv].s_vmt[g], persons_5plus: V.VI.headcount[conv][g].persons_5plus,
       pension_refs: S[conv].pension ? S[conv].pension.refs[g] : null }]))])),
     union: { fit_by_bn: V.U.fitBy, s_vmt: V.U.sbar, oasdi_bn: V.U.oasdi } };
+}
+if (ON05) {
+  cells.v5 = { set: W.L.set, payload: W.L.rel, builds_on: W.L.baseRel, oracle: W.O, uncorrected_own_ends_bn: [u0Cost[lo0], u0Cost[hi0]],
+    uncorrected_own_ends: [lo0, hi0], added: ADDED, row8_edit_bn: W.L.lineage.edits.row8_edit_bn,
+    row8_shares: Object.fromEntries(CONVS.map((conv) => [conv, W.layers[conv].share])),
+    rules: "generation_account_2026_09_24/v5_split.cjs (the generation lane's RESULT \"v5 case (oct05)\"): the lineage's cell edits and "
+      + "production on the G3plus cell; audit row 8's change at each cell's lane_constants k share; the case's responses. cells.v4 is "
+      + "the September 29 part this case builds on" };
 }
 const outFile = path.join(OUT, `cells_${CASE}_${DEF}.json`);
 fs.writeFileSync(outFile, JSON.stringify(cells, null, 1) + "\n");

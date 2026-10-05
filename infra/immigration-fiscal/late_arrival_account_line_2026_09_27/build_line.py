@@ -15,8 +15,13 @@ derived/late_arrival_line_sept29.csv, leaving the default file alone. Its per-pe
 headcounts (the case's basis), and two more rows sit beside the total, never added to it: `sept27_total`, the same
 persons' cost on the September 27 case at the same specification, and `change_from_sept27`.
 
+--set oct05 reads cases oct05 (main case v5, adopted on 2026-10-05) and oct05_cash (its cash set) and writes
+derived/late_arrival_line_oct05.csv in the same layout. The third-plus counts the case's added people (run_cells.cjs),
+and the rows beside the total are `sept29_total`, the same persons' cost on the September 29 case at the same
+specification, and `change_from_sept29`.
+
 Run from the repository root:
-  uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/build_line.py [--set sept29]
+  uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/build_line.py [--set sept29|oct05]
 """
 from __future__ import annotations
 
@@ -27,8 +32,11 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 CASES = ["sept27", "sept26_schools"]
-# Each set of cases and its file: the default two, and the v4 cases in a file of their own.
-SETS = {"default": (CASES, "late_arrival_line.csv"), "sept29": (["sept29", "sept29_cash"], "late_arrival_line_sept29.csv")}
+# Each set of cases and its file: the default two, and the v4 and v5 cases each in a file of their own.
+SETS = {"default": (CASES, "late_arrival_line.csv"), "sept29": (["sept29", "sept29_cash"], "late_arrival_line_sept29.csv"),
+        "oct05": (["oct05", "oct05_cash"], "late_arrival_line_oct05.csv")}
+# The case each set's rows beside the total compare with.
+PREVIOUS = {"sept29": "sept27", "oct05": "sept29"}
 READINGS = ["central", "lower", "upper"]
 SUBGROUPS = {
     "late50": ["G1_L50_50_64", "G1_L50_65p", "G1_L55_55_64", "G1_L55_65p"],
@@ -78,10 +86,10 @@ def main():
                             sys.exit(f"[BLOCKED] cells do not add to the case: {case} {reading} {conv} {end}")
                         out = {**parts, "taxes_total": sum(parts[k] for k in TAXES),
                                "services_total": sum(parts[k] for k in SERVICES), "total": total}
-                        if which == "sept29":
-                            k = 0 if end == "low" else 1
-                            out["sept27_total"] = sum(cells[g]["sept27_cost_bn"][k] for g in members)
-                            out["change_from_sept27"] = total - out["sept27_total"]
+                        if which in PREVIOUS:
+                            k, prev = 0 if end == "low" else 1, PREVIOUS[which]
+                            out[f"{prev}_total"] = sum(cells[g][f"{prev}_cost_bn"][k] for g in members)
+                            out[f"change_from_{prev}"] = total - out[f"{prev}_total"]
                         for k, v in out.items():
                             rows.append(dict(case=case, reading=reading, convention=conv, spec=end,
                                              allocation=spec["allocation"], subgroup=name, program=k,

@@ -9,8 +9,12 @@ band (main_case_bands.csv, row `adopted`, the nine cells summed). Exit 1 on any 
 --set sept29 checks the v4 cases instead (sept29, the main case adopted on 2026-09-29, and sept29_cash, its cash
 set): the generation lane's generation_summary_<case>.json, the published band of the adopted case's lane (V4_LANE),
 and derived/late_arrival_line_sept29.csv.
+--set oct05 checks the v5 cases (oct05, main case v5 adopted on 2026-10-05, and oct05_cash) the same way: the generation
+lane's generation_summary_<case>.json (run_generations_v5.cjs), the published band of the v5 lane (V5_LANE) and
+derived/late_arrival_line_oct05.csv. The G3plus cell also holds the case's added people, so it is checked against the
+generation lane's G3plus (cost, members and adults) too.
 Run from the repository root:
-  uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/verify.py [--set sept29]
+  uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/verify.py [--set sept29|oct05]
 """
 from __future__ import annotations
 
@@ -27,6 +31,9 @@ MAIN = {"sept27": "main_case_long_run_2026_09_27", "sept26_schools": "main_case_
 # case's generation summary (run_generations_v4.cjs).
 V4_LANE = "main_case_2026_09_29"
 V4_GEN = {c: FISCAL / f"generation_account_2026_09_24/derived/generation_summary_{c}.json" for c in ("sept29", "sept29_cash")}
+# The v5 cases: the v5 lane and each case's generation summary (run_generations_v5.cjs).
+V5_LANE = "main_case_2026_10_05"
+V5_GEN = {c: FISCAL / f"generation_account_2026_09_24/derived/generation_summary_{c}.json" for c in ("oct05", "oct05_cash")}
 LATE = ["G1_L50_50_64", "G1_L50_65p", "G1_L55_55_64", "G1_L55_65p"]
 REST = ["G1_Y_u50", "G1_Y_50_64", "G1_Y_65p"]
 fails = []
@@ -50,17 +57,24 @@ def v4_band(case):
                 if r["profile"] == "long_run_non_school_full" and r["variant"] == {"sept29": "adopted", "sept29_cash": "cash_set"}[case])
 
 
+def v5_band(case):
+    """A v5 case's published band: the v5 lane's main_case_bands.csv row (adopted or cash_set)."""
+    return next(r for r in csv.DictReader((FISCAL / V5_LANE / "derived/main_case_bands.csv").open())
+                if r["profile"] == "long_run_non_school_full" and r["variant"] == {"oct05": "adopted", "oct05_cash": "cash_set"}[case])
+
+
 def main():
     which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "default"
-    if which not in ("default", "sept29"):
-        sys.exit("--set must be default or sept29")
-    v4 = which == "sept29"
-    gens = {c: json.loads(V4_GEN[c].read_text()) for c in V4_GEN} if v4 else None
-    gen = None if v4 else json.loads(GEN.read_text())
-    line = list(csv.DictReader((HERE / f"derived/late_arrival_line{'_sept29' if v4 else ''}.csv").open()))
-    for case in (V4_GEN if v4 else MAIN):
-        if v4:
-            gen, band = gens[case], v4_band(case)
+    if which not in ("default", "sept29", "oct05"):
+        sys.exit("--set must be default, sept29 or oct05")
+    v4, v5 = which == "sept29", which == "oct05"
+    sets = V5_GEN if v5 else V4_GEN
+    gens = {c: json.loads(sets[c].read_text()) for c in sets} if v4 or v5 else None
+    gen = None if v4 or v5 else json.loads(GEN.read_text())
+    line = list(csv.DictReader((HERE / f"derived/late_arrival_line{'_' + which if v4 or v5 else ''}.csv").open()))
+    for case in (sets if v4 or v5 else MAIN):
+        if v4 or v5:
+            gen, band = gens[case], (v5_band(case) if v5 else v4_band(case))
         else:
             band = next(r for r in csv.DictReader((FISCAL / MAIN[case] / "derived/main_case_bands.csv").open())
                         if r["variant"] == "adopted" and r["profile"] in ("long_run_non_school_full", "cbo_category_lag_non_school_full"))
@@ -69,6 +83,9 @@ def main():
             if v4:
                 check(f"{case} {reading}: the cells and the generation summary are one lane's payload ({V4_LANE})",
                       c["main"] == gen["lane"] == V4_LANE and c["v4"]["payload"] == gen["payload"], c["v4"]["payload"])
+            if v5:
+                check(f"{case} {reading}: the cells and the generation summary are one lane's payload ({V5_LANE})",
+                      c["main"] == gen["lane"] == V5_LANE and c["v5"]["payload"] == gen["payload"], c["v5"]["payload"])
             for conv in ("a", "b"):
                 cells = c["conventions"][conv]
                 for k, end in enumerate(("low", "high")):
@@ -87,9 +104,15 @@ def main():
                     elif reading == "central" and conv == "a" and end == "low":
                         print(f"  [PENDING] {case}: the generation lane holds case {gen.get('case')}, not {case}; "
                               "G1 checked against the case's band only")
+                    if v5:
+                        g3, ref3 = cells["G3plus"], gen["conventions"][conv]["G3plus"]
+                        check(f"{tag}: the G3plus cell, with the added people, is the generation lane's G3plus (cost 1e-6; members and adults 1e-6)",
+                              abs(g3[end]["cost_bn"] - ref3["cost_bn"][k]) < 1e-6 and abs(g3["population"] - ref3["population"]) < 1e-6
+                              and abs(g3["adults"] - ref3["adults"]) < 1e-6,
+                              f"{g3[end]['cost_bn']:.6f}; {g3['population']:,.1f} members")
                     rows = {r["subgroup"]: float(r["bn"]) for r in line if r["case"] == case and r["reading"] == reading
                             and r["convention"] == conv and r["spec"] == end and r["program"] == "total"}
-                    check(f"{tag}: late_arrival_line{'_sept29' if v4 else ''}.csv late50 + younger = mexico_born (1e-5)",
+                    check(f"{tag}: late_arrival_line{'_' + which if v4 or v5 else ''}.csv late50 + younger = mexico_born (1e-5)",
                           abs(rows["late50"] + rows["younger_50p"] + rows["younger_u50"] - rows["mexico_born"]) < 1e-5
                           and abs(rows["mexico_born"] - late - rest) < 1e-5)
     if fails:
