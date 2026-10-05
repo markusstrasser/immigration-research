@@ -1,5 +1,0 @@
-row,added_m,c,added_bn_low,excess_over_avg_bn_low,per_member_low,note_avg_cost_bn_low,added_bn_high,excess_over_avg_bn_high,per_member_high,note_avg_cost_bn_high
-"third-plus attriters, floor",0.8,0.5635,3.86,1.8,9263,2.06,5.15,2.07,10860,3.08
-"third-plus attriters, central",1.81,0.5635,11.66,6.99,9225,4.67,15.02,8.05,10833,6.96
-"lineage, identity loss past G3, low",3.03,0.5635,21.09,13.26,9183,7.82,26.94,15.28,10803,11.66
-"lineage, identity loss past G3, high",5.33,0.5635,38.85,25.09,9108,13.76,49.41,28.9,10750,20.5

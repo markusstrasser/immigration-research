@@ -450,7 +450,7 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/g3_i
   {lane}/extract.py` gives **IDENTICAL: 11/11, exit 0** (2026-10-05).
 - With the monthly frame (2026-10-05), `scripts/rerun_lane.py infra/immigration-fiscal/g3_identity_pooled_2026_10_05
   "OPENBLAS_NUM_THREADS=1 uv run --no-project python3 {lane}/analyze.py" "OPENBLAS_NUM_THREADS=1 uv run
-  --no-project python3 {lane}/analyze_monthly.py" "uv run --no-project python3 {lane}/reprice.py" --allow-unrun
+  --no-project python3 {lane}/analyze_monthly.py" --allow-unrun
   extract.py --allow-unrun extract_monthly.py` gives **IDENTICAL: 25/25, exit 0**. That run includes `analyze.py`'s
   outputs after the `classify()` signature change.
 - `extract.py` is acquisition: `run`, or `download --number 4`, then `ddi --number 4`. It is not part of the
@@ -458,23 +458,11 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/g3_i
 - `extract_monthly.py` is acquisition for extract 5: `download --number 5`, then `ddi --number 5`. It is not part
   of the rerun.
 
-## Repricing the identity-loss rows (parent, 2026-10-05)
+## Repricing the identity-loss rows (withdrawn 2026-10-05)
 
-`reprice.py` reprices the four rows of the [loose-ends note](../../../notes/immigration-dataset-loose-ends-2026-09-30.md)
-by the measured rule: the 0.80M attriters lost at the G3 rate close c = 0.56 of the gap between an identified
-G3+ member ($7,724 / $9,771) and the average resident ($2,581 / $3,847); later losses close none. The note had
-priced every row at the average resident's cost, using the Duncan–Trejo schooling convention that §2 of
-carryover_identity rejects for later losses. [CALCULATION: `reprice.py` → `derived/attriter_pricing.csv`]
-
-| Added people | Count | Note (average cost) | Measured rule | Excess over as many average residents | Per member |
-|---|---:|---|---|---|---|
-| Third-plus attriters, floor | 0.80M | +$2.1 / 3.1bn | +$3.9 / 5.2bn | +$1.8 / 2.1bn | $9,263 / $10,860 |
-| Third-plus attriters, central | 1.81M | +$4.7 / 7.0bn | **+$11.7 / 15.0bn** | +$7.0 / 8.1bn | $9,225 / $10,833 |
-| Identity loss past G3, low | 3.03M | +$7.8 / 11.7bn | +$21.1 / 26.9bn | +$13.3 / 15.3bn | $9,183 / $10,803 |
-| Identity loss past G3, high | 5.33M | +$13.8 / 20.5bn | +$38.9 / 49.4bn | +$25.1 / 28.9bn | $9,108 / $10,750 |
-
-The added cost is a relabel: these people already sit in the national total, among "everyone else". The rows
-answer a lineage question beside the account's birthplace-plus-identification frame, never a correction to it.
-The average resident stands in for the white end of c, which is measured against third-plus whites; whites cost
-less than the average resident, so the G3-rate rows lean high by a small amount. The 3.03–5.33M rows rest on
-unobservable fourth-plus losses and are bounds.
+An earlier `reprice.py` priced the loose-ends note's rows here with c from this lane. It is withdrawn and deleted
+(its last version is in 7e22ca7f): it used convention (b), which moves children's costs onto their parents; the
+average resident's shared cost as the white end; and only the 0.80M third-generation attriters at the G3 rate,
+where the generation-split rule also puts their descendants (1.94M on arm b). The added people are priced on v4's
+rules, on the engine, in [main_case_lineage_2026_10_05](../main_case_lineage_2026_10_05/RESULT.md): arm b's 3.04M
+add +$18.9 / 26.4bn.
