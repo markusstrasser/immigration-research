@@ -99,7 +99,7 @@ The items interact by −$0.5bn, mostly because payroll compliance lowers the OA
 the September 29 case is $49.6 / $47.4bn above September 27's $321.8–387.4bn. Printed to one decimal, state pricing's high end
 ($2.27bn) shows as $2.2bn and the change's ($47.47bn) as $47.4bn, so the parts add. State pricing and the road key
 both touch vehicle licences; the case applies the state index to the miles-keyed amount. Counting benefits when paid
-rather than when earned, the cash set is $294.7–361.8bn ($7.4–9.1k per member) on that case. The uninsured-use arm at 0.7×
+rather than when earned, the cash set is $294.7–361.8bn ($7.4–9.1k per member) on the September 29 case. The uninsured-use arm at 0.7×
 ($369.9–432.6bn; its evidence is only between regions, ladder 256) and transit's riders' key ($371.6–435.0bn) stay
 beside that case. Five items are known to be summed on the survey's weights instead of the account's, and are not yet
 applied: owner-occupied property tax, the Part A accrual, the tax on benefits, state pricing's indexes and the

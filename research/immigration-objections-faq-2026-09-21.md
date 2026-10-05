@@ -407,9 +407,11 @@ and with jails at the arrest share, prisons and jails are 22.9% Hispanic (ladder
 case's custody key comes from the ACS. Hispanic adults are imprisoned at 1.3 times the all-adult
 rate and 2.6 times the non-Hispanic white rate (BJS, 2023).
 Victim costs are outside a fiscal account. Crimes by group members against
-other residents cost the victims about $31bn a year ($28.9bn, range $15–45bn, plus $2.0bn for
-Hispanic members of mixed offender groups; ladder 218), a social cost beside the fiscal
-headline ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3). Police
+other residents cost the victims $30.5–31.9bn a year among the 39.7M people the account
+identifies, and about $33bn with the 3.04M added descendants, a social cost beside the fiscal
+headline ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3). Ladder 218's
+own figure, $28.9bn (range $15–45bn) plus $2.0bn for Hispanic members of mixed offender groups, is
+on the survey's raw 40.9M. Police
 records agree. In Texas and Arizona (NIBRS 2022–2023), Hispanic residents offend at 1.7–2.3
 times the non-Hispanic white rate for murder, rape and assault and 4.2 times for robbery, but at
 0.92–1.18 times the rate of all residents, and 70–81% of their victims are Hispanic. These are
