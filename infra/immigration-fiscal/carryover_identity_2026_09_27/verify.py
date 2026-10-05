@@ -13,6 +13,7 @@ HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
 D = HERE / "derived"
 CARRY = FISCAL / "generation_carryover_2026_09_27"
+C3_POOLED_ROW = "cps_monthly_1994_2026_pooled"  # c3_candidate.csv: monthly + NLSY97 pool
 FAIL = []
 
 
@@ -103,6 +104,22 @@ for label in ("CPS_ASEC_2022_2025", "CPS_ASEC_2022_2026"):
     c = pd.read_csv(D / f"cps_identity_contrasts_{label}.csv")
     g3 = c[(c.frame == "cores_one") & (c.reference == "white3plus") & (c.contrast == "G3anc: share not Mexican")].value
     check(g3.between(0.08, 0.16).all(), f"{label}: co-resident G3 adults not Mexican {g3.min():.3f}-{g3.max():.3f}")
+
+# 9. The central pooled G3 value (C3) on every composite row equals the g3_identity_pooled lane's own pool of its
+#    monthly-frame share with NLSY97 Table 13, computed there independently (2026-10-05).
+cand = pd.read_csv(FISCAL / "g3_identity_pooled_2026_10_05/derived/c3_candidate.csv")
+pool = cs[cs.attriter_value.str.startswith("composite: G3-rate share at the pooled same-sample G3 value")
+          & cs.source.eq("CPS_ASEC_2022_2025")]
+A3 = cs.hidden_share.min()
+for m, n_rows in (("ba_plus", 9), ("educ_years", 3)):
+    want = cand[(cand["key"] == C3_POOLED_ROW) & (cand.measure == m)]
+    mine = pool[pool.measure.eq("educ_years") if m == "educ_years" else ~pool.measure.eq("educ_years")]
+    c3 = mine.closing_share * mine.hidden_share / A3
+    c3se = mine.closing_share_se * mine.hidden_share / A3
+    ok = (len(want) == 1 and len(mine) == n_rows and (c3 - want.c.iloc[0]).abs().max() < 1e-6
+          and (c3se - want.se.iloc[0]).abs().max() < 1e-6)
+    check(ok, f"central C3 {m} on {len(mine)} composite rows = c3_candidate.csv '{C3_POOLED_ROW}' to 1e-6 "
+              f"({c3.iloc[0] if len(mine) else float('nan'):.6f} vs {want.c.iloc[0] if len(want) == 1 else float('nan'):.6f})")
 
 if FAIL:
     print(f"FAIL: {len(FAIL)} check(s)")

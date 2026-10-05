@@ -16,9 +16,15 @@ NLSY97 reconstruction (published tables only): within the cross-sectional sample
 Hispanic identification, G3 identifiers against all G3 (Table 13); the full sample's G3 with its screened
 non-identifiers removed or restored (Tables 2, 12, 13).
 
+Pooled G3 value (C3). Since 2026-10-05 the central label's CPS component is the IPUMS-CPS basic monthly frame
+1994-2026 (g3_identity_pooled_2026_10_05, bootstrap SE), which replaces the ASEC 2022-25 replicate share; the
+2022-26 label keeps its own replicate share as the recent-years sensitivity. The NLSY97 side is unchanged.
+
 Inputs: _cache/reps_<label>.npz (cps_identity.py), derived/acs_ancestry_contrasts.csv, the carry-over lane's
-NLSY97 Table 2 constants (imported read-only from its summarize.py). Outputs: derived/corrected_step.csv,
-derived/nlsy97_same_sample.csv, derived/cps_nlsy_decomposition.csv.
+NLSY97 Table 2 constants (imported read-only from its summarize.py), and
+g3_identity_pooled_2026_10_05/derived/c3_candidate.csv (read when the corrected step is built, never at import:
+that lane imports this module). Outputs: derived/corrected_step.csv, derived/nlsy97_same_sample.csv,
+derived/cps_nlsy_decomposition.csv.
 """
 from __future__ import annotations
 
@@ -39,6 +45,11 @@ CARRY = HERE.parent / "generation_carryover_2026_09_27"
 DERIVED = HERE / "derived"
 CACHE = HERE / "_cache"
 LABELS = ["CPS_ASEC_2022_2025", "CPS_ASEC_2022_2026"]
+# CPS component of the pooled G3 value by label: a c3_candidate.csv `key` row, or absent for this lane's own
+# co-resident replicate share. The rho the correction applies to stays the label's ASEC replicate ratio.
+C3_CANDIDATE = HERE.parent / "g3_identity_pooled_2026_10_05" / "derived" / "c3_candidate.csv"
+C3_CPS_ROW = {"CPS_ASEC_2022_2025": "cps_monthly_1994_2026_raw"}
+C3_CPS_FRAME = {"CPS_ASEC_2022_2025": "CPS basic monthly 1994-2026 co-resident", "CPS_ASEC_2022_2026": "CPS co-resident"}
 
 
 def _load(name, path):
@@ -109,15 +120,36 @@ def c_sources(R, label, m, acs):
     return out
 
 
+def cps_g3(R, label, m):
+    """CPS co-resident G3 closing share on a schooling measure, (value, se): the label's c3_candidate.csv row
+    (monthly frame, bootstrap SE) when it has one, else this lane's replicate share (SDR SE)."""
+    src = C3_CPS_ROW.get(label)
+    if src is None:
+        c = closing(R, label, "cores_one", m, "G3anc_nonmex", "G3anc_id")
+        return float(c[0]), sdr(c)
+    if not C3_CANDIDATE.exists():
+        raise SystemExit(f"[BLOCKED] missing {C3_CANDIDATE} (g3_identity_pooled_2026_10_05 analyze_monthly.py)")
+    t = pd.read_csv(C3_CANDIDATE)
+    if "key" not in t.columns:
+        raise SystemExit(f"[BLOCKED] {C3_CANDIDATE.name} has no `key` column (columns {list(t.columns)})")
+    r = t[(t["key"] == src) & (t.measure == m)]
+    if len(r) != 1:
+        raise SystemExit(f"[BLOCKED] {C3_CANDIDATE.name}: {len(r)} rows with key {src!r}, measure {m!r}; need one")
+    v, se = float(r.c.iloc[0]), float(r.se.iloc[0])
+    if not (math.isfinite(v) and math.isfinite(se) and se > 0):
+        raise SystemExit(f"[BLOCKED] {C3_CANDIDATE.name} {src}/{m}: c {v}, se {se}")
+    return v, se
+
+
 def pooled_g3(R, label, m):
     """Inverse-variance mean of the two same-sample G3 closing shares on a schooling measure: CPS co-resident
-    G3 adults (replicate SE) and NLSY97 Table 13 (published SEs). Returns (value, se)."""
-    c = closing(R, label, "cores_one", m, "G3anc_nonmex", "G3anc_id")
+    G3 adults (cps_g3) and NLSY97 Table 13 (published SEs). Returns (value, se)."""
+    c, c_se = cps_g3(R, label, m)
     g_id = T13[m]["id"][0] - T2[m]["white4plus"][0]
     nl = (T13[m]["nonid"][0] - T13[m]["id"][0]) / -g_id
     nl_se = math.hypot(T13[m]["nonid"][1], T13[m]["id"][1]) / abs(g_id)
-    w = np.array([1 / sdr(c) ** 2, 1 / nl_se ** 2])
-    return float((w * [c[0], nl]).sum() / w.sum()), float(1 / math.sqrt(w.sum()))
+    w = np.array([1 / c_se ** 2, 1 / nl_se ** 2])
+    return float((w * [c, nl]).sum() / w.sum()), float(1 / math.sqrt(w.sum()))
 
 
 def corrected(label, acs):
@@ -156,7 +188,7 @@ def corrected(label, acs):
             rs = rho * (1 - a3 * c3)
             rows.append(dict(source=label, measure=m, hidden_share=a, hidden_share_source=a_src,
                              attriter_value="composite: G3-rate share at the pooled same-sample G3 value "
-                                            "(CPS co-resident + NLSY97; schooling), extra share like identifiers",
+                                            f"({C3_CPS_FRAME[label]} + NLSY97; schooling), extra share like identifiers",
                              kind="composite", closing_share=float(a3 * c3 / a), closing_share_se=c3se * a3 / a,
                              rho_published=float(rho[0]), rho_published_se=sdr(rho), rho_corrected=float(rs[0]),
                              rho_corrected_se=math.sqrt(sdr(rs) ** 2 + (rho[0] * a3 * c3se) ** 2),

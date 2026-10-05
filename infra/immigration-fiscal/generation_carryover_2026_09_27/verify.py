@@ -120,7 +120,7 @@ check(g[g.frame.eq("cores_both") & g.generation.eq("G4plus_obs") & g.measure.eq(
 ci = pd.read_csv(HERE.parent / "carryover_identity_2026_09_27/derived/corrected_step.csv")
 comp = ci[ci.attriter_value.str.startswith("composite: G3-rate share at the pooled same-sample G3 value")]
 A3 = s.RATES["G3"][0][1]
-label = {"CPS_ASEC_2022_2025": "pooled with CPS 2022-25 (central)", "CPS_ASEC_2022_2026": "pooled with CPS 2022-26 (sensitivity)"}
+label = {"CPS_ASEC_2022_2025": s.SPLIT_C3_CENTRAL, "CPS_ASEC_2022_2026": s.SPLIT_C3_SENSITIVITY}
 drift = []
 for r in comp.itertuples():
     c3, c3se = s.SPLIT_C3[label[r.source]]["educ_years" if r.measure == "educ_years" else "ba_plus"]
@@ -154,8 +154,8 @@ nl_obs = cr[cr.scenario.eq("attriters_like_identifiers") & cr.source.eq("NLSY97_
 check(np.allclose(spr[nl].gap_G3, spr[nl].measure.map(nl_obs)), "NLSY97 G3 takes no split correction (its G3 includes non-identifiers)")
 pr = pd.read_csv(D / "projection.csv")
 b0 = pr[pr.path.str.startswith("stall") & pr.generation.eq("G3+ (measured base)")].set_index("measure").gap
-for key, lab in [("generation split, central", "pooled with CPS 2022-25 (central)"),
-                 ("generation split, sensitivity", "pooled with CPS 2022-26 (sensitivity)")]:
+for key, lab in [("generation split, central", s.SPLIT_C3_CENTRAL),
+                 ("generation split, sensitivity", s.SPLIT_C3_SENSITIVITY)]:
     sel = spr[spr.measure.eq("ba_plus") & spr.attrition_G4plus.eq(.292) & spr.delta_source.str.contains(lab, regex=False)]
     p = pr[pr.path.str.startswith(key)]
     c3 = s.SPLIT_C3[lab]["ba_plus"][0]
@@ -171,7 +171,9 @@ check(np.isclose(w[("ledger_partial_per_adult", "G4")], (1 - .556) * b0["ledger_
       "worst case: lineage G4 = (1 - 0.556) x identifiers' gap, as its basis states")
 sn = cr[cr.scenario.eq("sensitivity_nlsy97_g3_as_published") & cr.delta_source.str.startswith("generation split")]
 s_nl = 1 - s.NLSY_T12_COMBINED["G3"][0] / 100
-c3n = sn.delta_source.str.extract(r"C3 ([0-9.]+) ")[0].astype(float)
+sn_label = sn.delta_source.map(lambda d: [k for k in s.SPLIT_C3 if k in d])
+c3n = pd.Series([s.SPLIT_C3[k[0]][s.SPLIT_C3_FOR[m]][0] if len(k) == 1 else np.nan for k, m in zip(sn_label, sn.measure)],
+                index=sn.index)
 check(len(sn) == 4 and np.allclose(sn.rho_G3_G4plus, sn.measure.map(ids.loc["NLSY97_published"]) * (1 - s_nl * c3n), rtol=1e-12),
       f"NLSY97 G3 as published ({s_nl:.1%} non-identifiers): split ratio = observed x (1 - s C3)")
 

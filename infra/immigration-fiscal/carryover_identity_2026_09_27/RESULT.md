@@ -5,6 +5,11 @@ resolution. With the hidden third-plus put back, G2 → G3+ carries over about *
 **0.82 of the earnings and partial-ledger gaps**, against 0.92 / 0.90 / 0.90 on self-identified CPS data
 (SE 0.07–0.09, including the uncertainty in how the hidden compare). The gap to third-plus non-Hispanic whites
 then shrinks by about a sixth from G2 to G3+, not a tenth.
+[2026-10-05: C3 now pools the IPUMS-CPS basic monthly frame 1994–2026 (526 unique G3 non-identifiers at 25+,
+c 0.572, SE 0.256) with NLSY97, in place of the 44–55 ASEC 2022–25 adults: 0.557 (SE 0.246) on BA+ and 0.687
+(0.228) on years, against 0.78 (0.64). G2 → G3+ then carries about **0.86 of the BA+ gap** and **0.84–0.85 of the
+earnings and partial-ledger gaps** (SE 0.04–0.07). Identity loss takes about 6% off the ratio, not a tenth, and
+the gap shrinks by 14–16% from G2 to G3+. (g3_identity_pooled_2026_10_05, monthly frame)]
 - **Where the correction comes from.** A same-sample CPS design (adults living with a parent, G3 defined by a
   Mexico-born grandparent whatever they report) finds 11% of G3 adults do not report Mexican origin, and those
   who do not sit near white parity. The extra losses after G3 that the propagation lane adds (17.5–23% hidden
@@ -23,7 +28,9 @@ then shrinks by about a sixth from G2 to G3+, not a tenth.
   (0.92) against NLSY97 (0.76) difference than attrition does: 0.09 against 0.05 of the 0.16.
 - **What remains open.** The central number rests on one noisy input: how G3 non-identifiers compare with
   whites. The pooled estimate closes 0.78–0.91 of the identifiers' gap (SE 0.61–0.64), from 44–55 CPS adults and
-  11 NLSY97 adults. About 540 would settle it (§4).
+  11 NLSY97 adults. About 540 would settle it (§4). [2026-10-05: the monthly frame finds 526 unique G3
+  non-identifiers at 25+; pooled with NLSY97 they close 0.557 (SE 0.246) of the BA+ gap. (g3_identity_pooled_2026_10_05,
+  monthly frame)]
 
 [FRAMING-SENSITIVE: every gap is group minus third-plus non-Hispanic whites, age × sex matched in the same frame;
 the dollar measures are worker earnings and the September 5 partial annual ledger, not the adopted account,
@@ -96,6 +103,11 @@ brief]
 | Composite, later losses at the measured one-step G4 value | — | — | 0.784 (0.050) | 0.769 (0.066) | 0.755 |
 | Like whites | 1 | 0.801 | 0.745 (0.040) | 0.695 (0.037) | 0.647 |
 
+[2026-10-05: at the monthly-frame C3 (0.557, SE 0.246; years 0.687, SE 0.228) the three **Composite** rows read
+**0.863 (0.044)** on BA+, **0.843 (0.070)** on earnings and **0.846 (0.052)** on the ledger, the same at every
+propagation share; years gives 0.839 (0.044). No other row moves. (g3_identity_pooled_2026_10_05, monthly frame;
+`derived/corrected_step.csv`)]
+
 **Reading the three attriter values.**
 - *Like identifiers.* The published 0.92 / 0.90 / 0.90 stands.
 - *Measured.* The answer depends on which non-identifiers stand in for the hidden:
@@ -106,7 +118,8 @@ brief]
     descend from third-generation attriters.
   - It gives the extra later losses the identifiers' value, which is what the one-step G4 measurement shows
     (§2). That yields 0.84 / 0.82 / 0.82 at any propagation hidden share, because only the G3-rate share
-    moves.
+    moves. [2026-10-05: with the monthly frame's 526 non-identifiers the pooled value is 0.557 (SE 0.246), and
+    the composite gives 0.863 / 0.843 / 0.846. (g3_identity_pooled_2026_10_05, monthly frame)]
 - *Like whites.* 0.71–0.76 on BA+ and 0.69–0.75 on dollars at 17.5–23%.
 
 The co-resident G3 dollar c's are not used as central values. The earnings share is unstable, because
@@ -114,7 +127,8 @@ identifiers' earnings among co-resident young workers sit only $5.8k below white
 the parents' household. [CALCULATION; INFERENCE for the choice]
 
 In levels, the composite puts the lineage G3+ gap at −18.1 BA+ points and −$6,041 on the ledger. The identifier
-gaps are −19.8 and −$6,615. [CALCULATION]
+gaps are −19.8 and −$6,615. [CALCULATION] [2026-10-05: −18.6 points and −$6,203 at the monthly-frame C3.
+(g3_identity_pooled_2026_10_05, monthly frame)]
 
 **Sensitivity, CPS 2022–26.** Published ratios are 0.936 / 0.933 / 0.926. The composite gives 0.841 / 0.839 /
 0.832 (SE 0.070–0.084). Like whites at 17.5–23% gives 0.77–0.72, 0.77–0.72 and 0.76–0.71. The CPS G2 c falls to
@@ -186,10 +200,13 @@ partial ledger one for one.
 - The BA+ convention's magnitude (0.03–0.37) matches the direct dollar measurements of adult non-identifiers
   (0.14–0.27).
 - It is too low for hidden third-generation members, whom both same-sample designs put higher (pooled 0.78–0.91).
+  [2026-10-05: 0.56 (SE 0.25) on the monthly frame pooled with NLSY97, still above it. (g3_identity_pooled_2026_10_05,
+  monthly frame)]
 
 **What the ledger should use.** A generation-split measured rule, not a single share:
 - *Third-generation hidden members and descendants of G3 attriters* (the 11.2% G3-rate share): the pooled
-  same-sample G3 value, 0.78–0.91, SE about 0.6. [CALCULATION]
+  same-sample G3 value, 0.78–0.91, SE about 0.6. [CALCULATION] [2026-10-05: 0.557 (SE 0.246) on BA+ and 0.687
+  (0.228) on years, the monthly frame pooled with NLSY97. (g3_identity_pooled_2026_10_05, monthly frame)]
 - *Later losses* (the extra hidden share the propagation lane adds): the identifiers' values, c ≈ 0. The only
   direct measurement of such adults gives c −0.35 to −0.86 on BA+ and earnings $11–12k below identifiers.
   [CALCULATION]
@@ -199,6 +216,9 @@ partial ledger one for one.
   the hidden third-plus as a whole, 0.4–0.5.
 - The 54–72% should not be cited as a measurement. It happens to land near the composite's effective value at
   17.5%, but only because two errors offset.
+[2026-10-05: at the monthly-frame C3 the effective c is 0.36 at 17.5% hidden and 0.27 at 23%, so 0.27–0.36 for
+the hidden third-plus as a whole, and the 54–72% no longer lands near it. (g3_identity_pooled_2026_10_05,
+monthly frame)]
 
 **Consequence for the consumer lanes** (not edited). In the population total's arm 5, the central arm's 1.81M
 attriters are all at the G3 rate. Under the split rule that arm moves to its own "fully converged" row: −$6,804
@@ -220,6 +240,10 @@ third-plus (1.95M) is lost at the G3 rate whatever happens later, and 1.10M are 
 identity-loss schedule moves it, because later losses close nothing. [CALCULATION:
 `mexican_origin_population_total_2026_09_19/derived/arm5_generation_split.csv`,
 `identity_loss_propagation_2026_09_27/derived/population_arms.csv`; §5]]
+
+[2026-10-05: at the monthly-frame C3 0.557 the central arm keeps −$2,280 per attriter and lands at **−$6,901 per
+person and −$294.7bn**; under (b) it is **−$6,842 and −$300.7bn**. Row 2a is 0.27% of the lineage central. The
+C3 0.907 figures do not move. (g3_identity_pooled_2026_10_05, monthly frame; same files)]
 
 ## 3. A same-sample test
 
@@ -313,7 +337,9 @@ indicative only. NLSY97's own G3+ pooling barely matters on BA+ (0.746). [CALCUL
   a year. [CALCULATION]
 - Candidate sources:
   - CPS basic monthly files, if they carry the same parent pointers and parents' birthplace (not verified here).
-    They would supply schooling and employment but no ledger.
+    They would supply schooling and employment but no ledger. [2026-10-05: done. MIS 1 and 5, January
+    1994–August 2026, give 526 unique G3 non-identifiers at 25+ and c 0.572 (SE 0.256) on BA+; that value is now
+    C3's CPS side. (g3_identity_pooled_2026_10_05, monthly frame)]
   - IPUMS-CPS ASEC 1994–2025 re-extracted with MOMLOC/POPLOC. The staged `cps_2ndgen` extract has no pointers,
     and the extract needs the operator's IPUMS login.
   - The NLSY97 geocode file, licensed and small (79 at G3).
@@ -350,6 +376,10 @@ the corrected third-plus is lost at the G3 rate, and the rest of the added perso
 | DT 4th-plus | 2.07M / 2.04M | −$6,586, −$296.4bn | −$6,743, −$303.5bn | −$157, −$7.1bn | −$6,712, −$302.1bn |
 | 1970 bound | 2.82M / 8.02M | −$5,913, −$306.0bn | −$6,477, −$335.1bn | −$563, −$29.1bn | −$6,440, −$333.2bn |
 
+[2026-10-05: at the monthly-frame C3 0.5567 the split column reads −$7,013, −$292.4bn (floor); **−$6,901,
+−$294.7bn** (central); −$6,795, −$305.8bn (DT 4th-plus); −$6,538, −$338.3bn (1970 bound). The C3 0.907 column
+does not move. (g3_identity_pooled_2026_10_05, monthly frame; `arm5_generation_split.csv`)]
+
 **Step 2b: the denominator at `lineage_cost_2026_09_19/inputs.py`.** `attrition()` divided the Duncan–Trejo
 attriters' gap (−$1,417.6) by the union's (−$7,105.5). The self-identified third-plus gap it multiplies is
 −$5,143.1, so the share they keep is 0.2756, not 0.1995. Alone, after §E, this moves row 2a by **−$472.00 at 0%
@@ -360,13 +390,16 @@ conventions. The years convention stays as an appended sensitivity row, −$1,28
 (`g3plus_profile`, `inputs.attrition()`). This moves row 2a by **+$318.88 at 0% and +$22.85 at 3%**, to
 −$1,283,351.91 and −$513,053.72. From 2026-09-27 to now, row 2a moves by +$8,620.83 and +$1,210.59: §E
 contributes +$8,773.95 and +$1,221.56. Its effect over the central is now +$4,810 (0.37%), against +$5,178
-(0.40%). At C3 0.907 it is −$1,282,538.38.
+(0.40%). At C3 0.907 it is −$1,282,538.38. [2026-10-05: at the monthly-frame C3 0.5567 they keep 0.4433, and row
+2a is −$1,284,710.36 and −$513,151.05, +$3,451.82 (0.27%) and +$247.33 over the central. (g3_identity_pooled_2026_10_05,
+monthly frame)]
 
 **Step 3: reruns.**
 - `identity_loss_propagation_2026_09_27`: split columns are added beside the Duncan–Trejo ones, and the
   years-convention 2a rows are kept as sensitivities. Under the split, no schedule moves 2a; under the years
   convention (b) moves it by +$4,292. For the split population values see the §2 bracket (−$298.5bn on (b),
-  −$304.3bn on (c) at ρ 0.5). `verify.py` PASS.
+  −$304.3bn on (c) at ρ 0.5). `verify.py` PASS. [2026-10-05: −$300.7bn and −$306.6bn at the monthly-frame C3.
+  (g3_identity_pooled_2026_10_05, monthly frame)]
 - `lineage_sponsored_parents_2026_09_27`: every arm moves by +$8,988.19 / +$1,236.87, and the channels are
   unchanged. `arms.py` had the old central hard-coded as a constant; it now reads the lineage lane's stored
   rows. All 125 gates pass.
@@ -576,12 +609,14 @@ Two full runs leave `derived/` byte-identical: the SHA-256 lists differ in nothi
 - Age split and cohort. The identifiers' BA+ ratio is 0.87 at 25–44 and 1.12 at 45–64, and 0.83 for people born
   1979–85. [CALCULATION]
 - Composite with the pooled same-sample G3 value (inverse-variance CPS co-resident + NLSY97: 0.78, SE 0.64):
-  0.841 BA+, 0.821 earnings, 0.824 ledger (2022–25). [CALCULATION]
+  0.841 BA+, 0.821 earnings, 0.824 ledger (2022–25). [CALCULATION] [2026-10-05: monthly frame + NLSY97, 0.557
+  (SE 0.246): 0.863, 0.843, 0.846. (g3_identity_pooled_2026_10_05, monthly frame)]
 - Two full reruns byte-identical; `verify.py` PASS. [CALCULATION]
 - 2026-09-28, consumer fix phase 2 (§5): audit §E reproduces the audit's targets exactly (−$1,288,162.18 /
   −$513,398.38); the arm 5 split rows give −$6,853 / −$292.7bn centrally; the self-ID divisor moves row 2a by
   −$472.00 and the split by +$318.88; propagation and sponsored-parent lanes rerun, second runs identical.
-  [CALCULATION]
+  [CALCULATION] [2026-10-05: −$6,901 / −$294.7bn at the monthly-frame C3. (g3_identity_pooled_2026_10_05,
+  monthly frame)]
 - 2026-09-28, phase 3 (§5): the projection back-test's lineage copy takes §E; its no-exit lineage at 3% and
   100 intervals goes from −$318,369.84 to −$316,023.02, and the second run is identical (21/21). The sponsorship
   probe runs the audited a72fd62 code (rc 0) and checks the current lane's −1,288,162.18. [CALCULATION]
@@ -590,3 +625,13 @@ Two full runs leave `derived/` byte-identical: the SHA-256 lists differ in nothi
 gate reproduces the 2022–25 cells) gives c = 0.56 (SE 0.29), so ρ\* = 0.863 (0.047) against the composite's
 0.841. The 2022–26 value was high partly by chance. The ~540 target was not reached on unique persons.
 [CALCULATION: [g3_identity_pooled_2026_10_05](../g3_identity_pooled_2026_10_05/RESULT.md)]]
+
+[2026-10-05, later: C3's CPS side is now the IPUMS-CPS basic monthly frame, MIS 1 and 5, 1994–2026 (526 unique
+G3 non-identifiers at 25+, c 0.572, SE 0.256 on BA+), in place of the ASEC 2022–25 replicate share.
+`corrected_step.py` reads it from that lane's `derived/c3_candidate.csv` (key `cps_monthly_1994_2026_raw`) and
+pools it with NLSY97 Table 13 by the unchanged rule: 0.557 (SE 0.246) on BA+, 0.687 (0.228) on years. Gate 9 of
+`verify.py` checks every central composite row against that lane's own pool (key `cps_monthly_1994_2026_pooled`)
+to 1e-6. Only the 12 central composite rows of `corrected_step.csv` change: 0.863 / 0.843 / 0.846 (BA+, earnings,
+ledger). The CPS 2022–26 sensitivity rows are byte-identical. The carry-over, population, lineage, propagation and
+sponsored-parent lanes were rerun, and every second run is identical. (g3_identity_pooled_2026_10_05, monthly frame)
+[CALCULATION]]

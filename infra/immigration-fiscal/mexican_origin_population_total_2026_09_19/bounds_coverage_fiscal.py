@@ -50,7 +50,9 @@ LEDGER = HERE.parent / "all_age_ledger_2026_09_17" / "derived" / "estimates.csv"
 # C3: the share of the self-identified third-plus gap that hidden third-generation members
 # and the descendants of third-generation attriters close, pooled from CPS co-resident G3
 # adults and NLSY97 on BA+ (dollars have no G3 measurement) by carryover_identity_2026_09_27
-# (RESULT section 2). One definition, held in the carry-over lane with a drift test.
+# (RESULT section 2); since 2026-10-05 the central's CPS side is the basic monthly frame
+# 1994-2026 (g3_identity_pooled_2026_10_05). One definition, held in the carry-over lane
+# with a drift test.
 _gc = importlib.util.spec_from_file_location(
     "generation_carryover_summarize",
     HERE.parent / "generation_carryover_2026_09_27" / "summarize.py")

@@ -60,8 +60,10 @@ POP_OUTPUTS = ("arm3_correction_bounds.csv", "arm3_fractional_counting.csv",
                "arm4_coverage_grid.csv", "arm5_fiscal_implication.csv",
                "arm5_education_selectivity.csv", "arm5_generation_split.csv")
 # Population lane arm-5 rows: the measured generation split (central since 2026-09-28) and the
-# Duncan-Trejo years convention (sensitivity).
-SPLIT_ROW = "generation split, measured: G3-rate attriters close C3 0.7758"
+# Duncan-Trejo years convention (sensitivity). The central split row is the one whose C3 entry is
+# labelled CENTRAL in arm5_generation_split.csv; its fiscal row is found by that label, never by value.
+SPLIT_ROW = "generation split, measured"
+CENTRAL = "(central)"
 DT_ROW = "Duncan-Trejo"
 BCF_READS = ("arm3_multiplier.csv", "arm3_grandparent_counts.csv")
 
@@ -322,11 +324,16 @@ def main() -> int:
 
     def arm5_rows(f: pd.DataFrame, g: pd.DataFrame, assumption: str):
         """The bound's Duncan-Trejo row, its central generation-split row and that row's split."""
+        gs = g[(g.population_assumption == assumption) & g.c3_source.str.endswith(CENTRAL)]
+        if len(gs) != 1:
+            raise SystemExit(f"[BLOCKED] arm 5 central split row not unique for {assumption}")
         dt = f[(f.population_assumption == assumption) & f.attriter_characteristics.str.startswith(DT_ROW)]
-        sp = f[(f.population_assumption == assumption) & f.attriter_characteristics.str.startswith(SPLIT_ROW)]
-        gs = g[(g.population_assumption == assumption) & g.c3_source.str.endswith("(central)")]
-        if not len(dt) == len(sp) == len(gs) == 1:
+        sp = f[(f.population_assumption == assumption) & f.attriter_characteristics.str.startswith(SPLIT_ROW)
+               & f.attriter_characteristics.str.contains(f"({gs.iloc[0].c3_source})", regex=False)]
+        if not len(dt) == len(sp) == 1:
             raise SystemExit(f"[BLOCKED] arm 5 rows not unique for {assumption}")
+        if sp.iloc[0].gap_per_person_after != gs.iloc[0].gap_per_person_after:
+            raise SystemExit(f"[BLOCKED] arm 5 fiscal and split rows disagree for {assumption}")
         return dt.iloc[0], sp.iloc[0], gs.iloc[0]
 
     old_f5, old_s5, old_g5 = arm5_rows(f0, g0, old.assumption)
@@ -380,9 +387,9 @@ def main() -> int:
                          rec["gap_per_person_after"]),
                         ("aggregate_gap_bn_after (DT selectivity)", old_f5.aggregate_gap_bn_after,
                          rec["aggregate_gap_bn_after"]),
-                        ("gap_per_person_after (generation split, C3 0.7758)",
+                        ("gap_per_person_after (generation split, central C3)",
                          old_s5.gap_per_person_after, rec["gap_per_person_after_split"]),
-                        ("aggregate_gap_bn_after (generation split, C3 0.7758)",
+                        ("aggregate_gap_bn_after (generation split, central C3)",
                          old_s5.aggregate_gap_bn_after, rec["aggregate_gap_bn_after_split"])):
                     rows.append({"arm": key, "consumer": "population_total_arm3", "metric": metric,
                                  "old": float(o), "new": float(n), "delta": float(n) - float(o)})
@@ -460,6 +467,7 @@ def main() -> int:
     meta = {"p3_population_unrounded": p3, "p3_lineage_input": base_rate, "losses": lo,
             "arms": {k: {kk: vv for kk, vv in v.items()} for k, v in S.items()},
             "rho_central": RHO_CENTRAL, "rhos": list(RHOS), "pes_multiplier": PES,
+            "c3_central": {"label": old_g5.c3_source, "c3": float(old_g5.c3), "c3_se": float(old_g5.c3_se)},
             "lineage_attrition": {"central": lin.attr, "years_convention": lin.attr_years},
             "checks": {"population_outputs_byte_identical": True,
                        "lineage_central": [c0, c3],

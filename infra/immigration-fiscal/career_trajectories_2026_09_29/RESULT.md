@@ -24,7 +24,7 @@ variance PSUs, 300 replicates]
   0.044), offset by lower employment and fewer weeks. [CALCULATION]
 - **G3+ Hispanics** (same cohort, not the children of these G2): men −0.197 (0.064) → −0.297 (0.065); women −0.212
   (0.077) → −0.158 (0.094). At 35–40, G3+ men's gap is 1.1 times G2 men's and G3+ women's 0.8 times G2 women's, in
-  line with ladder 232's stall after the second generation (≈0.84). Education leaves G3+ men at −0.183 (0.061); it
+  line with ladder 232's stall after the second generation (≈0.84; [2026-10-05: ≈0.86 with C3 from the CPS basic monthly frame (g3_identity_pooled_2026_10_05, monthly frame)]). Education leaves G3+ men at −0.183 (0.061); it
   closes the women's gap. [CALCULATION]
 - **Scope.** Hispanic here means 1997 screener ethnicity. Among Hispanics who answered the 1997–98 ASVAB origin item,
   a Mexican origin was named by 57% of G2 men, 62% of G2 women and 53–55% of G3+ (weighted, any of three mentions),

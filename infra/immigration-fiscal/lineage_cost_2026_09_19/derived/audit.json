@@ -1,11 +1,11 @@
 {
  "attrition": {
-  "attriter_gap_per_person": -1153.1,
-  "attriter_retained_share_of_gap": 0.22420330151076195,
+  "attriter_gap_per_person": -2279.9,
+  "attriter_retained_share_of_gap": 0.4432929556104295,
   "attriter_share": 0.1119,
-  "c3": 0.7758,
-  "c3_se": 0.6436,
-  "c3_source": "pooled with CPS 2022-25 (central)",
+  "c3": 0.5567,
+  "c3_se": 0.2457,
+  "c3_source": "pooled with CPS monthly 1994-2026 (central)",
   "convention": "generation_split",
   "fourth_plus_identification_rate": 0.8881,
   "g3_rate_share": 0.1119,
@@ -182,8 +182,8 @@
   "lineage_cost_2026_09_19/derived/senior_state_shares.csv": "be7d28f54b244909505ecfcdc8f3919364a17906df1dbf4591e2a17ea9e7a66b",
   "lineage_cost_2026_09_19/senior_pricing_inputs.json": "d7d1f78f7a5f944d039ecd6f60591bfd3865e0b091643e89c493fd846b5e00a1",
   "mexican_origin_population_total_2026_09_19/derived/arm3_correction_bounds.csv": "609dc69ce4a34befeb7ecd3af83b9448c4fced7f1e7939bac10f6b668716fe63",
-  "mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication.csv": "58ed4d694b679846df3e9b8ab250bf5652612b899d1df7f69172f7f8de825172",
-  "mexican_origin_population_total_2026_09_19/derived/arm5_generation_split.csv": "6b78b3b0cfe5d39d9a546921245689956b20438ea2f7d4869a017c6087dc241e",
+  "mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication.csv": "33a65b135eb5ebc1346b8dc6a90d8f44bee4c3ca05b67ee2f779ed4f2df2d24c",
+  "mexican_origin_population_total_2026_09_19/derived/arm5_generation_split.csv": "35affa4082e95397fb405b4e76e0179592a096ce6c563abedd58eba35410da37",
   "pronatal_equivalence_2026_09_18/derived/lifetime_equivalence.csv": "dde6613b2d4ba8acfa5302d7c362808160ad59096799e6896fe315a462ed826b",
   "status_impute_2026_09_16/RESULT.md": "7edabaee75a171b785227a55bc69cc5ae5b00f3b753ee9e996cbc4cb55f74ef4"
  },

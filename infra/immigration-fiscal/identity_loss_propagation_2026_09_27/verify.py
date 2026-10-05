@@ -77,25 +77,34 @@ def main() -> int:
     # Generation split: 1 - p3 of the corrected third-plus is lost at the G3 rate in every arm,
     # the rest of the added persons later; the aggregate adds them at (1 - C3) and 1 of the
     # self-ID gap.
-    sp = pd.read_csv(P.POP_DIR / "derived/arm5_generation_split.csv")
-    sp = sp[sp.c3_source.str.endswith("(central)")].iloc[0]
+    split_central = pd.read_csv(P.POP_DIR / "derived/arm5_generation_split.csv")
+    split_central = split_central[split_central.c3_source.str.endswith(P.CENTRAL)]
+    sp = split_central.iloc[0]
     c3_split, gap3 = float(sp.c3), float(sp.selfid_third_plus_gap_per_person)
-    before = float(pd.read_csv(P.POP_DIR / "derived/arm5_fiscal_implication.csv")
-                   .aggregate_gap_bn_before.iloc[0]) * 1e9
-    worst_n = worst_bn = 0.0
+    f5 = pd.read_csv(P.POP_DIR / "derived/arm5_fiscal_implication.csv")
+    before = float(f5.aggregate_gap_bn_before.iloc[0]) * 1e9
+    pop_before = float(f5.population_before.iloc[0])
+    worst_n = worst_bn = worst_pp = 0.0
     for _, r in pop.iterrows():
         g3r = min(r.added_M, (1 - p3) * r.corrected_third_plus_M)
         worst_n = max(worst_n, abs(g3r - r.g3_rate_attriters_M),
                       abs(r.added_M - g3r - r.later_loss_attriters_M))
         agg = (before + 1e6 * (g3r * gap3 * (1 - c3_split) + (r.added_M - g3r) * gap3)) / 1e9
         worst_bn = max(worst_bn, abs(agg - r.aggregate_gap_bn_after_split))
+        pp = r.aggregate_gap_bn_after_split * 1e9 / (pop_before + r.added_M * 1e6)
+        worst_pp = max(worst_pp, abs(pp - r.gap_per_person_after_split))
     check("split counts: G3-rate = (1 - p3) x corrected third-plus, later = the rest",
           worst_n < 2e-7, f"max |diff| {worst_n * 1e6:.2f} persons")
     check("split aggregate recomputed from counts and the self-ID gap (CSV rounding only)",
           worst_bn < 0.011, f"max |diff| ${worst_bn:.3f}bn")
-    check("arm (a) under the split is -$6,853 / -$292.7bn",
-          round(a.gap_per_person_after_split) == -6853 and round(a.aggregate_gap_bn_after_split, 1) == -292.7,
-          f"{a.gap_per_person_after_split:,.1f} / {a.aggregate_gap_bn_after_split:.2f}bn")
+    check("split per person = aggregate / population after, every arm (CSV rounding only)",
+          worst_pp < 0.25, f"max |diff| ${worst_pp:.3f}")
+    pub = split_central[split_central.population_assumption.str.startswith("4th-plus identifies at the measured")]
+    check("arm (a) under the split is the population lane's published central split row",
+          len(pub) == 1 and a.gap_per_person_after_split == pub.gap_per_person_after.iloc[0]
+          and a.aggregate_gap_bn_after_split == pub.aggregate_gap_bn_after.iloc[0],
+          f"{a.gap_per_person_after_split:,.1f} / {a.aggregate_gap_bn_after_split:.2f}bn"
+          f" (C3 {c3_split}, {sp.c3_source})")
 
     print("[lineage]")
     lin = P.Lin()

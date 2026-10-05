@@ -28,7 +28,7 @@ P07 (CBO incidence and use keys) ties at 6 and ranks sixth on the tie-break. P04
 | C4 add ≈ $100bn | Any one of PM2.5 ($31.5–122.5bn), crashes (−$57.7 to +74.3bn) or scale net (−$84.4 to +56.6bn) at its range end. The pairing total needs two such items. | 1 item |
 | C3 net ≈ $11bn | Any of six data-component tails moves the net by more than a quarter. The cancellation itself fails only with two tails (care low + tax block low ≈ −$26bn). | 1 / 2 tails |
 | C1 $355bn | First-year horizon (−37%). Otherwise 3 long-run alternatives (e.g. no capital return + schools 0.836 + roads and parks at CBO's lag, −26%). Upward, any pair of 7% capital, accrual and defense by GDP share (+38 to +44%). | 1 / 3 / 2 |
-| C6 generations | Clause 2 needs the literature's G2→G3 transmission (0.46–0.53) in place of the CPS 0.84. Clause 1 needs a service response ≤ 27% for any generation. | 1 source swap / far |
+| C6 generations | Clause 2 needs the literature's G2→G3 transmission (0.46–0.53) in place of the CPS 0.84 [2026-10-05: 0.86 with C3 from the CPS basic monthly frame (g3_identity_pooled_2026_10_05, monthly frame)]. Clause 1 needs a service response ≤ 27% for any generation. | 1 source swap / far |
 | C9 crime | Clause 1 needs a 2.3–3.2× undercount of undocumented arrests. Legal non-naturalized immigrants already sit at 1.20 of the US-born on cost weights. Clause 2 is stable over 2019–2024. | unmeasured |
 | C7 status | The status contrast is about $1.5k per adult (15% of the gap). "Little" would need about three times that. | far on size |
 
@@ -36,7 +36,7 @@ P07 (CBO incidence and use keys) ties at 6 and ranks sixth on the tie-break. P04
 
 1. **How budgets respond to population outflows.** The 2008–12 net return to Mexico, the 2020–21 enrollment falls and declining-enrollment districts would show whether spending falls about 1:1 within 3–5 years. This decides P02/P03, the only premise whose swap breaks two conclusions (C1 and C4). The repo measured only the inflow side (0.836, ladder 230; "about half, and late", ladder 252).
 2. **The on-books share of the Mexico-born.** SSA's Earnings Suspense File and ITIN filer counts by state for 2022–24 would measure it. It decides the tax side of C3 ($44–46bn) and the tax block in C1, C2 and C7. No 2022–25 measurement exists.
-3. **Linked three-generation records** (restricted Census-linked data, PSID immigrant samples) would test C6's 0.84. The CPS grandparent test had no power (closing 0.78, SE 0.64; ladder 232).
+3. **Linked three-generation records** (restricted Census-linked data, PSID immigrant samples) would test C6's 0.84. The CPS grandparent test had no power (closing 0.78, SE 0.64; ladder 232). [2026-10-05: the CPS basic monthly frame 1994–2026 now gives 526 unique G3 non-identifiers at 25+, closing 0.57 (SE 0.26) and 0.56 (0.25) pooled with NLSY97, and C6's ratio becomes 0.86. It tests identity loss, not linkage. (g3_identity_pooled_2026_10_05, monthly frame)]
 4. **Birthplace recorded at booking, independent of DHS matches.** County jail files would size the misfiling behind C9 clause 1.
 5. **A person-level wage validation of the winner count** (LEHD by skill and region) would test C5 against the nest's assigned gains (audit §2).
 

@@ -92,9 +92,9 @@ def founder_profile(profiles, allocation, account, status, senior_rule, penalty,
 def g3plus_profile(profiles, allocation, account, convergence, attr):
     """Third-plus descendants. `selfid` uses the CPS third-plus self-ID profile.
     `attrition_mixed` blends in ethnic attriters (`inputs.attrition`). Under the central
-    generation-split rule those lost at the third-generation rate keep 1 - C3 (0.22) of the
-    self-ID fiscal gap to white and later losses keep all of it, so only the G3-rate share
-    moves the profile; the years convention gives every attriter 0.28."""
+    generation-split rule those lost at the third-generation rate keep 1 - C3 (the population
+    lane's arm 5 central) of the self-ID fiscal gap to white and later losses keep all of it,
+    so only the G3-rate share moves the profile; the years convention gives every attriter 0.28."""
     selfid = I.age_vector(profiles, "mexican_third_plus_selfid", account, allocation)
     if convergence == "selfid":
         return selfid

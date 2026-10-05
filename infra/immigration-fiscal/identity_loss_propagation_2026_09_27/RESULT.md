@@ -1,6 +1,6 @@
 claude-opus-5-5
 
-**Verdict:** [2026-09-28: two upstream corrections change the dollar figures below; the population counts do not move (§5). The lineage central is now −$1,288,162 (−$513,398 at 3%), because births need a living parent (audit §E). Row 2a now uses the measured generation split, under which losses after G3 keep the whole gap, so no schedule moves it: −$1,283,352 in every arm, +$4,810 (0.37%) on the central. The years convention, with its divisor corrected to the self-ID gap, is the sensitivity; there (b) raises the attrition effect from +$4,491 (0.35%) to +$8,784 (0.68%). In the population total under the split, the aggregate widens as the hidden share grows: −$292.7bn on (a), −$298.5bn on (b) and −$304.3bn on (c, ρ 0.5), at −$6,853, −$6,792 and −$6,735 per person. Entry 241 moves only by §E.] Identification that keeps falling after G3 moves the size of the Mexican-origin lineage. It barely moves its cost. The population total's arm 3 central rises from 42.78M to 44.02M if G4+ takes one more step (b), and to 45.25M if the loss compounds (c, with an assumed generation mix). The published "42–45M" becomes about 44–46M on (b) and 45–48M on (c). The hidden share of the third-plus rises from 11.2% to 17.5% (b) or 23.0% (c). The lineage cost's central (−$1,297,150; −$514,635 at 3%) and all its legalisation arms are unchanged to the cent, because they use the self-ID profile and never read the identification rate. Only arm 2a, the attrition-corrected mix, moves: its effect roughly doubles, from +$5,178 (0.40%) to +$10,126 (0.78%) on (b). Entry 241 does not move. [CALCULATION] Rates after G4 in (b)–(d) are [MODEL] extrapolations of a birth-stage loss (see Limits).
+**Verdict:** [2026-09-28: two upstream corrections change the dollar figures below; the population counts do not move (§5). The lineage central is now −$1,288,162 (−$513,398 at 3%), because births need a living parent (audit §E). Row 2a now uses the measured generation split, under which losses after G3 keep the whole gap, so no schedule moves it: −$1,283,352 in every arm, +$4,810 (0.37%) on the central. The years convention, with its divisor corrected to the self-ID gap, is the sensitivity; there (b) raises the attrition effect from +$4,491 (0.35%) to +$8,784 (0.68%). In the population total under the split, the aggregate widens as the hidden share grows: −$292.7bn on (a), −$298.5bn on (b) and −$304.3bn on (c, ρ 0.5), at −$6,853, −$6,792 and −$6,735 per person. Entry 241 moves only by §E.] [2026-10-05: at C3 0.557 from the IPUMS-CPS basic monthly frame, row 2a is −$1,284,710, +$3,452 (0.27%) on the central, and still no schedule moves it. The population aggregate under the split is −$294.7bn on (a), −$300.7bn on (b) and −$306.6bn on (c, ρ 0.5), at −$6,901, −$6,842 and −$6,787 per person. (g3_identity_pooled_2026_10_05, monthly frame)] Identification that keeps falling after G3 moves the size of the Mexican-origin lineage. It barely moves its cost. The population total's arm 3 central rises from 42.78M to 44.02M if G4+ takes one more step (b), and to 45.25M if the loss compounds (c, with an assumed generation mix). The published "42–45M" becomes about 44–46M on (b) and 45–48M on (c). The hidden share of the third-plus rises from 11.2% to 17.5% (b) or 23.0% (c). The lineage cost's central (−$1,297,150; −$514,635 at 3%) and all its legalisation arms are unchanged to the cent, because they use the self-ID profile and never read the identification rate. Only arm 2a, the attrition-corrected mix, moves: its effect roughly doubles, from +$5,178 (0.40%) to +$10,126 (0.78%) on (b). Entry 241 does not move. [CALCULATION] Rates after G4 in (b)–(d) are [MODEL] extrapolations of a birth-stage loss (see Limits).
 
 # Per-generation identity loss applied to lineage size and cost (2026-09-27)
 
@@ -124,7 +124,11 @@ the split, hidden persons lost at the third-generation rate (11.19% of the corre
 1 − C3 = 0.2242 of the self-identified gap (C3 0.7758, SE 0.6436), and persons lost later keep all of it.
 The copy of `lineage()` here carries the §E change, and `verify.py` still finds it bitwise equal to the
 lane's. Counts, unions and hidden shares do not change. [CALCULATION: `propagate.py`, `verify.py` PASS; two
-reruns, the second byte-identical]
+reruns, the second byte-identical] [2026-10-05: C3 is now 0.5567 (SE 0.2457), the IPUMS-CPS basic monthly
+frame 1994–2026 pooled with NLSY97, so G3-rate losses keep 0.4433. `propagate.py` finds the central split row
+by its "(central)" label instead of by value. `verify.py` checks arm (a) against the population lane's published
+split row and per person = aggregate / population after on every arm. PASS; the second rerun is identical,
+10/10. (g3_identity_pooled_2026_10_05, monthly frame)]
 
 **Population total, arm 5 values** (ρ 0.5 for the compounding arms):
 
@@ -139,6 +143,9 @@ reruns, the second byte-identical]
 Under the split, more identity loss widens the aggregate by more, because every later loss carries the
 identifiers' −$5,143. Across ρ, (c) runs from −$300.4bn (0.25) to −$315.9bn (0.75).
 [CALCULATION: `derived/population_arms.csv`]
+[2026-10-05: at the monthly-frame C3 the split columns read (a) −$6,901, −$294.7bn; (b) −$6,842, −$300.7bn;
+(c) −$6,787, −$306.6bn; (d) −$6,817, −$303.3bn; (e) −$6,818, −$303.2bn. Across ρ, (c) runs from −$302.7bn to
+−$318.6bn. Counts and the years-convention column do not move. (g3_identity_pooled_2026_10_05, monthly frame)]
 
 **Lineage cost:**
 
@@ -156,11 +163,17 @@ The attrition effect (2a minus central) is +$4,810 (0.37%) under the split in ev
 convention it is +$4,491 (0.35%) on (a) and +$7,775 to +$8,926 (0.60–0.69%) on (b)–(e); at 3%, +$322 and
 +$556 to +$638. Before these corrections the same effect ran from +$5,178 (0.40%) to +$10,126 (0.78%) on
 (b). [CALCULATION: `derived/lineage_arms.csv`]
+[2026-10-05: at the monthly-frame C3 the "Now" column reads 2a −$1,284,710 (0%) and −$513,151 (3%), 2a × 2b
+−$1,260,132, and the supplementary mix from G3 −$1,270,041. The attrition effect is +$3,452 (0.27%) in every
+arm. The central, 2b, never-legalised and years-convention figures do not move. (g3_identity_pooled_2026_10_05,
+monthly frame)]
 
 **Published figures, replacing §4's dollar rows.** Ladder 158's per-person gap after attriters is −$6,853
 and the aggregate −$292.7bn on the central arm, −$291.5bn to −$335.1bn across the bounds (population lane
 RESULT §5). Ladder 159's lineage is −$1.29M / −$513k, and its attrition row is 0.37%, with no identity-loss
-schedule moving it. For ladder 241, every arm moves by §E only.
+schedule moving it. For ladder 241, every arm moves by §E only. [2026-10-05: −$6,901 and −$294.7bn on the
+central arm and −$292.4bn to −$338.3bn across the bounds; ladder 159's attrition row is 0.27%.
+(g3_identity_pooled_2026_10_05, monthly frame)]
 
 ## Limits
 
@@ -174,12 +187,14 @@ schedule moving it. For ladder 241, every arm moves by §E only.
   the population lane's arm 5). A different retained share scales every 2a delta proportionally.
   [2026-09-28: the 20% divided by the union's gap; against the self-ID gap the Duncan–Trejo share is 27.6%.
   Under the generation split, G3-rate losses keep 22.4% and later losses 100%, so the schedules no longer
-  move 2a (§5).]
+  move 2a (§5).] [2026-10-05: 44.3% at the monthly-frame C3. (g3_identity_pooled_2026_10_05, monthly frame)]
 - Resident stock and lineage accounting only; no admission counterfactual; no policy claim.
 - [2026-09-28] The generation split rests on C3 = 0.78 (SE 0.64), pooled from 44–55 CPS adults and 11
   NLSY97 adults (`carryover_identity_2026_09_27` §4). At C3 0.907 (CPS 2022–26) the central aggregate is
   −$291.5bn. The rule that later losses keep the whole gap rests on one direct measurement, the
-  co-resident one-step G4 adults (c −0.35 to −0.86 on BA+).
+  co-resident one-step G4 adults (c −0.35 to −0.86 on BA+). [2026-10-05: C3 is now 0.557 (SE 0.246), from 526
+  unique G3 non-identifiers at 25+ in the CPS basic monthly files 1994–2026 and the same 11 NLSY97 adults.
+  (g3_identity_pooled_2026_10_05, monthly frame)]
 
 ## Reproduce
 

@@ -193,13 +193,17 @@ CLOSE = [(f"{YEARS_SHARE}: attriters close 54.3% of the gap (DT 2017 child +0.57
 # members lost at G3, and the descendants of G3 attriters, close C3 of the identifiers' gap; members lost later close
 # nothing (adults who drop the identity one generation later are not ahead of identifiers). C3 pools CPS co-resident G3
 # adults and NLSY97 Table 13 by inverse variance, on the same measure; BA+ stands in for dollars, which have no G3
-# measurement. [DATA: carryover_identity_2026_09_27/derived/corrected_step.csv, rows "composite: G3-rate share at the
+# measurement. Since 2026-10-05 the central's CPS side is the IPUMS-CPS basic monthly frame 1994-2026
+# (g3_identity_pooled_2026_10_05); the sensitivity keeps the ASEC 2022-26 replicate share.
+# [DATA: carryover_identity_2026_09_27/derived/corrected_step.csv, rows "composite: G3-rate share at the
 # pooled same-sample G3 value"; C3 = closing_share x hidden_share / 0.1119] Copied as constants, never read here:
 # that lane imports this one. verify.py checks them for drift.
 SPLIT = "attriters_generation_split_measured"
+SPLIT_C3_CENTRAL = "pooled with CPS monthly 1994-2026 (central)"
+SPLIT_C3_SENSITIVITY = "pooled with CPS 2022-26 (sensitivity)"
 SPLIT_C3 = {  # label: {measure: (C3, SE)}
-    "pooled with CPS 2022-25 (central)": {"ba_plus": (.7758, .6436), "educ_years": (.7289, .6772)},
-    "pooled with CPS 2022-26 (sensitivity)": {"ba_plus": (.9070, .6122), "educ_years": (1.0225, .6636)},
+    SPLIT_C3_CENTRAL: {"ba_plus": (.5567, .2457), "educ_years": (.6867, .2281)},
+    SPLIT_C3_SENSITIVITY: {"ba_plus": (.9070, .6122), "educ_years": (1.0225, .6636)},
 }
 SPLIT_C3_FOR = {"ba_plus": "ba_plus", "educ_years": "educ_years", "ledger_partial_per_adult": "ba_plus"}
 
@@ -356,9 +360,10 @@ def projection(gaps, crho):
         y5 = beta * y4 + delta
         return y4 / g3y, y5 / y4, delta / (1 - beta)
 
-    central = "pooled with CPS 2022-25 (central)"
-    sens = "pooled with CPS 2022-26 (sensitivity)"
+    central, sens = SPLIT_C3_CENTRAL, SPLIT_C3_SENSITIVITY
     r_split, r_sens = central_rho(SPLIT, central), central_rho(SPLIT, sens)
+    c3_central, c3_sens = SPLIT_C3[central]["ba_plus"][0], SPLIT_C3[sens]["ba_plus"][0]
+    untagged = lambda label: label.rsplit(" (", 1)[0]  # drops the "(central)" / "(sensitivity)" tag
     r_flat = central_rho("attriters_at_measured_nonidentifier_values", "NLSY97 G3 cross-section +6.16")
     resume = NLSY_T2["ba_plus"]["G3"][0] - NLSY_T2["ba_plus"]["white4plus"][0]
     resume /= NLSY_T2["ba_plus"]["G2"][0] - NLSY_T2["ba_plus"]["white4plus"][0]
@@ -367,9 +372,9 @@ def projection(gaps, crho):
     paths = [  # name, basis, rho G3+->G4, rho G4->G5, recursion fixed point, base
         ("stall: observed identifiers (G4+ = G3), rho 1.00", "measured G3->G4+ ratios in carryover.csv (CPS both-parents, GSS, NLSY, MASP)",
          1.0, 1.0, np.nan, identifiers),
-        ("generation split, central: G3-rate share 11.2% closes C3 0.776 (pooled with CPS 2022-25), later losses close 0",
+        (f"generation split, central: G3-rate share {a3:.1%} closes C3 {c3_central:.3f} ({untagged(central)}), later losses close 0",
          split_basis, r_split, r_split, np.nan, split_base(central)),
-        ("generation split, sensitivity: C3 0.907 (pooled with CPS 2022-26)", split_basis, r_sens, r_sens, np.nan, split_base(sens)),
+        (f"generation split, sensitivity: C3 {c3_sens:.3f} ({untagged(sens)})", split_basis, r_sens, r_sens, np.nan, split_base(sens)),
         ("flat measured advantage at every generation (NLSY97 +6.16): the central path before 2026-09-28, superseded",
          "mean of CPS/GSS/NLSY BA rho at (11.2%, 29.2%) in attrition_corrected_rho.csv (NLSY97 now included, as this label always "
          "said); step applied to the identifiers' base as published", r_flat, r_flat, np.nan, identifiers),

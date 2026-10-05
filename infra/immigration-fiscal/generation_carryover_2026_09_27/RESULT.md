@@ -32,6 +32,11 @@ source shows the fourth-plus generation ahead of the third.
   central (0.98 a step) gave every attriter NLSY97's +6.16 BA points and, through a filter, averaged
   CPS and GSS only; with NLSY97 included it is 0.94, kept as a sensitivity. The worst case now starts
   from its own lineage base: G5 −$0.37k, was −$0.42k. Mapping and numbers: §3 and §4.]
+  [2026-10-05: C3 is now 0.56 (SE 0.25), the IPUMS-CPS basic monthly frame 1994–2026 pooled with
+  NLSY97, in place of 0.78 (0.64). Identity loss lowers the lineage gap by 6% from G3 on, not 9%.
+  NLSY97's split ratio is 0.91, and the range is 0.86–1.10 (0.79–1.10 with the 2026 value). The
+  central projection starts from a lineage gap of −$6.2k and puts G4 at −$6.3k and G5 at −$6.4k.
+  (g3_identity_pooled_2026_10_05, monthly frame)]
 
 The main reason not to call this a permanent stall is vintage. Today's adult G4+ descend from
 pre-1930s migrants, many in Texas. NLSY97 shows their parents were less schooled than the parents
@@ -231,6 +236,8 @@ Attrition-corrected G3 → G4+ BA+ ratio:
   Duncan–Trejo G4+ rate and NLSY97's +6.16.
   [2026-09-28: superseded as central; these are the flat advantages. Under the generation split
   (below) the ratio is 0.81–1.10, and the central case is 1.04 (CPS), 1.10 (GSS) and 0.89 (NLSY97).]
+  [2026-10-05: at the monthly-frame C3, 0.86–1.10 and NLSY97 0.91. (g3_identity_pooled_2026_10_05, monthly
+  frame)]
 - If attriters look exactly like whites, the ratio falls to 0.69–0.87 at 29% G4+ attrition and
   0.43–0.61 at 56%.
   [2026-09-28: unchanged. It rests on the lane's convention that NLSY97's G3 needs no correction.
@@ -259,7 +266,9 @@ How it maps onto this lane, with a3 the G3-rate share of the hidden and C3 its c
   grandparents' birthplace. See Limits for the sensitivity.
 - *C3:* the pooled same-sample G3 value, 0.776 (SE 0.644) on BA+ and 0.729 (0.677) on years. With
   CPS 2026 pooled in, it is 0.907 (0.612) and 1.023 (0.664). The ledger takes the BA+ value, because
-  no G3 dollar measurement exists.
+  no G3 dollar measurement exists. [2026-10-05: the central is now 0.557 (SE 0.246) on BA+ and 0.687
+  (0.228) on years: the IPUMS-CPS basic monthly frame 1994–2026 (526 unique G3 non-identifiers at 25+)
+  pooled with NLSY97. The 2026 sensitivity is unchanged. (g3_identity_pooled_2026_10_05, monthly frame)]
 - *Pairs:* the G3 → G4+ ratios keep the lane's rate pairs; the G4+ lineage takes the pair's G3 rate.
 
 | Lineage gap under the split rule (SE) | Observed | G3 rate 11.2% | 20.6% / 28.2% | C3 with 2026, 11.2% |
@@ -271,12 +280,22 @@ How it maps onto this lane, with a3 the G3-rate share of the hidden and C3 its c
 | NLSY97 G3 / G4+ BA+ | −19.4 / −18.8 | −19.4 / −17.1 | −19.4 / −15.8, −19.4 / −14.7 | −19.4 / −16.9 |
 | NLSY97 G3 / G4+ years | −0.93 / −1.69 | −0.93 / −1.55 | −0.93 / −1.44, −0.93 / −1.34 | −0.93 / −1.50 |
 
+[2026-10-05: at the monthly-frame C3 the 11.2% column reads −18.6 (0.9), −6,203 (348), −9.1 / −9.5,
+−16.3 / −17.9, −19.4 / −17.6 and −0.93 / −1.56. The 20.6% / 28.2% column reads −17.5 / −16.7, −5,856 / −5,577,
+−8.6 / −9.0 and −8.2 / −8.5, −15.4 / −16.9 and −14.7 / −16.0, −19.4 / −16.6 and −19.4 / −15.8, and −0.93 / −1.45
+and −0.93 / −1.36. The 2026 column does not move. (g3_identity_pooled_2026_10_05, monthly frame;
+`attrition_bounds.csv`)]
+
 | G3 → G4+ ratio under the split rule | BA+ | Years | Household ledger |
 |---|---|---|---|
 | CPS, both parents | 1.04 at every rate pair | | 1.67 at every rate pair |
 | GSS | 1.10 at every rate pair | 1.34 | |
 | NLSY97, G3 rate 11.2% / 20.6% | 0.89 / 0.81 (0.87 / 0.79 with the 2026 C3) | 1.67 / 1.54 | |
 | NLSY97, G3 as published (13.0% non-identifiers), any rate | 0.87 (0.85) | 1.64 (1.58) | |
+
+[2026-10-05: at the monthly-frame C3 NLSY97 gives 0.91 / 0.86 on BA+ and 1.68 / 1.56 on years. As published
+it gives 0.90 and 1.65. CPS, GSS and the 2026 values do not move. (g3_identity_pooled_2026_10_05, monthly frame;
+`attrition_corrected_rho.csv`)]
 
 Reading. Under the split rule, identity loss is a one-time level shift at G3: about 9% off the gap
 (−$574 on the CPS G3+ ledger, SE $476 from C3 alone) at every generation from G3 on. It is not a
@@ -285,6 +304,8 @@ alike. NLSY97's ratio falls, because its G3 already contains its non-identifiers
 takes the factor. The years convention gives the CPS household ledger 1.17–1.67
 (`sensitivity_years_share_convention`); the flat BA+ advantages give 0.79–1.10.
 [CALCULATION; INFERENCE for the reading]
+[2026-10-05: at the monthly-frame C3 the shift is about 6% (−$412 on the CPS G3+ ledger, SE $182 from C3
+alone). (g3_identity_pooled_2026_10_05, monthly frame)]
 
 ## 4. Projection to G4 and G5 [MODEL]
 
@@ -319,6 +340,11 @@ Assumed inputs:
 | [2026-09-28] Same worst case from its lineage G3+ base (−17.6 / −$5,875 / −0.93) | −8.8 / −1.1 | −2,937 / −370 | −0.46 / −0.06 |
 | Recursion, G4+ residual (1.50, 1.19), upper bound | −29.6 / −35.1 | −9,893 / −11,729 | −1.39 / −1.65; fixed point −1.98 |
 
+[2026-10-05: at the monthly-frame C3 the generation-split central steps 1.02 a generation from a lineage G3+ of
+−18.6 / −$6,203 (SE 348) / −0.93. It reads −18.8 / −19.1 on BA+, −6,300 / −6,398 on the ledger and
+−0.94 / −0.96 in years. The other rows do not move. (g3_identity_pooled_2026_10_05, monthly frame;
+`projection.csv`)]
+
 [2026-09-28: two defects fixed with the split rule. (1) The attrition-corrected step selected
 `attrition_G3 = 0.112`, which dropped NLSY97, whose G3 rows carry 0 by the lane's convention. So
 its 0.98 was the mean of CPS 0.92 and GSS 1.03, although its label named NLSY97 too. With NLSY97
@@ -331,7 +357,8 @@ NLSY97 base already counts its non-identifiers. `verify.py` gates both fixes.]
 Reading. The paths consistent with the observed G4+ data (stall, attrition-corrected, G3
 residual) put G4 at −$5.9k to −$6.6k and G5 at −$5.5k to −$6.6k.
 [2026-09-28: unchanged with the split central (−$6.1k and −$6.1k per lineage descendant) in place
-of the attrition-corrected path.] Only paths that assume
+of the attrition-corrected path.] [2026-10-05: −$6.3k and −$6.4k at the monthly-frame C3, still inside
+the range. (g3_identity_pooled_2026_10_05, monthly frame)] Only paths that assume
 convergence the data do not show halve the gap by G5: pure regression to the mean, or attriters
 who are exactly white in 1970-size numbers. The recursion's fixed point is the clearest way to
 state it. With parents' schooling passed on at 0.56 and a persistent group residual of −0.31 to
@@ -385,8 +412,12 @@ What survives:
   Counting those people by each scenario's own rule at NLSY97's own G3 rate gives a split-rule BA+
   ratio of 0.87 (0.85 with the 2026 C3) instead of 0.81–0.89 (0.79–0.87), and a like-whites 56% ratio of 0.47
   instead of 0.43 (`attrition_corrected_rho.csv`, scenario `sensitivity_nlsy97_g3_as_published`).
+  [2026-10-05: at the monthly-frame C3, 0.90 instead of 0.86–0.91. (g3_identity_pooled_2026_10_05, monthly
+  frame)]
 - [2026-09-28] The split rule's C3 rests on 44–55 CPS adults and 11 NLSY97 adults (SE 0.61–0.64).
-  It moves the lineage levels, not the CPS and GSS ratios.
+  It moves the lineage levels, not the CPS and GSS ratios. [2026-10-05: it now rests on 526 unique G3
+  non-identifiers at 25+ in the CPS basic monthly files 1994–2026 and the same 11 NLSY97 adults (SE 0.25).
+  (g3_identity_pooled_2026_10_05, monthly frame)]
 
 ## Files
 
@@ -467,3 +498,9 @@ and converted with `pdftotext -layout`; `verify.py` reads the text.
   `attrition_bounds.csv`, `attrition_corrected_rho.csv` and `projection.csv` CHANGED against HEAD
   (16/19 unchanged). Run 2: every command rc 0, IDENTICAL 19/19. The identity lane, which imports
   this `summarize.py`, still reproduces 14/14 (`corrected_step.py`, `verify.py`).
+- 2026-10-05 16:35 C3 moved to the IPUMS-CPS basic monthly frame 1994–2026 pooled with NLSY97
+  (g3_identity_pooled_2026_10_05, monthly frame): `SPLIT_C3` is keyed "pooled with CPS monthly 1994-2026
+  (central)", BA+ 0.5567 (0.2457), years 0.6867 (0.2281), after `corrected_step.py` reran. The projection's
+  path names now render C3 from `SPLIT_C3`. `verify.py` looks C3 up by label instead of parsing it from
+  `delta_source`. All 39 checks pass. Only `attrition_bounds.csv`, `attrition_corrected_rho.csv` and
+  `projection.csv` changed. `scripts/rerun_lane.py` (`summarize.py`, `verify.py`): IDENTICAL 28/28.

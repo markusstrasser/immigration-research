@@ -371,7 +371,7 @@ def crime_rates() -> dict:
 
 # -------------------------------------------------------------------- attrition
 ATTR_CENTRAL_BOUND = "4th-plus identifies at the measured 3rd-generation rate"
-ATTR_C3_CENTRAL = "pooled with CPS 2022-25 (central)"
+ATTR_C3_CENTRAL = "pooled with CPS monthly 1994-2026 (central)"
 
 
 def attrition(convention: str = "generation_split", c3_source: str = ATTR_C3_CENTRAL) -> dict:

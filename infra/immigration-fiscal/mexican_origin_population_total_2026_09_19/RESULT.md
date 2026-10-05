@@ -356,6 +356,12 @@ than under Duncan–Trejo: −$303.5bn against −$296.4bn on the DT bound. Acro
 spans −$290.6bn to −$335.1bn. [CALCULATION: `bounds_coverage_fiscal.py`; two reruns, the second
 byte-identical]]
 
+[2026-10-05: C3 is now 0.5567 (SE 0.2457), the IPUMS-CPS basic monthly frame 1994–2026 pooled with NLSY97, so
+persons lost at the third-generation rate keep −$2,280. The split columns read −$7,013 / −$292.4bn (floor),
+**−$6,901 / −$294.7bn** (central), −$6,795 / −$305.8bn (DT 4th-plus) and −$6,538 / −$338.3bn (1970 bound). The
+C3 0.907 column does not move. The grid spans −$290.6bn to −$338.3bn. (g3_identity_pooled_2026_10_05, monthly
+frame; `arm5_generation_split.csv`, second rerun identical)]
+
 ## 6. The answer: is 40M too low, and by how much
 
 Yes, but modestly. The measured self-identification union is 40.97M ± 0.38M, and the
@@ -456,4 +462,5 @@ figure, with two thirds of the population immune to the correction by constructi
 > vintage numbers imply.
 
 [2026-09-28: under the measured generation split (section 5), the central arm gives −$6,853 per person
-and −$292.7bn, and the bounds −$291.5bn to −$335.1bn.]
+and −$292.7bn, and the bounds −$291.5bn to −$335.1bn.] [2026-10-05: −$6,901 and −$294.7bn, bounds −$292.4bn
+to −$338.3bn, at the monthly-frame C3 0.557. (g3_identity_pooled_2026_10_05, monthly frame)]

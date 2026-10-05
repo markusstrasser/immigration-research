@@ -27,6 +27,11 @@
    "step": 0.08905376724281668
   }
  },
+ "c3_central": {
+  "c3": 0.5567,
+  "c3_se": 0.2457,
+  "label": "pooled with CPS monthly 1994-2026 (central)"
+ },
  "checks": {
   "lineage_central": [
    -1288162.177777483,
@@ -38,12 +43,12 @@
  },
  "lineage_attrition": {
   "central": {
-   "attriter_gap_per_person": -1153.1,
-   "attriter_retained_share_of_gap": 0.22420330151076195,
+   "attriter_gap_per_person": -2279.9,
+   "attriter_retained_share_of_gap": 0.4432929556104295,
    "attriter_share": 0.1119,
-   "c3": 0.7758,
-   "c3_se": 0.6436,
-   "c3_source": "pooled with CPS 2022-25 (central)",
+   "c3": 0.5567,
+   "c3_se": 0.2457,
+   "c3_source": "pooled with CPS monthly 1994-2026 (central)",
    "convention": "generation_split",
    "fourth_plus_identification_rate": 0.8881,
    "g3_rate_share": 0.1119,
