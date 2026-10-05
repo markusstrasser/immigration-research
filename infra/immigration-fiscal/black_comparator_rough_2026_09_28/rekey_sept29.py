@@ -27,6 +27,13 @@ rule_alternatives_sept29.csv, attribution_sept29.csv, attribution_buckets_sept29
 Run from the repository root after engine_lines.cjs sept29 / sept29_cash, accrual_black.py and the white lane's
 v4_inputs.py and accrual_white.py:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/black_comparator_rough_2026_09_28/rekey_sept29.py
+
+--case oct05 re-keys the v5 case adopted 2026-10-05 (main_case_2026_10_05) through the library's oct05 rules (its
+docstring): the union's side is the rough union on the identified 39,712,493 at v5's responses plus the 3,039,720 added
+people at the case lane's own amounts, 42,752,213 in all; the NH Black group keeps its own CPS count, so its per-member
+ratios to the union move with the union's cost per member. The attribution adds step 4 (the lineage). Outputs carry the
+key (rekey_summary_oct05.csv, ...). Run it after the white lane's engine_lines.cjs oct05 / oct05_cash / oct05_union /
+oct05_union_cash.
 """
 from __future__ import annotations
 
@@ -95,7 +102,8 @@ def by_program(rows, pop_share):
     return cost, gap
 
 
-def main():
+def main(case="sept29"):
+    W.use_case(case)
     W.setup()
     print("[this lane's September 27 rows through the library, published weights]", flush=True)
     # setup() leaves the frame on row 4; the published-weight check runs on a fresh copy of the weights and shares.
@@ -138,10 +146,11 @@ def main():
               {**W.ACC, "black": W.acc_entry(rows[("nh_black", "all_at_21", "payable")])})]
     alt_rows = W.alternatives(groups, extra)
     attr_rows = W.attribution(groups)
+    final = {"4": "accrual"} if W.LINEAGE_ON else {"2": "cash", "3": "accrual"}    # the steps that are the case's runs
     for r in attr_rows:
-        if r["step"] in ("2", "3"):
-            want = res[("cash" if r["step"] == "2" else "accrual", r["group"], r["end"])][0]["cost"]
-            W.gate(f"attribution step {r['step']} is the sept29 run {r['group']} {r['end']}", abs(float(r["cost_bn"]) - want) < 5e-5)
+        if r["step"] in final:
+            want = res[(final[r["step"]], r["group"], r["end"])][0]["cost"]
+            W.gate(f"attribution step {r['step']} is the {W.CASE} run {r['group']} {r['end']}", abs(float(r["cost_bn"]) - want) < 5e-5)
     for end in ENDS:
         want = float(ref.query("group == 'nh_black_rough' and end == @end").cost.iloc[0])
         got = W.STEP_COST[("a", "nh_black_rough", end)][0]
@@ -183,12 +192,12 @@ def main():
             row[f"amount_{lab}_bn"] = f"{amt:.4f}"
             row[f"share_{lab}"] = f"{amt / nat:.6f}" if abs(nat) > 1e-6 else ""
         line_rows.append(row)
-    write("rekey_summary_sept29.csv", summary)
-    write("rekey_by_program_sept29.csv", programs)
-    write("rekey_line_shares_sept29.csv", line_rows)
-    write("rule_alternatives_sept29.csv", alt_rows)
-    write("attribution_sept29.csv", attr_rows)
-    write("attribution_buckets_sept29.csv", W.attribution_buckets(groups))
+    write(f"rekey_summary_{W.CASE}.csv", summary)
+    write(f"rekey_by_program_{W.CASE}.csv", programs)
+    write(f"rekey_line_shares_{W.CASE}.csv", line_rows)
+    write(f"rule_alternatives_{W.CASE}.csv", alt_rows)
+    write(f"attribution_{W.CASE}.csv", attr_rows)
+    write(f"attribution_buckets_{W.CASE}.csv", W.attribution_buckets(groups))
     s = pd.DataFrame(summary)
     print(s[["basis", "group", "end", "cost", "cost_per_member", "gap", "cost_ex_old_age", "capital",
              "per_member_over_engine_union", "per_member_over_rough_union"]].to_string(index=False))
@@ -199,4 +208,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--case", default="sept29", choices=list(W.CASES), help="sept29 (default) or oct05 (v5, the lineage on the union's side)")
+    main(ap.parse_args().case)

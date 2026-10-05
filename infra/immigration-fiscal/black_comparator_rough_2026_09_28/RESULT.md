@@ -256,3 +256,87 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $B/rekey_sept29.py   # after 
 - 2026-09-29 21:12–21:27 JST: added `rule_alternatives_sept29.csv` (with this lane's benefit-tax and career-entry alternatives), `attribution_sept29.csv` and `attribution_buckets_sept29.csv`. The alternative to rule 4 now calls `rule4="union"` (formerly `local=False`). The summary values are unchanged.
 - 2026-09-29 21:13–21:26 JST and 21:35–21:40 JST: two full gate cycles, both clean for this lane. The second is the one reported under Gates above.
 - 2026-09-29 21:50 JST: this section written; status line set.
+
+## v5 case (oct05), 2026-10-05
+
+[2026-10-05: on main case v5 (`oct05`, `../main_case_2026_10_05/`), the rough re-key puts the cost of removing the
+41.95M non-Hispanic Black residents at **$541.7 / 589.7bn** a year on the case's accrual basis, **$12,912 / 14,055 per
+member**: $0.4bn below sept29's $542.1 / 590.1bn, from v5's responses alone, since the group keeps its own count. The
+engine's union now costs **$9,129 / 10,789 per member** (v5's $390.29 / 461.24bn over the lineage's 42,752,213), so
+the Black figure is **1.41× / 1.30× the Mexican-origin figure per member** (sept29 1.38× / 1.28×). Against the rough
+union on 42.75M ($9,224 / 10,548) it is 1.40× / 1.33× (sept29 1.37× / 1.32×); on the cash set 1.74× / 1.52× the
+engine's union (sept29 1.69× / 1.50×). [CALCULATION: `rekey_sept29.py --case oct05` → `derived/rekey_summary_oct05.csv`]]
+
+claude-opus-5-5 (v5consC)
+
+**Rule.** The white lane's section "v5 case (oct05)" applies (the case lane's Consumers row: both sides on 42.75M).
+The union's side is the rough union on the identified 39,712,493 at v5's responses, plus the 3,039,720 added people at
+the case lane's own amounts on every line (its G3+ and white parts), which the CPS keys cannot see. [ASSUMPTION] The
+NH Black group is a population of its own, not a slice of the union's size, so it keeps its CPS count of 41,954,494
+and only v5's responses move it; the comparison is per member. Kept on the identified 39.71M at v5's responses
+instead, the engine's union is $371.12 / 434.53bn, $9,345 / 10,942 per member, and the ratio stays 1.38× / 1.28× (cash
+1.69× / 1.50×). [CALCULATION: the union dumps' costs in this run's gates over 39,712,493]
+
+| $bn a year, spec 48 / 11 | Engine union, oct05 | Rough union, oct05 | **NH Black, oct05** | NH Black, sept29 |
+|---|---:|---:|---:|---:|
+| Persons (the per-member denominator) | 42,752,213 | 42,752,213 | 41,954,494 | 41,954,494 |
+| **Cost of removal, accrual basis (the case)** | 390.3 / 461.2 | 394.3 / 451.0 | **541.7 / 589.7** | 542.1 / 590.1 |
+| per member | $9,129 / 10,789 | $9,224 / 10,548 | **$12,912 / 14,055** | $12,921 / 14,064 |
+| NH Black per member over this column | 1.41 / 1.30 | 1.40 / 1.33 | | 1.38 / 1.28 (engine) |
+| Cost of removal, cash set | 307.4 / 383.4 | 307.5 / 365.6 | 525.4 / 573.4 | 525.8 / 573.8 |
+| NH Black per member over this column | 1.74 / 1.52 | 1.74 / 1.60 | | 1.69 / 1.50 (engine) |
+| Normalized gap, cash set | −277.4 / −306.0 | −271.9 / −275.9 | −471.2 / −471.2 | −471.2 / −471.2 |
+
+[CALCULATION: `derived/rekey_summary_oct05.csv`; the sept29 column from `rekey_summary_sept29.csv`]
+
+On the accrual basis, at the low end, the Black group costs $3,783 per member more than the engine's union (sept29
+$3,568). The parts add to that total with controlled rounding, and the same rounding reproduces the sept29 table above
+part for part. [CALCULATION: `derived/rekey_by_program_oct05.csv`, scratch tabulation]
+
+| Program | Per member, oct05 | sept29 |
+|---|---:|---:|
+| Social Security and Medicare | +$1,662 | +$1,691 |
+| Medicaid | +$1,371 | +$1,355 |
+| Welfare | +$991 | +$979 |
+| Veterans and military medical | +$624 | +$636 |
+| Police, courts and prisons | +$629 | +$609 |
+| No production gain | +$279 | +$294 |
+| Property, per-head lines and capital | +$310 | +$314 |
+| Schools | −$670 | −$645 |
+| Income, payroll and sales taxes (the Black group pays more) | −$1,413 | −$1,665 |
+| **Difference** | **+$3,783** | **+$3,568** |
+
+The gap per member widens because the union's per-member cost falls: the added people cost the case $6,309 / 8,790
+each against the identified union's $9,345 / 10,942. They pay more tax per head than the identified members: the
+engine union's income, payroll and sales taxes per member rise from $10,285 (sept29) to $10,537, which is why the tax
+row narrows. [CALCULATION: `rekey_by_program_sept29.csv`, `rekey_by_program_oct05.csv`]
+
+**Attribution** (`derived/attribution_oct05.csv`). Steps 1–3 rebuild the September 29 chain on the identified union at
+v5's responses, so step 1 also carries the response move: the NH Black step 3 is $541.7 / 589.7bn (sept29 $542.1 /
+590.1bn) and the rough union's is $375.2 / 424.2bn (sept29 $375.5 / 424.6bn). Step 4 adds the lineage: +$19.18 /
+26.72bn to the rough union, nothing to the NH Black group.
+
+**Rule alternatives on oct05** (`derived/rule_alternatives_oct05.csv`; change in the NH Black cost, $bn): rule 2
+−2.2 (sept29 −2.3); rule 3a −12.4; rule 3b 0.0 / −0.4; rule 4 +4.9 / +4.8; the uncalibrated benefit-tax proxy −0.1;
+every career starting at 21 −7.1. Rule 2's moves by $0.1bn through v5's responses on the two receipt lines; the others
+move by less than $0.001bn.
+
+**Gates.** `rekey_sept29.py --case oct05`: 147 gates, exit 0, the library's lineage gates included (the case and union
+dumps are the bands and the September 29 case plus the response move; the case less the union is the lane's G3+ and
+white parts, 1e-9; step 4 moves the union by the added people's cost and the NH Black group not at all). The sept29 run
+rewrites its six files byte for byte (129 gates). `rerun_lane.py` with all twelve commands (the three September 27
+ones, the four sept29 ones and the five oct05 ones): **IDENTICAL 34/34, exit 0** (2026-10-06 00:39:29–00:40:01 JST).
+
+**Reproduce (oct05), after the sept29 list and the white lane's oct05 dumps.**
+
+```sh
+B=infra/immigration-fiscal/black_comparator_rough_2026_09_28
+for c in oct05 oct05_cash oct05_union oct05_union_cash; do node $B/engine_lines.cjs $c; done
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $B/rekey_sept29.py --case oct05
+```
+
+New in `derived/`: `engine_lines_oct05.json`, `engine_lines_oct05_cash.json`, `engine_lines_oct05_union.json`,
+`engine_lines_oct05_union_cash.json`, `rekey_summary_oct05.csv`, `rekey_by_program_oct05.csv`,
+`rekey_line_shares_oct05.csv`, `rule_alternatives_oct05.csv`, `attribution_oct05.csv` and
+`attribution_buckets_oct05.csv`. `engine_lines.cjs` stays byte-identical to the white lane's copy; `rekey_sept29.py`
+gained `--case`.
