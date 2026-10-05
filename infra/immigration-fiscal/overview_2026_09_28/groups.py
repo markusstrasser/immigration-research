@@ -401,9 +401,9 @@ GROUPS = [
                      "carry the most."),
             dict(refs=[178, 232, 236],
                  text="The second generation closes 76% of the gap in finishing school but 31% of the college "
-                      "gap. About 84% of the college gap stays into the third generation.",
-                 why="CPS 1994–2025 at equal age. Descendants who stop reporting Mexican origin explain about a "
-                     "tenth of the stall."),
+                      "gap. About 86% of the college gap stays into the third generation.",
+                 why="CPS 1994–2025 at equal age. Descendants who stop reporting Mexican origin explain about 6% "
+                     "of the stall."),
             dict(refs=[272],
                  text="Second-generation Hispanic sons earn 14% less than white men at 25–27 and 24% less by "
                       "35–40. Daughters' gap, 13% and 18%, does not widen measurably.",
