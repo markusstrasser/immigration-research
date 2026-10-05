@@ -72,8 +72,8 @@ What they cannot settle cleanly:
 Use first:
 
 1. `research/immigration-complete-annual-account-2026-09-20.md`: every tax and spending line, federal and
-   state-local, with the adopted main case at the top ($371–435bn a year in 2024;
-   [main-case lane](../infra/immigration-fiscal/main_case_2026_09_29/RESULT.md))
+   state-local, with the adopted main case at the top ($390–461bn a year in 2024;
+   [main-case lane](../infra/immigration-fiscal/main_case_2026_10_05/RESULT.md))
 2. `research/immigration-objections-faq-2026-09-21.md`: the standard objections, each routed to its executed
    table
 3. `research/immigration-yearly-lifetime-cost-repair-2026-09-19.md`: the generation ledger against third-plus
@@ -389,3 +389,7 @@ For each commentator claim:
 4. `Repo evidence`
 5. `Dataset or paper family that should be checked next`
 6. `Notes on category slip or scope inflation`
+
+## Revisions
+
+- 2026-10-05 ([decision](../decisions/2026-10-05-main-case-v5.md), ladder 281): the adopted main case named in §2 is the October 5 case, $390–461bn, which counts the 3.04M descendants who no longer report Mexican origin as whole people. Concept affected: the headline main case.

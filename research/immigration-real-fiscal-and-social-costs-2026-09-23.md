@@ -1,15 +1,17 @@
 # Real fiscal and social costs of the Mexican-origin population to other residents
 
-**Verdict:** The complete account's main case is a net cost to other residents of **$371.4–434.8bn a year**
-([decision](../decisions/2026-09-29-main-case-v4.md), ladder 275), counting the pension promises members earn
-as they work; counting benefits when paid, it is $294.7–361.8bn. Two of its settings come from this memo (§6): courts, police and prisons are charged by use, which adds
+**Verdict:** The complete account's main case is a net cost to other residents of **$390.3–461.2bn a year**
+([decision](../decisions/2026-10-05-main-case-v5.md), ladder 281), counting the pension promises members earn
+as they work and, as whole people, the 3.04M descendants who no longer report Mexican origin; counting benefits
+when paid, it is $307.4–383.4bn. Two of its settings come from this memo (§6): courts, police and prisons are charged by use, which adds
 only **$5.9bn** ($1.7bn with census ethnicity codes as recorded), and the government part of uncompensated hospital
 care adds **$3.7–5.7bn**. Hispanic residents are 20.2% of people in prisons and jails combined, close to their
 20.7% share of working-age residents, and 23.4% in state and federal prisons. The account compares the group with
 the average other resident, not with whites; Hispanic adults are imprisoned at 2.6 times the white rate.
 
-Fiscal and social costs together come to **$462.9–535.5bn a year** at central values, or $11.7–13.5k per member of
-the 39.7M people the account prices (ladders 274, 275); counting benefits when paid, $386.2–462.5bn. The low end
+On the September 29 case ($371.4–434.8bn, before the descendants were added), fiscal and social costs together come
+to **$462.9–535.5bn a year** at central values, or $11.7–13.5k per member of the 39.7M people that case prices
+(ladders 274, 275); counting benefits when paid, $386.2–462.5bn. The low end
 assumes Mexican-origin offending equals the Hispanic average; the high end assumes it sits above that average, as
 custody does (§7). Every social row is restated on the account's count; the lanes' own figures, on the CPS's 40.9M,
 give $465.4–538.2bn, and stacking every item's low and high values gives $191.1–804.2bn. The social rows, $bn a year at the low / high end:
@@ -49,7 +51,7 @@ component would add $86 / 76bn, and leaving out the government enterprises (opti
 | + volunteering, consumer-side scale, trade ties (September 28) | | $447–522bn ($224–755bn) | $10.9–12.8k | ladder 265 |
 | Crashes with against without (September 29) | | $416–491bn ($142–757bn) | $10.2–12.0k | ladder 266 |
 | Every row on the account's 39.7M (September 29) | | $413.7–488.0bn | $10.4–12.3k | ladder 274 |
-| September 29, main case v4 (current) | $371.4–434.8bn | $462.9–535.5bn | $11.7–13.5k | only the fiscal row moves; $386.2–462.5bn counting benefits when paid; ladder 275 |
+| September 29, main case v4 | $371.4–434.8bn | $462.9–535.5bn | $11.7–13.5k | only the fiscal row moves; $386.2–462.5bn counting benefits when paid; ladder 275 |
 
 The first-year budget response, with CBO's 63–66% school response ($200.9–245.7bn), stays within $0.7bn of the
 September 24 totals: $248–303bn, full span $210–336bn; it was computed before the September 28–29 items.
@@ -70,7 +72,7 @@ effect of the Mexican-origin residents, all generations and all schooling levels
 residents** in 2024: 39,712,493 people as the account prices them, after the dataset audit scaled
 the CPS's 40,896,574 to the ACS count of the Mexico-born outside California and Texas (ladders 209,
 274). The comparison is stationary, with and without the group, in 2024 dollars a year. The main
-case ($371.4–434.8bn; [decision](../decisions/2026-09-29-main-case-v4.md)) takes CBO's tax-incidence rules and
+case ($390.3–461.2bn; [decision](../decisions/2026-10-05-main-case-v5.md)) takes CBO's tax-incidence rules and
 budget-category rule and sets:
 
 - school spending at the full average cost per pupil (response 1); the first-year budget response
@@ -81,13 +83,16 @@ budget-category rule and sets:
 - long-run road, park and economic-administration responses, rental assistance at 1, every
   government enterprise and a 2–3% real return on public capital;
 - Social Security and Medicare Part A as the promises members earn as they work, at the benefits current
-  law can pay (charged when paid instead, the case is $294.7–361.8bn); long-run property taxes; the
+  law can pay (charged when paid instead, the case is $307.4–383.4bn); long-run property taxes; the
   income-tax key matched to IRS totals; state and local prices where the group lives; roads keyed by
   miles driven;
+- since October 5, the 3.04M descendants who no longer report Mexican origin, counted as whole people (a
+  42.75M-person lineage); this memo's social rows stay on the 39.71M, as computed on the September 29 case,
+  until their rerun;
 - defense, existing interest and business subsidies at zero response by assumption; other services
   respond proportionally.
 
-Its per-case sampling standard error is $9.4–9.6bn, a partial approximation rather than a floor
+On the September 29 case its per-case sampling standard error is $9.4–9.6bn, a partial approximation rather than a floor
 (ladder 184). This is not the generation ledger. Per-person gaps against whites come from a
 different object and do not combine with these totals
 ([FAQ, "Before combining numbers"](immigration-objections-faq-2026-09-21.md)).
@@ -268,7 +273,7 @@ where the skill line falls and on the substitution elasticity σ.
 
 **The transfers run from poorer to richer residents, measured.** The distribution lane ranks
 other residents by SPM resources per equivalent adult (CPS ASEC 2025) and splits each channel by
-income fifth, $bn a year:
+income fifth, $bn a year, on the September 29 case:
 
 | Channel | Bottom fifth | 2nd | 3rd | 4th | Top fifth | Total |
 |---|---:|---:|---:|---:|---:|---:|
@@ -357,7 +362,8 @@ case since:
 
 ## 7. Putting the pieces together
 
-The rules: transfers (§4) are not added. The ledger and this account are not mixed. Each item
+This section is computed on the September 29 case, before the descendants who no longer report Mexican
+origin were added. The rules: transfers (§4) are not added. The ledger and this account are not mixed. Each item
 below is built in this account's frame and does not overlap the others: victims' harm excludes
 justice costs, housing excludes the production term, uncompensated care is net of offsets
 already charged. [CALCULATION: sums of the rows above]
@@ -464,6 +470,7 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 | [Housing transfer](../infra/immigration-fiscal/housing_transfer_2026_09_23/RESULT.md) | 073a79d | renters +$34bn; net +$0.7–3.5bn |
 | [Uncompensated care](../infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md) | 06a42b7, corrected 575e2ee | +$7.3–10.6bn ($3.7–5.7bn inside the account) |
 | [Wage split](../infra/immigration-fiscal/wage_distribution_2026_09_23/RESULT.md) | 3afdb25 | −$66 to −$166bn / +$71 to +$163bn |
+| [Main case, October 5](../infra/immigration-fiscal/main_case_2026_10_05/RESULT.md) | 27950256, 796e0762 | $390.3–461.2bn; $307.4–383.4bn counting benefits when paid; the 3.04M descendants who no longer report Mexican origin counted whole |
 | [Main case, September 29](../infra/immigration-fiscal/main_case_2026_09_29/RESULT.md) | 40c4ba7 | $371.4–434.8bn; $294.7–361.8bn counting benefits when paid |
 | [Main case, September 27](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md) | f3031ab, 7e94324 | $321.8–387.4bn (September 23: [lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md), 69eb31b, $203.2–249.6bn) |
 | [Congestion](../infra/immigration-fiscal/congestion_2026_09_23/RESULT.md) | dd3c45a | $19.2bn ($8.0–35.3bn); $14.0 / 12.0bn once roads respond (`service_response_long_run_2026_09_27`) |
@@ -563,3 +570,4 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 - 2026-09-29 (memo sweep): §3's table and congestion note now give victims' harm ($30.5 / 31.9bn), congestion ($13.6 / 11.6bn), and §7b the scale net ($13.7bn), on the account's 39.7M, and label the CPS-count figures; $19.2bn is the roads-fixed arm, not the central. The four smaller benefits add to $21.7bn on the priced count (was printed $21.9bn; $22.0bn on the lanes' counts). Concept affected: none; which count and arm each figure is on.
 - 2026-09-29, later (main case v4, [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275): the verdict, §1, §4 and §7 state the main case of that date, $371.4–434.8bn. The pairing is $463.0–535.5bn ($11.7–13.5k per member), only the fiscal row moving, and $386.2–462.5bn counting benefits when paid. §4's fiscal rows carry the pension accrual and put public housing among the capped programmes; wages move slightly with the production model re-solved on the account's weights, so outside the budget the bottom four fifths lose $79.4bn and the top fifth gains $44.5bn. §4's table now adds by row and column. The sign's break-even is −5.5% to 3.3%, so the low end no longer turns at any service response. Concept affected: the fiscal-plus-social total, its distribution by income and the sign condition.
 - 2026-09-29, later (number drift audit): the pairing's low end is $462.9bn (462.95), not the $463.0bn printed earlier that day, which was the sum of §7's rounded rows. §7 shows property crime's low end, $1.25bn, as 1.2 so the column adds. Concept affected: the fiscal-plus-social total's printed low end; no figure moved.
+- 2026-10-05 (main case v5, [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281): the verdict and §1 state the main case of that date, $390.3–461.2bn, which counts the 3.04M descendants who no longer report Mexican origin as whole people; the cash set is $307.4–383.4bn. The pairing, the standard error, §4's fiscal rows and §7 stay as computed on the September 29 case, and say so, until the propagation lane reruns them on the new case. Concept affected: the complete account's main case; the fiscal-plus-social total has not moved yet.

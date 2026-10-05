@@ -18,11 +18,13 @@ to its actual inputs and outputs. The warehouse alone does not inventory newer
 analysis directories; ignored files require `rg --files --no-ignore`.
 
 **Current result (income year 2024).** The adopted main case puts the conditional net cost of the
-Mexican-origin population (39.7M people, all generations) to other US residents at **$371–435bn a
-year**, counting the pension promises members earn as they work, or $295–362bn counting benefits
-when paid ([lane](infra/immigration-fiscal/main_case_2026_09_29/RESULT.md),
-[decision](decisions/2026-09-29-main-case-v4.md)). On the September 27 case ($322–387bn), other residents'
-social costs and benefits outside the public budget brought it to $414–488bn. Only 2024 is measured;
+Mexican-origin population (a 42.75M-person lineage, all generations, counting the 3.04M descendants who
+no longer report Mexican origin) to other US residents at **$390–461bn a
+year**, counting the pension promises members earn as they work, or $307–383bn counting benefits
+when paid ([lane](infra/immigration-fiscal/main_case_2026_10_05/RESULT.md),
+[decision](decisions/2026-10-05-main-case-v5.md)). On the September 29 case ($371–435bn, the 39.7M people who
+report Mexican birth, parentage or origin), other residents' social costs and benefits outside the public budget
+brought it to $463–536bn. Only 2024 is measured;
 earlier years are a model back-cast. The [objections FAQ](research/immigration-objections-faq-2026-09-21.md)
 routes the standard objections to their executed tables, and the
 [evidence map](infra/immigration-fiscal/overview_2026_09_28/) (`build.py` writes the reader page)
@@ -48,7 +50,7 @@ single well-sourced falsification beats ten plausible syntheses.
 | `research/immigration-*.md` | The memo stack — about 185 sourced memos with confidence tiers and supersession notes. Start at the [topic index](research/immigration-INDEX.md). |
 | `warehouse/immigration.duckdb` | **The unified data warehouse** — all cleaned/joined panels in one schema-namespaced file (`context` / `lifetime` / `fiscal`) with a self-describing `_catalog` table. *(Built locally; gitignored.)* |
 | `infra/immigration-fiscal/` | The acquisition + build pipeline (acquire → parse → warehouse). See its [`REPRODUCE.md`](infra/immigration-fiscal/REPRODUCE.md). |
-| `queries/immigration/` | Checked-in warehouse queries: descriptive checks of the September 5 warehouses (each file has `-- requires:` and `-- backs:` headers). The headline is one engine run of the [main-case lane](infra/immigration-fiscal/main_case_2026_09_29/); [REPRODUCTION_INPUTS](infra/immigration-fiscal/REPRODUCTION_INPUTS.md#the-adopted-main-case-the-headline) gives its inputs. |
+| `queries/immigration/` | Checked-in warehouse queries: descriptive checks of the September 5 warehouses (each file has `-- requires:` and `-- backs:` headers). The headline is one engine run of the [main-case lane](infra/immigration-fiscal/main_case_2026_10_05/); [REPRODUCTION_INPUTS](infra/immigration-fiscal/REPRODUCTION_INPUTS.md#the-adopted-main-case-the-headline) gives its inputs. |
 | `decisions/` | Concept-level pivots — when an interpretation shifted or a method was adopted/dropped. |
 | `notes/` | Cross-topic working notes (instrument bias, quant-bias checklist, fact-check templates). |
 | `GOALS.md` · `CLAUDE.md` | Human-owned mission / the research constitution + agent operating rules. |

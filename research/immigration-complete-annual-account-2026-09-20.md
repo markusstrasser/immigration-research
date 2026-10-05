@@ -3,19 +3,28 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-09-29): $371.4–434.8bn/year.** It is the September 27 case with nine measured
-changes, run as one set:
+**Current main case (2026-10-05): $390.3–461.2bn/year.** It is the September 29 case plus the 3.04M descendants
+of Mexican immigrants who no longer report Mexican origin, counted as whole people and priced under the same rules:
++$18.9 / +$26.4bn, a 42.75M-person lineage at $9,129–10,789 per member. The 1.09M lost after the third generation
+cost what an identified third-plus member costs; the 1.94M lost at the third-generation rate, with their
+descendants, cost (1 − C3) of that plus C3 times a third-plus non-Hispanic white at the same ages, with C3 = 0.557
+(SE 0.246). Counted by share of Mexican-immigrant ancestry instead of whole, the lineage costs $275.4–375.8bn,
+beside the headline ([main-case lane](../infra/immigration-fiscal/main_case_2026_10_05/RESULT.md),
+[decision](../decisions/2026-10-05-main-case-v5.md), ladder 281).
+
+Counting benefits when paid, the cash set is $307.4–383.4bn. The low side is $362.3–434.6bn, the outer range
+$312.4–515.4bn, and the sign break-even −3.4% to 5.5%: the low end is a net cost at every service response. Capital
+at 7% ($483.2–543.7bn), enterprises out ($373.5–438.4bn) and land [GAP] sit beside the account.
+
+The September 29 case, $371.4–434.8bn ($294.7–361.8bn counting benefits when paid), is the September 27 case with
+nine measured changes, run as one set:
 - the Social Security and Part A promises members earn as they work, at the benefits current law can pay and net
   of the income tax on them: +$77.3 / +$73.6bn (ladder 257);
 - long-run property taxes: −$27.2bn (ladder 253);
 - the income-tax key matched to IRS totals by income bin: −$3.2 / −$3.1bn (ladder 249);
 - state and local prices where the group lives: +$2.2bn (ladder 267);
 - roads keyed by miles driven: +$2.0 / +$3.7bn (ladder 273);
-- five smaller keys: −$1.0 / −$1.3bn together; the items interact by −$0.5bn.
-
-Counting benefits when paid, the cash set is $294.7–361.8bn. The low side is $345.5–410.5bn, the outer range
-$296.8–487.3bn, and the sign break-even −5.5% to 3.3%: the low end is a net cost at every service response. Capital
-at 7% ($457.5–511.1bn), enterprises out ($355.9–413.7bn) and land [GAP] sit beside the account
+- five smaller keys: −$1.0 / −$1.3bn together; the items interact by −$0.5bn
 ([main-case lane](../infra/immigration-fiscal/main_case_2026_09_29/RESULT.md), [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275).
 
 The September 27 case, $321.8–387.4bn, had given four items held at zero by source classification or short-run
@@ -25,9 +34,9 @@ BEA's depreciation-only lines leave out (+$22.2 / +$38.3bn); and every governmen
 operating loss and the return on their capital (+$17.2 / +$23.0bn)
 ([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239).
 
-With CBO-style first-year budget responses the same account gives $277.3–318.3bn, and $200.6–245.3bn counting
+With CBO-style first-year budget responses the September 29 case gives $277.3–318.3bn, and $200.6–245.3bn counting
 benefits when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md); the September 26 run gave $200.9–245.7bn); with every service
-proportional, $398.1–448.0bn. The main cases between September 20 and 29 are listed, each with its decision, in the
+proportional, the current case gives $419.3–475.6bn. The main cases since September 20 are listed, each with its decision, in the
 [topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
 [real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below is the account as
 published on September 20, kept as the calculation record.
@@ -354,6 +363,13 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-10-05, main case v5 (ladder 281): the header gives the October 5 case, $390.3–461.2bn, which counts the 3.04M
+descendants who no longer report Mexican origin as whole people, with the cash set ($307.4–383.4bn), the case's
+low side, range, break-even and beside rows, and the ancestry-share count beside ($275.4–375.8bn). The
+September 29 case's nine changes stay listed under it, and the first-year scenario is labelled as that case's
+until its rerun lands. Concept affected: the complete account's main case and the population it counts
+([decision](../decisions/2026-10-05-main-case-v5.md)).
 
 2026-09-29, later (break conditions lane, beead07): the first-year budget response is the current account's,
 $277.3–318.3bn, and $200.6–245.3bn counting benefits when paid; the $200.9–245.7bn quoted before was the

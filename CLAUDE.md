@@ -95,13 +95,15 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
   been state-priced since 2026-09-20, not national-average). The adopted case is one engine
   run plus a post-engine return on public capital:
-  `infra/immigration-fiscal/main_case_2026_09_29/main_case.cjs`, whose package builds on the
-  September 27 case's (`main_case_long_run_2026_09_27`). The line and receipt responses and the capital
+  `infra/immigration-fiscal/main_case_2026_10_05/main_case.cjs`, whose package builds on the
+  September 29 case's (`main_case_2026_09_29`). The line and receipt responses and the capital
   return travel in `derived/corrections.json` → `meta.responses` and `meta.capital_return`. A consumer
   that applies the payload must set all of them. The payload adds eight spending and two receipt lines
   that `model.json` lacks: evaluate as `Engine.evaluate(withSyntheticLines(m), stateFor(m, spec,
-  profile))`, or call `evaluateFull` for the full cost. Consumer lanes key the case `sept29`, beside
-  their `sept27` outputs.
+  profile))`, or call `evaluateFull` for the full cost. `meta.lineage` records the added descendants
+  (arm b, C3, the members priced as G3+ and as whites); their edits sit in every engine cell, so a
+  consumer that splits the case by generation, household or person needs a stated rule for them (the
+  lane's Consumers table). Consumer lanes key the case `oct05`, beside their `sept29` outputs.
 
 - Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
   verify stored source hashes, including upstream
@@ -137,12 +139,17 @@ substituting a web summary or declaring a measurement unavailable:
   `age_profile_components.csv`, `age_normalizations*.csv`). The finance-refresh and
   enrollment accounts carry the all-generation union only; do not flat-scale the ledger's split
   onto any account total. The adopted main case has its own split, computed on the account with
-  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_sept29.csv`
-  (ladder 224; `generation_results.csv` keeps the September 27 case).
+  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct05.csv`,
+  the added descendants counted in G3+ (ladder 224; `generation_results_sept29.csv` keeps the
+  September 29 case and `generation_results.csv` the September 27 case).
 - The account prices 39,712,493 people (dataset audit row 4); the CPS ASEC's published weights give
   40.90M. A lane that sums CPS weights gates its total at row 4 (pattern:
   `world_ledger_2026_09_27/population_basis.py`) or states why the published frame is right; five
-  v4 items used the published weights (ladder 275).
+  v4 items used the published weights (ladder 275). Since 2026-10-05 the main case adds 3.04M
+  descendants who no longer report Mexican origin (arm b, put on the account's frame by factor
+  0.997189, since row 4 reweights only the Mexico-born): a 42.75M lineage, which per-member figures
+  divide by. The CPS cannot see them, so a lane that re-keys the CPS either takes their cost from
+  the case lane or covers the 39.71M union and says so (ladder 281).
 - The evidence map (`overview_2026_09_28/`), assumption explorer (`assumption_explorer_2026_09_21/`)
   and figures page (`figures_2026_09_22/`) move to a new main case only when the operator asks.
 - Only income-year 2024 is a measured account. Earlier years are a
@@ -164,13 +171,20 @@ substituting a web summary or declaring a measurement unavailable:
   ([decision](decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md)). Since
   2026-09-29 it counts the Social Security and Part A promises members earn as they work, at the
   benefits current law can pay, and takes long-run property taxes, the IRS income-tax key, state
-  prices, roads by miles and five smaller keys: **$371–435bn**
-  ([decision](decisions/2026-09-29-main-case-v4.md)). Earlier and companion figures:
-  - $371.4–434.8bn unrounded; counting benefits when paid (the cash set), $294.7–361.8bn;
-  - low side with the within-district 0.836: $346–410bn;
+  prices, roads by miles and five smaller keys ([decision](decisions/2026-09-29-main-case-v4.md)).
+  Since 2026-10-05 it also counts, as whole people and under the same rules, the 3.04M descendants
+  of Mexican immigrants who no longer report Mexican origin: **$390–461bn**
+  ([decision](decisions/2026-10-05-main-case-v5.md)). Earlier and companion figures:
+  - $390.3–461.2bn unrounded; counting benefits when paid (the cash set), $307.4–383.4bn; per member
+    of the 42.75M lineage, $9,129–10,789;
+  - the count's arms a and c: $380.4–447.6bn and $400.2–474.9bn; C3 (0.557) ± 1 SE: $387.3–465.2bn;
+  - counted by share of Mexican-immigrant ancestry instead of whole (beside, never the headline):
+    $275.4–375.8bn;
+  - low side with the within-district 0.836: $362–435bn;
+  - September 29: $371.4–434.8bn, $294.7–361.8bn counting benefits when paid;
   - September 27: $322–387bn; the schools case: $258–292bn;
   - first-year budget response with CBO's 0.63–0.66: $277–318bn, $201–245bn counting benefits when paid
-    (ladder 270's lane; the September 26 run gave $201–246bn);
+    (ladder 270's lane, on the September 29 case; the September 26 run gave $201–246bn);
   - September 24: $201–246bn; September 23: $203–250bn; September 20: $165–197bn.
 
   The capital return is an imputed resource cost, never a debt flow. Defense,

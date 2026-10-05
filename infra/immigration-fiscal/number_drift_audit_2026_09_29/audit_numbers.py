@@ -308,7 +308,7 @@ def span_lines(path, spans):
 
 # Markdown spans in scope: current results only (coverage and reasons in RESULT.md).
 INDEX_SPANS = [
-    ("**Adopted main case (September 29): $371–435bn/year", "Treat an Astra accusation as a lead to verify"),
+    ("**Adopted main case (October 5): $390–461bn/year", "Treat an Astra accusation as a lead to verify"),
     ("**Earlier cases.** Each main case replaced the one before.", "too (−$51.0 / −$53.6bn)."),
     ("[By generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224,",
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
@@ -334,7 +334,7 @@ FAQ_SPANS = [
     ("Finding: only income-year 2024 is a complete account.", "of other programmes before 2024 is unmeasured."),
     ("No. The account describes a resident stock in a stationary comparison.",
      "neither is cash that a removal would free in the year."),
-    ("figures are not the $371–435bn complete account. [SOURCE:", "figures are not the $371–435bn complete account. [SOURCE:"),
+    ("figures are not the $390–461bn complete account. [SOURCE:", "figures are not the $390–461bn complete account. [SOURCE:"),
     ("Two later corrections also nearly cancel:", "No combination changes the sign."),
     ("Steel-man: one year of a price surge, pandemic programmes and a migration wave", "which flatters the year."),
     # entry 5's split of the adopted account by generation (in scope since the v4 restatement, 5e9112e)
@@ -345,6 +345,8 @@ FAQ_SPANS = [
     ("many average residents, the main case's gap counting benefits when paid", "has no national total to share out."),
     ("**What about obligations left by past years?**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
+    # entry 19, the lineage counted as whole people (main case v5, 2026-10-05)
+    ("Steel-man: grandchildren of Mexican immigrants who marry out", "or the added people's measured age mix."),
 ]
 CLAUDE_SPANS = [
     ("Since\n  2026-09-23 the main case lets general public services", "business subsidies stay at **zero response by assumption**"),
