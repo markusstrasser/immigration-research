@@ -1,6 +1,6 @@
 {
  "passed": true,
- "count": 175,
+ "count": 176,
  "gates": [
   {
    "step": "population",
@@ -268,7 +268,13 @@
   },
   {
    "step": "fractional",
-   "gate": "G2 shares lie between 1/2 and 1 and G3plus shares between 0 and 1, low <= central <= high",
+   "gate": "the stated bound's low end is the seen members' strict mean (1e-12), and low <= high",
+   "passed": true,
+   "detail": "0.304578 / 0.666495"
+  },
+  {
+   "step": "fractional",
+   "gate": "G2 shares lie between 1/2 and 1 (low <= central <= high); G3plus's stated bound and convention lie inside its outer bounds",
    "passed": true,
    "detail": ""
   },
@@ -784,7 +790,7 @@
   },
   {
    "step": "engine",
-   "gate": "fractional count at whole union members and the added persons' mix reproduces the attriter-only fractional_ancestry row (1e-9)",
+   "gate": "fractional count at whole union members and the added persons' mix reproduces the fractional_attriters_only row (1e-9)",
    "passed": true,
    "detail": "1.5e-12"
   },

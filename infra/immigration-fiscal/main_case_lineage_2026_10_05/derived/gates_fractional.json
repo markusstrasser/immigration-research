@@ -31,7 +31,12 @@
    "detail": "max |diff| 0.04 persons; mix 0.615585"
   },
   {
-   "gate": "G2 shares lie between 1/2 and 1 and G3plus shares between 0 and 1, low <= central <= high",
+   "gate": "the stated bound's low end is the seen members' strict mean (1e-12), and low <= high",
+   "passed": true,
+   "detail": "0.304578 / 0.666495"
+  },
+  {
+   "gate": "G2 shares lie between 1/2 and 1 (low <= central <= high); G3plus's stated bound and convention lie inside its outer bounds",
    "passed": true,
    "detail": ""
   },

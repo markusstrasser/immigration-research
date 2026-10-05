@@ -1,13 +1,13 @@
 class,persons,share_of_generation,share_low,share_high,share_central,under_18,ba_plus_adults_25plus,records
-G3plus: no parent at home (unknown),6655070.7,0.464008,0.000000,1.000000,0.615585,0.077033,0.277034,3145
-G3plus: one parent at home,3322106.4,0.231626,0.148024,0.923774,0.615585,0.654647,0.118386,1348
+G3plus: no parent at home (unknown),6655070.7,0.464008,0.000000,1.000000,,0.077033,0.277034,3145
+G3plus: one parent at home,3322106.4,0.231626,0.148024,0.923774,,0.654647,0.118386,1348
 G2: two Mexico-born parents,9222656.8,0.643446,1.000000,1.000000,1.000000,0.351743,0.231652,4065
 G2: other parent born abroad outside Mexico,759030.7,0.052956,0.500000,0.500000,0.500000,0.391112,0.278997,346
 "G2: US-born other parent at home, not of Mexican origin",596249.0,0.041599,0.554887,0.554887,0.554887,0.686861,0.150385,265
 G2: US-born other parent not at home (unknown),2155590.2,0.150391,0.500000,1.000000,0.839387,0.149050,0.282485,986
-"G3plus: both parents at home, 0 Mexico-born grandparent(s) of 4",2267016.5,0.158062,0.000000,0.696912,0.615585,0.793587,0.263119,949
+"G3plus: both parents at home, 0 Mexico-born grandparent(s) of 4",2267016.5,0.158062,0.000000,0.696912,,0.793587,0.263119,949
 "G2: US-born other parent at home, of Mexican origin",1599690.9,0.111607,0.892325,0.998531,0.945428,0.716782,0.161774,687
-"G3plus: both parents at home, 4 Mexico-born grandparent(s) of 4",665757.0,0.046418,1.000000,1.000000,0.615585,0.815440,0.293574,274
-"G3plus: both parents at home, 2 Mexico-born grandparent(s) of 4",769554.4,0.053655,0.500000,0.733296,0.615585,0.789785,0.101619,341
-"G3plus: both parents at home, 3 Mexico-born grandparent(s) of 4",226604.0,0.015799,0.750000,0.959117,0.615585,0.808303,0.702017,92
-"G3plus: both parents at home, 1 Mexico-born grandparent(s) of 4",436465.6,0.030431,0.250000,0.675655,0.615585,0.776310,0.170756,202
+"G3plus: both parents at home, 4 Mexico-born grandparent(s) of 4",665757.0,0.046418,1.000000,1.000000,,0.815440,0.293574,274
+"G3plus: both parents at home, 2 Mexico-born grandparent(s) of 4",769554.4,0.053655,0.500000,0.733296,,0.789785,0.101619,341
+"G3plus: both parents at home, 3 Mexico-born grandparent(s) of 4",226604.0,0.015799,0.750000,0.959117,,0.808303,0.702017,92
+"G3plus: both parents at home, 1 Mexico-born grandparent(s) of 4",436465.6,0.030431,0.250000,0.675655,,0.776310,0.170756,202

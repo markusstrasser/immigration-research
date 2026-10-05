@@ -543,11 +543,13 @@ for (const name of Object.keys(SETS)) {
     variants.push(["white_own_ages", r.mG, r.mW, 0, "the white end at whites' own ages (the white lane's A1, ladder 263's central) instead of "
       + "at the identified G3+'s ages", true]);
     const fw = POP.fractional_ancestry.hidden_third_generation;
-    variants.push(["fractional_ancestry", fw * r.mG, fw * r.mW, 0,
-      `added persons counted at ${fw.toFixed(4)} each (a quarter per Mexico-born grandparent, the hidden third generation's cells; responses at the whole-person share)`]);
+    variants.push(["fractional_attriters_only", fw * r.mG, fw * r.mW, 0,
+      `[FRAMING-SENSITIVE] attriters only: the added persons at ${fw.toFixed(4)} each (a quarter per Mexico-born grandparent, the hidden `
+      + "third generation's cells; responses at the whole-person share) while the union's mixed-ancestry members stay whole, so it is not a "
+      + "consistent fractional count; the whole-lineage count is derived/fractional_lineage.csv"]);
     for (const [variant, mG, mW, prodOff, rule, ownAges] of variants) {
       const b = recombine(name, arm, mG, mW, prodOff, ownAges);
-      const pop = variant === "fractional_ancestry" ? POP.meta.account_union + fw * A.added : A.population;
+      const pop = variant === "fractional_attriters_only" ? POP.meta.account_union + fw * A.added : A.population;
       sensRows.push({ set: name, arm, variant, low_bn: b[0], high_bn: b[1], change_low_bn: b[0] - summaries[name].v4.band_bn[0],
         change_high_bn: b[1] - summaries[name].v4.band_bn[1], population: pop, per_member_low_usd: b[0] * 1e9 / pop,
         per_member_high_usd: b[1] * 1e9 / pop, m_g3plus: mG, m_white: mW, rule });
@@ -578,17 +580,20 @@ for (const name of Object.keys(SETS)) for (const arm of ARMS) {
 
 // [FRAMING-SENSITIVE] Fractional, the people-conserving lineage count: every generation at its ancestry share
 // (fractional.py), the added persons at theirs, each priced at its generation's cost at the arm's responses.
+// The stated bound (team-lead, 2026-10-05): G2 measured, its unknown other parents at the co-resident mean; the
+// identified third generation at a quarter per Mexico-born grandparent; G4+ without a Mexico-born grandparent between
+// nothing (g4_at_nothing) and its measured high bound (g4_at_bound); members without grandparent detail at the seen mix.
 const FR_SCEN = [
-  ["central", { G2: SH.G2.central, G3plus: SH.G3plus.central },
-    "G2 measured, unknown other parents at the co-resident mean; G3+ at the identified third-generation children's mix (population lane convention)"],
-  ["g2_low", { G2: SH.G2.low, G3plus: SH.G3plus.central }, "G2's unknown ancestors at nothing"],
-  ["g2_high", { G2: SH.G2.high, G3plus: SH.G3plus.central }, "G2's unknown ancestors at their full weight"],
-  ["g3plus_seen_low", { G2: SH.G2.central, G3plus: SH.G3plus.seen_low },
-    "G3+ at the strict quarter-per-grandparent mix of members whose grandparents are seen, applied to all"],
-  ["g3plus_seen_high", { G2: SH.G2.central, G3plus: SH.G3plus.seen_high },
-    "G3+ at the high bound of members whose grandparents are seen, applied to all"],
-  ["bound_low", { G2: SH.G2.low, G3plus: SH.G3plus.low }, "every unknown ancestor at nothing"],
-  ["bound_high", { G2: SH.G2.high, G3plus: SH.G3plus.high }, "every unknown ancestor at its full weight"],
+  ["g4_at_nothing", { G2: SH.G2.central, G3plus: SH.G3plus.bound_low },
+    "the stated bound's low end: third generation at a quarter per Mexico-born grandparent, G4+ at nothing"],
+  ["g4_at_bound", { G2: SH.G2.central, G3plus: SH.G3plus.bound_high },
+    "the stated bound's high end: third generation at a quarter per Mexico-born grandparent, G4+ at its measured high bound"],
+  ["g2_low", { G2: SH.G2.low, G3plus: SH.G3plus.bound_low }, "the low end with G2's unknown other parents at nothing"],
+  ["g2_high", { G2: SH.G2.high, G3plus: SH.G3plus.bound_high }, "the high end with G2's unknown other parents in full"],
+  ["convention", { G2: SH.G2.central, G3plus: SH.G3plus.convention },
+    "every third-plus member at the identified third-generation children's mix (the population lane's convention)"],
+  ["outer_low", { G2: SH.G2.low, G3plus: SH.G3plus.low }, "every unknown ancestor at nothing, members without grandparent detail included"],
+  ["outer_high", { G2: SH.G2.high, G3plus: SH.G3plus.high }, "every unknown ancestor in full, members without grandparent detail included"],
 ];
 const fracRows = [];
 let fracWhole = 0, fracAttr = 0;
@@ -602,7 +607,7 @@ for (const name of Object.keys(SETS)) for (const arm of ["v4", ...ARMS]) {
   if (arm !== "v4") {
     const fw = POP.fractional_ancestry.hidden_third_generation;
     const att = count({ G2: 1, G3plus: 1 }, fw);
-    const s = sensRows.find((x) => x.set === name && x.arm === arm && x.variant === "fractional_ancestry");
+    const s = sensRows.find((x) => x.set === name && x.arm === arm && x.variant === "fractional_attriters_only");
     fracAttr = Math.max(fracAttr, Math.abs(att[r.lo] - s.low_bn), Math.abs(att[r.hi] - s.high_bn));
   }
   for (const [scenario, sh, rule] of FR_SCEN) {
@@ -620,7 +625,7 @@ for (const name of Object.keys(SETS)) for (const arm of ["v4", ...ARMS]) {
 }
 gate("fractional count, positive control: every share at 1 gives the whole-person cost at every specification, v4 and every arm (1e-9)",
   fracWhole < 1e-9, ex(fracWhole));
-gate("fractional count at whole union members and the added persons' mix reproduces the attriter-only fractional_ancestry row (1e-9)",
+gate("fractional count at whole union members and the added persons' mix reproduces the fractional_attriters_only row (1e-9)",
   fracAttr < 1e-9, ex(fracAttr));
 
 // The C3 recombinations hold each arm's ends; confirm the ends do not move under the extremes.

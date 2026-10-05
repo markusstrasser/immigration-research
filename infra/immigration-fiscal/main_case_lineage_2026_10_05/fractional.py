@@ -17,10 +17,13 @@ What the CPS shows:
         one: two). Adults living apart from their parents show nothing, so their share is bounded by 0 and 1.
 An unknown ancestor contributes between nothing and its full weight; every share is written as low and high bounds.
 The G2 central gives each unknown other parent the mean share measured on co-resident US-born other parents
-[ASSUMPTION: adults' parents resemble children's parents; intermarriage changed across cohorts]. The G3plus central is
-the population lane's convention, the identified third-generation children's quarter-per-grandparent mix (0.6156,
-recomputed from arm3_grandparent_counts.csv), applied to every identified third-plus member; this frame's own
-measurement on co-resident children is written beside.
+[ASSUMPTION: adults' parents resemble children's parents; intermarriage changed across cohorts].
+G3plus is a stated bound (team-lead, 2026-10-05): the identified third generation (a Mexico-born grandparent seen) at a
+quarter per Mexico-born grandparent; G4+ (grandparents seen, none born in Mexico) between nothing and its measured high
+bound; members without grandparent detail at the seen members' mix [ASSUMPTION]. So bound_low counts G4+ at nothing
+and bound_high at its bound. The population lane's convention, every member at the identified third-generation
+children's mix (0.6156, recomputed from arm3_grandparent_counts.csv), is written beside; `low` and `high` are the outer
+bounds, every unknown ancestor at nothing or in full.
 
 Costs are not split here. The account splits keys, corrections and production by generation only
 (generation_account_2026_09_24), so lineage_case.cjs prices each generation's share at that generation's average cost
@@ -194,7 +197,17 @@ def main() -> None:
     gate("positive control: the population lane's linkage on this frame reproduces arm3_grandparent_counts.csv's cells "
          "(0.1 person, the file's rounding) and its identified mix (1e-6)", worst <= 0.1 and abs(mix_pop - conv) < 1e-6,
          f"max |diff| {worst:.2f} persons; mix {mix_pop:.6f}")
-    central = np.where(g3, conv, central)
+    # The stated bound: the seen third generation at the strict quarter rule, the seen G4+ between nothing and its high
+    # bound; members without grandparent detail at the seen mix.
+    g3_seen, g4_seen = both & (mxgp > 0), both & (mxgp == 0)
+    f4 = float(w[g4_seen].sum() / w[both].sum())
+    third_mix = float(np.average(lo[g3_seen], weights=w[g3_seen]))
+    g4_high = float(np.average(hi[g4_seen], weights=w[g4_seen]))
+    bound_low, bound_high = (1 - f4) * third_mix, (1 - f4) * third_mix + f4 * g4_high
+    gate("the stated bound's low end is the seen members' strict mean (1e-12), and low <= high",
+         abs(bound_low - float(np.average(lo[both], weights=w[both]))) < 1e-12 and bound_low <= bound_high,
+         f"{bound_low:.6f} / {bound_high:.6f}")
+    central = np.where(g3, np.nan, central)  # G3plus has a stated bound, not a central
 
     def wmean(x: np.ndarray, m: np.ndarray) -> float:
         return float(np.average(x[m], weights=w[m]))
@@ -204,9 +217,15 @@ def main() -> None:
         "G2": {"low": wmean(lo, g2), "central": wmean(central, g2), "high": wmean(hi, g2), "population": pops["G2"],
                "unknown_other_parent_central": 0.5 + 0.5 * s_other_seen,
                "co_resident_us_born_other_parent_share": s_other_seen},
-        "G3plus": {"low": wmean(lo, g3), "central": conv, "high": wmean(hi, g3), "population": pops["G3plus"],
-                   "central_rule": "the identified third-generation children's quarter-per-grandparent mix (population lane "
-                                   "convention), applied to every identified third-plus member",
+        "G3plus": {"low": wmean(lo, g3), "high": wmean(hi, g3), "population": pops["G3plus"],
+                   "bound_low": bound_low, "bound_high": bound_high,
+                   "bound_rule": "the identified third generation at a quarter per Mexico-born grandparent; G4+ (grandparents "
+                                 "seen, none born in Mexico) at nothing (bound_low) or its measured high bound (bound_high); "
+                                 "members without grandparent detail at the seen members' mix",
+                   "third_generation_seen_mix": third_mix, "g4_share_of_seen": f4, "g4_seen_high": g4_high,
+                   "convention": conv,
+                   "convention_rule": "the identified third-generation children's quarter-per-grandparent mix (population lane "
+                                      "convention), applied to every identified third-plus member",
                    "seen_low": wmean(lo, both), "seen_high": wmean(hi, both),
                    "seen_rule": "members with both biological parents at home (grandparents seen): low counts only "
                                 "Mexico-born grandparents (the strict quarter rule), high gives every US-born grandparent "
@@ -219,9 +238,12 @@ def main() -> None:
                   "high": popj["fractional_ancestry"]["hidden_third_generation"],
                   "rule": "the hidden third generation's quarter-per-grandparent mix (population.json); later losses take it too"},
     }
-    gate("G2 shares lie between 1/2 and 1 and G3plus shares between 0 and 1, low <= central <= high",
+    s3 = shares["G3plus"]
+    gate("G2 shares lie between 1/2 and 1 (low <= central <= high); G3plus's stated bound and convention lie inside its "
+         "outer bounds",
          0.5 <= shares["G2"]["low"] <= shares["G2"]["central"] <= shares["G2"]["high"] <= 1.0
-         and 0.0 <= shares["G3plus"]["low"] <= shares["G3plus"]["central"] <= shares["G3plus"]["high"] <= 1.0)
+         and 0.0 <= s3["low"] <= s3["bound_low"] <= s3["bound_high"] <= s3["high"] <= 1.0
+         and s3["low"] <= s3["convention"] <= s3["high"])
 
     class_rows = []
     for c in dict.fromkeys(cls[g2 | g3]):
@@ -229,7 +251,7 @@ def main() -> None:
         adults = m & (age >= 25)
         class_rows.append({
             "class": c, "persons": f"{w[m].sum():.1f}", "share_of_generation": f"{w[m].sum() / w[g2 if c.startswith('G2') else g3].sum():.6f}",
-            "share_low": f"{wmean(lo, m):.6f}", "share_high": f"{wmean(hi, m):.6f}", "share_central": f"{wmean(central, m):.6f}",
+            "share_low": f"{wmean(lo, m):.6f}", "share_high": f"{wmean(hi, m):.6f}", "share_central": "" if c.startswith("G3plus") else f"{wmean(central, m):.6f}",
             "under_18": f"{w[m & (age < 18)].sum() / w[m].sum():.6f}",
             "ba_plus_adults_25plus": f"{w[adults & (hga >= 43)].sum() / w[adults].sum():.6f}" if w[adults].sum() > 0 else "",
             "records": int(m.sum()),
@@ -253,7 +275,8 @@ def main() -> None:
         wr.writerows(class_rows)
     (OUT / "gates_fractional.json").write_text(json.dumps({"gates": GATES}, indent=1) + "\n")
     for g, s in shares.items():
-        print(f"  {g}: low {s['low']:.4f} central {s['central']:.4f} high {s['high']:.4f}")
+        mid = f"central {s['central']:.4f}" if "central" in s else f"bound {s['bound_low']:.4f}-{s['bound_high']:.4f}, convention {s['convention']:.4f}"
+        print(f"  {g}: low {s['low']:.4f} {mid} high {s['high']:.4f}")
     for r in class_rows:
         print(f"  {r['class']:<66} {float(r['persons']) / 1e6:6.3f}M  {r['share_low']}-{r['share_high']} "
               f"(central {r['share_central']})  under-18 {r['under_18']}  BA+ {r['ba_plus_adults_25plus']}")

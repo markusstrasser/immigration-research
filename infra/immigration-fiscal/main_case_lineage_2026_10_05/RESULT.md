@@ -25,22 +25,25 @@ The cash set counts benefits when they are paid.
 
 C3 is 0.5567 (SE 0.2457), imported at run time from the "(central)" entry of `generation_carryover_2026_09_27/summarize.py`.
 
-**Checks.** 175 gates pass. The lane's rerun is IDENTICAL (21/21 files, exit 0).
+**Checks.** 176 gates pass. The lane's rerun is IDENTICAL (21/21 files, exit 0).
 
-**[FRAMING-SENSITIVE] Mixed ancestry: three alternatives to whole persons.**
+**[FRAMING-SENSITIVE] Mixed ancestry: alternatives to whole persons.**
 
-| Alternative (arm b) | Set ($bn) | Change from v4 | Cash ($bn) |
+| Alternative (arm b) | Set ($bn) | Change | Cash ($bn) |
 |---|---|---|---|
 | Replacement child, r = 1 | 383.38–450.69 | +11.97–15.85 | 305.30–377.70 |
 | Replacement child, r = 0.5 | 386.84–455.97 | +15.43–21.13 | 306.34–380.55 |
-| Fractional, whole lineage | 320.4–367.2 | not comparable to v4 | 256.4–303.7 |
-| Fractional, attriters only | 378.9–445.4 | +7.5–10.6 | — |
+| Fractional, whole lineage, G4+ at nothing | 275.39–322.13 | +9.13 / +9.11 on v4 counted alike (266.26–313.02) | 218.85–268.27 |
+| Fractional, whole lineage, G4+ at its high bound | 326.68–375.81 | +7.56 / +10.62 on v4 counted alike (319.12–365.19) | 260.94–311.08 |
+| Fractional, attriters only | 378.93–445.41 | +7.52–10.57 | 299.69–370.43 |
 
 - **Replacement.** Without the immigration, a native parent of a mixed descendant would likely have had a child anyway, with another native. The rows net r × W × added people off the band.
-- **Fractional.** This is the people-conserving lineage count: each person counts by their share of Mexican-immigrant ancestry, and the counted people total 34.36M.
-  - v4 itself counts as $312.9–356.7bn on 33.12M counted people.
-  - The third-plus share dominates the result. Its full bounds give $239.6–422.1bn.
-- **Fractional, attriters only.** Union members stay whole and only the added people are weighted.
+- **Fractional, whole lineage.** This is the people-conserving lineage count: each person counts by their share of Mexican-immigrant ancestry.
+  - G1 counts 1, G2 0.9248 and the added people 0.4075 each.
+  - The identified third-plus share is a stated bound, not a measurement. The third generation counts a quarter per Mexico-born grandparent; fourth-plus members count nothing (0.3046 for G3+) or their high bound (0.6665). Counted people: 29.90–35.09M.
+  - G2's own bounds widen the range to $266.24–381.20bn. Every unknown ancestor at nothing or in full gives $239.62–422.11bn.
+  - The population lane's convention, 0.6156 for every G3+ member, gives $320.44–367.25bn, inside the bound.
+- **Fractional, attriters only.** Only the added people are weighted and union members stay whole, so it is not a consistent fractional count.
 
 What is measured and what is assumed:
 
@@ -191,7 +194,7 @@ The largest lines on the set:
 | whites at their own ages | 388.48 / 459.49 | +17.07 / +24.65 | 309.29 / 385.38 | +14.59 / +23.56 |
 | [FRAMING-SENSITIVE] replacement, r = 1 | 383.38 / 450.69 | +11.97 / +15.85 | 305.30 / 377.70 | +10.60 / +15.88 |
 | [FRAMING-SENSITIVE] replacement, r = 0.5 | 386.84 / 455.97 | +15.43 / +21.13 | 306.34 / 380.55 | +11.64 / +18.73 |
-| [FRAMING-SENSITIVE] fractional, attriters only (0.4075 each) | 378.93 / 445.41 | +7.52 / +10.57 | 299.69 / 370.43 | +4.99 / +8.61 |
+| [FRAMING-SENSITIVE] fractional, attriters only (0.4075 each; union whole, not a consistent count) | 378.93 / 445.41 | +7.52 / +10.57 | 299.69 / 370.43 | +4.99 / +8.61 |
 
 [CALCULATION: `derived/v5_bands.csv`]
 
@@ -243,20 +246,29 @@ Each person counts by their share of Mexican-immigrant ancestry:
 - A Mexico-born person counts 1.
 - A US-born person counts half of each parent's share: ½ per Mexico-born parent, ¼ per Mexico-born grandparent.
 - A parent born abroad outside Mexico, or a US-born parent not of Mexican origin, adds nothing [ASSUMPTION].
-- The added people take their measured mix, 0.4075. Attrition is 2.1% with four Mexico-born grandparents and 22.0% with one, so the hidden carry less Mexican ancestry than the identified (0.6156).
+- The added people take their measured mix, 0.4075. Attrition is 2.1% with four Mexico-born grandparents and 22.0% with one, so the hidden carry less Mexican ancestry than the identified.
 
 `fractional.py` measures the shares on the account's own CPS frame.
 
-| Generation | Persons | Measured | Share: low / central / high |
+| Generation | Persons | Measured | Share |
 |---|---|---|---|
-| G1 (Mexico-born) | 11.04M | birthplace | 1 / 1 / 1 |
-| G2 | 14.33M | both parents' birthplaces for all; the other parent's origin when they live with the person | 0.8678 / **0.9248** / 0.9548 |
-| G3+ | 14.34M | grandparents only through parents at home | 0.1270 / **0.6156** / 0.9096 |
+| G1 (Mexico-born) | 11.04M | birthplace | 1 |
+| G2 | 14.33M | both parents' birthplaces for all; the other parent's origin when they live with the person | 0.8678 / **0.9248** / 0.9548 (low / central / high) |
+| G3+ | 14.34M | grandparents only through parents at home | stated bound 0.3046–0.6665; outer bounds 0.1270–0.9096 |
 | added (arm b) | 3.04M | the hidden third generation's grandparent cells | 0.4075 |
 
 [CALCULATION: `derived/fractional_shares.json`, `derived/fractional_classes.csv`]
 
-The linkage reproduces the population lane's grandparent cells and its identified mix (0.615585) on this frame (gate, 0.04 persons).
+Four quarter-per-grandparent mixes appear in this lane. They describe different people:
+
+| Mix | Who | Where |
+|---|---|---|
+| 0.5916 | all third-generation children, identified or not | `mexican_origin_population_total_2026_09_19/derived/arm3_fractional_counting.csv` (gate in `population.py`) |
+| 0.6156 | identified third-generation children: the population lane's convention | the same cells (gate in `fractional.py`, 0.04 persons) |
+| 0.4075 | third-generation children who no longer identify: the added people here | `derived/population.json` |
+| 0.6336 | identified third-plus members of any age with both biological parents at home and a Mexico-born grandparent | `derived/fractional_shares.json` |
+
+The added people are the hidden third generation and its descendants, so the identified members take an identified mix. Using 0.5916 would fold the hidden's lower mix into the identified members while the hidden are also counted as added people.
 
 **G2.**
 
@@ -273,35 +285,38 @@ The central gives the last class 0.839, from the co-resident US-born other paren
 **G3+.** The CPS shows grandparents only through parents living with the person.
 
 - **Who is seen.** Only 30.4% of members have both biological parents at home; 23.2% have one and 46.4% have none.
-- **Most seen members are fourth-plus.** Among the seen, 51.9% have no Mexico-born grandparent.
-- **Seen bounds.** For the seen, the strict quarter rule gives 0.3046. Giving every US-born grandparent of a Mexican-origin parent full immigrant ancestry gives 0.7610.
-- **Central.** The central is the population lane's convention: the identified third-generation children's mix, 0.6156, applied to every member. Because so many seen members are fourth-plus, the convention probably overstates the third-plus share and so the fractional cost [INFERENCE].
+- **Most seen members are fourth-plus.** Among the seen, 51.9% have no Mexico-born grandparent. The CPS shows no ancestor beyond grandparents, so their own share lies between 0 (the strict quarter rule) and 0.6969 (every US-born grandparent of a Mexican-origin parent given full immigrant ancestry).
+- **The seen third generation.** Members with a Mexico-born grandparent hold 0.6336 at a quarter per Mexico-born grandparent.
+- **Stated bound.** The G3+ share is 0.481 × 0.6336 + 0.519 × g4, with g4 from 0 to 0.6969: **0.3046–0.6665**. It has no central.
+  - Members without grandparent detail are assumed to share the seen members' generation mix [ASSUMPTION].
+  - The seen are mostly children. Adult members' lines are probably older, which would pull the share down [INFERENCE].
+- **The convention.** The population lane gives every member the identified third-generation children's mix, 0.6156. That treats every identified member as third generation; it sits inside the bound, near its top.
 
-| Set | Arm | Counted people (M) | Fractional ($bn) | Ends | Per counted person | Whole person ($bn) |
+| Set | Arm | G4+ at nothing ($bn) | Counted (M) | G4+ at its high bound ($bn) | Counted (M) | Whole person ($bn) |
 |---|---|---|---|---|---|---|
-| set | v4 | 33.12 | 312.88 / 356.67 | 48 / 43 | $9,447 / 10,769 | 371.41 / 434.84 |
-| set | a | 33.86 | 316.45 / 361.72 | 48 / 11 | $9,347 / 10,684 | 380.37 / 447.55 |
-| set | **b** | 34.36 | 320.44 / 367.25 | 48 / 11 | $9,326 / 10,688 | 390.29 / 461.24 |
-| set | c | 34.86 | 324.43 / 372.77 | 48 / 11 | $9,306 / 10,693 | 400.21 / 474.93 |
-| cash | v4 | 33.12 | 251.30 / 295.13 | 16 / 43 | $7,587 / 8,911 | 294.70 / 361.82 |
-| cash | a | 33.86 | 253.51 / 298.94 | 48 / 11 | $7,488 / 8,829 | 300.22 / 371.66 |
-| cash | **b** | 34.36 | 256.37 / 303.67 | 48 / 11 | $7,461 / 8,838 | 307.38 / 383.41 |
-| cash | c | 34.86 | 259.23 / 308.40 | 48 / 11 | $7,436 / 8,846 | 314.52 / 395.15 |
+| set | v4 | 266.26 / 313.02 | 28.66 | 319.12 / 365.19 | 33.85 | 371.41 / 434.84 |
+| set | a | 270.48 / 317.51 | 29.40 | 322.69 / 370.29 | 34.59 | 380.37 / 447.55 |
+| set | **b** | 275.39 / 322.13 | 29.90 | 326.68 / 375.81 | 35.09 | 390.29 / 461.24 |
+| set | c | 280.29 / 326.74 | 30.40 | 330.67 / 381.33 | 35.59 | 400.21 / 474.93 |
+| cash | v4 | 211.68 / 261.69 | 28.66 | 255.90 / 302.42 | 33.85 | 294.70 / 361.82 |
+| cash | a | 214.73 / 264.77 | 29.40 | 258.07 / 306.35 | 34.59 | 300.22 / 371.66 |
+| cash | **b** | 218.85 / 268.27 | 29.90 | 260.94 / 311.08 | 35.09 | 307.38 / 383.41 |
+| cash | c | 222.96 / 271.75 | 30.40 | 263.79 / 315.81 | 35.59 | 314.52 / 395.15 |
 
-[CALCULATION: `derived/fractional_lineage.csv`, scenario central]
+[CALCULATION: `derived/fractional_lineage.csv`, scenarios g4_at_nothing and g4_at_bound; G2 at its central]
 
 - **How a generation's share is priced.** Each generation's share is priced at that generation's cost at the arm's responses. The corrected generation models (convention a) are evaluated at all 64 specifications.
   - They add to the union at every specification (gate, 1e-9) and give `generation_results_sept29*.csv`'s costs.
   - With every share at 1 the count gives the whole-person band (gate).
-  - Under fractional weights the band's high end can move off specification 11 (v4: 43).
+- **Ends.** Fractional weights can move the band's ends. G4+ at nothing puts them at specifications 16 / 43 in every arm; at its high bound they stay at 48 / 11.
 
 | Scenario (arm b) | G2 share | G3+ share | Counted (M) | Set ($bn) | Cash ($bn) |
 |---|---|---|---|---|---|
-| central | 0.9248 | 0.6156 | 34.36 | 320.44 / 367.25 | 256.37 / 303.67 |
-| G2's unknown ancestors at nothing | 0.8678 | 0.6156 | 33.54 | 311.82 / 357.04 | 249.67 / 295.51 |
-| G2's unknown ancestors in full | 0.9548 | 0.6156 | 34.79 | 325.00 / 372.64 | 259.91 / 307.98 |
-| G3+ at the seen strict mix | 0.9248 | 0.3046 | 29.90 | 275.39 / 322.13 | 218.85 / 268.27 |
-| G3+ at the seen high bound | 0.9248 | 0.7610 | 36.45 | 338.26 / 391.72 | 269.41 / 324.85 |
+| G4+ at nothing | 0.9248 | 0.3046 | 29.90 | 275.39 / 322.13 | 218.85 / 268.27 |
+| G4+ at its high bound | 0.9248 | 0.6665 | 35.09 | 326.68 / 375.81 | 260.94 / 311.08 |
+| G4+ at nothing, G2 at its low bound | 0.8678 | 0.3046 | 29.08 | 266.24 / 312.47 | 211.75 / 260.54 |
+| G4+ at its high bound, G2 at its high bound | 0.9548 | 0.6665 | 35.52 | 331.24 / 381.20 | 264.47 / 315.39 |
+| the population lane's convention | 0.9248 | 0.6156 | 34.36 | 320.44 / 367.25 | 256.37 / 303.67 |
 | every unknown ancestor at nothing | 0.8678 | 0.1270 | 26.54 | 239.62 / 287.57 | 189.15 / 241.47 |
 | every unknown ancestor in full | 0.9548 | 0.9096 | 39.01 | 361.02 / 422.11 | 286.27 / 350.80 |
 
@@ -313,7 +328,7 @@ The central gives the last class 0.839, from the co-resident US-born other paren
    - The class indicators do not settle the direction of that approximation.
    - Two-Mexican-parent G2 hold 23% BA+ among adults 25+, against 28% in the unknown-parent class. Classes with a parent at home are 65–82% minors.
 
-The bound for the union is the last two rows of the scenario table above.
+The stated bound is the scenario table's first two rows, or its first four with G2's bounds. The outer bound for the union is its last two rows.
 
 ## 8. Payload
 
@@ -340,7 +355,7 @@ A gate applies each payload from its meta alone and reproduces the band (1e-9).
 
 ## 9. Gates and reproduction
 
-175 gates pass: population 12, white 26, fractional 8 and engine 129 (`derived/gates.json`).
+176 gates pass: population 12, white 26, fractional 9 and engine 129 (`derived/gates.json`).
 
 - **Zero added people.** The case reproduces v4 exactly at all 64 specifications: $371.4146 / 434.8410bn on the set and $294.7011 / 361.8175bn in cash.
 - **G3+ member.** $8,548.89 / 11,739.52 reproduce.
@@ -352,6 +367,7 @@ A gate applies each payload from its meta alone and reproduces the band (1e-9).
   - With every share at 1 the count gives the whole-person cost.
   - The attriter-only count reproduces its row.
   - The linkage reproduces the population lane's grandparent cells.
+  - G3+'s stated bound and the convention lie inside its outer bounds.
 - **Payload.** Applied alone, it reproduces the band.
 
 Reproduce from the repository root:
@@ -366,7 +382,7 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/main_
   "uv run --no-project python3 {lane}/fractional.py" "node {lane}/lineage_case.cjs"
 ```
 
-The rerun ended `IDENTICAL: 21/21 files unchanged`, exit 0, at 17:03:08 JST. That run was against the C3 chain as committed in 2b0aab3f and 8011c29c.
+The rerun ended `IDENTICAL: 21/21 files unchanged`, exit 0, at 17:11:58 JST. That run was against the C3 chain as committed in 2b0aab3f and 8011c29c.
 
 - **C3 is read at run time.** `population.py` imports C3 from `summarize.py`. When SPLIT_C3 changes, rerun the four steps.
 - **Unset entries stop the run.** An entry without a (C3, SE) pair stops the run with `[BLOCKED]`.
@@ -379,7 +395,7 @@ The rerun ended `IDENTICAL: 21/21 files unchanged`, exit 0, at 17:03:08 JST. Tha
 - **Linear in members.** Only the group-size responses see the larger group.
 - **C3 is measured on BA+, not dollars.** At 1 SE the set band moves by about $3–4bn.
 - **Sampling error is not propagated.**
-- **C3 is now committed.** C3 0.5567 is `summarize.py`'s central as committed in 2b0aab3f ("Propagate C3 0.557 through the attrition chain"). The 17:03 rerun against that commit is IDENTICAL.
+- **C3 is now committed.** C3 0.5567 is `summarize.py`'s central as committed in 2b0aab3f ("Propagate C3 0.557 through the attrition chain"). The 17:11 rerun against that commit is IDENTICAL.
 
 ## 11. Departures from the brief
 
@@ -436,3 +452,11 @@ The rerun ended `IDENTICAL: 21/21 files unchanged`, exit 0, at 17:03:08 JST. Tha
 - 2026-10-05 17:03 JST: the C3 chain is committed (2b0aab3f, 8011c29c; `summarize.py` central 0.5567, SE 0.2457).
   No upstream input this lane reads changed between 16:52 and 17:02 (one hash over all of them). `rerun_lane.py`
   against the committed chain: IDENTICAL 21/21, exit 0. The numbers above are final for that C3.
+- 2026-10-05 17:13 JST: fractional count fixed at team-lead's request. The identified G3+ takes a stated bound (third
+  generation at a quarter per Mexico-born grandparent, measured 0.6336; G4+ at nothing or at its high bound 0.6969):
+  0.3046–0.6665, with no central. The 0.6156 convention is kept as a scenario inside it. The attriter-only row is
+  relabelled as not a consistent count. Arm b's whole-lineage count: $275.39–375.81bn on the set ($266.24–381.20bn
+  with G2's bounds). 176 gates; `rerun_lane.py` IDENTICAL 21/21, exit 0, at 17:11:58. The whole-person central is
+  unchanged.
+- 2026-10-05 18:14 JST: final rerun after the adopted lane `main_case_2026_10_05/` was built on this lane's payloads
+  (nothing here changed): `rerun_lane.py` IDENTICAL 21/21 files, exit 0, at 18:14:18.
