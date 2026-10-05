@@ -1,5 +1,5 @@
 {
- "rev": "8d8590c6",
+ "rev": "4f6a34c2",
  "memos_read": 165,
  "memos_skipped": [
   "research/immigration-adversarial-audit-2026-09-28.md: a dated audit",
@@ -50,10 +50,10 @@
    "registry_case": "September 27 main case"
   },
   "pairing.fiscal_footing": {
-   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv",
    "value": [
-    366.681996,
-    434.840959
+    385.393693,
+    461.243125
    ],
    "registry_value": [
     317.480153,
@@ -62,10 +62,10 @@
    "registry_case": "September 27 main case"
   },
   "pairing.per_member_priced": {
-   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv",
    "value": [
-    11.657457,
-    13.484874
+    11.466487,
+    13.348528
    ],
    "registry_value": [
     10.418506,
@@ -74,10 +74,10 @@
    "registry_case": "September 27 main case"
   },
   "pairing.total": {
-   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv",
    "value": [
-    462.946678,
-    535.517968
+    490.217686,
+    570.679103
    ],
    "registry_value": [
     413.744835,
@@ -102,6 +102,30 @@
     10.949726953624355
    ],
    "case": "the September 29 case (v4), per member of the 39.71M union"
+  },
+  "pairing.fiscal_footing": {
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "value": [
+    366.681996,
+    434.840959
+   ],
+   "case": "the September 29 case (v4)"
+  },
+  "pairing.per_member_priced": {
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "value": [
+    11.657457,
+    13.484874
+   ],
+   "case": "the September 29 case (v4), per member of the 39.71M union"
+  },
+  "pairing.total": {
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "value": [
+    462.946678,
+    535.517968
+   ],
+   "case": "the September 29 case (v4)"
   }
  },
  "records_with_other_values": {
@@ -120,9 +144,9 @@
   "gg.fixed_change": 3,
   "household.net_contributor_share": 3,
   "household.top10_cost_share": 3,
-  "pairing.fiscal_footing": 1,
-  "pairing.per_member_priced": 7,
-  "pairing.total": 4,
+  "pairing.fiscal_footing": 2,
+  "pairing.per_member_priced": 8,
+  "pairing.total": 5,
   "pension.accrual_payable_net": 3,
   "pm25.cost": 1,
   "pm25.deaths_priced": 2,
@@ -140,6 +164,6 @@
  "rows_by_class": {
   "arm_labelled": 11,
   "count_labelled": 16,
-  "vintage_labelled": 28
+  "vintage_labelled": 31
  }
 }
