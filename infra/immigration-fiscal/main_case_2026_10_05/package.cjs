@@ -11,6 +11,8 @@
  *     responses at the larger group's share), writes the long-run capital components' values at those responses, and
  *     records the lineage population in meta.lineage. Nothing else in v4's payload changes. The cash set's payload, built
  *     the same way on the v4 cash set, is CASH_PAYLOAD (derived/corrections_cash.json); CASH is its package.
+ *     The counting rule is COUNTING ("whole"); COUNTINGS maps a rule to its addition files, and only whole people
+ *     has one (meta.lineage.counting).
  *   - forCase(base, payload) returns the API for a merged payload on a September 29-style package (forPayload()'s
  *     API). Given the base's own payload (the lineage off) it is the base's case: generality.cjs runs the September 29
  *     lane's own scripts on it and gets that lane's files byte for byte.
@@ -55,7 +57,17 @@ const LANE = "main_case_2026_10_05";
 const ADOPTED = "2026-10-05";
 const DECISION = "decisions/2026-10-05-main-case-v5.md";
 const LINEAGE_LANE = "main_case_lineage_2026_10_05";
-const LINEAGE_FILES = { set: `${LINEAGE_LANE}/derived/lineage_payload.json`, cash: `${LINEAGE_LANE}/derived/lineage_payload_cash.json` };
+// The counting rule for people of mixed ancestry. Only "whole" has a payload: every added person counts as one member,
+// as the union counts its mixed-ancestry identifiers (the lineage lane's arm b). Another rule enters as its own
+// addition files here, an addition built on v4's payload that merge() takes as it takes this one; the lineage lane
+// computes the ancestry-share reading as a sensitivity only, with no payload.
+const COUNTINGS = {
+  whole: { set: `${LINEAGE_LANE}/derived/lineage_payload.json`, cash: `${LINEAGE_LANE}/derived/lineage_payload_cash.json`,
+    definition: "whole people: every added person counts as one member, as the union counts its mixed-ancestry identifiers" },
+};
+const COUNTING = "whole";
+if (!COUNTINGS[COUNTING]) throw new Error(`[BLOCKED] no lineage payload for the counting rule ${COUNTING}`);
+const LINEAGE_FILES = { set: COUNTINGS[COUNTING].set, cash: COUNTINGS[COUNTING].cash };
 const POPULATION_FILE = `${LINEAGE_LANE}/derived/population.json`;
 const BASE_FILES = { set: "main_case_2026_09_29/derived/corrections.json", cash: "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json" };
 const STAMPED = ["source", "adopted", "decision", "case", "status", "lineage"];
@@ -194,6 +206,7 @@ function merge(basePayload, addition, which) {
   p.meta.lineage = {
     lane: LINEAGE_LANE, payload: LINEAGE_FILES[which], builds_on: meta.builds_on, arm: L.arm, source_arm: L.source_arm, rho: L.rho,
     generation: "G3plus",
+    counting: { rule: COUNTING, definition: COUNTINGS[COUNTING].definition, rules_with_payloads: Object.keys(COUNTINGS) },
     counts: { added: L.added, at_g3_rate: L.g3_rate, later_losses: L.later, lineage_population: L.population, account_union: POP.meta.account_union,
       identified_g3plus: POP.meta.g3_account },
     c3: { value: L.c3.value, se: L.c3.se, label: L.c3.label, measure: L.c3.measure, source: L.c3.source, override: L.c3.override },
@@ -564,7 +577,7 @@ const CASH_PAYLOAD = adoptLineage(merge(CASH4.correctionsPayload(), ADDITION.cas
 const CASH = Object.assign(forCase(CASH4, CASH_PAYLOAD), { HERE, LANE });
 
 module.exports = Object.assign(forCase(V4P, PAYLOAD), {
-  HERE, LANE, ADOPTED, DECISION, STAMPED, LINEAGE_LANE, LINEAGE_FILES, POPULATION_FILE, BASE_FILES, GROUP_PATHS: [...GROUP_PATHS],
+  HERE, LANE, ADOPTED, DECISION, STAMPED, LINEAGE_LANE, COUNTING, COUNTINGS, LINEAGE_FILES, POPULATION_FILE, BASE_FILES, GROUP_PATHS: [...GROUP_PATHS],
   SEPT29: V4P, SEPT29_CASH: CASH4, CASH, CASH_PAYLOAD, ADDITION, POP,
   forCase, merge, adoptLineage, longRunAt, moveLeaf, responseDiffs, tableOf, sha256,
 });

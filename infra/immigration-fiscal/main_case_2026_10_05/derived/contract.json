@@ -16,8 +16,8 @@
   "corrections.json": {
    "key_paths": {
     "sept29": 566,
-    "here": 606,
-    "added": 40
+    "here": 610,
+    "added": 44
    },
    "missing": [],
    "type_changed": [],
@@ -71,8 +71,8 @@
   "summary.json": {
    "key_paths": {
     "sept29": 834,
-    "here": 944,
-    "added": 107
+    "here": 948,
+    "added": 111
    },
    "missing": [],
    "type_changed": [],

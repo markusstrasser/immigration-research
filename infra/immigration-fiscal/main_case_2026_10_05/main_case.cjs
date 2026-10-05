@@ -151,8 +151,8 @@ gate(`corrections.json is the September 29 corrections.json with the lineage pay
 gate(`meta: adopted ${P.ADOPTED}, decision ${P.DECISION}, no "not adopted" left in the case text or status`, payload.meta.adopted === P.ADOPTED
   && payload.meta.decision === P.DECISION && !/not adopted/.test(payload.meta.case) && !/not adopted/.test(payload.meta.status));
 const L = payload.meta.lineage, A = POP.arms[ARM];
-gate("meta.lineage: the arm, counts, members, C3 and its source are population.json's and the lineage payload's (exact); the added people are G3+",
-  L.arm === ARM && L.generation === "G3plus" && L.counts.added === A.added && L.counts.at_g3_rate === A.g3_rate && L.counts.later_losses === A.later
+gate("meta.lineage: the arm, counts, members, C3 and its source are population.json's and the lineage payload's (exact); the added people are G3+, counted whole",
+  L.arm === ARM && L.generation === "G3plus" && L.counting.rule === P.COUNTING && P.COUNTING === "whole" && L.counts.added === A.added && L.counts.at_g3_rate === A.g3_rate && L.counts.later_losses === A.later
   && L.counts.lineage_population === A.population && L.counts.account_union === POP.meta.account_union
   && L.c3.value === POP.c3.value && L.c3.se === POP.c3.se && L.c3.label === POP.c3.label && L.c3.source === POP.c3.source && L.c3.override === false
   && L.members.g3plus === P.ADDITION.set.meta.lineage.m_g3plus && L.members.white === P.ADDITION.set.meta.lineage.m_white

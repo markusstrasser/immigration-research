@@ -43,6 +43,9 @@ must do with the added people is in [Consumers](#consumers). Nothing is committe
     by the case's change, at first order.
   - Item variants go through candidate v4's package (`viaCandidate`). The road capital is keyed on the evaluation and
     the long-run capital is moved to v5 afterwards.
+  - The counting rule is a parameter: `COUNTING` ("whole") picks the addition files from `COUNTINGS`, and
+    `meta.lineage.counting` records it. Only whole people has a payload; an ancestry-share payload built on v4's
+    would enter as another entry there and merge the same way. It is not built.
 
 ## Results
 
@@ -162,7 +165,7 @@ case's own parts (its items, and the September 27 case's under them) moved to
 
 ## Consumers
 
-These are the lanes the 2026-09-29 decision moved (Scope), plus the two the API check covers. Each keys the case
+These are the lanes the 2026-09-29 decision moved (its Scope and the September 29 consumer commits). Each keys the case
 `oct05` beside `sept29`, through a path swap to this lane. The table gives what each must do with the added people.
 The lanes themselves are not edited here.
 
@@ -177,12 +180,13 @@ The lanes themselves are not edited here.
 | Back-cast (`backcast.py`) | Needs the lineage's count by year (G3+ by year x the attrition rate); until then, back-cast v5's 2024 lineage at the G3+ path and say so. The base row is `sept29_case`. |
 | Distribution (`case_ends.cjs:38` CASES; `distribute.py`) | Split the change into A and P+F as for the union; the lineage's production delta belongs to the added G3+ members. |
 | World ledger (`world_ledger.py`; `pins.json`; `generation_lines.cjs`) | Person rows count 42.75M; the G3+ line carries the lineage through `withLineage`. Pin the new generation split. |
-| Within-group distribution (`export_lines.cjs:48`; `households.py`) | The household split needs a stated rule for the added people, who are not in the CPS as Mexican-origin. |
+| Household split (`within_group_distribution_2026_09_29`: `export_lines.cjs:48`, `households.py`) | Needs a stated rule for the added people, who are not in the CPS as Mexican-origin: place them in households at the G3+ composition, or leave them out of the split and state the count. |
+| Comparators: white replacement, Black rough, Indian full account (`engine_lines.cjs` CASES, `rekey_sept29.py`); legacy comparators (`group_lines.py`) | Add `oct05` to `engine_lines.cjs`. The CPS re-keys cannot see the 3.04M, who no longer report Mexican origin. Either put both sides on 42.75M, taking the union's added cost from this lane (`change_at_fixed_specifications`, G3+ and white parts) and scaling each comparator slice to 42.75M, or keep the comparison on the identified 39.71M at v5's responses and say so. Per-member ratios move with v5's $9,129–10,789. |
+| Break conditions (`engine_breaks_sept29.cjs`, `tables_sept29.py`) | Rerun on `oct05`. The lineage adds credible alternatives to test: arms a and c, C3 ±1 SE, the ancestry-share count and the replacement child (`main_case_lineage_2026_10_05/derived/v5_bands.csv`). Per-member and magnitude conclusions move with the count. |
 | Decomposition (`decompose.cjs`) | Place the lineage at G3+'s age structure (they are priced at G3+ ages); its edits are `meta.lineage.edits`. |
 
-Other lanes key `sept29` outside the decision's scope: white replacement, legacy comparators, the Indian full account,
-the rough Black comparator, the row-4 class, pension legacy, break conditions, the net-contributor comparison and
-candidate v4.1. Each needs the same call when it moves.
+Also keying `sept29`, outside that list: the row-4 class, pension legacy, the net-contributor comparison, candidate v4.1
+and the number drift audit. Each needs the same call when it moves.
 
 ## For the parent
 
@@ -214,3 +218,7 @@ Run order: `node main_case.cjs && node sign_reversal.cjs && node generality.cjs 
 - 2026-10-05 18:14 JST: `rerun_lane.py --allow-unrun {lane}/package.cjs` over the five scripts in run order: IDENTICAL
   17/17 files, exit 0 (18:14:02). The lineage lane's final rerun (four steps) right after: IDENTICAL 21/21, exit 0
   (18:14:18).
+- 2026-10-05 18:18 JST: the lead's TASK 2 brief (sent before my 18:14 reply) asked for the counting rule as a cheap
+  parameter and for consumer rows on comparators, the household split and break conditions. Added `COUNTING` /
+  `COUNTINGS` and `meta.lineage.counting` (whole people only), and the three rows. All five scripts pass again;
+  `rerun_lane.py` IDENTICAL 17/17, exit 0 (18:18:27).

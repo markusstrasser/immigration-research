@@ -1343,6 +1343,13 @@
    "source_arm": "b_one_step",
    "rho": 0.5,
    "generation": "G3plus",
+   "counting": {
+    "rule": "whole",
+    "definition": "whole people: every added person counts as one member, as the union counts its mixed-ancestry identifiers",
+    "rules_with_payloads": [
+     "whole"
+    ]
+   },
    "counts": {
     "added": 3039719.593185237,
     "at_g3_rate": 1944891.7263696424,
