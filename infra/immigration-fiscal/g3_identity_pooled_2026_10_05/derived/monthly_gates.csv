@@ -1,0 +1,28 @@
+gate,item,monthly,asec,diff,se,z,note
+1 counts 2022-25,"G3anc 25+, asec_dedup",379,229,1.6550218340611353,nan,nan,ratio monthly / ASEC unique persons; expected 1.5-2.5
+1 counts 2022-25,"G3anc_id 25+, asec_dedup",321,196,1.6377551020408163,nan,nan,ratio monthly / ASEC unique persons; expected 1.5-2.5
+1 counts 2022-25,"G3anc_nonmex 25+, asec_dedup",58,33,1.7575757575757576,nan,nan,ratio monthly / ASEC unique persons; expected 1.5-2.5
+1 counts 2022-25,"white3plus 25+, asec_dedup",17035,6656,2.559344951923077,nan,nan,ratio monthly / ASEC unique persons; expected 1.5-2.5
+1 counts 2022-25,"G3anc 18+, asec_dedup",1008,652,1.5460122699386503,nan,nan,ratio monthly / ASEC unique persons; expected 1.5-2.5
+1 counts 2022-25,"G3anc_id 18+, asec_dedup",866,564,1.5354609929078014,nan,nan,ratio monthly / ASEC unique persons; expected 1.5-2.5
+1 counts 2022-25,"G3anc_nonmex 18+, asec_dedup",142,88,1.6136363636363635,nan,nan,ratio monthly / ASEC unique persons; expected 1.5-2.5
+1 counts 2022-25,"white3plus 18+, asec_dedup",36457,16355,2.2291042494649953,nan,nan,ratio monthly / ASEC unique persons; expected 1.5-2.5
+1 counts 2022-25,"G3anc 25+, asec_dedup_march_basic",379,97,3.9072164948453607,nan,nan,ratio monthly / ASEC unique persons outside the oversample
+1 counts 2022-25,"G3anc_id 25+, asec_dedup_march_basic",321,79,4.063291139240507,nan,nan,ratio monthly / ASEC unique persons outside the oversample
+1 counts 2022-25,"G3anc_nonmex 25+, asec_dedup_march_basic",58,18,3.2222222222222223,nan,nan,ratio monthly / ASEC unique persons outside the oversample
+1 counts 2022-25,"white3plus 25+, asec_dedup_march_basic",17035,5440,3.1314338235294117,nan,nan,ratio monthly / ASEC unique persons outside the oversample
+1 counts 2022-25,"G3anc 18+, asec_dedup_march_basic",1008,293,3.4402730375426622,nan,nan,ratio monthly / ASEC unique persons outside the oversample
+1 counts 2022-25,"G3anc_id 18+, asec_dedup_march_basic",866,251,3.450199203187251,nan,nan,ratio monthly / ASEC unique persons outside the oversample
+1 counts 2022-25,"G3anc_nonmex 18+, asec_dedup_march_basic",142,42,3.380952380952381,nan,nan,ratio monthly / ASEC unique persons outside the oversample
+1 counts 2022-25,"white3plus 18+, asec_dedup_march_basic",36457,11844,3.078098615332658,nan,nan,ratio monthly / ASEC unique persons outside the oversample
+1 gap 2022-25,"identifier BA+ gap, monthly - ASEC IPUMS (dedup)",-9.598054328753527,-10.174676432530172,0.5766221037766446,3.4145129432392864,0.16887389603203953,same bootstrap draws (overlapping March households)
+1 gap 2022-25,"identifier BA+ gap, monthly - ASEC IPUMS (no dedupe, analyze.py gate)",-9.598054328753527,-10.099764514767342,0.5017101860138151,3.2196905858873492,0.1558255902641475,same bootstrap draws (overlapping March households)
+1 gap 2022-25,"identifier BA+ gap, monthly - Census-file ASEC (cps_identity.py)",-9.598054328753527,-10.14376318763754,0.5457088588840122,3.8245438193990173,0.1426859998612237,treated as independent; the Census SE is SDR
+2 identity loss,1994_2026 18+ share not Mexican,0.16052105560659521,0.16151401069918184,-0.0009929550925866226,0.007377430473575255,-0.13459362255506505,weighted share of the G3 lineage; same bootstrap draws
+2 identity loss,1994_2026 25+ share not Mexican,0.15225778580964808,0.14311050911445986,0.009147276695188222,0.010683165027834963,0.8562328365568642,weighted share of the G3 lineage; same bootstrap draws
+2 identity loss,1994_2006 18+ share not Mexican,0.17623557136554774,0.19170115377466215,-0.015465582409114415,0.01338191542432892,-1.1557076785134432,weighted share of the G3 lineage; same bootstrap draws
+2 identity loss,1994_2006 25+ share not Mexican,0.1569754433986559,0.15478531923656427,0.0021901241620916334,0.018324063574653836,0.11952175090251549,weighted share of the G3 lineage; same bootstrap draws
+2 identity loss,2007_2021 18+ share not Mexican,0.15618869703140764,0.15070694577854832,0.005481751252859324,0.009669553051218631,0.5669084417679958,weighted share of the G3 lineage; same bootstrap draws
+2 identity loss,2007_2021 25+ share not Mexican,0.15144640840834217,0.143613114001159,0.007833294407183167,0.014649501434384763,0.534714061244238,weighted share of the G3 lineage; same bootstrap draws
+2 identity loss,2022_2026 18+ share not Mexican,0.15083349640975705,0.1446719752618284,0.006161521147928645,0.016929574292931283,0.3639501526332712,weighted share of the G3 lineage; same bootstrap draws
+2 identity loss,2022_2026 25+ share not Mexican,0.14666387047275078,0.12017988966216728,0.026483980810583507,0.026440953497093113,1.0016272981038723,weighted share of the G3 lineage; same bootstrap draws

@@ -1,0 +1,66 @@
+{
+ "analysis_rows_asec": 283599,
+ "analysis_rows_monthly": 626268,
+ "asec": {
+  "file": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/asec_pooled.csv.gz",
+  "households": 2187293,
+  "kept_households": 356106,
+  "kept_rows": 1307096,
+  "rows": 5856362,
+  "sha256": "59e1c80d8738f8f3938b235db66f1656bce480b3cee276fcb1ed6ba748822e7e"
+ },
+ "asec_g3anc_nonmex_25plus_dedup": {
+  "all": 325,
+  "asec_oversample": 158
+ },
+ "bootstrap": "cluster = CPSID household (fallback source-year-month-SERIAL), stratum = first year; clusters with analysis rows",
+ "bootstrap_reps": 500,
+ "clusters": 399306,
+ "dedupe_rows_dropped_g3anc_monthly": 2817,
+ "dedupe_rows_dropped_monthly": 183117,
+ "dedupe_rows_without_id_monthly": 0,
+ "duckdb_memory_limit": "512MB",
+ "linking_break_mis1_months": [
+  "1994-06",
+  "1994-07",
+  "1994-08",
+  "1994-09",
+  "1994-10",
+  "1994-11",
+  "1994-12",
+  "1995-01",
+  "1995-02",
+  "1995-03",
+  "1995-04",
+  "1995-05",
+  "1995-06",
+  "1995-07",
+  "1995-08"
+ ],
+ "monthly": {
+  "file": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/monthly_mis15.csv.gz",
+  "households": 4827378,
+  "kept_households": 697611,
+  "kept_rows": 2483100,
+  "mish_values": [
+   1,
+   5
+  ],
+  "rows": 11990720,
+  "sha256": "ca414d911560deafe8398a2906e0b6edc791eeb0552841b796647b51601c24d2"
+ },
+ "seed": 20261006,
+ "union_asec_g3anc_nonmex_25plus_unmatched": {
+  "all": 183,
+  "asec_oversample": 158,
+  "march_basic_in_monthly_but_not_in_frame": 3,
+  "march_basic_not_in_monthly_kept_households": 22
+ },
+ "union_asec_rows_added": {
+  "march_basic": 12449,
+  "oversample": 60897
+ },
+ "unlinkable_mis5_g3anc_nonmex_25plus": 13,
+ "unlinkable_mis5_rows_dropped_monthly": 12255,
+ "weights": "monthly WTFINL; ASEC ASECWT, 2014 halved"
+}

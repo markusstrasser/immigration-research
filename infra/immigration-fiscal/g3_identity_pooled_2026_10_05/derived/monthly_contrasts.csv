@@ -1,0 +1,937 @@
+label,links,frame,measure,contrast,value,se,p05,p95,note
+monthly_1994_2026_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.15225778580964808,0.008266395084931277,0.1388605948620543,0.1654695370179148,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.147275198522905,2.426208933131862,1.4502655599493695,9.312966811894482,gap difference
+monthly_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.572145750372478,0.2557701172729513,0.16216885667712327,0.9753824470602717,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.10066416022486846,0.006726089876378973,0.09010539396076993,0.11222109505596985,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",4.457013950369313,2.7891113065089583,0.3445114056819679,9.501743975239352,gap difference
+monthly_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.49541971095433845,0.29747907557624303,0.03937717711518597,1.0065214371036837,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.783712724680008,0.373099147778729,0.21019470718909075,1.4346607494289716,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.1091350701888398,0.12274203246203691,0.9159101726108645,1.3233182524043272,same frame
+monthly_1994_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.2149760638333276,0.12940064691799003,1.0100924907969706,1.433671682656931,same frame
+monthly_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.16254466196128226,0.007646649481212258,0.1504119792790742,0.1752081795869729,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.3653352520667,2.0625791905040503,3.087402084105398,9.991113336749839,gap difference
+monthly_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.6193913364880794,0.18782556525201297,0.31421278693550736,0.9365589956568978,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.10825990986087915,0.006169710680775847,0.0982455321528624,0.11880790307604808,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.612694884107629,2.3872197078947353,1.8708022258044996,9.730769459794805,gap difference
+monthly_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.5461542005094695,0.22024408604269588,0.18832482654697982,0.9203694216841695,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.0346512668174235,0.3423684485202158,0.5008625246752507,1.635541165002615,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.9330894333525688,0.07445767671082909,0.8208279796394085,1.055888895690383,same frame
+monthly_1994_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,1.0375485278113399,0.07982316948557,0.9225761218147229,1.1762233699673676,same frame
+monthly_1994_2026_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.15225778580964808,0.008266395084931277,0.1388605948620543,0.1654695370179148,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.3804674945085402,0.1376959246063313,0.16612734263797693,0.6002122608982289,gap difference
+monthly_1994_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.6857372877295151,0.23141242602412918,0.3146976591310981,1.0511355645985854,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.10066416022486846,0.006726089876378973,0.09010539396076993,0.11222109505596985,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.3980463619954566,0.1566386725601794,0.13772116829032469,0.6569043247957526,gap difference
+monthly_1994_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.7174206380441214,0.2657053925049104,0.2555334632838226,1.1499725571380675,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.05792913828641488,0.02150400568585503,0.02511425501406066,0.0939125723466116,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,1.2453883618891743,0.1457863876765495,1.0284780522479744,1.4939194169618109,same frame
+monthly_1994_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.390576882633099,0.15823708703321074,1.1560858777017349,1.6956206400341438,same frame
+monthly_1994_2026_dedup,all,cores_one,employed,G3anc: share not Mexican,0.16052105560659521,0.005817390312879872,0.15120316425631444,0.170200712535733,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.6640105276458534,1.6879624773213535,-2.0509274924902794,3.531573463751705,gap difference
+monthly_1994_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.1383303526277897,0.36036191699938463,-0.4951438579509507,0.6840969056683002,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.11025306226453238,0.004773845150790967,0.1024787687493828,0.11800884129624593,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-0.2694476927045386,1.9760219194061588,-3.4918591558213947,3.0741942754336065,gap difference
+monthly_1994_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.056132836445693224,0.43897422980474055,-0.8154029112174874,0.5805850419052144,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.10658767083161536,0.2714934294631821,-0.33781107883704403,0.564092833256852,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_one,employed,rho G2 -> G3 lineage,2.1003061589681167,0.4419229442595374,1.512436026774274,2.9522174818779163,same frame
+monthly_1994_2026_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,2.148002411227239,0.46796499024550375,1.5162788649516223,3.052579587754974,same frame
+monthly_1994_2026_dedup,all,cores_both,ba_plus,G3anc: share not Mexican,0.17559270129575752,0.012214033193685206,0.15603877667114746,0.19561716554866074,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_both,ba_plus,"G3anc: advantage, not Mexican minus identifiers",2.8155622638899587,3.281061427156179,-2.3649418841243257,8.385831526981814,gap difference
+monthly_1994_2026_dedup,all,cores_both,ba_plus,"G3anc: closing share, not Mexican",0.3089375109636068,0.358604326281555,-0.2763994188704321,0.8647463897104222,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_both,ba_plus,G3anc: share not Hispanic,0.12343762192199102,0.010375102400461467,0.10524552123091713,0.14150618613281996,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_both,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",0.5407274921398812,3.526162693846029,-4.437782933287744,6.8331609573058305,gap difference
+monthly_1994_2026_dedup,all,cores_both,ba_plus,"G3anc: closing share, not Hispanic",0.05933131285134208,0.398721274437927,-0.5730505255853171,0.7425340231575597,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_both,ba_plus,G3anc: lineage minus identifiers,0.49439218358282844,0.5782621512335484,-0.4141755230396857,1.4740782819153022,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_both,ba_plus,rho G2 -> G3 lineage,0.9354548557155022,0.14239700165776334,0.7107316073581315,1.1779114264219555,same frame
+monthly_1994_2026_dedup,all,cores_both,ba_plus,rho G2 -> G3 identifiers,0.9891113492882935,0.15304934695322533,0.7466234634633737,1.2424485106559242,same frame
+monthly_1994_2026_dedup,all,cores_both,ba_plus_22plus,G3anc: share not Mexican,0.18245740419672898,0.010569880404344537,0.16547056245308583,0.19933126761913636,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_both,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",5.957029806290356,2.752371699117211,1.6086931114443908,10.297587773546478,gap difference
+monthly_1994_2026_dedup,all,cores_both,ba_plus_22plus,"G3anc: closing share, not Mexican",0.5462577574573899,0.2425433822741926,0.1584332917753179,0.9393878053147594,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_both,ba_plus_22plus,G3anc: share not Hispanic,0.12708860660465132,0.008894287423981979,0.11312009510368198,0.14233843910948088,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_both,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",3.753348720746674,2.995355014165252,-0.8141207287660225,8.86448536834035,gap difference
+monthly_1994_2026_dedup,all,cores_both,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.34418089581919176,0.269339486335171,-0.08527816020607443,0.7973585119154537,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_both,ba_plus_22plus,G3anc: lineage minus identifiers,1.0869041951782759,0.5105985634379594,0.2717537815689022,1.9284587445151884,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_both,ba_plus_22plus,rho G2 -> G3 lineage,0.8274361799309022,0.09044984465078268,0.6912952997321815,0.9820559076740103,same frame
+monthly_1994_2026_dedup,all,cores_both,ba_plus_22plus,rho G2 -> G3 identifiers,0.9190353001313769,0.09654728307320479,0.7665411107583269,1.083738173977617,same frame
+monthly_1994_2026_dedup,all,cores_both,educ_years,G3anc: share not Mexican,0.17559270129575752,0.012214033193685206,0.15603877667114746,0.19561716554866074,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_both,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.22442777728592844,0.18320620133518314,-0.09559005363300627,0.5216121638233866,gap difference
+monthly_1994_2026_dedup,all,cores_both,educ_years,"G3anc: closing share, not Mexican",0.4933615992819277,0.3935880980188114,-0.23832525466503704,1.0832876647560585,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_both,educ_years,G3anc: share not Hispanic,0.12343762192199102,0.010375102400461467,0.10524552123091713,0.14150618613281996,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_both,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.16341602930978283,0.20284508297396728,-0.15291032391562123,0.5195089520568706,gap difference
+monthly_1994_2026_dedup,all,cores_both,educ_years,"G3anc: closing share, not Hispanic",0.35923892551794157,0.4504304271173127,-0.35119065136646566,1.0603184719435719,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_both,educ_years,G3anc: lineage minus identifiers,0.03940787965943038,0.032541914057658786,-0.015853019322583605,0.09232939348258426,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_both,educ_years,rho G2 -> G3 lineage,0.9644330406713684,0.16398914040598514,0.7111388073289399,1.2395855534196163,same frame
+monthly_1994_2026_dedup,all,cores_both,educ_years,rho G2 -> G3 identifiers,1.0559069988202057,0.18149393078928758,0.7847064594489481,1.3739896038991388,same frame
+monthly_1994_2026_dedup,all,cores_both,employed,G3anc: share not Mexican,0.184295779358041,0.007772284385954904,0.17088666323390636,0.19634056772429195,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_both,employed,"G3anc: advantage, not Mexican minus identifiers",1.0252916391545472,2.1133984455854056,-2.1368869895228766,4.605325673023399,gap difference
+monthly_1994_2026_dedup,all,cores_both,employed,"G3anc: closing share, not Mexican",0.19756057650259884,0.4208191979314352,-0.47275375605800823,0.8131997780366067,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_both,employed,G3anc: share not Hispanic,0.13115925737122283,0.006400769171943661,0.12044347605028434,0.14144806331335993,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_both,employed,"G3anc: advantage, not Hispanic minus identifiers",0.5356020243428743,2.354975765400487,-3.0436744479327436,4.550022946116304,gap difference
+monthly_1994_2026_dedup,all,cores_both,employed,"G3anc: closing share, not Hispanic",0.10320365510089502,0.4838783263189802,-0.6917586391754424,0.8303668566508202,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_both,employed,G3anc: lineage minus identifiers,0.1889569217072511,0.38979643662729546,-0.3881136696444142,0.8404569438619969,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_both,employed,rho G2 -> G3 lineage,1.5965611025903463,0.3532462134567802,1.1127017588599144,2.265471168570485,same frame
+monthly_1994_2026_dedup,all,cores_both,employed,rho G2 -> G3 identifiers,1.6568876881125625,0.37482603645127993,1.1423960814553733,2.3289527620055055,same frame
+monthly_1994_2026_dedup,all,cores_single,ba_plus,G3anc: share not Mexican,0.12623913593429464,0.010389565602488366,0.10872353146895837,0.14250030110717632,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_single,ba_plus,"G3anc: advantage, not Mexican minus identifiers",7.18014297822381,3.646832890011806,1.193453725588051,13.54198554247555,gap difference
+monthly_1994_2026_dedup,all,cores_single,ba_plus,"G3anc: closing share, not Mexican",0.8058793727449078,0.3959983328760858,0.14048958040068626,1.4184593718661413,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_single,ba_plus,G3anc: share not Hispanic,0.07527153659612977,0.007839696745469622,0.06331440032320358,0.08899340265533456,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_single,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",9.135072565965467,4.707422180594483,1.6632805032474225,17.264811075624188,gap difference
+monthly_1994_2026_dedup,all,cores_single,ba_plus,"G3anc: closing share, not Hispanic",1.0252952582931134,0.5203612408151305,0.20071628972794645,1.9225393831107205,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_single,ba_plus,G3anc: lineage minus identifiers,0.9064150454556685,0.4711735325021616,0.16234186340745646,1.7045053274590494,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_single,ba_plus,rho G2 -> G3 lineage,1.5787470943268065,0.2799641806628164,1.1863221343839776,2.0753044868134594,same frame
+monthly_1994_2026_dedup,all,cores_single,ba_plus,rho G2 -> G3 identifiers,1.757548702851236,0.29808609057042357,1.345710809501516,2.268356576808208,same frame
+monthly_1994_2026_dedup,all,cores_single,ba_plus_22plus,G3anc: share not Mexican,0.13658937819084813,0.010232742151308802,0.12040200425057304,0.15415181946271886,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_single,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.220228430163044,3.0281897610181003,1.2576218395332197,11.515111107863211,gap difference
+monthly_1994_2026_dedup,all,cores_single,ba_plus_22plus,"G3anc: closing share, not Mexican",0.6823419132893593,0.315304512871998,0.1406255949975398,1.1957002683368585,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_single,ba_plus_22plus,G3anc: share not Hispanic,0.08371762627011826,0.007955873246217427,0.07158298134812618,0.09837228268095236,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_single,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",7.899656614298367,4.010907283842229,1.7626817910382815,15.52510978112958,gap difference
+monthly_1994_2026_dedup,all,cores_single,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.8665705558964497,0.42282306291756017,0.2023752823382155,1.6281477722683444,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_single,ba_plus_22plus,G3anc: lineage minus identifiers,0.8496171334810043,0.4241298238595262,0.15449477348239357,1.5730705639022773,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_single,ba_plus_22plus,rho G2 -> G3 lineage,1.300938339896972,0.17028622979845134,1.032795148337761,1.6074879715775585,same frame
+monthly_1994_2026_dedup,all,cores_single,ba_plus_22plus,rho G2 -> G3 identifiers,1.434648526018099,0.18509555615498396,1.1612296578313719,1.7449828538022865,same frame
+monthly_1994_2026_dedup,all,cores_single,educ_years,G3anc: share not Mexican,0.12623913593429464,0.010389565602488366,0.10872353146895837,0.14250030110717632,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_single,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.4958011096300883,0.21697056605801876,0.14740238109836273,0.8387413382277077,gap difference
+monthly_1994_2026_dedup,all,cores_single,educ_years,"G3anc: closing share, not Mexican",0.7532108242810441,0.31791226259261446,0.22139249745396442,1.247678225117222,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_single,educ_years,G3anc: share not Hispanic,0.07527153659612977,0.007839696745469622,0.06331440032320358,0.08899340265533456,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_single,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.6312679090916777,0.24525256195827877,0.21596214692179255,1.038745711138512,gap difference
+monthly_1994_2026_dedup,all,cores_single,educ_years,"G3anc: closing share, not Hispanic",0.959009193230452,0.3515413421649129,0.3533706352788419,1.5144160868145977,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_single,educ_years,G3anc: lineage minus identifiers,0.06258950367496396,0.028349531681184505,0.016235776560089656,0.1055753165101306,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_single,educ_years,rho G2 -> G3 lineage,1.6872297084554395,0.30220172041510346,1.2924873437608777,2.281284375242147,same frame
+monthly_1994_2026_dedup,all,cores_single,educ_years,rho G2 -> G3 identifiers,1.8645166878491275,0.3264398632373593,1.420510387543025,2.4897342513095246,same frame
+monthly_1994_2026_dedup,all,cores_single,employed,G3anc: share not Mexican,0.12089925630103471,0.007989369784821435,0.10818076587721494,0.13405555656443494,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_single,employed,"G3anc: advantage, not Mexican minus identifiers",-0.4143231888595218,2.9768037878203444,-5.220788542781569,4.42213845053878,gap difference
+monthly_1994_2026_dedup,all,cores_single,employed,"G3anc: closing share, not Mexican",-0.10573576268576179,1.0360170498353864,-1.6749559062786228,1.0006783189447042,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_single,employed,G3anc: share not Hispanic,0.07541181340628617,0.006548508949070254,0.0662774315417529,0.08691876441148139,weighted share of the G3 lineage
+monthly_1994_2026_dedup,all,cores_single,employed,"G3anc: advantage, not Hispanic minus identifiers",-2.8701322039167416,3.5203477144067734,-8.929717896429793,2.6205250312374986,gap difference
+monthly_1994_2026_dedup,all,cores_single,employed,"G3anc: closing share, not Hispanic",-0.7324610973994938,1.3395051902268416,-2.986320820705093,0.590507456899221,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,all,cores_single,employed,G3anc: lineage minus identifiers,-0.05009136540132797,0.35889597083950536,-0.6316865729648935,0.5513228779337254,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,all,cores_single,employed,rho G2 -> G3 lineage,14.34196381223252,105.64587000629497,-33.19809592674917,46.18627375642761,same frame
+monthly_1994_2026_dedup,all,cores_single,employed,rho G2 -> G3 identifiers,14.160939214861356,102.5652858527575,-35.93273820447027,46.04242915040326,same frame
+monthly_1994_2026_dedup,direct,cores_one,ba_plus,G3anc: share not Mexican,0.1517992423203134,0.008250364367938608,0.13783665879374074,0.16510667486018696,weighted share of the G3 lineage
+monthly_1994_2026_dedup,direct,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.467851935058702,2.452629430598763,1.795341840207548,9.714542183126776,gap difference
+monthly_1994_2026_dedup,direct,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.5984730460852125,0.2546535578190022,0.19541390962710417,1.0114502264355703,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,direct,cores_one,ba_plus,G3anc: share not Hispanic,0.10055619659463329,0.0067465568343939315,0.0900273549713686,0.11226059384488292,weighted share of the G3 lineage
+monthly_1994_2026_dedup,direct,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",4.742709434899245,2.8108357630496017,0.5192032744128213,9.90056943409907,gap difference
+monthly_1994_2026_dedup,direct,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.5191039910942203,0.29518738674353506,0.05991007365973459,1.0276905222417432,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,direct,cores_one,ba_plus,G3anc: lineage minus identifiers,0.8300157808615847,0.3769091289503906,0.2590484546697119,1.474557855602704,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,direct,cores_one,ba_plus,rho G2 -> G3 lineage,1.103259331991604,0.1204982413381946,0.9097040365245633,1.3192496603333121,same frame
+monthly_1994_2026_dedup,direct,cores_one,ba_plus,rho G2 -> G3 identifiers,1.2135033906501542,0.126911535492374,1.0103367890416104,1.4318244014951444,same frame
+monthly_1994_2026_dedup,direct,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.16289514452772125,0.007659734328088922,0.15086468825532423,0.17534666435242305,weighted share of the G3 lineage
+monthly_1994_2026_dedup,direct,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.303198279571663,2.0696837634751675,3.151434321501778,9.948273490000759,gap difference
+monthly_1994_2026_dedup,direct,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.6061325567884798,0.18671489548951867,0.30838906905657987,0.919628557364034,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,direct,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.1088015404320789,0.0062179509480026875,0.09881301961776329,0.11964323644541183,weighted share of the G3 lineage
+monthly_1994_2026_dedup,direct,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.781835708662354,2.408774482356031,2.0517520270887335,9.846026615962849,gap difference
+monthly_1994_2026_dedup,direct,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.555996924986564,0.21948364138046134,0.20096496219383161,0.9326541797441292,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,direct,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.0267603947377122,0.34473589406487587,0.4925519036786519,1.6487379842203826,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,direct,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.9290565520844596,0.07303632551282839,0.8200069717687498,1.0523396242155656,same frame
+monthly_1994_2026_dedup,direct,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,1.0308373618395323,0.07798544861262899,0.9196991336041752,1.1672050283227793,same frame
+monthly_1994_2026_dedup,direct,cores_one,educ_years,G3anc: share not Mexican,0.1517992423203134,0.008250364367938608,0.13783665879374074,0.16510667486018696,weighted share of the G3 lineage
+monthly_1994_2026_dedup,direct,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.3911228753569098,0.13961496467678397,0.1745548592978042,0.6105937624039609,gap difference
+monthly_1994_2026_dedup,direct,cores_one,educ_years,"G3anc: closing share, not Mexican",0.6870300201323916,0.22892213633346573,0.3211827932157158,1.04482838409351,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,direct,cores_one,educ_years,G3anc: share not Hispanic,0.10055619659463329,0.0067465568343939315,0.0900273549713686,0.11226059384488292,weighted share of the G3 lineage
+monthly_1994_2026_dedup,direct,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.4055977859212785,0.1585443816708085,0.14350246845215475,0.6675969743590231,gap difference
+monthly_1994_2026_dedup,direct,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.7124560402478808,0.26243276006176314,0.2593185752733973,1.1340450756385219,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,direct,cores_one,educ_years,G3anc: lineage minus identifiers,0.05937215613333002,0.02175658184934503,0.02626512319147505,0.09510274555579272,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,direct,cores_one,educ_years,rho G2 -> G3 lineage,1.2474755458511404,0.14300498648843155,1.034871636195842,1.4907703448684195,same frame
+monthly_1994_2026_dedup,direct,cores_one,educ_years,rho G2 -> G3 identifiers,1.3927235738464816,0.15500714437736188,1.1672661444757517,1.6882582951415595,same frame
+monthly_1994_2026_dedup,direct,cores_one,employed,G3anc: share not Mexican,0.1625696741979049,0.005922782230653691,0.15344823533450996,0.17219152825494738,weighted share of the G3 lineage
+monthly_1994_2026_dedup,direct,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.4733038317896403,1.7338864275618144,-2.289459699743627,3.297439249344538,gap difference
+monthly_1994_2026_dedup,direct,cores_one,employed,"G3anc: closing share, not Mexican",0.10064839743875253,0.38349421616321233,-0.5630893108566383,0.6750521810258117,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,direct,cores_one,employed,G3anc: share not Hispanic,0.11184145465165028,0.004902329361735511,0.10401531167248441,0.12000843441846623,weighted share of the G3 lineage
+monthly_1994_2026_dedup,direct,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-0.5278393476111471,2.017631569275004,-3.757533230903223,2.7771261813694665,gap difference
+monthly_1994_2026_dedup,direct,cores_one,employed,"G3anc: closing share, not Hispanic",-0.11224541377850183,0.4644678195329573,-0.8997582034510283,0.5645679279459639,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup,direct,cores_one,employed,G3anc: lineage minus identifiers,0.07694484973067617,0.2825026053647143,-0.3768319065866897,0.5443793832784131,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup,direct,cores_one,employed,rho G2 -> G3 lineage,2.0243994571617723,0.427029917815968,1.454069974642777,2.900807052604797,same frame
+monthly_1994_2026_dedup,direct,cores_one,employed,rho G2 -> G3 identifiers,2.058074447537231,0.45023537180634354,1.4533805826745791,2.9289764898010247,same frame
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus,G3anc: share not Mexican,0.15153115182300286,0.008054272383359012,0.13836350220572285,0.1651238515545926,weighted share of the G3 lineage
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.253852892779548,2.3869978412938826,1.6542876433164597,9.333924165777649,gap difference
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.5787851977539198,0.24905049016548064,0.18004518945876344,0.9632158048926139,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus,G3anc: share not Hispanic,0.1007555077732765,0.006537559538950201,0.0902765356196483,0.11153474927803382,weighted share of the G3 lineage
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",4.468059185239701,2.7256721598130507,0.287389321694122,9.2091192541336,gap difference
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.4922190574957327,0.2881821554942217,0.03254930810130389,0.9687446414592118,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.7961223803515001,0.3655804654031193,0.24992380381588336,1.4207203114670495,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.1200612733724764,0.12010366544462169,0.9320990839625181,1.33557177507792,same frame
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.2277388679102696,0.1270293494623181,1.0314733293100105,1.4456006368962815,same frame
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.16236891711086418,0.007517357710386855,0.15061614989924077,0.17509872220144618,weighted share of the G3 lineage
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.255492755284539,2.024793678536693,3.1538191965287465,9.74584944633859,gap difference
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.6074575549076879,0.18425258092162303,0.3192777307531976,0.919102345640027,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.10882446499682595,0.006052453181056252,0.09931062560558729,0.1192175283388225,weighted share of the G3 lineage
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.426005060234379,2.330529242591766,1.6359442493587921,9.408508256607503,gap difference
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.526907774614918,0.2149925810921551,0.1660951967517907,0.8973142047124111,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.0156975846704022,0.3356085441519567,0.4971882327123247,1.618522875164798,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.939058912359616,0.07305179502623903,0.832588183630935,1.0624346860040594,same frame
+monthly_1994_2026_dedup_plain,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,1.0418154928566523,0.07843836157688228,0.9312250639117591,1.176415859036898,same frame
+monthly_1994_2026_dedup_plain,all,cores_one,educ_years,G3anc: share not Mexican,0.15153115182300286,0.008054272383359012,0.13836350220572285,0.1651238515545926,weighted share of the G3 lineage
+monthly_1994_2026_dedup_plain,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.402673288112112,0.13666441557345724,0.18768492084408506,0.6238184753847423,gap difference
+monthly_1994_2026_dedup_plain,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.7139748731799849,0.22451916692601062,0.3506183867133468,1.0580803974224993,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_plain,all,cores_one,educ_years,G3anc: share not Hispanic,0.1007555077732765,0.006537559538950201,0.0902765356196483,0.11153474927803382,weighted share of the G3 lineage
+monthly_1994_2026_dedup_plain,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.4208496626074769,0.15403337936425934,0.17021511717871,0.6777430468334075,gap difference
+monthly_1994_2026_dedup_plain,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.7462031710540343,0.255238296685194,0.3114230646788831,1.1643017107769047,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_plain,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.061017547155989504,0.021234386200560094,0.02848886130009456,0.09532401424338821,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup_plain,all,cores_one,educ_years,rho G2 -> G3 lineage,1.2609017887758187,0.14409888630499829,1.056684562915479,1.5157447430171045,same frame
+monthly_1994_2026_dedup_plain,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.413867292144523,0.1576273195889473,1.1813094101322938,1.7024380138671684,same frame
+monthly_1994_2026_dedup_plain,all,cores_one,employed,G3anc: share not Mexican,0.161135901970101,0.005771187255703428,0.15224487529088648,0.17062680414138737,weighted share of the G3 lineage
+monthly_1994_2026_dedup_plain,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.3869712210801568,1.673343724878632,-2.3194039973528047,3.106677124281126,gap difference
+monthly_1994_2026_dedup_plain,all,cores_one,employed,"G3anc: closing share, not Mexican",0.0787094100726018,0.3510882673239297,-0.5379821566565762,0.6054237341275602,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_plain,all,cores_one,employed,G3anc: share not Hispanic,0.1111300043324632,0.004728815728404205,0.10366830255237842,0.11888108942832844,weighted share of the G3 lineage
+monthly_1994_2026_dedup_plain,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-0.6990538456013606,1.9472678275332507,-3.8541736860001037,2.6019421546079093,gap difference
+monthly_1994_2026_dedup_plain,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.14218658339160983,0.4276353970502572,-0.8744298487029141,0.4868158598535887,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_plain,all,cores_one,employed,G3anc: lineage minus identifiers,0.06235495674518088,0.27020492455920964,-0.3672444923720872,0.5052925066629291,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup_plain,all,cores_one,employed,rho G2 -> G3 lineage,2.002925109838265,0.3902598474016781,1.4761047469832236,2.7618758850549625,same frame
+monthly_1994_2026_dedup_plain,all,cores_one,employed,rho G2 -> G3 identifiers,2.0286543540541557,0.41354907442115274,1.4732207815524723,2.8114591406731684,same frame
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus,G3anc: share not Mexican,0.15445725970765306,0.008373034337389626,0.1409927169909196,0.16792712711904978,weighted share of the G3 lineage
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.134968011874131,2.4376541858826792,1.480175301562737,9.376254556139832,gap difference
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.5740428852080275,0.25773864316861295,0.1613631980993785,0.9817262831865822,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus,G3anc: share not Hispanic,0.1021064682726279,0.0068255096594216705,0.09134930285034316,0.11376718948585454,weighted share of the G3 lineage
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",4.444920639760883,2.795369209311132,0.38590975799974203,9.42058562722895,gap difference
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.4969018429460069,0.2992005317675941,0.04279324918702237,1.0107013507324831,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.7931330878005411,0.37991607126282256,0.2243027233811402,1.451956270010149,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.0946907530554542,0.1218842934760599,0.9040817213383202,1.309167913807683,same frame
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.2011947992438288,0.12907136255979418,1.0089762351805849,1.4191380957850195,same frame
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1643766655377052,0.00771692279931559,0.15202716993256493,0.1768229025479746,weighted share of the G3 lineage
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.364063877152846,2.0750543750490613,3.0517812289873754,10.005909878844113,gap difference
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.6224588917176923,0.18939176240204447,0.31449164441144395,0.9376354764635301,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.10964129477138736,0.006240797495847278,0.09953941558622956,0.12021696180629778,weighted share of the G3 lineage
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.574503100022594,2.391876042771812,1.7914277214904957,9.74548520930635,gap difference
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.5452332170916655,0.22145653146147856,0.1807584803360459,0.9227742757876436,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.046103599395341,0.34787410435097155,0.5016600822296661,1.6551823311936438,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.919883126762438,0.07396989551629127,0.8040017651802871,1.0427200394596405,same frame
+monthly_1994_2026_dedup_cpsidp,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,1.024731293286139,0.07969656859833563,0.908507586269551,1.1618561599393475,same frame
+monthly_1994_2026_dedup_cpsidp,all,cores_one,educ_years,G3anc: share not Mexican,0.15445725970765306,0.008373034337389626,0.1409927169909196,0.16792712711904978,weighted share of the G3 lineage
+monthly_1994_2026_dedup_cpsidp,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.38585749204549025,0.1381002399659738,0.17060360333774166,0.6048831731920851,gap difference
+monthly_1994_2026_dedup_cpsidp,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.6914813618631195,0.23013259813030715,0.3190848472834959,1.056408106216494,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_cpsidp,all,cores_one,educ_years,G3anc: share not Hispanic,0.1021064682726279,0.0068255096594216705,0.09134930285034316,0.11376718948585454,weighted share of the G3 lineage
+monthly_1994_2026_dedup_cpsidp,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.40362212020233557,0.15693191476176105,0.14132953769169632,0.6607930660004714,gap difference
+monthly_1994_2026_dedup_cpsidp,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.7233167143549641,0.26412514259066633,0.2583414154239568,1.1494795434278071,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_cpsidp,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.05959849085901503,0.02188206324805886,0.02618396188929282,0.09691627912227785,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup_cpsidp,all,cores_one,educ_years,rho G2 -> G3 lineage,1.2493589003105492,0.14636036260714838,1.0295997402183266,1.5194621089253917,same frame
+monthly_1994_2026_dedup_cpsidp,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.3987516096410044,0.15873698274971199,1.1601867395706336,1.6987420492744176,same frame
+monthly_1994_2026_dedup_cpsidp,all,cores_one,employed,G3anc: share not Mexican,0.16162368006365657,0.005834572248751549,0.15230448323170365,0.17118632076261597,weighted share of the G3 lineage
+monthly_1994_2026_dedup_cpsidp,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.8105234543291697,1.6893732777006274,-1.961133416815852,3.6416954989201984,gap difference
+monthly_1994_2026_dedup_cpsidp,all,cores_one,employed,"G3anc: closing share, not Mexican",0.16443068510363268,0.3488375932307301,-0.4536279064621744,0.7074738834972658,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_cpsidp,all,cores_one,employed,G3anc: share not Hispanic,0.11095586649917828,0.004785738353171646,0.10308997522646166,0.11882332028478546,weighted share of the G3 lineage
+monthly_1994_2026_dedup_cpsidp,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-0.20035203677858426,1.9722281021504042,-3.3659026067951174,3.183274816454534,gap difference
+monthly_1994_2026_dedup_cpsidp,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.04064536626725612,0.42488356857184273,-0.7731858455517058,0.5843357258131052,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_dedup_cpsidp,all,cores_one,employed,G3anc: lineage minus identifiers,0.13099978346653351,0.2735516925103644,-0.3133548437625713,0.594801490081614,how much non-identifiers move the G3 gap
+monthly_1994_2026_dedup_cpsidp,all,cores_one,employed,rho G2 -> G3 lineage,2.102500635264494,0.4330553064857984,1.5118546749780295,2.9454746753934153,same frame
+monthly_1994_2026_dedup_cpsidp,all,cores_one,employed,rho G2 -> G3 identifiers,2.159901957368407,0.4597235188563899,1.5335516850270794,3.0549384762943745,same frame
+monthly_1994_2026_nodedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.14660471074175835,0.008095049789957683,0.13385034089119244,0.16037994181025603,weighted share of the G3 lineage
+monthly_1994_2026_nodedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.185670978364719,2.2949473878105837,1.807383398617242,9.061271675104706,gap difference
+monthly_1994_2026_nodedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.5702046580515541,0.23773101025250434,0.20421643028477907,0.9479440529837103,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_nodedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.09796288734016367,0.006678991632810988,0.08754577134922059,0.10996116887519648,weighted share of the G3 lineage
+monthly_1994_2026_nodedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",4.5112701066918195,2.6744304965261616,0.37960548824276713,8.929727903544174,gap difference
+monthly_1994_2026_nodedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.4960490627532227,0.282453245346939,0.039291504567617944,0.9377527943073588,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_nodedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.7602437937850688,0.33972985279323376,0.26326113933723055,1.3456488421737696,how much non-identifiers move the G3 gap
+monthly_1994_2026_nodedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.126092917026674,0.12353511423040706,0.9386824677788929,1.3479121685546098,same frame
+monthly_1994_2026_nodedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.2288153543603164,0.13057266768141026,1.0202180604303082,1.4570796553915315,same frame
+monthly_1994_2026_nodedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1566951848865946,0.007360661527137974,0.14519550994619226,0.17029717824774962,weighted share of the G3 lineage
+monthly_1994_2026_nodedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",5.711194636888295,1.9117696953031211,2.7881884675129,8.949130378205309,gap difference
+monthly_1994_2026_nodedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.5696867046400171,0.17955721618890244,0.2911473101558907,0.8762363229824233,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_nodedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.10681413306016321,0.006099668932383906,0.0975655256122743,0.11702302429463012,weighted share of the G3 lineage
+monthly_1994_2026_nodedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.073561522861095,2.241262224865497,1.5859128166168277,8.956838135115502,gap difference
+monthly_1994_2026_nodedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.5060833553243961,0.21429896262062437,0.16055756097193882,0.8549997403512907,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_nodedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,0.8949166995505333,0.304713592405496,0.43860292275822416,1.4259331940392548,how much non-identifiers move the G3 gap
+monthly_1994_2026_nodedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.9153480672476786,0.07243340327662819,0.8044690873222733,1.0360538139843734,same frame
+monthly_1994_2026_nodedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,1.0050676011380821,0.07674888622855285,0.8850573127253756,1.1421958050135734,same frame
+monthly_1994_2026_nodedup,all,cores_one,educ_years,G3anc: share not Mexican,0.14660471074175835,0.008095049789957683,0.13385034089119244,0.16037994181025603,weighted share of the G3 lineage
+monthly_1994_2026_nodedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.39031957881876345,0.12767468794224676,0.17764424637594542,0.5955169462006539,gap difference
+monthly_1994_2026_nodedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.694785639388185,0.20827967659444194,0.32891243278585985,1.017913214941572,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_nodedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.09796288734016367,0.006678991632810988,0.08754577134922059,0.10996116887519648,weighted share of the G3 lineage
+monthly_1994_2026_nodedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.4035359116789632,0.14149447832803355,0.16522613531857946,0.6337537802546103,gap difference
+monthly_1994_2026_nodedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.7183112803627687,0.23374755970176453,0.31340259482275873,1.1010831135938925,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_nodedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.05722268894956173,0.019127189258543894,0.026549854474762036,0.08924158128325992,how much non-identifiers move the G3 gap
+monthly_1994_2026_nodedup,all,cores_one,educ_years,rho G2 -> G3 lineage,1.3321956441392746,0.15180471893280206,1.1090679127920056,1.6141148992041288,same frame
+monthly_1994_2026_nodedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.4832809305229169,0.16548763270782688,1.2453235774572735,1.7863277761682634,same frame
+monthly_1994_2026_nodedup,all,cores_one,employed,G3anc: share not Mexican,0.15399699986784163,0.005778258776850861,0.1449218427406578,0.16372931700286708,weighted share of the G3 lineage
+monthly_1994_2026_nodedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.33649992516414606,1.6300732232631239,-2.29725683472269,3.0477947581092457,gap difference
+monthly_1994_2026_nodedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.08110936383480638,0.42925304976420003,-0.6116011773729831,0.6766125403748834,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_nodedup,all,cores_one,employed,G3anc: share not Hispanic,0.10760270278433828,0.004806678278962673,0.09967792553351629,0.11541620566137623,weighted share of the G3 lineage
+monthly_1994_2026_nodedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-0.26678660421003464,1.9199023926633845,-3.2007675328883587,2.891834648505147,gap difference
+monthly_1994_2026_nodedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.06430578472363302,0.5175104670652754,-0.8449038732542785,0.6363739714604033,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_nodedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.05181997893102164,0.25143953474593456,-0.34659437941933435,0.47587528029828335,how much non-identifiers move the G3 gap
+monthly_1994_2026_nodedup,all,cores_one,employed,rho G2 -> G3 lineage,2.1000276697063494,0.5122763334334908,1.4348757801495469,3.098368362541867,same frame
+monthly_1994_2026_nodedup,all,cores_one,employed,rho G2 -> G3 identifiers,2.1265900526356827,0.5376824808637596,1.414640135604549,3.157073814892257,same frame
+monthly_1994_2026_mis1,all,cores_one,ba_plus,G3anc: share not Mexican,0.14096841222459128,0.009657552211574532,0.12563945283087574,0.15684394589561157,weighted share of the G3 lineage
+monthly_1994_2026_mis1,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.79733529471596,2.8089475011579994,1.3893244635728554,10.585880100123857,gap difference
+monthly_1994_2026_mis1,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.6470776503585411,0.2996740074938762,0.16307159370178886,1.1651147063645924,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_mis1,all,cores_one,ba_plus,G3anc: share not Hispanic,0.09424840689737746,0.007794765984453529,0.08179064676412375,0.10723622601505824,weighted share of the G3 lineage
+monthly_1994_2026_mis1,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",4.757647595898592,3.2440255401647375,-0.25150612546621304,10.662356538253736,gap difference
+monthly_1994_2026_mis1,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.5310314603321313,0.3508545445078058,-0.032349906037154964,1.124107582820998,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_mis1,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.8172411516297053,0.40784088366616295,0.18183673120238592,1.528251988850225,how much non-identifiers move the G3 gap
+monthly_1994_2026_mis1,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.0828580017812142,0.13825590336586174,0.8868884227922024,1.3240166161423927,same frame
+monthly_1994_2026_mis1,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.1915480463741177,0.144971649742407,0.9807097335301678,1.4405139148006658,same frame
+monthly_1994_2026_mis1,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1479518441092782,0.008876185375435015,0.1335815084906096,0.16249409664298953,weighted share of the G3 lineage
+monthly_1994_2026_mis1,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",5.599317457451961,2.4437539323237076,1.4831286682954954,9.711315387478988,gap difference
+monthly_1994_2026_mis1,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.5552638319676659,0.2340339326073864,0.15832518219943217,0.9674364134582806,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_mis1,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.09951292073641553,0.007118720089594294,0.0883783298464928,0.11136718077003765,weighted share of the G3 lineage
+monthly_1994_2026_mis1,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",3.930314643120817,2.7410908419918774,-0.22000480463506997,8.839804979278927,gap difference
+monthly_1994_2026_mis1,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.38975492748200147,0.2657827078388981,-0.019721474082748505,0.8283879591857396,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_mis1,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,0.8284293435832932,0.37094866321943637,0.22085469004547237,1.4371470086457245,how much non-identifiers move the G3 gap
+monthly_1994_2026_mis1,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.9241468708582713,0.08667208783016651,0.7946182425506448,1.076227308491836,same frame
+monthly_1994_2026_mis1,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,1.0068629891640368,0.09071513013345886,0.8684012966115037,1.1717106169207503,same frame
+monthly_1994_2026_mis1,all,cores_one,educ_years,G3anc: share not Mexican,0.14096841222459128,0.009657552211574532,0.12563945283087574,0.15684394589561157,weighted share of the G3 lineage
+monthly_1994_2026_mis1,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.35345656955006177,0.15968004699828156,0.10574948146641783,0.6151893975680414,gap difference
+monthly_1994_2026_mis1,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.641233672472828,0.27033969876793085,0.1959450296630182,1.0551119272181777,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_mis1,all,cores_one,educ_years,G3anc: share not Hispanic,0.09424840689737746,0.007794765984453529,0.08179064676412375,0.10723622601505824,weighted share of the G3 lineage
+monthly_1994_2026_mis1,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.3610665420617849,0.18840677973176737,0.058345749037905036,0.6858961838619826,gap difference
+monthly_1994_2026_mis1,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.6550395288113346,0.3251638392695608,0.12032683662717623,1.1900665545191096,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_mis1,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.049826211399830456,0.023191125125184738,0.01429877784193403,0.08984205195671899,how much non-identifiers move the G3 gap
+monthly_1994_2026_mis1,all,cores_one,educ_years,rho G2 -> G3 lineage,1.320780237402694,0.17903687741532195,1.0734214610568402,1.6488394977601453,same frame
+monthly_1994_2026_mis1,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.4520350472114023,0.194287841710252,1.1889404430451387,1.8173223590839498,same frame
+monthly_1994_2026_mis1,all,cores_one,employed,G3anc: share not Mexican,0.1461995421781564,0.00680189152712911,0.13498522312388408,0.15676172546879344,weighted share of the G3 lineage
+monthly_1994_2026_mis1,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",1.3801672853836937,2.0816169536834948,-1.9886652452388103,4.936328595413168,gap difference
+monthly_1994_2026_mis1,all,cores_one,employed,"G3anc: closing share, not Mexican",0.3365732570416946,0.5419924567837905,-0.6621727647499246,1.090134309996183,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_mis1,all,cores_one,employed,G3anc: share not Hispanic,0.10193647371400331,0.005528450152025754,0.09247354192962831,0.1109475828137138,weighted share of the G3 lineage
+monthly_1994_2026_mis1,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",0.11789221766557212,2.435775529668075,-3.814615652262222,4.1872929630044595,gap difference
+monthly_1994_2026_mis1,all,cores_one,employed,"G3anc: closing share, not Hispanic",0.028749679911836856,0.6702007019351122,-1.2457196509721127,0.9108825905871953,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2026_mis1,all,cores_one,employed,G3anc: lineage minus identifiers,0.20177982525237992,0.30390993748036155,-0.29270725120610624,0.7041813075407028,how much non-identifiers move the G3 gap
+monthly_1994_2026_mis1,all,cores_one,employed,rho G2 -> G3 lineage,2.7061913031253653,1.1518811722240492,1.5832318560583818,5.130162963574364,same frame
+monthly_1994_2026_mis1,all,cores_one,employed,rho G2 -> G3 identifiers,2.8462461266742434,1.2381833502047266,1.700279937974072,5.291013235088024,same frame
+union_1994_2026_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.1553167341391871,0.00839102459806309,0.1420953638041113,0.16914468802244662,weighted share of the G3 lineage
+union_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",4.9776398013964025,2.365957820447465,1.340706386938267,9.058449778454747,gap difference
+union_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.5530736525927089,0.2493676406447776,0.1494563977946979,0.9554320182073641,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_1994_2026_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.10208039106189956,0.00671501943375714,0.09148971244847777,0.11384903523715259,weighted share of the G3 lineage
+union_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",4.075169796756578,2.7262341610143537,-0.14929614603092015,8.911001643105683,gap difference
+union_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.4527987428490423,0.29077656392755313,-0.01695738183672068,0.9548849816723013,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_1994_2026_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.7731107576741163,0.37179303695159727,0.1939279595786107,1.4181996482561698,how much non-identifiers move the G3 gap
+union_1994_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.1135199343545208,0.12189119828688806,0.9214319277164107,1.324832863990746,same frame
+union_1994_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.2181619904232213,0.12912512325515577,1.0191190210443912,1.4325931655613873,same frame
+union_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1646385843848181,0.0076875299070703245,0.15220732484582533,0.17741121577534563,weighted share of the G3 lineage
+union_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.342571417655624,2.0246494625854723,3.05627085911993,9.813324661400658,gap difference
+union_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.6160952794840706,0.18361678607923884,0.31274081284726946,0.9231512855516761,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.10926100977049699,0.006134252062861772,0.09945352892377245,0.11939063113024795,weighted share of the G3 lineage
+union_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.518599133690183,2.358174422270606,1.731930670174618,9.581449404082823,gap difference
+union_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.536057483904237,0.21687043012365764,0.18238958777558698,0.9085845886287831,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.0442319795624329,0.3412679826563143,0.5138046974892364,1.6345441763952033,how much non-identifiers move the G3 gap
+union_1994_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.9360872933551138,0.07384784285228814,0.8193583148955839,1.0578444862774317,same frame
+union_1994_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,1.0417557625618656,0.07948992313594815,0.9272076606005585,1.1779663274502887,same frame
+union_1994_2026_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.1553167341391871,0.00839102459806309,0.1420953638041113,0.16914468802244662,weighted share of the G3 lineage
+union_1994_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.3760139149221686,0.13538991328507335,0.1668289316054171,0.5909706729959393,gap difference
+union_1994_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.6764216397355289,0.22684778194188512,0.3197864221388288,1.032425098708112,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_1994_2026_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.10208039106189956,0.00671501943375714,0.09148971244847777,0.11384903523715259,weighted share of the G3 lineage
+union_1994_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.37698605685987907,0.1538868800293396,0.12339213620471494,0.6306474608983109,gap difference
+union_1994_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.6781704522593897,0.2600218799391487,0.23285989003834712,1.110651880563301,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_1994_2026_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.0584012532566085,0.021606117647147562,0.025224608678638915,0.09518891308036889,how much non-identifiers move the G3 gap
+union_1994_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,1.248858409554834,0.14555678838407146,1.0372049510993995,1.498715847874341,same frame
+union_1994_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.3954654517034155,0.1585235594492858,1.1623370408752562,1.692193366036155,same frame
+union_1994_2026_dedup,all,cores_one,employed,G3anc: share not Mexican,0.16216997465922858,0.005834001784952162,0.15303258981726278,0.17204022281548595,weighted share of the G3 lineage
+union_1994_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.46067231583482027,1.6719856120842853,-2.2086337726064387,3.3001853857238737,gap difference
+union_1994_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.09473381961930716,0.35418482507244525,-0.5430344558393565,0.6249071421244586,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_1994_2026_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.1113526520556438,0.004744232528675347,0.10334839557353828,0.11895695905782,weighted share of the G3 lineage
+union_1994_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-0.7144424316651632,1.9428020576484932,-3.815599705002981,2.5663495178019815,gap difference
+union_1994_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.14691974777580286,0.4296443386610403,-0.8516132733368834,0.4649292123688089,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_1994_2026_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.0747072177851642,0.27175294584008564,-0.34964221839385856,0.533713111238958,how much non-identifiers move the G3 gap
+union_1994_2026_dedup,all,cores_one,employed,rho G2 -> G3 lineage,2.2064022455321073,0.4599387594038848,1.5868844765586898,3.0871189573072906,same frame
+union_1994_2026_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,2.240828044488526,0.4847656407269981,1.5827699059613134,3.1972378517270847,same frame
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.1507627168111234,0.007157384498871711,0.1397343962517517,0.16253095507564128,weighted share of the G3 lineage
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.391108560579264,2.145954319566587,1.8790535144117921,8.948223967201526,gap difference
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.6052181170681104,0.22832038685509976,0.22707706852172554,0.9829470943631633,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.09783557233808587,0.005725516643871279,0.08866732527702065,0.10775353101265803,weighted share of the G3 lineage
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",4.712102874039262,2.4925687029882,0.9684398188185723,9.315063850715225,gap difference
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.5289913932934875,0.2685382807865849,0.11493485665003295,0.9860884207116515,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.8127781732166355,0.3278210691662436,0.27643984546224337,1.3548865524745564,how much non-identifiers move the G3 gap
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.1160400833037099,0.10830701774212906,0.9480088241220557,1.3015994751712914,same frame
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.2280969651029165,0.11496942917183887,1.049192111716847,1.4319897054803155,same frame
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.16112706500286664,0.006686274634304047,0.15057932428147083,0.1724370237889686,weighted share of the G3 lineage
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.148956075715198,1.8336416147725518,3.3242842507222403,9.262189245133875,gap difference
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.6084678509496937,0.17037152968187239,0.34034901705858894,0.8914421740344736,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.1057751501579222,0.005347583071443006,0.09735511452193567,0.11401222239856679,weighted share of the G3 lineage
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.560204159679177,2.156364654602045,2.181418551688365,9.213158344063775,gap difference
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.5502081059325228,0.20282487442527272,0.22069834920731557,0.897396287437194,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,0.9907632453115323,0.30163198803873614,0.5346946320896998,1.5070685494699454,how much non-identifiers move the G3 gap
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.9418255881984419,0.06602549642254622,0.8388171959677397,1.0590265617601837,same frame
+union_with_oversample_1994_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,1.044199582479122,0.07035243821208347,0.9431158114343641,1.1687661875119724,same frame
+union_with_oversample_1994_2026_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.1507627168111234,0.007157384498871711,0.1397343962517517,0.16253095507564128,weighted share of the G3 lineage
+union_with_oversample_1994_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.4227907243158331,0.12153609157686163,0.23784568432510128,0.6183633182529924,gap difference
+union_with_oversample_1994_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.7394909916612595,0.19804147041925999,0.42074100660935226,1.0647140925600656,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_with_oversample_1994_2026_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.09783557233808587,0.005725516643871279,0.08866732527702065,0.10775353101265803,weighted share of the G3 lineage
+union_with_oversample_1994_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.43755594025086175,0.13975173637049298,0.2116105683971508,0.6749575584186986,gap difference
+union_with_oversample_1994_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.7653164025464105,0.23022694685109996,0.39722576032073736,1.147097666898449,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_with_oversample_1994_2026_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.0637410782404011,0.01887466667275221,0.03462694069380339,0.09435628157379794,how much non-identifiers move the G3 gap
+union_with_oversample_1994_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,1.3114391202691784,0.13165335783636414,1.1147640815354678,1.5468158544705406,same frame
+union_with_oversample_1994_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.4759942855114254,0.1430026009732435,1.2526406634115248,1.729385174419706,same frame
+union_with_oversample_1994_2026_dedup,all,cores_one,employed,G3anc: share not Mexican,0.15958554560470553,0.0051133947112654895,0.15093908037023787,0.1681401620475248,weighted share of the G3 lineage
+union_with_oversample_1994_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.8539378132075615,1.4744231238283494,-1.4585154530810953,3.2166906180386503,gap difference
+union_with_oversample_1994_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.1774020719628533,0.3091378559920794,-0.3612744163213792,0.6477258919737151,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_with_oversample_1994_2026_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.10910012691069824,0.004155043767816359,0.1020883810389248,0.115965896645345,weighted share of the G3 lineage
+union_with_oversample_1994_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-0.23553693340822068,1.7063771837667427,-2.9187780232314164,2.616671626328689,gap difference
+union_with_oversample_1994_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.04893183012173119,0.37010211293389755,-0.6491740225718827,0.5350866514843329,c = 1 - gap(non-identifiers)/gap(identifiers)
+union_with_oversample_1994_2026_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.1362761318332355,0.23553657728779923,-0.23778800853171095,0.5116786779264336,how much non-identifiers move the G3 gap
+union_with_oversample_1994_2026_dedup,all,cores_one,employed,rho G2 -> G3 lineage,2.2189663487976317,0.4215325234481405,1.67165675406422,3.0699849009877287,same frame
+union_with_oversample_1994_2026_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,2.2836173989758435,0.4480585941714485,1.6771257263146595,3.1283206439051767,same frame
+monthly_1994_2006_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.1569754433986559,0.012892167948260418,0.13485147508067366,0.17792572127995407,weighted share of the G3 lineage
+monthly_1994_2006_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",7.770908659164673,3.1513672690856755,2.8336884558395603,12.769671631413448,gap difference
+monthly_1994_2006_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.6822000028374073,0.26764952630913014,0.27779017172802917,1.1040989315545473,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2006_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.1155077913114304,0.010917466721510173,0.09759395294842733,0.1323859077717049,weighted share of the G3 lineage
+monthly_1994_2006_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",6.333369898321538,3.5171219613332494,0.5507449299797216,12.172913693212012,gap difference
+monthly_1994_2006_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.5559999675854824,0.3028503015440728,0.05622597510986127,1.0713848690495982,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2006_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,1.219841832382837,0.5014746740010014,0.43209483563161827,2.014133143391463,how much non-identifiers move the G3 gap
+monthly_1994_2006_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.0467763698392722,0.15121327886392122,0.8369423732094143,1.3293351880710245,same frame
+monthly_1994_2006_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.1723183577125313,0.1635296972375951,0.9391701363184415,1.4679454599285415,same frame
+monthly_1994_2006_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1656836459327262,0.011988893522341957,0.14568372280669223,0.18518214221441998,weighted share of the G3 lineage
+monthly_1994_2006_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",9.567110514331448,2.7392083074285662,5.013896693610966,14.190896123773589,gap difference
+monthly_1994_2006_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.8038720896274958,0.22044942994717362,0.43224706104550387,1.1516516126161027,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2006_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.12269452442009122,0.010266991434093703,0.10566313708811832,0.1401320717133703,weighted share of the G3 lineage
+monthly_1994_2006_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",8.993222809930046,3.146770256273159,3.727108505201423,14.124459502736778,gap difference
+monthly_1994_2006_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.7556514374820429,0.25743239585858235,0.3337390474524063,1.16993949333134,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2006_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.5851137510557596,0.46369916822313045,0.8168949414218386,2.3634447665873113,how much non-identifiers move the G3 gap
+monthly_1994_2006_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.8685930512549038,0.08949840383393934,0.7349277671823212,1.0315141563009276,same frame
+monthly_1994_2006_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,1.002055244817368,0.09514748168729464,0.8566432451900274,1.16996294253613,same frame
+monthly_1994_2006_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.1569754433986559,0.012892167948260418,0.13485147508067366,0.17792572127995407,weighted share of the G3 lineage
+monthly_1994_2006_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.7286965296779808,0.20404709076573255,0.3980969278170672,1.055133360588807,gap difference
+monthly_1994_2006_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.9155102033188429,0.23883332934179646,0.5290298973239991,1.2910121566525898,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2006_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.1155077913114304,0.010917466721510173,0.09759395294842733,0.1323859077717049,weighted share of the G3 lineage
+monthly_1994_2006_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.7668965378908457,0.20306340865171138,0.42124619348054804,1.0843640254119757,gap difference
+monthly_1994_2006_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.9635034293895037,0.2377247421464359,0.5638382298110033,1.3363432378891824,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2006_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.11438746084926876,0.03329298558025008,0.05979451784048724,0.16863559691821078,how much non-identifiers move the G3 gap
+monthly_1994_2006_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,0.8399935141191732,0.12835237462665056,0.6543630717491364,1.0770005425484017,same frame
+monthly_1994_2006_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,0.9809714983995316,0.14551407288383336,0.7629777959355866,1.256763590135357,same frame
+monthly_1994_2006_dedup,all,cores_one,employed,G3anc: share not Mexican,0.17623557136554774,0.009828353542076708,0.1617294179407362,0.19220711957582645,weighted share of the G3 lineage
+monthly_1994_2006_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.5325751912429677,2.663815205274169,-3.8266897381284726,5.177826311926244,gap difference
+monthly_1994_2006_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.11177982108021223,0.6885659083676253,-0.9655450849151759,1.007514169220269,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2006_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.13464981618161803,0.008674979829953668,0.12061682306127798,0.1480787583701914,weighted share of the G3 lineage
+monthly_1994_2006_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",2.176620607332868,3.002821724970413,-2.3687963332974205,7.54488371368625,gap difference
+monthly_1994_2006_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",0.4568411485321574,0.7086627126511819,-0.621996858574532,1.4713349896143018,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2006_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.09385869312382678,0.47318106670354265,-0.6385339587815981,0.9199604363417319,how much non-identifiers move the G3 gap
+monthly_1994_2006_dedup,all,cores_one,employed,rho G2 -> G3 lineage,0.6951711451755951,0.18675245528494736,0.4111794736324989,1.0181625916795152,same frame
+monthly_1994_2006_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,0.7091409239894536,0.20300554177434413,0.39076712320299667,1.0680704525097293,same frame
+monthly_2007_2021_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.15144640840834217,0.011862971411393745,0.13341923853638865,0.17326821688891195,weighted share of the G3 lineage
+monthly_2007_2021_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",1.865403428518297,3.3091436176972993,-3.6762896611695806,7.688697522020892,gap difference
+monthly_2007_2021_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.22583329716093792,0.4009245360236613,-0.48612322457909096,0.8500784490436999,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2007_2021_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.09379835229792868,0.008983416047492625,0.07989523011791463,0.10920410840506302,weighted share of the G3 lineage
+monthly_2007_2021_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",3.2359888043984313,4.157855159338205,-3.4677554788196603,10.396591931483057,gap difference
+monthly_2007_2021_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.3917619160020812,0.49904188983661274,-0.44808377063446275,1.2000401551597786,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2007_2021_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.2825086494817075,0.5053383005486766,-0.564842050462023,1.1393096961522498,how much non-identifiers move the G3 gap
+monthly_2007_2021_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,0.9004106256727669,0.13367290949115357,0.6957961287377649,1.1251184812450639,same frame
+monthly_2007_2021_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,0.932296703535561,0.142609315053837,0.7036875831386964,1.177155561751654,same frame
+monthly_2007_2021_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1561274175046673,0.010417689486935656,0.13950210631987262,0.17372419145272971,weighted share of the G3 lineage
+monthly_2007_2021_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",3.5962023899576767,2.6429149206920406,-0.5534642939516177,8.020956065057776,gap difference
+monthly_2007_2021_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.33541235883461473,0.23899564789132555,-0.054630770714898275,0.7053322562889489,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2007_2021_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.09759496718931734,0.007948526273009635,0.08442623308878086,0.11125739471497535,weighted share of the G3 lineage
+monthly_2007_2021_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.822578549991142,3.317299019087119,0.20743092792167872,11.038913172980084,gap difference
+monthly_2007_2021_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.5430630966171357,0.298983526048502,0.020000951384112932,0.9799936296957982,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2007_2021_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,0.5614657919682049,0.4160335639793631,-0.08559751919137949,1.2431241890426254,how much non-identifiers move the G3 gap
+monthly_2007_2021_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.8954664891515317,0.08414333171837705,0.7585688286988285,1.035523593956729,same frame
+monthly_2007_2021_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.9449507888984359,0.09029300195015479,0.7990629168898222,1.0979598370278065,same frame
+monthly_2007_2021_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.15144640840834217,0.011862971411393745,0.13341923853638865,0.17326821688891195,weighted share of the G3 lineage
+monthly_2007_2021_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.06674428988586278,0.2005879444421158,-0.25776581727493825,0.3963238734961071,gap difference
+monthly_2007_2021_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.13292341223137993,0.4031022469655809,-0.579773107408983,0.7408705386246021,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2007_2021_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.09379835229792868,0.008983416047492625,0.07989523011791463,0.10920410840506302,weighted share of the G3 lineage
+monthly_2007_2021_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.17165707063164604,0.24235651894828736,-0.2333699126881151,0.6068499115001861,gap difference
+monthly_2007_2021_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.34186060861566436,0.48040314963268316,-0.5018105766779406,1.1363830921582985,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2007_2021_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.010108182984987835,0.030567227575602932,-0.03900328999623692,0.05981862235629611,how much non-identifiers move the G3 gap
+monthly_2007_2021_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,1.0110832878688807,0.14965464641855064,0.7881127379866448,1.281906888647998,same frame
+monthly_2007_2021_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.0318553337492398,0.15957407708191812,0.7997033448162397,1.3154024662994048,same frame
+monthly_2007_2021_dedup,all,cores_one,employed,G3anc: share not Mexican,0.15618869703140764,0.007760428299590155,0.14361780815407235,0.16908435882125766,weighted share of the G3 lineage
+monthly_2007_2021_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",-0.16002745635329552,2.3357771038533497,-4.042876822557136,3.9431371398913786,gap difference
+monthly_2007_2021_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",-0.04289412628087752,0.8344136040139134,-1.621338593367827,0.9082253477381315,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2007_2021_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.10335579363784377,0.006445971076216198,0.09341524061295631,0.1142779918332637,weighted share of the G3 lineage
+monthly_2007_2021_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-1.862405250892396,2.9179752372896814,-6.578391150428109,2.6084726751079215,gap difference
+monthly_2007_2021_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.49920337321104213,1.122696858233872,-2.4867567192601685,0.624943918340957,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2007_2021_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,-0.02499447989708914,0.3659550123128408,-0.6374247168532243,0.6113818917655311,how much non-identifiers move the G3 gap
+monthly_2007_2021_dedup,all,cores_one,employed,rho G2 -> G3 lineage,6.592192874804498,69.9669879484493,-32.50183384753213,35.5799934093526,same frame
+monthly_2007_2021_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,6.548321883579381,72.27051808026764,-36.224584389888726,37.63227799152353,same frame
+monthly_2022_2026_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.14666387047275078,0.020724361797756944,0.11481423460768037,0.18130298042082219,weighted share of the G3 lineage
+monthly_2022_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",9.405685859222162,7.893628802041905,-3.451650267380015,23.534751100526066,gap difference
+monthly_2022_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",1.2466686027142628,1.2113752658350863,-0.5443841953804329,3.0284349508251927,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2026_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.09320629183829804,0.016555861506473885,0.06656425451840595,0.11829576782958254,weighted share of the G3 lineage
+monthly_2022_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",6.377534680022023,8.848192248032442,-6.74233119675881,23.056261004099614,gap difference
+monthly_2022_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.8453048897555163,1.3546164448213074,-1.123699223139493,3.031545412664295,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2026_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,1.3794742925643506,1.1991816011092558,-0.555724841858864,3.618702421753686,how much non-identifiers move the G3 gap
+monthly_2022_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,0.800463683460516,0.3143804678017472,0.3363398571664211,1.3422350169983048,same frame
+monthly_2022_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,0.9795693628505728,0.33220614797245407,0.5036246909140524,1.6163180215139497,same frame
+monthly_2022_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1721977342416511,0.019549589060466898,0.1424145862156241,0.2029920580425754,weighted share of the G3 lineage
+monthly_2022_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",7.582735066484045,6.1228000591796246,-2.3979632651878533,17.647023470984536,gap difference
+monthly_2022_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.8870781741395363,0.7435401285825354,-0.3775111083635754,2.0707519119679887,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.11141944217939367,0.01650820682768645,0.08465111891193912,0.1386088579204027,weighted share of the G3 lineage
+monthly_2022_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",1.1185593172089536,6.878170983791288,-9.163119358407025,12.904436706035295,gap difference
+monthly_2022_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.13085641896711686,0.9192560792543341,-1.3256687773638378,1.3895833060130305,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.3057297978032576,1.0800411511836985,-0.41990233377888253,3.231661201317839,how much non-identifiers move the G3 gap
+monthly_2022_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.6841773650539495,0.19201639019397101,0.3533796378896744,1.014184880612119,same frame
+monthly_2022_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.8075298529033156,0.20079836259811287,0.48259245313891164,1.1441597073485434,same frame
+monthly_2022_2026_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.14666387047275078,0.020724361797756944,0.11481423460768037,0.18130298042082219,weighted share of the G3 lineage
+monthly_2022_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.633048921494197,0.35935237844388035,0.07913096337571984,1.254053212954799,gap difference
+monthly_2022_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",1.8514395544592044,1.32160826092197,0.2821500822508592,4.190896126287608,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2026_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.09320629183829804,0.016555861506473885,0.06656425451840595,0.11829576782958254,weighted share of the G3 lineage
+monthly_2022_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.475062532186179,0.4299964044721977,-0.10403361161311227,1.301886805112934,gap difference
+monthly_2022_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",1.3893864013779909,1.4878572857604442,-0.4428824405394112,3.954269570021068,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2026_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.09284540502494565,0.05528662833169018,0.009286139481519042,0.1964664245236086,how much non-identifiers move the G3 gap
+monthly_2022_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,0.7003267129028736,0.32644000797043604,0.21048759565696107,1.2438148796318365,same frame
+monthly_2022_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,0.9613788420620148,0.35762104268180317,0.4369419554897392,1.6124165097896537,same frame
+monthly_2022_2026_dedup,all,cores_one,employed,G3anc: share not Mexican,0.15083349640975705,0.014274692626636082,0.12698493843237066,0.1739797375825085,weighted share of the G3 lineage
+monthly_2022_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",1.7735857983507626,4.584037081147863,-5.668268643217025,9.327131043463172,gap difference
+monthly_2022_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.4407272605630409,26.66638598582561,-2.5741789269081736,2.274179794174063,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2026_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.09557794162177985,0.011120992197656608,0.076948753173657,0.11343142281662157,weighted share of the G3 lineage
+monthly_2022_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-2.7968295194215402,5.24596875135422,-11.719954977543017,5.928212248181047,gap difference
+monthly_2022_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.6949982422630576,29.16152744238104,-5.270940430248562,1.19699897344311,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2026_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.2675161471479943,0.6894638740981534,-0.8234806310072301,1.3997657519855915,how much non-identifiers move the G3 gap
+monthly_2022_2026_dedup,all,cores_one,employed,rho G2 -> G3 lineage,-1.5506843967538098,1.1212045937954047,-3.7865799030990983,-0.4254973468060967,same frame
+monthly_2022_2026_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,-1.661108998947338,1.237217781475085,-4.087620066533574,-0.4792270332579987,same frame
+monthly_1994_2002_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.1577081015895855,0.015416272855783167,0.13289280470547835,0.18364548349190302,weighted share of the G3 lineage
+monthly_1994_2002_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",3.254870440224572,3.5107742176785948,-2.3234339893710096,9.140905991303436,gap difference
+monthly_1994_2002_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.2780061469955475,0.2989907210428734,-0.22806498104182987,0.7455853715609186,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2002_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.12638255588625624,0.01389328777979784,0.10304482113320329,0.14905802176444813,weighted share of the G3 lineage
+monthly_1994_2002_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",3.8453990721018663,3.9184843902633086,-2.436814051920883,10.330241025641293,gap difference
+monthly_1994_2002_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.32844458768120244,0.33530324593058636,-0.2277973161628361,0.8412124261058307,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2002_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.513319438047878,0.5533004948207821,-0.3646810393350264,1.423858967898518,how much non-identifiers move the G3 gap
+monthly_1994_2002_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.0333180572651903,0.15922630076669098,0.8147467982324387,1.320734886140524,same frame
+monthly_1994_2002_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.0807000788020813,0.1653992250858007,0.836910984248745,1.370171451633967,same frame
+monthly_1994_2002_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.16794097465920524,0.014141749892302428,0.14575623335402588,0.19171423810474558,weighted share of the G3 lineage
+monthly_1994_2002_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",4.831058125217883,2.891378741228081,0.14725886616615072,9.362618199484583,gap difference
+monthly_1994_2002_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.39775334401720197,0.23301525555011893,0.012895389704401322,0.752230494842819,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2002_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.1333660816051209,0.012751333390618689,0.11338178534421581,0.15467726066419385,weighted share of the G3 lineage
+monthly_1994_2002_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.956839296812863,3.360899654002348,0.4394276441982649,11.448310736143636,gap difference
+monthly_1994_2002_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.49044178080004686,0.27418073159744444,0.03931120121896089,0.9307698632530854,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2002_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,0.8113326101843583,0.4890094076216731,0.026406543586459472,1.6030972250377338,how much non-identifiers move the G3 gap
+monthly_1994_2002_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.880874109317578,0.10024056262085641,0.7186500205906625,1.0446341824719143,same frame
+monthly_1994_2002_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.9439276092295923,0.10402113271447719,0.7759503707097825,1.1138110431706665,same frame
+monthly_1994_2002_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.1577081015895855,0.015416272855783167,0.13289280470547835,0.18364548349190302,weighted share of the G3 lineage
+monthly_1994_2002_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.42436866524588623,0.25120521118497097,0.04429949244339713,0.8513855674671855,gap difference
+monthly_1994_2002_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.5355877957054139,0.3032861591582453,0.054840543567007786,1.044047345050777,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2002_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.12638255588625624,0.01389328777979784,0.10304482113320329,0.14905802176444813,weighted share of the G3 lineage
+monthly_1994_2002_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.612853514742568,0.24207301928131375,0.22637824834608714,1.008220686248639,gap difference
+monthly_1994_2002_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.7734710169072014,0.28640240669987027,0.3151333084578757,1.23771550631338,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2002_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.06692637657003786,0.04013152297925941,0.006585948174655259,0.13646851760221465,how much non-identifiers move the G3 gap
+monthly_1994_2002_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,0.7787985391160723,0.13072554574778592,0.5813251384143163,1.0047041929787897,same frame
+monthly_1994_2002_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,0.8506499963785716,0.14327436589565312,0.6349159014415177,1.0943267744035357,same frame
+monthly_1994_2002_dedup,all,cores_one,employed,G3anc: share not Mexican,0.17947615514589227,0.011690868026902567,0.1613700142885412,0.20000876243719956,weighted share of the G3 lineage
+monthly_1994_2002_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.9509089364309276,3.31593249184384,-4.28891913731649,6.762967673589089,gap difference
+monthly_1994_2002_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.1472024687722998,0.5435260055869421,-0.8328355091152059,0.9748515214427758,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2002_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.14494621912435993,0.010752924804581286,0.12724755109036306,0.16237489769185506,weighted share of the G3 lineage
+monthly_1994_2002_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",3.4063042780073993,3.5505030913079954,-1.8737001050705295,9.716008558956714,gap difference
+monthly_1994_2002_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",0.5273022262198053,0.5630219943505729,-0.3317120176761366,1.4664233423007649,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_1994_2002_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.17066547980447666,0.5964201755681485,-0.7407909888383084,1.2588275347197797,how much non-identifiers move the G3 gap
+monthly_1994_2002_dedup,all,cores_one,employed,rho G2 -> G3 lineage,0.8215654729721459,0.2024219955935163,0.49288865384718356,1.169874614884667,same frame
+monthly_1994_2002_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,0.8438596830478531,0.22440007492913347,0.5073141281711777,1.2010076740011295,same frame
+monthly_2003_2026_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.15068956339824624,0.009534365898714548,0.13535387741833832,0.16724356254319325,weighted share of the G3 lineage
+monthly_2003_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.886330583596201,2.9973561442845007,1.306863282281272,10.871870109765327,gap difference
+monthly_2003_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.7151631808502632,0.3417681020891694,0.1701214763503981,1.243252662526622,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2003_2026_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.09326419183955934,0.007385291469970892,0.08207290195961277,0.1056596236996958,weighted share of the G3 lineage
+monthly_2003_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",5.416704399968701,3.583768214305659,-0.11473958352381093,11.829509883491122,gap difference
+monthly_2003_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.6581056726923671,0.4166442671813642,-0.013513535986025428,1.3603386885599804,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2003_2026_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.887008585659852,0.45721653557217234,0.19884066579803308,1.6602099030914104,how much non-identifiers move the G3 gap
+monthly_2003_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,0.9646356706368522,0.1364105466168588,0.75764803499132,1.2109268239364257,same frame
+monthly_2003_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.0811484769525364,0.14483572949609216,0.8764174906852005,1.3544559763953756,same frame
+monthly_2003_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.16107482337651952,0.008804091312757526,0.14637900537156784,0.1753062858898757,weighted share of the G3 lineage
+monthly_2003_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.920243703653181,2.5207298701697294,2.8911209905015185,11.649127493845576,gap difference
+monthly_2003_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.700347464105836,0.2369433629363194,0.31284576146425963,1.1278972168147525,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2003_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.10142153298928526,0.006838351580192775,0.09016969576775327,0.11240469644575944,weighted share of the G3 lineage
+monthly_2003_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",6.011586688686754,2.9685381889122753,1.5552782954676054,11.127134658013345,gap difference
+monthly_2003_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.6083889055022171,0.2848566235855314,0.1622133037363089,1.1013989473877355,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2003_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.1146770322884052,0.4141051244632318,0.45685470819602064,1.893428149818014,how much non-identifiers move the G3 gap
+monthly_2003_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.8549450570788315,0.08374724587051009,0.7235544654521723,1.002228130595348,same frame
+monthly_2003_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.9636531761507616,0.0904861006806838,0.8321846926693494,1.1221447010230081,same frame
+monthly_2003_2026_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.15068956339824624,0.009534365898714548,0.13535387741833832,0.16724356254319325,weighted share of the G3 lineage
+monthly_2003_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.3865739914112485,0.16398635903089034,0.12342051363725508,0.6546001024337734,gap difference
+monthly_2003_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.7850350544384237,0.3097711805234635,0.26599722359441974,1.267870326251957,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2003_2026_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.09326419183955934,0.007385291469970892,0.08207290195961277,0.1056596236996958,weighted share of the G3 lineage
+monthly_2003_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.384039920363934,0.19699775315669749,0.0677100740757402,0.7244900114832952,gap difference
+monthly_2003_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.7798889901744597,0.3842202362911365,0.13594607776661824,1.4395222700574741,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2003_2026_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.05825266598687939,0.025328729573363403,0.01865527852759623,0.10022563178440488,how much non-identifiers move the G3 gap
+monthly_2003_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,1.0733983255171864,0.15230474986085918,0.846486935745658,1.3603034809790693,same frame
+monthly_2003_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.2174142833780066,0.1646875236733472,0.9720334678876897,1.521163518548118,same frame
+monthly_2003_2026_dedup,all,cores_one,employed,G3anc: share not Mexican,0.15583481862211943,0.006663291188903558,0.14494809802309985,0.16642162980715236,weighted share of the G3 lineage
+monthly_2003_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",0.34028283354404776,1.9852169366911268,-2.7618667300406585,3.4303682094730403,gap difference
+monthly_2003_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.09271220068154062,0.5951457564534882,-0.9321579788790139,0.8694353822096725,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2003_2026_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.10167593216570647,0.005318659607222707,0.09354066111584619,0.11104425632156108,weighted share of the G3 lineage
+monthly_2003_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-2.1117017879391238,2.3686652458434185,-6.0289849477276185,1.8561563368241625,gap difference
+monthly_2003_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.5753464490227873,0.8094390617194571,-2.0983758791625613,0.4478671556340541,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2003_2026_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.053027913645609104,0.3099195463242451,-0.44206496811804163,0.5404753243357165,how much non-identifiers move the G3 gap
+monthly_2003_2026_dedup,all,cores_one,employed,rho G2 -> G3 lineage,59.417752512852836,1998.0816386025394,-74.5546261264634,86.15235868720525,same frame
+monthly_2003_2026_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,60.28879226113678,2046.8002319260283,-79.63852360905148,77.91498696645883,same frame
+monthly_2022_2025_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.1432272633775813,0.021715950768616994,0.1105227498884882,0.17903757087918729,weighted share of the G3 lineage
+monthly_2022_2025_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",13.794413424337616,8.552464272664828,-0.027671712869936665,27.641913713417747,gap difference
+monthly_2022_2025_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",1.4372093501297214,0.950775010983507,-0.0050977750991601165,2.992569987070002,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2025_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.08202521806703413,0.015117498590650626,0.057444952288153016,0.10739245043935991,weighted share of the G3 lineage
+monthly_2022_2025_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",12.451535712551728,10.137240739655189,-2.683635963921249,29.849514624075287,gap difference
+monthly_2022_2025_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",1.2972978987261863,1.1405660902143417,-0.3455640893778657,3.2121248554361697,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2025_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,1.9757360846668428,1.3313494753833441,-0.0034802794769700197,4.2811652046181745,how much non-identifiers move the G3 gap
+monthly_2022_2025_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.0741451043688004,0.37041772808562035,0.5930523915600793,1.7963667883562406,same frame
+monthly_2022_2025_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.3525679115660825,0.39146633627747535,0.858674708018634,2.1074434563496416,same frame
+monthly_2022_2025_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1692290662148437,0.01992742751753865,0.13997063605850965,0.20233749339003895,weighted share of the G3 lineage
+monthly_2022_2025_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",9.712373348990429,6.481872358007302,-1.3195852714207337,20.49494598691124,gap difference
+monthly_2022_2025_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",1.0241465115058161,0.6910708061024722,-0.15417373076023586,2.1160112156451496,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2025_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.1027201358230455,0.015371956011704628,0.07865396442331613,0.12910195344410574,weighted share of the G3 lineage
+monthly_2022_2025_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",3.0342165157555545,7.225703302872234,-8.358130697358986,14.883151383441296,gap difference
+monthly_2022_2025_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.31995086557163666,0.8485978578275647,-1.0462987541691418,1.4577628969238325,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2025_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.6436158725795922,1.1680739329564382,-0.22067782238351513,3.6916634638453245,how much non-identifiers move the G3 gap
+monthly_2022_2025_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.7416796901858433,0.19674919020909176,0.45547756211851803,1.0828501228666185,same frame
+monthly_2022_2025_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.8971736649424413,0.202223045965979,0.5817606089009185,1.2727972997100692,same frame
+monthly_2022_2025_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.1432272633775813,0.021715950768616994,0.1105227498884882,0.17903757087918729,weighted share of the G3 lineage
+monthly_2022_2025_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.8633560824735476,0.3991064698808946,0.2037317906257518,1.5112650179597318,gap difference
+monthly_2022_2025_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",1.8902077163051947,0.9233880313101794,0.5294212413642692,3.4331882692589213,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2025_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.08202521806703413,0.015117498590650626,0.057444952288153016,0.10739245043935991,weighted share of the G3 lineage
+monthly_2022_2025_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.7591973683912876,0.5174668305315938,-0.048133971803651546,1.7013578613519853,gap difference
+monthly_2022_2025_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",1.6621655340868902,1.1641561574275963,-0.09509176413902133,3.8199437193110937,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2025_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.12365612901307266,0.06290815592939436,0.02877582010020801,0.23188575891042454,how much non-identifiers move the G3 gap
+monthly_2022_2025_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,0.9816980491405134,0.37146025807259064,0.46122120429933455,1.6608642463662828,same frame
+monthly_2022_2025_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.346136654184795,0.40605431468318426,0.8052819323895435,2.11821991706683,same frame
+monthly_2022_2025_dedup,all,cores_one,employed,G3anc: share not Mexican,0.1402952399159147,0.013735372088238551,0.11904889094430512,0.16377411837945954,weighted share of the G3 lineage
+monthly_2022_2025_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",-1.3904126554672098,4.823756199425559,-9.273806921970571,6.790336916002482,gap difference
+monthly_2022_2025_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",-0.29975120239288544,1.6045097441304024,-3.2265958334252414,1.2528841500945647,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2025_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.08906414157507601,0.011228671497928779,0.07078947380239241,0.10735835265106136,weighted share of the G3 lineage
+monthly_2022_2025_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-4.319364074569877,6.073013567922512,-14.549369299858979,5.46223422448935,gap difference
+monthly_2022_2025_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.9311872772690588,2.3185460203412096,-4.780628522886089,0.9917198318516728,c = 1 - gap(non-identifiers)/gap(identifiers)
+monthly_2022_2025_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,-0.1950682770808676,0.6763318425143277,-1.2607464087763236,0.9192807733981365,how much non-identifiers move the G3 gap
+monthly_2022_2025_dedup,all,cores_one,employed,rho G2 -> G3 lineage,-2.48873715357863,5.2663237506405896,-8.80802160328501,-0.8774156891994891,same frame
+monthly_2022_2025_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,-2.3883003656523196,4.565422756678075,-8.904368546318507,-0.7978144720514226,same frame
+asec_1994_2026_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.14311050911445986,0.009847536716227711,0.12719903646585004,0.15868826620807097,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.20997320538847,2.865381219028773,0.5786127807934334,9.682723623550087,gap difference
+asec_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.5634638251762712,0.2981909622085774,0.062188608916105954,1.0254762602359162,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.08643880758969635,0.0076242048042415396,0.07386909704838504,0.09945867835023119,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",5.116306517131307,3.535426563977516,-0.5354288187624825,11.022302037584659,gap difference
+asec_1994_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.5533336789401277,0.37444160268207255,-0.0551544033573415,1.173668748062706,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.7456019178958453,0.4124365759477752,0.08788329085870912,1.4254188102411707,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.0105666653561216,0.12075676057324786,0.8215588911588981,1.220890935858102,same frame
+asec_1994_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.09920381749091,0.12941467932484557,0.9020479428875149,1.317962347703355,same frame
+asec_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.15658749838517835,0.0087715927853117,0.14278863976279466,0.17141509019159593,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",4.769243657628927,2.4240903638652234,1.101911028266836,8.76668058953115,gap difference
+asec_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.5041735542962609,0.247298882578846,0.1264418055727383,0.9159388076099173,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.09881422657665742,0.007085480233492237,0.08724460967137207,0.1106492920956998,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",4.470901981439876,2.9439747514027035,-0.03904077110915841,9.206438012733333,gap difference
+asec_1994_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.47263480432312177,0.30674999119927554,-0.003965528289379467,0.957767079726855,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,0.7468039335374979,0.3802890992973856,0.16980293430427837,1.3733876176059343,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.8869593901552696,0.0860801446598918,0.7404145896143345,1.0332517105360148,same frame
+asec_1994_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.962984383713283,0.0900154850104147,0.8147849348304023,1.1079963502124845,same frame
+asec_1994_2026_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.14311050911445986,0.009847536716227711,0.12719903646585004,0.15868826620807097,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.3033948679422309,0.16907958835309594,0.025805504515693415,0.5795978158836561,gap difference
+asec_1994_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.5577640525163768,0.29947831865203284,0.04569635843274807,1.0207724095580082,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.08643880758969635,0.0076242048042415396,0.07386909704838504,0.09945867835023119,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.39372016507641305,0.18441710639641848,0.0753881893308443,0.6954176066177504,gap difference
+asec_1994_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.7238189502673176,0.32469566579964937,0.1464496281356171,1.2471976725455078,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.04341899401393334,0.024167239023214916,0.0036151959861189056,0.08436442563488232,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,1.1381125740628044,0.16414747826291493,0.8733092020566121,1.4214317240900176,same frame
+asec_1994_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.2368394455346665,0.1780145610471809,0.9525251393469305,1.5452177948168995,same frame
+asec_1994_2026_dedup,all,cores_one,employed,G3anc: share not Mexican,0.16151401069918184,0.007006893070790264,0.14995358232048517,0.17376346682802715,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",1.7760674696822853,2.176502682981574,-1.605880544889468,5.32828913376426,gap difference
+asec_1994_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.44792756566811254,0.6060657438746611,-0.5325554791694423,1.3040011616408953,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.10821488220987097,0.005691129144317233,0.09896104965736667,0.11761589137290449,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-1.7519374325537633,2.5733109088401385,-5.911552341662273,2.49577796889866,gap difference
+asec_1994_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.4418419247929979,0.8324521153255746,-2.024240692341302,0.6138894859328609,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.2868597803007189,0.35132839127682647,-0.26427075967526853,0.8388649478384831,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_one,employed,rho G2 -> G3 lineage,2.3268736815375086,0.9721925310771556,1.3095656264706017,4.175819237154835,same frame
+asec_1994_2026_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,2.5083437687344494,1.047971791935401,1.3992495298559622,4.726213230629136,same frame
+asec_1994_2026_dedup,all,cores_both,ba_plus,G3anc: share not Mexican,0.15774116983963982,0.014252894140858542,0.13501541934544056,0.18358313780414814,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_both,ba_plus,"G3anc: advantage, not Mexican minus identifiers",5.869630872160778,4.09832418966498,-0.18193968371477465,12.569149275087122,gap difference
+asec_1994_2026_dedup,all,cores_both,ba_plus,"G3anc: closing share, not Mexican",0.567973529444703,0.38527477145551003,-0.01917114225132671,1.1794595561369152,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_both,ba_plus,G3anc: share not Hispanic,0.10130463795032031,0.011518309385808523,0.08310978851010709,0.1220988423343218,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_both,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",3.015040190985183,4.521066279392741,-3.6309567907368523,10.974113672894253,gap difference
+asec_1994_2026_dedup,all,cores_both,ba_plus,"G3anc: closing share, not Hispanic",0.2917496953366472,0.4367375330980236,-0.3860729500296064,1.0429326516249966,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_both,ba_plus,G3anc: lineage minus identifiers,0.9258824403015122,0.6503303430996603,-0.024267712214189614,2.043574575475469,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_both,ba_plus,rho G2 -> G3 lineage,0.8496983943631038,0.12731671128148644,0.6512278801768089,1.0574349437491042,same frame
+asec_1994_2026_dedup,all,cores_both,ba_plus,rho G2 -> G3 identifiers,0.9333168748416564,0.13578294196800636,0.7257578254790831,1.1579512368800178,same frame
+asec_1994_2026_dedup,all,cores_both,ba_plus_22plus,G3anc: share not Mexican,0.1718028411397036,0.01215740783845489,0.15235561051465074,0.1925127404516094,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_both,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.8705211963064166,3.456182570354015,1.5924136683774335,12.682170346272416,gap difference
+asec_1994_2026_dedup,all,cores_both,ba_plus_22plus,"G3anc: closing share, not Mexican",0.6563301744978806,0.32192143441565935,0.1641579830304659,1.1803528109497439,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_both,ba_plus_22plus,G3anc: share not Hispanic,0.11226164925329347,0.010165306641471571,0.09622921874129173,0.12873817302799975,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_both,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.133168160942121,3.967733457483417,-0.8826634661750586,12.23767166840796,gap difference
+asec_1994_2026_dedup,all,cores_both,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.4903635486357725,0.3758884249823872,-0.09265992085563919,1.121273205423572,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_both,ba_plus_22plus,G3anc: lineage minus identifiers,1.1803750616360098,0.5993219684138303,0.2878055941353876,2.214778553746737,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_both,ba_plus_22plus,rho G2 -> G3 lineage,0.7616674597481687,0.09836741267337747,0.5924716899561021,0.9236960838507153,same frame
+asec_1994_2026_dedup,all,cores_both,ba_plus_22plus,rho G2 -> G3 identifiers,0.8584677595359219,0.09989288916363624,0.7035982421208343,1.016711797130145,same frame
+asec_1994_2026_dedup,all,cores_both,educ_years,G3anc: share not Mexican,0.15774116983963982,0.014252894140858542,0.13501541934544056,0.18358313780414814,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_both,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.2015142613220533,0.22466325980909702,-0.13764530537764336,0.5769284167110875,gap difference
+asec_1994_2026_dedup,all,cores_both,educ_years,"G3anc: closing share, not Mexican",0.4244216109336152,0.47683810493510154,-0.3152083198530903,1.2058598735896977,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_both,educ_years,G3anc: share not Hispanic,0.10130463795032031,0.011518309385808523,0.08310978851010709,0.1220988423343218,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_both,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.19412841046593066,0.23106358522260262,-0.15560954849316672,0.5919317218198574,gap difference
+asec_1994_2026_dedup,all,cores_both,educ_years,"G3anc: closing share, not Hispanic",0.40886581504152597,0.4927613510856463,-0.40918408504846504,1.1908606989843196,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_both,educ_years,G3anc: lineage minus identifiers,0.031787095320312986,0.035612815793285575,-0.021002558341577514,0.09107693606009025,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_both,educ_years,rho G2 -> G3 lineage,0.8511698949164664,0.1574423117918657,0.5970564124404469,1.1122024123966439,same frame
+asec_1994_2026_dedup,all,cores_both,educ_years,rho G2 -> G3 identifiers,0.9122434650065775,0.17227170993052404,0.632109729754084,1.2028937446800299,same frame
+asec_1994_2026_dedup,all,cores_both,employed,G3anc: share not Mexican,0.1854859531310728,0.009259625556907678,0.1700283430243739,0.20014764717125016,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_both,employed,"G3anc: advantage, not Mexican minus identifiers",0.6991435529689172,2.586438171863162,-3.6421660807186305,4.7917167703407895,gap difference
+asec_1994_2026_dedup,all,cores_both,employed,"G3anc: closing share, not Mexican",0.1846779684940959,1.0158535282630503,-1.5408007347097006,1.276964360193212,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_both,employed,G3anc: share not Hispanic,0.12735102886504546,0.007600461757548146,0.11514254671088779,0.13944864838319787,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_both,employed,"G3anc: advantage, not Hispanic minus identifiers",-1.3922187404611481,2.9379833733917566,-6.473598665633677,3.663515835373588,gap difference
+asec_1994_2026_dedup,all,cores_both,employed,"G3anc: closing share, not Hispanic",-0.36775298520017197,1.221340345198383,-2.6575236870814196,0.8532664248135622,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_both,employed,G3anc: lineage minus identifiers,0.12968130829787983,0.4785381704183987,-0.6799417918330253,0.8843323553184993,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_both,employed,rho G2 -> G3 lineage,1.6679639960587056,0.6661994983900281,0.8382185814216274,2.9016155745394285,same frame
+asec_1994_2026_dedup,all,cores_both,employed,rho G2 -> G3 identifiers,1.7271270241707113,0.7055877838800043,0.7450071119335447,2.9881953518867554,same frame
+asec_1994_2026_dedup,all,cores_single,ba_plus,G3anc: share not Mexican,0.12616714310267046,0.01285775905637048,0.10709930207957491,0.14891534125490832,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_single,ba_plus,"G3anc: advantage, not Mexican minus identifiers",3.3714694336834325,3.7255128375017805,-2.6327567791200037,9.47002952932678,gap difference
+asec_1994_2026_dedup,all,cores_single,ba_plus,"G3anc: closing share, not Mexican",0.40142478737677245,0.4382357128447647,-0.321077611891365,1.0780470530599342,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_single,ba_plus,G3anc: share not Hispanic,0.06922309808754576,0.009821389084834101,0.05338788178780216,0.08667184509433025,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_single,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",7.310768043726514,5.646306187328711,-2.0044716119660793,16.61990734921312,gap difference
+asec_1994_2026_dedup,all,cores_single,ba_plus,"G3anc: closing share, not Hispanic",0.8704582868804314,0.657366120111713,-0.25804346233048114,1.918179593029464,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_single,ba_plus,G3anc: lineage minus identifiers,0.42536866650581917,0.46651994389200047,-0.30918784905708024,1.2015248350323569,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_single,ba_plus,rho G2 -> G3 lineage,1.6359397850297392,0.38291820546114863,1.140625196720705,2.3687109924032947,same frame
+asec_1994_2026_dedup,all,cores_single,ba_plus,rho G2 -> G3 identifiers,1.7232147871077987,0.41492180471328144,1.1835670106682996,2.5312560838829197,same frame
+asec_1994_2026_dedup,all,cores_single,ba_plus_22plus,G3anc: share not Mexican,0.1363945808468695,0.0123102400390661,0.11675666053550993,0.15783570099716723,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_single,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",0.6109187501685911,2.8684683773267023,-4.137058782266529,5.58987940225777,gap difference
+asec_1994_2026_dedup,all,cores_single,ba_plus_22plus,"G3anc: closing share, not Mexican",0.07522547751047881,0.36122259677554586,-0.5516335193486746,0.6295353281981394,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_single,ba_plus_22plus,G3anc: share not Hispanic,0.0809675896922313,0.009806165376026289,0.06584757777922678,0.09839464671058169,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_single,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",2.6838432106203136,4.042834763209001,-3.69203012745216,9.45909159841237,gap difference
+asec_1994_2026_dedup,all,cores_single,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.3304750214761858,0.4925296504940354,-0.5083176178249528,1.1430533106779062,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_single,ba_plus_22plus,G3anc: lineage minus identifiers,0.0833260068607391,0.3883997217565518,-0.5583465854162349,0.751774727514279,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_single,ba_plus_22plus,rho G2 -> G3 lineage,1.410609592382733,0.23348314095715597,1.0687239517498164,1.8212297273297657,same frame
+asec_1994_2026_dedup,all,cores_single,ba_plus_22plus,rho G2 -> G3 identifiers,1.4252329779681578,0.25253696477920107,1.0415515702292166,1.8765437217279435,same frame
+asec_1994_2026_dedup,all,cores_single,educ_years,G3anc: share not Mexican,0.12616714310267046,0.01285775905637048,0.10709930207957491,0.14891534125490832,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_single,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.35596177572031706,0.24602740851919813,-0.0649520272715093,0.7645874693257046,gap difference
+asec_1994_2026_dedup,all,cores_single,educ_years,"G3anc: closing share, not Mexican",0.5609522130672329,0.37401002771636466,-0.10571467820588332,1.112098969472029,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_single,educ_years,G3anc: share not Hispanic,0.06922309808754576,0.009821389084834101,0.05338788178780216,0.08667184509433025,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_single,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.5830056953871292,0.31044832517870496,0.08125711583166233,1.0990133343018273,gap difference
+asec_1994_2026_dedup,all,cores_single,educ_years,"G3anc: closing share, not Hispanic",0.9187456557559388,0.4691719110037875,0.15635417039577634,1.6919850698470198,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_single,educ_years,G3anc: lineage minus identifiers,0.04491068029638612,0.031435950678373,-0.00778067658544845,0.09337520256245344,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_single,educ_years,rho G2 -> G3 lineage,1.7901993215426626,0.4707354459285842,1.1934195341272094,2.6635604435582185,same frame
+asec_1994_2026_dedup,all,cores_single,educ_years,rho G2 -> G3 identifiers,1.926548349977672,0.5094572476982288,1.2875078291935196,2.9417046167231935,same frame
+asec_1994_2026_dedup,all,cores_single,employed,G3anc: share not Mexican,0.12120125649663933,0.00995229357679995,0.10608906245385336,0.13866634209293413,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_single,employed,"G3anc: advantage, not Mexican minus identifiers",3.4664134733199066,4.105214635217886,-3.306017329994633,10.22430838212553,gap difference
+asec_1994_2026_dedup,all,cores_single,employed,"G3anc: closing share, not Mexican",0.8447647672094728,33.54233378830563,-1.042676672343687,2.742894699253101,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_single,employed,G3anc: share not Hispanic,0.07603431200010853,0.008056240881736301,0.06313416157829076,0.0901662069774291,weighted share of the G3 lineage
+asec_1994_2026_dedup,all,cores_single,employed,"G3anc: advantage, not Hispanic minus identifiers",-4.005581541633763,5.2597098830514355,-13.087573216083616,4.552240516706656,gap difference
+asec_1994_2026_dedup,all,cores_single,employed,"G3anc: closing share, not Hispanic",-0.9761599949344897,3.1276089638590014,-5.083197373709258,1.02373561747921,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2026_dedup,all,cores_single,employed,G3anc: lineage minus identifiers,0.42013366850328593,0.4958871579753163,-0.3757679695646337,1.23972383361801,how much non-identifiers move the G3 gap
+asec_1994_2026_dedup,all,cores_single,employed,rho G2 -> G3 lineage,15.709437374945079,298.7757837368598,-27.466465985241687,54.17686115814269,same frame
+asec_1994_2026_dedup,all,cores_single,employed,rho G2 -> G3 identifiers,17.50133913041271,338.2797728368756,-30.50282249177308,61.380425424006994,same frame
+asec_1994_2006_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.15478531923656427,0.017280201235810522,0.1273608595301309,0.18351160043970396,weighted share of the G3 lineage
+asec_1994_2006_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",8.935823665224982,4.415765054660437,1.7060390397068477,16.262720193215102,gap difference
+asec_1994_2006_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.9560156753287287,0.4605564283235221,0.21579500913798697,1.791982587318178,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2006_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.11220474660052793,0.015301225717530112,0.08816568248029334,0.13763254971336403,weighted share of the G3 lineage
+asec_1994_2006_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",9.392563897457238,5.272172849787325,1.3400314664560304,18.184007019073746,gap difference
+asec_1994_2006_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",1.004880876559882,0.5535702011215817,0.1502920971693344,1.9117660063902577,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2006_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,1.3831343186634983,0.6877229215929186,0.25896346971803247,2.5398519258329544,how much non-identifiers move the G3 gap
+asec_1994_2006_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,0.8912425932924629,0.18993976746476254,0.604844396536481,1.236799476759739,same frame
+asec_1994_2006_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.0460313789750177,0.20634140340226723,0.7387149192840744,1.4137519853432428,same frame
+asec_1994_2006_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1713943579514654,0.016025059137705015,0.14692296509892627,0.19844077527970785,weighted share of the G3 lineage
+asec_1994_2006_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",7.420751223203692,3.662626310100844,1.3444098902680075,13.358106620859402,gap difference
+asec_1994_2006_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.7751747081870466,0.3789766018669139,0.15861936614777425,1.403186810751317,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2006_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.1258392490521976,0.014560303952985585,0.10149577306304669,0.1487998943529709,weighted share of the G3 lineage
+asec_1994_2006_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",8.150463426066294,4.492442176478705,1.456510484554566,15.743674406209122,gap difference
+asec_1994_2006_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.851400743382219,0.4637295793843914,0.14862580287408209,1.6646715560069534,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2006_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.2718748914185483,0.6246696086784834,0.21908270949747694,2.2527166448111386,how much non-identifiers move the G3 gap
+asec_1994_2006_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.7502189795933982,0.12181296188548793,0.5512941623081243,0.9488159571750213,same frame
+asec_1994_2006_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.8651653411876608,0.12596632380810818,0.6549131359670183,1.0633273813077895,same frame
+asec_1994_2006_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.15478531923656427,0.017280201235810522,0.1273608595301309,0.18351160043970396,weighted share of the G3 lineage
+asec_1994_2006_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.5651074893652659,0.29304188867502257,0.04283565353475557,1.04941399584569,gap difference
+asec_1994_2006_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.8490767982680053,0.4314749646245648,0.06849251874907936,1.56010169016608,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2006_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.11220474660052793,0.015301225717530112,0.08816568248029334,0.13763254971336403,weighted share of the G3 lineage
+asec_1994_2006_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.8492142686537942,0.2870141444140023,0.34864090437213546,1.2730597177385512,gap difference
+asec_1994_2006_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",1.2759486395799804,0.4164896348142244,0.6233212204062514,1.947556731902179,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2006_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.0874703431443784,0.046206992320847545,0.007014124848189952,0.16706568561280202,how much non-identifiers move the G3 gap
+asec_1994_2006_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,0.8062036851487466,0.19120850410833903,0.5364481775446474,1.1384755854041606,same frame
+asec_1994_2006_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,0.9281908130872378,0.21449460390687247,0.6351077151927829,1.3142119158245151,same frame
+asec_1994_2006_dedup,all,cores_one,employed,G3anc: share not Mexican,0.19170115377466215,0.012894731113201375,0.17072746923008233,0.21305812864347637,weighted share of the G3 lineage
+asec_1994_2006_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",-2.7604297633148427,3.561424907403536,-8.44476973417615,3.319135806536709,gap difference
+asec_1994_2006_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",-0.7928611457536725,3.809091753005027,-4.6003254942085565,0.8613147661195051,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2006_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.14607837299098306,0.012007133466873642,0.12546359634542684,0.1659928324038872,weighted share of the G3 lineage
+asec_1994_2006_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-2.9583388108656905,4.16841056989103,-9.660810385505938,3.4652303892679597,gap difference
+asec_1994_2006_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.8497053358437525,4.002300527115194,-5.198401913012982,1.150738096634054,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2006_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,-0.5291775705413837,0.6841231230451075,-1.5985510521246704,0.6509311198299065,how much non-identifiers move the G3 gap
+asec_1994_2006_dedup,all,cores_one,employed,rho G2 -> G3 lineage,1.0355257169118246,0.4699697324205784,0.48570060406285054,1.8815741938365997,same frame
+asec_1994_2006_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,0.8988997845178631,0.48196642875155693,0.24546233541071177,1.7569823231510944,same frame
+asec_2007_2021_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.143613114001159,0.014250650860441477,0.12344214283236117,0.16867444429754683,weighted share of the G3 lineage
+asec_2007_2021_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",-0.18087296781399864,3.4492139874881973,-5.583503234862994,5.741008922124218,gap difference
+asec_2007_2021_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",-0.020471539043994236,0.41200950930393543,-0.7714458709896513,0.5885161068189237,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2007_2021_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.07474800629072255,0.010479304809414256,0.05792602054979431,0.09234501113672211,weighted share of the G3 lineage
+asec_2007_2021_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",1.0396445624148267,4.416505968323374,-5.574370869507864,8.903752200517705,gap difference
+asec_2007_2021_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.11766890602048385,0.5097350781266111,-0.6846776900901946,0.9504506501959709,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2007_2021_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,-0.025975730146395648,0.49857188315132284,-0.8090595839451165,0.7849468532976155,how much non-identifiers move the G3 gap
+asec_2007_2021_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,0.9057544137154613,0.1380242452912902,0.6753874651487537,1.1249266633872737,same frame
+asec_2007_2021_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,0.9030993184531843,0.1468228743929662,0.6684812954471347,1.142414828259168,same frame
+asec_2007_2021_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.15344087841162193,0.012375925298527006,0.13464710153992598,0.1750099022780231,weighted share of the G3 lineage
+asec_2007_2021_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",1.4286790190239156,3.017737444208159,-3.258523455317769,6.589994341132753,gap difference
+asec_2007_2021_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.14176517040336667,0.2985220415616037,-0.3466733651202364,0.6328877467092696,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2007_2021_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.08651942566796018,0.009326969867884923,0.07213661994261977,0.10341702610231683,weighted share of the G3 lineage
+asec_2007_2021_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",2.9717867598466725,3.9509968512063924,-3.0649656675663755,10.225602637294651,gap difference
+asec_2007_2021_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.294884890729315,0.3885603543754789,-0.32495680667575105,0.9742917630948321,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2007_2021_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,0.21921776364728096,0.46202529085336047,-0.4979131196747206,1.0241402090653007,how much non-identifiers move the G3 gap
+asec_2007_2021_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.8803997483027188,0.1000716963472294,0.7094506813578437,1.0296757914589052,same frame
+asec_2007_2021_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.8999765533245965,0.10585643147717116,0.7273401546440686,1.0594307493335602,same frame
+asec_2007_2021_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.143613114001159,0.014250650860441477,0.12344214283236117,0.16867444429754683,weighted share of the G3 lineage
+asec_2007_2021_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.07590029221842087,0.22454738793005666,-0.2652377568878619,0.43385888847629317,gap difference
+asec_2007_2021_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.14874046510674443,0.4539707680062954,-0.6245542017816654,0.8003866321430277,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2007_2021_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.07474800629072255,0.010479304809414256,0.05792602054979431,0.09234501113672211,weighted share of the G3 lineage
+asec_2007_2021_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.12903988584559656,0.2496614216999537,-0.2366248805129797,0.5774082068639668,gap difference
+asec_2007_2021_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.2528771902848752,0.5002324040245537,-0.5378211639028193,1.0663366293819363,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2007_2021_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.010900277319088048,0.032446279504249435,-0.03759247097857976,0.06324903141985441,how much non-identifiers move the G3 gap
+asec_2007_2021_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,0.94867490439504,0.1853691812295821,0.6627551036203422,1.2583976446598713,same frame
+asec_2007_2021_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,0.9693819511337222,0.197550029359547,0.6571971826232249,1.3035297107533363,same frame
+asec_2007_2021_dedup,all,cores_one,employed,G3anc: share not Mexican,0.15070694577854832,0.009588602902993357,0.13612668224368663,0.16756259506902704,weighted share of the G3 lineage
+asec_2007_2021_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",1.4904354124742336,2.9798390307372045,-3.346671135813657,6.517792183378913,gap difference
+asec_2007_2021_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.5498771714544977,3.7399505749232604,-2.691260828291238,2.527539226054126,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2007_2021_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.09726766566333893,0.007916552914838828,0.0845384618711781,0.11113173839057934,weighted share of the G3 lineage
+asec_2007_2021_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-4.444928176839591,3.6153027071318675,-10.379186306471619,1.6269898841064212,gap difference
+asec_2007_2021_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-1.639899664717075,11.2114558638026,-10.594073201052659,0.7789781513460314,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2007_2021_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.22461896889423016,0.44859403347684057,-0.5132578902831064,0.9538930998730797,how much non-identifiers move the G3 gap
+asec_2007_2021_dedup,all,cores_one,employed,rho G2 -> G3 lineage,2.255692204316905,29.171739119443785,0.2481399054982588,9.266532484479978,same frame
+asec_2007_2021_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,2.459512789312284,30.295526357039183,0.19882341744731727,10.419436015184687,same frame
+asec_2022_2026_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.12017988966216728,0.021784186077892776,0.08910993165393764,0.15818674509828007,weighted share of the G3 lineage
+asec_2022_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",14.43757857583076,9.133678527662246,0.06097345453875011,30.373873441832906,gap difference
+asec_2022_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",1.411372798803979,2.0516939989010172,0.004337979199715934,2.84665038668728,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2026_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.06670836930355281,0.014935163772153478,0.04470621426647141,0.09339353027925511,weighted share of the G3 lineage
+asec_2022_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",9.724445039858747,11.261291996247662,-5.553471809322109,31.141049755313983,gap difference
+asec_2022_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.9506315162638804,4.195610428724712,-0.7373296426607805,2.878186672887122,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2026_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,1.7351066002322142,1.188919763735171,0.008664135018846787,3.8735432364655824,how much non-identifiers move the G3 gap
+asec_2022_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,0.869943287475487,0.2905598160242921,0.4418049031087429,1.3787332967292836,same frame
+asec_2022_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.0476430661926808,0.31478099631433487,0.5720541643801006,1.5697273998707983,same frame
+asec_2022_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.13879025842528322,0.020736731500291428,0.10645177050233148,0.1736156012941021,weighted share of the G3 lineage
+asec_2022_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",10.403085707857825,7.796133076611004,-2.146273470360373,24.043855671318525,gap difference
+asec_2022_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",1.169058238972041,1.1280905582420964,-0.3203512115442299,2.7344132647240467,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.08219602861559203,0.01569644415597432,0.058903930905765164,0.10899840482328593,weighted share of the G3 lineage
+asec_2022_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",3.276709627510157,9.22807816825153,-9.794107198895494,19.628600597547425,gap difference
+asec_2022_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.3682238611055869,1.624489413174875,-1.5243690240137189,2.1075722514884783,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.4438469538139564,1.1244282299232764,-0.29125922678960164,3.4503258575152027,how much non-identifiers move the G3 gap
+asec_2022_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.6766903886619432,0.21172477618772967,0.3379458975417567,1.03508729959037,same frame
+asec_2022_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.8077511607692116,0.2251447841773116,0.4421302293988023,1.1716100565214356,same frame
+asec_2022_2026_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.12017988966216728,0.021784186077892776,0.08910993165393764,0.15818674509828007,weighted share of the G3 lineage
+asec_2022_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.578916052650186,0.37717258044873403,-0.03166508088381767,1.1932824525096275,gap difference
+asec_2022_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",1.295873527147104,1.077111015073762,-0.10939904817810214,2.790661928230888,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2026_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.06670836930355281,0.014935163772153478,0.04470621426647141,0.09339353027925511,weighted share of the G3 lineage
+asec_2022_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.3126877163594983,0.48952211102641846,-0.42562822810390494,1.1793750427998684,gap difference
+asec_2022_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.6999352186545835,1.509305816335141,-1.3395674679298253,2.5048224548863836,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2026_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.06957406733116045,0.04772027611700611,-0.0039959875706118775,0.15409119466179172,how much non-identifiers move the G3 gap
+asec_2022_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,0.7789493644539585,0.30387574229649944,0.3324438276445918,1.3096956458718674,same frame
+asec_2022_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,0.9226393072257211,0.330598599894,0.4457699509239336,1.5045991433671768,same frame
+asec_2022_2026_dedup,all,cores_one,employed,G3anc: share not Mexican,0.1446719752618284,0.016537113697874587,0.1173767578060812,0.17099148673283807,weighted share of the G3 lineage
+asec_2022_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",7.7989742487420965,5.45181751009006,-1.526925578844002,16.97986544356391,gap difference
+asec_2022_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",2.1181030283460918,7.628162635836523,-2.3884613577136737,6.817831571770809,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2026_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.08153818926744502,0.011301882029133773,0.0638804237973869,0.10183926422119129,weighted share of the G3 lineage
+asec_2022_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",3.382547780886669,6.67532560636922,-8.361780397376446,14.232233731035318,gap difference
+asec_2022_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",0.9186573092451212,9.716105510714108,-4.933946079298895,4.985550485126407,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2026_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,1.1282930095816601,0.8270496907399253,-0.2028614218859875,2.4912336225310217,how much non-identifiers move the G3 gap
+asec_2022_2026_dedup,all,cores_one,employed,rho G2 -> G3 lineage,-0.6242431019522416,0.5760540099069862,-1.6508430680740207,0.11627136597979561,same frame
+asec_2022_2026_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,-0.9000435947139236,0.656386652866184,-2.159943551069199,-0.041729561554291264,same frame
+asec_1994_2002_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.14042314677600104,0.018789605186319537,0.11259140547464579,0.17289526168111116,weighted share of the G3 lineage
+asec_1994_2002_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",2.4047486189659963,4.315046889868508,-4.011262697890348,9.545713400711259,gap difference
+asec_1994_2002_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.23622286916268387,0.436687459432687,-0.5074902246396787,0.8938661331108968,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2002_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.10920221977287567,0.01692897528087519,0.08378162028896641,0.13971383945781246,weighted share of the G3 lineage
+asec_1994_2002_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",4.209686505478929,5.2966963500565,-3.873729411261644,13.622681698639974,gap difference
+asec_1994_2002_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.4135252295216003,0.5297583996712477,-0.4289709930879465,1.2846636303894783,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2002_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.3376823682804506,0.6022703229345676,-0.6333388747522766,1.3082535696801252,how much non-identifiers move the G3 gap
+asec_1994_2002_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.0623310220797606,0.24824051494482696,0.7414412110966206,1.5318389924509668,same frame
+asec_1994_2002_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.0987787875385924,0.2590285970754897,0.7544473853952648,1.5618281436659986,same frame
+asec_1994_2002_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1659707732123416,0.018155248050494437,0.1393623509856794,0.19664490363008366,weighted share of the G3 lineage
+asec_1994_2002_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",1.5094870472559343,3.5723812180693275,-4.10515649638168,7.241559685612137,gap difference
+asec_1994_2002_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.15307221470932464,0.37782192440824336,-0.48310259105243575,0.7253728497494799,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2002_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.1302845453466558,0.01694880229527345,0.10405467534650557,0.15784753282238467,weighted share of the G3 lineage
+asec_1994_2002_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",3.5144558944574067,4.465604869806827,-3.649820825453481,11.143153096864298,gap difference
+asec_1994_2002_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.35638964126309824,0.4633558507552186,-0.3560521530306341,1.062428470651961,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2002_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,0.2505307323870891,0.5914633533451453,-0.7151268425069364,1.1919552391289887,how much non-identifiers move the G3 gap
+asec_1994_2002_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.8917262998130312,0.15452296888397543,0.6517298206426894,1.173732500070669,same frame
+asec_1994_2002_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.9149716240646729,0.16092956736646108,0.6622754114223721,1.1680458549354524,same frame
+asec_1994_2002_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.14042314677600104,0.018789605186319537,0.11259140547464579,0.17289526168111116,weighted share of the G3 lineage
+asec_1994_2002_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.1593449168304737,0.36761739587347825,-0.45947233602326804,0.7136696292455853,gap difference
+asec_1994_2002_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.247166614762673,0.6170546025993794,-0.8592238251931942,1.0964723207006388,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2002_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.10920221977287567,0.01692897528087519,0.08378162028896641,0.13971383945781246,weighted share of the G3 lineage
+asec_1994_2002_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.6264763031752381,0.32991487485093973,0.03799632675399424,1.129404729163266,gap difference
+asec_1994_2002_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.9717537914911678,0.5064935904821711,0.06970598205474907,1.7671241262459136,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2002_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.022375714644091715,0.05161008846217573,-0.06855155564700555,0.10708767606179563,how much non-identifiers move the G3 gap
+asec_1994_2002_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,0.8005425962546275,0.21666342820670545,0.5078093047885348,1.2266474251724413,same frame
+asec_1994_2002_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,0.8293267993370738,0.23046082596373363,0.5207387845749689,1.2856999003677143,same frame
+asec_1994_2002_dedup,all,cores_one,employed,G3anc: share not Mexican,0.19197988651489312,0.014970285281157828,0.16841961931489324,0.2172287373012529,weighted share of the G3 lineage
+asec_1994_2002_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",-0.8468084422047388,3.980036245460386,-7.129320938218883,5.823465689922361,gap difference
+asec_1994_2002_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",-0.16659823205844404,2.0428317270757375,-2.2766436996005432,0.9652098590914211,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2002_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.15225768925973696,0.014233947968406144,0.1282160141438327,0.17580320616765935,weighted share of the G3 lineage
+asec_1994_2002_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-0.21518456173750256,4.468889836287156,-7.3683409575767715,6.772748664408954,gap difference
+asec_1994_2002_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-0.04233468369588067,1.6580300992395476,-2.4019734188080286,1.2064261344356508,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_1994_2002_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,-0.1625701886343256,0.7689262551467397,-1.4021436062067825,1.10438496289332,how much non-identifiers move the G3 gap
+asec_1994_2002_dedup,all,cores_one,employed,rho G2 -> G3 lineage,1.211239580650422,0.5275455179110526,0.5984340635660438,2.1897043742443083,same frame
+asec_1994_2002_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,1.173700518742901,0.5540120632996713,0.5105582789572212,2.1918239088380895,same frame
+asec_2003_2026_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.14405028226174293,0.011147008581894841,0.12665198065155828,0.161842996630288,weighted share of the G3 lineage
+asec_2003_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",6.375324998029083,3.4514957736787766,0.8262148779664834,12.048475570934754,gap difference
+asec_2003_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",0.7083931389335152,0.36912818891658356,0.10019804226252106,1.3529919999330304,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2003_2026_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.07847842085503783,0.008317093518812062,0.06441736019417171,0.0932145132575422,weighted share of the G3 lineage
+asec_2003_2026_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",6.48081003964085,4.40940981502811,-0.47734469111910766,14.278024348025003,gap difference
+asec_2003_2026_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.7201140911612044,0.48584023634262663,-0.06753032658240589,1.5571703397977148,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2003_2026_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,0.9183673654764277,0.503996330060665,0.11669990300022165,1.7902848974132373,how much non-identifiers move the G3 gap
+asec_2003_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,0.9047890781891605,0.13438852548654917,0.7079026761674714,1.1384722260034654,same frame
+asec_2003_2026_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.0076098512258678,0.14257014929229092,0.7835070603479115,1.2473631188752947,same frame
+asec_2003_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.1535310619307138,0.009908148608248228,0.13750309123340673,0.17011103049102289,weighted share of the G3 lineage
+asec_2003_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",6.225894289437015,2.9092691611723773,1.7971136734381732,11.042056817965829,gap difference
+asec_2003_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.6549293561978311,0.2953856746007054,0.19622881813281892,1.1778761399175304,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2003_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.08856332470135542,0.007555097473784126,0.07684280168474393,0.10273275286998856,weighted share of the G3 lineage
+asec_2003_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",5.789468854235186,3.6644307875727415,0.2174350542110109,12.082212242077919,gap difference
+asec_2003_2026_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.6090198344460671,0.3806323704899031,0.023760819838956396,1.2495120296098172,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2003_2026_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,0.9558681617256397,0.4491074352694306,0.27907299444344374,1.703452315054345,how much non-identifiers move the G3 gap
+asec_2003_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.8179062784310165,0.09585644069710778,0.6587238561384556,0.9784271651274028,same frame
+asec_2003_2026_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.909342483410679,0.0993726058437345,0.7516152994930301,1.0640345729153236,same frame
+asec_2003_2026_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.14405028226174293,0.011147008581894841,0.12665198065155828,0.161842996630288,weighted share of the G3 lineage
+asec_2003_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.36021058297743735,0.18702317571916452,0.04569808291377342,0.6821649465695543,gap difference
+asec_2003_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",0.6966859761139879,0.3429790512241221,0.09377409950728842,1.244372636778977,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2003_2026_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.07847842085503783,0.008317093518812062,0.06441736019417171,0.0932145132575422,weighted share of the G3 lineage
+asec_2003_2026_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.34206866945551795,0.21806318918037496,-0.0022281428073488135,0.7226829959022595,gap difference
+asec_2003_2026_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.6615975658121016,0.40629500186594736,-0.004590997777500339,1.3606045527605692,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2003_2026_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.05188843615156635,0.027231783069783216,0.006748411837834301,0.09765831710488279,how much non-identifiers move the G3 gap
+asec_2003_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,1.0049758788159595,0.1667147268359939,0.7385392342013873,1.270046633420727,same frame
+asec_2003_2026_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.1170839825769219,0.18286995965807507,0.8273948120576348,1.4263157218955165,same frame
+asec_2003_2026_dedup,all,cores_one,employed,G3anc: share not Mexican,0.1529289680524092,0.007849142716520784,0.14023162712007037,0.16597190222365774,weighted share of the G3 lineage
+asec_2003_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",2.1266294022701304,2.5753733236730825,-1.968119462049655,6.288064808367419,gap difference
+asec_2003_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",0.7295830044495766,10.096123983731472,-1.074346031118992,2.296176320791981,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2003_2026_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.0958039678119437,0.00616040919296516,0.08624289322238617,0.10656451993633874,weighted share of the G3 lineage
+asec_2003_2026_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",-3.492917422958675,3.1143815663025043,-8.524416979791454,1.5033256121650118,gap difference
+asec_2003_2026_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",-1.1983155998013242,26.682988586376595,-5.688178740877578,0.5048232654936142,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2003_2026_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.3252232399190702,0.3942657989611556,-0.3070539427111424,0.9560385850876637,how much non-identifiers move the G3 gap
+asec_2003_2026_dedup,all,cores_one,employed,rho G2 -> G3 lineage,-6.50572803366449,49.72711235674954,-34.245781999952584,26.15144125693226,same frame
+asec_2003_2026_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,-7.322760462738574,50.65494243017021,-38.260998799959914,28.841174868998447,same frame
+asec_2022_2025_dedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.11379777976164429,0.024229398117103236,0.07907468051959339,0.15540142403303217,weighted share of the G3 lineage
+asec_2022_2025_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",16.874968941813172,11.126575750672023,-1.2411326288250921,36.158269061175275,gap difference
+asec_2022_2025_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",1.658526347615441,1.263474749985617,-0.12605078973693498,3.678524645864445,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_dedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.062212360056262,0.016550166831853865,0.037196404404208974,0.09117625219614722,weighted share of the G3 lineage
+asec_2022_2025_dedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",3.0095835442874854,12.706086313182382,-14.396726797535209,26.945648019796497,gap difference
+asec_2022_2025_dedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.2957915727585533,1.5361719445279642,-2.158519039068895,2.443582151899755,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_dedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,1.9203339991250559,1.4095064045107144,-0.15055056133727518,4.436634115070337,how much non-identifiers move the G3 gap
+asec_2022_2025_dedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,0.9220728918453914,0.37127471868979633,0.3877531533542826,1.5973236395639667,same frame
+asec_2022_2025_dedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.1365888194517306,0.3978998557000078,0.5836896595309168,1.8690540536774893,same frame
+asec_2022_2025_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.13432116485538842,0.023490759741860847,0.0966523135976706,0.1748367272009838,weighted share of the G3 lineage
+asec_2022_2025_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",12.626288391740028,9.487893554965732,-2.4817544430525227,28.861965199439236,gap difference
+asec_2022_2025_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",1.3922999633621913,1.2167820907729088,-0.34971941377681054,3.0976053525796168,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_dedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.07955538565497862,0.018543274744801243,0.05120619394911436,0.11279392484161598,weighted share of the G3 lineage
+asec_2022_2025_dedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",0.9984438061613776,11.064752629987426,-14.607589588379318,21.076630034692872,gap difference
+asec_2022_2025_dedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.11009833068972996,1.4571162957475767,-2.3137679419987633,2.117313839368236,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_dedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.6959777645785898,1.3541268418437173,-0.26499698815260686,4.173976860517964,how much non-identifiers move the G3 gap
+asec_2022_2025_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.6670099346077998,0.24170697644090347,0.29280153936118253,1.0751059730951995,same frame
+asec_2022_2025_dedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.8204459173894291,0.25089655687938184,0.44066303355965114,1.254123451595633,same frame
+asec_2022_2025_dedup,all,cores_one,educ_years,G3anc: share not Mexican,0.11379777976164429,0.024229398117103236,0.07907468051959339,0.15540142403303217,weighted share of the G3 lineage
+asec_2022_2025_dedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.5475235765950011,0.45782707108402015,-0.27473096010665793,1.2842617980235134,gap difference
+asec_2022_2025_dedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",1.0766020803853018,1.10915378847982,-0.6583931987245919,2.477278929339219,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_dedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.062212360056262,0.016550166831853865,0.037196404404208974,0.09117625219614722,weighted share of the G3 lineage
+asec_2022_2025_dedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.014920313689795961,0.5355234445624556,-0.7743842350186317,0.9841617160043838,gap difference
+asec_2022_2025_dedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.029337989166295708,1.49789546119383,-2.2646006323513497,1.9053615679126097,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_dedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.06230696738367136,0.055012329424612434,-0.02721012921685046,0.16169244477990094,how much non-identifiers move the G3 gap
+asec_2022_2025_dedup,all,cores_one,educ_years,rho G2 -> G3 lineage,0.9346271051939037,0.3568409444061143,0.4175203343456829,1.5674902113249367,same frame
+asec_2022_2025_dedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.06512023206999,0.38657200633540756,0.5014397054223931,1.7916908159500644,same frame
+asec_2022_2025_dedup,all,cores_one,employed,G3anc: share not Mexican,0.12963294254937086,0.016013043908176188,0.10296065090132851,0.15460155383071805,weighted share of the G3 lineage
+asec_2022_2025_dedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",7.047045445958023,5.895406837994099,-3.015863212712054,15.942863204947889,gap difference
+asec_2022_2025_dedup,all,cores_one,employed,"G3anc: closing share, not Mexican",1.726556181315934,37.24420104630445,-1.4098317476944722,6.427034287005724,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_dedup,all,cores_one,employed,G3anc: share not Hispanic,0.07487011903302784,0.012641368655207498,0.05578837105011428,0.09613477233342982,weighted share of the G3 lineage
+asec_2022_2025_dedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",4.028004540724718,7.8761674514199935,-9.681925770744334,16.07963148877978,gap difference
+asec_2022_2025_dedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",0.9868782870054924,41.5129274528698,-4.98401387600816,6.179331892845872,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_dedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.9135292374386821,0.7709266005725665,-0.3613346887278017,2.137186616341223,how much non-identifiers move the G3 gap
+asec_2022_2025_dedup,all,cores_one,employed,rho G2 -> G3 lineage,-0.9487379113693959,1.7595553872116843,-2.8678101897174373,0.1056950348141267,same frame
+asec_2022_2025_dedup,all,cores_one,employed,rho G2 -> G3 identifiers,-1.222314603713706,2.1231635154065462,-3.2437273416776344,-0.0627953241781844,same frame
+asec_2022_2025_nodedup,all,cores_one,ba_plus,G3anc: share not Mexican,0.10606977556937024,0.023126041515897016,0.07017345858772744,0.14795612312738882,weighted share of the G3 lineage
+asec_2022_2025_nodedup,all,cores_one,ba_plus,"G3anc: advantage, not Mexican minus identifiers",14.814909125013127,10.48638148122747,-2.240435629030954,32.78242959873471,gap difference
+asec_2022_2025_nodedup,all,cores_one,ba_plus,"G3anc: closing share, not Mexican",1.4668568859552666,1.1675163362243348,-0.2467512168381949,3.405976796710256,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_nodedup,all,cores_one,ba_plus,G3anc: share not Hispanic,0.0617035602399356,0.017758501377369954,0.034705766636923055,0.09175875844600537,weighted share of the G3 lineage
+asec_2022_2025_nodedup,all,cores_one,ba_plus,"G3anc: advantage, not Hispanic minus identifiers",9.295874556615427,14.397207593362513,-12.776672790918399,32.75849589608913,gap difference
+asec_2022_2025_nodedup,all,cores_one,ba_plus,"G3anc: closing share, not Hispanic",0.9204050790514462,1.692126614265002,-1.7123713387377044,3.442119041401936,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_nodedup,all,cores_one,ba_plus,G3anc: lineage minus identifiers,1.571414085970762,1.2216534956133507,-0.20506747009035367,3.7905757242799276,how much non-identifiers move the G3 gap
+asec_2022_2025_nodedup,all,cores_one,ba_plus,rho G2 -> G3 lineage,1.0069434159099404,0.35986116124721657,0.4947531228900339,1.65049460132073,same frame
+asec_2022_2025_nodedup,all,cores_one,ba_plus,rho G2 -> G3 identifiers,1.1924804761828816,0.37838692726417666,0.6448616648343525,1.8404071076643203,same frame
+asec_2022_2025_nodedup,all,cores_one,ba_plus_22plus,G3anc: share not Mexican,0.12554313373270923,0.021936526921630936,0.08904929581548941,0.16190248088464904,weighted share of the G3 lineage
+asec_2022_2025_nodedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Mexican minus identifiers",8.95275500916245,8.591576182568854,-4.676396831844712,24.42521722916966,gap difference
+asec_2022_2025_nodedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Mexican",0.9648747864717981,1.0053368304184218,-0.5658639778467208,2.484383767788748,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_nodedup,all,cores_one,ba_plus_22plus,G3anc: share not Hispanic,0.0746838411226005,0.017629756095593644,0.04901497520075101,0.10492640500002057,weighted share of the G3 lineage
+asec_2022_2025_nodedup,all,cores_one,ba_plus_22plus,"G3anc: advantage, not Hispanic minus identifiers",3.0312693961991,11.688478272082481,-13.913797992634427,23.91083896985167,gap difference
+asec_2022_2025_nodedup,all,cores_one,ba_plus_22plus,"G3anc: closing share, not Hispanic",0.32669222026100364,1.4221447948149644,-1.8719034884887438,2.3757649103052962,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_nodedup,all,cores_one,ba_plus_22plus,G3anc: lineage minus identifiers,1.123956919391464,1.1262949055626137,-0.5954891901465856,3.187095721310105,how much non-identifiers move the G3 gap
+asec_2022_2025_nodedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 lineage,0.7833792674647883,0.23632680084268268,0.39257473088029565,1.1608311024008164,same frame
+asec_2022_2025_nodedup,all,cores_one,ba_plus_22plus,rho G2 -> G3 identifiers,0.8913517379601782,0.2453161337488232,0.49555900861804564,1.302935287344761,same frame
+asec_2022_2025_nodedup,all,cores_one,educ_years,G3anc: share not Mexican,0.10606977556937024,0.023126041515897016,0.07017345858772744,0.14795612312738882,weighted share of the G3 lineage
+asec_2022_2025_nodedup,all,cores_one,educ_years,"G3anc: advantage, not Mexican minus identifiers",0.5966531061865314,0.43366636449414125,-0.15722685341236362,1.3196570460542678,gap difference
+asec_2022_2025_nodedup,all,cores_one,educ_years,"G3anc: closing share, not Mexican",1.0604176215117003,0.849842274307109,-0.31092309023047987,2.371153465744265,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_nodedup,all,cores_one,educ_years,G3anc: share not Hispanic,0.0617035602399356,0.017758501377369954,0.034705766636923055,0.09175875844600537,weighted share of the G3 lineage
+asec_2022_2025_nodedup,all,cores_one,educ_years,"G3anc: advantage, not Hispanic minus identifiers",0.33331642710728815,0.6085218540747356,-0.5949418397809217,1.329713832424448,gap difference
+asec_2022_2025_nodedup,all,cores_one,educ_years,"G3anc: closing share, not Hispanic",0.5923954961082329,1.2532367854490958,-1.38255588880909,2.589909817279948,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_nodedup,all,cores_one,educ_years,G3anc: lineage minus identifiers,0.06328686106597381,0.04894297167413306,-0.014115582003614867,0.14522898922364294,how much non-identifiers move the G3 gap
+asec_2022_2025_nodedup,all,cores_one,educ_years,rho G2 -> G3 lineage,1.050175879908233,0.32885008474311206,0.5456589658236942,1.62028810335505,same frame
+asec_2022_2025_nodedup,all,cores_one,educ_years,rho G2 -> G3 identifiers,1.1832677798643685,0.34962925475043816,0.6687045129522055,1.8094240986131807,same frame
+asec_2022_2025_nodedup,all,cores_one,employed,G3anc: share not Mexican,0.11937577839894715,0.015384672306696963,0.09492543896278474,0.14484428903919502,weighted share of the G3 lineage
+asec_2022_2025_nodedup,all,cores_one,employed,"G3anc: advantage, not Mexican minus identifiers",5.934319720477143,5.640041484911877,-3.6142693850334933,14.308240631882533,gap difference
+asec_2022_2025_nodedup,all,cores_one,employed,"G3anc: closing share, not Mexican",2.0512271123155994,35.731306377284604,-4.634927223873992,12.245846130273701,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_nodedup,all,cores_one,employed,G3anc: share not Hispanic,0.06823429901332174,0.011622995762973645,0.05053544413728844,0.08783154729340044,weighted share of the G3 lineage
+asec_2022_2025_nodedup,all,cores_one,employed,"G3anc: advantage, not Hispanic minus identifiers",5.974716472412311,7.171522579893832,-7.10149672776379,16.7696118160115,gap difference
+asec_2022_2025_nodedup,all,cores_one,employed,"G3anc: closing share, not Hispanic",2.065190450443974,75.39779934367465,-5.208314003455589,14.361529552921294,c = 1 - gap(non-identifiers)/gap(identifiers)
+asec_2022_2025_nodedup,all,cores_one,employed,G3anc: lineage minus identifiers,0.7084140359001845,0.6776338596188932,-0.4102144411917913,1.7216879728940835,how much non-identifiers move the G3 gap
+asec_2022_2025_nodedup,all,cores_one,employed,rho G2 -> G3 lineage,-0.5077500834105044,0.564484863547001,-1.5091794029610057,0.2636953807795713,same frame
+asec_2022_2025_nodedup,all,cores_one,employed,rho G2 -> G3 identifiers,-0.6723980692915543,0.618137335108348,-1.73854068628118,0.12874505711805667,same frame

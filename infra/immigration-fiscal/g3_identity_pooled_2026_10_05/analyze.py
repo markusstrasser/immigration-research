@@ -107,10 +107,16 @@ def load() -> pd.DataFrame:
     return d
 
 
-def classify(d: pd.DataFrame, direct_only: bool) -> dict:
-    """Groups and frames for every person; parents linked within (YEAR, SERIAL) by PERNUM."""
+def classify(d: pd.DataFrame, direct_only: bool, sample: np.ndarray | None = None) -> dict:
+    """Groups and frames for every person; parents linked within (sample, SERIAL) by PERNUM.
+
+    `sample` identifies the file a household is in: YEAR for the ASEC (the default), year and month for the
+    basic monthly files (analyze_monthly.py), where SERIAL restarts every month."""
     n = len(d)
-    key = (d.YEAR.to_numpy(np.int64) * 100_000 + d.SERIAL.to_numpy(np.int64)) * 100 + d.PERNUM.to_numpy(np.int64)
+    s = d.YEAR.to_numpy(np.int64) if sample is None else np.asarray(sample, np.int64)
+    if d.SERIAL.max() >= 100_000 or d.PERNUM.max() >= 100:
+        raise ValueError("SERIAL or PERNUM overflows the person key")
+    key = (s * 100_000 + d.SERIAL.to_numpy(np.int64)) * 100 + d.PERNUM.to_numpy(np.int64)
     order = np.argsort(key)
     skey = key[order]
     hh = key - d.PERNUM.to_numpy(np.int64)
