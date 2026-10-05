@@ -20,7 +20,10 @@
  *                          enterprise and the return on public capital);
  *   --case sept29          adopted_2026_09_27 (its lane's package, at its band variant sept27_case in SEPT29_LANE's
  *                          main_case_bands.csv) and adopted_2026_09_29 (SEPT29_LANE: candidate v4, adopted
- *                          2026-09-29), written to derived/sept29/ beside the default files.
+ *                          2026-09-29), written to derived/sept29/ beside the default files;
+ *   --case oct05           adopted_2026_09_29 (its lane's package, at its band variant sept29_case in OCT05_LANE's
+ *                          main_case_bands.csv) and adopted_2026_10_05 (OCT05_LANE: main case v5, adopted 2026-10-05,
+ *                          the lineage counted whole), written to derived/oct05/.
  * A payload's line responses are the meta.responses entries with a low and a high other than general government
  * (a receipt under its override id): four on September 27, thirteen on September 29.
  * The specification grid and responses come from the packages, whose MAIN_SPECS carry the responses
@@ -60,6 +63,7 @@ const path = require("path");
 const HERE = __dirname;
 const FISCAL = path.join(HERE, "..");
 const SEPT29_LANE = "main_case_2026_09_29";
+const OCT05_LANE = "main_case_2026_10_05";
 // case -> its main-case lane, and its two models in the order written: [name, payload lane or null for
 // the explorer model, variant in the lane's main_case_bands.csv, the package whose MAIN_SPECS it uses].
 const CASES = {
@@ -78,6 +82,9 @@ const CASES = {
   sept29: { lane: SEPT29_LANE, out: "sept29", models: (P) => [
     ["adopted_2026_09_27", "main_case_long_run_2026_09_27", "sept27_case", P.SEPT27],
     ["adopted_2026_09_29", SEPT29_LANE, "adopted", P]] },
+  oct05: { lane: OCT05_LANE, out: "oct05", models: (P) => [
+    ["adopted_2026_09_29", SEPT29_LANE, "sept29_case", P.SEPT29],
+    ["adopted_2026_10_05", OCT05_LANE, "adopted", P]] },
 };
 const opt = (name, fallback) => {
   const i = process.argv.indexOf(name);

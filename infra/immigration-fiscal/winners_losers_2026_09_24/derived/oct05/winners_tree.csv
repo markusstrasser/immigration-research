@@ -1,0 +1,31 @@
+net,stack,path,persons_m,share_of_persons,winners_share,mean_net_usd
+net_social_a,central,worker = not_worker & tenure = landlord,11.34605099,0.03835312126,0.2104798608,-407.6076273
+net_social_a,central,worker = not_worker & tenure != landlord & age3 = 18_64,36.18376745,0.1223121967,0.003048086483,-1030.877775
+net_social_a,central,worker = not_worker & tenure != landlord & age3 != 18_64,95.20721459,0.3218294936,7.516063522e-05,-948.7334955
+net_social_a,central,worker != not_worker & edu_nativity = high_school|us_born & tenure = owner_no_rental_income,16.54443675,0.05592525445,5.948843616e-05,-3415.253687
+net_social_a,central,worker != not_worker & edu_nativity = high_school|us_born & tenure != owner_no_rental_income,9.866924588,0.03335322179,0.009360992472,-3375.617899
+net_social_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 = rest,105.0013079,0.3549365235,0.4433630994,-498.4007789
+net_social_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 != rest,21.68152657,0.07329018865,0.01806247046,-4788.901248
+net_social_b,central,industry5 = rest & edu_nativity = ba_plus|us_born & state3 = rest,40.30154129,0.1362315312,0.6346429932,319.5771959
+net_social_b,central,industry5 = rest & edu_nativity = ba_plus|us_born & state3 != rest,8.024828368,0.02712637337,0.06233198081,-3059.323222
+net_social_b,central,industry5 = rest & edu_nativity != ba_plus|us_born & edu_nativity = high_school|us_born,21.27457035,0.07191455219,0.002445396479,-3433.434145
+net_social_b,central,industry5 = rest & edu_nativity != ba_plus|us_born & edu_nativity != high_school|us_born,62.26042656,0.2104592771,0.2827790376,-1265.228724
+net_social_b,central,industry5 != rest & tenure = landlord & decile <= 7,6.598338232,0.02230440058,0.1501245106,-788.9604469
+net_social_b,central,industry5 != rest & tenure = landlord & decile > 7,6.380801297,0.02156905923,0.3097964757,902.0515532
+net_social_b,central,industry5 != rest & tenure != landlord & worker = not_worker,131.390982,0.4441416903,0.0007766610135,-1322.250986
+net_social_b,central,industry5 != rest & tenure != landlord & worker != not_worker,19.59974071,0.06625311597,0.1483146977,-2120.151163
+net_account_a,central,worker = not_worker & age3 = 18_64 & edu_nativity = ba_plus|us_born,6.237269721,0.02108387862,0.01018357081,-1198.82249
+net_account_a,central,worker = not_worker & age3 = 18_64 & edu_nativity != ba_plus|us_born,32.52924958,0.109958809,0.002796031903,-744.277815
+net_account_a,central,worker = not_worker & age3 != 18_64 & decile <= 9,96.16877306,0.3250798553,3.607455867e-05,-618.9499161
+net_account_a,central,worker = not_worker & age3 != 18_64 & decile > 9,7.801740665,0.02637226873,0.0004725341226,-3792.606254
+net_account_a,central,worker != not_worker & edu_nativity = high_school|us_born,26.41136134,0.08927847624,0,-3197.690406
+net_account_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 = rest,105.0013079,0.3549365235,0.4852195925,-403.8029331
+net_account_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 != rest,21.68152657,0.07329018865,0.001869345755,-3926.211048
+net_account_b,central,industry5 = rest & edu_nativity = ba_plus|us_born & state3 = rest,40.30154129,0.1362315312,0.6764301068,374.5350792
+net_account_b,central,industry5 = rest & edu_nativity = ba_plus|us_born & state3 != rest,8.024828368,0.02712637337,0.03454279694,-2351.505543
+net_account_b,central,industry5 = rest & edu_nativity != ba_plus|us_born & edu_nativity = high_school|us_born,21.27457035,0.07191455219,0,-3221.587128
+net_account_b,central,industry5 = rest & edu_nativity != ba_plus|us_born & edu_nativity != high_school|us_born,62.26042656,0.2104592771,0.3104458461,-988.9555835
+net_account_b,central,industry5 != rest & worker = not_worker & age3 = 18_64,38.7665193,0.1310426876,0.002917401218,-1179.95537
+net_account_b,central,industry5 != rest & worker = not_worker & age3 != 18_64,103.9705137,0.351452124,8.136178502e-05,-1112.200717
+net_account_b,central,industry5 != rest & worker != not_worker & decile <= 5,11.37953485,0.03846630694,0.08894272121,-1700.271889
+net_account_b,central,industry5 != rest & worker != not_worker & decile > 5,9.853294398,0.03330714758,0.2766263432,-1843.880044

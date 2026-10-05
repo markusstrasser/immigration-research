@@ -51,6 +51,17 @@ upstream directories), written to derived/sept29/ beside the default files, whic
    the CPS's published 40.9m beside them in group_frame_cps_published.csv, and the counterfactual label names 39.7m.
    The other residents are the same persons on the same weights in both frames.
 
+From October 5 (--case oct05, main case v5, ladder 281: the September 29 case plus 3.04m descendants who no longer
+report Mexican origin, counted whole, a lineage of 42.75m), written to derived/oct05/:
+ - The case before (September 29) has a production grid of its own, so both cases read their row-4 scenarios
+   (production_rows); the case's grid is September 29's plus the added members' P and F, which the base lane's
+   lineage_rows adds to the same re-solve.
+ - The group's own rows are on the lineage (CASES group_weights "lineage": lineage_group_weights). The added people are
+   not in the CPS as group members, so each identified third-plus-generation member's row-4 weight is raised by
+   added / identified G3+ (LINEAGE_RULE) [ASSUMPTION]. The other residents keep the CPS frame, in which the added people
+   sit unfound among them, as the distribution lane leaves them; the group's geography (where its state-local cost,
+   victims' harm and uncompensated care arise) stays on the identified members' published weights, as in every case.
+
 Base: distribution_weights_2026_09_23 (ladder 194). Its code is loaded from git at the case's base
 commit, the commit that moved it to that case, so later edits to its working tree cannot change this
 lane. Its fiscal_totals(case) is the one definition of the case's direct response A that both lanes
@@ -156,6 +167,18 @@ GEN29_COMMIT = "aa1f53b"
 SEPT29_INTEREST = (30.7514, 41.4794)    # the debt lane's legacy interest at the main benchmark (low, high), from its stocks.csv
 SEPT29_LADDER = "275"     # the adopted case's own entry (d40e085), as "239" is September 27's
 SEPT29_PUBLISHED = "sept24_propagation_2026_09_24/derived/sept29"
+# The October 5 case (main case v5, adopted 2026-10-05, ladder 281: the September 29 case plus the 3.04M descendants
+# of Mexican immigrants who no longer report Mexican origin, counted whole). Distribution: derived/oct05/ and
+# derived/case_ends_oct05.json at fecaae7e. Debt legacy: derived/oct05/ at 604b09e1. Generation:
+# derived/generation_results_oct05.csv at e5ca5efe. Propagation: OCT05_PUBLISHED, read from the working tree as every
+# case's is.
+OCT05_LANE = "main_case_2026_10_05"
+BASE05_COMMIT = "fecaae7e"
+DEBT05_COMMIT = "604b09e1"
+GEN05_COMMIT = "e5ca5efe"
+OCT05_INTEREST = (30.6288, 42.6236)     # the debt lane's legacy interest at the main benchmark, its stocks.csv at 604b09e1
+OCT05_LADDER = "281"
+OCT05_PUBLISHED = "sept24_propagation_2026_09_24/derived/oct05"
 OLD_PROFILE = "cbo_category_lag_non_school_full"   # every case's main profile before September 27
 DEBT_REL = "infra/immigration-fiscal/debt_legacy_2026_09_23/derived"
 GEN_REL = "infra/immigration-fiscal/generation_account_2026_09_24/derived"
@@ -242,8 +265,19 @@ CASES = {
                    capped=True, congestion="long_run", preferences="attribution", production="row4", accrual=True,
                    base_dir="sept29", debt_dir="sept29", gen_results="generation_results_sept29.csv", out="sept29",
                    group_weights="row4"),
+    # From October 5 the case before may have a production grid of its own (its own row-4 rows), and the case's grid
+    # may add to another case's (the base lane's LATER_CASES grid_base: its lineage_rows); group_weights "lineage" puts
+    # the added people into the group's own frame at the identified third-plus generation's records (lineage_group_weights).
+    "oct05": dict(model="adopted_2026_10_05", label="October 5 case (main case v5)", prev="sept29",
+                  lane=OCT05_LANE, ladder=OCT05_LADDER, date="2026-10-05", base=BASE05_COMMIT, debt=DEBT05_COMMIT,
+                  debt_files=DEBT05_COMMIT, gen=GEN05_COMMIT, gen_split=None, sisters=SISTER26_COMMITS,
+                  interest=OCT05_INTEREST, consumption_proposal=False, published=OCT05_PUBLISHED,
+                  published_dir=OCT05_PUBLISHED, profile="long_run_non_school_full", prev_variant="sept29_case",
+                  capped=True, congestion="long_run", preferences="attribution", production="row4", accrual=True,
+                  base_dir="oct05", debt_dir="oct05", gen_results="generation_results_oct05.csv", out="oct05",
+                  group_weights="lineage"),
 }
-RUNNABLE = ("sept29", "sept27", "sept26_schools", "sept26", "sept24")
+RUNNABLE = ("oct05", "sept29", "sept27", "sept26_schools", "sept26", "sept24")
 DEFAULT_CASE = "sept27"
 CASE: dict = {}   # the run's case with its previous case under "prev" (configure)
 # At a school response of 1 nothing is left unfunded, so the school dilution rows (priced at the
@@ -260,6 +294,10 @@ FIPS = {1: "AL", 2: "AK", 4: "AZ", 5: "AR", 6: "CA", 8: "CO", 9: "CT", 10: "DE",
         56: "WY"}
 POSTAL = {v: k for k, v in FIPS.items()}
 MEXICO_BIRTHPLACE = 303          # CPS PENATVTY code for Mexico
+# CPS birthplace codes of US areas (the United States, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico,
+# the US Virgin Islands): the generation account's third-plus generation has both parents born in them
+# (generation_account_2026_09_24/frame.py masks).
+US_AREAS = (57, 60, 66, 69, 73, 78)
 
 # Clemens, Montenegro & Pritchett, "The Place Premium: Wage Differences for Identical Workers Across
 # the US Border", HKS RWP09-004 (January 2009), corpus doi_10_2139_ssrn_1211427. Table 1 col. 6,
@@ -676,20 +714,47 @@ def per_correction_check():
     """The debt lane's per-correction file against the correction rows of its lines file: the lane
     constants (with row 8's finite-removal piece, its own component from September 26 on), and schools
     with colleges (its education_row6_and_school_price component). Both are read at the case's pinned
-    commits."""
+    commits.
+
+    From October 5 the lines carry the added people's part of each correction line, and row 8's change at the larger
+    group on the constant line. The per-correction file holds them as components of their own (v5_lineage, every line
+    together; v5_union_response), so their parts on the correction lines come from the lane's by-line file
+    (corrections_federal_split_2024.csv: v5_lineage:constants and v5_union_response:row8 for the constants, v5_lineage on
+    school_reprice and college_rekey), itself gated to rebuild those components."""
     raw = read_input("debt_corrections")
     comp = pd.read_csv(io.BytesIO(raw))
     dl = debt_csv("federal_split_2024_lines.csv", CASE["debt"], CASE.get("debt_dir")).set_index(["end", "convention", "side", "line"])
+    lineage = comp.component.str.startswith("v5_").any()
+    if lineage:
+        byl = debt_csv("corrections_federal_split_2024.csv", CASE["debt"], CASE.get("debt_dir"))
+        cols = ["effect_bn", "federal_bn"]
+        rebuilt = byl[byl.component.str.startswith("v5_")].assign(component=lambda x: x.component.str.split(":").str[0])
+        rebuilt = rebuilt.groupby(["end", "convention", "component"])[cols].sum()
+        held = comp[comp.component.str.startswith("v5_")].groupby(["end", "convention", "component"])[cols].sum()
+        gap = float((rebuilt - held).abs().max().max()) if rebuilt.index.equals(held.index) else np.inf
+        gate("debt_by_line_file_rebuilds_lineage_components", gap < 1e-5, max_abs_diff_bn=gap, rows=len(held))
+        on_lines = {"lane_constants": byl.component.isin(["v5_lineage:constants", "v5_union_response:row8"]),
+                    "education_row6_and_school_price": (byl.component == "v5_lineage") & (byl.side == "spending")
+                    & byl.line.isin(["school_reprice", "college_rekey"])}
+        added = {k: byl[m].groupby(["end", "convention"])[cols].sum() for k, m in on_lines.items()}
     worst, n = 0.0, 0
     for components, rows in ((("lane_constants", "finite_removal"), ("lane_constants",)),
                              (("education_row6_and_school_price",), ("school_reprice", "college_rekey"))):
         parts = comp[comp.component.isin(components)].groupby(["end", "convention"], sort=False)
         for (end, conv), r in parts[["federal_bn", "effect_bn"]].sum().iterrows():
             v = dl.loc[[(end, conv, "spending", x) for x in rows]]
-            worst = max(worst, abs(v.federal_bn.sum() - r.federal_bn), abs(v.gap_bn.sum() - r.effect_bn))
+            fed, eff = r.federal_bn, r.effect_bn
+            if lineage:
+                a = added[components[0]].loc[(end, conv)]
+                fed, eff = fed + a.federal_bn, eff + a.effect_bn
+            worst = max(worst, abs(v.federal_bn.sum() - fed), abs(v.gap_bn.sum() - eff))
             n += 1
     gate("debt_lines_carry_per_correction_split", n == 12 and worst < 1e-5, rows=n, max_abs_diff_bn=worst)
-    return dict(status="checked", rows=n, max_abs_diff_bn=worst, sha256=sha(raw))
+    out = dict(status="checked", rows=n, max_abs_diff_bn=worst, sha256=sha(raw))
+    if lineage:
+        out["lineage"] = ("the added people's parts of the correction lines from corrections_federal_split_2024.csv "
+                          "(v5_lineage:constants, v5_union_response:row8; v5_lineage on school_reprice and college_rekey)")
+    return out
 
 
 def deficit_share_fy2024():
@@ -1579,6 +1644,25 @@ def ingest_sisters(d, ctx, km, lanes=None, commits=None, role_only=None):
 
 
 # ================================================================== inputs the base lane reads
+def production_rows(B, d, nest, case):
+    """A case's production scenarios on its engine's grid (CASES production): the base lane's row-4 re-solve
+    (row4_nest_rows) of the grid it reproduces and, where the case's grid adds to another case's (the base lane's
+    LATER_CASES grid_base: October 5 on September 29's), that addition (lineage_rows). The base lane gates both against
+    the grids. Returns the scenarios this lane reads (the GDP rows at the row-4 factor), the base lane's record and the
+    case's production entry from fiscal_totals."""
+    prod = B.fiscal_totals(case)["adopted"]["production"]
+    lc = B.LATER_CASES[case]
+    grid_base = getattr(lc, "grid_base", None)
+    rows4, info4 = B.row4_nest_rows(d, nest, prod, grid_base or lc.lane)
+    if grid_base:
+        rows4, info4["lineage"] = B.lineage_rows(d, rows4, grid_base, lc.lane)
+    f4 = info4["gdp_factor"]["row4"]
+    own = dict(central=B.pick(rows4, "below_ba", 2.0, 1.0, np.inf), account=B.pick(rows4, "hs_or_less", 2.0, 1.0, np.inf),
+               eps3_bb=B.pick(rows4, "below_ba", 2.0, 1.0, 3.0), eps3_hs=B.pick(rows4, "hs_or_less", 2.0, 1.0, 3.0))
+    own.update(account_gdp=B.as_gdp(own["account"], f4), eps3_hs_gdp=B.as_gdp(own["eps3_hs"], f4))
+    return own, info4, prod
+
+
 def base_inputs(B, d):
     B.verify_published_text()
     ncvs_ok = B.verify_ncvs_text()
@@ -1601,27 +1685,37 @@ def base_inputs(B, d):
     I["account_gdp"] = s[(s.split == "hs_or_less") & (s.sigma_NI == np.inf)].iloc[0]
     I["eps3_hs_gdp"] = s[(s.split == "hs_or_less") & (s.sigma_NI == 3.0)].iloc[0]
     # The production scenarios by case. A case whose engine grid is on the account's row-4 weights (CASES production,
-    # September 29 on) reads the base lane's row-4 re-solve (row4_nest_rows, gated there against the case's grid at
-    # both normalizations); the case before it keeps the published rows. I's own entries are the run's case.
+    # September 29 on) reads the base lane's row-4 re-solve (production_rows, gated there against the case's grid at
+    # both normalizations); a case without such a grid keeps the published rows. From October 5 the case before has a
+    # grid of its own too, so each of the two reads its own rows. I's own entries are the run's case.
     SCENARIOS = ("central", "account", "eps3_bb", "eps3_hs", "account_gdp", "eps3_hs_gdp")
     published = {k: I[k] for k in SCENARIOS}
     I["nest"] = {CASE["prev"]["case"]: published, CASE["case"]: published}
-    if CASE.get("production"):
-        prod = B.fiscal_totals(CASE["case"])["adopted"]["production"]
-        rows4, info4 = B.row4_nest_rows(d, nest, prod, B.LATER_CASES[CASE["case"]].lane)
-        f4 = info4["gdp_factor"]["row4"]
-        own = dict(central=B.pick(rows4, "below_ba", 2.0, 1.0, np.inf), account=B.pick(rows4, "hs_or_less", 2.0, 1.0, np.inf),
-                   eps3_bb=B.pick(rows4, "below_ba", 2.0, 1.0, 3.0), eps3_hs=B.pick(rows4, "hs_or_less", 2.0, 1.0, 3.0))
-        own.update(account_gdp=B.as_gdp(own["account"], f4), eps3_hs_gdp=B.as_gdp(own["eps3_hs"], f4))
-        # The account's split is the engine's production cell at both band ends (case_ends' P and F there).
+    for c in (CASE["prev"], CASE):
+        if not c.get("production"):
+            continue
+        own, info4, prod = production_rows(B, d, nest, c["case"])
+        # The account's split is the engine's production cell at both band ends (case_ends' P and F there). The case's
+        # gate keeps the name it had when only the case had a grid.
         got = {end: float(own["account" if v["normalization"] == "cash" else "account_gdp"].private_plus_receipts_bn)
                for end, v in prod["ends"].items()}
         want = {end: v["case"]["P_bn"] + v["case"]["F_bn"] for end, v in prod["ends"].items()}
-        gate("account_production_term_case_grid", all(abs(got[e] - want[e]) < 1e-6 for e in got), row4=got, case_grid=want,
+        gate("account_production_term_case_grid" if c is CASE else f"account_production_term_{c['case']}_grid",
+             all(abs(got[e] - want[e]) < 1e-6 for e in got), row4=got, case_grid=want,
              normalization={end: v["normalization"] for end, v in prod["ends"].items()})
-        I["nest"][CASE["case"]] = own
-        I.update(own)
-        I["production_row4"] = info4
+        I["nest"][c["case"]] = own
+        if c is CASE:
+            I.update(own)
+            I["production_row4"] = info4
+        else:
+            I["production_row4_prev"] = info4
+    if "lineage" in I.get("production_row4", {}):
+        # The case's grid adds to the case before's: its re-solve before the addition is on the same grid file, weights
+        # and GDP factor as the case before's own, so the addition is all that separates the two cases' scenarios.
+        p, q = I["production_row4_prev"], I["production_row4"]
+        gate("production_rows_add_to_the_previous_case_s", q["lineage"]["base"] == CASES[CASE["prev"]["case"]]["lane"]
+             and p["grid"] == q["grid"] and p["factors"] == q["factors"] and p["gdp_factor"] == q["gdp_factor"],
+             base=q["lineage"]["base"], previous_lane=CASES[CASE["prev"]["case"]]["lane"], grid=q["grid"]["file"])
     I["basis"] = {sp: B.wage_basis(d, sp) for sp in ("below_ba", "hs_or_less")}
     pw = d.pw.to_numpy()
     branches = pd.read_csv(B.PATHS["branches"])
@@ -2563,6 +2657,51 @@ def row4_group_weights(B, d):
                     grid_file=prod["grid"]["file"])
 
 
+LINEAGE_RULE = ("the added people (descendants who no longer report Mexican origin, counted whole) are not in the CPS as "
+                "group members, so each identified third-plus-generation member's row-4 weight is raised by added / "
+                "identified G3+, which places them at the identified G3+ members' distribution [ASSUMPTION: the account "
+                "prices some of them at G3+ members' amounts and the rest at third-plus non-Hispanic whites' amounts at "
+                "the G3+'s ages (meta.lineage.members); here all of them take the G3+ members' records]; the other "
+                "residents keep the CPS frame, in which the added people sit unfound, as the distribution lane leaves them")
+
+
+def lineage_group_weights(B, d):
+    """The group's own frame on the lineage the case counts (CASES group_weights "lineage", October 5 on): the row-4
+    weights (row4_group_weights), with the added people placed at the identified third-plus generation's records
+    (LINEAGE_RULE). The counts are the case's (its corrections.json meta.lineage.counts). G3+ is the generation
+    account's mask: US-born, both parents born in US areas, Mexican origin (PRDTHSP 1), inside the group.
+    Gates: the group on row 4 is the account's union and its G3+ the identified G3+ (1e-9 relative); the lineage is the
+    union plus the added people and the generation split's G3+ is identified plus added (1e-9 relative); only G3+
+    records move."""
+    w4, g4 = row4_group_weights(B, d)
+    lineage = json.loads((FISCAL / CASE["lane"] / "derived/corrections.json").read_text())["meta"]["lineage"]
+    counts = lineage["counts"]
+    tgt = d.target.to_numpy()
+    g3 = tgt & d.PRCITSHP.isin([1, 2, 3]).to_numpy() & d.PEMNTVTY.isin(US_AREAS).to_numpy() \
+        & d.PEFNTVTY.isin(US_AREAS).to_numpy() & d.PRDTHSP.eq(1).to_numpy()
+    n4, n3 = float(w4[tgt].sum()), float(w4[g3].sum())
+    gate("lineage_group_union_is_the_account_s", np.isclose(n4, counts["account_union"], rtol=1e-9, atol=0),
+         frame=n4, account=counts["account_union"])
+    gate("lineage_group_g3plus_is_the_identified_g3plus", np.isclose(n3, counts["identified_g3plus"], rtol=1e-9, atol=0),
+         frame=n3, case=counts["identified_g3plus"], records=int(g3.sum()))
+    factor = 1 + counts["added"] / n3
+    w = np.where(g3, w4 * factor, w4)
+    n = float(w[tgt].sum())
+    g = pd.read_csv(io.BytesIO(read_input("generations"))).set_index(["convention", "generation", "band_end"])
+    g3_split = float(g.loc[("a", "G3plus", "low"), "population"])
+    gate("lineage_group_count_is_the_lineage", np.isclose(n, counts["lineage_population"], rtol=1e-9, atol=0)
+         and np.isclose(float(w[g3].sum()), g3_split, rtol=1e-9, atol=0), frame=n, lineage=counts["lineage_population"],
+         g3plus_frame=float(w[g3].sum()), g3plus_generation_split=g3_split)
+    gate("lineage_group_moves_only_g3plus", np.array_equal(w != w4, g3 & (w4 > 0)))
+    label = [f"{x / 1e6:.1f}m" for x in (n, n4, counts["added"])]
+    gate("lineage_counterfactual_label_counts", all(x in CF_LINEAGE for x in label), label=CF_LINEAGE, counts=label)
+    return w, dict(g4, members_m=n / 1e6, row4_members_m=n4 / 1e6, identified_g3plus_m=n3 / 1e6,
+                   added_m=counts["added"] / 1e6, priced_as_g3plus_m=lineage["members"]["g3plus"] / 1e6,
+                   priced_as_white_m=lineage["members"]["white"] / 1e6, g3plus_factor=factor,
+                   g3plus_records=int(g3.sum()), rule=LINEAGE_RULE,
+                   counts_source=f"{CASE['lane']}/derived/corrections.json meta.lineage")
+
+
 def group_frame(B, d, I, fin, pw=None):
     """The group's own rows, on the person weights pw (default: the CPS's published weights, d.pw)."""
     pw, tgt = (d.pw.to_numpy() if pw is None else pw), d.target.to_numpy()
@@ -2668,10 +2807,13 @@ CF = "2024, with vs without the 40.9m CPS Mexican-origin residents (stationary)"
 # From September 29 (CASES group_weights "row4") the group is the account's count.
 CF_ROW4 = ("2024, with vs without the 39.7m Mexican-origin residents the account prices (audit row 4; the CPS's "
            "published weights give 40.9m) (stationary)")
+# From October 5 (group_weights "lineage") the group is the lineage the case counts.
+CF_LINEAGE = ("2024, with vs without the 42.8m people of Mexican-origin lineage the account prices: the 39.7m who report "
+              "Mexican origin (audit row 4) and 3.0m descendants who no longer do, counted whole (stationary)")
 
 
 def counterfactual() -> str:
-    return CF_ROW4 if CASE.get("group_weights") == "row4" else CF
+    return {"row4": CF_ROW4, "lineage": CF_LINEAGE}.get(CASE.get("group_weights"), CF)
 
 
 def registry(T, meta, fin, sister_tbl, role_only=None):
@@ -3289,6 +3431,16 @@ def main():
         meta["group"] = dict(ingroup_victims=ig, weights="row4", row4=g4, **ginfo,
                              cps_published_weights=ginfo_published)
         print(f"  ✓ group frame on row 4: {g4['members_m']:.6f}m members (CPS published {g4['published_members_m']:.6f}m)")
+    elif CASE.get("group_weights") == "lineage":
+        # The lineage's count: row 4 with the added people at the identified G3+ records (lineage_group_weights), the
+        # CPS's published weights beside it as for September 29.
+        wl, gl = lineage_group_weights(B, d)
+        gf, ig, ginfo = group_frame(B, d, I, fin, pw=wl)
+        gf_published, _, ginfo_published = group_frame(B, d, I, fin)
+        meta["group"] = dict(ingroup_victims=ig, weights="lineage", lineage=gl, **ginfo,
+                             cps_published_weights=ginfo_published)
+        print(f"  ✓ group frame on the lineage: {gl['members_m']:.6f}m members (row 4 {gl['row4_members_m']:.6f}m, "
+              f"G3+ x {gl['g3plus_factor']:.6f}; CPS published {gl['published_members_m']:.6f}m)")
     else:
         gf, ig, ginfo = group_frame(B, d, I, fin)
         meta["group"] = dict(ingroup_victims=ig, **ginfo)

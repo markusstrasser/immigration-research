@@ -651,3 +651,92 @@ The share barely moves. The accrual leaves today's persons, and the rest of the 
 - 22:17–22:18: rerun_lane on the default case, IDENTICAL 35/35. pytest 17 passed.
 - 22:33: the pins landed (debt 7e1b500, generation aa1f53b, propagation 911afa6); `SEPT29_INTEREST` set from `stocks.csv` at 7e1b500. `specs.cjs --case sept29` (25 PASS; both files identical to the dry run's) and `winners_losers.py --case sept29` (exit 0, 524 gates) into `derived/sept29/`, finished before 22:35:40.
 - 22:35:40–22:39:14: rerun_lane pass 1, IDENTICAL 59/59 (exit 3: the test file). 22:39:26–22:47:15: pass 2 with `--allow-unrun`, IDENTICAL 59/59, exit 0. 22:47:20: pytest 17 passed.
+
+## v5 case (oct05), 2026-10-05
+
+[2026-10-05: on main case v5 (`oct05`, `../main_case_2026_10_05/`, $390.2940–461.2431bn on the lineage's 42,752,213), pooled within SPM units, **17.6%** of other residents come out ahead under tax-share financing (a) and **16.9%** under per-person cuts (b), against 17.9% and 17.1% on sept29; the stacks give 10.8–24.3% under (a). The person count gives 16.7% and 16.8% (sept29 16.9% and 16.9%). Taxpayers' fiscal channel is **$416.4bn** at central values (sept29 $394.4bn). Of it, the pension accrual ($80.4bn; sept29 $74.9bn) and the borrowed part ($12.6bn; sept29 $13.1bn) go to future payers, so the social net on today's residents is **−$378.2bn** (sept29 −$360.6bn). The capped programs fall on eligible households without the aid: $8.8bn (sept29 $8.1bn). The group's own rows are on the lineage, 42.75m members, with the 3.04m added people placed at the identified third-plus generation's records [ASSUMPTION]; the direct transfer A is **$10,191 per member** (sept29 $10,395 on 39.71m). [CALCULATION: `specs.cjs --case oct05` and `winners_losers.py --case oct05`; `derived/oct05/`]]
+
+claude-opus-5-5 (v5consC)
+
+**What runs.** `node specs.cjs --case oct05` evaluates the September 29 case (band variant `sept29_case` in v5's `main_case_bands.csv`) and the adopted case with their own packages. `winners_losers.py --case oct05` allocates the adopted case and keeps September 29 as the positive control. Both write to `derived/oct05/`; `derived/` (September 27) and `derived/sept29/` are as they were. Pins in `CASES["oct05"]`:
+- the distribution lane at fecaae7e (`derived/oct05/`, `case_ends_oct05.json`);
+- the debt lane at 604b09e1 (`derived/oct05/`);
+- the generation account at e5ca5efe (`generation_results_oct05.csv`);
+- the propagation lane at 72f2e3bc (`sept24_propagation_2026_09_24/derived/oct05/`). As for every case, its real-costs totals and band variants are read from the working tree, which equals 72f2e3bc (`git diff 72f2e3bc` empty; `sources_manifest.csv` holds their sha256);
+- the debt lane's legacy interest (`OCT05_INTEREST`): 30.6288 / 42.6236, gated at 5e-4 against `stocks.csv` at 604b09e1 (30.628803 / 42.623603);
+- the ladder entry, 281.
+
+**Channels, central values, $bn a year** (`derived/oct05/channels.csv`):
+
+| Channel | September 29 | October 5 |
+|---|---:|---:|
+| Adopted main case, other residents' net (fiscal + wages) | −403.1 | −425.8 |
+| Fiscal channel (taxpayers) | −394.4 | −416.4 |
+| — cash financed today | −260.6 | −273.9 |
+| — return on public capital (never borrowed) | −45.8 | −49.5 |
+| — federal part financed by borrowing (future taxpayers) | −13.1 | −12.6 |
+| — pension accrual (future payers of Social Security and Medicare) | −74.9 | −80.4 |
+| Displaced beneficiaries of the capped programs | −8.1 | −8.8 |
+| Wages (production on row 4, with the lineage's delta) | −0.6 | −0.6 |
+| Social net on today's residents | −360.6 | −378.2 |
+| Debt legacy interest (beside, never added) | 30.8–41.5 | 30.6–42.6 |
+
+The channels outside the budget do not move: renters −33.9, landlords +37.4, victims −30.9, congestion −13.0, unreimbursed care −4.4 and the rest, together −$45.4bn in the social net. Their lanes price the CPS's 40.9m. Had they priced the lineage's 42.75m in proportion, the social net would carry about $2.1bn more (× 1.045) [INFERENCE; not computed: the added people resemble the G3+ and third-plus whites more than the union's average, so the proportional figure is rough].
+
+**Share of other residents ahead** (`net_shares.csv`, the social net, central; stacks most to least costly in brackets):
+
+| Count | (a) tax-share | (b) per person |
+|---|---|---|
+| Pooled within SPM units | 17.9 → **17.6** (10.8–24.3) | 17.1 → **16.9** (11.2–22.4) |
+| Person | 16.9 → **16.7** (12.2–20.8) | 16.9 → **16.8** (12.3–20.8) |
+
+The case rises $22.6bn at central values, and the rise falls on the same payers, so the share ahead slips by 0.1–0.3 points.
+
+**The group itself, on the lineage** (`group_frame.csv`; the CPS's published weights in `group_frame_cps_published.csv`):
+
+| Item | September 29, row 4 (39.71m) | October 5, lineage (42.75m) |
+|---|---|---|
+| Direct fiscal transfer received (A, sign flipped), $bn | +412.8 (383.1–442.5) | +435.7 (402.2–469.1) |
+| — per member | $10,395 | $10,191 |
+| First generation's market gain over its Mexico earnings, $bn | +201.9 (176.6–218.2), 11.04m members | the same: no first-generation member is added |
+| Wage competition among the group's own workers, high school or less (ε ∞), $bn | −18.4 (−14.6 to −22.2) | −19.8 (−15.7 to −23.9) |
+| Same, ε 3 | −31.6 | −32.8 |
+| Wage gain of the group's workers with some college or more (ε ∞) | +5.3 | +5.9 |
+| Victims inside the group, per member | −$506 | −$470 |
+| The account's split by generation (minors with their parents), $bn | G1 169.4–197.4, G2 110.7–121.8, G3+ 91.4–115.6 | G1 169.3–197.3, G2 110.6–121.7, G3+ 110.5–142.2 |
+
+The victims row is the victim lane's −$20.1bn for the identified members over the larger count; the added people's own victimisation is not priced [not computed]. The wage rows move by the lineage's production delta (each scenario's wage changes × λ, 1.022 for high school or less) and by the added people's earnings at the G3+ records. [CALCULATION: `derived/oct05/group_frame.csv`; the sept29 column from `derived/sept29/group_frame.csv`]
+
+**Rules designed.**
+- **The added people at the G3+ distribution** [ASSUMPTION; the Consumers row's second option]. The case prices 1.957m of them at identified G3+ members' amounts and 1.083m at third-plus non-Hispanic whites' amounts at the G3+'s ages (`meta.lineage.members`). The CPS cannot see them, so `lineage_group_weights` raises each identified G3+ member's row-4 weight by 1.211937 (= 1 + 3,039,719.6 / 14,342,574.6) over 6,351 records. All 3.04m then take the G3+ members' earnings, schooling and nativity. G3+ is the generation account's mask (`frame.py`: US-born, both parents born in US areas, PRDTHSP 1, inside the group). Gates (1e-9 relative):
+  - the group on row 4 is the account's union, 39,712,493.33;
+  - its G3+ is the identified G3+, 14,342,574.61;
+  - the lineage is 42,752,212.92, and its G3+ is the generation split's 17,382,294.20;
+  - only G3+ records move, and the counterfactual label's counts are the case's.
+
+  This rule moves A per member, the group's own wage rows, the victims per member and the US-born count; the first generation's rows stay put. Alternative: leave the added people out of the group's rows and state the count. The rows stay on 39.71m, and A per member, $10,971, would put the 42.75m account's total over 39.71m, 7.7% too high.
+- **The other residents keep the CPS frame** [ASSUMPTION], the distribution lane's rule 4. The added people sit among them unfound (about 3.04m of 295.83m, 1.03%), so the shares ahead count them among payers and winners, and under (b) they carry about 1% of today's fiscal channel [INFERENCE: their share of the frame].
+- **The group's geography stays on the identified members' published weights**, as in every case [ASSUMPTION]. It decides where the state-local cost, victims' harm and uncompensated care arise. Alternative: the lineage weights would move $5.6bn of the $287.8bn central state-local cost between states (Texas +$3.5bn, California +$1.8bn, Illinois −$0.9bn). Row 4's reweighting alone moves $4.8bn (sept29 did not apply it either); the added people on top of row 4 move $2.4bn. [CALCULATION: scratch, state shares of `lineage_group_weights` and `row4_group_weights` against the published weights]
+- **Both cases have production grids.** September 29's scenarios are now its own row-4 re-solve, not the published rows; its regression against 492bf32 passes (5.7e-14bn). The case's scenarios are the same re-solve plus the distribution lane's `lineage_rows` (`production_rows`). Gates: `account_production_term_case_grid` and `account_production_term_sept29_grid` (1e-6bn), and `production_rows_add_to_the_previous_case_s` (the same grid file, factors and GDP factor, with the lineage built on September 29's lane).
+- **The debt lane's correction lines.** v5's lines carry the added people's part of each correction line, which the per-correction file holds as components of their own (`v5_lineage`, `v5_union_response`). `per_correction_check` takes those parts on the correction lines from the by-line file (`corrections_federal_split_2024.csv`), gated to rebuild the two components (3e-6bn); the check then closes at 2e-6bn (tolerance 1e-5).
+
+**The two fiscal-channel centrals.** This lane's $416.4bn is the case's mid, $425.8bn, less −P ($0.6bn) and the capped programs ($8.8bn). The distribution lane's $417.6bn adds $1.2bn: the engine's F at 48 / 11 (mean 10.49) less its central scenario's (9.28). Unrounded, 416.3716 + 1.2069 = 417.5785.
+
+**Gates.**
+- Cross-check: at 48 / 11 the fiscal channel's A is −402.241371 / −469.102418 (the base's one definition), and the engine's is −402.241420 / −469.102384 (gate 1e-3).
+- `specs.cjs --case oct05`: 25 PASS. The band is 390.2940–461.2431 (`adopted`); the September 29 control gives 371.4146–434.8410 (`sept29_case`).
+- `winners_losers.py --case oct05`: exit 0, 538 gates (sept29: 524). Both regressions against the distribution lane pass, September 29 at 492bf32 and oct05 at fecaae7e: max |diff| 5.7e-14bn over 828 cells each.
+- `scripts/rerun_lane.py` over six commands (`specs.cjs` and `winners_losers.py`: the default, `--case sept29` and `--case oct05`): **IDENTICAL 83/83, exit 0** (2026-10-06 00:58:33–00:59:45 JST).
+- Old outputs unchanged: `git status` shows nothing under `derived/` outside the new `derived/oct05/`.
+- pytest: 17 passed.
+
+**Reproduce (oct05).**
+- `node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct05`
+- `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct05`
+
+**Log (2026-10-06 JST; times from `date` calls and the run files' timestamps).**
+- 00:44:56: `specs.cjs --case oct05` into scratch, 25 PASS.
+- 00:54:31–00:54:41: the first scratch run of `winners_losers.py --case oct05` stopped at `debt_lines_carry_per_correction_split` (0.199bn): v5's lines carry the added people's part of the correction lines. Fixed by reading those parts from the by-line file.
+- 00:56:11–00:56:37: scratch run, exit 0, 538 gates.
+- 00:57:41: `specs.cjs --case oct05` in place, identical to the scratch files. 00:57:46–00:58:11: `winners_losers.py --case oct05` in place, exit 0, 538 gates; every output equals the scratch run's except `sources_manifest.csv` (the specs path).
+- 00:58:33–00:59:45: rerun_lane, IDENTICAL 83/83, exit 0. 00:59:51: pytest 17 passed.
