@@ -1,4 +1,5 @@
-"""The build's printed-sum gate: in every ledger block, the printed lines add to the printed total.
+"""The build's gates: in every ledger block the printed lines add to the printed total, and the template's
+build fragment is cut out exactly once.
 
     uv run --no-project python3 -m pytest infra/immigration-fiscal/overview_2026_09_28/test_build_sums.py -q
 """
@@ -6,6 +7,8 @@
 import sys
 from decimal import Decimal
 from pathlib import Path
+
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build as B  # noqa: E402
@@ -57,10 +60,25 @@ def test_the_prose_sum_adds_as_printed_and_breaks_without_the_footing():
     moved["pairing.footing_reduction"]["expr"] = "(0.0, 0.0)"
     assert B.prose_sum_errors(moved) == [
         "the main estimate, less the low end's offending at the Hispanic average, plus the costs outside the budget, "
-        "low end: the parts print as 418, pairing.total as 414"]
+        "low end: the parts print as 495, pairing.total as 490"]
 
 
 def test_the_capital_return_total_must_say_the_enterprises_are_in():
     [(rid, _view, _sentence, errs)] = B.Q.lint_unit("Return on public capital: about "
                                                      "{{q:capital_return.total|mid_range}}. In the total.")
     assert (rid, errs) == ("capital_return.total", ["names none of /enterprise/"])
+
+
+def test_the_build_fragment_is_cut_once_and_its_headings_open_the_contents():
+    frag = '\n<h3 id="build">How the total is built</h3>\n<p>{{LEDGER}}</p>\n<h3 id="objects">One <b>year</b></h3>\n'
+    page = f"<h2>a</h2>{{{{GROUPS}}}}{B.BUILD_START}{frag}{B.BUILD_END}<h2>b</h2>"
+    rest, cut = B.cut_build_block(page)
+    assert (rest, cut) == ("<h2>a</h2>{{GROUPS}}<h2>b</h2>", frag)
+    assert B.build_toc(cut) == [("build", "How the total is built"), ("objects", "One year")]
+    assert B.cut_build_block("<h2>a</h2>") == ("<h2>a</h2>", None)  # a template from before the build part
+    for broken in (page + B.BUILD_START + B.BUILD_END, page.replace(B.BUILD_END, ""),
+                   f"{B.BUILD_END}{frag}{B.BUILD_START}"):
+        with pytest.raises(SystemExit, match="needs one"):
+            B.cut_build_block(broken)
+    with pytest.raises(SystemExit, match="no <h3 id"):
+        B.build_toc("<h3>No anchor</h3>")

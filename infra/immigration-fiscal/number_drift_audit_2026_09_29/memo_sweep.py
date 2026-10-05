@@ -8,12 +8,11 @@ A record's other values are the numbers a memo may still quote after the record 
                 earlier vintage)
     referenced  the current value of a record that `supersedes` names by id (case.main supersedes
                 case.schools_sept26)
-    registry    the registry's own value of a record in ADOPTED. The registry follows the evidence map, which stays on
-                the September 27 case until the operator moves it; the main case adopted on 2026-10-05 (v5) is
-                current for the memos. A record in ADOPTED takes its current value from the adopted lane (the
-                pairing's from the propagation lane's run of v5), and its registry value becomes an earlier
-                vintage ("$322–387bn" as the main case is flagged, "$390–461bn" passes; "$414–488bn" as the
-                pairing is flagged, "$490–571bn" passes).
+    registry    the registry's own value of a record in ADOPTED. The registry follows the evidence map, which moves
+                to a new main case only when the operator asks. While the map lags, a record in ADOPTED takes its
+                current value from the adopted lane, and its registry value becomes an earlier vintage. ADOPTED is
+                empty since 2026-10-06, when the map moved to main case v5: the September 27 values now reach the
+                sweep through the records' `supersedes` (case.sept27, pairing.total_sept27).
     earlier     the value a record in EARLIER held on the case v5 replaced, the September 29 case (v4), also an
                 earlier vintage ("$371–435bn" as the main case and "$463–536bn" as the pairing are flagged, and
                 pass when named).
@@ -93,11 +92,10 @@ EXEMPT = {
         "that case's by declaration"),
 }
 
-# the main case adopted on 2026-10-05 (v5, ladder 281), current for the memos while the registry follows the evidence
-# map on September 27: record id → (path, field, expr), on the adopted lane's summary (per member of the 42.75M
-# lineage) or, for the pairing, on the propagation lane's run of v5 (72f2e3bc)
-ADOPTED_LANE = "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json"
-PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv"
+# the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,
+# field, expr). Empty since 2026-10-06: the map and its registry are on main case v5 (ladder 281). The next time the
+# main case moves ahead of the map, list its records here (the v5 bridge read main_case_2026_10_05's summary and the
+# propagation lane's oct05 pairing, with _pairing("oct05")).
 _PAIR = "csv:section=7&column=pairing_on_priced_count&item=published pairing"
 
 
@@ -112,11 +110,7 @@ def _pairing(case):
     }
 
 
-ADOPTED = {
-    "case.main": (ADOPTED_LANE, "a=json:main_case", "(a[0], a[1])"),
-    "case.per_member": (ADOPTED_LANE, "a=json:v5.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
-    **{rid: (PAIRING_LANE, field, expr) for rid, (field, expr) in _pairing("oct05").items()},
-}
+ADOPTED = {}
 
 
 def current_values(recs):
@@ -161,7 +155,8 @@ ITEM = {
     "fill_in": r"fill-?in|imput|allocat",
     "remittance": r"remittance",
     "gg": r"general (?:government|administration)",
-    "household": r"household|net[- ]contribut|costliest",
+    # the records' constructs, not any sentence about households ("household income", "immigrant households")
+    "household": r"net[- ]contribut|costliest|pays? (?:more than (?:it|they) costs?|(?:its|their) way)",
     "pm25": r"PM2\.5|fine[- ]particle|particulate|air pollution",
     "crash": r"crash",
     "victims": r"victim",
@@ -173,6 +168,7 @@ ITEM = {
     "candidate_v3": r"candidate|bundle|pending|revised set|one set|\bv[34]\b",
     "candidate_v4": r"candidate|bundle|pending|revised set|one set|\bv[34]\b",
     "pension": r"pension|accru|Social Security|Part A",
+    "assumptions": r"assumption|tornado",
 }
 ITEM_EXTRA = {"pm25.deaths_priced": r"death"}
 
@@ -629,13 +625,13 @@ CONTROLS = [
     ("a lane-count total quoted as current", "Adding the social costs gives the pairing, $416.2–490.7bn.",
      {("pairing.total", "count_unlabelled")}),
     ("a lane range written as the current central's range",
-     "Road crashes cost other residents $10.6bn (−$57.7bn to +$74.3bn in the lane).",
+     "Road crashes cost other residents $11.4bn (−$57.7bn to +$74.3bn in the lane).",
      {("crash.span_priced", "count_as_current")}),
     ("the same across a line break",
-     "Road crashes cost other residents $10.6bn\n(−$57.7bn to +$74.3bn in the lane).",
+     "Road crashes cost other residents $11.4bn\n(−$57.7bn to +$74.3bn in the lane).",
      {("crash.span_priced", "count_as_current")}),
     ("the lane range in a clause of its own",
-     "Road crashes cost other residents $10.6bn; the lane's own range is −$57.7bn to +$74.3bn on the CPS's 40.90M.",
+     "Road crashes cost other residents $11.4bn; the lane's own range is −$57.7bn to +$74.3bn on the CPS's 40.90M.",
      {("crash.span_priced", "count_labelled")}),
     ("a dated case after \"now\"", "The main case now costs $258–292bn, the September 26 schools case.",
      {("case.main", "vintage_as_current")}),

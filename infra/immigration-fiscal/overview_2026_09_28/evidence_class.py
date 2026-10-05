@@ -21,7 +21,8 @@ Keyed by each finding's first ladder entry. `evidence.py` refuses a finding with
 
 CLASS = {
     # the annual account
-    239: ("sample", "arithmetic", "Survey income for the group was too high. The account corrects it with records."),
+    281: ("sample", "arithmetic", "Survey income for the group was too high. The account corrects it with records."),
+    280: ("sample", "arithmetic", None),
     184: ("sample", "tabulated", None),
     269: ("sample", "arithmetic", None),
     161: ("sample", "arithmetic", None),

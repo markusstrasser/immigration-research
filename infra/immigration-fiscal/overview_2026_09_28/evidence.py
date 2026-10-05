@@ -189,9 +189,18 @@ def level_tag(f, fail):
     return tag
 
 
-def render(entries, fail):
+BUILD_PART = "build"  # the part that opens with the template's build fragment (ledger, alternatives, assumptions)
+BUILD_MARKER = "{{BUILD_BLOCK}}"  # where the fragment goes; build.py substitutes it
+
+
+def render(entries, fail, build_toc=()):
+    """The page's parts. `build_toc` lists (anchor, title HTML) for the build fragment's headings: the build part's
+    contents list them before its groups, and its heading is followed by BUILD_MARKER."""
     from groups import PARTS
     check_coverage(entries, fail)
+    stray = sorted({g["part"] for g in GROUPS} - {pid for pid, _ in PARTS})
+    if stray:
+        fail(f"groups in parts that PARTS lacks, so the page would drop them: {stray}")
     bib = {}
     toc, blocks = [], []
     n_find = 0
@@ -202,10 +211,13 @@ def render(entries, fail):
     sections = {}  # group id -> section number
     for pid, ptitle in PARTS:
         groups = [g for g in GROUPS if g["part"] == pid]
-        if not groups:
+        if not groups and pid != BUILD_PART:
             continue
         toc.append(f'<li><a href="#part-{pid}">{html.escape(ptitle)}</a><ol>')
         blocks.append(f'<h2 id="part-{pid}">{html.escape(ptitle)}</h2>')
+        if pid == BUILD_PART:
+            toc += [f'<li><a href="#{a}">{t}</a></li>' for a, t in build_toc]
+            blocks.append(BUILD_MARKER)
         for g in groups:
             gi += 1
             sections[g["id"]] = gi

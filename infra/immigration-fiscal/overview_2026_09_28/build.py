@@ -1,17 +1,27 @@
-"""Build the evidence overview page: ladder entries sorted into groups, two charts, one time map.
+"""Build the evidence overview page: ladder entries sorted into groups, the account's ledgers, one time map.
 
     uv run --no-project python3 infra/immigration-fiscal/overview_2026_09_28/build.py
 
-Reads the confidence ladder, the September 27 main case (`summary.json`, `main_case_bands.csv`)
-and the figures page's staircase. Refuses to write if a ladder entry is unassigned or assigned
-twice, or if the staircase and the main case disagree. Writes `derived/overview.html`.
+Reads the confidence ladder, main case v5 (`main_case_2026_10_05/derived/`: `summary.json`,
+`main_case_bands.csv`), the figures page's staircase (the steps up to the September 24 case) and,
+through `quantity_registry.csv`, the lanes the tables quote. The ledger runs the staircase, the
+September 26 and 27 changes, v4's items and v5's lineage from `summary.json`'s
+`change_at_fixed_specifications`; it splits v4's state-price item with the September 29 lane's
+state-price lines. Refuses to write if a ladder entry is unassigned or assigned twice, or if the
+ledger misses a case's subtotal (September 23, 24, 26, 27, 29, and the main estimate). Writes
+`derived/overview.html`.
+
+The ledger sections sit in `template.html` between `<!-- BUILD_BLOCK:START -->` and
+`<!-- BUILD_BLOCK:END -->`. When groups.py has a "build" part, the build moves them to just after
+that part's heading and lists their `<h3 id>` headings first in its contents. Without the part
+they stay where the template has them.
 
 Numbers that the text quotes from a file come from `quantity_registry.csv` through placeholders,
 `{{q:<id>|<view>}}`, which `quantities.py` renders. The build lints every sentence that quotes a
 record, runs the binding tests in `quantity_bindings.csv`, and refuses to write on any failure.
-`--groups PATH` and `--template PATH` read other copies of groups.py and template.html, `--out PATH`
-writes elsewhere, and `--round-each` rounds every table number on its own (the positive controls use
-these).
+`--groups PATH`, `--template PATH` and `--bindings PATH` read other copies of groups.py,
+template.html and quantity_bindings.csv, `--out PATH` writes elsewhere, and `--round-each` rounds
+every table number on its own (the positive controls use these).
 """
 
 import argparse
@@ -33,7 +43,7 @@ import quantities as Q  # noqa: E402
 evidence = None  # imported in main(), after --groups has picked the groups module it reads
 
 LADDER = ROOT / "research/immigration-confidence-ladder.md"
-MAIN = ROOT / "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived"
+MAIN = ROOT / "infra/immigration-fiscal/main_case_2026_10_05/derived"
 STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
 OV = "infra/immigration-fiscal/overview_2026_09_28"
 # how to read the dotted underline that quantities.fill puts on an approximate number; the page carries it only
@@ -49,12 +59,17 @@ def q(rid):
 
 
 def load_headcount():
-    """Priced and raw group size. Per-member figures divide engine totals by the priced count, the
-    population the account prices (row 4 of the data audit), not the CPS's raw union count."""
-    priced, raw = q("headcount.priced") * 1e6, q("headcount.raw") * 1e6
-    if not (39e6 < priced < 41e6 and priced <= raw):
-        fail(f"headcount out of range: priced {priced:,.0f}, raw {raw:,.0f}")
-    return priced, raw
+    """The lineage the account prices, its identified members (row 4 of the data audit) and the added
+    descendants, and the CPS's raw union count. Per-member figures divide engine totals by the lineage."""
+    lineage, identified, added, raw = (q(k) * 1e6 for k in ("headcount.lineage", "headcount.identified",
+                                                            "headcount.added", "headcount.raw"))
+    if q("headcount.priced") * 1e6 != lineage:
+        fail(f"the priced count {q('headcount.priced') * 1e6:,.0f} is not the lineage {lineage:,.0f}")
+    if not (42e6 < lineage < 44e6 and 39e6 < identified < 41e6 and identified <= raw
+            and abs(identified + added - lineage) < 1):
+        fail(f"headcount out of range: lineage {lineage:,.0f}, identified {identified:,.0f} + added {added:,.0f}, "
+             f"raw {raw:,.0f}")
+    return lineage, identified, added, raw
 
 
 
@@ -130,13 +145,14 @@ def load_numbers():
              (float(r["cost_low_bn"]), float(r["cost_high_bn"]))
              for r in csv.DictReader((MAIN / "main_case_bands.csv").open())}
     stairs = json.loads(STAIRS.read_text())["staircase"]
-    main = s["main_case"]
     sept24 = s["adopted_2026_09_24"]
     last = next(r for r in stairs if r["id"] == "benefits")
     if any(abs(a - b) > 1e-3 for a, b in zip(last["total"], sept24)):
         fail(f"staircase ends at {last['total']}, summary.json September 24 case is {sept24}")
-    if any(abs(a - b) > 1e-3 for a, b in zip(bands["adopted"], main)):
-        fail("main_case_bands.csv and summary.json disagree on the adopted case")
+    for variant, key in [("adopted", "main_case"), ("sept29_case", "adopted_2026_09_29"),
+                         ("sept27_case", "adopted_2026_09_27"), ("schools_case", "schools_case")]:
+        if any(abs(a - b) > 1e-3 for a, b in zip(bands[variant], s[key])):
+            fail(f"main_case_bands.csv {variant} {bands[variant]} and summary.json {key} {s[key]} disagree")
     return s, bands, stairs
 
 
@@ -171,20 +187,46 @@ def waterfall_rows(s, stairs):
     if any(abs(a - b) > 1e-3 for a, b in zip(gg26, q("finite_removal.general_government_and_row8"))):
         fail(f"the September 26 step less runs L and F is {gg26}, not run I (general government)")
     sch = [a - b for a, b in zip(s["schools_case"], s["adopted_2026_09_26"])]
-    ent = s["enterprises"]
-    ent_surplus = ent["receipt_at_end_specifications"]["cost_bn"]
-    capital_total = s["capital_at_end_specifications"]["total_bn"]
-    ent_capital = [t - core - block for t, core, block in zip(capital_total, c["capital_core"], c["capital_block"])]
+    # Each later case's changes at fixed specifications, nested: v5's lineage holds v4's items, which hold September
+    # 27's changes.
+    c29 = c["sept29_case"]
+    c27 = c29["sept27_case"]
+    add = lambda *vs: [sum(v[i] for v in vs) for i in (0, 1)]  # noqa: E731
+    # v4's state-price item prices three services at the states where the group lives and re-rates its sales and
+    # vehicle taxes; the service lines move with this item alone, so the rest of the item is the taxes.
+    services = [q(f"state_prices.{k}") for k in ("public_order", "health", "recreation")]
+    state_tax = [a - b for a, b in zip(c29["item_state"], add(*services))]
+    if any(abs(a + b) > 1e-9 for a, b in zip(state_tax, q("state_prices.taxes"))):
+        fail(f"the state item less its service lines is {state_tax}, not the registry's state_prices.taxes")
     rows += [
         dict(label="Consumption taxes on spending", note="net of saving and remittances", step=key26),
         dict(label="Schools, finite removal", note="", step=sch26),
         dict(label="General administration, finite removal", note="", step=gg26),
         dict(label="Schools, long run: full cost per pupil", note="spending rises ~1% per 1% more pupils", step=sch),
         dict(label="September 26 schools case", total=True),
-        dict(label="Roads, parks: long-run response", note="0.73 and 0.95 across states", step=c["long_run_responses"]),
-        dict(label="Rental assistance at 1", note="", step=c["rental_assistance"]),
-        dict(label="Return on public capital", note="2% real low end, 3% high end", step=[a + b for a, b in zip(c["capital_core"], c["capital_block"])]),
-        dict(label="Government enterprises", note="operating loss and capital return", step=[ent_surplus[0] + ent_capital[0], ent_surplus[1] + ent_capital[1]]),
+        dict(label="Roads, parks: long-run response", step=c27["long_run_responses"]),
+        dict(label="Rental assistance at 1", step=c27["rental_assistance"]),
+        dict(label="Return on public capital", step=add(c27["capital_core"], c27["capital_block"])),
+        dict(label="Government enterprises",
+             step=add(c27["enterprise_rekey"], c27["enterprise_surplus_receipt"], c27["capital_enterprise"])),
+        dict(label="September 27 case", total=True),
+        dict(label="Pension accrual", step=c29["item_pension"]),
+        dict(label="Property taxes, long run", step=c29["item_5"]),
+        dict(label="Income tax keyed to IRS totals", step=c29["item_3"]),
+        dict(label="Payroll tax compliance", step=c29["item_6a"]),
+        dict(label="Workers' compensation", step=c29["item_7"]),
+        dict(label="Production gain rekeyed", step=c29["item_2"]),
+        dict(label="Enterprise and housing receipts", step=c29["item_1"]),
+        dict(label="Enterprise housing capital", step=c29["item_4"]),
+        dict(label="State prices: public order and safety", step=services[0]),
+        dict(label="State prices: health services", step=services[1]),
+        dict(label="State prices: recreation and culture", step=services[2]),
+        dict(label="State prices: sales and vehicle taxes", step=state_tax),
+        dict(label="Roads by miles driven", step=c29["item_roads"]),
+        dict(label="September 29 case", total=True),
+        dict(label="Added descendants priced as third-generation members", step=c["g3plus_members"]),
+        dict(label="Added descendants priced as white residents", step=c["whites"]),
+        dict(label="Service responses at the larger group size", step=c["union_response_move"]),
         dict(label="Main estimate", total=True, main=True),
     ]
     tot = [0.0, 0.0]
@@ -197,40 +239,73 @@ def waterfall_rows(s, stairs):
             r["value"] = list(tot)
     if any(abs(a - b) > 1e-3 for a, b in zip(tot, s["main_case"])):
         fail(f"waterfall sums to {tot}, main case is {s['main_case']}")
-    for label, key in [("September 23 case", None), ("September 24 case", "adopted_2026_09_24"),
-                       ("September 26 schools case", "schools_case")]:
-        if key:
-            v = next(r for r in rows if r["label"] == label)["value"]
-            if any(abs(a - b) > 1e-3 for a, b in zip(v, s[key])):
-                fail(f"{label} subtotal {v} != summary {s[key]}")
+    # every case's subtotal; the September 29 case also against its own lane
+    for label, want in [("September 23 case", s["adopted_2026_09_23"]), ("September 24 case", s["adopted_2026_09_24"]),
+                        ("September 26 schools case", s["schools_case"]),
+                        ("September 27 case", s["adopted_2026_09_27"]), ("September 29 case", s["adopted_2026_09_29"]),
+                        ("September 29 case", q("case.sept29"))]:
+        v = next(r for r in rows if r["label"] == label)["value"]
+        if any(abs(a - b) > 1e-3 for a, b in zip(v, want)):
+            fail(f"{label} subtotal {v} != {want}")
+    for what, parts, total in [("September 27's changes", c27, c27["total"]), ("v4's items", c29, c29["total"]),
+                               ("the lineage", c, c["total"])]:
+        got = add(*(v for k, v in parts.items() if k in ITEMS[what]))
+        if any(abs(a - b) > 1e-3 for a, b in zip(got, total)):
+            fail(f"{what} add to {got}, summary.json's total is {total}")
     rows = [r for r in rows if not r.get("total") or r.get("main")]
-    # Other ways to count, from the registry: the pending set run as one (candidate v4), pension accrual on top,
-    # the social pairing. The pairing's low end prices offending at the Hispanic average, so its fiscal case
-    # moves first and the social step is the social items alone.
-    alt, fisc = q("candidate_v4.set_cash"), q("pairing.fiscal_footing")
+    # Other ways to count, each from the main estimate: pensions counted when paid, budgets at their first-year
+    # responses, the descendants counted by ancestry share. Beside them the social pairing, whose low end prices
+    # offending at the Hispanic average, so its fiscal case moves first and the social step is the social items alone.
+    main, fisc = list(tot), q("pairing.fiscal_footing")
     if abs(fisc[1] - s["main_case"][1]) > 1e-6:  # the totals file keeps six decimals
         fail(f"the pairing's high-end fiscal case {fisc[1]} is not the main case's {s['main_case'][1]}")
     if any(abs(p - f - x) > 1e-9 for p, f, x in zip(q("pairing.total"), fisc, q("social.items"))):
         fail("the pairing less its fiscal case is not social.items")
+    if any(abs(a - b) > 1e-6 for a, b in zip(q("case.cash_set"), s["cash_set"]["band_bn"])):
+        fail("the registry's cash set is not summary.json's")
     rows += [
-        dict(label="Property taxes follow people, with smaller corrections", alt=True, prev=list(tot), value=alt),
-        dict(label="Pensions counted when earned", alt=True, prev=alt, value=q("candidate_v4.set_accrual_payable")),
-        dict(label="Offending at the Hispanic average, low end", beside=True, prev=list(tot), value=fisc),
-        dict(label="Costs outside public budgets", beside=True, prev=fisc, value=q("pairing.total")),
+        dict(label="Pensions counted when paid", alt=True, block=0, prev=main, value=q("case.cash_set")),
+        dict(label="Budgets respond within the first year", alt=True, block=1, prev=main, value=q("case.first_year")),
+        dict(label="Descendants counted by share of Mexican ancestry", alt=True, block=2, prev=main,
+             value=q("case.ancestry_share")),
+        dict(label="Offending at the Hispanic average, low end", beside=True, block=3, prev=main, value=fisc),
+        dict(label="Costs outside public budgets", beside=True, block=3, prev=fisc, value=q("pairing.total")),
     ]
     return rows
 
 
+# The parts of each nested change in summary.json's change_at_fixed_specifications that its total adds. The
+# September 27 block's other keys are memo amounts outside the sum (its note says so).
+ITEMS = {
+    "September 27's changes": ("long_run_responses", "rental_assistance", "capital_core", "capital_block",
+                               "enterprise_rekey", "enterprise_surplus_receipt", "capital_enterprise"),
+    "v4's items": ("item_1", "item_2", "item_3", "item_4", "item_5", "item_6a", "item_7", "item_pension",
+                   "item_state", "item_roads"),
+    "the lineage": ("union_response_move", "g3plus_members", "whites"),
+}
+
+
 # Ledger categories: (category, [(step label on the staircase, reader label, note)]). Items inside a category
-# are ranked by size at render time. Two staircase steps can share one reader label; they are summed.
+# are ranked by size at render time. Two staircase steps can share one reader label; they are summed, and the
+# label keeps the note of its first step (a later step's note is None).
 LEDGER = [
     ("The group's own taxes and benefits", [
         ("Taxes paid minus benefits received", "Taxes paid minus benefits received", "survey values"),
-        ("Taxes checked against records", "Taxes corrected with records", "off-books work, survey fill-ins, top incomes"),
+        ("Taxes checked against records", "Taxes corrected with records",
+         "off-books work, survey fill-ins, top incomes, IRS income totals, payroll taxes"),
+        ("Income tax keyed to IRS totals", "Taxes corrected with records", None),
+        ("Payroll tax compliance", "Taxes corrected with records", None),
         ("Benefits and services checked against records", "Benefits and services corrected with records",
-         "tax credits, medical care, schools, care"),
+         "tax credits, medical care, schools, care, workers' compensation"),
+        ("Workers' compensation", "Benefits and services corrected with records", None),
+        ("Pension accrual", "Pension promises earned",
+         "Social Security and Medicare Part A, at the benefits current law can pay"),
         ("Gain from their work", "Taxes on the gain from their work", "wages and profits of others"),
+        ("Production gain rekeyed", "Taxes on the gain from their work", None),
+        ("Property taxes, long run", "Property taxes", "they follow people in the long run"),
         ("Consumption taxes on spending", "Sales and excise taxes", "net of saving and remittances"),
+        ("State prices: sales and vehicle taxes", "Sales and vehicle taxes at local rates",
+         "the states where the group lives"),
     ]),
     ("Schools and colleges", [
         ("Schools, first-year budget response", "Schools, full cost per pupil",
@@ -240,18 +315,33 @@ LEDGER = [
         ("Colleges and other education", "Colleges and other education", ""),
     ]),
     ("Other public services", [
-        ("Police, courts and prisons", "Police, courts and prisons", "charged by use"),
+        ("Police, courts and prisons", "Police, courts and prisons", "charged by use, at state prices"),
+        ("State prices: public order and safety", "Police, courts and prisons", None),
         ("General administration", "General administration", "{{q:gg.growth_elasticity|range}}% per 1% more residents"),
         ("General administration, finite removal", "General administration", None),
         ("Welfare administration, housing, community", "Welfare administration, housing, community", ""),
-        ("Public health services", "Public health", ""),
-        ("Roads, parks: long-run response", "Roads and parks", "0.73% and 0.95% per 1% more residents"),
+        ("Public health services", "Public health", "at state prices"),
+        ("State prices: health services", "Public health", None),
+        ("Roads, parks: long-run response", "Roads and parks",
+         "0.73% and 0.95% per 1% more residents; roads by miles driven"),
+        ("Roads by miles driven", "Roads and parks", None),
+        ("State prices: recreation and culture", "Roads and parks", None),
         ("Rental assistance at 1", "Rental assistance", ""),
         ("Unpaid hospital care", "Unpaid hospital care", "charged by uninsured use"),
     ]),
     ("Public capital and enterprises", [
         ("Return on public capital", "Return on public capital", "2% real at the low end, 3% at the high end"),
         ("Government enterprises", "Government enterprises", "operating loss and capital return"),
+        ("Enterprise and housing receipts", "Government enterprises", None),
+        ("Enterprise housing capital", "Government enterprises", None),
+    ]),
+    ("Descendants who no longer report Mexican origin", [
+        ("Added descendants priced as third-generation members", "Priced like third-generation members",
+         "{{q:lineage.priced_as_members|value}} people"),
+        ("Added descendants priced as white residents", "Priced like white residents of the same ages",
+         "{{q:lineage.priced_as_whites|value}} people: the share that closes the college gap"),
+        ("Service responses at the larger group size", "Service responses at the larger group size",
+         "for the members who report Mexican origin"),
     ]),
 ]
 
@@ -389,19 +479,21 @@ def running_shown(main, blocks, places, each=False):
 
 
 def alternatives_html(rows):
-    """Other ways to count, as running sums from the main estimate: the alternative rules, then the costs
+    """Other ways to count, as running sums from the main estimate: one block per alternative rule, then the costs
     outside public budgets. Returns the table and its caption."""
     main = next(r for r in rows if r.get("main"))["value"]
-    blocks = [[r for r in rows if r.get(k)] for k in ("alt", "beside")]
+    keys = sorted({r["block"] for r in rows if "block" in r})
+    blocks = [[r for r in rows if r.get("block") == k] for k in keys]
     places = 0 if running_shown(main, blocks, 0)[1] == 0 else 1
     shown, moved = running_shown(main, blocks, places, each=ROUND_EACH)
     out = []
-    for k, (start, steps) in enumerate(shown):
+    for k, (block, (start, steps)) in enumerate(zip(blocks, shown)):
         if k == 0:
             out.append(f'<tr class="cat" data-sum="start"><th>Main estimate</th>{cells(start, signed=False)}</tr>')
         else:
-            out.append('<tr class="cat"><th colspan="3">Separately, outside public budgets</th></tr>'
-                       f'<tr class="item" data-sum="start"><td>Main estimate</td>{cells(start, signed=False)}</tr>')
+            if block[0].get("beside"):
+                out.append('<tr class="cat"><th colspan="3">Separately, outside public budgets</th></tr>')
+            out.append(f'<tr class="item" data-sum="start"><td>Main estimate</td>{cells(start, signed=False)}</tr>')
         for r, step, total in steps:
             out.append(f'<tr class="item" data-sum="step"><td>{html.escape(r["label"])}</td>{cells(step)}</tr>')
             out.append(f'<tr class="sub" data-sum="running"><td>= total</td>{cells(total, signed=False)}</tr>')
@@ -498,12 +590,21 @@ def assumption_rows(s, bands):
     def d(key):
         return [bands[key][0] - m[0], bands[key][1] - m[1]]
 
+    def vs_main(rid):
+        v = q(rid)
+        return [v[0] - m[0], v[1] - m[1]]
+
+    def approx(rid):
+        """A row whose record the page would mark approximate says so."""
+        return "approximate" if Q.is_approximate(Q.load_registry()[rid]) else ""
+
     resp, count, data, econ = ("How budgets respond to more people", "What the account counts",
                                "Data corrections and noise", "How the economy responds")
     return [
         (resp, "Services other than schools held fixed", *d("long_run_non_school_fixed:adopted"), "", "§services"),
         (resp, "Roads and parks respond only after years, as CBO assumes",
          *d("cbo_category_lag_non_school_full:with_rental_assistance_capital_and_enterprises"), "", "237"),
+        (resp, "Every budget at its first-year response", *vs_main("case.first_year"), "", "270"),
         (resp, "General administration held fixed", *q("gg.fixed_change"), "", "211"),
         (resp, "Schools respond at the within-district 0.836", *d("school_within_district"), "", "230"),
         (resp, "Every service grows fully with population", *d("proportional_reference:adopted"), "", "§services"),
@@ -511,11 +612,31 @@ def assumption_rows(s, bands):
         (count, "Public capital earns 7%, not 2–3%", *d("capital_return_at_7pct"), "", "238"),
         (count, "No return on public capital", *d("without_capital_return"), "", "238"),
         (count, "Government enterprises left out", *d("enterprises_out_option_a"), "", "§conventions"),
+        (count, "Pensions counted when paid", *d("cash_set"), "", "257"),
+        # an additive arm: the accrual at scheduled benefits less the case's, outside the engine
+        (count, "Pensions at the benefits scheduled, not those payable", *q("pension.scheduled_change"),
+         "approximate", "257"),
+        (count, "Fewer descendants stopped reporting Mexican origin", *vs_main("case.arm_a"), "", "281"),
+        (count, "More descendants stopped reporting Mexican origin", *vs_main("case.arm_c"), "", "281"),
         (data, "Sampling noise, 95% interval", q("noise.sampling_95"), q("noise.sampling_95"), "noise", "184"),
-        (data, "Survey answers left uncorrected", *d("uncorrected_at_adopted_responses"), "", "§data"),
+        (data, "Share of the college gap that non-identifiers close, one standard error",
+         *q("lineage.c3_se_change"), "pm", "281"),
+        (data, "Survey answers left uncorrected", *q("corrections.uncorrected_change"), "", "§data"),
         (data, "Census income fill-ins left in", *d("no_fill_in_correction"), "", "208"),
-        (econ, "Natives and immigrants are poor substitutes (ε = 3)", *q("production.eps3_change"), "", "176"),
+        (econ, "Natives and immigrants are poor substitutes (ε = 3)", *q("production.eps3_change"),
+         approx("production.eps3_change"), "176"),
     ]
+
+
+def check_tornado_record(arows):
+    """The registry's summary of the table (assumptions.move_range_above_noise) is the table's: the smallest and the
+    largest move among the rows larger than the noise."""
+    noise = next(r for r in arows if r[4] == "noise")[2]
+    sizes = [max(abs(r[2]), abs(r[3])) for r in arows if r[4] != "noise"]
+    want = (min(x for x in sizes if x > noise), max(sizes))
+    got = q("assumptions.move_range_above_noise")
+    if any(abs(a - b) > 1e-9 for a, b in zip(got, want)):
+        fail(f"assumptions.move_range_above_noise is {got}, the table's rows give {want}")
 
 
 def assumptions_html(rows, labels, sections):
@@ -533,7 +654,9 @@ def assumptions_html(rows, labels, sections):
                 flabel, fid = labels[ref]
             else:
                 fail(f"assumption {label!r} targets {ref}, which is neither a finding's ladder ref nor a section")
+            # noise: one half-width for both ends; pm: a half-width at each end
             vals = (f'<td class="n noise" colspan="2">± {Q.rounded(lo, 0)}</td>' if kind == "noise" else
+                    "".join(f'<td class="n noise">± {Q.rounded(x, 0)}</td>' for x in (lo, hi)) if kind == "pm" else
                     cells(whole([lo, hi])))
             note = f'<span class="note">{kind}</span>' if kind in ("approximate",) else ""
             body.append(f'<tr class="item"><td>{html.escape(label)}{note}</td>{vals}'
@@ -574,7 +697,7 @@ def value_sites(wrows, arows):
     return out
 
 
-def check_quantities(template, groups, wrows, arows):
+def check_quantities(template, groups, wrows, arows, bindings_path=None):
     """Refuse the page when a sentence quoting a record fails its lint, or a binding's site no longer
     quotes its record."""
     errs = []
@@ -583,7 +706,7 @@ def check_quantities(template, groups, wrows, arows):
         for rid, view, sent, e in Q.lint_unit(text):
             errs.append(f"{file} {loc}: {rid}|{view} in {sent!r} {'; '.join(e)}")
     rows = value_sites(wrows, arows)
-    bindings = Q.load_bindings()
+    bindings = Q.load_bindings(bindings_path)
     for b in bindings:
         if (b["file"], b["locator"]) in rows:
             vals, label = rows[(b["file"], b["locator"])]
@@ -608,11 +731,37 @@ def load_evidence(groups_path):
     return importlib.import_module("evidence")
 
 
+BUILD_START, BUILD_END = "<!-- BUILD_BLOCK:START -->", "<!-- BUILD_BLOCK:END -->"
+
+
+def cut_build_block(template):
+    """The template without its build fragment (the ledger sections between BUILD_START and BUILD_END), and the
+    fragment. A template without the two comments gives (template, None)."""
+    n = (template.count(BUILD_START), template.count(BUILD_END))
+    if n == (0, 0):
+        return template, None
+    if n != (1, 1) or template.index(BUILD_END) < template.index(BUILD_START):
+        fail(f"the template needs one {BUILD_START} before one {BUILD_END}; it has {n[0]} and {n[1]}")
+    head, rest = template.split(BUILD_START)
+    fragment, tail = rest.split(BUILD_END)
+    return head + tail, fragment
+
+
+def build_toc(fragment):
+    """(anchor, title) for each <h3 id> in the build fragment: the first items of the build part's contents."""
+    items = [(a, re.sub(r"<[^>]+>", "", t).strip())
+             for a, t in re.findall(r'<h3\b[^>]*\bid="([^"]+)"[^>]*>(.*?)</h3>', fragment, flags=re.S)]
+    if not items:
+        fail("the build fragment has no <h3 id=...> heading for the contents to link to")
+    return items
+
+
 def main():
     global evidence, ROUND_EACH
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--groups", type=Path, default=HERE / "groups.py", help="another copy of groups.py")
     ap.add_argument("--template", type=Path, default=HERE / "template.html", help="another copy of template.html")
+    ap.add_argument("--bindings", type=Path, default=Q.BINDINGS, help="another copy of quantity_bindings.csv")
     ap.add_argument("--out", type=Path, default=HERE / "derived/overview.html", help="where to write the page")
     ap.add_argument("--round-each", action="store_true",
                     help="round every table number on its own (the positive control for the printed-sum gate)")
@@ -622,11 +771,26 @@ def main():
     entries = parse_ladder()
     s, bands, stairs = load_numbers()
     load_headcount()
-    r = evidence.render(entries, fail)
+    template = args.template.read_text()
+    # With a build part in groups.py the template's build fragment moves to the marker after that part's heading.
+    # Without one it stays where the template has it.
+    rest, fragment = cut_build_block(template)
+    has_part = any(pid == evidence.BUILD_PART for pid, _ in sys.modules["groups"].PARTS)
+    if has_part and fragment is None:
+        fail(f"groups.py has a '{evidence.BUILD_PART}' part, but the template has no {BUILD_START} … {BUILD_END} "
+             "fragment to put in it")
+    r = evidence.render(entries, fail, build_toc(fragment) if has_part else ())
+    n_marker = (r["groups"].count(evidence.BUILD_MARKER), template.count(evidence.BUILD_MARKER))
+    if n_marker != ((1 if has_part else 0), 0):
+        fail(f"{evidence.BUILD_MARKER} appears {n_marker[0]} time(s) in the rendered parts and {n_marker[1]} in the "
+             f"template; it belongs once in the '{evidence.BUILD_PART}' part and never in the template")
+    page, groups_html = ((rest, r["groups"].replace(evidence.BUILD_MARKER, fragment)) if has_part
+                         else (template, r["groups"]))
     wrows = waterfall_rows(s, stairs)
     arows = assumption_rows(s, bands)
-    page = args.template.read_text()
-    n_bind = check_quantities(page, sys.modules["groups"].GROUPS, wrows, arows)
+    check_tornado_record(arows)
+    # the text sites are the template's lines, wherever the fragment ends up
+    n_bind = check_quantities(template, sys.modules["groups"].GROUPS, wrows, arows, args.bindings.resolve())
     (ledger, ledger_note), (alts, alts_note) = ledger_html(wrows), alternatives_html(wrows)
     errs = [f"ledger: {e}" for e in displayed_sum_errors(ledger)] + \
         [f"other ways to count: {e}" for e in displayed_sum_errors(alts)] + \
@@ -634,13 +798,13 @@ def main():
     if errs:
         fail(f"{len(errs)} printed sum(s) do not add up:\n  " + "\n  ".join(errs))
     subs = {
+        "{{GROUPS}}": groups_html,  # first: with a build part it carries the placeholders of the ledger sections
         "{{LEDGER}}": ledger,
         "{{LEDGER_NOTE}}": ledger_note,
         "{{ALTERNATIVES}}": alts,
         "{{ALTERNATIVES_NOTE}}": alts_note,
         "{{ASSUMPTIONS}}": assumptions_html(arows, r["labels"], r["sections"]),
         "{{TOC}}": r["toc"],
-        "{{GROUPS}}": r["groups"],
         "{{LEGEND}}": r["legend"],
         "{{BIBLIO}}": r["biblio"],
         "{{N_ENTRIES}}": str(len(entries)),
