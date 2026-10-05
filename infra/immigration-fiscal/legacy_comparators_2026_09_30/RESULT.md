@@ -197,3 +197,96 @@ exit 0
 ```
 
 The pytest warnings are openpyxl's "no default style" on the BEA and OMB workbooks.
+
+## v5 case (oct05), 2026-10-05
+
+[2026-10-05: on main case v5 (`oct05`, `../main_case_2026_10_05/`), with both sides on the lineage's 42,752,213, the
+matched union's 2024 financing-equivalent charge exceeds third-plus whites' by **$75.5 / $75.5bn** on the accrual basis
+(**$1,765 / $1,766 per member**; sept29 $72.6 / $72.4bn, $1,829 / $1,823 on 39,712,493), and by **$10.2 / $10.7bn** on
+the cash-benefit convention (sept29 $11.5 / $11.3bn). The union's own charge is $62.2 / $70.6bn on matched keys
+($63.3 / $73.4bn on engine keys), whites' −$13.2 / −$4.9bn and the average slice's $16.5 / $24.5bn. The 2005 window
+only. [CALCULATION: `legacy.py --case oct05` → `derived/oct05/legacy_main.csv`, `derived/oct05/legacy_differences.csv`]]
+
+claude-opus-5-5 (v5consC)
+
+**Rules (the case lane's Consumers row: both sides on 42.75M).**
+- `group_lines.py --case oct05` writes `derived/group_lines_oct05.csv` from the white lane's oct05 run: both union rows
+  carry the 3,039,720 added people at the case lane's amounts on every line, and A1 and the all-residents slice are on
+  42,752,213. Each group's cost reproduces the white lane's `rekey_summary_oct05.csv` (5e-5).
+- `legacy.py --case oct05` follows the debt lane's oct05 run (its `lineage_programme`). The union at the case without
+  the added people (the twin, the debt lane's union model) carries on the union's headcount path; the added people
+  carry on the identified third-plus generation's path, measured 2005–2024 (`historical_backcast_2026_09_20/inputs/cps_g3plus_path.csv`;
+  0.655 of its 2024 population share in 2005, against the union's 0.789). The rough union's added people are the
+  engine's, line by line (the case's corner less its twin).
+- [ASSUMPTION] **Replacement framing on the lineage's composite path.** A comparator slice of 42.75M is split the
+  same way: 39,712,493 / 42,752,213 of it on the union's headcount path and the rest on the third-plus path. So
+  every group has the lineage's headcount history, and only the per-capita position differs, as on sept29. The
+  slices' charges grow by less than the count (A1 cash $16.60bn to $17.79bn, ×1.072 against ×1.077), because the
+  third-plus path was smaller in the past.
+- [ASSUMPTION] The added people's relative income is the union's (the debt lane's rule); the comparators keep their
+  own income paths on both parts.
+- **The 2005 window only.** The third-plus path has no measurement before 2005, so the 2000 and 1990 windows and the
+  pre-2005 zero-cell audit are not run for oct05. The payroll-carry arm runs on the standard pass, each part on its
+  own path.
+- Per member divides by 42,752,213 (the debt lane's `member_count("oct05")`); the per-head key is the case's
+  0.129182 (`meta.responses.general_government.s`).
+
+**2005 window, central convention** (2024 interest, $bn, low / high; $ per member):
+
+| Basis | Group | oct05 | Per member | sept29 |
+|---|---|---:|---:|---:|
+| Accrual | Union, engine | 63.33 / 73.36 | 1,481 / 1,716 | 61.27 / 70.53 |
+| | Union, rough | 62.23 / 70.58 | 1,456 / 1,651 | 60.17 / 67.75 |
+| | A1 | −13.25 / −4.91 | −310 / −115 | −12.47 / −4.66 |
+| | All residents | 16.52 / 24.46 | 386 / 572 | 15.41 / 22.84 |
+| Cash | Union, engine | 30.63 / 42.62 | 716 / 997 | 30.75 / 41.48 |
+| | Union, rough | 28.01 / 36.86 | 655 / 862 | 28.13 / 35.71 |
+| | A1 | 17.79 / 26.13 | 416 / 611 | 16.60 / 24.40 |
+| | All residents | 20.64 / 28.58 | 483 / 669 | 19.27 / 26.70 |
+
+| Difference, 2024 interest ($bn; $ per member) | oct05 | sept29 |
+|---|---:|---:|
+| **Accrual, rough − A1** | **75.48 / 75.49 ($1,765 / 1,766)** | 72.64 / 72.41 ($1,829 / 1,823) |
+| Accrual, rough − all residents | 45.71 / 46.12 ($1,069 / 1,079) | 44.76 / 44.90 ($1,127 / 1,131) |
+| Accrual, engine − A1 | 76.58 / 78.27 | 73.74 / 75.19 |
+| Accrual with payroll carry, rough − A1 | 65.93 / 65.99 | 63.7 / 63.5 |
+| **Cash, rough − A1** | **10.22 / 10.73 ($239 / 251)** | 11.54 / 11.31 ($291 / 285) |
+| Cash, rough − all residents | 7.37 / 8.27 | 8.87 / 9.01 |
+
+[CALCULATION: `derived/oct05/legacy_main.csv`, `derived/oct05/legacy_differences.csv`; the sept29 column from
+`derived/legacy_main.csv` and `derived/legacy_differences.csv`]
+
+- On the cash convention the union's charge barely moves ($28.13bn to $28.01bn at the low end, matched keys), while
+  the white slice's grows with its count; so the cash difference falls by $1.3bn at the low end. The added people's
+  federal cash gaps, carried on their path, add little: the debt lane's own engine union moves from $30.75 / 41.48bn
+  to $30.63 / 42.62bn.
+- On accrual the added people's promises earned add to the union's charge, and the difference grows by $2.8 / 3.1bn;
+  per member it falls, as the account's own per-member cost does.
+
+**Gates.** `legacy.py --case oct05` exits 0.
+- **Parity:** the engine union through this code path reproduces the debt lane's `derived/oct05/stocks.csv` and
+  `federal_gap_annual.csv` in 12 specifications, within **4.96e-07bn** (tolerance 1e-6): cash central 30.628803 /
+  42.623603, accrual central 63.332232 / 73.364671, as the lane.
+- On the lane's own corners, this file's lineage path equals the lane's `lineage_programme` exactly (largest
+  difference 0.0, gate 1e-12). In 2024 each group's twin plus its added part is the group's corner (1e-9).
+- Each twin's lines are the corner's but for the amounts (same lines, responses and columns), and the engine union's
+  twin table is the twin corner's own lines (1e-6). The third-plus path is the back-cast's column (5e-5); the
+  per-head key is the account's target plus the added people over its residents (1e-8).
+- `legacy.py` (sept29) and `group_lines.py` (sept29) rewrite `derived/` byte for byte.
+- `rerun_lane.py` with all six commands (below, and pytest naming `test_legacy.py`): **IDENTICAL 22/22, exit 0**
+  (2026-10-06 00:38:04–00:38:39 JST).
+
+**Reproduce (oct05)**, after the white lane's oct05 run (`rekey_sept29.py --case oct05`) and the debt lane's
+`--case oct05`:
+
+```sh
+L=infra/immigration-fiscal/legacy_comparators_2026_09_30
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/group_lines.py --case oct05
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/legacy.py --case oct05
+```
+
+New: `derived/group_lines_oct05.csv` and `derived/oct05/` (`legacy_main.csv`, `legacy_differences.csv`,
+`legacy_conventions.csv`, `federal_gap_by_group.csv`, `paths.csv` with the third-plus path beside the union's, and
+`gates.json` with a `lineage` block). `group_lines.py` and `legacy.py` gained `--case`; `legacy.py` gained
+`lineage_setup()`, `twin_table()` and `lineage_flows()`, and `payroll_carry()` takes the lineage's split. The debt
+lane is imported read-only, as before.

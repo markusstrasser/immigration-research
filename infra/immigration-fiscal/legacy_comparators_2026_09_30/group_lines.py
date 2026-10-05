@@ -17,6 +17,11 @@ end specifications (48 / 11), and writes every line's amount and response:
 Gate: each group's cost from the written amounts equals rekey_summary_sept29.csv's cost (5e-5, its 4 decimals).
 Output: derived/group_lines_sept29.csv (tracked). Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/group_lines.py
+
+--case oct05 writes derived/group_lines_oct05.csv from the library's oct05 run (the v5 case adopted 2026-10-05): both
+union rows carry the 3,039,720 added people at the case lane's amounts on every line (the engine union's lines are the
+case's own), A1 and the all-residents slice are on the lineage's 42,752,213, and the gate reads the white lane's
+rekey_summary_oct05.csv. The capital return is in each group's cost_bn row, as for sept29.
 """
 from __future__ import annotations
 
@@ -44,12 +49,13 @@ def load_rekey():
     return module
 
 
-def main() -> None:
+def main(case: str = "sept29") -> None:
     K = load_rekey()
+    K.use_case(case)
     K.setup()
     K.stop_if_failed()
     scen = K.scenarios()
-    summary = pd.read_csv(WHITE / "derived/rekey_summary_sept29.csv")
+    summary = pd.read_csv(WHITE / f"derived/rekey_summary_{case}.csv")
     rows, fails = [], []
     for basis in BASES:
         for end in ENDS:
@@ -58,7 +64,7 @@ def main() -> None:
                 want = summary[(summary.basis == basis) & (summary.group == g) & (summary.end == end)].iloc[0]
                 if abs(r["cost"] - want.cost) > 5e-5 or int(round(r["population"])) != int(want.population):
                     fails.append(f"{g} {basis} {end}: cost {r['cost']:.6f} vs {want.cost:.4f}")
-                e = K.DUMP[basis][end]
+                e = (K.FULL or K.DUMP)[basis][end]     # oct05: the case's dump (K.DUMP is its identified union)
                 prod = next(x for x in e["lines"] if x["side"] == "scalar" and x["id"] == "production_gain_bn")
                 for side, lid, national, amount, response in lines:
                     rows.append(dict(group=g, basis=basis, end=end, spec=e["spec"], side=SIDE[side], line=lid,
@@ -74,15 +80,18 @@ def main() -> None:
                 print(f"  {basis:7s} {end:4s} {g:24s} cost {r['cost']:9.4f} (rekey_summary {want.cost:9.4f})"
                       f"  production {r['production_gain']:.4f} (dump {prod['effect_bn']:.4f})")
     if fails:
-        raise SystemExit("[BLOCKED] group lines do not reproduce rekey_summary_sept29.csv: " + "; ".join(fails))
+        raise SystemExit(f"[BLOCKED] group lines do not reproduce rekey_summary_{case}.csv: " + "; ".join(fails))
     out = HERE / "derived"
     out.mkdir(exist_ok=True)
-    with open(out / "group_lines_sept29.csv", "w", newline="") as f:
+    with open(out / f"group_lines_{case}.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
-    print(f"[written] derived/group_lines_sept29.csv: {len(rows)} rows")
+    print(f"[written] derived/group_lines_{case}.csv: {len(rows)} rows")
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--case", default="sept29", choices=["sept29", "oct05"], help="sept29 (default) or oct05 (v5)")
+    main(ap.parse_args().case)

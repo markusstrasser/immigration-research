@@ -37,9 +37,24 @@ Parity gate (stops the run): the engine union through this code path reproduces 
 Outputs in derived/: legacy_main.csv, legacy_differences.csv, legacy_conventions.csv, federal_gap_by_group.csv,
 paths.csv, gates.json. Run from the repository root after group_lines.py and acs_inputs.py:
   OPENBLAS_NUM_THREADS=1 uv run python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/legacy.py
+
+--case oct05 runs the v5 case adopted 2026-10-05 (main_case_2026_10_05; the debt lane's derived/oct05/) and writes
+derived/oct05/, after group_lines.py --case oct05: both union rows carry the 3,039,720 added people at the case lane's
+amounts, and A1 and the all-residents slice are on the lineage's 42,752,213. Every path follows the debt lane's
+lineage_programme: the union at the case without the added people (its twin) on the union's headcount path, the added
+people on the identified third-plus generation's path (hist_l). A comparator slice is split the same way, its
+39,712,493 / 42,752,213 part on the union's path and the rest on the third-plus path, so every group follows the
+lineage's composite headcount (replacement framing). The rough union's added people are the engine's (the case less
+its twin, line by line). Per member is 42.75M; the per-head key is the case's. Only the 2005 window is run: the
+third-plus path is measured from 2005 (the back-cast's inputs/cps_g3plus_path.csv), so the 2000 and 1990 windows and
+the zero-cell audit are not. The payroll-carry arm runs on the standard pass, each part on its own path. Gates: the
+engine union reproduces the debt lane's derived/oct05/ stocks.csv and federal_gap_annual.csv (1e-6), this file's
+lineage path reproduces the lane's lineage_programme for it (1e-9), and each twin table is the twin corner's lines.
+  OPENBLAS_NUM_THREADS=1 uv run python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/legacy.py --case oct05
 """
 from __future__ import annotations
 
+import copy
 import importlib.util
 import json
 import sys
@@ -51,7 +66,11 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
 LANE = FISCAL / "debt_legacy_2026_09_23"
-CASE = "sept29"
+CASE = "sept29"          # the case setup() builds (main() sets it)
+# Per case: the groups' lines (group_lines.py), the debt lane's directory under its derived/, this lane's output
+# directory, and whether the case carries the lineage (oct05: the 2005 window on the lineage's composite path).
+CASES = {"sept29": dict(lines="group_lines_sept29.csv", lane_dir="sept29", out=HERE / "derived", lineage=False),
+         "oct05": dict(lines="group_lines_oct05.csv", lane_dir="oct05", out=HERE / "derived" / "oct05", lineage=True)}
 GROUPS = ("mexican_origin_engine", "mexican_origin_rough", "A1_third_plus_nh_white", "all_residents_slice")
 UNION = ("mexican_origin_engine", "mexican_origin_rough")
 BASES = ("cash", "accrual")
@@ -103,12 +122,100 @@ def setup() -> dict:
     D.COMPONENTS.clear()
     first = D.case_payload(next(iter(D.LATER_CASES)))
     D.COMPONENTS.update(D.sept26_components(json.loads(D.CORRECTIONS_FILE.read_text()), first))
+    # the enterprise receipt's re-key: the last case with one payload up to this one, as the lane's main() picks it
+    # (September 27 for sept29 and oct05)
+    before = list(D.LATER_CASES)[:list(D.LATER_CASES).index(CASE) + 1]
+    rekeyed = next(c for c in reversed(before) if not D.LATER_CASES[c].payloads)
     D.COMPONENTS["edits"] = D.COMPONENTS["edits"] + [
-        dict(component="enterprise_rekey", **e) for e in D.rekey_edits(D.case_payload(D.previous_case(CASE)), first)]
+        dict(component="enterprise_rekey", **e) for e in D.rekey_edits(D.case_payload(rekeyed), first)]
+    lineage = CASES[CASE]["lineage"]
+    if lineage:     # October 5: the lineage's two constant-line edits, which the lane's constant_parts splits
+        lin = D.v5_parts(CASE, cash_payload, "cash")
+        set_lin = D.v5_parts(CASE, D.case_payload(CASE), "set")
+        if (set_lin["row8"], set_lin["constants"]) != (lin["row8"], lin["constants"]):
+            raise SystemExit("[BLOCKED] the set's and the cash set's constant-line edits differ")
+        D.COMPONENTS["lineage"] = dict(row8=lin["row8"], constants=lin["constants"])
     run = D.case_split(CASE, run_shares, extras, jf, ucf)
     prof = run["main_profile"]
-    return dict(wb=wb, shares=run_shares, extras=extras, jf=jf, ucf=ucf, hist=hist, run=run, prof=prof,
-                corners={"cash": run["anchors"][prof], "accrual": run["set_anchors"][prof]})
+    ctx = dict(wb=wb, shares=run_shares, extras=extras, jf=jf, ucf=ucf, hist=hist, run=run, prof=prof,
+               corners={"cash": run["anchors"][prof], "accrual": run["set_anchors"][prof]})
+    if lineage:
+        ctx.update(lineage_setup(ctx, responses))
+    return ctx
+
+
+def lineage_setup(ctx: dict, responses: dict) -> dict:
+    """October 5, as the lane's main() builds them: the identified third-plus path (hist_l: its population share where
+    History uses the group's, its count where History uses the group's size), the case's per-head key, each corner's
+    twin (the union at the case: the lane's union model, row 8's edit only) and the added people's line amounts (the
+    corner's lines less the twin's, by side and id). Gates: the path is the back-cast's third-plus column (5e-5, as the
+    lane gates it); the key is the account's target plus the added people over its residents (1e-8); each corner is on
+    its payload's model; a twin has the corner's lines, responses and columns, only the amounts differ."""
+    hist, run = ctx["hist"], ctx["run"]
+    _, backcast_dir = D.backcast_case(CASE)
+    concepts = pd.read_csv(backcast_dir / "backcast_annual.csv").set_index("year")
+    g3 = pd.read_csv(D.G3PLUS_PATH).set_index("year").g3plus_persons.reindex(D.YEARS) / 1e6
+    if g3.isna().any() or (concepts["g3plus_millions_cps"].reindex(D.YEARS) - g3).abs().max() > 5e-5:
+        raise SystemExit(f"[BLOCKED] {D.G3PLUS_PATH.name} is not the back-cast's third-plus path for {CASE}")
+    hist_l = copy.copy(hist)
+    share_l = g3 / (hist.people.reindex(D.YEARS) / 1e3)
+    hist_l.share, hist_l.group = share_l / share_l[D.LAST], g3
+    meta = run["meta"]["lineage"]
+    per_head = responses["general_government"]["s"]
+    if abs(per_head - (D.TARGET_M + meta["counts"]["added"] / 1e6) / D.RESIDENTS_M) > 1e-8:
+        raise SystemExit(f"[BLOCKED] the case's s {per_head} is not the account's target plus the added people")
+    twins, added = {}, {}
+    for basis, kind in (("cash", "cash"), ("accrual", "set")):
+        twins[basis], added[basis] = {}, {}
+        for end, corner in ctx["corners"][basis].items():
+            if corner["model"] is not (run["corrected"] if kind == "set" else run["corrected_cash"]):
+                raise SystemExit(f"[BLOCKED] {basis} {end}: the corner is not on the {kind} payload's model")
+            twin = dict(corner, model=run["union"]["models"][kind], lineage_constants=("row8",))
+            a, b = _LINES_AT(corner), _LINES_AT(twin)
+            same = [c for c in a.columns if c not in ("amount_bn", "responsive_bn")]
+            if list(zip(a.side, a.id)) != list(zip(b.side, b.id)) or not a[same].equals(b[same]):
+                raise SystemExit(f"[BLOCKED] {basis} {end}: the twin's lines are not the corner's but for the amounts")
+            twins[basis][end] = twin
+            added[basis][end] = pd.Series((a.amount_bn - b.amount_bn).to_numpy(), index=pd.MultiIndex.from_arrays([a.side, a.id]))
+    counts = meta["counts"]
+    return dict(hist_l=hist_l, per_head=per_head, twins=twins, added=added, n_union=counts["account_union"],
+                n_lineage=counts["lineage_population"], n_added=counts["added"])
+
+
+def twin_table(ctx: dict, table: pd.DataFrame, group: str, basis: str, end: str) -> pd.DataFrame:
+    """A group's twin at a corner: the union's rows less the added people's amounts (the engine union's is then the
+    twin corner's own lines, 1e-6); a comparator slice at 39,712,493 / 42,752,213 of its amounts."""
+    t = table.copy()
+    if group in UNION:
+        t["amount_bn"] = t.amount_bn.to_numpy() - ctx["added"][basis][end].reindex(list(zip(t.side, t.id))).to_numpy()
+        if t.amount_bn.isna().any():
+            raise SystemExit(f"[BLOCKED] {group} {basis} {end}: a line has no added-people amount")
+        if group == "mexican_origin_engine":
+            want = _LINES_AT(ctx["twins"][basis][end])
+            worst = float((t.amount_bn - want.amount_bn.to_numpy()).abs().max())
+            if worst > 1e-6:
+                raise SystemExit(f"[BLOCKED] {basis} {end}: the engine union's twin differs from the twin corner by {worst}")
+    else:
+        t["amount_bn"] = t.amount_bn * (ctx["n_union"] / ctx["n_lineage"])
+    t["responsive_bn"] = t.amount_bn * t.response
+    return t
+
+
+def lineage_flows(hist, hist_l, corner: dict, twin: dict, end: str, conv: str, shares: dict, extras: dict, jf: dict,
+                  ucf: dict, parts: list | None, **kw) -> pd.DataFrame:
+    """The lane's lineage_programme for any group: the twin's flows on the union's path, plus the corner's less the
+    twin's on the third-plus path. A comparator carries no constant parts (parts None). Gate: in 2024, where every
+    path is 1, the flows are the corner's own (1e-9)."""
+    twin_parts = None if parts is None else [p for p in parts if p.get("lineage") != "constants"]
+    flows = list(D.PROGRAMME_FLOWS)
+    base = D.programme_federal(hist, twin, end, conv, shares, extras, jf, ucf, twin_parts, **kw)
+    full_l = D.programme_federal(hist_l, corner, end, conv, shares, extras, jf, ucf, parts, **kw)
+    twin_l = D.programme_federal(hist_l, twin, end, conv, shares, extras, jf, ucf, twin_parts, **kw)
+    out = base[flows] + (full_l[flows] - twin_l[flows])
+    whole = D.programme_federal(hist, corner, end, conv, shares, extras, jf, ucf, parts, **kw)
+    if (out.loc[D.LAST] - whole.loc[D.LAST, flows]).abs().max() > 1e-9:
+        raise SystemExit(f"[BLOCKED] {end}/{conv}: the twin and the added people do not add to the corner in 2024")
+    return out
 
 
 def group_table(base: pd.DataFrame, lines: pd.DataFrame, group: str, where: str) -> pd.DataFrame:
@@ -155,6 +262,10 @@ def federal_path(ctx: dict, group: str, basis: str, end: str, conv: str, lines: 
     union = group in UNION
     table = group_table(_LINES_AT(corner), lines, group, f"{group} {basis} {end}")
     c = dict(corner, _table=table)
+    twin = None
+    if "hist_l" in ctx:     # oct05: the twin at the twin corner (no per-head key: the lane's default, as it runs it)
+        twin = dict(ctx["twins"][basis][end], _table=twin_table(ctx, table, group, basis, end))
+        c["per_head"] = ctx["per_head"]
     jf, ucf = ctx["jf"], ctx["ucf"]
     parts = ctx["run"]["parts"].get((ctx["prof"], end, conv))
     if not union:
@@ -165,20 +276,36 @@ def federal_path(ctx: dict, group: str, basis: str, end: str, conv: str, lines: 
         for lid in ("lane_constants", "school_reprice", "college_rekey"):
             if (table.id == lid).any() and abs(float(table.responsive_bn[table.id == lid].sum())) > 1e-12:
                 raise SystemExit(f"[BLOCKED] {group}: union-only line {lid} is not zero")
-    prog = D.programme_federal(ctx["hist"], c, end, conv, ctx["shares"], ctx["extras"], jf, ucf, parts,
-                               series=D.RECEIPT_SERIES_V4, signed_receipts=D.SIGNED_RECEIPTS_V4)
+        if twin is not None:
+            twin.update(justice=0.0, uc=0.0)
+    kw = dict(series=D.RECEIPT_SERIES_V4, signed_receipts=D.SIGNED_RECEIPTS_V4)
+    if twin is None:
+        prog = D.programme_federal(ctx["hist"], c, end, conv, ctx["shares"], ctx["extras"], jf, ucf, parts, **kw)
+    else:
+        prog = lineage_flows(ctx["hist"], ctx["hist_l"], c, twin, end, conv, ctx["shares"], ctx["extras"], jf, ucf,
+                             parts, **kw)
+        if group == "mexican_origin_engine":    # on the lane's own corners, the code path is its lineage_programme
+            args = (ctx["hist"], ctx["hist_l"], dict(corner, per_head=ctx["per_head"]), ctx["twins"][basis][end], end,
+                    conv, ctx["shares"], ctx["extras"], jf, ucf, parts)
+            lane = D.lineage_programme(*args, **kw)[list(D.PROGRAMME_FLOWS)]
+            worst = float((lineage_flows(*args, **kw) - lane).abs().max().max())
+            if worst > 1e-12:
+                raise SystemExit(f"[BLOCKED] {basis} {end} {conv}: this lineage path differs from the lane's by {worst}")
+            ctx.setdefault("lineage_path_identity", []).append(worst)
     induced, induced_fed = (prog.induced, prog.induced_fed) if union else (0.0, 0.0)
     fed = prog.spending_fed - prog.receipts_fed * income - prog.population_fed - induced_fed - prog.rtc_excess_fed
     gap = prog.spending - prog.receipts * income - prog.population - induced - prog.rtc_excess
     return fed, gap
 
 
-def payroll_carry(hist, lines_all: pd.DataFrame, group: str, end: str, income: pd.Series) -> pd.Series:
+def payroll_carry(hist, lines_all: pd.DataFrame, group: str, end: str, income: pd.Series, ctx: dict | None = None
+                  ) -> pd.Series:
     """Sensitivity for the accrual basis (real 2024 $bn by year, all federal): the lane's main_with_accrual carries
     the Social Security accrual with the benefit series (NIPA 3.12 line 5) and the Part A accrual inside Medicare's
     (line 6). Accrual is earned on payroll taxes, so the alternative carries both with the group's own payroll-tax
     path: the OASDI (NIPA 3.6 lines 24 + 5) and HI (25 + 6) series times the receipt rule's relative-income scale.
-    Returns the change in the federal part; the programme rule is linear in each line, so this adds to it."""
+    Returns the change in the federal part; the programme rule is linear in each line, so this adds to it.
+    oct05 (ctx with the lineage): the twin's part on the union's path, the added people's on the third-plus path."""
     pick = lambda basis, lid: float(lines_all[(lines_all.group == group) & (lines_all.basis == basis)  # noqa: E731
                                               & (lines_all.end == end) & (lines_all.side == "spending")
                                               & (lines_all.line == lid)].amount_bn.iloc[0])
@@ -187,7 +314,17 @@ def payroll_carry(hist, lines_all: pd.DataFrame, group: str, end: str, income: p
     part_a = pick("accrual", "medicare") - (1 - part_a_share) * pick("cash", "medicare")
     idx_ss, idx_mc = hist.index("T31200-A:5"), hist.index("T31200-A:6")
     idx_oasdi, idx_hi = hist.index("T30600-A:24;T30600-A:5"), hist.index("T30600-A:25;T30600-A:6")
-    return hist.share * (ss * (idx_oasdi * income - idx_ss) + part_a * (idx_hi * income - idx_mc))
+    carry = lambda share, ss, pa: share * (ss * (idx_oasdi * income - idx_ss) + pa * (idx_hi * income - idx_mc))  # noqa: E731
+    if ctx is None:
+        return carry(hist.share, ss, part_a)
+    if group in UNION:
+        add = lambda basis, lid: float(ctx["added"][basis][end][("spending", lid)])  # noqa: E731
+        ss_l = add("accrual", "social_security")
+        pa_l = add("accrual", "medicare") - (1 - part_a_share) * add("cash", "medicare")
+    else:
+        f = 1 - ctx["n_union"] / ctx["n_lineage"]
+        ss_l, pa_l = ss * f, part_a * f
+    return carry(hist.share, ss - ss_l, part_a - pa_l) + carry(ctx["hist_l"].share, ss_l, pa_l)
 
 
 def extend(ctx_years: list[int]):
@@ -248,17 +385,21 @@ def zero_audit(wb, carried: set[str]) -> dict:
     return dict(series_audited=len(refs), zero_before_2005=out)
 
 
-def main() -> None:
-    lines_all = pd.read_csv(HERE / "derived/group_lines_sept29.csv")
+def main(case: str = "sept29") -> None:
+    global CASE
+    CASE = case
+    conf = CASES[case]
+    lineage = conf["lineage"]
+    lines_all = pd.read_csv(HERE / "derived" / conf["lines"])
     acs = pd.read_csv(HERE / "derived/acs_inputs.csv")
-    count_m = D.member_count()
+    count_m = D.member_count(case)
     gates: dict = {}
 
-    # 1. Standard pass (the lane's years), with the parity gate.
+    # 1. Standard pass (the lane's years), with the parity gate. oct05: also the payroll carry (no extended pass).
     std = setup()
     rates = D.rate_paths()
-    lane_stocks = pd.read_csv(LANE / "derived/sept29/stocks.csv")
-    lane_annual = pd.read_csv(LANE / "derived/sept29/federal_gap_annual.csv")
+    lane_stocks = pd.read_csv(LANE / "derived" / conf["lane_dir"] / "stocks.csv")
+    lane_annual = pd.read_csv(LANE / "derived" / conf["lane_dir"] / "federal_gap_annual.csv")
     inc_std = income_paths(std["hist"], acs)
     paths = {}
     for group in GROUPS:
@@ -268,6 +409,12 @@ def main() -> None:
                 for conv in D.CONVENTIONS:
                     paths[("std", group, basis, end, conv)] = federal_path(std, group, basis, end, conv, sel,
                                                                            inc_std[group])
+                    if lineage and basis == "accrual" and conv == "central":
+                        fed, gap = paths[("std", group, basis, end, conv)]
+                        adj = payroll_carry(std["hist"], lines_all, group, end, inc_std[group], std)
+                        if abs(adj[D.LAST]) > 1e-9:
+                            raise SystemExit("[BLOCKED] the payroll carry moves 2024")
+                        paths[("std", group, "accrual_payroll_carry", end, conv)] = (fed + adj, gap + adj)
     parity = []
     for basis, bench in (("cash", "main"), ("accrual", "main_with_accrual")):
         for end in ENDS:
@@ -296,56 +443,73 @@ def main() -> None:
         raise SystemExit(f"[BLOCKED] parity: the engine union through this path differs from the lane by {worst:.3e}bn")
     print(f"  ✓ parity gate: {len(parity)} specifications within {worst:.2e}bn (tolerance {TOL})")
 
-    # 2. Extended pass: 1990-2024.
-    extend(list(range(EXT_FIRST, D.LAST + 1)))
-    try:
-        ext = setup()
-        gates["pre2005_population"] = extended_history(ext["hist"], std["hist"], acs)
-        inc_ext = income_paths(ext["hist"], acs)
-        for group in GROUPS:
-            for basis in BASES:
-                for end in ENDS:
-                    sel = lines_all[(lines_all.group == group) & (lines_all.basis == basis) & (lines_all.end == end)]
-                    for conv in D.CONVENTIONS:
-                        fed, gap = federal_path(ext, group, basis, end, conv, sel, inc_ext[group])
-                        if fed.isna().any() or gap.isna().any():
-                            raise SystemExit(f"[BLOCKED] extended pass: missing values {group} {basis} {end} {conv}")
-                        s_fed, s_gap = paths[("std", group, basis, end, conv)]
-                        d = max(float((fed.loc[2005:] - s_fed).abs().max()), float((gap.loc[2005:] - s_gap).abs().max()))
-                        if d > 1e-9:
-                            raise SystemExit(f"[BLOCKED] the extended pass moves 2005-2024 by {d} ({group} {basis} {end} {conv})")
-                        paths[("ext", group, basis, end, conv)] = (fed, gap)
-                        if basis == "accrual" and conv == "central":
-                            adj = payroll_carry(ext["hist"], lines_all, group, end, inc_ext[group])
-                            if abs(adj[D.LAST]) > 1e-9:
-                                raise SystemExit("[BLOCKED] the payroll carry moves 2024")
-                            paths[("ext", group, "accrual_payroll_carry", end, conv)] = (fed + adj, gap + adj)
-        cats = pd.read_csv(FISCAL / "full_account_spending_2026_09_20/derived/categories.csv").set_index("category")
-        if (cats.loc["social_security", "source_cells"], cats.loc["medicare", "source_cells"]) != ("T31200-A:5", "T31200-A:6"):
-            raise SystemExit("[BLOCKED] the lane's Social Security or Medicare series is not the one payroll_carry replaces")
-        gates["extended_equals_standard_2005_2024"] = "all groups, bases, ends and conventions within 1e-9"
-        live = lines_all[(lines_all.side != "scalar")]
-        live = live[(live.amount_bn * live.response).abs() > 1e-12]
-        gates["pre2005_zero_cells"] = zero_audit(ext["wb"], set(live.line))
-        hist = ext["hist"]
-        real = hist.real.copy()
-        ext_nhea = D.nhea_medicaid_federal_share()
-    finally:
-        extend(list(range(2005, D.LAST + 1)))
-    r_ext = effective_rates(rates["effective"])
-    nominal = lambda s: s / real  # noqa: E731  (History.nominal on the extended deflator)
+    cats = pd.read_csv(FISCAL / "full_account_spending_2026_09_20/derived/categories.csv").set_index("category")
+    if (cats.loc["social_security", "source_cells"], cats.loc["medicare", "source_cells"]) != ("T31200-A:5", "T31200-A:6"):
+        raise SystemExit("[BLOCKED] the lane's Social Security or Medicare series is not the one payroll_carry replaces")
+    if lineage:
+        # 2'. oct05: the 2005 window on the standard pass (the third-plus path starts in 2005).
+        tag, windows = "std", (2005,)
+        hist, inc_ext = std["hist"], inc_std
+        ext_nhea, r_ext = D.nhea_medicaid_federal_share(), rates["effective"]
+        nominal = lambda s: D.History.nominal(hist, s)  # noqa: E731
+        identity = std.get("lineage_path_identity", [])
+        if len(identity) != 2 * len(ENDS) * len(D.CONVENTIONS):
+            raise SystemExit("[BLOCKED] the lineage path was not checked against the lane's for every engine corner")
+        gates["lineage"] = dict(
+            windows=list(windows), added_people=std["n_added"], identified_union=std["n_union"],
+            lineage_population=std["n_lineage"], per_head_key=std["per_head"],
+            lineage_path_vs_lane_max_abs_diff=max(identity),
+            third_plus_share_rel_2024={str(y): float(std["hist_l"].share[y]) for y in (D.FIRST, 2010, 2015, 2020, D.LAST)},
+            note="the 2000 and 1990 windows and the zero-cell audit are not run: the third-plus path starts in 2005")
+    else:
+        # 2. Extended pass: 1990-2024.
+        tag, windows = "ext", WINDOWS
+        extend(list(range(EXT_FIRST, D.LAST + 1)))
+        try:
+            ext = setup()
+            gates["pre2005_population"] = extended_history(ext["hist"], std["hist"], acs)
+            inc_ext = income_paths(ext["hist"], acs)
+            for group in GROUPS:
+                for basis in BASES:
+                    for end in ENDS:
+                        sel = lines_all[(lines_all.group == group) & (lines_all.basis == basis) & (lines_all.end == end)]
+                        for conv in D.CONVENTIONS:
+                            fed, gap = federal_path(ext, group, basis, end, conv, sel, inc_ext[group])
+                            if fed.isna().any() or gap.isna().any():
+                                raise SystemExit(f"[BLOCKED] extended pass: missing values {group} {basis} {end} {conv}")
+                            s_fed, s_gap = paths[("std", group, basis, end, conv)]
+                            d = max(float((fed.loc[2005:] - s_fed).abs().max()), float((gap.loc[2005:] - s_gap).abs().max()))
+                            if d > 1e-9:
+                                raise SystemExit(f"[BLOCKED] the extended pass moves 2005-2024 by {d} ({group} {basis} {end} {conv})")
+                            paths[("ext", group, basis, end, conv)] = (fed, gap)
+                            if basis == "accrual" and conv == "central":
+                                adj = payroll_carry(ext["hist"], lines_all, group, end, inc_ext[group])
+                                if abs(adj[D.LAST]) > 1e-9:
+                                    raise SystemExit("[BLOCKED] the payroll carry moves 2024")
+                                paths[("ext", group, "accrual_payroll_carry", end, conv)] = (fed + adj, gap + adj)
+            gates["extended_equals_standard_2005_2024"] = "all groups, bases, ends and conventions within 1e-9"
+            live = lines_all[(lines_all.side != "scalar")]
+            live = live[(live.amount_bn * live.response).abs() > 1e-12]
+            gates["pre2005_zero_cells"] = zero_audit(ext["wb"], set(live.line))
+            hist = ext["hist"]
+            real = hist.real.copy()
+            ext_nhea = D.nhea_medicaid_federal_share()
+        finally:
+            extend(list(range(2005, D.LAST + 1)))
+        r_ext = effective_rates(rates["effective"])
+        nominal = lambda s: s / real  # noqa: E731  (History.nominal on the extended deflator)
 
     # 3. Stocks, interest, per member.
     rows, annual = [], []
-    for (tag, group, basis, end, conv), (fed, gap) in sorted(paths.items()):
-        if tag != "ext":
+    for (pass_, group, basis, end, conv), (fed, gap) in sorted(paths.items()):
+        if pass_ != tag:
             continue
         nom = nominal(fed)
         for year in fed.index:
             if conv == "central":
                 annual.append(dict(group=group, basis=basis, end=end, year=int(year), fiscal_gap_real_bn=gap[year],
                                    federal_real_bn=fed[year], federal_nominal_bn=nom[year]))
-        for start in WINDOWS:
+        for start in windows:
             st = D.stock(nom, r_ext, start, 1.0)
             rows.append(dict(group=group, basis=basis, window_start=start, end=end, convention=conv,
                              stock_entering_2024_bn=st["stock_entering_2024_bn"],
@@ -365,7 +529,7 @@ def main() -> None:
     conv_t = stocks[(stocks.window_start == 2005) & stocks.basis.isin(BASES)]
     diffs = []
     for basis in (*BASES, "accrual_payroll_carry"):
-        for start in WINDOWS:
+        for start in windows:
             for end in ENDS:
                 pick = main_t[(main_t.basis == basis) & (main_t.window_start == start) & (main_t.end == end)].set_index("group")
                 for ref in UNION:
@@ -382,14 +546,16 @@ def main() -> None:
         raise SystemExit("[BLOCKED] a stock exceeds debt held by the public")
     gates["member_count_m"] = count_m
     gates["debt_held_by_public_end_fy2023_bn"] = debt_2023
+    lineage_cols = (dict(lineage_third_plus_m=std["hist_l"].group.to_numpy(),
+                         lineage_share_rel_2024=std["hist_l"].share.to_numpy()) if lineage else {})
     paths_t = pd.DataFrame(dict(year=hist.group.index, union_headcount_m=hist.group.to_numpy(),
-                                population_share_rel_2024=hist.share.to_numpy(),
+                                population_share_rel_2024=hist.share.to_numpy(), **lineage_cols,
                                 **{f"income_scale_{g}": inc_ext[g].to_numpy() for g in ("mexican_origin_engine",
                                                                                       "A1_third_plus_nh_white",
                                                                                       "all_residents_slice")},
                                 medicaid_federal_share=ext_nhea.to_numpy(),
                                 effective_rate_fy=r_ext.reindex(hist.group.index).to_numpy()))
-    out = HERE / "derived"
+    out = conf["out"]
     out.mkdir(exist_ok=True)
     main_t.round(6).to_csv(out / "legacy_main.csv", index=False, lineterminator="\n")
     pd.DataFrame(diffs).round(6).to_csv(out / "legacy_differences.csv", index=False, lineterminator="\n")
@@ -412,9 +578,12 @@ def main() -> None:
     print(show.pivot_table(index=["basis", "window_start", "group"], columns="end",
                            values=["stock_entering_2024_bn", "interest_2024_bn", "interest_per_member_usd"]).round(2)
           .to_string())
-    print("[written] derived/legacy_main.csv, legacy_differences.csv, legacy_conventions.csv, federal_gap_by_group.csv, "
-          "paths.csv, gates.json")
+    print(f"[written] {out.relative_to(HERE)}/legacy_main.csv, legacy_differences.csv, legacy_conventions.csv, "
+          "federal_gap_by_group.csv, paths.csv, gates.json")
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--case", default="sept29", choices=list(CASES), help="sept29 (default, derived/) or oct05 (v5, derived/oct05/)")
+    main(ap.parse_args().case)
