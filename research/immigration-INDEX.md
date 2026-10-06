@@ -77,6 +77,15 @@ $400.2–474.9bn, and C3 ± 1 SE gives $387.3–465.2bn. Counted by each person'
 instead of whole, the lineage costs $275.4–375.8bn [FRAMING-SENSITIVE]; that reading stays beside the headline
 ([FAQ entry 19](immigration-objections-faq-2026-09-21.md)).
 
+The label "cost to other residents" assumes that other residents carry the lineage's whole share of the federal
+deficit that everyone runs together, because current law schedules no rule that closes the budget
+[FRAMING-SENSITIVE]. Suppose the budget were closed by a permanent fix and the lineage paid its share. Take
+Auerbach–Gale's 2026 current-law gap, net of the Social Security and Part A shortfall the account already treats
+as cut, split by household as AEI proposes. The cost to others is then $354.6–425.6bn, 8–9% below the headline.
+Across current-law gaps and sharing rules it is $343.1–449.5bn
+([lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md), FAQ entry 20). Most of the cost falls on
+state and local budgets, which balance each year, so no federal fix shares it.
+
 The September 29 case ($371.4–434.8bn; [lane](../infra/immigration-fiscal/main_case_2026_09_29/RESULT.md),
 [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275) is the September 27 case (earlier cases below)
 with nine measured changes, run as one set. Each had been held at zero or keyed by convention:
@@ -634,7 +643,7 @@ Latest supplied-data audit: [immigration-new-datasets-and-conclusions-2026-09-17
 | `immigration-cohort-narratives-2026-09-05.md` | Targeted official X sample on recent cohorts, refugee/fraud and Somali claims with primary checks | Reusing current cohort or group-generalization narratives |
 | `immigration-framing-refresh-2026-09-05.md` | Recent evidence integrated: work rights, adjustment, housing, victimization and policy mechanisms | Choosing the next empirical comparison or interpreting current narratives |
 | `immigration-recent-papers-2026-09-05.md` | June–September primary papers/revisions with designs, dates and access limits | Quoting recent labor, housing, fiscal or enforcement research |
-| `immigration-recent-papers-2026-10-06.md` | July 2025–October 2026 scan across seven lanes, graded against the account's claims: the closed-budget estimand, school decline asymmetry, surge wages, Hispanic coding and identity, survey income tax | Asking whether new work shows the account wrong, or answering a reader who cites it |
+| `immigration-recent-papers-2026-10-06.md` | July 2025–October 2026 scan across seven lanes, graded against the account's claims and revised 2026-10-07 after full-text reads: the closed-budget estimand ($354.6–425.6bn central), school decline asymmetry, surge wages, Hispanic identity, survey income tax and nonresponse, the 2026 public-charge rule ($5.0bn for the lineage) and the 2025 budget law | Asking whether new work shows the account wrong, or answering a reader who cites it |
 | `immigration-recent-narratives-2026-09-05.md` | Current essays/news and selective official X sample; counterexamples and claim checks | Repeating current public arguments |
 | `immigration-dataset-proxy-refresh-2026-09-05.md` | BLS/BPS/ICE acquisitions and BEA audit, provenance and principal checks | Using recent outcomes, capacity proxies or enforcement counts |
 | `immigration-conceptual-audit-2026-09-05.md` | Material audit: SIPP household/person and education errors; GDP/incumbent and CRS mistakes; Cato mischaracterization; global-gains arithmetic; conditional crime-bias sign | Reusing June fiscal-proxy figures or the dismantling synthesis; these corrections supersede the specified claims |

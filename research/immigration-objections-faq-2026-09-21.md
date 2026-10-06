@@ -389,6 +389,10 @@ year-to-year responses, no capital response and benefits counted when paid, the 
 $206–258bn ($289–335bn with the pension accrual; on the September 29 case $201–245bn and $277–318bn). The return on
 public capital ($37–62bn of the case) is an opportunity cost, and the pension accrual ($78–83bn) a
 promise of future benefits; neither is cash that a removal would free in the year.
+Schools show how slowly budgets shrink: twenty years after enrollment falls, US districts still keep about 70% of
+the money and about half of the staff that proportional cuts would shed (Lee & Scafidi, *Education Finance and
+Policy* 2026, districts 1998–2019). The school money would return to other residents' children as services, not as
+tax cuts.
 Lifetime and lineage values need their own
 future profiles; see the [projection back-tests](immigration-projection-backtest-2026-09-19.md).
 
@@ -480,7 +484,12 @@ carries to the adopted one). The jobs on the same file put that elasticity
 near 6: low-cell natives and foreign-born share 0.644 of detailed-occupation earnings, and the
 sketch gives 5.7–7.6. At the computed neighbors ε = 5 and ε = 7 the term is $13–22bn and the
 band would fall by about $4–8bn. The direct low-skill estimates (8.7 and 17.9; ladder 181)
-move it $1.5–4.7bn. Size, not sign, and none applied. [SOURCE:
+move it $1.5–4.7bn. Size, not sign, and none applied. A 2026 meta-analysis of 1,091 estimates (Kantova,
+Havranek, Irsova & Schwarz) puts the best-practice elasticity at 8.2 for national and 16.9 for regional designs. That
+is at or above the 5–7 used here, so the $4–8bn is if anything generous. The 2021–24 surge raised natives' wages
+across metros by 0.9% (Hunt, Orrenius & Zavodny, 2026). But the gain faded to zero as domestic movers spread it, and
+it turned negative in 2023–24 on the busing instrument (−1.8%). It also came with pandemic-recovery demand. So it is
+evidence about recent arrivals' consumption, not about a settled population's production. [SOURCE:
 [papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#3-the-removal-model-and-the-accounts-production-term); ladder 166; [executed nest](immigration-production-term-nativity-nest-2026-09-22.md), ladder 176]
 
 ## 15. "It's just California. Texas has the same Mexican-origin share and is doing fine."
@@ -553,7 +562,11 @@ against administrative records and against CBO and Treasury distributions. The g
 were overstated, which understated its net cost by $48.7–50.3bn. The survey's tax model treats
 every respondent as a compliant resident filer. Census's fill-ins keep only 9% of the group's
 own wage gap to other residents, so its missing incomes are filled in too high. And the income
-tax key was too flat at the top against CBO's distribution. On the spending side the
+tax key was too flat at the top against CBO's distribution. A study that runs the Survey of Consumer Finances
+through a tax calculator puts Hispanic income tax per tax unit at a ninth of whites' (Gale, Hall & Sabelhaus,
+2025). Treasury's tax records put Hispanic joint returns at $9,936 at 2024 wages against the survey model's
+$11,010, so the account's starting point there is about 11% high, not ninefold low, and the correction above
+covers it. On the spending side the
 corrections, with the care items moved into the account the same day, lowered the charge by
 $51.0–53.6bn, mostly by fixing keys. ACA premium credits had been keyed as if they were the EITC
 (−$14.2bn). Long-term care had been charged at the group's share of community Medicaid, 12.25%,
@@ -660,6 +673,39 @@ ladders 158, 233, 280 and 281] Would change it: a census-linked or larger survey
 non-identifiers' taxes and benefits directly (the college gap stands in today), identity loss past
 the third generation measured with grandparent detail, or the added people's measured age mix.
 
+## 20. "Everyone runs a deficit. Won't they help pay it off?"
+
+Steel-man: in fiscal 2024 federal outlays were $6.74tn against receipts of $4.92tn, 37% more (OMB Historical
+Tables 2.1 and 3.1). Nearly every resident, native or not, receives
+more than they pay on that budget, and the gap will eventually be closed by higher taxes or lower spending. People
+who join the population share that fix. So an account that charges the group's whole share of the deficit to
+everyone else overstates what others pay (Orrenius, Viard & Zavodny, AEI, 2025).
+
+Finding: the headline is current law, and current law schedules no rule that closes the budget, so it counts the
+group's share of the deficit as a cost to other residents. That is an assumption, and it is stated beside the
+headline. If a permanent fix closed the federal budget and the lineage paid its share, other residents would pay
+**$354.6–425.6bn** a year instead of $390.3–461.2bn, 8–9% less:
+- The fix is $370.1bn a year: Auerbach & Gale's (2026) 2.33% of GDP to hold debt at its current share of GDP for
+  thirty years, less the 1.07 points that pay scheduled Social Security benefits after the trust fund runs out.
+  The account already counts those promises at the benefits current law can pay, so that part is closed.
+- The lineage carries $35.7bn of it, 9.64%, its share of households, as AEI proposes. It is 12.74% of residents
+  but lives in larger households.
+
+Across the current-law gaps (CBO's 1.9 points, Auerbach–Gale's 2.33%) and six sharing rules, from equal per person
+to income tax alone, the cost is $343.1–449.5bn. On current-policy gaps it reaches $278.3bn at the low end.
+AEI's own 2013 figure, with scheduled benefits paid, gives $232.4–303.3bn. The limiting case shares the account's
+whole 2024 deficit per head; that is the group's excess over as many average residents, $280.5–297.4bn. Most of
+the group's cost falls on state and local budgets, which balance every year. Other residents pay it now, and no
+federal fix shares it.
+
+[FRAMING-SENSITIVE] Which reading fits depends on whether the question is about current law or about a budget
+that is eventually closed. The current-law figure stays the headline. The closed budget is printed beside it and
+is never combined with other entries' ranges. [SOURCE: [closed-budget lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md);
+Auerbach & Gale, *An Update on the Federal Budget Outlook*, March 2026; CBO letter of 24 September 2026; 2026
+Social Security and Medicare Trustees Reports] Would change it: a law that closes the gap with a known mix of
+taxes and cuts, which would fix the sharing rule, or a fix that phases in later and so falls more on future
+cohorts.
+
 ## Instrument
 
 LLM-assisted allocation and synthesis on a politically charged topic. Every answer above
@@ -669,6 +715,11 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-10-07 (literature scan, [memo](immigration-recent-papers-2026-10-06.md)): entry 20 added (the closed-budget
+  reading, $354.6–425.6bn beside the headline). Entries 11, 14 and 17 each gain one answer to a 2025–26 paper: Lee &
+  Scafidi's decline side; Kantova et al. and Hunt–Orrenius–Zavodny; Gale–Hall–Sabelhaus. No figure in an earlier
+  entry changes. Concept affected: what "cost to other residents" assumes about deficit financing.
 
 - 2026-09-27, late (conceptual audit, second pass §B): the answer on cheaper household services no longer
   says they are inside the production gain. The two calculations overlap but are not reconciled, so the
