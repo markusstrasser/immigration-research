@@ -102,7 +102,7 @@
   {
    "file": "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js",
    "tracked": true,
-   "sha256": "091ca31219c678ec84ee89b7c0837f4e9d43dcefc6bd1fe47d82337956a666e0"
+   "sha256": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491"
   },
   {
    "file": "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json",
