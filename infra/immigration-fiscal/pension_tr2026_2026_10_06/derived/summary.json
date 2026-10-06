@@ -1,0 +1,538 @@
+{
+ "arms": {
+  "anchors_2026": {
+   "case_on_accrual_net_bn": {
+    "high": 458.33440367350465,
+    "low": 396.36213584982954
+   },
+   "future_share_group": 0.043874529505226696,
+   "g3plus_net_own_rate": 0.9473730393233072,
+   "g3plus_part_a_per_hi_tax_dollar": 1.305768345694154,
+   "part_a_bn": 39.92671279150177,
+   "part_a_per_covered_worker_usd": 1944.6378538737158,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 83010.61113258798,
+    "female_age_45": 98091.47527930279,
+    "female_age_64": 126786.30534303926,
+    "male_age_25": 70350.06137562517,
+    "male_age_45": 83598.04366962067,
+    "male_age_64": 112720.95864495568
+   },
+   "per_tax_dollar": 1.0042386989799414,
+   "ratio_net": 0.9601781985512555
+  },
+  "control": {
+   "case_on_accrual_net_bn": {
+    "high": 460.9764594665666,
+    "low": 399.0960754796496
+   },
+   "future_share_group": 0.04390363188554548,
+   "g3plus_net_own_rate": 0.9617627471783937,
+   "g3plus_part_a_per_hi_tax_dollar": 1.3479464458867116,
+   "part_a_bn": 41.13712783048602,
+   "part_a_per_covered_worker_usd": 2003.591339876896,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 87129.55540879737,
+    "female_age_45": 100269.12639084125,
+    "female_age_64": 127235.17613831119,
+    "male_age_25": 73770.98380029271,
+    "male_age_45": 85353.3741153145,
+    "male_age_64": 113054.74369421611
+   },
+   "per_tax_dollar": 1.0183778513366615,
+   "ratio_net": 0.9736673650311839
+  },
+  "tables_2025": {
+   "case_on_accrual_net_bn": {
+    "high": 460.79987893620324,
+    "low": 398.9192507453879
+   },
+   "future_share_group": 0.04389592061511854,
+   "g3plus_net_own_rate": 0.9617250535275269,
+   "g3plus_part_a_per_hi_tax_dollar": 1.3423904344462316,
+   "part_a_bn": 40.96435223759108,
+   "part_a_per_covered_worker_usd": 1995.17627300366,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 86307.61055012787,
+    "female_age_45": 100437.46559093765,
+    "female_age_64": 126631.21310828323,
+    "male_age_25": 73107.1689837477,
+    "male_age_45": 85492.17179879252,
+    "male_age_64": 112539.51475843193
+   },
+   "per_tax_dollar": 1.0183321410776787,
+   "ratio_net": 0.9736315142531092
+  },
+  "tr2026": {
+   "case_on_accrual_net_bn": {
+    "high": 457.12266933652944,
+    "low": 395.08518147466975
+   },
+   "future_share_group": 0.04385360556655476,
+   "g3plus_net_own_rate": 0.9375022390065897,
+   "g3plus_part_a_per_hi_tax_dollar": 1.299778968055368,
+   "part_a_bn": 39.73117094214848,
+   "part_a_per_covered_worker_usd": 1935.113952313009,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 82155.81628462074,
+    "female_age_45": 98397.89754000964,
+    "female_age_64": 125657.44128681051,
+    "male_age_25": 69669.00164814039,
+    "male_age_45": 83854.62293384675,
+    "male_age_64": 111717.55845417661
+   },
+   "per_tax_dollar": 0.9942028364430084,
+   "ratio_net": 0.9506034574004868
+  },
+  "tr2026_hi": {
+   "case_on_accrual_net_bn": {
+    "high": 459.56669764076065,
+    "low": 397.6860694499453
+   },
+   "future_share_group": 0.04389592061511854,
+   "g3plus_net_own_rate": 0.9617250535275269,
+   "g3plus_part_a_per_hi_tax_dollar": 1.299778968055368,
+   "part_a_bn": 39.73117094214848,
+   "part_a_per_covered_worker_usd": 1935.113952313009,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 82155.81628462074,
+    "female_age_45": 98397.89754000964,
+    "female_age_64": 125657.44128681051,
+    "male_age_25": 69669.00164814039,
+    "male_age_45": 83854.62293384675,
+    "male_age_64": 111717.55845417661
+   },
+   "per_tax_dollar": 1.0183321410776787,
+   "ratio_net": 0.9736315142531092
+  },
+  "tr2026_oasdi": {
+   "case_on_accrual_net_bn": {
+    "high": 458.35585063197203,
+    "low": 396.31836277011234
+   },
+   "future_share_group": 0.04385360556655476,
+   "g3plus_net_own_rate": 0.9375022390065897,
+   "g3plus_part_a_per_hi_tax_dollar": 1.3423904344462316,
+   "part_a_bn": 40.96435223759108,
+   "part_a_per_covered_worker_usd": 1995.17627300366,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 86307.61055012787,
+    "female_age_45": 100437.46559093765,
+    "female_age_64": 126631.21310828323,
+    "male_age_25": 73107.1689837477,
+    "male_age_45": 85492.17179879252,
+    "male_age_64": 112539.51475843193
+   },
+   "per_tax_dollar": 0.9942028364430084,
+   "ratio_net": 0.9506034574004868
+  }
+ },
+ "awi_note2026_3_over_note2025_3": {
+  "2023": 1.0,
+  "2024": 1.0053853009912996,
+  "2025": 0.9968106242955556,
+  "2030": 1.0098322796259704,
+  "2035": 1.0241369476576283,
+  "2045": 1.0252083827017624,
+  "2061": 1.0286213424384205
+ },
+ "beside": {
+  "all_2026_inputs": {
+   "case_on_accrual_net_bn": {
+    "high": 459.4692386686171,
+    "low": 397.51486242106654
+   },
+   "future_share_group": 0.045736669804196356,
+   "g3plus_net_own_rate": 0.949874042870734,
+   "g3plus_part_a_per_hi_tax_dollar": 1.334658227707764,
+   "part_a_bn": 40.78277939340838,
+   "part_a_per_covered_worker_usd": 1986.332734396386,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 84449.45792040926,
+    "female_age_45": 101109.63169189371,
+    "female_age_64": 127561.5103109539,
+    "male_age_25": 71621.87970565372,
+    "male_age_45": 86173.98910165747,
+    "male_age_64": 113302.57783502837
+   },
+   "per_tax_dollar": 1.0089508545902612,
+   "ratio_net": 0.9628048025052047
+  },
+  "all_2026_inputs_separate_funds": {
+   "case_on_accrual_net_bn": {
+    "high": 458.48666784729994,
+    "low": 396.4692294267203
+   },
+   "future_share_group": 0.04574894017784298,
+   "g3plus_net_own_rate": 0.9417868039746438,
+   "g3plus_part_a_per_hi_tax_dollar": 1.334658227707764,
+   "part_a_bn": 40.78277939340838,
+   "part_a_per_covered_worker_usd": 1986.332734396386,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 84449.45792040926,
+    "female_age_45": 101109.63169189371,
+    "female_age_64": 127561.5103109539,
+    "male_age_25": 71621.87970565372,
+    "male_age_45": 86173.98910165747,
+    "male_age_64": 113302.57783502837
+   },
+   "per_tax_dollar": 0.9992620293025645,
+   "ratio_net": 0.9535468505020114
+  },
+  "benefit_tax_path_tr2026": {
+   "case_on_accrual_net_bn": {
+    "high": 456.9247221702097,
+    "low": 394.87452990253803
+   },
+   "future_share_group": 0.04572957325159572,
+   "g3plus_net_own_rate": 0.9354807492488232,
+   "g3plus_part_a_per_hi_tax_dollar": 1.299778968055368,
+   "part_a_bn": 39.73117094214848,
+   "part_a_per_covered_worker_usd": 1935.113952313009,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 82155.81628462074,
+    "female_age_45": 98397.89754000964,
+    "female_age_64": 125657.44128681051,
+    "male_age_25": 69669.00164814039,
+    "male_age_45": 83854.62293384675,
+    "male_age_64": 111717.55845417661
+   },
+   "per_tax_dollar": 0.9942028364430084,
+   "ratio_net": 0.9487383650069436
+  },
+  "hi_costs_tr2026": {
+   "case_on_accrual_net_bn": {
+    "high": 457.99083381329126,
+    "low": 395.9533459514316
+   },
+   "future_share_group": 0.04385360556655476,
+   "g3plus_net_own_rate": 0.9375022390065897,
+   "g3plus_part_a_per_hi_tax_dollar": 1.3284672028366933,
+   "part_a_bn": 40.59933541891029,
+   "part_a_per_covered_worker_usd": 1977.3980620446475,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 84015.85627874278,
+    "female_age_45": 100625.66464207179,
+    "female_age_64": 127405.21902002426,
+    "male_age_25": 71246.33524759188,
+    "male_age_45": 85753.12457868006,
+    "male_age_64": 113185.3212401194
+   },
+   "per_tax_dollar": 0.9942028364430084,
+   "ratio_net": 0.9506034574004868
+  },
+  "interest_tr2026": {
+   "case_on_accrual_net_bn": {
+    "high": 457.61070162264514,
+    "low": 395.5958262721775
+   },
+   "future_share_group": 0.043854680916813084,
+   "g3plus_net_own_rate": 0.9408136665781933,
+   "g3plus_part_a_per_hi_tax_dollar": 1.3043653649034952,
+   "part_a_bn": 39.86687800978204,
+   "part_a_per_covered_worker_usd": 1941.7235898791296,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 82471.31464848587,
+    "female_age_45": 98775.76945566433,
+    "female_age_64": 125745.64092958799,
+    "male_age_25": 69936.5475995549,
+    "male_age_45": 84176.64512940869,
+    "male_age_64": 111770.93995926357
+   },
+   "per_tax_dollar": 0.9976758840201594,
+   "ratio_net": 0.9539231264680559
+  },
+  "mortality_tr2026": {
+   "case_on_accrual_net_bn": {
+    "high": 457.25069477954213,
+    "low": 395.21863470461625
+   },
+   "future_share_group": 0.04385493229352733,
+   "g3plus_net_own_rate": 0.938306141470823,
+   "g3plus_part_a_per_hi_tax_dollar": 1.3012396564129303,
+   "part_a_bn": 39.774626114121006,
+   "part_a_per_covered_worker_usd": 1937.2304444170709,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 82263.90490218965,
+    "female_age_45": 98492.91316986887,
+    "female_age_64": 125720.38414247884,
+    "male_age_25": 69768.304570704,
+    "male_age_45": 83943.80519508162,
+    "male_age_64": 111777.23953223543
+   },
+   "per_tax_dollar": 0.9950375996653428,
+   "ratio_net": 0.9514002931025052
+  },
+  "program_parameters_tr2026": {
+   "case_on_accrual_net_bn": {
+    "high": 457.15502569507174,
+    "low": 395.1196144899138
+   },
+   "future_share_group": 0.04385250896251497,
+   "g3plus_net_own_rate": 0.9377607561680608,
+   "g3plus_part_a_per_hi_tax_dollar": 1.299778968055368,
+   "part_a_bn": 39.73117094214848,
+   "part_a_per_covered_worker_usd": 1935.113952313009,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 82155.81628462074,
+    "female_age_45": 98397.89754000964,
+    "female_age_64": 125657.44128681051,
+    "male_age_25": 69669.00164814039,
+    "male_age_45": 83854.62293384675,
+    "male_age_64": 111717.55845417661
+   },
+   "per_tax_dollar": 0.9945205457454687,
+   "ratio_net": 0.9509083245997602
+  },
+  "separate_funds": {
+   "case_on_accrual_net_bn": {
+    "high": 456.14680088902617,
+    "low": 394.0466810177938
+   },
+   "future_share_group": 0.04386874931895937,
+   "g3plus_net_own_rate": 0.9294757486753088,
+   "g3plus_part_a_per_hi_tax_dollar": 1.299778968055368,
+   "part_a_bn": 39.73117094214848,
+   "part_a_per_covered_worker_usd": 1935.113952313009,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 82155.81628462074,
+    "female_age_45": 98397.89754000964,
+    "female_age_64": 125657.44128681051,
+    "male_age_25": 69669.00164814039,
+    "male_age_45": 83854.62293384675,
+    "male_age_64": 111717.55845417661
+   },
+   "per_tax_dollar": 0.9846019107215155,
+   "ratio_net": 0.9414086563211049
+  },
+  "separate_funds_2025": {
+   "case_on_accrual_net_bn": {
+    "high": 459.7452374808127,
+    "low": 397.7969215666286
+   },
+   "future_share_group": 0.04390534406820814,
+   "g3plus_net_own_rate": 0.9527181871150292,
+   "g3plus_part_a_per_hi_tax_dollar": 1.3423904344462316,
+   "part_a_bn": 40.96435223759108,
+   "part_a_per_covered_worker_usd": 1995.17627300366,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 86307.61055012787,
+    "female_age_45": 100437.46559093765,
+    "female_age_64": 126631.21310828323,
+    "male_age_25": 73107.1689837477,
+    "male_age_45": 85492.17179879252,
+    "male_age_64": 112539.51475843193
+   },
+   "per_tax_dollar": 1.0079488409516624,
+   "ratio_net": 0.963694500286528
+  },
+  "wage_index_tr2026": {
+   "case_on_accrual_net_bn": {
+    "high": 458.1448165706955,
+    "low": 396.17293092736685
+   },
+   "future_share_group": 0.043860035055087884,
+   "g3plus_net_own_rate": 0.9475095295935506,
+   "g3plus_part_a_per_hi_tax_dollar": 1.299778968055368,
+   "part_a_bn": 39.73117094214848,
+   "part_a_per_covered_worker_usd": 1935.113952313009,
+   "part_a_pv_at_2024_payable": {
+    "female_age_25": 82155.81628462074,
+    "female_age_45": 98397.89754000964,
+    "female_age_64": 125657.44128681051,
+    "male_age_25": 69669.00164814039,
+    "male_age_45": 83854.62293384675,
+    "male_age_64": 111717.55845417661
+   },
+   "per_tax_dollar": 1.0042821557585595,
+   "ratio_net": 0.9602343052017899
+  }
+ },
+ "central": {
+  "career_start": true,
+  "mapping": "individual_age_adjusted",
+  "method": "EAN",
+  "mortality": "general",
+  "rate": "new_issue",
+  "scenario": "payable",
+  "spouse": false,
+  "unauthorized": "note151_long_run"
+ },
+ "construction": "OASDI: Note 2025.7 Table 3 x k_path(person) / mwr_2025path(Note 2025.7's basis), the lifetime model's ratio of the two paths on the published level; Part A on the path directly; the benefit tax's timing on the arm's OASDI path",
+ "control_gates": {
+  "hi_arms_rows": 448,
+  "hi_arms_worst_abs": 4.953942820407065e-07,
+  "lane_summary_sha256": "2397bb58f395b0fce3d0162d597f25e4093b49eb904b149f3cb7c5c59d86b8a0",
+  "per_tax_dollar_rel_tol": 1e-12
+ },
+ "depletion": {
+  "hi_2025": 2033,
+  "hi_2026": 2033,
+  "oasdi_2025": 2034,
+  "oasdi_2026": 2034,
+  "oasi_2025": 2033,
+  "oasi_2026": 2032
+ },
+ "documents": {
+  "an2026_3": {
+   "file": "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/an2026-3.pdf",
+   "sha256": "25bf13bdd186a819a111c3f0b84766098d0cedc3c6f4477b74988c6707d44f01",
+   "text_sha256": "2d04b489a7b25525730aaeeb828d37df4b2c7b0c2a8f4d8a7619b1d3b65cbfc7",
+   "title": "SSA Actuarial Note 2026.3, Scaled factors for hypothetical earnings examples under the 2026 Trustees Report assumptions",
+   "url": "https://www.ssa.gov/OACT/NOTES/ran3/an2026-3.pdf"
+  },
+  "mtr2026": {
+   "file": "sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.pdf",
+   "sha256": "ffa56b9137006872300b0346149eae1613d09a172b6ba118aad48e66dfc48fa8",
+   "text_sha256": "58ac07aa337c061f61f398669b3650debe00833b6e01d6eeab7114cc7eb05a81",
+   "title": "2026 Annual Report of the Boards of Trustees of the Federal HI and SMI Trust Funds",
+   "url": "https://www.cms.gov/files/document/2026-medicare-trustees-report.pdf"
+  },
+  "tr2026": {
+   "file": "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.pdf",
+   "sha256": "fb4e1556a00d925efa03e6355f64f911656a2626eaaceeb16062687008feb683",
+   "text_sha256": "789faa11edff9427e625c092516cadd94ab4f03553da803ae9bd39f0ef6bc7c1",
+   "title": "The 2026 Annual Report of the Board of Trustees of the Federal OASI and DI Trust Funds",
+   "url": "https://www.ssa.gov/OACT/TR/2026/tr2026.pdf"
+  }
+ },
+ "economy_inputs": {
+  "base_tr2026_over_tr2025": {
+   "2026": 1.0049019607843137,
+   "2030": 1.0,
+   "2034": 1.020310633213859
+  },
+  "cola_2025_2026": {
+   "tr2025": [
+    0.027000000000000003,
+    0.025
+   ],
+   "tr2026": [
+    0.027999999999999997,
+    0.027000000000000003
+   ]
+  },
+  "cola_2027_2035": 0.024,
+  "v_c1_awi_vs_note_2026_3_max_gap": 0.0,
+  "v_c1_parser_reproduces_tr2025": true
+ },
+ "gdp_cross_check": {
+  "income_over_cost_2100_b1": 0.6718281718281718,
+  "income_over_cost_2100_b3": 0.6711509715994021,
+  "max_gap_income_over_cost": 0.0011314753500013541,
+  "payable_share_2100": 0.6538258575197889
+ },
+ "haircut_vs_note_2025_7": {
+  "lane_path_max_gap": 0.05584414867096954,
+  "lane_path_mean_abs_gap": 0.020248968271833673,
+  "tables_2025_max_gap": 0.0711607473761734,
+  "tables_2025_mean_abs_gap": 0.02270916026143328,
+  "tables_2026_over_2025_mean": 0.9689459683196524
+ },
+ "headline_arm": "tr2026",
+ "headline_basis": "both reports' paths year by year from their tables, the same construction; ungated against a 2026 money's-worth note (none published)",
+ "hi_cost_tr2026_over_tr2025": {
+  "2024": 0.9900300680487419,
+  "2025": 0.9873340454753547,
+  "2030": 1.0071123755334281,
+  "2034": 1.0138621486330381
+ },
+ "path_gates": 16,
+ "path_gates_passed": 16,
+ "question": "the pension lane's accrual (central at 9ea1beb) with the payable paths of the 2026 Trustees Reports",
+ "quotes": {
+  "mtr2026_hi_depletion": {
+   "doc": "mtr2026",
+   "value": "2033Q2"
+  },
+  "mtr2026_hi_growth_ultimate": {
+   "doc": "mtr2026",
+   "value": 0.035
+  },
+  "mtr2026_hi_payable": {
+   "doc": "mtr2026",
+   "value": {
+    "2033": 0.89,
+    "2050": 0.85,
+    "2100": 0.93
+   }
+  },
+  "tr2025_di_reserves": {
+   "doc": "tr2025",
+   "value": "positive through 2099"
+  },
+  "tr2025_oasi_payable": {
+   "doc": "tr2025",
+   "value": {
+    "2033": 0.77
+   }
+  },
+  "tr2026_actuarial_deficit": {
+   "doc": "tr2026",
+   "value": {
+    "2025": 0.0382,
+    "2026": 0.0442
+   }
+  },
+  "tr2026_di_reserves": {
+   "doc": "tr2026",
+   "value": "positive through 2100"
+  },
+  "tr2026_fertility": {
+   "doc": "tr2026",
+   "value": {
+    "2025": 1.9,
+    "2026": 1.75
+   }
+  },
+  "tr2026_interest_ultimate": {
+   "doc": "tr2026",
+   "value": 0.023
+  },
+  "tr2026_mortality_decline": {
+   "doc": "tr2026",
+   "value": {
+    "65plus": 0.0069,
+    "total": 0.0073
+   }
+  },
+  "tr2026_oasdi_depletion": {
+   "doc": "tr2026",
+   "value": 2034
+  },
+  "tr2026_oasdi_payable": {
+   "doc": "tr2026",
+   "value": {
+    "2034": 0.83,
+    "2100": 0.65
+   }
+  },
+  "tr2026_oasi_payable": {
+   "doc": "tr2026",
+   "value": {
+    "2032": 0.78,
+    "2100": 0.62
+   }
+  },
+  "tr2026_real_earnings": {
+   "doc": "tr2026",
+   "value": {
+    "2025_2035_growth": 0.0172,
+    "tr2025_same_period": 0.0144
+   }
+  },
+  "tr2026_transfer_assumption": {
+   "doc": "tr2026",
+   "value": "combined"
+  }
+ },
+ "rates_tr2026_minus_tr2025": {
+  "2025": 0.000999999999999994,
+  "2026": 0.0010000000000000078,
+  "2030": 0.0,
+  "2035": -0.0020000000000000018,
+  "2040": 0.0,
+  "2045": 0.0,
+  "2100": 0.0
+ }
+}

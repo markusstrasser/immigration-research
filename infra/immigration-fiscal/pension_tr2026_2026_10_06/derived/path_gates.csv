@@ -1,0 +1,17 @@
+path,source,year,stated,computed,computed_lo,computed_hi,passed
+oasdi_2025,Note 2025.7 p. 2 (reserves at the start of 2034 plus income),2034,0.902000,0.906520,0.900339,0.912707,True
+oasdi_2025,Note 2025.7 p. 2,2035,0.807000,0.807567,0.806714,0.808420,True
+oasdi_2025,Note 2025.7 p. 2,2099,0.719000,0.718431,0.717724,0.719138,True
+oasdi_2025,"TR 2025 sec. II.D, the rest of 2034 after depletion",2034_after,0.810000,0.811271,0.810413,0.812131,True
+oasdi_2025,TR 2025 sec. II.D,2099,0.720000,0.718431,0.717724,0.719138,True
+oasdi_2026,"TR 2026 sec. II.D and Table IV.B5, the rest of 2034 after depletion",2034_after,0.830000,0.826435,0.825550,0.827321,True
+oasdi_2026,TR 2026 sec. II.D and Table IV.B5,2100,0.650000,0.653826,0.653217,0.654435,True
+oasi_2025,"TR 2025 sec. II.D and Table IV.B4, the rest of 2033 after depletion",2033_after,0.770000,0.768895,0.767974,0.769818,True
+oasi_2026,"TR 2026 sec. II.D and Table IV.B5, the rest of 2032 after depletion",2032_after,0.780000,0.776065,0.775128,0.777002,True
+oasi_2026,TR 2026 sec. II.D and Table IV.B5,2100,0.620000,0.617853,0.617201,0.618506,True
+hi_2025,"Medicare TR 2025 sec. II (income / cost, the year of depletion)",2033_after,0.890000,0.887560,0.885305,0.889820,True
+hi_2025,Medicare TR 2025 sec. II,2049,0.860000,0.862544,0.860521,0.864572,True
+hi_2025,Medicare TR 2025 sec. II (about 100 percent),2099,1.000000,0.997788,0.995580,1.000000,True
+hi_2026,"Medicare TR 2026 sec. II.E (income / cost, the year of depletion)",2033_after,0.890000,0.889976,0.887668,0.892289,True
+hi_2026,Medicare TR 2026 sec. II.E,2050,0.850000,0.855895,0.853871,0.857923,True
+hi_2026,Medicare TR 2026 sec. II.E (about 93 percent),2100,0.930000,0.927984,0.926002,0.929969,True
