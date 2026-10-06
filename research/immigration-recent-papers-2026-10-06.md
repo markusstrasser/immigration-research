@@ -14,7 +14,8 @@ Several further items each move a priced line by about $3bn or more, or bear on 
 - the 2026 public-charge rule and the 2025 budget law, which cut transfers to the lineage by about $5bn and
   $3–6bn a year from 2026–27 (current law today, not the 2024 account);
 - Census's own finding that the 2025 survey overstates Hispanic household income by 3.8% at the median, which
-  flatters the group (sizing running).
+  flatters the group: +$1.9–4.6bn on the account's keys, +$0.2–1.5bn net of the income tax that tax records
+  already pin.
 
 Two face-value hits fail on their own design: the 2021–24 surge's cross-metro native-wage gain, and a
 survey-based Hispanic income-tax ratio that tax records contradict. The police-records paper that the first
@@ -156,9 +157,12 @@ Treasury's joint-return level. Repo: NEW paper, HAD-PARTS check.
 and 2025: the median was biased upward by 3.8% in 2025, but the bias in 2024 was not statistically significant".
 The 2025 Hispanic curve runs about 1.03–1.07 across percentiles, against about 1.02–1.03 for all households
 [SOURCE: text and Figure 4, figures read by eye]. The 2026 post gives 2–4% for all households and no group
-figures. This flatters the group where the account keys on CPS income; the reading lane guessed +$2–4bn [sizing
-running; see Revisions]. It is the income side of the 2025 survey exit (ladder 209), so the two are priced
-together, not added. Repo: NEW.
+figures. Census's correction is a reweight toward lower-income respondents. Applied inside each householder group
+to the account's own CPS keys with the count held at row 4, it raises the case by $1.9–4.6bn
+([lane](../infra/immigration-fiscal/nonresponse_bias_2026_10_07/RESULT.md)). The federal income tax is $1.7–3.1bn of
+that, and Treasury's tax records, against which the case's compliance and fill-in corrections already go further,
+probably cover it. Net of the income tax the item is +$0.2–1.5bn. It is the income side of the 2025 survey exit
+(ladder 209); with the count pinned the two do not overlap. Not adopted. Repo: NEW.
 
 **Social Security's 2026 payable path is lower than the 2025 one the pension lane uses.** The lane estimates
 −$2–4bn on the headline [lane estimate; rerun on the 2026 Trustees tables running, see Revisions]; the pension lane
@@ -232,7 +236,9 @@ the 2000 census/ACS.
 - CBO Working Paper 2026-04 (62261), *Immigrant Earnings Assimilation, 1981–2021*: Akee, Chin & Crown's NBER paper,
   already in ladder 92 (stayers positively selected).
 - Escobari et al. (Brookings, September 2026), Hernandez (2026), Aslim et al. (PNAS 2026), Lee–Peri–Yang (Korea):
-  disruption costs of enforcement or abrupt stops, a removal estimand (FAQ 11), not the stationary account.
+  responses to enforcement intensity or abrupt stops, not the stationary account (FAQ 11). Aslim et al.'s
+  replication package reproduces their headline (centre-based childcare −0.0044, SE 0.0010, per log point of
+  arrests) and shows no native-born replacement; the article body is embargoed [lane rerun].
 - Caiumi & Peri, CEPR DP21756 (July 2026): nested-CES simulation for all 2000–23 immigration; its low-skill
   elasticity is already in ladder 181 [full text not read].
 - Huang & Kvasnicka (international): county crime rises only in a non-linear specification [lane reading];
@@ -243,8 +249,13 @@ the 2000 census/ACS.
   income-year-2025 account.
 - Vintage 2025 population controls (Fox & Jensen, SEHSD WP 2026-16, Table 3): Hispanic persons +0.88%, about +$2bn
   [lane; the paper gives no dollars].
-- Richwine (CIS; *Cityscape*, forthcoming) PUMA rent elasticity 1.46% against the repo's 1.32%: renter line
-  +$2–6bn, headline under $0.3bn [abstract].
+- Richwine (CIS; *Cityscape*, forthcoming; abstract only, the paper is not out): native rent +1.46% per point of
+  foreign-born share across about 1,700 PUMAs, 2014–2023, with modeled spillovers, about 1.26% per 1% of
+  population. That is inside the housing lane's short-run arm (1.0–2.0) and above the long-run arm the account uses
+  (0.25 / 0.39 / 0.60; `housing_transfer_2026_09_23/RESULT.md`). Adopting it would raise the transfer from other
+  renters to landlords from about $34bn toward $100bn a year, a transfer among other residents. The headline would
+  fall by about $1–7bn through the group's own rent [lane INFERENCE]. The first version compared it with the
+  hedonic lane's 1.32%, which is not the renter line's input, and had the sign wrong.
 - Cato and Manhattan Institute exchanges, CIS welfare-use reports, Demsas's essays, Penn Wharton's deportation
   score: handled in earlier passes or a federal-deficit estimand (FAQ 16).
 
@@ -273,8 +284,8 @@ the closure arm, lowers the cost by 8–9% at its central.
 
 1. Done 2026-10-07: the closed-budget arm (lane above), the INDEX caveat and FAQ entry 20; one line each in FAQ 11
    (Lee–Scafidi's decline side), FAQ 14 (Hunt–Orrenius–Zavodny; Kantova) and FAQ 17 (the SCF ratio).
-2. Running: third-generation identification in the 2025 monthly CPS; the pension lane on the 2026 Trustees tables;
-   the 2025 Hispanic nonresponse bias on the account's keys.
+2. Done: the 2025 Hispanic nonresponse bias on the account's keys (lane above). Running: third-generation
+   identification in the 2025 monthly CPS; the pension lane on the 2026 Trustees tables.
 3. Open, cheapest first: price Van Hook–Bachmeier's 0.687 fourth-plus step; the 2022 SCF wave by filing status;
    ladder 232's carry-over by parent cohort; the lineage's shares of P.L. 119-21's eligibility classes from the
    status imputation; Texas prisoners' self-reported ethnicity.
@@ -300,7 +311,8 @@ Staged under `sources/immigration-fiscal/data/external/stage3/`, each with `ACQU
   - Hadah–Denteh's precision and scope; Hunt–Orrenius–Zavodny's timing and pandemic caveat; Van Hook–Bachmeier's
     parity (years of schooling, not degrees) and identification ratios.
   - The public-charge share is measured (42.6%, $5.0bn), not assumed; P.L. 119-21's limits are priced by CBO.
-  - The 2025 survey's Hispanic nonresponse bias is new.
+  - The 2025 survey's Hispanic nonresponse bias is new and sized (+$0.2–4.6bn); Richwine's rent estimate lowers the
+    headline if adopted, not raises it.
 
   Concept affected: what "cost to other residents" assumes about deficit financing, and the size of the post-2024
   current-law items.
