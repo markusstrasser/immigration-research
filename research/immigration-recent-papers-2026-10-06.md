@@ -172,9 +172,13 @@ that, and Treasury's tax records, against which the case's compliance and fill-i
 probably cover it. Net of the income tax the item is +$0.2–1.5bn. It is the income side of the 2025 survey exit
 (ladder 209); with the count pinned the two do not overlap. Not adopted. Repo: NEW.
 
-**Social Security's 2026 payable path is lower than the 2025 one the pension lane uses.** The lane estimates
-−$2–4bn on the headline [lane estimate; rerun on the 2026 Trustees tables running, see Revisions]; the pension lane
-reads Note 2025.7's payable path (`pension_accrual_2026_09_28/pension_accrual.py`). An input refresh, due anyway.
+**Social Security's 2026 payable path is lower than the 2025 one the pension lane uses.** Rerun on the 2026
+Trustees tables ([lane](../infra/immigration-fiscal/pension_tr2026_2026_10_06/RESULT.md), ladder 286), the accrual
+falls from 0.974 to 0.951 per OASDI tax dollar and Part A by 3.4%, so the case would be $385.9–457.1bn (−$4.36 /
+−4.15bn); the cash set does not move. The same reports raise wage growth and HI costs, so taking all six 2026 inputs
+together gives −$1.73 / −1.63bn. Under current law the OASI and DI funds are separate (OASI pays in full to 2032, DI
+through 2100), and the Trustees say the combined reading the case uses "implicitly assumes that the law will have been
+changed"; separate funds cost a further $1.0–1.2bn. An input refresh, not adopted: it changes the headline.
 
 **Laws since 2024 cut transfers to the lineage.** Neither corrects 2024; both belong beside any statement about
 current law today.
@@ -298,8 +302,7 @@ the closure arm, lowers the cost by 8–9% at its central.
 1. Done 2026-10-07: the closed-budget arm (lane above), the INDEX caveat and FAQ entry 20; one line each in FAQ 11
    (Lee–Scafidi's decline side), FAQ 14 (Hunt–Orrenius–Zavodny; Kantova) and FAQ 17 (the SCF ratio).
 2. Done: the 2025 Hispanic nonresponse bias on the account's keys; third-generation identification in the 2025
-   monthly CPS and the US-born count against the ACS (lanes above). Running: the pension lane on the 2026 Trustees
-   tables.
+   monthly CPS and the US-born count against the ACS; the pension lane on the 2026 Trustees tables (lanes above).
 3. Open, cheapest first: price Van Hook–Bachmeier's 0.687 fourth-plus step; the 2022 SCF wave by filing status;
    ladder 232's carry-over by parent cohort; the lineage's shares of P.L. 119-21's eligibility classes from the
    status imputation; Texas prisoners' self-reported ethnicity.
@@ -329,6 +332,8 @@ Staged under `sources/immigration-fiscal/data/external/stage3/`, each with `ACQU
     headline if adopted, not raises it.
   - Hadah–Denteh's identity loss does not appear in the account's own survey (ladder 284); the US-born count sits
     0.44M above the ACS (−$3.6–5.5bn if the ACS is right).
+  - The 2026 Trustees inputs lower the case by $1.7–4.4bn, and current law's separate trust funds by $1.0–1.2bn more
+    (ladder 286); none adopted.
 
   Concept affected: what "cost to other residents" assumes about deficit financing, and the size of the post-2024
   current-law items.

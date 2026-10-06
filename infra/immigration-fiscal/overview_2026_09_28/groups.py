@@ -534,7 +534,7 @@ GROUPS = [
                  text="A second survey gives the same earnings and income-tax gaps within 4%.",
                  why="ACS against CPS, with one tax calculator on both."),
         ],
-        minor=[284, 285],
+        minor=[284, 285, 286],
     ),
     dict(
         id="time", part="build",
