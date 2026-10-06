@@ -1,5 +1,5 @@
 {
- "head": "c88ae82bdac6d21cdd6d12240d3fe43bb5b0610d",
+ "head": "eb55de2ace37a3bb50da1b101996c776d9d0812b",
  "sha256": {
   "CLAUDE.md": "035e9b76f3b3815ded5370b783ae1b6916c73be6e1519e220ec003d52a0f1dda",
   "decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md": "3d89e32090e59e8c903f046f503bc29a2002d9696d249d139f7adf1d3a8bbf99",
@@ -88,7 +88,7 @@
   "infra/immigration-fiscal/main_case_long_run_2026_09_27/derived/summary.json": "c88531f08f8499f6cbd44f6db52b9dd4f5546c474f3d4a4b640c59946b93018d",
   "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/summary.json": "864246c1da7c988040d76ed60816072036b5a89c37b8fd792b68f22a601c5ada",
   "infra/immigration-fiscal/overview_2026_09_28/build.py": "ab252e42039044f7e00fd435df96f9449253519efa70d5b4e632bb1431b44cf6",
-  "infra/immigration-fiscal/overview_2026_09_28/groups.py": "b83f77822f87ea77613e535de9d741d1e927ade44ae4d6ad08b334c2de3eab7a",
+  "infra/immigration-fiscal/overview_2026_09_28/groups.py": "b61ad39b6a6cdea7932d50d91d600869ce35377d19558d2ce62f65ff22884fdd",
   "infra/immigration-fiscal/overview_2026_09_28/quantity_registry.csv": "6a09921e9e27c999b19307a97ef482990a4100e5c3e734da833b030dc0682397",
   "infra/immigration-fiscal/overview_2026_09_28/template.html": "937b67aab95f5ef1d0ca2c9a3f1f8979dc0a167ef3b168d252c1b80b1f4e4283",
   "infra/immigration-fiscal/pension_accrual_2026_09_28/derived/case_beside.csv": "0ef13fc0148e02edeec7fa2048fa6a9134b52a36a8c905406aafe2e714a082c4",
@@ -140,7 +140,7 @@
   "research/immigration-INDEX.md": "d9d4a91c6fb88fd49ac973bf0d4be487531e22e0ecc96a69b1a45c07c4273f37",
   "research/immigration-administration-response-test-2026-09-20.md": "e63b1d3d3f0988a86aba945b3f85bc8c63708e4f5214d94e20bc581b171b2fd8",
   "research/immigration-adopted-account-by-generation-2026-09-25.md": "bcef8dfb4910825214d457cb3d1597ea9c68260fb8cde9b68c7c3eff560cc582",
-  "research/immigration-confidence-ladder.md": "b3c5b6aa1a7ec2b6ef1f414c5bba3b5f7dd1c934d40fb950be30602fd4c9f0d7",
+  "research/immigration-confidence-ladder.md": "3a7f481e36fa4511d0fae5465626484eab1a30de5fa48f8b7ff1cc3f5ff88358",
   "research/immigration-objections-faq-2026-09-21.md": "06a0a860dbfd459b262b38d8ebdafc8ea3e88077792df90856fe44f9a207a8cd",
   "research/immigration-real-fiscal-and-social-costs-2026-09-23.md": "10cfeee3ccaf8f035104084df9614a3386f07aa685a83a2ff5278897b8f7c7c6",
   "research/immigration-winners-and-losers-2026-09-25.md": "e628f04eb1e4183859f293eaeb21a170cdab1e4794b56389ce39b4edf3c7ac81",
