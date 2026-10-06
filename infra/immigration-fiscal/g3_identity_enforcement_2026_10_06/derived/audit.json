@@ -1,0 +1,127 @@
+{
+ "asec_vintage_shares": {
+  "2025": {
+   "first_months": [
+    202312,
+    202401,
+    202402,
+    202403,
+    202406,
+    202412,
+    202501,
+    202502,
+    202503
+   ],
+   "january_2025": 0.04490571566913623,
+   "oversample": 0.5610812143323298,
+   "post": 0.1550906113550675,
+   "pre": 0.2389224586434664,
+   "records_by_first": {
+    "202312": 57,
+    "202401": 62,
+    "202402": 82,
+    "202403": 69,
+    "202406": 3,
+    "202412": 77,
+    "202413": 231,
+    "202501": 58,
+    "202502": 77,
+    "202503": 112,
+    "202513": 536
+   }
+  },
+  "2026": {
+   "first_months": [
+    202412,
+    202501,
+    202502,
+    202503,
+    202512,
+    202601,
+    202602,
+    202603
+   ],
+   "january_2025": 0.03379766866987995,
+   "oversample": 0.49728478890519234,
+   "post": 0.42487904728933834,
+   "pre": 0.04403849513558934,
+   "records_by_first": {
+    "202412": 71,
+    "202501": 48,
+    "202502": 71,
+    "202503": 76,
+    "202512": 109,
+    "202513": 228,
+    "202601": 97,
+    "202602": 107,
+    "202603": 79,
+    "202613": 438
+   }
+  }
+ },
+ "baseline_mean": [
+  "2022-01",
+  "2024-12"
+ ],
+ "baseline_trend": [
+  "2019-01",
+  "2024-12"
+ ],
+ "g3_mex_rows_monthly_2019_on": 14257,
+ "household_filter": "(MBPL BETWEEN 20000 AND 30999 OR FBPL BETWEEN 20000 AND 30999 OR MBPL BETWEEN 50000 AND 52999 OR FBPL BETWEEN 50000 AND 52999)",
+ "last_month": "2026-08",
+ "planted_drop": 0.059,
+ "power_draws": 200,
+ "rows_asec": 71368,
+ "rows_monthly": 326734,
+ "se": "CR1 cluster-robust, cluster = CPSID household",
+ "seed": 20261007,
+ "stage": {
+  "asec": {
+   "aggregates": [
+    "asec_composition.parquet"
+   ],
+   "first_year": 2003,
+   "households": 1664807,
+   "kept_households": 319654,
+   "kept_rows": 1021769,
+   "rows": 4460308,
+   "source": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/asec_pooled.csv.gz",
+   "source_sha256": "59e1c80d8738f8f3938b235db66f1656bce480b3cee276fcb1ed6ba748822e7e",
+   "spec_sha256": "0b286777cd81eabeb5b8e27f5906e8bc3f9acfac85e5a1c0c23c0387c253104b"
+  },
+  "monthly": {
+   "aggregates": [
+    "monthly_composition.parquet",
+    "monthly_state_cells.parquet"
+   ],
+   "first_year": 2003,
+   "households": 3487406,
+   "kept_households": 494594,
+   "kept_rows": 1555716,
+   "rows": 8552187,
+   "source": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/monthly_mis15.csv.gz",
+   "source_sha256": "ca414d911560deafe8398a2906e0b6edc791eeb0552841b796647b51601c24d2",
+   "spec_sha256": "b916f996b387361f6c1ec7b514f3ee05461bf896861ee8f5d23c1e4be22e5afe"
+  }
+ },
+ "weights": "unweighted; state_mean = summed WTFINL / persons in year x month x MIS x state (all persons); final = WTFINL (ASECWT in the ASEC frame)",
+ "windows": {
+  "feb_2025_jan_2026": [
+   "2025-02",
+   "2026-01"
+  ],
+  "feb_2025_latest": [
+   "2025-02",
+   "2026-08"
+  ],
+  "feb_2026_latest": [
+   "2026-02",
+   "2026-08"
+  ],
+  "feb_apr_2025": [
+   "2025-02",
+   "2025-04"
+  ]
+ }
+}

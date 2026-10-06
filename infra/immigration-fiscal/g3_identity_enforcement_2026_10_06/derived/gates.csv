@@ -1,0 +1,36 @@
+gate,value,expected,passed
+pooled monthly_counts.csv monthly_nodedup 2022_2025 18+ G3anc,1380,1380,True
+pooled monthly_counts.csv monthly_nodedup 2022_2025 18+ G3anc_id,1187,1187,True
+pooled monthly_counts.csv monthly_nodedup 2022_2025 18+ G3anc_nonmex,193,193,True
+pooled monthly_counts.csv monthly_nodedup 2022_2025 25+ G3anc,550,550,True
+pooled monthly_counts.csv monthly_nodedup 2022_2025 25+ G3anc_id,465,465,True
+pooled monthly_counts.csv monthly_nodedup 2022_2025 25+ G3anc_nonmex,85,85,True
+pooled monthly_counts.csv monthly_nodedup 2022_2026 18+ G3anc,1641,1641,True
+pooled monthly_counts.csv monthly_nodedup 2022_2026 18+ G3anc_id,1401,1401,True
+pooled monthly_counts.csv monthly_nodedup 2022_2026 18+ G3anc_nonmex,240,240,True
+pooled monthly_counts.csv monthly_nodedup 2022_2026 25+ G3anc,637,637,True
+pooled monthly_counts.csv monthly_nodedup 2022_2026 25+ G3anc_id,536,536,True
+pooled monthly_counts.csv monthly_nodedup 2022_2026 25+ G3anc_nonmex,101,101,True
+pooled monthly_counts.csv monthly_mis1 2022_2025 18+ G3anc,701,701,True
+pooled monthly_counts.csv monthly_mis1 2022_2025 18+ G3anc_id,601,601,True
+pooled monthly_counts.csv monthly_mis1 2022_2025 18+ G3anc_nonmex,100,100,True
+pooled monthly_counts.csv monthly_mis1 2022_2025 25+ G3anc,290,290,True
+pooled monthly_counts.csv monthly_mis1 2022_2025 25+ G3anc_id,249,249,True
+pooled monthly_counts.csv monthly_mis1 2022_2025 25+ G3anc_nonmex,41,41,True
+pooled monthly_counts.csv monthly_mis1 2022_2026 18+ G3anc,834,834,True
+pooled monthly_counts.csv monthly_mis1 2022_2026 18+ G3anc_id,712,712,True
+pooled monthly_counts.csv monthly_mis1 2022_2026 18+ G3anc_nonmex,122,122,True
+pooled monthly_counts.csv monthly_mis1 2022_2026 25+ G3anc,338,338,True
+pooled monthly_counts.csv monthly_mis1 2022_2026 25+ G3anc_id,289,289,True
+pooled monthly_counts.csv monthly_mis1 2022_2026 25+ G3anc_nonmex,49,49,True
+pooled counts.csv (ASEC) 2022_2026 nodedup 18+ G3anc,1198,1198,True
+pooled counts.csv (ASEC) 2022_2026 nodedup 18+ G3anc_id,1035,1035,True
+pooled counts.csv (ASEC) 2022_2026 nodedup 18+ G3anc_nonmex,163,163,True
+pooled counts.csv (ASEC) 2022_2026 nodedup 25+ G3anc,447,447,True
+pooled counts.csv (ASEC) 2022_2026 nodedup 25+ G3anc_id,385,385,True
+pooled counts.csv (ASEC) 2022_2026 nodedup 25+ G3anc_nonmex,62,62,True
+"monthly samples 2003-01..latest, October 2025 absent",283,283,True
+MISH values,"[np.int32(1), np.int32(5)]","[1, 5]",True
+analysis rows with nonpositive final weight,0,0,True
+analysis rows without a state-mean weight,0,0,True
+analysis rows without a CPSID household,0,0,True
