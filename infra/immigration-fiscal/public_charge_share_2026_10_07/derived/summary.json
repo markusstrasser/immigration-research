@@ -1,0 +1,50 @@
+{
+ "lane": "public_charge_share_2026_10_07",
+ "rates": {
+  "3.3%": {
+   "dhs_federal_bn": 2.479093994,
+   "combined_matched_only_bn": 3.780009742677966,
+   "lineage_weights": {
+    "federal_bn": 1.0367082402083045,
+    "combined_bn": 1.6087735894691824,
+    "dollar_weighted_share": 0.42560038174119597
+   },
+   "row4_weights": {
+    "federal_bn": 1.0197768281831143,
+    "combined_bn": 1.5832118015911683,
+    "dollar_weighted_share": 0.4188380214251866
+   }
+  },
+  "10.3%": {
+   "dhs_federal_bn": 7.708919457,
+   "combined_matched_only_bn": 11.754205086949154,
+   "lineage_weights": {
+    "federal_bn": 3.2237172683045023,
+    "combined_bn": 5.002593323085435,
+    "dollar_weighted_share": 0.4256003095130507
+   },
+   "row4_weights": {
+    "federal_bn": 3.171067819956995,
+    "combined_bn": 4.923107134693777,
+    "dollar_weighted_share": 0.41883794763458454
+   }
+  },
+  "17.3%": {
+   "dhs_federal_bn": 12.938100184,
+   "combined_matched_only_bn": 19.72741335981356,
+   "lineage_weights": {
+    "federal_bn": 5.410456085467661,
+    "combined_bn": 8.395992304129837,
+    "dollar_weighted_share": 0.42560026248718424
+   },
+   "row4_weights": {
+    "federal_bn": 5.322092985403565,
+    "combined_bn": 8.262588370959165,
+    "dollar_weighted_share": 0.41883789933609694
+   }
+  }
+ },
+ "at_dhs_printed_primary_bn": 5.551984663048964,
+ "noncitizen_household_population_row4": 47856312.59577829,
+ "lineage_share_of_that_population": 0.33731126503917674
+}
