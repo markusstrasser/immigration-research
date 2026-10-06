@@ -116,7 +116,7 @@ GROUPS = [
                      "each household for its children's schools. Counting only the services that a household uses "
                      "itself, the share is about {{q:household.share_convention_b|mid}}."),
         ],
-        minor=[],
+        minor=[282],
     ),
     dict(
         id="selection", part="answer",
@@ -183,7 +183,7 @@ GROUPS = [
                  text="The recent doubling of sponsored Mexican parents comes from processing, not from a surge.",
                  why="Other countries rose by the same proportion."),
         ],
-        minor=[118],
+        minor=[118, 283],
     ),
     dict(
         id="generations", part="generations",
