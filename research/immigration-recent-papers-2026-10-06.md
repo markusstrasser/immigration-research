@@ -15,7 +15,9 @@ Several further items each move a priced line by about $3bn or more, or bear on 
   $3–6bn a year from 2026–27 (current law today, not the 2024 account);
 - Census's own finding that the 2025 survey overstates Hispanic household income by 3.8% at the median, which
   flatters the group: +$1.9–4.6bn on the account's keys, +$0.2–1.5bn net of the income tax that tax records
-  already pin.
+  already pin;
+- a US-born count in the 2025 survey 0.44M above the ACS once timing is allowed for, which would make the account
+  $3.6–5.5bn too high if the ACS is right (about 1.5 standard errors).
 
 Two face-value hits fail on their own design: the 2021–24 surge's cross-metro native-wage gain, and a
 survey-based Hispanic income-tax ratio that tax records contradict. The police-records paper that the first
@@ -137,9 +139,15 @@ parents, Secure Communities' staggered rollout lowered parent-reported Hispanic 
 parent and −0.044 without [SOURCE: Figure 4(d)]. CPS weights are raked to national Hispanic totals by age and sex
 ([Census](https://census.gov/programs-surveys/cps/technical-documentation/methodology/weighting.html)), so a
 response-level drop mostly moves weight to other Hispanic respondents rather than shrinking the group. What remains
-is a composition effect of the same sign and smaller (the leavers are more educated). The account's own measure is
-the test: third-generation identification in the 2025 monthly files against 2022–24 [check running; see
-Revisions]. Repo: NEW.
+is a composition effect of the same sign and smaller (the leavers are more educated). The account's own test finds
+no drop ([lane](../infra/immigration-fiscal/g3_identity_enforcement_2026_10_06/RESULT.md), ladder 284). On fresh
+first-month CPS reports, February 2025 – August 2026 against 2022–24 is −0.6 pp (SE 1.7), +0.1 (1.5) in Hadah–Denteh's
+frame, with power 0.94 against their 5.9 pp. The ASEC 2025 mostly carries origin reports made before the drive, since
+the CPS asks origin once. Its third-generation identification is 89.4%, above 2022–24. At most $0.1–3.5bn. The same
+lane found the 2025 weights lifting third-plus Mexican records by about 0.75M against 2022–24. Against the ACS 2024,
+with timing and frames allowed for, the ASEC 2025 holds 0.44M (1.6%) more US-born Mexican self-identifiers, about
+1.5 SE: if the ACS were right the account would be $3.6–5.5bn too high
+([check](../infra/immigration-fiscal/native_count_check_2026_10_07/RESULT.md)). Not adopted. Repo: NEW.
 
 **Survey Hispanic income tax far below the account's: contradicted by tax records.** Gale, Hall & Sabelhaus,
 Brookings/TPC, December 2025 (accepted at the *National Tax Journal*): SCF waves 1998–2022 through TAXSIM at 2018
@@ -239,6 +247,10 @@ the 2000 census/ACS.
   responses to enforcement intensity or abrupt stops, not the stationary account (FAQ 11). Aslim et al.'s
   replication package reproduces their headline (centre-based childcare −0.0044, SE 0.0010, per log point of
   arrests) and shows no native-born replacement; the article body is embargoed [lane rerun].
+- Pearson (*Journal of Human Resources* 2026; CPR WP 286 read) and Ares de Parga-Regalado & Prato (Upjohn WP 26-424):
+  deportations lower earnings in Mexico (−0.67%, SE 0.25, to −1.17%, SE 0.41, per deportee per 100 working-age
+  residents) and emigration lowers Mexico's formal-sector share (−1.45 pp, SE 0.39, per point) [lane readings].
+  Outcomes in Mexico, outside the account's beneficiary set.
 - Caiumi & Peri, CEPR DP21756 (July 2026): nested-CES simulation for all 2000–23 immigration; its low-skill
   elasticity is already in ladder 181 [full text not read].
 - Huang & Kvasnicka (international): county crime rises only in a non-linear specification [lane reading];
@@ -262,8 +274,9 @@ the 2000 census/ACS.
 ## Lean of the findings
 
 The surviving items point both ways. The closure arm, the school growth response, the Trustees path and the new
-laws lower the cost. The 2025 survey's Hispanic income bias, Hadah–Denteh's identity loss, the 2025 population
-controls and Van Hook–Bachmeier's steeper fourth-plus loss raise it, each by less. The face-value dismissals were
+laws lower the cost, and so would the ACS's lower US-born count. The 2025 survey's Hispanic income bias, the 2025
+population controls and Van Hook–Bachmeier's steeper fourth-plus loss raise it, each by less. Hadah–Denteh's identity
+loss, tested on the account's own survey, does not appear. The face-value dismissals were
 two that would lower the cost (the surge wage effect scaled up; the school decline response) and two that would
 raise it (the SCF tax ratio; Van Pelt), each on design or estimand grounds stated above. The largest item,
 the closure arm, lowers the cost by 8–9% at its central.
@@ -284,8 +297,9 @@ the closure arm, lowers the cost by 8–9% at its central.
 
 1. Done 2026-10-07: the closed-budget arm (lane above), the INDEX caveat and FAQ entry 20; one line each in FAQ 11
    (Lee–Scafidi's decline side), FAQ 14 (Hunt–Orrenius–Zavodny; Kantova) and FAQ 17 (the SCF ratio).
-2. Done: the 2025 Hispanic nonresponse bias on the account's keys (lane above). Running: third-generation
-   identification in the 2025 monthly CPS; the pension lane on the 2026 Trustees tables.
+2. Done: the 2025 Hispanic nonresponse bias on the account's keys; third-generation identification in the 2025
+   monthly CPS and the US-born count against the ACS (lanes above). Running: the pension lane on the 2026 Trustees
+   tables.
 3. Open, cheapest first: price Van Hook–Bachmeier's 0.687 fourth-plus step; the 2022 SCF wave by filing status;
    ladder 232's carry-over by parent cohort; the lineage's shares of P.L. 119-21's eligibility classes from the
    status imputation; Texas prisoners' self-reported ethnicity.
@@ -313,6 +327,8 @@ Staged under `sources/immigration-fiscal/data/external/stage3/`, each with `ACQU
   - The public-charge share is measured (42.6%, $5.0bn), not assumed; P.L. 119-21's limits are priced by CBO.
   - The 2025 survey's Hispanic nonresponse bias is new and sized (+$0.2–4.6bn); Richwine's rent estimate lowers the
     headline if adopted, not raises it.
+  - Hadah–Denteh's identity loss does not appear in the account's own survey (ladder 284); the US-born count sits
+    0.44M above the ACS (−$3.6–5.5bn if the ACS is right).
 
   Concept affected: what "cost to other residents" assumes about deficit financing, and the size of the post-2024
   current-law items.
