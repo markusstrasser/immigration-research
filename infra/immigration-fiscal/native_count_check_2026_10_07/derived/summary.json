@@ -1,0 +1,14 @@
+{
+ "lane": "native_count_check_2026_10_07",
+ "acs_2024_us_born_mexican_m": 27.292685,
+ "acs_2023_us_born_mexican_m": 26.639413,
+ "growth_us_born_mexican": 0.02452276256988095,
+ "growth_household_population": 0.01536809826786123,
+ "cps_to_acs_total_ratio": 1.017988571312433,
+ "years_between_reference_dates": 0.75,
+ "cps_2025_us_born_mexican_m": 28.410263109999995,
+ "expected_at_acs_level_m": 27.9713056130231,
+ "residual_m": 0.4389574969768937,
+ "residual_share": 0.0156931357817105,
+ "raw_excess_over_total_ratio_m": 0.6266216995697249
+}
