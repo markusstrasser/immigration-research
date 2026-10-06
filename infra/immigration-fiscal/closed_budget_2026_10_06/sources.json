@@ -1,0 +1,89 @@
+{
+ "note": "Published fiscal gaps: the permanent yearly improvement in the federal primary balance, as a percent of GDP, that meets a debt target. Each quotes its primary source; the PDFs are staged under sources/immigration-fiscal/data/external/stage3/ with ACQUIRED.md. 'window' keys the trust-fund component in derived/trust_funds.json; 'reading' says which baseline the gap's Social Security and Medicare projections come from.",
+ "fiscal_gaps": [
+  {
+   "id": "ag2026_cl",
+   "label": "Auerbach & Gale 2026, current law, from 2027, debt held at 99% of GDP in 2056",
+   "law": "current law",
+   "pct_gdp": 2.33,
+   "window": "2027-2056",
+   "reading": "cbo",
+   "includes_scheduled_social_insurance": true,
+   "source": "Auerbach & Gale, An Update on the Federal Budget Outlook, Brookings/TPC, March 2026, pp. 3 and 10, Table 1",
+   "file": "sources/immigration-fiscal/data/external/stage3/brookings/auerbach_gale_2026/ag_fiscal_outlook_2026-03.pdf",
+   "url": "https://www.brookings.edu/wp-content/uploads/2026/03/20260311_TPC_GaleAuerbach_FiscalOutlook_FINAL1.pdf",
+   "quote": "obtaining a debt-to-GDP ratio in 2056 equal to its current level of approximately 99% would (ignoring any macroeconomic feedback effects) require permanent tax increases or non-interest spending cuts equaling 2.33% of GDP",
+   "convention": "the CL projections assume that when the Social Security, Disability, and Medicare (part A) trust funds are exhausted, Congress will (a) authorize full payment of promised benefits and (b) cover any shortfalls with general revenue (p. 4); the projections build on CBO (2026a)"
+  },
+  {
+   "id": "cbo2026_debt_stable",
+   "label": "CBO letter of 24 September 2026, debt held at its 2026 level of 101% of GDP through 2056",
+   "law": "current law",
+   "pct_gdp": 1.9,
+   "window": "2026-2056",
+   "reading": "cbo",
+   "includes_scheduled_social_insurance": true,
+   "source": "CBO, Projections of Deficits and Debt Under Alternative Scenarios for Interest Rates and the Budget, letter to Sen. Merkley, 24 September 2026 (pub 62758), p. 1",
+   "file": "sources/immigration-fiscal/data/external/stage3/cbo/alt_scenarios_62758/62758-Alternative-Scenarios.pdf",
+   "url": "https://www.cbo.gov/system/files/2026-09/62758-Alternative-Scenarios.pdf",
+   "quote": "Under a scenario in which the debt-to-GDP ratio remained at its 2026 level of 101 percent, primary deficits would average 0.2 percent of GDP over the 2026–2056 period, 1.9 percentage points smaller than in CBO's extended baseline.",
+   "convention": "CBO's extended baseline pays scheduled Social Security and Part A benefits after the trust funds are exhausted [TRAINING-DATA: the baseline rule of section 257 of the Deficit Control Act; Auerbach & Gale, whose current-law projections use CBO's, state it on p. 4]"
+  },
+  {
+   "id": "ag2026_cp",
+   "label": "Auerbach & Gale 2026, current policy, from 2027, debt held at 99% of GDP in 2056",
+   "law": "current policy",
+   "pct_gdp": 3.43,
+   "window": "2027-2056",
+   "reading": "cbo",
+   "includes_scheduled_social_insurance": true,
+   "source": "Auerbach & Gale, An Update on the Federal Budget Outlook, Brookings/TPC, March 2026, Table 1 (row 'Debt = 99% of GDP', current policy, 2027)",
+   "file": "sources/immigration-fiscal/data/external/stage3/brookings/auerbach_gale_2026/ag_fiscal_outlook_2026-03.pdf",
+   "url": "https://www.brookings.edu/wp-content/uploads/2026/03/20260311_TPC_GaleAuerbach_FiscalOutlook_FINAL1.pdf",
+   "quote": "Debt = 99% of GDP   2.33   2.82   3.43   4.14",
+   "convention": "as ag2026_cl"
+  },
+  {
+   "id": "treasury_fy2025_75yr",
+   "label": "Treasury FY 2025 Financial Report, current policy, 75-year gap 2026-2100, debt held at its 2025 level of 99% of GDP",
+   "law": "current policy",
+   "pct_gdp": 4.7,
+   "window": "2026-2100",
+   "reading": "trustees",
+   "includes_scheduled_social_insurance": true,
+   "source": "Financial Report of the U.S. Government, FY 2025, Note 24 (Long-Term Fiscal Projections) and RSI 'The Sustainability of Fiscal Policy', p. 164 (2026-2100 primary surplus raised 4.7 points)",
+   "file": "sources/immigration-fiscal/data/external/stage3/treasury/financial_report_fy2025/note_24_fy2025.pdf",
+   "url": "https://fiscal.treasury.gov/system/files/2026-04/2025-note-24-financial-statements.pdf",
+   "quote": "The 75-year fiscal gap under current policy is estimated at 4.7 percent of GDP",
+   "convention": "the projections assume that all scheduled benefits will be financed with borrowing to the extent necessary after the trust funds are depleted (Note 24); its Social Security and Medicare projections rest on the 2025 Trustees Reports, whose 75-year OASDI unfunded obligation was 1.3% of GDP against the 2026 reports' 1.5%"
+  },
+  {
+   "id": "treasury_fy2025_75yr_real_discretionary",
+   "label": "Treasury FY 2025 Financial Report, 75-year gap with discretionary spending growing with inflation and population",
+   "law": "current policy",
+   "pct_gdp": 2.4,
+   "window": "2026-2100",
+   "reading": "trustees",
+   "includes_scheduled_social_insurance": true,
+   "source": "Financial Report of the U.S. Government, FY 2025, RSI 'The Sustainability of Fiscal Policy', Table 4 and text p. 166",
+   "file": "sources/immigration-fiscal/data/external/stage3/treasury/financial_report_fy2025/sustainability_of_fiscal_policy_fy2025.pdf",
+   "url": "https://fiscal.treasury.gov/system/files/2026-04/2025-The-Sustainability-of-Fiscal-Policy.pdf",
+   "quote": "If discretionary spending grows with inflation and population, the fiscal gap would be 2.4 percent of GDP.",
+   "convention": "as treasury_fy2025_75yr"
+  },
+  {
+   "id": "aei_auerbach_gale_2013_low",
+   "label": "AEI (Orrenius, Viard & Zavodny 2025): Auerbach & Gale 2013's lowest infinite-horizon gap",
+   "law": "current policy (2013)",
+   "pct_gdp": 4.23,
+   "window": "infinite",
+   "reading": null,
+   "includes_scheduled_social_insurance": true,
+   "source": "Orrenius, Viard & Zavodny, The Fiscal Impact of Immigration: An Update, AEI, September 2025, p. 11 and note 23",
+   "file": null,
+   "url": "https://www.aei.org/wp-content/uploads/2025/09/The-Fiscal-Impact-of-Immigration-An-Update.pdf",
+   "quote": "Alan Auerbach and William Gale (2013) estimated the fiscal gap under three alternative assumptions about the future growth of health care costs. The lowest of the three estimates was $87.2 trillion (4.23 percent of the present discounted value of future GDP).",
+   "convention": "a 2013 estimate that AEI grows with GDP; reported as published only, beside the current estimates"
+  }
+ ]
+}

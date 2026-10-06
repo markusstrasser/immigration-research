@@ -1,0 +1,210 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "note": "Post-depletion shortfall of Social Security (OASDI) and Medicare Part A (HI) as a share of GDP, averaged over each fiscal-gap window: the part of a gap that pays scheduled benefits the account values at payable benefits.",
+ "windows": {
+  "2027-2056": {
+   "trustees": {
+    "oasdi": 0.9010833333333333,
+    "hi": 0.22712321256720192,
+    "total": 1.1282065459005353
+   },
+   "cbo": {
+    "oasdi": 1.0667333333333333,
+    "hi": 0.0,
+    "total": 1.0667333333333333
+   }
+  },
+  "2027-2056_r_minus_g_1pt": {
+   "trustees": {
+    "oasdi": 0.8585040932426637,
+    "hi": 0.21970657588002876,
+    "total": 1.0782106691226925
+   },
+   "cbo": {
+    "oasdi": 1.0239167537134752,
+    "hi": 0.0,
+    "total": 1.0239167537134752
+   }
+  },
+  "2026-2056": {
+   "trustees": {
+    "oasdi": 0.872016129032258,
+    "hi": 0.21979665732309864,
+    "total": 1.0918127863553566
+   },
+   "cbo": {
+    "oasdi": 1.0323225806451615,
+    "hi": 0.0,
+    "total": 1.0323225806451615
+   }
+  },
+  "2026-2056_r_minus_g_1pt": {
+   "trustees": {
+    "oasdi": 0.8264795693200652,
+    "hi": 0.2115109265516179,
+    "total": 1.037990495871683
+   },
+   "cbo": {
+    "oasdi": 0.9857218903084639,
+    "hi": 0.0,
+    "total": 0.9857218903084639
+   }
+  }
+ },
+ "pv_75_year": {
+  "oasdi": 1.5,
+  "hi": 0.2,
+  "window": "2026-2100",
+  "source": "2026 OASDI Trustees Report, Highlights ('the 75-year open-group unfunded obligation for OASDI is $29.3 trillion, or 1.5 percent of GDP over the years 2026-2100'); 2026 Medicare Trustees Report, Highlights ('the 75-year open-group unfunded obligation for HI is $4.2 trillion, or 0.2 percent of GDP')"
+ },
+ "diagnostics": {
+  "hi_trustees_from_2052_mean_pct_gdp": {
+   "2027-2056": 0.044487525644815853,
+   "2026-2056": 0.04305244417240244
+  },
+  "depletion": {
+   "oasdi_trustees": {
+    "year": 2034,
+    "fraction_after": 0.375
+   },
+   "hi_trustees": {
+    "year": 2033,
+    "fraction_after": 0.625
+   },
+   "oasdi_cbo": {
+    "year": 2034,
+    "fraction_after": 0.5
+   }
+  }
+ },
+ "inputs": {
+  "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.pdf": "fb4e1556a00d925efa03e6355f64f911656a2626eaaceeb16062687008feb683",
+  "sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.pdf": "ffa56b9137006872300b0346149eae1613d09a172b6ba118aad48e66dfc48fa8",
+  "sources/immigration-fiscal/data/external/stage3/cbo/ltbo_2026/62044-2026-LTBO.xlsx": "5e1dd450cebd869dd3066d3d965351f3778808ce17f261f7a0571e6c21d93e4b",
+  "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.txt": "789faa11edff9427e625c092516cadd94ab4f03553da803ae9bd39f0ef6bc7c1",
+  "sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.txt": "58ac07aa337c061f61f398669b3650debe00833b6e01d6eeab7114cc7eb05a81"
+ },
+ "gates": [
+  {
+   "gate": "tr2026.pdf matches ACQUIRED.md",
+   "pass": true
+  },
+  {
+   "gate": "mtr2026.pdf matches ACQUIRED.md",
+   "pass": true
+  },
+  {
+   "gate": "62044-2026-LTBO.xlsx matches ACQUIRED.md",
+   "pass": true
+  },
+  {
+   "gate": "OASDI rows parsed for 2026-2035 and every fifth year to 2060",
+   "pass": true,
+   "detail": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2040,
+    2045,
+    2050,
+    2055,
+    2060,
+    2065,
+    2070,
+    2075,
+    2080,
+    2085,
+    2090,
+    2095,
+    2100
+   ]
+  },
+  {
+   "gate": "OASDI income - cost = balance to rounding",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "gate": "OASDI payable at depletion (2034) is the report's 83%",
+   "pass": true,
+   "detail": 0.8347978910369068
+  },
+  {
+   "gate": "HI cost and income rates parsed for 2026-2035, every fifth year to 2060 and 2100",
+   "pass": true,
+   "detail": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2040,
+    2045,
+    2050,
+    2055,
+    2060,
+    2065,
+    2070,
+    2075,
+    2080,
+    2085,
+    2090,
+    2095,
+    2100
+   ]
+  },
+  {
+   "gate": "Part A cost as % of GDP parsed for 2026-2035, every fifth year to 2060 and 2100",
+   "pass": true,
+   "detail": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2040,
+    2045,
+    2050,
+    2055,
+    2060,
+    2065,
+    2070,
+    2075,
+    2080,
+    2085,
+    2090,
+    2095,
+    2100
+   ]
+  },
+  {
+   "gate": "HI payable in 2033 is the report's 89%",
+   "pass": true
+  },
+  {
+   "gate": "HI payable in 2100 is the report's 93%",
+   "pass": true
+  },
+  {
+   "gate": "CBO sheet 1a has Social Security revenues and outlays for every year 2026-2056",
+   "pass": true
+  }
+ ]
+}

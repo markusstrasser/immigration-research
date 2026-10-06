@@ -1,0 +1,59 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "inputs": {
+  "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json": "28a7cc36530d8a3c8897e511367b67d348396ecf21bce5c310b73a4198100d9c",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/summary_oct05.json": "5967aad66affd9a32d094c33326f3e21fa6ac7cdc35efee8857f7b669a214c0b",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/decomposition_lines_oct05.csv": "56be311a118bddaaea5087970c81d46f493a97ca1e0fa5000b8ec53493c28fe4",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/decomposition_lines_oct05_cash.csv": "801189df2286ade70d4d9791d6cd7324a922ae5dc627b32751856bd23a3239f0",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/sources.json": "dc12fb3113b72f1096a44a6d0c3768215df22a4d5229abdfa20a7ead48813ac6",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/derived/household_share.json": "d18599a218b5520f66e455649872216c05d96bdaeed5d759336399f6e9908cbe",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds.json": "4b9700b4fc62f97fde8d6739068e36a5f1b3dec2a47040d9554ad822c5156858"
+ },
+ "frame": {
+  "NG": 42752212.9244,
+  "NC": 335543722.179,
+  "share": 0.12741175023859722
+ },
+ "gdp_2024_bn": 29300.0,
+ "federal_mix_bn": {
+  "income_taxes": 2426.067,
+  "payroll_taxes": 1708.926
+ },
+ "gates": [
+  {
+   "gate": "main low: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 390.293959, parts 390.293955, case 390.293958"
+  },
+  {
+   "gate": "main high: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 461.243123, parts 461.243125, case 461.243125"
+  },
+  {
+   "gate": "cash low: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 307.376376, parts 307.376373, case 307.376376"
+  },
+  {
+   "gate": "cash high: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 383.409251, parts 383.409254, case 383.409252"
+  },
+  {
+   "gate": "main low: per_person at the case's own gap reproduces the printed excess",
+   "pass": true,
+   "detail": "280.5169 vs 280.5"
+  },
+  {
+   "gate": "main high: per_person at the case's own gap reproduces the printed excess",
+   "pass": true,
+   "detail": "297.4409 vs 297.4"
+  },
+  {
+   "gate": "household share computed on the decomposition's frame",
+   "pass": true,
+   "detail": "{'NG': 42752212.92437312, 'NC': 335543722.1788498} vs NG 42752212.9244, NC 335543722.179"
+  }
+ ]
+}

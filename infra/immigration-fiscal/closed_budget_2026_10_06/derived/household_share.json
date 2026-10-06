@@ -1,0 +1,18 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "rule": "per_household: each household an equal part, split equally over its civilian members",
+ "share": 0.09636483794296934,
+ "share_householder": 0.09130148571759432,
+ "per_person_share": 0.12741175023859722,
+ "ratio_to_per_person": 0.7563261454497879,
+ "households_row4": 134571250.21126488,
+ "households_cps_weights": 134963892.8,
+ "households_person_weight_split": 138021946.8655338,
+ "lineage_household_equivalents": 12967936.718391318,
+ "persons_per_household_lineage": 3.2967629201753663,
+ "persons_per_household_all": 2.4934279918784736,
+ "frame": {
+  "NG": 42752212.92437312,
+  "NC": 335543722.1788498
+ }
+}

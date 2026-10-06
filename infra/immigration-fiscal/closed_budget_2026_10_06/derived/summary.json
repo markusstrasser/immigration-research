@@ -1,0 +1,160 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "gdp_2024_bn": 29300.0,
+ "sets": {
+  "main": {
+   "case_bn": [
+    390.29395820202535,
+    461.24312471796554
+   ],
+   "central": {
+    "definition": {
+     "fix": "ag2026_cl",
+     "basis": "general fund (cbo reading)",
+     "rule": "per_household"
+    },
+    "fix_bn": 370.137,
+    "offset_bn": [
+     35.668205,
+     35.668205
+    ],
+    "cost_bn": [
+     354.625753,
+     425.57492
+    ],
+    "change_pct": [
+     -9.139,
+     -7.733
+    ]
+   },
+   "current law": {
+    "fixes": [
+     "ag2026_cl",
+     "cbo2026_debt_stable"
+    ],
+    "fix_bn": [
+     236.799,
+     370.137
+    ],
+    "offset_bn": [
+     11.737581,
+     47.15982
+    ],
+    "cost_bn": [
+     343.134138,
+     449.505544
+    ],
+    "change_pct": [
+     -12.083,
+     -2.545
+    ]
+   },
+   "current policy": {
+    "fixes": [
+     "ag2026_cp",
+     "treasury_fy2025_75yr",
+     "treasury_fy2025_75yr_real_discretionary"
+    ],
+    "fix_bn": [
+     205.1,
+     879.0
+    ],
+    "offset_bn": [
+     10.166341,
+     111.994928
+    ],
+    "cost_bn": [
+     278.29903,
+     451.076784
+    ],
+    "change_pct": [
+     -28.695,
+     -2.204
+    ]
+   },
+   "aei_as_published_per_person": {
+    "cost_bn": [
+     232.381109,
+     303.330276
+    ]
+   }
+  },
+  "cash": {
+   "case_bn": [
+    307.37637615801015,
+    383.40925212667577
+   ],
+   "central": {
+    "definition": {
+     "fix": "ag2026_cl",
+     "basis": "general fund (cbo reading)",
+     "rule": "per_household"
+    },
+    "fix_bn": 370.137,
+    "offset_bn": [
+     35.668205,
+     35.668205
+    ],
+    "cost_bn": [
+     271.708171,
+     347.741047
+    ],
+    "change_pct": [
+     -11.604,
+     -9.303
+    ]
+   },
+   "current law": {
+    "fixes": [
+     "ag2026_cl",
+     "cbo2026_debt_stable"
+    ],
+    "fix_bn": [
+     236.799,
+     370.137
+    ],
+    "offset_bn": [
+     11.554416,
+     47.15982
+    ],
+    "cost_bn": [
+     260.216556,
+     371.854836
+    ],
+    "change_pct": [
+     -15.343,
+     -3.014
+    ]
+   },
+   "current policy": {
+    "fixes": [
+     "ag2026_cp",
+     "treasury_fy2025_75yr",
+     "treasury_fy2025_75yr_real_discretionary"
+    ],
+    "fix_bn": [
+     205.1,
+     879.0
+    ],
+    "offset_bn": [
+     10.007695,
+     111.994928
+    ],
+    "cost_bn": [
+     195.381448,
+     373.401557
+    ],
+    "change_pct": [
+     -36.436,
+     -2.61
+    ]
+   },
+   "aei_as_published_per_person": {
+    "cost_bn": [
+     149.463527,
+     225.496403
+    ]
+   }
+  }
+ }
+}
