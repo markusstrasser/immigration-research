@@ -610,6 +610,9 @@ Log (times from `date` or a log file's mtime):
   `derived/` changed, and `derived/oct07/` matched the mirror's byte for byte.
 - 15:13:39–15:14:45 JST: `rerun_lane.py` with the ten commands above: every command rc 0, IDENTICAL, 53/53 files, rc 0.
   pytest at 15:15:01 JST: 21 passed.
+- 15:18 JST, correction: the v5 table above printed the benefit keys' own replicate SE on oct05 as 1.34–1.39. The
+  outputs give 1.3438–1.3849 (`derived/oct05/case_uncertainty.csv`, `se_benefit_keys_replicate_bn`), which round to
+  1.34–1.38, as on sept29. The cell was changed to 1.34–1.38 in this pass, and no output changed.
 
 ## Coverage: what carries uncertainty and what does not
 
