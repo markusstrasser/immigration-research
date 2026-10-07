@@ -1,23 +1,6 @@
 # Yearly and lifetime fiscal results — repaired calculation index
 
-**Item T, 2026-10-08:** The tables below are restated on the ledger's current outputs. Its expanded
-account adds the income tax the survey misses, placed on the main case's keys (item T;
-[decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)); the lifetime file's
-partial-coverage rows keep taxes as the survey reports them.
-
-**Latest annual update, 2026-09-20:** The [measured enrollment correction](immigration-four-fiscal-checks-2026-09-20.md)
-produces −$259.38bn shared/−$283.20bn personal. Lifetime tables below retain their
-pinned earlier age-profile inputs; neither subsequent annual change has been
-applied as a flat lifetime shift.
-
-**Later source update, 2026-09-19:** The [Census2024 finance refresh](immigration-macro-reconciliation-2026-09-19.md)
-updates the union's annual partial balance to −$234.34bn shared/−$256.26bn
-personal. Tables below preserve the earlier pinned profile version. The
-[projection tests](immigration-projection-backtest-2026-09-19.md) assess historical
-assumptions and composition/exit sensitivities; no lifetime admission forecast
-is validated. See the [decision](../decisions/2026-09-19-matched-accounts-and-projection-checks.md).
-
-**Status:** Pinned September 19 calculation release. The annual bookkeeping and age-profile propagation are repaired. This is an **expanded partial fiscal account**, with explicit allocation scenarios, not an exhaustive government account or an identified effect of immigration policy. Earlier $263.22bn, $2,246/household, 89% state/local and flat-adjustment lifetime headlines are superseded. Evidence remains in Git and the original files.
+**Status:** The tables below are the white-reference ledger's current outputs: the September 19 build, which repaired the annual bookkeeping and age-profile propagation, plus item T. Its expanded account adds the income tax the survey misses, placed on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)); the lifetime file's partial-coverage rows keep taxes as the survey reports them. This is an **expanded partial fiscal account**, with explicit allocation scenarios, not an exhaustive government account or an identified effect of immigration policy. Two later annual accounts are separate releases without item T, and neither is applied to these tables as a flat shift: the [Census2024 finance refresh](immigration-macro-reconciliation-2026-09-19.md) gives the union −$234.34bn shared/−$256.26bn personal, and the [measured enrollment correction](immigration-four-fiscal-checks-2026-09-20.md) built on it −$259.38bn/−$283.20bn. The [projection tests](immigration-projection-backtest-2026-09-19.md) assess historical assumptions and composition/exit sensitivities; no lifetime admission forecast is validated ([decision](../decisions/2026-09-19-matched-accounts-and-projection-checks.md)). Earlier $263.22bn, $2,246/household, 89% state/local and flat-adjustment lifetime headlines are superseded. Evidence remains in Git and the original files.
 
 ## Annual results
 
@@ -144,8 +127,9 @@ income tax the survey misses on the main case's keys (item T;
 [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)): union −$217.32bn → −$203.52bn
 shared and −$239.24bn → −$223.94bn personal; white reference −$211.31bn → +$51.83bn shared;
 common-age union gap against whites $7,152 → $8,306; Mexico-born age-25 NPV at 3% −$56,166 →
-−$41,058, positive at 5% (+$12,435); white-age union gap −$7,082 → −$8,236; re-aged shared balance
+−$41,058, and at 5% it flips sign, −$639 → +$12,435; white-age union gap −$7,082 → −$8,236; re-aged shared balance
 −$339.6bn → −$324.6bn. The re-aging sentence also gains the noncash and state-local categories it
 left out, so its parts add, and its under-65 institutions fall reads $1.3bn (the file holds $1.34bn
-before and after item T). Concept affected: expanded-account annual and lifetime balances against
-the white reference.
+before and after item T). The header's three dated notes (item T, 2026-09-19 and 2026-09-20) are
+folded into one Status paragraph. Concept affected: expanded-account annual and lifetime balances
+against the white reference.

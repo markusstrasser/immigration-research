@@ -50,8 +50,8 @@ adults are measured, 1.61M of the 3.04M [ASSUMPTION: the 15–19 band's adults a
 APPROX]. State pricing applies the union's price indexes to each generation's keys; indexes from each generation's own
 state mix are not computed.
 
-Sections 1–4 below are the September 24 record. It is one year of the people alive in 2024, and it cannot
-say what today's children will pay as adults.
+Sections 1, 2 and 4 below are the September 24 record; §3 sets the live split beside the ledger. The record is one
+year of the people alive in 2024, and it cannot say what today's children will pay as adults.
 
 ## 1. The split
 
@@ -119,29 +119,27 @@ third-plus 40.8 and the Mexico-born 48.2. Under (a), per adult is not a per-pare
 ## 3. Beside the September 19 generation ledger
 
 The ledger in `ledger_absolute_2026_09_17` measures each generation against third-plus non-Hispanic
-whites of the same age: −$7,584, −$7,521 and −$6,195 per person. This split measures what each
-generation costs everyone else under the adopted account, with no reference group. The two are
-different objects, and neither is scaled onto the other. [CALCULATION: lane `compare_ledger.py` →
-`derived/ledger_comparison.csv`, the ledger read through its hash-checking loader]
+whites of the same age. With the income tax the survey misses on the main case's keys (item T, ladder
+296), its gaps are −$8,849, −$8,499 and −$7,118 per person. This split measures what each generation
+costs everyone else under the adopted account, with no reference group. The two are different objects,
+and neither is scaled onto the other. [CALCULATION: lane `compare_ledger.py` →
+`derived/ledger_comparison.csv`, ledger columns, the ledger read through its hash-checking loader]
 
-[2026-10-08: with item T (ladder 296), the income tax the survey misses, the ledger's gaps are −$8,849, −$8,499 and
-−$7,118, the reference whites at the groups' own ages run +$3.8k to +$5.6k, and the groups' own balances are
-−$5,633, −$5,706 and −$3,688 under the shared allocation. Both orderings below still hold in the ledger. The account
-side of this section is the September 24 case, and no ledger bridge exists for the live case, so the closeness and
-the $1.7–3.0k excess are not restated ([DATA: `generation_account_2026_09_24/derived/ledger_comparison.csv`, ledger
-columns; its account columns hold the September 27 case]).]
-
-- At the groups' own ages the reference whites are net contributors (+$2.5k to +$3.9k per person
-  under the shared allocation), so a gap exceeds the group's own balance.
-- The groups' own balances in the ledger (−$5,929, −$5,881, −$4,223) are close to this account's
-  (−$5,220, −$5,703, −$3,859) under the same allocation, but they get there through offsetting
-  differences: the account charges $1.7–3.0k more per person at average cost, and the adopted
-  marginal responses then take off $2.2–2.7k. The closeness validates neither.
+- At the groups' own ages the reference whites are net contributors under the shared allocation
+  (+$3.8k to +$5.6k per person), so there a gap exceeds the group's own balance (−$5,633, −$5,706 and
+  −$3,688). Under the personal allocation the own balances are −$3,086, −$6,388 and −$6,600, and at the
+  third-plus's ages the whites run −$1.3k, so its gap (−$5,261) is smaller than its balance.
 - Both objects put the third-plus lowest under the shared allocation and the first generation lowest
-  under the personal one.
+  under the personal one. In this split the third-plus costs others $8,158 a member at the low end
+  (shared allocation), against $8,779 and $10,493 for the first and second generations, and the first
+  generation $7,852 at the high end (personal), against $12,419 and $11,323. [DATA: lane
+  `derived/generation_summary_oct07.json` (`low_spec`, `high_spec`),
+  convention (a), `per_member_usd`]
+- The two are not compared balance for balance. The live case prices the account's 39.71M frame plus
+  the 3.04M added descendants, and its runner writes no bridge to the ledger's populations.
 
 The FAQ's combining rule still applies: the ledger's generation gaps must not be scaled onto the
-$201–246bn. This split is computed directly on the account.
+$389.1–461.5bn. This split is computed directly on the account.
 
 ## 4. What it does not answer
 
@@ -175,6 +173,17 @@ case itself, which moves every generation.
   union reproduces the adopted band, $389.0826–461.4797bn and $307.3994–385.3641bn. [CALCULATION]
 
 ## Revisions
+
+- 2026-10-08, later: §3 rewritten to the live case, because the operator's rule keeps living text on the live case
+  and the live case has no ledger bridge. The body now carries item T on the ledger side: gaps −$7,584, −$7,521 and
+  −$6,195 → −$8,849, −$8,499 and −$7,118; the reference whites at the groups' ages +$2.5–3.9k → +$3.8–5.6k; own
+  balances −$5,929, −$5,881 and −$4,223 → −$5,633, −$5,706 and −$3,688, with the personal −$3,086, −$6,388 and −$6,600
+  added, and with them the one case where the gap is smaller than the balance (the third-plus under the personal
+  allocation, whose whites run −$1.3k). The September 24 account figures (own balances −$5,220, −$5,703 and −$3,859; the $1.7–3.0k excess at average
+  cost; the $2.2–2.7k taken off by the responses) and the dated bracket are deleted, so the "close to this account's"
+  claim goes with them. The orderings are checked on the live split instead ($8,158, $8,779 and $10,493 a member at the
+  low end; $7,852, $12,419 and $11,323 at the high end), the combining rule names $389.1–461.5bn where it named
+  $201–246bn, and the note that §§1–4 are the September 24 record now excepts §3. Concept affected: the comparison with the September 19 generation ledger (ladder 224).
 
 - 2026-10-08, item T: added a dated bracket to §3 with the ledger's current figures, because the white-reference
   ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T;

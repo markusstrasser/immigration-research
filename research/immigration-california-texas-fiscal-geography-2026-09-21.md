@@ -15,8 +15,8 @@ taxes as the survey reports them the ratios hold (−$12,133 vs −$7,479; −$1
 The added tax rests on few records: the ten largest white households carry 67% of whites'
 added tax in California and 98% in Texas. Share of residents does not produce the coastal
 dollar gap. No other published metro reaches Los Angeles: Houston −$8,977, Phoenix −$10,945,
-Chicago −$11,949 and Dallas–Fort Worth −$14,744, the last near California's level on an
-interval that reaches Texas's. Nominal dollars; no regional price parity. [INFERENCE from the
+Chicago −$11,949 and Dallas–Fort Worth −$14,744, the last between Texas and Los Angeles, near
+California's level, on an interval that reaches Texas's. Nominal dollars; no regional price parity. [INFERENCE from the
 tables below]
 
 ## Same share

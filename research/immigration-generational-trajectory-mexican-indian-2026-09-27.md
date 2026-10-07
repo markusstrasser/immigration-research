@@ -6,11 +6,10 @@ distance from the white mean: the G1→G2 rank slope is 0.52 on education and 0.
 The Mexican-origin gap stalls after G2 rather than continuing to converge. The Indian G3 cell is
 too thin to say the same (+$11.8k, se 8.2k; [Indian later generations](immigration-indian-later-generation-fiscal-2026-09-21.md)). For Mexican origin the G2 step is large at the bottom and small at the top. Then
 the gap stalls: G2→G3+ carries about 0.9 of the gap on BA, earnings and the partial ledger, and
-no source shows G4+ better than G3 (entry 232). [2026-09-28: with the hidden third generation put
-back, the step is about 0.84 on BA and 0.82 on earnings and the ledger (SE 0.07–0.09): identity loss
-explains about a tenth of the ratio, and age cohort about as much (§1).] [2026-10-05: with the closing share measured
-on 526 G3 non-identifiers in the CPS basic monthly files 1994–2026, the step is about 0.86 on BA and 0.84–0.85 on
-earnings and the ledger (SE 0.04–0.07): identity loss explains about 6% of the ratio (g3_identity_pooled_2026_10_05, monthly frame).] The civic record follows the same shape. Turnout
+no source shows G4+ better than G3 (entry 232). With the hidden third generation put back, at the
+closing share measured on 526 G3 non-identifiers in the CPS basic monthly files 1994–2026, the step is
+about 0.86 on BA and 0.84–0.85 on earnings and the ledger (SE 0.04–0.07): identity loss explains about
+6% of the ratio, and age cohort at least as much (§1). The civic record follows the same shape. Turnout
 at equal SES is −10 for G2 and −9 for G3+, and spousal endogamy falls 90 → 72 → 56%. Attachment
 to Mexico itself fades fast: "very connected" drops from 50% to 7% by G3+, and votes cast from
 abroad are under 2% of Mexico-born adults (entries 233–234). The Indian advantage is a shift of
@@ -60,42 +59,36 @@ then a fall at G4+ (68.1%). Counting a GED as completion closes the G3 gap entir
 **Disconfirmation.** The stall survives dropping New Mexico and Colorado, matching whites by
 state or region, and splitting by age and survey period. Two explanations are not excluded.
 Vintage: today's adult G4+ descend from pre-1930s, Texas-heavy migration, and their parents had
-0.2–0.4 fewer years of schooling; NLSY97 controls cut the G4+ deficit by 37%. Identity loss: if
-people who stop identifying look like the measured non-identifiers, the G3→G4+ ratio is
-0.79–1.10. If they look exactly like whites, it is 0.69–0.87 at 29% attrition and 0.43–0.61 at
-56%. The observed G3/G4+ adults in CPS are young and living with their parents (n 151 and 302 for
-BA at 25+).
-
-[2026-09-28: identity loss tested on the same sample (`carryover_identity_2026_09_27`, entry 232).
+0.2–0.4 fewer years of schooling; NLSY97 controls cut the G4+ deficit by 37%. Identity loss is
+tested on the same sample (`carryover_identity_2026_09_27`, entry 232), with the closing share
+measured on the CPS basic monthly files (`g3_identity_pooled_2026_10_05`, monthly frame):
 - *The G2 side.* It needs no correction: CPS G2 is defined by a parent's birthplace, and 7.0% of it
   already does not report Mexican origin.
 - *Third-generation non-identifiers.* In CPS adults living with a parent, G3 is defined by a
-  Mexico-born grandparent. 11% do not report Mexican origin, and they sit near white parity (closing
-  share 0.78, SE 0.64, pooled with NLSY97).
+  Mexico-born grandparent, and 11% do not report Mexican origin. The CPS basic monthly files
+  1994–2026 (MIS 1 and 5) find 526 unique G3 non-identifiers at 25+. They close 0.57 (SE 0.26) of the
+  BA+ gap, and 0.56 (0.25) pooled with NLSY97. The design called for about 540, so the sample is
+  close to that, but the SE stays wide.
 - *Later leavers.* Adults who drop the identity one generation later are not ahead of identifiers:
   earnings are $11–12k lower (n 35–44). Losses past G3 therefore move nothing, whether 17.5% or 23%
-  are hidden, and the white-like bounds above lose their best support.
-- *Corrected G2→G3+.* About 0.84 on BA+ and 0.82 on earnings and the ledger (SE 0.07–0.09), against
-  0.92 / 0.90 / 0.90. The gap shrinks by a sixth instead of a tenth. The bounds run from 0.92 (hidden
-  like identifiers) to 0.69–0.76 (all hidden like whites).
-- *Cohort.* It explains more than identity: the identifiers' BA+ ratio is 0.87 at 25–44, 0.83 for the
-  1979–85 birth cohort and 1.06–1.12 at 45–64, where G2 sits unusually close to whites. Of the 0.16
-  between CPS (0.92) and NLSY97 (0.76), about 0.09 is cohort and 0.05 attrition.
-- *The attriters' dollar convention.* The 54–72% dollar closing share used in the bounds above is a
-  years-of-schooling ratio. On the same 669 G2 adults, non-identifiers close 0.17–0.27 of the BA+,
-  years, earnings and ledger gaps alike.
-- *What would settle it.* About 540 adult G3 non-identifiers found by grandparents' birthplace, from
-  IPUMS-CPS with parent pointers or the licensed NLSY97 geocode; 44–55 exist today.]
+  are hidden. Valued by this split rule (406a2d4), identity loss is a one-time level shift of about
+  6% from G3 on, not a per-generation fade, and the G3→G4+ ratio is 0.86–1.10 (NLSY97 0.91) if the
+  hidden look like the measured non-identifiers. If they look exactly like whites, it is 0.69–0.87
+  at 29% attrition and 0.43–0.61 at 56%, bounds that lose their best support because the later
+  leavers measure no better than identifiers.
+- *Corrected G2→G3+.* About 0.86 on BA+ and 0.84 / 0.85 on earnings and the ledger (SE 0.04–0.07),
+  against 0.92 / 0.90 / 0.90 among identifiers, so the gap shrinks by 14–16% from G2 to G3+. The
+  bounds run from 0.92 (hidden like identifiers) to 0.69–0.76 (all hidden like whites).
+- *Cohort.* It explains at least as much as identity: the identifiers' BA+ ratio is 0.87 at 25–44,
+  0.83 for the 1979–85 birth cohort and 1.06–1.12 at 45–64, where G2 sits unusually close to whites.
+  Of the 0.16 between CPS (0.92) and NLSY97 (0.76), about 0.09 is cohort and 0.05 attrition within
+  NLSY97.
+- *The attriters' dollar convention.* A 54–72% dollar closing share is a years-of-schooling ratio.
+  On the same 669 G2 adults, non-identifiers close 0.17–0.27 of the BA+, years, earnings and ledger
+  gaps alike.
 
-[2026-10-05: the CPS basic monthly files 1994–2026 (MIS 1 and 5) find 526 unique G3 non-identifiers at 25+. They
-close 0.57 (SE 0.26) of the BA+ gap, and 0.56 (0.25) pooled with NLSY97. The corrected G2→G3+ is then 0.86 on BA+
-and 0.84 / 0.85 on earnings and the ledger (SE 0.04–0.07), and the gap shrinks by 14–16% (g3_identity_pooled_2026_10_05, monthly frame).]
-
-[2026-09-28, later: the carry-over lane now values attriters by this split rule (406a2d4). Under it
-the measured-non-identifier range for G3→G4+ is 0.81–1.10, with central ratios of 1.04 (CPS), 1.10
-(GSS) and 0.89 (NLSY97). Identity loss is a one-time level shift of about 9% from G3 on, not a
-per-generation fade. The like-whites bounds do not move.] [2026-10-05: at the monthly-frame C3 the range is
-0.86–1.10, NLSY97 0.91, and the level shift about 6% (g3_identity_pooled_2026_10_05, monthly frame).]
+The observed G3/G4+ adults in CPS are young and living with their parents (n 151 and 302 for BA at
+25+).
 
 **Tension with the literature.** Published group-level carry-over is 0.4–0.6 per generation
 (Borjas 1992–94; Card, DiNardo & Estes; Ward 2020 gives 0.57–0.74 for G2→G3). The Mexican G2→G3+
@@ -104,12 +97,11 @@ groups that later married out and stopped identifying. Which of the two describe
 Mexican-origin lineages is open. [SOURCE: `selection_curve_2026_09_27/literature_reads.md`, table
 and page per figure]
 
-**Projection** [MODEL]: central G4 −$6.5k and G5 −$6.3k per adult a year on the partial ledger.
-The band runs from −$3.7k / −$2.1k (the gap regresses toward the white mean at the literature's
-rate) to −$6.6k / −$6.6k (full stall). Only 1970-level identity loss with white-like leavers pushes
-G5 near zero. [2026-09-28: with attriters valued by the measured split rule, the central is
-−$6.1k at G4 and at G5 per lineage descendant, from a lineage G3+ gap of −$6,041; the band does not move
-(406a2d4).] [2026-10-05: −$6.3k at G4 and −$6.4k at G5 from −$6,203 at the monthly-frame C3 (g3_identity_pooled_2026_10_05, monthly frame).]
+**Projection** [MODEL]: with attriters valued by the measured split rule (406a2d4) at the
+monthly-frame closing share, the central is −$6.3k at G4 and −$6.4k at G5 per lineage descendant a
+year on the partial ledger, from a lineage G3+ gap of −$6,203. The band runs from −$3.7k / −$2.1k
+(the gap regresses toward the white mean at the literature's rate) to −$6.6k / −$6.6k (full stall).
+Only 1970-level identity loss with white-like leavers pushes G5 near zero.
 
 ## 2. Civic attachment and marriage by generation, Mexican origin
 
@@ -208,22 +200,21 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
   earlier arrivals' earned Social Security outweighs the late arrivals' lower taxes. "Did not pay in"
   shows in the lifetime view (entry 235), not the annual one. Medicare is overcharged to them by the
   pooled keying (−$0.31bn proposed).
-- **Lineage.** At the calibrated petition rate the channel adds 1.7% to the century lineage gap. A
-  US-born child's petition legalizing the founder adds −$386k undiscounted against a founder who
-  stays unauthorized under statutory rules. That is the priced chain from birthright citizenship to
-  a parent's green card. [2026-09-27, late: the 1.9% is a scenario, not an observed lifetime rate
-  (conceptual audit, second pass §D).
+- **Lineage.** At the calibrated petition rate the channel adds $24.4k per founder undiscounted,
+  1.7% of the century lineage gap (2.1% at 3%). A US-born child's petition legalizing the founder
+  adds −$386k undiscounted against a founder who stays unauthorized under statutory rules. That is
+  the priced chain from birthright citizenship to a parent's green card. [DATA:
+  `lineage_sponsored_parents_2026_09_27/derived/arms.csv`] The 1.7% is a scenario, not an observed
+  lifetime rate (conceptual audit, second pass §D):
   - The 0.619 naturalization probability is today's naturalized share of the eligible stock, not
     the chance that a newly admitted founder ever naturalizes.
   - The two petition-rate estimators share their admissions numerator, so their 9% agreement
     (1.089) is a scale check, not validation.
-  - Timing alone moves the channel. At fixed probabilities, admitting the parent in founder-year 10
-    or 16 instead of 6 lowers it from $24.5k to $22.0k or $15.7k per founder, undiscounted.
+  - Timing alone moves the channel. At fixed probabilities, the audit found that admitting the
+    parent in founder-year 10 or 16 instead of 6 lowers it from $24.5k to $22.0k or $15.7k per
+    founder, undiscounted, before item T, which moves the year-6 value to $24.4k.
   - The channel can stay small under these assumptions, but its size needs cohort naturalization
-    and petition hazards, which no source here measures.] [2026-10-08: with item T (ladder 296) the
-    lineage gap widens and the channel barely moves in dollars ($24.4k per founder undiscounted), so
-    its share is 1.7% (2.1% at 3%); the child's petition still adds −$386k ([DATA:
-    `lineage_sponsored_parents_2026_09_27/derived/arms.csv`])]
+    and petition hazards, which no source here measures.
 
 ## 5. The selection curve, and whether the Indian advantage is a tail
 
@@ -262,10 +253,9 @@ Settled at the descriptive level:
 - The Indian advantage is broad, not tail-driven.
 
 Not settled:
-- Why the Mexican path stalls: vintage, identity loss, ethnic capital, or discrimination. The
-  sources here do not separate these. [2026-09-28: identity loss is now sized at about a tenth of
-  the G2→G3+ ratio, and cohort at about as much (§1); vintage, ethnic capital and discrimination
-  remain unseparated.] [2026-10-05: about 6% with C3 from the CPS basic monthly frame (g3_identity_pooled_2026_10_05, monthly frame).]
+- Why the Mexican path stalls: vintage, identity loss, ethnic capital, or discrimination. Identity
+  loss is sized at about 6% of the G2→G3+ ratio and cohort at least as much (§1); vintage, ethnic
+  capital and discrimination remain unseparated.
 - Whether the historical 0.5 carry-over or today's 0.9 will describe the next two generations.
 - The within-India selection step: caste is not recorded in US surveys.
 - What the Indian G2 who marry out marry into, which decides how long the Indian level holds.
@@ -281,3 +271,4 @@ Not settled:
 - 2026-09-28, later: §1's G3→G4+ range and projection central follow the carry-over lane's measured split rule for attriters (406a2d4): 0.81–1.10, central −$6.1k at G4 and G5. Concept affected: identity loss in the Mexican-origin projection.
 - 2026-10-05: §1's identity-loss figures follow C3 measured on the CPS basic monthly files 1994–2026 (526 unique G3 non-identifiers at 25+) pooled with NLSY97, 0.557 (SE 0.246) in place of 0.78 ([g3_identity_pooled_2026_10_05](../infra/immigration-fiscal/g3_identity_pooled_2026_10_05/RESULT.md), monthly frame): G2→G3+ is 0.86 / 0.84 / 0.85 with the hidden third generation put back, identity loss explains about 6% of the ratio, NLSY97's split G3→G4+ is 0.91, and the projection central is −$6.3k at G4 and −$6.4k at G5. Concept affected: Mexican-origin carry-over after G2.
 - 2026-10-08: restated the IR-5 parent's value per admission and the sponsored-parent channel's share of the lineage gap, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)) and the late-arrival and lineage lanes' profiles carry it: at 3%, admitted at 55 / 60 / 65, $270k / $275k / $286k → $267k / $273k / $285k (range $254–339k → $252–337k); the calibrated channel 1.9% → 1.7% of the lineage gap, nearly unchanged in dollars. The comparison with a same-age white resident keeps its direction (the parent costs more at 55 and less at 65) and the FY2024 cohort stays about $16bn at 3%; §1's partial-ledger projection does not move. Concept affected: the sponsored-parent channel's size.
+- 2026-10-08, later: rewrote the verdict, §1, the projection, §4a and §6 to their current state. Their twelve dated brackets (2026-09-27 late, 2026-09-28, 2026-10-05 and 2026-10-08) became current text, and the superseded values are deleted: the 0.78 closing share, the 0.84 / 0.82 step, the "tenth" and "sixth", the 0.79–1.10 and 0.81–1.10 ranges with the 9% level shift, the −$6.5k / −$6.3k per-adult and −$6.1k centrals, and the 1.9% channel. The entries above and git keep them. No current figure changes; the timing bullet in §4a is labelled as the audit's values before item T. Concept affected: none; the trajectory's presentation.

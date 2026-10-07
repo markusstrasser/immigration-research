@@ -130,17 +130,14 @@ is a property of the population rather than of one decade.
 The first generation moved too: Mexico-born adults' no-high-school rate fell from 0.654 to 0.464
 and their college rate rose from 0.049 to 0.095 across the three periods, and their naturalization
 rate from 0.230 to 0.316 `[CALCULATION: derived/period_trends.csv, group Mexico|1st_foreign_born,
-outcome us_citizen_g1]`. Two measured mechanisms point the same way: arrival cohorts got more
-schooled ([ladder 133](immigration-confidence-ladder.md)) and the men who return to Mexico are
-about a year less schooled than those who stay ([ENADID, ladder 174](immigration-confidence-ladder.md)),
-which raises the resident first generation's average without any individual improving. Their
-split is not measured here. [2026-09-25: the second mechanism is withdrawn: ENADID compares
-returnees with adults who never left Mexico, so it does not show that return migration raises the
-US first generation's average; see Revisions.] [2026-09-26: measured against Mexico-born people
-still in the US (ladder 228): returnee men do hold less schooling than male stayers, so the
-mechanism has the stated sign, but one five-year window's return raises the stock's tertiary share
-by only 0.13–0.23 points; its share of the change above is not measured.] `[INFERENCE]` Income levels are nominal and not comparable across
-periods; only the same-year gaps are.
+outcome us_citizen_g1]`. Two mechanisms point the same way. Arrival cohorts got more schooled
+([ladder 133](immigration-confidence-ladder.md)). And men who return to Mexico hold less schooling
+than Mexico-born men still in the US ([ladder 228](immigration-confidence-ladder.md), ENADID
+returnees against ACS stayers), which raises the resident first generation's average without any
+individual improving, though one five-year window's return raises the stock's tertiary share by
+only 0.13–0.23 points. Their split, and return migration's share of the change above, are not
+measured here. `[INFERENCE]` Income levels are nominal and not comparable across periods; only the
+same-year gaps are.
 
 ## 4. Other origins: the ratio mostly does not apply
 
@@ -290,3 +287,7 @@ matched.
   corrected: it holds for the ledger's taxes and failed for its net gaps before and after item T,
   where the first-to-second step is the small one. Concept affected: the fiscal ledger's
   generational shape beside the education convergence.
+- **2026-10-08, later (current text).** §3's two dated brackets on return migration (2026-09-25,
+  2026-09-26) are folded into current text: the comparison is ladder 228's, returnees against
+  Mexico-born men still in the US, and the withdrawn reading of ENADID against adults who never left,
+  with its "about a year", is deleted. No figure changes. Concept affected: none; presentation.
