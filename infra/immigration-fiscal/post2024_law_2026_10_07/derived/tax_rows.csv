@@ -1,0 +1,11 @@
+item,level_source,national_nominal_bn,lineage_share,lineage_2024usd_bn,lineage_low_bn,lineage_high_bn,lapses_by_ty2030,note
+tips_70201,JCT FY2028,8.078,0.11279,0.8254,0.8254,0.8254,True,CPS proxy share x JCT score
+overtime_70202,JCT FY2028,22.982,0.090804,1.8906,1.8906,1.8906,True,CPS proxy share x JCT score
+car_loan_70203,JCT FY2028,9.916,0.112044,1.0065,1.0065,1.0065,True,CPS proxy share x JCT score
+charity_nonitemizers_70424,JCT FY2028,8.149,0.102867,0.7594,0.7594,0.7594,False,CPS proxy share x JCT score
+senior_70103,Tax-Calculator own data TY2027,20.9306,0.039185,0.7561,0.7561,0.7561,True,CPS share x Tax-Calculator national (JCT scores it only with TCJA extensions)
+ctc_2200_70104,Tax-Calculator own data TY2027,16.2607,0.140483,2.1061,2.1061,2.1061,False,CPS share x Tax-Calculator national (JCT scores it only with TCJA extensions)
+std_increase_70102,Tax-Calculator own data TY2027,16.5116,0.098616,1.5012,1.5012,1.5012,False,CPS share x Tax-Calculator national (JCT scores it only with TCJA extensions)
+salt_cap_70120,Tax-Calculator own data TY2027,26.3488,0.037864,0.9198,0.9198,0.9198,True,CPS share x Tax-Calculator national (JCT scores it only with TCJA extensions)
+trump_accounts_70204,CBO/JCT FY2028 outlays,3.685,0.189625,0.6331,0.6331,0.6331,True,"new transfer: $1,000 per citizen child born 2025-2028"
+remittance_excise_70604,JCT FY2028,1.089,0.54,-0.5328,-0.6413,-0.3946,False,tax increase on cash-funded remittances; Mexico corridor less H-2 over JCT's implied base

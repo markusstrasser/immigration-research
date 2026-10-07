@@ -1,0 +1,23 @@
+fy,item,national_fy_nominal_bn,lineage_share,lineage_2024usd_bn,lineage_low_bn,lineage_high_bn,consolidated_government,note
+2027,snap_10108,0.198,0.119435,0.0219,0.0219,0.0529,True,
+2027,medicaid_71109,0.588,0.15428,0.0842,0.0842,0.1744,True,
+2027,medicare_71201,0.145,0.101146,0.0136,0.0136,0.0434,True,
+2027,ptc_eligible_aliens_71301,5.827,0.060894,0.3292,0.3292,0.8586,True,outlay and revenue parts of the credit; CBO baseline at original-law credits
+2027,ptc_below_100_71302,4.762,0.057532,0.2542,0.2542,0.7258,True,outlay and revenue parts of the credit; CBO baseline at original-law credits
+2027,emergency_fmap_71110,2.459,0.315414,0.7196,0.6298,0.7196,False,federal-to-state shift; zero for consolidated government unless states cut coverage
+2027,ctc_taxpayer_ssn_70104b,,0.338943,1.1858,0.773,1.6469,True,CPS tax-model credits of units whose filers are all imputed unauthorized x on-books 0.44/0.60/0.75 x no work-authorized SSN 0.80/0.90/1.00
+2027,ptc_enhanced_expiry,31.919,0.089446,2.6488,2.6488,3.3381,True,"CBO 61734 permanent-extension cost, post-P.L. 119-21 baseline"
+2027,public_charge_2026_rule,11.7542,0.4256,5.0026,1.6088,8.396,True,"public_charge_share_2026_10_07, DHS 3.3/10.3/17.3%"
+2028,snap_10108,0.216,0.119435,0.0234,0.0234,0.0564,True,
+2028,medicaid_71109,0.665,0.15428,0.0929,0.0929,0.1926,True,
+2028,medicare_71201,0.214,0.101146,0.0196,0.0196,0.0626,True,
+2028,ptc_eligible_aliens_71301,8.467,0.060894,0.4671,0.4671,1.2183,True,outlay and revenue parts of the credit; CBO baseline at original-law credits
+2028,ptc_below_100_71302,5.177,0.057532,0.2698,0.2698,0.7705,True,outlay and revenue parts of the credit; CBO baseline at original-law credits
+2028,emergency_fmap_71110,3.112,0.315414,0.8893,0.7783,0.8893,False,federal-to-state shift; zero for consolidated government unless states cut coverage
+2028,ctc_taxpayer_ssn_70104b,,0.338943,1.1858,0.773,1.6469,True,CPS tax-model credits of units whose filers are all imputed unauthorized x on-books 0.44/0.60/0.75 x no work-authorized SSN 0.80/0.90/1.00
+2028,ptc_enhanced_expiry,30.382,0.089446,2.462,2.462,3.1027,True,"CBO 61734 permanent-extension cost, post-P.L. 119-21 baseline"
+2028,public_charge_2026_rule,11.7542,0.4256,5.0026,1.6088,8.396,True,"public_charge_share_2026_10_07, DHS 3.3/10.3/17.3%"
+2027,overlap_bridge_enhancement_on_a_ptc_classes,,,0.0526,0.0526,0.0526,True,adds the enhancement on (a)'s PTC classes
+2027,overlap_public_charge_x_a,,,-0.0109,-0.0184,-0.0035,True,DHS rate x (a)'s lineage SNAP + Medicaid cut
+2028,overlap_bridge_enhancement_on_a_ptc_classes,,,0.0743,0.0743,0.0743,True,adds the enhancement on (a)'s PTC classes
+2028,overlap_public_charge_x_a,,,-0.012,-0.0201,-0.0038,True,DHS rate x (a)'s lineage SNAP + Medicaid cut

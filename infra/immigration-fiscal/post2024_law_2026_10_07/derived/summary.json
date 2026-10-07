@@ -1,0 +1,149 @@
+{
+ "lane": "post2024_law_2026_10_07",
+ "deflator_cy2024_per_fy_dollar": {
+  "2027": 0.9277638480233742,
+  "2028": 0.9059533088657484
+ },
+ "cpi_u_growth": {
+  "2025": 0.02767,
+  "2026": 0.02924,
+  "2027": 0.025470000000000003,
+  "2028": 0.023610000000000003,
+  "2029": 0.022879999999999998,
+  "2030": 0.022629999999999997,
+  "2031": 0.02258,
+  "2032": 0.02257,
+  "2033": 0.022559999999999997,
+  "2034": 0.022559999999999997,
+  "2035": 0.02257,
+  "2036": 0.02257,
+  "2037": 0.02258,
+  "2038": 0.02258,
+  "2039": 0.02259,
+  "2040": 0.0226,
+  "2041": 0.0226,
+  "2042": 0.02261,
+  "2043": 0.02262,
+  "2044": 0.022629999999999997,
+  "2045": 0.022639999999999997,
+  "2046": 0.02265,
+  "2047": 0.02265,
+  "2048": 0.02266,
+  "2049": 0.02267,
+  "2050": 0.02267,
+  "2051": 0.02268,
+  "2052": 0.022690000000000002,
+  "2053": 0.022690000000000002,
+  "2054": 0.0227,
+  "2055": 0.0227
+ },
+ "lineage_m": 42.75221292437312,
+ "added_descendants_m": 3.039719593185236,
+ "ctc_rule_measured": {
+  "national_row4_bn": 6.478756715922473,
+  "lineage_bn": 2.1959318363584157,
+  "lineage_refundable_bn": 1.0206584326393708,
+  "lineage_units_people_m": 3.30943872361287
+ },
+ "ptc_model": {
+  "modelled_national_enhanced_bn": 48.98080854775981,
+  "modelled_national_original_bn": 39.3054338290369,
+  "modelled_enhanced_fraction_national": 0.1975339935290924,
+  "modelled_enhanced_fraction_lineage": 0.15674350707729667,
+  "lineage_share_of_enhancement_dollars": 0.08944616826089541,
+  "lineage_share_of_enhanced_credit_dollars": 0.1127233858161454,
+  "lineage_share_of_mrks_persons": 0.1129081552951978,
+  "account_ptc_bn": 118.352,
+  "account_lineage_ptc_person_key_bn": 13.36290599549725
+ },
+ "shares": {
+  "snap_10108": {
+   "broad": 0.2880188418564727,
+   "narrow": 0.11943481322741838
+  },
+  "medicaid_71109": {
+   "broad": 0.31967552517956427,
+   "narrow": 0.15428048817683165
+  },
+  "medicare_71201": {
+   "broad": 0.32284423754876923,
+   "narrow": 0.10114630991143227
+  },
+  "ptc_eligible_aliens_71301": {
+   "broad": 0.15882078372076885,
+   "narrow": 0.06089393862919555
+  },
+  "ptc_below_100_71302": {
+   "broad": 0.16428540771466135,
+   "narrow": 0.05753201212049322
+  },
+  "emergency_fmap_71110": {
+   "broad": 0.27604784130954013,
+   "narrow": 0.31541396907674485
+  }
+ },
+ "totals": {
+  "2027": {
+   "with_emergency_fmap_shift": {
+    "lineage_2024usd_bn": 10.3016,
+    "lineage_low_bn": 6.3977,
+    "lineage_high_bn": 16.0048
+   },
+   "consolidated_government": {
+    "lineage_2024usd_bn": 9.582,
+    "lineage_low_bn": 5.7679,
+    "lineage_high_bn": 15.285200000000001
+   }
+  },
+  "2028": {
+   "with_emergency_fmap_shift": {
+    "lineage_2024usd_bn": 10.4748,
+    "lineage_low_bn": 6.5491,
+    "lineage_high_bn": 16.4058
+   },
+   "consolidated_government": {
+    "lineage_2024usd_bn": 9.5855,
+    "lineage_low_bn": 5.7708,
+    "lineage_high_bn": 15.5165
+   }
+  }
+ },
+ "context_not_in_arm": [
+  {
+   "item": "medicaid_work_requirements_71119",
+   "cbo_fy2028_outlays_bn": 18.96,
+   "lineage_person_share": 0.153634,
+   "scale_2024usd_bn": 2.639
+  },
+  {
+   "item": "snap_work_requirements_10102",
+   "cbo_fy2028_outlays_bn": 8.0,
+   "lineage_person_share": 0.162886,
+   "scale_2024usd_bn": 1.181
+  },
+  {
+   "item": "snap_state_match_10105",
+   "cbo_fy2028_outlays_bn": 5.71,
+   "lineage_person_share": 0.175478,
+   "scale_2024usd_bn": 0.908
+  },
+  {
+   "item": "ptc_verification_71303",
+   "cbo_fy2028_outlays_bn": 3.521,
+   "lineage_person_share": 0.112908,
+   "scale_2024usd_bn": 0.36
+  },
+  {
+   "item": "ptc_special_enrollment_71304",
+   "cbo_fy2028_outlays_bn": 4.534,
+   "lineage_person_share": 0.112908,
+   "scale_2024usd_bn": 0.464
+  },
+  {
+   "item": "ptc_recapture_71305",
+   "cbo_fy2028_outlays_bn": 1.958,
+   "lineage_person_share": 0.112908,
+   "scale_2024usd_bn": 0.2
+  }
+ ]
+}

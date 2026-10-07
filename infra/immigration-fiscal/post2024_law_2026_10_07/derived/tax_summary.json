@@ -1,0 +1,98 @@
+{
+ "lane": "post2024_law_2026_10_07",
+ "part": "tax side",
+ "taxcalc": "6.8.4",
+ "fy": "2028",
+ "deflator_fy2028": 0.9059533088657484,
+ "deflator_ty2027": 0.9219485922924563,
+ "shares": {
+  "tips_70201": {
+   "lineage_share": 0.11278995332776237,
+   "cps_model_national_2024_bn": 5.920225690157296,
+   "cps_model_lineage_2024_bn": 0.6677419792826612
+  },
+  "overtime_70202": {
+   "lineage_share": 0.09080426032654264,
+   "cps_model_national_2024_bn": 3.0556483618817607,
+   "cps_model_lineage_2024_bn": 0.27746588931868493
+  },
+  "senior_70103": {
+   "lineage_share": 0.03918469554558917,
+   "cps_model_national_2024_bn": 18.84837494331248,
+   "cps_model_lineage_2024_bn": 0.7385678336828109
+  },
+  "ctc_2200_70104": {
+   "lineage_share": 0.1404833823138681,
+   "cps_model_national_2024_bn": 8.87751586157693,
+   "cps_model_lineage_2024_bn": 1.2471434547793399
+  },
+  "std_increase_70102": {
+   "lineage_share": 0.09861564172758208,
+   "cps_model_national_2024_bn": 23.63113559845045,
+   "cps_model_lineage_2024_bn": 2.3303996017927004
+  },
+  "salt_cap_70120": {
+   "lineage_share": 0.03786432489668818,
+   "cps_model_national_2024_bn": 6.960222134845566,
+   "cps_model_lineage_2024_bn": 0.2635441122669131
+  },
+  "car_loan_70203": {
+   "lineage_share": 0.11204378862595062,
+   "cps_model_national_2024_bn": 13.899013327037933,
+   "cps_model_lineage_2024_bn": 1.5572981113239088
+  },
+  "charity_nonitemizers_70424": {
+   "lineage_share": 0.10286658915992428,
+   "cps_model_national_2024_bn": 10.603332013624444,
+   "cps_model_lineage_2024_bn": 1.0907285979717782
+  },
+  "trump_accounts_70204": {
+   "lineage_share": 0.18962501677860052
+  }
+ },
+ "national_tax_calculator_own_data_ty2027_bn": {
+  "senior_70103": 20.93062818884253,
+  "ctc_2200_70104": 16.260704638341064,
+  "std_increase_70102": 16.511620860910156,
+  "salt_cap_70120": 26.3487512406958
+ },
+ "own_data_params": {
+  "std_2027": [
+   16571.73,
+   33143.46,
+   16571.73,
+   24857.6,
+   33143.46
+  ],
+  "ctc_2027": 2264.46
+ },
+ "jct_fy2028_bn": {
+  "tips_70201": -8.078,
+  "overtime_70202": -22.982,
+  "car_loan_70203": -9.916,
+  "charity_nonitemizers_70424": -8.149,
+  "remittance_excise_70604": 1.089,
+  "trump_accounts_70204": 3.685
+ },
+ "tax_side_lineage_bn": {
+  "lineage_2024usd_bn": 9.8654,
+  "lineage_low_bn": 9.7569,
+  "lineage_high_bn": 10.0036
+ },
+ "tax_side_permanent_only_bn": {
+  "lineage_2024usd_bn": 3.8339,
+  "lineage_low_bn": 3.7254,
+  "lineage_high_bn": 3.9721
+ },
+ "benefit_cuts_consolidated_bn": {
+  "lineage_2024usd_bn": 9.5855,
+  "lineage_low_bn": 5.7708,
+  "lineage_high_bn": 15.5165
+ },
+ "net_benefit_cuts_minus_tax_cuts_bn": {
+  "central": -0.2798999999999996,
+  "benefit_low_tax_high": -4.2328,
+  "benefit_high_tax_low": 5.759600000000001
+ },
+ "net_after_temporary_provisions_lapse_bn": 5.7516
+}

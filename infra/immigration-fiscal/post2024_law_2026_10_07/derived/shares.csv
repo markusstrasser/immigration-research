@@ -1,0 +1,13 @@
+row,class,records,population_or_dollars_row4,lineage_share,unit
+snap_10108,broad,884,2020842,0.288019,persons
+snap_10108,narrow,381,919098,0.119435,persons
+medicaid_71109,broad,2152,4952031,0.319676,persons
+medicaid_71109,narrow,995,2366757,0.15428,persons
+medicare_71201,broad,806,1806750,0.322844,persons
+medicare_71201,narrow,120,285200,0.101146,persons
+ptc_eligible_aliens_71301,broad,443,4553473684,0.158821,original-law PTC $
+ptc_eligible_aliens_71301,narrow,271,2750844863,0.060894,original-law PTC $
+ptc_below_100_71302,broad,79,1365997145,0.164285,original-law PTC $
+ptc_below_100_71302,narrow,51,839778799,0.057532,original-law PTC $
+emergency_fmap_71110,broad,1164,2631263,0.276048,persons
+emergency_fmap_71110,narrow,902,2019297,0.315414,persons
