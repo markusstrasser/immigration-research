@@ -1,10 +1,13 @@
 """Turn an agent-made inventory of executed results into context.json, keeping only what re-verifies.
 
-Usage: build_context.py <ledger_map.json>. A value survives only if its digits are found within two
-lines of the file:line the inventory cites; an item survives only with a memo and one surviving value.
+Usage: build_context.py <ledger_map.json> [--allow-drop <item id> ...]. A value survives only if its digits are
+found within two lines of the file:line the inventory cites; an item survives only with a memo and one surviving
+value. A value or an item that does not survive stops the build (exit 1, context.json unwritten) unless
+--allow-drop names its item: a citation whose number moved must be repointed, never dropped in silence.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -44,8 +47,17 @@ def confirmed(value, ref):
 
 
 def main():
-    source = json.loads(Path(sys.argv[1]).read_text())
-    items, dropped_values, dropped_items = [], 0, []
+    parser = argparse.ArgumentParser()
+    parser.add_argument("inventory")
+    parser.add_argument("--allow-drop", action="append", default=[], metavar="ITEM",
+                        help="an item whose unconfirmed values, or the whole item, may be dropped")
+    args = parser.parse_args()
+    source = json.loads(Path(args.inventory).read_text())
+    allowed = set(args.allow_drop)
+    unknown = allowed-{item["id"] for item in source["items"]}
+    if unknown:
+        sys.exit(f"--allow-drop names items the inventory lacks: {sorted(unknown)}")
+    items, dropped_values, dropped_items, refused = [], 0, [], []
     for item in source["items"]:
         values = []
         for v in item.get("values") or []:
@@ -53,13 +65,21 @@ def main():
                 values.append({k: v.get(k) for k in ["label", "value", "unit", "se", "file_line"]})
             else:
                 dropped_values += 1
+                if item["id"] not in allowed:
+                    refused.append(f"{item['id']}: {v.get('value')!r} is not printed at {v.get('file_line')} ({v.get('label')})")
         if not values or not item.get("memo"):
             dropped_items.append(item["id"])
+            if item["id"] not in allowed:
+                refused.append(f"{item['id']}: the item would be dropped ({'no memo' if not item.get('memo') else 'no value verifies'})")
             continue
         items.append(dict(id=item["id"], faq_entry=item.get("faq_entry"), objection=item.get("objection"),
                           finding=item.get("finding"), values=values[:5], relation_to_headline=item["relation_to_headline"],
                           combining_rule=item.get("combining_rule"), memo=item.get("memo"), population=item.get("population"),
                           comparator=item.get("comparator"), horizon=item.get("horizon"), evidence_level=item.get("evidence_level")))
+    if refused:
+        print("\n".join(refused), file=sys.stderr)
+        sys.exit(f"context.json not written: {len(refused)} citations or items do not verify; repoint them, or name the "
+                 f"item with --allow-drop")
     items.sort(key=lambda i: (i["faq_entry"] is None, i["faq_entry"] or 0, i["id"]))
     (HERE/"context.json").write_text(json.dumps(dict(items=items, combining_rules=source.get("combining_rules", [])), indent=1, ensure_ascii=False)+"\n")
     print(f"context.json: {len(items)} items kept, {len(dropped_items)} dropped {dropped_items}, {dropped_values} unconfirmed values removed")
