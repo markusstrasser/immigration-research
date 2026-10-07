@@ -18,6 +18,14 @@ stage3	optional	external/stage3/ahrq/meps/h251dat.zip	1000000	setup.sh	MEPS HC-2
 stage3	optional	external/stage3/ahrq/meps/h251su.txt	10000	setup.sh	MEPS SAS setup / labels
 stage3	optional	external/stage3/irs_soi/historic_table2/23in55cmcsv.csv	700000	manual	IRS SOI Historic Table 2 TY2023, all states (irs.gov/pub/irs-soi/23in55cmcsv.csv); white_replacement_2026_09_28/local_whites_soi.py pins its sha256
 stage3	optional	external/stage3/irs_soi/historic_table2/23incmdocguide.doc	200000	manual	IRS SOI Historic Table 2 TY2023 users' guide (irs.gov/pub/irs-soi/23incmdocguide.doc)
+stage3	optional	external/stage3/bea/rpp_2024/SARPP.zip	30000	world_ledger_2026_09_27/acquire_beside.py	BEA RPP 2008-2024 by state (apps.bea.gov/regional/zip/SARPP.zip); sha256 pinned in beside_arms.py
+stage3	optional	external/stage3/bea/rpp_2024/MARPP.zip	100000	world_ledger_2026_09_27/acquire_beside.py	BEA RPP 2008-2024 by metropolitan area (apps.bea.gov/regional/zip/MARPP.zip); sha256 pinned in beside_arms.py
+stage3	optional	external/stage3/bea/rpp_2024/PARPP.zip	30000	world_ledger_2026_09_27/acquire_beside.py	BEA RPP 2008-2024 by state metro/nonmetro portion (apps.bea.gov/regional/zip/PARPP.zip); sha256 pinned in beside_arms.py
+stage3	optional	external/stage3/worldbank/icp2021/icp2021_mex_usa.json	8000	world_ledger_2026_09_27/acquire_beside.py	World Bank ICP 2021 (API source 90): GDP, health and government categories, Mexico and US; sha256 pinned in beside_arms.py
+stage3	optional	external/stage3/worldbank/icp2021/icp2021_mex_usa_categories.json	12000	world_ledger_2026_09_27/acquire_beside.py	World Bank ICP 2021 (API source 90): nine household and capital categories, Mexico and US; sha256 pinned in beside_extra.py
+stage3	optional	external/stage3/inegi/enigh2024_viviendas/enigh2024_ns_viviendas_csv.zip	1500000	world_ledger_2026_09_27/acquire_beside.py	INEGI ENIGH 2024 (nueva serie) dwellings (viviendas); sha256 pinned in beside_arms.py
+stage3	optional	external/stage3/coneval/lineas_pobreza_2024/Lineas_de_Pobreza_por_Ingresos_ago_2024.pdf	150000	world_ledger_2026_09_27/acquire_beside.py	CONEVAL income poverty lines, August 2024; sha256 pinned in beside_arms.py
+stage3	optional	external/stage3/census/industry_codes_2022/2022-Census-Industry-Code-List-with-Crosswalk.xlsx	90000	world_ledger_2026_09_27/acquire_beside.py	Census 2022 Industry Code List with crosswalk (www2.census.gov); sha256 pinned in beside_extra.py
 stage4	optional	external/stage4/saipe/ussd23.txt	100000	setup.sh	SAIPE school districts 2023
 stage2	optional	external/stage2/nces/ccd_lea_029_2324_w_1a_073124.zip	100000	setup.sh	NCES LEA directory 2023-24
 stage5	optional	external/stage5_net_negative/cms/medicaid_financial_management.csv	100000	setup-net-negative.sh	CMS Medicaid financial management
