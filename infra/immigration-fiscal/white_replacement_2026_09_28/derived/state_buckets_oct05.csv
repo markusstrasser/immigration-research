@@ -1,5 +1,5 @@
 basis,region,bucket,cost_union_bn,cost_white_union_ages_bn,delta_cost_bn,delta_cost_per_person
-accrual,California,income taxes,-57.9058,-195.0071,137.1013,9828
+accrual,California,income taxes,-61.9528,-248.5442,186.5914,13376
 accrual,California,payroll taxes and Medicare premiums,-62.8492,-97.7658,34.9167,2503
 accrual,California,"sales, excise, customs, fees",-36.9099,-62.6884,25.7785,1848
 accrual,California,"capital, property, production taxes",-9.7818,-26.7507,16.9689,1216
@@ -13,7 +13,7 @@ accrual,California,veterans and military medical,3.1733,7.5715,-4.3982,-315
 accrual,California,"per-head lines: government, defense, interest, roads, other",29.8183,35.2815,-5.4632,-392
 accrual,California,capital return,12.1308,12.9379,-0.8071,-58
 accrual,California,production gain (subtracted),-4.2532,-0.0000,-4.2532,-305
-accrual,Texas,income taxes,-31.8302,-80.7629,48.9327,4561
+accrual,Texas,income taxes,-37.7633,-111.1107,73.3474,6837
 accrual,Texas,payroll taxes and Medicare premiums,-43.4879,-60.6342,17.1463,1598
 accrual,Texas,"sales, excise, customs, fees",-31.6223,-48.2316,16.6092,1548
 accrual,Texas,"capital, property, production taxes",-4.9087,-10.1509,5.2423,489
@@ -27,7 +27,7 @@ accrual,Texas,veterans and military medical,4.9434,7.1950,-2.2516,-210
 accrual,Texas,"per-head lines: government, defense, interest, roads, other",18.2234,21.1994,-2.9761,-277
 accrual,Texas,capital return,9.0082,9.5587,-0.5505,-51
 accrual,Texas,production gain (subtracted),-2.8542,-0.0000,-2.8542,-266
-accrual,rest of US,income taxes,-63.4288,-144.8329,81.4042,4504
+accrual,rest of US,income taxes,-68.5652,-174.3090,105.7438,5850
 accrual,rest of US,payroll taxes and Medicare premiums,-71.4050,-97.5702,26.1652,1448
 accrual,rest of US,"sales, excise, customs, fees",-48.9597,-66.2704,17.3107,958
 accrual,rest of US,"capital, property, production taxes",-9.2586,-17.3487,8.0900,448
@@ -41,7 +41,7 @@ accrual,rest of US,veterans and military medical,5.0575,8.9317,-3.8741,-214
 accrual,rest of US,"per-head lines: government, defense, interest, roads, other",31.8993,35.6624,-3.7631,-208
 accrual,rest of US,capital return,15.7480,16.4336,-0.6856,-38
 accrual,rest of US,production gain (subtracted),-4.8401,-0.0000,-4.8401,-268
-accrual,Los Angeles metro,income taxes,-20.8495,-83.0517,62.2022,13036
+accrual,Los Angeles metro,income taxes,-22.6235,-104.1284,81.5049,17082
 accrual,Los Angeles metro,payroll taxes and Medicare premiums,-21.8817,-39.0753,17.1936,3603
 accrual,Los Angeles metro,"sales, excise, customs, fees",-12.4455,-24.2962,11.8507,2484
 accrual,Los Angeles metro,"capital, property, production taxes",-3.3860,-11.2952,7.9092,1658
@@ -55,7 +55,7 @@ accrual,Los Angeles metro,veterans and military medical,1.2984,2.9637,-1.6652,-3
 accrual,Los Angeles metro,"per-head lines: government, defense, interest, roads, other",10.1262,12.8350,-2.7088,-568
 accrual,Los Angeles metro,capital return,4.0161,4.3969,-0.3808,-80
 accrual,Los Angeles metro,production gain (subtracted),-1.4818,-0.0000,-1.4818,-311
-cash,California,income taxes,-58.7685,-197.3343,138.5658,9933
+cash,California,income taxes,-62.8155,-250.8713,188.0558,13481
 cash,California,payroll taxes and Medicare premiums,-62.8492,-97.7658,34.9167,2503
 cash,California,"sales, excise, customs, fees",-36.9099,-62.6884,25.7785,1848
 cash,California,"capital, property, production taxes",-9.7818,-26.7507,16.9689,1216
@@ -69,7 +69,7 @@ cash,California,veterans and military medical,3.1733,7.5715,-4.3982,-315
 cash,California,"per-head lines: government, defense, interest, roads, other",29.8183,35.2815,-5.4632,-392
 cash,California,capital return,12.1308,12.9379,-0.8071,-58
 cash,California,production gain (subtracted),-4.2532,-0.0000,-4.2532,-305
-cash,Texas,income taxes,-32.5790,-82.6179,50.0389,4665
+cash,Texas,income taxes,-38.5121,-112.9657,74.4536,6941
 cash,Texas,payroll taxes and Medicare premiums,-43.4879,-60.6342,17.1463,1598
 cash,Texas,"sales, excise, customs, fees",-31.6223,-48.2316,16.6092,1548
 cash,Texas,"capital, property, production taxes",-4.9087,-10.1509,5.2423,489
@@ -83,7 +83,7 @@ cash,Texas,veterans and military medical,4.9434,7.1950,-2.2516,-210
 cash,Texas,"per-head lines: government, defense, interest, roads, other",18.2234,21.1994,-2.9761,-277
 cash,Texas,capital return,9.0082,9.5587,-0.5505,-51
 cash,Texas,production gain (subtracted),-2.8542,-0.0000,-2.8542,-266
-cash,rest of US,income taxes,-64.2975,-147.0483,82.7508,4578
+cash,rest of US,income taxes,-69.4340,-176.5244,107.0904,5925
 cash,rest of US,payroll taxes and Medicare premiums,-71.4050,-97.5702,26.1652,1448
 cash,rest of US,"sales, excise, customs, fees",-48.9597,-66.2704,17.3107,958
 cash,rest of US,"capital, property, production taxes",-9.2586,-17.3487,8.0900,448
@@ -97,7 +97,7 @@ cash,rest of US,veterans and military medical,5.0575,8.9317,-3.8741,-214
 cash,rest of US,"per-head lines: government, defense, interest, roads, other",31.8993,35.6624,-3.7631,-208
 cash,rest of US,capital return,15.7480,16.4336,-0.6856,-38
 cash,rest of US,production gain (subtracted),-4.8401,-0.0000,-4.8401,-268
-cash,Los Angeles metro,income taxes,-21.1392,-83.9289,62.7897,13159
+cash,Los Angeles metro,income taxes,-22.9131,-105.0055,82.0924,17205
 cash,Los Angeles metro,payroll taxes and Medicare premiums,-21.8817,-39.0753,17.1936,3603
 cash,Los Angeles metro,"sales, excise, customs, fees",-12.4455,-24.2962,11.8507,2484
 cash,Los Angeles metro,"capital, property, production taxes",-3.3860,-11.2952,7.9092,1658

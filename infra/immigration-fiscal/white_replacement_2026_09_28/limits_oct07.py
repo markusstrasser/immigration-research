@@ -7,9 +7,11 @@ section ("Limits of the v6 figures") and the lead's revisit items.
 1. The case's own W. The case prices 1,082,721 members of the lineage as third-plus non-Hispanic whites
    (meta.lineage.members.white) on lines that come from main_case_lineage_2026_10_05/white_lines.py and
    added_age_mix_2026_10_07/band_lines.py, which import this library at its sept29 default: the rough keys of
-   September 27. On the IPEDS keys, and beside them item 4's tuition term, their cost per person moves by the amounts
-   written here, at three age structures: the G3-rate persons' measured mix (v6's placement of the white end,
-   meta.lineage.age_mix), the identified G3+ members' ages (v5's) and whites' own ages. Times the count, the case's move.
+   September 27, with income taxes on the CPS-dollar rule. On the IPEDS keys, and beside them item 4's tuition term,
+   their cost per person moves by the amounts written here, at three age structures: the G3-rate persons' measured mix
+   (v6's placement of the white end, meta.lineage.age_mix), the identified G3+ members' ages (v5's) and whites' own
+   ages. Times the count, the case's move. Round 2 (the team lead, 2026-10-07: measure only) adds the move to the
+   comparators' central income-tax keys, the case's own (CASE_TAX_KEY, the shared allocation; the personal one beside).
 2. Item 4's Pell share at IPEDS's Hispanic private/public undergraduate enrollment ratio (0.6768, ipeds_keys.json) in
    place of the fee lane's assumed 0.75, by the fee lane's rule (the private share is the public share times the
    ratio, weighted 0.32 against 0.68). The share's change times Pell's $31.264bn is the term's move at either end's
@@ -19,7 +21,10 @@ section ("Limits of the v6 figures") and the lead's revisit items.
 
 Gates (exit 1, nothing written): the library's setup; the white count is the payload's; the G3-rate mix sums to 1, has
 no band without identified G3+ and is v5's placement when the identified mix stands in for it (the structure is the
-age_tilt rule's); the share formula reproduces the fee lane's central and its 0.5 and 1.0 arms with their personal
+age_tilt rule's); the three income-tax nationals are the sept29 dumps' (W's lines come from them); W's move to the
+case's income-tax keys is minus the three lines' move (1e-9); positive controls on the cash basis, W's CPS-rule
+income-tax amounts a person at the identified G3+'s ages are white_lines.json's and at the G3-rate mix band_lines.json's
+(1e-9 relative); the share formula reproduces the fee lane's central and its 0.5 and 1.0 arms with their personal
 terms (1e-12, 1e-9); every case dump's other_federal_benefits response is 1; at the central θ each group's cost is
 rekey_summary_oct07.csv's (5e-5) and the union's cost does not move with a race's θ (1e-12).
 Output: derived/limits_oct07.csv. Run from the repository root after rekey_sept29.py --case oct07:
@@ -56,7 +61,8 @@ def gate(label, ok, detail=""):
 
 
 def case_w(rows, meta):
-    """1. The case's W per person on the IPEDS keys (and the tuition term beside), at three age structures."""
+    """1. The case's W per person on the IPEDS keys (and the tuition term beside) and on the case's income-tax keys
+    (round 2, both allocations), at three age structures. Every move starts from the CPS-dollar rule W's lines keep."""
     R = W.R
     d = R.d
     am = meta["lineage"]["age_mix"]
@@ -67,6 +73,16 @@ def case_w(rows, meta):
          [float(x) for x in ident] == am["mixes"]["identified"])
     gate("the G3-rate mix sums to 1 and has no band without identified G3+ (1e-12)",
          abs(g3_rate.sum() - 1) < 1e-12 and not ((ident <= 0) & (g3_rate > 0)).any())
+    tax = tuple(W.CASE_TAX_KEY)
+    s29 = json.loads((DER / "engine_lines_sept29_cash.json").read_text())
+    for lid in tax:
+        a = next(x for x in s29["low"]["lines"] if x["side"] == "receipts" and x["id"] == lid)["national_bn"]
+        gate(f"{lid}: the sept29 national is oct07's (W's lines come from sept29)", a == R.NATIONAL["receipts|" + lid],
+             f"{a} vs {R.NATIONAL['receipts|' + lid]}")
+    wl = json.loads((FISCAL / "main_case_lineage_2026_10_05/derived/white_lines.json").read_text())
+    bl = json.loads((FISCAL / "added_age_mix_2026_10_07/derived/band_lines.json").read_text())
+    band = next(k for k, v in bl["mixes"].items() if v["pi"] == am["mixes"]["g3_rate"])
+    personal = {k: v + "_personal" for k, v in W.CASE_TAX_KEY.items()}
     R.PI["case_w_g3_rate"], R.PI["case_w_identified"] = g3_rate, ident
     n_white = meta["lineage"]["members"]["white"]
     for arm, sc in (("g3_rate_mix", R.scenario("w3", "case_w_g3_rate")),
@@ -76,16 +92,40 @@ def case_w(rows, meta):
         for basis in W.BASES:
             for end in W.ENDS:
                 with W.patched(vars(W), IPEDS_ON=False, FEES_ON=False):
-                    rough = W.run29(sc, end, basis)[0]["cost"]
+                    rough = W.run29(sc, end, basis, "cps")[0]["cost"]
                 with W.patched(vars(W), FEES_ON=False):
-                    keys = W.run29(sc, end, basis)[0]["cost"]
-                full = W.run29(sc, end, basis)[0]["cost"]
-                for item, v in (("ipeds_keys", keys - rough), ("tuition_beside", full - keys)):
+                    keys = W.run29(sc, end, basis, "cps")[0]["cost"]
+                r_cps, lines_cps = W.run29(sc, end, basis, "cps")[:2]
+                full = r_cps["cost"]
+                cps_pp = {x[1]: x[3] * 1e9 / pop for x in lines_cps if x[0] == "receipts" and x[1] in tax}
+                if basis == "cash" and arm != "white_own_ages":
+                    ref = ({x["id"]: x["per_person_usd"] for x in wl["g3plus_ages"]["cash"][end]["lines"]
+                            if x["side"] == "receipts"} if arm == "identified_g3plus_ages" else
+                           {lid: bl["mixes"][band]["white"]["cash"]["lines"]["receipts|" + lid] * 1e9 for lid in tax})
+                    gate(f"positive control, cash {end}: W's CPS-rule income taxes a person at {arm} are "
+                         f"{'white_lines.json' if arm == 'identified_g3plus_ages' else 'band_lines.json ' + band}'s "
+                         f"(1e-9 rel.)", all(abs(cps_pp[x] - ref[x]) <= 1e-9 * abs(ref[x]) for x in tax),
+                         ", ".join(f"{x} {cps_pp[x]:.4f}/{ref[x]:.4f}" for x in tax))
+                case = {}
+                for alloc, key in (("shared", W.CASE_TAX_KEY), ("personal", personal)):
+                    with W.patched(vars(W), CASE_TAX_KEY=key):
+                        r, lines = W.run29(sc, end, basis)[:2]
+                    move = sum((a[3] - b[3]) * a[4] for a, b in zip(lines, lines_cps)
+                               if a[0] == "receipts" and a[1] in tax)
+                    gate(f"case W {arm} {basis} {end} ({alloc}): the move to the case's income-tax keys is minus the "
+                         f"three lines' move (1e-9)", abs((r["cost"] - full) + move) < 1e-9
+                         and [a[:3] for a in lines] == [b[:3] for b in lines_cps], f"{r['cost'] - full:+.6f}")
+                    case[alloc] = r["cost"]
+                for item, v in (("ipeds_keys", keys - rough), ("tuition_beside", full - keys),
+                                ("income_tax_keys", case["shared"] - full),
+                                ("income_tax_keys_personal", case["personal"] - full)):
                     pp = v * 1e9 / pop
                     rows.append(dict(item=f"case_w_{item}", arm=arm, basis=basis, end=end, per_person_usd=f"{pp:.4f}",
                                      count=f"{n_white:.4f}", bn=f"{pp * n_white / 1e9:.6f}"))
                 print(f"  case W {arm:22s} {basis:7s} {end:4s} rough ${rough * 1e9 / pop:9.2f} a person; IPEDS keys "
-                      f"${(keys - rough) * 1e9 / pop:+8.2f}; tuition beside ${(full - keys) * 1e9 / pop:+6.2f}")
+                      f"${(keys - rough) * 1e9 / pop:+8.2f}; tuition beside ${(full - keys) * 1e9 / pop:+6.2f}; the "
+                      f"case's income-tax keys ${(case['shared'] - full) * 1e9 / pop:+9.2f} (personal "
+                      f"${(case['personal'] - full) * 1e9 / pop:+9.2f})")
 
 
 def pell_hispanic(rows):

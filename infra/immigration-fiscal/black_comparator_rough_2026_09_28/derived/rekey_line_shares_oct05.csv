@@ -1,9 +1,9 @@
 side,line,national_bn,response_low,amount_mexican_origin_engine_bn,share_mexican_origin_engine,amount_mexican_origin_rough_bn,share_mexican_origin_rough,amount_nh_black_rough_bn,share_nh_black_rough
-receipts,federal_income_tax,2403.2420,1.0000,126.4578,0.052620,123.5993,0.051430,142.1110,0.059133
-receipts,state_local_income_tax,536.1670,1.0000,29.3934,0.054821,29.0593,0.054198,41.0763,0.076611
+receipts,federal_income_tax,2403.2420,1.0000,126.4578,0.052620,136.4913,0.056795,165.3059,0.068785
+receipts,state_local_income_tax,536.1670,1.0000,29.3934,0.054821,31.2281,0.058243,44.3643,0.082744
 receipts,personal_motor_vehicle,26.1250,1.0000,3.5567,0.136141,3.5921,0.137497,2.0418,0.078156
 receipts,personal_property_tax,12.9880,1.0000,1.4263,0.109816,0.9700,0.074687,0.8859,0.068208
-receipts,other_personal_tax,9.7210,1.0000,0.5287,0.054390,0.5063,0.052079,0.5975,0.061461
+receipts,other_personal_tax,9.7210,1.0000,0.5287,0.054390,0.5620,0.057812,0.8043,0.082744
 receipts,employee_oasdi,610.3990,1.0000,58.0690,0.095133,58.5033,0.095844,61.4409,0.100657
 receipts,employee_hi,196.7490,1.0000,17.2788,0.087821,17.3617,0.088243,18.7006,0.095048
 receipts,self_employment_oasdi_hi,86.8550,1.0000,7.1216,0.081995,8.1805,0.094185,8.7426,0.100657

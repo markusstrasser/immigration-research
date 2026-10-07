@@ -1,5 +1,5 @@
 basis,group,end,bucket,cost_bn,per_member,delta_vs_union_rough_bn
-accrual,mexican_origin_engine,low,income taxes,-156.3799,-3658,3.2151
+accrual,mexican_origin_engine,low,income taxes,-156.3799,-3658,-11.9014
 accrual,mexican_origin_engine,low,payroll taxes and Medicare premiums,-175.7093,-4110,-2.0328
 accrual,mexican_origin_engine,low,"sales, excise, customs, fees",-118.3708,-2769,0.7267
 accrual,mexican_origin_engine,low,"capital, property, production taxes",-25.4097,-594,1.4606
@@ -13,7 +13,7 @@ accrual,mexican_origin_engine,low,veterans and military medical,15.6471,366,-2.4
 accrual,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784,3.6772
 accrual,mexican_origin_engine,low,capital return,37.1478,869,-0.2608
 accrual,mexican_origin_engine,low,production gain (subtracted),-11.9475,-279,0.0000
-accrual,mexican_origin_rough,low,income taxes,-153.1648,-3583,0.0000
+accrual,mexican_origin_rough,low,income taxes,-168.2814,-3936,0.0000
 accrual,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.7421,-4157,0.0000
 accrual,mexican_origin_rough,low,"sales, excise, customs, fees",-117.6441,-2752,0.0000
 accrual,mexican_origin_rough,low,"capital, property, production taxes",-23.9491,-560,0.0000
@@ -27,7 +27,7 @@ accrual,mexican_origin_rough,low,veterans and military medical,13.1742,308,0.000
 accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.9409,1870,0.0000
 accrual,mexican_origin_rough,low,capital return,36.8871,863,0.0000
 accrual,mexican_origin_rough,low,production gain (subtracted),-11.9475,-279,0.0000
-accrual,nh_black_rough,low,income taxes,-183.7848,-4381,30.6199
+accrual,nh_black_rough,low,income taxes,-210.4746,-5017,42.1932
 accrual,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,16.6158
 accrual,nh_black_rough,low,"sales, excise, customs, fees",-123.2033,-2937,5.5593
 accrual,nh_black_rough,low,"capital, property, production taxes",-15.9766,-381,-7.9725
@@ -41,7 +41,7 @@ accrual,nh_black_rough,low,veterans and military medical,41.5391,990,-28.3648
 accrual,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",81.4405,1941,-1.4996
 accrual,nh_black_rough,low,capital return,35.6347,849,1.2524
 accrual,nh_black_rough,low,production gain (subtracted),-0.0000,-0,-11.9475
-accrual,A1_third_plus_nh_white,low,income taxes,-356.0150,-8327,202.8502
+accrual,A1_third_plus_nh_white,low,income taxes,-422.3973,-9880,254.1159
 accrual,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-268.3304,-6276,90.5883
 accrual,A1_third_plus_nh_white,low,"sales, excise, customs, fees",-173.3304,-4054,55.6863
 accrual,A1_third_plus_nh_white,low,"capital, property, production taxes",-50.5292,-1182,26.5801
@@ -55,7 +55,7 @@ accrual,A1_third_plus_nh_white,low,veterans and military medical,35.7731,837,-22
 accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.3985,2372,-21.4575
 accrual,A1_third_plus_nh_white,low,capital return,34.1392,799,2.7479
 accrual,A1_third_plus_nh_white,low,production gain (subtracted),-0.0000,-0,-11.9475
-accrual,A2_us_born_nh_white,low,income taxes,-358.2874,-8381,205.1225
+accrual,A2_us_born_nh_white,low,income taxes,-425.0842,-9943,256.8028
 accrual,A2_us_born_nh_white,low,payroll taxes and Medicare premiums,-267.1293,-6248,89.3872
 accrual,A2_us_born_nh_white,low,"sales, excise, customs, fees",-173.5833,-4060,55.9392
 accrual,A2_us_born_nh_white,low,"capital, property, production taxes",-51.4729,-1204,27.5238
@@ -69,7 +69,7 @@ accrual,A2_us_born_nh_white,low,veterans and military medical,35.8376,838,-22.66
 accrual,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.5146,2374,-21.5736
 accrual,A2_us_born_nh_white,low,capital return,34.2927,802,2.5943
 accrual,A2_us_born_nh_white,low,production gain (subtracted),-0.0000,-0,-11.9475
-accrual,A3_third_plus_nh_white_at_union_ages,low,income taxes,-348.8776,-8160,195.7128
+accrual,A3_third_plus_nh_white_at_union_ages,low,income taxes,-418.6365,-9792,250.3552
 accrual,A3_third_plus_nh_white_at_union_ages,low,payroll taxes and Medicare premiums,-241.2655,-5643,63.5235
 accrual,A3_third_plus_nh_white_at_union_ages,low,"sales, excise, customs, fees",-160.0104,-3743,42.3663
 accrual,A3_third_plus_nh_white_at_union_ages,low,"capital, property, production taxes",-42.4493,-993,18.5002
@@ -83,7 +83,7 @@ accrual,A3_third_plus_nh_white_at_union_ages,low,veterans and military medical,2
 accrual,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",87.1191,2038,-7.1781
 accrual,A3_third_plus_nh_white_at_union_ages,low,capital return,37.9425,887,-1.0554
 accrual,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),-0.0000,-0,-11.9475
-accrual,A4_third_plus_nh_white_stationary,low,income taxes,-344.9296,-8068,191.7647
+accrual,A4_third_plus_nh_white_stationary,low,income taxes,-411.4177,-9623,243.1363
 accrual,A4_third_plus_nh_white_stationary,low,payroll taxes and Medicare premiums,-251.9659,-5894,74.2238
 accrual,A4_third_plus_nh_white_stationary,low,"sales, excise, customs, fees",-168.1263,-3933,50.4822
 accrual,A4_third_plus_nh_white_stationary,low,"capital, property, production taxes",-48.5576,-1136,24.6085
@@ -97,7 +97,7 @@ accrual,A4_third_plus_nh_white_stationary,low,veterans and military medical,33.0
 accrual,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",96.7128,2262,-16.7719
 accrual,A4_third_plus_nh_white_stationary,low,capital return,34.8826,816,2.0045
 accrual,A4_third_plus_nh_white_stationary,low,production gain (subtracted),-0.0000,-0,-11.9475
-accrual,all_residents_slice,low,income taxes,-306.9876,-7181,153.8228
+accrual,all_residents_slice,low,income taxes,-362.6513,-8483,194.3699
 accrual,all_residents_slice,low,payroll taxes and Medicare premiums,-245.0320,-5731,67.2899
 accrual,all_residents_slice,low,"sales, excise, customs, fees",-156.6004,-3663,38.9563
 accrual,all_residents_slice,low,"capital, property, production taxes",-41.5012,-971,17.5520
@@ -111,7 +111,7 @@ accrual,all_residents_slice,low,veterans and military medical,30.2027,706,-17.02
 accrual,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",110.6643,2589,-30.7234
 accrual,all_residents_slice,low,capital return,36.1181,845,0.7689
 accrual,all_residents_slice,low,production gain (subtracted),-0.0000,-0,-11.9475
-accrual,mexican_origin_engine,high,income taxes,-141.8291,-3317,-8.7149
+accrual,mexican_origin_engine,high,income taxes,-141.8291,-3317,-23.8314
 accrual,mexican_origin_engine,high,payroll taxes and Medicare premiums,-163.8040,-3831,-11.8086
 accrual,mexican_origin_engine,high,"sales, excise, customs, fees",-118.3541,-2768,0.7110
 accrual,mexican_origin_engine,high,"capital, property, production taxes",-25.4012,-594,1.4606
@@ -125,7 +125,7 @@ accrual,mexican_origin_engine,high,veterans and military medical,12.9788,304,-0.
 accrual,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352,3.9579
 accrual,mexican_origin_engine,high,capital return,61.8578,1447,-0.9117
 accrual,mexican_origin_engine,high,production gain (subtracted),-7.8593,-184,0.0000
-accrual,mexican_origin_rough,high,income taxes,-150.5440,-3521,0.0000
+accrual,mexican_origin_rough,high,income taxes,-165.6605,-3875,0.0000
 accrual,mexican_origin_rough,high,payroll taxes and Medicare premiums,-175.6127,-4108,0.0000
 accrual,mexican_origin_rough,high,"sales, excise, customs, fees",-117.6432,-2752,0.0000
 accrual,mexican_origin_rough,high,"capital, property, production taxes",-23.9406,-560,0.0000
@@ -139,7 +139,7 @@ accrual,mexican_origin_rough,high,veterans and military medical,12.9235,302,0.00
 accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.5090,2445,0.0000
 accrual,mexican_origin_rough,high,capital return,60.9461,1426,0.0000
 accrual,mexican_origin_rough,high,production gain (subtracted),-7.8593,-184,0.0000
-accrual,nh_black_rough,high,income taxes,-183.7848,-4381,33.2408
+accrual,nh_black_rough,high,income taxes,-210.4746,-5017,44.8141
 accrual,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,18.7453
 accrual,nh_black_rough,high,"sales, excise, customs, fees",-123.2033,-2937,5.5602
 accrual,nh_black_rough,high,"capital, property, production taxes",-15.9766,-381,-7.9640
@@ -153,7 +153,7 @@ accrual,nh_black_rough,high,veterans and military medical,41.5391,990,-28.6156
 accrual,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",105.8122,2522,-1.3031
 accrual,nh_black_rough,high,capital return,58.5882,1396,2.3579
 accrual,nh_black_rough,high,production gain (subtracted),-0.0000,-0,-7.8593
-accrual,A1_third_plus_nh_white,high,income taxes,-356.0150,-8327,205.4710
+accrual,A1_third_plus_nh_white,high,income taxes,-422.3973,-9880,256.7368
 accrual,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-268.3304,-6276,92.7178
 accrual,A1_third_plus_nh_white,high,"sales, excise, customs, fees",-173.3304,-4054,55.6872
 accrual,A1_third_plus_nh_white,high,"capital, property, production taxes",-50.5292,-1182,26.5886
@@ -167,7 +167,7 @@ accrual,A1_third_plus_nh_white,high,veterans and military medical,35.7731,837,-2
 accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.0794,3066,-26.5703
 accrual,A1_third_plus_nh_white,high,capital return,57.9752,1356,2.9710
 accrual,A1_third_plus_nh_white,high,production gain (subtracted),-0.0000,-0,-7.8593
-accrual,A2_us_born_nh_white,high,income taxes,-358.2874,-8381,207.7434
+accrual,A2_us_born_nh_white,high,income taxes,-425.0842,-9943,259.4237
 accrual,A2_us_born_nh_white,high,payroll taxes and Medicare premiums,-267.1293,-6248,91.5166
 accrual,A2_us_born_nh_white,high,"sales, excise, customs, fees",-173.5833,-4060,55.9401
 accrual,A2_us_born_nh_white,high,"capital, property, production taxes",-51.4729,-1204,27.5323
@@ -181,7 +181,7 @@ accrual,A2_us_born_nh_white,high,veterans and military medical,35.8376,838,-22.9
 accrual,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.1174,3067,-26.6083
 accrual,A2_us_born_nh_white,high,capital return,58.1823,1361,2.7639
 accrual,A2_us_born_nh_white,high,production gain (subtracted),-0.0000,-0,-7.8593
-accrual,A3_third_plus_nh_white_at_union_ages,high,income taxes,-348.8776,-8160,198.3336
+accrual,A3_third_plus_nh_white_at_union_ages,high,income taxes,-418.6365,-9792,252.9761
 accrual,A3_third_plus_nh_white_at_union_ages,high,payroll taxes and Medicare premiums,-241.2655,-5643,65.6529
 accrual,A3_third_plus_nh_white_at_union_ages,high,"sales, excise, customs, fees",-160.0104,-3743,42.3672
 accrual,A3_third_plus_nh_white_at_union_ages,high,"capital, property, production taxes",-42.4493,-993,18.5087
@@ -195,7 +195,7 @@ accrual,A3_third_plus_nh_white_at_union_ages,high,veterans and military medical,
 accrual,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",115.4826,2701,-10.9735
 accrual,A3_third_plus_nh_white_at_union_ages,high,capital return,63.1503,1477,-2.2042
 accrual,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),-0.0000,-0,-7.8593
-accrual,A4_third_plus_nh_white_stationary,high,income taxes,-344.9296,-8068,194.3856
+accrual,A4_third_plus_nh_white_stationary,high,income taxes,-411.4177,-9623,245.7572
 accrual,A4_third_plus_nh_white_stationary,high,payroll taxes and Medicare premiums,-251.9659,-5894,76.3532
 accrual,A4_third_plus_nh_white_stationary,high,"sales, excise, customs, fees",-168.1263,-3933,50.4831
 accrual,A4_third_plus_nh_white_stationary,high,"capital, property, production taxes",-48.5576,-1136,24.6170
@@ -209,7 +209,7 @@ accrual,A4_third_plus_nh_white_stationary,high,veterans and military medical,33.
 accrual,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",125.4733,2935,-20.9643
 accrual,A4_third_plus_nh_white_stationary,high,capital return,58.8059,1376,2.1402
 accrual,A4_third_plus_nh_white_stationary,high,production gain (subtracted),-0.0000,-0,-7.8593
-accrual,all_residents_slice,high,income taxes,-306.9876,-7181,156.4437
+accrual,all_residents_slice,high,income taxes,-362.6513,-8483,196.9908
 accrual,all_residents_slice,high,payroll taxes and Medicare premiums,-245.0320,-5731,69.4194
 accrual,all_residents_slice,high,"sales, excise, customs, fees",-156.6004,-3663,38.9572
 accrual,all_residents_slice,high,"capital, property, production taxes",-41.5012,-971,17.5606
@@ -223,7 +223,7 @@ accrual,all_residents_slice,high,veterans and military medical,30.2027,706,-17.2
 accrual,all_residents_slice,high,"per-head lines: government, defense, interest, roads, other",138.8916,3249,-34.3825
 accrual,all_residents_slice,high,capital return,60.4271,1413,0.5190
 accrual,all_residents_slice,high,production gain (subtracted),-0.0000,-0,-7.8593
-cash,mexican_origin_engine,low,income taxes,-158.7560,-3713,3.1110
+cash,mexican_origin_engine,low,income taxes,-158.7560,-3713,-12.0055
 cash,mexican_origin_engine,low,payroll taxes and Medicare premiums,-175.7093,-4110,-2.0328
 cash,mexican_origin_engine,low,"sales, excise, customs, fees",-118.3708,-2769,0.7267
 cash,mexican_origin_engine,low,"capital, property, production taxes",-25.4097,-594,1.4606
@@ -237,7 +237,7 @@ cash,mexican_origin_engine,low,veterans and military medical,15.6471,366,-2.4729
 cash,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784,3.6772
 cash,mexican_origin_engine,low,capital return,37.1478,869,-0.2608
 cash,mexican_origin_engine,low,production gain (subtracted),-11.9475,-279,0.0000
-cash,mexican_origin_rough,low,income taxes,-155.6451,-3641,0.0000
+cash,mexican_origin_rough,low,income taxes,-170.7616,-3994,0.0000
 cash,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.7421,-4157,0.0000
 cash,mexican_origin_rough,low,"sales, excise, customs, fees",-117.6441,-2752,0.0000
 cash,mexican_origin_rough,low,"capital, property, production taxes",-23.9491,-560,0.0000
@@ -251,7 +251,7 @@ cash,mexican_origin_rough,low,veterans and military medical,13.1742,308,0.0000
 cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.9409,1870,0.0000
 cash,mexican_origin_rough,low,capital return,36.8871,863,0.0000
 cash,mexican_origin_rough,low,production gain (subtracted),-11.9475,-279,0.0000
-cash,nh_black_rough,low,income taxes,-189.3786,-4514,33.7335
+cash,nh_black_rough,low,income taxes,-216.0684,-5150,45.3069
 cash,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,16.6158
 cash,nh_black_rough,low,"sales, excise, customs, fees",-123.2033,-2937,5.5593
 cash,nh_black_rough,low,"capital, property, production taxes",-15.9766,-381,-7.9725
@@ -265,7 +265,7 @@ cash,nh_black_rough,low,veterans and military medical,41.5391,990,-28.3648
 cash,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",81.4405,1941,-1.4996
 cash,nh_black_rough,low,capital return,35.6347,849,1.2524
 cash,nh_black_rough,low,production gain (subtracted),-0.0000,-0,-11.9475
-cash,A1_third_plus_nh_white,low,income taxes,-373.6866,-8741,218.0415
+cash,A1_third_plus_nh_white,low,income taxes,-440.0689,-10293,269.3073
 cash,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-268.3304,-6276,90.5883
 cash,A1_third_plus_nh_white,low,"sales, excise, customs, fees",-173.3304,-4054,55.6863
 cash,A1_third_plus_nh_white,low,"capital, property, production taxes",-50.5292,-1182,26.5801
@@ -279,7 +279,7 @@ cash,A1_third_plus_nh_white,low,veterans and military medical,35.7731,837,-22.59
 cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.3985,2372,-21.4575
 cash,A1_third_plus_nh_white,low,capital return,34.1392,799,2.7479
 cash,A1_third_plus_nh_white,low,production gain (subtracted),-0.0000,-0,-11.9475
-cash,A2_us_born_nh_white,low,income taxes,-375.9772,-8794,220.3321
+cash,A2_us_born_nh_white,low,income taxes,-442.7740,-10357,272.0124
 cash,A2_us_born_nh_white,low,payroll taxes and Medicare premiums,-267.1293,-6248,89.3872
 cash,A2_us_born_nh_white,low,"sales, excise, customs, fees",-173.5833,-4060,55.9392
 cash,A2_us_born_nh_white,low,"capital, property, production taxes",-51.4729,-1204,27.5238
@@ -293,7 +293,7 @@ cash,A2_us_born_nh_white,low,veterans and military medical,35.8376,838,-22.6634
 cash,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.5146,2374,-21.5736
 cash,A2_us_born_nh_white,low,capital return,34.2927,802,2.5943
 cash,A2_us_born_nh_white,low,production gain (subtracted),-0.0000,-0,-11.9475
-cash,A3_third_plus_nh_white_at_union_ages,low,income taxes,-355.5212,-8316,199.8762
+cash,A3_third_plus_nh_white_at_union_ages,low,income taxes,-425.2802,-9948,254.5186
 cash,A3_third_plus_nh_white_at_union_ages,low,payroll taxes and Medicare premiums,-241.2655,-5643,63.5235
 cash,A3_third_plus_nh_white_at_union_ages,low,"sales, excise, customs, fees",-160.0104,-3743,42.3663
 cash,A3_third_plus_nh_white_at_union_ages,low,"capital, property, production taxes",-42.4493,-993,18.5002
@@ -307,7 +307,7 @@ cash,A3_third_plus_nh_white_at_union_ages,low,veterans and military medical,23.3
 cash,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",87.1191,2038,-7.1781
 cash,A3_third_plus_nh_white_at_union_ages,low,capital return,37.9425,887,-1.0554
 cash,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),-0.0000,-0,-11.9475
-cash,A4_third_plus_nh_white_stationary,low,income taxes,-360.7837,-8439,205.1387
+cash,A4_third_plus_nh_white_stationary,low,income taxes,-427.2718,-9994,256.5102
 cash,A4_third_plus_nh_white_stationary,low,payroll taxes and Medicare premiums,-251.9659,-5894,74.2238
 cash,A4_third_plus_nh_white_stationary,low,"sales, excise, customs, fees",-168.1263,-3933,50.4822
 cash,A4_third_plus_nh_white_stationary,low,"capital, property, production taxes",-48.5576,-1136,24.6085
@@ -321,7 +321,7 @@ cash,A4_third_plus_nh_white_stationary,low,veterans and military medical,33.0032
 cash,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",96.7128,2262,-16.7719
 cash,A4_third_plus_nh_white_stationary,low,capital return,34.8826,816,2.0045
 cash,A4_third_plus_nh_white_stationary,low,production gain (subtracted),-0.0000,-0,-11.9475
-cash,all_residents_slice,low,income taxes,-320.0902,-7487,164.4451
+cash,all_residents_slice,low,income taxes,-375.7538,-8789,204.9922
 cash,all_residents_slice,low,payroll taxes and Medicare premiums,-245.0320,-5731,67.2899
 cash,all_residents_slice,low,"sales, excise, customs, fees",-156.6004,-3663,38.9563
 cash,all_residents_slice,low,"capital, property, production taxes",-41.5012,-971,17.5520
@@ -335,7 +335,7 @@ cash,all_residents_slice,low,veterans and military medical,30.2027,706,-17.0285
 cash,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",110.6643,2589,-30.7234
 cash,all_residents_slice,low,capital return,36.1181,845,0.7689
 cash,all_residents_slice,low,production gain (subtracted),-0.0000,-0,-11.9475
-cash,mexican_origin_engine,high,income taxes,-143.9005,-3366,-9.0933
+cash,mexican_origin_engine,high,income taxes,-143.9005,-3366,-24.2098
 cash,mexican_origin_engine,high,payroll taxes and Medicare premiums,-163.8040,-3831,-11.8086
 cash,mexican_origin_engine,high,"sales, excise, customs, fees",-118.3541,-2768,0.7110
 cash,mexican_origin_engine,high,"capital, property, production taxes",-25.4012,-594,1.4606
@@ -349,7 +349,7 @@ cash,mexican_origin_engine,high,veterans and military medical,12.9788,304,-0.055
 cash,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352,3.9579
 cash,mexican_origin_engine,high,capital return,61.8578,1447,-0.9117
 cash,mexican_origin_engine,high,production gain (subtracted),-7.8593,-184,0.0000
-cash,mexican_origin_rough,high,income taxes,-152.9938,-3579,0.0000
+cash,mexican_origin_rough,high,income taxes,-168.1103,-3932,0.0000
 cash,mexican_origin_rough,high,payroll taxes and Medicare premiums,-175.6127,-4108,0.0000
 cash,mexican_origin_rough,high,"sales, excise, customs, fees",-117.6432,-2752,0.0000
 cash,mexican_origin_rough,high,"capital, property, production taxes",-23.9406,-560,0.0000
@@ -363,7 +363,7 @@ cash,mexican_origin_rough,high,veterans and military medical,12.9235,302,0.0000
 cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.5090,2445,0.0000
 cash,mexican_origin_rough,high,capital return,60.9461,1426,0.0000
 cash,mexican_origin_rough,high,production gain (subtracted),-7.8593,-184,0.0000
-cash,nh_black_rough,high,income taxes,-189.3786,-4514,36.3848
+cash,nh_black_rough,high,income taxes,-216.0684,-5150,47.9581
 cash,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,18.7453
 cash,nh_black_rough,high,"sales, excise, customs, fees",-123.2033,-2937,5.5602
 cash,nh_black_rough,high,"capital, property, production taxes",-15.9766,-381,-7.9640
@@ -377,7 +377,7 @@ cash,nh_black_rough,high,veterans and military medical,41.5391,990,-28.6156
 cash,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",105.8122,2522,-1.3031
 cash,nh_black_rough,high,capital return,58.5882,1396,2.3579
 cash,nh_black_rough,high,production gain (subtracted),-0.0000,-0,-7.8593
-cash,A1_third_plus_nh_white,high,income taxes,-373.6866,-8741,220.6927
+cash,A1_third_plus_nh_white,high,income taxes,-440.0689,-10293,271.9585
 cash,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-268.3304,-6276,92.7178
 cash,A1_third_plus_nh_white,high,"sales, excise, customs, fees",-173.3304,-4054,55.6872
 cash,A1_third_plus_nh_white,high,"capital, property, production taxes",-50.5292,-1182,26.5886
@@ -391,7 +391,7 @@ cash,A1_third_plus_nh_white,high,veterans and military medical,35.7731,837,-22.8
 cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.0794,3066,-26.5703
 cash,A1_third_plus_nh_white,high,capital return,57.9752,1356,2.9710
 cash,A1_third_plus_nh_white,high,production gain (subtracted),-0.0000,-0,-7.8593
-cash,A2_us_born_nh_white,high,income taxes,-375.9772,-8794,222.9834
+cash,A2_us_born_nh_white,high,income taxes,-442.7740,-10357,274.6637
 cash,A2_us_born_nh_white,high,payroll taxes and Medicare premiums,-267.1293,-6248,91.5166
 cash,A2_us_born_nh_white,high,"sales, excise, customs, fees",-173.5833,-4060,55.9401
 cash,A2_us_born_nh_white,high,"capital, property, production taxes",-51.4729,-1204,27.5323
@@ -405,7 +405,7 @@ cash,A2_us_born_nh_white,high,veterans and military medical,35.8376,838,-22.9141
 cash,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.1174,3067,-26.6083
 cash,A2_us_born_nh_white,high,capital return,58.1823,1361,2.7639
 cash,A2_us_born_nh_white,high,production gain (subtracted),-0.0000,-0,-7.8593
-cash,A3_third_plus_nh_white_at_union_ages,high,income taxes,-355.5212,-8316,202.5274
+cash,A3_third_plus_nh_white_at_union_ages,high,income taxes,-425.2802,-9948,257.1699
 cash,A3_third_plus_nh_white_at_union_ages,high,payroll taxes and Medicare premiums,-241.2655,-5643,65.6529
 cash,A3_third_plus_nh_white_at_union_ages,high,"sales, excise, customs, fees",-160.0104,-3743,42.3672
 cash,A3_third_plus_nh_white_at_union_ages,high,"capital, property, production taxes",-42.4493,-993,18.5087
@@ -419,7 +419,7 @@ cash,A3_third_plus_nh_white_at_union_ages,high,veterans and military medical,23.
 cash,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",115.4826,2701,-10.9735
 cash,A3_third_plus_nh_white_at_union_ages,high,capital return,63.1503,1477,-2.2042
 cash,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),-0.0000,-0,-7.8593
-cash,A4_third_plus_nh_white_stationary,high,income taxes,-360.7837,-8439,207.7899
+cash,A4_third_plus_nh_white_stationary,high,income taxes,-427.2718,-9994,259.1615
 cash,A4_third_plus_nh_white_stationary,high,payroll taxes and Medicare premiums,-251.9659,-5894,76.3532
 cash,A4_third_plus_nh_white_stationary,high,"sales, excise, customs, fees",-168.1263,-3933,50.4831
 cash,A4_third_plus_nh_white_stationary,high,"capital, property, production taxes",-48.5576,-1136,24.6170
@@ -433,7 +433,7 @@ cash,A4_third_plus_nh_white_stationary,high,veterans and military medical,33.003
 cash,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",125.4733,2935,-20.9643
 cash,A4_third_plus_nh_white_stationary,high,capital return,58.8059,1376,2.1402
 cash,A4_third_plus_nh_white_stationary,high,production gain (subtracted),-0.0000,-0,-7.8593
-cash,all_residents_slice,high,income taxes,-320.0902,-7487,167.0964
+cash,all_residents_slice,high,income taxes,-375.7538,-8789,207.6435
 cash,all_residents_slice,high,payroll taxes and Medicare premiums,-245.0320,-5731,69.4194
 cash,all_residents_slice,high,"sales, excise, customs, fees",-156.6004,-3663,38.9572
 cash,all_residents_slice,high,"capital, property, production taxes",-41.5012,-971,17.5606

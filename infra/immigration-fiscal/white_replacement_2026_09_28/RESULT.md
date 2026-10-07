@@ -628,6 +628,9 @@ New in `derived/`: the four `engine_lines_oct05*.json` dumps and `rekey_summary_
 
 ## v6 case (oct07), 2026-10-07
 
+[Round 2, later on 2026-10-07: every group's income taxes moved to the case's own keys. The figures in this section
+use the CPS-dollar rule, now the `cost_cps` arm; the current figures are in "v6 round 2" below.]
+
 [2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`), with both sides on the lineage's 42,752,213 and
 every group on the IPEDS keys for Pell and public higher education, the union costs other residents **$380.3 /
 384.7bn** a year more than the same number of third-plus non-Hispanic whites on the case's accrual basis (A1), **$8,896
@@ -903,3 +906,265 @@ unchanged).
   sept29 ones with the Black lane's `accrual_black.py`, the five oct05 ones, `ipeds_keys.py`, the two oct07 accrual
   runs, the four oct07 dumps, `rekey_sept29.py --case oct07` and `limits_oct07.py`; `--allow-unrun tr2026_path.py`, a
   module the accrual scripts import): **IDENTICAL 77/77, exit 0**.
+
+## v6 round 2: income taxes on the case's own keys (oct05, oct07), 2026-10-07
+
+[2026-10-07, round 2: every group's income taxes now take the case's own keys, and the CPS-dollar rule retires as the
+comparators' central. That rule charged each group only the income tax it reports to the CPS, and charged the $393bn
+the survey misses to no one. On main case v6 the union costs other residents **$431.6 / 436.0bn** a year more than as
+many third-plus non-Hispanic whites on the case's accrual basis (A1), **$10,096 / 10,197 per member**. On the CPS-dollar
+rule the figure was $380.3 / 384.7bn (the v6 section above). Against local whites state by state at union ages it is
+**$528.6 / 531.5bn** (was $430.3 / 433.1bn). On the case's keys the white slice pays $66.4bn more income tax and the
+rough union $15.1bn more, at both ends and on both bases. On accrual the white slice now costs others −$1,200 per member
+at the low end and +$54 at the high end. [CALCULATION: `rekey_sept29.py --case oct07` → `derived/headline_oct07.csv`,
+`rekey_summary_oct07.csv`, `income_tax_keys_oct07.csv`]]
+
+claude-opus-5-5 (prop-d)
+
+**Rules.** These follow the team lead's instruction of 2026-10-07, which the operator approved at 19:44 JST. They cover
+`TAX_CASES`, which are oct05 and oct07; sept29 keeps the CPS-dollar rule.
+- [ASSUMPTION] **Federal income tax takes v4 item 3's key** (`tax_key_heldout_2026_09_28`,
+  `irs_2023_raked_with_cbo_groups`). The key starts from CPS FEDTAX_BC dollars, which are tax before refundable
+  credits; the account counts those credits as spending. The dollars sit in cells of CBO income group × pooled AGI bin,
+  and the cells are raked to CBO's 2022 group shares and IRS's TY2023 bin shares. The key charges the whole national
+  line, $2,403.2bn. A group's share is its part of each cell's dollars times the cell's raked total.
+- [ASSUMPTION] **State and local income tax and other personal tax take the state-liability key** (STATETAX_A, floored
+  at 0). Other personal tax moves from the federal key to the state key, as the case keys it.
+- [ASSUMPTION] **One allocation, shared, at both ends.** A household's tax is split equally over its SPM unit's members.
+  The case itself uses the shared allocation at spec 48 and the personal one (each earner pays their own) at spec 11.
+  The comparators take shared at both ends because the rough keys already split tax over the tax unit and rule 3's
+  benefit-tax rule is shared at both ends. The personal allocation is priced beside the central (below).
+- **No union-only corrections (rule 5).** The case scales the union's own income taxes by its tax-records stack (status
+  corrections), and the rough union does not take that stack. So on the same keys the rough union pays more income tax
+  than the engine's union.
+- The key is built on the published weights, as the case builds it, and normalized on the frame's weights, as every
+  rough key is.
+- The old rules stay as arms: `cost_cps` is the CPS-dollar rule (the central before round 2), and
+  `cost_top_tail_proportional` spreads CPS dollars over the national lines in proportion. The top tail is now inside the
+  central, so `cost_both_arms` is the capital arm, in which capital-side taxes respond.
+
+**Each group's share of the national line** (`derived/income_tax_keys_oct07.csv`). The union is on its identified
+39.71M, NH Black on its own 41.95M, and the other groups on 42.75M. The added people keep the case lane's amounts, which
+are already on the case's keys.
+
+| Group | Federal: CPS rule → case key (personal) | State: CPS rule → case key (personal) |
+|---|---|---|
+| Rough union | 0.0463 → **0.0517** (0.0478) | 0.0480 → **0.0521** (0.0481) |
+| A1 third-plus NH whites | 0.1249 → **0.1501** (0.1517) | 0.1349 → **0.1452** (0.1483) |
+| A3, white rates at union ages | 0.1173 → **0.1434** (0.1232) | 0.1335 → **0.1461** (0.1273) |
+| NH Black | 0.0615 → **0.0711** (0.0719) | 0.0766 → **0.0827** (0.0827) |
+| All-residents slice | 0.1064 → **0.1274** (0.1274) | 0.1181 → **0.1274** (0.1274) |
+
+An average slice's share on the case's key is its population share. On the CPS rule its federal share was 0.835 of that,
+which is the CPS's coverage of the national line. The case's key raises the white slice's federal share by 20.2%, close
+to the average slice's 19.7%. It raises the union's share by 11.6%. A proportional spread would raise every share by
+19.7%, so the key puts the top tail where the top AGI bins are: the union's federal share is 0.0517 against 0.0555 under
+proportional spread, and the white slice's 0.1501 against 0.1495.
+
+**Headline** ($bn a year, spec 48 / 11; per member on 42,752,213, California's on its lineage count):
+
+| Union less whites | oct07, case keys | Per member | CPS-dollar rule (v6 section) | oct05, case keys |
+|---|---|---|---|---|
+| **A1, accrual (central)** | **431.6 / 436.0** | **$10,096 / 10,197** | 380.3 / 384.7 | 425.2 / 428.1 |
+| A3 (white rates at the lineage's ages), accrual | 411.4 / 415.7 | $9,622 / 9,723 | 356.6 / 361.0 | 410.1 / 413.0 |
+| A3, cash set | 419.6 / 425.9 | $9,815 / 9,963 | 364.9 / 371.2 | 419.2 / 423.5 |
+| **A1, cash set (raw cash at white ages)** | **263.5 / 269.8** | **$6,163 / 6,312** | 212.2 / 218.6 | 259.2 / 263.6 |
+| **Local whites state by state, union ages, accrual** | **528.6 / 531.5** | **$12,365 / 12,431** | 430.3 / 433.1 | 527.5 / 528.9 |
+| Local whites, cash set | 554.1 / 559.0 | $12,962 / 13,075 | 455.8 / 460.6 | 554.2 / 557.0 |
+| **California, union ages, accrual** | **247.9 / 248.0** | **$17,774 / 17,780** | 198.5 / 198.5 | 247.4 / 247.0 |
+| Against an all-residents slice, accrual | 261.8 / 267.2 | $6,125 / 6,249 | 221.3 / 226.6 | 256.3 / 260.2 |
+| Against an all-residents slice, cash set | 162.2 / 169.5 | $3,794 / 3,965 | 121.6 / 129.0 | 158.7 / 164.0 |
+
+[CALCULATION: `derived/headline_oct07.csv`, `headline_oct05.csv`, `rekey_summary_oct07.csv`, `rekey_summary_oct05.csv`,
+`state_summary_oct07.csv`; the CPS-dollar column is each file's `cost_cps` arm, which reproduces the v6 section]
+
+- **Where the move comes from.** The same amounts hold on every basis and at both ends.
+  - A1's gap rises by $51.27bn. The white slice pays $66.38bn more: federal +$60.67bn, state +$5.52bn, other personal
+    +$0.20bn.
+  - The rough union pays $15.12bn more on its identified 39.71M: +$12.89bn, +$2.17bn and +$0.06bn.
+  - By line, the gap moves +$47.77bn on federal tax, +$3.35bn on state tax and +$0.14bn on other personal tax.
+  - A3 rises by $54.71bn, the all-residents gap by $40.55bn and local whites by $98.37bn.
+  - Attribution step 5 (`attribution_oct07.csv`) records each group's move, gated to minus its move in the three
+    income-tax lines (1e-9). Steps 1–4 keep the CPS-dollar rule, so step 4 is the v6 section's case.
+- **State by state** (accrual, low end; per union member in the region):
+  - California's gap rises by $49.49bn to $247.9bn ($17,774). Inside it, Los Angeles's is $108.5bn ($22,743).
+  - Texas's gap rises by $24.52bn to $116.8bn ($10,889).
+  - Elsewhere it rises by $24.37bn to $163.9bn ($9,067).
+  - California's third-plus whites at union ages pay $53.5bn more on the case's keys, most of it from the raking, which
+    lifts their federal key 9.9% (below, "The move in its parts"). [CALCULATION: `state_summary_oct07.csv`,
+    `income_tax_parts_oct07.csv`]
+- **The personal allocation, beside the central.** A1's gap is $448.7 / 453.1bn, +$17.1bn: the union pays $11.6bn
+  less and the white slice $5.6bn more. A3's gap is $364.1 / 368.4bn, −$47.2bn, because white rates at the union's
+  young ages put part of each household's tax on its children under the shared allocation and none under the personal
+  one. The NH Black cost falls $1.8bn, and the all-residents gap rises $11.6bn. [CALCULATION: `income_tax_keys_oct07.csv`,
+  personal less shared amounts. The sum is exact because each income-tax line's response is 1; a direct run with the
+  personal key agrees to 1e-4.]
+- **The rough union and the engine's.** On the case's keys the rough union is 2.3% below the engine's at the low end
+  ($380.3bn against $389.1bn) and 5.0% below at the high end ($438.3bn against $461.5bn). On the CPS-dollar rule it
+  was 1.6% above and 1.8% below. Its income taxes exceed the engine union's by $11.9 / 23.8bn on accrual (federal
+  $10.0 / 19.7bn, state $1.8 / 4.1bn) for two reasons:
+  - The case scales the union's taxes by the tax-records stack, which the rough union does not take (rule 5).
+  - At the high end, the case's personal allocation lowers the union's taxes by $11.6bn more.
+
+  Against the engine's union A1 is $440.4 / 459.2bn. [CALCULATION: `rekey_summary_oct07.csv`
+  `delta_vs_engine_union_bn`; the legacy lane's `group_lines_oct07.csv`, income-tax rows]
+- **The arms.** Beside the central:
+  - The proportional spread gives A1 $421.4 / 425.8bn.
+  - The CPS-dollar rule gives $380.3 / 384.7bn.
+  - With capital-side taxes responding, A1 is $503.0 / 508.5bn. The old "both arms" figure was $492.8 / 498.3bn.
+  - On the September 27 rough keys with the case's income-tax keys, A1 is $425.1 / 429.5bn; with the comparators'
+    hospital term it is $434.3 / 438.6bn.
+  - The IPEDS keys' parts and the θ arms' moves do not change.
+
+  [CALCULATION: `rekey_summary_oct07.csv`, `ipeds_terms_oct07.csv`, `limits_oct07.csv`]
+- **What the CPS misses.** Each row of `cps_tax_totals_<case>.csv` names its variable, its placement and the key it is
+  the base of, on the CPS's published person weights and on audit row 4's, the rough re-key's frame.
+  - Like for like, on the published weights and on the record, the CPS's FEDTAX_BC ($1,981.1bn) falls short of the
+    national federal line ($2,403.2bn, before refundable credits as FEDTAX_BC is) by **$422.1bn**. Its STATETAX_A,
+    floored at 0, falls short of the state line by **$45.4bn**.
+  - The rough keys fall short by $393.0bn and $38.5bn. They split each tax unit's tax equally over its members, whose
+    person weights average higher than the head's, which carries the tax on the record. The split adds $29.9bn to
+    FEDTAX_AC's total ($2,010.2bn against $1,980.3bn on the record) and $6.9bn to STATETAX_A's. The credit concept adds only $0.8bn on the record (FEDTAX_BC
+    $1,981.1bn against FEDTAX_AC floored $1,980.3bn).
+  - On row 4's weights, the frame the CPS-dollar rule ran on, the rough keys leave $395.9bn and $39.4bn uncharged, and
+    the like-for-like shortfalls are $425.3bn and $46.4bn.
+
+  [CALCULATION: `cps_tax_totals_oct07.csv`]
+- **The case's own W stays on the CPS-dollar rule** (measure only, the lead's instruction). The case prices 1,082,721
+  lineage members as third-plus whites through `white_lines.py` and `band_lines.py`, at this library's sept29 default.
+  - At the shared allocation and the G3-rate mix (v6's placement), they would pay $1,614.75 more each on the case's
+    keys. The case would then be **$1.748bn lower at both ends and on both bases**: $387.33 / 459.73bn, and the cash set
+    $305.65 / 383.62bn.
+  - At the personal allocation they would pay $1,003.43 less each, which moves the case by +$1.086bn. The mix is young,
+    and under the shared allocation children carry part of their household's tax.
+  - At the identified G3+'s ages (v5's placement), the moves are −$1,565.54 and +$999.13 each; at whites' own ages
+    −$1,552.72 and −$1,682.93.
+  - No capital-return component keys an income-tax line.
+
+  [CALCULATION: `limits_oct07.py` → `derived/limits_oct07.csv`, rows `case_w_income_tax_keys` and
+  `case_w_income_tax_keys_personal`]
+
+**The move in its parts** (the team lead's request of 2026-10-07). `income_tax_parts.py` walks every slice from the
+CPS-dollar rule to the case's keys, one line's key at a time. The cost is linear in the three income-tax lines, so the
+parts add up and their order does not matter; they are the same at both ends and on both bases (to $0.0001bn). On
+oct07, $bn; in a slice's column a negative part means it pays more tax:
+
+| Part | Rough union | A1 whites | A1's gap | Local whites (Part F) | Local gap |
+|---|---|---|---|---|---|
+| (a) the top tail spread in proportion to the rough keys | −24.09 | −65.17 | +41.08 | −74.64 | +50.55 |
+| (b1) federal: FEDTAX_AC → FEDTAX_BC, on the tax-unit split | −0.25 | +0.11 | −0.35 | +0.08 | −0.32 |
+| (b2) federal and state: the tax unit's split → the SPM unit's | −1.34 | +0.86 | −2.21 | −8.25 | +6.90 |
+| (b3) other personal tax: the federal key → the state key | +0.03 | +0.04 | −0.01 | +0.09 | −0.06 |
+| (c) federal: the IRS TY2023 and CBO 2022 raking on FEDTAX_BC | +10.53 | −2.22 | +12.76 | −30.77 | +41.30 |
+| **All** | **−15.12** | **−66.38** | **+51.27** | **−113.49** | **+98.37** |
+
+Two cells are rounded so the parts add to the totals: A1's gap (c) is 12.754 and the local gap (b1) −0.326. (a) on
+A1's gap is +37.24 federal, +3.69 state and +0.15 other personal. The rough union's parts are its 39.71M identified
+members'; the 3.04M added people keep the case lane's amounts, which are already on the case's keys. After (a) a slice is at the proportional arm: A1
+$421.4 / 425.8bn, local whites $480.8 / 483.6bn. oct05's parts are the same for the union, A1 and the all-residents
+slice; for the slices taken at the union's ages (A3 and Part F's whites), which v6 moved, they differ by at most $0.23bn
+a part. [CALCULATION: `income_tax_parts.py --case oct07` → `derived/income_tax_parts_oct07.csv`,
+`income_tax_bins_oct07.csv`; `--case oct05` the same]
+- **(b1) ends a double count, and it is small.** The national line is NIPA table 3.4 line 3 (the receipts builder's
+  `3.4/3`). Since BEA's 2015 annual revision the full value of federal refundable credits is a social benefit, the
+  refundable_tax_credits line, and "estimates of personal current taxes paid to the federal government will be revised
+  up by an equal amount to reflect the total tax liability of taxpayers (which does not include the refunds)". So the
+  line is tax before refundable credits, FEDTAX_BC's concept. FEDTAX_AC is FEDTAX_BC less EIT_CRED and ACTC_CRD, exact
+  on every record. The rough key therefore took the credits that offset a group's liability out of its receipt key,
+  while the spending line charged them to it (45% of it is keyed on EITC + ACTC). The double count is small because the
+  CPS's refundable credits go almost all to tax units with no liability before them: the union's offsetting credits are
+  $0.28bn of its $15.9bn of EITC and ACTC, A1's $0.11bn of $4.8bn. The case's own key, FEDTAX_BC, matches the line.
+  [SOURCE: S. H. McCulla and S. Smith, "Preview of the 2015 Annual Revision of the National Income and Product
+  Accounts", Survey of Current Business, June 2015,
+  https://apps.bea.gov/scb/pdf/2015/06%20June/0615_preview_of_2015_annual_revision_of_national_income_and_product_accounts.pdf;
+  BEA FAQ 1465, https://www.bea.gov/help/faq/1465; DATA: CPS ASEC 2025 data dictionary,
+  `sources/immigration-fiscal/data/external/cps_asec_doc/ddl25.txt`, FEDTAX_AC and FEDTAX_BC;
+  `full_account_receipts_2026_09_20/builder.py`, federal_income_tax; CALCULATION: `income_tax_bins_oct07.csv`
+  `cps_offset_credits_bn`, `cps_eitc_actc_bn`]
+- **(b2) and (b3) match the case's conventions.** (b2) moves the split from the tax unit to the SPM unit, the case's
+  shared allocation; each key's concept is unchanged. The state key's concept does not change at all: both the rough
+  key and the case's are STATETAX_A floored at 0, so the state line has (a) and (b2) only.
+- **Why local whites move $47.1bn more than A1.**
+  - (c), +$28.5bn, a state effect. California's and Texas's third-plus whites at union ages have 35.3% and 33.7% of
+    their FEDTAX_BC at AGI of $500,000 or more, against A1's 25.8% (at $1M or more, 18.8% and 25.9% against 14.9%). The
+    raking, which moves tax toward the top bins, lifts their federal key 9.9% and 13.1%, A1's 0.6% and A3's (national
+    whites at union ages) 0.3%.
+  - (a), +$9.5bn: their CPS tax is larger ($345.1bn against $300.1bn).
+  - (b2), +$9.1bn, an age effect. At union ages the SPM unit's split puts more of a household's tax on its young
+    members; A3 moves −$7.1bn in (b2) as well.
+- **Part F uses the national key.** `state_rows` never rakes. Each white piece's federal share is its records' sum of
+  the one national raked vector over the frame's total (1e-12), and its weights sum to its persons (1e-9). The scaling
+  from CPS dollars to the national line enters once: (a)'s federal part is 0.19723 times the slice's CPS dollars for
+  every slice (A1 −$59.20bn on $300.14bn, local whites −$68.06bn on $345.05bn, the union −$21.96bn on $111.33bn).
+
+**Gates.**
+- `rekey_sept29.py --case oct07` passes 323 gates and exits 0; `--case oct05` passes 292. The round-2 gates, in
+  `case_tax_keys()` and attribution step 5:
+  - The benchmark lane's frame is the rough frame row for row, and its civilians and union are the rough frame's.
+  - IRS's TY2023 bin shares are heldout's `bins.csv` (1e-12).
+  - On the published weights, the union's raked shares are heldout's translation (its CBO-reweighted share plus the
+    raked change) at both allocations, to 1e-12: 0.053036 shared and 0.049328 personal, after 167 and 168 raking
+    iterations. Each vector sums to 1 over civilians.
+  - The union's unraked federal and state shares are `model.json`'s cells (1e-9).
+  - Each group's step-5 change is minus its change in the three income-tax lines (1e-9), with the same lines in each
+    run.
+  - Each group's attribution step 4 equals its `cost_cps` arm, and step 5 equals the case's run.
+- `limits_oct07.py` passes 61 gates and exits 0. The new gates:
+  - The three income-tax nationals are the sept29 dumps', which W's lines come from.
+  - W's move is minus its three lines' move at both allocations.
+  - Positive controls: W's CPS-rule income taxes per person are `white_lines.json`'s at the identified G3+'s ages and
+    `band_lines.json`'s at the G3-rate mix (1e-9 relative).
+- The library's importers outside this propagation, run read-only into scratch at 20:38, rebuild their files byte for
+  byte: `white_lines.py`, `band_lines.py` and `compare.py` (whose `audit.json` differs only in this library's source
+  hash). Each runs at the sept29 default, which round 2 leaves alone.
+- `income_tax_parts.py` passes 78 gates per case and exits 0 (nothing is written on a failure):
+  - FEDTAX_BC = FEDTAX_AC + EIT_CRED + ACTC_CRD on every record, exactly.
+  - The benchmark frame is the rough frame row for row. The SPM-unit split of FEDTAX_BC is the library's shared
+    federal-liability key, and on the published weights it gives the union `model.json`'s cell, 0.057399419 (1e-9).
+    The national raked vector is the library's.
+  - Each slice's CPS, proportional and central runs are the library's own (1e-9) and `rekey_summary`'s `cost_cps`,
+    `cost_top_tail_proportional` and `cost` (5e-5); the central state rows are `state_summary`'s (5e-5).
+  - Each of the 128 parts is minus its lines' move times their responses (1e-9), so the parts are linear and add up.
+  - Part F: each white piece's federal key share is its records' sum of the one national raked vector over the frame's
+    total (1e-12), and its weights sum to its persons (1e-9 relative).
+  - The AGI bins split each record's FEDTAX_BC as the raking does; their sum is the shared key (1e-6).
+
+**Files.** New in `derived/`: `income_tax_keys_oct05.csv`, `income_tax_keys_oct07.csv`, `cps_tax_totals_oct05.csv` and
+`cps_tax_totals_oct07.csv`; from `income_tax_parts.py`, `income_tax_parts_oct05.csv`, `income_tax_parts_oct07.csv`
+(each figure's CPS-rule cost, its eight parts, and its proportional and central costs, per basis and end) and
+`income_tax_bins_oct05.csv`, `income_tax_bins_oct07.csv` (per slice, its CPS dollars on each key, its offsetting
+credits, its FEDTAX_BC in the top AGI bins, and its share of each key). `cps_tax_totals` names the case, frame, weights,
+line, CPS variable, placement and key in each row, beside the national line, the CPS total, the gap and their ratio;
+it includes FEDTAX_AC floored on the record, the rough key's concept. Changed, for oct05 and oct07: `rekey_summary`
+(it gains `cost_cps` and `delta_like_for_like_cps_bn`), `rekey_buckets`, `state_summary`, `state_buckets`,
+`headline`, `rule_alternatives`, `attribution` (step 5), `attribution_buckets` and `ipeds_terms`; also
+`limits_oct07.csv`. The four dumps per case, the accrual files and `v4_group_terms` do not move. The reproduce list is
+the v6 section's, then the parts, which read `rekey_summary` and `state_summary`:
+
+```sh
+L=infra/immigration-fiscal/white_replacement_2026_09_28
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/income_tax_parts.py --case oct05
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/income_tax_parts.py --case oct07
+```
+
+### Log (round 2; times from `date` or the files' clock)
+
+- 2026-10-07 19:44 JST: the operator approved the team lead's round-2 instruction (relayed by the lead).
+- 19:57:59–19:58:45 (file times): the key and allocation prototypes, in scratch.
+- 20:10:16: snapshots of every lane this round touches.
+- 20:17:07 and 20:17:40 (log times): `--case oct05` (292 gates) and `--case oct07` (323 gates) ran in place, exit 0;
+  `limits_oct07.py` at 20:18:41 (30 gates).
+- 20:30:55: W measured in scratch.
+- 20:38:26–20:38:38 (by `date`): the three outside importers checked in scratch.
+- 20:42:46–20:42:51 (by `date`): `limits_oct07.py` gained W's income-tax move and ran in place (61 gates). Against
+  the 20:18 file, its 61 rows are unchanged and 24 rows are added.
+- 21:05:15–21:07:28 (by `date`): `rerun_lane.py --online` with the v6 section's 27 commands (`--allow-unrun
+  tr2026_path.py`): **IDENTICAL 81/81, exit 0**, the 77 v6 files and the four new ones.
+- After the team lead asked for the move in its parts: 21:41:30–21:41:50 (by `date`), `income_tax_parts.py --case
+  oct07` in place, 78 gates, exit 0, peak resident memory 1.70 GB.
+- 21:44:32–21:44:51 (by `date` and the logs' clock): the library's `cps_tax_totals()` relabelled (the named columns
+  and the FEDTAX_AC row); `rekey_sept29.py --case oct05` and `--case oct07` in place, exit 0. Against the 21:07
+  rerun's copy, only the two `cps_tax_totals` files changed.
+- 21:44:51–21:45:15: `income_tax_parts.py --case oct05` in place, 78 gates, exit 0.
+- 21:46:42–21:49:49 (by `date`): `rerun_lane.py --online` with the 29 commands (the v6 section's 27 and the two parts
+  runs): **IDENTICAL 86/86, exit 0**, round 2's 81 files, the four parts and bins files and the new script.

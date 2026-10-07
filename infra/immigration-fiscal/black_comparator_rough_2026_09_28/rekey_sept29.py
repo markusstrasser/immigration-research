@@ -40,6 +40,14 @@ library's oct07 rules: the NH Black group's accrual on the 2026 separate-funds p
 accrual_black.py --case oct07), retiree health through the national totals every group's keys share, the union's side
 with the items' union parts and the added people at their measured ages. Run it after the white lane's oct07 dumps and
 accrual files.
+
+On oct05 and oct07 (round 2, 2026-10-07) every group's income taxes are on the case's own keys (the library's
+docstring): federal income tax on v4 item 3's IRS-raked key, state and other personal taxes on the state-liability
+key, the shared allocation. The summary carries the rules before it beside the central: cost_cps (the CPS-dollar
+rule, the earlier central), cost_top_tail_proportional, cost_capital_taxes_respond (the central with the capital-side
+lines at 1) and cost_both_arms (the same column: the top tail is inside the central). The attribution adds step 5
+(the case's keys). income_tax_keys_<case>.csv gives each group's income-tax shares at both allocations and under the
+old rules.
 """
 from __future__ import annotations
 
@@ -129,7 +137,7 @@ def main(case="sept29"):
     W.UNION_SC = R.scenario("mex")
 
     summary, programs, shares = [], [], {}
-    res, alt = {}, {}
+    res, alt, arms = {}, {}, {}
     for b in BASES:
         for end in ENDS:
             for lab, g in GROUPS.items():
@@ -137,6 +145,12 @@ def main(case="sept29"):
                 res[(b, lab, end)] = W.run29(sc, end, b)
                 # the alternative to rule 4: the group at national prices and the September 27 road keys
                 alt[(b, lab, end)] = W.run29(sc, end, b, rule4="union")[0]["cost"]
+                if W.TAX_ON:     # round 2: the income-tax rules before it, and the capital arm (the library's main)
+                    c = res[(b, lab, end)][0]["cost"]
+                    cap = W.run29(sc, end, b, cap=True)[0]["cost"]
+                    arms[(b, lab, end)] = {"cost_cps": c if sc == "eng" else W.run29(sc, end, b, "cps")[0]["cost"],
+                                           "cost_top_tail_proportional": c if sc == "eng" else W.run29(sc, end, b, "prop")[0]["cost"],
+                                           "cost_capital_taxes_respond": cap, "cost_both_arms": cap}
     W.stop_if_failed()
     # The library's alternatives, and two of this lane's: the NH Black benefit-tax rate at the uncalibrated proxy, and
     # every NH Black member's career starting at 21
@@ -152,11 +166,14 @@ def main(case="sept29"):
               {**W.ACC, "black": W.acc_entry(rows[("nh_black", "all_at_21", "payable")])})]
     alt_rows = W.alternatives(groups, extra)
     attr_rows = W.attribution(groups)
-    final = {"4": "accrual"} if W.LINEAGE_ON else {"2": "cash", "3": "accrual"}    # the steps that are the case's runs
-    for r in attr_rows:
-        if r["step"] in final:
-            want = res[(final[r["step"]], r["group"], r["end"])][0]["cost"]
+    for r in attr_rows:     # W.FINAL_STEPS: the steps that are the case's runs
+        if r["step"] in W.FINAL_STEPS:
+            want = res[(W.FINAL_STEPS[r["step"]], r["group"], r["end"])][0]["cost"]
             W.gate(f"attribution step {r['step']} is the {W.CASE} run {r['group']} {r['end']}", abs(float(r["cost_bn"]) - want) < 5e-5)
+        if W.TAX_ON and r["step"] == "4":
+            want = arms[("accrual", r["group"], r["end"])]["cost_cps"]
+            W.gate(f"attribution step 4 is the {W.CASE} run on the CPS-dollar rule {r['group']} {r['end']}",
+                   abs(float(r["cost_bn"]) - want) < 5e-5)
     for end in ENDS:
         want = float(ref.query("group == 'nh_black_rough' and end == @end").cost.iloc[0])
         got = W.STEP_COST[("a", "nh_black_rough", end)][0]
@@ -177,7 +194,10 @@ def main(case="sept29"):
                         "per_member_over_rough_union": f"{pm / (rough['cost'] * 1e9 / rough['population']):.4f}",
                         "cost_at_national_prices": f"{alt[(b, lab, end)]:.4f}",
                         "per_member_at_national_prices_over_engine_union":
-                            f"{alt[(b, lab, end)] / r['population'] / (eng['cost'] / eng['population']):.4f}"})
+                            f"{alt[(b, lab, end)] / r['population'] / (eng['cost'] / eng['population']):.4f}",
+                        **{k: f"{v:.4f}" for k, v in arms.get((b, lab, end), {}).items()},
+                        **({"delta_like_for_like_cps_bn": f"{arms[(b, 'mexican_origin_rough', end)]['cost_cps'] - arms[(b, lab, end)]['cost_cps']:.4f}",
+                            "delta_like_for_like_bn": f"{rough['cost'] - r['cost']:.4f}"} if W.TAX_ON else {})})
         if end == "low":
             cost, gap = by_program(rows, r["pop_share"])
             for k in list(BUCKETS) + [PER_HEAD]:
@@ -204,6 +224,8 @@ def main(case="sept29"):
     write(f"rule_alternatives_{W.CASE}.csv", alt_rows)
     write(f"attribution_{W.CASE}.csv", attr_rows)
     write(f"attribution_buckets_{W.CASE}.csv", W.attribution_buckets(groups))
+    if W.TAX_ON:
+        write(f"income_tax_keys_{W.CASE}.csv", W.tax_key_rows(groups))
     s = pd.DataFrame(summary)
     print(s[["basis", "group", "end", "cost", "cost_per_member", "gap", "cost_ex_old_age", "capital",
              "per_member_over_engine_union", "per_member_over_rough_union"]].to_string(index=False))

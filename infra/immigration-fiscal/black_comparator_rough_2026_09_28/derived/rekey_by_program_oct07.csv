@@ -12,7 +12,7 @@ accrual,mexican_origin_engine,veterans and military medical,15.4978,363,,
 accrual,mexican_origin_engine,"per head: government, defense, interest, roads",79.7266,1865,,
 accrual,mexican_origin_engine,capital return,36.5816,856,,
 accrual,mexican_origin_engine,production gain (subtracted),-11.9096,-279,,
-accrual,mexican_origin_rough,income taxes,-152.6380,-3570,,
+accrual,mexican_origin_rough,income taxes,-167.7545,-3924,,
 accrual,mexican_origin_rough,payroll taxes and Medicare premiums,-177.5795,-4154,,
 accrual,mexican_origin_rough,"sales, excise, customs, fees",-117.4051,-2746,,
 accrual,mexican_origin_rough,"capital, property, production taxes",-23.8533,-558,,
@@ -25,7 +25,7 @@ accrual,mexican_origin_rough,veterans and military medical,13.0249,305,,
 accrual,mexican_origin_rough,"per head: government, defense, interest, roads",79.7015,1864,,
 accrual,mexican_origin_rough,capital return,36.9488,864,,
 accrual,mexican_origin_rough,production gain (subtracted),-11.9096,-279,,
-accrual,nh_black_rough,income taxes,-183.7848,-4381,,
+accrual,nh_black_rough,income taxes,-210.4746,-5017,,
 accrual,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,-4633,,
 accrual,nh_black_rough,"sales, excise, customs, fees",-123.2033,-2937,,
 accrual,nh_black_rough,"capital, property, production taxes",-15.9766,-381,,
@@ -51,7 +51,7 @@ cash,mexican_origin_engine,veterans and military medical,15.4978,363,14.2993,334
 cash,mexican_origin_engine,"per head: government, defense, interest, roads",79.7266,1865,37.9866,889
 cash,mexican_origin_engine,capital return,36.5816,856,,
 cash,mexican_origin_engine,production gain (subtracted),-11.9096,-279,,
-cash,mexican_origin_rough,income taxes,-155.0559,-3627,-215.6520,-5044
+cash,mexican_origin_rough,income taxes,-170.1724,-3980,-200.5355,-4691
 cash,mexican_origin_rough,payroll taxes and Medicare premiums,-177.5795,-4154,-64.1620,-1501
 cash,mexican_origin_rough,"sales, excise, customs, fees",-117.4051,-2746,-36.5116,-854
 cash,mexican_origin_rough,"capital, property, production taxes",-23.8533,-558,-116.7532,-2731
@@ -64,7 +64,7 @@ cash,mexican_origin_rough,veterans and military medical,13.0249,305,16.7723,392
 cash,mexican_origin_rough,"per head: government, defense, interest, roads",79.7015,1864,38.0138,889
 cash,mexican_origin_rough,capital return,36.9488,864,,
 cash,mexican_origin_rough,production gain (subtracted),-11.9096,-279,,
-cash,nh_black_rough,income taxes,-189.3786,-4514,-174.4122,-4157
+cash,nh_black_rough,income taxes,-216.0684,-5150,-147.7224,-3521
 cash,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,-4633,-42.8729,-1022
 cash,nh_black_rough,"sales, excise, customs, fees",-123.2033,-2937,-27.8414,-664
 cash,nh_black_rough,"capital, property, production taxes",-15.9766,-381,-110.7723,-2640

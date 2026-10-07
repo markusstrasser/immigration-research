@@ -99,6 +99,35 @@ shares. On v6 (FEE_CASES) item 4's tuition term is added on both sides, and its 
 sept29 keeps the September 27 keys, because lanes outside this one gate against its outputs.
 ipeds_terms_<case>.csv gives each group's cost on the rough keys and each part's move, gated to add up.
 
+The case's own income-tax keys (round 2, the team lead's instruction of 2026-10-07, approved by the operator). On v5
+and v6 (TAX_CASES) every group, the rough union too, takes its income taxes on the keys the case gives the union, so
+the CPS-dollar rule (a group charged the income tax it reports to the CPS, the top tail the survey misses charged to
+no one) retires as the central:
+  - federal_income_tax: v4 item 3's key (tax_key_heldout_2026_09_28, irs_2023_raked_with_cbo_groups): the
+    federal_liability key's dollars (CPS FEDTAX_BC, tax after nonrefundable and before refundable credits) in each CBO
+    income group x pooled AGI bin cell (14 cells a group), the cells raked to CBO's 2022 group shares of individual
+    income tax and IRS's TY2023 shares of income tax after credits by AGI bin. A group's share is the sum over cells
+    of the raked cell total x the group's part of the cell's key dollars;
+  - state_local_income_tax and other_personal_tax: the state_liability key (STATETAX_A floored at 0). Other personal
+    tax moves from the federal key to the state key, as the case keys it;
+  - the allocation is the shared one (the SPM unit's tax split equally over its members), at both ends; the rough
+    keys already split tax over the tax unit, so the personal allocation would add a second change. Each group's
+    shares at both allocations are in income_tax_keys_<case>.csv;
+  - the key is built on the published weights, as the case builds it, and normalized on the frame's weights as every
+    rough key is. No group takes a union-only correction (rule 5): item 3 is now every group's key, not the union's.
+The old rules are arms in the same files: cost_cps (the CPS-dollar rule) and cost_top_tail_proportional (CPS
+income-tax dollars spread over the national line in proportion). cost_capital_taxes_respond is the central with the
+capital-side lines at 1; the top tail is inside the central, so cost_both_arms is that column. The attribution's steps
+1-4 keep the CPS-dollar rule and step 5 moves every group to the case's keys. cps_tax_totals_<case>.csv gives the
+CPS's federal and state income-tax dollars against the national lines on the published and row-4 weights (the rough
+re-key's frame), each row naming its variable, its placement (on the record or split over the tax unit) and its key.
+income_tax_parts.py splits the move from the CPS-dollar rule to the case's keys into its parts.
+Gates (case_tax_keys()): the benchmark lane's frame (external_benchmarks_2026_09_24, FEDTAX_BC, AGI and the CBO income
+fields) is the rough frame row for row; IRS's bin shares are heldout's bins.csv (1e-12); the union's raked shares are
+heldout's translation, its reweighted share plus the raked share change, at both allocations, and each vector sums
+to 1 over civilians (1e-12); the union's unraked federal and state shares are model.json's cells (1e-9). The
+attribution gates each group's step-5 change to minus its change in the three income-tax lines (1e-9).
+
 Gates (exit 1, nothing written):
   - the dumps are the case: their costs are main_case_bands.csv's adopted and cash_set rows (5e-5, printed at 4
     decimals), and the lane's cost formula on the engine's amounts reproduces each dump's cost (1e-9);
@@ -126,7 +155,9 @@ engine_lines.cjs oct07 / oct07_cash / oct07_union / oct07_union_cash and accrual
 from __future__ import annotations
 
 import csv
+import importlib.util
 import json
+import re
 import sys
 import zipfile
 from contextlib import ExitStack, contextmanager
@@ -177,6 +208,18 @@ NEW_RECEIPTS = {"housing_enterprise_surplus": "house", "tenant_occupied_property
 PARENT_KEYS = {"housing_enterprise_surplus": "pc", "tenant_occupied_property": "capinc"}
 BENEFIT_TAX_RULE = "shared"   # rule 3: the shared rule at both ends; "by_end" (rule 3b's alternative): the case's per end
 REL_UNION = 0.5233824966647924     # the union's measured relative benefit-tax rate (pension lane, accrual_white.py)
+# Round 2 (2026-10-07): the cases whose central keys every group's income taxes on the case's own keys (module
+# docstring), the allocation the comparators take, and each income-tax line's key
+TAX_CASES = ("oct05", "oct07")
+TAX_ALLOC = "shared"
+CASE_TAX_KEY = {"federal_income_tax": "fit_case", "state_local_income_tax": "sit_case", "other_personal_tax": "sit_case"}
+HELD = FISCAL / "tax_key_heldout_2026_09_28"
+BENCH = FISCAL / "external_benchmarks_2026_09_24"
+CBO_SPEC = "individual_inc_tax=individual_inc_tax_gross|2022"    # the CBO margin heldout.py rakes to
+TAX_COLS = ["PH_SEQ", "TAX_ID", "SPM_ID", "MARSUPWT", "A_AGE", "PRPERTYP", "PRCITSHP", "PENATVTY", "PEFNTVTY", "PEMNTVTY",
+            "PRDTHSP", "pwwgt0", "AGI", "FEDTAX_BC", "FEDTAX_AC", "STATETAX_A", "WSAL_VAL", "PTOTVAL", "SSI_VAL", "PAW_VAL",
+            "CAP_VAL", "MCARE"]
+TAX_K: dict = {}     # the case's key vectors on the rough frame's rows (case_tax_keys()), added to R.K on TAX_CASES
 
 
 def use_case(case):
@@ -186,6 +229,7 @@ def use_case(case):
     part of every line, of the capital return and of the production term (FULL less DUMP)."""
     global CASE, CASE_LANE, DUMP, FULL, LIN, LINEAGE, META, PA, SPM, RD, BANDS, ORACLE, SP_LINES, FP, U5, RHO, GAS, LIC
     global HWY_N, SE_SHARE, PART_A_SHARE, STEPS, LINEAGE_ON, UNION_LINES, ITEM_COMPONENTS, IPEDS_ON, FEES_ON, IK
+    global TAX_ON, BOTH_TOP, FINAL_STEPS
     if case not in CASES:
         raise SystemExit(f"[BLOCKED] unknown case {case!r}: one of {', '.join(CASES)}")
     CASE, CASE_LANE = case, FISCAL / CASES[case]
@@ -224,6 +268,16 @@ def use_case(case):
     IK = json.loads((DER / "ipeds_keys.json").read_text()) if IPEDS_ON else None
     if IPEDS_ON:     # step 1 leaves the September 27 dump, and its keys, for the case's
         STEPS = [(s, t + (IPEDS_STEP_FEES if FEES_ON else IPEDS_STEP) if s == "1" else t, b) for s, t, b in STEPS]
+    # Round 2: the case's income-tax keys are the central (top "case"); the earlier steps keep the CPS-dollar rule, and
+    # the last step moves every group to the case's keys. On those keys the top tail is inside the central, so the
+    # both-arms reading is the capital arm on the central.
+    TAX_ON = case in TAX_CASES
+    BOTH_TOP = None if TAX_ON else "prop"
+    for k in ("fit_case", "sit_case", "fit_case_personal", "fit_case_shared", "sit_case_personal", "sit_case_shared"):
+        R.K.pop(k, None)
+    if TAX_ON:
+        STEPS = STEPS + [STEP_TAX]
+    FINAL_STEPS = ({"5": "accrual"} if TAX_ON else {"4": "accrual"} if LINEAGE_ON else {"2": "cash", "3": "accrual"})
 
 
 def lineage_part(full, union):
@@ -282,6 +336,197 @@ def _keyed_meps(g, cw, total, ages, mwt=None):
 
 R.keyed = _keyed_meps       # R.scenario and state_white.white_piece look it up at call time
 R.KTOT["rent"] = float((R.w * R.K["rent"]).sum())
+_line_share27 = R.line_share
+
+
+def _line_share_case(sc, side, lid, top="cps"):
+    """rekey_white.line_share, and top 'case' (round 2): the income-tax lines at the case's own keys (CASE_TAX_KEY),
+    every other line as before."""
+    if top == "case":
+        if side == "receipts" and lid in CASE_TAX_KEY:
+            return sc["share"][CASE_TAX_KEY[lid]]
+        top = "cps"
+    return _line_share27(sc, side, lid, top)
+
+
+R.line_share = _line_share_case     # run29 and v4_terms look it up at call time
+
+
+# ------------------------------------------------------------------ round 2: the case's income-tax keys
+def irs_2023():
+    """IRS SOI TY2023 Table 1.2, income tax after credits by its 19 AGI bins, from the held-out lane's read of the
+    table (reads/irs_table_1_2_ty2023.md; its _cache spreadsheet is not on this machine): bin labels and shares."""
+    txt = (HELD / "reads/irs_table_1_2_ty2023.md").read_text()
+    rows = re.findall(r"^\| ([^|]+?) \| ([\d,]+) \| ([\d,]+) \| [\d.]+% \|$", txt, re.M)
+    total = float(re.search(r"All returns, total \(row 9\) \| \| ([\d,]+) \|", txt).group(1).replace(",", ""))
+    amounts = np.array([float(r[2].replace(",", "")) for r in rows])
+    if len(rows) != 19 or abs(amounts.sum() - total) > 1e-7 * total:
+        raise SystemExit("[BLOCKED] the IRS TY2023 read does not give 19 bins adding to its total")
+    return [r[0] for r in rows], amounts / amounts.sum()
+
+
+def _pool14(x):
+    """heldout.py's 14 raking columns from 19 bins: no AGI with $1-5k, the bins to $1M, $1M and up pooled."""
+    p = np.concatenate([x[:14], x[14:].sum(axis=0, keepdims=True)])
+    return np.concatenate([p[:2].sum(axis=0, keepdims=True), p[2:]])
+
+
+def raked_vector(d, w, civ, g, alloc, cbo, cols, edges):
+    """Each person's share of national federal income tax under v4 item 3's key (tax_key_heldout_2026_09_28,
+    irs_2023_raked_with_cbo_groups) on weights w: the key's dollars (FEDTAX_BC on the record, or split equally over the
+    SPM unit) in CBO income group j x AGI bin k, the cells raked to CBO's group shares and IRS's bin shares, and a
+    person's share sum_k R[j, k] x its dollars in (j, k) / the cell's dollars. Sums to 1 over civilians."""
+    vp = d.FEDTAX_BC.to_numpy(float)
+    agi = d.AGI.to_numpy(float)
+    b = np.where(agi <= 0, 0, np.searchsorted(edges, agi, side="right") + 1)
+    codes, _ = pd.factorize(d.SPM_ID.to_numpy())
+    size = np.bincount(codes).astype(float)
+    m = np.zeros((len(d), 19))
+    for k in range(19):
+        x = vp * (b == k)
+        m[:, k] = x if alloc == "personal" else (np.bincount(codes, weights=x) / size)[codes]
+    m14 = _pool14(m.T).T
+    pos = [j for j in cbo if cbo[j] > 0]
+    tb = np.stack([m14[civ & (g == j)].T @ w[civ & (g == j)] for j in pos])
+    rows = np.array([cbo[j] for j in pos])
+    r = rows[:, None] * tb / tb.sum(axis=1, keepdims=True)
+    for it in range(20000):
+        r *= cols[None, :] / r.sum(axis=0)[None, :]
+        r *= (rows / r.sum(axis=1))[:, None]
+        if max(np.abs(r.sum(axis=0) - cols).max(), np.abs(r.sum(axis=1) - rows).max()) < 1e-12:
+            break
+    else:
+        raise SystemExit(f"[BLOCKED] the {alloc} raking did not converge")
+    ratio = np.divide(r, tb, out=np.zeros_like(r), where=tb > 0)
+    v = np.zeros(len(d))
+    for i, j in enumerate(pos):
+        mj = civ & (g == j)
+        v[mj] = m14[mj] @ ratio[i]
+    return v, it + 1
+
+
+def case_tax_keys():
+    """Round 2: the case's income-tax keys as per-person vectors on the rough frame's rows. federal_income_tax: v4 item
+    3's IRS-raked key at each allocation (raked_vector on the published weights, pwwgt0, as heldout.py rakes it);
+    state_local_income_tax and other_personal_tax: the state_liability key (STATETAX_A floored at 0 on the record, or
+    split equally over the SPM unit). The CPS fields the rough frame lacks come from the benchmark lane's frame
+    (external_benchmarks_2026_09_24/frame.py, its cached parquet; loaded under its own name, as cbo_arm.groups builds
+    the CBO groups). Gates: that frame is the rough frame row for row; IRS's bin shares are heldout's bins.csv; the
+    union's raked shares are heldout's translation (reweighted share + the raked share change) at both allocations and
+    the vectors sum to 1 over civilians (1e-12); the unraked federal and state shares of the union are model.json's
+    cells (1e-9, printed to 9 decimals). Returns the vectors and the frame's FEDTAX_BC and STATETAX_A for the totals."""
+    spec = importlib.util.spec_from_file_location("benchmark_frame", BENCH / "frame.py")
+    bf = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(bf)
+    path = bf.CACHE / "cps25_frame.parquet"
+    if not path.exists():
+        raise SystemExit(f"[BLOCKED] missing {path} (external_benchmarks_2026_09_24 frame.load() builds it)")
+    d = pd.read_parquet(path, columns=TAX_COLS)
+    same = len(d) == len(R.d) and all(np.array_equal(d[c].to_numpy(), R.d[c].to_numpy()) for c in
+                                      ("PH_SEQ", "TAX_ID", "SPM_ID", "MARSUPWT", "A_AGE", "PRCITSHP", "PENATVTY",
+                                       "PEFNTVTY", "PEMNTVTY", "PRDTHSP", "FEDTAX_AC", "STATETAX_A"))
+    gate("the benchmark frame is the rough frame row for row (household, tax and SPM unit, weight, age, origin, taxes)", same)
+    if not same:
+        stop_if_failed()
+    civ, union = bf.masks(d)
+    gate("its civilian universe and union are the rough frame's", np.array_equal(civ, R.civ)
+         and np.array_equal(union, R.MASK["mex"] & R.civ))
+    w0 = d.pwwgt0.to_numpy(float) * civ
+    labels, irs = irs_2023()
+    bins = pd.read_csv(HELD / "derived/bins.csv")
+    gate("IRS TY2023 bin shares are heldout's bins.csv (1e-12)", list(bins.irs_label) == labels
+         and float(np.abs(bins.irs_2023_share_pct.to_numpy() / 100 - irs).max()) < 1e-12)
+    lows = [int(re.match(r"\$([\d,]+) (?:under|or more)", lab).group(1).replace(",", "")) for lab in labels[1:]]
+    edges = np.array(lows[1:], float)
+    shares = pd.read_csv(BENCH / "derived/cbo_group_shares.csv").query("spec == @CBO_SPEC").set_index("group")
+    cbo = {j: float(shares.loc[j, "cbo_share"]) for j in bf.GROUPS}
+    medicare = next(x for x in bf.model()["spending"]["lines"] if x["id"] == "medicare")["national_bn"]
+    per = medicare * 1e9 / d.pwwgt0.to_numpy(float)[d.MCARE.eq(1).to_numpy()].sum()
+    g, _ = bf.cbo_groups(d, bf.cbo_income(d, per), d.pwwgt0.to_numpy(float))    # cbo_arm.groups(d)
+    held = json.loads((HELD / "derived/translation_inputs.json").read_text())
+    model = {x["id"]: x for x in bf.model()["receipts"]["lines"]}
+    cell = lambda lid, a: model[lid]["cells"]["cbo_collective"][a]["share"]  # noqa: E731
+    out = {}
+    stl = d.STATETAX_A.clip(lower=0).to_numpy(float)
+    for a in ("personal", "shared"):
+        v, iters = raked_vector(d, w0, civ, g, a, cbo, _pool14(irs), edges)
+        want = held["reweighted_share"][a] + held["share_change"]["irs_2023_raked_with_cbo_groups"][a]
+        got = float(w0[union] @ v[union])
+        gate(f"federal, {a}: the union's raked share is heldout's translation, the vector sums to 1 (1e-12; {iters} "
+             "iterations)", abs(got - want) < 1e-12 and abs(float(w0 @ v) - 1) < 1e-12, f"{got:.15f} vs {want:.15f}")
+        raw = d.FEDTAX_BC.to_numpy(float)
+        raw = raw if a == "personal" else bf.unit_equal(raw, d.SPM_ID.to_numpy())
+        st = stl if a == "personal" else bf.unit_equal(stl, d.SPM_ID.to_numpy())
+        f_u, s_u = float(w0[union] @ raw[union] / (w0 @ raw)), float(w0[union] @ st[union] / (w0 @ st))
+        gate(f"federal and state, {a}: the union's unraked shares are model.json's federal_liability and state_liability "
+             "cells (1e-9)", abs(f_u - cell("federal_income_tax", a)) < 1e-9 and abs(s_u - cell("state_local_income_tax", a)) < 1e-9
+             and cell("other_personal_tax", a) == cell("state_local_income_tax", a), f"{f_u:.9f}, {s_u:.9f}")
+        out[f"fit_case_{a}"], out[f"sit_case_{a}"] = v, st
+    out["fit_case"], out["sit_case"] = out[f"fit_case_{TAX_ALLOC}"], out[f"sit_case_{TAX_ALLOC}"]
+    return out, d.FEDTAX_BC.to_numpy(float)
+
+
+OLD_TAX_KEY = {"federal_income_tax": "fit", "state_local_income_tax": "sit", "other_personal_tax": "fit"}
+CASE_KEY_LABEL = {"fit_case": "federal_liability raked to IRS 2023 and CBO 2022 (v4 item 3)", "sit_case": "state_liability"}
+
+
+def tax_key_rows(groups):
+    """TAX_CASES: rows of income_tax_keys_<case>.csv for the groups (label -> scenario; 'eng' skipped): each income-tax
+    line's share and amount at the key (before the accrual basis takes the tax on benefits) under the central, each
+    allocation of the case's key, and the rough keys' 'prop' and 'cps' rules, with the group's CPS dollars on each
+    key's base: the case key's (FEDTAX_BC, or STATETAX_A floored at 0, on the record) and the rough key's (the tax-unit
+    split of FEDTAX_AC or STATETAX_A, floored at 0; other personal tax was on the federal one)."""
+    rows = []
+    for lab, sc in groups.items():
+        if sc == "eng":
+            continue
+        cw = sc["cps_w"]
+        base = {"fit_case": float(cw @ TAX_K["_fedtax_bc"]) / 1e9, "sit_case": float(cw @ TAX_K["sit_case_personal"]) / 1e9}
+        for lid, key in CASE_TAX_KEY.items():
+            nat = R.NATIONAL["receipts|" + lid]
+            sh = {"central": R.line_share(sc, "receipts", lid, "case"), "personal": sc["share"][key + "_personal"],
+                  "shared": sc["share"][key + "_shared"], "prop": R.line_share(sc, "receipts", lid, "prop"),
+                  "cps": R.line_share(sc, "receipts", lid, "cps")}
+            rows.append({"case": CASE, "group": lab, "population": f"{sc['population']:.0f}", "line": lid,
+                         "national_bn": f"{nat:.4f}", "case_key": f"{CASE_KEY_LABEL[key]} ({TAX_ALLOC})",
+                         "rough_key": OLD_TAX_KEY[lid], **{f"share_{k}": f"{v:.9f}" for k, v in sh.items()},
+                         **{f"amount_{k}_bn": f"{v * nat:.4f}" for k, v in sh.items()},
+                         "cps_case_key_base_bn": f"{base[key]:.4f}",
+                         "cps_rough_key_base_bn": f"{sc['cps_bn'][OLD_TAX_KEY[lid]]:.4f}"})
+    return rows
+
+
+def cps_tax_totals():
+    """TAX_CASES: rows of cps_tax_totals_<case>.csv: the CPS's federal and state income-tax dollars against the case's
+    national lines, and the gaps, on two weights: the CPS's published person weights, and audit row 4's, the frame every
+    rough key and the CPS-dollar rule use. Each row names its variable, its placement and the key it is the base of:
+    on the record (the tax unit's head or dependent filer carries the unit's tax, as the CPS publishes it), or split
+    equally over the tax unit's members, as the rough keys split it. FEDTAX_BC on the record is the case's federal
+    key's base before raking, the concept of the national line (NIPA table 3.4 line 3 is before refundable credits);
+    FEDTAX_AC floored at 0 on the record is the survey's own total after refundable credits; split over the tax unit it
+    is the rough federal key, whose shortfall the CPS-dollar rule charged to no one. STATETAX_A floored at 0 on the
+    record is the case's state key's base; split over the tax unit, the rough state key. The split moves each unit's
+    tax onto its members' person weights, which raises the weighted totals."""
+    ac = np.maximum(R.d.FEDTAX_AC.to_numpy(float), 0)
+    specs = (("federal_income_tax", "FEDTAX_BC", "on the record", "the case's federal key's base, before raking",
+              TAX_K["_fedtax_bc"]),
+             ("federal_income_tax", "FEDTAX_AC floored at 0", "on the record", "none: the survey's after-credit total", ac),
+             ("federal_income_tax", "FEDTAX_AC floored at 0", "split over the tax unit",
+              "fit: the rough federal key, the CPS-dollar rule's dollars", R.K["fit"]),
+             ("state_local_income_tax", "STATETAX_A floored at 0", "on the record", "the case's state_liability key's base",
+              TAX_K["sit_case_personal"]),
+             ("state_local_income_tax", "STATETAX_A floored at 0", "split over the tax unit",
+              "sit: the rough state key, the CPS-dollar rule's dollars", R.K["sit"]))
+    rows = []
+    for frame, use, w in (("published", "the CPS's published person weights", PUBLISHED_W),
+                          ("row4", "audit row 4: the rough re-key's frame (every rough key, the CPS-dollar rule)", R.w)):
+        for lid, var, place, key, v in specs:
+            nat = R.NATIONAL["receipts|" + lid]
+            c = float(w @ v) / 1e9
+            rows.append({"case": CASE, "frame": frame, "weights": use, "line": lid, "variable": var, "placement": place,
+                         "key": key, "national_bn": f"{nat:.4f}", "cps_bn": f"{c:.4f}", "gap_bn": f"{nat - c:.4f}",
+                         "cps_over_national": f"{c / nat:.6f}"})
+    return rows
 AGE = R.d.A_AGE.to_numpy()
 ADULT = (AGE >= 18).astype(float)
 BAND5 = np.minimum(AGE // 5 * 5, 80)
@@ -626,12 +871,15 @@ def v4_terms(sc, e, union_sc):
 
 
 # ------------------------------------------------------------------ the re-key
-def run29(sc, end, basis="accrual", top="cps", cap=False, v4=True, dump=None, union_sc=None, rule4="all"):
+def run29(sc, end, basis="accrual", top=None, cap=False, v4=True, dump=None, union_sc=None, rule4="all"):
     """rekey_white.run on a case dump, with the sept29 rules when v4 (a September 27 dump with v4=False reproduces
     run()). sc: a scenario or 'eng' (the engine's own amounts). union_sc: the whole rough union, for union pieces.
-    rule4: 'all' (rule 4 for every group); 'union' (its alternative: other groups at national prices and the
-    September 27 road keys, the union keeping its state-price and road terms); 'none' (no group, the union included:
-    the attribution's first sept29 step)."""
+    top: the income-tax rule, by default the central ('case' on TAX_CASES, else 'cps'; a September 27 run 'cps');
+    'cps' and 'prop' are rekey_white.line_share's. rule4: 'all' (rule 4 for every group); 'union' (its alternative:
+    other groups at national prices and the September 27 road keys, the union keeping its state-price and road terms);
+    'none' (no group, the union included: the attribution's first sept29 step)."""
+    if top is None:
+        top = "case" if TAX_ON and v4 else "cps"
     g = "eng" if sc == "eng" else sc["name"]
     e = (dump or DUMP[basis])[end]
     lines = [ln for ln in e["lines"] if ln["side"] != "scalar"]
@@ -752,7 +1000,7 @@ UNION_SC = None
 
 # ------------------------------------------------------------------ state arm (state_white.main on run29)
 def priced29(sc, end, basis, union_sc, adjust=None, arms=False):
-    r, rows, buckets, _, _ = run29(sc, end, basis, "prop" if arms else "cps", arms, union_sc=union_sc)
+    r, rows, buckets, _, _ = run29(sc, end, basis, BOTH_TOP if arms else None, arms, union_sc=union_sc)
     cost = r["cost"]
     if adjust is not None:
         e = DUMP[basis][end]
@@ -773,7 +1021,7 @@ def lineage_by_piece(basis, end, sc_union):
     less the identified run of the rough union."""
     out = {}
     for arms in (False, True):
-        args = ("prop", True) if arms else ()
+        args = (BOTH_TOP, True) if arms else ()
         r1, _, b1, _, _ = run29(sc_union, end, basis, *args)
         with identified():
             r0, _, b0, _, _ = run29(sc_union, end, basis, *args)
@@ -1066,6 +1314,9 @@ STEP_LINEAGE_V6 = ("4", "+ the lineage (oct07): the added 3,039,720 people at th
 # IPEDS_CASES: step 1 also moves every group from the September 27 keys to the IPEDS keys (and, FEE_CASES, the fees)
 IPEDS_STEP = "; every group on the IPEDS keys for Pell and public higher education"
 IPEDS_STEP_FEES = "; every group on the IPEDS keys for Pell and public higher education, with item 4's tuition term"
+# TAX_CASES: steps 1-4 keep the CPS-dollar rule for income taxes; step 5 moves every group to the case's own keys
+STEP_TAX = ("5", "+ the case's own income-tax keys for every group (round 2): federal income tax on v4 item 3's IRS-raked "
+                 "key, state and other personal taxes on the state-liability key, the shared allocation: the case", "accrual")
 STEP_COST: dict = {}    # (step, label, end) -> (cost, population, buckets); steps a and 0 are filled by setup()
 ALL_BUCKETS = list(BUCKETS) + [R.PER_HEAD, "capital return", "production gain (subtracted)"]
 use_case("sept29")
@@ -1083,20 +1334,33 @@ def step27(step):
 def attribution(groups):
     """Rows of derived/attribution_<case>.csv for the groups (label -> scenario on the case's frame; labels of
     ATTR_GROUPS, the rough union among them): each step's cost, its change and the like-for-like delta's change.
-    oct05: steps 1-3 rebuild the groups on the identified union (39,712,493, the overlay off); step 4 is the case."""
+    oct05: steps 1-3 rebuild the groups on the identified union (39,712,493, the overlay off); step 4 is the case.
+    TAX_CASES: steps 1-4 on the CPS-dollar rule, step 5 the case on its own income-tax keys; a group's step-5 change is
+    minus its change in the three income-tax lines (gate, 1e-9)."""
     lineage = LINEAGE_ON
+    top = "cps" if TAX_ON else None
     with identified():
         base = {lab: ATTR_GROUPS[lab]() for lab in groups} if lineage else groups
         for lab, sc in base.items():
             for end in ENDS:
                 for step, basis, rule4 in (("1", "cash", "none"), ("2", "cash", "all"), ("3", "accrual", "all")):
-                    r, _, bk, _, _ = run29(sc, end, basis, rule4=rule4)
+                    r, _, bk, _, _ = run29(sc, end, basis, top, rule4=rule4)
                     STEP_COST[(step, lab, end)] = (r["cost"], r["population"], bk)
+    if TAX_ON:
+        for lab, sc in groups.items():
+            for end in ENDS:
+                r, rows, bk, _, _ = run29(sc, end, "accrual")
+                STEP_COST[("5", lab, end)] = (r["cost"], r["population"], bk)
+                r0, rows0, _, _, _ = run29(sc, end, "accrual", "cps")
+                tax = sum((a[3] - b[3]) * a[4] for a, b in zip(rows, rows0) if a[0] == "receipts" and a[1] in CASE_TAX_KEY)
+                gate(f"attribution step 5 {lab} {end}: the change is minus the income-tax lines' change (1e-9)",
+                     abs((r["cost"] - r0["cost"]) + tax) < 1e-9 and [a[:3] for a in rows] == [b[:3] for b in rows0],
+                     f"{r['cost'] - r0['cost']:+.6f} vs {-tax:+.6f}")
     if lineage:
         f = (R.TARGET + LINEAGE["counts"]["added"]) / R.TARGET
         for lab, sc in groups.items():
             for end in ENDS:
-                r, _, bk, _, _ = run29(sc, end, "accrual")
+                r, _, bk, _, _ = run29(sc, end, "accrual", top)
                 STEP_COST[("4", lab, end)] = (r["cost"], r["population"], bk)
                 # Positive controls on step 4: the union moves by the added people alone, the NH Black group (its own
                 # count) not at all, and a slice at its own or fixed ages in proportion to its count (the re-key is
@@ -1241,6 +1505,13 @@ def setup():
                  abs(STEP_COST[("0", lab, end)][0] - want[(fig, end)]) < 1e-3, f"{STEP_COST[('0', lab, end)][0]:.4f}")
     stop_if_failed()
 
+    if TAX_ON:
+        print("[the case's income-tax keys]", flush=True)
+        if not TAX_K:
+            keys, TAX_K["_fedtax_bc"] = case_tax_keys()
+            TAX_K.update(keys)
+            stop_if_failed()
+        R.K.update({k: v for k, v in TAX_K.items() if not k.startswith("_")})
     print(f"[the {CASE} frame: row-4 weights, the case's shares]", flush=True)
     set_frame(w4, n4, DUMP["cash"])
     ACC = accrual_params()
@@ -1393,9 +1664,13 @@ def main(case="sept29"):
         for end in ENDS:
             for lab, sc in scen.items():
                 r, rows, bk, terms, acc = run29(sc, end, b)
+                if TAX_ON:     # the CPS-dollar rule, the central before round 2
+                    r["cost_cps"] = r["cost"] if sc == "eng" else run29(sc, end, b, "cps")[0]["cost"]
                 r["cost_top_tail_proportional"] = r["cost"] if sc == "eng" else run29(sc, end, b, "prop")[0]["cost"]
                 r["cost_capital_taxes_respond"] = run29(sc, end, b, cap=True)[0]["cost"]
-                r["cost_both_arms"] = r["cost"] if sc == "eng" else run29(sc, end, b, "prop", True)[0]["cost"]
+                # on the case's keys the top tail is inside the central, so both arms are the capital arm
+                r["cost_both_arms"] = (r["cost_capital_taxes_respond"] if TAX_ON else r["cost"] if sc == "eng"
+                                       else run29(sc, end, b, "prop", True)[0]["cost"])
                 r["cost_others_at_national_prices"] = r["cost"] if sc == "eng" else run29(sc, end, b, rule4="union")[0]["cost"]
                 res[(b, lab, end)] = (r, rows, bk, terms, acc)
     stop_if_failed()
@@ -1409,6 +1684,7 @@ def main(case="sept29"):
                         "cost_per_member": f"{r['cost'] * 1e9 / r['population']:.0f}",
                         "delta_like_for_like_bn": f"{u['cost'] - r['cost']:.4f}",
                         "delta_vs_engine_union_bn": f"{eg['cost'] - r['cost']:.4f}",
+                        **({"delta_like_for_like_cps_bn": f"{u['cost_cps'] - r['cost_cps']:.4f}"} if TAX_ON else {}),
                         "delta_like_for_like_top_tail_proportional_bn": f"{u['cost_top_tail_proportional'] - r['cost_top_tail_proportional']:.4f}",
                         "delta_like_for_like_capital_taxes_respond_bn": f"{u['cost_capital_taxes_respond'] - r['cost_capital_taxes_respond']:.4f}",
                         "delta_like_for_like_both_arms_bn": f"{u['cost_both_arms'] - r['cost_both_arms']:.4f}",
@@ -1436,11 +1712,14 @@ def main(case="sept29"):
     groups = {lab: scen[lab] for lab in ATTR_GROUPS}
     alt_rows = alternatives(groups)
     attr_rows = attribution(groups)
-    final = {"4": "accrual"} if LINEAGE_ON else {"2": "cash", "3": "accrual"}    # the steps that are the case's runs
-    for r in attr_rows:
-        if r["step"] in final:
-            want = res[(final[r["step"]], r["group"], r["end"])][0]["cost"]
+    for r in attr_rows:     # FINAL_STEPS: the steps that are the case's runs
+        if r["step"] in FINAL_STEPS:
+            want = res[(FINAL_STEPS[r["step"]], r["group"], r["end"])][0]["cost"]
             gate(f"attribution step {r['step']} is the {CASE} run {r['group']} {r['end']}", abs(float(r["cost_bn"]) - want) < 5e-5)
+        if TAX_ON and r["step"] == "4":
+            want = res[("accrual", r["group"], r["end"])][0]["cost_cps"]
+            gate(f"attribution step 4 is the {CASE} run on the CPS-dollar rule {r['group']} {r['end']}",
+                 abs(float(r["cost_bn"]) - want) < 5e-5)
     for r in alt_rows:
         if r["rule"] == "rule 4":
             want = res[(r["basis"], r["group"], r["end"])][0]["cost_others_at_national_prices"]
@@ -1465,6 +1744,9 @@ def main(case="sept29"):
     write(f"attribution_buckets_{CASE}.csv", attribution_buckets(groups))
     if ipeds:
         write(f"ipeds_terms_{CASE}.csv", ipeds)
+    if TAX_ON:
+        write(f"income_tax_keys_{CASE}.csv", tax_key_rows(scen))
+        write(f"cps_tax_totals_{CASE}.csv", cps_tax_totals())
     if LINEAGE_ON:
         write(f"headline_{CASE}.csv", hl)
         print(pd.DataFrame(hl).to_string(index=False))

@@ -350,6 +350,9 @@ gained `--case`.
 
 ## v6 case (oct07), 2026-10-07
 
+[Round 2, later on 2026-10-07: every group's income taxes moved to the case's own keys. The figures in this section
+use the CPS-dollar rule, now the `cost_cps` arm; the current figures are in "v6 round 2" below.]
+
 [2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`), with every group on the IPEDS keys for Pell and
 public higher education, the rough re-key puts the cost of removing the 41.95M non-Hispanic Black residents at
 **$527.9 / 575.3bn** a year on the case's accrual basis, **$12,583 / 13,712 per member**: $2.8 / 2.7bn below v5's
@@ -480,3 +483,102 @@ New in `derived/`: `accrual_ratios_oct07.csv`, `engine_lines_oct07.json`, `engin
   sept29 ones, the five oct05 ones and the six oct07 ones of the reproduce blocks): **IDENTICAL 45/45, exit 0**. It
   ran after the white lane's final rerun (16:55:28–16:58:52), whose `ipeds_keys.json`, oct07 accrual files and library
   this lane reads.
+
+## v6 round 2: income taxes on the case's own keys (oct05, oct07), 2026-10-07
+
+[2026-10-07, round 2: every group's income taxes now take the case's own keys. Under those keys, removing the 41.95M
+non-Hispanic Black residents costs others **$501.2 / 548.6bn** a year on the case's accrual basis, **$11,947 / 13,076
+per member**. On the CPS-dollar rule, which charged a group only the income tax it reports to the CPS, the figure was
+$527.9 / 575.3bn (the v6 section above). The group pays $26.69bn more income tax at both ends and on both bases:
+federal +$23.19bn, state +$3.29bn and other personal +$0.21bn. Per member it is **1.31× / 1.21× the engine's union**
+(was 1.38× / 1.27×) and 1.34× / 1.28× the rough union on 42.75M (was 1.36× / 1.29×). The rough union itself pays $15.12bn
+more. [CALCULATION: `rekey_sept29.py --case oct07` → `derived/rekey_summary_oct07.csv`, `income_tax_keys_oct07.csv`]]
+
+claude-opus-5-5 (prop-d)
+
+**Rules.** The white lane's section "v6 round 2" applies:
+- Federal income tax takes v4 item 3's IRS-raked key.
+- State and other personal taxes take the state-liability key.
+- Both ends use the shared allocation, with the personal one beside.
+- No group takes a union-only correction.
+- The CPS-dollar rule, the proportional spread and the capital arm stay beside.
+
+The NH Black group's federal share goes from 0.0615 to **0.0711** (+15.7%, below the average slice's +19.7%). Its
+state share goes from 0.0766 to **0.0827**. Under the personal allocation the shares are 0.0719 and 0.0827.
+[DATA: `derived/income_tax_keys_oct07.csv`]
+
+| $bn a year, spec 48 / 11 | Engine union, oct07 | Rough union, oct07 | **NH Black, oct07** | NH Black, oct05 |
+|---|---:|---:|---:|---:|
+| Persons (the per-member denominator) | 42,752,213 | 42,752,213 | 41,954,494 | 41,954,494 |
+| **Cost of removal, accrual basis (the case)** | 389.1 / 461.5 | 380.3 / 438.3 | **501.2 / 548.6** | 504.0 / 551.3 |
+| per member | $9,101 / 10,794 | $8,896 / 10,251 | **$11,947 / 13,076** | $12,013 / 13,141 |
+| NH Black per member over this column | 1.31 / 1.21 | 1.34 / 1.28 | | 1.32 / 1.22 (engine) |
+| Cost of removal, cash set | 307.4 / 385.4 | 294.8 / 354.8 | 487.7 / 535.0 | 487.7 / 535.0 |
+| NH Black per member over this column | 1.62 / 1.41 | 1.69 / 1.54 | | 1.62 / 1.42 (engine) |
+| Normalized gap, cash set | −278.9 / −309.7 | −260.4 / −266.3 | −435.7 / −435.7 | −434.7 / −434.7 |
+| On the CPS-dollar rule (`cost_cps`), accrual | | 395.4 / 453.4 | 527.9 / 575.3 | 530.7 / 578.0 |
+
+[CALCULATION: `derived/rekey_summary_oct07.csv`, `rekey_summary_oct05.csv`]
+
+At the low end on accrual, the Black group costs $2,846 per member more than the engine's union. On the CPS-dollar
+rule the difference was $3,482, and v5 on the case's keys gives $2,884. Only the tax row moves. The parts add to the
+total with controlled rounding.
+
+| Program | Per member, oct07 | CPS-dollar rule (v6 section) | oct05 |
+|---|---:|---:|---:|
+| Social Security and Medicare | +$1,680 | +$1,680 | +$1,662 |
+| Medicaid | +$1,368 | +$1,368 | +$1,371 |
+| Welfare | +$986 | +$986 | +$991 |
+| Veterans and military medical | +$628 | +$628 | +$624 |
+| Police, courts and prisons | +$636 | +$636 | +$629 |
+| No production gain | +$279 | +$279 | +$279 |
+| Property, per-head lines and capital | +$242 | +$242 | +$351 |
+| Schools | −$902 | −$902 | −$974 |
+| Income, payroll and sales taxes (the Black group pays more) | **−$2,071** | −$1,435 | −$2,049 |
+| **Difference** | **+$2,846** | +$3,482 | +$2,884 |
+
+[CALCULATION: `derived/rekey_by_program_oct07.csv`, `rekey_by_program_oct05.csv`; scratch tabulation, which reproduces
+the v6 section's column from the pre-round-2 files]
+
+- **The arms** (accrual, $bn):
+  - The CPS-dollar rule gives $527.9 / 575.3bn.
+  - The proportional spread gives $495.4 / 542.8bn.
+  - With capital-side taxes responding, the cost is $374.8 / 422.2bn. With the top tail now inside the central, this
+    is also the both-arms figure.
+  - At national prices (rule 4's alternative) the cost is $506.2 / 553.4bn.
+  - Under the personal allocation it is $499.4 / 546.8bn, and with item 4's hospital term, beside the central,
+    $500.8 / 548.2bn.
+  - At tuition residency θ 0.5 / 1.5 it is $501.8 / 549.2bn and $500.7 / 548.0bn.
+
+  [CALCULATION: `rekey_summary_oct07.csv`; the white lane's `ipeds_terms_oct07.csv`, `limits_oct07.csv` and
+  `income_tax_keys_oct07.csv`]
+- **The like-for-like delta** against the rough union is −$120.9 / −110.3bn on accrual, against −$132.5 / −121.9bn on
+  the CPS-dollar rule: the rough union pays $15.12bn more as well.
+- **Rule alternatives** (`rule_alternatives_oct07.csv`): each one's change in the NH Black cost is the v6 section's;
+  only the levels move.
+- **Attribution** (`attribution_oct07.csv`): step 5 moves the NH Black group by −$26.69bn and the rough union by
+  −$15.12bn, each gated to minus its income-tax lines' move (1e-9).
+
+**Gates.** `rekey_sept29.py --case oct07` passes 211 gates and exits 0; `--case oct05` passes 180. They include the
+white library's round-2 gates (the white lane's section) and each step-5 gate. The `cost_cps` arm reproduces the v6
+section's costs, and `rekey_line_shares` moves only on the three income-tax lines. sept29 is unchanged.
+
+**Files.** New in `derived/`: `income_tax_keys_oct05.csv` and `income_tax_keys_oct07.csv`. Changed, for oct05 and
+oct07: `rekey_summary` (it gains the four arm columns and `delta_like_for_like_cps_bn`), `rekey_by_program`,
+`rekey_line_shares`, `rule_alternatives`, `attribution` (step 5) and `attribution_buckets`. The dumps and accrual files
+do not move. The reproduce list is the v6 section's.
+
+### Log (round 2; times from `date` or the files' clock)
+
+- 2026-10-07 20:15:21 and 20:19:18 (log times): `--case oct05` (180 gates) and `--case oct07` (211 gates) ran in place,
+  exit 0.
+- 21:07:28–21:08:37 (by `date`): the first `rerun_lane.py` with the v6 section's 18 commands reported **DIFFERS, 46/47**
+  (exit 1). The changed file was `income_tax_keys_oct05.csv`, which the 20:15 oct05 run wrote before the white
+  library's last edit to `tax_key_rows()` (20:16:04, file time). That edit renamed the two base columns (`cps_record_tax_bn` and
+  `cps_rough_key_tax_bn` became `cps_case_key_base_bn` and `cps_rough_key_base_bn`) and gave the other-personal-tax row
+  the base of its own rough key, `fit`: $111.33bn and $147.70bn, where the stale file showed the state base, $25.74bn
+  and $41.08bn. No share, amount or cost changed. The rerun rewrote the file.
+- 21:09:13–21:10:21 (by `date`): the same rerun again: **IDENTICAL 47/47, exit 0**.
+- 21:49:49–21:51:23 (by `date`): the same rerun after the white library relabelled the columns of its CPS-totals file
+  and the white lane added `income_tax_parts.py`: **IDENTICAL 47/47, exit 0**. This lane writes no CPS-totals file,
+  and none of its figures moved.

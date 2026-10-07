@@ -1,0 +1,11 @@
+case,frame,weights,line,variable,placement,key,national_bn,cps_bn,gap_bn,cps_over_national
+oct05,published,the CPS's published person weights,federal_income_tax,FEDTAX_BC,on the record,"the case's federal key's base, before raking",2403.2420,1981.1100,422.1320,0.824349
+oct05,published,the CPS's published person weights,federal_income_tax,FEDTAX_AC floored at 0,on the record,none: the survey's after-credit total,2403.2420,1980.2984,422.9436,0.824011
+oct05,published,the CPS's published person weights,federal_income_tax,FEDTAX_AC floored at 0,split over the tax unit,"fit: the rough federal key, the CPS-dollar rule's dollars",2403.2420,2010.2473,392.9947,0.836473
+oct05,published,the CPS's published person weights,state_local_income_tax,STATETAX_A floored at 0,on the record,the case's state_liability key's base,536.1670,490.7540,45.4130,0.915301
+oct05,published,the CPS's published person weights,state_local_income_tax,STATETAX_A floored at 0,split over the tax unit,"sit: the rough state key, the CPS-dollar rule's dollars",536.1670,497.6863,38.4807,0.928230
+oct05,row4,"audit row 4: the rough re-key's frame (every rough key, the CPS-dollar rule)",federal_income_tax,FEDTAX_BC,on the record,"the case's federal key's base, before raking",2403.2420,1977.9158,425.3262,0.823020
+oct05,row4,"audit row 4: the rough re-key's frame (every rough key, the CPS-dollar rule)",federal_income_tax,FEDTAX_AC floored at 0,on the record,none: the survey's after-credit total,2403.2420,1977.1151,426.1269,0.822687
+oct05,row4,"audit row 4: the rough re-key's frame (every rough key, the CPS-dollar rule)",federal_income_tax,FEDTAX_AC floored at 0,split over the tax unit,"fit: the rough federal key, the CPS-dollar rule's dollars",2403.2420,2007.3282,395.9138,0.835258
+oct05,row4,"audit row 4: the rough re-key's frame (every rough key, the CPS-dollar rule)",state_local_income_tax,STATETAX_A floored at 0,on the record,the case's state_liability key's base,536.1670,489.7587,46.4083,0.913444
+oct05,row4,"audit row 4: the rough re-key's frame (every rough key, the CPS-dollar rule)",state_local_income_tax,STATETAX_A floored at 0,split over the tax unit,"sit: the rough state key, the CPS-dollar rule's dollars",536.1670,496.8024,39.3646,0.926582
