@@ -1097,6 +1097,66 @@ a part. [CALCULATION: `income_tax_parts.py --case oct07` → `derived/income_tax
   from CPS dollars to the national line enters once: (a)'s federal part is 0.19723 times the slice's CPS dollars for
   every slice (A1 −$59.20bn on $300.14bn, local whites −$68.06bn on $345.05bn, the union −$21.96bn on $111.33bn).
 
+**How much of the local-whites gap rests on a few households** (the team lead's request of 2026-10-07).
+`local_whites_fragility.py` counts the white pieces' top records, drops the largest contributors, prices the personal
+allocation and computes the white side's sampling error. It covers the local gap (Part F on the case's keys), with A1
+beside. On oct07, $bn, accrual, low / high end; the counts hold on every basis and at both ends.
+- **A few households carry the Texas and California pieces' federal tax.** The table counts households with a member
+  whose own AGI is at least $1M, and the persons in those members' SPM units, who share the unit's tax. It gives those
+  persons' share of the piece's federal income tax after the raking, and before it in brackets:
+
+  | White piece at union ages | Records with weight | Households, AGI ≥ $1M | Persons in their units (weighted share) | Their share of federal tax | At AGI ≥ $500k: households; tax share |
+  |---|---:|---:|---:|---:|---:|
+  | Texas | 3,034 | 14 | 49 (1.8%) | **50.4%** (25.9%) | 28; 58.4% (33.9%) |
+  | California | 3,055 | 16 | 45 (1.6%) | **37.9%** (18.8%) | 53; 55.1% (35.6%) |
+  | Rest of the US (national whites) | 73,873 | 191 | 585 (0.9%) | 34.0% (15.5%) | 583; 47.2% (27.1%) |
+  | A1 (national whites at their own ages) | 73,873 | 191 | 585 (0.8%) | 32.6% (14.9%) | 583; 45.0% (26.0%) |
+
+  These shares count each unit's whole tax. At $500k they therefore sit slightly above California's 35.3%, Texas's
+  33.7% and A1's 25.8% quoted above, which count only the tax at those AGIs.
+- **The top records are mostly children.** Texas's ten largest-contributing records come from 7 households and carry
+  22.9% of the piece's federal tax. Five of them are under 18, and 8 have their own AGI under $100k. California's ten
+  come from 9 households and carry 18.1%; 3 are minors and 7 have AGI under $100k. A1's ten carry 3.2%, and none is a
+  minor. The shared allocation splits a household's tax equally over its SPM unit's members. The reweighting to the
+  union's young ages then raises the weight on children. Persons under 18 carry 29.5% of Texas's piece's federal tax,
+  23.8% of California's and 27.1% of the rest of the US's, against 13.3% of A1's.
+- **Leave-out** (a stress test, not an interval: it always removes the largest contributors). Records are ranked by
+  their contribution to the white side's federal tax, which is piece weight times the raked key. Each dropped record
+  leaves every piece it is in. Each Part F piece is then rebuilt as Part F builds it, with the dropped weight going to
+  the other whites of the same age band. A1 is rebuilt as the library builds it, at its own ages and scaled to its
+  persons. Each is repriced on every line. Percentages are at the low end:
+
+  | Dropped | Persons (share of the white side's federal tax): local; A1 | Local gap | A1's gap |
+  |---|---|---:|---:|
+  | Nothing (the central) | | 528.6 / 531.5 | 431.6 / 436.0 |
+  | Top 10 households | 31 (15.5%); 28 (5.6%) | **452.8 / 455.9** (−14.3%) | 410.0 / 414.5 (−5.0%) |
+  | Top 20 households | 65 (25.2%); 53 (9.2%) | 404.7 / 408.0 (−23.4%) | 395.9 / 400.4 (−8.3%) |
+  | Top 10 persons | 10 (9.7%); 10 (3.2%) | 480.0 / 482.9 (−9.2%) | 419.2 / 423.6 (−2.9%) |
+  | Top 20 persons | 20 (14.9%); 20 (5.6%) | 455.0 / 458.0 (−13.9%) | 409.9 / 414.4 (−5.0%) |
+
+- **The personal allocation** applies to both sides; the added people keep the case lane's amounts. The local gap is
+  $451.5 / 454.3bn: California $218.8 / 218.9bn, Texas $96.6 / 97.7bn and the rest of the US $136.1 / 137.7bn. A1's
+  gap is $448.7 / 453.1bn, as above. The local gap falls $77.2bn at both ends. At the union's young ages much of the
+  white pieces' tax sits on children, who pay none of their own under the personal allocation [INFERENCE]. A1's gap,
+  at whites' own ages, rises $17.1bn.
+- **Sampling error, white side only.** The error comes from the CPS ASEC's 160 successive-difference replicate
+  weights, SE = √(4/160 Σ(x_r − x_0)²). Each white piece is rebuilt on a replicate's weights as Part F builds it, and
+  A1 at its own ages. The union, the keys and their national totals, the raking and the MEPS weights stay at the
+  central, as the Indian lane holds them.
+  - The local gap's SE is **$33.1 / 33.0bn** (cash set $34.8 / 34.6bn). A1's is $13.6bn at both ends ($14.8 / 14.7bn).
+  - By piece, at the low end, the SE is $23.9bn for California, $16.4bn for Texas and $6.1bn for the rest of the US.
+  - The local gap exceeds A1's by $97.0 / 95.5bn, with an SE of $26.8 / 26.7bn.
+
+  Part F's addendum computed no sampling error. With 14 and 16 households carrying two-fifths to a half of a state
+  piece's tax, the replicate SE is itself imprecise [INFERENCE].
+- **oct05** gives the same picture. The local gap is $527.5 / 528.9bn, $451.6 / 453.2bn without the top 10 households
+  and $452.8 / 454.2bn at the personal allocation, with an SE of $33.1 / 33.0bn. A1's gap is $425.2 / 428.1bn, SE
+  $13.6 / 13.5bn. Its shares in the counts differ from oct07's by at most 0.4 points, and California's top ten
+  include 2 minors rather than 3.
+
+[CALCULATION: `local_whites_fragility.py --case oct07` → `derived/local_whites_fragility_oct07.csv`, sections counts,
+leave_out, personal_allocation and replicate_se; `--case oct05` the same]
+
 **Gates.**
 - `rekey_sept29.py --case oct07` passes 323 gates and exits 0; `--case oct05` passes 292. The round-2 gates, in
   `case_tax_keys()` and attribution step 5:
@@ -1128,23 +1188,40 @@ a part. [CALCULATION: `income_tax_parts.py --case oct07` → `derived/income_tax
   - Part F: each white piece's federal key share is its records' sum of the one national raked vector over the frame's
     total (1e-12), and its weights sum to its persons (1e-9 relative).
   - The AGI bins split each record's FEDTAX_BC as the raking does; their sum is the shared key (1e-6).
+- `local_whites_fragility.py` passes 60 gates per case and exits 0 (nothing is written on a failure). Five are
+  `income_tax_parts.py`'s setup gates. The rest:
+  - Each income-tax line has one national amount in every dump. The rebuilt raking is the library's key (1e-12), its
+    pooled columns are the SPM split of FEDTAX_BC (1e-6) and its top column starts at $1M.
+  - A1's gap is the parts file's central, and each captured white piece reprices to the library's state rows, which
+    `state_summary` holds (5e-5); the local gap is their sum (2e-4).
+  - Each slice's federal and three-line moves, from its weights, are the parts file's (1e-3), and the raking by column
+    adds to its (c) (1e-3). The records' contributions add to each piece's federal tax (1e-9 relative).
+  - The replicate file covers the frame's rows, and replicate 0 is the frame weight on third-plus whites (0.0051).
+  - Positive controls: an empty drop set rebuilds each piece and A1 to their central costs (1e-9); replicate 0 gives
+    the central gaps within $0.05bn; the personal allocation's A1 gap is the additive figure from `income_tax_keys`
+    (5e-4).
 
 **Files.** New in `derived/`: `income_tax_keys_oct05.csv`, `income_tax_keys_oct07.csv`, `cps_tax_totals_oct05.csv` and
 `cps_tax_totals_oct07.csv`; from `income_tax_parts.py`, `income_tax_parts_oct05.csv`, `income_tax_parts_oct07.csv`
 (each figure's CPS-rule cost, its eight parts, and its proportional and central costs, per basis and end) and
 `income_tax_bins_oct05.csv`, `income_tax_bins_oct07.csv` (per slice, its CPS dollars on each key, its offsetting
-credits, its FEDTAX_BC in the top AGI bins, and its share of each key). `cps_tax_totals` names the case, frame, weights,
+credits, its FEDTAX_BC in the top AGI bins, and its share of each key); from `local_whites_fragility.py`,
+`local_whites_fragility_oct05.csv` and `local_whites_fragility_oct07.csv` (268 rows each, long: case, section, slice,
+measure, basis, end, value, unit). `cps_tax_totals` names the case, frame, weights,
 line, CPS variable, placement and key in each row, beside the national line, the CPS total, the gap and their ratio;
 it includes FEDTAX_AC floored on the record, the rough key's concept. Changed, for oct05 and oct07: `rekey_summary`
 (it gains `cost_cps` and `delta_like_for_like_cps_bn`), `rekey_buckets`, `state_summary`, `state_buckets`,
 `headline`, `rule_alternatives`, `attribution` (step 5), `attribution_buckets` and `ipeds_terms`; also
 `limits_oct07.csv`. The four dumps per case, the accrual files and `v4_group_terms` do not move. The reproduce list is
-the v6 section's, then the parts, which read `rekey_summary` and `state_summary`:
+the v6 section's, then the parts, which read `rekey_summary` and `state_summary`, then the fragility check, which reads
+the parts and `income_tax_keys`:
 
 ```sh
 L=infra/immigration-fiscal/white_replacement_2026_09_28
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/income_tax_parts.py --case oct05
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/income_tax_parts.py --case oct07
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/local_whites_fragility.py --case oct05
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/local_whites_fragility.py --case oct07
 ```
 
 ### Log (round 2; times from `date` or the files' clock)
@@ -1168,3 +1245,15 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/income_tax_parts.py --case
 - 21:44:51–21:45:15: `income_tax_parts.py --case oct05` in place, 78 gates, exit 0.
 - 21:46:42–21:49:49 (by `date`): `rerun_lane.py --online` with the 29 commands (the v6 section's 27 and the two parts
   runs): **IDENTICAL 86/86, exit 0**, round 2's 81 files, the four parts and bins files and the new script.
+- After the team lead asked how much of the local gap rests on a few households: by 22:21:57 (the files' clock), the
+  counts, leave-out and replicate error in scratch (50 gates); by 22:25:00, the personal allocation (5 gates).
+- 22:35:06: a first in-place run of `local_whites_fragility.py --case oct07` stopped with an `AttributeError` while the
+  keys moved to `tax_key_heldout_2026_09_28/keys.py` (`W.TK`), and wrote nothing.
+- 22:40:33–22:41:02 (by `date`): `--case oct07` into scratch on the moved keys, 60 gates, exit 0.
+- 22:43:06–22:44:07 (by `date`): `--case oct07`, then `--case oct05`, in place, 60 gates each, exit 0, peak resident
+  memory 1.86 GB. Only the two new files appeared in the lane, and oct07's matches the scratch run's byte for byte.
+- 22:55:51–23:01:00 (by `date`): `rerun_lane.py --online` with the 31 commands (the 29 above and the two fragility
+  runs): **IDENTICAL 89/89, exit 0**.
+- 23:01:51: the leave-out's A1 rebuild stated exactly, in the script's docstring and above (no output moves).
+- 23:03:01–23:07:06 (by `date`): `rerun_lane.py --online` again with the 31 commands, on the final script text:
+  **IDENTICAL 89/89, exit 0**.

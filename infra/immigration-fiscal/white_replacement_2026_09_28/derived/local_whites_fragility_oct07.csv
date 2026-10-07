@@ -1,0 +1,269 @@
+case,section,slice,measure,basis,end,value,unit
+oct07,counts,whites at union ages: California,sample records,,,3055,records
+oct07,counts,whites at union ages: California,raked federal income tax,,,195.1239,bn
+oct07,counts,whites at union ages: California,households with a member whose own AGI is at least $1M,,,16,households
+oct07,counts,whites at union ages: California,persons in those members' SPM units (AGI at least $1M),,,45,records
+oct07,counts,whites at union ages: California,weighted share of persons in those units (AGI at least $1M),,,0.015993,share
+oct07,counts,whites at union ages: California,share of raked federal tax from those units (AGI at least $1M),,,0.379426,share
+oct07,counts,whites at union ages: California,share of unraked federal tax from those units (AGI at least $1M),,,0.188349,share
+oct07,counts,whites at union ages: California,households with a member whose own AGI is at least $500k,,,53,households
+oct07,counts,whites at union ages: California,persons in those members' SPM units (AGI at least $500k),,,151,records
+oct07,counts,whites at union ages: California,weighted share of persons in those units (AGI at least $500k),,,0.052477,share
+oct07,counts,whites at union ages: California,share of raked federal tax from those units (AGI at least $500k),,,0.550812,share
+oct07,counts,whites at union ages: California,share of unraked federal tax from those units (AGI at least $500k),,,0.355734,share
+oct07,counts,whites at union ages: California,share of raked federal tax from the top 10 records,,,0.181128,share
+oct07,counts,whites at union ages: California,share of raked federal tax from the top 20 records,,,0.266530,share
+oct07,counts,whites at union ages: California,households among the top 10 records,,,9,households
+oct07,counts,whites at union ages: California,minors (under 18) among the top 10 records,,,3,records
+oct07,counts,whites at union ages: California,records with own AGI under $100k among the top 10 records,,,7,records
+oct07,counts,whites at union ages: California,share of raked federal tax carried by persons under 18,,,0.238165,share
+oct07,counts,whites at union ages: Texas,sample records,,,3034,records
+oct07,counts,whites at union ages: Texas,raked federal income tax,,,112.8433,bn
+oct07,counts,whites at union ages: Texas,households with a member whose own AGI is at least $1M,,,14,households
+oct07,counts,whites at union ages: Texas,persons in those members' SPM units (AGI at least $1M),,,49,records
+oct07,counts,whites at union ages: Texas,weighted share of persons in those units (AGI at least $1M),,,0.018136,share
+oct07,counts,whites at union ages: Texas,share of raked federal tax from those units (AGI at least $1M),,,0.503738,share
+oct07,counts,whites at union ages: Texas,share of unraked federal tax from those units (AGI at least $1M),,,0.259067,share
+oct07,counts,whites at union ages: Texas,households with a member whose own AGI is at least $500k,,,28,households
+oct07,counts,whites at union ages: Texas,persons in those members' SPM units (AGI at least $500k),,,92,records
+oct07,counts,whites at union ages: Texas,weighted share of persons in those units (AGI at least $500k),,,0.031468,share
+oct07,counts,whites at union ages: Texas,share of raked federal tax from those units (AGI at least $500k),,,0.583830,share
+oct07,counts,whites at union ages: Texas,share of unraked federal tax from those units (AGI at least $500k),,,0.338690,share
+oct07,counts,whites at union ages: Texas,share of raked federal tax from the top 10 records,,,0.229126,share
+oct07,counts,whites at union ages: Texas,share of raked federal tax from the top 20 records,,,0.335402,share
+oct07,counts,whites at union ages: Texas,households among the top 10 records,,,7,households
+oct07,counts,whites at union ages: Texas,minors (under 18) among the top 10 records,,,5,records
+oct07,counts,whites at union ages: Texas,records with own AGI under $100k among the top 10 records,,,8,records
+oct07,counts,whites at union ages: Texas,share of raked federal tax carried by persons under 18,,,0.295400,share
+oct07,counts,whites at union ages: rest of US,sample records,,,73873,records
+oct07,counts,whites at union ages: rest of US,raked federal income tax,,,142.8130,bn
+oct07,counts,whites at union ages: rest of US,households with a member whose own AGI is at least $1M,,,191,households
+oct07,counts,whites at union ages: rest of US,persons in those members' SPM units (AGI at least $1M),,,585,records
+oct07,counts,whites at union ages: rest of US,weighted share of persons in those units (AGI at least $1M),,,0.008674,share
+oct07,counts,whites at union ages: rest of US,share of raked federal tax from those units (AGI at least $1M),,,0.340288,share
+oct07,counts,whites at union ages: rest of US,share of unraked federal tax from those units (AGI at least $1M),,,0.154942,share
+oct07,counts,whites at union ages: rest of US,households with a member whose own AGI is at least $500k,,,583,households
+oct07,counts,whites at union ages: rest of US,persons in those members' SPM units (AGI at least $500k),,,1848,records
+oct07,counts,whites at union ages: rest of US,weighted share of persons in those units (AGI at least $500k),,,0.028068,share
+oct07,counts,whites at union ages: rest of US,share of raked federal tax from those units (AGI at least $500k),,,0.471757,share
+oct07,counts,whites at union ages: rest of US,share of unraked federal tax from those units (AGI at least $500k),,,0.271176,share
+oct07,counts,whites at union ages: rest of US,share of raked federal tax from the top 10 records,,,0.037180,share
+oct07,counts,whites at union ages: rest of US,share of raked federal tax from the top 20 records,,,0.062853,share
+oct07,counts,whites at union ages: rest of US,households among the top 10 records,,,8,households
+oct07,counts,whites at union ages: rest of US,minors (under 18) among the top 10 records,,,3,records
+oct07,counts,whites at union ages: rest of US,records with own AGI under $100k among the top 10 records,,,5,records
+oct07,counts,whites at union ages: rest of US,share of raked federal tax carried by persons under 18,,,0.271105,share
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,sample records,,,73873,records
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,raked federal income tax,,,360.8045,bn
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,households with a member whose own AGI is at least $1M,,,191,households
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,persons in those members' SPM units (AGI at least $1M),,,585,records
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,weighted share of persons in those units (AGI at least $1M),,,0.007752,share
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from those units (AGI at least $1M),,,0.326242,share
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,share of unraked federal tax from those units (AGI at least $1M),,,0.149214,share
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,households with a member whose own AGI is at least $500k,,,583,households
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,persons in those members' SPM units (AGI at least $500k),,,1848,records
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,weighted share of persons in those units (AGI at least $500k),,,0.024553,share
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from those units (AGI at least $500k),,,0.449602,share
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,share of unraked federal tax from those units (AGI at least $500k),,,0.259961,share
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from the top 10 records,,,0.031990,share
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax from the top 20 records,,,0.055889,share
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,households among the top 10 records,,,9,households
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,minors (under 18) among the top 10 records,,,0,records
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,records with own AGI under $100k among the top 10 records,,,2,records
+oct07,counts,A1: third-plus non-Hispanic whites at their own ages,share of raked federal tax carried by persons under 18,,,0.132721,share
+oct07,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 10 households,,,31,records
+oct07,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 10 households,,,0.155467,share
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,accrual,low,452.8207,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,accrual,low,-75.8204,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",accrual,low,-14.3425,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,accrual,high,455.8922,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,accrual,high,-75.5732,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",accrual,high,-14.2198,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,cash,low,476.6188,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,cash,low,-77.5213,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",cash,low,-13.9895,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 households,cash,high,481.7053,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 households,cash,high,-77.2741,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 households, % of the gap",cash,high,-13.8241,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 10 persons,,,10,records
+oct07,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 10 persons,,,0.097045,share
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,accrual,low,479.9599,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,accrual,low,-48.6812,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",accrual,low,-9.2087,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,accrual,high,482.8985,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,accrual,high,-48.5668,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",accrual,high,-9.1383,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,cash,low,504.8177,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,cash,low,-49.3224,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",cash,low,-8.9007,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 10 persons,cash,high,509.7715,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 10 persons,cash,high,-49.2080,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 10 persons, % of the gap",cash,high,-8.8032,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 20 households,,,65,records
+oct07,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 20 households,,,0.251614,share
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,accrual,low,404.7324,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,accrual,low,-123.9087,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",accrual,low,-23.4391,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,accrual,high,408.0016,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,accrual,high,-123.4638,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",accrual,high,-23.2308,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,cash,low,427.1817,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,cash,low,-126.9584,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",cash,low,-22.9109,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 households,cash,high,432.4660,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 households,cash,high,-126.5135,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 households, % of the gap",cash,high,-22.6329,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",persons dropped: top 20 persons,,,20,records
+oct07,leave_out,"local gap (California, Texas, rest of US)",share of the white side's raked federal tax dropped: top 20 persons,,,0.148595,share
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,accrual,low,454.9701,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,accrual,low,-73.6709,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",accrual,low,-13.9359,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,accrual,high,458.0246,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,accrual,high,-73.4408,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",accrual,high,-13.8185,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,cash,low,479.0326,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,cash,low,-75.1075,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",cash,low,-13.5539,pct
+oct07,leave_out,"local gap (California, Texas, rest of US)",gap without the top 20 persons,cash,high,484.1022,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)",change without the top 20 persons,cash,high,-74.8773,bn
+oct07,leave_out,"local gap (California, Texas, rest of US)","change without the top 20 persons, % of the gap",cash,high,-13.3954,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 10 households,,,28,records
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 10 households,,,0.056112,share
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,accrual,low,409.9942,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,accrual,low,-21.6133,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",accrual,low,-5.0076,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,accrual,high,414.4556,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,accrual,high,-21.4996,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",accrual,high,-4.9316,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,cash,low,240.9997,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,cash,low,-22.4724,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",cash,low,-8.5293,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 households,cash,high,247.4761,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 households,cash,high,-22.3587,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 households, % of the gap",cash,high,-8.2861,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 10 persons,,,10,records
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 10 persons,,,0.031990,share
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,accrual,low,419.1545,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,accrual,low,-12.4531,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",accrual,low,-2.8853,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,accrual,high,423.5632,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,accrual,high,-12.3920,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",accrual,high,-2.8425,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,cash,low,250.6031,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,cash,low,-12.8690,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",cash,low,-4.8844,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 10 persons,cash,high,257.0268,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 10 persons,cash,high,-12.8079,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 10 persons, % of the gap",cash,high,-4.7466,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 20 households,,,53,records
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 20 households,,,0.092178,share
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,accrual,low,395.8619,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,accrual,low,-35.7457,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",accrual,low,-8.2820,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,accrual,high,400.3946,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,accrual,high,-35.5606,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",accrual,high,-8.1569,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,cash,low,226.2702,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,cash,low,-37.2019,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",cash,low,-14.1199,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 households,cash,high,232.8179,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 households,cash,high,-37.0169,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 households, % of the gap",cash,high,-13.7184,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),persons dropped: top 20 persons,,,20,records
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),share of the white side's raked federal tax dropped: top 20 persons,,,0.055889,share
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,accrual,low,409.8989,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,accrual,low,-21.7087,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",accrual,low,-5.0297,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,accrual,high,414.3622,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,accrual,high,-21.5930,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",accrual,high,-4.9530,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,cash,low,240.9767,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,cash,low,-22.4954,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",cash,low,-8.5381,pct
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),gap without the top 20 persons,cash,high,247.4550,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),change without the top 20 persons,cash,high,-22.3798,bn
+oct07,leave_out,A1 gap (third-plus non-Hispanic whites at their own ages),"change without the top 20 persons, % of the gap",cash,high,-8.2939,pct
+oct07,personal_allocation,local gap: California,gap at the shared allocation (the central),accrual,low,247.9482,bn
+oct07,personal_allocation,local gap: California,gap at the personal allocation,accrual,low,218.8344,bn
+oct07,personal_allocation,local gap: Texas,gap at the shared allocation (the central),accrual,low,116.8062,bn
+oct07,personal_allocation,local gap: Texas,gap at the personal allocation,accrual,low,96.5599,bn
+oct07,personal_allocation,local gap: rest of US,gap at the shared allocation (the central),accrual,low,163.8865,bn
+oct07,personal_allocation,local gap: rest of US,gap at the personal allocation,accrual,low,136.0588,bn
+oct07,personal_allocation,"local gap (California, Texas, rest of US)",gap at the shared allocation (the central),accrual,low,528.6410,bn
+oct07,personal_allocation,"local gap (California, Texas, rest of US)",gap at the personal allocation,accrual,low,451.4531,bn
+oct07,personal_allocation,local gap: California,gap at the shared allocation (the central),accrual,high,248.0233,bn
+oct07,personal_allocation,local gap: California,gap at the personal allocation,accrual,high,218.9095,bn
+oct07,personal_allocation,local gap: Texas,gap at the shared allocation (the central),accrual,high,117.9387,bn
+oct07,personal_allocation,local gap: Texas,gap at the personal allocation,accrual,high,97.6923,bn
+oct07,personal_allocation,local gap: rest of US,gap at the shared allocation (the central),accrual,high,165.5035,bn
+oct07,personal_allocation,local gap: rest of US,gap at the personal allocation,accrual,high,137.6757,bn
+oct07,personal_allocation,"local gap (California, Texas, rest of US)",gap at the shared allocation (the central),accrual,high,531.4654,bn
+oct07,personal_allocation,"local gap (California, Texas, rest of US)",gap at the personal allocation,accrual,high,454.2775,bn
+oct07,personal_allocation,local gap: California,gap at the shared allocation (the central),cash,low,262.8665,bn
+oct07,personal_allocation,local gap: California,gap at the personal allocation,cash,low,233.7526,bn
+oct07,personal_allocation,local gap: Texas,gap at the shared allocation (the central),cash,low,121.1404,bn
+oct07,personal_allocation,local gap: Texas,gap at the personal allocation,cash,low,100.8940,bn
+oct07,personal_allocation,local gap: rest of US,gap at the shared allocation (the central),cash,low,170.1333,bn
+oct07,personal_allocation,local gap: rest of US,gap at the personal allocation,cash,low,142.3055,bn
+oct07,personal_allocation,"local gap (California, Texas, rest of US)",gap at the shared allocation (the central),cash,low,554.1401,bn
+oct07,personal_allocation,"local gap (California, Texas, rest of US)",gap at the personal allocation,cash,low,476.9522,bn
+oct07,personal_allocation,local gap: California,gap at the shared allocation (the central),cash,high,263.5163,bn
+oct07,personal_allocation,local gap: California,gap at the personal allocation,cash,high,234.4024,bn
+oct07,personal_allocation,local gap: Texas,gap at the shared allocation (the central),cash,high,122.9131,bn
+oct07,personal_allocation,local gap: Texas,gap at the personal allocation,cash,high,102.6667,bn
+oct07,personal_allocation,local gap: rest of US,gap at the shared allocation (the central),cash,high,172.5502,bn
+oct07,personal_allocation,local gap: rest of US,gap at the personal allocation,cash,high,144.7224,bn
+oct07,personal_allocation,"local gap (California, Texas, rest of US)",gap at the shared allocation (the central),cash,high,558.9795,bn
+oct07,personal_allocation,"local gap (California, Texas, rest of US)",gap at the personal allocation,cash,high,481.7916,bn
+oct07,personal_allocation,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared allocation (the central),accrual,low,431.6076,bn
+oct07,personal_allocation,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation,accrual,low,448.7454,bn
+oct07,personal_allocation,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared allocation (the central),accrual,high,435.9552,bn
+oct07,personal_allocation,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation,accrual,high,453.0931,bn
+oct07,personal_allocation,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared allocation (the central),cash,low,263.4721,bn
+oct07,personal_allocation,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation,cash,low,280.6100,bn
+oct07,personal_allocation,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the shared allocation (the central),cash,high,269.8347,bn
+oct07,personal_allocation,A1 gap (third-plus non-Hispanic whites at their own ages),gap at the personal allocation,cash,high,286.9726,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",central,accrual,low,528.6411,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,accrual,low,528.6411,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",standard error,accrual,low,33.1280,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,accrual,low,431.6076,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,accrual,low,431.6076,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,accrual,low,13.6414,bn
+oct07,replicate_se,local gap less A1 gap,central,accrual,low,97.0335,bn
+oct07,replicate_se,local gap less A1 gap,standard error,accrual,low,26.7878,bn
+oct07,replicate_se,white piece at union ages: California,standard error of its cost,accrual,low,23.9401,bn
+oct07,replicate_se,white piece at union ages: Texas,standard error of its cost,accrual,low,16.3511,bn
+oct07,replicate_se,white piece at union ages: rest of US,standard error of its cost,accrual,low,6.0957,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",central,accrual,high,531.4654,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,accrual,high,531.4654,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",standard error,accrual,high,32.9894,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,accrual,high,435.9552,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,accrual,high,435.9552,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,accrual,high,13.5505,bn
+oct07,replicate_se,local gap less A1 gap,central,accrual,high,95.5101,bn
+oct07,replicate_se,local gap less A1 gap,standard error,accrual,high,26.6979,bn
+oct07,replicate_se,white piece at union ages: California,standard error of its cost,accrual,high,23.8661,bn
+oct07,replicate_se,white piece at union ages: Texas,standard error of its cost,accrual,high,16.2550,bn
+oct07,replicate_se,white piece at union ages: rest of US,standard error of its cost,accrual,high,6.0639,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",central,cash,low,554.1401,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,cash,low,554.1401,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",standard error,cash,low,34.7847,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,cash,low,263.4721,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,cash,low,263.4721,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,cash,low,14.8090,bn
+oct07,replicate_se,local gap less A1 gap,central,cash,low,290.6680,bn
+oct07,replicate_se,local gap less A1 gap,standard error,cash,low,27.8418,bn
+oct07,replicate_se,white piece at union ages: California,standard error of its cost,cash,low,24.9814,bn
+oct07,replicate_se,white piece at union ages: Texas,standard error of its cost,cash,low,17.3607,bn
+oct07,replicate_se,white piece at union ages: rest of US,standard error of its cost,cash,low,6.4432,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",central,cash,high,558.9795,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",replicate 0,cash,high,558.9795,bn
+oct07,replicate_se,"local gap (California, Texas, rest of US)",standard error,cash,high,34.6387,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),central,cash,high,269.8347,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),replicate 0,cash,high,269.8347,bn
+oct07,replicate_se,A1 gap (third-plus non-Hispanic whites at their own ages),standard error,cash,high,14.7127,bn
+oct07,replicate_se,local gap less A1 gap,central,cash,high,289.1447,bn
+oct07,replicate_se,local gap less A1 gap,standard error,cash,high,27.7445,bn
+oct07,replicate_se,white piece at union ages: California,standard error of its cost,cash,high,24.8999,bn
+oct07,replicate_se,white piece at union ages: Texas,standard error of its cost,cash,high,17.2621,bn
+oct07,replicate_se,white piece at union ages: rest of US,standard error of its cost,cash,high,6.4103,bn
