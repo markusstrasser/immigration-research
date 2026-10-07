@@ -73,6 +73,11 @@ function stateOf(Eng, m, payload, spec) {
 
 function capitalOf(ev, payload, spec) {
   const K = payload.meta.capital_return, R = payload.meta.responses;
+  // Every case adopted since September 27 carries its capital return ($37–61bn on v6); such a payload without it is
+  // incomplete, not a no-capital case (red team, 2026-10-08). Generation payloads and earlier cases carry no such stamp.
+  if (payload.meta.adopted && payload.meta.adopted >= "2026-09-27" && !(K && K.components && K.components.length)) {
+    throw new Error(`[BLOCKED] the payload adopted ${payload.meta.adopted} has no meta.capital_return components`);
+  }
   if (!K) return { components: [], total_bn: 0 };
   const row = (id) => { const r = ev.spending.find((l) => l.id === id); if (!r) throw new Error(`[BLOCKED] no spending line ${id}`); return r; };
   const receipt = (id) => { const r = ev.receipts.find((l) => l.id === id); if (!r) throw new Error(`[BLOCKED] no receipt line ${id}`); return r; };
