@@ -118,7 +118,5 @@
   "lane_case_lines_identical": true,
   "lane_per_method_costs_identical": true
  },
- "hash_moved_since_lane_case_json": [
-  "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js"
- ]
+ "hash_moved_since_lane_case_json": []
 }

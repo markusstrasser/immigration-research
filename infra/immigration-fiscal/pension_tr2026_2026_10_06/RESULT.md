@@ -246,6 +246,12 @@ db5840f6 ("Engine takes new receipt lines and scale edits — v4 payload"). The 
 byte on today's engine (`case_lines_check.cjs` here), so its outputs stand. Rerunning its own `case_lines.cjs` would
 refresh the recorded hash.
 
+Update 2026-10-08: ec59a377 (2026-10-07 02:38, three minutes after this lane's 8cefec37) did refresh the hash, and the
+pension lane reruns again. This lane's two guards (`pension_tr2026.py` `lane_case` and `case_lines_check.cjs` gate 4)
+required that exactly engine.js had moved, so after the refresh both stopped `[BLOCKED]` with an empty list. They now
+accept that nothing moved as well. `derived/case_now.json` records `hash_moved_since_lane_case_json: []`, and the 16
+other outputs reran identical. A second rerun gives IDENTICAL 17/17.
+
 ## Reproduce
 
 Run from the repository root (one to two minutes in all, mostly `pension_tr2026.py`; peak memory 0.52 GB):

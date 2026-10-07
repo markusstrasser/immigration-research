@@ -306,10 +306,11 @@ def haircut_check(econ, prelim, paths: dict) -> pd.DataFrame:
 # ------------------------------------------------------------------ 2-4. the central under an arm
 def lane_case() -> dict:
     """The pension lane's derived/case.json (the September 27 case's per-method costs), with pension_accrual.gate_inputs'
-    checks except its engine hash. engine.js changed after the lane's last run (db5840f6), so that gate stops;
-    case_lines_check.cjs (run first) re-evaluated the case on today's engine and found the lane's case_lines.csv and
-    per-method costs unchanged. Here: that record is current, it agrees with case.json, and every other frozen file
-    keeps case.json's hash; the Note 2025.7 parser equals the 09-18 lane's."""
+    checks except its engine hash. engine.js changed after the lane's last run (db5840f6), so that gate stopped until
+    ec59a377 refreshed case.json's engine hash; case_lines_check.cjs (run first) re-evaluated the case on today's
+    engine and found the lane's case_lines.csv and per-method costs unchanged. Here: that record is current, it agrees
+    with case.json, and every other frozen file keeps case.json's hash; the Note 2025.7 parser equals the 09-18
+    lane's."""
     mine, theirs = S.mwr_table(1), ss.parse_mwr()
     if not mine.reset_index(drop=True).equals(theirs[mine.columns].reset_index(drop=True)):
         blocked("sources.mwr_table(1) differs from the 09-18 lane's parse_mwr()")
@@ -326,7 +327,8 @@ def lane_case() -> dict:
         moved = [f["file"] for f in rec if PA.hashlib.sha256((PA.FISCAL.parents[1] / f["file"]).read_bytes()).hexdigest() != f["sha256"]]
         if rec is now["frozen_files"] and moved:
             blocked(f"files changed since case_lines_check.cjs ran: {moved}")
-        if rec is case["frozen_files"] and moved != ["infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js"]:
+        # engine.js alone moved until ec59a377 (2026-10-07) refreshed case.json's engine hash; nothing moves since.
+        if rec is case["frozen_files"] and moved not in ([], ["infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js"]):
             blocked(f"frozen files changed since the pension lane's case.json, beyond engine.js: {moved}")
     for end in ["low", "high"]:
         got = np.mean([r["cost_bn"] for r in case["per_method"] if r["end"] == end])

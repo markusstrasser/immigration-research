@@ -1,9 +1,9 @@
 /* A copy of pension_accrual_2026_09_28/case_lines.cjs (9ea1beb) that writes here: it re-reads the September 27 case's
  * pension lines on today's engine and checks that they are the ones the pension lane's case.json and case_lines.csv
  * froze. Engine.js changed after the lane's last run (db5840f6, "Engine takes new receipt lines and scale edits"), so
- * that lane's own gate (pension_accrual.gate_inputs) stops on the engine's hash; this check is what lets
- * pension_tr2026.py read the lane's frozen case. Changed from the copy: OUT, the two output names and the comparison
- * at the end; the evaluation is the original's.
+ * that lane's own gate (pension_accrual.gate_inputs) stopped on the engine's hash until ec59a377 refreshed it; this
+ * check is what lets pension_tr2026.py read the lane's frozen case. Changed from the copy: OUT, the two output names and
+ * the comparison at the end; the evaluation is the original's.
  *
  * Gates (each stops with [BLOCKED]):
  *   1. the package chain, the engine and model.json are byte-identical to git HEAD, before and after the run;
@@ -11,7 +11,8 @@
  *      main_case_long_run_2026_09_27/derived/summary.json ($321.82-387.37bn) to 1e-9;
  *   3. 48 and 11 are each method's cheapest and dearest specifications;
  *   4. (added) the lines equal the pension lane's derived/case_lines.csv byte for byte and its case.json per-method
- *      costs exactly, and every frozen file but engine.js still has the hash case.json recorded.
+ *      costs exactly, and every frozen file but engine.js still has the hash case.json recorded (since ec59a377,
+ *      engine.js too).
  *
  * Writes derived/case_lines_now.csv and derived/case_now.json.
  *
@@ -122,7 +123,8 @@ if (!sameCosts || laneCase.case_bn.low !== caseBn[0] || laneCase.case_bn.high !=
   throw new Error("[BLOCKED] today's per-method costs differ from the pension lane's case.json");
 }
 const hashMoved = after.filter((r) => { const f = laneCase.frozen_files.find((x) => x.file === r.file); return !f || f.sha256 !== r.sha256; }).map((r) => r.file);
-if (hashMoved.join() !== "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js") {
+// engine.js alone moved until ec59a377 (2026-10-07) refreshed case.json's engine hash; nothing moves since.
+if (!["", "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js"].includes(hashMoved.join())) {
   throw new Error(`[BLOCKED] frozen files changed since the pension lane's case.json: ${hashMoved.join(", ")}`);
 }
 fs.mkdirSync(OUT, { recursive: true });
