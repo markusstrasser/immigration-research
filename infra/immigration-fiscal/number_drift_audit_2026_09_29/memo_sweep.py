@@ -23,8 +23,8 @@ A memo number quotes an other value when, after the audit's masks (dates, ladder
       one part; "4,900" is also read to the hundred);
     - it does not round to the record's current value;
     - its unit agrees with the record's (bn for $bn, or a "$" or bare number in a clause saying bn or billion; % for
-      %, k for $k, M for M; a bare range or decimal counts when its clause, or its table's caption, carries the
-      unit);
+      %, k for $k, M for M, "$…M" for $M; a bare range or decimal counts when its clause, or its table's caption,
+      carries the unit); a record in a unit unit_ok does not read stops the run;
     - its sentence names the item (ITEM, by record prefix; ITEM_EXTRA for single records).
 Its kind is what the other value differs by: count (a sibling; a superseded number on the raw 40.90M), arm (a
 superseded number whose `supersedes` piece names an arm) or vintage (the rest, and referenced, registry and earlier
@@ -100,6 +100,17 @@ ALLOW = {
      "counting only services a household uses itself"): (
         "the use-based share on main case v6 (convention B, 24.16% of members), which rounds like the every-line "
         "share's superseded 24.18% on the published CPS union"),
+    ("research/immigration-mexican-origin-by-generation-2026-09-16.md", "gap_vs_white.per_person_common_age", "$7,000",
+     "per-person health care spending by age"): (
+        "a published figure, Hispanic health spending per person at 45–64 (JAMA 2021, 2016 dollars), which reads to "
+        "the thousand like the common-age gap's superseded 7,049"),
+    ("research/immigration-historical-backcast-2026-09-20.md", "case.per_member", "$9.4k", "same-age tax shortfall"): (
+        "the second generation's same-age tax shortfall against whites with item T (age_normalizations.csv, 9,373 a "
+        "person), which reads like the September 29 case's per-member low end"),
+    ("research/immigration-second-generation-by-origin-2026-09-22.md", "case.per_member", "$9.4k",
+     "below same-age whites"): (
+        "the same tax shortfall (the second generation's, 9,373 a person with item T), which reads like the September "
+        "29 case's per-member low end"),
 }
 
 # the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,
@@ -196,6 +207,11 @@ ITEM = {
     "candidate_v4": r"candidate|bundle|pending|revised set|one set|\bv[34]\b",
     "pension": r"pension|accru|Social Security|Part A",
     "assumptions": r"assumption|tornado",
+    "gap_vs_white": r"white",
+    # the 100-year family-line ledger (ladder 159), not the main case's 42.75M lineage
+    "family_line": r"family[- ]line|founder|descendant|lineage (?:gap|cost|ledger)",
+    # a sponsored parent's rest-of-life cost (ladder 247), not any sentence naming a parent
+    "ir5": r"IR-5|parents? of (?:a )?US citizens?|sponsored parents?|parents? sponsored",
 }
 ITEM_EXTRA = {"pm25.deaths_priced": r"death"}
 
@@ -294,12 +310,13 @@ def _places(d):
     return max(0, -d.as_tuple().exponent)
 
 
-def supersedes_atoms(text):
+def supersedes_atoms(text, money_m=False):
     """The numbers that a `supersedes` text names, as (kind, values, printed, decimals): scalars, ranges, "a / b"
-    pairs and "c (lo–hi)" central intervals. Counts (…M), factors ("factor 0.977200", "× 0.977"), bracketed notes
-    and the audit's masks (dates, ladder and item references, hashes) are left out."""
+    pairs and "c (lo–hi)" central intervals. Counts (…M, unless `money_m`: a record in $M), factors ("factor
+    0.977200", "× 0.977"), bracketed notes and the audit's masks (dates, ladder and item references, hashes) are
+    left out."""
     clean = A.mask(re.sub(r"\[[^\]]*\]", lambda m: " " * len(m.group(0)), text))
-    toks = [t for t in A.tokens(text, clean) if t[5] not in ("M", "word")
+    toks = [t for t in A.tokens(text, clean) if t[5] != "word" and (money_m or t[5] != "M")
             and not re.search(r"(?:factor|×)\s*$", clean[:t[0]])]
     atoms, used = [], set()
     for i, (s, e, raw, lo, hi, _suf, _k) in enumerate(toks):
@@ -376,7 +393,7 @@ def other_values(recs, values, registry=None, earlier=None):
                                                         recs[ref]["shape"] in ("ends", "interval") else "value"),
                                        source=f"{ref}: {recs[ref]['label']}", labels=distinct))
             for piece in clause.split("="):
-                for shape, vals, printed, places in supersedes_atoms(piece):
+                for shape, vals, printed, places in supersedes_atoms(piece, money_m=rec["unit"] == "$M"):
                     parts = _atom_parts(shape, vals)
                     if _equal_at(parts, cur, places):
                         continue  # the record's current value, printed as the supersedes prints it
@@ -432,9 +449,15 @@ def unit_ok(unit, tok, clause):
         return suf in ("%", "pp") or (bare and re.search(r"%|percent", clause) is not None)
     if unit == "M":
         return suf == "M" or (bare and "million" in clause)
+    if unit == "$M":
+        return (suf == "M" and dollar) or (not suf and dollar and "million" in clause)
     if unit == "x":
         return not suf and not dollar
     return False
+
+
+# the units unit_ok reads; main() stops on a record with other values in any other unit
+UNITS_READ = {"$bn", "$tn", "$k", "$", "%", "M", "$M", "x"}
 
 
 def clause(para, s, e):
@@ -756,6 +779,16 @@ CONTROLS = [
     ("the September 27 pairing per member quoted as current",
      "Fiscal and social costs together are $10.4–12.3k a year per member.",
      {("pairing.per_member_priced", "vintage_unlabelled")}),
+    # a record in $M (the family-line ledger, since item T)
+    ("a $M value from before item T quoted as current",
+     "A Mexican founder's family line runs $1.29M behind a white family line.",
+     {("family_line.gap", "vintage_unlabelled")}),
+    ("the $M value now", "A Mexican founder's family line runs $1.48M behind a white family line.", set()),
+    # the IR-5 parent's cost: the pre-T range is flagged, and a sentence that only names a parent is not read
+    ("an IR-5 range from before item T quoted as current", "An IR-5 parent costs $235–288k at 3%.",
+     {("ir5.lifetime_cost_55_65", "vintage_unlabelled")}),
+    ("a parent named, another quantity", "Routes need a citizen spouse or parent, or a U visa (288k pending).",
+     set()),
 ]
 
 
@@ -836,6 +869,9 @@ def main():
     missing =sorted({rid.split(".")[0] for rid in others} - set(ITEM))
     if missing:
         raise SystemExit(f"[BLOCKED] records with other values but no ITEM context: {missing}")
+    unread_units = sorted({recs[rid]["unit"] for rid in others} - UNITS_READ)
+    if unread_units:
+        raise SystemExit(f"[BLOCKED] records with other values in a unit unit_ok does not read: {unread_units}")
     fails = controls(recs, values, others)
     if fails:
         raise SystemExit(f"[BLOCKED] {len(fails)} control(s) failed: {fails}")

@@ -9,6 +9,8 @@
 
 This correction governs conflicting claims in the retained assessment below. Evidence and scope: [five-day cross-check](immigration-five-day-cross-check-2026-09-19.md).
 
+**Current values.** On the current build, with the September 19 repair and the income tax the survey misses placed on the main case's keys (item T), the union's balance with F at zero is −$203.52bn a year: −$198.13bn (97%) state-local and −$5.39bn federal. Spread over native-headed households it is $1,737 on average financing and $1,692–1,693 on marginal financing. With F per capita the balance is −$415.18bn, or $3,542 a household on average financing and $1,752–1,782 on marginal financing. The same-rule control, the third-plus white reference, runs a surplus of $51.83bn with F at zero (federal +$198.17bn), though its replicate SE of $64.2bn leaves the sign unsettled (`ledger_absolute_2026_09_17/derived/waterfall.csv`, step 15). The retained assessment's $263bn, $2,246, 89% and its California and Texas household rows are superseded history. [DATA: `infra/immigration-fiscal/gap_incidence_2026_09_18/derived/account_by_level.csv`, `derived/TABLES.txt` §D–E, `derived_F_percapita/account_by_level.csv`]
+
 ## Retained assessment and evidence
 claude-opus-5[1m]
 
@@ -279,4 +281,13 @@ The live California vs Texas comparison for Mexican-origin residents vs **local*
 the shared all-age ledger (−$12,133 / −$7,479 per standardized person), not the $8,498 /
 $5,177 per native-headed household rows in the retained assessment. See
 [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md). Those
-household figures remain historical, as of the September 19 correction above.
+household figures remain historical, as of the September 19 correction above. [2026-10-08:
+with the income tax the survey misses (item T, ladder 296) the live comparison leads with
+−$15,228 / −$9,267 per standardized person; −$12,133 / −$7,479 are the figures with taxes as
+the survey reports them, and the ten largest white households carry 67% of whites' added tax
+in California and 98% in Texas ([DATA: `ledger_stress_2026_09_17/derived/state_matched_T.csv`,
+`t_concentration.csv`])]
+
+## Revisions — 2026-10-08
+
+- 2026-10-08: added the current values to the September 19 correction, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)) and the incidence lane books it as federal and state income tax: with F at zero the union's balance −$217.32bn → −$203.52bn, its state-local share 92% → 97%, per native-headed household $1,854 → $1,737 ($1,712–1,715 → $1,692–1,693 marginal); with F per capita −$428.97bn → −$415.18bn and $3,660 → $3,542; the third-plus white control −$211.31bn → +$51.83bn, a surplus with F at zero. The September 18 figures ($263bn, $2,246, 89%, $8,498 / $5,177) stay as superseded history. Concept affected: who finances the Mexican-origin fiscal balance, by level of government.

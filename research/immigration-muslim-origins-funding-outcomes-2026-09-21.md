@@ -34,21 +34,25 @@ non-Muslim shares [TRAINING-DATA].
 
 | Born in | Degree, 25–64 | Balance per adult-year | At native ages | Medicaid, all ages | Degree holders ≥ $100k | Women employed |
 |---|---:|---:|---:|---:|---:|---:|
-| Iran | 67% | +$21,228 | +$22,292 | 19% | 40% | 70% |
-| Egypt | 69% | +$17,488 | +$14,881 | 29% | 28% | 63% |
+| Iran | 67% | +$26,911 | +$28,140 | 19% | 40% | 70% |
+| Egypt | 69% | +$16,164 | +$13,778 | 29% | 28% | 63% |
 | Turkey | 70% | n/a | n/a | 12% | 36% | 59% |
-| Pakistan | 62% | +$5,331ᵃ | +$2,329ᵃ | 25% | 28% | 54% |
-| Bangladesh | 50% | +$5,331ᵃ | +$2,329ᵃ | 40% | 20% | 52% |
+| Pakistan | 62% | +$7,833ᵃ | +$4,662ᵃ | 25% | 28% | 54% |
+| Bangladesh | 50% | +$7,833ᵃ | +$4,662ᵃ | 40% | 20% | 52% |
 | Iraq | 33% | n/a | n/a | 44% | 26% | 50% |
 | Afghanistan | 30% | n/a | n/a | 62% | 17% | 37% |
-| India (reference) | 86% | +$29,174 | +$21,832 | 7% | 53% | 69% |
-| All natives | | +$2,785 | +$2,785 | | | |
+| India (reference) | 86% | +$32,159 | +$24,258 | 7% | 53% | 69% |
+| All natives | | +$4,789 | +$4,789 | | | |
 
-ᵃ Pakistan and Bangladesh are one pooled group in the CPS account (interval −$1,109 to +$11,772
-at own ages). Balances: ladder 168–169 (CPS ASEC 2025, personal allocation; Iran and Egypt rest
+ᵃ Pakistan and Bangladesh are one pooled group in the CPS account (interval −$2,536 to +$18,202
+at own ages). Balances: ladder 168–169 (CPS ASEC 2025, personal allocation, with the income tax
+the survey misses placed on the main case's keys (item T); Iran and Egypt rest
 on thin samples). Medicaid and degree shares: ACS 2024, all arrival years. Last two columns: ACS 2024,
-entered 2000 or later (ladder 171). Degree holders born in Pakistan or Bangladesh pay $12,947 a
-year less than native degree holders (−$21,152 to −$4,742).
+entered 2000 or later (ladder 171). Degree holders born in Pakistan or Bangladesh pay $16,878 a
+year less than native degree holders (−$25,038 to −$8,717). India-born degree holders' advantage
+over native degree holders, +$5,749 (−$136 to +$11,634), is not clear of zero.
+[DATA: `infra/immigration-fiscal/high_skill_origin_screen_2026_09_21/derived/origin_screen.csv`,
+`origin_screen_native_ages.csv`]
 
 The pre-specified cross-birthplace test (ladder 171) returned "not settled" by its rule, with
 clear parts: the employment-route share predicts degree conversion strongly; the origin's Muslim
@@ -245,3 +249,4 @@ specified before its data, and the parent re-checked 15 quotes. See `notes/llm-b
   country of birth) and the pay-rate gap is zero; the twelve-month wage deficit loads on months
   worked. §6's "reassuring on earnings" is extended to a source with religion observed; §2's
   "not reached" list loses NIS; Next item 5 closed. No fiscal value changes.
+- 2026-10-08: restated §1's balances and degree-holder comparison, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)) and the origin screen's account carries it: India +$29,174 / +$21,832 → +$32,159 / +$24,258 (own ages / native age mix), all natives +$2,785 → +$4,789, Pakistan and Bangladesh +$5,331 / +$2,329 → +$7,833 / +$4,662, Iran +$21,228 → +$26,911, Egypt +$17,488 → +$16,164; Pakistan- and Bangladesh-born degree holders $12,947 → $16,878 a year below native degree holders; India-born degree holders' advantage, +$5,749 (−$136 to +$11,634), is no longer clear of zero. The verdict's fiscal reading holds. Concept affected: the fiscal position of high-skill Muslim-majority birthplaces.

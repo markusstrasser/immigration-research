@@ -83,7 +83,10 @@ def test_an_allowance_passes_only_its_own_sentence_and_lapses_with_it():
     assert classes(path, other) == {allowed.replace("_allowed", "_unlabelled")}
     assert classes("research/immigration-other.md", own) == {allowed.replace("_allowed", "_unlabelled")}
     # an allowance lapses once its memo loses the phrase or the number; a line break inside the phrase still holds
-    assert M.lapsed_allowances([(path, own.replace(phrase, phrase.replace(" ", "\n", 1)))]) == []
-    assert M.lapsed_allowances([(path, other)]) == [key]
-    assert M.lapsed_allowances([(path, own.replace(quoted, "24.3%"))]) == [key]
-    assert M.lapsed_allowances([]) == [key]
+    # (the other entries' memos are not in these docs, so only this entry's verdict is read)
+    def lapsed(docs):
+        return [k for k in M.lapsed_allowances(docs) if k == key]
+    assert lapsed([(path, own.replace(phrase, phrase.replace(" ", "\n", 1)))]) == []
+    assert lapsed([(path, other)]) == [key]
+    assert lapsed([(path, own.replace(quoted, "24.3%"))]) == [key]
+    assert lapsed([]) == [key]

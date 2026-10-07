@@ -605,9 +605,14 @@ opening conclusion accordingly. Estimating the actual channel requires linked or
 cohort-specific naturalization and petition hazards, parent age/survival, sibling
 sharing, adjustment versus new entry and return migration. The apparent precision
 of 1.9% does not identify those transitions. [INFERENCE / RECOMMENDATION]
+[2026-10-08: with item T (ladder 296) the calibrated channel is 1.7% of the lineage gap (2.1% at 3%),
+$24.4k per founder undiscounted and $12.0k at 3%; the probe's delayed-admission figures above were not
+rerun ([DATA: `lineage_sponsored_parents_2026_09_27/derived/arms.csv`])]
 
 ### E. Survival prices descendants but does not limit their births
 
+[2026-10-08: with item T (ladder 296) the lineage central is −$1,476,572 (−$570,067 at 3%) ([DATA:
+`lineage_cost_2026_09_19/derived/lineage_table.csv`])]
 [2026-09-28: fixed in 4e9c2e2, with the factors and figures below: the lineage central is now −$1,288,162
 (−$513,398 at 3%). The projection back-test's own copy of the recurrence was fixed the same way. The
 sponsorship probe now loads the lineage code as audited (a72fd62) and also checks the current lane.]

@@ -13,8 +13,8 @@ birthplaces, Mexico is the only one whose second generation is still behind on c
 Descriptive, cross-sectional, and the standard errors are lower bounds.
 
 September 22, 2026. Frame: adult outcomes of resident generations in one repeated cross-section,
-compared with a fixed reference. This is the measurement FAQ 5 lacked: the fiscal ledger showed
-first- and second-generation same-age gaps within $62 of each other and could not say which
+compared with a fixed reference. This is the measurement FAQ 5 lacked: the fiscal ledger shows
+first- and second-generation same-age gaps within $350 of each other and cannot say which
 inputs converge and which do not. Executed in
 [`second_generation_by_origin_2026_09_22`](../infra/immigration-fiscal/second_generation_by_origin_2026_09_22/RESULT.md)
 on the IPUMS-CPS extract registered today (`IPUMS_CPS_ASEC_1994_2025_2NDGEN`, 5,721,633 persons,
@@ -98,8 +98,12 @@ repo's reproduction of their design on CPS 2025 finds attrition about half their
 ([ladder 158](immigration-confidence-ladder.md)). So the third-plus row understates the
 lineage's position by an amount this lane cannot measure. `[INFERENCE]` The direction is known;
 the size is not. Even with that caveat, the second-to-third step is small
-next to the first-to-second step on every row, which is the same shape the fiscal ledger shows
-(FAQ 5: −$7,584, −$7,521, −$6,195 at common ages).
+next to the first-to-second step on every row. The fiscal ledger's taxes follow that shape
+($13.4k, $9.4k and $7.9k below same-age whites, with the income tax the survey misses, placed on
+the main case's keys, item T), but its net gaps do not (FAQ 5: −$8,849, −$8,499 and −$7,118 at
+common ages), because the first generation's lower spending, $4.6k a person below whites', falls
+under $1k by the second. `[DATA: ledger_absolute_2026_09_17/derived/age_normalizations.csv,
+shared allocation, white reference's ages]`
 
 ## 3. Mexico over three decades
 
@@ -177,7 +181,7 @@ generation's college rate down is not only legal status.
 
 ## 5. What this does and does not say about the fiscal question
 
-The fiscal generation ledger found the first and second generations $62 apart at common ages,
+The fiscal generation ledger finds the first and second generations $350 apart at common ages,
 with taxes converging and the first generation's lower benefit use disappearing by the second
 ([FAQ 5](immigration-objections-faq-2026-09-21.md), [generation memo](immigration-mexican-origin-by-generation-2026-09-16.md)).
 This lane shows the input side of that result: the second generation works and participates
@@ -210,7 +214,8 @@ any such claim.
   so the pooling is unlikely to move the college ratio far in either direction. `[INFERENCE]`
   The split is estimated in `adjusted_gaps.csv` under the `region_gen_detail` taxonomy.
 - **Could ethnic attrition rescue the third-plus row?** In direction only. On the fiscal side,
-  adding the estimated attriters narrowed the per-person gap from −$7,105 to −$6,864
+  including those who stopped identifying narrows the union's per-person gap by about $240, from
+  −$8,218 to −$7,981 on the population lane's base with item T and the measured generation split
   ([ladder 158](immigration-confidence-ladder.md)), about 3%; a correction of that order
   cannot move a −0.201 college gap near zero. `[INFERENCE from ladder 158, not computed on this
   extract]`
@@ -275,3 +280,13 @@ matched.
   people still in the US. Returnee men hold 6–8 points less tertiary schooling, so the withdrawn
   mechanism has the stated sign; each window moves the stock by 0.13–0.23 points of tertiary
   share, which is small beside the period change in §3.
+- **2026-10-08 (item T).** The fiscal comparisons in the frame, §2a, §5 and §6 are restated because
+  the white-reference ledger's expanded account now charges the income tax the survey misses on the
+  main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)):
+  FAQ 5's gaps −$7,584, −$7,521 and −$6,195 → −$8,849, −$8,499 and −$7,118, so the first and second
+  generations sit $62 → $350 apart; the attriters' narrowing, from −$7,105 to −$6,864 → from −$8,218
+  to −$7,981 (the population lane's measured generation split, as in FAQ 5, in place of its
+  Duncan–Trejo selectivity arm). §2a's claim that the ledger shows the education rows' shape is
+  corrected: it holds for the ledger's taxes and failed for its net gaps before and after item T,
+  where the first-to-second step is the small one. Concept affected: the fiscal ledger's
+  generational shape beside the education convergence.

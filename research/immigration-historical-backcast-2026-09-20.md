@@ -150,8 +150,10 @@ pay is the cleaner measure: men gained in 2016–2019 and 2021–2023 and not in
 women fell back in 2024 (−2.1). Three of the four series paused in 2024. [INFERENCE] Those two bursts coincide with tight
 low-wage labour markets, so a group-specific convergence is not identified, and one flat
 year does not establish a plateau. Across generations the flattening is clearer: the
-same-age tax shortfall is $12.1k, $8.4k and $7.0k for the first, second and third-plus
-generations.
+same-age tax shortfall is $13.4k, $9.4k and $7.9k for the first, second and third-plus
+generations, with the income tax the survey misses, placed on the main case's keys (item T).
+[DATA: `ledger_absolute_2026_09_17/derived/age_normalizations.csv`, shared allocation, white
+reference's ages, `receipts_gap_vs_white`]
 
 ## Relation to the interest-on-gap calculation
 
@@ -174,6 +176,12 @@ income series. The repository holds 2022–2026 only.
 series and each assumption are separately inspectable.
 
 ## Revisions
+
+2026-10-08, item T: restated the same-age tax shortfall by generation, because the white-reference
+ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T;
+[decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)): $12.1k, $8.4k and $7.0k → $13.4k,
+$9.4k and $7.9k. The flattening across generations holds. Concept affected: the generational tax gap
+beside the income-ratio series.
 
 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed,
 recoverable at 0e0c5e28.

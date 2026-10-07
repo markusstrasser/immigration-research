@@ -7,9 +7,10 @@ It predates the September 5 inference repair and every executed account. Current
 [objections FAQ](immigration-objections-faq-2026-09-21.md). Two statements below need this
 qualification: the NAS 2017 finding that the second generation is "among the strongest net
 fiscal contributors" and "typically net positive" is an **all-origin** literature result. The
-repository's own measurement for the **Mexican-origin** second generation is −$7,521 per person
-a year against same-age third-plus non-Hispanic whites, and a period-profile lifetime value of
-−$280k at 3% against −$96k for the white reference. The memo's text is retained unchanged as
+repository's own measurement for the **Mexican-origin** second generation is −$8,499 per person
+a year against same-age third-plus non-Hispanic whites, with the income tax the survey misses,
+placed on the main case's keys (item T), and a period-profile lifetime value of −$267k at 3%
+against −$68k for the white reference. The memo's text is retained unchanged as
 the March 2026 record of the literature and the child-attribution dispute.
 
 **Question:** What is the total lifetime fiscal cost of an unauthorized Mexican immigrant to the US? What are the categories, and how do methodological choices drive results?
@@ -316,3 +317,5 @@ Heritage counts the costs but uses a short horizon that excludes the contributio
 - **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-fiscal-account-2024-2026-09-05.md](immigration-fiscal-account-2024-2026-09-05.md), [immigration-clarity-update-2026-09-05.md](immigration-clarity-update-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).
 
 - **2026-09-30 — source date corrected.** The section headed "Manhattan Institute (Di Martino, Oct 2025)" carried the September 2024 lifetime report's figures, taken from Cato WP 82, which reviewed that report. The heading now reads Sep 2024 and quotes the report's own page. The October 2025 update, a different 30-year federal analysis with a Mexico row (+$10,000 of debt per Mexican immigrant), has its own section. No claim in this memo changed sign or size. Found by the literature-completeness check (`notes/immigration-published-accounts-comparison-2026-09-30.md`).
+
+- **2026-10-08 — status banner restated.** The banner's measurement of the Mexican-origin second generation is restated because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)): −$7,521 → −$8,499 per person a year; the lifetime value at 3% −$280k → −$267k, and the white reference's −$96k → −$68k. The text below the banner is unchanged. Concept affected: the repository's own Mexican-origin second-generation measurement set against the NAS all-origin result.

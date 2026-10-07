@@ -124,6 +124,13 @@ generation costs everyone else under the adopted account, with no reference grou
 different objects, and neither is scaled onto the other. [CALCULATION: lane `compare_ledger.py` →
 `derived/ledger_comparison.csv`, the ledger read through its hash-checking loader]
 
+[2026-10-08: with item T (ladder 296), the income tax the survey misses, the ledger's gaps are −$8,849, −$8,499 and
+−$7,118, the reference whites at the groups' own ages run +$3.8k to +$5.6k, and the groups' own balances are
+−$5,633, −$5,706 and −$3,688 under the shared allocation. Both orderings below still hold in the ledger. The account
+side of this section is the September 24 case, and no ledger bridge exists for the live case, so the closeness and
+the $1.7–3.0k excess are not restated ([DATA: `generation_account_2026_09_24/derived/ledger_comparison.csv`, ledger
+columns; its account columns hold the September 27 case]).]
+
 - At the groups' own ages the reference whites are net contributors (+$2.5k to +$3.9k per person
   under the shared allocation), so a gap exceeds the group's own balance.
 - The groups' own balances in the ledger (−$5,929, −$5,881, −$4,223) are close to this account's
@@ -168,6 +175,15 @@ case itself, which moves every generation.
   union reproduces the adopted band, $389.0826–461.4797bn and $307.3994–385.3641bn. [CALCULATION]
 
 ## Revisions
+
+- 2026-10-08, item T: added a dated bracket to §3 with the ledger's current figures, because the white-reference
+  ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T;
+  [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)): the generation gaps −$7,584, −$7,521 and
+  −$6,195 → −$8,849, −$8,499 and −$7,118; the reference whites at the groups' ages +$2.5–3.9k → +$3.8–5.6k; the
+  ledger's own balances −$5,929, −$5,881 and −$4,223 → −$5,633, −$5,706 and −$3,688. Both orderings hold. §3 stays
+  the September 24 record: its account side is that case's, and the live case has no ledger bridge, so the
+  comparison itself is not restated. Concept affected: the comparison with the September 19 generation ledger
+  (ladder 224).
 
 - 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed,
   recoverable at 0e0c5e28.

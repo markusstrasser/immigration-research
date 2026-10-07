@@ -338,8 +338,13 @@ fiscal transfer, which runs through the tax-and-transfer system rather than the 
 repo's measurement of that omitted term is large: the Mexican-origin population's age-band
 fiscal gap against third-plus non-Hispanic whites is −$290.59bn/yr on an all-age expanded
 account [SOURCE: `immigration-all-age-and-lineage-findings-2026-09-17.md`, ladder 123], widening
-to −$411.81bn under within-state matching [SOURCE: ladder 125]. Banerjee's reasoning addresses
-one of the two channels and treats the answer as settled by it.
+to −$411.81bn under within-state matching [SOURCE: ladder 125] [2026-10-08: that account is the
+partial one, with taxes as the survey reports them; with item T (ladder 296), the income tax the survey
+misses, the gap is −$336.07bn and the within-state gap −$494.65bn ([DATA:
+`mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication_T.csv`,
+`ledger_stress_2026_09_17/derived/state_matched_T.csv`]); within states the added tax rests on few
+records: the ten largest white households carry 67% of whites' added tax in California and 98% in
+Texas]. Banerjee's reasoning addresses one of the two channels and treats the answer as settled by it.
 
 **Darrell Duffie (Stanford), Agree, confidence 4** — "Labor is a valuable factor input. My
 answer presumes that many of these new workers would be employed. But I'm not confident of that."
@@ -367,7 +372,9 @@ fiscal offset. The audit point is that he names the offset without sizing it, an
 what determines the sign. Under this repo's measurement the offset is not a rounding error:
 the measured partial balance for the 40.90m Mexican-origin population is **+$50.24bn** in the
 main arm, but the age-band gap against third-plus non-Hispanic whites is **−$290.59bn**
-[SOURCE: ladder 123]. Hart's framing also understates the term by restricting it to "welfare
+[SOURCE: ladder 123] [2026-10-08: with item T (ladder 296) the gap is −$336.07bn; the partial balance
+keeps taxes as the survey reports them ([DATA:
+`mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication_T.csv`])]. Hart's framing also understates the term by restricting it to "welfare
 payments to unemployed immigrants" — the measured gap is primarily a **tax-side** gap, not a
 transfer-side one, and it persists among the employed [SOURCE: ladder 76, 127].
 
@@ -454,7 +461,10 @@ Hall's Question A comment — "If only workers are admitted, we come out ahead b
 revenue. But it's not so obvious if they bring their families and relatives." → **HOLDS.** The
 dependants margin is precisely where the measured fiscal gap sits: the second generation, not
 the first, shows the widest per-adult gap once place is fixed (−$7,081 at metro×age)
-[SOURCE: ladder 128].
+[SOURCE: ladder 128] [2026-10-08: with item T (ladder 296), the income tax the survey misses, it is
+−$8,489, still the widest point estimate, though no generation contrast stays clear of zero once place
+is fixed ([DATA: `metro_match_2026_09_17/derived/metro_matched_T.csv`,
+`metro_generation_contrasts_T.csv`])].
 
 ### 5.1 There is no unauthorized-immigration or deportation poll to audit
 
@@ -513,7 +523,9 @@ effects on which we've only a partial grasp."
 needs.** A confidence-weighted share of expert votes on an unquantified statement about an
 unspecified average is a measure of professional disposition. It is not an estimate of a
 magnitude, it has no standard error, and it cannot be compared with a measured quantity such as
-this repo's −$290.59bn age-band gap or +$50.24bn partial balance [SOURCE: ladder 123]. The poll
+this repo's −$290.59bn age-band gap or +$50.24bn partial balance [SOURCE: ladder 123] [2026-10-08:
+the gap is −$336.07bn with item T (ladder 296) ([DATA:
+`mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication_T.csv`])]. The poll
 and the ledger answer different questions; neither refutes the other. [FRAMING-SENSITIVE]
 
 A final note on the public-goods convention, because it is where the statement is most sensitive
@@ -609,6 +621,15 @@ Withdraw the mistaken immigrant-skill interpretation in the verdict, detailed ra
 summary, correct the claim that only Hart mentioned fiscal costs, and recognize that Shapiro's
 legal-for-unauthorized substitution can fit the poll's wording. Original response
 text and vote data are unchanged; the prior interpretation remains in Git history.
+
+2026-10-08 — Added dated brackets at the Banerjee, Hart and Hall ratings and the aggregation
+paragraph, because the white-reference ledger's expanded account now charges the income tax the
+survey misses on the main case's keys (item T;
+[decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)): the age-band gap −$290.59bn →
+−$336.07bn, within-state −$411.81bn → −$494.65bn and the second generation at metro × age −$7,081 →
+−$8,489, each with the income tax the survey misses beside taxes as the survey reports them. No
+rating changes. The Sources list keeps the ladder entries' figures as cited. Concept affected:
+fiscal-gap magnitudes set against panelists' comments.
 
 ---
 

@@ -11,8 +11,10 @@ This supersedes conflicting interpretations below; calculations are retained as 
 to matter fiscally, and not attributable to the Mexican-origin gap. California's net outflow
 of adjusted gross income rose from about zero in 2012-2016 to $20.6bn in 2021 and $17.2bn in
 2023; at ITEP's 12.1% effective state and local rate on top earners that is $2.1bn of revenue
-in 2023, **1.1% of the state's $189.3bn Mexican-origin fiscal gap** and about $53 per
-resident. Texas holds the same Mexican-origin share, 31.7-33.5% against California's
+in 2023, **0.89% of the state's $233.0bn Mexican-origin fiscal gap** with the income tax the
+survey misses (1.1% of $189.3bn with taxes as the survey reports them; the added tax rests on
+few records, the ten largest white households carrying 67% of California whites' added tax) and
+about $53 per resident. Texas holds the same Mexican-origin share, 31.7-33.5% against California's
 31.8-32.5%, and runs a net AGI **inflow** of $6.4bn a year throughout. Across 51 states and
 twelve tax-year pairs, net out-migration of $200k-plus filers tracks the effective top-1%
 tax rate (standardised beta +0.31, interval excluding zero on every outcome) and not the
@@ -296,14 +298,17 @@ California and 4.6% in Texas [SOURCE: ITEP, *Who Pays?* 7th edition, via
 | California, $200k+ only | −$0.40bn | −$0.99bn | −$4.8bn |
 | Texas, all net AGI | +$0.30bn | +$0.19bn | +$3.3bn |
 
-Set against California's Mexican-origin fiscal gap of $189.3bn a year against the local
-white reference, or $111.7bn against all local natives
-[SOURCE: `infra/immigration-fiscal/ledger_stress_2026_09_17/derived/state_matched.csv`,
-`all_age_shared`, `mexican_observed_total`, `CA_age`]:
+Set against California's Mexican-origin fiscal gap of $233.0bn a year against the local
+white reference, or $134.7bn against all local natives, with the income tax the survey
+misses placed on the main case's keys (item T); with taxes as the survey reports them the
+gap is $189.3bn and $111.7bn. The added tax rests on few records: the ten largest white
+households carry 67% of California whites' added tax.
+[SOURCE: `infra/immigration-fiscal/ledger_stress_2026_09_17/derived/state_matched_T.csv` and
+`state_matched.csv`, `all_age_shared`, `mexican_observed_total`, `CA_age`; `derived/t_concentration.csv`]:
 
-* the worst single year of lost revenue, 2021, is **1.3%** of the $189.3bn gap and **2.2%**
-  of the $111.7bn version;
-* the twelve-year cumulative $10.3bn is **0.45%** of twelve years of the $189.3bn gap;
+* the worst single year of lost revenue, 2021, is **1.1%** of the $233.0bn gap and **1.8%**
+  of the $134.7bn version (1.3% and 2.2% with taxes as the survey reports them);
+* the twelve-year cumulative $10.3bn is **0.37%** of twelve years of the $233.0bn gap (0.45%);
 * per California resident the 2023 figure is about **$53 a year**.
 
 Two honest caveats on this comparison, both of which cut against reading the ratio as
@@ -489,8 +494,9 @@ Primary data, all fetched 2026-09-18:
 
 Repo inputs:
 
-* `infra/immigration-fiscal/ledger_stress_2026_09_17/derived/state_matched.csv` and
-  `state_populations.csv` — the California and Texas Mexican-origin fiscal gaps.
+* `infra/immigration-fiscal/ledger_stress_2026_09_17/derived/state_matched.csv`,
+  `state_matched_T.csv`, `t_concentration.csv` and `state_populations.csv` — the California
+  and Texas Mexican-origin fiscal gaps, with and without the income tax the survey misses.
 * `infra/immigration-fiscal/employment_entry_2026_09_18/derived/metro_base_2000.csv`,
   `metro_year_panel.csv` — shift-share instrument base and the Mexico-born metro share.
 * `research/immigration-canon-citation-audit-2026-09-17.md` §P1 and §C5 — Card, Borjas,
@@ -517,4 +523,10 @@ Same-share California vs Texas is now the routing fact for the fiscal-geography 
 (gaps vs local whites, Los Angeles vs Houston, New York / San Francisco coverage):
 [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md). §5's
 $189.3bn / $111.7bn remain the stress-lane **totals** on that same shared all-age ledger;
-do not mix them with the $165–197bn complete account.
+do not mix them with the $165–197bn complete account. [2026-10-08: with the income tax the
+survey misses (item T, ladder 296) §5 leads with $233.0bn / $134.7bn, and the complete
+account is now $389–461bn ([DATA: `ledger_stress_2026_09_17/derived/state_matched_T.csv`])]
+
+## Revisions — 2026-10-08
+
+- 2026-10-08: restated the California gap and the revenue shares with the income tax the survey misses leading and the survey-tax figures beside them, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)) and the stress lane prints it beside the survey's taxes: the California gap $189.3bn → $233.0bn against local whites and $111.7bn → $134.7bn against local natives; the 2023 revenue loss 1.1% → 0.89% of the gap, 2021 1.3% → 1.1% (2.2% → 1.8% against natives), the twelve-year total 0.45% → 0.37%. The verdict, an order of magnitude too small to matter fiscally, holds. Concept affected: the fiscal weight of native high-income out-migration from California.

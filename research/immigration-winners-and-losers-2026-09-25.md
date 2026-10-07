@@ -199,9 +199,12 @@ person, the same under both counts; the share ahead is pooled.
     and the rest of the country's from −$544 to −$810. The share ahead (person count) falls to 13%.
   - Geography is the largest single choice in the result.
   - These are other residents' shares of the account's cost, a financing allocation. They are not the
-    per-member gaps of the [California–Texas memo](immigration-california-texas-fiscal-geography-2026-09-21.md)
-    (−$12,133 / −$7,479 against local whites), and the two are never combined (FAQ, "Before combining
-    numbers").
+    per-member gaps of the [California–Texas memo](immigration-california-texas-fiscal-geography-2026-09-21.md),
+    and the two are never combined (FAQ, "Before combining numbers"). Against local whites those gaps
+    are −$15,228 / −$9,267 with the income tax the survey misses, placed on the main case's keys
+    (item T), and −$12,133 / −$7,479 with taxes as the survey reports them. The added tax rests on few
+    records: the ten largest white households carry 67% of whites' added tax in California and 98% in
+    Texas.
 - **Schooling.** The account's production nest moves $96bn a year of after-tax wages from workers
   with high school or less to workers with more schooling. That puts US-born adults with high school
   or less 97–99% behind. Degree holders are ahead more often than any other schooling group (37–39%
@@ -384,3 +387,4 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - 2026-10-05, later (main case v5, [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281): the verdict runs main case v5 (c1c259ef). 17.6% / 16.9% of other residents come out ahead, pooled, and 16.7% / 16.8% with wages to the earner; taxpayers' fiscal channel is $416.4bn, the pension accrual $80.4bn and the social net on today's residents −$378.2bn. The group's rows count the 42.75M lineage, the 3.04M added descendants placed at the identified third-plus members' records; the September 29 verdict's figures are a column of the earlier-cases table, and the pairing, the debt legacy and the G3+ premium bound follow v5. Concept affected: who comes out ahead, and the group frame's count.
 - 2026-10-07 (main case v6, [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295): the verdict runs main case v6 (f2d96008). 17.5% / 16.8% of other residents come out ahead, pooled, and 16.7% under both with wages to the earner; taxpayers' fiscal channel is $415.9bn, the pension accrual $78.9bn, the borrowed part $13.2bn and the social net on today's residents −$378.6bn. The case falls $0.5bn at central values, but the accrual falls $1.5bn and the borrowed part rises $0.6bn, so today's residents carry $0.4bn more and the share slips. The group's rows place the 3.04M added descendants at the identified third-plus records of their own five-year age band. The October 5 verdict's figures are a column of the earlier-cases table; the pairing ($489.0–570.7bn) and the debt legacy ($31.8–44.2bn) follow v6, and the G3+ premium bound stays on v5 with the world ledger. §1 now names the run and the lineage, which it had not since September 29, and the preferences paragraph dates its 0.1-point move to the September 27 case. Concept affected: who comes out ahead, and the group frame's age placement.
 - 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed, recoverable at 0e0c5e28.
+- 2026-10-08 (item T): §4's pointer to the California–Texas gaps leads with their item-T values, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)): −$12,133 / −$7,479 → −$15,228 / −$9,267, with the survey-tax pair and the few-records caveat beside them. No figure of this memo's own changes. Concept affected: the pointer to the per-member geography gaps.

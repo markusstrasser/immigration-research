@@ -16,7 +16,7 @@ to Mexico itself fades fast: "very connected" drops from 50% to 7% by G3+, and v
 abroad are under 2% of Mexico-born adults (entries 233–234). The Indian advantage is a shift of
 the whole upper three-quarters of the distribution, not a top-1% effect. It sits at US
 percentile 73 in both G1 and G2 on education. A Mexican parent admitted late through the IR-5
-route is a remaining-lifetime net cost of $270–286k at 3%, and Mexico sends a quarter of these
+route is a remaining-lifetime net cost of $267–285k at 3%, and Mexico sends a quarter of these
 admissions (entry 235). [CALCULATION: the five lanes below; INFERENCE for the synthesis]
 
 September 27, 2026. Frame: descriptive generation comparisons in repeated cross-sections, each
@@ -180,7 +180,7 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
   India's late arrivals show wider Medicaid (38.7 vs 13.0%) and SSI gaps. [DATA: ACS 2019–2023;
   B05006 gates within 0.6%]
 - **Value per admission.** Admitted at 55 / 60 / 65, a Mexican parent is a remaining-lifetime net
-  cost of $270k / $275k / $286k at 3% (range $254–339k), close to Australia's official A$335–410k.
+  cost of $267k / $273k / $285k at 3% (range $252–337k), close to Australia's official A$335–410k.
   Against a same-age white resident's remaining lifetime, the parent costs more at 55 and less at
   65, because white retirees draw earned Social Security and Medicare. One FY2024 cohort carries
   about $16bn at 3%. This is a flow valuation; the annual account already contains these residents.
@@ -208,7 +208,7 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
   earlier arrivals' earned Social Security outweighs the late arrivals' lower taxes. "Did not pay in"
   shows in the lifetime view (entry 235), not the annual one. Medicare is overcharged to them by the
   pooled keying (−$0.31bn proposed).
-- **Lineage.** At the calibrated petition rate the channel adds 1.9% to the century lineage gap. A
+- **Lineage.** At the calibrated petition rate the channel adds 1.7% to the century lineage gap. A
   US-born child's petition legalizing the founder adds −$386k undiscounted against a founder who
   stays unauthorized under statutory rules. That is the priced chain from birthright citizenship to
   a parent's green card. [2026-09-27, late: the 1.9% is a scenario, not an observed lifetime rate
@@ -220,7 +220,10 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
   - Timing alone moves the channel. At fixed probabilities, admitting the parent in founder-year 10
     or 16 instead of 6 lowers it from $24.5k to $22.0k or $15.7k per founder, undiscounted.
   - The channel can stay small under these assumptions, but its size needs cohort naturalization
-    and petition hazards, which no source here measures.]
+    and petition hazards, which no source here measures.] [2026-10-08: with item T (ladder 296) the
+    lineage gap widens and the channel barely moves in dollars ($24.4k per founder undiscounted), so
+    its share is 1.7% (2.1% at 3%); the child's petition still adds −$386k ([DATA:
+    `lineage_sponsored_parents_2026_09_27/derived/arms.csv`])]
 
 ## 5. The selection curve, and whether the Indian advantage is a tail
 
@@ -277,3 +280,4 @@ Not settled:
 - 2026-09-28: §1 gained the identity-loss test of the G2 stall (`carryover_identity_2026_09_27`, entry 232): G2→G3+ is about 0.84 / 0.82 with the hidden third generation put back, cohort matters about as much, and the attriters' 54–72% dollar convention is a years-of-schooling ratio. Concept affected: Mexican-origin carry-over after G2.
 - 2026-09-28, later: §1's G3→G4+ range and projection central follow the carry-over lane's measured split rule for attriters (406a2d4): 0.81–1.10, central −$6.1k at G4 and G5. Concept affected: identity loss in the Mexican-origin projection.
 - 2026-10-05: §1's identity-loss figures follow C3 measured on the CPS basic monthly files 1994–2026 (526 unique G3 non-identifiers at 25+) pooled with NLSY97, 0.557 (SE 0.246) in place of 0.78 ([g3_identity_pooled_2026_10_05](../infra/immigration-fiscal/g3_identity_pooled_2026_10_05/RESULT.md), monthly frame): G2→G3+ is 0.86 / 0.84 / 0.85 with the hidden third generation put back, identity loss explains about 6% of the ratio, NLSY97's split G3→G4+ is 0.91, and the projection central is −$6.3k at G4 and −$6.4k at G5. Concept affected: Mexican-origin carry-over after G2.
+- 2026-10-08: restated the IR-5 parent's value per admission and the sponsored-parent channel's share of the lineage gap, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)) and the late-arrival and lineage lanes' profiles carry it: at 3%, admitted at 55 / 60 / 65, $270k / $275k / $286k → $267k / $273k / $285k (range $254–339k → $252–337k); the calibrated channel 1.9% → 1.7% of the lineage gap, nearly unchanged in dollars. The comparison with a same-age white resident keeps its direction (the parent costs more at 55 and less at 65) and the FY2024 cohort stays about $16bn at 3%; §1's partial-ledger projection does not move. Concept affected: the sponsored-parent channel's size.

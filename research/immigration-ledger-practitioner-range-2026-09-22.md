@@ -3,28 +3,30 @@
 Date: 2026-09-22. [MODEL / FRAMING-SENSITIVE] Calculation record on a published
 accounting scenario; narrative authorship remains operator-owned.
 
-**Verdict:** On the pinned September 19 ledger, the conventions a budget modeler would
-run put the Mexican-origin union's annual expanded balance between **−$290bn and
-−$190bn**, central **−$217bn**. The full switch design spans −$496bn to −$76bn over 63
-admissible cells and reaches +$41bn only when every congestible service is free. The
+**Verdict:** On the pinned September 19 ledger, with the income tax the survey misses placed
+on the main case's keys (item T), the conventions a budget modeler would
+run put the Mexican-origin union's annual expanded balance between **−$277bn and
+−$176bn**, central **−$204bn**. The full switch design spans −$482bn to −$62bn over 63
+admissible cells and reaches +$55bn only when every congestible service is free. The
 range the lane's own RESULT.md still prints, −$548bn to −$87bn over 144 cells around
 −$254bn, is the pre-repair September 17/18 build and is stale. Charging defense, net
-interest and general government per capita is a second object, −$502bn to −$402bn around
-−$429bn, and is reported beside the first, not inside it. None of these hulls is a
-confidence interval; the survey standard error of any cell is $8–10bn.
+interest and general government per capita is a second object, −$488bn to −$388bn around
+−$415bn, and is reported beside the first, not inside it. None of these hulls is a
+confidence interval; the survey standard error of any cell is $10–14bn.
 [CALCULATION: [`ledger_recut_2026_09_22`](../infra/immigration-fiscal/ledger_recut_2026_09_22/RESULT.md)]
 
 ## 1. Object and vintage
 
 The object is `ledger_absolute_2026_09_17` as rebuilt on September 19 (commit 6a4b8b0,
-outputs byte-identical after the September 20 data-root refactor): the union of the three
+outputs byte-identical after the September 20 data-root refactor), with item T, the income
+tax the survey misses on the main case's keys, added on October 7 (9d690482): the union of the three
 Mexican-origin target groups, 40.9m civilian household residents, income-year 2024,
 household-shared allocation, items D and P on, enforcement zero in the central because
 its appropriation sits inside OMB function 750, which item R charges per capita. It is an
 expanded partial account, not a marginal effect of immigration and not a lifetime value.
 [SOURCE: [repaired calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md)]
 
-It is not the September 20 complete account ($165–197bn to other residents), not the
+It is not the main case ($389–461bn to other residents), not the
 generation-vs-white gaps, and not the later annual vintages (−$234bn finance refresh,
 −$259bn enrollment correction). The FAQ's
 [combining rules](immigration-objections-faq-2026-09-21.md#before-combining-numbers-from-different-entries)
@@ -33,16 +35,16 @@ apply: one is not a decomposition of another.
 A recut proposal reviewed on September 22 was built on the stale RESULT.md verdict. Its
 logic survives; its numbers do not:
 
-| Cell | Proposal (Sept 17/18 build) | Live grid (Sept 19 build) |
+| Cell | Proposal (Sept 17/18 build) | Live grid (Sept 19 build, with item T) |
 |---|---:|---:|
-| Central | −254 | −217 |
-| Practitioner pessimistic | −330 | −290 |
-| School m 0.63 on every dialled item | −147 | −122 |
-| Wishful corner (R zero, C per capita) | −87 | −76 |
-| No congestible services (m = 0) | +35 | +41 |
-| Public goods per capita on the central | −470 | −429 |
-| Stacked corner | −548 | −496 |
-| Practitioner optimistic | −210 to −254 | −190 (built here) |
+| Central | −254 | −204 |
+| Practitioner pessimistic | −330 | −277 |
+| School m 0.63 on every dialled item | −147 | −108 |
+| Wishful corner (R zero, C per capita) | −87 | −62 |
+| No congestible services (m = 0) | +35 | +55 |
+| Public goods per capita on the central | −470 | −415 |
+| Stacked corner | −548 | −482 |
+| Practitioner optimistic | −210 to −254 | −176 (built here) |
 
 The proposal's third question, whether to wait for the grant double-count repair, is
 moot: that repair is the September 19 build. D and P are inside every live number.
@@ -85,19 +87,19 @@ Governments functional lines 76–112]
 
 | Hull | Low | Central | High |
 |---|---:|---:|---:|
-| Practitioner | −290.5 | −217.3 | −190.1 |
-| Design grid, 63 cells | −496.2 | −217.3 | −76.1 |
-| Design grid plus the dial | −496.2 | −217.3 | +40.9 |
-| Second object, public goods per capita | −502.1 | −429.0 | −401.8 |
+| Practitioner | −276.7 | −203.5 | −176.3 |
+| Design grid, 63 cells | −482.4 | −203.5 | −62.3 |
+| Design grid plus the dial | −482.4 | −203.5 | +54.7 |
+| Second object, public goods per capita | −488.3 | −415.2 | −388.0 |
 
 The strict bound stacks R all per capita, C all capital, enforcement targeted and general
 government at 0.824. The lenient bound stacks the cross-state function elasticities on G,
 interest treated alike at both levels, and the school elasticity on K and D. Disclosed
-but outside the set: 0.63 on every dialled item (−121.8, the school coefficient applied
+but outside the set: 0.63 on every dialled item (−108.0, the school coefficient applied
 to police, fire, highways and federal functions), the same with 0.63 on base school
-current spending (−79.0, point only, base school is not on the dial), the wishful corner
-(−76.1) and m = 0 (+40.9, taxes and transfers only, the convention behind "they pay more
-than they take"). The personal-source allocation of the same account is −239.2 and is a
+current spending (−65.2, point only, base school is not on the dial), the wishful corner
+(−62.3) and m = 0 (+54.7, taxes and transfers only, the convention behind "they pay more
+than they take"). The personal-source allocation of the same account is −223.9 and is a
 different allocation, not a switch.
 [CALCULATION: `derived/named_cells.csv`, `derived/hulls.csv`]
 
@@ -108,8 +110,8 @@ settings are admitted, and it has three layers, each its own object:
 
 1. **Conventions.** The practitioner hull, each arm tagged with the class of modeler that
    runs it; the design hull disclosed beside it; dropped cells listed with the reason.
-   The complete account already reports this way ($165–197bn CBO-informed against
-   $270–289bn full average cost).
+   The main case already reports this way ($389–461bn on long-run budget responses,
+   beside $289–336bn on CBO's first-year response).
 2. **Parameters inside a convention.** One-at-a-time moves at source-given alternatives,
    which is what the table in §2 is, with the replicate SE beside each so the reader
    sees that conventions dominate sampling by an order of magnitude.
@@ -128,17 +130,17 @@ settings are admitted, and it has three layers, each its own object:
 | lenient | per-function response below one | built here on G, K, D; base school current spending is off the dial (+42.8 if 0.63 were applied there, disclosed) |
 | lenient | interest treated alike at both levels | built here (+13.5) |
 | lenient | consumption incidence of corporate tax | built here (+27.1), disclosed outside the set |
-| lenient | personal-source allocation | published (−239.2), a different allocation |
+| lenient | personal-source allocation | published (−223.9), a different allocation |
 | lenient | production and general-equilibrium offsets | outside this object; in the complete account and ladder 164–167 |
 
 The scale behind the net, for reading the switch moves:
 
 | Union, shared allocation | $bn |
 |---|---:|
-| Gross receipts | 417.0 |
+| Gross receipts | 430.8 |
 | Gross outlays | −634.3 |
-| Net | −217.3 |
-| Replicate SE of the central | 8.7 |
+| Net | −203.5 |
+| Replicate SE of the central | 12.3 |
 
 The two objects' centrals sit on opposite sides for one item. This ledger charges
 state-local general services at full average cost; the complete account holds general
@@ -180,3 +182,4 @@ state/estimates.csv, school_estimates.csv] [DATA: 2022 Census of Governments Tab
 - 2026-09-22: created. [Decision](../decisions/2026-09-22-practitioner-hull-as-ledger-range.md):
   the practitioner hull is the ledger's reported range; the design hull and the second
   object are disclosed beside it. No published ledger value changes.
+- 2026-10-08: restated every cell, hull edge and gross flow, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)). T adds the union's own income tax, +$13.8bn, to every cell, so the switch moves in §2 are unchanged and every cell moves by that amount: central −217.3 (SE 8.7) → −203.5 (SE 12.3); practitioner hull −290.5 to −190.1 → −276.7 to −176.3; design grid −496.2 to −76.1 → −482.4 to −62.3, its top with the dial +40.9 → +54.7; second object −429.0 (−502.1 to −401.8) → −415.2 (−488.3 to −388.0); personal-source allocation −239.2 → −223.9; gross receipts 417.0 → 430.8; cell SE $8–10bn → $10–14bn. The two pointers to the complete account now name the live main case ($389–461bn, beside its first-year arm's $289–336bn) where they named the September 20 account ($165–197bn, beside $270–289bn at full average cost), since living docs carry only the live case. Concept affected: the ledger's practitioner range.

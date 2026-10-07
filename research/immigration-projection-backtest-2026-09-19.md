@@ -61,7 +61,7 @@ The endpoint relative-income gap barely changes after the group already had at l
 
 ## 4. Three material current-model sensitivities
 
-These are conditional period-profile calculations, not confidence bounds or forecasts. They cannot be added to one another: the dimensions overlap and their joint distribution is not identified.
+These are conditional period-profile calculations, not confidence bounds or forecasts. They cannot be added to one another: the dimensions overlap and their joint distribution is not identified. The figures in this section are from before item T (2026-10-07); the lane README's note gives the T values from a scratch run; the full rebuild is deferred.
 
 **Recent arrivals' education.** Among Mexico-born residents aged 25–54, the 2016–2025 arrival group has 32.39% below HS and 23.83% BA+, versus 37.79% and 12.26% in the stock. Transport only this education mix to the same supported current age-25–64 fiscal profiles, holding the senior profile common. The age-25 NPV at 3% changes from **−$48,545 to −$8,195**, a +$40,350 difference. At zero discount the corresponding balances are −$359,884 and −$296,656; at 5% they are +$755 and +$32,544. N and extra F are excluded. Education-specific old-age cells are sparse, so their apparent all-age sign reversal remains a labeled diagnostic, not the primary result. Current attainment and surviving arrival stock do not identify education at admission or an admission forecast.
 
@@ -83,4 +83,5 @@ Validation: six unit tests, source-table/header checks, disjoint GSS birth cohor
 
 ## Revisions
 
-- 2026-09-28 (296991d): the lineage recurrence copied into this lane now requires a living parent (conceptual audit §E); the return-migration illustration's no-exit balance is −$316,023 and the children-leave improvement $64,810–79,152. Concept affected: the lineage exit illustration only.
+- 2026-09-28 (296991d): the lineage recurrence copied into this lane now requires a living parent (conceptual audit §E); the return-migration illustration's no-exit balance is −$316,023 and the children-leave improvement $64,810–79,152. Concept affected: the lineage exit illustration only. [2026-10-08: before item T (2026-10-07); the lane README's note gives the T values from a scratch run; the full rebuild is deferred]
+- 2026-10-08: labelled §4's sensitivities and the 2026-09-28 figures as predating item T, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)) and this lane's ignored `derived/` still holds the pre-T sensitivities: before item T (2026-10-07); the lane README's note gives the T values from a scratch run; the full rebuild is deferred. No figure is restated. Concept affected: the lifetime sensitivities of the projection back-test.

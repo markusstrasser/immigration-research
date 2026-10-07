@@ -17,7 +17,10 @@ claude-opus-5[1m]
 Model self-report: claude-opus-5[1m] (Opus 5, 1M context). Lane
 `infra/immigration-fiscal/homicide_cost_2026_09_18/`. September 18, 2026.
 
-**Verdict:** One cleared homicide costs the treasury about **$1.5–1.8 million** in the
+**Verdict:** One cleared homicide costs the treasury about **$1.5–1.8 million** [2026-10-08: this
+treasury scenario predates the September 19 repair and assumes conviction and prison sentencing, not
+an expected cost per cleared case; read the lane's current tables
+(`infra/immigration-fiscal/homicide_cost_2026_09_18/`) before reuse] in the
 repo's period-profile frame, and the number is **dominated by prison, not by the victim**.
 On the central arm (partial account, undiscounted, 23.1% of murder sentences life or death)
 the total is **$1.55m** where the offender is Hispanic, **$1.61m** where non-Hispanic white,
@@ -377,7 +380,10 @@ undiscounted, life share 23.1%, no foster arm:
 
 At a 3% discount rate the totals are $1.24m, $1.28m, $1.37m and $1.42m in the same order and
 the victim channel turns positive for every group. On the complete account they are $0.99m,
-$1.16m, $1.20m and $1.27m and the victim channel turns negative for every group.
+$1.16m, $1.20m and $1.27m [2026-10-08: $1.16m, $1.39m, $1.48m and $1.57m on the lane's current
+expanded account, after the September 19 repair and item T (ladder 296) ([DATA:
+`homicide_cost_2026_09_18/derived/treasury_cost_per_homicide.csv`])] and the victim channel turns
+negative for every group.
 
 **Read this table carefully.** The spread across offender groups is **17%**, and it is not
 produced by anything about offenders' behaviour. It is produced by two mechanical facts:
@@ -464,7 +470,10 @@ cost table, where a younger offender is a more expensive offender under the life
 ### C3. Does the cost by offender ethnicity change sign under the complete-account shift?
 
 **The victim channel flips sign for every group; the total does not flip, it falls by
-about a third, and the ordering is unchanged.**
+about a third, and the ordering is unchanged.** [2026-10-08: on the lane's current file, after the
+September 19 repair and item T (ladder 296), the victim channel still flips sign for every group and
+the ordering holds, but the total falls by 18–28%, not a third ([DATA:
+`homicide_cost_2026_09_18/derived/treasury_cost_per_homicide.csv`])]
 
 | offender | victim channel, partial | victim channel, complete | total, partial | total, complete |
 |---|---|---|---|---|
@@ -571,6 +580,8 @@ uncomfortable.
 ## Revisions
 
 - **2026-09-18 (late evening).** The intra-group shares in §2.1 (Hispanic → Hispanic 0.717 / 0.667) are a cleared-homicide quantity. On non-fatal violence the NCVS gives 0.404 for Hispanic offenders and a Hispanic-offender → white-victim share of 0.402 against 0.156 here; part is a real severity gradient, part clearance selection. See [NCVS off the murder margin](immigration-ncvs-victim-offender-off-the-murder-margin-2026-09-18.md), ladder 148. Claim change: any assortative-victimization statement must name its margin.
+
+- 2026-10-08: Labelled the $1.5–1.8m treasury scenario as the INDEX does and bracketed the complete-account totals and C3's "falls by about a third" with the lane's current file, because the white-reference ledger's expanded account now charges the income tax the survey misses on the main case's keys (item T; [decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md)): undiscounted, life share 23.1%, Hispanic, NH white, NH other and NH Black offenders $1.10m, $1.27m, $1.35m and $1.44m → $1.16m, $1.39m, $1.48m and $1.57m on the expanded account (the September 18 complete account printed $0.99m, $1.16m, $1.20m and $1.27m before the September 19 repair); against the partial totals the drop is 18–28%. The partial-account figures are T-free; they moved with the September 19 repair, which the label covers. Concept affected: homicide treasury cost.
 
 
 ## Revisions — September 19, 2026
