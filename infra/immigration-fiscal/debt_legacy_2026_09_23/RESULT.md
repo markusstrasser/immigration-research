@@ -1029,3 +1029,147 @@ Log (append-only; times from `date`):
   `derived/` (15/15). pytest: 7 passed (the four old cases against their commits, the default, sept29, oct05).
   `rerun_lane.py` over the default, sept29 and oct05 commands, with `--allow-unrun` for the test file: IDENTICAL 53/53,
   exit 0. Not committed (the lead's brief).
+
+## v6 case (oct07), 2026-10-07
+
+claude-opus-5-5 (teammate prop-b of the v6 consumer lanes). [2026-10-07: on main case v6 (`oct07`), the 2024 legacy
+interest on the central rule is **$31.82 / 44.17bn** on a stock of **$984.3 / 1,366.2bn**, **$744 / 1,033 per member**
+of the lineage's 42.75m, against $30.63 / 42.62bn, $947.4 / 1,318.4bn and $716 / 997 for oct05. Across the 11
+back-cast rules it is $6.84 to 44.95bn (oct05: 5.76 to 43.42).] The case is `../main_case_2026_10_07/` (`OCT07` in
+`debt_legacy.py`), adopted 2026-10-07: the October 5 case plus four items from its registry (`meta.items`):
+- `pension_tr2026`, the pension accrual on the 2026 Trustees' separate OASI and DI funds (set only);
+- `retiree_health`, retiree health on accrual;
+- `added_age_mix`, the 3.04M added people at their measured age mix;
+- `user_fees`, user fees and the education keys, on the union only.
+
+Both payloads are the case lane's (`derived/corrections.json`, `derived/corrections_cash.json`). `debt_legacy.py --case
+oct07` writes `derived/oct07/`: oct05's 17 file names plus `oct07_bridge_2024.csv`. Its five earlier bridges are
+byte-identical to those in `derived/oct05/`. [CALCULATION: `debt_legacy.py --case oct07` → `derived/oct07/`]
+
+**Headline** (central rule `programme_income_pandemic_per_head`, central payer convention, effective rate, 2005 window,
+all borrowed; cash set compounded; low / high end, $bn):
+
+| Quantity | v5 (oct05) | v6 (oct07) | File |
+|---|---:|---:|---|
+| legacy interest, 2024 | 30.63 / 42.62 | **31.82 / 44.17** | `derived/oct07/stocks.csv` |
+| interest per group member, $ | 716 / 997 | **744 / 1,033** | same |
+| legacy stock entering 2024 | 947.4 / 1,318.4 | **984.3 / 1,366.2** | same |
+| federal part of the 2024 cash gap | 32.40 / 61.18 | **34.04 / 63.83** | `derived/oct07/federal_split_2024.csv` |
+| federal share of the 2024 cash gap | 12.4% / 19.6% | **13.0% / 20.3%** | same |
+| 2024 cash gap (all governments) | 260.71 / 312.28 | 261.30 / 315.03 | same |
+| resource cost (federal) | 37.15 / 61.86 (0.89 / 1.90) | 36.58 / 61.06 (0.89 / 1.90) | same |
+| displaced beneficiaries (federal) | 8.81 (5.48) | 8.81 (5.47) | same |
+| pension accrual beside, all federal | 82.92 / 77.83 | 81.68 / 76.12 | same |
+| legacy interest across the 11 back-cast rules | 5.76 to 43.42 | 6.84 to 44.95 | `derived/oct07/stocks.csv` |
+| the five whole-budget rules alone | 8.33 to 37.80 | 9.02 to 38.88 | same |
+| every specification, main benchmark (programme rules) | −8.90 to 67.78 | −7.41 to 69.79 | same |
+| proportional benchmark | 38.96 / 47.68 | 40.17 / 49.23 | same |
+| alternative: the set compounded (`main_with_accrual`) | 63.33 / 73.36 | 63.97 / 74.19 | same |
+| alternative: public housing as cash | 30.81 / 42.80 | 32.00 / 44.35 | same |
+
+The items add $0.59 / 2.75bn to the 2024 cash gap and $1.64 / 2.65bn to its federal part (central convention).
+
+- **User fees** move the most federal money, +4.01 / +4.10. Pell, keyed by the group's share of Pell grants, adds
+  $3.87 / 3.97bn to federal spending. The federal parts of the health and education keys add +0.14 / +0.13. State and
+  local budgets fall by 3.68 / 3.82, almost all of it from the education keys and the tuition credit.
+- **The added people's measured ages** move federal cash down by $1.68 / 0.88bn and state and local cash up by
+  $1.36 / 2.59bn. The later losses are younger: they draw less Social Security and Medicare (−$2.39 / 2.48bn), pay less
+  federal income tax (+$0.51 / 1.13bn) and use more schooling (state and local +$1.13 / 2.31bn).
+- **Retiree health on accrual** moves the federal part down by $0.69 / 0.57bn: the federal pay-go premiums in other
+  federal benefits leave (−$0.97 / 0.90bn). The state and local part rises by $1.27 / 1.33bn, mostly the schools'
+  normal cost.
+- **The pension item** is set only. It moves the accrual beside (−2.85 / −2.66) and nothing the central rule
+  compounds.
+
+The legacy interest therefore rises by $1.19 / 1.55bn, and per member by $28 / 36, on the same 42.75m. [CALCULATION:
+`derived/oct07/oct07_bridge_2024.csv`; by line, `derived/oct07/corrections_federal_split_2024.csv`, components
+`v6_user_fees`, `v6_retiree_health:scale` and `v5_lineage` less oct05's]
+
+Whole-budget rules (central, low / high, interest $bn): whole_flat 17.04 / 31.86 (oct05 16.22 / 30.56); whole_ratio
+14.05 / 26.55 (13.32 / 25.38); whole_income 17.25 / 31.53 (16.37 / 30.19); whole_ratio_federal_series 9.02 / 21.48
+(8.33 / 20.36); whole_income_federal_series 26.42 / 38.88 (25.76 / 37.80). They lie inside the programme rules' range,
+as before.
+
+**Bridge from October 5** (`derived/oct07/oct07_bridge_2024.csv`, central convention, $bn, low / high end; each item
+taken after the ones before it, in the payload's order):
+
+| Step | Cash | Federal cash | Resource cost (federal) | Displaced (federal) | Accrual |
+|---|---:|---:|---:|---:|---:|
+| October 5 case | 260.71 / 312.28 | 32.40 / 61.18 | 37.15 / 61.86 (0.89 / 1.90) | 8.81 (5.48) | 82.92 / 77.83 |
+| `added_age_mix`: the added people's measured ages | −0.32 / +1.71 | −1.68 / −0.88 | +0.06 / +0.21 (0.00) | 0.00 (−0.01) | +1.61 / +0.95 |
+| `pension_tr2026`: the 2026 Trustees, separate funds | 0 | 0 | 0 | 0 | −2.85 / −2.66 |
+| `retiree_health`: retiree health on accrual | +0.58 / +0.76 | −0.69 / −0.57 | 0 | 0 | 0 |
+| `user_fees`: user fees and the education keys | +0.33 / +0.28 | +4.01 / +4.10 | −0.63 / −1.01 | 0 | 0 |
+| v6 case | 261.30 / 315.03 | 34.04 / 63.83 | 36.58 / 61.06 (0.89 / 1.90) | 8.81 (5.47) | 81.68 / 76.12 |
+
+The steps are rounded so that they add to the printed totals (largest remainder). Unrounded, the added people's
+federal step is −1.6873 / −0.8798, retiree health's cash +0.5845 / +0.7654 and user fees' resource cost
+−0.6279 / −1.0025 (`derived/oct07/oct07_bridge_2024.csv`). The case's end specifications are October 5's (48 / 11),
+so the bridge's range-ends step is zero. Under the low convention, the items' federal cash step is +1.71 / +2.68, of
+which user fees are +4.28 / +4.38. Under the high convention it is +1.49 / +2.55, of which user fees are
++3.76 / +3.81.
+
+**Rules this case needed** (each tagged; the Consumers row of `../main_case_2026_10_07/RESULT.md` asks for the union
+twin to take item 1's union parts, item 2's edits and item 4 whole, and the lineage step item 1's lineage parts and
+item 3):
+1. *The payload, by its registry.* `v6_parts` locates every block by `meta.items`, never by counts. It gates five
+   things. September 29's payload comes first. The lineage follows at v5's cells, in v5's order (item 3's values,
+   row 8 last at 751). The applied edit sets follow in registry order and close the payload. Each item's parts add to
+   its edits. The receipt lines are September 29's two plus the user-fee item's three carriers. meta moves only in the
+   stamps, the items' blocks and the capital return, whose components are v5's plus the item's four offsets.
+2. *The union twin* [ASSUMPTION, the Consumers rule]. September 29's model plus row 8 plus the union's part of every
+   item: the `union_` parts of item 1's cell edits, item 2's ten national-scale edits as they are, item 4 whole and its
+   carriers. Gate: the twin's lines and national totals are the case's (1e-9). The items' lineage parts (item 1's
+   `lineage_` parts and item 2's share of the added people's cells) and item 3 are then the case less the twin, on the
+   lineage's path as in v5 (rule 2 of the v5 section).
+3. *Components per item.* A cell edit is a `v6_<item>` component of its line. A national-scale edit is each cell's
+   (f − 1) × its amount before the edit (`:scale`). A carrier is a receipt component over its cells. The lineage's
+   edits keep v5's component names (`v5_lineage`, `v5_union_response`) at item 3's values. So
+   `../winners_losers_2026_09_24/` and `../sept24_propagation_2026_09_24/constant_choices.py` still find them.
+4. *The user-fee offsets.* Each offset is keyed by its carrier's amount over the national total
+   (`receipt_amount_over_national`). On a model without the item, such as an earlier case or a twin before item 4, the
+   carrier is absent and the key is 0 (`capital_rows`).
+5. *The bridge, item by item.* Each step is the package's prefix payload: the lineage item, then each edit set with
+   the carriers so far. Gate: the last step is the payload. Each step's total equals the case lane's
+   `change_at_fixed_specifications` for that item alone plus its pairs with the earlier items, plus the added people's
+   P (1e-6 plus the printed remainder). The whole moves by the set's band change plus P (1e-6).
+6. *Whole-budget rules.* `cash_whole` classifies the back-cast's `v6_<item>_<path>_<line>` parts by name. The
+   production parts are added back with P. Energy assistance, rental assistance and public housing go with the
+   displaced beneficiaries. The Social Security and Part A accrual rests go with the accrual. The tax on benefits
+   follows `v5_federal_income_tax`'s series, gated at both ends. Any v6 part without a rule stops the run.
+7. *Shares and per member.* The responses and counts are v5's (gated), so the shares are October 5's: the case's
+   population key 0.12918 and 42,752,212.9 per member. Runs rebuild October 5 for its bridge on October 5's state and
+   earlier cases on September 29's, so every earlier bridge is unchanged.
+8. *The carriers in the receipts sensitivity.* The three carrier lines carry $1e-9bn each and no key of their own, so
+   the receipts sensitivity leaves them out.
+
+**Gates** (all pass; the run stops on any failure):
+- `v6_parts` (rule 1) on both payloads. The adoption stamp is 2026-10-07, and the statuses open "adopted 2026-10-07"
+  and "the cash set of the case adopted 2026-10-07". The responses are the lane's `summary.json`'s.
+- `v5_components` with the items' components: September 29's model plus the lineage's and the items' edits rebuilds
+  the case, cell by cell (1e-9).
+- Parity with engine.js through the payload consumer, 64 specifications, both payloads: largest difference 3.4e-13
+  (set) and 2.8e-13 (cash). Bands $389.082553 / 461.479709bn and $307.399411 / 385.364123bn at 48 / 11, the adoption's
+  bands to 6 decimals, gated at 1e-6 (`OCT07` oracle; earlier cases keep their 4-decimal oracles at 5e-5).
+- `items_bridge` (rule 5), and the union twin's lines and national totals against the case's (rule 2).
+- `cash_whole`: in 2024 the cash part, resource cost, displaced and accrual (each line and the total) are this split's
+  (1e-3).
+- `derived/oct05/`, `derived/sept29/` and the default `derived/` rebuild byte for byte with the changed script; so
+  does `../sept24_propagation_2026_09_24/constant_choices.py --case oct05` (its two CSVs, against its committed
+  `derived/oct05/`, 2026-10-07 15:07:32–15:08:39 JST).
+
+Reproduce (from the repository root, after `historical_backcast_2026_09_20/backcast.py --case oct07`;
+`test_debt_legacy.py` `test_oct07_rebuilds_its_directory` rebuilds it byte for byte):
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py --case oct07
+```
+
+Log (append-only; times from `date`):
+- 2026-10-07 15:01:01–15:02:03 JST: `--case oct07` written to `derived/oct07/` on the adopted payload (case lane
+  218a2fb2; corrections.json f8d346aa…, corrections_cash.json e9033bff…), after the back-cast's final oct07 files. Its 17
+  CSVs are byte-identical to the 14:12 scratch run on the payload of 14:01, and summary.json differs only in input
+  hashes and the oracle. The default run, `--case sept29` and `--case oct05` rebuild their directories byte for byte.
+- 15:02:17–15:03:34: `rerun_lane.py` over the default, sept29, oct05 and oct07 commands, with `--allow-unrun` for the
+  test file: IDENTICAL 71/71, exit 0. 15:04:06–15:05:31: pytest, 8 passed (the four old cases against their commits,
+  the default, sept29, oct05, oct07). Not committed (the lead's brief).

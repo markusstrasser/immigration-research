@@ -1,0 +1,1489 @@
+{
+ "account_interest_allocation_bn": 141.1391262396452,
+ "account_interest_row_bn": 1118.87,
+ "anchors": {
+  "high": {
+   "allocation": "personal",
+   "capped": [
+    "housing_subsidies",
+    "energy_assistance",
+    "housing_enterprise_surplus"
+   ],
+   "delayed": 0.0,
+   "gg": 0.8510539647701243,
+   "gg_end": "high",
+   "justice": 5.943591614299166,
+   "keys": {
+    "medicaid_and_chip_other_medical": "uninsured_use_high",
+    "public_order_safety": "use"
+   },
+   "line_responses": {
+    "economic_affairs_services": 0.6387399411939584,
+    "housing_subsidies": 1.0,
+    "receipt:enterprise_surplus": 1.0,
+    "receipt:housing_enterprise_surplus": 1.0,
+    "receipt:modeled_owner_property": 0.7726986463443216,
+    "receipt:personal_property_tax": 1.0,
+    "receipt:tenant_occupied_property": 0.7189123969969125,
+    "recreation_culture": 1.0,
+    "roads_vmt_fed": 1.0,
+    "roads_vmt_sl": 1.0,
+    "state_price_health_services": 1.0,
+    "state_price_public_order_safety": 1.0,
+    "state_price_recreation_culture": 1.0
+   },
+   "lineage_constants": [
+    "row8",
+    "constants"
+   ],
+   "long_run": {
+    "economic_affairs_services": 0.6387399411939584,
+    "recreation_culture": 1.0
+   },
+   "normalization": "cash",
+   "other_edu": 1.0,
+   "profile": "long_run_non_school_full",
+   "rate": 0.03,
+   "reading": "high",
+   "school_response": 1.0,
+   "school_share": 0.8651608840454027,
+   "subfunctions": {
+    "fed_agriculture": 0.0,
+    "fed_air": 1.0,
+    "fed_energy": 0.0,
+    "fed_general_economic_and_labor_affairs": 0.8510539647701243,
+    "fed_highways": 1.0,
+    "fed_natural_resources": 0.0,
+    "fed_postal_service": 0.0,
+    "fed_recreation_and_culture": 1.0,
+    "fed_space": 0.0,
+    "fed_transit_and_railroad": 1.0,
+    "fed_water": 0.0,
+    "sl_agriculture": 0.0,
+    "sl_energy": 0.0,
+    "sl_general_economic_and_labor_affairs": 0.8510539647701243,
+    "sl_highways": 1.0,
+    "sl_natural_resources": 0.0,
+    "sl_other_commercial_activities": 0.0,
+    "sl_recreation_and_culture": 1.0,
+    "sl_transit_and_railroad": 1.0
+   },
+   "uc": 5.747597015128038,
+   "uc_arm": "equal_high",
+   "uc_key": "uninsured_use_high"
+  },
+  "low": {
+   "allocation": "shared",
+   "capped": [
+    "housing_subsidies",
+    "energy_assistance",
+    "housing_enterprise_surplus"
+   ],
+   "delayed": 0.0,
+   "gg": 0.6005266346459308,
+   "gg_end": "low",
+   "justice": 5.943591614299166,
+   "keys": {
+    "medicaid_and_chip_other_medical": "uninsured_use_low",
+    "public_order_safety": "use"
+   },
+   "line_responses": {
+    "economic_affairs_services": 0.3844994797314016,
+    "housing_subsidies": 1.0,
+    "receipt:enterprise_surplus": 1.0,
+    "receipt:housing_enterprise_surplus": 1.0,
+    "receipt:modeled_owner_property": 0.7726986463443216,
+    "receipt:personal_property_tax": 1.0,
+    "receipt:tenant_occupied_property": 0.7189123969969125,
+    "recreation_culture": 0.8563914832367988,
+    "roads_vmt_fed": 0.0,
+    "roads_vmt_sl": 0.7401981546463505,
+    "state_price_health_services": 1.0,
+    "state_price_public_order_safety": 1.0,
+    "state_price_recreation_culture": 0.8563914832367988
+   },
+   "lineage_constants": [
+    "row8",
+    "constants"
+   ],
+   "long_run": {
+    "economic_affairs_services": 0.3844994797314016,
+    "recreation_culture": 0.8563914832367988
+   },
+   "normalization": "gdp",
+   "other_edu": 1.0,
+   "profile": "long_run_non_school_full",
+   "rate": 0.02,
+   "reading": "low",
+   "school_response": 1.0,
+   "school_share": 0.7153278156243373,
+   "subfunctions": {
+    "fed_agriculture": 0.0,
+    "fed_air": 0.0,
+    "fed_energy": 0.0,
+    "fed_general_economic_and_labor_affairs": 0.0,
+    "fed_highways": 0.0,
+    "fed_natural_resources": 0.0,
+    "fed_postal_service": 0.0,
+    "fed_recreation_and_culture": 0.0,
+    "fed_space": 0.0,
+    "fed_transit_and_railroad": 0.0,
+    "fed_water": 0.0,
+    "sl_agriculture": 0.0,
+    "sl_energy": 0.0,
+    "sl_general_economic_and_labor_affairs": 0.8510539647701243,
+    "sl_highways": 0.7401981546463505,
+    "sl_natural_resources": 0.0,
+    "sl_other_commercial_activities": 0.0,
+    "sl_recreation_and_culture": 0.9514857707559868,
+    "sl_transit_and_railroad": 0.7401981546463505
+   },
+   "uc": 3.6515760054649666,
+   "uc_arm": "equal_low",
+   "uc_key": "uninsured_use_low"
+  }
+ },
+ "case": {
+  "band": [
+   389.0825528654786,
+   461.47970930242025
+  ],
+  "bands_source": "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json",
+  "capped_programs": {
+   "lines": {
+    "energy_assistance": "LIHEAP",
+    "housing_enterprise_surplus": "public housing (receipt line)",
+    "housing_subsidies": "rental assistance"
+   },
+   "main_profile": {
+    "energy_assistance": {
+     "high|central": {
+      "federal_bn": 0.5569057767151888,
+      "gap_bn": 0.6045528356789629
+     },
+     "high|high": {
+      "federal_bn": 0.5569057767151888,
+      "gap_bn": 0.6045528356789629
+     },
+     "high|low": {
+      "federal_bn": 0.0,
+      "gap_bn": 0.6045528356789629
+     },
+     "low|central": {
+      "federal_bn": 0.5569057767151888,
+      "gap_bn": 0.6045528356789629
+     },
+     "low|high": {
+      "federal_bn": 0.5569057767151888,
+      "gap_bn": 0.6045528356789629
+     },
+     "low|low": {
+      "federal_bn": 0.0,
+      "gap_bn": 0.6045528356789629
+     }
+    },
+    "housing_enterprise_surplus": {
+     "high|central": {
+      "federal_bn": 0.4290912973989585,
+      "gap_bn": 3.7178213606483306
+     },
+     "high|high": {
+      "federal_bn": 0.4290912973989585,
+      "gap_bn": 3.7178213606483306
+     },
+     "high|low": {
+      "federal_bn": 0.4290912973989585,
+      "gap_bn": 3.7178213606483306
+     },
+     "low|central": {
+      "federal_bn": 0.4290912973989585,
+      "gap_bn": 3.7178213606483306
+     },
+     "low|high": {
+      "federal_bn": 0.4290912973989585,
+      "gap_bn": 3.7178213606483306
+     },
+     "low|low": {
+      "federal_bn": 0.4290912973989585,
+      "gap_bn": 3.7178213606483306
+     }
+    },
+    "housing_subsidies": {
+     "high|central": {
+      "federal_bn": 4.488824290011592,
+      "gap_bn": 4.488824290011592
+     },
+     "high|high": {
+      "federal_bn": 4.488824290011592,
+      "gap_bn": 4.488824290011592
+     },
+     "high|low": {
+      "federal_bn": 4.488824290011592,
+      "gap_bn": 4.488824290011592
+     },
+     "low|central": {
+      "federal_bn": 4.488824290011592,
+      "gap_bn": 4.488824290011592
+     },
+     "low|high": {
+      "federal_bn": 4.488824290011592,
+      "gap_bn": 4.488824290011592
+     },
+     "low|low": {
+      "federal_bn": 4.488824290011592,
+      "gap_bn": 4.488824290011592
+     }
+    }
+   },
+   "rule": "counted at response 1 in the annual account; no budget response, so nothing from them is borrowed or compounded; rental assistance is federal, LIHEAP at the lane's energy_assistance share (0 under the low convention); public housing's enterprise deficit at its operating subsidy's federal share (v4_shares)"
+  },
+  "consumption_key_spec": "both_corridor_net_h2",
+  "corrections_2024": {
+   "high|central": {
+    "effect_bn": 1.320189008643304,
+    "federal_bn": -5.514262982990558
+   },
+   "high|high": {
+    "effect_bn": 1.320189008643304,
+    "federal_bn": -4.454302264250044
+   },
+   "high|low": {
+    "effect_bn": 1.320189008643304,
+    "federal_bn": -7.7820550615004205
+   },
+   "low|central": {
+    "effect_bn": -8.989001189801533,
+    "federal_bn": -10.542106295606938
+   },
+   "low|high": {
+    "effect_bn": -8.989001189801533,
+    "federal_bn": -9.91623208585861
+   },
+   "low|low": {
+    "effect_bn": -8.989001189801533,
+    "federal_bn": -12.61985603768586
+   }
+  },
+  "corrections_sha256": "f8d346aacf05bcdaed8495f870ba23ac6154ab3eaf34cc0bcf85861f0c85d091",
+  "enterprise_surplus_receipt": {
+   "federal_bn_2024_national": -1.822,
+   "federal_share_2024": 0.2543982127897236,
+   "main_profile": {
+    "high|central": {
+     "federal_bn": 0.22983500139291568,
+     "gap_bn": 0.9034458177695179
+    },
+    "high|high": {
+     "federal_bn": 0.22983500139291568,
+     "gap_bn": 0.9034458177695179
+    },
+    "high|low": {
+     "federal_bn": 0.22983500139291568,
+     "gap_bn": 0.9034458177695179
+    },
+    "low|central": {
+     "federal_bn": 0.22983500139291568,
+     "gap_bn": 0.9034458177695179
+    },
+    "low|high": {
+     "federal_bn": 0.22983500139291568,
+     "gap_bn": 0.9034458177695179
+    },
+    "low|low": {
+     "federal_bn": 0.22983500139291568,
+     "gap_bn": 0.9034458177695179
+    }
+   },
+   "national_bn_2024": -7.161999999999999,
+   "rule": "the group's share of the enterprises' current surplus less public housing's deficit (split out to its own receipt line) at response 1 on the re-keyed population share: a receipt in the cash gap; federal at t32(23) over the line's national total after the split; the programme rule carries the federal enterprises with NIPA 3.2 line 23 and the state-local ones without housing with NIPA 3.8 lines 8-12, 14 and 15, not scaled by income"
+  },
+  "financing_columns_2024": {
+   "main_profile": {
+    "high|central": {
+     "cash_federal_bn": 63.82533018347065,
+     "cash_fiscal_gap_bn": 315.0252626931161,
+     "displaced_bn": 8.811198486338885,
+     "displaced_federal_bn": 5.474821364125739,
+     "resource_cost_bn": 61.0642563792209,
+     "resource_cost_federal_bn": 1.8952947543976426
+    },
+    "high|high": {
+     "cash_federal_bn": 82.57779495294605,
+     "cash_fiscal_gap_bn": 315.0252626931161,
+     "displaced_bn": 8.811198486338885,
+     "displaced_federal_bn": 5.474821364125739,
+     "resource_cost_bn": 61.0642563792209,
+     "resource_cost_federal_bn": 1.8952947543976426
+    },
+    "high|low": {
+     "cash_federal_bn": 34.37559166407217,
+     "cash_fiscal_gap_bn": 315.0252626931161,
+     "displaced_bn": 8.811198486338885,
+     "displaced_federal_bn": 4.91791558741055,
+     "resource_cost_bn": 61.0642563792209,
+     "resource_cost_federal_bn": 1.8952947543976426
+    },
+    "low|central": {
+     "cash_federal_bn": 34.03505377174519,
+     "cash_fiscal_gap_bn": 261.30219766096445,
+     "displaced_bn": 8.811198486338885,
+     "displaced_federal_bn": 5.474821364125739,
+     "resource_cost_bn": 36.581557021423414,
+     "resource_cost_federal_bn": 0.8873321580004485
+    },
+    "low|high": {
+     "cash_federal_bn": 46.048542170680285,
+     "cash_fiscal_gap_bn": 261.30219766096445,
+     "displaced_bn": 8.811198486338885,
+     "displaced_federal_bn": 5.474821364125739,
+     "resource_cost_bn": 36.581557021423414,
+     "resource_cost_federal_bn": 0.8873321580004485
+    },
+    "low|low": {
+     "cash_federal_bn": 4.7889023775661315,
+     "cash_fiscal_gap_bn": 261.30219766096445,
+     "displaced_bn": 8.811198486338885,
+     "displaced_federal_bn": 4.91791558741055,
+     "resource_cost_bn": 36.581557021423414,
+     "resource_cost_federal_bn": 0.8873321580004485
+    }
+   },
+   "rule": "cash: the engine's lines less the capped programs, the only part compounded into debt; resource cost: the return on public capital (imputed; federal = its federal components), never compounded; displaced beneficiaries: the capped programs, whose slots go to eligible households without the group, never compounded. cash + resource cost + displaced = net cost + P"
+  },
+  "general_government_low_end_components": {
+   "federal_tax_collection": 0.800357493573975,
+   "state_local": 0.8510539647701243
+  },
+  "lane_sha256": {
+   "infra/immigration-fiscal/care_household_services_2026_09_23/derived/summary.csv": "ea351ee9aac908ba97599fdfb59e7b2d642ab5e6acb65e86ce48a9a016a2ceef",
+   "infra/immigration-fiscal/consumption_key_2026_09_24/derived/payloads.json": "80eb474e2c3fb104871acab549706dbbb32a6fe99e7ce4ebe917d313770c1917",
+   "infra/immigration-fiscal/finite_response_2026_09_26/derived/r_values.json": "70c90edd6ae4b8ff7d8262756af7d49c3f982ce99de7bbdcff1355ec8251977b",
+   "infra/immigration-fiscal/historical_backcast_2026_09_20/derived/oct07/backcast_annual.csv": "a637546853aaf42a38a1fd8368520da9f5a36700547cd5b7095f8da00f4842cf",
+   "infra/immigration-fiscal/historical_backcast_2026_09_20/derived/oct07/case_parts_annual.csv": "221c26e2575d2cfbbd56400c3b344d9856a80ccc335f0e8bedf03283c24137ab",
+   "infra/immigration-fiscal/historical_backcast_2026_09_20/inputs/cps_g3plus_path.csv": "62a6aadbb538326ceb5643ebd2900256590c5be1ad1855b178778a01e7e00404",
+   "infra/immigration-fiscal/main_case_2026_09_26/derived/corrections.json": "ad37c1f94cbc43496696a42d7714851bf64e6d4e723bfcfc18c8fd8ccf351f39",
+   "infra/immigration-fiscal/main_case_2026_10_07/derived/main_case_bands.csv": "351166203252fba62aacc85bc10e5d1199973dc5e5af403bba38a420a042a79b",
+   "infra/immigration-fiscal/main_case_2026_10_07/derived/per_spec.csv": "9244bcb5945419e5265792c932f2f6b54933fe4e79ec7324a4a78b34f2aa6c9c",
+   "infra/immigration-fiscal/main_case_lineage_2026_10_05/derived/population.json": "3d4ba08461260a8419ca5c7933e3c69d9ee2dd3bea1c2d3b238addacb0159468",
+   "infra/immigration-fiscal/migrant_shelter_costs_2026_09_23/derived/account_keying.csv": "5812533042c44c996e4a1f89b5517a99301a5710c77a0b87535dd54411c144ba",
+   "infra/immigration-fiscal/migrant_shelter_costs_2026_09_23/derived/account_keying_parts.csv": "311bd255621576dd017d6e93dcfb727826ecbd040e834127e7d93f0a8a58f93c"
+  },
+  "long_run_subfunction_levels_2024": {
+   "economic_affairs_services": {
+    "federal_bn": 180.2,
+    "state_local_bn": 271.735
+   },
+   "recreation_culture": {
+    "federal_bn": 5.43,
+    "state_local_bn": 48.901
+   }
+  },
+  "main_profile": "long_run_non_school_full",
+  "name": "main case v6 (2026-10-07): the October 5 case plus four items: the pension accrual on the 2026 Trustees' separate OASI and DI funds, retiree health on accrual, the added people at their measured age mix, and user fees with the education keys on the union",
+  "package_components_sha256": "352200b2273870cece5222885e89d4fb9254b802f666d723da92cdf775653303",
+  "per_spec_gates": {
+   "max_abs_diff": {
+    "bands_file_bn": 4.9795092252225004e-05,
+    "capital_bn": 7.105427357601002e-15,
+    "capital_by_level_bn": 7.105427357601002e-15,
+    "cost_bn": 2.2737367544323206e-13,
+    "engine_cost_bn": 2.2737367544323206e-13,
+    "federal_plus_state_local_bn": 1.7053025658242404e-13,
+    "lines_bn": 7.105427357601002e-15,
+    "receipt_alone_bn": 4.773959005888173e-15,
+    "receipt_bn": 1.1102230246251565e-16
+   },
+   "methods": [
+    "b_hotdeck_union_matched",
+    "b_matched_over_pooled"
+   ],
+   "specifications": 64,
+   "tolerance": {
+    "bands_file_bn": 0.0001,
+    "capital_bn": 1e-09,
+    "capital_by_level_bn": 1e-09,
+    "cost_bn": 1e-06,
+    "engine_cost_bn": 1e-06,
+    "federal_plus_state_local_bn": 1e-06,
+    "lines_bn": 1e-09,
+    "receipt_alone_bn": 1e-09,
+    "receipt_bn": 1e-09
+   }
+  },
+  "pre_existing_gap": {
+   "capital_transfer_payments_bn": 210.992,
+   "capital_transfer_receipts_bn": 36.357,
+   "consumption_of_fixed_capital_bn": 393.355,
+   "gross_government_investment_bn": 450.925,
+   "net_federal_saving_bn": -1874.456,
+   "net_lending_bn": -2106.222,
+   "net_lending_less_saving_bn": -231.7660000000003,
+   "net_purchases_of_nonproduced_assets_bn": -0.438,
+   "note": "not repaired: this lane compounds each year's current gap, whose spending includes consumption of fixed capital; the federal borrowing for investment and capital transfers beyond depreciation (net_lending_less_saving_bn, national) is charged to no group here. A national diagnostic, not a group correction (research/immigration-conceptual-audit-2026-09-27.md section 1)",
+   "rule": "net lending = saving + capital transfer receipts - gross investment - capital transfer payments - net purchases of nonproduced assets + consumption of fixed capital",
+   "source": "NIPA Table 3.2 lines 37, 42 and 45-49, 2024 (the pinned Section3All_xls.xlsx)"
+  },
+  "profiles": {
+   "long_run_non_school_fixed": {
+    "lane_profile": "cbo_category_lag_non_school_fixed",
+    "long_run_lines_take_the_specification": true
+   },
+   "long_run_non_school_full": {
+    "lane_profile": "cbo_category_lag_non_school_full",
+    "long_run_lines_take_the_specification": true
+   },
+   "proportional_reference": {
+    "lane_profile": "proportional_reference",
+    "long_run_lines_take_the_specification": false
+   }
+  },
+  "responses": {
+   "economic_affairs_services": {
+    "high": 0.6387399411939584,
+    "low": 0.3844994797314016,
+    "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+    "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+    "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+    "source": {
+     "commit": "bccf478",
+     "file": "service_response_long_run_2026_09_27/derived/responses.json",
+     "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c"
+    },
+    "subfunctions": [
+     {
+      "basis": "federal highway administration: fixed at the low end, the highway response at the high end",
+      "high": 1,
+      "id": "fed_highways",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 1.827,
+      "share_of_line": 0.00404261674798367,
+      "subfunction": "Highways"
+     },
+     {
+      "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end",
+      "high": 1,
+      "id": "fed_air",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 30.604,
+      "share_of_line": 0.06771770276699082,
+      "subfunction": "Air"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "fed_water",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 18.209,
+      "share_of_line": 0.04029119231747928,
+      "subfunction": "Water"
+     },
+     {
+      "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end",
+      "high": 1,
+      "id": "fed_transit_and_railroad",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 0.094,
+      "share_of_line": 0.00020799451248520252,
+      "subfunction": "Transit and railroad"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "fed_space",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 21.23,
+      "share_of_line": 0.04697578191554095,
+      "subfunction": "Space"
+     },
+     {
+      "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end",
+      "high": 0.8510539647701243,
+      "id": "fed_general_economic_and_labor_affairs",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 35.431,
+      "share_of_line": 0.07839844225386393,
+      "subfunction": "General economic and labor affairs"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "fed_agriculture",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 17.54,
+      "share_of_line": 0.038810890946706936,
+      "subfunction": "Agriculture"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "fed_energy",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 23.406,
+      "share_of_line": 0.051790633608815424,
+      "subfunction": "Energy"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "fed_natural_resources",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 32.036,
+      "share_of_line": 0.07088630002102073,
+      "subfunction": "Natural resources"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "fed_postal_service",
+      "level": "federal",
+      "low": 0,
+      "national_bn": -0.177,
+      "share_of_line": -0.00039164924159447705,
+      "subfunction": "Postal service"
+     },
+     {
+      "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1",
+      "high": 1,
+      "id": "sl_highways",
+      "level": "state_local",
+      "low": 0.7401981546463505,
+      "national_bn": 201.005,
+      "share_of_line": 0.4447652870434908,
+      "subfunction": "Highways"
+     },
+     {
+      "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1",
+      "high": 1,
+      "id": "sl_transit_and_railroad",
+      "level": "state_local",
+      "low": 0.7401981546463505,
+      "national_bn": 0,
+      "share_of_line": 0,
+      "subfunction": "Transit and railroad"
+     },
+     {
+      "basis": "general government's adopted response for state-local administration at both ends",
+      "high": 0.8510539647701243,
+      "id": "sl_general_economic_and_labor_affairs",
+      "level": "state_local",
+      "low": 0.8510539647701243,
+      "national_bn": 29.358,
+      "share_of_line": 0.06496066912277208,
+      "subfunction": "General economic and labor affairs"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "sl_agriculture",
+      "level": "state_local",
+      "low": 0,
+      "national_bn": 10.007,
+      "share_of_line": 0.022142564749355546,
+      "subfunction": "Agriculture"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "sl_energy",
+      "level": "state_local",
+      "low": 0,
+      "national_bn": 0,
+      "share_of_line": 0,
+      "subfunction": "Energy"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "sl_natural_resources",
+      "level": "state_local",
+      "low": 0,
+      "national_bn": 31.99,
+      "share_of_line": 0.07078451547235774,
+      "subfunction": "Natural resources"
+     },
+     {
+      "basis": "held at 0",
+      "high": 0,
+      "id": "sl_other_commercial_activities",
+      "level": "state_local",
+      "low": 0,
+      "national_bn": -0.625,
+      "share_of_line": -0.0013829422372686338,
+      "subfunction": "Other (commercial activities)"
+     }
+    ],
+    "variant": "adopted"
+   },
+   "enterprise_surplus": {
+    "high": 1.0,
+    "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+    "low": 1.0,
+    "option": "D",
+    "override": "receipt:enterprise_surplus",
+    "receipt": true,
+    "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+    "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+   },
+   "general_government": {
+    "elasticity": [
+     0.5939193086359557,
+     0.842
+    ],
+    "high": 0.8510539647701243,
+    "low": 0.6005266346459308,
+    "s": 0.12918222328408055
+   },
+   "housing_enterprise_surplus": {
+    "high": 1.0,
+    "low": 1.0,
+    "override": "receipt:housing_enterprise_surplus",
+    "receipt": true,
+    "rule": "public housing's enterprise deficit (NIPA 3.8 line 13, housing and urban renewal, -$40.298bn in 2024, less public housing's $5.258bn operating subsidy, consolidated with the rental line) as its own receipt line at the rental line's key; it responds as the enterprise receipt does, in every profile",
+    "source": "item 1: main_case_candidate_v2_2026_09_28/package.cjs splitHousing"
+   },
+   "housing_subsidies": {
+    "high": 1.0,
+    "key": "housing_support",
+    "low": 1.0,
+    "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+    "overlap_netted_bn": 0.0,
+    "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+    "source": "dataset_integrity_2026_09_23/spending.md item 6"
+   },
+   "modeled_owner_property": {
+    "high": 0.7726986463443216,
+    "low": 0.7726986463443216,
+    "override": "receipt:modeled_owner_property",
+    "receipt": true,
+    "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+    "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+   },
+   "personal_property_tax": {
+    "high": 1.0,
+    "low": 1.0,
+    "override": "receipt:personal_property_tax",
+    "receipt": true,
+    "rule": "household personal property tax (NIPA 3.4 line 11), re-keyed to the group's share of household vehicles, at response 1 like the motor-vehicle line, in every profile",
+    "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs rekey, CENTRAL_ITEMS.personal"
+   },
+   "recreation_culture": {
+    "high": 1.0,
+    "low": 0.8563914832367988,
+    "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+    "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+    "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+    "source": {
+     "commit": "bccf478",
+     "file": "service_response_long_run_2026_09_27/derived/responses.json",
+     "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c"
+    },
+    "subfunctions": [
+     {
+      "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end",
+      "high": 1,
+      "id": "fed_recreation_and_culture",
+      "level": "federal",
+      "low": 0,
+      "national_bn": 5.43,
+      "share_of_line": 0.09994294233494688,
+      "subfunction": "Recreation and culture"
+     },
+     {
+      "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1",
+      "high": 1,
+      "id": "sl_recreation_and_culture",
+      "level": "state_local",
+      "low": 0.9514857707559868,
+      "national_bn": 48.901,
+      "share_of_line": 0.9000570576650531,
+      "subfunction": "Recreation and culture"
+     }
+    ],
+    "variant": "adopted"
+   },
+   "roads_vmt_fed": {
+    "high": 1.0,
+    "low": 0.0,
+    "rule": "re-keys the federal highways part of economic_affairs_services (national $1.827bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions fed_highways)",
+    "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+   },
+   "roads_vmt_sl": {
+    "high": 1.0,
+    "low": 0.7401981546463505,
+    "rule": "re-keys the S&L highways part of economic_affairs_services (national $201.005bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions sl_highways)",
+    "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+   },
+   "row8_factor": 0.9451692510510525,
+   "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+   "school": {
+    "decline": 1.0,
+    "elasticity": null,
+    "growth": 1.0,
+    "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils",
+    "s": null,
+    "set_directly": true
+   },
+   "state_price_health_services": {
+    "high": 1.0,
+    "low": 1.0,
+    "rule": "health's state-price gap at the line's preferred key; it responds as its parent, which the case holds at 1 in every profile",
+    "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+   },
+   "state_price_public_order_safety": {
+    "high": 1.0,
+    "low": 1.0,
+    "rule": "public order and safety's state-price gap (the sum over its S&L functions of amount x (price index - 1)) at the line's use key; it responds as its parent, which the case holds at 1 in every profile",
+    "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+   },
+   "state_price_recreation_culture": {
+    "high": 1.0,
+    "low": 0.8563914832367988,
+    "rule": "recreation and culture's state-price gap at the line's preferred key; it responds as its parent, recreation_culture, at the specification's reading",
+    "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+   },
+   "tenant_occupied_property": {
+    "high": 0.7189123969969125,
+    "low": 0.7189123969969125,
+    "override": "receipt:tenant_occupied_property",
+    "receipt": true,
+    "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+    "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+   }
+  },
+  "v4": {
+   "backcast_concept": "oct07",
+   "central": {
+    "benchmark": "main",
+    "convention": "central",
+    "financing": "all_borrowed",
+    "rate_path": "effective",
+    "rule": "programme_income_pandemic_per_head",
+    "window_start": 2005.0
+   },
+   "consumer": {
+    "engine_sha256": "055e0503ea4d10ba040942c89d583f4853c5a80924f4ac1043c5f83772def491",
+    "file": "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/consumer.cjs",
+    "sha256": "92a6f0991e5ec8a5ca430efc4fe03f3f4068839c2c37e36c1afe0d15e098b187"
+   },
+   "engine_parity": {
+    "cash": {
+     "band_bn": [
+      307.3994105054696,
+      385.3641225399636
+     ],
+     "consumer": "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/consumer.cjs",
+     "end_specifications": [
+      48,
+      11
+     ],
+     "max_abs_diff": {
+      "capital_bn": 0.0,
+      "cost_bn": 2.8421709430404007e-13,
+      "engine_cost_bn": 2.8421709430404007e-13,
+      "lines_bn": 0.0,
+      "production_bn": 0.0
+     },
+     "specifications": 64.0,
+     "tolerance": 1e-09
+    },
+    "set": {
+     "band_bn": [
+      389.08255286547876,
+      461.4797093024204
+     ],
+     "consumer": "infra/immigration-fiscal/main_case_candidate_v4_2026_09_29/consumer.cjs",
+     "end_specifications": [
+      48,
+      11
+     ],
+     "max_abs_diff": {
+      "capital_bn": 0.0,
+      "cost_bn": 3.410605131648481e-13,
+      "engine_cost_bn": 3.410605131648481e-13,
+      "lines_bn": 0.0,
+      "production_bn": 0.0
+     },
+     "specifications": 64.0,
+     "tolerance": 1e-09
+    }
+   },
+   "headline_2024": {
+    "high": {
+     "accrual_2024_bn": 76.11558676245681,
+     "accrual_federal_2024_bn": 76.11558676245681,
+     "alternative_public_housing_as_cash": {
+      "flow_2024_bn": 64.25442148086972,
+      "interest_per_member_usd": 1037.2843489422755,
+      "legacy_interest_2024_bn": 44.346201349112484,
+      "stock_entering_2024_bn": 1371.6316128644173
+     },
+     "alternative_set_compounded": {
+      "flow_2024_bn": 139.9409169459276,
+      "interest_per_member_usd": 1735.3642700715468,
+      "legacy_interest_2024_bn": 74.19066277546915,
+      "stock_entering_2024_bn": 2294.723230995149
+     },
+     "cash_gap_2024_bn": 315.0252626931161,
+     "cash_set_net_cost_bn": 385.3641225399636,
+     "displaced_2024_bn": 8.811198486338885,
+     "federal_2024_bn": 63.82533018347065,
+     "federal_share_2024": 0.20260384718938085,
+     "flow_2024_bn": 63.82533018347076,
+     "interest_per_member_usd": 1033.146961166815,
+     "legacy_interest_2024_bn": 44.16931886598524,
+     "resource_cost_2024_bn": 61.0642563792209,
+     "set_net_cost_bn": 461.4797093024204,
+     "stock_entering_2024_bn": 1366.1606232815825
+    },
+    "low": {
+     "accrual_2024_bn": 81.68314236000904,
+     "accrual_federal_2024_bn": 81.68314236000904,
+     "alternative_public_housing_as_cash": {
+      "flow_2024_bn": 34.464145069144145,
+      "interest_per_member_usd": 748.5025510850525,
+      "legacy_interest_2024_bn": 32.000140438433704,
+      "stock_entering_2024_bn": 989.7669452207796
+     },
+     "alternative_set_compounded": {
+      "flow_2024_bn": 115.71819613175431,
+      "interest_per_member_usd": 1496.328141668051,
+      "legacy_interest_2024_bn": 63.9713393173422,
+      "stock_entering_2024_bn": 1978.6387256526327
+     },
+     "cash_gap_2024_bn": 261.30219766096445,
+     "cash_set_net_cost_bn": 307.3994105054696,
+     "displaced_2024_bn": 8.811198486338885,
+     "federal_2024_bn": 34.03505377174519,
+     "federal_share_2024": 0.13025169354260518,
+     "flow_2024_bn": 34.03505377174518,
+     "interest_per_member_usd": 744.3651633095915,
+     "legacy_interest_2024_bn": 31.82325795530645,
+     "resource_cost_2024_bn": 36.581557021423414,
+     "set_net_cost_bn": 389.08255286547876,
+     "stock_entering_2024_bn": 984.2959556379446
+    }
+   },
+   "lane": "main_case_2026_10_07",
+   "lane_writes_contract": true,
+   "members": {
+    "count_m": 42.75221292438524,
+    "rule": "per member: the lineage, the union the account prices (audit row 4) plus the added people counted whole (the adopted case's divisor); per-head shares (OMB net interest, the debt increase, the pandemic credits) at the case's population key, meta.responses.general_government.s (summary.case.v5)",
+    "source": "infra/immigration-fiscal/main_case_2026_10_07/derived/corrections_cash.json meta.lineage.counts.lineage_population"
+   },
+   "oracle": {
+    "cash": [
+     307.399411,
+     385.364123
+    ],
+    "ends": [
+     48,
+     11
+    ],
+    "set": [
+     389.082553,
+     461.479709
+    ],
+    "tol": 1e-06
+   },
+   "payloads": {
+    "cash": {
+     "file": "infra/immigration-fiscal/main_case_2026_10_07/derived/corrections_cash.json",
+     "sha256": "e9033bfff737299e76d09b0c600e8f42c6b6110713f402fb293a6324b2721e80"
+    },
+    "set": {
+     "file": "infra/immigration-fiscal/main_case_2026_10_07/derived/corrections.json",
+     "sha256": "f8d346aacf05bcdaed8495f870ba23ac6154ab3eaf34cc0bcf85861f0c85d091"
+    }
+   },
+   "pension_accrual": {
+    "alternative": "main_with_accrual: the set compounded, the accrual carried back with its lines' own series as if it had been borrowed each year (programme rules only)",
+    "main_profile": {
+     "high|central": {
+      "accrual_bn": 76.11558676245681,
+      "accrual_federal_bn": 76.11558676245681,
+      "cash_set_net_cost_bn": 385.3641225399636,
+      "set_net_cost_bn": 461.4797093024204
+     },
+     "high|high": {
+      "accrual_bn": 76.11558676245681,
+      "accrual_federal_bn": 76.11558676245681,
+      "cash_set_net_cost_bn": 385.3641225399636,
+      "set_net_cost_bn": 461.4797093024204
+     },
+     "high|low": {
+      "accrual_bn": 76.11558676245681,
+      "accrual_federal_bn": 76.11558676245681,
+      "cash_set_net_cost_bn": 385.3641225399636,
+      "set_net_cost_bn": 461.4797093024204
+     },
+     "low|central": {
+      "accrual_bn": 81.68314236000904,
+      "accrual_federal_bn": 81.68314236000904,
+      "cash_set_net_cost_bn": 307.3994105054696,
+      "set_net_cost_bn": 389.08255286547876
+     },
+     "low|high": {
+      "accrual_bn": 81.68314236000904,
+      "accrual_federal_bn": 81.68314236000904,
+      "cash_set_net_cost_bn": 307.3994105054696,
+      "set_net_cost_bn": 389.08255286547876
+     },
+     "low|low": {
+      "accrual_bn": 81.68314236000904,
+      "accrual_federal_bn": 81.68314236000904,
+      "cash_set_net_cost_bn": 307.3994105054696,
+      "set_net_cost_bn": 389.08255286547876
+     }
+    },
+    "rule": "the set (social security and Medicare Part A at the benefits the group's 2024 payroll taxes earn, at payable benefits, net of the tax on benefits) less the cash set (the benefits paid in 2024), line by line: social security, Medicare and federal income tax, all federal. A liability that accrues in 2024 and is paid later, not a 2024 cash flow, so it is a fourth column and never compounded into debt held by the public; the split, the annual flows and the stocks run on the cash set. cash + resource cost + displaced + accrual = the set's net cost + P"
+   },
+   "public_housing": {
+    "alternative": "main_housing_as_cash: the line in the cash gap, carried with NIPA 3.13 line 4 (its federal operating subsidy) and 3.8 line 13 (the state-local deficit), not scaled by income (programme rules only)",
+    "rule": "public housing's enterprise deficit (receipt line housing_enterprise_surplus, at the rental line's key, response 1) is a capped program like rental assistance: its units go to eligible households without the group, so there is no budget response and nothing is borrowed (displaced beneficiaries)"
+   },
+   "shares": {
+    "enterprise_surplus": {
+     "alternative": "t32(23)/t31(19), the September 27 share, on the line after the split, which would count most of the federal enterprises' deficit as state-local",
+     "national_bn": -7.161999999999999,
+     "rule": "the line's key times the federal enterprises' surplus t32(23), which stays in the line: t32(23) over the line's national total after the housing deficit left it; the re-key edits move the key at the share before the split and the national-scale edit, which removes a state-local deficit, moves no federal dollars",
+     "share": 0.2543982127897236,
+     "share_before_the_split": 0.03839022334597556
+    },
+    "housing_enterprise_surplus": {
+     "alternative": "the enterprise surplus's September 27 share, t32(23)/t31(19)",
+     "enterprise_deficit_bn": -40.298,
+     "federal_enterprise_surplus_2024_bn": -1.822,
+     "national_bn": -45.555811000000006,
+     "operating_subsidy_bn": 5.257810999999997,
+     "rule": "the operating subsidy that left rental assistance is federal; the deficit that left the enterprise surplus is state-local; every convention",
+     "share": 0.11541471624772515,
+     "state_local_enterprise_surplus_2024_bn": -45.637
+    },
+    "property_taxes": {
+     "lines": [
+      "modeled_owner_property",
+      "tenant_occupied_property",
+      "personal_property_tax"
+     ],
+     "rule": "state-local property taxes (NIPA 3.3 line 9, 3.4 line 11)",
+     "share": 0.0
+    },
+    "roads_vmt_fed": {
+     "rule": "federal highways",
+     "share": 1.0
+    },
+    "roads_vmt_sl": {
+     "central": 0.07117592782448226,
+     "high": 0.07117592782448226,
+     "low": 0.0
+    },
+    "state_local_only_rule": "federal only through the grants each convention gives state-local consumption of the function (0 under the low convention; health 0 under the high one)",
+    "state_price": {
+     "state_price_health_services": {
+      "central": 0.4188980692916484,
+      "high": 0.0,
+      "low": 0.28987306479443625
+     },
+     "state_price_public_order_safety": {
+      "central": 0.007836645343543001,
+      "high": 0.007836645343543001,
+      "low": 0.0
+     },
+     "state_price_recreation_culture": {
+      "central": 0.01560295290484857,
+      "high": 0.01560295290484857,
+      "low": 0.0
+     }
+    }
+   }
+  },
+  "v5": {
+   "count_m": 42.75221292438524,
+   "lineage": {
+    "arm": "b",
+    "c3": {
+     "label": "pooled with CPS monthly 1994-2026 (central)",
+     "measure": "ba_plus",
+     "override": false,
+     "se": 0.2457,
+     "source": "generation_carryover_2026_09_27/summarize.py SPLIT_C3 (imported)",
+     "value": 0.5567
+    },
+    "counting": {
+     "definition": "whole people: every added person counts as one member, as the union counts its mixed-ancestry identifiers",
+     "rule": "whole",
+     "rules_with_payloads": [
+      "whole"
+     ]
+    },
+    "counts": {
+     "account_union": 39712493.3312,
+     "added": 3039719.593185237,
+     "at_g3_rate": 1944891.7263696424,
+     "identified_g3plus": 14342574.606276,
+     "later_losses": 1094827.8668155947,
+     "lineage_population": 42752212.92438524
+    },
+    "edits": {
+     "count": 336.0,
+     "first": 416.0,
+     "row8_edit_bn": -0.00798742966671706,
+     "row8_edit_index": 751.0
+    },
+    "lane": "main_case_lineage_2026_10_05",
+    "members": {
+     "g3plus": 1956998.3691152572,
+     "rule": "later losses priced as identified G3+ members; G3-rate attriters at (1 - C3) G3+ member + C3 third-plus non-Hispanic white at the G3+'s ages: m_G = later + (1 - C3) x at_g3_rate G3+ members, m_W = C3 x at_g3_rate whites",
+     "white": 1082721.22406998
+    }
+   },
+   "path": {
+    "rule": "the identified Mexican-origin third-plus generation by year (CPS ASEC, survey year t + 1), the back-cast's path for the lineage: its population share where the union's lines follow the union's, its count where they follow the group's size [ASSUMPTION: the lineage's 2024 ratio to the identified third-plus generation holds in every year; its own count by year is not measured]",
+    "share_index": {
+     "2005": 0.6551261348937893,
+     "2010": 0.7885101108371099,
+     "2015": 0.8351436194486048,
+     "2020": 0.9575277263523551,
+     "2024": 1.0
+    },
+    "source": "infra/immigration-fiscal/historical_backcast_2026_09_20/inputs/cps_g3plus_path.csv g3plus_persons",
+    "union_share_index": {
+     "2005": 0.7892241182956278,
+     "2010": 0.92703906788978,
+     "2015": 0.9693616109176438,
+     "2020": 0.9781166434284507,
+     "2024": 1.0
+    }
+   },
+   "per_head_share": 0.12918222328408055,
+   "per_head_share_union": 0.1202447894813438,
+   "rules": {
+    "bridge": "oct07_bridge_2024.csv: previous case, the union's response move, the lineage, range ends",
+    "constant_line": "audit row 8's change at the larger group splits and carries as row 8; the added people's part of the line as the union's parts in proportion [APPROX]",
+    "pandemic_per_head": "the lineage's 2020-2022 refundable-credit excess goes per head at its share of the case's key, per_head_share less per_head_share_union",
+    "programme": "the union at the case (the twin: September 29's payloads plus audit row 8's change, at the case's responses) on the union's paths, the lineage (the case less the twin, every line, P's induced receipts and the constant line) on the third-plus path; the income rule scales the lineage's receipts by the union's relative income [ASSUMPTION]",
+    "whole_budget": "the back-cast's oct05 concept, which carries the lineage's parts on the same path, less the parts that are not cash (cash_whole)"
+   }
+  },
+  "v6": {
+   "adopted": "2026-10-07",
+   "base": "oct05",
+   "decision": "decisions/2026-10-07-main-case-v6.md",
+   "items": [
+    {
+     "applied_to_the_set": true,
+     "edits": {
+      "count": 2,
+      "first": 752
+     },
+     "id": "pension_tr2026",
+     "kind": "edit_set",
+     "label": "the pension accrual on the 2026 Trustees inputs, all six, on current law's separate OASI and DI trust funds",
+     "meta_changed": [
+      "pension_accrual"
+     ],
+     "parts": [
+      "lineage_oasdi",
+      "lineage_part_a",
+      "union_oasdi",
+      "union_part_a"
+     ],
+     "union_only": false
+    },
+    {
+     "applied_to_the_set": true,
+     "edits": {
+      "count": 10,
+      "first": 754
+     },
+     "id": "retiree_health",
+     "kind": "edit_set",
+     "label": "retiree health on accrual, legacy at response 0",
+     "meta_changed": [
+      "retiree_health"
+     ],
+     "parts": [],
+     "union_only": false
+    },
+    {
+     "applied_to_the_set": true,
+     "edits": {
+      "count": 336,
+      "first": 416,
+      "row8_edit_bn": -0.00798742966671706,
+      "row8_edit_index": 751
+     },
+     "id": "added_age_mix",
+     "kind": "lineage",
+     "label": "the 3.04M added people priced at their measured age mix",
+     "meta_changed": [
+      "lineage"
+     ],
+     "parts": [],
+     "union_only": false
+    },
+    {
+     "applied_to_the_set": true,
+     "edits": {
+      "count": 5,
+      "first": 764
+     },
+     "id": "user_fees",
+     "kind": "edit_set",
+     "label": "user fees and the education keys on the union, every part of the user-fee lane but transit",
+     "meta_changed": [
+      "user_fees"
+     ],
+     "parts": [
+      "union_fee_health",
+      "union_fee_tuition",
+      "union_k12_weight_other",
+      "union_k12_weight_school",
+      "union_key_health",
+      "union_key_higher_ed",
+      "union_key_pell"
+     ],
+     "union_only": true
+    }
+   ],
+   "rules": {
+    "bridge": "oct07_bridge_2024.csv: previous case, each item in the payload's order (the lineage item first), range ends; each item's step is gated against the case lane's change for it (change_at_fixed_specifications: alone plus its interactions with the items before it)",
+    "components": "each edit set is a correction of its own, v6_<item> (a national-scale edit as the change it makes in every cell, ':scale'; a carrier receipt line as its cells, which respond at 0); the lineage's edits keep v5's names (v5_lineage, v5_union_response) and carry the lineage item's values; the grid's change in F, the lineage item's only, stays in the v5_lineage step",
+    "programme": "the twin on the union's paths and the lineage on the identified third-plus generation's path, as on October 5 [ASSUMPTION, inherited]; an item's union part follows its line's union path",
+    "union_twin": "September 29's payloads plus audit row 8's change plus the edit sets' union parts in the payload's order: a cell edit's union_ parts, a union-only item's edits whole with its carriers, and each national-scale edit as it is (the twin's national totals are the case's); the lineage, the case less its twin, holds the added people at their age mix and their parts of the items",
+    "whole_budget": "the back-cast's oct07 concept less its parts that are not cash: the items' parts (v6_<item>_<path>_<line>) leave by their line as v5's do (cash_whole)"
+   },
+   "status": "adopted 2026-10-07 (decisions/2026-10-07-main-case-v6.md): v5 plus items pension_tr2026, retiree_health, added_age_mix, user_fees, built by main_case_2026_10_07/package.cjs on main_case_2026_10_05/derived/corrections.json"
+  },
+  "whole_budget_rules": {
+   "rule": "the back-cast's concept, the set, less the parts that are not cash, each on its own series (historical_backcast_2026_09_20/derived/oct07/case_parts_annual.csv): the capital return; the displaced beneficiaries, rental assistance with its v4 change, public housing's deficit, and LIHEAP, which follows the base at its 2024 share of the base's fiscal gap (the base carries September 27's P); and the pension accrual, social security's and Medicare Part A's accrual less the benefits they no longer charge, and the tax on benefits, which the back-cast carries inside v4_federal_income_tax and which leaves on that part's series. That is the cash set carried back line by line. The cash part's 2024 federal share is held. October 5: the lineage's parts (v5_, on the identified third-plus generation's path) leave the same way: its rental assistance, public housing and LIHEAP with the displaced beneficiaries (the base's LIHEAP share leaves out the lineage's own), its accrual less the benefits each accrual line no longer charges, and its tax on benefits (the case's less the union twin's) on v5_federal_income_tax's series; the base carries September 27's P less v4's and the lineage's changes. October 7: the items' parts (v6_, each on its path) leave by their line the same way: on rental assistance, public housing and LIHEAP with the displaced beneficiaries, social security's and Medicare's accrual parts with the accrual, and the grid's change in P out of the base",
+   "window_sums_tn": {
+    "net_cost_cbo_informed_oct07_high|flat": {
+     "accrual": {
+      "2005": 1.3339221195916207,
+      "2010": 1.051084791554853,
+      "2015": 0.721519880058478
+     },
+     "displaced": {
+      "2005": 0.15433485219753262,
+      "2010": 0.12161996304974756,
+      "2015": 0.08349266979385037
+     },
+     "resource": {
+      "2005": 1.06930959,
+      "2010": 0.842676592,
+      "2015": 0.57852311
+     }
+    },
+    "net_cost_cbo_informed_oct07_high|income": {
+     "accrual": {
+      "2005": 1.1919111661916382,
+      "2010": 0.9235737827091239,
+      "2015": 0.6768882115652683
+     },
+     "displaced": {
+      "2005": 0.13652712673691364,
+      "2010": 0.10849017133873542,
+      "2015": 0.07487575816206536
+     },
+     "resource": {
+      "2005": 0.90750077,
+      "2010": 0.743772643,
+      "2015": 0.530132487
+     }
+    },
+    "net_cost_cbo_informed_oct07_high|ratio": {
+     "accrual": {
+      "2005": 1.1919111661916382,
+      "2010": 0.9235737827091239,
+      "2015": 0.6768882115652683
+     },
+     "displaced": {
+      "2005": 0.13495506642844585,
+      "2010": 0.10736369952114626,
+      "2015": 0.07430219736820962
+     },
+     "resource": {
+      "2005": 0.90750077,
+      "2010": 0.743772643,
+      "2015": 0.530132487
+     }
+    },
+    "net_cost_cbo_informed_oct07_low|flat": {
+     "accrual": {
+      "2005": 1.4283452176294356,
+      "2010": 1.125852484510536,
+      "2015": 0.7730905195389961
+     },
+     "displaced": {
+      "2005": 0.1543348521781784,
+      "2010": 0.1216199630314306,
+      "2015": 0.08349266978116528
+     },
+     "resource": {
+      "2005": 0.640874785,
+      "2010": 0.50501231,
+      "2015": 0.3466838439999999
+     }
+    },
+    "net_cost_cbo_informed_oct07_low|income": {
+     "accrual": {
+      "2005": 1.2748074243803806,
+      "2010": 0.9885878219857609,
+      "2015": 0.7249317411564734
+     },
+     "displaced": {
+      "2005": 0.13670329505096254,
+      "2010": 0.10863129330316679,
+      "2015": 0.07493667396165883
+     },
+     "resource": {
+      "2005": 0.5418888559999999,
+      "2010": 0.444365903,
+      "2015": 0.317120045
+     }
+    },
+    "net_cost_cbo_informed_oct07_low|ratio": {
+     "accrual": {
+      "2005": 1.2748074243803806,
+      "2010": 0.9885878219857609,
+      "2015": 0.7249317411564734
+     },
+     "displaced": {
+      "2005": 0.13492702738831444,
+      "2010": 0.10735849514452545,
+      "2015": 0.074288608819515
+     },
+     "resource": {
+      "2005": 0.5418888559999999,
+      "2010": 0.444365903,
+      "2015": 0.317120045
+     }
+    },
+    "net_cost_full_proportional_oct07_high|flat": {
+     "accrual": {
+      "2005": 1.3339221195916207,
+      "2010": 1.051084791554853,
+      "2015": 0.721519880058478
+     },
+     "displaced": {
+      "2005": 0.15433485218512094,
+      "2010": 0.12161996303809203,
+      "2015": 0.08349266978465172
+     },
+     "resource": {
+      "2005": 1.06930959,
+      "2010": 0.842676592,
+      "2015": 0.57852311
+     }
+    },
+    "net_cost_full_proportional_oct07_high|income": {
+     "accrual": {
+      "2005": 1.1919111661916382,
+      "2010": 0.9235737827091239,
+      "2015": 0.6768882115652683
+     },
+     "displaced": {
+      "2005": 0.13635326270718842,
+      "2010": 0.10835096973944322,
+      "2015": 0.0748156649483353
+     },
+     "resource": {
+      "2005": 0.90750077,
+      "2010": 0.743772643,
+      "2015": 0.530132487
+     }
+    },
+    "net_cost_full_proportional_oct07_high|ratio": {
+     "accrual": {
+      "2005": 1.1919111661916382,
+      "2010": 0.9235737827091239,
+      "2015": 0.6768882115652683
+     },
+     "displaced": {
+      "2005": 0.13498227821401051,
+      "2010": 0.1073685803326259,
+      "2015": 0.07431546597711793
+     },
+     "resource": {
+      "2005": 0.90750077,
+      "2010": 0.743772643,
+      "2015": 0.530132487
+     }
+    },
+    "net_cost_full_proportional_oct07_low|flat": {
+     "accrual": {
+      "2005": 1.4283452176294356,
+      "2010": 1.125852484510536,
+      "2015": 0.7730905195389961
+     },
+     "displaced": {
+      "2005": 0.15433485219912776,
+      "2010": 0.12161996304971787,
+      "2015": 0.08349266979191995
+     },
+     "resource": {
+      "2005": 0.687871564,
+      "2010": 0.542040805,
+      "2015": 0.372099895
+     }
+    },
+    "net_cost_full_proportional_oct07_low|income": {
+     "accrual": {
+      "2005": 1.2748074243803806,
+      "2010": 0.9885878219857609,
+      "2015": 0.7249317411564734
+     },
+     "displaced": {
+      "2005": 0.13648501356774492,
+      "2010": 0.10845651881171753,
+      "2015": 0.07486122488293899
+     },
+     "resource": {
+      "2005": 0.5851213350000001,
+      "2010": 0.47947086899999997,
+      "2015": 0.341588115
+     }
+    },
+    "net_cost_full_proportional_oct07_low|ratio": {
+     "accrual": {
+      "2005": 1.2748074243803806,
+      "2010": 0.9885878219857609,
+      "2015": 0.7249317411564734
+     },
+     "displaced": {
+      "2005": 0.13496125740383302,
+      "2010": 0.10736465969640062,
+      "2015": 0.0743052876911892
+     },
+     "resource": {
+      "2005": 0.5851213350000001,
+      "2010": 0.47947086899999997,
+      "2015": 0.341588115
+     }
+    }
+   }
+  }
+ },
+ "debt_increase_fy2005_2023_bn": 21940.048000000003,
+ "gps_federal_fraction_2024": {
+  "central": [
+   0.11433631720719538,
+   0.25252336938997755
+  ],
+  "high": [
+   0.11433631720719538,
+   0.3666881737153041
+  ],
+  "low": [
+   0.10248353761497775,
+   0.25252336938997755
+  ]
+ },
+ "income_security_matching_fraction_2024": 0.6707607097036643,
+ "induced_receipts_federal_share_2024": 0.8840492611199644,
+ "inputs": {
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/fred_GS10.csv": "e22128f6caa50e4e7fed03a1c2d323a517bad452a2c69eab89277450fb59bc5c",
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist03z2_fy2027.xlsx": "78100f3efb1a6b08d675b24af173a57359e47dce103a2f1499d905a4bbba06ce",
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist07z1_fy2027.xlsx": "c3cfce645fe7e4eb9beeb46a970e2b0b30301f02f03f3e5461e9950538641ff9",
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist12z3_fy2027.xlsx": "43aa30c0d39116909b990a93926540fd173bce4963f26ee3a0d28a6f900d974d",
+  "infra/immigration-fiscal/historical_backcast_2026_09_20/_cache/Section7All_xls.xlsx": "ce107c8ce92393613c0abae38156afcfaef8ab571eedf0302dc09ca44738b9ef",
+  "sources/immigration-fiscal/data/external/bea_nipa/Section1All_xls.xlsx": "238ba851c9a4932d91a0dedb1b3f2e6c6d37574d154a54267da18b9cb0921a19",
+  "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+  "sources/immigration-fiscal/data/external/nhea/nhe_tables/Table 03 National Health Expenditures, by Source of Funds.xlsx": "d379d2746ece097b6f864543d99832882f7dbdc197d1a25473d53d22cdfd58c7",
+  "sources/immigration-fiscal/data/external/omb_hist_fy2027/hist03z1_fy2027.xlsx": "47864b5078698919c3237038ad7296fb7aeb62f6942c3d8acccf98ad0a7122f7"
+ },
+ "justice_federal": {
+  "central": 0.8097478431773406,
+  "change_bn": 5.943591999999998,
+  "components": {
+   "fire": 0.0,
+   "law_courts": 1.007575000000001,
+   "police_cbp": 0.0,
+   "police_ice_border": 0.0,
+   "police_ice_interior": 0.100485,
+   "police_non_border": 2.206205999999998,
+   "prisons": 2.629325999999999
+  },
+  "high": 3.217836266960162,
+  "low": 0.5885102669601632,
+  "shares": {
+   "fire": 0.013393802718630467,
+   "law_courts": 0.12208186959663155,
+   "police_cbp": 1.0,
+   "police_ice_border": 1.0,
+   "police_ice_interior": 1.0,
+   "police_non_border": 0.1654508360512741,
+   "prisons": 0.08414231488114352
+  }
+ },
+ "medicaid_federal_share_nhea_2024": 0.6404422024256735,
+ "per_head_share": 0.12918222328408055,
+ "per_head_share_of_debt_increase_fy2005_2023_bn": 2687.841673986447,
+ "per_head_share_of_omb_net_interest_bn": 113.66472544097351,
+ "programme_control_max_abs_diff_bn": 4.973758797177652e-05,
+ "proposed_benefits": {
+  "care_elder_medicaid_bn": 1.4871944918978677,
+  "care_inside_account": true,
+  "care_output_receipts_bn": -0.0282383467048764,
+  "care_taxes_bn": 2.688622998456876,
+  "federal_omitted_bn": 0.0251613116888487,
+  "federal_with_scale_bn": 5.293860586377397,
+  "mobility_tax_bn": 0.028461436251836128,
+  "scale_induced_receipts_bn": 5.959734945102332,
+  "source_sha256": {
+   "infra/immigration-fiscal/care_household_services_2026_09_23/derived/summary.csv": "ea351ee9aac908ba97599fdfb59e7b2d642ab5e6acb65e86ce48a9a016a2ceef",
+   "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/derived/insurance_summary.json": "63ae37b4b8e65f48257bb586d360c8a9673b08f05203c2701b4917424760388b",
+   "infra/immigration-fiscal/scale_spillovers_2026_09_23/derived/summary.csv": "385c45e73ab523c28ef38ff24b0b05704aa32c1a2630c11fb89d8443c56b54c0"
+  },
+  "total_omitted_bn": 0.028461436251836128,
+  "total_with_scale_bn": 5.988196381354168
+ },
+ "rate_2024": {
+  "ladder137": 0.03220790586972007,
+  "omb_net_interest_over_average_debt": 0.03233098518085556,
+  "public_securities_interest_over_average_debt": 0.034877473885556606
+ },
+ "refundable_credit_key_share_2024": {
+  "main_high": 0.15045506809945292,
+  "main_housing_as_cash_high": 0.15045506809945292,
+  "main_housing_as_cash_low": 0.17014187680110182,
+  "main_low": 0.17014187680110182,
+  "main_with_accrual_high": 0.15045506809945292,
+  "main_with_accrual_low": 0.17014187680110182,
+  "proportional_high": 0.15045506809945292,
+  "proportional_low": 0.17014187680110182
+ },
+ "uncompensated_federal": {
+  "equal_high": {
+   "central": 1.8581634410089678,
+   "high": 1.8581634410089678,
+   "low": 1.4546709459532947,
+   "parts": {
+    "medicaid": 2.27135398080222,
+    "state_local": 3.476243034325799
+   },
+   "total": 5.747597015128019
+  },
+  "equal_low": {
+   "central": 1.9377426628932675,
+   "high": 1.9377426628932675,
+   "low": 1.5773205945492652,
+   "parts": {
+    "medicaid": 1.0401762452038685,
+    "medicare": 0.9111478291600321,
+    "state_local": 1.7002519311010542
+   },
+   "total": 3.651576005464955
+  }
+ }
+}

@@ -1,6 +1,6 @@
 """Permanent gates: `debt_legacy.py --case sept23`, `--case sept24`, `--case sept26` and `--case sept26_schools`
 rebuild the files committed for those cases byte for byte, the default run rebuilds the derived/ files,
-`--case sept29` rebuilds derived/sept29/ and `--case oct05` derived/oct05/.
+`--case sept29` rebuilds derived/sept29/, `--case oct05` derived/oct05/ and `--case oct07` derived/oct07/.
 
 Since 2026-09-27 the default run is the main case of that day (sept27). The files of each earlier case are
 the ones committed at its commit below, the last commit whose derived/ held that run. The ledger lane
@@ -81,4 +81,20 @@ def test_oct05_rebuilds_its_directory(tmp_path):
     bridges = [n for n in sept29 if n.endswith("_bridge_2024.csv")]
     assert len(bridges) == 4, bridges
     moved = [n for n in bridges if (tmp_path / n).read_bytes() != (HERE / "derived" / "sept29" / n).read_bytes()]
+    assert not moved, moved
+
+
+def test_oct07_rebuilds_its_directory(tmp_path):
+    """Main case v6 (2026-10-07) writes derived/oct07/: October 5's files for its case, plus the bridge from October 5.
+    The earlier cases' bridges there, October 5's included, are October 5's, byte for byte."""
+    names = sorted(p.name for p in (HERE / "derived" / "oct07").iterdir())
+    oct05 = sorted(p.name for p in (HERE / "derived" / "oct05").iterdir())
+    assert names == sorted(oct05 + ["oct07_bridge_2024.csv"]), names
+    rebuild(tmp_path, "--case", "oct07")
+    assert sorted(p.name for p in tmp_path.iterdir()) == names
+    differ = [n for n in names if (tmp_path / n).read_bytes() != (HERE / "derived" / "oct07" / n).read_bytes()]
+    assert not differ, differ
+    bridges = [n for n in oct05 if n.endswith("_bridge_2024.csv")]
+    assert len(bridges) == 5, bridges
+    moved = [n for n in bridges if (tmp_path / n).read_bytes() != (HERE / "derived" / "oct05" / n).read_bytes()]
     assert not moved, moved
