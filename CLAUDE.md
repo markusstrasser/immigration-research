@@ -141,7 +141,10 @@ substituting a web summary or declaring a measurement unavailable:
   a chat answer.
 - Fiscal results **by generation against a white reference** exist only in
   `infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/` (`complete_gaps.csv`,
-  `age_profile_components.csv`, `age_normalizations*.csv`). The finance-refresh and
+  `age_profile_components.csv`, `age_normalizations*.csv`). Since 2026-10-07 its expanded account
+  carries item T, the income tax the survey misses, on the case's keys; the partial account keeps the
+  survey's taxes, quoted as "taxes as the survey reports them", and a caller of `build_charges` without
+  the keys stops `[BLOCKED]` unless it passes `--off T` (decision 2026-10-07-ledger-item-t). The finance-refresh and
   enrollment accounts carry the all-generation union only; do not flat-scale the ledger's split
   onto any account total. The adopted main case has its own split, computed on the account with
   no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results_oct07.csv`,
@@ -190,6 +193,8 @@ substituting a web summary or declaring a measurement unavailable:
   - counted by share of Mexican-immigrant ancestry instead of whole (beside, never the headline):
     $274.9–374.8bn;
   - low side with the within-district 0.836: $361–435bn;
+  - the case's two measured residuals (W on the case's income-tax keys, the row-4 class): $387.1–462.3bn,
+    $306.4–387.2bn counting benefits when paid (ladder 298), stated beside the headline, not adopted;
   - first-year budget response with CBO's 0.63–0.66: $289–336bn, $207–260bn counting benefits when paid
     (ladder 270's lane);
   - Earlier cases: the decision records and the INDEX's case table.

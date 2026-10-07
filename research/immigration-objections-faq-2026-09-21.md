@@ -17,13 +17,14 @@ taxes. With every service proportional it is $418–476bn. CBO-style first-year 
 give $289–336bn ($207–260bn counting benefits when paid), and other residents' social costs and
 benefits bring the total to $489–571bn.
 The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
-(same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
-−$7,521, third-plus −$6,195 per person, standard errors 384, 615 and 457).
+(same-age gap against third-plus non-Hispanic whites: Mexico-born −$8,849, second generation
+−$8,499, third-plus −$7,118 per person, standard errors 539, 912 and 637). Since October 7 its
+income taxes include what the survey misses, placed on the main case's own keys (item T).
 
 ## Before combining numbers from different entries
 
 **The two anchors are different objects.** The generation gaps and the age structures (entries
-1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against
+1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against
 a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on
 separate partial accounts. The $389–461bn (entries 2, 4, 11 and 15–19) is the complete account's
 change for all other residents in the main case, under a stated service-response assumption and
@@ -70,20 +71,21 @@ interest on prior liabilities. Neither belongs in the annual fiscal or fiscal-pl
 They also must not be summed with each other until unpaid pension compensation already inside
 the federal simulation is reconciled to pension financing. Entry 2 gives both estimates and their windows.
 
-**California and Texas per-person gaps are the shared all-age ledger.** The −$12,133 /
-−$7,479 (CA/TX vs local third-plus NH whites) and metro figures (Los Angeles −$17,196,
-Houston −$7,493) are from the September 17 stress and metro-match tables (entry 15). They
-are not a split of the $389–461bn complete account and not the generation-ledger −$6k to
-−$8k. [SOURCE: [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md)]
+**California and Texas per-person gaps are the shared all-age ledger.** The −$15,228 /
+−$9,267 (CA/TX vs local third-plus NH whites) and metro figures (Los Angeles −$21,083,
+Houston −$8,977) are from the stress and metro-match tables, with the income tax the survey misses (entry 15). They
+are not a split of the $389–461bn complete account and not the generation-ledger −$7k to
+−$9k. [SOURCE: [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md)]
 
 ## 1. "They are young. Children cost money everywhere and pay it back later."
 
 Steel-man: a population that is 30% under 18 will look expensive in any single year.
-Finding: age works the other way. The raw difference from whites is −$4,093 per person;
-at any common age structure it is −$7,049 to −$8,716. Whites with the Mexican-origin age
-pyramid would run +$3,403 per person, against −$1,221 at their own ages, so the young
-structure is worth about $4,600 a year. Over a full life course at today's rates the gap is
-−$7,049. [SOURCE: [age structures](immigration-yearly-lifetime-cost-repair-2026-09-19.md#same-rates-under-different-age-structures)]
+Finding: age works the other way. The raw difference from whites is −$5,276 per person;
+at any common age structure it is −$8,154 to −$9,829. Whites with the Mexican-origin age
+pyramid would run +$4,852 per person, against +$299 at their own ages, so the young
+structure is worth about $4,550 a year. Over a full life course at today's rates the gap is
+−$8,154. [SOURCE: [age structures](immigration-yearly-lifetime-cost-repair-2026-09-19.md#same-rates-under-different-age-structures);
+`infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv`]
 Would change it: younger cohorts earning more at the same ages than today's adults do.
 
 ## 2. "Defense, interest and administration do not grow with population. Average cost is not marginal cost."
@@ -170,7 +172,7 @@ Finding: both sides are already in the account. Employee and employer payroll ta
 credited, and at the same ages the Mexico-born draw $3,506 less in cash transfers and $977
 less in public medical spending than whites. The second generation's lower draw is $1,253
 and $54. Lower benefits follow lower covered earnings, so the offset mirrors the tax gap:
-for the union, $2,653 of lower spending against $9,735 of lower receipts. [SOURCE:
+for the union, $2,653 of lower spending against $10,889 of lower receipts. [SOURCE:
 `infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations_by_category.csv`]
 
 ## 4. "The benefits are in the economy, not in the budget."
@@ -234,26 +236,27 @@ fifths of other residents lose $80.3bn a year and the top fifth gains $45.4bn (l
 ## 5. "The second generation pays it back."
 
 Steel-man: the classic result is a costly first generation and a contributing second.
-Finding: the same-age gap is −$7,584, −$7,521 and −$6,195 for the first, second and
-third-plus generations. Taxes converge ($12.1k, $8.4k and $7.0k below whites) but the first
+Finding: the same-age gap is −$8,849, −$8,499 and −$7,118 for the first, second and
+third-plus generations. Taxes converge ($13.4k, $9.4k and $7.9k below whites) but the first
 generation's lower benefit use disappears by the second. Period-profile lifetime values at 3%:
-second generation from birth −$280k, third-plus −$225k, white reference −$96k. The September 16 adult
-ledger re-run on the next survey year moved from −$6,066 to −$6,499, inside one standard
-error. Third-plus is self-identified; including those who stopped identifying narrows the
-all-age union gap by about $230, from −$7,152 to −$6,921 on the September 19 ledger *(routed)*. [SOURCE: generation ledger;
+second generation from birth −$267k, third-plus −$215k, white reference −$68k. The September 16 adult
+ledger, on taxes as the survey reports them, re-run on the next survey year moved from −$6,066 to
+−$6,499, inside one standard error. Third-plus is self-identified; including those who stopped
+identifying narrows the union's per-person gap by about $240, from −$8,218 to −$7,981 on the
+population lane's base with the measured generation split *(routed)*. [SOURCE: generation ledger;
 `infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md`;
 [population total](immigration-mexican-origin-population-total-2026-09-19.md)]
 
 Scope: these are generations alive in 2024, not one lineage followed over time. Today's
 third-plus adults descend mostly from arrivals before about 1970 [INFERENCE from generation
 lengths], so the step from second to third-plus is not a forecast for the grandchildren of
-recent arrivals. The first and second generations are indistinguishable ($62 apart, standard
-error at most 725); the third-plus is $1,389 better than the first, at least 2.3 standard errors
+recent arrivals. The first and second generations are indistinguishable ($350 apart, standard
+error at most 1,060); the third-plus is $1,732 better than the first, at least 2.1 standard errors
 [CALCULATION from `complete_gaps.csv`; the white reference's sampling error sits in both gaps, so
 these standard errors are upper bounds if the generations' own sampling errors are uncorrelated;
 the gap replicates are not saved, so the exact figure is not computable from the outputs]. On the personal allocation the gap at white ages
-narrows at each step (−$7,830, −$6,799, −$6,018); on the shared allocation it is −$7,525,
-−$7,443, −$6,116 [`age_normalizations.csv`]. The National Academies results are a different
+narrows at each step (−$9,180, −$7,609, −$7,074); on the shared allocation it is −$8,791,
+−$8,420, −$7,039 [`age_normalizations.csv`]. The National Academies results are a different
 object: all origins, from arrival, with descendants, discounted. The 1997 volume's baseline is
 +$80,000 per immigrant with descendants and −$15,000 with no fiscal adjustment (1996 dollars), and its rule of
 holding debt at the 2016 share of GDP did not happen (76.0% → 97.4% by 2024), which the
@@ -295,7 +298,7 @@ ladder 224]
 
 ## 6. "Comparing with whites is cherry-picking."
 
-Finding: against all natives the same-age gaps are −$5,404, −$5,342 and −$4,015; against as
+Finding: against all natives the same-age gaps are −$6,478, −$6,128 and −$4,747; against as
 many average residents, the main case's gap counting benefits when paid is −$279–310bn, about −$6,500 to
 −$7,200 per person. The gap is defined on cash flows only: an accrued pension
 has no national total to share out. The net-cost headline compares with no reference group at all: it is the change for
@@ -309,8 +312,8 @@ ladder 263]
 ## 7. "Is this just low education? Poor natives cost money too."
 
 Steel-man: origin adds nothing once schooling is held fixed. Finding *(routed)*: below-high-school
-Mexico-born adults outperform below-high-school natives at common ages, while high-school-only
-adults do worse. The aggregate gap is largely a composition effect, which is a description of
+Mexico-born adults do at least as well as below-high-school natives at common ages, while
+high-school-only adults do worse. The aggregate gap is largely a composition effect, which is a description of
 who the residents are and does not make the dollars smaller.
 [SOURCE: [education-specific accounts](immigration-education-fiscal-and-methods-2026-09-19.md)]
 
@@ -318,15 +321,17 @@ Size and scope (Mexico-born, ages 25–64, common ages, dollars per person per y
 
 | Comparison | Personal allocation | Household costs shared |
 |---|---:|---:|
-| Below high school, against natives below high school | +2,709 (+880 to +4,539) | +2,263 (+751 to +3,774) |
-| Below high school, against third-plus whites below high school | +1,020 (−1,761 to +3,800) | +705 (−1,339 to +2,749) |
-| High school only, against natives with high school only | −2,122 (−3,511 to −733) | −2,286 (−3,645 to −926) |
-| High school only, against third-plus whites with high school only | −4,008 (−5,619 to −2,397) | −4,026 (−5,637 to −2,416) |
-| Below high school, against natives of all schooling | −16,519 | −13,502 |
+| Below high school, against natives below high school | +1,779 (−1,071 to +4,628) | +1,908 (+40 to +3,777) |
+| Below high school, against third-plus whites below high school | −25 (−4,924 to +4,875) | +260 (−2,635 to +3,155) |
+| High school only, against natives with high school only | −2,950 (−4,700 to −1,200) | −3,338 (−5,004 to −1,672) |
+| High school only, against third-plus whites with high school only | −5,061 (−7,342 to −2,780) | −5,334 (−7,543 to −3,125) |
+| Below high school, against natives of all schooling | −18,792 | −15,183 |
 
-The advantage over natives below high school holds under both allocations. Against whites
-below high school, the reference group used everywhere else in this file, it cannot be told
-from zero. The cell's own balance is still negative (−$1,951 personal, −$5,558 shared); that
+With the income tax the survey misses on the main case's keys, the advantage over natives below
+high school holds only with household costs shared; on the personal allocation it cannot be told
+from zero. Against whites below high school, the reference group used everywhere else in this
+file, it cannot be told from zero under either allocation. The cell's own balance is still
+negative (−$1,879 personal, −$5,518 shared); that
 is a level and should not be set against the gaps in the table. [SOURCE:
 `infra/immigration-fiscal/education_origin_fiscal_2026_09_19/derived/comparisons.csv`, account
 `expanded_excluding_N`, entry `stock`; `RESULT.md`]
@@ -351,14 +356,15 @@ of other programmes before 2024 is unmeasured. [SOURCE: [back-cast](immigration-
 ## 9. "You are measuring the low-skilled inflows of 1970–2007. New arrivals are different."
 
 Steel-man: the 2024 stock is a legacy of an ended wave. Finding: largely true of the stock,
-and the newer arrivals are better but not different in sign. On the partial account the
-2016–2025 arrival window is −$3,978 per standardized person against whites, the older windows
-−$4,800 to −$5,300. The less-than-high-school share of new arrivals fell from 82% to 33%
+and the newer arrivals are better but not different in sign. On the partial account, with taxes
+as the survey reports them, the 2016–2025 arrival window is −$3,978 per standardized person
+against whites, the older windows −$4,800 to −$5,300; the income tax the survey misses widens
+them to −$5,498 and −$6,600 to −$7,000, mostly through the whites' side. The less-than-high-school share of new arrivals fell from 82% to 33%
 *(routed)*, and the group's per-capita income rose from 0.52 to 0.61 of the national figure
 between 2008 and 2024 (household income 0.78 to 0.91; full-time men's earnings 0.64 to 0.75,
 gained in 2016–2019 and 2021–2023 and flat in 2024). The position was flat before 2016, part
 of the per-capita gain is a falling child share, and across generations the tax shortfall
-flattens at $12.1k, $8.4k and $7.0k. The old-age cells, which do rest on small pre-1960 birth cohorts,
+flattens at $13.4k, $9.4k and $7.9k. The old-age cells, which do rest on small pre-1960 birth cohorts,
 *reduce* the measured gap, so they are not what produces it. Forward-looking claims should use
 the recent window, not the stock. [SOURCE:
 `infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md`;
@@ -367,9 +373,9 @@ the recent window, not the stock. [SOURCE:
 ## 10. "What happens as this population ages?"
 
 Finding: at the white age structure and today's rates the 40.9m residents' balance moves from
-−$217bn to −$340bn. Social Security and other cash add $70bn, public medical $80bn; schools
+−$204bn to −$325bn. Social Security and other cash add $70bn, public medical $80bn; schools
 save $31bn; under-65 institutional cost falls $1.3bn while nursing cost rises $9.2bn. This
-is a composition exercise on the September 19 ledger, not a forecast. [SOURCE: age structures
+is a composition exercise on the generation ledger, not a forecast. [SOURCE: age structures
 section, `age_normalizations_by_category.csv`] Would change it: US-born cohorts reaching 65 with
 higher covered earnings than the 0.5m second-generation and 1.0m third-plus residents born
 before about 1960 whose rates fill the 65+ cells today (ladder 161). The sign of the
@@ -385,12 +391,15 @@ year-to-year responses, no capital response and benefits counted when paid, the 
 $207–260bn ($289–336bn with the pension accrual). The return on
 public capital ($37–61bn of the case) is an opportunity cost, and the pension accrual ($76–82bn) a
 promise of future benefits; neither is cash that a removal would free in the year.
-Schools show how slowly budgets shrink: twenty years after enrollment falls, US districts still keep about 70% of
-the money and about half of the staff that proportional cuts would shed (Lee & Scafidi, *Education Finance and
-Policy* 2026, districts 1998–2019). The school money would return to other residents' children as services, not as
+Schools show how slowly budgets shrink: across US districts whose enrollment fell over twenty-year spans, spending
+fell only about 30% as fast, so they kept about 70% of the money and about half of the staff that proportional cuts
+would shed (Lee & Scafidi, *Education Finance and Policy* 2026, districts 1998–2019; long differences, not a
+tracked adjustment path). The school money would return to other residents' children as services, not as
 tax cuts.
 Lifetime and lineage values need their own
 future profiles; see the [projection back-tests](immigration-projection-backtest-2026-09-19.md).
+Two questions this account does not answer: the cost of removing a person, and the cost of all
+unauthorized immigrants of every origin. Each would be a new analysis.
 
 ## 12. "What about crime?"
 
@@ -475,14 +484,14 @@ naturalized citizens and every US-born Mexican-origin worker. It has no taxes, t
 public services. The nested calculation on the account's own earnings data is now executed:
 natives against foreign-born inside each skill cell at ε = 3 doubles the term to $17.9–27.1bn,
 with natives +$54bn and other foreign-born residents −$46bn netting inside the beneficiary set,
-and would lower the main-case band by $9–14bn (computed on the September 20 band; the shift
-carries to the adopted one). The jobs on the same file put that elasticity
-near 6: low-cell natives and foreign-born share 0.644 of detailed-occupation earnings, and the
-sketch gives 5.7–7.6. At the computed neighbors ε = 5 and ε = 7 the term is $13–22bn and the
-band would fall by about $4–8bn. The direct low-skill estimates (8.7 and 17.9; ladder 181)
-move it $1.5–4.7bn. Size, not sign, and none applied. A 2026 meta-analysis of 1,091 estimates (Kantova,
-Havranek, Irsova & Schwarz) puts the best-practice elasticity at 8.2 for national and 16.9 for regional designs. That
-is at or above the 5–7 used here, so the $4–8bn is if anything generous. The 2021–24 surge raised natives' wages
+and would lower the main-case band by $9–14bn (computed on the September 20 band, not replayed on
+the adopted case). The direct estimates put the elasticity well above 3. The low-skill estimates
+(8.7 and 17.9; ladder 181) move the band $1.5–4.7bn, and a 2026 meta-analysis of 1,091 estimates (Kantova,
+Havranek, Irsova & Schwarz) puts the best-practice elasticity at 8.2 for national and 16.9 for regional designs.
+At the computed ε = 5 and ε = 7 the term is $13–22bn and the band would fall by about $4–8bn, so that range
+is if anything generous. The file's occupation overlap (low-cell natives and foreign-born share 0.644 of
+detailed-occupation earnings) fits a value near 6 only through a sketch whose component elasticities are
+chosen: an illustration, not an estimate. Size, not sign, and none applied. The 2021–24 surge raised natives' wages
 across metros by 0.9% (Hunt, Orrenius & Zavodny, 2026). But the gain faded to zero as domestic movers spread it, and
 it turned negative in 2023–24 on the busing instrument (−1.8%). It also came with pandemic-recovery demand. So it is
 evidence about recent arrivals' consumption, not about a settled population's production. [SOURCE:
@@ -498,21 +507,24 @@ every state reaches that share, the national total explodes.
 
 Finding: the two states **do** have the same share (ACS 31.7–33.5% Texas, 31.8–32.5%
 California; 2020 Census 31.0% / 30.8%). They do **not** have the same gap. On the shared
-all-age ledger, matched to **local** third-plus NH whites at common ages: California
-**−$12,133** [−14,068, −10,198], Texas **−$7,479** [−9,253, −5,705]. Los Angeles
-**−$17,196**, Houston **−$7,493**. Every named union interval is adverse; Texas is
-smaller than California, not zero. Matching on metro does not shrink the national
-per-person gap (−$5,734 age-only → −$5,797 metro×age vs whites); it **widens** the
-national total because Mexican-origin residents live where the local white benchmark is
-higher. Share catch-up toward 32% is already realized in Texas and does not produce
+all-age ledger, matched to **local** third-plus NH whites at common ages, with the income tax
+the survey misses on the main case's keys: California **−$15,228** [−18,291, −12,164], Texas
+**−$9,267** [−12,530, −6,004]. Los Angeles **−$21,083**, Houston **−$8,977**. With taxes as
+the survey reports them the four are −$12,133, −$7,479, −$17,196 and −$7,493. The added tax
+rests on few records: the ten largest white households carry 67% of whites' added tax in
+California and 98% in Texas, and the intervals widen by 60–80%. Every named union interval is adverse;
+Texas is smaller than California, not zero. Matching on metro barely moves the national
+per-person gap (−$6,910 age-only → −$6,818 metro×age vs whites); it **widens** the national
+total (−$339bn → −$492bn) because Mexican-origin residents live where the local white
+benchmark is higher. Share catch-up toward 32% is already realized in Texas and does not produce
 Los Angeles–sized dollars. Nominal dollars; no regional price parity. New York is 1.4%
 of US Mexican-origin (0.50m); San Francisco has no published single-metro gap. These
 figures are not the $389–461bn complete account. [SOURCE:
 [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md);
 [stress RESULT](../infra/immigration-fiscal/ledger_stress_2026_09_17/RESULT.md);
 [metro RESULT](../infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md)]
-[DATA: `infra/immigration-fiscal/ledger_stress_2026_09_17/derived/state_matched.csv`;
-`infra/immigration-fiscal/metro_match_2026_09_17/derived/metro_matched.csv`;
+[DATA: `infra/immigration-fiscal/ledger_stress_2026_09_17/derived/state_matched_T.csv`, `state_matched.csv`;
+`infra/immigration-fiscal/metro_match_2026_09_17/derived/metro_matched_T.csv`, `metro_matched.csv`, `t_concentration.csv`;
 `infra/immigration-fiscal/apportionment_2026_09_18/derived/arm_2020_mexican_origin.csv`]
 Would change it: a complete-account rerun with state splits; PPP-deflated gaps; a
 single-metro San Francisco estimate.
@@ -536,8 +548,9 @@ work, none of which CBO's projection carries;
 with CBO-style first-year budget responses the main case gives −$289 to −336bn, or −$207 to
 −260bn counting benefits when paid (entry 2).
 Where the two overlap they agree: a young recent inflow is net positive on the measured items
-here too, +$3,495 per person for Mexico-born arrivals of 2016–2025 on the partial account, and
-about break-even (−$2,318) once the remaining items are charged flat per person, which is not the
+here too, +$3,495 per person for Mexico-born arrivals of 2016–2025 on the partial account with
+taxes as the survey reports them, and about break-even (−$1,299, interval −$3,151 to +$554) once
+the remaining items are charged flat per person, which is not the
 main case's complete account (ladder 134; entry 9). A decade of a cohort's cheapest years cannot be netted
 against one year of a whole population, and a federal-only projection cannot be set against
 an account that includes state and local services. Neither refutes the other. [SOURCE: CBO
@@ -572,7 +585,8 @@ where CMS records give it 7.4% of those dollars. Two later corrections also near
 finite removal saves more than the marginal elasticities (+$4.1 / +$3.4bn), and the consumption
 key had given the group too small a share of consumption taxes, because richer residents save more
 (−$4.1bn). The main case, $389.1–461.5bn, spans $311.9–515.6bn with every correction and every
-other component moved to its extreme at once. No combination changes the sign.
+other component moved to its extreme at once. No combination of these changes the sign; freezing every
+service budget does (entry 2).
 
 The hiding story does not show where the group's benefit dollars are. In the states where most
 Hispanics are of Mexican origin, the survey reports Hispanic SNAP receipt and Medicaid coverage
@@ -610,8 +624,8 @@ expensive. Finding: of the three, only the budget moves the figure, and by a ten
   payments at about its population share per head (entry 8). Its relative use of SNAP, SSI and Social Security in
   2019–2023 stays within 10% of 2024.
 - **The surge.** It barely touches this group. Mexico-born residents who arrived from 2016 through March 2025 are
-  2.4M of the 40.9M, and per person they cost others about 40% as much as the Mexico-born average ($2,318 against
-  $5,682 on the partial account with flat charges). The shelter bills of the receiving cities are charged by use,
+  2.4M of the 40.9M, and per person they cost others about 28% as much as the Mexico-born average ($1,299 against
+  $4,607 on the partial account with flat charges, taxes as the survey reports them). The shelter bills of the receiving cities are charged by use,
   and Mexican nationals were 0.5–0.8% of the people served.
 - **The budget.** This is the real 2024 effect. From 2019 to 2024, real government spending per resident rose
   13.6% and receipts 9.7%, and 2024 spending ran 26% above receipts. A group that pays below-average taxes carries
@@ -665,9 +679,11 @@ people at their measured ages instead of the identified third-plus age mix adds 
 members of mixed ancestry. Counting each person by their share of Mexican-immigrant ancestry instead
 (½ per Mexico-born parent, ¼ per grandparent) gives $274.9–374.8bn for the whole lineage. That
 figure stays beside the headline. The survey shows grandparents only for people who live with their
-parents, so 70% of third-plus members have no grandparent data and the share is a stated bound. And
-a mixed person's other ancestry already lowers their measured cost, so cutting the head count as
-well would count it twice. [SOURCE: [decision](../decisions/2026-10-05-main-case-v5.md);
+parents, so 70% of third-plus members have no grandparent data and the share is a stated bound. The
+two readings answer different questions: whole people asks what the members who exist cost others, as
+the account asks of everyone; the share divides each member's measured cost among the origins of their
+ancestors, the reading to use when accounts by origin must add to a national total (counted whole, a
+member of mixed ancestry sits in each origin's account). [SOURCE: [decision](../decisions/2026-10-05-main-case-v5.md);
 [decision](../decisions/2026-10-07-main-case-v6.md);
 [main case](../infra/immigration-fiscal/main_case_2026_10_07/RESULT.md);
 [lineage lane](../infra/immigration-fiscal/main_case_lineage_2026_10_05/RESULT.md);
@@ -709,6 +725,43 @@ Auerbach & Gale, *An Update on the Federal Budget Outlook*, March 2026; CBO lett
 Social Security and Medicare Trustees Reports] Would change it: a law that closes the gap with a known mix of
 taxes and cuts, which would fix the sharing rule, or a fix that phases in later and so falls more on future
 cohorts.
+
+## 21. "A one-year account misses the long-run damage: slower productivity, divided communities, weaker institutions."
+
+Steel-man: the account prices 2024 with the economy, its technology and its institutions as they are. Costs that
+build over decades would not show: firms that kept low-wage labor instead of investing in machines, neighborhoods
+that separated, and norms that shape productivity changing slowly. If those are large, the true cost is above the
+headline.
+
+Finding: each channel has evidence of a mechanism, and none has a measured national dollar figure. The account
+carries them at zero and says so:
+- **The budget's legacy** is measured, beside the headline. The 2005–2023 federal gaps, carried as if borrowed, cost
+  $101.6–101.7bn a year in interest-equivalent against as many third-plus whites (ladder 278).
+- **Automation:** low-skill immigration moves firms away from machines. In Lewis (2011), a rise of 0.1 in a metro's
+  ratio of dropouts to high-school graduates lowers machinery per worker by about 6% (IV −0.59, SE 0.31), while
+  output per worker does not measurably change (−0.03, SE 0.24). When the bracero program ended in 1964, crops that
+  had used more braceros saw more patents for 15–20 years (San 2023). No study turns this into a national welfare
+  figure, and choosing labor over machines is a loss only if it slows innovation that would have spread (ladder 99,
+  120).
+- **Separation:** at equal income, poverty and schooling, counties with a larger Hispanic share have fewer
+  cross-class friendships, mostly through residential separation (ladder 262). Whether that lowers other residents'
+  mobility is not identified.
+- **Institutions and productivity:** Clemens and Pritchett's own transmission model, fed the slow assimilation
+  measured here, makes the optimal migration rate negative (ladder 154). That is a model's output, not a measurement.
+- **Political effects:** a larger low-skill immigrant share raises the Republican vote (Mayda, Peri and Steingress
+  2022), and populist governments are followed by slower growth (Funke, Schularick and Trebesch 2023). No study links
+  the two, so neither gives a dollar figure (ladder 102).
+
+Why these stay at zero: immigrants settle where growth is, and the instruments that predict where they went also
+pick up local booms (ladder 199). A test across places is therefore biased toward finding no drag.
+
+[FRAMING-SENSITIVE] A zero here means "not measured", not "no effect". The production gain the group brings is
+priced in the account (entry 14). [SOURCE: ladder 99, 102, 120, 154, 199, 262, 278;
+[automation channel](../infra/immigration-fiscal/automation_channel_2026_09_16/);
+[connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md);
+[legacy comparisons](../infra/immigration-fiscal/legacy_comparators_2026_09_30/RESULT.md)] Would change it: a shock
+that moved settlement for reasons unrelated to local growth, followed for decades, with productivity, mobility or
+trust as the outcome.
 
 ## Instrument
 
@@ -909,3 +962,12 @@ they get more prominence.
 - 2026-10-07 (main case v6 adopted; [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295; consumers on `oct07`: generation 3f583fb4, distribution 498a6a71, closed budget b26319d1, pairing b0a2ccac, winners f2d96008, white and Black d2554cb2, break conditions 203a9527, legacy 74a82a3f, pension legacy 7234592e; the added people's parts 793eca45): the anchors, the combining rules and entries 2, 4, 5, 6, 11 and 15–20 restate the main case at $389.1–461.5bn, the cash set at $307.4–385.4bn, the first-year budget response at $289–336bn ($207–260bn counting benefits when paid), the fiscal-plus-social total at $489–571bn, the generation split, the gap against average residents (−$279–310bn) and the legacy comparisons ($81.2bn federal, $5.4bn pensions), with the October 5 figures beside. Entry 19 prices the added descendants at their measured ages; entry 20 nets the OASI shortfall on separate funds. Concept affected: the main case and every figure computed from it.
 - 2026-10-07, later ([decision](../decisions/2026-10-07-comparators-income-tax-keys.md); legacy 8bfae970, white cc793ccf): entry 2's legacy comparison follows the comparison groups' move to the case's income-tax keys ($101.6–101.7bn, was $81.2bn), and entry 6 adds that third-plus whites about break even on accrual, so the gap against as many of them, $432–436bn, falls inside the main case. Concept affected: the comparison groups' income-tax incidence.
 - 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed, recoverable at 0e0c5e28.
+- 2026-10-08 ([decision](../decisions/2026-10-07-ledger-item-t-income-tax-keys.md), ladder 296): the generation ledger's income taxes include what the survey misses, on the main case's keys (item T). The anchors and entries 1, 3, 5, 6, 9 and 10 restate its gaps, which widen by $0.9–1.3k a person (the union's same-age gap −$7,152 → −$8,306). Entries 9, 15, 17 and 18 label the partial accounts' figures "taxes as the survey reports them", and entries 9 and 15 give the figures with the missing tax beside them. Entry 7's below-high-school advantage over natives no longer holds on the personal allocation. Entries 17 and 18 correct arrival-window figures that predate the lane's current build (−$2,318 against $5,682 → −$1,299 against $4,607). Entry 11 names two questions the account does not answer. Entry 21 added: the long-run channels the one-year account carries at zero. Concept affected: the white-reference generation gaps; entry 7's education claim.
+- 2026-10-08 (outside red team, critique of v6 and its docs): entry 19's double-count argument is withdrawn. A
+  member's measured cost and the share of it attributed to an origin are separate quantities, so the ancestry
+  share counts nothing twice; the entry now states that the two readings answer different questions. Entry 14's
+  occupation-overlap sketch is relabelled an illustration (its component elasticities are chosen), the direct
+  estimates and the meta-analysis carry its conclusion, and its ε = 3 shift is marked as computed on the
+  September 20 band. Entry 11 describes Lee and Scafidi's figures as long differences. Concept affected: the
+  defense of whole-person counting (entry 19); the evidence on the production elasticity (entry 14). Entry 17's
+  sign sentence is scoped to the corrections and components it moved; frozen services change the sign (entry 2).

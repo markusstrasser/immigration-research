@@ -103,9 +103,9 @@ https://edworkingpapers.com/sites/default/files/ai25-1266.pdf]
   the stated low side ($362–435bn).
 - A lane read the decline side as the account's counterfactual (−$85–119bn). That misreads "finite removal",
   which integrates one cost curve over the group's share in either direction; the account is not a removal path.
-- The decline side sharpens FAQ 11: twenty years after a decline, districts still keep about 70% of the money and
+- The decline side sharpens FAQ 11: across districts whose enrollment fell over twenty-year spans, districts kept about 70% of the money and
   about half of the staff that proportional cuts would shed. Ending the migration would return the school money
-  to other residents' children as services, not as tax cuts, and not within twenty years. Without state effects,
+  to other residents' children as services, not as tax cuts, and slowly. Without state effects,
   growing and declining districts are compared across different finance systems.
 - Repo: NEW paper; the asymmetry was seen and left untested (service-scaling memo: .822 growing / .751 shrinking,
   pupil-weighted).
@@ -367,3 +367,6 @@ Staged under `sources/immigration-fiscal/data/external/stage3/`, each with `ACQU
   law's separate trust funds ($332.9bn instead of $370.1bn) as v6's accrual does
   ([lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md)). Concept affected: the headline's pension
   input, the closure arm's trust-fund reading and which scan items entered the case.
+- 2026-10-08 (outside red team): Lee and Scafidi's decline figures are described as 20-year long differences across
+  districts, not as an adjustment path after a decline; the claim that budgets shrink slowly stands, its timing does
+  not. Concept affected: how fast school budgets fall with enrollment (FAQ 11).
