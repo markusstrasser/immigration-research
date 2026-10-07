@@ -266,6 +266,9 @@ cells moved by $1. [DATA: `derived/combined.csv`, `derived/social_rows.csv`]
 
 ## v6 case (oct07), 2026-10-07
 
+[Round 2, later on 2026-10-07: every group's income taxes moved to the case's own keys. The figures in this section
+use the CPS-dollar rule, now the `cost_cps` arm; the current figures are in "v6 round 2" below.]
+
 [2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`), with every group on the IPEDS keys for Pell and
 public higher education, Indian-origin residents benefit other residents by **$9,447–10,901 per member a year** on the
 accrual basis, $57.4–66.3bn in all (v5 on the same keys $9,392–10,843); the Mexican-origin union costs others
@@ -369,3 +372,94 @@ New: `derived/oct07/` with `accrual_ratios.csv`, `rekey_summary.csv`, `rekey_buc
 - 17:02:24–17:06:27 (by `date`): `rerun_lane.py` with all eleven commands (the six of the default list, the two oct05
   ones and the three oct07 ones), after the white and Black lanes' final reruns: **IDENTICAL 41/41, exit 0**; the
   pairing's file read e84db10b… at the start.
+
+## v6 round 2: income taxes on the case's own keys (oct05, oct07), 2026-10-07
+
+[2026-10-07, round 2: every group's income taxes now take the case's own keys (the white lane's section "v6 round
+2"). Under them, Indian-origin residents benefit other residents by **$11,436–12,890 per member a year** on the
+accrual basis, $69.5–78.4bn in all. On the CPS-dollar rule, which charged each group only the income tax it reports to
+the CPS, the figures were $9,447–10,901 and $57.4–66.3bn. The group pays $12.09bn more income tax, $1,988 per member.
+Third-plus whites on 42.75M now cost others **$1,038–2,332 per member** with their social rows (was $2,591–3,884), and
+the engine's union $11,550–13,349, as before. The Indian-origin group is **$13,768–13,928 per member better than
+whites** and **$24,440–24,785 better than the union**. The fiscal row's sampling error rises from $1,163 to $1,971.
+[CALCULATION: `rekey_indian.py --case oct07`, `social_rows.py --case oct07` → `derived/oct07/combined.csv`,
+`rekey_summary.csv`, `income_tax_keys.csv`]]
+
+claude-opus-5-5 (prop-d)
+
+**Rules.** The white lane's section "v6 round 2" applies:
+- Federal income tax takes v4 item 3's IRS-raked key, and state and other personal taxes take the state-liability key.
+- Both ends use the shared allocation, with the personal one beside.
+- No group takes a union-only correction.
+
+`evaluate()` now takes the library's central. The summary carries the CPS-dollar rule (`cost_cps_*`) beside the
+proportional spread. [INFERENCE] The pooled second generation scales the case's keys by the rough keys' pooled ratios,
+because `pooled_asec.py` measures the tax-unit split of FEDTAX_AC and STATETAX_A, not FEDTAX_BC. The Indian-origin
+federal share goes from 0.0305 to **0.0350** (+14.7%) and its state share from 0.0333 to 0.0357. [DATA:
+`derived/oct07/income_tax_keys.csv`]
+
+**Main table on oct07** (accrual, per member, spec 48 / 11; the social rows take any rounding difference so printed
+parts add to printed totals):
+
+| Group | Fiscal | Social rows | **Total** | Total, $bn | CPS-dollar rule total | oct05 total |
+|---|---:|---:|---:|---:|---:|---:|
+| Indian-origin, actual ages (6.08M) | −14,132 / −12,765 (SE 1,971 / 1,960) | +1,242 / +1,329 | **−12,890 / −11,436** | −78.4 / −69.5 | −10,901 / −9,447 | −12,831 / −11,380 |
+| Indian-origin, third-plus white ages | −12,028 / −10,739 (SE 1,654 / 1,642) | +1,453 / +1,510 | **−10,575 / −9,229** | −64.3 / −56.1 | −8,642 / −7,296 | −10,488 / −9,144 |
+| India-born only, actual ages (4.28M) | −13,663 / −12,237 (SE 1,517 / 1,501) | +888 / +990 | **−12,775 / −11,247** | −54.7 / −48.2 | −11,459 / −9,932 | −12,677 / −11,153 |
+| India-born only, white ages | −8,964 / −7,687 (SE 1,232 / 1,220) | +1,255 / +1,328 | **−7,709 / −6,359** | −33.0 / −27.2 | −6,432 / −5,082 | −7,627 / −6,280 |
+| Mexican-origin union (engine), 42.75M | +9,101 / +10,794 | +2,449 / +2,555 | **+11,550 / +13,349** | +493.8 / +570.7 | +11,550 / +13,349 | +11,581 / +13,349 |
+| Mexican-origin union, white ages (identified 39.71M) | +9,548 / +11,112 | +2,440 / +2,538 | **+11,988 / +13,650** | +476.1 / +542.1 | +12,010 / +13,672 | +12,095 / +13,758 |
+| Third-plus NH whites (a 42.75M slice) | −1,200 / +54 | +2,238 / +2,278 | **+1,038 / +2,332** | +44.4 / +99.7 | +2,591 / +3,884 | +1,164 / +2,456 |
+
+[DATA: `derived/oct07/combined.csv`, `derived/oct05/combined.csv`; the CPS-dollar column is the v6 section's table;
+rounding by a scratch tabulation, which reproduces that table from the pre-round-2 files]
+
+- **The key's move, per member** (`income_tax_keys.csv`, the case's key less the CPS-dollar rule):
+  - Indian-origin pays +$1,988 more and India-born +$1,315.
+  - The union pays +$381 more on its identified 39.71M and +$402 at white ages.
+  - Third-plus whites pay +$1,553 more.
+  - On the printed totals, the Indian-origin group's lead over whites widens by $436 / 437 per member, and its lead
+    over the union by $1,989.
+- **The proportional spread** (the 'prop' rule beside the central) gives the Indian-origin fiscal row −$14,763 / −13,397.
+  The case's key falls between the CPS-dollar rule (−$12,144 / −10,777) and that spread.
+- **The personal allocation** hardly moves the Indian-origin group (−$43 per member), but it moves the India-born rows a
+  lot. Under it, India-born residents pay $5,421 more per member, and $1,978 more at white ages, because the shared
+  allocation gives their US-born children part of their household's tax. The class-of-worker adult rows move more:
+  wage and salary adults by $8,617 and the self-employed by $40,301. [CALCULATION: `income_tax_keys.csv`, personal less
+  shared amounts; the sum is exact because each income-tax line's response is 1]
+- **Sampling error.** The fiscal row's SE rises from $1,163 / 1,152 to $1,971 / 1,960, and the self-employed
+  households' from $11,873 to $25,033. [INFERENCE] The raked key puts the top AGI cells' tax on few records, and the
+  Indian-origin group holds many of them. The 160 replicates re-key the group's own weights on the fixed key vector
+  (national totals held, as before).
+- **The cash set.** The union is +$9,639 / +11,568 per member, unchanged, and the Indian-origin group −$17,762 / −16,308
+  (was −$15,774 / −14,320).
+- **The rough method on the union**, both sides with the added people, is 2.3% below the engine at the low end ($380.3bn
+  against $389.1bn) and 5.0% below at the high end ($438.3bn against $461.5bn). On the identified 39.71M at v6's
+  responses it is 2.4% and 5.4% below ($360.0 / 408.8bn against $368.7 / 432.0bn). The case scales the union's own
+  income taxes by its tax-records stack, and at the high end gives each earner their own tax; the comparators take
+  neither (the white lane's round-2 section).
+- **Unchanged parts.**
+  - The pooled second generation moves the total by $167 / 168 per member (−12,723 / −11,268); it was $135 / 136.
+  - The IPEDS terms' parts do not move.
+  - From v5 to v6 the Indian-origin fiscal row still improves by $0.36 / 0.34bn.
+  - The social rows do not move.
+
+**Gates.** `rekey_indian.py --case oct07` passes 193 gates and exits 0; `--case oct05` passes 162. The new gates are
+the library's round-2 gates. The union, A1 and NH Black rows reproduce the white and Black lanes'
+`rekey_summary_<case>.csv` (5e-5), and the IPEDS terms' cost is the summary's (5e-5). `social_rows.py` passes 25 gates
+per case. The pairing's oct07 file is still sha256 e84db10b….
+
+**Files.** New: `derived/oct05/income_tax_keys.csv` and `derived/oct07/income_tax_keys.csv`. Changed, for both cases:
+`rekey_summary.csv` (it gains `cost_cps_bn` and `cost_cps_per_member`), `rekey_buckets.csv`, `rekey_replicates.csv`,
+`ipeds_terms.csv` (levels only) and `combined.csv`. `social_rows.csv`, `keys.csv`, `age_structures.csv` and
+`drivers.csv` do not move. The reproduce list is the v6 section's.
+
+### Log (round 2; times from `date`)
+
+- 2026-10-07 20:20:34–20:22:34 (by `date`): `rekey_indian.py` and `social_rows.py`, `--case oct05` and `--case oct07`,
+  ran in place, exit 0 (162, 25, 193 and 25 gates; peak memory 2.36 GB).
+- 21:10:21–21:14:47 (by `date`): `rerun_lane.py` with the v6 section's eleven commands, after the white and Black
+  lanes' round-2 reruns: **IDENTICAL 43/43, exit 0**, the 41 v6 files and the two `income_tax_keys.csv`; the
+  pairing's file read e84db10b… at the start.
+- 21:51:23–21:57:07 (by `date`): the same rerun after the white library relabelled the columns of its CPS-totals file:
+  **IDENTICAL 43/43, exit 0**; the pairing's file again read e84db10b….

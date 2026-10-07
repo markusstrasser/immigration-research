@@ -40,6 +40,12 @@ External keys for the Indian-origin groups (the rough CPS keys are shared by eve
   accrual: derived/accrual_ratios.csv (accrual_indian.py), immigrants' careers from arrival, payable benefits.
 Beside the central: the top tail spread in proportion to CPS income-tax dollars (the library's 'prop' rule), which
 matters for a high-income group because the central charges a group only the income tax CPS records.
+On oct05 and oct07 (round 2, 2026-10-07) the central is the library's case income-tax keys for every group: federal
+income tax on v4 item 3's IRS-raked key, state and other personal taxes on the state-liability key, the shared
+allocation. The summary prints the CPS-dollar rule (cost_cps_*) and the 'prop' rule beside it, and
+derived/<case>/income_tax_keys.csv each group's income-tax shares at both allocations and under the old rules. The
+pooled-G2 row scales the case's keys by the rough keys' pooled ratios [INFERENCE: pooled_asec.py measures the
+tax-unit split of FEDTAX_AC and STATETAX_A, not FEDTAX_BC].
 
 Sampling error: 160 CPS ASEC replicate weights (asec_csv_repwgt_2025.csv) re-key the Indian-origin groups' own CPS
 weights (national totals, MEPS and the external rates held fixed); SE = sqrt(4/160 sum (x_r - x_0)^2).
@@ -171,6 +177,10 @@ G2POOL = pd.read_csv(DER / "g2_pooled.csv")
 G2POOL = G2POOL[G2POOL.asec_year == "pooled_2022_2026"].set_index("key")
 G2ADULT = G2 & d.A_AGE.between(25, 64).to_numpy()
 POOL_KEY = {"fit": "fit", "sit": "sit", "oasdi": "oasdi", "hi": "earn"}
+# The case's income-tax keys (the library's TAX_CASES) take the rough keys' pooled ratios [INFERENCE: pooled_asec.py
+# measures the rough keys, the tax-unit split of FEDTAX_AC and STATETAX_A, not FEDTAX_BC]
+POOL_KEY_CASE = {**{f"fit_case{a}": "fit" for a in ("", "_personal", "_shared")},
+                 **{f"sit_case{a}": "sit" for a in ("", "_personal", "_shared")}}
 
 
 def with_pooled_g2(sc, shift=0.0):
@@ -178,7 +188,7 @@ def with_pooled_g2(sc, shift=0.0):
     (pooled_asec.py), each ratio moved by `shift` of its across-year SE."""
     sc = {**sc, "share": dict(sc["share"]), "cps_bn": dict(sc["cps_bn"])}
     cw = sc["cps_w"]
-    for k, pk in POOL_KEY.items():
+    for k, pk in {**POOL_KEY, **(POOL_KEY_CASE if W.TAX_ON else {})}.items():
         r = float(G2POOL.loc[pk, "ratio_pooled_over_2025"]) + shift * float(G2POOL.loc[pk, "ratio_se"])
         delta = float((cw * R.K[k])[G2ADULT].sum()) * (r - 1)
         sc["share"][k] += delta / R.KTOT[k]
@@ -264,9 +274,9 @@ def union_white_ages():
     return sc
 
 
-def evaluate(sc, end, basis, top="cps"):
+def evaluate(sc, end, basis, top=None):
     """Cost and components; a union piece takes the engine's union-only lines and production gain by its key ratios
-    (W.priced29's adjustment, applied here for either top-tail rule)."""
+    (W.priced29's adjustment, applied here for any income-tax rule; top None is the library's central)."""
     r, rows, bk, terms, acc = W.run29(sc, end, basis, top, union_sc=W.UNION_SC)
     if sc != "eng" and sc["name"] == "union_piece":
         e = W.DUMP[basis][end]
@@ -405,12 +415,16 @@ def main(case="sept29"):
             for lab, sc in scen.items():
                 r, bk, terms = evaluate(sc, end, b)
                 r["cost_top_tail_proportional"] = r["cost"] if sc == "eng" else evaluate(sc, end, b, "prop")[0]["cost"]
+                if W.TAX_ON:     # the CPS-dollar rule, the central before the case's income-tax keys
+                    r["cost_cps"] = r["cost"] if sc == "eng" else evaluate(sc, end, b, "cps")[0]["cost"]
                 res[(b, lab, end)] = (r, bk, terms)
             if W.LINEAGE_ON:     # oct05: the union on the identified 39,712,493 at v5's responses, beside
                 with W.identified():
                     for lab, sc in (("mexican_origin_engine_identified", "eng"), ("mexican_origin_rough_identified", W.UNION_SC)):
                         r, bk, terms = evaluate(sc, end, b)
                         r["cost_top_tail_proportional"] = r["cost"] if sc == "eng" else evaluate(sc, end, b, "prop")[0]["cost"]
+                        if W.TAX_ON:
+                            r["cost_cps"] = r["cost"] if sc == "eng" else evaluate(sc, end, b, "cps")[0]["cost"]
                         res[(b, lab, end)] = (r, bk, terms)
                 got = res[(b, "mexican_origin_engine_identified", end)][0]["cost"]
                 W.gate(f"{b} {end}: the identified engine union is the union dump (1e-9)",
@@ -500,6 +514,8 @@ def main(case="sept29"):
                         "semp_per_adult_worker": per_worker(sc_of.get(lab), SEMP),
                         "cost_top_tail_proportional_bn": f"{r['cost_top_tail_proportional']:.4f}",
                         "cost_top_tail_proportional_per_member": f"{r['cost_top_tail_proportional'] * 1e9 / r['population']:.0f}",
+                        **({"cost_cps_bn": f"{r['cost_cps']:.4f}", "cost_cps_per_member": f"{r['cost_cps'] * 1e9 / r['population']:.0f}"}
+                           if W.TAX_ON else {}),
                         "taxes_lost_bn": f"{r['taxes_lost']:.4f}", "spending_saved_bn": f"{r['spending_saved']:.4f}",
                         "capital_bn": f"{r['capital']:.4f}", "production_gain_bn": f"{r['production_gain']:.4f}",
                         "old_age_net_bn": f"{r['old_age_net']:.4f}", "cost_ex_old_age_bn": f"{r['cost_ex_old_age']:.4f}",
@@ -533,7 +549,8 @@ def main(case="sept29"):
     for name, data in (("rekey_summary.csv", summary), ("rekey_buckets.csv", buckets), ("keys.csv", keys),
                        ("age_structures.csv", ages), ("drivers.csv", [{k: (f"{v:.8g}" if isinstance(v, float) else v)
                                                                         for k, v in r.items()} for r in drv]),
-                       *((("ipeds_terms.csv", ipeds),) if ipeds else ())):
+                       *((("ipeds_terms.csv", ipeds),) if ipeds else ()),
+                       *((("income_tax_keys.csv", W.tax_key_rows(scen)),) if W.TAX_ON else ())):
         with open(out / name, "w", newline="") as f:
             wr = csv.DictWriter(f, fieldnames=list(data[0]), lineterminator="\n")
             wr.writeheader()

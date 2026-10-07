@@ -13,7 +13,7 @@ accrual,mexican_origin_engine,low,veterans and military medical,15.6471,366
 accrual,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784
 accrual,mexican_origin_engine,low,capital return,37.1478,869
 accrual,mexican_origin_engine,low,production gain (subtracted),-11.9475,-279
-accrual,mexican_origin_rough,low,income taxes,-153.1648,-3583
+accrual,mexican_origin_rough,low,income taxes,-168.2814,-3936
 accrual,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.7421,-4157
 accrual,mexican_origin_rough,low,"sales, excise, customs, fees",-117.6441,-2752
 accrual,mexican_origin_rough,low,"capital, property, production taxes",-23.9491,-560
@@ -27,7 +27,7 @@ accrual,mexican_origin_rough,low,veterans and military medical,13.1742,308
 accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.9409,1870
 accrual,mexican_origin_rough,low,capital return,36.8871,863
 accrual,mexican_origin_rough,low,production gain (subtracted),-11.9475,-279
-accrual,mexican_origin_rough_white_ages,low,income taxes,-137.3379,-3458
+accrual,mexican_origin_rough_white_ages,low,income taxes,-153.3191,-3861
 accrual,mexican_origin_rough_white_ages,low,payroll taxes and Medicare premiums,-180.5404,-4546
 accrual,mexican_origin_rough_white_ages,low,"sales, excise, customs, fees",-114.4425,-2882
 accrual,mexican_origin_rough_white_ages,low,"capital, property, production taxes",-26.4574,-666
@@ -41,7 +41,7 @@ accrual,mexican_origin_rough_white_ages,low,veterans and military medical,17.951
 accrual,mexican_origin_rough_white_ages,low,"per-head lines: government, defense, interest, roads, other",80.9614,2039
 accrual,mexican_origin_rough_white_ages,low,capital return,30.2063,761
 accrual,mexican_origin_rough_white_ages,low,production gain (subtracted),-12.1151,-305
-accrual,indian_origin,low,income taxes,-90.6915,-14917
+accrual,indian_origin,low,income taxes,-102.7799,-16906
 accrual,indian_origin,low,payroll taxes and Medicare premiums,-56.6875,-9324
 accrual,indian_origin,low,"sales, excise, customs, fees",-28.0595,-4615
 accrual,indian_origin,low,"capital, property, production taxes",-9.2075,-1514
@@ -55,7 +55,7 @@ accrual,indian_origin,low,veterans and military medical,0.5581,92
 accrual,indian_origin,low,"per-head lines: government, defense, interest, roads, other",9.8508,1620
 accrual,indian_origin,low,capital return,5.0356,828
 accrual,indian_origin,low,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_white_ages,low,income taxes,-85.3473,-14038
+accrual,indian_origin_white_ages,low,income taxes,-97.0994,-15971
 accrual,indian_origin_white_ages,low,payroll taxes and Medicare premiums,-52.7621,-8678
 accrual,indian_origin_white_ages,low,"sales, excise, customs, fees",-27.5886,-4538
 accrual,indian_origin_white_ages,low,"capital, property, production taxes",-9.8504,-1620
@@ -69,7 +69,7 @@ accrual,indian_origin_white_ages,low,veterans and military medical,1.1738,193
 accrual,indian_origin_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.9865,1643
 accrual,indian_origin_white_ages,low,capital return,4.6735,769
 accrual,indian_origin_white_ages,low,production gain (subtracted),-0.0000,-0
-accrual,india_born,low,income taxes,-59.8119,-13969
+accrual,india_born,low,income taxes,-65.4441,-15284
 accrual,india_born,low,payroll taxes and Medicare premiums,-48.5518,-11339
 accrual,india_born,low,"sales, excise, customs, fees",-19.9541,-4660
 accrual,india_born,low,"capital, property, production taxes",-6.1189,-1429
@@ -83,7 +83,7 @@ accrual,india_born,low,veterans and military medical,0.4034,94
 accrual,india_born,low,"per-head lines: government, defense, interest, roads, other",7.3519,1717
 accrual,india_born,low,capital return,3.1801,743
 accrual,india_born,low,production gain (subtracted),-0.0000,-0
-accrual,india_born_white_ages,low,income taxes,-52.6940,-12307
+accrual,india_born_white_ages,low,income taxes,-58.1618,-13584
 accrual,india_born_white_ages,low,payroll taxes and Medicare premiums,-36.4947,-8523
 accrual,india_born_white_ages,low,"sales, excise, customs, fees",-18.7082,-4369
 accrual,india_born_white_ages,low,"capital, property, production taxes",-6.2299,-1455
@@ -97,7 +97,7 @@ accrual,india_born_white_ages,low,veterans and military medical,0.6216,145
 accrual,india_born_white_ages,low,"per-head lines: government, defense, interest, roads, other",7.0647,1650
 accrual,india_born_white_ages,low,capital return,3.3062,772
 accrual,india_born_white_ages,low,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_g2_pooled,low,income taxes,-89.8433,-14778
+accrual,indian_origin_g2_pooled,low,income taxes,-101.7402,-16735
 accrual,indian_origin_g2_pooled,low,payroll taxes and Medicare premiums,-56.8056,-9344
 accrual,indian_origin_g2_pooled,low,"sales, excise, customs, fees",-28.0595,-4615
 accrual,indian_origin_g2_pooled,low,"capital, property, production taxes",-9.2075,-1514
@@ -111,7 +111,7 @@ accrual,indian_origin_g2_pooled,low,veterans and military medical,0.5581,92
 accrual,indian_origin_g2_pooled,low,"per-head lines: government, defense, interest, roads, other",9.8531,1621
 accrual,indian_origin_g2_pooled,low,capital return,5.0356,828
 accrual,indian_origin_g2_pooled,low,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_g2_pooled_white_ages,low,income taxes,-84.6722,-13927
+accrual,indian_origin_g2_pooled_white_ages,low,income taxes,-96.2836,-15837
 accrual,indian_origin_g2_pooled_white_ages,low,payroll taxes and Medicare premiums,-52.8525,-8693
 accrual,indian_origin_g2_pooled_white_ages,low,"sales, excise, customs, fees",-27.5886,-4538
 accrual,indian_origin_g2_pooled_white_ages,low,"capital, property, production taxes",-9.8504,-1620
@@ -125,7 +125,7 @@ accrual,indian_origin_g2_pooled_white_ages,low,veterans and military medical,1.1
 accrual,indian_origin_g2_pooled_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.9882,1643
 accrual,indian_origin_g2_pooled_white_ages,low,capital return,4.6735,769
 accrual,indian_origin_g2_pooled_white_ages,low,production gain (subtracted),-0.0000,-0
-accrual,india_born_self_employed_adults,low,income taxes,-2.6718,-16151
+accrual,india_born_self_employed_adults,low,income taxes,-3.2866,-19868
 accrual,india_born_self_employed_adults,low,payroll taxes and Medicare premiums,-2.5604,-15478
 accrual,india_born_self_employed_adults,low,"sales, excise, customs, fees",-0.7806,-4719
 accrual,india_born_self_employed_adults,low,"capital, property, production taxes",-0.3127,-1891
@@ -139,7 +139,7 @@ accrual,india_born_self_employed_adults,low,veterans and military medical,0.0368
 accrual,india_born_self_employed_adults,low,"per-head lines: government, defense, interest, roads, other",0.2958,1788
 accrual,india_born_self_employed_adults,low,capital return,0.0944,571
 accrual,india_born_self_employed_adults,low,production gain (subtracted),-0.0000,-0
-accrual,india_born_wage_salary_adults,low,income taxes,-47.1042,-17573
+accrual,india_born_wage_salary_adults,low,income taxes,-48.8608,-18228
 accrual,india_born_wage_salary_adults,low,payroll taxes and Medicare premiums,-45.2591,-16885
 accrual,india_born_wage_salary_adults,low,"sales, excise, customs, fees",-14.3792,-5364
 accrual,india_born_wage_salary_adults,low,"capital, property, production taxes",-4.3588,-1626
@@ -153,7 +153,7 @@ accrual,india_born_wage_salary_adults,low,veterans and military medical,0.3656,1
 accrual,india_born_wage_salary_adults,low,"per-head lines: government, defense, interest, roads, other",4.7599,1776
 accrual,india_born_wage_salary_adults,low,capital return,1.7535,654
 accrual,india_born_wage_salary_adults,low,production gain (subtracted),-0.0000,-0
-accrual,india_born_other,low,income taxes,-10.0359,-6989
+accrual,india_born_other,low,income taxes,-13.2968,-9261
 accrual,india_born_other,low,payroll taxes and Medicare premiums,-0.7323,-510
 accrual,india_born_other,low,"sales, excise, customs, fees",-4.8017,-3344
 accrual,india_born_other,low,"capital, property, production taxes",-1.4474,-1008
@@ -167,7 +167,7 @@ accrual,india_born_other,low,veterans and military medical,0.0010,1
 accrual,india_born_other,low,"per-head lines: government, defense, interest, roads, other",2.2961,1599
 accrual,india_born_other,low,capital return,1.3322,928
 accrual,india_born_other,low,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_self_employed_households,low,income taxes,-7.3841,-20367
+accrual,indian_origin_self_employed_households,low,income taxes,-12.2326,-33741
 accrual,indian_origin_self_employed_households,low,payroll taxes and Medicare premiums,-3.0625,-8447
 accrual,indian_origin_self_employed_households,low,"sales, excise, customs, fees",-1.6447,-4537
 accrual,indian_origin_self_employed_households,low,"capital, property, production taxes",-0.7740,-2135
@@ -181,7 +181,7 @@ accrual,indian_origin_self_employed_households,low,veterans and military medical
 accrual,indian_origin_self_employed_households,low,"per-head lines: government, defense, interest, roads, other",0.5567,1535
 accrual,indian_origin_self_employed_households,low,capital return,0.2823,779
 accrual,indian_origin_self_employed_households,low,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_wage_salary_households,low,income taxes,-70.8039,-14991
+accrual,indian_origin_wage_salary_households,low,income taxes,-76.2803,-16150
 accrual,indian_origin_wage_salary_households,low,payroll taxes and Medicare premiums,-46.6001,-9866
 accrual,indian_origin_wage_salary_households,low,"sales, excise, customs, fees",-22.2705,-4715
 accrual,indian_origin_wage_salary_households,low,"capital, property, production taxes",-7.0616,-1495
@@ -195,7 +195,7 @@ accrual,indian_origin_wage_salary_households,low,veterans and military medical,0
 accrual,indian_origin_wage_salary_households,low,"per-head lines: government, defense, interest, roads, other",7.4403,1575
 accrual,indian_origin_wage_salary_households,low,capital return,3.8823,822
 accrual,indian_origin_wage_salary_households,low,production gain (subtracted),-0.0000,-0
-accrual,A1_third_plus_nh_white,low,income taxes,-356.0150,-8327
+accrual,A1_third_plus_nh_white,low,income taxes,-422.3973,-9880
 accrual,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-268.3304,-6276
 accrual,A1_third_plus_nh_white,low,"sales, excise, customs, fees",-173.3304,-4054
 accrual,A1_third_plus_nh_white,low,"capital, property, production taxes",-50.5292,-1182
@@ -209,7 +209,7 @@ accrual,A1_third_plus_nh_white,low,veterans and military medical,35.7731,837
 accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.3985,2372
 accrual,A1_third_plus_nh_white,low,capital return,34.1392,799
 accrual,A1_third_plus_nh_white,low,production gain (subtracted),-0.0000,-0
-accrual,nh_black_rough,low,income taxes,-183.7848,-4381
+accrual,nh_black_rough,low,income taxes,-210.4746,-5017
 accrual,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633
 accrual,nh_black_rough,low,"sales, excise, customs, fees",-123.2033,-2937
 accrual,nh_black_rough,low,"capital, property, production taxes",-15.9766,-381
@@ -237,7 +237,7 @@ accrual,mexican_origin_engine_identified,low,veterans and military medical,14.05
 accrual,mexican_origin_engine_identified,low,"per-head lines: government, defense, interest, roads, other",70.4624,1774
 accrual,mexican_origin_engine_identified,low,capital return,34.4329,867
 accrual,mexican_origin_engine_identified,low,production gain (subtracted),-11.6799,-294
-accrual,mexican_origin_rough_identified,low,income taxes,-135.3272,-3408
+accrual,mexican_origin_rough_identified,low,income taxes,-150.4437,-3788
 accrual,mexican_origin_rough_identified,low,payroll taxes and Medicare premiums,-163.4670,-4116
 accrual,mexican_origin_rough_identified,low,"sales, excise, customs, fees",-107.7436,-2713
 accrual,mexican_origin_rough_identified,low,"capital, property, production taxes",-21.8056,-549
@@ -265,7 +265,7 @@ accrual,mexican_origin_engine,high,veterans and military medical,12.9788,304
 accrual,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352
 accrual,mexican_origin_engine,high,capital return,61.8578,1447
 accrual,mexican_origin_engine,high,production gain (subtracted),-7.8593,-184
-accrual,mexican_origin_rough,high,income taxes,-150.5440,-3521
+accrual,mexican_origin_rough,high,income taxes,-165.6605,-3875
 accrual,mexican_origin_rough,high,payroll taxes and Medicare premiums,-175.6127,-4108
 accrual,mexican_origin_rough,high,"sales, excise, customs, fees",-117.6432,-2752
 accrual,mexican_origin_rough,high,"capital, property, production taxes",-23.9406,-560
@@ -279,7 +279,7 @@ accrual,mexican_origin_rough,high,veterans and military medical,12.9235,302
 accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.5090,2445
 accrual,mexican_origin_rough,high,capital return,60.9461,1426
 accrual,mexican_origin_rough,high,production gain (subtracted),-7.8593,-184
-accrual,mexican_origin_rough_white_ages,high,income taxes,-137.3379,-3458
+accrual,mexican_origin_rough_white_ages,high,income taxes,-153.3191,-3861
 accrual,mexican_origin_rough_white_ages,high,payroll taxes and Medicare premiums,-180.5404,-4546
 accrual,mexican_origin_rough_white_ages,high,"sales, excise, customs, fees",-114.4425,-2882
 accrual,mexican_origin_rough_white_ages,high,"capital, property, production taxes",-26.4574,-666
@@ -293,7 +293,7 @@ accrual,mexican_origin_rough_white_ages,high,veterans and military medical,17.95
 accrual,mexican_origin_rough_white_ages,high,"per-head lines: government, defense, interest, roads, other",104.1809,2623
 accrual,mexican_origin_rough_white_ages,high,capital return,50.4726,1271
 accrual,mexican_origin_rough_white_ages,high,production gain (subtracted),-7.9696,-201
-accrual,indian_origin,high,income taxes,-90.6915,-14917
+accrual,indian_origin,high,income taxes,-102.7799,-16906
 accrual,indian_origin,high,payroll taxes and Medicare premiums,-56.6875,-9324
 accrual,indian_origin,high,"sales, excise, customs, fees",-28.0595,-4615
 accrual,indian_origin,high,"capital, property, production taxes",-9.2075,-1514
@@ -307,7 +307,7 @@ accrual,indian_origin,high,veterans and military medical,0.5581,92
 accrual,indian_origin,high,"per-head lines: government, defense, interest, roads, other",14.7702,2429
 accrual,indian_origin,high,capital return,8.4101,1383
 accrual,indian_origin,high,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_white_ages,high,income taxes,-85.3473,-14038
+accrual,indian_origin_white_ages,high,income taxes,-97.0994,-15971
 accrual,indian_origin_white_ages,high,payroll taxes and Medicare premiums,-52.7621,-8678
 accrual,indian_origin_white_ages,high,"sales, excise, customs, fees",-27.5886,-4538
 accrual,indian_origin_white_ages,high,"capital, property, production taxes",-9.8504,-1620
@@ -321,7 +321,7 @@ accrual,indian_origin_white_ages,high,veterans and military medical,1.1738,193
 accrual,indian_origin_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.6489,2410
 accrual,indian_origin_white_ages,high,capital return,7.8294,1288
 accrual,indian_origin_white_ages,high,production gain (subtracted),-0.0000,-0
-accrual,india_born,high,income taxes,-59.8119,-13969
+accrual,india_born,high,income taxes,-65.4441,-15284
 accrual,india_born,high,payroll taxes and Medicare premiums,-48.5518,-11339
 accrual,india_born,high,"sales, excise, customs, fees",-19.9541,-4660
 accrual,india_born,high,"capital, property, production taxes",-6.1189,-1429
@@ -335,7 +335,7 @@ accrual,india_born,high,veterans and military medical,0.4034,94
 accrual,india_born,high,"per-head lines: government, defense, interest, roads, other",11.1949,2615
 accrual,india_born,high,capital return,5.4266,1267
 accrual,india_born,high,production gain (subtracted),-0.0000,-0
-accrual,india_born_white_ages,high,income taxes,-52.6940,-12307
+accrual,india_born_white_ages,high,income taxes,-58.1618,-13584
 accrual,india_born_white_ages,high,payroll taxes and Medicare premiums,-36.4947,-8523
 accrual,india_born_white_ages,high,"sales, excise, customs, fees",-18.7082,-4369
 accrual,india_born_white_ages,high,"capital, property, production taxes",-6.2299,-1455
@@ -349,7 +349,7 @@ accrual,india_born_white_ages,high,veterans and military medical,0.6216,145
 accrual,india_born_white_ages,high,"per-head lines: government, defense, interest, roads, other",10.3013,2406
 accrual,india_born_white_ages,high,capital return,5.5276,1291
 accrual,india_born_white_ages,high,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_g2_pooled,high,income taxes,-89.8433,-14778
+accrual,indian_origin_g2_pooled,high,income taxes,-101.7402,-16735
 accrual,indian_origin_g2_pooled,high,payroll taxes and Medicare premiums,-56.8056,-9344
 accrual,indian_origin_g2_pooled,high,"sales, excise, customs, fees",-28.0595,-4615
 accrual,indian_origin_g2_pooled,high,"capital, property, production taxes",-9.2075,-1514
@@ -363,7 +363,7 @@ accrual,indian_origin_g2_pooled,high,veterans and military medical,0.5581,92
 accrual,indian_origin_g2_pooled,high,"per-head lines: government, defense, interest, roads, other",14.7780,2431
 accrual,indian_origin_g2_pooled,high,capital return,8.4102,1383
 accrual,indian_origin_g2_pooled,high,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_g2_pooled_white_ages,high,income taxes,-84.6722,-13927
+accrual,indian_origin_g2_pooled_white_ages,high,income taxes,-96.2836,-15837
 accrual,indian_origin_g2_pooled_white_ages,high,payroll taxes and Medicare premiums,-52.8525,-8693
 accrual,indian_origin_g2_pooled_white_ages,high,"sales, excise, customs, fees",-27.5886,-4538
 accrual,indian_origin_g2_pooled_white_ages,high,"capital, property, production taxes",-9.8504,-1620
@@ -377,7 +377,7 @@ accrual,indian_origin_g2_pooled_white_ages,high,veterans and military medical,1.
 accrual,indian_origin_g2_pooled_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.6550,2411
 accrual,indian_origin_g2_pooled_white_ages,high,capital return,7.8294,1288
 accrual,indian_origin_g2_pooled_white_ages,high,production gain (subtracted),-0.0000,-0
-accrual,india_born_self_employed_adults,high,income taxes,-2.6718,-16151
+accrual,india_born_self_employed_adults,high,income taxes,-3.2866,-19868
 accrual,india_born_self_employed_adults,high,payroll taxes and Medicare premiums,-2.5604,-15478
 accrual,india_born_self_employed_adults,high,"sales, excise, customs, fees",-0.7806,-4719
 accrual,india_born_self_employed_adults,high,"capital, property, production taxes",-0.3127,-1891
@@ -391,7 +391,7 @@ accrual,india_born_self_employed_adults,high,veterans and military medical,0.036
 accrual,india_born_self_employed_adults,high,"per-head lines: government, defense, interest, roads, other",0.4971,3005
 accrual,india_born_self_employed_adults,high,capital return,0.1695,1025
 accrual,india_born_self_employed_adults,high,production gain (subtracted),-0.0000,-0
-accrual,india_born_wage_salary_adults,high,income taxes,-47.1042,-17573
+accrual,india_born_wage_salary_adults,high,income taxes,-48.8608,-18228
 accrual,india_born_wage_salary_adults,high,payroll taxes and Medicare premiums,-45.2591,-16885
 accrual,india_born_wage_salary_adults,high,"sales, excise, customs, fees",-14.3792,-5364
 accrual,india_born_wage_salary_adults,high,"capital, property, production taxes",-4.3588,-1626
@@ -405,7 +405,7 @@ accrual,india_born_wage_salary_adults,high,veterans and military medical,0.3656,
 accrual,india_born_wage_salary_adults,high,"per-head lines: government, defense, interest, roads, other",7.7786,2902
 accrual,india_born_wage_salary_adults,high,capital return,3.0967,1155
 accrual,india_born_wage_salary_adults,high,production gain (subtracted),-0.0000,-0
-accrual,india_born_other,high,income taxes,-10.0359,-6989
+accrual,india_born_other,high,income taxes,-13.2968,-9261
 accrual,india_born_other,high,payroll taxes and Medicare premiums,-0.7323,-510
 accrual,india_born_other,high,"sales, excise, customs, fees",-4.8017,-3344
 accrual,india_born_other,high,"capital, property, production taxes",-1.4474,-1008
@@ -419,7 +419,7 @@ accrual,india_born_other,high,veterans and military medical,0.0010,1
 accrual,india_born_other,high,"per-head lines: government, defense, interest, roads, other",2.9192,2033
 accrual,india_born_other,high,capital return,2.1604,1505
 accrual,india_born_other,high,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_self_employed_households,high,income taxes,-7.3841,-20367
+accrual,indian_origin_self_employed_households,high,income taxes,-12.2326,-33741
 accrual,indian_origin_self_employed_households,high,payroll taxes and Medicare premiums,-3.0625,-8447
 accrual,indian_origin_self_employed_households,high,"sales, excise, customs, fees",-1.6447,-4537
 accrual,indian_origin_self_employed_households,high,"capital, property, production taxes",-0.7740,-2135
@@ -433,7 +433,7 @@ accrual,indian_origin_self_employed_households,high,veterans and military medica
 accrual,indian_origin_self_employed_households,high,"per-head lines: government, defense, interest, roads, other",0.8581,2367
 accrual,indian_origin_self_employed_households,high,capital return,0.4735,1306
 accrual,indian_origin_self_employed_households,high,production gain (subtracted),-0.0000,-0
-accrual,indian_origin_wage_salary_households,high,income taxes,-70.8039,-14991
+accrual,indian_origin_wage_salary_households,high,income taxes,-76.2803,-16150
 accrual,indian_origin_wage_salary_households,high,payroll taxes and Medicare premiums,-46.6001,-9866
 accrual,indian_origin_wage_salary_households,high,"sales, excise, customs, fees",-22.2705,-4715
 accrual,indian_origin_wage_salary_households,high,"capital, property, production taxes",-7.0616,-1495
@@ -447,7 +447,7 @@ accrual,indian_origin_wage_salary_households,high,veterans and military medical,
 accrual,indian_origin_wage_salary_households,high,"per-head lines: government, defense, interest, roads, other",11.3389,2401
 accrual,indian_origin_wage_salary_households,high,capital return,6.4959,1375
 accrual,indian_origin_wage_salary_households,high,production gain (subtracted),-0.0000,-0
-accrual,A1_third_plus_nh_white,high,income taxes,-356.0150,-8327
+accrual,A1_third_plus_nh_white,high,income taxes,-422.3973,-9880
 accrual,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-268.3304,-6276
 accrual,A1_third_plus_nh_white,high,"sales, excise, customs, fees",-173.3304,-4054
 accrual,A1_third_plus_nh_white,high,"capital, property, production taxes",-50.5292,-1182
@@ -461,7 +461,7 @@ accrual,A1_third_plus_nh_white,high,veterans and military medical,35.7731,837
 accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.0794,3066
 accrual,A1_third_plus_nh_white,high,capital return,57.9752,1356
 accrual,A1_third_plus_nh_white,high,production gain (subtracted),-0.0000,-0
-accrual,nh_black_rough,high,income taxes,-183.7848,-4381
+accrual,nh_black_rough,high,income taxes,-210.4746,-5017
 accrual,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633
 accrual,nh_black_rough,high,"sales, excise, customs, fees",-123.2033,-2937
 accrual,nh_black_rough,high,"capital, property, production taxes",-15.9766,-381
@@ -489,7 +489,7 @@ accrual,mexican_origin_engine_identified,high,veterans and military medical,11.6
 accrual,mexican_origin_engine_identified,high,"per-head lines: government, defense, interest, roads, other",92.9818,2341
 accrual,mexican_origin_engine_identified,high,capital return,57.1733,1440
 accrual,mexican_origin_engine_identified,high,production gain (subtracted),-7.6832,-193
-accrual,mexican_origin_rough_identified,high,income taxes,-135.3272,-3408
+accrual,mexican_origin_rough_identified,high,income taxes,-150.4437,-3788
 accrual,mexican_origin_rough_identified,high,payroll taxes and Medicare premiums,-163.4670,-4116
 accrual,mexican_origin_rough_identified,high,"sales, excise, customs, fees",-107.7436,-2713
 accrual,mexican_origin_rough_identified,high,"capital, property, production taxes",-21.8056,-549
@@ -517,7 +517,7 @@ cash,mexican_origin_engine,low,veterans and military medical,15.6471,366
 cash,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784
 cash,mexican_origin_engine,low,capital return,37.1478,869
 cash,mexican_origin_engine,low,production gain (subtracted),-11.9475,-279
-cash,mexican_origin_rough,low,income taxes,-155.6451,-3641
+cash,mexican_origin_rough,low,income taxes,-170.7616,-3994
 cash,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.7421,-4157
 cash,mexican_origin_rough,low,"sales, excise, customs, fees",-117.6441,-2752
 cash,mexican_origin_rough,low,"capital, property, production taxes",-23.9491,-560
@@ -531,7 +531,7 @@ cash,mexican_origin_rough,low,veterans and military medical,13.1742,308
 cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.9409,1870
 cash,mexican_origin_rough,low,capital return,36.8871,863
 cash,mexican_origin_rough,low,production gain (subtracted),-11.9475,-279
-cash,mexican_origin_rough_white_ages,low,income taxes,-143.0664,-3603
+cash,mexican_origin_rough_white_ages,low,income taxes,-159.0475,-4005
 cash,mexican_origin_rough_white_ages,low,payroll taxes and Medicare premiums,-180.5404,-4546
 cash,mexican_origin_rough_white_ages,low,"sales, excise, customs, fees",-114.4425,-2882
 cash,mexican_origin_rough_white_ages,low,"capital, property, production taxes",-26.4574,-666
@@ -545,7 +545,7 @@ cash,mexican_origin_rough_white_ages,low,veterans and military medical,17.9510,4
 cash,mexican_origin_rough_white_ages,low,"per-head lines: government, defense, interest, roads, other",80.9614,2039
 cash,mexican_origin_rough_white_ages,low,capital return,30.2063,761
 cash,mexican_origin_rough_white_ages,low,production gain (subtracted),-12.1151,-305
-cash,indian_origin,low,income taxes,-91.4452,-15041
+cash,indian_origin,low,income taxes,-103.5337,-17030
 cash,indian_origin,low,payroll taxes and Medicare premiums,-56.6875,-9324
 cash,indian_origin,low,"sales, excise, customs, fees",-28.0595,-4615
 cash,indian_origin,low,"capital, property, production taxes",-9.2075,-1514
@@ -559,7 +559,7 @@ cash,indian_origin,low,veterans and military medical,0.5581,92
 cash,indian_origin,low,"per-head lines: government, defense, interest, roads, other",9.8508,1620
 cash,indian_origin,low,capital return,5.0356,828
 cash,indian_origin,low,production gain (subtracted),-0.0000,-0
-cash,indian_origin_white_ages,low,income taxes,-87.3585,-14369
+cash,indian_origin_white_ages,low,income taxes,-99.1106,-16302
 cash,indian_origin_white_ages,low,payroll taxes and Medicare premiums,-52.7621,-8678
 cash,indian_origin_white_ages,low,"sales, excise, customs, fees",-27.5886,-4538
 cash,indian_origin_white_ages,low,"capital, property, production taxes",-9.8504,-1620
@@ -573,7 +573,7 @@ cash,indian_origin_white_ages,low,veterans and military medical,1.1738,193
 cash,indian_origin_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.9865,1643
 cash,indian_origin_white_ages,low,capital return,4.6735,769
 cash,indian_origin_white_ages,low,production gain (subtracted),-0.0000,-0
-cash,india_born,low,income taxes,-60.4952,-14129
+cash,india_born,low,income taxes,-66.1275,-15444
 cash,india_born,low,payroll taxes and Medicare premiums,-48.5518,-11339
 cash,india_born,low,"sales, excise, customs, fees",-19.9541,-4660
 cash,india_born,low,"capital, property, production taxes",-6.1189,-1429
@@ -587,7 +587,7 @@ cash,india_born,low,veterans and military medical,0.4034,94
 cash,india_born,low,"per-head lines: government, defense, interest, roads, other",7.3519,1717
 cash,india_born,low,capital return,3.1801,743
 cash,india_born,low,production gain (subtracted),-0.0000,-0
-cash,india_born_white_ages,low,income taxes,-54.1225,-12640
+cash,india_born_white_ages,low,income taxes,-59.5903,-13917
 cash,india_born_white_ages,low,payroll taxes and Medicare premiums,-36.4947,-8523
 cash,india_born_white_ages,low,"sales, excise, customs, fees",-18.7082,-4369
 cash,india_born_white_ages,low,"capital, property, production taxes",-6.2299,-1455
@@ -601,7 +601,7 @@ cash,india_born_white_ages,low,veterans and military medical,0.6216,145
 cash,india_born_white_ages,low,"per-head lines: government, defense, interest, roads, other",7.0647,1650
 cash,india_born_white_ages,low,capital return,3.3062,772
 cash,india_born_white_ages,low,production gain (subtracted),-0.0000,-0
-cash,indian_origin_g2_pooled,low,income taxes,-90.5971,-14902
+cash,indian_origin_g2_pooled,low,income taxes,-102.4940,-16859
 cash,indian_origin_g2_pooled,low,payroll taxes and Medicare premiums,-56.8056,-9344
 cash,indian_origin_g2_pooled,low,"sales, excise, customs, fees",-28.0595,-4615
 cash,indian_origin_g2_pooled,low,"capital, property, production taxes",-9.2075,-1514
@@ -615,7 +615,7 @@ cash,indian_origin_g2_pooled,low,veterans and military medical,0.5581,92
 cash,indian_origin_g2_pooled,low,"per-head lines: government, defense, interest, roads, other",9.8531,1621
 cash,indian_origin_g2_pooled,low,capital return,5.0356,828
 cash,indian_origin_g2_pooled,low,production gain (subtracted),-0.0000,-0
-cash,indian_origin_g2_pooled_white_ages,low,income taxes,-86.6834,-14258
+cash,indian_origin_g2_pooled_white_ages,low,income taxes,-98.2948,-16168
 cash,indian_origin_g2_pooled_white_ages,low,payroll taxes and Medicare premiums,-52.8525,-8693
 cash,indian_origin_g2_pooled_white_ages,low,"sales, excise, customs, fees",-27.5886,-4538
 cash,indian_origin_g2_pooled_white_ages,low,"capital, property, production taxes",-9.8504,-1620
@@ -629,7 +629,7 @@ cash,indian_origin_g2_pooled_white_ages,low,veterans and military medical,1.1738
 cash,indian_origin_g2_pooled_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.9882,1643
 cash,indian_origin_g2_pooled_white_ages,low,capital return,4.6735,769
 cash,indian_origin_g2_pooled_white_ages,low,production gain (subtracted),-0.0000,-0
-cash,india_born_self_employed_adults,low,income taxes,-2.7001,-16323
+cash,india_born_self_employed_adults,low,income taxes,-3.3149,-20039
 cash,india_born_self_employed_adults,low,payroll taxes and Medicare premiums,-2.5604,-15478
 cash,india_born_self_employed_adults,low,"sales, excise, customs, fees",-0.7806,-4719
 cash,india_born_self_employed_adults,low,"capital, property, production taxes",-0.3127,-1891
@@ -643,7 +643,7 @@ cash,india_born_self_employed_adults,low,veterans and military medical,0.0368,22
 cash,india_born_self_employed_adults,low,"per-head lines: government, defense, interest, roads, other",0.2958,1788
 cash,india_born_self_employed_adults,low,capital return,0.0944,571
 cash,india_born_self_employed_adults,low,production gain (subtracted),-0.0000,-0
-cash,india_born_wage_salary_adults,low,income taxes,-47.1816,-17602
+cash,india_born_wage_salary_adults,low,income taxes,-48.9381,-18257
 cash,india_born_wage_salary_adults,low,payroll taxes and Medicare premiums,-45.2591,-16885
 cash,india_born_wage_salary_adults,low,"sales, excise, customs, fees",-14.3792,-5364
 cash,india_born_wage_salary_adults,low,"capital, property, production taxes",-4.3588,-1626
@@ -657,7 +657,7 @@ cash,india_born_wage_salary_adults,low,veterans and military medical,0.3656,136
 cash,india_born_wage_salary_adults,low,"per-head lines: government, defense, interest, roads, other",4.7599,1776
 cash,india_born_wage_salary_adults,low,capital return,1.7535,654
 cash,india_born_wage_salary_adults,low,production gain (subtracted),-0.0000,-0
-cash,india_born_other,low,income taxes,-10.6136,-7392
+cash,india_born_other,low,income taxes,-13.8745,-9663
 cash,india_born_other,low,payroll taxes and Medicare premiums,-0.7323,-510
 cash,india_born_other,low,"sales, excise, customs, fees",-4.8017,-3344
 cash,india_born_other,low,"capital, property, production taxes",-1.4474,-1008
@@ -671,7 +671,7 @@ cash,india_born_other,low,veterans and military medical,0.0010,1
 cash,india_born_other,low,"per-head lines: government, defense, interest, roads, other",2.2961,1599
 cash,india_born_other,low,capital return,1.3322,928
 cash,india_born_other,low,production gain (subtracted),-0.0000,-0
-cash,indian_origin_self_employed_households,low,income taxes,-7.3989,-20408
+cash,indian_origin_self_employed_households,low,income taxes,-12.2474,-33781
 cash,indian_origin_self_employed_households,low,payroll taxes and Medicare premiums,-3.0625,-8447
 cash,indian_origin_self_employed_households,low,"sales, excise, customs, fees",-1.6447,-4537
 cash,indian_origin_self_employed_households,low,"capital, property, production taxes",-0.7740,-2135
@@ -685,7 +685,7 @@ cash,indian_origin_self_employed_households,low,veterans and military medical,0.
 cash,indian_origin_self_employed_households,low,"per-head lines: government, defense, interest, roads, other",0.5567,1535
 cash,indian_origin_self_employed_households,low,capital return,0.2823,779
 cash,indian_origin_self_employed_households,low,production gain (subtracted),-0.0000,-0
-cash,indian_origin_wage_salary_households,low,income taxes,-71.0388,-15041
+cash,indian_origin_wage_salary_households,low,income taxes,-76.5152,-16200
 cash,indian_origin_wage_salary_households,low,payroll taxes and Medicare premiums,-46.6001,-9866
 cash,indian_origin_wage_salary_households,low,"sales, excise, customs, fees",-22.2705,-4715
 cash,indian_origin_wage_salary_households,low,"capital, property, production taxes",-7.0616,-1495
@@ -699,7 +699,7 @@ cash,indian_origin_wage_salary_households,low,veterans and military medical,0.36
 cash,indian_origin_wage_salary_households,low,"per-head lines: government, defense, interest, roads, other",7.4403,1575
 cash,indian_origin_wage_salary_households,low,capital return,3.8823,822
 cash,indian_origin_wage_salary_households,low,production gain (subtracted),-0.0000,-0
-cash,A1_third_plus_nh_white,low,income taxes,-373.6866,-8741
+cash,A1_third_plus_nh_white,low,income taxes,-440.0689,-10293
 cash,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-268.3304,-6276
 cash,A1_third_plus_nh_white,low,"sales, excise, customs, fees",-173.3304,-4054
 cash,A1_third_plus_nh_white,low,"capital, property, production taxes",-50.5292,-1182
@@ -713,7 +713,7 @@ cash,A1_third_plus_nh_white,low,veterans and military medical,35.7731,837
 cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.3985,2372
 cash,A1_third_plus_nh_white,low,capital return,34.1392,799
 cash,A1_third_plus_nh_white,low,production gain (subtracted),-0.0000,-0
-cash,nh_black_rough,low,income taxes,-189.3786,-4514
+cash,nh_black_rough,low,income taxes,-216.0684,-5150
 cash,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633
 cash,nh_black_rough,low,"sales, excise, customs, fees",-123.2033,-2937
 cash,nh_black_rough,low,"capital, property, production taxes",-15.9766,-381
@@ -741,7 +741,7 @@ cash,mexican_origin_engine_identified,low,veterans and military medical,14.0598,
 cash,mexican_origin_engine_identified,low,"per-head lines: government, defense, interest, roads, other",70.4624,1774
 cash,mexican_origin_engine_identified,low,capital return,34.4329,867
 cash,mexican_origin_engine_identified,low,production gain (subtracted),-11.6799,-294
-cash,mexican_origin_rough_identified,low,income taxes,-137.5225,-3463
+cash,mexican_origin_rough_identified,low,income taxes,-152.6391,-3844
 cash,mexican_origin_rough_identified,low,payroll taxes and Medicare premiums,-163.4670,-4116
 cash,mexican_origin_rough_identified,low,"sales, excise, customs, fees",-107.7436,-2713
 cash,mexican_origin_rough_identified,low,"capital, property, production taxes",-21.8056,-549
@@ -769,7 +769,7 @@ cash,mexican_origin_engine,high,veterans and military medical,12.9788,304
 cash,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352
 cash,mexican_origin_engine,high,capital return,61.8578,1447
 cash,mexican_origin_engine,high,production gain (subtracted),-7.8593,-184
-cash,mexican_origin_rough,high,income taxes,-152.9938,-3579
+cash,mexican_origin_rough,high,income taxes,-168.1103,-3932
 cash,mexican_origin_rough,high,payroll taxes and Medicare premiums,-175.6127,-4108
 cash,mexican_origin_rough,high,"sales, excise, customs, fees",-117.6432,-2752
 cash,mexican_origin_rough,high,"capital, property, production taxes",-23.9406,-560
@@ -783,7 +783,7 @@ cash,mexican_origin_rough,high,veterans and military medical,12.9235,302
 cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.5090,2445
 cash,mexican_origin_rough,high,capital return,60.9461,1426
 cash,mexican_origin_rough,high,production gain (subtracted),-7.8593,-184
-cash,mexican_origin_rough_white_ages,high,income taxes,-143.0664,-3603
+cash,mexican_origin_rough_white_ages,high,income taxes,-159.0475,-4005
 cash,mexican_origin_rough_white_ages,high,payroll taxes and Medicare premiums,-180.5404,-4546
 cash,mexican_origin_rough_white_ages,high,"sales, excise, customs, fees",-114.4425,-2882
 cash,mexican_origin_rough_white_ages,high,"capital, property, production taxes",-26.4574,-666
@@ -797,7 +797,7 @@ cash,mexican_origin_rough_white_ages,high,veterans and military medical,17.9510,
 cash,mexican_origin_rough_white_ages,high,"per-head lines: government, defense, interest, roads, other",104.1809,2623
 cash,mexican_origin_rough_white_ages,high,capital return,50.4726,1271
 cash,mexican_origin_rough_white_ages,high,production gain (subtracted),-7.9696,-201
-cash,indian_origin,high,income taxes,-91.4452,-15041
+cash,indian_origin,high,income taxes,-103.5337,-17030
 cash,indian_origin,high,payroll taxes and Medicare premiums,-56.6875,-9324
 cash,indian_origin,high,"sales, excise, customs, fees",-28.0595,-4615
 cash,indian_origin,high,"capital, property, production taxes",-9.2075,-1514
@@ -811,7 +811,7 @@ cash,indian_origin,high,veterans and military medical,0.5581,92
 cash,indian_origin,high,"per-head lines: government, defense, interest, roads, other",14.7702,2429
 cash,indian_origin,high,capital return,8.4101,1383
 cash,indian_origin,high,production gain (subtracted),-0.0000,-0
-cash,indian_origin_white_ages,high,income taxes,-87.3585,-14369
+cash,indian_origin_white_ages,high,income taxes,-99.1106,-16302
 cash,indian_origin_white_ages,high,payroll taxes and Medicare premiums,-52.7621,-8678
 cash,indian_origin_white_ages,high,"sales, excise, customs, fees",-27.5886,-4538
 cash,indian_origin_white_ages,high,"capital, property, production taxes",-9.8504,-1620
@@ -825,7 +825,7 @@ cash,indian_origin_white_ages,high,veterans and military medical,1.1738,193
 cash,indian_origin_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.6489,2410
 cash,indian_origin_white_ages,high,capital return,7.8294,1288
 cash,indian_origin_white_ages,high,production gain (subtracted),-0.0000,-0
-cash,india_born,high,income taxes,-60.4952,-14129
+cash,india_born,high,income taxes,-66.1275,-15444
 cash,india_born,high,payroll taxes and Medicare premiums,-48.5518,-11339
 cash,india_born,high,"sales, excise, customs, fees",-19.9541,-4660
 cash,india_born,high,"capital, property, production taxes",-6.1189,-1429
@@ -839,7 +839,7 @@ cash,india_born,high,veterans and military medical,0.4034,94
 cash,india_born,high,"per-head lines: government, defense, interest, roads, other",11.1949,2615
 cash,india_born,high,capital return,5.4266,1267
 cash,india_born,high,production gain (subtracted),-0.0000,-0
-cash,india_born_white_ages,high,income taxes,-54.1225,-12640
+cash,india_born_white_ages,high,income taxes,-59.5903,-13917
 cash,india_born_white_ages,high,payroll taxes and Medicare premiums,-36.4947,-8523
 cash,india_born_white_ages,high,"sales, excise, customs, fees",-18.7082,-4369
 cash,india_born_white_ages,high,"capital, property, production taxes",-6.2299,-1455
@@ -853,7 +853,7 @@ cash,india_born_white_ages,high,veterans and military medical,0.6216,145
 cash,india_born_white_ages,high,"per-head lines: government, defense, interest, roads, other",10.3013,2406
 cash,india_born_white_ages,high,capital return,5.5276,1291
 cash,india_born_white_ages,high,production gain (subtracted),-0.0000,-0
-cash,indian_origin_g2_pooled,high,income taxes,-90.5971,-14902
+cash,indian_origin_g2_pooled,high,income taxes,-102.4940,-16859
 cash,indian_origin_g2_pooled,high,payroll taxes and Medicare premiums,-56.8056,-9344
 cash,indian_origin_g2_pooled,high,"sales, excise, customs, fees",-28.0595,-4615
 cash,indian_origin_g2_pooled,high,"capital, property, production taxes",-9.2075,-1514
@@ -867,7 +867,7 @@ cash,indian_origin_g2_pooled,high,veterans and military medical,0.5581,92
 cash,indian_origin_g2_pooled,high,"per-head lines: government, defense, interest, roads, other",14.7780,2431
 cash,indian_origin_g2_pooled,high,capital return,8.4102,1383
 cash,indian_origin_g2_pooled,high,production gain (subtracted),-0.0000,-0
-cash,indian_origin_g2_pooled_white_ages,high,income taxes,-86.6834,-14258
+cash,indian_origin_g2_pooled_white_ages,high,income taxes,-98.2948,-16168
 cash,indian_origin_g2_pooled_white_ages,high,payroll taxes and Medicare premiums,-52.8525,-8693
 cash,indian_origin_g2_pooled_white_ages,high,"sales, excise, customs, fees",-27.5886,-4538
 cash,indian_origin_g2_pooled_white_ages,high,"capital, property, production taxes",-9.8504,-1620
@@ -881,7 +881,7 @@ cash,indian_origin_g2_pooled_white_ages,high,veterans and military medical,1.173
 cash,indian_origin_g2_pooled_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.6550,2411
 cash,indian_origin_g2_pooled_white_ages,high,capital return,7.8294,1288
 cash,indian_origin_g2_pooled_white_ages,high,production gain (subtracted),-0.0000,-0
-cash,india_born_self_employed_adults,high,income taxes,-2.7001,-16323
+cash,india_born_self_employed_adults,high,income taxes,-3.3149,-20039
 cash,india_born_self_employed_adults,high,payroll taxes and Medicare premiums,-2.5604,-15478
 cash,india_born_self_employed_adults,high,"sales, excise, customs, fees",-0.7806,-4719
 cash,india_born_self_employed_adults,high,"capital, property, production taxes",-0.3127,-1891
@@ -895,7 +895,7 @@ cash,india_born_self_employed_adults,high,veterans and military medical,0.0368,2
 cash,india_born_self_employed_adults,high,"per-head lines: government, defense, interest, roads, other",0.4971,3005
 cash,india_born_self_employed_adults,high,capital return,0.1695,1025
 cash,india_born_self_employed_adults,high,production gain (subtracted),-0.0000,-0
-cash,india_born_wage_salary_adults,high,income taxes,-47.1816,-17602
+cash,india_born_wage_salary_adults,high,income taxes,-48.9381,-18257
 cash,india_born_wage_salary_adults,high,payroll taxes and Medicare premiums,-45.2591,-16885
 cash,india_born_wage_salary_adults,high,"sales, excise, customs, fees",-14.3792,-5364
 cash,india_born_wage_salary_adults,high,"capital, property, production taxes",-4.3588,-1626
@@ -909,7 +909,7 @@ cash,india_born_wage_salary_adults,high,veterans and military medical,0.3656,136
 cash,india_born_wage_salary_adults,high,"per-head lines: government, defense, interest, roads, other",7.7786,2902
 cash,india_born_wage_salary_adults,high,capital return,3.0967,1155
 cash,india_born_wage_salary_adults,high,production gain (subtracted),-0.0000,-0
-cash,india_born_other,high,income taxes,-10.6136,-7392
+cash,india_born_other,high,income taxes,-13.8745,-9663
 cash,india_born_other,high,payroll taxes and Medicare premiums,-0.7323,-510
 cash,india_born_other,high,"sales, excise, customs, fees",-4.8017,-3344
 cash,india_born_other,high,"capital, property, production taxes",-1.4474,-1008
@@ -923,7 +923,7 @@ cash,india_born_other,high,veterans and military medical,0.0010,1
 cash,india_born_other,high,"per-head lines: government, defense, interest, roads, other",2.9192,2033
 cash,india_born_other,high,capital return,2.1604,1505
 cash,india_born_other,high,production gain (subtracted),-0.0000,-0
-cash,indian_origin_self_employed_households,high,income taxes,-7.3989,-20408
+cash,indian_origin_self_employed_households,high,income taxes,-12.2474,-33781
 cash,indian_origin_self_employed_households,high,payroll taxes and Medicare premiums,-3.0625,-8447
 cash,indian_origin_self_employed_households,high,"sales, excise, customs, fees",-1.6447,-4537
 cash,indian_origin_self_employed_households,high,"capital, property, production taxes",-0.7740,-2135
@@ -937,7 +937,7 @@ cash,indian_origin_self_employed_households,high,veterans and military medical,0
 cash,indian_origin_self_employed_households,high,"per-head lines: government, defense, interest, roads, other",0.8581,2367
 cash,indian_origin_self_employed_households,high,capital return,0.4735,1306
 cash,indian_origin_self_employed_households,high,production gain (subtracted),-0.0000,-0
-cash,indian_origin_wage_salary_households,high,income taxes,-71.0388,-15041
+cash,indian_origin_wage_salary_households,high,income taxes,-76.5152,-16200
 cash,indian_origin_wage_salary_households,high,payroll taxes and Medicare premiums,-46.6001,-9866
 cash,indian_origin_wage_salary_households,high,"sales, excise, customs, fees",-22.2705,-4715
 cash,indian_origin_wage_salary_households,high,"capital, property, production taxes",-7.0616,-1495
@@ -951,7 +951,7 @@ cash,indian_origin_wage_salary_households,high,veterans and military medical,0.3
 cash,indian_origin_wage_salary_households,high,"per-head lines: government, defense, interest, roads, other",11.3389,2401
 cash,indian_origin_wage_salary_households,high,capital return,6.4959,1375
 cash,indian_origin_wage_salary_households,high,production gain (subtracted),-0.0000,-0
-cash,A1_third_plus_nh_white,high,income taxes,-373.6866,-8741
+cash,A1_third_plus_nh_white,high,income taxes,-440.0689,-10293
 cash,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-268.3304,-6276
 cash,A1_third_plus_nh_white,high,"sales, excise, customs, fees",-173.3304,-4054
 cash,A1_third_plus_nh_white,high,"capital, property, production taxes",-50.5292,-1182
@@ -965,7 +965,7 @@ cash,A1_third_plus_nh_white,high,veterans and military medical,35.7731,837
 cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.0794,3066
 cash,A1_third_plus_nh_white,high,capital return,57.9752,1356
 cash,A1_third_plus_nh_white,high,production gain (subtracted),-0.0000,-0
-cash,nh_black_rough,high,income taxes,-189.3786,-4514
+cash,nh_black_rough,high,income taxes,-216.0684,-5150
 cash,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633
 cash,nh_black_rough,high,"sales, excise, customs, fees",-123.2033,-2937
 cash,nh_black_rough,high,"capital, property, production taxes",-15.9766,-381
@@ -993,7 +993,7 @@ cash,mexican_origin_engine_identified,high,veterans and military medical,11.6422
 cash,mexican_origin_engine_identified,high,"per-head lines: government, defense, interest, roads, other",92.9818,2341
 cash,mexican_origin_engine_identified,high,capital return,57.1733,1440
 cash,mexican_origin_engine_identified,high,production gain (subtracted),-7.6832,-193
-cash,mexican_origin_rough_identified,high,income taxes,-137.5225,-3463
+cash,mexican_origin_rough_identified,high,income taxes,-152.6391,-3844
 cash,mexican_origin_rough_identified,high,payroll taxes and Medicare premiums,-163.4670,-4116
 cash,mexican_origin_rough_identified,high,"sales, excise, customs, fees",-107.7436,-2713
 cash,mexican_origin_rough_identified,high,"capital, property, production taxes",-21.8056,-549
