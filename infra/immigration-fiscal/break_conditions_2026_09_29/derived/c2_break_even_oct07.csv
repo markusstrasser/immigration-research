@@ -1,0 +1,9 @@
+case,variant,allocation,break_even_most_adverse,break_even_least_adverse
+case_accrual,enterprises_at_1,personal,-0.0905,-0.0066
+case_accrual,enterprises_at_1,shared,-0.0703,0.0158
+case_accrual,enterprises_at_s,personal,-0.0365,0.0316
+case_accrual,enterprises_at_s,shared,-0.0163,0.0538
+cash_set,enterprises_at_1,personal,0.0832,0.1726
+cash_set,enterprises_at_1,shared,0.1194,0.2114
+cash_set,enterprises_at_s,personal,0.1286,0.2040
+cash_set,enterprises_at_s,shared,0.1638,0.2419

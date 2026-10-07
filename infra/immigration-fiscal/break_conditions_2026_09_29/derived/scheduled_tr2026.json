@@ -1,0 +1,45 @@
+{
+ "case": {
+  "part_a_accrual_bn": 40.78277939340838,
+  "ratio_net": 0.9535468505020114,
+  "scheduled_benefits_arm_ratio_net": 1.2405762664674715
+ },
+ "inputs": {
+  "infra/immigration-fiscal/main_case_2026_10_07/derived/corrections.json": "f8d346aacf05bcdaed8495f870ba23ac6154ab3eaf34cc0bcf85861f0c85d091",
+  "infra/immigration-fiscal/pension_accrual_2026_09_28/derived/summary.json": "2397bb58f395b0fce3d0162d597f25e4093b49eb904b149f3cb7c5c59d86b8a0",
+  "infra/immigration-fiscal/pension_tr2026_2026_10_06/derived/arms.csv": "fa2b729ba1e80d8e5ec3a0ce895d985d6ff28d19fc93eff5f10b70c68bfb299c",
+  "infra/immigration-fiscal/white_replacement_2026_09_28/accrual_white.py": "0aad6531ed0ea4f9ebc526e3ddeb487ecb5905d4deee7944d4c0c23f7de816ff",
+  "infra/immigration-fiscal/white_replacement_2026_09_28/tr2026_path.py": "d5d0617db4ce188790858eacc6101486fa6a8b5988e545c0a4811cf39534a30b"
+ },
+ "payable_2025": {
+  "hi_tax_bn": 28.157875579538665,
+  "part_a_bn": 41.13712783048602,
+  "per_tax_dollar": 1.0183778513366615,
+  "ratio_net": 0.9736673650311839,
+  "timing": 0.08388440990158709
+ },
+ "payable_2026": {
+  "hi_tax_bn": 28.157875579538665,
+  "part_a_bn": 40.78277939340838,
+  "per_tax_dollar": 0.9992620293025645,
+  "ratio_net": 0.9535468505020114,
+  "timing": 0.08741014548513555
+ },
+ "question": "the pension accrual at scheduled benefits on the 2026 inputs the v6 case's payable arm reads",
+ "relative_benefit_tax_rate_union": 0.5233824966647924,
+ "rule": "Note 2025.7 Table 1 x k(2026 inputs, scheduled) / mwr(Note 2025.7's basis, 2025 economy, scheduled); timing at scheduled benefits on the 2026 inputs; Part A at scheduled benefits on the 2026 HI costs and mortality; net at the union's relative benefit-tax rate",
+ "scheduled_2025": {
+  "hi_tax_bn": 28.157875579538665,
+  "part_a_bn": 45.35351039395222,
+  "per_tax_dollar": 1.297788427296778,
+  "ratio_net": 1.2405762664674715,
+  "timing": 0.08422970101993961
+ },
+ "scheduled_2026": {
+  "hi_tax_bn": 28.157875579538665,
+  "part_a_bn": 46.55786277194067,
+  "per_tax_dollar": 1.3173354431536524,
+  "ratio_net": 1.2568080109451358,
+  "timing": 0.08778830799705627
+ }
+}
