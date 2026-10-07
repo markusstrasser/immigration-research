@@ -332,9 +332,9 @@ def load_enoe():
     e["employed"] = e.clase2 == 1
     e["hours"] = np.where(e.employed, pd.to_numeric(e.hrsocup, errors="coerce"), np.nan)
     ing = pd.to_numeric(e.ingocup, errors="coerce")
-    # ing7c 7 = income not specified: missing at random within the cell, so it drops out of the mean;
-    # 6 = no income (unpaid): zero.
-    e["monthly_mxn"] = np.where(e.employed & (e.ing7c != 7), ing, np.nan)
+    # ing7c 7 = income not specified, and ing7c 1-5 with ingocup 0 = a minimum-wage bracket given without an amount:
+    # both missing at random within the cell, so they drop out of the mean; 6 = no income (unpaid): zero.
+    e["monthly_mxn"] = np.where(e.employed & (e.ing7c != 7) & ~(e.ing7c.between(1, 5) & (ing == 0)), ing, np.nan)
     return e[e.age >= 15]
 
 

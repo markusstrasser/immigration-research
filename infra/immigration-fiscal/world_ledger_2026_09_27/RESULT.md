@@ -871,9 +871,13 @@ Skipped, with reasons:
   por favor incluya ese monto en su ingreso." Income tax and social-security withholding are therefore not added
   back: Mexican earnings here are net of them, while CPS earnings are gross. [SOURCE: ENIGH 2024 Cuestionario
   para personas de 12 o más años, Apartado 2.2, `_cache/reads/enigh2024_cuest_personas_mayores.pdf`]
-- ENIGH exceeds ENOE on earnings per employed person, more so with schooling (0.93× with no schooling, 1.67× with
-  profesional); ENOE's income nonresponse rises from 7% to 22% over the same range. ENIGH is the central source.
-  [CALCULATION: derived/mexico_enoe_check.csv]
+- ENIGH and ENOE agree within 17% on earnings per employed person: ENIGH is 0.84× ENOE with no schooling, 1.00× at
+  secundaria and 1.16× with profesional. ENOE's income nonresponse rises from 16% to 46% over the same range. ENIGH
+  is the central source. [CALCULATION: derived/mexico_enoe_check.csv]
+  - 2026-10-07 fix: ENOE lets a worker give only a minimum-wage bracket (ing7c 1–5 with ingocup 0; 16.9% of the
+    employed). The check had counted those answers as zero income, which put ENIGH at 0.93× to 1.67× ENOE; they are
+    now missing within the cell, like "not specified". No other output reads mexico.py's ENOE income, and a rerun of
+    the lane moves no other file.
 - 2024 PPP: GDP 9.9166 and private consumption 10.8013 pesos per international dollar; market rate 18.30.
   [DATA: WDI PA.NUS.PPP, PA.NUS.PRVT.PP, PA.NUS.FCRF]
 - A bug found and fixed before any use: the schooling map sent unknown years (-1) to "none"; unknown now stays
@@ -2451,6 +2455,8 @@ Variants and checks, at equal weights:
   - With them dropped, ENIGH/ENOE nationally runs 0.84–1.16 across the six schooling categories, not the 0.93–1.67 in
     `mexico_enoe_check.csv` and "Log of confirmed case-independent pieces" above.
   - No ledger number reads the check. The fix changes that file and that line.
+  - Fixed 2026-10-07 in its own commit: `load_enoe` now treats them as missing, and the check and that line read
+    0.84–1.16.
 - **Small schooling channel, thin samples.**
   - EMOVI has 422 respondents who lived in Guadalajara at 14 and 374 in Monterrey. Most of their 48 transition
     cells pool to all cohorts and sexes (26 and 36), and 16 and 8 take the national transition.
