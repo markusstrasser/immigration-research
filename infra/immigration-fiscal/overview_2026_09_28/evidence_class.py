@@ -21,7 +21,7 @@ Keyed by each finding's first ladder entry. `evidence.py` refuses a finding with
 
 CLASS = {
     # the annual account
-    281: ("sample", "arithmetic", "Survey income for the group was too high. The account corrects it with records."),
+    295: ("sample", "arithmetic", "Survey income for the group was too high. The account corrects it with records."),
     280: ("sample", "arithmetic", None),
     184: ("sample", "tabulated", None),
     269: ("sample", "arithmetic", None),
@@ -40,6 +40,7 @@ CLASS = {
     238: ("count", "rule", None),
     257: ("count", "rule", None),
     253: ("count", "rule", None),
+    288: ("count", "rule", None),
     # measured inputs
     208: ("sample", "fitted", "Census fills missing income with answers from similar people. For this group the "
                               "fill-ins run too high."),
@@ -54,6 +55,7 @@ CLASS = {
                                 "averages, so the service side is likely too low."),
     273: ("sample", "arithmetic", "The travel survey compares all Hispanics with non-Hispanics. Other Hispanics "
                                   "drive less, so the group's share is slightly too low."),
+    294: ("count", "arithmetic", None),
     127: ("sample", "tabulated", None),
     # outside the budget
     260: ("study", "extrapolated", None),

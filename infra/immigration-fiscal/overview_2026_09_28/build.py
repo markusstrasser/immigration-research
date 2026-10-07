@@ -2,14 +2,16 @@
 
     uv run --no-project python3 infra/immigration-fiscal/overview_2026_09_28/build.py
 
-Reads the confidence ladder, main case v5 (`main_case_2026_10_05/derived/`: `summary.json`,
-`main_case_bands.csv`), the figures page's staircase (the steps up to the September 24 case) and,
-through `quantity_registry.csv`, the lanes the tables quote. The ledger runs the staircase, the
-September 26 and 27 changes, v4's items and v5's lineage from `summary.json`'s
+Reads the confidence ladder, main case v6 (`main_case_2026_10_07/derived/`: `summary.json`,
+`main_case_bands.csv`, `lineage_addition.json`), the figures page's staircase (the steps up to the
+September 24 case) and, through `quantity_registry.csv`, the lanes the tables quote. The ledger runs
+the staircase, the September 26 and 27 changes and v4's items from `summary.json`'s
 `change_at_fixed_specifications`; it splits v4's state-price item with the September 29 lane's
-state-price lines. Refuses to write if a ladder entry is unassigned or assigned twice, or if the
-ledger misses a case's subtotal (September 23, 24, 26, 27, 29, and the main estimate). Writes
-`derived/overview.html`.
+state-price lines. The added descendants come from `lineage_addition.json`, by count part, on v5 and
+then with v6's items; v6's items on the identified members come from `summary.json`'s item parts,
+with retiree health as the rest of the union-only case's change. Refuses to write if a ladder entry
+is unassigned or assigned twice, or if the ledger misses a case's subtotal (September 23, 24, 26,
+27, 29, October 5, and the main estimate). Writes `derived/overview.html`.
 
 The ledger sections sit in `template.html` between `<!-- BUILD_BLOCK:START -->` and
 `<!-- BUILD_BLOCK:END -->`. When groups.py has a "build" part, the build moves them to just after
@@ -43,7 +45,7 @@ import quantities as Q  # noqa: E402
 evidence = None  # imported in main(), after --groups has picked the groups module it reads
 
 LADDER = ROOT / "research/immigration-confidence-ladder.md"
-MAIN = ROOT / "infra/immigration-fiscal/main_case_2026_10_05/derived"
+MAIN = ROOT / "infra/immigration-fiscal/main_case_2026_10_07/derived"
 STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
 OV = "infra/immigration-fiscal/overview_2026_09_28"
 # how to read the dotted underline that quantities.fill puts on an approximate number; the page carries it only
@@ -149,8 +151,9 @@ def load_numbers():
     last = next(r for r in stairs if r["id"] == "benefits")
     if any(abs(a - b) > 1e-3 for a, b in zip(last["total"], sept24)):
         fail(f"staircase ends at {last['total']}, summary.json September 24 case is {sept24}")
-    for variant, key in [("adopted", "main_case"), ("sept29_case", "adopted_2026_09_29"),
-                         ("sept27_case", "adopted_2026_09_27"), ("schools_case", "schools_case")]:
+    for variant, key in [("adopted", "main_case"), ("oct05_case", "adopted_2026_10_05"),
+                         ("sept29_case", "adopted_2026_09_29"), ("sept27_case", "adopted_2026_09_27"),
+                         ("schools_case", "schools_case")]:
         if any(abs(a - b) > 1e-3 for a, b in zip(bands[variant], s[key])):
             fail(f"main_case_bands.csv {variant} {bands[variant]} and summary.json {key} {s[key]} disagree")
     return s, bands, stairs
@@ -187,11 +190,42 @@ def waterfall_rows(s, stairs):
     if any(abs(a - b) > 1e-3 for a, b in zip(gg26, q("finite_removal.general_government_and_row8"))):
         fail(f"the September 26 step less runs L and F is {gg26}, not run I (general government)")
     sch = [a - b for a, b in zip(s["schools_case"], s["adopted_2026_09_26"])]
-    # Each later case's changes at fixed specifications, nested: v5's lineage holds v4's items, which hold September
-    # 27's changes.
-    c29 = c["sept29_case"]
+    # Each later case's changes at fixed specifications, nested: v6's items hold v5's lineage, which holds v4's items,
+    # which hold September 27's changes.
+    c05 = c["oct05_case"]
+    c29 = c05["sept29_case"]
     c27 = c29["sept27_case"]
     add = lambda *vs: [sum(v[i] for v in vs) for i in (0, 1)]  # noqa: E731
+    sub = lambda a, b: [a[i] - b[i] for i in (0, 1)]  # noqa: E731
+    far = lambda a, b, tol: any(abs(x - y) > tol for x, y in zip(a, b))  # noqa: E731
+    # The added descendants by count part, on v5 and with v6's items (lineage_addition.json, the case lane's split of
+    # v6 into the union-only case and the lineage's addition). Its v5 parts are v5's lineage block.
+    la = json.loads((MAIN / "lineage_addition.json").read_text())["set"]
+    parts, resp, resp5 = la["parts"], la["union_response_bn"], la["union_response_on_v5_bn"]
+    if far(add(parts["g3_rate"]["on_v5_cost_bn"], parts["later"]["on_v5_cost_bn"], resp5), c05["total"], 1e-9) \
+            or far(resp5, c05["union_response_move"], 1e-9) or far(la["case_bn"], s["main_case"], 1e-9) \
+            or far(la["union_only"]["on_v5_cost_bn"], s["adopted_2026_09_29"], 1e-6) \
+            or far(add(la["union_only"]["cost_bn"], la["lineage_addition_bn"]), s["main_case"], 1e-9):
+        fail("lineage_addition.json does not split v5's lineage block and v6 as summary.json has them")
+    # v6's items on the identified members: the pension item's union parts, every part of the fee item, and retiree
+    # health as the rest of the union-only case's change. summary.json splits retiree health at the case's responses,
+    # the union-only case at the union's own; the two differ by under $0.001bn.
+    items = c["items"]
+    fees = items["user_fees"]["parts"]
+    if set(fees) != set(FEE_PARTS):
+        fail(f"the fee item's parts are {sorted(fees)}; FEE_PARTS labels {sorted(FEE_PARTS)}")
+    union_change = sub(la["union_only"]["cost_bn"], la["union_only"]["on_v5_cost_bn"])
+    retiree = sub(sub(union_change, items["pension_tr2026"]["union"]), items["user_fees"]["total"])
+    if far(retiree, add(items["retiree_health"]["union"], items["retiree_health"]["capital_return"]), 1e-3):
+        fail(f"retiree health on the union-only case is {retiree}, summary.json's union part "
+             f"{add(items['retiree_health']['union'], items['retiree_health']['capital_return'])}")
+    lineage_items = add(*(parts[k]["items_change_bn"] for k in ("g3_rate", "later")), sub(resp, resp5))
+    item_lineage = add(items["added_age_mix"]["total"], items["pension_tr2026"]["lineage"],
+                       items["retiree_health"]["lineage"], *(v for k, v in c["interactions"].items()
+                                                              if "added_age_mix" in k))
+    if far(lineage_items, sub(la["lineage_addition_bn"], la["lineage_addition_on_v5_bn"]), 1e-9) \
+            or far(lineage_items, item_lineage, 1e-3):
+        fail(f"v6's items on the added descendants are {lineage_items}, summary.json's lineage parts {item_lineage}")
     # v4's state-price item prices three services at the states where the group lives and re-rates its sales and
     # vehicle taxes; the service lines move with this item alone, so the rest of the item is the taxes.
     services = [q(f"state_prices.{k}") for k in ("public_order", "health", "recreation")]
@@ -224,9 +258,17 @@ def waterfall_rows(s, stairs):
         dict(label="State prices: sales and vehicle taxes", step=state_tax),
         dict(label="Roads by miles driven", step=c29["item_roads"]),
         dict(label="September 29 case", total=True),
-        dict(label="Added descendants priced as third-generation members", step=c["g3plus_members"]),
-        dict(label="Added descendants priced as white residents", step=c["whites"]),
-        dict(label="Service responses at the larger group size", step=c["union_response_move"]),
+        dict(label="Added descendants lost at the third generation's rate", step=parts["g3_rate"]["on_v5_cost_bn"]),
+        dict(label="Added descendants lost a generation later", step=parts["later"]["on_v5_cost_bn"]),
+        dict(label="Service responses at the larger group size", step=resp5),
+        dict(label="October 5 case", total=True),
+        dict(label="Pension accrual on the 2026 Trustees, each fund apart", step=items["pension_tr2026"]["union"]),
+        dict(label="Retiree health on accrual", step=retiree),
+        *(dict(label=FEE_PARTS[k], step=v) for k, v in fees.items()),
+        dict(label="Added descendants lost at the third generation's rate, v6's items",
+             step=parts["g3_rate"]["items_change_bn"]),
+        dict(label="Added descendants lost a generation later, v6's items", step=parts["later"]["items_change_bn"]),
+        dict(label="Service responses at the larger group size, v6's items", step=sub(resp, resp5)),
         dict(label="Main estimate", total=True, main=True),
     ]
     tot = [0.0, 0.0]
@@ -243,13 +285,18 @@ def waterfall_rows(s, stairs):
     for label, want in [("September 23 case", s["adopted_2026_09_23"]), ("September 24 case", s["adopted_2026_09_24"]),
                         ("September 26 schools case", s["schools_case"]),
                         ("September 27 case", s["adopted_2026_09_27"]), ("September 29 case", s["adopted_2026_09_29"]),
-                        ("September 29 case", q("case.sept29"))]:
+                        ("September 29 case", q("case.sept29")), ("October 5 case", s["adopted_2026_10_05"])]:
         v = next(r for r in rows if r["label"] == label)["value"]
         if any(abs(a - b) > 1e-3 for a, b in zip(v, want)):
             fail(f"{label} subtotal {v} != {want}")
-    for what, parts, total in [("September 27's changes", c27, c27["total"]), ("v4's items", c29, c29["total"]),
-                               ("the lineage", c, c["total"])]:
-        got = add(*(v for k, v in parts.items() if k in ITEMS[what]))
+    v6_items = {**{k: v["total"] for k, v in items.items()}, **c["interactions"]}
+    for what, parts_, total in [("September 27's changes", c27, c27["total"]), ("v4's items", c29, c29["total"]),
+                                ("the lineage", c05, c05["total"]), ("v6's items", v6_items, c["total"]),
+                                ("the fee item's parts", fees, items["user_fees"]["total"]),
+                                ("the pension item's parts", items["pension_tr2026"], items["pension_tr2026"]["total"]),
+                                ("the retiree-health item's parts", items["retiree_health"],
+                                 items["retiree_health"]["total"])]:
+        got = add(*(v for k, v in parts_.items() if k in ITEMS[what]))
         if any(abs(a - b) > 1e-3 for a, b in zip(got, total)):
             fail(f"{what} add to {got}, summary.json's total is {total}")
     rows = [r for r in rows if not r.get("total") or r.get("main")]
@@ -282,6 +329,31 @@ ITEMS = {
     "v4's items": ("item_1", "item_2", "item_3", "item_4", "item_5", "item_6a", "item_7", "item_pension",
                    "item_state", "item_roads"),
     "the lineage": ("union_response_move", "g3plus_members", "whites"),
+    "v6's items": ("pension_tr2026", "retiree_health", "added_age_mix", "user_fees", "pension_tr2026_x_retiree_health",
+                   "pension_tr2026_x_added_age_mix", "pension_tr2026_x_user_fees", "retiree_health_x_added_age_mix",
+                   "retiree_health_x_user_fees", "added_age_mix_x_user_fees", "remainder"),
+    "the fee item's parts": ("union_fee_tuition", "union_key_higher_ed", "union_k12_weight_school",
+                             "union_k12_weight_other", "union_fee_health", "union_key_health", "union_key_pell",
+                             "union_capital_k12", "union_capital_college", "union_capital_health_sl",
+                             "union_capital_health_fed"),
+    "the pension item's parts": ("union", "lineage"),
+    "the retiree-health item's parts": ("union", "lineage", "capital_return"),
+}
+
+# v6's fee item, part by part (summary.json's user_fees parts): the staircase label of each. The ledger puts each
+# with the line it edits.
+FEE_PARTS = {
+    "union_fee_tuition": "College tuition by who pays it",
+    "union_key_higher_ed": "Public colleges keyed by use",
+    "union_k12_weight_school": "BEA's K-12 weight: schools",
+    "union_k12_weight_other": "BEA's K-12 weight: other education",
+    "union_fee_health": "Hospital charges by who pays them",
+    "union_key_health": "Public hospitals keyed by use",
+    "union_key_pell": "Pell grants keyed by use",
+    "union_capital_k12": "K-12 capital at its own key",
+    "union_capital_college": "College capital keyed by use",
+    "union_capital_health_sl": "Health capital, state and local",
+    "union_capital_health_fed": "Health capital, federal",
 }
 
 
@@ -296,10 +368,14 @@ LEDGER = [
         ("Income tax keyed to IRS totals", "Taxes corrected with records", None),
         ("Payroll tax compliance", "Taxes corrected with records", None),
         ("Benefits and services checked against records", "Benefits and services corrected with records",
-         "tax credits, medical care, schools, care, workers' compensation"),
+         "tax credits, medical care, schools, care, workers' compensation, Pell grants"),
         ("Workers' compensation", "Benefits and services corrected with records", None),
+        ("Pell grants keyed by use", "Benefits and services corrected with records", None),
+        ("BEA's K-12 weight: schools", "Benefits and services corrected with records", None),
+        ("BEA's K-12 weight: other education", "Benefits and services corrected with records", None),
         ("Pension accrual", "Pension promises earned",
-         "Social Security and Medicare Part A, at the benefits current law can pay"),
+         "Social Security and Medicare Part A, at the benefits current law can pay from each trust fund"),
+        ("Pension accrual on the 2026 Trustees, each fund apart", "Pension promises earned", None),
         ("Gain from their work", "Taxes on the gain from their work", "wages and profits of others"),
         ("Production gain rekeyed", "Taxes on the gain from their work", None),
         ("Property taxes, long run", "Property taxes", "they follow people in the long run"),
@@ -312,7 +388,10 @@ LEDGER = [
          "spending rises about 1% per 1% more pupils"),
         ("Schools, finite removal", "Schools, full cost per pupil", None),
         ("Schools, long run: full cost per pupil", "Schools, full cost per pupil", None),
-        ("Colleges and other education", "Colleges and other education", ""),
+        ("Colleges and other education", "Colleges and other education",
+         "public colleges by measured use, tuition by who pays it"),
+        ("Public colleges keyed by use", "Colleges and other education", None),
+        ("College tuition by who pays it", "Colleges and other education", None),
     ]),
     ("Other public services", [
         ("Police, courts and prisons", "Police, courts and prisons", "charged by use, at state prices"),
@@ -320,28 +399,40 @@ LEDGER = [
         ("General administration", "General administration", "{{q:gg.growth_elasticity|range}}% per 1% more residents"),
         ("General administration, finite removal", "General administration", None),
         ("Welfare administration, housing, community", "Welfare administration, housing, community", ""),
-        ("Public health services", "Public health", "at state prices"),
+        ("Public health services", "Public health", "at state prices, hospitals by use, fees by who pays them"),
         ("State prices: health services", "Public health", None),
+        ("Public hospitals keyed by use", "Public health", None),
+        ("Hospital charges by who pays them", "Public health", None),
         ("Roads, parks: long-run response", "Roads and parks",
-         "0.73% and 0.95% per 1% more residents; roads by miles driven"),
+         "0.73% and 0.95% per 1% more residents, roads by miles driven"),
         ("Roads by miles driven", "Roads and parks", None),
         ("State prices: recreation and culture", "Roads and parks", None),
         ("Rental assistance at 1", "Rental assistance", ""),
         ("Unpaid hospital care", "Unpaid hospital care", "charged by uninsured use"),
+        ("Retiree health on accrual", "Retiree health of public workers", "counted when earned, like public pensions"),
     ]),
     ("Public capital and enterprises", [
         ("Return on public capital", "Return on public capital", "2% real at the low end, 3% at the high end"),
+        ("K-12 capital at its own key", "Return on public capital", None),
+        ("College capital keyed by use", "Return on public capital", None),
+        ("Health capital, state and local", "Return on public capital", None),
+        ("Health capital, federal", "Return on public capital", None),
         ("Government enterprises", "Government enterprises", "operating loss and capital return"),
         ("Enterprise and housing receipts", "Government enterprises", None),
         ("Enterprise housing capital", "Government enterprises", None),
     ]),
     ("Descendants who no longer report Mexican origin", [
-        ("Added descendants priced as third-generation members", "Priced like third-generation members",
-         "{{q:lineage.priced_as_members|value}} people"),
-        ("Added descendants priced as white residents", "Priced like white residents of the same ages",
-         "{{q:lineage.priced_as_whites|value}} people: the share that closes the college gap"),
+        ("Added descendants lost at the third generation's rate", "Lost at the third generation's rate",
+         "{{q:lineage.lost_at_g3_rate|value}} people with their descendants, priced partly like white residents of "
+         "the same ages"),
+        ("Added descendants lost at the third generation's rate, v6's items", "Lost at the third generation's rate",
+         None),
+        ("Added descendants lost a generation later", "Lost a generation later",
+         "{{q:lineage.lost_later|value}} people, priced like third-generation members of the same ages"),
+        ("Added descendants lost a generation later, v6's items", "Lost a generation later", None),
         ("Service responses at the larger group size", "Service responses at the larger group size",
          "for the members who report Mexican origin"),
+        ("Service responses at the larger group size, v6's items", "Service responses at the larger group size", None),
     ]),
 ]
 
@@ -616,11 +707,17 @@ def assumption_rows(s, bands):
         # an additive arm: the accrual at scheduled benefits less the case's, outside the engine
         (count, "Pensions at the benefits scheduled, not those payable", *q("pension.scheduled_change"),
          "approximate", "257"),
-        (count, "Fewer descendants stopped reporting Mexican origin", *vs_main("case.arm_a"), "", "281"),
-        (count, "More descendants stopped reporting Mexican origin", *vs_main("case.arm_c"), "", "281"),
+        (count, "Pensions on one combined trust fund, as if the law changed",
+         *d("pension_tr2026_combined_funds"), "", "286"),
+        (count, "Retiree health promises equal what governments pay in a year", *d("retiree_health_rho_one"), "",
+         "288"),
+        (count, "Fewer descendants stopped reporting Mexican origin", *vs_main("case.arm_a"), "", "295"),
+        (count, "More descendants stopped reporting Mexican origin", *vs_main("case.arm_c"), "", "295"),
+        (count, "Added descendants' ages if childhood reports of origin persisted",
+         *d("added_age_mix_cohort_at_birth"), "", "292"),
         (data, "Sampling noise, 95% interval", q("noise.sampling_95"), q("noise.sampling_95"), "noise", "184"),
         (data, "Share of the college gap that non-identifiers close, one standard error",
-         *q("lineage.c3_se_change"), "pm", "281"),
+         *q("lineage.c3_se_change"), "pm", "295"),
         (data, "Survey answers left uncorrected", *q("corrections.uncorrected_change"), "", "§data"),
         (data, "Census income fill-ins left in", *d("no_fill_in_correction"), "", "208"),
         (econ, "Natives and immigrants are poor substitutes (ε = 3)", *q("production.eps3_change"),

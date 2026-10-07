@@ -25,6 +25,7 @@ RETIRED = {
     138: "replaced by 194", 155: "rating withdrawn", 164: "replaced by 198", 231: "replaced by 238",
     193: "earlier version", 219: "earlier version", 229: "earlier version", 204: "earlier version",
     239: "earlier main estimate, replaced by 275 and 281", 275: "earlier main estimate, replaced by 281",
+    281: "earlier main estimate, replaced by 295",
 }
 
 # How the work was done, not what it found: never shown to readers (operator 2026-09-29: the reader
@@ -59,7 +60,7 @@ GROUPS = [
                ("lineage", "the immigrants, their children and later descendants, whether or not they still "
                            "report Mexican origin")],
         findings=[
-            dict(refs=[281],
+            dict(refs=[295],
                  text="Other residents would be about {{q:case.main|mid}} a year better off "
                       "({{q:case.main|range}}). That is about {{q:case.per_member|mid_range}} per member.",
                  why="The count is {{q:headcount.lineage|value}} people. Of them, "
@@ -76,7 +77,7 @@ GROUPS = [
                  why="CBO counts the federal budget only, new arrivals of all origins, and projected growth "
                      "effects. Two results can conflict only when population, period and outcome match."),
         ],
-        minor=[295],
+        minor=[],
     ),
     dict(
         id="why", part="answer",
@@ -97,13 +98,15 @@ GROUPS = [
                  why="Governments spend more than they tax, so in this account any residents cost others "
                      "something. The group's age mix adds {{q:decomp.age_mix|range_unit}}. Its use of services "
                      "at given ages adds {{q:decomp.use|pair}} at the low and high ends."),
-            dict(refs=[257, 146],
+            dict(refs=[257, 286, 146],
                  text="With pensions counted when earned, the group's direct taxes about equal the benefits "
                       "it draws: {{q:tally.accrual|pair}} at the low and high ends. Schools and other public "
                       "services make the cost.",
                  why="On cash, the members who report Mexican origin pay about $65bn more payroll tax than they "
-                     "draw (63–68), because they are young. That tax buys future benefits worth about $0.97 per tax dollar under current law. "
-                     "Counting the promise when earned, as the main estimate does, adds about "
+                     "draw (63–68), because they are young. Under current law and the Trustees' 2026 projections, "
+                     "that tax buys future benefits worth about {{q:pension.accrual_ratio|value}} per tax dollar. "
+                     "Current law keeps the retirement and disability funds apart, and each fund pays only what it "
+                     "holds. Counting the promise when earned, as the main estimate does, adds about "
                      "{{q:pension.accrual|mid_range}} to the total."),
             dict(refs=[268],
                  text="About {{q:household.net_contributor_share|mid}} of members "
@@ -150,12 +153,15 @@ GROUPS = [
                       "is about {{q:whites.gap_local|mid_range}}.",
                  why="On raw cash the gap is only {{q:whites.gap_cash|mid_range}}, because whites are older and "
                      "draw pensions now. Counting pensions when earned removes that effect. Both sides have the "
-                     "same number of people. The gap comes from taxes and schools."),
+                     "same number of people. As many third-generation whites cost others "
+                     "{{q:whites.own_per_member|range_unit}} each, about break even, so the gap is close to the "
+                     "group's whole cost. The gap comes from taxes and schools."),
             dict(refs=[259],
                  text="Under the same rules, non-Hispanic Black residents cost others about "
-                      "{{q:black.per_member|mid_range}} per member, {{q:black.ratio_engine|range}} times the "
-                      "Mexican-origin figure.",
-                 why="A rough calculation with group shares, not a full model run."),
+                      "{{q:black.per_member|mid_range}} per member. That is {{q:black.ratio_engine|range}} times the "
+                      "main estimate per lineage member, {{q:case.per_member|mid}}.",
+                 why="A rough calculation with group shares, not a full model run. Neither figure counts the "
+                     "costs outside public budgets that the Indian comparison adds."),
         ],
         minor=[151, 152, 153, 167, 177, 179],
     ),
@@ -201,18 +207,19 @@ GROUPS = [
                  why="Counted with their parents, the Mexico-born carry the most, about "
                      "{{q:generation.g1_parents|mid_range}}. The third-plus includes the descendants who no "
                      "longer report Mexican origin."),
-            dict(refs=[178, 232, 236],
+            dict(refs=[178, 232, 236, 293],
                  text="The second generation closes 76% of the gap in finishing school but 31% of the college "
                       "gap. The third generation keeps about 86% of the college gap that is left.",
                  why="CPS 1994–2026 at equal age, with the descendants who stop reporting Mexican origin put "
                      "back."),
-            dict(refs=[280, 158],
+            dict(refs=[280, 158, 292],
                  text="About {{q:identity.loss_g3|value}} of third-generation descendants do not report Mexican "
                       "origin. They close about {{q:identity.c3|value}} of the college gap to whites. They are too "
                       "few to explain the stall: counting them lowers the share of the gap that stays by about "
                       "{{q:identity.stall_share|value}}.",
                  why="Parents and children linked in the CPS, 1994–2026. The main estimate counts these "
-                     "descendants: {{q:headcount.added|value}} people."),
+                     "descendants, {{q:headcount.added|value}} people, at their measured ages. Those lost a generation "
+                     "later are younger than identified third-generation members, and children cost more."),
             dict(refs=[272],
                  text="Second-generation Hispanic sons earn 14% less than white men at 25–27 and 24% less by "
                       "35–40. Daughters' gap, 13% and 18%, does not widen measurably.",
@@ -234,7 +241,7 @@ GROUPS = [
                  text="With measured assimilation rates, a leading pro-migration model loses its Mexico result.",
                  why="Clemens and Pritchett assume faster convergence than the data show."),
         ],
-        minor=[103, 107, 109, 111, 112, 287, 292, 293],
+        minor=[103, 107, 109, 111, 112, 287],
     ),
     dict(
         id="whopays", part="whopays",
@@ -448,7 +455,7 @@ GROUPS = [
                       "costs add 18–27% to a prisoner-year.",
                  why="Prisons are full in 8 states and not in 22."),
         ],
-        minor=[294],
+        minor=[],
     ),
     dict(
         id="conventions", part="build",
@@ -474,6 +481,13 @@ GROUPS = [
                       "{{q:gap_vs_white.per_person_own_ages|value}} at the group's own ages.",
                  why="Children cost now and pay later. Old people draw pensions. Counting pensions when earned, "
                      "as the main estimate does, removes most of this effect."),
+            dict(refs=[288],
+                 text="Public pensions already count when earned. The main estimate counts public workers' retiree "
+                      "health the same way, which adds about {{q:retiree_health.change|range_unit}}.",
+                 why="National accounts book public pensions at the cost of the promises earned each year, but "
+                     "retiree health as paid. Care bought for military retirees pays for past service, so it does "
+                     "not grow with the group. The sign rests on one ratio: state plans' cost of promises earned in "
+                     "a year is {{q:retiree_health.cost_ratio|value}} times what they pay."),
         ],
         minor=[],
     ),
@@ -500,7 +514,7 @@ GROUPS = [
                       "by $11.1bn.",
                  why="Nine pooled MEPS years move cost from adults to children, not the total. CMS records put "
                      "the group at 7.4% of long-term-care dollars, not 12.25%."),
-            dict(refs=[217, 216, 249],
+            dict(refs=[217, 216, 249, 289],
                  text="Fear does not cause people to hide benefits. The income-tax share is slightly too flat at "
                       "the top, so the main estimate uses IRS shares.",
                  why="Administrative totals match the survey where the group lives. IRS data for a year that "
@@ -530,11 +544,21 @@ GROUPS = [
                       "it. That adds about $2–4bn.",
                  why="The group has 8% of household income but drives 10% of the miles. Freight costs "
                      "follow what people buy."),
+            dict(refs=[294],
+                 text="The main estimate charges public colleges and Pell grants by the group's measured use, and "
+                      "counts fees for the people who pay them. With two smaller keys, the college, Pell and fee "
+                      "changes lower the total by {{q:fees.change|range_unit}}.",
+                 why="IPEDS records give the group {{q:fees.use_share|value}} of public colleges' cost, against "
+                     "{{q:fees.item_p_share|value}} on a key of state capital spending per head. At the measured "
+                     "share, colleges cost {{q:fees.college_key|mid}} less. The group receives "
+                     "{{q:fees.pell_share|value}} of Pell grants, which adds {{q:fees.pell|range_unit}}. Tuition "
+                     "and hospital charges add {{q:fees.charges|mid}}. BEA's school share of education spending and "
+                     "the capital keys make up the rest."),
             dict(refs=[127, 129],
                  text="A second survey gives the same earnings and income-tax gaps within 4%.",
                  why="ACS against CPS, with one tax calculator on both."),
         ],
-        minor=[284, 285, 286, 288, 289],
+        minor=[284, 285],
     ),
     dict(
         id="time", part="build",

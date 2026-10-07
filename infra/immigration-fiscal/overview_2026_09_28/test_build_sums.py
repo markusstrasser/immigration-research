@@ -60,7 +60,7 @@ def test_the_prose_sum_adds_as_printed_and_breaks_without_the_footing():
     moved["pairing.footing_reduction"]["expr"] = "(0.0, 0.0)"
     assert B.prose_sum_errors(moved) == [
         "the main estimate, less the low end's offending at the Hispanic average, plus the costs outside the budget, "
-        "low end: the parts print as 495, pairing.total as 490"]
+        "low end: the parts print as 494, pairing.total as 489"]
 
 
 def test_the_capital_return_total_must_say_the_enterprises_are_in():
