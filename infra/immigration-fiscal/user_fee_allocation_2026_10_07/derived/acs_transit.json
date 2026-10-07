@@ -1,0 +1,44 @@
+{
+ "by_mode": {
+  "2": {
+   "commuters": 2768465.0,
+   "group_share": 0.11952471857148275
+  },
+  "3": {
+   "commuters": 2407664.0,
+   "group_share": 0.05884085154739199
+  },
+  "4": {
+   "commuters": 686064.0,
+   "group_share": 0.05139607966603699
+  },
+  "5": {
+   "commuters": 162390.0,
+   "group_share": 0.1012008128579346
+  },
+  "6": {
+   "commuters": 68466.0,
+   "group_share": 0.04466450500978588
+  }
+ },
+ "group": 39429519.0,
+ "group_transit": 527322.0,
+ "group_workers": 18625879.0,
+ "persons": 340110990.0,
+ "population_share": 0.11593132877005827,
+ "source": {
+  "file": "sources/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip",
+  "sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
+  "transit_codes": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "transit": 6093049.0,
+ "transit_commuter_share": 0.08654484807195872,
+ "worker_share": 0.11257702209237172,
+ "workers": 165450095.0
+}

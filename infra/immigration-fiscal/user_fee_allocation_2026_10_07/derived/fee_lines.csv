@@ -1,0 +1,6 @@
+line,nipa,R_bn,account_line,s_U,s_R,s_K,fee_term_bn,fee_term_at_account_key_bn,key_term_bn,status
+S&L tuition and related educational charges,T3.10.5 l58,103.911000,education_services (row 6: 1 - W of the line at item P),0.115896,0.098144,0.139193,1.844605,4.265472,-5.452309,measured: IPEDS FY2023 x ACS 2024
+S&L health and hospital charges,T3.10.5 l59,364.091000,health_services at health_other (+ state-price line),0.072180,0.069036,0.062474,0.945035,-1.972702,-0.303684,insured payers measured (MEPS 2024 x government hospitals' payer mix); uninsured care charged by use in the case
+S&L other sales,T3.10.5 l60,215.758000,several (by function),,,,0.000000,,,not measured: paid per use; about $41bn is federal R&D purchases from S&L universities
+Federal sales to other sectors,T3.10.5 l22,12.043000,federal lines,,,,0.000000,,,below $20bn; not sized
+"Government enterprises (transit, utilities, tolls, airports, liquor)",T3.8 (surplus),,enterprise_surplus receipt (population key) + enterprise capital,,,0.117175,0.000000,,-1.980815,"fees per use, netted in the surplus; transit's loss keyed by population (key term: transit, operating)"

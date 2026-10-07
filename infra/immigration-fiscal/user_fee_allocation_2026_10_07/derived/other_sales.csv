@@ -1,0 +1,16 @@
+census_line,label,fy2022_bn,nipa_treatment
+25.000000,Institutions  of higher education,126.561640,"tuition; auxiliaries (dorms, dining) in other sales"
+26.000000,School lunch sales (gross),1.573323,other sales
+27.000000,Hospitals,223.423712,health and hospital charges
+28.000000,Highways,23.922240,toll facilities are enterprises; the rest other sales
+29.000000,Air transportation (airports),24.359260,enterprise: air and water terminals
+30.000000,Parking facilities,2.957393,enterprise (other)
+31.000000,Sea and inland port facilities,7.717194,enterprise: air and water terminals
+32.000000,Natural resources,6.244736,other sales
+33.000000,Parks and recreation,11.707317,other sales
+34.000000,Housing and community development,8.595801,enterprise: housing and urban renewal
+35.000000,Sewerage,69.833432,enterprise: water and sewerage
+36.000000,Solid waste management,21.970162,other sales
+37.000000,Other charges,95.548522,other sales
+24.000000,Education (all; less lines 25-26 = other education),139.056801,tuition + other sales
+,"IPEDS FY2023 federal operating grants and contracts, public institutions",40.994680,other sales: federal purchases of R&D from S&L (T3.10.5 note 5)

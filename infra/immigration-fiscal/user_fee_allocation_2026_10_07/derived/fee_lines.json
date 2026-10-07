@@ -1,0 +1,618 @@
+{
+ "education_key": {
+  "P_eff": 0.13919330250975342,
+  "W": 0.7949999999999999,
+  "by_allocation": {
+   "personal": {
+    "K_cps": 0.16679929367080085,
+    "K_eff_unpriced": 0.16385244513751096,
+    "P_cps": 0.14169666203545597,
+    "P_eff": 0.13919330250975342,
+    "T0": 199.570140403,
+    "college_edit_bn": -4.0972546463223125,
+    "f": 0.9922027004538233,
+    "k": 1.0341917412164008,
+    "school_edit_bn": 1.3416755831415685,
+    "union_education_bn": 198.01403223780528
+   },
+   "shared": {
+    "K_cps": 0.16130821502989307,
+    "K_eff_unpriced": 0.15845837755777725,
+    "P_cps": 0.14169666203545597,
+    "P_eff": 0.13919330250681983,
+    "T0": 193.36546004,
+    "college_edit_bn": -3.1776302978137583,
+    "f": 0.9922027004329118,
+    "k": 1.034191741216401,
+    "school_edit_bn": 2.08224885191455,
+    "union_education_bn": 191.85773162214028
+   }
+  }
+ },
+ "engine_lines": {
+  "fee_health": {
+   "by": {
+    "personal": 0.9450346146182799,
+    "shared": 0.9450346146182799
+   },
+   "label": "Public hospitals: fees the group's insured care pays short of its use (user-fee lane; candidate)",
+   "parent": "health_services",
+   "response_class": "service"
+  },
+  "fee_tuition": {
+   "by": {
+    "personal": 1.8446046211830234,
+    "shared": 1.8446046211830234
+   },
+   "label": "Public colleges: tuition the group pays short of its use (user-fee lane; candidate)",
+   "parent": "education_services",
+   "response_class": "service"
+  },
+  "key_health": {
+   "by": {
+    "personal": -0.30368354540915365,
+    "shared": -0.30368354540915365
+   },
+   "label": "Public hospitals: the insured net keyed by use, not the health key (user-fee lane; candidate)",
+   "parent": "health_services",
+   "response_class": "service"
+  },
+  "key_higher_ed": {
+   "by": {
+    "personal": -5.452309063339062,
+    "shared": -5.452309063339062
+   },
+   "label": "Public colleges keyed by measured use, not item P (user-fee lane; candidate)",
+   "parent": "education_services",
+   "response_class": "service"
+  },
+  "key_pell": {
+   "by": {
+    "personal": 3.969390129227313,
+    "shared": 3.8679984770699996
+   },
+   "label": "Pell grants keyed by the group's Pell share, not cash income (user-fee lane; candidate)",
+   "parent": "other_federal_benefits",
+   "response_class": "household_transfer"
+  },
+  "key_transit": {
+   "by": {
+    "personal": -1.9808146212797055,
+    "shared": -1.9808146212797055
+   },
+   "label": "Transit loss keyed by the group's transit share, not population (user-fee lane; candidate)",
+   "parent_receipt": "enterprise_surplus",
+   "response_class": "service"
+  }
+ },
+ "frames": {
+  "acs_group": 39429519.0,
+  "household_fraction": 0.9900527050616406,
+  "lineage": 42752212.92438524,
+  "lineage_scale": 1.0765431565284542,
+  "meps_frame": 0.9347214525888224,
+  "phi": 1.0071767127364655,
+  "resident": 340110988.0,
+  "union": 39712493.3312
+ },
+ "health": {
+  "central": {
+   "personal": {
+    "G_insured_bn": 269.3378571282229,
+    "R_insured_bn": 300.627761377738,
+    "dev_medicaid": 0.0,
+    "dev_medicare": 0.0,
+    "dev_private_other": 0.0,
+    "fee_term_bn": 0.9450346146182799,
+    "g_bn": 295.65077621100204,
+    "key_term_bn": -0.30368354540915365,
+    "mix_medicare": 0.35,
+    "mix_private_other": 0.36,
+    "pcr_medicaid": 0.954,
+    "pcr_medicare": 0.868,
+    "pcr_private_other": 1.448,
+    "residual_bn": 0.6413510692091262,
+    "s_K": 0.062474459572071636,
+    "s_R": 0.06903640233747334,
+    "s_U": 0.072179939748281
+   },
+   "shared": {
+    "G_insured_bn": 269.3378571282229,
+    "R_insured_bn": 300.627761377738,
+    "dev_medicaid": 0.0,
+    "dev_medicare": 0.0,
+    "dev_private_other": 0.0,
+    "fee_term_bn": 0.9450346146182799,
+    "g_bn": 295.65077621100204,
+    "key_term_bn": -0.30368354540915365,
+    "mix_medicare": 0.35,
+    "mix_private_other": 0.36,
+    "pcr_medicaid": 0.954,
+    "pcr_medicare": 0.868,
+    "pcr_private_other": 1.448,
+    "residual_bn": 0.6413510692091262,
+    "s_K": 0.062474459572071636,
+    "s_R": 0.06903640233747334,
+    "s_U": 0.072179939748281
+   }
+  },
+  "fee_term_at_account_key_bn": {
+   "personal": -1.972702163851557,
+   "shared": -1.972702163851557
+  },
+  "meps_frame_raw": {
+   "personal": 0.5496217798384782,
+   "shared": 0.5496217798384782
+  },
+  "nipa_charges_g": {
+   "personal": 0.7767418120977017,
+   "shared": 0.7767418120977017
+  },
+  "ranges_bn": {
+   "fee_term_bn": [
+    -1.0953639165737397,
+    4.1814094584771615
+   ],
+   "residual_bn": [
+    -1.0780876316035997,
+    2.6654788988891713
+   ]
+  },
+  "s_K": {
+   "personal": 0.062474459572071636,
+   "shared": 0.062474459572071636
+  }
+ },
+ "higher_ed": {
+  "U": 0.11589579410930383,
+  "U_capital": 0.11681188165681472,
+  "college_key_union": {
+   "personal": 0.15879732089882068,
+   "shared": 0.15450903717233097
+  },
+  "fee_term_at_account_key_bn": 4.265472016582142,
+  "fee_term_bn": 1.8446046211830234,
+  "higher_dollars_bn": 234.029706937839,
+  "key_term_bn": -5.452309063339062,
+  "ranges_bn": {
+   "fee_term_at_account_key_bn": [
+    3.2007662766475447,
+    7.375209640982021
+   ],
+   "fee_term_bn": [
+    -0.14767065928939319,
+    5.414521069451412
+   ],
+   "key_term_bn": [
+    -7.541393257856792,
+    -4.415888325506238
+   ],
+   "operating_block_bn": [
+    -7.689063917146186,
+    0.9986327439451745
+   ]
+  },
+  "s_R": 0.0981440197910601,
+  "s_R_acs": 0.0974446872628797,
+  "s_U_acs": 0.11506996999009124
+ },
+ "nipa": {
+  "consumption_bn": {
+   "higher": 229.963,
+   "k12": 939.021,
+   "libother": 40.221999999999994
+  },
+  "education_line_bn": 1221.159,
+  "federal_bn": 12.043,
+  "federal_education_bn": 11.953000000000202,
+  "health_bn": 364.091,
+  "implied_investment_bn": {
+   "higher": 63.69300000000001,
+   "k12": 114.52400000000011,
+   "libother": 2.6070000000000064
+  },
+  "kappa": 0.9606787330316742,
+  "other_bn": 215.758,
+  "sl_education_benefits_bn": 64.479,
+  "sl_education_consumption_bn": 1209.206,
+  "sl_sales_bn": 683.76,
+  "transit_loss_bn": 66.69,
+  "tuition_bn": 103.911,
+  "weights": {
+   "consolidated": {
+    "higher": 0.19164556535048996,
+    "k12": 0.7748343991241108,
+    "libother": 0.03352003552539933
+   },
+   "federal_k12": {
+    "higher": 0.18831536270051646,
+    "k12": 0.7787470755241538,
+    "libother": 0.032937561775329825
+   },
+   "federal_non_k12": {
+    "higher": 0.18831536270051646,
+    "k12": 0.7689588333705929,
+    "libother": 0.04272580392889066
+   },
+   "sl_mix": {
+    "higher": 0.1901768598567986,
+    "k12": 0.7765599906054056,
+    "libother": 0.033263149537795876
+   }
+  }
+ },
+ "other_sales": {
+  "paid_by_persons_and_business_bn": 174.76332048,
+  "per_001_gap_bn": 1.7476332048
+ },
+ "pell": {
+  "arms": [
+   {
+    "intensity": "mid",
+    "private": "central",
+    "public": "central",
+    "share": 0.16934316598742194,
+    "term_personal_bn": 3.969390129227313,
+    "term_shared_bn": 3.8679984770699996
+   },
+   {
+    "intensity": "mid",
+    "private": "low",
+    "public": "central",
+    "share": 0.15461767329286352,
+    "term_personal_bn": 3.5090123256246386,
+    "term_shared_bn": 3.407620673467325
+   },
+   {
+    "intensity": "mid",
+    "private": "high",
+    "public": "central",
+    "share": 0.18406865868198036,
+    "term_personal_bn": 4.4297679328299875,
+    "term_shared_bn": 4.328376280672674
+   },
+   {
+    "intensity": "mid",
+    "private": "central",
+    "public": "low",
+    "share": 0.16474144952037242,
+    "term_personal_bn": 3.825522065601477,
+    "term_shared_bn": 3.724130413444163
+   },
+   {
+    "intensity": "mid",
+    "private": "low",
+    "public": "low",
+    "share": 0.1454142403587645,
+    "term_personal_bn": 3.2212761983729665,
+    "term_shared_bn": 3.119884546215653
+   },
+   {
+    "intensity": "mid",
+    "private": "high",
+    "public": "low",
+    "share": 0.18406865868198036,
+    "term_personal_bn": 4.4297679328299875,
+    "term_shared_bn": 4.328376280672674
+   },
+   {
+    "intensity": "mid",
+    "private": "central",
+    "public": "high",
+    "share": 0.17256436751435658,
+    "term_personal_bn": 4.070097773765398,
+    "term_shared_bn": 3.968706121608084
+   },
+   {
+    "intensity": "mid",
+    "private": "low",
+    "public": "high",
+    "share": 0.1610600763467328,
+    "term_personal_bn": 3.710427614700808,
+    "term_shared_bn": 3.6090359625434942
+   },
+   {
+    "intensity": "mid",
+    "private": "high",
+    "public": "high",
+    "share": 0.18406865868198036,
+    "term_personal_bn": 4.4297679328299875,
+    "term_shared_bn": 4.328376280672674
+   },
+   {
+    "intensity": "none",
+    "private": "central",
+    "public": "central",
+    "share": 0.14977001834109724,
+    "term_personal_bn": 3.3574552412126177,
+    "term_shared_bn": 3.256063589055304
+   },
+   {
+    "intensity": "none",
+    "private": "low",
+    "public": "central",
+    "share": 0.13674653848534968,
+    "term_personal_bn": 2.9502891670025257,
+    "term_shared_bn": 2.8488975148452123
+   },
+   {
+    "intensity": "none",
+    "private": "high",
+    "public": "central",
+    "share": 0.16279349819684483,
+    "term_personal_bn": 3.76462131542271,
+    "term_shared_bn": 3.6632296632653967
+   },
+   {
+    "intensity": "none",
+    "private": "central",
+    "public": "low",
+    "share": 0.14570018088617612,
+    "term_personal_bn": 3.2302158430219636,
+    "term_shared_bn": 3.12882419086465
+   },
+   {
+    "intensity": "none",
+    "private": "low",
+    "public": "low",
+    "share": 0.1286068635755074,
+    "term_personal_bn": 2.695810370621217,
+    "term_shared_bn": 2.5944187184639036
+   },
+   {
+    "intensity": "none",
+    "private": "high",
+    "public": "low",
+    "share": 0.16279349819684483,
+    "term_personal_bn": 3.76462131542271,
+    "term_shared_bn": 3.6632296632653967
+   },
+   {
+    "intensity": "none",
+    "private": "central",
+    "public": "high",
+    "share": 0.15261890455954202,
+    "term_personal_bn": 3.4465228199460753,
+    "term_shared_bn": 3.345131167788762
+   },
+   {
+    "intensity": "none",
+    "private": "low",
+    "public": "high",
+    "share": 0.14244431092223922,
+    "term_personal_bn": 3.1284243244694405,
+    "term_shared_bn": 3.027032672312127
+   },
+   {
+    "intensity": "none",
+    "private": "high",
+    "public": "high",
+    "share": 0.16279349819684483,
+    "term_personal_bn": 3.76462131542271,
+    "term_shared_bn": 3.6632296632653967
+   },
+   {
+    "intensity": "npsas",
+    "private": "central",
+    "public": "central",
+    "share": 0.18891631363374659,
+    "term_personal_bn": 4.581325017242007,
+    "term_shared_bn": 4.479933365084693
+   },
+   {
+    "intensity": "npsas",
+    "private": "low",
+    "public": "central",
+    "share": 0.17248880810037734,
+    "term_personal_bn": 4.067735484246751,
+    "term_shared_bn": 3.966343832089437
+   },
+   {
+    "intensity": "npsas",
+    "private": "high",
+    "public": "central",
+    "share": 0.20534381916711586,
+    "term_personal_bn": 5.094914550237264,
+    "term_shared_bn": 4.99352289807995
+   },
+   {
+    "intensity": "npsas",
+    "private": "central",
+    "public": "low",
+    "share": 0.1837827181545687,
+    "term_personal_bn": 4.4208282881809895,
+    "term_shared_bn": 4.319436636023676
+   },
+   {
+    "intensity": "npsas",
+    "private": "low",
+    "public": "low",
+    "share": 0.16222161714202155,
+    "term_personal_bn": 3.746742026124715,
+    "term_shared_bn": 3.6453503739674016
+   },
+   {
+    "intensity": "npsas",
+    "private": "high",
+    "public": "low",
+    "share": 0.20534381916711586,
+    "term_personal_bn": 5.094914550237264,
+    "term_shared_bn": 4.99352289807995
+   },
+   {
+    "intensity": "npsas",
+    "private": "central",
+    "public": "high",
+    "share": 0.1925098304691711,
+    "term_personal_bn": 4.693672727584719,
+    "term_shared_bn": 4.5922810754274055
+   },
+   {
+    "intensity": "npsas",
+    "private": "low",
+    "public": "high",
+    "share": 0.17967584177122636,
+    "term_personal_bn": 4.292430904932175,
+    "term_shared_bn": 4.191039252774861
+   },
+   {
+    "intensity": "npsas",
+    "private": "high",
+    "public": "high",
+    "share": 0.20534381916711586,
+    "term_personal_bn": 5.094914550237264,
+    "term_shared_bn": 4.99352289807995
+   }
+  ],
+  "range_bn": [
+   2.5944187184639036,
+   5.094914550237264
+  ],
+  "s_cash_union": {
+   "personal": 0.04237956154693726,
+   "shared": 0.045622641516145084
+  },
+  "share": 0.16934316598742194,
+  "share_public_acs": {
+   "mid": 0.1827570637349944,
+   "none": 0.16163350099163862,
+   "npsas": 0.20388062647835012
+  },
+  "term_bn": {
+   "personal": 3.969390129227313,
+   "shared": 3.8679984770699996
+  },
+  "total_bn": 31.264
+ },
+ "post_engine": {
+  "college_capital": {
+   "component": "college",
+   "key_target": {
+    "personal": 0.11681188165681472,
+    "shared": 0.11681188165681472
+   },
+   "key_union": {
+    "personal": 0.15879732089882068,
+    "shared": 0.15450903717233097
+   },
+   "rule": "stock x rate x response x (key_target - key_union)"
+  },
+  "k12_capital": {
+   "component": "k12",
+   "key_target": {
+    "personal": 0.16945484553932724,
+    "shared": 0.16387634539680354
+   },
+   "key_union": {
+    "personal": 0.16325122921826465,
+    "shared": 0.15881632160435685
+   },
+   "rule": "stock x rate x response x (key_target - key_union)"
+  },
+  "key_k12_weight": {
+   "by_weights": {
+    "consolidated": {
+     "personal": {
+      "A": -0.6072413741612914,
+      "B": -0.1379613788668882
+     },
+     "shared": {
+      "A": -0.4744102754129796,
+      "B": -0.1334196523129966
+     }
+    },
+    "federal_k12": {
+     "personal": {
+      "A": -0.4894199906858631,
+      "B": -0.11119310974700936
+     },
+     "shared": {
+      "A": -0.3823617468335195,
+      "B": -0.10753260197812839
+     }
+    },
+    "federal_non_k12": {
+     "personal": {
+      "A": -0.7841707225154554,
+      "B": -0.17815860174992085
+     },
+     "shared": {
+      "A": -0.6126371888825534,
+      "B": -0.172293571558011
+     }
+    },
+    "sl_mix": {
+     "personal": {
+      "A": -0.5552790969749303,
+      "B": -0.12615587990925342
+     },
+     "shared": {
+      "A": -0.4338144937682996,
+      "B": -0.1220027936294603
+     }
+    }
+   },
+   "central": "consolidated",
+   "rule": "A + B x school fraction, at the education line's response"
+  },
+  "transit_capital": {
+   "component": "ent_transit_sl",
+   "key_shift": {
+    "personal": -0.029701823680907267,
+    "shared": -0.029701823680907267
+   },
+   "rule": "stock x rate x response x key_shift"
+  }
+ },
+ "transit": {
+  "mode_arms": {
+   "bus": {
+    "operating_term_bn": 0.24221474941976756,
+    "ratio": 1.0309958476241718
+   },
+   "rail": {
+    "operating_term_bn": -3.811553385598297,
+    "ratio": 0.512241396387237
+   }
+  },
+  "operating_term_bn": {
+   "personal": -1.9808146212797055,
+   "shared": -1.9808146212797055
+  },
+  "ratio": 0.7465182103071932,
+  "s_ent_union": {
+   "personal": 0.11717537467643237,
+   "shared": 0.11717537467643237
+  }
+ },
+ "union_reads": {
+  "receipt:enterprise_surplus": {
+   "personal": -0.8392100334326085,
+   "shared": -0.8392100334326085
+  },
+  "spending:college_rekey/k": {
+   "personal": -4.0972546463223125,
+   "shared": -3.1776302978137583
+  },
+  "spending:education_services/education_mix": {
+   "personal": 198.01403223780528,
+   "shared": 191.85773162214028
+  },
+  "spending:health_services/health_other": {
+   "personal": 17.35122674173727,
+   "shared": 17.35122674173727
+  },
+  "spending:other_federal_benefits/all_cash": {
+   "personal": 3.6626536066940525,
+   "shared": 3.942936793032839
+  },
+  "spending:school_reprice/k": {
+   "personal": 1.3416755831415685,
+   "shared": 2.08224885191455
+  },
+  "spending:state_price_health_services/k": {
+   "personal": 1.7996316210259964,
+   "shared": 1.7996316210259964
+  }
+ }
+}

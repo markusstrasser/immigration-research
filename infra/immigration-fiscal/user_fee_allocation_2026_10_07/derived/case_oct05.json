@@ -1,0 +1,284 @@
+{
+ "lane": "user_fee_allocation_2026_10_07",
+ "case": "main_case_2026_10_05 (v5)",
+ "gates": [
+  "case: consumer.cjs gives summary.json's band at the ends 48 / 11 (1e-9)",
+  "case: the ends are the specifications' lowest and highest costs",
+  "case: fee_lines.py's union reads equal the engine's on the pre-lineage edits (1e-9)",
+  "case: education, health, other federal benefits, the enterprise receipt and the college, K-12 and transit capital respond at 1 at every specification",
+  "case: each capital component's return is stock x rate x key x response",
+  "case: the college and K-12 capital keys are the union's part plus the lineage's edits over the line's national, and the transit key is the receipt's, its union part the case's rekeyed share (1e-12)",
+  "case: the lines at zero reproduce every specification's cost exactly",
+  "case: engine edit fee_health: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "case: engine edit fee_tuition: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "case: engine edit key_health: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "case: engine edit key_higher_ed: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "case: engine edit key_pell: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "case: engine edit key_transit: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "case: engine edit fee: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "case: engine edit all: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "cash: consumer.cjs gives summary.json's band at the ends 48 / 11 (1e-9)",
+  "cash: the ends are the specifications' lowest and highest costs",
+  "cash: fee_lines.py's union reads equal the engine's on the pre-lineage edits (1e-9)",
+  "cash: education, health, other federal benefits, the enterprise receipt and the college, K-12 and transit capital respond at 1 at every specification",
+  "cash: each capital component's return is stock x rate x key x response",
+  "cash: the college and K-12 capital keys are the union's part plus the lineage's edits over the line's national, and the transit key is the receipt's, its union part the case's rekeyed share (1e-12)",
+  "cash: the lines at zero reproduce every specification's cost exactly",
+  "cash: engine edit fee_health: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "cash: engine edit fee_tuition: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "cash: engine edit key_health: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "cash: engine edit key_higher_ed: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "cash: engine edit key_pell: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "cash: engine edit key_transit: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "cash: engine edit fee: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)",
+  "cash: engine edit all: the change at every specification is the sum of its lines' amounts at the allocation (1e-9)"
+ ],
+ "sets": {
+  "case": {
+   "band_bn": [
+    390.29395820202535,
+    461.24312471796554
+   ],
+   "ends": {
+    "low": {
+     "spec": 48,
+     "allocation": "shared",
+     "base_cost_bn": 390.2939582020253,
+     "lines_bn": {
+      "fee_health": 0.9450346146182937,
+      "fee_tuition": 1.8446046211830094,
+      "key_health": -0.30368354540917153,
+      "key_higher_ed": -5.452309063339044,
+      "key_pell": 3.867998477069989,
+      "key_transit": -1.9808146212797055
+     },
+     "post_engine_bn": {
+      "k12_weight_bn": -0.569849063863394,
+      "k12_weight_consolidated_bn": -0.569849063863394,
+      "k12_weight_federal_k12_bn": -0.4592828081149354,
+      "k12_weight_federal_non_k12_bn": -0.7358835730712608,
+      "k12_weight_sl_mix_bn": -0.5210864856353282,
+      "capital_college_bn": -0.9035160739511863,
+      "capital_k12_bn": 0.2756619493281928,
+      "capital_transit_bn": -0.30046283648293187
+     },
+     "blocks_bn": {
+      "fee_terms": 2.789639235801303,
+      "education": -4.8054076306424225,
+      "health": 0.6413510692091222,
+      "pell": 3.867998477069989,
+      "transit": -2.2812774577626374,
+      "total": -2.5773355421259487,
+      "education_and_pell": -0.9374091535724336
+     },
+     "cost_with_fee_terms_bn": 393.0835974378266,
+     "cost_with_all_bn": 387.7166226598994
+    },
+    "high": {
+     "spec": 11,
+     "allocation": "personal",
+     "base_cost_bn": 461.24312471796566,
+     "lines_bn": {
+      "fee_health": 0.9450346146182937,
+      "fee_tuition": 1.8446046211830094,
+      "key_health": -0.30368354540917153,
+      "key_higher_ed": -5.452309063339044,
+      "key_pell": 3.9693901292272926,
+      "key_transit": -1.9808146212797055
+     },
+     "post_engine_bn": {
+      "k12_weight_bn": -0.7266001626658911,
+      "k12_weight_consolidated_bn": -0.7266001626658911,
+      "k12_weight_federal_k12_bn": -0.5856199198143432,
+      "k12_weight_federal_non_k12_bn": -0.9383065759057098,
+      "k12_weight_sl_mix_bn": -0.6644242295647456,
+      "capital_college_bn": -1.509444892126118,
+      "capital_k12_bn": 0.5069445435714289,
+      "capital_transit_bn": -0.4506942547243977
+     },
+     "blocks_bn": {
+      "fee_terms": 2.789639235801303,
+      "education": -5.336804953376615,
+      "health": 0.6413510692091222,
+      "pell": 3.9693901292272926,
+      "transit": -2.431508876004103,
+      "total": -3.157572630944303,
+      "education_and_pell": -1.3674148241493222
+     },
+     "cost_with_fee_terms_bn": 464.03276395376696,
+     "cost_with_all_bn": 458.08555208702137
+    }
+   },
+   "band_with_fee_terms_bn": [
+    393.0835974378266,
+    464.03276395376696
+   ],
+   "band_with_all_bn": [
+    387.7166226598994,
+    458.08555208702137
+   ],
+   "ends_hold_with_all": true
+  },
+  "cash": {
+   "band_bn": [
+    307.37637615801015,
+    383.40925212667577
+   ],
+   "ends": {
+    "low": {
+     "spec": 48,
+     "allocation": "shared",
+     "base_cost_bn": 307.37637615801015,
+     "lines_bn": {
+      "fee_health": 0.9450346146182937,
+      "fee_tuition": 1.8446046211830094,
+      "key_health": -0.30368354540917153,
+      "key_higher_ed": -5.452309063339044,
+      "key_pell": 3.867998477069989,
+      "key_transit": -1.9808146212797055
+     },
+     "post_engine_bn": {
+      "k12_weight_bn": -0.569849063863394,
+      "k12_weight_consolidated_bn": -0.569849063863394,
+      "k12_weight_federal_k12_bn": -0.4592828081149354,
+      "k12_weight_federal_non_k12_bn": -0.7358835730712608,
+      "k12_weight_sl_mix_bn": -0.5210864856353282,
+      "capital_college_bn": -0.9035160739511863,
+      "capital_k12_bn": 0.2756619493281928,
+      "capital_transit_bn": -0.30046283648293187
+     },
+     "blocks_bn": {
+      "fee_terms": 2.789639235801303,
+      "education": -4.8054076306424225,
+      "health": 0.6413510692091222,
+      "pell": 3.867998477069989,
+      "transit": -2.2812774577626374,
+      "total": -2.5773355421259487,
+      "education_and_pell": -0.9374091535724336
+     },
+     "cost_with_fee_terms_bn": 310.16601539381145,
+     "cost_with_all_bn": 304.7990406158842
+    },
+    "high": {
+     "spec": 11,
+     "allocation": "personal",
+     "base_cost_bn": 383.4092521266758,
+     "lines_bn": {
+      "fee_health": 0.9450346146182937,
+      "fee_tuition": 1.8446046211830094,
+      "key_health": -0.30368354540917153,
+      "key_higher_ed": -5.452309063339044,
+      "key_pell": 3.9693901292272926,
+      "key_transit": -1.9808146212797055
+     },
+     "post_engine_bn": {
+      "k12_weight_bn": -0.7266001626658911,
+      "k12_weight_consolidated_bn": -0.7266001626658911,
+      "k12_weight_federal_k12_bn": -0.5856199198143432,
+      "k12_weight_federal_non_k12_bn": -0.9383065759057098,
+      "k12_weight_sl_mix_bn": -0.6644242295647456,
+      "capital_college_bn": -1.509444892126118,
+      "capital_k12_bn": 0.5069445435714289,
+      "capital_transit_bn": -0.4506942547243977
+     },
+     "blocks_bn": {
+      "fee_terms": 2.789639235801303,
+      "education": -5.336804953376615,
+      "health": 0.6413510692091222,
+      "pell": 3.9693901292272926,
+      "transit": -2.431508876004103,
+      "total": -3.157572630944303,
+      "education_and_pell": -1.3674148241493222
+     },
+     "cost_with_fee_terms_bn": 386.1988913624771,
+     "cost_with_all_bn": 380.25167949573154
+    }
+   },
+   "band_with_fee_terms_bn": [
+    310.16601539381145,
+    386.1988913624771
+   ],
+   "band_with_all_bn": [
+    304.7990406158842,
+    380.25167949573154
+   ],
+   "ends_hold_with_all": true
+  }
+ },
+ "arms": {
+  "tuition_fee_term_at_the_account_key_bn": 4.265472016582142,
+  "health_fee_term_at_the_account_key_bn": -1.972702163851557,
+  "tuition_ranges_bn": {
+   "fee_term_at_account_key_bn": [
+    3.2007662766475447,
+    7.375209640982021
+   ],
+   "fee_term_bn": [
+    -0.14767065928939319,
+    5.414521069451412
+   ],
+   "key_term_bn": [
+    -7.541393257856792,
+    -4.415888325506238
+   ],
+   "operating_block_bn": [
+    -7.689063917146186,
+    0.9986327439451745
+   ]
+  },
+  "health_ranges_bn": {
+   "fee_term_bn": [
+    -1.0953639165737397,
+    4.1814094584771615
+   ],
+   "residual_bn": [
+    -1.0780876316035997,
+    2.6654788988891713
+   ]
+  },
+  "health_raw_meps_frame_residual_bn": 0.5496217798384782,
+  "health_nipa_charges_g_residual_bn": 0.7767418120977017,
+  "pell_range_bn": [
+   2.5944187184639036,
+   5.094914550237264
+  ],
+  "transit_mode_arms_operating_bn": {
+   "bus": {
+    "operating_term_bn": 0.24221474941976756,
+    "ratio": 1.0309958476241718
+   },
+   "rail": {
+    "operating_term_bn": -3.811553385598297,
+    "ratio": 0.512241396387237
+   }
+  },
+  "other_sales_per_001_gap_bn": 1.7476332048,
+  "lineage_per_member_scale": 1.0765431565284542,
+  "k12_weight_at_ends_bn": {
+   "low": {
+    "consolidated": -0.569849063863394,
+    "federal_k12": -0.4592828081149354,
+    "federal_non_k12": -0.7358835730712608,
+    "sl_mix": -0.5210864856353282
+   },
+   "high": {
+    "consolidated": -0.7266001626658911,
+    "federal_k12": -0.5856199198143432,
+    "federal_non_k12": -0.9383065759057098,
+    "sl_mix": -0.6644242295647456
+   }
+  },
+  "k12_weight_central": "consolidated",
+  "higher_education_dollars_by_weights_bn": {
+   "consolidated": 234.029706937839,
+   "federal_k12": 229.963,
+   "federal_non_k12": 229.963,
+   "sl_mix": 232.23618400586835
+  },
+  "rates": {
+   "low": 0.02,
+   "high": 0.03
+  }
+ },
+ "method": "engine edit (synthetic lines at response 1 through main_case_candidate_v4_2026_09_29/consumer.cjs) plus post-engine capital and K-12 weight terms; first order is exact here (gated)"
+}

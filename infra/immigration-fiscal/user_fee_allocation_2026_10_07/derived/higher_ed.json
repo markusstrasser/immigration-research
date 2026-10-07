@@ -1,0 +1,181 @@
+{
+ "arms_range": {
+  "rho": [
+   0.5669467081151236,
+   1.013289963908498
+  ],
+  "s_R": [
+   0.06773139703100553,
+   0.10761815745193393
+  ],
+  "s_U": [
+   0.10620667457992514,
+   0.11946695529141703
+  ]
+ },
+ "by_sector": {
+  "four_year_and_other": {
+   "er_cost_bn": 187.603337316,
+   "fte": 7370640.937181,
+   "mexican_fte_share": 0.11956681579027592,
+   "net_tuition_bn": 74.119919086,
+   "pell_bn": 12.199790403,
+   "units": 1036.0
+  },
+  "two_year": {
+   "er_cost_bn": 39.666072889,
+   "fte": 2513908.116626,
+   "mexican_fte_share": 0.1786914121988801,
+   "net_tuition_bn": 6.916643861,
+   "pell_bn": 5.810378004,
+   "units": 852.0
+  }
+ },
+ "central": {
+  "cost": "education_and_related",
+  "cost_total_bn": 222.212164575,
+  "fee": "net_tuition_plus_pell",
+  "fee_total_bn": 98.936083458,
+  "grad_cost": 2.0,
+  "pell_intensity": "mid",
+  "rho": 0.8468298659612994,
+  "s_R": 0.0974446872628797,
+  "s_U": 0.11506996999009124,
+  "theta": 0.5
+ },
+ "central_spec": {
+  "cost": "education_and_related",
+  "fee": "net_tuition_plus_pell",
+  "grad_cost": 2.0,
+  "pell_intensity": "mid",
+  "theta": 0.5
+ },
+ "coverage": {
+  "finance_units": 1888,
+  "fte_in_f1a": 9884549.053807,
+  "fte_public_50_dc": 10060104.225244999,
+  "fte_share_in_f1a": 0.982549368524686,
+  "largest_outside": [
+   {
+    "fte": 49378.00895,
+    "unitid": 214777
+   },
+   {
+    "fte": 29954.788921,
+    "unitid": 215293
+   },
+   {
+    "fte": 27848.670832,
+    "unitid": 216339
+   },
+   {
+    "fte": 22669.71239,
+    "unitid": 130943
+   },
+   {
+    "fte": 7534.2560140000005,
+    "unitid": 479956
+   }
+  ]
+ },
+ "enrollment": {
+  "fte_gr": 1126835.1257139998,
+  "fte_ug": 8757713.928093001,
+  "hispanic_fte_share_gr": 0.10909148492163723,
+  "hispanic_fte_share_ug": 0.22949960808489842,
+  "mexican_fte_share": 0.13460379947003018,
+  "mexican_fte_share_gr": 0.058825528175798864,
+  "mexican_fte_share_ug": 0.14435401722792154,
+  "nonresident_alien_fte_share": 0.05030620011921376
+ },
+ "ipeds_public_f1a_totals_bn": {
+  "F1B01": 81.036562947,
+  "F1B02": 40.99467952,
+  "F1B05": 30.431445385,
+  "F1B26": 15.4756988,
+  "F1C011": 122.507638369,
+  "F1C111": 37.386137581,
+  "F1C121": 72.302771706,
+  "F1C191": 463.834697136,
+  "F1E01": 18.010168407,
+  "F1E08": 34.636820348
+ },
+ "nipa_tuition_2024_bn": 103.911,
+ "pell_hispanic_ratio": 1.2613760465962869,
+ "pell_intensity": {
+  "mid": 1.1306880232981436,
+  "none": 1.0,
+  "npsas": 1.2613760465962869
+ },
+ "pell_share_public": {
+  "mid": 0.1827570637349944,
+  "none": 0.16163350099163862,
+  "npsas": 0.20388062647835012
+ },
+ "top_states": {
+  "AZ": {
+   "er_cost_bn": 5.586,
+   "er_cost_per_fte": 20765.0236,
+   "fte": 269010.7813,
+   "mexican_fte": 63685.3721,
+   "net_tuition_bn": 3.0013,
+   "net_tuition_per_fte": 11156.9055
+  },
+  "CA": {
+   "er_cost_bn": 36.7455,
+   "er_cost_per_fte": 25573.1394,
+   "fte": 1436879.9633,
+   "mexican_fte": 514881.1771,
+   "net_tuition_bn": 8.7309,
+   "net_tuition_per_fte": 6076.309
+  },
+  "CO": {
+   "er_cost_bn": 5.2731,
+   "er_cost_per_fte": 25636.9184,
+   "fte": 205682.3632,
+   "mexican_fte": 28438.485,
+   "net_tuition_bn": 2.6515,
+   "net_tuition_per_fte": 12891.4443
+  },
+  "FL": {
+   "er_cost_bn": 9.9244,
+   "er_cost_per_fte": 17816.0555,
+   "fte": 557050.6444,
+   "mexican_fte": 21838.449,
+   "net_tuition_bn": 2.6107,
+   "net_tuition_per_fte": 4686.6407
+  },
+  "IL": {
+   "er_cost_bn": 7.2719,
+   "er_cost_per_fte": 24653.6982,
+   "fte": 294962.7244,
+   "mexican_fte": 50465.4249,
+   "net_tuition_bn": 2.4745,
+   "net_tuition_per_fte": 8389.1861
+  },
+  "NM": {
+   "er_cost_bn": 1.4141,
+   "er_cost_per_fte": 19880.2308,
+   "fte": 71130.4527,
+   "mexican_fte": 27131.0545,
+   "net_tuition_bn": 0.2642,
+   "net_tuition_per_fte": 3714.0051
+  },
+  "TX": {
+   "er_cost_bn": 22.8837,
+   "er_cost_per_fte": 23073.201,
+   "fte": 991788.6466,
+   "mexican_fte": 323088.7458,
+   "net_tuition_bn": 6.8677,
+   "net_tuition_per_fte": 6924.5688
+  },
+  "WA": {
+   "er_cost_bn": 6.3233,
+   "er_cost_per_fte": 28451.1564,
+   "fte": 222252.0751,
+   "mexican_fte": 24966.2327,
+   "net_tuition_bn": 2.0961,
+   "net_tuition_per_fte": 9431.3423
+  }
+ }
+}

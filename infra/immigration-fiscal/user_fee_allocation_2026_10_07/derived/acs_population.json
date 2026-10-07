@@ -1,0 +1,26 @@
+{
+ "hispanic": 67997162.0,
+ "mexican_origin": 39429519.0,
+ "mexican_origin_share": 0.11593132877005827,
+ "persons": 340110990.0,
+ "public_college_national": {
+  "graduate": {
+   "hispanic": 435746.0,
+   "hispanic_mexican": 226308.0,
+   "mexican": 228036.0,
+   "students": 2953175.0
+  },
+  "undergraduate": {
+   "hispanic": 3163839.0,
+   "hispanic_mexican": 1959403.0,
+   "mexican": 1972926.0,
+   "students": 13277352.0
+  }
+ },
+ "source": {
+  "file": "sources/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip",
+  "group": "HISP 02 or POBP 303",
+  "public_college": "SCH 2 and SCHG 15 or 16",
+  "sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894"
+ }
+}

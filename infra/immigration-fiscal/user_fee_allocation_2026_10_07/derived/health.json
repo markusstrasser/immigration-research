@@ -1,0 +1,77 @@
+{
+ "charges_vs_payments": {
+  "group_share_charges": 0.06747085933642764,
+  "group_share_payments": 0.05815434848372788,
+  "ratio": 0.8619180051309979
+ },
+ "g_bn": 295.65077621100204,
+ "group_definition": "MEPS HISPNCAT 1 (Mexican, Mexican American, Chicano; no other Hispanic group)",
+ "meps_se": {
+  "EXP": 0.009903252126815787,
+  "MEDICAID": 0.062443010180666954,
+  "MEDICARE": 0.01151166200084066,
+  "PRIVATE_OTHER": 0.00822201553983891,
+  "PRV": 0.00849234883597526,
+  "SLF": 0.005503835450275326,
+  "TCH": 0.014518421957714947,
+  "persons": 0.012758857462334027,
+  "persons_uninsured": 0.039331093786723184
+ },
+ "meps_shares": {
+  "EXP": 0.05815434848372788,
+  "MEDICAID": 0.20234741997892675,
+  "MEDICARE": 0.032862996221947674,
+  "PRIVATE_OTHER": 0.050484083536607466,
+  "PRV": 0.04393533755672718,
+  "SLF": 0.024438120636273913,
+  "TCH": 0.06747085933642764,
+  "persons": 0.12491778698031028,
+  "persons_uninsured": 0.3528985058086468
+ },
+ "mix": {
+  "medicaid": [
+   0.201,
+   [
+    0.201
+   ]
+  ],
+  "medicare": [
+   0.35,
+   [
+    0.3,
+    0.42
+   ]
+  ],
+  "private_other": [
+   0.36,
+   [
+    0.3,
+    0.42
+   ]
+  ]
+ },
+ "nipa_health_charges_bn": 364.091,
+ "pcr": {
+  "medicaid": [
+   0.954,
+   [
+    0.9,
+    1.0
+   ]
+  ],
+  "medicare": [
+   0.868,
+   [
+    0.82,
+    0.9
+   ]
+  ],
+  "private_other": [
+   1.448,
+   [
+    1.3,
+    1.5
+   ]
+  ]
+ }
+}
