@@ -299,6 +299,9 @@ lane is imported read-only, as before.
 
 ## v6 case (oct07), 2026-10-07
 
+[Round 2, later on 2026-10-07: every group's income taxes moved to the case's own keys. The figures in this section
+use the CPS-dollar rule; the current figures are in "v6 round 2" below.]
+
 [2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`), with both sides on the lineage's 42,752,213 and
 both on the IPEDS keys, the matched union's 2024 financing-equivalent charge exceeds third-plus whites' by
 **$81.2 / $81.2bn** on the accrual basis (**$1,900 / $1,900 per member**; oct05 on the same keys $79.4 / $79.4bn), and
@@ -447,3 +450,91 @@ New: `derived/group_lines_oct07.csv` and `derived/oct07/` (the six file names of
   `gates.json` and `paths.csv` do not. The attribution's oct07 rows recomputed from the final files.
 - 2026-10-07 17:14:24–17:15:55 JST (by `date`): `rerun_lane.py` with all eight commands (`acs_inputs.py`, the sept29,
   oct05 and oct07 pairs, and `pytest` on `test_legacy.py`): **IDENTICAL 29/29, exit 0**.
+
+## v6 round 2: income taxes on the case's own keys (oct05, oct07), 2026-10-07
+
+[2026-10-07, round 2: every group's income taxes now take the case's own keys (the white lane's section "v6 round 2").
+On main case v6 the matched union's 2024 financing-equivalent charge exceeds third-plus whites' by **$101.6 / $101.7bn**
+on the accrual basis, **$2,377 / $2,378 per member**. On the CPS-dollar rule, which charged each group only the income
+tax it reports to the CPS, the figure was $81.2 / 81.2bn. On the cash-benefit convention the excess is **$35.6 /
+$36.3bn** (was $15.2 / 15.9bn). The white slice's 2024 federal flow falls by $60.67bn, the federal income tax it now
+pays, and the rough union's by $12.89bn. Compounded over 2005–2023 on each group's path, the difference rises by about
+$20.4bn of 2024 interest. The 2005 window only. [CALCULATION: `group_lines.py --case oct07`, `legacy.py --case oct07`
+→ `derived/oct07/legacy_main.csv`, `legacy_differences.csv`, `federal_gap_by_group.csv`]]
+
+claude-opus-5-5 (prop-d)
+
+**Rules.** `group_lines.py --case oct05 / oct07` writes the white library's round-2 lines.
+- The rough union's and A1's `federal_income_tax`, `state_local_income_tax` and `other_personal_tax` rows carry the
+  case's keys at the shared allocation (the docstring names the rule). The engine union's rows are the case's own and
+  do not move.
+- `legacy.py` is unchanged: the federal flows take the new federal income tax rows, and the state lines stay out of
+  the federal legacy.
+- sept29 keeps the CPS-dollar rule.
+
+**2005 window, central convention** (2024 interest, $bn, low / high; $ per member):
+
+| Basis | Group | oct07 | Per member | CPS-dollar rule (v6 section) | oct05 |
+|---|---|---:|---:|---:|---:|
+| Accrual | Union, engine | 63.97 / 74.19 | 1,496 / 1,735 | 63.97 / 74.19 | 63.33 / 73.36 |
+| | Union, rough | 58.27 / 66.66 | 1,363 / 1,559 | 63.05 / 71.44 | 59.62 / 67.98 |
+| | A1 | −43.37 / −35.01 | −1,014 / −819 | −18.17 / −9.81 | −40.17 / −31.84 |
+| | All residents | −6.93 / +1.03 | −162 / +24 | 13.90 / 21.86 | −4.31 / +3.63 |
+| Cash | Union, engine | 31.82 / 44.17 | 744 / 1,033 | 31.82 / 44.17 | 30.63 / 42.62 |
+| | Union, rough | 24.64 / 33.74 | 576 / 789 | 29.41 / 38.51 | 25.40 / 34.25 |
+| | A1 | −10.94 / −2.58 | −256 / −60 | 14.26 / 22.62 | −9.14 / −0.80 |
+| | All residents | −1.47 / +6.49 | −34 / +152 | 19.36 / 27.32 | −0.19 / +7.76 |
+
+| Difference, 2024 interest ($bn; $ per member) | oct07 | CPS-dollar rule (v6 section) | oct05 |
+|---|---:|---:|---:|
+| **Accrual, rough − A1** | **101.64 / 101.67 ($2,377 / 2,378)** | 81.22 / 81.25 ($1,900 / 1,900) | 99.80 / 99.81 ($2,334 / 2,335) |
+| Accrual, rough − all residents | 65.20 / 65.63 ($1,525 / 1,535) | 49.15 / 49.58 ($1,150 / 1,160) | 63.93 / 64.34 |
+| Accrual, engine − A1 | 107.34 / 109.20 | 82.14 / 84.00 | 103.51 / 105.20 |
+| Accrual with payroll carry, rough − A1 | 92.25 / 92.34 | 71.83 / 71.92 | 90.25 / 90.31 |
+| **Cash, rough − A1** | **35.58 / 36.32 ($832 / 849)** | 15.15 / 15.89 ($354 / 372) | 34.54 / 35.05 ($808 / 820) |
+| Cash, rough − all residents | 26.11 / 27.25 | 10.05 / 11.19 | 25.59 / 26.49 |
+| Cash, engine − A1 | 42.76 / 46.75 | 17.56 / 21.55 | 39.76 / 43.42 |
+
+[CALCULATION: `derived/oct07/legacy_main.csv`, `derived/oct07/legacy_differences.csv`, `derived/oct05/`; the CPS-dollar
+column is the v6 section's]
+
+- **What moves** (2024, every basis and end):
+  - A1's federal flow falls by $60.67bn: −$29.42bn to −$90.09bn on accrual at the low end, and $53.22bn to −$7.44bn on
+    cash.
+  - The rough union's falls by $12.89bn (accrual, low: $117.55bn to $104.66bn).
+  - The all-residents slice's falls by $50.44bn, its share of the national federal line that the CPS misses.
+  - The engine union does not move.
+
+  The legacy compounds those 2024 changes back over 2005–2023 on each group's path, so the rough − A1 difference rises
+  by $20.42bn on accrual and on cash. [CALCULATION: `federal_gap_by_group.csv`, year 2024]
+- **The white slice's legacy becomes a credit.** On the case's keys the white slice's 2005–2024 federal legacy is a
+  credit to other residents at both ends and on both bases (−$43.4bn to −$2.6bn of 2024 interest). The all-residents
+  slice's is about zero: −$6.9bn to +$6.5bn.
+- **The IPEDS parts** (the v6 section's table) do not move. The hospital term beside would still add $0.78bn.
+- **Readers outside this lane.**
+  - `pension_legacy_2026_09_30/pension_legacy.py` reads `group_lines_<case>.csv`. Run into scratch on the round-2
+    files, all nine of its files per case are byte-identical to its committed outputs, since it reads only the old-age
+    lines.
+  - The drift audit's `source_map.csv` rows that trace INDEX and FAQ figures to `derived/oct05/` move. The lead's docs
+    pass holds the list.
+
+**Gates.** `group_lines.py --case oct07` exits 0: each group's cost reproduces the white lane's
+`rekey_summary_oct07.csv` (5e-5), and the library's 123 setup gates pass (92 on oct05). `legacy.py --case oct05` and
+`--case oct07` exit 0, with the engine union's parity against the debt lane unchanged. `gates.json` and `paths.csv` do
+not move. `pytest` and the rerun are in the log.
+
+**Files.** Changed: `derived/group_lines_oct05.csv` and `group_lines_oct07.csv` (only the rough union's, A1's and the
+all-residents slice's three income-tax rows and their `cost_bn` rows), and in `derived/oct05/` and `derived/oct07/`,
+`federal_gap_by_group.csv`, `legacy_conventions.csv`, `legacy_differences.csv` and `legacy_main.csv`.
+`group_lines_sept29.csv` does not move. The reproduce list is the v6 section's.
+
+### Log (round 2; times from `date` or the files' clock)
+
+- 2026-10-07 20:21:29 and 20:21:47 (log times): `group_lines.py --case oct05` and `--case oct07` ran in place, exit 0.
+- 20:21:43 and 20:22:02 (log times): `legacy.py --case oct05` and `--case oct07` ran in place, exit 0.
+- About 20:34 (file times): `pension_legacy.py` run into scratch on the new group lines; byte-identical.
+- 21:14:47–21:15:48 (by `date`): `rerun_lane.py` with the v6 section's eight commands (`acs_inputs.py`, the sept29,
+  oct05 and oct07 pairs, and `pytest` on `test_legacy.py`), after the white, Black and Indian lanes' round-2 reruns:
+  **IDENTICAL 29/29, exit 0**.
+- 21:57:07–21:58:22 (by `date`): the same rerun after the white library relabelled the columns of its CPS-totals file:
+  **IDENTICAL 29/29, exit 0**.

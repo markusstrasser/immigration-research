@@ -34,6 +34,11 @@ On oct05 and oct07 the library keys Pell by each group's IPEDS share and public 
 A1's other_federal_benefits and education_services rows carry those terms. On oct07 the library adds item 4's tuition
 term on education_services; its hospital term stays beside the central (the team lead, 2026-10-07), so no
 health_services row carries it.
+
+On oct05 and oct07 the library's central keys every group's income taxes on the case's own keys (round 2, the team
+lead's instruction of 2026-10-07): federal income tax on v4 item 3's IRS-raked key, state and other personal taxes on
+the state-liability key, the shared allocation. The rough union's and A1's federal_income_tax, state_local_income_tax
+and other_personal_tax rows carry those keys; sept29 keeps the CPS-dollar rule.
 """
 from __future__ import annotations
 
