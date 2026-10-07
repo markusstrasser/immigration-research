@@ -1,5 +1,5 @@
-"""The build's gates: in every ledger block the printed lines add to the printed total, and the template's
-build fragment is cut out exactly once.
+"""The build's gates: in every ledger block the printed lines add to the printed total, a claim the prose makes in
+words holds on its record, and the template's build fragment is cut out exactly once.
 
     uv run --no-project python3 -m pytest infra/immigration-fiscal/overview_2026_09_28/test_build_sums.py -q
 """
@@ -61,6 +61,19 @@ def test_the_prose_sum_adds_as_printed_and_breaks_without_the_footing():
     assert B.prose_sum_errors(moved) == [
         "the main estimate, less the low end's offending at the Hispanic average, plus the costs outside the budget, "
         "low end: the parts print as 494, pairing.total as 489"]
+
+
+def test_a_claim_in_words_holds_on_the_page_and_fails_when_its_record_moves():
+    import groups as G
+    recs = B.Q.load_registry()
+    sites = B.text_sites((B.HERE / "template.html").read_text(), G.GROUPS)
+    assert B.prose_claim_errors(sites, recs) == []
+    moved = {k: dict(v) for k, v in recs.items()}
+    moved["world.reading2_breakeven_us"]["expr"] = "0.98"
+    assert B.prose_claim_errors(sites, moved) == [
+        "'behind even at equal weight' needs the US-only break-even weight above 1; world.reading2_breakeven_us is 0.98"]
+    assert B.prose_claim_errors({}, recs) == [
+        "'behind even at equal weight' stands on no text site: drop its claim or restore the sentence"]
 
 
 def test_the_capital_return_total_must_say_the_enterprises_are_in():

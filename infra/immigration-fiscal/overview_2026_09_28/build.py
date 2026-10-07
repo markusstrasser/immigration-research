@@ -4,9 +4,9 @@
 
 Reads the confidence ladder, main case v6 (`main_case_2026_10_07/derived/`: `summary.json`,
 `main_case_bands.csv`, `lineage_addition.json`), the figures page's staircase (the steps up to the
-September 24 case) and, through `quantity_registry.csv`, the lanes the tables quote. The ledger runs
-the staircase, the September 26 and 27 changes and v4's items from `summary.json`'s
-`change_at_fixed_specifications`; it splits v4's state-price item with the September 29 lane's
+September 24 case, read at its commit in `PINS`) and, through `quantity_registry.csv`, the lanes the
+tables quote. The ledger runs the staircase, the September 26 and 27 changes and v4's items from
+`summary.json`'s `change_at_fixed_specifications`; it splits v4's state-price item with the September 29 lane's
 state-price lines. The added descendants come from `lineage_addition.json`, by count part, on v5 and
 then with v6's items; v6's items on the identified members come from `summary.json`'s item parts,
 with retiree health as the rest of the union-only case's change. Refuses to write if a ladder entry
@@ -20,7 +20,8 @@ they stay where the template has them.
 
 Numbers that the text quotes from a file come from `quantity_registry.csv` through placeholders,
 `{{q:<id>|<view>}}`, which `quantities.py` renders. The build lints every sentence that quotes a
-record, runs the binding tests in `quantity_bindings.csv`, and refuses to write on any failure.
+record, runs the binding tests in `quantity_bindings.csv`, tests the claims the prose makes in words
+against their records (`PROSE_CLAIMS`), and refuses to write on any failure.
 `--groups PATH`, `--template PATH` and `--bindings PATH` read other copies of groups.py,
 template.html and quantity_bindings.csv, `--out PATH` writes elsewhere, and `--round-each` rounds
 every table number on its own (the positive controls use these).
@@ -33,6 +34,7 @@ import importlib
 import importlib.util
 import json
 import re
+import subprocess
 import sys
 from decimal import Decimal
 from pathlib import Path
@@ -47,6 +49,9 @@ evidence = None  # imported in main(), after --groups has picked the groups modu
 LADDER = ROOT / "research/immigration-confidence-ladder.md"
 MAIN = ROOT / "infra/immigration-fiscal/main_case_2026_10_07/derived"
 STAIRS = ROOT / "infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json"
+# Files read at a commit, not from the working tree, as account.cjs's PINS does: the figures page moves to newer cases,
+# and the ledger takes from it only the steps up to the September 24 case.
+PINS = {STAIRS: "57b48186"}  # figures.json's last commit on the September 24 case
 OV = "infra/immigration-fiscal/overview_2026_09_28"
 # how to read the dotted underline that quantities.fill puts on an approximate number; the page carries it only
 # when some number does
@@ -77,6 +82,19 @@ def load_headcount():
 
 def fail(msg):
     sys.exit(f"[BLOCKED] {msg}")
+
+
+def pinned(path):
+    """A file's text at its commit in `PINS`, through `git show`; refuses when git cannot read it there."""
+    rel = path.relative_to(ROOT).as_posix()
+    try:
+        r = subprocess.run(["git", "-C", str(ROOT), "show", f"{PINS[path]}:{rel}"], capture_output=True,
+                           encoding="utf-8")
+    except OSError as e:
+        fail(f"git show {PINS[path]}:{rel}: {e}")
+    if r.returncode:
+        fail(f"git show {PINS[path]}:{rel} exited {r.returncode}: {r.stderr.strip()}")
+    return r.stdout
 
 
 # ---------------------------------------------------------------- ladder parsing
@@ -146,7 +164,7 @@ def load_numbers():
     bands = {r["variant"] if r["profile"] == "long_run_non_school_full" else r["profile"] + ":" + r["variant"]:
              (float(r["cost_low_bn"]), float(r["cost_high_bn"]))
              for r in csv.DictReader((MAIN / "main_case_bands.csv").open())}
-    stairs = json.loads(STAIRS.read_text())["staircase"]
+    stairs = json.loads(pinned(STAIRS))["staircase"]
     sept24 = s["adopted_2026_09_24"]
     last = next(r for r in stairs if r["id"] == "benefits")
     if any(abs(a - b) > 1e-3 for a, b in zip(last["total"], sept24)):
@@ -673,6 +691,27 @@ def prose_sum_errors(recs=None):
     return errs
 
 
+# Claims the prose makes in words, with no number of their own: (phrase, record, test, what the test needs). The phrase
+# must stand in some text site, and the record's unrounded value must pass the test.
+PROSE_CLAIMS = [
+    ("behind even at equal weight", "world.reading2_breakeven_us", lambda v: v > 1,
+     "the US-only break-even weight above 1"),
+]
+
+
+def prose_claim_errors(sites, recs=None):
+    """The claims the prose makes in words, on `sites` ((file, locator) → text, as `text_sites` gives them)."""
+    recs = recs if recs is not None else Q.load_registry()
+    errs = []
+    for phrase, rid, test, needs in PROSE_CLAIMS:
+        if not any(phrase in text for text in sites.values()):
+            errs.append(f"{phrase!r} stands on no text site: drop its claim or restore the sentence")
+        v = Q.record_value(rid, recs)
+        if not test(v):
+            errs.append(f"{phrase!r} needs {needs}; {rid} is {v}")
+    return errs
+
+
 def assumption_rows(s, bands):
     """(category, label, change at low end, change at high end, kind, link target). Link target: a finding's
     ladder ref, or "§<group id>" when no single finding covers the assumption."""
@@ -894,6 +933,9 @@ def main():
         [f"prose: {e}" for e in prose_sum_errors()]
     if errs:
         fail(f"{len(errs)} printed sum(s) do not add up:\n  " + "\n  ".join(errs))
+    claims = prose_claim_errors(text_sites(template, sys.modules["groups"].GROUPS))
+    if claims:
+        fail(f"{len(claims)} claim(s) in words no longer hold:\n  " + "\n  ".join(claims))
     subs = {
         "{{GROUPS}}": groups_html,  # first: with a build part it carries the placeholders of the ledger sections
         "{{LEDGER}}": ledger,

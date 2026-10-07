@@ -267,13 +267,18 @@ GROUPS = [
                       "resources.",
                  why="Who pays depends on how budgets close the gap."),
             dict(refs=[250, 297],
-                 text="Counting the group's own gain, the world gains about {{q:world.total_equal|value}} in the "
-                      "year measured, with every person weighted equally.",
+                 text="Counting the group's own gain, the world gains about "
+                      "{{q:world.reading1_total_equal|value}} in the year measured, with every person weighted "
+                      "equally. A lower valuation gives about {{q:world.reading2_total_equal|value}}, with US health "
+                      "and social services at Mexican prices. It also assumes migrants would have out-earned "
+                      "{{q:world.reading2_selection_pct|value}} of similar urban Mexicans, and counts public goods at "
+                      "the cost of extending them.",
                  why="The group earns far more here than it would in Mexico. Other US residents lose at any "
                      "weight. Counting the group as US residents, the US comes out behind when the group's welfare "
-                     "counts for less than {{q:world.breakeven_us|value}} of other residents'. Over "
-                     "generations the sign turns on how fast descendants catch up. At the measured pace, Clemens "
-                     "and Pritchett's long-run model favours less migration in 14 of its 21 versions."),
+                     "counts for less than {{q:world.reading1_breakeven_us|value}} of other residents'. On the "
+                     "lower valuation, the US comes out behind even at equal weight. Over generations the sign "
+                     "turns on how fast descendants catch up. At the measured pace, Clemens and Pritchett's "
+                     "long-run model favours less migration in 14 of its 21 versions."),
             dict(refs=[139, 213],
                  text="Natives who leave California take about $2.1bn of revenue. Race preferences cost white "
                       "natives about $4bn.",
