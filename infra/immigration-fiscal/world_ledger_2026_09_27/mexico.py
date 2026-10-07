@@ -25,11 +25,17 @@ Schooling categories follow CEEY's six (Informe Movilidad Social 2019, p. 26, re
 import csv
 import json
 import sys
+import warnings
 import zipfile
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+# The survey files are parsed chunk by chunk (low_memory=False held a whole file's fields, ~1 GB per ENOE quarter).
+# A column typed differently in two chunks would come back mixed, so stop instead (for every importer); columns that
+# hold text somewhere in a file (ENOE's sex, eda, mun) are read as text, as a whole-file read typed them.
+warnings.filterwarnings("error", category=pd.errors.DtypeWarning)
 
 HERE = Path(__file__).resolve().parent
 CACHE = HERE / "_cache" / "mexico"
@@ -164,7 +170,7 @@ def household_deciles():
     holds the midpoint of its weight; ties are ordered by folio."""
     c = pd.read_csv(CACHE / "enigh" / "concentradohogar.csv", dtype={"folioviv": str, "foliohog": str},
                     usecols=["folioviv", "foliohog", "factor", "tot_integ", "ing_cor", "ingtrab", "rentas", "transfer",
-                             "estim_alqu", "otros_ing", "remu_espec", "transf_hog", "trans_inst"], low_memory=False)
+                             "estim_alqu", "otros_ing", "remu_espec", "transf_hog", "trans_inst"])
     gate("enigh_current_income_adds_up",
          bool(np.allclose(c.ing_cor, c.ingtrab + c.rentas + c.transfer + c.estim_alqu + c.otros_ing, atol=0.01)))
     c["monetary_pc"] = (c.ing_cor - c.estim_alqu - c.remu_espec - c.transf_hog - c.trans_inst) / c.tot_integ
@@ -190,12 +196,12 @@ def enigh_years(niv, grado, antec):
 
 def load_enigh():
     z = CACHE / "enigh"
-    pb = pd.read_csv(z / "poblacion.csv", dtype=str, low_memory=False,
+    pb = pd.read_csv(z / "poblacion.csv", dtype=str,
                      usecols=["folioviv", "foliohog", "numren", "sexo", "edad", "nivelaprob", "gradoaprob",
                               "antec_esc", "trabajo_mp", "madre_id", "padre_id", "factor"])
     inc = pd.read_csv(z / "ingresos.csv", dtype={"folioviv": str, "foliohog": str, "numren": str, "clave": str},
-                      usecols=["folioviv", "foliohog", "numren", "clave", "ing_tri"], low_memory=False)
-    tr = pd.read_csv(z / "trabajos.csv", dtype=str, low_memory=False,
+                      usecols=["folioviv", "foliohog", "numren", "clave", "ing_tri"])
+    tr = pd.read_csv(z / "trabajos.csv", dtype=str,
                      usecols=["folioviv", "foliohog", "numren", "id_trabajo", "subor", "pres_8", "htrab"])
     key = ["folioviv", "foliohog", "numren"]
     lab = (inc[inc.clave.isin(LABOR_CLAVES)].groupby(key).ing_tri.sum() * 4).rename("labor_mxn")
@@ -244,7 +250,7 @@ def load_enigh():
     d["parent_cat"] = np.maximum(mo, fa)              # -2 none co-resident, -1 co-resident but unknown
     # Gate: the person-level claves reproduce the concentrado's monetary labor income (remuneration in kind,
     # remu_espec, sits in a table this lane does not read and is the only gap).
-    c = pd.read_csv(z / "concentradohogar.csv", usecols=["ingtrab", "remu_espec", "factor"], low_memory=False)
+    c = pd.read_csv(z / "concentradohogar.csv", usecols=["ingtrab", "remu_espec", "factor"])
     target = ((c.ingtrab - c.remu_espec) * c.factor).sum() * 4
     got = (d.labor_mxn * d.w).sum()
     gate("enigh_labor_claves_reproduce_concentrado", abs(got / target - 1) < 1e-6, got=got, target=target)
@@ -318,7 +324,7 @@ def load_enoe():
     for q in (1, 2):
         with zipfile.ZipFile(CACHE / f"enoe_2024_trim{q}_csv.zip") as z:
             name = f"ENOE_SDEMT{q}24.csv"
-            f = pd.read_csv(z.open(name), encoding="latin-1", low_memory=False,
+            f = pd.read_csv(z.open(name), encoding="latin-1", dtype={"sex": str, "eda": str},
                             usecols=["r_def", "c_res", "sex", "eda", "anios_esc", "clase2", "hrsocup", "ingocup",
                                      "ing7c", "fac_tri"])
         frames.append(f)
@@ -328,7 +334,7 @@ def load_enoe():
     e["w"] = pd.to_numeric(e.fac_tri, errors="coerce") / 2          # two quarters pooled
     yrs = pd.to_numeric(e.anios_esc, errors="coerce")
     e["cat"] = years_to_cat(np.where(yrs.between(0, 30), yrs, -1))
-    e["sex"] = np.where(e.sex == 1, "male", "female")
+    e["sex"] = np.where(pd.to_numeric(e.sex, errors="coerce") == 1, "male", "female")   # read as text
     e["employed"] = e.clase2 == 1
     e["hours"] = np.where(e.employed, pd.to_numeric(e.hrsocup, errors="coerce"), np.nan)
     ing = pd.to_numeric(e.ingocup, errors="coerce")
@@ -403,10 +409,10 @@ def comparators(rates):
     student), government cash transfers and domestic pensions per person by age (ENIGH), and per-head government
     health spending and other government consumption (WDI)."""
     z = CACHE / "enigh"
-    pb = pd.read_csv(z / "poblacion.csv", dtype=str, low_memory=False,
+    pb = pd.read_csv(z / "poblacion.csv", dtype=str,
                      usecols=["folioviv", "foliohog", "numren", "edad", "asis_esc", "tipoesc", "factor"])
     inc = pd.read_csv(z / "ingresos.csv", dtype={"folioviv": str, "foliohog": str, "numren": str, "clave": str},
-                      usecols=["folioviv", "foliohog", "numren", "clave", "ing_tri"], low_memory=False)
+                      usecols=["folioviv", "foliohog", "numren", "clave", "ing_tri"])
     key = ["folioviv", "foliohog", "numren"]
     tr = (inc[inc.clave.isin(BENE_GOB)].groupby(key).ing_tri.sum() * 4).rename("transfers_mxn")
     pe = (inc[inc.clave.isin(PENSION_MX)].groupby(key).ing_tri.sum() * 4).rename("pension_mxn")

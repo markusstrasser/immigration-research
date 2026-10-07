@@ -149,7 +149,7 @@ def metro_municipalities():
     frames = []
     for q in (1, 2):
         with zipfile.ZipFile(MX.CACHE / f"enoe_2024_trim{q}_csv.zip") as z:
-            frames.append(pd.read_csv(z.open(f"ENOE_SDEMT{q}24.csv"), encoding="latin-1", low_memory=False,
+            frames.append(pd.read_csv(z.open(f"ENOE_SDEMT{q}24.csv"), encoding="latin-1", dtype={"mun": str},
                                       usecols=["r_def", "c_res", "ent", "mun", "cd_a"]))
     e = pd.concat(frames, ignore_index=True)
     e = e[(pd.to_numeric(e.r_def, errors="coerce") == 0) & e.c_res.isin([1, 3])]
@@ -299,7 +299,7 @@ def emovi_with_residence(munis):
 # ------------------------------------------------------------------ Mexico: what the metro costs
 def dwellings(munis):
     with zipfile.ZipFile(SOURCES["enigh_viviendas"][0]) as z:
-        v = pd.read_csv(z.open("viviendas.csv"), dtype=str, low_memory=False)
+        v = pd.read_csv(z.open("viviendas.csv"), dtype=str)
     num = lambda c: pd.to_numeric(v[c].str.strip(), errors="coerce")
     v["ent"] = v.ubica_geo.str[:2].astype(int)
     v["mun"] = v.ubica_geo.str[2:].astype(int)
@@ -808,7 +808,7 @@ def enoe_cdmx_check(en):
     frames = []
     for q in (1, 2):
         with zipfile.ZipFile(MX.CACHE / f"enoe_2024_trim{q}_csv.zip") as z:
-            frames.append(pd.read_csv(z.open(f"ENOE_SDEMT{q}24.csv"), encoding="latin-1", low_memory=False,
+            frames.append(pd.read_csv(z.open(f"ENOE_SDEMT{q}24.csv"), encoding="latin-1", dtype={"eda": str},
                                       usecols=["r_def", "c_res", "ent", "eda", "anios_esc", "clase2", "ingocup", "ing7c",
                                                "fac_tri"]))
     e = pd.concat(frames, ignore_index=True)

@@ -149,11 +149,17 @@ def parents_schooling():
     gate("ipums_extract_hash", sha256(IPUMS) == IPUMS_SHA)
     cols = ["YEAR", "SERIAL", "PERNUM", "HFLAG", "ASECWT", "AGE", "SEX", "BPL", "MBPL", "FBPL", "NATIVITY", "EDUC",
             "NCHILD", "YNGCH"]
-    d = pd.read_csv(IPUMS, usecols=cols)
-    d = d[d.HFLAG.isna() | d.HFLAG.eq(0)]                 # 2014: keep the traditional-questionnaire 3/8 only
-    kids = d[d.NATIVITY.isin([2, 3, 4]) & (d.FBPL.eq(20000) | d.MBPL.eq(20000)) & d.AGE.le(17)]
-    par = d[d.BPL.eq(20000) & d.AGE.between(18, 75) & d.NCHILD.ge(1)][["YEAR", "SERIAL", "AGE", "SEX", "EDUC",
-                                                                         "YNGCH"]]
+    def is_kid(x):
+        return x.NATIVITY.isin([2, 3, 4]) & (x.FBPL.eq(20000) | x.MBPL.eq(20000)) & x.AGE.le(17)
+
+    def is_parent(x):
+        return x.BPL.eq(20000) & x.AGE.between(18, 75) & x.NCHILD.ge(1)
+
+    # By chunk, keeping only rows either side uses: the whole extract held at once costs ~2 GB of memory.
+    d = pd.concat([c[(c.HFLAG.isna() | c.HFLAG.eq(0))    # 2014: keep the traditional-questionnaire 3/8 only
+                     & (is_kid(c) | is_parent(c))] for c in pd.read_csv(IPUMS, usecols=cols, chunksize=1_000_000)])
+    kids = d[is_kid(d)]
+    par = d[is_parent(d)][["YEAR", "SERIAL", "AGE", "SEX", "EDUC", "YNGCH"]]
     m = kids.merge(par, on=["YEAR", "SERIAL"], suffixes=("", "_p"))
     gap = m.AGE_p - m.AGE
     ok = (gap.between(14, 60) & (m.YNGCH_p <= m.AGE)
