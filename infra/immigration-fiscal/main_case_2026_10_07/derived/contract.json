@@ -204,6 +204,7 @@
  },
  "files_missing": [],
  "files_added": [
+  "lineage_addition.json",
   "lineage_payload.json",
   "lineage_payload_cash.json"
  ],

@@ -1,0 +1,492 @@
+{
+ "meta": {
+  "lane": "main_case_2026_10_07",
+  "script": "lineage_addition.cjs",
+  "case": "adopted 2026-10-07 (decisions/2026-10-07-main-case-v6.md): v5 plus items pension_tr2026, retiree_health, added_age_mix, user_fees, built by main_case_2026_10_07/package.cjs on main_case_2026_10_05/derived/corrections.json",
+  "ends": [
+   48,
+   11
+  ],
+  "ends_rule": "each figure is the two methods' mean at specifications 48 (low) and 11 (high), the case's ends in both methods",
+  "counts": {
+   "later": 1094827.8668155947,
+   "g3_rate": 1944891.7263696424,
+   "added": 3039719.593185237,
+   "account_union": 39712493.3312,
+   "lineage_population": 42752212.92438524
+  },
+  "parts_rule": "at the case's responses: later = C(l, g) - C(0, g), G3-rate = C(l, g) - C(l, 0), each with items 1-3's parts on those people (item 3's age mix, item 1's lineage_oasdi and lineage_part_a, item 2's scaling of their cells); item 4 is union-only and leaves them unchanged (gated)",
+  "union_rule": "U = C(l, 0) + C(0, g) - C(l, g), the cost with nobody added (the cost is affine in the counts at fixed responses, gated); at the case's responses the union there, at the union's own the union-only case; the union's response is the first less the second",
+  "addition_rule": "the lineage's addition = v6 less the union-only case = the added people + the union's response",
+  "responses": {
+   "case": {
+    "s": 0.12918222328408055,
+    "k_metro": 1.0770924847748014
+   },
+   "union": {
+    "s": 0.12024478903339636,
+    "k_metro": 1
+   }
+  },
+  "route": "package.cjs caseOf at lineage options built by lineage_count.cjs additionsAt (its lineageBase() and caseOf() repeated here for options it does not name)",
+  "inputs": {
+   "main_case_2026_10_07/package.cjs": "a7003f087c2a0d4cfa399f8cb7afd3d8b27cf1e41669032e8c2273463928e275",
+   "main_case_2026_10_07/lineage_count.cjs": "1fba05c2b5b868f07654e05c92cfeb4534ce1971fb5ad8a7dffb61171d03ba1d",
+   "main_case_2026_10_07/item_age_mix.cjs": "6f94386fe460afca36a732982848d0345e96755ee8469fbc481569b7a555c7b5",
+   "main_case_2026_10_07/item_user_fees.cjs": "ed1c8c203ebd44e5f1c5fe8db2876d8e465352f2486825ce6d3be75a03cb7116",
+   "main_case_2026_10_07/derived/corrections.json": "f8d346aacf05bcdaed8495f870ba23ac6154ab3eaf34cc0bcf85861f0c85d091",
+   "main_case_2026_10_07/derived/corrections_cash.json": "e9033bfff737299e76d09b0c600e8f42c6b6110713f402fb293a6324b2721e80",
+   "main_case_2026_10_07/derived/summary.json": "547092591e23ebd69e7dfaec28e6eebe441c7cc61a9f3d32f328a3991f321bf3",
+   "main_case_lineage_2026_10_05/derived/v5_summary.json": "4dd9340bbcb0ca42984601301ab856246cced7b899379680e1008a0cf407d89a"
+  }
+ },
+ "set": {
+  "case_bn": [
+   389.0825528654786,
+   461.47970930242025
+  ],
+  "per_member_usd": [
+   9100.875165307561,
+   10794.288242309884
+  ],
+  "parts": {
+   "later": {
+    "persons": 1094827.8668155947,
+    "cost_bn": [
+     10.513277407306248,
+     15.359890969021535
+    ],
+    "per_person_usd": [
+     9602.676115547789,
+     14029.503116044314
+    ],
+    "on_v5_cost_bn": [
+     9.351236221487568,
+     12.843966182792315
+    ],
+    "on_v5_per_person_usd": [
+     8541.284438335022,
+     11731.493664068073
+    ],
+    "items_change_bn": [
+     1.1620411858186799,
+     2.5159247862292204
+    ]
+   },
+   "g3_rate": {
+    "persons": 1944891.7263696424,
+    "cost_bn": [
+     9.828827548807851,
+     14.114674453201928
+    ],
+    "per_person_usd": [
+     5053.663098847387,
+     7257.306029857274
+    ],
+    "on_v5_cost_bn": [
+     9.82641061936431,
+     13.87367974470618
+    ],
+    "on_v5_per_person_usd": [
+     5052.420392422771,
+     7133.394397539524
+    ],
+    "items_change_bn": [
+     0.002416929443540994,
+     0.240994708495748
+    ]
+   },
+   "added": {
+    "persons": 3039719.593185237,
+    "cost_bn": [
+     20.3421049561141,
+     29.474565422223463
+    ],
+    "per_person_usd": [
+     6692.099166554431,
+     9696.475124976212
+    ],
+    "on_v5_cost_bn": [
+     19.177646840851878,
+     26.717645927498495
+    ],
+    "on_v5_per_person_usd": [
+     6309.018398883352,
+     8789.510054610602
+    ],
+    "items_change_bn": [
+     1.1644581152622209,
+     2.7569194947249684
+    ]
+   }
+  },
+  "union_response_bn": [
+   -0.2981721387620837,
+   -0.3153809863388233
+  ],
+  "union_response_on_v5_bn": [
+   -0.29828842771303243,
+   -0.31547983366840526
+  ],
+  "union_at_case_responses_bn": [
+   368.7404479093645,
+   432.0051438801968
+  ],
+  "lineage_addition_bn": [
+   20.043932817352015,
+   29.15918443588464
+  ],
+  "lineage_addition_on_v5_bn": [
+   18.87935841313879,
+   26.402166093830147
+  ],
+  "union_only": {
+   "cost_bn": [
+    369.0386200481266,
+    432.3205248665356
+   ],
+   "per_member_usd": [
+    9292.75875403654,
+    10886.25992986656
+   ],
+   "members": 39712493.3312,
+   "on_v5_cost_bn": [
+    371.41459978888656,
+    434.8409586241354
+   ],
+   "on_v5_per_member_usd": [
+    9352.588282264456,
+    10949.726953621011
+   ],
+   "rule": "v6 without the lineage: the September 29 union with items pension_tr2026 (its union parts), retiree_health and user_fees at the union's own responses"
+  }
+ },
+ "cash": {
+  "case_bn": [
+   307.39941050546946,
+   385.36412253996343
+  ],
+  "per_member_usd": [
+   7190.257286778559,
+   9013.898841249393
+  ],
+  "parts": {
+   "later": {
+    "persons": 1094827.8668155947,
+    "cost_bn": [
+     7.32189999711585,
+     13.657091698602244
+    ],
+    "per_person_usd": [
+     6687.717968316109,
+     12474.190795239001
+    ],
+    "on_v5_cost_bn": [
+     6.84492356800672,
+     11.117327401587602
+    ],
+    "on_v5_per_person_usd": [
+     6252.054569925952,
+     10154.406677575123
+    ],
+    "items_change_bn": [
+     0.4769764291091292,
+     2.539764297014642
+    ]
+   },
+   "g3_rate": {
+    "persons": 1944891.7263696424,
+    "cost_bn": [
+     5.4353785867694455,
+     10.24761816475467
+    ],
+    "per_person_usd": [
+     2794.694693321148,
+     5268.991597739476
+    ],
+    "on_v5_cost_bn": [
+     6.128665037468693,
+     10.78992274902123
+    ],
+    "on_v5_per_person_usd": [
+     3151.160012855076,
+     5547.826957525201
+    ],
+    "items_change_bn": [
+     -0.6932864506992473,
+     -0.5423045842665601
+    ]
+   },
+   "added": {
+    "persons": 3039719.593185237,
+    "cost_bn": [
+     12.757278583885295,
+     23.904709863356914
+    ],
+    "per_person_usd": [
+     4196.860332935283,
+     7864.116781346874
+    ],
+    "on_v5_cost_bn": [
+     12.973588605475413,
+     21.90725015060883
+    ],
+    "on_v5_per_person_usd": [
+     4268.021509142148,
+     7206.997053189646
+    ],
+    "items_change_bn": [
+     -0.21631002159011814,
+     1.997459712748082
+    ]
+   }
+  },
+  "union_response_bn": [
+   -0.2981721387621974,
+   -0.3153809863388233
+  ],
+  "union_response_on_v5_bn": [
+   -0.2982884277131461,
+   -0.31547983366840526
+  ],
+  "union_at_case_responses_bn": [
+   294.64213192158417,
+   361.4594126766066
+  ],
+  "lineage_addition_bn": [
+   12.459106445123098,
+   23.589328877018033
+  ],
+  "lineage_addition_on_v5_bn": [
+   12.67530017776221,
+   21.59177031694037
+  ],
+  "union_only": {
+   "cost_bn": [
+    294.94030406034636,
+    361.7747936629454
+   ],
+   "per_member_usd": [
+    7426.889608782821,
+    9109.848395711737
+   ],
+   "members": 39712493.3312,
+   "on_v5_cost_bn": [
+    294.70107598024794,
+    361.8174818097354
+   ],
+   "on_v5_per_member_usd": [
+    7420.865608272369,
+    9110.923325619411
+   ],
+   "rule": "v6 without the lineage: the September 29 union with items pension_tr2026 (its union parts), retiree_health and user_fees at the union's own responses"
+  }
+ },
+ "gates": [
+  {
+   "name": "the count parts add to the added people, 3,039,719.59 (1e-6), and the lineage population is the union plus them",
+   "pass": true,
+   "detail": "1094827.87 + 1944891.73 = 3039719.59"
+  },
+  {
+   "name": "the counts are v6's meta.lineage.counts",
+   "pass": true,
+   "detail": "{\"added\":3039719.593185237,\"at_g3_rate\":1944891.7263696424,\"later_losses\":1094827.8668155947,\"lineage_population\":42752212.92438524,\"account_union\":39712493.3312,\"identified_g3plus\":14342574.606276}"
+  },
+  {
+   "name": "v6 (set): the cost is affine in the counts at the case's responses: the union from the later and G3-rate cases equals it from the later cases at 1x and 2x (1e-9)",
+   "pass": true,
+   "detail": "368.740 / 432.005; max |diff| 2.8e-13"
+  },
+  {
+   "name": "v6 (set): the same at the union's own responses (1e-9)",
+   "pass": true,
+   "detail": "369.039 / 432.321; max |diff| 1.1e-13"
+  },
+  {
+   "name": "v6 (set): parts 1 and 3 add to part 4, the lineage's addition (1e-9)",
+   "pass": true,
+   "detail": "20.342 / 29.475 + -0.298 / -0.315 = 20.044 / 29.159"
+  },
+  {
+   "name": "v6 (cash): the cost is affine in the counts at the case's responses: the union from the later and G3-rate cases equals it from the later cases at 1x and 2x (1e-9)",
+   "pass": true,
+   "detail": "294.642 / 361.459; max |diff| 4.0e-13"
+  },
+  {
+   "name": "v6 (cash): the same at the union's own responses (1e-9)",
+   "pass": true,
+   "detail": "294.940 / 361.775; max |diff| 2.8e-13"
+  },
+  {
+   "name": "v6 (cash): parts 1 and 3 add to part 4, the lineage's addition (1e-9)",
+   "pass": true,
+   "detail": "12.757 / 23.905 + -0.298 / -0.315 = 12.459 / 23.589"
+  },
+  {
+   "name": "v5 (set): the cost is affine in the counts at the case's responses: the union from the later and G3-rate cases equals it from the later cases at 1x and 2x (1e-9)",
+   "pass": true,
+   "detail": "371.116 / 434.525; max |diff| 1.1e-13"
+  },
+  {
+   "name": "v5 (set): the same at the union's own responses (1e-9)",
+   "pass": true,
+   "detail": "371.415 / 434.841; max |diff| 0.0e+0"
+  },
+  {
+   "name": "v5 (set): parts 1 and 3 add to part 4, the lineage's addition (1e-9)",
+   "pass": true,
+   "detail": "19.178 / 26.718 + -0.298 / -0.315 = 18.879 / 26.402"
+  },
+  {
+   "name": "v5 (cash): the cost is affine in the counts at the case's responses: the union from the later and G3-rate cases equals it from the later cases at 1x and 2x (1e-9)",
+   "pass": true,
+   "detail": "294.403 / 361.502; max |diff| 5.7e-14"
+  },
+  {
+   "name": "v5 (cash): the same at the union's own responses (1e-9)",
+   "pass": true,
+   "detail": "294.701 / 361.817; max |diff| 1.7e-13"
+  },
+  {
+   "name": "v5 (cash): parts 1 and 3 add to part 4, the lineage's addition (1e-9)",
+   "pass": true,
+   "detail": "12.974 / 21.907 + -0.298 / -0.315 = 12.675 / 21.592"
+  },
+  {
+   "name": "v6 without item 4 (set): the cost is affine in the counts at the case's responses: the union from the later and G3-rate cases equals it from the later cases at 1x and 2x (1e-9)",
+   "pass": true,
+   "detail": "369.037 / 432.731; max |diff| 3.4e-13"
+  },
+  {
+   "name": "v6 without item 4 (set): the same at the union's own responses (1e-9)",
+   "pass": true,
+   "detail": "369.335 / 433.047; max |diff| 3.4e-13"
+  },
+  {
+   "name": "v6 without item 4 (set): parts 1 and 3 add to part 4, the lineage's addition (1e-9)",
+   "pass": true,
+   "detail": "20.342 / 29.475 + -0.298 / -0.315 = 20.044 / 29.159"
+  },
+  {
+   "name": "v6 without item 4 (cash): the cost is affine in the counts at the case's responses: the union from the later and G3-rate cases equals it from the later cases at 1x and 2x (1e-9)",
+   "pass": true,
+   "detail": "294.938 / 362.185; max |diff| 3.4e-13"
+  },
+  {
+   "name": "v6 without item 4 (cash): the same at the union's own responses (1e-9)",
+   "pass": true,
+   "detail": "295.236 / 362.501; max |diff| 3.4e-13"
+  },
+  {
+   "name": "v6 without item 4 (cash): parts 1 and 3 add to part 4, the lineage's addition (1e-9)",
+   "pass": true,
+   "detail": "12.757 / 23.905 + -0.298 / -0.315 = 12.459 / 23.589"
+  },
+  {
+   "name": "v6 (set): the end costs are the adopted band (1e-9), the one the consumers pinned (6 decimals)",
+   "pass": true,
+   "detail": "389.083 / 461.480"
+  },
+  {
+   "name": "v5 (set), no item: the later losses per person are the identified G3+ member's (g3plus_member_usd)",
+   "pass": true,
+   "detail": "8541.2844 / 11731.4937 against 8541.2844 / 11731.4937"
+  },
+  {
+   "name": "v5 (set), no item: the G3-rate attriters per person are (1 - C3) G3+ + C3 W (g3_rate_attriter_usd)",
+   "pass": true,
+   "detail": "5052.4204 / 7133.3944 against 5052.4204 / 7133.3944"
+  },
+  {
+   "name": "v5 (set), no item: the added people per person (added_per_person_usd)",
+   "pass": true,
+   "detail": "6309.0184 / 8789.5101 against 6309.0184 / 8789.5101"
+  },
+  {
+   "name": "v5 (set), no item: the added people are the G3+ and white parts (of_which_g3plus_part_bn + of_which_white_part_bn)",
+   "pass": true,
+   "detail": "19.1776 / 26.7176 against 19.1776 / 26.7176"
+  },
+  {
+   "name": "v5 (set), no item: the union's response (of_which_union_response_move_bn)",
+   "pass": true,
+   "detail": "-0.2983 / -0.3155 against -0.2983 / -0.3155"
+  },
+  {
+   "name": "v5 (set), no item: the lineage's addition is v5 less v4 (change_from_v4_bn)",
+   "pass": true,
+   "detail": "18.8794 / 26.4022 against 18.8794 / 26.4022"
+  },
+  {
+   "name": "v5 (set), no item: the union-only case is the September 29 case",
+   "pass": true,
+   "detail": "371.4146 / 434.8410 against 371.4146 / 434.8410"
+  },
+  {
+   "name": "item 4 leaves the added people's later part unchanged (set, 1e-9)",
+   "pass": true,
+   "detail": "max |diff| 1.1e-13"
+  },
+  {
+   "name": "item 4 leaves the added people's g3_rate part unchanged (set, 1e-9)",
+   "pass": true,
+   "detail": "max |diff| 5.7e-14"
+  },
+  {
+   "name": "v6 (cash): the end costs are the adopted band (1e-9), the one the consumers pinned (6 decimals)",
+   "pass": true,
+   "detail": "307.399 / 385.364"
+  },
+  {
+   "name": "v5 (cash), no item: the later losses per person are the identified G3+ member's (g3plus_member_usd)",
+   "pass": true,
+   "detail": "6252.0546 / 10154.4067 against 6252.0546 / 10154.4067"
+  },
+  {
+   "name": "v5 (cash), no item: the G3-rate attriters per person are (1 - C3) G3+ + C3 W (g3_rate_attriter_usd)",
+   "pass": true,
+   "detail": "3151.1600 / 5547.8270 against 3151.1600 / 5547.8270"
+  },
+  {
+   "name": "v5 (cash), no item: the added people per person (added_per_person_usd)",
+   "pass": true,
+   "detail": "4268.0215 / 7206.9971 against 4268.0215 / 7206.9971"
+  },
+  {
+   "name": "v5 (cash), no item: the added people are the G3+ and white parts (of_which_g3plus_part_bn + of_which_white_part_bn)",
+   "pass": true,
+   "detail": "12.9736 / 21.9073 against 12.9736 / 21.9073"
+  },
+  {
+   "name": "v5 (cash), no item: the union's response (of_which_union_response_move_bn)",
+   "pass": true,
+   "detail": "-0.2983 / -0.3155 against -0.2983 / -0.3155"
+  },
+  {
+   "name": "v5 (cash), no item: the lineage's addition is v5 less v4 (change_from_v4_bn)",
+   "pass": true,
+   "detail": "12.6753 / 21.5918 against 12.6753 / 21.5918"
+  },
+  {
+   "name": "v5 (cash), no item: the union-only case is the September 29 case",
+   "pass": true,
+   "detail": "294.7011 / 361.8175 against 294.7011 / 361.8175"
+  },
+  {
+   "name": "item 4 leaves the added people's later part unchanged (cash, 1e-9)",
+   "pass": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "name": "item 4 leaves the added people's g3_rate part unchanged (cash, 1e-9)",
+   "pass": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "name": "v5's published figures (set): later $8,541 / 11,731, G3-rate $5,052 / 7,133, +$18.9 / +26.4bn, $6,309-8,790 per added person, $9,353-10,950 per union member",
+   "pass": true,
+   "detail": "$8,541 / $11,731; $5,052 / $7,133; 18.9 / 26.4; $6,309 / $8,790; $9,353 / $10,950"
+  }
+ ]
+}

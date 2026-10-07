@@ -23,7 +23,7 @@ v5's stamp form, and consumers key it `oct07`. All five gates pass:
 - G2: the contract;
 - G3: generality;
 - G4: 99 API checks, with 8 consumer gates recorded as needing code;
-- G5: `rerun_lane.py` IDENTICAL 25/25, exit 0.
+- G5: `rerun_lane.py` IDENTICAL 25/25, exit 0; with `lineage_addition.cjs` since 16:44, IDENTICAL 27/27, exit 0.
 
 The companion readings that the record quotes for v5 are rebuilt on v6 (section Companion readings). The count's arms a
 and c give $378.0–445.3bn and $400.2–477.7bn. C3 ± 1 SE gives $386.3–465.4bn and the count by ancestry share
@@ -356,6 +356,35 @@ s_added 0.4075.
 **The school low side** is the existing row `school_within_district`. Its within-district elasticity is 0.836, which
 gives a response of 0.8489 at the group's share. It is set only, as on v5.
 
+## The lineage's addition, by part
+
+`lineage_addition.cjs` splits the 3.04M added people's cost and the lineage's addition at the case's end
+specifications (48 low, 11 high; each figure the two methods' mean). The record's figures on the added people (FAQ
+entry 19, the INDEX, the complete account) come from it. It reads the package and writes only
+`derived/lineage_addition.json`, so no payload or band file moves. The parts come from the package's case at lineage
+options that `lineage_count.cjs` builds (`additionsAt`). With the responses fixed the cost is affine in the counts
+(gated at twice the later losses), so each count part is the case less the case without those people, and the
+union-only case is the intercept at the union's own responses (v4's share and metro factor). 41 gates pass. Among them:
+with no item the route gives v5's stored figures and its published $8,541 / 11,731, $5,052 / 7,133, +$18.9 / +26.4bn,
+$6,309–8,790 and $9,353–10,950, and the union-only case is the September 29 case; with every item it gives the adopted
+band to six decimals; item 4 leaves the added people's parts unchanged.
+
+| $bn a year, low / high | persons | set | per person, set | cash set | per person, cash |
+|---|---:|---:|---:|---:|---:|
+| later losses, priced as identified third-plus members of the same ages | 1,094,828 | 10.513 / 15.360 | $9,603 / 14,030 | 7.322 / 13.657 | $6,688 / 12,474 |
+| G3-rate attriters, (1 − C3) × G3+ + C3 × white | 1,944,892 | 9.829 / 14.115 | $5,054 / 7,257 | 5.435 / 10.248 | $2,795 / 5,269 |
+| all added people | 3,039,720 | 20.342 / 29.475 | $6,692 / 9,696 | 12.757 / 23.905 | $4,197 / 7,864 |
+| the union's response to the larger group | | −0.298 / −0.316 | | −0.298 / −0.316 | |
+| the lineage's addition | | 20.044 / 29.159 | | 12.459 / 23.589 | |
+| the union-only case (39.71M) | 39,712,493 | 369.039 / 432.321 | $9,293 / 10,886 | 294.940 / 361.775 | $7,427 / 9,110 |
+| v6, the case (42.75M) | 42,752,213 | 389.083 / 461.480 | $9,101 / 10,794 | 307.399 / 385.364 | $7,190 / 9,014 |
+
+The high end's union response, −0.3154, prints as −0.316 so the printed parts add. On v5 the added people cost $8,541 /
+11,731, $5,052 / 7,133 and $6,309 / 8,790 a person, the addition was +18.879 / +26.402 and the union-only case $9,353 /
+10,950 per member. The items add $1.164 / 2.757bn to the added people on the set, almost all of it to the later losses
+(+$1.162 / 2.516bn): item 3 prices them at their measured ages. An added person costs less than an identified member,
+so the cost per member of the 42.75M is below the union-only case's.
+
 ## The payloads
 
 - **`derived/corrections.json`** has 769 edits:
@@ -597,11 +626,12 @@ another C3. The names are in `LINEAGE_OPTIONS`: arm_a, arm_c, c3_minus_se and c3
 - **G5**. Command:
 
   ```
-  uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/main_case_2026_10_07 "node {lane}/main_case.cjs" "node {lane}/sign_reversal.cjs" "node {lane}/generality.cjs" "node {lane}/zero_items.cjs" "node {lane}/contract.cjs" "node {lane}/api_check.cjs" --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/package.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/item_age_mix.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/item_user_fees.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/lineage_count.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/ancestry_share.cjs
+  uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/main_case_2026_10_07 "node {lane}/main_case.cjs" "node {lane}/lineage_addition.cjs" "node {lane}/sign_reversal.cjs" "node {lane}/generality.cjs" "node {lane}/zero_items.cjs" "node {lane}/contract.cjs" "node {lane}/api_check.cjs" --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/package.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/item_age_mix.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/item_user_fees.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/lineage_count.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/ancestry_share.cjs
   ```
 
   Result: IDENTICAL, 25/25 files unchanged, exit 0, in 55 s (15:02:51–15:03:46 JST). The five `--allow-unrun` files
-  are modules the scripts load.
+  are modules the scripts load. With `lineage_addition.cjs` second (16:43:07–16:44:17 JST): IDENTICAL 27/27, exit 0,
+  and the three payload files' sha256 are unchanged.
 
 ## Approximations and assumptions
 
@@ -757,16 +787,19 @@ Notes:
 - `sign_reversal.cjs`.
 - `zero_items.cjs`: G1's identity.
 - `contract.cjs` (G2), `generality.cjs` (G3) and `api_check.cjs` (G4).
+- `lineage_addition.cjs`: the lineage's addition by part (section above). The v6 docs pass wrote it; it was moved
+  here unchanged, and its output is byte-identical to that pass's scratch run.
 - `derived/`:
   - `corrections.json` and `corrections_cash.json`;
   - `lineage_payload.json` and `lineage_payload_cash.json`;
   - `main_case_bands.csv`, `components.csv`, `per_spec.csv`, `summary.json` and `sign_reversal.csv`;
   - the gate records `zero_items.json`, `contract.json`, `generality.json` and `api_check.json`.
+  - `lineage_addition.json`, with its own gate record.
 
 **Run order**, about 50 s:
 
 ```
-node main_case.cjs && node sign_reversal.cjs && node generality.cjs && node zero_items.cjs && node contract.cjs && node api_check.cjs
+node main_case.cjs && node lineage_addition.cjs && node sign_reversal.cjs && node generality.cjs && node zero_items.cjs && node contract.cjs && node api_check.cjs
 ```
 
 ## Log (append-only; times from `date`)
@@ -915,3 +948,11 @@ node main_case.cjs && node sign_reversal.cjs && node generality.cjs && node zero
   and `main_case_bands.csv` are byte-identical to 218a2fb2. The hashes went to the parent.
 - 2026-10-07 15:05:27 JST (`date`) — RESULT updated for the two gates, the Pell [ASSUMPTION] and the commit. It,
   `main_case.cjs`, `api_check.cjs` and `derived/api_check.json` are left for the parent to commit.
+- 2026-10-07 16:38:17–16:38:24 JST (`date`) — the parent moved `lineage_addition.cjs` from the v6 docs pass's scratch
+  run into the lane unchanged and ran it in place: 41 gates pass, and `derived/lineage_addition.json` is byte-identical
+  to the scratch output. No payload or band file moves.
+- 2026-10-07 16:41:32–16:42:33 JST (`date`) — G5 with the script last: DIFFERS 26/27. `contract.json` gained
+  `lineage_addition.json` in its list of files v5 lacks, since the committed contract predates the file. The script now
+  runs second, after `main_case.cjs`, whose outputs it hashes, so a clean rebuild gives the contract the same list.
+- 2026-10-07 16:43:07–16:44:17 JST (`date`) — G5: IDENTICAL 27/27, exit 0; `corrections.json`, `corrections_cash.json`
+  and `summary.json` keep sha256 f8d346aa…, e9033bff… and 54709259….
