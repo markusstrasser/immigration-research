@@ -66,14 +66,14 @@ check("lineage population", v6["per_member_usd"]["population"] / 1e6, 42.75, tol
 check("down cut", 0.75 * mid, 318.96, tol=0.005)
 check("up cut", 1.25 * mid, 531.60, tol=0.005)
 for arm, lo, hi, move in [("first_year_horizon", 288.93, 336.45, -26.5), ("first_year_horizon_cash", 207.25, 260.34, -45.0),
-                          ("ancestry_share_low", 274.18, 322.36, -29.9), ("pension_cash", 307.40, 385.36, -18.6)]:
+                          ("ancestry_share_low", 274.87, 320.84, -30.0), ("pension_cash", 307.40, 385.36, -18.6)]:
     check(f"{arm} low", num(arms[arm], "cost_low_bn"), lo, tol=0.005)
     check(f"{arm} high", num(arms[arm], "cost_high_bn"), hi, tol=0.005)
     check(f"{arm} move", num(arms[arm], "move_pct_of_midpoint"), move)
 for arm, move in [("first_year_horizon_property_long_run", -33.5), ("capital_7pct", 20.3), ("property_none", 7.0),
-                  ("school_within_district", -6.4), ("pension_scheduled", 9.9), ("lineage_arm_a", -2.8), ("lineage_arm_c", 2.8),
+                  ("school_within_district", -6.4), ("pension_scheduled", 9.9), ("lineage_arm_a", -3.2), ("lineage_arm_c", 3.2),
                   ("lineage_c3_plus_1se", -0.8), ("lineage_c3_minus_1se", 0.8), ("replacement_r1", -2.1),
-                  ("ancestry_share_high", -17.5), ("ancestry_share_convention", -19.3),
+                  ("ancestry_share_high", -17.7), ("ancestry_share_convention", -19.4),
                   ("pension_tr2026_combined_funds", 0.3), ("retiree_health_rho_one", -0.3), ("retiree_health_rho_high", 0.5),
                   ("added_age_mix_cohort_at_birth", -1.8), ("added_age_mix_rough_keys", 0.1)]:
     check(f"{arm} alone", num(arms[arm], "move_pct_of_midpoint"), move)
@@ -81,8 +81,9 @@ ITEM_ARMS = [a for a, r in arms.items() if r["kind"] == "item"]
 if len(ITEM_ARMS) != 10 or max(abs(num(arms[a], "move_pct_of_midpoint")) for a in ITEM_ARMS) >= 2:
     sys.exit("[BLOCKED] the items' arms are not ten, each under 2%; the text says so")
 if max(abs(num(arms[a], "move_pct_of_midpoint")) for a in ["lineage_arm_a", "lineage_arm_c", "lineage_c3_plus_1se",
-                                                             "lineage_c3_minus_1se", "replacement_r1", "replacement_r05"]) >= 3:
-    sys.exit("[BLOCKED] a lineage alternative other than the ancestry-share count moves C1 by 3% or more; the text says less")
+                                                             "lineage_c3_minus_1se", "replacement_r1", "replacement_r05"]) >= 3.25:
+    sys.exit("[BLOCKED] a lineage alternative other than the ancestry-share count moves C1 by more than 3.2%; the text says "
+             "3.2% at most")
 for key, lo, hi, move in [(("down", "capital_off+pension_cash"), 270.82, 324.30, -30.0),
                           (("down", "roads_parks_first_year+pension_cash"), 277.02, 335.25, -28.0)]:
     check(f"{key} low", num(cuts[key], "cost_low_bn"), lo, tol=0.005)
@@ -93,9 +94,9 @@ for key, move in [(("down", "school_within_district+pension_cash+care_low"), -27
                   (("down", "school_within_district+pension_cash+retiree_health_rho_one"), -25.3),
                   (("down", "capital_off+school_within_district+roads_parks_first_year+care_low"), -26.3),
                   (("down", "capital_off+school_within_district+roads_parks_first_year+added_age_mix_cohort_at_birth"), -25.9),
-                  (("down", "capital_off+ancestry_share_convention"), -30.7), (("down", "pension_cash+ancestry_share_convention"), -33.9),
-                  (("down", "roads_parks_first_year+ancestry_share_convention"), -28.7),
-                  (("down", "school_within_district+ancestry_share_convention"), -25.7),
+                  (("down", "capital_off+ancestry_share_convention"), -30.9), (("down", "pension_cash+ancestry_share_convention"), -34.0),
+                  (("down", "roads_parks_first_year+ancestry_share_convention"), -28.9),
+                  (("down", "school_within_district+ancestry_share_convention"), -25.8),
                   (("up", "capital_7pct+defense_gdp_share"), 34.4), (("up", "capital_7pct+pension_scheduled"), 30.2),
                   (("up", "capital_7pct+property_none"), 27.4), (("up", "property_none+pension_scheduled+defense_gdp_share"), 31.0),
                   (("up", "long_run_high+pension_scheduled+defense_gdp_share"), 27.1),
@@ -123,9 +124,9 @@ stacks = {(r["direction"], size(r)): r for r in cuts.values() if r["minimal"] ==
 if set(stacks) != {("down", 10), ("down", 11), ("up", 9), ("up", 10)}:
     sys.exit(f"[BLOCKED] the stacks are {sorted(stacks)}; the text says 10 / 11 downward and 9 / 10 upward")
 check("down stack", num(stacks[("down", 10)], "move_pct_of_midpoint"), -51.9)
-check("down stack with the ancestry share", num(stacks[("down", 11)], "move_pct_of_midpoint"), -75.9)
+check("down stack with the ancestry share", num(stacks[("down", 11)], "move_pct_of_midpoint"), -76.0)
 check("up stack", num(stacks[("up", 9)], "move_pct_of_midpoint"), 57.4)
-check("up stack with arm c", num(stacks[("up", 10)], "move_pct_of_midpoint"), 60.1)
+check("up stack with arm c", num(stacks[("up", 10)], "move_pct_of_midpoint"), 60.6)
 if not stacks[("down", 11)]["set"].endswith("+ancestry_share_low") or not stacks[("up", 10)]["set"].endswith("+lineage_arm_c"):
     sys.exit("[BLOCKED] the lineage stacks do not add the ancestry share's low end and arm c")
 for d_, items in [("down", ["retiree_health_rho_one", "added_age_mix_cohort_at_birth"]),
@@ -135,8 +136,8 @@ for d_, items in [("down", ["retiree_health_rho_one", "added_age_mix_cohort_at_b
         sys.exit(f"[BLOCKED] the {d_} stack does not carry the items' arms {items}")
 check("first-year horizon clears the cut by", -num(arms["first_year_horizon"], "move_pct_of_midpoint") - 25, 1.5)
 n_item_cuts = sum(1 for r in minimal if any(p in ITEM_ARMS for p in parts(r)))
-check("minimal cuts with an item arm", n_item_cuts, 91, tol=0.5)
-check("minimal cuts", len(minimal), 165, tol=0.5)
+check("minimal cuts with an item arm", n_item_cuts, 81, tol=0.5)
+check("minimal cuts", len(minimal), 158, tol=0.5)
 if min(size(r) for r in minimal if any(p in ITEM_ARMS for p in parts(r))) < 3:
     sys.exit("[BLOCKED] an item arm enters a minimal cut of one or two; the text says always as a third or later step")
 # Schools at 0.836 with cash pensions is no cut, so no file carries it: each triple with one item arm, less that arm's
@@ -258,55 +259,59 @@ A3 = "age artefact removed: A3 white rates at union ages, accrual"
 RAW = "raw cash at white ages: A1, cash set"
 # Both sides on the IPEDS keys for Pell and public higher education, with item 4's tuition term; the comparators'
 # hospital term is beside the central (the white lane's v6 section, the team lead's decision of 2026-10-07). Its
-# ipeds_terms_oct07.csv holds A1 on the rough keys of September 27 and with the hospital term beside.
-for fig, col, want in [(A1, "oct07_bn", (380.3, 384.7)), (A1, "per_member", (8896, 8998)), (A1, "oct05_bn", (373.9, 376.8)),
-                       (LOCAL, "oct07_bn", (430.3, 433.1)), (LOCAL, "per_member", (10064, 10130)), (A3, "oct07_bn", (356.6, 361.0)),
-                       (RAW, "oct07_bn", (212.2, 218.6))]:
+# ipeds_terms_oct07.csv holds A1 on the rough keys of September 27 and with the hospital term beside. Every group's
+# income taxes are on the case's own keys (the white lane's round 2, 2026-10-07); the CPS-dollar rule is an arm.
+for fig, col, want in [(A1, "oct07_bn", (431.6, 436.0)), (A1, "per_member", (10096, 10197)), (A1, "oct05_bn", (425.2, 428.1)),
+                       (LOCAL, "oct07_bn", (528.6, 531.5)), (LOCAL, "per_member", (12365, 12431)), (A3, "oct07_bn", (411.4, 415.7)),
+                       (RAW, "oct07_bn", (263.5, 269.8))]:
     for end, w in zip(("low", "high"), want):
         check(f"C8 {fig} {col} {end}", num(head[(fig, end)], col), w, tol=0.5 if col == "per_member" else 0.05)
 terms = {(r["basis"], r["group"], r["end"]): r for r in rows(WHITE / "ipeds_terms_oct07.csv")}
-for end, w, wh in zip(("low", "high"), (373.8, 378.2), (383.0, 387.3)):
+for end, w, wh in zip(("low", "high"), (425.1, 429.5), (434.3, 438.6)):
     check(f"C8 A1 on the rough keys of September 27 {end}",
           num(terms[("accrual", "A1_third_plus_nh_white", end)], "delta_like_for_like_rough_keys_bn"), w)
     check(f"C8 A1 with the comparators' hospital term {end}",
           num(terms[("accrual", "A1_third_plus_nh_white", end)], "delta_with_hospital_bn"), wh)
 fig_mid = lambda fig: (num(head[(fig, "low")], "oct07_bn") + num(head[(fig, "high")], "oct07_bn")) / 2  # noqa: E731
 a1_mid = fig_mid(A1)
-check("C8 A1 over the claim's $320bn", 100 * (a1_mid / 320 - 1), 19.5)
-check("C8 local whites over the claim's $405bn", 100 * (fig_mid(LOCAL) / 405 - 1), 6.6)
-check("C8 cash at whites' own ages on A1", 100 * (fig_mid(RAW) / a1_mid - 1), -43.7)
-check("C8 A3 on A1", 100 * (fig_mid(A3) / a1_mid - 1), -6.2)
+check("C8 A1 over the claim's $320bn", 100 * (a1_mid / 320 - 1), 35.6)
+check("C8 local whites over the claim's $405bn", 100 * (fig_mid(LOCAL) / 405 - 1), 30.9)
+check("C8 cash at whites' own ages on A1", 100 * (fig_mid(RAW) / a1_mid - 1), -38.5)
+check("C8 A3 on A1", 100 * (fig_mid(A3) / a1_mid - 1), -4.7)
 wsum = {(r["basis"], r["group"], r["end"]): r for r in rows(WHITE / "rekey_summary_oct07.csv")}
 arm = lambda col: [num(wsum[("accrual", "mexican_origin_rough", e)], col) - num(wsum[("accrual", "A1_third_plus_nh_white", e)], col)  # noqa: E731
                    for e in ("low", "high")]
-for col, lo, hi, move in [("cost_both_arms", 492.8, 498.3, 29.6), ("cost_capital_taxes_respond", 451.7, 457.3, 18.8),
-                          ("cost_top_tail_proportional", 421.4, 425.8, 10.7)]:
+# On the case's income-tax keys the top tail is inside the central, so both arms are the capital arm; the CPS-dollar
+# rule (the central before round 2) and the proportional spread are arms below it.
+for col, lo, hi, move in [("cost_both_arms", 503.0, 508.5, 16.6), ("cost_capital_taxes_respond", 503.0, 508.5, 16.6),
+                          ("cost_top_tail_proportional", 421.4, 425.8, -2.3), ("cost_cps", 380.3, 384.7, -11.8)]:
     v = arm(col)
     check(f"C8 {col} low", v[0], lo)
     check(f"C8 {col} high", v[1], hi)
     check(f"C8 {col} move", 100 * (sum(v) / 2 / a1_mid - 1), move)
+check("C8 the CPS-dollar rule over the claim's $320bn", 100 * (sum(arm("cost_cps")) / 2 / 320 - 1), 19.5)
 avg = arm("cost")
 check("C8 the union over A1's slice, as the headline", avg[0], num(head[(A1, "low")], "oct07_bn"), tol=1e-3)
 allres = [num(wsum[("accrual", "mexican_origin_rough", e)], "cost") - num(wsum[("accrual", "all_residents_slice", e)], "cost") for e in ("low", "high")]
-check("C8 against an all-residents slice, low", allres[0], 221.3)
-check("C8 against an all-residents slice, high", allres[1], 226.6)
+check("C8 against an all-residents slice, low", allres[0], 261.8)
+check("C8 against an all-residents slice, high", allres[1], 267.2)
 rough = [num(wsum[("accrual", "mexican_origin_rough", e)], "cost") / num(wsum[("accrual", "mexican_origin_engine", e)], "cost") - 1 for e in ("low", "high")]
-check("C8 the rough union on the engine's, low", 100 * rough[0], 1.6)
-check("C8 the rough union on the engine's, high", 100 * rough[1], -1.8)
+check("C8 the rough union on the engine's, low", 100 * rough[0], -2.3)
+check("C8 the rough union on the engine's, high", 100 * rough[1], -5.0)
 allres_cash = [num(wsum[("cash", "mexican_origin_rough", e)], "cost") - num(wsum[("cash", "all_residents_slice", e)], "cost") for e in ("low", "high")]
-check("C8 against an all-residents slice on cash, low", allres_cash[0], 121.6)
-check("C8 against an all-residents slice on cash, high", allres_cash[1], 129.0)
+check("C8 against an all-residents slice on cash, low", allres_cash[0], 162.2)
+check("C8 against an all-residents slice on cash, high", allres_cash[1], 169.5)
 # P05's swap on C8: the cash figures of the same headline.
 A3_CASH = "age artefact removed: A3 white rates at union ages, cash"
 LOCAL_CASH = "local whites state by state, union ages, cash"
-for fig, want in [(A3_CASH, (364.9, 371.2)), (LOCAL_CASH, (455.8, 460.6))]:
+for fig, want in [(A3_CASH, (419.6, 425.9)), (LOCAL_CASH, (554.1, 559.0))]:
     for end, w in zip(("low", "high"), want):
         check(f"C8 {fig} {end}", num(head[(fig, end)], "oct07_bn"), w)
-check("C8 A3 on cash over the claim's $320bn", 100 * (fig_mid(A3_CASH) / 320 - 1), 15.0)
-check("C8 local whites on cash over the claim's $405bn", 100 * (fig_mid(LOCAL_CASH) / 405 - 1), 13.1)
-check("C8 cash at whites' own ages on the claim's $320bn", 100 * (fig_mid(RAW) / 320 - 1), -32.7)
+check("C8 A3 on cash over the claim's $405bn", 100 * (fig_mid(A3_CASH) / 405 - 1), 4.4)
+check("C8 local whites on cash over the claim's $405bn", 100 * (fig_mid(LOCAL_CASH) / 405 - 1), 37.4)
+check("C8 cash at whites' own ages on the claim's $320bn", 100 * (fig_mid(RAW) / 320 - 1), -16.7)
 check("C8 the smallest arm", min(num(head[(f, e)], "oct07_bn") for f in (A1, LOCAL, A3, RAW, A3_CASH, LOCAL_CASH)
-                                 for e in ("low", "high")), 212.2)
+                                 for e in ("low", "high")), 263.5)
 
 # ---- C4, C5, C6: the pairing's, the debt lane's and the generation account's oct07 runs
 for need in [F / "sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv",
@@ -440,29 +445,30 @@ CONCLUSIONS = [
                  "P10 production; P20 the lineage count (3.04M added, whole, at their measured ages). Measured: line amounts, keys' "
                  "shares, C3, the added people's ages. Assumed: P02–P06, P10, the count's arm.",
         break_condition="Down a quarter (<$319.0bn): the first-year budget horizon alone, $288.9–336.5bn (−26.5%), or the lineage "
-                        "counted by ancestry share at the stated bound's low end alone, $274.2–322.4bn (−29.9%) [FRAMING-SENSITIVE]. "
+                        "counted by ancestry share at the stated bound's low end alone, $274.9–320.8bn (−30.0%) [FRAMING-SENSITIVE]. "
                         "With whole people inside the long-run frame, cash pensions plus one of the case's own alternatives: no capital "
                         "return, $270.8–324.3bn (−30.0%), or roads and parks at CBO's first-year 0, $277.0–335.3bn (−28.0%). Schools at "
                         "0.836 with cash pensions, a pair on v5 (−25.3%), falls 0.05 points short on v6 ($279.6–358.8bn, −24.95%) and "
                         "takes a third: care low (−27.1%), the age mix by birth cohort (−26.3%) or retiree health at ρ = 1 (−25.3%). "
                         "Without cash pensions it takes four (e.g. no capital return + schools 0.836 + first-year roads and parks + care "
                         "low, −26.3%). Counted by ancestry share at the population lane's convention, one more alternative suffices (no "
-                        "capital return −30.7%, cash pensions −33.9%, first-year roads and parks −28.7%, schools at 0.836 −25.7%). "
+                        "capital return −30.9%, cash pensions −34.0%, first-year roads and parks −28.9%, schools at 0.836 −25.8%). "
                         "Up a quarter (>$531.6bn): 7% capital + defense by GDP share (+34.4%), + scheduled benefits (+30.2%) or + "
                         "property taxes at zero (+27.4%); without 7% it takes three (scheduled benefits + defense + property taxes at "
                         "zero, +31.0%, or + the largest long-run response, +27.1%). [CALCULATION: engine_breaks_sept29.cjs --case oct07 "
                         "→ c1_arms_oct07.csv, c1_min_cuts_oct07.csv]",
         break_distance_note="The first-year horizon clears the cut by 1.5 points. Cash pensions alone −18.6% and 7% capital alone "
-                            "+20.3%: each one alternative short. The lineage's own count moves it by under 3%: arms a / c −2.8% / "
-                            "+2.8%, C3 ± 1 SE ∓0.8%, the replacement child −2.1% [FRAMING-SENSITIVE]; the ancestry-share count by "
-                            "−17.5% to −29.9%. The items' ten arms each move it by under 2% (the age mix by birth cohort −1.8%, "
-                            "retiree health −0.3% to +0.5%, the combined trust funds +0.3%) and enter 91 of the 165 minimal cuts, "
-                            "always as a third or later step [APPROX: additive]. All 10 downward alternatives stacked −51.9% (−75.9% "
-                            "with the ancestry share); all 9 upward +57.4% (+60.1% with arm c).",
+                            "+20.3%: each one alternative short. The lineage's own count moves it by 3.2% at most: arms a / c −3.2% / "
+                            "+3.2%, C3 ± 1 SE ∓0.8%, the replacement child −2.1% (v5's change, not recomputed on v6) "
+                            "[FRAMING-SENSITIVE]; the ancestry-share count by −17.7% to −30.0%. The items' ten arms each move it by "
+                            "under 2% (the age mix by birth cohort −1.8%, retiree health −0.3% to +0.5%, the combined trust funds "
+                            "+0.3%) and enter 81 of the 158 minimal cuts, always as a third or later step [APPROX: additive]. All 10 "
+                            "downward alternatives stacked −51.9% (−76.0% with the ancestry share); all 9 upward +57.4% (+60.6% with "
+                            "arm c).",
         rival_reading="The removal cost is mostly a horizon, pricing and pension convention: in the first year budgets respond at "
                       "CBO's rates, levies stay fixed and existing capital earns no return, $289–336bn; counted on cash as well, "
                       "$207–260bn. And the count is a convention: by ancestry share the lineage is 29.9–35.1M people and costs "
-                      "$274–376bn. [FRAMING-SENSITIVE]",
+                      "$275–375bn. [FRAMING-SENSITIVE]",
         discriminating_observation="Budgets after population outflows (2008–12 Mexican net return, 2020–21 enrollment falls, "
                                    "declining-enrollment districts): spending falling ~1:1 within 3–5 years favors the long-run case. "
                                    "The count: grandparents' and great-grandparents' birthplaces for third-plus members (70% have "
@@ -470,7 +476,8 @@ CONCLUSIONS = [
         observed_yet="partly: inflow side only (within-district 0.836, 230; 2022–24 surge money 'about half, and late', 252); "
                      "identity loss measured to the third generation (280), the added people's ages by band (added_age_mix_2026_10_07)",
         source="ladder 229, 230, 237–239, 252, 253, 257, 275, 280, 281, 286; main_case_2026_10_07 main_case_bands.csv, components.csv, "
-               "summary.json v6; main_case_lineage_2026_10_05 v5_bands.csv, v5_summary.json; c1_arms_oct07.csv; c1_min_cuts_oct07.csv",
+               "summary.json v6 (v6.companions for the lineage's count and the ancestry share), ancestry_share.cjs (the convention); "
+               "main_case_lineage_2026_10_05 v5_bands.csv (the replacement child); c1_arms_oct07.csv; c1_min_cuts_oct07.csv",
     ),
     dict(
         id="C2", claim_tested="Public services decide the sign: taxes cover benefits, but not schools and services",
@@ -643,35 +650,44 @@ CONCLUSIONS = [
     ),
     dict(
         id="C8", claim_tested="Against as many whites, the group costs others about $320–405bn a year more, depending on which whites",
-        status_on_v6="holds, restated",
-        deciding_premise="P14 (which whites); P05 sets the level [INFERENCE]",
-        reading_on_v6="With both sides on the lineage's 42.75M, the union costs others $380.3 / 384.7bn a year more than as many "
-                      "third-plus non-Hispanic whites at national rates on the case's accrual basis ($8,896 / 8,998 per member; v5 "
-                      "on the same keys without the tuition term $373.9 / 376.8bn), and $430.3 / 433.1bn more than local whites "
-                      "state by state at union ages. Both sides take Pell by each group's IPEDS share, public higher education by "
-                      "its measured use, and on v6 tuition by use [ASSUMPTION]; the comparators' hospital term stays beside (with it "
-                      "A1 is $383.0 / 387.3bn); on the September 27 rough keys A1 is $373.8 / 378.2bn. [CALCULATION: "
-                      "white_replacement_2026_09_28 rekey_sept29.py --case oct07 → headline_oct07.csv, ipeds_terms_oct07.csv]",
+        status_on_v6="BREAKS upward at both ends: the gap is larger than claimed",
+        deciding_premise="P07 (the case's income-tax keys for every group); P14 (which whites); P05 sets the level [INFERENCE]",
+        reading_on_v6="With both sides on the lineage's 42.75M and every group's income taxes on the case's own keys (federal on "
+                      "the IRS-raked key, state and other personal taxes on the state-liability key, the household's tax shared "
+                      "over its members), the union costs others $431.6 / 436.0bn a year more than as many third-plus "
+                      "non-Hispanic whites at national rates on the case's accrual basis ($10,096 / 10,197 per member; v5 on the "
+                      "same keys without the tuition term $425.2 / 428.1bn), and $528.6 / 531.5bn more than local whites state by "
+                      "state at union ages. Both sides take Pell by each group's IPEDS share, public higher education by its "
+                      "measured use, and on v6 tuition by use [ASSUMPTION]; the comparators' hospital term stays beside (with it A1 "
+                      "is $434.3 / 438.6bn); on the September 27 rough keys A1 is $425.1 / 429.5bn. Charging each group only the "
+                      "income tax it reports to the CPS, the earlier central, gave $380.3 / 384.7bn. [CALCULATION: "
+                      "white_replacement_2026_09_28 rekey_sept29.py --case oct07 → headline_oct07.csv, rekey_summary_oct07.csv, "
+                      "ipeds_terms_oct07.csv, income_tax_keys_oct07.csv]",
         premises="Rough re-key of the case's rules (not an engine run); P14 third-plus non-Hispanic whites at national rates; P05 by "
-                 "accrual, each group at its own accrual per tax dollar on the 2026 separate-funds path; P07; P20: the CPS re-keys "
-                 "cannot see the 3.04M, so the union's side carries them at the case lane's amounts and each white slice is on 42.75M.",
-        break_condition="US whites to local whites, $380.3–433.1bn, sits within a quarter of the claim at both ends: +19.5% on its "
-                        "$320bn and +6.6% on its $405bn. Up: the two case conventions together (the CPS top tail of income tax spread "
-                        "in proportion, capital-side taxes responding) give $492.8 / 498.3bn, +29.6% on A1, which crosses a quarter; "
-                        "alone +10.7% and +18.8%. Down: cash at whites' own ages, $212.2 / 218.6bn (−43.7%), is the age artefact the "
-                        "accrual removes; white rates at the union's ages (A3) give $356.6 / 361.0bn (−6.2%). [CALCULATION: "
-                        "headline_oct07.csv, rekey_summary_oct07.csv]",
-        break_distance_note="Up: two conventions together (each alone falls short). The ordering (the group costs more) holds in every "
-                            "arm, at least +$212.2bn.",
+                 "accrual, each group at its own accrual per tax dollar on the 2026 separate-funds path; P07, the case's income-tax "
+                 "keys for every group; P20: the CPS re-keys cannot see the 3.04M, so the union's side carries them at the case "
+                 "lane's amounts and each white slice is on 42.75M.",
+        break_condition="US whites to local whites, $431.6–531.5bn, sits more than a quarter above the claim at both ends: +35.6% "
+                        "on its $320bn and +30.9% on its $405bn. Back inside a quarter: each group charged only the income tax it "
+                        "reports to the CPS (the top tail the survey misses charged to no one), $380.3 / 384.7bn (+19.5% on $320bn), "
+                        "or cash at whites' own ages, $263.5 / 269.8bn (−38.5% on A1), the age artefact the accrual removes. CPS "
+                        "income-tax dollars spread over the national lines in proportion give $421.4 / 425.8bn (−2.3%), white rates "
+                        "at the union's ages (A3) $411.4 / 415.7bn (−4.7%). Up: capital-side taxes responding, $503.0 / 508.5bn "
+                        "(+16.6%). [CALCULATION: headline_oct07.csv, rekey_summary_oct07.csv]",
+        break_distance_note="Broken by the income-tax keys: on the CPS-dollar rule it held at +19.5% on $320bn. The ordering (the "
+                            "group costs more) holds in every arm, at least +$263.5bn.",
         rival_reading="The gap is composition (schooling, age), not group-specific; against an all-residents slice on the same "
-                      "rough keys the union is $221.3 / 226.6bn above average on the case's accrual and $121.6 / 129.0bn on cash "
+                      "rough keys the union is $261.8 / 267.2bn above average on the case's accrual and $162.2 / 169.5bn on cash "
                       "(the September 27 cash run gave $85–87bn, 263).",
         discriminating_observation="Framing (which reference answers the question, and on which count). Fact left: the re-key "
-                                   "through the engine; the rough keys put the union 1.6% above the engine's at the low end and "
-                                   "1.8% below it at the high end.",
+                                   "through the engine; the rough keys put the union 2.3% below the engine's at the low end and "
+                                   "5.0% below it at the high end, because on the same keys the engine's union pays less income "
+                                   "tax: the case scales the union's income taxes by union-only corrections (the tax-records "
+                                   "stack) that no comparator takes, and at the high end it gives each earner their own income "
+                                   "tax where the comparators share it over the household.",
         observed_yet="partly (rough keys; v4, v5 and v6)",
         source="ladder 259, 263, 274, 281; white_replacement_2026_09_28 headline_oct07.csv, rekey_summary_oct07.csv, "
-               "ipeds_terms_oct07.csv",
+               "ipeds_terms_oct07.csv, income_tax_keys_oct07.csv",
     ),
     dict(
         id="C9", claim_tested="Immigrants offend less, and their US-born sons are held at about twice the white rate",
@@ -741,14 +757,14 @@ SWAP = {
     "P05": ("Cash, the September 27 convention (decision 2026-09-29, alternative 2)",
             "Restores C2: tally +$87.9 / 70.8bn, break-even 8.3–24.2% [CALCULATION: c2_tally_oct07.csv, c2_break_even_oct07.csv]. "
             "C1 −18.6% ($307.4–385.4bn), a break with no capital return (−30.0%) or first-year roads and parks (−28.0%); with "
-            "schools at 0.836 it falls 0.05 points short (−24.95%) [CALCULATION: c1_min_cuts_oct07.csv]. C8 on cash: $364.9–371.2bn "
-            "with white rates at the union's ages, inside the claim's range, and $455.8–460.6bn against local whites (+13.1% on "
-            "$405bn); at whites' own ages $212.2–218.6bn (−32.7% on $320bn), the age artefact [FRAMING-SENSITIVE] [CALCULATION: "
+            "schools at 0.836 it falls 0.05 points short (−24.95%) [CALCULATION: c1_min_cuts_oct07.csv]. C8 on cash: $419.6–425.9bn "
+            "with white rates at the union's ages (+4.4% on the claim's $405bn) and $554.1–559.0bn against local whites (+37.4%); "
+            "at whites' own ages $263.5–269.8bn (−16.7% on $320bn), the age artefact [FRAMING-SENSITIVE] [CALCULATION: "
             "white_replacement_2026_09_28 headline_oct07.csv]. C4 pairing $407.3–494.6bn (−14.9%) [DATA: sept24_propagation "
             "oct07]; C5 state-local share 68% → 82–87% [CALCULATION: debt lane split]; C6 every generation still costs others (at "
-            "least $72.7bn; break-evens at most 42.2%) [CALCULATION: c6_generation_break_even_oct07.csv]. Of C1–C6 and C8 it "
-            "breaks none at the union's ages. Scheduled benefits instead: C1 +9.9%, C2 tally −$37.1 / −45.8bn on the 2026 "
-            "inputs, C5 about 62%."),
+            "least $72.7bn; break-evens at most 42.2%) [CALCULATION: c6_generation_break_even_oct07.csv]. Of C1–C6 it breaks none "
+            "at the union's ages; C8, broken upward at the central, stays broken against local whites. Scheduled benefits "
+            "instead: C1 +9.9%, C2 tally −$37.1 / −45.8bn on the 2026 inputs, C5 about 62%."),
     "P08": ("No corrections (v4's items, the lineage and v6's items on the uncorrected model, the union's pension switch rebuilt)",
             "C1 +2.5% ($399.6–472.5bn) [CALCULATION: c3_correction_split_oct07.csv]; C2 tally +$11.0 / −0.2bn: clause 1 holds at "
             "the low end and fails at the high end, as on the case, where on v5 the swap held it at both (+$11.1 / 0.4bn) "
@@ -760,12 +776,13 @@ SWAP = {
             "Breaks none."),
     "P20": ("The count's arms a and c (1.81M or 4.27M added); the added people at the identified G3+'s ages (v5's rule); as a "
             "framing, the ancestry-share count (29.9–35.1M people)",
-            "Arms a / c: C1 −2.8% / +2.8%, C2's split by end holds (+$4.3 / −6.3bn and +$8.1 / −4.4bn) [CALCULATION: "
-            "c1_arms_oct07.csv, c2_tally_oct07.csv]; C3 ± 1 SE ∓0.8% and the replacement child −2.1% [FRAMING-SENSITIVE]; at the "
-            "identified G3+'s ages C1 −0.5% (the age-mix item's +$1.35 / 2.86bn out), and at the item's cohort reading −1.8% "
-            "[DATA: main_case_2026_10_07 summary.json]. Breaks none. By ancestry share: C1 −17.5% to −29.9%, a break at the stated "
-            "bound's low end [FRAMING-SENSITIVE]; the per-member cost barely moves ($9,170–10,782 at the low end against "
-            "$9,101–10,794) [APPROX: v5's change of count added to v6]. Breaks one, under that count only."),
+            "Arms a / c: C1 −3.2% / +3.2%, C2's split by end holds (+$4.3 / −6.3bn and +$8.1 / −4.4bn) [CALCULATION: "
+            "c1_arms_oct07.csv, c2_tally_oct07.csv]; C3 ± 1 SE ∓0.8% and the replacement child −2.1% (v5's change, not "
+            "recomputed on v6) [FRAMING-SENSITIVE]; at the identified G3+'s ages C1 −0.5% (the age-mix item's +$1.35 / 2.86bn "
+            "out), and at the item's cohort reading −1.8% [DATA: main_case_2026_10_07 summary.json]. Breaks none. By ancestry "
+            "share: C1 −17.7% to −30.0%, a break at the stated bound's low end [FRAMING-SENSITIVE]; the per-member cost barely "
+            "moves ($9,194–10,731 at the low end against $9,101–10,794) [DATA: summary.json v6.companions]. Breaks one, under that "
+            "count only."),
 }
 for arm, lo, hi in [("school_within_district", 361.26, 434.91), ("pension_cash", 307.40, 385.36)]:
     check(f"{arm} low", num(arms[arm], "cost_low_bn"), lo, tol=0.005)
@@ -782,12 +799,13 @@ age_item = summ["change_at_fixed_specifications"]["items"]["added_age_mix"]["tot
 check("P20 the age-mix item, low", age_item[0], 1.35, tol=0.005)
 check("P20 the age-mix item, high", age_item[1], 2.86, tol=0.005)
 check("P20 at the identified G3+'s ages", -100 * sum(age_item) / 2 / mid, -0.5)
-v5s = json.load(open(LINEAGE / "v5_summary.json"))
-frac = next(r for r in v5s["fractional"]["rows"] if r["set"] == "set" and r["arm"] == "b" and r["scenario"] == "g4_at_nothing")
-check("P20 ancestry-share per member low (v5's change added)", num(arms["ancestry_share_low"], "cost_low_bn") * 1e9 / frac["fractional_population"], 9170, tol=0.5)
-check("P20 ancestry-share per member high (v5's change added)", num(arms["ancestry_share_low"], "cost_high_bn") * 1e9 / frac["fractional_population"], 10782, tol=0.5)
-fr_pop = [r["fractional_population"] / 1e6 for r in v5s["fractional"]["rows"]
-          if r["set"] == "set" and r["arm"] == "b" and r["scenario"] in ("g4_at_nothing", "g4_at_bound")]
+fr6 = summ["v6"]["companions"]["ancestry_share"]["set"]["rows"]
+frac = next(r for r in fr6 if r["scenario"] == "g4_at_nothing")
+for j, (k, want) in enumerate((("cost_low_bn", 9193.5), ("cost_high_bn", 10730.7))):
+    got = num(arms["ancestry_share_low"], k) * 1e9 / frac["fractional_population"]
+    check(f"P20 ancestry-share per member {k} (v6's row)", got, want, tol=0.5)
+    check(f"P20 ancestry-share per member {k} is v6.companions'", got, frac["per_member_usd"][j], tol=0.5)
+fr_pop = [r["fractional_population"] / 1e6 for r in fr6 if r["scenario"] in ("g4_at_nothing", "g4_at_bound")]
 check("P20 ancestry-share population low", min(fr_pop), 29.9)
 check("P20 ancestry-share population high", max(fr_pop), 35.1)
 meta6 = json.load(open(LANE / "corrections.json"))["meta"]["lineage"]["counts"]

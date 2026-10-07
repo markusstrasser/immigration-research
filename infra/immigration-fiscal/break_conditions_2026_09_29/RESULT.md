@@ -411,6 +411,12 @@ uv run --no-project --offline python3 infra/immigration-fiscal/break_conditions_
 
 ## v6 case (oct07), 2026-10-07
 
+[Round 2, later on 2026-10-07: the comparators' income taxes moved to the case's own keys, and C8 now breaks upward at
+both ends. This section's C8 figures use the CPS-dollar rule; the current ones are in "v6 round 2" below. C1's lineage
+rows then moved from rule 5's v5 changes to the case lane's own v6 companions (below, "C1's lineage rows on v6's own
+companions"): the ancestry-share count's low end now gives −30.0%, arms a and c −3.2% / +3.2%, and the minimal cuts
+number 158; no status changes.]
+
 claude-opus-5-5 (v6 propagation, group D, prop-d). **Verdict (v6).** Main case v6 (`../main_case_2026_10_07/`,
 $389.08–461.48bn) adds four items to v5: pensions on the 2026 Trustees' separate funds, state-local retiree health on
 accrual, the added people at their measured ages, and user fees with education keyed by use. No conclusion changes
@@ -645,3 +651,135 @@ uv run --no-project --offline python3 infra/immigration-fiscal/break_conditions_
   only in C8's three text cells and `common_mode_oct07.csv` only in P05's swap cell.
 - 2026-10-07 17:08:40–17:09:37 JST (by `date`): `rerun_lane.py` with all nine commands (`engine_breaks.cjs`,
   `tables.py`, the sept29 pair, the oct05 pair, `scheduled_tr2026.py` and the oct07 pair): **IDENTICAL 43/43, exit 0**.
+
+## v6 round 2: C8 on the case's income-tax keys, 2026-10-07
+
+claude-opus-5-5 (prop-d). **Verdict (round 2).** Every comparator's income taxes now take the case's own keys (the
+white lane's section "v6 round 2"), and **C8 breaks upward at both ends**: the gap is larger than claimed.
+- The union costs others $431.6 / 436.0bn a year more than as many third-plus non-Hispanic whites at national rates,
+  $10,096 / 10,197 per member, and $528.6 / 531.5bn more than local whites state by state at union ages. That is +35.6%
+  on the claim's $320bn and +30.9% on its $405bn.
+- The deciding premise is P07, the keys. On the CPS-dollar rule, which charged a group only the income tax it reports
+  to the CPS and, on the comparators' frame, charged $395.9bn of federal and $39.4bn of state income tax to no one, A1
+  was $380.3 / 384.7bn, +19.5% on $320bn. [DATA: white lane `cps_tax_totals_oct07.csv`, frame row 4, the rough keys]
+- [INFERENCE] The claim's figures came from that rule on the September 27 case, so the break is the key change, not new
+  data.
+
+Two conclusions now break at the central, C2 and C8. No other conclusion reads a comparator figure, and none moves.
+[CALCULATION: `tables_oct07.py` → `derived/conclusions_oct07.csv`, `common_mode_oct07.csv`, on the white lane's round-2
+`headline_oct07.csv`, `rekey_summary_oct07.csv`, `ipeds_terms_oct07.csv` and `income_tax_keys_oct07.csv`]
+
+| | Claim (the map) | On v6, the CPS-dollar rule | On v6, round 2 | Status |
+|---|---|---|---|---|
+| C8 | $320–405bn more than as many whites | A1 $380.3 / 384.7bn; local whites $430.3 / 433.1bn | A1 $431.6 / 436.0bn; local whites $528.6 / 531.5bn | **breaks upward at both ends** |
+
+- **Back inside a quarter.** Two arms bring it back:
+  - The CPS-dollar rule: A1 $380.3 / 384.7bn, +19.5% on $320bn.
+  - Cash at whites' own ages: $263.5 / 269.8bn, −38.5% on A1 and −16.7% on $320bn. This is the age artefact the
+    accrual removes.
+- **Still broken.**
+  - CPS income-tax dollars spread over the national lines in proportion give $421.4 / 425.8bn (−2.3% on A1).
+  - White rates at the union's ages (A3) give $411.4 / 415.7bn (−4.7%).
+  - Capital-side taxes responding give $503.0 / 508.5bn (+16.6%). With the top tail inside the central, this is also
+    the both-arms figure.
+  - The comparators' hospital term gives $434.3 / 438.6bn, and the September 27 rough keys $425.1 / 429.5bn.
+  - The ordering holds in every arm: the smallest is $263.5bn.
+- **P05's swap on C8** (cash). A3 is $419.6–425.9bn (+4.4% on $405bn) and local whites $554.1–559.0bn (+37.4%). At
+  whites' own ages it is $263.5–269.8bn (−16.7% on $320bn). Of C1–C6 the swap breaks none at the union's ages. C8,
+  broken upward at the central, stays broken against local whites.
+- **Against an all-residents slice** the union is $261.8 / 267.2bn above average on the case's accrual and $162.2 /
+  169.5bn on cash.
+- **The rough union and the engine's.** The rough keys put the union 2.3% below the engine's at the low end and 5.0% below
+  at the high end, because on the same keys the engine's union pays less income tax. The case scales the union's income
+  taxes by union-only corrections (the tax-records stack), which no comparator takes. At the high end it also gives each
+  earner their own income tax, where the comparators share it over the household.
+- **The allocation, beside the central.** At the personal allocation A1 is $448.7 / 453.1bn, so C8 breaks under either
+  allocation. A3 falls to $364.1 / 368.4bn there (the white lane's round-2 section).
+
+**Rule 9 (round 2): C8 on the case's income-tax keys** [ASSUMPTION]. This follows the lead's instruction of 2026-10-07,
+which the operator approved at 19:44 JST.
+- Every group takes federal income tax on v4 item 3's IRS-raked key, and state and other personal taxes on the
+  state-liability key, at the shared allocation.
+- No group takes a union-only correction.
+- The CPS-dollar rule stays as an arm. `tables_oct07.py` checks each quoted number against the white lane's files.
+- `tables_oct05.py` is unchanged: its C8 cites the September 29 headline, which round 2 leaves alone. Rerun in place,
+  it rewrites its two files byte for byte.
+
+**Gates.** `tables_oct07.py` exits 0 on the round-2 files, and every check passes, including the C8 arms, the CPS-dollar
+rule, the rough union against the engine's and the smallest arm. Its tally reads: broken at the central, C2 and C8.
+`engine_breaks_sept29.cjs` reads no comparator file, so its outputs are the v6 section's.
+
+**Files.** Changed: `derived/conclusions_oct07.csv` (C8's row) and `derived/common_mode_oct07.csv` (P05's swap cell);
+`tables_oct07.py` (C8's checks and text, and the P05 cell).
+
+### Log (round 2; times from `date` or the files' clock)
+
+- 2026-10-07 20:26:52 (log time): `tables_oct07.py` and `tables_oct05.py` ran in place on the white lane's round-2
+  files, exit 0. oct07's two files changed and oct05's did not.
+- 20:53:51 (by `date`): C8's text on the rough union against the engine's now names the tax-records stack;
+  `tables_oct07.py` reran in place, exit 0. Only that cell of `conclusions_oct07.csv` changed.
+- 21:15:48–21:16:46 (by `date`): `rerun_lane.py` with the v6 section's nine commands, after the four comparator lanes'
+  round-2 reruns: **IDENTICAL 43/43, exit 0**.
+
+### C1's lineage rows on v6's own companions (round 2, later on 2026-10-07)
+
+claude-opus-5-5 (prop-d). The v6 section's rule 5 carried the lineage's alternatives to v6 as v5's changes, because the
+lineage lane prices no v6 arm. The case lane does: `main_case_2026_10_07/derived/summary.json` `v6.companions` holds
+the count's arms a and c, C3 ± 1 SE and the ancestry-share count at its stated bound, each on the set and the cash set,
+with every item rebuilt on the option's lineage. C1 now reads them. **No status changes.** C1 holds, restated; the
+first-year horizon and the ancestry-share count's low end each still break it alone; C2 and C8 are still the only
+breaks at the central, and the top five premises are still P01, P02, P08, P03 and P05. [CALCULATION:
+`engine_breaks_sept29.cjs --case oct07`, `tables_oct07.py` → `derived/c1_arms_oct07.csv`, `c1_min_cuts_oct07.csv`]
+
+| C1 alternative, $bn | Rule 5 (v5's change) | v6's own | Move on the midpoint |
+|---|---|---|---|
+| Ancestry share, the stated bound's low end | 274.18–322.36 | 274.87–320.84 | −29.9% → −30.0% |
+| Ancestry share, the stated bound's high end | 325.47–376.05 | 325.20–374.79 | −17.5% → −17.7% |
+| Ancestry share at the population lane's convention | 319.23–367.48 | 319.01–366.27 | −19.3% → −19.4% |
+| Arm a (1.81M added) | 379.16–447.79 | 378.00–445.25 | −2.8% → −3.2% |
+| Arm c (4.27M added) | 398.99–475.16 | 400.16–477.70 | +2.8% → +3.2% |
+| C3 + 1 SE | 386.09–457.53 | 386.25–457.59 | −0.8%, unchanged |
+| C3 − 1 SE | 392.08–465.43 | 391.91–465.37 | +0.8%, unchanged |
+
+- **The convention row** is the case lane's count on v6's generation costs (`ancestry_share.cjs` `rowsFor`, run
+  read-only) at the population lane's shares, third-plus members at 0.6156. The case lane prints no convention row, so
+  the same code is gated on the bound's two ends, which it does print.
+- **The replacement child** (r = 1, −2.1%; r = 0.5, dominated) has no v6 counterpart, since it belongs to the frame the
+  operator declined on 2026-10-05. Its rows stay v5's changes, and their source now says "v5 delta carried, not
+  recomputed on v6".
+- **Minimal cuts.** There are 158 (137 down, 21 up), against 165 (141, 24). The items' arms enter 81 of them, against 91,
+  still always as a third or later step [APPROX: additive]. The larger moves of arms a and c and of the ancestry-share
+  rows let smaller sets cross the cut, so 20 larger sets that contain one of them are no longer minimal; three
+  downward sets with C3 + 1 SE, which now moves C1 slightly less, no longer cross it. With the ancestry share at the
+  convention, one more alternative still breaks C1: no capital return −30.9% (was −30.7%), cash pensions −34.0%
+  (−33.9%), first-year roads and parks −28.9% (−28.7%) or schools at 0.836 −25.8% (−25.7%).
+- **Stacks.** All downward alternatives with the ancestry share give −76.0% (was −75.9%); all upward with arm c +60.6%
+  (+60.1%). The stacks without the lineage's rows do not move (−51.9%, +57.4%).
+- **Text.** C1's break condition, distance note ("3.2% at most"), rival reading ($275–375bn) and source, and P20's swap
+  cell: arms a / c −3.2% / +3.2%, the ancestry share −17.7% to −30.0%, and per member $9,194–10,731 at the bound's low
+  end against the case's $9,101–10,794 (`summary.json` `v6.companions`).
+- **Still on rule 5.** C2's tally at arms a and c (+$4.3 / −6.3bn and +$8.1 / −4.4bn) is v5's lines moved by the case's
+  change [APPROX]. The companions give each option's band, per-member cost and change from the case, not the direct-tax
+  and transfer lines the tally needs.
+
+**Gates.** `engine_breaks_sept29.cjs --case oct07` passes 69 of 69 (61 before):
+- each of the four options is the case plus its change and `main_case_bands.csv`'s row, on the set and the cash set
+  (1e-9; 5e-5);
+- on each set, the ancestry-share count at the bound's two ends is `rowsFor`'s row (1e-9), `summary.json`'s (1e-6) and
+  `main_case_bands.csv`'s (5e-5).
+
+`tables_oct07.py` stopped on its first build after the engine run, on the old text (`[BLOCKED] ancestry_share_low low:
+computed 274.8742, text says 274.18`), as its checks are meant to. After the text edits every check passes. The sept29
+and oct05 runs do not take the new rows, and the rerun shows their files unchanged.
+
+**Files.** Changed: `engine_breaks_sept29.cjs` (the oct07 lineage block and its header), `tables_oct07.py` (C1's and
+P20's checks and text), and in `derived/`, `c1_arms_oct07.csv`, `c1_min_cuts_oct07.csv`, `conclusions_oct07.csv` (C1's
+four text cells) and `common_mode_oct07.csv` (P20's swap cell).
+
+**Log (times from `date` or the files' clock).**
+- 21:50:12 (file time): `engine_breaks_sept29.cjs` edited. 21:50:27–21:50:48 (by `date`): `--case oct07` ran in place,
+  69 of 69 gates, exit 0. Of its files, only `c1_arms_oct07.csv` and `c1_min_cuts_oct07.csv` changed.
+- 21:51:24 (file time): `tables_oct07.py` stopped on the old text, as above. 21:53:48 (file time): after the text
+  edits, exit 0, broken at the central C2 and C8, top five P01, P02, P08, P03, P05. `conclusions_oct07.csv` changed only
+  in C1's four text cells, and `common_mode_oct07.csv` only in P20's swap cell.
+- 22:00:54–22:01:48 (by `date`): `rerun_lane.py` with the nine commands: **IDENTICAL 43/43, exit 0**.

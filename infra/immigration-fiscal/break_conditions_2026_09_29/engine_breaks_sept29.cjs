@@ -45,9 +45,12 @@
  * on the 2025 reports, so the scheduled rule takes the scheduled arm on the 2026 inputs instead
  * (scheduled_tr2026.py -> derived/scheduled_tr2026.json, gated to this payload); its positive control stays on the 2025
  * values (the payload's previous.oct05 and the pension lane file it pins). The union at the case's responses carries the
- * edit sets' union parts (engine_lines.cjs's rule). The lineage's alternatives are v5's changes from v5's lineage central
- * (the lineage lane prices no v6 arm), added to v6 [APPROX: additive; ASSUMPTION: each moves v6 as it moves v5], and
- * the tally's lineage arms a and c are v5's lines moved by the case's change from v5 [APPROX]. C1 adds the items' own
+ * edit sets' union parts (engine_lines.cjs's rule). The lineage's alternatives are v6's own: the case lane's
+ * summary.json v6.companions (arms a and c, C3 -/+ 1 SE, the ancestry-share count's stated bound) and the ancestry share
+ * at the population lane's convention on v6's generation costs (the case lane's ancestry_share.cjs rowsFor, read-only),
+ * each its band's change from the case on the set and from the cash set. The replacement rows, which v6 does not build,
+ * are v5's changes from v5's lineage central carried to v6 [APPROX: additive; ASSUMPTION: each moves v6 as it moves v5].
+ * The tally's lineage arms a and c are v5's lines moved by the case's change from v5 [APPROX]. C1 adds the items' own
  * arms (summary.json v6.arms: the 2026 inputs on combined funds, retiree health's six, the age mix at birth cohorts and
  * on rough keys), each its band's change from the case on the set or the cash set [APPROX: additive], at most one per
  * item in a combination; the stacks take each item's largest arm in their direction. C6 reads the generation account's
@@ -305,6 +308,54 @@ if (LIN) {
   Object.assign(LINEAGE_LISTED, {
     replacement_r05: { dir: "down", by: delta((s) => bandOf(s, LIN.arm, "replacement_r0.5")), src: `[FRAMING-SENSITIVE] ${LL} v5_bands.csv: replacement child, r = 0.5; dominated by replacement_r1` },
   });
+  // oct07: v6 prices the added people at their measured ages, so v5's changes no longer apply. Each alternative with a
+  // v6 counterpart takes the case lane's own (summary.json v6.companions: the count's arms a and c, C3 -/+ 1 SE and the
+  // ancestry-share count's stated bound), its band's change from the case on the set and from the cash set; the
+  // ancestry share at the population lane's convention is the same count on v6's generation costs (the case lane's
+  // ancestry_share.cjs rowsFor, run read-only) at the convention's shares. The replacement rows have no v6 counterpart
+  // (the frame the operator declined on 2026-10-05): v5's changes carried, not recomputed on v6.
+  if (ITEMS.length) {
+    const s6 = readJson(`${LANE}/derived/summary.json`), comp = s6.v6.companions, CASH_SET = s6.cash_set.band_bn;
+    const minus = (b, c) => b.map((x, j) => x - c[j]);
+    for (const [id, name] of [["lineage_arm_a", "arm_a"], ["lineage_arm_c", "arm_c"], ["lineage_c3_plus_1se", "c3_plus_se"],
+      ["lineage_c3_minus_1se", "c3_minus_se"]]) {
+      const o = comp.options[name];
+      gate(`${id}: v6.companions.options.${name} is the case plus its change and main_case_bands.csv's row, on the set and the cash set (1e-9; 5e-5)`,
+        o.set.band_bn.every((x, j) => near(x, MAIN[j] + o.set.change_from_the_case_bn[j], 1e-9) && near(x, bandRow(`lineage_${name}`)[j], 5e-5))
+        && o.cash.band_bn.every((x, j) => near(x, CASH_SET[j] + o.cash.change_from_the_case_bn[j], 1e-9) && near(x, bandRow(`lineage_${name}_cash_set`)[j], 5e-5)),
+        `${o.set.band_bn.map(f4).join("–")}`);
+      LINEAGE[id].by = { set: o.set.change_from_the_case_bn.slice(), cash: o.cash.change_from_the_case_bn.slice() };
+      LINEAGE[id].src = `${LANE} summary.json v6.companions.options.${name}: ${o.label.replace(/"/g, "'")}`;
+    }
+    const AS = require(path.join(ROOT, LANE, "ancestry_share.cjs"));
+    const SH = readJson(AS.SHARES_FILE).shares;
+    const SC = { ancestry_share_low: ["g4_at_nothing", SH.G3plus.bound_low], ancestry_share_high: ["g4_at_bound", SH.G3plus.bound_high],
+      ancestry_share_convention: ["convention", SH.G3plus.convention] };
+    const by = {};
+    for (const which of ["set", "cash"]) {
+      const r = AS.rowsFor(P, which, { Engine }), gc = r.generation_costs;
+      const count = (g3) => gc.G1.map((x, i) => x + SH.G2.central * gc.G2[i] + g3 * gc.G3plus[i] + SH.added.central * r.added_costs[i]);
+      const band = (g3) => { const f = count(g3); return [Math.min(...f), Math.max(...f)]; };
+      const base = which === "set" ? MAIN : CASH_SET;
+      for (const [id, [scenario, g3]] of Object.entries(SC)) {
+        const b = band(g3);
+        if (scenario !== "convention") {
+          const own = r.rows.find((x) => x.scenario === scenario), kept = comp.ancestry_share[which].rows.find((x) => x.scenario === scenario);
+          const row = bandRow(`ancestry_share_${scenario}${which === "cash" ? "_cash_set" : ""}`);
+          gate(`${id}, ${which}: the count at its shares is rowsFor's row (1e-9), summary.json v6.companions' (1e-6) and main_case_bands.csv's (5e-5)`,
+            b.every((x, j) => near(x, own.band_bn[j], 1e-9) && near(x, kept.band_bn[j], 1e-6) && near(x, row[j], 5e-5)), `${b.map(f4).join("–")}`);
+        }
+        (by[id] = by[id] || {})[which] = minus(b, base);
+      }
+    }
+    for (const [id, [scenario]] of Object.entries(SC)) {
+      LINEAGE[id].by = by[id];
+      LINEAGE[id].src = scenario === "convention"
+        ? `[FRAMING-SENSITIVE] ${LANE} ancestry_share.cjs rowsFor on v6 (read-only): the whole lineage counted by ancestry share, every third-plus member at the population lane's convention (${SH.G3plus.convention.toFixed(4)}), inside the bound; no v6.companions row`
+        : `[FRAMING-SENSITIVE] ${LANE} summary.json v6.companions.ancestry_share: the whole lineage counted by ancestry share, ${scenario === "g4_at_nothing" ? "the stated bound's low end (G4+ at nothing)" : "the stated bound's high end (G4+ at its measured high bound)"}`;
+    }
+    for (const x of [LINEAGE.replacement_r1, LINEAGE_LISTED.replacement_r05]) x.src += "; v5 delta carried, not recomputed on v6";
+  }
   gate("every lineage alternative is a finite pair on both sets, in its direction at the midpoint", Object.values(Object.assign({}, LINEAGE, LINEAGE_LISTED))
     .every((x) => ["set", "cash"].every((s) => x.by[s].every(Number.isFinite) && (x.dir === "down" ? mid(x.by[s]) < 0 : mid(x.by[s]) > 0))));
 }
