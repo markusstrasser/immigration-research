@@ -1989,8 +1989,9 @@ and rewrites its files byte for byte.
 
 claude-opus-5-5 (prop-d)
 
-**Status (2026-10-07 17:40 JST).** oct07 ran on four pins: winners f2d9600, distribution 498a6a7, generation 3f583fb
-and main case 793eca4. The person rows count the case's 42,752,213 people, as on oct05. Beside it, a second run
+**Status (2026-10-07 17:40 JST; winners pin updated 17:48).** oct07 runs on four pins: winners 6dacaef,
+distribution 498a6a7, generation 3f583fb and main case 793eca4. The first run, committed at 692f2e97, pinned winners
+f2d9600; 6dacaef holds the same oct07 files byte for byte, so only the pin fields in the three oct07 metas changed. The person rows count the case's 42,752,213 people, as on oct05. Beside it, a second run
 counts them on row 4's 39,712,493. Every gate passes. A full rerun with the 29 commands of "Reproduce" is IDENTICAL,
 119/119 files, exit 0, and so is `run_all.sh` with the five cases. The world total at equal weights is
 **+$321.1bn**, central (oct05: +$318.9bn). Section "Results (oct07)" gives the figures.
@@ -2006,7 +2007,10 @@ Its band is $389.08–461.48bn. Its count is v5's, so the basis is unchanged.
 ### Files changed
 
 - `pins.json`, the `oct07` entry:
-  - the lead's pins: winners f2d9600, distribution 498a6a7 and generation 3f583fb;
+  - the lead's pins: winners 6dacaef, distribution 498a6a7 and generation 3f583fb. 6dacaef is the winners lane's
+    current code: after f2d9600 it changed only a gate's tolerance in `winners_losers.py`'s `per_correction_check`
+    (a rounding bound in place of a fixed 1e-5) and a RESULT line,
+    and the lane's `derived/oct07/` is f2d9600's byte for byte;
   - the winners case `adopted_2026_10_07`, oct07's folders and file names, and `"basis": "lineage"`;
   - **main case 793eca4, not the lead's 1548b39.** `generation_lines.cjs` requires the case lane, less its Markdown,
     and every module the package loads to be the pin's. 793eca4 added `lineage_addition.cjs`, its derived file and
@@ -2160,7 +2164,7 @@ shortfall, is $61.3–61.8bn (oct05: $61.2–61.7bn).
 - The saving leak is $8.5–92.8bn under tax shares (oct05: $8.5–92.9bn).
 
 **Carried from upstream, as on oct05.** The seven non-budget channels of other residents still sum to −$45.44bn
-central, as the winners lane takes them (f2d9600).
+central, as the winners lane takes them (6dacaef).
 
 ### Checks
 
@@ -2184,7 +2188,8 @@ central, as the winners lane takes them (f2d9600).
 3. **Oracle.** The generations' union at specs 48 / 11 is 389.082553 / 461.479709, against the adopted
    389.0826 / 461.4797 (tolerance 5e-5). Less the accrual it is 307.399411 / 385.364122, the cash set.
 4. **Pins.** No commit after a pin touches the files it names: the winners, distribution and generation oct07 files
-   last changed at f2d9600, 498a6a7 and 3f583fb, and their working trees equal those commits.
+   last changed at f2d9600, 498a6a7 and 3f583fb, and their working trees equal those commits. The winners pin
+   6dacaef holds f2d9600's oct07 files.
 5. **Reruns,** with the 29 commands of "Reproduce": IDENTICAL, 119/119 files, exit 0. `run_all.sh sept26_schools
    sept27 sept29 oct05 oct07` under the same checker is IDENTICAL, 119/119, exit 0.
 
@@ -2241,3 +2246,9 @@ Log (times from `date`):
   17:39:32–17:40:35 JST: `run_all.sh` with the five cases under the same checker, IDENTICAL, 119/119, exit 0.
 - 2026-10-07 17:41 JST: this section written from the derived files (scratch script `final/wl_v6_figs.py` in the
   worker's scratchpad). No code or output changed after the reruns.
+- 2026-10-07 17:48:35–17:48:39 JST: the winners pin moved from f2d9600 to 6dacaef, at the lead's word (the
+  lead's messages reached this worker only at 17:46, after 692f2e97). `valuation.py`, then `world_ledger.py --case oct07`
+  and `--basis row4`, all exit 0 with every gate passing. Only the pin fields of `valuation_meta_oct07.json`,
+  `world_ledger_meta_oct07.json` and `world_ledger_meta_oct07_row4.json` changed.
+- 2026-10-07 17:49:11–17:50:16 JST: the rerun with the 29 commands, IDENTICAL, 119/119 files, exit 0;
+  17:50:16–17:51:19 JST: `run_all.sh` with the five cases under the same checker, IDENTICAL, 119/119, exit 0.
