@@ -14,8 +14,9 @@ points the same way (section D).
   Hendren's revealed weights give 1.02–1.05 against 0.98, and log weights give 2.7–3.3 against 2.1. The λ
   columns scale the payers' cost; that is the leak of the first claim, not a lower worth of the recipient's
   dollar. The version where payers would have invested the dollar is also a leak, through the tax its return
-  would have paid. Even if all of that saving would have become domestic capital, it is $7.1–77.9bn a year, and
-  the rich's added saving since 1982 financed other people's borrowing rather than investment. [SOURCE:
+  would have paid. Even if all of that saving would have become domestic capital, it is $7.1–77.9bn a year
+  [2026-10-07: $7.1–31.4bn after the correction to m below], and the rich's added saving since 1982 financed other
+  people's borrowing rather than investment. [SOURCE:
   reads/mian_straub_sufi_2025.md; CALCULATION] The claim survives only as the operator's moral weight w on the
   group. The US plus the group comes out behind when w is below 0.61 (equal weights; 0.69 at λ 1.16, 0.87 at
   λ 1.5), central; counting Mexico's residents, below 0.43–0.68. [FRAMING-SENSITIVE]
@@ -51,7 +52,8 @@ points the same way (section D).
   (2026-10-07)").] The part of the account
   that buys the group nothing it values rises from about $50bn to about $58bn, mostly the state-price gap in public
   order, which costs others $6.4bn and is worth −$1.0bn to the group (rule 2). The two verdicts stand: Hendren's
-  weights still give the group's dollars 1.02–1.05 against the payers' 0.98, and the saving leak is $8.1–88.0bn.
+  weights still give the group's dollars 1.02–1.05 against the payers' 0.98, and the saving leak is $8.1–88.0bn
+  [2026-10-07: $8.1–35.4bn, m corrected].
   Section "Phase 2 results" under "v4 case (sept29)". [CALCULATION: world_ledger.py --case sept29 →
   derived/world_ledger_sept29.csv]]
 - [2026-10-05: on main case v5 (`oct05`, the account of $390–461bn adopted that day). The group's person-based rows
@@ -72,7 +74,7 @@ points the same way (section D).
     the central. So the added people's schooling adds $19.10bn to the gap between the cost to others and the
     group's value [FRAMING-SENSITIVE].
   - The two verdicts stand. Hendren's weights give the group's dollars 1.02–1.05 against the payers' 0.98, and the
-    saving leak is $8.5–92.9bn.
+    saving leak is $8.5–92.9bn [2026-10-07: $8.5–37.4bn, m corrected].
 
   Section "v5 case (oct05)". [CALCULATION: world_ledger.py --case oct05 → derived/world_ledger_oct05.csv]]
 - [2026-10-07, a correction to the λ columns of sept29 and oct05. They scaled the pension accrual by λ, as if a
@@ -93,9 +95,14 @@ points the same way (section D).
   - In the low outer span at λ 1.5 the world total is −$31.3bn (oct05: −$31.5bn).
   - The part of the account that buys the group nothing it values is $61.3–61.8bn (oct05: $61.2–61.7bn).
   - The two verdicts stand. Hendren's weights give the group's dollars 1.02–1.05 against the payers' 0.98, and the
-    saving leak is $8.5–92.8bn.
+    saving leak is $8.5–92.8bn [2026-10-07: $8.5–37.3bn, m corrected].
 
   Section "v6 case (oct07)". [CALCULATION: world_ledger.py --case oct07 → derived/world_ledger_oct07.csv]]
+- [2026-10-07, a correction to the saving leak (claim 2's productive-use reading). Its upper m of 3.5, OMB's 7% over
+  the main case's 2%, implies a 71% tax on capital, which Newell, Pizer and Prest reject; m is now the
+  tax-consistent 1/(1 − τ). On oct07 the bound falls from $8.5–92.8bn to $8.5–37.3bn, and the US-only break-even w
+  with the leak from 0.69–0.81 to 0.69–0.73. No table moves. Section "Saving-leak correction (2026-10-07)".
+  [CALCULATION: world_ledger.py, every case rebuilt]]
 
 Model: claude-opus-5-5. Lane: `infra/immigration-fiscal/world_ledger_2026_09_27/`. Brief: `BRIEF.md` (5296013,
 corrected 2104b9e). Nothing here is committed.
@@ -587,14 +594,18 @@ The three readings fare differently:
   - τ, the tax on the return to a marginal investment: 9.3% (CRS, economy-wide, 2024 law) to 29% (CBO,
     business capital, 2014 law) [SOURCE: reads/capital_tax_wedge.md quotes 2–4];
   - m, the pre-tax return over the rate at which the lost revenue is discounted, with the saving held
-    indefinitely: 1 at OMB's 7%, 3.5 at the main case's 2% [SOURCE: quote 5; FRAMING-SENSITIVE];
+    indefinitely: 1 when it is discounted at the pre-tax return (OMB's 7%), and 1/(1 − τ), 1.10–1.41, at the
+    after-tax return, the discount rate the tax itself implies [SOURCE: quote 5; reads/newell_pizer_prest_2023.md
+    quote 3; FRAMING-SENSITIVE];
   - θ, the share of the forgone saving that would have become domestic capital, is set at 1, and the group is
     taken to save none of what it receives. Both favour the reading. [assumed]
 
-  Under tax shares the leak is 0.02–0.22 per dollar. On sept27 that is $7.1–77.9bn a year on the $349.3bn that
-  taxpayers finance, and it moves the US-only break-even w at equal weights from 0.61 to 0.62–0.72 (λ 1.16 gives
-  0.69). Under per-person cuts it is $2.3–25.3bn. On the schools case: $5.6–61.4bn on $275.0bn, w 0.53 to
-  0.54–0.63. [CALCULATION: world_ledger_meta_*.json saving_leak; FRAMING-SENSITIVE] The favourable θ is
+  Under tax shares the leak is 0.02–0.09 per dollar. On sept27 that is $7.1–31.4bn a year on the $349.3bn that
+  taxpayers finance, and it moves the US-only break-even w at equal weights from 0.61 to 0.62–0.65 (λ 1.16 gives
+  0.69). Under per-person cuts it is $2.3–10.2bn. On the schools case: $5.6–24.7bn on $275.0bn, w 0.53 to
+  0.54–0.57. [CALCULATION: world_ledger_meta_*.json saving_leak; FRAMING-SENSITIVE] [2026-10-07: the upper m was
+  3.5, a pair of rates that implies a 71% tax on capital; the earlier figures are in section "Saving-leak correction
+  (2026-10-07)".] The favourable θ is
   doubtful: Mian, Straub and Sufi find that the rise in the top 1%'s saving since 1982 "does not boost
   investment or capital formation but instead funds dissaving elsewhere, primarily among middle-class
   households". [SOURCE: quote 2] The largest item the group receives, schooling, is itself an investment: HSK
@@ -721,7 +732,8 @@ None of these is in hand. [GAP]
     bound takes the reading's most favourable case: every forgone dollar of saving would have become domestic
     capital (θ = 1), and the group saves none of what it receives. Mian, Straub and Sufi's saving rates by
     wealth group are applied to the payers' income percentiles. The top 1% rate is their post-1982 54%. τ runs
-    from 9.3% to 29%, and m from 1 to 3.5. [FRAMING-SENSITIVE: m]
+    from 9.3% to 29%, and m from 1 to 1/(1 − τ) (3.5 until 2026-10-07; section "Saving-leak correction
+    (2026-10-07)"). [FRAMING-SENSITIVE: m]
 22. The sept27 additions are valued by rules fixed before any sept27 number was seen ("The sept27 run", step 2):
     each capital-return component takes its function's class, enterprise surplus is a receipt at $1 per $1, and
     rental assistance is a housing voucher.
@@ -1819,7 +1831,8 @@ so that each column adds:
 **The two verdicts stand.**
 - Hendren's weights still give the group's dollars more weight than the payers': 1.02–1.05 against 0.98. G3+ is at
   1.016 with or without the added people.
-- The saving leak is $8.5–92.9bn under tax shares (sept29: $8.1–88.0bn).
+- The saving leak is $8.5–92.9bn under tax shares (sept29: $8.1–88.0bn). [2026-10-07: $8.5–37.4bn (sept29
+  $8.1–35.4bn) with the tax-consistent m.]
 
 **Carried from upstream, as on v4.** Seven of other residents' channels lie outside the budget: renters, landlords,
 crime victims, property crime, unreimbursed care, congestion and mobility. They come from lanes that price the
@@ -2165,7 +2178,8 @@ shortfall, is $61.3–61.8bn (oct05: $61.2–61.7bn).
 
 **The two verdicts stand.**
 - Hendren's weights still give the group's dollars more weight than the payers': 1.02–1.05 against 0.98.
-- The saving leak is $8.5–92.8bn under tax shares (oct05: $8.5–92.9bn).
+- The saving leak is $8.5–92.8bn under tax shares (oct05: $8.5–92.9bn). [2026-10-07: $8.5–37.3bn (oct05
+  $8.5–37.4bn) with the tax-consistent m.]
 
 **Carried from upstream, as on oct05.** The seven non-budget channels of other residents still sum to −$45.44bn
 central, as the winners lane takes them (6dacaef).
@@ -2520,3 +2534,46 @@ Log (times from `date` or file mtimes):
 - 2026-10-07 22:07 JST: this section written from the derived files; every table line was checked against
   `beside_arms_summary_oct07.csv` by a scratch script (`wbx/` in the worker's scratchpad). No code or output changed
   after the rerun.
+
+## Saving-leak correction (2026-10-07)
+
+Claim 2's productive-use reading prices the payers' forgone saving at θ × s_p × τ × m per dollar paid (judgment call
+21). Its upper m was 3.5, OMB's 7% pre-tax return over the main case's 2% discount rate. That pair implies a 71% tax
+on capital, and Newell, Pizer and Prest reject it: "the implied tax wedges that would rationalize a 7 percent
+investment rate with a 2 percent or 3 percent consumption rate are 71 percent and 57 percent respectively, which is
+implausibly high compared to the average historical capital tax rates of around 35 percent". [SOURCE:
+reads/newell_pizer_prest_2023.md quote 3] The reading's own τ is 9.3–29%, so its high end multiplied two inconsistent
+rates: τ × m = 0.29 × 3.5, about 1.0 per dollar of displaced saving.
+
+- The upper m is now 1/(1 − τ). The forgone revenue is discounted at the after-tax return, r_c = (1 − τ) r_i, the
+  rate pair the tax itself implies. m is 1.10 at τ 9.3% and 1.41 at 29%, so τ × m tops out at 0.41 per dollar of
+  displaced saving. The lower m stays 1, and the saving is still held indefinitely, the reading's most favourable
+  case. [CALCULATION: world_ledger.py `RETURN_OVER_DISCOUNT`]
+- NPP's own formula (their eq. 4), with depreciation and reinvestment, gives less: a shadow price of capital of
+  1.1–1.2, so 0.1–0.2 per displaced dollar beyond the dollar itself. On oct07 under tax shares that is $9.1–18.3bn,
+  inside the corrected range. [SOURCE: reads/newell_pizer_prest_2023.md quote 1; CALCULATION]
+
+Under tax shares the leak is now 0.02–0.09 per dollar paid (0.02–0.22 before); under per-person cuts, 0.01–0.03
+(0.01–0.07). By case, central, at equal weights; the low ends do not move:
+
+| Case | Tax shares, $bn | Per-person cuts, $bn | US-only w, no leak | With the leak, before → now |
+|---|---|---|---:|---|
+| sept26_schools | 5.6–61.4 → 5.6–24.7 | 1.8–19.9 → 1.8–8.0 | 0.53 | 0.54–0.63 → 0.54–0.57 |
+| sept27 | 7.1–77.9 → 7.1–31.4 | 2.3–25.3 → 2.3–10.2 | 0.61 | 0.62–0.72 → 0.62–0.65 |
+| sept27 on 39.71M | the same | the same | 0.63 | 0.64–0.75 → 0.64–0.68 |
+| sept29 | 8.1–88.0 → 8.1–35.4 | 2.6–28.6 → 2.6–11.5 | 0.66 | 0.68–0.80 → 0.68–0.72 |
+| sept29 on 40.9M | the same | the same | 0.64 | 0.65–0.77 → 0.65–0.69 |
+| oct05 | 8.5–92.9 → 8.5–37.4 | 2.8–30.2 → 2.8–12.1 | 0.68 | 0.69–0.82 → 0.69–0.74 |
+| oct05 on 39.71M | the same | the same | 0.69 | 0.70–0.82 → 0.70–0.74 |
+| oct07 | 8.5–92.8 → 8.5–37.3 | 2.8–30.1 → 2.8–12.1 | 0.68 | 0.69–0.81 → 0.69–0.73 |
+| oct07 on 39.71M | the same | the same | 0.69 | 0.70–0.82 → 0.70–0.74 |
+
+The w columns are under tax shares. [CALCULATION: derived/world_ledger_meta_*.json `saving_leak`, against the same
+files at 1f1a1c43]
+
+- Only the nine `world_ledger_meta_*.json` files change, and in them only the `saving_leak` block: every other key
+  compared equal (NaN equal to NaN). The leak sits beside the totals, so no table and no headline moves.
+- Ladder 250 quotes the sept27 bound, $7.1–77.9bn; it is now $7.1–31.4bn.
+- 2026-10-07 23:03:19–23:03:22 and 23:03:34–23:03:43 JST: the nine `world_ledger.py` runs; only the nine meta files
+  changed. 23:08:54–23:10:45 JST: the lane rerun (the 29 v6 commands, part 1's three, and the part-2 script with its
+  test), IDENTICAL, 135/135 files, exit 0.

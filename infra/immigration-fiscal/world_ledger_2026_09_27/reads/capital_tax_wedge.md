@@ -47,3 +47,6 @@ C. OMB Circular A-94 (1992), the local file described in `mcpf_sources.md` (sour
 - m, the pre-tax return over the rate at which the forgone tax revenue is discounted: 1 when discounting at 7%
   (quote 5), 3.5 at 2%, the main case's low-end real cost of government funds (OMB A-4 2023; Treasury's 2024 real
   yields 1.94–2.15%; `decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md`).
+  - Corrected 2026-10-07: 7% over 2% implies a 71% tax on capital, inconsistent with τ above, and Newell, Pizer
+    and Prest reject that pair (`newell_pizer_prest_2023.md` quote 3). The upper m is now 1/(1 − τ), discounting
+    at the after-tax return the tax implies: 1.10 at τ 9.3%, 1.41 at 29%.

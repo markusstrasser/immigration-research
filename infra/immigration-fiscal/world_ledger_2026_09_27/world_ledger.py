@@ -76,11 +76,14 @@ MISHRA = dict(shock=0.16, stayers_gain=0.059, owners_loss=0.064, net_loss=0.005)
 # return. Saving rates by wealth group (Mian, Straub and Sufi 2025; reads/mian_straub_sufi_2025.md): top 1% 54%
 # (1983-2019), next 9% 20%, 51st-90th percentile 12%, bottom 50% zero; applied to the payers' income percentiles.
 # Tax on the return to a marginal investment: CRS 9.3% (economy-wide, 2024) to CBO 29% (business capital, 2014 law).
-# m, the pre-tax return over the discount rate on the forgone revenue: 1 at OMB's 7%, 3.5 at the main case's 2% real
-# cost of government funds (reads/capital_tax_wedge.md).
+# m, the pre-tax return over the discount rate on the forgone revenue, with the saving held indefinitely: 1 when the
+# revenue is discounted at the pre-tax return (OMB's 7% approach), and 1/(1 - tau) at the after-tax return, the
+# discount rate the tax itself implies (r_c = (1 - tau) r_i). Until 2026-10-07 the upper m was 3.5, OMB's 7% over the
+# main case's 2%: that pair implies a 71% tax on capital, which Newell, Pizer and Prest reject
+# (reads/newell_pizer_prest_2023.md quote 3; reads/capital_tax_wedge.md).
 MSS_SAVING = ((1, 50, 0.0), (51, 90, 0.12), (91, 99, 0.20), (100, 100, 0.54))
 CAPITAL_TAX = (0.093, 0.29)
-RETURN_OVER_DISCOUNT = (1.0, 3.5)
+RETURN_OVER_DISCOUNT = {tau: (1.0, 1.0 / (1.0 - tau)) for tau in CAPITAL_TAX}
 # The case lane of a case whose winners channels carry the pension accrual (sept29, adopted on 2026-09-29; oct05,
 # main case v5, adopted on 2026-10-05; oct07, main case v6): its summary, read at the pins' "main_case" commit, holds
 # the case and its cash set, which the accrual must bridge. CASE_LANES is valuation.py's (one definition).
@@ -635,7 +638,8 @@ def saving_leak(I, rows, res, measure="money"):
             & (res.scenario == "central_g3_zero") & (res.weighting == "equal")].set_index("party").bn
     gate("saving_leak_central_totals", len(t) > 0 and t.group_total > 0 and tax < 0)
     out = dict(inputs=dict(saving_by_percentile=MSS_SAVING, capital_tax=CAPITAL_TAX,
-                           return_over_discount=RETURN_OVER_DISCOUNT, theta=1.0, group_saving=0.0),
+                           return_over_discount={f"tau_{x}": m for x, m in RETURN_OVER_DISCOUNT.items()}, theta=1.0,
+                           group_saving=0.0),
                tax_financed_central_bn=tax, breakeven_w_us_only_equal=float(-t.us_residents_total / t.group_total))
     for conv in ("a", "b"):
         s = d[d.channel == f"fiscal_{conv}"].set_index("percentile").bn
@@ -645,7 +649,7 @@ def saving_leak(I, rows, res, measure="money"):
         gate(f"saving_rates_cover_payers_{conv}", len(s) == 100 and bool(rate.notna().all()))
         gate(f"payers_all_lose_{conv}", bool((s <= 0).all()), gains=float(s[s > 0].sum()))
         sp = float((s * rate).sum() / s.sum())
-        leaks = {f"tau_{x}_m_{m}": sp * x * m for x in CAPITAL_TAX for m in RETURN_OVER_DISCOUNT}
+        leaks = {f"tau_{x}_m_{round(m, 4)}": sp * x * m for x in CAPITAL_TAX for m in RETURN_OVER_DISCOUNT[x]}
         out[conv] = dict(payer_saving_rate=sp, leak_per_dollar=leaks,
                          leak_bn={k: v * tax for k, v in leaks.items()},
                          breakeven_w_us_only_equal={k: float(-(t.us_residents_total + v * tax) / t.group_total)
