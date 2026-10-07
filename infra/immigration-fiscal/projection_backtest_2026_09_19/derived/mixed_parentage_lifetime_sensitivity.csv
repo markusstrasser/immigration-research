@@ -1,0 +1,13 @@
+profile,start_age,rate,npv,original_G2_npv,change_from_original,replaced_ages
+two_Mexico_born_parents,0,0.0,-692342.424596911,-613618.8148557874,-78723.60974112342,25-64_only_child_senior_N_held_fixed
+two_Mexico_born_parents,0,0.03,-288829.8841471428,-266917.4046337145,-21912.479513428258,25-64_only_child_senior_N_held_fixed
+two_Mexico_born_parents,0,0.05,-237072.97900910917,-226898.0387339428,-10174.940275166355,25-64_only_child_senior_N_held_fixed
+two_Mexico_born_parents,25,0.0,-327052.17124655104,-247162.99084606906,-79889.18040048202,25-64_only_child_senior_N_held_fixed
+two_Mexico_born_parents,25,0.03,-1349.3617876473063,45209.79502459126,-46559.15681223855,25-64_only_child_senior_N_held_fixed
+two_Mexico_born_parents,25,0.05,38959.278682445605,73925.38802851595,-34966.10934607035,25-64_only_child_senior_N_held_fixed
+one_Mexico_one_US_area_parent,0,0.0,-524207.7023953897,-613618.8148557874,89411.1124603979,25-64_only_child_senior_N_held_fixed
+one_Mexico_one_US_area_parent,0,0.03,-239307.66174656086,-266917.4046337145,27609.74288715361,25-64_only_child_senior_N_held_fixed
+one_Mexico_one_US_area_parent,0,0.05,-212879.18235680409,-226898.0387339428,14018.856377138749,25-64_only_child_senior_N_held_fixed
+one_Mexico_one_US_area_parent,25,0.0,-156428.0700688631,-247162.99084606906,90734.92077720596,25-64_only_child_senior_N_held_fixed
+one_Mexico_one_US_area_parent,25,0.03,103874.3723418597,45209.79502459126,58664.57731726846,25-64_only_child_senior_N_held_fixed
+one_Mexico_one_US_area_parent,25,0.05,122101.08751505421,73925.38802851595,48175.69948653826,25-64_only_child_senior_N_held_fixed

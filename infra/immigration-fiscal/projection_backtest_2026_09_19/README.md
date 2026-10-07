@@ -19,7 +19,7 @@ uv run --no-project \
 
 `--source-root` reads the canonical repository and its ignored data from an
 isolated checkout. `--microdata-db` overrides the read-only IPUMS database.
-`--out` overrides the local ignored output directory. Without `--fetch`, the
+`--out` overrides `derived/`, whose 12 CSVs are tracked (manifest and downloads ignored). Without `--fetch`, the
 two downloaded primary documents must already be in the output directory or
 supplied by `--source-cache`. No raw file is modified. Dependencies are existing
 canonical CPS/MEPS and profile exports, GSS 1972–2024 release 3a, and the local
