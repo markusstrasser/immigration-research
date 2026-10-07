@@ -5,8 +5,8 @@ its case_ends.cjs input included.
 Since 2026-09-27 the default run is the main case of that day (sept27). The files of each earlier case are the
 ones committed at its commit below, the last commit whose derived/ held that run (SEPT23_COMMIT is also the
 ledger lane's base). The case adopted on 2026-09-29 (sept29) writes derived/sept29/ and derived/case_ends_sept29.json
-beside them; its run rebuilds both. So does the case adopted on 2026-10-05 (oct05: derived/oct05/,
-derived/case_ends_oct05.json).
+beside them; its run rebuilds both. So do the case adopted on 2026-10-05 (oct05: derived/oct05/,
+derived/case_ends_oct05.json) and main case v6 (oct07: derived/oct07/, derived/case_ends_oct07.json).
 
 Run from the repository root (about a minute per case with the ACS cache in _cache/):
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/distribution_weights_2026_09_23/ -q --import-mode=importlib
@@ -49,7 +49,7 @@ def test_old_case_rebuilds_committed_files(tmp_path, case, commit, count):
     assert not differ, differ
 
 
-@pytest.mark.parametrize("case", ["sept27", "sept29", "oct05"])
+@pytest.mark.parametrize("case", ["sept27", "sept29", "oct05", "oct07"])
 def test_case_ends_rebuild(tmp_path, case):
     run = subprocess.run(["node", str(HERE / "case_ends.cjs"), "--case", case, "--out-dir", str(tmp_path)], cwd=ROOT,
                          capture_output=True, text=True)
@@ -68,7 +68,7 @@ def test_default_rebuilds_derived(tmp_path):
     assert not differ, differ
 
 
-@pytest.mark.parametrize("case", ["sept29", "oct05"])
+@pytest.mark.parametrize("case", ["sept29", "oct05", "oct07"])
 def test_later_case_rebuilds_its_directory(tmp_path, case):
     names = sorted(p.name for p in (HERE / "derived" / case).iterdir())
     assert len(names) == 13, names

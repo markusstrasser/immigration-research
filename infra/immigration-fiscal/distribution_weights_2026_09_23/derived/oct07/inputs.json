@@ -1,0 +1,2140 @@
+{
+ "fiscal": {
+  "published": {
+   "A_low_cost": -178.442598468,
+   "A_high_cost": -206.174728487,
+   "A_mid": -192.3086634775,
+   "band": [
+    165.1200005489785,
+    197.3841007900947
+   ]
+  },
+  "adopted": {
+   "A_low_cost": -400.9921487676602,
+   "A_high_cost": -469.314126232328,
+   "band": [
+    389.0825528654786,
+    461.47970930242025
+   ],
+   "responses": {
+    "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+    "general_government": {
+     "low": 0.6005266346459308,
+     "high": 0.8510539647701243,
+     "elasticity": [
+      0.5939193086359557,
+      0.842
+     ],
+     "s": 0.12918222328408055
+    },
+    "school": {
+     "growth": 1,
+     "decline": 1,
+     "elasticity": null,
+     "s": null,
+     "set_directly": true,
+     "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+    },
+    "row8_factor": 0.9451692510510525,
+    "economic_affairs_services": {
+     "low": 0.3844994797314016,
+     "high": 0.6387399411939584,
+     "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+     "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+     "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+     "variant": "adopted",
+     "subfunctions": [
+      {
+       "id": "fed_highways",
+       "level": "federal",
+       "subfunction": "Highways",
+       "national_bn": 1.827,
+       "share_of_line": 0.00404261674798367,
+       "low": 0,
+       "high": 1,
+       "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+      },
+      {
+       "id": "fed_air",
+       "level": "federal",
+       "subfunction": "Air",
+       "national_bn": 30.604,
+       "share_of_line": 0.06771770276699082,
+       "low": 0,
+       "high": 1,
+       "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+      },
+      {
+       "id": "fed_water",
+       "level": "federal",
+       "subfunction": "Water",
+       "national_bn": 18.209,
+       "share_of_line": 0.04029119231747928,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_transit_and_railroad",
+       "level": "federal",
+       "subfunction": "Transit and railroad",
+       "national_bn": 0.094,
+       "share_of_line": 0.00020799451248520252,
+       "low": 0,
+       "high": 1,
+       "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+      },
+      {
+       "id": "fed_space",
+       "level": "federal",
+       "subfunction": "Space",
+       "national_bn": 21.23,
+       "share_of_line": 0.04697578191554095,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_general_economic_and_labor_affairs",
+       "level": "federal",
+       "subfunction": "General economic and labor affairs",
+       "national_bn": 35.431,
+       "share_of_line": 0.07839844225386393,
+       "low": 0,
+       "high": 0.8510539647701243,
+       "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+      },
+      {
+       "id": "fed_agriculture",
+       "level": "federal",
+       "subfunction": "Agriculture",
+       "national_bn": 17.54,
+       "share_of_line": 0.038810890946706936,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_energy",
+       "level": "federal",
+       "subfunction": "Energy",
+       "national_bn": 23.406,
+       "share_of_line": 0.051790633608815424,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_natural_resources",
+       "level": "federal",
+       "subfunction": "Natural resources",
+       "national_bn": 32.036,
+       "share_of_line": 0.07088630002102073,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_postal_service",
+       "level": "federal",
+       "subfunction": "Postal service",
+       "national_bn": -0.177,
+       "share_of_line": -0.00039164924159447705,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_highways",
+       "level": "state_local",
+       "subfunction": "Highways",
+       "national_bn": 201.005,
+       "share_of_line": 0.4447652870434908,
+       "low": 0.7401981546463505,
+       "high": 1,
+       "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+      },
+      {
+       "id": "sl_transit_and_railroad",
+       "level": "state_local",
+       "subfunction": "Transit and railroad",
+       "national_bn": 0,
+       "share_of_line": 0,
+       "low": 0.7401981546463505,
+       "high": 1,
+       "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+      },
+      {
+       "id": "sl_general_economic_and_labor_affairs",
+       "level": "state_local",
+       "subfunction": "General economic and labor affairs",
+       "national_bn": 29.358,
+       "share_of_line": 0.06496066912277208,
+       "low": 0.8510539647701243,
+       "high": 0.8510539647701243,
+       "basis": "general government's adopted response for state-local administration at both ends"
+      },
+      {
+       "id": "sl_agriculture",
+       "level": "state_local",
+       "subfunction": "Agriculture",
+       "national_bn": 10.007,
+       "share_of_line": 0.022142564749355546,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_energy",
+       "level": "state_local",
+       "subfunction": "Energy",
+       "national_bn": 0,
+       "share_of_line": 0,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_natural_resources",
+       "level": "state_local",
+       "subfunction": "Natural resources",
+       "national_bn": 31.99,
+       "share_of_line": 0.07078451547235774,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_other_commercial_activities",
+       "level": "state_local",
+       "subfunction": "Other (commercial activities)",
+       "national_bn": -0.625,
+       "share_of_line": -0.0013829422372686338,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      }
+     ],
+     "source": {
+      "file": "service_response_long_run_2026_09_27/derived/responses.json",
+      "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+      "commit": "bccf478"
+     }
+    },
+    "recreation_culture": {
+     "low": 0.8563914832367988,
+     "high": 1,
+     "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+     "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+     "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+     "variant": "adopted",
+     "subfunctions": [
+      {
+       "id": "fed_recreation_and_culture",
+       "level": "federal",
+       "subfunction": "Recreation and culture",
+       "national_bn": 5.43,
+       "share_of_line": 0.09994294233494688,
+       "low": 0,
+       "high": 1,
+       "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+      },
+      {
+       "id": "sl_recreation_and_culture",
+       "level": "state_local",
+       "subfunction": "Recreation and culture",
+       "national_bn": 48.901,
+       "share_of_line": 0.9000570576650531,
+       "low": 0.9514857707559868,
+       "high": 1,
+       "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+      }
+     ],
+     "source": {
+      "file": "service_response_long_run_2026_09_27/derived/responses.json",
+      "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+      "commit": "bccf478"
+     }
+    },
+    "housing_subsidies": {
+     "low": 1,
+     "high": 1,
+     "key": "housing_support",
+     "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+     "overlap_netted_bn": 0,
+     "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+     "source": "dataset_integrity_2026_09_23/spending.md item 6"
+    },
+    "enterprise_surplus": {
+     "receipt": true,
+     "override": "receipt:enterprise_surplus",
+     "low": 1,
+     "high": 1,
+     "option": "D",
+     "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+     "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+     "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+    },
+    "housing_enterprise_surplus": {
+     "receipt": true,
+     "override": "receipt:housing_enterprise_surplus",
+     "low": 1,
+     "high": 1,
+     "rule": "public housing's enterprise deficit (NIPA 3.8 line 13, housing and urban renewal, -$40.298bn in 2024, less public housing's $5.258bn operating subsidy, consolidated with the rental line) as its own receipt line at the rental line's key; it responds as the enterprise receipt does, in every profile",
+     "source": "item 1: main_case_candidate_v2_2026_09_28/package.cjs splitHousing"
+    },
+    "modeled_owner_property": {
+     "receipt": true,
+     "override": "receipt:modeled_owner_property",
+     "low": 0.7726986463443216,
+     "high": 0.7726986463443216,
+     "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+     "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+    },
+    "tenant_occupied_property": {
+     "receipt": true,
+     "override": "receipt:tenant_occupied_property",
+     "low": 0.7189123969969125,
+     "high": 0.7189123969969125,
+     "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+     "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+    },
+    "personal_property_tax": {
+     "receipt": true,
+     "override": "receipt:personal_property_tax",
+     "low": 1,
+     "high": 1,
+     "rule": "household personal property tax (NIPA 3.4 line 11), re-keyed to the group's share of household vehicles, at response 1 like the motor-vehicle line, in every profile",
+     "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs rekey, CENTRAL_ITEMS.personal"
+    },
+    "roads_vmt_sl": {
+     "low": 0.7401981546463505,
+     "high": 1,
+     "rule": "re-keys the S&L highways part of economic_affairs_services (national $201.005bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions sl_highways)",
+     "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+    },
+    "roads_vmt_fed": {
+     "low": 0,
+     "high": 1,
+     "rule": "re-keys the federal highways part of economic_affairs_services (national $1.827bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions fed_highways)",
+     "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+    },
+    "state_price_public_order_safety": {
+     "low": 1,
+     "high": 1,
+     "rule": "public order and safety's state-price gap (the sum over its S&L functions of amount x (price index - 1)) at the line's use key; it responds as its parent, which the case holds at 1 in every profile",
+     "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+    },
+    "state_price_health_services": {
+     "low": 1,
+     "high": 1,
+     "rule": "health's state-price gap at the line's preferred key; it responds as its parent, which the case holds at 1 in every profile",
+     "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+    },
+    "state_price_recreation_culture": {
+     "low": 0.8563914832367988,
+     "high": 1,
+     "rule": "recreation and culture's state-price gap at the line's preferred key; it responds as its parent, recreation_culture, at the specification's reading",
+     "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+    }
+   },
+   "justice": 5.943591614299166,
+   "sept24_change": [
+    -2.3318146082140743,
+    -3.3215196411306067
+   ],
+   "sept26_change": [
+    0.0428142972843375,
+    -0.6235416629571944
+   ],
+   "sept26_schools_change": [
+    57.57047856266058,
+    46.25987890060932
+   ],
+   "sept27_change": [
+    63.33086161466201,
+    95.41528162553118
+   ],
+   "sept29_change": [
+    49.59524279849313,
+    47.47090367475175
+   ],
+   "oct05_change": [
+    18.879358413138675,
+    26.402166093830033
+   ],
+   "oct07_change": [
+    -1.2114053365467612,
+    0.23658458445470387
+   ],
+   "A_mid": -435.1531374999941,
+   "capital_return": [
+    36.581557021423414,
+    61.0642563792209
+   ],
+   "capital_return_by_level": {
+    "state_local": [
+     35.694224863422974,
+     59.168961624823254
+    ],
+    "federal": [
+     0.8873321580004485,
+     1.8952947543976428
+    ]
+   },
+   "capped_programs": {
+    "housing_subsidies": [
+     4.488824290011592,
+     4.488824290011592
+    ],
+    "energy_assistance": [
+     0.6045528356789629,
+     0.6045528356789629
+    ],
+    "housing_enterprise_surplus": [
+     3.7178213606483306,
+     3.7178213606483306
+    ]
+   },
+   "block_grant": {
+    "family_and_general_assistance": [
+     13.23238820320801,
+     12.361087090005299
+    ]
+   },
+   "pension_accrual": [
+    81.68314236000913,
+    76.11558676245681
+   ],
+   "production": {
+    "rule": "the case's production grid (corrections.json production) moves P and F only: at each end, P and F on the case's grid and on model.json's at the end specification's production cell, and A = the engine's direct response less the capital return; cost = -(P + F) - A",
+    "grid": {
+     "grid": "row4",
+     "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+     "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+     "rule": "the production model on the account's row-4 weights replaces model.json's grid (private_wtp_bn, induced_receipts_bn, sampling_se_bn), scenario by scenario (item 2)"
+    },
+    "ends": {
+     "low": {
+      "normalization": "gdp",
+      "cell_index": 1716,
+      "case": {
+       "P_bn": -0.704457336742795,
+       "F_bn": 12.614102194160976
+      },
+      "model_json": {
+       "P_bn": -0.235924325,
+       "F_bn": 13.558522244
+      },
+      "A_bn": -400.9921977228968,
+      "previous": {
+       "lane": "main_case_2026_10_05",
+       "P_bn": -0.7060004638516274,
+       "F_bn": 12.653461964603204
+      }
+     },
+     "high": {
+      "normalization": "cash",
+      "cell_index": 1230,
+      "case": {
+       "P_bn": -0.46340498128760943,
+       "F_bn": 8.297788219099258
+      },
+      "model_json": {
+       "P_bn": -0.155669556,
+       "F_bn": 8.946297253
+      },
+      "A_bn": -469.31409254023185,
+      "previous": {
+       "lane": "main_case_2026_10_05",
+       "P_bn": -0.4644200786564569,
+       "F_bn": 8.323679799368294
+      }
+     }
+    },
+    "change_P_plus_F_bn": [
+     -0.03781664333339663,
+     -0.02487648290018818
+    ]
+   }
+  },
+  "uncomp_inside": [
+   3.6515760054649666,
+   5.747597015128038
+  ],
+  "PF_cash": 8.790627696465311,
+  "PF_gdp": 13.32259791925651,
+  "adopted_2026_09_23": {
+   "A_low_cost": -216.52956608776412,
+   "A_high_cost": -258.43061711642724,
+   "band": [
+    203.207,
+    249.64
+   ],
+   "general_government": [
+    28.491799999999984,
+    40.564700000000016
+   ],
+   "justice": 5.943591614299166,
+   "A_mid": -237.48009160209568
+  },
+  "adopted_2026_09_24": {
+   "A_low_cost": -214.19775147955005,
+   "A_high_cost": -255.10909747529664,
+   "band": [
+    200.8752025157866,
+    246.31843608620045
+   ],
+   "general_government": [
+    28.491799999999984,
+    40.564700000000016
+   ],
+   "justice": 5.943591614299166,
+   "sept24_change": [
+    -2.3318146082140743,
+    -3.3215196411306067
+   ],
+   "A_mid": -234.65342447742336
+  },
+  "adopted_2026_09_26": {
+   "A_low_cost": -214.2405657768344,
+   "A_high_cost": -254.48555581233944,
+   "band": [
+    200.91801681307095,
+    245.69489442324326
+   ],
+   "responses": {
+    "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+    "general_government": {
+     "low": 0.6000461560720316,
+     "high": 0.8503957662020014,
+     "elasticity": [
+      0.5939193086359557,
+      0.842
+     ],
+     "s": 0.12024478903339636
+    },
+    "school": {
+     "growth": 0.6521912444554522,
+     "decline": 0.6813221954785698,
+     "elasticity": [
+      0.63,
+      0.66
+     ],
+     "s": 0.17480600215120404
+    },
+    "row8_factor": 0.9491629658844111
+   },
+   "justice": 5.943591614299166,
+   "sept24_change": [
+    -2.3318146082140743,
+    -3.3215196411306067
+   ],
+   "sept26_change": [
+    0.0428142972843375,
+    -0.6235416629571944
+   ],
+   "A_mid": -234.36306079458691
+  },
+  "schools_case": {
+   "A_low_cost": -271.81104433949497,
+   "A_high_cost": -300.74543471294874,
+   "band": [
+    258.48849537573153,
+    291.9547733238526
+   ],
+   "responses": {
+    "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+    "general_government": {
+     "low": 0.6000461560720316,
+     "high": 0.8503957662020014,
+     "elasticity": [
+      0.5939193086359557,
+      0.842
+     ],
+     "s": 0.12024478903339636
+    },
+    "school": {
+     "growth": 1,
+     "decline": 1,
+     "elasticity": null,
+     "s": null,
+     "set_directly": true,
+     "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+    },
+    "row8_factor": 0.9491629658844111
+   },
+   "justice": 5.943591614299166,
+   "sept24_change": [
+    -2.3318146082140743,
+    -3.3215196411306067
+   ],
+   "sept26_change": [
+    0.0428142972843375,
+    -0.6235416629571944
+   ],
+   "sept26_schools_change": [
+    57.57047856266058,
+    46.25987890060932
+   ],
+   "A_mid": -286.27823952622185
+  },
+  "sept27_case": {
+   "A_low_cost": -335.141905954157,
+   "A_high_cost": -396.1607163384799,
+   "band": [
+    321.81935699039354,
+    387.37005494938376
+   ],
+   "responses": {
+    "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+    "general_government": {
+     "low": 0.6000461560720316,
+     "high": 0.8503957662020014,
+     "elasticity": [
+      0.5939193086359557,
+      0.842
+     ],
+     "s": 0.12024478903339636
+    },
+    "school": {
+     "growth": 1,
+     "decline": 1,
+     "elasticity": null,
+     "s": null,
+     "set_directly": true,
+     "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+    },
+    "row8_factor": 0.9491629658844111,
+    "economic_affairs_services": {
+     "low": 0.38401510917541615,
+     "high": 0.638645582432123,
+     "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+     "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+     "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+     "variant": "adopted",
+     "subfunctions": [
+      {
+       "id": "fed_highways",
+       "level": "federal",
+       "subfunction": "Highways",
+       "national_bn": 1.827,
+       "share_of_line": 0.00404261674798367,
+       "low": 0,
+       "high": 1,
+       "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+      },
+      {
+       "id": "fed_air",
+       "level": "federal",
+       "subfunction": "Air",
+       "national_bn": 30.604,
+       "share_of_line": 0.06771770276699082,
+       "low": 0,
+       "high": 1,
+       "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+      },
+      {
+       "id": "fed_water",
+       "level": "federal",
+       "subfunction": "Water",
+       "national_bn": 18.209,
+       "share_of_line": 0.04029119231747928,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_transit_and_railroad",
+       "level": "federal",
+       "subfunction": "Transit and railroad",
+       "national_bn": 0.094,
+       "share_of_line": 0.00020799451248520252,
+       "low": 0,
+       "high": 1,
+       "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+      },
+      {
+       "id": "fed_space",
+       "level": "federal",
+       "subfunction": "Space",
+       "national_bn": 21.23,
+       "share_of_line": 0.04697578191554095,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_general_economic_and_labor_affairs",
+       "level": "federal",
+       "subfunction": "General economic and labor affairs",
+       "national_bn": 35.431,
+       "share_of_line": 0.07839844225386393,
+       "low": 0,
+       "high": 0.8503957662020014,
+       "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+      },
+      {
+       "id": "fed_agriculture",
+       "level": "federal",
+       "subfunction": "Agriculture",
+       "national_bn": 17.54,
+       "share_of_line": 0.038810890946706936,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_energy",
+       "level": "federal",
+       "subfunction": "Energy",
+       "national_bn": 23.406,
+       "share_of_line": 0.051790633608815424,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_natural_resources",
+       "level": "federal",
+       "subfunction": "Natural resources",
+       "national_bn": 32.036,
+       "share_of_line": 0.07088630002102073,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_postal_service",
+       "level": "federal",
+       "subfunction": "Postal service",
+       "national_bn": -0.177,
+       "share_of_line": -0.00039164924159447705,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_highways",
+       "level": "state_local",
+       "subfunction": "Highways",
+       "national_bn": 201.005,
+       "share_of_line": 0.4447652870434908,
+       "low": 0.739205240969296,
+       "high": 1,
+       "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+      },
+      {
+       "id": "sl_transit_and_railroad",
+       "level": "state_local",
+       "subfunction": "Transit and railroad",
+       "national_bn": 0,
+       "share_of_line": 0,
+       "low": 0.739205240969296,
+       "high": 1,
+       "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+      },
+      {
+       "id": "sl_general_economic_and_labor_affairs",
+       "level": "state_local",
+       "subfunction": "General economic and labor affairs",
+       "national_bn": 29.358,
+       "share_of_line": 0.06496066912277208,
+       "low": 0.8503957662020014,
+       "high": 0.8503957662020014,
+       "basis": "general government's adopted response for state-local administration at both ends"
+      },
+      {
+       "id": "sl_agriculture",
+       "level": "state_local",
+       "subfunction": "Agriculture",
+       "national_bn": 10.007,
+       "share_of_line": 0.022142564749355546,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_energy",
+       "level": "state_local",
+       "subfunction": "Energy",
+       "national_bn": 0,
+       "share_of_line": 0,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_natural_resources",
+       "level": "state_local",
+       "subfunction": "Natural resources",
+       "national_bn": 31.99,
+       "share_of_line": 0.07078451547235774,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_other_commercial_activities",
+       "level": "state_local",
+       "subfunction": "Other (commercial activities)",
+       "national_bn": -0.625,
+       "share_of_line": -0.0013829422372686338,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      }
+     ],
+     "source": {
+      "file": "service_response_long_run_2026_09_27/derived/responses.json",
+      "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+      "commit": "bccf478"
+     }
+    },
+    "recreation_culture": {
+     "low": 0.8561746355869265,
+     "high": 1,
+     "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+     "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+     "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+     "variant": "adopted",
+     "subfunctions": [
+      {
+       "id": "fed_recreation_and_culture",
+       "level": "federal",
+       "subfunction": "Recreation and culture",
+       "national_bn": 5.43,
+       "share_of_line": 0.09994294233494688,
+       "low": 0,
+       "high": 1,
+       "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+      },
+      {
+       "id": "sl_recreation_and_culture",
+       "level": "state_local",
+       "subfunction": "Recreation and culture",
+       "national_bn": 48.901,
+       "share_of_line": 0.9000570576650531,
+       "low": 0.9512448441969144,
+       "high": 1,
+       "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+      }
+     ],
+     "source": {
+      "file": "service_response_long_run_2026_09_27/derived/responses.json",
+      "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+      "commit": "bccf478"
+     }
+    },
+    "housing_subsidies": {
+     "low": 1,
+     "high": 1,
+     "key": "housing_support",
+     "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+     "overlap_netted_bn": 0,
+     "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+     "source": "dataset_integrity_2026_09_23/spending.md item 6"
+    },
+    "enterprise_surplus": {
+     "receipt": true,
+     "override": "receipt:enterprise_surplus",
+     "low": 1,
+     "high": 1,
+     "option": "D",
+     "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+     "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+     "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+    }
+   },
+   "justice": 5.943591614299166,
+   "sept24_change": [
+    -2.3318146082140743,
+    -3.3215196411306067
+   ],
+   "sept26_change": [
+    0.0428142972843375,
+    -0.6235416629571944
+   ],
+   "sept26_schools_change": [
+    57.57047856266058,
+    46.25987890060932
+   ],
+   "sept27_change": [
+    63.33086161466201,
+    95.41528162553118
+   ],
+   "A_mid": -365.65131114631845,
+   "capital_return": [
+    33.797154036442734,
+    55.68962316756736
+   ],
+   "capital_return_by_level": {
+    "state_local": [
+     32.96969696536193,
+     53.949878394162944
+    ],
+    "federal": [
+     0.8274570710807956,
+     1.7397447734044158
+    ]
+   },
+   "capped_programs": {
+    "housing_subsidies": [
+     4.532065856478911,
+     4.532065856478911
+    ],
+    "energy_assistance": [
+     0.562300201139693,
+     0.562300201139693
+    ]
+   },
+   "block_grant": {
+    "family_and_general_assistance": [
+     12.33615438994436,
+     11.686668294432202
+    ]
+   }
+  },
+  "sept29_case": {
+   "A_low_cost": -383.0944293036501,
+   "A_high_cost": -442.52423100223166,
+   "band": [
+    371.4145997888867,
+    434.8409586241355
+   ],
+   "responses": {
+    "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+    "general_government": {
+     "low": 0.6000461560720316,
+     "high": 0.8503957662020014,
+     "elasticity": [
+      0.5939193086359557,
+      0.842
+     ],
+     "s": 0.12024478903339636
+    },
+    "school": {
+     "growth": 1,
+     "decline": 1,
+     "elasticity": null,
+     "s": null,
+     "set_directly": true,
+     "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+    },
+    "row8_factor": 0.9491629658844111,
+    "economic_affairs_services": {
+     "low": 0.38401510917541615,
+     "high": 0.638645582432123,
+     "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+     "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+     "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+     "variant": "adopted",
+     "subfunctions": [
+      {
+       "id": "fed_highways",
+       "level": "federal",
+       "subfunction": "Highways",
+       "national_bn": 1.827,
+       "share_of_line": 0.00404261674798367,
+       "low": 0,
+       "high": 1,
+       "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+      },
+      {
+       "id": "fed_air",
+       "level": "federal",
+       "subfunction": "Air",
+       "national_bn": 30.604,
+       "share_of_line": 0.06771770276699082,
+       "low": 0,
+       "high": 1,
+       "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+      },
+      {
+       "id": "fed_water",
+       "level": "federal",
+       "subfunction": "Water",
+       "national_bn": 18.209,
+       "share_of_line": 0.04029119231747928,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_transit_and_railroad",
+       "level": "federal",
+       "subfunction": "Transit and railroad",
+       "national_bn": 0.094,
+       "share_of_line": 0.00020799451248520252,
+       "low": 0,
+       "high": 1,
+       "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+      },
+      {
+       "id": "fed_space",
+       "level": "federal",
+       "subfunction": "Space",
+       "national_bn": 21.23,
+       "share_of_line": 0.04697578191554095,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_general_economic_and_labor_affairs",
+       "level": "federal",
+       "subfunction": "General economic and labor affairs",
+       "national_bn": 35.431,
+       "share_of_line": 0.07839844225386393,
+       "low": 0,
+       "high": 0.8503957662020014,
+       "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+      },
+      {
+       "id": "fed_agriculture",
+       "level": "federal",
+       "subfunction": "Agriculture",
+       "national_bn": 17.54,
+       "share_of_line": 0.038810890946706936,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_energy",
+       "level": "federal",
+       "subfunction": "Energy",
+       "national_bn": 23.406,
+       "share_of_line": 0.051790633608815424,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_natural_resources",
+       "level": "federal",
+       "subfunction": "Natural resources",
+       "national_bn": 32.036,
+       "share_of_line": 0.07088630002102073,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_postal_service",
+       "level": "federal",
+       "subfunction": "Postal service",
+       "national_bn": -0.177,
+       "share_of_line": -0.00039164924159447705,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_highways",
+       "level": "state_local",
+       "subfunction": "Highways",
+       "national_bn": 201.005,
+       "share_of_line": 0.4447652870434908,
+       "low": 0.739205240969296,
+       "high": 1,
+       "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+      },
+      {
+       "id": "sl_transit_and_railroad",
+       "level": "state_local",
+       "subfunction": "Transit and railroad",
+       "national_bn": 0,
+       "share_of_line": 0,
+       "low": 0.739205240969296,
+       "high": 1,
+       "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+      },
+      {
+       "id": "sl_general_economic_and_labor_affairs",
+       "level": "state_local",
+       "subfunction": "General economic and labor affairs",
+       "national_bn": 29.358,
+       "share_of_line": 0.06496066912277208,
+       "low": 0.8503957662020014,
+       "high": 0.8503957662020014,
+       "basis": "general government's adopted response for state-local administration at both ends"
+      },
+      {
+       "id": "sl_agriculture",
+       "level": "state_local",
+       "subfunction": "Agriculture",
+       "national_bn": 10.007,
+       "share_of_line": 0.022142564749355546,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_energy",
+       "level": "state_local",
+       "subfunction": "Energy",
+       "national_bn": 0,
+       "share_of_line": 0,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_natural_resources",
+       "level": "state_local",
+       "subfunction": "Natural resources",
+       "national_bn": 31.99,
+       "share_of_line": 0.07078451547235774,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_other_commercial_activities",
+       "level": "state_local",
+       "subfunction": "Other (commercial activities)",
+       "national_bn": -0.625,
+       "share_of_line": -0.0013829422372686338,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      }
+     ],
+     "source": {
+      "file": "service_response_long_run_2026_09_27/derived/responses.json",
+      "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+      "commit": "bccf478"
+     }
+    },
+    "recreation_culture": {
+     "low": 0.8561746355869265,
+     "high": 1,
+     "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+     "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+     "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+     "variant": "adopted",
+     "subfunctions": [
+      {
+       "id": "fed_recreation_and_culture",
+       "level": "federal",
+       "subfunction": "Recreation and culture",
+       "national_bn": 5.43,
+       "share_of_line": 0.09994294233494688,
+       "low": 0,
+       "high": 1,
+       "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+      },
+      {
+       "id": "sl_recreation_and_culture",
+       "level": "state_local",
+       "subfunction": "Recreation and culture",
+       "national_bn": 48.901,
+       "share_of_line": 0.9000570576650531,
+       "low": 0.9512448441969144,
+       "high": 1,
+       "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+      }
+     ],
+     "source": {
+      "file": "service_response_long_run_2026_09_27/derived/responses.json",
+      "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+      "commit": "bccf478"
+     }
+    },
+    "housing_subsidies": {
+     "low": 1,
+     "high": 1,
+     "key": "housing_support",
+     "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+     "overlap_netted_bn": 0,
+     "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+     "source": "dataset_integrity_2026_09_23/spending.md item 6"
+    },
+    "enterprise_surplus": {
+     "receipt": true,
+     "override": "receipt:enterprise_surplus",
+     "low": 1,
+     "high": 1,
+     "option": "D",
+     "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+     "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+     "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+    },
+    "housing_enterprise_surplus": {
+     "receipt": true,
+     "override": "receipt:housing_enterprise_surplus",
+     "low": 1,
+     "high": 1,
+     "rule": "public housing's enterprise deficit (NIPA 3.8 line 13, housing and urban renewal, -$40.298bn in 2024, less public housing's $5.258bn operating subsidy, consolidated with the rental line) as its own receipt line at the rental line's key; it responds as the enterprise receipt does, in every profile",
+     "source": "item 1: main_case_candidate_v2_2026_09_28/package.cjs splitHousing"
+    },
+    "modeled_owner_property": {
+     "receipt": true,
+     "override": "receipt:modeled_owner_property",
+     "low": 0.762903,
+     "high": 0.762903,
+     "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+     "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+    },
+    "tenant_occupied_property": {
+     "receipt": true,
+     "override": "receipt:tenant_occupied_property",
+     "low": 0.708443,
+     "high": 0.708443,
+     "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+     "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+    },
+    "personal_property_tax": {
+     "receipt": true,
+     "override": "receipt:personal_property_tax",
+     "low": 1,
+     "high": 1,
+     "rule": "household personal property tax (NIPA 3.4 line 11), re-keyed to the group's share of household vehicles, at response 1 like the motor-vehicle line, in every profile",
+     "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs rekey, CENTRAL_ITEMS.personal"
+    },
+    "roads_vmt_sl": {
+     "low": 0.739205240969296,
+     "high": 1,
+     "rule": "re-keys the S&L highways part of economic_affairs_services (national $201.005bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions sl_highways)",
+     "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+    },
+    "roads_vmt_fed": {
+     "low": 0,
+     "high": 1,
+     "rule": "re-keys the federal highways part of economic_affairs_services (national $1.827bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions fed_highways)",
+     "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+    },
+    "state_price_public_order_safety": {
+     "low": 1,
+     "high": 1,
+     "rule": "public order and safety's state-price gap (the sum over its S&L functions of amount x (price index - 1)) at the line's use key; it responds as its parent, which the case holds at 1 in every profile",
+     "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+    },
+    "state_price_health_services": {
+     "low": 1,
+     "high": 1,
+     "rule": "health's state-price gap at the line's preferred key; it responds as its parent, which the case holds at 1 in every profile",
+     "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+    },
+    "state_price_recreation_culture": {
+     "low": 0.8561746355869265,
+     "high": 1,
+     "rule": "recreation and culture's state-price gap at the line's preferred key; it responds as its parent, recreation_culture, at the specification's reading",
+     "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+    }
+   },
+   "justice": 5.943591614299166,
+   "sept24_change": [
+    -2.3318146082140743,
+    -3.3215196411306067
+   ],
+   "sept26_change": [
+    0.0428142972843375,
+    -0.6235416629571944
+   ],
+   "sept26_schools_change": [
+    57.57047856266058,
+    46.25987890060932
+   ],
+   "sept27_change": [
+    63.33086161466201,
+    95.41528162553118
+   ],
+   "sept29_change": [
+    49.59524279849313,
+    47.47090367475175
+   ],
+   "A_mid": -412.8093301529409,
+   "capital_return": [
+    34.42269517039408,
+    57.16990721581873
+   ],
+   "capital_return_by_level": {
+    "state_local": [
+     33.59523809931328,
+     55.40548177654188
+    ],
+    "federal": [
+     0.8274570710807956,
+     1.76442543927684
+    ]
+   },
+   "capped_programs": {
+    "housing_subsidies": [
+     4.136640196219054,
+     4.136640196219054
+    ],
+    "energy_assistance": [
+     0.562300201139693,
+     0.562300201139693
+    ],
+    "housing_enterprise_surplus": [
+     3.426128600542746,
+     3.426128600542746
+    ]
+   },
+   "block_grant": {
+    "family_and_general_assistance": [
+     12.33615438994436,
+     11.686668294432202
+    ]
+   },
+   "pension_accrual": [
+    76.71352380863874,
+    73.02347681440006
+   ],
+   "production": {
+    "rule": "the case's production grid (corrections.json production) moves P and F only: at each end, P and F on the case's grid and on model.json's at the end specification's production cell, and A = the engine's direct response less the capital return; cost = -(P + F) - A",
+    "grid": {
+     "grid": "row4",
+     "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+     "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+     "rule": "the production model on the account's row-4 weights replaces model.json's grid (private_wtp_bn, induced_receipts_bn, sampling_se_bn), scenario by scenario (item 2)"
+    },
+    "ends": {
+     "low": {
+      "normalization": "gdp",
+      "cell_index": 1716,
+      "case": {
+       "P_bn": -0.695081604,
+       "F_bn": 12.374960074
+      },
+      "model_json": {
+       "P_bn": -0.235924325,
+       "F_bn": 13.558522244
+      },
+      "A_bn": -383.09447825888674
+     },
+     "high": {
+      "normalization": "cash",
+      "cell_index": 1230,
+      "case": {
+       "P_bn": -0.457237452,
+       "F_bn": 8.140476138
+      },
+      "model_json": {
+       "P_bn": -0.155669556,
+       "F_bn": 8.946297253
+      },
+      "A_bn": -442.5241973101355
+     }
+    },
+    "change_P_plus_F_bn": [
+     -1.6427194490000012,
+     -1.1073890109999995
+    ]
+   }
+  },
+  "oct05_case": {
+   "A_low_cost": -402.2413707475403,
+   "A_high_cost": -469.1024181307735,
+   "band": [
+    390.29395820202535,
+    461.24312471796554
+   ],
+   "responses": {
+    "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+    "general_government": {
+     "low": 0.6005266346459308,
+     "high": 0.8510539647701243,
+     "elasticity": [
+      0.5939193086359557,
+      0.842
+     ],
+     "s": 0.12918222328408055
+    },
+    "school": {
+     "growth": 1,
+     "decline": 1,
+     "elasticity": null,
+     "s": null,
+     "set_directly": true,
+     "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+    },
+    "row8_factor": 0.9451692510510525,
+    "economic_affairs_services": {
+     "low": 0.3844994797314016,
+     "high": 0.6387399411939584,
+     "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+     "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+     "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+     "variant": "adopted",
+     "subfunctions": [
+      {
+       "id": "fed_highways",
+       "level": "federal",
+       "subfunction": "Highways",
+       "national_bn": 1.827,
+       "share_of_line": 0.00404261674798367,
+       "low": 0,
+       "high": 1,
+       "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+      },
+      {
+       "id": "fed_air",
+       "level": "federal",
+       "subfunction": "Air",
+       "national_bn": 30.604,
+       "share_of_line": 0.06771770276699082,
+       "low": 0,
+       "high": 1,
+       "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+      },
+      {
+       "id": "fed_water",
+       "level": "federal",
+       "subfunction": "Water",
+       "national_bn": 18.209,
+       "share_of_line": 0.04029119231747928,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_transit_and_railroad",
+       "level": "federal",
+       "subfunction": "Transit and railroad",
+       "national_bn": 0.094,
+       "share_of_line": 0.00020799451248520252,
+       "low": 0,
+       "high": 1,
+       "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+      },
+      {
+       "id": "fed_space",
+       "level": "federal",
+       "subfunction": "Space",
+       "national_bn": 21.23,
+       "share_of_line": 0.04697578191554095,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_general_economic_and_labor_affairs",
+       "level": "federal",
+       "subfunction": "General economic and labor affairs",
+       "national_bn": 35.431,
+       "share_of_line": 0.07839844225386393,
+       "low": 0,
+       "high": 0.8510539647701243,
+       "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+      },
+      {
+       "id": "fed_agriculture",
+       "level": "federal",
+       "subfunction": "Agriculture",
+       "national_bn": 17.54,
+       "share_of_line": 0.038810890946706936,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_energy",
+       "level": "federal",
+       "subfunction": "Energy",
+       "national_bn": 23.406,
+       "share_of_line": 0.051790633608815424,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_natural_resources",
+       "level": "federal",
+       "subfunction": "Natural resources",
+       "national_bn": 32.036,
+       "share_of_line": 0.07088630002102073,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "fed_postal_service",
+       "level": "federal",
+       "subfunction": "Postal service",
+       "national_bn": -0.177,
+       "share_of_line": -0.00039164924159447705,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_highways",
+       "level": "state_local",
+       "subfunction": "Highways",
+       "national_bn": 201.005,
+       "share_of_line": 0.4447652870434908,
+       "low": 0.7401981546463505,
+       "high": 1,
+       "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+      },
+      {
+       "id": "sl_transit_and_railroad",
+       "level": "state_local",
+       "subfunction": "Transit and railroad",
+       "national_bn": 0,
+       "share_of_line": 0,
+       "low": 0.7401981546463505,
+       "high": 1,
+       "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+      },
+      {
+       "id": "sl_general_economic_and_labor_affairs",
+       "level": "state_local",
+       "subfunction": "General economic and labor affairs",
+       "national_bn": 29.358,
+       "share_of_line": 0.06496066912277208,
+       "low": 0.8510539647701243,
+       "high": 0.8510539647701243,
+       "basis": "general government's adopted response for state-local administration at both ends"
+      },
+      {
+       "id": "sl_agriculture",
+       "level": "state_local",
+       "subfunction": "Agriculture",
+       "national_bn": 10.007,
+       "share_of_line": 0.022142564749355546,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_energy",
+       "level": "state_local",
+       "subfunction": "Energy",
+       "national_bn": 0,
+       "share_of_line": 0,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_natural_resources",
+       "level": "state_local",
+       "subfunction": "Natural resources",
+       "national_bn": 31.99,
+       "share_of_line": 0.07078451547235774,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      },
+      {
+       "id": "sl_other_commercial_activities",
+       "level": "state_local",
+       "subfunction": "Other (commercial activities)",
+       "national_bn": -0.625,
+       "share_of_line": -0.0013829422372686338,
+       "low": 0,
+       "high": 0,
+       "basis": "held at 0"
+      }
+     ],
+     "source": {
+      "file": "service_response_long_run_2026_09_27/derived/responses.json",
+      "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+      "commit": "bccf478"
+     }
+    },
+    "recreation_culture": {
+     "low": 0.8563914832367988,
+     "high": 1,
+     "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+     "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+     "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+     "variant": "adopted",
+     "subfunctions": [
+      {
+       "id": "fed_recreation_and_culture",
+       "level": "federal",
+       "subfunction": "Recreation and culture",
+       "national_bn": 5.43,
+       "share_of_line": 0.09994294233494688,
+       "low": 0,
+       "high": 1,
+       "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+      },
+      {
+       "id": "sl_recreation_and_culture",
+       "level": "state_local",
+       "subfunction": "Recreation and culture",
+       "national_bn": 48.901,
+       "share_of_line": 0.9000570576650531,
+       "low": 0.9514857707559868,
+       "high": 1,
+       "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+      }
+     ],
+     "source": {
+      "file": "service_response_long_run_2026_09_27/derived/responses.json",
+      "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+      "commit": "bccf478"
+     }
+    },
+    "housing_subsidies": {
+     "low": 1,
+     "high": 1,
+     "key": "housing_support",
+     "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+     "overlap_netted_bn": 0,
+     "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+     "source": "dataset_integrity_2026_09_23/spending.md item 6"
+    },
+    "enterprise_surplus": {
+     "receipt": true,
+     "override": "receipt:enterprise_surplus",
+     "low": 1,
+     "high": 1,
+     "option": "D",
+     "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+     "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+     "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+    },
+    "housing_enterprise_surplus": {
+     "receipt": true,
+     "override": "receipt:housing_enterprise_surplus",
+     "low": 1,
+     "high": 1,
+     "rule": "public housing's enterprise deficit (NIPA 3.8 line 13, housing and urban renewal, -$40.298bn in 2024, less public housing's $5.258bn operating subsidy, consolidated with the rental line) as its own receipt line at the rental line's key; it responds as the enterprise receipt does, in every profile",
+     "source": "item 1: main_case_candidate_v2_2026_09_28/package.cjs splitHousing"
+    },
+    "modeled_owner_property": {
+     "receipt": true,
+     "override": "receipt:modeled_owner_property",
+     "low": 0.7726986463443216,
+     "high": 0.7726986463443216,
+     "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+     "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+    },
+    "tenant_occupied_property": {
+     "receipt": true,
+     "override": "receipt:tenant_occupied_property",
+     "low": 0.7189123969969125,
+     "high": 0.7189123969969125,
+     "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+     "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+    },
+    "personal_property_tax": {
+     "receipt": true,
+     "override": "receipt:personal_property_tax",
+     "low": 1,
+     "high": 1,
+     "rule": "household personal property tax (NIPA 3.4 line 11), re-keyed to the group's share of household vehicles, at response 1 like the motor-vehicle line, in every profile",
+     "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs rekey, CENTRAL_ITEMS.personal"
+    },
+    "roads_vmt_sl": {
+     "low": 0.7401981546463505,
+     "high": 1,
+     "rule": "re-keys the S&L highways part of economic_affairs_services (national $201.005bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions sl_highways)",
+     "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+    },
+    "roads_vmt_fed": {
+     "low": 0,
+     "high": 1,
+     "rule": "re-keys the federal highways part of economic_affairs_services (national $1.827bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions fed_highways)",
+     "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+    },
+    "state_price_public_order_safety": {
+     "low": 1,
+     "high": 1,
+     "rule": "public order and safety's state-price gap (the sum over its S&L functions of amount x (price index - 1)) at the line's use key; it responds as its parent, which the case holds at 1 in every profile",
+     "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+    },
+    "state_price_health_services": {
+     "low": 1,
+     "high": 1,
+     "rule": "health's state-price gap at the line's preferred key; it responds as its parent, which the case holds at 1 in every profile",
+     "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+    },
+    "state_price_recreation_culture": {
+     "low": 0.8563914832367988,
+     "high": 1,
+     "rule": "recreation and culture's state-price gap at the line's preferred key; it responds as its parent, recreation_culture, at the specification's reading",
+     "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+    }
+   },
+   "justice": 5.943591614299166,
+   "sept24_change": [
+    -2.3318146082140743,
+    -3.3215196411306067
+   ],
+   "sept26_change": [
+    0.0428142972843375,
+    -0.6235416629571944
+   ],
+   "sept26_schools_change": [
+    57.57047856266058,
+    46.25987890060932
+   ],
+   "sept27_change": [
+    63.33086161466201,
+    95.41528162553118
+   ],
+   "sept29_change": [
+    49.59524279849313,
+    47.47090367475175
+   ],
+   "oct05_change": [
+    18.879358413138675,
+    26.402166093830033
+   ],
+   "A_mid": -435.6718944391569,
+   "capital_return": [
+    37.1478429621551,
+    61.85780634726378
+   ],
+   "capital_return_by_level": {
+    "state_local": [
+     36.258365596660575,
+     59.95894932620443
+    ],
+    "federal": [
+     0.8894773654945259,
+     1.8988570210593516
+    ]
+   },
+   "capped_programs": {
+    "housing_subsidies": [
+     4.487245877254198,
+     4.487245877254198
+    ],
+    "energy_assistance": [
+     0.6079427432745778,
+     0.6079427432745778
+    ],
+    "housing_enterprise_surplus": [
+     3.716514056934434,
+     3.716514056934434
+    ]
+   },
+   "block_grant": {
+    "family_and_general_assistance": [
+     13.193163288014356,
+     12.38858463877282
+    ]
+   },
+   "pension_accrual": [
+    82.9175820440152,
+    77.83387259128978
+   ],
+   "production": {
+    "rule": "the case's production grid (corrections.json production) moves P and F only: at each end, P and F on the case's grid and on model.json's at the end specification's production cell, and A = the engine's direct response less the capital return; cost = -(P + F) - A",
+    "grid": {
+     "grid": "row4",
+     "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+     "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+     "rule": "the production model on the account's row-4 weights replaces model.json's grid (private_wtp_bn, induced_receipts_bn, sampling_se_bn), scenario by scenario (item 2)"
+    },
+    "ends": {
+     "low": {
+      "normalization": "gdp",
+      "cell_index": 1716,
+      "case": {
+       "P_bn": -0.7060004638516274,
+       "F_bn": 12.653461964603204
+      },
+      "model_json": {
+       "P_bn": -0.235924325,
+       "F_bn": 13.558522244
+      },
+      "A_bn": -402.2414197027769,
+      "previous": {
+       "lane": "main_case_2026_09_29",
+       "P_bn": -0.695081604,
+       "F_bn": 12.374960074
+      }
+     },
+     "high": {
+      "normalization": "cash",
+      "cell_index": 1230,
+      "case": {
+       "P_bn": -0.4644200786564569,
+       "F_bn": 8.323679799368294
+      },
+      "model_json": {
+       "P_bn": -0.155669556,
+       "F_bn": 8.946297253
+      },
+      "A_bn": -469.10238443867735,
+      "previous": {
+       "lane": "main_case_2026_09_29",
+       "P_bn": -0.457237452,
+       "F_bn": 8.140476138
+      }
+     }
+    },
+    "change_P_plus_F_bn": [
+     0.2675830307515774,
+     0.1760210347118374
+    ]
+   }
+  },
+  "case": "oct07"
+ },
+ "federal_taxes_2024_bn": 4976.3150000000005,
+ "state_local_taxes_2024_bn": 2553.4500000000003,
+ "production": {
+  "central_P": -1.6545769978766156,
+  "central_F": 9.238925944289164,
+  "account_P_plus_F": 7.834383237811679,
+  "case_weights": {
+   "weights": "row4",
+   "grid": {
+    "grid": "row4",
+    "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+    "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+    "rule": "the production model on the account's row-4 weights replaces model.json's grid (private_wtp_bn, induced_receipts_bn, sampling_se_bn), scenario by scenario (item 2)"
+   },
+   "factors": {
+    "naturalized": 0.8556255897504617,
+    "noncitizen": 0.7781269999470055
+   },
+   "gdp_factor": {
+    "published": 1.5155456901687994,
+    "row4": 1.520176444772577
+   },
+   "published_solve_max_abs_diff_vs_nest_scenarios": 3.730349362740526e-12,
+   "published_gdp_factor_max_rel_diff": 1.4486190025309043e-12,
+   "row4_max_abs_diff_vs_case_grid_bn": 4.961862032359932e-10,
+   "lineage": {
+    "rule": "the case's grid less the base's at each scenario's cell: the wage changes of skill cell c scaled by lambda_c and the capital columns by kappa so that P and F are the case grid's (two lambdas without capital terms, one lambda and kappa with them); sigma_NI 3 takes its sigma_NI-infinite sibling's factors [ASSUMPTION: the added members' effects fall on other residents' cells as the union's do]",
+    "base": "main_case_2026_09_29",
+    "scenarios": [
+     {
+      "split": "below_ba",
+      "sigma": 2.0,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0288470308884605,
+      "lambda_cell1": 1.0288615020598078,
+      "kappa": 1.0,
+      "delta_P_bn": -0.045209360956959266,
+      "delta_F_bn": 0.2599202094933091
+     },
+     {
+      "split": "hs_or_less",
+      "sigma": 2.0,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0190911344637232,
+      "lambda_cell1": 1.0191272488976484,
+      "kappa": 1.0,
+      "delta_P_bn": -0.006167529361221447,
+      "delta_F_bn": 0.1573120811448412
+     },
+     {
+      "split": "below_ba",
+      "sigma": 2.0,
+      "capital_adjustment": 1.0,
+      "sigma_NI": 3.0,
+      "lambda_cell0": 1.0288470308884605,
+      "lambda_cell1": 1.0288615020598078,
+      "kappa": 1.0,
+      "delta_P_bn": 0.06284745440851935,
+      "delta_F_bn": 0.330947965072113
+     },
+     {
+      "split": "below_ba",
+      "sigma": 2.0,
+      "capital_adjustment": 0.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0401266934346354,
+      "lambda_cell1": 1.0401266934346354,
+      "kappa": 1.03984324926585,
+      "delta_P_bn": 2.5843008861241117,
+      "delta_F_bn": -1.7870886778384971
+     },
+     {
+      "split": "hs_or_less",
+      "sigma": 1.5,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0190947353676445,
+      "lambda_cell1": 1.0191306234436466,
+      "kappa": 1.0,
+      "delta_P_bn": -0.008540084965936168,
+      "delta_F_bn": 0.21090774126984257
+     },
+     {
+      "split": "hs_or_less",
+      "sigma": 2.5,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0190889526983993,
+      "lambda_cell1": 1.0191252047035086,
+      "kappa": 1.0,
+      "delta_P_bn": -0.0048200326152015305,
+      "delta_F_bn": 0.1254327134482498
+     },
+     {
+      "split": "below_ba",
+      "sigma": 1.5,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0288474845972104,
+      "lambda_cell1": 1.0288619326612851,
+      "kappa": 1.0,
+      "delta_P_bn": -0.06046535503141737,
+      "delta_F_bn": 0.34704249632172335
+     },
+     {
+      "split": "below_ba",
+      "sigma": 2.5,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0288467488517499,
+      "lambda_cell1": 1.0288612344195343,
+      "kappa": 1.0,
+      "delta_P_bn": -0.0360985654448025,
+      "delta_F_bn": 0.20775883360857073
+     },
+     {
+      "split": "hs_or_less",
+      "sigma": 2.0,
+      "capital_adjustment": 1.0,
+      "sigma_NI": 3.0,
+      "lambda_cell0": 1.0190911344637232,
+      "lambda_cell1": 1.0191272488976484,
+      "kappa": 1.0,
+      "delta_P_bn": 0.07477787814703518,
+      "delta_F_bn": 0.21145604634631532
+     }
+    ],
+    "max_abs_diff_vs_case_grid_bn": 3.552713678800501e-14
+   }
+  },
+  "published": {
+   "central_P": -1.469097263185951,
+   "central_F": 9.555833784515096,
+   "account_P_plus_F": 8.790627696466178
+  },
+  "engine_change_P_plus_F_at_band_ends_bn": [
+   -0.03781664333339663,
+   -0.02487648290018818
+  ]
+ },
+ "crime": {
+  "equal_footing": 28.9228851746268,
+  "custody_footing": 32.3381,
+  "tangible_equal": 4.50135218559,
+  "envelope": [
+   15.4099,
+   45.3424
+  ],
+  "serious_share": 0.8262614952793748,
+  "victim_race_shares": {
+   "Black|serious": 0.16734793668751233,
+   "Black|simple": 0.02198096787687806,
+   "Hispanic|serious": 0.16745507556372713,
+   "Hispanic|simple": 0.02164589327550662,
+   "Other|serious": 0.10064037912627709,
+   "Other|simple": 0.026516303546342216,
+   "White|serious": 0.39081810390186406,
+   "White|simple": 0.10359534002189263
+  }
+ },
+ "ncvs": {
+  "pooled_violent": [
+   39.997,
+   24.384,
+   21.133,
+   17.192,
+   20.366
+  ],
+  "pooled_serious": [
+   20.373,
+   9.856,
+   7.702,
+   5.783,
+   6.65
+  ],
+  "pooled_simple": [
+   19.624,
+   14.528,
+   13.432,
+   11.409,
+   13.716
+  ],
+  "pooled_persons": [
+   107637080.0,
+   174681170.0,
+   266235570.0,
+   216786120.0,
+   88194940.0
+  ],
+  "bracket_cum_share": [
+   0.1261,
+   0.3308,
+   0.6427,
+   0.8967
+  ],
+  "cps_bracket_share_12plus": {
+   "rank": [
+    0.1261,
+    0.2047,
+    0.3119,
+    0.254,
+    0.1033
+   ],
+   "dollar": [
+    0.0911,
+    0.1352,
+    0.2606,
+    0.3075,
+    0.2056
+   ]
+  },
+  "verified_against_text": true
+ },
+ "unreimbursed_care": {
+  "outside_low": 3.2435,
+  "outside_high": 5.5581,
+  "outside_mid": 4.4008,
+  "inside_low": 3.6516,
+  "inside_high": 5.7476
+ },
+ "consumer_prices_side_view_q": [
+  2.0298,
+  2.5967,
+  3.6815,
+  5.1662,
+  10.2892
+ ],
+ "acs": {
+  "other_persons_m": 292.943115,
+  "other_renter_households_m": 38.992079,
+  "group_share_of_positive_intp": 0.021808180233578743
+ },
+ "scf": {
+  "families_m": 131.3063893834636,
+  "oresre_tn": 8.837540004942536,
+  "top10pct_share": 0.6245422147052211,
+  "top1pct_share": 0.24472201734834667
+ },
+ "tax_spm": {
+  "other_share_of_taxes": 0.9345076128414668,
+  "state_local_group_shares": [
+   0.0567,
+   0.0935,
+   0.1433,
+   0.2102,
+   0.1427,
+   0.1005,
+   0.1176,
+   0.1355
+  ]
+ },
+ "tax_money": {
+  "other_share_of_taxes": 0.9353675459777068,
+  "state_local_group_shares": [
+   0.0447,
+   0.0925,
+   0.1468,
+   0.2149,
+   0.1449,
+   0.1016,
+   0.1187,
+   0.1358
+  ]
+ },
+ "housing": {
+  "low|metro_local": {
+   "renters": 22.147597973774975,
+   "net": 2.300981876715154,
+   "owners_stock": 1263.8785232803805
+  },
+  "low|national_uniform": {
+   "renters": 21.592985738717047,
+   "net": 0.4531429154183445,
+   "owners_stock": 1232.3383897849458
+  },
+  "central|metro_local": {
+   "renters": 33.858535114576824,
+   "net": 3.507578587187932,
+   "owners_stock": 1931.6398319116452
+  },
+  "central|national_uniform": {
+   "renters": 33.47498223794534,
+   "net": 0.7082298460183115,
+   "owners_stock": 1910.4586187551593
+  },
+  "high|metro_local": {
+   "renters": 50.07062745258503,
+   "net": 5.168223296244807,
+   "owners_stock": 2855.4119883751405
+  },
+  "high|national_uniform": {
+   "renters": 50.473428261833945,
+   "net": 1.080515456274025,
+   "owners_stock": 2880.58094715391
+  }
+ },
+ "financing_columns": {
+  "low_cost_end": {
+   "cash_financing_bn": -264.6773249555996,
+   "resource_cost_bn": -36.581557021423414,
+   "resource_cost_federal_bn": -0.8873321580004485,
+   "displaced_beneficiaries_bn": -8.811198486338885,
+   "pension_accrual_bn": -81.68314236000913,
+   "A_plus_F_bn": -391.753222823371
+  },
+  "high_cost_end": {
+   "cash_financing_bn": -314.08415866002224,
+   "resource_cost_bn": -61.0642563792209,
+   "resource_cost_federal_bn": -1.8952947543976428,
+   "displaced_beneficiaries_bn": -8.811198486338885,
+   "pension_accrual_bn": -76.11558676245681,
+   "A_plus_F_bn": -460.07520028803884
+  }
+ },
+ "capped_programs": {
+  "rule": "rental assistance, public housing's enterprise deficit (rental assistance's key) and LIHEAP fall on their eligible non-recipients among other residents, equal per household, under both financing conventions; TANF-type aid (a block grant) stays with the budget",
+  "rental_assistance": "renter households paying cash rent (H_TENURE 2), money income below 50% of the state's median household money income (CPS ASEC 2025), neither HPUBLIC nor HLORENT; HUD's very-low-income rule, 24 CFR 5.603 and 982.201(b), without its family-size adjustment",
+  "liheap": "households with money income below 150% of the 2024 HHS poverty guideline for their size (89 FR 2961), no energy assistance (HENGAST); 42 U.S.C. 8624(b)(2)(B)(i), without the 60% of state median income alternative",
+  "amounts_at_band_ends_bn": {
+   "housing_subsidies": [
+    4.488824290011592,
+    4.488824290011592
+   ],
+   "energy_assistance": [
+    0.6045528356789629,
+    0.6045528356789629
+   ],
+   "housing_enterprise_surplus": [
+    3.7178213606483306,
+    3.7178213606483306
+   ]
+  },
+  "block_grant_at_band_ends_bn": {
+   "family_and_general_assistance": [
+    13.23238820320801,
+    12.361087090005299
+   ]
+  },
+  "texts_sha256": {
+   "fr_2024-00796.txt": "af9dfaac9873176c0105e9e371b690426aa624ba2d8aecf7829ac7600ce254bb",
+   "usc42_8624.html": "c77391af4869e347b5c6df232054276c4f51ce128cc8a5188bb63502d024d50e",
+   "cfr24_5.603.html": "0a4285e2f44a10814e4b646ff70fcd12ea7eb0c0f861f7333837d5495d0383d8",
+   "cfr24_982.201.html": "6c98919406980d8cdd637b713b589eb59d0ff96cbaabe9a8067b066ddb899e03"
+  },
+  "housing_subsidies": {
+   "eligible_non_recipient_households_m": 10.266891669999998,
+   "other_residents_in_them_m": 18.64704368422056,
+   "eligible_households_all_m": 16.80981343,
+   "recipient_households_all_m": 6.696504540000001
+  },
+  "energy_assistance": {
+   "eligible_non_recipient_households_m": 17.948359560000004,
+   "other_residents_in_them_m": 38.22372352875036,
+   "eligible_households_all_m": 22.823788670000003,
+   "recipient_households_all_m": 4.49198481
+  },
+  "state_median_household_income": {
+   "min": 55500.0,
+   "max": 113820.0,
+   "national": 83592.0
+  }
+ }
+}

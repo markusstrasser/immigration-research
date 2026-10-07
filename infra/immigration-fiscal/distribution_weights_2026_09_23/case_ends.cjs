@@ -24,6 +24,11 @@
  * lineage's production delta. v5's summary has no item_pension: its accrual is the case less its cash set read from
  * cash_set (change_from_main_case_bn, at the same end specifications).
  *
+ * October 7 (OCT07_LANE, main case v6) is v5 with the lineage item's additions in place and the edit sets after them
+ * (meta.items). The lineage item (the added people at their measured age mix) re-values the added G3+ members' P and F,
+ * so the case's grid differs from v5's: `previous` is v5's grid at the same cell, and distribute.py moves A by the
+ * change less that difference. Its accrual is read as v5's is, from cash_set.
+ *
  * Gates (exit 1, nothing written): the band equals summary.json's main_case (1e-9) and main_case_bands.csv's
  * adopted row (1e-4); the capital return equals summary.json's capital_at_end_specifications, in total and by level
  * (1e-9); rental assistance equals lines_at_end_specifications.housing_subsidies.added_bn (1e-9); both capped lines
@@ -34,7 +39,7 @@
  * With a previous case's grid: the two grids have the same cells. Without item_pension: the cash set's end
  * specifications are the case's, and its band is the case's plus change_from_main_case_bn (1e-9).
  *
- * Run from anywhere: node case_ends.cjs [--case sept27|sept29|oct05] [--out-dir DIR] -> derived/case_ends_<case>.json
+ * Run from anywhere: node case_ends.cjs [--case sept27|sept29|oct05|oct07] [--out-dir DIR] -> derived/case_ends_<case>.json
  * (the default case is sept27, whose file the evidence map's readers take).
  */
 "use strict";
@@ -45,9 +50,11 @@ const crypto = require("crypto");
 const FISCAL = path.resolve(__dirname, "..");
 const SEPT29_LANE = "main_case_2026_09_29";
 const OCT05_LANE = "main_case_2026_10_05";
-const CASES = { sept27: "main_case_long_run_2026_09_27", sept29: SEPT29_LANE, oct05: OCT05_LANE };
-// A case whose payload builds on an earlier case's production grid: that case's lane.
-const PREVIOUS_GRID = { oct05: SEPT29_LANE };
+const OCT07_LANE = "main_case_2026_10_07";
+const CASES = { sept27: "main_case_long_run_2026_09_27", sept29: SEPT29_LANE, oct05: OCT05_LANE, oct07: OCT07_LANE };
+// A case whose payload builds on an earlier case's production grid: that case's lane (the case before it in
+// distribute.py's chain, whose grid at the same cell it differs from).
+const PREVIOUS_GRID = { oct05: SEPT29_LANE, oct07: OCT05_LANE };
 const DEFAULT_CASE = "sept27";
 const argv = process.argv.slice(2);
 const opt = (name, dflt) => (argv.includes(name) ? argv[argv.indexOf(name) + 1] : dflt);

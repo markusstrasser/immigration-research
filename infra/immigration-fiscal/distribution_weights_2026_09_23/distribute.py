@@ -70,6 +70,14 @@ The added people cannot be found in the CPS frame: they do not report Mexican or
 other residents, as natives, and this lane leaves them there [ASSUMPTION: about 3.04M of the frame's other residents,
 about 1%, are the added people].
 
+--case oct07 (main case v6; OCT07_LANE) writes derived/oct07/ (node case_ends.cjs --case oct07 first). v6 is v5 plus
+the items of its meta.items (the 2026 pension paths, retiree health on accrual, the added people at their measured age
+mix and, where the case carries it, user fees and the education keys). They edit receipts and keyed spending, which
+move A, and the age mix also re-values the added G3+ members' P and F, so the case's grid is not v5's: A moves by the
+change from v5 less the grid's change at each band end's cell (case_ends_oct07.json production `previous`, v5's grid;
+Case.prev_grid). The lane's production scenarios are solved on row-4 weights against September 29's grid, as for v5,
+and lineage_rows adds the lineage's production delta to v6's grid.
+
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
     infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py [--case sept24 --out-dir DIR]
@@ -185,13 +193,15 @@ class Case(NamedTuple):
     out: str | None = None        # its files' directory under derived/ when they sit beside the default case's
     summary: str | None = None    # the summary.json key for the case it starts from, where it is not `base`
     grid_base: str | None = None  # the lane whose production grid the row-4 solve reproduces, where the case's adds to it
+    prev_grid: str | None = None  # the lane whose grid the case's production change is taken against, where not grid_base
 
 
 # Main cases after September 24, in adoption order. Adding a case is one entry here. September 29 (candidate v4,
-# adopted 2026-09-29) writes derived/sept29/, beside the September 27 files, which stay the default; so does October 5
-# (main case v5, derived/oct05/).
+# adopted 2026-09-29) writes derived/sept29/, beside the September 27 files, which stay the default; so do October 5
+# (main case v5, derived/oct05/) and October 7 (main case v6, derived/oct07/).
 SEPT29_LANE = "main_case_2026_09_29"
 OCT05_LANE = "main_case_2026_10_05"
+OCT07_LANE = "main_case_2026_10_07"
 LATER_CASES = {"sept26": Case("main_case_2026_09_26", "adopted_2026_09_24"),
                "sept26_schools": Case("main_case_schools_full_2026_09_26", "adopted_2026_09_26"),
                "sept27": Case("main_case_long_run_2026_09_27", "schools_case", "long_run_non_school_full",
@@ -202,7 +212,11 @@ LATER_CASES = {"sept26": Case("main_case_2026_09_26", "adopted_2026_09_24"),
                # v5's summary.json names September 29 adopted_2026_09_29; its band variant is sept29_case. Its grid is
                # September 29's plus the lineage's production delta.
                "oct05": Case(OCT05_LANE, "sept29_case", "long_run_non_school_full", "case_ends_oct05.json", "oct05",
-                             "adopted_2026_09_29", SEPT29_LANE)}
+                             "adopted_2026_09_29", SEPT29_LANE),
+               # v6's summary.json names v5 adopted_2026_10_05; its band variant is oct05_case. Its grid is September
+               # 29's plus the age-mix lineage's production delta, and its production change is taken against v5's.
+               "oct07": Case(OCT07_LANE, "oct05_case", "long_run_non_school_full", "case_ends_oct07.json", "oct07",
+                             "adopted_2026_10_05", SEPT29_LANE, OCT05_LANE)}
 DEFAULT_CASE = "sept27"
 # From September 29 the case's production grid is the account's row-4 weights (production_row4.json): the Mexico-born
 # outside California and Texas raked by citizenship to ACS 2024 totals. Its P and F move the wage and fiscal channels,
@@ -517,12 +531,14 @@ def production_change_after(name, prod, prev_prod, prev_case):
     """A grid built on an earlier case's: the case's P + F at each band end less the earlier grid's at the same cell, $bn.
 
     case_ends.cjs gives the earlier grid's P and F there (`previous`); they must be the earlier case's own P and F at its
-    end (same cell, exact), so A moves only by what the later grid adds (October 5: the lineage's production delta)."""
+    end (same cell, exact), so A moves only by what the later grid adds (October 5: the lineage's production delta;
+    October 7: the age mix's change to it, against v5's grid, Case.prev_grid)."""
     d = []
+    c = LATER_CASES[name]
     for end in ("low", "high"):
         x, y = prod["ends"][end], prev_prod["ends"][end]
         gate(f"{name}_{end}_previous_grid_is_{prev_case}_s_production",
-             x["previous"]["lane"] == LATER_CASES[name].grid_base and x["cell_index"] == y["cell_index"]
+             x["previous"]["lane"] == (c.prev_grid or c.grid_base) and x["cell_index"] == y["cell_index"]
              and x["normalization"] == y["normalization"] and x["previous"]["P_bn"] == y["case"]["P_bn"]
              and x["previous"]["F_bn"] == y["case"]["F_bn"], previous=x["previous"], earlier_case=y["case"], cell=x["cell_index"])
         d.append(x["case"]["P_bn"] + x["case"]["F_bn"] - x["previous"]["P_bn"] - x["previous"]["F_bn"])
@@ -704,7 +720,8 @@ def lineage_rows(d, rows, base_lane, lane):
     """The lane's production scenarios with the lineage's production delta (October 5 on September 29's grid).
 
     The case's grid is the base case's plus the added G3+ members' P and F (main_case_lineage_2026_10_05: G3+'s
-    first-order attribution per member times the added members; whites carry none). A scenario on the grid takes it
+    first-order attribution per member times the added members; whites carry none; October 7: the same at the added
+    people's measured age mix, main_case_2026_10_07 item_age_mix.cjs). A scenario on the grid takes it
     as follows [ASSUMPTION: the added members' wage effects fall on other residents' skill cells as the union's do]:
     its wage changes, both branches, are scaled by lambda_c in skill cell c and its capital columns by kappa, two
     unknowns solved so that
@@ -1186,7 +1203,8 @@ def main():
                     help="a case after September 24 (default sept27: long-run responses, rental assistance, government "
                          "enterprises and the return on public capital; sept29: candidate v4, adopted 2026-09-29, "
                          "written to derived/sept29/; oct05: main case v5, adopted 2026-10-05, written to "
-                         "derived/oct05/; sept26_schools: schools at full average cost; sept26: CBO's "
+                         "derived/oct05/; oct07: main case v6, written to derived/oct07/; sept26_schools: schools at "
+                         "full average cost; sept26: CBO's "
                          "one-year school response, 0.63-0.66), or an earlier adopted case")
     ap.add_argument("--out-dir", type=Path, default=None,
                     help="default derived/, or derived/<dir> for a case whose files sit beside the default case's")
