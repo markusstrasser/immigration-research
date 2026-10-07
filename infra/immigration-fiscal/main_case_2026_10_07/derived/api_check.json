@@ -1,0 +1,619 @@
+{
+ "gate": "G4: consumers' call patterns, as written, run against this package; a failing check is a package defect",
+ "pass": true,
+ "generation_pin": {
+  "commit": "8654a0c",
+  "files": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_{G1,G2,G3plus}.json, generation_corrections.json",
+  "source": "world_ledger_2026_09_27/pins.json sept27.generation"
+ },
+ "generation_pin_sept29": {
+  "commit": "aa1f53b2",
+  "files": "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_{G1,G2,G3plus}.json, generation_corrections_sept29.json, generation_corrections_sept29_cash.json",
+  "source": "the last commit of generation_corrections_sept29*.json (run_generations_v4.cjs --case sept29)"
+ },
+ "patterns": [
+  {
+   "consumer": "distribution_weights_2026_09_23/case_ends.cjs",
+   "lines": "63-94, 98-122 (working tree)",
+   "calls": "modelFor(\"central\", m, withCentral({})), evaluateFull(m, s, MAIN_PROFILE) over MAIN_SPECS, stateFor(m, s, MAIN_PROFILE).production",
+   "checks": [
+    {
+     "check": "the band equals summary.json main_case (1e-9)",
+     "pass": true,
+     "detail": "389.0826 / 461.4797, ends [[48,11],[48,11]]"
+    },
+    {
+     "check": "the band equals main_case_bands.csv's adopted row (1e-4)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "the capital return equals capital_at_end_specifications, in total and by level (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "rental assistance equals lines_at_end_specifications.housing_subsidies.added_bn (1e-9)",
+     "pass": true,
+     "detail": "4.4888 / 4.4888"
+    },
+    {
+     "check": "both capped lines respond at 1 at every end specification",
+     "pass": true,
+     "detail": "8 rows"
+    },
+    {
+     "check": "low end: one production cell; P and F are the payload grid's there (exact); cost = -(P + F) - A (1e-9)",
+     "pass": true,
+     "detail": "cell 1716, normalization gdp: P -0.7045 (model.json -0.2359), F 12.6141"
+    },
+    {
+     "check": "high end: one production cell; P and F are the payload grid's there (exact); cost = -(P + F) - A (1e-9)",
+     "pass": true,
+     "detail": "cell 1230, normalization cash: P -0.4634 (model.json -0.1557), F 8.2978"
+    }
+   ]
+  },
+  {
+   "consumer": "uncertainty_propagation_2026_09_22/sept24_specs.cjs",
+   "lines": "94-150, 205-209",
+   "calls": "its own models (MODEL; Engine.applyCorrections(MODEL, payload)), evaluateFull(m, spec, MAIN_PROFILE), componentsFor(null)",
+   "checks": [
+    {
+     "check": "payload responses equal summary.json responses (:207)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted responses replace the September 24 ones one for one; no specification field beyond EXTRA (:102-104)",
+     "pass": true,
+     "detail": "64 specifications"
+    },
+    {
+     "check": "componentsFor(null) is meta.capital_return.components (:107)",
+     "pass": true,
+     "detail": "28 components"
+    },
+    {
+     "check": "each line takes its specification's response (engine rows, :133-137)",
+     "pass": true,
+     "detail": "64 specifications, both models"
+    },
+    {
+     "check": "the benefit keys' transfer lines respond fully (:138)",
+     "pass": true,
+     "detail": "snap, other_state_welfare, family_and_general_assistance, unemployment"
+    },
+    {
+     "check": "derivatives with every key kind rebuild the capital return on both models (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 2.1e-14"
+    },
+    {
+     "check": "the uncorrected model spans the published band (uncorrected_at_adopted_responses, 1e-9)",
+     "pass": true,
+     "detail": "313.0646 / 378.7098"
+    },
+    {
+     "check": "the payload model spans the published band (main_case, 1e-9)",
+     "pass": true,
+     "detail": "389.0826 / 461.4797"
+    },
+    {
+     "check": "the coefficients differ between the uncorrected and the corrected model only where a national total they divide by moves (HEAD's scaled gate, :197-200)",
+     "pass": true,
+     "detail": "moved: education_services, school_reprice, college_rekey, public_order_safety, health_services, general_public_services, economic_affairs_services, recreation_culture, housing_subsidies, receipt:enterprise_surplus"
+    }
+   ]
+  },
+  {
+   "consumer": "world_ledger_2026_09_27/generation_lines.cjs",
+   "lines": "57-66, 109 (run_generations.cjs partsAt)",
+   "calls": "its own models: the generation lane's model_G*.json at 8654a0c; evaluateFull(m, spec, MAIN_PROFILE), stateFor(m, spec, MAIN_PROFILE).receipt_scenario; the September 29 generation payloads at aa1f53b2 with withLineage() on G3+; v6: the edit sets' edits by meta.items",
+   "checks": [
+    {
+     "check": "the oracle holds under the September 27 package: the generations add to model.json at every specification (1e-9)",
+     "pass": true,
+     "detail": "cost 1.1e-13, capital 2.1e-14"
+    },
+    {
+     "check": "under this package the generations add to model.json at every specification (1e-9)",
+     "pass": true,
+     "detail": "cost 1.1e-13, capital 2.8e-14"
+    },
+    {
+     "check": "each capital component's stock x rate x key x response is its return (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "the payload's correction lines enter the generation models at zero (withSyntheticLines)",
+     "pass": true,
+     "detail": "8 lines"
+    },
+    {
+     "check": "stateFor(m, spec, MAIN_PROFILE).receipt_scenario is set",
+     "pass": true,
+     "detail": "cbo_collective"
+    },
+    {
+     "check": "forPayload(main_case_long_run_2026_09_27 corrections.json) on the corrected generation models at 8654a0c is the September 27 package (exact)",
+     "pass": true,
+     "detail": "main_case_long_run_2026_09_27/derived/corrections.json; max |diff| 0"
+    },
+    {
+     "check": "the September 29 generation payloads at aa1f53b2 (convention a, the models unchanged since 8654a0c) add to the September 29 union at this case's specifications (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 1.4e-12"
+    },
+    {
+     "check": "with the lineage item's edits and production on G3+ (withLineage) they add to the item base (ITEM_BASE: v5 with item added_age_mix) at every specification (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 1.5e-12"
+    },
+    {
+     "check": "the edit sets' national-scale lines have the item base's national totals on every generation model, so each edit scales each generation's cells by the case's factor (exact)",
+     "pass": true,
+     "detail": "10 lines"
+    },
+    {
+     "check": "the rule's bases add over the generations to the union's: OASDI receipts and Part A accrual, and user_fees's split-basis lines (education_services, health_services), on the September 29 payloads (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 1.0e-12"
+    },
+    {
+     "check": "with the edit sets' edits by the rule (national-scale edits as they are; pension_tr2026's lineage parts on G3+, its union parts by those shares; user_fees's parts and carriers by their split-basis lines' union shares, meta.user_fees.splits.split_basis) they add to this case at every specification (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 1.5e-12; at specifications 48 / 11: G1 96.6439 / 86.3721; G2 150.6694 / 178.2985; G3plus 141.7693 / 196.8091"
+    }
+   ]
+  },
+  {
+   "consumer": "winners_losers_2026_09_24/specs.cjs",
+   "lines": "144-175 (HEAD b7c453a9)",
+   "calls": "each case's payload applied by the consumer; pkg.RESPONSES; pkg.evaluateFull(m, spec) (no profile); the previous cases through SEPT29 and OCT05",
+   "checks": [
+    {
+     "check": "adopted_2026_09_29: the package's responses are the payload's meta.responses (:157-158)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_09_29: every specification carries the payload's responses (:159-161)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_09_29: every line response, the rate and the enterprise option are the payload's meta, as :162-172 gates them (HEAD)",
+     "pass": true,
+     "detail": "13 line responses"
+    },
+    {
+     "check": "adopted_2026_09_29: band reproduces main_case_bands.csv (sept29_case, 1e-4)",
+     "pass": true,
+     "detail": "371.4146 / 434.8410"
+    },
+    {
+     "check": "adopted_2026_09_29: capitalColumns() finds every component's level and part (:112-120)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "adopted_2026_10_05: the package's responses are the payload's meta.responses (:157-158)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_10_05: every specification carries the payload's responses (:159-161)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_10_05: every line response, the rate and the enterprise option are the payload's meta, as :162-172 gates them (HEAD)",
+     "pass": true,
+     "detail": "13 line responses"
+    },
+    {
+     "check": "adopted_2026_10_05: band reproduces main_case_bands.csv (oct05_case, 1e-4)",
+     "pass": true,
+     "detail": "390.2940 / 461.2431"
+    },
+    {
+     "check": "adopted_2026_10_05: capitalColumns() finds every component's level and part (:112-120)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "adopted_2026_10_07: the package's responses are the payload's meta.responses (:157-158)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_10_07: every specification carries the payload's responses (:159-161)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "adopted_2026_10_07: every line response, the rate and the enterprise option are the payload's meta, as :162-172 gates them (HEAD)",
+     "pass": true,
+     "detail": "13 line responses"
+    },
+    {
+     "check": "adopted_2026_10_07: band reproduces main_case_bands.csv (adopted, 1e-4)",
+     "pass": true,
+     "detail": "389.0826 / 461.4797"
+    },
+    {
+     "check": "adopted_2026_10_07: capitalColumns() finds every component's level and part (:112-120)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "the October 5 case is the package's OCT05, v5's own module (its lane and adopted stamp)",
+     "pass": true,
+     "detail": "main_case_2026_10_05, adopted 2026-10-05"
+    }
+   ]
+  },
+  {
+   "consumer": "main_case_decomposition_2026_09_29/decompose.cjs",
+   "lines": "126-129, 256-257, 271-311, 355-373 (HEAD b7c453a9)",
+   "calls": "correctionsPayload(), evaluateFull(UNION, s) (no profile), componentsFor(spec.capital_variant), SYN, SYN_LINES, CONSTANTS, RESPONSES.row8_factor, LINEAGE_EDITS, meta.pension_accrual.source",
+   "checks": [
+    {
+     "check": "correctionsPayload() is derived/corrections.json (:77)",
+     "pass": true,
+     "detail": "8 lines, 5 receipt lines, 769 edits"
+    },
+    {
+     "check": "the union with no profile spans summary.json main_case (1e-9)",
+     "pass": true,
+     "detail": "389.0826 / 461.4797"
+    },
+    {
+     "check": "componentsFor(spec.capital_variant) names every component the evaluation returns (:372-373)",
+     "pass": true,
+     "detail": "28 components"
+    },
+    {
+     "check": "SYN, SYN_LINES, REKEY_LINE, ENTERPRISE_LINE, LR, LR_LINES and CONSTANTS.row8.c x RESPONSES.row8_factor are defined (:256-257, :359-371, :711-739)",
+     "pass": true,
+     "detail": "row 8 1.8903; SYN_LINES school_reprice, college_rekey, lane_constants"
+    },
+    {
+     "check": "v4's correction lines are the state-price and road lines (:281-282, as written): the payload's lines beyond SYN_LINES are meta.state_pricing's and the part_rekeyed components' correction lines",
+     "pass": true,
+     "detail": "school_reprice, college_rekey, lane_constants, roads_vmt_sl, roads_vmt_fed, state_price_public_order_safety, state_price_health_services, state_price_recreation_culture"
+    },
+    {
+     "check": "the lineage's edits are where meta.lineage.edits puts them (first, count, row 8 the last of them) and the edit sets' follow at meta.items' positions to the payload's end (exact)",
+     "pass": true,
+     "detail": "lineage 416 + 336, row 8 at 751; pension_tr2026 752 + 2, retiree_health 754 + 10, user_fees 764 + 5"
+    },
+    {
+     "check": "meta.pension_accrual.source names its file, and the file's sha256 is the one stamped (the pin a consumer re-sources from)",
+     "pass": true,
+     "detail": "pension_tr2026_2026_10_06/derived/summary.json at 8cefec37, arm all_2026_inputs_separate_funds; builds_on 9ea1beb"
+    }
+   ]
+  },
+  {
+   "consumer": "within_group_distribution_2026_09_29/export_lines.cjs",
+   "lines": "94-112, 126-155, 280-304 (HEAD b7c453a9)",
+   "calls": "dump(): evaluateFull(m, spec), stateFor(withSyntheticLines(m), spec): fiscal_weight, receipt_scenario, production, count_production; the pension gate on LINEAGE_EDITS and meta.pension_accrual",
+   "checks": [
+    {
+     "check": "the corrected union reproduces the case (:40-41, 1e-4 against the adopted row)",
+     "pass": true,
+     "detail": "389.0826 / 461.4797 at 48 / 11"
+    },
+    {
+     "check": "rows, capital and production sum to evaluateFull()'s cost, on the union and the generation models (:71, :80, :92; 1e-9)",
+     "pass": true,
+     "detail": "8 dumps, max |diff| 5.7e-14"
+    },
+    {
+     "check": "capRule (:97) keys every component the evaluation returns, item user_fees's offsets included, by the case's own key rule (componentsFor(null))",
+     "pass": true,
+     "detail": "28 components"
+    },
+    {
+     "check": "as written, the gate misses by exactly item pension_tr2026's lineage parts (meta.items parts lineage_oasdi, lineage_part_a; 1e-9)",
+     "pass": true,
+     "detail": "low (shared): accrual -0.198620, Part A -0.032504; high (personal): accrual -0.156342, Part A -0.025863; max |miss - parts| 1.9e-14"
+    }
+   ]
+  },
+  {
+   "consumer": "sept24_propagation_2026_09_24/band_variants.cjs",
+   "lines": "250-320, 436-460 (HEAD b7c453a9)",
+   "calls": "specifications rebuilt from P24.MAIN_SPECS and meta.responses, P.specsFor({rates}), P.specsFor({enterprises: \"A\"}), Engine.applyCorrections(MODEL, payload); the cash set's meta and the edit layout",
+   "checks": [
+    {
+     "check": "the payload's meta.responses equal the case's summary.json responses (:258)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "specifications rebuilt from every meta.responses entry (P.LINE_RESPONSES) at the reading equal MAIN_SPECS, as :260-269 gates them (HEAD)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "the 0.07 specifications differ from the case's in the rate alone (:169-170)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "the payload model at capital_return_at_7pct's specifications gives main_case_bands.csv's capital_return_at_7pct row (1e-4)",
+     "pass": true,
+     "detail": "480.5364 / 542.8987"
+    },
+    {
+     "check": "the payload model at enterprises_out_option_a's specifications gives main_case_bands.csv's enterprises_out_option_a row (1e-4)",
+     "pass": true,
+     "detail": "372.3212 / 438.6484"
+    },
+    {
+     "check": "the payload model at the rebuilt specifications gives main_case_bands.csv's adopted row (1e-4)",
+     "pass": true,
+     "detail": "389.0826 / 461.4797"
+    },
+    {
+     "check": "on the September 27 payload the rebuild as written equals forPayload()'s MAIN_SPECS (:269)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "forPayload(September 27 payload): the variant runs on the uncorrected and the corrected model print as the published band_variants.csv rows (toPrecision(15))",
+     "pass": true,
+     "detail": "14 of 14 rows"
+    },
+    {
+     "check": "this case: the uncorrected run reproduces uncorrected_at_adopted_responses and the corrected run main_case (summary.json 1e-9, main_case_bands.csv 1e-4) (:431-432)",
+     "pass": true,
+     "detail": "313.0646 / 378.7098; 389.0826 / 461.4797"
+    },
+    {
+     "check": "the September 29 payload model, at this case's specifications: every variant moves every specification as on the uncorrected model (:450, 1e-9)",
+     "pass": true,
+     "detail": "6 variants, max gap 1.1e-13"
+    },
+    {
+     "check": "the item base moves as the September 29 payload but for the variants that pick another key, where the added people's own cells move (v5's statement, 1e-9)",
+     "pass": true,
+     "detail": "justice_raw_coding up to 0.0046; uncompensated_use_0.7 up to 0.0583; justice_grid_low_and_uncompensated_use_0.7 up to 0.0583"
+    },
+    {
+     "check": "item pension_tr2026 leaves every variant's move as the item base's (1e-9); the rest of this case's extra move is item retiree_health's, on lines it scales (public_order_safety, health_services)",
+     "pass": true,
+     "detail": "pension_tr2026 1.1e-13; with retiree_health: justice_raw_coding 0.0169; justice_grid_low 0.0006; justice_grid_high 0.0002; justice_cbp_fixed 0.0003; uncompensated_use_0.7 0.0000; justice_grid_low_and_uncompensated_use_0.7 0.0006"
+    },
+    {
+     "check": "the cash set's payload has the case payload's meta.responses, capital_return and state_pricing, as the gate is written (:303-305)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "the package's cash set (CASH) has the cash set's payload, exactly (:308)",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "the case's payload is the September 29 payload, then the lineage's edits (meta.lineage.edits), then the edit sets' (meta.items, ITEM_EDITS) (exact)",
+     "pass": true,
+     "detail": "416 + 336 + 17 edits"
+    }
+   ]
+  },
+  {
+   "consumer": "main_case_2026_10_05/package.cjs",
+   "lines": "viaCandidate, followNationals (the guard)",
+   "calls": "an item variant through the package's API: withCentral(o), modelFor, specsFor(o), evaluateFull; v6: withItems after the lineage",
+   "checks": [
+    {
+     "check": "the roads item off ({\"roads\":\"resources\"}): evaluateFull on its model (the edit sets applied) and specsFor(o)'s specifications is candidate v4's at the moved specification, the long-run capital at v5's subfunction responses (exact)",
+     "pass": true,
+     "detail": "64 specifications; 320 long-run components; 256 edit-set components beside candidate v4's; specification fields 12, as MAIN_SPECS' 12"
+    },
+    {
+     "check": "on ITEM_BASE, each v4 item off (the pension switch apart: the cash set, P.CASH): the model builds, and the added people's key is the case's in every cell it keeps (1e-12)",
+     "pass": true,
+     "detail": "1 off (removes housing_enterprise_surplus); 2 off; 3 off; 4 off; 5 off (removes tenant_occupied_property); 6a off; 7 off; state off (removes state_price_public_order_safety, state_price_health_services, state_price_recreation_culture); roads off (removes roads_vmt_sl, roads_vmt_fed); max |diff| 1.9e-17"
+    },
+    {
+     "check": "on this case, each v4 item off builds with the edit sets after the lineage, or stops ([BLOCKED]) naming the fixed-amount item whose line it moves",
+     "pass": true,
+     "detail": "9 of 9 build"
+    },
+    {
+     "check": "the pension switch off stops ([BLOCKED]): the lineage there is the cash payload's, through P.CASH",
+     "pass": true,
+     "detail": "[BLOCKED] the lineage here is priced with the pension switch payable_net; with cash use that set's case (P.CASH)"
+    },
+    {
+     "check": "a copy of the variant's specification stops ([BLOCKED])",
+     "pass": true,
+     "detail": "[BLOCKED] a model built for other item options than the case's, with a specification specsFor() did not build for them"
+    },
+    {
+     "check": "the case's specification on the variant's model stops ([BLOCKED])",
+     "pass": true,
+     "detail": "[BLOCKED] a specification for {\"wc\":\"pooled_workers_compensation\",\"pension4\":\"payable_net\",\"state_price\":\"central\",\"roads\":\"miles\",\"licence_rule\":\"index_on_miles\",\"sales_rule\":\"multiplicative\",\"excise_rule\":\"gasoline_at_miles\",\"freight_key\":\"set\",\"benefit_tax_rule\":\"fixed\",\"accrual_receipts\":\"set\",\"part_a_rule\":\"fixed\"} on a model built for {\"wc\":\"pooled_workers_compensation\",\"pension4\":\"payable_net\",\"state_price\":\"central\",\"roads\":\"resources\",\"licence_rule\":\"index_on_miles\",\"sales_rule\":\"multiplicative\",\"excise_rule\":\"gasoline_at_miles\",\"freight_key\":\"set\",\"benefit_tax_rule\":\"fixed\",\"accrual_receipts\":\"set\",\"part_a_rule\":\"fixed\"}"
+    }
+   ]
+  },
+  {
+   "consumer": "main_case_2026_10_07/package.cjs",
+   "lines": "caseOf, forItems, REGISTRY (the item API)",
+   "calls": "caseOf(OCT05, ids, arms), meta.items, CASE_ITEMS, ITEM_EDITS, ITEM_BASE, LINEAGE_PAYLOADS, withItems(m), CASH, checkBuilt, checkLineage",
+   "checks": [
+    {
+     "check": "caseOf(OCT05, []) is v5: its payloads are v5's derived files, its names v5's, no item (exact)",
+     "pass": true,
+     "detail": "main_case_2026_10_05, adopted 2026-10-05"
+    },
+    {
+     "check": "the payloads are stamped as adopted: source package.cjs, adopted 2026-10-07, the decision (its file exists), v5's status form, the case key oct07; a variant (an arm) is stamped adopted null",
+     "pass": true,
+     "detail": "decisions/2026-10-07-main-case-v6.md"
+    },
+    {
+     "check": "REGISTRY lists the items in edit order; CANDIDATE is all of them; SLOTS describe lineage_count and split_line",
+     "pass": true,
+     "detail": "pension_tr2026 (edit_set), retiree_health (edit_set), added_age_mix (lineage), user_fees (edit_set)"
+    },
+    {
+     "check": "set: meta.items is CASE_ITEMS; each edit set's first and count locate its edits, which follow the item base's 752 in registry order and are ITEM_EDITS (exact)",
+     "pass": true,
+     "detail": "pension_tr2026 752 + 2, retiree_health 754 + 10, user_fees 764 + 5"
+    },
+    {
+     "check": "set: each edit set's parts add to its cell shifts exactly (the union and lineage parts, per allocation)",
+     "pass": true,
+     "detail": "11 parts"
+    },
+    {
+     "check": "cash: meta.items is CASE_ITEMS; each edit set's first and count locate its edits, which follow the item base's 750 in registry order and are ITEM_EDITS (exact)",
+     "pass": true,
+     "detail": "retiree_health 750 + 10, user_fees 760 + 5"
+    },
+    {
+     "check": "cash: each edit set's parts add to its cell shifts exactly (the union and lineage parts, per allocation)",
+     "pass": true,
+     "detail": "7 parts"
+    },
+    {
+     "check": "the cash set: item pension_tr2026 does not apply (applied false, with its reason); retiree_health, added_age_mix and user_fees do; CASH_PAYLOAD is corrections_cash.json",
+     "pass": true,
+     "detail": "the cash set has the pension switch off: its payload has no pension block, so no Trustees path enters it"
+    },
+    {
+     "check": "ITEM_BASE.ADDITION is derived/lineage_payload.json and lineage_payload_cash.json, which meta.lineage.payload names (exact)",
+     "pass": true,
+     "detail": "main_case_2026_10_07/derived/lineage_payload.json, main_case_2026_10_07/derived/lineage_payload_cash.json"
+    },
+    {
+     "check": "LINEAGE_EDITS (set and cash) are the payloads' meta.lineage.edits blocks and the additions' edits (exact)",
+     "pass": true,
+     "detail": "336 edits each; meta.lineage.age_mix: cross_section_2007_2026, keys"
+    },
+    {
+     "check": "set: withItems() on a consumer's model of the item base (model.json + ITEM_BASE's payload) is this case at every specification (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "cash: withItems() on a consumer's model of the item base (model.json + ITEM_BASE's payload) is this case at every specification (1e-9)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0"
+    },
+    {
+     "check": "withItems() on a model that moves social_security's national total stops ([BLOCKED]): item pension_tr2026 edits it by fixed amounts",
+     "pass": true,
+     "detail": "[BLOCKED] the model changes the national total of spending:social_security, which item pension_tr2026 edits by fixed amounts; the item has no rule for it"
+    },
+    {
+     "check": "item retiree_health follows a moved national total (editsAt): education_services ends at the model's total plus the item's change (exact); on the case the move stops at user_fees ([BLOCKED]), which edits education_services by fixed amounts against the case's totals at its step",
+     "pass": true,
+     "detail": "1233.371 + 5.238 = 1238.608; [BLOCKED] the model changes the national total of spending:education_services, which item user_fees edits by fixed amounts; the item has no rule for it"
+    },
+    {
+     "check": "item user_fees: both payloads carry its carrier lines after v5's receipt lines and its offset components after v5's components (ITEM_RECEIPT_LINES, ITEM_COMPONENTS; meta.items names them); componentsFor(null) is meta.capital_return.components (exact)",
+     "pass": true,
+     "detail": "user_fees_key_k12, user_fees_key_college, user_fees_key_health; k12_user_fees, college_user_fees, health_sl_user_fees, health_fed_user_fees"
+    },
+    {
+     "check": "on a model without the item (model.json) its carriers enter at zero and its offsets return 0; withItems() on a withSyntheticLines() model of the item base replaces the zero carriers and is this case (1e-9); withItems() of the item alone on its own payload model stops ([BLOCKED]: the carriers are there with amounts)",
+     "pass": true,
+     "detail": "max |diff| 0.0e+0; [BLOCKED] the model carries user_fees_key_k12, user_fees_key_college, user_fees_key_health already: the item is applied"
+    },
+    {
+     "check": "under the pupil-share variant (k12 keyed by a constant) the k12 offset drops and the college and health offsets stay",
+     "pass": true,
+     "detail": "college_user_fees, health_sl_user_fees, health_fed_user_fees"
+    },
+    {
+     "check": "withItems() on a model that moves other_federal_benefits's national total stops at user_fees ([BLOCKED]): retiree_health follows it, user_fees's Pell edit is a fixed amount",
+     "pass": true,
+     "detail": "[BLOCKED] the model changes the national total of spending:other_federal_benefits, which item user_fees edits by fixed amounts; the item has no rule for it"
+    },
+    {
+     "check": "caseOf(OCT05, ITEM_IDS, {retiree_health: \"mu_low\"}): its payload, applied by a consumer, gives main_case_bands.csv's retiree_health_mu_low row (1e-4); meta.items and meta.retiree_health name the arm",
+     "pass": true,
+     "detail": "388.7164 / 461.0936"
+    },
+    {
+     "check": "an unknown arm, an unknown item and items out of registry order stop ([BLOCKED])",
+     "pass": true,
+     "detail": "[BLOCKED] no arm no_such_arm of an item retiree_health in this case | [BLOCKED] items must be named once each, in registry order | [BLOCKED] no item no_such_item in the registry (pension_tr2026, retiree_health, added_age_mix, user_fees)"
+    },
+    {
+     "check": "an edit set that changes meta.lineage (reserved: the base's structure) stops ([BLOCKED])",
+     "pass": true,
+     "detail": "[BLOCKED] item probe (set) changes meta.lineage, which the package stamps or the base's structure holds (see SLOTS)"
+    },
+    {
+     "check": "a lineage addition that moves meta.lineage (a count change) stops ([BLOCKED]: a count or C3 change is a lineage option, lineage_count.cjs); the age-mix addition passes",
+     "pass": true,
+     "detail": "[BLOCKED] item probe (set): the addition moves v5's counts, responses or capital values (a count or C3 change is a lineage option, lineage_count.cjs: caseOf's fourth argument)"
+    },
+    {
+     "check": "caseOf(OCT05, ITEM_IDS, {}, \"arm_a\"): a variant (adopted null, meta.lineage.count_option, no payload file) whose payload, applied by a consumer with its meta.responses (consumer.cjs), gives main_case_bands.csv's lineage_arm_a row (1e-4); with no item its payload gives the lineage lane's arm a band (1e-9); an unknown option stops ([BLOCKED])",
+     "pass": true,
+     "detail": "378.0002 / 445.2541; alone 380.3740 / 447.5507 against 380.3740 / 447.5507; [BLOCKED] lineage_count: no lineage option no_such_option (arm_a, arm_c, c3_minus_se, c3_plus_se)"
+    }
+   ]
+  }
+ ],
+ "consumer_code": [
+  {
+   "consumer": "uncertainty_propagation_2026_09_22/sept24_specs.cjs",
+   "line": ":104-115 (keyLines), :160-170 (derivatives)",
+   "today": "stops: [BLOCKED] capital key kind receipt_amount_over_national (component k12_user_fees) has no derivative here: item user_fees's offset components are keyed by carrier receipt lines (meta.items capital)",
+   "change": "a branch for any receipt_amount_over_national key: the return over the receipt line's national total per unit of its amount, so the rebuild holds; a carrier's amount is set from national totals, so an offset adds no derivative per unit of a group's amount"
+  },
+  {
+   "consumer": "generation_account_2026_09_24",
+   "line": "v5_split.cjs:43-55 (loadCase), run_generations_v5.cjs:127-136",
+   "today": "loadCase stops (the lineage's edits no longer close the payload: 17 edit-set edits follow them); with withLineage() alone on G3+ the generations add to the item base, 2.332 to 2.826bn from this case across the 64 specifications",
+   "change": "slice the lineage by meta.lineage.edits (first, count) and add meta.items' edit sets per generation: each national-scale edit as it is on every generation model; item pension_tr2026's lineage parts (lineage_oasdi, lineage_part_a) on G3+ and its union parts by a stated generation split (here each generation's share of the union's OASDI receipts and Part A accrual; the pension lane's per-generation rows, arms.csv, are the measured alternative); item user_fees's parts and its carrier lines (payload.receipt_lines after the payload's own) by each generation's share of the parent line's union amount (meta.user_fees.splits.split_basis), none on the added people; then rebuild generation_corrections_oct07*.json for generation_lines.cjs's pins"
+  },
+  {
+   "consumer": "main_case_decomposition_2026_09_29/decompose.cjs",
+   "line": ":283-284",
+   "today": "stops: the gate requires the receipt lines to be v4's two (housing_enterprise_surplus, tenant_occupied_property); the payload carries item user_fees's 3 carriers after them (user_fees_key_k12, user_fees_key_college, user_fees_key_health)",
+   "change": "take v4's two receipt lines and meta.items' capital.receipt_lines (the carriers), each carrier with the offsets it keys under their targets (of_component)"
+  },
+  {
+   "consumer": "main_case_decomposition_2026_09_29/decompose.cjs",
+   "line": ":308-311",
+   "today": "the gate requires the lineage's 336 edits to close the payload with row 8 last; 17 edit-set edits follow them (meta.items)",
+   "change": "compare CORR.edits.slice(E.first, E.first + E.count) with P.LINEAGE_EDITS, row 8 at E.row8_edit_index, and decompose the tail by meta.items (each edit set's first and count; item pension_tr2026's parts put its lineage parts with lin)"
+  },
+  {
+   "consumer": "main_case_decomposition_2026_09_29/decompose.cjs",
+   "line": ":286-290",
+   "today": "the gate hashes pension_accrual_2026_09_28/derived/summary.json against meta.pension_accrual.source.sha256, which is now pension_tr2026_2026_10_06/derived/summary.json's; the ratio_net identity (gross x (1 - future share)) and RATIO_NATIONAL (:291-299) are the 2025 lane's",
+   "change": "read the pension inputs from meta.pension_accrual.source and .paths (the 2025 lane's pin is .source.builds_on) and the ratio's construction from the pension_tr2026 lane's summary.json; the lineage's own accrual takes item pension_tr2026's lineage parts"
+  },
+  {
+   "consumer": "within_group_distribution_2026_09_29/export_lines.cjs",
+   "line": ":280-304 (the gate at :302)",
+   "today": "the gate \"the union's accrual less the lineage's own is the September 29 payload's\" misses on this case (low (shared): accrual -0.198620, Part A -0.032504; high (personal): accrual -0.156342, Part A -0.025863bn)",
+   "change": "count item pension_tr2026's lineage parts (meta.items, pension_tr2026 parts lineage_oasdi and lineage_part_a, at the end's allocation) in own; the payload's ratio_net and part_a_accrual_bn are the 2026 inputs'"
+  },
+  {
+   "consumer": "sept24_propagation_2026_09_24/band_variants.cjs",
+   "line": ":450-454 (the split move gate, header :68-73)",
+   "today": "the split gate misses on this case by the edit sets' move of the variants, up to 0.0169bn (justice_raw_coding 0.0169, justice_grid_low 0.0006, justice_grid_high 0.0002, justice_cbp_fixed 0.0003, justice_grid_low_and_uncompensated_use_0.7 0.0006): item retiree_health's scaling of public_order_safety's and health_services's national totals, which the capital keys and state prices divide by (the lineage's own move is v5's rule; unsplit, the gap is 0.0583bn)",
+   "change": "add the edit sets' move to the split: the case's move less the item base's (P.ITEM_BASE.payloadModel() at the same variant), or run the September 29 control with P.ITEM_EDITS applied"
+  },
+  {
+   "consumer": "sept24_propagation_2026_09_24/band_variants.cjs",
+   "line": ":312-320",
+   "today": "the gate requires the payload's edits to be the September 29 payload's 416 and the lineage's 336 only; 17 edit-set edits follow (meta.items)",
+   "change": "compare payload.edits.slice(n29, n29 + P.LINEAGE_EDITS.length) with P.LINEAGE_EDITS and the tail with P.ITEM_EDITS; lineageBy (:339) stays on P.LINEAGE_EDITS, and the variant decomposition counts item retiree_health's scaling of the variant's key as the case's own move"
+  }
+ ]
+}

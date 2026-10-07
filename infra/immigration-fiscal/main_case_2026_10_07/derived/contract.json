@@ -1,0 +1,217 @@
+{
+ "gate": "G2: every v5 derived file exists here with its columns, rows and keys; every difference listed",
+ "files": {
+  "components.csv": {
+   "columns_same_order": true,
+   "columns_added": [],
+   "columns_missing": [],
+   "rows": {
+    "oct05": 21,
+    "here": 21,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   }
+  },
+  "corrections.json": {
+   "key_paths": {
+    "oct05": 610,
+    "here": 1237,
+    "added": 627
+   },
+   "missing": [],
+   "type_changed": [],
+   "type_changes_documented": [],
+   "relocated": [],
+   "added_subtrees": [
+    "meta.capital_return.components.[].of_component",
+    "meta.pension_accrual.source.lane",
+    "meta.pension_accrual.source.arm",
+    "meta.pension_accrual.source.case_file",
+    "meta.pension_accrual.source.case_sha256",
+    "meta.pension_accrual.source.builds_on",
+    "meta.pension_accrual.paths",
+    "meta.pension_accrual.lineage_factors",
+    "meta.pension_accrual.previous",
+    "meta.pension_accrual.arms",
+    "meta.lineage.age_mix",
+    "meta.retiree_health",
+    "meta.user_fees",
+    "meta.items"
+   ]
+  },
+  "corrections_cash.json": {
+   "key_paths": {
+    "oct05": 576,
+    "here": 1099,
+    "added": 523
+   },
+   "missing": [],
+   "type_changed": [],
+   "type_changes_documented": [],
+   "relocated": [],
+   "added_subtrees": [
+    "meta.capital_return.components.[].of_component",
+    "meta.lineage.age_mix",
+    "meta.retiree_health",
+    "meta.user_fees",
+    "meta.items"
+   ]
+  },
+  "main_case_bands.csv": {
+   "columns_same_order": true,
+   "columns_added": [],
+   "columns_missing": [],
+   "rows": {
+    "oct05": 30,
+    "here": 63,
+    "missing": [],
+    "added": [
+     "long_run_non_school_full|oct05_case",
+     "long_run_non_school_full|oct05_cash_set",
+     "long_run_non_school_full|pension_tr2026_combined_funds",
+     "long_run_non_school_full|retiree_health_mu_low",
+     "long_run_non_school_full|retiree_health_mu_low_cash_set",
+     "long_run_non_school_full|retiree_health_mu_high",
+     "long_run_non_school_full|retiree_health_mu_high_cash_set",
+     "long_run_non_school_full|retiree_health_rho_one",
+     "long_run_non_school_full|retiree_health_rho_one_cash_set",
+     "long_run_non_school_full|retiree_health_rho_high",
+     "long_run_non_school_full|retiree_health_rho_high_cash_set",
+     "long_run_non_school_full|retiree_health_military_low",
+     "long_run_non_school_full|retiree_health_military_low_cash_set",
+     "long_run_non_school_full|retiree_health_military_high",
+     "long_run_non_school_full|retiree_health_military_high_cash_set",
+     "long_run_non_school_full|retiree_health_no_federal",
+     "long_run_non_school_full|retiree_health_no_federal_cash_set",
+     "long_run_non_school_full|added_age_mix_cohort_at_birth",
+     "long_run_non_school_full|added_age_mix_cohort_at_birth_cash_set",
+     "long_run_non_school_full|added_age_mix_rough_keys",
+     "long_run_non_school_full|added_age_mix_rough_keys_cash_set",
+     "long_run_non_school_full|lineage_arm_a",
+     "long_run_non_school_full|lineage_arm_a_cash_set",
+     "long_run_non_school_full|lineage_arm_c",
+     "long_run_non_school_full|lineage_arm_c_cash_set",
+     "long_run_non_school_full|lineage_c3_minus_se",
+     "long_run_non_school_full|lineage_c3_minus_se_cash_set",
+     "long_run_non_school_full|lineage_c3_plus_se",
+     "long_run_non_school_full|lineage_c3_plus_se_cash_set",
+     "long_run_non_school_full|ancestry_share_g4_at_nothing",
+     "long_run_non_school_full|ancestry_share_g4_at_bound",
+     "long_run_non_school_full|ancestry_share_g4_at_nothing_cash_set",
+     "long_run_non_school_full|ancestry_share_g4_at_bound_cash_set"
+    ],
+    "order_kept": true
+   }
+  },
+  "per_spec.csv": {
+   "columns_same_order": true,
+   "columns_added": [
+    "oct05_cost_bn",
+    "item_pension_tr2026_bn",
+    "item_retiree_health_bn",
+    "item_added_age_mix_bn",
+    "item_user_fees_bn",
+    "items_interaction_bn",
+    "capital_k12_user_fees_bn",
+    "capital_college_user_fees_bn",
+    "capital_health_sl_user_fees_bn",
+    "capital_health_fed_user_fees_bn"
+   ],
+   "columns_missing": [],
+   "rows": {
+    "oct05": 128,
+    "here": 128,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   }
+  },
+  "sign_reversal.csv": {
+   "columns_same_order": true,
+   "columns_added": [
+    "oct07_low",
+    "oct07_high"
+   ],
+   "columns_missing": [],
+   "rows": {
+    "oct05": 6,
+    "here": 6,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   }
+  },
+  "summary.json": {
+   "key_paths": {
+    "oct05": 948,
+    "here": 1788,
+    "added": 837
+   },
+   "missing": [],
+   "type_changed": [],
+   "type_changes_documented": [],
+   "relocated": [
+    "change_at_fixed_specifications.union_response_move -> change_at_fixed_specifications.oct05_case.union_response_move",
+    "change_at_fixed_specifications.g3plus_members -> change_at_fixed_specifications.oct05_case.g3plus_members",
+    "change_at_fixed_specifications.whites -> change_at_fixed_specifications.oct05_case.whites",
+    "change_at_fixed_specifications.sept29_case -> change_at_fixed_specifications.oct05_case.sept29_case",
+    "change_at_fixed_specifications.sept29_case.item_1 -> change_at_fixed_specifications.oct05_case.sept29_case.item_1",
+    "change_at_fixed_specifications.sept29_case.item_2 -> change_at_fixed_specifications.oct05_case.sept29_case.item_2",
+    "change_at_fixed_specifications.sept29_case.item_3 -> change_at_fixed_specifications.oct05_case.sept29_case.item_3",
+    "change_at_fixed_specifications.sept29_case.item_4 -> change_at_fixed_specifications.oct05_case.sept29_case.item_4",
+    "change_at_fixed_specifications.sept29_case.item_5 -> change_at_fixed_specifications.oct05_case.sept29_case.item_5",
+    "change_at_fixed_specifications.sept29_case.item_6a -> change_at_fixed_specifications.oct05_case.sept29_case.item_6a",
+    "change_at_fixed_specifications.sept29_case.item_7 -> change_at_fixed_specifications.oct05_case.sept29_case.item_7",
+    "change_at_fixed_specifications.sept29_case.item_pension -> change_at_fixed_specifications.oct05_case.sept29_case.item_pension",
+    "change_at_fixed_specifications.sept29_case.item_state -> change_at_fixed_specifications.oct05_case.sept29_case.item_state",
+    "change_at_fixed_specifications.sept29_case.item_roads -> change_at_fixed_specifications.oct05_case.sept29_case.item_roads",
+    "change_at_fixed_specifications.sept29_case.total -> change_at_fixed_specifications.oct05_case.sept29_case.total",
+    "change_at_fixed_specifications.sept29_case.note -> change_at_fixed_specifications.oct05_case.sept29_case.note",
+    "change_at_fixed_specifications.sept29_case.sept27_case -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case",
+    "change_at_fixed_specifications.sept29_case.sept27_case.long_run_responses -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.long_run_responses",
+    "change_at_fixed_specifications.sept29_case.sept27_case.rental_assistance -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.rental_assistance",
+    "change_at_fixed_specifications.sept29_case.sept27_case.capital_core -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.capital_core",
+    "change_at_fixed_specifications.sept29_case.sept27_case.capital_block -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.capital_block",
+    "change_at_fixed_specifications.sept29_case.sept27_case.enterprise_rekey -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.enterprise_rekey",
+    "change_at_fixed_specifications.sept29_case.sept27_case.enterprise_rekey_receipt_move -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.enterprise_rekey_receipt_move",
+    "change_at_fixed_specifications.sept29_case.sept27_case.enterprise_surplus_receipt -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.enterprise_surplus_receipt",
+    "change_at_fixed_specifications.sept29_case.sept27_case.capital_enterprise -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.capital_enterprise",
+    "change_at_fixed_specifications.sept29_case.sept27_case.total -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.total",
+    "change_at_fixed_specifications.sept29_case.sept27_case.of_which_public_housing -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.of_which_public_housing",
+    "change_at_fixed_specifications.sept29_case.sept27_case.enterprise_rekey_against_model_json_share -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.enterprise_rekey_against_model_json_share",
+    "change_at_fixed_specifications.sept29_case.sept27_case.note -> change_at_fixed_specifications.oct05_case.sept29_case.sept27_case.note"
+   ],
+   "added_subtrees": [
+    "adopted_2026_10_05",
+    "cash_set.change_from_the_october_5_cash_set_bn",
+    "change_at_fixed_specifications.items",
+    "change_at_fixed_specifications.interactions",
+    "capital_at_end_specifications.by_component.k12_user_fees",
+    "capital_at_end_specifications.by_component.college_user_fees",
+    "capital_at_end_specifications.by_component.health_sl_user_fees",
+    "capital_at_end_specifications.by_component.health_fed_user_fees",
+    "range.items_at_the_case_data",
+    "each_addition.pension_tr2026",
+    "each_addition.retiree_health",
+    "each_addition.added_age_mix",
+    "each_addition.user_fees",
+    "beside_the_account.congestion.not_recomputed_v6",
+    "group_receipts_bn.adopted_2026_10_05",
+    "v6"
+   ]
+  }
+ },
+ "files_missing": [],
+ "files_added": [
+  "lineage_payload.json",
+  "lineage_payload_cash.json"
+ ],
+ "gate_records": [
+  "api_check.json",
+  "contract.json",
+  "generality.json",
+  "zero_items.json"
+ ],
+ "pass": true
+}
