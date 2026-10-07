@@ -326,6 +326,9 @@ Log (append-only; times from `date`; claude-opus-5-5, teammate prop-b of the v6 
   same.
 - 15:01:01: pytest started, 12 passed in 58 s. 15:05:40–15:06:10: `rerun_lane.py` over the ten commands, IDENTICAL
   32/32, exit 0. Not committed (the lead's brief).
+- 15:13:19–15:14:28: the eight case-lane hashes recorded in `derived/case_components_oct07.json` (corrections.json f8d346aa…,
+  corrections_cash.json e9033bff…, summary.json 54709259…, main_case_bands.csv, package.cjs, item_age_mix.cjs and both
+  lineage payloads) are the committed files' (218a2fb2); no rerun needed.
 
 ## Rules
 

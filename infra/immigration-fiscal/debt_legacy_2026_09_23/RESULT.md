@@ -1173,3 +1173,6 @@ Log (append-only; times from `date`):
 - 15:02:17–15:03:34: `rerun_lane.py` over the default, sept29, oct05 and oct07 commands, with `--allow-unrun` for the
   test file: IDENTICAL 71/71, exit 0. 15:04:06–15:05:31: pytest, 8 passed (the four old cases against their commits,
   the default, sept29, oct05, oct07). Not committed (the lead's brief).
+- 15:13:19–15:14:28: the case-lane hashes recorded in `derived/oct07/summary.json` (corrections.json f8d346aa…, corrections_cash.json
+  e9033bff…, main_case_bands.csv 35116620…, per_spec.csv 9244bcb5…) are the committed files' (218a2fb2), so no file
+  was read mid-write; no rerun needed.
