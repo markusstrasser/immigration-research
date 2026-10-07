@@ -37,3 +37,12 @@ Inputs: `ledger_absolute_2026_09_17/derived/waterfall.csv` (step 14 endpoints), 
 ## Revisions — fiscal repair, September 19, 2026
 
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
+
+## Revisions — item T, October 8, 2026
+
+The ledger's flows now carry item T, the income tax on the main case's keys (`ledger_absolute_2026_09_17`). Shared allocation, $bn a year,
+old → new [CALCULATION: `interest_on_gap.py` → `derived/aggregate_debt_paths.csv`]: union absolute −217.32 → −203.52
+(each group's own income tax rises on the keys); age-matched gap to third-plus NH whites −356.47 → −401.95; to all
+natives −252.02 → −289.02. Fully deficit-financed at a 2% real rate, the debt after 10 years goes from 2,380 to 2,229
+on the absolute flow and from 3,903 to 4,401 on the white gap; after 30 years, from 8,816 to 8,257 and from 14,461 to
+16,307. The September 18 figures above stay as the record.

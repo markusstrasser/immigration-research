@@ -91,34 +91,36 @@ def check_headlines() -> None:
         return float(s[col].iloc[0])
 
     ages = (55, 60, 65)
+    # The values the RESULT's 2026-10-07 note gives: the ledger's item T (income tax on the case's keys) moved
+    # every arm but A; the RESULT's body keeps the earlier figures as its record.
     expect = {
-        ("new_arrival", "B", 0.03): (274, 275, 288), ("new_arrival", "B", 0.0): (527, 476, 437),
-        ("adjuster_nis_all", "A", 0.03): (185, 182, 186), ("adjuster_nis_all", "B", 0.03): (290, 296, 318),
-        ("adjuster_nis_all", "C_central", 0.03): (237, 235, 240),
-        ("adjuster_nis_all", "C_central", 0.0): (463, 412, 370),
-        ("T3_pre1996", "B", 0.03): (323, 339, 381),
+        ("new_arrival", "B", 0.03): (271, 273, 286), ("new_arrival", "B", 0.0): (524, 474, 435),
+        ("adjuster_nis_all", "A", 0.03): (185, 182, 186), ("adjuster_nis_all", "B", 0.03): (287, 294, 316),
+        ("adjuster_nis_all", "C_central", 0.03): (236, 234, 240),
+        ("adjuster_nis_all", "C_central", 0.0): (462, 411, 370),
+        ("T3_pre1996", "B", 0.03): (320, 337, 379),
     }
     for (p, a, r), vals in expect.items():
         got = tuple(arm(p, a, age, r) for age in ages)
         assert got == vals, (p, a, r, got, vals)
     got = tuple(arm("adjuster_nis_all", "C_central", age, 0.03, variant="ptc_off") for age in ages)
-    assert got == (230, 231, 241), got
+    assert got == (228, 231, 240), got
     got = tuple(arm("new_arrival", "B", age, 0.03, variant="ptc_off") for age in ages)
-    assert got == (270, 275, 286), got
-    assert round(fl("C_central"), 1) == -14.3 and round(fl("C_central", "flow_all_as_new_bn"), 1) == -16.1
-    assert round(fl("C_central", variant="ptc_off"), 1) == -13.9
-    assert round(fl("C_central", "flow_all_as_new_bn", variant="ptc_off"), 1) == -15.9
-    assert round(fl("C_central", rate=0.0), 1) == -30.1 and round(fl("C_central", "flow_all_as_new_bn", rate=0.0), 1) == -33.3
+    assert got == (267, 273, 285), got
+    assert round(fl("C_central"), 1) == -14.2 and round(fl("C_central", "flow_all_as_new_bn"), 1) == -16.0
+    assert round(fl("C_central", variant="ptc_off"), 1) == -13.8
+    assert round(fl("C_central", "flow_all_as_new_bn", variant="ptc_off"), 1) == -15.7
+    assert round(fl("C_central", rate=0.0), 1) == -30.0 and round(fl("C_central", "flow_all_as_new_bn", rate=0.0), 1) == -33.1
     s = be[(be.variant == "central") & (be.case == "central") & (be.profile == "adjuster_nis_all")
            & (be.real_rate == 0.03) & be.adjust_age.isin(ages)]
-    assert (round(s.p_stay_breakeven.min(), 2), round(s.p_stay_breakeven.max(), 2)) == (0.15, 0.23)
-    assert (round(s.p_stay_central_implied.min(), 2), round(s.p_stay_central_implied.max(), 2)) == (0.50, 0.59)
+    assert (round(s.p_stay_breakeven.min(), 2), round(s.p_stay_breakeven.max(), 2)) == (0.16, 0.23)
+    assert (round(s.p_stay_central_implied.min(), 2), round(s.p_stay_central_implied.max(), 2)) == (0.50, 0.58)
     s = fb[(fb.case == "central") & (fb.profile == "adjuster_nis_all") & (fb.arm == "C_central")
            & (fb.real_rate == 0.03) & fb.adjust_age.isin(ages)].sort_values("adjust_age")
-    assert tuple(round(x) for x in s.floor_breakeven) == (2024, 2136, 3012), tuple(s.floor_breakeven)
+    assert tuple(round(x) for x in s.floor_breakeven) == (2270, 2318, 3109), tuple(s.floor_breakeven)
     assert float(fb.fit_max_residual.max()) < 0.2
     assert tuple(round(-fl("C_central", c) / 1000) for c in
-                 ("mean_new_arrival", "mean_adjuster", "mean_adjuster_as_new_arrival")) == (263, 218, 254)
+                 ("mean_new_arrival", "mean_adjuster", "mean_adjuster_as_new_arrival")) == (261, 217, 251)
     sh = pd.read_csv(OUT / "ohss_lias_adjust_shares.csv")
     pct = {(r.series, r.fy): round(100 * r.adjustments / (r.adjustments + r.new_arrivals)) for r in sh.itertuples()}
     assert [pct[("parents_of_us_citizens_all_nationalities", y)] for y in (2019, 2022, 2023, 2024, 2025)] == \

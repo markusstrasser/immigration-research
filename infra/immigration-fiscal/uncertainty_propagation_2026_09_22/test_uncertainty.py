@@ -41,7 +41,7 @@ def test_ledger_live_endpoint_se_reproduces_waterfall():
     live = check.loc["live union complete endpoint (D,P on; E zero)"]
     assert live.rebuilt_bn == pytest.approx(live.published_bn, abs=1e-6)
     assert live.rebuilt_se_bn == pytest.approx(live.published_se_bn, abs=1e-6)
-    assert live.published_se_bn == pytest.approx(8.700282, abs=1e-6)
+    assert live.published_se_bn == pytest.approx(12.337676, abs=1e-6)   # 8.700282 before item T (2026-10-07)
 
 
 def test_stale_8_81_is_a_superseded_vintage_not_reproducible_from_live_replicates():

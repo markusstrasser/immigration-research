@@ -96,3 +96,19 @@ size gradients held as sensitivities by the September 20 scaling decision. G's c
 is national. Base school current spending is off the dial. The personal-source allocation
 is a different allocation of the same account, not a switch. Per-function responses on
 the whole account belong to `full_account_2026_09_20`.
+
+## Revisions
+
+- **2026-10-08: item T.** The ledger now ends with item T, the income tax on the main case's keys (`ledger_absolute_2026_09_17`), and
+  `CENTRAL` takes `T|central`. T adds the union's own income tax, +$13.8bn at the shared allocation, to every cell, so
+  every switch move is unchanged and every cell and hull edge moves by that amount. The replicate SEs widen because
+  T rests on a few top records. $bn, old → new [CALCULATION: `recut.py` → `derived/hulls.csv`, `named_cells.csv`,
+  `gross_flows.csv`]:
+  - Central −217.3 (SE 8.7) → −203.5 (SE 12.3).
+  - Practitioner hull −290.5 to −190.1 → −276.7 to −176.3; its grid part −284.6 → −270.8; functions only −203.6 →
+    −189.8.
+  - Design grid −496.2 to −76.1 → −482.4 to −62.3; with the dial, the top +40.9 → +54.7.
+  - Second object, F per capita: −429.0 (hull −502.1 to −401.8) → −415.2 (−488.3 to −388.0); F by federal tax
+    −335.8 → −322.0.
+  - Personal-source allocation −239.2 → −223.9. Gross receipts 417.0 → 430.8; gross outlays unchanged at −634.3.
+  - The verdict's "$8–10bn" cell SE is now $10–14bn.

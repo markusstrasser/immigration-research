@@ -464,3 +464,29 @@ figure, with two thirds of the population immune to the correction by constructi
 [2026-09-28: under the measured generation split (section 5), the central arm gives −$6,853 per person
 and −$292.7bn, and the bounds −$291.5bn to −$335.1bn.] [2026-10-05: −$6,901 and −$294.7bn, bounds −$292.4bn
 to −$338.3bn, at the monthly-frame C3 0.557. (g3_identity_pooled_2026_10_05, monthly frame)]
+
+## Revisions — item T, October 8, 2026
+
+`bounds_coverage_fiscal.py` also writes arm 5 with the white-reference ledger's item T (added to
+`ledger_absolute_2026_09_17` on October 7): the income tax the survey misses, moved onto the main case's
+income-tax keys. Comparisons against whites take that key. T is additive, so each base gap becomes the
+partial account plus T's age-matched increment from that lane's `derived/complete_gaps_by_item.csv`
+(union −$45.48bn, third-plus −$11.77bn). The files without the suffix keep taxes as the survey reports
+them and are unchanged byte for byte. [DATA: `derived/arm5_fiscal_implication_T.csv`,
+`derived/arm5_generation_split_T.csv`]
+
+At the monthly-frame C3 0.557, against third-plus non-Hispanic whites (shared allocation):
+
+| | survey taxes | with T |
+|---|---:|---:|
+| standing union gap | −$7,105 per person, −$290.6bn | −$8,218, −$336.1bn |
+| central (fourth-plus at the measured third-generation rate) | −$6,901, −$294.7bn | −$7,981, −$340.9bn |
+| bounds, floor to the 1970 rate | −$292.4bn to −$338.3bn | −$338.2bn to −$391.4bn |
+
+Adding the hidden members still narrows the per-person gap and widens the aggregate, by about the same
+amounts as before.
+
+Reproduce: `uv run --no-project python3 scripts/rerun_lane.py
+infra/immigration-fiscal/mexican_origin_population_total_2026_09_19 "uv run --no-project --with
+'pandas>=2' --with 'numpy>=2' --with duckdb --with requests --with pyarrow python3
+{lane}/bounds_coverage_fiscal.py"` ends `IDENTICAL: 34/34`.

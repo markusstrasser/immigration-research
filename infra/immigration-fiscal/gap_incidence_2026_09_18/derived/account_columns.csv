@@ -83,6 +83,9 @@ federal,item_C,all_native,466.8684638765408
 federal,item_X,mexican_observed_total,12.195948017934779
 federal,item_X,third_plus_nh_white,51.607165928180756
 federal,item_X,all_native,84.59513374019312
+federal,item_T,mexican_observed_total,11.795101984413899
+federal,item_T,third_plus_nh_white,241.31103557156342
+federal,item_T,all_native,329.0144139253617
 state_local,base_state_income_tax,mexican_observed_total,25.452230492112786
 state_local,base_state_income_tax,third_plus_nh_white,291.41075423529566
 state_local,base_state_income_tax,all_native,419.25033412618734
@@ -140,6 +143,9 @@ state_local,item_C,all_native,145.6419437318778
 state_local,item_X,mexican_observed_total,25.525898191614427
 state_local,item_X,third_plus_nh_white,108.01286308397745
 state_local,item_X,all_native,177.05608192021762
+state_local,item_T,mexican_observed_total,1.9974105442350472
+state_local,item_T,third_plus_nh_white,21.83118239890438
+state_local,item_T,all_native,31.572924809685578
 federal,item_N_institutional,mexican_observed_total,-3.01935316861623
 state_local,item_N_institutional,mexican_observed_total,-16.04920603538377
 federal,item_N_institutional,third_plus_nh_white,-72.3556467360879

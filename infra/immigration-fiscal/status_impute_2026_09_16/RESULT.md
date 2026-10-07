@@ -2,7 +2,7 @@ MODEL SELF-REPORT: Opus 5 (1M context) — claude-opus-5[1m]
 
 # Splitting the Mexico-born ledger cell by imputed legal status
 
-**Verdict:** **Unauthorized immigrants are in the ledger, but the ledger as published cannot see
+**Verdict:** [2026-10-08: taxes as the survey reports them. Comparisons against whites now take the main case's income-tax keys (item T in `ledger_absolute_2026_09_17`), which this lane does not carry; on them the white reference pays more income tax, and on that ledger the Mexican-origin gaps against whites widen by $0.9–1.3k per person.] **Unauthorized immigrants are in the ledger, but the ledger as published cannot see
 them, and once their real eligibility rules are applied they are the worse half of the Mexico-born
 cell — though not by nearly as much as the framing of the question implies.** The Borjas residual
 puts **41.5% of the Mexico-born adults 25–64 in the ledger (3.92M of 9.45M) in the imputed-unauthorized

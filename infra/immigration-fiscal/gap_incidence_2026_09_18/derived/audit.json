@@ -13,12 +13,12 @@
     "nursing_federal_share": 0.7367621505197333,
     "corrections_financing_status": "ASSUMPTION: ACS institutional proxy does not identify government payer; 0/1 runs bound this split"
   },
-  "builder_sha256": "aac257b5db5c393b72c0d88206fac68b0bb8675252740db31604a37a7ebeb1c1",
-  "annual_audit_sha256": "6f5dbb7dad8f70e221e0b709f1a54bd86655949bc3c45f205ce4cd62f7e5db06",
+  "builder_sha256": "1b4e7caa742383415989ac313a367b6bb3fcf35678c602e785a50f15cd8d0813",
+  "annual_audit_sha256": "b1882ef58a4e0206e466e81ba36450d761dd57c9c68885f58bd9fd99228ffc51",
   "output_sha256": {
-    "account_by_level.csv": "065b1a6001f385da0b8731237061d9450fd498fd6e90aa2f2b8280820741d62f",
-    "incidence_matrix.csv": "5d33475c4dc4ad9041565037648f24a4e9ec9e61afebd599369c31545973f74a",
-    "interest.csv": "67da4dc6994c7ed512e6cdb2d2eabf74ccbf6c93a2aff3b22dbb801840608a56"
+    "account_by_level.csv": "a80d7bb9357036018b172a7127a4b12e1313b69ab65c0b8558f38757391bbf36",
+    "incidence_matrix.csv": "2e0c0717ddac992956eceb83d6e0c3a7339a3031f80ca658f794d7c2736dc6fb",
+    "interest.csv": "9c51aec241b6f5c7357d63afe8bf80388323d23188c677e8b8dc9fcbbb36bac8"
   },
   "federal_receipt_mix": {
     "fed_individual_income": 0.5090057541658223,
@@ -99,8 +99,8 @@
   },
   "native_households_weighted": 117199840.75543512,
   "native_households_unweighted": 48068,
-  "gate_union_absolute_bn": -217.3164023135495,
-  "gate_live_annual_anchor_bn": -217.3164023135495,
+  "gate_union_absolute_bn": -203.52388978490058,
+  "gate_live_annual_anchor_bn": -203.52388978490055,
   "annual_params_sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
   "central_arms": {
     "G": "deflated2024",
@@ -115,7 +115,8 @@
     "X": "per_capita",
     "R": "central",
     "F": "zero",
-    "S": "all_inside_meps"
+    "S": "all_inside_meps",
+    "T": "central"
   },
   "item_F_arm": "zero",
   "medical_anchors": {

@@ -34,8 +34,8 @@
  },
  "checks": {
   "lineage_central": [
-   -1288162.177777483,
-   -513398.3759783898
+   -1476572.47057829,
+   -570066.523632333
   ],
   "poison_attr_selfid_unchanged": true,
   "population_outputs_byte_identical": true,

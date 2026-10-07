@@ -326,3 +326,33 @@ residence, the Medicare buy-in is available from the month of adjustment. The fi
 and federal Medicaid (8 U.S.C. 1613) run from the date the person gained qualified status
 [TRAINING-DATA; not re-read]. This belongs to the adjuster (eligibility-change) variant, which is not
 computed. Ladder 235 already reads the per-admission values as upper bounds for adjusters.
+
+## Revision 2026-10-08: item T in the ledger profiles
+
+The ledger's Mexico-born and white profiles now carry item T, the income tax on the main case's keys (`ledger_absolute_2026_09_17`). The
+parent's own value barely moves, because the rescaled Mexico-born profile gains little; the same-age white resident's
+remaining lifetime gains a lot. Statutory arm, central case, Hispanic survival for the parent and NH-white for the
+white resident, thousands of 2024 dollars, old → new [DATA: derived/per_admission.csv]:
+
+| Admitted at | Parent, 0% | at 3% | White resident, 0% | at 3% | Parent minus white, 0% | at 3% |
+|---|---:|---:|---:|---:|---:|---:|
+| 55 | −525 → −522 | −270 → −267 | −397 → −339 | −155 → −111 | −128 → −183 | −114 → −156 |
+| 60 | −478 → −476 | −275 → −273 | −491 → −450 | −274 → −242 | +13 → −26 | −1 → −31 |
+| 65 | −437 → −436 | −286 → −285 | −598 → −575 | −422 → −405 | +161 → +139 | +136 → +120 |
+| (45) | −569 → −565 | −224 → −221 | −183 → −102 | +64 → +118 | −385 → −463 | −287 → −339 |
+| (50) | −552 → −549 | −249 → −247 | −288 → −218 | −36 → +13 | −264 → −330 | −213 → −260 |
+
+- Against a same-age white resident the parent is now $156–183k more costly at 55 (was $114–128k), $26–31k more
+  costly at 60 (was within $13k either way) and $120–139k less costly at 65 (was $136–161k).
+- Case ranges, statutory arm: at 55 −$500k to −$550k (0%), −$252k to −$287k (3%); at 60 −$456k to −$502k, −$259k
+  to −$293k; at 65 −$398k to −$494k, −$252k to −$337k (the verdict's "$254–339k" becomes $252–337k). Common US-total
+  survival, 0%: −$453k, −$412k, −$379k. Taxes and programs only: −$340k, −$321k, −$306k at 0%; −$149k, −$167k,
+  −$192k at 3%. The observed arm stays within $2k of the statutory central at 55 and 60 and $16k more costly at 65
+  (−$452k).
+- Flows, statutory arm, central mix, Hispanic survival [DATA: derived/flow_valuation.csv]: FY2024 −$32.9bn at 0% and
+  −$15.7bn at 3% (was −$33.1bn and −$15.9bn), low–high −$31.2 to −$35.2bn and −$14.6 to −$17.4bn; the decade's mean
+  year −$19.1bn and −$9.1bn (was −$19.2bn and −$9.2bn); mean per parent −$522k and −$249k (was −$525k and −$252k);
+  taxes and programs only −$20.7bn and −$8.2bn (mean year −$12.0bn and −$4.7bn). By age mix at 3%: −$15.7bn central,
+  −$16.0bn upper, −$16.8bn NIS. The verdict's rounded "$16bn ($33bn)" and "$9bn ($19bn)" hold.
+- Not re-derived: the yearly figures in "How to read it" ($18k a year at 65–74, $30k at 80+, the white 65–74
+  −$23.5k), which no tracked output holds.

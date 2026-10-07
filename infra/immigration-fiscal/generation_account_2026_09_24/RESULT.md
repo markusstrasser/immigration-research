@@ -1322,3 +1322,24 @@ CPS frame parquet (ignored); `frame.load()` rebuilds it from the hash-checked AS
 Covered: every input the brief names, through `model.json`'s reproduction (step 2), and every lane in
 `package.cjs` `packageShifts` (step 4). Skipped: none. Derived outputs total 3.7 MB, of which
 `production_by_generation.json` (0.9 MB, all 3,888 scenarios) is the largest.
+
+## Revisions
+
+- **2026-10-08: item T in the September 19 ledger.** The ledger now carries the main case's income-tax keys (item T
+  in `ledger_absolute_2026_09_17`), so the ledger rows of step 6 move; the account rows do not. $ per person a year, G1 / G2 / G3+,
+  old → new [CALCULATION: `compare_ledger.py` → `derived/ledger_comparison.csv`]:
+  - Published gap to third-plus NH whites (shared): −7,584 / −7,521 / −6,195 → −8,849 / −8,499 / −7,118.
+  - Eight-band gap, shared: −7,525 / −7,443 / −6,116 → −8,791 / −8,420 / −7,039; personal: −7,830 / −6,799 /
+    −6,018 → −9,180 / −7,609 / −7,074. The recomputation lands within 0.7–1.1% of the published gaps (was 0.8–1.3%).
+  - Gap at the group's own ages, shared: −9,806 / −9,820 / −6,685 → −11,252 / −10,940 / −7,505; personal: −12,394 /
+    −6,166 / −4,598 → −14,329 / −6,669 / −5,261.
+  - Whites' own balance at the group's ages, shared: +3,877 / +3,940 / +2,461 → +5,618 / +5,234 / +3,818; personal:
+    +8,963 / −633 / −2,365 → +11,242 / +281 / −1,338.
+  - The group's own balance, shared: −5,929 / −5,881 / −4,223 → −5,633 / −5,706 / −3,688; personal: −3,431 /
+    −6,798 / −6,963 → −3,086 / −6,388 / −6,600. Each group's own income tax rises on the keys, so its own balance
+    improves while its gap to whites widens.
+  - Read-through for step 6: the own balances are now 33–48% smaller than the published gaps (was 22–32%); the
+    shared-end direct lines at the responses sit within $185–606 of the ledger's balances (was $71–481); the
+    ledger's shared G1 and G2 are $73 apart (was $48); its personal G3+ is $212 more costly than G2 (was $165). The
+    September 24 record and the later bullets that compare the account with the ledger's own balances quote the pre-T
+    ledger; its own balances move by +$296 / +$174 / +$535 per person at the shared end.

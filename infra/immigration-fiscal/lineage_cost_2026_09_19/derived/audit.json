@@ -80,10 +80,10 @@
   {
    "check": "priced senior rows lie between the statutory and pooled rules",
    "pass": true,
-   "pooled_gap": -1288162.177777483,
-   "priced_max": -863569.503294961,
-   "priced_min": -1138995.0781241555,
-   "statutory_gap": -845697.3440968429
+   "pooled_gap": -1476572.47057829,
+   "priced_max": -1051979.796095768,
+   "priced_min": -1327405.3709249625,
+   "statutory_gap": -1034107.6368976498
   },
   {
    "check": "legalised founder is the same under every senior rule",
@@ -173,10 +173,10 @@
   "crime_cost_firstgen_2026_09_18/derived/audit.json": "92113524bb788eb7a75267f884cab9974e0f632cb71c5da743b84bc659e5385c",
   "crime_cost_firstgen_2026_09_18/derived/firstgen_cost_weighted.csv": "684cf6ad1b6ec08af251974d7bc9b8d722212c26bbb49c5a8a953ae46f21233a",
   "demo_momentum_2026_09_16/cps_fertility_agestd.csv": "6b7e9902465b1281190ae340a82d39901d8d845d700a1287fd14250d1580dac0",
-  "ledger_absolute_2026_09_17/derived/age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62",
-  "ledger_absolute_2026_09_17/derived/age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
-  "ledger_absolute_2026_09_17/derived/lifetime/period_profiles.csv": "3a6e570fada6019c0d655f51f66ac8d9b1b6fc08abb03bcd3d927e967362ec33",
-  "ledger_absolute_2026_09_17/derived/waterfall.csv": "e96079cca8dab7cfd528f6de240504c85c83cb1b748d6ddc0f0d1f390c6cd65b",
+  "ledger_absolute_2026_09_17/derived/age_profile_components.csv": "75b85d18e6612ed26e1c3a1b02dde4f44a850b803c48153ae08c350a9de632aa",
+  "ledger_absolute_2026_09_17/derived/age_profiles.csv": "9d5a302e43ab5f839b96056ce030c17a73ddf8165ba134a07813754005d8eafe",
+  "ledger_absolute_2026_09_17/derived/lifetime/period_profiles.csv": "c5b6f731b47a6f513167635843c2ac63777ea12b0de8786830d66983eb43133c",
+  "ledger_absolute_2026_09_17/derived/waterfall.csv": "e85ce801127671b291dff8b9f2533dc4064f2a2c4c8250d5c13c035899f3ce00",
   "lifetime_longevity_sstiming_2026_09_18/derived/survival_tables.csv": "b18d4c85756730b99be26840b5bc8e432052247b83fe9a4f069a9a6aa41fbb1a",
   "lineage_cost_2026_09_19/derived/senior_meps_gradient.csv": "6be43fe7093ffdfcc7639cba9a1656e9b1a83e8992c8c93ff0bf27edebb83e97",
   "lineage_cost_2026_09_19/derived/senior_state_shares.csv": "be7d28f54b244909505ecfcdc8f3919364a17906df1dbf4591e2a17ea9e7a66b",
@@ -185,7 +185,7 @@
   "mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication.csv": "33a65b135eb5ebc1346b8dc6a90d8f44bee4c3ca05b67ee2f779ed4f2df2d24c",
   "mexican_origin_population_total_2026_09_19/derived/arm5_generation_split.csv": "35affa4082e95397fb405b4e76e0179592a096ce6c563abedd58eba35410da37",
   "pronatal_equivalence_2026_09_18/derived/lifetime_equivalence.csv": "dde6613b2d4ba8acfa5302d7c362808160ad59096799e6896fe315a462ed826b",
-  "status_impute_2026_09_16/RESULT.md": "7edabaee75a171b785227a55bc69cc5ae5b00f3b753ee9e996cbc4cb55f74ef4"
+  "status_impute_2026_09_16/RESULT.md": "fa1d36201d67cc02b324a8f40b5020f40ab047f94be9ad2d6be3faf70bbe4615"
  },
  "interpretation": "survival-weighted period-profile lineage scenario; not a cohort projection, not an admission-policy counterfactual, no general equilibrium, no behavioural response, no wage growth by default",
  "lane": "lineage_cost_2026_09_19",

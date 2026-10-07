@@ -246,3 +246,16 @@ that moves the answer.
 ## Revisions — fiscal repair, September 19, 2026
 
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
+
+## Revisions — item T, October 8, 2026
+
+`incidence.py` books the ledger's item T (the income tax on the main case's keys, `ledger_absolute_2026_09_17`) as federal and state income
+tax in the fed/stl parts. $bn a year, shared allocation, F at zero unless named, old → new [DATA:
+`derived/account_by_level.csv`, `derived/TABLES.txt`, `derived_F_percapita/`]:
+- Union: federal −17.19 → −5.39, state-local −200.13 → −198.13, total −217.32 → −203.52; the state-local share of
+  the deficit 92% → 97%. F per capita: federal −228.84 → −217.04, total −428.97 → −415.18.
+- Per native-headed household: $1,854 → $1,737 (average financing), $1,712–1,715 → $1,692–1,693 (marginal); F per
+  capita $3,660 → $3,542 and $1,772–1,804 → $1,752–1,782.
+- Third-plus NH whites, the control: −211.31 → +51.83 (federal −43.14 → +198.17), so on this ledger the white
+  reference runs a surplus with F at zero.
+- Texas rows' state-local parts do not move: Texas has no state income tax.

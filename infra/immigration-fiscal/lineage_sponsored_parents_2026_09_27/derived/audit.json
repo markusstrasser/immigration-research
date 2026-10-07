@@ -42,7 +42,7 @@
    "pass": true
   },
   "per_admission_npv": {
-   "max_abs_diff": 0.0457700178376399,
+   "max_abs_diff": 0.04531520413001999,
    "n": 18,
    "pass": true
   }
@@ -52,10 +52,10 @@
   "late_arrival_tail_2026_09_27/derived/ir5_flow.csv": "4bfdb3336daf89222992210d2206432a166fa8f92432859b520f3b589f4933f6",
   "late_arrival_tail_2026_09_27/derived/late_arrival_tenure.csv": "85ddfbcfc4aa2fa33b6cb1b11188b541cdae850b26fcbb9bfa0db4677d1b95a7",
   "late_arrival_tail_2026_09_27/derived/mexico_ir_new_vs_adjust.csv": "e5c147d3b6ca81b8803babf55080d658fefdbce11c624980745bed8a2f1afa2c",
-  "late_arrival_tail_2026_09_27/derived/per_admission.csv": "3d9d6b2e63c7979ddada332f9881fa14dbab63210b2f548c98656877e8f847c0",
+  "late_arrival_tail_2026_09_27/derived/per_admission.csv": "370b7c19a5f7d840a6c55be3f76e30ff4cf2c01be095c5aa9e9c2f27862a14be",
   "late_arrival_tail_2026_09_27/per_admission.py": "ebf9701030296c8b821d5e769d64f4b395fd3c32a61325b632526d88873555a0",
-  "lineage_cost_2026_09_19/derived/audit.json": "71711b21cc13dac424fe58d982ed44ef1fe42dfc739ba2c8474b388862d787f9",
-  "lineage_cost_2026_09_19/derived/sensitivities.csv": "1c97f90780d85f462d6905eaf5ed44015662725ab243f62a766a137eaa0c1f97",
+  "lineage_cost_2026_09_19/derived/audit.json": "861abd25167154e31b515afaee9d3781b7f5d664d1b659a0203974cc875620df",
+  "lineage_cost_2026_09_19/derived/sensitivities.csv": "8a265e267f3bbf58eaf62cd327b2538ce87504fdc12d04264e63308bf5c4d8f3",
   "lineage_cost_2026_09_19/inputs.py": "c76183a791b4ed2029038b7c5b42d7be926b2115b27da539c2b92e8169c68e5c",
   "lineage_cost_2026_09_19/lineage.py": "bc0550ce436c5efb9de70c90bcd9b58eeff2ad2ae96f9dfc5677911700537961",
   "origin_attachment_mexico_2026_09_27/derived/naturalization_share_2024.csv": "b40d5358be104d3623e9a7527b312883194ac7010806038309a937ccfe822022"

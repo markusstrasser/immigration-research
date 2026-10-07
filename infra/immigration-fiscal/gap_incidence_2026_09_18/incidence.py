@@ -209,7 +209,8 @@ def build_account(args):
                us_resident=us_resident, consumption_proxy=base_matrix[:, 4],
                capital=(cap_pc, cap_national, cap_components), off=[],
                is_white_ref=groups[WHITE],
-               is_target=sum(groups[g].astype(int) for g in TARGETS) > 0)
+               is_target=sum(groups[g].astype(int) for g in TARGETS) > 0,
+               income_tax_keys=AL.income_tax_keys(d, civilian, w0))   # item T, since 2026-10-07
 
     print("[stage] item charges", flush=True)
     charges, dropped, centrals, national, _ = AL.build_charges(ctx, params)
@@ -359,6 +360,12 @@ def build_account(args):
     excise_fed_share = fed_excise / (fed_excise + state_excise)
     fed["item_X"] = excise_fed_share * vec("X")
     stl["item_X"] = (1.0 - excise_fed_share) * vec("X")
+    # Item T, the income tax the survey misses: its federal part to Washington, its state and local part to the
+    # states, as the ledger builds them (Charges.parts).
+    if centrals.get("T"):
+        parts = charges.parts[f"T|{centrals['T']}"]
+        fed["item_T"] = parts["federal"]
+        stl["item_T"] = parts["state"]
 
     expected = base_matrix @ AL.COEFFICIENTS - means[codes] * exposure
     for item, arm in centrals.items():

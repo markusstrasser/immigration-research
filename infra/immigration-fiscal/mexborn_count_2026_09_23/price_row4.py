@@ -2,7 +2,9 @@
 
 Formula (dataset_integrity_2026_09_23/cps.md, row 3): effect on the main case =
   -(CPS count - chosen level) / CPS count x (G1 share of the union net, ledger waterfall step 14)
-  x main case. The per-person figure is unchanged; only the count moves.
+  x main case. The per-person figure is unchanged; only the count moves. Step 14 (item S) was the
+  ledger's endpoint until item T was added as step 15 on 2026-10-07. This lane prices row 4 for the
+  September 23 case, so it keeps that ledger's endpoint and stops if step 14 is no longer item S.
 
 Levels for February-April 2025, each an ACS-based figure in the CPS universe (households plus
 noninstitutional group quarters):
@@ -36,6 +38,8 @@ def main() -> None:
     main_row = bands[(bands.profile == "cbo_category_lag_non_school_full") & (bands.variant == "adopted")].iloc[0]
     mc_low, mc_high = float(main_row.cost_low_bn), float(main_row.cost_high_bn)
     wf = pd.read_csv(FISCAL / "ledger_absolute_2026_09_17/derived/waterfall.csv")
+    if set(wf[wf.step == 14].item) != {"S"}:
+        raise SystemExit("[BLOCKED] ledger waterfall step 14 is no longer item S, the September 23 endpoint")
     step14 = wf[wf.step == 14].set_index("group").cumulative_bn
     g1_share = step14["mexico_born"] / step14["mexican_observed_total"]
 

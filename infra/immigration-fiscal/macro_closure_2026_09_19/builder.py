@@ -26,7 +26,7 @@ BEA_URL = "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx
 BEA_SHA = "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e"
 BEA_DEFAULT = _data_paths.data_root(require_exists=False) / 'external/bea_nipa/Section3All_xls.xlsx'
 UNION = "mexican_observed_total"
-RECEIPTS = {"tax", "employer", "sales", "owner_property", "C", "X"}
+RECEIPTS = {"tax", "employer", "sales", "owner_property", "C", "X", "T"}   # T: the ledger's item T, since 2026-10-07
 
 
 def parse_sheet(rows, year):
@@ -119,6 +119,7 @@ def reconstruct(root, evidence, census_cache):
     national = pd.read_csv(old / "national_reconciliation.csv")
     n_national = float(national.loc[national.line.eq("item N institutional care"), "amount_bn"].iloc[0])
     rows, anchors, f_rows, vintage_rows, census_checks = [], [], [], [], []
+    tax_keys = AL.income_tax_keys(d, civilian, weight)   # item T on these records
     for allocation, matrix in [("shared", shared), ("personal", personal)]:
         ctx = dict(d=d, index=state["index"], n_units=state["n_units"], civilian=civilian,
                    weights=weights, heads=d.loc[d.SPM_HEAD.eq(1)].sort_values("SPM_ID"),
@@ -129,7 +130,8 @@ def reconstruct(root, evidence, census_cache):
                    donor_codes=codes, donor_payer_means=payer_means, exposure=exposure,
                    n_civilian=float(weight[civilian].sum()), us_resident=params.pick("population", ["2024"], "count"),
                    consumption_proxy=matrix[:, 4], off=[], allocation=allocation,
-                   is_white_ref=state["group"][AL.WHITE] & civilian, is_target=target)
+                   is_white_ref=state["group"][AL.WHITE] & civilian, is_target=target,
+                   income_tax_keys=tax_keys)
         charges, _, centrals, _, _ = AL.build_charges(ctx, AL.Params(params_path, False))
         values = {name: matrix[:, i] * A.COEFFICIENTS[i] for i, name in enumerate(A.COMPONENTS)}
         values["medical"] = -(health @ means)
@@ -187,7 +189,7 @@ def bridges(tables, accounts, f_charges):
         spending_bn=("spending_bn", "sum"), balance_bn=("signed_bn", "sum"))
     rows, coverage, conditional = [], [], []
     official_categories = {
-        "personal_tax_and_social_contributions": (v(3) + v(8), {"tax", "employer"}),
+        "personal_tax_and_social_contributions": (v(3) + v(8), {"tax", "employer", "T"}),
         "corporate_income_taxes": (v(5), {"C"}),
         "production_and_import_taxes": (v(4), {"sales", "owner_property", "X"}),
         "other_current_receipts": (v(6) + v(9) + v(10) + v(15) + v(19), set()),

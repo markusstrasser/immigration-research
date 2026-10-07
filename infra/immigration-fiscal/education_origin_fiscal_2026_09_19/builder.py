@@ -243,6 +243,8 @@ def main():
     profile_lookup = {}
     old_profiles = pd.read_csv(fiscal / "ledger_absolute_2026_09_17/derived/age_profiles.csv")
     old_components = pd.read_csv(fiscal / "ledger_absolute_2026_09_17/derived/age_profile_components.csv")
+    # item T (2026-10-07): the ledger's income-tax keys on these records, so every expanded account carries it
+    tax_keys = AL.income_tax_keys(d, civilian, weights[:, 0])
     anchor_errors, central_meta = {}, {}
     national_h = health[civilian].T @ weights[civilian]
     for allocation, matrix in [("shared", shared), ("personal", personal)]:
@@ -261,7 +263,8 @@ def main():
                    us_resident=params.pick("population", ["2024"], "count"),
                    consumption_proxy=matrix[:, 4], off=[], allocation=allocation,
                    is_white_ref=origin_groups["third_plus_nh_white"],
-                   is_target=np.logical_or.reduce([origin_groups[g] for g in AL.TARGETS]))
+                   is_target=np.logical_or.reduce([origin_groups[g] for g in AL.TARGETS]),
+                   income_tax_keys=tax_keys)
         if not ctx["us_resident"]:
             raise ValueError("Verified2024 resident denominator absent")
         legacy, dropped, centrals, _, _ = AL.build_charges(ctx, AL.Params(params_path, False))

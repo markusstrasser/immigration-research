@@ -334,3 +334,10 @@ browser user agent (`curl -A …` for OHSS; the BLS PDFs through a web fetch) an
 `pdftotext -layout`. The Census API check used the untracked key, and output was redacted.
 
 Model: claude-opus-5-5[1m] (Opus 5.5, 1M context).
+
+## Revisions
+
+- **2026-10-08: item T.** The ledger's waterfall gained step 15, item T (the income tax on the main case's keys,
+  `ledger_absolute_2026_09_17`). This lane prices row 4 for the September 23 case, so `price_row4.py` keeps step 14, that ledger's endpoint,
+  and now stops with `[BLOCKED]` if step 14 is no longer item S. Outputs are unchanged. At step 15 the G1 share would
+  be 0.3383 (−68.844 ÷ −203.524) instead of 0.3334.

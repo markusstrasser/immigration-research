@@ -123,8 +123,9 @@ def main() -> int:
                   abs(up - float(stored.loc[srow, "gap_lineage_fiscal"])) < 1e-6)
     c0 = lin.gap({}, 0.0, fn=P.L.lineage)[0]
     c3 = lin.gap({}, 0.03, fn=P.L.lineage)[0]
-    check("centrals after audit §E −1,288,162 / −513,398 (brief: −1,297,150 / −514,635)",
-          round(c0) == -1288162 and round(c3) == -513398, f"{c0:,.6f} / {c3:,.6f}")
+    check(f"centrals are propagate.LIN_CENTRAL, {P.LIN_CENTRAL[0]:,.0f} / {P.LIN_CENTRAL[1]:,.0f} since the ledger's "
+          "item T (−1,288,162 / −513,398 after audit §E; brief: −1,297,150 / −514,635)",
+          round(c0) == P.LIN_CENTRAL[0] and round(c3) == P.LIN_CENTRAL[1], f"{c0:,.6f} / {c3:,.6f}")
     poison = {k: float("nan") for k in lin.attr}
     check("central ignores the attrition inputs (NaN-poisoned attr, same gap)",
           lin.gap({"attr": poison}, 0.0, fn=P.L.lineage)[0] == c0)

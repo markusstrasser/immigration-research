@@ -1,0 +1,9 @@
+population_assumption,c3_source,c3,c3_se,g3_rate_share_of_corrected_third_plus,attriters_added,g3_rate_attriters,later_loss_attriters,selfid_third_plus_gap_per_person,g3_rate_attriter_gap_per_person,later_loss_attriter_gap_per_person,union_gap_per_person_before,gap_per_person_after,aggregate_gap_bn_after
+"floor: 3rd-generation attriters only, no 4th-plus correction",pooled with CPS monthly 1994-2026 (central),0.5567,0.2457,0.111889,801695.9,801695.9,0.0,-5964.1,-2643.9,-5964.1,-8217.6,-8110.5,-338.19
+"floor: 3rd-generation attriters only, no 4th-plus correction",pooled with CPS 2022-26 (sensitivity),0.907,0.6122,0.111889,801695.9,801695.9,0.0,-5964.1,-554.7,-5964.1,-8217.6,-8070.3,-336.52
+4th-plus identifies at the measured 3rd-generation rate,pooled with CPS monthly 1994-2026 (central),0.5567,0.2457,0.111889,1812052.5,1812052.5,0.0,-5964.1,-2643.9,-5964.1,-8217.6,-7981.2,-340.86
+4th-plus identifies at the measured 3rd-generation rate,pooled with CPS 2022-26 (sensitivity),0.907,0.6122,0.111889,1812052.5,1812052.5,0.0,-5964.1,-554.7,-5964.1,-8217.6,-7892.5,-337.08
+4th-plus identifies at Duncan-Trejo 1994-2006 rate (70.8%),pooled with CPS monthly 1994-2026 (central),0.5567,0.2457,0.111889,4109220.4,2069081.3,2040139.1,-5964.1,-2643.9,-5964.1,-8217.6,-7859.2,-353.71
+4th-plus identifies at Duncan-Trejo 1994-2006 rate (70.8%),pooled with CPS 2022-26 (sensitivity),0.907,0.6122,0.111889,4109220.4,2069081.3,2040139.1,-5964.1,-554.7,-5964.1,-8217.6,-7763.2,-349.39
+4th-plus identifies at the 1970 reinterview 4th-generation rate (44.4%),pooled with CPS monthly 1994-2026 (central),0.5567,0.2457,0.111889,10844275.8,2822661.5,8021614.3,-5964.1,-2643.9,-5964.1,-8217.6,-7564.2,-391.38
+4th-plus identifies at the 1970 reinterview 4th-generation rate (44.4%),pooled with CPS 2022-26 (sensitivity),0.907,0.6122,0.111889,10844275.8,2822661.5,8021614.3,-5964.1,-554.7,-5964.1,-8217.6,-7450.2,-385.48

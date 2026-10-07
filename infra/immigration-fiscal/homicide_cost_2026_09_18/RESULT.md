@@ -120,3 +120,17 @@ life-sentence share first.
 ## Revisions — fiscal repair, September 19, 2026
 
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
+
+## Revisions — item T, October 8, 2026
+
+The ledger's complete (expanded) profiles now carry item T, the income tax on the main case's keys (`ledger_absolute_2026_09_17`); the
+partial account does not, so every partial figure is unchanged. On the current scripts, treasury cost of one cleared
+homicide, expanded account, life share 23.1%, no foster arm, old → new [DATA: derived/treasury_cost_per_homicide.csv]:
+- Undiscounted: Hispanic 1,102,387 → 1,159,676; NH white 1,267,742 → 1,391,878; NH other 1,349,811 → 1,479,681;
+  NH Black 1,439,904 → 1,573,914.
+- At 3%: 973,168 → 1,005,787; 1,089,249 → 1,164,817; 1,152,919 → 1,227,619; 1,206,203 → 1,281,166.
+- Both channels rise: the victim's foregone balance (Hispanic offenders' victims −307,861 → −262,629 undiscounted) and
+  the offender's foregone taxes. Undiscounted, the victim's expanded balance stays negative for every group.
+- `derived/c3_c4_account_and_life_sensitivity.csv` was still the September 18 table (column `complete`, pre-repair).
+  This rerun regenerated it from `disconfirm.py` (column `expanded`), so its partial column moves as well (Hispanic at
+  life share 0.231: 1,547,846 → 1,606,506). That move belongs to the September 19 repair, not to item T.

@@ -87,3 +87,22 @@ This instrument is an LLM-assisted accounting implementation; its political and
 framing dispositions are addressed by explicit opposing comparisons, primary
 codebook verification, and independently reproducible tables, not assumed away.
 [SOURCE: `notes/llm-bias-caveat.md`; computational details in `README.md`.]
+
+## Revisions
+
+- **2026-10-08: item T.** `builder.py` now passes the ledger's income-tax keys to `build_charges`, so every expanded
+  account carries item T, the income tax on the main case's keys (`ledger_absolute_2026_09_17`); partial accounts do not move. Personal
+  allocation, expanded excluding N, ages 25–64, stock, old → new [SOURCE: `derived/annual_estimates.csv`,
+  `derived/comparisons.csv`]:
+  - Verdict balances: below-HS −$1,951 → −$1,879, HS-only +$522 → +$639; shared −$5,558 → −$5,518 and −$3,541 →
+    −$3,470.
+  - Working-age table, balance and interval: Mexico below-HS −1,951 [−3,413, −488] → −1,879 [−3,356, −402]; Mexico
+    HS-only +522 [−610, +1,655] → +639 [−509, +1,788]; Other Central America −940 → +17 and +1,696 → +3,431;
+    Caribbean −5,161 → −5,043 and +3,762 → +7,492; South America −726 → −610 and +2,365 → +3,764; Southeast Asia
+    −2,748 → −2,620 and +5,139 → +8,343; all natives below-HS −4,976 [−6,451, −3,502] → −3,990 [−6,650, −1,331],
+    HS-only +2,434 [+1,548, +3,320] → +3,454 [+2,006, +4,902].
+  - Comparators: Mexico-born below-HS against below-HS natives +$2,709 [+880, +4,539] → +$1,779 [−1,071, +4,628], so
+    the advantage is no longer clear of zero; HS-only against HS-only natives −$2,122 [−3,511, −733] → −$2,950
+    [−4,700, −1,200]; against natives of all education −$16,519 → −$18,792 and −$14,288 → −$16,486.
+  - T sits on a few top-income records, so intervals widen where a cell holds one: Caribbean HS-only now runs −$5,552
+    to +$20,536, Southeast Asia HS-only −$1,971 to +$18,657.

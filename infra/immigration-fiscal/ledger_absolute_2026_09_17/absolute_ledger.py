@@ -523,12 +523,13 @@ def income_tax_keys(d: pd.DataFrame, civilian: np.ndarray, weight: np.ndarray) -
 
 
 def income_tax_item(d: pd.DataFrame, keys: dict, civilian: np.ndarray, weight: np.ndarray, personal: bool,
-                    unit_share) -> tuple[np.ndarray, dict]:
+                    unit_share) -> tuple[np.ndarray, np.ndarray, dict]:
     """Item T's per-record charge (a receipt, positive) at one allocation: on the record (personal), or with each
     SPM unit's dollars split equally over its members (unit_share, the shared allocation), zero off civilians.
     Federal: the national line times the record's raked key share, less its FEDTAX_BC, plus the part of its EITC
     that offsets liability. State: the line in proportion to STATETAX_A floored at 0, less that base. keys is
-    income_tax_keys() on the same records; weight their full weights. Returns the vector and its national parts."""
+    income_tax_keys() on the same records; weight their full weights. Returns the federal and the state vectors
+    (item T is their sum; a caller that books taxes by level takes them apart) and their national parts."""
     alloc = "personal" if personal else "shared"
     place = (lambda x: x) if personal else unit_share
     fbc = d.FEDTAX_BC.to_numpy(dtype=float)
@@ -545,7 +546,7 @@ def income_tax_item(d: pd.DataFrame, keys: dict, civilian: np.ndarray, weight: n
     state_base_total = float((s * civilian) @ weight)
     federal = (federal_line * v - place(fbc) + place(eitc_offset)) * civilian
     state = (state_line * s / state_base_total - st_base) * civilian
-    return federal + state, dict(
+    return federal, state, dict(
         allocation=alloc, federal_key_sum=key_sum,
         federal_line_bn=federal_line / 1e9, state_line_bn=state_line / 1e9,
         cps_federal_before_refundable_bn=float((place(fbc) * civilian) @ weight) / 1e9,
@@ -562,6 +563,8 @@ class Charges:
         self.columns: list[str] = []
         self.data: list[np.ndarray] = []
         self.meta: dict[str, dict] = {}
+        # per-record parts of a column by level of government, for callers that book by level (item T)
+        self.parts: dict[str, dict[str, np.ndarray]] = {}
 
     def add(self, item: str, arm: str, values: np.ndarray, **meta):
         key = f"{item}|{arm}"
@@ -1265,11 +1268,16 @@ def build_charges(ctx, p: Params):
     # 0, less that base. Refundable credits and net state refunds stay as the CPS has them.
     if "T" in off:
         drop("T", "switched off at the command line with --off T")
+    elif "income_tax_keys" not in ctx:
+        raise SystemExit("[BLOCKED] item T needs ctx['income_tax_keys'] = income_tax_keys(d, civilian, weights[:, 0]); "
+                         "a caller that keeps the survey's income tax as reported passes 'T' in ctx['off']")
     else:
-        vector, meta = income_tax_item(d, ctx["income_tax_keys"], civilian, weights_full, personal, unit_share)
-        ch.add("T", "central", vector,
+        federal, state, meta = income_tax_item(d, ctx["income_tax_keys"], civilian, weights_full, personal,
+                                               unit_share)
+        ch.add("T", "central", federal + state,
                source="tax_key_heldout_2026_09_28/keys.py (the case's income-tax keys); model.json national lines",
                marginal=False, **meta)
+        ch.parts["T|central"] = dict(federal=federal, state=state)
 
     centrals = dict(G=g_central, K="central",
                     P="net_of_item_G" if "P|net_of_item_G" in ch.meta else None,

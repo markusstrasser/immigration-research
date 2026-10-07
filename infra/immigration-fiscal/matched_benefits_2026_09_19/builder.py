@@ -83,6 +83,8 @@ def main():
             "sales": "excluded from selected capital tax rate .246; do not subtract as known capital overlap",
             "X": "not separately modeled; do not subtract as known capital overlap",
             "tax": "includes capital income taxes but inseparable from labor/payroll in stored aggregate",
+            "T": "income tax the survey misses, on the case's keys (since 2026-10-07); top-heavy, so it carries "
+                 "capital income taxes, inseparable from labor in the stored aggregate",
         }.items():
             overlap_rows.append(dict(allocation=allocation, component=component,
                                      existing_credit=float(credits[allocation, component]), status=status))

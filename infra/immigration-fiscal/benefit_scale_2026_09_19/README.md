@@ -74,3 +74,11 @@ exact production identity; zero-target and small-shock limits. Independent
 in-task code review verified the formula by integrating marginal product and
 subtracting target pay. Its finding, a loose small-shock test tolerance, was
 fixed by setting the absolute tolerance to zero.
+
+## Revisions
+
+- **2026-10-08: item T.** The ledger's age profiles now carry item T, the income tax on the main case's keys
+  (`ledger_absolute_2026_09_17`). `builder.py` sums whole profiles, so the ignored `fiscal_scale.csv` moves; the production benefit does not.
+  $ per person and % of GDP, old → new: Mexican-origin union −5,314 (0.74%) → −4,977 (0.69%) shared and −5,850
+  (0.82%) → −5,476 (0.76%) personal; third-plus NH whites, shared, −1,221 (a 0.72% deficit) → +299 (a 0.18% surplus);
+  all natives, shared, −2,359 (2.28%) → −1,088 (1.05%).

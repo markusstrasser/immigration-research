@@ -80,3 +80,12 @@ partitions, Euler exhaustion, equilibrium residuals and the private/tax identity
 No receipt scenario is added to the fiscal ledger. No services-price estimate is
 added to production income. The income model omits housing, innovation, trade,
 technology choice, endogenous education, transition costs and policy selection.
+
+## Revisions
+
+- **2026-10-08: item T.** The ledger's age profiles now carry item T, the income tax on the main case's keys
+  (`ledger_absolute_2026_09_17`). The union's deficit benchmark falls from $217.32bn to $203.52bn shared and from $239.24bn to $223.94bn
+  personal, so every bookkeeping deficit in the ignored `replacement_arithmetic.csv` falls by $13.79bn (shared) or
+  $15.31bn (personal), and the matching magnitudes in `magnitude_thresholds.csv` rise by 0.005–0.008 (range
+  0.062–0.143 → 0.067–0.151). `builder.py` lists T in the overlap table, `existing_tax_credits.csv`, as an existing
+  credit. The production scenarios do not move.

@@ -494,6 +494,15 @@ has the current ones.]
   at 3%, to −$1,284,710.36 and −$513,151.05: +$3,451.82 (0.27%) and +$247.33 above the central. The central,
   every other row and the C3 0.907 sensitivity do not move. `audit.json` records the new C3 and the arm 5 input
   hashes. `scripts/rerun_lane.py`: IDENTICAL 21/21. [CALCULATION: `derived/sensitivities.csv`]
+- **2026-10-08: item T in the ledger's profiles.** The white-reference ledger gained item T on October 7
+  (`ledger_absolute_2026_09_17`): the income tax the survey misses, moved onto the main case's income-tax keys.
+  This lane reads the ledger's period profiles, so both lineages pay more tax, the whites' far more. Central,
+  0%: the Mexican lineage −$1,189,717 → −$1,099,425, the white +$98,445 → +$377,147, the gap −$1,288,162 →
+  −$1,476,572 (−$12.9k → −$14.8k a year); at 3% −$513,398 → −$570,067. The founder's own gap −$554,852 →
+  −$653,785, so descendants carry 55.7% (was 56.9%); G2 runs −$512,639 (was −$560,182). The lineage ÷ founder
+  ratio is 2.26 centrally (was 2.32) and 1.48 at 3% (was 1.50). Every row of `derived/` moves with the
+  profiles; the code does not change. [CALCULATION: `derived/lineage_table.csv`, `generation_breakdown.csv`,
+  `sensitivities.csv`]
 
 ---
 

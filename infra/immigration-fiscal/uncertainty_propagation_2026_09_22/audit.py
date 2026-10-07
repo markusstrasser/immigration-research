@@ -33,7 +33,7 @@ def sdr(values):
 # --------------------------------------------------------------------------
 LIVE_LEDGER_ARMS = ["base", "G|deflated2024", "K|central", "P|net_of_item_G", "D|central", "U|central",
                     "I|central", "M|central", "E|zero", "C|wage25_capital75", "X|per_capita", "R|central",
-                    "F|zero", "S|all_inside_meps"]
+                    "F|zero", "S|all_inside_meps", "T|central"]   # T, the income tax the survey misses, since 2026-10-07
 STALE_LEDGER_ARMS = ["base", "G|deflated2024", "K|central", "U|central", "I|central", "M|central",
                      "E|stock", "C|wage25_capital75", "X|per_capita", "R|central", "F|zero",
                      "S|half_inside_meps"]
@@ -57,7 +57,7 @@ def ledger_check():
              published_where="ledger RESULT.md line 262 and live waterfall.csv step 0",
              rebuilt_bn=base[0], rebuilt_se_bn=sdr(base)),
         dict(quantity="live union complete endpoint (D,P on; E zero)", published_bn=wf.cumulative_bn.iloc[-1],
-             published_se_bn=wf.se_bn.iloc[-1], published_where="live waterfall.csv step 14",
+             published_se_bn=wf.se_bn.iloc[-1], published_where="live waterfall.csv endpoint (step 15, item T, since 2026-10-07)",
              rebuilt_bn=live[0] + n_item, rebuilt_se_bn=sdr(live)),
         dict(quantity="Sept 17 union endpoint (stale vintage; D,P off; E stock; S half)",
              published_bn=-253.93, published_se_bn=8.81,

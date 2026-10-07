@@ -1,5 +1,8 @@
 claude-opus-5-5
 
+**2026-10-07:** the ledger's item T moved these figures by $0–3k per admission; the current values are under
+[Revisions](#revisions). The premise still holds.
+
 **Verdict:** Under the central assumptions the operator's premise holds: a Mexican parent of a US citizen who
 adjusts inside the US costs less per admission than one who arrives new. The margin comes entirely from adjusters
 who would have stayed without the green card, and it vanishes where an unauthorized senior would draw little public
@@ -462,3 +465,34 @@ Judgment calls, each tested by a variant or a range above:
 7. The premium tax credit is keyed at FY2024 rates in place of the per-capita share.
 8. Medicare premiums are not credited (the tail lane's convention).
 9. Presence items cancel, and enforcement is zero.
+
+## Revisions
+
+**2026-10-07, the ledger's item T.** The white-reference ledger's expanded account now carries item T, the income
+tax the CPS misses, put on the main case's income-tax keys (`ledger_absolute_2026_09_17`, 9d690482). Each parent's
+own tax rises, so every arm except A costs less, and new arrivals gain more than adjusters. The figures above are the
+record before T. Central case, ages 55 / 60 / 65, at 3% unless noted [DATA: `derived/arms_by_age.csv`,
+`derived/flow_fy2024.csv`, `derived/breakeven.csv`, `derived/breakeven_floor.csv`; `verify.py` pins these]:
+- Arm C adjuster: $237k / $235k / $240k → $236k / $234k / $240k. New arrival: $274k / $275k / $288k →
+  $271k / $273k / $286k.
+- With the tail lane's credit treatment: adjuster $230k / $231k / $241k → $228k / $231k / $240k, against
+  $270k / $275k / $286k → $267k / $273k / $285k.
+- Undiscounted: $463k / $412k / $370k → $462k / $411k / $370k, against $527k / $476k / $437k → $524k / $474k / $435k.
+- The adjuster's margin narrows by $1–2k a head.
+- FY2024 flow: −$14.3bn → −$14.2bn, against −$16.1bn → −$16.0bn if every parent arrived new. The gap between them
+  goes from $1.8bn to $1.7bn. With the tail lane's credit treatment the flow goes from −$13.9bn to −$13.8bn, against
+  −$15.9bn → −$15.7bn.
+- Per-admission averages: new arrivals $263k → $261k, adjusters $218k → $217k, adjusters valued as new arrivals
+  $254k → $251k.
+- Arm B: $290k / $296k / $318k → $287k / $294k / $316k. T3 since before 1996: $323k / $339k / $381k →
+  $320k / $337k / $379k. Its arm A does not move, and its arm C moves by less than $0.5k.
+- Reversal thresholds:
+  - Stay probability: 15–23% → 16–23%, against the 50–59% → 50–58% that published departure rates imply.
+  - Break-even floor: $2,024 / $2,136 / $3,012 → $2,270 / $2,318 / $3,109 a year. The slopes, $7.1k / $8.1k /
+    $11.4k per $1,000 of floor, do not change.
+- Under the federal floor alone the adjuster is $3k / $3k / $14k dearer (was $1k / $2k / $13k), and the flow is
+  still $0.2bn dearer.
+- Under the 2026 state rules the adjuster is $3k / $3k cheaper at 55 / 60 (was $5k / $4k) and $5k dearer at 65
+  (was $4k).
+- In the tail lane's low case it is $9k / $10k / $26k dearer (was $7k / $9k / $25k).
+- The premium tax credit variants do not move.

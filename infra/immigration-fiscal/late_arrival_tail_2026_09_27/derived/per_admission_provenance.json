@@ -9,12 +9,12 @@
   "low": 1064.66
  },
  "ledger_fingerprints": {
-  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62",
-  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
-  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json": "7c76461945ef3ced2d6d41e799e042b65f9657564db8a265bdee0e306bb5e7fc"
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv": "75b85d18e6612ed26e1c3a1b02dde4f44a850b803c48153ae08c350a9de632aa",
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv": "9d5a302e43ab5f839b96056ce030c17a73ddf8165ba134a07813754005d8eafe",
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json": "b1882ef58a4e0206e466e81ba36450d761dd57c9c68885f58bd9fd99228ffc51"
  },
  "lineage_audit": {
-  "infra/immigration-fiscal/lineage_cost_2026_09_19/derived/audit.json": "b57f283b2b938c6345a532e2f910caaf0bc1d8128edb32c16758b59a4d1b8030"
+  "infra/immigration-fiscal/lineage_cost_2026_09_19/derived/audit.json": "861abd25167154e31b515afaee9d3781b7f5d664d1b659a0203974cc875620df"
  },
  "medicare_weight": {
   "central": 0.65,

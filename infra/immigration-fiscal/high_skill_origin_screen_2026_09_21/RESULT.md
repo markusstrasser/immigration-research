@@ -167,3 +167,39 @@ does not measure. [INFERENCE from the two tables]
 - A resident account describes who is here. It does not identify the effect of admitting more
   people from any origin. [FRAMING-SENSITIVE: whether "not positive" means below zero or below
   the native average changes which groups qualify; both benchmarks are shown.]
+
+## Revisions — item T, October 8, 2026
+
+The education-by-origin builder this lane runs (`education_origin_fiscal_2026_09_19/builder.py`) now
+passes the white-reference ledger's income-tax keys to `build_charges`, so the `expanded_excluding_N`
+account carries item T (added to `ledger_absolute_2026_09_17` on October 7): each record's survey
+income tax moves onto the main case's income-tax keys. The rerun changed `derived/origin_screen.csv`
+and `derived/origin_screen_native_ages.csv`; the figures above are the record before T. Old → new,
+personal allocation unless noted [DATA: both files]:
+
+- Adult balance, ages 25+: natives +2,785 → +4,789 (shared −1,657 → −144); Philippines +948
+  [−2,378, +4,274] → +1,938 [−2,248, +6,123] (shared −2,124 → −1,298); Venezuela +4,458 → +5,731;
+  Pakistan, Bangladesh +5,331 → +7,833; former USSR +9,004 → +9,185; Russia, Ukraine +9,798
+  [+4,450, +15,145] → +10,638 [+3,849, +17,428]; Korea +10,193 → +11,712; Nigeria +14,891 → +18,965;
+  China +16,915 → +19,616; India +29,174 → +32,159. No group turns clearly negative.
+- Degree holders against native degree holders, common ages: Venezuela −19,402 [−23,852, −14,953] →
+  −23,512 [−28,090, −18,935]; Pakistan, Bangladesh −12,947 [−21,152, −4,742] → −16,878 [−25,038,
+  −8,717]; India +7,545 [+3,193, +11,896] → +5,749 [−136, +11,634]; former USSR −7,519 → −10,916;
+  Philippines −6,460 → −9,016. India's advantage is no longer clear of zero. At the family-wise
+  threshold (|z| > 2.96) Venezuela, Mexico and Pakistan/Bangladesh still pass and India no longer does
+  (z +3.40 → +1.91; z from the stored intervals).
+- At the native age mix: India +21,832 → +24,258, and +17,121 → +19,883 with a native's old-age cost;
+  Venezuela −877 (se 1,436) → +148 (se 2,303); Mexico −5,684 → −5,360; third-plus whites +4,861 →
+  +7,123; Pakistan, Bangladesh +2,329 → +4,662 (se 4,941), still indistinguishable from natives
+  (+4,789). Brazil and Nigeria lose 39% and 37% of their own-age balance (was 42% and 40%). Shared:
+  India +13,452 → +14,701, Mexico −7,903 → −7,628. At 65+, India-born −10,926 → −10,989 against
+  natives −27,741 → −26,606.
+- Most of the move is on the native side: native degree holders gain +3,828 a year per adult (25+),
+  because T is top-heavy. In the small origin cells T rests on a few top records and the intervals
+  widen: Canada +27,838 → +44,172 [+8,688, +79,657], United Kingdom +15,931 → +25,162, and Nigeria's
+  degree-holder gap −2,680 → +7,661 on an interval about ±56k wide.
+
+Reproduce: `uv run --no-project python3 scripts/rerun_lane.py
+infra/immigration-fiscal/high_skill_origin_screen_2026_09_21 "uv run --no-project --with numpy --with
+pandas --with openpyxl python3 {lane}/screen.py" "uv run --no-project python3
+{lane}/age_standardized.py"`; `acs_screen.py` (ACS, no ledger input) is unchanged and was not rerun.

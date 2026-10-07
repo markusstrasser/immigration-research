@@ -2,13 +2,13 @@
   "object": "ledger_absolute_2026_09_17, Mexican-origin union, income-year 2024, household-shared allocation, expanded partial account",
   "ledger_build_params_sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
   "inputs": {
-    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/replicates.npz": "23b25f3eaf77621b3eb2c36b3053763e37b86da9eb8858719b2f3f72e7511ecc",
-    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/arms_matrix.csv": "1984e9ebe6d1764f991356f697cf2c7e23060608a5ab68368f4fd680bc8ded6a",
-    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/marginality_curve.csv": "83ff7008b7c8cc19f0b5de68c4d852684a6b69d2977a08a9e636b79a6cab13df",
-    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/items_by_group.csv": "de29ac5d9ecb72bc329ef76a0f3a052853cfb647bcd35d81508aa4e0c04be9da",
-    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json": "7c76461945ef3ced2d6d41e799e042b65f9657564db8a265bdee0e306bb5e7fc",
-    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
-    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/replicates.npz": "0f5949686741250e0cc480b4f627b5c471d11fd6d4d21377ba34e43d1ebf7365",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/arms_matrix.csv": "3f0c5d570a2bbb8c8113b01f43f18336ba09517bf840597889af9b4b0fc8341f",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/marginality_curve.csv": "b094ca8240932e38e443a10d23f19902f6c9102f5a7c2db7adc4b154b1c10b13",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/items_by_group.csv": "72e1ae5a5da4b0b279467529d82283226cb06c472bef45c27073f6c8104a5835",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json": "b1882ef58a4e0206e466e81ba36450d761dd57c9c68885f58bd9fd99228ffc51",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv": "9d5a302e43ab5f839b96056ce030c17a73ddf8165ba134a07813754005d8eafe",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv": "75b85d18e6612ed26e1c3a1b02dde4f44a850b803c48153ae08c350a9de632aa",
     "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
     "infra/immigration-fiscal/scaling_test_2026_09_20/derived/state/estimates.csv": "f19132060945459e923245ada6e138aac3d56a2e0582cf50b5b544619c93c219",
     "infra/immigration-fiscal/scaling_test_2026_09_20/derived/school_estimates.csv": "ce3d81032b7d5ca8d2da1d2a00ae01ac24a6ccb452fcaa860c2ff3b4844dd738",
@@ -18,19 +18,19 @@
     "grid_reproduced": {
       "cells": 63,
       "worst_abs_diff_bn": 5.684341886080802e-14,
-      "worst_se_diff_bn": 1.7763568394002505e-15,
+      "worst_se_diff_bn": 7.105427357601002e-15,
       "inadmissible_rows": 0,
       "passed": true
     },
     "curve_reproduced": {
       "points": 21,
-      "worst_abs_diff_bn": 1.4210854715202004e-14,
-      "m_star": 0.15825726289773234,
-      "published_m_star": 0.1582572628977323,
+      "worst_abs_diff_bn": 2.842170943040401e-14,
+      "m_star": 0.21168050718019316,
+      "published_m_star": 0.2116805071801931,
       "passed": true
     },
     "central_is_grid_cell": {
-      "value_bn": -217.3164023135495,
+      "value_bn": -203.52388978490058,
       "passed": 1.0
     },
     "headcount_share_carrier": {
@@ -51,14 +51,14 @@
       "passed": 1.0
     },
     "gross_flows_reproduce_central": {
-      "net_bn": -217.31640231354947,
-      "central_bn": -217.3164023135495,
+      "net_bn": -203.52388978490058,
+      "central_bn": -203.52388978490058,
       "passed": 1.0
     },
     "practitioner_hull_ordered": {
-      "low": -290.4763184826092,
-      "central": -217.3164023135495,
-      "high": -190.11515439244818,
+      "low": -276.6838059539603,
+      "central": -203.52388978490058,
+      "high": -176.32264186379925,
       "passed": 1.0
     },
     "stretch_outside_hull": {

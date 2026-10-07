@@ -649,3 +649,9 @@ Log (times from `date` or a log file's mtime):
   ρ = +1 envelope". Both are withdrawn: the SE is a partial sampling approximation whose net error is unresolved.
   From `sept27` the CPS block carries the benefit keys jointly (September 27 section); the files of earlier cases are
   unchanged and keep the independent append. Parent note of 2026-09-27, 23:40.
+
+- **2026-10-08 — item T in the ledger.** The live ledger endpoint is now waterfall step 15 (item T, the income tax on
+  the main case's keys, `ledger_absolute_2026_09_17`), and `LIVE_LEDGER_ARMS` includes `T|central`. The replicate check follows it:
+  −$217.32bn with SE $8.700282bn → −$203.52bn with SE $12.337676bn, reproduced exactly [CALCULATION: `audit.py` →
+  `derived/ledger_replicate_check.csv`, `se_catalog.csv`]. The ledger SE enters no headline interval, so nothing else
+  in this lane moves.

@@ -39,66 +39,66 @@ e_compound_calibrated,population_total_arm3,gap_per_person_after (DT selectivity
 e_compound_calibrated,population_total_arm3,aggregate_gap_bn_after (DT selectivity),-293.16,-295.66,-2.5
 e_compound_calibrated,population_total_arm3,"gap_per_person_after (generation split, central C3)",-6900.7,-6818.2,82.5
 e_compound_calibrated,population_total_arm3,"aggregate_gap_bn_after (generation split, central C3)",-294.72,-303.24,-8.519999999999982
-a_current,lineage_cost,"gap_usd: central, 0%",-1288162.177777483,-1288162.177777483,0.0
-a_current,lineage_cost,"gap_usd: central, 3%",-513398.3759783898,-513398.3759783898,0.0
-a_current,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1284710.3563824487,-1284710.3563824487,0.0
-a_current,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-513151.05001270655,-513151.05001270655,0.0
-a_current,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1263583.7421649327,-1263583.7421649327,0.0
-a_current,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-500976.785839649,-500976.785839649,0.0
-a_current,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-845697.3440968429,-845697.3440968429,0.0
-a_current,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-890463.2411087588,-890463.2411087588,0.0
-a_current,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1260131.9207698987,-1260131.9207698987,0.0
-a_current,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1270041.1741550223,-1270041.1741550223,0.0
-a_current,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1283670.78332121,-1283670.78332121,0.0
-a_current,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-513076.5637105939,-513076.5637105939,0.0
-b_one_step,lineage_cost,"gap_usd: central, 0%",-1288162.177777483,-1288162.177777483,0.0
-b_one_step,lineage_cost,"gap_usd: central, 3%",-513398.3759783898,-513398.3759783898,0.0
-b_one_step,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1284710.3563824487,-1284710.3563824487,0.0
-b_one_step,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-513151.05001270655,-513151.05001270655,0.0
-b_one_step,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1263583.7421649327,-1263583.7421649327,0.0
-b_one_step,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-500976.785839649,-500976.785839649,0.0
-b_one_step,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-845697.3440968429,-845697.3440968429,0.0
-b_one_step,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-890463.2411087588,-890463.2411087588,0.0
-b_one_step,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1260131.9207698987,-1260131.9207698987,0.0
-b_one_step,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1270041.1741550223,-1270041.1741550223,0.0
-b_one_step,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1283670.78332121,-1279378.3417528986,4292.441568311304
-b_one_step,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-513076.5637105939,-512769.0065879836,307.5571226103348
-c_compound,lineage_cost,"gap_usd: central, 0%",-1288162.177777483,-1288162.177777483,0.0
-c_compound,lineage_cost,"gap_usd: central, 3%",-513398.3759783898,-513398.3759783898,0.0
-c_compound,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1284710.3563824487,-1284710.3563824487,0.0
-c_compound,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-513151.05001270655,-513151.05001270655,0.0
-c_compound,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1263583.7421649327,-1263583.7421649327,0.0
-c_compound,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-500976.785839649,-500976.785839649,0.0
-c_compound,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-845697.3440968429,-845697.3440968429,0.0
-c_compound,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-890463.2411087588,-890463.2411087588,0.0
-c_compound,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1260131.9207698987,-1260131.9207698987,0.0
-c_compound,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1270041.1741550223,-1270041.1741550223,0.0
-c_compound,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1283670.78332121,-1279235.8695641195,4434.913757090457
-c_compound,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-513076.5637105939,-512760.5076953798,316.0560152141261
-d_compound_hisp,lineage_cost,"gap_usd: central, 0%",-1288162.177777483,-1288162.177777483,0.0
-d_compound_hisp,lineage_cost,"gap_usd: central, 3%",-513398.3759783898,-513398.3759783898,0.0
-d_compound_hisp,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1284710.3563824487,-1284710.3563824487,0.0
-d_compound_hisp,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-513151.05001270655,-513151.05001270655,0.0
-d_compound_hisp,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1263583.7421649327,-1263583.7421649327,0.0
-d_compound_hisp,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-500976.785839649,-500976.785839649,0.0
-d_compound_hisp,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-845697.3440968429,-845697.3440968429,0.0
-d_compound_hisp,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-890463.2411087588,-890463.2411087588,0.0
-d_compound_hisp,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1260131.9207698987,-1260131.9207698987,0.0
-d_compound_hisp,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1270041.1741550223,-1270041.1741550223,0.0
-d_compound_hisp,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1283670.78332121,-1280347.4122463784,3323.371074831579
-d_compound_hisp,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-513076.5637105939,-512839.7648913025,236.79881929140538
-e_compound_calibrated,lineage_cost,"gap_usd: central, 0%",-1288162.177777483,-1288162.177777483,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: central, 3%",-513398.3759783898,-513398.3759783898,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1284710.3563824487,-1284710.3563824487,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-513151.05001270655,-513151.05001270655,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1263583.7421649327,-1263583.7421649327,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-500976.785839649,-500976.785839649,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-845697.3440968429,-845697.3440968429,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-890463.2411087588,-890463.2411087588,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1260131.9207698987,-1260131.9207698987,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1270041.1741550223,-1270041.1741550223,0.0
-e_compound_calibrated,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1283670.78332121,-1280387.2360412905,3283.5472799194977
-e_compound_calibrated,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-513076.5637105939,-512842.6039458104,233.9597647835035
+a_current,lineage_cost,"gap_usd: central, 0%",-1476572.47057829,-1476572.47057829,0.0
+a_current,lineage_cost,"gap_usd: central, 3%",-570066.523632333,-570066.523632333,0.0
+a_current,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1472753.5351081898,-1472753.5351081898,0.0
+a_current,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-569797.1656186392,-569797.1656186392,0.0
+a_current,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1451994.0349657396,-1451994.0349657396,0.0
+a_current,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-557644.9334935921,-557644.9334935921,0.0
+a_current,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-1034107.6368976498,-1034107.6368976498,0.0
+a_current,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-1078873.533909566,-1078873.533909566,0.0
+a_current,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1448175.0994956398,-1448175.0994956398,0.0
+a_current,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1455887.4757045212,-1455887.4757045212,0.0
+a_current,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1471603.3995759645,-1471603.3995759645,0.0
+a_current,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-569716.0440011453,-569716.0440011453,0.0
+b_one_step,lineage_cost,"gap_usd: central, 0%",-1476572.47057829,-1476572.47057829,0.0
+b_one_step,lineage_cost,"gap_usd: central, 3%",-570066.523632333,-570066.523632333,0.0
+b_one_step,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1472753.5351081898,-1472753.5351081898,0.0
+b_one_step,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-569797.1656186392,-569797.1656186392,0.0
+b_one_step,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1451994.0349657396,-1451994.0349657396,0.0
+b_one_step,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-557644.9334935921,-557644.9334935921,0.0
+b_one_step,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-1034107.6368976498,-1034107.6368976498,0.0
+b_one_step,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-1078873.533909566,-1078873.533909566,0.0
+b_one_step,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1448175.0994956398,-1448175.0994956398,0.0
+b_one_step,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1455887.4757045212,-1455887.4757045212,0.0
+b_one_step,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1471603.3995759645,-1466854.4408430078,4748.958732956788
+b_one_step,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-569716.0440011453,-569381.0893779425,334.9546232027933
+c_compound,lineage_cost,"gap_usd: central, 0%",-1476572.47057829,-1476572.47057829,0.0
+c_compound,lineage_cost,"gap_usd: central, 3%",-570066.523632333,-570066.523632333,0.0
+c_compound,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1472753.5351081898,-1472753.5351081898,0.0
+c_compound,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-569797.1656186392,-569797.1656186392,0.0
+c_compound,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1451994.0349657396,-1451994.0349657396,0.0
+c_compound,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-557644.9334935921,-557644.9334935921,0.0
+c_compound,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-1034107.6368976498,-1034107.6368976498,0.0
+c_compound,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-1078873.533909566,-1078873.533909566,0.0
+c_compound,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1448175.0994956398,-1448175.0994956398,0.0
+c_compound,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1455887.4757045212,-1455887.4757045212,0.0
+c_compound,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1471603.3995759645,-1466711.9658918527,4891.433684111806
+c_compound,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-569716.0440011453,-569372.5903205546,343.45368059072644
+d_compound_hisp,lineage_cost,"gap_usd: central, 0%",-1476572.47057829,-1476572.47057829,0.0
+d_compound_hisp,lineage_cost,"gap_usd: central, 3%",-570066.523632333,-570066.523632333,0.0
+d_compound_hisp,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1472753.5351081898,-1472753.5351081898,0.0
+d_compound_hisp,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-569797.1656186392,-569797.1656186392,0.0
+d_compound_hisp,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1451994.0349657396,-1451994.0349657396,0.0
+d_compound_hisp,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-557644.9334935921,-557644.9334935921,0.0
+d_compound_hisp,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-1034107.6368976498,-1034107.6368976498,0.0
+d_compound_hisp,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-1078873.533909566,-1078873.533909566,0.0
+d_compound_hisp,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1448175.0994956398,-1448175.0994956398,0.0
+d_compound_hisp,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1455887.4757045212,-1455887.4757045212,0.0
+d_compound_hisp,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1471603.3995759645,-1467938.306102141,3665.0934738235082
+d_compound_hisp,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-569716.0440011453,-569458.7369950841,257.30700606119353
+e_compound_calibrated,lineage_cost,"gap_usd: central, 0%",-1476572.47057829,-1476572.47057829,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: central, 3%",-570066.523632333,-570066.523632333,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 0%",-1472753.5351081898,-1472753.5351081898,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: 2a G4+ attrition-corrected mixed profile, 3%",-569797.1656186392,-569797.1656186392,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: 2b legalised year 10, 0%",-1451994.0349657396,-1451994.0349657396,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: 2b legalised year 10, 3%",-557644.9334935921,-557644.9334935921,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: never legalised, statutory bars, 0%",-1034107.6368976498,-1034107.6368976498,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: never legalised, statutory + priced 2026 central, 0%",-1078873.533909566,-1078873.533909566,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: 2a x 2b: mixed profile, legalised year 10, 0%",-1448175.0994956398,-1448175.0994956398,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: supplementary: mixed profile from G3, 0%",-1455887.4757045212,-1455887.4757045212,0.0
+e_compound_calibrated,lineage_cost,"gap_usd: 2a years convention (sensitivity), 0%",-1471603.3995759645,-1467982.23808476,3621.161491204519
+e_compound_calibrated,lineage_cost,"gap_usd: 2a years convention (sensitivity), 3%",-569716.0440011453,-569461.8225990759,254.22140206943732
 a_current,lineage_sponsored_parents (entry 241),every arm (selfid path; attrition inputs unread),0.0,0.0,0.0
 b_one_step,lineage_sponsored_parents (entry 241),every arm (selfid path; attrition inputs unread),0.0,0.0,0.0
 c_compound,lineage_sponsored_parents (entry 241),every arm (selfid path; attrition inputs unread),0.0,0.0,0.0

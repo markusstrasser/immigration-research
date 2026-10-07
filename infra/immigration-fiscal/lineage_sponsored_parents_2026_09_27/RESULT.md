@@ -299,3 +299,16 @@ carries no counterpart: a third-plus white founder's parents are already US resi
 - Against the lineage lane's central (pooled from 65) the child's petition slightly reduces the
   gap. The sign of arm 1 therefore depends on the senior rule for the never-legalised founder,
   which the lineage lane's 2026-09-26 revision already settled in favour of the statutory rule.
+
+## Revisions — item T, October 8, 2026
+
+The lineage lane's profiles now carry the white-reference ledger's item T (`ledger_absolute_2026_09_17`,
+October 7): the income tax the survey misses, moved onto the main case's income-tax keys. Every arm's gap
+without the parents' channel moves by −$188,410 at 0% and −$56,668 at 3%, the lineage central's move
+(−$1,288,162 → −$1,476,572; −$513,398 → −$570,067): the white lineage gains $278,702 (3%: $83,451) and the
+Mexican lineage $88,970–96,599 ($26,280–31,099). The parents' channel moves by −$1,322 to +$6,307 at 0%
+(−$503 to +$4,316 at 3%), so in dollars it is nearly unchanged; its share of the larger gap falls by up to
+4.2 points (2.9 at 3%). For example, `1a_adjust_lag0` goes from 30.2% to 26.3% of the gap at 0%,
+`2_L25_a55_p1_new_central` from 29.5% to 26.5%, and `2_L25_a55_pcal_central_new_central` from 2.2% to 1.9%.
+The verdict's dollar figures move by the same −$188,410 / −$56,668 plus their channel's change. [CALCULATION:
+`derived/arms.csv`, before and after]

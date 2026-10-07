@@ -100,3 +100,18 @@ Independent read-only review checked the GSS source labels/weights and temporal
 split, income-proxy scope, profile transport and exit/retained-SS arithmetic.
 Its missing imported-helper fingerprints were repaired: the education builder,
 lineage inputs builder and education manifest now accompany the raw/export hashes.
+
+## Revisions
+
+- **2026-10-08: item T.** `sensitivities.py` now passes the ledger's income-tax keys to `build_charges`; without them
+  it stopped with a KeyError once item T (the income tax on the main case's keys, `ledger_absolute_2026_09_17`) joined the ledger. The
+  ignored `derived/` was not regenerated: `builder.py` also reruns the IPUMS cohort check, which loads 8.66M records
+  and was stopped at the session's per-process memory cap (2.45 GB, 01:57 on 2026-10-08), after its NRC and GSS outputs
+  had matched `derived/` byte for byte. Until a rerun with more memory it holds the pre-T sensitivities, and
+  `manifest.json` the pre-T hashes. A scratch run of `sensitivities.run` alone (0.98 GB, 7 s) gives, at
+  3%, old → new: stock and recent-arrival age-25 NPVs −$48,545 and −$8,195 → −$36,943 and +$12,630 (difference
+  +$40,350 → +$49,573); at birth, the two-Mexico-born-parent and mixed-nativity G2 profiles −$288,347 and −$266,206 →
+  −$288,830 and −$239,308 (difference $22,141 → $49,522); the founder's year-10 exit gain $11,804–26,146 →
+  $10,743–25,085; the lineage no-exit balance −$316,023 → −$289,270, and with dependent children leaving, the year-10
+  exit balance −$251,213 to −$236,871 → −$229,010 to −$214,668 (gain $64,810–79,152 → $60,260–74,602). At 5% an
+  early founder-only exit with full Social Security retained still worsens the balance (−$1,273 → −$3,393).

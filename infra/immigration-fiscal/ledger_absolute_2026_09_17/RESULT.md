@@ -410,3 +410,31 @@ reported; the central arm charges only the $47.0bn nothing else charges.
 ## Revisions — fiscal repair, September 19, 2026
 
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
+
+## Revisions — item T, October 7–8, 2026
+
+Item T, the income tax the survey misses, is the waterfall's step 15, after S. It moves each record's federal and
+state income tax from the CPS's own model onto the main case's income-tax keys, which comparisons against whites now
+take; the partial account and every other item are unchanged. The keys come from one module,
+`tax_key_heldout_2026_09_28/keys.py`, through `income_tax_keys` and `income_tax_item`; a caller that builds charges
+without them stops with `[BLOCKED]` unless it passes `--off T` (or puts T in `ctx["off"]`). Nationally T adds $422.9bn
+at the shared allocation (federal $385.6bn on the $2,403.2bn line against the survey's $2,018.4bn; state $37.2bn on the
+$536.2bn line) and $468.4bn on the record (federal $422.9bn, state $45.4bn); the lines are the same, and equal splits
+within SPM units, weighted by unequal person weights, raise the shared survey base. [DATA: `derived/audit.json`,
+`item_metadata["T|central"]`]
+
+Old → new, shared allocation [DATA: `derived/complete_gaps.csv`, `age_normalizations.csv`, `lifetime/period_profiles.csv`]:
+- Same-age gap against third-plus NH whites, $ per person: Mexico-born −7,584 (SE 384) → −8,849 (539); second
+  generation −7,521 (615) → −8,499 (912); third-plus −6,195 (457) → −7,118 (637); union −7,152 (302) → −8,306 (446).
+  Against all natives: −5,404 / −5,342 / −4,015 → −6,478 / −6,128 / −4,747; union −4,973 → −5,935.
+- Union age-matched gap against whites −$358.1bn → −$403.6bn; against all natives −$253.5bn → −$290.5bn.
+- Each group's own income tax rises too, so absolute balances improve: union −$217.32bn → −$203.52bn (personal
+  −$239.24bn → −$223.94bn). Third-plus whites go from −$1,221 to +$299 per person at their own ages.
+- Age structures: the union's gap at its own ages −4,093 → −5,276; stationary −7,049 → −8,154; at white ages −7,082 →
+  −8,236; at the union's ages −8,716 → −9,829. The young structure is worth $4,553 a person (was $4,624).
+- Lifetime from birth at 3%, personal: second generation −$279,720 → −$266,917, third-plus −$225,309 → −$215,392, white
+  reference −$96,210 → −$68,163; the gaps widen from −$183,510 to −$198,754 and from −$129,099 to −$147,229.
+
+T rests on top-income records. Nationally the ten largest white SPM units carry 19% of whites' T; in a state or a metro
+they can carry most of it (`ledger_stress_2026_09_17`, `metro_match_2026_09_17`), and replicate SEs widen accordingly.
+The consumer lanes were rerun on these outputs on October 8 and carry dated notes.

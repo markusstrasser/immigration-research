@@ -54,11 +54,12 @@ COG_XLSX = FISCAL / "ledger_residual_agg_2026_09_16" / "_cache" / "22slsstab1.xl
 UNION = "mexican_observed_total"
 BN = 1e9
 
-# Central arms of the pinned September 19 build (audit.json `central_arms`).
+# Central arms of the ledger's build (audit.json `central_arms`): the September 19 set plus item T, the income tax
+# the survey misses on the case's keys (2026-10-07). T is a fixed item: off the grid and off the dial.
 CENTRAL = {"G": "deflated2024", "K": "central", "P": "net_of_item_G", "D": "central",
            "U": "central", "I": "central", "M": "central", "E": "zero",
            "C": "wage25_capital75", "X": "per_capita", "R": "central", "F": "zero",
-           "S": "all_inside_meps"}
+           "S": "all_inside_meps", "T": "central"}
 GRID_ITEMS = ("F", "E", "C", "R")
 DIALLED = ("G", "K", "P", "D", "F")            # plus the per-capita part of R
 
@@ -457,7 +458,7 @@ def main() -> None:
         dict(hull="design_grid", low_bn=float(L.arms.union_absolute_bn.min()), high_bn=float(L.arms.union_absolute_bn.max()), central_bn=central[0] / BN,
              members="all 63 admissible F x E x C x R cells", note="hull of the switch design, grows with every arm added"),
         dict(hull="design_with_dial", low_bn=min(float(L.arms.union_absolute_bn.min()), stacked[0] / BN), high_bn=m0[0] / BN, central_bn=central[0] / BN,
-             members="the grid plus the marginality dial from 0 to 1", note="the widest thing the lane can produce; +41 is taxes and transfers only"),
+             members="the grid plus the marginality dial from 0 to 1", note=f"the widest thing the lane can produce; {m0[0] / BN:+.0f} is taxes and transfers only"),
         dict(hull="second_object_public_goods", low_bn=(pess_full + f_pc)[0] / BN, high_bn=(opt_full + f_pc)[0] / BN, central_bn=f_on_central[0] / BN,
              members="the practitioner hull with F per capita added", note="assigned share of defense, net interest and general government; a different question"),
     ])

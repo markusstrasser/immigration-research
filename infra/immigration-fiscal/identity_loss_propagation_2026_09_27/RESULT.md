@@ -216,3 +216,44 @@ hashes still match.
 | `derived/lineage_arms.csv` | every arm × lineage row: old, new, delta, % of old, persons |
 | `derived/schedules.csv` | r_g for G3–G8 by arm (population p3 and the lineage's rounded input) |
 | `derived/audit.json` | losses, arm definitions, ρ, reproduction checks |
+
+## Revisions — item T, October 8, 2026
+
+The white-reference ledger gained item T on October 7 (`ledger_absolute_2026_09_17`): the income tax
+the survey misses, moved onto the main case's income-tax keys. Comparisons against whites take that key.
+
+**Lineage cost.** The lineage lane reads the ledger, so every lineage row moves; `LIN_CENTRAL` and
+`verify.py` follow the lane's new central. The identity-loss effects barely change. [CALCULATION:
+`derived/lineage_arms.csv`]
+
+| Lineage row | Before T | With T |
+|---|---:|---:|
+| Central, 0% / 3% | −$1,288,162 / −$513,398 | −$1,476,572 / −$570,067 |
+| 2a G4+ mixed profile, 0% / 3% (every arm) | −$1,284,710 / −$513,151 | −$1,472,754 / −$569,797 |
+| 2b legalised year 10, 0% / 3% | −$1,263,584 / −$500,977 | −$1,451,994 / −$557,645 |
+| Never legalised: statutory; + priced 2026 | −$845,697; −$890,463 | −$1,034,108; −$1,078,874 |
+| 2a × 2b, 0% | −$1,260,132 | −$1,448,175 |
+| Supplementary: mix from G3, 0% | −$1,270,041 | −$1,455,887 |
+| Years convention (a) / (b) / (c) / (d) / (e), 0% | −$1,283,671 / −$1,279,378 / −$1,279,236 / −$1,280,347 / −$1,280,387 | −$1,471,603 / −$1,466,854 / −$1,466,712 / −$1,467,938 / −$1,467,982 |
+
+The attrition effect (2a minus central) is +$3,818 (0.26%) in every arm, was +$3,452 (0.27%); at 3%
++$270, was +$247.
+
+**Population arm 5.** `derived/population_arms_T.csv` gives the four fiscal figures of
+`population_arms.csv` with T in the population lane's base gaps (that lane's `arm5_*_T.csv`, which the
+reproduction check now also covers). `population_arms.csv` keeps taxes as the survey reports them and is
+unchanged. At the monthly-frame C3, the split columns read:
+
+| Arm | Survey taxes | With T |
+|---|---:|---:|
+| (a) current | −$6,901, −$294.7bn | −$7,981, −$340.9bn |
+| (b) one step | −$6,842, −$300.7bn | −$7,914, −$347.8bn |
+| (c) compound | −$6,787, −$306.6bn | −$7,850, −$354.7bn |
+| (d) compound, Hispanic | −$6,817, −$303.3bn | −$7,885, −$350.9bn |
+| (e) calibrated | −$6,818, −$303.2bn | −$7,886, −$350.7bn |
+
+Across ρ, (c) runs from −$350.1bn to −$368.5bn with T (−$302.7bn to −$318.6bn before). Counts do not move.
+
+Reproduce: `uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/identity_loss_propagation_2026_09_27
+"uv run --no-project python3 {lane}/propagate.py" "uv run --no-project python3 {lane}/verify.py"` ends
+`IDENTICAL: 11/11`.

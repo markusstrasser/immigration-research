@@ -79,7 +79,8 @@ def run(root, out):
                donor_codes=codes,donor_payer_means=payer_means,exposure=exposure,
                n_civilian=float(weights[civilian,0].sum()),us_resident=p.pick("population",["2024"],"count"),
                consumption_proxy=personal[:,4],off=[],allocation="personal",is_white_ref=groups["third_plus_nh_white"],
-               is_target=np.logical_or.reduce([groups[g] for g in AL.TARGETS]))
+               is_target=np.logical_or.reduce([groups[g] for g in AL.TARGETS]),
+               income_tax_keys=AL.income_tax_keys(d,civilian,weights[:,0]))  # item T, since 2026-10-07
     charges, dropped, centrals, _, _ = AL.build_charges(ctx,p)
     if any(x is None for x in centrals.values()):
         raise ValueError(f"Missing central fiscal arm: {centrals}")

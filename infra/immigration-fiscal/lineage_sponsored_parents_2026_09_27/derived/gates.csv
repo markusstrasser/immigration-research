@@ -1,126 +1,126 @@
 gate,item,stored,mine,abs_diff,tol,pass
-lineage_row,"central (personal/expanded, unauthorized, per-capita, low fertility, 0%) | mex_lineage_fiscal",-1189717.3660914982,-1189717.3660914982,0.0,1e-06,True
-lineage_row,"central (personal/expanded, unauthorized, per-capita, low fertility, 0%) | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"central (personal/expanded, unauthorized, per-capita, low fertility, 0%) | mex_founder_lifetime",-428734.5147104078,-428734.5147104078,0.0,1e-06,True
-lineage_row,"central (personal/expanded, unauthorized, per-capita, low fertility, 0%) | gap_lineage_fiscal",-1288162.177777483,-1288162.177777483,0.0,1e-06,True
-lineage_row,central at 3% | mex_lineage_fiscal,-336890.8743902789,-336890.8743902789,0.0,1e-06,True
-lineage_row,central at 3% | white_lineage_fiscal,176507.50158811093,176507.50158811093,0.0,1e-06,True
-lineage_row,central at 3% | mex_founder_lifetime,-76190.9034452053,-76190.9034452053,0.0,1e-06,True
-lineage_row,central at 3% | gap_lineage_fiscal,-513398.3759783898,-513398.3759783898,0.0,1e-06,True
-lineage_row,founder status: Mexico-born average | mex_lineage_fiscal,-1156487.214487431,-1156487.214487431,0.0,1e-06,True
-lineage_row,founder status: Mexico-born average | white_lineage_fiscal,98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,founder status: Mexico-born average | mex_founder_lifetime,-395504.3631063407,-395504.3631063407,0.0,1e-06,True
-lineage_row,founder status: Mexico-born average | gap_lineage_fiscal,-1254932.0261734158,-1254932.0261734158,0.0,1e-06,True
-lineage_row,2b founder legalised at year 10 | mex_lineage_fiscal,-1165138.930478948,-1165138.930478948,0.0,1e-06,True
-lineage_row,2b founder legalised at year 10 | white_lineage_fiscal,98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,2b founder legalised at year 10 | mex_founder_lifetime,-404156.0790978576,-404156.0790978576,0.0,1e-06,True
-lineage_row,2b founder legalised at year 10 | gap_lineage_fiscal,-1263583.742164933,-1263583.7421649327,2.3283064365386963e-10,1e-06,True
-lineage_row,"senior rule: statutory bars from 65 (no cash transfers, public medical, institutional care or noncash aid; taxes and services kept) | mex_lineage_fiscal",-747252.5324108581,-747252.5324108581,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars from 65 (no cash transfers, public medical, institutional care or noncash aid; taxes and services kept) | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars from 65 (no cash transfers, public medical, institutional care or noncash aid; taxes and services kept) | mex_founder_lifetime",13730.31897023209,13730.31897023209,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars from 65 (no cash transfers, public medical, institutional care or noncash aid; taxes and services kept) | gap_lineage_fiscal",-845697.3440968429,-845697.3440968429,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, low | mex_lineage_fiscal",-765124.6916089761,-765124.6916089761,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, low | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, low | mex_founder_lifetime",-4141.840227885959,-4141.840227885959,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, low | gap_lineage_fiscal",-863569.503294961,-863569.503294961,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, central | mex_lineage_fiscal",-779201.0355816905,-779201.0355816905,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, central | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, central | mex_founder_lifetime",-18218.184200600168,-18218.184200600168,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, central | gap_lineage_fiscal",-877645.8472676753,-877645.8472676753,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, high | mex_lineage_fiscal",-796536.6909119333,-796536.6909119333,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, high | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, high | mex_founder_lifetime",-35553.839530843165,-35553.839530843165,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, federal_floor, high | gap_lineage_fiscal",-894981.5025979182,-894981.5025979182,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, low | mex_lineage_fiscal",-774719.162242745,-774719.162242745,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, low | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, low | mex_founder_lifetime",-13736.310861654783,-13736.310861654783,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, low | gap_lineage_fiscal",-873163.9739287299,-873163.9739287299,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, central | mex_lineage_fiscal",-792018.429422774,-792018.429422774,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, central | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, central | mex_founder_lifetime",-31035.57804168389,-31035.57804168389,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, central | gap_lineage_fiscal",-890463.2411087588,-890463.2411087588,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, high | mex_lineage_fiscal",-810301.7994413141,-810301.7994413141,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, high | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, high | mex_founder_lifetime",-49318.94806022389,-49318.94806022389,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, high | gap_lineage_fiscal",-908746.6111272988,-908746.6111272989,1.1641532182693481e-10,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, low | mex_lineage_fiscal",-819292.2604090928,-819292.2604090928,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, low | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, low | mex_founder_lifetime",-58309.409028002614,-58309.409028002614,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, low | gap_lineage_fiscal",-917737.0720950776,-917737.0720950776,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, central | mex_lineage_fiscal",-866968.6597176975,-866968.6597176975,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, central | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, central | mex_founder_lifetime",-105985.80833660736,-105985.80833660736,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, central | gap_lineage_fiscal",-965413.4714036824,-965413.4714036824,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, high | mex_lineage_fiscal",-915518.9304064044,-915518.9304064043,1.1641532182693481e-10,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, high | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, high | mex_founder_lifetime",-154536.07902531407,-154536.07902531407,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, high | gap_lineage_fiscal",-1013963.7420923891,-1013963.7420923891,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, low | mex_lineage_fiscal",-876213.7263812132,-876213.7263812132,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, low | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, low | mex_founder_lifetime",-115230.875000123,-115230.875000123,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, low | gap_lineage_fiscal",-974658.538067198,-974658.538067198,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, central | mex_lineage_fiscal",-959198.418988356,-959198.418988356,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, central | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, central | mex_founder_lifetime",-198215.56760726575,-198215.56760726578,2.9103830456733704e-11,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, central | gap_lineage_fiscal",-1057643.2306743409,-1057643.2306743409,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, high | mex_lineage_fiscal",-1040550.2664381708,-1040550.2664381707,1.1641532182693481e-10,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, high | white_lineage_fiscal",98444.81168598482,98444.81168598482,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, high | mex_founder_lifetime",-279567.41505708045,-279567.41505708045,0.0,1e-06,True
-lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, high | gap_lineage_fiscal",-1138995.0781241555,-1138995.0781241555,0.0,1e-06,True
-founder_rebuild,central,-1189717.3660914982,-1189717.3660914982,0.0,1e-06,True
-founder_rebuild,legalised y10,-1165138.930478948,-1165138.930478948,0.0,1e-06,True
-founder_rebuild,statutory 2026 central,-792018.429422774,-792018.429422774,0.0,1e-06,True
-late_components,50/statutory/low,-990984.8587975377,-990984.8587975377,0.0,1e-06,True
-late_components,50/statutory/central,-1027868.9499566387,-1027868.9499566387,0.0,1e-06,True
-late_components,50/statutory/high,-1070965.6783279022,-1070965.6783279022,0.0,1e-06,True
-late_components,50/observed_late/low,-997857.9160658816,-997857.9160658816,0.0,1e-06,True
-late_components,50/observed_late/central,-1025922.0955417762,-1025922.0955417762,0.0,1e-06,True
-late_components,50/observed_late/high,-1053986.275017671,-1053986.275017671,0.0,1e-06,True
-late_components,55/statutory/low,-951421.712983912,-951421.712983912,0.0,1e-06,True
-late_components,55/statutory/central,-986212.9125617209,-986212.9125617209,0.0,1e-06,True
-late_components,55/statutory/high,-1027216.7493516925,-1027216.7493516925,0.0,1e-06,True
-late_components,55/observed_late/low,-962250.1882154257,-962250.1882154257,0.0,1e-06,True
-late_components,55/observed_late/central,-988221.4761100282,-988221.4761100282,0.0,1e-06,True
-late_components,55/observed_late/high,-1014192.7640046312,-1014192.7640046312,0.0,1e-06,True
-late_components,60/statutory/low,-886063.8626430513,-886063.8626430513,0.0,1e-06,True
-late_components,60/statutory/central,-917671.6295091563,-917671.6295091563,0.0,1e-06,True
-late_components,60/statutory/high,-955492.033587424,-955492.033587424,0.0,1e-06,True
-late_components,60/observed_late/low,-896892.3378745652,-896892.3378745652,0.0,1e-06,True
-late_components,60/observed_late/central,-919680.1930574636,-919680.1930574636,0.0,1e-06,True
-late_components,60/observed_late/high,-942468.0482403627,-942468.0482403627,0.0,1e-06,True
-late_components,65/statutory/low,-796218.9488185542,-796218.9488185542,0.0,1e-06,True
-late_components,65/statutory/central,-845272.1208320446,-845272.1208320446,0.0,1e-06,True
-late_components,65/statutory/high,-915692.6588455357,-915692.6588455357,0.0,1e-06,True
-late_components,65/observed_late/low,-840905.7096234852,-840905.7096234852,0.0,1e-06,True
-late_components,65/observed_late/central,-861362.7609869298,-861362.7609869298,0.0,1e-06,True
-late_components,65/observed_late/high,-881819.8123503746,-881819.8123503746,0.0,1e-06,True
-late_components,70/statutory/low,-669376.7784326752,-669376.7784326752,0.0,1e-06,True
-late_components,70/statutory/central,-714268.3053907254,-714268.3053907254,0.0,1e-06,True
-late_components,70/statutory/high,-780527.1983487759,-780527.1983487759,0.0,1e-06,True
-late_components,70/observed_late/low,-714063.5392376062,-714063.5392376062,0.0,1e-06,True
-late_components,70/observed_late/central,-730358.9455456103,-730358.9455456103,0.0,1e-06,True
-late_components,70/observed_late/high,-746654.3518536148,-746654.3518536148,0.0,1e-06,True
-late_components,84/statutory/low,-291165.8017473973,-291165.8017473973,0.0,1e-06,True
-late_components,84/statutory/central,-325313.14098585164,-325313.14098585164,0.0,1e-06,True
-late_components,84/statutory/high,-380827.846224306,-380827.846224306,0.0,1e-06,True
-late_components,84/observed_late/low,-341502.63690231845,-341502.63690231845,0.0,1e-06,True
-late_components,84/observed_late/central,-347229.1848686814,-347229.1848686814,0.0,1e-06,True
-late_components,84/observed_late/high,-352955.73283504444,-352955.73283504444,0.0,1e-06,True
-per_admission_npv,55/statutory/low/0.0,-436497.6,-436497.60763562575,0.0076356257777661085,0.051,True
-per_admission_npv,55/statutory/low/0.03,-226922.4,-226922.41075085977,0.010750859772088006,0.051,True
-per_admission_npv,55/statutory/central/0.0,-456587.8,-456587.77546118887,0.02453881112160161,0.051,True
-per_admission_npv,55/statutory/central/0.03,-240907.3,-240907.28159045492,0.018409545067697763,0.051,True
-per_admission_npv,55/statutory/high/0.0,-482793.9,-482793.8960877266,0.0039122734451666474,0.051,True
-per_admission_npv,55/statutory/high/0.03,-260664.4,-260664.3587854174,0.04121458259760402,0.051,True
-per_admission_npv,60/statutory/low/0.0,-396815.0,-396815.03967396414,0.0396739641437307,0.051,True
-per_admission_npv,60/statutory/low/0.03,-231811.1,-231811.0921506656,0.007849334419006482,0.051,True
-per_admission_npv,60/statutory/central/0.0,-414687.8,-414687.78523936577,0.014760634221602231,0.051,True
-per_admission_npv,60/statutory/central/0.03,-245139.6,-245139.61689497164,0.016894971631700173,0.051,True
-per_admission_npv,60/statutory/high/0.0,-438624.8,-438624.7905325189,0.009467481111641973,0.051,True
-per_admission_npv,60/statutory/high/0.03,-264192.8,-264192.7689317991,0.03106820088578388,0.051,True
-per_admission_npv,65/statutory/low/0.0,-344659.8,-344659.8263966689,0.02639666892355308,0.051,True
-per_admission_npv,65/statutory/low/0.03,-225096.8,-225096.8416249936,0.041624993609730154,0.051,True
-per_admission_npv,65/statutory/central/0.0,-380602.1,-380602.1162369782,0.016236978233791888,0.051,True
-per_admission_npv,65/statutory/central/0.03,-256747.0,-256746.95422998216,0.0457700178376399,0.051,True
-per_admission_npv,65/statutory/high/0.0,-437178.3,-437178.26339842565,0.03660157433478162,0.051,True
-per_admission_npv,65/statutory/high/0.03,-307880.6,-307880.5867162177,0.013283782289363444,0.051,True
+lineage_row,"central (personal/expanded, unauthorized, per-capita, low fertility, 0%) | mex_lineage_fiscal",-1099425.50572929,-1099425.50572929,0.0,1e-06,True
+lineage_row,"central (personal/expanded, unauthorized, per-capita, low fertility, 0%) | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"central (personal/expanded, unauthorized, per-capita, low fertility, 0%) | mex_founder_lifetime",-408580.27533658326,-408580.27533658326,0.0,1e-06,True
+lineage_row,"central (personal/expanded, unauthorized, per-capita, low fertility, 0%) | gap_lineage_fiscal",-1476572.47057829,-1476572.47057829,0.0,1e-06,True
+lineage_row,central at 3% | mex_lineage_fiscal,-310107.6451893691,-310107.6451893691,0.0,1e-06,True
+lineage_row,central at 3% | white_lineage_fiscal,259958.8784429639,259958.8784429639,0.0,1e-06,True
+lineage_row,central at 3% | mex_founder_lifetime,-61083.03385318167,-61083.03385318167,0.0,1e-06,True
+lineage_row,central at 3% | gap_lineage_fiscal,-570066.523632333,-570066.523632333,0.0,1e-06,True
+lineage_row,founder status: Mexico-born average | mex_lineage_fiscal,-1066195.354125223,-1066195.3541252227,2.3283064365386963e-10,1e-06,True
+lineage_row,founder status: Mexico-born average | white_lineage_fiscal,377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,founder status: Mexico-born average | mex_founder_lifetime,-375350.1237325161,-375350.1237325161,0.0,1e-06,True
+lineage_row,founder status: Mexico-born average | gap_lineage_fiscal,-1443342.3189742228,-1443342.3189742228,0.0,1e-06,True
+lineage_row,2b founder legalised at year 10 | mex_lineage_fiscal,-1074847.0701167395,-1074847.0701167395,0.0,1e-06,True
+lineage_row,2b founder legalised at year 10 | white_lineage_fiscal,377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,2b founder legalised at year 10 | mex_founder_lifetime,-384001.83972403297,-384001.83972403297,0.0,1e-06,True
+lineage_row,2b founder legalised at year 10 | gap_lineage_fiscal,-1451994.0349657396,-1451994.0349657396,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars from 65 (no cash transfers, public medical, institutional care or noncash aid; taxes and services kept) | mex_lineage_fiscal",-656960.6720486498,-656960.6720486498,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars from 65 (no cash transfers, public medical, institutional care or noncash aid; taxes and services kept) | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars from 65 (no cash transfers, public medical, institutional care or noncash aid; taxes and services kept) | mex_founder_lifetime",33884.55834405664,33884.55834405664,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars from 65 (no cash transfers, public medical, institutional care or noncash aid; taxes and services kept) | gap_lineage_fiscal",-1034107.6368976498,-1034107.6368976498,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, low | mex_lineage_fiscal",-674832.8312467679,-674832.8312467679,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, low | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, low | mex_founder_lifetime",16012.399145938602,16012.399145938602,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, low | gap_lineage_fiscal",-1051979.796095768,-1051979.796095768,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, central | mex_lineage_fiscal",-688909.1752194822,-688909.1752194822,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, central | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, central | mex_founder_lifetime",1936.0551732243848,1936.0551732243848,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, central | gap_lineage_fiscal",-1066056.1400684824,-1066056.1400684824,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, high | mex_lineage_fiscal",-706244.830549725,-706244.830549725,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, high | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, high | mex_founder_lifetime",-15399.600157018604,-15399.600157018605,1.8189894035458565e-12,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, federal_floor, high | gap_lineage_fiscal",-1083391.7953987252,-1083391.7953987252,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, low | mex_lineage_fiscal",-684427.3018805367,-684427.3018805367,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, low | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, low | mex_founder_lifetime",6417.92851216977,6417.92851216977,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, low | gap_lineage_fiscal",-1061574.266729537,-1061574.266729537,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, central | mex_lineage_fiscal",-701726.5690605658,-701726.5690605658,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, central | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, central | mex_founder_lifetime",-10881.338667859334,-10881.338667859334,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, central | gap_lineage_fiscal",-1078873.533909566,-1078873.533909566,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, high | mex_lineage_fiscal",-720009.9390791059,-720009.9390791059,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, high | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, high | mex_founder_lifetime",-29164.70868639934,-29164.70868639934,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, rules_2026_new_enrollee, high | gap_lineage_fiscal",-1097156.903928106,-1097156.903928106,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, low | mex_lineage_fiscal",-729000.4000468844,-729000.4000468844,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, low | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, low | mex_founder_lifetime",-38155.169654178055,-38155.169654178055,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, low | gap_lineage_fiscal",-1106147.3648958846,-1106147.3648958846,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, central | mex_lineage_fiscal",-776676.7993554893,-776676.7993554893,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, central | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, central | mex_founder_lifetime",-85831.5689627828,-85831.5689627828,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, central | gap_lineage_fiscal",-1153823.7642044895,-1153823.7642044895,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, high | mex_lineage_fiscal",-825227.0700441961,-825227.0700441961,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, high | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, high | mex_founder_lifetime",-134381.8396514895,-134381.8396514895,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, peak_state_coverage, high | gap_lineage_fiscal",-1202374.0348931963,-1202374.0348931963,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, low | mex_lineage_fiscal",-785921.866019005,-785921.866019005,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, low | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, low | mex_founder_lifetime",-95076.63562629843,-95076.63562629843,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, low | gap_lineage_fiscal",-1163068.830868005,-1163068.830868005,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, central | mex_lineage_fiscal",-868906.5586261477,-868906.5586261477,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, central | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, central | mex_founder_lifetime",-178061.32823344122,-178061.32823344122,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, central | gap_lineage_fiscal",-1246053.5234751478,-1246053.5234751478,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, high | mex_lineage_fiscal",-950258.4060759624,-950258.4060759624,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, high | white_lineage_fiscal",377146.96484900016,377146.96484900016,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, high | mex_founder_lifetime",-259413.1756832559,-259413.1756832559,0.0,1e-06,True
+lineage_row,"senior rule: statutory bars plus priced care, full_coverage_everywhere, high | gap_lineage_fiscal",-1327405.3709249625,-1327405.3709249625,0.0,1e-06,True
+founder_rebuild,central,-1099425.50572929,-1099425.50572929,0.0,1e-06,True
+founder_rebuild,legalised y10,-1074847.0701167395,-1074847.0701167395,0.0,1e-06,True
+founder_rebuild,statutory 2026 central,-701726.5690605658,-701726.5690605658,0.0,1e-06,True
+late_components,50/statutory/low,-988011.8451986748,-988011.8451986748,0.0,1e-06,True
+late_components,50/statutory/central,-1024895.9363577763,-1024895.9363577763,0.0,1e-06,True
+late_components,50/statutory/high,-1067992.66472904,-1067992.66472904,0.0,1e-06,True
+late_components,50/observed_late/low,-994884.9024670187,-994884.9024670187,0.0,1e-06,True
+late_components,50/observed_late/central,-1022949.0819429137,-1022949.0819429137,0.0,1e-06,True
+late_components,50/observed_late/high,-1051013.2614188087,-1051013.2614188087,0.0,1e-06,True
+late_components,55/statutory/low,-948551.8870788043,-948551.8870788043,0.0,1e-06,True
+late_components,55/statutory/central,-983343.0866566139,-983343.0866566139,0.0,1e-06,True
+late_components,55/statutory/high,-1024346.9234465855,-1024346.9234465855,0.0,1e-06,True
+late_components,55/observed_late/low,-959380.3623103182,-959380.3623103182,0.0,1e-06,True
+late_components,55/observed_late/central,-985351.6502049211,-985351.6502049211,0.0,1e-06,True
+late_components,55/observed_late/high,-1011322.9380995241,-1011322.9380995241,0.0,1e-06,True
+late_components,60/statutory/low,-884187.8599645221,-884187.8599645221,0.0,1e-06,True
+late_components,60/statutory/central,-915795.6268306276,-915795.6268306276,0.0,1e-06,True
+late_components,60/statutory/high,-953616.0309088953,-953616.0309088953,0.0,1e-06,True
+late_components,60/observed_late/low,-895016.3351960358,-895016.3351960358,0.0,1e-06,True
+late_components,60/observed_late/central,-917804.190378935,-917804.190378935,0.0,1e-06,True
+late_components,60/observed_late/high,-940592.0455618339,-940592.0455618339,0.0,1e-06,True
+late_components,65/statutory/low,-795336.7693666032,-795336.7693666032,0.0,1e-06,True
+late_components,65/statutory/central,-844389.9413800944,-844389.9413800944,0.0,1e-06,True
+late_components,65/statutory/high,-914810.4793935855,-914810.4793935855,0.0,1e-06,True
+late_components,65/observed_late/low,-840023.5301715342,-840023.5301715342,0.0,1e-06,True
+late_components,65/observed_late/central,-860480.5815349793,-860480.5815349793,0.0,1e-06,True
+late_components,65/observed_late/high,-880937.6328984244,-880937.6328984244,0.0,1e-06,True
+late_components,70/statutory/low,-669694.0095680589,-669694.0095680589,0.0,1e-06,True
+late_components,70/statutory/central,-714585.5365261097,-714585.5365261097,0.0,1e-06,True
+late_components,70/statutory/high,-780844.4294841602,-780844.4294841602,0.0,1e-06,True
+late_components,70/observed_late/low,-714380.7703729899,-714380.7703729899,0.0,1e-06,True
+late_components,70/observed_late/central,-730676.1766809946,-730676.1766809946,0.0,1e-06,True
+late_components,70/observed_late/high,-746971.5829889992,-746971.5829889992,0.0,1e-06,True
+late_components,84/statutory/low,-292157.4521045596,-292157.4521045596,0.0,1e-06,True
+late_components,84/statutory/central,-326304.791343014,-326304.791343014,0.0,1e-06,True
+late_components,84/statutory/high,-381819.49658146827,-381819.49658146827,0.0,1e-06,True
+late_components,84/observed_late/low,-342494.2872594807,-342494.2872594807,0.0,1e-06,True
+late_components,84/observed_late/central,-348220.83522584377,-348220.83522584377,0.0,1e-06,True
+late_components,84/observed_late/high,-353947.38319220673,-353947.38319220673,0.0,1e-06,True
+per_admission_npv,55/statutory/low/0.0,-433104.0,-433103.98910806223,0.010891937767155468,0.051,True
+per_admission_npv,55/statutory/low/0.03,-224149.5,-224149.51633099222,0.016330992220900953,0.051,True
+per_admission_npv,55/statutory/central/0.0,-453194.2,-453194.15693362535,0.04306637466652319,0.051,True
+per_admission_npv,55/statutory/central/0.03,-238134.4,-238134.38717058738,0.012829412618884817,0.051,True
+per_admission_npv,55/statutory/high/0.0,-479400.3,-479400.27756016306,0.022439836931880563,0.051,True
+per_admission_npv,55/statutory/high/0.03,-257891.5,-257891.4643655498,0.035634450206998736,0.051,True
+per_admission_npv,60/statutory/low/0.0,-394316.5,-394316.53764560446,0.0376456044614315,0.051,True
+per_admission_npv,60/statutory/low/0.03,-229593.1,-229593.0893842785,0.010615721519570798,0.051,True
+per_admission_npv,60/statutory/central/0.0,-412189.3,-412189.2832110061,0.016788993903901428,0.051,True
+per_admission_npv,60/statutory/central/0.03,-242921.6,-242921.61412858448,0.014128584472928196,0.051,True
+per_admission_npv,60/statutory/high/0.0,-436126.3,-436126.2885041592,0.01149584079394117,0.051,True
+per_admission_npv,60/statutory/high/0.03,-261974.8,-261974.766165412,0.0338345879863482,0.051,True
+per_admission_npv,65/statutory/low/0.0,-343050.4,-343050.36484448664,0.03515551338205114,0.051,True
+per_admission_npv,65/statutory/low/0.03,-223507.1,-223507.12957905326,0.029579053254565224,0.051,True
+per_admission_npv,65/statutory/central/0.0,-378992.7,-378992.6546847959,0.04531520413001999,0.051,True
+per_admission_npv,65/statutory/central/0.03,-255157.2,-255157.24218404182,0.04218404181301594,0.051,True
+per_admission_npv,65/statutory/high/0.0,-435568.8,-435568.80184624344,0.001846243452746421,0.051,True
+per_admission_npv,65/statutory/high/0.03,-306290.9,-306290.87467027735,0.025329722673632205,0.051,True

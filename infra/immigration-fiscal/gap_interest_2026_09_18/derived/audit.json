@@ -3,22 +3,22 @@
   "inputs": [
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv",
-      "sha256": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a"
+      "sha256": "9d5a302e43ab5f839b96056ce030c17a73ddf8165ba134a07813754005d8eafe"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv",
-      "sha256": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62"
+      "sha256": "75b85d18e6612ed26e1c3a1b02dde4f44a850b803c48153ae08c350a9de632aa"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json",
-      "sha256": "6f5dbb7dad8f70e221e0b709f1a54bd86655949bc3c45f205ce4cd62f7e5db06"
+      "sha256": "b1882ef58a4e0206e466e81ba36450d761dd57c9c68885f58bd9fd99228ffc51"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gap_interest_2026_09_18/interest_on_gap.py",
       "sha256": "ff6014c94c924702f2d025922941936ef3b7742307fe7b4207018a37780c9b9c"
     }
   ],
-  "output_sha256": "5df42a7be0e7120e7089a23995ff6132ed664a9433026c4e89f449eaf7d3ff3e",
+  "output_sha256": "137f4c14b82bf6d15956713b53d1ce77b8138e3109c23e59a02f4cce759ebe4d",
   "allocation": "shared",
   "flow": "constant annual expanded-account real 2024 dollars; no population change",
   "timing": "year-end flows, real annual compounding, positive debt is borrowing",

@@ -68,3 +68,17 @@ failures, source year/units/missing cells, duplicate source lines, grant double
 netting, current/capital confusion and the fee-loss endpoint. Full builds verify
 the disjoint population partition and original canonical group/national totals.
 The unresolved national residual is never mechanically allocated by ethnicity.
+
+## Revisions
+
+- **2026-10-08: item T.** `builder.py` passes the ledger's income-tax keys to `build_charges` and books item T (the
+  income tax on the main case's keys, `ledger_absolute_2026_09_17`) as a receipt and as a personal tax. Ignored outputs, shared allocation,
+  $bn, old → new: union receipts 435.44 → 449.23 and balance −217.32 → −203.52 (personal 413.93 → 429.24 and
+  −239.24 → −223.94); national civilian account receipts 6,070.86 → 6,493.72 and balance −658.20 → −235.34;
+  personal taxes and contributions short of the official figure by 715.69 → 292.84 (personal 787.99 → 319.64); the
+  unallocated receipt difference at the current boundary 2,123.73 → 1,700.87. The break-even spending responses rise
+  by 0.016–0.023 (shared, F fraction 0: 0.667 → 0.688). Readers downstream (`national_coverage_2026_09_20`,
+  `full_account_benefits_2026_09_20`, `admin_school_checks_2026_09_19` and the other September 19–20 lanes) were not
+  rerun: they belong to the frozen September 19–20 chain. One of them now stops: `admin_transfer_checks_2026_09_19`
+  pins the union's balance in `updated_account_components.csv` at −234.339 / −256.263 (shared / personal), which the
+  pre-T outputs matched exactly; with T it is −220.546 / −240.958.

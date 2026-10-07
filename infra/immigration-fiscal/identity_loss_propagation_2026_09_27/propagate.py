@@ -52,13 +52,17 @@ BCF = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(BCF)
 
 PES = 1.0525            # arm4 scheme B multiplier; the memo's 45.0M = central x this
-# Lineage centrals, 0% and 3%, after audit §E (2026-09-28; the brief's were -1,297,150 / -514,635)
-LIN_CENTRAL = (-1288162.0, -513398.0)
+# Lineage centrals, 0% and 3%, after the ledger's item T (2026-10-07; after audit §E, 2026-09-28, they were
+# -1,288,162 / -513,398; the brief's were -1,297,150 / -514,635)
+LIN_CENTRAL = (-1476572.0, -570067.0)
 RHOS = (0.25, 0.5, 0.75)                # [ASSUMPTION] geometric generation mix of the 4th+ pool
 RHO_CENTRAL = 0.5
 POP_OUTPUTS = ("arm3_correction_bounds.csv", "arm3_fractional_counting.csv",
                "arm4_coverage_grid.csv", "arm5_fiscal_implication.csv",
                "arm5_education_selectivity.csv", "arm5_generation_split.csv")
+# The population lane's arm-5 rows with the ledger's item T in the base gaps (2026-10-08); the fiscal
+# file first. They feed derived/population_arms_T.csv; population_arms.csv keeps taxes as the survey reports them.
+POP_OUTPUTS_T = ("arm5_fiscal_implication_T.csv", "arm5_generation_split_T.csv")
 # Population lane arm-5 rows: the measured generation split (central since 2026-09-28) and the
 # Duncan-Trejo years convention (sensitivity). The central split row is the one whose C3 entry is
 # labelled CENTRAL in arm5_generation_split.csv; its fiscal row is found by that label, never by value.
@@ -314,7 +318,11 @@ def main() -> int:
     for f in POP_OUTPUTS:
         if not filecmp.cmp(ref / f, POP_DIR / "derived" / f, shallow=False):
             raise SystemExit(f"[BLOCKED] population lane does not reproduce {f}")
-    print(f"[reproduce] population lane: {len(POP_OUTPUTS)} outputs byte-identical", flush=True)
+    for f in POP_OUTPUTS_T:
+        if not filecmp.cmp(ref / f, POP_DIR / "derived" / f, shallow=False):
+            raise SystemExit(f"[BLOCKED] population lane does not reproduce {f}")
+    print(f"[reproduce] population lane: {len(POP_OUTPUTS) + len(POP_OUTPUTS_T)} outputs byte-identical",
+          flush=True)
     b0 = pd.read_csv(ref / "arm3_correction_bounds.csv")
     f0 = pd.read_csv(ref / "arm5_fiscal_implication.csv")
     g0 = pd.read_csv(ref / "arm5_generation_split.csv")
@@ -337,8 +345,9 @@ def main() -> int:
         return dt.iloc[0], sp.iloc[0], gs.iloc[0]
 
     old_f5, old_s5, old_g5 = arm5_rows(f0, g0, old.assumption)
+    old_t = arm5_rows(pd.read_csv(ref / POP_OUTPUTS_T[0]), pd.read_csv(ref / POP_OUTPUTS_T[1]), old.assumption)
 
-    rows, pop_detail, sched_rows = [], [], []
+    rows, pop_detail, pop_detail_t, sched_rows = [], [], [], []
     runs: dict[float, pd.Series] = {}
     for key, s in S.items():
         rhos = (RHO_CENTRAL,) if s["kind"] == "flat" else RHOS
@@ -347,6 +356,7 @@ def main() -> int:
             if key == "a_current":
                 b_row = old
                 f5, s5, g5 = old_f5, old_s5, old_g5
+                f5t, s5t, _ = old_t
             else:
                 tag = f"{key}_rho{rho}"
                 d = run_population(tag, pe)
@@ -360,6 +370,14 @@ def main() -> int:
                 if abs(b_row.fourth_plus_identification_rate - round(pe, 4)) > 1e-12:
                     raise SystemExit("[BLOCKED] substituted rate not carried")
                 f5, s5, g5 = arm5_rows(ff, pd.read_csv(d / "arm5_generation_split.csv"), b_row.assumption)
+                f5t, s5t, _ = arm5_rows(pd.read_csv(d / POP_OUTPUTS_T[0]), pd.read_csv(d / POP_OUTPUTS_T[1]),
+                                        b_row.assumption)
+            # The same four fiscal figures with the ledger's item T in the population lane's base gaps
+            pop_detail_t.append({"arm": key, "rho": rho, "p_eff_fourth_plus": pe,
+                                 "gap_per_person_after": float(f5t.gap_per_person_after),
+                                 "aggregate_gap_bn_after": float(f5t.aggregate_gap_bn_after),
+                                 "gap_per_person_after_split": float(s5t.gap_per_person_after),
+                                 "aggregate_gap_bn_after_split": float(s5t.aggregate_gap_bn_after)})
             union = float(b_row.corrected_union)
             corr = float(b_row.corrected_third_plus)
             rec = {"arm": key, "rho": rho, "p_eff_fourth_plus": pe,
@@ -462,6 +480,7 @@ def main() -> int:
 
     w(OUT / "arms.csv", rows)
     w(OUT / "population_arms.csv", pop_detail)
+    w(OUT / "population_arms_T.csv", pop_detail_t)
     w(OUT / "lineage_arms.csv", lin_detail)
     w(OUT / "schedules.csv", sched_rows)
     meta = {"p3_population_unrounded": p3, "p3_lineage_input": base_rate, "losses": lo,
