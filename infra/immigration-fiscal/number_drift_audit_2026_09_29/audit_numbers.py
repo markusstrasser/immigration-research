@@ -3,9 +3,9 @@
     uv run --no-project --offline python3 infra/immigration-fiscal/number_drift_audit_2026_09_29/audit_numbers.py
 
 Reads the reader-facing texts (the evidence map's groups.py, template.html and build.py's hand-typed
-table rows and notes; chosen spans of the topic INDEX, the objections FAQ, CLAUDE.md and three research memos
-restated on the adopted case), extracts every number token, and matches each one to its source. A number the
-map quotes through a placeholder,
+table rows and notes; chosen spans of the topic INDEX, the objections FAQ, CLAUDE.md, the README and four
+research memos restated on the adopted case), extracts every number token, and matches each one to its
+source. A number the map quotes through a placeholder,
 `{{q:<id>|<view>}}`, is rendered by the map's `quantities.py` exactly as the build renders it and is
 checked against its registry record: the rendering against the value, and the sentence against the
 record's must_name and forbid. Every other number is matched to the source that `source_map.csv` names
@@ -72,9 +72,11 @@ LADDER = Q.LADDER
 INDEX = "research/immigration-INDEX.md"
 FAQ = "research/immigration-objections-faq-2026-09-21.md"
 CLAUDE = "CLAUDE.md"
+README = "README.md"
 REAL_COSTS = "research/immigration-real-fiscal-and-social-costs-2026-09-23.md"
 BY_GENERATION = "research/immigration-adopted-account-by-generation-2026-09-25.md"
 WINNERS = "research/immigration-winners-and-losers-2026-09-25.md"
+INDIAN = "research/immigration-indian-origin-full-account-and-selection-2026-09-29.md"
 
 # ---------------------------------------------------------------- number tokens
 
@@ -308,7 +310,7 @@ def span_lines(path, spans):
 
 # Markdown spans in scope: current results only (coverage and reasons in RESULT.md).
 INDEX_SPANS = [
-    ("**Adopted main case (October 5): $390–461bn/year", "Treat an Astra accusation as a lead to verify"),
+    ("**Adopted main case (October 7): $389–461bn/year", "Treat an Astra accusation as a lead to verify"),
     ("**Earlier cases.** Each main case replaced the one before.", "too (−$51.0 / −$53.6bn)."),
     ("[By generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224,",
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
@@ -324,6 +326,9 @@ INDEX_SPANS = [
     # the rough Black comparison, restated on the adopted case (d6a5a2f)
     ("For comparison, a rough re-key of the main case to non-Hispanic Black residents costs",
      "group. This is not an engine run (ladder 259,"),
+    # the Indian-origin full account's row in the memo table (on main case v6 since 00992d4b)
+    ("| [Indian-origin: full account, arrival cohorts, home regions]",
+     "the irregular-flow gap or the CPS/ACS count difference |"),
 ]
 FAQ_SPANS = [
     ("Anchors: the [complete annual account]", "−$8k. [SOURCE: [CA–TX geography]"),
@@ -334,43 +339,60 @@ FAQ_SPANS = [
     ("Finding: only income-year 2024 is a complete account.", "of other programmes before 2024 is unmeasured."),
     ("No. The account describes a resident stock in a stationary comparison.",
      "neither is cash that a removal would free in the year."),
-    ("figures are not the $390–461bn complete account. [SOURCE:", "figures are not the $390–461bn complete account. [SOURCE:"),
+    ("figures are not the $389–461bn complete account. [SOURCE:", "figures are not the $389–461bn complete account. [SOURCE:"),
     ("Two later corrections also nearly cancel:", "No combination changes the sign."),
     ("Steel-man: one year of a price surge, pandemic programmes and a migration wave", "which flatters the year."),
     # entry 5's split of the adopted account by generation (in scope since the v4 restatement, 5e9112e)
     ("On the adopted account itself, with no reference group", "on the US-born generations counted"),
     # entry 4's income split of the transfers (6157bb1) and entry 6's gap (1572b90), restated on the adopted case
-    ("the renters' payments cancel in dollars but not by income",
-     "fifths of other residents lose $80.4bn a year and the top fifth gains $45.5bn (ladder 194)."),
+    ("the renters' payments cancel in dollars but not by income", "(ladder 194)."),
     ("many average residents, the main case's gap counting benefits when paid", "has no national total to share out."),
     ("**What about obligations left by past years?**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
     # entry 19, the lineage counted as whole people (main case v5, 2026-10-05)
-    ("Steel-man: grandchildren of Mexican immigrants who marry out", "or the added people's measured age mix."),
+    ("Steel-man: grandchildren of Mexican immigrants who marry out",
+     "the third generation measured with grandparent detail."),
+    # entry 20, the closed budget (ladder 282): the finding and its ranges, not the steel-man's OMB totals
+    ("Finding: the headline is current law, and current law schedules no rule that closes the budget",
+     "is never combined with other entries' ranges."),
+    # entry 16, the main case and its first-year response beside CBO's projection (since v6); not CBO's own figures
+    ("all ages and generations in income-year 2024, state and local services included",
+     "Where the two overlap they agree"),
 ]
 CLAUDE_SPANS = [
     ("Since\n  2026-09-23 the main case lets general public services", "business subsidies stay at **zero response by assumption**"),
+]
+# the README's current-result paragraph (since the v6 restatement)
+README_SPANS = [
+    ("**Current result (income year 2024).**", "its figures are the October 5 case's."),
 ]
 # Memo passages restated on the adopted case (6157bb1, ebc15cc, 05312de). The real-costs memo's §4 bullets on
 # housing, wages, crime and prices are left out: they did not move with the case.
 MEMO_SPANS = {
     REAL_COSTS: [
+        # ends on the next bullet's opening words, which carry no number, so the closing sentence stays in scope
         ("| Channel | Bottom fifth | 2nd | 3rd | 4th | Top fifth | Total |",
-         "fifths lose $80.4bn a year and the top fifth gains $45.5bn."),
+         "- **Housing.** Renters pay about the same extra rent in every fifth"),
         ("**The fiscal cost's incidence is a financing convention.**", "and 19.9% and 0.71% under"),
         ("**Weighted by income.**", "weight (2.24), not a larger harm."),
     ],
+    # the v6 verdicts (2026-10-07)
     BY_GENERATION: [
-        ("**Verdict (2026-10-05, main case v5):** On the main case of $390.3–461.2bn a year",
-         "whose adults take the identified third-plus's adult"),
+        ("**Verdict (2026-10-07, main case v6):**", "October 5 gave them the identified third-plus's adult share."),
     ],
     WINNERS: [
-        ("**Verdict (2026-10-05, main case v5, $390.3–461.2bn;",
-         "whose pooled net under tax shares is −$632 a year."),
+        ("**Verdict (2026-10-07, main case v6,", "whose pooled net under tax shares is −$636 a year."),
+    ],
+    # the Indian-origin full account on main case v6 (00992d4b): the verdict, §2's table and notes, the v6 revision
+    INDIAN: [
+        ("**Verdict:** On main case v6", "reference is third-plus non-Hispanic whites]"),
+        ("Per member a year, low / high end of main case v6", "too few to estimate."),
+        ("- 2026-10-07 (main case v6, [decision]",
+         "affected: the Indian-origin full account follows the main case and the comparators' education keys."),
     ],
 }
 # Every markdown file in scope with its spans. A year in any of them needs no map row.
-MARKDOWN = {INDEX: INDEX_SPANS, FAQ: FAQ_SPANS, CLAUDE: CLAUDE_SPANS, **MEMO_SPANS}
+MARKDOWN = {INDEX: INDEX_SPANS, FAQ: FAQ_SPANS, CLAUDE: CLAUDE_SPANS, README: README_SPANS, **MEMO_SPANS}
 
 
 def check_sites(g, groups_path):

@@ -1,6 +1,6 @@
 {
- "rev": "e0d2ec03",
- "memos_read": 166,
+ "rev": "e3084521",
+ "memos_read": 167,
  "memos_skipped": [
   "research/immigration-adversarial-audit-2026-09-28.md: a dated audit",
   "research/immigration-aggregate-and-generation-audit-2026-09-17.md: a dated audit",
@@ -24,58 +24,199 @@
   "research/immigration-weekly-conceptual-audit-2026-09-25.md: a dated audit",
   "research/immigration-yglesias-claims-audit-2026-09-21.md: a dated audit"
  ],
- "adopted": {},
- "earlier": {
-  "case.main": {
-   "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+ "adopted": {
+  "case.cash_set": {
+   "lane": "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json",
    "value": [
-    371.4145997888867,
-    434.8409586241355
+    307.39941050546946,
+    385.36412253996343
    ],
-   "case": "the September 29 case (v4)"
+   "registry_value": [
+    307.37637615801015,
+    383.40925212667577
+   ],
+   "registry_case": "October 5 main case (v5)"
+  },
+  "case.main": {
+   "lane": "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json",
+   "value": [
+    389.0825528654786,
+    461.47970930242025
+   ],
+   "registry_value": [
+    390.29395820202535,
+    461.24312471796554
+   ],
+   "registry_case": "October 5 main case (v5)"
   },
   "case.per_member": {
-   "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+   "lane": "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json",
    "value": [
-    9.352588282267313,
-    10.949726953624355
+    9.100875165307562,
+    10.794288242309884
    ],
-   "case": "the September 29 case (v4), per member of the 39.71M union"
+   "registry_value": [
+    9.129210665476625,
+    10.788754386439704
+   ],
+   "registry_case": "October 5 main case (v5)"
   },
   "pairing.fiscal_footing": {
-   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv",
    "value": [
-    366.681996,
-    434.840959
+    384.32827,
+    461.479709
    ],
-   "case": "the September 29 case (v4)"
+   "registry_value": [
+    385.393693,
+    461.243125
+   ],
+   "registry_case": "October 5 main case (v5)"
   },
   "pairing.per_member_priced": {
-   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv",
    "value": [
-    11.657457,
-    13.484874
+    11.438429,
+    13.348504
    ],
-   "case": "the September 29 case (v4), per member of the 39.71M union"
+   "registry_value": [
+    11.466487,
+    13.348528
+   ],
+   "registry_case": "October 5 main case (v5)"
   },
   "pairing.total": {
-   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv",
    "value": [
-    462.946678,
-    535.517968
+    489.018168,
+    570.678088
    ],
-   "case": "the September 29 case (v4)"
+   "registry_value": [
+    490.217686,
+    570.679103
+   ],
+   "registry_case": "October 5 main case (v5)"
   }
+ },
+ "earlier": {
+  "case.cash_set": [
+   {
+    "lane": "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json",
+    "value": [
+     307.37637615801015,
+     383.40925212667577
+    ],
+    "case": "the October 5 case (v5)"
+   },
+   {
+    "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+    "value": [
+     294.7010759802479,
+     361.81748180973545
+    ],
+    "case": "the September 29 case (v4)"
+   }
+  ],
+  "case.main": [
+   {
+    "lane": "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json",
+    "value": [
+     390.29395820202535,
+     461.24312471796554
+    ],
+    "case": "the October 5 case (v5)"
+   },
+   {
+    "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+    "value": [
+     371.4145997888867,
+     434.8409586241355
+    ],
+    "case": "the September 29 case (v4)"
+   }
+  ],
+  "case.per_member": [
+   {
+    "lane": "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json",
+    "value": [
+     9.129210665476625,
+     10.788754386439704
+    ],
+    "case": "the October 5 case (v5), per member of the 42.75M lineage"
+   },
+   {
+    "lane": "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json",
+    "value": [
+     9.352588282267313,
+     10.949726953624355
+    ],
+    "case": "the September 29 case (v4), per member of the 39.71M union"
+   }
+  ],
+  "pairing.fiscal_footing": [
+   {
+    "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv",
+    "value": [
+     385.393693,
+     461.243125
+    ],
+    "case": "the October 5 case (v5)"
+   },
+   {
+    "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+    "value": [
+     366.681996,
+     434.840959
+    ],
+    "case": "the September 29 case (v4)"
+   }
+  ],
+  "pairing.per_member_priced": [
+   {
+    "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv",
+    "value": [
+     11.466487,
+     13.348528
+    ],
+    "case": "the October 5 case (v5), per member of the 42.75M lineage"
+   },
+   {
+    "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+    "value": [
+     11.657457,
+     13.484874
+    ],
+    "case": "the September 29 case (v4), per member of the 39.71M union"
+   }
+  ],
+  "pairing.total": [
+   {
+    "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv",
+    "value": [
+     490.217686,
+     570.679103
+    ],
+    "case": "the October 5 case (v5)"
+   },
+   {
+    "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv",
+    "value": [
+     462.946678,
+     535.517968
+    ],
+    "case": "the September 29 case (v4)"
+   }
+  ]
  },
  "records_with_other_values": {
   "assumptions.move_range_above_noise": 1,
   "candidate_v3.items_1_7_accrual_payable": 3,
   "candidate_v4.set_accrual_payable": 4,
   "candidate_v4.set_cash": 4,
-  "case.cash_set": 1,
+  "case.cash_set": 4,
   "case.first_year": 1,
-  "case.main": 6,
-  "case.per_member": 2,
+  "case.main": 8,
+  "case.per_member": 4,
   "comparators.us_whites": 1,
   "congestion.item": 4,
   "congestion.range": 1,
@@ -87,9 +228,9 @@
   "gg.operating_effect": 2,
   "household.net_contributor_share": 3,
   "household.top10_cost_share": 3,
-  "pairing.fiscal_footing": 1,
-  "pairing.per_member_priced": 10,
-  "pairing.total": 8,
+  "pairing.fiscal_footing": 3,
+  "pairing.per_member_priced": 12,
+  "pairing.total": 10,
   "pension.accrual": 3,
   "pension.accrual_payable_net": 3,
   "pm25.cost": 1,
@@ -106,8 +247,8 @@
  "registry_sha256": "6a09921e9e27c999b19307a97ef482990a4100e5c3e734da833b030dc0682397",
  "registry_equals_rev": true,
  "rows_by_class": {
-  "arm_labelled": 14,
-  "count_labelled": 16,
-  "vintage_labelled": 35
+  "arm_labelled": 10,
+  "count_labelled": 17,
+  "vintage_labelled": 48
  }
 }

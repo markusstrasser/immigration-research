@@ -10,12 +10,15 @@ A record's other values are the numbers a memo may still quote after the record 
                 case.schools_sept26)
     registry    the registry's own value of a record in ADOPTED. The registry follows the evidence map, which moves
                 to a new main case only when the operator asks. While the map lags, a record in ADOPTED takes its
-                current value from the adopted lane, and its registry value becomes an earlier vintage. ADOPTED is
-                empty since 2026-10-06, when the map moved to main case v5: the September 27 values now reach the
-                sweep through the records' `supersedes` (case.sept27, pairing.total_sept27).
-    earlier     the value a record in EARLIER held on the case v5 replaced, the September 29 case (v4), also an
-                earlier vintage ("$371–435bn" as the main case and "$463–536bn" as the pairing are flagged, and
-                pass when named).
+                current value from the adopted lane, and its registry value becomes an earlier vintage. The map
+                moved to main case v5 on 2026-10-06 and stays there; main case v6, adopted on 2026-10-07, is current
+                for the memos ("$390–461bn" as the main case and "$490–571bn" as the pairing are flagged, and pass
+                when named). The September 27 values reach the sweep through the records' `supersedes`
+                (case.sept27, pairing.total_sept27).
+    earlier     the values a record in EARLIER held on the cases v6 replaced, newest first: the October 5 case (v5),
+                which is also the registry's value while the map shows v5, and the September 29 case (v4); earlier
+                vintages too ("$371–435bn" as the main case and "$463–536bn" as the pairing are flagged, and pass
+                when named).
 An other value that equals the record's current value at the precision it is printed with is dropped.
 
 A memo number quotes an other value when, after the audit's masks (dates, ladder and item references, hashes):
@@ -57,8 +60,9 @@ Positive controls run first (CONTROLS), and a failed control writes nothing:
     - a lane range in the parenthesis after the current central, and a dated value after "now", are flagged;
     - "Colombia 46.5%" and the current value match nothing;
     - a Revisions section and a bracketed note are skipped;
-    - the adopted case passes as the main case, and the September 29 and September 27 cases are flagged as current,
-      unlabelled or after "now", and pass when named (total and per member).
+    - the adopted case passes as the main case, and the October 5, September 29 and September 27 cases are flagged as
+      current, unlabelled or after "now", and pass when named (total and per member; the pairing and the cash set
+      too).
 The memos are read at a git revision (`--rev`, default HEAD), or on disk with `--worktree`. The registry is read on
 disk through quantities.py; derived/memo_sweep_meta.json records whether it equals the revision's. Writes
 derived/memo_sweep.csv and derived/memo_sweep_meta.json (or to `--out DIR`). Exits 0 with flags; the flags are
@@ -93,9 +97,12 @@ EXEMPT = {
 }
 
 # the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,
-# field, expr). Empty since 2026-10-06: the map and its registry are on main case v5 (ladder 281). The next time the
-# main case moves ahead of the map, list its records here (the v5 bridge read main_case_2026_10_05's summary and the
-# propagation lane's oct05 pairing, with _pairing("oct05")).
+# field, expr). Main case v6 (ladder 295), adopted on 2026-10-07 while the map and its registry stay on v5 (ladder
+# 281): on the case lane's summary (per member of the 42.75M lineage) or, for the pairing, on the propagation lane's
+# run of v6 (b0a2ccac). ADOPTED was empty from 2026-10-06, when the map moved to v5, until v6; empty it again once the
+# map shows v6 (current_values stops on a record whose registry row already reads the adopted file).
+ADOPTED_LANE = "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json"
+PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv"
 _PAIR = "csv:section=7&column=pairing_on_priced_count&item=published pairing"
 
 
@@ -110,7 +117,12 @@ def _pairing(case):
     }
 
 
-ADOPTED = {}
+ADOPTED = {
+    "case.main": (ADOPTED_LANE, "a=json:main_case", "(a[0], a[1])"),
+    "case.per_member": (ADOPTED_LANE, "a=json:v6.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
+    "case.cash_set": (ADOPTED_LANE, "a=json:cash_set.band_bn", "(a[0], a[1])"),
+    **{rid: (PAIRING_LANE, field, expr) for rid, (field, expr) in _pairing("oct07").items()},
+}
 
 
 def current_values(recs):
@@ -126,24 +138,39 @@ def current_values(recs):
     return values, registry
 
 
-# the main case adopted on 2026-09-29 (v4, ladder 275), which v5 replaced: record id → (path, field, expr, label), an
-# earlier vintage beside the registry's; the pairing on the propagation lane's run of that case (911afa6)
-EARLIER_LANE = "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json"
-EARLIER_PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv"
+# the main cases v6 replaced, newest first: record id → [(path, field, expr, label)], earlier vintages beside the
+# registry's. The October 5 case (v5, ladder 281) on its lane's summary and the propagation lane's run of it
+# (72f2e3bc); the September 29 case (v4, ladder 275) on its lane's summary and the propagation lane's run of it
+# (911afa6). Each case's per-member figures divide by its own count: v5's the 42.75M lineage, v4's the 39.71M union.
+# Keep v4 while any record's `supersedes` lacks it (case.per_member's and the pairing records' name only September 27).
+EARLIER_LANE = "infra/immigration-fiscal/main_case_2026_10_05/derived/summary.json"
+EARLIER_PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.csv"
+SEPT29_LANE = "infra/immigration-fiscal/main_case_2026_09_29/derived/summary.json"
+SEPT29_PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/sept29/real_costs_totals.csv"
+_V5, _V4 = "the October 5 case (v5)", "the September 29 case (v4)"
+_LINEAGE, _UNION = ", per member of the 42.75M lineage", ", per member of the 39.71M union"
 EARLIER = {
-    "case.main": (EARLIER_LANE, "a=json:main_case", "(a[0], a[1])", "the September 29 case (v4)"),
-    "case.per_member": (EARLIER_LANE, "a=json:main_case ;; p=@infra/immigration-fiscal/main_case_decomposition_2026_09_29/"
-                        "derived/headcount.csv@csv:cut=all&group=union|row4", "(a[0]*1e6/p, a[1]*1e6/p)",
-                        "the September 29 case (v4), per member of the 39.71M union"),
-    **{rid: (EARLIER_PAIRING_LANE, field, expr, "the September 29 case (v4)" + (
-        ", per member of the 39.71M union" if rid == "pairing.per_member_priced" else ""))
-       for rid, (field, expr) in _pairing("sept29").items()},
+    "case.main": [(EARLIER_LANE, "a=json:main_case", "(a[0], a[1])", _V5),
+                  (SEPT29_LANE, "a=json:main_case", "(a[0], a[1])", _V4)],
+    "case.per_member": [
+        (EARLIER_LANE, "a=json:v5.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)", _V5 + _LINEAGE),
+        (SEPT29_LANE, "a=json:main_case ;; p=@infra/immigration-fiscal/main_case_decomposition_2026_09_29/"
+         "derived/headcount.csv@csv:cut=all&group=union|row4", "(a[0]*1e6/p, a[1]*1e6/p)", _V4 + _UNION)],
+    "case.cash_set": [(EARLIER_LANE, "a=json:cash_set.band_bn", "(a[0], a[1])", _V5),
+                      (SEPT29_LANE, "a=json:cash_set.band_bn", "(a[0], a[1])", _V4)],
+    **{rid: [(EARLIER_PAIRING_LANE, *_pairing("oct05")[rid],
+              _V5 + (_LINEAGE if rid == "pairing.per_member_priced" else "")),
+             (SEPT29_PAIRING_LANE, *_pairing("sept29")[rid],
+              _V4 + (_UNION if rid == "pairing.per_member_priced" else ""))]
+       for rid in _pairing("oct05")},
 }
 
 
 def earlier_values():
-    """{record id: (value, label)}: what each record in EARLIER held on the case the adopted one replaced."""
-    return {rid: (Q.resolve(path, field, expr), label) for rid, (path, field, expr, label) in EARLIER.items()}
+    """{record id: [(value, label)]}: what each record in EARLIER held on the cases the adopted one replaced, newest
+    first."""
+    return {rid: [(Q.resolve(path, field, expr), label) for path, field, expr, label in cases]
+            for rid, cases in EARLIER.items()}
 
 
 # ---------------------------------------------------------------- what a sentence must name
@@ -181,9 +208,10 @@ COUNT_LABEL = re.compile(r"40\.9|\braw\b|CPS(?:'s)? (?:union|count|frame|figure|
 ARM_LABEL = re.compile(r"(?:road budgets?|roads|lanes?) (?:held )?fixed|with (?:road budgets?|roads|lanes) fixed|"
                        r"survey values|before the (?:data )?corrections?|mixed(?:-group| offender group)|scheduled|"
                        r"\bgross\b|first[- ]year", re.I)
+# the case dates and version names before the adopted case's (v6, October 7), which names the current value
 VINTAGE_LABEL = re.compile(r"\bbefore\b|\buntil\b|\bwas\b|\bwere\b|earlier|previous|superseded|replaced|withdrawn|"
-                           r"former|\bold\b|September \d\d?|Sept\.? \d\d?|\d{4}-\d{2}-\d{2}|\bv[234]\b|hand sum|"
-                           r"summed alone|at the time", re.I)
+                           r"former|\bold\b|September \d\d?|Sept\.? \d\d?|October [1-6]\b|Oct\.? [1-6]\b|"
+                           r"\d{4}-\d{2}-\d{2}|\bv[2345]\b|hand sum|summed alone|at the time", re.I)
 FROM = re.compile(r"\bfrom\s+(?:about\s+)?\**$", re.I)
 COMMIT = re.compile(r"\b(?=[0-9a-f]*[a-f])(?=[0-9a-f]*\d)[0-9a-f]{7}\b")
 # a current marker just before the number (at most two words between) presents it as current, whatever its label
@@ -313,7 +341,7 @@ def kind_of(piece):
 
 def other_values(recs, values, registry=None, earlier=None):
     """{record id: [other value]}; each is a dict(origin, kind, parts, printed, source, labels). A sibling differs by
-    its count, a referenced record, a registry value (`registry`, from current_values) and an earlier case's value
+    its count, a referenced record, a registry value (`registry`, from current_values) and an earlier case's values
     (`earlier`, from earlier_values) by its vintage, and a superseded number as its piece of `supersedes` says (the
     text is cut at ";" and "=", so "the lane's 31.50–122.48 × factor = 30.78–119.69" gives two pieces)."""
     out = {}
@@ -326,8 +354,7 @@ def other_values(recs, values, registry=None, earlier=None):
                                                 else "value"),
                                source=f"{rid}: the registry's {rec['case']}, which the evidence map still shows",
                                labels=""))
-        if earlier and rid in earlier:
-            v, label = earlier[rid]
+        for v, label in (earlier or {}).get(rid, []):
             others.append(dict(origin="earlier", kind="vintage", parts=_parts(v, rec["shape"]),
                                printed=Q.render(rec, v, "range_unit" if rec["shape"] in ("ends", "interval")
                                                 else "value"),
@@ -643,7 +670,15 @@ CONTROLS = [
     ("a Revisions section", "## Revisions\n\n- Crashes that group drivers cause were $42.3bn a year.\n", set()),
     ("a bracketed note", "Crashes charged by fault [2026-09-29: $42.3bn on the\nlane's count] now cost $40.6bn.",
      set()),
-    ("the adopted case as the main case", "The main case costs other residents $390–461bn a year.", set()),
+    ("the adopted case as the main case", "The main case costs other residents $389–461bn a year.", set()),
+    ("the October 5 case quoted as current", "The main case costs other residents $390–461bn a year.",
+     {("case.main", "vintage_unlabelled")}),
+    ("the October 5 case named", "The October 5 case cost other residents $390–461bn a year.",
+     {("case.main", "vintage_labelled")}),
+    ("the October 5 case named as v5", "The v5 case cost other residents $390–461bn a year.",
+     {("case.main", "vintage_labelled")}),
+    ("the October 5 case after \"now\"", "The main case now costs $390–461bn a year.",
+     {("case.main", "vintage_as_current")}),
     ("the September 29 case quoted as current", "The main case costs other residents $371–435bn a year.",
      {("case.main", "vintage_unlabelled")}),
     ("the September 29 case named", "The September 29 case cost other residents $371–435bn a year.",
@@ -659,6 +694,12 @@ CONTROLS = [
     ("the September 27 case after \"now\"", "The main case now costs $322–387bn a year.",
      {("case.main", "vintage_as_current")}),
     ("the adopted case per member", "The main case is $9.1–10.8k a year per member.", set()),
+    # v5's per-member band prints as v6's at one decimal ($9.1–10.8k), so its controls print two
+    ("the October 5 case per member quoted as current", "The main case is $9.13–10.79k a year per member.",
+     {("case.per_member", "vintage_unlabelled")}),
+    ("the October 5 case per member named",
+     "The main case is $9.10–10.79k a year per member (October 5: $9.13–10.79k).",
+     {("case.per_member", "vintage_labelled")}),
     ("the September 29 case per member quoted as current", "The main case is $9.4–10.9k a year per member.",
      {("case.per_member", "vintage_unlabelled")}),
     ("the September 29 case per member named",
@@ -669,12 +710,33 @@ CONTROLS = [
     ("the September 27 case per member named",
      "The main case is $9.1–10.8k a year per member (September 27: $8.1–9.8k).",
      {("case.per_member", "vintage_labelled")}),
-    ("the adopted pairing", "Fiscal and social costs together come to $490–571bn a year.", set()),
-    ("the adopted pairing per member", "Fiscal and social costs together are $11.5–13.3k a year per member.", set()),
+    ("the adopted cash set", "Counting benefits when paid, the main case costs others $307.4–385.4bn a year.", set()),
+    ("the October 5 cash set quoted as current",
+     "Counting benefits when paid, the main case costs others $307.4–383.4bn a year.",
+     {("case.cash_set", "vintage_unlabelled")}),
+    ("the October 5 cash set named",
+     "Counting benefits when paid, the main case costs others $307.4–385.4bn a year (October 5: $307.4–383.4bn).",
+     {("case.cash_set", "vintage_labelled")}),
+    ("the September 29 cash set quoted as current",
+     "Counting benefits when paid, the main case costs others $294.7–361.8bn a year.",
+     {("case.cash_set", "vintage_unlabelled")}),
+    ("the adopted pairing", "Fiscal and social costs together come to $489–571bn a year.", set()),
+    ("the adopted pairing per member", "Fiscal and social costs together are $11.4–13.3k a year per member.", set()),
+    ("the October 5 pairing quoted as current", "Fiscal and social costs together come to $490–571bn a year.",
+     {("pairing.total", "vintage_unlabelled")}),
+    ("the October 5 pairing named",
+     "Fiscal and social costs together come to $489–571bn a year (October 5: $490–571bn).",
+     {("pairing.total", "vintage_labelled")}),
+    ("the October 5 pairing per member quoted as current",
+     "Fiscal and social costs together are $11.5–13.3k a year per member.",
+     {("pairing.per_member_priced", "vintage_unlabelled")}),
+    ("the October 5 pairing's fiscal footing quoted as current",
+     "The pairing's low end takes the fiscal main case at the Hispanic footing, $385.4bn.",
+     {("pairing.fiscal_footing", "vintage_unlabelled")}),
     ("the September 29 pairing quoted as current", "Fiscal and social costs together come to $463–536bn a year.",
      {("pairing.total", "vintage_unlabelled")}),
     ("the September 29 pairing named",
-     "Fiscal and social costs together come to $490–571bn a year (September 29: $463–536bn).",
+     "Fiscal and social costs together come to $489–571bn a year (September 29: $463–536bn).",
      {("pairing.total", "vintage_labelled")}),
     ("the September 29 pairing per member quoted as current",
      "Fiscal and social costs together are $11.7–13.5k a year per member.",
@@ -685,7 +747,7 @@ CONTROLS = [
     ("the September 27 pairing quoted as current", "Fiscal and social costs together come to $414–488bn a year.",
      {("pairing.total", "vintage_unlabelled")}),
     ("the September 27 pairing named",
-     "Fiscal and social costs together come to $490–571bn a year (September 27: $414–488bn).",
+     "Fiscal and social costs together come to $489–571bn a year (September 27: $414–488bn).",
      {("pairing.total", "vintage_labelled")}),
     ("the September 27 pairing per member quoted as current",
      "Fiscal and social costs together are $10.4–12.3k a year per member.",
@@ -781,8 +843,9 @@ def main():
     meta = dict(rev=rev or "worktree", memos_read=len(docs), memos_skipped=[f"{n}: {why}" for n, why in skipped],
                 adopted={rid: dict(lane=ADOPTED[rid][0], value=list(values[rid]), registry_value=list(registry[rid]),
                                    registry_case=recs[rid]["case"]) for rid in sorted(registry)},
-                earlier={rid: dict(lane=EARLIER[rid][0], value=list(v), case=label)
-                         for rid, (v, label) in sorted(earlier.items())},
+                earlier={rid: [dict(lane=lane, value=list(v), case=label)
+                               for (lane, *_), (v, label) in zip(EARLIER[rid], cases)]
+                         for rid, cases in sorted(earlier.items())},
                 records_with_other_values={rid: len(o) for rid, o in sorted(others.items())},
                 registry_sha256=hashlib.sha256(on_disk).hexdigest(),
                 registry_equals_rev=(None if rev is None else on_disk == git("show", f"{rev}:{REGISTRY}").encode()),
