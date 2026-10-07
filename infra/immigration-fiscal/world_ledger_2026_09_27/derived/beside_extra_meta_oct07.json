@@ -117,6 +117,7 @@
     "own_schooling_25_64_arrived_20plus": 149.458,
     "own_schooling_all_ages": 340.118
    },
+   "ruling": "parameter rows only, never a reading or a low end (the lead, 2026-10-08): MMP's sample earns half the 2024 stock's US pay an hour (tenure_check)",
    "sets": {
     "arm1b_cmp_re": {
      "label": "G1 at CMP's Re 2.46 as a year's ratio",
@@ -1160,6 +1161,23 @@
     "G1": 20.287,
     "G2": 17.431245,
     "G3+": 82.63562573828517
+   }
+  },
+  "reading1_same_person_cmp": {
+   "e_mx_central_bn": {
+    "G1": 138.25934959349593,
+    "G2": 89.34465,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 27.289203446892923,
+    "G2": 18.008,
+    "G3+": 82.635618695667
    }
   },
   "reading2": {

@@ -2596,6 +2596,8 @@ Two results run against the operator's expectation:
   same services.
 [CALCULATION: beside_extra.py, derived/beside_extra_summary_oct07.csv and beside_extra_private_gain_oct07.csv;
 FRAMING-SENSITIVE: arms 3a, 3b, 4 and 5]
+[2026-10-08: reading 3 and the combined low are now same-person parameter rows, not readings or low ends, and the
+1.73 GB peak in this part's log understated the run's memory (section "Beside arms, part 3").]
 
 Every scenario runs on oct07, lineage basis (42,752,213 members), central scenario, through `world_ledger.py`'s rows
 and weights, as part 1 does. No reading is a new central, and no existing output changes.
@@ -3004,3 +3006,174 @@ Log (times from `date` or file mtimes, JST):
 - 00:17:16: the beside figures added (mtime); 00:18:44 the tests (mtime), 22 passed.
 - 00:22:55: the Mexican numeraire's change by budget class added to the meta (mtime); 00:23:21 the build.
 - 00:27:49–00:30:06: the final rerun, 34 commands, IDENTICAL, 137/137 files, exit 0.
+
+## Beside arms, part 3 (2026-10-08): same-person pay as a parameter, and the lead's checklist
+
+**Verdict:** Two readings remain. R1, the recommended reading, puts the world total at +$287.2bn at equal weights
+(λ 1), +$242.9bn at λ 1.16 and +$261.4bn under θ central; US residents, the group included, gain +$164.5bn,
++$110.6bn and +$133.7bn. R2, the operator's framing, gives the world +$77.6bn, +$27.3bn and +$48.7bn, and US
+residents −$7.6bn, −$61.5bn and −$38.3bn. Same-person pay is a parameter, never a reading or a low end (the lead's
+ruling): MMP's migrants earned about half the 2024 stock's US pay an hour, so their 2.0 does not describe the stock.
+On R1 the parameter puts the world at +$255.1bn with G1 at CMP's 2.46 and +$223.3bn at MMP's 2.0 read as a year.
+Part 2's within-person reading (+$179.3bn) and its combined low (−$1.9bn) are withdrawn as readings and as low ends;
+their rows stay in the files as parameters. On wages alone G1 gains in every row: $9,514 per G1 adult in R1, $9,274
+in R2, $7,078 at CMP's 2.46 and $4,662 at MMP's 2.0. Separately, the lane's scripts now stay inside the 2.5 GB memory
+budget, at peak footprints of 1.4 GB or less against up to 5.6 GB, and every output is byte-identical.
+[CALCULATION: beside_extra.py, derived/beside_extra_summary_oct07.csv and beside_extra_private_gain_oct07.csv;
+FRAMING-SENSITIVE: R2's arms 3a, 3b and 5, and θ]
+
+### The ruling
+
+The lead, 2026-10-08: "same-person pay is a parameter row only, never a low end." The reason is part 2's check.
+MMP's sample earned $10.30 an hour in its US jobs (the paper's 2003 dollars moved to 2024 by the CPI), about half the
+CPS's $19.38–19.63 for Mexican-born workers with similar schooling, and arrivals of 2020–2024 earn $24.09, so tenure does not close the
+gap. Dividing the stock's US pay by 2.0 gives $11.97 an hour in Mexico: 2.0 times the cells' pay and 2.4 times MMP's
+own pre-migration wage.
+- In the files the five same-person rows on the readings carry arm `same_person` and a label that opens
+  "Same-person parameter, not a reading or a low end". The meta records the ruling (`arm1.same_person.ruling`).
+- The arms 1b and 1c, alone on the central, are the same parameter (Table D).
+- [CALCULATION: part 2's tenure check, beside_extra_meta_oct07.json tenure_check]
+
+### The readings at three weightings
+
+$bn a year, oct07, lineage basis (42,752,213 members). λ 1 is equal weights, and w is the break-even weight on the
+group's dollar. Values part 2 printed are repeated as printed there. The US residents' totals and the break-evens at
+λ 1.16, the CMP row and the private gains part 2 did not print are rounded once from the files. The last column is
+G1's private gain per G1 adult (10,566,525); Table B has it by generation.
+
+| Row | World, $bn: λ 1 / λ 1.16 / θ central | US residents incl. the group, $bn: λ 1 / λ 1.16 / θ central | Per member, $ | w, world: λ 1 / λ 1.16 / θ central | w, US only: λ 1 / λ 1.16 / θ central | Private gain per G1 adult, $: wages alone / with the accrual |
+|---|---|---|---|---|---|---|
+| The lane's central | 321.1 / 273.0 / 293.4 | 222.2 / 168.3 / 191.4 | 16,207 | 0.54 / 0.61 / 0.58 | 0.68 / 0.76 / 0.72 | 11,157 / 14,900 |
+| R1, recommended: 1a + 2 + 3 | 287.2 / 242.9 / 261.4 | 164.5 / 110.6 / 133.7 | 14,858 | 0.55 / 0.62 / 0.59 | 0.74 / 0.83 / 0.79 | 9,514 / 13,257 |
+| R2, the operator's framing: urban p70 + 2 + 5 + 3a + 3b (private gain: its consumption-PPP twin) | 77.6 / 27.3 / 48.7 | −7.6 / −61.5 / −38.3 | 10,833 | 0.83 / 0.94 / 0.89 | 1.02 / 1.13 / 1.08 | 9,274 / 13,016 |
+| Same-person parameter: R1 with G1 at CMP's 2.46 | 255.1 / 209.8 / 228.8 | 138.7 / 84.8 / 108.0 | 14,256 | 0.58 / 0.66 / 0.62 | 0.77 / 0.86 / 0.82 | 7,078 / 10,820 |
+| Same-person parameter: R1 with G1 at MMP's 2.0 (a year) | 223.3 / 177.0 / 196.5 | 113.2 / 59.3 / 82.5 | 13,659 | 0.62 / 0.70 / 0.66 | 0.81 / 0.90 / 0.86 | 4,662 / 8,405 |
+
+- **R2's private gain is its consumption-PPP twin's**, as in part 2: arm 5 values output at common prices, not what
+  the pay buys.
+- **The parameter rows change only G1's Mexican pay.** CMP's 2.46 lowers G1's premium from $227.5bn to $195.4bn,
+  and the world total by the same $32.1bn. MMP's 2.0 read as a year lowers it to $163.6bn, and the world total by
+  $63.9bn. US residents lose less than the world, because the Mexican taxes G1 avoids rise with it, a transfer the
+  world total nets out.
+- **MMP's 2.0 an hour**, 1.59 a year, is part 2's reading 3: +$179.3bn on R1. On R2 it is part 2's combined low,
+  −$1.9bn. Both are parameters now, in part 2's table under their old names.
+
+### The private gain by generation
+
+The premium, less US taxes, plus the Mexican taxes avoided, less Mexico's services forgone, with every US service and
+benefit at zero and remittances left out (part 2). (a) is wages alone; (b) adds the Social Security and Part A
+promises the members earn. $bn at two decimals, and dollars per member of each generation (G1 11,036,701, G2
+14,333,218, G3+ 17,382,294, the group 42,752,213). On the printed values the generations add to the group and G1's
+accrual is $39.55bn. To keep that, 8 of the table's 40 $bn values move 0.01 from their own rounding. Six are part 2's
+printed values, repeated; two are the CMP row's G1 and G2 with the accrual, its G2 being R1's.
+
+| Row | G1, $bn: wages alone / with the accrual | G1, per member, $ | G2, $bn | G2, per member, $ | G3+, $bn | G3+, per member, $ | Group, $bn | Group, per member, $ |
+|---|---|---|---|---|---|---|---|---|
+| The lane's central | 117.89 / 157.44 | 10,682 / 14,265 | 87.06 / 138.39 | 6,074 / 9,655 | −182.51 / −114.35 | −10,500 / −6,578 | 22.44 / 181.48 | 525 / 4,245 |
+| R1 | 100.53 / 140.08 | 9,109 / 12,692 | 59.69 / 111.01 | 4,164 / 7,745 | −195.47 / −127.30 | −11,245 / −7,324 | −35.25 / 123.79 | −824 / 2,896 |
+| R2 (its consumption-PPP twin) | 97.99 / 137.54 | 8,879 / 12,462 | 77.83 / 129.16 | 5,430 / 9,011 | −173.86 / −105.70 | −10,002 / −6,081 | 1.96 / 161.00 | 46 / 3,766 |
+| Same-person parameter: R1 with G1 at CMP's 2.46 | 74.79 / 114.34 | 6,776 / 10,359 | 59.69 / 111.01 | 4,164 / 7,745 | −195.47 / −127.30 | −11,245 / −7,324 | −60.99 / 98.05 | −1,427 / 2,293 |
+| Same-person parameter: R1 with G1 at MMP's 2.0 (a year) | 49.26 / 88.81 | 4,464 / 8,047 | 59.69 / 111.01 | 4,164 / 7,745 | −195.47 / −127.30 | −11,245 / −7,324 | −86.52 / 72.52 | −2,024 / 1,696 |
+
+[CALCULATION: derived/beside_extra_private_gain_oct07.csv]
+- **G1 and G2 gain on wages alone in every row:** G1 $4,464–10,682 per G1 member, G2 $4,164–6,074 per G2 member.
+- **The CMP row's G1 terms:** premium $195.38bn, US taxes −$100.93bn, Mexican taxes avoided $27.29bn and Mexico's
+  services −$46.95bn, which make its $74.79bn on wages alone.
+- **The group's sign turns on G3+**, a zero bound's arithmetic: no premium against $216.2bn of US taxes. On wages
+  alone the group is −$35.25bn in R1, and −$60.99bn and −$86.52bn in the parameter rows. With the accrual it is
+  positive in every row, $72.52–181.48bn.
+
+### Each arm alone
+
+Each arm on the central, the same columns. Arm 5 values output, so its private gain is not defined; part 2 takes
+consumption PPP for what the pay buys.
+
+| Arm | World, $bn: λ 1 / λ 1.16 / θ central | US residents incl. the group, $bn: λ 1 / λ 1.16 / θ central | Per member, $ | w, world: λ 1 / λ 1.16 / θ central | w, US only: λ 1 / λ 1.16 / θ central | Private gain per G1 adult, $: wages alone / with the accrual |
+|---|---|---|---|---|---|---|
+| 1a: localities of 100,000+, consumption PPP, p56 | 313.9 / 264.6 / 285.5 | 222.4 / 168.5 / 191.7 | 16,213 | 0.55 / 0.62 / 0.59 | 0.68 / 0.76 / 0.72 | 11,046 / 14,789 |
+| 1a's part: the urban cells, GDP PPP | 296.4 / 246.6 / 267.8 | 208.4 / 154.5 / 177.7 | 15,886 | 0.56 / 0.64 / 0.61 | 0.69 / 0.77 / 0.74 | 10,327 / 14,069 |
+| 1a's part: consumption PPP, national cells | 336.5 / 288.9 / 309.1 | 234.7 / 180.8 / 203.9 | 16,500 | 0.52 / 0.59 / 0.56 | 0.67 / 0.74 / 0.71 | 11,809 / 15,551 |
+| 1a, urban pay deflated (1.033) | 320.1 / 271.0 / 291.9 | 227.4 / 173.5 / 196.7 | 16,330 | 0.54 / 0.61 / 0.58 | 0.67 / 0.75 / 0.72 | 11,305 / 15,047 |
+| Mexico City's cells, GDP PPP | 306.2 / 256.0 / 277.4 | 220.7 / 166.8 / 189.9 | 16,172 | 0.56 / 0.63 / 0.60 | 0.68 / 0.76 / 0.73 | 10,655 / 14,397 |
+| Mexico City's cells, consumption PPP | 322.9 / 273.2 / 294.3 | 233.9 / 180.0 / 203.1 | 16,481 | 0.54 / 0.61 / 0.58 | 0.67 / 0.74 / 0.71 | 11,347 / 15,090 |
+| The urban cells at p70, GDP PPP | 275.3 / 224.8 / 246.3 | 191.5 / 137.6 / 160.7 | 15,490 | 0.58 / 0.66 / 0.63 | 0.71 / 0.79 / 0.76 | 8,722 / 12,464 |
+| 1b: CMP's Re 2.46 (same-person parameter) | 286.6 / 237.4 / 258.3 | 194.2 / 140.2 / 163.4 | 15,552 | 0.57 / 0.64 / 0.61 | 0.71 / 0.79 / 0.75 | 8,505 / 12,248 |
+| 1c: MMP 2.0 as a year (same-person parameter) | 254.8 / 204.6 / 226.0 | 168.4 / 114.5 / 137.6 | 14,949 | 0.60 / 0.68 / 0.65 | 0.74 / 0.82 / 0.78 | 6,065 / 9,808 |
+| 1c: MMP 2.0 an hour, 1.59 a year (same-person parameter) | 210.7 / 159.3 / 181.3 | 132.7 / 78.8 / 101.9 | 14,114 | 0.65 / 0.74 / 0.70 | 0.78 / 0.87 / 0.83 | 2,688 / 6,431 |
+| 1c: NIS 1.8 as a year (same-person parameter) | 235.9 / 185.2 / 206.8 | 153.1 / 99.1 / 122.3 | 14,591 | 0.62 / 0.70 / 0.67 | 0.75 / 0.84 / 0.80 | 4,616 / 8,358 |
+| 1c: NIS 1.8 an hour, 1.43 a year (same-person parameter) | 187.0 / 134.8 / 157.1 | 113.4 / 59.5 / 82.7 | 13,663 | 0.68 / 0.77 / 0.73 | 0.81 / 0.90 / 0.86 | 864 / 4,606 |
+| 2: state RPP | 304.0 / 256.1 / 276.4 | 204.2 / 150.3 / 173.5 | 15,787 | 0.55 / 0.62 / 0.59 | 0.70 / 0.78 / 0.74 | 10,544 / 14,287 |
+| 3: US-price numeraire | 311.5 / 268.3 / 286.3 | 182.3 / 128.4 / 151.5 | 15,274 | 0.52 / 0.59 / 0.56 | 0.72 / 0.80 / 0.77 | 10,238 / 13,981 |
+| 3's check: the group's rows only | 281.2 / 233.1 / 253.5 | 182.3 / 128.4 / 151.5 | 15,274 | 0.57 / 0.64 / 0.61 | 0.72 / 0.80 / 0.77 | 10,238 / 13,981 |
+| 3a: US health and social services at Mexican prices | 267.4 / 219.3 / 239.7 | 168.5 / 114.6 / 137.7 | 14,951 | 0.58 / 0.66 / 0.62 | 0.74 / 0.82 / 0.78 | 11,102 / 14,844 |
+| 3b: public goods at responsive cost | 191.9 / 143.8 / 164.2 | 93.0 / 39.1 / 62.2 | 13,186 | 0.66 / 0.74 / 0.71 | 0.84 / 0.93 / 0.89 | 11,527 / 15,270 |
+| Mexican-price numeraire | 192.9 / 144.8 / 165.2 | 94.0 / 40.0 / 63.2 | 13,208 | 0.66 / 0.74 / 0.71 | 0.83 / 0.93 / 0.89 | 11,102 / 14,844 |
+| 5: output at common prices, services | 322.8 / 274.8 / 295.2 | 223.6 / 169.7 / 192.8 | 16,240 | 0.53 / 0.60 / 0.57 | 0.68 / 0.76 / 0.72 | n/a: output, not pay |
+| 5, goods at their own PPPs too | 332.3 / 284.6 / 304.8 | 231.3 / 177.3 / 200.5 | 16,420 | 0.53 / 0.59 / 0.57 | 0.67 / 0.75 / 0.71 | n/a: output, not pay |
+
+### The lead's checklist
+
+| Item | Where |
+|---|---|
+| (A) Arm 6, output at common prices | Part 2's arm 5, its own section; the classes below |
+| (B) The private gain on wages alone, (a) and (b), by generation, total and per member | Table B; G1's four terms are in part 2's table |
+| (C) R1 and R2 at λ 1, λ 1.16 and θ central; each arm alone; same-person pay as a parameter row | Tables A and D; the ruling above |
+| (D) The authorized edits | The ENOE bracket fix (1f1a1c43); the saving leak's m (319c5020, section "Saving-leak correction"); `run_all.sh` (3b585a13); the memory fix below |
+
+**Arm 6's classes.** G1's and G2's US pay is split by the industry of the longest job last year (CPS ASEC 2025, 2022
+census codes). The Mexican counterfactual's pay is split in the same shares [ASSUMPTION: ENIGH's cells are not
+industry-matched]. Each class takes an ICP 2021 category PPP from `icp2021_mex_usa_categories.json`:
+- matched to their own category: restaurants and hotels (1111000) and health (9080000);
+- mapped by assumption: personal and household services, with services to buildings, landscaping, social assistance
+  and private households, at miscellaneous goods and services (9140000), and retail at household consumption without
+  housing (9260000);
+- at GDP PPP: agriculture, mining, construction, manufacturing and the rest. The goods variant prices construction at
+  its own category (1501200), and agriculture at food (1101100) and manufacturing at machinery and equipment
+  (1501100), both by assumption.
+
+### Memory
+
+Part 3's first run peaked at 2.85 GB resident (01:24:56), above the 2.5 GB budget. The lane's other scripts had the
+same problem, measured before the read fix: `mexico.py` reached a physical footprint of 3.7 GB and `beside_arms.py`
+5.6 GB, the latter with the first fix below already in. Both causes are fixed, with identical outputs:
+- `g2_premium.parents_schooling` read all 5,721,633 rows of the IPUMS extract (14 columns) to use the second-generation
+  children and the Mexico-born parents. It now reads by chunk of a million rows and keeps only those. The function's
+  footprint falls from 2.2 GB to 0.6 GB, with the same frame and match rate (`DataFrame.equals`).
+- Eleven survey reads in `mexico.py` and `beside_arms.py` passed `low_memory=False`, which holds every field of the
+  file: about 0.9 GB per ENOE quarter for 5–10 columns. They now parse by the parser's own chunks, at most 0.1 GB each.
+  Columns that hold text somewhere in a file (ENOE's sex, eda and mun) are read as text, as a whole-file read typed
+  them, and `mexico.py` makes a mixed-type column an error for every importer. All 13 read forms return identical
+  frames.
+- The freed memory stayed in the process: after the IPUMS read the footprint stayed above 2 GB with no live
+  allocations (tracemalloc). So within a run the reads' peaks stacked.
+
+After the fix, the peak footprints (`proc_pid_rusage`, lifetime maximum) are `mexico.py` 1.0 GB, `g2_premium.py`
+0.7 GB, `beside_arms.py` 1.4 GB, `beside_extra.py` 1.1 GB and `world_ledger.py` 0.1 GB. They vary by about 0.03 GB
+from run to run.
+- Part 2's log gave its run's peak as 1.73 GB (00:03:03), a resident-set reading. The same steps reach 2.85 GB
+  resident here. On macOS the resident set leaves out compressed pages, which may be why it read low under memory
+  pressure [INFERENCE]. This part logs the footprint, which counts them.
+- Found on the way: `load_enoe` labelled every ENOE person female, because sex was read as text and compared with 1.
+  No output used it; the ENOE check is by schooling. It now converts first: 348,464 women and 307,421 men.
+
+### Inputs, gates and files
+
+- `beside_extra.py`: the CMP row on R1 (`reading1_same_person_cmp`); arm `same_person` and its label on the five
+  same-person rows; the ruling in the meta.
+- `test_beside_extra.py`: the readings test covers R1's three same-person rows (G1 at E_US / r, arm 2's E_US, R1's G2
+  and US budget). A new test checks that the five rows are the only same-person rows and carry the label, that no
+  other label reads as a reading or a low end, and that the meta holds the ruling. 14 tests; with part 1's, 23 pass.
+- `g2_premium.py`, `mexico.py` and `beside_arms.py`: the memory fix and the ENOE sex label. No output changes.
+- Outputs: `beside_extra_oct07.csv`, `beside_extra_summary_oct07.csv`, `beside_extra_private_gain_oct07.csv` and
+  `beside_extra_meta_oct07.json` add the CMP row and relabel the other four. `beside_extra_industry_oct07.csv` and every
+  other derived file are unchanged.
+- Printed values follow part 2's rule: rounded once from the files, with Table B's moves stated in its caption.
+
+Log (times from `date` or file mtimes, JST):
+- 2026-10-08 01:24:56–01:25:20: part 3's run, exit 0; 2.85 GB resident at peak (`/usr/bin/time -l`).
+- 01:34:31–01:34:51: with the chunked IPUMS read, exit 0; 2.24 GB peak footprint.
+- 01:36:14–01:38:03: the rerun, 34 commands, IDENTICAL, 137/137 files, exit 0.
+- 01:38:37–01:43:34: the other scripts' footprints: `beside_arms.py` 5.595 GB, `mexico.py` 3.740 GB.
+- 01:49:43–01:51:36: after the read edits, the rerun, 34 commands, IDENTICAL, 137/137 files, exit 0.
+- 01:52:07–01:53:02: the footprints after the fix: `mexico.py` 0.992 GB, `g2_premium.py` 0.731 GB, `beside_arms.py`
+  1.405 GB, `beside_extra.py` 1.077 GB, `world_ledger.py` 0.076 GB. 02:03:28: `beside_arms.py` again, 1.374 GB.

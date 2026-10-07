@@ -1,7 +1,7 @@
 """Beside arms, part 2 (2026-10-07, the lead's specs from the operator's questions): the premium's other readings (arms
 1a-1c), the services' price basis (arm 3), the fiscal dollar's alternative use (arm 4), output at common prices (arm
-5), the group's private gain on wages alone, and three stacked readings, on the world ledger's oct07 central, lineage
-basis (42,752,213 members), beside beside_arms.py's arms. Each arm swaps one input of the central and is shown alone;
+5), the group's private gain on wages alone, two stacked readings and the same-person parameter rows, on the world
+ledger's oct07 central, lineage basis (42,752,213 members), beside beside_arms.py's arms. Each arm swaps one input of the central and is shown alone;
 the readings stack them. None replaces a central input, and no reading is a new central.
 
 Arm 1, the place premium (G1 and G2; G3+ at its zero bound throughout).
@@ -74,9 +74,12 @@ The private gain on wages alone, per generation, in total, per member and per G1
    [ASSUMPTION]). US taxes stay nominal under arm 2. A reading with arm 5 takes its private gain from its
    consumption-PPP twin.
 Readings. 1, recommended (research section 8): 1a + 2 + 3; with 1a deflated beside. 2, the operator's framing: the
-   urban cells at p70 + 2 + 5 + 3a + 3b; its twin at consumption PPP in place of 5. 3, within person: reading 1 with
-   G1 at 1c's 1.59; at 2.0 beside. Combined low: reading 2 with G1 at 1c's 1.59. Where arm 2 meets 1c, G1's Mexican
-   pay is the nominal E_US / r: Hendricks and Schoellman's ratio is of pay where the migrant lives.
+   urban cells at p70 + 2 + 5 + 3a + 3b; its twin at consumption PPP in place of 5.
+Same-person pay is a parameter row only, never a reading or a low end (the lead, 2026-10-08: MMP's sample earns half
+   the 2024 stock's US pay an hour, tenure_check). Rows (arm same_person): reading 1 with G1 at CMP's 2.46, at MMP's
+   2.0 read as a year and at 2.0 an hour (1.59 a year); reading 2 with G1 at 1.59 and its consumption-PPP twin (part
+   2's combined low, withdrawn as a low end; the scenario names reading3* and combined_low* are kept). Where arm 2
+   meets 1b or 1c, G1's Mexican pay is the nominal E_US / r: the ratio is of pay where the migrant lives.
 
 Gates: the staged sources' sha256; the central equals world_ledger_oct07.csv; the cells computed on every ENIGH person
 equal mexico.py's, and the premium table on them g2_premium_lineage.csv; the identities (the central rows relabelled to
@@ -196,6 +199,9 @@ SAME_PERSON = {   # r, per hour (converted at the lane's hours and employment), 
 # quotes 1 and 5]. CPI-U (FRED CPIAUCSL, annual) 2003 184.000, 2024 313.698 [DATA:
 # selection_curve_2026_09_27/_cache/cpiaucsl_annual.csv].
 HS_MMP_WAGES_2003 = dict(pre=2.96, post=6.04)
+SP_LABEL = "Same-person parameter, not a reading or a low end:"
+SP_RULING = ("parameter rows only, never a reading or a low end (the lead, 2026-10-08): MMP's sample earns half the "
+             "2024 stock's US pay an hour (tenure_check)")
 CPI_2003, CPI_2024 = 184.000, 313.698
 # ICP 2021 series (World Bank source 90) beyond beside_arms.py's: arm 5's categories and the Mexican numeraire's food.
 ICP_FOOD = "1101100"
@@ -858,14 +864,18 @@ def main():
               dict(I, g2=r2, vgen=v3a), dict(kw3ab, remit_rows=remit0)))
     S.append(("reading2_consumption", "reading_2", "Reading 2 at consumption PPP in place of 5 (its private gain)",
               dict(I, g2=r2c, vgen=v3a), dict(kw3ab, remit_rows=remit0)))
-    S.append(("reading3", "reading_3", "Reading 3 (within person): reading 1 with G1 at 1c's 1.59",
-              dict(I, g2=sp(r1, "arm1c_mmp_per_person"), mxb=mx_us), dict(remit_rows=remit0)))
-    S.append(("reading3_mmp_annual", "reading_3", "Reading 3 with G1 at 1c's 2.0",
+    # Same-person pay: parameter rows only, never a reading or a low end (the module docstring).
+    S.append(("reading1_same_person_cmp", "same_person", f"{SP_LABEL} reading 1 with G1 at CMP's Re 2.46",
+              dict(I, g2=sp(r1, "arm1b_cmp_re"), mxb=mx_us), dict(remit_rows=remit0)))
+    S.append(("reading3_mmp_annual", "same_person", f"{SP_LABEL} reading 1 with G1 at MMP's 2.0 read as a year",
               dict(I, g2=sp(r1, "arm1c_mmp_annual"), mxb=mx_us), dict(remit_rows=remit0)))
-    S.append(("combined_low", "combined_low", "Combined low: reading 2 with G1 at 1c's 1.59",
-              dict(I, g2=sp(r2, "arm1c_mmp_per_person"), vgen=v3a), dict(kw3ab, remit_rows=remit0)))
-    S.append(("combined_low_consumption", "combined_low", "Combined low at consumption PPP in place of 5 (its private "
-              "gain)", dict(I, g2=sp(r2c, "arm1c_mmp_per_person"), vgen=v3a), dict(kw3ab, remit_rows=remit0)))
+    S.append(("reading3", "same_person", f"{SP_LABEL} reading 1 with G1 at MMP's 2.0 an hour (1.59 a year)",
+              dict(I, g2=sp(r1, "arm1c_mmp_per_person"), mxb=mx_us), dict(remit_rows=remit0)))
+    S.append(("combined_low", "same_person", f"{SP_LABEL} reading 2 with G1 at 1.59 (part 2's combined low, withdrawn "
+              "as a low end)", dict(I, g2=sp(r2, "arm1c_mmp_per_person"), vgen=v3a), dict(kw3ab, remit_rows=remit0)))
+    S.append(("combined_low_consumption", "same_person", f"{SP_LABEL} reading 2 with G1 at 1.59, consumption PPP in "
+              "place of 5 (its private gain)", dict(I, g2=sp(r2c, "arm1c_mmp_per_person"), vgen=v3a),
+              dict(kw3ab, remit_rows=remit0)))
     names = [s[0] for s in S]
     gate("scenario_names_unique", len(names) == len(set(names)))
 
@@ -995,7 +1005,7 @@ def main():
                 arm1=dict(cells=cell_meta, urban_price_level=P_urban, urban_price_level_source=(
                     "beside_arms.py price_levels: 1 + s_h (R - 1), R the hedonic rent index of localities of 100,000+"),
                           same_person=dict(sets={k: dict(r=v[0], per_hour=v[1], label=v[3]) for k, v in SAME_PERSON.items()},
-                                           detail=same, e_us_nominal_bn=e_us_nom)),
+                                           detail=same, e_us_nominal_bn=e_us_nom, ruling=SP_RULING)),
                 arm3=dict(r_health=r_health, r_social=r_social, r_public=r_public, r_food=ratio[ICP_FOOD],
                           r_consumption_wdi_2024=r_cons, mexico_budget_factors=dict(
                               health=1 / r_health, public_good=1 / r_public, cash=1 / r_cons),

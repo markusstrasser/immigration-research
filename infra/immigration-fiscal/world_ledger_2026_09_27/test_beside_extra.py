@@ -1,7 +1,8 @@
 """Gates for beside_extra.py's outputs: theta follows from its parameters and the case's parts, matches mcpf's
 theta_eff, and reproduces the world totals from each scenario's equal and lambda 1.16 columns; the same-person arms
-move only G1's premium, to E_US (1 - 1/r); the readings are their arms' combinations; arm 5's table adds up to its
-scenario; the private gain adds its terms; the summary's figures follow from the party totals; the tenure check adds up.
+move only G1's premium, to E_US (1 - 1/r); the readings are their arms' combinations, and the same-person rows are
+labelled parameters, never readings or low ends; arm 5's table adds up to its scenario; the private gain adds its terms;
+the summary's figures follow from the party totals; the tenure check adds up.
 
 Run from the repository root (a worktree drops --no-project):
   uv run --no-project python3 -m pytest infra/immigration-fiscal/world_ledger_2026_09_27/test_beside_extra.py -q
@@ -161,11 +162,17 @@ def test_readings_are_their_arms(meta, eq):
     det = meta["scenario_detail"]
     r = meta["arm1"]["same_person"]["detail"]["arm1c_mmp_per_person"]["own_schooling_all_ages"]
     e_nom = meta["arm1"]["same_person"]["e_us_nominal_bn"]["own_schooling_all_ages"]
-    # Reading 3: reading 1 with G1's Mexican pay at the nominal E_US / r; arm 2's E_US.
-    assert np.isclose(det["reading3"]["e_mx_central_bn"]["G1"], e_nom / r["r_annual"], atol=1e-9)
-    assert np.isclose(det["reading3"]["e_us_bn"]["G1"], det["arm2_state_rpp"]["e_us_bn"]["G1"], atol=1e-12)
-    assert np.isclose(eq.loc["reading3", "premium_G2_bn"], eq.loc["reading1", "premium_G2_bn"], atol=1e-9)
-    # The combined low: reading 3's G1 and reading 2's G2 and services.
+    # The same-person rows on reading 1: G1's Mexican pay at the nominal E_US / r; arm 2's E_US; reading 1's G2.
+    sets = meta["arm1"]["same_person"]["detail"]
+    for scen, k in (("reading3", "arm1c_mmp_per_person"), ("reading3_mmp_annual", "arm1c_mmp_annual"),
+                    ("reading1_same_person_cmp", "arm1b_cmp_re")):
+        r_k = sets[k]["own_schooling_all_ages"]["r_annual"]
+        assert np.isclose(det[scen]["e_mx_central_bn"]["G1"], e_nom / r_k, atol=1e-9), scen
+        assert np.isclose(det[scen]["e_us_bn"]["G1"], det["arm2_state_rpp"]["e_us_bn"]["G1"], atol=1e-12), scen
+        assert np.isclose(eq.loc[scen, "premium_G2_bn"], eq.loc["reading1", "premium_G2_bn"], atol=1e-9), scen
+        assert np.isclose(eq.loc[scen, "us_budget_value_bn"], eq.loc["reading1", "us_budget_value_bn"], atol=1e-9)
+    assert np.isclose(r["r_annual"], sets["arm1c_mmp_per_person"]["own_schooling_all_ages"]["r_annual"])
+    # The same-person row on reading 2 (part 2's combined low): G1 as on reading 1, reading 2's G2 and services.
     assert np.isclose(eq.loc["combined_low", "premium_G1_bn"], eq.loc["reading3", "premium_G1_bn"], atol=1e-9)
     assert np.isclose(eq.loc["combined_low", "premium_G2_bn"], eq.loc["reading2", "premium_G2_bn"], atol=1e-9)
     for k in ("reading2_consumption", "combined_low", "combined_low_consumption"):
@@ -183,6 +190,18 @@ def test_readings_are_their_arms(meta, eq):
     parts = sum(eq.loc[k, "world_change_bn"] for k in ("arm1a_urban_consumption", "arm2_state_rpp",
                                                        "arm3_us_numeraire"))
     assert abs(eq.loc["reading1", "world_change_bn"] - parts) < 1.0
+
+
+def test_same_person_rows_are_parameters(meta, summary):
+    # The lead's ruling (2026-10-08): same-person pay is a parameter row only, never a reading or a low end.
+    lab = summary.drop_duplicates("scenario").set_index("scenario")
+    sp = set(lab.index[lab.arm == "same_person"])
+    assert sp == {"reading1_same_person_cmp", "reading3_mmp_annual", "reading3", "combined_low",
+                  "combined_low_consumption"}
+    assert lab.loc[sorted(sp), "label"].str.startswith("Same-person parameter, not a reading or a low end:").all()
+    others = lab[lab.arm != "same_person"].label
+    assert not others.str.contains("Combined low|Reading 3|within person", case=False).any()
+    assert "never a reading or a low end" in meta["arm1"]["same_person"]["ruling"]
 
 
 def test_arm5_table(meta, eq):
