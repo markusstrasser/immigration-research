@@ -146,7 +146,8 @@ GROUPS = [
                      "children's degrees (R² 0.91)."),
             dict(refs=[150, 168, 171],
                  text="India-born adults have a balance of about +$24k a year each. For whites it is +$13k.",
-                 why="How well degrees pay depends on the admission route more than on the origin country."),
+                 why="How well degrees pay depends on the admission route more than on the origin country. Both "
+                     "balances are on taxes as the survey reports them."),
             dict(refs=[263],
                  text="Against as many third-generation whites, the group costs others about "
                       "{{q:whites.gap_a1|mid_range}} a year more. Against local whites, state by state, the gap "
@@ -175,8 +176,9 @@ GROUPS = [
             dict(refs=[85],
                  text="Imputed unauthorized and legal Mexico-born adults have similar fiscal gaps, about $7,800 "
                       "and $8,200 a year per adult against later-generation whites.",
-                 why="Status is imputed, not observed. With benefits that status rules out set to zero and taxes "
-                     "cut to the on-books share, the gaps are $9,720 and $8,234."),
+                 why="Status is imputed, not observed. The comparison is on taxes as the survey reports them. With "
+                     "benefits that status rules out set to zero and taxes cut to the on-books share, the gaps are "
+                     "$9,720 and $8,234."),
             dict(refs=[157],
                  text="About 15.2M people were unauthorized in mid-2024 (14.6–15.8).",
                  why="This uses the definition that every publisher uses. The narrow definition gives 8–9.5M."),

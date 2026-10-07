@@ -102,7 +102,7 @@ infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f131/text,family_lin
 infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f131/text,family_line.gap_3pct,value,$513k,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f131/why,family_line.descendants_share,value,57%,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f240/text,late_arrivals.cost,mid_range,,
-infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f240/text,ir5.lifetime_cost_55_65,range_unit,$237k–274k,entry at 55–65 now named
+infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f240/text,ir5.lifetime_cost_55_65,range_unit,$237k–274k,entry at 55–65 now named; since item T read from the IR-5 lane's arms_by_age.csv instead of ladder 247's text
 infra/immigration-fiscal/overview_2026_09_28/groups.py,method/range,case.first_year,range_unit,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,method/f270/text,breaks.first_year_pct,value,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,method/f270/text,breaks.ancestry_low_pct,value,,
