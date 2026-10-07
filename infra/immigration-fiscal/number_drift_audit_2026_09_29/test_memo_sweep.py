@@ -61,3 +61,29 @@ def test_an_exemption_holds_only_while_its_sentence_stands():
     assert M.exemption("research/immigration-some-memo.md", phrase) is None
     with pytest.raises(SystemExit, match="no longer does"):
         M.exemption(path, "# A memo rewritten to current values\n")
+
+
+def test_an_allowance_passes_only_its_own_sentence_and_lapses_with_it():
+    recs = M.Q.load_registry()
+    values, registry = M.current_values(recs)
+    others = M.other_values(recs, values, registry, M.earlier_values())
+    key, reason = next(iter(M.ALLOW.items()))
+    path, rid, quoted, phrase = key
+
+    def classes(memo, text):
+        return {r["class"] for r in M.sweep_text(memo, text, recs, values, others)
+                if r["record"] == rid and r["quoted"] == quoted}
+    own = f"Members live in a household that pays more than it costs: {quoted} {phrase}."
+    other = f"About {quoted} of members live in a household that pays more than it costs."
+    [allowed] = classes(path, own)
+    assert allowed.endswith("_allowed")
+    assert [r["label"] for r in M.sweep_text(path, own, recs, values, others)
+            if r["record"] == rid and r["quoted"] == quoted] == [f"allowed: {reason}"]
+    # the same number in another sentence, or the same sentence in another memo, is still flagged
+    assert classes(path, other) == {allowed.replace("_allowed", "_unlabelled")}
+    assert classes("research/immigration-other.md", own) == {allowed.replace("_allowed", "_unlabelled")}
+    # an allowance lapses once its memo loses the phrase or the number; a line break inside the phrase still holds
+    assert M.lapsed_allowances([(path, own.replace(phrase, phrase.replace(" ", "\n", 1)))]) == []
+    assert M.lapsed_allowances([(path, other)]) == [key]
+    assert M.lapsed_allowances([(path, own.replace(quoted, "24.3%"))]) == [key]
+    assert M.lapsed_allowances([]) == [key]

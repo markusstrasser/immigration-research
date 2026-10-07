@@ -41,7 +41,9 @@ It is presented as current, whatever its label, when a current marker stands jus
 the current value of a record of the same item ("$10.6bn (−$57.7bn to +$74.3bn in the lane)": the parenthesis
 reads as the current figure's range).
 The class is "<kind>_as_current" or "<kind>_unlabelled" (both flagged), or "<kind>_labelled" (passes; listed so a
-reader can see what passed).
+reader can see what passed). A quote that ALLOW names (its memo, record, number and a phrase of its sentence) is a
+different measure's current value that rounds to an other value by coincidence: "<kind>_allowed", which passes with
+the entry's reason. An entry whose memo no longer holds its phrase and number stops the run.
 
 Scope: research/immigration-*.md except the confidence ladder, dated audits (a name holding "audit" and a date) and
 the memos in EXEMPT, each with its reason and the sentence that earns it; an exempt memo that loses that sentence
@@ -91,6 +93,13 @@ EXEMPT = {
         "The proposals below are kept as computed on the September 23 case.",
         "a dated audit: its header keeps its proposals as computed on the September 23 case, so its figures are "
         "that case's by declaration"),
+}
+# coincidences: (memo, record id, the number as printed, a phrase of its sentence) → why the number is current
+ALLOW = {
+    ("research/immigration-INDEX.md", "household.net_contributor_share", "24.2%",
+     "counting only services a household uses itself"): (
+        "the use-based share on main case v6 (convention B, 24.16% of members), which rounds like the every-line "
+        "share's superseded 24.18% on the published CPS union"),
 }
 
 # the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,
@@ -592,6 +601,10 @@ def sweep_text(path, text, recs, values, others):
                     tied = attached(prev, gap, tok, rid.split(".")[0], recs, values, unit)
                     urged = ADJ_CURRENT.search(before)
                     state = "as_current" if tied or urged else "labelled" if label else "unlabelled"
+                    allowed = [why for (p, r, q, phrase), why in ALLOW.items()
+                               if (p, r, q) == (path, rid, tok["raw"]) and phrase in sent]
+                    if allowed and state != "labelled":
+                        state, label = "allowed", f"allowed: {allowed[0]}"
                     why = (f"range of {tied}" if tied else
                            f"after \"{re.sub(r'[^A-Za-z ]', '', urged.group(0)).strip()}\"" if urged else "")
                     part, rule = hit[0]
@@ -606,7 +619,7 @@ def sweep_text(path, text, recs, values, others):
                         file=path, line=i + 1, quoted=tok["raw"], record=rid, current=current,
                         other=f"{o['printed']} ({o['origin']}: {o['source']})",
                         **{"class": f"{o['kind']}_{state}"}, label="; ".join(x for x in (label, why) if x),
-                        suggested=("" if state == "labelled" else
+                        suggested=("" if state in ("labelled", "allowed") else
                                    f"{current} now; or keep {tok['raw']} in a clause of its own and name its basis "
                                    f"({basis})" if state == "as_current" else
                                    f"{current} now; or keep {tok['raw']} and name its basis ({basis})"),
@@ -775,6 +788,14 @@ def exemption(path, text):
     return reason
 
 
+def lapsed_allowances(docs):
+    """The ALLOW entries whose memo is not read, or no longer holds the entry's phrase and number (line breaks read
+    as spaces). An allowance holds only for the sentence it was written for."""
+    texts = {path: re.sub(r"\s+", " ", text) for path, text in docs}
+    return [(path, rid, quoted, phrase) for path, rid, quoted, phrase in ALLOW
+            if path not in texts or phrase not in texts[path] or quoted not in texts[path]]
+
+
 def memos(rev, exempt=True):
     """(path, text) of every memo in scope, and the skipped paths with the reason. `exempt=False` reads the EXEMPT
     memos too, as the sweep did before they were exempted."""
@@ -820,6 +841,10 @@ def main():
         raise SystemExit(f"[BLOCKED] {len(fails)} control(s) failed: {fails}")
     rev = None if args.worktree else git("rev-parse", "--short", args.rev).strip()
     docs, skipped = memos(rev, exempt=not args.no_exempt)
+    lapsed = lapsed_allowances(docs)
+    if lapsed:
+        raise SystemExit(f"[BLOCKED] ALLOW entries whose memo no longer says their phrase and number: {lapsed}; "
+                         f"drop them, or key them to the new sentence")
     rows = [r for path, text in docs for r in sweep_text(path, text, recs, values, others)]
     args.out.mkdir(parents=True, exist_ok=True)
     cols = ["file", "line", "quoted", "record", "current", "class", "suggested", "other", "label", "sentence"]
@@ -842,7 +867,7 @@ def main():
                 registry_equals_rev=(None if rev is None else on_disk == git("show", f"{rev}:{REGISTRY}").encode()),
                 rows_by_class=dict(sorted(counts.items())))
     (args.out / "memo_sweep_meta.json").write_text(json.dumps(meta, indent=1) + "\n")
-    flagged = sum(v for k, v in counts.items() if not k.endswith("_labelled"))
+    flagged = sum(v for k, v in counts.items() if not k.endswith(("_labelled", "_allowed")))
     print(f"swept {len(docs)} memos at {rev or 'the working tree'} ({len(skipped)} skipped): {len(rows)} quotes of "
           f"other values, {flagged} flagged; " + ", ".join(f"{k} {v}" for k, v in sorted(counts.items())))
 
