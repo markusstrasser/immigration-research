@@ -1,0 +1,13 @@
+item,value,source
+sl_db_employer_cash_2024,214.289000,BEA T7.24 line 5
+sl_db_imputed_2024,-41.578000,BEA T7.24 line 6 (negative: cash above normal cost)
+sl_db_employer_accrual_2024,172.711000,T7.24 lines 5+6 (in compensation)
+sl_db_amortization_share_of_cash,0.194028,-(line 6) / line 5
+fed_db_employer_cash_2024,250.510000,BEA T7.23 line 5
+fed_db_imputed_2024,-144.348000,BEA T7.23 line 8
+fed_db_amortization_share_of_cash,0.576217,-(line 8) / line 5
+t319_census_total_expenditures_fy2023,4696.963000,BEA T3.19 line 26
+t319_retirement_plan_coverage_fy2023,-84.003000,BEA T3.19 line 28
+t319_excess_employer_contributions_fy2023,33.586000,BEA T3.19 line 29 (removed from Census expenditure)
+t319_imputed_interest_fy2023,-144.033000,BEA T3.19 line 32
+fed_pension_normal_cost_fy2024_fr,142.200000,"FR Note 13 (Treasury-rate basis, employee share included)"

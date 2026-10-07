@@ -1,0 +1,1639 @@
+{
+ "case": "oct05 (main case v5, main_case_2026_10_05)",
+ "case_band_bn": [
+  390.2939582020253,
+  461.24312471796566
+ ],
+ "cash_set_band_bn": [
+  307.37637615801015,
+  383.4092521266758
+ ],
+ "lineage_population": 42752212.92438524,
+ "shares": {
+  "case": {
+   "other_federal_benefits": {
+    "key": "all_cash",
+    "national_bn": 86.425,
+    "personal": 0.04621833654363032,
+    "shared": 0.04997210490717477
+   },
+   "general_public_services": {
+    "key": "population",
+    "national_bn": 401.608,
+    "personal": 0.1261443476244542,
+    "shared": 0.1261443476244542
+   },
+   "defense": {
+    "key": "population",
+    "national_bn": 854.761,
+    "personal": 0.12614434762468363,
+    "shared": 0.12614434762468363
+   },
+   "public_order_safety": {
+    "key": "use",
+    "national_bn": 519.153,
+    "personal": 0.14326625322295256,
+    "shared": 0.14326625322295256
+   },
+   "economic_affairs_services": {
+    "key": "resources",
+    "national_bn": 451.935,
+    "personal": 0.08782706955832198,
+    "shared": 0.08782706955832198
+   },
+   "housing_community_services": {
+    "key": "population",
+    "national_bn": 14.537,
+    "personal": 0.12614434764683966,
+    "shared": 0.12614434764683966
+   },
+   "health_services": {
+    "key": "health_other",
+    "national_bn": 306.539,
+    "personal": 0.061449992621739384,
+    "shared": 0.061449992621739384
+   },
+   "recreation_culture": {
+    "key": "population",
+    "national_bn": 54.331,
+    "personal": 0.1261443476185196,
+    "shared": 0.1261443476185196
+   },
+   "education_services": {
+    "key": "education_mix",
+    "national_bn": 1221.159,
+    "personal": 0.17725598555453392,
+    "shared": 0.17006734073101548
+   },
+   "income_security_services": {
+    "key": "cash_assistance",
+    "national_bn": 167.818,
+    "personal": 0.17788093202832328,
+    "shared": 0.18938052451793777
+   }
+  },
+  "cash": {
+   "other_federal_benefits": {
+    "key": "all_cash",
+    "national_bn": 86.425,
+    "personal": 0.04621833654363032,
+    "shared": 0.04997210490717477
+   },
+   "general_public_services": {
+    "key": "population",
+    "national_bn": 401.608,
+    "personal": 0.1261443476244542,
+    "shared": 0.1261443476244542
+   },
+   "defense": {
+    "key": "population",
+    "national_bn": 854.761,
+    "personal": 0.12614434762468363,
+    "shared": 0.12614434762468363
+   },
+   "public_order_safety": {
+    "key": "use",
+    "national_bn": 519.153,
+    "personal": 0.14326625322295256,
+    "shared": 0.14326625322295256
+   },
+   "economic_affairs_services": {
+    "key": "resources",
+    "national_bn": 451.935,
+    "personal": 0.08782706955832198,
+    "shared": 0.08782706955832198
+   },
+   "housing_community_services": {
+    "key": "population",
+    "national_bn": 14.537,
+    "personal": 0.12614434764683966,
+    "shared": 0.12614434764683966
+   },
+   "health_services": {
+    "key": "health_other",
+    "national_bn": 306.539,
+    "personal": 0.061449992621739384,
+    "shared": 0.061449992621739384
+   },
+   "recreation_culture": {
+    "key": "population",
+    "national_bn": 54.331,
+    "personal": 0.1261443476185196,
+    "shared": 0.1261443476185196
+   },
+   "education_services": {
+    "key": "education_mix",
+    "national_bn": 1221.159,
+    "personal": 0.17725598555453392,
+    "shared": 0.17006734073101548
+   },
+   "income_security_services": {
+    "key": "cash_assistance",
+    "national_bn": 167.818,
+    "personal": 0.17788093202832328,
+    "shared": 0.18938052451793777
+   }
+  }
+ },
+ "method": "engine run: the v5 payloads plus one edit per service line, consumer.cjs at 64 specifications",
+ "capital_return_move_worst_bn": 0.0012025321734085992,
+ "arms": {
+  "central": {
+   "role": "arm",
+   "national_delta_bn": -6.256681710553191,
+   "case": {
+    "band_bn": [
+     390.8570578361495,
+     461.9797930275147
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     0.563099634124228,
+     0.7366683095490316
+    ],
+    "per_member_usd": [
+     9142.381904942524,
+     10805.985501723775
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.771128442
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 521.2025117960001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.136829594
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.747693443000001
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.35875489899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.483657029
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1226.396865159
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.26451691100002
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     307.9394757921344,
+     384.14592043622486
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     0.563099634124228,
+     0.7366683095490316
+    ],
+    "per_member_usd": [
+     7202.8897389891645,
+     8985.404360603603
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.771128442
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 521.2025117960001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.136829594
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.747693443000001
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.35875489899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.483657029
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1226.396865159
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.26451691100002
+     }
+    ]
+   }
+  },
+  "federal_only": {
+   "role": "arm",
+   "national_delta_bn": -15.997544783606559,
+   "case": {
+    "band_bn": [
+     389.4976208873367,
+     460.55109691451247
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     -0.7963373146885715,
+     -0.6920278034531862
+    ],
+    "per_member_usd": [
+     9110.583856237601,
+     10772.567439469802
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.028413
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 519.4954294
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 452.7154516
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.54897
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 307.3172856
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.3545182
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1221.210775
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 167.9502514
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     306.5800388433215,
+     382.71722432322264
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     -0.7963373146886283,
+     -0.6920278034531862
+    ],
+    "per_member_usd": [
+     7171.091690284241,
+     8951.98629834963
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.028413
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 519.4954294
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 452.7154516
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.54897
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 307.3172856
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.3545182
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1221.210775
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 167.9502514
+     }
+    ]
+   }
+  },
+  "military_high": {
+   "role": "arm",
+   "national_delta_bn": -8.859140726946633,
+   "case": {
+    "band_bn": [
+     390.72700748118535,
+     461.8595117008722
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     0.4330492791600591,
+     0.6163869829065334
+    ],
+    "per_member_usd": [
+     9139.33994884088,
+     10803.172049076184
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 64.025
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.771128442
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 521.2025117960001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.136829594
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.747693443000001
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.35875489899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.483657029
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1226.396865159
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.26451691100002
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     307.80942543717015,
+     384.02563910958236
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     0.43304927916000224,
+     0.6163869829065334
+    ],
+    "per_member_usd": [
+     7199.8477828875175,
+     8982.590907956012
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 64.025
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.771128442
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 521.2025117960001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.136829594
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.747693443000001
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.35875489899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.483657029
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1226.396865159
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.26451691100002
+     }
+    ]
+   }
+  },
+  "military_low": {
+   "role": "arm",
+   "national_delta_bn": 3.840859273053366,
+   "case": {
+    "band_bn": [
+     391.36165321350643,
+     462.44648457497624
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     1.0676950114811348,
+     1.2033598570105823
+    ],
+    "per_member_usd": [
+     9154.18469461915,
+     10816.901697998503
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 76.725
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.771128442
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 521.2025117960001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.136829594
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.747693443000001
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.35875489899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.483657029
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1226.396865159
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.26451691100002
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     308.4440711694913,
+     384.6126119836864
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     1.0676950114811348,
+     1.2033598570105823
+    ],
+    "per_member_usd": [
+     7214.6925286657915,
+     8996.32055687833
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 76.725
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.771128442
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 521.2025117960001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.136829594
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.747693443000001
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.35875489899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.483657029
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1226.396865159
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.26451691100002
+     }
+    ]
+   }
+  },
+  "mu_high": {
+   "role": "arm",
+   "national_delta_bn": -3.6412411481959617,
+   "case": {
+    "band_bn": [
+     391.2220694863152,
+     462.3634003620361
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     0.928111284289912,
+     1.120275644070432
+    ],
+    "per_member_usd": [
+     9150.919747201386,
+     10814.958308235564
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.970548974
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 521.6608667190001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.2499704
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.801051071000002
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.63839141899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.518331055000004
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1227.78934039
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.34889780900002
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     308.3044874423,
+     384.52952777074614
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     0.9281112842898551,
+     1.1202756440703183
+    ],
+    "per_member_usd": [
+     7211.427581248025,
+     8994.377167115392
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.970548974
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 521.6608667190001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.2499704
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.801051071000002
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.63839141899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.518331055000004
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1227.78934039
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.34889780900002
+     }
+    ]
+   }
+  },
+  "mu_low": {
+   "role": "arm",
+   "national_delta_bn": -8.872122272910413,
+   "case": {
+    "band_bn": [
+     390.49204627110237,
+     461.5961855522813
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     0.19808806907707321,
+     0.35306083431567004
+    ],
+    "per_member_usd": [
+     9133.844064674637,
+     10797.012691920647
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.57170791
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 520.7441568730001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.023688788
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.694335814
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.07911837899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.448983004000006
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1225.0043899270001
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.180136014
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     307.57446422708716,
+     383.7623129609915
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     0.19808806907701637,
+     0.35306083431567004
+    ],
+    "per_member_usd": [
+     7194.351898721274,
+     8976.431550800475
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.57170791
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 520.7441568730001
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.023688788
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.694335814
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 308.07911837899996
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.448983004000006
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1225.0043899270001
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.180136014
+     }
+    ]
+   }
+  },
+  "no_federal": {
+   "role": "arm",
+   "national_delta_bn": 9.740863073053369,
+   "case": {
+    "band_bn": [
+     391.6533951389753,
+     462.67182085057937
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     1.3594369369500328,
+     1.4286961326137089
+    ],
+    "per_member_usd": [
+     9161.008713904068,
+     10822.172449152407
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 86.425
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.350715442
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 854.761
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 520.860082396
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 452.356377994
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.735723443000001
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 307.580469299
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.460138829
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1226.3450901590002
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.132265511
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     308.7358130949602,
+     384.83794825928953
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     1.3594369369500328,
+     1.4286961326137089
+    ],
+    "per_member_usd": [
+     7221.516547950709,
+     9001.591308032235
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 86.425
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.350715442
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 854.761
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 520.860082396
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 452.356377994
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.735723443000001
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 307.580469299
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.460138829
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1226.3450901590002
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.132265511
+     }
+    ]
+   }
+  },
+  "paygo_removed_only": {
+   "role": "beside",
+   "national_delta_bn": -85.21662005979866,
+   "case": {
+    "band_bn": [
+     381.64839798736284,
+     452.1936914661058
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     -8.645560214662453,
+     -9.049433251859853
+    ],
+    "per_member_usd": [
+     8926.985806848752,
+     10577.082694313141
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 396.04913009
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 849.261586
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 509.101597016
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 446.413803572
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 13.488751153
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 297.91950227399997
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 53.581046761
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1194.9412645250002
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 165.66523953200002
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     298.73081594334764,
+     374.35981887481597
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     -8.64556021466251,
+     -9.049433251859853
+    ],
+    "per_member_usd": [
+     6987.493640895391,
+     8756.50155319297
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 396.04913009
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 849.261586
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 509.101597016
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 446.413803572
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 13.488751153
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 297.91950227399997
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 53.581046761
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1194.9412645250002
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 165.66523953200002
+     }
+    ]
+   }
+  },
+  "rho_high": {
+   "role": "arm",
+   "national_delta_bn": 8.706093992297882,
+   "case": {
+    "band_bn": [
+     392.9452683309699,
+     464.17438527011086
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     2.6513101289446013,
+     2.931260552145204
+    ],
+    "per_member_usd": [
+     9191.2264056591,
+     10857.318335569773
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 403.912001123
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 523.824732312
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.784101234
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 15.052949176
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 309.958538348
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.682025010000004
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1234.3631309030002
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.74725487
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     310.02768628695475,
+     386.340512678821
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     2.6513101289446013,
+     2.931260552145204
+    ],
+    "per_member_usd": [
+     7251.734239705741,
+     9036.7371944496
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 403.912001123
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 523.824732312
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 453.784101234
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 15.052949176
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 309.958538348
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.682025010000004
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1234.3631309030002
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 168.74725487
+     }
+    ]
+   }
+  },
+  "rho_one": {
+   "role": "arm",
+   "national_delta_bn": -15.997544783606559,
+   "case": {
+    "band_bn": [
+     389.4976208873367,
+     460.55109691451247
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     -0.7963373146885715,
+     -0.6920278034531862
+    ],
+    "per_member_usd": [
+     9110.583856237601,
+     10772.567439469802
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.028413
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 519.4954294
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 452.7154516
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.54897
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 307.3172856
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.3545182
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1221.210775
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 167.9502514
+     }
+    ]
+   },
+   "cash": {
+    "band_bn": [
+     306.5800388433215,
+     382.71722432322264
+    ],
+    "band_specs": [
+     48,
+     11
+    ],
+    "band_change_bn": [
+     -0.7963373146886283,
+     -0.6920278034531862
+    ],
+    "per_member_usd": [
+     7171.091690284241,
+     8951.98629834963
+    ],
+    "edits": [
+     {
+      "side": "spending",
+      "line": "other_federal_benefits",
+      "national_bn": 66.62745901599999
+     },
+     {
+      "side": "spending",
+      "line": "general_public_services",
+      "national_bn": 402.028413
+     },
+     {
+      "side": "spending",
+      "line": "defense",
+      "national_bn": 856.019902
+     },
+     {
+      "side": "spending",
+      "line": "public_order_safety",
+      "national_bn": 519.4954294
+     },
+     {
+      "side": "spending",
+      "line": "economic_affairs_services",
+      "national_bn": 452.7154516
+     },
+     {
+      "side": "spending",
+      "line": "housing_community_services",
+      "national_bn": 14.54897
+     },
+     {
+      "side": "spending",
+      "line": "health_services",
+      "national_bn": 307.3172856
+     },
+     {
+      "side": "spending",
+      "line": "recreation_culture",
+      "national_bn": 54.3545182
+     },
+     {
+      "side": "spending",
+      "line": "education_services",
+      "national_bn": 1221.210775
+     },
+     {
+      "side": "spending",
+      "line": "income_security_services",
+      "national_bn": 167.9502514
+     }
+    ]
+   }
+  }
+ },
+ "gates": [
+  {
+   "gate": "the consumer reproduces the case band (summary.json, 1e-9)",
+   "passed": true,
+   "detail": "390.2940 / 461.2431bn"
+  },
+  {
+   "gate": "the case ends are specifications 48 / 11",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the consumer reproduces the cash band (summary.json, 1e-9)",
+   "passed": true,
+   "detail": "307.3764 / 383.4093bn"
+  },
+  {
+   "gate": "the cash ends are specifications 48 / 11",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the per-member divisor is summary.json's lineage population",
+   "passed": true,
+   "detail": "42.752M"
+  },
+  {
+   "gate": "national.csv's engine lines add to inputs.json's per-arm totals (1e-6)",
+   "passed": true,
+   "detail": "10 arms, 10 lines"
+  },
+  {
+   "gate": "every share is in (0, 1)",
+   "passed": true,
+   "detail": "other_federal_benefits 0.0462; general_public_services 0.1261; defense 0.1261; public_order_safety 0.1433; economic_affairs_services 0.0878; housing_community_services 0.1261; health_services 0.0614; recreation_culture 0.1261; education_services 0.1773; income_security_services 0.1779"
+  },
+  {
+   "gate": "a zero edit on every line reproduces the case at all 64 specifications (exact)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "a zero edit on every line reproduces the cash at all 64 specifications (exact)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "every arm's engine change less its capital-return move is the sum of change x share x response (1e-9, 64 specifications, both sets)",
+   "passed": true,
+   "detail": "worst 1.8e-13bn"
+  },
+  {
+   "gate": "the capital return moves by less than $0.01bn in every arm (k12 part_rekeyed key)",
+   "passed": true,
+   "detail": "worst 1.20e-3bn"
+  }
+ ]
+}

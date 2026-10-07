@@ -1,0 +1,275 @@
+{
+ "arms": {
+  "central": {
+   "fed": true,
+   "mil": "central",
+   "mu": "central",
+   "rho": "pew_2019",
+   "role": "arm",
+   "sl": true,
+   "swap": true
+  },
+  "federal_only": {
+   "fed": true,
+   "mil": "central",
+   "mu": "central",
+   "rho": "pew_2019",
+   "role": "arm",
+   "sl": false,
+   "swap": true
+  },
+  "military_high": {
+   "fed": true,
+   "mil": "high",
+   "mu": "central",
+   "rho": "pew_2019",
+   "role": "arm",
+   "sl": true,
+   "swap": true
+  },
+  "military_low": {
+   "fed": true,
+   "mil": "low",
+   "mu": "central",
+   "rho": "pew_2019",
+   "role": "arm",
+   "sl": true,
+   "swap": true
+  },
+  "mu_high": {
+   "fed": true,
+   "mil": "central",
+   "mu": "high",
+   "rho": "pew_2019",
+   "role": "arm",
+   "sl": true,
+   "swap": true
+  },
+  "mu_low": {
+   "fed": true,
+   "mil": "central",
+   "mu": "low",
+   "rho": "pew_2019",
+   "role": "arm",
+   "sl": true,
+   "swap": true
+  },
+  "no_federal": {
+   "fed": false,
+   "mil": "central",
+   "mu": "central",
+   "rho": "pew_2019",
+   "role": "arm",
+   "sl": true,
+   "swap": true
+  },
+  "paygo_removed_only": {
+   "fed": true,
+   "mil": "central",
+   "mu": "central",
+   "rho": "pew_2019",
+   "role": "beside",
+   "sl": true,
+   "swap": false
+  },
+  "rho_high": {
+   "fed": true,
+   "mil": "central",
+   "mu": "central",
+   "rho": "high",
+   "role": "arm",
+   "sl": true,
+   "swap": true
+  },
+  "rho_one": {
+   "fed": true,
+   "mil": "central",
+   "mu": "central",
+   "rho": "one",
+   "role": "arm",
+   "sl": true,
+   "swap": true
+  }
+ },
+ "bea": {
+  "fed_actual_employer_2024": 250.51,
+  "fed_imputed_employer_2024": -144.348,
+  "group_health_2019": 801.727,
+  "group_health_2024": 1002.92,
+  "sl_actual_employer_2024": 214.289,
+  "sl_imputed_employer_2024": -41.578,
+  "sl_retirement_supplement_2024": 192.994,
+  "t319_fy2023": {
+   "26": {
+    "bn": 4696.963,
+    "label": "Census total expenditures"
+   },
+   "28": {
+    "bn": -84.003,
+    "label": "State and local employee retirement plan transactions\\1,2\\"
+   },
+   "29": {
+    "bn": 33.586,
+    "label": "Contributions from general government employers to own defined-benefit pension plans"
+   },
+   "31": {
+    "bn": 26.444,
+    "label": "Administrative expenses"
+   },
+   "32": {
+    "bn": -144.033,
+    "label": "Imputed interest for unfunded actuarial liability"
+   },
+   "47": {
+    "bn": 3714.206,
+    "label": "Equals: State and local government current expenditures, NIPAs"
+   }
+  }
+ },
+ "crr": {
+  "cities_bn": 259.0,
+  "counties_bn": 141.0,
+  "school_districts_bn": 138.0,
+  "total_bn": 862.0
+ },
+ "fr_fy2024_bn": {
+  "opeb_interest": {
+   "civilian": 12.2,
+   "military": 33.3,
+   "total": 45.5
+  },
+  "opeb_normal": {
+   "civilian": 20.4,
+   "military": 37.5,
+   "total": 57.9
+  },
+  "opeb_paid": {
+   "civilian": 16.6,
+   "military": 24.9,
+   "total": 41.5
+  },
+  "pension_normal": {
+   "civilian": 73.6,
+   "military": 68.6,
+   "total": 142.2
+  },
+  "pension_paid": {
+   "civilian": 110.8,
+   "military": 77.8,
+   "total": 188.6
+  }
+ },
+ "group_health_growth_2019_2024": 1.250949512739374,
+ "merhcf_fy2024_bn": {
+  "purchased_fy2024_bn": 9.7,
+  "total_fy2024_bn": 12.2
+ },
+ "military_pre65_benefits_paid_bn": 12.7,
+ "military_retiree_purchased_care_bn": {
+  "central": 19.797540983606556,
+  "high": 22.4,
+  "low": 9.7
+ },
+ "mu": {
+  "central": 1.8129287084094106,
+  "high": 2.299703570664975,
+  "low": 1.3261538461538462
+ },
+ "national_by_arm_bn": {
+  "central": {
+   "delta_bn": -6.256681710553191,
+   "enterprises_delta_bn": 0.3908207440221012,
+   "normal_bn": 78.95993834924546,
+   "paygo_bn": -85.21662005979866
+  },
+  "federal_only": {
+   "delta_bn": -15.997544783606559,
+   "enterprises_delta_bn": 0.0,
+   "normal_bn": 20.399979599999998,
+   "paygo_bn": -36.39752438360656
+  },
+  "military_high": {
+   "delta_bn": -8.859140726946633,
+   "enterprises_delta_bn": 0.3908207440221012,
+   "normal_bn": 78.95993834924546,
+   "paygo_bn": -87.8190790761921
+  },
+  "military_low": {
+   "delta_bn": 3.840859273053366,
+   "enterprises_delta_bn": 0.3908207440221012,
+   "normal_bn": 78.95993834924546,
+   "paygo_bn": -75.11907907619211
+  },
+  "mu_high": {
+   "delta_bn": -3.6412411481959617,
+   "enterprises_delta_bn": 0.495756869174472,
+   "normal_bn": 94.68340045872084,
+   "paygo_bn": -98.3246416069168
+  },
+  "mu_low": {
+   "delta_bn": -8.872122272910413,
+   "enterprises_delta_bn": 0.2858846188697307,
+   "normal_bn": 63.2364762397701,
+   "paygo_bn": -72.1085985126805
+  },
+  "no_federal": {
+   "delta_bn": 9.740863073053369,
+   "enterprises_delta_bn": 0.3908207440221012,
+   "normal_bn": 58.55995874924547,
+   "paygo_bn": -48.819095676192106
+  },
+  "paygo_removed_only": {
+   "delta_bn": -85.21662005979866,
+   "enterprises_delta_bn": -1.9587089102439135,
+   "normal_bn": 0.0,
+   "paygo_bn": -85.21662005979866
+  },
+  "rho_high": {
+   "delta_bn": 8.706093992297882,
+   "enterprises_delta_bn": 0.9911539063884865,
+   "normal_bn": 93.92271405209654,
+   "paygo_bn": -85.21662005979866
+  },
+  "rho_one": {
+   "delta_bn": -15.997544783606559,
+   "enterprises_delta_bn": 0.0,
+   "normal_bn": 69.2190752761921,
+   "paygo_bn": -85.21662005979866
+  }
+ },
+ "pew_states_fy2019_bn": {
+  "assets_2019": 69.162281,
+  "benchmark": 52.776335,
+  "employee": 2.126188,
+  "employer": 22.390032,
+  "gap_2016": 650.0,
+  "gap_2019": 680.298484,
+  "interest": 28.246994,
+  "liabilities_2019": 749.460765,
+  "net_amort": -30.386295,
+  "nol": 686.318805,
+  "normal": 26.85751
+ },
+ "reason": {
+  "population": 332039123.0,
+  "total_bn": 1233.332651931
+ },
+ "rho": {
+  "high": 1.5060240963855422,
+  "one": 1.0,
+  "pew_2019": 1.199529772891794
+ },
+ "sl_paygo_states_2024_bn": 28.00879962061899,
+ "sources": {
+  "infra/immigration-fiscal/pension_legacy_2026_09_30/_cache/Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+  "infra/immigration-fiscal/pension_legacy_2026_09_30/_cache/Section7All_xls.xlsx": "ce107c8ce92393613c0abae38156afcfaef8ab571eedf0302dc09ca44738b9ef",
+  "infra/immigration-fiscal/pension_legacy_2026_09_30/_cache/fr2025_note13.pdf": "deed540cf26fc8d8d77a6468019b1781c02ebca70a0f267318c3ca899de3cd55",
+  "infra/immigration-fiscal/pension_legacy_2026_09_30/derived/oct05/function_mix.csv": "9d82f74bba870681dee07c81eb1cd6560809daf807c15b5cc35a52b43afc98e3",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/_cache/elsec24_sumtables.xlsx": "848133174f299957653bbc7070633cf3ff23e4242695ccb628893fb8f6571154",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/derived/account_pupils_by_state.csv": "5f7d85c5e6a13c0069cf382bcc07b08d5ca3a987d8c14b2e79f0bdb9eeafa355",
+  "sources/immigration-fiscal/data/external/stage3/crr/slp48/slp_48.pdf": "9d2e61bbf3f4f869d4f15d151ec87212699bea5b8531002a7c7aa3fcf868db61",
+  "sources/immigration-fiscal/data/external/stage3/dod/merhcf_afr_fy2024/2024_AFR_MERHCF.pdf": "89da584ad87ca890e6b236bc3fa60d2a026d4aee0801392bb7c771f53f008843",
+  "sources/immigration-fiscal/data/external/stage3/pew/opeb_2023/dostateshaveenoughsavedforretireehealthcarebenefits.pdf": "9b7c47c77a355f1188aa167f34e98344bfee232299e36b8384cd1561b113ac6a",
+  "sources/immigration-fiscal/data/external/stage3/reason/opeb_2021/survey.html": "5dc6897aa1f63091eb44f62bc314eedfa44260c6e9b792f8bb579403800ec75d"
+ }
+}
