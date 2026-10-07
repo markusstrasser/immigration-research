@@ -767,12 +767,24 @@ def per_correction_check():
     if lineage:
         byl = debt_csv("corrections_federal_split_2024.csv", CASE["debt"], CASE.get("debt_dir"))
         cols = ["effect_bn", "federal_bn"]
-        rebuilt = byl[byl.component.str.match(own)].assign(component=lambda x: x.component.str.split(":").str[0])
-        rebuilt = rebuilt.groupby(["end", "convention", "component"])[cols].sum()
-        held = comp[comp.component.str.match(own)].groupby(["end", "convention", "component"])[cols].sum()
-        gap = float(rebuilt.sub(held, fill_value=0).abs().max().max())
-        gate("debt_by_line_file_rebuilds_lineage_components", gap < 1e-5, max_abs_diff_bn=gap, rows=len(held),
-             **({"item_components": items} if items else {}))
+        keys = ["end", "convention", "component"]
+        by_line = byl[byl.component.str.match(own)].assign(component=lambda x: x.component.str.split(":").str[0])
+        by_comp = comp[comp.component.str.match(own)]
+        rebuilt = by_line.groupby(keys)[cols].sum()
+        held = by_comp.groupby(keys)[cols].sum()
+        diff = rebuilt.sub(held, fill_value=0).abs().max(axis=1)
+        gap = float(diff.max())
+        # Both files print six decimals, so each row read is off by at most 5e-7: a component's two sums agree to its
+        # rows summed (on both sides) x 5e-7, the rounding bound. A fixed 1e-5 sat under that bound for v5_lineage's 76
+        # rows (3.8e-5) on October 7.
+        bound = by_line.groupby(keys).size().add(by_comp.groupby(keys).size(), fill_value=0).reindex(diff.index) * 5e-7
+        ok, tight = bool((diff <= bound).all()), (diff / bound).idxmax()
+        closest = f"{'/'.join(tight)}: {diff[tight]:.1e} against {bound[tight]:.1e}bn"
+        gate("debt_by_line_file_rebuilds_lineage_components", ok, max_abs_diff_bn=gap, rows=len(held),
+             **({"item_components": items} if items else {}),
+             **({} if ok else {"rounding_bound": f"rows summed x 5e-7 per component; worst {closest}"}))
+        print(f"  ✓ the by-line file rebuilds the case's components: max |diff| {gap:.1e}bn, each within its rounding "
+              f"bound, rows summed x 5e-7 (closest {closest})")
         on_lines = {"lane_constants": byl.component.isin(["v5_lineage:constants", "v5_union_response:row8"]),
                     "education_row6_and_school_price": byl.component.str.match(own) & (byl.side == "spending")
                     & byl.line.isin(["school_reprice", "college_rekey"])}

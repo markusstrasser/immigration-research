@@ -831,3 +831,4 @@ The wage rows move by the lineage's smaller production delta (λ 1.0191 for high
 - 15:29:47–15:29:48: `specs.cjs --case oct07` in place, 25 PASS.
 - 15:37:34–15:38:07: `winners_losers.py --case oct07` in place on the pins: exit 0, 543 gates.
 - 15:39:17–15:41:31: rerun_lane, IDENTICAL 107/107, exit 0. 15:41:42–15:41:43: pytest 18 passed.
+- 16:12:35–16:28:16: `debt_by_line_file_rebuilds_lineage_components` now takes the six-decimal rounding bound as its tolerance, per component, in place of the fixed 1e-5 above: the rows summed in both files × 5e-7. On oct07 the largest gap is 8.0e-6bn (v5_lineage, 76 rows, bound 3.8e-5), and the closest to its bound is v6_user_fees low/high, 2.0e-6 against 3.0e-6bn. The run prints the bound. Moving one by-line row by 1e-4bn fails the gate on oct05 and on oct07. Outputs unchanged: rerun_lane over the nine commands on the final script, 16:26:14–16:28:16, IDENTICAL 107/107, exit 0.
