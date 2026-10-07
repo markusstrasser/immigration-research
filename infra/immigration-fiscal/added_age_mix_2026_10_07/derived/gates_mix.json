@@ -1,0 +1,89 @@
+{
+ "gates": [
+  {
+   "gate": "the identified mix is white_lines.json's g3plus structure on its 17 bands",
+   "passed": true,
+   "detail": "17 bands"
+  },
+  {
+   "gate": "arm b is the lineage lane's central and its split adds to the added persons (1e-6)",
+   "passed": true,
+   "detail": "g3_rate 1,944,891.7, later 1,094,827.9"
+  },
+  {
+   "gate": "flat g3_rate: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "flat later: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cross_section_2007_2026 g3_rate: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cross_section_2007_2026 later: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cross_section_2022_2026 g3_rate: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cross_section_2022_2026 later: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cross_section_1994_2026 g3_rate: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cross_section_1994_2026 later: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "adults_35plus_at_25_34 g3_rate: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "adults_35plus_at_25_34 later: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "g4_share_by_age g3_rate: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "g4_share_by_age later: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cohort_at_birth g3_rate: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cohort_at_birth later: the mix is non-negative and sums to 1 (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "flat is the identified mix exactly",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

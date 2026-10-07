@@ -1,0 +1,39 @@
+{
+ "gates": [
+  {
+   "gate": "rekey_sept29.setup(): every positive control of the white lane passes",
+   "passed": true,
+   "detail": "57 passes"
+  },
+  {
+   "gate": "the identified mix recomputed here is white_lines.json's g3plus structure, exactly",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "g3x accrual: the rough G3+ amounts are the same at both ends",
+   "passed": true,
+   "detail": "0.0e+00"
+  },
+  {
+   "gate": "g3x cash: the rough G3+ amounts are the same at both ends",
+   "passed": true,
+   "detail": "0.0e+00"
+  },
+  {
+   "gate": "every G3+ factor is finite and positive (zero only in a unit band: children pay no payroll tax)",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "gate": "at the identified mix every G3+ factor is exactly 1",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "W at the identified mix is white_lines.json's g3plus_ages per person, every line (1e-12 relative)",
+   "passed": true,
+   "detail": "0.0e+00"
+  }
+ ]
+}

@@ -1,0 +1,189 @@
+{
+ "gates": [
+  {
+   "gate": "audit row 8's constant is the September 24 package's 2.0",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the adopted package's payload is main_case_2026_09_29/derived/corrections.json, byte for byte as JSON",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "general government: r_values.py's formula at s_v4 gives meta.responses (low, high; 1e-14)",
+   "passed": true,
+   "detail": "0.6000461560720316 / 0.8503957662020014"
+  },
+  {
+   "gate": "audit row 8's factor at s_v4 is meta.responses.row8_factor (1e-14)",
+   "passed": true,
+   "detail": "0.9491629658844111"
+  },
+  {
+   "gate": "every long-run subfunction has build.py's rule, and the rules at the lane's s give its stored responses (1e-14)",
+   "passed": true,
+   "detail": "19 subfunctions"
+  },
+  {
+   "gate": "the line blends of the stored subfunction responses are meta.responses' and the response lane's line responses (2e-16)",
+   "passed": true,
+   "detail": "0.0e+0 / -1.1e-16; 0.0e+0 / 0.0e+0"
+  },
+  {
+   "gate": "meta.responses' subfunctions are the response lane's (exact)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the property formula on counties.csv gives housing.json's owner and renter responses and the payload's (5e-6: six-decimal inputs)",
+   "passed": true,
+   "detail": "0.7629028 / 0.7084426"
+  },
+  {
+   "gate": "age_mix.json is on arm b's split and C3 (exact)",
+   "passed": true,
+   "detail": "1944891.7 + 1094827.9, C3 0.5567"
+  },
+  {
+   "gate": "band_lines.json holds every reading's two mixes, the identified mix (age_mix.json's) and 17 unit bands",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the set's and the cash set's G3+ models differ only in the pension rule's three lines",
+   "passed": true,
+   "detail": "federal_income_tax, medicare, social_security"
+  },
+  {
+   "gate": "the payroll receipt cells are the same in every receipt scenario (the pension profile reads cbo_collective)",
+   "passed": true,
+   "detail": "10 distinct line x allocation amounts"
+  },
+  {
+   "gate": "set: the package's payload is main_case_2026_09_29/derived/corrections.json",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "set: 64 specifications, every one at the case's responses",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "set: generation_corrections_sept29.json splits main_case_2026_09_29/derived/corrections.json",
+   "passed": true,
+   "detail": "main_case_2026_09_29/derived/corrections.json"
+  },
+  {
+   "gate": "set: the G3+ model has the union's cells and production grid",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "set: the generation models' lane-constants cells add to the union's (1e-12)",
+   "passed": true,
+   "detail": "2.2e-16"
+  },
+  {
+   "gate": "set: white_lines.json's central age structure is the identified G3+'s",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "set: every line of the model has a white amount (white_lines.json g3plus_ages accrual)",
+   "passed": true,
+   "detail": "79 lines"
+  },
+  {
+   "gate": "set: every line of the model has a white amount (white_lines.json own accrual)",
+   "passed": true,
+   "detail": "79 lines"
+  },
+  {
+   "gate": "set: the identified mix's G3+ member (both routes) and W are the lineage lane's G1 and W1, cell for cell (exact)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "set: at the identified mix the route gives v5's band, its change from v4 and its G3+ and white parts (1e-6)",
+   "passed": true,
+   "detail": "390.293958 / 461.243125 vs 390.293958 / 461.243125; max |diff| 5.7e-14"
+  },
+  {
+   "gate": "set: at the identified mix the ends are v5's 48 / 11",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "set: the engine-key route is linear in the mix: the unit bands give every mix's G3+ member ($1e-6 a person)",
+   "passed": true,
+   "detail": "max |diff| $1.0e-11"
+  },
+  {
+   "gate": "cash: the package's payload is main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cash: 64 specifications, every one at the case's responses",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cash: generation_corrections_sept29_cash.json splits main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
+   "passed": true,
+   "detail": "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json"
+  },
+  {
+   "gate": "cash: the G3+ model has the union's cells and production grid",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cash: the generation models' lane-constants cells add to the union's (1e-12)",
+   "passed": true,
+   "detail": "2.2e-16"
+  },
+  {
+   "gate": "cash: white_lines.json's central age structure is the identified G3+'s",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cash: every line of the model has a white amount (white_lines.json g3plus_ages cash)",
+   "passed": true,
+   "detail": "79 lines"
+  },
+  {
+   "gate": "cash: every line of the model has a white amount (white_lines.json own cash)",
+   "passed": true,
+   "detail": "79 lines"
+  },
+  {
+   "gate": "cash: the identified mix's G3+ member (both routes) and W are the lineage lane's G1 and W1, cell for cell (exact)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cash: at the identified mix the route gives v5's band, its change from v4 and its G3+ and white parts (1e-6)",
+   "passed": true,
+   "detail": "307.376376 / 383.409252 vs 307.376376 / 383.409252; max |diff| 1.1e-13"
+  },
+  {
+   "gate": "cash: at the identified mix the ends are v5's 48 / 11",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cash: the engine-key route is linear in the mix: the unit bands give every mix's G3+ member ($1e-6 a person)",
+   "passed": true,
+   "detail": "max |diff| $1.2e-11"
+  },
+  {
+   "gate": "no G3+ cell with an amount has an all-zero age profile",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

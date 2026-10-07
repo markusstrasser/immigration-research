@@ -1,0 +1,30 @@
+{
+ "gates": [
+  {
+   "gate": "no parent pointer leads to a missing person (classify() would stop)",
+   "passed": true,
+   "detail": "0 missing"
+  },
+  {
+   "gate": "1994: the SQL's G3anc and identifier flags are classify()'s, person for person",
+   "passed": true,
+   "detail": "1,244 G3anc of 23,406 rows; 0 differ"
+  },
+  {
+   "gate": "2010: the SQL's G3anc and identifier flags are classify()'s, person for person",
+   "passed": true,
+   "detail": "1,855 G3anc of 41,572 rows; 0 differ"
+  },
+  {
+   "gate": "2025: the SQL's G3anc and identifier flags are classify()'s, person for person",
+   "passed": true,
+   "detail": "1,771 G3anc of 30,123 rows; 0 differ"
+  },
+  {
+   "gate": "adults 18+: the share not Mexican is the pooled lane's monthly_1994_2026_nodedup cores_one value (1e-9)",
+   "passed": true,
+   "detail": "0.1539969999 vs 0.1539969999"
+  }
+ ],
+ "records": 151625
+}

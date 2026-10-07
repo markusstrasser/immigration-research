@@ -1,0 +1,687 @@
+{
+ "meta": {
+  "source": "added_age_mix_2026_10_07/summarize.py",
+  "central_reading": "cross_section_2007_2026",
+  "route": "keys",
+  "ends": [
+   48,
+   11
+  ],
+  "draws": 2000,
+  "seed": 20261007
+ },
+ "sets": {
+  "set": {
+   "v5_band_bn": [
+    390.2939582020253,
+    461.24312471796566
+   ],
+   "readings": {
+    "cross_section_2007_2026": {
+     "band_bn": [
+      391.64056485362283,
+      464.1000958060358
+     ],
+     "change_bn": [
+      1.346606651597483,
+      2.8569710880701678
+     ],
+     "se_bn": [
+      0.2646154545021779,
+      0.3666498162499326
+     ],
+     "p05_bn": [
+      0.8907841551755562,
+      2.2623707630941428
+     ],
+     "p95_bn": [
+      1.7753144380805626,
+      3.438734190504156
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": 0.1225648807714699,
+       "later_bn": 1.2240417708260019
+      },
+      {
+       "g3_rate_bn": 0.33332296383769017,
+       "later_bn": 2.5236481242325426
+      }
+     ],
+     "added_per_person_usd": [
+      6752.0219754685995,
+      9729.389869339295
+     ],
+     "per_member_usd": [
+      9160.708605804983,
+      10855.580660277818
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      2.36414454406156,
+      2.6886362982211267
+     ]
+    },
+    "cross_section_2022_2026": {
+     "band_bn": [
+      390.7122508026875,
+      462.251819022939
+     ],
+     "change_bn": [
+      0.41829260066214147,
+      1.0086943049733463
+     ],
+     "se_bn": [
+      0.5852585437294057,
+      0.8111733228626559
+     ],
+     "p05_bn": [
+      -0.5318463025305581,
+      -0.2873412722190808
+     ],
+     "p95_bn": [
+      1.3988943306719537,
+      2.324174944704087
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": -0.036190020660858246,
+       "later_bn": 0.4544826213230123
+      },
+      {
+       "g3_rate_bn": 0.07474644764030056,
+       "later_bn": 0.9339478573330589
+      }
+     ],
+     "added_per_person_usd": [
+      6446.627342023943,
+      9121.348000200942
+     ],
+     "per_member_usd": [
+      9138.994781246303,
+      10812.348353534637
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      0.7510405946366063,
+      0.9141862375715846
+     ]
+    },
+    "cross_section_1994_2026": {
+     "band_bn": [
+      392.56924683064716,
+      465.4327570874192
+     ],
+     "change_bn": [
+      2.2752886286218086,
+      4.189632369453534
+     ],
+     "se_bn": [
+      0.21352405666484178,
+      0.29833698876433296
+     ],
+     "p05_bn": [
+      1.9304468156093462,
+      3.6964217467999565
+     ],
+     "p95_bn": [
+      2.6292245425457526,
+      4.670348149481994
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": 0.7762966706388978,
+       "later_bn": 1.4989919579829458
+      },
+      {
+       "g3_rate_bn": 1.1751796336146825,
+       "later_bn": 3.0144527358389177
+      }
+     ],
+     "added_per_person_usd": [
+      7057.537648396569,
+      10167.805729924286
+     ],
+     "per_member_usd": [
+      9182.431036376396,
+      10886.75241000082
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      3.6842901850100134,
+      4.0175345145600545
+     ]
+    },
+    "adults_35plus_at_25_34": {
+     "band_bn": [
+      390.68048152926553,
+      462.35913419925237
+     ],
+     "change_bn": [
+      0.3865233272401838,
+      1.11600948128671
+     ],
+     "se_bn": [
+      0.24365106695061597,
+      0.3302795277123735
+     ],
+     "p05_bn": [
+      -0.006915790585837557,
+      0.5813989742061314
+     ],
+     "p95_bn": [
+      0.7830599274926681,
+      1.65304371990681
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": -0.5660792841596844,
+       "later_bn": 0.952602611399817
+      },
+      {
+       "g3_rate_bn": -0.6808824882443562,
+       "later_bn": 1.7968919695310883
+      }
+     ],
+     "added_per_person_usd": [
+      6436.175959109158,
+      9156.652301477268
+     ],
+     "per_member_usd": [
+      9138.251678813733,
+      10814.858520119538
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      0.8127753352126206,
+      0.9644070796861115
+     ]
+    },
+    "g4_share_by_age": {
+     "band_bn": [
+      391.34732078240324,
+      463.7119398111272
+     ],
+     "change_bn": [
+      1.0533625803778932,
+      2.4688150931615382
+     ],
+     "se_bn": [
+      0.2739841763762032,
+      0.38260923562885124
+     ],
+     "p05_bn": [
+      0.5963713519113159,
+      1.8298072090333988
+     ],
+     "p95_bn": [
+      1.4836803144782558,
+      3.082877028622368
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": 0.1225648807714699,
+       "later_bn": 0.930797699606362
+      },
+      {
+       "g3_rate_bn": 0.33332296383769017,
+       "later_bn": 2.1354921293239006
+      }
+     ],
+     "added_per_person_usd": [
+      6655.551211560962,
+      9601.695197837738
+     ],
+     "per_member_usd": [
+      9153.849450426564,
+      10846.501457860972
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      1.8386004709869894,
+      2.2028830746791073
+     ]
+    },
+    "cohort_at_birth": {
+     "band_bn": [
+      386.17140213099105,
+      454.805607902971
+     ],
+     "change_bn": [
+      -4.122556071034296,
+      -6.437516814994638
+     ],
+     "se_bn": [
+      0.2573334416994106,
+      0.36586484108743605
+     ],
+     "p05_bn": [
+      -4.537474555847105,
+      -7.0270265008497015
+     ],
+     "p95_bn": [
+      -3.705165553175397,
+      -5.841016452647819
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": -3.1548670395660423,
+       "later_bn": -0.9676890314683048
+      },
+      {
+       "g3_rate_bn": -4.285024064275461,
+       "later_bn": -2.1524927507191913
+      }
+     ],
+     "added_per_person_usd": [
+      4952.789330821664,
+      6671.710495260788
+     ],
+     "per_member_usd": [
+      9032.781596919967,
+      10638.176992320237
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      -6.4032062230320435,
+      -6.586912308264914
+     ]
+    }
+   },
+   "v5_added_per_person_usd": [
+    6309.018398883277,
+    8789.510054610586
+   ]
+  },
+  "cash": {
+   "v5_band_bn": [
+    307.37637615801015,
+    383.4092521266758
+   ],
+   "readings": {
+    "cross_section_2007_2026": {
+     "band_bn": [
+      307.11109046051695,
+      385.3245581418371
+     ],
+     "change_bn": [
+      -0.26528569749319786,
+      1.9153060151613772
+     ],
+     "se_bn": [
+      0.4199267466542899,
+      0.5535779972885316
+     ],
+     "p05_bn": [
+      -0.9769663030340627,
+      0.9859396098042137
+     ],
+     "p95_bn": [
+      0.4324798308909304,
+      2.8012683650230197
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": -0.7215085773585659,
+       "later_bn": 0.4562228798654116
+      },
+      {
+       "g3_rate_bn": -0.5835931851329188,
+       "later_bn": 2.498899200294319
+      }
+     ],
+     "added_per_person_usd": [
+      4180.74842708285,
+      7837.090045798268
+     ],
+     "per_member_usd": [
+      7183.513307339122,
+      9012.973406156798
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      1.4929627806176882,
+      1.7011988792804118
+     ]
+    },
+    "cross_section_2022_2026": {
+     "band_bn": [
+      307.1168234815634,
+      383.9359671845682
+     ],
+     "change_bn": [
+      -0.25955267644673086,
+      0.5267150578924884
+     ],
+     "se_bn": [
+      0.9479407529117874,
+      1.2398229690036924
+     ],
+     "p05_bn": [
+      -1.7814019044625147,
+      -1.4542689664744797
+     ],
+     "p95_bn": [
+      1.3193882918825355,
+      2.5296942103284055
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": -0.1118797808263366,
+       "later_bn": -0.1476728956204254
+      },
+      {
+       "g3_rate_bn": -0.06121564291732064,
+       "later_bn": 0.5879307008097617
+      }
+     ],
+     "added_per_person_usd": [
+      4182.634463235435,
+      7380.274568350289
+     ],
+     "per_member_usd": [
+      7183.647406153061,
+      8980.493427641419
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      0.24529305045990668,
+      0.40401220660044146
+     ]
+    },
+    "cross_section_1994_2026": {
+     "band_bn": [
+      308.2144060723716,
+      387.1350400730435
+     ],
+     "change_bn": [
+      0.8380299143614707,
+      3.7257879463678023
+     ],
+     "se_bn": [
+      0.34365497892321367,
+      0.4510843358197281
+     ],
+     "p05_bn": [
+      0.28566047047955384,
+      3.0111023282249914
+     ],
+     "p95_bn": [
+      1.4286373271887458,
+      4.48146423860052
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": 0.13746282445582647,
+       "later_bn": 0.7005670899056062
+      },
+      {
+       "g3_rate_bn": 0.5976171355668403,
+       "later_bn": 3.12817081080092
+      }
+     ],
+     "added_per_person_usd": [
+      4543.714673814357,
+      8432.69825099764
+     ],
+     "per_member_usd": [
+      7209.320523770376,
+      9055.321668559227
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      3.3916955447709825,
+      3.5116028065261276
+     ]
+    },
+    "adults_35plus_at_25_34": {
+     "band_bn": [
+      307.4519892485807,
+      384.54985412661637
+     ],
+     "change_bn": [
+      0.07561309057052767,
+      1.1406019999406567
+     ],
+     "se_bn": [
+      0.3891191957759437,
+      0.5029222154594091
+     ],
+     "p05_bn": [
+      -0.5635762537701065,
+      0.33100309975951964
+     ],
+     "p95_bn": [
+      0.721122446891102,
+      1.9602670519014789
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": -0.6472010047428277,
+       "later_bn": 0.7228140953133739
+      },
+      {
+       "g3_rate_bn": -0.9706782218434891,
+       "later_bn": 2.1112802217840843
+      }
+     ],
+     "added_per_person_usd": [
+      4292.896530752672,
+      7582.229690600527
+     ],
+     "per_member_usd": [
+      7191.487135235859,
+      8994.852612817025
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      0.9316490810967366,
+      0.9854103065867434
+     ]
+    },
+    "g4_share_by_age": {
+     "band_bn": [
+      306.742401393559,
+      384.67527941671545
+     ],
+     "change_bn": [
+      -0.6339747644511249,
+      1.2660272900397445
+     ],
+     "se_bn": [
+      0.4392025679389875,
+      0.5828544510469559
+     ],
+     "p05_bn": [
+      -1.3516334613416592,
+      0.3197051145376258
+     ],
+     "p95_bn": [
+      0.0803936483263308,
+      2.195893830802782
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": -0.7215085773585659,
+       "later_bn": 0.08753381290746423
+      },
+      {
+       "g3_rate_bn": -0.5835931851329188,
+       "later_bn": 1.8496204751726748
+      }
+     ],
+     "added_per_person_usd": [
+      4059.4579410181177,
+      7623.491815692684
+     ],
+     "per_member_usd": [
+      7174.889448087437,
+      8997.786385866877
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      0.6320422293940169,
+      0.9471683751283422
+     ]
+    },
+    "cohort_at_birth": {
+     "band_bn": [
+      304.5413953248968,
+      376.7802622324775
+     ],
+     "change_bn": [
+      -2.8349808331133204,
+      -6.628989894198185
+     ],
+     "se_bn": [
+      0.5456821712206996,
+      0.6785462472358739
+     ],
+     "p05_bn": [
+      -3.7087282413329525,
+      -7.701413607306622
+     ],
+     "p95_bn": [
+      -1.8991471285426886,
+      -5.474206682386422
+     ],
+     "change_by_part_bn": [
+      {
+       "g3_rate_bn": -2.5508367048410365,
+       "later_bn": -0.28414412827228763
+      },
+      {
+       "g3_rate_bn": -4.4361472165232625,
+       "later_bn": -2.192842677674886
+      }
+     ],
+     "added_per_person_usd": [
+      3335.375998197918,
+      5026.207118137749
+     ],
+     "per_member_usd": [
+      7123.406590988203,
+      8813.117180597861
+     ],
+     "own_ends": [
+      48,
+      11
+     ],
+     "rough_route_change_bn": [
+      -6.892109310231831,
+      -6.7318726846602885
+     ]
+    }
+   },
+   "v5_added_per_person_usd": [
+    4268.021509142111,
+    7206.997053189608
+   ]
+  }
+ },
+ "gates": [
+  {
+   "gate": "set: the flat reading's change is zero",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "set cross_section_2007_2026: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "1.4e-04"
+  },
+  {
+   "gate": "set cross_section_2022_2026: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "2.9e-04"
+  },
+  {
+   "gate": "set cross_section_1994_2026: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "1.1e-04"
+  },
+  {
+   "gate": "set adults_35plus_at_25_34: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "4.1e-06"
+  },
+  {
+   "gate": "set g4_share_by_age: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "1.4e-04"
+  },
+  {
+   "gate": "set cohort_at_birth: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "7.3e-04"
+  },
+  {
+   "gate": "cash: the flat reading's change is zero",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "cash cross_section_2007_2026: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "1.4e-04"
+  },
+  {
+   "gate": "cash cross_section_2022_2026: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "2.9e-04"
+  },
+  {
+   "gate": "cash cross_section_1994_2026: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "1.1e-04"
+  },
+  {
+   "gate": "cash adults_35plus_at_25_34: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "4.1e-06"
+  },
+  {
+   "gate": "cash g4_share_by_age: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "1.4e-04"
+  },
+  {
+   "gate": "cash cohort_at_birth: the draws' formula at the point mixes is price.cjs's change ($1m: W's reweighting is linear only to a few cents a person across mixes)",
+   "passed": true,
+   "detail": "7.3e-04"
+  }
+ ]
+}

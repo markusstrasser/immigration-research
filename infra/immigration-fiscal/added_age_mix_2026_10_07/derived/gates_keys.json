@@ -1,0 +1,29 @@
+{
+ "gates": [
+  {
+   "gate": "the G3+ band shares on the account's frame are white_lines.json's g3plus structure (1e-6: the two weights)",
+   "passed": true,
+   "detail": "max |diff| 1.4e-08"
+  },
+  {
+   "gate": "90 keys: the band sums are generation_keys.csv's G3plus totals (1e-9 relative)",
+   "passed": true,
+   "detail": "4.4e-16"
+  },
+  {
+   "gate": "the justice parts give keys.py's G3+ use share (1e-12)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "the federal-gap arm (personal) banded sums to keys.py's G3+ cell share of the arm (1e-9 relative)",
+   "passed": true,
+   "detail": "43.515050bn"
+  },
+  {
+   "gate": "the federal-gap arm (shared) banded sums to keys.py's G3+ cell share of the arm (1e-9 relative)",
+   "passed": true,
+   "detail": "59.695885bn"
+  }
+ ]
+}
