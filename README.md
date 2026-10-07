@@ -19,15 +19,15 @@ analysis directories; ignored files require `rg --files --no-ignore`.
 
 **Current result (income year 2024).** The adopted main case puts the conditional net cost of the
 Mexican-origin population (a 42.75M-person lineage, all generations, counting the 3.04M descendants who
-no longer report Mexican origin) to other US residents at **$390–461bn a
-year**, counting the pension promises members earn as they work, or $307–383bn counting benefits
-when paid ([lane](infra/immigration-fiscal/main_case_2026_10_05/RESULT.md),
-[decision](decisions/2026-10-05-main-case-v5.md)). Other residents' social costs and benefits outside the public
-budget bring it to $490–571bn (on the September 29 case, $463–536bn). Only 2024 is measured;
+no longer report Mexican origin) to other US residents at **$389–461bn a
+year**, counting the pension promises members earn as they work, or $307–385bn counting benefits
+when paid ([lane](infra/immigration-fiscal/main_case_2026_10_07/RESULT.md),
+[decision](decisions/2026-10-07-main-case-v6.md)). Other residents' social costs and benefits outside the public
+budget bring it to $489–571bn (on the October 5 case, $490–571bn). Only 2024 is measured;
 earlier years are a model back-cast. The [objections FAQ](research/immigration-objections-faq-2026-09-21.md)
 routes the standard objections to their executed tables, and the
 [evidence map](infra/immigration-fiscal/overview_2026_09_28/) (`build.py` writes the reader page)
-summarizes the confidence ladder; its figures are still the September 27 case's.
+summarizes the confidence ladder; its figures are the October 5 case's.
 
 **Earlier errors.** A September 5, 2026 audit found material fiscal-unit, source-version and inference
 errors in earlier analyses; the [repair report](research/immigration-material-repair-report-2026-09-05.md)

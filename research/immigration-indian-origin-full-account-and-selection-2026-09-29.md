@@ -5,12 +5,12 @@
 [indian_cohort_selection_2026_09_29](../infra/immigration-fiscal/indian_cohort_selection_2026_09_29/RESULT.md),
 design [percentile_mapping_design_2026_09_29](../infra/immigration-fiscal/percentile_mapping_design_2026_09_29/DESIGN.md).
 
-**Verdict:** On main case v5 and the same social rows the Mexican-origin union carries, Indian-origin
-residents benefit other residents by about $9,300–10,800 per member a year ($57–66bn), and by
-$7,100–8,500 at the third-plus white age distribution. The flow the household surveys see is not
+**Verdict:** On main case v6 and the same social rows the Mexican-origin union carries, Indian-origin
+residents benefit other residents by about $9,400–10,900 per member a year ($57–66bn), and by
+$7,300–8,600 at the third-plus white age distribution. The flow the household surveys see is not
 becoming less selected: each arrival cohort since 1995 sits at the 75th–78th percentile of US white
-education at arrival. "Indian" is several populations: south-Indian and Hindi-speaking professionals
-sit near the 80th percentile, Punjabi speakers at the 47th. The unmeasured risk is the post-2021
+education at arrival. "Indian" is several populations: Telugu-, Tamil-, Kannada- and Hindi-speaking
+professionals sit near the 80th percentile, Punjabi speakers at the 47th. The unmeasured risk is the post-2021
 irregular inflow, which the surveys under-cover. [CALCULATION: both lanes; FRAMING-SENSITIVE: the
 reference is third-plus non-Hispanic whites]
 
@@ -26,31 +26,36 @@ lost selection; split the group by home region.
 
 ## 2. The full account
 
-Per member a year, low / high end of main case v5; positive costs others, negative benefits them. Parts add to
-totals under controlled rounding [CALCULATION: `indian_full_account_2026_09_29/derived/oct05/combined.csv`,
-594b67a4; the September 29 table in `derived/combined.csv`]:
+Per member a year, low / high end of main case v6; positive costs others, negative benefits them. Parts add to
+totals: fiscal and total print their file values and the social rows take the rounding, at most $1
+[CALCULATION: `indian_full_account_2026_09_29/derived/oct07/combined.csv`, 00992d4b; the October 5 table in
+`derived/oct05/combined.csv`, the September 29 table in `derived/combined.csv`]:
 
 | Group | Fiscal | Social rows | Total |
 |---|---:|---:|---:|
-| Indian-origin, actual ages (6.08M, CPS) | −12,024 / −10,654 | +1,242 / +1,329 | **−10,782 / −9,325** |
-| Indian-origin, white ages | −9,906 / −8,615 | +1,453 / +1,511 | **−8,453 / −7,104** |
-| India-born, actual ages | −12,197 / −10,770 | +887 / +990 | −11,310 / −9,780 |
-| India-born, white ages | −7,510 / −6,230 | +1,255 / +1,328 | −6,255 / −4,902 |
-| Mexican-origin union, actual ages, the 42.75M lineage | +9,129 / +10,789 | +2,452 / +2,560 | +11,581 / +13,349 |
-| Third-plus whites, a 42.75M slice | +596 / +1,850 | +2,238 / +2,278 | +2,834 / +4,128 |
+| Indian-origin, actual ages (6.08M, CPS) | −12,144 / −10,777 | +1,243 / +1,330 | **−10,901 / −9,447** |
+| Indian-origin, white ages | −10,095 / −8,806 | +1,453 / +1,510 | **−8,642 / −7,296** |
+| India-born, actual ages | −12,347 / −10,922 | +888 / +990 | −11,459 / −9,932 |
+| India-born, white ages | −7,687 / −6,410 | +1,255 / +1,328 | −6,432 / −5,082 |
+| Mexican-origin union, actual ages, the 42.75M lineage | +9,101 / +10,794 | +2,449 / +2,555 | +11,550 / +13,349 |
+| Third-plus whites, a 42.75M slice | +353 / +1,607 | +2,238 / +2,277 | +2,591 / +3,884 |
 
-- The union carries the 3.04M added descendants at the case lane's amounts and their own social rows ($8.56 /
-  8.76bn, from the v5 pairing); the Indian-origin groups keep their CPS counts, so only v5's responses move them,
-  by about $19 per member [ASSUMPTION]. On September 29 the union was +$11,777 / +13,485 and whites +$2,864 /
-  +4,159 on 39.71M, and the Indian-origin group −$10,763 / −9,305.
-- Fiscal standard errors for the Indian rows are about $1,000–1,150 (160 CPS replicate weights).
+- The union carries the 3.04M added descendants at the case lane's amounts and their own social rows ($8.43 /
+  8.52bn, from the v6 pairing); the Indian-origin groups keep their CPS counts, so the case moves them only through
+  its responses and its items' national lines, by about $55–60 per member from October 5 [ASSUMPTION]. Every group
+  takes the IPEDS keys for Pell and public colleges, the Indian groups at NH Asian shares [DEGRADED: IPEDS has no
+  Indian split], and item 4's hospital-fee term stays beside (−$81 per Indian-origin member). On October 5, on the
+  same keys, the union was +$11,581 / +13,349, whites +$2,717 / +4,008 and the Indian-origin group −$10,843 /
+  −9,392; on September 29 the union was +$11,777 / +13,485 and whites +$2,864 / +4,159 on 39.71M, and the
+  Indian-origin group −$10,763 / −9,305.
+- Fiscal standard errors for the Indian rows are about $1,000–1,200 (160 CPS replicate weights).
 - Ageing to white ages removes about a sixth of the group's lead over whites; the India-born alone
-  lose about half of their benefit (−$11.3k → −$6.3k at the low end), because their old age is still ahead of them.
-- The gate: the engine union is the case, $390.2940 / 461.2431bn, and the union rows reproduce the white
-  and Black lanes' v5 re-keys (5e-5).
-- Pooling ASEC 2022–26 for the second generation (941 adults, not 209) moves the total by $136 per
+  lose about half of their benefit (−$11.5k → −$6.4k at the low end), because their old age is still ahead of them.
+- The gate: the engine union is the case, $389.0826 / 461.4797bn, and the union rows reproduce the white
+  and Black lanes' v6 re-keys (5e-5).
+- Pooling ASEC 2022–26 for the second generation (941 adults, not 209) moves the total by $135 per
   member. Self-employed and wage-earning India-born adults do not differ measurably
-  (−$18.4k/−16.7k, SE 4.9k, against −$19.8k/−18.1k). Motel, grocery and gas-station owners are 27
+  (−$18.6k/−16.9k, SE 4.7–4.9k, against −$20.0k/−18.3k). Motel, grocery and gas-station owners are 27
   of 350 sampled self-employed India-born adults pooled: too few to estimate.
 
 What rests on proxies: no Indian offending data exists in the repo's sources, so institutionalization
@@ -156,3 +161,11 @@ points and the projected G2 about 1 point [CALCULATION: §5 of the cohort lane].
 
 - 2026-10-05, later (main case v5, [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281; 594b67a4): the verdict and §2's table run main case v5. Indian-origin residents benefit others by $9,325–10,782 per member; the union, on the 42.75M lineage with the added descendants' social rows, costs $11,581–13,349, so the gap to it is $22,400–22,700 per member (September 29: $22,500–22,800). The lead over third-plus whites, about $13,500, does not move. Concept affected: the full-account comparison (ladder 276).
 - 2026-10-06 (correction to the September 29 table): its white-ages row carried the first run's values, social rows +1,467 / +1,525 and total −8,419 / −7,069 (about $1,470–1,530 and $7,100–8,400). Commit f14d3d76 changed the trade row for subgroups, and `derived/combined.csv` has carried the new values since: social rows +1,453 / +1,510, total −8,433 / −7,084 (about $1,450–1,510). The verdict's rounded $7,100–8,400 was unaffected. Concept affected: none; a stale table row.
+
+- 2026-10-07 (main case v6, [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295; 00992d4b): the verdict
+  and §2's table run main case v6, with every group on the IPEDS keys for Pell and public higher education (the
+  rough keys had charged Pell by Social Security receipt) and item 4's hospital-fee term beside. Indian-origin
+  residents benefit others by $9,447–10,901 per member; the union, with the added descendants' social rows, costs
+  $11,550–13,349, so the gap to it is $22,450–22,800 per member, and to third-plus whites $13,330–13,490. Concept
+  affected: the Indian-origin full account follows the main case and the comparators' education keys.
+- 2026-10-07, later (correction): the verdict and the INDEX row placed every south-Indian language group near the top of the education ranking; the table puts Malayalam speakers lower, so both now name Telugu, Tamil and Kannada. Concept affected: the description of Indian subgroups, not the account.

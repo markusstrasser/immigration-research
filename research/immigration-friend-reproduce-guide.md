@@ -4,7 +4,7 @@
 
 **Reader inputs (2026-09-19):** [Acquisition, joins and normalization](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md) supplies official-download, cleared-mirror and browser/manual routes, plus the current lane recipes. The core warehouse build does not reproduce every September analysis, and no AWS mirror URL is registered in that guide yet.
 
-**Updated:** 2026-10-05. The current result heads the [topic index](immigration-INDEX.md) and the root README: the adopted main case puts the net cost of the Mexican-origin population to other US residents at $390–461bn a year (income year 2024), counting the pension promises members earn as they work and, as whole people, the descendants who no longer report Mexican origin (a 42.75M-person lineage), or $307–383bn counting benefits when paid. On the September 29 case ($371–435bn), before those descendants were added, other residents' social costs and benefits brought it to $463–536bn. The [objections FAQ](immigration-objections-faq-2026-09-21.md) routes the standard objections to their executed tables. The September 5 [repair report](immigration-material-repair-report-2026-09-05.md) records the errors found in earlier analyses; the household-donor fiscal schema and its figures are invalid. The claim tables in §5 cover the warehouse layer; the account's figures live in the memos of §4.
+**Updated:** 2026-10-07. The current result heads the [topic index](immigration-INDEX.md) and the root README: the adopted main case puts the net cost of the Mexican-origin population to other US residents at $389–461bn a year (income year 2024), counting the pension promises members earn as they work and, as whole people, the descendants who no longer report Mexican origin (a 42.75M-person lineage), or $307–385bn counting benefits when paid. Other residents' social costs and benefits bring it to $489–571bn ([real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md)). The [objections FAQ](immigration-objections-faq-2026-09-21.md) routes the standard objections to their executed tables. The September 5 [repair report](immigration-material-repair-report-2026-09-05.md) records the errors found in earlier analyses; the household-donor fiscal schema and its figures are invalid. The claim tables in §5 cover the warehouse layer; the account's figures live in the memos of §4.
 
 ---
 
@@ -208,6 +208,7 @@ Lists after download: `$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANU
 ## Revisions
 
 - 2026-10-05 ([decision](../decisions/2026-10-05-main-case-v5.md), ladder 281): the current result is the October 5 main case, $390–461bn, which counts the 3.04M descendants who no longer report Mexican origin as whole people; the fiscal-plus-social total quoted is the September 29 case's, the latest computed. Concept affected: the headline main case.
+- 2026-10-07 ([decision](../decisions/2026-10-07-main-case-v6.md), ladder 295): the current result is the October 7 main case, $389–461bn ($307–385bn counting benefits when paid), and the fiscal-plus-social total is its own, $489–571bn (b0a2ccac); the October 5 note had kept the September 29 case's. Concept affected: the headline main case and the fiscal-plus-social total.
 
 <!-- knowledge-index
 generated: 2026-09-29T08:07:31Z

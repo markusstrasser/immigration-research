@@ -3,18 +3,40 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-10-05): $390.3–461.2bn/year.** It is the September 29 case plus the 3.04M descendants
-of Mexican immigrants who no longer report Mexican origin, counted as whole people and priced under the same rules:
-+$18.9 / +$26.4bn, a 42.75M-person lineage at $9,129–10,789 per member. The 1.09M lost after the third generation
-cost what an identified third-plus member costs; the 1.94M lost at the third-generation rate, with their
-descendants, cost (1 − C3) of that plus C3 times a third-plus non-Hispanic white at the same ages, with C3 = 0.557
-(SE 0.246). Counted by share of Mexican-immigrant ancestry instead of whole, the lineage costs $275.4–375.8bn,
-beside the headline ([main-case lane](../infra/immigration-fiscal/main_case_2026_10_05/RESULT.md),
-[decision](../decisions/2026-10-05-main-case-v5.md), ladder 281).
+**Current main case (2026-10-07): $389.1–461.5bn/year**, a 42.75M-person lineage at $9,101–10,794 per member. It
+is the October 5 case with four items, each replacing an assumption with a measurement or putting a line on the rule
+its neighbours already follow ([main-case lane](../infra/immigration-fiscal/main_case_2026_10_07/RESULT.md),
+[decision](../decisions/2026-10-07-main-case-v6.md), ladder 295):
+- the pension accrual on the 2026 Trustees Reports and current law's separate OASI and DI funds: −$2.8 / −$2.7bn
+  (ladder 286); the combined fund is an arm [FRAMING-SENSITIVE];
+- retiree health on accrual, as the account already treats pensions: +$0.6 / +$0.7bn (ladder 288);
+- the 3.04M added descendants at their measured ages, younger than the identified third-plus (51.2% under 20,
+  against 46.7%): +$1.3 / +$2.9bn (ladder 292);
+- user fees and the education keys: −$0.3 / −$0.7bn (ladder 294), priced on the identified 39.71M only; at their
+  per-member terms the added people would add −$0.02 / 0.06bn [ASSUMPTION];
+- the items interact by +$0.0 / +$0.1bn.
 
-Counting benefits when paid, the cash set is $307.4–383.4bn. The low side is $362.3–434.6bn, the outer range
-$312.4–515.4bn, and the sign break-even −3.4% to 5.5%: the low end is a net cost at every service response. Capital
-at 7% ($483.2–543.7bn), enterprises out ($373.5–438.4bn) and land [GAP] sit beside the account.
+The 3.04M descendants of Mexican immigrants who no longer report Mexican origin, whom the survey cannot see, are
+counted as whole people and priced under the same rules: +$20.0 / +$29.2bn. The 1.09M lost after the third
+generation cost what an identified third-plus member of the same ages costs, $9,603 / 14,030 a year; the 1.94M lost
+at the third-generation rate, with their descendants, cost (1 − C3) of that plus C3 times a third-plus non-Hispanic
+white at the same ages, $5,054 / 7,257, with C3 = 0.557 (SE 0.246). Counted by share of Mexican-immigrant ancestry
+instead of whole, the lineage costs $274.9–374.8bn, beside the headline.
+
+Counting benefits when paid, the cash set is $307.4–385.4bn ($7,190–9,014 per member); it has no pension item. The
+low side is $361.3–434.9bn, the outer range $311.9–515.6bn, and the sign break-even −3.7% to 5.4%: the low end is a
+net cost at every service response. Capital at 7% ($480.5–542.9bn), enterprises out ($372.3–438.6bn) and land [GAP]
+sit beside the account.
+[CALCULATION: `main_case_2026_10_07/derived/summary.json` (`main_case`, `cash_set`, `change_at_fixed_specifications`);
+`derived/main_case_bands.csv` (`adopted` and its range, `school_within_district`, `capital_return_at_7pct`,
+`enterprises_out_option_a`, `ancestry_share_*`); `derived/sign_reversal.csv` (`oct07`); the added people's parts in
+`derived/lineage_addition.json`. Printed items use controlled rounding: the high end's interactions, +0.043, print as
++0.1 so the parts add to $461.5bn.]
+
+The October 5 case, $390.3–461.2bn ($307.4–383.4bn counting benefits when paid), is the September 29 case plus the
+3.04M added descendants, priced at the identified third-plus members' ages: +$18.9 / +$26.4bn, $9,129–10,789 per
+member ([main-case lane](../infra/immigration-fiscal/main_case_2026_10_05/RESULT.md),
+[decision](../decisions/2026-10-05-main-case-v5.md), ladder 281).
 
 The September 29 case, $371.4–434.8bn ($294.7–361.8bn counting benefits when paid), is the September 27 case with
 nine measured changes, run as one set:
@@ -34,13 +56,15 @@ BEA's depreciation-only lines leave out (+$22.2 / +$38.3bn); and every governmen
 operating loss and the return on their capital (+$17.2 / +$23.0bn)
 ([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239).
 
-With CBO-style first-year budget responses the main case gives $289.1–335.3bn, and $206.2–257.5bn counting
-benefits when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md); on the
-September 29 case $277.3–318.3bn and $200.6–245.3bn; the September 26 run gave $200.9–245.7bn); with every
-service proportional, the current case gives $419.3–475.6bn. The main cases since September 20 are listed, each
-with its decision, in the [topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and
-benefits are in the [real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below
-is the account as published on September 20, kept as the calculation record.
+With CBO-style first-year budget responses the current case gives $288.9–336.5bn, and $207.3–260.3bn counting
+benefits when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md); on the October 5
+case $289.1–335.3bn and $206.2–257.5bn, on the September 29 case $277.3–318.3bn and $200.6–245.3bn; the September 26
+run gave $200.9–245.7bn); with every
+service proportional, the current case gives $418.1–475.8bn (`main_case_bands.csv`, `proportional_reference`;
+October 5: $419.3–475.6bn). The main cases since September 20 are listed, each with its decision, in the
+[topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
+[real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below is the account as
+published on September 20, kept as the calculation record.
 
 **Result as published September 20:** The source-centered model gives **$165–197bn/year of conditional net
 cost to other US residents** when CBO-informed school and delayed-service budget
@@ -364,6 +388,18 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-10-07, later (break conditions lane, 203a9527): the first-year budget response is v6's, $288.9–336.5bn, and
+$207.3–260.3bn counting benefits when paid; the October 5 case's $289.1–335.3bn and $206.2–257.5bn stay beside
+it. Concept affected: the first-year scenario.
+
+2026-10-07, main case v6 (ladder 295): the header gives the October 7 case, $389.1–461.5bn: the October 5 case with
+the pension accrual on the 2026 Trustees and separate funds, retiree health on accrual, the added people at their
+measured ages and user fees with the education keys. The cash set ($307.4–385.4bn), low side, range, break-even,
+beside rows, every-service-proportional figure and ancestry-share count ($274.9–374.8bn) move with it. The October 5
+case stays described under it, and the first-year scenario is labelled as that case's until its rerun lands. Concept
+affected: the complete account's main case, its pension and retiree-health accrual and its education keys
+([decision](../decisions/2026-10-07-main-case-v6.md)).
 
 2026-10-05, later (break conditions lane, 16f2a063): the first-year budget response is v5's, $289.1–335.3bn,
 and $206.2–257.5bn counting benefits when paid; the September 29 case's $277.3–318.3bn and $200.6–245.3bn stay

@@ -20,6 +20,9 @@ policy. [CALCULATION: [current case](../infra/immigration-fiscal/main_case_long_
 [lane](../infra/immigration-fiscal/main_case_2026_09_29/RESULT.md)); this audit's checks were run on the
 September 27 case.] [2026-10-05: the main case is now the October 5 case, $390.3–461.2bn, which counts the descendants who no
 longer report Mexican origin (ladder 281, [lane](../infra/immigration-fiscal/main_case_2026_10_05/RESULT.md)).]
+[2026-10-07: the main case is now the October 7 case, $389.1–461.5bn: the October 5 case with the pension accrual on the
+2026 Trustees and separate funds, retiree health on accrual, the added descendants at their measured ages, and user fees
+with the education keys (ladder 295, [lane](../infra/immigration-fiscal/main_case_2026_10_07/RESULT.md)).]
 
 ## 1. The useful cross-references we already have
 
@@ -350,3 +353,6 @@ commands. No new causal coefficient or national total was adopted. [EXECUTION]
   qualified. The Medicaid-paid births share is a hit only by the tolerance rule; it is significantly low. NAS's
   receipts gap has a plausible explanation, not a reconciliation. The IRS tax-key correction rests mostly on 15
   top-income records. The NAE note calling earnings over income impossible was wrong.
+- **2026-10-07, main case v6** ([decision](../decisions/2026-10-07-main-case-v6.md), ladder 295): the header notes
+  the October 7 case, $389.1–461.5bn. This audit's checks stay on the September 27 case, and none of v6's four items
+  is among the components it checks. Concept affected: the current object the audit points to.
