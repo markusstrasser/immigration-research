@@ -37,6 +37,13 @@ identified third-plus generation's population-share path instead of the group's.
 third-plus by year times the attrition rate) is not measured, so its 2024 ratio to the identified third-plus is held
 [ASSUMPTION]; the third-plus by year is the CPS ASEC count in inputs/cps_g3plus_path.csv (cps_g3plus_path.py). Under
 the flat rule the lineage's parts keep their 2024 value per identified third-plus person.
+
+oct07 (main case v6: October 5 plus an item registry) adds the `*_oct07_*` concepts and writes derived/oct07/. Every
+October 5 part is carried back as --case oct05 carries it; each item's change is added with its own parts
+(case_components.cjs --case oct07, the v6_<item>_<path>_<line> parts and the capital return's change by path), each on
+its line's national series (v6_series, the September 29 rules) times the group's population-share path where the part is
+the union's (path union) and the third-plus path where it is the added people's (path lineage). An item's capital
+offset component (of_component) follows its component's stock.
 """
 from __future__ import annotations
 
@@ -71,12 +78,14 @@ class Case(NamedTuple):
     rekeyed_receipts: str = "adopted"   # the group_receipts_bn key that differs from base_receipts by the re-key alone
     out: str | None = None      # the case's own directory under derived/ (None: derived/)
     lineage: bool = False       # its parts include the lineage's (v5_), carried at the third-plus path
+    items: bool = False         # its parts include the items' (v6_), each on its path's population path
 
 
 # Main cases after September 24, in adoption order. Receipts are matched by tag within concept names, so
 # no tag may contain another ("_sept26_" would also match "_sept26_schools_"). The default run is DEFAULT_CASE's.
 SEPT29_LANE = "main_case_2026_09_29"
 OCT05_LANE = "main_case_2026_10_05"
+OCT07_LANE = "main_case_2026_10_07"
 LATER_CASES = {"sept26": Case("main_case_2026_09_26", "_sept26_", "adopted_2026_09_24", "_corrected_", "adopted_2026_09_24"),
                "sept26_schools": Case("main_case_schools_full_2026_09_26", "_schools_full_", "adopted_2026_09_26",
                                       "_sept26_", "adopted_2026_09_26"),
@@ -89,7 +98,11 @@ LATER_CASES = {"sept26": Case("main_case_2026_09_26", "_sept26_", "adopted_2026_
                # September 29's parts and the lineage's on the same schools-case base; case_components.cjs gates that the
                # case less the lineage is September 29's band (the case lane's sept29_case row).
                "oct05": Case(OCT05_LANE, "_oct05_", "schools_case", "_schools_full_", "adopted_2026_09_26_schools",
-                             "case_components_oct05.json", "adopted_2026_09_27", "oct05", True)}
+                             "case_components_oct05.json", "adopted_2026_09_27", "oct05", True),
+               # October 5's parts and the items' on the same schools-case base; case_components.cjs gates that the case
+               # less the items is October 5's band (the case lane's oct05_case row).
+               "oct07": Case(OCT07_LANE, "_oct07_", "schools_case", "_schools_full_", "adopted_2026_09_26_schools",
+                             "case_components_oct07.json", "adopted_2026_09_27", "oct07", True, True)}
 DEFAULT_CASE = "sept27"
 # October 5: the identified third-plus generation by year (CPS ASEC, cps_g3plus_path.py), the lineage's path.
 G3PLUS_PATH = HERE / "inputs/cps_g3plus_path.csv"
@@ -273,7 +286,8 @@ def capital_paths(real: pd.Series, components: list[dict]) -> dict[str, pd.Serie
         raise ValueError("[BLOCKED] the enterprise components do not add to FA Table 7.1 line 79")
     paths = {}
     for c in components:
-        w = {ENTERPRISE_FA_LINE: 1.0} if c["part"] == "enterprise" else weights[c["id"]]
+        # October 7: an item's offset component (of_component) takes its component's stock.
+        w = {ENTERPRISE_FA_LINE: 1.0} if c["part"] == "enterprise" else weights[c.get("of_component", c["id"])]
         value = sum(wt * stock[n] for n, wt in w.items())
         paths[c["id"]] = (value.reindex(YEARS) * real / value[2024])
     return paths
@@ -291,7 +305,8 @@ def v4_series(data: dict, book: pd.ExcelFile, gdp_book: pd.ExcelFile, real: pd.S
     lineage's enterprise surplus part is the added people's share of the line after public housing's deficit left it,
     so it follows the line's own cells, NIPA 3.1 line 19 less 3.8 line 13 (gate: the line's national total in the case).
     lane_constants (rule per_person), whose parts the back-cast does not see, keeps its 2024 value per person: its series
-    is the resident population (people, 2024 = 1), so with the third-plus share path it follows the third-plus count."""
+    is the resident population (people, 2024 = 1), so with the third-plus share path it follows the third-plus count.
+    With prefix "v6" the October 7 items' parts (v6_parts) go through the October 5 rules."""
     parts = {k: v for concept in data["concepts"].values() for k, v in concept.get(f"{prefix}_parts", {}).items()}
     cells = lambda refs: sum(line(gdp_book if ref.startswith("T1") else book, ref) for ref in refs.split(";")) / 1e3  # noqa: E731
     out = {}
@@ -314,7 +329,7 @@ def v4_series(data: dict, book: pd.ExcelFile, gdp_book: pd.ExcelFile, real: pd.S
             source = p["parent"] or lid
             nominal = cells(categories.loc[source, "source_cells"])
             want = categories.loc[source, "national_bn"]
-        elif lid == "enterprise_surplus" and prefix == "v5":
+        elif lid == "enterprise_surplus" and prefix in ("v5", "v6"):
             nominal = cells(RECEIPT_CELLS[lid]) - cells(V4_HOUSING[0])
         elif lid == "enterprise_surplus":
             nominal = cells(V4_HOUSING[0])
@@ -350,7 +365,11 @@ def carried_parts(case: str, book: pd.ExcelFile, real: pd.Series, share: pd.Seri
     A case with the lineage (October 5; lineage holds the identified third-plus generation's share path `share`, its
     count path `flat` and the resident population `people`, each 2024 = 1) carries the lineage's parts (v5_) and the
     capital return's change (v5_capital_bn, inside the capital parts) on the third-plus share path instead. Its entry's
-    lineage_2024 holds each part's lineage value in 2024, which the flat rule keeps per third-plus person."""
+    lineage_2024 holds each part's lineage value in 2024, which the flat rule keeps per third-plus person.
+
+    A case with items (October 7) carries each item part (v6_) on its path, the group's share path for the union's and
+    the third-plus share path for the added people's (v6_parts path), and the items' capital change (v6_capital_bn) the
+    same way; lineage_2024 takes the added people's."""
     data = case_parts(case)
     c = LATER_CASES[case]
     categories = pd.read_csv(FISCAL / "full_account_spending_2026_09_20/derived/categories.csv") \
@@ -370,26 +389,38 @@ def carried_parts(case: str, book: pd.ExcelFile, real: pd.Series, share: pd.Seri
         if lineage is None:
             raise ValueError(f"[BLOCKED] {case} carries the lineage: it needs the third-plus path ({G3PLUS_PATH.name})")
         index.update(v4_series(data, book, gdp_book, real, categories, receipt_national, "v5", lineage["people"]))
+    if c.items:
+        index.update(v4_series(data, book, gdp_book, real, categories, receipt_national, "v6", lineage["people"]))
     components = next(iter(data["concepts"].values()))["components"]
     stock = capital_paths(real, components)
     out = {}
     for concept, v in data["concepts"].items():
+        paths6 = {part: p["path"] for part, p in v.get("v6_parts", {}).items()}
+        if c.items and (set(paths6.values()) - {"union", "lineage"} or not paths6):
+            raise ValueError(f"[BLOCKED] {concept}: an item part's path is not the union's or the added people's")
         for end, e in v["ends"].items():
             missing = [part for part in e["additions_bn"] if part not in index]
             if missing:
                 raise ValueError(f"[BLOCKED] {concept}: no national series for {', '.join(missing)}")
-            ours = [part for part in e["additions_bn"] if c.lineage and part.startswith("v5_")]
+            if c.items and any(part.startswith("v6_") and part not in paths6 for part in e["additions_bn"]):
+                raise ValueError(f"[BLOCKED] {concept}: an item part has no path")
+            ours = [part for part in e["additions_bn"] if c.lineage and (part.startswith("v5_") or paths6.get(part) == "lineage")]
             parts = {part: e["additions_bn"][part] * index[part] * (lineage["share"] if part in ours else share)
                      for part in e["additions_bn"]}
             own = {part: e["additions_bn"][part] for part in ours}
             for group in ("core", "block", "enterprise"):
                 parts[f"capital_{group}"] = sum(e["capital_bn"][k["id"]] * stock[k["id"]] for k in components
                                                 if k["part"] == group) * share
+                ids = [k["id"] for k in components if k["part"] == group]
                 if c.lineage:
-                    ids = [k["id"] for k in components if k["part"] == group]
                     parts[f"capital_{group}"] = parts[f"capital_{group}"] + sum(
                         e["v5_capital_bn"][i] * stock[i] for i in ids) * lineage["share"]
                     own[f"capital_{group}"] = sum(e["v5_capital_bn"][i] for i in ids)
+                if c.items:
+                    k6 = e["v6_capital_bn"]
+                    parts[f"capital_{group}"] = parts[f"capital_{group}"] + sum(
+                        k6["union"][i] * stock[i] for i in ids) * share + sum(k6["lineage"][i] * stock[i] for i in ids) * lineage["share"]
+                    own[f"capital_{group}"] = own[f"capital_{group}"] + sum(k6["lineage"][i] for i in ids)
             out[f"{concept}{c.tag}{end}"] = dict(base=e["base_bn"], parts=parts,
                                                  **({"lineage_2024": own} if c.lineage else {}))
     return out
@@ -417,13 +448,14 @@ def main() -> None:
                         default=ROOT / "sources/immigration-fiscal/data/external/bea_nipa")
     parser.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24"), default=DEFAULT_CASE,
                         help="a case after September 24 (default: sept27, long-run road and park responses, rental "
-                             "assistance, the enterprises and the return on public capital; oct05: the main case "
+                             "assistance, the enterprises and the return on public capital; oct07: main case v6, "
+                             "October 5 plus the items; oct05: the main case "
                              "adopted 2026-10-05, v5, with the lineage; sept29: the main case adopted 2026-09-29, "
                              "candidate v4; sept26_schools: schools at full average cost; sept26: CBO's one-year school "
                              "response, 0.63-0.66) or sept24: the files as of 2026-09-24")
     parser.add_argument("--out-dir", type=Path, default=None,
                         help="default: derived/, or the case's own directory under it (sept29: derived/sept29/; oct05: "
-                             "derived/oct05/)")
+                             "derived/oct05/; oct07: derived/oct07/)")
     args = parser.parse_args()
     if args.out_dir is None:
         own = LATER_CASES[args.case].out if args.case in LATER_CASES else None

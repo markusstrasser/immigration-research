@@ -3,7 +3,8 @@ files committed for those cases byte for byte, and the default run (the main cas
 the derived/ files, its case_components.cjs input included. The main case adopted on 2026-09-29 (`--case sept29`)
 writes derived/sept29/ and derived/case_components_sept29.json beside them; its run rebuilds both. So does the main
 case adopted on 2026-10-05 (`--case oct05`, derived/oct05/), whose third-plus path input (inputs/cps_g3plus_path.csv)
-rebuilds from the pooled CPS extract when that ignored file is on disk.
+rebuilds from the pooled CPS extract when that ignored file is on disk, and main case v6 (`--case oct07`,
+derived/oct07/ and derived/case_components_oct07.json).
 
 The files of each earlier case are the ones committed at its commit below, the last commit whose derived/
 held that run. debt_legacy.py reads each case's concept columns, so they must keep their values.
@@ -48,7 +49,7 @@ def test_old_case_rebuilds_committed_files(tmp_path, case, commit):
     assert not any((tmp_path / n).exists() for n in PARTS)
 
 
-@pytest.mark.parametrize("case", ["sept27", "sept29", "oct05"])
+@pytest.mark.parametrize("case", ["sept27", "sept29", "oct05", "oct07"])
 def test_case_components_rebuild(tmp_path, case):
     run = subprocess.run(["node", str(HERE / "case_components.cjs"), "--case", case, "--out-dir", str(tmp_path)], cwd=ROOT,
                          capture_output=True, text=True)
@@ -63,7 +64,7 @@ def test_default_rebuilds_derived(tmp_path):
     assert not differ, differ
 
 
-@pytest.mark.parametrize("case", ["sept29", "oct05"])
+@pytest.mark.parametrize("case", ["sept29", "oct05", "oct07"])
 def test_case_rebuilds_its_directory(tmp_path, case):
     rebuild(tmp_path, "--case", case)
     assert sorted(p.name for p in tmp_path.iterdir()) == sorted(p.name for p in (HERE / "derived" / case).iterdir())

@@ -219,6 +219,114 @@ node infra/immigration-fiscal/historical_backcast_2026_09_20/case_components.cjs
 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/backcast.py --case oct05
 ```
 
+## v6 case (oct07), 2026-10-07
+
+[2026-10-07: on main case v6 (`oct07`), the 10-year total for 2015–2024, `net_cost_cbo_informed_oct07`, is
+$3,694.5bn / $4,377.9bn flat, $3,362.5bn / $3,994.0bn ratio and $3,660.2bn / $4,291.7bn income, against $3,707.0bn /
+$4,377.8bn, $3,365.4bn / $3,985.7bn and $3,663.1bn / $4,283.3bn for oct05. The four items move it by −$12.5bn /
++$0.1bn under the flat rule.]
+
+`--case oct07` carries back main case v6 (`main_case_2026_10_07/`, adopted 2026-10-07). v6 is October 5 plus four
+items from the case's registry (`meta.items`):
+- the pension accrual on the 2026 Trustees' separate OASI and DI funds;
+- retiree health on accrual;
+- the added people at their measured age mix;
+- user fees and the education keys, on the union only.
+
+It writes the `*_oct07_*` concepts to `derived/oct07/` (the four files of oct05) and `derived/case_components_oct07.json`.
+The default, `derived/sept29/` and `derived/oct05/` did not move.
+
+**The rule: each item part on its line's series, on the path of the people it prices.** Every October 5 part is carried
+back as `--case oct05` carries it, at October 5's values at the case's end specifications (48 / 11, as on October 5).
+The items are then added one at a time in the payload's order, the lineage item first (`case_components.cjs --case
+oct07`). Step k is the case lane's `caseOf(v5, the first k items)`, so an item's change is step k less step k − 1 at
+the same specification, and the last step is the case (gate, 1e-9).
+
+- `v6_<item>_<path>_<line>` is the item's change on the line. There are 94 parts: 67 for the age mix, 4 for the
+  pension item, 18 for retiree health and 5 for user fees. Each follows its line's national series under October 5's
+  rules (`v4_series(..., "v6")`).
+- The path follows the case lane's Consumers rules (R1–R4) [ASSUMPTION]:
+  - `added_age_mix` re-values the added people's edits in place, so all of it is theirs (path lineage).
+  - `pension_tr2026` and `retiree_health` split by a union twin: September 29's model plus audit row 8's change plus
+    the union's part of every item so far. A cell edit takes its `union_` parts. A national-scale edit takes the line's
+    national total after the step, so it scales the twin's cells as it scales the case's. The twin's change is the
+    union's (path union) and the rest the added people's (path lineage).
+  - `user_fees` is priced on the union only (the item's rule), so all of it is the union's.
+- Path union rides the group's population-share path and path lineage the identified third-plus generation's, as v5's
+  lineage does.
+- Social Security and Medicare split three ways, as v5's do: the accrual the set charges, the benefits the cash set
+  charges and minus the benefits the set does not charge. The pension item is set only, so its parts are accrual only.
+- The capital return's change splits by component and path (`v6_capital_bn`) and sits inside the three capital
+  parts. An item's offset component, the user-fee item's K-12, college and health keys, follows the stock of the
+  component it offsets (`of_component`).
+- [APPROX] Retiree health has no series of its own. Its parts ride their lines' NIPA series, so the history of the
+  OPEB normal cost relative to each line is not measured.
+
+| Rule, 2015–2024 ($bn, low / high) | oct07 | oct05 | Items |
+|---|---:|---:|---:|
+| flat | 3,694.5 / 4,377.9 | 3,707.0 / 4,377.8 | −12.5 / +0.1 |
+| ratio | 3,362.5 / 3,994.0 | 3,365.4 / 3,985.7 | −2.9 / +8.3 |
+| income | 3,660.2 / 4,291.7 | 3,663.1 / 4,283.3 | −2.9 / +8.4 |
+
+The item column is the difference of the printed totals. In 2024 the items are, in order:
+- `added_age_mix` +1.3466 / +2.8570;
+- `pension_tr2026` −2.8463 / −2.6599 (−2.659951, rounded so the four add to the total);
+- `retiree_health` +0.5844 / +0.7656;
+- `user_fees` −0.2961 / −0.7261.
+
+They add to −1.2114 / +0.2366, the case less October 5's band. Over 2010–2024 the flat rule gives $5,384.0bn /
+$6,378.7bn (items −18.3 / −0.3), and over 2005–2024 $6,835.2bn / $8,096.4bn (items −23.6 / −1.3). The proportional
+reference, `net_cost_full_proportional_oct07`, gives $3,969.5bn / $4,514.0bn flat over 2015–2024 (oct05 3,981.6 /
+4,513.6). [CALCULATION: `backcast.py --case oct07` → `derived/oct07/backcast_windows.csv`, `case_parts_windows.csv`]
+
+At the low end the window's change is close to ten times the 2024 change (−12.5 against 10 × −1.21). At the high end it
+is well below that (+0.1 against 10 × +0.24). The largest positive item, the age mix, rides the third-plus path, which
+lies below the group's path before 2024 (×1.75 from 2005 against ×1.46). So the age mix counts for less in the early
+years than the pension item, most of which rides the group's path.
+
+**Gates.**
+- `case_components.cjs --case oct07` passes 54 gates, among them:
+  - the case's specifications and profiles are October 5's;
+  - the last step is the case, as payloads and in cost at every end specification (1e-9);
+  - the set at the case's end specifications is `summary.json` `main_case`, 389.082553 / 461.479709 (1e-9). That is
+    the adopted band to within 1e-6, and `main_case_bands.csv` prints it to 4 decimals;
+  - each item's parts and capital change add to its step's change (1e-9), and the edit sets move neither P nor F;
+  - the case less the items is October 5's band, 390.2940 / 461.2431, and October 5's proportional band, 419.2813 /
+    475.5823 (1e-4);
+  - on the main profile, the items' parts and capital change equal `change_at_fixed_specifications.total`,
+    −1.2114 / +0.2366 (1e-9). Each item, taken after those before it, is its change alone plus its pairs with them
+    (1e-9 plus the printed remainder);
+  - each edit set's union parts are its `.union` (a union-only item's with its capital change);
+  - the cash set's last step is `cash_set.band_bn`, 307.3994 / 385.3641, and the 28 capital components equal
+    `capital_at_end_specifications` (1e-9).
+- `backcast.py` gives 2024 = 389.0826 / 461.4797 under every rule, the bands file's print, and 418.1016 / 475.8387 for
+  the proportional reference. Every item part has a path, union or lineage.
+- `test_backcast.py` rebuilds every case_components file and `derived/sept29/`, `derived/oct05/` and `derived/oct07/`:
+  12 passed. `rerun_lane.py` over the commands below: IDENTICAL, 32 of 32 files, exit 0. The tracked files equal HEAD.
+- `case_components.cjs` now also counts a union-only item's capital change in its union, as the case's summary counts
+  it (the user-fee item's union is its whole change, −0.2961 / −0.7261).
+
+```sh
+node infra/immigration-fiscal/historical_backcast_2026_09_20/case_components.cjs --case oct07
+uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/backcast.py --case oct07
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/historical_backcast_2026_09_20 \
+  "node {lane}/case_components.cjs" "node {lane}/case_components.cjs --case sept29" \
+  "node {lane}/case_components.cjs --case oct05" "node {lane}/case_components.cjs --case oct07" \
+  "uv run --no-project python3 {lane}/cps_g3plus_path.py" \
+  "uv run --no-project python3 {lane}/backcast.py" "uv run --no-project python3 {lane}/backcast.py --case sept29" \
+  "uv run --no-project python3 {lane}/backcast.py --case oct05" "uv run --no-project python3 {lane}/backcast.py --case oct07" \
+  "cd {lane} && uv run --no-project python3 backcast_categories.py" \
+  --allow-unrun infra/immigration-fiscal/historical_backcast_2026_09_20/test_backcast.py
+```
+
+Log (append-only; times from `date`; claude-opus-5-5, teammate prop-b of the v6 consumer lanes):
+- 2026-10-07 14:59:58–15:01:01 JST: `case_components.cjs --case oct07` (54 gates) and `backcast.py --case oct07`
+  written on the adopted payload (case lane 218a2fb2; corrections.json f8d346aa…, summary.json 54709259…).
+  `derived/oct07/` is byte-identical to the development run on the candidate payload, whose edits and bands were the
+  same.
+- 15:01:01: pytest started, 12 passed in 58 s. 15:05:40–15:06:10: `rerun_lane.py` over the ten commands, IDENTICAL
+  32/32, exit 0. Not committed (the lead's brief).
+
 ## Rules
 
 The ACS self-identified count is scaled by 40.897m / 38.990m to the account's
