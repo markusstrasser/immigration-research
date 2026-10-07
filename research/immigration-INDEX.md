@@ -255,8 +255,9 @@ case against the group living in Mexico, on the 42.75M people the case prices. O
 in every reading, the fiscal cost plus the costs outside the budget, and more once raising the taxes is costed.
 Adding everyone's dollars at equal weight, the
 world gains $287bn in the recommended reading (Mexican pay in cities of 100,000+ at household prices, US pay at
-state prices, the group's services at US prices) and $78bn in the operator's framing, which also prices US health
-and social services at Mexican prices and public goods at the cost of extending them [FRAMING-SENSITIVE]; on
+state prices, the group's services at US prices) and $78bn in a low reading, which takes urban Mexican pay at the
+70th percentile of selection (CMP's p70, against p56) and at common output prices, US health and social services
+at Mexican prices and public goods at the cost of extending them [FRAMING-SENSITIVE]; on
 national cells at GDP prices it is $321bn. That says whether the world is richer, not whether Americans are. The
 pay gain is output, not a price artefact: valued at common prices industry by industry, the world total moves
 +$2bn. Same-person pay is a parameter, not a reading: followed before and after the move, migrants gain 2.0 an hour
@@ -267,7 +268,7 @@ $401–469bn direct cost buys the group nothing it values. Measured welfare weig
 the payers', not below. The added descendants' schooling is valued at zero, as every generation's is; over
 generations the sign turns on how fast descendants catch up (ladder 154). The US plus the group comes out behind
 only if the group's welfare counts for less than 0.74 of other residents' in the recommended reading (0.55
-counting Mexico's residents); in the operator's framing it is behind at equal weights. On national cells, with every low
+counting Mexico's residents); in the low reading it is behind at equal weights. On national cells, with every low
 choice and λ 1.5, the world comes out behind by $31bn. That span does not charge the cost of raising revenue on the
 pension accrual, which no tax raises this year. The second generation
 costs other residents $150–178bn a year against a $252bn premium over being raised in Mexico. [FRAMING-SENSITIVE]
