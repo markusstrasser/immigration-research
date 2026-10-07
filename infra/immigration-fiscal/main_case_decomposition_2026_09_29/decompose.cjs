@@ -45,6 +45,9 @@
  * (1e-9; brief tolerance $0.1bn); (c) twice the average residents cost twice part 1 (1e-9).
  * Outputs: derived/decomposition.csv, decomposition_lines.csv, states.csv, summary.json. Run from the repository
  * root: node infra/immigration-fiscal/main_case_decomposition_2026_09_29/decompose.cjs [--out-dir DIR] [--case KEY]
+ * [--placement measured|identified] [--split-basis case|edited-line] (v6 cases only; measured and case, the defaults, are
+ * the case's; edited-line splits each item part on a model line by that line instead of its split_basis, Pell's all_cash
+ * profile, outputs suffixed _edited_line_basis)
  *
  * Cases (--case). sept27, the default: the September 27 case above, whose outputs keep their names. sept29: the main
  * case adopted on 2026-09-29 (v4, main_case_2026_09_29, its corrections.json through its package); sept29_cash: its
@@ -79,6 +82,27 @@
  *                     on current benefits its cash income tax less its set income tax (the two payloads' lineage edits
  *                     differ on these three lines only, gated);
  *   finite removal    the linearity note doubles v5's group share (meta.lineage.s.v5).
+ * oct07: main case v6 (main_case_2026_10_07, its corrections.json through its package); oct07_cash: its cash set. v6 is
+ * v5 plus the edit sets in its meta.items, after the lineage's edits. v5's rules apply, and these (RESULT.md, "v6 case
+ * (oct07)"):
+ *   the added people  at the case's measured age mix (its item added_age_mix; profiles_oct07.py's added column), each at
+ *                     the union's per-person key in its bin; --placement identified puts them at the identified G3+'s
+ *                     ages instead, v5's rule (outputs suffixed _identified_ages);
+ *   the edit sets     each edit is a correction like the payload's others: a cell shift enters its line's kappa, a
+ *                     national-scale edit its line's scale (natScale); the parts on the added people (lineage_*,
+ *                     pension_tr2026's) join the lineage's own amounts on the accrual lines;
+ *   split basis       a part whose split basis (splits.split_basis) is another line than the one it edits (user_fees's
+ *                     K-12 weight parts and Pell, on education_services) stays on its line at that line's response, takes
+ *                     the basis line's age profile as a correction there would, and books its cost in the basis line's
+ *                     group. Each part on a model line back on that line's rule (Pell on all_cash) is decomposed in the
+ *                     same run, beside the case (summary v6.split_basis_edited_line); --split-basis edited-line writes that
+ *                     rule's files, a verification flag only;
+ *   carriers          an item's carrier receipt lines (user_fees's re-keyed capital) are corrections to their capital
+ *                     components' key: 0 at U = N, and at U = G the case's value times the key at the state's ages over
+ *                     its value at the group's (kappa on the key); their offsets join their components' line groups;
+ *   pension inputs    the payload's pinned 2026 file (meta.pension_accrual.source: the arm's gross ratio and the group's
+ *                     share of future benefits taxed) and the 2025 file it builds on (source.builds_on: the national rate
+ *                     on current benefits and the national-ratio sensitivity's bridge, kept at 2025 values [APPROX]).
  */
 "use strict";
 const fs = require("fs");
@@ -94,16 +118,33 @@ const CASES = {
   sept29_cash: { lane: "main_case_2026_09_29", suffix: "_sept29_cash", payload: "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json" },
   oct05: { lane: "main_case_2026_10_05", suffix: "_oct05", lineage: true },
   oct05_cash: { lane: "main_case_2026_10_05", suffix: "_oct05_cash", lineage: true, cash: "main_case_2026_10_05/derived/corrections_cash.json" },
+  // items: the case adds edit sets after the lineage's edits (meta.items); ages: the added people's ages file.
+  oct07: { lane: "main_case_2026_10_07", suffix: "_oct07", lineage: true, items: true, ages: "g3plus_ages_oct07.csv" },
+  oct07_cash: { lane: "main_case_2026_10_07", suffix: "_oct07_cash", lineage: true, items: true, ages: "g3plus_ages_oct07.csv",
+    cash: "main_case_2026_10_07/derived/corrections_cash.json" },
 };
 const CASE_KEY = argOf("--case", "sept27");
 const CASE_DEF = CASES[CASE_KEY];
 if (!CASE_DEF) throw new Error(`[BLOCKED] unknown case ${CASE_KEY}: ${Object.keys(CASES).join(", ")}`);
+// The added people's ages: the case's measured mix (v6) or the identified G3+'s (v5's rule, the only one v5 has).
+const PLACEMENT = argOf("--placement", CASE_DEF.items ? "measured" : "identified");
+if (!["measured", "identified"].includes(PLACEMENT) || (PLACEMENT === "measured" && !CASE_DEF.items)) {
+  throw new Error(`[BLOCKED] --placement ${PLACEMENT}: measured (a case with meta.lineage.age_mix) or identified`);
+}
 const P0 = require(path.join(FISCAL, CASE_DEF.lane, "package.cjs"));
 const P = CASE_DEF.payload ? P0.forPayload(P0.readJson(CASE_DEF.payload)) : CASE_DEF.cash ? P0.CASH : P0;
 const { Engine, MODEL, readJson } = P;
 const IN = path.join(HERE, "derived");
 const OUT = path.resolve(argOf("--out-dir", IN));
-const SUFFIX = CASE_DEF.suffix;
+// v6: the items' parts split by their split basis (the case's rule), or, beside it, each part on a model line by that line
+// (--split-basis edited-line: generation_account_2026_09_24 v6_split.cjs ALTERNATIVES.split_basis_edited_line). Parts on
+// a payload line (the K-12 weight's, on school_reprice and college_rekey) keep their split basis in both.
+const SPLIT_BASIS = argOf("--split-basis", "case");
+if (!["case", "edited-line"].includes(SPLIT_BASIS) || (SPLIT_BASIS !== "case" && !CASE_DEF.items)) {
+  throw new Error(`[BLOCKED] --split-basis ${SPLIT_BASIS}: case or edited-line (edited-line on a v6 case only)`);
+}
+const SUFFIX = CASE_DEF.suffix + (CASE_DEF.items && PLACEMENT === "identified" ? "_identified_ages" : "")
+  + (SPLIT_BASIS === "edited-line" ? "_edited_line_basis" : "");
 
 const fails = [];
 function gate(label, ok, detail) {
@@ -153,15 +194,17 @@ for (const [w, byA] of Object.entries(BINS)) for (const [a, byK] of Object.entri
 }
 // v5: the lineage's added people at the identified G3+'s ages (profiles_oct05.py), each at the union's per-person key in
 // its age bin. Only the row-4 frame, the one the case's stack uses, takes them; the published frame stays model.json's.
+// v6: at the case's measured age mix (profiles_oct07.py's added column), or at v5's ages with --placement identified.
 const LINEAGE = CASE_DEF.lineage ? (() => {
-  const L = CORR.meta.lineage, rows = readCsv(path.join(IN, "g3plus_ages_oct05.csv"));
-  if (rows.map((r) => Number(r.bin)).join() !== EDGES.join()) throw new Error("[BLOCKED] g3plus_ages_oct05.csv is not in the age bins");
+  const file = CASE_DEF.ages || "g3plus_ages_oct05.csv";
+  const L = CORR.meta.lineage, rows = readCsv(path.join(IN, file));
+  if (rows.map((r) => Number(r.bin)).join() !== EDGES.join()) throw new Error(`[BLOCKED] ${file} is not in the age bins`);
   const g3 = rows.map((r) => Number(r.g3plus)), G3 = sum(g3), M = L.counts.added;
   const pop4 = BINS.row4.both["extra|pop"].union.slice();
-  const added = g3.map((x) => M * x / G3);
+  const added = PLACEMENT === "measured" ? rows.map((r) => Number(r.added)) : g3.map((x) => M * x / G3);
   const scale = pop4.map((p, b) => (p + added[b]) / p);
   for (const byK of Object.values(BINS.row4)) for (const t of Object.values(byK)) t.union = t.union.map((x, b) => x * scale[b]);
-  return { L, M, G3, pop4, added, scale };
+  return { L, M, G3, g3, pop4, added, scale, file };
 })() : null;
 const POP = { published: BINS.published.both["extra|pop"], row4: BINS.row4.both["extra|pop"] };
 const ARREST = readCsv(path.join(IN, "arrest_profile.csv")).map((r) => Number(r.share));
@@ -174,6 +217,19 @@ if (LINEAGE) {
   gate("v5: the row-4 frame held the account's union, and now holds the lineage (1e-3 persons)",
     Math.abs(sum(LINEAGE.pop4) - c.account_union) < 1e-3 && Math.abs(FRAME.row4.NG - c.lineage_population) < 1e-3,
     `${sum(LINEAGE.pop4).toFixed(4)} + ${LINEAGE.M.toFixed(4)} = ${FRAME.row4.NG.toFixed(4)} vs ${c.lineage_population}`);
+}
+if (LINEAGE && PLACEMENT === "measured") {
+  // The ages file's added people against this payload's mix: each count part at its own five-year mix, on the identified
+  // G3+'s ages within each band (the bins nest in the bands; 80 and 85 in 80+).
+  const mix = LINEAGE.L.age_mix, c = LINEAGE.L.counts, nb = mix.bands.length;
+  const band = EDGES.map((e) => Math.min(Math.floor(e / 5), nb - 1));
+  const nBand = Array.from({ length: nb }, (_, k) => sum(LINEAGE.g3.filter((_, b) => band[b] === k)));
+  const want = LINEAGE.g3.map((x, b) => x * (c.at_g3_rate * mix.mixes.g3_rate[band[b]] + c.later_losses * mix.mixes.later[band[b]]) / nBand[band[b]]);
+  const worst = Math.max(...want.map((x, b) => Math.abs(x - LINEAGE.added[b])));
+  gate(`v6: ${LINEAGE.file}'s added people are this payload's measured age mix (meta.lineage.age_mix, recomputed; 1e-6 persons)`,
+    worst < 1e-6 && mix.bands.every((x, k) => Number(x.split("-")[0].replace("+", "")) === 5 * k), `worst ${worst.toExponential(1)}`);
+  gate("v6: the added people add to meta.lineage.counts.added (1e-6 persons)", Math.abs(sum(LINEAGE.added) - LINEAGE.M) < 1e-6,
+    `${sum(LINEAGE.added).toFixed(6)} vs ${LINEAGE.M}`);
 }
 
 // Key totals at the four (age, profile) states on a frame.
@@ -276,19 +332,35 @@ const HOUSING_ENTERPRISE = "housing_enterprise_surplus", RENTAL_LINE = "housing_
 const V4_KEYS = { tenant_occupied_property: "receipt|renter_contract_rent", personal_property_tax: "receipt|household_vehicles" };
 const PENSION_FILE = "pension_accrual_2026_09_28/derived/summary.json";
 const PENSION = ACCRUAL ? readJson(PENSION_FILE) : null;
+// v6: the payload's accrual comes from a later file (meta.pension_accrual.source, at its arm) that builds on this one
+// (source.builds_on); this one still gives the national rate on current benefits and the national-ratio bridge.
+const PENSION_V6 = ACCRUAL && ACCRUAL.source.builds_on ? ACCRUAL.source : null;
 let RATIO_NATIONAL = null;
+// v6: the items' carrier receipt lines (the package's ITEM_RECEIPT_LINES), beside v4's receipt lines.
+const ITEM_CARRIERS = new Set((P.ITEM_RECEIPT_LINES || []).map((l) => l.id));
 if (IS_V4) {
   gate("v4's correction lines are the state-price and road lines", CORR.lines.filter((l) => !SYN_IDS.has(l.id))
     .every((l) => STATE_PRICE_PARENT[l.id] || ROAD_LINES.has(l.id)), CORR.lines.map((l) => l.id).join(", "));
-  gate("v4's receipt lines are public housing's deficit and tenant-occupied property",
-    CORR.receipt_lines.map((l) => l.id).sort().join() === [HOUSING_ENTERPRISE, "tenant_occupied_property"].sort().join());
+  gate(`v4's receipt lines are public housing's deficit and tenant-occupied property${ITEM_CARRIERS.size ? ", beside the items' carriers" : ""}`,
+    CORR.receipt_lines.map((l) => l.id).filter((id) => !ITEM_CARRIERS.has(id)).sort().join() === [HOUSING_ENTERPRISE, "tenant_occupied_property"].sort().join());
 }
 if (ACCRUAL) {
-  const sha = require("crypto").createHash("sha256").update(fs.readFileSync(path.join(FISCAL, PENSION_FILE))).digest("hex");
-  gate(`${PENSION_FILE} is the payload's pinned file (${ACCRUAL.source.commit})`, sha === ACCRUAL.source.sha256, sha.slice(0, 16));
-  const gross = PENSION.central_decomposition.low.accrual_per_tax_dollar;
+  const shaOf = (file) => require("crypto").createHash("sha256").update(fs.readFileSync(path.join(FISCAL, file))).digest("hex");
+  const pin = PENSION_V6 ? PENSION_V6.builds_on : ACCRUAL.source, sha = shaOf(PENSION_FILE);
+  gate(`${PENSION_FILE} is the payload's pinned file (${pin.commit})${PENSION_V6 ? ", the one its 2026 file builds on" : ""}`,
+    sha === pin.sha256 && (!PENSION_V6 || pin.file === PENSION_FILE), sha.slice(0, 16));
+  let gross = PENSION.central_decomposition.low.accrual_per_tax_dollar, fsg = PENSION.benefit_tax.future_share_group;
+  if (PENSION_V6) {
+    const sha26 = shaOf(PENSION_V6.file), s26 = readJson(PENSION_V6.file);
+    gate(`v6: ${PENSION_V6.file} is the payload's pinned file (${PENSION_V6.commit})`, sha26 === PENSION_V6.sha256, sha26.slice(0, 16));
+    const arm = (s26.arms || {})[PENSION_V6.arm] || (s26.beside || {})[PENSION_V6.arm];
+    if (!arm) throw new Error(`[BLOCKED] ${PENSION_V6.file} has no arm ${PENSION_V6.arm}`);
+    gate(`v6: the payload's ratio_net and Part A accrual are arm ${PENSION_V6.arm}'s`,
+      arm.ratio_net === ACCRUAL.ratio_net && arm.part_a_bn === ACCRUAL.part_a_accrual_bn, `${arm.ratio_net}, ${arm.part_a_bn}`);
+    gross = arm.per_tax_dollar; fsg = arm.future_share_group;
+  }
   gate("ratio_net is the central's gross ratio net of the group's share of future benefits taxed",
-    Math.abs(gross * (1 - PENSION.benefit_tax.future_share_group) - ACCRUAL.ratio_net) < 1e-12, `${gross} x (1 - ${PENSION.benefit_tax.future_share_group})`);
+    Math.abs(gross * (1 - fsg) - ACCRUAL.ratio_net) < 1e-12, `${gross} x (1 - ${fsg})`);
   // The sensitivity's national money's worth [INFERENCE: a bridge]: the group's gross ratio times the national-to-group
   // ratio at trust-fund rates on scheduled benefits (the lane's national check, all 2024 taxpayers 15+, against the
   // group's arm at the same rates), net of the national share of future benefits returned as benefit tax.
@@ -297,16 +369,52 @@ if (ACCRUAL) {
     .map((l) => l.split(",")).find((c) => c.slice(0, 7).join() === "individual_age_adjusted,EAN,tf,general,True,scheduled,note151_long_run");
   RATIO_NATIONAL = { ratio_net: gross * (nat / Number(arm[9])) * (1 - PENSION.benefit_tax.future_share_national_timing),
     inputs: { group_gross_central: gross, national_trust_fund_scheduled: nat, group_trust_fund_scheduled: Number(arm[9]),
-      national_future_share_taxed: PENSION.benefit_tax.future_share_national_timing, group_future_share_taxed: PENSION.benefit_tax.future_share_group } };
+      national_future_share_taxed: PENSION.benefit_tax.future_share_national_timing, group_future_share_taxed: fsg } };
+  // v6 [APPROX]: the 2026 arm's gross ratio on the 2025 file's bridge and national timing share (no 2026 national route).
+  if (PENSION_V6) RATIO_NATIONAL.inputs.bridge_and_national_timing = `${PENSION_FILE} (${PENSION_V6.builds_on.commit}), 2025 Trustees paths [APPROX]`;
 }
 // v5: the lineage's edits, the set's and the cash set's. A line's lineage amount is the sum of its edits at an allocation
-// (receipts at the reference incidence rule).
+// (receipts at the reference incidence rule). v6: plus the parts of the items' edits that are the added people's (the
+// parts named lineage_*, as the case's api_check reads them), each as an edit on its edit's cell.
+function itemLineageEdits(api) {
+  if (!CASE_DEF.items) return [];
+  const p = api.correctionsPayload();
+  return p.meta.items.filter((it) => it.applied && it.parts).flatMap((it) => Object.entries(it.parts)
+    .filter(([name]) => name.startsWith("lineage_")).map(([name, part]) => {
+      const e = p.edits[it.edits.first + part.edit];
+      if (!e.by || !["social_security", "medicare"].includes(e.line)) {
+        throw new Error(`[BLOCKED] item ${it.id}'s part ${name} is on ${e.line}: the added people's amounts are read on the accrual lines only`);
+      }
+      return { item: it.id, part: name, side: e.side, line: e.line, key: e.key, scenario: e.scenario, by: part.by };
+    }));
+}
 const LINEAGE_EDITS = LINEAGE ? { set: P0.LINEAGE_EDITS, cash: P0.CASH.LINEAGE_EDITS } : null;
-const lineageAmount = (which, side, id, key, a) => sum(LINEAGE_EDITS[which].filter((e) => e.side === side && e.line === id
+const ITEM_LINEAGE = LINEAGE ? { set: itemLineageEdits(P0), cash: itemLineageEdits(P0.CASH) } : null;
+const lineageAmount = (which, side, id, key, a) => sum(LINEAGE_EDITS[which].concat(ITEM_LINEAGE[which]).filter((e) => e.side === side && e.line === id
   && (side === "receipt" ? e.scenario === REF : e.key === key)).map((e) => e.by[a]));
+if (LINEAGE && CASE_DEF.items) {
+  // v6: the lineage's edits in their block, row 8's last; the items' edits after it, in meta.items' order; every item
+  // edit a cell shift or a national-scale edit; each applied item's parts add to its edits.
+  const E = LINEAGE.L.edits, end = E.first + E.count, tail = CORR.edits.slice(end);
+  const recs = CORR.meta.items.filter((it) => it.applied && it.edits);
+  let at = end;
+  const tiled = recs.every((it) => { const ok = it.edits.first === at; at += it.edits.count; return ok; }) && at === CORR.edits.length;
+  gate(`v6: ${CORR_FILE}'s edits ${E.first}-${end - 1} are the package's lineage edits (meta.lineage.edits), row 8's last; `
+    + "the rest are the package's item edits, as meta.items places them",
+    JSON.stringify(CORR.edits.slice(E.first, end)) === JSON.stringify(P.LINEAGE_EDITS) && E.row8_edit_index === end - 1
+    && CORR.edits[E.row8_edit_index].line === P.SYN.constants && JSON.stringify(tail) === JSON.stringify(P.ITEM_EDITS) && tiled,
+    `${E.first} + ${E.count}; ${recs.map((it) => `${it.id} ${it.edits.first} + ${it.edits.count}`).join(", ")}`);
+  gate("v6: every item edit is a cell shift or a national-scale edit", tail.every((e) => (e.by !== undefined) !== (e.national_bn !== undefined)),
+    `${tail.filter((e) => e.by).length} shifts, ${tail.filter((e) => e.national_bn !== undefined).length} national scales`);
+  const partsOff = recs.filter((it) => it.parts && Object.keys(it.parts).length).flatMap((it) => CORR.edits.slice(it.edits.first, it.edits.first + it.edits.count)
+    .flatMap((e, k) => (e.by ? ["personal", "shared"].map((a) => Math.abs(sum(Object.values(it.parts).filter((p) => p.edit === k).map((p) => p.by[a])) - e.by[a])) : [])));
+  gate("v6: each item's parts add to its edits (1e-9)", Math.max(0, ...partsOff) < 1e-9, `worst ${Math.max(0, ...partsOff).toExponential(1)}`);
+  gate("v6: the items' lineage_* parts are the added people's on the accrual lines (the cash set's: none)",
+    ITEM_LINEAGE.cash.length === 0, ITEM_LINEAGE.set.map((e) => `${e.item}/${e.part} on ${e.line}`).join(", ") || "none");
+}
 if (LINEAGE) {
   const E = LINEAGE.L.edits;
-  gate(`v5: ${CORR_FILE}'s last ${E.count} edits are the package's lineage edits (meta.lineage.edits), row 8's last`,
+  if (!CASE_DEF.items) gate(`v5: ${CORR_FILE}'s last ${E.count} edits are the package's lineage edits (meta.lineage.edits), row 8's last`,
     E.first + E.count === CORR.edits.length && JSON.stringify(CORR.edits.slice(E.first)) === JSON.stringify(P.LINEAGE_EDITS)
     && E.row8_edit_index === CORR.edits.length - 1 && CORR.edits[E.row8_edit_index].line === P.SYN.constants, `${E.first} + ${E.count}`);
   const S = LINEAGE_EDITS.set, C = LINEAGE_EDITS.cash;
@@ -314,6 +422,59 @@ if (LINEAGE) {
   gate("v5: the set's and the cash set's lineage edits are the same cells and differ on the three accrual lines only",
     S.length === C.length && S.every((e, i) => e.side === C[i].side && e.line === C[i].line && e.key === C[i].key && e.scenario === C[i].scenario)
     && differ.join() === "federal_income_tax,medicare,social_security", differ.join(", "));
+}
+
+// v6: the items' carriers (meta.items[].capital.receipt_lines). Each is a correction to the key of the components its
+// offsets correct (of_component, a lines-keyed component): {item, lines (that key's numerator lines), components, of}.
+const CARRIERS = (() => {
+  const out = {};
+  if (!CASE_DEF.items) return out;
+  const comps = P.componentsFor(null);
+  for (const it of CORR.meta.items.filter((x) => x.applied && x.capital)) {
+    for (const id of it.capital.components) {
+      const c = comps.find((x) => x.id === id), base = c && comps.find((x) => x.id === c.of_component);
+      if (!c || c.key.kind !== "receipt_amount_over_national" || !it.capital.receipt_lines.includes(c.key.line) || !base
+        || base.key.kind !== "lines_amount_over_national") {
+        throw new Error(`[BLOCKED] item ${it.id}'s component ${id} is not an offset keyed on its carrier to a lines-keyed component`);
+      }
+      const x = out[c.key.line] ||= { item: it.id, lines: base.key.numerator_lines.slice(), components: [], of: [] };
+      if (x.lines.join() !== base.key.numerator_lines.join()) throw new Error(`[BLOCKED] carrier ${c.key.line} corrects keys on different lines`);
+      x.components.push(id); x.of.push(base.id);
+    }
+    const bare = it.capital.receipt_lines.filter((l) => !out[l]);
+    if (bare.length) throw new Error(`[BLOCKED] item ${it.id}'s carriers ${bare.join(", ")} key no component`);
+  }
+  return out;
+})();
+// v6: the items' parts whose split basis (an item meta's splits.split_basis) is a line other than the one they edit,
+// by edited line: {item, part, line, key, basis, by}. Each part stays on its line at its line's response and takes the
+// basis line's age profile and line group (planFor, evaluateState), as the case's split rule spreads it. Under the
+// edited-line rule a part on a model line is left on its own line's rule.
+function routesFor(rule) {
+  const out = {};
+  if (!CASE_DEF.items) return out;
+  for (const it of CORR.meta.items.filter((x) => x.applied && x.parts)) {
+    const S = (it.meta_changed || []).map((k) => CORR.meta[k] && CORR.meta[k].splits && CORR.meta[k].splits.split_basis).find(Boolean);
+    if (!S) continue;
+    for (const [name, part] of Object.entries(it.parts)) {
+      const e = CORR.edits[it.edits.first + part.edit];
+      if (!S[name] || S[name] === e.line) continue;
+      if (rule === "edited-line" && !(CORR.lines || []).some((l) => l.id === e.line)) continue;
+      if (e.side !== "spending" || !e.by) throw new Error(`[BLOCKED] item ${it.id}'s part ${name}: only a spending cell shift can be split by another line`);
+      (out[e.line] ||= []).push({ item: it.id, part: name, line: e.line, key: e.key, basis: S[name], by: part.by });
+    }
+  }
+  return out;
+}
+const ROUTES = routesFor(SPLIT_BASIS);
+// Beside the case, in its own run (summary v6.split_basis_edited_line): the edited-line rule, when it moves a part.
+const partsOf = (R) => Object.values(R).flat().map((x) => x.part).sort().join();
+const ROUTES_EDITED = SPLIT_BASIS === "case" && CASE_DEF.items && partsOf(routesFor("edited-line")) !== partsOf(ROUTES)
+  ? routesFor("edited-line") : null;
+if (CASE_DEF.items) {
+  gate("v6: the items' carriers are the package's item receipt lines, each keying offsets to one lines-keyed component key",
+    Object.keys(CARRIERS).join() === [...ITEM_CARRIERS].join() && P.ITEM_COMPONENTS.every((c) => CARRIERS[c.key.line]),
+    Object.entries(CARRIERS).map(([id, x]) => `${id}: ${x.components.join("+")} on ${x.lines.join("+")}`).join("; "));
 }
 
 function planFor(spec, opts) {
@@ -360,6 +521,8 @@ function planFor(spec, opts) {
         else if (r.id === P.SYN.school) row.amount = (alpha, pi) => (pi === "N" ? 0 : r.amount_bn * schoolRatio(alpha));
         else if (r.id === P.SYN.college) row.amount = (alpha, pi) => (pi === "N" ? 0 : r.amount_bn * mixRatio(alpha));
         else row.amount = (alpha, pi) => (pi === "N" ? ROW8 : r.amount_bn);
+      } else if (CARRIERS[r.id]) {
+        row.cls = "carrier"; row.factor = "U";  // its amounts read its key's lines' rows, below
       } else if (r.key === "external" || r.key === "none") {
         row.cls = "zero"; row.amount = () => r.amount_bn;
         if (r.amount_bn !== 0) throw new Error(`[BLOCKED] ${r.id} has an external key and a non-zero amount`);
@@ -446,6 +609,34 @@ function planFor(spec, opts) {
       rows.push(row);
     }
   }
+  // v6: an item part split by another line (ROUTES) leaves its line's own rule for the basis line's profile, entering as
+  // a correction on that line would: 0 at U = N; under "ratio" the basis line's uncorrected amount at (A, G) over at
+  // (G, G); otherwise the part itself. It stays on its line, at that line's response; evaluateState books its cost in
+  // the basis line's group.
+  const routeChecks = [];
+  for (const row of rows) {
+    const rs = row.side === "spending" ? (o.routes || ROUTES)[row.id] : undefined;
+    if (!rs) continue;
+    const p = sum(rs.map((x) => x.by[a]));
+    let rest;
+    if (row.cls === "synthetic" && (row.id === P.SYN.school || row.id === P.SYN.college)) {
+      const own = row.id === P.SYN.school ? schoolRatio : mixRatio;
+      rest = (alpha, pi) => (o.corrections === "none" || pi === "N" ? 0 : (row.A - p) * own(alpha));
+    } else if ((row.cls === "profile" || row.cls === "profile_acs") && row.U) {
+      const w = withCorrections(row.U, row.A - p);
+      row.kappa = w.kappa;
+      rest = w.amount;
+    } else throw new Error(`[BLOCKED] ${row.id} (${row.cls}): no rule for an item part split off a line of this class`);
+    row.routes = rs.map((x) => {
+      const y = rows.find((r) => r.side === "spending" && r.id === x.basis), v = x.by[a];
+      if (!y || !(y.cls === "profile" || y.cls === "profile_acs") || !y.U) throw new Error(`[BLOCKED] ${x.part}: its basis line ${x.basis} is not a profile line`);
+      return { part: x.part, basis: x.basis, amount: (alpha, pi) => (o.corrections === "none" || pi === "N" ? 0
+        : o.corrections === "ratio" ? v * y.U(alpha + "G") / y.U("GG") : v) };
+    });
+    row.amount = (alpha, pi) => rest(alpha, pi) + sum(row.routes.map((x) => x.amount(alpha, pi)));
+    routeChecks.push({ label: `${row.id}: its own part and its parts split by ${rs.map((x) => x.basis).join(", ")} give its amount at (G, G)`,
+      ok: o.corrections === "none" || Math.abs(row.amount("G", "G") - row.A) < 1e-12, detail: `${row.amount("G", "G")} vs ${row.A}` });
+  }
   // v4's rows that read other rows.
   const rowOf = (id) => rows.find((x) => x.id === id);
   for (const row of rows) {
@@ -457,6 +648,10 @@ function planFor(spec, opts) {
       row.amount = (alpha, pi) => f * hs.amount(alpha, pi);
       checks.push({ label: `${row.id} is its national over ${RENTAL_LINE}'s times ${RENTAL_LINE}'s amount`,
         ok: Math.abs(row.amount("G", "G") - row.A) < 1e-9, detail: `${row.amount("G", "G")} vs ${row.A}` });
+    } else if (row.cls === "carrier") {
+      // v6: the case's value times the key it corrects at (A, G) over at (G, G); 0 at U = N, as the corrections are.
+      const lines = CARRIERS[row.id].lines.map(rowOf), K = (alpha) => sum(lines.map((x) => x.amount(alpha, "G"))), K0 = K("G");
+      row.amount = (alpha, pi) => (pi === "N" ? 0 : row.A * K(alpha) / K0);
     }
   }
   if (ACCRUAL) {
@@ -519,7 +714,7 @@ function planFor(spec, opts) {
   // A row that reads other rows returns the case's own amount at the group's state, as withCorrections does (its
   // formula there is gated above to 1e-9).
   for (const row of rows) {
-    if (!["state_price", "follows_rental", "accrual", "medicare_accrual", "income_tax_less_benefit_tax"].includes(row.cls)) continue;
+    if (!["state_price", "follows_rental", "accrual", "medicare_accrual", "income_tax_less_benefit_tax", "carrier"].includes(row.cls)) continue;
     const f = row.amount, g = row.at;
     row.amount = (alpha, pi) => (alpha === "G" && pi === "G" ? row.A : f(alpha, pi));
     if (g) row.at = (alpha, rho, ups) => (alpha === "G" && rho === "G" && ups === "G" ? row.A : g(alpha, rho, ups));
@@ -530,7 +725,7 @@ function planFor(spec, opts) {
     return edu.school.T[st] / edu.mix.T[st];
   };
   const production = (alpha, rho) => (rho === "N" ? 0 : wageRatio(alpha));
-  return { spec, a, rows, checks, production, schoolFraction, opts: o, accrual: accrualFacts };
+  return { spec, a, rows, checks, routeChecks, production, schoolFraction, opts: o, accrual: accrualFacts };
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -587,13 +782,19 @@ if (IS_V4) {
 }
 const GROUP_OF = {};
 for (const [g, ids] of Object.entries(GROUPS)) for (const id of ids) GROUP_OF[id] = g;
-const CAPITAL_GROUP = (c) => {
+// v6: an offset goes with the component it corrects (of_component); a carrier with that component's group.
+const CAPITAL_GROUP = (c, comps) => {
+  if (c.of_component) return CAPITAL_GROUP(comps.find((x) => x.id === c.of_component), comps);
   if (c.id === "k12") return "schools";
   if (c.id === "college") return "colleges_other_education";
   if (c.part === "enterprise") return "per_head_government_and_enterprises";
   const line = c.key.numerator_lines ? c.key.numerator_lines[0] : c.key.parent_line || c.key.line;
   return GROUP_OF[line];
 };
+for (const [id, x] of Object.entries(CARRIERS)) {
+  const comps = P.componentsFor(null);
+  GROUP_OF[id] = CAPITAL_GROUP(comps.find((c) => c.id === x.of[0]), comps);
+}
 const GROUP_NAMES = ["income_taxes", "payroll_taxes", "consumption_taxes", "production_term", "other_receipts", "schools",
   "colleges_other_education", "medicaid", "justice", "refundable_credits", "social_security_medicare", "health_veterans",
   "cash_food_housing_benefits", "roads_economic_affairs", "per_head_government_and_enterprises", "care_shelter_audit_constants"];
@@ -607,8 +808,21 @@ function evaluateState(plan, st) {
   const add = (name, v) => { if (!(name in g)) throw new Error("[BLOCKED] no group " + name); g[name] += v; };
   for (const r of ev.receipts) add(GROUP_OF[r.id] || "unmapped", -r.effect_bn);
   const sf = plan.schoolFraction(st[0], st[2]);
+  // v6: a part split by another line costs its line's response x its amount, booked in the basis line's group.
+  const routed = {};
   for (const s of ev.spending) {
-    const c = -s.effect_bn;
+    let c = -s.effect_bn;
+    const row = plan.rows.find((x) => x.routes && x.side === "spending" && x.id === s.id);
+    if (row) {
+      if (Math.abs(c - s.response * s.amount_bn) > 1e-9) throw new Error(`[BLOCKED] ${s.id} at ${st}: its cost is not its response x its amount`);
+      for (const x of row.routes) {
+        const cx = s.response * x.amount(st[0], st[2]);
+        routed[x.part] = cx;
+        if (x.basis === "education_services") { add("schools", cx * sf); add("colleges_other_education", cx * (1 - sf)); }
+        else add(GROUP_OF[x.basis] || "unmapped", cx);
+        c -= cx;
+      }
+    }
     if (s.id === "education_services") { add("schools", c * sf); add("colleges_other_education", c * (1 - sf)); }
     else if (s.id === P.SYN.school) add("schools", c);
     else if (s.id === P.SYN.college || s.id === "education_benefits") add("colleges_other_education", c);
@@ -616,12 +830,12 @@ function evaluateState(plan, st) {
   }
   add("production_term", -(ev.private_wtp_bn + ev.induced_receipts_bn));  // fiscal weight 1 (the package's state)
   const comps = P.componentsFor(plan.spec.capital_variant);
-  for (const c of full.capital.components) add(CAPITAL_GROUP(comps.find((x) => x.id === c.id)), c.return_bn);
+  for (const c of full.capital.components) add(CAPITAL_GROUP(comps.find((x) => x.id === c.id), comps), c.return_bn);
   const zeroResponse = { receipts: sum(ev.receipts.filter((x) => x.response === 0).map((x) => x.amount_bn)),
     spending: sum(ev.spending.filter((x) => x.response === 0).map((x) => x.amount_bn)) };
   const parts = { receipts_bn: -sum(ev.receipts.map((x) => x.effect_bn)), operating_bn: -sum(ev.spending.map((x) => x.effect_bn)),
     production_bn: -(ev.private_wtp_bn + ev.induced_receipts_bn), capital_bn: full.capital.total_bn };
-  return { cost: full.cost_bn, groups: g, model: m, full, zeroResponse, parts };
+  return { cost: full.cost_bn, groups: g, model: m, full, zeroResponse, parts, routed };
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -664,6 +878,11 @@ for (const [end, i] of ENDS) {
   const bad = r.plan.checks.filter((c) => !c.ok);
   gate(`${end} end: published-frame key shares reproduce model.json's uncorrected cells (${r.plan.checks.length} checks)`, !bad.length,
     bad.map((c) => `${c.label}: ${c.detail}`).join("; "));
+  if (r.plan.routeChecks.length) {
+    const badR = r.plan.routeChecks.filter((c) => !c.ok);
+    gate(`v6 ${end} end: each line with item parts split by another line keeps the case's amount at (G, G) (1e-12)`, !badR.length,
+      (badR.length ? badR : r.plan.routeChecks).map((c) => `${c.label}${badR.length ? ": " + c.detail : ""}`).join("; "));
+  }
   const ggg = r.states.GGG;
   const u = P.evaluateFull(UNION, SPECS[i]);
   const sameLines = u.evaluation.receipts.every((x, k) => ggg.full.evaluation.receipts[k].amount_bn === x.amount_bn)
@@ -688,6 +907,29 @@ for (const [end] of ENDS) {
   const sh = D[end].shapley;
   gate(`(a) ${end} end: parts 1-4 add to the case in all six orders and in the Shapley mean`,
     worst < 1e-9 && Math.abs(D[end].shared + sh.A + sh.R + sh.U - target) < 1e-9, `worst ${worst.toExponential(1)}; case ${total.toFixed(4)}`);
+}
+
+// v6, beside the case in its own run: the items' parts on model lines split by their own lines (ROUTES_EDITED; Pell on
+// other_federal_benefits' all_cash profile), the same decomposition. The case's cost and part 1 cannot move.
+let editedLine = null;
+if (ROUTES_EDITED) {
+  console.log("[beside: the items' parts on model lines split by their own lines]");
+  editedLine = {};
+  const PARTS = { shared: (d) => d.shared, age_structure: (d) => d.shapley.A, taxes_at_given_ages: (d) => d.shapley.R,
+    service_use_at_given_ages: (d) => d.shapley.U };
+  for (const [end, i] of ENDS) {
+    const r = runEnd(SPECS[i], { routes: ROUTES_EDITED });
+    const c = Object.fromEntries(STATES.map((st) => [st, r.states[st].cost]));
+    const d = decompose(c), dg = decompose(Object.fromEntries(STATES.map((st) => [st, r.states[st].groups])));
+    const sh = d.shapley;
+    gate(`v6 ${end} end, beside: with the parts on model lines split by their own lines, the case's cost and part 1 are unchanged and the parts add to the case (1e-9)`,
+      Math.abs(c.GGG - costs[end].GGG) < 1e-9 && Math.abs(d.shared - D[end].shared) < 1e-9 && Math.abs(d.shared + sh.A + sh.R + sh.U - c.GGG) < 1e-9,
+      `moves ${FACTORS.map((f) => `${PART_OF[f]} ${(sh[f] - D[end].shapley[f]).toFixed(4)}`).join(", ")}`);
+    const groupsMove = Object.fromEntries(FACTORS.map((f) => [PART_OF[f], Object.fromEntries(GROUP_NAMES
+      .map((n) => [n, dg.shapley[f][n] - DG[end].shapley[f][n]]).filter(([, v]) => Math.abs(v) > 1e-12))]));
+    editedLine[end] = Object.assign(Object.fromEntries(Object.entries(PARTS).map(([k, f]) => [k, f(d)])),
+      { move_from_case: Object.fromEntries(Object.entries(PARTS).map(([k, f]) => [k, f(d) - f(D[end])])), groups_move_from_case: groupsMove });
+  }
 }
 
 // (c) Twice the average residents.
@@ -857,7 +1099,7 @@ const summary = {
   // row-4 frame): what the response conventions keep out of part 1.
   zero_response_at_average_residents: Object.fromEntries(ENDS.map(([end]) => [end, (() => {
     const f = FRAME.row4, sr = f.NG / f.NC, ss = HF * f.NG / f.NC;
-    const pick = (side) => main[end].plan.rows.filter((r) => r.side === side && r.response === 0 && r.cls !== "zero")
+    const pick = (side) => main[end].plan.rows.filter((r) => r.side === side && r.response === 0 && r.cls !== "zero" && r.cls !== "carrier")
       .map((r) => [r.id, unionLine(side, r.id).national_bn * (side === "receipt" ? sr : ss)]);
     const rec = Object.fromEntries(pick("receipt")), spe = Object.fromEntries(pick("spending"));
     return { receipts: rec, receipts_total_bn: sum(Object.values(rec)), spending: spe, spending_total_bn: sum(Object.values(spe)) };
@@ -919,8 +1161,12 @@ if (LINEAGE) {
   }));
   summary.v5 = {
     rules: {
-      added_people: "meta.lineage.counts.added placed at the identified G3+'s ages (profiles_oct05.py: convention a, the ASEC person weights, "
-        + "this lane's bins); every row-4 union key vector is scaled by (union + added) / union in each bin, so the added people carry the "
+      added_people: (PLACEMENT === "measured" ? "meta.lineage.counts.added placed at the case's measured age mix (meta.lineage.age_mix; "
+        + `${LINEAGE.file}'s added column, profiles_oct07.py: each count part at its own five-year mix on the identified G3+'s ages within `
+        + "each band, the identified G3+ on convention a, the ASEC person weights, this lane's bins)"
+        : `meta.lineage.counts.added placed at the identified G3+'s ages (${LINEAGE.file === "g3plus_ages_oct05.csv" ? "profiles_oct05.py" : `${LINEAGE.file}'s g3plus column`}: `
+          + "convention a, the ASEC person weights, this lane's bins)")
+        + "; every row-4 union key vector is scaled by (union + added) / union in each bin, so the added people carry the "
         + "union's per-person key at their ages; the lineage's own amounts (its edits) enter through each line's kappa, as the corrections "
         + "do; the published frame stays model.json's",
       justice: "the added people's keyed parts at the union's relative risk theta on the row-4 frame (theta held)",
@@ -938,6 +1184,67 @@ if (LINEAGE) {
     justice_theta: Object.fromEntries(ENDS.map(([end]) => [end, main[end].plan.rows.find((r) => r.cls === "justice").theta])),
     row8: { v4_bn: row8v4, v5_bn: ROW8, lineage_edit_bn: E.row8_edit_bn },
     row8_in_lineage: row8InLineage,
+  };
+}
+if (CASE_DEF.items) {
+  const which = CASE_DEF.cash ? "cash" : "set";
+  const classOf = (e) => { const r = main.low.plan.rows.find((x) => x.side === e.side && x.id === e.line); return r ? r.cls : null; };
+  // Each item component's return over the eight states, split the same way (Shapley means).
+  const offsetParts = Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(P.ITEM_COMPONENTS.map(({ id }) => {
+    const at = (st) => main[end].states[st].full.capital.components.find((c) => c.id === id).return_bn;
+    const d = decompose(Object.fromEntries(STATES.map((st) => [st, at(st)])));
+    return [id, { shared: d.shared, age_structure: d.shapley.A, taxes_at_given_ages: d.shapley.R, service_use_at_given_ages: d.shapley.U, total: at("GGG") }];
+  }))]));
+  // Each item part split by another line: its cost over the eight states, split the same way (Shapley means).
+  const routeParts = Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(Object.values(ROUTES).flat().map((x) => {
+    const at = (st) => main[end].states[st].routed[x.part];
+    const d = decompose(Object.fromEntries(STATES.map((st) => [st, at(st)])));
+    return [x.part, { item: x.item, line: x.line, basis: x.basis, group: x.basis === "education_services" ? "schools, colleges_other_education" : GROUP_OF[x.basis],
+      shared: d.shared, age_structure: d.shapley.A, taxes_at_given_ages: d.shapley.R, service_use_at_given_ages: d.shapley.U, total: at("GGG") }];
+  }))]));
+  const addedIn = (lo, hi) => sum(LINEAGE.added.filter((_, b) => EDGES[b] >= lo && EDGES[b] < hi));
+  summary.v6 = {
+    rules: {
+      added_people: PLACEMENT === "measured" ? "at the case's measured age mix (v5.rules.added_people)"
+        : "beside the case: v5's rule, the added people at the identified G3+'s ages rather than the measured mix the case prices them at",
+      edit_sets: "each item edit enters as the payload's other corrections do: a cell shift through its line's rule (kappa on a profile line: "
+        + "the group's own measurement, moving the amounts at U = G and none at U = N; a synthetic line's own rule), a national-scale edit "
+        + "through its line's uncorrected cell (natScale, every state); the parts named lineage_* (the added people's) join the lineage's own "
+        + "amounts on the accrual lines (v5.rules.pension_accrual)",
+      carriers: "an item's carrier receipt line corrects the key of the component its offsets correct (of_component, a lines-keyed component): "
+        + "0 at U = N; at U = G the case's value x that key's lines at (A, G) over at (G, G), kappa on the key; the offsets' returns join "
+        + "that component's line group",
+      split_basis: SPLIT_BASIS === "edited-line" ? "beside the case: each item part on a model line on that line's rule instead of its split basis "
+        + "(Pell on other_federal_benefits' all_cash profile); the parts on payload lines keep their split basis"
+        : "an item part whose split basis (the item meta's splits.split_basis) is a line other than the one it edits stays on its "
+        + "line, at that line's response, and takes the basis line's age profile as a correction on that line enters it (0 at U = N; at U = G "
+        + "the basis line's uncorrected amount at (A, G) over at (G, G)); its cost joins the basis line's group (education_services: schools "
+        + "and colleges by the school fraction) [ASSUMPTION, the case's splits rule]",
+      pension_inputs: ACCRUAL ? "ratio_net and the Part A accrual are the payload's 2026 file at its arm (meta.pension_accrual.source, sha-gated): "
+        + "the arm's gross ratio per tax dollar net of the group's share of future benefits taxed, and its part_a_bn; the national rate on "
+        + "current benefits (the benefit tax at R = N) is the 2025 file's it builds on (source.builds_on, sha-gated), and so are the "
+        + "national-ratio sensitivity's bridge and national timing share, under the 2026 arm's gross ratio [APPROX: no 2026 national route]"
+        : "none: the cash set has no pension accrual",
+    },
+    placement: { rule: PLACEMENT, ages_file: LINEAGE.file, added_persons: sum(LINEAGE.added), added_under_18: addedIn(0, 18),
+      added_18_to_64: addedIn(18, 65), added_65_plus: addedIn(65, Infinity) },
+    items: CORR.meta.items.map((it) => ({ id: it.id, kind: it.kind, applied: it.applied,
+      edits: it.edits ? CORR.edits.slice(it.edits.first, it.edits.first + it.edits.count).map((e, k) => ({ index: it.edits.first + k, side: e.side,
+        line: e.line, key: e.key || e.scenario || null, kind: e.national_bn !== undefined ? "national_scale" : "cell_shift", class: classOf(e) })) : null,
+      lineage_parts: ITEM_LINEAGE[which].filter((e) => e.item === it.id).map((e) => ({ part: e.part, line: e.line, by: e.by })),
+      carriers: it.capital ? it.capital.receipt_lines : [] })),
+    carriers: Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(Object.entries(CARRIERS).map(([id, x]) => {
+      const r = main[end].plan.rows.find((y) => y.side === "receipt" && y.id === id), N = unionLine("receipt", id).national_bn;
+      return [id, Object.assign({}, x, { group: GROUP_OF[id], key_values: Object.fromEntries(["NN", "GN", "NG", "GG"].map((s) => [s, r.amount(s[0], s[1]) / N])) })];
+    }))])),
+    offset_parts: offsetParts,
+    split_parts: routeParts,
+    split_basis_edited_line: editedLine ? { rule: "beside the case: each item part on a model line on that line's rule instead of its "
+      + "split basis (Pell on other_federal_benefits' all_cash profile and line group; the parts on payload lines keep their split basis), "
+      + "the same run's decomposition", parts: editedLine } : null,
+    pension: PENSION_V6 ? { source: { file: PENSION_V6.file, commit: PENSION_V6.commit, sha256: PENSION_V6.sha256, arm: PENSION_V6.arm },
+      builds_on: PENSION_V6.builds_on, gross_ratio: RATIO_NATIONAL.inputs.group_gross_central, future_share_group: RATIO_NATIONAL.inputs.group_future_share_taxed,
+      ratio_net: ACCRUAL.ratio_net, part_a_accrual_bn: ACCRUAL.part_a_accrual_bn } : null,
   };
 }
 fs.writeFileSync(path.join(OUT, `summary${SUFFIX}.json`), JSON.stringify(deep(summary), null, 1) + "\n");
