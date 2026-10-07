@@ -1,0 +1,3065 @@
+{
+ "case": "oct07",
+ "set": "set",
+ "lane": "main_case_2026_10_07",
+ "payload": "main_case_2026_10_07/derived/corrections.json",
+ "status": "adopted 2026-10-07 (decisions/2026-10-07-main-case-v6.md): v5 plus items pension_tr2026, retiree_health, added_age_mix, user_fees, built by main_case_2026_10_07/package.cjs on main_case_2026_10_05/derived/corrections.json",
+ "adopted": "2026-10-07",
+ "builds_on": {
+  "payload": "main_case_2026_09_29/derived/corrections.json",
+  "generation_payloads": "generation_account_2026_09_24/derived/generation_corrections_sept29.json",
+  "v5_generation_payloads": "generation_account_2026_09_24/derived/generation_corrections_oct05.json"
+ },
+ "oracle": {
+  "source": "main_case_2026_10_07/derived/main_case_bands.csv (adopted)",
+  "specs": [
+   48,
+   11
+  ],
+  "band": [
+   389.0826,
+   461.4797
+  ],
+  "uncorrected": [
+   313.0646,
+   378.7098
+  ],
+  "full": {
+   "source": "main_case_2026_10_07/derived/summary.json main_case",
+   "band": [
+    389.0825528654786,
+    461.47970930242025
+   ]
+  }
+ },
+ "responses": {
+  "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+  "general_government": {
+   "low": 0.6005266346459308,
+   "high": 0.8510539647701243,
+   "elasticity": [
+    0.5939193086359557,
+    0.842
+   ],
+   "s": 0.12918222328408055
+  },
+  "school": {
+   "growth": 1,
+   "decline": 1,
+   "elasticity": null,
+   "s": null,
+   "set_directly": true,
+   "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+  },
+  "row8_factor": 0.9451692510510525,
+  "economic_affairs_services": {
+   "low": 0.3844994797314016,
+   "high": 0.6387399411939584,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_highways",
+     "level": "federal",
+     "subfunction": "Highways",
+     "national_bn": 1.827,
+     "share_of_line": 0.00404261674798367,
+     "low": 0,
+     "high": 1,
+     "basis": "federal highway administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_air",
+     "level": "federal",
+     "subfunction": "Air",
+     "national_bn": 30.604,
+     "share_of_line": 0.06771770276699082,
+     "low": 0,
+     "high": 1,
+     "basis": "air traffic control and screening: fixed at the low end, the nearest measured transport function (highways) at the high end"
+    },
+    {
+     "id": "fed_water",
+     "level": "federal",
+     "subfunction": "Water",
+     "national_bn": 18.209,
+     "share_of_line": 0.04029119231747928,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_transit_and_railroad",
+     "level": "federal",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0.094,
+     "share_of_line": 0.00020799451248520252,
+     "low": 0,
+     "high": 1,
+     "basis": "federal transit and rail administration: fixed at the low end, the highway response at the high end"
+    },
+    {
+     "id": "fed_space",
+     "level": "federal",
+     "subfunction": "Space",
+     "national_bn": 21.23,
+     "share_of_line": 0.04697578191554095,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_general_economic_and_labor_affairs",
+     "level": "federal",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 35.431,
+     "share_of_line": 0.07839844225386393,
+     "low": 0,
+     "high": 0.8510539647701243,
+     "basis": "general government's adopted treatment of federal administration: fixed at the low end, the administration response at the high end"
+    },
+    {
+     "id": "fed_agriculture",
+     "level": "federal",
+     "subfunction": "Agriculture",
+     "national_bn": 17.54,
+     "share_of_line": 0.038810890946706936,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_energy",
+     "level": "federal",
+     "subfunction": "Energy",
+     "national_bn": 23.406,
+     "share_of_line": 0.051790633608815424,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_natural_resources",
+     "level": "federal",
+     "subfunction": "Natural resources",
+     "national_bn": 32.036,
+     "share_of_line": 0.07088630002102073,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "fed_postal_service",
+     "level": "federal",
+     "subfunction": "Postal service",
+     "national_bn": -0.177,
+     "share_of_line": -0.00039164924159447705,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_highways",
+     "level": "state_local",
+     "subfunction": "Highways",
+     "national_bn": 201.005,
+     "share_of_line": 0.4447652870434908,
+     "low": 0.7401981546463505,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_transit_and_railroad",
+     "level": "state_local",
+     "subfunction": "Transit and railroad",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0.7401981546463505,
+     "high": 1,
+     "basis": "scaling test, nontoll highways: across states at the low end, within states at the high end, finite removal, capped at 1"
+    },
+    {
+     "id": "sl_general_economic_and_labor_affairs",
+     "level": "state_local",
+     "subfunction": "General economic and labor affairs",
+     "national_bn": 29.358,
+     "share_of_line": 0.06496066912277208,
+     "low": 0.8510539647701243,
+     "high": 0.8510539647701243,
+     "basis": "general government's adopted response for state-local administration at both ends"
+    },
+    {
+     "id": "sl_agriculture",
+     "level": "state_local",
+     "subfunction": "Agriculture",
+     "national_bn": 10.007,
+     "share_of_line": 0.022142564749355546,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_energy",
+     "level": "state_local",
+     "subfunction": "Energy",
+     "national_bn": 0,
+     "share_of_line": 0,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_natural_resources",
+     "level": "state_local",
+     "subfunction": "Natural resources",
+     "national_bn": 31.99,
+     "share_of_line": 0.07078451547235774,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    },
+    {
+     "id": "sl_other_commercial_activities",
+     "level": "state_local",
+     "subfunction": "Other (commercial activities)",
+     "national_bn": -0.625,
+     "share_of_line": -0.0013829422372686338,
+     "low": 0,
+     "high": 0,
+     "basis": "held at 0"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "recreation_culture": {
+   "low": 0.8563914832367988,
+   "high": 1,
+   "rule": "finite removal r = [1 - (1 - s)^b] / s on the scaling test's state estimates, capped at 1; administration takes the main case's general-government responses; 0 where spending is not driven by residents; the amount-weighted blend of the line's subfunctions (all share the line's key)",
+   "readings": "low at the specifications where general government takes its low response (the band's low end), high elsewhere",
+   "profiles": "long_run_non_school_full and long_run_non_school_fixed; the proportional reference holds the line at 1",
+   "variant": "adopted",
+   "subfunctions": [
+    {
+     "id": "fed_recreation_and_culture",
+     "level": "federal",
+     "subfunction": "Recreation and culture",
+     "national_bn": 5.43,
+     "share_of_line": 0.09994294233494688,
+     "low": 0,
+     "high": 1,
+     "basis": "national parks and federal cultural institutions: fixed at the low end, the parks response at the high end"
+    },
+    {
+     "id": "sl_recreation_and_culture",
+     "level": "state_local",
+     "subfunction": "Recreation and culture",
+     "national_bn": 48.901,
+     "share_of_line": 0.9000570576650531,
+     "low": 0.9514857707559868,
+     "high": 1,
+     "basis": "scaling test, parks: across states at the low end, within states at the high end, finite removal, capped at 1"
+    }
+   ],
+   "source": {
+    "file": "service_response_long_run_2026_09_27/derived/responses.json",
+    "sha256": "abc449297e2b079f2b749bc831e070bf493cee27af0c8a7479598c9eb967154c",
+    "commit": "bccf478"
+   }
+  },
+  "housing_subsidies": {
+   "low": 1,
+   "high": 1,
+   "key": "housing_support",
+   "rule": "household rental assistance at response 1, like the account's other capped means-tested transfers, in every profile; NIPA files it as a subsidy (Table 3.13 line 4, federal housing)",
+   "overlap_netted_bn": 0,
+   "overlap": "no double charge: NIPA's current surplus of government enterprises includes subsidies received from other levels of government (BEA glossary; MP-5), so under option D a federal payment to a public housing authority is charged here at the rental key and credited inside the enterprise_surplus receipt at the population key; the two offset except for the keys, a mismatch in the group's favour of at most $2.5bn if all of line 4 went to enterprises and about $0.2bn for public housing's operating subsidies [INFERENCE]; not netted",
+   "source": "dataset_integrity_2026_09_23/spending.md item 6"
+  },
+  "enterprise_surplus": {
+   "receipt": true,
+   "override": "receipt:enterprise_surplus",
+   "low": 1,
+   "high": 1,
+   "option": "D",
+   "rule": "enterprise option D (all enterprises respond: every government enterprise's capital at the enterprise-surplus key and response 1, and the enterprise_surplus receipt at response 1): the enterprises' current surplus (NIPA 3.1 line 19, -$47.46bn national, net of depreciation and before interest) at this response in every profile; set as engine.js sets a receipt response, response_override[\"receipt:enterprise_surplus\"]",
+   "key": "the case's corrected population share (general_public_services' population cell), by the payload's re-key edits",
+   "source": "capital_return_services_2026_09_27/derived/engine_components.json enterprises"
+  },
+  "housing_enterprise_surplus": {
+   "receipt": true,
+   "override": "receipt:housing_enterprise_surplus",
+   "low": 1,
+   "high": 1,
+   "rule": "public housing's enterprise deficit (NIPA 3.8 line 13, housing and urban renewal, -$40.298bn in 2024, less public housing's $5.258bn operating subsidy, consolidated with the rental line) as its own receipt line at the rental line's key; it responds as the enterprise receipt does, in every profile",
+   "source": "item 1: main_case_candidate_v2_2026_09_28/package.cjs splitHousing"
+  },
+  "modeled_owner_property": {
+   "receipt": true,
+   "override": "receipt:modeled_owner_property",
+   "low": 0.7726986463443216,
+   "high": 0.7726986463443216,
+   "rule": "owner-occupied property tax at the long-run owner response (the metro land-price fall), in every profile; the line keeps its key",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs RESPONSES.owner.central (derived/housing.json)"
+  },
+  "tenant_occupied_property": {
+   "receipt": true,
+   "override": "receipt:tenant_occupied_property",
+   "low": 0.7189123969969125,
+   "high": 0.7189123969969125,
+   "rule": "the tax on tenant-occupied housing, split out of remaining_production_property (BEA Table 7.4.5 housing taxes on production x the tenant share of housing output), keyed by the group's share of contract rent, at the long-run renter response in every profile",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs splitTenant, RESPONSES.renter.central"
+  },
+  "personal_property_tax": {
+   "receipt": true,
+   "override": "receipt:personal_property_tax",
+   "low": 1,
+   "high": 1,
+   "rule": "household personal property tax (NIPA 3.4 line 11), re-keyed to the group's share of household vehicles, at response 1 like the motor-vehicle line, in every profile",
+   "source": "item 5: receipt_side_long_run_2026_09_28/items.cjs rekey, CENTRAL_ITEMS.personal"
+  },
+  "roads_vmt_sl": {
+   "low": 0.7401981546463505,
+   "high": 1,
+   "rule": "re-keys the S&L highways part of economic_affairs_services (national $201.005bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions sl_highways)",
+   "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+  },
+  "roads_vmt_fed": {
+   "low": 0,
+   "high": 1,
+   "rule": "re-keys the federal highways part of economic_affairs_services (national $1.827bn) to the road key; it responds as that subfunction does at the specification's reading (responses.economic_affairs_services.subfunctions fed_highways)",
+   "source": "roads: package.cjs withRoads (roads_mileage_key_2026_09_29)"
+  },
+  "state_price_public_order_safety": {
+   "low": 1,
+   "high": 1,
+   "rule": "public order and safety's state-price gap (the sum over its S&L functions of amount x (price index - 1)) at the line's use key; it responds as its parent, which the case holds at 1 in every profile",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  },
+  "state_price_health_services": {
+   "low": 1,
+   "high": 1,
+   "rule": "health's state-price gap at the line's preferred key; it responds as its parent, which the case holds at 1 in every profile",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  },
+  "state_price_recreation_culture": {
+   "low": 0.8563914832367988,
+   "high": 1,
+   "rule": "recreation and culture's state-price gap at the line's preferred key; it responds as its parent, recreation_culture, at the specification's reading",
+   "source": "state: package.cjs withStatePrice (state_priced_services_2026_09_29, central package)"
+  }
+ },
+ "low_spec": {
+  "allocation": "shared",
+  "normalization": "gdp",
+  "share": 0.7153278156243373,
+  "school": 1,
+  "reading": "low",
+  "gg": 0.6005266346459308,
+  "uc": "uninsured_use_low"
+ },
+ "high_spec": {
+  "allocation": "personal",
+  "normalization": "cash",
+  "share": 0.8651608840454027,
+  "school": 1,
+  "reading": "high",
+  "gg": 0.8510539647701243,
+  "uc": "uninsured_use_high"
+ },
+ "specifications": {
+  "low": {
+   "allocation": "shared",
+   "normalization": "gdp",
+   "share": 0.7153278156243373,
+   "school": 1,
+   "reading": "low",
+   "gg": 0.6005266346459308,
+   "uc": "uninsured_use_low"
+  },
+  "high": {
+   "allocation": "personal",
+   "normalization": "cash",
+   "share": 0.8651608840454027,
+   "school": 1,
+   "reading": "high",
+   "gg": 0.8510539647701243,
+   "uc": "uninsured_use_high"
+  },
+  "low_index": 48,
+  "high_index": 11
+ },
+ "union": {
+  "cost_bn": [
+   389.0825528654784,
+   461.47970930242036
+  ],
+  "uncorrected_bn": [
+   313.0645791648988,
+   378.7098497950922
+  ],
+  "uncorrected_own_ends_bn": [
+   313.0645791648988,
+   378.7098497950922
+  ],
+  "population": 42752212.92437314,
+  "adults": 29274258.282217387,
+  "per_member_usd": [
+   9100.875165310132,
+   10794.288242312941
+  ],
+  "per_adult_usd": [
+   13290.944867485374,
+   15764.0103074019
+  ]
+ },
+ "headcount_basis": "row-4 weights (v4_inputs.py headcount), the union's 39,712,493, plus the case's 3,039,720 added people in G3+ (meta.lineage.counts.added) under both conventions; their adults at the case's measured age mix (meta.lineage.age_mix: each count part at its own mix, the 15-19 band's adults at the identified G3+'s share of it) [APPROX]",
+ "added_adults": {
+  "adults": 1609481.8807265419,
+  "adult_share": 0.5294836682748131,
+  "theta": 0.3512705435296933,
+  "by_part": {
+   "g3_rate": 1135132.0285824335,
+   "later": 474349.8521441085
+  },
+  "part_shares": {
+   "g3_rate": 0.5836479291838441,
+   "later": 0.4332643208322763
+  },
+  "identified_adult_share": 0.5705648373842894,
+  "v5_rule_adults": 1734357.1153795733
+ },
+ "lineage": {
+  "item": "added_age_mix",
+  "arm": "b",
+  "counting": "whole",
+  "added": 3039719.593185237,
+  "at_g3_rate": 1944891.7263696424,
+  "later_losses": 1094827.8668155947,
+  "added_adults": 1609481.8807265419,
+  "adult_share": 0.5294836682748131,
+  "members": {
+   "g3plus": 1956998.3691152572,
+   "white": 1082721.22406998
+  },
+  "c3": {
+   "value": 0.5567,
+   "se": 0.2457,
+   "label": "pooled with CPS monthly 1994-2026 (central)",
+   "measure": "ba_plus",
+   "source": "generation_carryover_2026_09_27/summarize.py SPLIT_C3 (imported)",
+   "override": false
+  },
+  "age_mix": {
+   "reading": "cross_section_2007_2026",
+   "route": "keys",
+   "under_20_share": {
+    "identified": 0.4671630040016608,
+    "g3_rate": 0.4544483403794164,
+    "later": 0.6150379282993519,
+    "printed": "45.4% of the G3-rate persons and 61.5% of the later losses are under 20, against 46.7% of the identified third-plus"
+   }
+  },
+  "row8_edit_bn": -0.00798742966671706,
+  "row8_shares": {
+   "a": {
+    "G1": {
+     "personal": 0.509992103666145,
+     "shared": 0.512016970645964
+    },
+    "G2": {
+     "personal": 0.221387886329846,
+     "shared": 0.22018508800649855
+    },
+    "G3plus": {
+     "personal": 0.26862001000400904,
+     "shared": 0.2677979413475373
+    }
+   },
+   "b": {
+    "G1": {
+     "personal": 0.5493464116603083,
+     "shared": 0.5507212574308893
+    },
+    "G2": {
+     "personal": 0.2165935244549852,
+     "shared": 0.21579588097412333
+    },
+    "G3plus": {
+     "personal": 0.23406006388470632,
+     "shared": 0.23348286159498707
+    }
+   }
+  }
+ },
+ "items": {
+  "order": [
+   "added_age_mix",
+   "pension_tr2026",
+   "retiree_health",
+   "user_fees"
+  ],
+  "all": [
+   "pension_tr2026",
+   "retiree_health",
+   "added_age_mix",
+   "user_fees"
+  ],
+  "records": [
+   {
+    "id": "pension_tr2026",
+    "kind": "edit_set",
+    "applied": true,
+    "source": {
+     "lane": "pension_tr2026_2026_10_06",
+     "commit": "8cefec37",
+     "arm": "all_2026_inputs_separate_funds",
+     "files": {
+      "summary": "pension_tr2026_2026_10_06/derived/summary.json",
+      "case": "pension_tr2026_2026_10_06/derived/case_oct05.json"
+     }
+    },
+    "arm": null,
+    "edits": {
+     "first": 752,
+     "count": 2
+    },
+    "why": null
+   },
+   {
+    "id": "retiree_health",
+    "kind": "edit_set",
+    "applied": true,
+    "source": {
+     "lane": "public_pension_legacy_2026_10_07",
+     "commit": "96a8799b",
+     "arm": "central",
+     "files": {
+      "case": "public_pension_legacy_2026_10_07/derived/case_oct05.json",
+      "inputs": "public_pension_legacy_2026_10_07/derived/inputs.json",
+      "national": "public_pension_legacy_2026_10_07/derived/national.csv",
+      "by_line": "public_pension_legacy_2026_10_07/derived/by_line_oct05.csv"
+     }
+    },
+    "arm": null,
+    "edits": {
+     "first": 754,
+     "count": 10
+    },
+    "why": null
+   },
+   {
+    "id": "added_age_mix",
+    "kind": "lineage",
+    "applied": true,
+    "source": {
+     "lane": "added_age_mix_2026_10_07",
+     "commit": "21d9a21d",
+     "reading": "cross_section_2007_2026",
+     "route": "keys",
+     "files": {
+      "age_mix": "added_age_mix_2026_10_07/derived/age_mix.json",
+      "band_lines": "added_age_mix_2026_10_07/derived/band_lines.json",
+      "age_keys": "added_age_mix_2026_10_07/derived/g3_age_keys.json",
+      "price_summary": "added_age_mix_2026_10_07/derived/price_summary.json",
+      "summary": "added_age_mix_2026_10_07/derived/summary.json"
+     }
+    },
+    "arm": null,
+    "edits": null,
+    "why": null
+   },
+   {
+    "id": "user_fees",
+    "kind": "edit_set",
+    "applied": true,
+    "source": {
+     "lane": "user_fee_allocation_2026_10_07",
+     "commit": "81bd22da",
+     "arm": "all_but_transit",
+     "files": {
+      "fee_lines": "user_fee_allocation_2026_10_07/derived/fee_lines.json",
+      "case": "user_fee_allocation_2026_10_07/derived/case_oct05.json",
+      "per_spec": "user_fee_allocation_2026_10_07/derived/case_oct05.csv",
+      "case_script": "user_fee_allocation_2026_10_07/case.cjs",
+      "builder": "user_fee_allocation_2026_10_07/fee_lines.py"
+     }
+    },
+    "arm": null,
+    "edits": {
+     "first": 764,
+     "count": 5
+    },
+    "why": null
+   }
+  ],
+  "split": {
+   "a": [
+    {
+     "id": "pension_tr2026",
+     "first": 752,
+     "count": 2,
+     "edits": [
+      {
+       "edit": 0,
+       "side": "spending",
+       "line": "social_security",
+       "key": "social_security",
+       "parts": [
+        {
+         "name": "union_oasdi",
+         "rule": "pension_oasdi",
+         "union_bn": {
+          "personal": -2.1233971737322013,
+          "shared": -2.260859383780748
+         },
+         "share": {
+          "G1": {
+           "personal": 0.20575417918754943,
+           "shared": 0.15781372145474745
+          },
+          "G2": {
+           "personal": 0.44979915943043863,
+           "shared": 0.4276639116206921
+          },
+          "G3plus": {
+           "personal": 0.3444466613820119,
+           "shared": 0.4145223669245604
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -0.43689784257043135,
+           "shared": -0.35679463304032694
+          },
+          "G2": {
+           "personal": -0.9551022638817132,
+           "shared": -0.9668879676920222
+          },
+          "G3plus": {
+           "personal": -0.7313970672800566,
+           "shared": -0.9371767830483988
+          }
+         }
+        },
+        {
+         "name": "lineage_oasdi",
+         "rule": "lineage",
+         "union_bn": {
+          "personal": -0.15634229873910022,
+          "shared": -0.19862042863975995
+         },
+         "share": {
+          "G1": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G2": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G3plus": {
+           "personal": 1,
+           "shared": 1
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G2": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G3plus": {
+           "personal": -0.15634229873910022,
+           "shared": -0.19862042863975995
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 1,
+       "side": "spending",
+       "line": "medicare",
+       "key": "medicare",
+       "parts": [
+        {
+         "name": "union_part_a",
+         "rule": "pension_part_a",
+         "union_bn": {
+          "personal": -0.35434843707763974,
+          "shared": -0.35434843707763974
+         },
+         "share": {
+          "G1": {
+           "personal": -0.049305775197066144,
+           "shared": -0.051998081475955304
+          },
+          "G2": {
+           "personal": 0.690897150705823,
+           "shared": 0.6291293668673036
+          },
+          "G3plus": {
+           "personal": 0.3584086244912431,
+           "shared": 0.4228687146086518
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0.017471424379981844,
+           "shared": 0.01842543890204053
+          },
+          "G2": {
+           "personal": -0.2448183255340029,
+           "shared": -0.22293100786907405
+          },
+          "G3plus": {
+           "personal": -0.12700153592361868,
+           "shared": -0.14984286811060624
+          }
+         }
+        },
+        {
+         "name": "lineage_part_a",
+         "rule": "lineage",
+         "union_bn": {
+          "personal": -0.025862992192876095,
+          "shared": -0.03250378359863497
+         },
+         "share": {
+          "G1": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G2": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G3plus": {
+           "personal": 1,
+           "shared": 1
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G2": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G3plus": {
+           "personal": -0.025862992192876095,
+           "shared": -0.03250378359863497
+          }
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "retiree_health",
+     "first": 754,
+     "count": 10,
+     "edits": [
+      {
+       "edit": 0,
+       "side": "spending",
+       "line": "other_federal_benefits",
+       "national_bn": 66.62745901599999,
+       "rule": "as_is"
+      },
+      {
+       "edit": 1,
+       "side": "spending",
+       "line": "general_public_services",
+       "national_bn": 402.771128442,
+       "rule": "as_is"
+      },
+      {
+       "edit": 2,
+       "side": "spending",
+       "line": "defense",
+       "national_bn": 856.019902,
+       "rule": "as_is"
+      },
+      {
+       "edit": 3,
+       "side": "spending",
+       "line": "public_order_safety",
+       "national_bn": 521.2025117960001,
+       "rule": "as_is"
+      },
+      {
+       "edit": 4,
+       "side": "spending",
+       "line": "economic_affairs_services",
+       "national_bn": 453.136829594,
+       "rule": "as_is"
+      },
+      {
+       "edit": 5,
+       "side": "spending",
+       "line": "housing_community_services",
+       "national_bn": 14.747693443000001,
+       "rule": "as_is"
+      },
+      {
+       "edit": 6,
+       "side": "spending",
+       "line": "health_services",
+       "national_bn": 308.35875489899996,
+       "rule": "as_is"
+      },
+      {
+       "edit": 7,
+       "side": "spending",
+       "line": "recreation_culture",
+       "national_bn": 54.483657029,
+       "rule": "as_is"
+      },
+      {
+       "edit": 8,
+       "side": "spending",
+       "line": "education_services",
+       "national_bn": 1226.396865159,
+       "rule": "as_is"
+      },
+      {
+       "edit": 9,
+       "side": "spending",
+       "line": "income_security_services",
+       "national_bn": 168.26451691100002,
+       "rule": "as_is"
+      }
+     ]
+    },
+    {
+     "id": "user_fees",
+     "first": 764,
+     "count": 5,
+     "edits": [
+      {
+       "edit": 0,
+       "side": "spending",
+       "line": "education_services",
+       "key": "education_mix",
+       "parts": [
+        {
+         "name": "union_fee_tuition",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": 1.8446046211830234,
+          "shared": 1.8446046211830234
+         },
+         "share": {
+          "G1": {
+           "personal": 0.061577888125650786,
+           "shared": 0.23344948648647815
+          },
+          "G2": {
+           "personal": 0.4903003188827661,
+           "shared": 0.4042152604325379
+          },
+          "G3plus": {
+           "personal": 0.44812179299158234,
+           "shared": 0.3623352530809832
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0.11358685699926666,
+           "shared": 0.43062200158576136
+          },
+          "G2": {
+           "personal": 0.9044102339786603,
+           "shared": 0.7456173373465588
+          },
+          "G3plus": {
+           "personal": 0.8266075302050949,
+           "shared": 0.6683652822507019
+          }
+         }
+        },
+        {
+         "name": "union_key_higher_ed",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": -5.452309063339062,
+          "shared": -5.452309063339062
+         },
+         "share": {
+          "G1": {
+           "personal": 0.061577888125650786,
+           "shared": 0.23344948648647815
+          },
+          "G2": {
+           "personal": 0.4903003188827661,
+           "shared": 0.4042152604325379
+          },
+          "G3plus": {
+           "personal": 0.44812179299158234,
+           "shared": 0.3623352530809832
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -0.33574167752876455,
+           "shared": -1.2728387510020747
+          },
+          "G2": {
+           "personal": -2.6732688724025375,
+           "shared": -2.2039065279962857
+          },
+          "G3plus": {
+           "personal": -2.443298513407755,
+           "shared": -1.9755637843406972
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 1,
+       "side": "spending",
+       "line": "school_reprice",
+       "key": "k",
+       "parts": [
+        {
+         "name": "union_k12_weight_school",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": -0.7452027530281796,
+          "shared": -0.6078299277259762
+         },
+         "share": {
+          "G1": {
+           "personal": 0.061577888125650786,
+           "shared": 0.23344948648647815
+          },
+          "G2": {
+           "personal": 0.4903003188827661,
+           "shared": 0.4042152604325379
+          },
+          "G3plus": {
+           "personal": 0.44812179299158234,
+           "shared": 0.3623352530809832
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -0.04588801175689622,
+           "shared": -0.14189758449874226
+          },
+          "G2": {
+           "personal": -0.36537314744203164,
+           "shared": -0.24569413253444616
+          },
+          "G3plus": {
+           "personal": -0.33394159382925115,
+           "shared": -0.22023821069278732
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 2,
+       "side": "spending",
+       "line": "college_rekey",
+       "key": "k",
+       "parts": [
+        {
+         "name": "union_k12_weight_other",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": -0.6072413741612914,
+          "shared": -0.4744102754129796
+         },
+         "share": {
+          "G1": {
+           "personal": 0.061577888125650786,
+           "shared": 0.23344948648647815
+          },
+          "G2": {
+           "personal": 0.4903003188827661,
+           "shared": 0.4042152604325379
+          },
+          "G3plus": {
+           "personal": 0.44812179299158234,
+           "shared": 0.3623352530809832
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -0.03739264140337045,
+           "shared": -0.11075083517906875
+          },
+          "G2": {
+           "personal": -0.29773063939009026,
+           "shared": -0.19176387302792958
+          },
+          "G3plus": {
+           "personal": -0.2721180933678302,
+           "shared": -0.1718955672059809
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 3,
+       "side": "spending",
+       "line": "health_services",
+       "key": "health_other",
+       "parts": [
+        {
+         "name": "union_fee_health",
+         "rule": "parent_line",
+         "parent": "health_services",
+         "union_bn": {
+          "personal": 0.9450346146182799,
+          "shared": 0.9450346146182799
+         },
+         "share": {
+          "G1": {
+           "personal": 0.26944243970590426,
+           "shared": 0.26944243970590426
+          },
+          "G2": {
+           "personal": 0.3075721728016814,
+           "shared": 0.3075721728016814
+          },
+          "G3plus": {
+           "personal": 0.4229853874924102,
+           "shared": 0.4229853874924102
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0.25463243216927833,
+           "shared": 0.25463243216927833
+          },
+          "G2": {
+           "personal": 0.29066634979094397,
+           "shared": 0.29066634979094397
+          },
+          "G3plus": {
+           "personal": 0.3997358326580537,
+           "shared": 0.3997358326580537
+          }
+         }
+        },
+        {
+         "name": "union_key_health",
+         "rule": "parent_line",
+         "parent": "health_services",
+         "union_bn": {
+          "personal": -0.30368354540915365,
+          "shared": -0.30368354540915365
+         },
+         "share": {
+          "G1": {
+           "personal": 0.26944243970590426,
+           "shared": 0.26944243970590426
+          },
+          "G2": {
+           "personal": 0.3075721728016814,
+           "shared": 0.3075721728016814
+          },
+          "G3plus": {
+           "personal": 0.4229853874924102,
+           "shared": 0.4229853874924102
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -0.08182523537358112,
+           "shared": -0.08182523537358112
+          },
+          "G2": {
+           "personal": -0.09340460790561148,
+           "shared": -0.09340460790561148
+          },
+          "G3plus": {
+           "personal": -0.12845370212995982,
+           "shared": -0.12845370212995982
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 4,
+       "side": "spending",
+       "line": "other_federal_benefits",
+       "key": "all_cash",
+       "parts": [
+        {
+         "name": "union_key_pell",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": 3.969390129227313,
+          "shared": 3.8679984770699996
+         },
+         "share": {
+          "G1": {
+           "personal": 0.061577888125650786,
+           "shared": 0.23344948648647815
+          },
+          "G2": {
+           "personal": 0.4903003188827661,
+           "shared": 0.4042152604325379
+          },
+          "G3plus": {
+           "personal": 0.44812179299158234,
+           "shared": 0.3623352530809832
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0.244426661304622,
+           "shared": 0.9029822582024709
+          },
+          "G2": {
+           "personal": 1.9461932461302558,
+           "shared": 1.56350401176151
+          },
+          "G3plus": {
+           "personal": 1.7787702217924322,
+           "shared": 1.4015122071060158
+          }
+         }
+        }
+       ]
+      }
+     ],
+     "carriers": [
+      {
+       "id": "user_fees_key_k12",
+       "rule": "parent_line",
+       "parent": "education_services",
+       "parent_from": "meta.user_fees.splits.split_basis",
+       "union_value": {
+        "personal": 0.00975296263696325,
+        "shared": 0.008497356755080671
+       },
+       "share": {
+        "G1": {
+         "personal": 0.061577888125650786,
+         "shared": 0.23344948648647815
+        },
+        "G2": {
+         "personal": 0.4903003188827661,
+         "shared": 0.4042152604325379
+        },
+        "G3plus": {
+         "personal": 0.44812179299158234,
+         "shared": 0.3623352530809832
+        }
+       },
+       "value": {
+        "G1": {
+         "personal": 0.0006005668421525751,
+         "shared": 0.0019837035709659888
+        },
+        "G2": {
+         "personal": 0.004781880690954784,
+         "shared": 0.0034347612737431186
+        },
+        "G3plus": {
+         "personal": 0.004370515103855882,
+         "shared": 0.003078891910371557
+        }
+       }
+      },
+      {
+       "id": "user_fees_key_college",
+       "rule": "parent_line",
+       "parent": "education_services",
+       "parent_from": "meta.user_fees.splits.split_basis",
+       "union_value": {
+        "personal": -0.03854858618402715,
+        "shared": -0.03436861250179958
+       },
+       "share": {
+        "G1": {
+         "personal": 0.061577888125650786,
+         "shared": 0.23344948648647815
+        },
+        "G2": {
+         "personal": 0.4903003188827661,
+         "shared": 0.4042152604325379
+        },
+        "G3plus": {
+         "personal": 0.44812179299158234,
+         "shared": 0.3623352530809832
+        }
+       },
+       "value": {
+        "G1": {
+         "personal": -0.0023737405274420315,
+         "shared": -0.008023334939797865
+        },
+        "G2": {
+         "personal": -0.018900384098508305,
+         "shared": -0.013892317653119896
+        },
+        "G3plus": {
+         "personal": -0.017274461558076784,
+         "shared": -0.012452959908881794
+        }
+       }
+      },
+      {
+       "id": "user_fees_key_health",
+       "rule": "parent_line",
+       "parent": "health_services",
+       "parent_from": "meta.user_fees.splits.split_basis",
+       "union_value": {
+        "personal": -0.002079886038647402,
+        "shared": -0.002079886038647402
+       },
+       "share": {
+        "G1": {
+         "personal": 0.26944243970590426,
+         "shared": 0.26944243970590426
+        },
+        "G2": {
+         "personal": 0.3075721728016814,
+         "shared": 0.3075721728016814
+        },
+        "G3plus": {
+         "personal": 0.4229853874924102,
+         "shared": 0.4229853874924102
+        }
+       },
+       "value": {
+        "G1": {
+         "personal": -0.0005604095685634047,
+         "shared": -0.0005604095685634047
+        },
+        "G2": {
+         "personal": -0.0006397150680866634,
+         "shared": -0.0006397150680866634
+        },
+        "G3plus": {
+         "personal": -0.0008797614019973255,
+         "shared": -0.0008797614019973255
+        }
+       }
+      }
+     ]
+    }
+   ],
+   "b": [
+    {
+     "id": "pension_tr2026",
+     "first": 752,
+     "count": 2,
+     "edits": [
+      {
+       "edit": 0,
+       "side": "spending",
+       "line": "social_security",
+       "key": "social_security",
+       "parts": [
+        {
+         "name": "union_oasdi",
+         "rule": "pension_oasdi",
+         "union_bn": {
+          "personal": -2.1233971737322013,
+          "shared": -2.260859383780748
+         },
+         "share": {
+          "G1": {
+           "personal": 0.20658811065915203,
+           "shared": 0.2125820087412837
+          },
+          "G2": {
+           "personal": 0.4493000523135624,
+           "shared": 0.4222557463437289
+          },
+          "G3plus": {
+           "personal": 0.34411183702728554,
+           "shared": 0.3651622449149874
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -0.4386686103003187,
+           "shared": -0.48061802928569225
+          },
+          "G2": {
+           "personal": -0.9540424612403486,
+           "shared": -0.9546608664765628
+          },
+          "G3plus": {
+           "personal": -0.730686102191534,
+           "shared": -0.8255804880184929
+          }
+         }
+        },
+        {
+         "name": "lineage_oasdi",
+         "rule": "lineage",
+         "union_bn": {
+          "personal": -0.15634229873910022,
+          "shared": -0.19862042863975995
+         },
+         "share": {
+          "G1": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G2": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G3plus": {
+           "personal": 1,
+           "shared": 1
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G2": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G3plus": {
+           "personal": -0.15634229873910022,
+           "shared": -0.19862042863975995
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 1,
+       "side": "spending",
+       "line": "medicare",
+       "key": "medicare",
+       "parts": [
+        {
+         "name": "union_part_a",
+         "rule": "pension_part_a",
+         "union_bn": {
+          "personal": -0.35434843707763974,
+          "shared": -0.35434843707763974
+         },
+         "share": {
+          "G1": {
+           "personal": -0.04905470770061877,
+           "shared": -0.04362221408124383
+          },
+          "G2": {
+           "personal": 0.6906306669194604,
+           "shared": 0.6529595457646276
+          },
+          "G3plus": {
+           "personal": 0.35842404078115836,
+           "shared": 0.3906626683166163
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0.01738245900501472,
+           "shared": 0.01545746338155496
+          },
+          "G2": {
+           "personal": -0.24472389742079878,
+           "shared": -0.23137519451662136
+          },
+          "G3plus": {
+           "personal": -0.12700699866185566,
+           "shared": -0.13843070594257334
+          }
+         }
+        },
+        {
+         "name": "lineage_part_a",
+         "rule": "lineage",
+         "union_bn": {
+          "personal": -0.025862992192876095,
+          "shared": -0.03250378359863497
+         },
+         "share": {
+          "G1": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G2": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G3plus": {
+           "personal": 1,
+           "shared": 1
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G2": {
+           "personal": 0,
+           "shared": 0
+          },
+          "G3plus": {
+           "personal": -0.025862992192876095,
+           "shared": -0.03250378359863497
+          }
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "retiree_health",
+     "first": 754,
+     "count": 10,
+     "edits": [
+      {
+       "edit": 0,
+       "side": "spending",
+       "line": "other_federal_benefits",
+       "national_bn": 66.62745901599999,
+       "rule": "as_is"
+      },
+      {
+       "edit": 1,
+       "side": "spending",
+       "line": "general_public_services",
+       "national_bn": 402.771128442,
+       "rule": "as_is"
+      },
+      {
+       "edit": 2,
+       "side": "spending",
+       "line": "defense",
+       "national_bn": 856.019902,
+       "rule": "as_is"
+      },
+      {
+       "edit": 3,
+       "side": "spending",
+       "line": "public_order_safety",
+       "national_bn": 521.2025117960001,
+       "rule": "as_is"
+      },
+      {
+       "edit": 4,
+       "side": "spending",
+       "line": "economic_affairs_services",
+       "national_bn": 453.136829594,
+       "rule": "as_is"
+      },
+      {
+       "edit": 5,
+       "side": "spending",
+       "line": "housing_community_services",
+       "national_bn": 14.747693443000001,
+       "rule": "as_is"
+      },
+      {
+       "edit": 6,
+       "side": "spending",
+       "line": "health_services",
+       "national_bn": 308.35875489899996,
+       "rule": "as_is"
+      },
+      {
+       "edit": 7,
+       "side": "spending",
+       "line": "recreation_culture",
+       "national_bn": 54.483657029,
+       "rule": "as_is"
+      },
+      {
+       "edit": 8,
+       "side": "spending",
+       "line": "education_services",
+       "national_bn": 1226.396865159,
+       "rule": "as_is"
+      },
+      {
+       "edit": 9,
+       "side": "spending",
+       "line": "income_security_services",
+       "national_bn": 168.26451691100002,
+       "rule": "as_is"
+      }
+     ]
+    },
+    {
+     "id": "user_fees",
+     "first": 764,
+     "count": 5,
+     "edits": [
+      {
+       "edit": 0,
+       "side": "spending",
+       "line": "education_services",
+       "key": "education_mix",
+       "parts": [
+        {
+         "name": "union_fee_tuition",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": 1.8446046211830234,
+          "shared": 1.8446046211830234
+         },
+         "share": {
+          "G1": {
+           "personal": 0.4495210984029695,
+           "shared": 0.4391802536513241
+          },
+          "G2": {
+           "personal": 0.2753469092972158,
+           "shared": 0.2991563278984169
+          },
+          "G3plus": {
+           "personal": 0.27513199229981383,
+           "shared": 0.26166341845025826
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0.8291886954333861,
+           "shared": 0.8101139254175649
+          },
+          "G2": {
+           "personal": 0.507906181318107,
+           "shared": 0.5518251448975636
+          },
+          "G3plus": {
+           "personal": 0.5075097444315286,
+           "shared": 0.48266555086789353
+          }
+         }
+        },
+        {
+         "name": "union_key_higher_ed",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": -5.452309063339062,
+          "shared": -5.452309063339062
+         },
+         "share": {
+          "G1": {
+           "personal": 0.4495210984029695,
+           "shared": 0.4391802536513241
+          },
+          "G2": {
+           "personal": 0.2753469092972158,
+           "shared": 0.2991563278984169
+          },
+          "G3plus": {
+           "personal": 0.27513199229981383,
+           "shared": 0.26166341845025826
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -2.4509279589846407,
+           "shared": -2.3945464774226624
+          },
+          "G2": {
+           "personal": -1.5012764491236081,
+           "shared": -1.6310927579557706
+          },
+          "G3plus": {
+           "personal": -1.500104655230808,
+           "shared": -1.4266698279606245
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 1,
+       "side": "spending",
+       "line": "school_reprice",
+       "key": "k",
+       "parts": [
+        {
+         "name": "union_k12_weight_school",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": -0.7452027530281796,
+          "shared": -0.6078299277259762
+         },
+         "share": {
+          "G1": {
+           "personal": 0.4495210984029695,
+           "shared": 0.4391802536513241
+          },
+          "G2": {
+           "personal": 0.2753469092972158,
+           "shared": 0.2991563278984169
+          },
+          "G3plus": {
+           "personal": 0.27513199229981383,
+           "shared": 0.26166341845025826
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -0.3349843600741441,
+           "shared": -0.26694690183556025
+          },
+          "G2": {
+           "personal": -0.20518927484608568,
+           "shared": -0.18183616916526318
+          },
+          "G3plus": {
+           "personal": -0.2050291181079492,
+           "shared": -0.15904685672515234
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 2,
+       "side": "spending",
+       "line": "college_rekey",
+       "key": "k",
+       "parts": [
+        {
+         "name": "union_k12_weight_other",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": -0.6072413741612914,
+          "shared": -0.4744102754129796
+         },
+         "share": {
+          "G1": {
+           "personal": 0.4495210984029695,
+           "shared": 0.4391802536513241
+          },
+          "G2": {
+           "personal": 0.2753469092972158,
+           "shared": 0.2991563278984169
+          },
+          "G3plus": {
+           "personal": 0.27513199229981383,
+           "shared": 0.26166341845025826
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -0.2729678095087123,
+           "shared": -0.2083516250906669
+          },
+          "G2": {
+           "personal": -0.16720203557270577,
+           "shared": -0.14192283590982357
+          },
+          "G3plus": {
+           "personal": -0.1670715290798728,
+           "shared": -0.12413581441248875
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 3,
+       "side": "spending",
+       "line": "health_services",
+       "key": "health_other",
+       "parts": [
+        {
+         "name": "union_fee_health",
+         "rule": "parent_line",
+         "parent": "health_services",
+         "union_bn": {
+          "personal": 0.9450346146182799,
+          "shared": 0.9450346146182799
+         },
+         "share": {
+          "G1": {
+           "personal": 0.3109569351672738,
+           "shared": 0.3109569351672738
+          },
+          "G2": {
+           "personal": 0.2886222264248335,
+           "shared": 0.2886222264248335
+          },
+          "G3plus": {
+           "personal": 0.4004208384078883,
+           "shared": 0.4004208384078883
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 0.293865067388686,
+           "shared": 0.293865067388686
+          },
+          "G2": {
+           "personal": 0.27275799451966243,
+           "shared": 0.27275799451966243
+          },
+          "G3plus": {
+           "personal": 0.3784115527099272,
+           "shared": 0.3784115527099272
+          }
+         }
+        },
+        {
+         "name": "union_key_health",
+         "rule": "parent_line",
+         "parent": "health_services",
+         "union_bn": {
+          "personal": -0.30368354540915365,
+          "shared": -0.30368354540915365
+         },
+         "share": {
+          "G1": {
+           "personal": 0.3109569351672738,
+           "shared": 0.3109569351672738
+          },
+          "G2": {
+           "personal": 0.2886222264248335,
+           "shared": 0.2886222264248335
+          },
+          "G3plus": {
+           "personal": 0.4004208384078883,
+           "shared": 0.4004208384078883
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": -0.09443250454116205,
+           "shared": -0.09443250454116205
+          },
+          "G2": {
+           "personal": -0.08764982100457695,
+           "shared": -0.08764982100457695
+          },
+          "G3plus": {
+           "personal": -0.12160121986341332,
+           "shared": -0.12160121986341332
+          }
+         }
+        }
+       ]
+      },
+      {
+       "edit": 4,
+       "side": "spending",
+       "line": "other_federal_benefits",
+       "key": "all_cash",
+       "parts": [
+        {
+         "name": "union_key_pell",
+         "rule": "parent_line",
+         "parent": "education_services",
+         "union_bn": {
+          "personal": 3.969390129227313,
+          "shared": 3.8679984770699996
+         },
+         "share": {
+          "G1": {
+           "personal": 0.4495210984029695,
+           "shared": 0.4391802536513241
+          },
+          "G2": {
+           "personal": 0.2753469092972158,
+           "shared": 0.2991563278984169
+          },
+          "G3plus": {
+           "personal": 0.27513199229981383,
+           "shared": 0.26166341845025826
+          }
+         },
+         "bn": {
+          "G1": {
+           "personal": 1.7843246108801667,
+           "shared": 1.6987485522825378
+          },
+          "G2": {
+           "personal": 1.0929593038776166,
+           "shared": 1.15713622071693
+          },
+          "G3plus": {
+           "personal": 1.0921062144695262,
+           "shared": 1.012113704070529
+          }
+         }
+        }
+       ]
+      }
+     ],
+     "carriers": [
+      {
+       "id": "user_fees_key_k12",
+       "rule": "parent_line",
+       "parent": "education_services",
+       "parent_from": "meta.user_fees.splits.split_basis",
+       "union_value": {
+        "personal": 0.00975296263696325,
+        "shared": 0.008497356755080671
+       },
+       "share": {
+        "G1": {
+         "personal": 0.4495210984029695,
+         "shared": 0.4391802536513241
+        },
+        "G2": {
+         "personal": 0.2753469092972158,
+         "shared": 0.2991563278984169
+        },
+        "G3plus": {
+         "personal": 0.27513199229981383,
+         "shared": 0.26166341845025826
+        }
+       },
+       "value": {
+        "G1": {
+         "personal": 0.004384162477250842,
+         "shared": 0.0037318712950621218
+        },
+        "G2": {
+         "personal": 0.0026854481185790546,
+         "shared": 0.0025420380436927408
+        },
+        "G3plus": {
+         "personal": 0.002683352041133345,
+         "shared": 0.0022234474163258023
+        }
+       }
+      },
+      {
+       "id": "user_fees_key_college",
+       "rule": "parent_line",
+       "parent": "education_services",
+       "parent_from": "meta.user_fees.splits.split_basis",
+       "union_value": {
+        "personal": -0.03854858618402715,
+        "shared": -0.03436861250179958
+       },
+       "share": {
+        "G1": {
+         "personal": 0.4495210984029695,
+         "shared": 0.4391802536513241
+        },
+        "G2": {
+         "personal": 0.2753469092972158,
+         "shared": 0.2991563278984169
+        },
+        "G3plus": {
+         "personal": 0.27513199229981383,
+         "shared": 0.26166341845025826
+        }
+       },
+       "value": {
+        "G1": {
+         "personal": -0.01732840280332542,
+         "shared": -0.01509401595618441
+        },
+        "G2": {
+         "personal": -0.010614234063549229,
+         "shared": -0.010281587911001986
+        },
+        "G3plus": {
+         "personal": -0.010605949317152467,
+         "shared": -0.008993008634613161
+        }
+       }
+      },
+      {
+       "id": "user_fees_key_health",
+       "rule": "parent_line",
+       "parent": "health_services",
+       "parent_from": "meta.user_fees.splits.split_basis",
+       "union_value": {
+        "personal": -0.002079886038647402,
+        "shared": -0.002079886038647402
+       },
+       "share": {
+        "G1": {
+         "personal": 0.3109569351672738,
+         "shared": 0.3109569351672738
+        },
+        "G2": {
+         "personal": 0.2886222264248335,
+         "shared": 0.2886222264248335
+        },
+        "G3plus": {
+         "personal": 0.4004208384078883,
+         "shared": 0.4004208384078883
+        }
+       },
+       "value": {
+        "G1": {
+         "personal": -0.0006467549880749982,
+         "shared": -0.0006467549880749982
+        },
+        "G2": {
+         "personal": -0.0006003013391843405,
+         "shared": -0.0006003013391843405
+        },
+        "G3plus": {
+         "personal": -0.0008328297113880542,
+         "shared": -0.0008328297113880542
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "pension": {
+   "a": {
+    "inputs": {
+     "commit": "8cefec37",
+     "arm": "all_2026_inputs_separate_funds",
+     "file": "pension_tr2026_2026_10_06/derived/arms.csv @ 8cefec37",
+     "gens": [
+      "G1",
+      "G2",
+      "G3plus"
+     ],
+     "ratio_old": 0.9736673650311839,
+     "ratio_new": 0.9535468505020114,
+     "part_a_old": 41.13712783048602,
+     "part_a_new": 40.78277939340838,
+     "part_a_share": 0.3751126329068301,
+     "net_old": {
+      "G1": 1.0409166056889227,
+      "G2": 0.9189795715029171,
+      "G3plus": 0.9617627471783937
+     },
+     "part_a_per_hi_old": {
+      "G1": 1.4393381009516821,
+      "G2": 1.5928400529803066,
+      "G3plus": 1.3479463489351298
+     },
+     "f_net": {
+      "G1": 0.9859537421963274,
+      "G2": 0.9726045901703678,
+      "G3plus": 0.9792298640571073
+     },
+     "f_part_a": {
+      "G1": 1.001093774930295,
+      "G2": 0.9845512233898555,
+      "G3plus": 0.990141879865159
+     },
+     "checks": {
+      "control_net_is_the_split_s": 4.970829303729829e-10,
+      "control_union_net": 3.11839443156714e-11,
+      "control_union_part_a": 4.860254421146237e-10,
+      "arm_union_net": 4.979886503164721e-10,
+      "arm_union_part_a": 4.083844373781176e-10
+     }
+    },
+    "oasdi_bn": {
+     "G1": {
+      "personal": 30.39041297532892,
+      "shared": 25.375592292319354
+     },
+     "G2": {
+      "personal": 38.1712792951128,
+      "shared": 38.98402852523784
+     },
+     "G3plus": {
+      "personal": 36.97224776143505,
+      "shared": 48.0062622965537
+     }
+    },
+    "hi_bn": {
+     "G1": {
+      "personal": 8.126273893919457,
+      "shared": 6.794036143627164
+     },
+     "G2": {
+      "personal": 10.564899507429569,
+      "shared": 10.61638623386292
+     },
+     "G3plus": {
+      "personal": 10.323435048992994,
+      "shared": 13.739033015516656
+     }
+    },
+    "social_security_old_bn": {
+     "G1": {
+      "personal": 31.78356616426867,
+      "shared": 26.656781952264303
+     },
+     "G2": {
+      "personal": 35.244605859141316,
+      "shared": 36.15498354699237
+     },
+     "G3plus": {
+      "personal": 35.72678128878645,
+      "shared": 46.59522783186167
+     }
+    },
+    "social_security_new_bn": {
+     "G1": {
+      "personal": 31.34666832169824,
+      "shared": 26.299987319223973
+     },
+     "G2": {
+      "personal": 34.2895035952596,
+      "shared": 35.18809557930034
+     },
+     "G3plus": {
+      "personal": 34.99538422150639,
+      "shared": 45.65805104881326
+     }
+    },
+    "part_a_old_bn": {
+     "G1": {
+      "personal": 11.337360997803776,
+      "shared": 8.89822915419729
+     },
+     "G2": {
+      "personal": 16.311550152895048,
+      "shared": 15.387277604013217
+     },
+     "G3plus": {
+      "personal": 13.488216679787202,
+      "shared": 16.851621072275517
+     }
+    },
+    "part_a_new_bn": {
+     "G1": {
+      "personal": 11.354832422183758,
+      "shared": 8.91665459309933
+     },
+     "G2": {
+      "personal": 16.06673182736104,
+      "shared": 15.164346596144142
+     },
+     "G3plus": {
+      "personal": 13.36121514386358,
+      "shared": 16.70177820416491
+     }
+    }
+   },
+   "b": {
+    "inputs": {
+     "commit": "8cefec37",
+     "arm": "all_2026_inputs_separate_funds",
+     "file": "pension_tr2026_2026_10_06/derived/arms.csv @ 8cefec37",
+     "gens": [
+      "G1",
+      "G2",
+      "G3plus"
+     ],
+     "ratio_old": 0.9736673650311839,
+     "ratio_new": 0.9535468505020114,
+     "part_a_old": 41.13712783048602,
+     "part_a_new": 40.78277939340838,
+     "part_a_share": 0.3751126329068301,
+     "net_old": {
+      "G1": 1.0409166056889227,
+      "G2": 0.9189795715029171,
+      "G3plus": 0.9617627471783937
+     },
+     "part_a_per_hi_old": {
+      "G1": 1.4393381009516821,
+      "G2": 1.5928400529803066,
+      "G3plus": 1.3479463489351298
+     },
+     "f_net": {
+      "G1": 0.9859537421963274,
+      "G2": 0.9726045901703678,
+      "G3plus": 0.9792298640571073
+     },
+     "f_part_a": {
+      "G1": 1.001093774930295,
+      "G2": 0.9845512233898555,
+      "G3plus": 0.990141879865159
+     },
+     "checks": {
+      "control_net_is_the_split_s": 4.970829303729829e-10,
+      "control_union_net": 3.11839443156714e-11,
+      "control_union_part_a": 4.860254421146237e-10,
+      "arm_union_net": 4.979886503164721e-10,
+      "arm_union_part_a": 4.083844373781176e-10
+     }
+    },
+    "oasdi_bn": {
+     "G1": {
+      "personal": 30.493825098702754,
+      "shared": 33.01568634337032
+     },
+     "G2": {
+      "personal": 38.118507299364005,
+      "shared": 37.943600647158256
+     },
+     "G3plus": {
+      "personal": 36.92160763381003,
+      "shared": 41.406596123582375
+     }
+    },
+    "hi_bn": {
+     "G1": {
+      "personal": 8.153262355567637,
+      "shared": 8.827483347591189
+     },
+     "G2": {
+      "personal": 10.551678906403357,
+      "shared": 10.537803391175647
+     },
+     "G3plus": {
+      "personal": 10.309667188371018,
+      "shared": 11.784168654239949
+     }
+    },
+    "social_security_old_bn": {
+     "G1": {
+      "personal": 31.88846265958811,
+      "shared": 34.47614331286629
+     },
+     "G2": {
+      "personal": 35.19228640835359,
+      "shared": 34.98056409184425
+     },
+     "G3plus": {
+      "personal": 35.67420424425473,
+      "shared": 39.95028592640786
+     }
+    },
+    "social_security_new_bn": {
+     "G1": {
+      "personal": 31.449794049287792,
+      "shared": 33.9955252835806
+     },
+     "G2": {
+      "personal": 34.23824394711324,
+      "shared": 34.025903225367685
+     },
+     "G3plus": {
+      "personal": 34.9435181420632,
+      "shared": 39.12470543838936
+     }
+    },
+    "part_a_old_bn": {
+     "G1": {
+      "personal": 11.37522059991817,
+      "shared": 11.519010798654808
+     },
+     "G2": {
+      "personal": 16.291434372916058,
+      "shared": 15.217303969978774
+     },
+     "G3plus": {
+      "personal": 13.470472857651792,
+      "shared": 14.40081306185244
+     }
+    },
+    "part_a_new_bn": {
+     "G1": {
+      "personal": 11.392603058923186,
+      "shared": 11.534468262036363
+     },
+     "G2": {
+      "personal": 16.046710475495257,
+      "shared": 14.985928775462153
+     },
+     "G3plus": {
+      "personal": 13.343465858989935,
+      "shared": 14.262382355909867
+     }
+    }
+   }
+  }
+ },
+ "conventions": {
+  "a": {
+   "G1": {
+    "population": 11036701.061391935,
+    "adults": 10566524.710023813,
+    "cost_bn": [
+     96.88861687263892,
+     86.65772444247315
+    ],
+    "own_span_bn": [
+     71.51268050924664,
+     113.05486099915923
+    ],
+    "per_member_usd": [
+     8778.766076356827,
+     7851.7778057444275
+    ],
+    "per_adult_usd": [
+     9169.392920713717,
+     8201.15665468196
+    ],
+    "uncorrected_cost_bn": [
+     85.77155137951794,
+     71.3364133409555
+    ],
+    "correction_bn": [
+     11.117065493120975,
+     15.32131110151765
+    ],
+    "oct05_cost_bn": [
+     97.14796567288926,
+     87.02213168527527
+    ],
+    "change_from_oct05_bn": [
+     -0.25934880025033635,
+     -0.3644072428021161
+    ],
+    "by_item_bn": {
+     "added_age_mix": [
+      0,
+      0
+     ],
+     "pension_tr2026": [
+      -0.3383691941382949,
+      -0.41942641819044013
+     ],
+     "retiree_health": [
+      0.1250508826214798,
+      -0.03358550434454344
+     ],
+     "user_fees": [
+      -0.046030488733521224,
+      0.08860467973286745
+     ]
+    },
+    "added_people_bn": [
+     0,
+     0
+    ]
+   },
+   "G2": {
+    "population": 14333217.663520353,
+    "adults": 8914882.943565348,
+    "cost_bn": [
+     150.39471839547656,
+     178.00535853130617
+    ],
+    "own_span_bn": [
+     150.39471839547656,
+     178.00535853130617
+    ],
+    "per_member_usd": [
+     10492.739448047872,
+     12419.078723987412
+    ],
+    "per_adult_usd": [
+     16870.072142004916,
+     19967.212094443512
+    ],
+    "uncorrected_cost_bn": [
+     127.66279410053828,
+     154.73041557509
+    ],
+    "correction_bn": [
+     22.73192429493828,
+     23.274942956216165
+    ],
+    "oct05_cost_bn": [
+     151.46647541526266,
+     179.24566956867994
+    ],
+    "change_from_oct05_bn": [
+     -1.071757019786105,
+     -1.2403110373737718
+    ],
+    "by_item_bn": {
+     "added_age_mix": [
+      0,
+      0
+     ],
+     "pension_tr2026": [
+      -1.1898189755610815,
+      -1.199920589415683
+     ],
+     "retiree_health": [
+      0.29971529903272653,
+      0.43279173448198094
+     ],
+     "user_fees": [
+      -0.18165334325775007,
+      -0.4731821824400697
+     ]
+    },
+    "added_people_bn": [
+     0,
+     0
+    ]
+   },
+   "G3plus": {
+    "population": 17382294.199460845,
+    "adults": 9792850.628628222,
+    "cost_bn": [
+     141.799217597363,
+     196.81662632864226
+    ],
+    "own_span_bn": [
+     141.799217597363,
+     196.81662632864226
+    ],
+    "per_member_usd": [
+     8157.681372218476,
+     11322.822181593672
+    ],
+    "per_adult_usd": [
+     14479.871385235881,
+     20097.991258364804
+    ],
+    "uncorrected_cost_bn": [
+     99.63023368484255,
+     152.64302087904667
+    ],
+    "correction_bn": [
+     42.168983912520446,
+     44.173605449595584
+    ],
+    "oct05_cost_bn": [
+     141.6795171138732,
+     194.97532346401175
+    ],
+    "change_from_oct05_bn": [
+     0.1197004834897939,
+     1.8413028646305065
+    ],
+    "by_item_bn": {
+     "added_age_mix": [
+      1.3466066515974546,
+      2.8569710880702814
+     ],
+     "pension_tr2026": [
+      -1.3181438633974096,
+      -1.0406038941356428
+     ],
+     "retiree_health": [
+      0.15961194766174458,
+      0.36642192292885056
+     ],
+     "user_fees": [
+      -0.06837425237199568,
+      -0.3414862522329827
+     ]
+    },
+    "added_people_bn": [
+     20.342104956114255,
+     29.474565422223577
+    ]
+   }
+  },
+  "b": {
+   "G1": {
+    "population": 15672846.093122507,
+    "adults": 10566524.710023813,
+    "cost_bn": [
+     168.9047193247486,
+     196.8073442771934
+    ],
+    "own_span_bn": [
+     168.9047193247486,
+     196.8073442771934
+    ],
+    "per_member_usd": [
+     10776.901548141068,
+     12557.217949301219
+    ],
+    "per_adult_usd": [
+     15984.888500238787,
+     18625.55094301671
+    ],
+    "uncorrected_cost_bn": [
+     156.98359255828055,
+     189.8581654317462
+    ],
+    "correction_bn": [
+     11.921126766468063,
+     6.949178845447221
+    ],
+    "oct05_cost_bn": [
+     169.26737932510284,
+     197.30253621911166
+    ],
+    "change_from_oct05_bn": [
+     -0.3626600003542251,
+     -0.4951919419182502
+    ],
+    "by_item_bn": {
+     "added_age_mix": [
+      0,
+      0
+     ],
+     "pension_tr2026": [
+      -0.4651605659041138,
+      -0.42128615129530544
+     ],
+     "retiree_health": [
+      0.31475959254339614,
+      0.3413434602536256
+     ],
+     "user_fees": [
+      -0.2122590269935074,
+      -0.4152492508765704
+     ]
+    },
+    "added_people_bn": [
+     0,
+     0
+    ]
+   },
+   "G2": {
+    "population": 12208153.065691093,
+    "adults": 8914882.943565348,
+    "cost_bn": [
+     109.48495629029561,
+     120.55694394191306
+    ],
+    "own_span_bn": [
+     105.39109327110091,
+     124.74222167573728
+    ],
+    "per_member_usd": [
+     8968.183450941828,
+     9875.117332917256
+    ],
+    "per_adult_usd": [
+     12281.143452289578,
+     13523.110141219471
+    ],
+    "uncorrected_cost_bn": [
+     85.18016373422275,
+     92.94751974034654
+    ],
+    "correction_bn": [
+     24.30479255607287,
+     27.609424201566526
+    ],
+    "oct05_cost_bn": [
+     110.56417691846163,
+     121.71671419484636
+    ],
+    "change_from_oct05_bn": [
+     -1.0792206281660128,
+     -1.1597702529332992
+    ],
+    "by_item_bn": {
+     "added_age_mix": [
+      0,
+      0
+     ],
+     "pension_tr2026": [
+      -1.1860360609931888,
+      -1.1987663586611461
+     ],
+     "retiree_health": [
+      0.20213913943318573,
+      0.230401377769482
+     ],
+     "user_fees": [
+      -0.09532370660600975,
+      -0.19140527204163504
+     ]
+    },
+    "added_people_bn": [
+     0,
+     0
+    ]
+   },
+   "G3plus": {
+    "population": 14871213.76555953,
+    "adults": 9792850.628628222,
+    "cost_bn": [
+     110.69287725043428,
+     144.11542108331525
+    ],
+    "own_span_bn": [
+     110.69287725043428,
+     144.11542108331525
+    ],
+    "per_member_usd": [
+     7443.432593699217,
+     9690.898359424726
+    ],
+    "per_adult_usd": [
+     11303.437726992073,
+     14716.391227495202
+    ],
+    "uncorrected_cost_bn": [
+     70.90082287239552,
+     95.90416462299939
+    ],
+    "correction_bn": [
+     39.792054378038756,
+     48.211256460315866
+    ],
+    "oct05_cost_bn": [
+     110.46240195846075,
+     142.22387430400912
+    ],
+    "change_from_oct05_bn": [
+     0.23047529197353356,
+     1.8915467793061396
+    ],
+    "by_item_bn": {
+     "added_age_mix": [
+      1.3466066515975257,
+      2.856971088070196
+     ],
+     "pension_tr2026": [
+      -1.195135406199455,
+      -1.039898391785357
+     ],
+     "retiree_health": [
+      0.06747939733924113,
+      0.19388331504327994
+     ],
+     "user_fees": [
+      0.011524649236221762,
+      -0.1194092320219795
+     ]
+    },
+    "added_people_bn": [
+     20.342104956114284,
+     29.474565422223463
+    ]
+   }
+  }
+ },
+ "change_from_oct05_by_item": {
+  "parts": [
+   "oct05_bn",
+   "added_age_mix_bn",
+   "pension_tr2026_bn",
+   "retiree_health_bn",
+   "user_fees_bn",
+   "oct07_bn",
+   "change_bn"
+  ],
+  "specifications": {
+   "low": 48,
+   "high": 11
+  },
+  "rule": "at the end specifications, which are v5's: oct05_bn is each model at its v5 payload (generation_corrections_oct05*.json); added_age_mix_bn the item base less it (the lineage block re-valued on G3+); each edit set's part its edits on the models before it, in the payload's order; oct07_bn = oct05_bn + the parts; change_bn = oct07_bn - oct05_bn. A part is the item's change given the items before it, so the case lane's interactions sit with the later item",
+  "union": {
+   "low": {
+    "oct05_bn": 390.2939582020253,
+    "added_age_mix_bn": 1.3466066515972557,
+    "pension_tr2026_bn": -2.846332033096701,
+    "retiree_health_bn": 0.5843781293158941,
+    "user_fees_bn": -0.2960580843633238,
+    "oct07_bn": 389.0825528654784,
+    "change_bn": -1.2114053365468749
+   },
+   "high": {
+    "oct05_bn": 461.24312471796566,
+    "added_age_mix_bn": 2.8569710880702246,
+    "pension_tr2026_bn": -2.6599509017418086,
+    "retiree_health_bn": 0.765628153066416,
+    "user_fees_bn": -0.7260637549401281,
+    "oct07_bn": 461.47970930242036,
+    "change_bn": 0.23658458445470387
+   }
+  },
+  "a": {
+   "G1": {
+    "low": {
+     "oct05_bn": 97.14796567288926,
+     "added_age_mix_bn": 0,
+     "pension_tr2026_bn": -0.3383691941382949,
+     "retiree_health_bn": 0.1250508826214798,
+     "user_fees_bn": -0.046030488733521224,
+     "oct07_bn": 96.88861687263892,
+     "change_bn": -0.25934880025033635
+    },
+    "high": {
+     "oct05_bn": 87.02213168527527,
+     "added_age_mix_bn": 0,
+     "pension_tr2026_bn": -0.41942641819044013,
+     "retiree_health_bn": -0.03358550434454344,
+     "user_fees_bn": 0.08860467973286745,
+     "oct07_bn": 86.65772444247315,
+     "change_bn": -0.3644072428021161
+    }
+   },
+   "G2": {
+    "low": {
+     "oct05_bn": 151.46647541526266,
+     "added_age_mix_bn": 0,
+     "pension_tr2026_bn": -1.1898189755610815,
+     "retiree_health_bn": 0.29971529903272653,
+     "user_fees_bn": -0.18165334325775007,
+     "oct07_bn": 150.39471839547656,
+     "change_bn": -1.071757019786105
+    },
+    "high": {
+     "oct05_bn": 179.24566956867994,
+     "added_age_mix_bn": 0,
+     "pension_tr2026_bn": -1.199920589415683,
+     "retiree_health_bn": 0.43279173448198094,
+     "user_fees_bn": -0.4731821824400697,
+     "oct07_bn": 178.00535853130617,
+     "change_bn": -1.2403110373737718
+    }
+   },
+   "G3plus": {
+    "low": {
+     "oct05_bn": 141.6795171138732,
+     "added_age_mix_bn": 1.3466066515974546,
+     "pension_tr2026_bn": -1.3181438633974096,
+     "retiree_health_bn": 0.15961194766174458,
+     "user_fees_bn": -0.06837425237199568,
+     "oct07_bn": 141.799217597363,
+     "change_bn": 0.1197004834897939
+    },
+    "high": {
+     "oct05_bn": 194.97532346401175,
+     "added_age_mix_bn": 2.8569710880702814,
+     "pension_tr2026_bn": -1.0406038941356428,
+     "retiree_health_bn": 0.36642192292885056,
+     "user_fees_bn": -0.3414862522329827,
+     "oct07_bn": 196.81662632864226,
+     "change_bn": 1.8413028646305065
+    }
+   }
+  },
+  "b": {
+   "G1": {
+    "low": {
+     "oct05_bn": 169.26737932510284,
+     "added_age_mix_bn": 0,
+     "pension_tr2026_bn": -0.4651605659041138,
+     "retiree_health_bn": 0.31475959254339614,
+     "user_fees_bn": -0.2122590269935074,
+     "oct07_bn": 168.9047193247486,
+     "change_bn": -0.3626600003542251
+    },
+    "high": {
+     "oct05_bn": 197.30253621911166,
+     "added_age_mix_bn": 0,
+     "pension_tr2026_bn": -0.42128615129530544,
+     "retiree_health_bn": 0.3413434602536256,
+     "user_fees_bn": -0.4152492508765704,
+     "oct07_bn": 196.8073442771934,
+     "change_bn": -0.4951919419182502
+    }
+   },
+   "G2": {
+    "low": {
+     "oct05_bn": 110.56417691846163,
+     "added_age_mix_bn": 0,
+     "pension_tr2026_bn": -1.1860360609931888,
+     "retiree_health_bn": 0.20213913943318573,
+     "user_fees_bn": -0.09532370660600975,
+     "oct07_bn": 109.48495629029561,
+     "change_bn": -1.0792206281660128
+    },
+    "high": {
+     "oct05_bn": 121.71671419484636,
+     "added_age_mix_bn": 0,
+     "pension_tr2026_bn": -1.1987663586611461,
+     "retiree_health_bn": 0.230401377769482,
+     "user_fees_bn": -0.19140527204163504,
+     "oct07_bn": 120.55694394191306,
+     "change_bn": -1.1597702529332992
+    }
+   },
+   "G3plus": {
+    "low": {
+     "oct05_bn": 110.46240195846075,
+     "added_age_mix_bn": 1.3466066515975257,
+     "pension_tr2026_bn": -1.195135406199455,
+     "retiree_health_bn": 0.06747939733924113,
+     "user_fees_bn": 0.011524649236221762,
+     "oct07_bn": 110.69287725043428,
+     "change_bn": 0.23047529197353356
+    },
+    "high": {
+     "oct05_bn": 142.22387430400912,
+     "added_age_mix_bn": 2.856971088070196,
+     "pension_tr2026_bn": -1.039898391785357,
+     "retiree_health_bn": 0.19388331504327994,
+     "user_fees_bn": -0.1194092320219795,
+     "oct07_bn": 144.11542108331525,
+     "change_bn": 1.8915467793061396
+    }
+   }
+  }
+ },
+ "added_people": {
+  "rule": "G3+'s v6 model less the same model without the lineage block's cell edits and grid, with every item's parts but their lineage parts: the added people's cost, the items' parts on them included",
+  "a": {
+   "low": {
+    "identified_g3plus_bn": 121.45711264124874,
+    "added_people_bn": 20.342104956114255
+   },
+   "high": {
+    "identified_g3plus_bn": 167.34206090641868,
+    "added_people_bn": 29.474565422223577
+   }
+  },
+  "b": {
+   "low": {
+    "identified_g3plus_bn": 90.35077229432,
+    "added_people_bn": 20.342104956114284
+   },
+   "high": {
+    "identified_g3plus_bn": 114.64085566109179,
+    "added_people_bn": 29.474565422223463
+   }
+  }
+ },
+ "rules": {
+  "lineage": "the added people (meta.lineage: the lineage item's edits in every engine cell, and the production grid's change) go on G3+ under both conventions, as the case's package.cjs withLineage() adds them",
+  "row8": "audit row 8's change at the larger group (the lineage block's last edit) times each generation's share of the September 29 union's lane_constants k cell, per allocation (v5's rule)",
+  "items": {
+   "pension_tr2026": {
+    "union_oasdi": "pension_oasdi: the September 29 split's pension rule (v4_split.cjs: each generation's accrual per tax dollar net of the benefit tax on its own OASDI receipts, normalized to the union's accrual) with each generation's ratio times the pension lane's arm over its control (arms.csv); each model takes its change from the old split to the new",
+    "lineage_oasdi": "lineage: on the G3+ model: the added people's part",
+    "union_part_a": "pension_part_a: the same for Part A: each generation's Part A accrual per HI tax dollar on its own HI receipts, normalized to the union's Part A accrual, with the ratio times the arm over the control",
+    "lineage_part_a": "lineage: on the G3+ model: the added people's part"
+   },
+   "retiree_health": {
+    "national-scale": "as_is: a national-scale edit as it is on every model (each carries the union's national totals; engine.js scaleLine)"
+   },
+   "user_fees": {
+    "union_fee_tuition": "parent_line: pro rata to each model's share of the parent line's union amount on the September 29 payloads: the line its item's meta names for the part or carrier (meta.<key>.splits.split_basis) at the line's preferred key, else the edited line at the edit's key (its parent's, for a payload line with a parent)",
+    "union_key_higher_ed": "parent_line: pro rata to each model's share of the parent line's union amount on the September 29 payloads: the line its item's meta names for the part or carrier (meta.<key>.splits.split_basis) at the line's preferred key, else the edited line at the edit's key (its parent's, for a payload line with a parent)",
+    "union_k12_weight_school": "parent_line: pro rata to each model's share of the parent line's union amount on the September 29 payloads: the line its item's meta names for the part or carrier (meta.<key>.splits.split_basis) at the line's preferred key, else the edited line at the edit's key (its parent's, for a payload line with a parent)",
+    "union_k12_weight_other": "parent_line: pro rata to each model's share of the parent line's union amount on the September 29 payloads: the line its item's meta names for the part or carrier (meta.<key>.splits.split_basis) at the line's preferred key, else the edited line at the edit's key (its parent's, for a payload line with a parent)",
+    "union_fee_health": "parent_line: pro rata to each model's share of the parent line's union amount on the September 29 payloads: the line its item's meta names for the part or carrier (meta.<key>.splits.split_basis) at the line's preferred key, else the edited line at the edit's key (its parent's, for a payload line with a parent)",
+    "union_key_health": "parent_line: pro rata to each model's share of the parent line's union amount on the September 29 payloads: the line its item's meta names for the part or carrier (meta.<key>.splits.split_basis) at the line's preferred key, else the edited line at the edit's key (its parent's, for a payload line with a parent)",
+    "union_key_pell": "parent_line: pro rata to each model's share of the parent line's union amount on the September 29 payloads: the line its item's meta names for the part or carrier (meta.<key>.splits.split_basis) at the line's preferred key, else the edited line at the edit's key (its parent's, for a payload line with a parent)"
+   }
+  },
+  "responses": "every generation at the case's responses (the payload's meta.responses, v5's)",
+  "convention_b": "[ASSUMPTION] the added people stay in G3+ under (b): their parents' generation is not observed. b_rule_indication gives the move had their minors followed the identified G3+'s"
+ },
+ "b_rule_indication": {
+  "rule": "the added people's cost under (b) times the identified G3+'s fall from (a) to (b) (its cost without the added people, (a - b) / a): an indication of the move from G3+ to G2 under (b), not a bound; the union is unchanged",
+  "low": {
+   "identified_g3plus_a_bn": 121.45711264124874,
+   "identified_g3plus_b_bn": 90.35077229432,
+   "share_moving": 0.2561096643126073,
+   "added_people_bn": 20.342104956114284,
+   "move_to_g2_bn": 5.209809671722255
+  },
+  "high": {
+   "identified_g3plus_a_bn": 167.34206090641868,
+   "identified_g3plus_b_bn": 114.64085566109179,
+   "share_moving": 0.31493101590758193,
+   "added_people_bn": 29.474565422223463,
+   "move_to_g2_bn": 9.282454831855322
+  }
+ },
+ "alternatives": {
+  "row8_on_g3plus": "row 8: the whole edit on the G3+ model (the package's withLineage() on that model alone; main_case_2026_10_05 api_check.cjs pattern 3 prints the split this way)",
+  "pension_receipt_shares": "pension_tr2026's union parts by each model's share of the union's OASDI receipts and of its Part A accrual on the September 29 payloads (main_case_2026_10_07 api_check.cjs pattern 3's rule), the same change per dollar in every generation",
+  "split_basis_edited_line": "each item part on a model line split by that line at its edit's key instead of the line its meta's split_basis names (union_key_pell by other_federal_benefits' all_cash shares, where the case puts it on education_services); parts on a payload line without a parent (the K-12 weight's, on school_reprice and college_rekey) and the carriers keep their split_basis"
+ },
+ "sensitivities": {
+  "row8_on_g3plus": {
+   "rules": [
+    "row 8: the whole edit on the G3+ model (the package's withLineage() on that model alone; main_case_2026_10_05 api_check.cjs pattern 3 prints the split this way)"
+   ],
+   "a": {
+    "G1": {
+     "cost_bn": [
+      96.89270657218015,
+      86.66179796853176
+     ],
+     "move_bn": [
+      0.0040896995412254,
+      0.004073526058604671
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      150.39647710838068,
+      178.00712685147727
+     ],
+     "move_bn": [
+      0.0017587129041203298,
+      0.0017683201710951835
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      141.7933691849177,
+      196.81078448241252
+     ],
+     "move_bn": [
+      -0.005848412445288886,
+      -0.005841846229742487
+     ]
+    }
+   },
+   "b": {
+    "G1": {
+     "cost_bn": [
+      168.9091181720583,
+      196.8117321430192
+     ],
+     "move_bn": [
+      0.004398847309687426,
+      0.004387865825805193
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      109.48667994471725,
+      120.55867396745592
+     ],
+     "move_bn": [
+      0.0017236544216387983,
+      0.0017300255428551736
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      110.68675474870294,
+      144.10930319194662
+     ],
+     "move_bn": [
+      -0.006122501731340435,
+      -0.006117891368631945
+     ]
+    }
+   }
+  },
+  "pension_receipt_shares": {
+   "rules": [
+    "pension_tr2026's union parts by each model's share of the union's OASDI receipts and of its Part A accrual on the September 29 payloads (main_case_2026_10_07 api_check.cjs pattern 3's rule), the same change per dollar in every generation"
+   ],
+   "a": {
+    "G1": {
+     "cost_bn": [
+      96.63976821444157,
+      86.36802195633982
+     ],
+     "move_bn": [
+      -0.24884865819734614,
+      -0.2897024861333364
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      150.6676151862256,
+      178.2967483372468
+     ],
+     "move_bn": [
+      0.27289679074903006,
+      0.29138980594063923
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      141.77516946481134,
+      196.81493900883493
+     ],
+     "move_bn": [
+      -0.0240481325516555,
+      -0.0016873198073312778
+     ]
+    }
+   },
+   "b": {
+    "G1": {
+     "cost_bn": [
+      168.6063644339473,
+      196.5170947026632
+     ],
+     "move_bn": [
+      -0.2983548908013063,
+      -0.2902495745302076
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      109.77646823557514,
+      120.84841459081872
+     ],
+     "move_bn": [
+      0.29151194527952384,
+      0.29147064890565844
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      110.69972019595603,
+      144.11420000893983
+     ],
+     "move_bn": [
+      0.006842945521754018,
+      -0.001221074375422404
+     ]
+    }
+   }
+  },
+  "row8_on_g3plus+pension_receipt_shares": {
+   "rules": [
+    "row 8: the whole edit on the G3+ model (the package's withLineage() on that model alone; main_case_2026_10_05 api_check.cjs pattern 3 prints the split this way)",
+    "pension_tr2026's union parts by each model's share of the union's OASDI receipts and of its Part A accrual on the September 29 payloads (main_case_2026_10_07 api_check.cjs pattern 3's rule), the same change per dollar in every generation"
+   ],
+   "a": {
+    "G1": {
+     "cost_bn": [
+      96.64385791398277,
+      86.37209548239842
+     ],
+     "move_bn": [
+      -0.24475895865614916,
+      -0.2856289600747317
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      150.6693738991297,
+      178.29851665741796
+     ],
+     "move_bn": [
+      0.2746555036531504,
+      0.29315812611179126
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      141.76932105236602,
+      196.80909716260518
+     ],
+     "move_bn": [
+      -0.029896544996972807,
+      -0.0075291660370737645
+     ]
+    }
+   },
+   "b": {
+    "G1": {
+     "cost_bn": [
+      168.610763281257,
+      196.521482568489
+     ],
+     "move_bn": [
+      -0.29395604349161886,
+      -0.2858617087044024
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      109.77819188999678,
+      120.85014461636158
+     ],
+     "move_bn": [
+      0.29323559970116264,
+      0.2932006744485136
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      110.69359769422469,
+      144.10808211757117
+     ],
+     "move_bn": [
+      0.000720443790413583,
+      -0.0073389657440827705
+     ]
+    }
+   }
+  },
+  "split_basis_edited_line": {
+   "rules": [
+    "each item part on a model line split by that line at its edit's key instead of the line its meta's split_basis names (union_key_pell by other_federal_benefits' all_cash shares, where the case puts it on education_services); parts on a payload line without a parent (the K-12 weight's, on school_reprice and college_rekey) and the carriers keep their split_basis"
+   ],
+   "a": {
+    "G1": {
+     "cost_bn": [
+      96.95645394160616,
+      87.66944807917329
+     ],
+     "move_bn": [
+      0.06783706896723629,
+      1.0117236367001397
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      149.92479293403517,
+      177.1304471296624
+     ],
+     "move_bn": [
+      -0.4699254614413917,
+      -0.8749114016437716
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      142.20130598983718,
+      196.67981409358586
+     ],
+     "move_bn": [
+      0.4020883924741838,
+      -0.1368122350563965
+     ]
+    }
+   },
+   "b": {
+    "G1": {
+     "cost_bn": [
+      168.28945631907368,
+      196.29706583578724
+     ],
+     "move_bn": [
+      -0.6152630056749331,
+      -0.5102784414061716
+     ]
+    },
+    "G2": {
+     "cost_bn": [
+      109.40243296686721,
+      120.5354003997802
+     ],
+     "move_bn": [
+      -0.08252332342840418,
+      -0.021543542132860694
+     ]
+    },
+    "G3plus": {
+     "cost_bn": [
+      111.39066357953764,
+      144.64724306685432
+     ],
+     "move_bn": [
+      0.6977863291033657,
+      0.5318219835390607
+     ]
+    }
+   }
+  }
+ },
+ "gates": {
+  "failed": []
+ }
+}
