@@ -332,7 +332,8 @@ INDEX_SPANS = [
      "the irregular-flow gap or the CPS/ACS count difference |"),
 ]
 FAQ_SPANS = [
-    ("Anchors: the [complete annual account]", "−$8k. [SOURCE: [CA–TX geography]"),
+    # ends on the source tag, which carries no number, so a restated −$Nk does not move the anchor
+    ("Anchors: the [complete annual account]", "[SOURCE: [CA–TX geography]"),
     ("- **Roads, parks and economic administration** take their long-run responses.",
      "−0.72 to 1.66, which cannot tell zero from one"),
     ("Steel-man: cheaper services, complementary labour and capital returns never appear in a",
@@ -341,7 +342,7 @@ FAQ_SPANS = [
     ("No. The account describes a resident stock in a stationary comparison.",
      "neither is cash that a removal would free in the year."),
     ("figures are not the $389–461bn complete account. [SOURCE:", "figures are not the $389–461bn complete account. [SOURCE:"),
-    ("Two later corrections also nearly cancel:", "No combination changes the sign."),
+    ("Two later corrections also nearly cancel:", "service budget does (entry 2)."),
     ("Steel-man: one year of a price surge, pandemic programmes and a migration wave", "which flatters the year."),
     # entry 5's split of the adopted account by generation (in scope since the v4 restatement, 5e9112e)
     ("On the adopted account itself, with no reference group", "on the US-born generations counted"),
