@@ -76,7 +76,7 @@ GROUPS = [
                  why="CBO counts the federal budget only, new arrivals of all origins, and projected growth "
                      "effects. Two results can conflict only when population, period and outcome match."),
         ],
-        minor=[],
+        minor=[295],
     ),
     dict(
         id="why", part="answer",
@@ -183,7 +183,7 @@ GROUPS = [
                  text="The recent doubling of sponsored Mexican parents comes from processing, not from a surge.",
                  why="Other countries rose by the same proportion."),
         ],
-        minor=[118, 283],
+        minor=[118, 283, 291],
     ),
     dict(
         id="generations", part="generations",
@@ -234,7 +234,7 @@ GROUPS = [
                  text="With measured assimilation rates, a leading pro-migration model loses its Mexico result.",
                  why="Clemens and Pritchett assume faster convergence than the data show."),
         ],
-        minor=[103, 107, 109, 111, 112],
+        minor=[103, 107, 109, 111, 112, 287, 292, 293],
     ),
     dict(
         id="whopays", part="whopays",
@@ -448,7 +448,7 @@ GROUPS = [
                       "costs add 18–27% to a prisoner-year.",
                  why="Prisons are full in 8 states and not in 22."),
         ],
-        minor=[],
+        minor=[294],
     ),
     dict(
         id="conventions", part="build",
@@ -534,7 +534,7 @@ GROUPS = [
                  text="A second survey gives the same earnings and income-tax gaps within 4%.",
                  why="ACS against CPS, with one tax calculator on both."),
         ],
-        minor=[284, 285, 286],
+        minor=[284, 285, 286, 288, 289],
     ),
     dict(
         id="time", part="build",
@@ -576,7 +576,7 @@ GROUPS = [
                  why="Per person, late arrivals cost less than seniors who arrived young. Their lower Social "
                      "Security outweighs their lower taxes."),
         ],
-        minor=[278, 279],
+        minor=[278, 279, 290],
     ),
     dict(
         id="method", part="build",
