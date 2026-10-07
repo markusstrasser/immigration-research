@@ -1,0 +1,477 @@
+{
+ "case": "oct07",
+ "columns": [
+  "sept23",
+  "sept24",
+  "oct07"
+ ],
+ "channels": {
+  "victims_equal": 28.9228851746268,
+  "victims_custody": 32.3381,
+  "victims_envelope_low": 15.4099,
+  "victims_envelope_high": 45.3424,
+  "victims_equal_mixed_group": 30.927388,
+  "property_low": 1.2726508536391001,
+  "property_high": 1.3762198638057002,
+  "unreimbursed_low": 3.2435,
+  "unreimbursed_high": 5.5581,
+  "unreimbursed_07_low": 2.4605,
+  "unreimbursed_07_high": 4.2162,
+  "congestion": 19.162711110731056,
+  "congestion_low": 8.047943973203898,
+  "congestion_high": 35.25151421805585,
+  "housing_gain_metro_local": 3.507578587187932,
+  "housing_gain_national": 0.7082298460183115,
+  "housing_gain_max": 9.403795587206028,
+  "housing_gain_min": -0.3792459764252824,
+  "care": 4.1475791436498675,
+  "mobility": 0.6548831113416558,
+  "scale_net": 13.927466764218613,
+  "victims_custody_mixed_scaled": 34.57929455669199
+ },
+ "target_population_m": 40.89657415235185,
+ "per_member_population_m": {
+  "sept23": 40.89657415235185,
+  "sept24": 39.712493331187886,
+  "oct07": 42.75221292438524
+ },
+ "care_constant_bn": 4.15,
+ "sources_sha256": {
+  "sept24_propagation_2026_09_24/derived/oct07/band_variants.csv": "4750d043fb329ec98eca5be22f4689e0c85605592108d1a3a57afaa461b8a8aa",
+  "sept24_propagation_2026_09_24/derived/oct07/band_variants.json": "fb89a1358e2b3e1b622e66f661a4fc3332f0ba1d3416c45481e07de82a73d4ad",
+  "main_case_2026_09_24/derived/summary.json": "3887e678c53e93f7f31bf48d5e56e005dcfd3b71f2d76b6dfcf62415489bfb75",
+  "crime_victim_cost_2026_09_23/derived/cost_by_offence_central.csv": "8b5caa0ea78a39a501be80baf2887b1fd8457f0f07b9c0fe9a82d6c1692448a8",
+  "crime_victim_cost_2026_09_23/derived/arms.csv": "dd5c2c6b30841f62712441be76e43babe032ae4bdcc67bc4594098af78aa8ff7",
+  "crime_victim_cost_2026_09_23/derived/property_proxy.csv": "a5b7383e533d90c1de32d825ed565d461f05113a78d54112aed71e072cd8226c",
+  "crime_ratio_direction_2026_09_24/derived/dollar_effects.csv": "203f50a7470026420626304a48ecd54758714e0a3b0e1b71f14b67dab4d30c0d",
+  "uncompensated_care_2026_09_23/derived/added_cost_arms.csv": "b62888cfa3194f724c95ea41bb5da0d4b6c38f499c2207d3814579fcb22592d5",
+  "congestion_2026_09_23/derived/arms_summary.csv": "443bf47724c8aead17cf701ecedb5e8bec38a0caaf3b764efc02a3599ce5f225",
+  "housing_transfer_2026_09_23/derived/arms_summary.csv": "f917742b60e0c6843cfa114ca821d54bf73eab8e12002f754e13e3081de4a2e9",
+  "care_household_services_2026_09_23/derived/summary.csv": "ea351ee9aac908ba97599fdfb59e7b2d642ab5e6acb65e86ce48a9a016a2ceef",
+  "labor_mobility_insurance_2026_09_23/derived/insurance_summary.json": "63ae37b4b8e65f48257bb586d360c8a9673b08f05203c2701b4917424760388b",
+  "scale_spillovers_2026_09_23/derived/summary.csv": "385c45e73ab523c28ef38ff24b0b05704aa32c1a2630c11fb89d8443c56b54c0",
+  "main_case_decomposition_2026_09_29/derived/headcount.csv": "a40d606e42c931782358da8d7ca8a8dad28fffa5f4aa9af59da5a14a0631273e",
+  "main_case_2026_10_07/derived/summary.json": "547092591e23ebd69e7dfaec28e6eebe441c7cc61a9f3d32f328a3991f321bf3",
+  "main_case_2026_10_07/derived/corrections.json": "f8d346aacf05bcdaed8495f870ba23ac6154ab3eaf34cc0bcf85861f0c85d091",
+  "service_response_long_run_2026_09_27/derived/net_change.json": "f6bc46a8b15b0b5ba64e1491df10669d90796d9713d25f380c944905f16f2660",
+  "social_costs_unpriced_2026_09_28/derived/items.csv": "c8ff8aa3f9fdecb63460cf4f5e2f44d2e7aaab40f555abedf402acdba62c64a0",
+  "air_pollution_2026_09_28/derived/items.csv": "738fbc088877d59210078f2b43bdc0d0839e5b2392bedee564edb947e6f30c03",
+  "road_crash_externality_2026_09_28/derived/items.csv": "1e975bc9fa5d66dff4633e4cb49ae78f09ea09736ec382775828ca71c1cd6b34",
+  "disease_food_2026_09_28/derived/items.csv": "aa7091880821cb99c2b13be57515502999953940a6cfc70aab02fa33d8e808df",
+  "benefits_inventory_2026_09_28/derived/items.csv": "dc77797f9d01ffb4dd8023b95f6cf5f47d8e1ed88fd6e62c52ef8cbe469b62fc",
+  "consumer_scale_2026_09_28/derived/items.csv": "6865f708c2c9d1b824f72e4db0aba1067719dded0c07fa6869bcaa487bdf1a08",
+  "trade_networks_2026_09_28/derived/items.csv": "63ca23c4ca47ef47a694abd09b6cb64e2b566f09bacdb905b260d05bd628ade3",
+  "population_basis_2026_09_29/derived/restated_pairing.csv": "62d5e50b52226b3f9e965292ff7fd68aa4b49c6b9057b80f44eb798038eb10c1",
+  "sept27_propagation_2026_09_27/derived/band_variants.csv": "3193ba6cc713e4ca6669c3af9e247f9861ab2ac73afc7b21c71eee749b05ce99"
+ },
+ "congestion_by_band_end_bn": {
+  "case": "oct07",
+  "central": {
+   "low_end": 13.992562864050909,
+   "high_end": 12.01805628378483
+  },
+  "full_span": {
+   "low_end_lowest": 2.014861874519616,
+   "high_end_highest": 30.828298311580397
+  },
+  "earlier_cases": {
+   "central": 19.162711110731056,
+   "full_span": [
+    8.047943973203898,
+    35.25151421805585
+   ]
+  },
+  "source": "service_response_long_run_2026_09_27/derived/net_change.json",
+  "not_recomputed": "the September 27 figure (the payload's meta.candidate_v4.not_recomputed): derived with roads on economic_affairs_services' key, before v4 keyed roads by vehicle miles",
+  "not_recomputed_v5": "the September 27 figure, carried by the September 29 lane; not recomputed with the added people",
+  "not_recomputed_v6": "the September 27 figure, carried by the September 29 and October 5 lanes; the items do not reprice it"
+ },
+ "beside_the_central_total": {
+  "oct07_capital_at_7pct": "the return on public capital at the reported 7% on every component; beside the central total, never in it",
+  "oct07_enterprises_out_option_a": "option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it",
+  "oct07_cash_set": "the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+ },
+ "lineage_social_rows": {
+  "rule": "each restated social row (population lane, audit row 4's union, 5+ basis) times the added people's share of the engine key it scales with at the band end's specification [ASSUMPTION]; restaurant variety carries no head count and is not priced",
+  "keys": {
+   "rule": "the added people's amount over the union's (the September 29 payload's) on the key a social row scales with, at the band end's specification, read on the item base (the September 29 payload with the lineage item's edits, P.ITEM_BASE) [ASSUMPTION: the edit sets change the prices and keys of the account's lines, not the quantities the social rows scale with]",
+   "head_count": 0.07654315652845424,
+   "low_end": {
+    "specification": 48,
+    "allocation": "shared",
+    "uc": "uninsured_use_low",
+    "justice": "use",
+    "receipt_scenario": "cbo_collective",
+    "justice_use": 0.06606175123321623,
+    "justice_use_raw_coding": 0.07031058462501538,
+    "uninsured_use": 0.07173281819905553,
+    "road": 0.07597368406756444,
+    "consumption": 0.08943254442049775,
+    "pupils": 0.08886478813566523,
+    "adults": 0.06219769260601127
+   },
+   "high_end": {
+    "specification": 11,
+    "allocation": "personal",
+    "uc": "uninsured_use_high",
+    "justice": "use",
+    "receipt_scenario": "cbo_collective",
+    "justice_use": 0.06606175123321623,
+    "justice_use_raw_coding": 0.07031058462501538,
+    "uninsured_use": 0.07076043832704615,
+    "road": 0.07597445096482147,
+    "consumption": 0.08943807606914689,
+    "pupils": 0.10690390271435146,
+    "adults": 0.06219769260601127
+   }
+  },
+  "rows": [
+   {
+    "item": "victims",
+    "keys": {
+     "low": "justice_use_raw_coding",
+     "high": "justice_use"
+    },
+    "union_low_bn": 30.483111,
+    "share_low": 0.07031058462501538,
+    "added_low_bn": 2.1432853555992373,
+    "union_high_bn": 31.873558,
+    "share_high": 0.06606175123321623,
+    "added_high_bn": 2.105623059513489
+   },
+   {
+    "item": "property_crime",
+    "keys": {
+     "low": "justice_use_raw_coding",
+     "high": "justice_use"
+    },
+    "union_low_bn": 1.254369,
+    "share_low": 0.07031058462501538,
+    "added_low_bn": 0.08819541772549593,
+    "union_high_bn": 1.35645,
+    "share_high": 0.06606175123321623,
+    "added_high_bn": 0.08960946246029615
+   },
+   {
+    "item": "unreimbursed_care",
+    "keys": {
+     "low": "uninsured_use",
+     "high": "uninsured_use"
+    },
+    "union_low_bn": 3.08854,
+    "share_low": 0.07173281819905553,
+    "added_low_bn": 0.22154967832051095,
+    "union_high_bn": 5.292559,
+    "share_high": 0.07076043832704615,
+    "added_high_bn": 0.37450379471175305
+   },
+   {
+    "item": "congestion",
+    "keys": {
+     "low": "road",
+     "high": "road"
+    },
+    "union_low_bn": 13.628205,
+    "share_low": 0.07597368406756444,
+    "added_low_bn": 1.035384941078002,
+    "union_high_bn": 11.639328,
+    "share_high": 0.07597445096482147,
+    "added_high_bn": 0.8842915543994736
+   },
+   {
+    "item": "housing_gain",
+    "keys": {
+     "low": "head_count",
+     "high": "head_count"
+    },
+    "union_low_bn": -3.392318,
+    "share_low": 0.07654315652845424,
+    "added_low_bn": -0.25965872766829284,
+    "union_high_bn": -0.687662,
+    "share_high": 0.07654315652845424,
+    "added_high_bn": -0.0526358201046699
+   },
+   {
+    "item": "fear_avoidance",
+    "keys": {
+     "low": "justice_use_raw_coding",
+     "high": "justice_use"
+    },
+    "union_low_bn": 10.339309,
+    "share_low": 0.07031058462501538,
+    "added_low_bn": 0.7269628604086832,
+    "union_high_bn": 10.339309,
+    "share_high": 0.06606175123321623,
+    "added_high_bn": 0.6830328590813536
+   },
+   {
+    "item": "private_security",
+    "keys": {
+     "low": "justice_use_raw_coding",
+     "high": "justice_use"
+    },
+    "union_low_bn": -0.490639,
+    "share_low": 0.07031058462501538,
+    "added_low_bn": -0.03449711492983292,
+    "union_high_bn": -0.490639,
+    "share_high": 0.06606175123321623,
+    "added_high_bn": -0.03241247156331398
+   },
+   {
+    "item": "school_disruption",
+    "keys": {
+     "low": "pupils",
+     "high": "pupils"
+    },
+    "union_low_bn": -1.938666,
+    "share_low": 0.08886478813566523,
+    "added_low_bn": -0.17227914335581757,
+    "union_high_bn": -1.938666,
+    "share_high": 0.10690390271435146,
+    "added_high_bn": -0.20725096145962088
+   },
+   {
+    "item": "pm25_consumption",
+    "keys": {
+     "low": "consumption",
+     "high": "consumption"
+    },
+    "union_low_bn": 68.092105,
+    "share_low": 0.08943254442049775,
+    "added_low_bn": 6.089650205097698,
+    "union_high_bn": 68.092105,
+    "share_high": 0.08943807606914689,
+    "added_high_bn": 6.090026866698337
+   },
+   {
+    "item": "road_crash_externality",
+    "keys": {
+     "low": "road",
+     "high": "road"
+    },
+    "union_low_bn": 10.56288,
+    "share_low": 0.07597368406756444,
+    "added_low_bn": 0.8025009079635951,
+    "union_high_bn": 10.56288,
+    "share_high": 0.07597445096482147,
+    "added_high_bn": 0.8025090086072935
+   },
+   {
+    "item": "scale_net_earnings",
+    "keys": {
+     "low": "head_count",
+     "high": "head_count"
+    },
+    "union_low_bn": -13.674356,
+    "share_low": 0.07654315652845424,
+    "added_low_bn": -1.0466783717338073,
+    "union_high_bn": -13.674356,
+    "share_high": 0.07654315652845424,
+    "added_high_bn": -1.0466783717338073
+   },
+   {
+    "item": "restaurant_variety_market_size",
+    "keys": {
+     "low": null,
+     "high": null
+    },
+    "union_low_bn": -6.793,
+    "share_low": 0.0,
+    "added_low_bn": 0.0,
+    "union_high_bn": -6.793,
+    "share_high": 0.0,
+    "added_high_bn": 0.0
+   },
+   {
+    "item": "formal_volunteering_outside_group",
+    "keys": {
+     "low": "adults",
+     "high": "adults"
+    },
+    "union_low_bn": -5.980771,
+    "share_low": 0.06219769260601127,
+    "added_low_bn": -0.37199015620494663,
+    "union_high_bn": -5.980771,
+    "share_high": 0.06219769260601127,
+    "added_high_bn": -0.37199015620494663
+   },
+   {
+    "item": "total_consumer_scale",
+    "keys": {
+     "low": "consumption",
+     "high": "consumption"
+    },
+    "union_low_bn": -2.1297,
+    "share_low": 0.08943254442049775,
+    "added_low_bn": -0.19046448985233408,
+    "union_high_bn": -2.1297,
+    "share_high": 0.08943807606914689,
+    "added_high_bn": -0.19047627060446215
+   },
+   {
+    "item": "total_trade_travel_fdi",
+    "keys": {
+     "low": "consumption",
+     "high": "consumption"
+    },
+    "union_low_bn": -6.784387,
+    "share_low": 0.08943254442049775,
+    "added_low_bn": -0.6067449917433474,
+    "union_high_bn": -6.784387,
+    "share_high": 0.08943807606914689,
+    "added_high_bn": -0.6067825205885312
+   }
+  ],
+  "union_social_bn": {
+   "low": 96.26468200000005,
+   "high": 100.677009
+  },
+  "added_social_bn": {
+   "low": 8.425216370704842,
+   "high": 8.521370033212644
+  },
+  "record_basis_rows": "the section 7 rows on the lanes' published social rows carry the union's social rows only"
+ },
+ "social_items_in_the_social_rows": {
+  "case": "oct07",
+  "central_bn": 52.7841332357814,
+  "stacked_low_bn": -182.76451342030222,
+  "stacked_high_bn": 282.890679891865,
+  "cost_items_bn": {
+   "central": 88.6708,
+   "stacked_low": -35.5821,
+   "stacked_high": 226.984
+  },
+  "items": [
+   {
+    "item": "fear_avoidance",
+    "kind": "cost",
+    "source": "social_costs_unpriced_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-fear-security-schools.md",
+    "central_bn": 10.49,
+    "low_bn": 5.24,
+    "high_bn": 30.31,
+    "normalized_bn": null
+   },
+   {
+    "item": "private_security",
+    "kind": "cost",
+    "source": "social_costs_unpriced_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-fear-security-schools.md",
+    "central_bn": -0.6,
+    "low_bn": -2.93,
+    "high_bn": 0.39,
+    "normalized_bn": null
+   },
+   {
+    "item": "school_disruption",
+    "kind": "cost",
+    "source": "social_costs_unpriced_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-fear-security-schools.md",
+    "central_bn": -1.95,
+    "low_bn": -11.71,
+    "high_bn": -0.54,
+    "normalized_bn": null
+   },
+   {
+    "item": "pm25_consumption",
+    "kind": "cost",
+    "source": "air_pollution_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-pollution-crashes.md",
+    "central_bn": 69.6808,
+    "low_bn": 31.4979,
+    "high_bn": 122.484,
+    "normalized_bn": {
+     "central": -46.509,
+     "low": -81.8082,
+     "high": -17.9168
+    }
+   },
+   {
+    "item": "road_crash_externality",
+    "kind": "cost",
+    "source": "road_crash_externality_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-29-crash-item-with-against-without.md",
+    "central_bn": 11.05,
+    "low_bn": -57.68,
+    "high_bn": 74.34,
+    "normalized_bn": {
+     "central": 0.62,
+     "low": -24.08,
+     "high": 31.54
+    }
+   },
+   {
+    "item": "scale_net_earnings",
+    "kind": "benefit",
+    "source": "scale_spillovers_2026_09_23/derived/summary.csv",
+    "decision": "decisions/2026-09-28-social-items-scale-benefits.md",
+    "central_bn": -13.927466764218613,
+    "low_bn": -84.42361342030222,
+    "high_bn": 56.56867989186499,
+    "normalized_bn": {
+     "central": 24.92909982784804,
+     "low": -43.12792244938655,
+     "high": 92.98612210508264
+    }
+   },
+   {
+    "item": "restaurant_variety_market_size",
+    "kind": "benefit",
+    "source": "disease_food_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-scale-benefits.md",
+    "central_bn": -6.793,
+    "low_bn": -19.2168,
+    "high_bn": -1.0739,
+    "normalized_bn": {
+     "central": 1.1999,
+     "low": 0.1897,
+     "high": 3.3944
+    }
+   },
+   {
+    "item": "formal_volunteering_outside_group",
+    "kind": "benefit",
+    "source": "benefits_inventory_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-more-benefits.md",
+    "central_bn": -6.2105,
+    "low_bn": -7.9043,
+    "high_bn": -4.5167,
+    "normalized_bn": {
+     "central": 4.1893,
+     "low": 3.0468,
+     "high": 5.3319
+    }
+   },
+   {
+    "item": "total_consumer_scale",
+    "kind": "benefit",
+    "source": "consumer_scale_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-more-benefits.md",
+    "central_bn": -2.1869,
+    "low_bn": -11.8885,
+    "high_bn": 6.0644,
+    "normalized_bn": {
+     "central": 2.5207,
+     "low": -3.6564,
+     "high": 9.9998
+    }
+   },
+   {
+    "item": "total_trade_travel_fdi",
+    "kind": "benefit",
+    "source": "trade_networks_2026_09_28/derived/items.csv",
+    "decision": "decisions/2026-09-28-social-items-more-benefits.md",
+    "central_bn": -6.7688,
+    "low_bn": -23.7492,
+    "high_bn": -1.1358,
+    "normalized_bn": {
+     "central": 0.7837,
+     "low": 0.2511,
+     "high": 2.7283
+    }
+   }
+  ],
+  "never_added": "property values; each item's normalized figure; the crash lane's fault-based row; CO2, ozone and government-services emissions; disease, food safety and the cuisine mix"
+ }
+}

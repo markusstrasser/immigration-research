@@ -24,9 +24,11 @@ it in row 8, and the ledger lane's choice zeroes it with row 8.
   sept27          the September 27 case, main_case_long_run_2026_09_27 (default) -> ../sept27_propagation_2026_09_27/derived/
   sept29          the main case adopted 2026-09-29, main_case_2026_09_29          -> derived/sept29/
   oct05           the main case adopted 2026-10-05 (v5), main_case_2026_10_05    -> derived/oct05/
+  oct07           main case v6 (v5 plus its meta.items), main_case_2026_10_07   -> derived/oct07/
 On oct05 each row also carries the lineage's parts of it: audit row 8's change at the larger group
 (v5_union_response:row8) and the added people's copies of the row 8, finite and row 10 parts
-(v5_lineage:constants on their lines), which the ledger lane's choice moves alike.
+(v5_lineage:constants on their lines), which the ledger lane's choice moves alike. On oct07 the same parts carry
+the age-mix lineage's amounts; no other item edits row 8's or row 10's line.
 The federal part compared is the run's main profile (its summary.json case.main_profile; before September 27
 cbo_category_lag_non_school_full). From September 27 the debt lane's fiscal_gap_bn and federal_bn are the
 cash part only: the return on public capital and the displaced beneficiaries of capped programs sit in their
@@ -36,7 +38,7 @@ the two constants alike.
 
 Writes constant_choices.csv (2024 split) and constant_choices_stock.csv (re-runs), after every gate.
 Run from the repository root:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py [--case sept24|sept26|sept26_schools|sept27|sept29|oct05] [--out-dir DIR]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py [--case sept24|sept26|sept26_schools|sept27|sept29|oct05|oct07] [--out-dir DIR]
 """
 from __future__ import annotations
 
@@ -56,7 +58,7 @@ HERE = Path(__file__).resolve().parent
 LANE = HERE.parent / "debt_legacy_2026_09_23"
 OUT_DIRS = dict(sept24=HERE / "derived", sept26=None, sept26_schools=HERE.parent / "sept26_propagation_2026_09_26" / "derived",
                 sept27=HERE.parent / "sept27_propagation_2026_09_27" / "derived", sept29=HERE / "derived" / "sept29",
-                oct05=HERE / "derived" / "oct05")
+                oct05=HERE / "derived" / "oct05", oct07=HERE / "derived" / "oct07")
 LINEAGE_ROW8 = "v5_union_response:row8"                  # October 5: the per-correction split's lineage components
 LINEAGE_CONSTANTS = "v5_lineage:constants"
 OLD_PROFILE = "cbo_category_lag_non_school_full"         # the main profile of every case before September 27

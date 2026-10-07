@@ -1,0 +1,185 @@
+section,column,item,unit,memo_printed,memo_method,sept23,sept24,oct07,change,note
+7,hispanic,fiscal main case (low),bn,198.900000,exact,198.933612,196.601797,384.328270,187.726473,
+7,hispanic,total at central values (low),bn,248,exact,248.027780,245.695966,481.036424,235.340458,
+7,hispanic,per group member (low),$k,6.100000,exact,6.064757,6.186868,11.251732,5.064863,
+7,hispanic,fiscal main case (high),bn,245.400000,exact,245.366550,242.045031,456.692493,214.647462,
+7,hispanic,total at central values (high),bn,300,exact,299.678236,296.356717,556.643657,260.286941,
+7,hispanic,per group member (high),$k,7.300000,exact,7.327710,7.462556,13.020230,5.557674,
+7,hispanic,"victims' harm, full cost",bn,28.900000,exact,28.922885,28.922885,28.922885,0.000000,
+7,custody,fiscal main case (low),bn,203.200000,exact,203.207017,200.875203,389.082553,188.207350,
+7,custody,total at central values (low),bn,256,exact,255.716401,253.384586,489.205921,235.821335,
+7,custody,per group member (low),$k,6.300000,exact,6.252758,6.380475,11.442821,5.062346,
+7,custody,fiscal main case (high),bn,249.600000,exact,249.639956,246.318436,461.479709,215.161273,
+7,custody,total at central values (high),bn,307,exact,307.366857,304.045337,564.846089,260.800752,
+7,custody,per group member (high),$k,7.500000,exact,7.515712,7.656163,13.212090,5.555927,
+7,custody,"victims' harm, full cost",bn,32.300000,exact,32.338100,32.338100,32.338100,0.000000,
+7,hispanic_mixed_group,total at central values (low),bn,,,,247.700468,483.040926,235.340458,victims 30.93 (ladder 218 mixed-group correction); decision 4's figure
+7,hispanic_mixed_group,per group member (low),$k,,,,6.237344,11.298618,5.061274,
+7,hispanic_mixed_group,total at central values (high),bn,,,,298.361220,558.648160,260.286941,victims 30.93 (ladder 218 mixed-group correction); decision 4's figure
+7,hispanic_mixed_group,per group member (high),$k,,,,7.513032,13.067117,5.554085,
+7,custody_mixed_scaled,total at central values (low),bn,,,,255.625780,491.447116,235.821335,victims 34.58 = 30.93 x 32.34/28.92 (winners_losers_2026_09_24 crime_inputs; not a lane arm)
+7,custody_mixed_scaled,total at central values (high),bn,,,,306.286532,567.087283,260.800752,victims 34.58 = 30.93 x 32.34/28.92 (winners_losers_2026_09_24 crime_inputs; not a lane arm)
+7,full_span,low end,bn,212,exact,212.488885,210.157071,208.780764,-1.376307,
+7,full_span,high end,bn,340,exact,340.249916,336.928396,830.867109,493.938713,
+7,full_span,"per group member, low",$k,5.200000,exact,5.195762,5.291964,4.883508,-0.408456,
+7,full_span,"per group member, high",$k,8.300000,exact,8.319766,8.484191,19.434482,10.950290,
+7,full_span_with_package_range,low end,bn,,,,181.547383,131.589290,-49.958093,"adds each case's own range (main_case_2026_09_24, main_case_2026_10_07); may double count the arrest ratio"
+7,full_span_with_package_range,high end,bn,,,,366.756244,884.991691,518.235447,"adds each case's own range (main_case_2026_09_24, main_case_2026_10_07); may double count the arrest ratio"
+7,social_items_2026_09_28,"central, both ends",bn,,,,,52.784133,,"the union's added social items, costs and benefits (negative), in every §7 social row above: fear_avoidance, private_security, school_disruption, pm25_consumption, road_crash_externality, scale_net_earnings, restaurant_variety_market_size, formal_volunteering_outside_group, total_consumer_scale, total_trade_travel_fdi; property values stay out; normalized figures and the crash lane's fault-based row sit beside, never added; decisions 2026-09-28 and 2026-09-29"
+7,social_items_2026_09_28,"stacked low, full span",bn,,,,,-182.764513,,"the union's added social items, costs and benefits (negative), in every §7 social row above: fear_avoidance, private_security, school_disruption, pm25_consumption, road_crash_externality, scale_net_earnings, restaurant_variety_market_size, formal_volunteering_outside_group, total_consumer_scale, total_trade_travel_fdi; property values stay out; normalized figures and the crash lane's fault-based row sit beside, never added; decisions 2026-09-28 and 2026-09-29"
+7,social_items_2026_09_28,"stacked high, full span",bn,,,,,282.890680,,"the union's added social items, costs and benefits (negative), in every §7 social row above: fear_avoidance, private_security, school_disruption, pm25_consumption, road_crash_externality, scale_net_earnings, restaurant_variety_market_size, formal_volunteering_outside_group, total_consumer_scale, total_trade_travel_fdi; property values stay out; normalized figures and the crash lane's fault-based row sit beside, never added; decisions 2026-09-28 and 2026-09-29"
+7,social_item_fear_avoidance,"central, both ends",bn,,,,,10.490000,,social_costs_unpriced_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-fear-security-schools.md
+7,social_item_fear_avoidance,"low, full span",bn,,,,,5.240000,,social_costs_unpriced_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-fear-security-schools.md
+7,social_item_fear_avoidance,"high, full span",bn,,,,,30.310000,,social_costs_unpriced_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-fear-security-schools.md
+7,social_item_private_security,"central, both ends",bn,,,,,-0.600000,,social_costs_unpriced_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-fear-security-schools.md
+7,social_item_private_security,"low, full span",bn,,,,,-2.930000,,social_costs_unpriced_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-fear-security-schools.md
+7,social_item_private_security,"high, full span",bn,,,,,0.390000,,social_costs_unpriced_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-fear-security-schools.md
+7,social_item_school_disruption,"central, both ends",bn,,,,,-1.950000,,social_costs_unpriced_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-fear-security-schools.md
+7,social_item_school_disruption,"low, full span",bn,,,,,-11.710000,,social_costs_unpriced_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-fear-security-schools.md
+7,social_item_school_disruption,"high, full span",bn,,,,,-0.540000,,social_costs_unpriced_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-fear-security-schools.md
+7,social_item_pm25_consumption,"central, both ends",bn,,,,,69.680800,,air_pollution_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-pollution-crashes.md
+7,social_item_pm25_consumption,"low, full span",bn,,,,,31.497900,,air_pollution_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-pollution-crashes.md
+7,social_item_pm25_consumption,"high, full span",bn,,,,,122.484000,,air_pollution_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-pollution-crashes.md
+7,social_item_pm25_consumption,"normalized central, beside",bn,,,,,-46.509000,,against as many average residents; never added
+7,social_item_pm25_consumption,"normalized low, beside",bn,,,,,-81.808200,,against as many average residents; never added
+7,social_item_pm25_consumption,"normalized high, beside",bn,,,,,-17.916800,,against as many average residents; never added
+7,social_item_road_crash_externality,"central, both ends",bn,,,,,11.050000,,road_crash_externality_2026_09_28/derived/items.csv; decisions/2026-09-29-crash-item-with-against-without.md
+7,social_item_road_crash_externality,"low, full span",bn,,,,,-57.680000,,road_crash_externality_2026_09_28/derived/items.csv; decisions/2026-09-29-crash-item-with-against-without.md
+7,social_item_road_crash_externality,"high, full span",bn,,,,,74.340000,,road_crash_externality_2026_09_28/derived/items.csv; decisions/2026-09-29-crash-item-with-against-without.md
+7,social_item_road_crash_externality,"normalized central, beside",bn,,,,,0.620000,,against as many average residents; never added
+7,social_item_road_crash_externality,"normalized low, beside",bn,,,,,-24.080000,,against as many average residents; never added
+7,social_item_road_crash_externality,"normalized high, beside",bn,,,,,31.540000,,against as many average residents; never added
+7,social_item_scale_net_earnings,"central, both ends",bn,,,,,-13.927467,,scale_spillovers_2026_09_23/derived/summary.csv; decisions/2026-09-28-social-items-scale-benefits.md
+7,social_item_scale_net_earnings,"low, full span",bn,,,,,-84.423613,,scale_spillovers_2026_09_23/derived/summary.csv; decisions/2026-09-28-social-items-scale-benefits.md
+7,social_item_scale_net_earnings,"high, full span",bn,,,,,56.568680,,scale_spillovers_2026_09_23/derived/summary.csv; decisions/2026-09-28-social-items-scale-benefits.md
+7,social_item_scale_net_earnings,"normalized central, beside",bn,,,,,24.929100,,against as many average residents; never added
+7,social_item_scale_net_earnings,"normalized low, beside",bn,,,,,-43.127922,,against as many average residents; never added
+7,social_item_scale_net_earnings,"normalized high, beside",bn,,,,,92.986122,,against as many average residents; never added
+7,social_item_restaurant_variety_market_size,"central, both ends",bn,,,,,-6.793000,,disease_food_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-scale-benefits.md
+7,social_item_restaurant_variety_market_size,"low, full span",bn,,,,,-19.216800,,disease_food_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-scale-benefits.md
+7,social_item_restaurant_variety_market_size,"high, full span",bn,,,,,-1.073900,,disease_food_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-scale-benefits.md
+7,social_item_restaurant_variety_market_size,"normalized central, beside",bn,,,,,1.199900,,against as many average residents; never added
+7,social_item_restaurant_variety_market_size,"normalized low, beside",bn,,,,,0.189700,,against as many average residents; never added
+7,social_item_restaurant_variety_market_size,"normalized high, beside",bn,,,,,3.394400,,against as many average residents; never added
+7,social_item_formal_volunteering_outside_group,"central, both ends",bn,,,,,-6.210500,,benefits_inventory_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-more-benefits.md
+7,social_item_formal_volunteering_outside_group,"low, full span",bn,,,,,-7.904300,,benefits_inventory_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-more-benefits.md
+7,social_item_formal_volunteering_outside_group,"high, full span",bn,,,,,-4.516700,,benefits_inventory_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-more-benefits.md
+7,social_item_formal_volunteering_outside_group,"normalized central, beside",bn,,,,,4.189300,,against as many average residents; never added
+7,social_item_formal_volunteering_outside_group,"normalized low, beside",bn,,,,,3.046800,,against as many average residents; never added
+7,social_item_formal_volunteering_outside_group,"normalized high, beside",bn,,,,,5.331900,,against as many average residents; never added
+7,social_item_total_consumer_scale,"central, both ends",bn,,,,,-2.186900,,consumer_scale_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-more-benefits.md
+7,social_item_total_consumer_scale,"low, full span",bn,,,,,-11.888500,,consumer_scale_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-more-benefits.md
+7,social_item_total_consumer_scale,"high, full span",bn,,,,,6.064400,,consumer_scale_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-more-benefits.md
+7,social_item_total_consumer_scale,"normalized central, beside",bn,,,,,2.520700,,against as many average residents; never added
+7,social_item_total_consumer_scale,"normalized low, beside",bn,,,,,-3.656400,,against as many average residents; never added
+7,social_item_total_consumer_scale,"normalized high, beside",bn,,,,,9.999800,,against as many average residents; never added
+7,social_item_total_trade_travel_fdi,"central, both ends",bn,,,,,-6.768800,,trade_networks_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-more-benefits.md
+7,social_item_total_trade_travel_fdi,"low, full span",bn,,,,,-23.749200,,trade_networks_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-more-benefits.md
+7,social_item_total_trade_travel_fdi,"high, full span",bn,,,,,-1.135800,,trade_networks_2026_09_28/derived/items.csv; decisions/2026-09-28-social-items-more-benefits.md
+7,social_item_total_trade_travel_fdi,"normalized central, beside",bn,,,,,0.783700,,against as many average residents; never added
+7,social_item_total_trade_travel_fdi,"normalized low, beside",bn,,,,,0.251100,,against as many average residents; never added
+7,social_item_total_trade_travel_fdi,"normalized high, beside",bn,,,,,2.728300,,against as many average residents; never added
+7,capital_at_7pct,fiscal main case (low),bn,,,,,480.536445,,"the return on public capital at the reported 7% on every component; beside the central total, never in it"
+7,capital_at_7pct,"total at central values, custody footing (low)",bn,,,,,580.659814,,"the return on public capital at the reported 7% on every component; beside the central total, never in it"
+7,capital_at_7pct,"total at central values, Hispanic footing (low)",bn,,,,,572.325647,,"the return on public capital at the reported 7% on every component; beside the central total, never in it"
+7,capital_at_7pct,fiscal main case (high),bn,,,,,542.898718,,"the return on public capital at the reported 7% on every component; beside the central total, never in it"
+7,capital_at_7pct,"total at central values, custody footing (high)",bn,,,,,646.265097,,"the return on public capital at the reported 7% on every component; beside the central total, never in it"
+7,capital_at_7pct,"total at central values, Hispanic footing (high)",bn,,,,,637.930931,,"the return on public capital at the reported 7% on every component; beside the central total, never in it"
+7,capital_at_7pct,published pairing (low),bn,,,,,574.330150,,"the return on public capital at the reported 7% on every component; beside the central total, never in it; decision 4's victims on the Hispanic footing"
+7,capital_at_7pct,published pairing per group member (low),$k,,,,,13.433928,,"the return on public capital at the reported 7% on every component; beside the central total, never in it"
+7,capital_at_7pct,published pairing (high),bn,,,,,646.265097,,"the return on public capital at the reported 7% on every component; beside the central total, never in it; custody footing"
+7,capital_at_7pct,published pairing per group member (high),$k,,,,,15.116530,,"the return on public capital at the reported 7% on every component; beside the central total, never in it"
+7,enterprises_out_option_a,fiscal main case (low),bn,,,,,372.321228,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it"
+7,enterprises_out_option_a,"total at central values, custody footing (low)",bn,,,,,472.444597,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it"
+7,enterprises_out_option_a,"total at central values, Hispanic footing (low)",bn,,,,,464.275099,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it"
+7,enterprises_out_option_a,fiscal main case (high),bn,,,,,438.648356,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it"
+7,enterprises_out_option_a,"total at central values, custody footing (high)",bn,,,,,542.014735,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it"
+7,enterprises_out_option_a,"total at central values, Hispanic footing (high)",bn,,,,,533.812304,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it"
+7,enterprises_out_option_a,published pairing (low),bn,,,,,466.279602,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it; decision 4's victims on the Hispanic footing"
+7,enterprises_out_option_a,published pairing per group member (low),$k,,,,,10.906561,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it"
+7,enterprises_out_option_a,published pairing (high),bn,,,,,542.014735,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it; custody footing"
+7,enterprises_out_option_a,published pairing per group member (high),$k,,,,,12.678051,,"option A: no enterprise capital, the enterprise surplus receipt at 0; beside the central total, never in it"
+7,cash_set,fiscal main case (low),bn,,,,,307.399411,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7,cash_set,"total at central values, custody footing (low)",bn,,,,,407.522779,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7,cash_set,"total at central values, Hispanic footing (low)",bn,,,,,399.353281,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7,cash_set,fiscal main case (high),bn,,,,,385.364123,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7,cash_set,"total at central values, custody footing (high)",bn,,,,,488.730502,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7,cash_set,"total at central values, Hispanic footing (high)",bn,,,,,480.528071,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7,cash_set,published pairing (low),bn,,,,,401.357784,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it; decision 4's victims on the Hispanic footing"
+7,cash_set,published pairing per group member (low),$k,,,,,9.388000,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7,cash_set,published pairing (high),bn,,,,,488.730502,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it; custody footing"
+7,cash_set,published pairing per group member (high),$k,,,,,11.431701,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7,pairing_on_priced_count,published pairing (low),bn,,,,,489.018168,,"the case's fiscal rows (band_variants.csv: justice_raw_coding low, adopted high) plus the social rows of population_basis_2026_09_29/derived/restated_pairing.csv section pairing_5plus less its fiscal row (the sept27 case's): every social row on audit row 4's count, the crash and congestion rows' NHTS ratios on persons aged 5+; low end Hispanic footing with decision 4's mixed-group victims, high end custody footing; plus the added people's social rows, each restated row times their share of its engine key (band_variants.json lineage_social_keys); per member on the lineage population"
+7,pairing_on_priced_count,published pairing per group member (low),$k,,,,,11.438429,,"the case's fiscal rows (band_variants.csv: justice_raw_coding low, adopted high) plus the social rows of population_basis_2026_09_29/derived/restated_pairing.csv section pairing_5plus less its fiscal row (the sept27 case's): every social row on audit row 4's count, the crash and congestion rows' NHTS ratios on persons aged 5+; low end Hispanic footing with decision 4's mixed-group victims, high end custody footing; plus the added people's social rows, each restated row times their share of its engine key (band_variants.json lineage_social_keys); per member on the lineage population"
+7,pairing_on_priced_count,social rows on the priced count (low),bn,,,,,96.264682,,"population_basis_2026_09_29/derived/restated_pairing.csv pairing_5plus less row fiscal, low"
+7,pairing_on_priced_count,the added people's social rows (low),bn,,,,,8.425216,,the 3.04M at their share of each row's engine key; lineage_social_* rows below
+7,pairing_on_priced_count,published pairing (high),bn,,,,,570.678088,,"the case's fiscal rows (band_variants.csv: justice_raw_coding low, adopted high) plus the social rows of population_basis_2026_09_29/derived/restated_pairing.csv section pairing_5plus less its fiscal row (the sept27 case's): every social row on audit row 4's count, the crash and congestion rows' NHTS ratios on persons aged 5+; low end Hispanic footing with decision 4's mixed-group victims, high end custody footing; plus the added people's social rows, each restated row times their share of its engine key (band_variants.json lineage_social_keys); per member on the lineage population"
+7,pairing_on_priced_count,published pairing per group member (high),$k,,,,,13.348504,,"the case's fiscal rows (band_variants.csv: justice_raw_coding low, adopted high) plus the social rows of population_basis_2026_09_29/derived/restated_pairing.csv section pairing_5plus less its fiscal row (the sept27 case's): every social row on audit row 4's count, the crash and congestion rows' NHTS ratios on persons aged 5+; low end Hispanic footing with decision 4's mixed-group victims, high end custody footing; plus the added people's social rows, each restated row times their share of its engine key (band_variants.json lineage_social_keys); per member on the lineage population"
+7,pairing_on_priced_count,social rows on the priced count (high),bn,,,,,100.677009,,"population_basis_2026_09_29/derived/restated_pairing.csv pairing_5plus less row fiscal, high"
+7,pairing_on_priced_count,the added people's social rows (high),bn,,,,,8.521370,,the 3.04M at their share of each row's engine key; lineage_social_* rows below
+7,lineage_social_victims,added people (low),bn,,,,,2.143285,,restated union row 30.483111 x share 0.070311 (justice_use_raw_coding)
+7,lineage_social_victims,added people (high),bn,,,,,2.105623,,restated union row 31.873558 x share 0.066062 (justice_use)
+7,lineage_social_property_crime,added people (low),bn,,,,,0.088195,,restated union row 1.254369 x share 0.070311 (justice_use_raw_coding)
+7,lineage_social_property_crime,added people (high),bn,,,,,0.089609,,restated union row 1.356450 x share 0.066062 (justice_use)
+7,lineage_social_unreimbursed_care,added people (low),bn,,,,,0.221550,,restated union row 3.088540 x share 0.071733 (uninsured_use)
+7,lineage_social_unreimbursed_care,added people (high),bn,,,,,0.374504,,restated union row 5.292559 x share 0.070760 (uninsured_use)
+7,lineage_social_congestion,added people (low),bn,,,,,1.035385,,restated union row 13.628205 x share 0.075974 (road)
+7,lineage_social_congestion,added people (high),bn,,,,,0.884292,,restated union row 11.639328 x share 0.075974 (road)
+7,lineage_social_housing_gain,added people (low),bn,,,,,-0.259659,,restated union row -3.392318 x share 0.076543 (head_count)
+7,lineage_social_housing_gain,added people (high),bn,,,,,-0.052636,,restated union row -0.687662 x share 0.076543 (head_count)
+7,lineage_social_fear_avoidance,added people (low),bn,,,,,0.726963,,restated union row 10.339309 x share 0.070311 (justice_use_raw_coding)
+7,lineage_social_fear_avoidance,added people (high),bn,,,,,0.683033,,restated union row 10.339309 x share 0.066062 (justice_use)
+7,lineage_social_private_security,added people (low),bn,,,,,-0.034497,,restated union row -0.490639 x share 0.070311 (justice_use_raw_coding)
+7,lineage_social_private_security,added people (high),bn,,,,,-0.032412,,restated union row -0.490639 x share 0.066062 (justice_use)
+7,lineage_social_school_disruption,added people (low),bn,,,,,-0.172279,,restated union row -1.938666 x share 0.088865 (pupils)
+7,lineage_social_school_disruption,added people (high),bn,,,,,-0.207251,,restated union row -1.938666 x share 0.106904 (pupils)
+7,lineage_social_pm25_consumption,added people (low),bn,,,,,6.089650,,restated union row 68.092105 x share 0.089433 (consumption)
+7,lineage_social_pm25_consumption,added people (high),bn,,,,,6.090027,,restated union row 68.092105 x share 0.089438 (consumption)
+7,lineage_social_road_crash_externality,added people (low),bn,,,,,0.802501,,restated union row 10.562880 x share 0.075974 (road)
+7,lineage_social_road_crash_externality,added people (high),bn,,,,,0.802509,,restated union row 10.562880 x share 0.075974 (road)
+7,lineage_social_scale_net_earnings,added people (low),bn,,,,,-1.046678,,restated union row -13.674356 x share 0.076543 (head_count)
+7,lineage_social_scale_net_earnings,added people (high),bn,,,,,-1.046678,,restated union row -13.674356 x share 0.076543 (head_count)
+7,lineage_social_restaurant_variety_market_size,added people (low),bn,,,,,0.000000,,restated union row -6.793000 x share 0.000000 (not priced: no head count in the item)
+7,lineage_social_restaurant_variety_market_size,added people (high),bn,,,,,0.000000,,restated union row -6.793000 x share 0.000000 (not priced: no head count in the item)
+7,lineage_social_formal_volunteering_outside_group,added people (low),bn,,,,,-0.371990,,restated union row -5.980771 x share 0.062198 (adults)
+7,lineage_social_formal_volunteering_outside_group,added people (high),bn,,,,,-0.371990,,restated union row -5.980771 x share 0.062198 (adults)
+7,lineage_social_total_consumer_scale,added people (low),bn,,,,,-0.190464,,restated union row -2.129700 x share 0.089433 (consumption)
+7,lineage_social_total_consumer_scale,added people (high),bn,,,,,-0.190476,,restated union row -2.129700 x share 0.089438 (consumption)
+7,lineage_social_total_trade_travel_fdi,added people (low),bn,,,,,-0.606745,,restated union row -6.784387 x share 0.089433 (consumption)
+7,lineage_social_total_trade_travel_fdi,added people (high),bn,,,,,-0.606783,,restated union row -6.784387 x share 0.089438 (consumption)
+7,pairing_on_priced_count_state_price_held,published pairing (low),bn,,,,,489.411778,,"alternative, beside: the low end with the state-priced justice line held at the case's use-key amount (band_variants.csv justice_raw_coding_state_price_held); the central re-prices it on the raw-coded key"
+7,pairing_on_priced_count_state_price_held,published pairing per group member (low),$k,,,,,11.447636,,"alternative, beside: the low end with the state-priced justice line held at the case's use-key amount (band_variants.csv justice_raw_coding_state_price_held); the central re-prices it on the raw-coded key"
+7,pairing_on_priced_count_cash_set,published pairing (low),bn,,,,,407.335026,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it; the social rows as in pairing_on_priced_count"
+7,pairing_on_priced_count_cash_set,published pairing per group member (low),$k,,,,,9.527812,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7,pairing_on_priced_count_cash_set,published pairing (high),bn,,,,,494.562502,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it; the social rows as in pairing_on_priced_count"
+7,pairing_on_priced_count_cash_set,published pairing per group member (high),$k,,,,,11.568115,,"the cash set: the pension switch off, social security and Medicare's Part A at the group's current benefits (main_case_2026_10_07 band row cash_set); beside the central total, never in it"
+7b,costs_only,fiscal main case (low),bn,203.200000,exact,203.207017,205.025203,393.232553,188.207350,
+7b,costs_only,social items beside the account (low),bn,52.500000,exact,52.509383,52.509383,136.010035,83.500652,
+7b,costs_only,total at central values (low),bn,256,exact,255.716401,257.534586,529.242588,271.708002,
+7b,costs_only,per group member (low),$k,6.300000,exact,6.252758,6.484976,12.379303,5.894326,
+7b,costs_only,fiscal main case (high),bn,249.600000,exact,249.639956,250.468436,465.629709,215.161273,
+7b,costs_only,social items beside the account (high),bn,57.800000,printed rows,57.726901,57.726901,139.253046,81.526145,
+7b,costs_only,total at central values (high),bn,307,exact,307.366857,308.195337,604.882756,296.687418,
+7b,costs_only,per group member (high),$k,7.500000,exact,7.515712,7.760665,14.148572,6.387907,
+7b,with_care_and_mobility,fiscal main case (low),bn,199.100000,exact,199.059438,200.875203,389.082553,188.207350,
+7b,with_care_and_mobility,social items beside the account (low),bn,51.900000,exact,51.854500,51.854500,135.355152,83.500652,
+7b,with_care_and_mobility,total at central values (low),bn,251,exact,250.913938,252.729703,524.437705,271.708002,
+7b,with_care_and_mobility,per group member (low),$k,6.100000,exact,6.135329,6.363985,12.266914,5.902929,
+7b,with_care_and_mobility,fiscal main case (high),bn,245.500000,exact,245.492377,246.318436,461.479709,215.161273,
+7b,with_care_and_mobility,social items beside the account (high),bn,57.200000,printed rows,57.072018,57.072018,138.598163,81.526145,
+7b,with_care_and_mobility,total at central values (high),bn,303,exact,302.564395,303.390454,600.077872,296.687418,
+7b,with_care_and_mobility,per group member (high),$k,7.400000,exact,7.398282,7.639673,14.036183,6.396510,
+7b,adding_scale_net,fiscal main case (low),bn,185.200000,printed rows,185.131971,186.947736,375.155086,188.207350,
+7b,adding_scale_net,social items beside the account (low),bn,51.900000,exact,51.854500,51.854500,135.355152,83.500652,
+7b,adding_scale_net,total at central values (low),bn,237,exact,236.986471,238.802236,510.510238,271.708002,
+7b,adding_scale_net,per group member (low),$k,5.800000,exact,5.794776,6.013277,11.941142,5.927864,
+7b,adding_scale_net,fiscal main case (high),bn,231.600000,exact,231.564910,232.390969,447.552243,215.161273,
+7b,adding_scale_net,social items beside the account (high),bn,57.200000,printed rows,57.072018,57.072018,138.598163,81.526145,
+7b,adding_scale_net,total at central values (high),bn,289,exact,288.636928,289.462987,586.150406,296.687418,
+7b,adding_scale_net,per group member (high),$k,7.100000,exact,7.057729,7.288965,13.710411,6.421446,
+7b,omitted_benefits,without the scale net,bn,4.800000,exact,4.802462,0.654883,0.654883,0.000000,From September 24 on care is inside the account; mobility alone remains
+7b,omitted_benefits,with the scale net,bn,18.700000,exact,18.729929,14.582350,14.582350,0.000000,
+7b,omitted_benefits,"share of main case, low (%)",%,2,exact,1.923755,0.265868,0.141909,-0.123959,
+7b,omitted_benefits,"share of main case, high (%)",%,9,exact,9.217166,7.259408,3.747881,-3.511527,
+revision_2026_09_24,with_care_and_mobility,"total, low",bn,253,,,252.729703,,,memo: 200.9 + 51.9
+revision_2026_09_24,with_care_and_mobility,"total, high",bn,304,,,303.390454,,,memo: 246.3 + 57.2 (printed rows)

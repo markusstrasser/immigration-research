@@ -605,3 +605,131 @@ Log (append-only; times from `date`):
 - 2026-10-06 00:15 JST: `constant_choices.py --case oct05` run on the debt legacy lane's `oct05` port (its gates pass;
   the sept29 run rewrites its two files byte for byte). `rerun_lane.py` over the nine commands (`constant_choices.py`
   for sept24, sept29 and oct05 included) reports IDENTICAL 29/29, rc 0 (00:13–00:15). Nothing is committed.
+
+## v6 case (oct07), 2026-10-07
+
+[2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`, $389.08–461.48bn), the fiscal-plus-social pairing on
+the lineage's 42,752,213 people is **$489.02–570.68bn a year**, **$11,438–13,349 per member**. On v5 (`oct05`) it was
+$490.22–570.68bn and $11,466–13,349. The fiscal rows move −$1.07 / +0.24bn at the pairing's ends (raw coding at the
+low end, the custody footing at the high end). The added people's social rows fall $0.13 / 0.24bn, to $8.43 / 8.52bn:
+their measured ages give them smaller shares of consumption (PM2.5 −$0.16bn) and road use (congestion and crashes
+−$0.03bn), and at the high end a smaller custody share (crime rows −$0.07bn). The cash set pairs to $407.34–494.56bn
+($9,528–11,568 per member) beside it. [CALCULATION: `band_variants.cjs --case oct07` → `real_costs_totals.py --case
+oct07` → `derived/oct07/real_costs_totals.csv`, column `pairing_on_priced_count`]]
+
+### What changed
+
+`band_variants.cjs`, `real_costs_totals.py` and `constant_choices.py` take `--case oct07` and write to `derived/oct07/`.
+The `oct05` files and every earlier case are unchanged: the edited scripts rewrite them byte for byte, `real_costs`'
+JSON and its input-path keys included.
+
+v6 is v5 plus four items (the payload's `meta.items`, read generically): the pension accrual on the 2026 Trustees'
+separate funds (set only), retiree health on accrual (the national totals of ten lines), the added people at their
+measured age mix (the lineage's 336 edits and grid replaced in place), and user fees with the education keys (five
+cell shifts on the union and four capital offsets).
+
+- **`band_variants.cjs`.**
+  - **Layout.** The case is the September 29 payload, the lineage's 336 edits, then the edit sets' edits, each item's
+    record tiling them in registry order (case: pension 2, retiree health 10, user fees 5; cash set: retiree health
+    10, user fees 5). Gate: the payload is that, exactly, for both sets, and its `meta.items` is the package's.
+  - **The variant gate has three layers.** A variant that picks another key moves the uncorrected model. The item
+    base (the September 29 payload with the age-mix lineage, `P.ITEM_BASE`, a new gate-only run) moves by that plus
+    the lineage's own move. The case moves by the item base's move plus the edit sets' own move: their cells, the
+    case's less the item base's, on the variant's key less the case's key, times the line's response, plus the return
+    on the capital keyed on lines over a national. Each layer closes at 1e-9 (largest gap 1.8e-13). The edit sets'
+    own move is −$0.0169bn for raw coding at both ends (retiree health scales `public_order_safety`'s cells, its
+    raw-coding key with them) and $0.0006bn or less for the grids and CBP held fixed. Uncompensated care moves none
+    of their cells. The case lane's Consumers row expected this term (item 2's move of the variants, up to 0.0169bn
+    for raw coding), and its G4 log puts the grids' part at up to 0.0006bn.
+  - **The lineage's own move nearly vanishes for raw coding:** −$0.0046bn at both ends, against v5's −$0.160 /
+    −0.161bn. At their measured ages the added people's raw-coded justice amount rises and their use-key amount falls,
+    so the two keys charge them almost alike (raw / use 0.999, v5 0.967). The age-mix lane builds the raw-coding
+    profile per head by persons and the rest by persons 18–64 (`added_age_mix_2026_10_07/g3_age_keys.py`).
+    Uncompensated care at 0.7x use: −$0.040 / −0.058bn (v5 −0.039 / −0.058).
+  - [ASSUMPTION] **The added people's amounts through the edit sets.** State pricing and the social key shares need
+    the added people's own amount on a cell. It starts at the lineage's edits and follows the edit sets in payload
+    order:
+    - a national-scale edit scales every cell of its line, theirs with it (`engine.js` `scaleLine`);
+    - a cell shift adds its parts named `lineage_*` and leaves `union_*` parts to the union (item 1);
+    - an item whose record says `union_only` (item 4) leaves every cell shift to the union.
+
+    Any other cell shift would leave its cell unattributed, and reading it stops the run. On the case's key the rule
+    rebuilds the payload's state-priced justice line (2.7e-15).
+  - [ASSUMPTION: the edit sets change the prices and keys of the account's lines, not the quantities the social rows
+    scale with] **The social key shares are read on the item base.** The edit sets only scale the cells these keys
+    read, so the shares on the case equal the item base's (gated at both ends, 1e-12; largest gap 1.7e-16). The age
+    mix moves them:
+
+    | Key (low end / high end) | v5 | v6 |
+    |---|---:|---:|
+    | Justice, raw coding / custody use | 6.98% / 6.78% | 7.03% / 6.61% |
+    | Uninsured use | 7.09% / 6.99% | 7.17% / 7.08% |
+    | Road (`hwy_sl`'s key) | 7.74% | 7.60% |
+    | Consumption (general sales tax) | 9.17% | 8.94% |
+    | K-12 operating | 8.21% / 9.35% | 8.89% / 10.69% |
+    | Adults | 6.65% | 6.22% |
+    | Head count | 7.65% | 7.65% |
+  - Positive control: the item base reproduces v5's band plus the age-mix item's own change at fixed specifications
+    (`summary.json` `v6.base.band_bn` + `change_at_fixed_specifications.items.added_age_mix.total`; 391.6406 /
+    464.1001, 2.0e-13).
+- **`real_costs_totals.py`.** A path swap: the case's per-member figures divide by `v6.per_member_usd.population`
+  (42,752,212.9, v5's), gated to be the union plus the added people, and the congestion flag is the case's
+  `not_recomputed_v6`. The added people's social rows use the shares above, $8.43 / 8.52bn (v5 $8.56 / 8.76bn): PM2.5
+  $6.09bn (v5 $6.25bn), congestion $1.04 / 0.88bn, crashes $0.80bn, victims $2.14 / 2.11bn.
+- **`constant_choices.py --case oct07`** (run once the debt legacy lane committed its `oct07` port, 0485e5a2) writes
+  `derived/oct07/`. Each row carries the parts it carried on oct05 (`v5_union_response:row8`, `v5_lineage:constants`),
+  now on the age-mix lineage; no other item edits row 8's or row 10's line (`state_local_general_public_services`,
+  `other_state_welfare`). The ledger lane's choices against this lane's are oct05's to 1e-6: row 8, −$0.028bn of 2024
+  federal dollars, −$0.363bn of stock and −$0.012bn of 2024 interest; row 10, +$2.09bn of stock and +$0.068bn of
+  interest. Gate: each re-run moves the 2024 federal part by part 1's difference (2e-6). [CALCULATION:
+  `derived/oct07/constant_choices_stock.csv`]
+
+### The October 7 figures ($bn a year; per member on 42,752,213)
+
+| | Low end | High end |
+|---|---:|---:|
+| Fiscal main case (custody footing) | 389.0826 | 461.4797 |
+| Fiscal, Hispanic footing (raw coding; the state-priced justice line re-priced) | 384.3283 | 456.6925 |
+| Fiscal, Hispanic footing, the justice line held (alternative) | 384.7219 | 457.0861 |
+| Social rows on the priced union (population lane, 5+ basis) | 96.2647 | 100.6770 |
+| The added people's social rows | 8.4252 | 8.5214 |
+| **Pairing on the priced count** | **489.0182** | **570.6781** |
+| Per member | $11,438 | $13,349 |
+| Cash set, pairing on the priced count (beside) | 407.3350 | 494.5625 |
+| Cash set, per member | $9,528 | $11,568 |
+| October 5 case, pairing | 490.2177 | 570.6791 |
+
+Gates and checks:
+- `band_variants.cjs --case oct07` passes 82 gates (oct05: 67) and `real_costs_totals.py --case oct07` 52 (52).
+- The case's totals equal the adopted bands at 1e-6: the set 389.082553 / 461.479709 (`band_variants.csv` gap
+  3.0e-7; `real_costs_totals.csv`'s custody rows exact) and the cash set 307.399411 / 385.364123 (gap 5.0e-7; exact).
+  Per member of 42,752,213 that is $9,101 / 10,794, and $7,190 / 9,014 on the cash set.
+- `rerun_lane.py` over twelve commands (`band_variants.cjs`, `real_costs_totals.py` and `constant_choices.py` with
+  `--case` sept24, sept29, oct05 and oct07): IDENTICAL 35/35, exit 0. The earlier cases these scripts write into
+  other lanes rebuild in place too: `rerun_lane.py` over `../sept27_propagation_2026_09_27/` with the three
+  `--case sept27` commands, IDENTICAL 11/11, exit 0; over `../sept26_propagation_2026_09_26/` with `--case
+  sept26_schools` and `--case sept26 --out-dir infra/immigration-fiscal/sept26_propagation_2026_09_26/derived/sept26`,
+  IDENTICAL 20/20, exit 0. Every `real_costs_totals.json` is among the files compared, its input-path keys included.
+
+```sh
+node infra/immigration-fiscal/sept24_propagation_2026_09_24/band_variants.cjs --case oct07
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py --case oct07
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py --case oct07
+```
+
+Log (append-only; times from `date`):
+- 2026-10-07 13:03 JST: `--case oct07` coded in `band_variants.cjs` and `real_costs_totals.py`; dev runs on the
+  case lane's three-item candidate pass.
+- 13:22 JST: item 4's `union_only` rule added; dev runs in a mirror of the case lane's four-item scratch outputs pass
+  (band_variants 82 gates, real_costs 52).
+- 15:00:40 JST: the first in-place run of `band_variants.cjs --case oct07` stops at three gates (79 pass), nothing
+  written: the case lane's working tree held uncommitted edits to `item_user_fees.cjs` and `main_case.cjs` (15:00:11),
+  so the package's payload text differed from the committed `derived/corrections*.json`. Reported to the parent; no
+  gate was loosened.
+- 15:08:56–15:09:00 JST: `band_variants.cjs --case oct07` in place at 826a87dd (the case lane clean again; its
+  pinning commit 1548b396 changed no payload): 82 gates.
+- 15:09:08–15:09:09 JST: `real_costs_totals.py --case oct07`: 52 gates.
+- 15:21:11–15:23:05 JST: `constant_choices.py --case oct07` on the debt legacy lane at 0485e5a2: gates pass.
+- 15:26:48–15:32:13 JST: `rerun_lane.py` over the twelve commands, IDENTICAL 35/35, exit 0. 15:32:13–15:32:44:
+  over the sept27 lane, IDENTICAL 11/11, exit 0. 15:32:44–15:33:07: over the sept26 lane, IDENTICAL 20/20, exit 0.
+  Nothing is committed.
