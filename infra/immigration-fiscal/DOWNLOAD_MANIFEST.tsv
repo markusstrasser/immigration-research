@@ -16,6 +16,8 @@ stage3	optional	external/stage3/census/sipp/pu2024_csv.zip	100000000	setup.sh	SI
 stage3	optional	external/stage3/census/sipp/pu2024_schema.json	100000	setup.sh	SIPP column schema JSON
 stage3	optional	external/stage3/ahrq/meps/h251dat.zip	1000000	setup.sh	MEPS HC-251 fixed-width
 stage3	optional	external/stage3/ahrq/meps/h251su.txt	10000	setup.sh	MEPS SAS setup / labels
+stage3	optional	external/stage3/irs_soi/historic_table2/23in55cmcsv.csv	700000	manual	IRS SOI Historic Table 2 TY2023, all states (irs.gov/pub/irs-soi/23in55cmcsv.csv); white_replacement_2026_09_28/local_whites_soi.py pins its sha256
+stage3	optional	external/stage3/irs_soi/historic_table2/23incmdocguide.doc	200000	manual	IRS SOI Historic Table 2 TY2023 users' guide (irs.gov/pub/irs-soi/23incmdocguide.doc)
 stage4	optional	external/stage4/saipe/ussd23.txt	100000	setup.sh	SAIPE school districts 2023
 stage2	optional	external/stage2/nces/ccd_lea_029_2324_w_1a_073124.zip	100000	setup.sh	NCES LEA directory 2023-24
 stage5	optional	external/stage5_net_negative/cms/medicaid_financial_management.csv	100000	setup-net-negative.sh	CMS Medicaid financial management

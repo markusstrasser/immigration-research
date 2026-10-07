@@ -1157,6 +1157,58 @@ beside. On oct07, $bn, accrual, low / high end; the counts hold on every basis a
 [CALCULATION: `local_whites_fragility.py --case oct07` → `derived/local_whites_fragility_oct07.csv`, sections counts,
 leave_out, personal_allocation and replicate_se; `--case oct05` the same]
 
+**An outside test against the IRS's state data** (the team lead's request of 2026-10-07). The case's federal key rakes
+CPS FEDTAX_BC to IRS Table 1.2's national AGI bins and CBO's groups, so every state's records take the national
+cells' factors. IRS SOI's Historic Table 2 gives each state's income tax after credits (A06500, the key's concept) by
+AGI class for tax year 2023, the key's year. `local_whites_soi.py` compares the two for all residents of California
+and Texas, then re-rakes those states' records to SOI's classes. The central stays on the national key, as the case
+keys it. On oct07:
+- **Like for like, all residents.** Shares of each state's income tax, on the published weights, on which the key is
+  built:
+
+  | | SOI | The key | CPS before the raking |
+  |---|---:|---:|---:|
+  | California, AGI ≥ $1M | 33.5% | 28.7% | 13.3% |
+  | Texas, AGI ≥ $1M | 33.9% | 38.6% | 18.2% |
+  | Texas, AGI $500k–1M | 12.2% | 8.5% | 7.8% |
+  | California's share of the 50 states' and DC's income tax | 15.05% | 14.36% | 14.06% |
+  | Texas's share | 8.39% | 8.87% | 8.57% |
+  | United States, AGI ≥ $1M (SOI's state file; the key's is Table 1.2's) | 30.8% | 31.0% | 14.1% |
+
+  The national raking leaves California's top class and its total short. It puts too much into Texas's top class and
+  total, and too little into Texas's $500k–1M class.
+- **Three arms** replace the federal key vector, and the union, A1 and Part F's pieces are rebuilt and repriced on it:
+  - (i) within each of the two states, each class's raked dollars are scaled to SOI's class shares, and the state keeps
+    its total;
+  - (ii) as (i), with the two states' totals set to their SOI shares and the rest of the country rescaled;
+  - (iii) the key is re-raked on three margins. Two are CBO's groups and Table 1.2's bins, both held exactly. The third
+    is region × class, with California's and Texas's class dollars at their SOI shares of the national total. It
+    converges in 185 iterations.
+
+  Arms (i) and (ii) let the national bins drift, and (iii) holds them.
+- **The moves are small and upward**, the same at both ends and on both bases. The local gap rises $5.0bn on (i),
+  $8.0bn on (ii) and **$7.7bn on (iii)**; A1's rises $3.1bn, $2.4bn and $2.1bn. On (iii):
+  - California's gap rises $13.8bn: its white piece pays $14.0bn more federal income tax, and the $0.2bn more its
+    union pays offsets a little of that.
+  - Texas's falls $5.6bn: its white piece pays $8.3bn less, partly offset by its union paying less too.
+  - The rest of the US falls $0.5bn.
+
+  At the low end the local gap is then $536.3bn and A1's $433.7bn.
+- **The re-raking reweights the same households.** On (iii) California's third-plus whites' share of their federal tax
+  at AGI ≥ $1M rises from 35.9% to 41.2%, and Texas's falls from 44.3% to 39.2%. So the fragility above stands, and the
+  national key's state allocation is not its source.
+- **Limits.**
+  - SOI's state data are the returns filed in calendar 2024, mostly for tax year 2023, with prior-year returns standing
+    in for late filers. The guide calls Historic Table 2 "the most complete and accurate totals by state".
+  - A return's state is its filing address, which may differ from the residence the CPS records.
+  - SOI has no race or origin, so the test covers all residents only.
+
+[SOURCE: IRS SOI, Historic Table 2, tax year 2023: the all-states file https://www.irs.gov/pub/irs-soi/23in55cmcsv.csv
+and its guide https://www.irs.gov/pub/irs-soi/23incmdocguide.doc, fetched 2026-10-07 to
+`sources/immigration-fiscal/data/external/stage3/irs_soi/historic_table2/` (the CSV's sha256 d1f7c890…, byte-identical to
+`backtest_admin_totals_2026_09_28`'s copy of 2026-09-28); CALCULATION: `local_whites_soi.py --case oct07` →
+`derived/local_whites_soi_oct07.csv`, sections shares and gaps]
+
 **Gates.**
 - `rekey_sept29.py --case oct07` passes 323 gates and exits 0; `--case oct05` passes 292. The round-2 gates, in
   `case_tax_keys()` and attribution step 5:
@@ -1200,6 +1252,18 @@ leave_out, personal_allocation and replicate_se; `--case oct05` the same]
   - Positive controls: an empty drop set rebuilds each piece and A1 to their central costs (1e-9); replicate 0 gives
     the central gaps within $0.05bn; the personal allocation's A1 gap is the additive figure from `income_tax_keys`
     (5e-4).
+- `local_whites_soi.py` passes 48 gates and exits 0 (nothing is written on a failure). Eight are the setup's:
+  `income_tax_parts.py`'s five and the fragility script's three raking gates. The rest:
+  - The SOI file has the pinned bytes and sha256. Its classes 0–10 are numeric and uncollapsed, each row's classes add
+    to its total, and the US row is the sum of the states, DC, Puerto Rico and other areas. The state file's US share
+    at AGI ≥ $1M is within a point of the key's.
+  - The benchmark frame's civilians are the rough frame's. The key's pooled columns add to it, it sums to 1 on the
+    published weights, and its columns are Table 1.2's (1e-12).
+  - Arm (i) keeps each state's and the national total, and (ii) the national total (1e-12). Arm (iii) leaves the rest
+    of the country a positive share of every class, converges, holds Table 1.2's columns and CBO's groups (1e-12), and
+    gives California and Texas SOI's class shares and totals (1e-10).
+  - Controls: the rebuilt central is the library's state rows and the parts file's A1 gap (5e-5). On (i) the rest-of-US
+    union piece, which has no California or Texas records, does not move (1e-6), and California's does.
 
 **Files.** New in `derived/`: `income_tax_keys_oct05.csv`, `income_tax_keys_oct07.csv`, `cps_tax_totals_oct05.csv` and
 `cps_tax_totals_oct07.csv`; from `income_tax_parts.py`, `income_tax_parts_oct05.csv`, `income_tax_parts_oct07.csv`
@@ -1207,14 +1271,15 @@ leave_out, personal_allocation and replicate_se; `--case oct05` the same]
 `income_tax_bins_oct05.csv`, `income_tax_bins_oct07.csv` (per slice, its CPS dollars on each key, its offsetting
 credits, its FEDTAX_BC in the top AGI bins, and its share of each key); from `local_whites_fragility.py`,
 `local_whites_fragility_oct05.csv` and `local_whites_fragility_oct07.csv` (268 rows each, long: case, section, slice,
-measure, basis, end, value, unit). `cps_tax_totals` names the case, frame, weights,
+measure, basis, end, value, unit); from `local_whites_soi.py`, `local_whites_soi_oct07.csv` (481 rows, long: case,
+section, arm, slice, measure, basis, end, value, unit). `cps_tax_totals` names the case, frame, weights,
 line, CPS variable, placement and key in each row, beside the national line, the CPS total, the gap and their ratio;
 it includes FEDTAX_AC floored on the record, the rough key's concept. Changed, for oct05 and oct07: `rekey_summary`
 (it gains `cost_cps` and `delta_like_for_like_cps_bn`), `rekey_buckets`, `state_summary`, `state_buckets`,
 `headline`, `rule_alternatives`, `attribution` (step 5), `attribution_buckets` and `ipeds_terms`; also
 `limits_oct07.csv`. The four dumps per case, the accrual files and `v4_group_terms` do not move. The reproduce list is
 the v6 section's, then the parts, which read `rekey_summary` and `state_summary`, then the fragility check, which reads
-the parts and `income_tax_keys`:
+the parts and `income_tax_keys`, then the SOI test, which reads the parts and the staged SOI file:
 
 ```sh
 L=infra/immigration-fiscal/white_replacement_2026_09_28
@@ -1222,6 +1287,7 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/income_tax_parts.py --case
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/income_tax_parts.py --case oct07
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/local_whites_fragility.py --case oct05
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/local_whites_fragility.py --case oct07
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -I $L/local_whites_soi.py --case oct07
 ```
 
 ### Log (round 2; times from `date` or the files' clock)
@@ -1257,3 +1323,16 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/local_whites_fragility.py 
 - 23:01:51: the leave-out's A1 rebuild stated exactly, in the script's docstring and above (no output moves).
 - 23:03:01–23:07:06 (by `date`): `rerun_lane.py --online` again with the 31 commands, on the final script text:
   **IDENTICAL 89/89, exit 0**.
+- After the team lead asked for an outside test, 22:49:41–22:49:56 (by `date`): the SOI state re-rake in scratch, 34
+  gates, exit 0.
+- 23:16:41–23:16:50 (by `date`): `local_whites_soi.py --case oct07` from scratch, beside a link to the fragility script,
+  48 gates, exit 0, peak resident memory 1.32 GB; a second run's file matched byte for byte.
+- 23:28:02 (the file's clock): at the team lead's word, the library's dead alias line removed (`rekey_sept29.py`'s old
+  names for the key module's objects, which no script reads any more).
+- 23:28:19–23:28:30 (by `date`): `local_whites_soi.py --case oct07` in place, 48 gates, exit 0, peak resident memory
+  0.94 GB. Only the new script and its file appeared in the lane beside the library edit, and the file matches the
+  scratch run's byte for byte.
+- 23:30:45–23:35:26 (by `date`): `rerun_lane.py --online` with the 32 commands (the 31 above and the SOI test):
+  **IDENTICAL 91/91, exit 0**, the 89 files, the new script and its file.
+- 23:35:26–23:35:37 (by `date`): `net_contributor_comparison_2026_10_01`'s rerun (compare, plot, pytest): 9 of 10
+  files unchanged, exit 1. Its `derived/audit.json` changes only in this library's hash, as the alias drop requires.

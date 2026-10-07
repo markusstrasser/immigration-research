@@ -183,8 +183,6 @@ import combine_onbooks_lane as L  # noqa: E402
 _tk = importlib.util.spec_from_file_location("tax_key_heldout_keys", FISCAL / "tax_key_heldout_2026_09_28/keys.py")
 TK = importlib.util.module_from_spec(_tk)
 _tk.loader.exec_module(TK)
-# TK's own objects under the library's old names, which local_whites_fragility.py (a peer's, in progress) still reads
-irs_2023, _pool14, BENCH, CBO_SPEC = TK.irs_2023, TK._pool14, TK.BENCH, TK.CBO_SPEC
 
 BLACK_LANE = FISCAL / "black_comparator_rough_2026_09_28"
 BASIS = FISCAL / "population_basis_2026_09_29/derived"
