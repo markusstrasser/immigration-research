@@ -417,6 +417,9 @@ rows then moved from rule 5's v5 changes to the case lane's own v6 companions (b
 companions"): the ancestry-share count's low end now gives −30.0%, arms a and c −3.2% / +3.2%, and the minimal cuts
 number 158; no status changes.]
 
+[Round 3, 2026-10-08: C8 now tests the map's live claim, about $434bn against third-plus whites and $530bn against
+local whites, and holds; at the central only C2 breaks ("v6 round 3" below).]
+
 claude-opus-5-5 (v6 propagation, group D, prop-d). **Verdict (v6).** Main case v6 (`../main_case_2026_10_07/`,
 $389.08–461.48bn) adds four items to v5: pensions on the 2026 Trustees' separate funds, state-local retiree health on
 accrual, the added people at their measured ages, and user fees with education keyed by use. No conclusion changes
@@ -783,3 +786,78 @@ four text cells) and `common_mode_oct07.csv` (P20's swap cell).
   edits, exit 0, broken at the central C2 and C8, top five P01, P02, P08, P03, P05. `conclusions_oct07.csv` changed only
   in C1's four text cells, and `common_mode_oct07.csv` only in P20's swap cell.
 - 22:00:54–22:01:48 (by `date`): `rerun_lane.py` with the nine commands: **IDENTICAL 43/43, exit 0**.
+
+## v6 round 3: C8 on the map's live claim, 2026-10-08
+
+claude-opus-5-5 (prop-d). **Verdict (round 3).** C8 now tests the evidence map's live sentence, and it **holds**.
+Since 3834b1c8 the map prints C8 from its registry on v6: "Against as many third-generation whites, the group costs
+others about $434bn (432–436) a year more. Against local whites, state by state, the gap is about $530bn (529–531)."
+Its two records are this lane's A1 and local-whites centrals, so the central restates the claim.
+- The break rule and the swaps are round 2's. A move of more than a quarter from the claim's figure for the same
+  whites breaks it: $433.8bn (A1's midpoint) against third-plus whites, $530.1bn against local whites.
+- Inside the accrual no arm reaches a quarter. The largest moves are capital-side taxes responding (+16.6%) and the
+  CPS-dollar rule (−11.8%).
+- Only P05's swap read at whites' own ages breaks it, downward: raw cash gives $263.5 / 269.8bn (−38.5%). That is
+  the age artefact the accrual removes, and the map prints it beside the claim [FRAMING-SENSITIVE]. At the union's ages
+  the cash swap holds: A3 −2.5% and local whites +5.0%.
+- At the central the tally is C2 alone, which splits by end; the other eight hold.
+
+[CALCULATION: `tables_oct07.py` → `derived/conclusions_oct07.csv`, `common_mode_oct07.csv`, on the white lane's
+`headline_oct07.csv`, `rekey_summary_oct07.csv` and `ipeds_terms_oct07.csv`]
+
+| C8 reading | $bn, specs 48 / 11 | Move on the claim's figure | Status |
+|---|---|---:|---|
+| central: third-plus whites (A1), accrual | 431.6 / 436.0 | 0 (the claim, $433.8bn) | holds |
+| central: local whites state by state, union ages | 528.6 / 531.5 | 0 (the claim, $530.1bn) | holds |
+| P07: each group charged only the income tax it reports to the CPS | 380.3 / 384.7 | −11.8% | holds |
+| P07: CPS income-tax dollars spread over the national lines in proportion | 421.4 / 425.8 | −2.3% | holds |
+| white rates at the union's ages (A3) | 411.4 / 415.7 | −4.7% | holds |
+| capital-side taxes responding (with the top tail inside the central, also both arms) | 503.0 / 508.5 | +16.6% | holds |
+| the comparators' hospital term (beside the central) | 434.3 / 438.6 | +0.6% | holds |
+| the September 27 rough keys | 425.1 / 429.5 | −1.5% | holds |
+| P05 on cash: A3 at the union's ages | 419.6 / 425.9 | −2.5% | holds |
+| P05 on cash: local whites | 554.1 / 559.0 | +5.0% | holds |
+| P05 on cash: at whites' own ages (raw cash) | 263.5 / 269.8 | −38.5% | **breaks downward** [FRAMING-SENSITIVE] |
+
+The ordering holds in every arm: the smallest gap is $263.5bn. Against an all-residents slice the union is
+$261.8 / 267.2bn above average. That is the rival reading, a different reference group, and is not tested against this
+claim.
+
+**Rule 10 (round 3): C8 follows the map's live claim** [ASSUMPTION]. This follows the lead's instruction of 2026-10-08
+(only live cases).
+- C8's claim is the map's `groups.py` sentence at `selection/f263/text`. `tables_oct07.py` fills it with the map's own
+  `quantities.py`, imported read-only.
+- The build stops if any of these happens:
+  - the sentence no longer quotes `whites.gap_a1` and `whites.gap_local`;
+  - the filled text is not the text the row quotes;
+  - the why line beside it (`selection/f263/why`) no longer quotes `whites.gap_cash`, the raw-cash reading that
+    breaks C8;
+  - any of the three records (`whites.gap_a1`, `whites.gap_local`, `whites.gap_cash`) differs from its
+    `headline_oct07.csv` row.
+- The other eight rows keep the map's September 27 claims. `tables.py`, `tables_sept29.py` and `tables_oct05.py` and
+  their files are untouched. The sept29 and oct05 claim sets still test "$320–405bn".
+
+**Gates.** `tables_oct07.py` exits 0, and its tally reads: broken at the central, C2.
+- New checks: the claim's two figures (433.78 and 530.05); the hospital term (+0.6%) and the September 27 rough keys
+  (−1.5%) on the claim; P05's cash readings, A3 (−2.5%) and local whites (+5.0%), on the claim.
+- Removed: the six checks against the September 27 figures ($320bn, $405bn), with the text that quoted them.
+- Every other C8 check is unchanged.
+
+**Files.**
+- Changed: `tables_oct07.py` (its docstring, C8's checks, the C8 row and P05's swap cell).
+- `derived/conclusions_oct07.csv`: 7 of the C8 row's 12 cells changed (the claim, status, deciding premise,
+  reading, break condition, distance note and source).
+- `derived/common_mode_oct07.csv`: only P05's swap cell changed.
+
+### Log (round 3; times from `date`)
+
+- 2026-10-08 02:04:41: `tables_oct07.py` ran in place, exit 0, broken at the central: C2. Against HEAD only C8's seven
+  cells and P05's swap cell differ.
+- 02:06:26–02:07:34: `rerun_lane.py` with the nine commands: **IDENTICAL 43/43, exit 0**.
+- 02:08:15–02:10:11: this section written.
+- 02:16:15: added the why-line guard and the `whites.gap_cash` record check. C8's distance note now quotes the map's
+  own cash figure ($267bn, 263–270). `tables_oct07.py` ran in place, exit 0, broken at the central: C2. Against the
+  02:04:41 outputs only C8's distance note differs.
+- 02:16:46–02:17:42: `rerun_lane.py` with the nine commands: **IDENTICAL 43/43, exit 0**.
+- 02:22:42–02:23:35: the docstring's date for the map's wording corrected (on v6 since 2026-10-07); `rerun_lane.py`
+  with the nine commands: **IDENTICAL 43/43, exit 0**.

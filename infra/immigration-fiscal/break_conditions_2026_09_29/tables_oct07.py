@@ -3,9 +3,11 @@
 The v6 case is main_case_2026_10_07 (key oct07): main case v5 (main_case_2026_10_05) plus the items of its payload's
 meta.items, the pension accrual on the 2026 Trustees' separate-funds arm (pension_tr2026), state-local retiree health on
 accrual (retiree_health), the added people at their measured ages (added_age_mix) and user fees with the education keys
-by use (user_fees). Each row tests the same nine claims as tables_oct05.py, the evidence map's claims on the September 27
-case, so the three cases read side by side; the map's current wording (on v5 since 2026-10-06) restates C2 and C6 and
-adds a horizon claim, which this lane does not test [GAP]. The text cells are this lane's reading of
+by use (user_fees). Each row but C8 tests the same claim as tables_oct05.py, the evidence map's claims on the September 27
+case, so the three cases read side by side; the map's current wording (insight-first since 2026-10-06, on v6 since
+2026-10-07) restates C2 and C6 and adds a horizon claim, which this lane does not test [GAP]. Since 2026-10-08 C8 tests the map's live sentence instead
+(groups.py selection/f263, quoting whites.gap_a1 and whites.gap_local on oct07), filled by the map's own registry
+(overview_2026_09_28/quantities.py, imported read-only), so the claim follows the map. The text cells are this lane's reading of
 `engine_breaks_sept29.cjs --case oct07`'s outputs and of the cited lanes' oct07 files. Every number quoted from them is
 recomputed here first, so a changed input stops the build instead of leaving stale text. tables.py's, tables_sept29.py's
 and tables_oct05.py's files are not touched. C4 reads the pairing's oct07 run (sept24_propagation), C5 the debt lane's
@@ -273,11 +275,36 @@ for end, w, wh in zip(("low", "high"), (425.1, 429.5), (434.3, 438.6)):
     check(f"C8 A1 with the comparators' hospital term {end}",
           num(terms[("accrual", "A1_third_plus_nh_white", end)], "delta_with_hospital_bn"), wh)
 fig_mid = lambda fig: (num(head[(fig, "low")], "oct07_bn") + num(head[(fig, "high")], "oct07_bn")) / 2  # noqa: E731
-a1_mid = fig_mid(A1)
-check("C8 A1 over the claim's $320bn", 100 * (a1_mid / 320 - 1), 35.6)
-check("C8 local whites over the claim's $405bn", 100 * (fig_mid(LOCAL) / 405 - 1), 30.9)
+a1_mid, local_mid = fig_mid(A1), fig_mid(LOCAL)
+# The claim is the map's sentence, filled by the map's own registry, whose two records are this lane's A1 and
+# local-whites centrals (exact). So the central restates the claim, and each arm is read against the claim's figure for
+# the same whites: about $434bn (A1's midpoint) for third-plus whites, about $530bn for local whites. A quarter breaks it.
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(F / "overview_2026_09_28"))
+import groups as MAP  # noqa: E402  the evidence map's text, read-only
+import quantities as Q  # noqa: E402  the evidence map's registry and renderer, read-only
+
+site = Q.groups_sites(MAP.GROUPS).get("selection/f263/text", "")
+if "{{q:whites.gap_a1|mid_range}}" not in site or "{{q:whites.gap_local|mid_range}}" not in site:
+    sys.exit("[BLOCKED] the map's C8 sentence (groups.py selection/f263/text) no longer quotes whites.gap_a1 and whites.gap_local")
+C8_CLAIM = Q.fill(site)[0]
+if C8_CLAIM != ("Against as many third-generation whites, the group costs others about $434bn (432–436) a year more. "
+                "Against local whites, state by state, the gap is about $530bn (529–531)."):
+    sys.exit(f"[BLOCKED] the map's C8 sentence now reads {C8_CLAIM!r}: restate C8")
+# The one swap that breaks C8 (P05 at whites' own ages) is the reading the map prints beside the claim.
+if "{{q:whites.gap_cash|mid_range}}" not in Q.groups_sites(MAP.GROUPS).get("selection/f263/why", ""):
+    sys.exit("[BLOCKED] the map's C8 why line (groups.py selection/f263/why) no longer quotes whites.gap_cash: restate C8's note")
+for rid, fig in (("whites.gap_a1", A1), ("whites.gap_local", LOCAL), ("whites.gap_cash", RAW)):
+    want = tuple(num(head[(fig, e)], "oct07_bn") for e in ("low", "high"))
+    if Q.record_value(rid) != want:
+        sys.exit(f"[BLOCKED] the map's {rid} is {Q.record_value(rid)}, not headline_oct07.csv's {fig!r} {want}")
+check("C8 the claim's figure against third-plus whites", a1_mid, 433.78, tol=0.005)
+check("C8 the claim's figure against local whites", local_mid, 530.05, tol=0.005)
 check("C8 cash at whites' own ages on A1", 100 * (fig_mid(RAW) / a1_mid - 1), -38.5)
 check("C8 A3 on A1", 100 * (fig_mid(A3) / a1_mid - 1), -4.7)
+for col, w in (("delta_with_hospital_bn", 0.6), ("delta_like_for_like_rough_keys_bn", -1.5)):
+    check(f"C8 A1 {col} on the claim", 100 * (sum(num(terms[("accrual", "A1_third_plus_nh_white", e)], col) for e in ("low", "high")) / 2
+                                          / a1_mid - 1), w)
 wsum = {(r["basis"], r["group"], r["end"]): r for r in rows(WHITE / "rekey_summary_oct07.csv")}
 arm = lambda col: [num(wsum[("accrual", "mexican_origin_rough", e)], col) - num(wsum[("accrual", "A1_third_plus_nh_white", e)], col)  # noqa: E731
                    for e in ("low", "high")]
@@ -289,7 +316,6 @@ for col, lo, hi, move in [("cost_both_arms", 503.0, 508.5, 16.6), ("cost_capital
     check(f"C8 {col} low", v[0], lo)
     check(f"C8 {col} high", v[1], hi)
     check(f"C8 {col} move", 100 * (sum(v) / 2 / a1_mid - 1), move)
-check("C8 the CPS-dollar rule over the claim's $320bn", 100 * (sum(arm("cost_cps")) / 2 / 320 - 1), 19.5)
 avg = arm("cost")
 check("C8 the union over A1's slice, as the headline", avg[0], num(head[(A1, "low")], "oct07_bn"), tol=1e-3)
 allres = [num(wsum[("accrual", "mexican_origin_rough", e)], "cost") - num(wsum[("accrual", "all_residents_slice", e)], "cost") for e in ("low", "high")]
@@ -307,9 +333,8 @@ LOCAL_CASH = "local whites state by state, union ages, cash"
 for fig, want in [(A3_CASH, (419.6, 425.9)), (LOCAL_CASH, (554.1, 559.0))]:
     for end, w in zip(("low", "high"), want):
         check(f"C8 {fig} {end}", num(head[(fig, end)], "oct07_bn"), w)
-check("C8 A3 on cash over the claim's $405bn", 100 * (fig_mid(A3_CASH) / 405 - 1), 4.4)
-check("C8 local whites on cash over the claim's $405bn", 100 * (fig_mid(LOCAL_CASH) / 405 - 1), 37.4)
-check("C8 cash at whites' own ages on the claim's $320bn", 100 * (fig_mid(RAW) / 320 - 1), -16.7)
+check("C8 A3 on cash on the claim's $434bn", 100 * (fig_mid(A3_CASH) / a1_mid - 1), -2.5)
+check("C8 local whites on cash on the claim's $530bn", 100 * (fig_mid(LOCAL_CASH) / local_mid - 1), 5.0)
 check("C8 the smallest arm", min(num(head[(f, e)], "oct07_bn") for f in (A1, LOCAL, A3, RAW, A3_CASH, LOCAL_CASH)
                                  for e in ("low", "high")), 263.5)
 
@@ -649,33 +674,39 @@ CONCLUSIONS = [
         source="ladder 85, 185–187, 254; audit §4",
     ),
     dict(
-        id="C8", claim_tested="Against as many whites, the group costs others about $320–405bn a year more, depending on which whites",
-        status_on_v6="BREAKS upward at both ends: the gap is larger than claimed",
-        deciding_premise="P07 (the case's income-tax keys for every group); P14 (which whites); P05 sets the level [INFERENCE]",
-        reading_on_v6="With both sides on the lineage's 42.75M and every group's income taxes on the case's own keys (federal on "
-                      "the IRS-raked key, state and other personal taxes on the state-liability key, the household's tax shared "
-                      "over its members), the union costs others $431.6 / 436.0bn a year more than as many third-plus "
-                      "non-Hispanic whites at national rates on the case's accrual basis ($10,096 / 10,197 per member; v5 on the "
-                      "same keys without the tuition term $425.2 / 428.1bn), and $528.6 / 531.5bn more than local whites state by "
-                      "state at union ages. Both sides take Pell by each group's IPEDS share, public higher education by its "
-                      "measured use, and on v6 tuition by use [ASSUMPTION]; the comparators' hospital term stays beside (with it A1 "
-                      "is $434.3 / 438.6bn); on the September 27 rough keys A1 is $425.1 / 429.5bn. Charging each group only the "
-                      "income tax it reports to the CPS, the earlier central, gave $380.3 / 384.7bn. [CALCULATION: "
+        id="C8", claim_tested=C8_CLAIM,
+        status_on_v6="holds: the claim is the map's v6 figure",
+        deciding_premise="P05 at whites' own ages [FRAMING-SENSITIVE]: on raw cash the gap falls 38.5%; inside the accrual none "
+                         "(the nearest is P07's CPS-dollar rule, −11.8%)",
+        reading_on_v6="The map quotes the white lane's oct07 re-key (whites.gap_a1, whites.gap_local). With both sides on the "
+                      "lineage's 42.75M and every group's income taxes on the case's own keys (federal on the IRS-raked key, state "
+                      "and other personal taxes on the state-liability key, the household's tax shared over its members), the "
+                      "union costs others $431.6 / 436.0bn a year more than as many third-plus non-Hispanic whites at national "
+                      "rates on the case's accrual basis ($10,096 / 10,197 per member; v5 on the same keys without the tuition "
+                      "term $425.2 / 428.1bn), and $528.6 / 531.5bn more than local whites state by state at union ages. Both "
+                      "sides take Pell by each group's IPEDS share, public higher education by its measured use, and on v6 "
+                      "tuition by use [ASSUMPTION]; the comparators' hospital term stays beside. [CALCULATION: "
                       "white_replacement_2026_09_28 rekey_sept29.py --case oct07 → headline_oct07.csv, rekey_summary_oct07.csv, "
                       "ipeds_terms_oct07.csv, income_tax_keys_oct07.csv]",
         premises="Rough re-key of the case's rules (not an engine run); P14 third-plus non-Hispanic whites at national rates; P05 by "
                  "accrual, each group at its own accrual per tax dollar on the 2026 separate-funds path; P07, the case's income-tax "
                  "keys for every group; P20: the CPS re-keys cannot see the 3.04M, so the union's side carries them at the case "
                  "lane's amounts and each white slice is on 42.75M.",
-        break_condition="US whites to local whites, $431.6–531.5bn, sits more than a quarter above the claim at both ends: +35.6% "
-                        "on its $320bn and +30.9% on its $405bn. Back inside a quarter: each group charged only the income tax it "
-                        "reports to the CPS (the top tail the survey misses charged to no one), $380.3 / 384.7bn (+19.5% on $320bn), "
-                        "or cash at whites' own ages, $263.5 / 269.8bn (−38.5% on A1), the age artefact the accrual removes. CPS "
-                        "income-tax dollars spread over the national lines in proportion give $421.4 / 425.8bn (−2.3%), white rates "
-                        "at the union's ages (A3) $411.4 / 415.7bn (−4.7%). Up: capital-side taxes responding, $503.0 / 508.5bn "
-                        "(+16.6%). [CALCULATION: headline_oct07.csv, rekey_summary_oct07.csv]",
-        break_distance_note="Broken by the income-tax keys: on the CPS-dollar rule it held at +19.5% on $320bn. The ordering (the "
-                            "group costs more) holds in every arm, at least +$263.5bn.",
+        break_condition="A move of more than a quarter from the claim's figure for the same whites breaks it: $433.8bn (A1's "
+                        "midpoint) against third-plus whites, $530.1bn against local whites. At the central both are the claim. "
+                        "Against third-plus whites: each group charged only the income tax it reports to the CPS (the top tail the "
+                        "survey misses charged to no one) $380.3 / 384.7bn (−11.8%); CPS income-tax dollars spread over the "
+                        "national lines in proportion $421.4 / 425.8bn (−2.3%); white rates at the union's ages (A3) $411.4 / "
+                        "415.7bn (−4.7%); capital-side taxes responding $503.0 / 508.5bn (+16.6%; with the top tail inside the "
+                        "central it is also the both-arms figure); the comparators' hospital term $434.3 / 438.6bn (+0.6%); the "
+                        "September 27 rough keys $425.1 / 429.5bn (−1.5%). All hold. P05 on cash: A3 $419.6 / 425.9bn (−2.5%) and "
+                        "local whites $554.1 / 559.0bn (+5.0% on $530.1bn) hold; at whites' own ages $263.5 / 269.8bn (−38.5%) "
+                        "breaks it downward, the age artefact the accrual removes [FRAMING-SENSITIVE]. [CALCULATION: "
+                        "headline_oct07.csv, rekey_summary_oct07.csv, ipeds_terms_oct07.csv]",
+        break_distance_note="One swap, and only on raw cash at whites' own ages, a reading the map prints beside the claim "
+                            "($267bn, 263–270) and puts down to whites' older ages, which counting pensions when earned removes; "
+                            "inside the accrual no arm reaches a quarter, the largest being capital-side taxes (+16.6%) and the "
+                            "CPS-dollar rule (−11.8%). The ordering (the group costs more) holds in every arm, at least +$263.5bn.",
         rival_reading="The gap is composition (schooling, age), not group-specific; against an all-residents slice on the same "
                       "rough keys the union is $261.8 / 267.2bn above average on the case's accrual and $162.2 / 169.5bn on cash "
                       "(the September 27 cash run gave $85–87bn, 263).",
@@ -686,7 +717,8 @@ CONCLUSIONS = [
                                    "stack) that no comparator takes, and at the high end it gives each earner their own income "
                                    "tax where the comparators share it over the household.",
         observed_yet="partly (rough keys; v4, v5 and v6)",
-        source="ladder 259, 263, 274, 281; white_replacement_2026_09_28 headline_oct07.csv, rekey_summary_oct07.csv, "
+        source="ladder 259, 263, 274, 281; the evidence map's groups.py selection/f263 (whites.gap_a1, whites.gap_local); "
+               "white_replacement_2026_09_28 headline_oct07.csv, rekey_summary_oct07.csv, "
                "ipeds_terms_oct07.csv, income_tax_keys_oct07.csv",
     ),
     dict(
@@ -758,13 +790,14 @@ SWAP = {
             "Restores C2: tally +$87.9 / 70.8bn, break-even 8.3–24.2% [CALCULATION: c2_tally_oct07.csv, c2_break_even_oct07.csv]. "
             "C1 −18.6% ($307.4–385.4bn), a break with no capital return (−30.0%) or first-year roads and parks (−28.0%); with "
             "schools at 0.836 it falls 0.05 points short (−24.95%) [CALCULATION: c1_min_cuts_oct07.csv]. C8 on cash: $419.6–425.9bn "
-            "with white rates at the union's ages (+4.4% on the claim's $405bn) and $554.1–559.0bn against local whites (+37.4%); "
-            "at whites' own ages $263.5–269.8bn (−16.7% on $320bn), the age artefact [FRAMING-SENSITIVE] [CALCULATION: "
-            "white_replacement_2026_09_28 headline_oct07.csv]. C4 pairing $407.3–494.6bn (−14.9%) [DATA: sept24_propagation "
-            "oct07]; C5 state-local share 68% → 82–87% [CALCULATION: debt lane split]; C6 every generation still costs others (at "
-            "least $72.7bn; break-evens at most 42.2%) [CALCULATION: c6_generation_break_even_oct07.csv]. Of C1–C6 it breaks none "
-            "at the union's ages; C8, broken upward at the central, stays broken against local whites. Scheduled benefits "
-            "instead: C1 +9.9%, C2 tally −$37.1 / −45.8bn on the 2026 inputs, C5 about 62%."),
+            "with white rates at the union's ages (−2.5% on the claim's $433.8bn) and $554.1–559.0bn against local whites (+5.0% on "
+            "its $530.1bn), both inside a quarter; at whites' own ages $263.5–269.8bn (−38.5%), a break, the age artefact the "
+            "accrual removes [FRAMING-SENSITIVE] [CALCULATION: white_replacement_2026_09_28 headline_oct07.csv]. C4 pairing "
+            "$407.3–494.6bn (−14.9%) [DATA: sept24_propagation oct07]; C5 state-local share 68% → 82–87% [CALCULATION: debt lane "
+            "split]; C6 every generation still costs others (at least $72.7bn; break-evens at most 42.2%) [CALCULATION: "
+            "c6_generation_break_even_oct07.csv]. It breaks none at the union's ages; at whites' own ages it breaks C8 downward "
+            "[FRAMING-SENSITIVE]. Scheduled benefits instead: C1 +9.9%, C2 tally −$37.1 / −45.8bn on the 2026 inputs, C5 about "
+            "62%."),
     "P08": ("No corrections (v4's items, the lineage and v6's items on the uncorrected model, the union's pension switch rebuilt)",
             "C1 +2.5% ($399.6–472.5bn) [CALCULATION: c3_correction_split_oct07.csv]; C2 tally +$11.0 / −0.2bn: clause 1 holds at "
             "the low end and fails at the high end, as on the case, where on v5 the swap held it at both (+$11.1 / 0.4bn) "
