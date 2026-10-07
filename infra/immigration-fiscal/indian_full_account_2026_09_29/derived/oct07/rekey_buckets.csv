@@ -1,536 +1,536 @@
 basis,group,end,bucket,cost_bn,cost_per_member
-accrual,mexican_origin_engine,low,income taxes,-156.3799,-3658
-accrual,mexican_origin_engine,low,payroll taxes and Medicare premiums,-175.7093,-4110
-accrual,mexican_origin_engine,low,"sales, excise, customs, fees",-118.3708,-2769
-accrual,mexican_origin_engine,low,"capital, property, production taxes",-25.4097,-594
-accrual,mexican_origin_engine,low,Social Security,119.6447,2799
-accrual,mexican_origin_engine,low,Medicare,79.5444,1861
-accrual,mexican_origin_engine,low,Medicaid,126.0906,2949
-accrual,mexican_origin_engine,low,schools and colleges,217.8924,5097
-accrual,mexican_origin_engine,low,"police, courts, prisons",81.0201,1895
-accrual,mexican_origin_engine,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.8604,2921
-accrual,mexican_origin_engine,low,veterans and military medical,15.6471,366
-accrual,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784
-accrual,mexican_origin_engine,low,capital return,37.1478,869
-accrual,mexican_origin_engine,low,production gain (subtracted),-11.9475,-279
-accrual,mexican_origin_rough,low,income taxes,-153.1648,-3583
-accrual,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.7421,-4157
-accrual,mexican_origin_rough,low,"sales, excise, customs, fees",-117.6441,-2752
-accrual,mexican_origin_rough,low,"capital, property, production taxes",-23.9491,-560
-accrual,mexican_origin_rough,low,Social Security,121.3438,2838
-accrual,mexican_origin_rough,low,Medicare,84.4478,1975
-accrual,mexican_origin_rough,low,Medicaid,126.0906,2949
-accrual,mexican_origin_rough,low,schools and colleges,213.6803,4998
-accrual,mexican_origin_rough,low,"police, courts, prisons",81.3117,1902
-accrual,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",121.9527,2853
-accrual,mexican_origin_rough,low,veterans and military medical,13.1742,308
-accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.9409,1870
-accrual,mexican_origin_rough,low,capital return,36.8871,863
-accrual,mexican_origin_rough,low,production gain (subtracted),-11.9475,-279
+accrual,mexican_origin_engine,low,income taxes,-155.8531,-3645
+accrual,mexican_origin_engine,low,payroll taxes and Medicare premiums,-175.5467,-4106
+accrual,mexican_origin_engine,low,"sales, excise, customs, fees",-118.1318,-2763
+accrual,mexican_origin_engine,low,"capital, property, production taxes",-25.3139,-592
+accrual,mexican_origin_engine,low,Social Security,117.1562,2740
+accrual,mexican_origin_engine,low,Medicare,78.4616,1835
+accrual,mexican_origin_engine,low,Medicaid,126.1895,2952
+accrual,mexican_origin_engine,low,schools and colleges,215.8716,5049
+accrual,mexican_origin_engine,low,"police, courts, prisons",81.1765,1899
+accrual,mexican_origin_engine,low,"SNAP, SSI, housing, cash aid, credits, other welfare",125.1763,2928
+accrual,mexican_origin_engine,low,veterans and military medical,15.4978,363
+accrual,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",79.7266,1865
+accrual,mexican_origin_engine,low,capital return,36.5816,856
+accrual,mexican_origin_engine,low,production gain (subtracted),-11.9096,-279
+accrual,mexican_origin_rough,low,income taxes,-152.6380,-3570
+accrual,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.5795,-4154
+accrual,mexican_origin_rough,low,"sales, excise, customs, fees",-117.4051,-2746
+accrual,mexican_origin_rough,low,"capital, property, production taxes",-23.8533,-558
+accrual,mexican_origin_rough,low,Social Security,118.8207,2779
+accrual,mexican_origin_rough,low,Medicare,83.3227,1949
+accrual,mexican_origin_rough,low,Medicaid,126.1895,2952
+accrual,mexican_origin_rough,low,schools and colleges,217.0850,5078
+accrual,mexican_origin_rough,low,"police, courts, prisons",81.4681,1906
+accrual,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",122.2548,2860
+accrual,mexican_origin_rough,low,veterans and military medical,13.0249,305
+accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.7015,1864
+accrual,mexican_origin_rough,low,capital return,36.9488,864
+accrual,mexican_origin_rough,low,production gain (subtracted),-11.9096,-279
 accrual,mexican_origin_rough_white_ages,low,income taxes,-137.3379,-3458
 accrual,mexican_origin_rough_white_ages,low,payroll taxes and Medicare premiums,-180.5404,-4546
 accrual,mexican_origin_rough_white_ages,low,"sales, excise, customs, fees",-114.4425,-2882
 accrual,mexican_origin_rough_white_ages,low,"capital, property, production taxes",-26.4574,-666
-accrual,mexican_origin_rough_white_ages,low,Social Security,115.7817,2915
-accrual,mexican_origin_rough_white_ages,low,Medicare,143.6979,3618
+accrual,mexican_origin_rough_white_ages,low,Social Security,113.4227,2856
+accrual,mexican_origin_rough_white_ages,low,Medicare,143.2867,3608
 accrual,mexican_origin_rough_white_ages,low,Medicaid,164.1204,4133
-accrual,mexican_origin_rough_white_ages,low,schools and colleges,124.4437,3134
-accrual,mexican_origin_rough_white_ages,low,"police, courts, prisons",70.3984,1773
-accrual,mexican_origin_rough_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",111.7010,2813
+accrual,mexican_origin_rough_white_ages,low,schools and colleges,125.8624,3169
+accrual,mexican_origin_rough_white_ages,low,"police, courts, prisons",70.6492,1779
+accrual,mexican_origin_rough_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",111.7639,2814
 accrual,mexican_origin_rough_white_ages,low,veterans and military medical,17.9510,452
-accrual,mexican_origin_rough_white_ages,low,"per-head lines: government, defense, interest, roads, other",80.9614,2039
-accrual,mexican_origin_rough_white_ages,low,capital return,30.2063,761
+accrual,mexican_origin_rough_white_ages,low,"per-head lines: government, defense, interest, roads, other",80.0025,2015
+accrual,mexican_origin_rough_white_ages,low,capital return,30.2299,761
 accrual,mexican_origin_rough_white_ages,low,production gain (subtracted),-12.1151,-305
 accrual,indian_origin,low,income taxes,-90.6915,-14917
 accrual,indian_origin,low,payroll taxes and Medicare premiums,-56.6875,-9324
 accrual,indian_origin,low,"sales, excise, customs, fees",-28.0595,-4615
 accrual,indian_origin,low,"capital, property, production taxes",-9.2075,-1514
-accrual,indian_origin,low,Social Security,34.0498,5601
-accrual,indian_origin,low,Medicare,17.4017,2862
+accrual,indian_origin,low,Social Security,33.3725,5489
+accrual,indian_origin,low,Medicare,17.3780,2858
 accrual,indian_origin,low,Medicaid,6.0818,1000
-accrual,indian_origin,low,schools and colleges,28.4404,4678
-accrual,indian_origin,low,"police, courts, prisons",5.0849,836
-accrual,indian_origin,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6690,768
+accrual,indian_origin,low,schools and colleges,28.8377,4743
+accrual,indian_origin,low,"police, courts, prisons",5.1036,839
+accrual,indian_origin,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768
 accrual,indian_origin,low,veterans and military medical,0.5581,92
-accrual,indian_origin,low,"per-head lines: government, defense, interest, roads, other",9.8508,1620
+accrual,indian_origin,low,"per-head lines: government, defense, interest, roads, other",9.7791,1608
 accrual,indian_origin,low,capital return,5.0356,828
 accrual,indian_origin,low,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_white_ages,low,income taxes,-85.3473,-14038
 accrual,indian_origin_white_ages,low,payroll taxes and Medicare premiums,-52.7621,-8678
 accrual,indian_origin_white_ages,low,"sales, excise, customs, fees",-27.5886,-4538
 accrual,indian_origin_white_ages,low,"capital, property, production taxes",-9.8504,-1620
-accrual,indian_origin_white_ages,low,Social Security,30.7124,5052
-accrual,indian_origin_white_ages,low,Medicare,24.0753,3960
+accrual,indian_origin_white_ages,low,Social Security,30.1044,4952
+accrual,indian_origin_white_ages,low,Medicare,24.0539,3956
 accrual,indian_origin_white_ages,low,Medicaid,10.5582,1737
-accrual,indian_origin_white_ages,low,schools and colleges,23.7220,3902
-accrual,indian_origin_white_ages,low,"police, courts, prisons",5.0376,829
-accrual,indian_origin_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7647,784
+accrual,indian_origin_white_ages,low,schools and colleges,24.0549,3957
+accrual,indian_origin_white_ages,low,"police, courts, prisons",5.0561,832
+accrual,indian_origin_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784
 accrual,indian_origin_white_ages,low,veterans and military medical,1.1738,193
-accrual,indian_origin_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.9865,1643
+accrual,indian_origin_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.7346,1601
 accrual,indian_origin_white_ages,low,capital return,4.6735,769
 accrual,indian_origin_white_ages,low,production gain (subtracted),-0.0000,-0
 accrual,india_born,low,income taxes,-59.8119,-13969
 accrual,india_born,low,payroll taxes and Medicare premiums,-48.5518,-11339
 accrual,india_born,low,"sales, excise, customs, fees",-19.9541,-4660
 accrual,india_born,low,"capital, property, production taxes",-6.1189,-1429
-accrual,india_born,low,Social Security,30.1010,7030
-accrual,india_born,low,Medicare,16.8675,3939
+accrual,india_born,low,Social Security,29.5338,6898
+accrual,india_born,low,Medicare,16.8592,3937
 accrual,india_born,low,Medicaid,4.5798,1070
-accrual,india_born,low,schools and colleges,12.2592,2863
-accrual,india_born,low,"police, courts, prisons",3.6350,849
-accrual,india_born,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6082,843
+accrual,india_born,low,schools and colleges,12.4760,2914
+accrual,india_born,low,"police, courts, prisons",3.6485,852
+accrual,india_born,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6091,843
 accrual,india_born,low,veterans and military medical,0.4034,94
-accrual,india_born,low,"per-head lines: government, defense, interest, roads, other",7.3519,1717
+accrual,india_born,low,"per-head lines: government, defense, interest, roads, other",7.2792,1700
 accrual,india_born,low,capital return,3.1801,743
 accrual,india_born,low,production gain (subtracted),-0.0000,-0
 accrual,india_born_white_ages,low,income taxes,-52.6940,-12307
 accrual,india_born_white_ages,low,payroll taxes and Medicare premiums,-36.4947,-8523
 accrual,india_born_white_ages,low,"sales, excise, customs, fees",-18.7082,-4369
 accrual,india_born_white_ages,low,"capital, property, production taxes",-6.2299,-1455
-accrual,india_born_white_ages,low,Social Security,21.8863,5112
-accrual,india_born_white_ages,low,Medicare,17.1062,3995
+accrual,india_born_white_ages,low,Social Security,21.4759,5016
+accrual,india_born_white_ages,low,Medicare,17.1002,3994
 accrual,india_born_white_ages,low,Medicaid,7.4359,1737
-accrual,india_born_white_ages,low,schools and colleges,16.8050,3925
-accrual,india_born_white_ages,low,"police, courts, prisons",3.5723,834
-accrual,india_born_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7629,879
+accrual,india_born_white_ages,low,schools and colleges,17.0439,3981
+accrual,india_born_white_ages,low,"police, courts, prisons",3.5856,837
+accrual,india_born_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7642,879
 accrual,india_born_white_ages,low,veterans and military medical,0.6216,145
-accrual,india_born_white_ages,low,"per-head lines: government, defense, interest, roads, other",7.0647,1650
+accrual,india_born_white_ages,low,"per-head lines: government, defense, interest, roads, other",6.8789,1607
 accrual,india_born_white_ages,low,capital return,3.3062,772
 accrual,india_born_white_ages,low,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_g2_pooled,low,income taxes,-89.8433,-14778
 accrual,indian_origin_g2_pooled,low,payroll taxes and Medicare premiums,-56.8056,-9344
 accrual,indian_origin_g2_pooled,low,"sales, excise, customs, fees",-28.0595,-4615
 accrual,indian_origin_g2_pooled,low,"capital, property, production taxes",-9.2075,-1514
-accrual,indian_origin_g2_pooled,low,Social Security,34.1194,5612
-accrual,indian_origin_g2_pooled,low,Medicare,17.4245,2866
+accrual,indian_origin_g2_pooled,low,Social Security,33.4407,5500
+accrual,indian_origin_g2_pooled,low,Medicare,17.4007,2862
 accrual,indian_origin_g2_pooled,low,Medicaid,6.0818,1000
-accrual,indian_origin_g2_pooled,low,schools and colleges,28.4404,4678
-accrual,indian_origin_g2_pooled,low,"police, courts, prisons",5.0849,836
-accrual,indian_origin_g2_pooled,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6690,768
+accrual,indian_origin_g2_pooled,low,schools and colleges,28.8377,4743
+accrual,indian_origin_g2_pooled,low,"police, courts, prisons",5.1036,839
+accrual,indian_origin_g2_pooled,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768
 accrual,indian_origin_g2_pooled,low,veterans and military medical,0.5581,92
-accrual,indian_origin_g2_pooled,low,"per-head lines: government, defense, interest, roads, other",9.8531,1621
+accrual,indian_origin_g2_pooled,low,"per-head lines: government, defense, interest, roads, other",9.7814,1609
 accrual,indian_origin_g2_pooled,low,capital return,5.0356,828
 accrual,indian_origin_g2_pooled,low,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_g2_pooled_white_ages,low,income taxes,-84.6722,-13927
 accrual,indian_origin_g2_pooled_white_ages,low,payroll taxes and Medicare premiums,-52.8525,-8693
 accrual,indian_origin_g2_pooled_white_ages,low,"sales, excise, customs, fees",-27.5886,-4538
 accrual,indian_origin_g2_pooled_white_ages,low,"capital, property, production taxes",-9.8504,-1620
-accrual,indian_origin_g2_pooled_white_ages,low,Social Security,30.7653,5060
-accrual,indian_origin_g2_pooled_white_ages,low,Medicare,24.0931,3963
+accrual,indian_origin_g2_pooled_white_ages,low,Social Security,30.1562,4960
+accrual,indian_origin_g2_pooled_white_ages,low,Medicare,24.0717,3959
 accrual,indian_origin_g2_pooled_white_ages,low,Medicaid,10.5582,1737
-accrual,indian_origin_g2_pooled_white_ages,low,schools and colleges,23.7220,3902
-accrual,indian_origin_g2_pooled_white_ages,low,"police, courts, prisons",5.0376,829
-accrual,indian_origin_g2_pooled_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7647,784
+accrual,indian_origin_g2_pooled_white_ages,low,schools and colleges,24.0549,3957
+accrual,indian_origin_g2_pooled_white_ages,low,"police, courts, prisons",5.0561,832
+accrual,indian_origin_g2_pooled_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784
 accrual,indian_origin_g2_pooled_white_ages,low,veterans and military medical,1.1738,193
-accrual,indian_origin_g2_pooled_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.9882,1643
+accrual,indian_origin_g2_pooled_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.7364,1601
 accrual,indian_origin_g2_pooled_white_ages,low,capital return,4.6735,769
 accrual,indian_origin_g2_pooled_white_ages,low,production gain (subtracted),-0.0000,-0
 accrual,india_born_self_employed_adults,low,income taxes,-2.6718,-16151
 accrual,india_born_self_employed_adults,low,payroll taxes and Medicare premiums,-2.5604,-15478
 accrual,india_born_self_employed_adults,low,"sales, excise, customs, fees",-0.7806,-4719
 accrual,india_born_self_employed_adults,low,"capital, property, production taxes",-0.3127,-1891
-accrual,india_born_self_employed_adults,low,Social Security,1.4623,8840
-accrual,india_born_self_employed_adults,low,Medicare,0.8667,5239
+accrual,india_born_self_employed_adults,low,Social Security,1.4348,8673
+accrual,india_born_self_employed_adults,low,Medicare,0.8662,5236
 accrual,india_born_self_employed_adults,low,Medicaid,0.1805,1091
 accrual,india_born_self_employed_adults,low,schools and colleges,0.0000,0
-accrual,india_born_self_employed_adults,low,"police, courts, prisons",0.1405,849
+accrual,india_born_self_employed_adults,low,"police, courts, prisons",0.1410,852
 accrual,india_born_self_employed_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",0.0880,532
 accrual,india_born_self_employed_adults,low,veterans and military medical,0.0368,222
-accrual,india_born_self_employed_adults,low,"per-head lines: government, defense, interest, roads, other",0.2958,1788
+accrual,india_born_self_employed_adults,low,"per-head lines: government, defense, interest, roads, other",0.2931,1772
 accrual,india_born_self_employed_adults,low,capital return,0.0944,571
 accrual,india_born_self_employed_adults,low,production gain (subtracted),-0.0000,-0
 accrual,india_born_wage_salary_adults,low,income taxes,-47.1042,-17573
 accrual,india_born_wage_salary_adults,low,payroll taxes and Medicare premiums,-45.2591,-16885
 accrual,india_born_wage_salary_adults,low,"sales, excise, customs, fees",-14.3792,-5364
 accrual,india_born_wage_salary_adults,low,"capital, property, production taxes",-4.3588,-1626
-accrual,india_born_wage_salary_adults,low,Social Security,28.5494,10651
-accrual,india_born_wage_salary_adults,low,Medicare,12.9526,4832
+accrual,india_born_wage_salary_adults,low,Social Security,28.0102,10450
+accrual,india_born_wage_salary_adults,low,Medicare,12.9449,4829
 accrual,india_born_wage_salary_adults,low,Medicaid,2.0301,757
-accrual,india_born_wage_salary_adults,low,schools and colleges,2.8639,1068
-accrual,india_born_wage_salary_adults,low,"police, courts, prisons",2.2789,850
-accrual,india_born_wage_salary_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6190,604
+accrual,india_born_wage_salary_adults,low,schools and colleges,2.9407,1097
+accrual,india_born_wage_salary_adults,low,"police, courts, prisons",2.2874,853
+accrual,india_born_wage_salary_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6193,604
 accrual,india_born_wage_salary_adults,low,veterans and military medical,0.3656,136
-accrual,india_born_wage_salary_adults,low,"per-head lines: government, defense, interest, roads, other",4.7599,1776
+accrual,india_born_wage_salary_adults,low,"per-head lines: government, defense, interest, roads, other",4.7699,1779
 accrual,india_born_wage_salary_adults,low,capital return,1.7535,654
 accrual,india_born_wage_salary_adults,low,production gain (subtracted),-0.0000,-0
 accrual,india_born_other,low,income taxes,-10.0359,-6989
 accrual,india_born_other,low,payroll taxes and Medicare premiums,-0.7323,-510
 accrual,india_born_other,low,"sales, excise, customs, fees",-4.8017,-3344
 accrual,india_born_other,low,"capital, property, production taxes",-1.4474,-1008
-accrual,india_born_other,low,Social Security,0.0893,62
+accrual,india_born_other,low,Social Security,0.0888,62
 accrual,india_born_other,low,Medicare,3.0482,2123
 accrual,india_born_other,low,Medicaid,2.3692,1650
-accrual,india_born_other,low,schools and colleges,9.3953,6543
-accrual,india_born_other,low,"police, courts, prisons",1.2156,847
-accrual,india_born_other,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9011,1324
+accrual,india_born_other,low,schools and colleges,9.5354,6641
+accrual,india_born_other,low,"police, courts, prisons",1.2202,850
+accrual,india_born_other,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9018,1325
 accrual,india_born_other,low,veterans and military medical,0.0010,1
-accrual,india_born_other,low,"per-head lines: government, defense, interest, roads, other",2.2961,1599
+accrual,india_born_other,low,"per-head lines: government, defense, interest, roads, other",2.2162,1543
 accrual,india_born_other,low,capital return,1.3322,928
 accrual,india_born_other,low,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_self_employed_households,low,income taxes,-7.3841,-20367
 accrual,indian_origin_self_employed_households,low,payroll taxes and Medicare premiums,-3.0625,-8447
 accrual,indian_origin_self_employed_households,low,"sales, excise, customs, fees",-1.6447,-4537
 accrual,indian_origin_self_employed_households,low,"capital, property, production taxes",-0.7740,-2135
-accrual,indian_origin_self_employed_households,low,Social Security,1.7141,4728
-accrual,indian_origin_self_employed_households,low,Medicare,1.0709,2954
+accrual,indian_origin_self_employed_households,low,Social Security,1.6800,4634
+accrual,indian_origin_self_employed_households,low,Medicare,1.0694,2950
 accrual,indian_origin_self_employed_households,low,Medicaid,0.3443,950
-accrual,indian_origin_self_employed_households,low,schools and colleges,1.4827,4090
-accrual,indian_origin_self_employed_households,low,"police, courts, prisons",0.3293,908
+accrual,indian_origin_self_employed_households,low,schools and colleges,1.5001,4138
+accrual,indian_origin_self_employed_households,low,"police, courts, prisons",0.3304,911
 accrual,indian_origin_self_employed_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",0.1952,539
 accrual,indian_origin_self_employed_households,low,veterans and military medical,0.0369,102
-accrual,indian_origin_self_employed_households,low,"per-head lines: government, defense, interest, roads, other",0.5567,1535
+accrual,indian_origin_self_employed_households,low,"per-head lines: government, defense, interest, roads, other",0.5567,1536
 accrual,indian_origin_self_employed_households,low,capital return,0.2823,779
 accrual,indian_origin_self_employed_households,low,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_wage_salary_households,low,income taxes,-70.8039,-14991
 accrual,indian_origin_wage_salary_households,low,payroll taxes and Medicare premiums,-46.6001,-9866
 accrual,indian_origin_wage_salary_households,low,"sales, excise, customs, fees",-22.2705,-4715
 accrual,indian_origin_wage_salary_households,low,"capital, property, production taxes",-7.0616,-1495
-accrual,indian_origin_wage_salary_households,low,Social Security,28.3692,6006
-accrual,indian_origin_wage_salary_households,low,Medicare,13.8174,2925
+accrual,indian_origin_wage_salary_households,low,Social Security,27.8041,5887
+accrual,indian_origin_wage_salary_households,low,Medicare,13.7982,2921
 accrual,indian_origin_wage_salary_households,low,Medicaid,4.1516,879
-accrual,indian_origin_wage_salary_households,low,schools and colleges,21.9325,4644
-accrual,indian_origin_wage_salary_households,low,"police, courts, prisons",3.9169,829
-accrual,indian_origin_wage_salary_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1003,656
+accrual,indian_origin_wage_salary_households,low,schools and colleges,22.2151,4704
+accrual,indian_origin_wage_salary_households,low,"police, courts, prisons",3.9314,832
+accrual,indian_origin_wage_salary_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1010,657
 accrual,indian_origin_wage_salary_households,low,veterans and military medical,0.3660,77
-accrual,indian_origin_wage_salary_households,low,"per-head lines: government, defense, interest, roads, other",7.4403,1575
+accrual,indian_origin_wage_salary_households,low,"per-head lines: government, defense, interest, roads, other",7.4348,1574
 accrual,indian_origin_wage_salary_households,low,capital return,3.8823,822
 accrual,indian_origin_wage_salary_households,low,production gain (subtracted),-0.0000,-0
 accrual,A1_third_plus_nh_white,low,income taxes,-356.0150,-8327
 accrual,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-268.3304,-6276
 accrual,A1_third_plus_nh_white,low,"sales, excise, customs, fees",-173.3304,-4054
 accrual,A1_third_plus_nh_white,low,"capital, property, production taxes",-50.5292,-1182
-accrual,A1_third_plus_nh_white,low,Social Security,169.5586,3966
-accrual,A1_third_plus_nh_white,low,Medicare,168.1671,3934
+accrual,A1_third_plus_nh_white,low,Social Security,166.3240,3890
+accrual,A1_third_plus_nh_white,low,Medicare,167.8974,3927
 accrual,A1_third_plus_nh_white,low,Medicaid,99.7694,2334
-accrual,A1_third_plus_nh_white,low,schools and colleges,134.6162,3149
-accrual,A1_third_plus_nh_white,low,"police, courts, prisons",53.9862,1263
-accrual,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",71.2672,1667
+accrual,A1_third_plus_nh_white,low,schools and colleges,135.5196,3170
+accrual,A1_third_plus_nh_white,low,"police, courts, prisons",54.2095,1268
+accrual,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",71.3051,1668
 accrual,A1_third_plus_nh_white,low,veterans and military medical,35.7731,837
-accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.3985,2372
+accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",98.3563,2301
 accrual,A1_third_plus_nh_white,low,capital return,34.1392,799
 accrual,A1_third_plus_nh_white,low,production gain (subtracted),-0.0000,-0
 accrual,nh_black_rough,low,income taxes,-183.7848,-4381
 accrual,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633
 accrual,nh_black_rough,low,"sales, excise, customs, fees",-123.2033,-2937
 accrual,nh_black_rough,low,"capital, property, production taxes",-15.9766,-381
-accrual,nh_black_rough,low,Social Security,137.0818,3267
-accrual,nh_black_rough,low,Medicare,128.1262,3054
+accrual,nh_black_rough,low,Social Security,134.6255,3209
+accrual,nh_black_rough,low,Medicare,127.8455,3047
 accrual,nh_black_rough,low,Medicaid,181.2461,4320
-accrual,nh_black_rough,low,schools and colleges,172.9617,4123
-accrual,nh_black_rough,low,"police, courts, prisons",105.8914,2524
-accrual,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.1085,3912
+accrual,nh_black_rough,low,schools and colleges,173.9840,4147
+accrual,nh_black_rough,low,"police, courts, prisons",106.3305,2534
+accrual,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914
 accrual,nh_black_rough,low,veterans and military medical,41.5391,990
-accrual,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",81.4405,1941
+accrual,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",79.7973,1902
 accrual,nh_black_rough,low,capital return,35.6347,849
 accrual,nh_black_rough,low,production gain (subtracted),-0.0000,-0
 accrual,mexican_origin_engine_identified,low,income taxes,-138.5423,-3489
 accrual,mexican_origin_engine_identified,low,payroll taxes and Medicare premiums,-161.4342,-4065
 accrual,mexican_origin_engine_identified,low,"sales, excise, customs, fees",-108.4703,-2731
 accrual,mexican_origin_engine_identified,low,"capital, property, production taxes",-23.2662,-586
-accrual,mexican_origin_engine_identified,low,Social Security,110.0082,2770
-accrual,mexican_origin_engine_identified,low,Medicare,73.8932,1861
+accrual,mexican_origin_engine_identified,low,Social Security,107.7474,2713
+accrual,mexican_origin_engine_identified,low,Medicare,73.5389,1852
 accrual,mexican_origin_engine_identified,low,Medicaid,117.7434,2965
-accrual,mexican_origin_engine_identified,low,schools and colleges,201.3871,5071
-accrual,mexican_origin_engine_identified,low,"police, courts, prisons",76.0678,1915
-accrual,mexican_origin_engine_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",116.4544,2932
+accrual,mexican_origin_engine_identified,low,schools and colleges,198.0325,4987
+accrual,mexican_origin_engine_identified,low,"police, courts, prisons",76.3428,1922
+accrual,mexican_origin_engine_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",116.5331,2934
 accrual,mexican_origin_engine_identified,low,veterans and military medical,14.0598,354
-accrual,mexican_origin_engine_identified,low,"per-head lines: government, defense, interest, roads, other",70.4624,1774
-accrual,mexican_origin_engine_identified,low,capital return,34.4329,867
+accrual,mexican_origin_engine_identified,low,"per-head lines: government, defense, interest, roads, other",74.3306,1872
+accrual,mexican_origin_engine_identified,low,capital return,33.8049,851
 accrual,mexican_origin_engine_identified,low,production gain (subtracted),-11.6799,-294
 accrual,mexican_origin_rough_identified,low,income taxes,-135.3272,-3408
 accrual,mexican_origin_rough_identified,low,payroll taxes and Medicare premiums,-163.4670,-4116
 accrual,mexican_origin_rough_identified,low,"sales, excise, customs, fees",-107.7436,-2713
 accrual,mexican_origin_rough_identified,low,"capital, property, production taxes",-21.8056,-549
-accrual,mexican_origin_rough_identified,low,Social Security,111.7074,2813
-accrual,mexican_origin_rough_identified,low,Medicare,78.7966,1984
+accrual,mexican_origin_rough_identified,low,Social Security,109.4119,2755
+accrual,mexican_origin_rough_identified,low,Medicare,78.4000,1974
 accrual,mexican_origin_rough_identified,low,Medicaid,117.7434,2965
-accrual,mexican_origin_rough_identified,low,schools and colleges,197.1751,4965
-accrual,mexican_origin_rough_identified,low,"police, courts, prisons",76.3594,1923
-accrual,mexican_origin_rough_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",113.5466,2859
+accrual,mexican_origin_rough_identified,low,schools and colleges,199.2460,5017
+accrual,mexican_origin_rough_identified,low,"police, courts, prisons",76.6344,1930
+accrual,mexican_origin_rough_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",113.6116,2861
 accrual,mexican_origin_rough_identified,low,veterans and military medical,11.5868,292
-accrual,mexican_origin_rough_identified,low,"per-head lines: government, defense, interest, roads, other",74.1396,1867
+accrual,mexican_origin_rough_identified,low,"per-head lines: government, defense, interest, roads, other",74.3054,1871
 accrual,mexican_origin_rough_identified,low,capital return,34.1721,860
 accrual,mexican_origin_rough_identified,low,production gain (subtracted),-11.6799,-294
-accrual,mexican_origin_engine,high,income taxes,-141.8291,-3317
-accrual,mexican_origin_engine,high,payroll taxes and Medicare premiums,-163.8040,-3831
-accrual,mexican_origin_engine,high,"sales, excise, customs, fees",-118.3541,-2768
-accrual,mexican_origin_engine,high,"capital, property, production taxes",-25.4012,-594
-accrual,mexican_origin_engine,high,Social Security,111.4715,2607
-accrual,mexican_origin_engine,high,Medicare,79.0854,1850
-accrual,mexican_origin_engine,high,Medicaid,128.1094,2997
-accrual,mexican_origin_engine,high,schools and colleges,226.4565,5297
-accrual,mexican_origin_engine,high,"police, courts, prisons",81.0201,1895
-accrual,mexican_origin_engine,high,"SNAP, SSI, housing, cash aid, credits, other welfare",116.9602,2736
-accrual,mexican_origin_engine,high,veterans and military medical,12.9788,304
-accrual,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352
-accrual,mexican_origin_engine,high,capital return,61.8578,1447
-accrual,mexican_origin_engine,high,production gain (subtracted),-7.8593,-184
-accrual,mexican_origin_rough,high,income taxes,-150.5440,-3521
-accrual,mexican_origin_rough,high,payroll taxes and Medicare premiums,-175.6127,-4108
-accrual,mexican_origin_rough,high,"sales, excise, customs, fees",-117.6432,-2752
-accrual,mexican_origin_rough,high,"capital, property, production taxes",-23.9406,-560
-accrual,mexican_origin_rough,high,Social Security,119.8551,2803
-accrual,mexican_origin_rough,high,Medicare,83.9888,1965
-accrual,mexican_origin_rough,high,Medicaid,126.1167,2950
-accrual,mexican_origin_rough,high,schools and colleges,216.0881,5054
-accrual,mexican_origin_rough,high,"police, courts, prisons",81.3117,1902
-accrual,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",120.6916,2823
-accrual,mexican_origin_rough,high,veterans and military medical,12.9235,302
-accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.5090,2445
-accrual,mexican_origin_rough,high,capital return,60.9461,1426
-accrual,mexican_origin_rough,high,production gain (subtracted),-7.8593,-184
+accrual,mexican_origin_engine,high,income taxes,-140.5407,-3287
+accrual,mexican_origin_engine,high,payroll taxes and Medicare premiums,-162.8558,-3809
+accrual,mexican_origin_engine,high,"sales, excise, customs, fees",-118.1028,-2762
+accrual,mexican_origin_engine,high,"capital, property, production taxes",-25.2989,-592
+accrual,mexican_origin_engine,high,Social Security,108.6092,2540
+accrual,mexican_origin_engine,high,Medicare,77.7946,1820
+accrual,mexican_origin_engine,high,Medicaid,128.2086,2999
+accrual,mexican_origin_engine,high,schools and colleges,225.5747,5276
+accrual,mexican_origin_engine,high,"police, courts, prisons",81.1765,1899
+accrual,mexican_origin_engine,high,"SNAP, SSI, housing, cash aid, credits, other welfare",116.7234,2730
+accrual,mexican_origin_engine,high,veterans and military medical,12.7280,298
+accrual,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",104.2330,2438
+accrual,mexican_origin_engine,high,capital return,61.0643,1428
+accrual,mexican_origin_engine,high,production gain (subtracted),-7.8344,-183
+accrual,mexican_origin_rough,high,income taxes,-149.2555,-3491
+accrual,mexican_origin_rough,high,payroll taxes and Medicare premiums,-174.6645,-4086
+accrual,mexican_origin_rough,high,"sales, excise, customs, fees",-117.3919,-2746
+accrual,mexican_origin_rough,high,"capital, property, production taxes",-23.8383,-558
+accrual,mexican_origin_rough,high,Social Security,116.8207,2733
+accrual,mexican_origin_rough,high,Medicare,82.6557,1933
+accrual,mexican_origin_rough,high,Medicaid,126.2160,2952
+accrual,mexican_origin_rough,high,schools and colleges,220.6054,5160
+accrual,mexican_origin_rough,high,"police, courts, prisons",81.4681,1906
+accrual,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",120.4451,2817
+accrual,mexican_origin_rough,high,veterans and military medical,12.6727,296
+accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.3230,2440
+accrual,mexican_origin_rough,high,capital return,61.1549,1430
+accrual,mexican_origin_rough,high,production gain (subtracted),-7.8344,-183
 accrual,mexican_origin_rough_white_ages,high,income taxes,-137.3379,-3458
 accrual,mexican_origin_rough_white_ages,high,payroll taxes and Medicare premiums,-180.5404,-4546
 accrual,mexican_origin_rough_white_ages,high,"sales, excise, customs, fees",-114.4425,-2882
 accrual,mexican_origin_rough_white_ages,high,"capital, property, production taxes",-26.4574,-666
-accrual,mexican_origin_rough_white_ages,high,Social Security,115.7817,2915
-accrual,mexican_origin_rough_white_ages,high,Medicare,143.6979,3618
+accrual,mexican_origin_rough_white_ages,high,Social Security,113.4227,2856
+accrual,mexican_origin_rough_white_ages,high,Medicare,143.2867,3608
 accrual,mexican_origin_rough_white_ages,high,Medicaid,164.1204,4133
-accrual,mexican_origin_rough_white_ages,high,schools and colleges,124.4866,3135
-accrual,mexican_origin_rough_white_ages,high,"police, courts, prisons",70.3984,1773
-accrual,mexican_origin_rough_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",111.7010,2813
+accrual,mexican_origin_rough_white_ages,high,schools and colleges,125.8137,3168
+accrual,mexican_origin_rough_white_ages,high,"police, courts, prisons",70.6492,1779
+accrual,mexican_origin_rough_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",111.7639,2814
 accrual,mexican_origin_rough_white_ages,high,veterans and military medical,17.9510,452
-accrual,mexican_origin_rough_white_ages,high,"per-head lines: government, defense, interest, roads, other",104.1809,2623
-accrual,mexican_origin_rough_white_ages,high,capital return,50.4726,1271
+accrual,mexican_origin_rough_white_ages,high,"per-head lines: government, defense, interest, roads, other",103.2843,2601
+accrual,mexican_origin_rough_white_ages,high,capital return,50.5080,1272
 accrual,mexican_origin_rough_white_ages,high,production gain (subtracted),-7.9696,-201
 accrual,indian_origin,high,income taxes,-90.6915,-14917
 accrual,indian_origin,high,payroll taxes and Medicare premiums,-56.6875,-9324
 accrual,indian_origin,high,"sales, excise, customs, fees",-28.0595,-4615
 accrual,indian_origin,high,"capital, property, production taxes",-9.2075,-1514
-accrual,indian_origin,high,Social Security,34.0498,5601
-accrual,indian_origin,high,Medicare,17.4017,2862
+accrual,indian_origin,high,Social Security,33.3725,5489
+accrual,indian_origin,high,Medicare,17.3780,2858
 accrual,indian_origin,high,Medicaid,6.0818,1000
-accrual,indian_origin,high,schools and colleges,28.4404,4678
-accrual,indian_origin,high,"police, courts, prisons",5.0849,836
-accrual,indian_origin,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6690,768
+accrual,indian_origin,high,schools and colleges,28.8377,4743
+accrual,indian_origin,high,"police, courts, prisons",5.1036,839
+accrual,indian_origin,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768
 accrual,indian_origin,high,veterans and military medical,0.5581,92
-accrual,indian_origin,high,"per-head lines: government, defense, interest, roads, other",14.7702,2429
+accrual,indian_origin,high,"per-head lines: government, defense, interest, roads, other",14.7145,2420
 accrual,indian_origin,high,capital return,8.4101,1383
 accrual,indian_origin,high,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_white_ages,high,income taxes,-85.3473,-14038
 accrual,indian_origin_white_ages,high,payroll taxes and Medicare premiums,-52.7621,-8678
 accrual,indian_origin_white_ages,high,"sales, excise, customs, fees",-27.5886,-4538
 accrual,indian_origin_white_ages,high,"capital, property, production taxes",-9.8504,-1620
-accrual,indian_origin_white_ages,high,Social Security,30.7124,5052
-accrual,indian_origin_white_ages,high,Medicare,24.0753,3960
+accrual,indian_origin_white_ages,high,Social Security,30.1044,4952
+accrual,indian_origin_white_ages,high,Medicare,24.0539,3956
 accrual,indian_origin_white_ages,high,Medicaid,10.5582,1737
-accrual,indian_origin_white_ages,high,schools and colleges,23.7220,3902
-accrual,indian_origin_white_ages,high,"police, courts, prisons",5.0376,829
-accrual,indian_origin_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7647,784
+accrual,indian_origin_white_ages,high,schools and colleges,24.0549,3957
+accrual,indian_origin_white_ages,high,"police, courts, prisons",5.0561,832
+accrual,indian_origin_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784
 accrual,indian_origin_white_ages,high,veterans and military medical,1.1738,193
-accrual,indian_origin_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.6489,2410
+accrual,indian_origin_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.4121,2371
 accrual,indian_origin_white_ages,high,capital return,7.8294,1288
 accrual,indian_origin_white_ages,high,production gain (subtracted),-0.0000,-0
 accrual,india_born,high,income taxes,-59.8119,-13969
 accrual,india_born,high,payroll taxes and Medicare premiums,-48.5518,-11339
 accrual,india_born,high,"sales, excise, customs, fees",-19.9541,-4660
 accrual,india_born,high,"capital, property, production taxes",-6.1189,-1429
-accrual,india_born,high,Social Security,30.1010,7030
-accrual,india_born,high,Medicare,16.8675,3939
+accrual,india_born,high,Social Security,29.5338,6898
+accrual,india_born,high,Medicare,16.8592,3937
 accrual,india_born,high,Medicaid,4.5798,1070
-accrual,india_born,high,schools and colleges,12.2592,2863
-accrual,india_born,high,"police, courts, prisons",3.6350,849
-accrual,india_born,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6082,843
+accrual,india_born,high,schools and colleges,12.4760,2914
+accrual,india_born,high,"police, courts, prisons",3.6485,852
+accrual,india_born,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6091,843
 accrual,india_born,high,veterans and military medical,0.4034,94
-accrual,india_born,high,"per-head lines: government, defense, interest, roads, other",11.1949,2615
+accrual,india_born,high,"per-head lines: government, defense, interest, roads, other",11.1350,2601
 accrual,india_born,high,capital return,5.4266,1267
 accrual,india_born,high,production gain (subtracted),-0.0000,-0
 accrual,india_born_white_ages,high,income taxes,-52.6940,-12307
 accrual,india_born_white_ages,high,payroll taxes and Medicare premiums,-36.4947,-8523
 accrual,india_born_white_ages,high,"sales, excise, customs, fees",-18.7082,-4369
 accrual,india_born_white_ages,high,"capital, property, production taxes",-6.2299,-1455
-accrual,india_born_white_ages,high,Social Security,21.8863,5112
-accrual,india_born_white_ages,high,Medicare,17.1062,3995
+accrual,india_born_white_ages,high,Social Security,21.4759,5016
+accrual,india_born_white_ages,high,Medicare,17.1002,3994
 accrual,india_born_white_ages,high,Medicaid,7.4359,1737
-accrual,india_born_white_ages,high,schools and colleges,16.8050,3925
-accrual,india_born_white_ages,high,"police, courts, prisons",3.5723,834
-accrual,india_born_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7629,879
+accrual,india_born_white_ages,high,schools and colleges,17.0439,3981
+accrual,india_born_white_ages,high,"police, courts, prisons",3.5856,837
+accrual,india_born_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7642,879
 accrual,india_born_white_ages,high,veterans and military medical,0.6216,145
-accrual,india_born_white_ages,high,"per-head lines: government, defense, interest, roads, other",10.3013,2406
+accrual,india_born_white_ages,high,"per-head lines: government, defense, interest, roads, other",10.1259,2365
 accrual,india_born_white_ages,high,capital return,5.5276,1291
 accrual,india_born_white_ages,high,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_g2_pooled,high,income taxes,-89.8433,-14778
 accrual,indian_origin_g2_pooled,high,payroll taxes and Medicare premiums,-56.8056,-9344
 accrual,indian_origin_g2_pooled,high,"sales, excise, customs, fees",-28.0595,-4615
 accrual,indian_origin_g2_pooled,high,"capital, property, production taxes",-9.2075,-1514
-accrual,indian_origin_g2_pooled,high,Social Security,34.1194,5612
-accrual,indian_origin_g2_pooled,high,Medicare,17.4245,2866
+accrual,indian_origin_g2_pooled,high,Social Security,33.4407,5500
+accrual,indian_origin_g2_pooled,high,Medicare,17.4007,2862
 accrual,indian_origin_g2_pooled,high,Medicaid,6.0818,1000
-accrual,indian_origin_g2_pooled,high,schools and colleges,28.4404,4678
-accrual,indian_origin_g2_pooled,high,"police, courts, prisons",5.0849,836
-accrual,indian_origin_g2_pooled,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6690,768
+accrual,indian_origin_g2_pooled,high,schools and colleges,28.8377,4743
+accrual,indian_origin_g2_pooled,high,"police, courts, prisons",5.1036,839
+accrual,indian_origin_g2_pooled,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768
 accrual,indian_origin_g2_pooled,high,veterans and military medical,0.5581,92
-accrual,indian_origin_g2_pooled,high,"per-head lines: government, defense, interest, roads, other",14.7780,2431
+accrual,indian_origin_g2_pooled,high,"per-head lines: government, defense, interest, roads, other",14.7224,2422
 accrual,indian_origin_g2_pooled,high,capital return,8.4102,1383
 accrual,indian_origin_g2_pooled,high,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_g2_pooled_white_ages,high,income taxes,-84.6722,-13927
 accrual,indian_origin_g2_pooled_white_ages,high,payroll taxes and Medicare premiums,-52.8525,-8693
 accrual,indian_origin_g2_pooled_white_ages,high,"sales, excise, customs, fees",-27.5886,-4538
 accrual,indian_origin_g2_pooled_white_ages,high,"capital, property, production taxes",-9.8504,-1620
-accrual,indian_origin_g2_pooled_white_ages,high,Social Security,30.7653,5060
-accrual,indian_origin_g2_pooled_white_ages,high,Medicare,24.0931,3963
+accrual,indian_origin_g2_pooled_white_ages,high,Social Security,30.1562,4960
+accrual,indian_origin_g2_pooled_white_ages,high,Medicare,24.0717,3959
 accrual,indian_origin_g2_pooled_white_ages,high,Medicaid,10.5582,1737
-accrual,indian_origin_g2_pooled_white_ages,high,schools and colleges,23.7220,3902
-accrual,indian_origin_g2_pooled_white_ages,high,"police, courts, prisons",5.0376,829
-accrual,indian_origin_g2_pooled_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7647,784
+accrual,indian_origin_g2_pooled_white_ages,high,schools and colleges,24.0549,3957
+accrual,indian_origin_g2_pooled_white_ages,high,"police, courts, prisons",5.0561,832
+accrual,indian_origin_g2_pooled_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784
 accrual,indian_origin_g2_pooled_white_ages,high,veterans and military medical,1.1738,193
-accrual,indian_origin_g2_pooled_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.6550,2411
+accrual,indian_origin_g2_pooled_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.4183,2372
 accrual,indian_origin_g2_pooled_white_ages,high,capital return,7.8294,1288
 accrual,indian_origin_g2_pooled_white_ages,high,production gain (subtracted),-0.0000,-0
 accrual,india_born_self_employed_adults,high,income taxes,-2.6718,-16151
 accrual,india_born_self_employed_adults,high,payroll taxes and Medicare premiums,-2.5604,-15478
 accrual,india_born_self_employed_adults,high,"sales, excise, customs, fees",-0.7806,-4719
 accrual,india_born_self_employed_adults,high,"capital, property, production taxes",-0.3127,-1891
-accrual,india_born_self_employed_adults,high,Social Security,1.4623,8840
-accrual,india_born_self_employed_adults,high,Medicare,0.8667,5239
+accrual,india_born_self_employed_adults,high,Social Security,1.4348,8673
+accrual,india_born_self_employed_adults,high,Medicare,0.8662,5236
 accrual,india_born_self_employed_adults,high,Medicaid,0.1805,1091
 accrual,india_born_self_employed_adults,high,schools and colleges,0.0000,0
-accrual,india_born_self_employed_adults,high,"police, courts, prisons",0.1405,849
+accrual,india_born_self_employed_adults,high,"police, courts, prisons",0.1410,852
 accrual,india_born_self_employed_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",0.0880,532
 accrual,india_born_self_employed_adults,high,veterans and military medical,0.0368,222
-accrual,india_born_self_employed_adults,high,"per-head lines: government, defense, interest, roads, other",0.4971,3005
+accrual,india_born_self_employed_adults,high,"per-head lines: government, defense, interest, roads, other",0.4951,2993
 accrual,india_born_self_employed_adults,high,capital return,0.1695,1025
 accrual,india_born_self_employed_adults,high,production gain (subtracted),-0.0000,-0
 accrual,india_born_wage_salary_adults,high,income taxes,-47.1042,-17573
 accrual,india_born_wage_salary_adults,high,payroll taxes and Medicare premiums,-45.2591,-16885
 accrual,india_born_wage_salary_adults,high,"sales, excise, customs, fees",-14.3792,-5364
 accrual,india_born_wage_salary_adults,high,"capital, property, production taxes",-4.3588,-1626
-accrual,india_born_wage_salary_adults,high,Social Security,28.5494,10651
-accrual,india_born_wage_salary_adults,high,Medicare,12.9526,4832
+accrual,india_born_wage_salary_adults,high,Social Security,28.0102,10450
+accrual,india_born_wage_salary_adults,high,Medicare,12.9449,4829
 accrual,india_born_wage_salary_adults,high,Medicaid,2.0301,757
-accrual,india_born_wage_salary_adults,high,schools and colleges,2.8639,1068
-accrual,india_born_wage_salary_adults,high,"police, courts, prisons",2.2789,850
-accrual,india_born_wage_salary_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6190,604
+accrual,india_born_wage_salary_adults,high,schools and colleges,2.9407,1097
+accrual,india_born_wage_salary_adults,high,"police, courts, prisons",2.2874,853
+accrual,india_born_wage_salary_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6193,604
 accrual,india_born_wage_salary_adults,high,veterans and military medical,0.3656,136
-accrual,india_born_wage_salary_adults,high,"per-head lines: government, defense, interest, roads, other",7.7786,2902
+accrual,india_born_wage_salary_adults,high,"per-head lines: government, defense, interest, roads, other",7.7993,2910
 accrual,india_born_wage_salary_adults,high,capital return,3.0967,1155
 accrual,india_born_wage_salary_adults,high,production gain (subtracted),-0.0000,-0
 accrual,india_born_other,high,income taxes,-10.0359,-6989
 accrual,india_born_other,high,payroll taxes and Medicare premiums,-0.7323,-510
 accrual,india_born_other,high,"sales, excise, customs, fees",-4.8017,-3344
 accrual,india_born_other,high,"capital, property, production taxes",-1.4474,-1008
-accrual,india_born_other,high,Social Security,0.0893,62
+accrual,india_born_other,high,Social Security,0.0888,62
 accrual,india_born_other,high,Medicare,3.0482,2123
 accrual,india_born_other,high,Medicaid,2.3692,1650
-accrual,india_born_other,high,schools and colleges,9.3953,6543
-accrual,india_born_other,high,"police, courts, prisons",1.2156,847
-accrual,india_born_other,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9011,1324
+accrual,india_born_other,high,schools and colleges,9.5354,6641
+accrual,india_born_other,high,"police, courts, prisons",1.2202,850
+accrual,india_born_other,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9018,1325
 accrual,india_born_other,high,veterans and military medical,0.0010,1
-accrual,india_born_other,high,"per-head lines: government, defense, interest, roads, other",2.9192,2033
+accrual,india_born_other,high,"per-head lines: government, defense, interest, roads, other",2.8406,1978
 accrual,india_born_other,high,capital return,2.1604,1505
 accrual,india_born_other,high,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_self_employed_households,high,income taxes,-7.3841,-20367
 accrual,indian_origin_self_employed_households,high,payroll taxes and Medicare premiums,-3.0625,-8447
 accrual,indian_origin_self_employed_households,high,"sales, excise, customs, fees",-1.6447,-4537
 accrual,indian_origin_self_employed_households,high,"capital, property, production taxes",-0.7740,-2135
-accrual,indian_origin_self_employed_households,high,Social Security,1.7141,4728
-accrual,indian_origin_self_employed_households,high,Medicare,1.0709,2954
+accrual,indian_origin_self_employed_households,high,Social Security,1.6800,4634
+accrual,indian_origin_self_employed_households,high,Medicare,1.0694,2950
 accrual,indian_origin_self_employed_households,high,Medicaid,0.3443,950
-accrual,indian_origin_self_employed_households,high,schools and colleges,1.4827,4090
-accrual,indian_origin_self_employed_households,high,"police, courts, prisons",0.3293,908
+accrual,indian_origin_self_employed_households,high,schools and colleges,1.5001,4138
+accrual,indian_origin_self_employed_households,high,"police, courts, prisons",0.3304,911
 accrual,indian_origin_self_employed_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",0.1952,539
 accrual,indian_origin_self_employed_households,high,veterans and military medical,0.0369,102
-accrual,indian_origin_self_employed_households,high,"per-head lines: government, defense, interest, roads, other",0.8581,2367
+accrual,indian_origin_self_employed_households,high,"per-head lines: government, defense, interest, roads, other",0.8592,2370
 accrual,indian_origin_self_employed_households,high,capital return,0.4735,1306
 accrual,indian_origin_self_employed_households,high,production gain (subtracted),-0.0000,-0
 accrual,indian_origin_wage_salary_households,high,income taxes,-70.8039,-14991
 accrual,indian_origin_wage_salary_households,high,payroll taxes and Medicare premiums,-46.6001,-9866
 accrual,indian_origin_wage_salary_households,high,"sales, excise, customs, fees",-22.2705,-4715
 accrual,indian_origin_wage_salary_households,high,"capital, property, production taxes",-7.0616,-1495
-accrual,indian_origin_wage_salary_households,high,Social Security,28.3692,6006
-accrual,indian_origin_wage_salary_households,high,Medicare,13.8174,2925
+accrual,indian_origin_wage_salary_households,high,Social Security,27.8041,5887
+accrual,indian_origin_wage_salary_households,high,Medicare,13.7982,2921
 accrual,indian_origin_wage_salary_households,high,Medicaid,4.1516,879
-accrual,indian_origin_wage_salary_households,high,schools and colleges,21.9325,4644
-accrual,indian_origin_wage_salary_households,high,"police, courts, prisons",3.9169,829
-accrual,indian_origin_wage_salary_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1003,656
+accrual,indian_origin_wage_salary_households,high,schools and colleges,22.2151,4704
+accrual,indian_origin_wage_salary_households,high,"police, courts, prisons",3.9314,832
+accrual,indian_origin_wage_salary_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1010,657
 accrual,indian_origin_wage_salary_households,high,veterans and military medical,0.3660,77
-accrual,indian_origin_wage_salary_households,high,"per-head lines: government, defense, interest, roads, other",11.3389,2401
+accrual,indian_origin_wage_salary_households,high,"per-head lines: government, defense, interest, roads, other",11.3463,2402
 accrual,indian_origin_wage_salary_households,high,capital return,6.4959,1375
 accrual,indian_origin_wage_salary_households,high,production gain (subtracted),-0.0000,-0
 accrual,A1_third_plus_nh_white,high,income taxes,-356.0150,-8327
 accrual,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-268.3304,-6276
 accrual,A1_third_plus_nh_white,high,"sales, excise, customs, fees",-173.3304,-4054
 accrual,A1_third_plus_nh_white,high,"capital, property, production taxes",-50.5292,-1182
-accrual,A1_third_plus_nh_white,high,Social Security,169.5586,3966
-accrual,A1_third_plus_nh_white,high,Medicare,168.1671,3934
+accrual,A1_third_plus_nh_white,high,Social Security,166.3240,3890
+accrual,A1_third_plus_nh_white,high,Medicare,167.8974,3927
 accrual,A1_third_plus_nh_white,high,Medicaid,99.7694,2334
-accrual,A1_third_plus_nh_white,high,schools and colleges,134.6162,3149
-accrual,A1_third_plus_nh_white,high,"police, courts, prisons",53.9862,1263
-accrual,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",71.2672,1667
+accrual,A1_third_plus_nh_white,high,schools and colleges,135.5196,3170
+accrual,A1_third_plus_nh_white,high,"police, courts, prisons",54.2095,1268
+accrual,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",71.3051,1668
 accrual,A1_third_plus_nh_white,high,veterans and military medical,35.7731,837
-accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.0794,3066
+accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",128.1192,2997
 accrual,A1_third_plus_nh_white,high,capital return,57.9752,1356
 accrual,A1_third_plus_nh_white,high,production gain (subtracted),-0.0000,-0
 accrual,nh_black_rough,high,income taxes,-183.7848,-4381
 accrual,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633
 accrual,nh_black_rough,high,"sales, excise, customs, fees",-123.2033,-2937
 accrual,nh_black_rough,high,"capital, property, production taxes",-15.9766,-381
-accrual,nh_black_rough,high,Social Security,137.0818,3267
-accrual,nh_black_rough,high,Medicare,128.1262,3054
+accrual,nh_black_rough,high,Social Security,134.6255,3209
+accrual,nh_black_rough,high,Medicare,127.8455,3047
 accrual,nh_black_rough,high,Medicaid,181.2461,4320
-accrual,nh_black_rough,high,schools and colleges,172.9617,4123
-accrual,nh_black_rough,high,"police, courts, prisons",105.8914,2524
-accrual,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.1085,3912
+accrual,nh_black_rough,high,schools and colleges,173.9840,4147
+accrual,nh_black_rough,high,"police, courts, prisons",106.3305,2534
+accrual,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914
 accrual,nh_black_rough,high,veterans and military medical,41.5391,990
-accrual,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",105.8122,2522
+accrual,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",104.2367,2485
 accrual,nh_black_rough,high,capital return,58.5882,1396
 accrual,nh_black_rough,high,production gain (subtracted),-0.0000,-0
 accrual,mexican_origin_engine_identified,high,income taxes,-126.6123,-3188
 accrual,mexican_origin_engine_identified,high,payroll taxes and Medicare premiums,-151.6583,-3819
 accrual,mexican_origin_engine_identified,high,"sales, excise, customs, fees",-108.4545,-2731
 accrual,mexican_origin_engine_identified,high,"capital, property, production taxes",-23.2662,-586
-accrual,mexican_origin_engine_identified,high,Social Security,103.3238,2602
-accrual,mexican_origin_engine_identified,high,Medicare,73.8932,1861
+accrual,mexican_origin_engine_identified,high,Social Security,101.2004,2548
+accrual,mexican_origin_engine_identified,high,Medicare,73.5389,1852
 accrual,mexican_origin_engine_identified,high,Medicaid,119.7361,3015
-accrual,mexican_origin_engine_identified,high,schools and colleges,207.5668,5227
-accrual,mexican_origin_engine_identified,high,"police, courts, prisons",76.0678,1915
-accrual,mexican_origin_engine_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",109.8153,2765
+accrual,mexican_origin_engine_identified,high,schools and colleges,204.0819,5139
+accrual,mexican_origin_engine_identified,high,"police, courts, prisons",76.3428,1922
+accrual,mexican_origin_engine_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",109.8898,2767
 accrual,mexican_origin_engine_identified,high,veterans and military medical,11.6422,293
-accrual,mexican_origin_engine_identified,high,"per-head lines: government, defense, interest, roads, other",92.9818,2341
-accrual,mexican_origin_engine_identified,high,capital return,57.1733,1440
+accrual,mexican_origin_engine_identified,high,"per-head lines: government, defense, interest, roads, other",97.0770,2444
+accrual,mexican_origin_engine_identified,high,capital return,56.1709,1414
 accrual,mexican_origin_engine_identified,high,production gain (subtracted),-7.6832,-193
 accrual,mexican_origin_rough_identified,high,income taxes,-135.3272,-3408
 accrual,mexican_origin_rough_identified,high,payroll taxes and Medicare premiums,-163.4670,-4116
 accrual,mexican_origin_rough_identified,high,"sales, excise, customs, fees",-107.7436,-2713
 accrual,mexican_origin_rough_identified,high,"capital, property, production taxes",-21.8056,-549
-accrual,mexican_origin_rough_identified,high,Social Security,111.7074,2813
-accrual,mexican_origin_rough_identified,high,Medicare,78.7966,1984
+accrual,mexican_origin_rough_identified,high,Social Security,109.4119,2755
+accrual,mexican_origin_rough_identified,high,Medicare,78.4000,1974
 accrual,mexican_origin_rough_identified,high,Medicaid,117.7434,2965
-accrual,mexican_origin_rough_identified,high,schools and colleges,197.1985,4966
-accrual,mexican_origin_rough_identified,high,"police, courts, prisons",76.3594,1923
-accrual,mexican_origin_rough_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",113.5466,2859
+accrual,mexican_origin_rough_identified,high,schools and colleges,199.1126,5014
+accrual,mexican_origin_rough_identified,high,"police, courts, prisons",76.6344,1930
+accrual,mexican_origin_rough_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",113.6116,2861
 accrual,mexican_origin_rough_identified,high,veterans and military medical,11.5868,292
-accrual,mexican_origin_rough_identified,high,"per-head lines: government, defense, interest, roads, other",96.9397,2441
+accrual,mexican_origin_rough_identified,high,"per-head lines: government, defense, interest, roads, other",97.1669,2447
 accrual,mexican_origin_rough_identified,high,capital return,56.2616,1417
 accrual,mexican_origin_rough_identified,high,production gain (subtracted),-7.6832,-193
-cash,mexican_origin_engine,low,income taxes,-158.7560,-3713
-cash,mexican_origin_engine,low,payroll taxes and Medicare premiums,-175.7093,-4110
-cash,mexican_origin_engine,low,"sales, excise, customs, fees",-118.3708,-2769
-cash,mexican_origin_engine,low,"capital, property, production taxes",-25.4097,-594
-cash,mexican_origin_engine,low,Social Security,62.4928,1462
-cash,mexican_origin_engine,low,Medicare,56.1548,1313
-cash,mexican_origin_engine,low,Medicaid,126.0906,2949
-cash,mexican_origin_engine,low,schools and colleges,217.8924,5097
-cash,mexican_origin_engine,low,"police, courts, prisons",81.0201,1895
-cash,mexican_origin_engine,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.8604,2921
-cash,mexican_origin_engine,low,veterans and military medical,15.6471,366
-cash,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784
-cash,mexican_origin_engine,low,capital return,37.1478,869
-cash,mexican_origin_engine,low,production gain (subtracted),-11.9475,-279
-cash,mexican_origin_rough,low,income taxes,-155.6451,-3641
-cash,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.7421,-4157
-cash,mexican_origin_rough,low,"sales, excise, customs, fees",-117.6441,-2752
-cash,mexican_origin_rough,low,"capital, property, production taxes",-23.9491,-560
-cash,mexican_origin_rough,low,Social Security,65.3156,1528
-cash,mexican_origin_rough,low,Medicare,56.1548,1313
-cash,mexican_origin_rough,low,Medicaid,126.0906,2949
-cash,mexican_origin_rough,low,schools and colleges,213.6803,4998
-cash,mexican_origin_rough,low,"police, courts, prisons",81.3117,1902
-cash,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",121.9527,2853
-cash,mexican_origin_rough,low,veterans and military medical,13.1742,308
-cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.9409,1870
-cash,mexican_origin_rough,low,capital return,36.8871,863
-cash,mexican_origin_rough,low,production gain (subtracted),-11.9475,-279
+cash,mexican_origin_engine,low,income taxes,-158.1669,-3700
+cash,mexican_origin_engine,low,payroll taxes and Medicare premiums,-175.5467,-4106
+cash,mexican_origin_engine,low,"sales, excise, customs, fees",-118.1318,-2763
+cash,mexican_origin_engine,low,"capital, property, production taxes",-25.3139,-592
+cash,mexican_origin_engine,low,Social Security,61.1759,1431
+cash,mexican_origin_engine,low,Medicare,55.0726,1288
+cash,mexican_origin_engine,low,Medicaid,126.1895,2952
+cash,mexican_origin_engine,low,schools and colleges,215.8716,5049
+cash,mexican_origin_engine,low,"police, courts, prisons",81.1765,1899
+cash,mexican_origin_engine,low,"SNAP, SSI, housing, cash aid, credits, other welfare",125.1763,2928
+cash,mexican_origin_engine,low,veterans and military medical,15.4978,363
+cash,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",79.7266,1865
+cash,mexican_origin_engine,low,capital return,36.5816,856
+cash,mexican_origin_engine,low,production gain (subtracted),-11.9096,-279
+cash,mexican_origin_rough,low,income taxes,-155.0559,-3627
+cash,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.5795,-4154
+cash,mexican_origin_rough,low,"sales, excise, customs, fees",-117.4051,-2746
+cash,mexican_origin_rough,low,"capital, property, production taxes",-23.8533,-558
+cash,mexican_origin_rough,low,Social Security,63.9987,1497
+cash,mexican_origin_rough,low,Medicare,55.0726,1288
+cash,mexican_origin_rough,low,Medicaid,126.1895,2952
+cash,mexican_origin_rough,low,schools and colleges,217.0850,5078
+cash,mexican_origin_rough,low,"police, courts, prisons",81.4681,1906
+cash,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",122.2548,2860
+cash,mexican_origin_rough,low,veterans and military medical,13.0249,305
+cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.7015,1864
+cash,mexican_origin_rough,low,capital return,36.9488,864
+cash,mexican_origin_rough,low,production gain (subtracted),-11.9096,-279
 cash,mexican_origin_rough_white_ages,low,income taxes,-143.0664,-3603
 cash,mexican_origin_rough_white_ages,low,payroll taxes and Medicare premiums,-180.5404,-4546
 cash,mexican_origin_rough_white_ages,low,"sales, excise, customs, fees",-114.4425,-2882
@@ -538,12 +538,12 @@ cash,mexican_origin_rough_white_ages,low,"capital, property, production taxes",-
 cash,mexican_origin_rough_white_ages,low,Social Security,155.7345,3922
 cash,mexican_origin_rough_white_ages,low,Medicare,153.5680,3867
 cash,mexican_origin_rough_white_ages,low,Medicaid,164.1204,4133
-cash,mexican_origin_rough_white_ages,low,schools and colleges,124.4437,3134
-cash,mexican_origin_rough_white_ages,low,"police, courts, prisons",70.3984,1773
-cash,mexican_origin_rough_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",111.7010,2813
+cash,mexican_origin_rough_white_ages,low,schools and colleges,125.8624,3169
+cash,mexican_origin_rough_white_ages,low,"police, courts, prisons",70.6492,1779
+cash,mexican_origin_rough_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",111.7639,2814
 cash,mexican_origin_rough_white_ages,low,veterans and military medical,17.9510,452
-cash,mexican_origin_rough_white_ages,low,"per-head lines: government, defense, interest, roads, other",80.9614,2039
-cash,mexican_origin_rough_white_ages,low,capital return,30.2063,761
+cash,mexican_origin_rough_white_ages,low,"per-head lines: government, defense, interest, roads, other",80.0025,2015
+cash,mexican_origin_rough_white_ages,low,capital return,30.2299,761
 cash,mexican_origin_rough_white_ages,low,production gain (subtracted),-12.1151,-305
 cash,indian_origin,low,income taxes,-91.4452,-15041
 cash,indian_origin,low,payroll taxes and Medicare premiums,-56.6875,-9324
@@ -552,11 +552,11 @@ cash,indian_origin,low,"capital, property, production taxes",-9.2075,-1514
 cash,indian_origin,low,Social Security,7.9026,1300
 cash,indian_origin,low,Medicare,13.9778,2299
 cash,indian_origin,low,Medicaid,6.0818,1000
-cash,indian_origin,low,schools and colleges,28.4404,4678
-cash,indian_origin,low,"police, courts, prisons",5.0849,836
-cash,indian_origin,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6690,768
+cash,indian_origin,low,schools and colleges,28.8377,4743
+cash,indian_origin,low,"police, courts, prisons",5.1036,839
+cash,indian_origin,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768
 cash,indian_origin,low,veterans and military medical,0.5581,92
-cash,indian_origin,low,"per-head lines: government, defense, interest, roads, other",9.8508,1620
+cash,indian_origin,low,"per-head lines: government, defense, interest, roads, other",9.7791,1608
 cash,indian_origin,low,capital return,5.0356,828
 cash,indian_origin,low,production gain (subtracted),-0.0000,-0
 cash,indian_origin_white_ages,low,income taxes,-87.3585,-14369
@@ -566,11 +566,11 @@ cash,indian_origin_white_ages,low,"capital, property, production taxes",-9.8504,
 cash,indian_origin_white_ages,low,Social Security,21.0861,3468
 cash,indian_origin_white_ages,low,Medicare,26.0270,4281
 cash,indian_origin_white_ages,low,Medicaid,10.5582,1737
-cash,indian_origin_white_ages,low,schools and colleges,23.7220,3902
-cash,indian_origin_white_ages,low,"police, courts, prisons",5.0376,829
-cash,indian_origin_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7647,784
+cash,indian_origin_white_ages,low,schools and colleges,24.0549,3957
+cash,indian_origin_white_ages,low,"police, courts, prisons",5.0561,832
+cash,indian_origin_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784
 cash,indian_origin_white_ages,low,veterans and military medical,1.1738,193
-cash,indian_origin_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.9865,1643
+cash,indian_origin_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.7346,1601
 cash,indian_origin_white_ages,low,capital return,4.6735,769
 cash,indian_origin_white_ages,low,production gain (subtracted),-0.0000,-0
 cash,india_born,low,income taxes,-60.4952,-14129
@@ -580,11 +580,11 @@ cash,india_born,low,"capital, property, production taxes",-6.1189,-1429
 cash,india_born,low,Social Security,7.3934,1727
 cash,india_born,low,Medicare,14.5221,3392
 cash,india_born,low,Medicaid,4.5798,1070
-cash,india_born,low,schools and colleges,12.2592,2863
-cash,india_born,low,"police, courts, prisons",3.6350,849
-cash,india_born,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6082,843
+cash,india_born,low,schools and colleges,12.4760,2914
+cash,india_born,low,"police, courts, prisons",3.6485,852
+cash,india_born,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6091,843
 cash,india_born,low,veterans and military medical,0.4034,94
-cash,india_born,low,"per-head lines: government, defense, interest, roads, other",7.3519,1717
+cash,india_born,low,"per-head lines: government, defense, interest, roads, other",7.2792,1700
 cash,india_born,low,capital return,3.1801,743
 cash,india_born,low,production gain (subtracted),-0.0000,-0
 cash,india_born_white_ages,low,income taxes,-54.1225,-12640
@@ -594,11 +594,11 @@ cash,india_born_white_ages,low,"capital, property, production taxes",-6.2299,-14
 cash,india_born_white_ages,low,Social Security,15.4560,3610
 cash,india_born_white_ages,low,Medicare,18.3303,4281
 cash,india_born_white_ages,low,Medicaid,7.4359,1737
-cash,india_born_white_ages,low,schools and colleges,16.8050,3925
-cash,india_born_white_ages,low,"police, courts, prisons",3.5723,834
-cash,india_born_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7629,879
+cash,india_born_white_ages,low,schools and colleges,17.0439,3981
+cash,india_born_white_ages,low,"police, courts, prisons",3.5856,837
+cash,india_born_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7642,879
 cash,india_born_white_ages,low,veterans and military medical,0.6216,145
-cash,india_born_white_ages,low,"per-head lines: government, defense, interest, roads, other",7.0647,1650
+cash,india_born_white_ages,low,"per-head lines: government, defense, interest, roads, other",6.8789,1607
 cash,india_born_white_ages,low,capital return,3.3062,772
 cash,india_born_white_ages,low,production gain (subtracted),-0.0000,-0
 cash,indian_origin_g2_pooled,low,income taxes,-90.5971,-14902
@@ -608,11 +608,11 @@ cash,indian_origin_g2_pooled,low,"capital, property, production taxes",-9.2075,-
 cash,indian_origin_g2_pooled,low,Social Security,7.9026,1300
 cash,indian_origin_g2_pooled,low,Medicare,13.9778,2299
 cash,indian_origin_g2_pooled,low,Medicaid,6.0818,1000
-cash,indian_origin_g2_pooled,low,schools and colleges,28.4404,4678
-cash,indian_origin_g2_pooled,low,"police, courts, prisons",5.0849,836
-cash,indian_origin_g2_pooled,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6690,768
+cash,indian_origin_g2_pooled,low,schools and colleges,28.8377,4743
+cash,indian_origin_g2_pooled,low,"police, courts, prisons",5.1036,839
+cash,indian_origin_g2_pooled,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768
 cash,indian_origin_g2_pooled,low,veterans and military medical,0.5581,92
-cash,indian_origin_g2_pooled,low,"per-head lines: government, defense, interest, roads, other",9.8531,1621
+cash,indian_origin_g2_pooled,low,"per-head lines: government, defense, interest, roads, other",9.7814,1609
 cash,indian_origin_g2_pooled,low,capital return,5.0356,828
 cash,indian_origin_g2_pooled,low,production gain (subtracted),-0.0000,-0
 cash,indian_origin_g2_pooled_white_ages,low,income taxes,-86.6834,-14258
@@ -622,11 +622,11 @@ cash,indian_origin_g2_pooled_white_ages,low,"capital, property, production taxes
 cash,indian_origin_g2_pooled_white_ages,low,Social Security,21.0861,3468
 cash,indian_origin_g2_pooled_white_ages,low,Medicare,26.0270,4281
 cash,indian_origin_g2_pooled_white_ages,low,Medicaid,10.5582,1737
-cash,indian_origin_g2_pooled_white_ages,low,schools and colleges,23.7220,3902
-cash,indian_origin_g2_pooled_white_ages,low,"police, courts, prisons",5.0376,829
-cash,indian_origin_g2_pooled_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7647,784
+cash,indian_origin_g2_pooled_white_ages,low,schools and colleges,24.0549,3957
+cash,indian_origin_g2_pooled_white_ages,low,"police, courts, prisons",5.0561,832
+cash,indian_origin_g2_pooled_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784
 cash,indian_origin_g2_pooled_white_ages,low,veterans and military medical,1.1738,193
-cash,indian_origin_g2_pooled_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.9882,1643
+cash,indian_origin_g2_pooled_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.7364,1601
 cash,indian_origin_g2_pooled_white_ages,low,capital return,4.6735,769
 cash,indian_origin_g2_pooled_white_ages,low,production gain (subtracted),-0.0000,-0
 cash,india_born_self_employed_adults,low,income taxes,-2.7001,-16323
@@ -637,10 +637,10 @@ cash,india_born_self_employed_adults,low,Social Security,0.3063,1852
 cash,india_born_self_employed_adults,low,Medicare,0.5610,3392
 cash,india_born_self_employed_adults,low,Medicaid,0.1805,1091
 cash,india_born_self_employed_adults,low,schools and colleges,0.0000,0
-cash,india_born_self_employed_adults,low,"police, courts, prisons",0.1405,849
+cash,india_born_self_employed_adults,low,"police, courts, prisons",0.1410,852
 cash,india_born_self_employed_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",0.0880,532
 cash,india_born_self_employed_adults,low,veterans and military medical,0.0368,222
-cash,india_born_self_employed_adults,low,"per-head lines: government, defense, interest, roads, other",0.2958,1788
+cash,india_born_self_employed_adults,low,"per-head lines: government, defense, interest, roads, other",0.2931,1772
 cash,india_born_self_employed_adults,low,capital return,0.0944,571
 cash,india_born_self_employed_adults,low,production gain (subtracted),-0.0000,-0
 cash,india_born_wage_salary_adults,low,income taxes,-47.1816,-17602
@@ -650,11 +650,11 @@ cash,india_born_wage_salary_adults,low,"capital, property, production taxes",-4.
 cash,india_born_wage_salary_adults,low,Social Security,0.8367,312
 cash,india_born_wage_salary_adults,low,Medicare,9.0912,3392
 cash,india_born_wage_salary_adults,low,Medicaid,2.0301,757
-cash,india_born_wage_salary_adults,low,schools and colleges,2.8639,1068
-cash,india_born_wage_salary_adults,low,"police, courts, prisons",2.2789,850
-cash,india_born_wage_salary_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6190,604
+cash,india_born_wage_salary_adults,low,schools and colleges,2.9407,1097
+cash,india_born_wage_salary_adults,low,"police, courts, prisons",2.2874,853
+cash,india_born_wage_salary_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6193,604
 cash,india_born_wage_salary_adults,low,veterans and military medical,0.3656,136
-cash,india_born_wage_salary_adults,low,"per-head lines: government, defense, interest, roads, other",4.7599,1776
+cash,india_born_wage_salary_adults,low,"per-head lines: government, defense, interest, roads, other",4.7699,1779
 cash,india_born_wage_salary_adults,low,capital return,1.7535,654
 cash,india_born_wage_salary_adults,low,production gain (subtracted),-0.0000,-0
 cash,india_born_other,low,income taxes,-10.6136,-7392
@@ -664,11 +664,11 @@ cash,india_born_other,low,"capital, property, production taxes",-1.4474,-1008
 cash,india_born_other,low,Social Security,6.2504,4353
 cash,india_born_other,low,Medicare,4.8699,3392
 cash,india_born_other,low,Medicaid,2.3692,1650
-cash,india_born_other,low,schools and colleges,9.3953,6543
-cash,india_born_other,low,"police, courts, prisons",1.2156,847
-cash,india_born_other,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9011,1324
+cash,india_born_other,low,schools and colleges,9.5354,6641
+cash,india_born_other,low,"police, courts, prisons",1.2202,850
+cash,india_born_other,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9018,1325
 cash,india_born_other,low,veterans and military medical,0.0010,1
-cash,india_born_other,low,"per-head lines: government, defense, interest, roads, other",2.2961,1599
+cash,india_born_other,low,"per-head lines: government, defense, interest, roads, other",2.2162,1543
 cash,india_born_other,low,capital return,1.3322,928
 cash,india_born_other,low,production gain (subtracted),-0.0000,-0
 cash,indian_origin_self_employed_households,low,income taxes,-7.3989,-20408
@@ -678,11 +678,11 @@ cash,indian_origin_self_employed_households,low,"capital, property, production t
 cash,indian_origin_self_employed_households,low,Social Security,0.1549,427
 cash,indian_origin_self_employed_households,low,Medicare,0.8335,2299
 cash,indian_origin_self_employed_households,low,Medicaid,0.3443,950
-cash,indian_origin_self_employed_households,low,schools and colleges,1.4827,4090
-cash,indian_origin_self_employed_households,low,"police, courts, prisons",0.3293,908
+cash,indian_origin_self_employed_households,low,schools and colleges,1.5001,4138
+cash,indian_origin_self_employed_households,low,"police, courts, prisons",0.3304,911
 cash,indian_origin_self_employed_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",0.1952,539
 cash,indian_origin_self_employed_households,low,veterans and military medical,0.0369,102
-cash,indian_origin_self_employed_households,low,"per-head lines: government, defense, interest, roads, other",0.5567,1535
+cash,indian_origin_self_employed_households,low,"per-head lines: government, defense, interest, roads, other",0.5567,1536
 cash,indian_origin_self_employed_households,low,capital return,0.2823,779
 cash,indian_origin_self_employed_households,low,production gain (subtracted),-0.0000,-0
 cash,indian_origin_wage_salary_households,low,income taxes,-71.0388,-15041
@@ -692,11 +692,11 @@ cash,indian_origin_wage_salary_households,low,"capital, property, production tax
 cash,indian_origin_wage_salary_households,low,Social Security,2.4633,522
 cash,indian_origin_wage_salary_households,low,Medicare,10.8590,2299
 cash,indian_origin_wage_salary_households,low,Medicaid,4.1516,879
-cash,indian_origin_wage_salary_households,low,schools and colleges,21.9325,4644
-cash,indian_origin_wage_salary_households,low,"police, courts, prisons",3.9169,829
-cash,indian_origin_wage_salary_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1003,656
+cash,indian_origin_wage_salary_households,low,schools and colleges,22.2151,4704
+cash,indian_origin_wage_salary_households,low,"police, courts, prisons",3.9314,832
+cash,indian_origin_wage_salary_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1010,657
 cash,indian_origin_wage_salary_households,low,veterans and military medical,0.3660,77
-cash,indian_origin_wage_salary_households,low,"per-head lines: government, defense, interest, roads, other",7.4403,1575
+cash,indian_origin_wage_salary_households,low,"per-head lines: government, defense, interest, roads, other",7.4348,1574
 cash,indian_origin_wage_salary_households,low,capital return,3.8823,822
 cash,indian_origin_wage_salary_households,low,production gain (subtracted),-0.0000,-0
 cash,A1_third_plus_nh_white,low,income taxes,-373.6866,-8741
@@ -706,11 +706,11 @@ cash,A1_third_plus_nh_white,low,"capital, property, production taxes",-50.5292,-
 cash,A1_third_plus_nh_white,low,Social Security,251.4440,5881
 cash,A1_third_plus_nh_white,low,Medicare,183.0944,4283
 cash,A1_third_plus_nh_white,low,Medicaid,99.7694,2334
-cash,A1_third_plus_nh_white,low,schools and colleges,134.6162,3149
-cash,A1_third_plus_nh_white,low,"police, courts, prisons",53.9862,1263
-cash,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",71.2672,1667
+cash,A1_third_plus_nh_white,low,schools and colleges,135.5196,3170
+cash,A1_third_plus_nh_white,low,"police, courts, prisons",54.2095,1268
+cash,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",71.3051,1668
 cash,A1_third_plus_nh_white,low,veterans and military medical,35.7731,837
-cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.3985,2372
+cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",98.3563,2301
 cash,A1_third_plus_nh_white,low,capital return,34.1392,799
 cash,A1_third_plus_nh_white,low,production gain (subtracted),-0.0000,-0
 cash,nh_black_rough,low,income taxes,-189.3786,-4514
@@ -720,11 +720,11 @@ cash,nh_black_rough,low,"capital, property, production taxes",-15.9766,-381
 cash,nh_black_rough,low,Social Security,141.5057,3373
 cash,nh_black_rough,low,Medicare,113.0022,2693
 cash,nh_black_rough,low,Medicaid,181.2461,4320
-cash,nh_black_rough,low,schools and colleges,172.9617,4123
-cash,nh_black_rough,low,"police, courts, prisons",105.8914,2524
-cash,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.1085,3912
+cash,nh_black_rough,low,schools and colleges,173.9840,4147
+cash,nh_black_rough,low,"police, courts, prisons",106.3305,2534
+cash,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914
 cash,nh_black_rough,low,veterans and military medical,41.5391,990
-cash,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",81.4405,1941
+cash,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",79.7973,1902
 cash,nh_black_rough,low,capital return,35.6347,849
 cash,nh_black_rough,low,production gain (subtracted),-0.0000,-0
 cash,mexican_origin_engine_identified,low,income taxes,-140.6335,-3541
@@ -734,12 +734,12 @@ cash,mexican_origin_engine_identified,low,"capital, property, production taxes",
 cash,mexican_origin_engine_identified,low,Social Security,56.8599,1432
 cash,mexican_origin_engine_identified,low,Medicare,52.4192,1320
 cash,mexican_origin_engine_identified,low,Medicaid,117.7434,2965
-cash,mexican_origin_engine_identified,low,schools and colleges,201.3871,5071
-cash,mexican_origin_engine_identified,low,"police, courts, prisons",76.0678,1915
-cash,mexican_origin_engine_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",116.4544,2932
+cash,mexican_origin_engine_identified,low,schools and colleges,198.0325,4987
+cash,mexican_origin_engine_identified,low,"police, courts, prisons",76.3428,1922
+cash,mexican_origin_engine_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",116.5331,2934
 cash,mexican_origin_engine_identified,low,veterans and military medical,14.0598,354
-cash,mexican_origin_engine_identified,low,"per-head lines: government, defense, interest, roads, other",70.4624,1774
-cash,mexican_origin_engine_identified,low,capital return,34.4329,867
+cash,mexican_origin_engine_identified,low,"per-head lines: government, defense, interest, roads, other",74.3306,1872
+cash,mexican_origin_engine_identified,low,capital return,33.8049,851
 cash,mexican_origin_engine_identified,low,production gain (subtracted),-11.6799,-294
 cash,mexican_origin_rough_identified,low,income taxes,-137.5225,-3463
 cash,mexican_origin_rough_identified,low,payroll taxes and Medicare premiums,-163.4670,-4116
@@ -748,41 +748,41 @@ cash,mexican_origin_rough_identified,low,"capital, property, production taxes",-
 cash,mexican_origin_rough_identified,low,Social Security,59.6827,1503
 cash,mexican_origin_rough_identified,low,Medicare,52.4192,1320
 cash,mexican_origin_rough_identified,low,Medicaid,117.7434,2965
-cash,mexican_origin_rough_identified,low,schools and colleges,197.1751,4965
-cash,mexican_origin_rough_identified,low,"police, courts, prisons",76.3594,1923
-cash,mexican_origin_rough_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",113.5466,2859
+cash,mexican_origin_rough_identified,low,schools and colleges,199.2460,5017
+cash,mexican_origin_rough_identified,low,"police, courts, prisons",76.6344,1930
+cash,mexican_origin_rough_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",113.6116,2861
 cash,mexican_origin_rough_identified,low,veterans and military medical,11.5868,292
-cash,mexican_origin_rough_identified,low,"per-head lines: government, defense, interest, roads, other",74.1396,1867
+cash,mexican_origin_rough_identified,low,"per-head lines: government, defense, interest, roads, other",74.3054,1871
 cash,mexican_origin_rough_identified,low,capital return,34.1721,860
 cash,mexican_origin_rough_identified,low,production gain (subtracted),-11.6799,-294
-cash,mexican_origin_engine,high,income taxes,-143.9005,-3366
-cash,mexican_origin_engine,high,payroll taxes and Medicare premiums,-163.8040,-3831
-cash,mexican_origin_engine,high,"sales, excise, customs, fees",-118.3541,-2768
-cash,mexican_origin_engine,high,"capital, property, production taxes",-25.4012,-594
-cash,mexican_origin_engine,high,Social Security,58.6397,1372
-cash,mexican_origin_engine,high,Medicare,56.1548,1313
-cash,mexican_origin_engine,high,Medicaid,128.1094,2997
-cash,mexican_origin_engine,high,schools and colleges,226.4565,5297
-cash,mexican_origin_engine,high,"police, courts, prisons",81.0201,1895
-cash,mexican_origin_engine,high,"SNAP, SSI, housing, cash aid, credits, other welfare",116.9602,2736
-cash,mexican_origin_engine,high,veterans and military medical,12.9788,304
-cash,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352
-cash,mexican_origin_engine,high,capital return,61.8578,1447
-cash,mexican_origin_engine,high,production gain (subtracted),-7.8593,-184
-cash,mexican_origin_rough,high,income taxes,-152.9938,-3579
-cash,mexican_origin_rough,high,payroll taxes and Medicare premiums,-175.6127,-4108
-cash,mexican_origin_rough,high,"sales, excise, customs, fees",-117.6432,-2752
-cash,mexican_origin_rough,high,"capital, property, production taxes",-23.9406,-560
-cash,mexican_origin_rough,high,Social Security,64.7312,1514
-cash,mexican_origin_rough,high,Medicare,56.1548,1313
-cash,mexican_origin_rough,high,Medicaid,126.1167,2950
-cash,mexican_origin_rough,high,schools and colleges,216.0881,5054
-cash,mexican_origin_rough,high,"police, courts, prisons",81.3117,1902
-cash,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",120.6916,2823
-cash,mexican_origin_rough,high,veterans and military medical,12.9235,302
-cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.5090,2445
-cash,mexican_origin_rough,high,capital return,60.9461,1426
-cash,mexican_origin_rough,high,production gain (subtracted),-7.8593,-184
+cash,mexican_origin_engine,high,income taxes,-142.5488,-3334
+cash,mexican_origin_engine,high,payroll taxes and Medicare premiums,-162.8558,-3809
+cash,mexican_origin_engine,high,"sales, excise, customs, fees",-118.1028,-2762
+cash,mexican_origin_engine,high,"capital, property, production taxes",-25.2989,-592
+cash,mexican_origin_engine,high,Social Security,57.2237,1338
+cash,mexican_origin_engine,high,Medicare,55.0726,1288
+cash,mexican_origin_engine,high,Medicaid,128.2086,2999
+cash,mexican_origin_engine,high,schools and colleges,225.5747,5276
+cash,mexican_origin_engine,high,"police, courts, prisons",81.1765,1899
+cash,mexican_origin_engine,high,"SNAP, SSI, housing, cash aid, credits, other welfare",116.7234,2730
+cash,mexican_origin_engine,high,veterans and military medical,12.7280,298
+cash,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",104.2330,2438
+cash,mexican_origin_engine,high,capital return,61.0643,1428
+cash,mexican_origin_engine,high,production gain (subtracted),-7.8344,-183
+cash,mexican_origin_rough,high,income taxes,-151.6421,-3547
+cash,mexican_origin_rough,high,payroll taxes and Medicare premiums,-174.6645,-4086
+cash,mexican_origin_rough,high,"sales, excise, customs, fees",-117.3919,-2746
+cash,mexican_origin_rough,high,"capital, property, production taxes",-23.8383,-558
+cash,mexican_origin_rough,high,Social Security,63.3152,1481
+cash,mexican_origin_rough,high,Medicare,55.0726,1288
+cash,mexican_origin_rough,high,Medicaid,126.2160,2952
+cash,mexican_origin_rough,high,schools and colleges,220.6054,5160
+cash,mexican_origin_rough,high,"police, courts, prisons",81.4681,1906
+cash,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",120.4451,2817
+cash,mexican_origin_rough,high,veterans and military medical,12.6727,296
+cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.3230,2440
+cash,mexican_origin_rough,high,capital return,61.1549,1430
+cash,mexican_origin_rough,high,production gain (subtracted),-7.8344,-183
 cash,mexican_origin_rough_white_ages,high,income taxes,-143.0664,-3603
 cash,mexican_origin_rough_white_ages,high,payroll taxes and Medicare premiums,-180.5404,-4546
 cash,mexican_origin_rough_white_ages,high,"sales, excise, customs, fees",-114.4425,-2882
@@ -790,12 +790,12 @@ cash,mexican_origin_rough_white_ages,high,"capital, property, production taxes",
 cash,mexican_origin_rough_white_ages,high,Social Security,155.7345,3922
 cash,mexican_origin_rough_white_ages,high,Medicare,153.5680,3867
 cash,mexican_origin_rough_white_ages,high,Medicaid,164.1204,4133
-cash,mexican_origin_rough_white_ages,high,schools and colleges,124.4866,3135
-cash,mexican_origin_rough_white_ages,high,"police, courts, prisons",70.3984,1773
-cash,mexican_origin_rough_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",111.7010,2813
+cash,mexican_origin_rough_white_ages,high,schools and colleges,125.8137,3168
+cash,mexican_origin_rough_white_ages,high,"police, courts, prisons",70.6492,1779
+cash,mexican_origin_rough_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",111.7639,2814
 cash,mexican_origin_rough_white_ages,high,veterans and military medical,17.9510,452
-cash,mexican_origin_rough_white_ages,high,"per-head lines: government, defense, interest, roads, other",104.1809,2623
-cash,mexican_origin_rough_white_ages,high,capital return,50.4726,1271
+cash,mexican_origin_rough_white_ages,high,"per-head lines: government, defense, interest, roads, other",103.2843,2601
+cash,mexican_origin_rough_white_ages,high,capital return,50.5080,1272
 cash,mexican_origin_rough_white_ages,high,production gain (subtracted),-7.9696,-201
 cash,indian_origin,high,income taxes,-91.4452,-15041
 cash,indian_origin,high,payroll taxes and Medicare premiums,-56.6875,-9324
@@ -804,11 +804,11 @@ cash,indian_origin,high,"capital, property, production taxes",-9.2075,-1514
 cash,indian_origin,high,Social Security,7.9026,1300
 cash,indian_origin,high,Medicare,13.9778,2299
 cash,indian_origin,high,Medicaid,6.0818,1000
-cash,indian_origin,high,schools and colleges,28.4404,4678
-cash,indian_origin,high,"police, courts, prisons",5.0849,836
-cash,indian_origin,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6690,768
+cash,indian_origin,high,schools and colleges,28.8377,4743
+cash,indian_origin,high,"police, courts, prisons",5.1036,839
+cash,indian_origin,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768
 cash,indian_origin,high,veterans and military medical,0.5581,92
-cash,indian_origin,high,"per-head lines: government, defense, interest, roads, other",14.7702,2429
+cash,indian_origin,high,"per-head lines: government, defense, interest, roads, other",14.7145,2420
 cash,indian_origin,high,capital return,8.4101,1383
 cash,indian_origin,high,production gain (subtracted),-0.0000,-0
 cash,indian_origin_white_ages,high,income taxes,-87.3585,-14369
@@ -818,11 +818,11 @@ cash,indian_origin_white_ages,high,"capital, property, production taxes",-9.8504
 cash,indian_origin_white_ages,high,Social Security,21.0861,3468
 cash,indian_origin_white_ages,high,Medicare,26.0270,4281
 cash,indian_origin_white_ages,high,Medicaid,10.5582,1737
-cash,indian_origin_white_ages,high,schools and colleges,23.7220,3902
-cash,indian_origin_white_ages,high,"police, courts, prisons",5.0376,829
-cash,indian_origin_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7647,784
+cash,indian_origin_white_ages,high,schools and colleges,24.0549,3957
+cash,indian_origin_white_ages,high,"police, courts, prisons",5.0561,832
+cash,indian_origin_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784
 cash,indian_origin_white_ages,high,veterans and military medical,1.1738,193
-cash,indian_origin_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.6489,2410
+cash,indian_origin_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.4121,2371
 cash,indian_origin_white_ages,high,capital return,7.8294,1288
 cash,indian_origin_white_ages,high,production gain (subtracted),-0.0000,-0
 cash,india_born,high,income taxes,-60.4952,-14129
@@ -832,11 +832,11 @@ cash,india_born,high,"capital, property, production taxes",-6.1189,-1429
 cash,india_born,high,Social Security,7.3934,1727
 cash,india_born,high,Medicare,14.5221,3392
 cash,india_born,high,Medicaid,4.5798,1070
-cash,india_born,high,schools and colleges,12.2592,2863
-cash,india_born,high,"police, courts, prisons",3.6350,849
-cash,india_born,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6082,843
+cash,india_born,high,schools and colleges,12.4760,2914
+cash,india_born,high,"police, courts, prisons",3.6485,852
+cash,india_born,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6091,843
 cash,india_born,high,veterans and military medical,0.4034,94
-cash,india_born,high,"per-head lines: government, defense, interest, roads, other",11.1949,2615
+cash,india_born,high,"per-head lines: government, defense, interest, roads, other",11.1350,2601
 cash,india_born,high,capital return,5.4266,1267
 cash,india_born,high,production gain (subtracted),-0.0000,-0
 cash,india_born_white_ages,high,income taxes,-54.1225,-12640
@@ -846,11 +846,11 @@ cash,india_born_white_ages,high,"capital, property, production taxes",-6.2299,-1
 cash,india_born_white_ages,high,Social Security,15.4560,3610
 cash,india_born_white_ages,high,Medicare,18.3303,4281
 cash,india_born_white_ages,high,Medicaid,7.4359,1737
-cash,india_born_white_ages,high,schools and colleges,16.8050,3925
-cash,india_born_white_ages,high,"police, courts, prisons",3.5723,834
-cash,india_born_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7629,879
+cash,india_born_white_ages,high,schools and colleges,17.0439,3981
+cash,india_born_white_ages,high,"police, courts, prisons",3.5856,837
+cash,india_born_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7642,879
 cash,india_born_white_ages,high,veterans and military medical,0.6216,145
-cash,india_born_white_ages,high,"per-head lines: government, defense, interest, roads, other",10.3013,2406
+cash,india_born_white_ages,high,"per-head lines: government, defense, interest, roads, other",10.1259,2365
 cash,india_born_white_ages,high,capital return,5.5276,1291
 cash,india_born_white_ages,high,production gain (subtracted),-0.0000,-0
 cash,indian_origin_g2_pooled,high,income taxes,-90.5971,-14902
@@ -860,11 +860,11 @@ cash,indian_origin_g2_pooled,high,"capital, property, production taxes",-9.2075,
 cash,indian_origin_g2_pooled,high,Social Security,7.9026,1300
 cash,indian_origin_g2_pooled,high,Medicare,13.9778,2299
 cash,indian_origin_g2_pooled,high,Medicaid,6.0818,1000
-cash,indian_origin_g2_pooled,high,schools and colleges,28.4404,4678
-cash,indian_origin_g2_pooled,high,"police, courts, prisons",5.0849,836
-cash,indian_origin_g2_pooled,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6690,768
+cash,indian_origin_g2_pooled,high,schools and colleges,28.8377,4743
+cash,indian_origin_g2_pooled,high,"police, courts, prisons",5.1036,839
+cash,indian_origin_g2_pooled,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768
 cash,indian_origin_g2_pooled,high,veterans and military medical,0.5581,92
-cash,indian_origin_g2_pooled,high,"per-head lines: government, defense, interest, roads, other",14.7780,2431
+cash,indian_origin_g2_pooled,high,"per-head lines: government, defense, interest, roads, other",14.7224,2422
 cash,indian_origin_g2_pooled,high,capital return,8.4102,1383
 cash,indian_origin_g2_pooled,high,production gain (subtracted),-0.0000,-0
 cash,indian_origin_g2_pooled_white_ages,high,income taxes,-86.6834,-14258
@@ -874,11 +874,11 @@ cash,indian_origin_g2_pooled_white_ages,high,"capital, property, production taxe
 cash,indian_origin_g2_pooled_white_ages,high,Social Security,21.0861,3468
 cash,indian_origin_g2_pooled_white_ages,high,Medicare,26.0270,4281
 cash,indian_origin_g2_pooled_white_ages,high,Medicaid,10.5582,1737
-cash,indian_origin_g2_pooled_white_ages,high,schools and colleges,23.7220,3902
-cash,indian_origin_g2_pooled_white_ages,high,"police, courts, prisons",5.0376,829
-cash,indian_origin_g2_pooled_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7647,784
+cash,indian_origin_g2_pooled_white_ages,high,schools and colleges,24.0549,3957
+cash,indian_origin_g2_pooled_white_ages,high,"police, courts, prisons",5.0561,832
+cash,indian_origin_g2_pooled_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784
 cash,indian_origin_g2_pooled_white_ages,high,veterans and military medical,1.1738,193
-cash,indian_origin_g2_pooled_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.6550,2411
+cash,indian_origin_g2_pooled_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.4183,2372
 cash,indian_origin_g2_pooled_white_ages,high,capital return,7.8294,1288
 cash,indian_origin_g2_pooled_white_ages,high,production gain (subtracted),-0.0000,-0
 cash,india_born_self_employed_adults,high,income taxes,-2.7001,-16323
@@ -889,10 +889,10 @@ cash,india_born_self_employed_adults,high,Social Security,0.3063,1852
 cash,india_born_self_employed_adults,high,Medicare,0.5610,3392
 cash,india_born_self_employed_adults,high,Medicaid,0.1805,1091
 cash,india_born_self_employed_adults,high,schools and colleges,0.0000,0
-cash,india_born_self_employed_adults,high,"police, courts, prisons",0.1405,849
+cash,india_born_self_employed_adults,high,"police, courts, prisons",0.1410,852
 cash,india_born_self_employed_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",0.0880,532
 cash,india_born_self_employed_adults,high,veterans and military medical,0.0368,222
-cash,india_born_self_employed_adults,high,"per-head lines: government, defense, interest, roads, other",0.4971,3005
+cash,india_born_self_employed_adults,high,"per-head lines: government, defense, interest, roads, other",0.4951,2993
 cash,india_born_self_employed_adults,high,capital return,0.1695,1025
 cash,india_born_self_employed_adults,high,production gain (subtracted),-0.0000,-0
 cash,india_born_wage_salary_adults,high,income taxes,-47.1816,-17602
@@ -902,11 +902,11 @@ cash,india_born_wage_salary_adults,high,"capital, property, production taxes",-4
 cash,india_born_wage_salary_adults,high,Social Security,0.8367,312
 cash,india_born_wage_salary_adults,high,Medicare,9.0912,3392
 cash,india_born_wage_salary_adults,high,Medicaid,2.0301,757
-cash,india_born_wage_salary_adults,high,schools and colleges,2.8639,1068
-cash,india_born_wage_salary_adults,high,"police, courts, prisons",2.2789,850
-cash,india_born_wage_salary_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6190,604
+cash,india_born_wage_salary_adults,high,schools and colleges,2.9407,1097
+cash,india_born_wage_salary_adults,high,"police, courts, prisons",2.2874,853
+cash,india_born_wage_salary_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6193,604
 cash,india_born_wage_salary_adults,high,veterans and military medical,0.3656,136
-cash,india_born_wage_salary_adults,high,"per-head lines: government, defense, interest, roads, other",7.7786,2902
+cash,india_born_wage_salary_adults,high,"per-head lines: government, defense, interest, roads, other",7.7993,2910
 cash,india_born_wage_salary_adults,high,capital return,3.0967,1155
 cash,india_born_wage_salary_adults,high,production gain (subtracted),-0.0000,-0
 cash,india_born_other,high,income taxes,-10.6136,-7392
@@ -916,11 +916,11 @@ cash,india_born_other,high,"capital, property, production taxes",-1.4474,-1008
 cash,india_born_other,high,Social Security,6.2504,4353
 cash,india_born_other,high,Medicare,4.8699,3392
 cash,india_born_other,high,Medicaid,2.3692,1650
-cash,india_born_other,high,schools and colleges,9.3953,6543
-cash,india_born_other,high,"police, courts, prisons",1.2156,847
-cash,india_born_other,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9011,1324
+cash,india_born_other,high,schools and colleges,9.5354,6641
+cash,india_born_other,high,"police, courts, prisons",1.2202,850
+cash,india_born_other,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9018,1325
 cash,india_born_other,high,veterans and military medical,0.0010,1
-cash,india_born_other,high,"per-head lines: government, defense, interest, roads, other",2.9192,2033
+cash,india_born_other,high,"per-head lines: government, defense, interest, roads, other",2.8406,1978
 cash,india_born_other,high,capital return,2.1604,1505
 cash,india_born_other,high,production gain (subtracted),-0.0000,-0
 cash,indian_origin_self_employed_households,high,income taxes,-7.3989,-20408
@@ -930,11 +930,11 @@ cash,indian_origin_self_employed_households,high,"capital, property, production 
 cash,indian_origin_self_employed_households,high,Social Security,0.1549,427
 cash,indian_origin_self_employed_households,high,Medicare,0.8335,2299
 cash,indian_origin_self_employed_households,high,Medicaid,0.3443,950
-cash,indian_origin_self_employed_households,high,schools and colleges,1.4827,4090
-cash,indian_origin_self_employed_households,high,"police, courts, prisons",0.3293,908
+cash,indian_origin_self_employed_households,high,schools and colleges,1.5001,4138
+cash,indian_origin_self_employed_households,high,"police, courts, prisons",0.3304,911
 cash,indian_origin_self_employed_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",0.1952,539
 cash,indian_origin_self_employed_households,high,veterans and military medical,0.0369,102
-cash,indian_origin_self_employed_households,high,"per-head lines: government, defense, interest, roads, other",0.8581,2367
+cash,indian_origin_self_employed_households,high,"per-head lines: government, defense, interest, roads, other",0.8592,2370
 cash,indian_origin_self_employed_households,high,capital return,0.4735,1306
 cash,indian_origin_self_employed_households,high,production gain (subtracted),-0.0000,-0
 cash,indian_origin_wage_salary_households,high,income taxes,-71.0388,-15041
@@ -944,11 +944,11 @@ cash,indian_origin_wage_salary_households,high,"capital, property, production ta
 cash,indian_origin_wage_salary_households,high,Social Security,2.4633,522
 cash,indian_origin_wage_salary_households,high,Medicare,10.8590,2299
 cash,indian_origin_wage_salary_households,high,Medicaid,4.1516,879
-cash,indian_origin_wage_salary_households,high,schools and colleges,21.9325,4644
-cash,indian_origin_wage_salary_households,high,"police, courts, prisons",3.9169,829
-cash,indian_origin_wage_salary_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1003,656
+cash,indian_origin_wage_salary_households,high,schools and colleges,22.2151,4704
+cash,indian_origin_wage_salary_households,high,"police, courts, prisons",3.9314,832
+cash,indian_origin_wage_salary_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1010,657
 cash,indian_origin_wage_salary_households,high,veterans and military medical,0.3660,77
-cash,indian_origin_wage_salary_households,high,"per-head lines: government, defense, interest, roads, other",11.3389,2401
+cash,indian_origin_wage_salary_households,high,"per-head lines: government, defense, interest, roads, other",11.3463,2402
 cash,indian_origin_wage_salary_households,high,capital return,6.4959,1375
 cash,indian_origin_wage_salary_households,high,production gain (subtracted),-0.0000,-0
 cash,A1_third_plus_nh_white,high,income taxes,-373.6866,-8741
@@ -958,11 +958,11 @@ cash,A1_third_plus_nh_white,high,"capital, property, production taxes",-50.5292,
 cash,A1_third_plus_nh_white,high,Social Security,251.4440,5881
 cash,A1_third_plus_nh_white,high,Medicare,183.0944,4283
 cash,A1_third_plus_nh_white,high,Medicaid,99.7694,2334
-cash,A1_third_plus_nh_white,high,schools and colleges,134.6162,3149
-cash,A1_third_plus_nh_white,high,"police, courts, prisons",53.9862,1263
-cash,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",71.2672,1667
+cash,A1_third_plus_nh_white,high,schools and colleges,135.5196,3170
+cash,A1_third_plus_nh_white,high,"police, courts, prisons",54.2095,1268
+cash,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",71.3051,1668
 cash,A1_third_plus_nh_white,high,veterans and military medical,35.7731,837
-cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.0794,3066
+cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",128.1192,2997
 cash,A1_third_plus_nh_white,high,capital return,57.9752,1356
 cash,A1_third_plus_nh_white,high,production gain (subtracted),-0.0000,-0
 cash,nh_black_rough,high,income taxes,-189.3786,-4514
@@ -972,11 +972,11 @@ cash,nh_black_rough,high,"capital, property, production taxes",-15.9766,-381
 cash,nh_black_rough,high,Social Security,141.5057,3373
 cash,nh_black_rough,high,Medicare,113.0022,2693
 cash,nh_black_rough,high,Medicaid,181.2461,4320
-cash,nh_black_rough,high,schools and colleges,172.9617,4123
-cash,nh_black_rough,high,"police, courts, prisons",105.8914,2524
-cash,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.1085,3912
+cash,nh_black_rough,high,schools and colleges,173.9840,4147
+cash,nh_black_rough,high,"police, courts, prisons",106.3305,2534
+cash,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914
 cash,nh_black_rough,high,veterans and military medical,41.5391,990
-cash,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",105.8122,2522
+cash,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",104.2367,2485
 cash,nh_black_rough,high,capital return,58.5882,1396
 cash,nh_black_rough,high,production gain (subtracted),-0.0000,-0
 cash,mexican_origin_engine_identified,high,income taxes,-128.4292,-3234
@@ -986,12 +986,12 @@ cash,mexican_origin_engine_identified,high,"capital, property, production taxes"
 cash,mexican_origin_engine_identified,high,Social Security,53.5912,1349
 cash,mexican_origin_engine_identified,high,Medicare,52.4192,1320
 cash,mexican_origin_engine_identified,high,Medicaid,119.7361,3015
-cash,mexican_origin_engine_identified,high,schools and colleges,207.5668,5227
-cash,mexican_origin_engine_identified,high,"police, courts, prisons",76.0678,1915
-cash,mexican_origin_engine_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",109.8153,2765
+cash,mexican_origin_engine_identified,high,schools and colleges,204.0819,5139
+cash,mexican_origin_engine_identified,high,"police, courts, prisons",76.3428,1922
+cash,mexican_origin_engine_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",109.8898,2767
 cash,mexican_origin_engine_identified,high,veterans and military medical,11.6422,293
-cash,mexican_origin_engine_identified,high,"per-head lines: government, defense, interest, roads, other",92.9818,2341
-cash,mexican_origin_engine_identified,high,capital return,57.1733,1440
+cash,mexican_origin_engine_identified,high,"per-head lines: government, defense, interest, roads, other",97.0770,2444
+cash,mexican_origin_engine_identified,high,capital return,56.1709,1414
 cash,mexican_origin_engine_identified,high,production gain (subtracted),-7.6832,-193
 cash,mexican_origin_rough_identified,high,income taxes,-137.5225,-3463
 cash,mexican_origin_rough_identified,high,payroll taxes and Medicare premiums,-163.4670,-4116
@@ -1000,10 +1000,10 @@ cash,mexican_origin_rough_identified,high,"capital, property, production taxes",
 cash,mexican_origin_rough_identified,high,Social Security,59.6827,1503
 cash,mexican_origin_rough_identified,high,Medicare,52.4192,1320
 cash,mexican_origin_rough_identified,high,Medicaid,117.7434,2965
-cash,mexican_origin_rough_identified,high,schools and colleges,197.1985,4966
-cash,mexican_origin_rough_identified,high,"police, courts, prisons",76.3594,1923
-cash,mexican_origin_rough_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",113.5466,2859
+cash,mexican_origin_rough_identified,high,schools and colleges,199.1126,5014
+cash,mexican_origin_rough_identified,high,"police, courts, prisons",76.6344,1930
+cash,mexican_origin_rough_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",113.6116,2861
 cash,mexican_origin_rough_identified,high,veterans and military medical,11.5868,292
-cash,mexican_origin_rough_identified,high,"per-head lines: government, defense, interest, roads, other",96.9397,2441
+cash,mexican_origin_rough_identified,high,"per-head lines: government, defense, interest, roads, other",97.1669,2447
 cash,mexican_origin_rough_identified,high,capital return,56.2616,1417
 cash,mexican_origin_rough_identified,high,production gain (subtracted),-7.6832,-193

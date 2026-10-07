@@ -190,6 +190,13 @@ $11,777–13,485 on 39,712,493) and third-plus whites on 42.75M **$2,834–4,128
 group is about $13,500 per member better than whites, as before, and **$22,400–22,700 better than the union** (sept29
 $22,500–22,800). [CALCULATION: `rekey_indian.py --case oct05`, `social_rows.py --case oct05` → `derived/oct05/combined.csv`]]
 
+[2026-10-07: `derived/oct05/` is rebuilt on the IPEDS keys for Pell and public higher education, a defect fix decided in
+the v6 propagation (section "v6 case (oct07)"). On them the Indian-origin group benefits others by **$9,392–10,843 per
+member** (the figures below, on the rough keys of September 27: $9,325–10,782), third-plus whites on 42.75M cost
+$2,717–4,008, and the union is unchanged at $11,581–13,349; the Indian-origin group is $13,400–13,600 better than
+whites and $22,400–22,700 better than the union. The social rows do not move. [CALCULATION: `derived/oct05/combined.csv`,
+`ipeds_terms.csv`]]
+
 claude-opus-5-5 (v5consC)
 
 **Rules (the case lane's Consumers row: both sides on 42.75M).**
@@ -256,3 +263,109 @@ for subgroups (−$257 to −$271 per member at white ages), and `derived/combin
 The text now matches it: social rows $1,453 / 1,510, total −$8,433 / −7,084 per member (the verdict's "$1,470–1,530"
 becomes "$1,450–1,510"). The two tables also now use controlled rounding, so printed parts add to printed totals; eight
 cells moved by $1. [DATA: `derived/combined.csv`, `derived/social_rows.csv`]
+
+## v6 case (oct07), 2026-10-07
+
+[2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`), with every group on the IPEDS keys for Pell and
+public higher education, Indian-origin residents benefit other residents by **$9,447–10,901 per member a year** on the
+accrual basis, $57.4–66.3bn in all (v5 on the same keys $9,392–10,843); the Mexican-origin union costs others
+**$11,550–13,349 per member** with its social rows (v5 $11,581–13,349) and third-plus whites on 42.75M **$2,591–3,884**
+(v5 on the same keys $2,717–4,008). The Indian-origin group is $13,330–13,490 per member better than whites and
+**$22,450–22,800 better than the union**. Item 4's hospital term stays beside the central, at the team lead's decision;
+with it the Indian-origin group would benefit others by $81 per member more. [CALCULATION: `rekey_indian.py --case
+oct07`, `social_rows.py --case oct07` → `derived/oct07/combined.csv`, `ipeds_terms.csv`]]
+
+claude-opus-5-5 (prop-d)
+
+**Rules.** The oct05 rules carry over, and v6's four items reach the groups as in the white lane's section "v6 case
+(oct07)": the union's side carries the items' union parts and its added people their measured ages and the items'
+lineage parts; retiree health reaches every group through the national totals.
+- [ASSUMPTION] **The 2026 Trustees' separate-funds path** prices the Indian-origin groups as the union and the white
+  slice: `accrual_indian.py --case oct07` rebuilds their payable accrual ratios through the pension lane's code (the
+  white lane's `tr2026_path.py`). Net OASDI accrual per tax dollar, 2025 reports → 2026 path, immigrants from arrival:
+  Indian-origin 0.836168 → 0.819495, India-born 0.862083 → 0.845797; Part A per HI tax dollar 0.653816 → 0.652027 and
+  0.689810 → 0.689074. [DATA: `derived/oct07/accrual_ratios.csv`, `derived/accrual_ratios.csv`]
+- [ASSUMPTION] **The IPEDS keys** (the white lane's section "The IPEDS keys": a defect fix of the rough keys, every
+  group on oct05 and oct07, sept29 kept). IPEDS reports Asian students, not Indian ones, so the Indian-origin groups take
+  NH Asian students' shares by their CPS keys over NH Asians' (use 9.6%, tuition 8.7% at θ = 1, Pell 6.7% at
+  intensity 0.980 for the race) [DEGRADED: Asian for Indian]. IPEDS counts students on visas apart ("U.S.
+  nonresident"), while the CPS counts those living in households among Asians: their use then falls on the race's
+  IPEDS share, which leaves them out, so the Indian-origin groups' use term is biased down and their Pell term up
+  (visa students draw no Pell) [INFERENCE; not sized]. On oct07 the hospital term, priced beside the central (the white
+  lane's hospital bullet), uses the groups' own MEPS records (Asian Indian; the India-born by birthplace).
+- The added people's social rows are the v6 pairing's (`sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.json`,
+  `lineage_social_rows`; sha256 e84db10b…, committed by its lane at b0a2ccac): the union's
+  social rows are $104.7 / 109.2bn on 42.75M (v5 $104.8 / 109.4bn). The Indian-origin groups' social rows do not move.
+
+**Main table on oct07** (accrual, per member, spec 48 / 11; the social rows take any rounding difference so printed
+parts add to printed totals):
+
+| Group | Fiscal | Social rows | **Total** | Total, $bn | oct05 total (IPEDS keys) |
+|---|---:|---:|---:|---:|---:|
+| Indian-origin, actual ages (6.08M) | −12,144 / −10,777 (SE 1,163 / 1,152) | +1,243 / +1,330 | **−10,901 / −9,447** | −66.3 / −57.4 | −10,843 / −9,392 |
+| Indian-origin, third-plus white ages | −10,095 / −8,806 (SE 1,060 / 1,047) | +1,453 / +1,510 | **−8,642 / −7,296** | −52.5 / −44.4 | −8,555 / −7,211 |
+| India-born only, actual ages (4.28M) | −12,347 / −10,922 (SE 1,108 / 1,092) | +888 / +990 | **−11,459 / −9,932** | −49.1 / −42.5 | −11,362 / −9,838 |
+| India-born only, white ages | −7,687 / −6,410 (SE 987 / 976) | +1,255 / +1,328 | **−6,432 / −5,082** | −27.5 / −21.8 | −6,350 / −5,003 |
+| Mexican-origin union (engine), 42.75M | +9,101 / +10,794 | +2,449 / +2,555 | **+11,550 / +13,349** | +493.8 / +570.7 | +11,581 / +13,349 |
+| Mexican-origin union, white ages (identified 39.71M) | +9,570 / +11,134 | +2,440 / +2,538 | **+12,010 / +13,672** | +476.9 / +542.9 | +12,116 / +13,780 |
+| Third-plus NH whites (a 42.75M slice) | +353 / +1,607 | +2,238 / +2,277 | **+2,591 / +3,884** | +110.8 / +166.1 | +2,717 / +4,008 |
+
+[DATA: `derived/oct07/combined.csv`, `derived/oct05/combined.csv`; the rounding in a scratch tabulation]
+
+- **What the IPEDS keys do here** ($bn, oct07, low / high; `derived/oct07/ipeds_terms.csv`): Indian-origin Pell
+  +0.45, use −0.75, the college stock −0.07 / −0.11, tuition +0.28, in all −0.09 / −0.13 (−$15 / −21 per member), and
+  the hospital term beside −0.49 (−$81); India-born +0.27, −0.45, −0.04 / −0.07, +0.17, in all −0.05 / −0.08, the
+  hospital term beside −0.05. On oct05, without the tuition term, −0.37 / −0.41 and −0.22 / −0.25. The white slice's
+  cost falls by more per member ($110 / 112, mostly Pell), so the Indian-origin group's lead over whites narrows by $95 /
+  91 per member. [CALCULATION: `ipeds_terms.csv` over the groups' counts; per-member figures by controlled rounding]
+- From v5 to v6 on the same keys the Indian-origin fiscal row improves by $0.36 / 0.34bn: the 2026 path lowers its
+  Social Security and Medicare accrual by $0.70bn, schools and colleges rise by $0.40bn (item 4's tuition term, +$0.28bn,
+  and retiree health's accrual), and the other lines move −$0.06 / 0.04bn. [CALCULATION: `derived/oct07/rekey_buckets.csv`
+  against `derived/oct05/rekey_buckets.csv`]
+- On the cash set the union is +$9,639 / +11,568 per member (v5 +$9,642 / +11,528) and the Indian-origin group
+  −$15,774 / −14,320 (v5 on the same keys −$15,831 / −14,379). [DATA: `derived/oct07/combined.csv`]
+- The rough method on the union, both sides with the added people, is 1.6% above the engine at the low end ($395.4bn
+  against $389.1bn) and 1.8% below it at the high end ($453.4bn against $461.5bn); on the identified 39.71M at v6's
+  responses ($375.1 / 423.9bn against $368.7 / 432.0bn) 1.7% above and 1.9% below.
+- The pooled second generation moves the total by $135 / 136 per member, as before (−10,766 / −9,311).
+
+**Gates.** `rekey_indian.py --case oct07`: 186 gates, exit 0 (oct05 on the IPEDS keys: 155). Beside the oct05 gates:
+the union, A1 and NH Black rows reproduce the white and Black lanes' `rekey_summary_oct07.csv` (5e-5); the IPEDS terms'
+cost is the summary's for each group, basis and end (5e-5), and the library's parts add to each move (1e-9).
+`social_rows.py --case oct07`: 25 gates, exit 0 (the v6 pairing prices the added people on exactly this lane's items,
+and its union rows are this lane's restated rows, 1e-6). The rerun of `rekey_indian.py` that added `ipeds_terms.csv`
+rewrote every other oct05 and oct07 file byte for byte.
+
+**Reproduce (oct07)**, after the oct05 list (now after the white lane's `ipeds_keys.py`) and the white and Black
+lanes' oct07 runs:
+
+```sh
+L=infra/immigration-fiscal/indian_full_account_2026_09_29
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/accrual_indian.py --case oct07
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/rekey_indian.py --case oct07
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/social_rows.py --case oct07
+```
+
+New: `derived/oct07/` with `accrual_ratios.csv`, `rekey_summary.csv`, `rekey_buckets.csv`, `rekey_replicates.csv`,
+`keys.csv`, `age_structures.csv`, `drivers.csv`, `ipeds_terms.csv`, `social_rows.csv` and `combined.csv`;
+`derived/oct05/ipeds_terms.csv`, and `derived/oct05/`'s `rekey_summary.csv`, `rekey_buckets.csv`,
+`rekey_replicates.csv` and `combined.csv` rebuilt on the IPEDS keys. `accrual_indian.py`, `rekey_indian.py` and
+`social_rows.py` gained `--case oct07`; `rekey_indian.py` gained the IPEDS race map and the parts file.
+
+### Log (times from `date`)
+
+- 2026-10-07 13:10:37 (file time): `accrual_indian.py --case oct07`.
+- 15:18:00–15:19:13 (file times): `rekey_indian.py --case oct05` and `--case oct07` on the IPEDS keys (gates pass).
+- 15:32:59 (by `date`): rerun with `ipeds_terms.csv` added; every other output byte for byte the same.
+- 15:41:17 (by `date`): `social_rows.py --case oct05` (`combined.csv` moves with the fiscal rows; `social_rows.csv`
+  does not) and `--case oct07`.
+- After 15:41 the team lead decided that item 4's hospital term comes out of every comparator's central on oct07 and
+  stays beside (the white library's `HOSPITAL_ON = False`). v6 is final.
+- 16:42:47–16:45:11 (by `date`): `rekey_indian.py` and `social_rows.py`, `--case oct05` and `--case oct07`, in place,
+  exit 0 (155, 25, 186 and 25 gates). oct05: only `ipeds_terms.csv` changes (it gains the beside columns; its values
+  do not move). oct07: `rekey_summary.csv`, `rekey_buckets.csv`, `rekey_replicates.csv`, `ipeds_terms.csv` and
+  `combined.csv` change; `social_rows.csv` does not. The pairing's oct07 file is sha256 e84db10b…, as committed at
+  b0a2ccac.
+- 17:02:24–17:06:27 (by `date`): `rerun_lane.py` with all eleven commands (the six of the default list, the two oct05
+  ones and the three oct07 ones), after the white and Black lanes' final reruns: **IDENTICAL 41/41, exit 0**; the
+  pairing's file read e84db10b… at the start.

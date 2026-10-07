@@ -61,6 +61,18 @@ mexican_origin_rough_identified, the union on the identified 39,712,493 at v5's 
 mexican_origin_rough_white_ages stays on the identified union [ASSUMPTION: the added people's per-age amounts are not
 in the case lane's output]; social_rows.py --case oct05 calibrates it on the identified rows. The gates read the white
 and Black lanes' rekey_summary_oct05.csv. Run it after those lanes' oct05 runs.
+
+--case oct07 re-keys main case v6 (main_case_2026_10_07: v5 plus the items of its payload's meta.items) through the
+library's oct07 rules and writes the same files to derived/oct07/, beside the accrual ratios on the 2026 path
+(derived/oct07/accrual_ratios.csv, accrual_indian.py --case oct07). The oct05 rows and rules carry over; the union's
+side carries the items' union parts, its added people their measured ages and the items' lineage parts, and retiree
+health reaches every group through the national totals. Run it after the white and Black lanes' oct07 runs.
+
+On oct05 and oct07 the library's IPEDS keys apply (its IPEDS_CASES; on oct07 also its tuition term, with the hospital
+term beside the central): the Indian-origin groups take NH Asian students' IPEDS shares (see IPEDS_RACE below).
+derived/<case>/ipeds_terms.csv gives the union's and the Indian-origin groups' costs on the rough keys of September 27,
+each part's move and the hospital term beside (the library's ipeds_rows(), less its union-minus-group columns), gated to
+the summary's costs (5e-5).
 """
 from __future__ import annotations
 
@@ -145,6 +157,13 @@ for g in ("ind", "ind1", "ind1se", "ind1wage", "ind1oth", "hhse", "hhwage"):
     W.RACE_RATES[g] = "nh_asian"
 W.GROUP_OF.update({"ind": "indian_origin", "ind1": "india_born", "ind1se": "india_born", "ind1wage": "india_born",
                    "ind1oth": "india_born", "hhse": "indian_origin", "hhwage": "indian_origin"})
+# The IPEDS keys (the library's IPEDS_CASES): IPEDS reports Asian students, not Indian ones, so the Indian-origin groups
+# take NH Asian (alone) students' shares by their CPS keys over NH Asians' [DEGRADED: Asian for Indian; IPEDS counts
+# students on visas apart, the CPS among Asians]
+R.MASK["asn"] = (d.PEHSPNON.eq(2) & d.PRDTRACE.eq(4)).to_numpy()
+W.IPEDS_MASK["asian"] = "asn"
+for g in ("ind", "ind1", "ind1se", "ind1wage", "ind1oth", "hhse", "hhwage"):
+    W.IPEDS_RACE[g] = "asian"
 LABEL = {"ind": "indian_origin", "ind1": "india_born", "ind1se": "india_born_self_employed_adults",
          "ind1wage": "india_born_wage_salary_adults", "ind1oth": "india_born_other",
          "hhse": "indian_origin_self_employed_households", "hhwage": "indian_origin_wage_salary_households"}
@@ -174,7 +193,7 @@ def mean_crime(cw):
 
 def keyed_ind(g, cw, total, ages, mwt, cw_own):
     """R.keyed's CPS shares for an Indian-origin scenario, and its external keys (module docstring)."""
-    sc = {"name": g, "ages": ages, "population": total, "cps_w": cw,
+    sc = {"name": g, "ages": ages, "population": total, "cps_w": cw, "meps_w": mwt,
           "share": {k: float((cw * v).sum() / R.KTOT[k]) for k, v in R.K.items()},
           "cps_bn": {k: float((cw * R.K[k]).sum() / 1e9) for k in ("fit", "sit")}}
     meps = {c: float((mwt * R.md[c]).sum() / R.MTOT[c]) for c in R.MEPS_COLS}
@@ -350,12 +369,16 @@ def drivers(scen, res):
     return out
 
 
+# Each case's accrual ratios (accrual_indian.py): the 2025 reports' serve sept29 and oct05, oct07 is on the 2026 path.
+ACCRUAL = {"sept29": DER / "accrual_ratios.csv", "oct05": DER / "accrual_ratios.csv", "oct07": DER / "oct07/accrual_ratios.csv"}
+
+
 def main(case="sept29"):
     W.use_case(case)
     out = DER if case == "sept29" else DER / case
     W.setup()
     print("[this lane: groups and gates]", flush=True)
-    rows = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(DER / "accrual_ratios.csv"))}
+    rows = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(ACCRUAL[case]))}
     for g in ("indian_origin", "india_born"):
         W.ACC[g] = W.acc_entry(rows[(g, "immigrants_at_arrival", "payable")])
     R.PI["w3"] = R.structure(R.MASK["w3"], R.w, R.cage)
@@ -414,6 +437,16 @@ def main(case="sept29"):
             up = evaluate(with_pooled_g2(scen["indian_origin"], 1.0), end, b)[0]["cost"]
             dn = evaluate(with_pooled_g2(scen["indian_origin"], -1.0), end, b)[0]["cost"]
             pooled_shift[(b, end)] = abs(up - dn) / 2 * 1e9 / scen["indian_origin"]["population"]
+    ipeds = None
+    if W.IPEDS_ON:     # oct05, oct07: the IPEDS keys' parts by group (the white lane's ipeds_rows, its union beside)
+        groups = {lab: scen[lab] for lab in ("mexican_origin_rough", "indian_origin", "indian_origin_white_ages", "india_born",
+                                              "india_born_white_ages")}
+        # the union-minus-group columns compare equal counts; the Indian groups are not on the union's count
+        ipeds = [{k: v for k, v in r.items() if not k.startswith("delta_")} for r in W.ipeds_rows(groups)]
+        for r in ipeds:
+            want = res[(r["basis"], r["group"], r["end"])][0]["cost"]
+            W.gate(f"the IPEDS terms' cost is the summary's {r['group']} {r['basis']} {r['end']} (5e-5)",
+                   abs(float(r["cost_bn"]) - want) < 5e-5)
     W.stop_if_failed()
 
     print("[replicate weights: the Indian-origin groups]", flush=True)
@@ -499,7 +532,8 @@ def main(case="sept29"):
     out.mkdir(exist_ok=True)
     for name, data in (("rekey_summary.csv", summary), ("rekey_buckets.csv", buckets), ("keys.csv", keys),
                        ("age_structures.csv", ages), ("drivers.csv", [{k: (f"{v:.8g}" if isinstance(v, float) else v)
-                                                                        for k, v in r.items()} for r in drv])):
+                                                                        for k, v in r.items()} for r in drv]),
+                       *((("ipeds_terms.csv", ipeds),) if ipeds else ())):
         with open(out / name, "w", newline="") as f:
             wr = csv.DictWriter(f, fieldnames=list(data[0]), lineterminator="\n")
             wr.writeheader()
@@ -513,5 +547,6 @@ def main(case="sept29"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=list(W.CASES), help="sept29 (default, derived/) or oct05 (derived/oct05/)")
+    ap.add_argument("--case", default="sept29", choices=list(W.CASES),
+                    help="sept29 (default, derived/), oct05 (derived/oct05/) or oct07 (derived/oct07/)")
     main(ap.parse_args().case)

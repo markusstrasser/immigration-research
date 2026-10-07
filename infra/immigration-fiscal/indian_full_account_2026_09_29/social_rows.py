@@ -50,6 +50,11 @@ the lineage's 42,752,213, as its fiscal row is. Every other group's rows keep th
 union's per-member row and drivers (the added people are not in the CPS). The union at white ages stays on the identified
 union: its fiscal row is calibrated on rekey_indian.py's mexican_origin_*_identified rows. Gates added: the pairing's
 union rows equal this lane's (1e-6) and the union's own rows rebuild the restated rows plus the added people's (1e-3).
+
+--case oct07 (after rekey_indian.py --case oct07) reads and writes derived/oct07/ by the same rules, on main case v6
+(main_case_2026_10_07): the added people's social rows are the v6 pairing's (sept24_propagation_2026_09_24/derived/oct07/
+real_costs_totals.json, lineage_social_rows, as that lane prices them on v6), the count the v6 payload's meta.lineage
+(v5's: the lineage item moves ages only).
 """
 from __future__ import annotations
 
@@ -87,18 +92,25 @@ INST = pd.read_csv(DER / "acs_institutional.csv").set_index("group")
 # The case's inputs (load()): this lane's re-key on it, and for oct05 the added people's social rows and count
 OUT = DRV = KEYS = FIS = LIN_SOC = N_LINEAGE = None
 SUFFIX = ""      # oct05: the union rows that calibrate the union at white ages are the identified ones
+PAIRING = ""     # the pairing the added people's rows come from (oct05: v5's; oct07: v6's)
+# A lineage case's lane, and the name of the pairing that prices its added people's social rows.
+LINEAGE_CASES = {"oct05": ("main_case_2026_10_05", "v5 pairing"), "oct07": ("main_case_2026_10_07", "v6 pairing")}
 
 
 def load(case):
-    global OUT, DRV, KEYS, FIS, LIN_SOC, N_LINEAGE, SUFFIX
+    global OUT, DRV, KEYS, FIS, LIN_SOC, N_LINEAGE, SUFFIX, PAIRING
     OUT = DER if case == "sept29" else DER / case
     DRV = pd.read_csv(OUT / "drivers.csv").set_index("group")
     KEYS = pd.read_csv(OUT / "keys.csv").set_index(["group", "key"]).value
     FIS = pd.read_csv(OUT / "rekey_summary.csv")
-    if case == "oct05":
-        lin = json.loads((FISCAL / "sept24_propagation_2026_09_24/derived/oct05/real_costs_totals.json").read_text())
+    if case in LINEAGE_CASES:
+        lane, PAIRING = LINEAGE_CASES[case]
+        src = FISCAL / f"sept24_propagation_2026_09_24/derived/{case}/real_costs_totals.json"
+        if not src.exists():
+            raise SystemExit(f"[BLOCKED] {src.relative_to(FISCAL)} does not exist: run the pairing's {case} case first")
+        lin = json.loads(src.read_text())
         LIN_SOC = {r["item"]: r for r in lin["lineage_social_rows"]["rows"]}
-        meta = json.loads((FISCAL / "main_case_2026_10_05/derived/corrections.json").read_text())["meta"]["lineage"]
+        meta = json.loads((FISCAL / lane / "derived/corrections.json").read_text())["meta"]["lineage"]
         N_LINEAGE, SUFFIX = meta["counts"]["lineage_population"], "_identified"
 
 ITEMS = ["victims", "property_crime", "unreimbursed_care", "congestion", "housing_gain", "fear_avoidance",
@@ -207,9 +219,9 @@ def main(case="sept29"):
     gate("scale net: the union's parts at the CZ level and row-4 factor give the pairing's row (1e-3)",
          abs(-(k_s * nat.scale_gain_national_bn + k_c * nat.composition_gain_national_bn) - uni["scale_net_earnings"]["low"]) < 1e-3)
     if LIN_SOC is not None:
-        gate("oct05: the v5 pairing prices the added people on exactly this lane's items", set(LIN_SOC) == set(ITEMS))
+        gate(f"{case}: the {PAIRING} prices the added people on exactly this lane's items", set(LIN_SOC) == set(ITEMS))
         worst = max(abs(float(LIN_SOC[it][f"union_{e}_bn"]) - uni[it][e]) for it in ITEMS for e in ("low", "high"))
-        gate("oct05: the v5 pairing's union rows are this lane's restated rows (1e-6)", worst < 1e-6, f"max |diff| {worst:.1e}")
+        gate(f"{case}: the {PAIRING}'s union rows are this lane's restated rows (1e-6)", worst < 1e-6, f"max |diff| {worst:.1e}")
     added = {it: {e: (float(LIN_SOC[it][f"added_{e}_bn"]) if LIN_SOC is not None else 0.0) for e in ("low", "high")} for it in ITEMS}
     if FAILS:
         print(f"FAIL: {FAILS}")
@@ -271,10 +283,10 @@ def main(case="sept29"):
         cong_alt = uni["congestion"]["low"] * per * ratio["road_crash_externality"]
         note["congestion"] = f"per member as the union; by driver miles {cong_alt:.3f} at the low end"
         if LIN_SOC is not None and g == "mexican_origin_rough":
-            # oct05: the union's rows carry the added people's (the v5 pairing's), on the lineage's count
+            # oct05, oct07: the union's rows carry the added people's (the case's pairing's), on the lineage's count
             for it in ITEMS:
                 val[it] = {e: val[it][e] + added[it][e] for e in ("low", "high")}
-                note[it] = (note.get(it, "") + "; " if note.get(it) else "") + "plus the added people's row (v5 pairing)"
+                note[it] = (note.get(it, "") + "; " if note.get(it) else "") + f"plus the added people's row ({PAIRING})"
             n = N_LINEAGE
         for it in ITEMS:
             rows.append({"group": LABEL.get(g, g), "item": it, "population": f"{n:.0f}",
@@ -340,5 +352,6 @@ def main(case="sept29"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=["sept29", "oct05"], help="sept29 (default, derived/) or oct05 (derived/oct05/)")
+    ap.add_argument("--case", default="sept29", choices=["sept29", "oct05", "oct07"],
+                    help="sept29 (default, derived/), oct05 (derived/oct05/) or oct07 (v6, derived/oct07/)")
     main(ap.parse_args().case)

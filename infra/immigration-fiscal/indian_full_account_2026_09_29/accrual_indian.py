@@ -19,11 +19,17 @@ Gates ([BLOCKED]): the union's OASDI payable and scheduled ratios, Part A accrua
 pension lane (accrual_black.STORED); the union's proxy relative rate reproduces the Black lane's benefit_tax_proxy.csv.
 Outputs: derived/accrual_ratios.csv, derived/benefit_tax_proxy.csv. Run from the repository root (about 3 min):
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/accrual_indian.py
+
+--case oct07 (main case v6, item 1) prices the same groups on the pension accrual's 2026 path, as accrual_black.py
+--case oct07 does (the white lane's tr2026_path.py; payable only; the same relative benefit-tax rates), gated on the
+union against the 2026 lane's arms.csv. Output: derived/oct07/accrual_ratios.csv, read by rekey_indian.py --case oct07.
 """
 from __future__ import annotations
 
+import contextlib
 import csv
 import importlib.util
+import json
 import sys
 import zipfile
 from pathlib import Path
@@ -93,7 +99,7 @@ def benefit_tax_proxy():
     return out
 
 
-def main():
+def main(case="sept29"):
     proxy = benefit_tax_proxy()
     for g, v in proxy.items():
         print(f"benefit-tax proxy {g:15s} rate {v['rate']:.5f} relative {v['relative_rate_proxy']:.4f} calibrated "
@@ -115,12 +121,20 @@ def main():
     mid = P.entry_midpoints()
     arrival_any = p.age - (2024.5 - p.PEINUSYR.map(mid))
     foreign = p.PRCITSHP.isin([4, 5]).to_numpy()
-    econ = P.L.Economy()
     prelim = P.S.scaled_factors().preliminary.to_numpy()
-    P.GRID = [G, P.BASE]
-    grids = {s: P.model_grid(econ, prelim, P.payable_path(econ) if s == "payable" else None) for s in P.SCENARIOS}
-    share = P.tob_share_path() * (1 + P.hi_over_oasdi_tob()) * P.obbba_factor()
-    taus = P.tob_timing(econ, prelim, share, runs=[(G, s) for s in P.SCENARIOS])
+    if case == "oct07":             # accrual_black.main's oct07 inputs: the 2026 path, payable only
+        TP = A.tr2026_path()
+        TP.case_check(json.loads((FISCAL / "main_case_2026_10_07/derived/corrections.json").read_text())["meta"])
+        econ, grid, taus, paths = TP.payable(P, prelim)
+        grids, scens = {"payable": grid}, ("payable",)
+        on_path = lambda: TP.on_path(P, paths)  # noqa: E731
+    else:
+        econ = P.L.Economy()
+        P.GRID = [G, P.BASE]
+        grids = {s: P.model_grid(econ, prelim, P.payable_path(econ) if s == "payable" else None) for s in P.SCENARIOS}
+        share = P.tob_share_path() * (1 + P.hi_over_oasdi_tob()) * P.obbba_factor()
+        taus = P.tob_timing(econ, prelim, share, runs=[(G, s) for s in P.SCENARIOS])
+        scens, on_path = P.SCENARIOS, contextlib.nullcontext
 
     def frame_for(mask, entry_rule):
         """accrual_black.main's frame_for."""
@@ -148,21 +162,33 @@ def main():
     res = {}
     for (name, rule), fr in runs.items():
         qq = fr[fr.union & (fr.tax_oasdi > 0)].reset_index(drop=True)
-        o = A.oasdi_ratio(qq, grids, u_long, taus)
-        a = {s: A.part_a(fr[fr.union].copy(), econ, u_long, s) for s in P.SCENARIOS}
+        with on_path():
+            o = A.oasdi_ratio(qq, grids, u_long, taus, scens)
+            a = {s: A.part_a(fr[fr.union].copy(), econ, u_long, s) for s in scens}
         res[(name, rule)] = (o, a, int(len(qq)))
+        sched = f" scheduled {o['scheduled']['ratio']:.6f}" if "scheduled" in o else ""
         print(f"{name} ({rule}): persons {fr.w[fr.union].sum() / 1e6:.3f}M, taxpayers in sample {len(qq)}; OASDI accrual "
-              f"per tax dollar payable {o['payable']['ratio']:.6f} scheduled {o['scheduled']['ratio']:.6f}; Part A payable "
+              f"per tax dollar payable {o['payable']['ratio']:.6f}{sched}; Part A payable "
               f"{a['payable']['accrual_bn']:.3f}bn on HI tax {a['payable']['hi_tax_bn']:.3f}bn")
     o, a, _ = res[("union", "lane")]
-    for k, got in (("payable", o["payable"]["ratio"]), ("scheduled", o["scheduled"]["ratio"]),
-                   ("part_a", a["payable"]["accrual_bn"]), ("timing", o["payable"]["timing"])):
-        if abs(got - A.STORED[k]) > 1e-5 * max(1, abs(A.STORED[k])):
-            raise SystemExit(f"[BLOCKED] the union's {k} does not reproduce the pension lane: {got} vs {A.STORED[k]}")
-    print("[gate] union ratios, Part A accrual and benefit-tax timing reproduce the pension lane")
+    if case == "oct07":
+        row = TP.union_row()
+        for k, got, col in (("OASDI accrual per tax dollar", o["payable"]["ratio"], "per_tax_dollar"),
+                            ("timing", o["payable"]["timing"], "timing"),
+                            ("Part A accrual", a["payable"]["accrual_bn"], "part_a_bn"),
+                            ("HI tax", a["payable"]["hi_tax_bn"], "hi_tax_bn")):
+            if abs(got - float(row[col])) > 5e-9 * max(1.0, abs(float(row[col]))):
+                raise SystemExit(f"[BLOCKED] the union's {k} {got} does not reproduce {TP.ARM}'s {col} {row[col]}")
+        print(f"[gate] the union's ratio, timing and Part A accrual reproduce {TP.ARM}'s union row of arms.csv")
+    else:
+        for k, got in (("payable", o["payable"]["ratio"]), ("scheduled", o["scheduled"]["ratio"]),
+                       ("part_a", a["payable"]["accrual_bn"]), ("timing", o["payable"]["timing"])):
+            if abs(got - A.STORED[k]) > 1e-5 * max(1, abs(A.STORED[k])):
+                raise SystemExit(f"[BLOCKED] the union's {k} does not reproduce the pension lane: {got} vs {A.STORED[k]}")
+        print("[gate] union ratios, Part A accrual and benefit-tax timing reproduce the pension lane")
     rows = []
     for (name, rule), (o, a, n) in res.items():
-        for scen in P.SCENARIOS:
+        for scen in scens:
             r = rel[name]
             rows.append({"group": name, "entry_rule": rule, "scenario": scen,
                          "oasdi_per_tax_dollar": f"{o[scen]['ratio']:.6f}",
@@ -173,11 +199,16 @@ def main():
                          "cps_oasdi_tax_bn": f"{o[scen]['tax_bn']:.4f}", "cps_hi_tax_bn": f"{a[scen]['hi_tax_bn']:.4f}",
                          "part_a_accrual_bn": f"{a[scen]['accrual_bn']:.4f}",
                          "p_qualify_65plus": f"{a[scen]['p_qualify']:.6f}", "sample_taxpayers": n})
-    DER.mkdir(exist_ok=True)
-    with open(DER / "accrual_ratios.csv", "w", newline="") as f:
+    out = DER / "oct07" if case == "oct07" else DER
+    out.mkdir(exist_ok=True)
+    with open(out / "accrual_ratios.csv", "w", newline="") as f:
         wr = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         wr.writeheader()
         wr.writerows(rows)
+    if case == "oct07":             # benefit_tax_proxy.csv is the 2025 run's: the proxy does not read the path
+        print(pd.DataFrame(rows)[["group", "entry_rule", "scenario", "oasdi_per_tax_dollar", "oasdi_per_tax_dollar_net",
+                                  "part_a_per_hi_tax_dollar", "p_qualify_65plus"]].to_string(index=False))
+        return
     with open(DER / "benefit_tax_proxy.csv", "w", newline="") as f:
         wr = csv.DictWriter(f, fieldnames=["group", "benefits_bn", "benefit_tax_bn", "sample_with_benefits", "rate",
                                            "relative_rate_proxy", "relative_rate_calibrated"], lineterminator="\n")
@@ -189,4 +220,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--case", default="sept29", choices=["sept29", "oct07"],
+                    help="sept29 (default: the 2025 reports, which the sept29 and oct05 cases read) or oct07 (the 2026 path)")
+    main(ap.parse_args().case)
