@@ -55,3 +55,5 @@ infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_componen
 infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/lifetime/
 infra/immigration-fiscal/gap_incidence_2026_09_18/derived/corrections_federal_upper/
 infra/immigration-fiscal/homicide_cost_2026_09_18/derived/profile_source_audit.json
+.model-review/redteam-*
+.model-review/2026-10-08-v6-red-team-*/
