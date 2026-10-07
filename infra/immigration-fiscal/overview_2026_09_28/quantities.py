@@ -176,8 +176,8 @@ def resolve(path, field, expr):
 
 SHAPES = {"scalar": 1, "ends": 2, "interval": 2, "central_interval": 3}
 # prefix and suffix of a rendered number
-UNITS = {"$bn": ("$", "bn"), "$tn": ("$", "tn"), "$k": ("$", "k"), "$": ("$", ""), "%": ("", "%"),
-         "x": ("", ""), "year": ("", ""), "M": ("", "M")}
+UNITS = {"$bn": ("$", "bn"), "$tn": ("$", "tn"), "$M": ("$", "M"), "$k": ("$", "k"), "$": ("$", ""),
+         "%": ("", "%"), "x": ("", ""), "year": ("", ""), "M": ("", "M")}
 STATUSES = ("file", "file+text", "text", "inference", "needs_file")
 # the page marks these approximate, with the record's reader_note as the reason
 APPROXIMATE = ("inference", "needs_file")

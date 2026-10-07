@@ -264,7 +264,7 @@ GROUPS = [
                       "equal cuts close it, the bottom fifth loses {{q:quintile.bottom_fifth_cuts|value}} of its "
                       "resources.",
                  why="Who pays depends on how budgets close the gap."),
-            dict(refs=[250],
+            dict(refs=[250, 297],
                  text="Counting the group's own gain, the world gains about {{q:world.total_equal|value}} in the "
                       "year measured, with every person weighted equally.",
                  why="The group earns far more here than it would in Mexico. Other US residents lose at any "
@@ -558,7 +558,7 @@ GROUPS = [
                  text="A second survey gives the same earnings and income-tax gaps within 4%.",
                  why="ACS against CPS, with one tax calculator on both."),
         ],
-        minor=[284, 285],
+        minor=[284, 285, 298],
     ),
     dict(
         id="time", part="build",
@@ -581,7 +581,7 @@ GROUPS = [
                  why="This is a legacy cost. Removing the group today does not remove old debt, so the number "
                      "stays beside the annual total. State and local budgets must balance and do not borrow "
                      "for it."),
-            dict(refs=[123, 125, 126, 128, 172, 119],
+            dict(refs=[123, 125, 126, 128, 172, 119, 296],
                  text="Against third-generation whites of the same ages, the gap is about "
                       "{{q:gap_vs_white.age_matched_partial|value}} a year, and "
                       "{{q:gap_vs_white.age_matched_complete|value}} with every item of the ledger priced. Matching "
@@ -589,10 +589,10 @@ GROUPS = [
                  why="A gap against a reference group is a different measure from the cost of removal. On "
                      "taxes and benefits alone the group pays more than it gets. The gap is still negative."),
             dict(refs=[131, 159, 241],
-                 text="Over all descendants, a Mexican founder's family line runs $1.29M behind a white family "
-                      "line ($513k at 3%).",
-                 why="Descendants carry 57% of it. This is a gap against whites from a separate ledger. Do not "
-                     "scale it onto the annual number."),
+                 text="Over all descendants, a Mexican founder's family line runs {{q:family_line.gap|value}} behind "
+                      "a white family line ({{q:family_line.gap_3pct|value}} at 3%).",
+                 why="Descendants carry {{q:family_line.descendants_share|value}} of it. This is a gap against "
+                     "whites from a separate ledger. Do not scale it onto the annual number."),
             dict(refs=[240, 247, 235],
                  text="Arrivals at 50 or older cost others about {{q:late_arrivals.cost|mid_range}} a year. A "
                       "parent sponsored by a US citizen and entering at 55–65 costs "

@@ -98,6 +98,9 @@ infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f207/text,debt.stock
 infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f207/text,debt.interest,mid_range,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f123/text,gap_vs_white.age_matched_partial,value,$240bn,the absolute balance's hull (ledger recut) under a sentence about the gap against whites
 infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f123/text,gap_vs_white.age_matched_complete,value,190–290,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f131/text,family_line.gap,value,$1.29M,typed until item T (ladder 296)
+infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f131/text,family_line.gap_3pct,value,$513k,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f131/why,family_line.descendants_share,value,57%,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f240/text,late_arrivals.cost,mid_range,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,time/f240/text,ir5.lifetime_cost_55_65,range_unit,$237k–274k,entry at 55–65 now named
 infra/immigration-fiscal/overview_2026_09_28/groups.py,method/range,case.first_year,range_unit,,
