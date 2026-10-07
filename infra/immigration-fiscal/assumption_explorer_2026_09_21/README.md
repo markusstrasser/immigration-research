@@ -1,33 +1,34 @@
 # Fiscal assumption explorer
 
-**Verdict:** One self-contained page (`derived/explorer.html`) evaluates the complete annual
-account of `full_account_2026_09_20` under any set of assumptions, live. Its evaluator
-(`engine.js`) is the account's own formula, `welfare = P + weight * (direct + F)`, over executed
-allocations and the 3,888 executed production scenarios. `test_engine.js` gates it against
-2,629 rows of the 497,664-row grid (every level of every dimension), all 60 category
-service-response cases, all 32 complete accounting cases and the four published headline
-bounds (165.1-197.4 and 269.8-288.7 bn); worst gap 4e-9 bn. [CALCULATION: test_engine.js]
-Since 2026-09-26 the page's central case is the finite-removal case adopted that day (see "Adopted
-2026-09-26" below): **200.9-245.7 bn**, with non-school education fixed 156.5-210.8 bn, and
-proportional 301.3-334.8 bn. Later the same evening the operator charged schools at full average
-cost, which makes the main case 258.5-292.0 bn and this case the first-year budget response
-([decision](../../../decisions/2026-09-26-main-case-schools-full-cost.md)); the page stays on the
-first-year budget response (named "one-year scenario" until 2026-09-27) until the operator asks. The presets reproduce these bands as loaded, with no override. With
-the corrections switched off the presets keep the adopted responses, so the page shows the
-uncorrected data at those responses: 207.4-253.2, 162.4-216.7 and 308.4-341.5 bn. The test also
-reproduces the two earlier cases at the marginal rates: September 23 (203.2-249.6 bn, no
-corrections) and September 24 (200.9-246.3 bn, that day's payload). [CALCULATION: test_engine.js
-against main_case_2026_09_23, main_case_2026_09_24 and main_case_2026_09_26/derived/main_case_bands.csv]
+**Verdict:** One self-contained page (`derived/explorer.html`) evaluates the adopted main case,
+v6 of 2026-10-07 ([decision](../../../decisions/2026-10-07-main-case-v6.md);
+[lane](../main_case_2026_10_07/RESULT.md)), under any set of assumptions, live. As loaded, its
+central preset gives **389.0826–461.4797 bn** a year, the case lane's band at full precision. The
+cash set (benefits counted when paid) gives 307.3994–385.3641 bn, and every other reading the lane
+ran that the page can set reproduces too. The page shows the first-year budget response
+(288.9–336.5 bn, 207.3–260.3 bn counting benefits when paid) and schools at the within-district rate
+(361.3–434.9 bn) beside the presets, read from the lane files, because the page cannot compute them.
+[CALCULATION: test_engine.js against main_case_2026_10_07/derived/summary.json and main_case_bands.csv;
+break_conditions_2026_09_29/derived/c1_arms_oct07.csv]
 
-The page has a pinned result bar (the live number, its unresolved-convention span, the distance
-from the central case, and the last-touched setting beside its central value and its effect
-alone), a switch for the data corrections, convention cards, an exact Shapley split of the distance from the central case, a bridge
-with uncounted-but-assigned amounts, a sensitivity ranking, and the full receipt and spending
-ledger with per-line allocation rule and response. Below the ledger: whose welfare the ledger
-counts, what four commentators argue (text, no number under any name), the FAQ-routed
-objection cards (57 on 2026-09-26), the whole confidence ladder, searchable and linked to ledger lines, and a
-Sources section. Every assumption, card, convention and author statement carries short source
-labels that open the paper, report or dataset directly.
+The evaluator is two files. `engine.js` is the complete annual account's own formula,
+`welfare = P + weight * (direct + F)`, over executed allocations and the 3,888 executed production
+scenarios. `case.js` applies the case's two payloads and adds what the case lane computes after
+the engine: the line and receipt responses in `meta.responses` and the return on public capital in
+`meta.capital_return`. `test_engine.js` gates `engine.js` against 2,629 rows of the 497,664-row grid,
+all 60 service-response cases, all 32 accounting cases, the four published September 20 headline
+bounds and the bands of the main-case lanes of September 23, 24 and 26. It gates `case.js` against
+the v6 lane. Worst gap 4.3e-9 bn. [CALCULATION: test_engine.js]
+
+The page has a pinned result bar (the live number, the span of the account's open choices, the
+distance from the main case, and the last-touched setting beside its central value and its effect
+alone). It has convention columns, an exact Shapley split of the distance from the main case, a
+bridge from taxes paid to the result, a sensitivity ranking and the full receipt and spending ledger,
+with the allocation rule and response of every line and a table of the return on public capital.
+Below the ledger come whose welfare the ledger counts, what four commentators argue (text, no number
+under any name), the FAQ-routed objection cards, the whole confidence ladder (298 entries, searchable
+and linked to ledger lines) and a Sources section. Every assumption, card, convention and author
+statement carries short source labels that open the paper, report, dataset or repo document directly.
 
 ## Reproduce
 
@@ -35,234 +36,164 @@ labels that open the paper, report or dataset directly.
 cd infra/immigration-fiscal/assumption_explorer_2026_09_21
 uv run --no-project --with duckdb --with pandas --with numpy python3 build_model.py   # hash-guards upstream
 OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with numpy python3 scaling_check.py
-node ../main_case_2026_09_23/main_case.js           # reads model.json; its tracked outputs must not change
-node ../main_case_2026_09_24/main_case.cjs          # writes derived/corrections.json, only when its gates pass
-node ../main_case_2026_09_26/main_case.cjs          # the adopted payload, with meta.responses
 node test_engine.js
 uv run --no-project python3 build_ui.py && open derived/explorer.html
 uv run --no-project python3 check_sources.py        # optional: re-fetch every link, rewrite sources_check.json
 ```
 
-`build_model.py` also reads the two use lanes' `derived/summary.json` and adds six allocation
-rules (`spending.added_keys` in `model.json` records each rule's base, change and source field).
-`test_engine.js` reads `main_case_2026_09_23/derived/main_case_bands.csv` and `inputs.json`. The
-CSV prints four decimals, so the gate checks it to half a unit of the last digit and checks the
-lane's own identity (published band plus the three changes, from `inputs.json`) to 1e-6 bn.
-It applies `main_case_2026_09_26/derived/corrections.json`, as the page does, and checks that
-lane's bands; it also applies `main_case_2026_09_24/derived/corrections.json` to a copy of the model
-and checks the September 24 bands. `build_ui.py` inlines the September 26 payload and refuses to
-build without it or without its responses.
+The case's inputs are the case lane's tracked outputs: `main_case_2026_10_07/derived/corrections.json`
+(the case, 769 cell edits), `corrections_cash.json` (the cash set, 765), `summary.json` and
+`main_case_bands.csv`. When that lane's inputs change, rerun it with `scripts/rerun_lane.py`, then
+rerun the gate and the build here. `test_engine.js` also reads the September 23, 24 and 26 main-case
+lanes' bands and payloads, which stay in git as the engine's regression record.
 
-`context.json` is rebuilt with `build_context.py <inventory.json>`; it keeps a value only when every
-number in it equals, at its printed precision, a number within two lines of the cited file:line
-(49 of 50 items and all 255 values on 2026-09-21, the dropped item a caveat with no number;
-49 cards and 211 values on 2026-09-23 after the adoption; 53 cards and 231 values later that day,
-after the benefit lanes; 56 cards and 246 values on 2026-09-24, with FAQ 15 and 16 carded; 56 cards
-and 243 values that evening, after the data corrections; 57 cards and 250 values on 2026-09-26,
-after the finite-removal responses and the consumption key).
-Fabricated numbers at real locations are rejected in memo and CSV files alike.
+## The main case on the page
 
-`ladder.py` parses `research/immigration-confidence-ladder.md` at build time, so the page carries
-the ladder's own sentences (171 entries on 2026-09-21: 89 current, 31 qualified, 51 historical).
-Status is mechanical: entries 1-51 are the dated earlier layers; an entry is `qualified` when it
-opens with a bracketed correction, is named in the file's opening correction notes, or is named by
-a later entry as replaced, superseded, qualified or narrowed. Topics and ledger links are keyword
-rules and the page says so. Only current entries show by default.
+- **Payloads.** `build_ui.py` inlines both payloads as `window.CASE_PAYLOADS`, and `ui.js` calls
+  `Case.create(MODEL, CASE_PAYLOADS)` once. `case.js` refuses a pair that is not one adopted case: a
+  payload without capital components, responses or lineage counts; two adoption stamps; or a cash set
+  that differs from the case in more than its edits, the pension switch and the lineage meta.
+  `test_engine.js` tampers with each and expects the refusal.
+- **State.** Beside the engine's fields a case state has `benefits` (`accrual`, the case, or `cash`,
+  the cash set), `long_run` (roads, transport and parks and the lines that follow them: the case's
+  long-run responses, 0 or 1), `capital` (the case's 2% and 3% return, none, or the 7% private return),
+  `enterprises` (`D`, every enterprise responds, or `A`, held out) and `reading` (`low` or `high`). The
+  central preset spans both readings, each paired with its end of the general-government band
+  (0.6005 and 0.8511 of average cost), as the lane pairs them.
+- **Cost.** `cost = −(engine welfare) + fiscal weight × capital return`. The case's service responses
+  scale with the public-services slider and rental assistance with the benefits slider, as the engine
+  scales the lines it answers itself, so the page's sliders keep their meaning. Shares typed into the
+  ledger win over the case's. Per-member figures divide by the 42.75 million people of the lineage,
+  and per other resident by the rest of the 340.1 million residents.
+- **Presets.** `main_case` is central; every other preset `extends` it and lists only what it
+  changes, and a setting of `null` removes a band. Numbers are read, never typed: `value_from:
+  responses.<path>` reads `meta.responses`, and preset text carries tokens that `build_ui.py`
+  resolves from the payload: `{response:<id>}`, `{share:<id>}`, `{elasticity:<id>}`,
+  `{people:<field>}` and `{rate:<name>}`. `{assigned:<name>}` is filled from the ledger when the page
+  draws.
+
+| Preset | Cost, bn a year |
+|---|---|
+| Main case | 389.1–461.5 |
+| Benefits counted when paid (the cash set) | 307.4–385.4 |
+| All services at average cost (the proportional benchmark) | 418.1–475.8 |
+| Taxes paid minus benefits received | −118.7 to −101.6 |
+| No public services charged | −44.3 to −28.7 |
+| Everything at average cost | 703.9–744.1 |
+| Production side only | 0.5–0.7 |
+
+  [CALCULATION: case.js on presets.json; a negative cost is a net gain to other residents]
+
+- **Lane readings.** `presets.json` `lane_readings` lists the states the case lane ran too, each the
+  central preset with stated changes; `test_engine.js` checks each against its field of `summary.json`
+  at 1e-6 bn or its row of `main_case_bands.csv` at the CSV's printed precision, and the status line
+  names them when the reader lands on one. The cash set 307.3994–385.3641; every service proportional
+  418.1016–475.8387; college and other education budgets fixed too 328.3312–428.2095; no return on
+  public capital 352.5010–400.4155; capital at the private 7% 480.5364–542.8987; enterprises held out
+  372.3212–438.6484; rental assistance at 0 384.5937–456.9909; general government held fixed
+  356.3820–413.5857 (CSV).
+- **Readouts.** Two figures of the case sit beside the presets, read by `build_ui.py` from the file
+  each names, because the page cannot compute them. The first-year budget response keys roads by
+  household resources, which changes the case's own data, and the CSV it comes from must carry this
+  case's band in its `adopted` row (the build checks it at the CSV's precision). Schools at the
+  within-district rate need the group's share of pupils, which the case lane holds.
+- **Ledger.** Amounts are the case's: the data corrections and the 3.04 million added descendants
+  are in every line. The case's own lines (schools priced where the group enrolls, colleges keyed by
+  use, care and shelter constants, roads by vehicle miles, three state price levels) form the last
+  spending group under plain names; `build_ui.py` refuses a payload line or receipt line that `ui.js`
+  does not name. The capital table groups the 28 components by the line whose response they follow;
+  the four user-fee offsets sit with the component they adjust, and the eleven enterprises form one row.
+- **Printed sums.** The bridge, the Shapley split, the ledger groups and the capital table round their
+  parts by largest remainder, so printed parts add to the printed totals, and the bridge prints its
+  changes against the main case in a column that adds to the printed difference. A rendered-page
+  probe checked 20 to 23 sums at the main case, at every preset, in all three views and after
+  stacked changes on 2026-10-08, with no mismatch.
+
+## Gates
+
+`test_engine.js` ends `PASS: 2629 grid rows, 60 service cases, 32 accounting cases, 4 headline bounds,
+22 lane bands (...); main case as loaded 389.0826 to 461.4797 bn, cash set 307.3994 to 385.3641 bn,
+9 lane readings, 7 presets, 2 readouts, per-member figures, attribution closure, 3 case guards, 1692
+corrected shares on their base; worst gap 4.28e-9 bn`. Three negative controls fail it (2026-10-08): the
+central preset's general government a hair off the case's response, a lane reading given the wrong
+change, and one payload edit moved by 0.01 bn.
+
+The share-base check found one cell where the case's payload gives the group part of a national
+amount of zero: the added descendants' edit carries +0.4474 bn of corporate tax borne by labor to the
+all-capital incidence rule, under which that line is zero nationally. The reference rule is unaffected,
+and the page counts that line only when a reader picks that rule and moves the corporate-tax response
+off 0. The test names the cell, reported to the case lane on 2026-10-08, and fails on any other.
+
+`build_ui.py` refuses to build when the payloads are missing or malformed, a preset sets a path the
+case cannot honour (an unknown field, a case option outside its values, a band without its point
+value), a lane reading names no band, a readout's file is not on this case, a token does not resolve,
+an `{assigned:...}` name is undefined, or a source names a place that is not on the page.
+
+## Objection cards
+
+`context.json` is rebuilt with `build_context.py <inventory.json>`. A value is kept only when every
+number in it equals, at its printed precision, a number within two lines of the cited file:line. Since
+2026-10-08 the build fails loud: a value or card that does not verify stops it (exit 1, context.json
+unwritten) unless `--allow-drop <id>` names the card. On the cards of 2026-09-26 it refused 133
+failures (114 of 250 values; 19 of 57 cards would have lost every value).
+
+The cards were rebuilt on 2026-10-08 on the current documents by `cards/build_inventory.py`
+(inventory `_cache/inventory_2026_10_08.json`, from `context.json` at cb3c2e6c): 61 cards and 251
+values, all verified, with no `--allow-drop`. Each card's objection is its FAQ entry's heading or
+steel-man, checked sentence by sentence, and every number token in an objection, finding, combining
+rule or value label equals a value of the card or a number at a line it cites. 46 cards were
+rewritten to main case v6 and the current documents (the generation-ledger cards carry item T),
+eight kept their text with refreshed rules or citations, and seven were added: one per FAQ entry 18,
+20 and 21, two for entry 19, the legacy financing comparisons beside entry 2 and the main case's own
+generation split. Three were dropped because no living document carries their figures any more: the
+September 20 account's 356.84 bn stress test, the financing projection on the superseded
+complete-account balance and the ledger's arms grid before item T. No card adds to the main case.
+`sources.json` follows the cards: a repo document a card cites supports that card, the earlier
+cases' main-case lanes support none and left the registry, and so did three external sources that
+only the dropped cards used.
+
+The numeric gate confirms that a number is printed at its cited line, not that the source still
+stands behind it. A value a source marks stale, or that the FAQ has since corrected, passes it and has
+to be replaced by hand.
+
+## Ladder
+
+`ladder.py` parses `research/immigration-confidence-ladder.md` at build time, so the page carries the
+ladder's own sentences: 298 entries on 2026-10-08, 128 current, 119 qualified and 51 historical.
+Status is mechanical: entries 1-51 are the dated earlier layers; an entry is `qualified` when it opens
+with a bracketed correction, is named in the file's opening correction notes, or is named by a later
+entry as replaced, superseded, qualified or narrowed. Topics and ledger links are keyword rules, and
+the page says so. Only current entries show by default.
 
 ## Sources and links
 
-`sources.json` is the registry: 99 external sources (2026-09-21), each with authors, year, title,
-venue, link, a short label, the places on the page it supports (`control:<id>`, `card:<id>`,
-`preset:<id>`, `argue:<author>:<n>`, `ledger`, `production`, `standing`) and where this repo cites
-it (`repo_ref`, file:line). The links were mined from citations already in the repo. 13 are marked
-`resolved`: built on 2026-09-21 from an identifier the repo records (NBER number, DOI, SSRN id, a
-Census API template instantiated for 2024, a corrected host). Bibliographic details were checked
-against Crossref or the publisher's `citation_*` tags where the repo's note and the record
-disagreed (Duncan and Trejo 2017 is ILR Review 70(5), not 71(5)). [SOURCE: sources.json]
+`sources.json` is the registry: 102 external sources, each with authors, year, title, venue, link, a
+short label, the places on the page it supports (`control:<id>`, `card:<id>`, `preset:<id>`,
+`readout:<id>`, `argue:<author>:<n>`, `ledger`, `capital`, `production`, `standing`) and where this
+repo cites it (`repo_ref`, file:line), and 33 documents of this repo (`kind: repo`, with the file's
+`path`): the v6 decision and lane, the decisions the case builds on, and the lanes behind its parts.
+The page opens repo documents locally and lists them after the external sources. The links were mined
+from citations already in the repo; 16 are marked `resolved`, built from an identifier the repo
+records. Bibliographic details were checked against Crossref or the publisher's `citation_*` tags
+where the repo's note and the record disagreed. [SOURCE: sources.json]
 
-Since 2026-09-23 the registry also lists documents of this repo (`kind: repo`, with the
-`path` of the file instead of a link): the adoption decision, the main-case lane and the justice
-and uncompensated-care lanes, then the lanes and memos the refreshed cards cite, then the decision
-and main-case lane of the data corrections (17 documents on 2026-09-24), and since 2026-09-26 the
-decision, main-case lane, finite-response lane and consumption-key lane of that day's adoption (22
-documents). The page opens them locally and lists them after the external sources;
-`check_sources.py` skips them.
+`check_sources.py` fetches each link once and writes `sources_check.json`, a dated receipt. On
+2026-10-08 every link was fetched again and 88 of 102 answered, five more than at the checks of
+September (the Marginal Revolution posts). The rest return 403 to a script (five CBO pages, DHS, CGD,
+PNAS, SSRN and four journal articles, three of them reached through doi.org) or are not fetched by rule (x.com); the
+page marks each "open it by hand". A file named in a reference becomes a local link only when it
+exists in this checkout.
 
-`build_ui.py` refuses to build when a source lacks a link or a repo reference (for a repo
-document, when its file is missing from this checkout), or names a place that is not on the page,
-and prints the places that carry no outside source. 21 do (2026-09-23): three author summaries,
-three conventions (taxes minus benefits, everything at average cost, production only) and fifteen
-assumptions the account sets itself (among them labor share, labor-supply response, capital
-adjustment, fiscal weight and the service, interest and transfer responses). The page labels those
-"No outside source: the account sets this itself" rather than borrowing authority.
+The places that carry no outside source are printed by the build: three author summaries, three
+conventions and the assumptions the account sets itself (among them labor share, labor-supply
+response, capital adjustment, fiscal weight and the interest and transfer responses). The page labels
+those "No outside source: the account sets this itself".
 
-`check_sources.py` fetches each link once and writes `sources_check.json`, a dated receipt: 79 of
-99 answered; 18 returned 403 to a script (CBO, PNAS, SSRN, SAGE, AEA, CGD, DHS, Marginal
-Revolution, University of Chicago Press), one host is not fetched by rule (x.com) and Treasury
-FiscalData failed certificate verification. The page marks each of them "open it by hand". Two
-links the repo pins are dead: MEPS `h256dat.zip` returns 404 and `www.meps.ahrq.gov` no longer
-resolves; the registry points at the HC-256 landing page and the host without `www`.
+## Evidence for general government
 
-A file named in a reference becomes a local link only when it exists in this checkout (60 on
-2026-09-21). Ladder entries keep the links their own markdown carries.
-
-The citation pass corrected three statements, on the page and in `presets.json`: Yglesias's
-"would cost taxpayers nothing" is an aside in a sentence about housing reform, with immigration as
-the comparison, so the page now says he did not argue it; the 63-66% school response is this
-repo's first-order arithmetic on CBO's two regression coefficients (0.37 and 0.34), not a figure
-CBO states; and the 1.5-2.5 substitution range follows Colas and Sachs, not the National Academies.
-
-## Wording
-
-A separate-context editing pass (`/de-slop`, 45 findings) found the page speaking the build's
-language. Options, allocation rules (47, named from the two upstream builders and guarded at build
-time), statuses and card labels now use reader words; `context.json` prose was edited directly in
-two passes that compare the multiset of numbers in every string before writing, so no value moved.
-
-## Adopted 2026-09-26: finite-removal responses and the consumption key
-
-The operator adopted two corrections together on 2026-09-26
-([decision](../../../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md);
-[main-case lane](../main_case_2026_09_26/RESULT.md)). They move the central case from 200.9-246.3
-to 200.9-245.7 bn: the finite-removal responses add 4.09 / 3.43 bn and the consumption key takes off
-4.05 bn. [CALCULATION: main_case_2026_09_26/main_case.cjs; test_engine.js reproduces it]
-
-- **Payload.** `build_ui.py` and `test_engine.js` load `../main_case_2026_09_26/derived/corrections.json`:
-  the September 24 edits plus audit row 8's finite factor and the consumption key's edits, 270 cell
-  edits on the same cells as September 24, 41 of them changed. The switch applies it whole. Its label
-  and the ledger note name both adoption dates, read from the payload's `meta` and `meta.builds_on`.
-- **Responses.** The finite-removal responses are engine state, not cell edits. The payload carries
-  them in `meta.responses`, and presets read them through `value_from` paths:
-  `responses.general_government.low/high` (0.6000/0.8504) and `responses.school.growth/decline`
-  (0.6522/0.6813). `build_ui.py` resolves a path as it resolves a `scaling_check.json` name and
-  refuses a path that names no number, or a payload without the four responses. The central preset
-  and the proportional benchmark take general government from there, and the central preset takes
-  schools too (the proportional benchmark holds schools at 1). The September 20 preset keeps 0.63/0.66
-  and 0, as the account published them. Preset text prints the bands through a `{response:<name>}`
-  token (0.60-0.85, 65-68%), so no response is typed by hand.
-- **Switch.** Turning the corrections off leaves the responses where the preset set them, so the
-  central case with the switch off is the uncorrected model at the adopted responses, 207.4-253.2 bn,
-  which no decision adopted; the status line and the central preset's note say so. Until 2026-09-26
-  the switch-off state was the September 23 case, because the responses had not moved. That case is
-  now reproduced in `test_engine.js` only.
-- **Sliders.** The school and general-government sliders mark the marginal rates in grey (CBO's 0.63
-  and 0.66; the composite 0.59 and 0.84 from `scaling_check.json`) and the adopted responses in dark
-  ink, with the central tick on the band's first end. Each help text says why the response exceeds
-  the rate: the group is 17.5% of pupils and 12.0% of residents, and under a power-law cost a
-  removal of that size saves more than the marginal rate. Its numbers are read from `meta.responses`.
-- **Citations.** A preset setting can name sources by key (`cite`). The page shows them under the
-  note, and `build_ui.py` refuses a key that `sources.json` lacks or whose source does not list that
-  convention. The changed notes cite `repo_finite_response_2026_09_26`. Four repo documents were
-  registered: the decision, the main-case lane, the finite-response lane and the consumption-key lane.
-- **Gates.** `test_engine.js` checks each band to half a unit of the fourth printed decimal:
-  September 23 at the marginal rates with the switch off (and the lane identity to 1e-6 bn);
-  September 24 on that day's payload at the marginal rates; September 26 with the switch set
-  explicitly and with the presets as loaded; and the uncorrected model at the adopted responses
-  (`uncorrected_at_adopted_responses`), for the central case, non-school education fixed and the
-  proportional benchmark. It also checks that the loaded presets carry exactly the payload's
-  responses. A copy of the presets with the old typed responses fails 12 checks: it computes the
-  mixed case, 196.7-242.2 bn (negative control, 2026-09-26). The build refuses eight malformed
-  inputs (an unknown cite key, a cite whose source does not list the convention, a `value_from` path
-  to nothing or to an object, an unknown `{response:...}` token, a payload without responses or with
-  one end missing, a point value that is neither end of its band) and accepts a point value at the
-  band's other end.
-- **Not recomputed here.** The engine is unchanged. The shelter constant inside the payload stays
-  keyed to 0.59/0.84, and the school-dilution figure beside the account is priced at 0.63-0.66
-  (main_case_2026_09_26 RESULT, Limits).
-
-## Adopted 2026-09-24: data corrections
-
-The operator adopted a package of data corrections on 2026-09-24
-([decision](../../../decisions/2026-09-24-main-case-audit-and-outside-checks.md);
-[main-case lane](../main_case_2026_09_24/RESULT.md)): the dataset audit, the pooled-MEPS medical
-figure with long-term care by use, care and household services, shelter keying and the four
-outside checks. The group's taxes were overstated (+48.7 / +50.3 bn of cost) and so was its keyed
-spending (−51.0 / −53.6 bn), so the main case moves from 203.2-249.6 to 200.9-246.3 bn.
-[CALCULATION: main_case_2026_09_24/main_case.cjs]
-
-- **Payload.** `main_case.cjs` writes `../main_case_2026_09_24/derived/corrections.json` only when
-  its gates pass. It holds 270 cell edits to executed allocations: 176 on 22 receipt lines under
-  all 8 incidence rules, and 94 on 41 spending lines, one per allocation rule. Three lines have no
-  counterpart in the account and stand on their own: schools priced where the group enrolls
-  (responds as the school part of education), colleges and other education re-keyed (responds as
-  the other part), and care work, shelter and audit rows 8-10 (counted in full). Each edit moves
-  the same amount out of other residents' share, so national totals hold.
-- **Engine.** `engine.js` `applyCorrections(model, payload)` returns the corrected copy of the
-  model, and a state with `data_corrections: true` evaluates it. `ui.js` attaches it once, as
-  `MODEL.corrected`, before anything is evaluated. `build_ui.py` inlines the payload as
-  `window.CORRECTIONS` and refuses to build when it is missing or a correction line has a class
-  the engine does not answer.
-- **Switch.** "Apply the data corrections adopted on 2026-09-24" heads the rail, as two native
-  radios. It is a control like any other: the Shapley split, the sensitivity ranking, the
-  last-touched effect, undo and reset all include it. Every preset except `repo_central` turns it
-  on. `repo_central` turns it off, because the September 20 figure predates the corrections.
-- **Ledger and bridge.** With the switch on, every amount is the corrected one. A small signed
-  figure under an amount is that line's correction: the corrected amount minus the published one,
-  at the same allocation, incidence rule and allocation rule. `applyCorrections` rescales an edited
-  cell's share with its amount, keeping the cell's base (target / share) fixed; `test_engine.js`
-  checks that for all 532 edited cells. The ledger shows the corrected share with the published one
-  as its title (federal income tax 4.2% corrected, 5.3% as published). The three lines of their own
-  form the last spending group, under their payload labels.
-  The bridge counts the two education lines under "Education" and the third as "Care, shelter and
-  audit items".
-- **Status.** The account's executed runs predate the corrections, so with the switch on the page
-  never says "the account ran this exact case". The central case with the switch off is named as
-  the case adopted on 2026-09-23. [Until 2026-09-26: since then the switch-off state keeps the
-  adopted responses and is named as the central case's assumptions on the published data.]
-- **Amounts in preset text.** Five ledger amounts that preset and author text had typed by hand
-  moved with the corrections: education, other services, all services, defense with interest, and
-  benefits. They are now `{assigned:<name>}` tokens. The page fills each from the ledger of the
-  state the text describes (`ASSIGNED` in `ui.js`), and `build_ui.py` refuses an unknown name.
-- **Gates.** `test_engine.js` checks the three September 24 bands against
-  `main_case_2026_09_24/derived/main_case_bands.csv` to half a unit of the fourth decimal, with
-  the switch set explicitly and with the central and proportional presets as loaded. It also
-  checks that `repo_central` loads with the switch off and every other preset with it on, that the
-  September 20 and 23 bands reproduce with the switch off, and that the Shapley split closes over
-  the switch. A copy of the presets with the switch removed from the central case fails three of
-  these checks (negative control, 2026-09-24).
-
-## Adopted 2026-09-23: general government grows, justice and uncompensated care by use
-
-The operator adopted three changes to the main case on 2026-09-23
-([decision](../../../decisions/2026-09-23-main-case-general-government-and-use-keys.md);
-[main-case lane](../main_case_2026_09_23/RESULT.md)). The page's central case
-(`repo_central_gg`, marked `central` in `presets.json`) carries all three; the proportional
-benchmark carries them too, and the September 20 central case stays as a convention
-(`repo_central`, general government fixed, justice per head).
-
-1. **General government** responds at 0.59-0.84 instead of zero, read from
-   `derived/scaling_check.json` (`composite_low`, `composite_high`). Both values enter the range
-   (`general_government_response_band`). The evidence is set out below.
-2. **Public order and safety by use.** `build_model.py` adds the rule `use`: the per-head
-   allocation with the group's part raised by the justice lane's central change,
-   `cj_use_allocation_2026_09_23/derived/summary.json` `central.change_bn` (+5.94 bn, target
-   68.37 bn), national total unchanged. `use_raw_coding` applies the lane's raw ethnicity coding
-   (`one_at_a_time_change_bn.scaling_raw`, +1.67 bn).
-3. **Uncompensated hospital care.** `uninsured_use_low` and `uninsured_use_high` raise the
-   group's Medicaid allocation by the part of government uncompensated-care payments that the
-   account's keys under-charge, at equal use:
-   `uncompensated_care_2026_09_23/derived/summary.json` `inside_undercharged_bn_use_1.0`
-   (3.65-5.75 bn). Both ends enter the range (`key_band`). `uninsured_use_07_low` and
-   `uninsured_use_07_high` are the 0.7x-use arm (2.12-3.51 bn), selectable in the ledger.
-
-Both added rules sit on lines that count in full in every published profile, so they move the
-result one for one. On 2026-09-23, before the data corrections, the result was 203.2-249.6 bn for the central case, 158.9-212.6 bn with
-non-school education fixed and 307.9-341.0 bn for the proportional benchmark (September 20:
-165.1-197.4, 120.8-160.3 and 269.8-288.7 bn). [CALCULATION: main_case_2026_09_23/main_case.js;
-test_engine.js reproduces it]
-
-The engine reports a band as a range: `unresolvedRange` evaluates the cartesian product of the
-account's open choices, `school_response_band`, `general_government_response_band` and every
-`key_band` entry, and returns the minimum and maximum. A preset sets the point value to one end
-of each band, as the school band did; moving that control, or choosing another rule for that
-line, drops the band.
-
-### Evidence for general government
-
-The published account held defense **and** general government at zero response. The engine
-separates the two (`general_government_response`; the executed grid moves them together, and the
-gate sets both from the grid's one column). `scaling_check.py` gives the evidence for treating
-them differently [CALCULATION: scaling_check.py -> derived/scaling_check.json]:
+The published account held defense **and** general government at zero response. The engine separates
+the two (`general_government_response`). `scaling_check.py` gives the evidence for treating them
+differently [CALCULATION: scaling_check.py -> derived/scaling_check.json]:
 
 - BEA Table 3.16, 2024: general public service outside interest is 475.8 bn, 63% of it state and
   local. Federal tax collection and financial management is 36.6 bn; federal executive and
@@ -271,97 +202,50 @@ them differently [CALCULATION: scaling_check.py -> derived/scaling_check.json]:
   0.842 (se 0.039), financial administration 0.789, judicial 0.951; for comparison police 1.041,
   correction 0.975, K-12 0.983. [DATA: _cache/slf2022.xlsx, Census State and Local Government
   Finance Table 1, sha256 4dd123c5...643b9b; census_popest_2024/NST-EST2024-ALLDATA.csv]
-- Implied response 0.59 (federal executive and legislative fixed, federal tax collection at 0.789,
-  state and local at 0.842) to 0.84 (everything at 0.842). On the 48.3 bn assigned to the group
-  that is 28.5-40.6 bn a year: the central span moves from 165-197 to 194-226 (low) or 206-238
-  (high). [INFERENCE: a cross-section shows long-run scale, not a measured response to this group]
-- Federal police, courts and prisons (82.8 bn, FBI included) are already charged inside
-  `public_order_safety` (per head in the September 20 account, by use since 2026-09-23); this is
-  not an added cost. Defense and interest on debt already issued stay at zero.
+- Marginal rates 0.59 (federal executive and legislative fixed, federal tax collection at 0.789,
+  state and local at 0.842) to 0.84 (everything at 0.842). The case reads them over a removal of the
+  group's size, 12.9% of residents, under a power-law cost: 0.6005 to 0.8511 of average cost
+  ([decision](../../../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)).
+  [INFERENCE: a cross-section shows long-run scale, not a measured response to this group]
+- Federal police, courts and prisons (82.8 bn, FBI included) are charged inside
+  `public_order_safety`, by use; this is not an added cost. Defense and interest on debt already
+  issued stay at zero.
 
-Adopting this changed the analysis protocol, so it waited for the operator; he adopted it on
-2026-09-23 (decision above).
+## Wording
+
+A separate-context editing pass (`/de-slop`, 45 findings) found the page speaking the build's
+language. Options, allocation rules (named from the two upstream builders and guarded at build time),
+statuses and card labels use reader words. The payloads' own line labels are the builders' and never
+reach the page.
 
 ## Limits [FRAMING-SENSITIVE]
 
-- Number cards (`presets.json`) are accounting conventions, never people: no commentator
-  produced a number for this population. The authors section is text with audit references, the
-  object each claim is about, and the closest convention where one exists. Caplan has none: his
-  gains accrue mainly to migrants and his keyhole remedy applies to future entrants, so switching
-  benefits off here would only stop counting the benefits the central case assigns (364 bn before
-  the data corrections; the page fills in the current amount).
-- The ledger counts other US residents only. Gains to the group's own members (the place premium,
-  where most of any world-GDP gain sits) and origin-country effects are not computed in this repo;
-  the page says so rather than netting them.
-- Settings off the executed grid are exact evaluations of the same linear formula. The page says
-  whether the account ran the exact case, only its formula applies (any mix of executed rules per
-  line, since 2026-09-23, and any state on the corrected data, since 2026-09-24), or a setting is
-  one the account never uses (the reader's own).
-- One income year of a resident stock. No generation split, lifetime value or policy effect; the
-  cards say which outside results overlap. The two care items the account used to omit (native
-  women's hours taxes and the net elder-care Medicaid saving, FAQ 4 and 13) are inside the central
-  case since the data corrections of 2026-09-24, so no card adds to it any more (with the switch
-  off they are out again). Since 2026-09-23 police, courts and prisons are charged by use. Crime victims' harm, free
-  hospital care absorbed outside government budgets, rent transfers and mobility insurance are
-  priced beside the account (research/immigration-real-fiscal-and-social-costs-2026-09-23.md),
-  never inside it; the scale-and-schooling net is proposed there, not adopted.
-- The objection cards (`context.json`) were rebuilt on 2026-09-23 from a fresh inventory: 49
-  cards, 211 values, none dropped. Cards lead with the adopted main case and name September 20
-  values as such. The numeric gate confirms that a number is printed at its cited line, not that
-  the source still stands behind it: values a source stamps STALE, or that the FAQ has since
-  corrected, pass it and must be replaced by hand. Entry 14's executed nest has no card yet.
-  The id `e12_no_group_crime_cost_in_headline` is kept because `sources.json`
-  keys on it, although the card now describes justice charged by use.
-- A second pass the same day (inventory kept locally in the ignored `_cache/`) followed the care,
-  construction, scale, mobility and NIBRS lanes: the FAQ 4, 12 and 13 cards were rewritten, four
-  cards were added (`e4_care_channels_add`, `e4_scale_and_schooling_net`,
-  `e4_shock_insurance_mobility`, `real_costs_and_benefits_totals`), and the relation
-  `adds_to_headline` now marks the two care cards. The id `e4_prices_and_native_hours` is kept for
-  cheaper services and construction; the hours tax it once carried moved to `e4_care_channels_add`.
-  Numeric values the page would have rounded past their printed digits (13.32 shown as 13,
-  −0.00252 as 0.00) are now stored as text, so each card shows its source's digits.
-- A third pass on 2026-09-24 added the FAQ revision's caveat to `e12_no_group_crime_cost_in_headline`
-  (BJS jail counts carry no ethnicity adjustment; with jails at the arrest share the prison-and-jail
-  figure is 22.9% Hispanic, and the ACS custody key does not change) and three cards:
-  `e15_same_share_different_gap`, `e15_shares_and_metro_match` (the shared all-age ledger's
-  state and metro tables) and `e16_cbo_surge_projection`.
-- A fourth pass that evening followed the data corrections (inventory `_cache/inventory_2026_09_24b.json`,
-  written from the cards as they stood): 56 cards and 243 values, none dropped by the gate. 25
-  cards were rewritten or relabelled from the current FAQ, the September 24 lane and the memos,
-  with the September 24 figure first and the September 23 one named as such: the headline, cards
-  under entries 2, 4, 5, 6, 8, 11, 12, 13, 15 and 16, three account and ledger cards and the
-  real-costs totals; the combining rules were re-read from the FAQ. The
-  two care cards moved from `adds_to_headline` to `inside_headline`; the ids
-  `e4_care_channels_add` and `e13_elder_care_medicaid_bound` are kept because `sources.json` keys
-  on them. 29 citations whose files had shifted were re-anchored to the closest line that prints
-  the value. The source check found two qualifications the gate passes: ladder 209 lowers every
-  Mexican-origin population total by about 1.1-1.2M on the ACS count (`e5_ethnic_attrition_narrows_gap`),
-  and pooled MEPS rejects the headcount key behind the 356.84 bn stress test's largest move
-  (`complete_account_356_endpoint`). Both cards now say so. Values computed only on the September
-  23 case (the general-government addition of 28.5-40.6 bn, the scale net's 189.3-235.7 bn, the
-  409.1 bn stress test) are labelled with that date.
-- A fifth pass on 2026-09-26 followed the finite-removal responses and the consumption key
-  (inventory `_cache/inventory_2026_09_26.json`, rebuilt from the cards as committed at ba12f3c by
-  `cards/build_inventory.py`, tracked since 2026-09-27 with its `reanchor.py`. It maps each citation's lines from the files at
-  ba12f3c, and its own edits' citations from those at 199582e, to the files as they stand, and it
-  finds the FAQ's combining rules by their opening words): 57 cards and 250 values, none
-  dropped. Nine cards that quoted a changed September 24 number now lead with the September 26 case,
-  citing `main_case_2026_09_26/RESULT.md` or FAQ entry 17: the headline, three cards under entry 2,
-  entries 4, 11, 16 and 17, and the assigned balance (receipts 488.5 → 492.5 bn). The September 24
-  figure stays beside each as such. Values computed only on the September 24 case keep that date: the
-  back-cast, the scale net, the real-costs totals, the justice change of 2.03 bn and the 356 bn
-  endpoint. After schools were charged at full cost that evening, the cards call it the September 26
-  case, never the adopted main case, and the headline card says the explorer runs it as the first-year
-  budget response while the adopted main case ($258-292 bn) is not yet in the explorer. Every value
-  re-verified at its cited line at 20f68c1. Lines added to the documents later move the citations
-  again: rerun the two scripts, since `build_ui.py` does not recheck them.
+- Number columns are accounting conventions, never people: no commentator produced a number for this
+  population. The authors section is text with audit references, the object each claim is about, and
+  the closest convention where one exists. Caplan has none.
+- The ledger counts other US residents only. The group's own gains (the place premium) and Mexico's
+  side are computed in the world ledger (`world_ledger_2026_09_27`), which sets the main case against
+  the group living in Mexico and states the weight at which the sum changes sign. The page points to
+  it and does not net it.
+- The case's 9 lane readings are reproduced exactly. Any other setting is an exact evaluation of the
+  same formula; the status line says whether the case lane ran the state, the page computes a
+  convention or a combination with the case's formula, or a setting is one the case never uses.
+- Two figures of the case cannot be set on the page and are read from lane files (the readouts).
+  Moving an assumption does not move them.
+- One income year of the resident lineage. No generation split, lifetime value or policy effect; the
+  cards say which outside results overlap. Crime victims' harm, free hospital care absorbed outside
+  government budgets, rent transfers and mobility insurance are priced beside the account
+  (`research/immigration-real-fiscal-and-social-costs-2026-09-23.md`), never inside it.
 - The production block is CES; increasing-returns arguments are outside it.
-- Compiled through an LLM (notes/llm-bias-caveat.md): the ledger numbers are gated, the readings
-  of authors and the ladder's keyword links are not.
-- One light theme, set as a printed handout after Tufte: off-white paper, one serif, rules only
-  where a table needs them, native form controls, colour on data marks only. The mark outlines
-  (#5c97d2, #ca7a5e) pass the palette validator on the paper colour; the pastel fills do not reach
-  3:1 against it, so every bar carries its value and the ledger tables repeat the chart.
-- Checked at 1400 px and 390 px: no horizontal overflow at either. The template must open with
-  `<!doctype html>` (the build refuses otherwise): without it browsers use quirks mode and the
-  ledger tables stop inheriting the text colour.
+- Compiled through an LLM (`notes/llm-bias-caveat.md`): the ledger numbers are gated; the readings of
+  authors and the ladder's keyword links are not.
+- One light theme, set as a printed handout after Tufte: off-white paper, one serif, rules only where
+  a table needs them, native form controls, colour on data marks only. The mark outlines (#5c97d2,
+  #ca7a5e) pass the palette validator on the paper colour; the pastel fills do not reach 3:1 against
+  it, so every bar carries its value and the ledger tables repeat the chart.
+- Checked at 1400 px and 390 px with no horizontal overflow and no page errors. The template must
+  open with `<!doctype html>` (the build refuses otherwise): without it browsers use quirks mode and
+  the ledger tables stop inheriting the text colour.
+
+The page's earlier cases (September 20 to 26) and how it carried them are in this file's history
+(at d434f272 and before) and in the decisions.

@@ -1,5 +1,5 @@
 {
- "note": "One registry of sources: external ones with a link, and documents of this repo (`kind: repo`) with the `path` of their file in the checkout, which the page opens locally. `supports` names places on the page (control:, card:, preset:, author:, argue:<author>:<n>, ledger, production, standing); build_ui.py rejects a place that does not exist. `repo_ref` is where this repo cites the link; `resolved` marks a link built from an identifier the repo records. check_sources.py writes the fetch receipt.",
+ "note": "One registry of sources: external ones with a link, and documents of this repo (`kind: repo`) with the `path` of their file in the checkout, which the page opens locally. `supports` names places on the page (control:, card:, preset:, readout:, author:, argue:<author>:<n>, ledger, capital, production, standing); build_ui.py rejects a place that does not exist. `repo_ref` is where this repo cites the link; `resolved` marks a link built from an identifier the repo records. check_sources.py writes the fetch receipt.",
  "sources": [
   {
    "key": "cbo_2025_state_local_surge",
@@ -17,13 +17,11 @@
     "card:e2_fixed_service_range_and_breakeven",
     "card:e4_offset_threshold_is_conditional",
     "card:headline_cbo_informed_net_cost",
-    "card:complete_account_356_endpoint",
     "card:service_scaling_test",
     "argue:smith:0",
     "argue:caplan:1",
     "preset:no_services",
-    "preset:repo_central",
-    "preset:repo_central_gg",
+    "preset:main_case",
     "card:e16_cbo_surge_projection"
    ],
    "pdf": "https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf"
@@ -196,15 +194,13 @@
     "card:e8_measured_programme_series",
     "card:e11_not_a_policy_saving",
     "card:e12_no_group_crime_cost_in_headline",
-    "card:complete_account_356_endpoint",
     "card:complete_account_assigned_balance",
     "card:headline_cbo_informed_net_cost",
-    "card:interest_on_gap_lane",
     "card:service_scaling_test",
-    "card:ledger_absolute_waterfall_and_arms",
     "control:general_government_response",
-    "preset:repo_central_gg",
-    "preset:proportional"
+    "preset:main_case",
+    "preset:proportional",
+    "card:e18_unusual_year_budget_replay"
    ]
   },
   {
@@ -295,18 +291,16 @@
     "card:e10_old_age_cells_rest_on_small_cohorts",
     "card:e11_not_a_policy_saving",
     "card:e12_no_group_crime_cost_in_headline",
-    "card:complete_account_356_endpoint",
     "card:complete_account_assigned_balance",
     "card:generation_ledger_annual_balances",
     "card:generation_ledger_later_annual_refreshes",
     "card:headline_cbo_informed_net_cost",
-    "card:interest_on_gap_lane",
     "card:ledger_absolute_uncertainty_scope",
-    "card:ledger_absolute_waterfall_and_arms",
     "card:service_scaling_test",
     "card:e15_same_share_different_gap",
     "card:e15_shares_and_metro_match",
-    "card:e16_cbo_surge_projection"
+    "card:e16_cbo_surge_projection",
+    "card:e5_generation_split_of_the_main_case"
    ]
   },
   {
@@ -324,7 +318,6 @@
     "card:e1_gap_under_age_structures",
     "card:e5_same_age_gaps_by_generation",
     "card:generation_ledger_annual_balances",
-    "card:ledger_absolute_waterfall_and_arms",
     "card:complete_account_assigned_balance"
    ]
   },
@@ -389,8 +382,7 @@
     "card:e6_gap_against_average_resident",
     "card:e11_not_a_policy_saving",
     "card:complete_account_assigned_balance",
-    "card:headline_cbo_informed_net_cost",
-    "card:ledger_absolute_waterfall_and_arms"
+    "card:headline_cbo_informed_net_cost"
    ]
   },
   {
@@ -418,11 +410,9 @@
     "card:e10_ageing_composition_total",
     "card:generation_ledger_annual_balances",
     "card:generation_ledger_later_annual_refreshes",
-    "card:ledger_absolute_waterfall_and_arms",
     "card:ledger_absolute_uncertainty_scope",
     "control:general_government_response",
-    "preset:repo_central_gg",
-    "preset:proportional"
+    "preset:main_case"
    ]
   },
   {
@@ -437,8 +427,7 @@
    "repo_ref": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:90",
    "supports": [
     "card:e1_gap_under_age_structures",
-    "card:generation_ledger_annual_balances",
-    "card:ledger_absolute_waterfall_and_arms"
+    "card:generation_ledger_annual_balances"
    ]
   },
   {
@@ -604,9 +593,7 @@
     "card:e7_cell_level_is_not_a_gap",
     "card:e7_education_specific_gaps",
     "card:e10_ageing_by_category",
-    "card:complete_account_356_endpoint",
-    "card:headline_cbo_informed_net_cost",
-    "card:ledger_absolute_waterfall_and_arms"
+    "card:headline_cbo_informed_net_cost"
    ],
    "resolved": "2026-09-21",
    "resolved_from": "the file number HC-256; the zip address the repo pins (h256dat.zip) returned 404 on 2026-09-21",
@@ -626,8 +613,7 @@
     "card:e1_gap_under_age_structures",
     "card:e3_lower_benefit_draw_by_generation",
     "card:e10_ageing_by_category",
-    "card:generation_ledger_annual_balances",
-    "card:ledger_absolute_waterfall_and_arms"
+    "card:generation_ledger_annual_balances"
    ],
    "resolved": "2026-09-21",
    "resolved_from": "the repo's address without the www. host, which does not resolve",
@@ -664,20 +650,6 @@
    ]
   },
   {
-   "key": "cms_beneficiary_profile_2026",
-   "short": "CMS Medicaid Beneficiary Profile 2026",
-   "kind": "report",
-   "authors": "Centers for Medicare & Medicaid Services",
-   "year": 2026,
-   "title": "Medicaid Beneficiary Profile 2026, pp.13–15",
-   "venue": "Medicaid.gov",
-   "url": "https://www.medicaid.gov/medicaid/quality-of-care/downloads/beneficiary-profile-2026.pdf",
-   "repo_ref": "research/immigration-complete-annual-account-2026-09-20.md:238",
-   "supports": [
-    "card:complete_account_356_endpoint"
-   ]
-  },
-  {
    "key": "cms_nhe_tables",
    "short": "CMS National Health Expenditure tables",
    "kind": "dataset",
@@ -709,7 +681,6 @@
     "card:e9_arrival_window_gaps",
     "card:e10_ageing_by_category",
     "card:generation_ledger_annual_balances",
-    "card:ledger_absolute_waterfall_and_arms",
     "card:ledger_absolute_uncertainty_scope"
    ]
   },
@@ -726,8 +697,7 @@
    "supports": [
     "card:e1_gap_under_age_structures",
     "card:generation_ledger_annual_balances",
-    "card:generation_ledger_later_annual_refreshes",
-    "card:ledger_absolute_waterfall_and_arms"
+    "card:generation_ledger_later_annual_refreshes"
    ]
   },
   {
@@ -741,24 +711,8 @@
    "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z1_fy2027.xlsx",
    "repo_ref": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json:28",
    "supports": [
-    "card:ledger_absolute_waterfall_and_arms",
     "card:ledger_absolute_uncertainty_scope",
     "card:e12_no_group_crime_cost_in_headline"
-   ]
-  },
-  {
-   "key": "omb_hist03z2_fy2027",
-   "short": "OMB Historical Table 3.2",
-   "kind": "table",
-   "authors": "Office of Management and Budget",
-   "year": 2026,
-   "title": "Historical Tables 3.2, outlays by function and subfunction (FY2027 edition)",
-   "venue": "Executive Office of the President",
-   "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
-   "repo_ref": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json:34",
-   "supports": [
-    "card:interest_on_gap_lane",
-    "card:ledger_absolute_waterfall_and_arms"
    ]
   },
   {
@@ -814,8 +768,7 @@
    "url": "https://www.dhs.gov/sites/default/files/2025-07/2025_07_03_ocfo_fy-2026-budget-in-brief.pdf",
    "repo_ref": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json:70",
    "supports": [
-    "card:e12_no_group_crime_cost_in_headline",
-    "card:ledger_absolute_waterfall_and_arms"
+    "card:e12_no_group_crime_cost_in_headline"
    ]
   },
   {
@@ -1561,22 +1514,6 @@
    ]
   },
   {
-   "key": "treasury_debt_to_penny",
-   "short": "Treasury, Debt to the Penny",
-   "authors": "U.S. Treasury, Bureau of the Fiscal Service",
-   "year": 2024,
-   "title": "Debt to the Penny",
-   "venue": "FiscalData",
-   "url": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/debt-to-the-penny",
-   "resolved_from": "the dataset name debt_to_penny",
-   "kind": "dataset",
-   "repo_ref": "infra/immigration-fiscal/gap_interest_2026_09_18/README.md:19",
-   "resolved": "2026-09-21",
-   "supports": [
-    "card:interest_on_gap_lane"
-   ]
-  },
-  {
    "key": "duncan_trejo_2011_jole",
    "short": "Duncan and Trejo 2011",
    "authors": "Brian Duncan and Stephen J. Trejo",
@@ -1618,25 +1555,9 @@
    "venue": "Decision record",
    "path": "decisions/2026-09-23-main-case-general-government-and-use-keys.md",
    "supports": [
-    "preset:repo_central_gg",
-    "preset:proportional",
-    "control:general_government_response"
-   ]
-  },
-  {
-   "key": "repo_main_case_2026_09_23",
-   "short": "Main-case lane, 2026-09-23",
-   "kind": "repo",
-   "authors": "This repo",
-   "year": 2026,
-   "title": "Adopted main case of the complete annual account",
-   "venue": "Analysis lane main_case_2026_09_23",
-   "path": "infra/immigration-fiscal/main_case_2026_09_23/RESULT.md",
-   "supports": [
-    "preset:repo_central_gg",
-    "preset:proportional",
-    "card:real_costs_and_benefits_totals",
-    "card:e16_cbo_surge_projection"
+    "preset:main_case",
+    "control:general_government_response",
+    "card:e2_general_public_services_sensitivity"
    ]
   },
   {
@@ -1649,33 +1570,8 @@
    "venue": "Decision record",
    "path": "decisions/2026-09-24-main-case-audit-and-outside-checks.md",
    "supports": [
-    "control:data_corrections",
-    "preset:repo_central_gg",
-    "preset:proportional",
+    "preset:main_case",
     "card:headline_cbo_informed_net_cost",
-    "card:e17_survey_errors_nearly_cancel"
-   ]
-  },
-  {
-   "key": "repo_main_case_2026_09_24",
-   "short": "Main-case lane, 2026-09-24",
-   "kind": "repo",
-   "authors": "This repo",
-   "year": 2026,
-   "title": "Main case with the data corrections: the dataset audit and the outside checks in one engine run",
-   "venue": "Analysis lane main_case_2026_09_24",
-   "path": "infra/immigration-fiscal/main_case_2026_09_24/RESULT.md",
-   "supports": [
-    "control:data_corrections",
-    "preset:repo_central_gg",
-    "preset:proportional",
-    "card:headline_cbo_informed_net_cost",
-    "card:e2_fixed_service_range_and_breakeven",
-    "card:e4_offset_threshold_is_conditional",
-    "card:e4_care_channels_add",
-    "card:e11_not_a_policy_saving",
-    "card:e12_no_group_crime_cost_in_headline",
-    "card:e16_cbo_surge_projection",
     "card:e17_survey_errors_nearly_cancel"
    ]
   },
@@ -1689,8 +1585,7 @@
    "venue": "Analysis lane cj_use_allocation_2026_09_23",
    "path": "infra/immigration-fiscal/cj_use_allocation_2026_09_23/RESULT.md",
    "supports": [
-    "preset:repo_central_gg",
-    "preset:proportional",
+    "preset:main_case",
     "ledger",
     "card:e12_no_group_crime_cost_in_headline"
    ]
@@ -1705,8 +1600,7 @@
    "venue": "Analysis lane uncompensated_care_2026_09_23",
    "path": "infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md",
    "supports": [
-    "preset:repo_central_gg",
-    "preset:proportional",
+    "preset:main_case",
     "ledger",
     "card:real_costs_and_benefits_totals"
    ]
@@ -1867,7 +1761,8 @@
    "path": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md",
    "supports": [
     "card:real_costs_and_benefits_totals",
-    "card:e12_no_group_crime_cost_in_headline"
+    "card:e12_no_group_crime_cost_in_headline",
+    "card:e4_scale_and_schooling_net"
    ]
   },
   {
@@ -1937,7 +1832,9 @@
    "venue": "Analysis lane arrival_window_fiscal_2026_09_18",
    "path": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md",
    "supports": [
-    "card:e16_cbo_surge_projection"
+    "card:e16_cbo_surge_projection",
+    "card:e18_unusual_year_budget_replay",
+    "card:e9_arrival_window_gaps"
    ]
   },
   {
@@ -1976,37 +1873,11 @@
    "venue": "Decision record",
    "path": "decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md",
    "supports": [
-    "control:data_corrections",
+    "preset:main_case",
     "control:school_response",
     "control:general_government_response",
-    "preset:repo_central_gg",
-    "preset:proportional",
     "card:headline_cbo_informed_net_cost",
     "card:e2_general_public_services_sensitivity"
-   ]
-  },
-  {
-   "key": "repo_main_case_2026_09_26",
-   "short": "Main-case lane, 2026-09-26",
-   "kind": "repo",
-   "authors": "This repo",
-   "year": 2026,
-   "title": "Main case with finite-removal responses and the corrected consumption key, in one engine run",
-   "venue": "Analysis lane main_case_2026_09_26",
-   "path": "infra/immigration-fiscal/main_case_2026_09_26/RESULT.md",
-   "supports": [
-    "control:data_corrections",
-    "preset:repo_central_gg",
-    "preset:proportional",
-    "card:headline_cbo_informed_net_cost",
-    "card:e2_fixed_functions_and_cbo_inputs",
-    "card:e2_fixed_service_range_and_breakeven",
-    "card:e2_general_public_services_sensitivity",
-    "card:e4_offset_threshold_is_conditional",
-    "card:e11_not_a_policy_saving",
-    "card:e16_cbo_surge_projection",
-    "card:e17_survey_errors_nearly_cancel",
-    "card:complete_account_assigned_balance"
    ]
   },
   {
@@ -2021,10 +1892,9 @@
    "supports": [
     "control:school_response",
     "control:general_government_response",
-    "preset:repo_central_gg",
-    "preset:repo_central",
-    "preset:proportional",
-    "card:e2_fixed_functions_and_cbo_inputs"
+    "preset:main_case",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:e2_general_public_services_sensitivity"
    ]
   },
   {
@@ -2037,9 +1907,236 @@
    "venue": "Analysis lane consumption_key_2026_09_24",
    "path": "infra/immigration-fiscal/consumption_key_2026_09_24/RESULT.md",
    "supports": [
-    "control:data_corrections",
-    "preset:repo_central_gg",
-    "preset:proportional"
+    "preset:main_case"
+   ]
+  },
+  {
+   "key": "repo_decision_2026_10_07_main_case",
+   "short": "Decision, 2026-10-07",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The main case takes the 2026 Trustees on separate funds, retiree health on accrual, the added people's measured ages and college costs keyed by use",
+   "venue": "Decision record",
+   "path": "decisions/2026-10-07-main-case-v6.md",
+   "supports": [
+    "preset:main_case",
+    "control:benefits",
+    "card:e19_ancestry_share_beside",
+    "card:e19_descendants_counted_whole",
+    "card:headline_cbo_informed_net_cost"
+   ]
+  },
+  {
+   "key": "repo_main_case_2026_10_07",
+   "short": "Main case, 2026-10-07",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Main case v6: the adopted case, its cash set, its variants and its companion readings",
+   "venue": "Analysis lane main_case_2026_10_07",
+   "path": "infra/immigration-fiscal/main_case_2026_10_07/RESULT.md",
+   "supports": [
+    "preset:main_case",
+    "preset:cash_set",
+    "preset:proportional",
+    "control:capital",
+    "control:enterprises",
+    "control:long_run",
+    "ledger",
+    "capital",
+    "readout:school_within_district",
+    "card:e16_cbo_surge_projection",
+    "card:e17_survey_errors_nearly_cancel",
+    "card:e19_ancestry_share_beside",
+    "card:e19_descendants_counted_whole",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:e2_fixed_service_range_and_breakeven",
+    "card:e4_offset_threshold_is_conditional",
+    "card:e4_production_gain_inside_headline",
+    "card:headline_cbo_informed_net_cost"
+   ]
+  },
+  {
+   "key": "repo_decision_2026_09_28_pension",
+   "short": "Decision, 2026-09-28",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The pension accrual values benefits as current law pays them, with scheduled benefits beside",
+   "venue": "Decision record",
+   "path": "decisions/2026-09-28-pension-accrual-payable-benefits.md",
+   "supports": [
+    "preset:main_case",
+    "preset:cash_set",
+    "control:benefits"
+   ]
+  },
+  {
+   "key": "repo_decision_2026_09_26_schools",
+   "short": "Decision, 2026-09-26, schools",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The main case charges schools at their full average cost per pupil",
+   "venue": "Decision record",
+   "path": "decisions/2026-09-26-main-case-schools-full-cost.md",
+   "supports": [
+    "preset:main_case",
+    "control:school_response",
+    "readout:school_within_district",
+    "readout:first_year",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:service_scaling_test"
+   ]
+  },
+  {
+   "key": "repo_decision_2026_09_27_main_case",
+   "short": "Decision, 2026-09-27",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The main case charges the return on public capital, and roads, parks, rental aid and government enterprises respond",
+   "venue": "Decision record",
+   "path": "decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md",
+   "supports": [
+    "preset:main_case",
+    "preset:proportional",
+    "control:capital",
+    "control:long_run",
+    "control:enterprises",
+    "capital",
+    "card:e2_fixed_functions_and_cbo_inputs"
+   ]
+  },
+  {
+   "key": "repo_capital_return_2026_09_27",
+   "short": "Capital return, 2026-09-27",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The return on public capital charged in full: core services, roads and parks, and government enterprises",
+   "venue": "Analysis lane capital_return_services_2026_09_27",
+   "path": "infra/immigration-fiscal/capital_return_services_2026_09_27/RESULT.md",
+   "supports": [
+    "preset:main_case",
+    "control:capital",
+    "capital"
+   ]
+  },
+  {
+   "key": "repo_long_run_2026_09_27",
+   "short": "Long-run responses, 2026-09-27",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Long-run responses of roads, parks and economic administration, from scaling across the states",
+   "venue": "Analysis lane service_response_long_run_2026_09_27",
+   "path": "infra/immigration-fiscal/service_response_long_run_2026_09_27/RESULT.md",
+   "supports": [
+    "preset:main_case",
+    "control:long_run"
+   ]
+  },
+  {
+   "key": "repo_decision_2026_09_29_main_case",
+   "short": "Decision, 2026-09-29",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The main case adds pension accrual, long-run property taxes and seven measured keys",
+   "venue": "Decision record",
+   "path": "decisions/2026-09-29-main-case-v4.md",
+   "supports": [
+    "preset:main_case",
+    "preset:cash_set",
+    "card:e2_fixed_functions_and_cbo_inputs"
+   ]
+  },
+  {
+   "key": "repo_decision_2026_10_05_main_case",
+   "short": "Decision, 2026-10-05",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The main case counts the descendants who stopped identifying as Mexican",
+   "venue": "Decision record",
+   "path": "decisions/2026-10-05-main-case-v5.md",
+   "supports": [
+    "preset:main_case",
+    "card:e19_descendants_counted_whole"
+   ]
+  },
+  {
+   "key": "repo_break_conditions_2026_09_29",
+   "short": "Break conditions, 2026-09-29",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Break conditions for the evidence map's conclusions, with the first-year budget horizon",
+   "venue": "Analysis lane break_conditions_2026_09_29",
+   "path": "infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md",
+   "supports": [
+    "readout:first_year",
+    "card:e11_not_a_policy_saving",
+    "card:e4_offset_threshold_is_conditional",
+    "card:headline_cbo_informed_net_cost"
+   ]
+  },
+  {
+   "key": "repo_world_ledger_2026_09_27",
+   "short": "World ledger, 2026-09-27",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The main case against the group living in Mexico: other residents, the group and the world",
+   "venue": "Analysis lane world_ledger_2026_09_27",
+   "path": "infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md",
+   "supports": [
+    "standing"
+   ]
+  },
+  {
+   "key": "repo_closed_budget_2026_10_06",
+   "short": "Closed budget, 2026-10-06",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The main case on a federal budget that is eventually closed",
+   "venue": "Analysis lane closed_budget_2026_10_06",
+   "path": "infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md",
+   "supports": [
+    "card:e20_closed_budget_reading"
+   ]
+  },
+  {
+   "key": "repo_legacy_comparators_2026_09_30",
+   "short": "Legacy comparisons, 2026-09-30",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Legacy financing charges of the lineage against comparator groups",
+   "venue": "Analysis lane legacy_comparators_2026_09_30",
+   "path": "infra/immigration-fiscal/legacy_comparators_2026_09_30/RESULT.md",
+   "supports": [
+    "card:e2_legacy_financing_beside",
+    "card:e21_long_run_channels_at_zero"
+   ]
+  },
+  {
+   "key": "repo_backcast_2026_09_20",
+   "short": "Back-cast memo, 2026-09-20",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Cumulative fiscal cost 2005-2024: what is measured and a back-cast",
+   "venue": "Research memo",
+   "path": "research/immigration-historical-backcast-2026-09-20.md",
+   "supports": [
+    "card:e18_unusual_year_budget_replay",
+    "card:e8_backcast_cumulative_windows",
+    "card:e8_measured_programme_series",
+    "card:e9_relative_income_trend"
    ]
   }
  ]

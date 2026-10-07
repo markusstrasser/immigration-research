@@ -51,6 +51,8 @@ button.link:hover,.tools button:hover,.reset:hover,.find:hover{text-decoration-c
 .preset{display:grid;gap:2px;align-content:start;text-align:left;background:none;border:0;border-top:1px solid var(--rule);border-radius:0;padding:8px 0 12px}
 .preset:hover .pl{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px} .preset.on{border-top:2px solid var(--ink);padding-top:7px}
 .preset.current{border-top-style:dashed;cursor:default}
+a.preset{color:inherit;text-decoration:none} .preset.readout{border-top-style:dotted}
+#readouts{margin-top:4px} #readouts p{margin:0 0 6px} #readouts p:target{background:var(--lit)}
 .pk{font:italic 14px var(--text);color:var(--muted)} .pk span{white-space:nowrap} .pl{line-height:1.25} .pv{font-size:15px;color:var(--ink2)}
 .track{position:relative;height:9px;margin-top:5px;border-bottom:1px solid var(--rule)}
 .track i{position:absolute;bottom:0;height:5px;min-width:3px}.track .span.pos{background:var(--pos)}.track .span.neg{background:var(--neg)}.track .zero{width:0;min-width:0;height:9px;border-left:1px solid var(--ink)}
@@ -105,7 +107,6 @@ tr.grp .find,tr.grp .num{font-variant-caps:normal;letter-spacing:0} tr.grp .num{
 select{font-size:14.5px;max-width:300px;text-overflow:ellipsis}
 .resp{min-width:150px} .resp>div{display:flex;gap:8px;align-items:center}
 .resp input{width:64px;font-size:14.5px}.resp input.ov{color:var(--changed)}
-.num small.corr{display:block;font-size:13px;line-height:1.15;color:var(--muted)}
 .mini{position:relative;flex:1;height:6px;min-width:60px}.mini i,.mini b{position:absolute;left:0;top:0;height:6px}.mini i{background:var(--ghost)}.mini b{background:var(--grey)}
 .ledgers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,760px),1fr));gap:32px}
 .tag{font-style:italic;font-size:14.5px;color:var(--ink2);margin-right:12px}
@@ -134,21 +135,21 @@ select{font-size:14.5px;max-width:300px;text-overflow:ellipsis}
 #sources li{break-inside:avoid;padding:6px 0 8px;font-size:15px;line-height:1.4} #sources li a{overflow-wrap:anywhere}
 #sources li:target{background:var(--lit)} #sources .used{display:block;font-size:13.5px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media (max-width:700px){#bar .in{grid-template-columns:minmax(0,1fr);padding-block:6px;gap:0} #bar .res{gap:0 14px} #b-value{font-size:24px} #bar .cell,.lens,.tools,#b-active{font-size:13.5px} #b-active:not(.live){display:none} .lens{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap} h1{font-size:30px} h2{font-size:23px} .wrap,#bar .in{padding-inline:16px}}
+@media (max-width:700px){#bar .in{grid-template-columns:minmax(0,1fr);padding-block:6px;gap:0} #bar .res{gap:0 14px} #b-value{font-size:24px} #bar .cell,.lens,.tools,#b-active{font-size:13.5px} #b-active:not(.live){display:none} .ledgers td:first-child,#ledger-capital td:first-child,#ledger-capital th:first-child{min-width:10.5em} .standing tr{display:block;padding:6px 0} .standing td{display:block;white-space:normal!important;padding:0} .lens{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap} h1{font-size:30px} h2{font-size:23px} .wrap,#bar .in{padding-inline:16px}}
 </style>
 <div id="bar" role="status" aria-live="polite"><div class="in">
   <div class="res">
     <span id="b-value"></span><span class="cell">bn a year</span><span class="cell" id="b-range"></span><span class="cell" id="b-central"></span><span class="cell" id="b-diff"></span></div>
   <div class="lens" role="group" aria-label="Which result to show">
     <button type="button" class="on" data-lens="welfare_bn">Effect on other residents</button><button type="button" data-lens="target_balance_bn">Accounting balance</button><button type="button" data-lens="normalized_gap_bn">Against a per-head share</button></div>
-  <div class="tools"><button id="undo" type="button">Undo</button><button id="reset-all" type="button">Back to central case</button></div>
+  <div class="tools"><button id="undo" type="button">Undo</button><button id="reset-all" type="button">Back to the main case</button></div>
   <div id="b-active" style="grid-column:1/-1"></div>
 </div></div>
 <div class="wrap">
   <header><h1>Fiscal assumption explorer</h1><p class="sub" id="scope"></p></header>
   <section aria-label="Conventions"><h2>Start from one of these sets of assumptions</h2>
-    <p class="sub">Each column runs the same ledger under a different convention, meaning a rule for what the account counts and how, and shows where the yearly result lands in billions of dollars. No commentator has produced a number for this population, so no column carries a person's name. What four of them argue is set out further down.</p>
-    <div id="presets"></div></section>
+    <p class="sub">Each column runs the same ledger under a different convention, meaning a rule for what the account counts and how, and shows where the yearly result lands in billions of dollars. No commentator has produced a number for this population, so no column carries a person's name. What four of them argue is set out further down. Under the effect on other residents, the columns with a dotted rule are figures of the main case read from its lane files: the page cannot compute them, so they do not move with the assumptions.</p>
+    <div id="presets"></div><div id="readouts"></div></section>
   <div class="main">
     <aside class="rail" aria-label="Assumptions"><h2>Assumptions</h2><p class="help">Each cost assumption is a share from 0 to 1: how much of the spending assigned to the group would not be needed without it. 1 charges the average cost per person. 0 treats the item as free to add people to.</p><p class="help" style="margin-top:6px">A changed assumption shows a link back to its central value, and the tick under a slider marks that value. Point at anything to highlight what it touches.</p><div id="controls"></div></aside>
     <div class="stack">
@@ -160,17 +161,19 @@ select{font-size:14.5px;max-width:300px;text-overflow:ellipsis}
       <section><h2>What moves the result</h2><p class="sub" id="tornado-note"></p><ul id="tornado" class="bars"></ul></section>
     </div>
   </div>
-  <section><h2>The ledger</h2><p class="sub">Every 2024 national-accounts receipt and expenditure, the rule that assigns a share of it to the group, and how much of that share the current assumptions count. You can change a line's allocation rule (each option was run in the account) or type your own response.</p><p class="sub" id="ledger-corr"></p><p class="cites" id="ledger-cites"></p>
-    <div class="ledgers"><div class="scroll"><h3>Receipts</h3><table id="ledger-receipts"></table></div><div class="scroll"><h3>Spending</h3><table id="ledger-spending"></table></div></div></section>
+  <section><h2>The ledger</h2><p class="sub">Every 2024 national-accounts receipt and expenditure, the rule that assigns a share of it to the group, and how much of that share the current assumptions count. You can change a line's allocation rule (each option was run in the account) or type your own response. The return on public capital follows the table, by the line whose capital it is.</p><p class="sub" id="ledger-corr"></p><p class="cites" id="ledger-cites"></p>
+    <div class="ledgers"><div class="scroll"><h3>Receipts</h3><table id="ledger-receipts"></table></div><div class="scroll"><h3>Spending</h3><table id="ledger-spending"></table></div></div>
+    <div class="scroll" style="margin-top:28px;max-width:860px"><h3>Return on public capital</h3><p class="sub" id="capital-note"></p><table id="ledger-capital"></table></div><p class="cites" id="capital-cites"></p></section>
   <section><h2 id="standing-title"></h2><div class="scroll"><table class="standing" id="standing"></table></div><p class="sub" id="standing-text" style="margin-top:10px"></p><p class="cites" id="standing-cites"></p></section>
   <section><h2>What four commentators argue, and where their claims meet this ledger</h2><p class="sub">Their words, with links to the originals and to this repo's audits. Where one of the conventions above comes close to a claim, the link loads it.</p><div class="authors" id="authors"></div></section>
-  <section><h2>Objections, with the result this repo computed for each</h2><p class="sub">Results that sit beside the ledger. The first line of each says whether the number is already inside the central case, overlaps it, or measures something else. The two care items the account used to leave out are inside it since the data corrections, so no number here adds to it.</p><div id="context"></div></section>
+  <section><h2>Objections, with the result this repo computed for each</h2><p class="sub">Results that sit beside the ledger. The first line of each says whether the number is already inside the main case, overlaps it, or measures something else. <span id="context-note"></span></p><div id="context"></div></section>
   <section id="ladder-section"><h2>Everything else the repo has measured</h2><p class="sub" id="ladder-note"></p>
     <div class="filters"><input type="search" id="ladder-q" placeholder="Search: school flight, Tiebout, incarceration, rent" aria-label="Search ladder entries"><label><input type="checkbox" id="ladder-all">include qualified and historical entries</label></div>
     <div class="filters" id="ladder-topics"></div><div id="ladder"></div></section>
   <section id="sources-section"><h2>Sources</h2><p class="sub" id="sources-note"></p><ol id="sources"></ol></section>
   <p class="help" style="max-width:80ch">This page, its conventions and its cards were compiled through a large language model, which has systematic leanings on politically charged topics (<a class="path" data-repo="notes/llm-bias-caveat.md">notes/llm-bias-caveat.md</a>). The ledger numbers are checked against the account's own output on every build. The readings of the four authors and the ladder's keyword links are interpretation.</p>
 </div>
-<script>window.MODEL=/*MODEL*/;window.CORRECTIONS=/*CORRECTIONS*/;window.PRESETS=/*PRESETS*/;window.CONTEXT=/*CONTEXT*/;window.EVIDENCE=/*EVIDENCE*/;window.LADDER=/*LADDER*/;window.SOURCES=/*SOURCES*/;</script>
+<script>window.MODEL=/*MODEL*/;window.CASE_PAYLOADS=/*CASE_PAYLOADS*/;window.PRESETS=/*PRESETS*/;window.CONTEXT=/*CONTEXT*/;window.EVIDENCE=/*EVIDENCE*/;window.LADDER=/*LADDER*/;window.SOURCES=/*SOURCES*/;</script>
 <script>/*ENGINE*/</script>
+<script>/*CASE*/</script>
 <script>/*UI*/</script>
