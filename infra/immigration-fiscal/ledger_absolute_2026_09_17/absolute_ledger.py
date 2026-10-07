@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 import re
 import sys
@@ -37,6 +38,8 @@ ALL_AGE = FISCAL / "all_age_ledger_2026_09_17"
 RESIDUAL = FISCAL / "ledger_residual_agg_2026_09_16"
 GENEXT = FISCAL / "gen_ledger_extension_2026_09_16"
 INSTITUTIONAL = FISCAL / "institutional_bound_2026_09_17"
+# item T: the case's income-tax keys, one definition (loaded by path: other lanes have a keys.py too)
+TAX_KEYS = FISCAL / "tax_key_heldout_2026_09_28/keys.py"
 
 sys.path.insert(0, str(GENEXT))
 sys.path.insert(0, str(FISCAL / "build"))
@@ -61,7 +64,8 @@ NATIONAL = "all_civilian_residents"
 # Waterfall order, central arms only.
 # The brief's order runs to F at step 12; item S is appended as step 13 so the
 # endpoint includes state-funded coverage, with the step-12 endpoint still visible.
-WATERFALL_ORDER = ["G", "K", "P", "D", "U", "I", "M", "N", "E", "C", "X", "R", "F", "S"]
+# Item T (2026-10-07) is appended last, so every earlier step keeps its number.
+WATERFALL_ORDER = ["G", "K", "P", "D", "U", "I", "M", "N", "E", "C", "X", "R", "F", "S", "T"]
 BRIEF_FINAL_STEP = WATERFALL_ORDER.index("F") + 1
 
 ITEM_LABEL = {
@@ -79,10 +83,11 @@ ITEM_LABEL = {
     "R": "rest of the federal budget by function",
     "F": "federal defense, net interest, general government",
     "S": "state-funded coverage for undocumented residents",
+    "T": "income tax the survey misses, on the case's income-tax keys",
 }
 
 # Items whose charge is dialled by the marginality parameter m. Records-based
-# items (U, I, M, N, E, C, X) stay at m_item = 1.
+# items (U, I, M, N, E, C, X, T) stay at m_item = 1.
 MARGINAL_ITEMS = {"G", "K", "P", "D", "F", "R_percapita"}
 
 # PEAFEVER is veteran status ("ever served"); VET_YN only flags receipt of
@@ -490,6 +495,64 @@ def institutional_cost_by_band(path: Path) -> tuple[dict, dict, dict]:
 # --------------------------------------------------------------------------
 # Charge construction
 # --------------------------------------------------------------------------
+
+def income_tax_keys(d: pd.DataFrame, civilian: np.ndarray, weight: np.ndarray) -> dict:
+    """Item T's inputs on the ledger's records: the case's income-tax keys from their one definition
+    (tax_key_heldout_2026_09_28/keys.py, whose gates stop the run), joined on PH_SEQ and PPPOS, and model.json's
+    national lines. Refuses the run unless every record has a key row and the keys' civilians and full weights are
+    the ledger's. Returns the key vectors, the lines ($bn) and the files to fingerprint."""
+    spec = importlib.util.spec_from_file_location("tax_key_heldout_keys", TAX_KEYS)
+    tk = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tk)
+    keys = tk.person_keys()
+    joined = d[["PH_SEQ", "PPPOS"]].merge(keys, on=["PH_SEQ", "PPPOS"], how="left", validate="one_to_one")
+    if joined.fit_case_shared.isna().any():
+        raise SystemExit(f"[BLOCKED] item T: {int(joined.fit_case_shared.isna().sum())} ledger records have no "
+                         "income-tax key row")
+    if not np.array_equal(joined.civilian.to_numpy(bool), civilian):
+        raise SystemExit("[BLOCKED] item T: the keys' civilian universe is not the ledger's")
+    if not np.array_equal(joined.pwwgt0.to_numpy(float), np.asarray(weight, float)):
+        raise SystemExit("[BLOCKED] item T: the keys' weights are not the ledger's full weights")
+    bf = tk.benchmark_frame()
+    inputs = [TAX_KEYS, tk.HERE / "reads/irs_table_1_2_ty2023.md", tk.HERE / "derived/bins.csv",
+              tk.HERE / "derived/translation_inputs.json", tk.BENCH / "frame.py",
+              bf.CACHE / "cps25_frame.parquet", tk.BENCH / "derived/cbo_group_shares.csv", bf.MODEL]
+    vectors = {f"{line}_{a}": joined[f"{line}_{a}"].to_numpy(float)
+               for line in ("fit_case", "sit_case") for a in tk.ALLOCATIONS}
+    return dict(vectors=vectors, lines=tk.national_lines(), inputs=inputs)
+
+
+def income_tax_item(d: pd.DataFrame, keys: dict, civilian: np.ndarray, weight: np.ndarray, personal: bool,
+                    unit_share) -> tuple[np.ndarray, dict]:
+    """Item T's per-record charge (a receipt, positive) at one allocation: on the record (personal), or with each
+    SPM unit's dollars split equally over its members (unit_share, the shared allocation), zero off civilians.
+    Federal: the national line times the record's raked key share, less its FEDTAX_BC, plus the part of its EITC
+    that offsets liability. State: the line in proportion to STATETAX_A floored at 0, less that base. keys is
+    income_tax_keys() on the same records; weight their full weights. Returns the vector and its national parts."""
+    alloc = "personal" if personal else "shared"
+    place = (lambda x: x) if personal else unit_share
+    fbc = d.FEDTAX_BC.to_numpy(dtype=float)
+    eitc_offset = np.minimum(d.EIT_CRED.to_numpy(dtype=float), np.maximum(fbc, 0.0))
+    st_base = place(np.maximum(d.STATETAX_A.to_numpy(dtype=float), 0.0))
+    v, s = keys["vectors"][f"fit_case_{alloc}"], keys["vectors"][f"sit_case_{alloc}"]
+    key_sum = float((v * civilian) @ weight)
+    if abs(key_sum - 1.0) > 1e-12:
+        raise SystemExit(f"[BLOCKED] item T: the federal key sums to {key_sum!r} over the civilians")
+    if float(np.abs(s - st_base).max()) > 1e-6:
+        raise SystemExit("[BLOCKED] item T: the state key's base is not the frame's floored STATETAX_A")
+    federal_line = keys["lines"]["federal_income_tax"] * 1e9
+    state_line = keys["lines"]["state_local_income_tax"] * 1e9
+    state_base_total = float((s * civilian) @ weight)
+    federal = (federal_line * v - place(fbc) + place(eitc_offset)) * civilian
+    state = (state_line * s / state_base_total - st_base) * civilian
+    return federal + state, dict(
+        allocation=alloc, federal_key_sum=key_sum,
+        federal_line_bn=federal_line / 1e9, state_line_bn=state_line / 1e9,
+        cps_federal_before_refundable_bn=float((place(fbc) * civilian) @ weight) / 1e9,
+        eitc_liability_offset_bn=float((place(eitc_offset) * civilian) @ weight) / 1e9,
+        cps_state_positive_bn=state_base_total / 1e9,
+        federal_increment_bn=float(federal @ weight) / 1e9, state_increment_bn=float(state @ weight) / 1e9)
+
 
 class Charges:
     """Named per-record signed dollar charges (cost negative, receipt positive)."""
@@ -1192,6 +1255,22 @@ def build_charges(ctx, p: Params):
     else:
         drop("S", "no state general-fund coverage cost for undocumented residents was verified")
 
+    # ---- T: income tax the survey misses ----------------------------------
+    # The CPS models each record's income tax from reported income, and its totals fall short of the national lines
+    # at the top. The main case keys receipts|federal_income_tax by the IRS-raked key (v4 item 3) and the state
+    # and local line by the state-liability key; item T moves each record's survey income tax onto those keys at
+    # the allocation in use, as item U moves transfers onto administrative totals. Federal: the line times the
+    # record's key share, less its FEDTAX_BC, plus the part of its EITC that offsets liability (the line is net of
+    # that part, and FEDTAX_AC subtracts the whole credit). State: the line in proportion to STATETAX_A floored at
+    # 0, less that base. Refundable credits and net state refunds stay as the CPS has them.
+    if "T" in off:
+        drop("T", "switched off at the command line with --off T")
+    else:
+        vector, meta = income_tax_item(d, ctx["income_tax_keys"], civilian, weights_full, personal, unit_share)
+        ch.add("T", "central", vector,
+               source="tax_key_heldout_2026_09_28/keys.py (the case's income-tax keys); model.json national lines",
+               marginal=False, **meta)
+
     centrals = dict(G=g_central, K="central",
                     P="net_of_item_G" if "P|net_of_item_G" in ch.meta else None,
                     D="central" if "D|central" in ch.meta else None,
@@ -1199,7 +1278,8 @@ def build_charges(ctx, p: Params):
                     I="central" if "I|central" in ch.meta else None,
                     M="central" if "M|central" in ch.meta else None,
                     E="zero", C=c_central, X=x_central, R=r_central, F="zero",
-                    S="all_inside_meps" if "S|all_inside_meps" in ch.meta else None)
+                    S="all_inside_meps" if "S|all_inside_meps" in ch.meta else None,
+                    T="central" if "T|central" in ch.meta else None)
     ch.meta["E|zero"]["rule"] = "enforcement outlays are owned by R750; appropriation-based E is a standalone allocation sensitivity only"
     if "S|all_inside_meps" in ch.meta:
         ch.meta["S|all_inside_meps"]["rule"] = "no extra mixed-year 2025/2026 coverage appropriation in a 2024 account; overlap unverified"
@@ -1332,6 +1412,9 @@ def generate(args):
                capital=(cap_pc, cap_national, cap_components),
                off=list(args.off or []),
                is_white_ref=groups[WHITE], is_target=member_count > 0)
+    if "T" not in set(args.off or []):
+        print("[stage] item T: the case's income-tax keys (tax_key_heldout_2026_09_28/keys.py)", flush=True)
+        ctx["income_tax_keys"] = income_tax_keys(d, civilian, weights[:, 0])
 
     print("[gate 0] reproducing the upstream union absolute before any new item", flush=True)
     base_only = sufficient(base_matrix, health, weights, groups, bands, 8)
@@ -1598,7 +1681,7 @@ def generate(args):
         value = national_total(coeff, zero_means)
         lines.append(dict(block="account", line=f"item {item} ({arm})", amount_bn=value / 1e9,
                           note=ITEM_LABEL[item]))
-        if item in {"C", "X"}:
+        if item in {"C", "X", "T"}:
             account_receipts += value
         else:
             account_outlays -= value
@@ -2013,7 +2096,8 @@ def generate(args):
             Path(__file__), HERE / "consolidation.py", HERE / "profile_export.py",
             Path(ext.__file__), Path(ext.base.__file__), Path(resid.__file__), ALL_AGE / "analyze.py",
             Path(sys.modules[donor_model.__module__].__file__), ALL_AGE / "estimator.py",
-            HERE / "_cache/outlays_fy2027.xlsx", HERE / "_cache/omb_hist12z3_fy2027.xlsx"]],
+            HERE / "_cache/outlays_fy2027.xlsx", HERE / "_cache/omb_hist12z3_fy2027.xlsx",
+            *(ctx["income_tax_keys"]["inputs"] if "income_tax_keys" in ctx else [])]],
         medical_anchors=anchors, cps_validation=state["validation"],
         institutional_external_add=dict(
             source="institutional_bound_2026_09_17/derived/acs_cells.csv",

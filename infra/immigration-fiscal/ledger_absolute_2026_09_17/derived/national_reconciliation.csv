@@ -22,6 +22,7 @@ account,item X (per_capita),310.5882256036217,excise and selective sales taxes
 account,item R (central),-921.9371137518978,rest of the federal budget by function
 account,item F (zero),0.0,"federal defense, net interest, general government"
 account,item S (all_inside_meps),0.0,state-funded coverage for undocumented residents
+account,item T (central),422.8569287300728,"income tax the survey misses, on the case's income-tax keys"
 consolidated,federal outlays FY2024,-6735.261,OMB Table 2.1/3.1 total outlays
 consolidated,federal receipts FY2024,4919.884,OMB Table 2.1 total receipts
 consolidated,state and local direct general expenditure,-4185.299873762032,"2022 Census of Governments, inflated by 1.039312"
@@ -35,7 +36,7 @@ known part of the residual,"state and local capital outlay, elementary and secon
 known part of the residual,state and local capital outlay already inside item G,-248.912169462032,"the Census of Governments functional lines carry each function's own capital outlay inside the function total, so the general-services residual behind item G already charges the capital of every function it retains"
 known part of the residual,"state and local capital outlay, non-school, priced as item P",-48.84910864368,item P central arm net_of_item_G
 known part of the residual,state and local capital outlay still unpriced,-0.0,total direct general capital outlay less the three lines above
-residual,unpriced or coverage,-625.2743680485452,consolidated position less the account's national sum; NOT forced to zero and NOT an error estimate
+residual,unpriced or coverage,-1048.131296778618,consolidated position less the account's national sum; NOT forced to zero and NOT an error estimate
 coverage,account outlays as a share of consolidated outlays,0.6999789764082949,"share, not dollars"
-coverage,account receipts as a share of consolidated receipts,0.7288159231392405,"share, not dollars"
+coverage,account receipts as a share of consolidated receipts,0.7795805404662995,"share, not dollars"
 coverage,civilian household population over resident population,0.9900527030312051,"share, not dollars"

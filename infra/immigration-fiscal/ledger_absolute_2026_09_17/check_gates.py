@@ -284,6 +284,22 @@ def main() -> int:
              bool(dial.get("P", {}).get("dialled")) and bool(dial.get("D", {}).get("dialled")),
              f"P {dial.get('P', {}).get('dialled')}, D {dial.get('D', {}).get('dialled')}")
 
+    # --- item T: the survey's income tax on the case's keys ------------------
+    tm = audit.get("item_metadata", {}).get("T|central")
+    gate("item_T_income_tax_coverage_was_built", tm is not None,
+         f"allocation {tm['allocation']}" if tm else "item T is not in this run")
+    if tm:
+        gate("item_T_federal_key_sums_to_one_over_the_ledger_civilians",
+             abs(float(tm["federal_key_sum"]) - 1.0) < 1e-12, f"{float(tm['federal_key_sum']):.15f}")
+        want = (float(tm["federal_line_bn"]) - float(tm["cps_federal_before_refundable_bn"])
+                + float(tm["eitc_liability_offset_bn"]) + float(tm["state_line_bn"])
+                - float(tm["cps_state_positive_bn"]))
+        line = nat[(nat.block == "account") & (nat.line == "item T (central)")].amount_bn
+        gate("item_T_national_increment_is_the_lines_less_the_survey",
+             len(line) == 1 and abs(float(line.iloc[0]) - want) < 1e-6
+             and abs(float(tm["federal_increment_bn"]) + float(tm["state_increment_bn"]) - want) < 1e-6,
+             f"{float(line.iloc[0]):+,.3f}bn vs {want:+,.3f}bn" if len(line) == 1 else f"{len(line)} rows")
+
     gate("no_item_was_switched_off_at_the_command_line",
          not audit.get("items_switched_off"),
          str(audit.get("items_switched_off") or "none"))

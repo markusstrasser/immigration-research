@@ -23,8 +23,8 @@ from lifetime import BANDS, LANE, ROOT, load_age_profiles, load_period_profiles,
 
 WHITE, UNION = "third_plus_nh_white", "mexican_observed_total"
 GROUPS = ["mexico_born", "mexican_second_gen", "mexican_third_plus_selfid", UNION, WHITE, "all_native"]
-RECEIPTS = {"tax", "employer", "sales", "X", "owner_property", "C"}
-CATEGORIES = {"income_payroll_tax": ["tax", "employer"],
+RECEIPTS = {"tax", "employer", "sales", "X", "owner_property", "C", "T"}
+CATEGORIES = {"income_payroll_tax": ["tax", "employer", "T"],
               "sales_excise_property_tax": ["sales", "X", "owner_property"],
               "corporate_tax_incidence": ["C"],
               "cash_transfers_incl_social_security": ["cash", "U", "I"],

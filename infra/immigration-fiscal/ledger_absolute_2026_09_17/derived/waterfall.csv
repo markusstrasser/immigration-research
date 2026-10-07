@@ -14,6 +14,7 @@ mexico_born,11,X,excise and selective sales taxes,11.272104431459042,-46.2832975
 mexico_born,12,R,rest of the federal budget by function,-26.17465239413713,-72.4579499679771,-5929.0764424332365,3.8987703272561394,cps_records
 mexico_born,13,F,"federal defense, net interest, general government",0.0,-72.4579499679771,-5929.0764424332365,3.8987703272561394,central_arm_is_zero
 mexico_born,14,S,state-funded coverage for undocumented residents,0.0,-72.4579499679771,-5929.0764424332365,3.8987703272561394,cps_records
+mexico_born,15,T,"income tax the survey misses, on the case's income-tax keys",3.6137037505467244,-68.84424621743037,-5633.374924700974,5.2158519614504435,cps_records
 mexican_second_gen,0,base,all_age_shared absolute,0.0,10.693472380705494,746.0622333198487,3.4224548533777277,cps_records
 mexican_second_gen,1,G,state-local general services,-51.09900267780703,-40.405530297101535,-2819.01323524432,3.643256408103508,cps_records
 mexican_second_gen,2,K,K-12 capital outlay and interest on school debt,-8.861116585816248,-49.266646882917776,-3437.235660510964,3.8043446709036615,cps_records
@@ -29,6 +30,7 @@ mexican_second_gen,11,X,excise and selective sales taxes,13.220555599037048,-52.
 mexican_second_gen,12,R,rest of the federal budget by function,-31.501143697014424,-84.28659322265403,-5880.507447896567,4.498908865359159,cps_records
 mexican_second_gen,13,F,"federal defense, net interest, general government",0.0,-84.28659322265403,-5880.507447896567,4.498908865359159,central_arm_is_zero
 mexican_second_gen,14,S,state-funded coverage for undocumented residents,0.0,-84.28659322265403,-5880.507447896567,4.498908865359159,cps_records
+mexican_second_gen,15,T,"income tax the survey misses, on the case's income-tax keys",2.4994243319004523,-81.78716889075359,-5706.127598892965,5.1000635143156305,cps_records
 mexican_third_plus_selfid,0,base,all_age_shared absolute,0.0,32.91538687702236,2294.9426989642566,4.943384971679043,cps_records
 mexican_third_plus_selfid,1,G,state-local general services,-48.31217212061752,-15.396785243595158,-1073.5021895481914,5.097768594339452,cps_records
 mexican_third_plus_selfid,2,K,K-12 capital outlay and interest on school debt,-8.845248566307792,-24.242033809902946,-1690.2149352805748,5.215217267226885,cps_records
@@ -44,6 +46,7 @@ mexican_third_plus_selfid,11,X,excise and selective sales taxes,13.2291861790531
 mexican_third_plus_selfid,12,R,rest of the federal budget by function,-34.475639040056365,-60.57185912291829,-4223.220780487695,5.9213736870979865,cps_records
 mexican_third_plus_selfid,13,F,"federal defense, net interest, general government",0.0,-60.57185912291829,-4223.220780487695,5.9213736870979865,central_arm_is_zero
 mexican_third_plus_selfid,14,S,state-funded coverage for undocumented residents,0.0,-60.57185912291829,-4223.220780487695,5.9213736870979865,cps_records
+mexican_third_plus_selfid,15,T,"income tax the survey misses, on the case's income-tax keys",7.679384446201769,-52.892474676716525,-3687.7949830272005,8.402638444334384,cps_records
 mexican_observed_total,0,base,all_age_shared absolute,0.0,50.23821424861819,1228.4210912499898,7.473981330782249,cps_records
 mexican_observed_total,1,G,state-local general services,-142.41574198875705,-92.17752774013886,-2253.918076285565,7.72882149376174,cps_records
 mexican_observed_total,2,K,K-12 capital outlay and interest on school debt,-22.730761866120773,-114.90828960625963,-2809.7289806767726,7.8974386359831605,cps_records
@@ -59,6 +62,7 @@ mexican_observed_total,11,X,excise and selective sales taxes,37.7218462095492,-1
 mexican_observed_total,12,R,rest of the federal budget by function,-92.1514351312079,-217.3164023135495,-5313.804562308362,8.700282162278882,cps_records
 mexican_observed_total,13,F,"federal defense, net interest, general government",0.0,-217.3164023135495,-5313.804562308362,8.700282162278882,central_arm_is_zero
 mexican_observed_total,14,S,state-funded coverage for undocumented residents,0.0,-217.3164023135495,-5313.804562308362,8.700282162278882,cps_records
+mexican_observed_total,15,T,"income tax the survey misses, on the case's income-tax keys",13.792512528648945,-203.52388978490055,-4976.551068231626,12.337675585689633,cps_records
 third_plus_nh_white,0,base,all_age_shared absolute,0.0,807.8547591735547,4668.226431166829,34.65564937333716,cps_records
 third_plus_nh_white,1,G,state-local general services,-578.5900503303305,229.26470884322413,1324.8168206010134,34.71111216839654,cps_records
 third_plus_nh_white,2,K,K-12 capital outlay and interest on school debt,-54.25299668765607,175.01171215556806,1011.3133470726581,34.8077007643695,cps_records
@@ -74,6 +78,7 @@ third_plus_nh_white,11,X,excise and selective sales taxes,159.62002901215823,307
 third_plus_nh_white,12,R,rest of the federal budget by function,-518.4521490739114,-211.3137084530404,-1221.0861270131345,42.98595836008167,cps_records
 third_plus_nh_white,13,F,"federal defense, net interest, general government",0.0,-211.3137084530404,-1221.0861270131345,42.98595836008167,central_arm_is_zero
 third_plus_nh_white,14,S,state-funded coverage for undocumented residents,0.0,-211.3137084530404,-1221.0861270131345,42.98595836008167,cps_records
+third_plus_nh_white,15,T,"income tax the survey misses, on the case's income-tax keys",263.14221797046775,51.82850951742737,299.49346125626704,64.21462143576122,cps_records
 all_native,0,base,all_age_shared absolute,0.0,1110.9203443131366,3916.211821647353,43.18097842096343,cps_records
 all_native,1,G,state-local general services,-966.2214409438636,144.69890336927307,510.0919781107427,43.2909695809338,cps_records
 all_native,2,K,K-12 capital outlay and interest on school debt,-107.23176693401247,37.467136435260606,132.07899502620242,43.461993149863744,cps_records
@@ -89,3 +94,4 @@ all_native,11,X,excise and selective sales taxes,261.65121566041074,128.55322227
 all_native,12,R,rest of the federal budget by function,-797.7700365981963,-669.2168143231427,-2359.1203572006475,52.977098848433144,cps_records
 all_native,13,F,"federal defense, net interest, general government",0.0,-669.2168143231427,-2359.1203572006475,52.977098848433144,central_arm_is_zero
 all_native,14,S,state-funded coverage for undocumented residents,0.0,-669.2168143231427,-2359.1203572006475,52.977098848433144,cps_records
+all_native,15,T,"income tax the survey misses, on the case's income-tax keys",360.5873387350472,-308.62947558809554,-1087.9793560304415,76.92684170884822,cps_records

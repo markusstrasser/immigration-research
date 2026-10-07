@@ -13,6 +13,7 @@ mexico_born,third_plus_nh_white,X,per_capita,1.8330892854028793e-14,-7.152557373
 mexico_born,third_plus_nh_white,R,central,862.1388620355764,8.090166826818324,False
 mexico_born,third_plus_nh_white,F,zero,0.0,0.0,False
 mexico_born,third_plus_nh_white,S,all_inside_meps,0.0,0.0,False
+mexico_born,third_plus_nh_white,T,central,-1265.8091087617915,-17.661862485809987,False
 mexico_born,all_native,G,deflated2024,-85.81322335729655,-1.4434023348358673,False
 mexico_born,all_native,K,central,-124.31878160288005,-1.557411768803275,False
 mexico_born,all_native,P,net_of_item_G,-8.966108083182776,-0.10856525609295023,False
@@ -27,6 +28,7 @@ mexico_born,all_native,X,per_capita,-1.0600648024538424e-12,-5.8412551879882815e
 mexico_born,all_native,R,central,841.9413351364556,7.9284224708885,False
 mexico_born,all_native,F,zero,0.0,0.0,False
 mexico_born,all_native,S,all_inside_meps,0.0,0.0,False
+mexico_born,all_native,T,central,-1074.130290440829,-15.459759966467248,False
 mexican_second_gen,third_plus_nh_white,G,deflated2024,-205.4663253012083,-3.3087382404056394,False
 mexican_second_gen,third_plus_nh_white,K,central,-99.46801558139829,-2.0479445450859743,False
 mexican_second_gen,third_plus_nh_white,P,net_of_item_G,-14.791372011224922,-0.1588258900627956,False
@@ -41,6 +43,7 @@ mexican_second_gen,third_plus_nh_white,X,per_capita,8.787146969911014e-13,2.3156
 mexican_second_gen,third_plus_nh_white,R,central,377.4235628731893,1.6417951884284234,False
 mexican_second_gen,third_plus_nh_white,F,zero,0.0,0.0,False
 mexican_second_gen,third_plus_nh_white,S,all_inside_meps,0.0,0.0,False
+mexican_second_gen,third_plus_nh_white,T,central,-977.6410779004777,-16.046946171684738,False
 mexican_second_gen,all_native,G,deflated2024,-145.29349572991424,-2.1582385657918315,False
 mexican_second_gen,all_native,K,central,-88.05968559897431,-1.7529387729704513,False
 mexican_second_gen,all_native,P,net_of_item_G,-14.621773347772791,-0.15696873849056073,False
@@ -55,6 +58,7 @@ mexican_second_gen,all_native,X,per_capita,-1.9968099831676938e-13,-2.7090311050
 mexican_second_gen,all_native,R,central,357.22603597406834,1.6494740512991029,False
 mexican_second_gen,all_native,F,zero,0.0,0.0,False
 mexican_second_gen,all_native,S,all_inside_meps,0.0,0.0,False
+mexican_second_gen,all_native,T,central,-785.9622595795151,-12.883006294309697,False
 mexican_third_plus_selfid,third_plus_nh_white,G,deflated2024,-23.31311912757524,-0.49707514324039387,False
 mexican_third_plus_selfid,third_plus_nh_white,K,central,-83.56109266439672,-1.524917778302459,False
 mexican_third_plus_selfid,third_plus_nh_white,P,net_of_item_G,-19.600377760720843,-0.24109680477938106,False
@@ -69,6 +73,7 @@ mexican_third_plus_selfid,third_plus_nh_white,X,per_capita,7.727998688736696e-13
 mexican_third_plus_selfid,third_plus_nh_white,R,central,116.63353512617414,0.3066379549016261,False
 mexican_third_plus_selfid,third_plus_nh_white,F,zero,0.0,0.0,False
 mexican_third_plus_selfid,third_plus_nh_white,S,all_inside_meps,0.0,0.0,False
+mexican_third_plus_selfid,third_plus_nh_white,T,central,-923.1630949537863,-11.774964331504062,False
 mexican_third_plus_selfid,all_native,G,deflated2024,36.85971044371883,0.6200942631359434,False
 mexican_third_plus_selfid,all_native,K,central,-72.15276268197272,-1.2877143690889177,False
 mexican_third_plus_selfid,all_native,P,net_of_item_G,-19.43077909726871,-0.24053832484929275,False
@@ -83,6 +88,7 @@ mexican_third_plus_selfid,all_native,X,per_capita,-3.055958264342013e-13,-3.4689
 mexican_third_plus_selfid,all_native,R,central,96.43600822705318,0.23497058405584167,False
 mexican_third_plus_selfid,all_native,F,zero,0.0,0.0,False
 mexican_third_plus_selfid,all_native,S,all_inside_meps,0.0,0.0,False
+mexican_third_plus_selfid,all_native,T,central,-731.4842766328239,-8.653083936753855,False
 mexican_observed_total,third_plus_nh_white,G,deflated2024,-149.87378841508146,-5.901261001021406,False
 mexican_observed_total,third_plus_nh_white,K,central,-115.92470782708261,-5.20744791132773,False
 mexican_observed_total,third_plus_nh_white,P,net_of_item_G,-14.44729211717436,-0.5124046058036446,False
@@ -97,6 +103,7 @@ mexican_observed_total,third_plus_nh_white,X,per_capita,4.586584167840297e-13,2.
 mexican_observed_total,third_plus_nh_white,R,central,560.3279449305816,10.038599970148379,False
 mexican_observed_total,third_plus_nh_white,F,zero,0.0,0.0,False
 mexican_observed_total,third_plus_nh_white,S,all_inside_meps,0.0,0.0,False
+mexican_observed_total,third_plus_nh_white,T,central,-1153.7175259215405,-45.483772988998794,False
 mexican_observed_total,all_native,G,deflated2024,-89.70095884378736,-2.9815466374917445,False
 mexican_observed_total,all_native,K,central,-104.51637784465859,-4.598064910862644,False
 mexican_observed_total,all_native,P,net_of_item_G,-14.27769345372223,-0.5060723194328038,False
@@ -111,3 +118,4 @@ mexican_observed_total,all_native,X,per_capita,-6.197372785238413e-13,-6.6757202
 mexican_observed_total,all_native,R,central,540.1304180314605,9.812867106243447,False
 mexican_observed_total,all_native,F,zero,0.0,0.0,False
 mexican_observed_total,all_native,S,all_inside_meps,0.0,0.0,False
+mexican_observed_total,all_native,T,central,-962.0387076005783,-36.9958501975308,False

@@ -2,37 +2,37 @@
   "account_status": "expanded_partial",
   "age_profile_export": {
     "files": {
-      "age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
-      "age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62"
+      "age_profiles.csv": "9d5a302e43ab5f839b96056ce030c17a73ddf8165ba134a07813754005d8eafe",
+      "age_profile_components.csv": "75b85d18e6612ed26e1c3a1b02dde4f44a850b803c48153ae08c350a9de632aa"
     },
     "price_year": 2024,
     "primary_allocation": "personal",
     "point_estimates_only": true,
     "totals": {
       "shared|partial|mexico_born": 6629354990.890362,
-      "shared|expanded|mexico_born": -72457949967.9771,
+      "shared|expanded|mexico_born": -68844246217.43036,
       "shared|partial|third_plus_nh_white": 807854759173.5554,
-      "shared|expanded|third_plus_nh_white": -211313708453.0426,
+      "shared|expanded|third_plus_nh_white": 51828509517.42444,
       "shared|partial|all_native": 1110920344313.1367,
-      "shared|expanded|all_native": -669216814323.1414,
+      "shared|expanded|all_native": -308629475588.09485,
       "shared|partial|mexican_second_gen": 10693472380.705494,
-      "shared|expanded|mexican_second_gen": -84286593222.65407,
+      "shared|expanded|mexican_second_gen": -81787168890.75362,
       "shared|partial|mexican_third_plus_selfid": 32915386877.022316,
-      "shared|expanded|mexican_third_plus_selfid": -60571859122.91834,
+      "shared|expanded|mexican_third_plus_selfid": -52892474676.71658,
       "shared|partial|mexican_observed_total": 50238214248.6181,
-      "shared|expanded|mexican_observed_total": -217316402313.54956,
+      "shared|expanded|mexican_observed_total": -203523889784.9006,
       "personal|partial|mexico_born": 33466946930.291576,
-      "personal|expanded|mexico_born": -41930317997.45575,
+      "personal|expanded|mexico_born": -37719011483.51111,
       "personal|partial|third_plus_nh_white": 819203546084.2717,
-      "personal|expanded|third_plus_nh_white": -200054697561.17273,
+      "personal|expanded|third_plus_nh_white": 85789265224.88141,
       "personal|partial|all_native": 895675797507.4236,
-      "personal|expanded|all_native": -896317679781.062,
+      "personal|expanded|all_native": -510968232706.0088,
       "personal|partial|mexican_second_gen": -169896501.0715294,
-      "personal|expanded|mexican_second_gen": -97442704133.8686,
+      "personal|expanded|mexican_second_gen": -91561294792.48497,
       "personal|partial|mexican_third_plus_selfid": -3900911058.0949326,
-      "personal|expanded|mexican_third_plus_selfid": -99868007286.40456,
+      "personal|expanded|mexican_third_plus_selfid": -94655305353.92133,
       "personal|partial|mexican_observed_total": 29396139371.125046,
-      "personal|expanded|mexican_observed_total": -239241029417.72897
+      "personal|expanded|mexican_observed_total": -223935611629.91742
     },
     "personal_items_dropped": [
       {
@@ -1406,7 +1406,8 @@
     "X": "per_capita",
     "R": "central",
     "F": "zero",
-    "S": "all_inside_meps"
+    "S": "all_inside_meps",
+    "T": "central"
   },
   "district_coverage_gate": {
     "built": true,
@@ -1804,15 +1805,15 @@
     }
   ],
   "national_reconciliation_vs_consolidated_budget": {
-    "account_position": -658201047439.2136,
+    "account_position": -235344118709.1408,
     "consolidated_position": -1283475415487.7588,
-    "residual_unpriced_or_coverage": -625274368048.5452,
+    "residual_unpriced_or_coverage": -1048131296778.6179,
     "consolidated_outlays": 9613232458779.375,
     "consolidated_receipts": 8329757043291.616,
     "account_outlays": 6729060616471.383,
-    "account_receipts": 6070859569032.17,
+    "account_receipts": 6493716497762.243,
     "outlay_coverage": 0.6999789764082949,
-    "receipt_coverage": 0.7288159231392405,
+    "receipt_coverage": 0.7795805404662995,
     "state_local_price_adjustment": 1.039312,
     "note": "the residual is reported, never forced; it is not an error estimate"
   },
@@ -1821,97 +1822,97 @@
       "group": "mexico_born",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -6561.711620368309,
-      "complete_common_age_gap_per_person": -7583.611487920926,
+      "complete_common_age_gap_per_person": -8849.420596682718,
       "base_common_age_se": 320.9966375516852,
-      "complete_common_age_se": 383.81673803697896,
+      "complete_common_age_se": 538.9391408296827,
       "base_age_matched_gap_bn": -103.10087003258417,
-      "complete_age_matched_gap_bn": -120.52273839185801,
+      "complete_age_matched_gap_bn": -138.184600877668,
       "base_age_matched_se_bn": 4.90525078988575,
-      "complete_age_matched_se_bn": 5.711228384963418
+      "complete_age_matched_se_bn": 8.03547633870477
     },
     {
       "group": "mexico_born",
       "reference": "all_native",
       "base_common_age_gap_per_person": -5055.6828268015515,
-      "complete_common_age_gap_per_person": -5404.297648276597,
+      "complete_common_age_gap_per_person": -6478.4279387174265,
       "base_common_age_se": 294.0468686088278,
-      "complete_common_age_se": 350.8131178273709,
+      "complete_common_age_se": 477.4623852435567,
       "base_age_matched_gap_bn": -85.15752531182201,
-      "complete_age_matched_gap_bn": -94.32537020588357,
+      "complete_age_matched_gap_bn": -109.78513017235083,
       "base_age_matched_se_bn": 4.285784219461249,
-      "complete_age_matched_se_bn": 4.984079306272329
+      "complete_age_matched_se_bn": 6.962020580856475
     },
     {
       "group": "mexican_second_gen",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -5943.399390763294,
-      "complete_common_age_gap_per_person": -7521.41138692661,
+      "complete_common_age_gap_per_person": -8499.052464827088,
       "base_common_age_se": 469.0053612568862,
-      "complete_common_age_se": 615.178974838458,
+      "complete_common_age_se": 912.2567191607423,
       "base_age_matched_gap_bn": -113.72329480855052,
-      "complete_age_matched_gap_bn": -141.19374219785243,
+      "complete_age_matched_gap_bn": -157.24068836953714,
       "base_age_matched_se_bn": 5.050134871509685,
-      "complete_age_matched_se_bn": 5.872563366539783
+      "complete_age_matched_se_bn": 7.716351090258521
     },
     {
       "group": "mexican_second_gen",
       "reference": "all_native",
       "base_common_age_gap_per_person": -4437.370597196537,
-      "complete_common_age_gap_per_person": -5342.097547282281,
+      "complete_common_age_gap_per_person": -6128.0598068617965,
       "base_common_age_se": 444.7121856205837,
-      "complete_common_age_se": 588.7503256890792,
+      "complete_common_age_se": 863.7024235292663,
       "base_age_matched_gap_bn": -84.27855309418668,
-      "complete_age_matched_gap_bn": -101.2880538421966,
+      "complete_age_matched_gap_bn": -114.1710601365063,
       "base_age_matched_se_bn": 4.060206523181386,
-      "complete_age_matched_se_bn": 4.708230296607093
+      "complete_age_matched_se_bn": 5.988974128196818
     },
     {
       "group": "mexican_third_plus_selfid",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -4622.449839398683,
-      "complete_common_age_gap_per_person": -6194.623978677977,
+      "complete_common_age_gap_per_person": -7117.787073631764,
       "base_common_age_se": 370.7461756823512,
-      "complete_common_age_se": 457.0128191432633,
+      "complete_common_age_se": 636.8136662066219,
       "base_age_matched_gap_bn": -73.76550875782262,
-      "complete_age_matched_gap_bn": -96.39465706800752,
+      "complete_age_matched_gap_bn": -108.16962139951158,
       "base_age_matched_se_bn": 4.930973403606858,
-      "complete_age_matched_se_bn": 5.617414164149449
+      "complete_age_matched_se_bn": 8.370811828466035
     },
     {
       "group": "mexican_third_plus_selfid",
       "reference": "all_native",
       "base_common_age_gap_per_person": -3116.421045831926,
-      "complete_common_age_gap_per_person": -4015.310139033647,
+      "complete_common_age_gap_per_person": -4746.794415666471,
       "base_common_age_se": 356.9336275219065,
-      "complete_common_age_se": 440.4995282850177,
+      "complete_common_age_se": 609.1283473596421,
       "base_age_matched_gap_bn": -45.55972248294334,
-      "complete_age_matched_gap_bn": -57.92792385843831,
+      "complete_age_matched_gap_bn": -66.58100779519216,
       "base_age_matched_se_bn": 4.361733588326319,
-      "complete_age_matched_se_bn": 4.896827478361821
+      "complete_age_matched_se_bn": 7.451874101353197
     },
     {
       "group": "mexican_observed_total",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -5795.340382266619,
-      "complete_common_age_gap_per_person": -7151.887239338126,
+      "complete_common_age_gap_per_person": -8305.604765259666,
       "base_common_age_se": 245.093906680334,
-      "complete_common_age_se": 301.9746543629734,
+      "complete_common_age_se": 445.6980162204481,
       "base_age_matched_gap_bn": -290.58967359895735,
-      "complete_age_matched_gap_bn": -358.1111376577181,
+      "complete_age_matched_gap_bn": -403.59491064671687,
       "base_age_matched_se_bn": 10.645222035388553,
-      "complete_age_matched_se_bn": 11.98401984162719
+      "complete_age_matched_se_bn": 17.788426808630746
     },
     {
       "group": "mexican_observed_total",
       "reference": "all_native",
       "base_common_age_gap_per_person": -4289.31158869986,
-      "complete_common_age_gap_per_person": -4972.573399693796,
+      "complete_common_age_gap_per_person": -5934.612107294374,
       "base_common_age_se": 206.60573747480774,
-      "complete_common_age_se": 257.93089625968236,
+      "complete_common_age_se": 370.30320352168883,
       "base_age_matched_gap_bn": -214.995800888952,
-      "complete_age_matched_gap_bn": -253.54134790651847,
+      "complete_age_matched_gap_bn": -290.53719810404925,
       "base_age_matched_se_bn": 8.347166359669167,
-      "complete_age_matched_se_bn": 9.317394032920683
+      "complete_age_matched_se_bn": 13.716303699454821
     }
   ],
   "brief_final_step": 13,
@@ -2686,6 +2687,21 @@
         "ca_undocumented_total_general_fund_2024_25: not verified"
       ],
       "rule": "no extra mixed-year 2025/2026 coverage appropriation in a 2024 account; overlap unverified"
+    },
+    "T|central": {
+      "item": "T",
+      "arm": "central",
+      "source": "tax_key_heldout_2026_09_28/keys.py (the case's income-tax keys); model.json national lines",
+      "marginal": false,
+      "allocation": "shared",
+      "federal_key_sum": 0.9999999999999997,
+      "federal_line_bn": 2403.242,
+      "state_line_bn": 536.167,
+      "cps_federal_before_refundable_bn": 2018.4382877742605,
+      "eitc_liability_offset_bn": 0.8461234169080334,
+      "cps_state_positive_bn": 498.95990691257344,
+      "federal_increment_bn": 385.6498356426462,
+      "state_increment_bn": 37.20709308742657
     }
   },
   "marginality_dial": [
@@ -2744,9 +2760,13 @@
     {
       "item": "S",
       "dialled": false
+    },
+    {
+      "item": "T",
+      "dialled": false
     }
   ],
-  "break_even_m_star": 0.15825726289773234,
+  "break_even_m_star": 0.21168050718019316,
   "inputs": [
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
@@ -2794,7 +2814,7 @@
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py",
-      "sha256": "fc234ffe3321c69cb8d2bb6b18b29ca06f900eac6dd67b7a3fd32ef81fc9cddf"
+      "sha256": "404d8ff0e44c2b559737728d64a1f79d64326c60d91bac2654a62e890372e7d0"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/consolidation.py",
@@ -2835,6 +2855,38 @@
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/_cache/omb_hist12z3_fy2027.xlsx",
       "sha256": "43aa30c0d39116909b990a93926540fd173bce4963f26ee3a0d28a6f900d974d"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/keys.py",
+      "sha256": "cbf2ee35ebc6205bb718fff398ef59f19f4d95d9db98e91beff7a490c6168934"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md",
+      "sha256": "47d5d93d51e3f74b8b87763a79e1c4a47da86e1fa83d0b3201a7c32b2fdf64c6"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/bins.csv",
+      "sha256": "950d83f07ab7f63ade40e47570c4b751ea416c72c7753e56f595d2219d8369cb"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/translation_inputs.json",
+      "sha256": "a701d8e4d695ec163b3e04ded5357fbde2332881e6d3fe0dd55ca63b5dffd82e"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/external_benchmarks_2026_09_24/frame.py",
+      "sha256": "c5ba5e8c7e6fceef6f4f853b8cf596ebd639b3be8cc6f8a376125831f8e5b6ad"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet",
+      "sha256": "915993b7bd9d050e615b8d485f9703bf6c084e54af71d82f989a93add14afcc5"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv",
+      "sha256": "fc73f97db7e8da645e22e546cf6f637c3f059c66fb328c058689f2c1c1d1f24b"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json",
+      "sha256": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd"
     }
   ],
   "medical_anchors": {
