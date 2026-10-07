@@ -122,11 +122,13 @@ capital-side lines at 1; the top tail is inside the central, so cost_both_arms i
 CPS's federal and state income-tax dollars against the national lines on the published and row-4 weights (the rough
 re-key's frame), each row naming its variable, its placement (on the record or split over the tax unit) and its key.
 income_tax_parts.py splits the move from the CPS-dollar rule to the case's keys into its parts.
+The keys' one definition is tax_key_heldout_2026_09_28/keys.py (TK, loaded by path), moved there from this library on
+2026-10-07 so that the ledger's item T loads it too.
 Gates (case_tax_keys()): the benchmark lane's frame (external_benchmarks_2026_09_24, FEDTAX_BC, AGI and the CBO income
-fields) is the rough frame row for row; IRS's bin shares are heldout's bins.csv (1e-12); the union's raked shares are
-heldout's translation, its reweighted share plus the raked share change, at both allocations, and each vector sums
-to 1 over civilians (1e-12); the union's unraked federal and state shares are model.json's cells (1e-9). The
-attribution gates each group's step-5 change to minus its change in the three income-tax lines (1e-9).
+fields) is the rough frame row for row; then TK.case_keys()'s: IRS's bin shares are heldout's bins.csv (1e-12); the
+union's raked shares are heldout's translation, its reweighted share plus the raked share change, at both allocations,
+and each vector sums to 1 over civilians (1e-12); the union's unraked federal and state shares are model.json's cells
+(1e-9). The attribution gates each group's step-5 change to minus its change in the three income-tax lines (1e-9).
 
 Gates (exit 1, nothing written):
   - the dumps are the case: their costs are main_case_bands.csv's adopted and cash_set rows (5e-5, printed at 4
@@ -157,7 +159,6 @@ from __future__ import annotations
 import csv
 import importlib.util
 import json
-import re
 import sys
 import zipfile
 from contextlib import ExitStack, contextmanager
@@ -178,6 +179,12 @@ import v4_inputs as V  # noqa: E402
 sys.path.insert(0, str(FISCAL / "generation_account_2026_09_24"))
 import frame as F  # noqa: E402  (puts the CPS lane on sys.path)
 import combine_onbooks_lane as L  # noqa: E402
+# the case's income-tax keys, one definition; by path, since generation_account_2026_09_24 (on sys.path) has a keys.py
+_tk = importlib.util.spec_from_file_location("tax_key_heldout_keys", FISCAL / "tax_key_heldout_2026_09_28/keys.py")
+TK = importlib.util.module_from_spec(_tk)
+_tk.loader.exec_module(TK)
+# TK's own objects under the library's old names, which local_whites_fragility.py (a peer's, in progress) still reads
+irs_2023, _pool14, BENCH, CBO_SPEC = TK.irs_2023, TK._pool14, TK.BENCH, TK.CBO_SPEC
 
 BLACK_LANE = FISCAL / "black_comparator_rough_2026_09_28"
 BASIS = FISCAL / "population_basis_2026_09_29/derived"
@@ -213,12 +220,6 @@ REL_UNION = 0.5233824966647924     # the union's measured relative benefit-tax r
 TAX_CASES = ("oct05", "oct07")
 TAX_ALLOC = "shared"
 CASE_TAX_KEY = {"federal_income_tax": "fit_case", "state_local_income_tax": "sit_case", "other_personal_tax": "sit_case"}
-HELD = FISCAL / "tax_key_heldout_2026_09_28"
-BENCH = FISCAL / "external_benchmarks_2026_09_24"
-CBO_SPEC = "individual_inc_tax=individual_inc_tax_gross|2022"    # the CBO margin heldout.py rakes to
-TAX_COLS = ["PH_SEQ", "TAX_ID", "SPM_ID", "MARSUPWT", "A_AGE", "PRPERTYP", "PRCITSHP", "PENATVTY", "PEFNTVTY", "PEMNTVTY",
-            "PRDTHSP", "pwwgt0", "AGI", "FEDTAX_BC", "FEDTAX_AC", "STATETAX_A", "WSAL_VAL", "PTOTVAL", "SSI_VAL", "PAW_VAL",
-            "CAP_VAL", "MCARE"]
 TAX_K: dict = {}     # the case's key vectors on the rough frame's rows (case_tax_keys()), added to R.K on TAX_CASES
 
 
@@ -353,75 +354,16 @@ R.line_share = _line_share_case     # run29 and v4_terms look it up at call time
 
 
 # ------------------------------------------------------------------ round 2: the case's income-tax keys
-def irs_2023():
-    """IRS SOI TY2023 Table 1.2, income tax after credits by its 19 AGI bins, from the held-out lane's read of the
-    table (reads/irs_table_1_2_ty2023.md; its _cache spreadsheet is not on this machine): bin labels and shares."""
-    txt = (HELD / "reads/irs_table_1_2_ty2023.md").read_text()
-    rows = re.findall(r"^\| ([^|]+?) \| ([\d,]+) \| ([\d,]+) \| [\d.]+% \|$", txt, re.M)
-    total = float(re.search(r"All returns, total \(row 9\) \| \| ([\d,]+) \|", txt).group(1).replace(",", ""))
-    amounts = np.array([float(r[2].replace(",", "")) for r in rows])
-    if len(rows) != 19 or abs(amounts.sum() - total) > 1e-7 * total:
-        raise SystemExit("[BLOCKED] the IRS TY2023 read does not give 19 bins adding to its total")
-    return [r[0] for r in rows], amounts / amounts.sum()
-
-
-def _pool14(x):
-    """heldout.py's 14 raking columns from 19 bins: no AGI with $1-5k, the bins to $1M, $1M and up pooled."""
-    p = np.concatenate([x[:14], x[14:].sum(axis=0, keepdims=True)])
-    return np.concatenate([p[:2].sum(axis=0, keepdims=True), p[2:]])
-
-
-def raked_vector(d, w, civ, g, alloc, cbo, cols, edges):
-    """Each person's share of national federal income tax under v4 item 3's key (tax_key_heldout_2026_09_28,
-    irs_2023_raked_with_cbo_groups) on weights w: the key's dollars (FEDTAX_BC on the record, or split equally over the
-    SPM unit) in CBO income group j x AGI bin k, the cells raked to CBO's group shares and IRS's bin shares, and a
-    person's share sum_k R[j, k] x its dollars in (j, k) / the cell's dollars. Sums to 1 over civilians."""
-    vp = d.FEDTAX_BC.to_numpy(float)
-    agi = d.AGI.to_numpy(float)
-    b = np.where(agi <= 0, 0, np.searchsorted(edges, agi, side="right") + 1)
-    codes, _ = pd.factorize(d.SPM_ID.to_numpy())
-    size = np.bincount(codes).astype(float)
-    m = np.zeros((len(d), 19))
-    for k in range(19):
-        x = vp * (b == k)
-        m[:, k] = x if alloc == "personal" else (np.bincount(codes, weights=x) / size)[codes]
-    m14 = _pool14(m.T).T
-    pos = [j for j in cbo if cbo[j] > 0]
-    tb = np.stack([m14[civ & (g == j)].T @ w[civ & (g == j)] for j in pos])
-    rows = np.array([cbo[j] for j in pos])
-    r = rows[:, None] * tb / tb.sum(axis=1, keepdims=True)
-    for it in range(20000):
-        r *= cols[None, :] / r.sum(axis=0)[None, :]
-        r *= (rows / r.sum(axis=1))[:, None]
-        if max(np.abs(r.sum(axis=0) - cols).max(), np.abs(r.sum(axis=1) - rows).max()) < 1e-12:
-            break
-    else:
-        raise SystemExit(f"[BLOCKED] the {alloc} raking did not converge")
-    ratio = np.divide(r, tb, out=np.zeros_like(r), where=tb > 0)
-    v = np.zeros(len(d))
-    for i, j in enumerate(pos):
-        mj = civ & (g == j)
-        v[mj] = m14[mj] @ ratio[i]
-    return v, it + 1
-
-
 def case_tax_keys():
-    """Round 2: the case's income-tax keys as per-person vectors on the rough frame's rows. federal_income_tax: v4 item
-    3's IRS-raked key at each allocation (raked_vector on the published weights, pwwgt0, as heldout.py rakes it);
-    state_local_income_tax and other_personal_tax: the state_liability key (STATETAX_A floored at 0 on the record, or
-    split equally over the SPM unit). The CPS fields the rough frame lacks come from the benchmark lane's frame
-    (external_benchmarks_2026_09_24/frame.py, its cached parquet; loaded under its own name, as cbo_arm.groups builds
-    the CBO groups). Gates: that frame is the rough frame row for row; IRS's bin shares are heldout's bins.csv; the
-    union's raked shares are heldout's translation (reweighted share + the raked share change) at both allocations and
-    the vectors sum to 1 over civilians (1e-12); the unraked federal and state shares of the union are model.json's
-    cells (1e-9, printed to 9 decimals). Returns the vectors and the frame's FEDTAX_BC and STATETAX_A for the totals."""
-    spec = importlib.util.spec_from_file_location("benchmark_frame", BENCH / "frame.py")
-    bf = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(bf)
-    path = bf.CACHE / "cps25_frame.parquet"
-    if not path.exists():
-        raise SystemExit(f"[BLOCKED] missing {path} (external_benchmarks_2026_09_24 frame.load() builds it)")
-    d = pd.read_parquet(path, columns=TAX_COLS)
+    """Round 2: the case's income-tax keys as per-person vectors on the rough frame's rows, from their one definition,
+    TK.case_keys() (tax_key_heldout_2026_09_28/keys.py). federal_income_tax: v4 item 3's IRS-raked key at each
+    allocation (on the published weights, pwwgt0, as heldout.py rakes it); state_local_income_tax and
+    other_personal_tax: the state_liability key (STATETAX_A floored at 0 on the record, or split equally over the SPM
+    unit). The CPS fields the rough frame lacks come from the benchmark lane's frame (TK.load_frame()). Gates here: that
+    frame is the rough frame row for row, with the rough frame's civilians and union; TK.case_keys() reports its own
+    through gate(). Returns the vectors and the frame's FEDTAX_BC for the totals."""
+    bf = TK.benchmark_frame()
+    d = TK.load_frame()
     same = len(d) == len(R.d) and all(np.array_equal(d[c].to_numpy(), R.d[c].to_numpy()) for c in
                                       ("PH_SEQ", "TAX_ID", "SPM_ID", "MARSUPWT", "A_AGE", "PRCITSHP", "PENATVTY",
                                        "PEFNTVTY", "PEMNTVTY", "PRDTHSP", "FEDTAX_AC", "STATETAX_A"))
@@ -431,37 +373,7 @@ def case_tax_keys():
     civ, union = bf.masks(d)
     gate("its civilian universe and union are the rough frame's", np.array_equal(civ, R.civ)
          and np.array_equal(union, R.MASK["mex"] & R.civ))
-    w0 = d.pwwgt0.to_numpy(float) * civ
-    labels, irs = irs_2023()
-    bins = pd.read_csv(HELD / "derived/bins.csv")
-    gate("IRS TY2023 bin shares are heldout's bins.csv (1e-12)", list(bins.irs_label) == labels
-         and float(np.abs(bins.irs_2023_share_pct.to_numpy() / 100 - irs).max()) < 1e-12)
-    lows = [int(re.match(r"\$([\d,]+) (?:under|or more)", lab).group(1).replace(",", "")) for lab in labels[1:]]
-    edges = np.array(lows[1:], float)
-    shares = pd.read_csv(BENCH / "derived/cbo_group_shares.csv").query("spec == @CBO_SPEC").set_index("group")
-    cbo = {j: float(shares.loc[j, "cbo_share"]) for j in bf.GROUPS}
-    medicare = next(x for x in bf.model()["spending"]["lines"] if x["id"] == "medicare")["national_bn"]
-    per = medicare * 1e9 / d.pwwgt0.to_numpy(float)[d.MCARE.eq(1).to_numpy()].sum()
-    g, _ = bf.cbo_groups(d, bf.cbo_income(d, per), d.pwwgt0.to_numpy(float))    # cbo_arm.groups(d)
-    held = json.loads((HELD / "derived/translation_inputs.json").read_text())
-    model = {x["id"]: x for x in bf.model()["receipts"]["lines"]}
-    cell = lambda lid, a: model[lid]["cells"]["cbo_collective"][a]["share"]  # noqa: E731
-    out = {}
-    stl = d.STATETAX_A.clip(lower=0).to_numpy(float)
-    for a in ("personal", "shared"):
-        v, iters = raked_vector(d, w0, civ, g, a, cbo, _pool14(irs), edges)
-        want = held["reweighted_share"][a] + held["share_change"]["irs_2023_raked_with_cbo_groups"][a]
-        got = float(w0[union] @ v[union])
-        gate(f"federal, {a}: the union's raked share is heldout's translation, the vector sums to 1 (1e-12; {iters} "
-             "iterations)", abs(got - want) < 1e-12 and abs(float(w0 @ v) - 1) < 1e-12, f"{got:.15f} vs {want:.15f}")
-        raw = d.FEDTAX_BC.to_numpy(float)
-        raw = raw if a == "personal" else bf.unit_equal(raw, d.SPM_ID.to_numpy())
-        st = stl if a == "personal" else bf.unit_equal(stl, d.SPM_ID.to_numpy())
-        f_u, s_u = float(w0[union] @ raw[union] / (w0 @ raw)), float(w0[union] @ st[union] / (w0 @ st))
-        gate(f"federal and state, {a}: the union's unraked shares are model.json's federal_liability and state_liability "
-             "cells (1e-9)", abs(f_u - cell("federal_income_tax", a)) < 1e-9 and abs(s_u - cell("state_local_income_tax", a)) < 1e-9
-             and cell("other_personal_tax", a) == cell("state_local_income_tax", a), f"{f_u:.9f}, {s_u:.9f}")
-        out[f"fit_case_{a}"], out[f"sit_case_{a}"] = v, st
+    out = TK.case_keys(d, civ, union, gate)
     out["fit_case"], out["sit_case"] = out[f"fit_case_{TAX_ALLOC}"], out[f"sit_case_{TAX_ALLOC}"]
     return out, d.FEDTAX_BC.to_numpy(float)
 

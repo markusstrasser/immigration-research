@@ -46,9 +46,7 @@ from __future__ import annotations
 import argparse
 import contextlib
 import csv
-import importlib.util
 import io
-import re
 import sys
 from pathlib import Path
 
@@ -109,11 +107,10 @@ def step_keys(keys):
 
 
 def benchmark_frame():
-    """The benchmark lane's frame (the library's source of FEDTAX_BC and AGI), gated to the rough frame's rows."""
-    spec = importlib.util.spec_from_file_location("benchmark_frame", W.BENCH / "frame.py")
-    bf = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(bf)
-    d = pd.read_parquet(bf.CACHE / "cps25_frame.parquet", columns=W.TAX_COLS)
+    """The benchmark lane's frame (the keys' source of FEDTAX_BC and AGI, W.TK.load_frame()), gated to the rough
+    frame's rows."""
+    bf = W.TK.benchmark_frame()
+    d = W.TK.load_frame()
     gate("the benchmark frame is the rough frame row for row (household, tax and SPM unit, FEDTAX_AC)",
          len(d) == len(R.d) and all(np.array_equal(d[c].to_numpy(), R.d[c].to_numpy())
                                     for c in ("PH_SEQ", "TAX_ID", "SPM_ID", "FEDTAX_AC", "STATETAX_A")))
@@ -140,17 +137,11 @@ def add_keys(bf, d):
 
 
 def agi_bins(d, bc):
-    """Each person's shared FEDTAX_BC dollars by IRS AGI bin, as raked_vector bins them, and the bins' lower bounds."""
-    labels, _ = W.irs_2023()
-    lows = [int(re.match(r"\$([\d,]+) (?:under|or more)", lab).group(1).replace(",", "")) for lab in labels[1:]]
-    edges = np.array(lows[1:], float)
-    agi = d.AGI.to_numpy(float)
-    b = np.where(agi <= 0, 0, np.searchsorted(edges, agi, side="right") + 1)
-    codes, _ = pd.factorize(d.SPM_ID.to_numpy())
-    size = np.bincount(codes).astype(float)
-    m = np.zeros((len(d), 19))
-    for k in range(19):
-        m[:, k] = (np.bincount(codes, weights=bc * (b == k)) / size)[codes]
+    """Each person's shared FEDTAX_BC dollars by IRS AGI bin, as the keys' raked_vector bins them (W.TK.bin_dollars),
+    and the bins' lower bounds."""
+    labels, _ = W.TK.irs_2023()
+    edges, lows = W.TK.bin_edges(labels)
+    m = W.TK.bin_dollars(d, bc, "shared", edges)
     gate("the AGI bins split each record's FEDTAX_BC as the raking does: their sum is the shared key (1e-6)",
          float(np.abs(m.sum(axis=1) - R.K["fit_bc_spm"]).max()) < 1e-6)
     return m, np.array([0.0] + lows, float)

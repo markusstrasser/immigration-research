@@ -15,11 +15,12 @@
     "infra/immigration-fiscal/white_replacement_2026_09_28/derived/v4_nhts_vmt.csv": "9fa7f41d4480ca5e4c32106b298976e3bdb525fc113109edba852c6798a15793",
     "infra/immigration-fiscal/main_case_2026_09_29/derived/corrections.json": "ba72adb198a4765604bb676406df6bfc18063529923bae230d9e0ad8d3b7adbe",
     "infra/immigration-fiscal/cj_use_allocation_2026_09_23/derived/central_split.csv": "9814f7a17cd18f0189722c5a8cebf14937859e03f32feb98b2136fbb19430d36",
-    "infra/immigration-fiscal/net_contributor_comparison_2026_10_01/compare.py": "e21fbae098c2ed7548f51dfd92259bd7fb6cd718c76b6f7f428d315284622ebb",
+    "infra/immigration-fiscal/net_contributor_comparison_2026_10_01/compare.py": "fc3b965c71c371dc90ce73add201cc7ffdf988525a740417afd27d6457459c6f",
     "infra/immigration-fiscal/white_replacement_2026_09_28/rekey_white.py": "c8ef4a4b3cdac2b80fe9cfaf44441fb26923dd181ce4e314e7d031217ab09193",
-    "infra/immigration-fiscal/white_replacement_2026_09_28/rekey_sept29.py": "29adbe2c0c116d640d11d5cce6a7e72b6fc6fbbc8b0c14b825eaaae7d98e1692",
+    "infra/immigration-fiscal/white_replacement_2026_09_28/rekey_sept29.py": "bad56947ca9e4253df227498433276fdb0f41f19298b8764afce7734039189fa",
     "infra/immigration-fiscal/white_replacement_2026_09_28/state_white.py": "330d9a9a5f08ce5472d632e43b506fa8f9f241fc664e22b9dc81587f0bbc04fc",
-    "infra/immigration-fiscal/white_replacement_2026_09_28/v4_inputs.py": "d171c8e7ae13a5419f0d5569e7f4e0abfd2ed22362cae91fcc93b80e956bd7f9"
+    "infra/immigration-fiscal/white_replacement_2026_09_28/v4_inputs.py": "d171c8e7ae13a5419f0d5569e7f4e0abfd2ed22362cae91fcc93b80e956bd7f9",
+    "infra/immigration-fiscal/tax_key_heldout_2026_09_28/keys.py": "cbf2ee35ebc6205bb718fff398ef59f19f4d95d9db98e91beff7a490c6168934"
   },
   "gates": "PASS",
   "basis": "income-year 2024, September 29 accrual case, full allocation, actual ages",

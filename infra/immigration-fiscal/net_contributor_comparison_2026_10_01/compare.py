@@ -270,7 +270,7 @@ def main(out):
                WHITE / "derived/v4_nhts_vmt.csv", W.CASE_LANE / "derived/corrections.json",
                FISCAL / "cj_use_allocation_2026_09_23/derived/central_split.csv",
                Path(__file__), WHITE / "rekey_white.py", WHITE / "rekey_sept29.py",
-               WHITE / "state_white.py", WHITE / "v4_inputs.py"]
+               WHITE / "state_white.py", WHITE / "v4_inputs.py", FISCAL / "tax_key_heldout_2026_09_28/keys.py"]
     manifest = {str(p.relative_to(FISCAL.parent.parent)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}
     (out / "audit.json").write_text(json.dumps(dict(source_hashes=manifest, gates="PASS",
         basis="income-year 2024, September 29 accrual case, full allocation, actual ages",
