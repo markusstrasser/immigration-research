@@ -6,12 +6,12 @@ accrual,California,"capital, property, production taxes",-9.7818,-26.7507,16.968
 accrual,California,Social Security,42.9126,64.8355,-21.9230,-1572
 accrual,California,Medicare,31.0854,38.0595,-6.9741,-500
 accrual,California,Medicaid,41.1700,28.1561,13.0139,933
-accrual,California,schools and colleges,68.8913,70.2719,-1.3806,-99
+accrual,California,schools and colleges,67.4214,69.1042,-1.6828,-121
 accrual,California,"police, courts, prisons",36.0241,30.0182,6.0059,431
 accrual,California,"SNAP, SSI, housing, cash aid, credits, other welfare",42.9675,33.3016,9.6658,693
 accrual,California,veterans and military medical,3.1733,7.5715,-4.3982,-315
-accrual,California,"per-head lines: government, defense, interest, roads, other",28.1393,34.6767,-6.5375,-469
-accrual,California,capital return,12.2755,13.0528,-0.7773,-56
+accrual,California,"per-head lines: government, defense, interest, roads, other",29.8183,35.2815,-5.4632,-392
+accrual,California,capital return,12.1308,12.9379,-0.8071,-58
 accrual,California,production gain (subtracted),-4.2532,-0.0000,-4.2532,-305
 accrual,Texas,income taxes,-31.8302,-80.7629,48.9327,4561
 accrual,Texas,payroll taxes and Medicare premiums,-43.4879,-60.6342,17.1463,1598
@@ -20,12 +20,12 @@ accrual,Texas,"capital, property, production taxes",-4.9087,-10.1509,5.2423,489
 accrual,Texas,Social Security,29.3392,39.8935,-10.5543,-984
 accrual,Texas,Medicare,22.3916,25.2576,-2.8661,-267
 accrual,Texas,Medicaid,31.5941,21.3791,10.2150,952
-accrual,Texas,schools and colleges,51.1939,55.5365,-4.3426,-405
+accrual,Texas,schools and colleges,50.4508,54.7235,-4.2727,-398
 accrual,Texas,"police, courts, prisons",15.0282,11.8425,3.1857,297
 accrual,Texas,"SNAP, SSI, housing, cash aid, credits, other welfare",29.8320,12.6547,17.1773,1601
 accrual,Texas,veterans and military medical,4.9434,7.1950,-2.2516,-210
-accrual,Texas,"per-head lines: government, defense, interest, roads, other",17.5332,20.7374,-3.2042,-299
-accrual,Texas,capital return,9.0813,9.6387,-0.5574,-52
+accrual,Texas,"per-head lines: government, defense, interest, roads, other",18.2234,21.1994,-2.9761,-277
+accrual,Texas,capital return,9.0082,9.5587,-0.5505,-51
 accrual,Texas,production gain (subtracted),-2.8542,-0.0000,-2.8542,-266
 accrual,rest of US,income taxes,-63.4288,-144.8329,81.4042,4504
 accrual,rest of US,payroll taxes and Medicare premiums,-71.4050,-97.5702,26.1652,1448
@@ -34,12 +34,12 @@ accrual,rest of US,"capital, property, production taxes",-9.2586,-17.3487,8.0900
 accrual,rest of US,Social Security,49.0921,64.9051,-15.8131,-875
 accrual,rest of US,Medicare,30.9708,35.0959,-4.1251,-228
 accrual,rest of US,Medicaid,53.3265,34.4970,18.8294,1042
-accrual,rest of US,schools and colleges,97.2150,101.2163,-4.0013,-221
+accrual,rest of US,schools and colleges,95.8081,99.9824,-4.1743,-231
 accrual,rest of US,"police, courts, prisons",30.2594,23.7330,6.5264,361
 accrual,rest of US,"SNAP, SSI, housing, cash aid, credits, other welfare",49.1532,30.9386,18.2146,1008
 accrual,rest of US,veterans and military medical,5.0575,8.9317,-3.8741,-214
-accrual,rest of US,"per-head lines: government, defense, interest, roads, other",30.2493,34.7496,-4.5003,-249
-accrual,rest of US,capital return,15.8865,16.5550,-0.6686,-37
+accrual,rest of US,"per-head lines: government, defense, interest, roads, other",31.8993,35.6624,-3.7631,-208
+accrual,rest of US,capital return,15.7480,16.4336,-0.6856,-38
 accrual,rest of US,production gain (subtracted),-4.8401,-0.0000,-4.8401,-268
 accrual,Los Angeles metro,income taxes,-20.8495,-83.0517,62.2022,13036
 accrual,Los Angeles metro,payroll taxes and Medicare premiums,-21.8817,-39.0753,17.1936,3603
@@ -48,12 +48,12 @@ accrual,Los Angeles metro,"capital, property, production taxes",-3.3860,-11.2952
 accrual,Los Angeles metro,Social Security,14.8921,25.9026,-11.0105,-2308
 accrual,Los Angeles metro,Medicare,11.0379,15.1033,-4.0654,-852
 accrual,Los Angeles metro,Medicaid,14.0882,9.8316,4.2566,892
-accrual,Los Angeles metro,schools and colleges,20.8416,22.5168,-1.6752,-351
+accrual,Los Angeles metro,schools and colleges,20.3840,22.0766,-1.6925,-355
 accrual,Los Angeles metro,"police, courts, prisons",12.3508,10.3533,1.9975,419
 accrual,Los Angeles metro,"SNAP, SSI, housing, cash aid, credits, other welfare",15.1537,8.5830,6.5706,1377
 accrual,Los Angeles metro,veterans and military medical,1.2984,2.9637,-1.6652,-349
-accrual,Los Angeles metro,"per-head lines: government, defense, interest, roads, other",9.6258,12.4990,-2.8732,-602
-accrual,Los Angeles metro,capital return,4.0611,4.4402,-0.3791,-79
+accrual,Los Angeles metro,"per-head lines: government, defense, interest, roads, other",10.1262,12.8350,-2.7088,-568
+accrual,Los Angeles metro,capital return,4.0161,4.3969,-0.3808,-80
 accrual,Los Angeles metro,production gain (subtracted),-1.4818,-0.0000,-1.4818,-311
 cash,California,income taxes,-58.7685,-197.3343,138.5658,9933
 cash,California,payroll taxes and Medicare premiums,-62.8492,-97.7658,34.9167,2503
@@ -62,12 +62,12 @@ cash,California,"capital, property, production taxes",-9.7818,-26.7507,16.9689,1
 cash,California,Social Security,22.8503,33.1123,-10.2620,-736
 cash,California,Medicare,21.8768,26.4955,-4.6187,-331
 cash,California,Medicaid,41.1700,28.1561,13.0139,933
-cash,California,schools and colleges,68.8913,70.2719,-1.3806,-99
+cash,California,schools and colleges,67.4214,69.1042,-1.6828,-121
 cash,California,"police, courts, prisons",36.0241,30.0182,6.0059,431
 cash,California,"SNAP, SSI, housing, cash aid, credits, other welfare",42.9675,33.3016,9.6658,693
 cash,California,veterans and military medical,3.1733,7.5715,-4.3982,-315
-cash,California,"per-head lines: government, defense, interest, roads, other",28.1393,34.6767,-6.5375,-469
-cash,California,capital return,12.2755,13.0528,-0.7773,-56
+cash,California,"per-head lines: government, defense, interest, roads, other",29.8183,35.2815,-5.4632,-392
+cash,California,capital return,12.1308,12.9379,-0.8071,-58
 cash,California,production gain (subtracted),-4.2532,-0.0000,-4.2532,-305
 cash,Texas,income taxes,-32.5790,-82.6179,50.0389,4665
 cash,Texas,payroll taxes and Medicare premiums,-43.4879,-60.6342,17.1463,1598
@@ -76,12 +76,12 @@ cash,Texas,"capital, property, production taxes",-4.9087,-10.1509,5.2423,489
 cash,Texas,Social Security,19.6853,26.3941,-6.7087,-625
 cash,Texas,Medicare,16.6857,19.9382,-3.2525,-303
 cash,Texas,Medicaid,31.5941,21.3791,10.2150,952
-cash,Texas,schools and colleges,51.1939,55.5365,-4.3426,-405
+cash,Texas,schools and colleges,50.4508,54.7235,-4.2727,-398
 cash,Texas,"police, courts, prisons",15.0282,11.8425,3.1857,297
 cash,Texas,"SNAP, SSI, housing, cash aid, credits, other welfare",29.8320,12.6547,17.1773,1601
 cash,Texas,veterans and military medical,4.9434,7.1950,-2.2516,-210
-cash,Texas,"per-head lines: government, defense, interest, roads, other",17.5332,20.7374,-3.2042,-299
-cash,Texas,capital return,9.0813,9.6387,-0.5574,-52
+cash,Texas,"per-head lines: government, defense, interest, roads, other",18.2234,21.1994,-2.9761,-277
+cash,Texas,capital return,9.0082,9.5587,-0.5505,-51
 cash,Texas,production gain (subtracted),-2.8542,-0.0000,-2.8542,-266
 cash,rest of US,income taxes,-64.2975,-147.0483,82.7508,4578
 cash,rest of US,payroll taxes and Medicare premiums,-71.4050,-97.5702,26.1652,1448
@@ -90,12 +90,12 @@ cash,rest of US,"capital, property, production taxes",-9.2586,-17.3487,8.0900,44
 cash,rest of US,Social Security,22.7800,31.5223,-8.7423,-484
 cash,rest of US,Medicare,17.5923,23.4406,-5.8483,-324
 cash,rest of US,Medicaid,53.3265,34.4970,18.8294,1042
-cash,rest of US,schools and colleges,97.2150,101.2163,-4.0013,-221
+cash,rest of US,schools and colleges,95.8081,99.9824,-4.1743,-231
 cash,rest of US,"police, courts, prisons",30.2594,23.7330,6.5264,361
 cash,rest of US,"SNAP, SSI, housing, cash aid, credits, other welfare",49.1532,30.9386,18.2146,1008
 cash,rest of US,veterans and military medical,5.0575,8.9317,-3.8741,-214
-cash,rest of US,"per-head lines: government, defense, interest, roads, other",30.2493,34.7496,-4.5003,-249
-cash,rest of US,capital return,15.8865,16.5550,-0.6686,-37
+cash,rest of US,"per-head lines: government, defense, interest, roads, other",31.8993,35.6624,-3.7631,-208
+cash,rest of US,capital return,15.7480,16.4336,-0.6856,-38
 cash,rest of US,production gain (subtracted),-4.8401,-0.0000,-4.8401,-268
 cash,Los Angeles metro,income taxes,-21.1392,-83.9289,62.7897,13159
 cash,Los Angeles metro,payroll taxes and Medicare premiums,-21.8817,-39.0753,17.1936,3603
@@ -104,10 +104,10 @@ cash,Los Angeles metro,"capital, property, production taxes",-3.3860,-11.2952,7.
 cash,Los Angeles metro,Social Security,7.6887,12.4809,-4.7923,-1004
 cash,Los Angeles metro,Medicare,7.9938,10.0652,-2.0714,-434
 cash,Los Angeles metro,Medicaid,14.0882,9.8316,4.2566,892
-cash,Los Angeles metro,schools and colleges,20.8416,22.5168,-1.6752,-351
+cash,Los Angeles metro,schools and colleges,20.3840,22.0766,-1.6925,-355
 cash,Los Angeles metro,"police, courts, prisons",12.3508,10.3533,1.9975,419
 cash,Los Angeles metro,"SNAP, SSI, housing, cash aid, credits, other welfare",15.1537,8.5830,6.5706,1377
 cash,Los Angeles metro,veterans and military medical,1.2984,2.9637,-1.6652,-349
-cash,Los Angeles metro,"per-head lines: government, defense, interest, roads, other",9.6258,12.4990,-2.8732,-602
-cash,Los Angeles metro,capital return,4.0611,4.4402,-0.3791,-79
+cash,Los Angeles metro,"per-head lines: government, defense, interest, roads, other",10.1262,12.8350,-2.7088,-568
+cash,Los Angeles metro,capital return,4.0161,4.3969,-0.3808,-80
 cash,Los Angeles metro,production gain (subtracted),-1.4818,-0.0000,-1.4818,-311

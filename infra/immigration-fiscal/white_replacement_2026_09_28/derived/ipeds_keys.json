@@ -1,0 +1,144 @@
+{
+ "constants": {
+  "education_line_bn": 1221.159,
+  "higher_dollars_bn": 234.029706937839,
+  "higher_weight": 0.19164556535048996,
+  "kappa": 0.9606787330316742,
+  "pell_bn": 31.264,
+  "pell_private_relative_union": 0.75,
+  "pell_public": 0.68,
+  "tuition_bn": 103.911
+ },
+ "hospital": {
+  "g_bn": 295.65077621100204,
+  "mix": {
+   "medicaid": 0.201,
+   "medicare": 0.35,
+   "private_other": 0.36
+  },
+  "net_bn": {
+   "medicaid": 2.7335870768469275,
+   "medicare": 13.659065860948294,
+   "private_other": -47.6825571873104
+  },
+  "pcr": {
+   "medicaid": 0.954,
+   "medicare": 0.868,
+   "private_other": 1.448
+  },
+  "union_fee_bn": 0.9450346146182799,
+  "union_key_bn": -0.30368354540915365
+ },
+ "inputs": {
+  "derived/fee_lines.json": "fd6f4bf5fe6b00392925f14e312eeaccebced8d4460670f016c7afd1a1d86977",
+  "derived/health.json": "9b1cdda425dc426924d5780fef4a8985f8faba2fa54f504fc31b40c85e54062f",
+  "derived/higher_ed.json": "21d8871241c2009d20eb6929fea8d0fc83ea3b994abb5b1b1cb452894c372fe1",
+  "fee_lines.py": "409efe8ffde32cddaf2be1f6e9ee24696fb802c6f652fba6f126b7a2e8de79fb",
+  "higher_ed.py": "8db2fc4e1a1ff0bc062bd089cdd8c52f67107e9a242d21c4ecd7458c72a3ffdc"
+ },
+ "note": "IPEDS keys for the rough re-keys (ipeds_keys.py docstring). races: a race's share of public higher education's use (education-and-related cost by FTE), of net tuition plus Pell (tuition, theta = 1; tuition_arms at 0.5 and 1.5) and of Pell (public at the race's mid intensity, private at its enrollment ratio). union: the fee lane's shares on the account's 39,712,493. constants: the fee lane's. hospital: health.json's central inputs; net_bn = g x mix x (1 - pcr), the insured payers' unpaid cost (negative where payments exceed cost).",
+ "npsas": {
+  "all": {
+   "average_pell_usd": 4100,
+   "pell_receipt_pct": 40.2
+  },
+  "asian": {
+   "average_pell_usd": 4700,
+   "pell_receipt_pct": 33.7
+  },
+  "black": {
+   "average_pell_usd": 4200,
+   "pell_receipt_pct": 59.5
+  },
+  "hispanic": {
+   "average_pell_usd": 4200,
+   "pell_receipt_pct": 49.5
+  },
+  "white": {
+   "average_pell_usd": 3900,
+   "pell_receipt_pct": 32.1
+  }
+ },
+ "private_public_enrollment": {
+  "asian": {
+   "private_share": 0.05595390979457723,
+   "public_share": 0.0733299229127344,
+   "ratio": 0.7630433467271563
+  },
+  "black": {
+   "private_share": 0.15066523696664916,
+   "public_share": 0.1162267779730417,
+   "ratio": 1.2963039980476383
+  },
+  "hispanic": {
+   "private_share": 0.16185019661780098,
+   "public_share": 0.2391384280658303,
+   "ratio": 0.6768054717380959
+  },
+  "white": {
+   "private_share": 0.46121615240963104,
+   "public_share": 0.45957882870016203,
+   "ratio": 1.003562661304699
+  }
+ },
+ "races": {
+  "asian": {
+   "fte_share": 0.07767179517983279,
+   "npsas_ratio": 0.9609877442058002,
+   "pell": 0.06722787574718352,
+   "pell_intensity": 0.9804938721029002,
+   "pell_public": 0.07274375294540762,
+   "pell_public_at_intensity_1": 0.07419093072901262,
+   "private_public_ratio": 0.7630433467271563,
+   "theta": 1.0,
+   "tuition": 0.08735321208195951,
+   "tuition_arms": {
+    "0.5": 0.0793651078347453,
+    "1.5": 0.0953413163291737
+   },
+   "ug_fte_share": 0.07788743021656694,
+   "use": 0.09606012518929918
+  },
+  "black": {
+   "fte_share": 0.11002908771743296,
+   "npsas_ratio": 1.5161994903531124,
+   "pell": 0.19184399557955883,
+   "pell_intensity": 1.258099745176556,
+   "pell_public": 0.17522923614160923,
+   "pell_public_at_intensity_1": 0.1412727982236915,
+   "private_public_ratio": 1.2963039980476383,
+   "theta": 1.0,
+   "tuition": 0.09537318179776653,
+   "tuition_arms": {
+    "0.5": 0.09002955530799386,
+    "1.5": 0.1007168082875392
+   },
+   "ug_fte_share": 0.11385805137358798,
+   "use": 0.09858215153988131
+  },
+  "white": {
+   "fte_share": 0.46650997588762116,
+   "npsas_ratio": 0.759555879140881,
+   "pell": 0.3672986420832011,
+   "pell_intensity": 0.8797779395704405,
+   "pell_public": 0.3668803795131068,
+   "pell_public_at_intensity_1": 0.41701475225923423,
+   "private_public_ratio": 1.003562661304699,
+   "theta": 1.0,
+   "tuition": 0.4407142440574787,
+   "tuition_arms": {
+    "0.5": 0.399396549184911,
+    "1.5": 0.4820319389300464
+   },
+   "ug_fte_share": 0.4671684050255213,
+   "use": 0.45636425823467647
+  }
+ },
+ "union": {
+  "pell": 0.16934316598742194,
+  "source": "user_fee_allocation_2026_10_07/derived/fee_lines.json",
+  "theta": 0.5,
+  "tuition": 0.0981440197910601,
+  "use": 0.11589579410930383
+ }
+}

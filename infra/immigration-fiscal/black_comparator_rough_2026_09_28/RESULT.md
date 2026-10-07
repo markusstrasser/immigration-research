@@ -267,6 +267,13 @@ the Black figure is **1.41× / 1.30× the Mexican-origin figure per member** (se
 union on 42.75M ($9,224 / 10,548) it is 1.40× / 1.33× (sept29 1.37× / 1.32×); on the cash set 1.74× / 1.52× the
 engine's union (sept29 1.69× / 1.50×). [CALCULATION: `rekey_sept29.py --case oct05` → `derived/rekey_summary_oct05.csv`]]
 
+[2026-10-07: the oct05 files are rebuilt on the IPEDS keys for Pell and public higher education, a defect fix decided in
+the v6 propagation (the white lane's section "v6 case (oct07)", "The IPEDS keys"). On them the NH Black group costs
+**$530.7 / 578.0bn**, $12,650 / 13,778 per member, **1.39× / 1.28×** the engine's union per member (1.37× / 1.31× the
+rough union's; cash set 1.71× / 1.49×): Pell +$2.97bn, public higher education by IPEDS use −$12.74bn, the college
+stock −$1.25 / 1.88bn. The tables below keep the rough keys of September 27. [CALCULATION:
+`derived/rekey_summary_oct05.csv`; the white lane's `ipeds_terms_oct05.csv`]]
+
 claude-opus-5-5 (v5consC)
 
 **Rule.** The white lane's section "v5 case (oct05)" applies (the case lane's Consumers row: both sides on 42.75M).
@@ -340,3 +347,136 @@ New in `derived/`: `engine_lines_oct05.json`, `engine_lines_oct05_cash.json`, `e
 `rekey_line_shares_oct05.csv`, `rule_alternatives_oct05.csv`, `attribution_oct05.csv` and
 `attribution_buckets_oct05.csv`. `engine_lines.cjs` stays byte-identical to the white lane's copy; `rekey_sept29.py`
 gained `--case`.
+
+## v6 case (oct07), 2026-10-07
+
+[2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`), with every group on the IPEDS keys for Pell and
+public higher education, the rough re-key puts the cost of removing the 41.95M non-Hispanic Black residents at
+**$527.9 / 575.3bn** a year on the case's accrual basis, **$12,583 / 13,712 per member**: $2.8 / 2.7bn below v5's
+$530.7 / 578.0bn on the same keys. At the low end Social Security and Medicare fall by $2.74bn (the 2026 Trustees'
+separate-funds path), the per-head lines by $1.64bn (retiree health takes $1.92bn of pay-go benefits out of other
+federal benefits; its accrual adds to the other lines) and schools, police and welfare rise by $1.57bn (retiree
+health's accrual and item 4's tuition term, +$0.33bn). Item 4's hospital term stays beside the central, at the team
+lead's decision; with it the group would cost $527.5 / 574.9bn. The engine's union costs **$9,101 / 10,794 per member**
+(v6's $389.08 / 461.48bn over the lineage's 42,752,213), so the Black figure is **1.38× / 1.27× the Mexican-origin
+figure per member** (v5 on the same keys 1.39× / 1.28×; on the rough keys of September 27 it was 1.41× / 1.30×).
+Against the rough union on 42.75M ($9,249 / 10,605) it is 1.36× / 1.29× (v5 1.37× / 1.31×); on the cash set 1.71× /
+1.49× the engine's union (v5 1.71× / 1.49×). [CALCULATION: `rekey_sept29.py --case oct07` →
+`derived/rekey_summary_oct07.csv`, `rekey_by_program_oct07.csv` against `rekey_by_program_oct05.csv`]]
+
+claude-opus-5-5 (prop-d)
+
+**Rules.** The white lane's section "v6 case (oct07)" applies: the items by kind from `meta.items`, both sides of the
+union on 42.75M, the NH Black group on its own CPS count of 41,954,494. For the items:
+- [ASSUMPTION] Item 1 (the 2026 separate-funds path): `accrual_black.py --case oct07` prices the NH Black group and
+  all residents on the same path as the union, through the pension lane's code (the white lane's `tr2026_path.py`),
+  at the 2025 run's relative benefit-tax rates. Net OASDI accrual per tax dollar, 2025 reports → 2026 path: NH Black
+  (immigrants from arrival) 1.039625 → 1.020794, all residents 0.949586 → 0.930832, the union 0.973667 → 0.953547.
+  [DATA: `derived/accrual_ratios_oct07.csv`]
+- [ASSUMPTION] Item 2 (retiree health): its national-scale edits reach the group through the rough keys' shares of
+  the lines. Other federal benefits lose $19.8bn of pay-go retiree benefits, −$1.9bn for the group at its Social
+  Security key; the accrual adds $1.6bn across service lines (schools +$0.7bn, police +$0.4bn).
+- Items 3 and 4 are the union's (its added people's ages; its user fees and education keys), so they do not move the
+  NH Black group directly.
+- [ASSUMPTION] **The IPEDS keys** (the white lane's section "The IPEDS keys": a defect fix of the rough keys, every
+  group on oct05 and oct07, sept29 kept). The NH Black group is the whole of its race, so it takes IPEDS's Black
+  shares: public higher education by cost-weighted use, 9.9% (the CPS college key gave it 15.3%), Pell 19.2% (its
+  Social Security key gave it 9.7%), and on oct07 tuition at 9.5% (θ = 1). Hospital charges by its MEPS payer shares
+  are priced beside the central (the white lane's hospital bullet).
+  Parts on oct07: Pell +$2.97bn, use −$12.79bn, the college stock −$1.25 / 1.88bn, tuition +$0.33bn; in all −$10.74 /
+  11.37bn ($538.6 / 586.7bn on the rough keys of September 27); the hospital term beside, −$0.44bn. On oct05, without
+  the tuition term, −$11.02 / 11.65bn. [CALCULATION: the white lane's `derived/ipeds_terms_oct07.csv`,
+  `ipeds_terms_oct05.csv`]
+- [ASSUMPTION] Tuition residency θ = 1 for a race stays (the lead's decision): at θ 0.5 / 1.5 the group costs $528.5 /
+  575.8bn and $527.3 / 574.7bn. [CALCULATION: the white lane's `derived/limits_oct07.csv`]
+
+| $bn a year, spec 48 / 11 | Engine union, oct07 | Rough union, oct07 | **NH Black, oct07** | NH Black, oct05 (IPEDS keys) |
+|---|---:|---:|---:|---:|
+| Persons (the per-member denominator) | 42,752,213 | 42,752,213 | 41,954,494 | 41,954,494 |
+| **Cost of removal, accrual basis (the case)** | 389.1 / 461.5 | 395.4 / 453.4 | **527.9 / 575.3** | 530.7 / 578.0 |
+| per member | $9,101 / 10,794 | $9,249 / 10,605 | **$12,583 / 13,712** | $12,650 / 13,778 |
+| NH Black per member over this column | 1.38 / 1.27 | 1.36 / 1.29 | | 1.39 / 1.28 (engine) |
+| Cost of removal, cash set | 307.4 / 385.4 | 309.9 / 369.9 | 514.3 / 561.7 | 514.4 / 561.7 |
+| NH Black per member over this column | 1.71 / 1.49 | 1.69 / 1.55 | | 1.71 / 1.49 (engine) |
+| Normalized gap, cash set | −278.9 / −309.7 | −275.5 / −281.5 | −462.4 / −462.4 | −461.4 / −461.4 |
+
+[CALCULATION: `derived/rekey_summary_oct07.csv`; the oct05 column from `rekey_summary_oct05.csv`]
+
+On the accrual basis, at the low end, the Black group costs $3,482 per member more than the engine's union (v5 on the
+same keys $3,520; on the rough keys of September 27 $3,738 and $3,783). The parts add to that total with controlled
+rounding. [CALCULATION: `derived/rekey_by_program_oct07.csv`, `rekey_by_program_oct05.csv`, scratch tabulation]
+
+| Program | Per member, oct07 | oct05 (IPEDS keys) |
+|---|---:|---:|
+| Social Security and Medicare | +$1,680 | +$1,662 |
+| Medicaid | +$1,368 | +$1,371 |
+| Welfare | +$986 | +$991 |
+| Veterans and military medical | +$628 | +$624 |
+| Police, courts and prisons | +$636 | +$629 |
+| No production gain | +$279 | +$279 |
+| Property, per-head lines and capital | +$242 | +$351 |
+| Schools | −$902 | −$974 |
+| Income, payroll and sales taxes (the Black group pays more) | −$1,435 | −$1,413 |
+| **Difference** | **+$3,482** | **+$3,520** |
+
+- The IPEDS keys move the schools row by −$304 per member on oct05 and −$297 on oct07 (use −$305, tuition +$8), and
+  the per-head and capital row by +$41 on both (Pell +$71, the college stock −$30). [CALCULATION: the white lane's
+  `ipeds_terms_oct05.csv` and `ipeds_terms_oct07.csv` over 41,954,494]
+- From v5 to v6 the per-head and capital row narrows by $109: the engine union's per-head lines rise by $3.5bn with
+  the fee item's Pell key (+$3.87bn), the Black group's fall by $1.6bn (retiree health's pay-go benefits leave other
+  federal benefits), and the engine's capital return falls by $0.6bn. The schools row narrows by $72: the
+  union's schools and colleges fall by $2.0bn (the fee item's education keys against retiree health's accrual and the
+  added people's younger ages) and the Black group's rise by $1.0bn (retiree health's accrual and the tuition term).
+  The Social Security and Medicare row widens by $18, as the union's accrual falls by more per member than the
+  group's. [CALCULATION: `rekey_by_program_oct07.csv` against `rekey_by_program_oct05.csv`]
+
+**Attribution** (`derived/attribution_oct07.csv`). Steps 1–3 rebuild the September 29 chain on the identified union
+at v6's responses: the NH Black step 3 is $527.9 / 575.3bn and the rough union's $375.1 / 423.9bn (v5 on the same keys
+$375.2 / 424.1bn). Step 4 adds the lineage: +$20.34 / 29.47bn to the rough union (v5 +$19.18 / 26.72bn), nothing to the
+NH Black group.
+
+**Rule alternatives on oct07** (`derived/rule_alternatives_oct07.csv`; change in the NH Black cost, $bn): rule 2
+−2.2 (v5 −2.2); rule 3a −12.7 (v5 −12.4; the union's accrual per tax dollar is the 2026 path's); rule 3b 0.0 / −0.4;
+rule 4 +4.9 / +4.8 (v5 the same); the uncalibrated benefit-tax proxy −0.1; every career starting at 21 −7.1.
+
+**Gates.** `rekey_sept29.py --case oct07`: 192 gates, exit 0, the white library's item and IPEDS gates included (the
+payload's meta is v5's but for the items; the union dumps are v5's plus the edit sets' union parts and the
+capital-return move; the added people are v5's plus the items' lineage parts, the lineage item and its interactions,
+1e-9; the accrual files' union is the case's 2026 arm; the NH Black group takes IPEDS's Black shares, 1e-12 relative).
+`accrual_black.py --case oct07` gates the union against the arm's row (5e-9). The sept29 run rewrites its files byte
+for byte (129 gates); the oct05 run on the IPEDS keys passes 161 gates, and with the keys off it reproduces the
+committed oct05 files. `engine_lines.cjs` stays byte-identical to the white lane's copy, and the four oct07 dumps equal
+the white lane's.
+
+**Reproduce (oct07), after the oct05 list and the white lane's `ipeds_keys.py` and oct07 accrual run.**
+
+```sh
+B=infra/immigration-fiscal/black_comparator_rough_2026_09_28
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $B/rekey_sept29.py --case oct05
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $B/accrual_black.py --case oct07
+for c in oct07 oct07_cash oct07_union oct07_union_cash; do node $B/engine_lines.cjs $c; done
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $B/rekey_sept29.py --case oct07
+```
+
+New in `derived/`: `accrual_ratios_oct07.csv`, `engine_lines_oct07.json`, `engine_lines_oct07_cash.json`,
+`engine_lines_oct07_union.json`, `engine_lines_oct07_union_cash.json`, `rekey_summary_oct07.csv`,
+`rekey_by_program_oct07.csv`, `rekey_line_shares_oct07.csv`, `rule_alternatives_oct07.csv`, `attribution_oct07.csv` and
+`attribution_buckets_oct07.csv`; six oct05 files rebuilt on the IPEDS keys. `accrual_black.py` gained `--case oct07`
+(its default outputs are unchanged); `rekey_sept29.py` gained the oct07 case.
+
+### Log (times from `date`)
+
+- 2026-10-07, after 14:28 JST: the team lead decided to apply the IPEDS keys to every comparator on oct05 and oct07
+  (a named defect fix; sept29 kept).
+- 15:16:23–15:16:30 (file times): in place, sept29 (129 gates, byte for byte), oct05 (161 gates) and oct07 (192 gates)
+  on the IPEDS keys.
+- After 15:16 the team lead decided that item 4's hospital term comes out of every comparator's central on oct07 and
+  stays beside (the white library's `HOSPITAL_ON = False`), and that θ = 1 for a race stays, with 0.5–1.5 printed.
+  v6 is final.
+- 16:42:17–16:42:26 (by `date`): oct05 (161 gates) and oct07 (192 gates) rerun in place, exit 0. The oct05 files and
+  the oct07 dumps and accrual file are unchanged; six oct07 files change (`rekey_summary`, `rekey_by_program`,
+  `rekey_line_shares`, `rule_alternatives`, `attribution`, `attribution_buckets`).
+- 16:59:43–17:00:51 (by `date`): `rerun_lane.py` with all eighteen commands (the three September 27 ones, the four
+  sept29 ones, the five oct05 ones and the six oct07 ones of the reproduce blocks): **IDENTICAL 45/45, exit 0**. It
+  ran after the white lane's final rerun (16:55:28–16:58:52), whose `ipeds_keys.json`, oct07 accrual files and library
+  this lane reads.

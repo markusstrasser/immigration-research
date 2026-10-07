@@ -1,0 +1,79 @@
+basis,group,program,cost_bn,cost_per_member,gap_bn,gap_per_member
+accrual,mexican_origin_engine,income taxes,-155.8531,-3645,,
+accrual,mexican_origin_engine,payroll taxes and Medicare premiums,-175.5467,-4106,,
+accrual,mexican_origin_engine,"sales, excise, customs, fees",-118.1318,-2763,,
+accrual,mexican_origin_engine,"capital, property, production taxes",-25.3139,-592,,
+accrual,mexican_origin_engine,Social Security and Medicare,195.6178,4576,,
+accrual,mexican_origin_engine,Medicaid,126.1895,2952,,
+accrual,mexican_origin_engine,schools and colleges,215.8716,5049,,
+accrual,mexican_origin_engine,"police, courts, prisons",81.1765,1899,,
+accrual,mexican_origin_engine,"SNAP, SSI, housing, cash aid, credits, other welfare",125.1763,2928,,
+accrual,mexican_origin_engine,veterans and military medical,15.4978,363,,
+accrual,mexican_origin_engine,"per head: government, defense, interest, roads",79.7266,1865,,
+accrual,mexican_origin_engine,capital return,36.5816,856,,
+accrual,mexican_origin_engine,production gain (subtracted),-11.9096,-279,,
+accrual,mexican_origin_rough,income taxes,-152.6380,-3570,,
+accrual,mexican_origin_rough,payroll taxes and Medicare premiums,-177.5795,-4154,,
+accrual,mexican_origin_rough,"sales, excise, customs, fees",-117.4051,-2746,,
+accrual,mexican_origin_rough,"capital, property, production taxes",-23.8533,-558,,
+accrual,mexican_origin_rough,Social Security and Medicare,202.1435,4728,,
+accrual,mexican_origin_rough,Medicaid,126.1895,2952,,
+accrual,mexican_origin_rough,schools and colleges,217.0850,5078,,
+accrual,mexican_origin_rough,"police, courts, prisons",81.4681,1906,,
+accrual,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",122.2548,2860,,
+accrual,mexican_origin_rough,veterans and military medical,13.0249,305,,
+accrual,mexican_origin_rough,"per head: government, defense, interest, roads",79.7015,1864,,
+accrual,mexican_origin_rough,capital return,36.9488,864,,
+accrual,mexican_origin_rough,production gain (subtracted),-11.9096,-279,,
+accrual,nh_black_rough,income taxes,-183.7848,-4381,,
+accrual,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,-4633,,
+accrual,nh_black_rough,"sales, excise, customs, fees",-123.2033,-2937,,
+accrual,nh_black_rough,"capital, property, production taxes",-15.9766,-381,,
+accrual,nh_black_rough,Social Security and Medicare,262.4710,6256,,
+accrual,nh_black_rough,Medicaid,181.2461,4320,,
+accrual,nh_black_rough,schools and colleges,173.9840,4147,,
+accrual,nh_black_rough,"police, courts, prisons",106.3305,2534,,
+accrual,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,,
+accrual,nh_black_rough,veterans and military medical,41.5391,990,,
+accrual,nh_black_rough,"per head: government, defense, interest, roads",79.7973,1902,,
+accrual,nh_black_rough,capital return,35.6347,849,,
+accrual,nh_black_rough,production gain (subtracted),-0.0000,-0,,
+cash,mexican_origin_engine,income taxes,-158.1669,-3700,-212.5410,-4971
+cash,mexican_origin_engine,payroll taxes and Medicare premiums,-175.5467,-4106,-66.1948,-1548
+cash,mexican_origin_engine,"sales, excise, customs, fees",-118.1318,-2763,-35.7849,-837
+cash,mexican_origin_engine,"capital, property, production taxes",-25.3139,-592,-120.8530,-2827
+cash,mexican_origin_engine,Social Security and Medicare,116.2485,2719,206.2477,4824
+cash,mexican_origin_engine,Medicaid,126.1895,2952,-6.2458,-146
+cash,mexican_origin_engine,schools and colleges,215.8716,5049,-51.3531,-1201
+cash,mexican_origin_engine,"police, courts, prisons",81.1765,1899,-15.6609,-366
+cash,mexican_origin_engine,"SNAP, SSI, housing, cash aid, credits, other welfare",125.1763,2928,-28.7674,-673
+cash,mexican_origin_engine,veterans and military medical,15.4978,363,14.2993,334
+cash,mexican_origin_engine,"per head: government, defense, interest, roads",79.7266,1865,37.9866,889
+cash,mexican_origin_engine,capital return,36.5816,856,,
+cash,mexican_origin_engine,production gain (subtracted),-11.9096,-279,,
+cash,mexican_origin_rough,income taxes,-155.0559,-3627,-215.6520,-5044
+cash,mexican_origin_rough,payroll taxes and Medicare premiums,-177.5795,-4154,-64.1620,-1501
+cash,mexican_origin_rough,"sales, excise, customs, fees",-117.4051,-2746,-36.5116,-854
+cash,mexican_origin_rough,"capital, property, production taxes",-23.8533,-558,-116.7532,-2731
+cash,mexican_origin_rough,Social Security and Medicare,119.0713,2785,203.4249,4758
+cash,mexican_origin_rough,Medicaid,126.1895,2952,-6.2458,-146
+cash,mexican_origin_rough,schools and colleges,217.0850,5078,-52.5666,-1230
+cash,mexican_origin_rough,"police, courts, prisons",81.4681,1906,-15.9526,-373
+cash,mexican_origin_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",122.2548,2860,-25.8459,-605
+cash,mexican_origin_rough,veterans and military medical,13.0249,305,16.7723,392
+cash,mexican_origin_rough,"per head: government, defense, interest, roads",79.7015,1864,38.0138,889
+cash,mexican_origin_rough,capital return,36.9488,864,,
+cash,mexican_origin_rough,production gain (subtracted),-11.9096,-279,,
+cash,nh_black_rough,income taxes,-189.3786,-4514,-174.4122,-4157
+cash,nh_black_rough,payroll taxes and Medicare premiums,-194.3579,-4633,-42.8729,-1022
+cash,nh_black_rough,"sales, excise, customs, fees",-123.2033,-2937,-27.8414,-664
+cash,nh_black_rough,"capital, property, production taxes",-15.9766,-381,-110.7723,-2640
+cash,nh_black_rough,Social Security and Medicare,254.5079,6066,61.9709,1477
+cash,nh_black_rough,Medicaid,181.2461,4320,-63.5404,-1515
+cash,nh_black_rough,schools and colleges,173.9840,4147,-14.7476,-352
+cash,nh_black_rough,"police, courts, prisons",106.3305,2534,-42.0374,-1002
+cash,nh_black_rough,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,-69.6112,-1659
+cash,nh_black_rough,veterans and military medical,41.5391,990,-12.2979,-293
+cash,nh_black_rough,"per head: government, defense, interest, roads",79.7973,1902,33.7814,805
+cash,nh_black_rough,capital return,35.6347,849,,
+cash,nh_black_rough,production gain (subtracted),-0.0000,-0,,

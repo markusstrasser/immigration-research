@@ -1,0 +1,5 @@
+group,entry_rule,scenario,oasdi_per_tax_dollar,benefit_tax_timing,relative_benefit_tax_rate,future_share,oasdi_per_tax_dollar_net,part_a_per_hi_tax_dollar,cps_oasdi_tax_bn,cps_hi_tax_bn,part_a_accrual_bn,p_qualify_65plus
+union,lane,payable,0.999262,0.087410,0.523382,0.045749,0.953547,1.448361,113.7160,28.1579,40.7828,0.906081
+nh_black,immigrants_at_arrival,payable,1.073188,0.086797,0.562475,0.048821,1.020794,1.544597,136.0632,34.6158,53.4674,0.933627
+nh_black,all_at_21,payable,1.050260,0.086818,0.562475,0.048833,0.998973,1.430558,136.0632,34.6158,49.5199,0.933627
+all_residents,immigrants_at_arrival,payable,1.019036,0.086556,1.000000,0.086556,0.930832,1.134578,1347.4371,363.1582,412.0313,0.941610

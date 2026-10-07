@@ -37,7 +37,7 @@ STORED = dict(payable=1.018378, scheduled=1.297788, part_a=41.137128, timing=0.0
 G = (P.CENTRAL["rate"], P.CENTRAL["mortality"])
 
 
-def oasdi_ratio(q, grids, u_long, taus):
+def oasdi_ratio(q, grids, u_long, taus, scens=None):
     """Per-person central accrual (both scenarios) and the benefit-tax timing, as pension_accrual.central_accrual."""
     fam = SS.family_vector(q, "observed_family")
     level = P.career_levels(q, P.CENTRAL["mapping"])
@@ -46,7 +46,7 @@ def oasdi_ratio(q, grids, u_long, taus):
     entry = np.where(q.mexico_born & q.arrival_age.notna(), q.arrival_age.fillna(21), 21.0)
     w, tax = q.w.to_numpy(), q.tax_oasdi.to_numpy()
     out = {}
-    for scen in P.SCENARIOS:
+    for scen in scens or P.SCENARIOS:
         fac = P.model_factor(grids[scen], P.CENTRAL["method"], G, fam, entry, birth, lvl, q.age.to_numpy().astype(float))
         acc = tax * P.note_mwr(q, P.S.mwr_table(P.MWR_TABLE[scen]), level, fam) * fac * np.where(q.unauth, u_long, 1.0)
         tau = P.person_tau(taus, fam, birth)[(G, scen)]
@@ -169,5 +169,62 @@ def main():
              "delta_like_for_like_accrual_bn"]].to_string(index=False))
 
 
+def main_oct07():
+    """--case oct07 (main case v6, item 1): the payable ratios of the union and the third-plus NH white reference on the
+    pension accrual's 2026 path, the arm all_2026_inputs_separate_funds of pension_tr2026_2026_10_06 that the case's
+    meta.pension_accrual takes (tr2026_path.py rebuilds its grid, timing and Part A path through that lane's code), by
+    this script's oasdi_ratio and part_a. The case's scheduled-benefits arm stays on the 2025 reports, so only the payable
+    scenario is written; the relative benefit-tax rates are the 2025 run's (measured on 2024 benefits).
+    Gates ([BLOCKED], nothing written): the case payload's ratio_net and Part A accrual are the arm's union row of
+    arms.csv (tr2026_path.case_check); the union here reproduces that row's OASDI accrual per tax dollar, benefit-tax
+    timing and Part A accrual (5e-9, arms.csv's printed precision). Output: derived/accrual_ratios_oct07.csv
+    (accrual_ratios.csv's columns), read by rekey_sept29.py --case oct07."""
+    import json
+    import tr2026_path as TP
+    TP.case_check(json.loads((FISCAL / "main_case_2026_10_07/derived/corrections.json").read_text())["meta"])
+    q = P.S.quotes()
+    u_long = q["note151_eligible_share"]["value"]["end_of_projection"]
+    p = P.frame()
+    prelim = P.S.scaled_factors().preliminary.to_numpy()
+    econ, grid, taus, paths = TP.payable(P, prelim)
+    white = p.copy()
+    white["union"] = white[P.WHITE].to_numpy()
+    white["gen"] = np.where(white.union, "W3", "")
+    ratios = {}
+    for name, frame in (("union", p), ("third_plus_nh_white", white)):
+        qq = frame[frame.union & (frame.tax_oasdi > 0)].reset_index(drop=True)
+        with TP.on_path(P, paths):
+            o = oasdi_ratio(qq, {"payable": grid}, u_long, taus, scens=("payable",))["payable"]
+            a = part_a(frame[frame.union].copy(), econ, u_long, "payable")
+        ratios[name] = (o, a)
+        print(f"{name} (2026 path): OASDI accrual per tax dollar payable {o['ratio']:.9f}; timing {o['timing']:.9f}; "
+              f"Part A payable {a['accrual_bn']:.9f}bn on HI tax {a['hi_tax_bn']:.9f}bn")
+    o, a = ratios["union"]
+    row = TP.union_row()
+    for k, got, col in (("OASDI accrual per tax dollar", o["ratio"], "per_tax_dollar"), ("timing", o["timing"], "timing"),
+                        ("Part A accrual", a["accrual_bn"], "part_a_bn"), ("HI tax", a["hi_tax_bn"], "hi_tax_bn")):
+        if abs(got - float(row[col])) > 5e-9 * max(1.0, abs(float(row[col]))):
+            raise SystemExit(f"[BLOCKED] the union's {k} {got} does not reproduce {TP.ARM}'s {col} {row[col]}")
+    print(f"[gate] the union's ratio, timing and Part A accrual reproduce {TP.ARM}'s union row of arms.csv")
+    rel = {"union": STORED["rel_union"], "third_plus_nh_white": WHITE_REL_RATE}
+    rows = [{"group": name, "scenario": "payable", "oasdi_per_tax_dollar": f"{o['ratio']:.6f}",
+             "benefit_tax_timing": f"{o['timing']:.6f}", "relative_benefit_tax_rate": f"{rel[name]:.6f}",
+             "future_share": f"{rel[name] * o['timing']:.6f}",
+             "oasdi_per_tax_dollar_net": f"{o['ratio'] * (1 - rel[name] * o['timing']):.6f}",
+             "part_a_per_hi_tax_dollar": f"{a['accrual_bn'] / a['hi_tax_bn']:.6f}",
+             "cps_oasdi_tax_bn": f"{o['tax_bn']:.4f}", "cps_hi_tax_bn": f"{a['hi_tax_bn']:.4f}",
+             "part_a_accrual_bn": f"{a['accrual_bn']:.4f}", "p_qualify_65plus": f"{a['p_qualify']:.6f}"}
+            for name, (o, a) in ratios.items()]
+    with open(DER / "accrual_ratios_oct07.csv", "w", newline="") as f:
+        wr = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
+        wr.writeheader()
+        wr.writerows(rows)
+    print(pd.DataFrame(rows).to_string(index=False))
+
+
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--case", default="sept29", choices=["sept29", "oct07"],
+                    help="sept29 (default: the 2025 reports, which the sept29 and oct05 cases read) or oct07 (main_oct07)")
+    main() if ap.parse_args().case == "sept29" else main_oct07()

@@ -541,6 +541,12 @@ gap per member falls, because the added people cost $6,309 / 8,790 each (the cas
 the identified union's $9,447 / 10,683 on the rough keys. [CALCULATION: `rekey_sept29.py --case oct05` →
 `derived/headline_oct05.csv`]]
 
+[2026-10-07: the oct05 files are rebuilt on the IPEDS keys for Pell and public higher education, a defect fix decided in
+the v6 propagation (section "v6 case (oct07)", "The IPEDS keys"). On them A1 is **$373.9 / 376.8bn**, $8,746 / 8,815
+per member (the figures below, on the rough keys of September 27: $368.8 / 371.9bn); local whites $429.2 / 430.6bn;
+California $197.9 / 197.6bn; raw cash at white ages $208.0 / 212.3bn. The tables and bullets below keep the rough keys.
+[CALCULATION: `derived/headline_oct05.csv`, `ipeds_terms_oct05.csv`]]
+
 claude-opus-5-5 (v5consC)
 
 **The rule (the case lane's Consumers row: both sides on 42.75M).** The CPS keys cannot see the 3,039,720 descendants
@@ -619,3 +625,281 @@ New in `derived/`: the four `engine_lines_oct05*.json` dumps and `rekey_summary_
 `rule_alternatives_oct05.csv`, `attribution_oct05.csv` and `attribution_buckets_oct05.csv`. `rekey_sept29.py` gained
 `use_case()` (sept29 at import), the overlay in `run29()`, `on_lineage()`, `identified()`, `lineage_setup()`,
 `lineage_gates()`, `headline_lineage()` and `--case`; importers call `use_case()` before `setup()`.
+
+## v6 case (oct07), 2026-10-07
+
+[2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`), with both sides on the lineage's 42,752,213 and
+every group on the IPEDS keys for Pell and public higher education, the union costs other residents **$380.3 /
+384.7bn** a year more than the same number of third-plus non-Hispanic whites on the case's accrual basis (A1), **$8,896
+/ 8,998 per member** (v5 on the same keys without the tuition term: $373.9 / 376.8bn). Against local whites state by
+state at union ages it is **$430.3 / 433.1bn** (v5 $429.2 / 430.6bn). On the rough keys of September 27, A1 would be
+$373.8 / 378.2bn: the IPEDS keys and item 4's tuition term add $6.55 / 6.47bn, and Pell, which the rough keys charged
+by Social Security receipt, alone adds $6.97bn. Item 4's hospital-fee term stays beside the comparators' central, at
+the team lead's decision; with it A1 would be $383.0 / 387.3bn. From v5 to v6 the white slice's cost falls: the 2026
+Trustees' separate-funds path lowers its Social Security and Part A accrual, and retiree health on accrual takes pay-go
+federal retiree benefits off a slice the rough keys charge by Social Security receipt. [CALCULATION: `rekey_sept29.py
+--case oct07` → `derived/headline_oct07.csv`, `ipeds_terms_oct07.csv`]]
+
+claude-opus-5-5 (prop-d)
+
+**Rules.** The oct05 rules carry over (the case lane's Consumers row: both sides on 42.75M). v6 adds four items,
+`meta.items` of the case payload, and the library takes each by its kind, driven from that registry (the case lane's
+Consumers table, R1–R4):
+- [ASSUMPTION] **Item 1, the pension accrual on the 2026 Trustees' separate-funds path** (`pension_tr2026`, two cell
+  shifts on Social Security and Medicare with union and lineage parts). The union dumps carry its union parts and the
+  added people its lineage parts. Every other group is priced on the same path: `accrual_white.py --case oct07` and
+  the Black lane's `accrual_black.py --case oct07` rebuild the payable ratios through the pension lane's own code
+  (`tr2026_path.py`), and the union's row must reproduce the case's (5e-9). Net OASDI accrual per tax dollar, 2025
+  reports → 2026 path: union 0.973667 → 0.953547, third-plus NH whites 0.934598 → 0.916489; Part A per HI tax dollar,
+  whites 0.993818 → 0.988833. [DATA: `derived/accrual_ratios_oct07.csv`]
+- [ASSUMPTION] **Item 2, retiree health on accrual** (`retiree_health`, ten national-scale edits). Its edits change
+  national totals, so every group takes them through the rough keys' shares of those lines, as the engine does.
+  Other federal benefits fall by $19.8bn (pay-go retiree benefits, a legacy at response 0) and nine service lines rise
+  by the accrual. The rough keys charge other federal benefits by Social Security receipts, so the old white slice
+  sheds more of the pay-go benefits than the union.
+- [ASSUMPTION] **Item 3, the added people at their measured age mix** (`added_age_mix`, the lineage item). The case
+  less the union dumps carries it, as the added people's amounts. A3's union ages put the added people at the measured
+  mix (`meta.lineage.age_mix`): each identified G3+ record's weight is tilted by its band's measured over identified
+  share, so with the tilt at 1 it is v5's placement. The state arm keeps each piece's added count (its share of the
+  identified G3+) and tilts its ages the same way.
+- [ASSUMPTION] **Item 4, user fees and the education keys** (`user_fees`, union-only). The union dumps take it whole and
+  the added people none of it. In the rough re-key the union keeps the fee item where its lines are the union's own
+  (`school_reprice`, `college_rekey`, rule 5's union-only lines) and where it takes the engine's share (health
+  services). On `education_services` and `other_federal_benefits` every group, the rough union included, takes the
+  IPEDS keys below, so the item's higher-education and Pell terms reach both sides by one rule. (Before the fix the
+  rough union carried neither, since those lines took the CPS keys: +$0.26 / 0.36bn left out on its side.) The carrier
+  receipt lines are union-only lines (the rough union takes the engine's amount, every other group 0). The fee item's
+  capital offsets go to the rough union where it takes the engine's key for the component they offset (health: about
+  $0) and to no other group.
+- [ASSUMPTION] **The IPEDS keys, for every group on oct05 and oct07** (a defect fix of the rough keys, decided by the
+  team lead in this propagation; section "The IPEDS keys" below). sept29 keeps the rough keys of September 27.
+
+**Headline** ($bn a year, spec 48 / 11; per member on 42,752,213, California's on its lineage count):
+
+| Union less whites | oct07 | Per member | Identified 39.71M at v6's responses | oct05 (IPEDS keys) |
+|---|---|---|---|---|
+| **A1, accrual (central)** | **380.3 / 384.7** | **$8,896 / 8,998** | 361.1 / 360.1 | 373.9 / 376.8 |
+| A3 (white rates at the lineage's ages), accrual | 356.6 / 361.0 | $8,342 / 8,443 | 345.5 / 344.2 | 355.4 / 358.3 |
+| A3, cash set | 364.9 / 371.2 | $8,535 / 8,683 | 355.5 / 354.3 | 364.6 / 368.8 |
+| **A1, cash set (raw cash at white ages)** | **212.2 / 218.6** | **$4,964 / 5,112** | 206.4 / 205.4 | 208.0 / 212.3 |
+| **Local whites state by state, union ages, accrual** | **430.3 / 433.1** | **$10,064 / 10,130** | 414.6 / 412.0 | 429.2 / 430.6 |
+| Local whites, cash set | 455.8 / 460.6 | $10,661 / 10,774 | 441.3 / 438.6 | 456.0 / 458.8 |
+| **California, union ages, accrual** | **198.5 / 198.5** | **$14,227 / 14,232** | 191.6 / 190.2 | 197.9 / 197.6 |
+| California, cash set | 213.4 / 214.0 | $15,296 / 15,343 | 206.5 / 205.0 | 213.4 / 213.4 |
+
+[CALCULATION: `derived/headline_oct07.csv`, `rekey_summary_oct07.csv`, `state_summary_oct07.csv`]
+
+- A1 rises by $6.43 / 7.85bn from v5 on the IPEDS keys. The white slice costs $5.38 / 5.30bn less: the 2026 path
+  lowers its Social Security and Medicare accrual by $3.51bn; its per-head lines fall by $3.04 / 2.96bn, as retiree
+  health takes pay-go benefits out of other federal benefits (the rough keys charge that line's non-Pell part by Social
+  Security receipt); schools and police rise by $1.13bn (retiree health's accrual and the tuition term); other lines
+  +$0.04bn. The union's side rises by $1.05 / 2.55bn: schools and colleges +$3.41 / 4.52bn with the fee item, Social
+  Security and Medicare −$3.65 / 4.37bn, the rest +$1.29 / 2.40bn. [CALCULATION: `rekey_buckets_oct07.csv` against
+  `rekey_buckets_oct05.csv`]
+- On the identified 39.71M at v6's responses (attribution step 3), A1 is $361.1 / 360.1bn, $4.9 / 4.7bn above v5's
+  ($356.2 / 355.4bn on the same keys). Step 4 adds the lineage, +$19.2 / 24.6bn: the added people +$20.3 / 29.5bn on
+  the union's side, less the white slice's growth by 1.076543 ($1.1 / 4.9bn). On v5 step 4 was +$17.7 / 21.4bn
+  (+$19.2 / 26.7bn less $1.5 / 5.3bn); the measured ages and the items' lineage parts add $1.1 / 2.8bn to the added
+  people. [CALCULATION: `derived/attribution_oct07.csv`, `attribution_oct05.csv`; one decimal by controlled rounding]
+- The rough union on 42.75M is $395.4 / 453.4bn against the case's $389.1 / 461.5bn (+1.6% / −1.8%). Against 42.75M
+  average residents the union costs $221.3 / 226.6bn more (cash $121.6 / 129.0bn). With the two convention arms A1 is
+  $492.8 / 498.3bn on accrual. [CALCULATION: `rekey_summary_oct07.csv`]
+
+**The IPEDS keys** (`ipeds_keys.py` → `derived/ipeds_keys.json`; `rekey_sept29.py` `IPEDS_CASES` oct05 and oct07,
+`FEE_CASES` oct07). The rough keys gave every group the CPS college key (enrolled at 16–24, any sector) on the
+education line's higher-education part and charged other federal benefits, which hold Pell's $31.264bn (NIPA T3.12
+line 26), by Social Security receipts: Pell fell on old whites and missed the young union. v6's fee item re-keys both
+for the union alone. [ASSUMPTION] From oct05 on, every group, the rough union included, takes one rule, measured where
+IPEDS measures it, by race:
+- **Pell:** the line's amount is N·ss + P·(pell − ss), P = $31.264bn. A race's Pell share is its public undergraduate
+  FTE share times its within-unit intensity, halfway between 1 and NPSAS:20's Pell dollars per undergraduate relative
+  to all (white 0.880, Black 1.258, Asian 0.980) [SOURCE: NCES 2023-466, Tables A-5 and A-6, the fee lane's "mid" rule
+  for Hispanic students], and at private institutions the public share times the race's private / public
+  undergraduate enrollment ratio (IPEDS EF2023A: white 1.004, Black 1.296, Asian 0.763), weighted 0.68 / 0.32.
+- **Public higher education:** the education line moves by N·h·(use − college), h = 0.1916 (BEA's consolidated
+  higher-education weight, the fee lane's central), where use is the race's share of public institutions'
+  education-and-related cost by FTE (the fee lane's `higher_ed.py` run unchanged with the race's FTE). The college
+  capital stock is keyed 0.961 by use and 0.039 by the CPS key (κ, higher education's share of non-K-12 education
+  investment).
+- **On oct07 only, the fee terms**, as the fee item prices them for the union: tuition, R·(use − tuition) with R =
+  $103.911bn, at residency θ = 1 for a race (IPEDS has no residency by race; the union keeps the fee lane's θ = 0.5),
+  in the central; and hospital charges, Σ_q net_q·(s_q − s_K), by MEPS payer (Medicare, Medicaid, private) against the
+  group's health key, **beside the central** for every group but the union, whose term is the case's own and comes with
+  the engine's health share (the team lead's decision of 2026-10-07; the hospital bullet below).
+- **Within a race** a group takes its race's share times its CPS college key over the race's (use and tuition), or its
+  CPS education-benefit key over the race's (Pell). The rough union is its own race (the fee lane's shares on the
+  identified 39.71M: use 0.116, tuition 0.098, Pell 0.169); the white slices take the white shares (use 0.456, tuition
+  0.441, Pell 0.367), the NH Black group the Black ones (0.099, 0.095, 0.192), and an all-residents slice its CPS
+  shares (no move).
+
+| $bn a year, oct07, accrual (low / high where they differ) | Pell | Higher-ed use | College capital | Tuition | Move | Hospital (beside) |
+|---|---:|---:|---:|---:|---:|---:|
+| Rough union, 42.75M | +4.02 | −3.64 | −0.36 / −0.53 | +1.85 | +1.87 / +1.70 | the case's own |
+| A1 third-plus whites, 42.75M | −2.95 | −1.89 | −0.19 / −0.28 | +0.35 | −4.68 / −4.77 | −2.65 |
+| A3, white rates at union ages | +1.54 | −2.75 | −0.27 / −0.41 | +0.51 | −0.97 / −1.11 | −4.09 |
+| **A1's gap (union less A1)** | **+6.97** | **−1.75** | **−0.17 / −0.25** | **+1.50** | **+6.55 / +6.47** | **+2.65** |
+| NH Black, 41.95M (its own lane) | +2.97 | −12.79 | −1.25 / −1.88 | +0.33 | −10.74 / −11.37 | −0.44 |
+| Indian origin, 6.08M (its own lane) | +0.45 | −0.75 | −0.07 / −0.11 | +0.28 | −0.09 / −0.13 | −0.49 |
+
+[CALCULATION: `derived/ipeds_terms_oct07.csv` (each group on the rough keys of September 27, each part's move, the
+hospital term beside and the union-minus-group change); the Black and Indian lanes' `ipeds_terms` files. The parts are
+the same on the cash set. Two decimals by controlled rounding: each row's parts add to its move, and the gap row is
+the union's less A1's.] The rough union's hospital term is item 4's, in the engine's health share it takes, and so in
+its central. On oct05 the parts are the same without the tuition term (the use terms −3.62 for the union, −1.89 for
+A1, −12.74 for the NH Black group): A1's gap moves +$5.07 / 4.98bn.
+
+**Old → new**, accrual, $bn a year, low / high (the rough keys of September 27 → the IPEDS keys):
+
+| Figure | oct05 | oct07 |
+|---|---|---|
+| A1 | 368.8 / 371.9 → **373.9 / 376.8** | 373.8 / 378.2 → **380.3 / 384.7** |
+| A3, white rates at union ages | 353.9 / 356.8 → 355.4 / 358.3 | 353.8 / 358.2 → 356.6 / 361.0 |
+| A1, raw cash at white ages | 202.9 / 207.3 → 208.0 / 212.3 | 205.7 / 212.1 → 212.2 / 218.6 |
+| Local whites, union ages | 427.7 / 429.1 → **429.2 / 430.6** | 427.5 / 430.3 → **430.3 / 433.1** |
+| California | 197.2 / 196.8 → 197.9 / 197.6 | 197.2 / 197.3 → 198.5 / 198.5 |
+| Against an all-residents slice | 215.7 / 219.8 → 215.8 / 219.7 | 219.4 / 224.9 → 221.3 / 226.6 |
+| NH Black, cost of removal | 541.7 / 589.7 → **530.7 / 578.0** | 538.6 / 586.7 → **527.9 / 575.3** |
+| Indian origin, cost of removal | −73.1 / −64.8 → −73.5 / −65.2 | −73.7 / −65.4 → −73.8 / −65.5 |
+
+[CALCULATION: `headline_oct05.csv`, `headline_oct07.csv` and `ipeds_terms_*`; the pre-fix figures are this lane's,
+the Black lane's and the Indian lane's earlier oct05 files (committed) and oct07 runs (the rough-keys columns of the
+`ipeds_terms` files)]
+
+- **Pell drives it.** The union's Pell share (0.169) is about four times its Social Security share (0.040). The white
+  slice's Pell share is below its Social Security share: whites hold 0.367 of Pell against 0.467 of public
+  undergraduate FTE, and the slice holds more retirees. Use moves A1's gap the other way (−$1.7bn): IPEDS's
+  cost-weighted use puts less public higher education on the union than the CPS enrollment key does (0.116 against
+  0.131 of the line's higher-education part).
+- **The hospital term stays beside the comparators' central** (the team lead's decision of 2026-10-07)
+  [FRAMING-SENSITIVE]. Private payers pay government hospitals about 1.45 times cost (the fee lane's payment-to-cost
+  ratio), and A1's MEPS payer shares (Medicare 0.169, private 0.166) are about twice its health key share (0.087, the
+  OTHPUB key). So the term would credit the white slice with $2.65bn of insured payments while its hospital spending
+  stays on that key: the fee side would take a measure of hospital use the spending side never charges. The union's
+  side keeps item 4's hospital term, which is the adopted case's, so on this point the comparison counts the union's
+  fees and not the comparators'. With the comparators' terms in, A1 would be $383.0 / 387.3bn, A3 $360.7 / 365.1bn,
+  the NH Black cost $527.5 / 574.9bn and the Indian-origin cost −$74.3 / −66.0bn. [CALCULATION: `ipeds_terms_oct07.csv`
+  `delta_with_hospital_bn` and `cost_with_hospital_bn`; the Black and Indian lanes' files] Revisit item (the lead's):
+  key the comparators' health_services by MEPS hospital use on both the spending and the fee side. On such a key the
+  white slice's spending would rise as well and the net credit would shrink [INFERENCE; not computed]. The union's
+  uncompensated-care key has no comparator counterpart, an asymmetry that predates this fix.
+- **Readers outside this propagation whose outputs move** (not edited here): `pension_legacy_2026_09_30` reads
+  `group_lines_oct05/oct07.csv` (its comparator rows move on education services and other federal benefits, on oct07
+  with the tuition term; its engine row does not); the evidence map's `quantity_registry.csv` rows 111–120 and the
+  drift audit's `source_map.csv` rows that trace INDEX and FAQ figures to this lane's, the Black lane's, the Indian
+  lane's and the legacy lane's oct05 files.
+
+**Limits of the v6 figures** (`limits_oct07.py` → `derived/limits_oct07.csv`, read-only through this library at oct07;
+the lead records each as a revisit item):
+- [ASSUMPTION] **The case's own W keeps the rough keys** (the lead's decision for v6). The case prices 1,082,721
+  members of the lineage as third-plus non-Hispanic whites (`meta.lineage.members.white`), on lines from
+  `main_case_lineage_2026_10_05/white_lines.py` and `added_age_mix_2026_10_07/band_lines.py`, which import this library
+  at its sept29 default. On the IPEDS keys they would cost $22.51 / 25.82 less each at the G3-rate persons' measured
+  mix (v6's placement of them), so the case would be $0.024 / 0.028bn lower. At the identified G3+'s ages (v5's
+  placement) it is $30.92 / 33.86 each, $0.033 / 0.037bn; at whites' own ages $117.72 / 119.89, $0.127 / 0.130bn.
+  Item 4's tuition term, had they taken it, would add $12.48 each, $0.014bn. The moves are the same on the cash set.
+- [ASSUMPTION] **Item 4's Pell share stays at the fee lane's assumed private/public ratio of 0.75** (the lead's
+  decision). IPEDS's Hispanic undergraduate ratio is 0.677 (EF2023A, `ipeds_keys.json`); at it the union's Pell share
+  falls from 0.1693 to 0.1650 and item 4's Pell term by $0.135bn at both ends, inside the fee lane's own arms (0.5 and
+  1.0: shares 0.155 and 0.184). The same rule reproduces those arms' shares and terms (gate).
+- [ASSUMPTION] **A race's tuition residency is θ = 1** (IPEDS has no residency by race; the union keeps the fee lane's
+  0.5). At θ 0.5 / 1.5 the white race's tuition share is 0.399 / 0.482 and A1 is $379.4 / 383.8bn and $381.3 /
+  385.6bn; A3 $355.3 / 359.6bn and $358.0 / 362.3bn; the NH Black cost $528.5 / 575.8bn and $527.3 / 574.7bn.
+- **Left out or held** [ASSUMPTION]: sept29 keeps the rough keys (three lanes outside this propagation import
+  `run29()` at the sept29 default and gate against its outputs); the case lane's own import of this library is
+  untouched; the education line's part outside K-12 that is not BEA higher education (0.068 of the line) stays on the
+  CPS college key.
+
+**Gates (`rekey_sept29.py --case oct07`: 286 gates, exit 0; `--case oct05`: 255).** The IPEDS gates (`ipeds_gates`,
+`ipeds_rows`): `ipeds_keys.json` carries the fee lane's current shares and constants; each dump's other federal
+benefits hold Pell and one college stock is keyed; the rough union's shares are the fee lane's (1e-15 relative), the NH
+Black group's are IPEDS's Black shares (1e-12), an all-residents slice's are its CPS shares (1e-12); the hospital
+term's MEPS records are the library's and its payers `ipeds_keys.json`'s; positive control, the fee lane's union
+reproduces its hospital residual 0.641351 (1e-9); for every group, basis and end the keys' parts are the move with the
+fees off and the tuition part the rest with them on (1e-9), so the central carries no hospital term, and the terms'
+cost is the summary's (5e-5). The hospital term beside is the run with it switched on (`HOSPITAL_ON`) less the
+central. `ipeds_keys.py`: 16 gates, exit 0 (the fee lane's `higher_ed.py` on its own inputs reproduces its central
+shares, 1e-9; the NPSAS:20 Hispanic ratio is the fee lane's constant, 1e-12; each race's Pell share at intensity 1 is
+within 0.1 of its undergraduate FTE share). `limits_oct07.py`: 30 gates, exit 0 (the library's oct07 setup; the white
+count is the payload's; the G3-rate mix is on the identified mix's bands and sums to 1; the share rule reproduces the
+fee lane's central share and its 0.5 and 1.0 arms' shares and personal terms, 1e-12 and 1e-9; the case's
+other_federal_benefits response is 1; at the central θ each group's cost is `rekey_summary_oct07.csv`'s, 5e-5, and the
+union's cost does not move with a race's θ). Beside the oct05 gates (`items_gates`):
+- The payload's meta is v5's but for the items' `meta_changed` (lineage, pension_accrual, retiree_health, user_fees)
+  and the stamps. Its capital return is v5's with the items' offset components appended. The lineage's counts and the
+  pension rule's other inputs are v5's.
+- The edit sets do not interact (1e-9, each pair, both bases).
+- On each basis and end, the case less v5's case is the case lane's change from v5. The union dump less v5's union
+  dump is the edit sets' union parts plus its capital-return move, which lies inside the split items' capital parts.
+  The added people less v5's are the items' lineage parts, the lineage item and its interactions (1e-9). On accrual
+  the union dump is $368.74 / 432.01bn (v5 $371.12 / 434.53bn) and the added people $20.34 / 29.47bn (v5 $19.18 /
+  26.72bn).
+- The accrual files' union is the case's 2026 arm (1e-6), and the frame's identified G3+ ages are the age-mix lane's
+  identified mix exactly.
+- `engine_lines.cjs`'s union dump gates its national totals and carrier lines against the case model.
+- The September 27 and sept29 runs rewrite their files byte for byte (sept29: 151 gates). The oct05 run with the
+  IPEDS keys off (`IPEDS_CASES = ()`) reproduces every committed oct05 file byte for byte; with them on, eight oct05
+  files change and `v4_group_terms_oct05.csv` does not. The four oct07 dumps rebuild byte for byte on the case lane's
+  outputs of 15:03 JST.
+- The library's importers outside this propagation, run read-only into scratch: `main_case_lineage_2026_10_05/
+  white_lines.py` and `added_age_mix_2026_10_07/band_lines.py` rebuild their files byte for byte, and
+  `net_contributor_comparison_2026_10_01/compare.py` its CSVs (its `audit.json` differs only in `rekey_sept29.py`'s
+  source hash). Each imports the library at the sept29 default, which the fix leaves alone. Rechecked at 16:53–16:54
+  after the hospital term moved beside.
+- The hospital term moved beside after the 15:16 runs. Rerun in place, oct05 rewrites its files byte for byte but for
+  `ipeds_terms_oct05.csv`, which gains the beside columns (its values are unchanged; oct05 has no fee terms); oct07
+  changes nine files and leaves `accrual_ratios_oct07.csv`, the four dumps and `v4_group_terms_oct07.csv` as they were;
+  no sept29 file changes.
+
+**Reproduce (oct07), after the oct05 list.** `ipeds_keys.py` runs first, since oct05 reads its keys as well.
+
+```sh
+L=infra/immigration-fiscal/white_replacement_2026_09_28
+B=infra/immigration-fiscal/black_comparator_rough_2026_09_28
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/ipeds_keys.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/rekey_sept29.py --case oct05
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/accrual_white.py --case oct07
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $B/accrual_black.py --case oct07
+for c in oct07 oct07_cash oct07_union oct07_union_cash; do node $L/engine_lines.cjs $c; done
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/rekey_sept29.py --case oct07
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/limits_oct07.py
+```
+
+New in `derived/`: `ipeds_keys.json`, `ipeds_terms_oct05.csv`, `accrual_ratios_oct07.csv`, the four
+`engine_lines_oct07*.json` dumps, `rekey_summary_oct07.csv`, `rekey_buckets_oct07.csv`, `state_summary_oct07.csv`,
+`state_buckets_oct07.csv`, `headline_oct07.csv`, `v4_group_terms_oct07.csv`, `rule_alternatives_oct07.csv`,
+`attribution_oct07.csv`, `attribution_buckets_oct07.csv`, `ipeds_terms_oct07.csv` and `limits_oct07.csv`; eight oct05
+files rebuilt on the IPEDS keys. New scripts: `tr2026_path.py` (a module for the accrual scripts), `ipeds_keys.py`
+and `limits_oct07.py`. `accrual_white.py`
+gained `--case oct07` (its default output is unchanged); `engine_lines.cjs` gained the oct07 cases, the items' union
+parts in the union dumps, and their gates; `rekey_sept29.py` gained the oct07 case, `items_gates()`, the age tilt, the
+IPEDS keys (`IPEDS_CASES`, `FEE_CASES`, `HOSPITAL_ON`, `ipeds_move()`, `hospital_term()`, `ipeds_gates()`,
+`ipeds_rows()`) and a wrapper that keeps the MEPS weights on each scenario for the hospital term (`rekey_white.py` is
+unchanged).
+
+### Log (times from `date`)
+
+- 2026-10-07 14:28 JST: `ipeds_sizing_oct07.py` written and run (11 gates). A first run read the wrong race's Pell
+  shares through a late-bound closure; fixed, and a gate now checks each race's Pell share against its own FTE share.
+- After 14:28: the team lead decided to apply the keys in this propagation, to every comparator and both sides, as a
+  named defect fix (oct05 and oct07; sept29 kept, as proposed to the lead, no objection received).
+- 15:06:35 (file time): `ipeds_keys.py` run, 16 gates, `derived/ipeds_keys.json` written. Its NPSAS:20 intensities
+  come from NCES 2023-466 Tables A-5 and A-6 (the PDF, sha256 dd373083…), replacing the sizing script's TRAINING-DATA
+  ranges.
+- 15:10–15:12 (log times): scratch runs. oct05 with the keys off reproduces every committed oct05 file; oct05 and oct07
+  with them on pass every gate.
+- 15:14:30–15:16:09 (file times): in place, September 27, sept29 (151 gates, byte for byte), oct05 (255 gates) and
+  oct07 (286 gates). 15:15: the three outside importers checked in scratch (above).
+- Between 15:36:04 and 15:38:07 (by `date`): `ipeds_sizing_oct07.py` and `derived/ipeds_sizing_oct07.csv` removed
+  from the lane (never committed; `ipeds_keys.py` supersedes them).
+- After the 15:16 runs the team lead decided: the hospital-fee term comes out of every comparator's central on oct07
+  and stays beside, with a revisit item; θ = 1 for a race stays, with 0.5–1.5 printed; the case's own W keeps the old
+  keys in v6, sized as a limitation; the union keeps item 4 at the fee lane's 0.75, with IPEDS's Hispanic 0.677 sized
+  beside. v6 is final.
+- 16:26:24–16:26:50 (log times): `HOSPITAL_ON = False`; oct05 (255 gates) and oct07 (286 gates) rerun in place, exit 0.
+- 16:40:30–16:40:47 (by `date`): the W, Pell-ratio and θ sizings in scratch. 16:48:51–16:49:10: `limits_oct07.py`
+  written and run in place (30 gates, exit 0), replacing them.
+- 16:53:21–16:54:12 (by `date`): the three outside importers rechecked in scratch (above).
+- 16:55:28–16:58:52 (by `date`): `rerun_lane.py --online` with all 27 commands (the eight September 27 ones, the five
+  sept29 ones with the Black lane's `accrual_black.py`, the five oct05 ones, `ipeds_keys.py`, the two oct07 accrual
+  runs, the four oct07 dumps, `rekey_sept29.py --case oct07` and `limits_oct07.py`; `--allow-unrun tr2026_path.py`, a
+  module the accrual scripts import): **IDENTICAL 77/77, exit 0**.

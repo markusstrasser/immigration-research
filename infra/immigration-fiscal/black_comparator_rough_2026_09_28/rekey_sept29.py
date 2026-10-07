@@ -34,6 +34,12 @@ people at the case lane's own amounts, 42,752,213 in all; the NH Black group kee
 ratios to the union move with the union's cost per member. The attribution adds step 4 (the lineage). Outputs carry the
 key (rekey_summary_oct05.csv, ...). Run it after the white lane's engine_lines.cjs oct05 / oct05_cash / oct05_union /
 oct05_union_cash.
+
+--case oct07 re-keys main case v6 (main_case_2026_10_07: v5 plus the items of its payload's meta.items) through the
+library's oct07 rules: the NH Black group's accrual on the 2026 separate-funds path (derived/accrual_ratios_oct07.csv,
+accrual_black.py --case oct07), retiree health through the national totals every group's keys share, the union's side
+with the items' union parts and the added people at their measured ages. Run it after the white lane's oct07 dumps and
+accrual files.
 """
 from __future__ import annotations
 
@@ -135,7 +141,7 @@ def main(case="sept29"):
     # The library's alternatives, and two of this lane's: the NH Black benefit-tax rate at the uncalibrated proxy, and
     # every NH Black member's career starting at 21
     groups = {"mexican_origin_rough": W.UNION_SC, "nh_black_rough": R.scenario("blk", scaled=False)}
-    rows = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(DER / "accrual_ratios.csv"))}
+    rows = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(DER / W.ACCRUAL_FILES[case]))}
     proxy = pd.read_csv(DER / "benefit_tax_proxy.csv").set_index("group")
     extra = [("NH Black benefit-tax rate",
               f"the NH Black relative benefit-tax rate at the uncalibrated statutory proxy "
@@ -210,5 +216,6 @@ def main(case="sept29"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=list(W.CASES), help="sept29 (default) or oct05 (v5, the lineage on the union's side)")
+    ap.add_argument("--case", default="sept29", choices=list(W.CASES),
+                    help="sept29 (default), oct05 (v5, the lineage on the union's side) or oct07 (v6, v5 plus its items)")
     main(ap.parse_args().case)

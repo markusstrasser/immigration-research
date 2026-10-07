@@ -63,6 +63,42 @@ change_at_fixed_specifications, 1e-9); the payload's pension, state-price and ro
 the frame's identified G3+ is the lineage's count (1 person); step 4 moves the union by the added people, the NH Black
 group not at all and every slice at fixed ages by 42,752,213 / 39,712,493 (1e-9 relative).
 
+The v6 case adopted 2026-10-07 (--case oct07, main_case_2026_10_07) is v5 plus the items its payload's meta.items
+lists. The oct05 rules carry over, with these for the items (RESULT.md, section "v6 case (oct07)"):
+  - the union dumps (engine_lines.cjs oct07_union) carry every edit set's union part, so the case less them is the
+    added people's on every line: their measured age mix (the lineage item) and the edit sets' lineage parts;
+  - the pension accrual (item 1) is the case's rule on the 2026 Trustees' separate-funds path for every group: the
+    union at the case's ratio_net and Part A accrual, the other groups at their own ratios on that path
+    (accrual_ratios_oct07.csv of this lane and of the Black lane: accrual_white.py and accrual_black.py --case oct07);
+  - an edit set's national-scale edits (item 2) reach every group through the national totals the rough keys share;
+    its union-only cell shifts stay the union's, as rule 5's union-only corrections do;
+  - A3's union ages put the added people at their measured age mix (meta.lineage.age_mix): each identified G3+
+    record's weight is tilted by its band's measured over identified share, which is v5's placement at the identified
+    mix. The state arm keeps each piece's added count (its share of the identified G3+) and tilts its ages the same
+    way [ASSUMPTION].
+The oct07 gates (items_gates), beside the oct05 ones: the payload's meta is v5's but for what its items change, the
+lineage's counts and the pension rule's other inputs are v5's; on each basis and end the union dump is the oct05 union
+dump plus the edit sets' union parts (summary.json change_at_fixed_specifications.items, their cash blocks) plus its
+capital return's move, and the case less it is v5's added people plus the lineage item, the edit sets' lineage parts and
+the lineage item's interactions (1e-9); the accrual files' union is the case's 2026 arm; the frame's identified G3+
+ages are the age-mix lane's identified mix, exactly. headline_oct07.csv carries the oct05 figures beside.
+
+The IPEDS keys (ipeds_keys.py -> derived/ipeds_keys.json; a defect fix decided in the v6 propagation, 2026-10-07).
+On v5 and v6 (IPEDS_CASES), every group, the rough union too, takes Pell ($31.264bn) out of other_federal_benefits'
+Social Security key at its share of Pell. It takes the higher-education part of education_services (the fee lane's
+consolidated weight, 0.1916 of the line) and of the college capital stock (kappa, 0.961) at its share of public higher
+education's measured use, in place of the CPS college key. A group takes its race's IPEDS share by its CPS college key
+(use, tuition) or its low-income college key (Pell) over its race's [ASSUMPTION]; the union takes the fee lane's
+shares. On v6 (FEE_CASES) item 4's tuition term is added on both sides, and its hospital term is priced beside:
+  - tuition: the tuition each group pays short of its use, (use - tuition share) x NIPA tuition, on the education line;
+  - hospital charges, beside the central (HOSPITAL_ON, the team lead's decision of 2026-10-07): for a group with MEPS
+    keys, public hospitals' insured net at its MEPS shares of hospital payments by payer less its health key, on
+    health_services. Its fee side would take MEPS payer shares while the group's hospital spending stays on the OTHPUB
+    key, so ipeds_terms_<case>.csv prints it beside (hospital_beside_bn) and no central cost carries it. The union's
+    term is in the engine's health share it takes (rule 1), as before.
+sept29 keeps the September 27 keys, because lanes outside this one gate against its outputs.
+ipeds_terms_<case>.csv gives each group's cost on the rough keys and each part's move, gated to add up.
+
 Gates (exit 1, nothing written):
   - the dumps are the case: their costs are main_case_bands.csv's adopted and cash_set rows (5e-5, printed at 4
     decimals), and the lane's cost formula on the engine's amounts reproduces each dump's cost (1e-9);
@@ -83,7 +119,9 @@ state_buckets_sept29.csv, headline_sept29.csv, v4_group_terms_sept29.csv, rule_a
 attribution_sept29.csv, attribution_buckets_sept29.csv. Run from the repository root after engine_lines.cjs sept29 / sept29_cash, accrual_white.py,
 v4_inputs.py and the Black lane's accrual_black.py:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/white_replacement_2026_09_28/rekey_sept29.py
-and, after engine_lines.cjs oct05 / oct05_cash / oct05_union / oct05_union_cash, the same with --case oct05.
+and, after engine_lines.cjs oct05 / oct05_cash / oct05_union / oct05_union_cash, the same with --case oct05; after
+engine_lines.cjs oct07 / oct07_cash / oct07_union / oct07_union_cash and accrual_white.py and accrual_black.py
+--case oct07, the same with --case oct07 (after the oct05 run, whose headline it reads).
 """
 from __future__ import annotations
 
@@ -117,8 +155,19 @@ BASES = ("accrual", "cash")
 DUMP27 = R.case
 # The cases this library re-keys, by key: the case lane. Outputs carry the key (rekey_summary_<case>.csv, ...).
 # oct05 (v5) is the September 29 rules on the identified union at v5's responses, plus the lineage (see use_case()).
-CASES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05"}
-LINEAGE_CASES = ("oct05",)
+CASES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05", "oct07": "main_case_2026_10_07"}
+LINEAGE_CASES = ("oct05", "oct07")
+# The accrual ratios each case reads (rule 3): sept29 and oct05 on the 2025 Trustees Reports, oct07 on the 2026
+# separate-funds path (accrual_white.py and the Black lane's accrual_black.py, --case oct07).
+ACCRUAL_FILES = {"sept29": "accrual_ratios.csv", "oct05": "accrual_ratios.csv", "oct07": "accrual_ratios_oct07.csv"}
+# The IPEDS keys (module docstring): the cases that take them, and those that also take item 4's fee terms.
+IPEDS_CASES = ("oct05", "oct07")
+FEE_CASES = ("oct07",)
+IPEDS_LINES = ("other_federal_benefits", "education_services")
+# A scenario's race for the IPEDS keys, by its name (an importer adds its groups), and each race's CPS persons
+IPEDS_RACE = {"mex": "union", "union_piece": "union", "w3": "white", "wus": "white", "wall": "white", "blk": "black",
+              "avg": "all"}
+IPEDS_MASK = {"white": "wall", "black": "blk", "all": "avg"}
 V4_SPEND = ["roads_vmt_sl", "roads_vmt_fed", "state_price_public_order_safety", "state_price_health_services",
             "state_price_recreation_culture"]
 SP_FUNCTIONS = V.CENTRAL                      # the state lane's central package, by parent line
@@ -136,7 +185,7 @@ def use_case(case):
     engine_lines.cjs oct05_union dumps: the 39.71M the CPS keys see), FULL the case itself, and LIN the added people's
     part of every line, of the capital return and of the production term (FULL less DUMP)."""
     global CASE, CASE_LANE, DUMP, FULL, LIN, LINEAGE, META, PA, SPM, RD, BANDS, ORACLE, SP_LINES, FP, U5, RHO, GAS, LIC
-    global HWY_N, SE_SHARE, PART_A_SHARE, STEPS, LINEAGE_ON
+    global HWY_N, SE_SHARE, PART_A_SHARE, STEPS, LINEAGE_ON, UNION_LINES, ITEM_COMPONENTS, IPEDS_ON, FEES_ON, IK
     if case not in CASES:
         raise SystemExit(f"[BLOCKED] unknown case {case!r}: one of {', '.join(CASES)}")
     CASE, CASE_LANE = case, FISCAL / CASES[case]
@@ -152,6 +201,14 @@ def use_case(case):
     FP, U5, RHO = RD["passenger_share"], RD["under5_share"], RD["rho"]
     GAS, LIC, HWY_N = RD["gasoline_bn"], RD["licences_bn"], RD["highway_national_bn"]
     SE_SHARE, PART_A_SHARE = PA["se_oasdi_share"], PA["part_a_share"]
+    # oct07: a union-only item's carrier receipt lines join rule 5's union-only lines, and its capital offset components
+    # (by the component each offsets) follow rule 5 too: see run29.
+    applied = [r for r in META.get("items", []) if r.get("applied") and r.get("capital")]
+    UNION_LINES = R.ADJUST | {lid for r in applied for lid in r["capital"]["receipt_lines"]}
+    of = {c["id"]: c.get("of_component") for c in META["capital_return"]["components"]} if applied else {}
+    ITEM_COMPONENTS = {cid: of[cid] for r in applied for cid in r["capital"]["components"]}
+    if any(v is None for v in ITEM_COMPONENTS.values()):
+        raise SystemExit("[BLOCKED] an item's capital component does not name the component it offsets")
     STEPS = STEPS_SEPT29
     FULL = LIN = LINEAGE = None
     LINEAGE_ON = False
@@ -160,8 +217,13 @@ def use_case(case):
                 "cash": json.loads((DER / f"engine_lines_{case}_cash.json").read_text())}
         LINEAGE = META["lineage"]
         LIN = {b: {end: lineage_part(FULL[b][end], DUMP[b][end]) for end in ENDS} for b in BASES}
-        STEPS = STEPS_SEPT29[:2] + STEPS_IDENTIFIED + [STEP_LINEAGE]
+        STEPS = STEPS_SEPT29[:2] + (STEPS_IDENTIFIED_V6 + [STEP_LINEAGE_V6] if "items" in META
+                                    else STEPS_IDENTIFIED + [STEP_LINEAGE])
         LINEAGE_ON = True
+    IPEDS_ON, FEES_ON = case in IPEDS_CASES, case in FEE_CASES
+    IK = json.loads((DER / "ipeds_keys.json").read_text()) if IPEDS_ON else None
+    if IPEDS_ON:     # step 1 leaves the September 27 dump, and its keys, for the case's
+        STEPS = [(s, t + (IPEDS_STEP_FEES if FEES_ON else IPEDS_STEP) if s == "1" else t, b) for s, t, b in STEPS]
 
 
 def lineage_part(full, union):
@@ -207,6 +269,18 @@ _ten = R.d[["PH_SEQ"]].merge(_hh, on="PH_SEQ", how="left", validate="many_to_one
 if np.isnan(_ten.astype(float)).any():
     raise SystemExit("[BLOCKED] CPS persons without a household tenure")
 R.K["rent"] = R.K["cons"] * (_ten == 2)        # cash renters' consumption: the renter-rent proxy
+_keyed27 = R.keyed
+
+
+def _keyed_meps(g, cw, total, ages, mwt=None):
+    """rekey_white.keyed, keeping the group's MEPS weights on its scenario (the hospital term reads them)."""
+    sc = _keyed27(g, cw, total, ages, mwt)
+    if mwt is not None:
+        sc["meps_w"] = mwt
+    return sc
+
+
+R.keyed = _keyed_meps       # R.scenario and state_white.white_piece look it up at call time
 R.KTOT["rent"] = float((R.w * R.K["rent"]).sum())
 AGE = R.d.A_AGE.to_numpy()
 ADULT = (AGE >= 18).astype(float)
@@ -273,8 +347,9 @@ def acc_entry(row, rel=None):
 
 
 def accrual_params():
-    wr = {(r["group"], r["scenario"]): r for r in csv.DictReader(open(DER / "accrual_ratios.csv"))}
-    br = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(BLACK_LANE / "derived/accrual_ratios.csv"))}
+    name = ACCRUAL_FILES[CASE]
+    wr = {(r["group"], r["scenario"]): r for r in csv.DictReader(open(DER / name))}
+    br = {(r["group"], r["entry_rule"], r["scenario"]): r for r in csv.DictReader(open(BLACK_LANE / "derived" / name))}
     u, wt = wr[("union", "payable")], wr[("third_plus_nh_white", "payable")]
     b = br[("nh_black", "immigrants_at_arrival", "payable")]
     a = br[("all_residents", "immigrants_at_arrival", "payable")]
@@ -309,6 +384,184 @@ def apply_accrual(amt, p, per_rel_ben):
     amt["spending|medicare"] = (1 - PART_A_SHARE) * mc_cash + p["part_a"] * hi
     amt["receipts|federal_income_tax"] -= per_rel_ben * p["rel"] * ss_cash
     return dict(oasdi_tax=oasdi, hi_tax=hi, ss_cash=ss_cash, medicare_cash=mc_cash)
+
+
+# ------------------------------------------------------------------ the IPEDS keys (IPEDS_CASES, FEE_CASES)
+HOSP = HOSP_TOT = None   # MEPS hospital payments by payer per MEPS person, and their totals (hospital_inputs())
+# FEE_CASES: the hospital term stays beside the central (the team lead, 2026-10-07): its fee side takes a group's MEPS
+# payer shares while the comparators' hospital spending stays on the OTHPUB health key, so the term would credit a
+# group for hospital use its spending side never charges. ipeds_rows() turns it on to price it beside.
+HOSPITAL_ON = False
+
+
+def ipeds_total(race, key):
+    """A race's CPS persons on a key (college or edben) on the current frame; the union's are the rough union's (the
+    39,712,493 the fee lane's shares are on)."""
+    if race == "union":
+        if UNION_SC is None:
+            raise SystemExit("[BLOCKED] the IPEDS keys need the rough union (setup())")
+        cw = UNION_SC["cps_w"]
+    else:
+        cw = R.w * R.MASK[IPEDS_MASK[race]]
+    return float((cw * R.K[key]).sum())
+
+
+def ipeds_shares(sc):
+    """A group's IPEDS keys: its race's shares of public higher education's use and of the tuition paid, carried by
+    the group's CPS college key over its race's, and of Pell, carried by its low-income college key [ASSUMPTION]."""
+    race = IPEDS_RACE.get(sc["name"])
+    if race is None:
+        raise SystemExit(f"[BLOCKED] the scenario {sc['name']!r} has no IPEDS race (IPEDS_RACE)")
+    x = IK["union"] if race == "union" else IK["races"][race] if race != "all" else dict(use=1.0, tuition=1.0, pell=1.0)
+    f = {k: float((sc["cps_w"] * R.K[k]).sum()) / ipeds_total(race, k) for k in ("college", "edben")}
+    return dict(use=x["use"] * f["college"], tuition=x["tuition"] * f["college"], pell=x["pell"] * f["edben"])
+
+
+def ipeds_move(sc, lid, national, ik):
+    """The IPEDS keys' move of a line's amount from its rough key: Pell carved out of other federal benefits at the
+    group's Pell share, and the education line's higher-education part at its use share, with (FEE_CASES) the tuition
+    it pays short of its use."""
+    c = IK["constants"]
+    if lid == "other_federal_benefits":
+        return c["pell_bn"] * (ik["pell"] - sc["share"]["ss"])
+    move = national * c["higher_weight"] * (ik["use"] - sc["share"]["college"])
+    return move + c["tuition_bn"] * (ik["use"] - ik["tuition"]) if FEES_ON else move
+
+
+def hospital_inputs():
+    """FEE_CASES: MEPS 2024 hospital facility payments (inpatient, outpatient, emergency) by payer for every record of
+    the library's MEPS frame, through the fee lane's health.py (imported read-only; it verifies the pinned file)."""
+    global HOSP, HOSP_TOT
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("fee_health", FISCAL / "user_fee_allocation_2026_10_07/health.py")
+    hm = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(hm)
+    hm.verify()
+    d = hm.read_meps()
+    pay = {"medicare": d.MCR, "medicaid": d.MCD, "private_other": d.EXP - d.MCR - d.MCD - d.SLF}
+    gate("the hospital term's MEPS records are the library's (the same weights; the rest weigh 0)",
+         bool(np.array_equal(d.PERWT24F.to_numpy(), R.md.PERWT24F.reindex(d.index).to_numpy()))
+         and float(R.md.PERWT24F.drop(d.index).abs().sum()) == 0.0)
+    HOSP = {q: v.reindex(R.md.index, fill_value=0.0).to_numpy(float) for q, v in pay.items()}
+    HOSP_TOT = {q: float((R.mw * v).sum()) for q, v in HOSP.items()}
+    gate("the hospital term's payers are ipeds_keys.json's", set(HOSP) == set(IK["hospital"]["net_bn"]))
+    # Positive control: the fee lane's union (MEPS HISPNCAT 1 on its frame) at its health key gives its residual
+    fee = json.loads((FISCAL / "user_fee_allocation_2026_10_07/derived/fee_lines.json").read_text())
+    union_w = R.mw * d.HISPNCAT.eq(1).reindex(R.md.index, fill_value=False).to_numpy(float) * fee["frames"]["meps_frame"]
+    for a in ("personal", "shared"):
+        got, want = hospital_residual(union_w, fee["health"]["s_K"][a]), fee["health"]["central"][a]["residual_bn"]
+        gate(f"positive control: the fee lane's union reproduces its hospital residual, {a} (1e-9)", abs(got - want) < 1e-9,
+             f"{got:.6f} vs {want:.6f}")
+
+
+def hospital_residual(meps_w, s_k):
+    """sum over payers q of (cost_q - payments_q) x (s_q - s_K): s_q the MEPS weights' share of payer q's hospital
+    payments, at the fee lane's central inputs (ipeds_keys.json hospital.net_bn)."""
+    return sum(v * (float((meps_w * HOSP[q]).sum()) / HOSP_TOT[q] - s_k) for q, v in IK["hospital"]["net_bn"].items())
+
+
+def hospital_term(sc, amt, nat):
+    """FEE_CASES, a group with MEPS keys: public hospitals' insured net at the group's MEPS shares of hospital payments
+    by payer less the share its health key charges (health_services and its state-price line over the national), the
+    fee lane's residual (item 4's term) on the group's own keys."""
+    if "meps_w" not in sc:
+        raise SystemExit(f"[BLOCKED] the scenario {sc['name']!r} has no MEPS weights for the hospital term")
+    k = "spending|health_services"
+    return hospital_residual(sc["meps_w"], (amt[k] + amt.get("spending|state_price_health_services", 0.0)) / nat[k])
+
+
+def ipeds_gates():
+    """IPEDS_CASES, once the frame and the rough union are the case's: the keys file is the fee lane's current one,
+    the lines and capital component the keys move are the ones the rough keys priced, and the shares reproduce their
+    races' where a group is its whole race."""
+    fee = json.loads((FISCAL / "user_fee_allocation_2026_10_07/derived/fee_lines.json").read_text())
+    c = IK["constants"]
+    gate("ipeds_keys.json carries the fee lane's current shares and constants",
+         IK["union"]["use"] == fee["higher_ed"]["U"] and IK["union"]["tuition"] == fee["higher_ed"]["s_R"]
+         and IK["union"]["pell"] == fee["pell"]["share"] and c["pell_bn"] == fee["pell"]["total_bn"]
+         and c["kappa"] == fee["nipa"]["kappa"] and c["tuition_bn"] == fee["nipa"]["tuition_bn"]
+         and c["higher_weight"] == fee["nipa"]["weights"]["consolidated"]["higher"])
+    gate("the rough keys the IPEDS keys replace: other federal benefits by Social Security receipts, education by K-12 "
+         "and college", R.SPEND_KEY["other_federal_benefits"] == "ss" and "education_services" not in R.SPEND_KEY)
+    for b in BASES:
+        for end in ENDS:
+            for which, dd in (("union", DUMP), ("case", FULL)):
+                if dd is None:
+                    continue
+                e = dd[b][end]
+                ofb = next(x for x in e["lines"] if x["side"] == "spending" and x["id"] == "other_federal_benefits")
+                cols = [x["id"] for x in e["capital"] if x["id"].split("_")[0] == "college" and x["id"] not in ITEM_COMPONENTS]
+                gate(f"{b} {end} {which} dump: other federal benefits hold Pell, and one college stock is keyed",
+                     ofb["national_bn"] > c["pell_bn"] and cols == ["college"], f"{ofb['national_bn']:.4f}bn; {cols}")
+    edu = next(x for x in DUMP["cash"]["low"]["lines"] if x["side"] == "spending" and x["id"] == "education_services")
+    print(f"  the education line: {edu['national_bn']:.4f}bn (the fee lane's {c['education_line_bn']}); its higher-education "
+          f"part {c['higher_weight'] * edu['national_bn']:.4f}bn", flush=True)
+    if "items" not in META:
+        gate("the education line is the fee lane's, so its part is the fee lane's higher-education dollars (1e-9)",
+             abs(c["higher_weight"] * edu["national_bn"] - c["higher_dollars_bn"]) < 1e-9)
+    u = ipeds_shares(UNION_SC)
+    gate("the rough union's IPEDS shares are the fee lane's (1e-15 relative)",
+         all(abs(u[k] / IK["union"][k] - 1) < 1e-15 for k in ("use", "tuition", "pell")))
+    blk = ipeds_shares(R.scenario("blk", scaled=False))
+    gate("the NH Black group, its whole race, takes IPEDS's Black shares (1e-12 relative)",
+         all(abs(blk[k] / IK["races"]["black"][k] - 1) < 1e-12 for k in ("use", "tuition", "pell")))
+    avg = R.scenario("avg")
+    a = ipeds_shares(avg)
+    gate("an all-residents slice takes its CPS college and low-income college shares (1e-12)",
+         abs(a["use"] - avg["share"]["college"]) < 1e-12 and abs(a["pell"] - avg["share"]["edben"]) < 1e-12)
+    if FEES_ON:
+        hospital_inputs()
+
+
+def ipeds_rows(groups):
+    """IPEDS_CASES: rows of ipeds_terms_<case>.csv for the groups (label -> scenario; the rough union among them as
+    mexican_origin_rough): each group's cost on the rough keys of September 27 and on the IPEDS keys, and the move by
+    part, each a line amount's move times its response (the college stock's at its rate). The hospital term is beside
+    the central: hospital_beside_bn is the run with it less the central run, and cost_with_hospital_bn that run's cost.
+    Gate: the parts add to the move (1e-9)."""
+    c, rows = IK["constants"], []
+    for b in BASES:
+        for end in ENDS:
+            e = DUMP[b][end]
+            ln = {x["id"]: x for x in e["lines"] if x["side"] == "spending"}
+            col = next(x for x in e["capital"] if x["id"] == "college")
+            got = {}
+            for lab, sc in groups.items():
+                on = run29(sc, end, b)[0]["cost"]
+                with patched(globals(), IPEDS_ON=False, FEES_ON=False):
+                    off = run29(sc, end, b)[0]["cost"]
+                with patched(globals(), FEES_ON=False):
+                    no_fees = run29(sc, end, b)[0]["cost"]
+                if sc == "eng":
+                    parts = dict(pell=0.0, higher_ed_use=0.0, college_capital=0.0, tuition=0.0)
+                else:
+                    ik = ipeds_shares(sc)
+                    d_use = ik["use"] - sc["share"]["college"]
+                    parts = dict(pell=c["pell_bn"] * (ik["pell"] - sc["share"]["ss"]) * ln["other_federal_benefits"]["response"],
+                                 higher_ed_use=ln["education_services"]["national_bn"] * c["higher_weight"] * d_use
+                                 * ln["education_services"]["response"],
+                                 college_capital=col["stock_charged_bn"] * col["response"] * e["rate"] * c["kappa"] * d_use,
+                                 tuition=(c["tuition_bn"] * (ik["use"] - ik["tuition"]) * ln["education_services"]["response"]
+                                          if FEES_ON else 0.0))
+                with patched(globals(), HOSPITAL_ON=True):
+                    with_hosp = run29(sc, end, b)[0]["cost"]
+                keys_only = parts["pell"] + parts["higher_ed_use"] + parts["college_capital"]
+                gate(f"{b} {end} {lab}: the keys' parts are the move on the keys alone, and with the fees the tuition part "
+                     "is the rest (1e-9)",
+                     abs(no_fees - off - keys_only) < 1e-9 and abs(on - off - keys_only - parts["tuition"]) < 1e-9,
+                     f"{no_fees - off:+.9f} vs {keys_only:+.9f}")
+                got[lab] = (off, parts, on, with_hosp)
+            u_off, _, u_on, u_hosp = got["mexican_origin_rough"]
+            for lab, (off, parts, on, with_hosp) in got.items():
+                rows.append({"case": CASE, "basis": b, "group": lab, "end": end, "cost_rough_keys_bn": f"{off:.4f}",
+                             **{f"{k}_bn": f"{v:.4f}" for k, v in parts.items()}, "cost_bn": f"{on:.4f}",
+                             "move_bn": f"{on - off:.4f}", "hospital_beside_bn": f"{with_hosp - on:.4f}",
+                             "cost_with_hospital_bn": f"{with_hosp:.4f}",
+                             "delta_like_for_like_rough_keys_bn": f"{u_off - off:.4f}",
+                             "delta_like_for_like_bn": f"{u_on - on:.4f}",
+                             "delta_change_bn": f"{(u_on - on) - (u_off - off):.4f}",
+                             "delta_with_hospital_bn": f"{u_hosp - with_hosp:.4f}"})
+    return rows
 
 
 # ------------------------------------------------------------------ v4 group terms
@@ -389,13 +642,14 @@ def run29(sc, end, basis="accrual", top="cps", cap=False, v4=True, dump=None, un
     items = v4 and g != "eng" and (rule4 == "all" or (rule4 == "union" and g in ("mex", "union_piece")))
     if items:
         terms = v4_terms(sc, e, union_sc if g == "union_piece" else sc if g == "mex" else union_sc or UNION_SC)
+    ik = ipeds_shares(sc) if IPEDS_ON and v4 and g != "eng" else None
     for ln in lines:
         side, lid = ln["side"], ln["id"]
         k = side + "|" + lid
         nat[k], resp[k] = ln["national_bn"], ln["response"]
-        if g == "eng" or (lid in R.ADJUST and g == "mex"):
+        if g == "eng" or (lid in UNION_LINES and g == "mex"):
             a = ln["amount_bn"]
-        elif lid in R.ADJUST:
+        elif lid in UNION_LINES:
             a = 0.0
         elif v4 and lid in V4_SPEND:
             a = terms["lines"][lid] if items else 0.0
@@ -403,6 +657,8 @@ def run29(sc, end, basis="accrual", top="cps", cap=False, v4=True, dump=None, un
             a = ln["national_bn"] * sc["share"][NEW_RECEIPTS[lid]]
         else:
             a = ln["national_bn"] * R.line_share(sc, side, lid, top)
+            if ik is not None and side == "spending" and lid in IPEDS_LINES:
+                a += ipeds_move(sc, lid, ln["national_bn"], ik)
         if cap and lid in (CAP29 if v4 else R.CAP_LINES):
             a = ln["national_bn"] * (R.scenario("mex") if g == "eng" else sc)["share"][(CAP29 if v4 else R.CAP_LINES)[lid]]
             resp[k] = 1.0
@@ -412,6 +668,9 @@ def run29(sc, end, basis="accrual", top="cps", cap=False, v4=True, dump=None, un
         amt["receipts|general_sales_tax"] *= terms["index"]["sales"]
         amt["receipts|excise_selective_sales"] += terms["gasoline_shift"]
         amt["receipts|personal_motor_vehicle"] = terms["licences"]
+    if FEES_ON and HOSPITAL_ON and v4 and g not in ("eng", "mex", "union_piece"):
+        # item 4's hospital term; the union's is in the engine's health share its pieces and it take (rule 1)
+        amt["spending|health_services"] += hospital_term(sc, amt, nat)
     if v4 and g != "eng" and basis == "accrual":
         acc = apply_accrual(amt, ACC[GROUP_OF[g]], receipt_per_rel_benefit(end))
     # oct05: the union's side carries the added people at the case lane's own amounts (after the pension rule, which
@@ -449,7 +708,12 @@ def run29(sc, end, basis="accrual", top="cps", cap=False, v4=True, dump=None, un
     cap_bn = 0.0
     for c in e["capital"]:
         cid = c["id"]
-        if cid.startswith("pos"):
+        if cid in ITEM_COMPONENTS:
+            # oct07: an item's offset of a component's key (the fee item's K-12, college and health keys) is the
+            # engine union's key refinement; the rough union takes it where it takes the engine's key for the component
+            # it offsets (public order and health), and no other group or component takes it (rule 5).
+            k = c["key"] if g == "mex" and ITEM_COMPONENTS[cid].startswith(("pos", "health")) else 0.0
+        elif cid.startswith("pos"):
             k = sc["external"]["public_order_safety"] if g not in ("eng", "mex") else c["key"]
         elif cid.startswith("health"):
             k = sc["external"]["health_services"] if g not in ("eng", "mex") else c["key"]
@@ -457,6 +721,9 @@ def run29(sc, end, basis="accrual", top="cps", cap=False, v4=True, dump=None, un
             k = terms["k_road"]
         elif v4 and cid == "ent_housing_sl":
             k = sg["house"]
+        elif ik is not None and cid == "college":
+            # the IPEDS keys: the stock's higher-education part (kappa) at the group's use share
+            k = IK["constants"]["kappa"] * ik["use"] + (1 - IK["constants"]["kappa"]) * sg["college"]
         else:
             k = ck.get(cid.split("_")[0], ph)
         cap_bn += c["stock_charged_bn"] * k * c["response"] * e["rate"]
@@ -518,7 +785,7 @@ def state_rows(basis):
     """Part F on the case: rows per region and end, and the low end's buckets. oct05: each union piece carries the
     added people's cost in proportion to its share of the identified G3+ persons, and its white pieces are on the
     piece's lineage count at the piece's lineage ages [ASSUMPTION: the added people live where the identified G3+ do,
-    at their ages, as PI_LINEAGE places them nationally]."""
+    at their ages, as PI_LINEAGE places them nationally]. oct07: the same counts, the ages at the measured mix (TILT)."""
     rough = {end: run29(UNION_SC, end, basis)[0] for end in ENDS}
     pieces = {name: S.union_piece(m) for name, m in S.REGIONS.items()}
     pieces["Los Angeles metro"] = S.union_piece(S.LA)
@@ -540,7 +807,13 @@ def state_rows(basis):
             uc = u[name][0] + resid * share
             ua = priced29(sc, end, basis, UNION_SC, sc["frac"], arms=True)[0] + lin[True][0] * s3[name] + resid * share
             wmask = S.REGIONS.get(name, S.LA) if name != "rest of US" else np.ones(len(R.d), bool)
-            if LINEAGE_ON:
+            if LINEAGE_ON and TILT is not None:
+                # oct07: the piece's added count as on oct05 (its share of the identified G3+), at the measured ages:
+                # its G3+ records tilted as nationally, then scaled to that count.
+                a = R.w * (G3_CPS & region[name]) * TILT
+                wl = R.w * (S.UNION & region[name]) + a * (added * s3[name] / float(a.sum()))
+                pi_union = R.structure(np.ones(len(wl), bool), wl, R.cage)
+            elif LINEAGE_ON:
                 wl = R.w * (S.UNION & region[name]) + R.w * (G3_CPS & region[name]) * (added / float(R.w[G3_CPS].sum()))
                 pi_union = R.structure(np.ones(len(wl), bool), wl, R.cage)
             else:
@@ -640,23 +913,48 @@ def patched(space, **values):
 # ------------------------------------------------------------------ oct05: the lineage on both sides
 G3_CPS = None        # the identified G3+ on the frame (native, both parents US-born, Mexican origin)
 PI_LINEAGE = None    # the lineage's age structure: the union's, with the added people at the identified G3+'s ages
+TILT = None          # oct07: each record's measured over identified age share (age_tilt); None places v5's way
 
 
 def lineage_setup():
     """oct05, once the frame is the case's: the identified G3+ (gated to the lineage's count) and PI_LINEAGE
     [ASSUMPTION: the added people at the identified G3+ members' ages, as the lineage lane prices them]."""
-    global G3_CPS, PI_LINEAGE
+    global G3_CPS, PI_LINEAGE, TILT
     d = R.d
     g3 = (d.PRCITSHP.isin([1, 2, 3]) & d.PEFNTVTY.isin(R.US) & d.PEMNTVTY.isin(R.US) & d.PRDTHSP.eq(1)).to_numpy()
     n3 = float(R.w[g3].sum())
     gate("the frame's identified G3+ is the lineage's identified_g3plus (1 person)",
          abs(n3 - LINEAGE["counts"]["identified_g3plus"]) <= 1.0, f"{n3:,.3f} vs {LINEAGE['counts']['identified_g3plus']:,.3f}")
     gate("the identified G3+ is inside the union", not (g3 & ~R.MASK["mex"]).any())
-    wl = R.w * R.MASK["mex"] + R.w * g3 * (LINEAGE["counts"]["added"] / n3)
+    if "age_mix" in LINEAGE:
+        TILT = age_tilt(g3)
+        wl = R.w * R.MASK["mex"] + R.w * g3 * (LINEAGE["counts"]["added"] / n3) * TILT
+    else:
+        TILT = None
+        wl = R.w * R.MASK["mex"] + R.w * g3 * (LINEAGE["counts"]["added"] / n3)
     got = float(wl.sum())
     gate("the union with the added people at G3+ weights is the lineage population (2 persons, the frame's union gate)",
          abs(got - LINEAGE["counts"]["lineage_population"]) < 2, f"{got:,.3f} vs {LINEAGE['counts']['lineage_population']:,.3f}")
     G3_CPS, PI_LINEAGE = g3, R.structure(np.ones(len(wl), bool), wl, R.cage)
+
+
+def age_tilt(g3):
+    """oct07 (the lineage item's measured ages, meta.lineage.age_mix): every record's tilt, its band's share of the
+    added people (the G3-rate persons and the later losses at their own mixes, by count) over its share of the
+    identified G3+. The frame's G3+ structure must be the age-mix lane's identified mix exactly, so the tilted G3+
+    weights carry the added people at the measured mix and the identified mix gives v5's weights."""
+    am, c = LINEAGE["age_mix"], LINEAGE["counts"]
+    labels = [f"{b}+" if b == 80 else f"{b}-{b + 4}" for b in R.BANDS]
+    gate("the age mix is on the library's five-year bands", am["bands"] == labels)
+    ident = R.structure(g3, R.w, R.cage)
+    gate("the frame's identified G3+ ages are the age-mix lane's identified mix, exactly",
+         [float(x) for x in ident] == am["mixes"]["identified"])
+    mix = (c["at_g3_rate"] * np.asarray(am["mixes"]["g3_rate"], float)
+           + c["later_losses"] * np.asarray(am["mixes"]["later"], float)) / c["added"]
+    gate("the added people's mix sums to 1 and has no band without identified G3+ (1e-12)",
+         abs(mix.sum() - 1) < 1e-12 and not ((ident <= 0) & (mix > 0)).any())
+    t = np.divide(mix, ident, out=np.zeros(len(mix)), where=ident > 0)
+    return t[np.searchsorted(R.BANDS, R.cage)]
 
 
 @contextmanager
@@ -681,8 +979,9 @@ def identified():
 ALTERNATIVES = [
     ("rule 2", "housing_enterprise_surplus per head and tenant_occupied_property on capital income: the rough keys of "
                "the lines v4 split them from (enterprise_surplus, remaining_production_property)", BASES),
-    ("rule 3a", "every group at the union's accrual per tax dollar (OASDI gross 1.018378, Part A 1.460946 per HI tax "
-                "dollar), with its own benefit-tax rate and timing", ("accrual",)),
+    # rule 3a's text takes the union's ratios of the case's accrual file (1.018378 and 1.460946 on the 2025 reports)
+    ("rule 3a", "every group at the union's accrual per tax dollar (OASDI gross {gross:.6f}, Part A {part_a:.6f} per HI "
+                "tax dollar), with its own benefit-tax rate and timing", ("accrual",)),
     ("rule 3b", "the tax on benefits at the case's rule for each end (shared at spec 48, personal at spec 11) over the "
                 "engine union's benefits at that end", ("accrual",)),
     ("rule 4", "other groups at national prices and the September 27 road keys (the union keeps its terms)", BASES),
@@ -716,6 +1015,8 @@ def alternatives(groups, extra=()):
     union among them), the central beside it. extra: (rule, alternative, bases, acc) rows the caller adds."""
     rows = []
     for rule, text, bases, acc in [(r, t, b, None) for r, t, b in ALTERNATIVES] + list(extra):
+        if rule == "rule 3a":
+            text = text.format(gross=ACC["union"]["gross"], part_a=ACC["union"]["part_a"])
         for b in bases:
             for end in ENDS:
                 cost = {lab: run_alternative(rule, sc, end, b, acc) for lab, sc in groups.items()}
@@ -751,6 +1052,20 @@ STEPS_IDENTIFIED = [("1", "oct05 cash set on the identified union (39,712,493): 
                     ("3", "+ the pension accrual (rule 3): the oct05 case on the identified union", "accrual")]
 STEP_LINEAGE =("4", "+ the lineage (oct05): the added 3,039,720 people at the case lane's amounts on the union's side, "
                      "every scaled slice on 42,752,213 and at the lineage's ages", "accrual")
+# oct07: the same steps on v6; the edit sets' union parts are in the union dumps (steps 1-3: those on both sets in
+# steps 1 and 2, the pension item's in step 3) and their lineage parts with the added people (step 4).
+STEPS_IDENTIFIED_V6 = [("1", "oct07 cash set on the identified union (39,712,493): sept29's lines and nationals at v6's "
+                             "responses with the cash set's items' union parts, the two new receipt lines; no group "
+                             "state-priced or miles-keyed", "cash"),
+                       ("2", "+ state prices and road miles for every group (rule 4): that cash set", "cash"),
+                       ("3", "+ the pension accrual (rule 3) on the 2026 separate-funds path, the pension item's union "
+                             "part with it: the oct07 case on the identified union", "accrual")]
+STEP_LINEAGE_V6 = ("4", "+ the lineage (oct07): the added 3,039,720 people at the case lane's amounts (their measured "
+                        "age mix, the items' lineage parts) on the union's side, every scaled slice on 42,752,213 and "
+                        "at the lineage's ages", "accrual")
+# IPEDS_CASES: step 1 also moves every group from the September 27 keys to the IPEDS keys (and, FEE_CASES, the fees)
+IPEDS_STEP = "; every group on the IPEDS keys for Pell and public higher education"
+IPEDS_STEP_FEES = "; every group on the IPEDS keys for Pell and public higher education, with item 4's tuition term"
 STEP_COST: dict = {}    # (step, label, end) -> (cost, population, buckets); steps a and 0 are filled by setup()
 ALL_BUCKETS = list(BUCKETS) + [R.PER_HEAD, "capital return", "production gain (subtracted)"]
 use_case("sept29")
@@ -880,12 +1195,12 @@ def setup():
             for ln in DUMP[b][end]["lines"]:
                 if ln["side"] == "scalar" or ln["id"] in R.ZERO:
                     continue
-                handled = (ln["id"] in R.ADJUST or ln["id"] in V4_SPEND or ln["id"] in NEW_RECEIPTS
+                handled = (ln["id"] in UNION_LINES or ln["id"] in V4_SPEND or ln["id"] in NEW_RECEIPTS
                            or (R.RECEIPT_KEY if ln["side"] == "receipts" else R.SPEND_KEY).get(ln["id"])
                            or ln["id"] in ("education_services", *S.EXT))
                 if not handled:
                     gate(f"{b} {end}: line {ln['side']}|{ln['id']} has a key", False)
-                if abs(ln["national_bn"]) < 1e-9 and abs(ln["amount_bn"]) > 1e-9 and ln["id"] not in R.ADJUST and ln["id"] not in V4_SPEND:
+                if abs(ln["national_bn"]) < 1e-9 and abs(ln["amount_bn"]) > 1e-9 and ln["id"] not in UNION_LINES and ln["id"] not in V4_SPEND:
                     gate(f"{b} {end}: line {ln['id']} has national 0 and an amount, and no rule", False)
     gate("every line of both dumps has a key, and every national-0 line with an amount has a rule", not FAILS)
 
@@ -933,13 +1248,21 @@ def setup():
     if LINEAGE_ON:
         lineage_setup()
         stop_if_failed()
+    if IPEDS_ON:
+        print("[the IPEDS keys]", flush=True)
+        ipeds_gates()
+        stop_if_failed()
     return n4
 
 
 def lineage_gates():
     """oct05: the union dumps are the September 29 case moved by v5's group-size responses, and the full dumps less
-    the union dumps are the lane's added people (main_case_2026_10_05 summary.json change_at_fixed_specifications)."""
+    the union dumps are the lane's added people (main_case_2026_10_05 summary.json change_at_fixed_specifications).
+    oct07 (a payload with meta.items): items_gates()."""
     s = json.loads((CASE_LANE / "derived/summary.json").read_text())
+    if "items" in META:
+        items_gates(s)
+        return
     ch, s29 = s["change_at_fixed_specifications"], s["adopted_2026_09_29"]
     m29 = json.loads((FISCAL / CASES["sept29"] / "derived/corrections.json").read_text())["meta"]
     for k in ("pension_accrual", "state_pricing", "roads_mileage_key"):
@@ -955,6 +1278,110 @@ def lineage_gates():
         print(f"  cash {end}: union dump {DUMP['cash'][end]['cost_bn']:.4f} (the September 29 cash set "
               f"{c29[end]['cost_bn']:.4f}, move {DUMP['cash'][end]['cost_bn'] - c29[end]['cost_bn']:+.4f}); "
               f"added people {LIN['cash'][end]['cost_bn']:.4f}", flush=True)
+
+
+def items_gates(s):
+    """oct07: the payload's meta is v5's but for what its applied items change (meta_changed) and the stamps, the
+    lineage's counts are v5's (the lineage item moves ages only), and the pension rule's inputs other than the item's
+    ratio_net and Part A accrual are v5's; the dumps' capital components are v5's plus the items' offsets. Then, on each
+    basis and end, against v5's dumps (engine_lines_oct05*.json) and the case lane's summary.json
+    (change_at_fixed_specifications for the set, the items' cash blocks and v6.interactions for the cash set), 1e-9:
+      case:      full7 - full5 = the case's change from v5;
+      union:     union7 - union5 = the split edit sets' union parts + the union-only items' changes less their capital
+                 parts (capital_*) + the union's capital-return move; that move less the union-only items' capital
+                 parts lies within the split edit sets' capital parts (a scaled line moves the capital keys);
+      lineage:   (full7 - union7) - (full5 - union5) = the split edit sets' lineage parts + the rest of their capital
+                 parts + the lineage item + its interactions with the edit sets.
+    A split edit set is one whose change splits into union, lineage and capital_return parts; a union-only item (its
+    record's union_only) is the union's whole. An interaction between two edit sets has no side here, so it must be
+    zero (1e-9: the case lane prints differences of order 1e-13)."""
+    ch, v6 = s["change_at_fixed_specifications"], s["v6"]
+    m5 = json.loads((FISCAL / CASES["oct05"] / "derived/corrections.json").read_text())["meta"]
+    applied = [r for r in META["items"] if r.get("applied")]
+    changed = {k for r in applied for k in r.get("meta_changed", [])}
+    keep = sorted(set(m5) - changed - set(v6["payload"]["stamped"]))
+    gate(f"the payload's meta is v5's but for the items' meta_changed ({', '.join(sorted(changed))}) and the stamps",
+         set(META) - changed - set(v6["payload"]["stamped"]) - {"capital_return"} == set(keep) - {"capital_return"}
+         and all(META[k] == m5[k] for k in keep if k != "capital_return"),
+         ", ".join(k for k in keep if k != "capital_return" and META.get(k) != m5[k]))
+    cr7, cr5 = META["capital_return"], m5["capital_return"]
+    gate("the payload's capital_return is v5's plus the items' offset components, appended",
+         {k: v for k, v in cr7.items() if k != "components"} == {k: v for k, v in cr5.items() if k != "components"}
+         and cr7["components"][:len(cr5["components"])] == cr5["components"]
+         and [c["id"] for c in cr7["components"][len(cr5["components"]):]] == list(ITEM_COMPONENTS))
+    gate("the lineage's counts are v5's (the lineage item moves ages only)", LINEAGE["counts"] == m5["lineage"]["counts"])
+    pa5 = m5["pension_accrual"]
+    for k in ("se_oasdi_share", "part_a_share", "benefit_tax_receipt_bn"):
+        gate(f"the pension rule's {k} is v5's", PA[k] == pa5[k])
+    prev = PA.get("previous", {}).get("oct05", {})
+    gate("the pension block's previous.oct05 holds v5's ratio_net and Part A accrual",
+         all(prev.get(k) == pa5[k] for k in ("ratio_net", "part_a_accrual_bn")))
+    edit_sets = [r["id"] for r in applied if r["kind"] == "edit_set"]
+    union_only = {r["id"] for r in applied if r["kind"] == "edit_set" and r.get("union_only")}
+    lineage_items = [r["id"] for r in applied if r["kind"] == "lineage"]
+    gate("the payload's items are edit sets and one lineage item",
+         len(lineage_items) <= 1 and len(edit_sets) + len(lineage_items) == len(applied))
+    cash_meta = json.loads((CASE_LANE / "derived/corrections_cash.json").read_text())["meta"]
+    cash_applied = {r["id"] for r in cash_meta["items"] if r.get("applied")}
+    for b in BASES:
+        base5 = {"union": json.loads((DER / f"engine_lines_oct05_union{'_cash' if b == 'cash' else ''}.json").read_text()),
+                 "full": json.loads((DER / f"engine_lines_oct05{'_cash' if b == 'cash' else ''}.json").read_text())}
+        sets = [i for i in edit_sets if b == "accrual" or i in cash_applied]
+
+        def block(i):
+            return ch["items"][i] if b == "accrual" else ch["items"][i]["cash"]
+
+        def split(i, part):
+            if i in union_only:
+                raise SystemExit(f"[BLOCKED] item {i} is union-only: it has no split")
+            return (block(i) if b == "accrual" else block(i)["split"]).get(part, [0.0, 0.0])
+
+        def capital_parts(i):
+            # the record's capital_components name their parts (the case lane of 15:03 JST); else the capital_* parts
+            rec = next(r for r in applied if r["id"] == i)
+            names = ({c["part"] for c in rec["capital_components"].values()} if "capital_components" in rec
+                     else {k for k in block(i)["parts"] if k.startswith("capital_")})
+            if bool(names) != bool(rec.get("capital")) or not names <= set(block(i)["parts"]):
+                raise SystemExit(f"[BLOCKED] item {i}: capital parts without a capital block, or the reverse, or not in its parts")
+            return [sum(block(i)["parts"][k][e] for k in names) for e in range(2)]
+
+        def interaction(a, c):
+            k = next((x for x in (f"{a}_x_{c}", f"{c}_x_{a}") if x in v6["interactions"]), None)
+            if k is None:
+                raise SystemExit(f"[BLOCKED] no interaction of {a} and {c} in summary.json v6.interactions")
+            return v6["interactions"][k]["at_end_specifications_bn" if b == "accrual" else "cash_at_end_specifications_bn"]
+        total = ch["total"] if b == "accrual" else v6["change_from_the_october_5_cash_set_bn"]
+        for x in range(len(sets)):
+            for y in range(x + 1, len(sets)):
+                gate(f"{b}: the edit sets {sets[x]} and {sets[y]} do not interact (1e-9)",
+                     max(abs(v) for v in interaction(sets[x], sets[y])) < 1e-9)
+        for i, end in enumerate(ENDS):
+            u5, f5 = base5["union"][end], base5["full"][end]
+            u7, f7 = DUMP[b][end], FULL[b][end]
+            gate(f"{b} {end}: the dumps' capital components are v5's plus the items' offsets",
+                 [c["id"] for c in u7["capital"]] == [c["id"] for c in f7["capital"]]
+                 == [c["id"] for c in u5["capital"]] + list(ITEM_COMPONENTS))
+            gate(f"{b} {end}: the case less v5 is the case lane's change from v5 (1e-9)",
+                 abs((f7["cost_bn"] - f5["cost_bn"]) - total[i]) < 1e-9, f"{f7['cost_bn'] - f5['cost_bn']:+.9f} vs {total[i]:+.9f}")
+            dcap = u7["capital_bn"] - u5["capital_bn"]
+            split_sets = [j for j in sets if j not in union_only]
+            cap = sum(split(j, "capital_return")[i] for j in split_sets)
+            uo_cap = sum(capital_parts(j)[i] for j in sets if j in union_only)
+            union = (sum(split(j, "union")[i] for j in split_sets)
+                     + sum(block(j)["total"][i] - capital_parts(j)[i] for j in sets if j in union_only))
+            gate(f"{b} {end}: the union dump less v5's is the edit sets' union parts plus its capital-return move (1e-9)",
+                 abs(u7["cost_bn"] - u5["cost_bn"] - union - dcap) < 1e-9,
+                 f"{u7['cost_bn'] - u5['cost_bn']:+.9f} = {union:+.9f} {dcap:+.9f}")
+            gate(f"{b} {end}: the union's capital-return move, less the union-only items' capital, lies within the split "
+                 "edit sets' capital parts", (dcap - uo_cap) * cap >= 0 and abs(dcap - uo_cap) <= abs(cap) + 1e-12,
+                 f"{dcap - uo_cap:+.9f} of {cap:+.9f} (union-only capital {uo_cap:+.9f})")
+            want = (sum(split(j, "lineage")[i] for j in split_sets) + cap - (dcap - uo_cap)
+                    + sum(block(j)["total"][i] + sum(interaction(j, k)[i] for k in sets) for j in lineage_items))
+            got = (f7["cost_bn"] - u7["cost_bn"]) - (f5["cost_bn"] - u5["cost_bn"])
+            gate(f"{b} {end}: the added people less v5's are the items' lineage parts, the lineage item and its "
+                 "interactions (1e-9)", abs(got - want) < 1e-9, f"{got:+.9f} vs {want:+.9f}")
+            print(f"  {b} {end}: union dump {u7['cost_bn']:.4f} (v5 {u5['cost_bn']:.4f}, {u7['cost_bn'] - u5['cost_bn']:+.4f}); "
+                  f"added people {LIN[b][end]['cost_bn']:.4f} (v5 {f5['cost_bn'] - u5['cost_bn']:.4f}, {got:+.4f})", flush=True)
 
 
 def main(case="sept29"):
@@ -1019,6 +1446,11 @@ def main(case="sept29"):
             want = res[(r["basis"], r["group"], r["end"])][0]["cost_others_at_national_prices"]
             gate(f"rule 4's alternative is the summary's others-at-national-prices cost {r['group']} {r['basis']} {r['end']}",
                  abs(float(r["cost_bn"]) - want) < 5e-5)
+    ipeds = ipeds_rows(scen) if IPEDS_ON else None
+    if ipeds:
+        for r in ipeds:
+            want = res[(r["basis"], r["group"], r["end"])][0]["cost"]
+            gate(f"the IPEDS terms' cost is the summary's {r['group']} {r['basis']} {r['end']}", abs(float(r["cost_bn"]) - want) < 5e-5)
     stop_if_failed()
     if LINEAGE_ON:
         hl = headline_lineage(summary, st, n4)     # its identified pass runs gates of its own; nothing is written yet
@@ -1031,6 +1463,8 @@ def main(case="sept29"):
     write(f"rule_alternatives_{CASE}.csv", alt_rows)
     write(f"attribution_{CASE}.csv", attr_rows)
     write(f"attribution_buckets_{CASE}.csv", attribution_buckets(groups))
+    if ipeds:
+        write(f"ipeds_terms_{CASE}.csv", ipeds)
     if LINEAGE_ON:
         write(f"headline_{CASE}.csv", hl)
         print(pd.DataFrame(hl).to_string(index=False))
@@ -1108,9 +1542,16 @@ def headline_lineage(summary, st, n4):
                 for b in BASES for lab in g for end in ENDS}
         t_id = pd.DataFrame([row for b in BASES for row in state_rows(b)[0]])
     h29 = pd.read_csv(DER / "headline_sept29.csv").set_index(["figure", "end"])
+    # oct07: also each earlier lineage case's figure (headline_oct05.csv), beside the sept29 one
+    earlier = {c: pd.read_csv(DER / f"headline_{c}.csv", dtype=str).set_index(["figure", "end"])
+               for c in LINEAGE_CASES[:LINEAGE_CASES.index(CASE)]}
 
     def state(frame, b, region, end):
         return frame.query("basis == @b and region == @region and end == @end").iloc[0]
+
+    def beside(name, end):
+        return {k: v for c, h in earlier.items()
+                for k, v in ((f"{c}_bn", h.loc[(name, end), f"{c}_bn"]), (f"{c}_per_member", h.loc[(name, end), "per_member"]))}
 
     rows = []
     for end in ENDS:
@@ -1124,19 +1565,20 @@ def headline_lineage(summary, st, n4):
             p = h29.loc[(name, end)]
             rows.append({"figure": name, "end": end, f"{CASE}_bn": f"{v:.4f}", "per_member": f"{v * 1e9 / n_case:.0f}",
                          "identified_bn": f"{v_id:.4f}", "identified_per_member": f"{v_id * 1e9 / n4:.0f}",
-                         "sept29_bn": f"{p.sept29_bn:.4f}", "sept29_per_member": f"{p.per_member:.0f}"})
+                         **beside(name, end), "sept29_bn": f"{p.sept29_bn:.4f}", "sept29_per_member": f"{p.per_member:.0f}"})
         for b in BASES:
             name = f"California per union member, union ages, {b}"
             ca, ca_id, p = state(t, b, "California", end), state(t_id, b, "California", end), h29.loc[(name, end)]
             rows.append({"figure": name, "end": end, f"{CASE}_bn": ca.delta_union_ages_bn,
                          "per_member": ca.delta_union_ages_per_person, "identified_bn": ca_id.delta_union_ages_bn,
-                         "identified_per_member": ca_id.delta_union_ages_per_person, "sept29_bn": f"{p.sept29_bn:.4f}",
-                         "sept29_per_member": f"{p.per_member:.0f}"})
+                         "identified_per_member": ca_id.delta_union_ages_per_person, **beside(name, end),
+                         "sept29_bn": f"{p.sept29_bn:.4f}", "sept29_per_member": f"{p.per_member:.0f}"})
     return rows
 
 
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=list(CASES), help="sept29 (default) or oct05 (v5, the lineage on both sides)")
+    ap.add_argument("--case", default="sept29", choices=list(CASES),
+                    help="sept29 (default), oct05 (v5, the lineage on both sides) or oct07 (v6, v5 plus its items)")
     main(ap.parse_args().case)

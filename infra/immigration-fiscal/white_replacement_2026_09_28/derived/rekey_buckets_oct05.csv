@@ -6,12 +6,12 @@ accrual,mexican_origin_engine,low,"capital, property, production taxes",-25.4097
 accrual,mexican_origin_engine,low,Social Security,119.6447,2799,1.6992
 accrual,mexican_origin_engine,low,Medicare,79.5444,1861,4.9034
 accrual,mexican_origin_engine,low,Medicaid,126.0906,2949,0.0000
-accrual,mexican_origin_engine,low,schools and colleges,217.8924,5097,-0.5922
+accrual,mexican_origin_engine,low,schools and colleges,217.8924,5097,-4.2121
 accrual,mexican_origin_engine,low,"police, courts, prisons",81.0201,1895,0.2917
 accrual,mexican_origin_engine,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.8604,2921,-2.9077
 accrual,mexican_origin_engine,low,veterans and military medical,15.6471,366,-2.4729
-accrual,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784,-0.3419
-accrual,mexican_origin_engine,low,capital return,37.1478,869,0.0954
+accrual,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784,3.6772
+accrual,mexican_origin_engine,low,capital return,37.1478,869,-0.2608
 accrual,mexican_origin_engine,low,production gain (subtracted),-11.9475,-279,0.0000
 accrual,mexican_origin_rough,low,income taxes,-153.1648,-3583,0.0000
 accrual,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.7421,-4157,0.0000
@@ -20,12 +20,12 @@ accrual,mexican_origin_rough,low,"capital, property, production taxes",-23.9491,
 accrual,mexican_origin_rough,low,Social Security,121.3438,2838,0.0000
 accrual,mexican_origin_rough,low,Medicare,84.4478,1975,0.0000
 accrual,mexican_origin_rough,low,Medicaid,126.0906,2949,0.0000
-accrual,mexican_origin_rough,low,schools and colleges,217.3002,5083,0.0000
+accrual,mexican_origin_rough,low,schools and colleges,213.6803,4998,0.0000
 accrual,mexican_origin_rough,low,"police, courts, prisons",81.3117,1902,0.0000
 accrual,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",121.9527,2853,0.0000
 accrual,mexican_origin_rough,low,veterans and military medical,13.1742,308,0.0000
-accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",75.9218,1776,0.0000
-accrual,mexican_origin_rough,low,capital return,37.2432,871,0.0000
+accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.9409,1870,0.0000
+accrual,mexican_origin_rough,low,capital return,36.8871,863,0.0000
 accrual,mexican_origin_rough,low,production gain (subtracted),-11.9475,-279,0.0000
 accrual,nh_black_rough,low,income taxes,-183.7848,-4381,30.6199
 accrual,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,16.6158
@@ -34,12 +34,12 @@ accrual,nh_black_rough,low,"capital, property, production taxes",-15.9766,-381,-
 accrual,nh_black_rough,low,Social Security,137.0818,3267,-15.7379
 accrual,nh_black_rough,low,Medicare,128.1262,3054,-43.6784
 accrual,nh_black_rough,low,Medicaid,181.2461,4320,-55.1555
-accrual,nh_black_rough,low,schools and colleges,185.7020,4426,31.5981
+accrual,nh_black_rough,low,schools and colleges,172.9617,4123,40.7186
 accrual,nh_black_rough,low,"police, courts, prisons",105.8914,2524,-24.5797
 accrual,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.1085,3912,-42.1558
 accrual,nh_black_rough,low,veterans and military medical,41.5391,990,-28.3648
-accrual,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",78.4662,1870,-2.5444
-accrual,nh_black_rough,low,capital return,36.8882,879,0.3551
+accrual,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",81.4405,1941,-1.4996
+accrual,nh_black_rough,low,capital return,35.6347,849,1.2524
 accrual,nh_black_rough,low,production gain (subtracted),-0.0000,-0,-11.9475
 accrual,A1_third_plus_nh_white,low,income taxes,-356.0150,-8327,202.8502
 accrual,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-268.3304,-6276,90.5883
@@ -48,12 +48,12 @@ accrual,A1_third_plus_nh_white,low,"capital, property, production taxes",-50.529
 accrual,A1_third_plus_nh_white,low,Social Security,169.5586,3966,-48.2148
 accrual,A1_third_plus_nh_white,low,Medicare,168.1671,3934,-83.7193
 accrual,A1_third_plus_nh_white,low,Medicaid,99.7694,2334,26.3212
-accrual,A1_third_plus_nh_white,low,schools and colleges,136.5014,3193,80.7988
+accrual,A1_third_plus_nh_white,low,schools and colleges,134.6162,3149,79.0641
 accrual,A1_third_plus_nh_white,low,"police, courts, prisons",53.9862,1263,27.3255
 accrual,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",71.2672,1667,50.6854
 accrual,A1_third_plus_nh_white,low,veterans and military medical,35.7731,837,-22.5989
-accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.3525,2441,-28.4307
-accrual,A1_third_plus_nh_white,low,capital return,34.3246,803,2.9186
+accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.3985,2372,-21.4575
+accrual,A1_third_plus_nh_white,low,capital return,34.1392,799,2.7479
 accrual,A1_third_plus_nh_white,low,production gain (subtracted),-0.0000,-0,-11.9475
 accrual,A2_us_born_nh_white,low,income taxes,-358.2874,-8381,205.1225
 accrual,A2_us_born_nh_white,low,payroll taxes and Medicare premiums,-267.1293,-6248,89.3872
@@ -62,12 +62,12 @@ accrual,A2_us_born_nh_white,low,"capital, property, production taxes",-51.4729,-
 accrual,A2_us_born_nh_white,low,Social Security,168.7970,3948,-47.4531
 accrual,A2_us_born_nh_white,low,Medicare,167.8694,3927,-83.4216
 accrual,A2_us_born_nh_white,low,Medicaid,99.8095,2335,26.2811
-accrual,A2_us_born_nh_white,low,schools and colleges,139.7221,3268,77.5781
+accrual,A2_us_born_nh_white,low,schools and colleges,137.7793,3223,75.9010
 accrual,A2_us_born_nh_white,low,"police, courts, prisons",54.2240,1268,27.0877
 accrual,A2_us_born_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",71.6887,1677,50.2639
 accrual,A2_us_born_nh_white,low,veterans and military medical,35.8376,838,-22.6634
-accrual,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.3831,2442,-28.4613
-accrual,A2_us_born_nh_white,low,capital return,34.4839,807,2.7593
+accrual,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.5146,2374,-21.5736
+accrual,A2_us_born_nh_white,low,capital return,34.2927,802,2.5943
 accrual,A2_us_born_nh_white,low,production gain (subtracted),-0.0000,-0,-11.9475
 accrual,A3_third_plus_nh_white_at_union_ages,low,income taxes,-348.8776,-8160,195.7128
 accrual,A3_third_plus_nh_white_at_union_ages,low,payroll taxes and Medicare premiums,-241.2655,-5643,63.5235
@@ -76,12 +76,12 @@ accrual,A3_third_plus_nh_white_at_union_ages,low,"capital, property, production 
 accrual,A3_third_plus_nh_white_at_union_ages,low,Social Security,159.6090,3733,-38.2651
 accrual,A3_third_plus_nh_white_at_union_ages,low,Medicare,94.0825,2201,-9.6348
 accrual,A3_third_plus_nh_white_at_union_ages,low,Medicaid,84.0322,1966,42.0583
-accrual,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,218.8341,5119,-1.5339
+accrual,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,216.1175,5055,-2.4372
 accrual,A3_third_plus_nh_white_at_union_ages,low,"police, courts, prisons",55.8771,1307,25.4346
 accrual,A3_third_plus_nh_white_at_union_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",73.3605,1716,48.5921
 accrual,A3_third_plus_nh_white_at_union_ages,low,veterans and military medical,23.3960,547,-10.2218
-accrual,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",85.6489,2003,-9.7271
-accrual,A3_third_plus_nh_white_at_union_ages,low,capital return,38.2098,894,-0.9665
+accrual,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",87.1191,2038,-7.1781
+accrual,A3_third_plus_nh_white_at_union_ages,low,capital return,37.9425,887,-1.0554
 accrual,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),-0.0000,-0,-11.9475
 accrual,A4_third_plus_nh_white_stationary,low,income taxes,-344.9296,-8068,191.7647
 accrual,A4_third_plus_nh_white_stationary,low,payroll taxes and Medicare premiums,-251.9659,-5894,74.2238
@@ -90,12 +90,12 @@ accrual,A4_third_plus_nh_white_stationary,low,"capital, property, production tax
 accrual,A4_third_plus_nh_white_stationary,low,Social Security,159.8716,3739,-38.5278
 accrual,A4_third_plus_nh_white_stationary,low,Medicare,152.2247,3561,-67.7770
 accrual,A4_third_plus_nh_white_stationary,low,Medicaid,96.3212,2253,29.7694
-accrual,A4_third_plus_nh_white_stationary,low,schools and colleges,158.5775,3709,58.7227
+accrual,A4_third_plus_nh_white_stationary,low,schools and colleges,156.5703,3662,57.1100
 accrual,A4_third_plus_nh_white_stationary,low,"police, courts, prisons",53.6187,1254,27.6931
 accrual,A4_third_plus_nh_white_stationary,low,"SNAP, SSI, housing, cash aid, credits, other welfare",70.8534,1657,51.0993
 accrual,A4_third_plus_nh_white_stationary,low,veterans and military medical,33.0032,772,-19.8290
-accrual,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",98.9610,2315,-23.0392
-accrual,A4_third_plus_nh_white_stationary,low,capital return,35.0801,821,2.1631
+accrual,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",96.7128,2262,-16.7719
+accrual,A4_third_plus_nh_white_stationary,low,capital return,34.8826,816,2.0045
 accrual,A4_third_plus_nh_white_stationary,low,production gain (subtracted),-0.0000,-0,-11.9475
 accrual,all_residents_slice,low,income taxes,-306.9876,-7181,153.8228
 accrual,all_residents_slice,low,payroll taxes and Medicare premiums,-245.0320,-5731,67.2899
@@ -104,12 +104,12 @@ accrual,all_residents_slice,low,"capital, property, production taxes",-41.5012,-
 accrual,all_residents_slice,low,Social Security,158.7284,3713,-37.3846
 accrual,all_residents_slice,low,Medicare,144.2591,3374,-59.8113
 accrual,all_residents_slice,low,Medicaid,121.5763,2844,4.5143
-accrual,all_residents_slice,low,schools and colleges,163.8054,3832,53.4948
+accrual,all_residents_slice,low,schools and colleges,163.8054,3832,49.8749
 accrual,all_residents_slice,low,"police, courts, prisons",65.8880,1541,15.4237
 accrual,all_residents_slice,low,"SNAP, SSI, housing, cash aid, credits, other welfare",97.5048,2281,24.4479
 accrual,all_residents_slice,low,veterans and military medical,30.2027,706,-17.0285
-accrual,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",110.6643,2589,-34.7425
-accrual,all_residents_slice,low,capital return,36.1181,845,1.1251
+accrual,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",110.6643,2589,-30.7234
+accrual,all_residents_slice,low,capital return,36.1181,845,0.7689
 accrual,all_residents_slice,low,production gain (subtracted),-0.0000,-0,-11.9475
 accrual,mexican_origin_engine,high,income taxes,-141.8291,-3317,-8.7149
 accrual,mexican_origin_engine,high,payroll taxes and Medicare premiums,-163.8040,-3831,-11.8086
@@ -118,12 +118,12 @@ accrual,mexican_origin_engine,high,"capital, property, production taxes",-25.401
 accrual,mexican_origin_engine,high,Social Security,111.4715,2607,8.3836
 accrual,mexican_origin_engine,high,Medicare,79.0854,1850,4.9034
 accrual,mexican_origin_engine,high,Medicaid,128.1094,2997,-1.9926
-accrual,mexican_origin_engine,high,schools and colleges,226.4565,5297,-6.7485
+accrual,mexican_origin_engine,high,schools and colleges,226.4565,5297,-10.3684
 accrual,mexican_origin_engine,high,"police, courts, prisons",81.0201,1895,0.2917
 accrual,mexican_origin_engine,high,"SNAP, SSI, housing, cash aid, credits, other welfare",116.9602,2736,3.7314
 accrual,mexican_origin_engine,high,veterans and military medical,12.9788,304,-0.0554
-accrual,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352,-0.0613
-accrual,mexican_origin_engine,high,capital return,61.8578,1447,-0.3775
+accrual,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352,3.9579
+accrual,mexican_origin_engine,high,capital return,61.8578,1447,-0.9117
 accrual,mexican_origin_engine,high,production gain (subtracted),-7.8593,-184,0.0000
 accrual,mexican_origin_rough,high,income taxes,-150.5440,-3521,0.0000
 accrual,mexican_origin_rough,high,payroll taxes and Medicare premiums,-175.6127,-4108,0.0000
@@ -132,12 +132,12 @@ accrual,mexican_origin_rough,high,"capital, property, production taxes",-23.9406
 accrual,mexican_origin_rough,high,Social Security,119.8551,2803,0.0000
 accrual,mexican_origin_rough,high,Medicare,83.9888,1965,0.0000
 accrual,mexican_origin_rough,high,Medicaid,126.1167,2950,0.0000
-accrual,mexican_origin_rough,high,schools and colleges,219.7080,5139,0.0000
+accrual,mexican_origin_rough,high,schools and colleges,216.0881,5054,0.0000
 accrual,mexican_origin_rough,high,"police, courts, prisons",81.3117,1902,0.0000
 accrual,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",120.6916,2823,0.0000
 accrual,mexican_origin_rough,high,veterans and military medical,12.9235,302,0.0000
-accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",100.4899,2351,0.0000
-accrual,mexican_origin_rough,high,capital return,61.4803,1438,0.0000
+accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.5090,2445,0.0000
+accrual,mexican_origin_rough,high,capital return,60.9461,1426,0.0000
 accrual,mexican_origin_rough,high,production gain (subtracted),-7.8593,-184,0.0000
 accrual,nh_black_rough,high,income taxes,-183.7848,-4381,33.2408
 accrual,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,18.7453
@@ -146,12 +146,12 @@ accrual,nh_black_rough,high,"capital, property, production taxes",-15.9766,-381,
 accrual,nh_black_rough,high,Social Security,137.0818,3267,-17.2267
 accrual,nh_black_rough,high,Medicare,128.1262,3054,-44.1373
 accrual,nh_black_rough,high,Medicaid,181.2461,4320,-55.1293
-accrual,nh_black_rough,high,schools and colleges,185.7020,4426,34.0060
+accrual,nh_black_rough,high,schools and colleges,172.9617,4123,43.1265
 accrual,nh_black_rough,high,"police, courts, prisons",105.8914,2524,-24.5797
 accrual,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.1085,3912,-43.4169
 accrual,nh_black_rough,high,veterans and military medical,41.5391,990,-28.6156
-accrual,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",102.8379,2451,-2.3479
-accrual,nh_black_rough,high,capital return,60.4684,1441,1.0119
+accrual,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",105.8122,2522,-1.3031
+accrual,nh_black_rough,high,capital return,58.5882,1396,2.3579
 accrual,nh_black_rough,high,production gain (subtracted),-0.0000,-0,-7.8593
 accrual,A1_third_plus_nh_white,high,income taxes,-356.0150,-8327,205.4710
 accrual,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-268.3304,-6276,92.7178
@@ -160,12 +160,12 @@ accrual,A1_third_plus_nh_white,high,"capital, property, production taxes",-50.52
 accrual,A1_third_plus_nh_white,high,Social Security,169.5586,3966,-49.7035
 accrual,A1_third_plus_nh_white,high,Medicare,168.1671,3934,-84.1782
 accrual,A1_third_plus_nh_white,high,Medicaid,99.7694,2334,26.3474
-accrual,A1_third_plus_nh_white,high,schools and colleges,136.5014,3193,83.2066
+accrual,A1_third_plus_nh_white,high,schools and colleges,134.6162,3149,81.4719
 accrual,A1_third_plus_nh_white,high,"police, courts, prisons",53.9862,1263,27.3255
 accrual,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",71.2672,1667,49.4243
 accrual,A1_third_plus_nh_white,high,veterans and military medical,35.7731,837,-22.8496
-accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",134.0334,3135,-33.5435
-accrual,A1_third_plus_nh_white,high,capital return,58.2534,1363,3.2270
+accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.0794,3066,-26.5703
+accrual,A1_third_plus_nh_white,high,capital return,57.9752,1356,2.9710
 accrual,A1_third_plus_nh_white,high,production gain (subtracted),-0.0000,-0,-7.8593
 accrual,A2_us_born_nh_white,high,income taxes,-358.2874,-8381,207.7434
 accrual,A2_us_born_nh_white,high,payroll taxes and Medicare premiums,-267.1293,-6248,91.5166
@@ -174,12 +174,12 @@ accrual,A2_us_born_nh_white,high,"capital, property, production taxes",-51.4729,
 accrual,A2_us_born_nh_white,high,Social Security,168.7970,3948,-48.9419
 accrual,A2_us_born_nh_white,high,Medicare,167.8694,3927,-83.8805
 accrual,A2_us_born_nh_white,high,Medicaid,99.8095,2335,26.3072
-accrual,A2_us_born_nh_white,high,schools and colleges,139.7221,3268,79.9859
+accrual,A2_us_born_nh_white,high,schools and colleges,137.7793,3223,78.3088
 accrual,A2_us_born_nh_white,high,"police, courts, prisons",54.2240,1268,27.0877
 accrual,A2_us_born_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",71.6887,1677,49.0028
 accrual,A2_us_born_nh_white,high,veterans and military medical,35.8376,838,-22.9141
-accrual,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",133.9859,3134,-33.4960
-accrual,A2_us_born_nh_white,high,capital return,58.4690,1368,3.0114
+accrual,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.1174,3067,-26.6083
+accrual,A2_us_born_nh_white,high,capital return,58.1823,1361,2.7639
 accrual,A2_us_born_nh_white,high,production gain (subtracted),-0.0000,-0,-7.8593
 accrual,A3_third_plus_nh_white_at_union_ages,high,income taxes,-348.8776,-8160,198.3336
 accrual,A3_third_plus_nh_white_at_union_ages,high,payroll taxes and Medicare premiums,-241.2655,-5643,65.6529
@@ -188,12 +188,12 @@ accrual,A3_third_plus_nh_white_at_union_ages,high,"capital, property, production
 accrual,A3_third_plus_nh_white_at_union_ages,high,Social Security,159.6090,3733,-39.7539
 accrual,A3_third_plus_nh_white_at_union_ages,high,Medicare,94.0825,2201,-10.0937
 accrual,A3_third_plus_nh_white_at_union_ages,high,Medicaid,84.0322,1966,42.0845
-accrual,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,218.8341,5119,0.8739
+accrual,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,216.1175,5055,-0.0293
 accrual,A3_third_plus_nh_white_at_union_ages,high,"police, courts, prisons",55.8771,1307,25.4346
 accrual,A3_third_plus_nh_white_at_union_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",73.3605,1716,47.3310
 accrual,A3_third_plus_nh_white_at_union_ages,high,veterans and military medical,23.3960,547,-10.4726
-accrual,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",114.0125,2667,-13.5226
-accrual,A3_third_plus_nh_white_at_union_ages,high,capital return,63.5512,1487,-2.0709
+accrual,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",115.4826,2701,-10.9735
+accrual,A3_third_plus_nh_white_at_union_ages,high,capital return,63.1503,1477,-2.2042
 accrual,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),-0.0000,-0,-7.8593
 accrual,A4_third_plus_nh_white_stationary,high,income taxes,-344.9296,-8068,194.3856
 accrual,A4_third_plus_nh_white_stationary,high,payroll taxes and Medicare premiums,-251.9659,-5894,76.3532
@@ -202,12 +202,12 @@ accrual,A4_third_plus_nh_white_stationary,high,"capital, property, production ta
 accrual,A4_third_plus_nh_white_stationary,high,Social Security,159.8716,3739,-40.0166
 accrual,A4_third_plus_nh_white_stationary,high,Medicare,152.2247,3561,-68.2359
 accrual,A4_third_plus_nh_white_stationary,high,Medicaid,96.3212,2253,29.7956
-accrual,A4_third_plus_nh_white_stationary,high,schools and colleges,158.5775,3709,61.1305
+accrual,A4_third_plus_nh_white_stationary,high,schools and colleges,156.5703,3662,59.5178
 accrual,A4_third_plus_nh_white_stationary,high,"police, courts, prisons",53.6187,1254,27.6931
 accrual,A4_third_plus_nh_white_stationary,high,"SNAP, SSI, housing, cash aid, credits, other welfare",70.8534,1657,49.8382
 accrual,A4_third_plus_nh_white_stationary,high,veterans and military medical,33.0032,772,-20.0797
-accrual,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",127.7215,2987,-27.2316
-accrual,A4_third_plus_nh_white_stationary,high,capital return,59.1021,1382,2.3782
+accrual,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",125.4733,2935,-20.9643
+accrual,A4_third_plus_nh_white_stationary,high,capital return,58.8059,1376,2.1402
 accrual,A4_third_plus_nh_white_stationary,high,production gain (subtracted),-0.0000,-0,-7.8593
 accrual,all_residents_slice,high,income taxes,-306.9876,-7181,156.4437
 accrual,all_residents_slice,high,payroll taxes and Medicare premiums,-245.0320,-5731,69.4194
@@ -216,12 +216,12 @@ accrual,all_residents_slice,high,"capital, property, production taxes",-41.5012,
 accrual,all_residents_slice,high,Social Security,158.7284,3713,-38.8734
 accrual,all_residents_slice,high,Medicare,144.2591,3374,-60.2702
 accrual,all_residents_slice,high,Medicaid,121.5763,2844,4.5404
-accrual,all_residents_slice,high,schools and colleges,163.8054,3832,55.9026
+accrual,all_residents_slice,high,schools and colleges,163.8054,3832,52.2828
 accrual,all_residents_slice,high,"police, courts, prisons",65.8880,1541,15.4237
 accrual,all_residents_slice,high,"SNAP, SSI, housing, cash aid, credits, other welfare",97.5048,2281,23.1867
 accrual,all_residents_slice,high,veterans and military medical,30.2027,706,-17.2792
-accrual,all_residents_slice,high,"per-head lines: government, defense, interest, roads, other",138.8916,3249,-38.4017
-accrual,all_residents_slice,high,capital return,60.4271,1413,1.0532
+accrual,all_residents_slice,high,"per-head lines: government, defense, interest, roads, other",138.8916,3249,-34.3825
+accrual,all_residents_slice,high,capital return,60.4271,1413,0.5190
 accrual,all_residents_slice,high,production gain (subtracted),-0.0000,-0,-7.8593
 cash,mexican_origin_engine,low,income taxes,-158.7560,-3713,3.1110
 cash,mexican_origin_engine,low,payroll taxes and Medicare premiums,-175.7093,-4110,-2.0328
@@ -230,12 +230,12 @@ cash,mexican_origin_engine,low,"capital, property, production taxes",-25.4097,-5
 cash,mexican_origin_engine,low,Social Security,62.4928,1462,2.8228
 cash,mexican_origin_engine,low,Medicare,56.1548,1313,0.0000
 cash,mexican_origin_engine,low,Medicaid,126.0906,2949,0.0000
-cash,mexican_origin_engine,low,schools and colleges,217.8924,5097,-0.5922
+cash,mexican_origin_engine,low,schools and colleges,217.8924,5097,-4.2121
 cash,mexican_origin_engine,low,"police, courts, prisons",81.0201,1895,0.2917
 cash,mexican_origin_engine,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.8604,2921,-2.9077
 cash,mexican_origin_engine,low,veterans and military medical,15.6471,366,-2.4729
-cash,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784,-0.3419
-cash,mexican_origin_engine,low,capital return,37.1478,869,0.0954
+cash,mexican_origin_engine,low,"per-head lines: government, defense, interest, roads, other",76.2637,1784,3.6772
+cash,mexican_origin_engine,low,capital return,37.1478,869,-0.2608
 cash,mexican_origin_engine,low,production gain (subtracted),-11.9475,-279,0.0000
 cash,mexican_origin_rough,low,income taxes,-155.6451,-3641,0.0000
 cash,mexican_origin_rough,low,payroll taxes and Medicare premiums,-177.7421,-4157,0.0000
@@ -244,12 +244,12 @@ cash,mexican_origin_rough,low,"capital, property, production taxes",-23.9491,-56
 cash,mexican_origin_rough,low,Social Security,65.3156,1528,0.0000
 cash,mexican_origin_rough,low,Medicare,56.1548,1313,0.0000
 cash,mexican_origin_rough,low,Medicaid,126.0906,2949,0.0000
-cash,mexican_origin_rough,low,schools and colleges,217.3002,5083,0.0000
+cash,mexican_origin_rough,low,schools and colleges,213.6803,4998,0.0000
 cash,mexican_origin_rough,low,"police, courts, prisons",81.3117,1902,0.0000
 cash,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",121.9527,2853,0.0000
 cash,mexican_origin_rough,low,veterans and military medical,13.1742,308,0.0000
-cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",75.9218,1776,0.0000
-cash,mexican_origin_rough,low,capital return,37.2432,871,0.0000
+cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",79.9409,1870,0.0000
+cash,mexican_origin_rough,low,capital return,36.8871,863,0.0000
 cash,mexican_origin_rough,low,production gain (subtracted),-11.9475,-279,0.0000
 cash,nh_black_rough,low,income taxes,-189.3786,-4514,33.7335
 cash,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,16.6158
@@ -258,12 +258,12 @@ cash,nh_black_rough,low,"capital, property, production taxes",-15.9766,-381,-7.9
 cash,nh_black_rough,low,Social Security,141.5057,3373,-76.1901
 cash,nh_black_rough,low,Medicare,113.0022,2693,-56.8474
 cash,nh_black_rough,low,Medicaid,181.2461,4320,-55.1555
-cash,nh_black_rough,low,schools and colleges,185.7020,4426,31.5981
+cash,nh_black_rough,low,schools and colleges,172.9617,4123,40.7186
 cash,nh_black_rough,low,"police, courts, prisons",105.8914,2524,-24.5797
 cash,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.1085,3912,-42.1558
 cash,nh_black_rough,low,veterans and military medical,41.5391,990,-28.3648
-cash,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",78.4662,1870,-2.5444
-cash,nh_black_rough,low,capital return,36.8882,879,0.3551
+cash,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",81.4405,1941,-1.4996
+cash,nh_black_rough,low,capital return,35.6347,849,1.2524
 cash,nh_black_rough,low,production gain (subtracted),-0.0000,-0,-11.9475
 cash,A1_third_plus_nh_white,low,income taxes,-373.6866,-8741,218.0415
 cash,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-268.3304,-6276,90.5883
@@ -272,12 +272,12 @@ cash,A1_third_plus_nh_white,low,"capital, property, production taxes",-50.5292,-
 cash,A1_third_plus_nh_white,low,Social Security,251.4440,5881,-186.1284
 cash,A1_third_plus_nh_white,low,Medicare,183.0944,4283,-126.9397
 cash,A1_third_plus_nh_white,low,Medicaid,99.7694,2334,26.3212
-cash,A1_third_plus_nh_white,low,schools and colleges,136.5014,3193,80.7988
+cash,A1_third_plus_nh_white,low,schools and colleges,134.6162,3149,79.0641
 cash,A1_third_plus_nh_white,low,"police, courts, prisons",53.9862,1263,27.3255
 cash,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",71.2672,1667,50.6854
 cash,A1_third_plus_nh_white,low,veterans and military medical,35.7731,837,-22.5989
-cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.3525,2441,-28.4307
-cash,A1_third_plus_nh_white,low,capital return,34.3246,803,2.9186
+cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.3985,2372,-21.4575
+cash,A1_third_plus_nh_white,low,capital return,34.1392,799,2.7479
 cash,A1_third_plus_nh_white,low,production gain (subtracted),-0.0000,-0,-11.9475
 cash,A2_us_born_nh_white,low,income taxes,-375.9772,-8794,220.3321
 cash,A2_us_born_nh_white,low,payroll taxes and Medicare premiums,-267.1293,-6248,89.3872
@@ -286,12 +286,12 @@ cash,A2_us_born_nh_white,low,"capital, property, production taxes",-51.4729,-120
 cash,A2_us_born_nh_white,low,Social Security,251.7040,5888,-186.3884
 cash,A2_us_born_nh_white,low,Medicare,183.0944,4283,-126.9397
 cash,A2_us_born_nh_white,low,Medicaid,99.8095,2335,26.2811
-cash,A2_us_born_nh_white,low,schools and colleges,139.7221,3268,77.5781
+cash,A2_us_born_nh_white,low,schools and colleges,137.7793,3223,75.9010
 cash,A2_us_born_nh_white,low,"police, courts, prisons",54.2240,1268,27.0877
 cash,A2_us_born_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",71.6887,1677,50.2639
 cash,A2_us_born_nh_white,low,veterans and military medical,35.8376,838,-22.6634
-cash,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.3831,2442,-28.4613
-cash,A2_us_born_nh_white,low,capital return,34.4839,807,2.7593
+cash,A2_us_born_nh_white,low,"per-head lines: government, defense, interest, roads, other",101.5146,2374,-21.5736
+cash,A2_us_born_nh_white,low,capital return,34.2927,802,2.5943
 cash,A2_us_born_nh_white,low,production gain (subtracted),-0.0000,-0,-11.9475
 cash,A3_third_plus_nh_white_at_union_ages,low,income taxes,-355.5212,-8316,199.8762
 cash,A3_third_plus_nh_white_at_union_ages,low,payroll taxes and Medicare premiums,-241.2655,-5643,63.5235
@@ -300,12 +300,12 @@ cash,A3_third_plus_nh_white_at_union_ages,low,"capital, property, production tax
 cash,A3_third_plus_nh_white_at_union_ages,low,Social Security,94.5307,2211,-29.2151
 cash,A3_third_plus_nh_white_at_union_ages,low,Medicare,69.8743,1634,-13.7196
 cash,A3_third_plus_nh_white_at_union_ages,low,Medicaid,84.0322,1966,42.0583
-cash,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,218.8341,5119,-1.5339
+cash,A3_third_plus_nh_white_at_union_ages,low,schools and colleges,216.1175,5055,-2.4372
 cash,A3_third_plus_nh_white_at_union_ages,low,"police, courts, prisons",55.8771,1307,25.4346
 cash,A3_third_plus_nh_white_at_union_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",73.3605,1716,48.5921
 cash,A3_third_plus_nh_white_at_union_ages,low,veterans and military medical,23.3960,547,-10.2218
-cash,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",85.6489,2003,-9.7271
-cash,A3_third_plus_nh_white_at_union_ages,low,capital return,38.2098,894,-0.9665
+cash,A3_third_plus_nh_white_at_union_ages,low,"per-head lines: government, defense, interest, roads, other",87.1191,2038,-7.1781
+cash,A3_third_plus_nh_white_at_union_ages,low,capital return,37.9425,887,-1.0554
 cash,A3_third_plus_nh_white_at_union_ages,low,production gain (subtracted),-0.0000,-0,-11.9475
 cash,A4_third_plus_nh_white_stationary,low,income taxes,-360.7837,-8439,205.1387
 cash,A4_third_plus_nh_white_stationary,low,payroll taxes and Medicare premiums,-251.9659,-5894,74.2238
@@ -314,12 +314,12 @@ cash,A4_third_plus_nh_white_stationary,low,"capital, property, production taxes"
 cash,A4_third_plus_nh_white_stationary,low,Social Security,225.5844,5277,-160.2687
 cash,A4_third_plus_nh_white_stationary,low,Medicare,162.6901,3805,-106.5353
 cash,A4_third_plus_nh_white_stationary,low,Medicaid,96.3212,2253,29.7694
-cash,A4_third_plus_nh_white_stationary,low,schools and colleges,158.5775,3709,58.7227
+cash,A4_third_plus_nh_white_stationary,low,schools and colleges,156.5703,3662,57.1100
 cash,A4_third_plus_nh_white_stationary,low,"police, courts, prisons",53.6187,1254,27.6931
 cash,A4_third_plus_nh_white_stationary,low,"SNAP, SSI, housing, cash aid, credits, other welfare",70.8534,1657,51.0993
 cash,A4_third_plus_nh_white_stationary,low,veterans and military medical,33.0032,772,-19.8290
-cash,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",98.9610,2315,-23.0392
-cash,A4_third_plus_nh_white_stationary,low,capital return,35.0801,821,2.1631
+cash,A4_third_plus_nh_white_stationary,low,"per-head lines: government, defense, interest, roads, other",96.7128,2262,-16.7719
+cash,A4_third_plus_nh_white_stationary,low,capital return,34.8826,816,2.0045
 cash,A4_third_plus_nh_white_stationary,low,production gain (subtracted),-0.0000,-0,-11.9475
 cash,all_residents_slice,low,income taxes,-320.0902,-7487,164.4451
 cash,all_residents_slice,low,payroll taxes and Medicare premiums,-245.0320,-5731,67.2899
@@ -328,12 +328,12 @@ cash,all_residents_slice,low,"capital, property, production taxes",-41.5012,-971
 cash,all_residents_slice,low,Social Security,186.4326,4361,-121.1169
 cash,all_residents_slice,low,Medicare,140.4534,3285,-84.2986
 cash,all_residents_slice,low,Medicaid,121.5763,2844,4.5143
-cash,all_residents_slice,low,schools and colleges,163.8054,3832,53.4948
+cash,all_residents_slice,low,schools and colleges,163.8054,3832,49.8749
 cash,all_residents_slice,low,"police, courts, prisons",65.8880,1541,15.4237
 cash,all_residents_slice,low,"SNAP, SSI, housing, cash aid, credits, other welfare",97.5048,2281,24.4479
 cash,all_residents_slice,low,veterans and military medical,30.2027,706,-17.0285
-cash,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",110.6643,2589,-34.7425
-cash,all_residents_slice,low,capital return,36.1181,845,1.1251
+cash,all_residents_slice,low,"per-head lines: government, defense, interest, roads, other",110.6643,2589,-30.7234
+cash,all_residents_slice,low,capital return,36.1181,845,0.7689
 cash,all_residents_slice,low,production gain (subtracted),-0.0000,-0,-11.9475
 cash,mexican_origin_engine,high,income taxes,-143.9005,-3366,-9.0933
 cash,mexican_origin_engine,high,payroll taxes and Medicare premiums,-163.8040,-3831,-11.8086
@@ -342,12 +342,12 @@ cash,mexican_origin_engine,high,"capital, property, production taxes",-25.4012,-
 cash,mexican_origin_engine,high,Social Security,58.6397,1372,6.0915
 cash,mexican_origin_engine,high,Medicare,56.1548,1313,0.0000
 cash,mexican_origin_engine,high,Medicaid,128.1094,2997,-1.9926
-cash,mexican_origin_engine,high,schools and colleges,226.4565,5297,-6.7485
+cash,mexican_origin_engine,high,schools and colleges,226.4565,5297,-10.3684
 cash,mexican_origin_engine,high,"police, courts, prisons",81.0201,1895,0.2917
 cash,mexican_origin_engine,high,"SNAP, SSI, housing, cash aid, credits, other welfare",116.9602,2736,3.7314
 cash,mexican_origin_engine,high,veterans and military medical,12.9788,304,-0.0554
-cash,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352,-0.0613
-cash,mexican_origin_engine,high,capital return,61.8578,1447,-0.3775
+cash,mexican_origin_engine,high,"per-head lines: government, defense, interest, roads, other",100.5512,2352,3.9579
+cash,mexican_origin_engine,high,capital return,61.8578,1447,-0.9117
 cash,mexican_origin_engine,high,production gain (subtracted),-7.8593,-184,0.0000
 cash,mexican_origin_rough,high,income taxes,-152.9938,-3579,0.0000
 cash,mexican_origin_rough,high,payroll taxes and Medicare premiums,-175.6127,-4108,0.0000
@@ -356,12 +356,12 @@ cash,mexican_origin_rough,high,"capital, property, production taxes",-23.9406,-5
 cash,mexican_origin_rough,high,Social Security,64.7312,1514,0.0000
 cash,mexican_origin_rough,high,Medicare,56.1548,1313,0.0000
 cash,mexican_origin_rough,high,Medicaid,126.1167,2950,0.0000
-cash,mexican_origin_rough,high,schools and colleges,219.7080,5139,0.0000
+cash,mexican_origin_rough,high,schools and colleges,216.0881,5054,0.0000
 cash,mexican_origin_rough,high,"police, courts, prisons",81.3117,1902,0.0000
 cash,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",120.6916,2823,0.0000
 cash,mexican_origin_rough,high,veterans and military medical,12.9235,302,0.0000
-cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",100.4899,2351,0.0000
-cash,mexican_origin_rough,high,capital return,61.4803,1438,0.0000
+cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",104.5090,2445,0.0000
+cash,mexican_origin_rough,high,capital return,60.9461,1426,0.0000
 cash,mexican_origin_rough,high,production gain (subtracted),-7.8593,-184,0.0000
 cash,nh_black_rough,high,income taxes,-189.3786,-4514,36.3848
 cash,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,18.7453
@@ -370,12 +370,12 @@ cash,nh_black_rough,high,"capital, property, production taxes",-15.9766,-381,-7.
 cash,nh_black_rough,high,Social Security,141.5057,3373,-76.7745
 cash,nh_black_rough,high,Medicare,113.0022,2693,-56.8474
 cash,nh_black_rough,high,Medicaid,181.2461,4320,-55.1293
-cash,nh_black_rough,high,schools and colleges,185.7020,4426,34.0060
+cash,nh_black_rough,high,schools and colleges,172.9617,4123,43.1265
 cash,nh_black_rough,high,"police, courts, prisons",105.8914,2524,-24.5797
 cash,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.1085,3912,-43.4169
 cash,nh_black_rough,high,veterans and military medical,41.5391,990,-28.6156
-cash,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",102.8379,2451,-2.3479
-cash,nh_black_rough,high,capital return,60.4684,1441,1.0119
+cash,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",105.8122,2522,-1.3031
+cash,nh_black_rough,high,capital return,58.5882,1396,2.3579
 cash,nh_black_rough,high,production gain (subtracted),-0.0000,-0,-7.8593
 cash,A1_third_plus_nh_white,high,income taxes,-373.6866,-8741,220.6927
 cash,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-268.3304,-6276,92.7178
@@ -384,12 +384,12 @@ cash,A1_third_plus_nh_white,high,"capital, property, production taxes",-50.5292,
 cash,A1_third_plus_nh_white,high,Social Security,251.4440,5881,-186.7128
 cash,A1_third_plus_nh_white,high,Medicare,183.0944,4283,-126.9397
 cash,A1_third_plus_nh_white,high,Medicaid,99.7694,2334,26.3474
-cash,A1_third_plus_nh_white,high,schools and colleges,136.5014,3193,83.2066
+cash,A1_third_plus_nh_white,high,schools and colleges,134.6162,3149,81.4719
 cash,A1_third_plus_nh_white,high,"police, courts, prisons",53.9862,1263,27.3255
 cash,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",71.2672,1667,49.4243
 cash,A1_third_plus_nh_white,high,veterans and military medical,35.7731,837,-22.8496
-cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",134.0334,3135,-33.5435
-cash,A1_third_plus_nh_white,high,capital return,58.2534,1363,3.2270
+cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.0794,3066,-26.5703
+cash,A1_third_plus_nh_white,high,capital return,57.9752,1356,2.9710
 cash,A1_third_plus_nh_white,high,production gain (subtracted),-0.0000,-0,-7.8593
 cash,A2_us_born_nh_white,high,income taxes,-375.9772,-8794,222.9834
 cash,A2_us_born_nh_white,high,payroll taxes and Medicare premiums,-267.1293,-6248,91.5166
@@ -398,12 +398,12 @@ cash,A2_us_born_nh_white,high,"capital, property, production taxes",-51.4729,-12
 cash,A2_us_born_nh_white,high,Social Security,251.7040,5888,-186.9728
 cash,A2_us_born_nh_white,high,Medicare,183.0944,4283,-126.9397
 cash,A2_us_born_nh_white,high,Medicaid,99.8095,2335,26.3072
-cash,A2_us_born_nh_white,high,schools and colleges,139.7221,3268,79.9859
+cash,A2_us_born_nh_white,high,schools and colleges,137.7793,3223,78.3088
 cash,A2_us_born_nh_white,high,"police, courts, prisons",54.2240,1268,27.0877
 cash,A2_us_born_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",71.6887,1677,49.0028
 cash,A2_us_born_nh_white,high,veterans and military medical,35.8376,838,-22.9141
-cash,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",133.9859,3134,-33.4960
-cash,A2_us_born_nh_white,high,capital return,58.4690,1368,3.0114
+cash,A2_us_born_nh_white,high,"per-head lines: government, defense, interest, roads, other",131.1174,3067,-26.6083
+cash,A2_us_born_nh_white,high,capital return,58.1823,1361,2.7639
 cash,A2_us_born_nh_white,high,production gain (subtracted),-0.0000,-0,-7.8593
 cash,A3_third_plus_nh_white_at_union_ages,high,income taxes,-355.5212,-8316,202.5274
 cash,A3_third_plus_nh_white_at_union_ages,high,payroll taxes and Medicare premiums,-241.2655,-5643,65.6529
@@ -412,12 +412,12 @@ cash,A3_third_plus_nh_white_at_union_ages,high,"capital, property, production ta
 cash,A3_third_plus_nh_white_at_union_ages,high,Social Security,94.5307,2211,-29.7995
 cash,A3_third_plus_nh_white_at_union_ages,high,Medicare,69.8743,1634,-13.7196
 cash,A3_third_plus_nh_white_at_union_ages,high,Medicaid,84.0322,1966,42.0845
-cash,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,218.8341,5119,0.8739
+cash,A3_third_plus_nh_white_at_union_ages,high,schools and colleges,216.1175,5055,-0.0293
 cash,A3_third_plus_nh_white_at_union_ages,high,"police, courts, prisons",55.8771,1307,25.4346
 cash,A3_third_plus_nh_white_at_union_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",73.3605,1716,47.3310
 cash,A3_third_plus_nh_white_at_union_ages,high,veterans and military medical,23.3960,547,-10.4726
-cash,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",114.0125,2667,-13.5226
-cash,A3_third_plus_nh_white_at_union_ages,high,capital return,63.5512,1487,-2.0709
+cash,A3_third_plus_nh_white_at_union_ages,high,"per-head lines: government, defense, interest, roads, other",115.4826,2701,-10.9735
+cash,A3_third_plus_nh_white_at_union_ages,high,capital return,63.1503,1477,-2.2042
 cash,A3_third_plus_nh_white_at_union_ages,high,production gain (subtracted),-0.0000,-0,-7.8593
 cash,A4_third_plus_nh_white_stationary,high,income taxes,-360.7837,-8439,207.7899
 cash,A4_third_plus_nh_white_stationary,high,payroll taxes and Medicare premiums,-251.9659,-5894,76.3532
@@ -426,12 +426,12 @@ cash,A4_third_plus_nh_white_stationary,high,"capital, property, production taxes
 cash,A4_third_plus_nh_white_stationary,high,Social Security,225.5844,5277,-160.8532
 cash,A4_third_plus_nh_white_stationary,high,Medicare,162.6901,3805,-106.5353
 cash,A4_third_plus_nh_white_stationary,high,Medicaid,96.3212,2253,29.7956
-cash,A4_third_plus_nh_white_stationary,high,schools and colleges,158.5775,3709,61.1305
+cash,A4_third_plus_nh_white_stationary,high,schools and colleges,156.5703,3662,59.5178
 cash,A4_third_plus_nh_white_stationary,high,"police, courts, prisons",53.6187,1254,27.6931
 cash,A4_third_plus_nh_white_stationary,high,"SNAP, SSI, housing, cash aid, credits, other welfare",70.8534,1657,49.8382
 cash,A4_third_plus_nh_white_stationary,high,veterans and military medical,33.0032,772,-20.0797
-cash,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",127.7215,2987,-27.2316
-cash,A4_third_plus_nh_white_stationary,high,capital return,59.1021,1382,2.3782
+cash,A4_third_plus_nh_white_stationary,high,"per-head lines: government, defense, interest, roads, other",125.4733,2935,-20.9643
+cash,A4_third_plus_nh_white_stationary,high,capital return,58.8059,1376,2.1402
 cash,A4_third_plus_nh_white_stationary,high,production gain (subtracted),-0.0000,-0,-7.8593
 cash,all_residents_slice,high,income taxes,-320.0902,-7487,167.0964
 cash,all_residents_slice,high,payroll taxes and Medicare premiums,-245.0320,-5731,69.4194
@@ -440,10 +440,10 @@ cash,all_residents_slice,high,"capital, property, production taxes",-41.5012,-97
 cash,all_residents_slice,high,Social Security,186.4326,4361,-121.7014
 cash,all_residents_slice,high,Medicare,140.4534,3285,-84.2986
 cash,all_residents_slice,high,Medicaid,121.5763,2844,4.5404
-cash,all_residents_slice,high,schools and colleges,163.8054,3832,55.9026
+cash,all_residents_slice,high,schools and colleges,163.8054,3832,52.2828
 cash,all_residents_slice,high,"police, courts, prisons",65.8880,1541,15.4237
 cash,all_residents_slice,high,"SNAP, SSI, housing, cash aid, credits, other welfare",97.5048,2281,23.1867
 cash,all_residents_slice,high,veterans and military medical,30.2027,706,-17.2792
-cash,all_residents_slice,high,"per-head lines: government, defense, interest, roads, other",138.8916,3249,-38.4017
-cash,all_residents_slice,high,capital return,60.4271,1413,1.0532
+cash,all_residents_slice,high,"per-head lines: government, defense, interest, roads, other",138.8916,3249,-34.3825
+cash,all_residents_slice,high,capital return,60.4271,1413,0.5190
 cash,all_residents_slice,high,production gain (subtracted),-0.0000,-0,-7.8593
