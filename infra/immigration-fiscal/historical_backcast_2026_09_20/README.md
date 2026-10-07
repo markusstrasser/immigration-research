@@ -284,6 +284,22 @@ is well below that (+0.1 against 10 × +0.24). The largest positive item, the ag
 lies below the group's path before 2024 (×1.75 from 2005 against ×1.46). So the age mix counts for less in the early
 years than the pension item, most of which rides the group's path.
 
+**Per member of the lineage (2026-10-08).** v6's per-member figures divide by the lineage the case counts, 42.75M in
+2024. `derived/oct07/backcast_annual.csv` therefore also carries two kinds of column (`per_lineage_member()`):
+- `lineage_millions`, the lineage's count by year. It is the union on the group's path, put on the account's frame
+  (`group_millions` × the case's union, 39,712,493, over the group's 2024 count), plus the 3.04M added descendants on
+  the identified third-plus path (`g3plus_millions_cps`, 2024 = 1), the lineage rule above [ASSUMPTION]. Both counts
+  are read from the case lane's `summary.json` (`v5.lineage.counts`, which v6 keeps). The third-plus path grows faster
+  than the group's (×1.26 against ×1.09 from 2015), so the lineage is 38.86M in 2015.
+- `net_cost_cbo_informed_oct07_{low,high}__{ratio,income}__per_lineage_member_usd`, those concepts per lineage member
+  in 2024 dollars.
+
+The frame is a constant factor, so a change against 2024, or a figure at today's size, is the same on the group's frame.
+Divided by the group's count path instead, the typical year's fall would read about 0.6 points larger, because the added
+people's cost rides the faster path while that denominator does not. FAQ entry 18 and the INDEX read the typical-year
+replay from these columns (the average of 2015–2019 and 2022–2023 against 2024): 9.8% / 10.0% less per member under the
+income rule and 19.7% / 18.4% under the ratio rule. The other cases' files do not change.
+
 **Gates.**
 - `case_components.cjs --case oct07` passes 54 gates, among them:
   - the case's specifications and profiles are October 5's;
@@ -301,6 +317,9 @@ years than the pension item, most of which rides the group's path.
     `capital_at_end_specifications` (1e-9).
 - `backcast.py` gives 2024 = 389.0826 / 461.4797 under every rule, the bands file's print, and 418.1016 / 475.8387 for
   the proportional reference. Every item part has a path, union or lineage.
+- `backcast.py --case oct07` also gates the per-member columns. The case lane's union and added people must make its
+  per-member population (1e-9 million). 2024 per member must be `v6.per_member_usd.set`, 9,100.88 / 10,794.29, under
+  both rules ($0.01).
 - `test_backcast.py` rebuilds every case_components file and `derived/sept29/`, `derived/oct05/` and `derived/oct07/`:
   12 passed. `rerun_lane.py` over the commands below: IDENTICAL, 32 of 32 files, exit 0. The tracked files equal HEAD.
 - `case_components.cjs` now also counts a union-only item's capital change in its union, as the case's summary counts
@@ -329,6 +348,12 @@ Log (append-only; times from `date`; claude-opus-5-5, teammate prop-b of the v6 
 - 15:13:19–15:14:28: the eight case-lane hashes recorded in `derived/case_components_oct07.json` (corrections.json f8d346aa…,
   corrections_cash.json e9033bff…, summary.json 54709259…, main_case_bands.csv, package.cjs, item_age_mix.cjs and both
   lineage payloads) are the committed files' (218a2fb2); no rerun needed.
+- 2026-10-08 02:07:12–02:14:41 JST (claude-opus-5-5, teammate prop-a, the lead's brief): `per_lineage_member()` for
+  `--case oct07`. A scratch build at 02:09:55 kept `backcast_windows.csv` and both parts files byte-identical. Its
+  `backcast_annual.csv` kept all 117 columns as they were and added the five above.
+  - 02:10:36–02:11:09: `rerun_lane.py` over the ten commands, every command exit 0. 31/32 files unchanged; the one
+    CHANGED is `derived/oct07/backcast_annual.csv`, the columns added (its backup equals HEAD).
+  - 02:13:46–02:14:13: rerun again, IDENTICAL 32/32, exit 0. 02:14:13–02:14:41: pytest, 12 passed. Not committed.
 
 ## Rules
 

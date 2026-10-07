@@ -43,7 +43,8 @@ October 5 part is carried back as --case oct05 carries it; each item's change is
 (case_components.cjs --case oct07, the v6_<item>_<path>_<line> parts and the capital return's change by path), each on
 its line's national series (v6_series, the September 29 rules) times the group's population-share path where the part is
 the union's (path union) and the third-plus path where it is the added people's (path lineage). An item's capital
-offset component (of_component) follows its component's stock.
+offset component (of_component) follows its component's stock. Its backcast_annual.csv also carries the lineage's count
+by year and the band's ends per lineage member (per_lineage_member()), which v6's per-member figures divide by.
 """
 from __future__ import annotations
 
@@ -106,6 +107,8 @@ LATER_CASES = {"sept26": Case("main_case_2026_09_26", "_sept26_", "adopted_2026_
 DEFAULT_CASE = "sept27"
 # October 5: the identified third-plus generation by year (CPS ASEC, cps_g3plus_path.py), the lineage's path.
 G3PLUS_PATH = HERE / "inputs/cps_g3plus_path.csv"
+# v6 (oct07): the concepts carried per member of the lineage the case counts, under the ratio and income rules.
+PER_LINEAGE_MEMBER = ("net_cost_cbo_informed_oct07_low", "net_cost_cbo_informed_oct07_high")
 # A case's additions and the national series each is carried back with: the account's own source cell
 # (full_account_spending_2026_09_20/derived/categories.csv; the receipt in model.json), real, 2024 = 1,
 # times the group's population-share path, the share path this back-cast gives every line. The capital
@@ -442,6 +445,31 @@ def anchors(allocation: str) -> dict[str, float]:
                 gap=-float(a.normalized_gap_bn))
 
 
+def per_lineage_member(annual: pd.DataFrame) -> None:
+    """v6 (oct07): adds `lineage_millions`, the lineage's count by year, and each PER_LINEAGE_MEMBER concept per
+    lineage member under the ratio and income rules ($, 2024 dollars). The count is the union on the group's path, put
+    on the account's frame (the group's count times the case's union over the group's 2024 count), plus the added
+    descendants on the identified third-plus path (2024 = 1), the lineage rule above; both counts are the case lane's.
+    The frame is a constant factor, so a change against 2024 is the same on the group's frame. Gates: the union and the
+    added descendants make the case's per-member population (1e-9 million), and 2024 per member is the case's
+    v6.per_member_usd.set at each end ($0.01)."""
+    summary = json.loads((FISCAL / OCT07_LANE / "derived/summary.json").read_text())
+    counts, per_member = summary["v5"]["lineage"]["counts"], summary["v6"]["per_member_usd"]
+    union, added, lineage = (counts[k] / 1e6 for k in ("account_union", "added", "lineage_population"))
+    if abs(union + added - lineage) > 1e-9 or abs(per_member["population"] / 1e6 - lineage) > 1e-9:
+        raise ValueError(f"[BLOCKED] {OCT07_LANE}: its union and added people are not its per-member population")
+    group, g3 = annual["group_millions"], annual["g3plus_millions_cps"]
+    count = group * union / group[2024] + added * g3 / g3[2024]
+    annual["lineage_millions"] = count
+    for name, want in zip(PER_LINEAGE_MEMBER, per_member["set"]):
+        for rule in ("ratio", "income"):
+            column = f"{name}__{rule}__per_lineage_member_usd"
+            annual[column] = annual[f"{name}__{rule}"] * 1e3 / count
+            if abs(annual.loc[2024, column] - want) > 0.01:
+                raise ValueError(f"[BLOCKED] {column} is {annual.loc[2024, column]} in 2024, not the case's "
+                                 f"v6.per_member_usd.set {want}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--bea-dir", type=Path,
@@ -567,6 +595,8 @@ def main() -> None:
             if not np.isclose(annual.loc[2024, f"{name}__{rule}"], value, rtol=1e-6):
                 raise ValueError(f"[BLOCKED] {name}/{rule} does not reproduce its 2024 anchor: "
                                  f"{annual.loc[2024, f'{name}__{rule}']} vs {value}")
+    if args.case == "oct07":
+        per_lineage_member(annual)
     args.out_dir.mkdir(parents=True, exist_ok=True)
     annual.round(4).to_csv(args.out_dir / "backcast_annual.csv", index_label="year")
 
