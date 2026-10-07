@@ -1,0 +1,34 @@
+{
+ "gate_cells_checked": 10,
+ "pooling": "replicate weights / 4, common replicate index; overlapping households in adjacent ASECs are person-years, as in the carry-over lane",
+ "years": {
+  "2022": {
+   "cpi_factor_to_2024": 1.1576521386131307,
+   "income_year": 2021,
+   "rows": 152732,
+   "sha256": "7338011adefca16dae30a4469ddaf0c01cef579b607b26b4bceec749376e4ac9",
+   "source": "infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2022/asecpub22csv.zip"
+  },
+  "2023": {
+   "cpi_factor_to_2024": 1.0718730245510928,
+   "income_year": 2022,
+   "rows": 146133,
+   "sha256": "d2e000250782adfbdd7f29c82b66d866591a30f0d330496698ec19f9c784ce11",
+   "source": "infra/immigration-fiscal/latam_comparison_2026_09_17/_cache/2023/asecpub23csv.zip"
+  },
+  "2024": {
+   "cpi_factor_to_2024": 1.0294943912412784,
+   "income_year": 2023,
+   "rows": 144265,
+   "sha256": "cdb39cdac34bef99dd0940ab28e306f692404c2eea44d85dfd634214872a0a09",
+   "source": "infra/immigration-fiscal/same_year_tax_2026_09_20/_cache/asecpub24csv.zip"
+  },
+  "2025": {
+   "cpi_factor_to_2024": 1.0,
+   "income_year": 2024,
+   "rows": 142125,
+   "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+   "source": "sources/immigration-fiscal/data/external/stage3/census/cps_asec_2025/asecpub25csv.zip"
+  }
+ }
+}

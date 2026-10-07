@@ -1,0 +1,931 @@
+{
+ "K": 1000,
+ "stage": {
+  "asec": {
+   "columns": [
+    "YEAR",
+    "MONTH",
+    "SERIAL",
+    "CPSID",
+    "STATEFIP",
+    "PERNUM",
+    "CPSIDP",
+    "AGE",
+    "SEX",
+    "RACE",
+    "MOMLOC",
+    "MOMLOC2",
+    "MOMRULE",
+    "POPLOC",
+    "POPLOC2",
+    "POPRULE",
+    "BPL",
+    "MBPL",
+    "FBPL",
+    "NATIVITY",
+    "HISPAN",
+    "EMPSTAT",
+    "EDUC",
+    "ASECWT",
+    "INCWAGE"
+   ],
+   "rows": 5856362,
+   "sha256": "59e1c80d8738f8f3938b235db66f1656bce480b3cee276fcb1ed6ba748822e7e",
+   "source": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/asec_pooled.csv.gz",
+   "years": 33
+  },
+  "monthly": {
+   "columns": [
+    "YEAR",
+    "MONTH",
+    "SERIAL",
+    "CPSID",
+    "STATEFIP",
+    "PERNUM",
+    "CPSIDP",
+    "AGE",
+    "SEX",
+    "RACE",
+    "MOMLOC",
+    "MOMLOC2",
+    "MOMRULE",
+    "POPLOC",
+    "POPLOC2",
+    "POPRULE",
+    "BPL",
+    "MBPL",
+    "FBPL",
+    "NATIVITY",
+    "HISPAN",
+    "EMPSTAT",
+    "EDUC",
+    "MISH",
+    "WTFINL"
+   ],
+   "rows": 11990720,
+   "sha256": "ca414d911560deafe8398a2906e0b6edc791eeb0552841b796647b51601c24d2",
+   "source": "infra/immigration-fiscal/g3_identity_pooled_2026_10_05/_cache/monthly_mis15.csv.gz",
+   "years": 33
+  }
+ },
+ "years": {
+  "asec_1994": {
+   "g2g3_children": 90,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 3,
+    "g2g3": 0,
+    "g3g4": 1,
+    "white_pair": 43,
+    "white_pair_both": 25
+   },
+   "rows": 150943,
+   "xs_rows": 52277,
+   "year": 1994
+  },
+  "asec_1995": {
+   "g2g3_children": 95,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 1,
+    "g2g3": 2,
+    "g3g4": 0,
+    "white_pair": 53,
+    "white_pair_both": 15
+   },
+   "rows": 149642,
+   "xs_rows": 51930,
+   "year": 1995
+  },
+  "asec_1996": {
+   "g2g3_children": 78,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 3,
+    "g2g3": 1,
+    "g3g4": 0,
+    "white_pair": 56,
+    "white_pair_both": 7
+   },
+   "rows": 130476,
+   "xs_rows": 45029,
+   "year": 1996
+  },
+  "asec_1997": {
+   "g2g3_children": 76,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 1,
+    "g2g3": 0,
+    "g3g4": 0,
+    "white_pair": 30,
+    "white_pair_both": 8
+   },
+   "rows": 131854,
+   "xs_rows": 45377,
+   "year": 1997
+  },
+  "asec_1998": {
+   "g2g3_children": 80,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 2,
+    "g2g3": 0,
+    "g3g4": 1,
+    "white_pair": 35,
+    "white_pair_both": 14
+   },
+   "rows": 131617,
+   "xs_rows": 45450,
+   "year": 1998
+  },
+  "asec_1999": {
+   "g2g3_children": 79,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 3,
+    "g2g3": 2,
+    "g3g4": 0,
+    "white_pair": 33,
+    "white_pair_both": 10
+   },
+   "rows": 132324,
+   "xs_rows": 45913,
+   "year": 1999
+  },
+  "asec_2000": {
+   "g2g3_children": 88,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 1,
+    "g2g3": 1,
+    "g3g4": 0,
+    "white_pair": 48,
+    "white_pair_both": 13
+   },
+   "rows": 133710,
+   "xs_rows": 45658,
+   "year": 2000
+  },
+  "asec_2001": {
+   "g2g3_children": 82,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 3,
+    "g2g3": 1,
+    "g3g4": 0,
+    "white_pair": 71,
+    "white_pair_both": 23
+   },
+   "rows": 218269,
+   "xs_rows": 71914,
+   "year": 2001
+  },
+  "asec_2002": {
+   "g2g3_children": 63,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 4,
+    "g2g3": 1,
+    "g3g4": 3,
+    "white_pair": 87,
+    "white_pair_both": 21
+   },
+   "rows": 217219,
+   "xs_rows": 71294,
+   "year": 2002
+  },
+  "asec_2003": {
+   "g2g3_children": 72,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 4,
+    "g2g3": 0,
+    "g3g4": 3,
+    "white_pair": 91,
+    "white_pair_both": 23
+   },
+   "rows": 216424,
+   "xs_rows": 72288,
+   "year": 2003
+  },
+  "asec_2004": {
+   "g2g3_children": 90,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 1,
+    "g2g3": 0,
+    "g3g4": 1,
+    "white_pair": 9,
+    "white_pair_both": 6
+   },
+   "rows": 213241,
+   "xs_rows": 70851,
+   "year": 2004
+  },
+  "asec_2005": {
+   "g2g3_children": 92,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 1,
+    "g2g3": 0,
+    "g3g4": 0,
+    "white_pair": 26,
+    "white_pair_both": 15
+   },
+   "rows": 210648,
+   "xs_rows": 69591,
+   "year": 2005
+  },
+  "asec_2006": {
+   "g2g3_children": 81,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 1,
+    "g2g3": 0,
+    "g3g4": 0,
+    "white_pair": 21,
+    "white_pair_both": 10
+   },
+   "rows": 208562,
+   "xs_rows": 68280,
+   "year": 2006
+  },
+  "asec_2007": {
+   "g2g3_children": 98,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 0,
+    "g2g3": 1,
+    "g3g4": 0,
+    "white_pair": 17,
+    "white_pair_both": 10
+   },
+   "rows": 206639,
+   "xs_rows": 67348,
+   "year": 2007
+  },
+  "asec_2008": {
+   "g2g3_children": 94,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 2,
+    "g2g3": 1,
+    "g3g4": 1,
+    "white_pair": 17,
+    "white_pair_both": 9
+   },
+   "rows": 206404,
+   "xs_rows": 67052,
+   "year": 2008
+  },
+  "asec_2009": {
+   "g2g3_children": 78,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 1,
+    "g2g3": 1,
+    "g3g4": 1,
+    "white_pair": 28,
+    "white_pair_both": 19
+   },
+   "rows": 207921,
+   "xs_rows": 67611,
+   "year": 2009
+  },
+  "asec_2010": {
+   "g2g3_children": 103,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 6,
+    "g2g3": 0,
+    "g3g4": 1,
+    "white_pair": 77,
+    "white_pair_both": 35
+   },
+   "rows": 209802,
+   "xs_rows": 67049,
+   "year": 2010
+  },
+  "asec_2011": {
+   "g2g3_children": 106,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 8,
+    "g2g3": 4,
+    "g3g4": 1,
+    "white_pair": 106,
+    "white_pair_both": 49
+   },
+   "rows": 204983,
+   "xs_rows": 65598,
+   "year": 2011
+  },
+  "asec_2012": {
+   "g2g3_children": 89,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 9,
+    "g2g3": 5,
+    "g3g4": 0,
+    "white_pair": 113,
+    "white_pair_both": 59
+   },
+   "rows": 201398,
+   "xs_rows": 63999,
+   "year": 2012
+  },
+  "asec_2013": {
+   "g2g3_children": 96,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 7,
+    "g2g3": 11,
+    "g3g4": 10,
+    "white_pair": 112,
+    "white_pair_both": 49
+   },
+   "rows": 202634,
+   "xs_rows": 63854,
+   "year": 2013
+  },
+  "asec_2014": {
+   "g2g3_children": 107,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 9,
+    "g2g3": 4,
+    "g3g4": 5,
+    "white_pair": 115,
+    "white_pair_both": 63
+   },
+   "rows": 199556,
+   "xs_rows": 62454,
+   "year": 2014
+  },
+  "asec_2015": {
+   "g2g3_children": 84,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 17,
+    "g2g3": 1,
+    "g3g4": 1,
+    "white_pair": 84,
+    "white_pair_both": 39
+   },
+   "rows": 199024,
+   "xs_rows": 61480,
+   "year": 2015
+  },
+  "asec_2016": {
+   "g2g3_children": 99,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 13,
+    "g2g3": 5,
+    "g3g4": 6,
+    "white_pair": 131,
+    "white_pair_both": 71
+   },
+   "rows": 185487,
+   "xs_rows": 56708,
+   "year": 2016
+  },
+  "asec_2017": {
+   "g2g3_children": 112,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 16,
+    "g2g3": 5,
+    "g3g4": 4,
+    "white_pair": 123,
+    "white_pair_both": 42
+   },
+   "rows": 185914,
+   "xs_rows": 56701,
+   "year": 2017
+  },
+  "asec_2018": {
+   "g2g3_children": 103,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 13,
+    "g2g3": 3,
+    "g3g4": 6,
+    "white_pair": 121,
+    "white_pair_both": 58
+   },
+   "rows": 180084,
+   "xs_rows": 53962,
+   "year": 2018
+  },
+  "asec_2019": {
+   "g2g3_children": 102,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 20,
+    "g2g3": 3,
+    "g3g4": 6,
+    "white_pair": 114,
+    "white_pair_both": 50
+   },
+   "rows": 180101,
+   "xs_rows": 54396,
+   "year": 2019
+  },
+  "asec_2020": {
+   "g2g3_children": 84,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 12,
+    "g2g3": 1,
+    "g3g4": 2,
+    "white_pair": 70,
+    "white_pair_both": 38
+   },
+   "rows": 157959,
+   "xs_rows": 48268,
+   "year": 2020
+  },
+  "asec_2021": {
+   "g2g3_children": 107,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 12,
+    "g2g3": 2,
+    "g3g4": 4,
+    "white_pair": 74,
+    "white_pair_both": 38
+   },
+   "rows": 163543,
+   "xs_rows": 49335,
+   "year": 2021
+  },
+  "asec_2022": {
+   "g2g3_children": 75,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 16,
+    "g2g3": 3,
+    "g3g4": 1,
+    "white_pair": 85,
+    "white_pair_both": 43
+   },
+   "rows": 152732,
+   "xs_rows": 45007,
+   "year": 2022
+  },
+  "asec_2023": {
+   "g2g3_children": 78,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 13,
+    "g2g3": 1,
+    "g3g4": 5,
+    "white_pair": 60,
+    "white_pair_both": 32
+   },
+   "rows": 146133,
+   "xs_rows": 42517,
+   "year": 2023
+  },
+  "asec_2024": {
+   "g2g3_children": 92,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 18,
+    "g2g3": 2,
+    "g3g4": 2,
+    "white_pair": 65,
+    "white_pair_both": 28
+   },
+   "rows": 144265,
+   "xs_rows": 41980,
+   "year": 2024
+  },
+  "asec_2025": {
+   "g2g3_children": 100,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 8,
+    "g2g3": 4,
+    "g3g4": 2,
+    "white_pair": 77,
+    "white_pair_both": 30
+   },
+   "rows": 142125,
+   "xs_rows": 40938,
+   "year": 2025
+  },
+  "asec_2026": {
+   "g2g3_children": 102,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 10,
+    "g2g3": 5,
+    "g3g4": 3,
+    "white_pair": 75,
+    "white_pair_both": 26
+   },
+   "rows": 134729,
+   "xs_rows": 38609,
+   "year": 2026
+  },
+  "monthly_1994": {
+   "g2g3_children": 157,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 4,
+    "g2g3": 2,
+    "g3g4": 5,
+    "white_pair": 224,
+    "white_pair_both": 104
+   },
+   "rows": 413303,
+   "xs_rows": 145982,
+   "year": 1994
+  },
+  "monthly_1995": {
+   "g2g3_children": 138,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 1,
+    "g2g3": 4,
+    "g3g4": 2,
+    "white_pair": 224,
+    "white_pair_both": 59
+   },
+   "rows": 406505,
+   "xs_rows": 147019,
+   "year": 1995
+  },
+  "monthly_1996": {
+   "g2g3_children": 139,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 3,
+    "g2g3": 1,
+    "g3g4": 2,
+    "white_pair": 237,
+    "white_pair_both": 49
+   },
+   "rows": 361897,
+   "xs_rows": 131338,
+   "year": 1996
+  },
+  "monthly_1997": {
+   "g2g3_children": 114,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 4,
+    "g2g3": 0,
+    "g3g4": 0,
+    "white_pair": 137,
+    "white_pair_both": 36
+   },
+   "rows": 360343,
+   "xs_rows": 130678,
+   "year": 1997
+  },
+  "monthly_1998": {
+   "g2g3_children": 140,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 7,
+    "g2g3": 3,
+    "g3g4": 2,
+    "white_pair": 134,
+    "white_pair_both": 41
+   },
+   "rows": 361025,
+   "xs_rows": 130795,
+   "year": 1998
+  },
+  "monthly_1999": {
+   "g2g3_children": 145,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 3,
+    "g2g3": 4,
+    "g3g4": 1,
+    "white_pair": 119,
+    "white_pair_both": 30
+   },
+   "rows": 360455,
+   "xs_rows": 130782,
+   "year": 1999
+  },
+  "monthly_2000": {
+   "g2g3_children": 128,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 2,
+    "g2g3": 2,
+    "g3g4": 1,
+    "white_pair": 126,
+    "white_pair_both": 37
+   },
+   "rows": 358142,
+   "xs_rows": 127927,
+   "year": 2000
+  },
+  "monthly_2001": {
+   "g2g3_children": 108,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 3,
+    "g2g3": 2,
+    "g3g4": 4,
+    "white_pair": 131,
+    "white_pair_both": 39
+   },
+   "rows": 396257,
+   "xs_rows": 142601,
+   "year": 2001
+  },
+  "monthly_2002": {
+   "g2g3_children": 92,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 4,
+    "g2g3": 2,
+    "g3g4": 2,
+    "white_pair": 195,
+    "white_pair_both": 37
+   },
+   "rows": 420606,
+   "xs_rows": 151512,
+   "year": 2002
+  },
+  "monthly_2003": {
+   "g2g3_children": 103,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 3,
+    "g2g3": 1,
+    "g3g4": 4,
+    "white_pair": 230,
+    "white_pair_both": 52
+   },
+   "rows": 414799,
+   "xs_rows": 153616,
+   "year": 2003
+  },
+  "monthly_2004": {
+   "g2g3_children": 127,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 7,
+    "g2g3": 1,
+    "g3g4": 4,
+    "white_pair": 208,
+    "white_pair_both": 53
+   },
+   "rows": 407786,
+   "xs_rows": 150895,
+   "year": 2004
+  },
+  "monthly_2005": {
+   "g2g3_children": 124,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 1,
+    "g2g3": 2,
+    "g3g4": 0,
+    "white_pair": 55,
+    "white_pair_both": 29
+   },
+   "rows": 403875,
+   "xs_rows": 148676,
+   "year": 2005
+  },
+  "monthly_2006": {
+   "g2g3_children": 130,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 3,
+    "g2g3": 2,
+    "g3g4": 0,
+    "white_pair": 44,
+    "white_pair_both": 22
+   },
+   "rows": 401603,
+   "xs_rows": 147167,
+   "year": 2006
+  },
+  "monthly_2007": {
+   "g2g3_children": 135,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 2,
+    "g2g3": 3,
+    "g3g4": 2,
+    "white_pair": 43,
+    "white_pair_both": 21
+   },
+   "rows": 396314,
+   "xs_rows": 143985,
+   "year": 2007
+  },
+  "monthly_2008": {
+   "g2g3_children": 125,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 2,
+    "g2g3": 3,
+    "g3g4": 0,
+    "white_pair": 54,
+    "white_pair_both": 27
+   },
+   "rows": 393333,
+   "xs_rows": 143299,
+   "year": 2008
+  },
+  "monthly_2009": {
+   "g2g3_children": 131,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 5,
+    "g2g3": 2,
+    "g3g4": 1,
+    "white_pair": 53,
+    "white_pair_both": 23
+   },
+   "rows": 398714,
+   "xs_rows": 145108,
+   "year": 2009
+  },
+  "monthly_2010": {
+   "g2g3_children": 153,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 10,
+    "g2g3": 4,
+    "g3g4": 3,
+    "white_pair": 216,
+    "white_pair_both": 91
+   },
+   "rows": 400695,
+   "xs_rows": 144067,
+   "year": 2010
+  },
+  "monthly_2011": {
+   "g2g3_children": 128,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 10,
+    "g2g3": 3,
+    "g3g4": 3,
+    "white_pair": 273,
+    "white_pair_both": 124
+   },
+   "rows": 395630,
+   "xs_rows": 141965,
+   "year": 2011
+  },
+  "monthly_2012": {
+   "g2g3_children": 133,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 17,
+    "g2g3": 5,
+    "g3g4": 4,
+    "white_pair": 263,
+    "white_pair_both": 140
+   },
+   "rows": 392936,
+   "xs_rows": 140051,
+   "year": 2012
+  },
+  "monthly_2013": {
+   "g2g3_children": 137,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 12,
+    "g2g3": 5,
+    "g3g4": 9,
+    "white_pair": 268,
+    "white_pair_both": 130
+   },
+   "rows": 388886,
+   "xs_rows": 137736,
+   "year": 2013
+  },
+  "monthly_2014": {
+   "g2g3_children": 132,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 19,
+    "g2g3": 5,
+    "g3g4": 1,
+    "white_pair": 273,
+    "white_pair_both": 136
+   },
+   "rows": 390978,
+   "xs_rows": 137102,
+   "year": 2014
+  },
+  "monthly_2015": {
+   "g2g3_children": 151,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 28,
+    "g2g3": 9,
+    "g3g4": 16,
+    "white_pair": 282,
+    "white_pair_both": 134
+   },
+   "rows": 383937,
+   "xs_rows": 132833,
+   "year": 2015
+  },
+  "monthly_2016": {
+   "g2g3_children": 168,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 28,
+    "g2g3": 13,
+    "g3g4": 15,
+    "white_pair": 316,
+    "white_pair_both": 155
+   },
+   "rows": 380397,
+   "xs_rows": 131251,
+   "year": 2016
+  },
+  "monthly_2017": {
+   "g2g3_children": 161,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 26,
+    "g2g3": 6,
+    "g3g4": 4,
+    "white_pair": 289,
+    "white_pair_both": 150
+   },
+   "rows": 374565,
+   "xs_rows": 128351,
+   "year": 2017
+  },
+  "monthly_2018": {
+   "g2g3_children": 139,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 28,
+    "g2g3": 8,
+    "g3g4": 7,
+    "white_pair": 330,
+    "white_pair_both": 168
+   },
+   "rows": 360218,
+   "xs_rows": 122276,
+   "year": 2018
+  },
+  "monthly_2019": {
+   "g2g3_children": 147,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 21,
+    "g2g3": 3,
+    "g3g4": 6,
+    "white_pair": 334,
+    "white_pair_both": 155
+   },
+   "rows": 347444,
+   "xs_rows": 117656,
+   "year": 2019
+  },
+  "monthly_2020": {
+   "g2g3_children": 137,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 13,
+    "g2g3": 0,
+    "g3g4": 5,
+    "white_pair": 201,
+    "white_pair_both": 65
+   },
+   "rows": 296491,
+   "xs_rows": 100154,
+   "year": 2020
+  },
+  "monthly_2021": {
+   "g2g3_children": 153,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 16,
+    "g2g3": 6,
+    "g3g4": 9,
+    "white_pair": 200,
+    "white_pair_both": 80
+   },
+   "rows": 309355,
+   "xs_rows": 102501,
+   "year": 2021
+  },
+  "monthly_2022": {
+   "g2g3_children": 118,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 22,
+    "g2g3": 3,
+    "g3g4": 3,
+    "white_pair": 202,
+    "white_pair_both": 85
+   },
+   "rows": 296524,
+   "xs_rows": 96479,
+   "year": 2022
+  },
+  "monthly_2023": {
+   "g2g3_children": 133,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 19,
+    "g2g3": 10,
+    "g3g4": 4,
+    "white_pair": 193,
+    "white_pair_both": 90
+   },
+   "rows": 293512,
+   "xs_rows": 94325,
+   "year": 2023
+  },
+  "monthly_2024": {
+   "g2g3_children": 165,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 20,
+    "g2g3": 3,
+    "g3g4": 8,
+    "white_pair": 177,
+    "white_pair_both": 74
+   },
+   "rows": 290276,
+   "xs_rows": 92423,
+   "year": 2024
+  },
+  "monthly_2025": {
+   "g2g3_children": 134,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 14,
+    "g2g3": 3,
+    "g3g4": 7,
+    "white_pair": 192,
+    "white_pair_both": 84
+   },
+   "rows": 256197,
+   "xs_rows": 81269,
+   "year": 2025
+  },
+  "monthly_2026": {
+   "g2g3_children": 87,
+   "pairs_dropped_parent_under_14_years_older": {
+    "g1g2": 5,
+    "g2g3": 4,
+    "g3g4": 5,
+    "white_pair": 114,
+    "white_pair_both": 36
+   },
+   "rows": 177722,
+   "xs_rows": 55617,
+   "year": 2026
+  }
+ }
+}
