@@ -1,0 +1,11 @@
+arm,p4_effective,relative_step_from_p3,rule
+b_one_step (v5 central),0.7811662365560668,0.879582,"p3 x (1 - 0.1204), held for G5+"
+vhb_i_relative,0.6104265316327787,0.6873315363881402,"p3 x (G4+/G3)_VHB, Mexican"
+vhb_ii_g1norm,0.587557603686636,0.6615814508885343,"(G4+/G1)_VHB, Mexican"
+vhb_ii_g2norm,0.6085918854415275,0.6852657510396751,"(G4+/G2)_VHB, Mexican"
+vhb_iii_hispanic,0.8692147842173551,0.9787234042553191,"p3 x (G4+/G3)_VHB, Hispanic (not the account's construct)"
+vhb_iv_cal_cps,0.7321097343856926,0.8243450807979433,"p3 x (G4+/G3)_VHB ^ k, k = 0.515194 (CPS vs VHB, G1 to G3)"
+vhb_iv_cal_dt,0.7765043371979303,0.8743327680576334,"p3 x (G4+/G3)_VHB ^ k, k = 0.358177 (CPS 2025 vs DT 1994-2006, G3)"
+vhb_v_compound,0.4650271935025891,0.5236139630390143,"VHB step compounded past G4, rho 0.5 (beside)"
+k_cps,0.5151939328019262,,ln(p3 / G1_CPS 0.962853) / ln(G3_VHB / G1_VHB)
+k_dt,0.35817668245782547,,ln(p3) / ln(p3_DT 0.718)

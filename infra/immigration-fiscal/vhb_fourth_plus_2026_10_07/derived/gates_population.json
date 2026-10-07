@@ -1,0 +1,64 @@
+{
+ "gates": [
+  {
+   "gate": "generation_results_sept29.csv has one G3plus (a) population at both ends",
+   "passed": true,
+   "detail": "14342574.606276"
+  },
+  {
+   "gate": "arm3_correction_bounds.csv carries one self-identified third-plus count",
+   "passed": true,
+   "detail": "{14383006.5}"
+  },
+  {
+   "gate": "the frame factor is the armed-forces share only (0.99 < f < 1)",
+   "passed": true,
+   "detail": "0.997189"
+  },
+  {
+   "gate": "the floor's p3 is the arms' G3 rate rounded (4 decimals)",
+   "passed": true,
+   "detail": "0.8881107578 vs 0.8881"
+  },
+  {
+   "gate": "population_arms.csv: G3-rate = min(added, (1 - p3) x corrected third-plus), later = the rest, and corrected - added = the self-identified third-plus (1e-6 M)",
+   "passed": true,
+   "detail": "max |diff| 1.00e-07 M"
+  },
+  {
+   "gate": "the floor row's added persons are all at the G3 rate: (1 - p3) x its corrected third-plus covers them",
+   "passed": true,
+   "detail": "801,695.9"
+  },
+  {
+   "gate": "C3 central is imported from summarize.py SPLIT_C3 (one '(central)' entry, ba_plus, 0 <= C3 <= 1.5)",
+   "passed": true,
+   "detail": "pooled with CPS monthly 1994-2026 (central): 0.5567 (SE 0.2457)"
+  },
+  {
+   "gate": "s is the finite-response lane's 40.896574m / 340.110988m",
+   "passed": true,
+   "detail": "0.12024478903339636"
+  },
+  {
+   "gate": "the property lane's ACS proxy group is 36-42 million",
+   "passed": true,
+   "detail": "39,429,519"
+  },
+  {
+   "gate": "grandparent cells: four cells, hidden children positive in each",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "grandparent cells reproduce arm3_fractional_counting.csv's 0.5916 for all third-generation children",
+   "passed": true,
+   "detail": "0.591589"
+  },
+  {
+   "gate": "arm b is the brief's central: about 3.0M added on the population lane's frame, 44.02M lineage",
+   "passed": true,
+   "detail": "3.0483M; account frame 3.0397M"
+  }
+ ]
+}

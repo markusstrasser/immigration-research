@@ -1,0 +1,200 @@
+{
+ "meta": {
+  "source": "main_case_lineage_2026_10_05/population.py",
+  "account_union": 39712493.3312,
+  "frame_factor": 0.9971889122261052,
+  "frame_rule": "the account's civilian G3+ (generation_results_sept29.csv, convention a) over the population lane's self-identified third-plus (all person records): row 4 leaves US-born weights alone",
+  "union_ratio_not_used": 0.9693529096154301,
+  "g3_account": 14342574.606276,
+  "self_id_third_plus_cps": 14383006.5,
+  "p3": 0.8881107577872976,
+  "split_rule": "bounds_coverage_fiscal.py arm 5 (identity_loss_propagation population_arms.csv): G3-rate = min(added, (1 - p3) x corrected third-plus), later losses = the rest",
+  "s_v4": 0.12024478903339636,
+  "s_rule": "(40.896574m + added) / 340.110988m, finite_response_2026_09_26 s_national_memo",
+  "acs_proxy_group": 39429519.0,
+  "central_arm": "b"
+ },
+ "c3": {
+  "label": "pooled with CPS monthly 1994-2026 (central)",
+  "measure": "ba_plus",
+  "value": 0.5567,
+  "se": 0.2457,
+  "every_entry": {
+   "pooled with CPS monthly 1994-2026 (central)": {
+    "c3": 0.5567,
+    "se": 0.2457
+   },
+   "pooled with CPS 2022-26 (sensitivity)": {
+    "c3": 0.907,
+    "se": 0.6122
+   }
+  },
+  "override": false,
+  "source": "generation_carryover_2026_09_27/summarize.py SPLIT_C3 (imported)"
+ },
+ "fractional_ancestry": {
+  "hidden_third_generation": 0.40754236199207944,
+  "identified_third_generation": 0.6155849283900978,
+  "all_third_generation": 0.5915887669521136,
+  "rule": "a quarter per Mexico-born grandparent; hidden = children - self-identified per cell (arm3_grandparent_counts.csv); later losses take the same weight, an upper bound"
+ },
+ "arms": {
+  "floor": {
+   "source_arm": "floor",
+   "rho": null,
+   "added_cps": 801695.9,
+   "added": 799442.2624571284,
+   "g3_rate": 799442.2624571284,
+   "later": 0.0,
+   "population": 40511935.59365713,
+   "s": 0.12259532250824288,
+   "k_metro": 1.0202752222885887
+  },
+  "a": {
+   "source_arm": "a_current",
+   "rho": 0.5,
+   "added_cps": 1812052.5,
+   "added": 1806958.6613715945,
+   "g3_rate": 1806958.6613715945,
+   "later": 0.0,
+   "population": 41519451.9925716,
+   "s": 0.12555763902979694,
+   "k_metro": 1.0458275603456282
+  },
+  "b": {
+   "source_arm": "b_one_step",
+   "rho": 0.5,
+   "added_cps": 3048288.6,
+   "added": 3039719.593185237,
+   "g3_rate": 1944891.7263696424,
+   "later": 1094827.8668155947,
+   "population": 42752212.92438524,
+   "s": 0.12918222328408055,
+   "k_metro": 1.0770924847748014
+  },
+  "c": {
+   "source_arm": "c_compound",
+   "rho": 0.5,
+   "added_cps": 4284524.7,
+   "added": 4272480.52499888,
+   "g3_rate": 2082824.3924921257,
+   "later": 2189656.1325067542,
+   "population": 43984973.856198885,
+   "s": 0.13280680753836416,
+   "k_metro": 1.1083574092039743
+  },
+  "vhb_i_relative": {
+   "source_arm": "vhb_i_relative",
+   "rho": 0.5,
+   "added_cps": 5919803.9,
+   "added": 5903162.811632856,
+   "g3_rate": 2265280.2471999186,
+   "later": 3637882.564432937,
+   "population": 45615656.14283286,
+   "s": 0.13760136679745513,
+   "k_metro": 1.1497142993713125
+  },
+  "vhb_ii_g1norm": {
+   "source_arm": "vhb_ii_g1norm",
+   "rho": 0.5,
+   "added_cps": 6431150.6,
+   "added": 6413072.0711762635,
+   "g3_rate": 2322333.6130618053,
+   "later": 4090738.4581144582,
+   "population": 46125565.402376264,
+   "s": 0.13910061050769773,
+   "k_metro": 1.162646469797825
+  },
+  "vhb_ii_g2norm": {
+   "source_arm": "vhb_ii_g2norm",
+   "rho": 0.5,
+   "added_cps": 5959408.6,
+   "added": 5942656.179344896,
+   "g3_rate": 2269699.090426666,
+   "later": 3672957.08891823,
+   "population": 45655149.510544896,
+   "s": 0.13771748585595503,
+   "k_metro": 1.1507159186837885
+  },
+  "vhb_iii_hispanic": {
+   "source_arm": "vhb_iii_hispanic",
+   "rho": 0.5,
+   "added_cps": 2008356.2000000002,
+   "added": 2002710.5344405542,
+   "g3_rate": 1828861.616671967,
+   "later": 173848.91776858713,
+   "population": 41715203.86564056,
+   "s": 0.12613319195215345,
+   "k_metro": 1.050792162451704
+  },
+  "vhb_iv_cal_cps": {
+   "source_arm": "vhb_iv_cal_cps",
+   "rho": 0.5,
+   "added_cps": 3736196.7,
+   "added": 3725693.923135764,
+   "g3_rate": 2021644.8583492297,
+   "later": 1704049.0647865343,
+   "population": 43438187.25433577,
+   "s": 0.13119913645111567,
+   "k_metro": 1.0944899663405927
+  },
+  "vhb_iv_cal_dt": {
+   "source_arm": "vhb_iv_cal_dt",
+   "rho": 0.5,
+   "added_cps": 3109923.8,
+   "added": 3101181.5312280753,
+   "g3_rate": 1951768.6402650273,
+   "later": 1149412.890963048,
+   "population": 42813674.86242808,
+   "s": 0.12936293469950483,
+   "k_metro": 1.0786512645824584
+  },
+  "vhb_v_compound": {
+   "source_arm": "vhb_v_compound",
+   "rho": 0.5,
+   "added_cps": 10027555.3,
+   "added": 9999366.961894117,
+   "g3_rate": 2723601.4341526777,
+   "later": 7275765.52774144,
+   "population": 49711860.29309412,
+   "s": 0.1496450945651133,
+   "k_metro": 1.2536010383969969
+  },
+  "b_later_c3": {
+   "source_arm": "b_one_step",
+   "rho": 0.5,
+   "added_cps": 3048288.6,
+   "added": 3039719.593185237,
+   "g3_rate": 3039719.593185237,
+   "later": 0.0,
+   "population": 42752212.92438524,
+   "s": 0.12918222328408055,
+   "k_metro": 1.0770924847748014,
+   "rule": "arm b's persons, every one priced at (1 - C3) G3+ + C3 W"
+  },
+  "vhb_i_relative_later_c3": {
+   "source_arm": "vhb_i_relative",
+   "rho": 0.5,
+   "added_cps": 5919803.9,
+   "added": 5903162.811632856,
+   "g3_rate": 5903162.811632856,
+   "later": 0.0,
+   "population": 45615656.14283286,
+   "s": 0.13760136679745513,
+   "k_metro": 1.1497142993713125,
+   "rule": "arm vhb_i_relative's persons, every one priced at (1 - C3) G3+ + C3 W"
+  },
+  "vhb_iv_cal_cps_later_c3": {
+   "source_arm": "vhb_iv_cal_cps",
+   "rho": 0.5,
+   "added_cps": 3736196.7,
+   "added": 3725693.923135764,
+   "g3_rate": 3725693.923135764,
+   "later": 0.0,
+   "population": 43438187.25433577,
+   "s": 0.13119913645111567,
+   "k_metro": 1.0944899663405927,
+   "rule": "arm vhb_iv_cal_cps's persons, every one priced at (1 - C3) G3+ + C3 W"
+  }
+ }
+}

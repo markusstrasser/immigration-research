@@ -1,0 +1,19 @@
+{
+ "gates": [
+  {
+   "gate": "every lineage-lane band row is present here",
+   "passed": true,
+   "detail": "74 rows; missing []"
+  },
+  {
+   "gate": "floor, a, b, c, v4: every numeric column equals the lineage lane's (1e-06)",
+   "passed": true,
+   "detail": "max |diff| 0.00e+00 at None"
+  },
+  {
+   "gate": "the rule text of every control row is unchanged",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

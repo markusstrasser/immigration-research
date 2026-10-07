@@ -1,0 +1,2382 @@
+{
+ "passed": true,
+ "count": 396,
+ "gates": [
+  {
+   "step": "population",
+   "gate": "generation_results_sept29.csv has one G3plus (a) population at both ends",
+   "passed": true,
+   "detail": "14342574.606276"
+  },
+  {
+   "step": "population",
+   "gate": "arm3_correction_bounds.csv carries one self-identified third-plus count",
+   "passed": true,
+   "detail": "{14383006.5}"
+  },
+  {
+   "step": "population",
+   "gate": "the frame factor is the armed-forces share only (0.99 < f < 1)",
+   "passed": true,
+   "detail": "0.997189"
+  },
+  {
+   "step": "population",
+   "gate": "the floor's p3 is the arms' G3 rate rounded (4 decimals)",
+   "passed": true,
+   "detail": "0.8881107578 vs 0.8881"
+  },
+  {
+   "step": "population",
+   "gate": "population_arms.csv: G3-rate = min(added, (1 - p3) x corrected third-plus), later = the rest, and corrected - added = the self-identified third-plus (1e-6 M)",
+   "passed": true,
+   "detail": "max |diff| 1.00e-07 M"
+  },
+  {
+   "step": "population",
+   "gate": "the floor row's added persons are all at the G3 rate: (1 - p3) x its corrected third-plus covers them",
+   "passed": true,
+   "detail": "801,695.9"
+  },
+  {
+   "step": "population",
+   "gate": "C3 central is imported from summarize.py SPLIT_C3 (one '(central)' entry, ba_plus, 0 <= C3 <= 1.5)",
+   "passed": true,
+   "detail": "pooled with CPS monthly 1994-2026 (central): 0.5567 (SE 0.2457)"
+  },
+  {
+   "step": "population",
+   "gate": "s is the finite-response lane's 40.896574m / 340.110988m",
+   "passed": true,
+   "detail": "0.12024478903339636"
+  },
+  {
+   "step": "population",
+   "gate": "the property lane's ACS proxy group is 36-42 million",
+   "passed": true,
+   "detail": "39,429,519"
+  },
+  {
+   "step": "population",
+   "gate": "grandparent cells: four cells, hidden children positive in each",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "population",
+   "gate": "grandparent cells reproduce arm3_fractional_counting.csv's 0.5916 for all third-generation children",
+   "passed": true,
+   "detail": "0.591589"
+  },
+  {
+   "step": "population",
+   "gate": "arm b is the brief's central: about 3.0M added on the population lane's frame, 44.02M lineage",
+   "passed": true,
+   "detail": "3.0483M; account frame 3.0397M"
+  },
+  {
+   "step": "white",
+   "gate": "rekey_sept29.setup(): every positive control of the white lane passes",
+   "passed": true,
+   "detail": "57 passes"
+  },
+  {
+   "step": "white",
+   "gate": "the row-4 frame is the account's 39,712,493 (2 persons)",
+   "passed": true,
+   "detail": "39,712,493.3312"
+  },
+  {
+   "step": "white",
+   "gate": "the lane's frame holds the account's G3+ (generation_results_sept29.csv, 14,342,575; 50 persons)",
+   "passed": true,
+   "detail": "14,342,574.8 vs 14,342,574.6"
+  },
+  {
+   "step": "white",
+   "gate": "g3plus_ages: the slice is scaled to the account's count (2 persons)",
+   "passed": true,
+   "detail": "39,712,493.3312"
+  },
+  {
+   "step": "white",
+   "gate": "own: the slice is scaled to the account's count (2 persons)",
+   "passed": true,
+   "detail": "39,712,493.3312"
+  },
+  {
+   "step": "white",
+   "gate": "union_ages_control: the slice is scaled to the account's count (2 persons)",
+   "passed": true,
+   "detail": "39,712,493.3312"
+  },
+  {
+   "step": "white",
+   "gate": "g3plus_ages accrual: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "step": "white",
+   "gate": "g3plus_ages accrual: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "step": "white",
+   "gate": "g3plus_ages cash: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "step": "white",
+   "gate": "g3plus_ages cash: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "step": "white",
+   "gate": "own accrual low: run29 reproduces rekey_summary_sept29.csv A1_third_plus_nh_white cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 24.2382 vs 24.2382"
+  },
+  {
+   "step": "white",
+   "gate": "own accrual high: run29 reproduces rekey_summary_sept29.csv A1_third_plus_nh_white cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 74.0620 vs 74.0620"
+  },
+  {
+   "step": "white",
+   "gate": "own accrual: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "step": "white",
+   "gate": "own accrual: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "step": "white",
+   "gate": "own cash low: run29 reproduces rekey_summary_sept29.csv A1_third_plus_nh_white cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 97.7524 vs 97.7524"
+  },
+  {
+   "step": "white",
+   "gate": "own cash high: run29 reproduces rekey_summary_sept29.csv A1_third_plus_nh_white cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 147.5761 vs 147.5761"
+  },
+  {
+   "step": "white",
+   "gate": "own cash: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "step": "white",
+   "gate": "own cash: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "step": "white",
+   "gate": "union_ages_control accrual low: run29 reproduces rekey_summary_sept29.csv A3_third_plus_nh_white_at_union_ages cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 34.0254 vs 34.0254"
+  },
+  {
+   "step": "white",
+   "gate": "union_ages_control accrual high: run29 reproduces rekey_summary_sept29.csv A3_third_plus_nh_white_at_union_ages cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost 84.1225 vs 84.1225"
+  },
+  {
+   "step": "white",
+   "gate": "union_ages_control accrual: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "step": "white",
+   "gate": "union_ages_control accrual: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "step": "white",
+   "gate": "union_ages_control cash low: run29 reproduces rekey_summary_sept29.csv A3_third_plus_nh_white_at_union_ages cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost -57.0645 vs -57.0645"
+  },
+  {
+   "step": "white",
+   "gate": "union_ages_control cash high: run29 reproduces rekey_summary_sept29.csv A3_third_plus_nh_white_at_union_ages cost, capital and net budget (5e-5)",
+   "passed": true,
+   "detail": "cost -6.9674 vs -6.9674"
+  },
+  {
+   "step": "white",
+   "gate": "union_ages_control cash: W's line amounts are the same at both ends (no allocation arm in the rough keys)",
+   "passed": true,
+   "detail": "max |low - high| 0.0e+00 bn"
+  },
+  {
+   "step": "white",
+   "gate": "union_ages_control cash: the engine's union-only corrections are zero for whites",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "step": "fractional",
+   "gate": "G2: the frame's weights give generation_results_sept29.csv's population (1 person)",
+   "passed": true,
+   "detail": "14,333,217.66 vs 14,333,217.66"
+  },
+  {
+   "step": "fractional",
+   "gate": "G3plus: the frame's weights give generation_results_sept29.csv's population (1 person)",
+   "passed": true,
+   "detail": "14,342,574.61 vs 14,342,574.61"
+  },
+  {
+   "step": "fractional",
+   "gate": "G2: every member is in exactly one class (two Mexico-born parents, other abroad, US-born seen, US-born unseen)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "fractional",
+   "gate": "G3plus: with both parents at home the low bound is a quarter per Mexico-born grandparent (exact)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "fractional",
+   "gate": "the convention's 0.6156 is population.json's identified third-generation mix (1e-12)",
+   "passed": true,
+   "detail": "0.615585"
+  },
+  {
+   "step": "fractional",
+   "gate": "positive control: the population lane's linkage on this frame reproduces arm3_grandparent_counts.csv's cells (0.1 person, the file's rounding) and its identified mix (1e-6)",
+   "passed": true,
+   "detail": "max |diff| 0.04 persons; mix 0.615585"
+  },
+  {
+   "step": "fractional",
+   "gate": "the stated bound's low end is the seen members' strict mean (1e-12), and low <= high",
+   "passed": true,
+   "detail": "0.304578 / 0.666495"
+  },
+  {
+   "step": "fractional",
+   "gate": "G2 shares lie between 1/2 and 1 (low <= central <= high); G3plus's stated bound and convention lie inside its outer bounds",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "fractional",
+   "gate": "the classes cover G2 and G3plus exactly (1 person)",
+   "passed": true,
+   "detail": "28,675,792.2"
+  },
+  {
+   "step": "engine",
+   "gate": "audit row 8's constant is the September 24 package's 2.0",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "the adopted package's payload is main_case_2026_09_29/derived/corrections.json, byte for byte as JSON",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "general government: r_values.py's formula at s_v4 gives meta.responses (low, high; 1e-14)",
+   "passed": true,
+   "detail": "0.6000461560720316 / 0.8503957662020014"
+  },
+  {
+   "step": "engine",
+   "gate": "audit row 8's factor at s_v4 is meta.responses.row8_factor (1e-14)",
+   "passed": true,
+   "detail": "0.9491629658844111"
+  },
+  {
+   "step": "engine",
+   "gate": "every long-run subfunction has build.py's rule, and the rules at the lane's s give its stored responses (1e-14)",
+   "passed": true,
+   "detail": "19 subfunctions"
+  },
+  {
+   "step": "engine",
+   "gate": "the line blends of the stored subfunction responses are meta.responses' and the response lane's line responses (2e-16)",
+   "passed": true,
+   "detail": "0.0e+0 / -1.1e-16; 0.0e+0 / 0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "meta.responses' subfunctions are the response lane's (exact)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "the property formula on counties.csv gives housing.json's owner and renter responses and the payload's (5e-6: six-decimal inputs)",
+   "passed": true,
+   "detail": "0.7629028 / 0.7084426"
+  },
+  {
+   "step": "engine",
+   "gate": "set: the package's payload is main_case_2026_09_29/derived/corrections.json",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set: 64 specifications, every one at the case's responses",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set: generation_corrections_sept29.json splits main_case_2026_09_29/derived/corrections.json",
+   "passed": true,
+   "detail": "main_case_2026_09_29/derived/corrections.json"
+  },
+  {
+   "step": "engine",
+   "gate": "set: the G3+ model has the union's cells and production grid",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set: the generation models' lane-constants cells add to the union's (1e-12)",
+   "passed": true,
+   "detail": "2.2e-16"
+  },
+  {
+   "step": "engine",
+   "gate": "set: white_lines.json's central age structure is the identified G3+'s",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set: every line of the model has a white amount (white_lines.json g3plus_ages accrual)",
+   "passed": true,
+   "detail": "79 lines"
+  },
+  {
+   "step": "engine",
+   "gate": "set: every line of the model has a white amount (white_lines.json own accrual)",
+   "passed": true,
+   "detail": "79 lines"
+  },
+  {
+   "step": "engine",
+   "gate": "set: at zero added persons this lane's evaluation is the package's evaluateFull at all 64 specifications, cost and every capital component",
+   "passed": true,
+   "detail": "max |diff| 0 / 0"
+  },
+  {
+   "step": "engine",
+   "gate": "set: the augmented model with zero added persons reproduces v4 at all 64 specifications (0 difference) and the published adopted band (5e-5) at 48 / 11",
+   "passed": true,
+   "detail": "371.4146 / 434.8410; max |diff| 0"
+  },
+  {
+   "step": "engine",
+   "gate": "set: the union reproduces per_spec.csv's methods' mean at every specification (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set: the corrected G3+ model reproduces generation_results_sept29.csv (a) G3plus cost and per member, and one member scaled back gives it (1e-9)",
+   "passed": true,
+   "detail": "122.613075bn, $8548.89 / 168.374903bn, $11739.52"
+  },
+  {
+   "step": "engine",
+   "gate": "set: whites' lines in the engine at the case's responses give the white lane's net budget at both ends and both age structures (1e-9 bn)",
+   "passed": true,
+   "detail": "max |diff| 3.6e-13 bn"
+  },
+  {
+   "step": "engine",
+   "gate": "set: the three generation models add to v4 at all 64 specifications (1e-9) and give generation_results_sept29.csv's convention (a) costs (5e-7)",
+   "passed": true,
+   "detail": "1.4e-12 / 3.4e-7"
+  },
+  {
+   "step": "engine",
+   "gate": "set floor: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 4.0e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set floor: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.4e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set floor low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "set floor high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set floor: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set a: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set a: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.4e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set a low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set a high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set a: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set b: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set b: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set b low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.8e-15, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set b high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set b: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set c: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set c: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.4e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set c low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set c high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set c: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.4e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.4e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 4.0e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.3e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.3e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 3.4e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.4e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.4e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3 low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3 high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.4e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3 low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3 high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 3.4e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.3e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3 low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3 high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: the package's payload is main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash: 64 specifications, every one at the case's responses",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash: generation_corrections_sept29_cash.json splits main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json",
+   "passed": true,
+   "detail": "main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: the G3+ model has the union's cells and production grid",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash: the generation models' lane-constants cells add to the union's (1e-12)",
+   "passed": true,
+   "detail": "2.2e-16"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: white_lines.json's central age structure is the identified G3+'s",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash: every line of the model has a white amount (white_lines.json g3plus_ages cash)",
+   "passed": true,
+   "detail": "79 lines"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: every line of the model has a white amount (white_lines.json own cash)",
+   "passed": true,
+   "detail": "79 lines"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: at zero added persons this lane's evaluation is the package's evaluateFull at all 64 specifications, cost and every capital component",
+   "passed": true,
+   "detail": "max |diff| 0 / 0"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: the augmented model with zero added persons reproduces v4 at all 64 specifications (0 difference) and the published cash_set band (5e-5) at 48 / 11",
+   "passed": true,
+   "detail": "294.7011 / 361.8175; max |diff| 0"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: the corrected G3+ model reproduces generation_results_sept29_cash.csv (a) G3plus cost and per member, and one member scaled back gives it (1e-9)",
+   "passed": true,
+   "detail": "89.779625bn, $6259.66 / 145.755415bn, $10162.43"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: whites' lines in the engine at the case's responses give the white lane's net budget at both ends and both age structures (1e-9 bn)",
+   "passed": true,
+   "detail": "max |diff| 3.6e-13 bn"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: the three generation models add to v4 at all 64 specifications (1e-9) and give generation_results_sept29_cash.csv's convention (a) costs (5e-7)",
+   "passed": true,
+   "detail": "1.5e-12 / 3.3e-7"
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 4.0e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash a: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash a: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash a low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash a high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash a: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash c: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash c: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash c low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash c high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash c: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 3.4e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 3.6e-15, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.4e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3 low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3 high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3 low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 7.1e-15, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3 high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3: the augmented model is the union at the new responses + m_G G3+ members + m_W whites at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "max |diff| 2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3: the generation models at the new responses add to the union at all 64 specifications (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3 low: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 2.8e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3 high: each line's v4 + response move + G3+ part + white part is its v5 amount, and the lines add to the costs (1e-9)",
+   "passed": true,
+   "detail": "lines 1.4e-14, totals 1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3: the C3 line at the central C3 is the band (1e-9)",
+   "passed": true,
+   "detail": "0.0e+0"
+  },
+  {
+   "step": "engine",
+   "gate": "set floor: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "3.4e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set a: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set b: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set c: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash a: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash c: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.7e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "2.8e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "1.1e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "2.3e-13"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3: the recombination at the central reproduces the augmented band (1e-9)",
+   "passed": true,
+   "detail": "5.7e-14"
+  },
+  {
+   "step": "engine",
+   "gate": "fractional count, positive control: every share at 1 gives the whole-person cost at every specification, v4 and every arm (1e-9)",
+   "passed": true,
+   "detail": "1.5e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "fractional count at whole union members and the added persons' mix reproduces the fractional_attriters_only row (1e-9)",
+   "passed": true,
+   "detail": "1.6e-12"
+  },
+  {
+   "step": "engine",
+   "gate": "set floor: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set floor: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set floor: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set floor: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set a: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set a: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set a: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set a: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set b: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set b: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set b: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set b: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set c: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set c: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set c: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set c: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash a: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash a: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash a: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash a: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash b: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash b: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash b: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash b: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash c: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash c: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash c: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash c: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3: the band's ends stay at specifications 48 / 11 with C3 at 0 and at 1 and with whites at their own ages",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "step": "engine",
+   "gate": "set floor: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set a: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set b: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set c: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g1norm: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_ii_g2norm: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iii_hispanic: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_dt: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_v_compound: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set b_later_c3: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_i_relative_later_c3: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set vhb_iv_cal_cps_later_c3: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash floor: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash a: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash c: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g1norm: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_ii_g2norm: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iii_hispanic: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_dt: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_v_compound: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash b_later_c3: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_i_relative_later_c3: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "cash vhb_iv_cal_cps_later_c3: the v5 band's ends are v4's, specifications 48 / 11",
+   "passed": true,
+   "detail": "48 / 11"
+  },
+  {
+   "step": "engine",
+   "gate": "set: a consumer applying the payload addition to the v4 payload model with its meta gets the v5 band (1e-9)",
+   "passed": true,
+   "detail": "390.2940 / 461.2431"
+  },
+  {
+   "step": "engine",
+   "gate": "cash: a consumer applying the payload addition to the v4 payload model with its meta gets the v5 band (1e-9)",
+   "passed": true,
+   "detail": "307.3764 / 383.4093"
+  },
+  {
+   "step": "engine",
+   "gate": "every lineage table's lines add to the band's change from v4 (1e-9)",
+   "passed": true,
+   "detail": "0 failures"
+  },
+  {
+   "step": "engine",
+   "gate": "every printed lineage table's parts add to its printed total (one decimal, controlled rounding)",
+   "passed": true,
+   "detail": "728 rows"
+  }
+ ]
+}

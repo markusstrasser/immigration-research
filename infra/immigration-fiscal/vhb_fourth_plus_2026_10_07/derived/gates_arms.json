@@ -1,0 +1,74 @@
+{
+ "gates": [
+  {
+   "gate": "p3 is the population lane's 0.888111 (6 decimals)",
+   "passed": true,
+   "detail": "0.8881107578"
+  },
+  {
+   "gate": "the DT replication's 2025 third-generation rate is p3 (two decimals, its print)",
+   "passed": true,
+   "detail": "0.8881 vs 0.888111"
+  },
+  {
+   "gate": "arm (i) is 0.8881 x 0.687 = 0.610 (3 decimals)",
+   "passed": true,
+   "detail": "0.610427; VHB G4+/G3 0.687332"
+  },
+  {
+   "gate": "arm b's relative step is 0.880 (1 - the G3+ parents' 0.1204 loss)",
+   "passed": true,
+   "detail": "0.879582"
+  },
+  {
+   "gate": "calibration exponents lie in (0, 1): VHB's step is steeper than today's on both comparisons",
+   "passed": true,
+   "detail": "k_cps 0.5152, k_dt 0.3582"
+  },
+  {
+   "gate": "rerun of arm b_one_step (rho 0.5) equals population_arms.csv in every column, as written",
+   "passed": true,
+   "detail": "added 3.0482886M; differing columns []"
+  },
+  {
+   "gate": "rerun of arm c_compound (rho 0.5) equals population_arms.csv in every column, as written",
+   "passed": true,
+   "detail": "added 4.2845247M; differing columns []"
+  },
+  {
+   "gate": "arm a's stored p4 is p3 (its row is the bound's measured-rate row)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "account-frame arm floor equals main_case_lineage population.json exactly",
+   "passed": true,
+   "detail": "added 799,442.3"
+  },
+  {
+   "gate": "account-frame arm a equals main_case_lineage population.json exactly",
+   "passed": true,
+   "detail": "added 1,806,958.7"
+  },
+  {
+   "gate": "account-frame arm b equals main_case_lineage population.json exactly",
+   "passed": true,
+   "detail": "added 3,039,719.6"
+  },
+  {
+   "gate": "account-frame arm c equals main_case_lineage population.json exactly",
+   "passed": true,
+   "detail": "added 4,272,480.5"
+  },
+  {
+   "gate": "population.json meta and C3 equal the lineage lane's",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "gate": "arm b on the account's frame is 3,039,719.6",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

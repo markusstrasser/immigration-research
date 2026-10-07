@@ -1,0 +1,16 @@
+ages,generation,unweighted_n,id_mexican,id_mexican_se,id_hispanic,id_hispanic_se
+20+,"G1 (Mexico-born, any citizenship)",5478,0.962853,0.003633,0.984081,0.002375
+20+,"G1 (Mexico-born, foreign-born)",5345,0.965674,0.003586,0.985844,0.002298
+20+,G2 (two Mexico-born parents),2334,0.966860,0.004320,0.985477,0.003136
+20+,"G2.5 (one Mexico-born parent, the other US-born)",1015,0.893474,0.014652,0.944398,0.010958
+20+,"G2 (one Mexico-born parent, the other born abroad elsewhere)",187,0.660577,0.044635,0.950055,0.018880
+20+,"G2 (both parents born abroad, at least one in Mexico: VHB's second)",2521,0.944480,0.005575,0.982889,0.003205
+20+,G2 (any Mexico-born parent: the account's G2),3536,0.930129,0.006253,0.972059,0.003880
+all ages,"G1 (Mexico-born, any citizenship)",5808,0.962702,0.003576,0.984620,0.002248
+all ages,"G1 (Mexico-born, foreign-born)",5637,0.965393,0.003553,0.986296,0.002187
+all ages,G2 (two Mexico-born parents),4074,0.967030,0.003950,0.985713,0.002813
+all ages,"G2.5 (one Mexico-born parent, the other US-born)",1943,0.908105,0.009738,0.950585,0.008004
+all ages,"G2 (one Mexico-born parent, the other born abroad elsewhere)",347,0.629050,0.034522,0.918414,0.025907
+all ages,"G2 (both parents born abroad, at least one in Mexico: VHB's second)",4421,0.941303,0.004953,0.980591,0.003230
+all ages,G2 (any Mexico-born parent: the account's G2),6364,0.931226,0.004969,0.971482,0.003429
+children (co-resident parents),"G3 (account p3, arm 3)",,0.888111,,,

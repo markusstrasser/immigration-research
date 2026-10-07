@@ -1,0 +1,729 @@
+set,arm,end,part,lineage_bn,printed_bn
+set,floor,low,receipts: union response move,-0.091067,-0.100000
+set,floor,low,receipts: G3+ members,-4.734262,-4.700000
+set,floor,low,receipts: whites,-7.394980,-7.400000
+set,floor,low,spending: union response move,0.009637,0.000000
+set,floor,low,spending: G3+ members,7.501737,7.500000
+set,floor,low,spending: whites,7.998573,8.000000
+set,floor,low,capital return: union response move,0.002676,0.000000
+set,floor,low,capital return: G3+ members,0.309934,0.300000
+set,floor,low,capital return: whites,0.412225,0.400000
+set,floor,low,production gain: union response move,0.000000,0.000000
+set,floor,low,production gain: G3+ members,-0.048457,0.000000
+set,floor,low,production gain: whites,0.000000,0.000000
+set,floor,low,total,3.966017,4.000000
+set,floor,high,receipts: union response move,-0.091067,-0.100000
+set,floor,high,receipts: G3+ members,-3.872326,-3.900000
+set,floor,high,receipts: whites,-7.394980,-7.400000
+set,floor,high,spending: union response move,0.006930,0.000000
+set,floor,high,spending: G3+ members,7.513646,7.500000
+set,floor,high,spending: whites,8.267367,8.300000
+set,floor,high,capital return: union response move,0.000877,0.000000
+set,floor,high,capital return: G3+ members,0.550205,0.500000
+set,floor,high,capital return: whites,0.676611,0.700000
+set,floor,high,production gain: union response move,0.000000,0.000000
+set,floor,high,production gain: G3+ members,-0.031876,0.000000
+set,floor,high,production gain: whites,0.000000,0.000000
+set,floor,high,total,5.625387,5.600000
+set,a,low,receipts: union response move,-0.205038,-0.200000
+set,a,low,receipts: G3+ members,-10.703107,-10.700000
+set,a,low,receipts: whites,-16.718873,-16.700000
+set,a,low,spending: union response move,0.021811,0.000000
+set,a,low,spending: G3+ members,16.956282,17.000000
+set,a,low,spending: whites,18.079352,18.100000
+set,a,low,capital return: union response move,0.006057,0.000000
+set,a,low,capital return: G3+ members,0.700604,0.700000
+set,a,low,capital return: whites,0.931831,0.900000
+set,a,low,production gain: union response move,0.000000,0.000000
+set,a,low,production gain: G3+ members,-0.109525,-0.100000
+set,a,low,production gain: whites,0.000000,0.000000
+set,a,low,total,8.959394,9.000000
+set,a,high,receipts: union response move,-0.205038,-0.200000
+set,a,high,receipts: G3+ members,-8.754895,-8.700000
+set,a,high,receipts: whites,-16.718873,-16.700000
+set,a,high,spending: union response move,0.015683,0.000000
+set,a,high,spending: G3+ members,16.983132,17.000000
+set,a,high,spending: whites,18.686810,18.700000
+set,a,high,capital return: union response move,0.001984,0.000000
+set,a,high,capital return: G3+ members,1.243638,1.200000
+set,a,high,capital return: whites,1.529355,1.500000
+set,a,high,production gain: union response move,0.000000,0.000000
+set,a,high,production gain: G3+ members,-0.072048,-0.100000
+set,a,high,production gain: whites,0.000000,0.000000
+set,a,high,total,12.709749,12.700000
+set,b,low,receipts: union response move,-0.345247,-0.300000
+set,b,low,receipts: G3+ members,-26.156101,-26.100000
+set,b,low,receipts: whites,-18.000648,-18.000000
+set,b,low,spending: union response move,0.036752,0.000000
+set,b,low,spending: G3+ members,41.427102,41.400000
+set,b,low,spending: whites,19.459936,19.500000
+set,b,low,capital return: union response move,0.010207,0.000000
+set,b,low,capital return: G3+ members,1.711862,1.700000
+set,b,low,capital return: whites,1.003079,1.000000
+set,b,low,production gain: union response move,0.000000,0.000000
+set,b,low,production gain: G3+ members,-0.267583,-0.300000
+set,b,low,production gain: whites,0.000000,0.000000
+set,b,low,total,18.879358,18.900000
+set,b,high,receipts: union response move,-0.345247,-0.300000
+set,b,high,receipts: G3+ members,-21.396389,-21.400000
+set,b,high,receipts: whites,-18.000648,-18.000000
+set,b,high,spending: union response move,0.026424,0.000000
+set,b,high,spending: G3+ members,41.492503,41.500000
+set,b,high,spending: whites,20.113645,20.100000
+set,b,high,capital return: union response move,0.003344,0.000000
+set,b,high,capital return: G3+ members,3.038421,3.000000
+set,b,high,capital return: whites,1.646135,1.700000
+set,b,high,production gain: union response move,0.000000,0.000000
+set,b,high,production gain: G3+ members,-0.176021,-0.200000
+set,b,high,production gain: whites,0.000000,0.000000
+set,b,high,total,26.402166,26.400000
+set,c,low,receipts: union response move,-0.485295,-0.500000
+set,c,low,receipts: G3+ members,-41.617524,-41.600000
+set,c,low,receipts: whites,-19.283200,-19.300000
+set,c,low,spending: union response move,0.051741,0.100000
+set,c,low,spending: G3+ members,65.898993,65.900000
+set,c,low,spending: whites,20.840590,20.800000
+set,c,low,capital return: union response move,0.014371,0.000000
+set,c,low,capital return: G3+ members,2.723360,2.700000
+set,c,low,capital return: whites,1.074344,1.100000
+set,c,low,production gain: union response move,0.000000,0.000000
+set,c,low,production gain: G3+ members,-0.425641,-0.400000
+set,c,low,production gain: whites,0.000000,0.000000
+set,c,low,total,28.791740,28.800000
+set,c,high,receipts: union response move,-0.485295,-0.500000
+set,c,high,receipts: G3+ members,-34.046310,-34.000000
+set,c,high,receipts: whites,-19.283200,-19.300000
+set,c,high,spending: union response move,0.037198,0.000000
+set,c,high,spending: G3+ members,66.002709,66.000000
+set,c,high,spending: whites,21.540532,21.600000
+set,c,high,capital return: union response move,0.004707,0.000000
+set,c,high,capital return: G3+ members,4.833284,4.800000
+set,c,high,capital return: whites,1.762919,1.800000
+set,c,high,production gain: union response move,0.000000,0.000000
+set,c,high,production gain: G3+ members,-0.279994,-0.300000
+set,c,high,production gain: whites,0.000000,0.000000
+set,c,high,total,40.086549,40.100000
+set,vhb_i_relative,low,receipts: union response move,-0.671233,-0.700000
+set,vhb_i_relative,low,receipts: G3+ members,-62.082750,-62.100000
+set,vhb_i_relative,low,receipts: whites,-20.980984,-21.000000
+set,vhb_i_relative,low,spending: union response move,0.071645,0.100000
+set,vhb_i_relative,low,spending: G3+ members,98.271778,98.300000
+set,vhb_i_relative,low,spending: whites,22.667019,22.700000
+set,vhb_i_relative,low,capital return: union response move,0.019901,0.000000
+set,vhb_i_relative,low,capital return: G3+ members,4.061732,4.000000
+set,vhb_i_relative,low,capital return: whites,1.168639,1.200000
+set,vhb_i_relative,low,production gain: union response move,0.000000,0.000000
+set,vhb_i_relative,low,production gain: G3+ members,-0.634718,-0.600000
+set,vhb_i_relative,low,production gain: whites,0.000000,0.000000
+set,vhb_i_relative,low,total,41.891029,41.900000
+set,vhb_i_relative,high,receipts: union response move,-0.671233,-0.600000
+set,vhb_i_relative,high,receipts: G3+ members,-50.792514,-50.800000
+set,vhb_i_relative,high,receipts: whites,-20.980984,-21.000000
+set,vhb_i_relative,high,spending: union response move,0.051501,0.100000
+set,vhb_i_relative,high,spending: G3+ members,98.425814,98.400000
+set,vhb_i_relative,high,spending: whites,23.428091,23.400000
+set,vhb_i_relative,high,capital return: union response move,0.006517,0.000000
+set,vhb_i_relative,high,capital return: G3+ members,7.207631,7.200000
+set,vhb_i_relative,high,capital return: whites,1.917409,1.900000
+set,vhb_i_relative,high,production gain: union response move,0.000000,0.000000
+set,vhb_i_relative,high,production gain: G3+ members,-0.417529,-0.400000
+set,vhb_i_relative,high,production gain: whites,0.000000,0.000000
+set,vhb_i_relative,high,total,58.174703,58.200000
+set,vhb_ii_g1norm,low,receipts: union response move,-0.728227,-0.700000
+set,vhb_ii_g1norm,low,receipts: G3+ members,-68.485047,-68.500000
+set,vhb_ii_g1norm,low,receipts: whites,-21.512104,-21.500000
+set,vhb_ii_g1norm,low,spending: union response move,0.077887,0.100000
+set,vhb_ii_g1norm,low,spending: G3+ members,108.395033,108.400000
+set,vhb_ii_g1norm,low,spending: whites,23.238164,23.200000
+set,vhb_ii_g1norm,low,capital return: union response move,0.021635,0.000000
+set,vhb_ii_g1norm,low,capital return: G3+ members,4.480324,4.500000
+set,vhb_ii_g1norm,low,capital return: whites,1.198131,1.200000
+set,vhb_ii_g1norm,low,production gain: union response move,0.000000,0.000000
+set,vhb_ii_g1norm,low,production gain: G3+ members,-0.700096,-0.700000
+set,vhb_ii_g1norm,low,production gain: whites,0.000000,0.000000
+set,vhb_ii_g1norm,low,total,45.985700,46.000000
+set,vhb_ii_g1norm,high,receipts: union response move,-0.728227,-0.700000
+set,vhb_ii_g1norm,high,receipts: G3+ members,-56.031885,-56.000000
+set,vhb_ii_g1norm,high,receipts: whites,-21.512104,-21.500000
+set,vhb_ii_g1norm,high,spending: union response move,0.055986,0.000000
+set,vhb_ii_g1norm,high,spending: G3+ members,108.564720,108.600000
+set,vhb_ii_g1norm,high,spending: whites,24.018345,24.000000
+set,vhb_ii_g1norm,high,capital return: union response move,0.007085,0.000000
+set,vhb_ii_g1norm,high,capital return: G3+ members,7.950111,7.900000
+set,vhb_ii_g1norm,high,capital return: whites,1.965719,2.000000
+set,vhb_ii_g1norm,high,production gain: union response move,0.000000,0.000000
+set,vhb_ii_g1norm,high,production gain: G3+ members,-0.460536,-0.500000
+set,vhb_ii_g1norm,high,production gain: whites,0.000000,0.000000
+set,vhb_ii_g1norm,high,total,63.829213,63.800000
+set,vhb_ii_g2norm,low,receipts: union response move,-0.675747,-0.700000
+set,vhb_ii_g2norm,low,receipts: G3+ members,-62.578581,-62.600000
+set,vhb_ii_g2norm,low,receipts: whites,-21.022120,-21.000000
+set,vhb_ii_g2norm,low,spending: union response move,0.072129,0.100000
+set,vhb_ii_g2norm,low,spending: G3+ members,99.055836,99.000000
+set,vhb_ii_g2norm,low,spending: whites,22.711254,22.700000
+set,vhb_ii_g2norm,low,capital return: union response move,0.020035,0.000000
+set,vhb_ii_g2norm,low,capital return: G3+ members,4.094151,4.100000
+set,vhb_ii_g2norm,low,capital return: whites,1.170923,1.200000
+set,vhb_ii_g2norm,low,production gain: union response move,0.000000,0.000000
+set,vhb_ii_g2norm,low,production gain: G3+ members,-0.639782,-0.600000
+set,vhb_ii_g2norm,low,production gain: whites,0.000000,0.000000
+set,vhb_ii_g2norm,low,total,42.208099,42.200000
+set,vhb_ii_g2norm,high,receipts: union response move,-0.675747,-0.700000
+set,vhb_ii_g2norm,high,receipts: G3+ members,-51.198274,-51.200000
+set,vhb_ii_g2norm,high,receipts: whites,-21.022120,-21.000000
+set,vhb_ii_g2norm,high,spending: union response move,0.051849,0.000000
+set,vhb_ii_g2norm,high,spending: G3+ members,99.211086,99.200000
+set,vhb_ii_g2norm,high,spending: whites,23.473806,23.500000
+set,vhb_ii_g2norm,high,capital return: union response move,0.006561,0.000000
+set,vhb_ii_g2norm,high,capital return: G3+ members,7.265137,7.300000
+set,vhb_ii_g2norm,high,capital return: whites,1.921151,1.900000
+set,vhb_ii_g2norm,high,production gain: union response move,0.000000,0.000000
+set,vhb_ii_g2norm,high,production gain: G3+ members,-0.420860,-0.400000
+set,vhb_ii_g2norm,high,production gain: whites,0.000000,0.000000
+set,vhb_ii_g2norm,high,total,58.612588,58.600000
+set,vhb_iii_hispanic,low,receipts: union response move,-0.227256,-0.200000
+set,vhb_iii_hispanic,low,receipts: G3+ members,-13.156343,-13.200000
+set,vhb_iii_hispanic,low,receipts: whites,-16.922357,-16.900000
+set,vhb_iii_hispanic,low,spending: union response move,0.024180,0.000000
+set,vhb_iii_hispanic,low,spending: G3+ members,20.841963,20.800000
+set,vhb_iii_hispanic,low,spending: whites,18.298576,18.300000
+set,vhb_iii_hispanic,low,capital return: union response move,0.006715,0.000000
+set,vhb_iii_hispanic,low,capital return: G3+ members,0.861167,0.900000
+set,vhb_iii_hispanic,low,capital return: whites,0.943143,0.900000
+set,vhb_iii_hispanic,low,production gain: union response move,0.000000,0.000000
+set,vhb_iii_hispanic,low,production gain: G3+ members,-0.134623,-0.100000
+set,vhb_iii_hispanic,low,production gain: whites,0.000000,0.000000
+set,vhb_iii_hispanic,low,total,10.535165,10.500000
+set,vhb_iii_hispanic,high,receipts: union response move,-0.227256,-0.200000
+set,vhb_iii_hispanic,high,receipts: G3+ members,-10.761689,-10.800000
+set,vhb_iii_hispanic,high,receipts: whites,-16.922357,-16.900000
+set,vhb_iii_hispanic,high,spending: union response move,0.017387,0.000000
+set,vhb_iii_hispanic,high,spending: G3+ members,20.874951,20.900000
+set,vhb_iii_hispanic,high,spending: whites,18.913379,18.900000
+set,vhb_iii_hispanic,high,capital return: union response move,0.002200,0.000000
+set,vhb_iii_hispanic,high,capital return: G3+ members,1.528628,1.500000
+set,vhb_iii_hispanic,high,capital return: whites,1.547899,1.600000
+set,vhb_iii_hispanic,high,production gain: union response move,0.000000,0.000000
+set,vhb_iii_hispanic,high,production gain: G3+ members,-0.088558,-0.100000
+set,vhb_iii_hispanic,high,production gain: whites,0.000000,0.000000
+set,vhb_iii_hispanic,high,total,14.884583,14.900000
+set,vhb_iv_cal_cps,low,receipts: union response move,-0.422997,-0.400000
+set,vhb_iv_cal_cps,low,receipts: G3+ members,-34.758614,-34.800000
+set,vhb_iv_cal_cps,low,receipts: whites,-18.714224,-18.700000
+set,vhb_iv_cal_cps,low,spending: union response move,0.045087,0.100000
+set,vhb_iv_cal_cps,low,spending: G3+ members,55.044443,55.000000
+set,vhb_iv_cal_cps,low,spending: whites,20.228197,20.200000
+set,vhb_iv_cal_cps,low,capital return: union response move,0.012523,0.000000
+set,vhb_iv_cal_cps,low,capital return: G3+ members,2.274684,2.300000
+set,vhb_iv_cal_cps,low,capital return: whites,1.042733,1.000000
+set,vhb_iv_cal_cps,low,production gain: union response move,0.000000,0.000000
+set,vhb_iv_cal_cps,low,production gain: G3+ members,-0.355535,-0.300000
+set,vhb_iv_cal_cps,low,production gain: whites,0.000000,0.000000
+set,vhb_iv_cal_cps,low,total,24.396295,24.400000
+set,vhb_iv_cal_cps,high,receipts: union response move,-0.422997,-0.400000
+set,vhb_iv_cal_cps,high,receipts: G3+ members,-28.434431,-28.400000
+set,vhb_iv_cal_cps,high,receipts: whites,-18.714224,-18.700000
+set,vhb_iv_cal_cps,high,spending: union response move,0.032415,0.000000
+set,vhb_iv_cal_cps,high,spending: G3+ members,55.131194,55.100000
+set,vhb_iv_cal_cps,high,spending: whites,20.907635,20.900000
+set,vhb_iv_cal_cps,high,capital return: union response move,0.004102,0.000000
+set,vhb_iv_cal_cps,high,capital return: G3+ members,4.037169,4.000000
+set,vhb_iv_cal_cps,high,capital return: whites,1.711119,1.700000
+set,vhb_iv_cal_cps,high,production gain: union response move,0.000000,0.000000
+set,vhb_iv_cal_cps,high,production gain: G3+ members,-0.233877,-0.200000
+set,vhb_iv_cal_cps,high,production gain: whites,0.000000,0.000000
+set,vhb_iv_cal_cps,high,total,34.018103,34.000000
+set,vhb_iv_cal_dt,low,receipts: union response move,-0.352196,-0.300000
+set,vhb_iv_cal_dt,low,receipts: G3+ members,-26.926762,-26.900000
+set,vhb_iv_cal_dt,low,receipts: whites,-18.064572,-18.100000
+set,vhb_iv_cal_dt,low,spending: union response move,0.037498,0.000000
+set,vhb_iv_cal_dt,low,spending: G3+ members,42.647176,42.700000
+set,vhb_iv_cal_dt,low,spending: whites,19.528770,19.500000
+set,vhb_iv_cal_dt,low,capital return: union response move,0.010414,0.000000
+set,vhb_iv_cal_dt,low,capital return: G3+ members,1.762286,1.800000
+set,vhb_iv_cal_dt,low,capital return: whites,1.006632,1.000000
+set,vhb_iv_cal_dt,low,production gain: union response move,0.000000,0.000000
+set,vhb_iv_cal_dt,low,production gain: G3+ members,-0.275463,-0.300000
+set,vhb_iv_cal_dt,low,production gain: whites,0.000000,0.000000
+set,vhb_iv_cal_dt,low,total,19.373783,19.400000
+set,vhb_iv_cal_dt,high,receipts: union response move,-0.352196,-0.300000
+set,vhb_iv_cal_dt,high,receipts: G3+ members,-22.026876,-22.000000
+set,vhb_iv_cal_dt,high,receipts: whites,-18.064572,-18.100000
+set,vhb_iv_cal_dt,high,spending: union response move,0.026960,0.000000
+set,vhb_iv_cal_dt,high,spending: G3+ members,42.714492,42.700000
+set,vhb_iv_cal_dt,high,spending: whites,20.184784,20.200000
+set,vhb_iv_cal_dt,high,capital return: union response move,0.003411,0.000000
+set,vhb_iv_cal_dt,high,capital return: G3+ members,3.127906,3.100000
+set,vhb_iv_cal_dt,high,capital return: whites,1.651957,1.700000
+set,vhb_iv_cal_dt,high,production gain: union response move,0.000000,0.000000
+set,vhb_iv_cal_dt,high,production gain: G3+ members,-0.181205,-0.200000
+set,vhb_iv_cal_dt,high,production gain: whites,0.000000,0.000000
+set,vhb_iv_cal_dt,high,total,27.084662,27.100000
+set,vhb_v_compound,low,receipts: union response move,-1.132504,-1.100000
+set,vhb_v_compound,low,receipts: G3+ members,-113.554529,-113.600000
+set,vhb_v_compound,low,receipts: whites,-25.251507,-25.200000
+set,vhb_v_compound,low,spending: union response move,0.122031,0.100000
+set,vhb_v_compound,low,spending: G3+ members,179.599174,179.600000
+set,vhb_v_compound,low,spending: whites,27.255506,27.300000
+set,vhb_v_compound,low,capital return: union response move,0.033904,0.000000
+set,vhb_v_compound,low,capital return: G3+ members,7.425551,7.400000
+set,vhb_v_compound,low,capital return: whites,1.405639,1.400000
+set,vhb_v_compound,low,production gain: union response move,0.000000,0.000000
+set,vhb_v_compound,low,production gain: G3+ members,-1.159911,-1.200000
+set,vhb_v_compound,low,production gain: whites,0.000000,0.000000
+set,vhb_v_compound,low,total,74.743354,74.700000
+set,vhb_v_compound,high,receipts: union response move,-1.132504,-1.100000
+set,vhb_v_compound,high,receipts: G3+ members,-92.922268,-92.900000
+set,vhb_v_compound,high,receipts: whites,-25.251507,-25.300000
+set,vhb_v_compound,high,spending: union response move,0.087694,0.100000
+set,vhb_v_compound,high,spending: G3+ members,179.877771,179.900000
+set,vhb_v_compound,high,spending: whites,28.169998,28.200000
+set,vhb_v_compound,high,capital return: union response move,0.011098,0.000000
+set,vhb_v_compound,high,capital return: G3+ members,13.172512,13.200000
+set,vhb_v_compound,high,capital return: whites,2.305522,2.300000
+set,vhb_v_compound,high,production gain: union response move,0.000000,0.000000
+set,vhb_v_compound,high,production gain: G3+ members,-0.763011,-0.800000
+set,vhb_v_compound,high,production gain: whites,0.000000,0.000000
+set,vhb_v_compound,high,total,103.555304,103.600000
+set,b_later_c3,low,receipts: union response move,-0.345247,-0.300000
+set,b_later_c3,low,receipts: G3+ members,-18.010004,-18.000000
+set,b_later_c3,low,receipts: whites,-28.133660,-28.100000
+set,b_later_c3,low,spending: union response move,0.036752,0.000000
+set,b_later_c3,low,spending: G3+ members,28.524980,28.500000
+set,b_later_c3,low,spending: whites,30.414418,30.400000
+set,b_later_c3,low,capital return: union response move,0.010207,0.000000
+set,b_later_c3,low,capital return: G3+ members,1.178717,1.200000
+set,b_later_c3,low,capital return: whites,1.567737,1.600000
+set,b_later_c3,low,production gain: union response move,0.000000,0.000000
+set,b_later_c3,low,production gain: G3+ members,-0.184247,-0.200000
+set,b_later_c3,low,production gain: whites,0.000000,0.000000
+set,b_later_c3,low,total,15.059653,15.100000
+set,b_later_c3,high,receipts: union response move,-0.345247,-0.400000
+set,b_later_c3,high,receipts: G3+ members,-14.732663,-14.700000
+set,b_later_c3,high,receipts: whites,-28.133660,-28.100000
+set,b_later_c3,high,spending: union response move,0.026424,0.000000
+set,b_later_c3,high,spending: G3+ members,28.570012,28.600000
+set,b_later_c3,high,spending: whites,31.436115,31.400000
+set,b_later_c3,high,capital return: union response move,0.003344,0.000000
+set,b_later_c3,high,capital return: G3+ members,2.092130,2.100000
+set,b_later_c3,high,capital return: whites,2.572785,2.600000
+set,b_later_c3,high,production gain: union response move,0.000000,0.000000
+set,b_later_c3,high,production gain: G3+ members,-0.121201,-0.100000
+set,b_later_c3,high,production gain: whites,0.000000,0.000000
+set,b_later_c3,high,total,21.368039,21.400000
+set,vhb_i_relative_later_c3,low,receipts: union response move,-0.671233,-0.700000
+set,vhb_i_relative_later_c3,low,receipts: G3+ members,-34.997796,-35.000000
+set,vhb_i_relative_later_c3,low,receipts: whites,-54.674985,-54.700000
+set,vhb_i_relative_later_c3,low,spending: union response move,0.071645,0.100000
+set,vhb_i_relative_later_c3,low,spending: G3+ members,55.398571,55.400000
+set,vhb_i_relative_later_c3,low,spending: whites,59.068675,59.100000
+set,vhb_i_relative_later_c3,low,capital return: union response move,0.019901,0.000000
+set,vhb_i_relative_later_c3,low,capital return: G3+ members,2.289713,2.300000
+set,vhb_i_relative_later_c3,low,capital return: whites,3.045393,3.100000
+set,vhb_i_relative_later_c3,low,production gain: union response move,0.000000,0.000000
+set,vhb_i_relative_later_c3,low,production gain: G3+ members,-0.357808,-0.400000
+set,vhb_i_relative_later_c3,low,production gain: whites,0.000000,0.000000
+set,vhb_i_relative_later_c3,low,total,29.192075,29.200000
+set,vhb_i_relative_later_c3,high,receipts: union response move,-0.671233,-0.700000
+set,vhb_i_relative_later_c3,high,receipts: G3+ members,-28.633172,-28.600000
+set,vhb_i_relative_later_c3,high,receipts: whites,-54.674985,-54.700000
+set,vhb_i_relative_later_c3,high,spending: union response move,0.051501,0.000000
+set,vhb_i_relative_later_c3,high,spending: G3+ members,55.485406,55.500000
+set,vhb_i_relative_later_c3,high,spending: whites,61.051975,61.000000
+set,vhb_i_relative_later_c3,high,capital return: union response move,0.006517,0.000000
+set,vhb_i_relative_later_c3,high,capital return: G3+ members,4.063145,4.100000
+set,vhb_i_relative_later_c3,high,capital return: whites,4.996634,5.000000
+set,vhb_i_relative_later_c3,high,production gain: union response move,0.000000,0.000000
+set,vhb_i_relative_later_c3,high,production gain: G3+ members,-0.235373,-0.200000
+set,vhb_i_relative_later_c3,high,production gain: whites,0.000000,0.000000
+set,vhb_i_relative_later_c3,high,total,41.440416,41.400000
+set,vhb_iv_cal_cps_later_c3,low,receipts: union response move,-0.422997,-0.400000
+set,vhb_iv_cal_cps_later_c3,low,receipts: G3+ members,-22.077669,-22.100000
+set,vhb_iv_cal_cps_later_c3,low,receipts: whites,-34.488486,-34.500000
+set,vhb_iv_cal_cps_later_c3,low,spending: union response move,0.045087,0.100000
+set,vhb_iv_cal_cps_later_c3,low,spending: G3+ members,34.962642,35.000000
+set,vhb_iv_cal_cps_later_c3,low,spending: whites,37.278590,37.300000
+set,vhb_iv_cal_cps_later_c3,low,capital return: union response move,0.012523,0.000000
+set,vhb_iv_cal_cps_later_c3,low,capital return: G3+ members,1.444814,1.400000
+set,vhb_iv_cal_cps_later_c3,low,capital return: whites,1.921654,1.900000
+set,vhb_iv_cal_cps_later_c3,low,production gain: union response move,0.000000,0.000000
+set,vhb_iv_cal_cps_later_c3,low,production gain: G3+ members,-0.225826,-0.200000
+set,vhb_iv_cal_cps_later_c3,low,production gain: whites,0.000000,0.000000
+set,vhb_iv_cal_cps_later_c3,low,total,18.450331,18.500000
+set,vhb_iv_cal_cps_later_c3,high,receipts: union response move,-0.422997,-0.400000
+set,vhb_iv_cal_cps_later_c3,high,receipts: G3+ members,-18.060731,-18.100000
+set,vhb_iv_cal_cps_later_c3,high,receipts: whites,-34.488486,-34.500000
+set,vhb_iv_cal_cps_later_c3,high,spending: union response move,0.032415,0.000000
+set,vhb_iv_cal_cps_later_c3,high,spending: G3+ members,35.017744,35.000000
+set,vhb_iv_cal_cps_later_c3,high,spending: whites,38.530728,38.500000
+set,vhb_iv_cal_cps_later_c3,high,capital return: union response move,0.004102,0.000000
+set,vhb_iv_cal_cps_later_c3,high,capital return: G3+ members,2.564293,2.600000
+set,vhb_iv_cal_cps_later_c3,high,capital return: whites,3.153426,3.200000
+set,vhb_iv_cal_cps_later_c3,high,production gain: union response move,0.000000,0.000000
+set,vhb_iv_cal_cps_later_c3,high,production gain: G3+ members,-0.148552,-0.100000
+set,vhb_iv_cal_cps_later_c3,high,production gain: whites,0.000000,0.000000
+set,vhb_iv_cal_cps_later_c3,high,total,26.181941,26.200000
+cash,floor,low,receipts: union response move,-0.091067,-0.100000
+cash,floor,low,receipts: G3+ members,-4.758910,-4.800000
+cash,floor,low,receipts: whites,-7.456137,-7.500000
+cash,floor,low,spending: union response move,0.009637,0.000000
+cash,floor,low,spending: G3+ members,6.715099,6.700000
+cash,floor,low,spending: whites,7.351068,7.400000
+cash,floor,low,capital return: union response move,0.002676,0.000000
+cash,floor,low,capital return: G3+ members,0.309934,0.300000
+cash,floor,low,capital return: whites,0.412225,0.400000
+cash,floor,low,production gain: union response move,0.000000,0.000000
+cash,floor,low,production gain: G3+ members,-0.048457,0.000000
+cash,floor,low,production gain: whites,0.000000,0.000000
+cash,floor,low,total,2.446069,2.400000
+cash,floor,high,receipts: union response move,-0.091067,-0.100000
+cash,floor,high,receipts: G3+ members,-3.891471,-3.900000
+cash,floor,high,receipts: whites,-7.456137,-7.500000
+cash,floor,high,spending: union response move,0.006930,0.000000
+cash,floor,high,spending: G3+ members,6.973882,7.000000
+cash,floor,high,spending: whites,7.619862,7.600000
+cash,floor,high,capital return: union response move,0.000877,0.000000
+cash,floor,high,capital return: G3+ members,0.550205,0.600000
+cash,floor,high,capital return: whites,0.676611,0.700000
+cash,floor,high,production gain: union response move,0.000000,0.000000
+cash,floor,high,production gain: G3+ members,-0.031876,0.000000
+cash,floor,high,production gain: whites,0.000000,0.000000
+cash,floor,high,total,4.357818,4.400000
+cash,a,low,receipts: union response move,-0.205038,-0.200000
+cash,a,low,receipts: G3+ members,-10.758819,-10.800000
+cash,a,low,receipts: whites,-16.857104,-16.800000
+cash,a,low,spending: union response move,0.021811,0.000000
+cash,a,low,spending: G3+ members,15.178263,15.200000
+cash,a,low,spending: whites,16.615814,16.600000
+cash,a,low,capital return: union response move,0.006057,0.000000
+cash,a,low,capital return: G3+ members,0.700604,0.700000
+cash,a,low,capital return: whites,0.931831,0.900000
+cash,a,low,production gain: union response move,0.000000,0.000000
+cash,a,low,production gain: G3+ members,-0.109525,-0.100000
+cash,a,low,production gain: whites,0.000000,0.000000
+cash,a,low,total,5.523895,5.500000
+cash,a,high,receipts: union response move,-0.205038,-0.200000
+cash,a,high,receipts: G3+ members,-8.798168,-8.800000
+cash,a,high,receipts: whites,-16.857104,-16.900000
+cash,a,high,spending: union response move,0.015683,0.000000
+cash,a,high,spending: G3+ members,15.763119,15.800000
+cash,a,high,spending: whites,17.223272,17.200000
+cash,a,high,capital return: union response move,0.001984,0.000000
+cash,a,high,capital return: G3+ members,1.243638,1.300000
+cash,a,high,capital return: whites,1.529355,1.500000
+cash,a,high,production gain: union response move,0.000000,0.000000
+cash,a,high,production gain: G3+ members,-0.072048,-0.100000
+cash,a,high,production gain: whites,0.000000,0.000000
+cash,a,high,total,9.844694,9.800000
+cash,b,low,receipts: union response move,-0.345247,-0.300000
+cash,b,low,receipts: G3+ members,-26.292211,-26.300000
+cash,b,low,receipts: whites,-18.149430,-18.100000
+cash,b,low,spending: union response move,0.036752,0.000000
+cash,b,low,spending: G3+ members,37.083192,37.100000
+cash,b,low,spending: whites,17.884680,17.900000
+cash,b,low,capital return: union response move,0.010207,0.000000
+cash,b,low,capital return: G3+ members,1.711862,1.700000
+cash,b,low,capital return: whites,1.003079,1.000000
+cash,b,low,production gain: union response move,0.000000,0.000000
+cash,b,low,production gain: G3+ members,-0.267583,-0.300000
+cash,b,low,production gain: whites,0.000000,0.000000
+cash,b,low,total,12.675300,12.700000
+cash,b,high,receipts: union response move,-0.345247,-0.300000
+cash,b,high,receipts: G3+ members,-21.502110,-21.500000
+cash,b,high,receipts: whites,-18.149430,-18.100000
+cash,b,high,spending: union response move,0.026424,0.000000
+cash,b,high,spending: G3+ members,38.511867,38.500000
+cash,b,high,spending: whites,18.538388,18.500000
+cash,b,high,capital return: union response move,0.003344,0.000000
+cash,b,high,capital return: G3+ members,3.038421,3.000000
+cash,b,high,capital return: whites,1.646135,1.700000
+cash,b,high,production gain: union response move,0.000000,0.000000
+cash,b,high,production gain: G3+ members,-0.176021,-0.200000
+cash,b,high,production gain: whites,0.000000,0.000000
+cash,b,high,total,21.591770,21.600000
+cash,c,low,receipts: union response move,-0.485295,-0.500000
+cash,c,low,receipts: G3+ members,-41.834031,-41.800000
+cash,c,low,receipts: whites,-19.442534,-19.400000
+cash,c,low,spending: union response move,0.051741,0.000000
+cash,c,low,spending: G3+ members,58.989191,59.000000
+cash,c,low,spending: whites,19.153616,19.100000
+cash,c,low,capital return: union response move,0.014371,0.000000
+cash,c,low,capital return: G3+ members,2.723360,2.700000
+cash,c,low,capital return: whites,1.074344,1.100000
+cash,c,low,production gain: union response move,0.000000,0.000000
+cash,c,low,production gain: G3+ members,-0.425641,-0.400000
+cash,c,low,production gain: whites,0.000000,0.000000
+cash,c,low,total,19.819122,19.800000
+cash,c,high,receipts: union response move,-0.485295,-0.500000
+cash,c,high,receipts: G3+ members,-34.214479,-34.200000
+cash,c,high,receipts: whites,-19.442534,-19.400000
+cash,c,high,spending: union response move,0.037198,0.000000
+cash,c,high,spending: G3+ members,61.261450,61.300000
+cash,c,high,spending: whites,19.853558,19.800000
+cash,c,high,capital return: union response move,0.004707,0.000000
+cash,c,high,capital return: G3+ members,4.833284,4.800000
+cash,c,high,capital return: whites,1.762919,1.800000
+cash,c,high,production gain: union response move,0.000000,0.000000
+cash,c,high,production gain: G3+ members,-0.279994,-0.300000
+cash,c,high,production gain: whites,0.000000,0.000000
+cash,c,high,total,33.330812,33.300000
+cash,vhb_i_relative,low,receipts: union response move,-0.671233,-0.700000
+cash,vhb_i_relative,low,receipts: G3+ members,-62.405607,-62.400000
+cash,vhb_i_relative,low,receipts: whites,-21.154276,-21.200000
+cash,vhb_i_relative,low,spending: union response move,0.071645,0.100000
+cash,vhb_i_relative,low,spending: G3+ members,87.967843,88.000000
+cash,vhb_i_relative,low,spending: whites,20.832265,20.800000
+cash,vhb_i_relative,low,capital return: union response move,0.019901,0.000000
+cash,vhb_i_relative,low,capital return: G3+ members,4.061732,4.100000
+cash,vhb_i_relative,low,capital return: whites,1.168639,1.200000
+cash,vhb_i_relative,low,production gain: union response move,0.000000,0.000000
+cash,vhb_i_relative,low,production gain: G3+ members,-0.634718,-0.600000
+cash,vhb_i_relative,low,production gain: whites,0.000000,0.000000
+cash,vhb_i_relative,low,total,29.256192,29.300000
+cash,vhb_i_relative,high,receipts: union response move,-0.671233,-0.700000
+cash,vhb_i_relative,high,receipts: G3+ members,-51.043289,-51.000000
+cash,vhb_i_relative,high,receipts: whites,-21.154276,-21.200000
+cash,vhb_i_relative,high,spending: union response move,0.051501,0.000000
+cash,vhb_i_relative,high,spending: G3+ members,91.355623,91.400000
+cash,vhb_i_relative,high,spending: whites,21.593337,21.600000
+cash,vhb_i_relative,high,capital return: union response move,0.006517,0.000000
+cash,vhb_i_relative,high,capital return: G3+ members,7.207631,7.200000
+cash,vhb_i_relative,high,capital return: whites,1.917409,1.900000
+cash,vhb_i_relative,high,production gain: union response move,0.000000,0.000000
+cash,vhb_i_relative,high,production gain: G3+ members,-0.417529,-0.400000
+cash,vhb_i_relative,high,production gain: whites,0.000000,0.000000
+cash,vhb_i_relative,high,total,48.845692,48.800000
+cash,vhb_ii_g1norm,low,receipts: union response move,-0.728227,-0.700000
+cash,vhb_ii_g1norm,low,receipts: G3+ members,-68.841159,-68.800000
+cash,vhb_ii_g1norm,low,receipts: whites,-21.689761,-21.700000
+cash,vhb_ii_g1norm,low,spending: union response move,0.077887,0.100000
+cash,vhb_ii_g1norm,low,spending: G3+ members,97.029764,97.000000
+cash,vhb_ii_g1norm,low,spending: whites,21.357200,21.300000
+cash,vhb_ii_g1norm,low,capital return: union response move,0.021635,0.000000
+cash,vhb_ii_g1norm,low,capital return: G3+ members,4.480324,4.500000
+cash,vhb_ii_g1norm,low,capital return: whites,1.198131,1.200000
+cash,vhb_ii_g1norm,low,production gain: union response move,0.000000,0.000000
+cash,vhb_ii_g1norm,low,production gain: G3+ members,-0.700096,-0.700000
+cash,vhb_ii_g1norm,low,production gain: whites,0.000000,0.000000
+cash,vhb_ii_g1norm,low,total,32.205698,32.200000
+cash,vhb_ii_g1norm,high,receipts: union response move,-0.728227,-0.700000
+cash,vhb_ii_g1norm,high,receipts: G3+ members,-56.308490,-56.300000
+cash,vhb_ii_g1norm,high,receipts: whites,-21.689761,-21.700000
+cash,vhb_ii_g1norm,high,spending: union response move,0.055986,0.100000
+cash,vhb_ii_g1norm,high,spending: G3+ members,100.766278,100.800000
+cash,vhb_ii_g1norm,high,spending: whites,22.137381,22.100000
+cash,vhb_ii_g1norm,high,capital return: union response move,0.007085,0.000000
+cash,vhb_ii_g1norm,high,capital return: G3+ members,7.950111,7.900000
+cash,vhb_ii_g1norm,high,capital return: whites,1.965719,2.000000
+cash,vhb_ii_g1norm,high,production gain: union response move,0.000000,0.000000
+cash,vhb_ii_g1norm,high,production gain: G3+ members,-0.460536,-0.500000
+cash,vhb_ii_g1norm,high,production gain: whites,0.000000,0.000000
+cash,vhb_ii_g1norm,high,total,53.695546,53.700000
+cash,vhb_ii_g2norm,low,receipts: union response move,-0.675747,-0.700000
+cash,vhb_ii_g2norm,low,receipts: G3+ members,-62.904013,-62.900000
+cash,vhb_ii_g2norm,low,receipts: whites,-21.195750,-21.200000
+cash,vhb_ii_g2norm,low,spending: union response move,0.072129,0.100000
+cash,vhb_ii_g2norm,low,spending: G3+ members,88.669699,88.700000
+cash,vhb_ii_g2norm,low,spending: whites,20.872921,20.900000
+cash,vhb_ii_g2norm,low,capital return: union response move,0.020035,0.000000
+cash,vhb_ii_g2norm,low,capital return: G3+ members,4.094151,4.100000
+cash,vhb_ii_g2norm,low,capital return: whites,1.170923,1.200000
+cash,vhb_ii_g2norm,low,production gain: union response move,0.000000,0.000000
+cash,vhb_ii_g2norm,low,production gain: G3+ members,-0.639782,-0.700000
+cash,vhb_ii_g2norm,low,production gain: whites,0.000000,0.000000
+cash,vhb_ii_g2norm,low,total,29.484567,29.500000
+cash,vhb_ii_g2norm,high,receipts: union response move,-0.675747,-0.700000
+cash,vhb_ii_g2norm,high,receipts: G3+ members,-51.451049,-51.500000
+cash,vhb_ii_g2norm,high,receipts: whites,-21.195750,-21.200000
+cash,vhb_ii_g2norm,high,spending: union response move,0.051849,0.100000
+cash,vhb_ii_g2norm,high,spending: G3+ members,92.084490,92.100000
+cash,vhb_ii_g2norm,high,spending: whites,21.635473,21.600000
+cash,vhb_ii_g2norm,high,capital return: union response move,0.006561,0.000000
+cash,vhb_ii_g2norm,high,capital return: G3+ members,7.265137,7.300000
+cash,vhb_ii_g2norm,high,capital return: whites,1.921151,1.900000
+cash,vhb_ii_g2norm,high,production gain: union response move,0.000000,0.000000
+cash,vhb_ii_g2norm,high,production gain: G3+ members,-0.420860,-0.400000
+cash,vhb_ii_g2norm,high,production gain: whites,0.000000,0.000000
+cash,vhb_ii_g2norm,high,total,49.221254,49.200000
+cash,vhb_iii_hispanic,low,receipts: union response move,-0.227256,-0.200000
+cash,vhb_iii_hispanic,low,receipts: G3+ members,-13.224821,-13.200000
+cash,vhb_iii_hispanic,low,receipts: whites,-17.062264,-17.100000
+cash,vhb_iii_hispanic,low,spending: union response move,0.024180,0.000000
+cash,vhb_iii_hispanic,low,spending: G3+ members,18.656504,18.700000
+cash,vhb_iii_hispanic,low,spending: whites,16.817297,16.800000
+cash,vhb_iii_hispanic,low,capital return: union response move,0.006715,0.000000
+cash,vhb_iii_hispanic,low,capital return: G3+ members,0.861167,0.900000
+cash,vhb_iii_hispanic,low,capital return: whites,0.943143,0.900000
+cash,vhb_iii_hispanic,low,production gain: union response move,0.000000,0.000000
+cash,vhb_iii_hispanic,low,production gain: G3+ members,-0.134623,-0.100000
+cash,vhb_iii_hispanic,low,production gain: whites,0.000000,0.000000
+cash,vhb_iii_hispanic,low,total,6.660043,6.700000
+cash,vhb_iii_hispanic,high,receipts: union response move,-0.227256,-0.200000
+cash,vhb_iii_hispanic,high,receipts: G3+ members,-10.814878,-10.800000
+cash,vhb_iii_hispanic,high,receipts: whites,-17.062264,-17.100000
+cash,vhb_iii_hispanic,high,spending: union response move,0.017387,0.000000
+cash,vhb_iii_hispanic,high,spending: G3+ members,19.375366,19.400000
+cash,vhb_iii_hispanic,high,spending: whites,17.432101,17.400000
+cash,vhb_iii_hispanic,high,capital return: union response move,0.002200,0.000000
+cash,vhb_iii_hispanic,high,capital return: G3+ members,1.528628,1.500000
+cash,vhb_iii_hispanic,high,capital return: whites,1.547899,1.600000
+cash,vhb_iii_hispanic,high,production gain: union response move,0.000000,0.000000
+cash,vhb_iii_hispanic,high,production gain: G3+ members,-0.088558,-0.100000
+cash,vhb_iii_hispanic,high,production gain: whites,0.000000,0.000000
+cash,vhb_iii_hispanic,high,total,11.710625,11.700000
+cash,vhb_iv_cal_cps,low,receipts: union response move,-0.422997,-0.400000
+cash,vhb_iv_cal_cps,low,receipts: G3+ members,-34.939461,-34.900000
+cash,vhb_iv_cal_cps,low,receipts: whites,-18.868878,-18.900000
+cash,vhb_iv_cal_cps,low,spending: union response move,0.045087,0.100000
+cash,vhb_iv_cal_cps,low,spending: G3+ members,49.272734,49.300000
+cash,vhb_iv_cal_cps,low,spending: whites,18.590775,18.600000
+cash,vhb_iv_cal_cps,low,capital return: union response move,0.012523,0.000000
+cash,vhb_iv_cal_cps,low,capital return: G3+ members,2.274684,2.300000
+cash,vhb_iv_cal_cps,low,capital return: whites,1.042733,1.000000
+cash,vhb_iv_cal_cps,low,production gain: union response move,0.000000,0.000000
+cash,vhb_iv_cal_cps,low,production gain: G3+ members,-0.355535,-0.400000
+cash,vhb_iv_cal_cps,low,production gain: whites,0.000000,0.000000
+cash,vhb_iv_cal_cps,low,total,16.651662,16.700000
+cash,vhb_iv_cal_cps,high,receipts: union response move,-0.422997,-0.400000
+cash,vhb_iv_cal_cps,high,receipts: G3+ members,-28.574902,-28.600000
+cash,vhb_iv_cal_cps,high,receipts: whites,-18.868878,-18.900000
+cash,vhb_iv_cal_cps,high,spending: union response move,0.032415,0.000000
+cash,vhb_iv_cal_cps,high,spending: G3+ members,51.170853,51.200000
+cash,vhb_iv_cal_cps,high,spending: whites,19.270212,19.300000
+cash,vhb_iv_cal_cps,high,capital return: union response move,0.004102,0.000000
+cash,vhb_iv_cal_cps,high,capital return: G3+ members,4.037169,4.000000
+cash,vhb_iv_cal_cps,high,capital return: whites,1.711119,1.700000
+cash,vhb_iv_cal_cps,high,production gain: union response move,0.000000,0.000000
+cash,vhb_iv_cal_cps,high,production gain: G3+ members,-0.233877,-0.200000
+cash,vhb_iv_cal_cps,high,production gain: whites,0.000000,0.000000
+cash,vhb_iv_cal_cps,high,total,28.125215,28.100000
+cash,vhb_iv_cal_dt,low,receipts: union response move,-0.352196,-0.400000
+cash,vhb_iv_cal_dt,low,receipts: G3+ members,-27.066880,-27.100000
+cash,vhb_iv_cal_dt,low,receipts: whites,-18.213881,-18.200000
+cash,vhb_iv_cal_dt,low,spending: union response move,0.037498,0.000000
+cash,vhb_iv_cal_dt,low,spending: G3+ members,38.175338,38.200000
+cash,vhb_iv_cal_dt,low,spending: whites,17.947943,18.000000
+cash,vhb_iv_cal_dt,low,capital return: union response move,0.010414,0.000000
+cash,vhb_iv_cal_dt,low,capital return: G3+ members,1.762286,1.800000
+cash,vhb_iv_cal_dt,low,capital return: whites,1.006632,1.000000
+cash,vhb_iv_cal_dt,low,production gain: union response move,0.000000,0.000000
+cash,vhb_iv_cal_dt,low,production gain: G3+ members,-0.275463,-0.300000
+cash,vhb_iv_cal_dt,low,production gain: whites,0.000000,0.000000
+cash,vhb_iv_cal_dt,low,total,13.031692,13.000000
+cash,vhb_iv_cal_dt,high,receipts: union response move,-0.352196,-0.300000
+cash,vhb_iv_cal_dt,high,receipts: G3+ members,-22.135711,-22.100000
+cash,vhb_iv_cal_dt,high,receipts: whites,-18.213881,-18.200000
+cash,vhb_iv_cal_dt,high,spending: union response move,0.026960,0.000000
+cash,vhb_iv_cal_dt,high,spending: G3+ members,39.646077,39.600000
+cash,vhb_iv_cal_dt,high,spending: whites,18.603958,18.600000
+cash,vhb_iv_cal_dt,high,capital return: union response move,0.003411,0.000000
+cash,vhb_iv_cal_dt,high,capital return: G3+ members,3.127906,3.100000
+cash,vhb_iv_cal_dt,high,capital return: whites,1.651957,1.700000
+cash,vhb_iv_cal_dt,high,production gain: union response move,0.000000,0.000000
+cash,vhb_iv_cal_dt,high,production gain: G3+ members,-0.181205,-0.200000
+cash,vhb_iv_cal_dt,high,production gain: whites,0.000000,0.000000
+cash,vhb_iv_cal_dt,high,total,22.177277,22.200000
+cash,vhb_v_compound,low,receipts: union response move,-1.132504,-1.100000
+cash,vhb_v_compound,low,receipts: G3+ members,-114.144531,-114.100000
+cash,vhb_v_compound,low,receipts: whites,-25.459860,-25.500000
+cash,vhb_v_compound,low,spending: union response move,0.122031,0.100000
+cash,vhb_v_compound,low,spending: G3+ members,160.769323,160.800000
+cash,vhb_v_compound,low,spending: whites,25.049537,25.100000
+cash,vhb_v_compound,low,capital return: union response move,0.033904,0.000000
+cash,vhb_v_compound,low,capital return: G3+ members,7.425551,7.400000
+cash,vhb_v_compound,low,capital return: whites,1.405639,1.400000
+cash,vhb_v_compound,low,production gain: union response move,0.000000,0.000000
+cash,vhb_v_compound,low,production gain: G3+ members,-1.159911,-1.200000
+cash,vhb_v_compound,low,production gain: whites,0.000000,0.000000
+cash,vhb_v_compound,low,total,52.909179,52.900000
+cash,vhb_v_compound,high,receipts: union response move,-1.132504,-1.100000
+cash,vhb_v_compound,high,receipts: G3+ members,-93.380544,-93.400000
+cash,vhb_v_compound,high,receipts: whites,-25.459860,-25.500000
+cash,vhb_v_compound,high,spending: union response move,0.087694,0.100000
+cash,vhb_v_compound,high,spending: G3+ members,166.957400,167.000000
+cash,vhb_v_compound,high,spending: whites,25.964029,26.000000
+cash,vhb_v_compound,high,capital return: union response move,0.011098,0.000000
+cash,vhb_v_compound,high,capital return: G3+ members,13.172512,13.200000
+cash,vhb_v_compound,high,capital return: whites,2.305522,2.300000
+cash,vhb_v_compound,high,production gain: union response move,0.000000,0.000000
+cash,vhb_v_compound,high,production gain: G3+ members,-0.763011,-0.800000
+cash,vhb_v_compound,high,production gain: whites,0.000000,0.000000
+cash,vhb_v_compound,high,total,87.762336,87.800000
+cash,b_later_c3,low,receipts: union response move,-0.345247,-0.300000
+cash,b_later_c3,low,receipts: G3+ members,-18.103723,-18.100000
+cash,b_later_c3,low,receipts: whites,-28.366196,-28.400000
+cash,b_later_c3,low,spending: union response move,0.036752,0.000000
+cash,b_later_c3,low,spending: G3+ members,25.533944,25.500000
+cash,b_later_c3,low,spending: whites,27.952410,28.000000
+cash,b_later_c3,low,capital return: union response move,0.010207,0.000000
+cash,b_later_c3,low,capital return: G3+ members,1.178717,1.200000
+cash,b_later_c3,low,capital return: whites,1.567737,1.600000
+cash,b_later_c3,low,production gain: union response move,0.000000,0.000000
+cash,b_later_c3,low,production gain: G3+ members,-0.184247,-0.200000
+cash,b_later_c3,low,production gain: whites,0.000000,0.000000
+cash,b_later_c3,low,total,9.280354,9.300000
+cash,b_later_c3,high,receipts: union response move,-0.345247,-0.400000
+cash,b_later_c3,high,receipts: G3+ members,-14.805458,-14.800000
+cash,b_later_c3,high,receipts: whites,-28.366196,-28.400000
+cash,b_later_c3,high,spending: union response move,0.026424,0.000000
+cash,b_later_c3,high,spending: G3+ members,26.517670,26.500000
+cash,b_later_c3,high,spending: whites,28.974108,29.000000
+cash,b_later_c3,high,capital return: union response move,0.003344,0.000000
+cash,b_later_c3,high,capital return: G3+ members,2.092130,2.100000
+cash,b_later_c3,high,capital return: whites,2.572785,2.600000
+cash,b_later_c3,high,production gain: union response move,0.000000,0.000000
+cash,b_later_c3,high,production gain: G3+ members,-0.121201,-0.100000
+cash,b_later_c3,high,production gain: whites,0.000000,0.000000
+cash,b_later_c3,high,total,16.548358,16.500000
+cash,vhb_i_relative_later_c3,low,receipts: union response move,-0.671233,-0.700000
+cash,vhb_i_relative_later_c3,low,receipts: G3+ members,-35.179800,-35.200000
+cash,vhb_i_relative_later_c3,low,receipts: whites,-55.126572,-55.100000
+cash,vhb_i_relative_later_c3,low,spending: union response move,0.071645,0.100000
+cash,vhb_i_relative_later_c3,low,spending: G3+ members,49.589953,49.600000
+cash,vhb_i_relative_later_c3,low,spending: whites,54.287434,54.300000
+cash,vhb_i_relative_later_c3,low,capital return: union response move,0.019901,0.000000
+cash,vhb_i_relative_later_c3,low,capital return: G3+ members,2.289713,2.300000
+cash,vhb_i_relative_later_c3,low,capital return: whites,3.045393,3.100000
+cash,vhb_i_relative_later_c3,low,production gain: union response move,0.000000,0.000000
+cash,vhb_i_relative_later_c3,low,production gain: G3+ members,-0.357808,-0.400000
+cash,vhb_i_relative_later_c3,low,production gain: whites,0.000000,0.000000
+cash,vhb_i_relative_later_c3,low,total,17.968626,18.000000
+cash,vhb_i_relative_later_c3,high,receipts: union response move,-0.671233,-0.700000
+cash,vhb_i_relative_later_c3,high,receipts: G3+ members,-28.774541,-28.800000
+cash,vhb_i_relative_later_c3,high,receipts: whites,-55.126572,-55.100000
+cash,vhb_i_relative_later_c3,high,spending: union response move,0.051501,0.000000
+cash,vhb_i_relative_later_c3,high,spending: G3+ members,51.499740,51.500000
+cash,vhb_i_relative_later_c3,high,spending: whites,56.270734,56.300000
+cash,vhb_i_relative_later_c3,high,capital return: union response move,0.006517,0.000000
+cash,vhb_i_relative_later_c3,high,capital return: G3+ members,4.063145,4.100000
+cash,vhb_i_relative_later_c3,high,capital return: whites,4.996634,5.000000
+cash,vhb_i_relative_later_c3,high,production gain: union response move,0.000000,0.000000
+cash,vhb_i_relative_later_c3,high,production gain: G3+ members,-0.235373,-0.200000
+cash,vhb_i_relative_later_c3,high,production gain: whites,0.000000,0.000000
+cash,vhb_i_relative_later_c3,high,total,32.080553,32.100000
+cash,vhb_iv_cal_cps_later_c3,low,receipts: union response move,-0.422997,-0.400000
+cash,vhb_iv_cal_cps_later_c3,low,receipts: G3+ members,-22.192538,-22.200000
+cash,vhb_iv_cal_cps_later_c3,low,receipts: whites,-34.773499,-34.800000
+cash,vhb_iv_cal_cps_later_c3,low,spending: union response move,0.045087,0.100000
+cash,vhb_iv_cal_cps_later_c3,low,spending: G3+ members,31.296619,31.300000
+cash,vhb_iv_cal_cps_later_c3,low,spending: whites,34.260981,34.300000
+cash,vhb_iv_cal_cps_later_c3,low,capital return: union response move,0.012523,0.000000
+cash,vhb_iv_cal_cps_later_c3,low,capital return: G3+ members,1.444814,1.400000
+cash,vhb_iv_cal_cps_later_c3,low,capital return: whites,1.921654,1.900000
+cash,vhb_iv_cal_cps_later_c3,low,production gain: union response move,0.000000,0.000000
+cash,vhb_iv_cal_cps_later_c3,low,production gain: G3+ members,-0.225826,-0.200000
+cash,vhb_iv_cal_cps_later_c3,low,production gain: whites,0.000000,0.000000
+cash,vhb_iv_cal_cps_later_c3,low,total,11.366817,11.400000
+cash,vhb_iv_cal_cps_later_c3,high,receipts: union response move,-0.422997,-0.400000
+cash,vhb_iv_cal_cps_later_c3,high,receipts: G3+ members,-18.149953,-18.200000
+cash,vhb_iv_cal_cps_later_c3,high,receipts: whites,-34.773499,-34.800000
+cash,vhb_iv_cal_cps_later_c3,high,spending: union response move,0.032415,0.000000
+cash,vhb_iv_cal_cps_later_c3,high,spending: G3+ members,32.502249,32.500000
+cash,vhb_iv_cal_cps_later_c3,high,spending: whites,35.513118,35.500000
+cash,vhb_iv_cal_cps_later_c3,high,capital return: union response move,0.004102,0.000000
+cash,vhb_iv_cal_cps_later_c3,high,capital return: G3+ members,2.564293,2.600000
+cash,vhb_iv_cal_cps_later_c3,high,capital return: whites,3.153426,3.200000
+cash,vhb_iv_cal_cps_later_c3,high,production gain: union response move,0.000000,0.000000
+cash,vhb_iv_cal_cps_later_c3,high,production gain: G3+ members,-0.148552,-0.100000
+cash,vhb_iv_cal_cps_later_c3,high,production gain: whites,0.000000,0.000000
+cash,vhb_iv_cal_cps_later_c3,high,total,20.274602,20.300000
