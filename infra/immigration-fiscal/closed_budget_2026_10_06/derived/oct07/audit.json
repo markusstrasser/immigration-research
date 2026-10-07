@@ -1,0 +1,70 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "inputs": {
+  "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json": "547092591e23ebd69e7dfaec28e6eebe441c7cc61a9f3d32f328a3991f321bf3",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/summary_oct07.json": "edcb7cb36c455879b1c8931ce96195043134fd3081a97eab93be9fff0c9c88da",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/decomposition_lines_oct07.csv": "eaa73e75e2e8e4c80e00d2dfeed1e26c63e58fe3c70b2c152ad9058d559f5581",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/decomposition_lines_oct07_cash.csv": "7d8d09c5525494e5ce049dbc9f305d06dcb588ece3616b686a1cae18f61532fb",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/sources.json": "dc12fb3113b72f1096a44a6d0c3768215df22a4d5229abdfa20a7ead48813ac6",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/derived/oct07/household_share.json": "cd4b04909fc5d74487d409bf5b776f43fd5c3b2fbf4f97490d6e13b9943c699c",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds_separate.json": "b7132b6dda79de229f4f541c557c26cfeb0f54bd68ed7e735156c65a29f23828",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds.json": "4b9700b4fc62f97fde8d6739068e36a5f1b3dec2a47040d9554ad822c5156858"
+ },
+ "frame": {
+  "NG": 42752212.9244,
+  "NC": 335543722.179,
+  "share": 0.12741175023859722
+ },
+ "gdp_2024_bn": 29300.0,
+ "federal_mix_bn": {
+  "income_taxes": 2426.067,
+  "payroll_taxes": 1708.926
+ },
+ "gates": [
+  {
+   "gate": "main: the case's ends are the adopted band (1e-6)",
+   "pass": true,
+   "detail": "389.082553 / 461.479709 vs 389.082553 / 461.479709"
+  },
+  {
+   "gate": "cash: the case's ends are the adopted band (1e-6)",
+   "pass": true,
+   "detail": "307.399411 / 385.364123 vs 307.399411 / 385.364123"
+  },
+  {
+   "gate": "main low: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 389.082553, parts 389.082556, case 389.082553"
+  },
+  {
+   "gate": "main high: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 461.479710, parts 461.479711, case 461.479709"
+  },
+  {
+   "gate": "cash low: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 307.399410, parts 307.399413, case 307.399411"
+  },
+  {
+   "gate": "cash high: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 385.364122, parts 385.364125, case 385.364123"
+  },
+  {
+   "gate": "main low: per_person at the case's own gap reproduces the printed excess",
+   "pass": true,
+   "detail": "284.1301 vs 284.1"
+  },
+  {
+   "gate": "main high: per_person at the case's own gap reproduces the printed excess",
+   "pass": true,
+   "detail": "302.5484 vs 302.5"
+  },
+  {
+   "gate": "household share computed on the decomposition's frame",
+   "pass": true,
+   "detail": "{'NG': 42752212.92437313, 'NC': 335543722.1788498} vs NG 42752212.9244, NC 335543722.179"
+  }
+ ]
+}

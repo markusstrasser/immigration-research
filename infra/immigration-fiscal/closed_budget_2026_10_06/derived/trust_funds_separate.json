@@ -1,0 +1,239 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "note": "Post-depletion shortfall under current law's separate funds, as a share of GDP averaged over each fiscal-gap window: OASI's after its depletion in 2032 Q4 (DI pays in full through 2100; key 'oasdi' holds the programme's whole shortfall, OASI's), and Medicare Part A's as in trust_funds.json. The part of a gap that pays scheduled benefits main case v6's accrual values at payable benefits.",
+ "windows": {
+  "2027-2056": {
+   "trustees": {
+    "oasdi": 1.010275,
+    "hi": 0.22712321256720192,
+    "total": 1.2373982125672018
+   },
+   "cbo": {
+    "oasdi": 1.1939625,
+    "hi": 0.0,
+    "total": 1.1939625
+   }
+  },
+  "2027-2056_r_minus_g_1pt": {
+   "trustees": {
+    "oasdi": 0.9734988646879399,
+    "hi": 0.21970657588002876,
+    "total": 1.1932054405679686
+   },
+   "cbo": {
+    "oasdi": 1.158262010573385,
+    "hi": 0.0,
+    "total": 1.158262010573385
+   }
+  },
+  "2026-2056": {
+   "trustees": {
+    "oasdi": 0.9776854838709678,
+    "hi": 0.21979665732309864,
+    "total": 1.1974821411940664
+   },
+   "cbo": {
+    "oasdi": 1.1554475806451612,
+    "hi": 0.0,
+    "total": 1.1554475806451612
+   }
+  },
+  "2026-2056_r_minus_g_1pt": {
+   "trustees": {
+    "oasdi": 0.937184724864719,
+    "hi": 0.2115109265516179,
+    "total": 1.148695651416337
+   },
+   "cbo": {
+    "oasdi": 1.1150557058414634,
+    "hi": 0.0,
+    "total": 1.1150557058414634
+   }
+  }
+ },
+ "pv_75_year": {
+  "oasdi": 1.5313890012131015,
+  "hi": 0.2,
+  "window": "2026-2100",
+  "pooled_unrounded": 1.4811463809138699,
+  "source": "2026 OASDI Trustees Report, Table IV.B8 row H (OASI $30,297bn, DI -$994bn, OASDI $29,303bn) over the present value of GDP for 2026-2100 ($1,978.4 trillion, p. 82 note 1); HI as above"
+ },
+ "pooled": {
+  "file": "trust_funds.json",
+  "switch_pct_gdp": {
+   "2027-2056": {
+    "trustees": 0.10919166666666658,
+    "cbo": 0.12722916666666673
+   },
+   "2027-2056_r_minus_g_1pt": {
+    "trustees": 0.11499477144527614,
+    "cbo": 0.13434525685990972
+   },
+   "2026-2056": {
+    "trustees": 0.10566935483870976,
+    "cbo": 0.1231249999999997
+   },
+   "2026-2056_r_minus_g_1pt": {
+    "trustees": 0.11070515554465388,
+    "cbo": 0.1293338155329995
+   }
+  }
+ },
+ "diagnostics": {
+  "depletion": {
+   "oasi": {
+    "year": 2032,
+    "fraction_after": 0.125
+   },
+   "hi": [
+    2033,
+    0.625
+   ],
+   "di": "reserves positive through 2100"
+  },
+  "cbo_reading": "CBO's Social Security outlays less revenues plus the Trustees' DI balance, from the Trustees' OASI depletion [APPROX]"
+ },
+ "inputs": {
+  "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.pdf": "fb4e1556a00d925efa03e6355f64f911656a2626eaaceeb16062687008feb683",
+  "sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.pdf": "ffa56b9137006872300b0346149eae1613d09a172b6ba118aad48e66dfc48fa8",
+  "sources/immigration-fiscal/data/external/stage3/cbo/ltbo_2026/62044-2026-LTBO.xlsx": "5e1dd450cebd869dd3066d3d965351f3778808ce17f261f7a0571e6c21d93e4b",
+  "sources/immigration-fiscal/data/external/stage3/ssa/trustees_2026/tr2026.txt": "789faa11edff9427e625c092516cadd94ab4f03553da803ae9bd39f0ef6bc7c1",
+  "sources/immigration-fiscal/data/external/stage3/cms/trustees_2026/mtr2026.txt": "58ac07aa337c061f61f398669b3650debe00833b6e01d6eeab7114cc7eb05a81"
+ },
+ "gates": [
+  {
+   "gate": "tr2026.pdf matches ACQUIRED.md",
+   "pass": true
+  },
+  {
+   "gate": "mtr2026.pdf matches ACQUIRED.md",
+   "pass": true
+  },
+  {
+   "gate": "62044-2026-LTBO.xlsx matches ACQUIRED.md",
+   "pass": true
+  },
+  {
+   "gate": "OASDI rows parsed for 2026-2035 and every fifth year to 2060",
+   "pass": true,
+   "detail": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2040,
+    2045,
+    2050,
+    2055,
+    2060,
+    2065,
+    2070,
+    2075,
+    2080,
+    2085,
+    2090,
+    2095,
+    2100
+   ]
+  },
+  {
+   "gate": "OASDI income - cost = balance to rounding",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "gate": "OASDI payable at depletion (2034) is the report's 83%",
+   "pass": true,
+   "detail": 0.8347978910369068
+  },
+  {
+   "gate": "HI cost and income rates parsed for 2026-2035, every fifth year to 2060 and 2100",
+   "pass": true,
+   "detail": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2040,
+    2045,
+    2050,
+    2055,
+    2060,
+    2065,
+    2070,
+    2075,
+    2080,
+    2085,
+    2090,
+    2095,
+    2100
+   ]
+  },
+  {
+   "gate": "Part A cost as % of GDP parsed for 2026-2035, every fifth year to 2060 and 2100",
+   "pass": true,
+   "detail": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2040,
+    2045,
+    2050,
+    2055,
+    2060,
+    2065,
+    2070,
+    2075,
+    2080,
+    2085,
+    2090,
+    2095,
+    2100
+   ]
+  },
+  {
+   "gate": "HI payable in 2033 is the report's 89%",
+   "pass": true
+  },
+  {
+   "gate": "HI payable in 2100 is the report's 93%",
+   "pass": true
+  },
+  {
+   "gate": "CBO sheet 1a has Social Security revenues and outlays for every year 2026-2056",
+   "pass": true
+  },
+  {
+   "gate": "OASI and DI income - cost = balance to rounding",
+   "pass": true
+  },
+  {
+   "gate": "OASI plus DI is OASDI (income, cost and balance) to rounding",
+   "pass": true
+  },
+  {
+   "gate": "OASI's income covers the report's 78% of its cost in 2032 to within a point",
+   "pass": true,
+   "detail": 0.7879377431906615
+  }
+ ]
+}

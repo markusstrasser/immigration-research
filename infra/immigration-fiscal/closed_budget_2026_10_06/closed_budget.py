@@ -46,9 +46,20 @@ Gates (exit with [BLOCKED] before writing):
 Writes derived/closed_budget.csv (fix x basis x rule x set x end), derived/shares.csv, derived/summary.json (the
 ranges the docs quote) and derived/audit.json. Run households.py and trust_funds.py first. From the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/closed_budget_2026_10_06/closed_budget.py
+  ... closed_budget.py --case oct07          # main case v6 -> derived/oct07/
+
+--case oct07 (main case v6, main_case_2026_10_07) takes v6's ends, the decomposition's oct07 line tables and its
+excess over average residents, and nets the trust funds on current law's separate funds
+(derived/trust_funds_separate.json): v6's pension accrual is on the 2026 Trustees' separate OASI and DI funds, so for
+the account OASI's post-depletion shortfall from 2032 Q4 is what is closed. The household share is
+derived/oct07/household_share.json (households.py --case oct07): v6 keeps v5's lineage, counts and frame (gated as
+above) but prices the added people at their measured age mix, so they sit in the households of the identified G3+ of
+their own ages. summary.json adds the pooled-funds arm (trust_funds.json, the convention through v5) and the switch,
+separate less pooled.
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import hashlib
 import json
@@ -74,6 +85,23 @@ GDP_2024_BN = 29300.0  # BEA NIPA T1.1.5, 26 August 2026 vintage
 EXCESS_PRINTED = {"low": 280.5, "high": 297.4}  # ladder 269, one decimal
 SETS = {"main": ("oct05", "main_case"), "cash": ("oct05_cash", "cash_set")}
 CENTRAL = {"fix": "ag2026_cl", "basis": "general fund (cbo reading)", "rule": "per_household"}
+# The cases this arm runs on: the case's summary, the decomposition's key and sets, its printed excess over average
+# residents (one decimal), the trust-fund components the general-fund gaps net, the household share, and the output
+# directory. Main case v6 also prices the pooled funds beside (pooled).
+CASES = {
+    "oct05": dict(case=CASE, decomp="oct05", sets=SETS, excess=EXCESS_PRINTED, trust_funds=TRUST_FUNDS,
+                  households=HOUSEHOLDS, out=OUT),
+    "oct07": dict(case=ROOT / "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json", decomp="oct07",
+                  sets={"main": ("oct07", "main_case"), "cash": ("oct07_cash", "cash_set")},
+                  # the excess over average residents, one decimal: the decomposition's oct07 parts beyond the shared
+                  # one (summary_oct07.json parts.<end>.shapley: age + taxes + use = 284.130103 / 302.548443, which is
+                  # v6's band less the shared 104.952450 / 158.931266)
+                  excess={"low": 284.1, "high": 302.5},
+                  trust_funds=OUT / "trust_funds_separate.json", households=OUT / "oct07/household_share.json",
+                  out=OUT / "oct07", pooled=TRUST_FUNDS,
+                  # the adoption's bands to 6 decimals (case lane 218a2fb2), gated at 1e-6
+                  bands={"main": (389.082553, 461.479709), "cash": (307.399411, 385.364123)}),
+}
 
 
 def blocked(msg: str) -> None:
@@ -145,19 +173,32 @@ def span(rows: list[dict], key: str) -> list[float]:
 
 
 def main() -> None:
-    summary = json.loads(CASE.read_text())
-    dsum = json.loads((DECOMP / "summary_oct05.json").read_text())
+    ap = argparse.ArgumentParser(description="The closed-budget arm on a main case.")
+    ap.add_argument("--case", choices=tuple(CASES), default="oct05",
+                    help="oct05 (default, main case v5 -> derived/) or oct07 (main case v6 -> derived/oct07/)")
+    conf = CASES[ap.parse_args().case]
+    if conf["excess"] is None:
+        blocked("the case's excess over average residents is not pinned (CASES excess)")
+    sets, excess_printed, out_dir = conf["sets"], conf["excess"], conf["out"]
+    summary = json.loads(conf["case"].read_text())
+    dsum_file = DECOMP / f"summary_{conf['decomp']}.json"
+    dsum = json.loads(dsum_file.read_text())
     NG, NC = dsum["frame"]["row4"]["NG"], dsum["frame"]["row4"]["NC"]
     share = NG / NC
     src = json.loads(SOURCES.read_text())
-    hh = json.loads(HOUSEHOLDS.read_text())
-    tf = json.loads(TRUST_FUNDS.read_text())
+    hh = json.loads(conf["households"].read_text())
+    tf = json.loads(conf["trust_funds"].read_text())
 
-    lines = {s: read_lines(key) for s, (key, _) in SETS.items()}
-    G = {s: case_ends(summary, name) for s, (_, name) in SETS.items()}
+    lines = {s: read_lines(key) for s, (key, _) in sets.items()}
+    G = {s: case_ends(summary, name) for s, (_, name) in sets.items()}
 
     gates = []
-    for s in SETS:
+    for s, band in conf.get("bands", {}).items():
+        got = [G[s]["low"], G[s]["high"]]
+        gates.append({"gate": f"{s}: the case's ends are the adopted band (1e-6)",
+                      "pass": all(abs(g - w) < 1e-6 for g, w in zip(got, band)),
+                      "detail": f"{got[0]:.6f} / {got[1]:.6f} vs {band[0]} / {band[1]}"})
+    for s in sets:
         for end in ("low", "high"):
             p = lines[s][end]
             total = sum(p["total"].values())
@@ -169,9 +210,9 @@ def main() -> None:
         sh = sum(lines["main"][end]["shared"].values())
         f_rule = sh / share  # the national gap under the case's own rules
         excess = G["main"][end] - share * f_rule
-        ok = abs(round(excess, 1) - EXCESS_PRINTED[end]) < 1e-9
+        ok = abs(round(excess, 1) - excess_printed[end]) < 1e-9
         gates.append({"gate": f"main {end}: per_person at the case's own gap reproduces the printed excess",
-                      "pass": ok, "detail": f"{excess:.4f} vs {EXCESS_PRINTED[end]}"})
+                      "pass": ok, "detail": f"{excess:.4f} vs {excess_printed[end]}"})
     gates.append({"gate": "household share computed on the decomposition's frame",
                   "pass": abs(hh["frame"]["NG"] - NG) < 1e-2 and abs(hh["frame"]["NC"] - NC) < 1.0,
                   "detail": f"{hh['frame']} vs NG {NG}, NC {NC}"})
@@ -180,41 +221,55 @@ def main() -> None:
         if fx["pct_gdp"] <= 0:
             gates.append({"gate": f"{fx['fix']} {fx['basis']}: gap positive", "pass": False, "detail": fx["pct_gdp"]})
 
-    share_rows, out_rows = [], []
-    for s in SETS:
-        for end in ("low", "high"):
-            rat = ratios(lines[s][end], hh["share"] / share)
-            for rule in RULES:
-                r = rat[rule]
-                sr = share * r
-                if not 0 < sr < 1:
-                    gates.append({"gate": f"{s} {end} {rule}: share in (0, 1)", "pass": False, "detail": f"{sr}"})
-                share_rows.append({"set": s, "end": end, "rule": rule, "ratio_to_average": f"{r:.6f}",
-                                   "share": f"{sr:.6f}"})
-                prev = None
-                for fx in sorted(fix_rows, key=lambda x: x["pct_gdp"]):
-                    F = fx["pct_gdp"] / 100 * GDP_2024_BN
-                    cost = G[s][end] - sr * F
-                    if prev is not None and cost > prev + 1e-12:
-                        gates.append({"gate": f"{s} {end} {rule}: cost falls as F rises", "pass": False, "detail": ""})
-                    prev = cost
-                    out_rows.append({"fix": fx["fix"], "law": fx["law"], "window": fx["window"], "basis": fx["basis"],
-                                     "pct_gdp": f"{fx['pct_gdp']:.4f}",
-                                     "trust_funds_pct_gdp": f"{fx['trust_funds_pct_gdp']:.4f}",
-                                     "fix_bn": f"{F:.3f}", "rule": rule, "set": s, "end": end, "share": f"{sr:.6f}",
-                                     "case_bn": f"{G[s][end]:.6f}", "offset_bn": f"{sr * F:.6f}",
-                                     "cost_to_others_bn": f"{cost:.6f}",
-                                     "change_pct": f"{100 * (cost / G[s][end] - 1):.3f}"})
+    def evaluate(fix_rows: list[dict]) -> tuple[list[dict], list[dict]]:
+        """Every fix x rule x set x end: (shares.csv rows, closed_budget.csv rows); failed gates go to `gates`."""
+        share_rows, out_rows = [], []
+        for s in sets:
+            for end in ("low", "high"):
+                rat = ratios(lines[s][end], hh["share"] / share)
+                for rule in RULES:
+                    r = rat[rule]
+                    sr = share * r
+                    if not 0 < sr < 1:
+                        gates.append({"gate": f"{s} {end} {rule}: share in (0, 1)", "pass": False, "detail": f"{sr}"})
+                    share_rows.append({"set": s, "end": end, "rule": rule, "ratio_to_average": f"{r:.6f}",
+                                       "share": f"{sr:.6f}"})
+                    prev = None
+                    for fx in sorted(fix_rows, key=lambda x: x["pct_gdp"]):
+                        F = fx["pct_gdp"] / 100 * GDP_2024_BN
+                        cost = G[s][end] - sr * F
+                        if prev is not None and cost > prev + 1e-12:
+                            gates.append({"gate": f"{s} {end} {rule}: cost falls as F rises", "pass": False,
+                                          "detail": ""})
+                        prev = cost
+                        out_rows.append({"fix": fx["fix"], "law": fx["law"], "window": fx["window"],
+                                         "basis": fx["basis"], "pct_gdp": f"{fx['pct_gdp']:.4f}",
+                                         "trust_funds_pct_gdp": f"{fx['trust_funds_pct_gdp']:.4f}",
+                                         "fix_bn": f"{F:.3f}", "rule": rule, "set": s, "end": end,
+                                         "share": f"{sr:.6f}", "case_bn": f"{G[s][end]:.6f}",
+                                         "offset_bn": f"{sr * F:.6f}", "cost_to_others_bn": f"{cost:.6f}",
+                                         "change_pct": f"{100 * (cost / G[s][end] - 1):.3f}"})
+        return share_rows, out_rows
+
+    share_rows, out_rows = evaluate(fix_rows)
+    pooled_rows = None
+    if conf.get("pooled"):       # main case v6: the pooled-funds arm beside (the convention through v5)
+        pooled_fix = fixes(src, json.loads(conf["pooled"].read_text()))
+        for fx in pooled_fix:
+            if fx["pct_gdp"] <= 0:
+                gates.append({"gate": f"{fx['fix']} {fx['basis']} (pooled): gap positive", "pass": False,
+                              "detail": fx["pct_gdp"]})
+        pooled_rows = evaluate(pooled_fix)[1]
     bad = [g for g in gates if not g["pass"]]
     if bad:
         blocked("; ".join(f"{g['gate']} ({g['detail']})" for g in bad))
 
-    def pick(s, **kw):
-        return [r for r in out_rows if r["set"] == s and all(r[k] == v for k, v in kw.items())]
+    def pick(s, rows=None, **kw):
+        return [r for r in (out_rows if rows is None else rows) if r["set"] == s and all(r[k] == v for k, v in kw.items())]
 
     general = lambda r: r["basis"].startswith("general fund")
     summ = {"lane": "closed_budget_2026_10_06", "gdp_2024_bn": GDP_2024_BN, "sets": {}}
-    for s in SETS:
+    for s in sets:
         central = {e: pick(s, end=e, **CENTRAL)[0] for e in ("low", "high")}
         block = {"case_bn": [G[s]["low"], G[s]["high"]],
                  "central": {"definition": CENTRAL, "fix_bn": float(central["low"]["fix_bn"]),
@@ -229,25 +284,40 @@ def main() -> None:
         aei = {e: pick(s, end=e, fix="aei_auerbach_gale_2013_low", basis="as published", rule="per_person")[0]
                for e in ("low", "high")}
         block["aei_as_published_per_person"] = {"cost_bn": [float(aei[e]["cost_to_others_bn"]) for e in ("low", "high")]}
+        if pooled_rows is not None:
+            pc = {e: pick(s, pooled_rows, end=e, **CENTRAL)[0] for e in ("low", "high")}
+            cl = [r for r in pick(s, pooled_rows, law="current law") if general(r)]
+            block["pooled_funds_arm"] = {
+                "trust_funds": str(conf["pooled"].relative_to(ROOT)),
+                "central": {"fix_bn": float(pc["low"]["fix_bn"]),
+                            "cost_bn": [float(pc[e]["cost_to_others_bn"]) for e in ("low", "high")]},
+                "current law": {"cost_bn": span(cl, "cost_to_others_bn")},
+                "switch_bn": {"central_fix_bn": float(central["low"]["fix_bn"]) - float(pc["low"]["fix_bn"]),
+                              "central_cost_bn": [float(central[e]["cost_to_others_bn"]) - float(pc[e]["cost_to_others_bn"])
+                                                  for e in ("low", "high")],
+                              "rule": "separate funds less pooled: the general-fund fix nets OASI's post-depletion "
+                                      "shortfall from 2032 Q4 instead of the pooled fund's from 2034 Q3"}}
         summ["sets"][s] = block
 
-    OUT.mkdir(exist_ok=True)
+    out_dir.mkdir(exist_ok=True)
     for name, rows in (("closed_budget.csv", out_rows), ("shares.csv", share_rows)):
-        with open(OUT / name, "w", newline="") as f:
+        with open(out_dir / name, "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
             w.writeheader()
             w.writerows(rows)
-    (OUT / "summary.json").write_text(json.dumps(summ, indent=1) + "\n")
+    (out_dir / "summary.json").write_text(json.dumps(summ, indent=1) + "\n")
+    d = conf["decomp"]
     audit = {
         "lane": "closed_budget_2026_10_06",
         "inputs": {str(p.relative_to(ROOT)): sha(p) for p in
-                   [CASE, DECOMP / "summary_oct05.json", DECOMP / "decomposition_lines_oct05.csv",
-                    DECOMP / "decomposition_lines_oct05_cash.csv", SOURCES, HOUSEHOLDS, TRUST_FUNDS]},
+                   [conf["case"], dsum_file, DECOMP / f"decomposition_lines_{d}.csv",
+                    DECOMP / f"decomposition_lines_{d}_cash.csv", SOURCES, conf["households"], conf["trust_funds"]]
+                   + ([conf["pooled"]] if conf.get("pooled") else [])},
         "frame": {"NG": NG, "NC": NC, "share": share},
         "gdp_2024_bn": GDP_2024_BN, "federal_mix_bn": FED_MIX,
         "gates": gates,
     }
-    (OUT / "audit.json").write_text(json.dumps(audit, indent=1) + "\n")
+    (out_dir / "audit.json").write_text(json.dumps(audit, indent=1) + "\n")
     c = summ["sets"]["main"]
     print(f"wrote {len(out_rows)} rows; {len(gates)} gates pass; central {c['central']['cost_bn'][0]:.1f}-"
           f"{c['central']['cost_bn'][1]:.1f}bn; current law {c['current law']['cost_bn'][0]:.1f}-"

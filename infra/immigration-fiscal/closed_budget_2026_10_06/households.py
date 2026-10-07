@@ -24,11 +24,21 @@ householders'; it is reported as a diagnostic. The householder's lineage status 
 Gates: the frame reproduces the decomposition's NG and NC (summary_oct05.json); the slices add to the household
 weights' count; the share lies below the per-person share (the lineage lives in larger households).
 
+--case oct07 (main case v6, which prices the added people at their measured age mix, meta.lineage.age_mix): each
+identified G3+ record carries the added people in proportion to its five-year band's share of them over its share of
+the identified G3+ (the G3-rate persons and the later losses at their own mixes, by count), as the white lane's
+age_tilt() places them [ASSUMPTION: the added people live in households of the identified G3+ records of their own
+ages]. Gates, beside the oct05 ones on the decomposition's summary_oct07.json: the frame's identified G3+ ages are the
+age-mix lane's identified mix (1e-6), no band holds added people without identified G3+, and the tilted lineage is the
+lineage population. Writes derived/oct07/household_share.json.
+
 Writes derived/household_share.json. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/closed_budget_2026_10_06/households.py
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/closed_budget_2026_10_06/households.py --case oct07
 """
 from __future__ import annotations
 
+import argparse
 import importlib.util
 import json
 import sys
@@ -42,8 +52,13 @@ LANE = Path(__file__).resolve().parent
 FISCAL = LANE.parent
 OUT = LANE / "derived"
 DECOMP = FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct05.json"
+# The case each run is on: the decomposition's frame it gates against, where it writes, and (oct07) the payload whose
+# meta.lineage.age_mix places the added people.
+CASES = {"oct05": dict(decomp=DECOMP, out=OUT),
+         "oct07": dict(decomp=FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct07.json", out=OUT / "oct07",
+                       payload=FISCAL / "main_case_2026_10_07/derived/corrections.json")}
 sys.path.insert(0, str(FISCAL / "world_ledger_2026_09_27"))
-from population_basis import reweight  # noqa: E402
+from population_basis import g3plus, reweight  # noqa: E402
 
 HOUSEHOLDER = (1, 2)  # A_EXPRRP: reference person with and without relatives
 
@@ -53,7 +68,33 @@ def gate(name, ok, **detail):
         raise SystemExit(f"[BLOCKED] gate {name} failed: {detail}")
 
 
-def main() -> None:
+def age_tilted(d, payload_file: Path) -> np.ndarray:
+    """oct07: the lineage weights with the added people on the identified G3+ records at the measured age mix: each
+    record's added weight is its band's share of the added people over its share of the identified G3+ (row 4's
+    weights), so the identified mix gives v5's proportional placement."""
+    lin = json.loads(payload_file.read_text())["meta"]["lineage"]
+    am, c = lin["age_mix"], lin["counts"]
+    gate("age_mix_on_five_year_bands", am["bands"] == [f"{b}-{b + 4}" for b in range(0, 80, 5)] + ["80+"])
+    pw, g3 = d.pw_row4.to_numpy(float), g3plus(d)
+    band = np.minimum(d.A_AGE.to_numpy() // 5, 16)
+    ident = np.array([pw[g3 & (band == b)].sum() for b in range(17)]) / pw[g3].sum()
+    gate("frame_g3plus_ages_are_the_age_mix_lanes_identified_mix", float(np.abs(ident - am["mixes"]["identified"]).max()) < 1e-6,
+         max_diff=float(np.abs(ident - am["mixes"]["identified"]).max()))
+    mix = (c["at_g3_rate"] * np.asarray(am["mixes"]["g3_rate"], float)
+           + c["later_losses"] * np.asarray(am["mixes"]["later"], float)) / c["added"]
+    gate("added_mix_sums_to_one_with_no_band_outside_the_identified", abs(mix.sum() - 1) < 1e-12
+         and not bool(((ident <= 0) & (mix > 0)).any()), total=float(mix.sum()))
+    tilt = np.divide(mix, ident, out=np.zeros(17), where=ident > 0)
+    lw = pw.copy()
+    lw[g3] *= 1.0 + c["added"] / float(pw[g3].sum()) * tilt[band[g3]]
+    tgt = d.target.to_numpy()
+    gate("tilted_lineage_is_the_lineage_population", abs(float(lw[tgt].sum()) - c["lineage_population"]) < 1e-2,
+         lineage=float(lw[tgt].sum()), case=c["lineage_population"])
+    return lw
+
+
+def main(case: str = "oct05") -> None:
+    conf = CASES[case]
     spec = importlib.util.spec_from_file_location("dist_base", FISCAL / "distribution_weights_2026_09_23/distribute.py")
     B = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(B)
@@ -64,9 +105,11 @@ def main() -> None:
     gate("every_person_has_a_relationship", bool(d.A_EXPRRP.notna().all()))
     d = reweight(d, B.PATHS["cps"], gate, "lineage")
 
-    frame = json.loads(DECOMP.read_text())["frame"]["row4"]
+    frame = json.loads(conf["decomp"].read_text())["frame"]["row4"]
     civ, tgt = d.civ.to_numpy(), d.target.to_numpy()
     lw, r4 = d.pw.to_numpy(float), d.pw_row4.to_numpy(float)
+    if "payload" in conf:
+        lw = age_tilted(d, conf["payload"])
     gate("lineage_is_the_decompositions_NG", abs(lw[tgt].sum() - frame["NG"]) < 1e-2, frame=lw[tgt].sum(), NG=frame["NG"])
     gate("row4_civilians_are_the_decompositions_NC", abs(r4[civ].sum() - frame["NC"]) < 1.0, frame=r4[civ].sum(),
          NC=frame["NC"])
@@ -110,11 +153,17 @@ def main() -> None:
         "persons_per_household_all": size_all,
         "frame": {"NG": float(lw[tgt].sum()), "NC": float(r4[civ].sum())},
     }
-    OUT.mkdir(exist_ok=True)
-    (OUT / "household_share.json").write_text(json.dumps(out, indent=1) + "\n")
+    if "payload" in conf:
+        out["placement"] = ("the added people on the identified G3+ records at the measured age mix "
+                            "(meta.lineage.age_mix), by five-year band")
+    conf["out"].mkdir(parents=True, exist_ok=True)
+    (conf["out"] / "household_share.json").write_text(json.dumps(out, indent=1) + "\n")
     print(f"per-household share {share:.6f} (householder {share_head:.6f}; per person {per_person:.6f}); "
           f"{size_lin:.3f} vs {size_all:.3f} persons per household")
 
 
 if __name__ == "__main__":
-    main()
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--case", default="oct05", choices=list(CASES),
+                    help="oct05 (default, v5) or oct07 (v6: the added people at their measured age mix)")
+    main(ap.parse_args().case)
