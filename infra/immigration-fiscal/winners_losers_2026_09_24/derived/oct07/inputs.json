@@ -1,0 +1,1117 @@
+{
+ "group_state_share": {
+  "AL": 0.00458234842827154,
+  "AK": 0.0006966973378087091,
+  "AZ": 0.05960595489575049,
+  "AR": 0.004222146137450002,
+  "CA": 0.3198992197089336,
+  "CO": 0.028840527503430777,
+  "CT": 0.002798945075706721,
+  "DE": 0.0018209099283182251,
+  "DC": 0.00028539549666114984,
+  "FL": 0.020907009130461108,
+  "GA": 0.0190149858913593,
+  "HI": 0.0011909681258198742,
+  "ID": 0.005730797707236609,
+  "IL": 0.047533881379912775,
+  "IN": 0.010416181645985198,
+  "IA": 0.0049880768019454945,
+  "KS": 0.00792991209689015,
+  "KY": 0.003594312919349913,
+  "LA": 0.004465045428679724,
+  "ME": 0.00012674314241164667,
+  "MD": 0.001195623669423862,
+  "MA": 0.0014764677280463005,
+  "MI": 0.012712081914602203,
+  "MN": 0.00662819753204466,
+  "MS": 0.0023538194323436787,
+  "MO": 0.005918831253228084,
+  "MT": 0.0006522839078870844,
+  "NE": 0.004318507289554313,
+  "NV": 0.018580391072791646,
+  "NH": 0.0001713712052498891,
+  "NJ": 0.00517802541956004,
+  "NM": 0.017198572810952467,
+  "NY": 0.015690126114477957,
+  "NC": 0.019908735269085553,
+  "ND": 0.0005174154346547659,
+  "OH": 0.005399861779610708,
+  "OK": 0.01153417104873669,
+  "OR": 0.01112702311978596,
+  "PA": 0.005577064012284353,
+  "RI": 0.0005236132929681724,
+  "SC": 0.005558065783859752,
+  "SD": 0.0005451363210054581,
+  "TN": 0.009275644661411939,
+  "TX": 0.23868655419615492,
+  "UT": 0.008140036979406887,
+  "VT": 6.758821931667942e-05,
+  "VA": 0.004807298851175141,
+  "WA": 0.026693511934192678,
+  "WV": 0.000312375713000042,
+  "WI": 0.009621061612995098,
+  "WY": 0.0009804836378101377
+ },
+ "fiscal": {
+  "low": {
+   "cost": 388.3780465734992,
+   "federal": 116.605528,
+   "state_local": 262.96132057349917,
+   "future": 90.85672179525338,
+   "federal_today": 25.748806204746636,
+   "cash": 261.30214957349926,
+   "cash_federal": 34.035054,
+   "resource": 36.581557,
+   "resource_federal": 0.887332,
+   "displaced": 8.811198,
+   "accrual": 81.683142,
+   "accrual_federal": 81.683142,
+   "future_borrowing": 9.173579795253369
+  },
+  "central": {
+   "cost": 424.69719229336397,
+   "federal": 129.22087000000002,
+   "state_local": 286.66512429336393,
+   "future": 92.08767972080348,
+   "federal_today": 37.13319027919654,
+   "cash": 288.163723293364,
+   "cash_federal": 48.930192000000005,
+   "resource": 48.8229065,
+   "resource_federal": 1.3913134999999999,
+   "displaced": 8.811198,
+   "accrual": 78.8993645,
+   "accrual_federal": 78.8993645,
+   "future_borrowing": 13.18831522080347
+  },
+  "high": {
+   "cost": 461.01633801322873,
+   "federal": 141.836212,
+   "state_local": 310.36892801322875,
+   "future": 93.31863764635358,
+   "federal_today": 48.51757435364643,
+   "cash": 315.02529701322874,
+   "cash_federal": 63.82533,
+   "resource": 61.064256,
+   "resource_federal": 1.895295,
+   "displaced": 8.811198,
+   "accrual": 76.115587,
+   "accrual_federal": 76.115587,
+   "future_borrowing": 17.20305064635357
+  }
+ },
+ "capped_programs": {
+  "amounts_bn": {
+   "housing_subsidies": {
+    "low": 4.488824290011592,
+    "high": 4.488824290011592,
+    "central": 4.488824290011592
+   },
+   "energy_assistance": {
+    "low": 0.6045528356789629,
+    "high": 0.6045528356789629,
+    "central": 0.6045528356789629
+   },
+   "housing_enterprise_surplus": {
+    "low": 3.7178213606483306,
+    "high": 3.7178213606483306,
+    "central": 3.7178213606483306
+   }
+  },
+  "keys": {
+   "housing_subsidies": {
+    "eligible_non_recipient_households_m": 10.266891669999998,
+    "other_residents_in_them_m": 18.64704368422056,
+    "eligible_households_all_m": 16.80981343,
+    "recipient_households_all_m": 6.696504540000001
+   },
+   "energy_assistance": {
+    "eligible_non_recipient_households_m": 17.948359560000004,
+    "other_residents_in_them_m": 38.22372352875036,
+    "eligible_households_all_m": 22.823788670000003,
+    "recipient_households_all_m": 4.49198481
+   },
+   "state_median_household_income": {
+    "min": 55500.0,
+    "max": 113820.0,
+    "national": 83592.0
+   }
+  }
+ },
+ "wages_eps3_delta_F": {
+  "low": 4.390187786088735,
+  "high": 2.8879461992455973,
+  "central": 3.639066992667166
+ },
+ "wages_P": {
+  "cash": -0.4634049812875958,
+  "gdp": -0.7044573369436798,
+  "gdp_factor": 1.520176444772577,
+  "below_ba_cash": -1.654576997876615
+ },
+ "housing": {
+  "low": {
+   "renters_bn": 50.473428261833945,
+   "net_bn": -0.3792459764252824,
+   "landlords_bn": 50.094182285408664,
+   "owner_stock_bn": 2880.58094715391,
+   "pattern": [
+    "high",
+    "national_uniform"
+   ],
+   "pattern_scale": 1.0,
+   "row": "long run, high elasticity, form A, national_uniform, ownership high, leak 0.06, householder"
+  },
+  "central": {
+   "renters_bn": 33.858535114576824,
+   "net_bn": 3.507578587187932,
+   "landlords_bn": 37.36611370176475,
+   "owner_stock_bn": 1931.6398319116452,
+   "pattern": [
+    "central",
+    "metro_local"
+   ],
+   "pattern_scale": 1.0,
+   "row": "long run, central elasticity, form A, metro_local, ownership central, leak 0.035, householder"
+  },
+  "high": {
+   "renters_bn": 57.760637113533704,
+   "net_bn": 9.403795587206028,
+   "landlords_bn": 67.16443270073974,
+   "owner_stock_bn": 3300.5508579284237,
+   "pattern": [
+    "high",
+    "metro_local"
+   ],
+   "pattern_scale": 1.153583249345753,
+   "row": "long run, high elasticity, form C, metro_local, ownership low, leak 0.017, householder"
+  },
+  "national_uniform_central": {
+   "renters_bn": 33.47498223794534,
+   "net_bn": 0.7082298460183115,
+   "landlords_bn": 34.18321208396365,
+   "owner_stock_bn": 1910.4586187551593,
+   "pattern": [
+    "central",
+    "national_uniform"
+   ],
+   "pattern_scale": 1.0,
+   "row": "long run, central elasticity, form A, national_uniform, ownership central, leak 0.035, householder"
+  }
+ },
+ "crime": {
+  "equal": 28.9228851746268,
+  "custody": 32.3381,
+  "mixed_equal": 30.927388,
+  "nibrs_equal": 28.5907,
+  "envelope_low": 15.4099,
+  "envelope_high": 45.3424,
+  "footing": {
+   "mixed_equal": "equal footing (Mexican-origin offending at NCVS Hispanic rates) with the NIBRS mixed-group correction, theta 0.4977; decision 4's figure [crime_ratio_direction_2026_09_24]",
+   "equal": "equal footing, no mixed-group correction; the victim lane's central [crime_victim_cost_2026_09_23]",
+   "custody": "custody footing (ACS institutional ratio 1.118, generic Hispanic reallocated), no mixed-group correction [crime_victim_cost_2026_09_23]",
+   "nibrs_equal": "NIBRS victim-conditional, SHR-calibrated [offender_ethnicity_nibrs_2026_09_23]",
+   "envelope_low": "the victim lane's envelope, every arm at its low setting, Miller 2021 prices",
+   "envelope_high": "the victim lane's envelope, every arm at its high setting, Miller 2021 prices with the DOT 2024 VSL for murder"
+  }
+ },
+ "congestion": {
+  "total": {
+   "low": 2.014861874519616,
+   "central": 13.00530957391787,
+   "high": 30.828298311580394
+  },
+  "state_bn": {
+   "low": {
+    "1": 0.0012947557504573335,
+    "2": 0.0005885786280829961,
+    "4": 0.1385844875797242,
+    "5": 0.006201808218337545,
+    "6": 0.871100831683172,
+    "8": 0.064281988639578,
+    "9": -0.00467176916465047,
+    "10": -8.7759176626984e-05,
+    "11": -0.0038187021810373095,
+    "12": 0.00334722928673586,
+    "13": 0.021599174877858958,
+    "15": 6.306675489429368e-05,
+    "16": 0.008629003889635223,
+    "17": 0.14285464833516162,
+    "18": 0.011912775650223226,
+    "19": 0.006038348588157205,
+    "20": 0.00802083700998205,
+    "21": 0.0014181112294312677,
+    "22": -0.003365585085919517,
+    "23": -0.0009138769746763872,
+    "24": -0.0039133364277108215,
+    "25": -0.015293545914113327,
+    "26": 0.007459689336877096,
+    "27": 0.004307117343081878,
+    "28": -0.0013170626144010903,
+    "29": 0.008894034853325293,
+    "30": 0.00031498742600710847,
+    "31": 0.0077272864745773755,
+    "32": 0.05829728846094633,
+    "33": -0.0018855131973502146,
+    "34": 0.0004953810411226497,
+    "35": 0.03069327978436819,
+    "36": -0.004460159543618115,
+    "37": 0.01677545542580179,
+    "38": -0.0001808249055204793,
+    "39": -0.007505587320807733,
+    "40": 0.020958240905117647,
+    "41": 0.02890596489802652,
+    "42": -0.015123715747806977,
+    "44": -0.0030451714808175834,
+    "45": 0.0009666861406784255,
+    "46": -9.516982105880085e-05,
+    "47": 0.006258944804879643,
+    "48": 0.5213417014654224,
+    "49": 0.028372900552359588,
+    "50": -0.0003814697989022667,
+    "51": -0.002233847131906908,
+    "53": 0.04014969422137269,
+    "54": -0.002434282296858057,
+    "55": 0.016398630616129516,
+    "56": 0.0013363234318734616
+   },
+   "central": {
+    "1": -0.0031447432317970835,
+    "2": 0.00250356234401168,
+    "4": 0.9420762713257567,
+    "5": 0.037208619385750166,
+    "6": 5.947252836206266,
+    "8": 0.42912771020311247,
+    "9": -0.048237631001908615,
+    "10": -0.0012090207482957239,
+    "11": -0.04816026898193939,
+    "12": -0.06482248887549352,
+    "13": 0.11861122298119472,
+    "15": -0.005016166035550334,
+    "16": 0.055674870761190556,
+    "17": 0.954028880816622,
+    "18": 0.0661050196798661,
+    "19": 0.03475119393096029,
+    "20": 0.05215946737114126,
+    "21": 0.0012872651060368877,
+    "22": -0.04085941161899462,
+    "23": -0.007990219071757858,
+    "24": -0.043577057601792674,
+    "25": -0.13449076735620036,
+    "26": 0.020975834622601722,
+    "27": 0.014294327187235535,
+    "28": -0.012666066791408196,
+    "29": 0.03979434262710232,
+    "30": 0.0008847677082613693,
+    "31": 0.04850011860494449,
+    "32": 0.3938800578906023,
+    "33": -0.016179314272296207,
+    "34": 6.496483617899848e-05,
+    "35": 0.20993300236782003,
+    "36": -0.1309653734152501,
+    "37": 0.08837236065404272,
+    "38": -0.00300105785228734,
+    "39": -0.09121662639469964,
+    "40": 0.1365343970401643,
+    "41": 0.18707356304903427,
+    "42": -0.15575963069243814,
+    "44": -0.02684940426625588,
+    "45": -0.007123828897112725,
+    "46": -0.0019932609515195274,
+    "47": 0.023973103290586172,
+    "48": 3.5526371588388175,
+    "49": 0.18403028389761988,
+    "50": -0.003219911784813255,
+    "51": -0.03180981324717812,
+    "53": 0.25545821736340146,
+    "54": -0.020959522539351905,
+    "55": 0.09879876706599611,
+    "56": 0.00856897238989358
+   },
+   "high": {
+    "1": -0.03919866114195076,
+    "2": 0.0023590202749358964,
+    "4": 2.3643849420532828,
+    "5": 0.08041200025196686,
+    "6": 14.993371040086268,
+    "8": 1.0564320405574055,
+    "9": -0.1642509545863488,
+    "10": -0.004639312547021059,
+    "11": -0.17905080213619037,
+    "12": -0.39218911667215905,
+    "13": 0.2237418426697916,
+    "15": -0.026858074230023867,
+    "16": 0.13191131964518515,
+    "17": 2.349636105123312,
+    "18": 0.12692352792567618,
+    "19": 0.07071650545856775,
+    "20": 0.12471017055503861,
+    "21": -0.018658479241909727,
+    "22": -0.14966693023465363,
+    "23": -0.02471243784400328,
+    "24": -0.1538515773480895,
+    "25": -0.41753913783341434,
+    "26": -0.025275741545361285,
+    "27": -0.0033934055385930065,
+    "28": -0.041518634546813725,
+    "29": 0.045717641915258594,
+    "30": -0.0010721112455879672,
+    "31": 0.11116588299549719,
+    "32": 0.9822128340305324,
+    "33": -0.049416238765227716,
+    "34": -0.008491545857543407,
+    "35": 0.5302481514771177,
+    "36": -0.5924412512415673,
+    "37": 0.15453739280360104,
+    "38": -0.012175159290387186,
+    "39": -0.3342650732637989,
+    "40": 0.32711139493515745,
+    "41": 0.44481133739883194,
+    "42": -0.5296808242826154,
+    "44": -0.08349889192693617,
+    "45": -0.05376837347197608,
+    "46": -0.008530708713862521,
+    "47": 0.01149158795564376,
+    "48": 8.938895207120138,
+    "49": 0.43869444694066606,
+    "50": -0.009723615871712282,
+    "51": -0.12340055465815801,
+    "53": 0.5953486956962206,
+    "54": -0.06416438079292977,
+    "55": 0.21474114780197476,
+    "56": 0.020156070737160477
+   }
+  },
+  "by_band_end": {
+   "low": {
+    "central_bn": 13.992562864050909,
+    "range_bn": [
+     2.014861874519616,
+     32.04934035817931
+    ],
+    "lane_cut": 0.05905067710729579,
+    "states_with_a_gain": [
+     "CT",
+     "DC",
+     "DE",
+     "LA",
+     "MA",
+     "MD",
+     "ME",
+     "MS",
+     "ND",
+     "NH",
+     "NY",
+     "OH",
+     "PA",
+     "RI",
+     "SD",
+     "VA",
+     "VT",
+     "WV"
+    ]
+   },
+   "high": {
+    "central_bn": 12.01805628378483,
+    "range_bn": [
+     -0.9235617873055264,
+     30.828298311580397
+    ],
+    "lane_cut": 0.08061009942509387,
+    "states_with_a_gain": [
+     "AL",
+     "CT",
+     "DC",
+     "DE",
+     "FL",
+     "HI",
+     "KY",
+     "LA",
+     "MA",
+     "MD",
+     "ME",
+     "MI",
+     "MN",
+     "MS",
+     "MT",
+     "ND",
+     "NH",
+     "NJ",
+     "NY",
+     "OH",
+     "PA",
+     "RI",
+     "SC",
+     "SD",
+     "VA",
+     "VT",
+     "WV"
+    ]
+   }
+  },
+  "b1_lanes_fixed_bn": 19.162711110731056
+ },
+ "preferences": {
+  "group_part": {
+   "low": 0.01,
+   "central": 0.58,
+   "high": 3.76
+  },
+  "regime": {
+   "low": 0.1754,
+   "central": 3.9551000000000003,
+   "high": 18.6984
+  },
+  "parts": {
+   "admissions": 0.36239632000000005,
+   "contractor_hiring": 0.15994592,
+   "lost_profits": 0.02436095,
+   "taxpayer_premium": 0.03732486
+  }
+ },
+ "preferences_attribution": {
+  "rule": "proportional replacement: a program's preferred placements scale with its eligible pool, so without the group its seats, jobs and contracts go to the non-preferred pool in the proportions of the producer's race-neutral counterfactual (freed seats as AKR, Espenshade-Chung and Hinrichs split them; contractor jobs over non-Hispanic, non-Black earners; contracts over incorporated self-employment earnings; the premium over taxes), and no other eligible group takes them. Under a fixed-target rule other eligible recipients would take the placements and white natives would recover nothing",
+  "cps_shares": {
+   "nat_ba": 0.9358894436295399,
+   "emp_wn_ba": 0.9004919471418685,
+   "e_wn_ba": 111719.46705564394,
+   "nat_w": 0.9496498224643521,
+   "white_of_nonpref": 0.8535828192743113,
+   "se_wn": 0.6703887073787014,
+   "tax_wn": 0.6335305819914402
+  },
+  "white_share_of_pool": {
+   "admissions": 0.28572915296478674,
+   "contractor_hiring": 0.8106047727824709,
+   "lost_profits": 0.6703887073787014,
+   "taxpayer_premium": 0.6335305819914402
+  },
+  "outside_groups": {
+   "ec": 0.09146341463414631,
+   "akr": 0.10788381742738584
+  },
+  "admissions_value_white_others": [
+   36446451.36560349,
+   91109490.99249098
+  ],
+  "dbe_premium_part_bn": 0.03732486,
+  "dbe_in_fiscal_channel_share": {
+   "low": 0.05905067710729579,
+   "high": 0.08061009942509387,
+   "used": 0.06983038826619484
+  },
+  "dbe_netted_bn": 0.002606409465781365,
+  "white_parts": {
+   "admissions": 0.36239632000000005,
+   "contractor_hiring": 0.15994592,
+   "lost_profits": 0.02436095,
+   "taxpayer_premium": 0.03471845053421864
+  },
+  "other_parts": {
+   "admissions": 0.9059248024325498,
+   "contractor_hiring": 0.037370855536580934,
+   "lost_profits": 0.01197759468589451,
+   "taxpayer_premium": 0.020083087893625923
+  },
+  "scale": {
+   "low": 0.01712246526515293,
+   "central": 0.99310298537887,
+   "high": 6.438046939697502
+  }
+ },
+ "mobility": {
+  "insurance": {
+   "low": 0.0,
+   "central": 0.13066169930165578,
+   "high": 1.0272409209024327
+  },
+  "borjas": {
+   "low": 0.1808228774287499,
+   "central": 0.52422141204,
+   "high": 1.43454656359125
+  },
+  "total": {
+   "low": 0.1808228774287499,
+   "central": 0.6548831113416558,
+   "high": 2.4617874844936827
+  }
+ },
+ "scale": {
+  "total": {
+   "low": -56.56867989186499,
+   "central": 13.927466764218613,
+   "high": 84.42361342030222
+  },
+  "private_share": 0.5720876562840825,
+  "receipts_share": 0.42791234371591746,
+  "state_share": {
+   "1": 0.003907198997555824,
+   "2": 0.002003353940657433,
+   "4": 0.05551825475761111,
+   "5": 0.002059245631929457,
+   "6": 0.36599087307274863,
+   "8": 0.025255316278388475,
+   "9": 0.0021247954526681513,
+   "10": 0.000345275139237044,
+   "11": 0.008924632764032272,
+   "12": 0.017708462298393488,
+   "13": 0.0034600739150892033,
+   "15": 0.0020071999795050143,
+   "16": 0.005240055995128456,
+   "17": 0.04453905287251952,
+   "18": 0.00509522833595121,
+   "19": 0.003365935398939386,
+   "20": 0.006807257529540065,
+   "21": 0.0020712019384109335,
+   "22": 0.0024991794101635154,
+   "23": 0.0006800831954780062,
+   "24": 0.0034304633140124653,
+   "25": 0.006119242846766942,
+   "26": 0.013512010755584654,
+   "27": 0.004670191878066028,
+   "28": 0.0010453405888814142,
+   "29": 0.009447210458822785,
+   "30": 0.0011633636791948754,
+   "31": 0.003071726908115942,
+   "32": 0.015791950752156995,
+   "33": 0.00019806086447220027,
+   "34": 0.001047031077341431,
+   "35": 0.018682944581003225,
+   "36": 0.013151219905071902,
+   "37": 0.0030410713502084046,
+   "38": 0.00011074960405625446,
+   "39": 0.009422831722589297,
+   "40": 0.006620451692046012,
+   "41": 0.013067182415807342,
+   "42": 0.00510327841867813,
+   "44": 0.0003426785607438934,
+   "45": 0.002145296329210363,
+   "46": 0.0004860299425049651,
+   "47": 0.005717070159236394,
+   "48": 0.2632560267998061,
+   "49": 0.0062855546045335305,
+   "50": 0.00026150796885239075,
+   "51": 0.005310662679950951,
+   "53": 0.020529893339745628,
+   "54": 0.00042890091997752804,
+   "55": 0.0054534934415436595,
+   "56": 0.0014838855370708898
+  },
+  "metro_total_bn": 13.755043529596115
+ },
+ "property_crime": {
+  "low": 1.2726508536391001,
+  "central": 1.2726508536391001,
+  "high": 1.3762198638057002
+ },
+ "care_hours": {
+  "earnings_bn": 6.311321592621774,
+  "taxes_bn": 2.688622998456876,
+  "after_tax_earnings_bn": 3.6226985941648984,
+  "d_hours_week_on_removal": -0.1357054583644795,
+  "total": {
+   "low": 2.596480316050238,
+   "central": 4.1475791436498675,
+   "high": 13.349582433459528
+  },
+  "elder_care_bn": 1.4871944918978677,
+  "private_gain_bn": 0.0,
+  "consumer_surplus_net_bn": 11.94389064209251,
+  "cps_women_m": 16.44347855181717
+ },
+ "debt": {
+  "low": 31.823258,
+  "high": 44.169319,
+  "central": 37.9962885,
+  "rules_min": 6.837357,
+  "rules_max": 44.953367,
+  "commit": "0485e5a2",
+  "oct05": {
+   "low": 30.628803,
+   "high": 42.623603,
+   "central": 36.626203000000004,
+   "rules_min": 5.761213,
+   "rules_max": 43.419663,
+   "commit": "604b09e1"
+  }
+ },
+ "deficit": {
+  "receipts_musd": 4919884.0,
+  "outlays_musd": 6735261.0,
+  "deficit_musd": 1815377.0,
+  "share": 0.2695332816352625
+ },
+ "fiscal_A": {
+  "adopted_2026_10_07": {
+   "A": {
+    "low": -400.9921487676602,
+    "high": -469.314126232328
+   },
+   "engine_A": {
+    "low": -400.992197722897,
+    "high": -469.314092540232
+   },
+   "diff": {
+    "low": 4.8955236820802384e-05,
+    "high": -3.369209599668466e-05
+   },
+   "A_mid": -435.1531374999941
+  },
+  "adopted_2026_10_05": {
+   "A": {
+    "low": -402.2413707475403,
+    "high": -469.1024181307735
+   },
+   "engine_A": {
+    "low": -402.241419702777,
+    "high": -469.102384438677
+   },
+   "diff": {
+    "low": 4.8955236707115546e-05,
+    "high": -3.3692096508275426e-05
+   },
+   "A_mid": -435.6718944391569
+  }
+ },
+ "published_totals": {
+  "equal": [
+   483.040926,
+   558.64816
+  ],
+  "equal_fiscal": [
+   384.32827,
+   456.692493
+  ],
+  "custody": [
+   489.205921,
+   564.846089
+  ],
+  "custody_fiscal": [
+   389.082553,
+   461.479709
+  ],
+  "custody_victims": 32.3381,
+  "span": [
+   208.780764,
+   830.867109
+  ],
+  "range": [
+   483.040926,
+   564.846089
+  ],
+  "equal_victims": 30.93
+ },
+ "pooling": {
+  "other_in_multi_member_units_share": 0.8317700601236074,
+  "other_in_mixed_units_m": 6.9697135180553405,
+  "units_with_unequal_weights_share": 0.4165332529712015,
+  "max_relative_weight_spread": 2.0534737809364554,
+  "units": {
+   "person": "wages to the earner, taxes and rent shared within the unit",
+   "spm_unit_pooled": "every amount pooled within the SPM unit, per capita over its other residents"
+  },
+  "plain_mean": {
+   "net_account_a": {
+    "winners_share": 0.1932217618857644,
+    "total_drift_bn": 1.1044150612204267
+   },
+   "net_account_b": {
+    "winners_share": 0.1739375658573458,
+    "total_drift_bn": 1.1044162343488049
+   },
+   "net_social_a": {
+    "winners_share": 0.17970212657467372,
+    "total_drift_bn": 0.9224170947703865
+   },
+   "net_social_b": {
+    "winners_share": 0.1714661541829119,
+    "total_drift_bn": 0.9224182678987658
+   },
+   "net_with_proposed_a": {
+    "winners_share": 0.18718075252395594,
+    "total_drift_bn": 1.0398162317666635
+   },
+   "net_with_proposed_b": {
+    "winners_share": 0.1799864367044572,
+    "total_drift_bn": 1.0398172285681886
+   }
+  }
+ },
+ "group": {
+  "ingroup_victims": {
+   "nonfatal_victimisations": 186951.2466,
+   "homicides": 1280.2841999999998,
+   "full_equal_bn": 20.10926112150417,
+   "tangible_equal_bn": 4.011901479193065,
+   "murder_full_equal_bn": 11.476164134275008
+  },
+  "weights": "lineage",
+  "lineage": {
+   "members_m": 42.752212924373126,
+   "published_members_m": 40.89657415235185,
+   "factors": {
+    "naturalized": 0.8556255897504617,
+    "noncitizen": 0.7781269999470055
+   },
+   "grid_file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+   "row4_members_m": 39.712493331187886,
+   "identified_g3plus_m": 14.34257460627561,
+   "added_m": 3.039719593185237,
+   "priced_as_g3plus_m": 1.9569983691152573,
+   "priced_as_white_m": 1.08272122406998,
+   "g3plus_factor": 1.2119368158527972,
+   "g3plus_records": 6351,
+   "rule": "the added people (descendants who no longer report Mexican origin, counted whole) are not in the CPS as group members, so each identified third-plus-generation member's row-4 weight is raised by the added people of its five-year age band over the identified G3+ of that band, the added people taken at the case's measured mixes (meta.lineage.age_mix: the G3-rate persons and the later losses, each at its own mix), which places them at the identified G3+ members' records of their own ages [ASSUMPTION: the account prices the white end of the G3-rate blend at third-plus non-Hispanic whites' amounts (meta.lineage.members); here all of them take the G3+ members' records, band by band]; the other residents keep the CPS frame, in which the added people sit unfound, as the distribution lane leaves them",
+   "counts_source": "main_case_2026_10_07/derived/corrections.json meta.lineage",
+   "age_bands": {
+    "rule": "the added people (descendants who no longer report Mexican origin, counted whole) are not in the CPS as group members, so each identified third-plus-generation member's row-4 weight is raised by the added people of its five-year age band over the identified G3+ of that band, the added people taken at the case's measured mixes (meta.lineage.age_mix: the G3-rate persons and the later losses, each at its own mix), which places them at the identified G3+ members' records of their own ages [ASSUMPTION: the account prices the white end of the G3-rate blend at third-plus non-Hispanic whites' amounts (meta.lineage.members); here all of them take the G3+ members' records, band by band]; the other residents keep the CPS frame, in which the added people sit unfound, as the distribution lane leaves them",
+    "bands": [
+     "0-4",
+     "5-9",
+     "10-14",
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79",
+     "80+"
+    ],
+    "band_factors": [
+     1.2141596165836632,
+     1.2366298994780203,
+     1.2488993287915044,
+     1.2346560432561078,
+     1.2493284975479213,
+     1.226164786853367,
+     1.2261648277456907,
+     1.1950920344754807,
+     1.195092034524464,
+     1.195092030831941,
+     1.1411434386972026,
+     1.1411434254923412,
+     1.1411434523965573,
+     1.1411434298385539,
+     1.1411434509997305,
+     1.141143442444764,
+     1.1411434250429864
+    ],
+    "added_by_band_m": [
+     0.4235578518980356,
+     0.3827066964725673,
+     0.38947322555095243,
+     0.3614757063954489,
+     0.27929357556411144,
+     0.24298453646169663,
+     0.193128147689885,
+     0.1610373442505939,
+     0.14752024812758738,
+     0.1207595554076649,
+     0.07735998433574443,
+     0.05767539750579282,
+     0.06218412840335667,
+     0.0493854538754674,
+     0.039610425890699755,
+     0.02583062527133917,
+     0.025736690084293218
+    ],
+    "identified_mix_frame_vs_case_max_abs_diff": 1.3833450038247541e-08,
+    "source": "main_case_2026_10_07/derived/corrections.json meta.lineage.age_mix (cross_section_2007_2026, keys)",
+    "added_people": {
+     "under_20_share": 0.5122885294446663,
+     "earnings_bn": 65.29231763857665
+    },
+    "added_people_at_one_factor": {
+     "under_20_share": 0.46716300524616045,
+     "earnings_bn": 70.96028114632752,
+     "factor": 1.211936815852797
+    }
+   }
+  },
+  "g1_members_m": 11.03670106139193,
+  "g1_earnings_bn": 340.11817161485095,
+  "members_m": 42.752212924373126,
+  "remittances": {
+   "lane_us_bn": 62.794,
+   "corridor_over_cemla": 3.3477065393964316,
+   "cemla_usd": 6035.0,
+   "source": "Banxico SIE CE167 (primary file)",
+   "us_bn": 62.794313403,
+   "total_bn": 65.01683633,
+   "us_share": 0.9658161938898511
+  },
+  "cps_published_weights": {
+   "g1_members_m": 12.220781882555901,
+   "g1_earnings_bn": 378.39536319003554,
+   "members_m": 40.89657415235185,
+   "remittances": {
+    "lane_us_bn": 62.794,
+    "corridor_over_cemla": 3.3477065393964316,
+    "cemla_usd": 6035.0,
+    "source": "Banxico SIE CE167 (primary file)",
+    "us_bn": 62.794313403,
+    "total_bn": 65.01683633,
+    "us_share": 0.9658161938898511
+   }
+  }
+ },
+ "social_totals": {
+  "items_central": -45.443686729027384,
+  "least_costly": -399.1578340532408,
+  "most_costly": -544.7831847552378
+ },
+ "notes": {
+  "rake_fallbacks": []
+ },
+ "top10_states": [
+  "CA",
+  "TX",
+  "AZ",
+  "IL",
+  "CO",
+  "WA",
+  "FL",
+  "NC",
+  "GA",
+  "NV"
+ ],
+ "federal_split_info": {
+  "adopted_2026_10_05": {
+   "commit": "604b09e1",
+   "induced_receipts_federal_share": 0.8840492611199644,
+   "recomputed_vs_lane": {
+    "low_low": [
+     3.0797690021850936,
+     3.07977
+    ],
+    "low_central": [
+     32.39731592382708,
+     32.397318
+    ],
+    "low_high": [
+     44.55624892254514,
+     44.556251
+    ],
+    "high_low": [
+     31.692138068182228,
+     31.69214
+    ],
+    "high_central": [
+     61.17629201626711,
+     61.176295
+    ],
+    "high_high": [
+     80.02777901832552,
+     80.027782
+    ]
+   }
+  },
+  "adopted_2026_10_07": {
+   "commit": "0485e5a2",
+   "induced_receipts_federal_share": 0.8840492611199644,
+   "recomputed_vs_lane": {
+    "low_low": [
+     4.788900949488003,
+     4.788902
+    ],
+    "low_central": [
+     34.0350518734708,
+     34.035054
+    ],
+    "low_high": [
+     46.048540998194916,
+     46.048542
+    ],
+    "high_low": [
+     34.37559112032309,
+     34.375592
+    ],
+    "high_central": [
+     63.825328143930356,
+     63.82533
+    ],
+    "high_high": [
+     82.57779332526226,
+     82.577795
+    ]
+   }
+  },
+  "per_correction_file": {
+   "status": "checked",
+   "rows": 12,
+   "max_abs_diff_bn": 1.9999999993913775e-06,
+   "sha256": "62abef1ac91ebbafc11cb04c118ccaac7a126a68d3010ed6696997e02757750d",
+   "lineage": "the added people's parts of the correction lines from corrections_federal_split_2024.csv (v5_lineage:constants, v5_union_response:row8; v5_lineage on school_reprice and college_rekey)",
+   "items": "the v6 items' components (v6_retiree_health, v6_user_fees), rebuilt from the same file; their rows on school_reprice and college_rekey join the lineage's there"
+  }
+ },
+ "case": {
+  "case": "oct07",
+  "model": "adopted_2026_10_07",
+  "lane": "main_case_2026_10_07",
+  "previous": "oct05",
+  "base": "498a6a71",
+  "debt": "0485e5a2",
+  "debt_files": "0485e5a2",
+  "generations": "3f583fb4",
+  "generations_split": null,
+  "sisters": {
+   "school_dilution_2026_09_24": "8936938",
+   "vending_restaurants_2026_09_24": "1c9b6fe",
+   "compliance_gap_2026_09_24": "1d14b54",
+   "movers_reasons_2026_09_24": "1c9b6fe"
+  },
+  "published": "sept24_propagation_2026_09_24/derived/oct07",
+  "role_only": {
+   "school_dilution_2026_09_24": "applies to the lower-response scenarios only: at this case's school response of 1 no school cost is left unfunded (decisions/2026-09-26-main-case-schools-full-cost.md, bullet 'School dilution'); never in a net under this case"
+  },
+  "profile": "long_run_non_school_full",
+  "previous_variant": "oct05_case",
+  "financing_parts": [
+   "cash",
+   "resource_cost",
+   "displaced_beneficiaries",
+   "pension_accrual"
+  ],
+  "capped": true,
+  "congestion": "long_run",
+  "preferences": "attribution",
+  "production": {
+   "weights": "row4",
+   "grid": {
+    "grid": "row4",
+    "file": "main_case_candidate_2026_09_28/derived/production_row4.json",
+    "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
+    "rule": "the production model on the account's row-4 weights replaces model.json's grid (private_wtp_bn, induced_receipts_bn, sampling_se_bn), scenario by scenario (item 2)"
+   },
+   "factors": {
+    "naturalized": 0.8556255897504617,
+    "noncitizen": 0.7781269999470055
+   },
+   "gdp_factor": {
+    "published": 1.5155456901687994,
+    "row4": 1.520176444772577
+   },
+   "published_solve_max_abs_diff_vs_nest_scenarios": 3.730349362740526e-12,
+   "published_gdp_factor_max_rel_diff": 1.4486190025309043e-12,
+   "row4_max_abs_diff_vs_case_grid_bn": 4.961862032359932e-10,
+   "lineage": {
+    "rule": "the case's grid less the base's at each scenario's cell: the wage changes of skill cell c scaled by lambda_c and the capital columns by kappa so that P and F are the case grid's (two lambdas without capital terms, one lambda and kappa with them); sigma_NI 3 takes its sigma_NI-infinite sibling's factors [ASSUMPTION: the added members' effects fall on other residents' cells as the union's do]",
+    "base": "main_case_2026_09_29",
+    "scenarios": [
+     {
+      "split": "below_ba",
+      "sigma": 2.0,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0288470308884605,
+      "lambda_cell1": 1.0288615020598078,
+      "kappa": 1.0,
+      "delta_P_bn": -0.045209360956959266,
+      "delta_F_bn": 0.2599202094933091
+     },
+     {
+      "split": "hs_or_less",
+      "sigma": 2.0,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0190911344637232,
+      "lambda_cell1": 1.0191272488976484,
+      "kappa": 1.0,
+      "delta_P_bn": -0.006167529361221447,
+      "delta_F_bn": 0.1573120811448412
+     },
+     {
+      "split": "below_ba",
+      "sigma": 2.0,
+      "capital_adjustment": 1.0,
+      "sigma_NI": 3.0,
+      "lambda_cell0": 1.0288470308884605,
+      "lambda_cell1": 1.0288615020598078,
+      "kappa": 1.0,
+      "delta_P_bn": 0.06284745440851935,
+      "delta_F_bn": 0.330947965072113
+     },
+     {
+      "split": "below_ba",
+      "sigma": 2.0,
+      "capital_adjustment": 0.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0401266934346354,
+      "lambda_cell1": 1.0401266934346354,
+      "kappa": 1.03984324926585,
+      "delta_P_bn": 2.5843008861241117,
+      "delta_F_bn": -1.7870886778384971
+     },
+     {
+      "split": "hs_or_less",
+      "sigma": 1.5,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0190947353676445,
+      "lambda_cell1": 1.0191306234436466,
+      "kappa": 1.0,
+      "delta_P_bn": -0.008540084965936168,
+      "delta_F_bn": 0.21090774126984257
+     },
+     {
+      "split": "hs_or_less",
+      "sigma": 2.5,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0190889526983993,
+      "lambda_cell1": 1.0191252047035086,
+      "kappa": 1.0,
+      "delta_P_bn": -0.0048200326152015305,
+      "delta_F_bn": 0.1254327134482498
+     },
+     {
+      "split": "below_ba",
+      "sigma": 1.5,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0288474845972104,
+      "lambda_cell1": 1.0288619326612851,
+      "kappa": 1.0,
+      "delta_P_bn": -0.06046535503141737,
+      "delta_F_bn": 0.34704249632172335
+     },
+     {
+      "split": "below_ba",
+      "sigma": 2.5,
+      "capital_adjustment": 1.0,
+      "sigma_NI": "inf",
+      "lambda_cell0": 1.0288467488517499,
+      "lambda_cell1": 1.0288612344195343,
+      "kappa": 1.0,
+      "delta_P_bn": -0.0360985654448025,
+      "delta_F_bn": 0.20775883360857073
+     },
+     {
+      "split": "hs_or_less",
+      "sigma": 2.0,
+      "capital_adjustment": 1.0,
+      "sigma_NI": 3.0,
+      "lambda_cell0": 1.0190911344637232,
+      "lambda_cell1": 1.0191272488976484,
+      "kappa": 1.0,
+      "delta_P_bn": 0.07477787814703518,
+      "delta_F_bn": 0.21145604634631532
+     }
+    ],
+    "max_abs_diff_vs_case_grid_bn": 3.552713678800501e-14
+   }
+  },
+  "accrual": true,
+  "base_dir": "oct07",
+  "debt_dir": "oct07",
+  "gen_results": "generation_results_oct07.csv",
+  "group_weights": "lineage"
+ }
+}

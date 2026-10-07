@@ -1,0 +1,91 @@
+channel,base_channel,quintile,frame_bn,base_bn,diff_bn,frame_share,base_share,why
+fiscal_a,fiscal_a,0,-323.7983146,-417.1030131,93.3046985,1,1,"total: the account's own F by band end (mean of 13.56 GDP and 8.95 cash) against the base's 9.56 (below-BA split), and the future taxpayers' part not allocated; key: federal part by federal taxes, state-local part by state-local taxes within the group's states, against all taxes nationally"
+fiscal_a,fiscal_a,1,-15.12574275,-12.64733361,-2.478409138,0.04671346967,0.03032184667,"total: the account's own F by band end (mean of 13.56 GDP and 8.95 cash) against the base's 9.56 (below-BA split), and the future taxpayers' part not allocated; key: federal part by federal taxes, state-local part by state-local taxes within the group's states, against all taxes nationally"
+fiscal_a,fiscal_a,2,-25.60545313,-26.67165504,1.066201906,0.07907840152,0.06394500687,"total: the account's own F by band end (mean of 13.56 GDP and 8.95 cash) against the base's 9.56 (below-BA split), and the future taxpayers' part not allocated; key: federal part by federal taxes, state-local part by state-local taxes within the group's states, against all taxes nationally"
+fiscal_a,fiscal_a,3,-40.02070001,-44.96407349,4.943373477,0.1235976168,0.1078008839,"total: the account's own F by band end (mean of 13.56 GDP and 8.95 cash) against the base's 9.56 (below-BA split), and the future taxpayers' part not allocated; key: federal part by federal taxes, state-local part by state-local taxes within the group's states, against all taxes nationally"
+fiscal_a,fiscal_a,4,-63.19309338,-73.73553477,10.54244139,0.1951618972,0.1767801537,"total: the account's own F by band end (mean of 13.56 GDP and 8.95 cash) against the base's 9.56 (below-BA split), and the future taxpayers' part not allocated; key: federal part by federal taxes, state-local part by state-local taxes within the group's states, against all taxes nationally"
+fiscal_a,fiscal_a,5,-179.8533253,-259.0844162,79.23109086,0.5554486148,0.6211521088,"total: the account's own F by band end (mean of 13.56 GDP and 8.95 cash) against the base's 9.56 (below-BA split), and the future taxpayers' part not allocated; key: federal part by federal taxes, state-local part by state-local taxes within the group's states, against all taxes nationally"
+fiscal_b,fiscal_b,0,-323.7983146,-417.1030131,93.3046985,1,1,"total as fiscal_a; key: per person, the state-local part within the group's states"
+fiscal_b,fiscal_b,1,-60.75082188,-83.42312055,22.67229867,0.1876193271,0.2000060367,"total as fiscal_a; key: per person, the state-local part within the group's states"
+fiscal_b,fiscal_b,2,-60.5728562,-83.41793363,22.84507744,0.1870697081,0.1999936011,"total as fiscal_a; key: per person, the state-local part within the group's states"
+fiscal_b,fiscal_b,3,-61.58498302,-83.42026805,21.83528503,0.1901955021,0.1999991979,"total as fiscal_a; key: per person, the state-local part within the group's states"
+fiscal_b,fiscal_b,4,-66.44647874,-83.42157632,16.97509758,0.2052094645,0.2000023344,"total as fiscal_a; key: per person, the state-local part within the group's states"
+fiscal_b,fiscal_b,5,-74.44317473,-83.42011451,8.976939782,0.2299059982,0.1999988298,"total as fiscal_a; key: per person, the state-local part within the group's states"
+fiscal_a_pooled_national,fiscal_a,0,-323.7983146,-417.1030131,93.3046985,1,1,same key as the base; total only (F and the future taxpayers' part)
+fiscal_a_pooled_national,fiscal_a,1,-9.818162847,-12.64733361,2.829170761,0.03032184667,0.03032184667,same key as the base; total only (F and the future taxpayers' part)
+fiscal_a_pooled_national,fiscal_a,2,-20.70528545,-26.67165504,5.966369587,0.06394500687,0.06394500687,same key as the base; total only (F and the future taxpayers' part)
+fiscal_a_pooled_national,fiscal_a,3,-34.90574452,-44.96407349,10.05832897,0.1078008839,0.1078008839,same key as the base; total only (F and the future taxpayers' part)
+fiscal_a_pooled_national,fiscal_a,4,-57.24111583,-73.73553477,16.49441894,0.1767801537,0.1767801537,same key as the base; total only (F and the future taxpayers' part)
+fiscal_a_pooled_national,fiscal_a,5,-201.1280059,-259.0844162,57.95641023,0.6211521088,0.6211521088,same key as the base; total only (F and the future taxpayers' part)
+fiscal_b_pooled_national,fiscal_b,0,-323.7983146,-417.1030131,93.3046985,1,1,same key as the base; total only (F and the future taxpayers' part)
+fiscal_b_pooled_national,fiscal_b,1,-64.7616176,-83.42312055,18.66150295,0.2000060367,0.2000060367,same key as the base; total only (F and the future taxpayers' part)
+fiscal_b_pooled_national,fiscal_b,2,-64.75759098,-83.41793363,18.66034266,0.1999936011,0.1999936011,same key as the base; total only (F and the future taxpayers' part)
+fiscal_b_pooled_national,fiscal_b,3,-64.75940319,-83.42026805,18.66086486,0.1999991979,0.1999991979,same key as the base; total only (F and the future taxpayers' part)
+fiscal_b_pooled_national,fiscal_b,4,-64.7604188,-83.42157632,18.66115751,0.2000023344,0.2000023344,same key as the base; total only (F and the future taxpayers' part)
+fiscal_b_pooled_national,fiscal_b,5,-64.759284,-83.42011451,18.66083051,0.1999988298,0.1999988298,same key as the base; total only (F and the future taxpayers' part)
+wages,wages,0,-0.5839311591,-1.654576998,1.070645839,1,1,"the account's split (high school or less; the production term P, GDP normalization at the low-cost end) against the base's below-BA split"
+wages,wages,1,-5.933795631,-4.712005563,-1.221790068,10.16180681,2.847861157,"the account's split (high school or less; the production term P, GDP normalization at the low-cost end) against the base's below-BA split"
+wages,wages,2,-12.17170694,-10.87987938,-1.291827561,20.84442104,6.57562591,"the account's split (high school or less; the production term P, GDP normalization at the low-cost end) against the base's below-BA split"
+wages,wages,3,-9.250375029,-11.65010559,2.399730563,15.84155064,7.041138374,"the account's split (high school or less; the production term P, GDP normalization at the low-cost end) against the base's below-BA split"
+wages,wages,4,-0.4024342127,-4.165097246,3.762663033,0.6891809188,2.517318475,"the account's split (high school or less; the production term P, GDP normalization at the low-cost end) against the base's below-BA split"
+wages,wages,5,27.17438065,29.75251078,-2.578130128,-46.53695942,-17.98194392,"the account's split (high school or less; the production term P, GDP normalization at the low-cost end) against the base's below-BA split"
+wages_below_ba_cash,wages,0,-1.654576998,-1.654576998,0,1,1,the base's own channel (control: must match)
+wages_below_ba_cash,wages,1,-4.712005563,-4.712005563,0,2.847861157,2.847861157,the base's own channel (control: must match)
+wages_below_ba_cash,wages,2,-10.87987938,-10.87987938,0,6.57562591,6.57562591,the base's own channel (control: must match)
+wages_below_ba_cash,wages,3,-11.65010559,-11.65010559,0,7.041138374,7.041138374,the base's own channel (control: must match)
+wages_below_ba_cash,wages,4,-4.165097246,-4.165097246,0,2.517318475,2.517318475,the base's own channel (control: must match)
+wages_below_ba_cash,wages,5,29.75251078,29.75251078,-3.552713679e-15,-17.98194392,-17.98194392,the base's own channel (control: must match)
+renters,renters,0,-33.85853511,-33.85853511,3.552713679e-14,1,1,same central total (metro-local central); raked to ACS extra rent by state as well as income cell
+renters,renters,1,-7.792498643,-7.792498643,1.212212553e-10,0.2301487237,0.2301487237,same central total (metro-local central); raked to ACS extra rent by state as well as income cell
+renters,renters,2,-6.586262389,-6.586262389,5.872902165e-11,0.1945229576,0.1945229576,same central total (metro-local central); raked to ACS extra rent by state as well as income cell
+renters,renters,3,-6.329689194,-6.329689194,2.218314421e-11,0.1869451579,0.1869451579,same central total (metro-local central); raked to ACS extra rent by state as well as income cell
+renters,renters,4,-6.131735901,-6.131735901,-2.704592106e-11,0.1810986766,0.1810986766,same central total (metro-local central); raked to ACS extra rent by state as well as income cell
+renters,renters,5,-7.018348988,-7.018348988,-1.750466438e-10,0.2072844842,0.2072844842,same central total (metro-local central); raked to ACS extra rent by state as well as income cell
+landlords,landlords,0,37.3661137,37.3661137,-1.421085472e-14,1,1,"same central total; CPS rental-income holders raked to the base's income profile and the rent states, against the base's ACS-INTP/SCF profile without states"
+landlords,landlords,1,0.6040767006,0.6040767007,-3.524913694e-11,0.01616643105,0.01616643105,"same central total; CPS rental-income holders raked to the base's income profile and the rent states, against the base's ACS-INTP/SCF profile without states"
+landlords,landlords,2,1.309619421,1.309619421,-1.140554318e-11,0.03504831762,0.03504831762,"same central total; CPS rental-income holders raked to the base's income profile and the rent states, against the base's ACS-INTP/SCF profile without states"
+landlords,landlords,3,2.549720942,2.549720942,-2.563993462e-11,0.06823618219,0.06823618219,"same central total; CPS rental-income holders raked to the base's income profile and the rent states, against the base's ACS-INTP/SCF profile without states"
+landlords,landlords,4,4.224999568,4.224999568,-4.124611763e-11,0.1130703504,0.1130703504,"same central total; CPS rental-income holders raked to the base's income profile and the rent states, against the base's ACS-INTP/SCF profile without states"
+landlords,landlords,5,28.67769707,28.67769707,1.135198602e-10,0.7674787188,0.7674787188,"same central total; CPS rental-income holders raked to the base's income profile and the rent states, against the base's ACS-INTP/SCF profile without states"
+crime_victims,crime,0,-30.927388,-32.3381,1.410712,1,1,total: decision 4's 30.93 against the base's custody footing 32.34; key: the group's states
+crime_victims,crime,1,-9.442782549,-10.41197736,0.9691948163,0.305321049,0.3219724525,total: decision 4's 30.93 against the base's custody footing 32.34; key: the group's states
+crime_victims,crime,2,-5.853003281,-6.48026618,0.6272628992,0.1892498416,0.2003910613,total: decision 4's 30.93 against the base's custody footing 32.34; key: the group's states
+crime_victims,crime,3,-5.072344903,-5.520093593,0.4477486901,0.1640081892,0.1706993792,total: decision 4's 30.93 against the base's custody footing 32.34; key: the group's states
+crime_victims,crime,4,-5.036897324,-5.038107662,0.00121033778,0.1628620343,0.1557947951,total: decision 4's 30.93 against the base's custody footing 32.34; key: the group's states
+crime_victims,crime,5,-5.522359943,-4.8876552,-0.6347047434,0.1785588858,0.151142312,total: decision 4's 30.93 against the base's custody footing 32.34; key: the group's states
+crime_victims_custody_footing,crime,0,-32.3381,-32.3381,1.207922651e-13,1,1,same total (custody footing); the group's states only
+crime_victims_custody_footing,crime,1,-9.873502616,-10.41197736,0.5384747486,0.305321049,0.3219724525,same total (custody footing); the group's states only
+crime_victims_custody_footing,crime,2,-6.119980303,-6.48026618,0.3602858766,0.1892498416,0.2003910613,same total (custody footing); the group's states only
+crime_victims_custody_footing,crime,3,-5.303713224,-5.520093593,0.2163803695,0.1640081892,0.1706993792,same total (custody footing); the group's states only
+crime_victims_custody_footing,crime,4,-5.26664875,-5.038107662,-0.2285410883,0.1628620343,0.1557947951,same total (custody footing); the group's states only
+crime_victims_custody_footing,crime,5,-5.774255106,-4.8876552,-0.8865999064,0.1785588858,0.151142312,same total (custody footing); the group's states only
+crime_victims_national_key,crime,0,-30.927388,-32.3381,1.410712,1,1,same key as the base; total only (30.93 against 32.34)
+crime_victims_national_key,crime,1,-9.957766962,-10.41197736,0.4542104024,0.3219724525,0.3219724525,same key as the base; total only (30.93 against 32.34)
+crime_victims_national_key,crime,2,-6.197572105,-6.48026618,0.2826940749,0.2003910613,0.2003910613,same key as the base; total only (30.93 against 32.34)
+crime_victims_national_key,crime,3,-5.279285931,-5.520093593,0.2408076626,0.1706993792,0.1706993792,same key as the base; total only (30.93 against 32.34)
+crime_victims_national_key,crime,4,-4.818326075,-5.038107662,0.2197815869,0.1557947951,0.1557947951,same key as the base; total only (30.93 against 32.34)
+crime_victims_national_key,crime,5,-4.674436927,-4.8876552,0.2132182733,0.151142312,0.151142312,same key as the base; total only (30.93 against 32.34)
+unreimbursed_care,unreimbursed_care,0,-4.4008,-4.4008,-1.687538997e-14,1,1,same central total; the states of the group's uninsured
+unreimbursed_care,unreimbursed_care,1,-0.4450783424,-0.4510121459,0.005933803538,0.1011357804,0.102484127,same central total; the states of the group's uninsured
+unreimbursed_care,unreimbursed_care,2,-0.6942828148,-0.7244907717,0.03020795692,0.1577628647,0.1646270614,same central total; the states of the group's uninsured
+unreimbursed_care,unreimbursed_care,3,-0.9124542858,-0.9672265937,0.05477230783,0.2073382762,0.2197842651,same central total; the states of the group's uninsured
+unreimbursed_care,unreimbursed_care,4,-1.099854701,-1.1028281,0.00297339909,0.2499215372,0.2505971868,same central total; the states of the group's uninsured
+unreimbursed_care,unreimbursed_care,5,-1.249129856,-1.155242389,-0.09388746738,0.2838415416,0.2625073598,same central total; the states of the group's uninsured
+fiscal_cash_a,fiscal_cash_a,0,-274.9754081,-289.3807418,14.40533374,1,1,"total: the cash part financed today (the future taxpayers' part and F as in fiscal_a); key: federal part by federal taxes, state-local part by state-local taxes within the group's states"
+fiscal_cash_a,fiscal_cash_a,1,-12.70552699,-8.774558483,-3.930968509,0.04620604832,0.03032184667,"total: the cash part financed today (the future taxpayers' part and F as in fiscal_a); key: federal part by federal taxes, state-local part by state-local taxes within the group's states"
+fiscal_cash_a,fiscal_cash_a,2,-21.59859295,-18.50445352,-3.094139427,0.07854736212,0.06394500687,"total: the cash part financed today (the future taxpayers' part and F as in fiscal_a); key: federal part by federal taxes, state-local part by state-local taxes within the group's states"
+fiscal_cash_a,fiscal_cash_a,3,-33.82525363,-31.19549975,-2.629753879,0.1230119227,0.1078008839,"total: the cash part financed today (the future taxpayers' part and F as in fiscal_a); key: federal part by federal taxes, state-local part by state-local taxes within the group's states"
+fiscal_cash_a,fiscal_cash_a,4,-53.50026124,-51.15677202,-2.343489212,0.1945638034,0.1767801537,"total: the cash part financed today (the future taxpayers' part and F as in fiscal_a); key: federal part by federal taxes, state-local part by state-local taxes within the group's states"
+fiscal_cash_a,fiscal_cash_a,5,-153.3457733,-179.749458,26.40368476,0.5576708635,0.6211521088,"total: the cash part financed today (the future taxpayers' part and F as in fiscal_a); key: federal part by federal taxes, state-local part by state-local taxes within the group's states"
+fiscal_resource_a,fiscal_resource_a,0,-48.8229065,-48.8229067,2.003226598e-07,1,1,"same total (the capital return at the band ends' mean); key: federal part by federal taxes, state-local part within the group's states, against all taxes nationally"
+fiscal_resource_a,fiscal_resource_a,1,-2.420215754,-1.480400691,-0.9398150633,0.04957131658,0.03032184667,"same total (the capital return at the band ends' mean); key: federal part by federal taxes, state-local part within the group's states, against all taxes nationally"
+fiscal_resource_a,fiscal_resource_a,2,-4.006860181,-3.121981105,-0.8848790768,0.08206926766,0.06394500687,"same total (the capital return at the band ends' mean); key: federal part by federal taxes, state-local part within the group's states, against all taxes nationally"
+fiscal_resource_a,fiscal_resource_a,3,-6.19544638,-5.263152497,-0.9322938831,0.1268963039,0.1078008839,"same total (the capital return at the band ends' mean); key: federal part by federal taxes, state-local part within the group's states, against all taxes nationally"
+fiscal_resource_a,fiscal_resource_a,4,-9.692832145,-8.630920952,-1.061911193,0.1985304202,0.1767801537,"same total (the capital return at the band ends' mean); key: federal part by federal taxes, state-local part within the group's states, against all taxes nationally"
+fiscal_resource_a,fiscal_resource_a,5,-26.50755204,-30.32645146,3.818899416,0.5429326916,0.6211521088,"same total (the capital return at the band ends' mean); key: federal part by federal taxes, state-local part within the group's states, against all taxes nationally"
+displaced_beneficiaries,displaced_beneficiaries,0,-8.811198486,-8.811198486,0,1,1,same total and the base's capped_keys (control: must match)
+displaced_beneficiaries,displaced_beneficiaries,1,-6.538468943,-6.538468943,0,0.7420635176,0.7420635176,same total and the base's capped_keys (control: must match)
+displaced_beneficiaries,displaced_beneficiaries,2,-2.015427025,-2.015427025,0,0.2287347207,0.2287347207,same total and the base's capped_keys (control: must match)
+displaced_beneficiaries,displaced_beneficiaries,3,-0.257169732,-0.257169732,0,0.02918669151,0.02918669151,same total and the base's capped_keys (control: must match)
+displaced_beneficiaries,displaced_beneficiaries,4,-0.0001327867571,-0.0001327867571,-9.52200558e-17,1.507022652e-05,1.507022652e-05,same total and the base's capped_keys (control: must match)
+displaced_beneficiaries,displaced_beneficiaries,5,0,0,0,-0,-0,same total and the base's capped_keys (control: must match)

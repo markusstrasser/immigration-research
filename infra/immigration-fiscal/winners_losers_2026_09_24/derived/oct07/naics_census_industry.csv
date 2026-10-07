@@ -1,0 +1,345 @@
+census_code,naics,exclude,description
+170,111,,Crop production
+180,112,,Animal production and aquaculture
+190,1131,,Forestry except logging
+190,1132,,Forestry except logging
+270,1133,,Logging
+280,114,,"Fishing, hunting and trapping"
+290,115,,Support activities for agriculture and forestry
+370,211,,Oil and gas extraction
+380,2121,,Coal mining
+390,2122,,Metal ore mining
+470,2123,,Nonmetallic mineral mining and quarrying
+480,21,,Not specified type of mining
+490,213,,Support activities for mining
+770,23,,nan
+770,23,,Construction (the cleaning of buildings and dwellings is incidental during construction and immediately after construction)
+1070,3111,,"Animal food, grain and oilseed milling"
+1070,3112,,"Animal food, grain and oilseed milling"
+1080,3113,,Sugar and confectionery products
+1090,3114,,Fruit and vegetable preserving and specialty food manufacturing
+1170,3115,,Dairy product manufacturing
+1180,3116,,Animal slaughtering and processing
+1190,311811,,Retail bakeries
+1270,3118,311811,"Bakeries and tortilla manufacturing, except retail bakeries"
+1280,3117,,"Seafood and other miscellaneous foods, n.e.c."
+1280,3119,,"Seafood and other miscellaneous foods, n.e.c."
+1290,311,,Not specified food industries
+1370,3121,,Beverage manufacturing
+1390,3122,,Tobacco manufacturing
+1470,3131,,"Fiber, yarn, and thread mills"
+1480,3132,31324,"Fabric mills, except knit fabric mills"
+1490,3133,,Textile and fabric finishing and fabric coating mills
+1570,31411,,Carpet and rug mills
+1590,314,31411,"Textile product mills, except carpet and rug"
+1670,31324,,"Knit fabric mills, and apparel knitting mills"
+1670,3151,,"Knit fabric mills, and apparel knitting mills"
+1691,3152,,"Cut and sew, and apparel accessories and other apparel manufacturing"
+1691,3159,,"Cut and sew, and apparel accessories and other apparel manufacturing"
+1770,3162,,Footwear manufacturing
+1790,3161,,"Leather and hide tanning and finishing, and other leather and allied product manufacturing"
+1790,3169,,"Leather and hide tanning and finishing, and other leather and allied product manufacturing"
+1870,3221,,"Pulp, paper, and paperboard mills"
+1880,32221,,Paperboard container manufacturing
+1890,32222,,Miscellaneous paper and pulp products manufacturing
+1890,32223,,Miscellaneous paper and pulp products manufacturing
+1890,32229,,Miscellaneous paper and pulp products manufacturing
+1990,3231,,Printing and related support activities
+2070,32411,,Petroleum refineries
+2090,32412,,"Petroleum and coal products manufacturing, except petroleum refineries"
+2090,32419,,"Petroleum and coal products manufacturing, except petroleum refineries"
+2170,3252,,"Resin, synthetic rubber, and artificial and synthetic fibers and filaments manufacturing"
+2180,3253,,"Pesticide, fertilizer, and other agricultural chemical manufacturing"
+2190,3254,,Pharmaceutical and medicine manufacturing
+2270,3255,,"Paint, coating, and adhesive manufacturing"
+2280,3256,,"Soap, cleaning compound, and toilet preparation manufacturing"
+2290,3251,,"Basic chemical manufacturing, and other chemical product and preparation manufacturing"
+2290,3259,,"Basic chemical manufacturing, and other chemical product and preparation manufacturing"
+2370,3261,,Plastics product manufacturing
+2380,32621,,Tire manufacturing
+2390,32622,,"Rubber products, except tires, manufacturing"
+2390,32629,,"Rubber products, except tires, manufacturing"
+2470,32711,,"Pottery, ceramics, and plumbing fixture manufacturing"
+2480,32712,,Clay building material and refractories manufacturing
+2490,3272,,Glass and glass product manufacturing
+2570,3273,,"Cement, concrete, lime, and gypsum product manufacturing"
+2570,3274,,"Cement, concrete, lime, and gypsum product manufacturing"
+2590,3279,,Other nonmetallic mineral product manufacturing
+2670,3311,,Iron and steel mills and steel product manufacturing
+2670,3312,,Iron and steel mills and steel product manufacturing
+2680,3313,,Alumina and aluminum production and processing
+2690,3314,,Nonferrous metal (except aluminum) production and processing
+2770,3315,,Foundries
+2780,3321,,Forging and stamping
+2790,3322,,Cutlery and handtool manufacturing
+2870,3323,,"Architectural and structural metals, and boiler, tank, and shipping container manufacturing"
+2870,3324,,"Architectural and structural metals, and boiler, tank, and shipping container manufacturing"
+2880,3327,,"Machine shops; turned product; screw, nut, and bolt manufacturing"
+2890,3328,,"Coating, engraving, heat treating, and allied activities"
+2970,332992,,Ordnance
+2970,332993,,Ordnance
+2970,332994,,Ordnance
+2980,3325,,Miscellaneous fabricated metal product manufacturing
+2980,3326,,Miscellaneous fabricated metal product manufacturing
+2980,3329,332992,Miscellaneous fabricated metal product manufacturing
+2980,332993,,Miscellaneous fabricated metal product manufacturing
+2980,332994,,Miscellaneous fabricated metal product manufacturing
+2990,331,,Not specified metal industries
+3070,33311,,Agricultural implement manufacturing
+3080,33312,,"Construction, and mining and oil and gas field machinery manufacturing"
+3080,33313,,"Construction, and mining and oil and gas field machinery manufacturing"
+3095,3333,,Commercial and service industry machinery manufacturing
+3170,3335,,Metalworking machinery manufacturing
+3180,3336,,"Engine, turbine, and power transmission equipment manufacturing"
+3291,3332,,"Machinery manufacturing, n.e.c. or not specified"
+3291,3334,,"Machinery manufacturing, n.e.c. or not specified"
+3291,3339,,"Machinery manufacturing, n.e.c. or not specified"
+3291,333,,"Machinery manufacturing, n.e.c. or not specified"
+3365,3341,,Computer and peripheral equipment manufacturing
+3370,3342,,"Communications, audio, and video equipment manufacturing"
+3370,3343,,"Communications, audio, and video equipment manufacturing"
+3380,3345,,"Navigational, measuring, electromedical, and control instruments manufacturing"
+3390,3344,,"Semiconductor, magnetic and optical media, and other electronic component manufacturing"
+3390,3346,,"Semiconductor, magnetic and optical media, and other electronic component manufacturing"
+3470,3352,,Household appliance manufacturing
+3490,3351,,"Electric lighting and electrical equipment manufacturing, and other electrical component manufacturing, n.e.c."
+3490,3353,,"Electric lighting and electrical equipment manufacturing, and other electrical component manufacturing, n.e.c."
+3490,3359,,"Electric lighting and electrical equipment manufacturing, and other electrical component manufacturing, n.e.c."
+3570,3361,,Motor vehicles and motor vehicle equipment manufacturing
+3570,3362,,Motor vehicles and motor vehicle equipment manufacturing
+3570,3363,,Motor vehicles and motor vehicle equipment manufacturing
+3580,336411,,"Aircraft, aircraft engine, and aircraft parts manufacturing"
+3580,336412,,"Aircraft, aircraft engine, and aircraft parts manufacturing"
+3580,336413,,"Aircraft, aircraft engine, and aircraft parts manufacturing"
+3590,336414,,Guided missile and space vehicle and parts manufacturing
+3590,336415,,Guided missile and space vehicle and parts manufacturing
+3590,336419,,Guided missile and space vehicle and parts manufacturing
+3670,3365,,Railroad rolling stock manufacturing
+3680,3366,,Ship and boat building
+3690,3369,,Other transportation equipment manufacturing
+3770,3211,,Sawmills and wood preservation
+3780,3212,,"Veneer, plywood, and engineered wood product manufacturing"
+3790,321991,,Manufactured home (mobile home) and prefabricated wood building manufacturing
+3790,321992,,Manufactured home (mobile home) and prefabricated wood building manufacturing
+3875,3219,321991,Miscellaneous wood product manufacturing
+3875,321992,,Miscellaneous wood product manufacturing
+3895,337,,Furniture and related product manufacturing
+3960,3391,,Medical equipment and supplies manufacturing
+3970,33992,,"Sporting and athletic goods, and doll, toy and game manufacturing"
+3970,33993,,"Sporting and athletic goods, and doll, toy and game manufacturing"
+3980,3399,33992,"Miscellaneous manufacturing, n.e.c."
+3980,33993,,"Miscellaneous manufacturing, n.e.c."
+3990,31,,Not specified manufacturing industries
+3990,32,,Not specified manufacturing industries
+3990,33,,Not specified manufacturing industries
+4070,4231,,Motor vehicle and motor vehicle parts and supplies merchant wholesalers
+4080,4232,,Furniture and home furnishing merchant wholesalers
+4090,4233,,Lumber and other construction materials merchant wholesalers
+4170,4234,,Professional and commercial equipment and supplies merchant wholesalers
+4180,4235,,"Metal and mineral, except petroleum, merchant wholesalers"
+4195,4236,,Household appliances and electrical and electronic goods merchant wholesalers
+4265,4237,,"Hardware, and plumbing and heating equipment, and supplies merchant wholesalers"
+4270,4238,,"Machinery, equipment, and supplies merchant wholesalers"
+4280,42393,,Recyclable material merchant wholesalers
+4290,4239,42393,"Miscellaneous durable goods, except recyclable material, merchant wholesalers"
+4370,4241,,Paper and paper product merchant wholesalers
+4380,4242,,"Drugs, druggists' sundries, and chemical and allied products merchant  wholesalers"
+4380,4246,,"Drugs, druggists' sundries, and chemical and allied products merchant  wholesalers"
+4390,4243,,"Apparel, piece goods, and notions merchant wholesalers"
+4470,4244,,Grocery and related product merchant wholesalers
+4480,4245,,Farm product raw material merchant wholesalers
+4490,4247,,Petroleum and petroleum products merchant wholesalers
+4560,4248,,"Beer, wine, and distilled alcoholic beverage merchant wholesalers"
+4570,42491,,Farm supplies merchant wholesalers
+4580,4249,42491,"Miscellaneous nondurable goods merchant, except farm supplies, wholesalers"
+4585,4251,,Wholesale trade agents and brokers
+4590,42,,Not specified wholesale trade
+4670,4411,,Automobile dealers
+4681,4412,,Other motor vehicle dealers
+4691,4413,,"Automotive parts, accessories, and tire retailers"
+4771,4491,,Furniture and home furnishings retailers
+4796,4492,,Electronics and appliance retailers
+4871,4441,44414,"Building material and supplies dealers, except hardware retailers"
+4881,44414,,Hardware retailers
+4891,4442,,Lawn and garden equipment and supplies retailers
+4971,44511,,Supermarkets and other grocery (except convenience) retailers
+4973,44513,,Convenience retailers and vending machine operators
+4981,4452,,Specialty food retailers
+4991,4453,,"Beer, wine, and liquor retailers"
+5071,45611,,Pharmacies and drug retailers
+5081,4561,45611,"Health and personal care, except pharmacies and drug, retailers"
+5090,4571,,Gasoline stations
+5171,4581,,Clothing and clothing accessories retailers
+5181,4582,,Shoe retailers
+5191,4583,,"Jewelry, luggage, and leather goods retailers"
+5276,45911,,"Sporting goods, and hobby, toy, and game retailers"
+5276,45912,,"Sporting goods, and hobby, toy, and game retailers"
+5281,45913,,"Sewing, needlework, and piece goods retailers"
+5296,45914,,Musical instrument and supplies retailers
+5371,45921,,Book retailers and news dealers
+5382,4551,,Department stores
+5392,4552,,"Warehouse clubs, supercenters, and other general merchandise retailers"
+5471,4593,,Florists
+5481,45941,,Office supplies and stationery retailers
+5491,4595,,Used merchandise retailers
+5571,45942,,"Gift, novelty, and souvenir retailers"
+5581,4599,,Other miscellaneous retailers
+5680,4572,,Fuel dealers
+5791,44,,Not specified retail trade
+5791,45,,Not specified retail trade
+6070,481,,Air transportation
+6080,482,,Rail transportation
+6090,483,,Water transportation
+6170,484,,Truck transportation
+6180,4851,,"Transit and ground passenger transportation, except taxi and limousine service"
+6180,4852,,"Transit and ground passenger transportation, except taxi and limousine service"
+6180,4854,,"Transit and ground passenger transportation, except taxi and limousine service"
+6180,4855,,"Transit and ground passenger transportation, except taxi and limousine service"
+6180,4859,,"Transit and ground passenger transportation, except taxi and limousine service"
+6190,4853,,Taxi and limousine service
+6270,486,,Pipeline transportation
+6280,487,,Scenic and sightseeing transportation
+6290,488,,Support activities for transportation
+6370,491,,Postal Service
+6380,492,,Couriers and messengers
+6390,493,,Warehousing and storage
+570,2211,,"Electric power generation, transmission and distribution"
+580,2212,,Natural gas distribution
+590,2212,,"Electric and gas, and other combinations"
+670,22131,,"Water supply and irrigation systems, and steam and air-conditioning supply"
+670,22133,,"Water supply and irrigation systems, and steam and air-conditioning supply"
+680,22132,,Sewage treatment facilities
+690,22,,Not specified utilities
+6471,51311,,Newspaper publishers
+6481,5131,51311,"Periodical, book, and directory and mailing list, and other publishers"
+6490,5132,,Software publishers
+6570,5121,,Motion pictures and video industries
+6590,5122,,Sound recording industries
+6671,516,,Broadcasting and content providers
+6680,517111,,Wired telecommunications carriers
+6690,517,517111,"Telecommunications, except wired telecommunications carriers"
+6695,5182,,"Computing infrastructure providers, data processing, web hosting, and related services"
+6770,51921,,Libraries and archives
+6781,51929,,Web search portals and all other information services
+6871,521,,"Monetary authorities-central bank, and commercial banking"
+6871,52211,,"Monetary authorities-central bank, and commercial banking"
+6881,52213,,"Credit unions, and savings institutions and other depository credit intermediation"
+6881,52218,,"Credit unions, and savings institutions and other depository credit intermediation"
+6890,5222,,Nondepository credit intermediation and related activities
+6890,5223,,Nondepository credit intermediation and related activities
+6970,523,,"Securities, commodities, funds, trusts, and other financial investments"
+6970,525,,"Securities, commodities, funds, trusts, and other financial investments"
+6991,5241,,Insurance carriers
+6992,5242,,"Agencies, brokerages, and other insurance related activities"
+7071,5311,,"Lessors of real estate, and offices of real estate agents and brokers"
+7071,5312,,"Lessors of real estate, and offices of real estate agents and brokers"
+7072,5313,,Activities related to real estate
+7080,5321,,Automotive equipment rental and leasing
+7181,5322,,"Consumer goods rental, and general rental centers"
+7181,5323,,"Consumer goods rental, and general rental centers"
+7190,5324,,"Commercial and industrial machinery and equipment, and nonfinancial intangible assets rental and leasing"
+7190,533,,"Commercial and industrial machinery and equipment, and nonfinancial intangible assets rental and leasing"
+7270,5411,,Legal services
+7280,5412,,"Accounting, tax preparation, bookkeeping, and payroll services"
+7290,5413,,"Architectural, engineering, and related services"
+7370,5414,,Specialized design services
+7380,5415,,Computer systems design and related services
+7390,5416,,"Management, scientific, and technical consulting services"
+7460,5417,,Scientific research and development services
+7470,5418,,"Advertising, public relations, and related services"
+7480,54194,,Veterinary services
+7490,5419,54194,"Other professional, scientific, and technical, except veterinary, services"
+7570,55,,Management of companies and enterprises
+7570,55,,Management of companies and enterprises
+7580,5613,,Employment services
+7590,5614,,Business support services
+7670,5615,,Travel arrangements and reservation services
+7680,5616,,Investigation and security services
+7690,5617,56173,"Services to buildings and dwellings, except landscaping services"
+7770,56173,,Landscaping services
+7780,5611,,Other administrative and other support services
+7780,5612,,Other administrative and other support services
+7780,5619,,Other administrative and other support services
+7790,562,,Waste management and remediation services
+7860,6111,,Elementary and secondary schools
+7870,6112,,"Junior colleges, colleges, universities, and professional schools"
+7870,6113,,"Junior colleges, colleges, universities, and professional schools"
+7880,6114,,"Business, trade and technical schools, and computer and management training"
+7880,6115,,"Business, trade and technical schools, and computer and management training"
+7890,6116,,"Other schools and instruction, and educational support services"
+7890,6117,,"Other schools and instruction, and educational support services"
+7970,6211,,Offices of physicians
+7980,6212,,Offices of dentists
+7990,62131,,Offices of chiropractors
+8070,62132,,Offices of optometrists
+8080,6213,62131,Offices of other health practitioners
+8080,62132,,Offices of other health practitioners
+8090,6214,,Outpatient care centers
+8170,6216,,Home health care services
+8180,6215,,Other health care services
+8180,6219,,Other health care services
+8191,6221,,"General medical and surgical hospitals, and specialty (except psychiatric and substance abuse) hospitals"
+8191,6223,,"General medical and surgical hospitals, and specialty (except psychiatric and substance abuse) hospitals"
+8192,6222,,Psychiatric and substance abuse hospitals
+8270,6231,,Nursing care facilities (skilled nursing facilities)
+8290,6232,,"Residential care facilities, except skilled nursing facilities"
+8290,6233,,"Residential care facilities, except skilled nursing facilities"
+8290,6239,,"Residential care facilities, except skilled nursing facilities"
+8370,6241,,Individual and family services
+8380,6242,,"Community food and housing, and emergency and other relief services"
+8390,6243,,Vocational rehabilitation services
+8470,6244,,Child care services
+8561,7111,,Performing arts companies
+8562,7112,,Spectator sports
+8563,7113,,"Promoters of performing arts, sports, and similar events, agents and managers for artists, athletes, entertainers, and other public figures"
+8563,7114,,"Promoters of performing arts, sports, and similar events, agents and managers for artists, athletes, entertainers, and other public figures"
+8564,7115,,"Independent artists, writers, and performers"
+8570,712,,"Museums, historical sites, and similar institutions"
+8580,71395,,Bowling centers
+8590,713,71395,"Other amusement, gambling, and recreation industries"
+8660,7211,,Traveler accommodation
+8670,7212,,"Recreational vehicle parks and camps, and rooming and boarding houses, dormitories, and workers' camps"
+8670,7213,,"Recreational vehicle parks and camps, and rooming and boarding houses, dormitories, and workers' camps"
+8680,722,7224,"Food services and drinking places, except alcoholic beverages"
+8690,7224,,Drinking places (alcoholic beverages)
+8770,8111,811192,"Automotive repair and maintenance, except car washes"
+8780,811192,,Car washes
+8790,8112,,Electronic and precision equipment repair and maintenance
+8870,8113,,Commercial and industrial machinery and equipment repair and maintenance
+8891,8114,,Personal and household goods repair and maintenance
+8970,812111,,Barber shops
+8980,812112,,Beauty salons
+8990,812113,,Nail salons and other personal care services
+8990,81219,,Nail salons and other personal care services
+9070,8123,,Drycleaning and laundry services
+9080,8122,,Death care services
+9090,8129,,Other personal services
+9160,8131,,Religious organizations
+9170,8132,,"Civic, social, advocacy organizations, and grantmaking and giving services"
+9170,8133,,"Civic, social, advocacy organizations, and grantmaking and giving services"
+9170,8134,,"Civic, social, advocacy organizations, and grantmaking and giving services"
+9180,81393,,Labor unions and similar labor organizations
+9190,8139,81393,"Business, professional, political, and similar organizations"
+9290,814,,Private households
+9370,92111,,Executive offices and legislative bodies
+9370,92112,,Executive offices and legislative bodies
+9370,92114,,Executive offices and legislative bodies
+9370,92115,,Executive offices and legislative bodies
+9380,92113,,Public finance activities
+9390,92119,,Other general government and support
+9470,922,,"Justice, public order, and safety activities"
+9470,92115,,"Justice, public order, and safety activities"
+9480,923,,Administration of human resource programs
+9490,924,,"Administration of environmental quality, and housing programs, urban planning and community development"
+9490,925,,"Administration of environmental quality, and housing programs, urban planning and community development"
+9570,926,,Administration of economic programs and space research and technology
+9570,927,,Administration of economic programs and space research and technology
+9590,92812,,National security and international affairs
+9590,92811,,National security and international affairs
+9670,92811,,U. S. Army
+9680,92811,,U. S. Air Force
+9690,92811,,U. S. Navy
+9770,92811,,U. S. Marines
+9780,92811,,U. S. Coast Guard
+9790,92811,,"Armed Forces, Branch not specified"
+9870,92811,,Military Reserves or National Guard

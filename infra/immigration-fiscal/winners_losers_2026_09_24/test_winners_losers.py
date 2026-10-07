@@ -348,3 +348,27 @@ def test_spm_pooling_keeps_totals_and_leaves_group_members_out():
     assert np.isclose(info["other_in_mixed_units_m"], 150 / 1e6)
     y_equal = wl.spm_pooler(d.assign(pw=100.0))[0](x)  # equal weights: the members' sum over their number
     assert np.isclose(y_equal[3], (-800 + 2400 - 800) / 3)
+
+
+def test_age_band_factors_place_the_added_people_at_their_mixes():
+    """October 7: the added people go on the identified G3+ records band by band at the case's two mixes; a band the
+    mixes reach without identified records stops the run."""
+    wl.configure("oct05")
+    d = pd.DataFrame(dict(A_AGE=[2, 7, 30, 31, 85, 40, 3]))
+    w4 = np.array([100.0, 50, 80, 20, 10, 200, 300])
+    g3 = np.array([True] * 5 + [False] * 2)   # the last two are union members outside G3+
+    bands = [f"{5 * b}-{5 * b + 4}" for b in range(16)] + ["80+"]
+    at = lambda pairs: [dict(pairs).get(b, 0.0) for b in range(17)]  # noqa: E731
+    lineage = dict(counts=dict(at_g3_rate=60.0, later_losses=40.0, added=100.0),
+                   age_mix=dict(bands=bands, reading="test", route="test", mixes=dict(
+                       identified=at({0: 100 / 260, 1: 50 / 260, 6: 100 / 260, 16: 10 / 260}),
+                       g3_rate=at({0: 0.25, 6: 0.75}), later=at({0: 0.5, 1: 0.25, 16: 0.25}))))
+    f, info = wl.age_band_factors(d, w4, g3, lineage)
+    added = w4 * (f - 1)
+    # band 0-4: 60 x 0.25 + 40 x 0.5 = 35 on 100; 5-9: 10 on 50; 30-34: 45 on 100 (two records); 80+: 10 on 10
+    assert np.allclose(added, [35, 10, 36, 9, 10, 0, 0]) and np.isclose(added.sum(), 100)
+    assert f[5] == f[6] == 1.0 and f[2] == f[3]
+    assert info["identified_mix_frame_vs_case_max_abs_diff"] < 1e-12
+    lineage["age_mix"]["mixes"]["later"] = at({0: 0.5, 1: 0.25, 10: 0.25})   # band 50-54 holds no identified record
+    with pytest.raises(SystemExit, match="age_mix_bands_hold_identified_records"):
+        wl.age_band_factors(d, w4, g3, lineage)

@@ -740,3 +740,94 @@ The victims row is the victim lane's −$20.1bn for the identified members over 
 - 00:56:11–00:56:37: scratch run, exit 0, 538 gates.
 - 00:57:41: `specs.cjs --case oct05` in place, identical to the scratch files. 00:57:46–00:58:11: `winners_losers.py --case oct05` in place, exit 0, 538 gates; every output equals the scratch run's except `sources_manifest.csv` (the specs path).
 - 00:58:33–00:59:45: rerun_lane, IDENTICAL 83/83, exit 0. 00:59:51: pytest 17 passed.
+
+## v6 case (oct07), 2026-10-07
+
+[2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`, $389.0826–461.4797bn on the lineage's 42,752,213), pooled within SPM units, **17.5%** of other residents come out ahead under tax-share financing (a) and **16.8%** under per-person cuts (b), against 17.6% and 16.9% on oct05; the stacks give 10.5–24.2% under (a). The person count gives 16.7% and 16.7% (oct05 16.7% and 16.8%). Taxpayers' fiscal channel is **$415.9bn** at central values (oct05 $416.4bn). Of it, the pension accrual ($78.9bn; oct05 $80.4bn) and the borrowed part ($13.2bn; oct05 $12.6bn) go to future payers, so the social net on today's residents is **−$378.6bn** (oct05 −$378.2bn). The capped programs fall on eligible households without the aid: $8.8bn (oct05 $8.8bn). The group's own rows stay on the lineage, 42.75m members, with the 3.04m added people now placed at the identified third-plus generation's records of their own five-year age band [ASSUMPTION]; the direct transfer A is **$10,178 per member** (oct05 $10,191). [CALCULATION: `specs.cjs --case oct07` and `winners_losers.py --case oct07`; `derived/oct07/`]]
+
+claude-opus-5-5 (prop-c)
+
+**What runs.** `node specs.cjs --case oct07` evaluates v5 (band variant `oct05_case` in v6's `main_case_bands.csv`, through `P.OCT05`) and v6 with their own packages. `winners_losers.py --case oct07` allocates v6 and keeps v5 as the positive control. Both write to `derived/oct07/`; `derived/` (September 27), `derived/sept29/` and `derived/oct05/` are as they were. Pins in `CASES["oct07"]`:
+- the distribution lane at 498a6a71 (`derived/oct07/`, `case_ends_oct07.json`);
+- the debt lane at 0485e5a2 (`derived/oct07/`);
+- the generation account at 3f583fb4 (`generation_results_oct07.csv`);
+- the propagation lane's `sept24_propagation_2026_09_24/derived/oct07/`, read from the working tree as every case's is. It was committed after the run, in b0a2ccac, unchanged: `sources_manifest.csv`'s sha256 of the two files read (`real_costs_totals.csv`, `band_variants.csv`) are the committed files';
+- the debt lane's legacy interest (`OCT07_INTEREST`): 31.8233 / 44.1693, gated at 5e-4 against `stocks.csv` at 0485e5a2 (31.823258 / 44.169319);
+- the ladder entry, 295.
+
+**Channels, central values, $bn a year** (`derived/oct07/channels.csv`):
+
+| Channel | October 5 | October 7 |
+|---|---:|---:|
+| Adopted main case, other residents' net (fiscal + wages) | −425.8 | −425.3 |
+| Fiscal channel (taxpayers) | −416.4 | −415.9 |
+| — cash financed today | −273.9 | −275.0 |
+| — return on public capital (never borrowed) | −49.5 | −48.8 |
+| — federal part financed by borrowing (future taxpayers) | −12.6 | −13.2 |
+| — pension accrual (future payers of Social Security and Medicare) | −80.4 | −78.9 |
+| Displaced beneficiaries of the capped programs | −8.8 | −8.8 |
+| Wages (production on row 4, with the lineage's delta) | −0.6 | −0.6 |
+| Social net on today's residents | −378.2 | −378.6 |
+| Debt legacy interest (beside, never added) | 30.6–42.6 | 31.8–44.2 |
+
+The channels outside the budget do not move: renters −33.9, landlords +37.4, victims −30.9, congestion −13.0, unreimbursed care −4.4 and the rest, together −$45.4bn in the social net. The federal part of the fiscal channel rises: $1.56bn more is financed by today's federal taxes and $0.58bn more by borrowing, while the state-local part falls $1.15bn.
+
+**Share of other residents ahead** (`net_shares.csv`, the social net, central; stacks most to least costly in brackets):
+
+| Count | (a) tax-share | (b) per person |
+|---|---|---|
+| Pooled within SPM units | 17.6 → **17.5** (10.5–24.2) | 16.9 → **16.8** (11.0–22.3) |
+| Person | 16.7 → **16.7** (12.1–20.7) | 16.8 → **16.7** (12.2–20.7) |
+
+The case falls $0.49bn at central values, but the pension accrual, which future payers carry, falls $1.48bn and the borrowed part rises $0.58bn. Today's residents therefore carry $0.41bn more, and the share ahead slips by 0.1–0.2 points.
+
+**The group itself, on the lineage** (`group_frame.csv`; the CPS's published weights in `group_frame_cps_published.csv`):
+
+| Item | October 5, lineage (42.75m) | October 7, lineage by age band (42.75m) |
+|---|---|---|
+| Direct fiscal transfer received (A, sign flipped), $bn | +435.7 (402.2–469.1) | +435.2 (401.0–469.3) |
+| — per member | $10,191 | $10,178 |
+| First generation's market gain over its Mexico earnings, $bn | +201.9 (176.6–218.2), 11.04m members | the same: the age rule moves only G3+ records |
+| Wage competition among the group's own workers, high school or less (ε ∞), $bn | −19.8 (−15.7 to −23.9) | −19.7 (−15.6 to −23.8) |
+| Same, ε 3 | −32.8 | −32.7 |
+| Wage gain of the group's workers with some college or more (ε ∞) | +5.9 | +5.9 |
+| Victims inside the group, per member | −$470 | −$470 |
+| The account's split by generation (minors with their parents), $bn | G1 169.3–197.3, G2 110.6–121.7, G3+ 110.5–142.2 | G1 168.9–196.8, G2 109.5–120.6, G3+ 110.7–144.1 |
+| The added people: under 20; earnings, $bn | 46.7%; 71.0 (one factor) | 51.2%; 65.3 (by age band) |
+
+The wage rows move by the lineage's smaller production delta (λ 1.0191 for high school or less, v5 1.0222) and by the added people's earnings at the G3+ records, which the younger mix lowers. [CALCULATION: `derived/oct07/group_frame.csv`, `inputs.json` `group.lineage.age_bands`; the oct05 column from `derived/oct05/group_frame.csv`]
+
+**Rules designed.**
+- **The items reach this lane through its upstream files.** The engine run (`specs.cjs`) applies the whole payload, so every item's lines and capital components are in the band ends' lines, including the user-fee item's four offset components (28 components, 24 on v5) and its three carrier receipt lines (at zero response, no effect). The direct response A comes from the distribution lane's `fiscal_totals("oct07")`, the federal split and the pension accrual from the debt lane, and the group's split by generation from the generation account.
+- **The added people at their measured ages** [ASSUMPTION]. v6 prices the 3.04m at the age mixes the age-mix lane measured (`meta.lineage.age_mix`): the 1.945m G3-rate persons at one mix and the 1.095m later losses at another. The group frame therefore raises each identified G3+ record by the added people of its five-year band over the identified G3+ of that band (`age_band_factors`, `LINEAGE_AGE_RULE`), not by one factor. All of them still take the G3+ members' records, band by band. The factors run from 1.141 (50 on) to 1.249 (20–24); v5's single factor, 1.211937, remains the G3+ total's. Gates (the age-mix gates, five new):
+  - the bands are five years wide with an open top (17 bands, 80 on);
+  - the two parts add to the added count, 3,039,719.6;
+  - each band's added people are the case's (7.1e-16 relative);
+  - every band they reach holds identified records;
+  - the frame's identified mix is the case's (1.4e-8), a positive control that both read the same members.
+
+  Their under-20 share is 51.2% (46.7% under one factor), and their earnings are $65.3bn ($71.0bn). The rule moves the group's own wage rows and age profile; the count and A are the case's. Alternative: keep v5's single factor, which gives the added people the identified G3+'s ages, an assumption the case no longer makes.
+- **Both cases' production grids add to September 29's.** v5 and v6 each re-solve September 29's grid with their own added people (the base lane's `LATER_CASES`). The gate that ties the case's production rows to the case before's now compares the two additions' base (`production_rows_add_to_the_previous_case_s`: base and `previous_case_s_base` both `main_case_2026_09_29`); oct05's gate record is unchanged. `account_production_term_case_grid` and `account_production_term_oct05_grid` pass (1e-6bn).
+- **The debt lane's correction lines carry the v6 items.** The per-correction file has two new components: `v6_retiree_health` (by line `v6_retiree_health:scale`, nine lines) and `v6_user_fees`. The pension item is set-only and has no cash component. `per_correction_check` takes their rows from the by-line file (`corrections_federal_split_2024.csv`) as it takes the lineage's. `v6_user_fees`' rows on `school_reprice` and `college_rekey` join the lineage's on the education check, and no item touches the lane constants. Gates: the by-line file rebuilds the components, the v6 items included, to 8.0e-6bn over 24 rows (tolerance 1e-5). The largest gap is `v5_lineage`'s, the six-decimal rounding of its 74 by-line rows; the v6 items rebuild to 2e-6bn. The check then closes at 2.0e-6bn over 12 rows (tolerance 1e-5).
+
+**The two fiscal-channel centrals.** This lane's $415.9bn is the case's mid, $425.3bn, less −P ($0.6bn) and the capped programs ($8.8bn). The distribution lane's $417.1bn adds $1.2bn: the engine's F at 48 / 11 (mean 10.46) less its central scenario's (9.24). Unrounded, 415.8860 + 1.2170 = 417.1030, the level the distribution lane's bridge predicted.
+
+**Gates.**
+- Cross-check: at 48 / 11 the fiscal channel's A is −400.992149 / −469.314126 (the base's one definition), and the engine's is −400.992198 / −469.314093 (gate 1e-3).
+- `specs.cjs --case oct07`: 25 PASS. The band is 389.0826–461.4797 (`adopted`); the oct05 control gives 390.2940–461.2431 (`oct05_case`).
+- `winners_losers.py --case oct07`: exit 0, 543 gates (oct05: 538; the five new are the age-mix gates). Both regressions against the distribution lane pass, oct05 at fecaae7e (5.7e-14bn) and oct07 at 498a6a71 (1.4e-14bn), over 828 cells each. Peak RSS 2.07 GB.
+- `scripts/rerun_lane.py` over nine commands (`specs.cjs` and `winners_losers.py` for the default, sept29, oct05 and oct07, and `pytest`): **IDENTICAL 107/107, exit 0** (2026-10-07 15:39:17–15:41:31 JST).
+- Old outputs unchanged: `git status` shows nothing under `derived/` outside the new `derived/oct07/`.
+- pytest: 18 passed, `test_age_band_factors_place_the_added_people_at_their_mixes` among them.
+
+**Reproduce (oct07).**
+- `node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs --case oct07`
+- `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py --case oct07`
+
+**Log (2026-10-07 JST; times from `date` calls).**
+- 13:20: `--case oct07` coded: a `specs.cjs` entry, `CASES["oct07"]` with empty pins, the production-rows gate generalized, the age-band frame and its test. `winners_losers.py --case oct05` rebuilt `derived/oct05/` byte for byte (538 gates).
+- 13:32: a dry run (`--dev-unpinned`) in a mirror passed both regressions (oct05 5.7e-14bn, oct07 1.4e-14bn) and the one-definition A (+4.9e-5 / −3.4e-5bn), then stopped where the debt lane had no `oct07` files yet.
+- 14:29: `per_correction_check` takes the debt lane's v6 components; `--case oct05` rebuilt byte for byte again.
+- 15:29:47–15:29:48: `specs.cjs --case oct07` in place, 25 PASS.
+- 15:37:34–15:38:07: `winners_losers.py --case oct07` in place on the pins: exit 0, 543 gates.
+- 15:39:17–15:41:31: rerun_lane, IDENTICAL 107/107, exit 0. 15:41:42–15:41:43: pytest 18 passed.
