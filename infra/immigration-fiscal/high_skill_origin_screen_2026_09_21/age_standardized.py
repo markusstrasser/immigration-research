@@ -48,7 +48,7 @@ def main():
             })
     out.sort(key=lambda r: (r["allocation"], -r["native_age_mix"]))
     with open(DERIVED / "origin_screen_native_ages.csv", "w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(out[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(out[0]), lineterminator="\n")
         writer.writeheader()
         for row in out:
             writer.writerow({k: (f"{v:.4f}" if isinstance(v, float) else v) for k, v in row.items()})

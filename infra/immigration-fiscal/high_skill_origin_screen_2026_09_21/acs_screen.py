@@ -103,7 +103,7 @@ def main():
         })
     rows.sort(key=lambda r: -r["ba_plus_share_25_64"])
     with open(DERIVED / "acs_origin_screen.csv", "w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({k: (f"{v:.4f}" if isinstance(v, float) else v) for k, v in row.items()})
