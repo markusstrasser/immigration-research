@@ -13,15 +13,15 @@ generation.
 - **Counting benefits when paid** (the cash set, $307.4–385.4bn): with their parents $150–183bn, $78–86bn and
   $80–117bn; in their own generation $73–87bn, $118–143bn and $102–169bn.
 
-Of the case's change from October 5, −$1.21 / +$0.24bn under (a), printed at controlled rounding so the parts add
+Of the case's four newest items under (a), printed at controlled rounding so the parts add
 (retiree health's 0.584 shows as 0.59, the US-born's 0.815 as 0.82), the 2026 Trustees paths take $0.34 / 0.42bn from the
 Mexico-born, $1.19 / 1.20bn from the second generation and $1.32 / 1.04bn from the third-plus. The added people's
 measured age mix adds $1.35 / 2.86bn to the third-plus alone. Retiree health adds $0.59 / 0.77bn across the
 generations. User fees take $0.30 / 0.73bn: the US-born generations' cost falls by $0.25 / 0.82bn and the
 Mexico-born's moves by −$0.05 / +0.09bn. Each item is counted after the ones before it, so the case's interactions sit
-with the later item. The third-plus's cost per member is $8,158 / 11,323 ($8,151 / 11,217 on October 5). The pension
+with the later item. The third-plus's cost per member is $8,158 / 11,323. The pension
 switch, the set less the cash set, is $9.7 / 14.0bn for the Mexico-born, $32.7 / 34.8bn for the second generation and
-$39.3 / 27.3bn for the third-plus (October 5: $10.0 / 14.4bn, $33.9 / 36.0bn and $39.0 / 27.4bn).
+$39.3 / 27.3bn for the third-plus.
 
 [ASSUMPTION] The pension item's union parts go to each generation by the pension lane's per-generation rows. The
 user-fee item goes by each generation's share of its split-basis line: the education line for every part but the two
@@ -34,8 +34,7 @@ than a bound.
 [CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md), section "v6 case
 (oct07)": `run_generations_v6.cjs` → `derived/generation_results_oct07.csv`, `generation_results_oct07_cash.csv`,
 `generation_summary_oct07.json` (`change_from_oct05_by_item`, `b_rule_indication`, `sensitivities`); commits
-3f583fb4, 8e7b875f; the pension switch is the set's results less the cash set's; the September 27, September 29 and
-October 5 files keep their bytes] [FRAMING-SENSITIVE]
+3f583fb4, 8e7b875f; the pension switch is the set's results less the cash set's] [FRAMING-SENSITIVE]
 
 | $bn a year, low / high end | (a) own generation | (b) minors with parents |
 |---|---|---|
@@ -44,142 +43,12 @@ October 5 files keep their bytes] [FRAMING-SENSITIVE]
 | G3+, US-born of US-born parents, with the added people | 141.8 / 196.8 | 110.7 / 144.1 |
 | All three (the main case) | 389.1 / 461.5 | 389.1 / 461.5 |
 
-The ends are specifications 48 and 11, as on October 5, and every cell is at its nearest rounding. Per-person figures
+The ends are specifications 48 (shared allocation, the lower capital return and the low long-run readings) and 11
+(personal, the higher return and the high readings), and every cell is at its nearest rounding. Per-person figures
 divide by the row-4 counts, the third-plus's with the added people (17.38M members under (a)). The added people's
-adults are now measured, 1.61M of the 3.04M [ASSUMPTION: the 15–19 band's adults at the identified third-plus's share,
-APPROX]; October 5 gave them the identified third-plus's adult share.
-
-**The October 5 case** ($390.3–461.2bn a year; [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281), with
-the added descendants priced at the identified third-plus members' ages, left all three generations net costs at every
-one of its 64 specifications, under both ways of counting children and when benefits were counted as paid.
-- **Counted with their parents** (NAS): the Mexico-born cost others $169–197bn a year ($16.0–18.7k per adult of the
-  29.4M adults among the lineage's 42.75M members), the second generation $111–122bn ($12.4–13.7k per adult) and the
-  third-plus $110–142bn ($11.1–14.3k per adult).
-- **Counted in their own generation:** $87–97bn, $151–179bn and $142–195bn.
-- **Counting benefits when paid** (the cash set, $307.4–383.4bn): with their parents $150–183bn, $78–86bn and
-  $80–115bn; in their own generation $73–87bn, $118–143bn and $103–168bn.
-
-The added people raised the third-plus by $19.1 / 26.6bn under (a), and the case by $18.9 / 26.4bn; the Mexico-born
-and the second generation moved only by the larger group's responses, −$0.09 to −0.12bn. The third-plus's cost per
-member fell to $8,151 / 11,217 from $8,549 / 11,740, because an added person costs less than an identified member:
-1.08M of the 3.04M are priced as third-plus whites, the rest as identified third-plus members. Under (b), had the
-added people's minors moved to the second generation, about $4.9 / 8.4bn would have moved from the third-plus.
-[CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md), section "v5 case
-(oct05)": `run_generations_v5.cjs` → `derived/generation_results_oct05.csv`, `generation_results_oct05_cash.csv`,
-`generation_summary_oct05.json` `change_from_sept29_by_part`; commits e5ca5efe, 86af8f7e] [FRAMING-SENSITIVE]
-
-| $bn a year, low / high end | (a) own generation | (b) minors with parents |
-|---|---|---|
-| G1, born in Mexico | 97.1 / 87.0 | 169.3 / 197.3 |
-| G2, US-born, a parent born in Mexico | 151.5 / 179.2 | 110.6 / 121.7 |
-| G3+, US-born of US-born parents, with the added people | 141.7 / 195.0 | 110.4 / 142.2 |
-| All three (the main case) | 390.3 / 461.2 | 390.3 / 461.2 |
-
-The cells are rounded under control so that each column adds to the case: (b)'s third-plus low end, 110.46, prints as
-110.4.
-
-**The September 29 case** ($371.4–434.8bn a year; [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275),
-before the descendants who no longer report Mexican origin were added, left all three Mexican-origin generations
-net costs to other US residents, at every one of its 64 specifications, under both ways of counting children and
-when benefits were counted as paid.
-- **Counted with their parents** (NAS): the Mexico-born cost others $169–197bn a year ($16.0–18.7k per adult of the
-  27.7M adults among the 39.7M the account prices), the second generation $111–122bn ($12.4–13.7k per adult) and the
-  third-plus $91–116bn ($11.2–14.1k per adult).
-- **Counted in their own generation:** $87–97bn, $152–179bn and $123–168bn.
-- **Counting benefits when paid** (the cash set, $294.7–361.8bn): with their parents $150–183bn, $78–86bn and
-  $67–93bn; in their own generation $73–87bn, $118–143bn and $90–146bn.
-
-v4's changes add $49.6bn (low end) and $47.5bn (high end) to the September 27 case. The pension switch moves most,
-and it lands mostly on the US-born: the accrual follows the payroll taxes a generation pays this year, while the
-benefits it replaces follow this year's beneficiaries. Counted in their own generation, it adds $33.9 / 36.0bn to the
-second generation and $32.8 / 22.6bn to the third-plus, against $10.0 / 14.4bn to the Mexico-born. Long-run property
-taxes lower every generation's cost, by $7.7–10.2bn under (a).
-[CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md),
-`run_generations_v4.cjs --case sept29` and `--case sept29_cash` → `derived/generation_results_sept29.csv`,
-`generation_results_sept29_cash.csv`, `generation_summary_sept29.json` `change_from_sept27_by_item`; commit aa1f53b;
-the September 27 files rerun byte-identical] [FRAMING-SENSITIVE]
-
-| $bn a year, low / high end | (a) own generation | (b) minors with parents |
-|---|---|---|
-| G1, born in Mexico | 97.2 / 87.1 | 169.4 / 197.4 |
-| G2, US-born, a parent born in Mexico | 151.6 / 179.3 | 110.6 / 121.8 |
-| G3+, US-born of US-born parents | 122.6 / 168.4 | 91.4 / 115.6 |
-| All three (the main case) | 371.4 / 434.8 | 371.4 / 434.8 |
-
-The ends are specifications 48 (shared allocation, 2%, the low long-run readings) and 11 (personal, 3%, the high
-readings). Per-person figures divide by the account's row-4 counts (ladder 274); only the Mexico-born's count differs
-from the CPS's. Beside the account, never in the range, without the capital return (a) is $88.2 / 74.9bn,
-$138.8 / 156.7bn and $110.1 / 146.1bn. The lane did not split the 7% arm on this case (the whole case at 7%:
-$457.5–511.1bn). State pricing applies the union's price indexes to each generation's keys; indexes from each
-generation's own state mix are not computed.
-
-**The September 27 case** ($321.8–387.4bn a year;
-[decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 239) left all
-three Mexican-origin generations net costs to other US residents, at every one of its 64 specifications and
-under both ways of counting children.
-- **Counted with their parents** (NAS): the Mexico-born cost others $159–191bn a year ($15.0–18.1k per
-  adult of the 39.7M the account prices, ladder 274), the second generation $87–95bn ($9.8–10.7k per adult)
-  and the third-plus $75–102bn ($9.2–12.4k per adult).
-- **Counted in their own generation:** $78–94bn, $128–153bn and $100–156bn.
-
-The case's four additions are long-run road and park responses, rental assistance, the return on public
-capital and the government enterprises. They add $63.3bn (low end) and $95.4bn (high end) over the schools
-case. They follow residents and pupils, so under the own-generation count the second and third-plus
-generations carry 75–78% of the move, and under the NAS count the Mexico-born carry 37%.
-- **The capital return** is $33.8 / 55.7bn of the case. It is an imputed resource cost at 2% / 3%, never a
-  debt flow. Under (a): G1 $8.7 / 11.5bn, G2 $12.5 / 22.0bn, G3+ $12.5 / 22.2bn.
-- **The enterprise receipt's re-key** to the corrected population share lowers G1's cost by $0.5 / 0.7bn
-  and moves the others by under $0.1bn.
-
-[CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md),
-`run_generations.cjs` → `derived/generation_results.csv`, `generation_summary.json`
-`change_from_sept26_schools`; commit 8654a0c; parent rerun byte-identical] [FRAMING-SENSITIVE]
-
-| $bn a year, low / high end | (a) own generation | (b) minors with parents |
-|---|---|---|
-| G1, born in Mexico | 93.8 / 78.3 | 159.0 / 190.8 |
-| G2, US-born, a parent born in Mexico | 127.6 / 153.0 | 87.3 / 95.0 |
-| G3+, US-born of US-born parents | 100.5 / 156.1 | 75.5 / 101.6 |
-| All three (the September 27 case) | 321.8 / 387.4 | 321.8 / 387.4 |
-
-The ends are specifications 48 (shared allocation, 2%, the low long-run readings) and 11 (personal, 3%, the
-high readings), as in the schools case. Beside the account, never in the range:
-- without the capital return, (a) is $85.0 / 66.8bn, $115.1 / 131.0bn and $87.9 / 133.9bn;
-- at 7% on every component, $115.6 / 93.6bn, $158.9 / 182.3bn and $131.8 / 185.8bn.
-
-The first-year budget response is unchanged: it is still the schools case's, below.
-
-**Earlier cases.** All three generations are net costs to other residents in every case, at every one of
-its 64 specifications and under both ways of counting children. $bn a year, low / high end:
-
-| | September 24, $200.9–246.3bn (sections 1–4) | Schools at full cost, September 26, $258.5–292.0bn | September 27, $321.8–387.4bn |
-|---|---|---|---|
-| (b) G1, born in Mexico | 110.2 / 134.8 | 135.6 / 155.4 | 159.0 / 190.8 |
-| (b) G2 | 50.2 / 53.0 | 67.9 / 66.1 | 87.3 / 95.0 |
-| (b) G3+ | 40.5 / 58.6 | 55.0 / 70.5 | 75.5 / 101.6 |
-| (a) G1 | 63.8 / 53.6 | 77.6 / 56.9 | 93.8 / 78.3 |
-| (a) G2 | 81.7 / 95.1 | 105.0 / 117.5 | 127.6 / 153.0 |
-| (a) G3+ | 55.3 / 97.6 | 75.8 / 117.6 | 100.5 / 156.1 |
-| Ends (specifications) | 56 and 7 | 48 and 11 | 48 and 11 |
-
-Where the children are counted decides who carries each addition. Schools at full cost added $62.1bn (low
-end) and $48.5bn (high end) over September 24: under the own-generation count the second and third-plus
-generations carry 76–91% of it, and under the NAS count the Mexico-born carry 43–44%. At a school response
-of 1 the school-share bound flips, so the ends moved from specifications 56 and 7 to 48 and 11. Priced at
-September 24's specifications first, the move from September 24 splits into:
-- schools at 1: +$62.1bn / +$48.5bn;
-- general government: +$0.5bn;
-- row 8: −$0.1bn;
-- the consumption key: −$4.1bn;
-- the ends moving to 48 and 11: −$0.8bn / +$0.8bn.
-
-The first-year budget response charges CBO's year-to-year school response ($200.9–245.7bn). It stays within
-$1bn of the September 24 split for every generation: (a) $63.9/53.0bn, $82.1/95.5bn and $55.0/97.2bn;
-(b) $110.6/134.9bn, $50.6/53.2bn and $39.7/57.6bn. [CALCULATION: [generation
-lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md), `run_generations.cjs` →
-`derived/generation_results.csv`, `generation_summary.json` `change_from_sept24` (2441ac8); [propagation
-report](../infra/immigration-fiscal/sept26_propagation_2026_09_26/RESULT_generation.md), `run_generations.cjs
---case sept26`; ladder 224] [FRAMING-SENSITIVE]
+adults are measured, 1.61M of the 3.04M [ASSUMPTION: the 15–19 band's adults at the identified third-plus's share,
+APPROX]. State pricing applies the union's price indexes to each generation's keys; indexes from each generation's own
+state mix are not computed.
 
 Sections 1–4 below are the September 24 record. It is one year of the people alive in 2024, and it cannot
 say what today's children will pay as adults.
@@ -294,17 +163,14 @@ case itself, which moves every generation.
 - Parent rerun, 2026-09-25: `run_all.sh` passes every gate (masks, keys, models to 5.7e-14bn,
   production, correction splits, engine per generation) and rewrites all 19 derived files
   byte-identical; `main_case.cjs` still passes and its lane is unchanged. [CALCULATION]
-- v4 split, 2026-09-29: step 7 of `run_all.sh` (`v4_inputs.py`, `tax_key_split.py`, `run_generations_v4.cjs`)
-  → `derived/generation_{results,summary,corrections}_sept29{,_cash}.*` (aa1f53b); 27 and 26 gates; the union
-  reproduces the adopted band, $371.4146–434.8410bn and $294.7011–361.8175bn. [CALCULATION]
-- v5 split, 2026-10-05: step 8 of `run_all.sh` (`run_generations_v5.cjs`, with `v5_split.cjs`)
-  → `derived/generation_{results,summary,corrections}_oct05{,_cash}.*` (e5ca5efe, 86af8f7e); 28 and 25 gates; the
-  union reproduces the adopted band, $390.2940–461.2431bn and $307.3764–383.4093bn. [CALCULATION]
 - v6 split, 2026-10-07: step 9 of `run_all.sh` (`run_generations_v6.cjs`, with `v6_split.cjs`)
   → `derived/generation_{results,summary,corrections}_oct07{,_cash}.*` (3f583fb4, 8e7b875f); 47 and 41 gates; the
   union reproduces the adopted band, $389.0826–461.4797bn and $307.3994–385.3641bn. [CALCULATION]
 
 ## Revisions
+
+- 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed,
+  recoverable at 0e0c5e28.
 
 - 2026-10-07 (main case v6, [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295): the split now runs on
   the main case of $389.1–461.5bn (commits 3f583fb4, 8e7b875f), with the cash set beside it. The October 5 case stays

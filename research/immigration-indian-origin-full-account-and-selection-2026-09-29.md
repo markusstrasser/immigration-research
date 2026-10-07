@@ -28,8 +28,7 @@ lost selection; split the group by home region.
 
 Per member a year, low / high end of main case v6; positive costs others, negative benefits them. Parts add to
 totals: fiscal and total print their file values and the social rows take the rounding, at most $1
-[CALCULATION: `indian_full_account_2026_09_29/derived/oct07/combined.csv`, ac6cc2ac; the October 5 table in
-`derived/oct05/combined.csv`, the September 29 table in `derived/combined.csv`]:
+[CALCULATION: `indian_full_account_2026_09_29/derived/oct07/combined.csv`, ac6cc2ac]:
 
 | Group | Fiscal | Social rows | Total |
 |---|---:|---:|---:|
@@ -41,13 +40,10 @@ totals: fiscal and total print their file values and the social rows take the ro
 | Third-plus whites, a 42.75M slice | −1,200 / +54 | +2,238 / +2,278 | +1,038 / +2,332 |
 
 - The union carries the 3.04M added descendants at the case lane's amounts and their own social rows ($8.43 /
-  8.52bn, from the v6 pairing); the Indian-origin groups keep their CPS counts, so the case moves them only through
-  its responses and its items' national lines, by about $55–60 per member from October 5 [ASSUMPTION]. Every group
+  8.52bn, from the v6 pairing); the Indian-origin groups keep their CPS counts, so the case affects them only through
+  its responses and its items' national lines [ASSUMPTION]. Every group
   takes the IPEDS keys for Pell and public colleges, the Indian groups at NH Asian shares [DEGRADED: IPEDS has no
-  Indian split], and item 4's hospital-fee term stays beside (−$81 per Indian-origin member). On October 5, on the
-  same keys, the union was +$11,581 / +13,349, whites +$1,164 / +2,456 and the Indian-origin group −$12,831 /
-  −11,380; on September 29 the union was +$11,777 / +13,485 and whites +$2,864 / +4,159 on 39.71M, and the
-  Indian-origin group −$10,763 / −9,305.
+  Indian split], and item 4's hospital-fee term stays beside (−$81 per Indian-origin member).
 - Fiscal standard errors for the Indian rows are about $1,200–2,000 (160 CPS replicate weights). The case's
   federal key puts the top AGI cells' tax on few records, which widens them.
 - Ageing to white ages removes about a sixth of the group's lead over whites; the India-born alone
@@ -178,3 +174,5 @@ points and the projected G2 about 1 point [CALCULATION: §5 of the cohort lane].
   $13,768–13,928 a member better than whites and $24,440–24,785 better than the union, whose figure does not
   move. Fiscal standard errors rise to about $1,200–2,000. Concept affected: the Indian-origin full account
   follows the comparators' income-tax keys.
+- 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed,
+  recoverable at 0e0c5e28.

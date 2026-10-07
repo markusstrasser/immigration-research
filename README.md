@@ -23,11 +23,11 @@ no longer report Mexican origin) to other US residents at **$389–461bn a
 year**, counting the pension promises members earn as they work, or $307–385bn counting benefits
 when paid ([lane](infra/immigration-fiscal/main_case_2026_10_07/RESULT.md),
 [decision](decisions/2026-10-07-main-case-v6.md)). Other residents' social costs and benefits outside the public
-budget bring it to $489–571bn (on the October 5 case, $490–571bn). Only 2024 is measured;
+budget bring it to $489–571bn. Only 2024 is measured;
 earlier years are a model back-cast. The [objections FAQ](research/immigration-objections-faq-2026-09-21.md)
 routes the standard objections to their executed tables, and the
 [evidence map](infra/immigration-fiscal/overview_2026_09_28/) (`build.py` writes the reader page)
-summarizes the confidence ladder; its figures are the October 5 case's.
+summarizes the confidence ladder.
 
 **Earlier errors.** A September 5, 2026 audit found material fiscal-unit, source-version and inference
 errors in earlier analyses; the [repair report](research/immigration-material-repair-report-2026-09-05.md)
@@ -49,7 +49,7 @@ single well-sourced falsification beats ten plausible syntheses.
 | `research/immigration-*.md` | The memo stack — about 185 sourced memos with confidence tiers and supersession notes. Start at the [topic index](research/immigration-INDEX.md). |
 | `warehouse/immigration.duckdb` | **The unified data warehouse** — all cleaned/joined panels in one schema-namespaced file (`context` / `lifetime` / `fiscal`) with a self-describing `_catalog` table. *(Built locally; gitignored.)* |
 | `infra/immigration-fiscal/` | The acquisition + build pipeline (acquire → parse → warehouse). See its [`REPRODUCE.md`](infra/immigration-fiscal/REPRODUCE.md). |
-| `queries/immigration/` | Checked-in warehouse queries: descriptive checks of the September 5 warehouses (each file has `-- requires:` and `-- backs:` headers). The headline is one engine run of the [main-case lane](infra/immigration-fiscal/main_case_2026_10_05/); [REPRODUCTION_INPUTS](infra/immigration-fiscal/REPRODUCTION_INPUTS.md#the-adopted-main-case-the-headline) gives its inputs. |
+| `queries/immigration/` | Checked-in warehouse queries: descriptive checks of the September 5 warehouses (each file has `-- requires:` and `-- backs:` headers). The headline is one engine run of the [main-case lane](infra/immigration-fiscal/main_case_2026_10_07/); [REPRODUCTION_INPUTS](infra/immigration-fiscal/REPRODUCTION_INPUTS.md#the-adopted-main-case-the-headline) gives its inputs. |
 | `decisions/` | Concept-level pivots — when an interpretation shifted or a method was adopted/dropped. |
 | `notes/` | Cross-topic working notes (instrument bias, quant-bias checklist, fact-check templates). |
 | `GOALS.md` · `CLAUDE.md` | Human-owned mission / the research constitution + agent operating rules. |

@@ -311,7 +311,8 @@ def span_lines(path, spans):
 # Markdown spans in scope: current results only (coverage and reasons in RESULT.md).
 INDEX_SPANS = [
     ("**Adopted main case (October 7): $389–461bn/year", "Treat an Astra accusation as a lead to verify"),
-    ("**Earlier cases.** Each main case replaced the one before.", "too (−$51.0 / −$53.6bn)."),
+    ("**Earlier cases.** Each main case replaced the one before.",
+     "[decision](../decisions/2026-10-07-main-case-v6.md), ladder 295 |"),
     ("[By generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224,",
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
     ("[Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) (ladder 188–193)",
@@ -366,7 +367,7 @@ CLAUDE_SPANS = [
 ]
 # the README's current-result paragraph (since the v6 restatement)
 README_SPANS = [
-    ("**Current result (income year 2024).**", "its figures are the October 5 case's."),
+    ("**Current result (income year 2024).**", "summarizes the confidence ladder."),
 ]
 # Memo passages restated on the adopted case (6157bb1, ebc15cc, 05312de). The real-costs memo's §4 bullets on
 # housing, wages, crime and prices are left out: they did not move with the case.
@@ -380,7 +381,7 @@ MEMO_SPANS = {
     ],
     # the v6 verdicts (2026-10-07)
     BY_GENERATION: [
-        ("**Verdict (2026-10-07, main case v6):**", "October 5 gave them the identified third-plus's adult share."),
+        ("**Verdict (2026-10-07, main case v6):**", "state mix are not computed."),
     ],
     WINNERS: [
         ("**Verdict (2026-10-07, main case v6,", "whose pooled net under tax shares is −$636 a year."),

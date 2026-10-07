@@ -3,8 +3,8 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-10-07): $389.1–461.5bn/year**, a 42.75M-person lineage at $9,101–10,794 per member. It
-is the October 5 case with four items, each replacing an assumption with a measurement or putting a line on the rule
+**Current main case (2026-10-07): $389.1–461.5bn/year**, a 42.75M-person lineage at $9,101–10,794 per member. Its
+four newest items each replace an assumption with a measurement or put a line on the rule
 its neighbours already follow ([main-case lane](../infra/immigration-fiscal/main_case_2026_10_07/RESULT.md),
 [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295):
 - the pension accrual on the 2026 Trustees Reports and current law's separate OASI and DI funds: −$2.8 / −$2.7bn
@@ -33,35 +33,10 @@ sit beside the account.
 `derived/lineage_addition.json`. Printed items use controlled rounding: the high end's interactions, +0.043, print as
 +0.1 so the parts add to $461.5bn.]
 
-The October 5 case, $390.3–461.2bn ($307.4–383.4bn counting benefits when paid), is the September 29 case plus the
-3.04M added descendants, priced at the identified third-plus members' ages: +$18.9 / +$26.4bn, $9,129–10,789 per
-member ([main-case lane](../infra/immigration-fiscal/main_case_2026_10_05/RESULT.md),
-[decision](../decisions/2026-10-05-main-case-v5.md), ladder 281).
-
-The September 29 case, $371.4–434.8bn ($294.7–361.8bn counting benefits when paid), is the September 27 case with
-nine measured changes, run as one set:
-- the Social Security and Part A promises members earn as they work, at the benefits current law can pay and net
-  of the income tax on them: +$77.3 / +$73.6bn (ladder 257);
-- long-run property taxes: −$27.2bn (ladder 253);
-- the income-tax key matched to IRS totals by income bin: −$3.2 / −$3.1bn (ladder 249);
-- state and local prices where the group lives: +$2.2bn (ladder 267);
-- roads keyed by miles driven: +$2.0 / +$3.7bn (ladder 273);
-- five smaller keys: −$1.0 / −$1.3bn together; the items interact by −$0.5bn
-([main-case lane](../infra/immigration-fiscal/main_case_2026_09_29/RESULT.md), [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275).
-
-The September 27 case, $321.8–387.4bn, had given four items held at zero by source classification or short-run
-budget conventions their long-run cost: long-run road, park and economic-administration responses (+$19.4 /
-+$29.6bn); rental assistance at 1 (+$4.5bn); the return on public capital at 2% (low end) and 3% (high end), which
-BEA's depreciation-only lines leave out (+$22.2 / +$38.3bn); and every government enterprise responding, their
-operating loss and the return on their capital (+$17.2 / +$23.0bn)
-([decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239).
-
 With CBO-style first-year budget responses the current case gives $288.9–336.5bn, and $207.3–260.3bn counting
-benefits when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md); on the October 5
-case $289.1–335.3bn and $206.2–257.5bn, on the September 29 case $277.3–318.3bn and $200.6–245.3bn; the September 26
-run gave $200.9–245.7bn); with every
-service proportional, the current case gives $418.1–475.8bn (`main_case_bands.csv`, `proportional_reference`;
-October 5: $419.3–475.6bn). The main cases since September 20 are listed, each with its decision, in the
+benefits when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md)); with every
+service proportional, the current case gives $418.1–475.8bn (`main_case_bands.csv`, `proportional_reference`).
+The main cases since September 20 are listed, each with its decision, in the
 [topic index](immigration-INDEX.md#core-state) ("Earlier cases"); social costs and benefits are in the
 [real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md). Everything below is the account as
 published on September 20, kept as the calculation record.
@@ -388,6 +363,9 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed,
+recoverable at 0e0c5e28.
 
 2026-10-07, later (break conditions lane, 203a9527): the first-year budget response is v6's, $288.9–336.5bn, and
 $207.3–260.3bn counting benefits when paid; the October 5 case's $289.1–335.3bn and $206.2–257.5bn stay beside

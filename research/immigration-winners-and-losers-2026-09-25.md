@@ -12,12 +12,8 @@ Every figure below names the choice it uses.
 About one other US resident in six comes out ahead of the Mexican-origin group's presence, and the rest
 come out behind.
 - Counting each household's gains and costs as shared among its members, 17.5% come out ahead if the
-  fiscal cost is financed by tax shares, and 16.8% if by equal cuts per person (October 5: 17.6% /
-  16.9%). The share slips although the case falls $0.5bn at central values. The pension accrual, which
-  future payers carry, falls $1.5bn and the borrowed part rises $0.6bn, so today's residents carry $0.4bn
-  more. [CALCULATION: `derived/oct07/net_shares.csv`, `net_social_a` and `net_social_b`, unit
-  `spm_unit_pooled`, central; `derived/oct07/channels.csv`, rows `main_case`, `future_pension_accrual` and
-  `future_taxpayers`, against `derived/oct05/`; f2d96008]
+  fiscal cost is financed by tax shares, and 16.8% if by equal cuts per person. [CALCULATION:
+  `derived/oct07/net_shares.csv`, `net_social_a` and `net_social_b`, unit `spm_unit_pooled`, central; f2d96008]
 - Setting every choice at its least costly value gives 24%, and at its most costly 11% [CALCULATION:
   `net_shares.csv`, stacks `least_costly` and `most_costly`].
 - Giving wages to the earner alone, while taxes and rent stay shared, gives 16.7% under both
@@ -32,7 +28,7 @@ future payers of those benefits and, like the borrowed federal part ($13.2bn), i
 alive today. With the accrual, 69% of the channel is state and local; without it, 85%. $48.8bn is the
 return on public capital, which is never borrowed. Rental assistance, LIHEAP and public housing ($8.8bn)
 fall on eligible households that go without the aid. The social net on today's residents is −$378.6bn,
-or −$1,280 per other resident (October 5: −$378.2bn). The group's own rows count the 42.75M lineage,
+or −$1,280 per other resident. The group's own rows count the 42.75M lineage,
 the 3.04M added descendants placed at the identified third-plus members' records of their own five-year
 age band [ASSUMPTION]; the direct transfer it receives is $10,178 per member. [CALCULATION:
 `derived/oct07/channels.csv`, rows `fiscal`, `future_pension_accrual`, `future_taxpayers`,
@@ -52,48 +48,17 @@ Who comes out where:
 
 Preferences are an attribution under a stated proportional-replacement rule. White natives' part is
 −$0.58bn, and other recipients in the same pools, mostly in admissions, carry −$0.97bn [CALCULATION:
-`derived/oct07/channels.csv`, rows `preferences_group_part` and `preferences_group_part_others`]. Adding
-the other recipients' part moved the "with proposed" share ahead by 0.1 point on the September 27 case
-([ledger RESULT](../infra/immigration-fiscal/sept27_propagation_2026_09_27/RESULT_ledger.md)).
+`derived/oct07/channels.csv`, rows `preferences_group_part` and `preferences_group_part_others`].
 [CALCULATION: [ledger lane](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md),
-`--case oct07` → `derived/oct07/`, f2d96008; the October 5 run `--case oct05` → `derived/oct05/`, c1c259ef;
-the September 29 run `--case sept29` → `derived/sept29/`, 858f77a;
-the September 27 run `--case sept27`, 62f1e5a, with every old and new value in
-`infra/immigration-fiscal/sept27_propagation_2026_09_27/derived/old_new_ledger.csv` (718 rows), 73cc30c;
-ladder 226] [FRAMING-SENSITIVE]
+`--case oct07` → `derived/oct07/`, f2d96008; ladder 226] [FRAMING-SENSITIVE]
 
-**Earlier cases.** The share ahead falls as the case grows, and who comes out where does not change.
-The sections below keep the tables of the September 24 run.
-
-| | September 24, $200.9–246.3bn (the tables below) | Schools at full cost, September 26, $258.5–292.0bn | September 27, $321.8–387.4bn | September 29, $371.4–434.8bn | October 5, $390.3–461.2bn |
-|---|---|---|---|---|---|
-| Ahead: tax shares / per-person cuts | 23.9% / 21.4% | 20.5% / 19.0% | 17.8% / 17.0% | 17.9% / 17.1% | 17.6% / 16.9% |
-| Every choice least / most costly | 30% / 14% | 27% / 12% | 24% / 11% | 24% / 11% | 24% / 11% |
-| Wages to the earner alone | 20.1% / 19.9% | 18.4% / 18.3% | 16.9% / 16.9% | 16.9% / 16.9% | 16.7% / 16.8% |
-| Fiscal channel, central | $223.4bn | $275.0bn, 83% state and local | $349.3bn, 85% state and local | $394.4bn, 68% state and local (84% without the accrual) | $416.4bn, 69% state and local (86% without the accrual) |
-| Social net on today's residents | −$263.9bn | −$314.4bn (−$1,063 per other resident) | −$386.6bn (−$1,307) | −$360.6bn (−$1,219) | −$378.2bn (−$1,279) |
-| Behind in California and Texas | 95–98% | 96–98% | 97–99% | 97–98% | 97–99% |
-| Behind: US-born adults, high school or less | 97–98% | 97–99% | 98–99% | 98–99% | 98–99% |
-| Behind: renters | 87–90% | 88–91% | 90–92% | 90–92% | 90–92% |
-| Behind: each decile in the bottom half | 77–99% | 81% to over 99% | 83% to over 99% | 83% to over 99% | 83% to over 99% |
-| Ahead: top decile, tax shares / per-person cuts | 41% / 60% | 36% / 57% | 31% / 55% | 31% / 55% | 31% / 54% |
-| Ahead: landlords | about half | 43–47% | 37–42% | 39–43% | 37–43% |
-| Landlords' pooled net under tax shares | +$114 | −$227 | −$701 | −$524 | −$632 |
-
-The October 5 column is the run at `derived/oct05/` (c1c259ef): `net_shares.csv`, `channels.csv` and
-`person_nets_by_cut.csv`.
-
-School dilution leaves the nets from September 26 on, since nothing is left unfunded at a school
-response of 1, and the consumption key sits inside the fiscal channel. [CALCULATION: ledger lane,
-`--case sept26_schools`, fa1bd3a; every old and new value in
-`infra/immigration-fiscal/sept26_propagation_2026_09_26/derived/old_new_ledger.csv` (643 rows),
-d27dcb1; September 24: `winners_losers.py` → `derived/net_shares.csv`, `person_nets_by_cut.csv` at
-`--case sept24`] [FRAMING-SENSITIVE]
+The sections below keep the tables of the September 24 run. [CALCULATION: `winners_losers.py` →
+`derived/net_shares.csv`, `person_nets_by_cut.csv` at `--case sept24`]
 
 ## 1. Object and frame
 
 The frame is the [complete annual account](immigration-complete-annual-account-2026-09-20.md) on the
-main case adopted September 24 ($200.9–246.3bn) in the tables below; the verdict above is the lane's run on
+main case adopted September 24 in the tables below; the verdict above is the lane's run on
 main case v6 of 2026-10-07. It measures the effect of the Mexican-origin residents, all generations, on all
 other US residents in 2024, comparing the year with and without the group. The verdict counts the 42.75M
 lineage the case prices: the 39.7M who report Mexican origin, as the account prices them, and 3.04M
@@ -301,8 +266,8 @@ Notes on the table:
   third-plus generations have no counterfactual in Mexico here, and none is invented. The
   [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md) (ladder 250) builds
   one for G2: the same people raised in Mexico by parents with the same schooling who stayed, a
-  $252bn premium ($241–260bn). G3+ is bounded between no premium and $253bn ($306bn on main cases v5 and
-  v6, whose third-plus includes the 3.04M added descendants). On gross pay and measured employment in
+  $252bn premium ($241–260bn). G3+ is bounded between no premium and $253bn ($306bn on main case v6,
+  whose third-plus includes the 3.04M added descendants). On gross pay and measured employment in
   both places, G1's premium is $263bn ($242–285bn), against $224.6bn here.
 - **Remittances.** Mexico received $62.8bn of remittances from the United States in 2024 [SOURCE:
   Banxico SIE table CE167, US-origin receipts, revised]. The corridor carries more than the CPS
@@ -350,8 +315,7 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   actually share. The truth for any family lies between the two counts.
 - **Kept out of every net.**
   - The debt legacy's interest ($31.8–44.2bn on the main case, `derived/oct07/channels.csv` row
-    `debt_legacy`; $30.6–42.6bn on the October 5 case, $30.8–41.5bn on the September 29 case,
-    $30.9–41.6bn on the September 27 case and $28.3–36.4bn on September 24) is a different object.
+    `debt_legacy`) is a different object.
   - The owners' home-value gain is a stock ($1.3–2.9tn).
   - The consumer-price and care side views overlap the wage channel.
 - **The allocation base is not a total.** The lane's allocation base, the adopted fiscal band plus
@@ -359,11 +323,7 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   September 28 on: fear, security, schools, pollution, crashes and five benefits. The published
   fiscal-plus-social total is $489.0–570.7bn on the 42.75M lineage (ladders 274, 295,
   [INDEX](immigration-INDEX.md); `sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv`,
-  section `pairing_on_priced_count`, b0a2ccac); on the October 5 case it was $490.2–570.7bn, on the
-  September 29 case $462.9–535.5bn on the 39.7M, and on the September 27 case $413.7–488.0bn. Before
-  those items it was $248–304bn on September 24 ($247.7–298.4bn on the equal footing, $253.4–304.0bn on
-  the custody footing), $305–350bn on the schools case (4e66adb) and $363–438bn on the September 27 case
-  (73cc30c).
+  section `pairing_on_priced_count`, b0a2ccac).
 
 - **Instrument.** The analysis ran through an LLM with known dispositions on charged topics
   ([caveat](../notes/llm-bias-caveat.md)). Every figure here comes from scripts the parent re-ran
@@ -423,3 +383,4 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - 2026-09-29, later (main case v4, [decision](../decisions/2026-09-29-main-case-v4.md), ladder 275): the verdict runs the main case of that date (858f77a). 17.9% / 17.1% of other residents come out ahead, pooled; the $74.9bn pension accrual falls on the future payers of Social Security and Medicare, so the social net on today's residents falls to −$360.6bn while the case rises. Landlords ahead 39–43% (pooled net −$524); California and Texas 97–98% behind. Concept affected: who comes out ahead, and who bears the pension accrual.
 - 2026-10-05, later (main case v5, [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281): the verdict runs main case v5 (c1c259ef). 17.6% / 16.9% of other residents come out ahead, pooled, and 16.7% / 16.8% with wages to the earner; taxpayers' fiscal channel is $416.4bn, the pension accrual $80.4bn and the social net on today's residents −$378.2bn. The group's rows count the 42.75M lineage, the 3.04M added descendants placed at the identified third-plus members' records; the September 29 verdict's figures are a column of the earlier-cases table, and the pairing, the debt legacy and the G3+ premium bound follow v5. Concept affected: who comes out ahead, and the group frame's count.
 - 2026-10-07 (main case v6, [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295): the verdict runs main case v6 (f2d96008). 17.5% / 16.8% of other residents come out ahead, pooled, and 16.7% under both with wages to the earner; taxpayers' fiscal channel is $415.9bn, the pension accrual $78.9bn, the borrowed part $13.2bn and the social net on today's residents −$378.6bn. The case falls $0.5bn at central values, but the accrual falls $1.5bn and the borrowed part rises $0.6bn, so today's residents carry $0.4bn more and the share slips. The group's rows place the 3.04M added descendants at the identified third-plus records of their own five-year age band. The October 5 verdict's figures are a column of the earlier-cases table; the pairing ($489.0–570.7bn) and the debt legacy ($31.8–44.2bn) follow v6, and the G3+ premium bound stays on v5 with the world ledger. §1 now names the run and the lineage, which it had not since September 29, and the preferences paragraph dates its 0.1-point move to the September 27 case. Concept affected: who comes out ahead, and the group frame's age placement.
+- 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed, recoverable at 0e0c5e28.
