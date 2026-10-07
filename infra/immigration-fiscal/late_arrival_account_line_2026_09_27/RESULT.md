@@ -21,6 +21,14 @@ share of audit row 8 (−$0.09bn in all). They are 4.5% / 4.7% of the Mexico-bor
 cash set: $5.47 / 5.60bn. The Medicaid check is unchanged. [CALCULATION: `run_cells.cjs --case oct05|oct05_cash` →
 `derived/late_arrival_line_oct05.csv`; section 7]]
 
+[2026-10-07: on main case v6 (`oct07`, $389.08–461.48bn, adopted 2026-10-07), the late arrivals cost $4.36 / 4.12bn
+($12,047 / 11,360 a head), −$0.014 / 0.012bn from v5. The 2026 Trustees paths lower G1's accrual per tax dollar
+(−$0.010 / 0.008bn), and the user-fee item and retiree health net out most of the rest. They are 4.5% / 4.7% of the
+Mexico-born line and 1.12% / 0.89% of the case. The cash set: $5.46 / 5.60bn. Pell goes by education's shares
+[ASSUMPTION: no college-enrollment key exists by person here]; by its own line's adult-cash key they would cost
+$0.05 / 0.07bn more. The Medicaid check is unchanged but for the Part A accrual. [CALCULATION: `run_cells.cjs
+--case oct07|oct07_cash` → `derived/late_arrival_line_oct07.csv`; section 8]]
+
 In the adopted September 27 case ($321.8–387.4bn), they cost other US residents **$5.7–5.8bn a year
 ($14.2–14.5k a head)**. The grouping bounds give $4.9–7.4bn. That is 6–7% of the Mexico-born line and
 1.5–1.8% of the case. The September 27 per-head figures in this verdict divide by the CPS count (399,300; 226,600 at
@@ -513,6 +521,132 @@ oct05 commands. The oct05 commands are `run_cells.cjs --case oct05` and `--case 
 
 Log (times from `date` and file times, JST): by 23:18 the six oct05 runs, line, check and verify, and the edited
 scripts compiled (their `.pyc` times); 23:20:27–23:24:25 `rerun_lane.py` IDENTICAL 25/25, exit 0; 23:28 this section.
+
+## 8. v6 case (oct07), 2026-10-07
+
+Main case v6 (`main_case_2026_10_07`, case key `oct07`) was adopted on 2026-10-07
+(decisions/2026-10-07-main-case-v6.md). It is v5 plus four items (`meta.items`):
+- the pension accrual on the 2026 Trustees paths (set only);
+- retiree health on accrual;
+- the added people at their measured age mix;
+- user fees with the education keys.
+
+It costs $389.0826–461.4797bn, and $307.3994–385.3641bn in the cash set. `run_cells.cjs` runs both as `--case oct07`
+and `--case oct07_cash`. Model self-report: claude-opus-5-5.
+
+**Method.** The sept29 steps run unchanged and give each cell's September 29 payload. The v6 part then goes on each
+cell by the generation lane's `v6_split.cjs` (its RESULT section "v6 case (oct07)"), over the nine cells instead of the
+three generations:
+- **The lineage block** (the lineage item's values) goes on the G3plus cell. Every cell takes row 8's edit at its share
+  of the September 29 union's `lane_constants` k cell.
+- **Retiree health's ten national-scale edits** go on every cell as they are. Each cell carries the union's national
+  totals, so its share of every line holds.
+- **The pension item's union parts** follow the September 29 split's pension rule with the 2026 per-generation factors.
+  Each G1 cell takes G1's factor (×0.98595 on the accrual per tax dollar, ×1.00109 on Part A) on its own OASDI receipts
+  and Part A accrual. The lineage parts go on the G3plus cell.
+- **User fees** go pro rata to each cell's share of the union amount of the part's split-basis line
+  (`meta.user_fees.splits.split_basis`), and so do the carriers. The added people take none.
+
+Two of the user-fee rules are assumptions:
+- **Pell** (`union_key_pell`, +$3.87 / 3.97bn at the union) goes by `education_services`, the case's rule
+  [ASSUMPTION]. A college-enrollment key would be better, but none exists by person or generation here. Pell's own
+  line, `other_federal_benefits`, is keyed by adult cash assistance. The part stays on that line in the engine, so this
+  lane's programme rows show it under other transfers; its split across cells follows education's shares.
+- **The K-12 weight's two parts** sit on row 6's re-blend lines (`school_reprice`, `college_rekey`), which carry no cell
+  amounts here, so they also go by `education_services` [ASSUMPTION]. In the household split and the decomposition this
+  moves $0.10 / 0.04bn from schools to other education. Here both lines sit in the education programme.
+
+Per-person figures keep the row-4 headcounts. The third-plus row counts the added people, its adults at their measured
+age mix (1,609,482) [ASSUMPTION, as in the generation lane]. The change is measured from v5 (`oct05`).
+
+**The set, central reading, (a)** ($bn a year at the union's ends, 48 / 11; [CALCULATION:
+`derived/late_arrival_line_oct07.csv`]):
+
+| Subgroup | Persons (row 4) | $bn low / high | $ per person low / high | Lower-edge reading $bn | Upper-edge reading $bn | Change from v5, $bn |
+|---|---|---|---|---|---|---|
+| Arrived at 50+, all ages | 362,200 | 4.36 / 4.12 | 12,047 / 11,360 | 3.68 / 3.67 | 5.57 / 5.21 | −0.014 / −0.012 |
+| of them 65+ | 207,100 | 3.08 / 2.97 | 14,868 / 14,320 | 2.85 / 2.73 | 3.83 / 3.67 | −0.012 / −0.012 |
+| of them 50–64 | 155,100 | 1.28 / 1.15 | 8,278 / 7,405 | 0.83 / 0.94 | 1.74 / 1.54 | −0.002 / 0.000 |
+| Arrived at 55+ | 210,700 | 2.97 / 2.87 | 14,080 / 13,636 | 2.44 / 2.36 | 3.41 / 3.26 | −0.010 / −0.009 |
+| Arrived younger, now 50+ | 4,631,100 | 41.81 / 37.89 | 9,028 / 8,182 | | | −0.16 / −0.21 |
+| All Mexico-born | 11,036,700 | 96.89 / 86.66 | 8,779 / 7,852 | | | −0.26 / −0.36 |
+
+The age parts add to "arrived at 50+" as in section 6: persons print 207,100 for 207,163, and the high end's change for
+65+ prints −0.012 for −0.0127, by largest remainder.
+
+- **Convention (b):** 418,400 members and $5.09 / 5.29bn; the 65+ part is $3.29 / 3.31bn. The change from v5 is
+  −$0.015 / 0.014bn.
+- **The cash set**, central, (a): arrived at 50+ cost $5.46 / 5.60bn ($15,076 / 15,455), of them 65+ $4.31 / 4.79bn.
+  The change from the v5 cash set is −$0.004 / 0.004bn.
+- **Share.** $4.36 / 4.12bn is 4.5% / 4.7% of the Mexico-born line and 1.12% / 0.89% of the case, as on v5.
+- **What moves them.** v6 moves the late arrivals by −$0.014 / 0.012bn (printed by largest remainder so that it adds):
+  - Social Security −$0.010 / 0.008bn: G1's accrual per tax dollar falls (×0.98595) on the 2026 paths. Medicare
+    +$0.001 / 0.000bn: G1's Part A factor (×1.00109).
+  - Education −$0.015 / 0.002bn and capital −$0.003 / 0.001bn: the user-fee item and its offsets.
+  - Services +$0.011 / 0.012bn: the service lines that retiree health's normal costs and item 4's health parts move.
+  - Other transfers +$0.002 / −0.013bn: Pell, kept on `other_federal_benefits`, less retiree health's cut of that line.
+
+  The Mexico-born line moves −$0.26 / 0.36bn: Social Security −$0.36 / 0.44bn, education −$0.78 / 0.21bn, capital
+  −$0.15 / 0.06bn, Medicare +$0.02bn, other transfers +$0.68 / −0.02bn and services +$0.33 / 0.35bn.
+  [CALCULATION: `late_arrival_line_oct07.csv` less `late_arrival_line_oct05.csv`, by programme]
+- **Pell by its own line** (`split_basis_edited_line_move`, beside each total). Split by `all_cash` as its edited line
+  would split it, Pell would move the late arrivals by +$0.046 / 0.073bn in (a), and +$0.039 / 0.056bn in (b). It
+  would move the Mexico-born line by +$0.07 / 1.01bn in (a) and −$0.62 / 0.51bn in (b), the generation lane's G1
+  figures. The nine cells still add to the case (1e-9). The cash set's moves are the same, since item 4 enters both
+  sets alike.
+- **Medicaid check** (`medicaid_check.py --set oct07` → `derived/medicaid_check_oct07.csv`). The re-key is unchanged:
+  net −$0.177 / −0.184bn in the set and −$0.31bn in the cash set. Only the cells' Part A accrual moves, since v6 books
+  Part A at $40.783bn on the 2026 paths against $41.137bn. G1's Part A factor is above 1 (×1.00109), so the late
+  arrivals' 65+ accrual rises from $0.1386bn to $0.1389bn at the low end. The gate against oct05 holds every G1 cell's
+  Medicaid part, and its Medicare part less its change in Part A accrual (1e-12). The cash set has no accrual. Of the
+  file's 532 rows, only the 12 Part A accrual rows differ from `medicaid_check_oct05.csv`.
+
+**Gates**, all passing:
+- `run_cells.cjs`: 53 per run in the set and 50 in the cash set, at each of the three readings. The v6 part's gates, per
+  convention:
+  - the v6 payload builds on the September 29 payload built here, and `v6_split.cjs` runs on the same engine and model;
+  - the row-8 shares add to 1, the lineage goes on G3plus, and the nine v6 models add to the case's payload model
+    (cells 1.4e-12bn, grid 1.1e-13bn);
+  - each cell shift's shares add to 1 (1e-12), and before each of the ten national-scale edits every cell carries the
+    union's national total (exact);
+  - the carriers' shares add to 1 and their key values to the union's (1e-12 relative);
+  - the September 29 pension rule reproduces each cell's pension references (1e-9);
+  - beside the case, with the parts split by their edited lines, the nine models add to the case's payload model and
+    the nine cells to the case's band at both ends (1e-9).
+
+  The engine gates:
+  - The oracle is the v6 lane's `main_case_bands.csv` (`adopted`, `cash_set`) at 48 / 11, to four decimals.
+  - New with v6, the union also matches the band in `summary.json` at full precision (1e-6): $389.082553 / 461.479709bn,
+    and $307.399411 / 385.364123bn in the cash set.
+  - The nine cells add to the union in all 64 specifications, corrected and uncorrected (1.5e-12bn).
+  - The v6 package's `evaluateFull` gives every model's cost (difference 0).
+  - The cells' v5 costs add to the v5 band (1e-4).
+- `verify.py --set oct07`: 103 checks. In both sets, all readings, conventions and ends, late + younger equals the
+  generation lane's G1 (`generation_summary_oct07*.json`) to 8.8e-11bn. The G3plus cell, with the added people, equals
+  the generation lane's G3plus in cost, members and adults (1e-6).
+- `medicaid_check.py --set oct07`: 16 gates.
+
+`rerun_lane.py --online` ran 40 commands: the 31 of v5, then `run_cells.cjs --case oct07` and `--case oct07_cash` at
+each reading, then `build_line.py`, `medicaid_check.py` and `verify.py` with `--set oct07`. Result: IDENTICAL, 27/27
+files, exit 0 (15:08:38–15:12:43 JST by `date`), with no script NOT RUN. `git diff --quiet` on `derived/` gave rc 0.
+
+**Files.**
+- Changed: `run_cells.cjs` (`--case oct07|oct07_cash`, `v6Part()`, the edited-line cells beside the case, the
+  full-precision band gate), and `build_line.py` (`--set oct07`, `split_basis_edited_line_move`), `verify.py` and
+  `medicaid_check.py` (`--set oct07`).
+- New outputs:
+  - `derived/late_arrival_line_oct07.csv`, with rows `oct05_total`, `change_from_oct05` and
+    `split_basis_edited_line_move` beside each total;
+  - `derived/medicaid_check_oct07.csv`;
+  - ignored intermediates: `_cache/cells_oct07{,_cash}_<reading>.json`.
+- `run_cells.cjs` loads the generation lane's `v6_split.cjs`, and `verify.py` reads its `generation_summary_oct07*.json`.
+  That lane's v6 files come first (commit 3f583fb4).
+
+Log (times from `date` and file times, JST):
+- 15:04:02–15:04:15: the first final runs.
+- 15:08:04–15:08:16: the finals rewritten with the full-precision band gate (all nine commands rc 0).
+- 15:08:38–15:12:43: `rerun_lane.py` IDENTICAL 27/27, exit 0.
+- This section was written after 15:29.
 
 ## Files
 

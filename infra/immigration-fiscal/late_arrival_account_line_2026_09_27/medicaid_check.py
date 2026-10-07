@@ -38,8 +38,13 @@ derived/medicaid_check_oct05.csv. v5 adds people to G3plus only and moves the G1
 and row 8, neither of which touches the Medicaid or Medicare lines: a gate holds every G1 cell's two parts at their
 sept29 values. The Part A accrual gate covers the cells without the added people, whose Part A accrual is in their own
 cell edits rather than in meta.pension_accrual.
+--set oct07 checks the v6 cases (oct07, main case v6 in main_case_2026_10_07, and oct07_cash) the same way and writes
+derived/medicaid_check_oct07.csv. The set's Part A accrual is v6's (meta.pension_accrual of the v6 payload: 40.783, the
+2026 Trustees paths), each cell at its share of it under the generation lane's split (run_cells.cjs cells.v6.part_a_scale).
+The gate against oct05 holds every G1 cell's Medicaid part, and its Medicare part less its change in Part A accrual
+(v6's scale x 40.783 less v4's x 41.137; zero in the cash set, where the item does not enter).
 Run from the repository root:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/medicaid_check.py [--set sept29|oct05]
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/medicaid_check.py [--set sept29|oct05|oct07]
 """
 from __future__ import annotations
 
@@ -69,10 +74,12 @@ OLD = ["G1_Y_65p", "G1_L50_65p", "G1_L55_65p"]
 # Each set of cases and its file: the default two, and the v4 and v5 cases each in a file of their own.
 SETS = {"default": (("sept27", "sept26_schools"), "medicaid_check.csv"),
         "sept29": (("sept29", "sept29_cash"), "medicaid_check_sept29.csv"),
-        "oct05": (("oct05", "oct05_cash"), "medicaid_check_oct05.csv")}
-# The v4 and v5 sets' cash cases (the set's Medicare is keyed on the cash set's charge), and the case each v5 case builds on.
-CASH = {"sept29": "sept29_cash", "oct05": "oct05_cash"}
-BUILDS_ON = {"oct05": "sept29", "oct05_cash": "sept29_cash"}
+        "oct05": (("oct05", "oct05_cash"), "medicaid_check_oct05.csv"),
+        "oct07": (("oct07", "oct07_cash"), "medicaid_check_oct07.csv")}
+# The v4, v5 and v6 sets' cash cases (the set's Medicare is keyed on the cash set's charge), and the case each v5 or v6
+# case builds on.
+CASH = {"sept29": "sept29_cash", "oct05": "oct05_cash", "oct07": "oct07_cash"}
+BUILDS_ON = {"oct05": "sept29", "oct05_cash": "sept29_cash", "oct07": "oct05", "oct07_cash": "oct05_cash"}
 FAILS = []
 
 
@@ -150,28 +157,45 @@ def main():
         cells = c["conventions"]["a"]
         # The set with the pension switch: the MEPS-keyed Medicare charge is (1 - part_a_share) x the cash set's.
         accrual_case = "v4" in c and c["v4"]["set"] == "set"
+        # v6: the Part A accrual is the v6 payload's, each cell at its share under the generation lane's split.
+        v6 = "v6" in c
         if accrual_case:
             cash = json.loads((F.HERE / "_cache" / f"cells_{CASH[which]}_central.json").read_text())
-            pension = json.loads((F.FISCAL / c["v4"]["payload"]).read_text())["meta"]["pension_accrual"]
+            pension = json.loads((F.FISCAL / (c["v6"] if v6 else c["v4"])["payload"]).read_text())["meta"]["pension_accrual"]
+            pension_v4 = json.loads((F.FISCAL / c["v4"]["payload"]).read_text())["meta"]["pension_accrual"]
             gate(f"{case}: the cash set's cells are the same lane's, at the same specifications",
                  cash["main"] == c["main"] and cash["low_spec"] == c["low_spec"] and cash["high_spec"] == c["high_spec"])
-        # v5: the September 29 cells it builds on, and the cells without the added people.
+            if v6:
+                gate(f"{case}: the Part A accrual is v6's ({pension['part_a_accrual_bn']:.3f}, against {pension_v4['part_a_accrual_bn']:.3f} "
+                     "on the September 29 payload), its scales from run_cells.cjs, with the same Part A share",
+                     pension["part_a_accrual_bn"] != pension_v4["part_a_accrual_bn"] and pension["part_a_share"] == pension_v4["part_a_share"]
+                     and all(abs(sum(c["v6"]["part_a_scale"]["a"][g][a] for g in F.GENS) - 1) < 1e-12 for a in ("personal", "shared")))
+        # v5 and v6: the cells they build on, and the cells without the added people.
         prev = json.loads((F.HERE / "_cache" / f"cells_{BUILDS_ON[case]}_central.json").read_text()) if case in BUILDS_ON else None
-        plain = [g for g in F.GENS if not ("v5" in c and g == c["v5"]["added"]["cell"])]
+        added_cell = c["v6"]["added"]["cell"] if v6 else c["v5"]["added"]["cell"] if "v5" in c else None
+        plain = [g for g in F.GENS if g != added_cell]
         for end in ("low", "high"):
             spec = f"{end}_{c['low_spec' if end == 'low' else 'high_spec']['allocation']}"
             part = {g: cells[g][end]["parts"] for g in F.GENS}
             amt = {g: cells[g][end]["medicaid_amount_bn"] * cells[g][end]["medicaid_response"] for g in F.GENS}
             gate(f"{case} {end}: the Medicaid part is the line's amount x response", max(abs(amt[g] - part[g]["medicaid"]) for g in F.GENS) < 1e-12)
+            alloc = c["low_spec" if end == "low" else "high_spec"]["allocation"]
             if prev is not None:
                 was = {g: prev["conventions"]["a"][g][end]["parts"] for g in F.GENS}
-                gate(f"{case} {end}: every G1 cell's Medicaid and Medicare parts are {BUILDS_ON[case]}'s (1e-12)",
-                     max(abs(part[g][k] - was[g][k]) for g in F.GENS if g.startswith("G1_") for k in ("medicaid", "medicare")) < 1e-12)
+                # v6's set moves each cell's Part A accrual: its scale x v6's accrual less v4's scale x v4's.
+                shift = {g: (pension["part_a_accrual_bn"] * c["v6"]["part_a_scale"]["a"][g][alloc]
+                             - pension_v4["part_a_accrual_bn"] * c["v4"]["parameters"]["a"][g]["pension_refs"]["partAScale"][alloc])
+                         if v6 and accrual_case else 0.0 for g in F.GENS}
+                gate(f"{case} {end}: every G1 cell's Medicaid part is {BUILDS_ON[case]}'s, and its Medicare part its plus the change "
+                     "in its Part A accrual (1e-12)" if v6 and accrual_case
+                     else f"{case} {end}: every G1 cell's Medicaid and Medicare parts are {BUILDS_ON[case]}'s (1e-12)",
+                     max(max(abs(part[g]["medicaid"] - was[g]["medicaid"]), abs(part[g]["medicare"] - was[g]["medicare"] - shift[g]))
+                         for g in F.GENS if g.startswith("G1_")) < 1e-12)
             comm = {g: amt[g] - ltss[g] for g in F.GENS}
             if accrual_case:
                 medicare = {g: cash["conventions"]["a"][g][end]["parts"]["medicare"] * (1 - pension["part_a_share"]) for g in F.GENS}
-                alloc = c["low_spec" if end == "low" else "high_spec"]["allocation"]
-                refs = {g: c["v4"]["parameters"]["a"][g]["pension_refs"]["partAScale"][alloc] for g in F.GENS}
+                refs = {g: (c["v6"]["part_a_scale"]["a"][g][alloc] if v6 else c["v4"]["parameters"]["a"][g]["pension_refs"]["partAScale"][alloc])
+                        for g in F.GENS}
                 gate(f"{case} {end}: each cell's Medicare part less its keyed charge is its Part A accrual (part_a_accrual x its scale)"
                      + ("" if plain == F.GENS else f"; the cells without the added people ({len(plain)} of {len(F.GENS)})"),
                      max(abs(part[g]["medicare"] - medicare[g] - pension["part_a_accrual_bn"] * refs[g]) for g in plain) < 1e-9)

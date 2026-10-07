@@ -20,8 +20,14 @@ derived/late_arrival_line_oct05.csv in the same layout. The third-plus counts th
 and the rows beside the total are `sept29_total`, the same persons' cost on the September 29 case at the same
 specification, and `change_from_sept29`.
 
+--set oct07 reads cases oct07 (main case v6, main_case_2026_10_07) and oct07_cash (its cash set) and writes
+derived/late_arrival_line_oct07.csv in the same layout; the rows beside the total are `oct05_total`, the same persons'
+cost on main case v5 at the same specification, and `change_from_oct05`. When a part of the case's items has a split
+basis other than the model line it edits (Pell on the education line), `split_basis_edited_line_move` is the move if
+each such part were split by its edited line instead (run_cells.cjs's beside run).
+
 Run from the repository root:
-  uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/build_line.py [--set sept29|oct05]
+  uv run --no-project python3 infra/immigration-fiscal/late_arrival_account_line_2026_09_27/build_line.py [--set sept29|oct05|oct07]
 """
 from __future__ import annotations
 
@@ -34,9 +40,13 @@ HERE = Path(__file__).resolve().parent
 CASES = ["sept27", "sept26_schools"]
 # Each set of cases and its file: the default two, and the v4 and v5 cases each in a file of their own.
 SETS = {"default": (CASES, "late_arrival_line.csv"), "sept29": (["sept29", "sept29_cash"], "late_arrival_line_sept29.csv"),
-        "oct05": (["oct05", "oct05_cash"], "late_arrival_line_oct05.csv")}
+        "oct05": (["oct05", "oct05_cash"], "late_arrival_line_oct05.csv"),
+        "oct07": (["oct07", "oct07_cash"], "late_arrival_line_oct07.csv")}
 # The case each set's rows beside the total compare with.
-PREVIOUS = {"sept29": "sept27", "oct05": "sept29"}
+PREVIOUS = {"sept29": "sept27", "oct05": "sept29", "oct07": "oct05"}
+# oct07: each cell's cost with the items' parts split by their edited lines rather than their split_basis (run_cells.cjs,
+# when a part's basis is another model line).
+ALT = "split_basis_edited_line_cost_bn"
 READINGS = ["central", "lower", "upper"]
 SUBGROUPS = {
     "late50": ["G1_L50_50_64", "G1_L50_65p", "G1_L55_55_64", "G1_L55_65p"],
@@ -90,6 +100,10 @@ def main():
                             k, prev = 0 if end == "low" else 1, PREVIOUS[which]
                             out[f"{prev}_total"] = sum(cells[g][f"{prev}_cost_bn"][k] for g in members)
                             out[f"change_from_{prev}"] = total - out[f"{prev}_total"]
+                        if all(ALT in cells[g] for g in members):
+                            # Beside the total: the move if the items' parts were split by their edited lines.
+                            k = 0 if end == "low" else 1
+                            out["split_basis_edited_line_move"] = sum(cells[g][ALT][k] for g in members) - total
                         for k, v in out.items():
                             rows.append(dict(case=case, reading=reading, convention=conv, spec=end,
                                              allocation=spec["allocation"], subgroup=name, program=k,
