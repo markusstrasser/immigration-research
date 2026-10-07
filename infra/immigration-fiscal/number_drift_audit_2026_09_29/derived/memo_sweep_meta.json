@@ -1,6 +1,6 @@
 {
- "rev": "e3084521",
- "memos_read": 167,
+ "rev": "e213b6ea",
+ "memos_read": 168,
  "memos_skipped": [
   "research/immigration-adversarial-audit-2026-09-28.md: a dated audit",
   "research/immigration-aggregate-and-generation-audit-2026-09-17.md: a dated audit",
@@ -24,80 +24,7 @@
   "research/immigration-weekly-conceptual-audit-2026-09-25.md: a dated audit",
   "research/immigration-yglesias-claims-audit-2026-09-21.md: a dated audit"
  ],
- "adopted": {
-  "case.cash_set": {
-   "lane": "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json",
-   "value": [
-    307.39941050546946,
-    385.36412253996343
-   ],
-   "registry_value": [
-    307.37637615801015,
-    383.40925212667577
-   ],
-   "registry_case": "October 5 main case (v5)"
-  },
-  "case.main": {
-   "lane": "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json",
-   "value": [
-    389.0825528654786,
-    461.47970930242025
-   ],
-   "registry_value": [
-    390.29395820202535,
-    461.24312471796554
-   ],
-   "registry_case": "October 5 main case (v5)"
-  },
-  "case.per_member": {
-   "lane": "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json",
-   "value": [
-    9.100875165307562,
-    10.794288242309884
-   ],
-   "registry_value": [
-    9.129210665476625,
-    10.788754386439704
-   ],
-   "registry_case": "October 5 main case (v5)"
-  },
-  "pairing.fiscal_footing": {
-   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv",
-   "value": [
-    384.32827,
-    461.479709
-   ],
-   "registry_value": [
-    385.393693,
-    461.243125
-   ],
-   "registry_case": "October 5 main case (v5)"
-  },
-  "pairing.per_member_priced": {
-   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv",
-   "value": [
-    11.438429,
-    13.348504
-   ],
-   "registry_value": [
-    11.466487,
-    13.348528
-   ],
-   "registry_case": "October 5 main case (v5)"
-  },
-  "pairing.total": {
-   "lane": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv",
-   "value": [
-    489.018168,
-    570.678088
-   ],
-   "registry_value": [
-    490.217686,
-    570.679103
-   ],
-   "registry_case": "October 5 main case (v5)"
-  }
- },
+ "adopted": {},
  "earlier": {
   "case.cash_set": [
    {
@@ -213,25 +140,32 @@
   "candidate_v3.items_1_7_accrual_payable": 3,
   "candidate_v4.set_accrual_payable": 4,
   "candidate_v4.set_cash": 4,
-  "case.cash_set": 4,
-  "case.first_year": 1,
-  "case.main": 8,
-  "case.per_member": 4,
+  "case.cash_set": 5,
+  "case.first_year": 4,
+  "case.main": 10,
+  "case.per_member": 6,
   "comparators.us_whites": 1,
   "congestion.item": 4,
   "congestion.range": 1,
   "crash.cost": 1,
   "crash.fault_based_priced": 5,
   "crash.span_priced": 3,
+  "family_line.descendants_share": 2,
+  "family_line.gap": 2,
+  "family_line.gap_3pct": 2,
   "fill_in.effect": 1,
+  "gap_vs_white.age_matched_complete": 1,
+  "gap_vs_white.per_person_common_age": 1,
+  "gap_vs_white.per_person_own_ages": 1,
   "gg.fixed_change": 6,
-  "gg.operating_effect": 2,
+  "gg.operating_effect": 5,
   "household.net_contributor_share": 3,
   "household.top10_cost_share": 3,
-  "pairing.fiscal_footing": 3,
-  "pairing.per_member_priced": 12,
-  "pairing.total": 10,
-  "pension.accrual": 3,
+  "ir5.lifetime_cost_55_65": 1,
+  "pairing.fiscal_footing": 2,
+  "pairing.per_member_priced": 11,
+  "pairing.total": 9,
+  "pension.accrual": 6,
   "pension.accrual_payable_net": 3,
   "pm25.cost": 1,
   "pm25.deaths_priced": 2,
@@ -241,14 +175,17 @@
   "remittance.sales_tax_effect": 1,
   "scale.net": 1,
   "social.items": 3,
+  "tally.accrual": 3,
   "tally.corrected": 3,
   "victims.harm": 4
  },
- "registry_sha256": "6a09921e9e27c999b19307a97ef482990a4100e5c3e734da833b030dc0682397",
+ "registry_sha256": "818fcd8b9d13a836ead4cd14c04c498ffc47f4ec36eb625dfef3991eb2655eb1",
  "registry_equals_rev": true,
  "rows_by_class": {
-  "arm_labelled": 10,
-  "count_labelled": 17,
-  "vintage_labelled": 48
+  "arm_labelled": 7,
+  "count_allowed": 1,
+  "count_labelled": 13,
+  "vintage_allowed": 3,
+  "vintage_labelled": 6
  }
 }
