@@ -157,7 +157,7 @@ substituting a web summary or declaring a measurement unavailable:
   the case lane or covers the 39.71M union and says so (ladder 281).
 - The evidence map (`overview_2026_09_28/`), assumption explorer (`assumption_explorer_2026_09_21/`)
   and figures page (`figures_2026_09_22/`) move to a new main case only when the operator asks. The
-  map has been on main case v5 since 2026-10-06, at his request; the explorer and the figures page
+  map has been on main case v6 since 2026-10-07, at his request; the explorer and the figures page
   stay on earlier cases.
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).

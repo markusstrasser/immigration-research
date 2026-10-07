@@ -5,9 +5,9 @@
 [indian_cohort_selection_2026_09_29](../infra/immigration-fiscal/indian_cohort_selection_2026_09_29/RESULT.md),
 design [percentile_mapping_design_2026_09_29](../infra/immigration-fiscal/percentile_mapping_design_2026_09_29/DESIGN.md).
 
-**Verdict:** On main case v6 and the same social rows the Mexican-origin union carries, Indian-origin
-residents benefit other residents by about $9,400–10,900 per member a year ($57–66bn), and by
-$7,300–8,600 at the third-plus white age distribution. The flow the household surveys see is not
+**Verdict:** On main case v6, with every group's income taxes on the case's own keys and the same social rows
+the Mexican-origin union carries, Indian-origin residents benefit other residents by about $11,400–12,900 per
+member a year ($70–78bn), and by $9,200–10,600 at the third-plus white age distribution. The flow the household surveys see is not
 becoming less selected: each arrival cohort since 1995 sits at the 75th–78th percentile of US white
 education at arrival. "Indian" is several populations: Telugu-, Tamil-, Kannada- and Hindi-speaking
 professionals sit near the 80th percentile, Punjabi speakers at the 47th. The unmeasured risk is the post-2021
@@ -28,34 +28,36 @@ lost selection; split the group by home region.
 
 Per member a year, low / high end of main case v6; positive costs others, negative benefits them. Parts add to
 totals: fiscal and total print their file values and the social rows take the rounding, at most $1
-[CALCULATION: `indian_full_account_2026_09_29/derived/oct07/combined.csv`, 00992d4b; the October 5 table in
+[CALCULATION: `indian_full_account_2026_09_29/derived/oct07/combined.csv`, ac6cc2ac; the October 5 table in
 `derived/oct05/combined.csv`, the September 29 table in `derived/combined.csv`]:
 
 | Group | Fiscal | Social rows | Total |
 |---|---:|---:|---:|
-| Indian-origin, actual ages (6.08M, CPS) | −12,144 / −10,777 | +1,243 / +1,330 | **−10,901 / −9,447** |
-| Indian-origin, white ages | −10,095 / −8,806 | +1,453 / +1,510 | **−8,642 / −7,296** |
-| India-born, actual ages | −12,347 / −10,922 | +888 / +990 | −11,459 / −9,932 |
-| India-born, white ages | −7,687 / −6,410 | +1,255 / +1,328 | −6,432 / −5,082 |
+| Indian-origin, actual ages (6.08M, CPS) | −14,132 / −12,765 | +1,242 / +1,329 | **−12,890 / −11,436** |
+| Indian-origin, white ages | −12,028 / −10,739 | +1,453 / +1,510 | **−10,575 / −9,229** |
+| India-born, actual ages | −13,663 / −12,237 | +888 / +990 | −12,775 / −11,247 |
+| India-born, white ages | −8,964 / −7,687 | +1,255 / +1,328 | −7,709 / −6,359 |
 | Mexican-origin union, actual ages, the 42.75M lineage | +9,101 / +10,794 | +2,449 / +2,555 | +11,550 / +13,349 |
-| Third-plus whites, a 42.75M slice | +353 / +1,607 | +2,238 / +2,277 | +2,591 / +3,884 |
+| Third-plus whites, a 42.75M slice | −1,200 / +54 | +2,238 / +2,278 | +1,038 / +2,332 |
 
 - The union carries the 3.04M added descendants at the case lane's amounts and their own social rows ($8.43 /
   8.52bn, from the v6 pairing); the Indian-origin groups keep their CPS counts, so the case moves them only through
   its responses and its items' national lines, by about $55–60 per member from October 5 [ASSUMPTION]. Every group
   takes the IPEDS keys for Pell and public colleges, the Indian groups at NH Asian shares [DEGRADED: IPEDS has no
   Indian split], and item 4's hospital-fee term stays beside (−$81 per Indian-origin member). On October 5, on the
-  same keys, the union was +$11,581 / +13,349, whites +$2,717 / +4,008 and the Indian-origin group −$10,843 /
-  −9,392; on September 29 the union was +$11,777 / +13,485 and whites +$2,864 / +4,159 on 39.71M, and the
+  same keys, the union was +$11,581 / +13,349, whites +$1,164 / +2,456 and the Indian-origin group −$12,831 /
+  −11,380; on September 29 the union was +$11,777 / +13,485 and whites +$2,864 / +4,159 on 39.71M, and the
   Indian-origin group −$10,763 / −9,305.
-- Fiscal standard errors for the Indian rows are about $1,000–1,200 (160 CPS replicate weights).
+- Fiscal standard errors for the Indian rows are about $1,200–2,000 (160 CPS replicate weights). The case's
+  federal key puts the top AGI cells' tax on few records, which widens them.
 - Ageing to white ages removes about a sixth of the group's lead over whites; the India-born alone
-  lose about half of their benefit (−$11.5k → −$6.4k at the low end), because their old age is still ahead of them.
+  lose about two-fifths of their benefit (−$12.8k → −$7.7k at the low end), because their old age is still ahead of
+  them.
 - The gate: the engine union is the case, $389.0826 / 461.4797bn, and the union rows reproduce the white
   and Black lanes' v6 re-keys (5e-5).
-- Pooling ASEC 2022–26 for the second generation (941 adults, not 209) moves the total by $135 per
+- Pooling ASEC 2022–26 for the second generation (941 adults, not 209) moves the total by $167–168 per
   member. Self-employed and wage-earning India-born adults do not differ measurably
-  (−$18.6k/−16.9k, SE 4.7–4.9k, against −$20.0k/−18.3k). Motel, grocery and gas-station owners are 27
+  (−$22.4k / −20.6k, SE 9.1–9.4k, against −$20.7k / −18.9k). Motel, grocery and gas-station owners are 27
   of 350 sampled self-employed India-born adults pooled: too few to estimate.
 
 What rests on proxies: no Indian offending data exists in the repo's sources, so institutionalization
@@ -169,3 +171,10 @@ points and the projected G2 about 1 point [CALCULATION: §5 of the cohort lane].
   $11,550–13,349, so the gap to it is $22,450–22,800 per member, and to third-plus whites $13,330–13,490. Concept
   affected: the Indian-origin full account follows the main case and the comparators' education keys.
 - 2026-10-07, later (correction): the verdict and the INDEX row placed every south-Indian language group near the top of the education ranking; the table puts Malayalam speakers lower, so both now name Telugu, Tamil and Kannada. Concept affected: the description of Indian subgroups, not the account.
+- 2026-10-07, later (comparators' income taxes, [decision](../decisions/2026-10-07-comparators-income-tax-keys.md);
+  ac6cc2ac): every group's income taxes now take the case's own keys, which charge the whole national lines,
+  the tax the CPS misses at the top included. Indian-origin residents benefit others by $11,436–12,890 per member
+  ($9,229–10,575 at white ages). Third-plus whites cost others $1,038–2,332 on the same rows, so the group is
+  $13,768–13,928 a member better than whites and $24,440–24,785 better than the union, whose figure does not
+  move. Fiscal standard errors rise to about $1,200–2,000. Concept affected: the Indian-origin full account
+  follows the comparators' income-tax keys.

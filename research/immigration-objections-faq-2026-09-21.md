@@ -129,13 +129,14 @@ per capita would move the *assigned balance* by $286bn on the September 20 accou
 convention, not part of the net-cost headline.
 
 **What about obligations left by past years?** They are now stated beside the account (ladders 278–279),
-against third-plus non-Hispanic whites on matched keys and the same headcount path,
+against third-plus non-Hispanic whites on matched keys (every group's income taxes on the case's own keys) and
+the same headcount path,
 ending at 42.75M people. The federal comparison uses **2005–2023**, the annual ACS headcount
 window; earlier starts rely more on interpolation. In 2024 the modeled excess annual financing
-charge is **$81.2bn** with past accrued Social Security and Part A promises capitalized as if
-borrowed. Carrying those accruals with payroll instead of benefits gives **$71.8–71.9bn**;
-counting benefits when paid gives **$15.2–15.9bn**. On the October 5 case, on the same keys, these
-were $79.4bn, $69.8–69.9bn and $14.1–14.6bn. On the September 29 case, on 39.71M, earlier starts on
+charge is **$101.6–101.7bn** with past accrued Social Security and Part A promises capitalized as if
+borrowed. Carrying those accruals with payroll instead of benefits gives **$92.2–92.3bn**;
+counting benefits when paid gives **$35.6–36.3bn**. On the October 5 case, on the same keys, these
+were $99.8bn, $90.3bn and $34.5–35.0bn. On the September 29 case, on 39.71M, earlier starts on
 the original accrual carry gave **$87.7–87.8bn** (2000) and **$112.8bn** (1990); v5 and v6 carry the
 3.04M added descendants on the third-plus generation's path, measured from 2005 only, so they run the
 2005 start alone. These are model
@@ -308,9 +309,12 @@ Finding: against all natives the same-age gaps are −$5,404, −$5,342 and −$
 many average residents, the main case's gap counting benefits when paid is −$279–310bn, about −$6,500 to
 −$7,200 per person (October 5: −$277–306bn). The gap is defined on cash flows only: an accrued pension
 has no national total to share out. The net-cost headline compares with no reference group at all: it is the change for
-all other residents, other immigrants included. [SOURCE: `derived/complete_gaps.csv`;
+all other residents, other immigrants included. Third-plus whites are not a flattering reference either: with every
+group's income taxes on the case's own keys they about break even on accrual, so the gap against as many of them,
+$432–436bn a year, falls inside the main case's $389–461bn. [SOURCE: `derived/complete_gaps.csv`;
 [program gaps](../infra/immigration-fiscal/black_comparator_rough_2026_09_28/RESULT.md), ladder 259;
-`derived/rekey_summary_oct07.csv`, d2554cb2]
+`derived/rekey_summary_oct07.csv`, d2554cb2; [white comparison](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md),
+ladder 263]
 
 ## 7. "Is this just low education? Poor natives cost money too."
 
@@ -913,3 +917,4 @@ they get more prominence.
 - 2026-10-05, later (v5 consumer lanes: generation e5ca5efe, distribution fecaae7e, back-cast 6ec08a13): the combining rules' and entry 4's production gain, entry 4's income split outside the budget, entry 5's generation split and entry 8's back-cast follow main case v5. The 3.04M added descendants go on the third-plus generation ($110–142bn counted with their parents, $142–195bn in their own generation); the production gain is $7.9–11.9bn; outside the budget the bottom four fifths lose $80.4bn and the top fifth gains $45.5bn; the ten-year back-cast is $3.4–4.4tn. The first-year scenario, the fiscal-plus-social total, the average-resident gap and the replay still say "on the September 29 case" until their reruns land. Concept affected: the generation split, the income split and the back-cast follow the case.
 - 2026-10-05, later (v5 consumer lanes: pairing 72f2e3bc, break conditions 16f2a063, Black comparison 126722fe, legacy comparators 0c94eee0, pension legacy fba2f93f): the anchors, the combining rules and entries 2, 4, 6, 11 and 16 give the fiscal-plus-social total ($490–571bn, $11.5–13.3k per member of the 42.75M lineage), the first-year budget response ($289–335bn; $206–258bn counting benefits when paid), the gap against average residents (−$277–306bn) and the legacy comparisons ($75.5bn federal, $5.2–5.3bn pensions) on main case v5, with the September 29 figures beside. The 3.04M added descendants' own social rows ($8.6 / 8.8bn) are a new line of entry 4's list. Concept affected: the fiscal-plus-social total, the first-year scenario and the legacy comparisons.
 - 2026-10-07 (main case v6 adopted; [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295; consumers on `oct07`: generation 3f583fb4, distribution 498a6a71, closed budget b26319d1, pairing b0a2ccac, winners f2d96008, white and Black d2554cb2, break conditions 203a9527, legacy 74a82a3f, pension legacy 7234592e; the added people's parts 793eca45): the anchors, the combining rules and entries 2, 4, 5, 6, 11 and 15–20 restate the main case at $389.1–461.5bn, the cash set at $307.4–385.4bn, the first-year budget response at $289–336bn ($207–260bn counting benefits when paid), the fiscal-plus-social total at $489–571bn, the generation split, the gap against average residents (−$279–310bn) and the legacy comparisons ($81.2bn federal, $5.4bn pensions), with the October 5 figures beside. Entry 19 prices the added descendants at their measured ages; entry 20 nets the OASI shortfall on separate funds. Concept affected: the main case and every figure computed from it.
+- 2026-10-07, later ([decision](../decisions/2026-10-07-comparators-income-tax-keys.md); legacy 8bfae970, white cc793ccf): entry 2's legacy comparison follows the comparison groups' move to the case's income-tax keys ($101.6–101.7bn, was $81.2bn), and entry 6 adds that third-plus whites about break even on accrual, so the gap against as many of them, $432–436bn, falls inside the main case. Concept affected: the comparison groups' income-tax incidence.
