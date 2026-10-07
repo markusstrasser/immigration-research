@@ -4,6 +4,110 @@ claude-opus-5-5
 **Recorded, not applied.** Nothing here changes the adopted case: it stays $371.4–434.8bn (cash set $294.7–361.8bn) until
 the operator decides whether to re-key these lines. The re-keys would belong to the adopted lane's payload.
 
+## On main case v6 (2026-10-08)
+
+On v6 (`main_case_2026_10_07`, key oct07) the class moves the set −$0.3bn at both ends and the cash set +$0.7bn: the set
+would be $388.8–461.2bn and the cash set $308.1–386.1bn, against the adopted $389.1–461.5bn and $307.4–385.4bn. Five
+union inputs still sum on the CPS's published weights. Owner property, the benefit-tax receipt and the state indexes are
+v4's inputs; the Part A accrual and the OASDI ratio are new, from the Trustees-2026 arm v6 adopted (item
+pension_tr2026). The lineage that v5 added inherits part of the class: the generation split hands the 3.04M added people
+the union's published-weight pension totals and state indexes, −$0.06 / −0.04bn on the set and +$0.02bn on the cash
+set. Beside the class, the 1.08M added people priced as third-plus whites keep the September 27 income-tax rule. On the
+case's income-tax keys, at the case's own allocation (shared at spec 48, personal at spec 11), they move the case −$1.7 /
++1.1bn (`white_replacement_2026_09_28/derived/limits_oct07.csv`, rows `case_w_income_tax_keys` and `_personal`, arm
+g3_rate_mix, taken as that lane wrote them). With both, the set would be $387.1–462.3bn ($9,054–10,813 per member of the 42.75M
+lineage) and the cash set $306.4–387.2bn ($7,166–9,056). The two do not interact: each joint row equals the sum of its
+parts to 3e-13. Recorded, not applied: the adopted case is unchanged.
+[CALCULATION: `row4_oct07.py` → `derived/row4_oct07_inputs.json`; `row4_oct07.cjs` → `derived/row4_oct07.csv`,
+`derived/row4_oct07.json`]
+
+Moves, $bn at specs 48 / 11. The union rows re-key the union's part of each v6 cell (v4's payload model, which v6's
+lineage and items build on); the lineage rows re-key what the added people inherit. Printed with controlled rounding, so
+the parts add to the joint rows: five printed values differ from their own rounding by 0.0001 (the lineage's state
+indexes and the G3+-priced members' benefit tax at spec 48, the lineage's cash joint at spec 11, and the last row's set
+move at both ends). `derived/row4_oct07.csv` has six decimals and each row's cost.
+
+| Re-key | Layer | Set move | Cash move |
+|---|---|---:|---:|
+| owner-occupied property (item 5) | union | +0.3407 / +0.3407 | +0.3407 / +0.3407 |
+| Part A accrual (Trustees arm) | union | −1.0283 / −1.0283 | 0 / 0 |
+| benefit-tax receipt | union | −0.0272 / −0.0282 | 0 / 0 |
+| state price indexes | union | +0.3661 / +0.3654 | +0.3661 / +0.3654 |
+| OASDI ratio_net (Trustees arm) | union | +0.1306 / +0.1227 | 0 / 0 |
+| **joint, union** | union | **−0.2181 / −0.2277** | **+0.7068 / +0.7061** |
+| Part A through the split | lineage | −0.0624 / −0.0450 | 0 / 0 |
+| Social Security through the split | lineage | −0.0077 / −0.0082 | 0 / 0 |
+| G3+'s own net rate at row 4 (f_ss) | lineage | +0.0000 / +0.0000 | 0 / 0 |
+| state price indexes | lineage | +0.0167 / +0.0169 | +0.0167 / +0.0169 |
+| owner property, national key | lineage | −0.0011 / −0.0011 | −0.0011 / −0.0011 |
+| benefit tax, the G3+-priced members | lineage | +0.0002 / +0.0001 | 0 / 0 |
+| benefit tax, the white end (rule 3) | lineage | −0.0023 / −0.0023 | 0 / 0 |
+| **joint, lineage** | lineage | **−0.0566 / −0.0396** | **+0.0156 / +0.0158** |
+| **the class** | both | **−0.2747 / −0.2673** | **+0.7224 / +0.7219** |
+| white end on the case's income-tax keys | beside | −1.7483 / +1.0864 | −1.7483 / +1.0864 |
+| **the class and the white end** | | **−2.0230 / +0.8191** | **−1.0259 / +1.8083** |
+
+How the union inputs move on row 4 (each from `derived/row4_oct07_inputs.json` or `derived/row4_oct07.json`):
+- Owner property: v6 carries v4's union cell and kappa (1.017976), so the move is v4's +0.3364bn times the owner line's
+  response, v6's 0.772699 over v4's 0.762903 (gated, 1e-9).
+- Part A: the arm's union accrual $40.782779bn → $39.754520bn on row 4 (−1.028260), all of it G1 ($12.598717bn →
+  $11.570458bn). The control, v4's pension block, moves −1.028029 as on v4.
+- Benefit-tax receipt: v4's; the receipt removed falls $2.091206bn → $2.063957bn (shared) and $1.816900bn →
+  $1.788698bn (personal).
+- State indexes: v4's row-4 ratios (`derived/row4_state_index.json`) on v6's union cells, which are v4's; the moves
+  match v4's at four decimals.
+- OASDI ratio: the arm's ratio_net 0.953547 → 0.954709 with the row-4 relative rate (0.523382 → 0.526351); 0.954969
+  with the rate held (+0.1598 / +0.1501bn, `beside` in the JSON). v4's moved 0.973667 → 0.975027.
+
+| Input | In v6 | Published-weight sum (file:line) |
+|---|---|---|
+| owner-occupied property | v4's union cell | model.json's cell is the owner key at published weights (`main_case_decomposition_2026_09_29/profiles_sept29.py:131-136` gates it); the audit holds the key (`cps_imputation_keys_2026_09_23/translate.py:42`) |
+| Part A accrual | new: arm all_2026_inputs_separate_funds, equal to `meta.pension_accrual.part_a_accrual_bn` (exact) | `pension_tr2026_2026_10_06/pension_tr2026.py:347` (`Lane.p = PA.frame()`, union 40,896,574), `:384` (`hi_accrual` on `lane.p`); `pension_accrual_2026_09_28/pension_accrual.py:461, :508-510` |
+| benefit-tax receipt | v4's (exact) | `pension_accrual_2026_09_28/benefit_tax.py:157` (`tot = … @ W`) |
+| state price indexes | v4's union cells and SP_PRE (1e-6) | `state_priced_services_2026_09_29/state_price.py:53, :142, :149-151` |
+| OASDI ratio_net | new: the arm's, equal to `meta.pension_accrual.ratio_net` (exact) | `pension_tr2026.py:355` (`q` from the published `p`), `:369-380` (sums over `lane.q.w`), `:357` (the relative rate; `benefit_tax.py:182-189`) |
+
+**The lineage inherits the published totals through the generation split.** v5 and v6 price the added people as G3+
+members (the later losses, and the G3-rate attriters at 1 − C3) and as third-plus non-Hispanic whites (C3 of the
+G3-rate attriters, the white end); the G3+-priced members take the split's G3+ cells by age
+(`main_case_2026_10_07/item_age_mix.cjs:176, :251`). The split (`generation_account_2026_09_24/v4_split.cjs:243-256,
+:304-313`) gives each generation a share of the union's Part A total by ρ_g × R_g: ρ_g is the pension lane's Part A per HI
+tax dollar at published weights, R_g the account's row-4 HI receipts. With the total and ρ_G1 at published weights but
+R_G1 on row 4, G2 and G3+ get too much. On consistent row-4 inputs G3+'s split Part A falls 2.79% (shared, $16.8516bn →
+$16.3808bn) and 2.87% (personal), and its Social Security, split by net own rate × OASDI receipts, 0.13% and 0.20%. G3+'s
+state price takes the union's indexes on its own keys (`v4_split.cjs:33`). The G3+-priced members' benefit tax moves with
+the national key (× 1.0014 / 1.0016) and their owner cell with the national owner key (× 1.0012). The white end's benefit
+tax follows the white lane's rule 3, the case's shared receipt over the union's relative rate
+(`white_replacement_2026_09_28/rekey_sept29.py:522-529`, REL_UNION `:215`): × 0.9814. The white end's own Social
+Security and Part A use whites' own ratios, so row 4 does not touch them.
+
+v6's other new items are outside the class. Retiree health edits national totals only (`main_case_2026_10_07/package.cjs:275`;
+`engine.js` scaleLine, :119), so the group's share holds. The added people's ages are summed at pwwgt0
+(`added_age_mix_2026_10_07/g3_age_keys.py:73`), but only over G3+ persons, whom row 4 does not reweight, and the age
+factors are ratios within G3+. User fees, IPEDS keys and Pell carry their IPEDS × ACS shares to the union by φ =
+39,712,493 over the ACS group (`user_fee_allocation_2026_10_07/fee_lines.py:209-212`) and the MEPS shares on the row-4
+union over residents (`:323`); neither sums CPS weights. Not priced, as on v4: the SE OASDI share, item 7's pooled
+workers'-comp ratio, and item 5's ACS tenant and personal-property keys (Unsettled).
+
+Gates (all pass; 39 in `row4_oct07.py`, 37 in `row4_oct07.cjs`):
+- The published reruns reproduce the pension lane's control (ratio_net, Part A, per tax dollar by generation; 1e-12) and
+  the Trustees lane's arm (its `summary.json` beside entry: ratio_net, Part A, per tax dollar, future share, G3+'s net
+  own rate and Part A per HI dollar; 1e-12); the benefit-tax values reproduce `benefit_tax.json` and the receipts
+  `summary.json` (1e-9). At row 4 the control reproduces this lane's v4 reruns (Part A, G1, gross ratio, timing and tax,
+  1e-9; receipts and relative rate, 1e-12). G2 and G3+ are identical at both weights.
+- The oracles: v6 at specs 48 / 11 is its `summary.json` set and cash bands (1e-9) and its per-member base (1e-6); 48 and
+  11 are the bands' ends and take the shared and personal allocations. v6's ratio_net, Part A, benefit-tax receipt and
+  lineage factors are the reruns' (exact, 1e-12, 1e-15).
+- The split: the generations' HI and OASDI receipts add to the union's (1e-9); rebuilding G3+'s split Social Security
+  gives its model cell (1e-9) and its Part A gives its Medicare less the kept cash share (1e-6: the split read
+  `hi_arms.csv`'s six-decimal accruals); the lineage's G and W parts add to its addition on every touched cell (1e-12).
+- The positive control: the same union-edit code applied to v4 reproduces `derived/price_rekeys.json`'s five moves
+  (1e-9; worst 0). The white end alone moves the case by its `limits_oct07.csv` amounts (1e-9), at the payload's white
+  count.
+
+`row4_oct07.py` builds the Trustees lane's `Lane()`, whose `lane_case` guard accepts the pension lane's refreshed engine
+pin since 2026-10-08 (`pension_tr2026.py:331`).
+
 ## Question
 
 Which lines of the adopted v4 case (`main_case_2026_09_29`, lane commit 40c4ba7) are keyed on the survey's published
@@ -157,10 +261,15 @@ All pass; each script writes nothing and exits 1 on any failure.
 
 ## Reproduce
 
-From the repository root, in this order (`row4_parta.py` first: the other three Python scripts read its factors;
-`price_rekeys.cjs` last). The benefit-tax step needs the Tax-Calculator 6.8.2 wheel (`--with`, from uv's cache under
-UV_OFFLINE=1); the rest use the main checkout's `.venv`. Times are the 2026-09-30 run: about 6 minutes in all, so run
-it detached (the probe ran the OASDI step under `bgrun`); nothing is slow enough to leave out of the rerun check.
+From the repository root, in this order (`row4_parta.py` first: the other Python scripts read its factors;
+`price_rekeys.cjs` after the v4 reruns; the v6 pair last, since `row4_oct07.py` gates on the v4 outputs and
+`row4_oct07.cjs` reads `price_rekeys.json`). The benefit-tax steps need the Tax-Calculator 6.8.2 wheel (`--with`, from
+uv's cache under UV_OFFLINE=1); the rest use the main checkout's `.venv`. On 2026-10-08 the cache held only 6.8.2's
+sdist, so the first run needed the index (`--online` for the rerun harness; the build takes about 5 minutes) and later
+runs resolve offline. The per-script times are the 2026-09-30 run (v4, about 6 minutes in all) and the 2026-10-08 run
+(v6); on 2026-10-08 the whole rerun check below took 72 seconds. Run it detached all the same (the probe ran the OASDI
+step under `bgrun`); nothing is slow enough to leave out of the rerun check. The v6 pricing is a separate `.cjs` because
+the case and its engine are JavaScript modules, as for `price_rekeys.cjs`.
 
 ```sh
 export OPENBLAS_NUM_THREADS=1 UV_OFFLINE=1
@@ -171,6 +280,8 @@ uv run --no-project python3 $L/row4_state_index.py                             #
 uv run --no-project python3 $L/row4_oasdi_ratio.py                             # 1.1 min (the central model grid)
 node $L/lines_diff.cjs                                                          # seconds
 node $L/price_rekeys.cjs                                                        # seconds
+uv run --no-project --with "taxcalc==6.8.2" python3 $L/row4_oct07.py           # 0.6 min, v6: the Trustees arm and benefit tax at both weights (1.8 GB)
+node $L/row4_oct07.cjs                                                          # seconds, v6: the pricing
 ```
 
 Rerun check (every output byte-identical):
@@ -182,7 +293,9 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/row4_
   "uv run --no-project python3 {lane}/row4_state_index.py" \
   "uv run --no-project python3 {lane}/row4_oasdi_ratio.py" \
   "node {lane}/lines_diff.cjs" \
-  "node {lane}/price_rekeys.cjs"
+  "node {lane}/price_rekeys.cjs" \
+  "uv run --no-project --with taxcalc==6.8.2 python3 {lane}/row4_oct07.py" \
+  "node {lane}/row4_oct07.cjs"
 ```
 
 Inputs, all read-only: the adopted lane and its candidate packages, `main_case_long_run_2026_09_27`,
@@ -192,7 +305,11 @@ ignored caches those lanes read: the CPS ASEC 2025 public-use zip
 (`gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip`), the generation lane's person frame and the pension
 lane's stage file (`pension_accrual_2026_09_28/_cache/stage_<hash>.parquet`; a script stops if it is missing rather
 than rebuild it). With those caches present a run writes only this lane's `derived/` (checked by file times after the
-2026-09-30 first run).
+2026-09-30 first run). The v6 pair also reads `main_case_2026_10_07` (its package and `derived/summary.json`),
+`pension_tr2026_2026_10_06` (code, `derived/summary.json`, `derived/case_now.json`), the generation split's
+`generation_account_2026_09_24/derived/model_{G1,G2,G3plus}.json` and `generation_corrections_sept29{,_cash}.json`,
+`main_case_candidate_v4_2026_09_29/derived/corrections_v4_cash.json` (the positive control) and
+`white_replacement_2026_09_28/derived/limits_oct07.csv`.
 
 ## Log
 
@@ -223,3 +340,17 @@ Times from `date` (JST).
 - 00:12:58–00:17:41: `scripts/rerun_lane.py` over the six commands under Reproduce: every command rc 0, IDENTICAL
   (14/14 files unchanged), exit 0.
 - 00:18:05: Reproduce and Log sections written; reported to the lead.
+- 2026-10-08 00:24–01:00: the class measured on main case v6 in the scratch folder (read-only analysis), with the white
+  end's income-tax re-key combined; reported to the lead, who chose the case's own allocation for the white end.
+- 01:14:31–01:17:22: the Trustees lane's `lane_case` guard made to accept the refreshed engine pin (its rerun IDENTICAL,
+  17/17), so `row4_oct07.py` builds that lane's `Lane()` without the scratch run's in-memory substitute.
+- 01:35:57–01:36:31: `row4_oct07.py` first run from the repository root: 39 gates PASS, peak RSS 1.83 GB; its inputs
+  equal the scratch runs' values (JSON-equal).
+- 01:36:49: `row4_oct07.cjs` stopped on a TypeError before writing (the per-member population sits under
+  `summary.json`'s `v6`); fixed, with a gate on the per-member base added.
+- 01:37:06: `row4_oct07.cjs`: 36 gates PASS; every row equals the scratch pricing's (worst difference 0).
+- 01:45:13: the owner-response gate added: 37 gates PASS, `derived/row4_oct07.csv` unchanged.
+- 01:47:58–01:49:10: `scripts/rerun_lane.py` over the eight commands under Reproduce (bgrun; OPENBLAS_NUM_THREADS=1,
+  UV_OFFLINE=1): every command rc 0, IDENTICAL (19/19 files unchanged), exit 0.
+- 01:49:32: the v6 section, Reproduce and Log written (table under controlled rounding, five printed values moved by
+  0.0001); no output changed.
