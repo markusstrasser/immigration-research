@@ -10,15 +10,12 @@ A record's other values are the numbers a memo may still quote after the record 
                 case.schools_sept26)
     registry    the registry's own value of a record in ADOPTED. The registry follows the evidence map, which moves
                 to a new main case only when the operator asks. While the map lags, a record in ADOPTED takes its
-                current value from the adopted lane, and its registry value becomes an earlier vintage. The map
-                moved to main case v5 on 2026-10-06 and stays there; main case v6, adopted on 2026-10-07, is current
-                for the memos ("$390–461bn" as the main case and "$490–571bn" as the pairing are flagged, and pass
-                when named). The September 27 values reach the sweep through the records' `supersedes`
-                (case.sept27, pairing.total_sept27).
-    earlier     the values a record in EARLIER held on the cases v6 replaced, newest first: the October 5 case (v5),
-                which is also the registry's value while the map shows v5, and the September 29 case (v4); earlier
-                vintages too ("$371–435bn" as the main case and "$463–536bn" as the pairing are flagged, and pass
-                when named).
+                current value from the adopted lane, and its registry value becomes an earlier vintage. ADOPTED is
+                empty since 2026-10-07, when the map moved to main case v6 (3834b1c8). The September 27 values
+                reach the sweep through the records' `supersedes` (case.sept27, pairing.total_sept27).
+    earlier     the values a record in EARLIER held on the cases v6 replaced, newest first: the October 5 case (v5)
+                and the September 29 case (v4), both earlier vintages ("$390–461bn" and "$371–435bn" as the main
+                case, "$490–571bn" and "$463–536bn" as the pairing, are flagged, and pass when named).
 An other value that equals the record's current value at the precision it is printed with is dropped.
 
 A memo number quotes an other value when, after the audit's masks (dates, ladder and item references, hashes):
@@ -97,12 +94,11 @@ EXEMPT = {
 }
 
 # the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,
-# field, expr). Main case v6 (ladder 295), adopted on 2026-10-07 while the map and its registry stay on v5 (ladder
-# 281): on the case lane's summary (per member of the 42.75M lineage) or, for the pairing, on the propagation lane's
-# run of v6 (b0a2ccac). ADOPTED was empty from 2026-10-06, when the map moved to v5, until v6; empty it again once the
-# map shows v6 (current_values stops on a record whose registry row already reads the adopted file).
-ADOPTED_LANE = "infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json"
-PAIRING_LANE = "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct07/real_costs_totals.csv"
+# field, expr). Empty since 2026-10-07: the map and its registry are on main case v6 (ladder 295; 3834b1c8). The next
+# time the main case moves ahead of the map, list its records here (current_values stops on a record whose registry
+# row already reads the adopted file). The v6 bridge read main_case_2026_10_07's summary (`json:main_case`,
+# `json:v6.per_member_usd.set`, `json:cash_set.band_bn`) and the propagation lane's oct07 pairing, with
+# _pairing("oct07").
 _PAIR = "csv:section=7&column=pairing_on_priced_count&item=published pairing"
 
 
@@ -117,12 +113,7 @@ def _pairing(case):
     }
 
 
-ADOPTED = {
-    "case.main": (ADOPTED_LANE, "a=json:main_case", "(a[0], a[1])"),
-    "case.per_member": (ADOPTED_LANE, "a=json:v6.per_member_usd.set", "(a[0]/1e3, a[1]/1e3)"),
-    "case.cash_set": (ADOPTED_LANE, "a=json:cash_set.band_bn", "(a[0], a[1])"),
-    **{rid: (PAIRING_LANE, field, expr) for rid, (field, expr) in _pairing("oct07").items()},
-}
+ADOPTED = {}
 
 
 def current_values(recs):

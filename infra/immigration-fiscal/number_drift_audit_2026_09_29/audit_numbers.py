@@ -323,8 +323,8 @@ INDEX_SPANS = [
     ("**Legacy comparisons, stated separately (September 30).**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
     ("[Cumulative 2005–2024 back-cast]", "Not comparable with ladder 137's forward debt path."),
-    # the rough Black comparison, restated on the adopted case (d6a5a2f)
-    ("For comparison, a rough re-key of the main case to non-Hispanic Black residents costs",
+    # the rough Black comparison, restated on the adopted case (d6a5a2f; income taxes on the case's keys since cc793ccf)
+    ("For comparison, a rough re-key of the main case to non-Hispanic Black residents",
      "group. This is not an engine run (ladder 259,"),
     # the Indian-origin full account's row in the memo table (on main case v6 since 00992d4b)
     ("| [Indian-origin: full account, arrival cohorts, home regions]",
@@ -344,9 +344,11 @@ FAQ_SPANS = [
     ("Steel-man: one year of a price surge, pandemic programmes and a migration wave", "which flatters the year."),
     # entry 5's split of the adopted account by generation (in scope since the v4 restatement, 5e9112e)
     ("On the adopted account itself, with no reference group", "on the US-born generations counted"),
-    # entry 4's income split of the transfers (6157bb1) and entry 6's gap (1572b90), restated on the adopted case
+    # entry 4's income split of the transfers (6157bb1) and entry 6's gap (1572b90), restated on the adopted case;
+    # entry 6 also sets the white gap beside the main case (since the comparators' income-tax keys, cc793ccf)
     ("the renters' payments cancel in dollars but not by income", "(ladder 194)."),
-    ("many average residents, the main case's gap counting benefits when paid", "has no national total to share out."),
+    ("many average residents, the main case's gap counting benefits when paid",
+     "falls inside the main case's $389–461bn."),
     ("**What about obligations left by past years?**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
     # entry 19, the lineage counted as whole people (main case v5, 2026-10-05)

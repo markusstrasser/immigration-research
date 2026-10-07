@@ -1,4 +1,4 @@
-**Verdict:** [2026-10-07: re-anchored on main case v6 (`main_case_2026_10_07`, 218a2fb2) and the consumer lanes that followed it, with the README, FAQ entries 16 and 20, the INDEX's Indian-origin row and the Indian-origin memo now in scope. On HEAD 00bae1a2 with the lead's docs pass, then uncommitted, all 1,336 audited numbers MATCH (1,538 tokens): none is STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Four of them read the prose of three lane RESULTs, because no data file carries them [DEGRADED]. The memo sweep treats v6 as current and flags 0 of 167 memos. derived/ still holds the v5 run. See "v6 re-anchoring, 2026-10-07".] [2026-09-30: re-anchored on the main case adopted on 2026-09-29 (v4) and on both rounds of its restatement, with three research memos now in scope. At HEAD e961aee3, 912 of 917 audited numbers MATCH and none mismatches. a820488f fixed the two document defects the audit found: INDEX:109 now reads "about one in seven" (the sentence's own 16.2% / 12.3% average 14.3%), and the by-generation memo prints $88.2bn. The five UNSOURCEABLE numbers are the evidence map's new Indian-origin entry (d217e7b), typed into groups.py where the map wants registry placeholders. The memo sweep treats v4 as current for the main case and the pairing and flags 0 of 165 memos. See "v4 re-anchoring, 2026-09-29".] The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 856bd5a plus this lane's changes, which a3e6371, 4555486 and b1b7210 committed, 684 of 824 numbers are checked (the rest are years and non-quantities): all 684 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. The five PM2.5 and crash values the page marked approximate now come from `social_spans_priced_count_2026_09_29`, which reruns the air and crash lanes on the 39.7M the account prices. Two print differently, $45bn → $46bn and $40bn → $41bn, and no number on the page is approximate now. The INDEX paragraph where 869c7aa put the scale net on the priced count is now an audited span, and its 16 numbers MATCH. `memo_sweep.py` extends the check to the living topic memos. On HEAD 8aaf046 it flagged 11 quotes of a record's raw-count or other-arm value, on 9 lines in 4 memos, with no false positive on a hand check of all 11 (2 borderline). The lead fixed nine in 869c7aa. The borderline two are in the outside-checks memo, whose header keeps its figures as computed on the September 23 case; the sweep now exempts it while that sentence stands. On HEAD b1b7210 the sweep reads 178 memos and flags 0. The 48 registry records that carried the default treatment "cash; capital return in" now state their own basis; 11 keep the default, where it is true. The page, the audit's findings and the registry check are byte-identical before and after that edit.
+**Verdict:** [2026-10-07, later: re-anchored on round 2, which puts every comparison group's income taxes on the case's own keys (cc793ccf, ac6cc2ac, 8bfae970, 406d3163), and on the evidence map's move to v6 (3834b1c8). On HEAD c8ad4bac with the lead's docs pass, then uncommitted, all 1,352 audited numbers MATCH (1,556 tokens). The INDEX's CPS shortfall ($422bn federal, $45bn state) now reads a data file; two rows still read RESULT prose [DEGRADED]. The memo sweep's bridge for a map behind the case is empty again; it flags 0 of 167 memos, and all 12 bindings pass. A hand check outside the spans found ladder 263's parts adding to $51.62bn against +$51.27bn; the docs commit, 3337ba9f, prints all five parts, and a rerun on it is identical but for the fields that name the commit. derived/ still holds the v6 run, which 0be8e635 refreshed at e3084521 (the v6 bracket's "derived/ still holds the v5 run" was written before that refresh): all three writers read `white_replacement_2026_09_28`, and its refresh waits for that lane's refactor. See "Round 2: the comparators' income-tax keys, 2026-10-07".] [2026-10-07: re-anchored on main case v6 (`main_case_2026_10_07`, 218a2fb2) and the consumer lanes that followed it, with the README, FAQ entries 16 and 20, the INDEX's Indian-origin row and the Indian-origin memo now in scope. On HEAD 00bae1a2 with the lead's docs pass, then uncommitted, all 1,336 audited numbers MATCH (1,538 tokens): none is STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Four of them read the prose of three lane RESULTs, because no data file carries them [DEGRADED]. The memo sweep treats v6 as current and flags 0 of 167 memos. derived/ still holds the v5 run. See "v6 re-anchoring, 2026-10-07".] [2026-09-30: re-anchored on the main case adopted on 2026-09-29 (v4) and on both rounds of its restatement, with three research memos now in scope. At HEAD e961aee3, 912 of 917 audited numbers MATCH and none mismatches. a820488f fixed the two document defects the audit found: INDEX:109 now reads "about one in seven" (the sentence's own 16.2% / 12.3% average 14.3%), and the by-generation memo prints $88.2bn. The five UNSOURCEABLE numbers are the evidence map's new Indian-origin entry (d217e7b), typed into groups.py where the map wants registry placeholders. The memo sweep treats v4 as current for the main case and the pairing and flags 0 of 165 memos. See "v4 re-anchoring, 2026-09-29".] The evidence map takes its numbers from files at build time, and every reader-facing number in scope audits clean. At HEAD 856bd5a plus this lane's changes, which a3e6371, 4555486 and b1b7210 committed, 684 of 824 numbers are checked (the rest are years and non-quantities): all 684 MATCH, with 0 STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE. Every map number flagged at 263def3 (45 audit rows and 2 ledger cells) is now a placeholder or table row bound to a record in `overview_2026_09_28/quantity_registry.csv` (79 records). build.py lints and tests all 66 bindings and refuses the page on any failure. It also refuses the page when a printed sum does not add up as printed. That covers the ledger tables, at one decimal with the lines fitted to their totals, and the prose sum of the main estimate and the costs outside the budget. That sum now states the pairing's low-end offending assumption, $4bn less, so 322 − 4 + 96 = 414 and 387 + 101 = 488. General administration held fixed reads the engine arm from b3f4d84, −30.27 / −44.34, against my interim −30.3 / −44.3. The five PM2.5 and crash values the page marked approximate now come from `social_spans_priced_count_2026_09_29`, which reruns the air and crash lanes on the 39.7M the account prices. Two print differently, $45bn → $46bn and $40bn → $41bn, and no number on the page is approximate now. The INDEX paragraph where 869c7aa put the scale net on the priced count is now an audited span, and its 16 numbers MATCH. `memo_sweep.py` extends the check to the living topic memos. On HEAD 8aaf046 it flagged 11 quotes of a record's raw-count or other-arm value, on 9 lines in 4 memos, with no false positive on a hand check of all 11 (2 borderline). The lead fixed nine in 869c7aa. The borderline two are in the outside-checks memo, whose header keeps its figures as computed on the September 23 case; the sweep now exempts it while that sentence stands. On HEAD b1b7210 the sweep reads 178 memos and flags 0. The 48 registry records that carried the default treatment "cash; capital return in" now state their own basis; 11 keep the default, where it is true. The page, the audit's findings and the registry check are byte-identical before and after that edit.
 
 Model: claude-opus-5-5
 
@@ -1410,3 +1410,157 @@ pass was uncommitted. Refresh derived/ once the docs are committed, with the thr
   −$31.6bn, a second rounding of −31.55; the source is −31.5456, now −$31.5bn (e3084521). derived/ refreshed at
   e3084521: audit MATCH 1,336 of 1,336, memo_sweep 0 flagged of 167, registry_check 11 FIXED and 1 CHANGED (FAQ:116,
   as above), pytest 7 passed, ruff F,E9 clean.
+
+## Round 2: the comparators' income-tax keys, 2026-10-07
+
+claude-opus-5-5
+
+The lead's brief: re-anchor the audit on round 2, which puts every comparison group's income taxes on the case's own
+keys (`decisions/2026-10-07-comparators-income-tax-keys.md`), and on the evidence map's move to main case v6
+(3834b1c8). The lanes had landed: the white and Black comparisons (cc793ccf), the Indian-origin account (ac6cc2ac),
+the legacy comparisons (8bfae970) and the break conditions (406d3163). The lead's docs pass rewrote parts of the
+INDEX, the FAQ and the Indian-origin memo, five ladder notes and one CLAUDE.md line; it was still uncommitted when the
+record run read it on HEAD c8ad4bac.
+
+### Result
+
+| File | Tokens | Audited | MATCH | Years | Not quantities (`skip`) |
+|---|---:|---:|---:|---:|---:|
+| overview_2026_09_28/groups.py | 290 | 273 | 273 | 0 | 17 |
+| overview_2026_09_28/build.py | 16 | 12 | 12 | 0 | 4 |
+| overview_2026_09_28/template.html | 62 | 53 | 53 | 0 | 9 |
+| research/immigration-INDEX.md | 493 | 436 | 436 | 31 | 26 |
+| research/immigration-objections-faq-2026-09-21.md | 350 | 259 | 259 | 51 | 40 |
+| CLAUDE.md | 36 | 34 | 34 | 1 | 1 |
+| README.md | 8 | 6 | 6 | 2 | 0 |
+| research/immigration-real-fiscal-and-social-costs-2026-09-23.md | 87 | 74 | 74 | 3 | 10 |
+| research/immigration-adopted-account-by-generation-2026-09-25.md | 90 | 88 | 88 | 1 | 1 |
+| research/immigration-winners-and-losers-2026-09-25.md | 41 | 38 | 38 | 3 | 0 |
+| research/immigration-indian-origin-full-account-and-selection-2026-09-29.md | 83 | 79 | 79 | 2 | 2 |
+| Total | 1,556 | 1,352 | 1,352 | 94 | 110 |
+
+[CALCULATION: `audit_numbers.py --out` to scratch, 22:30:40 JST and again at 22:36:21, exit 0, identical outputs] No
+number is STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE, and no map row is unused. The run audits 16 numbers more than
+the v6 run. The map's move to v6 put 12 more registry placeholders in groups.py, among them f257's "$0.95", which
+replaces a typed "$0.97" whose row went; the INDEX gained 3 numbers and the FAQ 2. The two new `skip` tokens are the
+year in "the Trustees' 2026 projections" (groups.py:106, template.html:195). On HEAD's map the docs pass had left 14
+numbers MISMATCH and 21 without a row, all in the rewritten text.
+
+Of the 169 paths the map names, only the docs pass's four research files are uncommitted. Three are audited text. The
+fourth, the confidence ladder, is a source (`re:L<n>:` selectors), and no row reads the five entries whose notes
+changed (259, 263, 270, 276, 278).
+
+### The anchors and the map
+
+`audit_numbers.py`:
+- The INDEX's Black span starts at "For comparison, a rough re-key of the main case to non-Hispanic Black residents";
+  the docs pass rewrote the words after it.
+- FAQ entry 6's span ends at "falls inside the main case's $389–461bn.", which takes in the new sentence that sets the
+  white gap beside the main case.
+
+`source_map.csv` has 1,278 rows, against 1,272 at HEAD. By key, 15 went, 21 came and 46 changed, 17 of them in the
+note alone. As in v6, a scratch script rebuilt the map from HEAD's on every run and stopped whenever a row's shown
+value differed from its token or an anchor did not pick exactly one line. A row that moved with round 2 keeps the
+October 5 file on the same keys as its stale selector. Of the 499 stale selectors, 497 resolve; the two that do not
+are `social/f195/text` 0 and 1, as in v4 and v6.
+
+- **INDEX:157, the reference paragraph.** "$422bn" and "$45bn", the federal and state income tax the CPS misses, read
+  `white_replacement_2026_09_28/derived/cps_tax_totals_oct07.csv` (`gap_bn` for FEDTAX_BC and for STATETAX_A floored
+  at 0, published weights, on the record), so two of v6's four `[DEGRADED: RESULT prose]` rows are gone. Third-plus
+  whites' $1.2k and $54 a person on accrual, $0.7–2.0k on cash, and the gap of $432–436bn read the white lane's
+  oct07 files on the case's keys. The earlier rule's $0.4–1.6k and $380–385bn read its `cost_cps` arm, and the
+  capital-taxes arm's $4.3–5.5k and $503–509bn read that arm's own columns.
+- **INDEX:159, C8.** "$320–405bn" is the claim C8 tests, quoted: a `re:` selector on the break lane's
+  `conclusions_oct07.csv`. A1's $432–436bn and local whites' $529–531bn read the white lane. "−30.0%", the
+  ancestry-share arm, keeps its row: the lane now reads v6's own companions (−29.96%), where it read v5's fractional
+  summary (−29.86%).
+- **INDEX:196.** "$10.2–10.3k" is the gap per identified member (39.71M) on the case's keys, at both ends.
+- **INDEX:261–264, the Black paragraph.** $501–549bn, $11.9–13.1k, 1.2–1.3× and the cash ratio 1.4–1.6× read the Black
+  lane's oct07 `rekey_summary`. "$504–551bn" is October 5 on the same keys, named as such. The September 27 rows under
+  "The pension accrual narrows the ratio" are carried.
+- **INDEX:625, "near 80".** The row reads Telugu, Tamil and Kannada (80.3, 80.1, 81.1, each within 5%), which the text
+  now names.
+- **FAQ entry 6.** $432–436bn (A1) and the main case's $389–461bn.
+- **The Indian-origin memo.** The verdict's $11,400–12,900, §2's $70–78bn and $9,200–10,600, the India-born's
+  "two-fifths" pair (−$12.8k, −$7.7k), the pooled second generation's move ($167–168) and the class rows read
+  `oct07/combined.csv`, with October 5 as stale. The v6 revision bullet is a dated record of the earlier rule: its
+  $9,447–10,901, $22,450–22,800 and $13,330–13,490 read the `cost_cps` arm plus the social rows
+  (`oct07/rekey_summary.csv`), and its $11,550–13,349 the union, which neither rule moves.
+- **The evidence map.** f257's "$0.97" row went, and two year rows came (groups.py f257, template.html:195). f253's
+  "0.72–0.77", the property-tax responses, was the map's one row on a v5 file; it reads v6's summary now, with v5 as
+  stale (the values are the same).
+- **17 notes** on rows that name a round-2 lane's rebuilt October 5 file now say "the October 5 case on the same keys
+  (IPEDS enrollment, the case's income-tax keys), named as such".
+
+Two rows still read the prose of a lane RESULT [DEGRADED]: INDEX:302's "$70bn" (the world ledger's uncorrected October
+5 run) and INDEX:365's "about $4bn" (the legacy lane's IPEDS parts, which its round-2 section says do not move).
+
+`doc_bindings.csv`: FAQ:116 shows "$30.5–43.2bn", v6's figure, now that the registry reads v6.
+
+### Memo sweep
+
+The map and its registry are on v6, so the sweep stopped as designed: `[BLOCKED] the registry's case.main already
+reads infra/immigration-fiscal/main_case_2026_10_07/derived/summary.json: remove it from ADOPTED`. `ADOPTED` is empty
+again; its comment records how the v6 bridge read its values, for the next time the case moves ahead of the map.
+`EARLIER` keeps v5, then v4. The test asserts that ADOPTED and the registry overrides are empty and that every record
+in EARLIER has two earlier vintages and no registry vintage. At the working tree the sweep reads 167 memos (21
+skipped), finds 82 quotes of other values (16 labelled arms, 17 counts, 49 vintages) and flags none.
+
+### Hand check outside the spans
+
+The new ladder notes (259, 263, 270, 276, 278), the ladder's Revisions bullet, INDEX:907, FAQ:920, the Indian-origin
+memo's new Revisions bullet (after its span's end) and the new decision were checked by hand against their files: 122
+numbers agree. One sentence does not add: ladder 263's note prints "Of A1's +$51.27bn, the top tail is +$41.08bn, its
+placement by IRS and CBO cells +$12.75bn and the SPM-unit split −$2.21bn", which sum to $51.62bn. The file
+(`white_replacement_2026_09_28/derived/income_tax_parts_oct07.csv`, the gap row) has two more parts, credits −0.3536 and
+other personal tax −0.0089, and all five add to 51.2658. The decision prints all five, with the raking at +$12.76bn by
+controlled rounding. Reported to the lead; the docs commit, 3337ba9f, prints all five parts in the note, the raking at
++$12.76bn.
+
+### Gates
+
+The audit, the sweep and the registry check each ran twice to scratch on HEAD c8ad4bac with the docs pass (22:23–22:30
+and 22:36 JST), and the second outputs were byte-identical:
+- `audit_numbers.py --out`: 1,352 MATCH of 1,352 audited (1,556 tokens);
+- `memo_sweep.py --worktree --out`: 55 of 55 controls pass; 167 memos, 0 flagged;
+- `registry_check.py --out`: 166 records resolve; all 12 bindings are FIXED, FAQ:116 included;
+- pytest on the lane: 7 passed. `ruff --select F,E9`: clean.
+
+On a rerun to scratch at 3337ba9f, the docs commit (22:50:44–22:51:07 JST), the audit's, the registry check's and the
+working-tree sweep's outputs equal 22:36's byte for byte, except `inputs.json`. There `head` names the commit, and two
+inputs' sha256 changed with their content: the confidence ladder (3337ba9f's fix of entry 263) and the world ledger's
+RESULT. Run at `--rev HEAD`, as derived/ is, the sweep's `memo_sweep_meta.json` differs from the working-tree run only
+in `rev` ("3337ba9f" for "worktree") and `registry_equals_rev` (true for null). No output records a time. Of the
+audit's 174 inputs, 170 equal their 3337ba9f blobs. The others are the uncommitted map itself; two ignored files, as
+at the v6 run (`crime_cost_2026_09_16/_cache/cpi_2016_2025.json`, which the v6 section left out, and
+`full_account_2026_09_20/derived/service_response_summary.csv`); and the world ledger's RESULT, which carries another
+lane's uncommitted append after its line 2516 while the line the INDEX:302 row reads (1964) equals the commit's.
+
+derived/ is not refreshed yet. It holds the v6 run that 0be8e635 refreshed at e3084521; the v6 Verdict bracket's
+"derived/ still holds the v5 run" was written before that refresh. All three writers read
+`white_replacement_2026_09_28`, which is being refactored (step 1 of the top-tail fix):
+- the audit (`number_audit.csv`, `extracted_numbers.csv`, `inputs.json`) reads 7 of that lane's derived files,
+  through 27 map rows (26 in the INDEX, plus FAQ entry 6's $432–436bn) and 7 evidence-map placeholders on the
+  `whites.*` records;
+- the registry check (`registry_values.csv`, `binding_tests.csv`) and the sweep (`memo_sweep.csv`,
+  `memo_sweep_meta.json`) through the six registry records on it: `gg.operating_effect` (`engine_lines_oct07.json`,
+  the record FAQ:116's binding tests) and the five `whites.*` records (`headline_oct07.csv`, `rekey_summary_oct07.csv`).
+
+The audit also reads the world ledger's RESULT. Once `white_replacement_2026_09_28`'s step 1 has landed and the world
+ledger's RESULT is committed, the refresh runs the three scripts without `--out` (the sweep at `--rev HEAD`) and byte-compares the result
+with a scratch run at the same HEAD.
+
+### Log
+
+- 2026-10-07 22:15:01 JST: HEAD's map saved to scratch. A worklist over the docs pass found 14 numbers MISMATCH and 21
+  without a row, all in rewritten text.
+- 2026-10-07 22:21:32 JST: the sweep stopped with `[BLOCKED]` on ADOPTED, the registry having moved to v6.
+- 2026-10-07 22:23:19 JST: ADOPTED emptied; the sweep flags 0 of 167 memos, 55 controls pass, pytest 7 passed.
+- 2026-10-07 22:30:36 JST: the map written (the spec's own check: 60 MATCH, 4 skip); the worklist found 1,168 MATCH,
+  94 years and 110 skip, with no non-match and no unused row.
+- 2026-10-07 22:30:40–22:30:41 JST: audit to scratch, 1,352 MATCH; registry_check, 12 FIXED.
+- 2026-10-07 22:36:21–22:36:29 JST: the three gates rerun, byte-identical; pytest and ruff as above. The hand check
+  found ladder 263's parts.
+- 2026-10-07 22:48 JST (the commit's time): the lead committed the docs as 3337ba9f, ladder 263 with all five parts.
+- 2026-10-07 22:50:44–22:51:07 JST: the gates rerun to scratch on 3337ba9f, identical but for the fields named under
+  Gates. The derived/ refresh waits for `white_replacement_2026_09_28`'s step 1, at the lead's word.

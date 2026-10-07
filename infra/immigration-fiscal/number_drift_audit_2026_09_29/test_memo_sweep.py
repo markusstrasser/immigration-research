@@ -26,13 +26,11 @@ def test_v6_is_current_and_the_october_5_and_september_27_and_29_values_are_earl
     recs = M.Q.load_registry()
     values, registry = M.current_values(recs)
     earlier = M.earlier_values()
-    # main case v6 is current for the memos while the evidence map and its registry stay on v5
-    assert set(registry) == set(M.ADOPTED)
+    # main case v6 is current, and the evidence map and its registry show it (3834b1c8), so nothing is bridged
+    assert M.ADOPTED == {} and registry == {}
     assert [round(x, 1) for x in values["case.main"]] == [389.1, 461.5]
     assert [round(x, 2) for x in values["case.per_member"]] == [9.10, 10.79]
     assert [round(x, 1) for x in values["case.cash_set"]] == [307.4, 385.4]
-    assert [round(x, 1) for x in registry["case.main"]] == [390.3, 461.2]
-    assert [round(x, 2) for x in registry["case.per_member"]] == [9.13, 10.79]
     # the earlier cases, newest first: the October 5 case (v5), then the September 29 case (v4)
     assert [label for _v, label in earlier["case.main"]] == ["the October 5 case (v5)", "the September 29 case (v4)"]
     assert _rounded(earlier["case.main"], 1) == [[390.3, 461.2], [371.4, 434.8]]
@@ -42,7 +40,6 @@ def test_v6_is_current_and_the_october_5_and_september_27_and_29_values_are_earl
     assert [round(x, 1) for x in values["pairing.total"]] == [489.0, 570.7]
     assert [round(x, 2) for x in values["pairing.per_member_priced"]] == [11.44, 13.35]
     assert [round(x, 1) for x in values["pairing.fiscal_footing"]] == [384.3, 461.5]
-    assert [round(x, 1) for x in registry["pairing.total"]] == [490.2, 570.7]
     assert _rounded(earlier["pairing.total"], 1) == [[490.2, 570.7], [462.9, 535.5]]
     assert _rounded(earlier["pairing.per_member_priced"], 2) == [[11.47, 13.35], [11.66, 13.48]]
     assert _rounded(earlier["pairing.fiscal_footing"], 1) == [[385.4, 461.2], [366.7, 434.8]]
@@ -53,8 +50,8 @@ def test_v6_is_current_and_the_october_5_and_september_27_and_29_values_are_earl
         hits = [o for o in others[rid] if o["origin"] == "referenced" and o["source"].startswith(ref + ":")]
         assert hits and all(o["kind"] == "vintage" for o in hits)
         assert [round(x, 1) for x in values[ref]] == want
-    for rid in M.ADOPTED:
-        assert any(o["origin"] == "registry" and o["kind"] == "vintage" for o in others[rid])
+    for rid in M.EARLIER:
+        assert not any(o["origin"] == "registry" for o in others[rid])
         assert [o["kind"] for o in others[rid] if o["origin"] == "earlier"] == ["vintage", "vintage"]
 
 
