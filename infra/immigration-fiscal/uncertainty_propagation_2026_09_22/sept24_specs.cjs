@@ -40,6 +40,17 @@
  * edits writes benefit_factors.csv's national_scale: the factor by which the payload rescales a benefit line after its
  * benefit shift (gate: every national-scale edit on the line follows every cell edit on it).
  *
+ * Since 2026-10-07 (oct07, main_case_2026_10_07, main case v6: v5 plus an item registry) the payload's edits are read
+ * by block (blocksOf): the union's, the lineage's (meta.lineage.edits) and the items' edit sets (meta.items), which must
+ * tile the edits. An item's national-scale edit enters national_scale like the union's (none names a benefit line on
+ * oct07). The derivative gate for a payload with national-scale edits is restated on the moved set: the key lines whose
+ * derivative moves between the models must be exactly those keyed over a national total the payload's national-scale
+ * edits move, each named with the edit that moves it (oct07: v4's rental-assistance rescale and item retiree_health's
+ * eight capital key lines). Item user_fees' capital offsets key on carrier receipt lines (carrierLines): each carrier's
+ * share gets its own derivative (kcoef_<model>_share_<carrier>), used in the rebuild. Where the case lane keeps its cash
+ * payload beside its summary (oct05, oct07), that payload's specifications must span the lane's cash set (1e-9), and a
+ * case in PINNED must span the set and cash bands pinned at its adoption (1e-6).
+ *
  * Run from anywhere: node sept24_specs.cjs
  */
 "use strict";
@@ -56,6 +67,9 @@ function gate(label, ok, detail) {
   console.log(`  ${ok ? "PASS" : "FAIL"} ${label}${detail ? " — " + detail : ""}`);
   if (!ok) failures += 1;
 }
+// The bands pinned at a case's adoption, to the sixth decimal (the case lane's main_case.cjs PINNED; oct07: main case
+// v6, adopted 2026-10-07, 218a2fb2): the case's specifications and its cash payload's must span them (1e-6).
+const PINNED = { oct07: { set: [389.082553, 461.479709], cash: [307.399411, 385.364123] } };
 
 const specs = MAIN_SPECS.map((s) => ({ ...s, sept23: cost(MODEL, s), sept24: cost(corrected, s) }));
 for (const [c, want] of [["sept23", summary.adopted_2026_09_23], ["sept24", summary.main_case]]) {
@@ -107,9 +121,21 @@ function keyLines(components, enterpriseLine) {
     const k = c.key;
     if (k.kind === "lines_amount_over_national") k.numerator_lines.forEach(add);
     else if (k.kind === "part_rekeyed") { add(k.parent_line); add(k.correction_line); }
-    else if (!(k.kind === "receipt_amount_over_national" && k.line === enterpriseLine)) {
+    else if (!(k.kind === "receipt_amount_over_national" && (k.line === enterpriseLine || c.of_component !== undefined))) {
       throw new Error(`[BLOCKED] capital key kind ${k.kind} (component ${c.id}) has no derivative here`);
     }
+  }
+  return out;
+}
+// From v6 (oct07, item user_fees) an offset component (of_component, its parent component) keys on a carrier: a payload
+// receipt line the uncorrected model lacks, at response 0 (no cost), whose amount over its national total is a fixed
+// key shift. Its derivative is per unit of that share (kcoef_<model>_share_<line>), in the order the components name
+// the carriers (oct07: user_fees_key_k12, user_fees_key_college, user_fees_key_health).
+function carrierLines(components, enterpriseLine) {
+  const out = [];
+  for (const c of components) {
+    const k = c.key;
+    if (k.kind === "receipt_amount_over_national" && k.line !== enterpriseLine && !out.includes(k.line)) out.push(k.line);
   }
   return out;
 }
@@ -136,6 +162,15 @@ function capitalCase(name, lane, PC, payload, sum) {
   const components = PC.componentsFor(null);
   const defs = Object.fromEntries(components.map((c) => [c.id, c]));
   const KLINES = keyLines(components, PC.ENTERPRISE_LINE);
+  const CARRIERS = carrierLines(components, PC.ENTERPRISE_LINE);
+  if (CARRIERS.length) {
+    const payloadReceipts = new Set((payload.receipt_lines || []).map((l) => l.id));
+    const offsets = components.filter((c) => c.key.kind === "receipt_amount_over_national" && CARRIERS.includes(c.key.line));
+    gate(`${name}: each carrier is a payload receipt line the uncorrected model lacks, keyed only by offset components of the case's components`,
+      CARRIERS.every((id) => payloadReceipts.has(id) && !PC.MODEL.receipts.lines.some((l) => l.id === id))
+        && offsets.every((c) => defs[c.of_component] && defs[c.of_component].of_component === undefined),
+      `${CARRIERS.join(", ")}; offsets ${offsets.map((c) => `${c.id} (of ${c.of_component})`).join(", ")}`);
+  }
   // Every line response a specification sets, in its order (September 27: the two long-run lines, rental assistance
   // and the enterprise receipt).
   const RESP = Object.keys(PC.MAIN_SPECS[0].line_responses);
@@ -145,7 +180,7 @@ function capitalCase(name, lane, PC, payload, sum) {
   // that differs between the two models, so each model's own is written.
   const scaled = payload.edits.some((e) => e.national_bn !== undefined);
   const grid = Boolean(payload.production);
-  let coefGap = 0, modelGap = 0, rebuildGap = 0, responseGap = 0, transferGap = 0;
+  let coefGap = 0, modelGap = 0, rebuildGap = 0, responseGap = 0, transferGap = 0, carrierGap = 0;
   const moved = new Set();
   for (const [i, s] of rows.entries()) {
     const spec = PC.MAIN_SPECS[i];
@@ -154,10 +189,11 @@ function capitalCase(name, lane, PC, payload, sum) {
     // of evaluation n, and per unit of the enterprise receipt's share.
     const derivatives = (r, n) => {
       const national = (id) => n.evaluation.spending.find((l) => l.id === id).national_bn;
-      const k = Object.fromEntries(KLINES.map((id) => [id, 0]).concat([["enterprise_share", 0]]));
+      const k = Object.fromEntries(KLINES.map((id) => [id, 0]).concat([["enterprise_share", 0]], CARRIERS.map((id) => [`share_${id}`, 0])));
       for (const comp of r.capital.components) {
         const rule = defs[comp.id].key, unit = comp.stock_charged_bn * spec.rate * comp.response;
         if (rule.kind === "receipt_amount_over_national" && rule.line === PC.ENTERPRISE_LINE) k.enterprise_share += unit;
+        else if (rule.kind === "receipt_amount_over_national" && CARRIERS.includes(rule.line)) k[`share_${rule.line}`] += unit;
         else if (rule.kind === "lines_amount_over_national") {
           for (const id of rule.numerator_lines) k[id] += unit / national(rule.denominator_line);
         } else if (rule.kind === "part_rekeyed") {
@@ -174,7 +210,13 @@ function capitalCase(name, lane, PC, payload, sum) {
       const k = derivatives(r, r);
       ks[c] = k;
       const es = receipt(PC.ENTERPRISE_LINE);
-      const rebuilt = KLINES.reduce((a, id) => a + k[id] * line(id).amount_bn, 0) + k.enterprise_share * es.amount_bn / es.national_bn;
+      let rebuilt = KLINES.reduce((a, id) => a + k[id] * line(id).amount_bn, 0) + k.enterprise_share * es.amount_bn / es.national_bn;
+      for (const id of CARRIERS) {
+        // A carrier's share is the offset's key; it costs nothing (response 0) and is 0 on the uncorrected model.
+        const cr = receipt(id);
+        rebuilt += k[`share_${id}`] * cr.amount_bn / cr.national_bn;
+        carrierGap = Math.max(carrierGap, Math.abs(cr.response), c === "uncorrected" ? Math.abs(cr.amount_bn) : 0);
+      }
       rebuildGap = Math.max(rebuildGap, Math.abs(rebuilt - r.capital.total_bn));
       s[c] = r.cost_bn;
       s[`capital_${c}`] = r.capital.total_bn;
@@ -201,10 +243,39 @@ function capitalCase(name, lane, PC, payload, sum) {
   gate(`${name}: each line takes its specification's response (engine rows)`, responseGap === 0,
     `${rows.length} specifications, ${RESP.length} line responses`);
   gate(`${name}: the benefit keys' transfer lines respond fully (engine rows)`, transferGap === 0, TRANSFER_LINES.join(", "));
+  if (CARRIERS.length) {
+    gate(`${name}: every carrier responds at 0 on both models and has no amount on the uncorrected model (engine rows)`,
+      carrierGap === 0, `${CARRIERS.length} carriers, max |response or uncorrected amount| ${carrierGap}`);
+  }
   if (scaled) {
     gate(`${name}: the derivatives rebuild the capital return on both models (1e-9) and differ between them only through the national totals the payload rescales (1e-12)`,
       rebuildGap < 1e-9 && coefGap < 1e-12, `rebuild ${rebuildGap.toExponential(1)}, national totals ${coefGap.toExponential(1)}; ` +
       `moved: ${[...moved].join(", ") || "none"} (max ${modelGap.toExponential(2)})`);
+    // The moved set, restated on oct07 (item retiree_health moves eight more key lines): a key line's derivative per
+    // unit of amount moves between the models exactly when a capital component it keys divides by a national total the
+    // payload's national-scale edits move (a part_rekeyed key's parent line; its correction line divides by the
+    // constant part_national_bn). Each moved line is named with that denominator and the edit that sets it.
+    const B = blocksOf(payload);
+    const nat = (m, id) => { const l = m.spending.lines.find((x) => x.id === id); return l ? l.national_bn : null; };
+    const lastScale = (id) => payload.edits.map((e, i) => [e, i]).filter(([e]) => e.side === "spending" && e.line === id && e.national_bn !== undefined).pop();
+    const expected = new Map();
+    let unowned = [];
+    for (const c of components) {
+      const k = c.key;
+      const den = k.kind === "lines_amount_over_national" ? k.denominator_line : k.kind === "part_rekeyed" ? k.parent_line : null;
+      if (!den || nat(models.uncorrected, den) === nat(models[name], den)) continue;
+      const set = lastScale(den);
+      if (!set) unowned.push(den);
+      const reason = `${den} ${nat(models.uncorrected, den)} -> ${nat(models[name], den).toFixed(3)} (${set ? ownerOf(B, set[1]) : "no scale edit"})`;
+      for (const id of (k.kind === "part_rekeyed" ? [k.parent_line] : k.numerator_lines)) {
+        if (!expected.has(id)) expected.set(id, new Set());
+        expected.get(id).add(reason);
+      }
+    }
+    const same = moved.size === expected.size && [...moved].every((id) => expected.has(id));
+    gate(`${name}: the moved key lines are exactly those keyed over a national total the payload's national-scale edits move, each named with the edit that moves it`,
+      same && !unowned.length, [...expected].map(([id, r]) => `${id}: ${[...r].join("; ")}`).join(" | ") +
+      (same ? "" : `; moved ${[...moved].join(", ")}`) + (unowned.length ? `; no scale edit sets ${unowned.join(", ")}` : ""));
   } else {
     gate(`${name}: the derivatives rebuild the capital return on both models (1e-9) and do not depend on the model (1e-12)`,
       rebuildGap < 1e-9 && modelGap < 1e-12, `rebuild ${rebuildGap.toExponential(1)}, models ${modelGap.toExponential(1)}`);
@@ -213,6 +284,21 @@ function capitalCase(name, lane, PC, payload, sum) {
     const b = span(rows.map((s) => s[c]));
     gate(`${name}: ${c} specifications span the published band`,
       Math.abs(b[0] - want[0]) < 1e-9 && Math.abs(b[1] - want[1]) < 1e-9, `${b[0].toFixed(4)}–${b[1].toFixed(4)}`);
+  }
+  // The cash set (the pension switch off), where the case lane keeps its payload beside its summary (oct05, oct07):
+  // propagate.py reads its Medicare cells for the Part A identity, so it must be the payload of the lane's cash band.
+  let cashBand = null;
+  if (sum.cash_set && fs.existsSync(path.join(FISCAL, lane, "derived", "corrections_cash.json"))) {
+    const cashModel = Engine.applyCorrections(PC.MODEL, readJson(`${lane}/derived/corrections_cash.json`));
+    cashBand = span(PC.MAIN_SPECS.map((spec) => PC.evaluateFull(cashModel, spec, PC.MAIN_PROFILE).cost_bn));
+    gate(`${name}: the cash payload's specifications span the case lane's cash set (1e-9)`,
+      [0, 1].every((e) => Math.abs(cashBand[e] - sum.cash_set.band_bn[e]) < 1e-9), `${cashBand[0].toFixed(4)}–${cashBand[1].toFixed(4)}`);
+  }
+  if (PINNED[name]) {
+    const setBand = span(rows.map((s) => s[name])), pin = PINNED[name], f6 = (b) => b.map((x) => x.toFixed(6)).join(" / ");
+    gate(`${name}: the set's and the cash set's bands are the ones pinned at adoption (1e-6)`, cashBand !== null
+      && [[setBand, pin.set], [cashBand, pin.cash]].every(([b, w]) => [0, 1].every((e) => Math.abs(b[e] - w[e]) < 1e-6)),
+      `set ${f6(setBand)}, cash ${cashBand ? f6(cashBand) : "none"}`);
   }
   const per = csvRows(`${lane}/derived/per_spec.csv`);
   const methodMean = (i, col) => {
@@ -226,7 +312,7 @@ function capitalCase(name, lane, PC, payload, sum) {
     gap < 1e-9, `max |diff| ${gap.toExponential(1)}`);
   const dims = Object.keys(MAIN_SPECS[0]).concat(["school_sept24", "gg_sept24", "reading", "rate", "enterprises"],
     RESP.map(responseColumn));
-  const kcols = (prefix) => KLINES.concat(["enterprise_share"]).map((id) => [`${prefix}${id}`, `${prefix}${id}`]);
+  const kcols = (prefix) => KLINES.concat(["enterprise_share"], CARRIERS.map((id) => `share_${id}`)).map((id) => [`${prefix}${id}`, `${prefix}${id}`]);
   const costCols = [["cost_uncorrected_bn", "uncorrected"], [`cost_${name}_bn`, name],
     ["capital_uncorrected_bn", "capital_uncorrected"], [`capital_${name}_bn`, `capital_${name}`]]
     .concat(scaled ? kcols("kcoef_uncorrected_").concat(kcols(`kcoef_${name}_`)) : kcols("kcoef_"))
@@ -241,16 +327,60 @@ function capitalCase(name, lane, PC, payload, sum) {
 // edits adds national_scale: the factor by which it rescales the line's national total, and so the shift, after
 // every cell edit on the line (sept29: housing_subsidies, candidate v4 item 1); 1 on a line it does not rescale.
 const TRANSFER_LINES = ["snap", "other_state_welfare", "family_and_general_assistance", "unemployment"];
+// The payload's edit blocks, as index ranges: the union's edits (September 29's), the lineage's (oct05 on:
+// meta.lineage.edits, row 8's move last) and, from v6 (oct07), the items' edit sets (meta.items: each applied edit set's
+// edits {first, count}, in registry order after the lineage's, closing the payload). Stops (exit 1) unless the blocks
+// tile the edits exactly; a payload with the lineage and no meta.items has the lineage's edits last (v5).
+function blocksOf(payload) {
+  const n = payload.edits.length, L = payload.meta.lineage, items = payload.meta.items;
+  if (!L) {
+    if (items) throw new Error("[BLOCKED] a payload with items and no lineage block");
+    return { union: [0, n], lineage: null, items: [] };
+  }
+  const e = L.edits, end = e.first + e.count;
+  if (e.row8_edit_index !== end - 1) throw new Error("[BLOCKED] row 8's move is not the lineage block's last edit");
+  if (!items) {
+    if (end !== n) throw new Error("[BLOCKED] the lineage's edits are not the payload's last, and it names no items");
+    return { union: [0, e.first], lineage: [e.first, end], items: [] };
+  }
+  let at = end;
+  const out = [];
+  for (const it of items) {
+    if (it.kind === "lineage") {
+      if (it.applied && JSON.stringify(it.lineage_edits) !== JSON.stringify(e)) throw new Error(`[BLOCKED] item ${it.id}'s lineage edits are not meta.lineage.edits`);
+      continue;
+    }
+    if (it.kind !== "edit_set") throw new Error(`[BLOCKED] item ${it.id} is of kind ${it.kind}, neither an edit set nor the lineage`);
+    if (!it.applied) {
+      if (it.edits) throw new Error(`[BLOCKED] item ${it.id} is not applied but locates edits`);
+      continue;
+    }
+    if (!it.edits || it.edits.first !== at || !(it.edits.count > 0)) throw new Error(`[BLOCKED] item ${it.id}'s edits do not follow the block before them`);
+    out.push({ id: it.id, range: [at, at + it.edits.count] });
+    at += it.edits.count;
+  }
+  if (at !== n) throw new Error(`[BLOCKED] the blocks end at edit ${at}, the payload at ${n}`);
+  return { union: [0, e.first], lineage: [e.first, end], items: out };
+}
+const inRange = (i, [a, b]) => i >= a && i < b;
+// Who sets a national-scale edit: an item's edit set (meta.items) or the payload's own edits before the lineage's.
+function ownerOf(B, i) {
+  const b = B.items.find((x) => inRange(i, x.range));
+  return b ? `item ${b.id}, edit ${i}` : `edit ${i}`;
+}
 function nationalScales(PC, payload) {
-  // A payload with the lineage (oct05) appends the added people's cell edits after September 29's; they are not
-  // benefit shifts and no scale edit follows them, so the gate reads the edits before them (meta.lineage.edits.first).
-  const edits = payload.meta.lineage ? payload.edits.slice(0, payload.meta.lineage.edits.first) : payload.edits;
-  const scales = edits.map((e, i) => [e, i]).filter(([e]) => e.national_bn !== undefined);
+  // The benefit shifts are cell edits before the lineage's. A payload with the lineage (oct05) appends the added
+  // people's cell edits after them; they are not benefit shifts, so the gate reads the cell edits before them
+  // (meta.lineage.edits.first). From v6 (oct07) an item's national-scale edit (meta.items) also rescales a benefit line
+  // it names, the benefit shift with it; on oct07 none names one (item retiree_health's ten lines are no benefit line).
+  const B = blocksOf(payload);
+  const indexed = payload.edits.map((e, i) => [e, i]);
+  const scales = indexed.filter(([e, i]) => e.national_bn !== undefined && (inRange(i, B.union) || B.items.some((b) => inRange(i, b.range))));
   if (!scales.length) return null;
   return (line) => {
     const own = scales.filter(([e]) => e.side === "spending" && e.line === line);
     if (!own.length) return 1;
-    const lastCell = Math.max(-1, ...edits.map((e, i) => (e.line === line && e.national_bn === undefined ? i : -1)));
+    const lastCell = Math.max(-1, ...indexed.map(([e, i]) => (inRange(i, B.union) && e.line === line && e.national_bn === undefined ? i : -1)));
     gate(`${line}: every national-scale edit follows every cell edit on the line, so it scales the benefit shift`,
       own.every(([, i]) => i > lastCell), `cell edits up to ${lastCell}, scale edits at ${own.map(([, i]) => i).join(", ")}`);
     return own[own.length - 1][0].national_bn / PC.MODEL.spending.lines.find((l) => l.id === line).national_bn;

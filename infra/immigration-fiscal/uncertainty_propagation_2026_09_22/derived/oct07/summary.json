@@ -1,0 +1,638 @@
+{
+  "oct07": {
+    "net_cost_band_bn": [
+      389.082552865478,
+      461.47970930242
+    ],
+    "se_independent_bn": [
+      10.196029193393114,
+      10.47043735991125
+    ],
+    "se_positive_correlation_bn": [
+      17.14764373446612,
+      17.698254987383592
+    ],
+    "se_cps_bn": [
+      8.292439304850113,
+      8.664246538916286
+    ],
+    "ci95_union_bn": [
+      368.5638881079784,
+      481.46813695252945
+    ],
+    "ci95_envelope_union_bn": [
+      354.45709783559477,
+      495.1957798194979
+    ],
+    "ci95_with_benefit_keys_union_bn": [
+      367.7661082403894,
+      482.3422158677596
+    ],
+    "specifications": 64,
+    "capital_return_band_bn": [
+      36.5815570214234,
+      61.0642563792209
+    ],
+    "se_cps_capital_part_bn": [
+      0.21435827081241937,
+      0.37155666146878863
+    ],
+    "se_cps_account_keys_bn": [
+      8.760041972696852,
+      9.076161353742219
+    ],
+    "se_benefit_keys_replicate_bn": [
+      1.3438034558538243,
+      1.3849025120931286
+    ],
+    "corr_cps_benefit_keys": [
+      -0.4126182560532419,
+      -0.369193694183042
+    ],
+    "se_cps_independent_append_bn": [
+      8.864705002490357,
+      9.17909219398637
+    ],
+    "se_cps_factor_product_bn": [
+      8.288007302001393,
+      8.662709579009386
+    ],
+    "se_with_benefit_keys_bn": [
+      10.642077843914981,
+      10.877403136647814
+    ],
+    "se_cps_receipt_responses_part_bn": [
+      0.07742548598937962,
+      0.08296437926351923
+    ],
+    "production_term_se_bn": [
+      0.676368777,
+      1.034971412
+    ],
+    "se_cps_pension_fixed_bn": [
+      8.85820629429763,
+      9.327377395159127
+    ],
+    "se_combined_pension_fixed_bn": [
+      10.661251354331526,
+      11.025464139546592
+    ],
+    "se_cps_pension_generic_bn": [
+      9.694489306635097,
+      9.936309717535766
+    ],
+    "se_combined_pension_generic_bn": [
+      11.365631729224903,
+      11.545178267289687
+    ],
+    "lineage": {
+      "source": "main_case_lineage_2026_10_05/derived/v5_summary.json (sets.set.arms.<arm>: band_bn, c3_line, counts), re-based on main_case_2026_10_07/derived/summary.json (main_case, v6.base.band_bn, change_at_fixed_specifications)",
+      "c3": 0.5567,
+      "c3_se": 0.2457,
+      "c3_label": "pooled with CPS monthly 1994-2026 (central)",
+      "central_arm": "b",
+      "se_independent_at_ends_bn": [
+        10.468706508928367,
+        10.198177372504825
+      ],
+      "se_positive_correlation_at_ends_bn": [
+        17.66604848463431,
+        17.202076794427484
+      ],
+      "ci95_at_ends_bn": [
+        368.5638881079784,
+        481.46813695252945
+      ],
+      "arms": {
+        "a": {
+          "added_persons": 1806958.6613715945,
+          "population": 41519451.9925716,
+          "band_bn": [
+            378.0037200025256,
+            445.2806222242472
+          ],
+          "band_at_c3_minus_1se_bn": [
+            380.63784616621473,
+            448.8906838241871
+          ],
+          "band_at_c3_plus_1se_bn": [
+            375.3695938388365,
+            441.6705606243073
+          ],
+          "se_c3_bn": [
+            2.6341261636891016,
+            3.610061599939879
+          ],
+          "se_independent_with_c3_bn": [
+            10.795019065120295,
+            10.818288518819873
+          ],
+          "se_positive_correlation_with_c3_bn": [
+            20.300174648323413,
+            20.812138394367363
+          ],
+          "ci95_with_c3_bn": [
+            356.84548263488983,
+            466.4844677211342
+          ],
+          "ci95_envelope_with_c3_bn": [
+            338.2153776918117,
+            486.07241347720725
+          ],
+          "c3_line": {
+            "low": {
+              "intercept_bn": 383.9720473746287,
+              "slope_bn": -10.720904207118851
+            },
+            "high": {
+              "intercept_bn": 453.46019606505524,
+              "slope_bn": -14.692965404720713
+            }
+          }
+        },
+        "b": {
+          "added_persons": 3039719.593185237,
+          "population": 42752212.92438524,
+          "band_bn": [
+            389.0825528654786,
+            461.47970930242036
+          ],
+          "band_at_c3_minus_1se_bn": [
+            391.91845121199333,
+            465.36604719969125
+          ],
+          "band_at_c3_plus_1se_bn": [
+            386.2466545189638,
+            457.5933714051495
+          ],
+          "se_c3_bn": [
+            2.8358983465147904,
+            3.886337897270873
+          ],
+          "se_independent_with_c3_bn": [
+            10.846019334384597,
+            10.913589875601575
+          ],
+          "se_positive_correlation_with_c3_bn": [
+            20.501946831149098,
+            21.088414691698357
+          ],
+          "ci95_with_c3_bn": [
+            367.82435497008476,
+            482.87034545859945
+          ],
+          "ci95_envelope_with_c3_bn": [
+            348.89873707642636,
+            502.8130020981491
+          ],
+          "c3_line": {
+            "low": {
+              "intercept_bn": 395.50804985166,
+              "slope_bn": -11.542117812433009
+            },
+            "high": {
+              "intercept_bn": 470.28526203913464,
+              "slope_bn": -15.817411059303511
+            }
+          }
+        },
+        "c": {
+          "added_persons": 4272480.52499888,
+          "population": 43984973.856198885,
+          "band_bn": [
+            400.15380268196844,
+            477.67076336935423
+          ],
+          "band_at_c3_minus_1se_bn": [
+            403.19157107671265,
+            481.83347618828276
+          ],
+          "band_at_c3_plus_1se_bn": [
+            397.11603428722424,
+            473.5080505504257
+          ],
+          "se_c3_bn": [
+            3.0377683947442216,
+            4.16271281892853
+          ],
+          "se_independent_with_c3_bn": [
+            10.900543692412137,
+            11.015035167167708
+          ],
+          "se_positive_correlation_with_c3_bn": [
+            20.703816879378532,
+            21.364789613356013
+          ],
+          "ci95_with_c3_bn": [
+            378.7887370448407,
+            499.2602322970029
+          ],
+          "ci95_envelope_with_c3_bn": [
+            359.5743215983865,
+            519.545751011532
+          ],
+          "c3_line": {
+            "low": {
+              "intercept_bn": 407.036691022848,
+              "slope_bn": -12.363729730338711
+            },
+            "high": {
+              "intercept_bn": 487.1025184621402,
+              "slope_bn": -16.942258115297232
+            }
+          }
+        }
+      },
+      "ci95_with_c3_over_arms_bn": [
+        356.84548263488983,
+        499.2602322970029
+      ],
+      "ci95_envelope_with_c3_over_arms_bn": [
+        338.2153776918117,
+        519.545751011532
+      ],
+      "rebase": {
+        "source": "main_case_2026_10_07/derived/summary.json (main_case, v6.base.band_bn, change_at_fixed_specifications)",
+        "lineage_item": "added_age_mix",
+        "base_band_bn": [
+          390.29395820202535,
+          461.24312471796554
+        ],
+        "change_from_base_bn": [
+          -1.2114053365467612,
+          0.23658458445470387
+        ],
+        "union_part_bn": [
+          -2.37587467552316,
+          -2.520232555987702
+        ],
+        "lineage_item_g3_rate_part_bn": [
+          0.1225648807714699,
+          0.33332296383769017
+        ],
+        "lineage_item_later_part_bn": [
+          1.2240417708260019,
+          2.5236481242325426
+        ],
+        "edit_sets_lineage_parts_bn": {
+          "pension_tr2026": [
+            -0.23163109814839178,
+            -0.19630557366314982
+          ],
+          "retiree_health": [
+            0.027708404425784587,
+            0.05309149978666956
+          ],
+          "user_fees": [
+            0.0,
+            0.0
+          ]
+        },
+        "interactions_with_lineage_item_bn": {
+          "pension_tr2026_x_added_age_mix": [
+            0.0005068859100560985,
+            0.014100282731192237
+          ],
+          "retiree_health_x_added_age_mix": [
+            0.021278495191666025,
+            0.028959843517384343
+          ],
+          "added_age_mix_x_user_fees": [
+            -1.1368683772161603e-13,
+            5.684341886080802e-14
+          ]
+        },
+        "c3_slope_v5_bn": [
+          -12.188724299125349,
+          -16.063957644148985
+        ],
+        "c3_slope_change_bn": [
+          0.6466064866923407,
+          0.24654658484547398
+        ],
+        "rule": "the central arm's band is the case's and its C3 slope the lineage lane's plus the lineage item's, whites / C3 - (g3plus_members - later) / (1 - C3) from the item's parts at the ends; arms a and c are the lineage lane's bands plus the case's change, its lineage item's G3-rate and later parts scaled by the arm's G3-rate and later counts and the edit sets' lineage parts and interactions by its added count, their slopes plus the central change times g3_x / g3_b [APPROX: per-person changes at the central arm's responses; the edit sets' lineage parts held at the central C3]"
+      }
+    },
+    "pension_switch": {
+      "rule": "the union-side identities on v6's meta.pension_accrual: social_security less the lineage's (its cells and the items' lineage_* parts) is ratio_net x the union's OASDI receipts, and medicare less the lineage's, less part_a_accrual_bn, is (1 - part_a_share) of the cash set's union amount (1e-9); the lineage's social_security moves with its own OASDI receipts at k, and its Part A accrual is fixed like the union's",
+      "ratio_net": 0.9535468505020114,
+      "part_a_accrual_bn": 40.78277939340838,
+      "part_a_share": 0.3751126329068301,
+      "previous": {
+        "ratio_net": 0.9736673650311839,
+        "part_a_accrual_bn": 41.13712783048602
+      },
+      "identities": {
+        "personal": {
+          "union_social_security_bn": 100.63155613846394,
+          "union_oasdi_receipts_bn": 105.5339400318769,
+          "social_security_gap_bn": -4.121147867408581e-13,
+          "union_medicare_less_part_a_bn": 32.75610340334446,
+          "union_medicare_cash_bn": 52.419212050514325,
+          "medicare_gap_bn": 7.105427357601002e-15
+        },
+        "shared": {
+          "union_social_security_bn": 107.14613394733624,
+          "union_oasdi_receipts_bn": 112.36588311410986,
+          "social_security_gap_bn": -3.694822225952521e-13,
+          "union_medicare_less_part_a_bn": 32.75610340334439,
+          "union_medicare_cash_bn": 52.41921205051424,
+          "medicare_gap_bn": -1.4210854715202004e-14
+        }
+      },
+      "lineage_k": {
+        "personal": 0.9322803879138762,
+        "shared": 0.937893984464516
+      },
+      "lineage_part_a_bn": {
+        "personal": 2.5976586821889134,
+        "shared": 3.264654570488588
+      },
+      "items_lineage_parts_booked_with_the_lineage": {
+        "pension_tr2026": {
+          "lineage_oasdi": {
+            "personal": -0.15634229873910022,
+            "shared": -0.19862042863975995
+          },
+          "lineage_part_a": {
+            "personal": -0.025862992192876095,
+            "shared": -0.03250378359863497
+          }
+        }
+      },
+      "items_union_parts": {
+        "pension_tr2026": {
+          "union_oasdi": {
+            "personal": -2.1233971737322013,
+            "shared": -2.260859383780748
+          },
+          "union_part_a": {
+            "personal": -0.35434843707763974,
+            "shared": -0.35434843707763974
+          }
+        }
+      }
+    },
+    "items": [
+      {
+        "id": "added_age_mix",
+        "kind": "lineage",
+        "lineage_edits": {
+          "first": 416,
+          "count": 336,
+          "row8_edit_index": 751,
+          "row8_edit_bn": -0.00798742966671706
+        },
+        "route": "the lineage's cells, re-valued in place, ride each line's first-order ratio as v5's do [ASSUMPTION, oct05's]"
+      },
+      {
+        "id": "pension_tr2026",
+        "kind": "edit_set",
+        "edits": {
+          "first": 752,
+          "count": 2
+        },
+        "cash_edits": null,
+        "union_only": false,
+        "parts": {
+          "lineage_oasdi": {
+            "edit": 0,
+            "line": "social_security",
+            "side": "lineage"
+          },
+          "lineage_part_a": {
+            "edit": 1,
+            "line": "medicare",
+            "side": "lineage"
+          },
+          "union_oasdi": {
+            "edit": 0,
+            "line": "social_security",
+            "side": "union"
+          },
+          "union_part_a": {
+            "edit": 1,
+            "line": "medicare",
+            "side": "union"
+          }
+        },
+        "lines": {
+          "social_security": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "pension rule"
+          },
+          "medicare": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "pension rule"
+          }
+        }
+      },
+      {
+        "id": "retiree_health",
+        "kind": "edit_set",
+        "edits": {
+          "first": 754,
+          "count": 10
+        },
+        "cash_edits": {
+          "first": 750,
+          "count": 10
+        },
+        "union_only": false,
+        "parts": {},
+        "lines": {
+          "other_federal_benefits": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "general_public_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "defense": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "no sampling error"
+          },
+          "public_order_safety": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "economic_affairs_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "housing_community_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "health_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "recreation_culture": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "education_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          },
+          "income_security_services": {
+            "side": "spending",
+            "edit": "national scale",
+            "route": "line ratio"
+          }
+        }
+      },
+      {
+        "id": "user_fees",
+        "kind": "edit_set",
+        "edits": {
+          "first": 764,
+          "count": 5
+        },
+        "cash_edits": {
+          "first": 760,
+          "count": 5
+        },
+        "union_only": true,
+        "parts": {
+          "union_fee_health": {
+            "edit": 3,
+            "line": "health_services",
+            "side": "union"
+          },
+          "union_fee_tuition": {
+            "edit": 0,
+            "line": "education_services",
+            "side": "union"
+          },
+          "union_k12_weight_other": {
+            "edit": 2,
+            "line": "college_rekey",
+            "side": "union"
+          },
+          "union_k12_weight_school": {
+            "edit": 1,
+            "line": "school_reprice",
+            "side": "union"
+          },
+          "union_key_health": {
+            "edit": 3,
+            "line": "health_services",
+            "side": "union"
+          },
+          "union_key_higher_ed": {
+            "edit": 0,
+            "line": "education_services",
+            "side": "union"
+          },
+          "union_key_pell": {
+            "edit": 4,
+            "line": "other_federal_benefits",
+            "side": "union"
+          }
+        },
+        "lines": {
+          "education_services": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "line ratio"
+          },
+          "school_reprice": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "school correction"
+          },
+          "college_rekey": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "school correction"
+          },
+          "health_services": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "line ratio"
+          },
+          "other_federal_benefits": {
+            "side": "spending",
+            "edit": "cell shift",
+            "route": "line ratio"
+          }
+        },
+        "capital": {
+          "carriers": [
+            "user_fees_key_k12",
+            "user_fees_key_college",
+            "user_fees_key_health"
+          ],
+          "offsets": [
+            "k12_user_fees",
+            "college_user_fees",
+            "health_sl_user_fees",
+            "health_fed_user_fees"
+          ],
+          "route": "each offset's key is its carrier's share, a fixed key shift the item sets: it enters the capital return's rebuild (kcoef_<tag>_share_<carrier>) and carries no sampling error [ASSUMPTION: v4's rule for correction lines the uncorrected model lacks]"
+        }
+      }
+    ]
+  },
+  "uncorrected_at_adopted_responses": {
+    "net_cost_band_bn": [
+      313.064579164899,
+      378.709849795092
+    ],
+    "se_independent_bn": [
+      12.271431043268876,
+      12.335057794023378
+    ],
+    "se_positive_correlation_bn": [
+      19.985793943472512,
+      20.541397244615474
+    ],
+    "se_cps_bn": [
+      9.978990420704932,
+      10.027463816717407
+    ],
+    "ci95_union_bn": [
+      288.9134080682342,
+      402.81391484275304
+    ],
+    "ci95_envelope_union_bn": [
+      273.1340514900129,
+      418.2126168488583
+    ],
+    "ci95_with_benefit_keys_union_bn": [
+      288.9134080682342,
+      402.81391484275304
+    ],
+    "specifications": 64,
+    "capital_return_band_bn": [
+      34.4424714521329,
+      56.7541220176195
+    ],
+    "se_cps_capital_part_bn": [
+      0.21491641977011897,
+      0.3657675196279253
+    ],
+    "se_cps_account_keys_bn": [
+      9.978990420704932,
+      10.027463816717407
+    ],
+    "se_cps_receipt_responses_part_bn": [
+      0.02389505385141638,
+      0.026344166285649506
+    ]
+  }
+}

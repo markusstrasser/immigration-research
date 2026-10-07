@@ -209,7 +209,12 @@ def test_payload_production_grid_and_pension_switch():
 def test_lineage_component_beside_the_propagation():
     """oct05 (main case v5): the lineage's own uncertainty sits beside the propagation. Each arm's C3 error at an end
     is the lineage lane's |slope| x C3's SE, it joins the end specification's combined error in quadrature, and the
-    central arm's band is the case's."""
+    central arm's band is the case's.
+
+    oct07 (main case v6, a payload with meta.items): re-based on the case lane, whose lineage values are its lineage
+    item's. The central arm's band is the case lane's main_case, and each arm's slope is the lineage lane's plus g3_x /
+    g3_b times the lineage item's slope change, whites / C3 - (g3plus_members - later) / (1 - C3), from the item's parts
+    at the ends (change_at_fixed_specifications); each arm's band is its C3 line at C3."""
     found = 0
     for name, lane in json.loads((HERE / "later_cases.json").read_text()).items():
         s = json.loads((OUT / name / "summary.json").read_text())[name]
@@ -217,15 +222,33 @@ def test_lineage_component_beside_the_propagation():
             continue
         found += 1
         g = s["lineage"]
-        meta = json.loads((HERE.parent / lane / "derived/corrections.json").read_text())["meta"]["lineage"]
+        payload_meta = json.loads((HERE.parent / lane / "derived/corrections.json").read_text())["meta"]
+        meta = payload_meta["lineage"]
         arms = json.loads((HERE.parent / meta["lane"] / "derived/v5_summary.json").read_text())["sets"]["set"]["arms"]
         c = pd.read_csv(OUT / name / "case_uncertainty.csv").query("case == @name")
         ends = [c.loc[c.net_cost_bn.idxmin()], c.loc[c.net_cost_bn.idxmax()]]
         assert (g["c3"], g["c3_se"], g["central_arm"]) == (meta["c3"]["value"], meta["c3"]["se"], meta["arm"])
-        np.testing.assert_allclose(g["arms"][g["central_arm"]]["band_bn"], s["net_cost_band_bn"], atol=1e-6)
-        assert set(g["arms"]) == {"a", meta["arm"], "c"}
+        central = meta["arm"]
+        if "items" in payload_meta:
+            main = json.loads((HERE.parent / lane / "derived/summary.json").read_text())
+            want = main["main_case"]
+            p = main["change_at_fixed_specifications"]["items"][g["rebase"]["lineage_item"]]
+            d = [p["members"]["whites"][j] / g["c3"] - (p["members"]["g3plus_members"][j] - p["parts"]["later"][j])
+                 / (1 - g["c3"]) for j in (0, 1)]
+            slope = {arm: [arms[arm]["c3_line"][e]["slope_bn"] + arms[arm]["g3_rate"] / arms[central]["g3_rate"] * d[j]
+                           for j, e in enumerate(("low", "high"))] for arm in g["arms"]}
+            for arm, v in g["arms"].items():
+                np.testing.assert_allclose([v["c3_line"][e]["slope_bn"] for e in ("low", "high")], slope[arm], rtol=1e-12)
+                np.testing.assert_allclose([v["c3_line"][e]["intercept_bn"] + v["c3_line"][e]["slope_bn"] * g["c3"]
+                                            for e in ("low", "high")], v["band_bn"], atol=1e-9)
+        else:
+            want = arms[central]["band_bn"]
+            slope = {arm: [arms[arm]["c3_line"][e]["slope_bn"] for e in ("low", "high")] for arm in g["arms"]}
+        np.testing.assert_allclose(g["arms"][central]["band_bn"], s["net_cost_band_bn"], atol=1e-6)
+        np.testing.assert_allclose(g["arms"][central]["band_bn"], want, atol=1e-6)
+        assert set(g["arms"]) == {"a", central, "c"}
         for arm, v in g["arms"].items():
-            slopes = [abs(arms[arm]["c3_line"][e]["slope_bn"]) for e in ("low", "high")]
+            slopes = [abs(x) for x in slope[arm]]
             np.testing.assert_allclose(v["se_c3_bn"], [x * g["c3_se"] for x in slopes], rtol=1e-12)
             np.testing.assert_allclose(v["se_independent_with_c3_bn"],
                                        [np.hypot(e.se_combined_independent_bn, x) for e, x in zip(ends, v["se_c3_bn"])],
@@ -233,4 +256,64 @@ def test_lineage_component_beside_the_propagation():
         b = g["arms"][g["central_arm"]]["ci95_with_c3_bn"]
         assert g["ci95_with_c3_over_arms_bn"][0] < b[0] < g["ci95_at_ends_bn"][0]
         assert g["ci95_with_c3_over_arms_bn"][1] > b[1] > g["ci95_at_ends_bn"][1]
+    assert found >= 1
+
+
+def test_item_payload_routes_every_edit_and_holds_the_pension_identities():
+    """oct07 (main case v6): every applied item of meta.items is routed (summary.json items) with its edits where
+    meta.items puts them, the edit sets tile the payload after the lineage's edits, and every edit's line has a route.
+    The union-side pension identities hold at v6's meta.pension_accrual (1e-9), with the items' lineage_* parts booked
+    with the lineage and their union_* parts the union's rule moving to v6's ratio_net and Part A."""
+    routes = {"pension rule", "line ratio", "school correction", "no sampling error"}
+    found = 0
+    for name, lane in json.loads((HERE / "later_cases.json").read_text()).items():
+        payload = json.loads((HERE.parent / lane / "derived/corrections.json").read_text())
+        items = payload["meta"].get("items")
+        s = json.loads((OUT / name / "summary.json").read_text())[name]
+        if items is None:
+            assert "items" not in s and "pension_switch" not in s
+            continue
+        found += 1
+        got = {r["id"]: r for r in s["items"]}
+        applied = [it for it in items if it["applied"]]
+        assert set(got) == {it["id"] for it in applied}
+        e = payload["meta"]["lineage"]["edits"]
+        at = e["first"] + e["count"]
+        for it in applied:
+            r = got[it["id"]]
+            if it["kind"] == "lineage":
+                assert r["lineage_edits"] == e
+                continue
+            assert r["edits"] == it["edits"] and r["edits"]["first"] == at
+            at += it["edits"]["count"]
+            lines = {x["line"] for x in payload["edits"][it["edits"]["first"]:at]}
+            assert set(r["lines"]) == lines and {v["route"] for v in r["lines"].values()} <= routes
+        assert at == len(payload["edits"])
+        ps = s["pension_switch"]
+        pa = payload["meta"]["pension_accrual"]
+        assert (ps["ratio_net"], ps["part_a_accrual_bn"]) == (pa["ratio_net"], pa["part_a_accrual_bn"])
+        for a, v in ps["identities"].items():
+            assert abs(v["social_security_gap_bn"]) < 1e-9 and abs(v["medicare_gap_bn"]) < 1e-9
+            np.testing.assert_allclose(v["union_social_security_bn"], pa["ratio_net"] * v["union_oasdi_receipts_bn"], atol=1e-9)
+        for it in applied:
+            if it["kind"] != "edit_set":
+                continue
+            r, block = got[it["id"]], payload["edits"][it["edits"]["first"]:it["edits"]["first"] + it["edits"]["count"]]
+            # Every part is booked by its side; a union-only item (user_fees) has no lineage part, so none of it goes
+            # with the lineage. The pension record holds the parts on the pension lines, by the same sides.
+            assert set(r["parts"]) == set(it.get("parts") or {})
+            assert r["union_only"] == bool(it.get("union_only"))
+            for k, part in (it.get("parts") or {}).items():
+                side = "lineage" if k.startswith("lineage_") else "union"
+                assert r["parts"][k] == dict(edit=part["edit"], line=block[part["edit"]]["line"], side=side)
+                assert not (it.get("union_only") and side == "lineage")
+                x = block[part["edit"]]
+                booked = ps["items_lineage_parts_booked_with_the_lineage" if side == "lineage" else "items_union_parts"]
+                if x["side"] == "spending" and x["line"] in ("social_security", "medicare"):
+                    assert booked[it["id"]][k] == part["by"]
+                else:
+                    assert k not in booked.get(it["id"], {})
+            if it.get("capital"):
+                assert r["capital"]["carriers"] == it["capital"]["receipt_lines"]
+                assert r["capital"]["offsets"] == it["capital"]["components"]
     assert found >= 1
