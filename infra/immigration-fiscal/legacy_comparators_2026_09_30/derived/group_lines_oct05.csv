@@ -117,7 +117,7 @@ mexican_origin_rough,cash,low,48,spending,economic_affairs_services,451.93500000
 mexican_origin_rough,cash,low,48,spending,housing_community_services,14.5370000000,1.8337603296,1.0000000000
 mexican_origin_rough,cash,low,48,spending,health_services,306.5390000000,18.8368192883,1.0000000000
 mexican_origin_rough,cash,low,48,spending,recreation_culture,54.3310000000,6.8535483572,0.8563914832
-mexican_origin_rough,cash,low,48,spending,education_services,1221.1590000000,205.0503589989,1.0000000000
+mexican_origin_rough,cash,low,48,spending,education_services,1221.1590000000,201.4304996915,1.0000000000
 mexican_origin_rough,cash,low,48,spending,income_security_services,167.8180000000,26.5961245580,1.0000000000
 mexican_origin_rough,cash,low,48,spending,social_security,1447.9650000000,64.6344237757,1.0000000000
 mexican_origin_rough,cash,low,48,spending,medicare,1102.3580000000,56.1547507352,1.0000000000
@@ -134,7 +134,7 @@ mexican_origin_rough,cash,low,48,spending,snap,97.3910000000,15.1753095165,1.000
 mexican_origin_rough,cash,low,48,spending,black_lung,0.1730000000,0.0360121436,1.0000000000
 mexican_origin_rough,cash,low,48,spending,ssi,65.1340000000,5.7914429426,1.0000000000
 mexican_origin_rough,cash,low,48,spending,refundable_tax_credits,228.8090000000,41.8599735867,1.0000000000
-mexican_origin_rough,cash,low,48,spending,other_federal_benefits,86.4250000000,3.9010377154,1.0000000000
+mexican_origin_rough,cash,low,48,spending,other_federal_benefits,86.4250000000,7.9201746891,1.0000000000
 mexican_origin_rough,cash,low,48,spending,temporary_disability,13.1380000000,2.7348412844,1.0000000000
 mexican_origin_rough,cash,low,48,spending,medicaid_and_chip_other_medical,954.2000000000,126.0905662960,1.0000000000
 mexican_origin_rough,cash,low,48,spending,family_and_general_assistance,63.0650000000,11.2248537006,1.0000000000
@@ -160,7 +160,7 @@ mexican_origin_rough,cash,low,48,spending,roads_vmt_fed,0.0000000000,0.027448444
 mexican_origin_rough,cash,low,48,spending,state_price_public_order_safety,0.0000000000,6.9346150413,1.0000000000
 mexican_origin_rough,cash,low,48,spending,state_price_health_services,0.0000000000,1.9848180947,1.0000000000
 mexican_origin_rough,cash,low,48,spending,state_price_recreation_culture,0.0000000000,0.4399042529,0.8563914832
-mexican_origin_rough,cash,low,48,scalar,cost_bn,,307.5368826037,
+mexican_origin_rough,cash,low,48,scalar,cost_bn,,307.5800158198,
 mexican_origin_rough,cash,low,48,scalar,population,,42752212.9244,
 mexican_origin_rough,cash,low,48,scalar,production_gain_bn,,11.9474615008,
 A1_third_plus_nh_white,cash,low,48,receipt,federal_income_tax,2403.2420000000,300.1390269049,1.0000000000
@@ -199,7 +199,7 @@ A1_third_plus_nh_white,cash,low,48,spending,economic_affairs_services,451.935000
 A1_third_plus_nh_white,cash,low,48,spending,housing_community_services,14.5370000000,1.8337603271,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,health_services,306.5390000000,27.6863667357,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,recreation_culture,54.3310000000,6.8535483477,0.8563914832
-A1_third_plus_nh_white,cash,low,48,spending,education_services,1221.1590000000,131.0380063689,1.0000000000
+A1_third_plus_nh_white,cash,low,48,spending,education_services,1221.1590000000,129.1528104493,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,income_security_services,167.8180000000,14.2222152789,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,social_security,1447.9650000000,248.8209778268,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,medicare,1102.3580000000,183.0944359036,1.0000000000
@@ -216,7 +216,7 @@ A1_third_plus_nh_white,cash,low,48,spending,snap,97.3910000000,8.2536782004,1.00
 A1_third_plus_nh_white,cash,low,48,spending,black_lung,0.1730000000,0.0207843024,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,ssi,65.1340000000,7.3278557044,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,refundable_tax_credits,228.8090000000,23.2570198314,1.0000000000
-A1_third_plus_nh_white,cash,low,48,spending,other_federal_benefits,86.4250000000,14.8514314978,1.0000000000
+A1_third_plus_nh_white,cash,low,48,spending,other_federal_benefits,86.4250000000,11.8973752984,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,temporary_disability,13.1380000000,1.5784055801,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,medicaid_and_chip_other_medical,954.2000000000,99.7693710331,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,family_and_general_assistance,63.0650000000,5.2725829367,1.0000000000
@@ -242,7 +242,7 @@ A1_third_plus_nh_white,cash,low,48,spending,roads_vmt_fed,0.0000000000,0.0012137
 A1_third_plus_nh_white,cash,low,48,spending,state_price_public_order_safety,0.0000000000,-2.5811501658,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,state_price_health_services,0.0000000000,-1.0036330807,1.0000000000
 A1_third_plus_nh_white,cash,low,48,spending,state_price_recreation_culture,0.0000000000,-0.1462883766,0.8563914832
-A1_third_plus_nh_white,cash,low,48,scalar,cost_bn,,104.6363498551,
+A1_third_plus_nh_white,cash,low,48,scalar,cost_bn,,99.6116203440,
 A1_third_plus_nh_white,cash,low,48,scalar,population,,42752212.9244,
 A1_third_plus_nh_white,cash,low,48,scalar,production_gain_bn,,0.0000000000,
 all_residents_slice,cash,low,48,receipt,federal_income_tax,2403.2420000000,255.7571968601,1.0000000000
@@ -445,7 +445,7 @@ mexican_origin_rough,cash,high,11,spending,economic_affairs_services,451.9350000
 mexican_origin_rough,cash,high,11,spending,housing_community_services,14.5370000000,1.8337603296,1.0000000000
 mexican_origin_rough,cash,high,11,spending,health_services,306.5390000000,18.8368192883,1.0000000000
 mexican_origin_rough,cash,high,11,spending,recreation_culture,54.3310000000,6.8535483572,1.0000000000
-mexican_origin_rough,cash,high,11,spending,education_services,1221.1590000000,207.6725367073,1.0000000000
+mexican_origin_rough,cash,high,11,spending,education_services,1221.1590000000,204.0526773999,1.0000000000
 mexican_origin_rough,cash,high,11,spending,income_security_services,167.8180000000,26.2241241342,1.0000000000
 mexican_origin_rough,cash,high,11,spending,social_security,1447.9650000000,64.0558074989,1.0000000000
 mexican_origin_rough,cash,high,11,spending,medicare,1102.3580000000,56.1547507352,1.0000000000
@@ -462,7 +462,7 @@ mexican_origin_rough,cash,high,11,spending,snap,97.3910000000,15.1753095165,1.00
 mexican_origin_rough,cash,high,11,spending,black_lung,0.1730000000,0.0352056963,1.0000000000
 mexican_origin_rough,cash,high,11,spending,ssi,65.1340000000,5.7532826040,1.0000000000
 mexican_origin_rough,cash,high,11,spending,refundable_tax_credits,228.8090000000,41.3127763280,1.0000000000
-mexican_origin_rough,cash,high,11,spending,other_federal_benefits,86.4250000000,3.8569014710,1.0000000000
+mexican_origin_rough,cash,high,11,spending,other_federal_benefits,86.4250000000,7.8760384446,1.0000000000
 mexican_origin_rough,cash,high,11,spending,temporary_disability,13.1380000000,2.6735979046,1.0000000000
 mexican_origin_rough,cash,high,11,spending,medicaid_and_chip_other_medical,954.2000000000,126.1167338532,1.0000000000
 mexican_origin_rough,cash,high,11,spending,family_and_general_assistance,63.0650000000,11.0697611468,1.0000000000
@@ -488,7 +488,7 @@ mexican_origin_rough,cash,high,11,spending,roads_vmt_fed,0.0000000000,0.02744805
 mexican_origin_rough,cash,high,11,spending,state_price_public_order_safety,0.0000000000,6.9346150413,1.0000000000
 mexican_origin_rough,cash,high,11,spending,state_price_health_services,0.0000000000,1.9848180947,1.0000000000
 mexican_origin_rough,cash,high,11,spending,state_price_recreation_culture,0.0000000000,0.4399042529,1.0000000000
-mexican_origin_rough,cash,high,11,scalar,cost_bn,,365.5581661716,
+mexican_origin_rough,cash,high,11,scalar,cost_bn,,365.4232271626,
 mexican_origin_rough,cash,high,11,scalar,population,,42752212.9244,
 mexican_origin_rough,cash,high,11,scalar,production_gain_bn,,7.8592597207,
 A1_third_plus_nh_white,cash,high,11,receipt,federal_income_tax,2403.2420000000,300.1390269049,1.0000000000
@@ -527,7 +527,7 @@ A1_third_plus_nh_white,cash,high,11,spending,economic_affairs_services,451.93500
 A1_third_plus_nh_white,cash,high,11,spending,housing_community_services,14.5370000000,1.8337603271,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,health_services,306.5390000000,27.6863667357,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,recreation_culture,54.3310000000,6.8535483477,1.0000000000
-A1_third_plus_nh_white,cash,high,11,spending,education_services,1221.1590000000,131.0380063689,1.0000000000
+A1_third_plus_nh_white,cash,high,11,spending,education_services,1221.1590000000,129.1528104493,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,income_security_services,167.8180000000,14.2222152789,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,social_security,1447.9650000000,248.8209778268,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,medicare,1102.3580000000,183.0944359036,1.0000000000
@@ -544,7 +544,7 @@ A1_third_plus_nh_white,cash,high,11,spending,snap,97.3910000000,8.2536782004,1.0
 A1_third_plus_nh_white,cash,high,11,spending,black_lung,0.1730000000,0.0207843024,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,ssi,65.1340000000,7.3278557044,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,refundable_tax_credits,228.8090000000,23.2570198314,1.0000000000
-A1_third_plus_nh_white,cash,high,11,spending,other_federal_benefits,86.4250000000,14.8514314978,1.0000000000
+A1_third_plus_nh_white,cash,high,11,spending,other_federal_benefits,86.4250000000,11.8973752984,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,temporary_disability,13.1380000000,1.5784055801,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,medicaid_and_chip_other_medical,954.2000000000,99.7693710331,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,family_and_general_assistance,63.0650000000,5.2725829367,1.0000000000
@@ -570,7 +570,7 @@ A1_third_plus_nh_white,cash,high,11,spending,roads_vmt_fed,0.0000000000,0.001213
 A1_third_plus_nh_white,cash,high,11,spending,state_price_public_order_safety,0.0000000000,-2.5811501658,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,state_price_health_services,0.0000000000,-1.0036330807,1.0000000000
 A1_third_plus_nh_white,cash,high,11,spending,state_price_recreation_culture,0.0000000000,-0.1462883766,1.0000000000
-A1_third_plus_nh_white,cash,high,11,scalar,cost_bn,,158.2460157852,
+A1_third_plus_nh_white,cash,high,11,scalar,cost_bn,,153.1285475781,
 A1_third_plus_nh_white,cash,high,11,scalar,population,,42752212.9244,
 A1_third_plus_nh_white,cash,high,11,scalar,production_gain_bn,,0.0000000000,
 all_residents_slice,cash,high,11,receipt,federal_income_tax,2403.2420000000,255.7571968601,1.0000000000
@@ -773,7 +773,7 @@ mexican_origin_rough,accrual,low,48,spending,economic_affairs_services,451.93500
 mexican_origin_rough,accrual,low,48,spending,housing_community_services,14.5370000000,1.8337603296,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,health_services,306.5390000000,18.8368192883,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,recreation_culture,54.3310000000,6.8535483572,0.8563914832
-mexican_origin_rough,accrual,low,48,spending,education_services,1221.1590000000,205.0503589989,1.0000000000
+mexican_origin_rough,accrual,low,48,spending,education_services,1221.1590000000,201.4304996915,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,income_security_services,167.8180000000,26.5961245580,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,social_security,1447.9650000000,120.6626480228,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,medicare,1102.3580000000,84.4477637606,1.0000000000
@@ -790,7 +790,7 @@ mexican_origin_rough,accrual,low,48,spending,snap,97.3910000000,15.1753095165,1.
 mexican_origin_rough,accrual,low,48,spending,black_lung,0.1730000000,0.0360121436,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,ssi,65.1340000000,5.7914429426,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,refundable_tax_credits,228.8090000000,41.8599735867,1.0000000000
-mexican_origin_rough,accrual,low,48,spending,other_federal_benefits,86.4250000000,3.9010377154,1.0000000000
+mexican_origin_rough,accrual,low,48,spending,other_federal_benefits,86.4250000000,7.9201746891,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,temporary_disability,13.1380000000,2.7348412844,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,medicaid_and_chip_other_medical,954.2000000000,126.0905662960,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,family_and_general_assistance,63.0650000000,11.2248537006,1.0000000000
@@ -816,7 +816,7 @@ mexican_origin_rough,accrual,low,48,spending,roads_vmt_fed,0.0000000000,0.027448
 mexican_origin_rough,accrual,low,48,spending,state_price_public_order_safety,0.0000000000,6.9346150413,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,state_price_health_services,0.0000000000,1.9848180947,1.0000000000
 mexican_origin_rough,accrual,low,48,spending,state_price_recreation_culture,0.0000000000,0.4399042529,0.8563914832
-mexican_origin_rough,accrual,low,48,scalar,cost_bn,,394.3383506073,
+mexican_origin_rough,accrual,low,48,scalar,cost_bn,,394.3814838234,
 mexican_origin_rough,accrual,low,48,scalar,population,,42752212.9244,
 mexican_origin_rough,accrual,low,48,scalar,production_gain_bn,,11.9474615008,
 A1_third_plus_nh_white,accrual,low,48,receipt,federal_income_tax,2403.2420000000,282.4674655244,1.0000000000
@@ -855,7 +855,7 @@ A1_third_plus_nh_white,accrual,low,48,spending,economic_affairs_services,451.935
 A1_third_plus_nh_white,accrual,low,48,spending,housing_community_services,14.5370000000,1.8337603271,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,health_services,306.5390000000,27.6863667357,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,recreation_culture,54.3310000000,6.8535483477,0.8563914832
-A1_third_plus_nh_white,accrual,low,48,spending,education_services,1221.1590000000,131.0380063689,1.0000000000
+A1_third_plus_nh_white,accrual,low,48,spending,education_services,1221.1590000000,129.1528104493,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,income_security_services,167.8180000000,14.2222152789,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,social_security,1447.9650000000,166.9356246289,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,medicare,1102.3580000000,168.1670784574,1.0000000000
@@ -872,7 +872,7 @@ A1_third_plus_nh_white,accrual,low,48,spending,snap,97.3910000000,8.2536782004,1
 A1_third_plus_nh_white,accrual,low,48,spending,black_lung,0.1730000000,0.0207843024,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,ssi,65.1340000000,7.3278557044,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,refundable_tax_credits,228.8090000000,23.2570198314,1.0000000000
-A1_third_plus_nh_white,accrual,low,48,spending,other_federal_benefits,86.4250000000,14.8514314978,1.0000000000
+A1_third_plus_nh_white,accrual,low,48,spending,other_federal_benefits,86.4250000000,11.8973752984,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,temporary_disability,13.1380000000,1.5784055801,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,medicaid_and_chip_other_medical,954.2000000000,99.7693710331,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,family_and_general_assistance,63.0650000000,5.2725829367,1.0000000000
@@ -898,7 +898,7 @@ A1_third_plus_nh_white,accrual,low,48,spending,roads_vmt_fed,0.0000000000,0.0012
 A1_third_plus_nh_white,accrual,low,48,spending,state_price_public_order_safety,0.0000000000,-2.5811501658,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,state_price_health_services,0.0000000000,-1.0036330807,1.0000000000
 A1_third_plus_nh_white,accrual,low,48,spending,state_price_recreation_culture,0.0000000000,-0.1462883766,0.8563914832
-A1_third_plus_nh_white,accrual,low,48,scalar,cost_bn,,25.4952005913,
+A1_third_plus_nh_white,accrual,low,48,scalar,cost_bn,,20.4704710803,
 A1_third_plus_nh_white,accrual,low,48,scalar,population,,42752212.9244,
 A1_third_plus_nh_white,accrual,low,48,scalar,production_gain_bn,,0.0000000000,
 all_residents_slice,accrual,low,48,receipt,federal_income_tax,2403.2420000000,242.6546577076,1.0000000000
@@ -1101,7 +1101,7 @@ mexican_origin_rough,accrual,high,11,spending,economic_affairs_services,451.9350
 mexican_origin_rough,accrual,high,11,spending,housing_community_services,14.5370000000,1.8337603296,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,health_services,306.5390000000,18.8368192883,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,recreation_culture,54.3310000000,6.8535483572,1.0000000000
-mexican_origin_rough,accrual,high,11,spending,education_services,1221.1590000000,207.6725367073,1.0000000000
+mexican_origin_rough,accrual,high,11,spending,education_services,1221.1590000000,204.0526773999,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,income_security_services,167.8180000000,26.2241241342,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,social_security,1447.9650000000,119.1796833011,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,medicare,1102.3580000000,83.9888380035,1.0000000000
@@ -1118,7 +1118,7 @@ mexican_origin_rough,accrual,high,11,spending,snap,97.3910000000,15.1753095165,1
 mexican_origin_rough,accrual,high,11,spending,black_lung,0.1730000000,0.0352056963,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,ssi,65.1340000000,5.7532826040,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,refundable_tax_credits,228.8090000000,41.3127763280,1.0000000000
-mexican_origin_rough,accrual,high,11,spending,other_federal_benefits,86.4250000000,3.8569014710,1.0000000000
+mexican_origin_rough,accrual,high,11,spending,other_federal_benefits,86.4250000000,7.8760384446,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,temporary_disability,13.1380000000,2.6735979046,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,medicaid_and_chip_other_medical,954.2000000000,126.1167338532,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,family_and_general_assistance,63.0650000000,11.0697611468,1.0000000000
@@ -1144,7 +1144,7 @@ mexican_origin_rough,accrual,high,11,spending,roads_vmt_fed,0.0000000000,0.02744
 mexican_origin_rough,accrual,high,11,spending,state_price_public_order_safety,0.0000000000,6.9346150413,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,state_price_health_services,0.0000000000,1.9848180947,1.0000000000
 mexican_origin_rough,accrual,high,11,spending,state_price_recreation_culture,0.0000000000,0.4399042529,1.0000000000
-mexican_origin_rough,accrual,high,11,scalar,cost_bn,,450.9659717167,
+mexican_origin_rough,accrual,high,11,scalar,cost_bn,,450.8310327077,
 mexican_origin_rough,accrual,high,11,scalar,population,,42752212.9244,
 mexican_origin_rough,accrual,high,11,scalar,production_gain_bn,,7.8592597207,
 A1_third_plus_nh_white,accrual,high,11,receipt,federal_income_tax,2403.2420000000,282.4674655244,1.0000000000
@@ -1183,7 +1183,7 @@ A1_third_plus_nh_white,accrual,high,11,spending,economic_affairs_services,451.93
 A1_third_plus_nh_white,accrual,high,11,spending,housing_community_services,14.5370000000,1.8337603271,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,health_services,306.5390000000,27.6863667357,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,recreation_culture,54.3310000000,6.8535483477,1.0000000000
-A1_third_plus_nh_white,accrual,high,11,spending,education_services,1221.1590000000,131.0380063689,1.0000000000
+A1_third_plus_nh_white,accrual,high,11,spending,education_services,1221.1590000000,129.1528104493,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,income_security_services,167.8180000000,14.2222152789,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,social_security,1447.9650000000,166.9356246289,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,medicare,1102.3580000000,168.1670784574,1.0000000000
@@ -1200,7 +1200,7 @@ A1_third_plus_nh_white,accrual,high,11,spending,snap,97.3910000000,8.2536782004,
 A1_third_plus_nh_white,accrual,high,11,spending,black_lung,0.1730000000,0.0207843024,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,ssi,65.1340000000,7.3278557044,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,refundable_tax_credits,228.8090000000,23.2570198314,1.0000000000
-A1_third_plus_nh_white,accrual,high,11,spending,other_federal_benefits,86.4250000000,14.8514314978,1.0000000000
+A1_third_plus_nh_white,accrual,high,11,spending,other_federal_benefits,86.4250000000,11.8973752984,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,temporary_disability,13.1380000000,1.5784055801,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,medicaid_and_chip_other_medical,954.2000000000,99.7693710331,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,family_and_general_assistance,63.0650000000,5.2725829367,1.0000000000
@@ -1226,7 +1226,7 @@ A1_third_plus_nh_white,accrual,high,11,spending,roads_vmt_fed,0.0000000000,0.001
 A1_third_plus_nh_white,accrual,high,11,spending,state_price_public_order_safety,0.0000000000,-2.5811501658,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,state_price_health_services,0.0000000000,-1.0036330807,1.0000000000
 A1_third_plus_nh_white,accrual,high,11,spending,state_price_recreation_culture,0.0000000000,-0.1462883766,1.0000000000
-A1_third_plus_nh_white,accrual,high,11,scalar,cost_bn,,79.1048665215,
+A1_third_plus_nh_white,accrual,high,11,scalar,cost_bn,,73.9873983143,
 A1_third_plus_nh_white,accrual,high,11,scalar,population,,42752212.9244,
 A1_third_plus_nh_white,accrual,high,11,scalar,production_gain_bn,,0.0000000000,
 all_residents_slice,accrual,high,11,receipt,federal_income_tax,2403.2420000000,242.6546577076,1.0000000000

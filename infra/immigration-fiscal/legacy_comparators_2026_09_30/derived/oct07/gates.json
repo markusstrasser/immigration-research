@@ -1,0 +1,160 @@
+{
+ "debt_held_by_public_end_fy2023_bn": 26235.592,
+ "lineage": {
+  "added_people": 3039719.593185237,
+  "identified_union": 39712493.3312,
+  "lineage_path_vs_lane_max_abs_diff": 0.0,
+  "lineage_population": 42752212.92438524,
+  "note": "the 2000 and 1990 windows and the zero-cell audit are not run: the third-plus path starts in 2005",
+  "per_head_key": 0.129182223,
+  "third_plus_share_rel_2024": {
+   "2005": 0.655126135,
+   "2010": 0.788510111,
+   "2015": 0.835143619,
+   "2020": 0.957527726,
+   "2024": 1.0
+  },
+  "windows": [
+   2005
+  ]
+ },
+ "member_count_m": 42.752212924,
+ "parity": {
+  "max_abs_diff": 4.96e-07,
+  "rows": [
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "central",
+    "end": "low",
+    "interest_bn": 31.823257955,
+    "lane_interest_bn": 31.823258,
+    "lane_stock_bn": 984.295956,
+    "max_abs_diff": 4.88e-07,
+    "stock_bn": 984.295955634
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "low",
+    "end": "low",
+    "interest_bn": 18.560023607,
+    "lane_interest_bn": 18.560024,
+    "lane_stock_bn": 574.063039,
+    "max_abs_diff": 4.69e-07,
+    "stock_bn": 574.063039019
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "high",
+    "end": "low",
+    "interest_bn": 36.318338949,
+    "lane_interest_bn": 36.318339,
+    "lane_stock_bn": 1123.329176,
+    "max_abs_diff": 4.72e-07,
+    "stock_bn": 1123.329176189
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "central",
+    "end": "high",
+    "interest_bn": 44.169318866,
+    "lane_interest_bn": 44.169319,
+    "lane_stock_bn": 1366.160623,
+    "max_abs_diff": 4.96e-07,
+    "stock_bn": 1366.160623283
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "low",
+    "end": "high",
+    "interest_bn": 30.615859723,
+    "lane_interest_bn": 30.61586,
+    "lane_stock_bn": 946.95103,
+    "max_abs_diff": 4.78e-07,
+    "stock_bn": 946.951030162
+   },
+   {
+    "basis": "cash",
+    "benchmark": "main",
+    "convention": "high",
+    "end": "high",
+    "interest_bn": 51.216310065,
+    "lane_interest_bn": 51.21631,
+    "lane_stock_bn": 1584.124634,
+    "max_abs_diff": 4.94e-07,
+    "stock_bn": 1584.124633945
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "central",
+    "end": "low",
+    "interest_bn": 63.971339317,
+    "lane_interest_bn": 63.971339,
+    "lane_stock_bn": 1978.638726,
+    "max_abs_diff": 4.88e-07,
+    "stock_bn": 1978.63872565
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "low",
+    "end": "low",
+    "interest_bn": 50.708104969,
+    "lane_interest_bn": 50.708105,
+    "lane_stock_bn": 1568.405809,
+    "max_abs_diff": 4.71e-07,
+    "stock_bn": 1568.405809035
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "high",
+    "end": "low",
+    "interest_bn": 68.466420311,
+    "lane_interest_bn": 68.46642,
+    "lane_stock_bn": 2117.671946,
+    "max_abs_diff": 4.81e-07,
+    "stock_bn": 2117.671946205
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "central",
+    "end": "high",
+    "interest_bn": 74.190662776,
+    "lane_interest_bn": 74.190663,
+    "lane_stock_bn": 2294.723231,
+    "max_abs_diff": 4.7e-07,
+    "stock_bn": 2294.723230997
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "low",
+    "end": "high",
+    "interest_bn": 60.637203633,
+    "lane_interest_bn": 60.637204,
+    "lane_stock_bn": 1875.513638,
+    "max_abs_diff": 4.63e-07,
+    "stock_bn": 1875.513637876
+   },
+   {
+    "basis": "accrual",
+    "benchmark": "main_with_accrual",
+    "convention": "high",
+    "end": "high",
+    "interest_bn": 81.237653974,
+    "lane_interest_bn": 81.237654,
+    "lane_stock_bn": 2512.687242,
+    "max_abs_diff": 4.88e-07,
+    "stock_bn": 2512.687241659
+   }
+  ],
+  "tolerance": 1e-06
+ }
+}

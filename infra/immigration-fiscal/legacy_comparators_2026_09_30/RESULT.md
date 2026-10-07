@@ -207,6 +207,12 @@ the cash-benefit convention (sept29 $11.5 / $11.3bn). The union's own charge is 
 ($63.3 / $73.4bn on engine keys), whites' −$13.2 / −$4.9bn and the average slice's $16.5 / $24.5bn. The 2005 window
 only. [CALCULATION: `legacy.py --case oct05` → `derived/oct05/legacy_main.csv`, `derived/oct05/legacy_differences.csv`]]
 
+[2026-10-07: oct05 is rebuilt on the IPEDS keys for Pell and public higher education (the lead's named defect fix;
+section "v6 case (oct07)", "The IPEDS keys"). The accrual difference over whites is now **$79.4 / $79.4bn**
+($1,857 / $1,857 per member), the cash difference **$14.1 / $14.6bn**, and the payroll-carry difference $69.8 /
+$69.9bn. The union's matched charge is $64.4 / $72.8bn and whites' −$15.0 / −$6.6bn; the engine union and the
+average slice do not move. The tables below keep the figures as first run.]
+
 claude-opus-5-5 (v5consC)
 
 **Rules (the case lane's Consumers row: both sides on 42.75M).**
@@ -290,3 +296,154 @@ New: `derived/group_lines_oct05.csv` and `derived/oct05/` (`legacy_main.csv`, `l
 `gates.json` with a `lineage` block). `group_lines.py` and `legacy.py` gained `--case`; `legacy.py` gained
 `lineage_setup()`, `twin_table()` and `lineage_flows()`, and `payroll_carry()` takes the lineage's split. The debt
 lane is imported read-only, as before.
+
+## v6 case (oct07), 2026-10-07
+
+[2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`), with both sides on the lineage's 42,752,213 and
+both on the IPEDS keys, the matched union's 2024 financing-equivalent charge exceeds third-plus whites' by
+**$81.2 / $81.2bn** on the accrual basis (**$1,900 / $1,900 per member**; oct05 on the same keys $79.4 / $79.4bn), and
+by **$15.2 / $15.9bn** on the cash-benefit convention (oct05 $14.1 / $14.6bn). The union's own charge is $63.0 /
+$71.4bn on matched keys ($64.0 / $74.2bn on engine keys), whites' −$18.2 / −$9.8bn and the average slice's $13.9 /
+$21.9bn. The comparators' hospital term stays beside, at the team lead's decision; with it the differences over whites
+would be $0.78bn larger. The 2005 window only. [CALCULATION: `legacy.py --case oct07` → `derived/oct07/legacy_main.csv`,
+`derived/oct07/legacy_differences.csv`]]
+
+claude-opus-5-5 (v6 propagation, group D, prop-d)
+
+**Rules (v5's, plus the items and the IPEDS keys).**
+- `group_lines.py --case oct07` writes `derived/group_lines_oct07.csv` from the white lane's oct07 run. Both union rows
+  carry the items' union parts: the engine union's lines are the case's own, and the rough union takes the union-only
+  lines and the user-fee item's carrier receipt lines at the engine's amounts (the white lane's rule 5). Every group's
+  accrual is on the 2026 separate-funds path at its own accrual per tax dollar. Gate: each group's cost reproduces the
+  white lane's `rekey_summary_oct07.csv` (5e-5).
+- [ASSUMPTION] **The IPEDS keys, one rule for both sides** (the lead's decision of 2026-10-07, a named defect fix). The
+  rough keys charged Pell, inside other federal benefits, by Social Security receipt. The rough union and A1 now take
+  Pell by each group's IPEDS share and public higher education by its measured use; on oct07 they also take item 4's
+  tuition by use. The comparators' hospital charges by MEPS payer shares are priced beside the central (the lead's
+  decision of 2026-10-07), and the union's come through the engine's share, as in the case. oct05 is rebuilt on the
+  Pell and higher-education keys; sept29 keeps the September 27 keys, because three outside lanes check against its
+  default run. The white lane's v6 section holds the shares, the parts and the fees left out.
+- `legacy.py --case oct07` follows the debt lane's oct07 run. Its `case_split` builds the items into each corner and
+  its twin (the twin is the union at the case with the edit sets' union parts), so the added people, the case less its
+  twin, carry only their own parts. The 2024 lines carry the items, and every earlier year scales them as on oct05.
+- v5's other rules hold: comparator slices on the lineage's composite path [ASSUMPTION], the added people's relative
+  income the union's [ASSUMPTION], the 2005 window only, per member over 42,752,213, and the per-head key 0.129182
+  (v6's `meta.responses.general_government.s`, the same as v5's).
+
+**2005 window, central convention** (2024 interest, $bn, low / high; $ per member):
+
+| Basis | Group | oct07 | Per member | oct05, IPEDS keys | oct05 as first run |
+|---|---|---:|---:|---:|---:|
+| Accrual | Union, engine | 63.97 / 74.19 | 1,496 / 1,735 | 63.33 / 73.36 | 63.33 / 73.36 |
+| | Union, rough | 63.05 / 71.44 | 1,475 / 1,671 | 64.40 / 72.75 | 62.23 / 70.58 |
+| | A1 | −18.17 / −9.81 | −425 / −229 | −14.98 / −6.64 | −13.25 / −4.91 |
+| | All residents | 13.90 / 21.86 | 325 / 511 | 16.52 / 24.46 | 16.52 / 24.46 |
+| Cash | Union, engine | 31.82 / 44.17 | 744 / 1,033 | 30.63 / 42.62 | 30.63 / 42.62 |
+| | Union, rough | 29.41 / 38.51 | 688 / 901 | 30.18 / 39.02 | 28.01 / 36.86 |
+| | A1 | 14.26 / 22.62 | 334 / 529 | 16.06 / 24.40 | 17.79 / 26.13 |
+| | All residents | 19.36 / 27.32 | 453 / 639 | 20.64 / 28.58 | 20.64 / 28.58 |
+
+| Difference, 2024 interest ($bn; $ per member) | oct07 | oct05, IPEDS keys | oct05 as first run |
+|---|---:|---:|---:|
+| **Accrual, rough − A1** | **81.22 / 81.25 ($1,900 / 1,900)** | 79.37 / 79.39 ($1,857 / 1,857) | 75.48 / 75.49 ($1,765 / 1,766) |
+| Accrual, rough − all residents | 49.15 / 49.58 ($1,150 / 1,160) | 47.88 / 48.29 ($1,120 / 1,129) | 45.71 / 46.12 ($1,069 / 1,079) |
+| Accrual, engine − A1 | 82.14 / 84.00 | 78.31 / 80.00 | 76.58 / 78.27 |
+| Accrual with payroll carry, rough − A1 | 71.83 / 71.92 | 69.83 / 69.89 | 65.93 / 65.99 |
+| **Cash, rough − A1** | **15.15 / 15.89 ($354 / 372)** | 14.12 / 14.62 ($330 / 342) | 10.22 / 10.73 ($239 / 251) |
+| Cash, rough − all residents | 10.05 / 11.19 | 9.54 / 10.44 | 7.37 / 8.27 |
+| Cash, engine − A1 | 17.56 / 21.55 | 14.57 / 18.22 | 12.84 / 16.49 |
+
+[CALCULATION: `derived/oct07/legacy_main.csv`, `derived/oct07/legacy_differences.csv`; the oct05 columns from
+`derived/oct05/` as rebuilt and as committed in 0c94eee0]
+
+### The IPEDS keys
+
+The keys move only two lines of the group files: other federal benefits (Pell) and education services
+(higher-education use and, on oct07, tuition). The comparators' hospital term, beside the central, would move health
+services. Each key's part of the move comes from a scratch run of `legacy.py` on the old group lines with one changed
+line taken from the new file. The old lines are HEAD's `group_lines_oct05.csv`, and for oct07 the white library's run
+before the keys, on the September 27 rough keys.
+
+| 2024 interest, $bn (both ends, both bases) | Pell | Higher-education use | Tuition | Total | Hospital charges (beside) |
+|---|---:|---:|---:|---:|---:|
+| oct05: union, rough keys | +2.29 | −0.12 | | +2.17 | |
+| oct05: A1 | −1.67 | −0.06 | | −1.73 | |
+| oct05: rough − A1 | +3.96 | −0.06 | | +3.90 | |
+| oct07: union, rough keys | +2.29 | −0.12 | +0.06 | +2.23 | the case's own |
+| oct07: A1 | −1.67 | −0.06 | +0.01 | −1.72 | −0.78 |
+| oct07: rough − A1 | +3.96 | −0.06 | +0.05 | +3.95 | +0.78 |
+
+Pell's difference (3.954) prints 3.96 so each row adds and the gap rows are the union's less A1's. On oct07 the parts
+add to the final run's change exactly (residual below 1e-5): the Pell and education variants' swapped lines are the
+final file's, and the final file's health-services rows are the rough keys', so no hospital term is in the central. The
+hospital column is the earlier run with the term in, less the rough keys' run. Tuition and use share the education
+line, so they are split in proportion to their 2024 amounts, which is exact because a line's legacy is linear in its
+amount; the use part on oct07 reproduces oct05's. [CALCULATION: scratch runs `legacy_parts/` (seven runs; the oct05
+base reproduces HEAD's five oct05 files byte for byte) and `attribute_v6final.py` on the final oct07 files]
+
+- **Pell** is all federal, so it carries almost the whole move. The union's Pell rises by $4.02bn a year and A1's falls
+  by $2.95bn, and 2005–2023 compound those 2024 amounts on each group's path.
+- **Higher-education use** is mostly a state and local line, so its federal part is small. The move is identical at
+  both ends and on both bases because the changed lines carry the same amounts in each.
+- **The college capital term** does not enter. The legacy compounds federal flows and reads no scalar row, and the
+  capital return sits in `cost_bn`.
+- **The all-residents slice** takes none of the keys' parts: its IPEDS shares are its population share. Beside, it would
+  take a hospital term of $0.004bn on oct07, which would move its legacy by $0.001bn.
+- **The other v6 items.** From oct05 on the IPEDS keys to oct07 the accrual difference rises $1.84 / 1.86bn: the
+  tuition term gives $0.05bn at both ends, and v6's other items (the 2026 pension path, retiree health on accrual, the
+  added people's ages) give $1.79 / 1.81bn [CALCULATION: by difference]. On cash it rises $1.04 / 1.27bn, $0.99 /
+  1.22bn of it from the other items. A1's 2024 federal gap falls $6.6bn on accrual and $3.1bn on cash from oct05 on the
+  IPEDS keys to oct07 (`federal_gap_by_group.csv`, year 2024).
+
+**Readers outside this lane** (not edited here):
+- `pension_legacy_2026_09_30/pension_legacy.py` reads `derived/group_lines_<case>.csv`. On oct05 its comparator rows
+  move with the rebuilt rough-union and A1 lines; the engine union's lines do not move. On oct07 the comparator rows
+  carry the tuition term and no hospital term. That lane's worker in this propagation was told the files are final at
+  17:02:37.
+- `number_drift_audit_2026_09_29/source_map.csv` rows 546, 547, 549, 550, 972, 973, 1001 and 1002 read
+  `derived/oct05/`. On the rebuilt files the INDEX and FAQ figures they check become 75.5 → 79.4, 65.9–66.0 →
+  69.8–69.9, $62.2–70.6bn → $64.4–72.8bn, −$13.2 to −$4.9bn → −$15.0 to −$6.6bn, $1.8k → $1.9k and $10.2–10.7bn →
+  $14.1–14.6bn. Rows 969, 971 and 1000 do not move. The audit could not run on this tree at 16:14: a peer's docs edit
+  leaves 12 of its anchors unmatched, so these values are read from the files by the rows' selectors.
+
+**Gates.** `legacy.py --case oct07` exits 0.
+- **Parity:** the engine union through this code path reproduces the debt lane's `derived/oct07/stocks.csv` and
+  `federal_gap_annual.csv` in 12 specifications, within **4.96e-07bn** (tolerance 1e-6): cash central 31.823258 /
+  44.169319, accrual central 63.971339 / 74.190663, as the lane.
+- The lineage path equals the lane's `lineage_programme` exactly (largest difference 0.0); each twin plus its added
+  part is the group's corner in 2024 (1e-9).
+- `group_lines.py --case oct07`: each group's cost reproduces `rekey_summary_oct07.csv` (5e-5).
+- `legacy.py --case oct05` on the rebuilt lines exits 0; its `gates.json` and `paths.csv` are unchanged, and four CSVs
+  move.
+- `pytest` on the lane: 3 passed.
+- `rerun_lane.py` over the lane: see the log.
+
+**Reproduce (oct07)**, after the white lane's oct07 run (`rekey_sept29.py --case oct07`) and the debt lane's
+`--case oct07`:
+
+```sh
+L=infra/immigration-fiscal/legacy_comparators_2026_09_30
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/group_lines.py --case oct07
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/legacy.py --case oct07
+```
+
+New: `derived/group_lines_oct07.csv` and `derived/oct07/` (the six file names of `derived/oct05/`). `legacy.py` and
+`group_lines.py` gained the `oct07` case; `group_lines.py`'s docstring names the IPEDS keys.
+
+**Log (times from `date` or the files' clock).**
+- 2026-10-07 15:36:00 and 15:36:04 JST: `group_lines.py --case oct05` and `--case oct07` in place, after the white
+  lane's IPEDS rebuild.
+- 2026-10-07 15:40:04 and 15:40:20 JST: `legacy.py --case oct05` and `--case oct07` in place, exit 0; each equals its
+  scratch run.
+- 2026-10-07 16:13:06 JST: the seven attribution runs in scratch.
+- 2026-10-07 16:16:38 JST: `pytest`, 3 passed.
+- 2026-10-07 16:17 JST: this section written.
+- After 16:17: the team lead declared v6 final and took the comparators' hospital term out of their central on oct07
+  (beside, with a revisit item); the white library's `HOSPITAL_ON = False`.
+- 2026-10-07 17:02:34–17:02:37 JST (by `date`): `group_lines.py --case oct07` in place, exit 0. Against the 15:36
+  file, only A1's and the all-residents slice's health-services rows and their `cost_bn` rows move (+2.650655 and
+  −0.003608bn, every basis and end); `group_lines_sept29.csv` and `_oct05.csv` are unchanged.
+- 2026-10-07 17:09:13–17:09:27 JST (by `date`): `legacy.py --case oct07` in place, exit 0; four CSVs change and
+  `gates.json` and `paths.csv` do not. The attribution's oct07 rows recomputed from the final files.
+- 2026-10-07 17:14:24–17:15:55 JST (by `date`): `rerun_lane.py` with all eight commands (`acs_inputs.py`, the sept29,
+  oct05 and oct07 pairs, and `pytest` on `test_legacy.py`): **IDENTICAL 29/29, exit 0**.

@@ -51,6 +51,13 @@ the zero-cell audit are not. The payroll-carry arm runs on the standard pass, ea
 engine union reproduces the debt lane's derived/oct05/ stocks.csv and federal_gap_annual.csv (1e-6), this file's
 lineage path reproduces the lane's lineage_programme for it (1e-9), and each twin table is the twin corner's lines.
   OPENBLAS_NUM_THREADS=1 uv run python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/legacy.py --case oct05
+
+--case oct07 runs main case v6 of 2026-10-07 (main_case_2026_10_07: v5 plus the four items of its payload's
+meta.items; the debt lane's derived/oct07/) the same way and writes derived/oct07/, after group_lines.py --case oct07.
+The debt lane's case_split builds the items into each corner and its twin (union_model: the union at the case with
+the edit sets' union parts), so the added people, the case less its twin, carry only their own parts; the gates are
+oct05's, against the debt lane's derived/oct07/.
+  OPENBLAS_NUM_THREADS=1 uv run python3 infra/immigration-fiscal/legacy_comparators_2026_09_30/legacy.py --case oct07
 """
 from __future__ import annotations
 
@@ -70,7 +77,8 @@ CASE = "sept29"          # the case setup() builds (main() sets it)
 # Per case: the groups' lines (group_lines.py), the debt lane's directory under its derived/, this lane's output
 # directory, and whether the case carries the lineage (oct05: the 2005 window on the lineage's composite path).
 CASES = {"sept29": dict(lines="group_lines_sept29.csv", lane_dir="sept29", out=HERE / "derived", lineage=False),
-         "oct05": dict(lines="group_lines_oct05.csv", lane_dir="oct05", out=HERE / "derived" / "oct05", lineage=True)}
+         "oct05": dict(lines="group_lines_oct05.csv", lane_dir="oct05", out=HERE / "derived" / "oct05", lineage=True),
+         "oct07": dict(lines="group_lines_oct07.csv", lane_dir="oct07", out=HERE / "derived" / "oct07", lineage=True)}
 GROUPS = ("mexican_origin_engine", "mexican_origin_rough", "A1_third_plus_nh_white", "all_residents_slice")
 UNION = ("mexican_origin_engine", "mexican_origin_rough")
 BASES = ("cash", "accrual")
@@ -585,5 +593,6 @@ def main(case: str = "sept29") -> None:
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=list(CASES), help="sept29 (default, derived/) or oct05 (v5, derived/oct05/)")
+    ap.add_argument("--case", default="sept29", choices=list(CASES),
+                    help="sept29 (default, derived/), oct05 (v5, derived/oct05/) or oct07 (v6, derived/oct07/)")
     main(ap.parse_args().case)

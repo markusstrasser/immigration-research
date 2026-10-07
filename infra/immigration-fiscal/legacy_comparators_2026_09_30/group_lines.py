@@ -22,6 +22,18 @@ Output: derived/group_lines_sept29.csv (tracked). Run from the repository root:
 union rows carry the 3,039,720 added people at the case lane's amounts on every line (the engine union's lines are the
 case's own), A1 and the all-residents slice are on the lineage's 42,752,213, and the gate reads the white lane's
 rekey_summary_oct05.csv. The capital return is in each group's cost_bn row, as for sept29.
+
+--case oct07 writes derived/group_lines_oct07.csv from the library's oct07 run (main case v6, main_case_2026_10_07: v5
+plus the items of its payload's meta.items): as oct05, with the items' union parts on both union rows (the engine union's
+lines are the case's own; the rough union takes the union-only lines and the user-fee item's carrier receipt lines at
+the engine's amounts, the library's rule 5), every group's accrual on the 2026 separate-funds path, and the gate on the
+white lane's rekey_summary_oct07.csv.
+
+On oct05 and oct07 the library keys Pell by each group's IPEDS share and public higher education by its measured use
+(the lead's decision of 2026-10-07, a named defect fix; sept29 keeps the September 27 keys), so the rough union's and
+A1's other_federal_benefits and education_services rows carry those terms. On oct07 the library adds item 4's tuition
+term on education_services; its hospital term stays beside the central (the team lead, 2026-10-07), so no
+health_services row carries it.
 """
 from __future__ import annotations
 
@@ -93,5 +105,6 @@ def main(case: str = "sept29") -> None:
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="sept29", choices=["sept29", "oct05"], help="sept29 (default) or oct05 (v5)")
+    ap.add_argument("--case", default="sept29", choices=["sept29", "oct05", "oct07"],
+                    help="sept29 (default), oct05 (v5) or oct07 (v6)")
     main(ap.parse_args().case)
