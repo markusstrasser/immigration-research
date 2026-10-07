@@ -46,8 +46,8 @@ warehouse/*.duckdb
 # in-progress warehouse builds (paths.staged_output); replaced atomically on success
 *.duckdb.building*
 
-# lane scratch caches (2026-09-18)
-**/_cache/
+# lane scratch caches (2026-09-18); no trailing slash so SSD symlinks match too (2026-10-07)
+**/_cache
 
 # Regenerated fiscal repair exports; existing tracked releases retain history.
 infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv
