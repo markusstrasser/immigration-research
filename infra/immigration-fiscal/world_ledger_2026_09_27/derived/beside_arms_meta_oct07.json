@@ -1,0 +1,953 @@
+{
+ "arm3b_decomposition": {
+  "mexico_change_bn": 15.136935275000003,
+  "mexico_public_goods_bn": 55.043401,
+  "us_public_goods_by_line_bn": {
+   "capital_air_fed": -0.0310564175,
+   "capital_gps_fed": -0.11956659999999998,
+   "capital_gps_sl": -1.015918122,
+   "capital_hwy_fed": -0.0561880665,
+   "capital_hwy_sl": -1.1740043980000001,
+   "capital_rec_fed": -0.0527668115,
+   "capital_rec_sl": -0.026014180499999984,
+   "defense": -107.982072101,
+   "economic_affairs_services": -19.4116289245,
+   "general_public_services": -13.931854845500002,
+   "housing_community_services": 0.0,
+   "recreation_culture": -0.4934966930000001,
+   "roads_vmt_fed": -0.013924838,
+   "roads_vmt_sl": -0.39801615700000004,
+   "state_price_recreation_culture": 0.3807948205
+  },
+  "us_total_bn": -144.3257133345
+ },
+ "basis": "lineage",
+ "case": "oct07",
+ "cmp_check": {
+  "cmp_cell": {
+   "arm1_cdmx": {
+    "mexico_per_worker": 12123.777718927486,
+    "ratio": 3.45404161897787,
+    "records": 71,
+    "us_per_worker": 41876.03282041212
+   },
+   "arm1_guadalajara": {
+    "mexico_per_worker": 16305.82252070418,
+    "ratio": 2.5681643944818107,
+    "records": 71,
+    "us_per_worker": 41876.03282041212
+   },
+   "arm1_large_localities": {
+    "mexico_per_worker": 15631.326676623488,
+    "ratio": 2.6789813613861297,
+    "records": 71,
+    "us_per_worker": 41876.03282041212
+   },
+   "arm1_metros": {
+    "mexico_per_worker": 14660.367607360438,
+    "ratio": 2.8564108310208867,
+    "records": 71,
+    "us_per_worker": 41876.03282041212
+   },
+   "arm1_monterrey": {
+    "mexico_per_worker": 19153.9710251945,
+    "ratio": 2.18628464903334,
+    "records": 71,
+    "us_per_worker": 41876.03282041212
+   },
+   "arm2_state_rpp": {
+    "mexico_per_worker": 14033.774548605881,
+    "ratio": 2.9842623094413887,
+    "records": 71,
+    "us_per_worker": 41880.46444460237
+   },
+   "baseline": {
+    "mexico_per_worker": 14033.774548605881,
+    "ratio": 2.98394652667212,
+    "records": 71,
+    "us_per_worker": 41876.03282041212
+   },
+   "combined": {
+    "mexico_per_worker": 14660.367607360438,
+    "ratio": 2.8567131170418745,
+    "records": 71,
+    "us_per_worker": 41880.46444460237
+   }
+  },
+  "cmp_re": 2.46,
+  "cmp_ro": 2.53,
+  "ratios": {
+   "arm1_cdmx": {
+    "per_person": 3.09996,
+    "per_worker": 3.0686287117402338
+   },
+   "arm1_guadalajara": {
+    "per_person": 2.56381,
+    "per_worker": 2.737174604871027
+   },
+   "arm1_large_localities": {
+    "per_person": 2.77487,
+    "per_worker": 2.805632996082856
+   },
+   "arm1_metros": {
+    "per_person": 2.79185,
+    "per_worker": 2.821230228322539
+   },
+   "arm1_metros_coneval": {
+    "per_person": 2.83979,
+    "per_worker": 2.8696747282583455
+   },
+   "arm1_metros_national_schooling": {
+    "per_person": 2.79185,
+    "per_worker": 2.821230228322539
+   },
+   "arm1_metros_nominal": {
+    "per_person": 2.66734,
+    "per_worker": 2.695409938647793
+   },
+   "arm1_monterrey": {
+    "per_person": 2.15276,
+    "per_worker": 2.1451064975429066
+   },
+   "arm2_metro_rpp": {
+    "per_person": 2.96652,
+    "per_worker": 3.116676154751791
+   },
+   "arm2_state_rpp": {
+    "per_person": 2.96332,
+    "per_worker": 3.1133141805546827
+   },
+   "baseline": {
+    "per_person": 2.98992,
+    "per_worker": 3.141260591068146
+   },
+   "combined": {
+    "per_person": 2.76701,
+    "per_worker": 2.7961288228489165
+   },
+   "combined_cdmx": {
+    "per_person": 3.07238,
+    "per_worker": 3.041327462733861
+   }
+  }
+ },
+ "combined_parts_equal_bn": {
+  "arm1_metros": -11.536499999999933,
+  "arm2_state_rpp": -17.097499999999968,
+  "arm3": -182.8949811562565
+ },
+ "emovi_respondents_at_14": {
+  "cdmx": 2830,
+  "guadalajara": 422,
+  "large_localities": 4730,
+  "metros": 3993,
+  "monterrey": 374
+ },
+ "enigh_persons_15plus_m": {
+  "cdmx": 7.971269,
+  "guadalajara": 4.749187,
+  "large_localities": 50.004019,
+  "metros": 27.224012,
+  "monterrey": 4.381537
+ },
+ "enoe_cdmx_check": {
+  "cdmx_enoe_shares_of_employed": {
+   "bracket_only": 0.379993712633418,
+   "no_income": 0.022950249379326753,
+   "not_specified": 0.13717266214473342
+  },
+  "cdmx_none": {
+   "enigh_monthly_mxn": 3898.218847368469,
+   "enigh_n": 64,
+   "enoe_monthly_mxn_amounts": 3832.9468863151333,
+   "enoe_monthly_mxn_as_lane": 2655.856577941714,
+   "enoe_n_amounts": 47,
+   "enoe_n_as_lane": 65,
+   "ratio_enigh_to_enoe_amounts": 1.0170291848515767,
+   "ratio_enigh_to_enoe_as_lane": 1.4677821384427259
+  },
+  "cdmx_preparatoria": {
+   "enigh_monthly_mxn": 10521.394310357056,
+   "enigh_n": 1309,
+   "enoe_monthly_mxn_amounts": 10138.029054227156,
+   "enoe_monthly_mxn_as_lane": 5540.363343657537,
+   "enoe_n_amounts": 1427,
+   "enoe_n_as_lane": 2611,
+   "ratio_enigh_to_enoe_amounts": 1.0378145746159657,
+   "ratio_enigh_to_enoe_as_lane": 1.8990440983264523
+  },
+  "cdmx_primaria": {
+   "enigh_monthly_mxn": 7170.917416942736,
+   "enigh_n": 422,
+   "enoe_monthly_mxn_amounts": 6378.293195946521,
+   "enoe_monthly_mxn_as_lane": 4095.6988224229053,
+   "enoe_n_amounts": 516,
+   "enoe_n_as_lane": 798,
+   "ratio_enigh_to_enoe_amounts": 1.1242690162785143,
+   "ratio_enigh_to_enoe_as_lane": 1.7508409987774967
+  },
+  "cdmx_primaria_incompleta": {
+   "enigh_monthly_mxn": 6164.988459708461,
+   "enigh_n": 137,
+   "enoe_monthly_mxn_amounts": 6381.112527429177,
+   "enoe_monthly_mxn_as_lane": 4238.1571552557025,
+   "enoe_n_amounts": 135,
+   "enoe_n_as_lane": 200,
+   "ratio_enigh_to_enoe_amounts": 0.9661306603211105,
+   "ratio_enigh_to_enoe_as_lane": 1.4546389465674512
+  },
+  "cdmx_profesional": {
+   "enigh_monthly_mxn": 23250.740516280133,
+   "enigh_n": 1194,
+   "enoe_monthly_mxn_amounts": 20876.302925702454,
+   "enoe_monthly_mxn_as_lane": 10135.429131904606,
+   "enoe_n_amounts": 1165,
+   "enoe_n_as_lane": 2408,
+   "ratio_enigh_to_enoe_amounts": 1.1137384142694309,
+   "ratio_enigh_to_enoe_as_lane": 2.2940065204630318
+  },
+  "cdmx_secundaria": {
+   "enigh_monthly_mxn": 7504.717932953277,
+   "enigh_n": 1237,
+   "enoe_monthly_mxn_amounts": 7688.987874961768,
+   "enoe_monthly_mxn_as_lane": 4843.614552987027,
+   "enoe_n_amounts": 1423,
+   "enoe_n_as_lane": 2240,
+   "ratio_enigh_to_enoe_amounts": 0.9760345646260488,
+   "ratio_enigh_to_enoe_as_lane": 1.549404448032547
+  },
+  "national_enoe_shares_of_employed": {
+   "bracket_only": 0.16861424314011172,
+   "no_income": 0.04669746992745327,
+   "not_specified": 0.1344683669212463
+  },
+  "national_none": {
+   "enigh_monthly_mxn": 3701.188627149788,
+   "enigh_n": 4930,
+   "enoe_monthly_mxn_amounts": 4417.447719677212,
+   "enoe_monthly_mxn_as_lane": 3966.03677152593,
+   "enoe_n_amounts": 7397,
+   "enoe_n_as_lane": 8172,
+   "ratio_enigh_to_enoe_amounts": 0.8378568037518818,
+   "ratio_enigh_to_enoe_as_lane": 0.933220955923149
+  },
+  "national_preparatoria": {
+   "enigh_monthly_mxn": 9876.959011448995,
+   "enigh_n": 38329,
+   "enoe_monthly_mxn_amounts": 8929.561532088992,
+   "enoe_monthly_mxn_as_lane": 6922.852666530147,
+   "enoe_n_amounts": 72278,
+   "enoe_n_as_lane": 87392,
+   "ratio_enigh_to_enoe_amounts": 1.1060967524503265,
+   "ratio_enigh_to_enoe_as_lane": 1.426718072334695
+  },
+  "national_primaria": {
+   "enigh_monthly_mxn": 6485.08916793184,
+   "enigh_n": 23722,
+   "enoe_monthly_mxn_amounts": 6564.415508270001,
+   "enoe_monthly_mxn_as_lane": 5674.298649575833,
+   "enoe_n_amounts": 39786,
+   "enoe_n_as_lane": 45276,
+   "ratio_enigh_to_enoe_amounts": 0.9879157039589856,
+   "ratio_enigh_to_enoe_as_lane": 1.142888234903994
+  },
+  "national_primaria_incompleta": {
+   "enigh_monthly_mxn": 4982.292215482338,
+   "enigh_n": 12440,
+   "enoe_monthly_mxn_amounts": 5531.470012925364,
+   "enoe_monthly_mxn_as_lane": 4902.369767113477,
+   "enoe_n_amounts": 14219,
+   "enoe_n_as_lane": 15818,
+   "ratio_enigh_to_enoe_amounts": 0.9007175676339627,
+   "ratio_enigh_to_enoe_as_lane": 1.0163028192824222
+  },
+  "national_profesional": {
+   "enigh_monthly_mxn": 17807.806090160466,
+   "enigh_n": 24227,
+   "enoe_monthly_mxn_amounts": 15292.02325720441,
+   "enoe_monthly_mxn_as_lane": 10655.267874592828,
+   "enoe_n_amounts": 55346,
+   "enoe_n_as_lane": 71830,
+   "ratio_enigh_to_enoe_amounts": 1.1645160218920552,
+   "ratio_enigh_to_enoe_as_lane": 1.6712677991533798
+  },
+  "national_secundaria": {
+   "enigh_monthly_mxn": 7719.669796850572,
+   "enigh_n": 50668,
+   "enoe_monthly_mxn_amounts": 7684.530101283629,
+   "enoe_monthly_mxn_as_lane": 6480.5917840952725,
+   "enoe_n_amounts": 89580,
+   "enoe_n_as_lane": 102808,
+   "ratio_enigh_to_enoe_amounts": 1.0045727839053,
+   "ratio_enigh_to_enoe_as_lane": 1.1911982815822864
+  }
+ },
+ "fhl_wtp_per_dollar": [
+  0.22027777777777777,
+  0.3947222222222222,
+  0.4652777777777778
+ ],
+ "icp2021": {
+  "ppp_actual_health": 8.08911609649658,
+  "ppp_collective_government": 5.95883703231812,
+  "ppp_gdp": 9.94168567657471,
+  "ppp_individual_government": 3.95120811462402,
+  "price_level_mexico_over_us": {
+   "1000000": 0.4904047746362791,
+   "1300000": 0.19490571197185905,
+   "1400000": 0.2939382944699078,
+   "9080000": 0.399020979475975
+  },
+  "r_health": 0.8136563918487905,
+  "r_public": 0.5993789409736364,
+  "r_social": 0.3974384468756773
+ },
+ "lane_medicaid_vg": [
+  0.76,
+  0.92,
+  1.08
+ ],
+ "members": 42752213,
+ "metro_definition": {
+  "municipalities": {
+   "1": 46,
+   "2": 8,
+   "3": 13
+  }
+ },
+ "prices": {
+  "coneval_food_urban_over_national": 1.0542360496417156,
+  "coneval_urban_over_national": 1.0646552269865244,
+  "hedonic_owners": {
+   "n": 65964,
+   "r2": 0.5789183311240118,
+   "regressors": 73
+  },
+  "hedonic_renters": {
+   "n": 11566,
+   "r2": 0.5713875615060329,
+   "regressors": 72
+  },
+  "hedonic_renters_size_only": {
+   "n": 11566,
+   "r2": 0.4483230381122587,
+   "regressors": 11
+  },
+  "housing_share_national": 0.1911216397897563,
+  "rent_index_owners": {
+   "cdmx": 1.7103840568181476,
+   "guadalajara": 1.17325980022175,
+   "loc_15k_100k": 0.8975353998240125,
+   "loc_2500_15k": 0.8113529954389123,
+   "monterrey": 1.0232850937193474,
+   "other_100k": 1.108509124822789,
+   "rural": 0.7140052206875273,
+   "vdm_edomex": 1.0845384938023799
+  },
+  "rent_index_renters": {
+   "cdmx": 1.6260404251980634,
+   "guadalajara": 1.098156777517104,
+   "loc_15k_100k": 0.8860541340531457,
+   "loc_2500_15k": 0.8344654093676803,
+   "monterrey": 1.061763750639042,
+   "other_100k": 1.0969185741312553,
+   "rural": 0.7484130573365546,
+   "vdm_edomex": 1.10807841877468
+  },
+  "rent_index_renters_size_only": {
+   "cdmx": 1.9712228961447524,
+   "guadalajara": 1.1263518266761545,
+   "loc_15k_100k": 0.8388191549765623,
+   "loc_2500_15k": 0.7855025230606135,
+   "monterrey": 1.1427844545112544,
+   "other_100k": 1.111963908389543,
+   "rural": 0.6600757576479475,
+   "vdm_edomex": 1.0793406002654067
+  },
+  "urban_person_share": 0.7813807508408176,
+  "variants": {
+   "cdmx": {
+    "housing_share_own": 0.26865893944647334,
+    "price_level": 1.11964987263853,
+    "price_level_owners": 1.1357697658195838,
+    "price_level_paasche": 1.1153695264598282,
+    "price_level_size_only": 1.1856217125125412,
+    "rent_index": 1.6260404251980631,
+    "rent_index_owners": 1.7103840568181474,
+    "rent_index_size_only": 1.9712228961447527
+   },
+   "guadalajara": {
+    "housing_share_own": 0.2045278427787066,
+    "price_level": 1.0187598842755472,
+    "price_level_owners": 1.0331136971280266,
+    "price_level_paasche": 1.0186217865502434,
+    "price_level_size_only": 1.0241485683047777,
+    "rent_index": 1.098156777517104,
+    "rent_index_owners": 1.1732598002217502,
+    "rent_index_size_only": 1.1263518266761545
+   },
+   "large_localities": {
+    "housing_share_own": 0.21505540841566662,
+    "price_level": 1.0330877789703234,
+    "price_level_owners": 1.0364985210298652,
+    "price_level_paasche": 1.0327771160374195,
+    "price_level_size_only": 1.0450663211737774,
+    "rent_index": 1.1731241894257594,
+    "rent_index_owners": 1.1909701123850516,
+    "rent_index_size_only": 1.2357991550478156
+   },
+   "metros": {
+    "housing_share_own": 0.221833952362983,
+    "price_level": 1.0466791018893047,
+    "price_level_owners": 1.050950578116656,
+    "price_level_paasche": 1.0455273861292427,
+    "price_level_size_only": 1.0667707743071086,
+    "rent_index": 1.2442376590147208,
+    "rent_index_owners": 1.2665871754381357,
+    "rent_index_size_only": 1.3493627115200555
+   },
+   "monterrey": {
+    "housing_share_own": 0.21025825770390438,
+    "price_level": 1.0118043893016992,
+    "price_level_owners": 1.0044502852942998,
+    "price_level_paasche": 1.012382359163665,
+    "price_level_size_only": 1.027289199082677,
+    "rent_index": 1.061763750639042,
+    "rent_index_owners": 1.0232850937193474,
+    "rent_index_size_only": 1.1427844545112544
+   }
+  }
+ },
+ "rpp_assignment": {
+  "msa": 15562,
+  "portion": 2399,
+  "state": 370
+ },
+ "rpp_by_generation": {
+  "G1": {
+   "earnings": 102.45905915395726,
+   "earnings_metro": 102.47270359997563,
+   "persons": 102.5705027082283,
+   "persons_metro": 102.2873787381496
+  },
+  "G2": {
+   "earnings": 103.7369371775441,
+   "earnings_metro": 103.56279425260244,
+   "persons": 102.68109691787103,
+   "persons_metro": 102.23488421982172
+  },
+  "G3+": {
+   "earnings": 101.62480308247169,
+   "earnings_metro": 100.9175238120157,
+   "persons": 101.27866082391606,
+   "persons_metro": 100.28176671736166
+  }
+ },
+ "scenario_detail": {
+  "arm1_cdmx": {
+   "e_mx_central_bn": {
+    "G1": 98.6113,
+    "G2": 79.62125,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 20.24763,
+    "G2": 16.697365,
+    "G3+": 87.15735729346956
+   }
+  },
+  "arm1_guadalajara": {
+   "e_mx_central_bn": {
+    "G1": 121.352,
+    "G2": 97.61070000000001,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 23.50515,
+    "G2": 18.535895000000004,
+    "G3+": 78.75746197948808
+   }
+  },
+  "arm1_large_localities": {
+   "e_mx_central_bn": {
+    "G1": 111.799,
+    "G2": 92.92435,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 22.15887,
+    "G2": 18.76029,
+    "G3+": 83.64928276977146
+   }
+  },
+  "arm1_metros": {
+   "e_mx_central_bn": {
+    "G1": 110.305,
+    "G2": 89.50965,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 22.23494,
+    "G2": 18.325345,
+    "G3+": 84.73047556938313
+   }
+  },
+  "arm1_metros_coneval": {
+   "e_mx_central_bn": {
+    "G1": 108.442,
+    "G2": 87.99835,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 21.859479999999998,
+    "G2": 18.015935,
+    "G3+": 84.73065046756356
+   }
+  },
+  "arm1_metros_national_schooling": {
+   "e_mx_central_bn": {
+    "G1": 110.305,
+    "G2": 89.32365,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 22.23494,
+    "G2": 18.262355,
+    "G3+": 84.67275570729777
+   }
+  },
+  "arm1_metros_nominal": {
+   "e_mx_central_bn": {
+    "G1": 115.454,
+    "G2": 93.6879,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 23.27282,
+    "G2": 19.18076,
+    "G3+": 84.73026229269345
+   }
+  },
+  "arm1_monterrey": {
+   "e_mx_central_bn": {
+    "G1": 143.626,
+    "G2": 111.458,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 30.9808,
+    "G2": 23.386699999999998,
+    "G3+": 86.89401347713043
+   }
+  },
+  "arm2_metro_rpp": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 404.516
+   },
+   "e_us_bn": {
+    "G1": 334.061,
+    "G2": 326.836,
+    "G3+": 404.516
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.0267171943684
+   }
+  },
+  "arm2_state_rpp": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 78.35902162265228
+   }
+  },
+  "arm2_state_rpp_budget": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 78.35902162265228
+   }
+  },
+  "arm3": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3_high": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3_icp": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3_low": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3a": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3a_mexico_health_lane": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3b": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3b_icp": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3c_fhl": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3c_fhl_high": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3c_fhl_low": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "baseline": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "combined": {
+   "e_mx_central_bn": {
+    "G1": 110.305,
+    "G2": 89.50965,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 22.23494,
+    "G2": 18.325345,
+    "G3+": 83.81026867244573
+   }
+  },
+  "combined_cdmx": {
+   "e_mx_central_bn": {
+    "G1": 98.6113,
+    "G2": 79.62125,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 20.24763,
+    "G2": 16.697365,
+    "G3+": 86.1983626140067
+   }
+  },
+  "combined_icp": {
+   "e_mx_central_bn": {
+    "G1": 110.305,
+    "G2": 89.50965,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 22.23494,
+    "G2": 18.325345,
+    "G3+": 83.81026867244573
+   }
+  }
+ },
+ "sources": {
+  "bea_marpp": {
+   "bytes": 146479,
+   "path": "sources/immigration-fiscal/data/external/stage3/bea/rpp_2024/MARPP.zip",
+   "sha256": "5dbf2e6ac2af222cc9abc205586c9b480344d89392752eb689c3ec823a34c83e",
+   "url": "https://apps.bea.gov/regional/zip/MARPP.zip"
+  },
+  "bea_parpp": {
+   "bytes": 39148,
+   "path": "sources/immigration-fiscal/data/external/stage3/bea/rpp_2024/PARPP.zip",
+   "sha256": "eb1378571316b22d5e7557b5565019cbe01fe1b5ea7dcdfcd979fc5751764f79",
+   "url": "https://apps.bea.gov/regional/zip/PARPP.zip"
+  },
+  "bea_sarpp": {
+   "bytes": 39230,
+   "path": "sources/immigration-fiscal/data/external/stage3/bea/rpp_2024/SARPP.zip",
+   "sha256": "38713c6224c4c26ae020ffecd4549b82dca84f43d34f93dfdb43f4070cf011da",
+   "url": "https://apps.bea.gov/regional/zip/SARPP.zip"
+  },
+  "coneval_lp": {
+   "bytes": 178443,
+   "path": "sources/immigration-fiscal/data/external/stage3/coneval/lineas_pobreza_2024/Lineas_de_Pobreza_por_Ingresos_ago_2024.pdf",
+   "sha256": "b73d6213944da1e1871a2f1aba1fe668f51115737e3eb0b2d047758aacb39cdd",
+   "url": "https://www.coneval.org.mx/Medicion/Documents/Lineas_de_Pobreza_por_Ingresos/Lineas_de_Pobreza_por_Ingresos_ago_2024.pdf"
+  },
+  "enigh_viviendas": {
+   "bytes": 1848886,
+   "path": "sources/immigration-fiscal/data/external/stage3/inegi/enigh2024_viviendas/enigh2024_ns_viviendas_csv.zip",
+   "sha256": "ac1a56ed6e23b9feec952a28cb757fc0baa9a06fa303579996db9156553758cf",
+   "url": "https://www.inegi.org.mx/contenidos/programas/enigh/nc/2024/microdatos/enigh2024_ns_viviendas_csv.zip"
+  },
+  "icp2021": {
+   "bytes": 11316,
+   "path": "sources/immigration-fiscal/data/external/stage3/worldbank/icp2021/icp2021_mex_usa.json",
+   "sha256": "996c9fc3425e89e132b7730c4936bc5f253141018dca0d4d9a955044fa1f2b9c",
+   "url": "https://api.worldbank.org/v2/sources/90/country/MEX;USA/series/1000000;9080000;1300000;1400000;9270000;9020000/classification/PPPGlob;PX.WL;EXR/time/YR2021/data?format=json&per_page=500"
+  }
+ },
+ "transitions_pooling": {
+  "cdmx": {
+   "cohort": 13,
+   "sex+cohort": 35
+  },
+  "guadalajara": {
+   "all": 26,
+   "cohort": 5,
+   "national": 16,
+   "sex+cohort": 1
+  },
+  "large_localities": {
+   "cohort": 4,
+   "sex+cohort": 44
+  },
+  "metros": {
+   "cohort": 7,
+   "sex+cohort": 41
+  },
+  "monterrey": {
+   "all": 36,
+   "cohort": 4,
+   "national": 8
+  }
+ }
+}

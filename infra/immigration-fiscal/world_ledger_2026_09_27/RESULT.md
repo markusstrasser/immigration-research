@@ -2252,3 +2252,265 @@ Log (times from `date`):
   `world_ledger_meta_oct07.json` and `world_ledger_meta_oct07_row4.json` changed.
 - 2026-10-07 17:49:11–17:50:16 JST: the rerun with the 29 commands, IDENTICAL, 119/119 files, exit 0;
   17:50:16–17:51:19 JST: `run_all.sh` with the five cases under the same checker, IDENTICAL, 119/119, exit 0.
+
+## Beside arms (operator, 2026-10-07)
+
+**Verdict:** Each of the operator's three objections lowers the world total, by very different amounts. Together,
+at their central values, they take it from +$321.1bn a year to +$109.6bn at equal weights (+$235.0bn to +$20.8bn at
+λ_h). The group's gain per member falls from $16,207 to $11,478. The weight on the group at which the world breaks
+even rises from 0.54 to 0.78 (US only: 0.68 to 0.96). The better Mexican job (arm 1, −$11.5bn) and US prices where
+the group lives (arm 2, −$17.1bn) are small; almost all of the fall is arm 3 (−$182.9bn). Most of arm 3 is a
+valuation convention rather than a measured price: 3(b) values US national defense at zero to the group, −$108.0bn
+of its −$144.3bn on the US side. With the ICP check in place of 3(b), the combination gives +$147.5bn. These are
+beside numbers; the ledger's central does not change. [CALCULATION: beside_arms.py,
+derived/beside_arms_summary_oct07.csv; FRAMING-SENSITIVE: arm 3 is a valuation]
+
+Requested by the operator at 20:51 JST: "run the side scenarios ... and use common sense too". The arms test three
+objections:
+- (i) the counterfactual should be the best job the person could get in Mexico, such as one in the capital;
+- (ii) US prices are higher where the group lives;
+- (iii) US services cost far more than the same services in Mexico.
+
+All arms run on main case v6 (`oct07`) on its own lineage basis, 42,752,213 members, in the central scenario:
+public goods at average cost, Mexican taxes withheld plus consumption, G3+ at its zero bound. Each arm swaps one
+input of `world_ledger.py`'s rows: the premium table or the valuation lines, plus the two health row families it
+reprices. Every other row and every weight is the lane's.
+
+### 1. Best domestic alternative
+
+- **Where.** Mexico's three big metropolitan labor markets: the 46 municipalities of Valle de México (Mexico City's
+  16 alcaldías and 30 in the State of Mexico), Guadalajara's 8 and Monterrey's 13. These are the municipalities INEGI's
+  ENOE 2024 samples as self-representing cities 1–3, and they hold 27.2m of ENIGH 2024's Mexicans aged 15+.
+  [DATA: ENOE SDEMT cd_a; ENIGH ubica_geo]
+- **Pay.** For each sex and schooling category, ENIGH pay per person in the metros is set against the national cell
+  of the same sex, age band and schooling. That ratio scales every national cell, separately for gross pay, take-home
+  pay, withheld tax, consumption tax, employment and hours. The 15–24-year-olds' cells are scaled by sex and age band.
+  Cells under 100 records pool across sex. [CALCULATION: derived/beside_arms_ratios.csv]
+- **Schooling.** G2's own schooling is drawn from the 3,993 EMOVI 2017 respondents who lived in those municipalities
+  at 14. [DATA: EMOVI p23_1]
+- **Prices.** Metro pay is divided by the metro price level, P = 1 + s_h(R − 1) = 1.047:
+  - R = 1.244 is a hedonic rent index: renters' monthly rent on 11,566 dwellings, regressed on rooms, bathrooms,
+    materials, services and area (R² 0.57), against the national person-weighted mean;
+  - s_h = 0.191 is the national housing share of consumption: rent paid and owners' imputed rent, over monetary
+    spending plus imputed rent;
+  - other prices are taken as national. [DATA: ENIGH 2024 viviendas, concentradohogar; ASSUMPTION: Mexico publishes
+    no spatial price index]
+  CONEVAL's urban over national basket cost, 1.065, is the check. The hedonic index is preferred because it holds the
+  dwelling fixed and is metro-specific. CONEVAL's lines are basket costs whose quantities differ by place, and they do
+  not separate metros from other cities.
+- **Result.** G1's Mexican pay rises 6.4% in real terms (11.3% before prices) and G2's 5.8%. The premium falls
+  $11.5bn.
+  - Most of the gain comes back as Mexican taxes the group would have paid, so the group's own total falls only
+    $1.3bn while Mexico's residents lose $10.3bn.
+  - G2's metro-raised schooling barely matters (+$0.2bn on its Mexican pay). Its parents' schooling is concentrated
+    from primaria to preparatoria, where metro and national attainment differ little.
+  - Mexico's budget rows stay national.
+- **Range.** The single metros span the arm: Mexico City alone +$10.0bn, Monterrey alone −$66.8bn. The person-weighted
+  average of the three is the middle value.
+- **An upper bound.** Moving inside Mexico costs something, and no metro could take the group's ~15m workers at
+  today's pay, so this is an upper bound on the domestic option's value. [INFERENCE]
+
+### 2. US regional prices
+
+- **Method.** Each member's 2024 earnings are divided by BEA's 2024 RPP (all items) for the household's state (CPS
+  ASEC GESTFIPS). That puts E_US at the US national price level the PPP converts pesos to. Remittances stay nominal.
+  [DATA: BEA SARPP, released 2026-02-19; CPS ASEC 2025]
+- **Size.** The group's RPP is 102.6 per person for G1, 102.7 for G2 and 101.3 for G3+. E_US falls 1.9% for G1, 3.2%
+  for G2 and 1.2% for G3+, and the premium falls $17.1bn. G3+ stays at its zero bound, now real on both sides.
+- **Check: metro RPPs.** Each metro's RPP where the CPS identifies the metro (85% of the group's records), else the
+  state's metropolitan or nonmetropolitan portion, gives −$15.6bn, no larger.
+  - Los Angeles (113.6, against California's 110.7) and Dallas (103.1, against Texas's 97.1) are offset by Riverside
+    (106.4), McAllen (85.9) and El Paso (89.9).
+  - 40.5% of G1 live where the metro's RPP is below the state's, so the state figure is not a floor.
+  [DATA: BEA MARPP, PARPP; CPS GTCBSA, GTMETSTA]
+- **Variant.** Deflating the group's US budget valuation too, by its person-weighted state RPP, adds −$6.0bn.
+
+### 3. Services below US cost
+
+Cash stays at $1 per $1 and schooling at 0; schooling's return is in the premium.
+- **(a) Health and social services at Mexico's relative prices.**
+  - US health in kind (Medicaid, Medicare, public health and hospitals, and care received without pay) is valued at
+    the cost of the same quantity at Mexico's relative prices: V = G × 0.8137, ICP 2021's PPP for actual health over
+    its GDP PPP. The state-price overlay keeps its quantity share.
+  - Social services (income_security_services) are valued at 0.3974, the PPP of individual consumption by government
+    over GDP PPP.
+  - Mexico's own public health, already at Mexican prices, is valued at its cost (V/G 1); at the lane's 0.92 the arm
+    is $2.3bn smaller.
+  - The group's US valuation falls $51.0bn: Medicaid −$13.5bn (0.92 → 0.814), Medicare −$14.6bn, health services
+    −$4.3bn, social services −$18.6bn. With the two health rows outside the budget, the world total falls $53.7bn.
+  [DATA: World Bank ICP 2021, source 90; ASSUMPTION: a service is worth to the group what the same quantity costs at
+  Mexico's relative prices, and 2021's relative prices hold in 2024]
+- **(b) Public goods at their responsive cost to others** (the lane's response_only): −$129.2bn.
+  - On the US side −$144.3bn: defense −$108.0bn (its responsive cost is zero by the account's assumption), economic
+    affairs −$19.4bn, general public services −$13.9bn, the rest −$3.0bn.
+  - Mexico's public goods forgone, now at 0.725 of their cost, return +$15.1bn. [CALCULATION; FRAMING-SENSITIVE]
+- **Central and range.** The central is (a) + (b), −$182.9bn. With both price ratios at 0.3974 (government input
+  prices) it is −$279.7bn; with both at US cost, −$120.9bn.
+- **(c) Beside: FHL's WTP.** The Medicaid class, and the rows the lane couples to it (care received, Mexico's public
+  health), take recipients' willingness to pay per $1 of G instead of 0.814. That is 0.395, the middle of FHL's three
+  approaches (0.220–0.465). The arm becomes −$220.8bn (−$238.8bn to −$213.5bn). [SOURCE:
+  reads/finkelstein_hendren_luttmer_2019.md quote 12]
+- **Check on (b).** Public goods at their average cost × 0.5994, ICP 2021's collective-government PPP over GDP PPP,
+  with Mexico's at average cost: −$91.3bn alone, −$145.0bn with (a).
+
+### The arms and their combination
+
+$bn a year. Premium and the US budget are the group's rows, the same under every weighting. Per member is the group's
+total over 42,752,213. The three values in a cell are equal weights / λ 1.16 / λ_h.
+
+| Scenario | Premium | US budget, as valued | Per member, $ | World | US residents incl. the group | Break-even w, world | w, US only |
+|---|---|---|---|---|---|---|---|
+| Central (the lane) | 488.2 | 284.8 | 16,207 | 321.1 / 273.0 / 235.0 | 222.2 / 168.3 / 125.7 | 0.54 / 0.61 / 0.66 | 0.68 / 0.76 / 0.82 |
+| 1. Three metros, real | 476.7 | 284.8 | 16,178 | 309.6 / 259.8 / 220.5 | 220.9 / 167.0 / 124.4 | 0.55 / 0.62 / 0.68 | 0.68 / 0.76 / 0.82 |
+| 2. State RPP | 471.1 | 284.8 | 15,787 | 304.0 / 256.1 / 218.2 | 204.2 / 150.3 / 107.7 | 0.55 / 0.62 / 0.68 | 0.70 / 0.78 / 0.84 |
+| 3. (a) + (b) | 488.2 | 89.5 | 11,929 | 138.2 / 90.1 / 52.1 | 39.3 / −14.6 / −57.2 | 0.73 / 0.82 / 0.90 | 0.92 / 1.03 / 1.11 |
+| Combined, 1 + 2 + 3 | 459.6 | 89.5 | 11,478 | 109.6 / 60.0 / 20.8 | 20.0 / −33.9 / −76.5 | 0.78 / 0.88 / 0.96 | 0.96 / 1.07 / 1.16 |
+| Combined, the ICP check for 3(b) | 459.6 | 142.5 | 12,364 | 147.5 / 97.9 / 58.7 | 57.9 / 3.9 / −38.6 | 0.72 / 0.81 / 0.89 | 0.89 / 0.99 / 1.07 |
+
+At equal weights the arms' changes add exactly: −11.5 − 17.1 − 182.9 = −211.5. They touch different rows, and the
+Mexican-tax rows they share are transfers between the group and Mexico's residents. Under λ the Mexican side carries
+λ, so the arms no longer add. [CALCULATION; test_beside_arms.py]
+
+Variants and checks, at equal weights:
+
+| Variant or check | Premium | US budget, as valued | World | Change |
+|---|---|---|---|---|
+| 1, before the price level | 467.3 | 284.8 | 300.3 | −20.9 |
+| 1, at CONEVAL's urban/national ratio, 1.065 | 480.0 | 284.8 | 313.0 | −8.2 |
+| 1, national schooling transitions | 476.9 | 284.8 | 309.8 | −11.4 |
+| 1, Mexico City alone | 498.3 | 284.8 | 331.2 | +10.0 |
+| 1, Guadalajara alone | 457.5 | 284.8 | 290.5 | −30.7 |
+| 1, Monterrey alone | 421.4 | 284.8 | 254.3 | −66.8 |
+| 1, localities of 100,000+ | 471.8 | 284.8 | 304.7 | −16.4 |
+| 2, metro RPP where identified | 472.6 | 284.8 | 305.6 | −15.6 |
+| 2, the US budget valuation deflated too | 471.1 | 278.8 | 298.0 | −23.1 |
+| 3(a) alone | 488.2 | 233.8 | 267.4 | −53.7 |
+| 3(a), Mexico's health at the lane's 0.92 | 488.2 | 233.8 | 269.7 | −51.4 |
+| 3(b) alone | 488.2 | 140.5 | 192.0 | −129.2 |
+| ICP check on 3(b), alone | 488.2 | 193.5 | 229.8 | −91.3 |
+| 3(a) + the ICP check | 488.2 | 142.5 | 176.1 | −145.0 |
+| 3, both ratios at 0.3974 | 488.2 | −5.5 | 41.4 | −279.7 |
+| 3, both at US cost | 488.2 | 150.6 | 200.2 | −120.9 |
+| 3(c): Medicaid at FHL's 0.395 | 488.2 | 36.2 | 100.3 | −220.8 |
+| 3(c) at 0.220 | 488.2 | 14.0 | 82.3 | −238.8 |
+| 3(c) at 0.465 | 488.2 | 45.2 | 107.6 | −213.5 |
+| Combined, Mexico City as arm 1 | 481.2 | 89.5 | 131.2 | −189.9 |
+
+### Sanity
+
+- **Pay ratios against CMP.** The urban counterfactual moves the US/Mexico ratio toward CMP's. It reaches it only in
+  Monterrey, and in CMP's own cell in Guadalajara. Among G1 aged 25–64 who arrived at 20 or older, the ratio per
+  worker is:
+  - 3.14 on national cells;
+  - 2.82 on the three metros, 2.81 on localities of 100,000+, and 2.80 combined with arm 2;
+  - 2.74 in Guadalajara, 2.15 in Monterrey and 3.07 in Mexico City.
+  CMP report Ro 2.53 for a 35-year-old urban man with nine years of schooling, and Re 2.46. In the cell nearest
+  theirs (men 30–44 with secundaria who arrived at 20 or older, 71 CPS records), the ratio is 2.98 nationally, 2.86 in
+  the metros, 2.57 in Guadalajara and 2.19 in Monterrey. [CALCULATION: beside_arms_meta_oct07.json cmp_check; SOURCE:
+  reads/clemens_montenegro_pritchett_2009.md]
+- **Mexico City pay for the low-schooled.** It is plausible, and close to the nation's. ENIGH's monthly take-home pay
+  per employed person in Mexico City is:
+  - MXN 3,898 with no schooling (national 3,701);
+  - 6,165 with primaria incompleta (4,982);
+  - 7,171 with primaria (6,485);
+  - 7,505 with secundaria (7,720).
+  That secundaria figure is about the 2024 general minimum wage, MXN 248.93 a day or about 7,570 a month [SOURCE:
+  mexico.py MW_YEAR]. ENOE 2024
+  Q1–Q2 agrees once its bracket-only answers are dropped: ENIGH/ENOE in Mexico City is 1.02, 0.97, 1.12 and 0.98 over
+  those four categories. The no-schooling cell is thin, with 64 ENIGH and 47 ENOE records. Mexico City's price level
+  is 12% above the nation's, so in real terms it pays these cells less than the national average; that is why the
+  Mexico City variant raises the premium. [DATA: ENIGH 2024, ENOE 2024; CALCULATION: enoe_cdmx_check]
+- **Price levels.**
+  - Metro price levels: three metros 1.047, Mexico City 1.120, Guadalajara 1.019, Monterrey 1.012. The checks for
+    the three metros and for Mexico City: owners' estimated rents 1.051 and 1.136; size controls only 1.067 and 1.186;
+    each place's own basket (Paasche) 1.046 and 1.115.
+  - CONEVAL's urban basket costs 1.065 times the national (its food basket 1.054).
+  - The group's state RPP is 101.3–102.7.
+  - ICP 2021 puts Mexico's price level against the US at 0.490 for GDP, 0.399 for health, 0.294 for collective
+    government services and 0.195 for individual ones. Health is relatively dearer in the US, and Mexico's government
+    PPPs price its services at Mexico's public pay.
+  All are plausible in size and order.
+
+### Flags
+
+- **Mexico City is not the best domestic alternative for these workers.** Its real pay for the group's cells is 4.9%
+  below the national cells' (G1). Monterrey's is 38.5% above, and its price level is only 1.012. The "best job in
+  Mexico" is the industrial north, not the capital. One metro of 4.4m adults cannot take ~15m workers, so Monterrey
+  alone is the upper end, not the central. [INFERENCE]
+- **3(b) is mostly defense.** The lane values public goods at their average cost per head (US defense $108.0bn for the
+  group) or at their responsive cost (zero). Neither is measured. 3(b) takes the low end. The ICP check, average cost
+  at Mexico's collective-government prices, is the middle value; it gives the combination +$147.5bn instead of
+  +$109.6bn. Mexico's public goods forgone carry 0.725 of their cost under 3(b), defense included, with no split.
+- **r_social is an input-cost ratio.** ICP's government PPPs price Mexican public services at Mexican public pay, so
+  0.3974 assumes Mexican public workers deliver the same service per worker. Whether ICP 2021 adjusts Latin American
+  government pay for productivity was not checked. [UNVERIFIED] At the health ratio, 0.8137, the social services'
+  line ($30.9bn) would lose $12.9bn less. [CALCULATION]
+- **A defect in the lane's ENOE cross-check (not fixed here: new files only).**
+  - `mexico.py` `load_enoe` drops only "not specified" income (ing7c 7), so it counts ENOE's bracket-only answers
+    (ing7c 1–5 with ingocup 0; 16.9% of employed nationally, 38.0% in Mexico City) as zero income.
+  - With them dropped, ENIGH/ENOE nationally runs 0.84–1.16 across the six schooling categories, not the 0.93–1.67 in
+    `mexico_enoe_check.csv` and "Log of confirmed case-independent pieces" above.
+  - No ledger number reads the check. The fix changes that file and that line.
+- **Small schooling channel, thin samples.**
+  - EMOVI has 422 respondents who lived in Guadalajara at 14 and 374 in Monterrey. Most of their 48 transition
+    cells pool to all cohorts and sexes (26 and 36), and 16 and 8 take the national transition.
+  - The withheld-tax ratio is noisy in small low-schooling cells (0.02–2.75); it moves only the Mexican-tax transfer.
+- **Not modelled.** The richer public services of Mexico's metros would raise the metro alternative's value; the cost
+  of moving there would lower it. Neither is sized.
+
+### Inputs, gates and files
+
+- **Sources.** Staged under `sources/immigration-fiscal/data/external/stage3/`, each with an ACQUIRED.md; sha256
+  pinned in `beside_arms.py` and recorded in `derived/beside_sources.csv`:
+  - BEA RPP 2008–2024 by state, metro area and state portion (`bea/rpp_2024/`, last updated 2026-02-19);
+  - World Bank ICP 2021 (`worldbank/icp2021/`, API lastupdated 2024-08-04);
+  - INEGI ENIGH 2024 viviendas (`inegi/enigh2024_viviendas/`);
+  - CONEVAL's August 2024 poverty lines (`coneval/lineas_pobreza_2024/`).
+  ENOE, ENIGH's other tables, EMOVI and the CPS are the lane's own inputs, already hashed.
+- **Gates** (`beside_arms.py`), all passing:
+  - the six sources' hashes;
+  - the three metros' municipality sets (46 / 8 / 13 in states 9 and 15 / 14 / 19);
+  - every ENIGH person located;
+  - the national cells recomputed from the same persons equal `mexico_earnings_cells.csv` and
+    `mexico_young_by_parent.csv` as written;
+  - the premium table recomputed on national inputs equals `g2_premium_lineage.csv` exactly;
+  - the EMOVI transition pooling reproduces `g2_premium.transitions()`;
+  - the health-row recomputation equals `build_rows` at the lane's V/G;
+  - the baseline equals `world_ledger_oct07.csv`'s central, and 3(b) its response_only central, to 1e-6;
+  - the members are the lineage's 42,752,213.
+- **Tests.** `test_beside_arms.py`, 9 tests: the two reproductions, completeness, the summary's figures from the party
+  totals, the exact additivity at equal weights, the arms' directions, the parameters, the ratios file and the
+  hashes.
+- **Outputs** (`derived/`):
+  - `beside_arms_oct07.csv`: scenario × weighting × party, the central scenario;
+  - `beside_arms_summary_oct07.csv`: the tables above, three weightings;
+  - `beside_arms_ratios.csv`: the pay ratios by place, sex and schooling or age band;
+  - `beside_arms_meta_oct07.json`: sources, price levels, RPPs, ICP ratios, the 3(b) decomposition, the sanity
+    checks;
+  - `beside_sources.csv`.
+- **Existing outputs.** None change.
+
+Reproduce: the v6 "Reproduce" command above, with these three lines inserted after its 29th command (the oct07
+ledger on row 4) and before `--allow-unrun`:
+
+```sh
+  "uv run --no-project python3 {lane}/acquire_beside.py" \
+  "uv run --no-project python3 {lane}/beside_arms.py" \
+  "uv run --no-project python3 -m pytest {lane}/test_beside_arms.py -q" \
+```
+
+`run_all.sh` does not run them yet; that is the lead's edit.
+
+Log (times from `date` or file mtimes):
+- 2026-10-07 20:58:04–21:15:40 JST: the six sources fetched (file mtimes); 21:17:14 JST: their ACQUIRED.md files.
+- 2026-10-07 21:32:45 JST: the first full `beside_arms.py` run with every gate passing; the numbers were then checked
+  and the gates and tests added.
+- 2026-10-07 21:47:07–21:48:53 JST: the rerun with the 29 commands plus the three above, IDENTICAL, 127/127 files,
+  exit 0.
+- 2026-10-07 21:56:20 JST: the last edit to `beside_arms.py` (mtime); the final build ended 21:57:29 JST (its log's
+  mtime), exit 0.
+- 2026-10-07 21:57:29–21:59:16 JST: the same rerun, IDENTICAL, 127/127 files, exit 0; its pytest step, 9 passed.
+  The 119 files of the v6 rerun are among the 127, so no existing output changed.
+- 2026-10-07 22:07 JST: this section written from the derived files; every table line was checked against
+  `beside_arms_summary_oct07.csv` by a scratch script (`wbx/` in the worker's scratchpad). No code or output changed
+  after the rerun.

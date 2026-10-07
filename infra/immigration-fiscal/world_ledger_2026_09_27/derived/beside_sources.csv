@@ -1,0 +1,7 @@
+file,url,bytes,sha256
+sources/immigration-fiscal/data/external/stage3/bea/rpp_2024/SARPP.zip,https://apps.bea.gov/regional/zip/SARPP.zip,39230,38713c6224c4c26ae020ffecd4549b82dca84f43d34f93dfdb43f4070cf011da
+sources/immigration-fiscal/data/external/stage3/bea/rpp_2024/MARPP.zip,https://apps.bea.gov/regional/zip/MARPP.zip,146479,5dbf2e6ac2af222cc9abc205586c9b480344d89392752eb689c3ec823a34c83e
+sources/immigration-fiscal/data/external/stage3/bea/rpp_2024/PARPP.zip,https://apps.bea.gov/regional/zip/PARPP.zip,39148,eb1378571316b22d5e7557b5565019cbe01fe1b5ea7dcdfcd979fc5751764f79
+sources/immigration-fiscal/data/external/stage3/worldbank/icp2021/icp2021_mex_usa.json,https://api.worldbank.org/v2/sources/90/country/MEX;USA/series/1000000;9080000;1300000;1400000;9270000;9020000/classification/PPPGlob;PX.WL;EXR/time/YR2021/data?format=json&per_page=500,11316,996c9fc3425e89e132b7730c4936bc5f253141018dca0d4d9a955044fa1f2b9c
+sources/immigration-fiscal/data/external/stage3/inegi/enigh2024_viviendas/enigh2024_ns_viviendas_csv.zip,https://www.inegi.org.mx/contenidos/programas/enigh/nc/2024/microdatos/enigh2024_ns_viviendas_csv.zip,1848886,ac1a56ed6e23b9feec952a28cb757fc0baa9a06fa303579996db9156553758cf
+sources/immigration-fiscal/data/external/stage3/coneval/lineas_pobreza_2024/Lineas_de_Pobreza_por_Ingresos_ago_2024.pdf,https://www.coneval.org.mx/Medicion/Documents/Lineas_de_Pobreza_por_Ingresos/Lineas_de_Pobreza_por_Ingresos_ago_2024.pdf,178443,b73d6213944da1e1871a2f1aba1fe668f51115737e3eb0b2d047758aacb39cdd
