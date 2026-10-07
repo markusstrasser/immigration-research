@@ -191,6 +191,15 @@ LINE_CLASS = {line: cls for cls, lines in LINES.items() for line in lines}
 for _cls, _ids in CAPITAL_COMPONENTS.items():
     for _id in _ids:
         LINE_CLASS[f"capital_{_id}"] = LINE_CLASS[f"capital_return_{_id}"] = _cls
+# The case lane of each case whose pins name its commit ("main_case"); world_ledger.py imports it.
+CASE_LANES = {"sept29": f"{FISCAL_REL}/main_case_2026_09_29", "oct05": f"{FISCAL_REL}/main_case_2026_10_05",
+              "oct07": f"{FISCAL_REL}/main_case_2026_10_07"}
+# From oct07 (main case v6) an item may add capital components that offset one of the case's components (the
+# user-fee item's k12_user_fees, college_user_fees, health_sl_user_fees and health_fed_user_fees; meta.capital_return
+# .components' of_component). Each takes the class of the component it offsets, as it takes that component's level
+# and financing (the v6 Consumers table). value_case() and value_generations() set the case's offsets here; its
+# carrier receipt lines are taxes at effect 0, as every receipt without a RECEIPT_CLASS.
+ITEM_CLASS = {}
 FHL_EXTERNAL = 2152 / 3600          # N / G per recipient-year (FHL JPE 2019, author manuscript: N $2,152, G $3,600)
 
 
@@ -231,8 +240,26 @@ def state_price_value(r, cls, v, part):
     return [x * q[part].sum() / q.gap_bn.sum() for x in v]
 
 
+def offset_classes(case):
+    """The classes of the case's item offsets (ITEM_CLASS), from its payload at the case lane's pinned commit; empty
+    for a case without a main_case pin or without offsets. Gate: each offsets a classed component."""
+    pin = PINS[case]
+    if not pin.get("main_case"):
+        return {}
+    out = subprocess.run(["git", "-C", str(REPO), "show", f"{pin['main_case']}:{CASE_LANES[case]}/derived/corrections.json"],
+                         capture_output=True, check=True)
+    classes = {}
+    for c in json.loads(out.stdout)["meta"]["capital_return"]["components"]:
+        if c.get("of_component") is None:
+            continue
+        cls = LINE_CLASS.get(f"capital_{c['of_component']}")
+        gate(f"offset_{c['id']}_offsets_a_classed_component", cls is not None, of_component=c["of_component"])
+        classes[f"capital_{c['id']}"] = classes[f"capital_return_{c['id']}"] = cls
+    return classes
+
+
 def value_line(r, part="quantity_bn"):
-    cls = RECEIPT_CLASS.get(r.line) if r.side == "receipt" else LINE_CLASS.get(r.line)
+    cls = RECEIPT_CLASS.get(r.line) if r.side == "receipt" else LINE_CLASS.get(r.line, ITEM_CLASS.get(r.line))
     if cls is None:
         raise SystemExit(f"[BLOCKED] unclassified {r.side} line {r.line!r}: add it to LINES before valuing")
     basis, lo, mid, hi, _ = CLASSES[cls]
@@ -255,6 +282,8 @@ def value_case(case):
     pin = PINS[case]
     if not pin["winners"]:
         raise SystemExit(f"[BLOCKED] no pins for case {case}; the parent sends them (brief: 'The case')")
+    ITEM_CLASS.clear()
+    ITEM_CLASS.update(offset_classes(case))
     f = pinned_csv(pin["winners"], lane_file(case, "winners", "fiscal_lines_band_ends.csv"))
     f = f[f.case == pin["model"]]
     gate("case_present", len(f) > 0, case=case, model=pin["model"])
@@ -295,6 +324,8 @@ def value_generations(case, union):
     costs, like spending lines."""
     path = DERIVED / f"generation_lines_{case}.csv"
     gate(f"generation_lines_{case}_present", path.exists(), path=str(path))
+    ITEM_CLASS.clear()
+    ITEM_CLASS.update(offset_classes(case))
     g = pd.read_csv(path)
     g["generation"] = g.generation.replace({"G3plus": "G3+"})
     tot = g[g.side == "total"].pivot_table(index=["band_end", "generation"], columns="line", values="effect_bn")

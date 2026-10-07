@@ -27,8 +27,14 @@
  * 8's change (generation_account_2026_09_24/run_generations_v5.cjs). This script evaluates those payloads with the v5
  * package, so the G3+ lines carry the lineage.
  *
+ * oct07 (main case v6, main_case_2026_10_07: v5 plus the items of its payload's meta.items) evaluates the generation
+ * lane's oct07 payloads with the v6 package, whose evaluateFull adds the items' capital (the user-fee item's offset
+ * components, keyed by its carrier receipt lines; a generation model without the carriers takes them at zero). The
+ * items' split by generation is the generation lane's (the v6 Consumers table's R1-R4); this script only evaluates it,
+ * and the union gate below holds it to the v6 band.
+ *
  * Run from the repository root:
- *   node infra/immigration-fiscal/world_ledger_2026_09_27/generation_lines.cjs --case sept26_schools|sept27|sept29|oct05
+ *   node infra/immigration-fiscal/world_ledger_2026_09_27/generation_lines.cjs --case sept26_schools|sept27|sept29|oct05|oct07
  * Output: derived/generation_lines_<case>.csv, derived/generation_lines_uncorrected_<case>.csv.
  */
 "use strict";
@@ -43,14 +49,16 @@ const argv = process.argv.slice(2);
 const arg = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt : argv[i + 1]; };
 // The package lane of each case, as run_generations.cjs maps them. SEPT29 is the case adopted on 2026-09-29
 // (candidate v4): a payload-first successor to the September 27 lane with the same package API. OCT05 is main case v5,
-// adopted on 2026-10-05, whose package keeps that API (run_generations_v5.cjs costs every generation with it).
+// adopted on 2026-10-05, whose package keeps that API (run_generations_v5.cjs costs every generation with it). OCT07 is
+// main case v6, whose package keeps v5's API.
 const SEPT29 = "main_case_2026_09_29";
 const OCT05 = "main_case_2026_10_05";
-const CASES = { oct05: OCT05, sept29: SEPT29, sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
+const OCT07 = "main_case_2026_10_07";
+const CASES = { oct07: OCT07, oct05: OCT05, sept29: SEPT29, sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_case_schools_full_2026_09_26" };
 const CASE = arg("--case", "sept26_schools");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 // The cases that carry the return on public capital, which the lane evaluates with evaluateFull().
-const FULL = CASE === "sept27" || CASE === "sept29" || CASE === "oct05";
+const FULL = CASE === "sept27" || CASE === "sept29" || CASE === "oct05" || CASE === "oct07";
 const PINNED = JSON.parse(fs.readFileSync(path.join(HERE, "pins.json"), "utf8"))[CASE];
 const PIN = PINNED.generation;
 if (!PIN) throw new Error(`[BLOCKED] no generation pin for ${CASE}`);
@@ -71,13 +79,16 @@ function gate(label, ok, detail) {
 }
 
 // The case lane's commit, where the case's pins name one ("main_case"): the package and the band file are read from
-// the working tree, so the lane there, and every module the package loads, must be that commit's.
+// the working tree, so the lane there, and every module the package loads, must be that commit's. The lane's Markdown
+// (RESULT.md and the like) is read by nothing here, so a later note there does not stop the run (2026-10-07: v5's lane
+// gained a RESULT note after its pin, 3cc9970, and the oct05 run stopped on it).
 if (PINNED.main_case) {
   const git = (...a) => execFileSync("git", ["-C", REPO, ...a]).toString("utf8").trim();
   const lane = `infra/immigration-fiscal/${CASES[CASE]}`;
+  const notMarkdown = `:(exclude)${lane}/*.md`;
   let laneClean = true;
-  try { execFileSync("git", ["-C", REPO, "diff", "--quiet", PINNED.main_case, "--", lane]); } catch (e) { laneClean = false; }
-  const untracked = git("ls-files", "--others", "--exclude-standard", "--", lane);
+  try { execFileSync("git", ["-C", REPO, "diff", "--quiet", PINNED.main_case, "--", lane, notMarkdown]); } catch (e) { laneClean = false; }
+  const untracked = git("ls-files", "--others", "--exclude-standard", "--", lane, notMarkdown);
   const modules = Object.keys(require.cache).filter((f) => f.startsWith(REPO + path.sep) && !f.startsWith(HERE + path.sep))
     .map((f) => path.relative(REPO, f));
   const moved = modules.filter((f) => {

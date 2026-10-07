@@ -1,0 +1,87 @@
+{
+ "cases": {
+  "oct07": {
+   "high": {
+    "A_bn": 469.3140925402308,
+    "V_central_bn": 296.2435378898473,
+    "V_high_bn": 316.75692051188076,
+    "V_low_bn": 269.0411259035719
+   },
+   "low": {
+    "A_bn": 400.9921977228958,
+    "V_central_bn": 273.31697555711327,
+    "V_high_bn": 293.5072929580543,
+    "V_low_bn": 246.4959542865774
+   }
+  }
+ },
+ "generations": {
+  "oct07": {
+   "high|G1": {
+    "V_central_bn": 90.80070439243345,
+    "net_cost_bn": 91.53843023499998
+   },
+   "high|G2": {
+    "V_central_bn": 97.08972080438272,
+    "net_cost_bn": 179.51785722999998
+   },
+   "high|G3+": {
+    "V_central_bn": 108.35311269517338,
+    "net_cost_bn": 198.25780508000003
+   },
+   "low|G1": {
+    "V_central_bn": 81.0962131369493,
+    "net_cost_bn": 104.308150846
+   },
+   "low|G2": {
+    "V_central_bn": 100.98039202463177,
+    "net_cost_bn": 152.69398328999995
+   },
+   "low|G3+": {
+    "V_central_bn": 91.24037039528012,
+    "net_cost_bn": 143.99006358600002
+   }
+  }
+ },
+ "medicaid_vg": [
+  0.76,
+  0.92,
+  1.08
+ ],
+ "mexico_budget_bn_known": 166.33541555156995,
+ "pins": {
+  "oct07": {
+   "basis": "lineage",
+   "dirs": {
+    "distribution": "infra/immigration-fiscal/distribution_weights_2026_09_23/derived/oct07",
+    "winners": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct07"
+   },
+   "distribution": "498a6a7",
+   "files": {
+    "generation": {
+     "generation_corrections.json": "generation_corrections_oct07.json",
+     "generation_results.csv": "generation_results_oct07.csv"
+    }
+   },
+   "generation": "3f583fb",
+   "main_case": "793eca4",
+   "model": "adopted_2026_10_07",
+   "winners": "f2d9600"
+  }
+ },
+ "protection_share": 0.42467763366851674,
+ "state_price_value_bn": {
+  "oct07": {
+   "high": {
+    "quantity_bn": -0.33203101136875174,
+    "whole_gap_bn": 5.7092696011251665,
+    "zero_bn": 0.0
+   },
+   "low": {
+    "quantity_bn": -0.33203101136875174,
+    "whole_gap_bn": 5.7092696011251665,
+    "zero_bn": 0.0
+   }
+  }
+ }
+}

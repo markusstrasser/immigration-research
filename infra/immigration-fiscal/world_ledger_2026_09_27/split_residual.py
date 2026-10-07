@@ -16,8 +16,10 @@ the running cell by the new national total over the running one. A gate requires
 line both models list. Correction-only lines (the payloads' `lines` and, from sept29, `receipt_lines`; absent from
 the uncorrected models, or at zero from sept27) have no uncorrected split: their whole cost is correction_only_bn.
 Lines the models do not list (capital-return components from sept27) have no preferred key: their split by the
-specification's keys is unlisted_bn, and lane = unlisted + corrections_step. A gate requires the steps to add to
-the lane's cost on every row.
+specification's keys is unlisted_bn, and lane = unlisted + corrections_step. A line that costs nothing in every
+uncorrected model but something in the corrected ones (from oct07, the user-fee item's capital offsets, keyed by its
+carrier receipt lines, which only the payloads list) has no uncorrected split either: its whole cost is
+correction_only_bn. A gate requires the steps to add to the lane's cost on every row.
 
 Inputs: derived/generation_lines_<case>.csv and generation_lines_uncorrected_<case>.csv (generation_lines.cjs);
 the generation lane's generation_corrections.json and model_{G1,G2,G3plus}.json at the case's generation pin.
@@ -127,6 +129,13 @@ def main():
             continue
         U = u.loc[[(end, g, side, line) for g in GENS], "cost"].to_numpy()
         gate(f"one_key_per_line_{end}_{line}", C.key.nunique(dropna=False) == 1, keys=C.key.unique().tolist())
+        if not U.any() and C.cost.any():
+            # Zero in every uncorrected model, nonzero corrected: the corrections create the whole cost.
+            for g in GENS:
+                rows.append(dict(head, generation=g, prorata_bn=np.nan, spec_key_bn=np.nan, lane_bn=C.cost[g],
+                                 key_step_bn=np.nan, unlisted_bn=np.nan, corrections_step_bn=np.nan,
+                                 correction_only_bn=C.cost[g]))
+            continue
         p = target_share(models, side, line, head["key"], ALLOC[end]) if side != "capital" else None
         s = U / U.sum() if U.sum() else np.full(3, np.nan)
         total = C.cost.sum()

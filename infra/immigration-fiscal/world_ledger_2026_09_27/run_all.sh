@@ -23,11 +23,11 @@ run "$L/valuation.py"
 for c in "${@:-sept26_schools}"; do
   run "$L/world_ledger.py" --case "$c"
   # The other population basis beside the case's own (population_basis.py): Sept 27 restated on the account's row-4
-  # count, sept29 on the published CPS count it replaces, and oct05 on row 4, without the added people in its
-  # person-based rows.
+  # count, sept29 on the published CPS count it replaces, and oct05 and oct07 on row 4, without the added people in
+  # their person-based rows.
   case "$c" in
     sept27) run "$L/world_ledger.py" --case "$c" --basis row4 ;;
     sept29) run "$L/world_ledger.py" --case "$c" --basis cps ;;
-    oct05) run "$L/world_ledger.py" --case "$c" --basis row4 ;;
+    oct05|oct07) run "$L/world_ledger.py" --case "$c" --basis row4 ;;
   esac
 done

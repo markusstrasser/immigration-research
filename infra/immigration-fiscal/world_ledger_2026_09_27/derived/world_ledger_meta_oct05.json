@@ -441,25 +441,25 @@
      "world_total": 318.9177028361589
     },
     "equal_lambda_1.16": {
-     "breakeven_w": 0.6265955346865159,
-     "breakeven_w_us_only": 0.778149331117413,
-     "future_taxpayers": -107.86414162839999,
+     "breakeven_w": 0.6079891729116857,
+     "breakeven_w_us_only": 0.7595429693425828,
+     "future_taxpayers": -95.0040252284,
      "others_today": -429.9675471163198,
-     "world_total": 258.0851080036048
+     "world_total": 270.9452244036048
     },
     "equal_lambda_1.5": {
-     "breakeven_w": 0.8136257774848505,
-     "breakeven_w_us_only": 0.9829713335041076,
-     "future_taxpayers": -139.479493485,
+     "breakeven_w": 0.7554808969385065,
+     "breakeven_w_us_only": 0.9248264529577636,
+     "future_taxpayers": -99.291629735,
      "others_today": -539.9185489537118,
-     "world_total": 128.81584398442715
+     "world_total": 169.00370773442717
     },
     "equal_lambda_hendren_a": {
-     "breakeven_w": 0.696072914457435,
-     "breakeven_w_us_only": 0.8542359352534323,
-     "future_taxpayers": -119.60850860706375,
+     "breakeven_w": 0.6627789137041854,
+     "breakeven_w_us_only": 0.8209419345001828,
+     "future_taxpayers": -96.59677045588576,
      "others_today": -470.8117838373638,
-     "world_total": 210.06458675212093
+     "world_total": 233.07632490329888
     },
     "hendren_a": {
      "breakeven_w": 0.5259705748454401,
@@ -499,25 +499,25 @@
      "world_total": 792.9852732111261
     },
     "equal_lambda_1.16": {
-     "breakeven_w": 0.2493771212694079,
-     "breakeven_w_us_only": 0.4378880112759934,
-     "future_taxpayers": -106.31369542691999,
+     "breakeven_w": 0.236087904782042,
+     "breakeven_w_us_only": 0.42459879478862755,
+     "future_taxpayers": -93.04688230692,
      "others_today": -330.8361108547415,
-     "world_total": 749.3574557373386
+     "world_total": 762.6242688573385
     },
     "equal_lambda_1.5": {
-     "breakeven_w": 0.34224278918280027,
-     "breakeven_w_us_only": 0.5675705608027912,
-     "future_taxpayers": -137.4746061555,
+     "breakeven_w": 0.30071398765978186,
+     "breakeven_w_us_only": 0.5260417592797729,
+     "future_taxpayers": -96.0158151555,
      "others_today": -429.1391268469606,
-     "world_total": 656.6483436055394
+     "world_total": 698.1071346055394
     },
     "equal_lambda_hendren_a": {
-     "breakeven_w": 0.2838745543089178,
-     "breakeven_w_us_only": 0.4860620584692561,
-     "future_taxpayers": -117.88924810922947,
+     "breakeven_w": 0.2600949896043883,
+     "breakeven_w_us_only": 0.4622824937647266,
+     "future_taxpayers": -94.14977172174882,
      "others_today": -367.3533920844002,
-     "world_total": 714.9181795249297
+     "world_total": 738.6576559124103
     },
     "hendren_a": {
      "breakeven_w": 0.20154434796540632,
@@ -557,25 +557,25 @@
      "world_total": 144.08909419699114
     },
     "equal_lambda_1.16": {
-     "breakeven_w": 0.8789659397034821,
-     "breakeven_w_us_only": 1.0222769647842869,
-     "future_taxpayers": -109.41458783799999,
+     "breakeven_w": 0.8589840192558077,
+     "breakeven_w_us_only": 1.0022950443366125,
+     "future_taxpayers": -96.96116815799999,
      "others_today": -527.703556285978,
-     "world_total": 75.43258679234634
+     "world_total": 87.88600647234637
     },
     "equal_lambda_1.5": {
-     "breakeven_w": 1.1130593792491106,
-     "breakeven_w_us_only": 1.2688435649217698,
-     "future_taxpayers": -141.48438082500002,
+     "breakeven_w": 1.050615877850128,
+     "breakeven_w_us_only": 1.206400063522787,
+     "future_taxpayers": -102.567444325,
      "others_today": -649.3025439661628,
-     "world_total": -70.46249144252408
+     "world_total": -31.545554942524063
     },
     "equal_lambda_hendren_a": {
-     "breakeven_w": 0.9659262010914179,
-     "breakeven_w_us_only": 1.1138707148659115,
-     "future_taxpayers": -121.32776911390214,
+     "breakeven_w": 0.9301707921357452,
+     "breakeven_w_us_only": 1.0781153059102386,
+     "future_taxpayers": -99.04376919902681,
      "others_today": -572.874748497523,
-     "world_total": 21.235962729992934
+     "world_total": 43.519962644868315
     },
     "hendren_a": {
      "breakeven_w": 0.749871609628065,

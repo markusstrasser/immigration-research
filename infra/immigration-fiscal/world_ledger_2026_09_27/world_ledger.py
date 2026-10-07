@@ -52,7 +52,7 @@ import numpy as np
 import pandas as pd
 
 from population_basis import BASES, suffixed
-from valuation import PINS, SHARED_OUTPUTS, basis_of, case_path, lane_file
+from valuation import CASE_LANES, PINS, SHARED_OUTPUTS, basis_of, case_path, lane_file
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
@@ -82,10 +82,8 @@ MSS_SAVING = ((1, 50, 0.0), (51, 90, 0.12), (91, 99, 0.20), (100, 100, 0.54))
 CAPITAL_TAX = (0.093, 0.29)
 RETURN_OVER_DISCOUNT = (1.0, 3.5)
 # The case lane of a case whose winners channels carry the pension accrual (sept29, adopted on 2026-09-29; oct05,
-# main case v5, adopted on 2026-10-05): its summary, read at the pins' "main_case" commit, holds the case and its cash
-# set, which the accrual must bridge.
-CASE_LANES = {"sept29": "infra/immigration-fiscal/main_case_2026_09_29",
-              "oct05": "infra/immigration-fiscal/main_case_2026_10_05"}
+# main case v5, adopted on 2026-10-05; oct07, main case v6): its summary, read at the pins' "main_case" commit, holds
+# the case and its cash set, which the accrual must bridge. CASE_LANES is valuation.py's (one definition).
 
 
 def gate(name, ok, **detail):
@@ -629,7 +627,8 @@ def saving_leak(I, rows, res, measure="money"):
     it receives, both the reading's most favourable case. s_p weights MSS_SAVING by the payers' shares of the
     fiscal channel under tax shares (a) and per-person cuts (b) (distribution lane, pinned). At equal weights in
     the central scenario (rows: build_rows' default; res: the case's totals), each leak is also given in dollars on
-    the tax-financed rows, the ones λ scales, and as the US-only break-even w it implies."""
+    the tax-financed rows (others' fiscal cost and the future payers' rows, the pension accrual among them), and as
+    the US-only break-even w it implies."""
     d = I["dist"][I["dist"].measure == measure]
     tax = float(rows[rows.weight.isin(["others:fiscal", "future"])].central.sum())
     t = res[(res.pg_convention == "average_cost") & (res.mexico_taxes == "withheld_consumption")
@@ -688,9 +687,12 @@ def row_weight(r, col, fac, pos, I, prem, conv):
         return 1.0
     if col.startswith("equal_lambda"):
         # Revenue other residents (today and later) must raise, and Mexico's budget savings and lost taxes, carry
-        # lambda.
+        # lambda. The pension accrual does not (2026-10-07; until then it did): at payable benefits current law pays
+        # it by pro-rata cuts to other beneficiaries' benefits, not by a distortionary tax, so its lambda - 1 is about
+        # 0 (excess_burden_2026_10_07/RESULT.md, "One divergence worth the lead's check") [FRAMING-SENSITIVE: the
+        # accrual's payer; a law that raised the dedicated taxes instead would put lambda back on it].
         lam = fac["_lambda"][col]
-        budget = (r.row in ("fiscal_others", "fiscal_future", "fiscal_pension_accrual", "induced_receipts")
+        budget = (r.row in ("fiscal_others", "fiscal_future", "induced_receipts")
                   or r.row.startswith(("mexico_budget_saved", "mexico_taxes_lost")))
         return lam if budget else 1.0
     kind = "g" if col.startswith("hendren") else "log"
