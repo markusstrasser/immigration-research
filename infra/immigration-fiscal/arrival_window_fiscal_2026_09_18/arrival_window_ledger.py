@@ -6,6 +6,9 @@ all-age lane's account matrix / estimator (`all_age_ledger_2026_09_17`) and the
 expanded-account charge builder (`ledger_absolute_2026_09_17`) are imported and
 called, never copied. This lane re-cuts the `mexico_born` group by PEINUSYR and
 reports the partial account plus only G, K, X and R; it is not a complete account.
+Since 2026-10-07 it also reports `partial_plus_T`: the partial account with the
+ledger's item T, which puts the income tax the survey misses on the main case's
+income-tax keys. The partial account itself keeps taxes as the survey reports them.
 
 Run from the repository root:
 
@@ -60,6 +63,7 @@ ALL_NATIVE = "all_native"
 BAND_LABELS = ["0-17", "18-24", "25-34", "35-44", "45-54", "55-64", "65-74", "75+"]
 SELECTED_ACCOUNT = "partial_plus_G_K_X_R"
 SELECTED_ITEMS = ["G", "K", "X", "R"]
+T_ACCOUNT = "partial_plus_T"        # the partial account with item T: income tax on the case's keys (2026-10-07)
 
 # ---------------------------------------------------------------------------
 # PEINUSYR, "When did you come to the U.S. to stay?", CPS ASEC March 2025
@@ -181,7 +185,8 @@ def selected_charges(state, base_matrix, civilian, groups_for_ctx, codes, payer_
                donor_codes=codes, donor_payer_means=payer_means, exposure=exposure,
                n_civilian=float(weights[civilian, 0].sum()), us_resident=us_resident,
                consumption_proxy=base_matrix[:, 4], capital=cap, off=[],
-               is_white_ref=groups_for_ctx[WHITE], is_target=member_count > 0)
+               is_white_ref=groups_for_ctx[WHITE], is_target=member_count > 0,
+               income_tax_keys=AL.income_tax_keys(d, civilian, weights[:, 0]))
     charges, dropped, centrals, national, _ = AL.build_charges(ctx, params)
     return charges, dropped, centrals, national, us_resident, vintage
 
@@ -332,11 +337,23 @@ def main() -> None:
                              national={k: national[k] for k in keys if k in national})
         print(f"[{SELECTED_ACCOUNT}] charge columns used: {keys}; dropped items: "
               f"{[x['item'] for x in dropped]}", flush=True)
+        # Item T, the income tax the survey misses on the case's keys, rides in one more column for its own
+        # account, partial_plus_T; the selected account above keeps its four items.
+        t_key = f"T|{centrals.get('T')}"
+        if t_key not in charges.columns:
+            raise SystemExit(f"[BLOCKED] {T_ACCOUNT} requires the ledger's item T")
+        charge_matrix = np.column_stack([charge_matrix, full[:, charges.columns.index(t_key)]])
+        complete_info[T_ACCOUNT] = dict(key=t_key, national=national.get(t_key))
 
     values = np.column_stack([shared, charge_matrix]) if charge_matrix.size else shared
     n_base = len(COMPONENTS)
-    base_coeff = np.concatenate([COEFFICIENTS, np.zeros(charge_matrix.shape[1])])
-    complete_coeff = np.concatenate([COEFFICIENTS, np.ones(charge_matrix.shape[1])])
+    n_sel = len(charge_keys)
+    n_t = charge_matrix.shape[1] - n_sel                     # 1 when item T's column is built
+    base_coeff = np.concatenate([COEFFICIENTS, np.zeros(n_sel + n_t)])
+    complete_coeff = np.concatenate([COEFFICIENTS, np.ones(n_sel), np.zeros(n_t)])
+    partial_t_coeff = np.concatenate([COEFFICIENTS, np.zeros(n_sel), np.ones(n_t)])
+    accounts = [("partial", base_coeff)] + ([(SELECTED_ACCOUNT, complete_coeff)] if charge_keys else []) \
+        + ([(T_ACCOUNT, partial_t_coeff)] if n_t else [])
 
     print("[stage] replicate aggregation over windows and references", flush=True)
     masks = dict(window_masks)
@@ -415,6 +432,27 @@ def main() -> None:
               f"-> {'PASS' if ok3 else 'FAIL'}", flush=True)
         if not ok3:
             raise SystemExit("[BLOCKED] gate 3 failed")
+        if n_t:
+            # item T's column must reproduce the absolute lane's T row for the Mexico-born cell
+            t_item, t_arm = t_key.split("|")
+            sel_t = items.query("item == @t_item and arm == @t_arm and group == 'mexico_born'")
+            if len(sel_t) != 1:
+                raise SystemExit("[BLOCKED] gate 3: item T's row missing from the absolute lane")
+            t_bn = (float(account(stats["mexico_born"], partial_t_coeff, means)[:, 0].sum())
+                    - float(account(stats["mexico_born"], base_coeff, means)[:, 0].sum())) / 1e9
+            t_gap = (float(standardized_gap_support(stats["mexico_born"], stats[WHITE], partial_t_coeff,
+                                                    means, white_shares, full_support)[0][0])
+                     - stored_gap)
+            t_theirs_bn = float(sel_t.total_bn.iloc[0])
+            t_theirs_gap = float(sel_t.common_age_gap_per_person_vs_white.iloc[0])
+            ok3t = abs(t_bn - t_theirs_bn) <= 0.01 and abs(t_gap - t_theirs_gap) <= 0.01
+            gate3.update(T_mine_bn=t_bn, T_absolute_lane_bn=t_theirs_bn, T_mine_gap=t_gap,
+                         T_absolute_lane_gap=t_theirs_gap, T_passed=ok3t)
+            print(f"[gate 3] item T column vs ledger_absolute items_by_group: {t_bn:+.4f}bn vs "
+                  f"{t_theirs_bn:+.4f}bn; gap {t_gap:+.3f} vs {t_theirs_gap:+.3f} "
+                  f"-> {'PASS' if ok3t else 'FAIL'}", flush=True)
+            if not ok3t:
+                raise SystemExit("[BLOCKED] gate 3 failed for item T")
 
     # ---- per-window estimates --------------------------------------------
     rows, comp_rows, band_rows, rep = [], [], [], {}
@@ -425,9 +463,7 @@ def main() -> None:
     for name in WINDOW_NAMES + ["mexico_born"]:
         cell = stats[name]
         n = cell["n"].sum(axis=0)
-        for label, coeff, tag in [("partial", base_coeff, ""), (SELECTED_ACCOUNT, complete_coeff, "")]:
-            if label == SELECTED_ACCOUNT and not charge_keys:
-                continue
+        for label, coeff in accounts:
             y = account(cell, coeff, means).sum(axis=0)
             q = -cell["h"][:, :, 0].sum(axis=0)
             for metric, v, grad in [(f"{label}_absolute_total", y, q),
@@ -467,13 +503,16 @@ def main() -> None:
         # per-band balance per person
         per_band = account(cell, base_coeff, means)
         per_band_c = account(cell, complete_coeff, means) if charge_keys else None
+        per_band_t = account(cell, partial_t_coeff, means) if n_t else None
         for b in range(8):
             pop_b = float(cell["n"][b, 0])
             band_rows.append(dict(
                 window=name, band=b, band_label=BAND_LABELS[b], population=pop_b,
                 partial_balance_per_person=float(per_band[b, 0] / pop_b) if pop_b > 0 else float("nan"),
                 partial_plus_G_K_X_R_balance_per_person=(float(per_band_c[b, 0] / pop_b)
-                                             if (charge_keys and pop_b > 0) else float("nan"))))
+                                             if (charge_keys and pop_b > 0) else float("nan")),
+                partial_plus_T_balance_per_person=(float(per_band_t[b, 0] / pop_b)
+                                                   if (n_t and pop_b > 0) else float("nan"))))
 
     table = pd.DataFrame(rows)
     table.to_csv(out / "window_estimates.csv", index=False)
@@ -482,7 +521,7 @@ def main() -> None:
 
     # ---- derivative view --------------------------------------------------
     deriv_rows = []
-    for label in (["partial"] + ([SELECTED_ACCOUNT] if charge_keys else [])):
+    for label, _ in accounts:
         for ref in [WHITE, ALL_NATIVE]:
             key = f"{label}_common_age_gap_per_person_common_support"
             series = [rep[f"{w}|{ref}|{key}"] for w in WINDOW_NAMES]
@@ -559,12 +598,12 @@ def main() -> None:
     print(descr[["window", "span", "records", "weighted_population", "mean_age",
                  "own_children_under18_per_adult"]].round(3).to_string(index=False))
     show = table[table.window.isin(WINDOW_NAMES + ["mexico_born"])]
-    for metric in ["partial_absolute_per_person", f"{SELECTED_ACCOUNT}_absolute_per_person"]:
+    for metric in [f"{label}_absolute_per_person" for label, _ in accounts]:
         sub = show[(show.metric == metric)]
         if len(sub):
             print(f"\n[{metric}]")
             print(sub[["window", "population", "estimate", "se_joint"]].round(1).to_string(index=False))
-    for label in (["partial"] + ([SELECTED_ACCOUNT] if charge_keys else [])):
+    for label, _ in accounts:
         sub = show[(show.metric == f"{label}_common_age_gap_per_person_common_support")
                    & (show.reference == WHITE)]
         print(f"\n[{label} common-age gap vs third-plus NH white, common support]")

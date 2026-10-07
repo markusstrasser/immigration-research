@@ -22,15 +22,15 @@
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/extend_ledger.py",
-      "sha256": "460c17f349a8651946d2000c2f7ba968663038bca7938a83a804eef41737ebd7"
+      "sha256": "72bfd4162d55e9ab4bbcd5a65513084700ff62975385f2e67095e965a1226055"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py",
-      "sha256": "fc234ffe3321c69cb8d2bb6b18b29ca06f900eac6dd67b7a3fd32ef81fc9cddf"
+      "sha256": "e27feba2dc7d548ff2712024c4f52d7c6564a31f2a90252ec35b50c1441446f9"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/arrival_window_ledger.py",
-      "sha256": "f52a885231332de0fd4893f12ba2e42610b2d520e18210c8826281ed97c46d05"
+      "sha256": "e3e5fbb3e3eb9858744ce5dd6da1116ee8c23358123aaa0a2c1379874b29e9ca"
     }
   ],
   "peinusyr_codes": {
@@ -149,7 +149,12 @@
       "absolute_lane_bn": -62.9315118670073,
       "mine_gap": 580.4256975216931,
       "absolute_lane_gap": 580.4256975216817,
-      "passed": true
+      "passed": true,
+      "T_mine_bn": 3.6137037505467187,
+      "T_absolute_lane_bn": 3.613703750546725,
+      "T_mine_gap": -1265.8091087617895,
+      "T_absolute_lane_gap": -1265.8091087617915,
+      "T_passed": true
     }
   },
   "support": {
@@ -240,7 +245,8 @@
       "E",
       "C",
       "F",
-      "S"
+      "S",
+      "T"
     ],
     "exclusion_reason": "This arrival-window lane has only four additional annual items; institutional data do not identify arrival windows. These outputs cannot substitute for the expanded annual account.",
     "dropped": [
@@ -271,6 +277,10 @@
         "ratio": 0.9900527030312053,
         "kind": "flat_per_capita"
       }
+    },
+    "partial_plus_T": {
+      "key": "T|central",
+      "national": null
     }
   },
   "asec_2026": {

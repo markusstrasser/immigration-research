@@ -1,5 +1,7 @@
 **Verdict:** With one federal calculator (Tax-Calculator 6.8.2, tax year 2024, current law) run on tax units built from both surveys, the ACS federal income-tax gap per standardized person is 0.96 of the CPS one for the Mexico-born and 0.97 for US-born Mexican self-ID, and the payroll-tax gaps match at 0.99 and 1.01; the calculator reproduces the Census tax model on CPS with an income-tax ratio of 1.062 for the union of Mexican-origin targets and 0.986 for native non-Hispanic whites (gate band 0.85–1.15, **PASS**) and a payroll ratio of 1.000 and 1.004.
 
+[2026-10-08: income taxes computed from survey incomes with Tax-Calculator, not on the main case's income-tax keys (item T in `ledger_absolute_2026_09_17`), which comparisons against whites now take; the survey-to-survey ratios here are a different object.]
+
 [REPLICATION] CPS ASEC 2025 and ACS 2024 1-year PUMS, both computed in this lane with one calculator.
 
 The earlier lane found ACS total-income gaps about 10% narrower than CPS and flagged

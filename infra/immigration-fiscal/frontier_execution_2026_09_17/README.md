@@ -1,5 +1,7 @@
 # Frontier execution — 2026-09-17
 
+[2026-10-08: taxes as the survey reports them. Comparisons against whites now take the main case's income-tax keys (item T in `ledger_absolute_2026_09_17`), which this lane does not carry; on them the white reference pays more income tax, and on that ledger the Mexican-origin gaps against whites widen by $0.9–1.3k per person.]
+
 **Verdict:** The six proposed workstreams were pursued. New survey estimates and an official variance benchmark pass independent checks; policy replication and local incidence remain partial at explicitly recorded access/identification limits. Read the [integrated findings](../../../research/immigration-frontier-execution-2026-09-17.md) first.
 
 ## Coverage and results

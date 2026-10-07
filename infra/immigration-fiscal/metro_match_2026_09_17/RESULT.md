@@ -277,3 +277,54 @@ Skipped, and why:
   the single-metro table: their local white reference is 17 and 28 records. The brief's
   six-metro list does not include them.
 - **No commits.** Nothing outside this directory was written.
+
+## Revisions — item T, October 8, 2026
+
+`metro_tests.py` also writes `derived/metro_matched_T.csv` (480 rows) and
+`derived/metro_generation_contrasts_T.csv` (24) for `partial_plus_T`: the partial account plus the
+white-reference ledger's item T (added to `ledger_absolute_2026_09_17` on October 7). Item T moves each
+record's survey income tax onto the main case's income-tax keys, through that lane's own functions
+(`ledger_stress_2026_09_17/common.py`). Comparisons against whites take that key. The files above keep
+taxes as the survey reports them and are unchanged byte for byte. Gate (d): on the 8-band collapse, T
+moves each target's standardized gap against whites by the absolute lane's T row.
+
+Union against third-plus NH whites, shared allocation, $ per standardized person (95% interval):
+
+| standard | partial | partial + T |
+|---|---|---|
+| age only | −5,734 [−6,348, −5,121] | −6,910 [−7,765, −6,055] |
+| state × age | −5,758 [−6,571, −4,946] | −6,791 [−8,055, −5,527] |
+| metro × age | −5,797 [−6,592, −5,002] | −6,818 [−8,030, −5,605] |
+| metro × age, 5-record floor | −5,872 [−6,666, −5,077] | −6,895 [−8,107, −5,683] |
+
+With T, matching on place narrows the union's per-person gap by $92 (age only to metro × age), where
+it had widened it by $63; both moves are inside one standard error. The matched national total still
+widens with place: −$338.7bn age only → −$491.5bn metro × age (was −$291.3bn → −$412.6bn). By
+generation at metro × age: Mexico-born −5,900 → −6,958, second generation −7,081 → −8,489, third-plus
+−4,617 → −5,288.
+
+The generation contrasts lose their one place-matched result. G3+ − G2 at metro × age goes from +2,464
+[+493, +4,435] to +3,202 [−4, +6,407]; under every place standard and both allocations its interval
+now reaches zero, so no contrast stays clear of zero once place is held fixed. Age only, G3+ − G2
+(+1,830 [+459, +3,201]) and G3+ − G1 (+2,352 [+845, +3,860]) still do at the shared allocation.
+[DATA: `derived/metro_generation_contrasts_T.csv`]
+
+Single metros, union against local whites at their own ages, shared allocation:
+
+| metro | partial | partial + T | ten largest white SPM units' share of local white T |
+|---|---|---|---:|
+| Los Angeles | −17,196 [−21,144, −13,249] | −21,083 [−27,783, −14,383] | 91% |
+| Riverside | −8,621 [−14,519, −2,723] | −11,944 [−23,967, +79] | 118% |
+| Houston | −7,493 [−10,939, −4,048] | −8,977 [−14,141, −3,814] | 147% |
+| Dallas | −9,823 [−13,311, −6,334] | −14,744 [−22,027, −7,461] | 120% |
+| Chicago | −11,838 [−14,888, −8,788] | −11,949 [−15,346, −8,551] | 440% |
+| Phoenix | −6,721 [−11,141, −2,301] | −10,945 [−20,223, −1,668] | 114% |
+
+A share above 100% means the metro's other white records have a negative T on net. Each metro's
+increment rests on its few top white households, and the standard errors roughly double (Los Angeles
+2,014 → 3,418, Dallas 1,780 → 3,716, Phoenix 2,255 → 4,734). Of the 24 single-metro union intervals,
+22 stay adverse; Riverside's two at the shared allocation now reach +79 (against whites) and +119
+(against all natives). [DATA: `derived/t_concentration.csv`, `derived/metro_matched_T.csv`]
+
+Reproduce: `uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/metro_match_2026_09_17
+"uv run --no-project python3 {lane}/metro_tests.py"` ends `IDENTICAL: 12/12`.

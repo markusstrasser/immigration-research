@@ -504,3 +504,42 @@ and converted with `pdftotext -layout`; `verify.py` reads the text.
   path names now render C3 from `SPLIT_C3`. `verify.py` looks C3 up by label instead of parsing it from
   `delta_source`. All 39 checks pass. Only `attrition_bounds.csv`, `attrition_corrected_rho.csv` and
   `projection.csv` changed. `scripts/rerun_lane.py` (`summarize.py`, `verify.py`): IDENTICAL 28/28.
+
+## Revisions — item T, October 8, 2026
+
+`analyze_cps.py --income-tax-key` adds the measure `ledger_partial_plus_T_per_adult`: the partial
+ledger plus the white-reference ledger's item T (added to `ledger_absolute_2026_09_17` on October 7),
+which moves each record's survey income tax onto the main case's income-tax keys. T is taken at the
+record from that lane's own `income_tax_keys` and `income_tax_item`, then shared among the unit's
+adults like the other components. The keys exist for ASEC 2025 records only, so the flag refuses any
+other years and the pooled frames above keep taxes as the survey reports them; they are unchanged.
+The new run is `--years 2025 --label CPS_ASEC_2025 --income-tax-key`, which writes both ledger
+measures on the 2025 frame. [DATA: `derived/cps_gaps_CPS_ASEC_2025.csv`,
+`derived/cps_carryover_CPS_ASEC_2025.csv`]
+
+Partial ledger gap per adult against age/sex-matched third-plus non-Hispanic whites, adults 25–64,
+2024 dollars a year (SE):
+
+| | pooled 2022–25, as published | 2025, survey taxes | 2025, with T |
+|---|---:|---:|---:|
+| G1 | −11,230 (227) | −10,911 (395) | −13,262 (726) |
+| G2 | −7,331 (270) | −7,566 (466) | −9,119 (881) |
+| G3+ | −6,615 (317) | −6,396 (526) | −7,637 (993) |
+| ρ G1 → G2 | 0.653 (0.023) | 0.693 (0.039) | 0.688 (0.061) |
+| ρ G2 → G3+ | 0.902 (0.048) | 0.845 (0.074) | 0.837 (0.115) |
+
+On the same frame T widens every generation's gap, by $1.2–2.4k a year, and leaves the carry-over
+ratios where they were. So the projection's steps hold and its starting level widens: the G3+ gap is
+19% wider with T on 2025. The co-resident frames' small cells (observed G3, 117–210 records) carry T
+on a few records, and their standard errors with T reach 5,841–9,895, so those rows say nothing.
+
+At the record, T is $468.4bn nationally (federal $422.9bn, state $45.4bn). The ledger's shared
+allocation gives $422.9bn in all (federal $385.6bn, state $37.2bn). The lines are the same; the
+survey base differs, because equal splits within SPM units, weighted by members' unequal person
+weights, raise the survey's federal tax before refundable credits from $1,981.1bn to $2,018.4bn.
+[DATA: `derived/cps_audit_CPS_ASEC_2025.json` → `item_T` → `national_parts`;
+`ledger_absolute_2026_09_17/derived/audit.json` → `item_metadata` → `T|central`]
+
+Reproduce: `scripts/rerun_lane.py` over the seven commands above plus
+`"uv run --no-project python3 {lane}/analyze_cps.py --years 2025 --label CPS_ASEC_2025 --income-tax-key"`
+(third) ends `IDENTICAL: 32/32`.

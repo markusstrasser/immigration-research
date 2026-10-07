@@ -1,6 +1,6 @@
 Model self-report: Opus 5 (1M context) — claude-opus-5[1m]
 
-**Verdict:** STABLE. The Mexican-second-generation fiscal gap reproduces on CPS ASEC 2026
+**Verdict:** [2026-10-08: taxes as the survey reports them. Comparisons against whites now take the main case's income-tax keys (item T in `ledger_absolute_2026_09_17`), which exist for ASEC 2025 records only, so this lane's ASEC 2026 rerun cannot carry them; on that ledger the Mexican-origin gaps against whites widen by $0.9–1.3k per person.] STABLE. The Mexican-second-generation fiscal gap reproduces on CPS ASEC 2026
 (income year 2025) and moves by less than one standard error on both headline measures.
 Taxes minus selected transfers goes from −6,066 (se 353) to −6,499 (se 489), a change of
 −434 against a 603 standard error of the change (0.72 se). The extended balance goes from

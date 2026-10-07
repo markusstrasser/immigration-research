@@ -1,5 +1,7 @@
 **Verdict:** Second-generation Indian adults, put at the 3rd+ non-Hispanic white 25–64 age mix, run **+$23,692 (se 5,482)** per person-year on the repo's extended 2025 ledger — wider than the India-born **+$10,955 (se 1,449)**. Third-plus Indian (US-born, both parents US-born, `PRDASIAN=1`) is a **tiny, noisy cell**: 2025 n=49, gap **+$11,806 (se 8,150)** after age-standardising, which does not reject white parity. A five-year ASEC pool (n=203 stacked) on a thinner own-tax-minus-cash measure gives **+$4,101 (se 3,880)** age-standardised; 2023 is below whites. ACS same-age personal income, which cannot split G2 from G3, shows US-born Asian Indian adults 25–64 at **+$59k** mean PINCP vs US-born NH whites. [DATA: this lane; `indian_ledger_2026_09_18`]
 
+[2026-10-08: taxes as the survey reports them. Comparisons against whites now take the main case's income-tax keys (item T in `ledger_absolute_2026_09_17`), which this lane does not carry; on them India-origin and white records with top incomes both pay more, so these comparisons would move (not measured).]
+
 Model: Cursor Grok 4.6. Instrument caveat: `notes/llm-bias-caveat.md`.
 
 The absolute sign is a convention of a partial ledger (no public goods, defence, debt service or benefit accrual). **The gap against same-age whites is not.** Residents, not admissions. G3 is race/ID, not observed grandparents.

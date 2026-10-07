@@ -1,0 +1,70 @@
+{
+  "gate_2025": {
+    "G3_Mexico_GP_observed": 2869946.00608459,
+    "G4plus_all_US_GP_observed": 2073496.89852686
+  },
+  "years": {
+    "2025": {
+      "source": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/census/cps_asec_2025/asecpub25csv.zip",
+      "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+      "rows": 142125,
+      "income_year": 2024,
+      "cpi_factor_to_2024": 1.0,
+      "fedtax_identity": true,
+      "item_T": {
+        "total_bn": 468.3566681883676,
+        "allocation": "record, then shared among the unit's adults like the other components",
+        "national_parts": {
+          "allocation": "personal",
+          "federal_key_sum": 0.9999999999999993,
+          "federal_line_bn": 2403.242,
+          "state_line_bn": 536.167,
+          "cps_federal_before_refundable_bn": 1981.110019283932,
+          "eitc_liability_offset_bn": 0.8116875110733333,
+          "cps_state_positive_bn": 490.754000038773,
+          "federal_increment_bn": 422.9436682271406,
+          "state_increment_bn": 45.41299996122705
+        },
+        "inputs": [
+          {
+            "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py",
+            "sha256": "e27feba2dc7d548ff2712024c4f52d7c6564a31f2a90252ec35b50c1441446f9"
+          },
+          {
+            "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/keys.py",
+            "sha256": "cbf2ee35ebc6205bb718fff398ef59f19f4d95d9db98e91beff7a490c6168934"
+          },
+          {
+            "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/reads/irs_table_1_2_ty2023.md",
+            "sha256": "47d5d93d51e3f74b8b87763a79e1c4a47da86e1fa83d0b3201a7c32b2fdf64c6"
+          },
+          {
+            "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/bins.csv",
+            "sha256": "950d83f07ab7f63ade40e47570c4b751ea416c72c7753e56f595d2219d8369cb"
+          },
+          {
+            "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/tax_key_heldout_2026_09_28/derived/translation_inputs.json",
+            "sha256": "a701d8e4d695ec163b3e04ded5357fbde2332881e6d3fe0dd55ca63b5dffd82e"
+          },
+          {
+            "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/external_benchmarks_2026_09_24/frame.py",
+            "sha256": "c5ba5e8c7e6fceef6f4f853b8cf596ebd639b3be8cc6f8a376125831f8e5b6ad"
+          },
+          {
+            "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/external_benchmarks_2026_09_24/_cache/cps25_frame.parquet",
+            "sha256": "915993b7bd9d050e615b8d485f9703bf6c084e54af71d82f989a93add14afcc5"
+          },
+          {
+            "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/external_benchmarks_2026_09_24/derived/cbo_group_shares.csv",
+            "sha256": "fc73f97db7e8da645e22e546cf6f637c3f059c66fb328c058689f2c1c1d1f24b"
+          },
+          {
+            "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json",
+            "sha256": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd"
+          }
+        ]
+      }
+    }
+  },
+  "pooling": "weights/len(years); common replicate index across years; overlapping households across adjacent ASECs are person-years, not unique persons"
+}

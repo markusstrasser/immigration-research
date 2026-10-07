@@ -183,3 +183,41 @@ The per-person tables above imply that the stored first-to-third-plus narrowing 
 Dollars per standardized person per year, white reference, pointwise 95% intervals. At a common age and place the first-to-third-plus difference is not distinguishable from zero under either allocation rule. The 8-band narrowing was therefore partly geographic composition: the Mexico-born are concentrated in California, where every group's gap against local whites is largest, so an age-only standard that leaves each group at its own places makes the first generation look worst. Neither standard is uniquely correct; the age-only standard answers "at the places each group lives," the joint standard "at the places the reference lives." The level gaps are adverse under both. [INFERENCE on measured contrasts]
 
 Re-run by the parent 2026-09-17: `test1_state_matched.py` (144 rows, gates 1–3 PASS), `test1b_generation_contrasts.py` (PASS), `test2_earnings_scaling.py` (238 rows, linearity residual 1.02e−14, union δ* 1.006 / 0.845 shared, 0.898 / 0.798 personal).
+
+## Revisions — item T, October 8, 2026
+
+`test1_state_matched.py` also writes `derived/state_matched_T.csv`: the same 144 rows for
+`partial_plus_T`, the partial account plus the white-reference ledger's item T (added to
+`ledger_absolute_2026_09_17` on October 7). Item T moves each record's survey income tax onto the main
+case's income-tax keys; `common.income_tax_columns` takes it from that lane's own `income_tax_keys`
+and `income_tax_item`. Comparisons against whites take that key. `state_matched.csv` and the other
+outputs keep taxes as the survey reports them and are unchanged byte for byte. Gate 4: on the 8-band
+collapse, T moves each target's standardized gap against whites by the absolute lane's T row
+(residuals ≤ 2.2e−12).
+
+Union against local third-plus NH whites, shared allocation, $ per standardized person (95% interval):
+
+| standard | partial | partial + T |
+|---|---|---|
+| California, own-state white ages | −12,133 [−14,068, −10,198] | −15,228 [−18,291, −12,164] |
+| Texas, own-state white ages | −7,479 [−9,253, −5,704] | −9,267 [−12,530, −6,004] |
+| state × age, 32 cells | −5,830 [−6,634, −5,025] | −6,888 [−8,075, −5,700] |
+
+Age-matched gap totals: California −$189.3bn → −$233.0bn, Texas −$79.2bn → −$100.2bn, 32 cells
+−$411.8bn → −$494.7bn. T widens both state gaps, California's more, so the California–Texas
+difference grows from $4,654 to $5,961 per standardized person.
+
+The state increments rest on few households. The ten largest SPM units carry 67% of California
+whites' T and 98% of Texas whites' (without them $1,126 and $51 per white), against 19% for whites
+nationally; standard errors widen from 987 to 1,563 (California) and 905 to 1,665 (Texas). [DATA:
+`derived/t_concentration.csv`] The national key's split across states is itself uncertain: re-raked
+on IRS state data, California whites' federal income tax rises $14.0bn and Texas whites' falls $8.3bn
+on the main case, which would widen the difference further; the same few households carry it either
+way. [SOURCE: `white_replacement_2026_09_28/RESULT.md`, "An outside test against the IRS's state
+data", 94dd712d]
+
+Reproduce: `uv run --no-project python3 scripts/rerun_lane.py --allow-unrun
+infra/immigration-fiscal/ledger_stress_2026_09_17/common.py infra/immigration-fiscal/ledger_stress_2026_09_17
+"uv run --no-project python3 {lane}/test1_state_matched.py" "uv run --no-project python3
+{lane}/test1b_generation_contrasts.py" "uv run --no-project python3 {lane}/test2_earnings_scaling.py"` ends
+`IDENTICAL: 17/17` (`common.py` is imported, not run).

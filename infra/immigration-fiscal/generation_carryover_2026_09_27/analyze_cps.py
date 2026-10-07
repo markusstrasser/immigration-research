@@ -5,6 +5,12 @@ and the September 5 ledger's partial tax-minus-transfer construction (SPM-unit t
 equally among adults). Gaps are group mean minus third-plus non-Hispanic white mean after the
 whites are reweighted to the group's age x sex mix within the same frame. SEs use the published
 160 SDR replicates, 4/160, pooled with a common replicate index across years.
+
+`--income-tax-key` (2026-10-08) adds the measure `ledger_partial_plus_T_per_adult`: the partial
+ledger plus the white-reference ledger's item T (`ledger_absolute_2026_09_17`), which moves each
+record's survey income tax onto the main case's income-tax keys, at the record and then shared
+among the unit's adults like the other components. The keys exist for ASEC 2025 records only, so
+the flag requires `--years 2025`; the pooled frames keep taxes as the survey reports them.
 """
 from __future__ import annotations
 
@@ -33,6 +39,7 @@ def _load(name, path):
 
 
 split = _load("gen_split_cps", FISCAL / "generation_split_2026_09_20/analyze_cps.py")
+ABSOLUTE = FISCAL / "ledger_absolute_2026_09_17/absolute_ledger.py"
 
 SOURCES = {
     2022: (FISCAL / "latam_comparison_2026_09_17/_cache/2022/asecpub22csv.zip", "22"),
@@ -141,12 +148,30 @@ def groups(d: pd.DataFrame):
     return g, one, both
 
 
-def ledger(d: pd.DataFrame) -> np.ndarray:
+def income_tax_item(d: pd.DataFrame) -> tuple[np.ndarray, dict, list]:
+    """Item T per ASEC 2025 record at the record (the ledger's personal allocation), from the
+    white-reference ledger's own income_tax_keys and income_tax_item, which refuse records without
+    a key row or with another civilian universe or weights. Returns T, its national parts and the
+    files to fingerprint."""
+    if set(d.year) != {2025}:
+        raise SystemExit("[BLOCKED] item T: the case's income-tax keys exist for ASEC 2025 records only")
+    AL = _load("absolute_ledger", ABSOLUTE)
+    civilian = (d.PRPERTYP.eq(2) | d.A_AGE.lt(15)).to_numpy()
+    w = d.pwwgt0.to_numpy(float)
+    keys = AL.income_tax_keys(d, civilian, w)
+    federal, state, meta = AL.income_tax_item(d, keys, civilian, w, True, None)
+    return federal + state, meta, [ABSOLUTE, *keys["inputs"]]
+
+
+def ledger(d: pd.DataFrame, extra: np.ndarray | None = None) -> np.ndarray:
     """Partial ledger per person: SPM-unit (payroll+federal after refundable+state) minus
     (SS, SSI, TANF/GA, UI, veterans) minus (SNAP, energy, WIC, school lunch, broadband),
-    shared equally among the unit's adults 18+ (children only in child-only units)."""
+    shared equally among the unit's adults 18+ (children only in child-only units).
+    extra is a per-record receipt added to the unit total first (item T)."""
     unit = pd.factorize(d.SPM_ID.astype(str) + "_" + d.year.astype(str))[0]
     tax = d[TAXES].sum(axis=1).to_numpy(float)
+    if extra is not None:
+        tax = tax + extra
     cash = d[CASH].sum(axis=1).to_numpy(float)
     tot = np.bincount(unit, weights=tax - cash)
     noncash = d.groupby(unit)[NONCASH].first().sum(axis=1).to_numpy(float)
@@ -209,6 +234,8 @@ MEASURES = {  # name: (value fn, validity fn, stat kind, unit)
     "earnings_worker_mean": (lambda d: d.earn24, lambda d: d.PEARNVAL.gt(0), "mean", "usd2024"),
     "earnings_worker_median": (lambda d: d.earn24, lambda d: d.PEARNVAL.gt(0), "median", "usd2024"),
     "ledger_partial_per_adult": (lambda d: d.ledger24, lambda d: d.A_AGE.ge(18), "mean", "usd2024"),
+    # Only with --income-tax-key; NaN otherwise, and gaps() skips it.
+    "ledger_partial_plus_T_per_adult": (lambda d: d.ledgerT24, lambda d: d.A_AGE.ge(18), "mean", "usd2024"),
 }
 FRAMES = {
     # Observed G3/G4+ need a co-resident parent, so they appear only in the co-resident frames.
@@ -218,7 +245,7 @@ FRAMES = {
 }
 
 
-def build(years):
+def build(years, income_tax_key=False):
     cpi = pd.read_csv(CPI).set_index(pd.read_csv(CPI).columns[0]).iloc[:, 0]
     frames, audit = [], {}
     for y in years:
@@ -232,9 +259,17 @@ def build(years):
         audit[y] = dict(source=str(SOURCES[y][0]), sha256=sha(SOURCES[y][0]), rows=len(d), income_year=y - 1,
                         cpi_factor_to_2024=float(f),
                         fedtax_identity=bool((d.FEDTAX_AC == d.FEDTAX_BC - d.ACTC_CRD - d.EIT_CRED).all()))
+        d["ledgerT24"] = np.nan
+        if income_tax_key:
+            t, meta, inputs = income_tax_item(d)
+            d["ledgerT24"] = ledger(d, extra=t) * f
+            w = d.pwwgt0.to_numpy(float)
+            audit[y]["item_T"] = dict(total_bn=float(t @ w) / 1e9, allocation="record, then shared among the "
+                                      "unit's adults like the other components", national_parts=meta,
+                                      inputs=[dict(path=str(p), sha256=sha(Path(p))) for p in inputs])
         keep = d[list(g)].any(axis=1)
         frames.append(d.loc[keep, ["year", "GESTFIPS", "A_AGE", "A_SEX", "A_HGA", "PEMLR", "PEARNVAL", "earn24", "ledger24",
-                                   "one", "both", *g, *REPS]].copy())
+                                   "ledgerT24", "one", "both", *g, *REPS]].copy())
     return pd.concat(frames, ignore_index=True), audit
 
 
@@ -250,6 +285,8 @@ def gaps(p: pd.DataFrame, nyears: int, label: str):
             if frame == "pop" and m in ("ba_plus_22plus", "less_than_hs_20plus"):
                 continue
             x = fv(p).to_numpy(float)
+            if np.isnan(x).all():
+                continue
             ok = fr & fvalid(p).to_numpy()
             ref = ok & p.white3plus.to_numpy()
             cr = age_cells(p.A_AGE.to_numpy()[ref], p.A_SEX.to_numpy()[ref], frame)
@@ -329,12 +366,16 @@ def main():
     ap.add_argument("--years", default="2022,2023,2024,2025")
     ap.add_argument("--label", default="CPS_ASEC_2022_2025")
     ap.add_argument("--out", type=Path, default=HERE / "derived")
+    ap.add_argument("--income-tax-key", action="store_true",
+                    help="add ledger_partial_plus_T_per_adult (item T); ASEC 2025 only")
     a = ap.parse_args()
     a.out.mkdir(exist_ok=True)
     gate = gate_2025()
     print("gate 2025 reproduced:", gate, flush=True)
     years = [int(y) for y in a.years.split(",")]
-    p, audit = build(years)
+    if a.income_tax_key and years != [2025]:
+        raise SystemExit("[BLOCKED] --income-tax-key needs --years 2025: the case's keys exist for ASEC 2025 only")
+    p, audit = build(years, a.income_tax_key)
     rows, reps = gaps(p, len(years), a.label)
     co = carryover(rows, reps)
     write(rows, a.out / f"cps_gaps_{a.label}.csv")

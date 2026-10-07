@@ -338,3 +338,43 @@ SE $6.802bn, all matching `all_age_ledger_2026_09_17/derived/estimates.csv`.
 ## Revisions — fiscal repair, September 19, 2026
 
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
+
+## Revisions — item T, October 8, 2026
+
+The lane now also reports `partial_plus_T`: the partial account plus the white-reference ledger's
+item T (`ledger_absolute_2026_09_17`, added October 7), which moves each record's survey income tax
+onto the main case's income-tax keys (`tax_key_heldout_2026_09_28/keys.py`). Comparisons against
+whites take that key; the `partial` and `partial_plus_G_K_X_R` rows above keep taxes as the survey
+reports them and are unchanged byte for byte. The run now writes 144 estimates (144/144 finite
+standard errors), and gate 3 also checks the T column against the absolute lane's T row for the
+Mexico-born cell: +$3.6137bn and −1,265.809 on the common-age gap, both exact.
+
+Common-age gap per standardized person against third-plus non-Hispanic whites, common support
+(35+, 0.617 of the white standard), `derived/window_estimates.csv`:
+
+| window | partial | partial + T | SE (partial + T) |
+|---|---:|---:|---:|
+| pre-1990 | −4,901 | −6,615 | 827 |
+| 1990–1999 | −5,296 | −7,013 | 865 |
+| 2000–2009 | −5,268 | −6,997 | 1,012 |
+| 2010–2015 | −4,824 | −6,734 | 1,183 |
+| 2016–2025 | −3,978 | −5,498 | 1,349 |
+| all Mexico-born | −5,360 | −6,979 | 765 |
+
+With T the verdict's −$3,978 and "−$4,800 to −$5,300" read −$5,498 and −$6,600 to −$7,000; the
+2016–2025 window stays the least negative. The first difference into it is +1,236 (SE 1,554), so no
+adjacent-window change reaches one standard error, as before.
+
+On the absolute account T adds +$296 per Mexico-born person against +$1,521 per white, and +$1,196
+to the 2016–2025 window (+$3,495 → +$4,692; SE 926 → 1,685). That window's increment rests on a
+handful of records: its ten largest records carry $2.97bn of its $2.86bn, and without its ten largest
+SPM units its T is −$70 per person. The whites' increment is broad (+$1,226 per person without their
+ten largest units). [DATA: `derived/t_concentration.csv`, shared allocation; written by
+`t_concentration.py`, which recomputes T with the ledger's own functions and checks the Mexico-born
+total against the absolute lane's T row] So the gaps against whites move mainly through the whites'
+side, and the window's own absolute balance with T should not be printed without that caveat.
+
+Reproduce: `uv run --no-project python3 scripts/rerun_lane.py
+infra/immigration-fiscal/arrival_window_fiscal_2026_09_18 "uv run --no-project python3
+{lane}/arrival_window_ledger.py" "uv run --no-project python3 {lane}/t_concentration.py"` ends
+`IDENTICAL: 12/12`.
