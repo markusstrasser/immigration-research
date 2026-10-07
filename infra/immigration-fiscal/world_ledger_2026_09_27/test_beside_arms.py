@@ -128,5 +128,6 @@ def test_staged_sources_pinned(meta):
         pytest.skip("staged sources absent (acquire_beside.py)")
     for k, p in paths.items():
         assert hashlib.sha256(p.read_bytes()).hexdigest() == meta["sources"][k]["sha256"], k
+    # The manifest also lists beside_extra.py's sources (its test checks them).
     manifest = pd.read_csv(D / "beside_sources.csv")
-    assert set(manifest.sha256) == {s["sha256"] for s in meta["sources"].values()}
+    assert {s["sha256"] for s in meta["sources"].values()} <= set(manifest.sha256)

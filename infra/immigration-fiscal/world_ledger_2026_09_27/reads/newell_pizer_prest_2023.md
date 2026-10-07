@@ -2,8 +2,10 @@
 to 1.2, for each dollar of displaced capital, in place of discounting at an investment rate of return. A 7% investment
 return over a 2% or 3% consumption rate implies a 71% or 57% tax on capital, which they reject as implausible.
 
-Used for: the upper m in claim 2's productive-use reading (`world_ledger.py` `RETURN_OVER_DISCOUNT`, quote 3):
-1/(1 − τ) since 2026-10-07, replacing 7% over 2%.
+Used for:
+- the upper m in claim 2's productive-use reading (`world_ledger.py` `RETURN_OVER_DISCOUNT`, quote 3): 1/(1 − τ)
+  since 2026-10-07, replacing 7% over 2%;
+- the crowd-in on the borrowed federal share in arm 4 of `beside_extra.py`: d (SPC − 1) with SPC 1.1.
 
 ## Source
 

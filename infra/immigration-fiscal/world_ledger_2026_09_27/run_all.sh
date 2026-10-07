@@ -31,3 +31,8 @@ for c in "${@:-sept26_schools}"; do
     oct05|oct07) run "$L/world_ledger.py" --case "$c" --basis row4 ;;
   esac
 done
+# The beside arms run on main case v6 alone, after its world ledger; acquire_beside.py stages their sources, as
+# acquire.py does the rest.
+case " $* " in
+  *" oct07 "*) run "$L/beside_arms.py"; run "$L/beside_extra.py" ;;
+esac

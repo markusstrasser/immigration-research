@@ -1,0 +1,1346 @@
+{
+ "arm1": {
+  "cells": {
+   "cdmx": {
+    "emovi_respondents_at_14": 2830,
+    "persons_15plus_m": 7.971269,
+    "records_15plus": 6794,
+    "transitions_pooling": {
+     "cohort": 13,
+     "sex+cohort": 35
+    }
+   },
+   "urban": {
+    "emovi_respondents_at_14": 4730,
+    "persons_15plus_m": 50.004019,
+    "records_15plus": 87834,
+    "transitions_pooling": {
+     "cohort": 4,
+     "sex+cohort": 44
+    }
+   }
+  },
+  "same_person": {
+   "detail": {
+    "arm1b_cmp_re": {
+     "own_schooling_25_64_arrived_20plus": {
+      "e_us_nominal_bn": 149.458,
+      "factor": 1.215416837767379,
+      "hours_employment_mx_over_us": 1.2682922812900244,
+      "lane_ratio_annual": 2.989925420907752,
+      "lane_ratio_hourly": 3.792099332970129,
+      "r_annual": 2.46
+     },
+     "own_schooling_all_ages": {
+      "e_us_nominal_bn": 340.118,
+      "factor": 1.3334170742370952,
+      "hours_employment_mx_over_us": 1.2588407000973725,
+      "lane_ratio_annual": 3.2802060026232542,
+      "lane_ratio_hourly": 4.129256820805861,
+      "r_annual": 2.46
+     }
+    },
+    "arm1c_mmp_annual": {
+     "own_schooling_25_64_arrived_20plus": {
+      "e_us_nominal_bn": 149.458,
+      "factor": 1.494962710453876,
+      "hours_employment_mx_over_us": 1.2682922812900244,
+      "lane_ratio_annual": 2.989925420907752,
+      "lane_ratio_hourly": 3.792099332970129,
+      "r_annual": 2.0
+     },
+     "own_schooling_all_ages": {
+      "e_us_nominal_bn": 340.118,
+      "factor": 1.6401030013116271,
+      "hours_employment_mx_over_us": 1.2588407000973725,
+      "lane_ratio_annual": 3.2802060026232542,
+      "lane_ratio_hourly": 4.129256820805861,
+      "r_annual": 2.0
+     }
+    },
+    "arm1c_mmp_per_person": {
+     "own_schooling_25_64_arrived_20plus": {
+      "e_us_nominal_bn": 149.458,
+      "factor": 1.8960496664850646,
+      "hours_employment_mx_over_us": 1.2682922812900244,
+      "lane_ratio_annual": 2.989925420907752,
+      "lane_ratio_hourly": 3.792099332970129,
+      "r_annual": 1.5769235762956235
+     },
+     "own_schooling_all_ages": {
+      "e_us_nominal_bn": 340.118,
+      "factor": 2.0646284104029307,
+      "hours_employment_mx_over_us": 1.2588407000973725,
+      "lane_ratio_annual": 3.2802060026232542,
+      "lane_ratio_hourly": 4.129256820805861,
+      "r_annual": 1.58876337557667
+     }
+    },
+    "arm1c_nis_annual": {
+     "own_schooling_25_64_arrived_20plus": {
+      "e_us_nominal_bn": 149.458,
+      "factor": 1.6610696782820844,
+      "hours_employment_mx_over_us": 1.2682922812900244,
+      "lane_ratio_annual": 2.989925420907752,
+      "lane_ratio_hourly": 3.792099332970129,
+      "r_annual": 1.8
+     },
+     "own_schooling_all_ages": {
+      "e_us_nominal_bn": 340.118,
+      "factor": 1.8223366681240303,
+      "hours_employment_mx_over_us": 1.2588407000973725,
+      "lane_ratio_annual": 3.2802060026232542,
+      "lane_ratio_hourly": 4.129256820805861,
+      "r_annual": 1.8
+     }
+    },
+    "arm1c_nis_per_person": {
+     "own_schooling_25_64_arrived_20plus": {
+      "e_us_nominal_bn": 149.458,
+      "factor": 2.1067218516500716,
+      "hours_employment_mx_over_us": 1.2682922812900244,
+      "lane_ratio_annual": 2.989925420907752,
+      "lane_ratio_hourly": 3.792099332970129,
+      "r_annual": 1.4192312186660612
+     },
+     "own_schooling_all_ages": {
+      "e_us_nominal_bn": 340.118,
+      "factor": 2.2940315671143674,
+      "hours_employment_mx_over_us": 1.2588407000973725,
+      "lane_ratio_annual": 3.2802060026232542,
+      "lane_ratio_hourly": 4.129256820805861,
+      "r_annual": 1.429887038019003
+     }
+    }
+   },
+   "e_us_nominal_bn": {
+    "own_schooling_25_64_arrived_20plus": 149.458,
+    "own_schooling_all_ages": 340.118
+   },
+   "sets": {
+    "arm1b_cmp_re": {
+     "label": "G1 at CMP's Re 2.46 as a year's ratio",
+     "per_hour": false,
+     "r": 2.46
+    },
+    "arm1c_mmp_annual": {
+     "label": "G1 at MMP's 2.0, read as a year's ratio",
+     "per_hour": false,
+     "r": 2.0
+    },
+    "arm1c_mmp_per_person": {
+     "label": "G1 at MMP's 2.0 an hour, per person at the lane's hours and employment",
+     "per_hour": true,
+     "r": 2.0
+    },
+    "arm1c_nis_annual": {
+     "label": "G1 at the NIS bin's 1.8, read as a year's ratio",
+     "per_hour": false,
+     "r": 1.8
+    },
+    "arm1c_nis_per_person": {
+     "label": "G1 at the NIS bin's 1.8 an hour, per person at the lane's hours",
+     "per_hour": true,
+     "r": 1.8
+    }
+   }
+  },
+  "urban_price_level": 1.0330877789703234,
+  "urban_price_level_source": "beside_arms.py price_levels: 1 + s_h (R - 1), R the hedonic rent index of localities of 100,000+"
+ },
+ "arm3": {
+  "budget_change_by_class_bn": {
+   "arm3a": {
+    "G1": {
+     "health_services": -1.0116876879086698,
+     "medicaid": -2.8750329860921795,
+     "medicare": -5.005347429822301,
+     "services": -3.9318017044067197
+    },
+    "G2": {
+     "health_services": -1.2407750569464975,
+     "medicaid": -4.828921230192982,
+     "medicare": -4.000124158861226,
+     "services": -6.361307825921688
+    },
+    "G3+": {
+     "health_services": -2.005592227759321,
+     "medicaid": -5.822853051239619,
+     "medicare": -5.553203041565148,
+     "services": -8.326420145288253
+    }
+   },
+   "mexican_numeraire": {
+    "G1": {
+     "cash": 4.345237662137805,
+     "health_services": -1.0116876879086698,
+     "justice": -3.1727802010464714,
+     "medicaid": -2.8750329860921795,
+     "medicare": -5.005347429822301,
+     "public_good": -23.41068319269293,
+     "services": -3.9318017044067197,
+     "snap": 2.1865437858304544
+    },
+    "G2": {
+     "cash": 5.9547122925255564,
+     "health_services": -1.2407750569464975,
+     "justice": -4.467345963636292,
+     "medicaid": -4.828921230192982,
+     "medicare": -4.000124158861226,
+     "public_good": -30.314435840060774,
+     "services": -6.361307825921688,
+     "snap": 3.815976358071837
+    },
+    "G3+": {
+     "cash": 7.835087306665201,
+     "health_services": -2.005592227759321,
+     "justice": -4.861805253037286,
+     "medicaid": -5.822853051239619,
+     "medicare": -5.553203041565148,
+     "public_good": -37.591489129836205,
+     "services": -8.326420145288253,
+     "snap": 5.1577161385336785
+    }
+   }
+  },
+  "mexico_budget_factors": {
+   "cash": 0.9180897593891253,
+   "health": 1.2290200261658357,
+   "public_good": 1.6683936181935108
+  },
+  "r_consumption_wdi_2024": 1.0892181181340872,
+  "r_food": 1.7630672716579503,
+  "r_health": 0.8136563918487905,
+  "r_public": 0.5993789409736364,
+  "r_social": 0.3974384468756773
+ },
+ "arm4": {
+  "beside": {
+   "by_end": {
+    "high": {
+     "displaced_investment_bn": [
+      20.57647505,
+      43.231954630000004,
+      73.82904276
+     ],
+     "rd_federal_re_spent_bn": 25.256055031111114,
+     "rd_policy_arm_bn": [
+      69.02479840002668,
+      263.49642213958225
+     ],
+     "spc_central_bn": 4.323195463000005,
+     "spc_range_bn": [
+      0.0,
+      14.765808551999996
+     ]
+    },
+    "low": {
+     "displaced_investment_bn": [
+      15.15062209,
+      31.48654043,
+      56.26804659
+     ],
+     "rd_federal_re_spent_bn": 14.399154444444445,
+     "rd_policy_arm_bn": [
+      39.35288909666667,
+      150.2263783188889
+     ],
+     "spc_central_bn": 3.1486540430000027,
+     "spc_range_bn": [
+      0.0,
+      11.253609317999997
+     ]
+    }
+   },
+   "displaced_share": {
+    "accrual": [
+     0.0,
+     0.0,
+     0.08
+    ],
+    "federal": [
+     0.15,
+     0.33,
+     0.5
+    ],
+    "state_local": [
+     0.04,
+     0.08,
+     0.13
+    ]
+   },
+   "rd_benefit_cost": [
+    3.7,
+    11.4
+   ],
+   "spc": [
+    1.0,
+    1.1,
+    1.2
+   ]
+  },
+  "borrowed_share": 0.26953328161884177,
+  "composition": {
+   "health": 0.3,
+   "higher_education": 0.1,
+   "k12": 0.25,
+   "other": 0.35
+  },
+  "labels": {
+   "theta_alt_use": "theta at lambda 1: the alternative use alone",
+   "theta_central": "theta, central",
+   "theta_current_law": "theta, current-law scoring (all federal at the borrowed rate)",
+   "theta_education_2": "theta, K-12 at MVPF 2 (m 1.317)",
+   "theta_education_5_extreme": "theta, extreme: schooling at MVPF 5 (m 2.58)",
+   "theta_ladd": "theta, re-spent share 0.40 (Ladd)",
+   "theta_waste": "theta, the waste point (m 0.6875)",
+   "theta_waste_alt_use": "theta, the waste point at lambda 1"
+  },
+  "lambda_h": 1.2863020823192923,
+  "lambda_rows_central_bn": {
+   "future_taxpayers": -13.18831522,
+   "others_today": -323.79832171893435
+  },
+  "mcpf_borrowed_share": 0.27111111111111114,
+  "mcpf_theta_eff_by_end": {
+   "theta_alt_use": {
+    "high": 0.9849923181088769,
+    "low": 0.9842799094633266
+   },
+   "theta_central": {
+    "high": 1.077241402439088,
+    "low": 1.0690850174911053
+   },
+   "theta_current_law": {
+    "high": 1.0963416207887917,
+    "low": 1.0820007981200843
+   },
+   "theta_education_2": {
+    "high": 1.2400128887166975,
+    "low": 1.2262459335077005
+   },
+   "theta_education_5_extreme": {
+    "high": 1.8273854234841869,
+    "low": 1.7933723247333007
+   },
+   "theta_ladd": {
+    "high": 1.1159494792780633,
+    "low": 1.1079525413576918
+   },
+   "theta_waste": {
+    "high": 0.9472567441116823,
+    "low": 0.9435808002721381
+   },
+   "theta_waste_alt_use": {
+    "high": 0.8550076597814713,
+    "low": 0.8587756922443597
+   }
+  },
+  "mvpf_values": {
+   "central": {
+    "health": 0.89,
+    "higher_education": 1.0,
+    "k12": 1.0,
+    "other": 1.0
+   },
+   "education_2": {
+    "health": 0.89,
+    "higher_education": 2.0,
+    "k12": 2.0,
+    "other": 1.0
+   },
+   "education_5": {
+    "health": 1.6,
+    "higher_education": 5.0,
+    "k12": 5.0,
+    "other": 1.0
+   },
+   "waste": {
+    "health": 0.6,
+    "higher_education": 1.0,
+    "k12": 0.65,
+    "other": 0.7
+   }
+  },
+  "parts_central_bn": {
+   "accrual": 78.8993645,
+   "capital_return": 48.8229065,
+   "capital_return_federal": 1.3913134999999999,
+   "displaced": 8.811198,
+   "federal": 48.930192000000005,
+   "net_cost": 425.281131,
+   "state_local": 239.2335385
+  },
+  "sets": {
+   "theta_alt_use": {
+    "current_law": false,
+    "d": 0.33,
+    "f": 0.5,
+    "lam": 1.0,
+    "mvpf": "central",
+    "s": 0.6,
+    "spc": 1.1
+   },
+   "theta_central": {
+    "current_law": false,
+    "d": 0.33,
+    "f": 0.5,
+    "lam": 1.25,
+    "mvpf": "central",
+    "s": 0.6,
+    "spc": 1.1
+   },
+   "theta_current_law": {
+    "current_law": true,
+    "d": 0.33,
+    "f": 0.5,
+    "lam": 1.25,
+    "mvpf": "central",
+    "s": 0.6,
+    "spc": 1.1
+   },
+   "theta_education_2": {
+    "current_law": false,
+    "d": 0.33,
+    "f": 0.5,
+    "lam": 1.25,
+    "mvpf": "education_2",
+    "s": 0.6,
+    "spc": 1.1
+   },
+   "theta_education_5_extreme": {
+    "current_law": false,
+    "d": 0.33,
+    "f": 0.5,
+    "lam": 1.25,
+    "mvpf": "education_5",
+    "s": 0.6,
+    "spc": 1.1
+   },
+   "theta_ladd": {
+    "current_law": false,
+    "d": 0.33,
+    "f": 0.5,
+    "lam": 1.25,
+    "mvpf": "central",
+    "s": 0.4,
+    "spc": 1.1
+   },
+   "theta_waste": {
+    "current_law": false,
+    "d": 0.33,
+    "f": 0.5,
+    "lam": 1.25,
+    "mvpf": "waste",
+    "s": 0.6,
+    "spc": 1.1
+   },
+   "theta_waste_alt_use": {
+    "current_law": false,
+    "d": 0.33,
+    "f": 0.5,
+    "lam": 1.0,
+    "mvpf": "waste",
+    "s": 0.6,
+    "spc": 1.1
+   }
+  },
+  "split_file": "infra/immigration-fiscal/debt_legacy_2026_09_23/derived/oct07/federal_split_2024.csv",
+  "theta": {
+   "theta_alt_use": {
+    "mvpf": 0.967,
+    "others_base_bn": 323.79832178,
+    "theta_f": 1.033,
+    "theta_o": 0.9805784439871409,
+    "theta_on_the_fiscal_cost": 0.9862173500367994,
+    "v_borrowed": 1.033,
+    "v_federal_today": 0.9835,
+    "v_state_local": 0.9802
+   },
+   "theta_central": {
+    "mvpf": 0.967,
+    "others_base_bn": 323.79832178,
+    "theta_f": 1.283,
+    "theta_o": 1.0834454438897247,
+    "theta_on_the_fiscal_cost": 1.0724087371782636,
+    "v_borrowed": 1.283,
+    "v_federal_today": 1.1085,
+    "v_state_local": 1.0802
+   },
+   "theta_current_law": {
+    "mvpf": 0.967,
+    "others_base_bn": 323.79832178,
+    "theta_f": 1.283,
+    "theta_o": 1.1034571032097582,
+    "theta_on_the_fiscal_cost": 1.0876660586569278,
+    "v_borrowed": 1.283,
+    "v_federal_today": 1.283,
+    "v_state_local": 1.0802
+   },
+   "theta_education_2": {
+    "mvpf": 1.317,
+    "others_base_bn": 323.79832178,
+    "theta_f": 1.283,
+    "theta_o": 1.2894316440261075,
+    "theta_on_the_fiscal_cost": 1.2294570671237495,
+    "v_borrowed": 1.283,
+    "v_federal_today": 1.2835,
+    "v_state_local": 1.2902
+   },
+   "theta_education_5_extreme": {
+    "mvpf": 2.58,
+    "others_base_bn": 323.79832178,
+    "theta_f": 1.283,
+    "theta_o": 2.0327475605182554,
+    "theta_on_the_fiscal_cost": 1.7961771834698905,
+    "v_borrowed": 1.283,
+    "v_federal_today": 1.915,
+    "v_state_local": 2.048
+   },
+   "theta_ladd": {
+    "mvpf": 0.967,
+    "others_base_bn": 323.79832178,
+    "theta_f": 1.283,
+    "theta_o": 1.1335545561102753,
+    "theta_on_the_fiscal_cost": 1.1106130070957532,
+    "v_borrowed": 1.283,
+    "v_federal_today": 1.1085,
+    "v_state_local": 1.1368
+   },
+   "theta_waste": {
+    "mvpf": 0.6875,
+    "others_base_bn": 323.79832178,
+    "theta_f": 1.283,
+    "theta_o": 0.9189507497808131,
+    "theta_on_the_fiscal_cost": 0.9469944279789394,
+    "v_borrowed": 1.283,
+    "v_federal_today": 0.96875,
+    "v_state_local": 0.9125
+   },
+   "theta_waste_alt_use": {
+    "mvpf": 0.6875,
+    "others_base_bn": 323.79832178,
+    "theta_f": 1.033,
+    "theta_o": 0.8160837498782295,
+    "theta_on_the_fiscal_cost": 0.8608030408374755,
+    "v_borrowed": 1.033,
+    "v_federal_today": 0.84375,
+    "v_state_local": 0.8125
+   }
+  }
+ },
+ "arm5": {
+  "F": {
+   "G1": {
+    "goods_too": 0.9260157977068659,
+    "services": 0.9839075997008434
+   },
+   "G2": {
+    "goods_too": 0.9582776450502332,
+    "services": 0.9993931980529251
+   }
+  },
+  "F_state_rpp": {
+   "G1": {
+    "goods_too": 0.9263198221599573,
+    "services": 0.9837817922217246
+   },
+   "G2": {
+    "goods_too": 0.9577381538880887,
+    "services": 0.9993747018633915
+   }
+  },
+  "classes": [
+   {
+    "cls": "agriculture",
+    "codes": [
+     [
+      170,
+      290
+     ]
+    ],
+    "series": null,
+    "series_goods_too": "1101100"
+   },
+   {
+    "cls": "mining",
+    "codes": [
+     [
+      370,
+      490
+     ]
+    ],
+    "series": null,
+    "series_goods_too": null
+   },
+   {
+    "cls": "construction",
+    "codes": [
+     [
+      770,
+      770
+     ]
+    ],
+    "series": null,
+    "series_goods_too": "1501200"
+   },
+   {
+    "cls": "manufacturing",
+    "codes": [
+     [
+      1070,
+      3990
+     ]
+    ],
+    "series": null,
+    "series_goods_too": "1501100"
+   },
+   {
+    "cls": "restaurants_hotels",
+    "codes": [
+     [
+      8660,
+      8690
+     ]
+    ],
+    "series": "1111000",
+    "series_goods_too": "1111000"
+   },
+   {
+    "cls": "personal_household",
+    "codes": [
+     [
+      8970,
+      9090
+     ],
+     [
+      9290,
+      9290
+     ],
+     [
+      7690,
+      7690
+     ],
+     [
+      7770,
+      7770
+     ],
+     [
+      8370,
+      8470
+     ]
+    ],
+    "series": "9140000",
+    "series_goods_too": "9140000"
+   },
+   {
+    "cls": "health",
+    "codes": [
+     [
+      7970,
+      8290
+     ]
+    ],
+    "series": "9080000",
+    "series_goods_too": "9080000"
+   },
+   {
+    "cls": "retail",
+    "codes": [
+     [
+      4670,
+      5791
+     ]
+    ],
+    "series": "9260000",
+    "series_goods_too": "9260000"
+   }
+  ],
+  "e_mx_central_bn": {
+   "G1": 103.688,
+   "G2": 84.58995
+  },
+  "icp_gdp_ppp_2021": 9.94168567657471,
+  "icp_ratio_over_gdp_ppp": {
+   "1000000": 1.0,
+   "1101100": 1.7630672716579503,
+   "1105000": 1.6529778131811672,
+   "1111000": 1.2098624668368945,
+   "1300000": 0.3974384468756773,
+   "1400000": 0.5993789409736364,
+   "1501100": 2.3881947464140865,
+   "1501200": 0.8988499621041088,
+   "9020000": 0.9568176775483176,
+   "9080000": 0.8136563918487905,
+   "9100000": 1.0969772211208215,
+   "9110000": 1.4154890929763995,
+   "9140000": 1.045202637258576,
+   "9260000": 1.167463482817061,
+   "9270000": 0.493561727423358
+  },
+  "off_list_codes": [
+   9890
+  ],
+  "off_list_earnings_share": {
+   "G1": 0.000316097136096094,
+   "G2": 0.00088145340375056
+  },
+  "service_share_of_e_us": {
+   "G1": 0.594801219452087,
+   "G2": 0.7637148306024834
+  }
+ },
+ "basis": "lineage",
+ "case": "oct07",
+ "gates": {
+  "theta_direct_max_abs_diff": 9.094947017729282e-13,
+  "theta_identity_max_abs_diff": 1.74999998137082e-06
+ },
+ "members": 42752213,
+ "private_gain": {
+  "check": {
+   "union_hi_tax_pension_lane_bn": 28.15787558,
+   "union_part_a_pension_lane_bn": 40.782779393
+  },
+  "g1_adults": 10566524.710024,
+  "inputs": {
+   "G1": {
+    "hi_taxes_bn": 7.441506078584967,
+    "part_a_accrual_bn": 10.722558948862916,
+    "part_a_per_hi_tax_dollar": 1.440912476,
+    "social_security_accrual_bn": 28.823327820499998,
+    "us_taxes_bn": -100.9340173465
+   },
+   "G2": {
+    "hi_taxes_bn": 10.578372472398692,
+    "part_a_accrual_bn": 16.58934870367707,
+    "part_a_per_hi_tax_dollar": 1.568232613,
+    "social_security_accrual_bn": 34.738799587,
+    "us_taxes_bn": -147.3708502255
+   },
+   "G3+": {
+    "hi_taxes_bn": 14.588236615287583,
+    "part_a_accrual_bn": 19.47031003060444,
+    "part_a_per_hi_tax_dollar": 1.334658228,
+    "social_security_accrual_bn": 48.694262765,
+    "us_taxes_bn": -216.2348168665
+   }
+  },
+  "persons": {
+   "G1": 11036701.061391931,
+   "G2": 14333217.663520351,
+   "G3+": 17382294.19946085
+  },
+  "twins": {
+   "combined_low": "combined_low_consumption",
+   "reading2": "reading2_consumption"
+  }
+ },
+ "scenario_detail": {
+  "arm1a_cdmx": {
+   "e_mx_central_bn": {
+    "G1": 112.393,
+    "G2": 90.788,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 23.0287,
+    "G2": 18.89686,
+    "G3+": 86.5106309618617
+   }
+  },
+  "arm1a_cdmx_consumption": {
+   "e_mx_central_bn": {
+    "G1": 103.187,
+    "G2": 83.35155,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 21.14241,
+    "G2": 17.348995000000002,
+    "G3+": 86.5106309618617
+   }
+  },
+  "arm1a_consumption": {
+   "e_mx_central_bn": {
+    "G1": 95.1949,
+    "G2": 77.66115,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 18.02658,
+    "G2": 14.851545,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm1a_urban": {
+   "e_mx_central_bn": {
+    "G1": 115.657,
+    "G2": 97.31585,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 22.8282,
+    "G2": 19.614685,
+    "G3+": 83.54685363457418
+   }
+  },
+  "arm1a_urban_consumption": {
+   "e_mx_central_bn": {
+    "G1": 106.184,
+    "G2": 89.34465,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 20.95827,
+    "G2": 18.008,
+    "G3+": 83.54685363457418
+   }
+  },
+  "arm1a_urban_deflated_consumption": {
+   "e_mx_central_bn": {
+    "G1": 102.783,
+    "G2": 86.48310000000001,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 20.287,
+    "G2": 17.431245,
+    "G3+": 83.54684850895742
+   }
+  },
+  "arm1a_urban_p70": {
+   "e_mx_central_bn": {
+    "G1": 136.787,
+    "G2": 97.31585,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 26.9987,
+    "G2": 19.614685,
+    "G3+": 83.54685363457418
+   }
+  },
+  "arm1b_cmp_re": {
+   "e_mx_central_bn": {
+    "G1": 138.25934959349593,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 26.1814975767672,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm1c_mmp_annual": {
+   "e_mx_central_bn": {
+    "G1": 170.059,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 32.203242019423655,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm1c_mmp_per_person": {
+   "e_mx_central_bn": {
+    "G1": 214.0771906178591,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 40.5387517291364,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm1c_nis_annual": {
+   "e_mx_central_bn": {
+    "G1": 188.95444444444445,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 35.78138002158184,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm1c_nis_per_person": {
+   "e_mx_central_bn": {
+    "G1": 237.86354513095452,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 45.04305747681822,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm2_state_rpp": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 78.35902162265228
+   }
+  },
+  "arm3_mexican_numeraire": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3_us_numeraire": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3_us_numeraire_group_only": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3a": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm3b": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm5_output_prices": {
+   "e_mx_central_bn": {
+    "G1": 102.01941119778105,
+    "G2": 84.53862065363704,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.318917490290094,
+    "G2": 16.166759022793,
+    "G3+": 79.21910491672224
+   }
+  },
+  "arm5_output_prices_goods_too": {
+   "e_mx_central_bn": {
+    "G1": 96.01672603262952,
+    "G2": 81.06065808091697,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 18.182218326236566,
+    "G2": 15.501650195978476,
+    "G3+": 79.21910491672224
+   }
+  },
+  "baseline": {
+   "e_mx_central_bn": {
+    "G1": 103.688,
+    "G2": 84.58995,
+    "G3+": 405.778
+   },
+   "e_us_bn": {
+    "G1": 340.118,
+    "G2": 336.371,
+    "G3+": 405.778
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 19.63489,
+    "G2": 16.176575,
+    "G3+": 79.21910491672224
+   }
+  },
+  "combined_low": {
+   "e_mx_central_bn": {
+    "G1": 214.0771906178591,
+    "G2": 97.25499858033253,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 42.25405810738149,
+    "G2": 19.602419974019337,
+    "G3+": 82.635618695667
+   }
+  },
+  "combined_low_consumption": {
+   "e_mx_central_bn": {
+    "G1": 214.0771906178591,
+    "G2": 89.34465,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 42.2539208275244,
+    "G2": 18.008,
+    "G3+": 82.635618695667
+   }
+  },
+  "reading1": {
+   "e_mx_central_bn": {
+    "G1": 106.184,
+    "G2": 89.34465,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 20.95827,
+    "G2": 18.008,
+    "G3+": 82.635618695667
+   }
+  },
+  "reading1_deflated": {
+   "e_mx_central_bn": {
+    "G1": 102.783,
+    "G2": 86.48310000000001,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 20.287,
+    "G2": 17.431245,
+    "G3+": 82.63562573828517
+   }
+  },
+  "reading2": {
+   "e_mx_central_bn": {
+    "G1": 134.56856001263304,
+    "G2": 97.25499858033253,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 26.560829473656675,
+    "G2": 19.602419974019337,
+    "G3+": 82.635618695667
+   }
+  },
+  "reading2_consumption": {
+   "e_mx_central_bn": {
+    "G1": 125.583,
+    "G2": 89.34465,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 24.7872,
+    "G2": 18.008,
+    "G3+": 82.635618695667
+   }
+  },
+  "reading3": {
+   "e_mx_central_bn": {
+    "G1": 214.0771906178591,
+    "G2": 89.34465,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 42.25389476578918,
+    "G2": 18.008,
+    "G3+": 82.635618695667
+   }
+  },
+  "reading3_mmp_annual": {
+   "e_mx_central_bn": {
+    "G1": 170.059,
+    "G2": 89.34465,
+    "G3+": 401.064
+   },
+   "e_us_bn": {
+    "G1": 333.64,
+    "G2": 325.752,
+    "G3+": 401.064
+   },
+   "mexico_taxes_central_bn": {
+    "G1": 33.56572023967829,
+    "G2": 18.008,
+    "G3+": 82.635618695667
+   }
+  }
+ },
+ "sources": {
+  "bea_marpp": {
+   "bytes": 146479,
+   "path": "sources/immigration-fiscal/data/external/stage3/bea/rpp_2024/MARPP.zip",
+   "sha256": "5dbf2e6ac2af222cc9abc205586c9b480344d89392752eb689c3ec823a34c83e",
+   "url": "https://apps.bea.gov/regional/zip/MARPP.zip"
+  },
+  "bea_parpp": {
+   "bytes": 39148,
+   "path": "sources/immigration-fiscal/data/external/stage3/bea/rpp_2024/PARPP.zip",
+   "sha256": "eb1378571316b22d5e7557b5565019cbe01fe1b5ea7dcdfcd979fc5751764f79",
+   "url": "https://apps.bea.gov/regional/zip/PARPP.zip"
+  },
+  "bea_sarpp": {
+   "bytes": 39230,
+   "path": "sources/immigration-fiscal/data/external/stage3/bea/rpp_2024/SARPP.zip",
+   "sha256": "38713c6224c4c26ae020ffecd4549b82dca84f43d34f93dfdb43f4070cf011da",
+   "url": "https://apps.bea.gov/regional/zip/SARPP.zip"
+  },
+  "census_industry_2022": {
+   "bytes": 102789,
+   "path": "sources/immigration-fiscal/data/external/stage3/census/industry_codes_2022/2022-Census-Industry-Code-List-with-Crosswalk.xlsx",
+   "sha256": "c9d2e004b2735c3975f0768e7dac704df6d2e0b36b24d33f5dbc7109cab5628c",
+   "url": "https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/2022-Census-Industry-Code-List-with-Crosswalk.xlsx"
+  },
+  "coneval_lp": {
+   "bytes": 178443,
+   "path": "sources/immigration-fiscal/data/external/stage3/coneval/lineas_pobreza_2024/Lineas_de_Pobreza_por_Ingresos_ago_2024.pdf",
+   "sha256": "b73d6213944da1e1871a2f1aba1fe668f51115737e3eb0b2d047758aacb39cdd",
+   "url": "https://www.coneval.org.mx/Medicion/Documents/Lineas_de_Pobreza_por_Ingresos/Lineas_de_Pobreza_por_Ingresos_ago_2024.pdf"
+  },
+  "enigh_viviendas": {
+   "bytes": 1848886,
+   "path": "sources/immigration-fiscal/data/external/stage3/inegi/enigh2024_viviendas/enigh2024_ns_viviendas_csv.zip",
+   "sha256": "ac1a56ed6e23b9feec952a28cb757fc0baa9a06fa303579996db9156553758cf",
+   "url": "https://www.inegi.org.mx/contenidos/programas/enigh/nc/2024/microdatos/enigh2024_ns_viviendas_csv.zip"
+  },
+  "icp2021": {
+   "bytes": 11316,
+   "path": "sources/immigration-fiscal/data/external/stage3/worldbank/icp2021/icp2021_mex_usa.json",
+   "sha256": "996c9fc3425e89e132b7730c4936bc5f253141018dca0d4d9a955044fa1f2b9c",
+   "url": "https://api.worldbank.org/v2/sources/90/country/MEX;USA/series/1000000;9080000;1300000;1400000;9270000;9020000/classification/PPPGlob;PX.WL;EXR/time/YR2021/data?format=json&per_page=500"
+  },
+  "icp2021_categories": {
+   "bytes": 16902,
+   "path": "sources/immigration-fiscal/data/external/stage3/worldbank/icp2021/icp2021_mex_usa_categories.json",
+   "sha256": "8f72455908f3cd249acf14909e0a5d4105312c700268aa53ba703d3ea0aa2bdb",
+   "url": "https://api.worldbank.org/v2/sources/90/country/MEX;USA/series/1111000;1105000;9140000;9260000;9100000;1101100;1501100;1501200;9110000/classification/PPPGlob;PX.WL;EXR/time/YR2021/data?format=json&per_page=500"
+  }
+ },
+ "tenure_check": {
+  "all": {
+   "mexico_pay_per_hour_ppp": 5.963414977887094,
+   "persons_m": 8.501719426272862,
+   "ratio_per_hour": 4.014581492854009,
+   "ratio_per_person": 3.207135252572621,
+   "records": 4318,
+   "us_pay_per_hour_2024usd": 23.940615404433927
+  },
+  "arrived_2006_2015": {
+   "mexico_pay_per_hour_ppp": 5.959432899885975,
+   "persons_m": 1.2526242458116388,
+   "ratio_per_hour": 3.837859116255395,
+   "ratio_per_person": 3.0354047185126585,
+   "records": 639,
+   "us_pay_per_hour_2024usd": 22.871463882539715
+  },
+  "arrived_2016_2019": {
+   "mexico_pay_per_hour_ppp": 6.725998502604801,
+   "persons_m": 0.46393861070869014,
+   "ratio_per_hour": 3.6110941898557467,
+   "ratio_per_person": 2.827796321387995,
+   "records": 253,
+   "us_pay_per_hour_2024usd": 24.28821411373465
+  },
+  "arrived_2020_2024": {
+   "mexico_pay_per_hour_ppp": 6.618769405300758,
+   "persons_m": 0.9216383929038632,
+   "ratio_per_hour": 3.6389738196904644,
+   "ratio_per_person": 2.6923079393883844,
+   "records": 451,
+   "us_pay_per_hour_2024usd": 24.08552858445768
+  },
+  "arrived_before_2006": {
+   "mexico_pay_per_hour_ppp": 5.783807761793019,
+   "persons_m": 5.86351817684867,
+   "ratio_per_hour": 4.169995648375778,
+   "ratio_per_person": 3.3874496814000694,
+   "records": 2975,
+   "us_pay_per_hour_2024usd": 24.11845319771894
+  },
+  "below_preparatoria": {
+   "mexico_pay_per_hour_ppp": 4.16676758710237,
+   "persons_m": 3.4845823651786967,
+   "ratio_per_hour": 4.711663077545407,
+   "ratio_per_person": 3.6235517802173756,
+   "records": 1771,
+   "us_pay_per_hour_2024usd": 19.632404992863204
+  },
+  "hs_mmp_2024usd": {
+   "post": 10.297477826086956,
+   "pre": 5.0464460869565215
+  },
+  "primaria_or_less": {
+   "mexico_pay_per_hour_ppp": 3.723710973734045,
+   "persons_m": 1.9164198141323183,
+   "ratio_per_hour": 5.205007443454577,
+   "ratio_per_person": 4.086749414313392,
+   "records": 961,
+   "us_pay_per_hour_2024usd": 19.381943335559196
+  }
+ }
+}

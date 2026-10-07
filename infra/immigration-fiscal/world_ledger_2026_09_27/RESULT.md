@@ -2323,7 +2323,7 @@ reprices. Every other row and every weight is the lane's.
   - G2's metro-raised schooling barely matters (+$0.2bn on its Mexican pay). Its parents' schooling is concentrated
     from primaria to preparatoria, where metro and national attainment differ little.
   - Mexico's budget rows stay national.
-- **Range.** The single metros span the arm: Mexico City alone +$10.0bn, Monterrey alone −$66.8bn. The person-weighted
+- **Range.** The single metros span the arm: Mexico City alone +$10.1bn, Monterrey alone −$66.8bn. The person-weighted
   average of the three is the middle value.
 - **An upper bound.** Moving inside Mexico costs something, and no metro could take the group's ~15m workers at
   today's pay, so this is an upper bound on the domestic option's value. [INFERENCE]
@@ -2393,18 +2393,18 @@ Variants and checks, at equal weights:
 
 | Variant or check | Premium | US budget, as valued | World | Change |
 |---|---|---|---|---|
-| 1, before the price level | 467.3 | 284.8 | 300.3 | −20.9 |
-| 1, at CONEVAL's urban/national ratio, 1.065 | 480.0 | 284.8 | 313.0 | −8.2 |
-| 1, national schooling transitions | 476.9 | 284.8 | 309.8 | −11.4 |
-| 1, Mexico City alone | 498.3 | 284.8 | 331.2 | +10.0 |
-| 1, Guadalajara alone | 457.5 | 284.8 | 290.5 | −30.7 |
+| 1, before the price level | 467.4 | 284.8 | 300.3 | −20.8 |
+| 1, at CONEVAL's urban/national ratio, 1.065 | 480.1 | 284.8 | 313.0 | −8.1 |
+| 1, national schooling transitions | 476.9 | 284.8 | 309.8 | −11.3 |
+| 1, Mexico City alone | 498.3 | 284.8 | 331.2 | +10.1 |
+| 1, Guadalajara alone | 457.5 | 284.8 | 290.4 | −30.7 |
 | 1, Monterrey alone | 421.4 | 284.8 | 254.3 | −66.8 |
 | 1, localities of 100,000+ | 471.8 | 284.8 | 304.7 | −16.4 |
-| 2, metro RPP where identified | 472.6 | 284.8 | 305.6 | −15.6 |
+| 2, metro RPP where identified | 472.6 | 284.8 | 305.5 | −15.6 |
 | 2, the US budget valuation deflated too | 471.1 | 278.8 | 298.0 | −23.1 |
 | 3(a) alone | 488.2 | 233.8 | 267.4 | −53.7 |
 | 3(a), Mexico's health at the lane's 0.92 | 488.2 | 233.8 | 269.7 | −51.4 |
-| 3(b) alone | 488.2 | 140.5 | 192.0 | −129.2 |
+| 3(b) alone | 488.2 | 140.5 | 191.9 | −129.2 |
 | ICP check on 3(b), alone | 488.2 | 193.5 | 229.8 | −91.3 |
 | 3(a) + the ICP check | 488.2 | 142.5 | 176.1 | −145.0 |
 | 3, both ratios at 0.3974 | 488.2 | −5.5 | 41.4 | −279.7 |
@@ -2577,3 +2577,430 @@ files at 1f1a1c43]
 - 2026-10-07 23:03:19–23:03:22 and 23:03:34–23:03:43 JST: the nine `world_ledger.py` runs; only the nine meta files
   changed. 23:08:54–23:10:45 JST: the lane rerun (the 29 v6 commands, part 1's three, and the part-2 script with its
   test), IDENTICAL, 135/135 files, exit 0.
+
+## Beside arms, part 2 (2026-10-07): three readings, and the arms behind them
+
+**Verdict:** The three readings the lead specified put the world total at equal weights at +$287.2bn (the
+recommended reading), +$77.6bn (the operator's framing) and +$179.3bn (within person), against the central's
++$321.1bn. Under θ central they are +$261.4bn, +$48.7bn and +$151.8bn. The combined low, the operator's framing with
+G1 at the within-person 1.59, is −$1.9bn at equal weights and −$32.1bn under θ. Most of the operator's framing's
+drop is the valuation of US services: 3a and 3b move the world −$182.9bn, 3b's public goods at responsive cost
+−$129.2bn of it. Of the premium arms, the urban cells at p70 move it −$45.8bn and state RPP −$17.1bn. On wages alone,
+with every US service and benefit at zero and remittances left out, G1 still gains in every reading: $11,157 per G1
+adult at the central, $9,514 in reading 1, $9,274 in reading 2, $1,319 in reading 3 and $2,552 in the combined low.
+Two results run against the operator's expectation:
+- Arm 5, output at common prices, raises the premium (+$1.7bn, +$11.2bn with goods at their own PPPs). Mexico's
+  market services are dearer relative to its GDP average than in the US.
+- Arm 3's US-price numeraire is not about $0 for the group. It lowers the group's total by $39.9bn, because Mexico's
+  services forgone are worth more at US prices. The world moves only −$9.6bn, since Mexico's residents save the
+  same services.
+[CALCULATION: beside_extra.py, derived/beside_extra_summary_oct07.csv and beside_extra_private_gain_oct07.csv;
+FRAMING-SENSITIVE: arms 3a, 3b, 4 and 5]
+
+Every scenario runs on oct07, lineage basis (42,752,213 members), central scenario, through `world_ledger.py`'s rows
+and weights, as part 1 does. No reading is a new central, and no existing output changes.
+
+### The readings
+
+$bn a year. "w" is the break-even weight on the group's dollar. US residents include the group. The printed values
+keep the tables' identities: each change is the world total less the central's; for the arms that move only pay,
+the two premiums' changes add to the change; readings that differ only in pay differ by the premiums' change; and
+reading 1 is its three arms, in the change and in each premium. To make that hold, 17 of the 116 premium, world and
+change values in this table and the next move one unit from their own rounding, each staying within 0.1 of the
+file's value.
+
+| Reading | G1's premium | G2's premium | US budget as valued | World: equal / λ 1.16 / λ_h / θ central | Change at equal weights | US residents incl. the group: equal / θ | Per member, $ | w, world / US only | w at θ, world / US only |
+|---|---|---|---|---|---|---|---|---|---|
+| The lane's central | 236.4 | 251.8 | 284.8 | 321.1 / 273.0 / 235.0 / 293.4 | 0.0 | 222.2 / 191.4 | 16,207 | 0.54 / 0.68 | 0.58 / 0.72 |
+| 1. Recommended: 1a + 2 + 3 | 227.5 | 236.4 | 284.8 | 287.2 / 242.9 / 207.9 / 261.4 | −33.9 | 164.5 / 133.7 | 14,858 | 0.55 / 0.74 | 0.59 / 0.79 |
+| 1, urban pay deflated (1.033) | 230.8 | 239.3 | 284.8 | 293.4 / 249.3 / 214.5 / 267.8 | −27.7 | 169.5 / 138.8 | 14,975 | 0.54 / 0.74 | 0.58 / 0.78 |
+| 2. The operator's framing: urban p70 + 2 + 5 + 3a + 3b | 199.1 | 228.5 | 89.5 | 77.6 / 27.3 / −12.5 / 48.7 | −243.5 | −7.6 / −38.3 | 10,833 | 0.83 / 1.02 | 0.89 / 1.08 |
+| 2, consumption PPP in place of 5 | 208.1 | 236.4 | 89.5 | 94.5 / 44.7 / 5.4 / 65.9 | −226.6 | 5.9 / −24.8 | 11,149 | 0.80 / 0.99 | 0.86 / 1.05 |
+| 3. Within person: 1 with G1 at 1.59 | 119.6 | 236.4 | 284.8 | 179.3 / 131.6 / 93.9 / 151.8 | −141.8 | 77.9 / 47.1 | 12,833 | 0.67 / 0.86 | 0.72 / 0.91 |
+| 3, G1 at 2.0 | 163.6 | 236.4 | 284.8 | 223.3 / 177.0 / 140.4 / 196.5 | −97.8 | 113.2 / 82.5 | 13,659 | 0.62 / 0.81 | 0.66 / 0.86 |
+| Combined low: 2 with G1 at 1.59 | 119.6 | 228.5 | 89.5 | −1.9 / −54.7 / −96.5 / −32.1 | −323.0 | −71.4 / −102.2 | 9,340 | 1.00 / 1.18 | 1.08 / 1.26 |
+| Combined low, consumption PPP in place of 5 | 119.6 | 236.4 | 89.5 | 6.0 / −46.6 / −88.1 / −24.1 | −315.1 | −65.1 / −95.8 | 9,488 | 0.99 / 1.16 | 1.06 / 1.24 |
+
+How the readings are built (the arms below):
+- **1, recommended** (the lead's researcher's section 8): the urban cells at household-consumption PPP and p56
+  (1a), state RPP (2), and Mexico's services at ICP category PPPs (3). At equal weights the arms' changes, −$7.2bn,
+  −$17.1bn and −$9.6bn, add to the reading's −$33.9bn: they touch different rows.
+  - Deflating 1a's urban pay by part 1's price level for localities of 100,000+ (1.033, housing only) gives back
+    $6.2bn.
+  - The research recommended that deflation once a price ratio was sourced, and part 1 sourced one.
+  - CONEVAL's urban over national basket (1.065, part 1's check) would give back more.
+- **2, the operator's framing:** the urban cells at CMP's p70, RPP, output at common prices (5) in place of a PPP
+  for Mexican pay, US health and social services at Mexican prices (3a), and public goods at responsive cost (3b)
+  [FRAMING-SENSITIVE: a non-rival good's value to its users is not its marginal cost].
+  - Its arms add to −$244.1bn, against the reading's −$243.5bn: they interact.
+  - The private gain takes its twin at consumption PPP: arm 5 measures output, not what the pay buys.
+  - It mixes two numeraires by design: pay at US consumption prices or at common output prices, and US services at
+    Mexican prices.
+- **3, within person:** reading 1 with G1's Mexican pay at the nominal E_US / 1.59. G2 keeps reading 1's rearing
+  model.
+- **The combined low:** reading 2 with G1 at 1.59. The lead's "c + Mexican numeraire + public goods at responsive
+  cost + arm 4 central" names no G2. G2 here is reading 2's (the urban cells, RPP and arm 5), and θ central is its
+  column.
+- **Part 1's first combination** (+$109.6bn; +$81.1bn under θ central) holds three pieces of reading 2: RPP, 3a and
+  3b. Its arm 1 is the three metros' pay ratios with hedonic deflation (−$11.5bn alone). It has no p70, no
+  consumption PPP and no arm 5. Reading 2 swaps the metros for the localities of 100,000+ at p70 (−$45.8bn alone)
+  and adds arm 5 (+$1.7bn).
+
+### Each arm alone
+
+Same columns, each arm on the central:
+
+| Arm | G1's premium | G2's premium | US budget as valued | World: equal / λ 1.16 / λ_h / θ central | Change at equal weights | US residents incl. the group: equal / θ | Per member, $ | w, world / US only | w at θ, world / US only |
+|---|---|---|---|---|---|---|---|---|---|
+| 1a: localities of 100,000+, consumption PPP, p56 | 234.0 | 247.0 | 284.8 | 313.9 / 264.6 / 225.6 / 285.5 | −7.2 | 222.4 / 191.7 | 16,213 | 0.55 / 0.68 | 0.59 / 0.72 |
+| 1a's part: the urban cells, GDP PPP | 224.4 | 239.1 | 284.8 | 296.4 / 246.6 / 207.2 / 267.8 | −24.7 | 208.4 / 177.7 | 15,886 | 0.56 / 0.69 | 0.61 / 0.74 |
+| 1a's part: consumption PPP, national cells | 244.9 | 258.7 | 284.8 | 336.5 / 288.9 / 251.3 / 309.1 | +15.4 | 234.7 / 203.9 | 16,500 | 0.52 / 0.67 | 0.56 / 0.71 |
+| 1a, urban pay deflated (1.033) | 237.3 | 249.9 | 284.8 | 320.1 / 271.0 / 232.2 / 291.9 | −1.0 | 227.4 / 196.7 | 16,330 | 0.54 / 0.67 | 0.58 / 0.72 |
+| Mexico City's cells, GDP PPP | 227.7 | 245.6 | 284.8 | 306.2 / 256.0 / 216.3 / 277.4 | −14.9 | 220.7 / 189.9 | 16,172 | 0.56 / 0.68 | 0.60 / 0.73 |
+| Mexico City's cells, consumption PPP | 237.0 | 253.0 | 284.8 | 322.9 / 273.2 / 233.9 / 294.3 | +1.8 | 233.9 / 203.1 | 16,481 | 0.54 / 0.67 | 0.58 / 0.71 |
+| The urban cells at p70, GDP PPP | 203.3 | 239.1 | 284.8 | 275.3 / 224.8 / 184.9 / 246.3 | −45.8 | 191.5 / 160.7 | 15,490 | 0.58 / 0.71 | 0.63 / 0.76 |
+| 1b: CMP's Re 2.46 | 201.9 | 251.8 | 284.8 | 286.6 / 237.4 / 198.6 / 258.3 | −34.5 | 194.2 / 163.4 | 15,552 | 0.57 / 0.71 | 0.61 / 0.75 |
+| 1c: MMP 2.0 as a year | 170.1 | 251.8 | 284.8 | 254.8 / 204.6 / 165.0 / 226.0 | −66.3 | 168.4 / 137.6 | 14,949 | 0.60 / 0.74 | 0.65 / 0.78 |
+| 1c: MMP 2.0 an hour, 1.59 a year | 126.0 | 251.8 | 284.8 | 210.7 / 159.3 / 118.6 / 181.3 | −110.4 | 132.7 / 101.9 | 14,114 | 0.65 / 0.78 | 0.70 / 0.83 |
+| 1c: NIS 1.8 as a year | 151.2 | 251.8 | 284.8 | 235.9 / 185.2 / 145.1 / 206.8 | −85.2 | 153.1 / 122.3 | 14,591 | 0.62 / 0.75 | 0.67 / 0.80 |
+| 1c: NIS 1.8 an hour, 1.43 a year | 102.3 | 251.8 | 284.8 | 187.0 / 134.8 / 93.6 / 157.1 | −134.1 | 113.4 / 82.7 | 13,663 | 0.68 / 0.81 | 0.73 / 0.86 |
+| 2: state RPP | 229.9 | 241.2 | 284.8 | 304.0 / 256.1 / 218.2 / 276.4 | −17.1 | 204.2 / 173.5 | 15,787 | 0.55 / 0.70 | 0.59 / 0.74 |
+| 3: US-price numeraire | 236.4 | 251.8 | 284.8 | 311.5 / 268.3 / 234.1 / 286.3 | −9.6 | 182.3 / 151.5 | 15,274 | 0.52 / 0.72 | 0.56 / 0.77 |
+| 3's check: the group's rows only | 236.4 | 251.8 | 284.8 | 281.2 / 233.1 / 195.1 / 253.5 | −39.9 | 182.3 / 151.5 | 15,274 | 0.57 / 0.72 | 0.61 / 0.77 |
+| 3a: US health and social services at Mexican prices | 236.4 | 251.8 | 233.8 | 267.4 / 219.3 / 181.3 / 239.7 | −53.7 | 168.5 / 137.7 | 14,951 | 0.58 / 0.74 | 0.62 / 0.78 |
+| 3b: public goods at responsive cost | 236.4 | 251.8 | 140.5 | 191.9 / 143.8 / 105.8 / 164.2 | −129.2 | 93.0 / 62.2 | 13,186 | 0.66 / 0.84 | 0.71 / 0.89 |
+| Mexican-price numeraire | 236.4 | 251.8 | 159.3 | 192.9 / 144.8 / 106.8 / 165.2 | −128.2 | 94.0 / 63.2 | 13,208 | 0.66 / 0.83 | 0.71 / 0.89 |
+| 5: output at common prices, services | 238.1 | 251.8 | 284.8 | 322.8 / 274.8 / 236.8 / 295.2 | +1.7 | 223.6 / 192.8 | 16,240 | 0.53 / 0.68 | 0.57 / 0.72 |
+| 5, goods at their own PPPs too | 244.1 | 255.3 | 284.8 | 332.3 / 284.6 / 246.8 / 304.8 | +11.2 | 231.3 / 200.5 | 16,420 | 0.53 / 0.67 | 0.57 / 0.71 |
+
+Arms 2, 3a and 3b are part 1's, recomputed here and gated equal to `beside_arms_oct07.csv`.
+
+### Arm 1: the premium
+
+**1a, the direct cell method on urban persons.** mexico.py's cells and young-by-parent tables are recomputed on the
+ENIGH 2024 persons in localities of 100,000+ (tam_loc 1). That is 87,834 records aged 15+, 50.0M persons. G2's
+schooling comes from the 4,730 EMOVI respondents who lived in a city of 100,000+ at 14 (44 transition cells by sex
+and cohort, 4 pooled to the cohort). Computed on every person, the same code reproduces the national cells exactly,
+and the premium table on them reproduces `g2_premium_lineage.csv`.
+- The urban cells alone lower G1's premium $12.0bn and G2's $12.7bn. The lead's researcher found −$12.1bn for G1 on
+  the CPS basis.
+- Consumption PPP (WDI 2024, 10.80 against GDP PPP 9.92) alone raises them $8.5bn and $6.9bn. Together the two move
+  them −$2.4bn and −$4.8bn.
+- The direct method agrees with part 1's ratio method for the same localities, which with its hedonic deflation gave
+  G1 $228.3bn at GDP PPP. Here, deflated by the same 1.033, it gives $237.3bn at consumption PPP, which is $228.2bn
+  at GDP PPP [CALCULATION: 340.118 − (340.118 − 237.335) × 10.8013 / 9.9166].
+- After deflation, G1's cells pay 8% more in the localities than nationally [CALCULATION: (340.118 − 237.335) /
+  (340.118 − 244.923) = 1.080].
+
+**Beside: Mexico City and p70.**
+- Mexico City's cells (entidad 09: 6,794 records 15+, 7.97M persons; 2,830 EMOVI respondents raised there) lower the
+  world total $14.9bn at GDP PPP. That is nominal. Part 1 found that Mexico City's price level (1.120) turns it into
+  +$10.1bn.
+- The urban cells at CMP's p70, the operator's best job in Mexico, lower G1's premium $33.1bn. That is the research's
+  "urban cells (−$12bn) plus p70 selection (−$19bn)", with the difference from the interaction.
+
+**1b, CMP's Re 2.46** as G1's annual ratio: G1's premium is $201.9bn.
+
+**1c, within person** (Hendricks and Schoellman 2018, Table II). G1's Mexican pay is the nominal E_US / r on the
+central row of each G1 convention, and every row of the convention moves by the same factor, the Mexican taxes with
+it [ASSUMPTION: proportional]. A ratio per hour becomes a ratio a year at the lane's own hours and employment: Mexico's
+cells work 1.259 times the hours the group works in the US (employment times weekly hours, those 15+). So MMP's 2.0
+an hour is 1.589 a year and NIS's 1.8 is 1.430, the lead's 1.59 and 1.43.
+- No CMP selection is added: the comparison holds the person fixed.
+- The MMP sample is mostly return migrants observed in Mexico, and the pre-migration job is the actual one, often
+  rural, not the best alternative.
+- G2 keeps the rearing model, which Lagakos and Schoellman (2026) support for people raised in the US.
+- The lead's brief puts 1c "on the row-4 E_US (the ledger's $341.9bn)". The ledger's G1 E_US is $340.118bn on both
+  bases (G1 is row 4's on the lineage too). $341.9bn is the research's scratch figure, not a ledger one.
+- [SOURCE: reads/hendricks_schoellman_2018.md quotes 1–2; reads/clemens_montenegro_pritchett_2009.md quote 3]
+
+**Check: 2.0 does not describe the 2024 stock.** The lane's own ratio for G1 aged 25–64, with the pay an hour behind
+it, beside MMP's wages moved to 2024 dollars by the CPI:
+
+| G1 aged 25-64 | CPS records | US pay an hour, 2024 $ | Mexican cells' pay an hour, PPP $ | Ratio an hour | Ratio a year, per person |
+|---|---|---|---|---|---|
+| All | 4,318 | 23.94 | 5.96 | 4.01 | 3.21 |
+| Arrived 2020-2024 | 451 | 24.09 | 6.62 | 3.64 | 2.69 |
+| Arrived 2016-2019 | 253 | 24.29 | 6.73 | 3.61 | 2.83 |
+| Arrived 2006-2015 | 639 | 22.87 | 5.96 | 3.84 | 3.04 |
+| Arrived before 2006 | 2,975 | 24.12 | 5.78 | 4.17 | 3.39 |
+| Below preparatoria | 1,771 | 19.63 | 4.17 | 4.71 | 3.62 |
+| Primaria or less | 961 | 19.38 | 3.72 | 5.21 | 4.09 |
+| MMP (H&S Table II), 2003 $ moved by the CPI | | 10.30 | 5.05 (PWT 7.1 PPP) | 2.0 | |
+
+[CALCULATION: beside_extra_meta_oct07.json tenure_check; SOURCE: reads/hendricks_schoellman_2018.md quotes 1, 5 and
+6; DATA: CPI-U 2003 184.000, 2024 313.698, selection_curve_2026_09_27/_cache/cpiaucsl_annual.csv]
+- **The gap is on the US side.** MMP's migrants (7.1 years of schooling, 60% without high school) earned $10.30 an
+  hour in their US jobs. That is 0.52–0.53 of the CPS's pay for Mexican-born workers below preparatoria ($19.63) or
+  with primaria or less ($19.38).
+- **Tenure does not explain it.** Arrivals of 2020–2024 earn $24.09 an hour, as much as those who came before 2006
+  ($24.12).
+- **The Mexican side points the other way.** MMP's pre-migration wage, $5.05, is above the cells' $3.72–4.17 for
+  similar schooling. The PPP vintages differ, so only the direction counts: selection at or above the lane's p56, not
+  below.
+- So 1c is shown as asked, as a parameter. Dividing the stock's US pay by 2.0 gives $11.97 an hour in Mexico: 2.0 times
+  the cells' pay and 2.4 times MMP's own pre-migration wage, for migrants the paper finds "roughly unselected"
+  [INFERENCE].
+
+### Arm 3: the services' price basis
+
+**3, the US-price numeraire.** Mexico's services forgone by the group, and the budget Mexico saves, are converted at
+ICP 2021 category PPPs instead of GDP PPP:
+- health ÷ 0.8137;
+- other government consumption ÷ 0.5994 (collective government);
+- cash transfers and pensions × 0.9181 (private-consumption PPP, as pay);
+- schooling stays at GDP PPP. ICP's education PPP, about 0.17 of GDP PPP in the lead's researcher's table [UNVERIFIED:
+  not staged], is input-priced, so not quality-equal, and schooling enters only Mexico's saved budget.
+
+US services stay at US cost times V/G.
+
+| Equal weights, change from the central, $bn | G1 | G2 | G3+ | Mexico's residents | World |
+|---|---|---|---|---|---|
+| 3, symmetric | −9.7 | −13.8 | −16.4 | +30.3 | −9.6 |
+| 3's check, the group's rows only (the research's version) | −9.7 | −13.8 | −16.4 | 0 | −39.9 |
+
+- The lead expected about $0 on the research's figure. That figure was G1's net after consumption PPP on pay
+  (+$8.5bn), which is now in 1a. On services alone G1 loses $9.7bn, as the research's parts imply: health +$1.7bn,
+  public goods +$9.5bn and cash −$1.5bn forgone.
+- Mexico's residents gain less than the group loses. The group values Mexico's health at V/G and its public goods at
+  average cost, while Mexico saves the full health cost and 0.725 of the public goods. The world falls $9.6bn.
+- [DATA: ICP 2021 via `icp2021_mex_usa.json`; WDI 2024 PA.NUS.PPP and PA.NUS.PRVT.PP via mexico.py]
+
+**3a and 3b** are part 1's: US health at Mexican relative prices (0.8137) and social services at individual
+government's (0.3974), with Mexico's public health at its cost; public goods at their responsive cost.
+
+**The Mexican-price numeraire** (the research's rule, extended to G2 and G3+) adds the rest of the group's US
+services to 3a:
+- public goods and justice at V × 0.5994;
+- SNAP at V × 1.7631 (ICP food over GDP PPP);
+- cash at V × 1.0892 (private consumption over GDP PPP, WDI 2024);
+- enterprise services and housing at US cost [ASSUMPTION: their ICP categories are not staged; the research puts
+  housing at −$0.2bn for G1].
+
+G1's valued US budget falls $32.9bn: public goods −23.4, Medicare −5.0, social services −3.9, justice −3.2, Medicaid
+−2.9, health services −1.0, cash +4.3 and SNAP +2.2 [CALCULATION: beside_extra_meta_oct07.json
+arm3.budget_change_by_class_bn]. The research has −$35bn. The gap is that 3a prices health at G × 0.8137 rather than
+V × 0.8137, re-prices only income_security_services (not the enterprise lines in the same class), and leaves housing
+out. With care received at the same ratio, G1's total moves −$33.6bn, and the group's −$128.2bn. The arm cannot be
+stacked on 3b: both re-price public goods.
+
+### Arm 4: the fiscal dollar's alternative use (θ)
+
+θ replaces λ on the rows the lane's λ columns weight: other residents' fiscal rows and Mexico's budget rows. The
+pension accrual and displaced beneficiaries stay at $1. θ and λ never stack: λ is the cost of raising the dollar, θ
+what the dollar would have done, with λ inside it on the tax-cut share.
+- **State and local:** a share s = 0.60 is re-spent at m = 0.967, the MVPF of marginal spending; the rest goes back
+  as tax cuts at λ = 1.25.
+- **Federal, borrowed:** 0.270 of the federal part, `fiscal_future`. It takes λ plus crowd-in, 0.33 × (1.1 − 1).
+- **Federal, the rest:** half spent at m, half tax cuts at λ [ASSUMPTION]. Under current-law scoring it takes the
+  borrowed rate.
+- **Weights:** the case's own parts, at the mean of the band ends [DATA:
+  debt_legacy_2026_09_23/derived/oct07/federal_split_2024.csv]. Mexico's budget rows take θ_o [ASSUMPTION].
+- **Weakest inputs** (the lead's researcher): the federal 50/50 split, and the spending composition behind m, which
+  uses average shares [TRAINING-DATA: Census state-local spending shares].
+- [SOURCE: reads/hines_thaler_1995.md quotes 3 and 5; reads/hendren_sprung_keyser_2020.md;
+  reads/newell_pizer_prest_2023.md quote 1; TRAINING-DATA: CBO's 33 cents]
+
+| Set | θ_o / θ_f | θ over the fiscal cost (mcpf at the two ends) | Central | Reading 1 | Reading 2 | Reading 3 | Combined low |
+|---|---|---|---|---|---|---|---|
+| Equal weights | | | 321.1 | 287.2 | 77.6 | 179.3 | −1.9 |
+| λ 1.16 | | | 273.0 | 242.9 | 27.3 | 131.6 | −54.7 |
+| λ_h | | | 235.0 | 207.9 | −12.5 | 93.9 | −96.5 |
+| θ, central | 1.083 / 1.283 | 1.072 (1.069 / 1.077) | 293.4 | 261.4 | 48.7 | 151.8 | −32.1 |
+| θ at λ 1: the alternative use alone | 0.981 / 1.033 | 0.986 (0.984 / 0.985) | 326.3 | 291.9 | 83.0 | 184.4 | 3.8 |
+| θ, the waste point (m 0.6875) | 0.919 / 1.283 | 0.947 (0.944 / 0.947) | 340.7 | 304.9 | 98.3 | 198.7 | 20.1 |
+| θ, K-12 at MVPF 2 (m 1.317) | 1.289 / 1.283 | 1.229 (1.226 / 1.240) | 234.2 | 207.1 | −13.4 | 93.0 | −97.4 |
+| θ, re-spent share 0.40 (Ladd) | 1.134 / 1.283 | 1.111 (1.108 / 1.116) | 279.0 | 248.2 | 33.6 | 137.5 | −48.0 |
+| θ, current-law scoring | 1.103 / 1.283 | 1.088 (1.082 / 1.096) | 287.7 | 256.2 | 42.7 | 146.1 | −38.4 |
+| θ, the waste point at λ 1 | 0.816 / 1.033 | 0.861 (0.859 / 0.855) | 373.6 | 335.3 | 132.6 | 231.3 | 56.0 |
+| θ, extreme: schooling at MVPF 5 (m 2.58) | 2.033 / 1.283 | 1.796 (1.793 / 1.827) | 20.4 | 10.9 | −237.4 | −118.9 | −333.1 |
+
+- **mcpf's θ_eff is reproduced** with its own structure at the band ends: 1.069 / 1.077 central, 0.984–0.985 at λ 1,
+  0.944–0.947 waste, 1.226–1.240 for K-12 at 2, 1.082–1.096 current law and 1.793–1.827 extreme.
+  - This lane's θ over the fiscal cost sits between mcpf's two ends in six of the eight sets. At λ 1 it is 0.001
+    (the alternative use) and 0.002 (the waste point) above the higher end.
+  - It differs from mcpf's in three ways: the ledger's midpoint, displaced beneficiaries at $1 (as under λ), and the
+    capital return split by its federal part.
+- **The extreme row** values marginal schooling at the child programs' average, about 5. It is a labelled bound, not
+  a reading: it puts the central at +$20.4bn.
+- **Beside, in no total** (mcpf's formulas at each band end):
+  - The shadow price of capital on the share that displaces domestic investment, d (SPC − 1): +$3.1bn / +$4.3bn at
+    SPC 1.1 (range $0–11.3bn / $0–14.8bn).
+    - d is 0.08 for state and local (0.04–0.13), 0.33 for federal (0.15–0.50), 0 for the accrual (to 0.08) and 0 for
+      the capital return.
+    - It is about 1% of the account.
+  - The R&D policy arm sends the federal half re-spent to nondefense R&D at a marginal social benefit-cost ratio of
+    3.7–11.4 instead of m: +$39.4–150.2bn / +$69.0–263.5bn.
+    - [UNVERIFIED: Jones and Summers 2020, Table 7, through the lead's note]
+    - [FRAMING-SENSITIVE: no budget rule sends the savings to research; a standing under-investment in R&D would
+      rescale every program's dollar, not this one's]
+
+### Arm 5: output at common prices
+
+[FRAMING-SENSITIVE: it values output at common prices, a different question from the migrant's purchasing power, for
+which consumption PPP stays right.]
+
+G1's and G2's E_US is split by the industry of the longest job last year (CPS ASEC 2025 `INDUSTRY`, 2022 census
+codes; every code of the group's earners is on the 2022 list except 9890, 0.03% of G1's pay). The Mexican
+counterfactual's earnings are split in the same shares [ASSUMPTION: ENIGH's cells are not industry-matched] and
+re-priced at the class's ICP 2021 category PPP instead of GDP PPP. The table prints $bn at two decimals, and each
+row's "price, not output" is its premium at GDP PPP less its premium at the category. To make the columns add,
+7 of its 78 values move one unit from their own rounding.
+
+| Class | ICP category (goods variant) | PPP over GDP PPP (goods variant) | G1: share of E_US | G1: premium at GDP PPP | at the category | price, not output | G2: share | G2: premium at GDP PPP | at the category | price, not output |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Agriculture | GDP (food, 1101100) | 1.0000 (1.7631) | 0.050 | 11.73 | 11.73 | 0.00 | 0.007 | 1.77 | 1.77 | 0.00 |
+| Mining | GDP | 1.0000 | 0.006 | 1.53 | 1.53 | 0.00 | 0.017 | 4.38 | 4.38 | 0.00 |
+| Construction | GDP (construction, 1501200) | 1.0000 (0.8989) | 0.240 | 56.74 | 56.74 | 0.00 | 0.123 | 30.88 | 30.88 | 0.00 |
+| Manufacturing | GDP (machinery and equipment, 1501100) | 1.0000 (2.3882) | 0.109 | 25.80 | 25.80 | 0.00 | 0.089 | 22.47 | 22.47 | 0.00 |
+| Restaurants and hotels | 1111000 | 1.2099 | 0.076 | 17.96 | 19.33 | −1.37 | 0.057 | 14.20 | 15.03 | −0.83 |
+| Personal and household services | 9140000, miscellaneous goods and services | 1.0452 | 0.092 | 21.66 | 22.07 | −0.41 | 0.057 | 14.43 | 14.64 | −0.21 |
+| Health | 9080000 | 0.8137 | 0.045 | 10.63 | 9.56 | +1.07 | 0.109 | 27.46 | 25.35 | +2.11 |
+| Retail | 9260000, household consumption without housing | 1.1675 | 0.064 | 15.25 | 16.21 | −0.96 | 0.093 | 23.38 | 24.50 | −1.12 |
+| Others | GDP | 1.0000 | 0.318 | 75.13 | 75.13 | 0.00 | 0.448 | 112.81 | 112.81 | 0.00 |
+| Total | | F: G1 0.984 (0.926), G2 0.999 (0.958) | 1.000 | 236.43 | 238.10 | −1.67 | 1.000 | 251.78 | 251.83 | −0.05 |
+
+[CALCULATION: derived/beside_extra_industry_oct07.csv; DATA: ICP 2021 via `icp2021_mex_usa_categories.json`]
+- **The "price, not output" part is negative:** −$1.67bn for G1 and −$0.05bn for G2 with services alone, −$7.67bn
+  and −$3.53bn with goods.
+  - Positive would mean part of the premium is a higher US price for the same output.
+  - Mexico's restaurants, retail and personal services cost more relative to its GDP average than the US's do
+    (1.05–1.21). Only health (0.81) and construction (0.90) are cheaper.
+  - GDP PPP's average is pulled down by what Mexico's government provides: individual government consumption is 0.40
+    of GDP PPP and collective 0.60 [DATA: ICP 2021, `icp2021_mex_usa.json`], schooling about 0.17 and housing about
+    0.78 [UNVERIFIED: the lead's researcher's table, not staged]. The group does not produce those.
+- **Services are 59.5% of G1's US pay and 76.4% of G2's**, counting everything but the four goods classes.
+- **Limits.** The API publishes aggregates only, not basic headings such as domestic services or hairdressing.
+  Personal and household services, services to buildings, landscaping, social assistance and private households take
+  miscellaneous goods and services [ASSUMPTION]; furnishings and household maintenance (1105000, 1.653) is the
+  alternative, and would raise G1's premium a further $3.3bn [CALCULATION: 0.0916 × 103.69 × (1/1.0452 − 1/1.653)].
+
+### The private gain on wages alone
+
+The operator's question was why they stay if it comes out even. The private gain on wages alone takes the premium,
+less the US taxes the group pays (the tax class at cost), plus the Mexican taxes it avoids, less Mexico's services
+forgone as valued. Every US service and benefit is at zero, and remittances are left out: they are the group's own
+spending. Variant (b) keeps the old-age promises the members earn: the Social Security accrual (the social_security
+line) and Part A (the pension lane's Part A per HI tax dollar, item pension_tr2026's arm, times the generation's HI
+taxes [ASSUMPTION]). $bn a year at two decimals; per G1 adult over the generation lane's 10,566,525 and per member
+over 42,752,213. Each row adds on its printed values: G1's four terms make its wages-alone figure, the accrual adds
+$39.55bn, and the three generations make the group. To make that hold, 24 of the table's 132 $bn values move 0.01
+from their own rounding.
+
+| Scenario | G1: premium / US taxes / Mexican taxes avoided / Mexico's services | G1: wages alone / with the accrual | Per G1 adult, $: wages alone / with the accrual | G2: wages alone / with the accrual | G3+: wages alone / with the accrual | Group: wages alone / with the accrual | Per member, $ |
+|---|---|---|---|---|---|---|---|
+| The lane's central (GDP PPP) | 236.43 / −100.93 / 19.63 / −37.24 | 117.89 / 157.44 | 11,157 / 14,900 | 87.06 / 138.39 | −182.51 / −114.35 | 22.44 / 181.48 | 525 / 4,245 |
+| The central at consumption PPP | 244.92 / −100.93 / 18.03 / −37.24 | 124.78 / 164.33 | 11,809 / 15,551 | 92.66 / 143.99 | −182.51 / −114.35 | 34.93 / 193.97 | 817 / 4,537 |
+| 1b: CMP 2.46 | 201.86 / −100.93 / 26.18 / −37.24 | 89.87 / 129.42 | 8,505 / 12,248 | 87.06 / 138.39 | −182.51 / −114.35 | −5.58 / 153.46 | −131 / 3,589 |
+| 1c: 2.0 a year | 170.06 / −100.93 / 32.20 / −37.24 | 64.09 / 103.64 | 6,065 / 9,808 | 87.06 / 138.39 | −182.51 / −114.35 | −31.36 / 127.68 | −734 / 2,986 |
+| 1c: 1.59 | 126.04 / −100.93 / 40.54 / −37.24 | 28.41 / 67.96 | 2,688 / 6,431 | 87.06 / 138.39 | −182.51 / −114.35 | −67.04 / 92.00 | −1,568 / 2,152 |
+| 1c: 1.43 | 102.25 / −100.93 / 45.04 / −37.24 | 9.12 / 48.67 | 864 / 4,606 | 87.06 / 138.39 | −182.51 / −114.35 | −86.33 / 72.71 | −2,019 / 1,701 |
+| Reading 1 | 227.46 / −100.93 / 20.95 / −46.95 | 100.53 / 140.08 | 9,514 / 13,257 | 59.69 / 111.01 | −195.47 / −127.30 | −35.25 / 123.79 | −824 / 2,896 |
+| Reading 2 (its consumption-PPP twin) | 208.06 / −100.93 / 24.78 / −33.92 | 97.99 / 137.54 | 9,274 / 13,016 | 77.83 / 129.16 | −173.86 / −105.70 | 1.96 / 161.00 | 46 / 3,766 |
+| Reading 3 | 119.56 / −100.93 / 42.25 / −46.95 | 13.93 / 53.48 | 1,319 / 5,061 | 59.69 / 111.01 | −195.47 / −127.30 | −121.85 / 37.19 | −2,850 / 870 |
+| Reading 3 at 2.0 | 163.58 / −100.93 / 33.56 / −46.95 | 49.26 / 88.81 | 4,662 / 8,405 | 59.69 / 111.01 | −195.47 / −127.30 | −86.52 / 72.52 | −2,024 / 1,696 |
+| Combined low (its twin) | 119.56 / −100.93 / 42.25 / −33.92 | 26.96 / 66.51 | 2,552 / 6,295 | 77.83 / 129.16 | −173.86 / −105.70 | −69.07 / 89.97 | −1,616 / 2,104 |
+
+[CALCULATION: derived/beside_extra_private_gain_oct07.csv; DATA: valuation_by_generation_oct07.csv,
+pension_tr2026_2026_10_06/derived/arms.csv, generation_results_oct07.csv]
+- **G1 gains on wages alone in every reading.** The smallest is the within-person ratio with Mexico's services at US
+  prices (reading 3), $1,319 per G1 adult. NIS's 1.43 alone gives $864. With the old-age accrual, G1's gain is
+  $4,606–15,551 per adult.
+- **G1's old-age accrual** is $28.83bn of Social Security and $10.72bn of Part A, $39.55bn, against $100.93bn of US
+  taxes.
+- **The group's total turns on G3+.** At its zero bound G3+ has no premium. It pays $216.2bn of US taxes against
+  $79.2bn of Mexican taxes it avoids and $45.5bn of Mexico's services, so on wages alone it shows −$182.5bn at the
+  central. That is a bound's arithmetic, not a choice anyone makes; the question of staying is G1's.
+- **Part A on the case's own HI taxes is $46.8bn for the group:** $10.7bn, $16.6bn and $19.5bn by generation. The
+  pension lane's union has $40.8bn ($12.6bn, $15.3bn and $12.9bn). It leaves out the 3.04M added descendants, who
+  are G3+ here, and it takes Part A on its own HI taxes, which differ from the case's: G1's are $8.7bn there against
+  $7.4bn here.
+- **Under arm 2 the premium is at national prices and the US taxes stay nominal**, at cost as the lead defined them.
+  Deflating G1's taxes by its earnings-weighted state RPP (102.46) would add $2.4bn [CALCULATION: 100.93 ×
+  (1 − 1/1.0246)].
+
+### Flags
+
+- **The readings are the lead's stacks.** Reading 2 and the combined low mix numeraires by design. 3b is a convention
+  about non-rival goods. Arm 5 is a different question from the premium's.
+- **θ rests mostly on assumptions:** the composition, the federal split, λ 1.25 and Mexico's θ. s is from grants, not
+  released costs.
+- **1c does not fit the stock** (the check above). The CPS may miss low-paid recent arrivals, which would lower its
+  US pay an hour, but not toward half [INFERENCE].
+- **The urban price level prices housing only** (part 1's hedonic index, 1.033). CONEVAL's basket ratio is 1.065.
+- **Wrong code list first.** The first industry list staged was the 2017 one
+  (`sources/.../census/industry_codes_2017/`), which lacks 33 of the CPS file's codes. It is superseded by the 2022
+  list, and its ACQUIRED.md says so; no script reads it.
+- **Part 1's variant table now subtracts on its printed values** (2026-10-08). In seven of its rows the world total
+  and the change disagreed by 0.1. Nine values move one unit, each staying within 0.1 of the file's: the changes
+  before the price level (−20.8), at CONEVAL's ratio (−8.1), with national schooling (−11.3) and for Mexico City
+  (+10.1); the premium before the price level (467.4) and at CONEVAL's ratio (480.1), which those changes equal; and
+  the world totals for Guadalajara (290.4), metro RPP (305.5) and 3(b) (191.9).
+
+### Inputs, gates and files
+
+- **Inputs:**
+  - `world_ledger.py`'s rows and weights (`W.load`, `W.build_rows`, `W.totals`);
+  - part 1's `derived/beside_arms_oct07.csv`, its summary and its meta's price level for localities of 100,000+;
+  - the national cells and `g2_premium_lineage.csv` (gates);
+  - the ENIGH 2024 persons and ESRU-EMOVI 2017 (mexico.py's cache);
+  - the CPS ASEC 2025 person file, with `INDUSTRY` (`distribution_weights_2026_09_23/distribute.py`'s path);
+  - the debt lane's oct07 federal split, the pension lane's arms, and the generation lane's G1 adults.
+- **New sources** (staged, sha256-pinned, `acquire_beside.py` fetches them):
+  - `sources/immigration-fiscal/data/external/stage3/worldbank/icp2021/icp2021_mex_usa_categories.json`, ICP 2021
+    categories, sha256 8f724559…;
+  - `sources/immigration-fiscal/data/external/stage3/census/industry_codes_2022/2022-Census-Industry-Code-List-with-Crosswalk.xlsx`,
+    sha256 c9d2e004….
+  - `derived/beside_sources.csv` now lists eight files. Part 1's source test checks that its six are among them.
+- **Gates** (`beside_extra.py`), all passing:
+  - the central reproduces `world_ledger_oct07.csv`, and part 1's baseline is the central;
+  - the cells computed on every ENIGH person equal mexico.py's, and the premium table on them equals
+    `g2_premium_lineage.csv`;
+  - the identities: the central rows relabelled to themselves, the lane's own ratio in 1c, F = 1 in arm 5, factors of
+    1 on Mexico's budget, and every θ share at λ, which rebuilds the λ columns (max |diff| 1.7e-6, from part 1's
+    file);
+  - arms 2, 3a and 3b equal part 1's file to 1e-6;
+  - the λ columns are linear in their rows (1e-9 here, 1e-5 on part 1's 6 decimals);
+  - θ from the λ columns equals a direct evaluation through `W.totals` (max |diff| 9.1e-13);
+  - the debt lane's split is the case, and the ledger's λ rows equal its parts;
+  - the 2022 list has 266 codes and its sector ranges are the classes';
+  - every code of the group's earners is on it, or is 9890;
+  - the persons add to 42,752,213.
+- **Tests:** `test_beside_extra.py`, 13 tests. With part 1's, 22 pass. They cover θ against its parameters and mcpf's
+  ends, the beside figures, the order of the θ sets, the θ totals rebuilt from the λ columns, the summary from the
+  party totals, the arms alone against part 1, 1b and 1c moving only G1, the readings as their arms, arm 5's table,
+  the private gain's terms, the staged sources and the tenure check.
+- **Outputs** (`derived/`):
+  - `beside_extra_oct07.csv`: scenario × weighting × party, every scenario under the lane's eight weightings, and θ's
+    eight sets on these scenarios and part 1's;
+  - `beside_extra_summary_oct07.csv`;
+  - `beside_extra_private_gain_oct07.csv`;
+  - `beside_extra_industry_oct07.csv`;
+  - `beside_extra_meta_oct07.json`: cells, ratios, factors, θ's parts and values, mcpf's ends, the beside figures,
+    the Mexican numeraire's change by budget class and the tenure check.
+- **Reads:** `reads/hendricks_schoellman_2018.md` and `reads/hines_thaler_1995.md` are new;
+  `reads/newell_pizer_prest_2023.md`'s "Used for" list adds arm 4's crowd-in and shadow price of capital.
+- **run_all.sh** runs `beside_arms.py` and `beside_extra.py` after the oct07 world ledger when oct07 is among its
+  cases. `acquire_beside.py` stays outside it, as `acquire.py` does.
+- **Existing outputs:** none change.
+- **Printed values** round the derived files' values once; the captions state the controlled moves.
+
+Reproduce: part 1's command, with these two lines after its three:
+
+```sh
+  "uv run --no-project python3 {lane}/beside_extra.py" \
+  "uv run --no-project python3 -m pytest {lane}/test_beside_extra.py -q" \
+```
+
+Log (times from `date` or file mtimes, JST):
+- 2026-10-07 23:26:46 and 23:28:31: the ICP categories and the 2017 code list staged; 23:44:36 the 2022 list, after
+  the 2017 one turned out to lack 33 of the CPS file's codes.
+- 2026-10-07 23:59:32: the rework's first run, stopped by a pandas error in the private-gain inputs. 2026-10-08
+  00:00:30: the second, stopped at a gate (persons read from the table's 6 digits).
+- 00:01:28: the third, exit 0, but a peak of 2.84 GB, above the 2.5 GB budget, from part 1's ENOE read for the metros'
+  municipalities. 00:03:03: without that read (the price level from part 1's meta), exit 0, peak 1.73 GB.
+- 00:09:50–00:11:59: `run_all.sh` over the five cases, exit 0, the 102 derived files byte-identical.
+- 00:12:08–00:14:32: the rerun, 34 commands, IDENTICAL, 137/137 files, exit 0.
+- 00:17:16: the beside figures added (mtime); 00:18:44 the tests (mtime), 22 passed.
+- 00:22:55: the Mexican numeraire's change by budget class added to the meta (mtime); 00:23:21 the build.
+- 00:27:49–00:30:06: the final rerun, 34 commands, IDENTICAL, 137/137 files, exit 0.

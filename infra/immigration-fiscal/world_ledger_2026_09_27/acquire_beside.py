@@ -1,10 +1,10 @@
-"""Fetch the six public files beside_arms.py reads, into sources/immigration-fiscal/data/external/stage3/ (ignored),
-and check each against its pinned sha256; record them in derived/beside_sources.csv. Each staging directory holds an
-ACQUIRED.md with the acquisition date and the publisher's vintage.
+"""Fetch the eight public files beside_arms.py and beside_extra.py read, into sources/immigration-fiscal/data/external/
+stage3/ (ignored), and check each against its pinned sha256; record them in derived/beside_sources.csv. Each staging
+directory holds an ACQUIRED.md with the acquisition date and the publisher's vintage.
 
 Sources: BEA Regional Price Parities by state, metropolitan area and state portion (2008-2024, last updated February 19,
-2026); World Bank ICP 2021 PPPs by category for Mexico and the United States (API source 90); INEGI ENIGH 2024
-dwellings; CONEVAL's poverty lines for August 2024.
+2026); World Bank ICP 2021 PPPs by category for Mexico and the United States (API source 90, two requests); INEGI ENIGH
+2024 dwellings; CONEVAL's poverty lines for August 2024; the Census Bureau's 2022 census industry code list.
 
 Run from the repository root:  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
     infra/immigration-fiscal/world_ledger_2026_09_27/acquire_beside.py
@@ -16,6 +16,7 @@ import sys
 
 from acquire import UA
 from beside_arms import DERIVED, REPO, SOURCES, gate, sha256
+from beside_extra import EXTRA_SOURCES
 
 
 def fetch(path, url):
@@ -32,7 +33,7 @@ def fetch(path, url):
 
 def main():
     rows = []
-    for key, (path, sha, url) in SOURCES.items():
+    for key, (path, sha, url) in {**SOURCES, **EXTRA_SOURCES}.items():
         if not path.is_file():
             fetch(path, url)
         got = sha256(path)
