@@ -900,3 +900,202 @@ b3e734547b674644. All six are the files committed in e5ca5efe (checked 2026-10-0
 - 23:23–23:26 — the three oct05 `households.py` runs: exit 0.
 - 23:32 — `rerun_lane.py`: IDENTICAL 52/52, rc 0.
 - 23:37 — this section written. Nothing is committed.
+
+## v6 case (oct07), 2026-10-07
+
+[2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`, $389.0826–461.4797bn on 42,752,213 members, adopted
+2026-10-07), under the lane's central (person accrual, payroll taxes on on-books wages), **17.5% (SE 0.4) / 14.2% (0.4)**
+of members live in net-contributor households under A and **24.2% (0.5) / 22.7% (0.5)** under B. On v5 (`oct05`) the
+shares were 17.4% / 14.1% and 23.9% / 22.6%. The costliest tenth of households carries **55.7% (0.5) / 48.9% (0.5)**
+of the net cost (v5 55.6% / 49.0%), and the costliest fifth 83.2% / 74.4% (83.0% / 74.5%). The member at the median
+lives in a household costing **$10,230 / $11,588** per member (v5 $10,272 / $11,622).
+
+The 3.04M added people are placed at their measured age mix, band by band [ASSUMPTION]. At v5's single factor the flat
+arm's shares are within 0.2 points. Item 4's parts follow the payload's split-basis lines; Pell goes by education
+[ASSUMPTION: no college-enrollment key exists by person here]. [CALCULATION: `export_lines.cjs --case oct07`,
+`households.py --case oct07 --weights row4 --accrual person --payroll onbooks` →
+`derived/oct07/net_positive_shares_person_onbooks.csv`, `concentration_person_onbooks.csv`,
+`household_balance_quantiles_person_onbooks.csv`] [FRAMING-SENSITIVE: the placement rule]]
+
+claude-opus-5-5 (prop-a)
+
+Main case v6 (`main_case_2026_10_07`, case key `oct07`) was adopted on 2026-10-07 (decisions/2026-10-07-main-case-v6.md).
+It is v5 plus four items (`meta.items`):
+- the pension accrual on the 2026 Trustees paths (set only);
+- retiree health on accrual;
+- the added people at their measured age mix;
+- user fees with the education keys (union only).
+
+**What runs.**
+- `export_lines.cjs --case oct07` evaluates the v6 payload (`main_case_2026_10_07/derived/corrections.json`) and the
+  generation account's v6 split (`generation_corrections_oct07.json`) at specifications 48 and 11.
+  - The cash set is the case lane's `corrections_cash.json` through the package's `CASH`, with
+    `generation_corrections_oct07_cash.json`.
+  - It writes `_cache/oct07/lines.json`. Its `meta` carries the lineage (counts, production term, own pension parts),
+    the added people's age mix (`meta.lineage.age_mix`) and the generation account's G3+ members and adults.
+  - The `meta` also carries the items' carriers with the line each splits by (`meta.carriers`), and the parts split by
+    another line than the one they edit (`meta.routes`).
+- `households.py --case oct07 --weights row4`, with `--accrual person` and `--payroll onbooks` as for oct05, writes
+  `derived/oct07/` and `_cache/oct07/` (ignored). The person arms reuse `_cache/sept29/person_accrual.parquet`.
+- `households.py --case oct07 --weights row4 --placement uniform` is the beside arm. It places the added people at v5's
+  single factor, on the flat arm, and writes `derived/oct07/uniform_placement/`.
+- The `sept27`, `sept29` and `oct05` files do not move: `rerun_lane.py` compares every file across the seventeen
+  commands.
+
+**Rules for the items** (the Consumers row of the case lane):
+- **R1, the pension item.** Its lineage parts (`lineage_oasdi`, `lineage_part_a`: −$0.199 / 0.156bn and −$0.033 /
+  0.026bn) are counted in the lineage's own accrual and Part A (`meta.lineage.pension_bn`). The union's accrual is then
+  v6's ratio_net (0.95355) × (OASDI receipts less the lineage's), plus the lineage's own. Part A is v6's
+  `part_a_accrual_bn` ($40.783bn) plus the lineage's. Gates in `export_lines.cjs`, at both ends: the union's accrual,
+  Part A and benefit tax, less the lineage's own (the items' lineage parts included), are the payload's (1e-9bn):
+  $107.146 / 100.632bn, $40.783bn and $2.091 / 1.817bn.
+- **R2, retiree health.** It arrives inside each generation's lines, since every generation model carries the national-
+  scale edits. Each line keeps its household rule.
+- **R3, the added people at their measured age mix.** See the placement rule below.
+- **R4, user fees** [ASSUMPTION, the case's rule `splits.household_person`: pro rata to the basis line's amount in the
+  household or person]. The item's cell shifts are folded into their lines' cells in each generation's payload.
+  - A part whose basis line (`split_basis`) is the line it edits follows that line's household rule. These are the
+    tuition and higher-education parts on `education_services`, and the two health parts on `health_services`.
+  - A part whose basis is another line is listed in `lines.json` `meta.routes`. Each such part takes its share of its
+    line's amount out of that line's split and spreads it as the basis line does. A spending line costs its response
+    times its amount (gated), so this is also the part's share of the line's cost. The capital keyed by the line's
+    amount spreads the same way.
+  - Three parts are routed this way, all by `education_services`. One is `union_key_pell`, on `other_federal_benefits`.
+    The other two are the K-12 weight's `union_k12_weight_school` and `union_k12_weight_other`, on `school_reprice`
+    and `college_rekey`.
+  - Pell [ASSUMPTION]: a college-enrollment key would be better, but none exists by person or generation here. Its own
+    line is keyed by adult cash assistance.
+  - The K-12 weight [ASSUMPTION]: the consumers carry no generation amounts for row 6's two re-blend lines.
+  - Measured against each part's own line, the routing moves Pell's $3.87 / 3.97bn out of transfers: +$3.63 / 3.74bn
+    into schools and +$0.24 / 0.23bn into other education. The lane splits `education_services` into those two
+    categories, so 94% of Pell's cost sits under schools. The routing also moves $0.10 / 0.04bn of the K-12 weight from
+    schools to other education [ASSUMPTION]. [CALCULATION: `derived/oct07/split_basis_moves.csv`, by end, generation,
+    part and category]
+  - The four capital offsets are spread as their carrier's basis line: `education_services` for the k12 and college
+    offsets, and `health_services` for the two health offsets.
+
+**The placement rule** [ASSUMPTION]. v6 prices the 3.04M added people at their measured age mix
+(`meta.lineage.age_mix`): the G3-rate persons and the later losses, each at its own five-year mix, on the identified
+G3+'s ages within each band. The engine's G3+ keys are reweighted by band. So every G3+ record's weight, in every
+replicate, is scaled by its five-year band's f_b = 1 + added_b / identified G3+_b, from 1.1411 to 1.2493 (v5: one
+factor, 1.211937). A G3+ record therefore carries its own keys' amounts.
+
+Gates:
+- The frame's identified G3+ mix is the case's (1.4e-8 per band; the case lane sums single-precision weights).
+- The bands' added people add to `counts.added`.
+- The placed G3+ adults (18 and over) are the generation account's 9,792,850.6 (1 person).
+
+Members by the head's generation become 17.35M (G1 head), 11.87M (G2), 12.86M (third-plus) and 0.67M (head outside the
+union), against 17.34M, 11.82M, 12.92M and 0.66M at v5's single factor. The measured mix is younger, and young G3+
+members more often live in G1- and G2-headed households [INFERENCE].
+
+**Shares under the central.** % of members in net-contributor households (SE), oct07; oct05 in brackets.
+
+| Head's cell | Members (m) | A, low | A, high | B, low | B, high |
+|---|---:|---|---|---|---|
+| All members | 42.75 [42.75] | 17.5 (0.4) [17.4] | 14.2 (0.4) [14.1] | 24.2 (0.5) [23.9] | 22.7 (0.5) [22.6] |
+| Head Mexico-born | 17.35 [17.34] | 12.3 (0.6) [12.3] | 9.4 (0.5) [9.4] | 18.5 (0.6) [18.4] | 17.5 (0.7) [17.3] |
+| Head second generation | 11.87 [11.82] | 18.9 (0.9) [18.7] | 16.2 (0.8) [16.1] | 25.3 (1.0) [24.8] | 25.1 (1.0) [25.2] |
+| Head third-plus generation | 12.86 [12.92] | 23.5 (1.2) [23.4] | 19.5 (1.0) [19.3] | 31.3 (1.2) [31.1] | 28.5 (1.0) [28.3] |
+| Head unauthorized | 6.98 [6.98] | 13.2 (1.0) [13.3] | 10.8 (1.0) [10.9] | 20.4 (1.3) [20.5] | 19.8 (1.4) [19.9] |
+| Head legal immigrant | 10.37 [10.36] | 11.7 (0.8) [11.6] | 8.4 (0.6) [8.4] | 17.2 (0.9) [17.0] | 15.9 (0.9) [15.5] |
+| Head US-born | 24.73 [24.75] | 21.3 (0.7) [21.2] | 17.9 (0.6) [17.8] | 28.4 (0.7) [28.1] | 26.9 (0.7) [26.8] |
+
+[CALCULATION: `derived/oct07/net_positive_shares_person_onbooks.csv` against `derived/oct05/`; status rows are
+`head_status_case_flag`]
+
+No cell moves by more than 0.5 points, within about one SE. The status order of the central holds: legal-immigrant
+heads below unauthorized heads at every end of A. In the flat arm the shares at v5's single factor (below) are within
+0.2 points of the band placement's. So the rise from v5 comes from the items' amounts, not from where the added people
+are placed.
+
+**The distribution, oct07 against oct05**, per member of the household (SE in brackets):
+
+| Arm | | A, low | A, high | B, low | B, high |
+|---|---|---|---|---|---|
+| Central (person, on-books) | median member's household, $ | 10,230 (185); 10,272 | 11,588 (188); 11,622 | 7,079 (204); 7,111 | 7,312 (183); 7,331 |
+| | P10, $ | −5,480; −5,452 | −3,445; −3,482 | −8,520; −8,503 | −7,732; −7,654 |
+| | costliest tenth, % of the net cost | 55.7; 55.6 | 48.9; 49.0 | 74.4; 74.1 | 68.3; 68.5 |
+| | costliest fifth, % | 83.2; 83.0 | 74.4; 74.5 | 108.0; 107.5 | 100.3; 100.4 |
+| | % of members net-positive | 17.5; 17.4 | 14.2; 14.1 | 24.2; 23.9 | 22.7; 22.6 |
+| Person accrual | % of members net-positive | 17.6; 17.5 | 14.2; 14.1 | 24.1; 24.0 | 22.7; 22.6 |
+| Flat | % of members net-positive | 17.0; 16.8 | 13.1; 13.0 | 24.6; 24.5 | 23.0; 22.8 |
+| | costliest tenth, % | 54.7; 54.5 | 48.2; 48.3 | 72.8; 72.4 | 67.1; 67.2 |
+| | median member's household, $ | 9,683; 9,700 | 11,072; 11,095 | 6,520; 6,556 | 6,826; 6,853 |
+
+[CALCULATION: `concentration*.csv`, `household_balance_quantiles*.csv`, `net_positive_shares*.csv` in `derived/oct07/`
+and `derived/oct05/`]
+
+**The placement beside: v5's single factor** (flat arm; % of members net-positive, band placement [single factor]):
+
+| Head's cell | A, low | A, high | B, low | B, high |
+|---|---|---|---|---|
+| All members | 17.0 [17.0] | 13.1 [13.1] | 24.6 [24.8] | 23.0 [23.0] |
+| Head Mexico-born | 11.4 [11.4] | 7.1 [7.1] | 17.1 [17.1] | 15.9 [15.9] |
+| Head second generation | 17.9 [18.0] | 15.7 [15.7] | 27.3 [27.2] | 26.2 [26.2] |
+| Head third-plus generation | 23.9 [24.1] | 19.5 [19.6] | 32.9 [33.3] | 30.5 [30.6] |
+
+The median member's household costs $9,683 / 11,072 under A and $6,520 / 6,826 under B; at the single factor it costs
+$9,645 / 11,049 and $6,504 / 6,828. The costliest tenth carries 54.7% / 48.2% and 72.8% / 67.1% (single factor 54.8% /
+48.3% and 73.0% / 67.3%). [CALCULATION: `derived/oct07/uniform_placement/` against `derived/oct07/`] The single-factor
+arm is a placement check only: its G3+ records carry the measured mix's amounts at the identified ages. Its placed
+G3+ adults are 9,917,725.9, which is 124,875 more than the generation account's 9,792,850.6 at the measured mix.
+
+**Positive control.** On oct07, A reproduces the case: the households' sum plus the lane constants is
+$389.082553 / 461.479709bn (`control.csv`, residual 0.0). The lane constants, which no household carries, are at the
+low end −2.646 (G1), −1.138 (G2) and −1.572bn (G3+), as on oct05.
+
+**Gates, printed (logs in the session scratchpad).**
+- `export_lines.cjs --case oct07`: exit 0, 71 gates, three more than oct05's 68. The new ones:
+  - the routed parts are split by the payload's `split_basis`, and their generations add to the union's part
+    (1e-12bn);
+  - the union and the cash set are the case's full-precision band in its `summary.json` (1e-6):
+    $389.082553 / 461.479709bn and $307.399411 / 385.364123bn.
+
+  The rest pass as before:
+  - each generation's rows add to `generation_results_oct07.csv`, and the three add to the union;
+  - the lineage's production term is all on G3+;
+  - the union, less the lineage's own pension parts (the items' lineage parts included), is the payload's;
+  - the set and the cash set differ only in the three pension lines, per generation and end.
+- `households.py --case oct07 --weights row4`: exit 0, 30 gates, among them the three placement gates above and the
+  placed union = 42,752,212.924 (1 person). Worst gaps:
+  - key totals 5.8e-16 relative;
+  - per-head spread 1.8e-9 relative;
+  - generation pieces against cost 1.4e-13bn;
+  - households plus residual against the case 1.9e-12bn;
+  - replicates against the full sample 7.2e-12bn.
+
+  The run also prints the lane's standing `[DEGRADED]` note on the status imputation's Medicaid clause (Files).
+- `--accrual person`: exit 0, 57 gates. `--accrual person --payroll onbooks`: exit 0, 59 gates. `--placement uniform`:
+  exit 0, 27 gates. The three placement gates do not apply there, and the adults check is printed instead of gated.
+  Each count includes the closing "all gates passed" line, as oct05's did.
+- `scripts/rerun_lane.py` ran seventeen commands, with `--allow-unrun` for `test_person_accrual.py` only:
+  - sept27;
+  - sept29, with `person_accrual.py` and both person arms;
+  - the four oct05 commands;
+  - the five oct07 commands, the single factor among them.
+
+  Result: IDENTICAL 77/77 files, exit 0 (15:29:21–15:38:05 JST by `date`). `git diff --quiet` on `derived/` gave rc 0,
+  and `derived/oct07/` is new.
+
+**Inputs**: the generation account's oct07 files, committed at 3f583fb4; the files at the run are HEAD's. sha256
+prefixes:
+- `generation_corrections_oct07.json` c019beed6deafa27;
+- `generation_results_oct07.csv` e6107888017a5059;
+- `generation_summary_oct07.json` ddf4555b8e1f7d01;
+- `generation_corrections_oct07_cash.json` a93b391c1c4c55b3;
+- `generation_results_oct07_cash.csv` 047c032e2a779b22;
+- `generation_summary_oct07_cash.json` 474d9cbf56ef39cb.
+
+The case lane's payloads are the adopted ones: `corrections.json` f8d346aa…, `corrections_cash.json` e9033bff… and
+`summary.json` 54709259….
+
+**Memory.** `households.py` peaks at 2.6–3.2 GiB RSS on oct07, sampled every 2 s during the rerun: person 2.64,
+on-books 2.83 and single factor 3.18 GiB. The flat run read 2.66 GiB at its one sample. That is above the brief's
+2.5GB per process, which the lead accepted for this lane. Each run went alone, with no other worker's heavy job
+running.
+
+**Log (times from `date` calls and file times, JST).**
+- 15:21:00–15:27:46: the five final commands (export, flat, person, on-books, single factor), all exit 0.
+- 15:29:21–15:38:05: `rerun_lane.py` IDENTICAL 77/77, exit 0.
+- This section was written after.

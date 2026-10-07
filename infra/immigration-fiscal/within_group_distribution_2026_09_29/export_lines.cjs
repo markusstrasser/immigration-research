@@ -32,6 +32,16 @@
  *     unchanged (1e-9). households.py places the added people and spreads that term.
  * Writes _cache/oct05/lines.json.
  *
+ * --case oct07: main case v6 (main_case_2026_10_07: v5 plus the edit sets in its meta.items), on the generation account's
+ * v6 split (derived/generation_corrections_oct07*.json, run_generations_v6.cjs). It runs as oct05. The pension gates take
+ * v6's ratio_net and Part A accrual, and count with the lineage's own the edit sets' parts that the generation account
+ * puts on the added people (rule lineage in generation_summary_oct07.json items.split: pension_tr2026's lineage parts);
+ * a part on the added people on any line but the two pension lines stops the export. meta.routes lists the items' parts
+ * whose split basis (splits.split_basis) is another line than the one they edit, each generation's amount from the
+ * generation summary (gated to be the payload's basis and to add to the union's part); households.py spreads them as
+ * that line. The union and the cash set are also gated at the case's full-precision band (its summary.json, 1e-6).
+ * Writes _cache/oct07/lines.json.
+ *
  * Every case reads capRule, each capital component's key rule, from the case's payload (meta.capital_return
  * components); on September 27 it must equal the capital lane's engine_components.json, whose rules the committed
  * outputs used.
@@ -47,9 +57,8 @@
  * union amounts (the accrual ratio_net x OASDI receipts, the Part A accrual, the tax on benefits; 1e-9 bn); the road
  * pieces' implied freight key is the generation's excise share before the gasoline shift (1e-9); the part-rekeyed
  * shares add to the component's key (1e-12).
- * Writes _cache/lines.json (September 27), _cache/sept29/lines.json or _cache/oct05/lines.json. Run from the repository
- * root:
- *   node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs [--case sept27|sept29|oct05]
+ * Writes _cache/lines.json (September 27), or _cache/<case>/lines.json for a later case. Run from the repository root:
+ *   node infra/immigration-fiscal/within_group_distribution_2026_09_29/export_lines.cjs [--case sept27|sept29|oct05|oct07]
  */
 "use strict";
 const fs = require("fs");
@@ -74,6 +83,13 @@ const CASES = {
       genCorrections: "generation_corrections_oct05_cash.json", genResults: "generation_results_oct05_cash.csv",
       band: [307.3764, 383.4093] },
     summary: "generation_summary_oct05.json", lineage: true },
+  // items: the case adds edit sets (meta.items), split by the generation account (its summary's items.split).
+  oct07: { lane: "main_case_2026_10_07", genCorrections: "generation_corrections_oct07.json",
+    genResults: "generation_results_oct07.csv", band: [389.0826, 461.4797], out: "oct07/lines.json",
+    cash: { payload: "main_case_2026_10_07/derived/corrections_cash.json", package: "CASH",
+      genCorrections: "generation_corrections_oct07_cash.json", genResults: "generation_results_oct07_cash.csv",
+      band: [307.3994, 385.3641] },
+    summary: "generation_summary_oct07.json", lineage: true, items: true },
 };
 const argv = process.argv.slice(2);
 const CASE = argv.includes("--case") ? argv[argv.indexOf("--case") + 1] : "sept27";
@@ -109,6 +125,13 @@ const uCost = MAIN_SPECS.map((s) => P.evaluateFull(unionModel, s, PROFILE).cost_
 const lo = uCost.indexOf(Math.min(...uCost)), hi = uCost.indexOf(Math.max(...uCost));
 gate("the corrected union reproduces the adopted case", Math.abs(uCost[lo] - C.band[0]) < 1e-4 && Math.abs(uCost[hi] - C.band[1]) < 1e-4,
   `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)} at specifications ${lo} / ${hi} (0-based)`);
+// oct07: the case's full-precision band (its summary.json), as well as the pinned four decimals.
+const FULL = C.items ? read(path.join(FISCAL, C.lane, "derived/summary.json")) : null;
+if (FULL) {
+  gate(`the corrected union is the case's full-precision band (${C.lane}/derived/summary.json main_case, 1e-6)`,
+    Math.abs(uCost[lo] - FULL.main_case[0]) < 1e-6 && Math.abs(uCost[hi] - FULL.main_case[1]) < 1e-6,
+    `${uCost[lo].toFixed(6)} / ${uCost[hi].toFixed(6)} against ${FULL.main_case.map((v) => v.toFixed(6)).join(" / ")}`);
+}
 
 function resultsOf(file) {
   const results = fs.readFileSync(path.join(GEN, file), "utf8").trim().split("\n");
@@ -158,6 +181,17 @@ function dump(m, spec) {
 
 const out = { meta: { case: C.lane, convention: "a", spec_index: { low: lo, high: hi },
   specs: { low: MAIN_SPECS[lo], high: MAIN_SPECS[hi] } }, union: {}, generations: {} };
+if (C.items) {
+  // The items' carriers (an item's capital: receipt lines whose share keys its offset components) and the parent line
+  // its meta splits each by (splits.split_basis); households.py spreads an offset's return as that line.
+  out.meta.carriers = {};
+  for (const r of corrections.meta.items.filter((x) => x.applied && x.capital)) for (const id of r.capital.receipt_lines) {
+    const basis = (r.meta_changed || []).map((k) => corrections.meta[k] && corrections.meta[k].splits && corrections.meta[k].splits.split_basis)
+      .find((S) => S && S[id]);
+    if (!basis) throw new Error(`[BLOCKED] item ${r.id}: carrier ${id} has no split_basis in its meta`);
+    out.meta.carriers[id] = { item: r.id, parent_line: basis[id] };
+  }
+}
 for (const [end, i] of [["low", lo], ["high", hi]]) {
   out.union[end] = dump(unionModel, MAIN_SPECS[i]);
   gate(`union ${end}: rows sum to the cost`, Math.abs(out.union[end].sum_bn - out.union[end].cost_bn) < 1e-9,
@@ -193,6 +227,8 @@ if (C.lineage) {
   };
   const pay29 = read(path.join(GEN, CASES.sept29.genCorrections)).payloads.a;
   out.meta.lineage = { counts: L.counts, members: L.members, c3: L.c3.value, production_bn: {} };
+  // oct07: the added people's measured age mix (the case's item added_age_mix), which households.py places them at.
+  if (L.age_mix) out.meta.lineage.age_mix = { item: L.age_mix.item, reading: L.age_mix.reading, bands: L.age_mix.bands, mixes: L.age_mix.mixes };
   for (const [end, i] of [["low", lo], ["high", hi]]) {
     const s29 = P29.MAIN_SPECS[i];
     gate(`${end}: the September 29 specification ${i} has the case's production dimensions`,
@@ -210,6 +246,40 @@ if (V4) {
   const PA = corrections.meta.pension_accrual;
   const SUM = read(path.join(GEN, C.summary));
   const ALLOC = { low: MAIN_SPECS[lo].allocation, high: MAIN_SPECS[hi].allocation };
+  // oct07: the generation account's G3+ members and adults (the added people's adults at their age mix), which
+  // households.py's placement must reproduce.
+  if (C.items) {
+    const G3 = SUM.conventions.a.G3plus;
+    out.meta.lineage.generation_g3plus = { population: G3.population, adults: G3.adults, source: `generation_account_2026_09_24/derived/${C.summary}` };
+    // The items' parts whose split basis (the item's splits.split_basis) is a line other than the one they edit, with
+    // each generation's amount of the part (the generation account's items.split, convention a): households.py spreads
+    // each part's share of its line as the basis line (splits.household_person).
+    console.log("[items: the parts split by another line]");
+    const basisOf = (id, name) => (corrections.meta.items.find((x) => x.id === id).meta_changed || [])
+      .map((k) => corrections.meta[k] && corrections.meta[k].splits && corrections.meta[k].splits.split_basis).find((S) => S && S[name]);
+    out.meta.routes = [];
+    let nParts = 0, addGap = 0;
+    for (const it of SUM.items.split.a) for (const x of it.edits) for (const p of x.parts || []) {
+      if (p.rule !== "parent_line") continue;
+      const S = basisOf(it.id, p.name);
+      if (!S || S[p.name] !== p.parent) {
+        throw new Error(`[BLOCKED] ${it.id} ${p.name}: the generation account split it by ${p.parent}, the payload's split_basis says ${S ? S[p.name] : "nothing"}`);
+      }
+      nParts += 1;
+      for (const a of ["personal", "shared"]) addGap = Math.max(addGap, Math.abs(GENS.reduce((s, g) => s + p.bn[g][a], 0) - p.union_bn[a]));
+      if (p.parent === x.line) continue;
+      for (const g of GENS) for (const end of ["low", "high"]) {
+        const r = out.generations[g][end].rows.find((y) => y.side === x.side && y.id === x.line);
+        const b = out.generations[g][end].rows.find((y) => y.side === "spending" && y.id === p.parent);
+        if (x.side !== "spending" || !r || r.key !== x.key || !b || Math.abs(r.cost_bn - r.response * r.amount_bn) > 1e-12) {
+          throw new Error(`[BLOCKED] ${it.id} ${p.name}: ${g} ${end} has no spending row ${x.line} at key ${x.key} costing its response x amount, or no basis row ${p.parent}`);
+        }
+      }
+      out.meta.routes.push({ item: it.id, part: p.name, side: x.side, line: x.line, key: x.key, basis: p.parent, union_bn: p.union_bn, bn: p.bn });
+    }
+    gate(`the items' ${nParts} parts split by a basis line are split by the payload's split_basis, and their generations add to the union's part (1e-12 bn)`,
+      nParts > 0 && addGap < 1e-12, `${out.meta.routes.length} on another line than their own: ${out.meta.routes.map((r) => `${r.part} (${r.line} as ${r.basis})`).join(", ")}; max |diff| ${addGap.toExponential(1)}`);
+  }
   gate("the payload's OASDI lines are candidate v4's", JSON.stringify(PA.oasdi_lines) === JSON.stringify(V.OASDI_LINES), PA.oasdi_lines.join(", "));
   out.meta.pension_accrual = { ratio_net: PA.ratio_net, part_a_share: PA.part_a_share, se_oasdi_share: PA.se_oasdi_share,
     part_a_accrual_bn: PA.part_a_accrual_bn, benefit_tax_receipt_bn: PA.benefit_tax_receipt_bn, oasdi_lines: PA.oasdi_lines,
@@ -226,6 +296,11 @@ if (V4) {
   const uCash = [lo, hi].map((i) => PC.evaluateFull(PC.payloadModel(), MAIN_SPECS[i], PROFILE).cost_bn);
   gate("the cash set's union reproduces its band at the same specifications (1e-4)",
     Math.abs(uCash[0] - C.cash.band[0]) < 1e-4 && Math.abs(uCash[1] - C.cash.band[1]) < 1e-4, `${uCash[0].toFixed(7)} / ${uCash[1].toFixed(7)}`);
+  if (FULL) {
+    gate(`the cash set's union is its full-precision band (${C.lane}/derived/summary.json cash_set.band_bn, 1e-6)`,
+      Math.abs(uCash[0] - FULL.cash_set.band_bn[0]) < 1e-6 && Math.abs(uCash[1] - FULL.cash_set.band_bn[1]) < 1e-6,
+      `${uCash[0].toFixed(6)} / ${uCash[1].toFixed(6)} against ${FULL.cash_set.band_bn.map((v) => v.toFixed(6)).join(" / ")}`);
+  }
   out.meta.cash_set = { payload: C.cash.payload, cost_bn: { low: uCash[0], high: uCash[1] } };
   const payCash = read(path.join(GEN, C.cash.genCorrections)).payloads.a;
   const cashResults = resultsOf(C.cash.genResults);
@@ -295,14 +370,30 @@ if (V4) {
     const own = { accrual: lin(LS, "spending", "social_security", row(ue, "spending", "social_security").key),
       part_a: lin(LS, "spending", "medicare", row(ue, "spending", "medicare").key) - (1 - PA.part_a_share) * lin(LC, "spending", "medicare", row(uc, "spending", "medicare").key),
       benefit_tax: lin(LC, "receipt", "federal_income_tax", sc) - lin(LS, "receipt", "federal_income_tax", sc) };
+    // oct07: the edit sets' parts that the generation account puts on the added people (its rule lineage, all on G3+)
+    // are the lineage's own too; the payload's ratio_net and Part A accrual (v6's) price the rest.
+    const items = { accrual: 0, part_a: 0, benefit_tax: 0 };
+    if (C.items) {
+      for (const it of SUM.items.split.a) for (const x of it.edits) for (const p of x.parts || []) {
+        if (p.rule !== "lineage") continue;
+        const k = x.side === "spending" ? { social_security: "accrual", medicare: "part_a" }[x.line] : undefined;
+        if (!k || x.key !== row(ue, "spending", x.line).key) {
+          throw new Error(`[BLOCKED] ${it.id} ${p.name}: a part on the added people on ${x.side} ${x.line} (${x.key}), which the pension gates do not count`);
+        }
+        items[k] += p.union_bn[a];
+        own[k] += p.union_bn[a];
+      }
+    }
     const want = { accrual: PA.ratio_net * (oasdi - linOasdi), part_a: PA.part_a_accrual_bn, benefit_tax: PA.benefit_tax_receipt_bn[a] };
     for (const k of ["accrual", "part_a", "benefit_tax"]) {
       gate(`${end}: the generations' ${k} adds to the union's (its set and cash models, 1e-9 bn)`, Math.abs(tot[k][j] - union[k]) < 1e-9,
         `${tot[k][j].toFixed(6)} vs ${union[k].toFixed(6)}`);
-      gate(`${end}: the union's ${k} less the lineage's own (${own[k].toFixed(6)}) is the September 29 payload's (1e-9 bn)`,
+      gate(`${end}: the union's ${k} less the lineage's own (${own[k].toFixed(6)}${C.items ? `, the items' ${items[k].toFixed(6)} in it` : ""}) is the `
+        + `${C.items ? "payload's" : "September 29 payload's"} (1e-9 bn)`,
         Math.abs(union[k] - own[k] - want[k]) < 1e-9, `${(union[k] - own[k]).toFixed(6)} vs ${want[k].toFixed(6)}`);
     }
-    out.meta.lineage.pension_bn = Object.assign(out.meta.lineage.pension_bn || {}, { [end]: Object.assign({ oasdi_receipts_bn: linOasdi }, own) });
+    out.meta.lineage.pension_bn = Object.assign(out.meta.lineage.pension_bn || {},
+      { [end]: Object.assign({ oasdi_receipts_bn: linOasdi }, own, C.items ? { items_bn: items } : {}) });
   }
 
   // Roads: each generation's road line in its three pieces, with the driver-mile share from the generation account.

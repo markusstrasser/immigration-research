@@ -100,6 +100,27 @@ lineage's production term (lines.json meta.lineage) is set apart before the cell
 two cells in proportion to its own parts. The pension gates add the lineage's own accrual, Part A and OASDI receipts
 (meta.lineage.pension_bn), whose accrual per OASDI dollar is not ratio_net. The person-accrual arms reuse
 _cache/sept29/person_accrual.parquet: the persons are the same.
+--case oct07 (main case v6, main_case_2026_10_07: v5 plus the edit sets in its meta.items) runs as oct05 on
+_cache/oct07/lines.json (export_lines.cjs --case oct07) and writes derived/oct07/ and _cache/oct07/, with three changes:
+  - the added people are placed [ASSUMPTION] at the case's measured age mix (meta.lineage.age_mix, the case's item
+    added_age_mix): every G3+ record's weight, in every replicate, is scaled by its five-year band's
+    f_b = 1 + added_b / identified G3+_b, where added_b is the G3-rate persons and the later losses at their own mixes. The
+    case prices them so (the engine's G3+ keys reweighted by band), so a G3+ record carries its own keys' amounts.
+    Gated: the frame's identified G3+ mix is the case's, and the placed G3+ adults are the generation account's.
+    --placement uniform (flat arm only) puts them at v5's one factor beside it, written to derived/oct07/uniform_placement/
+    and _cache/oct07/uniform_placement/, so the switch's effect shows;
+  - the items' capital offsets (components keyed by an item's carrier receipt lines, lines.json meta.carriers) are
+    spread as their parent lines (the item's splits.split_basis, its household rule);
+  - the items' cell shifts are folded into their lines' cells. A part whose split basis is the line it edits follows
+    that line's rule. A part whose basis is another line (lines.json meta.routes: the K-12 weight's two parts on
+    school_reprice and college_rekey, each by education_services) takes its share of its line's amount, and so of its
+    cost, since a spending line costs its response x its amount, out of the line's split and spreads it as the basis
+    line [ASSUMPTION, the case's splits.household_person]. The capital keyed by the line's amount spreads the same
+    way. A part routed off a state-priced line's parent stops the run. derived/oct07/split_basis_moves.csv gives each
+    such part's cost by category, on its own line's split and on the basis line's.
+The pension gates take v6's ratio_net and Part A accrual, with the items' parts on the added people (pension_tr2026's
+lineage parts) in the lineage's own. The person-accrual arms' vectors stay the September 29 parquet's (the 2025
+Trustees path) [APPROX]: they only spread each generation's accrual, which is v6's.
 Writes derived/net_positive_shares.csv, concentration.csv, household_balance_quantiles.csv, control.csv,
 category_means.csv, line_scaling.csv and _cache/households.parquet; the row-4 run writes the same files to
 derived/row4/ and _cache/row4/. Run from the repository root:
@@ -109,7 +130,7 @@ derived/row4/ and _cache/row4/. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/person_accrual.py
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4 --accrual person
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py --case sept29 --weights row4 --accrual person --payroll onbooks
-  (the same three households.py commands with --case oct05, after export_lines.cjs --case oct05)
+  (the same three households.py commands with --case oct05 or --case oct07, after export_lines.cjs with that case)
 """
 from __future__ import annotations
 
@@ -146,10 +167,12 @@ PUBLISHED_MEX_25_64 = {"borjas_paper_rules": 3.9170610819750302, "no_medicaid_ru
 PER_HEAD_KEYS = {"population", "resident_population"}
 FAILS = []
 # The September 29 case (export_lines.cjs --case sept29): its lines, its tenant key's inputs and its new category.
-# oct05 (v5) runs on the same rules, with the lineage placed on G3+ (LINEAGE_CASES).
-CASE_DIRS = {"sept27": None, "sept29": "sept29", "oct05": "oct05"}
-CASE_LANES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05"}
-LINEAGE_CASES = ("oct05",)
+# oct05 (v5) runs on the same rules, with the lineage placed on G3+ (LINEAGE_CASES); oct07 (v6) places it by age band
+# (AGE_MIX_CASES).
+CASE_DIRS = {"sept27": None, "sept29": "sept29", "oct05": "oct05", "oct07": "oct07"}
+CASE_LANES = {"sept29": "main_case_2026_09_29", "oct05": "main_case_2026_10_05", "oct07": "main_case_2026_10_07"}
+LINEAGE_CASES = ("oct05", "oct07")
+AGE_MIX_CASES = ("oct07",)
 STATES_CSV = FISCAL / "receipt_side_long_run_2026_09_28/derived/states.csv"
 V4_INPUTS = GENLANE / "derived/v4_inputs.json"
 CASH_RENT = 2  # H_TENURE: rented for cash
@@ -291,12 +314,30 @@ def spending_category(row):
     return "other_shared"
 
 
-def main(arm, case="sept27", accrual="flat", payroll_base="all"):
+def age_band_factors(age, g3, w_id, lineage):
+    """Each record's placement factor at the case's measured age mix (lines.json meta.lineage.age_mix): its five-year
+    band's f_b = 1 + added_b / identified G3+_b, added_b = the G3-rate persons x their mix_b + the later losses x
+    their mix_b (meta.lineage.counts). Returns the factors by record and the bands' inputs."""
+    mix_meta, counts = lineage["age_mix"], lineage["counts"]
+    starts = [int(b.split("-")[0].rstrip("+")) for b in mix_meta["bands"]]
+    if starts != list(range(0, 5 * len(starts), 5)) or not mix_meta["bands"][-1].endswith("+"):
+        raise SystemExit("[BLOCKED] meta.lineage.age_mix: the bands are not five-year bands from 0 with an open top")
+    band = np.minimum(age // 5, len(starts) - 1)
+    n_id = np.array([float(w_id[g3 & (band == b)].sum()) for b in range(len(starts))])
+    mix = {k: np.asarray(mix_meta["mixes"][k], float) for k in ("identified", "g3_rate", "later")}
+    added_b = counts["at_g3_rate"] * mix["g3_rate"] + counts["later_losses"] * mix["later"]
+    f_b = 1.0 + added_b / n_id
+    return f_b[band], dict(n_id=n_id, added_b=added_b, f_b=f_b, mix_gap=float(np.abs(n_id / n_id.sum() - mix["identified"]).max()))
+
+
+def main(arm, case="sept27", accrual="flat", payroll_base="all", placement="band"):
     sub = CASE_DIRS[case]
+    if placement != "band" and (case not in AGE_MIX_CASES or accrual != "flat"):
+        raise SystemExit("[BLOCKED] --placement uniform is the beside arm of a case placed by age band (oct07), flat arm only")
     if sub and arm != "row4":
         raise SystemExit(f"[BLOCKED] --case {case} runs on the row-4 weights only, the count the case prices")
     if accrual != "flat" and case not in CASE_LANES:
-        raise SystemExit("[BLOCKED] --accrual person needs --case sept29 or oct05, the cases that carry the pension accrual")
+        raise SystemExit("[BLOCKED] --accrual person needs --case sept29, oct05 or oct07, the cases that carry the pension accrual")
     if payroll_base != "all" and accrual != "person":
         raise SystemExit("[BLOCKED] --payroll onbooks needs --accrual person: the central pairs the two")
     print(f"[frame] weights: {arm}" + (f"; case {case}" if sub else "") + (f"; accrual {accrual}" if accrual != "flat" else "")
@@ -306,6 +347,13 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
     if v4 and lines["meta"]["case"] != CASE_LANES[case]:
         raise SystemExit(f"[BLOCKED] _cache/{sub}/lines.json is {lines['meta']['case']}'s; run export_lines.cjs --case {case}")
     lineage = lines["meta"]["lineage"] if case in LINEAGE_CASES else None
+    carriers = lines["meta"].get("carriers", {})   # oct07: the items' carriers and their parent lines (export_lines.cjs)
+    routes = {}   # oct07: (side, line) -> the items' parts on it whose split basis is another line (meta.routes)
+    for r in lines["meta"].get("routes", []):
+        if r["line"] in STATE_PRICE_PARENT.values():
+            # A state-priced line spreads as its parent's own split, which a part routed off the parent would leave.
+            raise SystemExit(f"[BLOCKED] {r['part']}: routed off {r['line']}, a state-priced line's parent")
+        routes.setdefault((r["side"], r["line"]), []).append(r)
     PA = lines["meta"]["pension_accrual"] if v4 else None
     b_cats = B_CATS + ([PENSION] if v4 else [])   # the pension accrual is the members' own claim, so in B
     d = F.load()
@@ -323,6 +371,8 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
     out_dir, cache_dir = (OUT, CACHE) if arm == "published" else (OUT / arm, CACHE / arm)
     if sub:     # a later case writes its own directory, on the row-4 weights
         out_dir, cache_dir = OUT / sub, CACHE / sub
+    if placement == "uniform":   # beside the case: v5's one factor, in a directory of its own
+        out_dir, cache_dir = out_dir / "uniform_placement", cache_dir / "uniform_placement"
     index = C.spm_index(d)
     age = d.A_AGE.to_numpy()
     lab = F.label(gens, len(d))
@@ -338,15 +388,33 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
         n_g3, counts = float(w0[g3].sum()), lineage["counts"]
         gate("the identified G3+ count is the lineage's identified_g3plus (1 person)", abs(n_g3 - counts["identified_g3plus"]) <= 1.0,
              f"{n_g3:,.3f} vs {counts['identified_g3plus']:,.3f}")
-        lineage_f = 1.0 + counts["added"] / n_g3
         w_id = w0.copy()
         if W is W_pub:
             W = W.copy()
-        W[g3, :] *= lineage_f   # [ASSUMPTION] the added people at the identified G3+ members' composition, every replicate
+        if case in AGE_MIX_CASES and placement == "band":
+            f_rec, bands = age_band_factors(age, g3, w_id, lineage)
+            # The case's mix agrees to about 1e-8 (single-precision weights there); another frame or weight would miss by ~1e-3.
+            gate("the frame's identified G3+ age mix is the case's (meta.lineage.age_mix identified, 1e-7 per band)",
+                 bands["mix_gap"] < 1e-7, f"max |diff| {bands['mix_gap']:.1e} over {len(bands['f_b'])} bands")
+            gap = abs(float(bands["added_b"].sum()) - counts["added"])
+            gate("the bands' added people add to meta.lineage.counts added (1e-6 persons)", gap < 1e-6, f"|diff| {gap:.1e}")
+            W[g3, :] *= f_rec[g3][:, None]   # [ASSUMPTION] the added people at the case's measured age mix, by band, every replicate
+            placed = f"G3+ records x f_b {bands['f_b'].min():.4f} to {bands['f_b'].max():.4f} by band"
+        else:
+            lineage_f = 1.0 + counts["added"] / n_g3
+            W[g3, :] *= lineage_f   # [ASSUMPTION] the added people at the identified G3+ members' composition, every replicate
+            placed = f"G3+ records x {lineage_f:.6f}"
         w0 = W[:, 0]
         n_scaled = float(w0[union].sum())
         gate("the placed union is the lineage population (1 person)", abs(n_scaled - counts["lineage_population"]) <= 1.0,
-             f"{n_scaled:,.3f} = {n_union:,.3f} + {counts['added']:,.3f}; G3+ records x {lineage_f:.6f}")
+             f"{n_scaled:,.3f} = {n_union:,.3f} + {counts['added']:,.3f}; {placed}")
+        if case in AGE_MIX_CASES and placement == "uniform":
+            adults, want = float(w0[g3 & (age >= 18)].sum()), lineage["generation_g3plus"]["adults"]
+            print(f"  beside the case: the placed G3+ adults (18 and over) are {adults:,.1f}, the generation account's {want:,.1f}", flush=True)
+        elif case in AGE_MIX_CASES:
+            adults, want = float(w0[g3 & (age >= 18)].sum()), lineage["generation_g3plus"]["adults"]
+            gate("the placed G3+ adults (18 and over) are the generation account's, its added people's at their age mix (1 person)",
+                 abs(adults - want) <= 1.0, f"{adults:,.1f} vs {want:,.1f} ({lineage['generation_g3plus']['source']})")
 
     print("[key vectors]", flush=True)
     rk = C.receipt_keys(d, index)
@@ -493,6 +561,7 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
     # Pieces: (generation, category, amount_bn, vector restricted to the generation).
     print("[pieces]", flush=True)
     pieces, residual, scaling = {e: [] for e in ENDS}, {e: {} for e in ENDS}, []
+    moves = []   # oct07: each part split by another line, its cost by category on its own line's split and on the basis line's
     for end in ENDS:
         for g in GENS:
             G = lines["generations"][g][end]
@@ -597,6 +666,31 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
                 total = sum(float(np.where(m, x, 0) @ w0) for _, x in parts)
                 return [(cat, float(np.where(m, x, 0) @ w0) / total if total else 0.0, x) for cat, x in parts]
 
+            def routed_split(row):
+                """line_split(row), with the items' parts on the row whose split basis is another line (meta.routes)
+                spread as that line: each part's share of the row's amount is its share of the row's cost."""
+                rs = routes.get((row["side"], row["id"]))
+                if not rs:
+                    return line_split(row)
+                moved = [(r, r["bn"][g][a] / row["amount_bn"]) for r in rs]
+                split = [(cat, (1.0 - sum(s for _, s in moved)) * share, x) for cat, share, x in line_split(row)]
+                for r, s in moved:
+                    split += [(cat, s * share, x) for cat, share, x in line_split(row_of("spending", r["basis"]))]
+                return split
+
+            for (side, lid), rs in routes.items():
+                row = row_of(side, lid)
+                for r in rs:
+                    cost = r["bn"][g][a] * row["response"]
+                    print(f"  {g} {end}: {r['part']} {r['bn'][g][a]:+.6f} bn of {lid} ({cost:+.6f} bn at its response) "
+                          f"spread as {r['basis']}", flush=True)
+                    own, basis = {}, {}
+                    for into, split in ((own, line_split(row)), (basis, line_split(row_of("spending", r["basis"])))):
+                        for cat, share, _ in split:
+                            into[cat] = into.get(cat, 0.0) + cost * share
+                    moves += [dict(end=end, generation=g, part=r["part"], line=lid, basis=r["basis"], amount_bn=r["bn"][g][a],
+                                   cost_bn=cost, category=cat, own_line_bn=own.get(cat, 0.0), basis_line_bn=basis.get(cat, 0.0))
+                              for cat in sorted(set(own) | set(basis))]
             for row in G["rows"]:
                 i, bn = row["id"], row["cost_bn"]
                 amount[i] = row["amount_bn"]
@@ -605,7 +699,7 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
                 if i == "lane_constants":
                     residual[end][g] = residual[end].get(g, 0.0) + bn
                     continue
-                for cat, share, x in line_split(row):
+                for cat, share, x in routed_split(row):
                     add(cat, bn * share, x, i)
                 # Scaling diagnostic: corrected amount over the uncorrected generation cell.
                 ml = models[g]["receipts" if row["side"] == "receipt" else "spending"]["lines"]
@@ -619,6 +713,11 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
             for c in G["capital"]:
                 rule = c["rule"]
                 if rule["kind"] == "receipt_amount_over_national":
+                    if rule["line"] in carriers:
+                        # An item's offset, keyed by its carrier: spread as the parent line its item names (split_basis).
+                        for _, share, x in routed_split(row_of("spending", carriers[rule["line"]]["parent_line"])):
+                            add("capital", c["cost_bn"] * share, x, c["id"])
+                        continue
                     if rule["line"] != "enterprise_surplus":
                         raise SystemExit(f"[BLOCKED] {c['id']}: a receipt key other than the per-head enterprise surplus")
                     add("capital", c["cost_bn"], np.ones(len(d)), c["id"])
@@ -627,14 +726,14 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
                     # The parent line's share and the road line's share of the key (the export's split of keyOf).
                     sh = c["shares"]
                     for lid, s_ in ((rule["parent_line"], sh["parent"]), (rule["correction_line"], sh["part"])):
-                        for _, share, x in line_split(row_of("spending", lid)):
+                        for _, share, x in routed_split(row_of("spending", lid)):
                             add("capital", c["cost_bn"] * s_ / (sh["parent"] + sh["part"]) * share, x, c["id"])
                     continue
                 nums = rule["numerator_lines"]
                 den = sum(amount[n] for n in nums)
                 for n in nums:
                     row = next(r for r in G["rows"] if r["id"] == n)
-                    for _, share, x in line_split(row):
+                    for _, share, x in routed_split(row):
                         add("capital", c["cost_bn"] * amount[n] / den * share, x, c["id"])
             pp = prod_parts[end]
             for s, cell in enumerate(pp["cells"]):
@@ -949,6 +1048,8 @@ def main(arm, case="sept27", accrual="flat", payroll_base="all"):
 
     flat = results["flat"]
     files = dict(zip(FLAT_FILES, [flat["npos"], flat["conc"], flat["q"], flat["ctrl"], flat["means"], scaling]))
+    if moves:
+        files["split_basis_moves.csv"] = moves
     if alt is not None:
         # The flat arm without the case-flag rows is the flat run's output, byte for byte.
         same_as_written("the flat arm reproduces the flat run's",
@@ -1007,13 +1108,17 @@ if __name__ == "__main__":
                         help="published: ASEC person weights (derived/); row4: audit row 4's weights (derived/row4/)")
     parser.add_argument("--case", choices=list(CASE_DIRS), default="sept27",
                         help="sept27 (default): the September 27 case; sept29: the main case adopted on 2026-09-29; oct05: on 2026-10-05; "
-                             "the later cases on the row-4 weights only, written to derived/<case>/")
+                             "oct07: main case v6; the later cases on the row-4 weights only, written to derived/<case>/")
     parser.add_argument("--accrual", choices=["flat", "person"], default="flat",
                         help="flat (default): the pension accrual by OASDI and HI receipts; person: by the pension "
                              "lane's person model (person_accrual.py), new *_person_accrual files beside the flat ones "
-                             "(--case sept29 or oct05)")
+                             "(--case sept29, oct05 or oct07)")
     parser.add_argument("--payroll", choices=["all", "onbooks"], default="all",
                         help="all (default): the payroll taxes on all wages, as the account keys them; onbooks (with "
                              "--accrual person): on on-books wages, the lane's central, written to *_person_onbooks")
+    parser.add_argument("--placement", choices=["band", "uniform"], default="band",
+                        help="band (default): a case's added people by five-year band at its measured age mix (oct07); "
+                             "uniform: beside it, v5's one factor on every G3+ record, flat arm only, written to "
+                             "derived/oct07/uniform_placement/")
     args = parser.parse_args()
-    main(args.weights, args.case, args.accrual, args.payroll)
+    main(args.weights, args.case, args.accrual, args.payroll, args.placement)
