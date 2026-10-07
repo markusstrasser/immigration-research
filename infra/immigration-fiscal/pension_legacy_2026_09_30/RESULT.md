@@ -198,6 +198,10 @@ The test file is named as a second rerun command so that the harness does not fl
 
 ## v5 case (oct05), 2026-10-05
 
+[2026-10-07: the comparators' IPEDS keys revise this section's matched-union, A1 and difference rows.
+`derived/oct05/` now holds the revised figures (matched difference $5.22 / 5.14bn, engine difference $5.75 / 5.96bn),
+listed in "v6 case (oct07)" below. The engine union's and the all-residents slice's rows stand.]
+
 [2026-10-05: on main case v5 (`oct05`, `../main_case_2026_10_05/`), the adopted arm gives the engine's union
 **$454.6 / 485.1bn** of attributed pension stock and **$22.57 / 23.99bn** of 2024 interest, **$528 / 561 per member** of
 the lineage's 42,752,213 (sept29: $421.8 / 447.9bn, $20.94 / 22.15bn, $527 / 558 on 39,712,493). On matched keys the
@@ -253,7 +257,141 @@ uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/p
 New: `derived/oct05/` with the nine files of `derived/`. `pension_legacy.py` gained `--case` and `use_case()`;
 `test_pension_legacy.py` lists only the files in `derived/`.
 
+## v6 case (oct07), 2026-10-07
+
+[2026-10-07: on main case v6 (`oct07`, `../main_case_2026_10_07/`), the adopted arm gives the engine's union
+**$452.7 / 484.4bn** of attributed pension stock and **$22.46 / 23.95bn** of 2024 interest, **$525 / 560 per member** of
+the lineage's 42,752,213 (oct05: $454.6 / 485.1bn, $22.57 / 23.99bn, $528 / 561). On matched keys the union exceeds
+third-plus whites by **$5.41 / 5.39bn** ($127 / 126 per member); the engine union exceeds them by $5.62 / 5.90bn. The
+comparators now key Pell and public higher education by IPEDS, a defect fix for oct05 and oct07. It moves oct05's
+matched difference from $5.32 / 5.24bn to $5.22 / 5.14bn and its engine difference from $5.64 / 5.85bn to
+$5.75 / 5.96bn; sept29 keeps its keys and its outputs. [CALCULATION: `pension_legacy.py --case oct07` →
+`derived/oct07/summary.csv`; `--case oct05` → `derived/oct05/summary.csv`; arm `adopted`]]
+
+claude-opus-5-5 (prop-b, v6 consumer)
+
+**Rules.**
+- The groups' line amounts are `legacy_comparators_2026_09_30/derived/group_lines_oct07.csv`, built on the white lane's
+  oct07 run (`../white_replacement_2026_09_28/`, d2554cb2). The engine union's amounts are gated against that lane's
+  `engine_lines_oct07.json`. Per member divides by 42,752,213, and the per-head key 0.126144 is gated for every group:
+  v6 does not move the lineage's count.
+- [ASSUMPTION] **Retiree health scales a line, overlay included.** Item 2 sets ten lines' national totals (engine
+  `scaleLine`). Three of them carry a state-price overlay: public order 519.153 → 521.203, health 306.539 → 308.359 and
+  recreation 54.331 → 54.484. A group's base amount scales with its line, but the case leaves the overlay unscaled. The
+  lane divides each overlay by the line's unscaled national, as if the item scaled the overlay too, so a use share does
+  not move when every cost on the line rises alike. The overlay gate takes the national from the payload's
+  national-scale edits (`SCALED` in `use_case()`; ten lines on oct07, none on oct05) and stops on a repeated line or
+  on a scale edit that also carries a shift (`by`). Dividing by the scaled national instead moves a share by at most 5.2e-5, and any group's or difference's
+  interest by at most $0.0036bn in the adopted arm ($0.0044bn in any arm). [CALCULATION: scratch variant of
+  `pension_legacy.py`, not a lane output]
+- The items reach the lane only through the export's line amounts:
+  - item 3 (the added people at their measured ages) moves both union rows;
+  - item 4 (user fees and the education keys) moves the engine union at the engine's amounts. Its education cell
+    shift, −$3.61bn, is the tuition term (+$1.84bn) plus public colleges keyed by use (−$5.45bn). Its education share
+    falls from 0.1701 to 0.1681 at the low end and from 0.1773 to 0.1764 at the high end. Its health terms (+$0.64bn),
+    less the added people's ages (−$0.24bn), raise its health share from 0.0676 to 0.0688. The rough union takes health
+    at the engine's amounts (the white lane's
+    rule 5), and the rough union and A1 take the tuition term on education by the white lane's rule (+$1.8446bn and
+    +$0.3495bn, `ipeds_terms_oct07.csv`). Item 4's K-12 weight parts sit on the school-correction lines
+    (`school_reprice`, `college_rekey`), which this lane has never read;
+  - item 1 (the 2026 Trustees inputs) touches no service line;
+  - item 2 scales whites' and the all-residents slice's base amounts and nationals alike, so their shares move only by
+    A1's tuition term.
+- [ASSUMPTION] **Education is a share net of tuition.** Item 4 books tuition the group pays short of its use on the
+  education line, so the lane's education share charges public colleges' pension cost by use less tuition, as the case
+  charges colleges. Without the tuition term on every group, the engine and matched unions are $0.105bn lower, A1
+  $0.020bn lower, and both differences $0.085bn lower (matched $5.32 / 5.31bn). [CALCULATION: scratch variant]
+- **Hospitals, beside.** The engine and rough unions carry item 4's health terms. The white lane prices the comparators'
+  hospital term beside (key mismatch), so A1's health line has none. With A1's beside term (−$2.6507bn) on its health
+  line, A1's interest falls $0.227bn and the matched difference is $5.64 / 5.62bn. With the union's terms off its rough
+  row instead, the matched difference is $5.35 / 5.34bn. [CALCULATION: scratch variants]
+- **The comparator keys (oct05 and oct07; sept29 keeps its keys).** These follow the white lane's "The IPEDS keys".
+  Public higher education goes on each group's measured use. At both ends this lowers the rough union's education amount
+  by $3.6199bn and A1's by $1.8852bn on oct05 (the use terms are −$3.6354bn and −$1.8933bn on oct07). Pell moves on
+  other federal benefits, which no plan's function mix uses. The college-capital part sits in the export's cost row,
+  which this lane does not read. No other input to this lane changes.
+- The headcount path stays the union's, as on oct05 [ASSUMPTION]. On oct05 the G3+ path lowered the union's interest
+  by $0.21 / 0.23bn; that check is not rerun here.
+
+| Adopted arm, $bn a year | oct05, IPEDS keys | **oct07** |
+|---|---:|---:|
+| Engine union, stock | 454.6 / 485.1 | 452.7 / 484.4 |
+| Engine union, interest (per member $) | 22.57 / 23.99 ($528 / 561) | **22.46 / 23.95** ($525 / 560) |
+| Matched (rough) union, interest | 22.04 / 23.17 | 22.25 / 23.44 |
+| Third-plus whites (A1), interest | 16.82 / 18.03 | 16.84 / 18.05 |
+| All-residents slice, interest | 20.22 / 21.38 | 20.22 / 21.38 |
+| **Matched union − A1, interest** (per member $) | 5.22 / 5.14 ($122 / 120) | **5.41 / 5.39** ($127 / 126) |
+| Engine union − A1, interest (per member $) | 5.75 / 5.96 ($134 / 139) | 5.62 / 5.90 ($131 / 138) |
+
+[CALCULATION: `derived/oct05/summary.csv`, `derived/oct07/summary.csv`; every arm in `attribution.csv`. Per member
+on 42,752,213. Each printed difference equals its printed parts.]
+
+**Old → new, every case** (adopted arm, interest in $bn a year, low / high):
+- **sept29: unchanged.** The white lane kept sept29's keys, so `group_lines_sept29.csv` and `engine_lines_sept29.json`
+  are HEAD's, and `derived/` rebuilds byte for byte (9 of 9).
+- **oct05, as published 2026-10-05 → on the IPEDS keys.** Only the rough union's and A1's education rows move, by the
+  same amount at both ends:
+  - rough union 22.249 / 23.375 → 22.042 / 23.167 (−0.207);
+  - A1 16.929 / 18.139 → 16.821 / 18.031 (−0.108);
+  - matched difference 5.320 / 5.235 → 5.220 / 5.136 (−0.099);
+  - engine difference 5.641 / 5.850 → 5.749 / 5.958 (+0.108).
+
+  The rough union's education share falls from 0.1679 to 0.1650 at the low end (0.1701 to 0.1671 at the high end), and
+  A1's from 0.1073 to 0.1058. The engine union, the all-residents slice and every national input are unchanged. Across
+  the eight arms the matched difference now runs 4.49–6.30 (published 4.58–6.42).
+- **oct07 against oct05 on the IPEDS keys:**
+  - engine union −0.108 / −0.041: education −0.135 / −0.062, health +0.033;
+  - rough union +0.209 / +0.276: education +0.176 / +0.249 (the tuition term +0.105; the rest is mostly item 3's
+    ages), health +0.039;
+  - A1 +0.020 (the tuition term);
+  - matched difference +0.189 / +0.256;
+  - engine difference −0.128 / −0.061.
+
+  Across the eight arms the matched difference runs 4.72–6.53. The average-cost arm gives the engine union $34.53bn at
+  the low end (oct05 $34.64bn).
+
+**Gates.** `pension_legacy.py --case oct07` exits 0 with every gate of the oct05 run, the overlay nationals gated at the
+payload's scale edits. The sept29 run rewrites `derived/` byte for byte. Against HEAD, the oct05 run changes only the
+rows named above, in `group_shares.csv`, `by_line.csv`, `attribution.csv`, `opeb_federal.csv` and `summary.csv`;
+`measured_2024.csv`, `domestic_interest.csv`, `function_mix.csv` and `headcount_path.csv` are byte for byte. The lane's
+tests pass, 9 of 9. Inputs read (sha256 prefixes): `group_lines_oct05.csv` 112eb192c7e3, `group_lines_oct07.csv`
+2ea07aa1ea9f, `engine_lines_oct07.json` 1d17cb78d2e2, the case's `corrections.json` f8d346aacf05 (the committed
+payload).
+
+**Reproduce (oct07)**, after `group_lines.py --case oct07` and the white lane's oct07 dumps:
+
+```sh
+uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct07
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/pension_legacy_2026_09_30 \
+  "uv run --no-project python3 {lane}/pension_legacy.py" "uv run --no-project python3 {lane}/pension_legacy.py --case oct05" \
+  "uv run --no-project python3 {lane}/pension_legacy.py --case oct07" \
+  "uv run --no-project python3 -m pytest {lane}/test_pension_legacy.py -q"
+```
+
+New: `derived/oct07/` with the nine files of `derived/`; `derived/oct05/` rebuilt on the IPEDS keys. `pension_legacy.py`
+gained the oct07 entry in `CASES` and the items' national-scale edits in `use_case()`.
+
+Log (times from `date`):
+- 2026-10-07 14:07–14:09 JST: code ready; candidate checked on the candidate exports (oct07 run exit 0; sept29 and oct05
+  byte for byte against HEAD).
+- 17:02:37 JST: prop-d reports the comparator exports final in all three cases (sept29 unchanged).
+- 17:04:13–17:04:27 JST: the three runs in place, each exit 0. Checked against HEAD with a row diff: sept29 9 of 9 byte
+  for byte; oct05 confined to the rough union's and A1's education rows and their aggregates.
+- 17:06:17–17:06:19 JST: pytest, 9 passed.
+- 17:06:30–17:06:34 JST: `rerun_lane.py` with the four commands above: IDENTICAL, 31/31 files, exit 0.
+- 17:07:37–17:21:03 JST (output file times): scratch variants on the final inputs: the overlay divisor (17:07:37),
+  tuition off (17:14:42) and the hospital terms (17:20:46, 17:21:03). At 17:08:27 the `CASES` comment's bounds were
+  updated to the final inputs' 5.2e-5 and $0.0044bn (adopted arm $0.0036bn), a comment-only edit.
+- 17:32:34–17:32:38 JST: `rerun_lane.py` after that edit, the same four commands: IDENTICAL, 31/31 files, exit 0
+  (pytest 9 passed inside it). The outputs are newer than every script.
+
 ## Revisions
 
 - 2026-09-30, source verification: corrected both comparator frames and added a matched union. The original $4.88–4.94bn difference mixed keys and counts; the current matched difference is $4.89 / $4.68bn, while the engine-union difference is $5.21 / $5.30bn. National inputs and the engine union are unchanged. Corrected cash-payment and no-overlap claims, and distinguished employer normal cost from compensation including service charges. The [decision](../../../decisions/2026-09-30-legacy-comparisons-separate.md) keeps the two legacies separate. Earlier logs and the original by-line description are preserved as historical evidence.
 - Output contract: summary and detailed tables add `mexican_origin_rough` and the summary adds its matched white difference. The three `*_normal_cost_employer` measurement labels are renamed `*_employer_pension_compensation` to include service charges explicitly; a repository search found no consumers of the old measurement labels.
+- 2026-10-07, comparator keys: the comparators of oct05 and oct07 key Pell and public higher education by IPEDS
+  ([white lane, "The IPEDS keys"](../white_replacement_2026_09_28/RESULT.md), d2554cb2). The rough keys gave every
+  group the CPS college key for public colleges and charged Pell by Social Security receipts; the fix was decided in the
+  v6 propagation. On oct05 it moves the matched difference from $5.32 / 5.24bn to $5.22 / 5.14bn and the engine
+  difference from $5.64 / 5.85bn to $5.75 / 5.96bn. sept29 keeps its keys, and its outputs are unchanged. See
+  "v6 case (oct07)".

@@ -11,7 +11,9 @@ Run from the repository root (a worktree drops --no-project):
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --fetch
   uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct05
-(--case oct05: the v5 case adopted 2026-10-05, after group_lines.py --case oct05; writes derived/oct05/; see CASES)
+  uv run --no-project python3 infra/immigration-fiscal/pension_legacy_2026_09_30/pension_legacy.py --case oct07
+(--case oct05: the v5 case adopted 2026-10-05, after group_lines.py --case oct05; writes derived/oct05/; --case oct07:
+main case v6 of 2026-10-07, after group_lines.py --case oct07; writes derived/oct07/; see CASES)
 `--fetch` downloads every input to `_cache/` (ignored; ASPEP needs CENSUS_API_KEY in the environment,
 never written) and then runs. A default run reads `_cache/` and stops unless every file matches its pin.
 
@@ -54,11 +56,19 @@ RESIDENTS = 340_110_988              # the account's 2024 resident control
 # 42,752,213; per member divides by that count, and the per-head key is the case's (0.117175 x the count's ratio).
 # The headcount path stays the union's: the added people's population share is taken to move as the union's
 # [ASSUMPTION; the back-cast instead carries them on the identified third-plus path].
+# oct07, main case v6 of 2026-10-07: oct05 plus four items on the same 42,752,213. Its retiree-health item scales ten
+# lines' national totals (engine scaleLine), three of them under a state-price overlay; a group's share of such a line
+# keeps the overlay over the line's unscaled national, as if the item scaled the overlay with the line (it scales every
+# cost on the line) [ASSUMPTION; dividing by the scaled national instead moves a share by at most 5.2e-5 and any
+# group's or difference's interest by at most $0.0044bn in any arm, $0.0036bn in the adopted arm].
 CASES = {"sept29": dict(lines="group_lines_sept29.csv", dump="engine_lines_sept29.json"),
          "oct05": dict(lines="group_lines_oct05.csv", dump="engine_lines_oct05.json",
-                       lineage="main_case_2026_10_05/derived/corrections.json")}
+                       lineage="main_case_2026_10_05/derived/corrections.json"),
+         "oct07": dict(lines="group_lines_oct07.csv", dump="engine_lines_oct07.json",
+                       lineage="main_case_2026_10_07/derived/corrections.json")}
 CASE = "sept29"
 POPULATION = UNION_ROW4              # the case's priced count (use_case())
+SCALED = {}                          # line -> national total after the case's items' national-scale edits (use_case())
 
 PINS = {
     "Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
@@ -376,15 +386,25 @@ DUMP_FILE = FISCAL / "white_replacement_2026_09_28/derived/engine_lines_sept29.j
 
 
 def use_case(case: str) -> None:
-    """Point the group shares at a case's line export, engine dump and priced count."""
-    global CASE, POPULATION, GROUP_LINES, DUMP_FILE
+    """Point the group shares at a case's line export, engine dump, priced count and items' national-scale edits."""
+    global CASE, POPULATION, GROUP_LINES, DUMP_FILE, SCALED
     conf = CASES[case]
     CASE = case
     GROUP_LINES = FISCAL / "legacy_comparators_2026_09_30/derived" / conf["lines"]
     DUMP_FILE = FISCAL / "white_replacement_2026_09_28/derived" / conf["dump"]
-    POPULATION = UNION_ROW4
+    POPULATION, SCALED = UNION_ROW4, {}
     if "lineage" in conf:
-        POPULATION = json.loads((FISCAL / conf["lineage"]).read_text())["meta"]["lineage"]["counts"]["lineage_population"]
+        payload = json.loads((FISCAL / conf["lineage"]).read_text())
+        POPULATION = payload["meta"]["lineage"]["counts"]["lineage_population"]
+        for item in payload["meta"].get("items", []):
+            if item["kind"] != "edit_set" or not item["applied"]:
+                continue
+            first = item["edits"]["first"]
+            for e in payload["edits"][first:first + item["edits"]["count"]]:
+                if "national_bn" in e:
+                    if e["line"] in SCALED or "by" in e:
+                        raise ValueError(f"[BLOCKED] {item['id']} edit on {e['line']} is not one national-scale edit")
+                    SCALED[e["line"]] = e["national_bn"]
 OVERLAY = {"public_order_safety": ("state_price_public_order_safety", 519.153),
            "health_services": ("state_price_health_services", 306.539),
            "recreation_culture": ("state_price_recreation_culture", 54.331)}
@@ -438,9 +458,9 @@ def group_shares() -> tuple[dict, dict]:
                     raise ValueError(f"[BLOCKED] {end}/{l} differs from the engine dump")
             s = {l: value(g, end, l, "amount_bn") / lines[l]["national_bn"] for l in base}
             for line, (ov, nat) in OVERLAY.items():
-                if abs(lines[line]["national_bn"] - nat) > 1e-9:
+                if abs(lines[line]["national_bn"] - SCALED.get(line, nat)) > 1e-9:
                     raise ValueError(f"[BLOCKED] {line} national changed")
-                s[line] += value(g, end, ov, "amount_bn") / nat
+                s[line] += value(g, end, ov, "amount_bn") / nat      # a scaled line's overlay stays on nat (CASES)
             s["highways"] = s["economic_affairs_services"] + value(g, end, "roads_vmt_sl", "amount_bn") / HIGHWAYS_NATIONAL
             s["enterprises"] = value(g, end, "enterprise_surplus", "amount_bn") / lines["enterprise_surplus"]["national_bn"]
             share[g][end] = s
@@ -525,7 +545,8 @@ def main() -> None:
     ap.add_argument("--census-env", type=Path, default=FISCAL / "acquire/config.local.env",
                     help="file holding CENSUS_API_KEY=... when the variable is not set (only --fetch reads it)")
     ap.add_argument("--out-dir", type=Path, default=None, help="default derived/ (sept29) or derived/<case>/")
-    ap.add_argument("--case", default="sept29", choices=list(CASES), help="sept29 (default) or oct05 (v5, the lineage)")
+    ap.add_argument("--case", default="sept29", choices=list(CASES),
+                    help="sept29 (default), oct05 (v5, the lineage) or oct07 (v6, its four items)")
     args = ap.parse_args()
     if args.fetch:
         fetch(args.census_env if args.census_env.exists() else None)
