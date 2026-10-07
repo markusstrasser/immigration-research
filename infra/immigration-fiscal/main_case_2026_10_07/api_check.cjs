@@ -299,6 +299,11 @@ const genModels = Object.fromEntries(GENS.map((g) => [g, JSON.parse(rawGen[g])])
   // split-basis line's union amount at the line's preferred key.
   const SPLIT = payload.meta.user_fees ? payload.meta.user_fees.splits.split_basis : {};
   const lineBases = [...new Set(Object.values(SPLIT))];
+  // Every basis a spending line of model.json, as the generation lane's v6_split.cjs splitBasis() requires; Pell on the
+  // education line (meta.user_fees.splits.basis_rule, [ASSUMPTION]).
+  if (payload.meta.user_fees) check(`user_fees's split bases are model.json spending lines (${lineBases.join(", ")}), and union_key_pell's is education_services`,
+    Object.keys(SPLIT).length > 0 && Object.values(SPLIT).every((id) => MODEL.spending.lines.some((l) => l.id === id)) && SPLIT.union_key_pell === "education_services",
+    Object.entries(SPLIT).map(([k, v]) => `${k} ${v}`).join("; "));
   const lineGap = Math.max(0, ...lineBases.flatMap((id) => P.ALLOCS.map((a) => Math.abs(GENS.reduce((t, g) => t + grp(gen29[g], id, a), 0) - grp(union29, id, a)))));
   const lineShare = (id, g, a) => grp(gen29[g], id, a) / GENS.reduce((t, x) => t + grp(gen29[x], id, a), 0);
   const basisGap = Math.max(lineGap, ...Object.keys(BASIS).flatMap((k) => P.ALLOCS.map((a) => Math.abs(GENS.reduce((t, g) => t + BASIS[k](g, a), 0) - UNION_BASIS[k](a)))));

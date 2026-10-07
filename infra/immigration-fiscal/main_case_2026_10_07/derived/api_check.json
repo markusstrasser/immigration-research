@@ -142,6 +142,11 @@
      "detail": "main_case_long_run_2026_09_27/derived/corrections.json; max |diff| 0"
     },
     {
+     "check": "user_fees's split bases are model.json spending lines (education_services, health_services), and union_key_pell's is education_services",
+     "pass": true,
+     "detail": "union_fee_tuition education_services; union_key_higher_ed education_services; union_fee_health health_services; union_key_health health_services; union_key_pell education_services; union_k12_weight_school education_services; union_k12_weight_other education_services; user_fees_key_k12 education_services; user_fees_key_college education_services; user_fees_key_health health_services"
+    },
+    {
      "check": "the September 29 generation payloads at aa1f53b2 (convention a, the models unchanged since 8654a0c) add to the September 29 union at this case's specifications (1e-9)",
      "pass": true,
      "detail": "max |diff| 1.4e-12"

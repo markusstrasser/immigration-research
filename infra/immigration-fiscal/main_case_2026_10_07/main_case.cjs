@@ -425,6 +425,10 @@ if (ON) {
         && (AD ? pl.meta.status.startsWith(st) && pl.meta.case.startsWith(`${b.meta.case}; v6, adopted ${AD}: `)
           : pl.meta.status.startsWith("variant: ") && pl.meta.case.startsWith(`${b.meta.case}; a variant of v6 (adopted `))),
     AD ? `${path.relative(path.resolve(FISCAL, "..", ".."), DECISION_FILE)} ${fs.existsSync(DECISION_FILE) ? "exists" : "MISSING"}` : "variant");
+  // The adopted bands are the ones the consumer lanes pinned at adoption (2026-10-07); moving them takes a new case.
+  const PINNED = { set: [389.082553, 461.479709], cash: [307.399411, 385.364123] }, b6 = (b) => b.map((x) => x.toFixed(6)).join(" / ");
+  if (AD) gate(`the adopted bands are the ones pinned at adoption, to the sixth decimal: the set ${b6(PINNED.set)}, the cash set ${b6(PINNED.cash)}`,
+    [[C, PINNED.set], [Ccash, PINNED.cash]].every(([b, w]) => [0, 1].every((e) => Math.abs(b[e] - w[e]) < 5e-7)), `${b6(C)}; ${b6(Ccash)}`);
   // meta.lineage: v5's, but for the payload files and the lineage item's keys; its edits keep their place.
   const lineageAsV5 = (pl, pl5, w) => {
     if (!LIN_ITEM) return JSON.stringify(pl.meta.lineage) === JSON.stringify(pl5.meta.lineage);

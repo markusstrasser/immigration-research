@@ -18,10 +18,11 @@ sets by −$0.296 / −0.726bn. That net is a +$3.87–3.97bn Pell term against 
 
 The case was adopted on 2026-10-07 (`decisions/2026-10-07-main-case-v6.md`, which the parent wrote). Its payloads carry
 v5's stamp form, and consumers key it `oct07`. All five gates pass:
-- G1: 128 gates (108 on the case, 20 on the companion readings), plus the zero-item identity;
+- G1: 129 gates (109 on the case, the adopted bands pinned among them; 20 on the companion readings), plus the
+  zero-item identity;
 - G2: the contract;
 - G3: generality;
-- G4: 98 API checks, with 8 consumer gates recorded as needing code;
+- G4: 99 API checks, with 8 consumer gates recorded as needing code;
 - G5: `rerun_lane.py` IDENTICAL 25/25, exit 0.
 
 The companion readings that the record quotes for v5 are rebuilt on v6 (section Companion readings). The count's arms a
@@ -32,7 +33,8 @@ v5's package needed no structural change. The item API gained two extensions:
 - an optional `capital` field for item 4 (carrier receipt lines and offset capital components);
 - lineage options for the companions (`caseOf`'s fourth argument, `lineage_count.cjs`).
 
-No other lane was edited and nothing was committed.
+No other lane was edited. The parent committed the lane (218a2fb2) and the decision (025203f4); the consumer lanes
+pin `corrections.json`, `corrections_cash.json` and `summary.json` as committed there (For the parent).
 
 ## The items
 
@@ -420,7 +422,10 @@ gives a response of 0.8489 at the group's share. It is set only, as on v5.
   - `excluded`: the transit terms, why, and the lane's values at the ends;
   - `union_only`: the lineage scale and added_people_at_union_terms_bn;
   - `splits`: generation, household_person, basis_rule and split_basis. Each part splits on its parent line except
-    Pell and the K-12 weight's two parts, which split on the education line (the decision's rule, `basis_rule`);
+    Pell and the K-12 weight's two parts, which split on the education line (the decision's rule, `basis_rule`).
+    [ASSUMPTION] Pell goes to students. Its parent line, other federal benefits, is keyed by adult cash assistance
+    (all_cash) and would put it on cash recipients, and no consumer lane has a college-enrollment key by person or
+    generation. The fold into other federal benefits' cells is unchanged;
   - school_response and lane_change_at_ends_bn;
   - `source`: the lane, the commit and each file's sha256.
 - **`meta.lineage`** is v5's but for two keys:
@@ -508,8 +513,10 @@ another C3. The names are in `LINEAGE_OPTIONS`: arm_a, arm_c, c3_minus_se and c3
 
 ## Gates
 
-- **G1** (`main_case.cjs`, 128 gates, all pass: 108 on the case and 20 on the companion readings).
+- **G1** (`main_case.cjs`, 129 gates, all pass: 109 on the case and 20 on the companion readings).
   - v5 re-derives. The band is v5 plus consumer.cjs's change at all 64 specifications (1e-9).
+  - The adopted bands are the ones the consumer lanes pinned at adoption, to the sixth decimal: the set 389.082553 /
+    461.479709 and the cash set 307.399411 / 385.364123. Moving them takes a new case.
   - Both methods find the ends at 48 / 11, in the set and the cash set: b_hotdeck 384.968 / 458.602 and
     b_matched_over_pooled 393.197 / 464.357.
   - Each item alone matches its source lane (1e-9). Item 2 alone is the lane's own route exactly, on both sets. Item 3
@@ -541,7 +548,7 @@ another C3. The names are in `LINEAGE_OPTIONS`: arm_a, arm_c, c3_minus_se and c3
   `change_at_fixed_specifications`' v5 parts are now under `.oct05_case`.
 - **G3** (`generality.cjs`). v5's own `main_case.cjs` and `sign_reversal.cjs`, unmodified, run on `caseOf(OCT05, [])` and
   write v5's files byte for byte.
-- **G4** (`api_check.cjs`). 9 patterns and 98 checks pass. Patterns 1–8 are v5's consumer call patterns. Pattern 9 is
+- **G4** (`api_check.cjs`). 9 patterns and 99 checks pass. Patterns 1–8 are v5's consumer call patterns. Pattern 9 is
   the item API. 8 consumer gates need code (`derived/api_check.json` `consumer_code`). Each recorded gate re-runs the
   consumer's code as written at HEAD b7c453a9. Some earlier records reconstructed older code: the winners, band_variants
   and uncertainty specification records, decompose.cjs's SYN_LINES treatment and export_lines.cjs's capRule. Since
@@ -552,6 +559,9 @@ another C3. The names are in `LINEAGE_OPTIONS`: arm_a, arm_c, c3_minus_se and c3
     - item 1's lineage parts on G3+;
     - its union parts by each generation's share of the union's OASDI receipts and Part A accrual;
     - item 4's parts and carriers by each generation's share of the split-basis line's union amount (`split_basis`).
+
+    Every split basis is a spending line of model.json, as the generation lane's `v6_split.cjs` `splitBasis()`
+    requires, and union_key_pell's is education_services.
   - **decompose.cjs.** Three gates stop as written:
     - the receipt-line gate (:283-284), on item 4's carriers;
     - the lineage-last gate (:308-311);
@@ -590,7 +600,7 @@ another C3. The names are in `LINEAGE_OPTIONS`: arm_a, arm_c, c3_minus_se and c3
   uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/main_case_2026_10_07 "node {lane}/main_case.cjs" "node {lane}/sign_reversal.cjs" "node {lane}/generality.cjs" "node {lane}/zero_items.cjs" "node {lane}/contract.cjs" "node {lane}/api_check.cjs" --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/package.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/item_age_mix.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/item_user_fees.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/lineage_count.cjs --allow-unrun infra/immigration-fiscal/main_case_2026_10_07/ancestry_share.cjs
   ```
 
-  Result: IDENTICAL, 25/25 files unchanged, exit 0, in 51 s (14:53:26–14:54:17 JST). The five `--allow-unrun` files
+  Result: IDENTICAL, 25/25 files unchanged, exit 0, in 55 s (15:02:51–15:03:46 JST). The five `--allow-unrun` files
   are modules the scripts load.
 
 ## Approximations and assumptions
@@ -610,6 +620,8 @@ another C3. The names are in `LINEAGE_OPTIONS`: arm_a, arm_c, c3_minus_se and c3
   addition exactly at the identified mix and to reproduce the lane.
 - **Item 4 inherits its lane's measurement.** The limits above apply:
   - [ASSUMPTION] union-only (−0.023 / −0.056 left out);
+  - [ASSUMPTION] Pell splits by generation and household on the education line (`meta.user_fees.splits.basis_rule`).
+    Splitting it on its parent line instead moves the ancestry-share rows by +0.161 / −0.244 and −0.099 / +0.111;
   - [APPROX] item 2's line totals not carried (−0.028 / −0.028);
   - the fold's school low side (+0.47 / +0.39 against the lane's form);
   - transit left out;
@@ -703,12 +715,21 @@ Notes:
     type change.
   - The adoption changed only meta's adopted, case, status, user_fees and items. The edits, lines, production grid and
     every band are unchanged.
-- **The decision, as rewritten at 14:41 JST, agrees with this lane except on Pell's split basis.** It says item 4's
-  Pell part splits on the education line, but the payload split it on other federal benefits, the line it is folded
-  into (the brief's parent-line rule). The payload now follows the decision (`basis_rule`). Only `meta.user_fees.splits` and the
-  record's `split_rule` changed, along with the four ancestry-share rows. The edits, lines and every other band are as
-  before. The decision's ancestry-share figure becomes **$274.9–374.8bn** (it says $275.0–374.9bn). Consumers that
-  split item 4 by generation or household from an earlier read of the payload need the new `split_basis`.
+- **The pinned files.** The consumer lanes pin these as committed in 218a2fb2; every later rerun reproduces them byte
+  for byte:
+  - `derived/corrections.json` f8d346aacf05bcdaed8495f870ba23ac6154ab3eaf34cc0bcf85861f0c85d091;
+  - `derived/corrections_cash.json` e9033bfff737299e76d09b0c600e8f42c6b6110713f402fb293a6324b2721e80;
+  - `derived/summary.json` 547092591e23ebd69e7dfaec28e6eebe441c7cc61a9f3d32f328a3991f321bf3.
+
+  The companion readings are inside the pinned `summary.json` (`v6.companions`) and in `main_case_bands.csv`, as
+  committed. Moving them to files of their own, as the parent asked before the commit, would change `summary.json`.
+- **The decision (025203f4) agrees with this lane,** Pell's split basis and the ancestry-share figure ($274.9–374.8bn)
+  included. Pell splits on the education line since the 14:51 run: only `meta.user_fees.splits`, the record's
+  `split_rule` and the four ancestry-share rows changed then. With this round's two gates its counts become G1 129 and
+  G4 99 (it says 128 and 98).
+- **The parent's exact Pell wording is not in meta.** Its parenthetical for the generation rule and an [ASSUMPTION]
+  tag in `basis_rule` would change both payloads' hashes. The committed rule already lists union_key_pell under
+  education_services, and `basis_rule` gives the reason; the tag is here (Payloads, Assumptions).
 - **Gate (a).** It uses the file's −0.296058 / −0.726064, not the brief's −0.296104 / −0.726103.
 - **The school low side: I recommend keeping the fold.** The fold follows the engine's convention that an edit responds
   at its line's response, so by-line consumers stay right without synthetic response-1 lines. It differs from the
@@ -716,8 +737,9 @@ Notes:
   the same either way ($361–435bn on v6).
 - **Item 2's figure.** The parent's +0.565 is the lane's rounded line sum. The band change is +0.563.
 - **The producers stay on oct05.** Re-keying the item lanes to oct07 would count each item twice.
-- **Nothing is committed.** The lane is untracked. Peak memory in the last full run was 731 MB (`main_case.cjs`) and
-  359 MB (`api_check.cjs`).
+- **Committed by the parent** (218a2fb2, the lane; 025203f4, the decision). Not yet committed: the pinned-band gate in
+  `main_case.cjs`, the split-basis check in `api_check.cjs` with `derived/api_check.json`, and this RESULT. None of them
+  changes a pinned file. Peak memory in the last full run was 736 MB (`main_case.cjs`) and 362 MB (`api_check.cjs`).
 
 ## Files
 
@@ -876,3 +898,20 @@ node main_case.cjs && node sign_reversal.cjs && node generality.cjs && node zero
 - 2026-10-07 14:51:34–14:52:24 JST (`date`) — the full order in place: all pass (G1 128, G4 98 with 8 consumer
   gates). 14:53:26–14:54:17 (`date`): G5 IDENTICAL 25/25, exit 0.
 - 2026-10-07 14:56:10 JST (`date`) — RESULT finalized; the final report sent to the parent. Nothing committed.
+- 2026-10-07 14:56:58 JST (transcript time) — six of the parent's messages, written before it saw the 14:51 run (the last cites the
+  14:42 payload's hash), arrived together: skip the companion arms and adopt; Pell's split basis to education_services with an [ASSUMPTION] rationale;
+  gates on the bands and the split bases; the companions in files of their own so that `corrections.json`,
+  `corrections_cash.json` and `summary.json` stay fixed once pinned; and the exact Pell rule wording.
+- 2026-10-07 14:58:40 and 14:58:45 JST (`git log`) — the parent committed the lane (218a2fb2), with the Pell basis on
+  education_services and the companion readings inside `summary.json` and `main_case_bands.csv`, and the decision
+  (025203f4).
+- 2026-10-07 14:58:57–15:01:23 JST (transcript times) — began the parent's patch (the pre-companion `main_case.cjs`,
+  the exact Pell wording), then found the commit. Since the consumer lanes pin the committed files, `main_case.cjs` and
+  `item_user_fees.cjs` went back to their committed versions, and only two gates that change no pinned file were
+  kept: the adopted bands pinned to the sixth decimal (G1) and the split bases as model.json spending lines with Pell
+  on education_services (G4).
+- 2026-10-07 15:01:35–15:02:43 JST (`date`) — the full order in place: all pass (G1 129, G4 99 with 8 consumer gates).
+  15:02:51–15:03:46 (`date`): G5 IDENTICAL 25/25, exit 0. `corrections.json`, `corrections_cash.json`, `summary.json`
+  and `main_case_bands.csv` are byte-identical to 218a2fb2. The hashes went to the parent.
+- 2026-10-07 15:05:27 JST (`date`) — RESULT updated for the two gates, the Pell [ASSUMPTION] and the commit. It,
+  `main_case.cjs`, `api_check.cjs` and `derived/api_check.json` are left for the parent to commit.
