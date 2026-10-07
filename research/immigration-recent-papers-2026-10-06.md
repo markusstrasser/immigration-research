@@ -2,9 +2,9 @@
 
 **Verdict:** No new paper overturns a measured number. One argument changes what the headline means. If the
 federal budget is eventually closed and the lineage pays its share of the fix, the cost to other residents is
-**$354.6–425.6bn** a year instead of $390–461bn under current law. That is 8–9% lower on Auerbach & Gale's 2026
-current-law gap, net of the Social Security and Part A shortfall the account already treats as cut, split by
-household as AEI proposes; it ranges $343–450bn across current-law gaps and sharing rules
+**$357.1–429.5bn** a year instead of $389–461bn under current law (main case v6). That is 7–8% lower on Auerbach &
+Gale's 2026 current-law gap, net of the Social Security and Part A shortfall the account already treats as cut, split
+by household as AEI proposes; it ranges $347–451bn across current-law gaps and sharing rules
 ([lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md)) [FRAMING-SENSITIVE]. The first version
 of this memo put it at $235–345bn, 25–40% lower. That figure used a 2013 infinite-horizon gap that also paid
 scheduled benefits, and it is withdrawn.
@@ -65,25 +65,26 @@ permanent yearly fix and s the lineage's share of it, other residents pay G − 
   spending growing with inflation and population).
 - Every one of these gaps pays scheduled Social Security and Part A benefits after the trust funds run out. The
   account values those promises at payable benefits, so for the account the funds are already closed. Net of the
-  post-depletion shortfall over each window (about 1.1% of GDP from the 2026 Trustees tables and CBO's 2026
-  long-term data), Auerbach–Gale's current-law fix is 1.26% of GDP, $370.1bn.
-- s: the lineage is 12.74% of residents but 9.64% of households (3.30 people per household against 2.49), on the
+  post-depletion shortfall over each window (1.19% of GDP over 2027–2056 on current law's separate OASI and DI
+  funds, from the 2026 Trustees tables and CBO's 2026 long-term data), Auerbach–Gale's current-law fix is 1.14% of
+  GDP, $332.9bn. On the pooled funds the shortfall is 1.07% and the fix $370.1bn, which v5's arm used.
+- s: the lineage is 12.74% of residents but 9.61% of households (3.31 people per household against 2.49), on the
   CPS ASEC 2025 household weights in the account's frame.
 
 | Reading | Cost to other residents |
 |---|---|
-| Headline: others carry the lineage's share of the deficit (current law) | $390.3–461.2bn |
-| **Central: Auerbach–Gale current law, general fund, per household** | **$354.6–425.6bn** |
-| Current law: two gaps, six sharing rules, both trust-fund readings | $343.1–449.5bn |
-| Current policy: three gaps, six rules | $278.3–451.1bn |
-| AEI's 2013 gap as published, per person | $232.4–303.3bn |
-| The account's whole 2024 deficit shared per head (ladder 269) | $280.5–297.4bn |
+| Headline: others carry the lineage's share of the deficit (current law) | $389.1–461.5bn |
+| **Central: Auerbach–Gale current law, general fund, per household** | **$357.1–429.5bn** |
+| Current law: two gaps, six sharing rules, both trust-fund readings | $346.7–451.4bn |
+| Current policy: three gaps, six rules | $278.3–451.9bn |
+| AEI's 2013 gap as published, per person | $231.2–303.6bn |
+| The account's whole 2024 deficit shared per head (ladder 269) | $284.1–302.5bn |
 
 The current-law headline stands as the statement about current law: current law schedules no closure, the
 debt-legacy lane already charges the interest on past gaps beside the account, and the NRC 1997 rule of holding
 debt at its 2016 share of GDP failed (FAQ 5). Most of the group's cost falls on state and local budgets, which
-balance each year, so no federal fix shares it: the federal part of the 2024 cash gap is $32.4 / 61.2bn
-(`debt_legacy_2026_09_23/derived/oct05/federal_split_2024.csv`). The label "cost to other residents" does assume
+balance each year, so no federal fix shares it: the federal part of the 2024 cash gap is $34.0 / 63.8bn
+(`debt_legacy_2026_09_23/derived/oct07/federal_split_2024.csv`). The label "cost to other residents" does assume
 that others carry the lineage's whole share of a deficit it would help close. The INDEX and FAQ 20 now say so, with
 the arm beside the headline. Repo: HAD-PARTS (ladder 269's two slices; FAQ 18; FAQ 5).
 
@@ -178,7 +179,8 @@ falls from 0.974 to 0.951 per OASDI tax dollar and Part A by 3.4%, so the case w
 −4.15bn); the cash set does not move. The same reports raise wage growth and HI costs, so taking all six 2026 inputs
 together gives −$1.73 / −1.63bn. Under current law the OASI and DI funds are separate (OASI pays in full to 2032, DI
 through 2100), and the Trustees say the combined reading the case uses "implicitly assumes that the law will have been
-changed"; separate funds cost a further $1.0–1.2bn. An input refresh, not adopted: it changes the headline.
+changed"; separate funds cost a further $1.0–1.2bn. Adopted on 2026-10-07 in main case v6 as all six inputs on
+separate funds, −$2.85 / −2.67bn ([decision](../decisions/2026-10-07-main-case-v6.md), ladder 295).
 
 **Laws since 2024 cut transfers to the lineage.** Neither corrects 2024; both belong beside any statement about
 current law today.
@@ -193,25 +195,41 @@ current law today.
 - The 2025 budget law (P.L. 119-21). CBO prices its noncitizen eligibility limits at about $19bn a year once in
   force (FY2030): the premium credit $8.8bn and $5.6bn (§§71301–71302), the emergency-Medicaid match $3.5bn
   (§71110), Medicaid and CHIP $0.7bn, SNAP $0.2bn, Medicare $0.3bn [SOURCE: CBO 61570 workbook, Titles I and VII].
-  Its child-credit parent-SSN rule is not scored alone; JCT's nearest option implies $1.5–3bn [lane reading]. For
-  the lineage the reading lane puts the total at −$3–6bn on judgment shares, about half of it the child credit and
-  the emergency-Medicaid match, the latter largely a shift to states [lane INFERENCE; not measured].
+  Its child-credit parent-SSN rule is not scored alone; JCT's nearest option implies $1.5–3bn [lane reading]. On
+  the lineage's CPS records its eligibility rows come to $2.1bn a year consolidated ($1.6–3.9bn), most of it the
+  child credit; the noncitizen limits are small because the lineage's noncitizens are mostly LPRs, whom the law
+  keeps eligible, or unauthorized, who were never eligible
+  ([lane](../infra/immigration-fiscal/post2024_law_2026_10_07/RESULT.md), ladder 291).
+- Together with the enhanced premium credit's expiry after 2025 ($2.5bn), the cuts come to $9.6bn a year in FY2028
+  ($5.8–15.5bn). The same law cuts the same people's income taxes by $9.9bn (tips, overtime, the $2,200 child
+  credit, the senior deduction, SALT), net of its remittance excise, so current law roughly breaks even for the
+  lineage in FY2028 (−$0.3bn, −$4.2 to +$5.8bn). After six tax items lapse by tax year 2030, $5.75bn a year is taken
+  from it. Beside the 2024 account, never in it.
 
-**The stall after the second generation may be vintage.** Van Hook & Bachmeier, *Texas-Style Exclusion*, Russell
-Sage, November 2024 (before the window, never cited): Mexican families linked from the 1940 census to the CPS and
-the 2000 census/ACS.
+**The stall after the second generation is not vintage, and the steeper fourth-generation loss is mostly an older
+era's.** Van Hook & Bachmeier, *Texas-Style Exclusion*, Russell Sage, November 2024 (before the window, never cited):
+Mexican families linked from the 1940 census to the CPS and the 2000 census/ACS.
 - By the third generation, years of schooling match whites at equal family background. Bachelor's degrees do not.
-- The slow progress comes mainly from early Texas arrivals. Later vintages close the high-school gap, not the
+- The book puts the slow progress mainly on early Texas arrivals: later vintages close the high-school gap, not the
   bachelor's gap. [lane reading of the online supplement and publisher text]
-- It does not move the 2024 cross-section, which prices today's people. It bears on any projection of today's
-  children (FAQ 5 already says the step to third-plus is not a forecast).
+- Tested on the CPS, the stall does not come from Texas or from vintage. Texas + New Mexico and California give
+  about the same second-to-third-plus ratio, and the closest analog for post-1965 descendants (people born
+  1980–2001) is 0.82–0.90 on BA+ after the identity correction, at or a little below ladder 232's 0.84–0.86. What
+  moves across cohorts is the second generation, not the third-plus
+  ([lane](../infra/immigration-fiscal/carryover_vintage_2026_10_07/RESULT.md), ladder 293).
 - Identification (Supplemental Table 2.1, IGENS-20 linked files, adults 20+, N = 10,500): identifying as Mexican
   falls 86.8 / 83.8 / 72.3 / 74.2 / 51.0% across the first, second, 2.5th, third and fourth-plus generations, while
-  identifying as Hispanic stays at 83–91%. Fourth-plus over third is 0.687, against the 0.781 step the case's arm b
-  assumes (ladder 233). That points to more loss past the third generation than the central counts, probably
-  inside arm c's compounding (4.27M added), unsized.
-- Checks: split ladder 232's carry-over by the second-generation parent's birth cohort, and price the 0.687 step.
-- Repo: HAD-PARTS (ladder 232 lists vintage as "not excluded").
+  identifying as Hispanic stays at 83–91%. Fourth-plus over third is 0.687. The like-for-like comparison is the
+  step arm b uses, 0.880, measured on today's CPS (ladder 233); an earlier version of this memo set 0.687 against arm
+  b's absolute rate, 0.781. At face value VHB's step adds 5.90M people instead of 3.04M and raises the case by
+  $23.0–31.8bn, beyond arm c. But on every generation both sources see, VHB's levels run 9–17 points below today's
+  CPS: its 74.2% third-generation rate sits with the 1994–2006 and 1970 measurements (71.8%, 73.0%), not today's
+  88.8%. Scaled to today's lower loss, the step gives +$0.5–7.6bn, between arms b and c. Beside, not adopted
+  ([lane](../infra/immigration-fiscal/vhb_fourth_plus_2026_10_07/RESULT.md), ladder 287).
+- It does not move the 2024 cross-section's identified members, which price today's people. It bears on the count
+  of descendants who no longer identify and on any projection of today's children (FAQ 5 already says the step to
+  third-plus is not a forecast).
+- Repo: HAD-PARTS (ladder 232 lists vintage as "not excluded"; ladder 233 measures today's step).
 
 ## New evidence in our favour
 
@@ -283,7 +301,9 @@ population controls and Van Hook–Bachmeier's steeper fourth-plus loss raise it
 loss, tested on the account's own survey, does not appear. The face-value dismissals were
 two that would lower the cost (the surge wage effect scaled up; the school decline response) and two that would
 raise it (the SCF tax ratio; Van Pelt), each on design or estimand grounds stated above. The largest item,
-the closure arm, lowers the cost by 8–9% at its central.
+the closure arm, lowers the cost by 7–8% at its central. Of the items priced on 2026-10-07, four entered main case
+v6. The Trustees path and user fees with the education keys lower the cost; retiree health on accrual and the added
+people's measured ages raise it. The net is −$1.2 / +0.2bn.
 
 ## Not read
 
@@ -303,9 +323,11 @@ the closure arm, lowers the cost by 8–9% at its central.
    (Lee–Scafidi's decline side), FAQ 14 (Hunt–Orrenius–Zavodny; Kantova) and FAQ 17 (the SCF ratio).
 2. Done: the 2025 Hispanic nonresponse bias on the account's keys; third-generation identification in the 2025
    monthly CPS and the US-born count against the ACS; the pension lane on the 2026 Trustees tables (lanes above).
-3. Open, cheapest first: price Van Hook–Bachmeier's 0.687 fourth-plus step; the 2022 SCF wave by filing status;
-   ladder 232's carry-over by parent cohort; the lineage's shares of P.L. 119-21's eligibility classes from the
-   status imputation; Texas prisoners' self-reported ethnicity.
+3. Done 2026-10-07: Van Hook–Bachmeier's fourth-plus step (beside, ladder 287); the 2022 SCF wave by filing status
+   (0.329 against Treasury's 0.331, ladder 289); ladder 232's carry-over by parent cohort (not vintage, ladder 293);
+   the lineage's shares of P.L. 119-21 with the law's tax side (ladder 291). Closed without a lane: Texas
+   prisoners' self-reported ethnicity, because no priced line depends on it (the custody key is the 2016 prison
+   survey's self-report, ladder 218).
 4. The ASEC 2026 (income year 2025, published September 2026) allows a second measured year (FAQ 18), with the
    survey-exit and nonresponse caveats above.
 
@@ -337,3 +359,11 @@ Staged under `sources/immigration-fiscal/data/external/stage3/`, each with `ACQU
 
   Concept affected: what "cost to other residents" assumes about deficit financing, and the size of the post-2024
   current-law items.
+- 2026-10-07, later ([decision](../decisions/2026-10-07-main-case-v6.md)): main case v6 adopts the 2026 Trustees
+  inputs on separate funds, together with retiree health on accrual, the added people's measured ages, and user fees
+  with the education keys. Van Hook–Bachmeier's 0.687 is now compared with the CPS's like-for-like step of 0.880
+  instead of arm b's absolute 0.781 (ladder 287). The tax side of P.L. 119-21 is measured; the law's FY2028 net is
+  about zero (ladder 291). The closure arm moves to v6: $357.1–429.5bn at its central, its fix now netting current
+  law's separate trust funds ($332.9bn instead of $370.1bn) as v6's accrual does
+  ([lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md)). Concept affected: the headline's pension
+  input, the closure arm's trust-fund reading and which scan items entered the case.
