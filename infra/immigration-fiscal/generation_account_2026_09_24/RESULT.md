@@ -20,6 +20,16 @@ costs $8,151 / 11,217 per member of 17.38M, against $8,549 / 11,740 of 14.34M. C
 (−$0.09 to −0.11bn). [CALCULATION: `run_generations_v5.cjs` → `derived/generation_summary_oct05.json`,
 `generation_summary_oct05_cash.json`; section "v5 case (oct05)" below]]
 
+[2026-10-07: on main case v6 (`oct07`, $389.08–461.48bn, adopted 2026-10-07), counted in their own generation the
+Mexico-born cost $96.89 / 86.66bn (v5: 97.15 / 87.02), the second generation $150.39 / 178.00bn (151.46 / 179.25) and
+the third-plus $141.80 / 196.82bn (141.68 / 194.97), $8,158 / 11,323 per member of 17.38M. Counted with their parents:
+$168.90 / 196.81bn, $109.49 / 120.56bn and $110.69 / 144.11bn. The cash set, (a): $87.20 / 72.70bn, $117.73 /
+143.18bn and $102.47 / 169.48bn. Of the case's −$1.21 / +0.24bn change, the 2026 Trustees paths take $0.34 / 0.42bn
+from G1, $1.19 / 1.20bn from G2 and $1.32 / 1.04bn from G3+, and the added people's measured age mix adds $1.35 /
+2.86bn to G3+. [ASSUMPTION: user fees, Pell included, by the payload's split-basis lines] [CALCULATION:
+`run_generations_v6.cjs` → `derived/generation_summary_oct07.json`, `generation_summary_oct07_cash.json`; section
+"v6 case (oct07)" below]]
+
 **September 27 case** (the default files, `derived/generation_results.csv`): Split by generation, the September 27
 main case ($321.8–387.4bn a year) leaves all three
 Mexican-origin generations as net costs to other US residents, at every one of its 64 specifications and
@@ -37,6 +47,189 @@ figure under (a) and $33.8–55.7bn of the union's. [FRAMING-SENSITIVE] [CALCULA
 This paragraph's per-person figures divide by the CPS count (40.90m members, 28.77m adults). On the account's row-4
 count (39.71m and 27.66m; ladder 274) the Mexico-born cost $7.1–8.5k per member and, counted with their parents,
 $15.0–18.1k per adult. The US-born generations' figures do not change (section "v4 case (sept29)", 2026-09-29).
+
+## v6 case (oct07), 2026-10-07
+
+Main case v6 (`main_case_2026_10_07`, case key `oct07`) was adopted on 2026-10-07 (decisions/2026-10-07-main-case-v6.md;
+the case lane at 218a2fb2, the decision at 025203f4). It is v5 plus four items (`meta.items`), each from its own lane:
+- `pension_tr2026`: the pension accrual on the 2026 Trustees payable paths, on separate OASI and DI funds (set only);
+- `retiree_health`: retiree health on accrual, ten national-scale edits;
+- `added_age_mix`: the 3.04M added people at their measured age mix, in the lineage slot;
+- `user_fees`: user fees and the education keys, for the union only.
+
+It costs $389.0826–461.4797bn; the cash set beside it costs $307.3994–385.3641bn. Both keep specifications 48 and 11 as
+their ends. Step 9 (`run_generations_v6.cjs`) splits both by generation into `*_oct07` and `*_oct07_cash` files. The
+September 27, September 29 and v5 files keep their names and bytes. The payloads are the committed ones (sha256
+`corrections.json` f8d346aa…, `corrections_cash.json` e9033bff…). Model self-report: claude-opus-5-5.
+
+**How the split works.** The v6 payload has v5's layout with two changes. The lineage block (`meta.lineage.edits`: 416,
+336 edits, row 8 at 751) holds the lineage item's values. The edit sets' edits follow it at `meta.items`' positions.
+Each generation's payload is its September 29 payload (`generation_corrections_sept29*.json`) plus its v6 part
+(`v6_split.cjs`, which the late-arrival lane shares):
+- **The lineage block** goes on as in v5 (`v5_split.cjs` `layer()`), on the lineage item's values. G3+ takes the cell
+  edits and the grid's change, and every generation takes row 8's edit at its `lane_constants` share.
+- **National-scale edits** (`retiree_health`'s ten) go on every model as they are. Each model carries the union's
+  national totals (gated exact), so its cells scale by the case's factor and the models still add to the union. This is
+  the Consumers table's R2.
+- **`pension_tr2026`** (R1). The lineage parts (`lineage_oasdi`, `lineage_part_a`) go on G3+. The union parts
+  (`union_oasdi`, `union_part_a`) follow the September 29 split's own pension rule. Each generation's accrual per tax
+  dollar is moved by the pension lane's per-generation rows: `arms.csv` at 8cefec37, arm
+  `all_2026_inputs_separate_funds` over its control. The factors are G1 ×0.98595, G2 ×0.97260 and G3+ ×0.97923, and for
+  Part A ×1.00109, ×0.98455 and ×0.99014. Each generation takes its own change from the old split to the new.
+- **`user_fees`** (R4). Each `union_*` part goes pro rata to each generation's share of its split-basis line's union
+  amount on the September 29 payloads (`meta.user_fees.splits`). The three carriers (one-dollar receipt lines whose
+  share keys the item's four capital offsets) go by the same rule: each model's carrier is the union's, with its target
+  and share scaled by the model's share. The added people take none.
+
+Costs come from candidate v4's `consumer.cjs` on the v6 payload. A model without the items' carriers gets them at zero,
+as the package's `withSyntheticLines()` adds them. The v6 package's `evaluateFull` gives every model's cost (difference
+0).
+
+**Rules chosen here** [ASSUMPTION]:
+- **The pension union parts by the per-generation rows**, the measured alternative the Consumers row names. G4's
+  receipt-share rule (`api_check.cjs` pattern 3) instead gives each generation the same change per dollar of OASDI
+  receipts and Part A accrual. It moves G1 by −0.25 / −0.29bn, G2 by +0.27 / +0.29bn and G3+ by −0.02 / −0.00bn under
+  (a) (`sensitivities.pension_receipt_shares`). A gate reproduces pattern 3's four-decimal print with it and row 8 on G3+
+  (4.2e-5bn).
+- **`user_fees` by the payload's split basis** (`splits.basis_rule`). Every part but the two health parts goes by
+  `education_services`' shares; K-12 pupils dominate those shares, so G1 takes 23.3% under the shared allocation and 6.2%
+  under the personal one. The two exceptions to "the line the part edits":
+  - the K-12 weight's two parts edit `school_reprice` and `college_rekey`, row 6's re-blend lines, which have no
+    generation amounts of their own here (`v6_split.cjs` accepts only model lines as a basis);
+  - `union_key_pell` (+$3.87 / 3.97bn) edits `other_federal_benefits`, whose `all_cash` key is adult cash assistance.
+    Pell goes to students. A college-enrollment key would be better, but none exists by person or generation here, so
+    Pell takes the education line's shares. Split by `other_federal_benefits`' own shares instead, it would move G1 by
+    +$0.07 / 1.01bn, G2 by −$0.47 / 0.87bn and G3+ by +$0.40 / −0.14bn under (a); under (b), G1 by −$0.62 / 0.51bn, G2
+    by −$0.08 / 0.02bn and G3+ by +$0.70 / 0.53bn (`sensitivities.split_basis_edited_line`; the same in the cash set).
+- **Under (b) the added people stay in G3+**, as in v5. Had their minors moved to G2 as the identified G3+'s do, about
+  $5.21 / 9.28bn would move from G3+ to G2 (cash set $3.26 / 8.67bn; `b_rule_indication`).
+- **Adults among the added people** are at their measured age mix: 1,609,482 (share 0.5295), against 1,734,357 at the
+  identified G3+'s share (v5's rule). The 15–19 band's adults are at the identified G3+'s share of the band [APPROX].
+  Only per-adult figures use this.
+- **Row 8 by `lane_constants` share**, as in v5. On G3+ it would move G1 by +0.0041bn, G2 by +0.0018bn and G3+ by
+  −0.0058bn (`sensitivities.row8_on_g3plus`).
+
+**Results, the set** ($bn a year; low and high are the union's ends: 48, shared allocation, and 11, personal). Each cost
+and change column is rounded so the generations add to the printed union; the own range is rounded on its own.
+[CALCULATION: `derived/generation_results_oct07.csv`, `generation_summary_oct07.json`]
+
+| (a) Children in their own generation | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from v5, $bn |
+|---|---|---|---|---|---|---|
+| G1, born in Mexico | 96.89 | 86.66 | 71.5–113.1 | 8,779 / 7,852 | 9,169 / 8,201 | −0.26 / −0.36 |
+| G2, US-born, a parent born in Mexico | 150.39 | 178.00 | 150.4–178.0 | 10,493 / 12,419 | 16,870 / 19,967 | −1.07 / −1.24 |
+| G3+, US-born of US-born parents, with the added people | 141.80 | 196.82 | 141.8–196.8 | 8,158 / 11,323 | 14,480 / 20,098 | +0.12 / +1.84 |
+| All three (the case) | 389.08 | 461.48 | | 9,101 / 10,794 | 13,291 / 15,764 | −1.21 / +0.24 |
+
+| (b) Minors with their parents (NAS 2017) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from v5, $bn |
+|---|---|---|---|---|---|---|
+| G1 | 168.90 | 196.81 | 168.9–196.8 | 10,777 / 12,557 | 15,985 / 18,626 | −0.36 / −0.49 |
+| G2 | 109.49 | 120.56 | 105.4–124.7 | 8,968 / 9,875 | 12,281 / 13,523 | −1.08 / −1.16 |
+| G3+ | 110.69 | 144.11 | 110.7–144.1 | 7,443 / 9,691 | 11,303 / 14,716 | +0.23 / +1.89 |
+
+**Results, the cash set** (the pension switch off; [CALCULATION: `derived/generation_results_oct07_cash.csv`]):
+
+| (a) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from v5, $bn |
+|---|---|---|---|---|---|---|
+| G1 | 87.20 | 72.70 | 57.6–103.4 | 7,901 / 6,587 | 8,252 / 6,880 | +0.08 / +0.05 |
+| G2 | 117.73 | 143.18 | 117.7–143.2 | 8,214 / 9,989 | 13,206 / 16,061 | +0.12 / −0.04 |
+| G3+ | 102.47 | 169.48 | 102.5–169.5 | 5,895 / 9,750 | 10,464 / 17,307 | −0.18 / +1.94 |
+| All three (the case) | 307.40 | 385.36 | | 7,190 / 9,014 | 10,501 / 13,164 | +0.02 / +1.95 |
+
+| (b) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high | Change from v5, $bn |
+|---|---|---|---|---|---|---|
+| G1 | 150.04 | 182.87 | 150.0–182.9 | 9,573 / 11,668 | 14,200 / 17,307 | +0.10 / −0.08 |
+| G2 | 77.85 | 85.80 | 70.6–93.1 | 6,376 / 7,028 | 8,732 / 9,624 | +0.11 / +0.04 |
+| G3+ | 79.51 | 116.69 | 79.5–116.7 | 5,347 / 7,847 | 8,119 / 11,916 | −0.19 / +1.99 |
+
+Per-member figures add the 3,039,720 added people to G3+ under both conventions: 17,382,294 members under (a) and
+14,871,213 under (b), and 42,752,213 for the union. The other generations keep the September 29 denominators. Per adult,
+G3+ counts 9,792,851 adults, 124,875 fewer than under v5's rule. The added people cost $20.34 / 29.47bn in the set and
+$12.76 / 23.90bn in the cash set (`added_people`), the items' parts on them included.
+
+**What moved from v5, by item** ($bn, low / high end; (a); [CALCULATION: `generation_summary_oct07*.json` →
+`change_from_oct05_by_item`]). Each part is the item's change given the items before it, in the payload's order (the
+lineage slot first), so the case lane's interactions sit with the later item. Two-way controlled rounding: every row
+adds across generations and every column down to the change.
+
+| Part | G1 | G2 | G3+ | Union |
+|---|---:|---:|---:|---:|
+| added_age_mix: the added people at their measured age mix | 0.00 / 0.00 | 0.00 / 0.00 | +1.35 / +2.86 | +1.35 / +2.86 |
+| pension_tr2026: the 2026 Trustees paths, separate funds | −0.34 / −0.42 | −1.19 / −1.20 | −1.32 / −1.04 | −2.85 / −2.66 |
+| retiree_health: retiree health on accrual | +0.13 / −0.03 | +0.30 / +0.43 | +0.16 / +0.37 | +0.59 / +0.77 |
+| user_fees: user fees and the education keys | −0.05 / +0.09 | −0.18 / −0.47 | −0.07 / −0.35 | −0.30 / −0.73 |
+| **Change** | −0.26 / −0.36 | −1.07 / −1.24 | +0.12 / +1.84 | −1.21 / +0.24 |
+
+The cash set (no `pension_tr2026`):
+
+| Part | G1 | G2 | G3+ | Union |
+|---|---:|---:|---:|---:|
+| added_age_mix: the added people at their measured age mix | 0.00 / 0.00 | 0.00 / 0.00 | −0.26 / +1.91 | −0.26 / +1.91 |
+| retiree_health: retiree health on accrual | +0.13 / −0.03 | +0.30 / +0.43 | +0.15 / +0.37 | +0.58 / +0.77 |
+| user_fees: user fees and the education keys | −0.05 / +0.08 | −0.18 / −0.47 | −0.07 / −0.34 | −0.30 / −0.73 |
+| **Change** | +0.08 / +0.05 | +0.12 / −0.04 | −0.18 / +1.94 | +0.02 / +1.95 |
+
+- `added_age_mix` moves G3+ only (gated: G1's and G2's parts are 0), +$1.35 / 2.86bn, the case lane's
+  `v6.lineage_item_parts`.
+- `pension_tr2026` lowers every generation. G1's falls least per dollar of OASDI receipts, since its factor (0.98595) is
+  the closest to 1, and its Part A accrual rises (×1.00109).
+- `retiree_health` moves each generation by its own keys, and its line moves partly offset (its arm: −$6.26bn
+  nationally). `other_federal_benefits` falls from $86.4bn to $66.6bn, since the military retirees' civilian-provider
+  care (−$19.80bn) is set to zero. The service lines take the normal costs spread by the 2024 payroll mix, for example
+  `education_services` +$5.24bn (`meta.retiree_health.national_change_bn`).
+- `user_fees` lowers G2 by $0.18 / 0.47bn and G3+ by $0.07 / 0.35bn, and moves G1 by −$0.05 / +0.09bn. Each generation
+  takes its share of the education line (G1: 23.3% / 6.2%) of the education parts and the k12 and college offsets, and
+  its share of the health line (G1: 26.9%) of the two health parts, which add $0.64bn.
+
+`rerun_lane.py --online` over the lane's 20 commands (steps 0–9 of `run_all.sh`; `v4_split.cjs`, `v5_split.cjs`,
+`v6_split.cjs` and `run_all.sh` allowed unrun): IDENTICAL, 64/64 files, exit 0 (14:59:35–15:01:43 JST by `date`). The
+September 27, September 29 and v5 files are byte for byte unchanged.
+
+**Gates**, all passing (`run_generations_v6.cjs`: 47 in the set, 41 in the cash set):
+- the September 29 generation models add to the union's September 29 model in all 335 cells (1.3e-12bn) and grid
+  (5.7e-14bn), both conventions;
+- each generation's item-base payload gives its September 29 model plus its part. G3+'s equals the package's
+  `withLineage()` with row 8 at its share, exactly. The three item-base models add to the item base's payload model;
+- the edit sets by rule: each cell shift's shares add to 1 (4.4e-15) and its parts' amounts to the union's edit. Applied
+  one by one, they give the v6 models (3.6e-15bn). The carriers' shares add to 1 and their values to the union's
+  (4.4e-15 relative). Before each national-scale edit every model carries the union's national total of its line
+  (exact);
+- the September 29 pension rule reproduces each generation's Social Security and Part A accrual (1e-9). With the 2026
+  factors the generations' changes add to the item's union parts (2.1e-14bn);
+- the three v6 models add to the case's payload model in all 359 cells (1.3e-12bn) and grid (5.7e-14bn);
+- **oracle:** the union reproduces `main_case_2026_10_07/derived/main_case_bands.csv` (`adopted`, `cash_set`, four
+  decimals) at 48 / 11, and `per_spec.csv` at all 64 specifications (2.3e-13bn). The uncorrected model reproduces
+  `uncorrected_at_adopted_responses` ($313.0646–378.7098bn);
+- the generations add to the union in all 64 specifications, corrected and uncorrected (1.7e-12bn), and so do their
+  capital returns and enterprise receipts. **They add to the case's band at 48 / 11 to 1e-6** (`summary.json`
+  `main_case`: 389.082553 / 461.479709; `cash_set.band_bn`: 307.399411 / 385.364123). The v6 package's `evaluateFull`
+  gives every model's cost (difference 0);
+- the change from v5: v5's split adds to v5's payload model. The parts start at v5 (union 1.1e-13bn; each generation at
+  `generation_results_oct05.csv`, 4.6e-7) and end at this case's costs (exact). They add across generations
+  (1.5e-12bn) and equal the case lane's `change_at_fixed_specifications.items` with `v6.interactions` (1.4e-13bn) and
+  `v6.lineage_item_parts` (2.2e-13bn);
+- each alternative adds to the case's payload model cell by cell (1.3e-12bn); the headcounts add to the case's lineage
+  (1e-3 persons).
+
+**Files.**
+- New scripts: `v6_split.cjs` (a module, for the late-arrival lane too) and `run_generations_v6.cjs`. `run_all.sh`
+  gains step 9.
+- New outputs: `derived/generation_{results,summary,corrections}_oct07{,_cash}.*`, in the oct05 files' layout.
+  `generation_corrections_oct07*.json` applies to the same `model_*.json`; its `meta.union` is the v6 payload and
+  `meta.builds_on` the sept29 file. The results CSV replaces the oct05 file's sept29 columns with `oct05_cost_bn` and
+  `change_from_oct05_bn`, and adds one column per item (`pension_tr2026_bn`, `retiree_health_bn`, `added_age_mix_bn`,
+  `user_fees_bn`) and `added_people_bn`.
+
+**Reproduce** (from the repository root; step 9 of `run_all.sh`, after steps 7 and 8):
+```
+node infra/immigration-fiscal/generation_account_2026_09_24/run_generations_v6.cjs --case oct07
+node infra/immigration-fiscal/generation_account_2026_09_24/run_generations_v6.cjs --case oct07_cash
+```
+
+Log (times from `date`, JST): 12:44 brief read; 13:00 the first split on the three-item candidate (scratch); 13:26,
+13:38 and 14:15 re-run on each rebuilt candidate payload (scratch, every gate passing); 14:44 the edited-line
+alternative added; 14:59:20 the final payload's hashes checked against the lead's (f8d346aa…, e9033bff…, 5470925…);
+14:59:26–14:59:29 the two final runs into `derived/`; 14:59:35–15:01:43 the rerun, IDENTICAL; this section after
+15:03.
 
 ## v5 case (oct05), 2026-10-05
 
