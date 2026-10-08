@@ -3,9 +3,11 @@
 **Verdict:** The complete account's main case is a net cost to other residents of **$389.1–461.5bn a year**
 ([decision](../decisions/2026-10-07-main-case-v6.md), ladder 295), counting the pension promises members earn
 as they work and, as whole people at their measured ages, the 3.04M descendants who no longer report Mexican
-origin; counting benefits when paid, it is $307.4–385.4bn. Two of its settings come from this memo (§6): courts, police and prisons are charged by use, which adds
-only **$5.9bn** ($1.7bn with census ethnicity codes as recorded), and the government part of uncompensated hospital
-care adds **$3.7–5.7bn**. Hispanic residents are 20.2% of people in prisons and jails combined, close to their
+origin; counting benefits when paid, it is $307.4–385.4bn. Two of its settings come from this memo (§6): courts,
+police and prisons are charged by use, and the government part of uncompensated hospital care is keyed to uninsured
+use. The main case does not isolate what either key adds; if Mexican-origin offending equals the Hispanic average
+as census codes record it, the case is **$4.8bn lower** at both ends. Hispanic residents are 20.2% of people in
+prisons and jails combined, close to their
 20.7% share of working-age residents, and 23.4% in state and federal prisons. The account compares the group with
 the average other resident, not with whites; Hispanic adults are imprisoned at 2.6 times the white rate.
 
@@ -406,7 +408,7 @@ priced. Each lane ruled whether its gain already sits inside the production term
 
 | Benefit | $bn a year, central (range) | Where it goes | Ladder |
 |---|---:|---|---|
-| Care: taxes on native women's extra hours; net elder-care Medicaid saving | +4.1 (2.6–13.3) | inside the fiscal account since September 24 | 198 |
+| Care: taxes on native women's extra hours (+2.69), net elder-care Medicaid saving (+1.49) and a second-order output effect with its taxes (−0.03) | +4.15 (2.60–13.35) | inside the fiscal account since September 24 | 198 |
 | Cheaper services to consumers | 21.8 (11.9 net of native wage gains) | inside P; side view, not added | 198 |
 | Cheaper construction (0.75%) | 0 | inside P; other renters' extra rent $33.5bn → $29.9bn | 200 |
 | City size and schooling mix, one regression (Card–Rothstein–Yi) | +13.7; on the CPS count +13.9 (−56.6 to +84.4) | in the social rows since September 28 (§3b) | 201 |
@@ -568,3 +570,4 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 - 2026-10-05, later (v5 consumer lanes: pairing 72f2e3bc, winners c1c259ef): the verdict's pairing, §1 and §7 state main case v5. Fiscal and social costs together are $490.2–570.7bn ($11.5–13.3k per member of the 42.75M lineage), $407.3–492.8bn counting benefits when paid; the fiscal row moves and the 3.04M added descendants' own social rows add $8.6 / 8.8bn, each row times their share of its engine key. §7's sign-reversal paragraph takes the v5 case's break-evens, and §4 names the $1.2bn of induced receipts between the two fiscal-channel centrals. Concept affected: the fiscal-plus-social total (ladders 274, 281).
 - 2026-10-07 (main case v6, [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295; consumer lanes: pairing b0a2ccac, distribution 498a6a71, uncertainty 8020417a): the verdict, §1, §4 and §7 state main case v6, $389.1–461.5bn ($307.4–385.4bn counting benefits when paid). Fiscal and social costs together are $489.0–570.7bn ($11.4–13.3k per member), $407.3–494.6bn counting benefits when paid. The added descendants' rows are $8.4 / 8.5bn (October 5: $8.6 / 8.8bn): at their measured ages they have smaller shares of consumption and road use. §4's fiscal rows are $417.1bn (cash $289.4bn, capital return $48.8bn, accrual $78.9bn), and outside the budget the bottom four fifths lose $80.3bn and the top fifth gains $45.4bn. §7's sign-reversal paragraph takes v6's break-evens, and §1's bullet on the added descendants no longer says their social rows wait on a rerun, which stopped being true on October 5. Concept affected: the fiscal-plus-social total and its distribution by income.
 - 2026-10-08: living text states only the live case, at the operator's request; earlier-case figures removed, recoverable at 0e0c5e28.
+- 2026-10-08 (live-case cleanup, with the FAQ): the verdict no longer quotes the use key's and the hospital-care key's increments measured on the September 23 case (+$5.9bn, $1.7bn with census ethnicity codes as recorded, +$3.7–5.7bn). The main case isolates neither key; with offending at the Hispanic average it is $4.8bn lower at both ends. §7b's care row prints its three channels at two decimals so the parts add: +2.69 + 1.49 − 0.03 = +4.15 (2.60–13.35), was +4.1 (2.6–13.3) naming two. §6 keeps the lane's own measurement as its record. Concept affected: none.

@@ -36,7 +36,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
    "population": "observed Mexican-origin union, 40.897m (the survey's count), all ages",
    "comparator": "third-plus non-Hispanic whites under the same age structure",
@@ -86,7 +86,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
    "population": "third-plus non-Hispanic white reference, 173.054m, re-weighted to the union's age structure",
    "comparator": "the same white reference at its own ages",
@@ -104,28 +104,28 @@
      "value": "75% / 25%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:96"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:97"
     },
     {
      "label": "long-run response per 1% more residents across states: highways / parks",
      "value": "0.73% / 0.95%",
      "unit": "percent",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:102"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:103"
     },
     {
      "label": "school spending per 1% more pupils: across 2019 districts (pupil-weighted) / across states",
      "value": "1.004% / 0.973%",
      "unit": "percent",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:112"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:113"
     },
     {
      "label": "year-to-year school response from CBO's coefficients, kept for the first-year budget response",
      "value": "63-66%",
      "unit": "share of average cost per pupil",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:112"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:113"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -147,28 +147,28 @@
      "value": "3.2-5.4%",
      "unit": "share of assigned service costs",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:155"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:156"
     },
     {
      "label": "break-even incremental share, low end (negative: a net cost at every service response)",
      "value": "-3.7% to -1.6%",
      "unit": "share of assigned service costs",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:156"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:157"
     },
     {
      "label": "the same with the enterprises held at 1 while services fall to zero",
      "value": "-9.05% to 1.58%",
      "unit": "share of assigned service costs",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:158"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:159"
     },
     {
      "label": "every service budget frozen, CBO's incidence rules",
      "value": "-60.8 to +44.3",
      "unit": "$bn/year net outside effect",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:160"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:161"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -190,28 +190,28 @@
      "value": "0.60-0.85",
      "unit": "share of average cost",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:116"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:117"
     },
     {
      "label": "added to the main case by that response",
      "value": "30.5-43.2",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:117"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:118"
     },
     {
      "label": "cross-state scale of administration spending: state / financial administration",
      "value": "0.842 (SE 0.039) / 0.789",
      "unit": "elasticity",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:119-120"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:120-121"
     },
     {
      "label": "the only within-state test",
      "value": "0.47 (-0.72 to 1.66)",
      "unit": "elasticity (95% interval)",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:121-122"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:122-123"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -233,28 +233,28 @@
      "value": "101.6-101.7",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:136"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:137"
     },
     {
      "label": "same, those accruals carried with payroll instead of benefits",
      "value": "92.2-92.3",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:137"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:138"
     },
     {
      "label": "same, counting benefits when paid",
      "value": "35.6-36.3",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:138"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:139"
     },
     {
      "label": "public-employee pension excess, attributed interest expense",
      "value": "5.4",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:143"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:144"
     }
    ],
    "relation_to_headline": "outside_not_addable",
@@ -276,7 +276,7 @@
      "value": "+0.2% (-1.8% to +2.2%)",
      "unit": "percent",
      "se": "SE 1.0 (interval -1.8% to +2.2%)",
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:162-163"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:163-164"
     },
     {
      "label": "education spending at two years",
@@ -319,14 +319,14 @@
      "value": "47.5-72.0",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:126"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:127"
     },
     {
      "label": "national defense, share of GDP: FY1986 / 2000 / 2010 / 2024",
      "value": "6.0% / 2.9% / 4.7% / 3.2%",
      "unit": "share of GDP",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:126-127"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:127-128"
     }
    ],
    "relation_to_headline": "outside_not_addable",
@@ -373,7 +373,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 3 (source cited directly to the data file)",
    "population": "Mexico-born (12.221m) and Mexican second generation (14.333m)",
    "comparator": "third-plus non-Hispanic whites at the white age structure",
@@ -416,7 +416,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 3; research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
    "population": "observed Mexican-origin union, 40.897m",
    "comparator": "third-plus non-Hispanic whites at the white / stationary age structure",
@@ -459,7 +459,7 @@
     }
    ],
    "relation_to_headline": "inside_headline",
-   "combining_rule": "Two care items sit inside the main case: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.2bn together (entries 4 and 13; ladders 198 and 219).",
+   "combining_rule": "Three care channels sit inside the main case, $4.15bn together: taxes on native women's extra hours ($2.69bn), the net elder-care Medicaid saving ($1.49bn) and a second-order output effect on other workers and capital, with its taxes (−$0.03bn) (entries 4 and 13; ladders 198 and 219).",
    "memo": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md; research/immigration-objections-faq-2026-09-21.md § 4 and § 13; research/immigration-consumer-price-and-native-hours-2026-09-18.md",
    "population": "other residents: native women's hours and taxes, Medicaid elders",
    "comparator": "the account, with native hours and other residents' nursing-facility spending priced",
@@ -477,28 +477,28 @@
      "value": "389-461",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:184"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:185"
     },
     {
      "label": "same with CBO's first-year responses; counting benefits when paid",
      "value": "289-336 / 207-260",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:186"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:187"
     },
     {
      "label": "same with non-school education budgets also fixed",
      "value": "328-428",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:187"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:188"
     },
     {
      "label": "break-even incremental share at the high end",
      "value": "3.2-5.4%",
      "unit": "share of assigned service costs",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:189"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:190"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -556,21 +556,21 @@
    "id": "e4_production_gain_inside_headline",
    "faq_entry": 4,
    "objection": "Cheaper services, complementary labour and capital returns never appear in a fiscal ledger.",
-   "finding": "The account adds production gains and the induced taxes on them: $7.8bn (cash scaling) to $11.9bn (GDP scaling) on the account's own weights, the 3.04M added descendants included, and $6–21bn across the parameter grid on the survey's weights.",
+   "finding": "The account adds production gains and the induced taxes on them: $7.8bn (cash scaling) to $11.9bn (GDP scaling) on the account's own weights, the 3.04M added descendants included, and $6–19bn across the parameter grid.",
    "values": [
     {
      "label": "production plus induced receipts, cash / GDP scaling",
      "value": "7.8 / 11.9",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:182"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:183"
     },
     {
-     "label": "across the parameter grid, on the survey's weights",
-     "value": "6-21",
+     "label": "across the parameter grid",
+     "value": "6-19",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:183"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:184"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -592,7 +592,7 @@
      "value": "13.7",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:221"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:223"
     },
     {
      "label": "same on the survey's own count (95% interval)",
@@ -606,25 +606,25 @@
      "value": "+38.6 / -24.9",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:221-222"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:223-224"
     },
     {
      "label": "net with the instrumented 1970–2000 college-share studies",
      "value": "-109 to -677",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:228"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:230"
     },
     {
      "label": "innovation: the patent term inside its interval, not added",
      "value": "+37 to +57 (about ±490)",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:201-202"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:203-204"
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The net of city size and schooling mix (+$13.7bn; on the lane's CPS count, 95% −$56.6bn to +$84.4bn, ladder 201) counts whole, induced receipts included ($6.0bn on that count), as a benefit in the fiscal-plus-social total; the fiscal main case does not carry it.",
+   "combining_rule": "The net of city size and schooling mix (+$13.7bn; on the survey's raw 40.9M count, 95% −$56.6bn to +$84.4bn, ladder 201) counts whole, induced receipts included ($6.0bn on that count), as a benefit in the fiscal-plus-social total; the fiscal main case does not carry it.",
    "memo": "infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md; research/immigration-objections-faq-2026-09-21.md § 4; research/immigration-real-fiscal-and-social-costs-2026-09-23.md § 3b; research/immigration-confidence-ladder.md entry 201; decisions/2026-09-28-social-items-scale-benefits.md",
    "population": "other residents' earnings across commuting zones",
    "comparator": "the account's production term, which already counts substitution between skill groups",
@@ -692,35 +692,35 @@
      "value": "489.0-570.7",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:12"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:14"
     },
     {
      "label": "per member of the 42.75M lineage",
      "value": "11.4-13.3",
      "unit": "$k/member/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:12"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:14"
     },
     {
      "label": "same, counting benefits when paid",
      "value": "407.3-494.6",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:13"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:15"
     },
     {
      "label": "largest social rows: fine particles (PM2.5); crime victims' harm, low / high end",
      "value": "68.1; 30.5 / 31.9",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:22-27"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:24-29"
     },
     {
      "label": "five benefits, entered as negative costs",
      "value": "-35.4",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:30"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:32"
     }
    ],
    "relation_to_headline": "different_object",
@@ -796,7 +796,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 5; research/immigration-mexican-origin-population-total-2026-09-19.md § 4. Fiscal implication; research/immigration-confidence-ladder.md entry 158",
    "population": "observed union plus estimated ethnic attriters (third and fourth-plus generations)",
    "comparator": "third-plus non-Hispanic whites, common ages, shared allocation",
@@ -846,7 +846,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 5 (Scope paragraph); research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
    "population": "the three generations alive in 2024",
    "comparator": "third-plus non-Hispanic whites at the white age structure",
@@ -864,18 +864,18 @@
      "value": "350 (SE at most 1,060)",
      "unit": "$/person/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:253-254"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:255-256"
     },
     {
      "label": "third-plus better than first (standard errors)",
      "value": "1,732 (at least 2.1 SE)",
      "unit": "$/person/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:254"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:256"
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 5 (Scope paragraph)",
    "population": "the three generations alive in 2024",
    "comparator": "each other, both measured against third-plus non-Hispanic whites",
@@ -893,35 +893,35 @@
      "value": "12.3-13.5",
      "unit": "$k/adult/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:282"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:284"
     },
     {
      "label": "per Mexico-born adult / per third-plus adult",
      "value": "16.0-18.6 / 11.3-14.7",
      "unit": "$k/adult/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:282-283"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:284-285"
     },
     {
      "label": "totals: second generation / third-plus",
      "value": "109-121 / 111-144",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:283-284"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:285-286"
     },
     {
      "label": "children counted in their own generation: second generation / Mexico-born",
      "value": "150-178 / 87-97",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:287"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:289"
     },
     {
      "label": "adults / members of the lineage (the per-person denominators)",
      "value": "29.27M of 42.75M",
      "unit": "people",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:288"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:290"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -1068,7 +1068,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 5; research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Annual results",
    "population": "generations alive in 2024: Mexico-born 12.221m, second generation 14.333m, third-plus self-identified 14.343m (the survey's counts)",
    "comparator": "third-plus non-Hispanic whites, 173.054m, at common ages",
@@ -1104,7 +1104,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 5 and § 9; research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
    "population": "the three generations alive in 2024",
    "comparator": "third-plus non-Hispanic whites at the white age structure",
@@ -1129,14 +1129,14 @@
      "value": "about -6,500 to -7,200",
      "unit": "$/person/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:302-303"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:303-304"
     },
     {
      "label": "gap against as many third-plus non-Hispanic whites, every group's income taxes on the case's keys",
      "value": "432-436",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:307"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:308"
     }
    ],
    "relation_to_headline": "different_object",
@@ -1183,7 +1183,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 6",
    "population": "the three generations alive in 2024 and their union",
    "comparator": "all natives, 283.672m, at common ages",
@@ -1527,7 +1527,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures ([DERIVATION] paragraph)",
    "population": "observed Mexican-origin union, 40.9m",
    "comparator": "the same population re-weighted to the white age structure",
@@ -1577,7 +1577,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
    "population": "observed Mexican-origin union at the observed 40.9m headcount",
    "comparator": "the same population re-weighted to the white reference's age structure",
@@ -1606,7 +1606,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures; research/immigration-objections-faq-2026-09-21.md § 10",
    "population": "65+ cells of the second and third-plus generations",
    "comparator": "n/a — a support/sample-size statement",
@@ -1631,28 +1631,28 @@
      "value": "207-260 / 289-336",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:391"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:393"
     },
     {
      "label": "the return on public capital inside the case, an opportunity cost",
      "value": "37-61",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:392"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:394"
     },
     {
      "label": "the pension accrual inside the case, a promise of future benefits",
      "value": "76-82",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:392"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:394"
     },
     {
      "label": "districts with falling enrollment: spending fell as fast as enrollment / money kept",
      "value": "about 30% / 70%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:395"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:397"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -1681,7 +1681,7 @@
      "value": "1.94×; 2.10-2.23×",
      "unit": "ratio",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:437-443"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:440-446"
     },
     {
      "label": "US-born Mexican-origin rate, 2024 raw / coding-adjusted",
@@ -1717,42 +1717,42 @@
    "id": "e12_no_group_crime_cost_in_headline",
    "faq_entry": 12,
    "objection": "\"What about crime?\"",
-   "finding": "The main case charges police, courts and prisons by use: prisons by custody, police half by arrests, courts by their criminal share and border enforcement per head. That adds only $5.9bn ($1.7bn with census ethnicity codes as recorded), because the account compares the group with the average other resident: Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged 18–64. Jail counts carry no ethnicity adjustment; with jails at the arrest share, prisons and jails are 22.9% Hispanic. Victim costs sit outside the fiscal account: crimes by group members against other residents cost the victims $30.5–31.9bn a year among the 39.7M people the account identifies, and about $33bn with the 3.04M added descendants, a social cost in the fiscal-plus-social total. Police records agree: on Texas and Arizona offender rates the victims' cost is $28.6bn.",
+   "finding": "The main case charges police, courts and prisons by use: prisons by custody, police half by arrests, courts by their criminal share and border enforcement per head. The use key adds little because the account compares the group with the average other resident: Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged 18–64. The main case does not isolate what the key adds; if Mexican-origin offending equals the Hispanic average as census codes record it, the case is $4.8bn lower at both ends. Jail counts carry no ethnicity adjustment; with jails at the arrest share, prisons and jails are 22.9% Hispanic. Victim costs sit outside the fiscal account: crimes by group members against other residents cost the victims $30.5–31.9bn a year among the 39.7M people the account identifies, and about $33bn with the 3.04M added descendants, a social cost in the fiscal-plus-social total. Police records agree: on Texas and Arizona offender rates the victims' cost is $28.6bn.",
    "values": [
     {
-     "label": "courts, police and prisons charged by use, against per head (with census ethnicity codes as recorded)",
-     "value": "5.9 (1.7)",
+     "label": "main case less the case with Mexican-origin offending at the Hispanic average as census codes record it, at both ends",
+     "value": "4.8",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:6-7"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:413-415"
     },
     {
      "label": "Hispanic share of people in prisons and jails / of residents aged 18–64",
      "value": "20.2% / 20.7%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:410-411"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:412-413"
     },
     {
      "label": "prisons and jails with jails at the arrest share",
      "value": "22.9%",
      "unit": "share Hispanic",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:415"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:417"
     },
     {
      "label": "victims' harm from crimes by group members against other residents, among the 39.7M; with the 3.04M added descendants (social cost, beside the fiscal headline)",
      "value": "30.5-31.9; about 33",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:419-420"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:421-422"
     },
     {
      "label": "victims' cost on Texas and Arizona police-record offender rates",
      "value": "28.6",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:427"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:429"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -1806,7 +1806,7 @@
     }
    ],
    "relation_to_headline": "different_object",
-   "combining_rule": "Two care items sit inside the main case: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.2bn together (entries 4 and 13; ladders 198 and 219).",
+   "combining_rule": "Three care channels sit inside the main case, $4.15bn together: taxes on native women's extra hours ($2.69bn), the net elder-care Medicaid saving ($1.49bn) and a second-order output effect on other workers and capital, with its taxes (−$0.03bn) (entries 4 and 13; ladders 198 and 219).",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 13; infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md § 2. Elder care; research/immigration-marginal-revolution-leads-read-2026-09-21.md § Who staffs direct care in 2024",
    "population": "2024 US home-care and direct-care workforce; the group's members of every generation",
    "comparator": "the group's 12.0% share of residents",
@@ -1856,7 +1856,7 @@
     }
    ],
    "relation_to_headline": "inside_headline",
-   "combining_rule": "Two care items sit inside the main case: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.2bn together (entries 4 and 13; ladders 198 and 219).",
+   "combining_rule": "Three care channels sit inside the main case, $4.15bn together: taxes on native women's extra hours ($2.69bn), the net elder-care Medicaid saving ($1.49bn) and a second-order output effect on other workers and capital, with its taxes (−$0.03bn) (entries 4 and 13; ladders 198 and 219).",
    "memo": "research/immigration-objections-faq-2026-09-21.md § 13; infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md § 2. Elder care; research/immigration-marginal-revolution-leads-read-2026-09-21.md § 1",
    "population": "other residents' nursing-facility and Medicaid home-care use; the group's home-care workers of every generation",
    "comparator": "the account, with other residents' nursing-facility spending priced",
@@ -1906,7 +1906,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "Two care items sit inside the main case: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.2bn together (entries 4 and 13; ladders 198 and 219).",
+   "combining_rule": "Three care channels sit inside the main case, $4.15bn together: taxes on native women's extra hours ($2.69bn), the net elder-care Medicaid saving ($1.49bn) and a second-order output effect on other workers and capital, with its taxes (−$0.03bn) (entries 4 and 13; ladders 198 and 219).",
    "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § 1. Elder care",
    "population": "US-born elderly (Census commuting zones 1980–2000) and 18.0m Medicare beneficiaries 2008–2019",
    "comparator": "all-origin foreign-born share; the identifying variation is south-western / Africa, India, West Indies",
@@ -2024,14 +2024,14 @@
      "value": "31.7-33.5% / 31.8-32.5%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:508"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:509"
     },
     {
      "label": "same, 2020 Census, Texas / California",
      "value": "31.0% / 30.8%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:509"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:510"
     },
     {
      "label": "national per-person gap vs third-plus NH whites, with the missing income tax: age only → metro × age",
@@ -2052,7 +2052,7 @@
      "value": "1.4% (0.50m)",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:520-521"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:521-522"
     }
    ],
    "relation_to_headline": "outside_not_addable",
@@ -2088,7 +2088,7 @@
      "value": "-389 to -461",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:542-549"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:543-550"
     },
     {
      "label": "Mexico-born arrivals 2016–2025, partial account, taxes as the survey reports them",
@@ -2117,42 +2117,42 @@
    "id": "e17_survey_errors_nearly_cancel",
    "faq_entry": 17,
    "objection": "Survey data are unreliable. Immigrants hide income and benefits, and surveys miss the unauthorized.",
-   "finding": "The survey errors are real and large, but they run both ways and nearly cancel. The group's taxes were overstated, which understated its net cost by $48.7–50.3bn: the survey's tax model treats every respondent as a compliant resident filer, and Census's fill-ins keep only 9% of the group's own wage gap. Fixing spending keys, with the care items moved into the account, lowered the charge by $51.0–53.6bn. The main case, $389.1–461.5bn, spans $311.9–515.6bn with every correction and every other component at its extreme at once, and no combination of these changes the sign; freezing every service budget does (entry 2). Administrative records show no fear-driven benefit under-reporting where the group's dollars are: California's SNAP records give Hispanic participants 44.0% of benefit dollars against the survey's 44.1%. The count error runs the other way: the CPS puts the Mexico-born 9–13% above the ACS, the adopted case corrects to the ACS level, and the people in the excess pay about what they are charged.",
+   "finding": "The survey errors are real, but they run both ways. The survey overstates the group's taxes: its tax model treats every respondent as a compliant resident filer, and Census's fill-ins keep only 9% of the group's own wage gap; leaving the fill-ins in would lower the main case by $8.3–9.2bn. On the spending side the keys overstated the charge: ACA premium credits had been keyed as if they were the EITC, and long-term care had been charged at the group's 12.25% share of community Medicaid, where CMS records give it 7.4% of those dollars. The main case carries every correction; their combined effect on it is not measured separately. The main case, $389.1–461.5bn, spans $311.9–515.6bn with every correction and every other component at its extreme at once, and no combination of these changes the sign; freezing every service budget does (entry 2). Administrative records show no fear-driven benefit under-reporting where the group's dollars are: California's SNAP records give Hispanic participants 44.0% of benefit dollars against the survey's 44.1%. The count error runs the other way: the CPS puts the Mexico-born 9–13% above the ACS, the adopted case corrects to the ACS level, and the people in the excess pay about what they are charged.",
    "values": [
     {
-     "label": "net cost the overstated taxes had hidden (low / high end)",
-     "value": "+48.7 / +50.3",
+     "label": "main case less the case with Census's income fill-ins left in, everything else as in the case",
+     "value": "8.3-9.2",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:571"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:573-574"
     },
     {
-     "label": "charge removed by fixing spending keys, with the care items moved into the account",
-     "value": "-51.0 / -53.6",
-     "unit": "$bn/year",
+     "label": "long-term care: the group's share of community Medicaid, the old key / of the dollars in CMS records",
+     "value": "12.25% / 7.4%",
+     "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:582"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:583"
     },
     {
      "label": "main case with every correction and every other component at its extreme at once",
      "value": "311.9-515.6",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:587"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:588"
     },
     {
      "label": "Hispanic share of California SNAP benefit dollars: administrative records / CPS",
      "value": "44.0% / 44.1%",
      "unit": "share of dollars",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:593-594"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:594-595"
     },
     {
      "label": "CPS Mexico-born count above the ACS since 2019; CPS / ACS-based level",
      "value": "9-13%; 12.2M / 11.1M",
      "unit": "percent; persons",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:599"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:600"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -2224,14 +2224,14 @@
      "value": "274.9-374.8",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:680"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:679"
     },
     {
      "label": "third-plus members with no grandparent data",
      "value": "70%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:682"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:681"
     }
    ],
    "relation_to_headline": "different_object",
@@ -2253,35 +2253,35 @@
      "value": "11.2%; 3.04M of 42.75M",
      "unit": "share; people",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:659-661"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:658-660"
     },
     {
      "label": "share of the college gap that third-generation non-identifiers close (C3)",
      "value": "0.557 (SE 0.246)",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:664"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:663"
     },
     {
      "label": "added to the main case by the 3.04M",
      "value": "20.0-29.2",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:671"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:670"
     },
     {
      "label": "per member of the 42.75M lineage; an added person / an identified member",
      "value": "9,101-10,794",
      "unit": "$/member/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:671-673"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:670-672"
     },
     {
      "label": "identity loss stopping (1.81M) / compounding (4.27M); C3 ± 1 SE",
      "value": "378.0-445.3 / 400.2-477.7; 386.3-465.4",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:674-675"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:673-674"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -2303,35 +2303,35 @@
      "value": "357.1-429.5",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:706"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:705"
     },
     {
      "label": "the fix: Auerbach and Gale's gap less the part that pays scheduled retirement benefits",
      "value": "332.9 = 2.33% - 1.19 points",
      "unit": "$bn/year; share of GDP",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:707-708"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:706-707"
     },
     {
      "label": "the lineage's part of the fix: its share of households (of residents)",
      "value": "32.0; 9.61% (12.74%)",
      "unit": "$bn/year; share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:711"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:710"
     },
     {
      "label": "across current-law gaps and six sharing rules",
      "value": "346.7-451.4",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:715"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:714"
     },
     {
      "label": "current-policy gaps, low end; AEI's 2013 figure with scheduled benefits paid",
      "value": "278.3; 231.2-303.6",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:715-716"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:714-715"
     }
    ],
    "relation_to_headline": "overlaps_headline",
@@ -2353,28 +2353,28 @@
      "value": "101.6-101.7",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:739"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:738"
     },
     {
      "label": "machinery per worker after a 0.1 rise in the dropout-to-graduate ratio (Lewis 2011)",
      "value": "about -6% (IV -0.59, SE 0.31)",
      "unit": "percent",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:741"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:740"
     },
     {
      "label": "output per worker, same design",
      "value": "-0.03 (SE 0.24)",
      "unit": "coefficient",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:742"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:741"
     },
     {
      "label": "more patents after the bracero program ended, in crops that had used more braceros",
      "value": "15-20 years",
      "unit": "years",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:743"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:742"
     }
    ],
    "relation_to_headline": "outside_not_addable",
@@ -2478,7 +2478,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Annual results",
    "population": "income-year-2024 CPS ASEC 2025 civilian household residents by group",
    "comparator": "levels; the common-age shortfalls are the gap rows",
@@ -2661,7 +2661,7 @@
      "value": "361-435",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:114"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:115"
     }
    ],
    "relation_to_headline": "different_object",
@@ -2676,43 +2676,43 @@
  "combining_rules": [
   {
    "id": "cr_two_anchors",
-   "text": "**The two anchors are different objects.** The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger (repaired September 19, item T added October 7): per-person balances against a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on separate partial accounts. The $389–461bn (entries 2, 4, 11 and 15–19) is the complete account's change for all other residents in the main case, under a stated service-response assumption and with no reference group. Its return on public capital ($36.6–61.1bn) is an imputed resource cost, not a payment, so it never enters a borrowing or debt figure. Its pension accrual ($76.1–81.7bn) is a promise of future benefits valued as it is earned, not this year's cash. The account carries later corrections that were not propagated to the ledger (ladder 161), and it has its own generation split, computed with no reference group (ladder 224). They agree in direction. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
+   "text": "**The two anchors are different objects.** The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger: per-person balances against a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on separate partial accounts. The $389–461bn (entries 2, 4, 11 and 15–19) is the complete account's change for all other residents in the main case, under a stated service-response assumption and with no reference group. Its return on public capital ($36.6–61.1bn) is an imputed resource cost, not a payment, so it never enters a borrowing or debt figure. Its pension accrual ($76.1–81.7bn) is a promise of future benefits valued as it is earned, not this year's cash. The account carries later corrections that were not propagated to the ledger (ladder 161), and it has its own generation split, computed with no reference group (ladder 224). They agree in direction. One is not a decomposition of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.",
    "file_line": "research/immigration-objections-faq-2026-09-21.md:26-36"
   },
   {
    "id": "cr_offsets_do_not_add",
-   "text": "**Offsets do not add unless an entry says so.** The production gain ($7.8–11.9bn) is inside the headline. Cheaper household services ($21.8bn to consumers) price the same labour-supply shock on a different population; the two are not reconciled, so the services figure is neither added nor counted as included. Two care items sit inside the main case: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.2bn together (entries 4 and 13; ladders 198 and 219). The net of city size and schooling mix (+$13.7bn; on the lane's CPS count, 95% −$56.6bn to +$84.4bn, ladder 201) counts whole, induced receipts included ($6.0bn on that count), as a benefit in the fiscal-plus-social total; the fiscal main case does not carry it. Mobility insurance ($0.65bn, ladder 203) sits beside both totals. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized workers of every origin and is matched by other immigrants' losses. The account's own nest is a different object: at the elasticities its job distribution supports, it moves the production term by about $4–8bn at the job-overlap reading and $1.5–4.7bn at the direct low-skill estimates (entry 14). No ratio of \"offsets to cost\" can be formed from these.",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:38-50"
+   "text": "**Offsets do not add unless an entry says so.** The production gain ($7.8–11.9bn) is inside the headline. Cheaper household services ($21.8bn to consumers) price the same labour-supply shock on a different population; the two are not reconciled, so the services figure is neither added nor counted as included. Three care channels sit inside the main case, $4.15bn together: taxes on native women's extra hours ($2.69bn), the net elder-care Medicaid saving ($1.49bn) and a second-order output effect on other workers and capital, with its taxes (−$0.03bn) (entries 4 and 13; ladders 198 and 219). The net of city size and schooling mix (+$13.7bn; on the survey's raw 40.9M count, 95% −$56.6bn to +$84.4bn, ladder 201) counts whole, induced receipts included ($6.0bn on that count), as a benefit in the fiscal-plus-social total; the fiscal main case does not carry it. Mobility insurance ($0.65bn, ladder 203) sits beside both totals. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized workers of every origin and is matched by other immigrants' losses. The account's own nest is a different object: it raises the production term, mostly through a transfer from other foreign-born residents to natives, and it has not been run on the main case (entry 14). No ratio of \"offsets to cost\" can be formed from these.",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:38-51"
   },
   {
    "id": "cr_fiscal_plus_social_own_object",
    "text": "**The fiscal-plus-social total is its own object.** The $489–571bn adds other residents' social costs and benefits to the main case's fiscal account at central values (entry 4). Its low end assumes Mexican-origin offending equals the Hispanic average (fiscal $384.3bn, victims $30.5bn); its high end assumes it sits above that average, as custody does (fiscal $461.5bn, victims $31.9bn). The 3.04M added descendants' own social rows, $8.4 / 8.5bn, take their share of each row's key [ASSUMPTION]. Figures normalized against the average resident and the crash figure charged by fault ($40.6bn) sit beside it and are never added. Property values stay out. The first-year budget response ($289–336bn, or $207–260bn counting benefits when paid) and fully proportional services ($418–476bn) are scenarios of the same account, not earlier estimates.",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:52-61"
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:53-62"
   },
   {
    "id": "cr_match_population_horizon_outcome",
    "text": "**A result refutes a claim only when population, horizon and outcome match.** Entry 5 compares Mexican-origin generations alive in 2024 with whites at common ages. The National Academies results it is usually set against are all origins, followed from arrival, with descendants, discounted, under a budget rule. Neither refutes the other.",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:63-66"
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:64-67"
   },
   {
    "id": "cr_legacy_financing_separate",
    "text": "**Legacy financing charges stay separate.** The federal comparison capitalizes earlier gaps, including accrued promises, as if borrowed; the public-employee pension comparison allocates interest on prior liabilities. Neither belongs in the annual fiscal or fiscal-plus-social total. They also must not be summed with each other until unpaid pension compensation already inside the federal simulation is reconciled to pension financing. Entry 2 gives both estimates and their windows.",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:68-72"
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:69-73"
   },
   {
    "id": "cr_faq_preamble_routed",
-   "text": "[ROUTING / FRAMING-SENSITIVE] A question-and-answer index over executed results. Each objection is stated in its strongest form first. Numbers are 2024 dollars per year unless stated. Entries marked *(routed)* quote the topic index and must be opened at the linked memo before reuse. Narrative authorship remains operator-owned.",
+   "text": "[ROUTING / FRAMING-SENSITIVE] A question-and-answer index over executed results. Each objection is stated in its strongest form first. Numbers are 2024 dollars per year unless stated. Entries marked *(routed)* quote the topic index and must be opened at the linked memo before reuse. Narrative authorship remains the author's.",
    "file_line": "research/immigration-objections-faq-2026-09-21.md:3-6"
   },
   {
    "id": "cr_instrument_ranking_warning",
    "text": "A summary that ranks findings by how much they surprise the model selects for results that contradict its prior, which is also where errors concentrate; surprising results need more checking before they get more prominence.",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:769-772"
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:768-771"
   },
   {
    "id": "cr_california_texas_shared_ledger",
    "text": "**California and Texas per-person gaps are the shared all-age ledger.** The −$15,228 / −$9,267 (CA/TX vs local third-plus NH whites) and metro figures (Los Angeles −$21,083, Houston −$8,977) are from the stress and metro-match tables, with the income tax the survey misses (entry 15). They are not a split of the $389–461bn complete account and not the generation-ledger −$7k to −$9k. [SOURCE: [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md)]",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:74-78"
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:75-79"
   }
  ]
 }

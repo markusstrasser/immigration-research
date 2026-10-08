@@ -165,7 +165,7 @@ TWO_ANCHORS = ("The $389–461bn (entries 2, 4, 11 and 15–19)", "with no refer
 LEDGER_OBJECT = ("The generation gaps and the age structures", "re-weighted by age.")
 NOT_A_DECOMPOSITION = ("One is not a decomposition of the", "complete-account total.")
 LATER_CORRECTIONS = ("The account carries later corrections", "complete-account total.")
-CARE_ITEMS = ("Two care items sit inside the main case", "ladders 198 and 219).")
+CARE_ITEMS = ("Three care channels sit inside the main case", "ladders 198 and 219).")
 MATCH = "A result refutes a claim only when population, horizon and outcome match."
 PARTIAL = ("Entries 7 and 9 rest on", "partial accounts.")
 CA_TX = ("**California and Texas per-person gaps", "−$9k.")
@@ -480,12 +480,12 @@ EDITS = {
     ),
     "e4_production_gain_inside_headline": dict(
         finding=("The account adds production gains and the induced taxes on them: $7.8bn (cash scaling) to $11.9bn "
-                 "(GDP scaling) on the account's own weights, the 3.04M added descendants included, and $6–21bn across "
-                 "the parameter grid on the survey's weights."),
+                 "(GDP scaling) on the account's own weights, the 3.04M added descendants included, and $6–19bn across "
+                 "the parameter grid."),
         values=[
             val("production plus induced receipts, cash / GDP scaling", "7.8 / 11.9",
                 at(FAQ, "$7.8bn (cash scaling) to $11.9bn (GDP scaling)")),
-            val("across the parameter grid, on the survey's weights", "6-21", at(FAQ, "($6–21bn across the parameter grid")),
+            val("across the parameter grid", "6-19", at(FAQ, "($6–19bn across the parameter grid")),
         ],
         combining_rule=faq_excerpt("The production gain ($7.8–11.9bn)", "is inside the headline."),
         memo=f"{FAQ} § 4; {R07}; {CAA} § Benefits joined to an explicit fiscal response",
@@ -503,11 +503,11 @@ EDITS = {
                  "and is not added."),
         values=[
             val("net of city size and schooling mix on the account's count, a benefit row of the fiscal-plus-social "
-                "total", "13.7", at(FAQ, "mix, $13.7bn (in the lane, bigger cities add $38.6bn")),
+                "total", "13.7", at(FAQ, "mix, $13.7bn (on the survey's raw 40.9M count, bigger cities add $38.6bn")),
             val("same on the survey's own count (95% interval)", "+13.9 (-56.6 to +84.4)",
                 at(SCALE, "are worth **+$13.9bn a year**")),
             val("city size / lower schooling, net of the account's own substitution", "+38.6 / -24.9",
-                at(FAQ, "mix, $13.7bn (in the lane, bigger cities add $38.6bn", through="takes back $24.9bn")),
+                at(FAQ, "mix, $13.7bn (on the survey's raw 40.9M count, bigger cities add $38.6bn", through="takes back $24.9bn")),
             val("net with the instrumented 1970–2000 college-share studies", "-109 to -677",
                 at(FAQ, "The 1970–2000 college-share studies would turn the scale net")),
             val("innovation: the patent term inside its interval, not added", "+37 to +57 (about ±490)",
@@ -867,18 +867,19 @@ EDITS = {
     ),
     "e12_no_group_crime_cost_in_headline": dict(
         finding=("The main case charges police, courts and prisons by use: prisons by custody, police half by arrests, "
-                 "courts by their criminal share and border enforcement per head. That adds only $5.9bn ($1.7bn with "
-                 "census ethnicity codes as recorded), because the account compares the group with the average other "
-                 "resident: Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged "
-                 "18–64. Jail counts carry no ethnicity adjustment; with jails at the arrest share, prisons and jails "
+                 "courts by their criminal share and border enforcement per head. The use key adds little because the "
+                 "account compares the group with the average other resident: Hispanic residents are 20.2% of people "
+                 "in prisons and jails against 20.7% of residents aged 18–64. The main case does not isolate what the "
+                 "key adds; if Mexican-origin offending equals the Hispanic average as census codes record it, the case "
+                 "is $4.8bn lower at both ends. Jail counts carry no ethnicity adjustment; with jails at the arrest "
+                 "share, prisons and jails "
                  "are 22.9% Hispanic. Victim costs sit outside the fiscal account: crimes by group members against "
                  "other residents cost the victims $30.5–31.9bn a year among the 39.7M people the account identifies, "
                  "and about $33bn with the 3.04M added descendants, a social cost in the fiscal-plus-social total. "
                  "Police records agree: on Texas and Arizona offender rates the victims' cost is $28.6bn."),
         values=[
-            val("courts, police and prisons charged by use, against per head (with census ethnicity codes as recorded)",
-                "5.9 (1.7)", at(REAL, "courts, police and prisons are charged by use, which adds",
-                                through="($1.7bn with census ethnicity codes as recorded)")),
+            val("main case less the case with Mexican-origin offending at the Hispanic average as census codes record "
+                "it, at both ends", "4.8", at(FAQ, "The main case does not isolate", through="lower at both ends")),
             val("Hispanic share of people in prisons and jails / of residents aged 18–64", "20.2% / 20.7%",
                 at(FAQ, "the account compares the group with the average other resident: Hispanic residents are 20.2%",
                    through="people in prisons and jails against 20.7%"), unit="share"),
@@ -1047,22 +1048,25 @@ EDITS = {
                     "of all ages and generations"),
     ),
     "e17_survey_errors_nearly_cancel": dict(
-        finding=("The survey errors are real and large, but they run both ways and nearly cancel. The group's taxes "
-                 "were overstated, which understated its net cost by $48.7–50.3bn: the survey's tax model treats every "
-                 "respondent as a compliant resident filer, and Census's fill-ins keep only 9% of the group's own wage "
-                 "gap. Fixing spending keys, with the care items moved into the account, lowered the charge by "
-                 "$51.0–53.6bn. The main case, $389.1–461.5bn, spans $311.9–515.6bn with every correction and every "
-                 "other component at its extreme at once, and no combination of these changes the sign; freezing every "
-                 "service budget does (entry 2). Administrative records show no fear-driven benefit under-reporting "
+        finding=("The survey errors are real, but they run both ways. The survey overstates the group's taxes: its tax "
+                 "model treats every respondent as a compliant resident filer, and Census's fill-ins keep only 9% of the "
+                 "group's own wage gap; leaving the fill-ins in would lower the main case by $8.3–9.2bn. On the spending "
+                 "side the keys overstated the charge: ACA premium credits had been keyed as if they were the EITC, and "
+                 "long-term care had been charged at the group's 12.25% share of community Medicaid, where CMS records "
+                 "give it 7.4% of those dollars. The main case carries every correction; their combined effect on it is "
+                 "not measured separately. The main case, $389.1–461.5bn, spans $311.9–515.6bn with every correction "
+                 "and every other component at its extreme at once, and no combination of these changes the sign; "
+                 "freezing every service budget does (entry 2). Administrative records show no fear-driven benefit "
+                 "under-reporting "
                  "where the group's dollars are: California's SNAP records give Hispanic participants 44.0% of benefit "
                  "dollars against the survey's 44.1%. The count error runs the other way: the CPS puts the Mexico-born "
                  "9–13% above the ACS, the adopted case corrects to the ACS level, and the people in the excess pay "
                  "about what they are charged."),
         values=[
-            val("net cost the overstated taxes had hidden (low / high end)", "+48.7 / +50.3",
-                at(FAQ, "were overstated, which understated its net cost by $48.7–50.3bn")),
-            val("charge removed by fixing spending keys, with the care items moved into the account", "-51.0 / -53.6",
-                at(FAQ, "$51.0–53.6bn, mostly by fixing keys")),
+            val("main case less the case with Census's income fill-ins left in, everything else as in the case",
+                "8.3-9.2", at(FAQ, "Leaving the survey's", through="fill-ins in would lower the main case by $8.3–9.2bn")),
+            val("long-term care: the group's share of community Medicaid, the old key / of the dollars in CMS records",
+                "12.25% / 7.4%", at(FAQ, "charged at the group's share of community Medicaid, 12.25%"), unit="share"),
             val("main case with every correction and every other component at its extreme at once", "311.9-515.6",
                 at(FAQ, "spans $311.9–515.6bn")),
             val("Hispanic share of California SNAP benefit dollars: administrative records / CPS", "44.0% / 44.1%",

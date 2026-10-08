@@ -342,10 +342,10 @@ FAQ_SPANS = [
     ("No. The account describes a resident stock in a stationary comparison.",
      "neither is cash that a removal would free in the year."),
     ("figures are not the $389–461bn complete account. [SOURCE:", "figures are not the $389–461bn complete account. [SOURCE:"),
-    ("Two later corrections also nearly cancel:", "service budget does (entry 2)."),
+    ("Two other corrections also run in opposite directions:", "service budget does (entry 2)."),
     ("Steel-man: one year of a price surge, pandemic programmes and a migration wave", "which flatters the year."),
     # entry 5's split of the adopted account by generation (in scope since the v4 restatement, 5e9112e)
-    ("On the adopted account itself, with no reference group", "on the US-born generations counted"),
+    ("On the adopted account itself, with no reference group", "[CALCULATION: [adopted account by generation]"),
     # entry 4's income split of the transfers (6157bb1) and entry 6's gap (1572b90), restated on the adopted case;
     # entry 6 also sets the white gap beside the main case (since the comparators' income-tax keys, cc793ccf)
     ("the renters' payments cancel in dollars but not by income", "(ladder 194)."),
@@ -362,6 +362,12 @@ FAQ_SPANS = [
     # entry 16, the main case and its first-year response beside CBO's projection (since v6); not CBO's own figures
     ("all ages and generations in income-year 2024, state and local services included",
      "Where the two overlap they agree"),
+    # entries 12, 14 and 17, the figures restated on the main case (2026-10-08): offending at the Hispanic average,
+    # fear and private security on the priced count, the production term, the fill-in correction
+    ("The main case does not isolate", "lower at both ends"),
+    ("Beyond the victims, fear and avoidance", "fiscal-plus-social total (entry 4)."),
+    ("substitutes; the main case credits", "Three limits keep it from being added as it stands."),
+    ("Leaving the survey's", "And the income tax key was too flat"),
 ]
 CLAUDE_SPANS = [
     ("Since\n  2026-09-23 the main case lets general public services", "business subsidies stay at **zero response by assumption**"),

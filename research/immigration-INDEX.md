@@ -179,10 +179,10 @@ existing interest and business subsidies stay at **zero response by assumption**
 ([scope memo](immigration-education-administration-scope-2026-09-20.md)).
 
 [Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) (ladder 188–193) prices the
-channels the headline left out. Two are in the main case:
-- courts, police and prisons by use, **+$5.9bn** ($1.7bn if Mexican-origin offending equals the Hispanic average
-  as census codes record it);
-- the government part of uncompensated hospital care, **+$3.7–5.7bn**.
+channels the headline left out. Two are in the main case, which does not isolate what either adds:
+- courts, police and prisons charged by use; if Mexican-origin offending equals the Hispanic average as census
+  codes record it, the case is **$4.8bn lower** at both ends;
+- the government part of uncompensated hospital care, keyed to uninsured use.
 
 Beside the fiscal account, a **fiscal-plus-social total** adds other residents' social costs and benefits:
 **$489.0–570.7bn a year** at central values ($11.4–13.3k per member of the 42.75M lineage;
@@ -274,9 +274,10 @@ pension accrual, which no tax raises this year. The second generation
 costs other residents $150–178bn a year against a $252bn premium over being raised in Mexico. [FRAMING-SENSITIVE]
 
 Benefits are priced to the same standard as the costs (evidence-symmetry rule 5). The
-[care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md) (ladder 198) puts **$4.1bn a
-year** ($2.6–13.3bn) inside the fiscal account: native women's hours taxes of $2.7bn and an elder-care Medicaid
-saving of $1.5bn net. Cheaper services, worth $21.8bn to consumers, overlap the production gain without being
+[care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md) (ladder 198) puts **$4.15bn a
+year** ($2.60–13.35bn) inside the fiscal account in three channels: native women's hours taxes of $2.69bn, an
+elder-care Medicaid saving of $1.49bn net and a second-order output effect, with its taxes, of −$0.03bn.
+Cheaper services, worth $21.8bn to consumers, overlap the production gain without being
 reconciled with it, so they are neither added nor counted as included. The
 [construction lane](../infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md) (ladder 200) adds
 nothing: the group makes construction 0.75% cheaper, which trims other renters' extra rent from $33.5bn to $29.9bn a
@@ -878,6 +879,11 @@ is also on GitHub at origin/main 3791d32.
   the elasticity (its sketch chooses the component elasticities); the direct estimates carry the reading. The metro
   row's "all adverse" now names Riverside's interval, and the IR-5 parent range follows item T. Concept affected: the
   evidence on the production elasticity.
+- 2026-10-08 (live-case cleanup, with the FAQ): the real-costs paragraph's use-key and hospital-care increments,
+  measured on the September 23 case (+$5.9bn, $1.7bn at the Hispanic average, +$3.7–5.7bn), give way to the main
+  case's $4.8bn at the Hispanic average, since the main case isolates neither key; the care channels print at two
+  decimals so the parts add ($2.69bn + $1.49bn − $0.03bn = $4.15bn, was $4.1bn from $2.7bn and $1.5bn). Concept
+  affected: none.
 
 <!-- knowledge-index
 generated: 2026-09-29T07:51:14Z
