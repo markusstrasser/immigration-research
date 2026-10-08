@@ -1740,3 +1740,67 @@ working tree at 04:44:39–04:44:48 reads it, flags 0 and writes the same `memo_
   sweep at HEAD and the inputs check, the in-place run (04:40:24) and the byte comparison (04:40:39), all clean.
 - 2026-10-08 04:44:39–04:44:48 JST: a working-tree sweep over prop-c's uncommitted back-test memo, 0 flagged,
   `memo_sweep.csv` equal to derived/'s.
+
+## Round 4: the FAQ and the INDEX on the live case only, 2026-10-08
+
+claude-opus-5-5 (the lead; the passes are prop-a's, committed by the lead)
+
+The lead's briefs on 2026-10-08:
+- restate every earlier-case figure in the objections FAQ from an oct07/v6 file, or drop the number and keep its
+  point; print the care channels so the parts add; restate FAQ 4's production grid on the figures page's v6 span and
+  give entry 17 the main case's fill-in correction (774f1a2b);
+- the same for the INDEX's Core State (6eafcc56);
+- refresh derived/ in place.
+
+### Result
+
+| File | Tokens | Audited | MATCH | Years | Not quantities (`skip`) |
+|---|---:|---:|---:|---:|---:|
+| overview_2026_09_28/groups.py | 292 | 275 | 275 | 0 | 17 |
+| overview_2026_09_28/build.py | 16 | 12 | 12 | 0 | 4 |
+| overview_2026_09_28/template.html | 64 | 55 | 55 | 0 | 9 |
+| research/immigration-INDEX.md | 393 | 339 | 339 | 28 | 26 |
+| research/immigration-objections-faq-2026-09-21.md | 316 | 235 | 235 | 49 | 32 |
+| CLAUDE.md | 24 | 22 | 22 | 1 | 1 |
+| README.md | 7 | 5 | 5 | 2 | 0 |
+| research/immigration-real-fiscal-and-social-costs-2026-09-23.md | 84 | 71 | 71 | 3 | 10 |
+| research/immigration-adopted-account-by-generation-2026-09-25.md | 80 | 78 | 78 | 1 | 1 |
+| research/immigration-winners-and-losers-2026-09-25.md | 34 | 31 | 31 | 3 | 0 |
+| research/immigration-indian-origin-full-account-and-selection-2026-09-29.md | 69 | 65 | 65 | 2 | 2 |
+| Total | 1,379 | 1,188 | 1,188 | 89 | 102 |
+
+[CALCULATION: `audit_numbers.py` in place, 2026-10-08 10:28:07 JST, exit 0, byte-identical to the scratch run at
+10:26:39–10:27:20; table counted from derived/'s `extracted_numbers.csv` and `number_audit.csv`, a count that
+reproduces round 3's table at d999c099] No number is STALE, MISMATCH, CONTEXT-SHIFT or UNSOURCEABLE, and no map
+row is unused. Against round 3, net of 074e0b26, 21d3f611, 0115eaf2, a2fa31d0, 774f1a2b and 6eafcc56: the map's
+groups.py and template.html audit two numbers more each (the world finding's two readings, 21d3f611); the INDEX
+five fewer, the earlier-case sizes its Core State dropped; the FAQ five more, net of the figures it dropped and the
+care channels, the capital-return split, the fill-in correction and the $4.8bn it added. The map has 1,099 rows
+(1,101) and 191 bound placeholders (187).
+
+### Gates
+
+`refresh_inplace.sh … --write` on HEAD 6eafcc56, with the lane's files equal to HEAD's (2026-10-08 10:26:39–10:29:02
+JST). The files the gates hash did not change during the run.
+- `audit_numbers.py --out`: 1,188 MATCH of 1,188 audited (1,379 tokens);
+- `memo_sweep.py --worktree --out`: every control passes; 168 memos, 0 flagged;
+- `registry_check.py --out`: 173 records resolve; of the 11 bindings, 9 FIXED, 1 OK, 1 not on the page (the FAQ's
+  nest binding, whose figures 774f1a2b removed);
+- pytest on the lane: 8 passed. `ruff --select F,E9`: clean.
+
+Of the audit's 146 inputs, 142 equal their 6eafcc56 blobs, none is missing at HEAD and none differs; the other four are
+ignored files (the crime-cost CPI cache, the full account's service-response summary and the two `_T` ledger
+matches). The in-place run rewrote derived/'s seven files, and each equals the scratch run byte for byte (the sweep's
+at `--rev HEAD`).
+
+### Log
+
+- 2026-10-08 09:33:11 JST (commit time): the lead committed the figures page on v6 (6e30f5b8); FAQ 4's "$6–21bn … on
+  the survey's weights" became the audit's one MISMATCH against its v6 span, 5.62–19.05.
+- 2026-10-08 09:41 JST (prop-a's gates): FAQ 4 restated as $6–19bn; 1,189 of 1,189 MATCH.
+- 2026-10-08 10:03:41–10:04:01 JST: the lead's gates on prop-a's final FAQ tree: 1,192 of 1,192 MATCH, 0 of 168 memos
+  flagged, 8 passed; committed 774f1a2b at 10:04:42 and pushed.
+- 2026-10-08 10:25:51–10:26:14 JST: the lead's gates on prop-a's INDEX tree: 1,188 of 1,188 MATCH, 0 flagged, 8 passed;
+  committed 6eafcc56 at 10:26:23.
+- 2026-10-08 10:26:39–10:29:02 JST: `refresh_inplace.sh … --write`: gates to scratch, the sweep at HEAD and the inputs
+  check, the in-place run (10:28:07) and the byte comparison, all clean.

@@ -1,5 +1,5 @@
 {
- "rev": "e213b6ea",
+ "rev": "6eafcc56",
  "memos_read": 168,
  "memos_skipped": [
   "research/immigration-adversarial-audit-2026-09-28.md: a dated audit",
@@ -179,7 +179,7 @@
   "tally.corrected": 3,
   "victims.harm": 4
  },
- "registry_sha256": "818fcd8b9d13a836ead4cd14c04c498ffc47f4ec36eb625dfef3991eb2655eb1",
+ "registry_sha256": "3bc99c0ead39c89f5921d4113abf1c712b60cc65bfdddad3e7c32b1c6841055b",
  "registry_equals_rev": true,
  "rows_by_class": {
   "arm_labelled": 7,

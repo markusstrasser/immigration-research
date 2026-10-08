@@ -126,9 +126,13 @@ incidence.state_local_share,file,ends,%,68.5666 / 68.0465,68%,68–69%,69 / 68%,
 incidence.state_local_share_cash,file,ends,%,86.8282 / 81.5029,84%,82–87%,87 / 82%,paid|cash,
 quintile.bottom_fifth_cuts,file,scalar,%,14.7017,14.7%,14.7–14.7%,,,
 quintile.top_fifth_tax_share,file,scalar,%,62.1152,62%,62–62%,,,
-world.total_equal,file,scalar,$bn,321.143,$321bn,$321–321bn,,,
-world.breakeven_us,file,scalar,%,67.9349,68%,68–68%,,behind|break,
-world.breakeven_world,file,scalar,%,53.6527,54%,54–54%,,,
+world.reading1_total_equal,file,scalar,$bn,287.199,$287bn,$287–287bn,,equal,operator|\bR[12]\b
+world.reading1_breakeven_us,file,scalar,x,0.741045,0.74,0.74–0.74,,behind|break,operator|\bR[12]\b
+world.reading1_breakeven_world,file,scalar,x,0.547873,0.55,0.55–0.55,,behind|break,operator|\bR[12]\b
+world.reading2_total_equal,file,scalar,$bn,77.6058,$78bn,$78–78bn,,Mexican prices,operator|\bR[12]\b
+world.reading2_selection_pct,file,scalar,%,70,70%,70–70%,,out-earn|percentile|selection,operator|\bR[12]\b
+world.reading2_breakeven_us,file,scalar,x,1.01638,1.02,1.02–1.02,,behind|break,operator|\bR[12]\b
+world.reading2_breakeven_world,file,scalar,x,0.832434,0.83,0.83–0.83,,behind|break,operator|\bR[12]\b
 world.low_outer_lambda15,file,scalar,$bn,-31.2898,−$31.3bn,−$31.3–31.3bn,,,
 debt.stock,file,ends,$tn,0.984296 / 1.36616,$1.2tn,$1.0–1.4tn,$1.0 / $1.4tn,,
 debt.interest,file,ends,$bn,31.8233 / 44.1693,$38bn,$32–44bn,$32 / $44bn,interest,
