@@ -106,7 +106,7 @@
     </p>
 
     <p>
-      On the September 19 per-person ledger, with the income tax the survey misses, a budget modeller’s
+      On the per-person generation ledger, with the income tax the survey misses, a budget modeller’s
       settings leave everyone else {bn(hulls.practitioner[1])} to {bn(hulls.practitioner[0])} a year worse off,
       and every switch the design allows spans {bn(hulls.design[1])} to {bn(hulls.design[0])} worse off. That is
       a range of conventions, not a confidence interval, and a different object from the complete account.

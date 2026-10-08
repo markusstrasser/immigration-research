@@ -100,8 +100,8 @@
       The budget does not pay it, so it is not in the fiscal panels.
     </p>
     <p>
-      The fiscal cost here is the lane’s central {bn(byId.fiscal_a.totalBn)}, inside the main case. Which financing
-      rule applies is a value choice; both are shown (ladder 194).
+      The fiscal cost here is the who-pays analysis’s central figure, {bn(byId.fiscal_a.totalBn)}, inside the main
+      case’s range. Which financing rule applies is a value choice; both are shown (ladder 194).
     </p>
     <p>distribution_weights_2026_09_23/derived/oct07/channel_by_quintile.csv, measure spm.</p>
   </aside>

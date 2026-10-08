@@ -126,9 +126,9 @@
       across 432 scenarios.
     </p>
     <p>
-      Not in the grid: letting natives and immigrants be imperfect substitutes lowered the September 20
-      band by about $4–8bn at the elasticities the job data support, and it has not been rerun on this case
-      (FAQ 14). With every service budget frozen, the enterprises frozen with them and private capital not
+      Not in the grid: letting natives and immigrants be imperfect substitutes raises the gain from their
+      work, mostly through a transfer from other foreign-born residents to natives, and it has not been run
+      on the main case (FAQ 14). With every service budget frozen, the enterprises frozen with them and private capital not
       adjusting, everyone else ends between ${Math.round(-faq2[0])}bn worse off and ${Math.round(faq2[1])}bn better
       off (FAQ 2).
     </p>
