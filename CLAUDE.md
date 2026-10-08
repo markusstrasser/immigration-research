@@ -158,9 +158,9 @@ substituting a web summary or declaring a measurement unavailable:
   divide by. The CPS cannot see them, so a lane that re-keys the CPS either takes their cost from
   the case lane or covers the 39.71M union and says so (ladder 281).
 - The evidence map (`overview_2026_09_28/`), assumption explorer (`assumption_explorer_2026_09_21/`)
-  and figures page (`figures_2026_09_22/`) move to a new main case only when the operator asks. The
-  map has been on main case v6 since 2026-10-07, at his request; the explorer and the figures page
-  stay on earlier cases.
+  and figures page (`figures_2026_09_22/`) move to a new main case only when the operator asks. All
+  three are on main case v6, at his request: the map since 2026-10-07, the explorer and the figures
+  page since 2026-10-08. The figures page's unlinked prototypes stay on the September 24 account.
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
 - The headline's "CBO-informed" label covers CBO's tax-incidence rules and its category rule for
