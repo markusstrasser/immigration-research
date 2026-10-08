@@ -3,7 +3,7 @@
 [2026-10-08: taxes as the survey reports them. Comparisons against whites now take the main case's income-tax keys (item T in `ledger_absolute_2026_09_17`), which this lane does not carry; on them the white reference pays more income tax, and on that ledger the Mexican-origin gaps against whites widen by $0.9–1.3k per person.]
 
 `audit.py` independently reconstructs the CPS/MEPS baseline in commit
-`24e75ae` using group transforms and raw donor-cell means. It reuses the
+`f92c4ca` using group transforms and raw donor-cell means. It reuses the
 validated raw parsers, but neither the ledger allocator nor aggregate-gap
 generator. It reports absolute balances, benchmark gaps, child components,
 senior offsets and health sensitivity. The adult extensions and lunch

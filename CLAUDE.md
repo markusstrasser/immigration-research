@@ -45,6 +45,13 @@ All commits to main. No branches.
 
 Scopes: `[research]` (findings), `[analysis]` (data work), `[docs]` (index/notes), `[infra]` (tooling/config).
 
+History was rewritten on 2026-10-08 to purge personal files left over from the pre-split combined
+repo. Living docs (this file, INDEX, FAQ, register, lane READMEs) cite the new hashes. Code pins
+(`*_COMMIT`, `FREEZE`, `pins.json`), derived files and records keep the old ones, because derived
+bytes are fingerprinted. The local-only ref `refs/pre-rewrite/2026-10-08` keeps those commits
+resolvable here; it holds the purged files, so never push it or use `--mirror`. Resolve an old hash
+through `notes/2026-10-08-history-rewrite-commit-map.tsv` before calling a cited commit missing.
+
 Worktrees are temporary. Once a worktree's output is committed on main, remove it in the same
 session (`git worktree remove <path>`); `git worktree list` should show only main between
 sessions. A stale worktree keeps an old copy of this file and pre-integration drafts that a
@@ -91,7 +98,7 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
   (`infra/immigration-fiscal/number_drift_audit_2026_09_29/`; no MISMATCH or STALE). A new number
   in an audited span needs a `source_map.csv` row; without `--out` the audit rewrites its tracked `derived/`.
 - Python `csv.writer` defaults to CRLF; pass `lineterminator="\n"`. The repo stores LF
-  (`core.autocrlf=input`), so CRLF outputs never byte-match on rerun (cd96b04).
+  (`core.autocrlf=input`), so CRLF outputs never byte-match on rerun (e2476da).
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
   been state-priced since 2026-09-20, not national-average). The adopted case is one engine
   run plus a post-engine return on public capital:

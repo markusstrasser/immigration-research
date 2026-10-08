@@ -156,8 +156,8 @@ keyed spending is lower too, by about the same amount.
 | CPS race | edited or allocated for 36% of G1 and 32% of G2 (the CPS has no "some other race" answer) | none on the account; anything on `PRDTRACE` for Hispanics is contaminated | noted |
 | ACS 2020 race question | 5M native non-Hispanic whites moved from "white alone" to multiracial | <0.5% of per-person gaps | checked |
 | CPS parents' birthplace | no "unknown" code, so every blank is hot-decked: 5.4% of G2/G3+ adults vs 2.55% of the white reference | union ≈ 0 | checked |
-| 1990/2000 censuses | institution type not recorded; Rumbaut's "correctional" 2000 figures cover all institutions | FAQ 12, generation memo | corrected (7a44b69) |
-| 2000 census birthplace | US birthplace allocated to 98% of allocated inmates | 3.45× → 2.7–3.0× | corrected (f88a52b, e6bcf01) |
+| 1990/2000 censuses | institution type not recorded; Rumbaut's "correctional" 2000 figures cover all institutions | FAQ 12, generation memo | corrected (0245b8c) |
+| 2000 census birthplace | US birthplace allocated to 98% of allocated inmates | 3.45× → 2.7–3.0× | corrected (4f3c0bb, 37c0e29) |
 
 ## Memo claims corrected in this pass
 
@@ -219,5 +219,5 @@ measured or re-keyed them:
 - A state-aware status flag was added.
 
 Rows 2, 3, 13 and 4 are now read as one stack. The earlier text of this README is in git history
-(commit 0021ad4 and before).
+(commit c2c5ab4 and before).
 

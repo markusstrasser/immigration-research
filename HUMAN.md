@@ -25,7 +25,7 @@ the bottleneck is a BUILD, not more search.** Three things for you:
 ### B. Gated pulls that unblock the deepest tests (login-gated, you pull; loaders/specs ready)
 - **IPUMS-CPS** 2nd-gen extract → cluster-V V02 (loader `load_cps_second_gen.py` ready; uses PARENTAL
   birthplace, so it's already robust to the ethnic-attrition bias the sociology pass flagged).
-  consumed: 2026-09-29 — the same ask is repeated in the 2026-06-25 section below; its receipt (2026-09-22, extract staged, loader fixed in 0ef9f5a) covers this one — session 95a94bd8
+  consumed: 2026-09-29 — the same ask is repeated in the 2026-06-25 section below; its receipt (2026-09-22, extract staged, loader fixed in 1e62ca2) covers this one — session 95a94bd8
 - **openICPSR 120490** (Abramitzky mobility) → also the econ-disconfirmer pre-reg P2.
 - **WRLURI2018 + Geocorr2022 PUMA↔CBSA crosswalk** (one-time DL / on-demand generator) → the full urban
   panel beyond the 1/10 cut. Exact pointers + Geocorr query spec in `setup-urban-housing.sh` MANUAL_ACQUIRE.md.
@@ -39,7 +39,7 @@ Everything doable without you is done and committed. Four things need you:
 ### 1. Pull two gated extracts → unblocks the deepest open tests (HIGH value, LOW effort)
 Both are spec'd and the analysis code is already built + wired (skips until the data lands).
 - **IPUMS-CPS** (your IPUMS account) → unblocks the **V02 2nd-generation-by-origin** cultural-transmission test (the real cross-generational decay, which IPUMS-USA can't do). Exact extract recipe: `research/immigration-gated-data-specs-2026-06-25.md` §1. Stage the CSV at `<data_root>/external/cps/cps_2ndgen.csv`; `load_cps_second_gen.py` runs automatically on the next `build context`.
-  consumed: 2026-09-22 extract 1 staged at `external/cps/cps_2ndgen.csv.gz` (5,721,633 rows, ASEC 1994–2025) and the loader fixed for CPS 5-digit codes (0ef9f5a) — session 87fa457f
+  consumed: 2026-09-22 extract 1 staged at `external/cps/cps_2ndgen.csv.gz` (5,721,633 rows, ASEC 1994–2025) and the loader fixed for CPS 5-digit codes (1e62ca2) — session 87fa457f
 - **openICPSR 120490** (free login) → Abramitzky-Boustan immigrant intergenerational-mobility data (rank-rank by origin). Spec §3. File manifest is `[UNVERIFIED]` (the page 403s automated fetch) — open it in a browser.
 
 ### 2. Decide: build the housing/rent panel? — **SUPERSEDED by item A above (2026-06-25): now spec'd, Zillow acquired, ready to build.**
@@ -68,18 +68,18 @@ border-gateway split only ~10% (modest — CA is a high-cost border outlier).** 
 ## Open asks, 2026-09-21
 session: adae2b38-fa63-4fd0-b727-08c73975b287
 
-- **Push is blocked** by GitHub push protection on a false-positive AWS key ID in a974758 (`mr_archive_2026_09_18/derived/mr_posts.jsonl:597`, a 2016 presigned third-party URL; nothing to rotate). Choose: open the unblock link GitHub printed and mark it a false positive, or say "rewrite" (history rewrite was rehearsed in a scratch clone, not applied; main has advanced since, so it needs a fresh rehearsal).
-  consumed: 2026-09-29 a974758 — reached origin/main in the 2026-09-22 push (cbc44e3) with no history rewrite; nothing left to do — session 95a94bd8
+- **Push is blocked** by GitHub push protection on a false-positive AWS key ID in f427f43 (`mr_archive_2026_09_18/derived/mr_posts.jsonl:597`, a 2016 presigned third-party URL; nothing to rotate). Choose: open the unblock link GitHub printed and mark it a false positive, or say "rewrite" (history rewrite was rehearsed in a scratch clone, not applied; main has advanced since, so it needs a fresh rehearsal).
+  consumed: 2026-09-29 f427f43 — reached origin/main in the 2026-09-22 push (4d80e5a) with no history rewrite; nothing left to do — session 95a94bd8
 - **Pew 2017 Survey of US Muslims microdata** need a free Pew account (religion × nativity × income × attitudes; the only US religion-observed file we can get quickly).
   consumed: 2026-09-22 zip staged at `external/pew/Pew-2017-US-Muslims.zip`, lane `pew_muslims_2017_2026_09_22` (report reproduced within 0.5 points), ladder 177, Muslim memo §2a — session 87fa457f
 - **New Immigrant Survey 2003** public-use files (ICPSR 38031, 38061; free ICPSR login): religion with earnings for new green-card holders.
   consumed: 2026-09-22 ICPSR 38031 v3 staged at `external/icpsr_nis_2003/`, lane `nis2003_religion_earnings_2026_09_22` (19/26 anchors exact), ladder 179, Muslim memo §2b; 38061 (Round 2) not downloaded, visa class stays restricted — session 87fa457f
-- **Propose, not enacted (analysis protocol):** for a contested cross-unit test, commit the lane README with outcomes, models and decision rule before downloading the predictors, and record deviations in RESULT.md. Done once in `admission_route_2026_09_21` (6df195d); worth making the rule?
+- **Propose, not enacted (analysis protocol):** for a contested cross-unit test, commit the lane README with outcomes, models and decision rule before downloading the predictors, and record deviations in RESULT.md. Done once in `admission_route_2026_09_21` (524291c); worth making the rule?
 
 ## Open asks, 2026-09-30
 session: 95a94bd8-dcdc-4501-bb8e-5f9906dddc53
 
 - **Row-4 consistency revision (recommend: yes, next session, as one set).** Five v4 items are summed on the survey's published 40.9M weights instead of the 39.71M the account prices: owner-occupied property (+$0.34bn), the Part A accrual (−$1.03bn), the benefit-tax receipt (−$0.03bn), state pricing's indexes (+$0.37bn) and the OASDI accrual ratio (+$0.15bn). Together the case moves to $371.2–434.6bn (headline still $371–435bn) and the cash set to $295.4–362.5bn. The social channels beside the account (housing, congestion, care, victims, scale, mobility) are also on 40.9M, about $1.3bn in the winners and world lanes. Evidence: `infra/immigration-fiscal/row4_class_2026_09_29/`. Recorded, not applied.
-  candidate built 2026-09-30: `infra/immigration-fiscal/main_case_candidate_v41_2026_09_30/` (46cd2c82, 44 gates); adoption needs a new adopted lane, the 15 consumer lanes and the docs, listed in its RESULT.
+  candidate built 2026-09-30: `infra/immigration-fiscal/main_case_candidate_v41_2026_09_30/` (1bbeae94, 44 gates); adoption needs a new adopted lane, the 15 consumer lanes and the docs, listed in its RESULT.
 - **Evidence map to v4 (recommend: yes).** It still states the September 27 claims: C2 "taxes cover benefits" is false on v4 (the group's taxes fall $3.4–12.6bn short of its household transfers with pensions on accrual), C1 says $355bn (v4 midpoint $403bn) and C5 85% (v4 68%). Evidence: `infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md`, section "v4 case (sept29)".
-- **Push (recommend: yes).** main is about 50 commits ahead of origin/main (3791d32), including the peer session's Indian-origin lanes; keyscan clean on every commit this session.
+- **Push (recommend: yes).** main is about 50 commits ahead of origin/main (01e7d0b), including the peer session's Indian-origin lanes; keyscan clean on every commit this session.

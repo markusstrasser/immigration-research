@@ -55,7 +55,7 @@ Since the second decision of 2026-09-26 the default run (`--case sept26_schools`
 main case with schools at full average cost (`*_schools_full_*` concepts, from
 `main_case_schools_full_2026_09_26/`, gated to start from the `*_sept26_*` band and receipts). Each case
 is one entry in `LATER_CASES`. `--case sept26` and `--case sept24` with `--out-dir DIR` reproduce
-f5b4aae and da2b107 byte for byte (`test_backcast.py`). The whole-budget rules give $2.2432–2.8382tn over 2015–2024 on the schools case, against $1.7316–2.4271tn in the one-year scenario.
+9d34d09 and 68f93d6 byte for byte (`test_backcast.py`). The whole-budget rules give $2.2432–2.8382tn over 2015–2024 on the schools case, against $1.7316–2.4271tn in the one-year scenario.
 
 Since 2026-09-27 the default run (`--case sept27`) also carries back the main case of that day
 (`*_sept27_*` concepts, from `main_case_long_run_2026_09_27/`). Run `node case_components.cjs` first. It
@@ -72,11 +72,11 @@ case's receipts. Each addition follows its own national series times the group's
 The flat rule holds every part per person. `derived/case_parts_windows.csv` gives each part's window sums,
 `derived/case_parts_annual.csv` each part by year (read by `debt_legacy_2026_09_23`, which compounds the
 cash part only).
-The capital return is an imputed resource cost, not a payment. `--case sept26_schools` reproduces c0297e4.
+The capital return is an imputed resource cost, not a payment. `--case sept26_schools` reproduces c1fcb27.
 
 ## v4 case (sept29), 2026-09-29
 
-`--case sept29` carries back the adopted v4 main case (`main_case_2026_09_29/`, commit 40c4ba7) as the
+`--case sept29` carries back the adopted v4 main case (`main_case_2026_09_29/`, commit dd3a37e) as the
 `*_sept29_*` concepts. It writes `derived/sept29/`: `backcast_annual.csv`, `backcast_windows.csv`,
 `case_parts_annual.csv` and `case_parts_windows.csv`, with the default's names. The default stays `--case sept27`,
 and its files did not move. Run `node case_components.cjs --case sept29` first; it writes
@@ -340,14 +340,14 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/histo
 
 Log (append-only; times from `date`; claude-opus-5-5, teammate prop-b of the v6 consumer lanes):
 - 2026-10-07 14:59:58–15:01:01 JST: `case_components.cjs --case oct07` (54 gates) and `backcast.py --case oct07`
-  written on the adopted payload (case lane 218a2fb2; corrections.json f8d346aa…, summary.json 54709259…).
+  written on the adopted payload (case lane 65b05e33; corrections.json f8d346aa…, summary.json 54709259…).
   `derived/oct07/` is byte-identical to the development run on the candidate payload, whose edits and bands were the
   same.
 - 15:01:01: pytest started, 12 passed in 58 s. 15:05:40–15:06:10: `rerun_lane.py` over the ten commands, IDENTICAL
   32/32, exit 0. Not committed (the lead's brief).
 - 15:13:19–15:14:28: the eight case-lane hashes recorded in `derived/case_components_oct07.json` (corrections.json f8d346aa…,
   corrections_cash.json e9033bff…, summary.json 54709259…, main_case_bands.csv, package.cjs, item_age_mix.cjs and both
-  lineage payloads) are the committed files' (218a2fb2); no rerun needed.
+  lineage payloads) are the committed files' (65b05e33); no rerun needed.
 - 2026-10-08 02:07:12–02:14:41 JST (claude-opus-5-5, teammate prop-a, the lead's brief): `per_lineage_member()` for
   `--case oct07`. A scratch build at 02:09:55 kept `backcast_windows.csv` and both parts files byte-identical. Its
   `backcast_annual.csv` kept all 117 columns as they were and added the five above.

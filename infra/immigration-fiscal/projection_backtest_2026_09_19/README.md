@@ -93,8 +93,8 @@ lineage inputs builder and education manifest now accompany the raw/export hashe
 
 ## Revisions
 
-- **2026-09-28 (296991d): births need a living parent.** Moved here from the method text on 2026-10-08. Births
-  now need a parent alive at 29, as in the lineage lane since 4e9c2e2 (conceptual audit 2026-09-27 §E). All 96 rows
+- **2026-09-28 (2e89809): births need a living parent.** Moved here from the method text on 2026-10-08. Births
+  now need a parent alive at 29, as in the lineage lane since 38c85b5 (conceptual audit 2026-09-27 §E). All 96 rows
   of `lineage_return_migration.csv` move. The no-exit lineage NPV at 100 intervals goes from −$1,150,003 to
   −$1,140,296 at 0%, −$318,370 to −$316,023 at 3% and −$185,766 to −$184,507 at 5%; at 101 intervals, from
   −$1,166,640, −$319,236 and −$185,893 to −$1,156,487, −$316,866 and −$184,630. Where dependent children leave (exit
@@ -102,7 +102,7 @@ lineage inputs builder and education manifest now accompany the raw/export hashe
   $64,810–79,152 (was $65,413–79,755). Founder-only gains and every other output are unchanged [CALCULATION:
   `derived/` before and after]. A second run matched 21 of 21 files and the unit tests pass. The rebuild also
   refreshed provenance that had drifted before this change: four upstream fingerprints, this lane's `builder.py`
-  hash (97e1470) and the microdata path, which now resolves under `sources/` with the same hash.
+  hash (3c04a62) and the microdata path, which now resolves under `sources/` with the same hash.
 - **2026-10-08: item T.** `sensitivities.py` now passes the ledger's income-tax keys to `build_charges`; without them
   it stopped with a KeyError once item T (the income tax on the main case's keys, `ledger_absolute_2026_09_17`) joined the ledger. The
   ignored `derived/` was not regenerated: `builder.py` also reruns the IPUMS cohort check, which loads 8.66M records

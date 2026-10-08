@@ -2,7 +2,7 @@
 
 These probes support [the audit memo](../../../research/immigration-conceptual-audit-2026-09-27.md).
 They read model/data inputs and print JSON; they do not rewrite audited lanes.
-The fiscal integration was committed as `f3031ab` during this audit. The world-ledger
+The fiscal integration was committed as `e7e31a2` during this audit. The world-ledger
 and propagation briefs are specifications, not completed world or debt estimates.
 
 From the repository root:
@@ -81,8 +81,8 @@ UV_CACHE_DIR=/private/tmp/immigration-audit-uv-cache OPENBLAS_NUM_THREADS=1 uv r
   within the existing all-births-at-29 convention, not a full fertility projection.
   Timing holds the naturalization and petition probabilities fixed. No new
   empirical hazard is estimated.
-  [2026-09-28: §E fixed in 4e9c2e2. The audit is a snapshot, so the probe now
-  imports the lineage lane's `inputs.py` and `lineage.py` as audited (a72fd62),
+  [2026-09-28: §E fixed in 38c85b5. The audit is a snapshot, so the probe now
+  imports the lineage lane's `inputs.py` and `lineage.py` as audited (9d10b28),
   written from git to `_cache/`, and still finds the original gap of −$1,297,150.
   One added check confirms that the lane as it stands gives the survival-weighted
   gap, −$1,288,162.18 at 0% (difference −2.3e-10) [CALCULATION: probe run, rc 0].]

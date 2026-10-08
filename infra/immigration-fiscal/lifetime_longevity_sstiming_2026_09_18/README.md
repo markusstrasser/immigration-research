@@ -33,7 +33,7 @@ frame at `derived/cps_ss_stage.parquet`; later runs reuse it. Delete that file t
 
 Longevity was priced once before on the **partial** ledger with the **CDC 2021** tables:
 `research/immigration-mexican-origin-by-generation-2026-09-16.md` section 5.1, built by
-`../cps_generation_welfare_2026_09_16/lifecycle_ledger_by_generation.py` (commit `1dc8b8e`,
+`../cps_generation_welfare_2026_09_16/lifecycle_ledger_by_generation.py` (commit `a583912`,
 output `lifecycle_ledger_result.txt`). It found the mortality-table swap worth about $20,000
 undiscounted, roughly 5% of a $375,000 lifetime gap. This lane takes that as the prior result
 and adds what was missing: the same swap on the **complete** all-age account (ladder 130) with

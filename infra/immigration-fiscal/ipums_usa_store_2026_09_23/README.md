@@ -155,7 +155,7 @@ also stops the run instead of being overwritten.
 ## Limits and traps
 
 - **The Borjas loader is pinned.** `build/load_ipums_borjas_panel.py` resolves `usa_00002.csv.gz`
-  by exact name since 4767db7. Before that it loaded the last-sorting `usa_*.csv.gz` in
+  by exact name since 705acd8. Before that it loaded the last-sorting `usa_*.csv.gz` in
   `usa_extract/`, and the slugged names would have made it load extract 15.
 - **Views hold absolute Parquet paths.** After moving the repository, re-run
   `organize.py duckdb joins catalog`.
