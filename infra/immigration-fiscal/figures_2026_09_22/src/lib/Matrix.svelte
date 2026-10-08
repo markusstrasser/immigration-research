@@ -2,17 +2,27 @@
   import fig from '../generated/figures.json'
 
   const m = fig.matrix
+  const acc = fig.account
   const mid = (r) => (r[0] + r[1]) / 2
-  // Rows sorted by cost at the adopted low end of general administration.
+  // Rows sorted by cost at the case's low end of general administration.
   const rows = m.rows.slice().sort((a, b) => mid(a.cells[1].inner) - mid(b.cells[1].inner))
-  const isMain = (r) => r.schools === 'cbo' && r.colleges === 1 && r.delayed === 0 && !r.frozen
+  const isMain = (r) => !r.frozen && r.schools === 1 && r.colleges === 1 && r.roads === 'long_run'
   const columns = m.columns
 
-  const costs = m.rows.filter((r) => !r.frozen).flatMap((r) => r.cells.flatMap((c) => c.outer))
-  const frozen = m.rows.find((r) => r.frozen).cells.flatMap((c) => c.outer)
+  const services = m.rows.filter((r) => !r.frozen)
+  const costs = services.flatMap((r) => r.cells.flatMap((c) => c.outer))
   const costSpan = [Math.min(...costs), Math.max(...costs)].map(Math.round)
-  const gainSpan = [-Math.max(...frozen), -Math.min(...frozen)].map(Math.round)
-  const cellCount = m.rows.filter((r) => !r.frozen).length * columns.length
+  // The frozen row (build_data.cjs checks the signs these sentences state): worse off at the case's general
+  // administration, better off only with administration fixed too.
+  const frozen = m.rows.find((r) => r.frozen).cells
+  const frozenCase = [frozen[1].inner[0], frozen[2].inner[1]].map(Math.round)
+  const frozenFixed = frozen[0].inner.map((v) => Math.round(-v)).sort((a, b) => a - b)
+  const cellCount = services.length * columns.length
+  // FAQ 2's frozen services: the enterprises frozen with them and private capital fixed (welfare: negative = cost).
+  const faq2 = acc.breakEven.frozenCapitalFixed
+  const roads = acc.longRun.roads.map((v) => v.toFixed(2))
+  const parks = acc.longRun.parks.map((v) => (v === 1 ? '1' : v.toFixed(2)))
+  const rates = acc.rates.map((r) => Math.round(100 * r))
 
   // Pastel heat, hue for the sign: paper to terracotta where everyone else is worse off, paper to
   // blue where better off, ochre where a cell's own range crosses zero.
@@ -24,7 +34,7 @@
     if (r[0] < 0 && r[1] > 0) return '#ecdcae'
     const v = mid(r)
     if (v < 0) return hex(mix(GAIN[0], GAIN[1], Math.min(1, -v / 100)))
-    const t = Math.min(1, v / 360)
+    const t = Math.min(1, v / 480)
     return t < 0.5 ? hex(mix(COST[0], COST[1], t / 0.5)) : hex(mix(COST[1], COST[2], (t - 0.5) / 0.5))
   }
   // Magnitudes only, smaller first: the cell's colour and the legend carry the direction.
@@ -34,7 +44,8 @@
     const [p, q] = [Math.abs(a), Math.abs(b)].sort((m, n) => m - n)
     return p === q ? String(p) : `${p}–${q}`
   }
-  const level = (v) => (v === 'cbo' ? '63–66%' : v === 1 ? 'full' : 'fixed')
+  const level = (v) => (v === 'cbo' ? '63–66%' : v === 1 || v === 'full' ? 'full' : v === 'long_run' ? 'long run' : 'fixed')
+  const off = (v) => v === 0 || v === 'fixed'
   const colLabel = (g) => (g === 0 ? '0' : g === 1 ? '1' : g.toFixed(2))
 </script>
 
@@ -44,10 +55,12 @@
     <h2>Every combination that charges for services leaves everyone else worse off</h2>
     <p class="lede">
       Four budget choices on the left, general administration across the top. All
-      <span class="num">{cellCount}</span> combinations leave everyone else
+      <span class="num">{cellCount}</span> combinations that charge for services leave everyone else
       <span class="num">${costSpan[0]}–{costSpan[1]}bn</span> a year worse off, whatever the tax-incidence rule,
-      the justice and hospital-care keys or the production model. Only freezing every service budget leaves
-      them better off, by <span class="num">${gainSpan[0]}–{gainSpan[1]}bn</span>.
+      the justice and hospital-care keys or the production model. With every service budget frozen, everyone
+      else is still <span class="num">${frozenCase[0]}–{frozenCase[1]}bn</span> worse off at the case’s general
+      administration; only with administration fixed as well do they come out ahead, by
+      <span class="num">${frozenFixed[0]}–{frozenFixed[1]}bn</span>.
     </p>
 
     <div class="scroll">
@@ -70,10 +83,10 @@
         <tbody>
           {#each rows as r}
             <tr class:main={isMain(r)} class:frozen={r.frozen}>
-              <td class="ind" class:off={r.schools === 0}>{level(r.schools)}</td>
-              <td class="ind" class:off={r.colleges === 0}>{level(r.colleges)}</td>
+              <td class="ind" class:off={off(r.schools)}>{level(r.schools)}</td>
+              <td class="ind" class:off={off(r.colleges)}>{level(r.colleges)}</td>
               <td class="ind" class:off={r.frozen}>{r.frozen ? 'fixed' : 'full'}</td>
-              <td class="ind" class:off={r.delayed === 0}>{level(r.delayed)}</td>
+              <td class="ind" class:off={off(r.roads)}>{level(r.roads)}</td>
               {#each r.cells as c, j}
                 <td class="cell" class:adopted={isMain(r) && (j === 1 || j === 2)} style="background:{heat(c.inner)}">
                   <span class="v num">{fmt(c.inner)}</span>
@@ -86,32 +99,40 @@
       </table>
     </div>
     <p class="note">
-      $bn a year for everyone else: orange cells worse off by that much, blue cells (every
-      budget fixed) better off. Large figure: the account’s own open choices. Small figure: every
+      $bn a year for everyone else: orange cells worse off by that much, blue better off, ochre where a
+      range runs from one to the other. Large figure: the case’s own open choices. Small figure: every
       executed alternative as well. Outlined: the main case,
-      <span class="num">${Math.round(fig.account.main[0])}–{Math.round(fig.account.main[1])}bn</span> worse off.
+      <span class="num">${Math.round(acc.main[0])}–{Math.round(acc.main[1])}bn</span> worse off.
     </p>
   </div>
 
   <aside class="side">
     <p>
-      “Full” means the budget grows one for one with the population; “fixed” means not at all; schools
-      at 63–66% follow CBO’s enrollment coefficients. Police, courts and prisons are charged by use in
-      every row, and uninsured hospital care by uninsured use.
+      “Full” means the budget grows one for one with the population; “fixed” means not at all. Schools at
+      63–66% follow CBO’s enrollment coefficients; the main case charges them in full. “Long run” is the
+      case’s response as budgets adjust over decades: {roads[0]}–{roads[1]} for roads and transport,
+      {parks[0]}–{parks[1]} for parks. Police, courts and prisons are charged by use in every row, and unpaid
+      hospital care by uninsured use.
+    </p>
+    <p>
+      In every cell, rental assistance grows with the population; care work, shelter and the audit
+      corrections count in full; property taxes take their long-run response; public enterprises’ losses
+      count; and public capital earns {rates[0]}–{rates[1]}%. The frozen row freezes the service budgets alone.
     </p>
     <p>
       The small figure adds all {m.receipts.length} executed tax-incidence rules, the
       {m.justiceKeys.length} justice keys, the {m.ucKeys.length} hospital-care keys and the production
       grid with private capital adjusted: a gain of ${m.productionSpan[0].toFixed(0)}–{m.productionSpan[1].toFixed(0)}bn
-      across 432 scenarios. The data corrections are measured on CBO’s incidence rules; each other
-      rule takes the same proportional change to the group’s share of each tax.
+      across 432 scenarios.
     </p>
     <p>
-      Not in the grid: letting natives and immigrants be imperfect substitutes would lower every cell by
-      about $4–8bn at the elasticity the job data support (FAQ 14). With private capital also held
-      fixed, the frozen row runs from a gain to a cost (FAQ 2).
+      Not in the grid: letting natives and immigrants be imperfect substitutes lowered the September 20
+      band by about $4–8bn at the elasticities the job data support, and it has not been rerun on this case
+      (FAQ 14). With every service budget frozen, the enterprises frozen with them and private capital not
+      adjusting, everyone else ends between ${Math.round(-faq2[0])}bn worse off and ${Math.round(faq2[1])}bn better
+      off (FAQ 2).
     </p>
-    <p>build_data.cjs; three rows reproduce main_case_bands.csv exactly.</p>
+    <p>build_data.cjs; five cells reproduce main_case_bands.csv and summary.json exactly.</p>
   </aside>
 </section>
 

@@ -1,0 +1,213 @@
+{
+ "generatedBy": "proto/staircase.cjs",
+ "staircase": [
+  {
+   "id": "tally",
+   "label": "Taxes paid minus benefits received",
+   "note": "no services, no gain from their work",
+   "main": false,
+   "beyond": false,
+   "total": [
+    -70.0777,
+    -60.2531
+   ],
+   "step": null
+  },
+  {
+   "id": "production",
+   "label": "Gain from their work",
+   "note": "wages, profits and the taxes on them",
+   "main": false,
+   "beyond": false,
+   "total": [
+    -83.4002,
+    -69.0437
+   ],
+   "step": [
+    -13.3226,
+    -8.7906
+   ]
+  },
+  {
+   "id": "uc",
+   "label": "Unpaid hospital care",
+   "note": "keyed to uninsured use",
+   "main": false,
+   "beyond": false,
+   "total": [
+    -79.7487,
+    -63.2961
+   ],
+   "step": [
+    3.6516,
+    5.7476
+   ]
+  },
+  {
+   "id": "schools",
+   "label": "Schools, 63–66% of per-pupil cost",
+   "note": "from CBO’s coefficients",
+   "main": false,
+   "beyond": false,
+   "total": [
+    7.3927,
+    50.6597
+   ],
+   "step": [
+    87.1414,
+    113.9558
+   ]
+  },
+  {
+   "id": "colleges",
+   "label": "Colleges and other education",
+   "note": null,
+   "main": false,
+   "beyond": false,
+   "total": [
+    51.7187,
+    87.7363
+   ],
+   "step": [
+    26.0732,
+    56.8121
+   ]
+  },
+  {
+   "id": "police",
+   "label": "Police, courts and prisons",
+   "note": "charged by use",
+   "main": false,
+   "beyond": false,
+   "total": [
+    120.0877,
+    156.1053
+   ],
+   "step": [
+    68.369,
+    68.369
+   ]
+  },
+  {
+   "id": "health",
+   "label": "Public health services",
+   "note": null,
+   "main": false,
+   "beyond": false,
+   "total": [
+    143.6227,
+    179.6403
+   ],
+   "step": [
+    23.535,
+    23.535
+   ]
+  },
+  {
+   "id": "other",
+   "label": "Welfare administration, housing, community",
+   "note": null,
+   "main": false,
+   "beyond": false,
+   "total": [
+    174.7152,
+    209.0753
+   ],
+   "step": [
+    29.435,
+    31.0925
+   ]
+  },
+  {
+   "id": "gg",
+   "label": "General administration, 0.59–0.84",
+   "note": "cross-state scale of administration",
+   "main": false,
+   "beyond": false,
+   "total": [
+    203.207,
+    249.64
+   ],
+   "step": [
+    28.4918,
+    40.5647
+   ]
+  },
+  {
+   "id": "taxes",
+   "label": "Data corrections: taxes",
+   "note": "legal status, survey fill-ins, CBO’s income shares",
+   "main": false,
+   "beyond": false,
+   "total": [
+    251.914,
+    299.8997
+   ],
+   "step": [
+    48.707,
+    50.2597
+   ]
+  },
+  {
+   "id": "benefits",
+   "label": "Data corrections: benefits, services",
+   "note": "credits, medical care, schools, care work",
+   "main": true,
+   "beyond": false,
+   "total": [
+    200.8752,
+    246.3184
+   ],
+   "step": [
+    -53.5813,
+    -51.0239
+   ]
+  },
+  {
+   "id": "delayed",
+   "label": "Roads, transport, parks and culture",
+   "note": "held fixed in the main case",
+   "main": false,
+   "beyond": true,
+   "total": [
+    241.6781,
+    287.1213
+   ],
+   "step": [
+    40.8029,
+    40.8029
+   ]
+  },
+  {
+   "id": "schools_full",
+   "label": "Schools at the full per-pupil cost",
+   "note": null,
+   "main": false,
+   "beyond": true,
+   "total": [
+    302.972,
+    336.4219
+   ],
+   "step": [
+    47.1684,
+    63.8157
+   ]
+  }
+ ],
+ "account": {
+  "breakEven": [
+   0.0476,
+   0.1602
+  ],
+  "bySide": {
+   "receipts": [
+    48.70699505000786,
+    50.259748317502186
+   ],
+   "spending": [
+    -51.03880965822202,
+    -53.58126795863282
+   ]
+  }
+ }
+}

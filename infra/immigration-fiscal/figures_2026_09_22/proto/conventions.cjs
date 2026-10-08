@@ -1,7 +1,7 @@
 /* Prototype data: the number line of accounting conventions.
  *
  * Every preset of the assumption explorer (assumption_explorer_2026_09_21/presets.json, pinned at
- * d710a74 by account.cjs), evaluated as the explorer and test_engine.js loaded it: the cost to other
+ * d710a74 by account_sept24.cjs), evaluated as the explorer and test_engine.js loaded it: the cost to other
  * US residents over the preset's unresolved dimensions. The presets are conventions, never people;
  * commentators appear only as the explorer's text (presets.json "authors"), which says which
  * convention comes closest to a framing and why it is not the same thing. Beside them, from the figures page's matrix: the span of every
@@ -54,7 +54,7 @@ function build(A) {
   by.repo_central_gg.outer = [round(Number(adopted.range_low_bn), 2), round(Number(adopted.range_high_bn), 2)];
 
   // The figures page's matrix: every combination that lets a service budget grow, and the frozen row.
-  const figures = JSON.parse(A.fs.readFileSync(A.path.join(A.HERE, "src", "generated", "figures.json"), "utf8"));
+  const figures = JSON.parse(A.pinned("page", A.path.join(A.HERE, "src", "generated", "figures.json")));
   const cells = (pred) => figures.matrix.rows.filter(pred).flatMap((r) => r.cells.map((c) => c.outer));
   const growing = cells((r) => !r.frozen), frozen = cells((r) => r.frozen);
   const env = (xs) => [round(Math.min(...xs.map((c) => c[0])), 1), round(Math.max(...xs.map((c) => c[1])), 1)];

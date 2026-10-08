@@ -5,10 +5,10 @@ marks only, sources in the margin. Each figure stays inside one account and name
 
 Figures: the tally-to-bill staircase; every combination of service responses and general
 administration; age weights; generations; schooling and birthplace; places; who pays by income
-fifth; net per person by income percentile; offending against two reference groups. The
-September 20 programme paths, the back-cast chart, the arrival-schooling panel, the India
-decomposition and the ledger-convention chart were retired to sentences with inline sparklines
-(last section).
+fifth, with capped aid beside the fiscal cost; net per person by income percentile; offending against
+two reference groups. The September 20 programme paths, the back-cast chart, the arrival-schooling
+panel, the India decomposition and the ledger-convention chart were retired to sentences with inline
+sparklines (last section).
 
 ## Visual grammar
 
@@ -32,25 +32,41 @@ visual grammar ... what's negative / positive").
 
 ## Data
 
-- `build_data.cjs` writes `src/generated/figures.json`. The staircase and the matrix run the
-  explorer’s evaluator (`../assumption_explorer_2026_09_21/engine.js`, gated by its
-  `test_engine.js`) on its executed model and on that model with the data corrections adopted on
-  2026-09-24 (`../main_case_2026_09_24/package.cjs`), one evaluation per step or cell. The
-  staircase adds the corrections as its last two main-case rows (taxes, then benefits and
-  services); the matrix runs on the corrected model, with the tax corrections carried to each
-  incidence rule as the same proportional change. Who pays, crime, birthplace and the back-cast
-  series and windows (the corrected concept) are read from the lanes’ CSVs. Who pays and the
-  back-cast are read as they stood on the September 24 case, pinned by commit in `account.cjs`
-  (`PINS`: distribution 6e554a3, back-cast da2b107; the prototypes’ explorer presets d710a74). The
-  lanes move with each main case, and the pages stay on September 24 until the operator asks. The gates reproduce
-  `main_case_2026_09_24/derived/main_case_bands.csv` (the case before the corrections, the adopted
-  case and its non-school-fixed and proportional bands) and its receipts-side change, the
-  explorer’s taxes-minus-benefits card, the $6–21bn production grid, ladder 194’s −$80.7bn /
-  +$46.0bn, the percentile table summing to its quintile table, the NIBRS murder and robbery
-  ratios, the origin screen’s Mexico and India rows and the back-cast’s 2024 anchor. Nothing is written if a gate fails. Re-run it after any upstream lane
-  changes.
-- `src/data.js` holds numbers copied from the executed tables named beside each export; move an
-  array into `build_data.cjs` whenever its figure is touched.
+- `build_data.cjs` writes `src/generated/figures.json`, and only when every gate passes. The page shows the
+  live main case only: v6, adopted 2026-10-07 (`../../../decisions/2026-10-07-main-case-v6.md`).
+- The staircase and the matrix run v6 through its package (`account.cjs` loads
+  `../main_case_2026_10_07/package.cjs` on the case's payload model): one `evaluateFull` per step or cell and
+  specification, on a copy of the case's specification with that step's or cell's responses, so the
+  engine, the case's added lines and its return on public capital run as the case runs them. The payload
+  (`main_case_2026_10_07/derived/corrections.json`, `corrections_cash.json`, `summary.json`) is pinned by
+  sha256 in `account.cjs` (`PAYLOAD`); the case's choices must reproduce the case at every specification.
+- The other figures read lane files: who pays and the percentiles (`distribution_weights_2026_09_23`,
+  `derived/oct07/`) and the back-cast (`historical_backcast_2026_09_20`, `derived/oct07/`) as they stood
+  on v6, pinned by commit in `account.cjs` (`PINS`: distribution 498a6a71, back-cast 55a8fff7); the
+  white-reference ledger with item T, the income tax the survey misses (`ledger_absolute_2026_09_17`,
+  with its lifetime values and the case's own generation split from `generation_account_2026_09_24`);
+  places with item T (`ledger_stress_2026_09_17`, `metro_match_2026_09_17`, the `*_T.csv` files); crime,
+  custody and victims' harm; the origin screen and the schooling comparisons with item T; and the
+  sentences' inputs. Several of these are ignored files: `figures.json` lists every input with its commit
+  or `worktree`, whether git tracks it, and the sha256 of the text read (CRLF read as LF).
+- The gates reproduce the case's files (the band, the cash set, the case without its capital return,
+  the colleges-fixed, roads-fixed, general-administration-fixed and proportional bands, the C2 tally on
+  accrual and on cash, `sign_reversal.csv`'s oct07 columns) and every published figure the page prints
+  (ladder 194's −$80.3bn / +$45.4bn, the percentiles summing to the quintiles, NIBRS murder and robbery
+  ratios, the custody ratios, the origin screen's Mexico and India rows, the item T places, the FAQ 5
+  generation gaps and lifetime values, the back-cast's 2024 anchor and per-member figures). A last block
+  checks each claim the text makes in words, so a rebuild that would leave a sentence false stops.
+- No figure types its numbers in: `src/data.js` is gone.
+- The research lanes move with each main case; the page moves when the operator asks. Re-run
+  `node build_data.cjs` after an upstream lane changes on the live case.
+
+## Prototypes
+
+`prototypes.html` and `proto/` stay on the September 24 case until the operator asks to move them.
+`proto_data.cjs` runs them on `account_sept24.cjs`, the account this page ran on until 2026-10-08. Their
+gates against the figures page read `build_data.cjs` and `figures.json` as they stood on that case
+(`account_sept24.cjs` `PINS.page`, fef4d12b; its figures.json is 57b48186's), and the prototypes page opens
+with that page's staircase (`proto/staircase.cjs`, `src/proto/Staircase.svelte`).
 
 ## Run
 

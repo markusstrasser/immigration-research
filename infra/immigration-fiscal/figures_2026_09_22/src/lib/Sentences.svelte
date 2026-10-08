@@ -1,14 +1,15 @@
 <script>
   import fig from '../generated/figures.json'
-  import { schooling, fiscalWindows, incomeRatios, kitagawa, hulls, programmes, programmeYears } from '../data.js'
+
+  const { backcast, backcastWindows: w, schooling, fiscalWindows, incomeRatios, kitagawa, hulls, programmes, programmeYears } =
+    fig.sentences
 
   const tn = (r) => `$${r[0].toFixed(1)}–${r[1].toFixed(1)}tn`
-  const w = fig.backcastWindows
-  const backcast = fig.backcast
+  const dollars = (r) => `$${r.map((v) => Math.round(v).toLocaleString('en-US')).join('–')}`
 
   // Back-cast band, 2005–2023 modelled, 2024 measured.
   const bx = (year) => 3 + ((year - 2005) / 19) * 94
-  const by = (v) => 23 - (v / 400) * 20
+  const by = (v) => 23 - (v / 500) * 20
   const model = backcast.filter((d) => d.year < 2024)
   const band = [...model.map((d) => `${bx(d.year)},${by(d.hi)}`), ...model.map((d) => `${bx(d.year)},${by(d.lo)}`).reverse()].join(' ')
   const last = backcast.at(-1)
@@ -46,8 +47,7 @@
   const perCap = ratio(incomeRatios.perCapita)
   const household = ratio(incomeRatios.household)
 
-  const india = kitagawa[0]
-  const recent = kitagawa[2]
+  const india = kitagawa.india
   // Magnitudes; the sentence carries the direction. The hulls are the group's balance, negative
   // (everyone else worse off); the arrival windows are gaps below whites.
   const bn = (v) => '$' + Math.abs(Math.round(v)) + 'bn'
@@ -66,8 +66,10 @@
         <circle cx={bx(2024)} cy={by((last.lo + last.hi) / 2)} r="2.2" fill="#ca7a5e" />
       </svg>
       {tn(w.ten)} worse off over ten years, {tn(w.fifteen)} over fifteen and {tn(w.twenty)} over twenty, in
-      2024 dollars and before interest. Only 2024 is measured. The pandemic years are probably
-      over-attributed: refundable credits ran {creditsPeak.toFixed(1)} times their 2024 level in 2021.
+      2024 dollars and before interest. A year per member of the lineage, the cost runs from
+      {dollars(backcast[0].perMember)} in {backcast[0].year} to {dollars(fig.account.perMember)} in 2024. Only 2024 is
+      measured. The pandemic years are probably over-attributed: refundable credits ran {creditsPeak.toFixed(1)}
+      times their 2024 level in 2021.
     </p>
 
     <p>
@@ -78,8 +80,9 @@
         <circle cx={sx(schooling[0].year)} cy={sy(schooling[0].lths)} r="2.2" fill="#111" />
         <circle cx={sx(schooling.at(-1).year)} cy={sy(schooling.at(-1).lths)} r="2.2" fill="#111" />
       </svg>
-      between {schooling[0].window} and {schooling.at(-1).window}. On the partial account the newest arrivals,
-      2016–2025, still run {usd(fiscalWindows.recent)} a person below whites, next to
+      between {schooling[0].window} and {schooling.at(-1).window}. On the partial account, with the income tax
+      the survey misses, the newest arrivals, 2016–2025, still run {usd(fiscalWindows.recent)} a person below
+      whites, next to
       {usd(fiscalWindows.older[1])} to {usd(fiscalWindows.older[0])} below for older windows.
     </p>
 
@@ -103,10 +106,10 @@
     </p>
 
     <p>
-      On the September 19 per-person ledger, a budget modeller’s settings leave everyone else
-      {bn(hulls.practitioner.hi)} to {bn(hulls.practitioner.lo)} a year worse off, and every switch the
-      design allows spans {bn(hulls.design.hi)} to {bn(hulls.design.lo)} worse off. That is a range of
-      conventions, not a confidence interval, and a different object from the complete account.
+      On the September 19 per-person ledger, with the income tax the survey misses, a budget modeller’s
+      settings leave everyone else {bn(hulls.practitioner[1])} to {bn(hulls.practitioner[0])} a year worse off,
+      and every switch the design allows spans {bn(hulls.design[1])} to {bn(hulls.design[0])} worse off. That is
+      a range of conventions, not a confidence interval, and a different object from the complete account.
     </p>
   </div>
 
@@ -116,10 +119,10 @@
       graphics keep their shape.
     </p>
     <p>
-      historical_backcast_2026_09_20 (backcast_annual.csv and backcast_windows.csv, with the September 24
-      corrections; national_programme_index.csv); arrival-cohort
-      memo; back-cast ACS income input; indian_generation_2026_09_21 occ_kitagawa.csv;
-      ledger_recut_2026_09_22 hulls.csv.
+      historical_backcast_2026_09_20 (derived/oct07 backcast_annual.csv and backcast_windows.csv, main case
+      v6; national_programme_index.csv; the ACS income input); arrival_cohorts_2026_09_18
+      entry_quality_fixed_duration_ipums.csv; arrival_window_fiscal_2026_09_18 window_estimates.csv;
+      indian_generation_2026_09_21 occ_kitagawa.csv; ledger_recut_2026_09_22 hulls.csv.
     </p>
   </aside>
 </section>

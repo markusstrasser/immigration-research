@@ -4,9 +4,11 @@
  * The step is the staircase's "schools" step in figures_2026_09_22/build_data.cjs: the change in
  * cost when education responds at school_share x 0.63-0.66 on the education line's preferred key
  * (education_mix). Positive control: that step and the adopted main band reproduce figures.json and
- * main_case_bands.csv. The engine is linear in each line's target allocation, so a re-priced school
- * allocation enters as one extra spending line carrying (new school target - education_mix target)
- * at the school response only; the colleges step keeps the published key.
+ * main_case_bands.csv. figures.json is read as it stood when this lane ran (FIGURES_PIN, ea755452:
+ * the September 23 band this lane prices); the figures page has since moved to the corrected
+ * September 24 case and then to main case v6. The engine is linear in each line's target allocation,
+ * so a re-priced school allocation enters as one extra spending line carrying (new school target -
+ * education_mix target) at the school response only; the colleges step keeps the published key.
  *
  * Variants come from derived/school_key_variants.json (written by weighting.py); without it the
  * script runs the positive control alone. Run from anywhere: node engine_school.cjs
@@ -21,7 +23,9 @@ const EXPLORER = path.join(FISCAL, "assumption_explorer_2026_09_21");
 const Engine = require(path.join(EXPLORER, "engine.js"));
 const model = JSON.parse(fs.readFileSync(path.join(EXPLORER, "derived", "model.json"), "utf8"));
 const scaling = JSON.parse(fs.readFileSync(path.join(EXPLORER, "derived", "scaling_check.json"), "utf8"));
-const figures = JSON.parse(fs.readFileSync(path.join(FISCAL, "figures_2026_09_22", "src", "generated", "figures.json"), "utf8"));
+const FIGURES_PIN = "ea755452";
+const figures = JSON.parse(require("child_process").execFileSync("git", ["-C", HERE, "show",
+  `${FIGURES_PIN}:infra/immigration-fiscal/figures_2026_09_22/src/generated/figures.json`], { encoding: "utf8", maxBuffer: 1 << 27 }));
 
 let failures = 0;
 function gate(label, ok, detail) {

@@ -108,7 +108,7 @@ function build(A) {
   gate("every combination counted", total === combos.length * P.length, `${total}`);
 
   // Gates against the matrix the figures page publishes (figures.json, from build_data.cjs).
-  const figures = JSON.parse(A.fs.readFileSync(A.path.join(A.HERE, "src", "generated", "figures.json"), "utf8"));
+  const figures = JSON.parse(A.pinned("page", A.path.join(A.HERE, "src", "generated", "figures.json")));
   const outer = figures.matrix.rows.map((r) => ({ frozen: !!r.frozen, lo: Math.min(...r.cells.map((c) => c.outer[0])), hi: Math.max(...r.cells.map((c) => c.outer[1])) }));
   const fz = outer.find((r) => r.frozen), gr = outer.filter((r) => !r.frozen);
   const frozenLo = fams[0].min[0], grHi = fams[0].max[1];

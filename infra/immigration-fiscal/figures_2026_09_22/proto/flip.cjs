@@ -149,7 +149,7 @@ function build(A) {
     outer.lo = Math.min(outer.lo, direct[0] - A.PROD_SPAN[1]);
     outer.hi = Math.max(outer.hi, direct[1] - A.PROD_SPAN[0]);
   }
-  const figures = JSON.parse(A.fs.readFileSync(A.path.join(A.HERE, "src", "generated", "figures.json"), "utf8"));
+  const figures = JSON.parse(A.pinned("page", A.path.join(A.HERE, "src", "generated", "figures.json")));
   const mainRow = figures.matrix.rows.find((r) => r.schools === "cbo" && r.colleges === 1 && r.delayed === 0);
   const fromMatrix = mainRow.cells.filter((c) => A.GG.some((g) => near(c.gg, g, 1e-12)));
   gate("every other choice = the matrix's outer range on the main row", near(round(outer.lo), Math.min(...fromMatrix.map((c) => c.outer[0])), 1e-4)

@@ -367,7 +367,7 @@
       the reading.
     </p>
     <p>
-      proto/nomogram.cjs runs the explorer’s engine (account.cjs) at the corners of the three dials for each
+      proto/nomogram.cjs runs the explorer’s engine (account_sept24.cjs) at the corners of the three dials for each
       of the {spread.length} combinations. Its gates: the corners predict other settings to 1e-9; the drawn
       construction reads the main case and the frozen setting exactly and matches the engine at 20 random
       settings; over the main case’s own dial choices the band spans its

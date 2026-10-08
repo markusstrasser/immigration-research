@@ -1,8 +1,9 @@
 <script>
   import fig from '../generated/figures.json'
-  import { custody } from '../data.js'
 
   const rows = fig.crime
+  const custody = fig.custody
+  const victims = fig.victims.map((v) => v.toFixed(1))
   const x0 = 200
   const x1 = 560
   const lx = (v) => x0 + (Math.log10(v) / Math.log10(2000)) * (x1 - x0)
@@ -92,12 +93,13 @@
       2.7–3.0.
     </p>
     <p>
-      Victims’ harm from the group’s offending against other residents, about $29bn a year, sits beside
-      the fiscal account (FAQ 12).
+      Victims’ harm from the group’s offending against other residents, ${victims[0]}–{victims[1]}bn a year,
+      sits beside the fiscal account (FAQ 12).
     </p>
     <p>
       offender_ethnicity_nibrs_2026_09_23 rates_by_spec.csv (central, alloc=b, alloc=c);
-      acs_institutional_rates.csv.
+      acs_institutional_2026_09_16 acs_institutional_rates.csv; population_basis_2026_09_29
+      restated_pairing.csv.
     </p>
   </aside>
 </section>

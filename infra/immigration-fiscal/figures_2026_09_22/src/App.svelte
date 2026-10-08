@@ -12,6 +12,7 @@
   import fig from './generated/figures.json'
 
   const main = fig.account.main.map(Math.round)
+  const union = Math.round(-fig.ledger.unionBalance)
 </script>
 
 <main>
@@ -26,7 +27,7 @@
   </p>
   <p class="rule-note">
     The generation ledger, the union balance and the complete account agree in direction: every generation
-    sits below whites, and everyone else is $217bn a year worse off on the union balance and
+    sits below whites, and everyone else is ${union}bn a year worse off on the union balance and
     ${main[0]}–{main[1]}bn a year worse off on the complete account. None is a slice of another, and no figure
     puts two of them on one axis.
   </p>

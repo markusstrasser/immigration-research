@@ -1,5 +1,5 @@
 <script>
-  import Staircase from '../lib/Staircase.svelte'
+  import Staircase from './Staircase.svelte'
   import FlipDistance from './FlipDistance.svelte'
   import NumberLine from './NumberLine.svelte'
   import Coastline from './Coastline.svelte'
@@ -12,7 +12,10 @@
 <main>
   <p class="kicker">Prototypes · not linked from the figures page</p>
   <h1>Is it costly under every sane assumption?</h1>
-  <p class="subtitle">Eight ways of showing it, with the staircase from the figures page first for comparison.</p>
+  <p class="subtitle">
+    Eight ways of showing it, on the September 24 case, with the figures page’s staircase as it then stood
+    first for comparison.
+  </p>
   <nav>
     <a href="#staircase">Staircase</a>
     <a href="#flip">Distance to flip</a>

@@ -1,5 +1,8 @@
 <script>
-  import { bands, mexican, white, categories } from '../data.js'
+  import fig from '../generated/figures.json'
+
+  const L = fig.ledger
+  const { bands, mexican, white, categories } = L
 
   let w = $state(0)
 
@@ -24,6 +27,10 @@
   let total = $derived((balance * pop) / 1e9)
   let gap = $derived(balance - whiteHere)
 
+  const ownTotal = sum(categories.map((c) => c.own))
+  const whiteTotal = sum(categories.map((c) => c.white))
+  const hundreds = (n) => '$' + (Math.round(Math.abs(n) / 100) * 100).toLocaleString('en-US')
+
   const movers = categories
     .map((c) => ({ ...c, move: c.white - c.own }))
     .sort((a, b) => Math.abs(b.move) - Math.abs(a.move))
@@ -39,7 +46,7 @@
   const rateX = 330
   const rateW = 400
   const rateLo = -36000
-  const rateHi = 14000
+  const rateHi = 16000
   const rx = (v) => rateX + ((rateHi - v) / (rateHi - rateLo)) * rateW
   const k = (v) => (v === 0 ? '0' : Math.abs(v / 1000) + 'k')
   const tick = (sh) => barX + (sh / maxShare) * barW
@@ -127,14 +134,17 @@
 
   <aside class="side">
     <p>
-      With each group at its own ages, the group sits $4,093 per person below whites. On any common age
-      structure it sits $7,049 to $8,716 below: the young structure is worth about $4,600 a year per
-      person.
+      With each group at its own ages, the group sits {usd(L.gaps.own_ages_today)} per person below whites. On
+      any common age structure it sits {usd(L.commonGap[1])} to {usd(L.commonGap[0])} below: the young structure
+      hides {hundreds(L.youngHides[0])}–{hundreds(L.youngHides[1]).slice(1)} a year per person.
     </p>
     <p>
       The bars under the chart are each category’s change as the weights move; at the white end they
-      sum to the move from everyone else $217bn a year worse off to $340bn worse off. Schools fall;
-      pensions and medical care rise. A composition exercise at today’s rates, not a forecast.
+      sum to the move from everyone else {bn(ownTotal, 0)} a year worse off to {bn(whiteTotal, 0)} worse off.
+      Schools fall; pensions and medical care rise. A composition exercise at today’s rates, not a forecast.
+    </p>
+    <p>
+      Taxes include the income tax the survey misses, keyed as the main case keys it (item T).
     </p>
     <p>
       Dots: filled, Mexican-origin; open, third-plus whites. Ticks: black, the group’s own shares;

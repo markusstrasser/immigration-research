@@ -12,7 +12,8 @@
   const tens = (v) => '$' + (Math.round(Math.abs(v) / 10) * 10).toLocaleString('en-US')
   const fifty = (v) => '$' + (Math.round(Math.abs(v) / 50) * 50).toLocaleString('en-US')
   const aheadPct = 101 - s.bAheadFrom
-  const cut = Math.abs(P.top1.b.fiscal)
+  const cut = Math.abs(P.top1.b.fiscal).toLocaleString('en-US')
+  const ahead = P.aheadShare.map((v) => (100 * v).toFixed(1) + '%')
 
   // One scale for both lines. Only the richest 1% under the tax line falls below it; that point is
   // drawn to the edge and labelled with its value.
@@ -22,8 +23,8 @@
   const x1 = 690
   const top = 18
   const bottom = 280
-  const lo = -2000
-  const hi = 3500
+  const lo = -6000
+  const hi = 3000
   const x = (p) => x0 + ((p - 1) / 99) * (x1 - x0)
   const y = (v) => top + ((hi - v) / (hi - lo)) * (bottom - top)
   const k = (v) => (v === 0 ? '0' : '$' + Math.abs(v / 1000) + 'k')
@@ -39,8 +40,8 @@
     <p class="lede">
       Line up everyone else in the US, the 296 million people in households outside the Mexican-origin population,
       from poorest to richest, and split them into 100 equal groups. Each dot is one group: how many
-      dollars a year its average member gains or loses, counting the cost to government and the costs we
-      price outside it (wages, rents, crime, hospital care). The government cost has to be paid somehow,
+      dollars a year its average member gains or loses, counting the cost to government, the capped aid
+      others go without and the costs we price outside it (wages, rents, crime, hospital care). The government cost has to be paid somehow,
       and the two lines are the two ways the account considers.
     </p>
     <p class="lede">
@@ -55,7 +56,7 @@
     <div class="scroll">
     <svg class="wide" viewBox="0 0 {W} {H}" role="img" aria-label="Dollars a year gained or lost per person, in 100 income groups from poorest to richest, for two ways of paying the government cost">
       <text class="faint it" x={x0} y="10" font-size="11.5">$ a year, average person in the group</text>
-      {#each [-2000, -1000, 0, 1000, 2000, 3000] as t}
+      {#each [-6000, -4000, -2000, 0, 2000] as t}
         <line x1={x0 - 6} x2={x1} y1={y(t)} y2={y(t)} stroke={t === 0 ? '#111' : '#efece2'} stroke-width={t === 0 ? 0.8 : 1} />
         <text class="faint num" x={x0 - 10} y={y(t) + 4} text-anchor="end" font-size="11">{k(t)}</text>
       {/each}
@@ -101,8 +102,8 @@
 
   <aside class="side">
     <p>
-      Counted person by person instead of by group, about one person in four or five comes out ahead
-      (ladder 226).
+      Counted person by person, household members pooled, instead of by group, about one person in six
+      comes out ahead: {ahead[0]} if the cost is paid through taxes, {ahead[1]} through service cuts (ladder 226).
     </p>
     <p>
       The richest 1%, per person a year: from the government cost, {gl(P.top1.a.fiscal)} through taxes or
@@ -115,6 +116,9 @@
       Some sources report only broad income bands (tax shares, crime surveys). Each band’s amount is spread
       over its members by income, so inside a band the curve is smoother than the evidence.
     </p>
-    <p>distribution_weights_2026_09_23/derived/channel_by_percentile.csv, measure spm, TOTAL_a and TOTAL_b.</p>
+    <p>
+      distribution_weights_2026_09_23/derived/oct07/channel_by_percentile.csv, measure spm, TOTAL_a and TOTAL_b;
+      person by person, winners_losers_2026_09_24/derived/oct07/net_shares.csv.
+    </p>
   </aside>
 </section>

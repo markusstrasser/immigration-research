@@ -1,8 +1,17 @@
 <script>
-  import { generations } from '../data.js'
+  import fig from '../generated/figures.json'
 
+  const generations = fig.generations
   let alloc = $state('shared')
   let g = $derived(generations[alloc])
+  const thousands = (v) => '$' + Math.round(Math.abs(v) / 1000) + 'k'
+  const [life2, life3, lifeWhite] = generations.lifetime.map(thousands)
+  // The case's own split, $bn at the band's low and high ends, one decimal so the parts add to the case.
+  const tenth = (v) => '$' + v.toFixed(1) + 'bn'
+  const split = (conv) => generations.caseSplit[conv].map((g) => g.map(tenth).join(' / '))
+  const [a1, a2, a3] = split('a')
+  const [b1, b2, b3] = split('b')
+  const ends = fig.account.main.map(tenth).join(' and ')
 
   const names = ['First generation', 'Second', 'Third-plus']
   const lo = -14000
@@ -49,9 +58,10 @@
     <p class="kicker">Generation ledger · white ages · 2024</p>
     <h2>Taxes converge; the net does not</h2>
     <p class="lede">
-      The gap against third-plus whites at the same ages, for three generations alive in 2024. Each
-      generation pays more tax than the last. The first generation’s lower use of benefits is gone by the
-      second, so the net barely moves.
+      The gap against third-plus whites at the same ages, for three generations alive in 2024. The second
+      generation pays far more tax than the first, but the first generation’s lower use of benefits is gone
+      by the second, so the net gap narrows only from <span class="num">{usd(g.net[0])}</span> to
+      <span class="num">{usd(g.net[2])}</span> a person.
     </p>
     <div class="controls" role="radiogroup" aria-label="Allocation">
       <label><input type="radio" bind:group={alloc} value="shared" /> Household costs shared</label>
@@ -94,16 +104,28 @@
   <aside class="side">
     <p>
       Dollars per person a year against third-plus non-Hispanic whites at white ages. Lower benefit use
-      counts in the group’s favour, so it sits above zero.
+      counts in the group’s favour, so it sits above zero. Taxes include the income tax the survey misses,
+      keyed as the main case keys it (item T).
     </p>
     <p>
       These are generations alive in 2024, not one family line followed forward, and not a split of the
-      national total. On the shared allocation the first and second generations are $82 apart.
+      national total. On the shared allocation the first and second generations are
+      {usd(generations.shared.net[1] - generations.shared.net[0])} apart.
     </p>
     <p>
-      Lifetime values at 3%, from birth: over a life the second generation receives $280k more than it
-      pays in, third-plus $225k and whites $96k (FAQ 5).
+      Lifetime values at 3%, from birth: over a life the second generation receives {life2} more than it
+      pays in, third-plus {life3} and whites {lifeWhite} (FAQ 5).
     </p>
-    <p>age_normalizations.csv, structure white_ages_today.</p>
+    <p>
+      The complete account splits its own total, {ends} at its two ends, without a reference group.
+      Counted in their own generation, the Mexico-born cost everyone else {a1}, the second generation
+      {a2} and the third-plus {a3}. Counted with their parents, as the National Academies count
+      children: {b1}, {b2} and {b3}. A different object from the gaps above; neither is a rescaling of the
+      other.
+    </p>
+    <p>
+      ledger_absolute_2026_09_17 age_normalizations.csv, structure white_ages_today; lifetime/period_profiles.csv;
+      generation_account_2026_09_24 generation_results_oct07.csv.
+    </p>
   </aside>
 </section>

@@ -1,26 +1,21 @@
 <script>
-  import fig from '../generated/figures.json'
+  // The figures page's staircase as it stood on the September 24 case, the comparison this page opens
+  // with; its data is proto/staircase.cjs's copy of that page's figures.json.
+  import fig from '../generated/proto_staircase.json'
 
   const steps = fig.staircase
-  const acc = fig.account
-  const pct = (v) => (100 * v).toFixed(1)
-  // Least adverse end of the break-even share, personal and shared allocation (enterprises with services).
-  const breakEven = [acc.breakEven.personal[1], acc.breakEven.shared[1]].sort((a, b) => a - b).map(pct)
-  const cashTally = acc.tally.cash.map((v) => Math.round(-v)).sort((a, b) => a - b)
-  const cash = acc.cash.map(Math.round)
-  const gg = acc.gg.map((g) => g.toFixed(2))
-  const shares = acc.shares.map((s) => Math.round(100 * s))
-  const rates = acc.rates.map((r) => Math.round(100 * r))
+  const breakEven = fig.account.breakEven.map((v) => (100 * v).toFixed(1))
+  const taxes = fig.account.bySide.receipts.map(Math.round)
+  const benefits = fig.account.bySide.spending.map((v) => Math.round(-v))
 
   // Columns: label | step size | plot | running total. Worse off for everyone else runs right.
-  // Wider than the plot needs: a range that crosses zero spells out both directions in the total column.
-  const W = 860
+  const W = 800
   const stepX = 370
   const x0 = 384
   const x1 = 684
   const totalX = 696
-  const lo = -60
-  const hi = 500
+  const lo = -100
+  const hi = 350
   const x = (v) => x0 + ((v - lo) / (hi - lo)) * (x1 - x0)
 
   const top = 52
@@ -31,7 +26,6 @@
   const height = y(steps.length - 1) + 44
   // The total the main case ends on, read from the chart's own row (a positive total: worse off).
   const main = steps[mainIndex].total.map(Math.round)
-  const tally = steps[0].total
 
   // A range as magnitudes, smaller first, with its direction in words: a positive total or step
   // leaves everyone else worse off, a negative one better off.
@@ -42,8 +36,6 @@
     const [m, n] = [Math.abs(p), Math.abs(q)].sort((u, v) => u - v)
     return { n: m === n ? String(m) : `${m}–${n}`, w: q > 0 ? 'worse off' : p < 0 ? 'better off' : '' }
   }
-  // The tally's range crosses zero (build_data.cjs checks it).
-  const tallyEnds = tally.map(Math.round)
   // Bar colour is the sign of the running total; ochre where the open choices decide it.
   function tone(t) {
     if (t[1] <= 0) return ['#bbd4ee', '#5c97d2']
@@ -64,28 +56,25 @@
       .map((p) => p.join(','))
       .join(' ')
   }
-  // The first row from which every total is worse off (build_data.cjs checks that every later row is).
   const crossing = steps.findIndex((s) => s.total[0] > 0)
 </script>
 
 <section class="fig" id="staircase">
   <div class="body">
-    <p class="kicker">Complete account · adopted main case</p>
+    <p class="kicker">Complete account · main case of September 24</p>
     <h2>From the tally to the bill</h2>
     <p class="lede">
-      Count only taxes paid and benefits received, with pension promises counted as they are earned, and
-      the Mexican-origin population leaves everyone else about even: from
-      <span class="num">${-tallyEnds[0]}bn</span> better off to <span class="num">${tallyEnds[1]}bn</span> worse off.
-      Each row then adds one line of the main case.
-      Property taxes and the gain from their work tilt the balance toward everyone else; schools at their
-      full cost are enough to leave everyone else worse off at every choice. With the return on public
-      capital, the main case leaves everyone else <span class="num">${main[0]}–{main[1]}bn</span> a year
-      worse off.
+      Count only taxes paid and benefits received and the Mexican-origin population leaves everyone
+      else better off. Each row then charges one more public service, at the share of its cost that
+      grows with the population. Schools alone are enough to leave everyone else worse off. The last
+      two rows replace the survey-based shares of taxes and benefits with outside records; the two
+      corrections nearly cancel. After them, the main case leaves everyone else
+      <span class="num">${main[0]}–{main[1]}bn</span> a year worse off.
     </p>
 
     <div class="scroll">
-    <svg class="wide stair" viewBox="0 0 {W} {height + 14}" role="img" aria-label="Running total for everyone else, from taxes minus benefits to the main case, one line at a time">
-      {#each [100, 200, 300, 400] as t}
+    <svg class="wide stair" viewBox="0 0 {W} {height + 14}" role="img" aria-label="Running total for everyone else, from taxes minus benefits to the main case, one service at a time">
+      {#each [100, 200, 300] as t}
         <line x1={x(t)} x2={x(t)} y1="30" y2={height - 26} stroke="#efece2" />
       {/each}
       <line x1={x(0)} x2={x(0)} y1="30" y2={height - 26} stroke="#111" stroke-width="1" />
@@ -93,8 +82,8 @@
       <text class="faint it" x={x(0)} y="9" text-anchor="middle" font-size="11.5">everyone else</text>
       <text class="faint it" x={x(0) - 6} y="24" text-anchor="end" font-size="11.5">← better off</text>
       <text class="faint it" x={x(0) + 6} y="24" font-size="11.5">worse off →</text>
-      <text class="faint" x={stepX} y="9" text-anchor="end" font-size="11.5">each row</text>
-      <text class="faint" x={totalX} y="9" font-size="11.5">running total</text>
+      <text class="faint" x={stepX} y="24" text-anchor="end" font-size="11.5">each row</text>
+      <text class="faint" x={totalX} y="24" font-size="11.5">running total</text>
 
       {#each steps as s, k}
         {#if k}
@@ -103,7 +92,7 @@
       {/each}
 
       <line x1="0" x2={W} y1={y(mainIndex) + 30} y2={y(mainIndex) + 30} stroke="#dcd8c8" stroke-dasharray="2 3" />
-      <text class="faint it" x="0" y={y(mainIndex) + 45} font-size="11.5">Beyond the main case: what it holds back</text>
+      <text class="faint it" x="0" y={y(mainIndex) + 45} font-size="11.5">Beyond the main case: budgets it holds fixed</text>
 
       {#each steps as s, k}
         {@const yy = y(k)}
@@ -136,7 +125,7 @@
         <text class="muted it" x={x(0) + 7} y={(y(crossing - 1) + y(crossing)) / 2 + 4} font-size="11.5">worse off from here on</text>
       {/if}
 
-      {#each [-50, 0, 100, 200, 300, 400, 500] as t}
+      {#each [-100, 0, 100, 200, 300] as t}
         <text class="faint num" x={x(t)} y={height - 10} text-anchor="middle" font-size="11">{Math.abs(t)}</text>
       {/each}
       <text class="faint" x={x1} y={height + 6} text-anchor="end" font-size="11">$bn a year</text>
@@ -146,20 +135,20 @@
 
   <aside class="side">
     <p>
-      Each bar is the range over the case’s own open choices: household costs charged to each person or
-      shared; the gain from their work scaled by cash or GDP; schools at {shares[0]}% or {shares[1]}% of the
-      education budget; a low or a high reading, which sets general administration at {gg[0]} or {gg[1]},
-      roads and parks at their long-run responses and public capital at {rates[0]}% or {rates[1]}%; and unpaid
-      hospital care keyed to uninsured use, low or high.
+      Each bar is the range over the account’s own open choices: household costs charged to each
+      person or shared, the production gain scaled by cash or GDP, the school share of education,
+      63% or 66%, and general administration at 0.59 or 0.84.
     </p>
     <p>
-      Pension promises count as members earn them, at the benefits current law can pay. Counted when the
-      benefits are paid instead, the tally leaves everyone else ${cashTally[0]}–{cashTally[1]}bn better off and
-      the main case ${cash[0]}–{cash[1]}bn worse off.
+      The corrections come from a dataset audit and four outside checks, run together through the
+      engine. The tax row adds ${taxes[0]}–{taxes[1]}bn: legal status, fill-ins for survey
+      nonrespondents and CBO’s income shares lower what the group pays. The benefit row takes off
+      ${benefits[0]}–{benefits[1]}bn, mostly because the same status and income corrections lower the
+      benefits keyed to the group, medical care is charged by use, and premium tax credits had been
+      keyed as the EITC.
     </p>
     <p>
-      With every service budget frozen, and the public enterprises with them, the most adverse choices still
-      leave everyone else worse off. At the least adverse, everyone else comes out ahead only while fewer than
+      With every other service budget fixed, everyone else comes out worse off once
       {breakEven[0]}–{breakEven[1]}% of the service costs charged to the group grow with the population.
     </p>
     <p>
@@ -167,16 +156,15 @@
       per head is an average-cost convention, not a marginal cost.
     </p>
     <p>
-      build_data.cjs runs main case v6 through its package (main_case_2026_10_07/package.cjs) on the case’s
-      payload, one evaluation per row and specification. The tally reproduces c2_tally_oct07.csv, the
-      main-case row summary.json and the last row the proportional reference. Break-even:
-      sign_reversal.csv.
+      build_data.cjs (as of fef4d12b) ran the explorer’s engine on its executed model, then with the corrections of
+      main_case_2026_09_24/package.cjs; the main-case row reproduces main_case_bands.csv and the last
+      row the proportional benchmark. Break-even: sign_reversal.csv.
     </p>
   </aside>
 </section>
 
 <style>
   /* The step and total columns carry words, so the chart is wider than 760; keep its text at the
-     old size on phones by scrolling a little further instead of shrinking (680px at the old 800). */
-  @media (max-width: 720px) { svg.stair { min-width: 730px; } }
+     old size on phones by scrolling a little further instead of shrinking. */
+  @media (max-width: 720px) { svg.stair { min-width: 680px; } }
 </style>

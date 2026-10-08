@@ -5,7 +5,7 @@
  * the staircase's; the spec is one executed spec, the main case's low end (the one most favourable to
  * the group).
  *
- * cost() in account.cjs returns only the total. build() rebuilds cost()'s engine state for each
+ * cost() in account_sept24.cjs returns only the total. build() rebuilds cost()'s engine state for each
  * step (the construction is copied below), reads Engine.evaluate()'s receipts, spending, P and F, and
  * sorts every line into a family. Gates: the main case reproduces A.MAIN; the copied steps match
  * build_data.cjs; the band at every step matches figures.json's staircase; the rebuilt total equals
@@ -16,7 +16,8 @@
 const vm = require("vm");
 
 // The staircase's steps, copied from build_data.cjs (requiring that file writes the figures page's
-// data). The first gate compares these copies with the literals in build_data.cjs.
+// data). The first gate compares these copies with the literals in build_data.cjs as it stood on the
+// September 24 case (account_sept24.cjs PINS.page).
 const TALLY = { schools: 0, colleges: 0, police: 0, health: 0, other: 0, delayed: 0, gg: 0, production: false, uc: false };
 const STEPS = [
   { id: "tally", label: "Taxes paid minus benefits received", note: "no services, no gain from their work", r: {} },
@@ -74,7 +75,7 @@ const MEDICAID = "medicaid_and_chip_other_medical";
 // foreign flows, rounding. Gated to count nothing at every step.
 const NEVER = new Set(["public_goods", "interest", "subsidy", "foreign", "rounding"]);
 
-/* cost()'s engine state (account.cjs), copied so the lines can be read; a gate checks the total. */
+/* cost()'s engine state (account_sept24.cjs), copied so the lines can be read; a gate checks the total. */
 function buildState(A, spec, r, m) {
   const { Engine, model, CORR } = A;
   const s = Engine.defaultState(m);
@@ -185,13 +186,13 @@ function build(A) {
     PARTS.every((p) => listed.filter((x) => x === p.id).length === 1), `${PARTS.length} parts, ${FAMILIES.length} families`);
 
   console.log("  (steps copied from build_data.cjs)");
-  const text = fs.readFileSync(path.join(HERE, "build_data.cjs"), "utf8");
+  const text = A.pinned("page", path.join(HERE, "build_data.cjs"));
   const theirs = { TALLY: literalIn(text, "TALLY", "{", "}"), STEPS: literalIn(text, "STEPS", "[", "]") };
   gate("TALLY and STEPS equal build_data.cjs's", JSON.stringify(theirs.TALLY) === JSON.stringify(TALLY) &&
     JSON.stringify(theirs.STEPS) === JSON.stringify(STEPS), `${STEPS.length} steps`);
 
   // The staircase's band at every step (build_data.cjs's trajectories), against figures.json.
-  const figures = JSON.parse(fs.readFileSync(path.join(HERE, "src", "generated", "figures.json"), "utf8"));
+  const figures = JSON.parse(A.pinned("page", path.join(HERE, "src", "generated", "figures.json")));
   const bands = [];
   {
     let r = { ...TALLY }, m = MODELS.base;

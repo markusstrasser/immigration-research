@@ -496,7 +496,7 @@
       {constantsWhat}.
     </p>
     <p>
-      proto/dots.cjs rebuilds the engine state of account.cjs for every step at spec {sp.index} of {data.specCount}
+      proto/dots.cjs rebuilds the engine state of account_sept24.cjs for every step at spec {sp.index} of {data.specCount}
       and reads every line; its gates check each step against cost(), each layer against cost() with
       only its own dial moved, and the main-case step against the band’s low end,
       {bn(sp.mainCost)} worse off.
