@@ -223,10 +223,9 @@ EDITS = {
                  "It charges the return on public capital, lets roads, parks, rental assistance and government "
                  "enterprises respond, and takes long-run property taxes; with every service proportional it is "
                  "$418.1–475.8bn. With CBO's year-to-year budget responses, no long-run road, park or property-tax "
-                 "response and no capital return, the first-year budget response, shown beside the result, is "
-                 "$288.9–336.5bn, and "
-                 "$207.3–260.3bn counting benefits when paid. Defense, interest on existing debt and business subsidies "
-                 "stay at zero response."),
+                 "response and no capital return, the first-year budget response, shown beside the presets, is "
+                 "$288.9–336.5bn, and $207.3–260.3bn counting benefits when paid. Defense, interest on existing "
+                 "debt and business subsidies stay at zero response."),
         values=[
             val("main case v6: conditional net cost to other US residents", "389.1-461.5",
                 at(INDEX, "**Adopted main case (October 7)", through="($389.1–461.5bn")),
