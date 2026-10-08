@@ -112,3 +112,6 @@ grounds to reopen it.
 
 - 2026-10-08: written after the review. Concept affected: the defense of whole-person counting; the evidence on the
   production elasticity; school-budget timing; FAQ 17's sign claim; the payload consumer's capital guard.
+- 2026-10-08, later: item 8's "the explorer and figures page are pinned by design" no longer holds. At the operator's
+  word they moved to v6 the same day (explorer 88a472c4, figures page 6e30f5b8). Concept affected: none; the
+  presentation layers now carry the main case.
