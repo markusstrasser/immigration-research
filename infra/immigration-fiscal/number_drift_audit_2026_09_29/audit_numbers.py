@@ -320,6 +320,8 @@ INDEX_SPANS = [
     ("Wages move **$66–166bn**", "charged nationally, the share ahead falls to 7.5%."),
     ("The [world ledger]", "premium over being raised in Mexico. [FRAMING-SENSITIVE]"),
     ("Benefits are priced to the same standard as the costs", "so both figures stand (ladder 199)."),
+    # the dataset audit's fill-in correction, sized on the main case (the list's other sizes sit in the ladder)
+    ("leaving them in would lower the main case by", "Federal tax the CPS misses at the top was"),
     ("The [debt legacy lane]", "nor the stock to an annual figure."),
     ("**Legacy comparisons, stated separately (September 30).**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),

@@ -162,10 +162,10 @@ computed on the account itself, with no reference group, and is not the Septembe
 [Against 42.75M third-plus whites](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md) (ladder 263, both sides on the lineage's count, every group's income taxes on the case's own keys): the union costs other residents $432–436bn a year more once cash accounting's age artefact is removed, which the case's pension accrual now does (white rates at the union's ages on cash give $420–426bn); $263–270bn on raw cash at white ages; $529–531bn against local whites state by state (California $17.8k per member). That figure rests on few records: in Texas and California, 14 and 16 white households with AGI of $1M or more carry 50% and 38% of the comparison whites' federal income tax there after the IRS raking. Its white-side sampling error is about $33bn, against $14bn for national whites, and without the 10 largest-contributing households it is $453–456bn. The national key's split across states is not the cause: raking California and Texas to their own IRS state tax data moves the gap +$7.7bn ([fragility checks](../infra/immigration-fiscal/white_replacement_2026_09_28/RESULT.md), c61f00aa, 94dd712d). Per member the gap is $10.1–10.2k, below the identified members' $10.2–10.3k, because an added descendant costs less. Every comparison now keys Pell and public colleges by IPEDS enrollment on both sides; the earlier rough keys charged Pell by Social Security receipt, which put it on old whites, and the fix with item 4's tuition term adds $6.5–6.6bn to the gap. The difference is taxes, schools and transfers, not scale effects, and capital-side taxes held at zero response still understate what whites pay (see the reference paragraph above). [Connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md) (ladder 262): counties with a larger Hispanic share have fewer cross-income friendships, mostly through residential separation; the payoff does not grow with county size, so no dollar figure. Reader-facing summary of the whole ladder: `infra/immigration-fiscal/overview_2026_09_28/` (`build.py` writes `derived/overview.html`; every new ladder entry must be placed in its `groups.py`).
 
 Production is held fully adjusted while service responses vary; these transferred short-run assumptions do not
-identify a long-run effect. The production term's perfect-substitution assumption has an executed sensitivity: a
-[native–immigrant nest](immigration-production-term-nativity-nest-2026-09-22.md) gives +$17.9 / +$27.1bn at ε = 3
-against the September 20 account's +$8.8 / +$13.3bn (ladder 176). The directly estimated low-skill elasticities
-8.7–17.9 (ladder 181) give +$10–18bn, and the computed ε = 5 and ε = 7 about +$13–22bn; the file's job overlap fits a
+identify a long-run effect. The production term treats natives and immigrants of the same skill as perfect
+substitutes and credits the main case $7.8–11.9bn. A [native–immigrant nest](immigration-production-term-nativity-nest-2026-09-22.md)
+has been run on the account's own earnings data, not on the main case (ladder 176): at ε = 3 it roughly doubles the term, mostly as natives' gain against other foreign-born residents' loss, which nets inside other residents. The directly estimated low-skill elasticities,
+8.7–17.9 (ladder 181), sit well above 3, where the term moves far less; the file's job overlap fits a
 value near 6 only through a sketch whose component elasticities are chosen. None is applied. Sampling plus donor error is about **±$10.20–10.47bn (1 SE)**,
 and the 64 specifications' 95% intervals run **$369–481bn** together; C3's own error, beside them, widens the end specifications' interval to $368–483bn. The SE is a partial approximation whose net
 error is unresolved (audit ffcce20 §A). Across constructions the assumptions dominate (ladder 184,
@@ -216,9 +216,9 @@ It contains:
   and 265; [decision](../decisions/2026-09-28-social-items-scale-benefits.md),
   [decision](../decisions/2026-09-28-social-items-more-benefits.md)).
 
-Diluted instruction would cost other residents' pupils about **$16bn** a year in present-value lifetime earnings
-(−$2bn to +$36bn) where school budgets respond less than fully. At the adopted response of 1 nothing is left
-unfunded, so it applies only to the first-year scenario and is in no total (ladders 222 and 230;
+Where school budgets respond less than fully, diluted instruction would cost other residents' pupils present-value
+lifetime earnings. At the adopted response of 1 nothing is left unfunded, so it applies only to the first-year
+scenario, has not been priced on the current case and is in no total (ladders 222 and 230;
 [decision](../decisions/2026-09-25-school-dilution-priced-beside.md)).
 
 For comparison, a rough re-key of the main case to non-Hispanic Black residents, with every group's income taxes
@@ -295,15 +295,15 @@ The [dataset integrity audit](../infra/immigration-fiscal/dataset_integrity_2026
 (ladder 204 and 208–210) checks the inputs themselves: formatting, columns, implausible statistics and category
 coding, across the CPS, ACS, spending and crime files. It was adopted into the case on September 24 (ladder 219),
 with row 6 run through the engine, row 3 replaced by CBO's income-tax gradient and row 5 by the pooled-MEPS
-figure. The defects are real, run both ways and nearly cancel:
-- **Spending keys, net −$28.1bn.** ACA premium credits are keyed as EITC (−$14.2bn). Medicaid
-  long-term care is keyed by a community-only survey (−$11.1bn; the group draws 7.4% of those
-  dollars, not 12.25%). The education key over-weights K–12 (−$3.5bn).
-- **Tax records that overstate the group's taxes, stacked: +$27.9bn / +$29.6bn.** The Census tax
-  model assumes every respondent is a legal, fully compliant filer. The CPS fill-ins give the group
-  too much income (ladder 208). Federal tax the CPS misses at the top is spread by CPS liability.
-  Recounting the Mexico-born at the ACS level offsets part of this: ASEC 2025 counts about 1.2M too
-  many, which is worth −$2.2–2.5bn once the tax corrections are in (ladder 209).
+figure. The defects are real and run both ways; the main case carries every correction, and the ladder entries give each one's size when it was adopted:
+- **Spending keys that overstated the charge.** ACA premium credits were keyed as EITC. Medicaid
+  long-term care was keyed by a community-only survey (the group draws 7.4% of those dollars, not
+  12.25%). The education key over-weighted K–12.
+- **Tax records that overstate the group's taxes.** The Census tax model assumes every respondent is
+  a legal, fully compliant filer. The CPS fill-ins give the group too much income (ladder 208);
+  leaving them in would lower the main case by $8.3–9.2bn. Federal tax the CPS misses at the top was
+  spread by CPS liability. Recounting the Mexico-born at the ACS level offsets part of this: ASEC 2025
+  counts about 1.2M too many (ladder 209).
 
 The [debt legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) (ladder 207) prices interest
 on the group's past federal gaps. On the cash-benefit convention, the 2005–2023 gaps leave $0.98–1.37tn of
@@ -352,8 +352,8 @@ payments, ITIN credits and migrant shelters in one table.
 - About $1.1bn of federal money was claimed improperly and repaid.
 - No charged fraud tied to status was found.
 
-The one keying mismatch is shelters. The account over-charges the group about $0.5bn, because
-Mexican nationals were 0.50–0.84% of the people served. Federal fraud sentencing by citizenship
+The one keying mismatch was shelters, where Mexican nationals were 0.50–0.84% of the people served;
+the case has carried the corrected shelter key since September 24 (ladder 219). Federal fraud sentencing by citizenship
 (ladder 214) puts noncitizens at 1.8–2.0 times the citizen rate per adult, the same as for their
 other non-immigration federal crime. They hold 8.5% of government-program fraud loss, against 7.7%
 of adults.
@@ -383,28 +383,28 @@ against data built independently of the account; they were adopted with the audi
 BEA closure (−$2,053bn) cannot catch a wrong key, because a wrong key only moves dollars between groups. Schools
 (ladder 215): the group's districts and schools spend about 3.4% more than their states', and the case prices
 pupils where the group enrolls. Taxes and transfers (ladder 216): CBO's 2022 income distribution and Treasury's
-EITC shares by ethnicity corroborate most keys, each moving the case by $2.1bn or less (a materiality rule, not a
-statistical fit; the agreement shares the account's within-bin origin shares, validation memo §4). The income-tax
-key was too flat at the top and now follows CBO's gradient; scored on IRS 2023, which it never used, that gradient
+EITC shares by ethnicity corroborate most keys, by a materiality rule rather than a statistical fit (the agreement
+shares the account's within-bin origin shares, validation memo §4). The income-tax
+key was too flat at the top and was moved to CBO's gradient; scored on IRS 2023, which it never used, that gradient
 overshoots at $200k–$1M, and the main case has matched IRS since September 29 (ladders 249 and 275). Benefits (ladder 217): administrative
 records by ethnicity show no fear-driven under-reporting of SNAP or Medicaid; unemployment insurance, WIC and
-TANF's California share are under-reported, and the case keys them on administrative records (+$2.2bn). SNAP's
+TANF's California share are under-reported, and the case keys them on administrative records. SNAP's
 quality-control file miscodes Hispanic ethnicity in 25 states and cannot support national SNAP-by-ethnicity
 figures. Crime (ladder 218): the known errors lean one way in jail counts, bookings and the victim-harm count, not
 in the offending ratios; the NIBRS murder ratio stays at 2.30, and crimes by Hispanic offenders are reported to
 police more often. Consumption (ladder 225): keyed on what households at each income rank spend (CE 2024), net of
-remittances, the group pays more of the $1,198bn of consumption-keyed receipts (−$4.1bn); CBO's excise
+remittances, the group pays more of the $1,198bn of consumption-keyed receipts; CBO's excise
 distribution, ITEP's gradient and Mexican-origin CE units support the direction. Finite removal (ladder 227): read
 as the removal of 12% of residents, general government's cross-state elasticities save 0.60–0.85 of average cost
-([lane](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md)). Both were adopted on September 26;
-finite removal's school part was superseded the same day by full average cost (ladder 230).
+([lane](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md)). Both are in the main case; finite
+removal's school part gave way to full average cost (ladder 230).
 
-[Objections and answers](immigration-objections-faq-2026-09-21.md): eighteen standard
+[Objections and answers](immigration-objections-faq-2026-09-21.md): twenty-one standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,
 policy reading, crime, elder care, native–immigrant complementarity, California vs Texas,
-CBO's surge projection, survey reliability, whether 2024 was an unusual year), each
-steel-manned and routed to its executed table.
+CBO's surge projection, survey reliability, whether 2024 was an unusual year, descendants who no longer identify as
+Mexican, the deficit, long-run damage to productivity, communities and institutions), each steel-manned and routed to its executed table.
 
 [California vs Texas](immigration-california-texas-fiscal-geography-2026-09-21.md):
 same Mexican-origin share (~32%); common-age gap vs **local** whites **−$15,228** (CA) vs
@@ -426,9 +426,9 @@ moves with it.
 [Seven papers from the Marginal Revolution archive, read in full](immigration-marginal-revolution-leads-read-2026-09-21.md):
 headline unchanged. Counting US-born aides, the nursing-home channel reaches the group and nets about $1.5bn a
 year of Medicaid saving, inside the main case (ladder 198). The 2025 municipal-bond paper cannot identify the
-service-response share. The production term's perfect-substitution assumption is executed (ladder 176): at the
-direct estimates of ladder 181 the term rises $1.5–4.7bn, and at ε = 5 to 7 by about half, to roughly $13–22bn (on the
-September 20 account). The removal model's $27–80bn is a different population and a
+service-response share. The production term's perfect-substitution assumption has an executed nest (ladder 176), run
+on the account's own earnings data but not on the main case: at the direct estimates of ladder 181 it moves the term
+far less than at ε = 3, and none is applied. The removal model's $27–80bn is a different population and a
 different elasticity (ladder 166).
 
 [Cumulative 2005–2024 back-cast](immigration-historical-backcast-2026-09-20.md): no past year is measured. Actual
@@ -884,6 +884,18 @@ is also on GitHub at origin/main 3791d32.
   case's $4.8bn at the Hispanic average, since the main case isolates neither key; the care channels print at two
   decimals so the parts add ($2.69bn + $1.49bn − $0.03bn = $4.15bn, was $4.1bn from $2.7bn and $1.5bn). Concept
   affected: none.
+- 2026-10-08 (live-case cleanup, Core State): figures measured on earlier accounts and cases give way to the main
+  case's or to the ladder entries that measured them. The production paragraph states the main case's term,
+  $7.8–11.9bn, and gives the nest by direction, since it has not run on the main case (was +$17.9 / +$27.1bn at
+  ε = 3 against the September 20 account's +$8.8 / +$13.3bn, +$10–18bn at the direct estimates and about
+  +$13–22bn at ε = 5 and 7; the Marginal Revolution paragraph's $1.5–4.7bn and $13–22bn go the same way). The
+  dataset audit keeps each defect's direction and adds the main case's fill-in figure, $8.3–9.2bn (was spending
+  keys −$28.1bn from −$14.2bn, −$11.1bn and −$3.5bn, tax records +$27.9bn / +$29.6bn, the ACS recount
+  −$2.2–2.5bn, and "nearly cancel"). The outside checks drop the September 24 case's "$2.1bn or less", the
+  administrative benefit keys' +$2.2bn and the consumption key's −$4.1bn; school dilution's $16bn (−$2bn to
+  +$36bn, on the September 24 account) goes; the shelter key, adopted on September 24, is stated as carried (was
+  "over-charges the group about $0.5bn"). The objections list names all twenty-one entries. Concept affected:
+  none.
 
 <!-- knowledge-index
 generated: 2026-09-29T07:51:14Z
