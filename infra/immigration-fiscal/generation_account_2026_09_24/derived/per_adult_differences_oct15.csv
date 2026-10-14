@@ -1,5 +1,5 @@
 case,end,convention,fixes,minor_scale,production_rule,difference,per_adult_difference_usd,conditional_joint_sdr_se_usd,full_fiscal_model_se,measured_generation_ranking
-oct15,low,b,minors|credits|tags|state_prices,0.3364796386770656,aumann_shapley,G2 minus G3plus,-170.52592500099672,531.50085518614,unidentified,False
-oct15,high,b,minors|credits|tags|state_prices,0.3364796386770656,aumann_shapley,G2 minus G3plus,-419.0285335298249,593.3481905076568,unidentified,False
-oct15_cash,low,b,minors|credits|tags|state_prices,0.3364796386770656,aumann_shapley,G3plus minus G2,1211.7849482197225,479.46902037067605,unidentified,False
-oct15_cash,high,b,minors|credits|tags|state_prices,0.3364796386770656,aumann_shapley,G3plus minus G2,1460.2875567485298,529.1490651389297,unidentified,False
+oct15,low,b,minors|credits|tags|state_prices,0.3364796386770656,aumann_shapley,G2 minus G3plus,-219.80288331839802,529.1898233416755,unidentified,False
+oct15,high,b,minors|credits|tags|state_prices,0.3364796386770656,aumann_shapley,G2 minus G3plus,-468.5957668114406,590.6285582649111,unidentified,False
+oct15_cash,low,b,minors|credits|tags|state_prices,0.3364796386770656,aumann_shapley,G3plus minus G2,1261.061906537121,477.87840051601654,unidentified,False
+oct15_cash,high,b,minors|credits|tags|state_prices,0.3364796386770656,aumann_shapley,G3plus minus G2,1509.8547900301437,526.9854581234239,unidentified,False

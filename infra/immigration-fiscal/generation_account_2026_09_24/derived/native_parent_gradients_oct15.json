@@ -54,14 +54,14 @@
   "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_b_G2.json": "369ffe88b428098d677b349eeedb134c4a631f8cae5844a191525f12ce236784",
   "infra/immigration-fiscal/generation_account_2026_09_24/derived/model_b_G3plus.json": "1ef7691420e2376da8f4af022661d1f1eaff7c3d663c8c264b1ae3ed7ca4046f",
   "infra/immigration-fiscal/generation_account_2026_09_24/derived/stack_by_generation.json": "35039234a00eee6e7e08d2ab920ab40d369b542adc4b3eaac90f4d7d8a0404f1",
-  "infra/immigration-fiscal/generation_account_2026_09_24/derived/union_credit_age_oct15.json": "1dbc3555431ef071db0d43c1b41c5a7eac5b4abba869970dcdbd4ed8097399f7",
+  "infra/immigration-fiscal/generation_account_2026_09_24/derived/union_credit_age_oct15.json": "02e51047695589884efb6cf462bd9d68f9bf54e7b0494eae8c5949df722378c2",
   "infra/immigration-fiscal/generation_account_2026_09_24/derived/v4_inputs.json": "31a77369be8beb73869387f2eecb1f84a27daa251944b369df803c6eeb52126c",
   "infra/immigration-fiscal/generation_account_2026_09_24/frame.py": "455c80718f27fefdf07489cf22a29625767c731c6a629733827a2f4a773c2c1c",
   "infra/immigration-fiscal/generation_account_2026_09_24/inputs/baseline.json": "bf2fc44f7bad16a2c47824212c8499438647ba909975b78f56a38f22c4891e0b",
-  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/case_final_oct15.txt": "49fd2a709eb872a723620c5b79aabbfc6c8fda0fc64421155fd0756eed3b93be",
+  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/case_final_oct15.txt": "0c788d18fcdf48e4db504334b9ea8af02709f8b6fd416b529019c9d7a7b161e0",
   "infra/immigration-fiscal/generation_account_2026_09_24/inputs/credit_pins.json": "ef1a916c350a7e9673e62507135e2e5c570e91f2f30a78c4e472bd6401d5f4f9",
   "infra/immigration-fiscal/generation_account_2026_09_24/inputs/minor_parent_measurement_oct15.json": "29d78bbcff60cd900eaf8a93fd4e945242074cb1616fe0658e37d565284a2552",
-  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/pins.json": "55d90442e5c36df678b185ddcdbab6c517970beddc6f142e38238baef8e97c83",
+  "infra/immigration-fiscal/generation_account_2026_09_24/inputs/pins.json": "2bb9957e61ac8f6a74192584a05873b0ceeb1115f0d8bd9cbf2778debc91a980",
   "infra/immigration-fiscal/generation_account_2026_09_24/inputs/routing.json": "ee64de0f418b24ce3faba48f4927576fe43338c62444e1a45c62090f991252a2",
   "infra/immigration-fiscal/generation_account_2026_09_24/inputs/state_pins.json": "89985a48e7e0d872cedcbd6bb66c56ae016033de86fae54dd8f672673a8cb891",
   "infra/immigration-fiscal/generation_account_2026_09_24/keys.py": "20992d3a390987825da075394145ee84a865243338f0a347d936fe4875959468",
@@ -97,15 +97,15 @@
   "infra/immigration-fiscal/main_case_2026_10_14/sources.cjs": "19bdae6f3654002e18ce36b7576c2342e070fec8b9dc62eb3cc2b42dd9d3f041",
   "infra/immigration-fiscal/main_case_2026_10_15/child_records.cjs": "821fad331f969f88f89b8666486612d52c56c994b52f2c8cd961d11607462d1b",
   "infra/immigration-fiscal/main_case_2026_10_15/coverage.cjs": "ddc8beae4caa14353fd031741c2e1df33762f39eff8285d2d22782c12b355e81",
-  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json": "08229ee9409c48820002cc2b0831968f7c1d6066b078be9e7303922d788793c7",
-  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections_cash.json": "b88998981a07591cc3b28307eac929d857fe0cc7d1edc0aa3821195221ff9439",
-  "infra/immigration-fiscal/main_case_2026_10_15/derived/main_case_bands.csv": "050f2bcc04ae2835386706feea4af0f020b0b2ba6c6d6c49e3557a4d46b02cb3",
-  "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json": "3f7bcd56a7de8e7b1f253b640fab3135ce93fc420f73de5251611d0472127f04",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections.json": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/corrections_cash.json": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/main_case_bands.csv": "fe8fe05bfdeb29f4f4b996bf5e515fcfc172b6094d96c10e67f7cf0840d34ba2",
+  "infra/immigration-fiscal/main_case_2026_10_15/derived/summary.json": "1d999c666d68696ed2728b9e6fd48c44ab85371e875e3e6f1b16d0b16971013a",
   "infra/immigration-fiscal/main_case_2026_10_15/derived/union_people.json": "47aa2d549f937f37d14d5a078fed8e6bbf5c6eb1d18aea5f5c9c0fdc5a1a6470",
   "infra/immigration-fiscal/main_case_2026_10_15/item_foreign.cjs": "015c3ba0a32b8982733583134a8549d701ccf6012cb94430f3b0f91eec7b8a58",
-  "infra/immigration-fiscal/main_case_2026_10_15/item_mixed.cjs": "3d156ec3931edec56a662e0fa135b120d686867a997d69f43aefa60419b47f97",
+  "infra/immigration-fiscal/main_case_2026_10_15/item_mixed.cjs": "21495fa261b88d242128d29d9b0b6d19fb5e1391a2894d5d8a423466d5b4b561",
   "infra/immigration-fiscal/main_case_2026_10_15/item_union.cjs": "cea17e43b89c9b104890362d1d57baefa84b23cf33d95a2c0b5a5abfc4dff2a5",
-  "infra/immigration-fiscal/main_case_2026_10_15/package.cjs": "aa220e35714d0d3bd0360e3e5b8c84117aecdcd7d20329aed7d7b7b8e3c87d39",
+  "infra/immigration-fiscal/main_case_2026_10_15/package.cjs": "083236226e594247bfe095c6cdf0c71f6bb0ca73b405f5da98568ac8c95b90d6",
   "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac",
   "infra/immigration-fiscal/main_case_candidate_2026_09_28/package.cjs": "ed7f3dc5d8d9cb2728a3ceca6c3dffbdb86083c147c6f6a153baad0c5ebd1ca5",
   "infra/immigration-fiscal/main_case_candidate_v2_2026_09_28/package.cjs": "029cf65a0ec698f2786c30da06892ff2584c28ec5ad91c30124250550f30d3b8",
@@ -136,8 +136,8 @@
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15/completion_jobs.npz": "9b705b349785c176dbfd507201e0e304f4b7d51e8d1cc48e667c0e1de3389a89",
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/sept29/person_accrual.parquet": "30e3499e847aee10b2b3a6105bdb0ab3c3a038bf4ea814a98e232d1ea3760ad0",
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/completion_keys.py": "28c09b54e4f8a252c8ce2dbfba1891ec49efed80342f744ec85e2b2207f36157",
-  "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/reporter_b_inputs.json": "284d67f5ca8b3df8ac8cb876ebe5e811933fa5f782a9d40ef23ce51e018688fb",
-  "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/reporter_b_routes.json": "60d9a8a898eb7e163207953dfc038a9d9f3baa30b7fd6335ccf7875e5db13965",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/reporter_b_inputs.json": "849ec65026f1db335e47336ce44487d1ac346c3a791bba0540e84a05ec86a8e7",
+  "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/reporter_b_routes.json": "ad1f6f14b4bb57f0056f644031083569ca22978ce80ce9e1d98b603fe0b9cda7",
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/sept29/person_accrual_model.json": "46e6f06d5cf19a1bf405a099ed89dba8a8df54f75e2361251f2e6a66e8ef8b72",
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/households.py": "08b13cca82fc915a2b1d8069efb9efe4c47181d17f30c3894ed9aa7c6453ccbe",
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/inputs/reporter_b_base_models.json": "48eda3936254652e48ccec2c2d72fac4621937376a7c762aef93c66f4b21ea77",
@@ -152,14 +152,14 @@
    },
    "central_cost_bn": {
     "low": {
-     "G1": 155.3827183385127,
-     "G2": 100.65654576151265,
-     "G3plus": 112.95167015533889
+     "G1": 154.81511211125863,
+     "G2": 99.1573924822393,
+     "G3plus": 111.81942566198867
     },
     "high": {
-     "G1": 186.4427109578332,
-     "G2": 127.51474749526268,
-     "G3plus": 145.24541828982723
+     "G1": 185.87124855281726,
+     "G2": 126.00546516085628,
+     "G3plus": 144.10507087530758
     }
    },
    "state_price_rule": "[ASSUMPTION] G3plus state weights proxy for added geography; joint centering preserves adopted case total",
@@ -169,7 +169,7 @@
       "low": {
        "G1": 0,
        "G2": 0.0000014623599469132387,
-       "G3plus": -0.0000014623599895458028
+       "G3plus": -0.0000014623600037566575
       },
       "high": {
        "G1": 0,
@@ -205,7 +205,7 @@
       "low": {
        "G1": 0,
        "G2": 0.000014438332883059957,
-       "G3plus": -0.000014438332868849102
+       "G3plus": -0.000014438332883059957
       },
       "high": {
        "G1": 0,
@@ -243,7 +243,7 @@
       "low": {
        "G1": 0,
        "G2": 0.00002047822718509451,
-       "G3plus": -0.00002047822718509451
+       "G3plus": -0.000020478227170883656
       },
       "high": {
        "G1": 0,
@@ -267,12 +267,12 @@
        "bn_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 0.0000014623599469132387,
-        "G3plus": -0.0000014623599895458028
+        "G3plus": -0.0000014623600037566575
        },
        "usd_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 1462.3599469132387,
-        "G3plus": -1462.3599895458028
+        "G3plus": -1462.3600037566575
        }
       },
       "high": {
@@ -375,12 +375,12 @@
        "bn_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 0.000014438332883059957,
-        "G3plus": -0.000014438332868849102
+        "G3plus": -0.000014438332883059957
        },
        "usd_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 14438.332883059957,
-        "G3plus": -14438.332868849102
+        "G3plus": -14438.332883059957
        }
       },
       "high": {
@@ -483,12 +483,12 @@
        "bn_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 0.00002047822718509451,
-        "G3plus": -0.00002047822718509451
+        "G3plus": -0.000020478227170883656
        },
        "usd_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 20478.22718509451,
-        "G3plus": -20478.22718509451
+        "G3plus": -20478.227170883656
        }
       },
       "high": {
@@ -515,14 +515,14 @@
    },
    "central_cost_bn": {
     "low": {
-     "G1": 139.97288043289439,
-     "G2": 62.78768015495235,
-     "G3plus": 82.19100708810505
+     "G1": 139.40527420564032,
+     "G2": 61.288526875679004,
+     "G3plus": 81.05876259475482
     },
     "high": {
-     "G1": 171.03287305221497,
-     "G2": 89.64588188870238,
-     "G3plus": 114.48475522259318
+     "G1": 170.46141064719902,
+     "G2": 88.13659955429598,
+     "G3plus": 113.34440780807353
     }
    },
    "state_price_rule": "[ASSUMPTION] G3plus state weights proxy for added geography; joint centering preserves adopted case total",
@@ -537,7 +537,7 @@
       "high": {
        "G1": 0,
        "G2": 0.000002245131256017885,
-       "G3plus": -0.000002245131298650449
+       "G3plus": -0.0000022451312844395943
       }
      },
      "1": {
@@ -549,7 +549,7 @@
       "high": {
        "G1": 0,
        "G2": 0.000020982421730764145,
-       "G3plus": -0.00002098242177339671
+       "G3plus": -0.000020982421759185854
       }
      },
      "2": {
@@ -573,7 +573,7 @@
       "high": {
        "G1": 0,
        "G2": 0.000015677732108088094,
-       "G3plus": -0.000015677731994401256
+       "G3plus": -0.0000156777319801904
       }
      }
     },
@@ -599,7 +599,7 @@
       "high": {
        "G1": 0,
        "G2": 0.00002729528711142848,
-       "G3plus": -0.00002729528705458506
+       "G3plus": -0.000027295287068795915
       }
      },
      "3": {
@@ -643,12 +643,12 @@
        "bn_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 0.000002245131256017885,
-        "G3plus": -0.000002245131298650449
+        "G3plus": -0.0000022451312844395943
        },
        "usd_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 2245.131256017885,
-        "G3plus": -2245.131298650449
+        "G3plus": -2245.1312844395943
        }
       }
      }
@@ -679,12 +679,12 @@
        "bn_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 0.000020982421730764145,
-        "G3plus": -0.00002098242177339671
+        "G3plus": -0.000020982421759185854
        },
        "usd_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 20982.421730764145,
-        "G3plus": -20982.42177339671
+        "G3plus": -20982.421759185854
        }
       }
      }
@@ -751,12 +751,12 @@
        "bn_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 0.000015677732108088094,
-        "G3plus": -0.000015677731994401256
+        "G3plus": -0.0000156777319801904
        },
        "usd_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 15677.732108088094,
-        "G3plus": -15677.731994401256
+        "G3plus": -15677.731980190401
        }
       }
      }
@@ -823,12 +823,12 @@
        "bn_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 0.00002729528711142848,
-        "G3plus": -0.00002729528705458506
+        "G3plus": -0.000027295287068795915
        },
        "usd_per_G2_equivalent_person": {
         "G1": 0,
         "G2": 27295.28711142848,
-        "G3plus": -27295.28705458506
+        "G3plus": -27295.287068795915
        }
       }
      }
@@ -899,14 +899,14 @@
    "detail": {
     "G1": 0,
     "G2": 0.0000014623599469132387,
-    "G3plus": -0.0000014623599895458028
+    "G3plus": -0.0000014623600037566575
    }
   },
   {
    "name": "set/g3_rate/0/low two-person linearity",
    "passed": true,
    "detail": {
-    "max_gap_bn_per_person": 4.263256414560601e-14,
+    "max_gap_bn_per_person": 4.973799150320701e-14,
     "tolerance": 1e-9
    }
   },
@@ -1001,7 +1001,7 @@
    "detail": {
     "G1": 0,
     "G2": 0.000014438332883059957,
-    "G3plus": -0.000014438332868849102
+    "G3plus": -0.000014438332883059957
    }
   },
   {
@@ -1103,7 +1103,7 @@
    "detail": {
     "G1": 0,
     "G2": 0.00002047822718509451,
-    "G3plus": -0.00002047822718509451
+    "G3plus": -0.000020478227170883656
    }
   },
   {
@@ -1178,7 +1178,7 @@
    "detail": {
     "G1": 0,
     "G2": 0.000002245131256017885,
-    "G3plus": -0.000002245131298650449
+    "G3plus": -0.0000022451312844395943
    }
   },
   {
@@ -1212,7 +1212,7 @@
    "detail": {
     "G1": 0,
     "G2": 0.000020982421730764145,
-    "G3plus": -0.00002098242177339671
+    "G3plus": -0.000020982421759185854
    }
   },
   {
@@ -1253,7 +1253,7 @@
    "name": "cash/g3_rate/2/high two-person linearity",
    "passed": true,
    "detail": {
-    "max_gap_bn_per_person": 5.684341886080802e-14,
+    "max_gap_bn_per_person": 6.394884621840902e-14,
     "tolerance": 1e-9
    }
   },
@@ -1280,7 +1280,7 @@
    "detail": {
     "G1": 0,
     "G2": 0.000015677732108088094,
-    "G3plus": -0.000015677731994401256
+    "G3plus": -0.0000156777319801904
    }
   },
   {
@@ -1321,7 +1321,7 @@
    "name": "cash/later/0/high two-person linearity",
    "passed": true,
    "detail": {
-    "max_gap_bn_per_person": 7.105427357601002e-14,
+    "max_gap_bn_per_person": 7.815970093361102e-14,
     "tolerance": 1e-9
    }
   },
@@ -1348,14 +1348,14 @@
    "detail": {
     "G1": 0,
     "G2": 0.00002729528711142848,
-    "G3plus": -0.00002729528705458506
+    "G3plus": -0.000027295287068795915
    }
   },
   {
    "name": "cash/later/1/high two-person linearity",
    "passed": true,
    "detail": {
-    "max_gap_bn_per_person": 7.105427357601002e-14,
+    "max_gap_bn_per_person": 6.394884621840902e-14,
     "tolerance": 1e-9
    }
   },

@@ -30964,7 +30964,7 @@
      "economic_class": "G3plus"
     }
    ],
-   "case_payload_sha256": "08229ee9409c48820002cc2b0831968f7c1d6066b078be9e7303922d788793c7"
+   "case_payload_sha256": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68"
   },
   "cash": {
    "parts": {
@@ -61929,15 +61929,15 @@
      "economic_class": "G3plus"
     }
    ],
-   "case_payload_sha256": "b88998981a07591cc3b28307eac929d857fe0cc7d1edc0aa3821195221ff9439"
+   "case_payload_sha256": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea"
   }
  },
  "source_sha256": {
   "main_case_2026_10_14/package.cjs": "ec00d49b40c118e61d2a6543ad21a54021b6364ebf49e0e4b3a97260fa3cc907",
   "main_case_2026_10_15/item_union.cjs": "cea17e43b89c9b104890362d1d57baefa84b23cf33d95a2c0b5a5abfc4dff2a5",
   "within_group_distribution_2026_09_29/inputs/reporter_b_base_models.json": "48eda3936254652e48ccec2c2d72fac4621937376a7c762aef93c66f4b21ea77",
-  "main_case_2026_10_15/derived/corrections.json": "08229ee9409c48820002cc2b0831968f7c1d6066b078be9e7303922d788793c7",
-  "main_case_2026_10_15/derived/corrections_cash.json": "b88998981a07591cc3b28307eac929d857fe0cc7d1edc0aa3821195221ff9439",
+  "main_case_2026_10_15/derived/corrections.json": "d18a185bc0733c47172929ca34ffec9cfc39258239bf41085dd469d73669ad68",
+  "main_case_2026_10_15/derived/corrections_cash.json": "9af66b4c6a87ddb96d22c208364cd6798d23411590252bbe9520f3019b6446ea",
   "within_group_distribution_2026_09_29/reporter_b_inputs.cjs": "54f1ecc3bc2fcaa4a9cdca76f3601386158dc28e05513b1da32467bb1909d8bc"
  }
 }

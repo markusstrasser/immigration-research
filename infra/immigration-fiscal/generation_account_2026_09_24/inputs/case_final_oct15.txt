@@ -12,3 +12,9 @@ REQUIRED before your phase 2: read the amendment file for your lane name; it cha
 - p8-prop-a: already delivered by resume (note_a8_phase2.md); nothing new.
 - p8-prop-b: /private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/prop8/note_b8_r2b.md
 - p8-prop-d: nothing new (note_d8_r2.md and note_d8_r2b.md stand).
+
+CORRECTED in place 2026-10-15 05:08 JST at commit d1a24d47 (round 3, R3-12/R3-05/R3-14/R3-18; decision
+correction cb1aea1d): set 365.791930 / 455.981785 bn; cash 281.752564 / 371.942418 bn; same key, stamps and
+lineage (45,230,062.30075857 people). Coverage item 12 is 8.802814 / 12.638785 bn (cash 0.751840 / 4.587811):
+missed people take zero on administratively counted justice use. The case payloads' pins were refreshed to the
+committed bytes after verifying these numbers.
