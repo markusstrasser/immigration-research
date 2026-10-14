@@ -83,3 +83,27 @@ session: 95a94bd8-dcdc-4501-bb8e-5f9906dddc53
   candidate built 2026-09-30: `infra/immigration-fiscal/main_case_candidate_v41_2026_09_30/` (1bbeae94, 44 gates); adoption needs a new adopted lane, the 15 consumer lanes and the docs, listed in its RESULT.
 - **Evidence map to v4 (recommend: yes).** It still states the September 27 claims: C2 "taxes cover benefits" is false on v4 (the group's taxes fall $3.4–12.6bn short of its household transfers with pensions on accrual), C1 says $355bn (v4 midpoint $403bn) and C5 85% (v4 68%). Evidence: `infra/immigration-fiscal/break_conditions_2026_09_29/RESULT.md`, section "v4 case (sept29)".
 - **Push (recommend: yes).** main is about 50 commits ahead of origin/main (01e7d0b), including the peer session's Indian-origin lanes; keyscan clean on every commit this session.
+
+## Open asks, 2026-10-14
+session: 75b08f57-63cc-4e3d-96dc-60050327b5c1
+
+Context: round 1 of the critique loop on main case v7 ($339.6–423.6bn) is fixed lane by lane; main case v8 is being
+built from the adopted fixes. Each ask has my recommendation; the work proceeds on it unless you say otherwise.
+
+- **Census coverage into the central (recommend: yes; v8 is built with it on, behind a switch).** The 2020
+  Post-Enumeration Survey measures a 4.99% Hispanic undercount (SE 0.53 points). The 2024 population controls keep
+  the Census Hispanic total, so the survey inherits that undercount. The old reason for keeping it beside ("the
+  controls absorb part of it") is false. On v7 it adds +$11.1 / 14.8bn. Every construction except the
+  demographic-analysis low series is positive (range −$16bn to +$26bn), so leaving it at zero is a convention-driven
+  zero. Evidence: `infra/immigration-fiscal/coverage_bound_2026_10_14/RESULT.md`.
+- **Value of a death (recommend: uniform DOT VSL, $13.7m, as now; life-years beside).** Life-years would lower the
+  PM2.5 row by $35.6–42.6bn, because its deaths are old, and raise the crime rows by $4.0–5.0bn, because victims are
+  young. Uniform VSL is DOT and EPA practice. Evidence: `social_respending_2026_10_14/RESULT.md`,
+  `social_costs_unpriced_2026_09_28/RESULT.md` (P7 sections).
+- **The world ledger's public-goods valuation (recommend: keep it report-only).** Valuing the public goods the group
+  receives at its own willingness to pay (−$86.7 / −89.4bn) is a welfare frame, not the fiscal account's.
+- **Map, explorer and figures to v8 (recommend: yes, once v8 is adopted and its docs pass is done).** They are on v6
+  by your rule.
+- **Push (recommend: yes, after the v8 docs pass audits clean).** main is 22 commits ahead of origin (ed8fc58b); they
+  carry new findings (the corrected world ledger, comparators, social rows, back-cast, coverage) and the repo is
+  public.
