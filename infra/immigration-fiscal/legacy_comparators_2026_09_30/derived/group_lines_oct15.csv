@@ -462,7 +462,7 @@ mexican_origin_rough,cash,low,16,spending,defense,856.0199020000,108.1348775722,
 mexican_origin_rough,cash,low,16,spending,domestic_interest,1118.8700000000,141.3388522703,0.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,spending,economic_affairs_services,453.1368295940,39.8338844322,0.3844994797,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,spending,education_benefits,64.4790000000,11.6511450942,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,cash,low,16,spending,education_services,1226.3968651590,209.9423672405,1.0000000000,oct15,whole-population mortality,rough
+mexican_origin_rough,cash,low,16,spending,education_services,1226.3968651590,212.2238419098,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,spending,employment_training,1.3770000000,0.1719330685,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,spending,energy_assistance,5.2180000000,0.5951497141,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,spending,family_and_general_assistance,63.0650000000,11.0487900742,1.0000000000,oct15,whole-population mortality,rough
@@ -844,7 +844,7 @@ mexican_origin_rough,cash,low,16,spending,veterans_other,37.5260000000,1.7353498
 mexican_origin_rough,cash,low,16,spending,veterans_pension_disability,180.5250000000,9.9355082954,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,spending,veterans_readjustment,11.3910000000,0.6269235562,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,spending,workers_compensation,11.9230000000,2.3526061725,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,cash,low,16,scalar,cost_bn,,264.0037038458,,oct15,whole-population mortality,rough
+mexican_origin_rough,cash,low,16,scalar,cost_bn,,266.4221332854,,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,low,16,scalar,production_gain_bn,,11.9094554392,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,receipt,business_current_transfers,139.9760000000,26.0550674220,0.0000000000,oct15,whole-population mortality,rough
@@ -886,7 +886,7 @@ A1_third_plus_nh_white,cash,low,16,spending,defense,856.0199020000,114.240535618
 A1_third_plus_nh_white,cash,low,16,spending,domestic_interest,1118.8700000000,149.3193181472,0.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,spending,economic_affairs_services,453.1368295940,66.7151075421,0.3844994797,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,spending,education_benefits,64.4790000000,5.7800448730,1.0000000000,oct15,whole-population mortality,rough
-A1_third_plus_nh_white,cash,low,16,spending,education_services,1226.3968651590,137.5941013686,1.0000000000,oct15,whole-population mortality,rough
+A1_third_plus_nh_white,cash,low,16,spending,education_services,1226.3968651590,131.5775019084,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,spending,employment_training,1.3770000000,0.1837681778,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,spending,energy_assistance,5.2180000000,0.6435809033,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,spending,family_and_general_assistance,63.0650000000,5.5781733482,1.0000000000,oct15,whole-population mortality,rough
@@ -1268,7 +1268,7 @@ A1_third_plus_nh_white,cash,low,16,spending,veterans_other,37.5260000000,5.90179
 A1_third_plus_nh_white,cash,low,16,spending,veterans_pension_disability,180.5250000000,28.8841891327,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,spending,veterans_readjustment,11.3910000000,1.8225719341,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,spending,workers_compensation,11.9230000000,1.5154565200,1.0000000000,oct15,whole-population mortality,rough
-A1_third_plus_nh_white,cash,low,16,scalar,cost_bn,,-107.7812138040,,oct15,whole-population mortality,rough
+A1_third_plus_nh_white,cash,low,16,scalar,cost_bn,,-114.1589840491,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,low,16,scalar,production_gain_bn,,0.0000000000,,oct15,whole-population mortality,rough
 all_residents_slice,cash,low,16,receipt,business_current_transfers,139.9760000000,18.8682506160,0.0000000000,oct15,whole-population mortality,rough
@@ -2158,7 +2158,7 @@ mexican_origin_rough,cash,high,11,spending,defense,856.0199020000,108.1348775722
 mexican_origin_rough,cash,high,11,spending,domestic_interest,1118.8700000000,141.3388522703,0.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,spending,economic_affairs_services,453.1368295940,39.8338844322,0.6387399412,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,spending,education_benefits,64.4790000000,11.6511450942,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,cash,high,11,spending,education_services,1226.3968651590,209.9423672405,1.0000000000,oct15,whole-population mortality,rough
+mexican_origin_rough,cash,high,11,spending,education_services,1226.3968651590,212.2238419098,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,spending,employment_training,1.3770000000,0.1719330685,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,spending,energy_assistance,5.2180000000,0.5951497141,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,spending,family_and_general_assistance,63.0650000000,11.0487900742,1.0000000000,oct15,whole-population mortality,rough
@@ -2540,7 +2540,7 @@ mexican_origin_rough,cash,high,11,spending,veterans_other,37.5260000000,1.735349
 mexican_origin_rough,cash,high,11,spending,veterans_pension_disability,180.5250000000,9.9355082954,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,spending,veterans_readjustment,11.3910000000,0.6269235562,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,spending,workers_compensation,11.9230000000,2.3526061725,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,cash,high,11,scalar,cost_bn,,352.1254497141,,oct15,whole-population mortality,rough
+mexican_origin_rough,cash,high,11,scalar,cost_bn,,354.6123565388,,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 mexican_origin_rough,cash,high,11,scalar,production_gain_bn,,7.8342586351,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,receipt,business_current_transfers,139.9760000000,26.0550674220,0.0000000000,oct15,whole-population mortality,rough
@@ -2582,7 +2582,7 @@ A1_third_plus_nh_white,cash,high,11,spending,defense,856.0199020000,114.24053561
 A1_third_plus_nh_white,cash,high,11,spending,domestic_interest,1118.8700000000,149.3193181472,0.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,spending,economic_affairs_services,453.1368295940,66.7151075421,0.6387399412,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,spending,education_benefits,64.4790000000,5.7800448730,1.0000000000,oct15,whole-population mortality,rough
-A1_third_plus_nh_white,cash,high,11,spending,education_services,1226.3968651590,137.5941013686,1.0000000000,oct15,whole-population mortality,rough
+A1_third_plus_nh_white,cash,high,11,spending,education_services,1226.3968651590,131.5775019084,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,spending,employment_training,1.3770000000,0.1837681778,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,spending,energy_assistance,5.2180000000,0.6435809033,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,spending,family_and_general_assistance,63.0650000000,5.5781733482,1.0000000000,oct15,whole-population mortality,rough
@@ -2964,7 +2964,7 @@ A1_third_plus_nh_white,cash,high,11,spending,veterans_other,37.5260000000,5.9017
 A1_third_plus_nh_white,cash,high,11,spending,veterans_pension_disability,180.5250000000,28.8841891327,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,spending,veterans_readjustment,11.3910000000,1.8225719341,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,spending,workers_compensation,11.9230000000,1.5154565200,1.0000000000,oct15,whole-population mortality,rough
-A1_third_plus_nh_white,cash,high,11,scalar,cost_bn,,4.2913399109,,oct15,whole-population mortality,rough
+A1_third_plus_nh_white,cash,high,11,scalar,cost_bn,,-2.2670157266,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,cash,high,11,scalar,production_gain_bn,,0.0000000000,,oct15,whole-population mortality,rough
 all_residents_slice,cash,high,11,receipt,business_current_transfers,139.9760000000,18.8682506160,0.0000000000,oct15,whole-population mortality,rough
@@ -3854,7 +3854,7 @@ mexican_origin_rough,accrual,low,16,spending,defense,856.0199020000,108.13487757
 mexican_origin_rough,accrual,low,16,spending,domestic_interest,1118.8700000000,141.3388522703,0.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,spending,economic_affairs_services,453.1368295940,39.8338844322,0.3844994797,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,spending,education_benefits,64.4790000000,11.6511450942,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,accrual,low,16,spending,education_services,1226.3968651590,209.9423672405,1.0000000000,oct15,whole-population mortality,rough
+mexican_origin_rough,accrual,low,16,spending,education_services,1226.3968651590,212.2238419098,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,spending,employment_training,1.3770000000,0.1719330685,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,spending,energy_assistance,5.2180000000,0.5951497141,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,spending,family_and_general_assistance,63.0650000000,11.0487900742,1.0000000000,oct15,whole-population mortality,rough
@@ -4236,7 +4236,7 @@ mexican_origin_rough,accrual,low,16,spending,veterans_other,37.5260000000,1.7353
 mexican_origin_rough,accrual,low,16,spending,veterans_pension_disability,180.5250000000,9.9355082954,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,spending,veterans_readjustment,11.3910000000,0.6269235562,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,spending,workers_compensation,11.9230000000,2.3526061725,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,accrual,low,16,scalar,cost_bn,,342.0053262769,,oct15,whole-population mortality,rough
+mexican_origin_rough,accrual,low,16,scalar,cost_bn,,344.4237557165,,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,low,16,scalar,production_gain_bn,,11.9094554392,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,receipt,business_current_transfers,139.9760000000,26.0550674220,0.0000000000,oct15,whole-population mortality,rough
@@ -4278,7 +4278,7 @@ A1_third_plus_nh_white,accrual,low,16,spending,defense,856.0199020000,114.240535
 A1_third_plus_nh_white,accrual,low,16,spending,domestic_interest,1118.8700000000,149.3193181472,0.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,spending,economic_affairs_services,453.1368295940,66.7151075421,0.3844994797,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,spending,education_benefits,64.4790000000,5.7800448730,1.0000000000,oct15,whole-population mortality,rough
-A1_third_plus_nh_white,accrual,low,16,spending,education_services,1226.3968651590,137.5941013686,1.0000000000,oct15,whole-population mortality,rough
+A1_third_plus_nh_white,accrual,low,16,spending,education_services,1226.3968651590,131.5775019084,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,spending,employment_training,1.3770000000,0.1837681778,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,spending,energy_assistance,5.2180000000,0.6435809033,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,spending,family_and_general_assistance,63.0650000000,5.5781733482,1.0000000000,oct15,whole-population mortality,rough
@@ -4660,7 +4660,7 @@ A1_third_plus_nh_white,accrual,low,16,spending,veterans_other,37.5260000000,5.90
 A1_third_plus_nh_white,accrual,low,16,spending,veterans_pension_disability,180.5250000000,28.8841891327,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,spending,veterans_readjustment,11.3910000000,1.8225719341,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,spending,workers_compensation,11.9230000000,1.5154565200,1.0000000000,oct15,whole-population mortality,rough
-A1_third_plus_nh_white,accrual,low,16,scalar,cost_bn,,-196.6774731785,,oct15,whole-population mortality,rough
+A1_third_plus_nh_white,accrual,low,16,scalar,cost_bn,,-203.0552434235,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,low,16,scalar,production_gain_bn,,0.0000000000,,oct15,whole-population mortality,rough
 all_residents_slice,accrual,low,16,receipt,business_current_transfers,139.9760000000,18.8682506160,0.0000000000,oct15,whole-population mortality,rough
@@ -5550,7 +5550,7 @@ mexican_origin_rough,accrual,high,11,spending,defense,856.0199020000,108.1348775
 mexican_origin_rough,accrual,high,11,spending,domestic_interest,1118.8700000000,141.3388522703,0.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,spending,economic_affairs_services,453.1368295940,39.8338844322,0.6387399412,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,spending,education_benefits,64.4790000000,11.6511450942,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,accrual,high,11,spending,education_services,1226.3968651590,209.9423672405,1.0000000000,oct15,whole-population mortality,rough
+mexican_origin_rough,accrual,high,11,spending,education_services,1226.3968651590,212.2238419098,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,spending,employment_training,1.3770000000,0.1719330685,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,spending,energy_assistance,5.2180000000,0.5951497141,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,spending,family_and_general_assistance,63.0650000000,11.0487900742,1.0000000000,oct15,whole-population mortality,rough
@@ -5932,7 +5932,7 @@ mexican_origin_rough,accrual,high,11,spending,veterans_other,37.5260000000,1.735
 mexican_origin_rough,accrual,high,11,spending,veterans_pension_disability,180.5250000000,9.9355082954,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,spending,veterans_readjustment,11.3910000000,0.6269235562,1.0000000000,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,spending,workers_compensation,11.9230000000,2.3526061725,1.0000000000,oct15,whole-population mortality,rough
-mexican_origin_rough,accrual,high,11,scalar,cost_bn,,430.1270721452,,oct15,whole-population mortality,rough
+mexican_origin_rough,accrual,high,11,scalar,cost_bn,,432.6139789699,,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 mexican_origin_rough,accrual,high,11,scalar,production_gain_bn,,7.8342586351,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,receipt,business_current_transfers,139.9760000000,26.0550674220,0.0000000000,oct15,whole-population mortality,rough
@@ -5974,7 +5974,7 @@ A1_third_plus_nh_white,accrual,high,11,spending,defense,856.0199020000,114.24053
 A1_third_plus_nh_white,accrual,high,11,spending,domestic_interest,1118.8700000000,149.3193181472,0.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,spending,economic_affairs_services,453.1368295940,66.7151075421,0.6387399412,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,spending,education_benefits,64.4790000000,5.7800448730,1.0000000000,oct15,whole-population mortality,rough
-A1_third_plus_nh_white,accrual,high,11,spending,education_services,1226.3968651590,137.5941013686,1.0000000000,oct15,whole-population mortality,rough
+A1_third_plus_nh_white,accrual,high,11,spending,education_services,1226.3968651590,131.5775019084,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,spending,employment_training,1.3770000000,0.1837681778,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,spending,energy_assistance,5.2180000000,0.6435809033,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,spending,family_and_general_assistance,63.0650000000,5.5781733482,1.0000000000,oct15,whole-population mortality,rough
@@ -6356,7 +6356,7 @@ A1_third_plus_nh_white,accrual,high,11,spending,veterans_other,37.5260000000,5.9
 A1_third_plus_nh_white,accrual,high,11,spending,veterans_pension_disability,180.5250000000,28.8841891327,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,spending,veterans_readjustment,11.3910000000,1.8225719341,1.0000000000,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,spending,workers_compensation,11.9230000000,1.5154565200,1.0000000000,oct15,whole-population mortality,rough
-A1_third_plus_nh_white,accrual,high,11,scalar,cost_bn,,-84.6049194635,,oct15,whole-population mortality,rough
+A1_third_plus_nh_white,accrual,high,11,scalar,cost_bn,,-91.1632751010,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,scalar,population,,45230062.3008,,oct15,whole-population mortality,rough
 A1_third_plus_nh_white,accrual,high,11,scalar,production_gain_bn,,0.0000000000,,oct15,whole-population mortality,rough
 all_residents_slice,accrual,high,11,receipt,business_current_transfers,139.9760000000,18.8682506160,0.0000000000,oct15,whole-population mortality,rough

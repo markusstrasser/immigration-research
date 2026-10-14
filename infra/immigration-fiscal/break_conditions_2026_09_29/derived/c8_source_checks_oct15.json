@@ -7,7 +7,9 @@
   "source_sha256": {
     "white_summary.json": "121b787f04637b43d698555fade2b115686f15fa7f30d4d5167ac5c3d4477081",
     "black_summary.json": "2cf7a859a12a3775a385440347ebf7851630302b56b95dbbd00847b26d7c2409",
-    "gaps.csv": "b28eced6679186982310efef4192e718a6f58a74cfbbb3e35e8d02566babb794"
+    "white_children_summary.json": "647223a2ca64fdc17688ffda01d1614c7f533e3650fc02ac56682f58daaf99d3",
+    "black_children_summary.json": "b2ac50210518879a49c6f7fa085117c0606a6e0c4fbd501be6ac3bb65951c9b9",
+    "gaps.csv": "18112e8cf04bb4afe6a5db603b70e1761ca024f787fcf02f05b6da9e0d4831ef"
   },
   "comparisons": [
     {
@@ -16,8 +18,8 @@
       "basis": "accrual",
       "group": "A1_third_plus_nh_white",
       "lineage_minus_comparator_bn": [
-        571.2808695166818,
-        542.5815466665633
+        579.8654271558158,
+        551.4151670832692
       ]
     },
     {
@@ -26,8 +28,8 @@
       "basis": "accrual",
       "group": "A3_third_plus_nh_white_at_union_ages",
       "lineage_minus_comparator_bn": [
-        454.7891934455396,
-        435.2298691785303
+        478.8031716664631,
+        454.76502975428514
       ]
     },
     {
@@ -36,8 +38,8 @@
       "basis": "cash",
       "group": "A1_third_plus_nh_white",
       "lineage_minus_comparator_bn": [
-        401.19589492732234,
-        372.49657207720384
+        409.99209461192265,
+        381.5418345393762
       ]
     },
     {
@@ -46,8 +48,8 @@
       "basis": "cash",
       "group": "A3_third_plus_nh_white_at_union_ages",
       "lineage_minus_comparator_bn": [
-        465.5092521112126,
-        445.94992784420316
+        489.7302997670928,
+        465.692157854915
       ]
     },
     {
@@ -56,8 +58,8 @@
       "basis": "accrual",
       "group": "A1_third_plus_nh_white",
       "lineage_minus_comparator_bn": [
-        575.0205879132246,
-        546.321265063106
+        583.2499361115108,
+        554.7996760389642
       ]
     },
     {
@@ -66,8 +68,8 @@
       "basis": "accrual",
       "group": "A3_third_plus_nh_white_at_union_ages",
       "lineage_minus_comparator_bn": [
-        458.5289118420824,
-        438.96958757507304
+        482.1876806221579,
+        458.14953870998005
       ]
     },
     {
@@ -76,8 +78,8 @@
       "basis": "cash",
       "group": "A1_third_plus_nh_white",
       "lineage_minus_comparator_bn": [
-        401.19589492732234,
-        372.49657207720384
+        409.99209461192265,
+        381.5418345393762
       ]
     },
     {
@@ -86,8 +88,8 @@
       "basis": "cash",
       "group": "A3_third_plus_nh_white_at_union_ages",
       "lineage_minus_comparator_bn": [
-        465.5092521112126,
-        445.94992784420316
+        489.7302997670928,
+        465.692157854915
       ]
     },
     {
@@ -96,8 +98,8 @@
       "basis": "accrual",
       "group": "A1_third_plus_nh_white",
       "lineage_minus_comparator_bn": [
-        575.024495381152,
-        546.3251725310334
+        583.2539889650388,
+        554.8037288924922
       ]
     },
     {
@@ -106,8 +108,8 @@
       "basis": "accrual",
       "group": "A3_third_plus_nh_white_at_union_ages",
       "lineage_minus_comparator_bn": [
-        458.5328193100097,
-        438.9734950430004
+        482.19173347568596,
+        458.1535915635081
       ]
     },
     {
@@ -116,8 +118,8 @@
       "basis": "cash",
       "group": "A1_third_plus_nh_white",
       "lineage_minus_comparator_bn": [
-        401.19589492732234,
-        372.49657207720384
+        409.99209461192265,
+        381.5418345393762
       ]
     },
     {
@@ -126,8 +128,8 @@
       "basis": "cash",
       "group": "A3_third_plus_nh_white_at_union_ages",
       "lineage_minus_comparator_bn": [
-        465.5092521112126,
-        445.94992784420316
+        489.7302997670928,
+        465.692157854915
       ]
     }
   ]

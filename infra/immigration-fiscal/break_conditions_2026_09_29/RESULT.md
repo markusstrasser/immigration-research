@@ -1356,3 +1356,5 @@ named in the gate's detail, not refused. Corrected: the case $365.7919–455.981
 $308.17bn, up $513.61bn; school within district $335.4217–428.1078bn; first-year horizon $294.3821–351.7461bn (cash
 $210.3427–267.7067bn); 7,282 minimal crossings down and 1,450 up. Parent rerun IDENTICAL 77/77, exit 0 (two
 publication tests stay deselected until the who-wins lane is on oct15).
+
+Log: 2026-10-15 08:40:26 JST (`date`, parent): rerun on round 3's comparator code (4548e70f), IDENTICAL 77/77, exit 0. `tables_oct15.py` reads C8's A1 test on round 3's central (members' children depart, own coverage, own mortality, both lineage profile bounds) and accepts A3's item 11 only as A1's declared reweighted term; the tables stay withheld. The source check (`derived/c8_source_checks_oct15.json`) still records the current-rule readings, now with the school key: A1, mixed pair, accrual $579.865427 / 551.415167bn (was $571.280870 / 542.581547bn).

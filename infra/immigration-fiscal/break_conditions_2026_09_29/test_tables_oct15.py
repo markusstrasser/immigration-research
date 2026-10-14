@@ -50,7 +50,7 @@ def comparator_fixture():
              "mixed_unit_removal_bn": 10 if group in ("mexican_origin_engine", tables.ROUGH_LINEAGE) else -5 if group == 'A1_third_plus_nh_white' else 0,
              "comparator_item11_bn": -5 if group == 'A1_third_plus_nh_white' else 0,
              "item11_paired_se_bn": 3 if group == 'A1_third_plus_nh_white' else '',
-             "mixed_unit_asymmetry": "lineage measured; comparator unmeasured",
+             "mixed_unit_asymmetry": "reweighted from A1: test" if group == "A3_third_plus_nh_white_at_union_ages" else "lineage measured; comparator measured",
              "cost_without_item11_bn": 340 if group in ("mexican_origin_engine", tables.ROUGH_LINEAGE) else -20,
              "group": group, "end": end, "cost_bn": 350 if group in ("mexican_origin_engine", tables.ROUGH_LINEAGE) else -25 if group == 'A1_third_plus_nh_white' else -20}
             for convention, bound in tables.MORTALITY_READINGS for basis in ("accrual", "cash")

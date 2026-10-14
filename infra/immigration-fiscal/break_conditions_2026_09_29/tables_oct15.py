@@ -123,7 +123,8 @@ MORTALITY_READINGS = ((MIXED_MORTALITY, "none"), (OWN_MORTALITY, "low"), (OWN_MO
 ROUGH_LINEAGE = "mexican_origin_rough"
 
 
-def comparator_values(records, arm="combined_rules_only"):
+def comparator_values(records, arm="combined_rules_only",
+                      comparators=("A1_third_plus_nh_white", "A3_third_plus_nh_white_at_union_ages")):
     """No implicit whole-population/own-group pairing; row provenance is mandatory."""
     selected, declared = {}, {}
     for row in records:
@@ -145,11 +146,11 @@ def comparator_values(records, arm="combined_rules_only"):
         declared[key] = row
     for reading in MORTALITY_READINGS:
         for basis in ("accrual", "cash"):
-            for group in ("mexican_origin_engine", ROUGH_LINEAGE, "A1_third_plus_nh_white", "A3_third_plus_nh_white_at_union_ages"):
+            for group in ("mexican_origin_engine", ROUGH_LINEAGE, *comparators):
                 for end in ("low", "high"):
                     if (*reading, basis, group, end) not in selected:
                         blocked(f"C8 missing comparator row: {(*reading, basis, group, end)}")
-            for group in ("A1_third_plus_nh_white", "A3_third_plus_nh_white_at_union_ages"):
+            for group in comparators:
                 for end in ("low", "high"):
                     try:
                         lineage = declared[*reading, basis, ROUGH_LINEAGE, end]
@@ -168,8 +169,10 @@ def comparator_values(records, arm="combined_rules_only"):
                                   num(comparator, 'mixed_unit_removal_bn'), num(comparator, 'comparator_item11_bn'), 1e-9)
                             if num(comparator, 'item11_paired_se_bn') < 0:
                                 blocked('C8 paired item11 SE must be nonnegative')
-                        elif num(comparator, 'mixed_unit_removal_bn') != 0:
-                            blocked('C8 age-standardized comparator item11 remains unmeasured')
+                        elif not (str(comparator.get('mixed_unit_asymmetry', '')).startswith('reweighted from A1')
+                                  and abs(num(comparator, 'mixed_unit_removal_bn') - num(comparator, 'comparator_item11_bn')) <= 1e-9):
+                            # round 3 (C3 fix 5): A3 carries A1's item 11 reweighted, declared as such
+                            blocked("C8 age-standardized comparator item11 must be A1's declared reweighted term")
                         MORTALITY.validate_pair(lineage,
                                                 declared[*reading, basis, group, end], reading[0])
                     except ValueError as error:
@@ -292,6 +295,8 @@ def main():
     white = F / "white_replacement_2026_09_28/derived"
     comparator_records = rows(white / "symmetric_results_oct15.csv")
     comparator = comparator_values(comparator_records)
+    # Round 3's central reading (children rule, own coverage, own mortality) for the A1 headline test.
+    central = comparator_values(comparator_records, arm=MORTALITY.CENTRAL["arm"], comparators=("A1_third_plus_nh_white",))
     bridges = bridge_values(rows(white / "lineage_engine_bridge_oct15.csv"), comparator)
     comparator_rows = {(r["mortality_convention"], r["mortality_bound"], r["basis"], r["group"], r["end"]): r
                        for r in comparator_records if r["arm"] == "combined_rules_only"}
@@ -413,8 +418,9 @@ def main():
     update("C6", "holds" if cost_min > 0 else "BREAKS at a generation end", f"Each generation costs others at both ends under both conventions; minimum ${cost_min:.1f}bn. Largest service break-even {bmax:.1f}%.",
            f"A generation becomes a gain below its own service break-even. On cash, minimum generation cost ${cash_min:.1f}bn at the case's personal ends; largest service break-even {cash_bmax:.1f}% over both allocations and conventions. All values are in c6_generation_break_even_oct15.csv. The progress clause retains its historical cohort evidence.",
            "G3+ carries the added people and the case's lineage item parts.", "C1 and lineage/generation allocation")
-    mixed_a1 = comparator_gap(comparator, MIXED_MORTALITY, "none", "accrual", "A1_third_plus_nh_white")
-    moves = [100*(sum(mixed_a1)/2/references[A1]-1)]
+    central_a1 = {bound: comparator_gap(central, MORTALITY.CENTRAL["mortality_convention"], bound, "accrual",
+                                        "A1_third_plus_nh_white") for bound in ("low", "high")}
+    moves = [100*(sum(central_a1[bound])/2/references[A1]-1) for bound in ("low", "high")]
     C["C8"]["claim_tested"] = claim
     comparison_figures = [A1, LOCAL, RAW, "age artefact removed: A3 white rates at union ages, accrual",
                           "age artefact removed: A3 white rates at union ages, cash", "local whites state by state, union ages, cash"]
@@ -451,11 +457,11 @@ def main():
                     "case_lineage_cost_bn": case_value,
                     "case_minus_rough_lineage_bridge_bn": bridges[mortality, bound, basis, end],
                     "bridge_itemization": "white_replacement_2026_09_28/derived/lineage_engine_bridge_oct15.csv"})
-    update("C8", ("A1 holds against historical map claim" if abs(moves[0])<=25 else "A1 BREAKS historical map claim")
+    update("C8", ("A1 holds against historical map claim" if max(map(abs, moves))<=25 else "A1 BREAKS historical map claim")
            + "; matched local-white reading GAP",
-           f"Live v8 A1 ${pair_text(mixed_a1)}bn on rough engine for both sides, mixed mortality conventions. Move on map's historical oct07 A1 midpoint: {pair_text(moves)}%. " + "; ".join(matched_readings),
+           f"Live v8 A1 on round 3's central (members' children depart with them, every group at its own coverage and its own mortality) ${pair_text(central_a1['low'])}bn / ${pair_text(central_a1['high'])}bn at the lineage's low / high profile bounds; rough engine on both sides. Move on the map's historical oct07 A1 midpoint: {pair_text(moves)}% (bounds low / high). Current-rule readings: " + "; ".join(matched_readings),
            f"A quarter from the historical map midpoints ${references[A1]:.2f}bn (A1), ${references[LOCAL]:.2f}bn (local). {white_readings} The explicitly tagged A1/A3 matched readings use symmetric_results_oct15.csv; all bounds are preserved in c8_comparisons_oct15.csv. [GAP] No local-state own-production/own-mortality row is delivered; the live legacy source mixes engines and cannot clear that gap.",
-           "The map remains oct07 by operator rule; the consumer is oct15. The live full lineage and A1/A3 use personal ends on the rough engine, own comparator production/status/eligibility/frame rules. The mixed mortality conventions retain whole-population lineage mortality and each comparator's own mortality. Own-group mortality replaces the lineage's mortality using both source bounds. Case-versus-rough lineage bridge and itemization are beside each gap. Item11 is measured only for the lineage; every row declares the asymmetry and reports its exclusion. Completion remains lineage-only; comparator coverage follows its lane's rule. [FRAMING-SENSITIVE]", "P05/P07/P14")
+           "The map remains oct07 by operator rule; the consumer is oct15. The live full lineage and A1/A3 use personal ends on the rough engine, own comparator production/status/eligibility/frame rules. The mixed mortality conventions retain whole-population lineage mortality and each comparator's own mortality. Own-group mortality replaces the lineage's mortality using both source bounds. Case-versus-rough lineage bridge and itemization are beside each gap. Item 11 is measured for the lineage, A1 whites and Black; A3 takes A1's term reweighted by its weight on members in mixed units; every row declares its scope and reports its exclusion. Completion remains lineage-only. The current-rule readings leave comparators without Census coverage; round 3's central gives each its own. The mixed mortality pair is labelled and never a stated claim. [FRAMING-SENSITIVE]", "P05/P07/P14")
     C["C8"]["discriminating_observation"] = "[GAP] The tagged rules-only comparisons do not identify causal replacement or transport lineage-only membership/mixed-unit estimates to comparators; local-state matched mortality/production remains uncomputed."
     rivals = {
         "C1": f"[FRAMING-SENSITIVE] First-year budgets: {arm_text('first_year_horizon')}; first-year cash: {arm_text('first_year_horizon_cash')}; counted by ancestry share: ${pair_text([band(arms['ancestry_share_low'])[0], band(arms['ancestry_share_high'])[1]])}bn.",

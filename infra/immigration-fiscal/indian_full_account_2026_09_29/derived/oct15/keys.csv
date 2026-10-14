@@ -5,7 +5,7 @@ mexican_origin_rough,cps_sit,0.051817,oct15,whole-population mortality,whole_pop
 mexican_origin_rough,cps_oasdi,0.088041,oct15,whole-population mortality,whole_population_tables
 mexican_origin_rough,cps_ss,0.040788,oct15,whole-population mortality,whole_population_tables
 mexican_origin_rough,cps_mcare,0.050102,oct15,whole-population mortality,whole_population_tables
-mexican_origin_rough,cps_k12,0.163249,oct15,whole-population mortality,whole_population_tables
+mexican_origin_rough,cps_k12,0.165762,oct15,whole-population mortality,whole_population_tables
 mexican_origin_rough,cps_cons,0.081207,oct15,whole-population mortality,whole_population_tables
 mexican_origin_rough,cps_house,0.124795,oct15,whole-population mortality,whole_population_tables
 mexican_origin_rough_white_ages,meps_ratio_TOTMCD24,0.812497,oct15,whole-population mortality,whole_population_tables
@@ -21,7 +21,7 @@ mexican_origin_rough_white_ages,cps_sit,0.052675,oct15,whole-population mortalit
 mexican_origin_rough_white_ages,cps_oasdi,0.090476,oct15,whole-population mortality,whole_population_tables
 mexican_origin_rough_white_ages,cps_ss,0.106432,oct15,whole-population mortality,whole_population_tables
 mexican_origin_rough_white_ages,cps_mcare,0.138057,oct15,whole-population mortality,whole_population_tables
-mexican_origin_rough_white_ages,cps_k12,0.099846,oct15,whole-population mortality,whole_population_tables
+mexican_origin_rough_white_ages,cps_k12,0.101861,oct15,whole-population mortality,whole_population_tables
 mexican_origin_rough_white_ages,cps_cons,0.086406,oct15,whole-population mortality,whole_population_tables
 mexican_origin_rough_white_ages,cps_house,0.130550,oct15,whole-population mortality,whole_population_tables
 indian_origin,meps_medicare,0.012680,oct15,whole-population mortality,whole_population_tables
@@ -44,7 +44,7 @@ indian_origin,cps_sit,0.035978,oct15,whole-population mortality,whole_population
 indian_origin,cps_oasdi,0.031348,oct15,whole-population mortality,whole_population_tables
 indian_origin,cps_ss,0.005401,oct15,whole-population mortality,whole_population_tables
 indian_origin,cps_mcare,0.006608,oct15,whole-population mortality,whole_population_tables
-indian_origin,cps_k12,0.018105,oct15,whole-population mortality,whole_population_tables
+indian_origin,cps_k12,0.019694,oct15,whole-population mortality,whole_population_tables
 indian_origin,cps_cons,0.023958,oct15,whole-population mortality,whole_population_tables
 indian_origin,cps_house,0.010329,oct15,whole-population mortality,whole_population_tables
 indian_origin_white_ages,meps_medicare,0.023610,oct15,whole-population mortality,whole_population_tables
@@ -67,7 +67,7 @@ indian_origin_white_ages,cps_sit,0.033732,oct15,whole-population mortality,whole
 indian_origin_white_ages,cps_oasdi,0.028141,oct15,whole-population mortality,whole_population_tables
 indian_origin_white_ages,cps_ss,0.014411,oct15,whole-population mortality,whole_population_tables
 indian_origin_white_ages,cps_mcare,0.018352,oct15,whole-population mortality,whole_population_tables
-indian_origin_white_ages,cps_k12,0.015046,oct15,whole-population mortality,whole_population_tables
+indian_origin_white_ages,cps_k12,0.016454,oct15,whole-population mortality,whole_population_tables
 indian_origin_white_ages,cps_cons,0.023810,oct15,whole-population mortality,whole_population_tables
 indian_origin_white_ages,cps_house,0.008511,oct15,whole-population mortality,whole_population_tables
 india_born,meps_medicare,0.013174,oct15,whole-population mortality,whole_population_tables
@@ -90,7 +90,7 @@ india_born,cps_sit,0.022935,oct15,whole-population mortality,whole_population_ta
 india_born,cps_oasdi,0.026876,oct15,whole-population mortality,whole_population_tables
 india_born,cps_ss,0.005053,oct15,whole-population mortality,whole_population_tables
 india_born,cps_mcare,0.006184,oct15,whole-population mortality,whole_population_tables
-india_born,cps_k12,0.005340,oct15,whole-population mortality,whole_population_tables
+india_born,cps_k12,0.005852,oct15,whole-population mortality,whole_population_tables
 india_born,cps_cons,0.016825,oct15,whole-population mortality,whole_population_tables
 india_born,cps_house,0.010181,oct15,whole-population mortality,whole_population_tables
 india_born_white_ages,meps_medicare,0.016628,oct15,whole-population mortality,whole_population_tables
@@ -113,7 +113,7 @@ india_born_white_ages,cps_sit,0.020047,oct15,whole-population mortality,whole_po
 india_born_white_ages,cps_oasdi,0.019447,oct15,whole-population mortality,whole_population_tables
 india_born_white_ages,cps_ss,0.010563,oct15,whole-population mortality,whole_population_tables
 india_born_white_ages,cps_mcare,0.013407,oct15,whole-population mortality,whole_population_tables
-india_born_white_ages,cps_k12,0.010295,oct15,whole-population mortality,whole_population_tables
+india_born_white_ages,cps_k12,0.010956,oct15,whole-population mortality,whole_population_tables
 india_born_white_ages,cps_cons,0.015993,oct15,whole-population mortality,whole_population_tables
 india_born_white_ages,cps_house,0.009828,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled,meps_medicare,0.012680,oct15,whole-population mortality,whole_population_tables
@@ -136,7 +136,7 @@ indian_origin_g2_pooled,cps_sit,0.035672,oct15,whole-population mortality,whole_
 indian_origin_g2_pooled,cps_oasdi,0.031412,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled,cps_ss,0.005401,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled,cps_mcare,0.006608,oct15,whole-population mortality,whole_population_tables
-indian_origin_g2_pooled,cps_k12,0.018105,oct15,whole-population mortality,whole_population_tables
+indian_origin_g2_pooled,cps_k12,0.019694,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled,cps_cons,0.023958,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled,cps_house,0.010329,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled_white_ages,meps_medicare,0.023610,oct15,whole-population mortality,whole_population_tables
@@ -159,7 +159,7 @@ indian_origin_g2_pooled_white_ages,cps_sit,0.033493,oct15,whole-population morta
 indian_origin_g2_pooled_white_ages,cps_oasdi,0.028190,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled_white_ages,cps_ss,0.014411,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled_white_ages,cps_mcare,0.018352,oct15,whole-population mortality,whole_population_tables
-indian_origin_g2_pooled_white_ages,cps_k12,0.015046,oct15,whole-population mortality,whole_population_tables
+indian_origin_g2_pooled_white_ages,cps_k12,0.016454,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled_white_ages,cps_cons,0.023810,oct15,whole-population mortality,whole_population_tables
 indian_origin_g2_pooled_white_ages,cps_house,0.008511,oct15,whole-population mortality,whole_population_tables
 india_born_self_employed_adults,meps_medicare,0.000509,oct15,whole-population mortality,whole_population_tables
@@ -182,7 +182,7 @@ india_born_self_employed_adults,cps_sit,0.001046,oct15,whole-population mortalit
 india_born_self_employed_adults,cps_oasdi,0.001306,oct15,whole-population mortality,whole_population_tables
 india_born_self_employed_adults,cps_ss,0.000209,oct15,whole-population mortality,whole_population_tables
 india_born_self_employed_adults,cps_mcare,0.000224,oct15,whole-population mortality,whole_population_tables
-india_born_self_employed_adults,cps_k12,0.000000,oct15,whole-population mortality,whole_population_tables
+india_born_self_employed_adults,cps_k12,0.000004,oct15,whole-population mortality,whole_population_tables
 india_born_self_employed_adults,cps_cons,0.000658,oct15,whole-population mortality,whole_population_tables
 india_born_self_employed_adults,cps_house,0.000000,oct15,whole-population mortality,whole_population_tables
 india_born_wage_salary_adults,meps_medicare,0.008247,oct15,whole-population mortality,whole_population_tables
@@ -205,7 +205,7 @@ india_born_wage_salary_adults,cps_sit,0.018182,oct15,whole-population mortality,
 india_born_wage_salary_adults,cps_oasdi,0.025548,oct15,whole-population mortality,whole_population_tables
 india_born_wage_salary_adults,cps_ss,0.000572,oct15,whole-population mortality,whole_population_tables
 india_born_wage_salary_adults,cps_mcare,0.001180,oct15,whole-population mortality,whole_population_tables
-india_born_wage_salary_adults,cps_k12,0.000000,oct15,whole-population mortality,whole_population_tables
+india_born_wage_salary_adults,cps_k12,0.000227,oct15,whole-population mortality,whole_population_tables
 india_born_wage_salary_adults,cps_cons,0.012095,oct15,whole-population mortality,whole_population_tables
 india_born_wage_salary_adults,cps_house,0.002055,oct15,whole-population mortality,whole_population_tables
 india_born_other,meps_medicare,0.004418,oct15,whole-population mortality,whole_population_tables
@@ -228,7 +228,7 @@ india_born_other,cps_sit,0.003708,oct15,whole-population mortality,whole_populat
 india_born_other,cps_oasdi,0.000022,oct15,whole-population mortality,whole_population_tables
 india_born_other,cps_ss,0.004272,oct15,whole-population mortality,whole_population_tables
 india_born_other,cps_mcare,0.004780,oct15,whole-population mortality,whole_population_tables
-india_born_other,cps_k12,0.005340,oct15,whole-population mortality,whole_population_tables
+india_born_other,cps_k12,0.005620,oct15,whole-population mortality,whole_population_tables
 india_born_other,cps_cons,0.004072,oct15,whole-population mortality,whole_population_tables
 india_born_other,cps_house,0.008126,oct15,whole-population mortality,whole_population_tables
 indian_origin_self_employed_households,meps_medicare,0.000756,oct15,whole-population mortality,whole_population_tables
@@ -251,7 +251,7 @@ indian_origin_self_employed_households,cps_sit,0.003252,oct15,whole-population m
 indian_origin_self_employed_households,cps_oasdi,0.001580,oct15,whole-population mortality,whole_population_tables
 indian_origin_self_employed_households,cps_ss,0.000106,oct15,whole-population mortality,whole_population_tables
 indian_origin_self_employed_households,cps_mcare,0.000384,oct15,whole-population mortality,whole_population_tables
-indian_origin_self_employed_households,cps_k12,0.001154,oct15,whole-population mortality,whole_population_tables
+indian_origin_self_employed_households,cps_k12,0.001339,oct15,whole-population mortality,whole_population_tables
 indian_origin_self_employed_households,cps_cons,0.001363,oct15,whole-population mortality,whole_population_tables
 indian_origin_self_employed_households,cps_house,0.000000,oct15,whole-population mortality,whole_population_tables
 indian_origin_wage_salary_households,meps_medicare,0.009851,oct15,whole-population mortality,whole_population_tables
@@ -274,7 +274,7 @@ indian_origin_wage_salary_households,cps_sit,0.027434,oct15,whole-population mor
 indian_origin_wage_salary_households,cps_oasdi,0.026158,oct15,whole-population mortality,whole_population_tables
 indian_origin_wage_salary_households,cps_ss,0.001683,oct15,whole-population mortality,whole_population_tables
 indian_origin_wage_salary_households,cps_mcare,0.003012,oct15,whole-population mortality,whole_population_tables
-indian_origin_wage_salary_households,cps_k12,0.015383,oct15,whole-population mortality,whole_population_tables
+indian_origin_wage_salary_households,cps_k12,0.016482,oct15,whole-population mortality,whole_population_tables
 indian_origin_wage_salary_households,cps_cons,0.018997,oct15,whole-population mortality,whole_population_tables
 indian_origin_wage_salary_households,cps_house,0.002955,oct15,whole-population mortality,whole_population_tables
 A1_third_plus_nh_white,meps_medicare,0.175720,oct15,whole-population mortality,whole_population_tables
@@ -293,7 +293,7 @@ A1_third_plus_nh_white,cps_sit,0.154037,oct15,whole-population mortality,whole_p
 A1_third_plus_nh_white,cps_oasdi,0.145826,oct15,whole-population mortality,whole_population_tables
 A1_third_plus_nh_white,cps_ss,0.181802,oct15,whole-population mortality,whole_population_tables
 A1_third_plus_nh_white,cps_mcare,0.170754,oct15,whole-population mortality,whole_population_tables
-A1_third_plus_nh_white,cps_k12,0.113964,oct15,whole-population mortality,whole_population_tables
+A1_third_plus_nh_white,cps_k12,0.107334,oct15,whole-population mortality,whole_population_tables
 A1_third_plus_nh_white,cps_cons,0.150902,oct15,whole-population mortality,whole_population_tables
 A1_third_plus_nh_white,cps_house,0.055365,oct15,whole-population mortality,whole_population_tables
 nh_black_rough,meps_medicare,0.102509,oct15,whole-population mortality,whole_population_tables
@@ -312,7 +312,7 @@ nh_black_rough,cps_sit,0.082681,oct15,whole-population mortality,whole_populatio
 nh_black_rough,cps_oasdi,0.100657,oct15,whole-population mortality,whole_population_tables
 nh_black_rough,cps_ss,0.096708,oct15,whole-population mortality,whole_population_tables
 nh_black_rough,cps_mcare,0.109052,oct15,whole-population mortality,whole_population_tables
-nh_black_rough,cps_k12,0.138055,oct15,whole-population mortality,whole_population_tables
+nh_black_rough,cps_k12,0.143157,oct15,whole-population mortality,whole_population_tables
 nh_black_rough,cps_cons,0.101650,oct15,whole-population mortality,whole_population_tables
 nh_black_rough,cps_house,0.334887,oct15,whole-population mortality,whole_population_tables
 indian_origin,accrual_net,0.819495,oct15,whole-population mortality,whole_population_tables

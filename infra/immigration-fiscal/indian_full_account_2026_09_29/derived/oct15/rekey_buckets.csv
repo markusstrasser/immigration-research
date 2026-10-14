@@ -20,12 +20,12 @@ accrual,mexican_origin_rough,low,"capital, property, production taxes",-92.9121,
 accrual,mexican_origin_rough,low,Social Security,109.9912,2432,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,low,Medicare,77.4264,1712,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,low,Medicaid,127.6645,2823,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough,low,schools and colleges,223.3866,4939,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough,low,schools and colleges,225.6681,4989,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,low,"police, courts, prisons",82.3433,1821,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,low,veterans and military medical,12.7030,281,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",80.5849,1782,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough,low,capital return,37.6866,833,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough,low,capital return,37.8236,836,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,low,production gain (subtracted),-11.9095,-263,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,low,income taxes,-153.8294,-3874,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,low,payroll taxes and Medicare premiums,-180.5404,-4546,oct15,whole-population mortality,whole_population_tables,rough
@@ -34,12 +34,12 @@ accrual,mexican_origin_rough_white_ages,low,"capital, property, production taxes
 accrual,mexican_origin_rough_white_ages,low,Social Security,105.1654,2648,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,low,Medicare,137.1805,3454,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,low,Medicaid,163.9763,4129,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough_white_ages,low,schools and colleges,125.2707,3154,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough_white_ages,low,schools and colleges,127.1009,3201,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,low,"police, courts, prisons",70.6492,1779,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",114.2874,2878,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,low,veterans and military medical,17.9510,452,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,low,"per-head lines: government, defense, interest, roads, other",79.9607,2013,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough_white_ages,low,capital return,30.2299,761,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough_white_ages,low,capital return,30.3397,764,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,low,production gain (subtracted),-12.1151,-305,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,low,income taxes,-103.0980,-16958,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,low,payroll taxes and Medicare premiums,-56.6875,-9324,oct15,whole-population mortality,whole_population_tables,rough
@@ -48,12 +48,12 @@ accrual,indian_origin,low,"capital, property, production taxes",-43.2803,-7119,o
 accrual,indian_origin,low,Social Security,33.3725,5489,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,low,Medicare,17.3780,2858,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,low,Medicaid,6.0818,1000,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin,low,schools and colleges,28.8377,4743,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin,low,schools and colleges,30.2797,4980,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,low,"police, courts, prisons",5.1036,839,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,low,veterans and military medical,0.5581,92,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,low,"per-head lines: government, defense, interest, roads, other",9.7791,1608,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin,low,capital return,5.0356,828,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin,low,capital return,5.1222,843,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,low,income taxes,-97.3606,-16014,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,low,payroll taxes and Medicare premiums,-52.7621,-8678,oct15,whole-population mortality,whole_population_tables,rough
@@ -62,12 +62,12 @@ accrual,indian_origin_white_ages,low,"capital, property, production taxes",-39.6
 accrual,indian_origin_white_ages,low,Social Security,30.1044,4952,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,low,Medicare,24.0539,3956,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,low,Medicaid,10.5582,1737,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_white_ages,low,schools and colleges,24.0549,3957,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_white_ages,low,schools and colleges,25.3325,4167,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,low,"police, courts, prisons",5.0561,832,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,low,veterans and military medical,1.1738,193,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.7346,1601,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_white_ages,low,capital return,4.6735,769,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_white_ages,low,capital return,4.7502,781,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,low,income taxes,-88.7095,-20718,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,low,payroll taxes and Medicare premiums,-48.5518,-11339,oct15,whole-population mortality,whole_population_tables,rough
@@ -76,12 +76,12 @@ accrual,india_born,low,"capital, property, production taxes",-35.9703,-8401,oct1
 accrual,india_born,low,Social Security,29.5338,6898,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,low,Medicare,16.8592,3937,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,low,Medicaid,4.5798,1070,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born,low,schools and colleges,12.4760,2914,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born,low,schools and colleges,12.9405,3022,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,low,"police, courts, prisons",3.6485,852,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6091,843,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,low,veterans and military medical,0.4034,94,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,low,"per-head lines: government, defense, interest, roads, other",7.2792,1700,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born,low,capital return,3.1801,743,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born,low,capital return,3.2079,749,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,low,income taxes,-66.7423,-15588,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,low,payroll taxes and Medicare premiums,-36.4947,-8523,oct15,whole-population mortality,whole_population_tables,rough
@@ -90,12 +90,12 @@ accrual,india_born_white_ages,low,"capital, property, production taxes",-27.2116
 accrual,india_born_white_ages,low,Social Security,21.4759,5016,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,low,Medicare,17.1002,3994,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,low,Medicaid,7.4359,1737,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_white_ages,low,schools and colleges,17.0439,3981,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_white_ages,low,schools and colleges,17.6437,4121,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,low,"police, courts, prisons",3.5856,837,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7642,879,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,low,veterans and military medical,0.6216,145,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,low,"per-head lines: government, defense, interest, roads, other",6.8789,1607,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_white_ages,low,capital return,3.3062,772,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_white_ages,low,capital return,3.3422,781,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,low,income taxes,-102.1330,-16799,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,low,payroll taxes and Medicare premiums,-56.8056,-9344,oct15,whole-population mortality,whole_population_tables,rough
@@ -104,12 +104,12 @@ accrual,indian_origin_g2_pooled,low,"capital, property, production taxes",-43.28
 accrual,indian_origin_g2_pooled,low,Social Security,33.4407,5500,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,low,Medicare,17.4007,2862,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,low,Medicaid,6.0818,1000,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_g2_pooled,low,schools and colleges,28.8377,4743,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_g2_pooled,low,schools and colleges,30.2797,4980,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,low,"police, courts, prisons",5.1036,839,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,low,veterans and military medical,0.5581,92,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,low,"per-head lines: government, defense, interest, roads, other",9.7814,1609,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_g2_pooled,low,capital return,5.0356,828,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_g2_pooled,low,capital return,5.1222,843,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,low,income taxes,-96.5566,-15882,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,low,payroll taxes and Medicare premiums,-52.8525,-8693,oct15,whole-population mortality,whole_population_tables,rough
@@ -118,12 +118,12 @@ accrual,indian_origin_g2_pooled_white_ages,low,"capital, property, production ta
 accrual,indian_origin_g2_pooled_white_ages,low,Social Security,30.1562,4960,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,low,Medicare,24.0717,3959,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,low,Medicaid,10.5582,1737,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_g2_pooled_white_ages,low,schools and colleges,24.0549,3957,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_g2_pooled_white_ages,low,schools and colleges,25.3325,4167,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,low,"police, courts, prisons",5.0561,832,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,low,veterans and military medical,1.1738,193,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.7364,1601,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_g2_pooled_white_ages,low,capital return,4.6735,769,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_g2_pooled_white_ages,low,capital return,4.7502,781,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,low,income taxes,-9.9553,-60182,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,low,payroll taxes and Medicare premiums,-2.5604,-15478,oct15,whole-population mortality,whole_population_tables,rough
@@ -132,12 +132,12 @@ accrual,india_born_self_employed_adults,low,"capital, property, production taxes
 accrual,india_born_self_employed_adults,low,Social Security,1.4348,8673,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,low,Medicare,0.8662,5236,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,low,Medicaid,0.1805,1091,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_self_employed_adults,low,schools and colleges,0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_self_employed_adults,low,schools and colleges,0.0038,23,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,low,"police, courts, prisons",0.1410,852,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",0.0880,532,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,low,veterans and military medical,0.0368,222,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,low,"per-head lines: government, defense, interest, roads, other",0.2931,1772,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_self_employed_adults,low,capital return,0.0944,571,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_self_employed_adults,low,capital return,0.0947,572,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,low,income taxes,-71.9634,-26847,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,low,payroll taxes and Medicare premiums,-45.2591,-16885,oct15,whole-population mortality,whole_population_tables,rough
@@ -146,12 +146,12 @@ accrual,india_born_wage_salary_adults,low,"capital, property, production taxes",
 accrual,india_born_wage_salary_adults,low,Social Security,28.0102,10450,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,low,Medicare,12.9449,4829,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,low,Medicaid,2.0301,757,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_wage_salary_adults,low,schools and colleges,2.9407,1097,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_wage_salary_adults,low,schools and colleges,3.1469,1174,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,low,"police, courts, prisons",2.2874,853,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6193,604,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,low,veterans and military medical,0.3656,136,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,low,"per-head lines: government, defense, interest, roads, other",4.7699,1779,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_wage_salary_adults,low,capital return,1.7535,654,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_wage_salary_adults,low,capital return,1.7659,659,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,low,income taxes,-6.7908,-4729,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,low,payroll taxes and Medicare premiums,-0.7323,-510,oct15,whole-population mortality,whole_population_tables,rough
@@ -160,12 +160,12 @@ accrual,india_born_other,low,"capital, property, production taxes",-1.4541,-1013
 accrual,india_born_other,low,Social Security,0.0888,62,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,low,Medicare,3.0482,2123,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,low,Medicaid,2.3692,1650,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_other,low,schools and colleges,9.5354,6641,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_other,low,schools and colleges,9.7899,6818,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,low,"police, courts, prisons",1.2202,850,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9018,1325,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,low,veterans and military medical,0.0010,1,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,low,"per-head lines: government, defense, interest, roads, other",2.2162,1543,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_other,low,capital return,1.3322,928,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_other,low,capital return,1.3474,938,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,low,income taxes,-10.6355,-29335,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,low,payroll taxes and Medicare premiums,-3.0625,-8447,oct15,whole-population mortality,whole_population_tables,rough
@@ -174,12 +174,12 @@ accrual,indian_origin_self_employed_households,low,"capital, property, productio
 accrual,indian_origin_self_employed_households,low,Social Security,1.6800,4634,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,low,Medicare,1.0694,2950,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,low,Medicaid,0.3443,950,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_self_employed_households,low,schools and colleges,1.5001,4138,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_self_employed_households,low,schools and colleges,1.6683,4602,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,low,"police, courts, prisons",0.3304,911,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",0.1952,539,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,low,veterans and military medical,0.0369,102,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,low,"per-head lines: government, defense, interest, roads, other",0.5567,1536,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_self_employed_households,low,capital return,0.2823,779,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_self_employed_households,low,capital return,0.2924,807,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,low,income taxes,-79.0662,-16740,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,low,payroll taxes and Medicare premiums,-46.6001,-9866,oct15,whole-population mortality,whole_population_tables,rough
@@ -188,12 +188,12 @@ accrual,indian_origin_wage_salary_households,low,"capital, property, production 
 accrual,indian_origin_wage_salary_households,low,Social Security,27.8041,5887,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,low,Medicare,13.7982,2921,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,low,Medicaid,4.1516,879,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_wage_salary_households,low,schools and colleges,22.2151,4704,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_wage_salary_households,low,schools and colleges,23.2129,4915,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,low,"police, courts, prisons",3.9314,832,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1010,657,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,low,veterans and military medical,0.3660,77,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,low,"per-head lines: government, defense, interest, roads, other",7.4348,1574,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_wage_salary_households,low,capital return,3.8823,822,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_wage_salary_households,low,capital return,3.9422,835,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,income taxes,-454.2290,-10043,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-283.8824,-6276,oct15,whole-population mortality,whole_population_tables,rough
@@ -202,12 +202,12 @@ accrual,A1_third_plus_nh_white,low,"capital, property, production taxes",-188.51
 accrual,A1_third_plus_nh_white,low,Social Security,175.9639,3890,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,Medicare,177.6285,3927,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,Medicaid,105.5518,2334,oct15,whole-population mortality,whole_population_tables,rough
-accrual,A1_third_plus_nh_white,low,schools and colleges,143.3741,3170,oct15,whole-population mortality,whole_population_tables,rough
+accrual,A1_third_plus_nh_white,low,schools and colleges,137.3575,3037,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,"police, courts, prisons",57.3514,1268,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,veterans and military medical,37.8464,837,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.0568,2301,oct15,whole-population mortality,whole_population_tables,rough
-accrual,A1_third_plus_nh_white,low,capital return,36.1178,799,oct15,whole-population mortality,whole_population_tables,rough
+accrual,A1_third_plus_nh_white,low,capital return,35.7567,791,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,income taxes,-212.7596,-5071,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,oct15,whole-population mortality,whole_population_tables,rough
@@ -216,12 +216,12 @@ accrual,nh_black_rough,low,"capital, property, production taxes",-87.9473,-2096,
 accrual,nh_black_rough,low,Social Security,134.6255,3209,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,Medicare,127.8455,3047,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,Medicaid,181.2461,4320,oct15,whole-population mortality,whole_population_tables,rough
-accrual,nh_black_rough,low,schools and colleges,173.9840,4147,oct15,whole-population mortality,whole_population_tables,rough
+accrual,nh_black_rough,low,schools and colleges,178.6145,4257,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,"police, courts, prisons",106.3305,2534,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,veterans and military medical,41.5391,990,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",79.7973,1902,oct15,whole-population mortality,whole_population_tables,rough
-accrual,nh_black_rough,low,capital return,35.6347,849,oct15,whole-population mortality,whole_population_tables,rough
+accrual,nh_black_rough,low,capital return,35.9126,856,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_engine_identified,low,income taxes,-124.8655,-3144,oct15,whole-population mortality,whole_population_tables,case
 accrual,mexican_origin_engine_identified,low,payroll taxes and Medicare premiums,-151.6583,-3819,oct15,whole-population mortality,whole_population_tables,case
@@ -244,12 +244,12 @@ accrual,mexican_origin_rough_identified,low,"capital, property, production taxes
 accrual,mexican_origin_rough_identified,low,Social Security,101.3768,2553,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,low,Medicare,72.5106,1826,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,low,Medicaid,117.6400,2962,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough_identified,low,schools and colleges,198.3183,4994,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough_identified,low,schools and colleges,200.5998,5051,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,low,"police, courts, prisons",76.6344,1930,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,2924,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,low,veterans and military medical,11.5868,292,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,low,"per-head lines: government, defense, interest, roads, other",74.2636,1870,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough_identified,low,capital return,34.1721,860,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough_identified,low,capital return,34.3091,864,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,low,production gain (subtracted),-11.6799,-294,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_engine,high,income taxes,-140.7752,-3112,oct15,whole-population mortality,whole_population_tables,case
 accrual,mexican_origin_engine,high,payroll taxes and Medicare premiums,-164.9627,-3647,oct15,whole-population mortality,whole_population_tables,case
@@ -272,12 +272,12 @@ accrual,mexican_origin_rough,high,"capital, property, production taxes",-66.6845
 accrual,mexican_origin_rough,high,Social Security,109.9912,2432,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,high,Medicare,77.4264,1712,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,high,Medicaid,127.6972,2823,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough,high,schools and colleges,224.2369,4958,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough,high,schools and colleges,226.5184,5008,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,high,"police, courts, prisons",82.3433,1821,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,high,veterans and military medical,12.7030,281,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",105.6003,2335,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough,high,capital return,61.9795,1370,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough,high,capital return,62.1849,1375,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough,high,production gain (subtracted),-7.8343,-173,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,high,income taxes,-153.8294,-3874,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,high,payroll taxes and Medicare premiums,-180.5404,-4546,oct15,whole-population mortality,whole_population_tables,rough
@@ -286,12 +286,12 @@ accrual,mexican_origin_rough_white_ages,high,"capital, property, production taxe
 accrual,mexican_origin_rough_white_ages,high,Social Security,105.1654,2648,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,high,Medicare,137.1805,3454,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,high,Medicaid,163.9763,4129,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough_white_ages,high,schools and colleges,125.8137,3168,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough_white_ages,high,schools and colleges,127.6441,3214,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,high,"police, courts, prisons",70.6492,1779,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",114.2874,2878,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,high,veterans and military medical,17.9510,452,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,high,"per-head lines: government, defense, interest, roads, other",103.2843,2601,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough_white_ages,high,capital return,50.5080,1272,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough_white_ages,high,capital return,50.6727,1276,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_white_ages,high,production gain (subtracted),-7.9696,-201,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,high,income taxes,-103.0980,-16958,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,high,payroll taxes and Medicare premiums,-56.6875,-9324,oct15,whole-population mortality,whole_population_tables,rough
@@ -300,12 +300,12 @@ accrual,indian_origin,high,"capital, property, production taxes",-27.9737,-4601,
 accrual,indian_origin,high,Social Security,33.3725,5489,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,high,Medicare,17.3780,2858,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,high,Medicaid,6.0818,1000,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin,high,schools and colleges,28.8377,4743,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin,high,schools and colleges,30.2797,4980,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,high,"police, courts, prisons",5.1036,839,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,high,veterans and military medical,0.5581,92,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,high,"per-head lines: government, defense, interest, roads, other",14.7145,2420,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin,high,capital return,8.4101,1383,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin,high,capital return,8.5399,1405,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,high,income taxes,-97.3606,-16014,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,high,payroll taxes and Medicare premiums,-52.7621,-8678,oct15,whole-population mortality,whole_population_tables,rough
@@ -314,12 +314,12 @@ accrual,indian_origin_white_ages,high,"capital, property, production taxes",-26.
 accrual,indian_origin_white_ages,high,Social Security,30.1044,4952,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,high,Medicare,24.0539,3956,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,high,Medicaid,10.5582,1737,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_white_ages,high,schools and colleges,24.0549,3957,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_white_ages,high,schools and colleges,25.3325,4167,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,high,"police, courts, prisons",5.0561,832,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,high,veterans and military medical,1.1738,193,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.4121,2371,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_white_ages,high,capital return,7.8294,1288,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_white_ages,high,capital return,7.9444,1307,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_white_ages,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,high,income taxes,-88.7095,-20718,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,high,payroll taxes and Medicare premiums,-48.5518,-11339,oct15,whole-population mortality,whole_population_tables,rough
@@ -328,12 +328,12 @@ accrual,india_born,high,"capital, property, production taxes",-22.4606,-5246,oct
 accrual,india_born,high,Social Security,29.5338,6898,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,high,Medicare,16.8592,3937,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,high,Medicaid,4.5798,1070,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born,high,schools and colleges,12.4760,2914,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born,high,schools and colleges,12.9405,3022,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,high,"police, courts, prisons",3.6485,852,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6091,843,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,high,veterans and military medical,0.4034,94,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,high,"per-head lines: government, defense, interest, roads, other",11.1350,2601,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born,high,capital return,5.4266,1267,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born,high,capital return,5.4684,1277,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,high,income taxes,-66.7423,-15588,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,high,payroll taxes and Medicare premiums,-36.4947,-8523,oct15,whole-population mortality,whole_population_tables,rough
@@ -342,12 +342,12 @@ accrual,india_born_white_ages,high,"capital, property, production taxes",-17.882
 accrual,india_born_white_ages,high,Social Security,21.4759,5016,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,high,Medicare,17.1002,3994,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,high,Medicaid,7.4359,1737,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_white_ages,high,schools and colleges,17.0439,3981,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_white_ages,high,schools and colleges,17.6437,4121,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,high,"police, courts, prisons",3.5856,837,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7642,879,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,high,veterans and military medical,0.6216,145,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,high,"per-head lines: government, defense, interest, roads, other",10.1259,2365,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_white_ages,high,capital return,5.5276,1291,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_white_ages,high,capital return,5.5817,1304,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_white_ages,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,high,income taxes,-102.1330,-16799,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,high,payroll taxes and Medicare premiums,-56.8056,-9344,oct15,whole-population mortality,whole_population_tables,rough
@@ -356,12 +356,12 @@ accrual,indian_origin_g2_pooled,high,"capital, property, production taxes",-27.9
 accrual,indian_origin_g2_pooled,high,Social Security,33.4407,5500,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,high,Medicare,17.4007,2862,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,high,Medicaid,6.0818,1000,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_g2_pooled,high,schools and colleges,28.8377,4743,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_g2_pooled,high,schools and colleges,30.2797,4980,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,high,"police, courts, prisons",5.1036,839,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,high,veterans and military medical,0.5581,92,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,high,"per-head lines: government, defense, interest, roads, other",14.7224,2422,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_g2_pooled,high,capital return,8.4102,1383,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_g2_pooled,high,capital return,8.5400,1405,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,high,income taxes,-96.5566,-15882,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,high,payroll taxes and Medicare premiums,-52.8525,-8693,oct15,whole-population mortality,whole_population_tables,rough
@@ -370,12 +370,12 @@ accrual,indian_origin_g2_pooled_white_ages,high,"capital, property, production t
 accrual,indian_origin_g2_pooled_white_ages,high,Social Security,30.1562,4960,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,high,Medicare,24.0717,3959,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,high,Medicaid,10.5582,1737,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_g2_pooled_white_ages,high,schools and colleges,24.0549,3957,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_g2_pooled_white_ages,high,schools and colleges,25.3325,4167,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,high,"police, courts, prisons",5.0561,832,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,high,veterans and military medical,1.1738,193,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.4183,2372,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_g2_pooled_white_ages,high,capital return,7.8294,1288,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_g2_pooled_white_ages,high,capital return,7.9445,1307,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_g2_pooled_white_ages,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,high,income taxes,-9.9553,-60182,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,high,payroll taxes and Medicare premiums,-2.5604,-15478,oct15,whole-population mortality,whole_population_tables,rough
@@ -384,12 +384,12 @@ accrual,india_born_self_employed_adults,high,"capital, property, production taxe
 accrual,india_born_self_employed_adults,high,Social Security,1.4348,8673,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,high,Medicare,0.8662,5236,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,high,Medicaid,0.1805,1091,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_self_employed_adults,high,schools and colleges,0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_self_employed_adults,high,schools and colleges,0.0038,23,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,high,"police, courts, prisons",0.1410,852,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",0.0880,532,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,high,veterans and military medical,0.0368,222,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,high,"per-head lines: government, defense, interest, roads, other",0.4951,2993,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_self_employed_adults,high,capital return,0.1695,1025,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_self_employed_adults,high,capital return,0.1699,1027,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_self_employed_adults,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,high,income taxes,-71.9634,-26847,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,high,payroll taxes and Medicare premiums,-45.2591,-16885,oct15,whole-population mortality,whole_population_tables,rough
@@ -398,12 +398,12 @@ accrual,india_born_wage_salary_adults,high,"capital, property, production taxes"
 accrual,india_born_wage_salary_adults,high,Social Security,28.0102,10450,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,high,Medicare,12.9449,4829,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,high,Medicaid,2.0301,757,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_wage_salary_adults,high,schools and colleges,2.9407,1097,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_wage_salary_adults,high,schools and colleges,3.1469,1174,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,high,"police, courts, prisons",2.2874,853,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6193,604,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,high,veterans and military medical,0.3656,136,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,high,"per-head lines: government, defense, interest, roads, other",7.7993,2910,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_wage_salary_adults,high,capital return,3.0967,1155,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_wage_salary_adults,high,capital return,3.1152,1162,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_wage_salary_adults,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,high,income taxes,-6.7908,-4729,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,high,payroll taxes and Medicare premiums,-0.7323,-510,oct15,whole-population mortality,whole_population_tables,rough
@@ -412,12 +412,12 @@ accrual,india_born_other,high,"capital, property, production taxes",-1.4518,-101
 accrual,india_born_other,high,Social Security,0.0888,62,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,high,Medicare,3.0482,2123,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,high,Medicaid,2.3692,1650,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_other,high,schools and colleges,9.5354,6641,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_other,high,schools and colleges,9.7899,6818,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,high,"police, courts, prisons",1.2202,850,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9018,1325,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,high,veterans and military medical,0.0010,1,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,high,"per-head lines: government, defense, interest, roads, other",2.8406,1978,oct15,whole-population mortality,whole_population_tables,rough
-accrual,india_born_other,high,capital return,2.1604,1505,oct15,whole-population mortality,whole_population_tables,rough
+accrual,india_born_other,high,capital return,2.1833,1521,oct15,whole-population mortality,whole_population_tables,rough
 accrual,india_born_other,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,high,income taxes,-10.6355,-29335,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,high,payroll taxes and Medicare premiums,-3.0625,-8447,oct15,whole-population mortality,whole_population_tables,rough
@@ -426,12 +426,12 @@ accrual,indian_origin_self_employed_households,high,"capital, property, producti
 accrual,indian_origin_self_employed_households,high,Social Security,1.6800,4634,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,high,Medicare,1.0694,2950,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,high,Medicaid,0.3443,950,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_self_employed_households,high,schools and colleges,1.5001,4138,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_self_employed_households,high,schools and colleges,1.6683,4602,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,high,"police, courts, prisons",0.3304,911,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",0.1952,539,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,high,veterans and military medical,0.0369,102,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,high,"per-head lines: government, defense, interest, roads, other",0.8592,2370,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_self_employed_households,high,capital return,0.4735,1306,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_self_employed_households,high,capital return,0.4886,1348,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_self_employed_households,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,high,income taxes,-79.0662,-16740,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,high,payroll taxes and Medicare premiums,-46.6001,-9866,oct15,whole-population mortality,whole_population_tables,rough
@@ -440,12 +440,12 @@ accrual,indian_origin_wage_salary_households,high,"capital, property, production
 accrual,indian_origin_wage_salary_households,high,Social Security,27.8041,5887,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,high,Medicare,13.7982,2921,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,high,Medicaid,4.1516,879,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_wage_salary_households,high,schools and colleges,22.2151,4704,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_wage_salary_households,high,schools and colleges,23.2129,4915,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,high,"police, courts, prisons",3.9314,832,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1010,657,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,high,veterans and military medical,0.3660,77,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,high,"per-head lines: government, defense, interest, roads, other",11.3463,2402,oct15,whole-population mortality,whole_population_tables,rough
-accrual,indian_origin_wage_salary_households,high,capital return,6.4959,1375,oct15,whole-population mortality,whole_population_tables,rough
+accrual,indian_origin_wage_salary_households,high,capital return,6.5858,1394,oct15,whole-population mortality,whole_population_tables,rough
 accrual,indian_origin_wage_salary_households,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,high,income taxes,-454.2290,-10043,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-283.8824,-6276,oct15,whole-population mortality,whole_population_tables,rough
@@ -454,12 +454,12 @@ accrual,A1_third_plus_nh_white,high,"capital, property, production taxes",-133.1
 accrual,A1_third_plus_nh_white,high,Social Security,175.9639,3890,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,high,Medicare,177.6285,3927,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,high,Medicaid,105.5518,2334,oct15,whole-population mortality,whole_population_tables,rough
-accrual,A1_third_plus_nh_white,high,schools and colleges,143.3741,3170,oct15,whole-population mortality,whole_population_tables,rough
+accrual,A1_third_plus_nh_white,high,schools and colleges,137.3575,3037,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,high,"police, courts, prisons",57.3514,1268,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,high,veterans and military medical,37.8464,837,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5448,2997,oct15,whole-population mortality,whole_population_tables,rough
-accrual,A1_third_plus_nh_white,high,capital return,61.3353,1356,oct15,whole-population mortality,whole_population_tables,rough
+accrual,A1_third_plus_nh_white,high,capital return,60.7936,1344,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,high,income taxes,-212.7596,-5071,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,oct15,whole-population mortality,whole_population_tables,rough
@@ -468,12 +468,12 @@ accrual,nh_black_rough,high,"capital, property, production taxes",-59.6174,-1421
 accrual,nh_black_rough,high,Social Security,134.6255,3209,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,high,Medicare,127.8455,3047,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,high,Medicaid,181.2461,4320,oct15,whole-population mortality,whole_population_tables,rough
-accrual,nh_black_rough,high,schools and colleges,173.9840,4147,oct15,whole-population mortality,whole_population_tables,rough
+accrual,nh_black_rough,high,schools and colleges,178.6145,4257,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,high,"police, courts, prisons",106.3305,2534,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,high,veterans and military medical,41.5391,990,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",104.2367,2485,oct15,whole-population mortality,whole_population_tables,rough
-accrual,nh_black_rough,high,capital return,58.5882,1396,oct15,whole-population mortality,whole_population_tables,rough
+accrual,nh_black_rough,high,capital return,59.0052,1406,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_engine_identified,high,income taxes,-124.8655,-3144,oct15,whole-population mortality,whole_population_tables,case
 accrual,mexican_origin_engine_identified,high,payroll taxes and Medicare premiums,-151.6583,-3819,oct15,whole-population mortality,whole_population_tables,case
@@ -496,12 +496,12 @@ accrual,mexican_origin_rough_identified,high,"capital, property, production taxe
 accrual,mexican_origin_rough_identified,high,Social Security,101.3768,2553,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,high,Medicare,72.5106,1826,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,high,Medicaid,117.6400,2962,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough_identified,high,schools and colleges,199.1126,5014,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough_identified,high,schools and colleges,201.3941,5071,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,high,"police, courts, prisons",76.6344,1930,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,2924,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,high,veterans and military medical,11.5868,292,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,high,"per-head lines: government, defense, interest, roads, other",97.1669,2447,oct15,whole-population mortality,whole_population_tables,rough
-accrual,mexican_origin_rough_identified,high,capital return,56.2616,1417,oct15,whole-population mortality,whole_population_tables,rough
+accrual,mexican_origin_rough_identified,high,capital return,56.4670,1422,oct15,whole-population mortality,whole_population_tables,rough
 accrual,mexican_origin_rough_identified,high,production gain (subtracted),-7.6832,-193,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_engine,low,income taxes,-142.7760,-3157,oct15,whole-population mortality,whole_population_tables,case
 cash,mexican_origin_engine,low,payroll taxes and Medicare premiums,-164.9627,-3647,oct15,whole-population mortality,whole_population_tables,case
@@ -524,12 +524,12 @@ cash,mexican_origin_rough,low,"capital, property, production taxes",-92.9121,-20
 cash,mexican_origin_rough,low,Social Security,63.9148,1413,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,low,Medicare,55.5530,1228,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,low,Medicaid,127.6645,2823,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough,low,schools and colleges,223.3866,4939,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough,low,schools and colleges,225.6681,4989,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,low,"police, courts, prisons",82.3433,1821,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,low,veterans and military medical,12.7030,281,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,low,"per-head lines: government, defense, interest, roads, other",80.5849,1782,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough,low,capital return,37.6866,833,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough,low,capital return,37.8236,836,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,low,production gain (subtracted),-11.9095,-263,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,low,income taxes,-158.4968,-3991,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,low,payroll taxes and Medicare premiums,-180.5404,-4546,oct15,whole-population mortality,whole_population_tables,rough
@@ -538,12 +538,12 @@ cash,mexican_origin_rough_white_ages,low,"capital, property, production taxes",-
 cash,mexican_origin_rough_white_ages,low,Social Security,155.7345,3922,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,low,Medicare,153.5680,3867,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,low,Medicaid,163.9763,4129,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough_white_ages,low,schools and colleges,125.2707,3154,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough_white_ages,low,schools and colleges,127.1009,3201,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,low,"police, courts, prisons",70.6492,1779,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",114.2874,2878,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,low,veterans and military medical,17.9510,452,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,low,"per-head lines: government, defense, interest, roads, other",79.9607,2013,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough_white_ages,low,capital return,30.2299,761,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough_white_ages,low,capital return,30.3397,764,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,low,production gain (subtracted),-12.1151,-305,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,low,income taxes,-103.7928,-17072,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,low,payroll taxes and Medicare premiums,-56.6875,-9324,oct15,whole-population mortality,whole_population_tables,rough
@@ -552,12 +552,12 @@ cash,indian_origin,low,"capital, property, production taxes",-43.2803,-7119,oct1
 cash,indian_origin,low,Social Security,7.9026,1300,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,low,Medicare,13.9778,2299,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,low,Medicaid,6.0818,1000,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin,low,schools and colleges,28.8377,4743,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin,low,schools and colleges,30.2797,4980,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,low,"police, courts, prisons",5.1036,839,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,low,veterans and military medical,0.5581,92,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,low,"per-head lines: government, defense, interest, roads, other",9.7791,1608,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin,low,capital return,5.0356,828,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin,low,capital return,5.1222,843,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,low,income taxes,-99.2147,-16319,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,low,payroll taxes and Medicare premiums,-52.7621,-8678,oct15,whole-population mortality,whole_population_tables,rough
@@ -566,12 +566,12 @@ cash,indian_origin_white_ages,low,"capital, property, production taxes",-39.6401
 cash,indian_origin_white_ages,low,Social Security,21.0861,3468,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,low,Medicare,26.0270,4281,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,low,Medicaid,10.5582,1737,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_white_ages,low,schools and colleges,24.0549,3957,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_white_ages,low,schools and colleges,25.3325,4167,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,low,"police, courts, prisons",5.0561,832,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,low,veterans and military medical,1.1738,193,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.7346,1601,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_white_ages,low,capital return,4.6735,769,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_white_ages,low,capital return,4.7502,781,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,low,income taxes,-89.3395,-20865,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,low,payroll taxes and Medicare premiums,-48.5518,-11339,oct15,whole-population mortality,whole_population_tables,rough
@@ -580,12 +580,12 @@ cash,india_born,low,"capital, property, production taxes",-35.9703,-8401,oct15,w
 cash,india_born,low,Social Security,7.3934,1727,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,low,Medicare,14.5221,3392,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,low,Medicaid,4.5798,1070,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born,low,schools and colleges,12.4760,2914,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born,low,schools and colleges,12.9405,3022,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,low,"police, courts, prisons",3.6485,852,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6091,843,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,low,veterans and military medical,0.4034,94,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,low,"per-head lines: government, defense, interest, roads, other",7.2792,1700,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born,low,capital return,3.1801,743,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born,low,capital return,3.2079,749,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,low,income taxes,-68.0592,-15895,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,low,payroll taxes and Medicare premiums,-36.4947,-8523,oct15,whole-population mortality,whole_population_tables,rough
@@ -594,12 +594,12 @@ cash,india_born_white_ages,low,"capital, property, production taxes",-27.2116,-6
 cash,india_born_white_ages,low,Social Security,15.4560,3610,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,low,Medicare,18.3303,4281,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,low,Medicaid,7.4359,1737,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_white_ages,low,schools and colleges,17.0439,3981,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_white_ages,low,schools and colleges,17.6437,4121,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,low,"police, courts, prisons",3.5856,837,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7642,879,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,low,veterans and military medical,0.6216,145,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,low,"per-head lines: government, defense, interest, roads, other",6.8789,1607,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_white_ages,low,capital return,3.3062,772,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_white_ages,low,capital return,3.3422,781,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,low,income taxes,-102.8279,-16913,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,low,payroll taxes and Medicare premiums,-56.8056,-9344,oct15,whole-population mortality,whole_population_tables,rough
@@ -608,12 +608,12 @@ cash,indian_origin_g2_pooled,low,"capital, property, production taxes",-43.2803,
 cash,indian_origin_g2_pooled,low,Social Security,7.9026,1300,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,low,Medicare,13.9778,2299,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,low,Medicaid,6.0818,1000,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_g2_pooled,low,schools and colleges,28.8377,4743,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_g2_pooled,low,schools and colleges,30.2797,4980,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,low,"police, courts, prisons",5.1036,839,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,low,veterans and military medical,0.5581,92,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,low,"per-head lines: government, defense, interest, roads, other",9.7814,1609,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_g2_pooled,low,capital return,5.0356,828,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_g2_pooled,low,capital return,5.1222,843,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,low,income taxes,-98.4106,-16187,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,low,payroll taxes and Medicare premiums,-52.8525,-8693,oct15,whole-population mortality,whole_population_tables,rough
@@ -622,12 +622,12 @@ cash,indian_origin_g2_pooled_white_ages,low,"capital, property, production taxes
 cash,indian_origin_g2_pooled_white_ages,low,Social Security,21.0861,3468,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,low,Medicare,26.0270,4281,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,low,Medicaid,10.5582,1737,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_g2_pooled_white_ages,low,schools and colleges,24.0549,3957,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_g2_pooled_white_ages,low,schools and colleges,25.3325,4167,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,low,"police, courts, prisons",5.0561,832,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,low,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,low,veterans and military medical,1.1738,193,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,low,"per-head lines: government, defense, interest, roads, other",9.7364,1601,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_g2_pooled_white_ages,low,capital return,4.6735,769,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_g2_pooled_white_ages,low,capital return,4.7502,781,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,low,income taxes,-9.9814,-60340,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,low,payroll taxes and Medicare premiums,-2.5604,-15478,oct15,whole-population mortality,whole_population_tables,rough
@@ -636,12 +636,12 @@ cash,india_born_self_employed_adults,low,"capital, property, production taxes",-
 cash,india_born_self_employed_adults,low,Social Security,0.3063,1852,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,low,Medicare,0.5610,3392,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,low,Medicaid,0.1805,1091,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_self_employed_adults,low,schools and colleges,0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_self_employed_adults,low,schools and colleges,0.0038,23,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,low,"police, courts, prisons",0.1410,852,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",0.0880,532,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,low,veterans and military medical,0.0368,222,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,low,"per-head lines: government, defense, interest, roads, other",0.2931,1772,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_self_employed_adults,low,capital return,0.0944,571,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_self_employed_adults,low,capital return,0.0947,572,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,low,income taxes,-72.0347,-26874,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,low,payroll taxes and Medicare premiums,-45.2591,-16885,oct15,whole-population mortality,whole_population_tables,rough
@@ -650,12 +650,12 @@ cash,india_born_wage_salary_adults,low,"capital, property, production taxes",-32
 cash,india_born_wage_salary_adults,low,Social Security,0.8367,312,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,low,Medicare,9.0912,3392,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,low,Medicaid,2.0301,757,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_wage_salary_adults,low,schools and colleges,2.9407,1097,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_wage_salary_adults,low,schools and colleges,3.1469,1174,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,low,"police, courts, prisons",2.2874,853,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6193,604,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,low,veterans and military medical,0.3656,136,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,low,"per-head lines: government, defense, interest, roads, other",4.7699,1779,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_wage_salary_adults,low,capital return,1.7535,654,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_wage_salary_adults,low,capital return,1.7659,659,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,low,income taxes,-7.3233,-5100,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,low,payroll taxes and Medicare premiums,-0.7323,-510,oct15,whole-population mortality,whole_population_tables,rough
@@ -664,12 +664,12 @@ cash,india_born_other,low,"capital, property, production taxes",-1.4541,-1013,oc
 cash,india_born_other,low,Social Security,6.2504,4353,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,low,Medicare,4.8699,3392,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,low,Medicaid,2.3692,1650,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_other,low,schools and colleges,9.5354,6641,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_other,low,schools and colleges,9.7899,6818,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,low,"police, courts, prisons",1.2202,850,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,low,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9018,1325,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,low,veterans and military medical,0.0010,1,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,low,"per-head lines: government, defense, interest, roads, other",2.2162,1543,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_other,low,capital return,1.3322,928,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_other,low,capital return,1.3474,938,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,low,income taxes,-10.6491,-29373,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,low,payroll taxes and Medicare premiums,-3.0625,-8447,oct15,whole-population mortality,whole_population_tables,rough
@@ -678,12 +678,12 @@ cash,indian_origin_self_employed_households,low,"capital, property, production t
 cash,indian_origin_self_employed_households,low,Social Security,0.1549,427,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,low,Medicare,0.8335,2299,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,low,Medicaid,0.3443,950,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_self_employed_households,low,schools and colleges,1.5001,4138,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_self_employed_households,low,schools and colleges,1.6683,4602,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,low,"police, courts, prisons",0.3304,911,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",0.1952,539,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,low,veterans and military medical,0.0369,102,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,low,"per-head lines: government, defense, interest, roads, other",0.5567,1536,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_self_employed_households,low,capital return,0.2823,779,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_self_employed_households,low,capital return,0.2924,807,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,low,income taxes,-79.2828,-16786,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,low,payroll taxes and Medicare premiums,-46.6001,-9866,oct15,whole-population mortality,whole_population_tables,rough
@@ -692,12 +692,12 @@ cash,indian_origin_wage_salary_households,low,"capital, property, production tax
 cash,indian_origin_wage_salary_households,low,Social Security,2.4633,522,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,low,Medicare,10.8590,2299,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,low,Medicaid,4.1516,879,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_wage_salary_households,low,schools and colleges,22.2151,4704,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_wage_salary_households,low,schools and colleges,23.2129,4915,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,low,"police, courts, prisons",3.9314,832,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,low,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1010,657,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,low,veterans and military medical,0.3660,77,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,low,"per-head lines: government, defense, interest, roads, other",7.4348,1574,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_wage_salary_households,low,capital return,3.8823,822,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_wage_salary_households,low,capital return,3.9422,835,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,low,income taxes,-471.4638,-10424,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,low,payroll taxes and Medicare premiums,-283.8824,-6276,oct15,whole-population mortality,whole_population_tables,rough
@@ -706,12 +706,12 @@ cash,A1_third_plus_nh_white,low,"capital, property, production taxes",-188.5185,
 cash,A1_third_plus_nh_white,low,Social Security,266.0173,5881,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,low,Medicare,193.7063,4283,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,low,Medicaid,105.5518,2334,oct15,whole-population mortality,whole_population_tables,rough
-cash,A1_third_plus_nh_white,low,schools and colleges,143.3741,3170,oct15,whole-population mortality,whole_population_tables,rough
+cash,A1_third_plus_nh_white,low,schools and colleges,137.3575,3037,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,low,"police, courts, prisons",57.3514,1268,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,low,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,low,veterans and military medical,37.8464,837,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,low,"per-head lines: government, defense, interest, roads, other",104.0568,2301,oct15,whole-population mortality,whole_population_tables,rough
-cash,A1_third_plus_nh_white,low,capital return,36.1178,799,oct15,whole-population mortality,whole_population_tables,rough
+cash,A1_third_plus_nh_white,low,capital return,35.7567,791,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,low,income taxes,-217.9163,-5194,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,low,payroll taxes and Medicare premiums,-194.3579,-4633,oct15,whole-population mortality,whole_population_tables,rough
@@ -720,12 +720,12 @@ cash,nh_black_rough,low,"capital, property, production taxes",-87.9473,-2096,oct
 cash,nh_black_rough,low,Social Security,141.5057,3373,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,low,Medicare,113.0022,2693,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,low,Medicaid,181.2461,4320,oct15,whole-population mortality,whole_population_tables,rough
-cash,nh_black_rough,low,schools and colleges,173.9840,4147,oct15,whole-population mortality,whole_population_tables,rough
+cash,nh_black_rough,low,schools and colleges,178.6145,4257,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,low,"police, courts, prisons",106.3305,2534,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,low,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,low,veterans and military medical,41.5391,990,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,low,"per-head lines: government, defense, interest, roads, other",79.7973,1902,oct15,whole-population mortality,whole_population_tables,rough
-cash,nh_black_rough,low,capital return,35.6347,849,oct15,whole-population mortality,whole_population_tables,rough
+cash,nh_black_rough,low,capital return,35.9126,856,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,low,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_engine_identified,low,income taxes,-126.6542,-3189,oct15,whole-population mortality,whole_population_tables,case
 cash,mexican_origin_engine_identified,low,payroll taxes and Medicare premiums,-151.6583,-3819,oct15,whole-population mortality,whole_population_tables,case
@@ -748,12 +748,12 @@ cash,mexican_origin_rough_identified,low,"capital, property, production taxes",-
 cash,mexican_origin_rough_identified,low,Social Security,59.6827,1503,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,low,Medicare,52.4192,1320,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,low,Medicaid,117.6400,2962,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough_identified,low,schools and colleges,198.3183,4994,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough_identified,low,schools and colleges,200.5998,5051,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,low,"police, courts, prisons",76.6344,1930,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,low,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,2924,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,low,veterans and military medical,11.5868,292,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,low,"per-head lines: government, defense, interest, roads, other",74.2636,1870,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough_identified,low,capital return,34.1721,860,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough_identified,low,capital return,34.3091,864,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,low,production gain (subtracted),-11.6799,-294,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_engine,high,income taxes,-142.7760,-3157,oct15,whole-population mortality,whole_population_tables,case
 cash,mexican_origin_engine,high,payroll taxes and Medicare premiums,-164.9627,-3647,oct15,whole-population mortality,whole_population_tables,case
@@ -776,12 +776,12 @@ cash,mexican_origin_rough,high,"capital, property, production taxes",-66.6845,-1
 cash,mexican_origin_rough,high,Social Security,63.9148,1413,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,high,Medicare,55.5530,1228,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,high,Medicaid,127.6972,2823,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough,high,schools and colleges,224.2369,4958,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough,high,schools and colleges,226.5184,5008,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,high,"police, courts, prisons",82.3433,1821,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",124.7676,2759,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,high,veterans and military medical,12.7030,281,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,high,"per-head lines: government, defense, interest, roads, other",105.6003,2335,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough,high,capital return,61.9795,1370,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough,high,capital return,62.1849,1375,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough,high,production gain (subtracted),-7.8343,-173,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,high,income taxes,-158.4968,-3991,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,high,payroll taxes and Medicare premiums,-180.5404,-4546,oct15,whole-population mortality,whole_population_tables,rough
@@ -790,12 +790,12 @@ cash,mexican_origin_rough_white_ages,high,"capital, property, production taxes",
 cash,mexican_origin_rough_white_ages,high,Social Security,155.7345,3922,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,high,Medicare,153.5680,3867,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,high,Medicaid,163.9763,4129,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough_white_ages,high,schools and colleges,125.8137,3168,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough_white_ages,high,schools and colleges,127.6441,3214,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,high,"police, courts, prisons",70.6492,1779,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",114.2874,2878,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,high,veterans and military medical,17.9510,452,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,high,"per-head lines: government, defense, interest, roads, other",103.2843,2601,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough_white_ages,high,capital return,50.5080,1272,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough_white_ages,high,capital return,50.6727,1276,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_white_ages,high,production gain (subtracted),-7.9696,-201,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,high,income taxes,-103.7928,-17072,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,high,payroll taxes and Medicare premiums,-56.6875,-9324,oct15,whole-population mortality,whole_population_tables,rough
@@ -804,12 +804,12 @@ cash,indian_origin,high,"capital, property, production taxes",-27.9737,-4601,oct
 cash,indian_origin,high,Social Security,7.9026,1300,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,high,Medicare,13.9778,2299,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,high,Medicaid,6.0818,1000,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin,high,schools and colleges,28.8377,4743,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin,high,schools and colleges,30.2797,4980,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,high,"police, courts, prisons",5.1036,839,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,high,veterans and military medical,0.5581,92,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,high,"per-head lines: government, defense, interest, roads, other",14.7145,2420,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin,high,capital return,8.4101,1383,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin,high,capital return,8.5399,1405,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,high,income taxes,-99.2147,-16319,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,high,payroll taxes and Medicare premiums,-52.7621,-8678,oct15,whole-population mortality,whole_population_tables,rough
@@ -818,12 +818,12 @@ cash,indian_origin_white_ages,high,"capital, property, production taxes",-26.531
 cash,indian_origin_white_ages,high,Social Security,21.0861,3468,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,high,Medicare,26.0270,4281,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,high,Medicaid,10.5582,1737,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_white_ages,high,schools and colleges,24.0549,3957,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_white_ages,high,schools and colleges,25.3325,4167,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,high,"police, courts, prisons",5.0561,832,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,high,veterans and military medical,1.1738,193,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.4121,2371,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_white_ages,high,capital return,7.8294,1288,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_white_ages,high,capital return,7.9444,1307,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_white_ages,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,high,income taxes,-89.3395,-20865,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,high,payroll taxes and Medicare premiums,-48.5518,-11339,oct15,whole-population mortality,whole_population_tables,rough
@@ -832,12 +832,12 @@ cash,india_born,high,"capital, property, production taxes",-22.4606,-5246,oct15,
 cash,india_born,high,Social Security,7.3934,1727,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,high,Medicare,14.5221,3392,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,high,Medicaid,4.5798,1070,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born,high,schools and colleges,12.4760,2914,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born,high,schools and colleges,12.9405,3022,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,high,"police, courts, prisons",3.6485,852,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.6091,843,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,high,veterans and military medical,0.4034,94,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,high,"per-head lines: government, defense, interest, roads, other",11.1350,2601,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born,high,capital return,5.4266,1267,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born,high,capital return,5.4684,1277,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,high,income taxes,-68.0592,-15895,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,high,payroll taxes and Medicare premiums,-36.4947,-8523,oct15,whole-population mortality,whole_population_tables,rough
@@ -846,12 +846,12 @@ cash,india_born_white_ages,high,"capital, property, production taxes",-17.8827,-
 cash,india_born_white_ages,high,Social Security,15.4560,3610,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,high,Medicare,18.3303,4281,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,high,Medicaid,7.4359,1737,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_white_ages,high,schools and colleges,17.0439,3981,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_white_ages,high,schools and colleges,17.6437,4121,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,high,"police, courts, prisons",3.5856,837,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.7642,879,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,high,veterans and military medical,0.6216,145,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,high,"per-head lines: government, defense, interest, roads, other",10.1259,2365,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_white_ages,high,capital return,5.5276,1291,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_white_ages,high,capital return,5.5817,1304,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_white_ages,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,high,income taxes,-102.8279,-16913,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,high,payroll taxes and Medicare premiums,-56.8056,-9344,oct15,whole-population mortality,whole_population_tables,rough
@@ -860,12 +860,12 @@ cash,indian_origin_g2_pooled,high,"capital, property, production taxes",-27.9737
 cash,indian_origin_g2_pooled,high,Social Security,7.9026,1300,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,high,Medicare,13.9778,2299,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,high,Medicaid,6.0818,1000,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_g2_pooled,high,schools and colleges,28.8377,4743,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_g2_pooled,high,schools and colleges,30.2797,4980,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,high,"police, courts, prisons",5.1036,839,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.6702,768,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,high,veterans and military medical,0.5581,92,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,high,"per-head lines: government, defense, interest, roads, other",14.7224,2422,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_g2_pooled,high,capital return,8.4102,1383,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_g2_pooled,high,capital return,8.5400,1405,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,high,income taxes,-98.4106,-16187,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,high,payroll taxes and Medicare premiums,-52.8525,-8693,oct15,whole-population mortality,whole_population_tables,rough
@@ -874,12 +874,12 @@ cash,indian_origin_g2_pooled_white_ages,high,"capital, property, production taxe
 cash,indian_origin_g2_pooled_white_ages,high,Social Security,21.0861,3468,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,high,Medicare,26.0270,4281,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,high,Medicaid,10.5582,1737,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_g2_pooled_white_ages,high,schools and colleges,24.0549,3957,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_g2_pooled_white_ages,high,schools and colleges,25.3325,4167,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,high,"police, courts, prisons",5.0561,832,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,high,"SNAP, SSI, housing, cash aid, credits, other welfare",4.7663,784,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,high,veterans and military medical,1.1738,193,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,high,"per-head lines: government, defense, interest, roads, other",14.4183,2372,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_g2_pooled_white_ages,high,capital return,7.8294,1288,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_g2_pooled_white_ages,high,capital return,7.9445,1307,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_g2_pooled_white_ages,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,high,income taxes,-9.9814,-60340,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,high,payroll taxes and Medicare premiums,-2.5604,-15478,oct15,whole-population mortality,whole_population_tables,rough
@@ -888,12 +888,12 @@ cash,india_born_self_employed_adults,high,"capital, property, production taxes",
 cash,india_born_self_employed_adults,high,Social Security,0.3063,1852,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,high,Medicare,0.5610,3392,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,high,Medicaid,0.1805,1091,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_self_employed_adults,high,schools and colleges,0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_self_employed_adults,high,schools and colleges,0.0038,23,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,high,"police, courts, prisons",0.1410,852,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",0.0880,532,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,high,veterans and military medical,0.0368,222,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,high,"per-head lines: government, defense, interest, roads, other",0.4951,2993,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_self_employed_adults,high,capital return,0.1695,1025,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_self_employed_adults,high,capital return,0.1699,1027,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_self_employed_adults,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,high,income taxes,-72.0347,-26874,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,high,payroll taxes and Medicare premiums,-45.2591,-16885,oct15,whole-population mortality,whole_population_tables,rough
@@ -902,12 +902,12 @@ cash,india_born_wage_salary_adults,high,"capital, property, production taxes",-1
 cash,india_born_wage_salary_adults,high,Social Security,0.8367,312,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,high,Medicare,9.0912,3392,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,high,Medicaid,2.0301,757,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_wage_salary_adults,high,schools and colleges,2.9407,1097,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_wage_salary_adults,high,schools and colleges,3.1469,1174,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,high,"police, courts, prisons",2.2874,853,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.6193,604,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,high,veterans and military medical,0.3656,136,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,high,"per-head lines: government, defense, interest, roads, other",7.7993,2910,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_wage_salary_adults,high,capital return,3.0967,1155,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_wage_salary_adults,high,capital return,3.1152,1162,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_wage_salary_adults,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,high,income taxes,-7.3233,-5100,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,high,payroll taxes and Medicare premiums,-0.7323,-510,oct15,whole-population mortality,whole_population_tables,rough
@@ -916,12 +916,12 @@ cash,india_born_other,high,"capital, property, production taxes",-1.4518,-1011,o
 cash,india_born_other,high,Social Security,6.2504,4353,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,high,Medicare,4.8699,3392,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,high,Medicaid,2.3692,1650,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_other,high,schools and colleges,9.5354,6641,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_other,high,schools and colleges,9.7899,6818,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,high,"police, courts, prisons",1.2202,850,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,high,"SNAP, SSI, housing, cash aid, credits, other welfare",1.9018,1325,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,high,veterans and military medical,0.0010,1,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,high,"per-head lines: government, defense, interest, roads, other",2.8406,1978,oct15,whole-population mortality,whole_population_tables,rough
-cash,india_born_other,high,capital return,2.1604,1505,oct15,whole-population mortality,whole_population_tables,rough
+cash,india_born_other,high,capital return,2.1833,1521,oct15,whole-population mortality,whole_population_tables,rough
 cash,india_born_other,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,high,income taxes,-10.6491,-29373,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,high,payroll taxes and Medicare premiums,-3.0625,-8447,oct15,whole-population mortality,whole_population_tables,rough
@@ -930,12 +930,12 @@ cash,indian_origin_self_employed_households,high,"capital, property, production 
 cash,indian_origin_self_employed_households,high,Social Security,0.1549,427,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,high,Medicare,0.8335,2299,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,high,Medicaid,0.3443,950,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_self_employed_households,high,schools and colleges,1.5001,4138,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_self_employed_households,high,schools and colleges,1.6683,4602,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,high,"police, courts, prisons",0.3304,911,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",0.1952,539,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,high,veterans and military medical,0.0369,102,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,high,"per-head lines: government, defense, interest, roads, other",0.8592,2370,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_self_employed_households,high,capital return,0.4735,1306,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_self_employed_households,high,capital return,0.4886,1348,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_self_employed_households,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,high,income taxes,-79.2828,-16786,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,high,payroll taxes and Medicare premiums,-46.6001,-9866,oct15,whole-population mortality,whole_population_tables,rough
@@ -944,12 +944,12 @@ cash,indian_origin_wage_salary_households,high,"capital, property, production ta
 cash,indian_origin_wage_salary_households,high,Social Security,2.4633,522,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,high,Medicare,10.8590,2299,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,high,Medicaid,4.1516,879,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_wage_salary_households,high,schools and colleges,22.2151,4704,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_wage_salary_households,high,schools and colleges,23.2129,4915,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,high,"police, courts, prisons",3.9314,832,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,high,"SNAP, SSI, housing, cash aid, credits, other welfare",3.1010,657,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,high,veterans and military medical,0.3660,77,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,high,"per-head lines: government, defense, interest, roads, other",11.3463,2402,oct15,whole-population mortality,whole_population_tables,rough
-cash,indian_origin_wage_salary_households,high,capital return,6.4959,1375,oct15,whole-population mortality,whole_population_tables,rough
+cash,indian_origin_wage_salary_households,high,capital return,6.5858,1394,oct15,whole-population mortality,whole_population_tables,rough
 cash,indian_origin_wage_salary_households,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,high,income taxes,-471.4638,-10424,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,high,payroll taxes and Medicare premiums,-283.8824,-6276,oct15,whole-population mortality,whole_population_tables,rough
@@ -958,12 +958,12 @@ cash,A1_third_plus_nh_white,high,"capital, property, production taxes",-133.1515
 cash,A1_third_plus_nh_white,high,Social Security,266.0173,5881,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,high,Medicare,193.7063,4283,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,high,Medicaid,105.5518,2334,oct15,whole-population mortality,whole_population_tables,rough
-cash,A1_third_plus_nh_white,high,schools and colleges,143.3741,3170,oct15,whole-population mortality,whole_population_tables,rough
+cash,A1_third_plus_nh_white,high,schools and colleges,137.3575,3037,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,high,"police, courts, prisons",57.3514,1268,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,high,"SNAP, SSI, housing, cash aid, credits, other welfare",75.4378,1668,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,high,veterans and military medical,37.8464,837,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,high,"per-head lines: government, defense, interest, roads, other",135.5448,2997,oct15,whole-population mortality,whole_population_tables,rough
-cash,A1_third_plus_nh_white,high,capital return,61.3353,1356,oct15,whole-population mortality,whole_population_tables,rough
+cash,A1_third_plus_nh_white,high,capital return,60.7936,1344,oct15,whole-population mortality,whole_population_tables,rough
 cash,A1_third_plus_nh_white,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,high,income taxes,-217.9163,-5194,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,high,payroll taxes and Medicare premiums,-194.3579,-4633,oct15,whole-population mortality,whole_population_tables,rough
@@ -972,12 +972,12 @@ cash,nh_black_rough,high,"capital, property, production taxes",-59.6174,-1421,oc
 cash,nh_black_rough,high,Social Security,141.5057,3373,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,high,Medicare,113.0022,2693,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,high,Medicaid,181.2461,4320,oct15,whole-population mortality,whole_population_tables,rough
-cash,nh_black_rough,high,schools and colleges,173.9840,4147,oct15,whole-population mortality,whole_population_tables,rough
+cash,nh_black_rough,high,schools and colleges,178.6145,4257,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,high,"police, courts, prisons",106.3305,2534,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,high,"SNAP, SSI, housing, cash aid, credits, other welfare",164.2212,3914,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,high,veterans and military medical,41.5391,990,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,high,"per-head lines: government, defense, interest, roads, other",104.2367,2485,oct15,whole-population mortality,whole_population_tables,rough
-cash,nh_black_rough,high,capital return,58.5882,1396,oct15,whole-population mortality,whole_population_tables,rough
+cash,nh_black_rough,high,capital return,59.0052,1406,oct15,whole-population mortality,whole_population_tables,rough
 cash,nh_black_rough,high,production gain (subtracted),0.0000,0,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_engine_identified,high,income taxes,-126.6542,-3189,oct15,whole-population mortality,whole_population_tables,case
 cash,mexican_origin_engine_identified,high,payroll taxes and Medicare premiums,-151.6583,-3819,oct15,whole-population mortality,whole_population_tables,case
@@ -1000,12 +1000,12 @@ cash,mexican_origin_rough_identified,high,"capital, property, production taxes",
 cash,mexican_origin_rough_identified,high,Social Security,59.6827,1503,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,high,Medicare,52.4192,1320,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,high,Medicaid,117.6400,2962,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough_identified,high,schools and colleges,199.1126,5014,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough_identified,high,schools and colleges,201.3941,5071,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,high,"police, courts, prisons",76.6344,1930,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,high,"SNAP, SSI, housing, cash aid, credits, other welfare",116.1351,2924,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,high,veterans and military medical,11.5868,292,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,high,"per-head lines: government, defense, interest, roads, other",97.1669,2447,oct15,whole-population mortality,whole_population_tables,rough
-cash,mexican_origin_rough_identified,high,capital return,56.2616,1417,oct15,whole-population mortality,whole_population_tables,rough
+cash,mexican_origin_rough_identified,high,capital return,56.4670,1422,oct15,whole-population mortality,whole_population_tables,rough
 cash,mexican_origin_rough_identified,high,production gain (subtracted),-7.6832,-193,oct15,whole-population mortality,whole_population_tables,rough
 accrual,A1_third_plus_nh_white,low,comparator post-engine mixed_unit_removal,-9.2508,-205,oct15,whole-population mortality,whole_population_tables,rough
 accrual,nh_black_rough,low,comparator post-engine mixed_unit_removal,-2.3337,-56,oct15,whole-population mortality,whole_population_tables,rough

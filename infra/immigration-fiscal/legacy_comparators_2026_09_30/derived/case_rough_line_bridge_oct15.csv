@@ -33,7 +33,7 @@ oct15,cash,low,bridge,case,rough,whole-population mortality,receipts,tenant_occu
 oct15,cash,low,bridge,case,rough,whole-population mortality,receipts,user_fees_key_college,0.0,0.0,0.0
 oct15,cash,low,bridge,case,rough,whole-population mortality,receipts,user_fees_key_health,0.0,0.0,0.0
 oct15,cash,low,bridge,case,rough,whole-population mortality,receipts,user_fees_key_k12,-0.0,-0.0,0.0
-oct15,cash,low,bridge,case,rough,whole-population mortality,resource,capital_return,37.62330296214274,37.686632132800455,-0.06332917065771682
+oct15,cash,low,bridge,case,rough,whole-population mortality,resource,capital_return,37.62330296214274,37.823586903080916,-0.2002839409381778
 oct15,cash,low,bridge,case,rough,whole-population mortality,resource,production_gain,-11.909455439239336,-11.909455439239336,0.0
 oct15,cash,low,bridge,case,rough,whole-population mortality,spending,agricultural_subsidies,0.0,0.0,0.0
 oct15,cash,low,bridge,case,rough,whole-population mortality,spending,black_lung,0.034919142379044824,0.034589629447952214,0.0003295129310926098
@@ -42,7 +42,7 @@ oct15,cash,low,bridge,case,rough,whole-population mortality,spending,defense,0.0
 oct15,cash,low,bridge,case,rough,whole-population mortality,spending,domestic_interest,0.0,0.0,0.0
 oct15,cash,low,bridge,case,rough,whole-population mortality,spending,economic_affairs_services,15.295516210865136,15.316107839861077,-0.020591628995941136
 oct15,cash,low,bridge,case,rough,whole-population mortality,spending,education_benefits,9.614450986175433,11.651145094218304,-2.0366941080428713
-oct15,cash,low,bridge,case,rough,whole-population mortality,spending,education_services,216.94833135528847,209.94236724050964,7.005964114778834
+oct15,cash,low,bridge,case,rough,whole-population mortality,spending,education_services,216.94833135528847,212.22384190976672,4.724489445521755
 oct15,cash,low,bridge,case,rough,whole-population mortality,spending,employment_training,0.1772189285039505,0.17193306846970868,0.005285860034241807
 oct15,cash,low,bridge,case,rough,whole-population mortality,spending,energy_assistance,0.6052243015615347,0.5951497141361961,0.010074587425338621
 oct15,cash,low,bridge,case,rough,whole-population mortality,spending,family_and_general_assistance,12.367613566156653,11.04879007421875,1.318823491937902
@@ -400,7 +400,7 @@ oct15,cash,high,bridge,case,rough,whole-population mortality,receipts,tenant_occ
 oct15,cash,high,bridge,case,rough,whole-population mortality,receipts,user_fees_key_college,0.0,0.0,0.0
 oct15,cash,high,bridge,case,rough,whole-population mortality,receipts,user_fees_key_health,0.0,0.0,0.0
 oct15,cash,high,bridge,case,rough,whole-population mortality,receipts,user_fees_key_k12,-0.0,-0.0,0.0
-oct15,cash,high,bridge,case,rough,whole-population mortality,resource,capital_return,61.88882356561864,61.979514647009275,-0.09069108139063786
+oct15,cash,high,bridge,case,rough,whole-population mortality,resource,capital_return,61.88882356561864,62.18494680242996,-0.2961232368113258
 oct15,cash,high,bridge,case,rough,whole-population mortality,resource,production_gain,-7.834258635053346,-7.834258635053346,0.0
 oct15,cash,high,bridge,case,rough,whole-population mortality,spending,agricultural_subsidies,0.0,0.0,0.0
 oct15,cash,high,bridge,case,rough,whole-population mortality,spending,black_lung,0.034919142379044824,0.034589629447952214,0.0003295129310926098
@@ -409,7 +409,7 @@ oct15,cash,high,bridge,case,rough,whole-population mortality,spending,defense,0.
 oct15,cash,high,bridge,case,rough,whole-population mortality,spending,domestic_interest,0.0,0.0,0.0
 oct15,cash,high,bridge,case,rough,whole-population mortality,spending,economic_affairs_services,25.409285681957563,25.443492999749363,-0.03420731779180031
 oct15,cash,high,bridge,case,rough,whole-population mortality,spending,education_benefits,9.614450986175433,11.651145094218304,-2.0366941080428713
-oct15,cash,high,bridge,case,rough,whole-population mortality,spending,education_services,216.94833135528847,209.94236724050964,7.005964114778834
+oct15,cash,high,bridge,case,rough,whole-population mortality,spending,education_services,216.94833135528847,212.22384190976672,4.724489445521755
 oct15,cash,high,bridge,case,rough,whole-population mortality,spending,employment_training,0.1772189285039505,0.17193306846970868,0.005285860034241807
 oct15,cash,high,bridge,case,rough,whole-population mortality,spending,energy_assistance,0.6052243015615347,0.5951497141361961,0.010074587425338621
 oct15,cash,high,bridge,case,rough,whole-population mortality,spending,family_and_general_assistance,12.367613566156653,11.04879007421875,1.318823491937902
@@ -767,7 +767,7 @@ oct15,accrual,low,bridge,case,rough,whole-population mortality,receipts,tenant_o
 oct15,accrual,low,bridge,case,rough,whole-population mortality,receipts,user_fees_key_college,0.0,0.0,0.0
 oct15,accrual,low,bridge,case,rough,whole-population mortality,receipts,user_fees_key_health,0.0,0.0,0.0
 oct15,accrual,low,bridge,case,rough,whole-population mortality,receipts,user_fees_key_k12,-0.0,-0.0,0.0
-oct15,accrual,low,bridge,case,rough,whole-population mortality,resource,capital_return,37.62330296214274,37.686632132800455,-0.06332917065771682
+oct15,accrual,low,bridge,case,rough,whole-population mortality,resource,capital_return,37.62330296214274,37.823586903080916,-0.2002839409381778
 oct15,accrual,low,bridge,case,rough,whole-population mortality,resource,production_gain,-11.909455439239336,-11.909455439239336,0.0
 oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,agricultural_subsidies,0.0,0.0,0.0
 oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,black_lung,0.034919142379044824,0.034589629447952214,0.0003295129310926098
@@ -776,7 +776,7 @@ oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,defense,
 oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,domestic_interest,0.0,0.0,0.0
 oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,economic_affairs_services,15.295516210865136,15.316107839861077,-0.020591628995941136
 oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,education_benefits,9.614450986175433,11.651145094218304,-2.0366941080428713
-oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,education_services,216.94833135528847,209.94236724050964,7.005964114778834
+oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,education_services,216.94833135528847,212.22384190976672,4.724489445521755
 oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,employment_training,0.1772189285039505,0.17193306846970868,0.005285860034241807
 oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,energy_assistance,0.6052243015615347,0.5951497141361961,0.010074587425338621
 oct15,accrual,low,bridge,case,rough,whole-population mortality,spending,family_and_general_assistance,12.367613566156653,11.04879007421875,1.318823491937902
@@ -1134,7 +1134,7 @@ oct15,accrual,high,bridge,case,rough,whole-population mortality,receipts,tenant_
 oct15,accrual,high,bridge,case,rough,whole-population mortality,receipts,user_fees_key_college,0.0,0.0,0.0
 oct15,accrual,high,bridge,case,rough,whole-population mortality,receipts,user_fees_key_health,0.0,0.0,0.0
 oct15,accrual,high,bridge,case,rough,whole-population mortality,receipts,user_fees_key_k12,-0.0,-0.0,0.0
-oct15,accrual,high,bridge,case,rough,whole-population mortality,resource,capital_return,61.88882356561864,61.979514647009275,-0.09069108139063786
+oct15,accrual,high,bridge,case,rough,whole-population mortality,resource,capital_return,61.88882356561864,62.18494680242996,-0.2961232368113258
 oct15,accrual,high,bridge,case,rough,whole-population mortality,resource,production_gain,-7.834258635053346,-7.834258635053346,0.0
 oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,agricultural_subsidies,0.0,0.0,0.0
 oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,black_lung,0.034919142379044824,0.034589629447952214,0.0003295129310926098
@@ -1143,7 +1143,7 @@ oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,defense
 oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,domestic_interest,0.0,0.0,0.0
 oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,economic_affairs_services,25.409285681957563,25.443492999749363,-0.03420731779180031
 oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,education_benefits,9.614450986175433,11.651145094218304,-2.0366941080428713
-oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,education_services,216.94833135528847,209.94236724050964,7.005964114778834
+oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,education_services,216.94833135528847,212.22384190976672,4.724489445521755
 oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,employment_training,0.1772189285039505,0.17193306846970868,0.005285860034241807
 oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,energy_assistance,0.6052243015615347,0.5951497141361961,0.010074587425338621
 oct15,accrual,high,bridge,case,rough,whole-population mortality,spending,family_and_general_assistance,12.367613566156653,11.04879007421875,1.318823491937902
