@@ -185,9 +185,12 @@ for the union, $2,653 of lower spending against $10,889 of lower receipts. [SOUR
 ## 4. "The benefits are in the economy, not in the budget."
 
 Steel-man: cheaper services, complementary labour and capital returns never appear in a
-fiscal ledger. Finding: the account adds production gains and the induced taxes on them:
+fiscal ledger. Finding: the account adds production gains and the taxes on the extra labour income:
 $7.8bn (cash scaling) to $11.9bn (GDP scaling) on the account's own weights, the 3.04M added descendants
-included ($6–19bn across the parameter grid). Omitted benefits would have to reach
+included ($6–19bn across the parameter grid). Taxes on the business capital that works with the group
+count at zero; the assumption review of 2026-10-14 finds that inconsistent with the case's own long-run
+rule for capital, and the correction, which lowers the main case, is not yet measured
+([item 2](immigration-v6-assumption-review-2026-10-14.md)). Omitted benefits would have to reach
 $389–461bn a year to offset the main case. That threshold is conditional on the service-response share,
 which is assumed and unmeasured.
 - It is $289–336bn with CBO's first-year responses ($207–260bn counting benefits when paid). It is
@@ -998,3 +1001,9 @@ they get more prominence.
   care channels print at two decimals so the parts add: $2.69bn + $1.49bn − $0.03bn = $4.15bn ($2.60–13.35bn), where
   the combining rules gave two named items as $4.2bn and entry 4 the total as $4.1bn. Dated clauses and lane labels
   are reworded. Concept affected: none; each figure follows the live case or is marked as not measured on it.
+- 2026-10-14 ([assumption review](immigration-v6-assumption-review-2026-10-14.md)): "Before combining" states that
+  the generation ledger counts Social Security and Medicare when paid; entry 10's sign claim is scoped to that basis
+  and entry 1 notes that the main case's pension accrual narrows the age advantage [INFERENCE]; entry 15 names the
+  weights behind its per-person and total figures; entry 4 says that taxes on the business capital working with the
+  group count at zero, which the review finds inconsistent with the case's long-run capital rule. Concept affected:
+  the ledger's benefit basis next to an accrual headline; the induced-tax claim in entry 4.

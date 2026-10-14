@@ -171,7 +171,9 @@ substituting a web summary or declaring a measurement unavailable:
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
 - The headline's "CBO-informed" label covers CBO's tax-incidence rules and its category rule for
-  which budgets respond; since 2026-09-26 the school response is no longer CBO's. Since
+  which budgets respond; since 2026-09-26 the school response is no longer CBO's. Corporate,
+  business-property and production taxes take CBO's keys but respond at zero, by the production
+  module's unmeasured retention rule, which the 2026-10-14 assumption review contests (item 2). Since
   2026-09-23 the main case lets general public services respond at 0.59–0.84, from cross-state
   scale, and charges justice and uncompensated care by use
   ([decision](decisions/2026-09-23-main-case-general-government-and-use-keys.md)). Since
