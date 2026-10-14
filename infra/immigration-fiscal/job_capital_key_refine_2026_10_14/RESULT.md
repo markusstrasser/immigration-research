@@ -135,3 +135,141 @@ The final reproduction check is:
 ```sh
 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/job_capital_key_refine_2026_10_14 "uv run --no-project python3 {lane}/core.py" "node {lane}/housing_keys.cjs" "uv run --no-project python3 {lane}/k236.py" "uv run --no-project python3 {lane}/k3_sampling.py" "uv run --no-project python3 {lane}/k1_legal.py" "uv run --no-project python3 {lane}/k4_detail.py" "uv run --no-project python3 {lane}/k5_subsidies.py" "uv run --no-project python3 {lane}/refine.py"
 ```
+
+## 2026-10-14 round-1 extension after the Opus axis
+
+**Verdict:** Preserve the original six arms and K1×K2 candidate. Broad two-block reallocation plus mining refill lowers the lineage headline by **$7.645493bn low / $3.655646bn high**; narrow tradables gives **−$2.030764 / −$0.686995bn**. The broad low-side move crosses the $5bn bar. These are fixed-price response arms, not an identified removal effect. Recommend K2's domestic-source scope correction for adoption; keep K1, K3 documentary, K4, K5, K6 refill, K7, network and land as conditional arms. [CALCULATION: `reallocation.py` → `derived/reallocation.json`; INFERENCE]
+
+All figures below are one change from the frozen **v7 central**, with personal end specifications 16 / 11. Union is the account's 39.712493M identified members; lineage is the live case's 42.752213M people. Positive Δ means net fiscal cost rises; a negative Δ means more source tax is lost on removal and net cost falls. Set and cash change by the same receipt/subsidy amount. Sampling SEs condition on demand, tax/subsidy totals, national legal propensities, lineage wage calibration and source vintages; they do not measure GE response uncertainty. [DATA: `derived/summary.json.frame`, `derived/core.json`; ASSUMPTION]
+
+### K7: two-block mechanism and limiting cases
+
+For each reading, let A_i be the national taxes in cell i after the central line responses, W_i national wage dollars, W_gi actual group wage dollars, and s_gi the frozen tax-allocation share (thin-cell pooling retained). The jobs key is J = Σ_i s_gi A_i. Let d be the group's demand share. Private non-tradables N follow demand; T follows factor supply. Native refill in N is signed R_N = Σ_N(W_gi − d W_i). At a pinned wage it draws native wage units out of T when positive and returns them to T when negative. National tradable tax intensity is t_T = Σ_T A_i / Σ_T W_i. The K7 loss is:
+
+`J_T + d Σ_N A_i + t_T R_N + J_fixed`.
+
+Mining taxes stay zero; mining refill is a distinct additional term `t_T Σ_mining W_gi`, counted once in combined rows. Thus K7 itself isolates non-tradable reallocation, K6 isolates mining refill, and K7-with-mining is their exact combined probe. Thin-cell tax shares remain pooled while actual wage units determine native refill. The national T intensity is the primary arm; group-weighted intensity is retained as a different assumed destination mix. [CALCULATION: `reallocation.py:two_block`, `derived/reallocation.json.details`; ASSUMPTION]
+
+Demand uses the requested case consumption-lane basis **0.08142000842884183** (`consumption_key_2026_09_24/derived/key_specs.csv`, both_corridor_net_h2, adopted_basis_share), read from data. Added descendants' demand is the live v7 general-consumption carrier's lineage-minus-union increment **0.0076739772081388935**, so lineage d is **0.08909398563698072**. This prices the added people separately rather than multiplying the union result by a population ratio. `personal_current_transfers` is the general-consumption carrier; sales/excise taxes have tax-specific adjustments. The alternative live payload d is union **0.08188016967467436**, lineage **0.08955414688281325** and is reported separately. [DATA: `derived/demand_keys.json`; CALCULATION: `demand_keys.cjs`; ASSUMPTION: transplanting the general-demand increment to the requested consumption basis]
+
+Narrow T is agriculture plus durable/nondurable manufacturing. Broad T adds summary cells 511, 512, 514, 523, 5415, 5412OP, 481, 483 and 55 (software/publishing, media, data, securities, computer/professional services, air/water transport and management). These summary cells are proxies: 511 is broader than software; 5412OP does not split all professional services. The reviewer used media 512; a no-media broad variant is preserved and differs by less than $0.04bn at each end. Government remains fixed; household services enter N with zero business tax. Agriculture stays on the central tax rule in K7; its separate reserve/refill alternative is below. [DATA: `derived/reallocation.json.tradable_cells`; SOURCE: frozen `job_capital.py:124–134`; ASSUMPTION]
+
+The gates use all 161 wage columns: reallocation strength 0 returns the frozen jobs key within **1e−9bn**, and merging to one sector returns the frozen plain-share arm within **1e−6bn** at both readings. The merged sector pools all wages and retains the same zero-mining national tax vectors; it is a limiting aggregation, not the claim that putting every heterogeneous cell in T produces the plain key. An additional equal-intensity two-block test verifies cancellation for multiple demand shares, and a negative-refill test prevents clipping R_N at zero. [CALCULATION: `derived/reallocation.json.gates`, `test_reallocation.py`]
+
+### New one-change arms
+
+Entries are Δnet cost $bn, with paired conditional SDR SE in parentheses. [CALCULATION: `derived/reallocation.json`; negative cost is the sign convention above]
+
+| Change from v7 | Union low | Union high | Lineage low | Lineage high |
+|---|---:|---:|---:|---:|
+| K7 narrow, national T intensity | -2.539315 (2.451977) | -0.853678 (1.193135) | -0.176029 (2.558295) | +0.250609 (1.246077) |
+| K7 broad, national T intensity | -7.246830 (1.221031) | -3.374606 (0.637115) | -6.475352 (1.262638) | -3.047109 (0.660544) |
+| K6 mining refill, narrow T | -1.732576 (0.614094) | -0.875850 (0.310437) | -1.854736 (0.638544) | -0.937605 (0.322797) |
+| K6 mining refill, broad T | -1.093071 (0.387623) | -0.568456 (0.201585) | -1.170141 (0.403116) | -0.608537 (0.209642) |
+| K7 plus mining refill, narrow T | -4.271890 (2.479006) | -1.729528 (1.204618) | -2.030764 (2.584564) | -0.686995 (1.257557) |
+| K7 plus mining refill, broad T | -8.339901 (1.249978) | -3.943062 (0.650334) | -7.645493 (1.295241) | -3.655646 (0.675970) |
+| Agriculture0 plus refill, narrow mobile T | -1.807016 (0.397215) | +0.134915 (0.248808) | -1.855937 (0.408179) | +0.136881 (0.254612) |
+| Agriculture0 plus refill, broad mobile T | -0.136918 (0.291250) | +0.899167 (0.227615) | -0.142231 (0.298412) | +0.921089 (0.231881) |
+| Network response 0.7 | +1.639506 (0.203363) | +1.197088 (0.146735) | +1.792362 (0.213423) | +1.304767 (0.154083) |
+| Commercial-land response 0 | +1.501624 (0.040617) | +1.501624 (0.040617) | +1.611307 (0.042221) | +1.611307 (0.042221) |
+
+Only the broad K7/reallocation combined low-side point arms exceed $5bn; the other standalone requested point changes stay below the bar. Group-weighted T intensities give union K7-with-mining −4.745414/−1.815476bn narrow and −8.229415/−4.162576bn broad; lineage −2.863777/−0.839779 and −7.549061/−3.809920bn. The reviewer's +4.9–8.5/+2.4–4.3bn tax-loss interval is not a reproduced receipt: its probe uses raw W_g/W cell tax exposure, demand alternatives and different destination weighting. This implementation keeps the exact frozen pooling, actual requested demand basis and live lineage additions. It does not copy the reviewer's output. [CALCULATION: `derived/reallocation.json`; SOURCE: read-only `~/.cache/llmx/lite/bare/f3762ca1b03f/probes/nontradable.py`]
+
+At live payload demand, K7-only union Δ is −1.963498/−0.592825bn narrow and −7.047051/−3.294505bn broad; lineage +0.399787/+0.511462 and −6.275573/−2.967008bn. This is a demand-key sensitivity, not a second change hidden inside the primary probe. [CALCULATION: `derived/reallocation.json` live_demand arms]
+
+**Mining/agriculture refill.** Mining's own taxes remain exactly zero. The low-side mining mobile tax intensity is $0.216840 per wage dollar for narrow T and $0.136803 for broad T (high $0.109617/$0.071145). The group mining wage units replace native mining labor; those natives leave T, releasing capital taxed at those mobile intensities. The declined agriculture-at-zero row also removes the central farm taxes and replaces its group farm wage units at T intensity **excluding agriculture**. At the narrow low end the refill term outweighs the removed farm tax, reversing the old unrefilled agriculture row's direction. At the high end the much lower mobile corporate response leaves a positive cost move. This is a response-model alternative, not observed mining/farm capital departure. [CALCULATION: `derived/reallocation.json`; ASSUMPTION]
+
+**Network.** Cells 22 utilities, 513 telecom, 482 rail and 486 pipelines multiply their current three-line departure by 0.7. The property line retains its central land blend first, so this is a 0.7 network-mobility multiplier on current departure, not replacing the global property response with 0.7. [DATA: `derived/reallocation.json.network_cells`; ASSUMPTION]
+
+**Commercial land.** This is the item lane's commercial/business-land response-zero arm: property responds at τ + (1−τ)(1−λ_b), not zero on the entire property line. Union +1.501624bn and lineage +1.611307bn at both ends. It exactly reproduces the frozen business_land_at_0 output within 1e−9bn. No new estimate of land-price elasticity is inferred. [CALCULATION: `derived/reallocation.json.gates`; DATA: frozen `national.json.land`, `.tpp`; ASSUMPTION]
+
+**Price and Rybczynski directions.** Broad N has $44.345bn union / $32.493bn lineage positive refill wage units; narrow N is negative (−$27.755/−$45.052bn). At a fixed-price allocation with excess group supply over demand, removal creates upward N-price pressure; a rising N price supports local taxable rents/values and can retain capital, tending to offset tax loss. If removed demand exceeds supply, the initial price pressure is downward, tending to lower local taxable rents/values and add tax loss. These are conditional channels, not solved price equilibria: strict constant returns with pinned w and r fixes unit costs and leaves no independent N-price degree of freedom. Rybczynski composition is also conditional. With domestic capital fixed temporarily, labor removal makes K/L rise; at fixed goods prices the capital-intensive sector expands and the labor-intensive sector contracts, which can retain taxable capital and reduce the loss compared with proportional departure. If native refill instead draws labor from a capital-intensive mobile T sector, its capital release amplifies loss; the implemented `t_T R_N` gives that channel's sign. A multi-tradable equilibrium with capital inflow/outflow and industry tax rents can change either magnitude. Wage-tax intensity is not a direct K/L measurement. [INFERENCE; SOURCE: [Feenstra, Advanced International Trade, ch. 1, fixed-price endowment and zero-profit equations](https://assets.press.princeton.edu/chapters/s10615.pdf); DATA: `derived/reallocation.json.details`; SOURCE: local `matched_benefits_2026_09_19/model.py:48–56` for the one-sector capital opportunity-release term]
+
+### K5 by SUT cells, with the 624 check
+
+The existing functional proxy is preserved; this replaces its key only in the labelled cell arms. SUT 2024 Use_Summary.xlsx T00SUB/T00OSUB are parsed from the pinned BEA supply/use ZIP. National cells plus explicit published rounding close to each source total within 1e−6bn. Exact frozen pooled industry shares key the union; the case's G3plus/white wage calibration carries the added people. [SOURCE: https://apps.bea.gov/industry/release/zip/SUPPLY-USE.zip; CALCULATION: `k5_cells.py`, `derived/k5_cells_source.csv`, `inputs/k5_cells_pins.json`]
+
+Each row changes cost equally at both ends; union / lineage paired conditional SE shown. [CALCULATION: `derived/k5_cells_summary.json`]
+
+| Subsidy cell response | Union Δcost (SE), $bn | Lineage Δcost (SE), $bn |
+|---|---:|---:|
+| Agriculture1, 624+ORE included | +2.606473 (0.240465) | +2.714441 (0.242622) |
+| Agriculture0, 624+ORE included | +0.740882 (0.125400) | +0.801587 (0.126178) |
+| Agriculture0, 624 excluded | +0.407197 (0.120670) | +0.447970 (0.121183) |
+| Agriculture0, 624+ORE excluded | +0.308872 (0.120492) | +0.342628 (0.120971) |
+
+Agriculture's $8.349bn national subsidy contributes union $1.865591bn / lineage $1.912854bn. Social-assistance 624 has $3.742bn national T00OSUB and contributes $0.333684/$0.353617bn. ORE contributes $0.098325/$0.105342bn. [DATA: `derived/k5_cells_source.csv`]
+
+**Overlap verdict:** the case already carries the entire NIPA subsidy aggregate in agricultural, housing, transport and other_subsidies (`full_account_spending_2026_09_20/builder.py:136–140`). Nonhousing responds 0 and housing responds 1 in the live v7 evaluation. Separately, other_federal_benefits, other_state_welfare and family_and_general_assistance respond 1; NIPA footnotes include nonprofit welfare among those benefits. BEA classifies some nonprofit subsidy payments as social benefits ([BEA PPP FAQ](https://www.bea.gov/help/faq/1408)). This is an identified potential program overlap; it does **not** identify 2024 cell 624's $3.742bn as a duplicate. Keep inclusion/exclusion arms. HS and government-enterprise cells are excluded, with their already priced housing/enterprise carriers intact. Do not add a new national spending line or net a gross SUT subsidy off measured corporate tax. Source vintage also differs from the frozen NIPA account. [DATA: `derived/k5_cells_summary.json.live_case_trace`; SOURCE: `subsidy-cells-evidence.md`; INFERENCE]
+
+### Exact stacked candidates and recommendations
+
+The least assumption-dependent adoption candidate remains **K2 only**, which removes foreign-source residence tax from a domestic-jobs source-tax item; its TY2021 SOI ratio remains an explicit vintage proxy. The preserved round-1 K1×K2 stack is a conditional legal-payroll model. The new stacked candidates below recompute corporate job exposure with K1 and domestic tax with K2 **before** K7; T/fixed corporate jobs use the group's new legal-payroll exposure, while national demand-release and native capital tax intensity use national domestic-source totals. Mining refill enters once. Nonfarm subsidies exclude 624 and ORE in the stress stack; they travel through the same N demand/T refill allocation rather than being appended at the old jobs key. Network and land variants change tax vectors before release/intensity. [CALCULATION: `reallocation.py`, `extended_integrate.py`; ASSUMPTION]
+
+All figures are one simultaneous candidate minus v7 central, not a sum of two headline scenarios. [CALCULATION: `derived/extended_stacks.csv`]
+
+| Conditional stack | Union Δ low/high, $bn | Lineage Δ low/high, $bn | Lineage headline low/high, $bn |
+|---|---:|---:|---:|
+| Narrow K1+K2+K7+mining+subsidy | +1.970566 / +0.940667 | +4.337878 / +2.059127 | 343.889896 / 425.708388 |
+| Narrow K1+K2+K7+mining+subsidy+network+land | +5.406650 / +3.729463 | +8.044181 / +5.057133 | 347.596199 / 428.706394 |
+| Broad K1+K2+K7+mining+subsidy | -2.175406 / -1.297813 | -1.249750 / -0.893353 | 338.302267 / 422.755908 |
+| Broad K1+K2+K7+mining+subsidy+network+land | +1.328572 / +1.558876 | +2.541969 / +2.190070 | 342.093987 / 425.839331 |
+
+Paired conditional SEs and cash endpoints are in `extended_stacks.csv`. Full narrow stack crosses the $5bn bar at both lineage ends; full broad stack does not. The exact full stack exceeds the naive sum of standalone changes by lineage **+$0.883801/+$0.470833bn narrow**, **+$0.996318/+$0.572420bn broad**. These cross terms include domestic-tax reallocation, K1's changed T exposure, and changed tax/spending release intensities. [CALCULATION: `derived/extended_summary.json.stack_diagnostics`]
+
+| Refinement | Recommendation | Load-bearing reason |
+|---|---|---|
+| K1 legal payroll | **Arm**; preserve conditional K1×K2 candidate | 2022 propensity transported to 2024; within-cell selection remains unobserved |
+| K2 foreign-source tax | **Adopt as measurement/scope correction** | Domestic US-jobs item should not carry a foreign-operations residence tax; vintage ratio stays explicit |
+| K3 documentary | **Arm** | Gross source component can be priced, but full housing-tax reconciliation remains open |
+| K3 special assessments | **Reject additive correction** | ACS owner property concept already contains special assessments |
+| K4 finer corporate detail | **Arm**; retain central summary key | Suppression and concordance limit the measured refinement |
+| K5 cell subsidies | **Arm** | Recipient industry improves the key; program response and nonprofit/enterprise overlap not identified |
+| K6 mining refill / agriculture0 refill | **Arm** | Applies the fixed-resource reasoning consistently, but native destination intensity is an assumed response |
+| K6 support/equipment departure | **Reject as measurement correction**; preserve prior sizing arms | Reproducibility of equipment does not show that it departs when jobs refill |
+| K7 two-block | **Arm** | Captures a real omitted reallocation mechanism; sector classification, prices and factor response remain conditional |
+| Network 0.7 | **Arm** | Response value is stipulated rather than measured |
+| Commercial land 0 | **Arm** | Price-response scenario, not an observed elasticity |
+| Exact full stack | **Conditional stress candidate** | Publish with component assumptions; do not silently replace the adopted central |
+
+[INFERENCE: recommendations; DATA: retained and extended lane source traces]
+
+### Joint same-direction and quadrature ranges
+
+The decision-09-27 outer-range convention is applied to **point-arm components**: take one extreme per refinement family including central zero, sum all upward moves and all downward moves separately, and also root-sum-square those same selected components. Broad T is fixed for the K7, mining and farm-refill components throughout. K3 uses documentary only (known assessment overlap excluded), K4 strict C detail, K5 one agriculture/overlap alternative at a time; K1 uses industry-size point refinement. Unidentified legal-form selection bounds stay outside this point-arm range. Original K5 functional and new cell keys are alternatives, never summed; original K6 support/equipment departures are replaced by refill alternatives in the joint families. [CALCULATION: `extended_integrate.py` families; SOURCE: `decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md:96–98`]
+
+| End, population | All downward Δ | All upward Δ | Quadrature downward Δ | Quadrature upward Δ |
+|---|---:|---:|---:|---:|
+| low, union | -9.525530 | +10.966852 | -7.380772 | +5.166663 |
+| low, lineage | -8.917425 | +11.706278 | -6.648205 | +5.542003 |
+| high, union | -4.858546 | +8.135473 | -3.523947 | +3.652098 |
+| high, lineage | -4.648129 | +8.619226 | -3.239327 | +3.862137 |
+
+The lineage headline outer endpoints are **$330.634593–432.268487bn** if all signed point-arm components move together, or **$332.903812–427.511397bn** in quadrature. At the low central end specifically, all-down/all-up levels are $330.634593/$351.258296bn; at the high end $419.001132/$432.268487bn. These are arithmetic sensitivity envelopes, not confidence intervals and not a jointly solved GE allocation. Shared-vector interactions belong to the exact candidate table above; the component-envelope convention does not identify them or independent probabilities. [CALCULATION: `derived/extended_summary.json.joint`; ASSUMPTION]
+
+### Fail-open regression and corrected firm-size prose
+
+The frozen source's `record()` at `job_capital.py:469` uses `rsp = rsp or LINE_RESP`. This extension does not reuse that fallback. Its live `record()` uses `central_responses if rsp is None else rsp` and rejects an explicit empty/incomplete mapping with `[BLOCKED]`. The test distinguishes default None, explicit empty dict (raises), and valid all-zero responses (zero outcome); production baseline calculation calls this same helper. Frozen source stays untouched. [CALCULATION: `reallocation.py:record`, `test_reallocation.py`]
+
+Parent correction for `job_capital_taxes_2026_10_14/RESULT.md:490–493`: the code at 663–669 pools industries. The requested within-cell calculation actually finds a smaller gap: among private BEA cells, **41.54%** of adjusted union wages are at employers under 100, **34.01%** nationally, **38.91%** nationally reweighted to the union's industry wage mix. The within-cell gap is **+2.63 percentage points (SE 0.82)**. For employers 1,000+, union **38.08%**, national **46.76%**, reweighted national **41.87%**; within gap **−3.80 points (SE 0.86)**. This is a standardized mean, not every industry's sign. Raw/private adjusted values differ from the frozen pooled all-industry values because government/households are excluded and the exact top/fill-in rule is retained. [CALCULATION: `within_firm.py` → `derived/within_firm.json`; SOURCE: `within-firm-evidence.md`]
+
+The raw under-100 gap decomposes **+7.530 = +2.627 within +4.903 cell mix**; 1,000+ **−8.683 = −3.799 within −4.884 cell mix**. The 256-row cell/size table carries all individual gaps/contributions and conditional SEs. All-replicate decomposition and generation/weight conservation gates pass at 1e−12. This supports the sign of the legal-payroll concern but does not directly measure C-only group payroll. [CALCULATION: `derived/within_firm.csv`, `.json`]
+
+### Extension verification and scope
+
+The 207 reallocation gates, 62 subsidy gates, 32 within-cell gates and 19 integration gates pass. Six reallocation/response tests plus three subsidy tests pass. New source inputs are pinned; computational tolerances were not loosened. `extension-code-check.md` records the independent scoped code review. The whole-lane replay includes all original eight commands, the five new live commands and both new test files; its receipt is `_cache/extension_rerun.log` / `.json`. [CALCULATION: output gates and checks]
+
+Reproduce extension after the preserved round-1 eight commands:
+
+```sh
+node infra/immigration-fiscal/job_capital_key_refine_2026_10_14/demand_keys.cjs
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/job_capital_key_refine_2026_10_14/within_firm.py
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/job_capital_key_refine_2026_10_14/k5_cells.py
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/job_capital_key_refine_2026_10_14/reallocation.py
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/job_capital_key_refine_2026_10_14/extended_integrate.py
+PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/job_capital_key_refine_2026_10_14/test_reallocation.py infra/immigration-fiscal/job_capital_key_refine_2026_10_14/test_k5_cells.py -q
+```
+
+The case and the item lane remain read-only. No merge, stage or commit. No additional scientific capability was retired. This is the full-adjustment fiscal response frame for other residents, with source measurements separated from assumed counterfactual responses. LLM dispositions can influence response-model selection; both directions and source/construction checks are retained. [FRAMING-SENSITIVE; DATA: `notes/llm-bias-caveat.md`; INFERENCE]
+
+Final extension receipt (2026-10-14): **14/14 commands rc0, IDENTICAL64/64, exit0, no --allow-unrun**; nine tests passed. Whole replay 62.68s, peak child RSS 2.005GB, measured by Python perf_counter/resource. Independent scoped review found no material defect; it independently recovered K1/K2/reallocation/mining stack within 5.69e−14bn. All prior scientific output bytes were preserved. No git write performed. [CALCULATION: `_cache/extension_rerun.log`, `.json`; SOURCE: `extension-code-check.md`]

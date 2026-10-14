@@ -1,0 +1,26 @@
+{
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/consumption_key_2026_09_24/derived/key_specs.csv": {
+    "sha256": "efc460c84be27509aead447a05badbe41095416eed866041f7736551d7e3a34f"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/national.json": {
+    "sha256": "d3bf71be1bdd3c66e265db3721acdbdb06902548b74d2470d5d06df0395fd0a0"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_taxes_2026_10_14/derived/wages_by_industry.csv": {
+    "sha256": "3bccaa790e713c2206ccba4a091b42a41b293b58eda41ee4aede4ee806202009"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_key_refine_2026_10_14/derived/demand_keys.json": {
+    "sha256": "12de4fbb7b4b30c9cd53ed8e8834a143aad27939d08bcf9d2e13a2a067d3b38d"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_key_refine_2026_10_14/derived/core.json": {
+    "sha256": "025977ff12d67826660891f930c08e950a3d9ada49d8eb839b339b77d9d13b36"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_key_refine_2026_10_14/derived/k1_summary.json": {
+    "sha256": "3668bfc16c1a547c9814a92820ef954d6d50fc73ccd870c7d4ad0edbd6d32f2d"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_key_refine_2026_10_14/_cache/core.npz": {
+    "sha256": "d2c547e0bbc36dd38318213a8e0607b35e5f18680d61a5906ce59d56d5108bf0"
+  },
+  "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/job_capital_key_refine_2026_10_14/_cache/k1_targets.npz": {
+    "sha256": "9061e01aed66c034ae73a34d716dd57dc102c82af73b7f593e08fe771e72f653"
+  }
+}

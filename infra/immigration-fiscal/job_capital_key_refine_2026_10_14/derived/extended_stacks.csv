@@ -1,0 +1,17 @@
+arm,reading,population,delta_net_cost_bn,delta_conditional_se_bn,over_5bn,headline_bn,cash_headline_bn
+stack_K1_K2_K7_mining_subsidy_narrow,low,union,1.970566434539089,2.152949112108349,False,,
+stack_K1_K2_K7_mining_subsidy_narrow,low,lineage,4.337878404557033,2.246130991279544,False,343.8898962340839,268.7634520200626
+stack_K1_K2_K7_mining_subsidy_narrow,high,union,0.9406674303893913,1.0820236740019828,False,,
+stack_K1_K2_K7_mining_subsidy_narrow,high,lineage,2.059127245516096,1.1304455686117574,False,425.7083879460229,350.58194373200166
+stack_K1_K2_K7_mining_subsidy_network_land_narrow,low,union,5.406650136367931,2.117659281437164,True,,
+stack_K1_K2_K7_mining_subsidy_network_land_narrow,low,lineage,8.044181001324178,2.209561457258131,True,347.59619883085105,272.46975461682973
+stack_K1_K2_K7_mining_subsidy_network_land_narrow,high,union,3.7294627553238673,1.048041886213277,False,,
+stack_K1_K2_K7_mining_subsidy_network_land_narrow,high,lineage,5.057133411628728,1.0952868261985131,True,428.70639411213557,353.5799498981143
+stack_K1_K2_K7_mining_subsidy_broad,low,union,-2.1754057805013587,1.1593469805487628,False,,
+stack_K1_K2_K7_mining_subsidy_broad,low,lineage,-1.249750368769595,1.2015014652901157,False,338.30226746075726,263.17582324673594
+stack_K1_K2_K7_mining_subsidy_broad,high,union,-1.2978131599328377,0.614315094780363,False,,
+stack_K1_K2_K7_mining_subsidy_broad,high,lineage,-0.893353006237609,0.6387330623011114,False,422.75590769426924,347.629463480248
+stack_K1_K2_K7_mining_subsidy_network_land_broad,low,union,1.3285717384547326,1.1493378767124052,False,,
+stack_K1_K2_K7_mining_subsidy_network_land_broad,low,lineage,2.5419694766124667,1.191338642310719,False,342.0939873061393,266.967543092118
+stack_K1_K2_K7_mining_subsidy_network_land_broad,high,union,1.5588759821288805,0.6057382068262602,False,,
+stack_K1_K2_K7_mining_subsidy_network_land_broad,high,lineage,2.1900704084899036,0.6301100594983395,False,425.83933110899676,350.7128868949755

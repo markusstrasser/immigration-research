@@ -1,0 +1,1074 @@
+{
+  "recommendation": "Keep as arms. SUT cells identify recipient industries, not response elasticities or the program/enterprise/nonprofit overlap. Agriculture stays at 0 under the reserve premise. Do not add another national spending line or subtract subsidies from corporate tax.",
+  "scope": "Exact core pooled personal cell shares, all 161 CPS replicates, live lineage G3plus/white wage rates held fixed. Same cost move at both v7 personal ends, set and cash.",
+  "sut_totals_bn": {
+    "T00SUB": 91.171,
+    "T00OSUB": 4.883
+  },
+  "sut_sum_bn": 96.054,
+  "frozen_nipa_subsidy_lines_bn": {
+    "agricultural_subsidies": 8.233,
+    "housing_subsidies": 60.261,
+    "transport_subsidies": 0.405,
+    "other_subsidies": 25.34
+  },
+  "sut_minus_frozen_nipa_bn": 1.8149999999999977,
+  "overlap_status": "624 is not a separately named case line. Complete NIPA subsidies are already partitioned into four spending lines (nonhousing response0); social benefits separately include nonprofit payments and respond1. Industry 624 alone does not establish a duplicate: include/exclude624 arms bracket the claimed overlap, not an observed reconciliation. ORE included/excluded is a separate housing-program ambiguity.",
+  "live_case_trace": [
+    {
+      "method": "b_hotdeck_union_matched",
+      "index": 16,
+      "sign_probe_delta_cost_bn": 0.03559359445421251,
+      "lines": [
+        {
+          "id": "other_federal_benefits",
+          "family": "social_benefits",
+          "national_bn": 66.62745901599999,
+          "key": "all_cash",
+          "share": 0.10601660736808796,
+          "keys": [
+            "all_cash",
+            "health_other",
+            "population"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 6.993353204123444,
+          "response": 1,
+          "effect_bn": -6.993353204123444
+        },
+        {
+          "id": "family_and_general_assistance",
+          "family": "social_benefits",
+          "national_bn": 63.065,
+          "key": "cash_assistance",
+          "share": 0.18840594039309944,
+          "keys": [
+            "all_cash",
+            "cash_assistance"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 11.763628655742801,
+          "response": 1,
+          "effect_bn": -11.763628655742801
+        },
+        {
+          "id": "other_state_welfare",
+          "family": "social_benefits",
+          "national_bn": 22.385,
+          "key": "wic",
+          "share": 0.25742916034886,
+          "keys": [
+            "cash_assistance",
+            "wic"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 5.7052299332106795,
+          "response": 1,
+          "effect_bn": -5.7052299332106795
+        },
+        {
+          "id": "agricultural_subsidies",
+          "family": "subsidies",
+          "national_bn": 8.233,
+          "key": "wages",
+          "share": 0.08497811482415929,
+          "keys": [
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.6926654445228708,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "housing_subsidies",
+          "family": "subsidies",
+          "national_bn": 55.003189000000006,
+          "key": "housing_support",
+          "share": 0.08120081466411277,
+          "keys": [
+            "housing_support",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 4.421876110440212,
+          "response": 1,
+          "effect_bn": -4.421876110440212
+        },
+        {
+          "id": "transport_subsidies",
+          "family": "subsidies",
+          "national_bn": 0.405,
+          "key": "resources",
+          "share": 0.08876842473764701,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.03559359445421324,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "other_subsidies",
+          "family": "subsidies",
+          "national_bn": 25.34,
+          "key": "resources",
+          "share": 0.08876842475089344,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 2.2270165230247216,
+          "response": 0,
+          "effect_bn": 0
+        }
+      ]
+    },
+    {
+      "method": "b_hotdeck_union_matched",
+      "index": 11,
+      "sign_probe_delta_cost_bn": 0.03559359445421251,
+      "lines": [
+        {
+          "id": "other_federal_benefits",
+          "family": "social_benefits",
+          "national_bn": 66.62745901599999,
+          "key": "all_cash",
+          "share": 0.10601660736808796,
+          "keys": [
+            "all_cash",
+            "health_other",
+            "population"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 6.993353204123444,
+          "response": 1,
+          "effect_bn": -6.993353204123444
+        },
+        {
+          "id": "family_and_general_assistance",
+          "family": "social_benefits",
+          "national_bn": 63.065,
+          "key": "cash_assistance",
+          "share": 0.18840594039309944,
+          "keys": [
+            "all_cash",
+            "cash_assistance"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 11.763628655742801,
+          "response": 1,
+          "effect_bn": -11.763628655742801
+        },
+        {
+          "id": "other_state_welfare",
+          "family": "social_benefits",
+          "national_bn": 22.385,
+          "key": "wic",
+          "share": 0.25742916034886,
+          "keys": [
+            "cash_assistance",
+            "wic"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 5.7052299332106795,
+          "response": 1,
+          "effect_bn": -5.7052299332106795
+        },
+        {
+          "id": "agricultural_subsidies",
+          "family": "subsidies",
+          "national_bn": 8.233,
+          "key": "wages",
+          "share": 0.08497811482415929,
+          "keys": [
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.6926654445228708,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "housing_subsidies",
+          "family": "subsidies",
+          "national_bn": 55.003189000000006,
+          "key": "housing_support",
+          "share": 0.08120081466411277,
+          "keys": [
+            "housing_support",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 4.421876110440212,
+          "response": 1,
+          "effect_bn": -4.421876110440212
+        },
+        {
+          "id": "transport_subsidies",
+          "family": "subsidies",
+          "national_bn": 0.405,
+          "key": "resources",
+          "share": 0.08876842473764701,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.03559359445421324,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "other_subsidies",
+          "family": "subsidies",
+          "national_bn": 25.34,
+          "key": "resources",
+          "share": 0.08876842475089344,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 2.2270165230247216,
+          "response": 0,
+          "effect_bn": 0
+        }
+      ]
+    },
+    {
+      "method": "b_matched_over_pooled",
+      "index": 16,
+      "sign_probe_delta_cost_bn": 0.035455656830947646,
+      "lines": [
+        {
+          "id": "other_federal_benefits",
+          "family": "social_benefits",
+          "national_bn": 66.62745901599999,
+          "key": "all_cash",
+          "share": 0.10562280595208151,
+          "keys": [
+            "all_cash",
+            "health_other",
+            "population"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 6.967376213699151,
+          "response": 1,
+          "effect_bn": -6.967376213699151
+        },
+        {
+          "id": "family_and_general_assistance",
+          "family": "social_benefits",
+          "national_bn": 63.065,
+          "key": "cash_assistance",
+          "share": 0.2075436948134691,
+          "keys": [
+            "all_cash",
+            "cash_assistance"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 12.958545524267798,
+          "response": 1,
+          "effect_bn": -12.958545524267798
+        },
+        {
+          "id": "other_state_welfare",
+          "family": "social_benefits",
+          "national_bn": 22.385,
+          "key": "wic",
+          "share": 0.24808900411024185,
+          "keys": [
+            "cash_assistance",
+            "wic"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 5.498230310940946,
+          "response": 1,
+          "effect_bn": -5.498230310940946
+        },
+        {
+          "id": "agricultural_subsidies",
+          "family": "subsidies",
+          "national_bn": 8.233,
+          "key": "wages",
+          "share": 0.08473053991680193,
+          "keys": [
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.6906474357259914,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "housing_subsidies",
+          "family": "subsidies",
+          "national_bn": 55.003189000000006,
+          "key": "housing_support",
+          "share": 0.08365961115035546,
+          "keys": [
+            "housing_support",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 4.555772469582972,
+          "response": 1,
+          "effect_bn": -4.555772469582972
+        },
+        {
+          "id": "transport_subsidies",
+          "family": "subsidies",
+          "national_bn": 0.405,
+          "key": "resources",
+          "share": 0.08842441605526558,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.03545565683094685,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "other_subsidies",
+          "family": "subsidies",
+          "national_bn": 25.34,
+          "key": "resources",
+          "share": 0.08842441607164746,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 2.2183860554356594,
+          "response": 0,
+          "effect_bn": 0
+        }
+      ]
+    },
+    {
+      "method": "b_matched_over_pooled",
+      "index": 11,
+      "sign_probe_delta_cost_bn": 0.035455656830947646,
+      "lines": [
+        {
+          "id": "other_federal_benefits",
+          "family": "social_benefits",
+          "national_bn": 66.62745901599999,
+          "key": "all_cash",
+          "share": 0.10562280595208151,
+          "keys": [
+            "all_cash",
+            "health_other",
+            "population"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 6.967376213699151,
+          "response": 1,
+          "effect_bn": -6.967376213699151
+        },
+        {
+          "id": "family_and_general_assistance",
+          "family": "social_benefits",
+          "national_bn": 63.065,
+          "key": "cash_assistance",
+          "share": 0.2075436948134691,
+          "keys": [
+            "all_cash",
+            "cash_assistance"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 12.958545524267798,
+          "response": 1,
+          "effect_bn": -12.958545524267798
+        },
+        {
+          "id": "other_state_welfare",
+          "family": "social_benefits",
+          "national_bn": 22.385,
+          "key": "wic",
+          "share": 0.24808900411024185,
+          "keys": [
+            "cash_assistance",
+            "wic"
+          ],
+          "response_class": "household_transfer",
+          "group": "household_transfer",
+          "amount_bn": 5.498230310940946,
+          "response": 1,
+          "effect_bn": -5.498230310940946
+        },
+        {
+          "id": "agricultural_subsidies",
+          "family": "subsidies",
+          "national_bn": 8.233,
+          "key": "wages",
+          "share": 0.08473053991680193,
+          "keys": [
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.6906474357259914,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "housing_subsidies",
+          "family": "subsidies",
+          "national_bn": 55.003189000000006,
+          "key": "housing_support",
+          "share": 0.08365961115035546,
+          "keys": [
+            "housing_support",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 4.555772469582972,
+          "response": 1,
+          "effect_bn": -4.555772469582972
+        },
+        {
+          "id": "transport_subsidies",
+          "family": "subsidies",
+          "national_bn": 0.405,
+          "key": "resources",
+          "share": 0.08842441605526558,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 0.03545565683094685,
+          "response": 0,
+          "effect_bn": 0
+        },
+        {
+          "id": "other_subsidies",
+          "family": "subsidies",
+          "national_bn": 25.34,
+          "key": "resources",
+          "share": 0.08842441607164746,
+          "keys": [
+            "population",
+            "resources",
+            "wages"
+          ],
+          "response_class": "subsidy",
+          "group": "subsidy",
+          "amount_bn": 2.2183860554356594,
+          "response": 0,
+          "effect_bn": 0
+        }
+      ]
+    }
+  ],
+  "lineage_rates": {
+    "G3plus": 0.11716321317972753,
+    "white": 0.0048113453495027825
+  },
+  "arms": {
+    "ag1_624included_oreincluded": {
+      "responding_national_bn": 20.587000000000003,
+      "recommendation": "arm",
+      "response_low": 1,
+      "response_high": 1,
+      "union": {
+        "delta_net_cost_bn": 2.606472659584405,
+        "conditional_se_bn": 0.24046467989584933
+      },
+      "G1": {
+        "delta_net_cost_bn": 1.6738566444075629,
+        "conditional_se_bn": 0.195316044169438
+      },
+      "G2": {
+        "delta_net_cost_bn": 0.5156131359452597,
+        "conditional_se_bn": 0.11827724472882056
+      },
+      "G3plus": {
+        "delta_net_cost_bn": 0.4170028792315816,
+        "conditional_se_bn": 0.08483415383163208
+      },
+      "white": {
+        "delta_net_cost_bn": 12.285679344766228,
+        "conditional_se_bn": 0.41212467138329834
+      },
+      "lineage": {
+        "delta_net_cost_bn": 2.7144407030012982,
+        "conditional_se_bn": 0.2426221294702098
+      }
+    },
+    "ag1_624included_oreexcluded": {
+      "responding_national_bn": 19.442,
+      "recommendation": "arm",
+      "response_low": 1,
+      "response_high": 1,
+      "union": {
+        "delta_net_cost_bn": 2.5081472543711802,
+        "conditional_se_bn": 0.24060566950390086
+      },
+      "G1": {
+        "delta_net_cost_bn": 1.6503182625941424,
+        "conditional_se_bn": 0.19528963011238137
+      },
+      "G2": {
+        "delta_net_cost_bn": 0.4740717801150818,
+        "conditional_se_bn": 0.11787568503909057
+      },
+      "G3plus": {
+        "delta_net_cost_bn": 0.38375721166195526,
+        "conditional_se_bn": 0.08372900359771115
+      },
+      "white": {
+        "delta_net_cost_bn": 11.637015834134171,
+        "conditional_se_bn": 0.41119067731596576
+      },
+      "lineage": {
+        "delta_net_cost_bn": 2.6090991843860394,
+        "conditional_se_bn": 0.2427233526631674
+      }
+    },
+    "ag1_624excluded_oreincluded": {
+      "responding_national_bn": 16.845,
+      "recommendation": "arm",
+      "response_low": 1,
+      "response_high": 1,
+      "union": {
+        "delta_net_cost_bn": 2.2727883250280034,
+        "conditional_se_bn": 0.24053564306832187
+      },
+      "G1": {
+        "delta_net_cost_bn": 1.5849956643096197,
+        "conditional_se_bn": 0.19418218261138923
+      },
+      "G2": {
+        "delta_net_cost_bn": 0.3655094166122545,
+        "conditional_se_bn": 0.11541629322673548
+      },
+      "G3plus": {
+        "delta_net_cost_bn": 0.32228324410612846,
+        "conditional_se_bn": 0.08397131291779449
+      },
+      "white": {
+        "delta_net_cost_bn": 10.449418607534197,
+        "conditional_se_bn": 0.4016090097908709
+      },
+      "lineage": {
+        "delta_net_cost_bn": 2.3608238270838315,
+        "conditional_se_bn": 0.24288933845842592
+      }
+    },
+    "ag1_624excluded_oreexcluded": {
+      "responding_national_bn": 15.700000000000001,
+      "recommendation": "arm",
+      "response_low": 1,
+      "response_high": 1,
+      "union": {
+        "delta_net_cost_bn": 2.1744629198147787,
+        "conditional_se_bn": 0.24061311214234307
+      },
+      "G1": {
+        "delta_net_cost_bn": 1.5614572824961992,
+        "conditional_se_bn": 0.1941729789189605
+      },
+      "G2": {
+        "delta_net_cost_bn": 0.32396806078207663,
+        "conditional_se_bn": 0.11491417847075634
+      },
+      "G3plus": {
+        "delta_net_cost_bn": 0.28903757653650214,
+        "conditional_se_bn": 0.08278870035370575
+      },
+      "white": {
+        "delta_net_cost_bn": 9.80075509690214,
+        "conditional_se_bn": 0.4007941411340605
+      },
+      "lineage": {
+        "delta_net_cost_bn": 2.2554823084685727,
+        "conditional_se_bn": 0.24292871820912354
+      }
+    },
+    "ag0_624included_oreincluded": {
+      "responding_national_bn": 12.238,
+      "recommendation": "arm",
+      "response_low": 1,
+      "response_high": 1,
+      "union": {
+        "delta_net_cost_bn": 0.7408816335065721,
+        "conditional_se_bn": 0.12539991129600417
+      },
+      "G1": {
+        "delta_net_cost_bn": 0.1925595230800272,
+        "conditional_se_bn": 0.05377852350345114
+      },
+      "G2": {
+        "delta_net_cost_bn": 0.3426174635527185,
+        "conditional_se_bn": 0.10629338933547564
+      },
+      "G3plus": {
+        "delta_net_cost_bn": 0.20570464687382636,
+        "conditional_se_bn": 0.03930740959852809
+      },
+      "white": {
+        "delta_net_cost_bn": 7.607845864736829,
+        "conditional_se_bn": 0.30508658225324686
+      },
+      "lineage": {
+        "delta_net_cost_bn": 0.8015866247213463,
+        "conditional_se_bn": 0.12617814576982916
+      }
+    },
+    "ag0_624included_oreexcluded": {
+      "responding_national_bn": 11.093,
+      "recommendation": "arm",
+      "response_low": 1,
+      "response_high": 1,
+      "union": {
+        "delta_net_cost_bn": 0.6425562282933472,
+        "conditional_se_bn": 0.1253506072423894
+      },
+      "G1": {
+        "delta_net_cost_bn": 0.1690211412666066,
+        "conditional_se_bn": 0.05441141489539807
+      },
+      "G2": {
+        "delta_net_cost_bn": 0.3010761077225406,
+        "conditional_se_bn": 0.10554310730484617
+      },
+      "G3plus": {
+        "delta_net_cost_bn": 0.1724589793042,
+        "conditional_se_bn": 0.03848944152841834
+      },
+      "white": {
+        "delta_net_cost_bn": 6.959182354104773,
+        "conditional_se_bn": 0.30477278121546353
+      },
+      "lineage": {
+        "delta_net_cost_bn": 0.6962451061060873,
+        "conditional_se_bn": 0.1260938723740237
+      }
+    },
+    "ag0_624excluded_oreincluded": {
+      "responding_national_bn": 8.495999999999999,
+      "recommendation": "arm",
+      "response_low": 1,
+      "response_high": 1,
+      "union": {
+        "delta_net_cost_bn": 0.4071972989501706,
+        "conditional_se_bn": 0.12067002010186748
+      },
+      "G1": {
+        "delta_net_cost_bn": 0.10369854298208396,
+        "conditional_se_bn": 0.05149671342671809
+      },
+      "G2": {
+        "delta_net_cost_bn": 0.19251374421971335,
+        "conditional_se_bn": 0.10265668619140776
+      },
+      "G3plus": {
+        "delta_net_cost_bn": 0.11098501174837325,
+        "conditional_se_bn": 0.03581528820685071
+      },
+      "white": {
+        "delta_net_cost_bn": 5.771585127504798,
+        "conditional_se_bn": 0.2939105132913436
+      },
+      "lineage": {
+        "delta_net_cost_bn": 0.44796974880387946,
+        "conditional_se_bn": 0.12118280445974274
+      }
+    },
+    "ag0_624excluded_oreexcluded": {
+      "responding_national_bn": 7.350999999999999,
+      "recommendation": "arm",
+      "response_low": 1,
+      "response_high": 1,
+      "union": {
+        "delta_net_cost_bn": 0.3088718937369458,
+        "conditional_se_bn": 0.12049207012455504
+      },
+      "G1": {
+        "delta_net_cost_bn": 0.08016016116866338,
+        "conditional_se_bn": 0.05222190300600636
+      },
+      "G2": {
+        "delta_net_cost_bn": 0.15097238838953544,
+        "conditional_se_bn": 0.10177738094270221
+      },
+      "G3plus": {
+        "delta_net_cost_bn": 0.0777393441787469,
+        "conditional_se_bn": 0.034758806871696024
+      },
+      "white": {
+        "delta_net_cost_bn": 5.122921616872742,
+        "conditional_se_bn": 0.2937807580414977
+      },
+      "lineage": {
+        "delta_net_cost_bn": 0.3426282301886205,
+        "conditional_se_bn": 0.12097113478702042
+      }
+    }
+  },
+  "gates": [
+    {
+      "name": "T00SUB national cells plus explicit rounding close at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "T00OSUB national cells plus explicit rounding close at 1e-6bn",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "name": "live nonhousing subsidy lines all respond at zero at both personal ends",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "live housing and possible nonprofit-benefit carriers respond at one",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "live spending response0 to1 raises net cost by line amount at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreincluded generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreincluded union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreincluded G1 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreincluded G2 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreincluded G3plus finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreincluded white finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreincluded lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreexcluded generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreexcluded union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreexcluded G1 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreexcluded G2 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreexcluded G3plus finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreexcluded white finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624included_oreexcluded lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreincluded generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreincluded union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreincluded G1 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreincluded G2 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreincluded G3plus finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreincluded white finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreincluded lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreexcluded generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreexcluded union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreexcluded G1 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreexcluded G2 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreexcluded G3plus finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreexcluded white finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag1_624excluded_oreexcluded lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreincluded generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreincluded union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreincluded G1 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreincluded G2 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreincluded G3plus finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreincluded white finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreincluded lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreexcluded generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreexcluded union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreexcluded G1 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreexcluded G2 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreexcluded G3plus finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreexcluded white finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624included_oreexcluded lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreincluded generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreincluded union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreincluded G1 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreincluded G2 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreincluded G3plus finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreincluded white finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreincluded lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreexcluded generations close in all 161 replicates at 1e-9bn",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreexcluded union finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreexcluded G1 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreexcluded G2 finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreexcluded G3plus finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreexcluded white finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "ag0_624excluded_oreexcluded lineage finite 161 replicates",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "RSS below 2.5GB",
+      "passed": true
+    }
+  ],
+  "excluded_cells": "HS housing, GFE/GSLE government enterprises, general government and explicit rounding have no private-job key. Their already priced housing/enterprise carriers are retained; new gross subsidy charges there would need matched offsets.",
+  "source_urls": [
+    "https://apps.bea.gov/industry/release/zip/SUPPLY-USE.zip",
+    "https://www.bea.gov/help/faq/1408",
+    "https://apps.bea.gov/scb/issues/2022/11-november/1122-nea-annual-update.htm"
+  ]
+}

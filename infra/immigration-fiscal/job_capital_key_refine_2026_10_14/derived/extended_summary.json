@@ -1,0 +1,661 @@
+{
+  "arms": {
+    "stack_K1_K2_K7_mining_subsidy_narrow": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 1.970566434539089,
+          "delta_conditional_se_bn": 2.152949112108349,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 4.337878404557033,
+          "delta_conditional_se_bn": 2.246130991279544,
+          "over_5bn": false,
+          "headline_bn": 343.8898962340839,
+          "cash_headline_bn": 268.7634520200626
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 0.9406674303893913,
+          "delta_conditional_se_bn": 1.0820236740019828,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.059127245516096,
+          "delta_conditional_se_bn": 1.1304455686117574,
+          "over_5bn": false,
+          "headline_bn": 425.7083879460229,
+          "cash_headline_bn": 350.58194373200166
+        }
+      }
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_narrow": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 5.406650136367931,
+          "delta_conditional_se_bn": 2.117659281437164,
+          "over_5bn": true
+        },
+        "lineage": {
+          "delta_net_cost_bn": 8.044181001324178,
+          "delta_conditional_se_bn": 2.209561457258131,
+          "over_5bn": true,
+          "headline_bn": 347.59619883085105,
+          "cash_headline_bn": 272.46975461682973
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 3.7294627553238673,
+          "delta_conditional_se_bn": 1.048041886213277,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 5.057133411628728,
+          "delta_conditional_se_bn": 1.0952868261985131,
+          "over_5bn": true,
+          "headline_bn": 428.70639411213557,
+          "cash_headline_bn": 353.5799498981143
+        }
+      }
+    },
+    "stack_K1_K2_K7_mining_subsidy_broad": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": -2.1754057805013587,
+          "delta_conditional_se_bn": 1.1593469805487628,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -1.249750368769595,
+          "delta_conditional_se_bn": 1.2015014652901157,
+          "over_5bn": false,
+          "headline_bn": 338.30226746075726,
+          "cash_headline_bn": 263.17582324673594
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": -1.2978131599328377,
+          "delta_conditional_se_bn": 0.614315094780363,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": -0.893353006237609,
+          "delta_conditional_se_bn": 0.6387330623011114,
+          "over_5bn": false,
+          "headline_bn": 422.75590769426924,
+          "cash_headline_bn": 347.629463480248
+        }
+      }
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_broad": {
+      "low": {
+        "union": {
+          "delta_net_cost_bn": 1.3285717384547326,
+          "delta_conditional_se_bn": 1.1493378767124052,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.5419694766124667,
+          "delta_conditional_se_bn": 1.191338642310719,
+          "over_5bn": false,
+          "headline_bn": 342.0939873061393,
+          "cash_headline_bn": 266.967543092118
+        }
+      },
+      "high": {
+        "union": {
+          "delta_net_cost_bn": 1.5588759821288805,
+          "delta_conditional_se_bn": 0.6057382068262602,
+          "over_5bn": false
+        },
+        "lineage": {
+          "delta_net_cost_bn": 2.1900704084899036,
+          "delta_conditional_se_bn": 0.6301100594983395,
+          "over_5bn": false,
+          "headline_bn": 425.83933110899676,
+          "cash_headline_bn": 350.7128868949755
+        }
+      }
+    }
+  },
+  "stack_diagnostics": {
+    "stack_K1_K2_K7_mining_subsidy_narrow__low__union": {
+      "standalone_sum_bn": 1.1200891818317764,
+      "exact_stack_bn": 1.970566434539089,
+      "interaction_bn": 0.8504772527073126,
+      "subsidy_loss_after_reallocation_bn": 0.5722005995308824
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_narrow__low__union": {
+      "standalone_sum_bn": 4.261218946446764,
+      "exact_stack_bn": 5.406650136367931,
+      "interaction_bn": 1.145431189921167,
+      "subsidy_loss_after_reallocation_bn": 0.5722005995308824
+    },
+    "stack_K1_K2_K7_mining_subsidy_broad__low__union": {
+      "standalone_sum_bn": -2.94792201690073,
+      "exact_stack_bn": -2.1754057805013587,
+      "interaction_bn": 0.7725162363993712,
+      "subsidy_loss_after_reallocation_bn": 0.5783896783701352
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_broad__low__union": {
+      "standalone_sum_bn": 0.19320774771425775,
+      "exact_stack_bn": 1.3285717384547326,
+      "interaction_bn": 1.135363990740475,
+      "subsidy_loss_after_reallocation_bn": 0.5783896783701352
+    },
+    "stack_K1_K2_K7_mining_subsidy_narrow__low__lineage": {
+      "standalone_sum_bn": 3.7567110910346235,
+      "exact_stack_bn": 4.337878404557033,
+      "interaction_bn": 0.5811673135224096,
+      "subsidy_loss_after_reallocation_bn": 0.61861100379882
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_narrow__low__lineage": {
+      "standalone_sum_bn": 7.1603799389250105,
+      "exact_stack_bn": 8.044181001324178,
+      "interaction_bn": 0.8838010623991677,
+      "subsidy_loss_after_reallocation_bn": 0.61861100379882
+    },
+    "stack_K1_K2_K7_mining_subsidy_broad__low__lineage": {
+      "standalone_sum_bn": -1.8580175701094896,
+      "exact_stack_bn": -1.249750368769595,
+      "interaction_bn": 0.6082672013398946,
+      "subsidy_loss_after_reallocation_bn": 0.6283619059700402
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_broad__low__lineage": {
+      "standalone_sum_bn": 1.5456512777808973,
+      "exact_stack_bn": 2.5419694766124667,
+      "interaction_bn": 0.9963181988315695,
+      "subsidy_loss_after_reallocation_bn": 0.6283619059700402
+    },
+    "stack_K1_K2_K7_mining_subsidy_narrow__high__union": {
+      "standalone_sum_bn": 0.4600937622374891,
+      "exact_stack_bn": 0.9406674303893913,
+      "interaction_bn": 0.48057366815190217,
+      "subsidy_loss_after_reallocation_bn": 0.5722005995308824
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_narrow__high__union": {
+      "standalone_sum_bn": 3.1588048609173476,
+      "exact_stack_bn": 3.7294627553238673,
+      "interaction_bn": 0.5706578944065197,
+      "subsidy_loss_after_reallocation_bn": 0.5722005995308824
+    },
+    "stack_K1_K2_K7_mining_subsidy_broad__high__union": {
+      "standalone_sum_bn": -1.7534403717195302,
+      "exact_stack_bn": -1.2978131599328377,
+      "interaction_bn": 0.4556272117866924,
+      "subsidy_loss_after_reallocation_bn": 0.5783896783701352
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_broad__high__union": {
+      "standalone_sum_bn": 0.9452707269603282,
+      "exact_stack_bn": 1.5588759821288805,
+      "interaction_bn": 0.6136052551685522,
+      "subsidy_loss_after_reallocation_bn": 0.5783896783701352
+    },
+    "stack_K1_K2_K7_mining_subsidy_narrow__high__lineage": {
+      "standalone_sum_bn": 1.6702261921383985,
+      "exact_stack_bn": 2.059127245516096,
+      "interaction_bn": 0.38890105337769754,
+      "subsidy_loss_after_reallocation_bn": 0.61861100379882
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_narrow__high__lineage": {
+      "standalone_sum_bn": 4.586300487756736,
+      "exact_stack_bn": 5.057133411628728,
+      "interaction_bn": 0.47083292387199194,
+      "subsidy_loss_after_reallocation_bn": 0.61861100379882
+    },
+    "stack_K1_K2_K7_mining_subsidy_broad__high__lineage": {
+      "standalone_sum_bn": -1.2984240864756438,
+      "exact_stack_bn": -0.893353006237609,
+      "interaction_bn": 0.40507108023803473,
+      "subsidy_loss_after_reallocation_bn": 0.6283619059700402
+    },
+    "stack_K1_K2_K7_mining_subsidy_network_land_broad__high__lineage": {
+      "standalone_sum_bn": 1.6176502091426932,
+      "exact_stack_bn": 2.1900704084899036,
+      "interaction_bn": 0.5724201993472104,
+      "subsidy_loss_after_reallocation_bn": 0.6283619059700402
+    }
+  },
+  "subsidy_stack": "ag0_624excluded_oreexcluded",
+  "joint": {
+    "low": {
+      "union": {
+        "all_down_delta_bn": -9.525530459774856,
+        "all_up_delta_bn": 10.966851927118583,
+        "quadrature_down_delta_bn": -7.380771733613611,
+        "quadrature_up_delta_bn": 5.166662576578543
+      },
+      "lineage": {
+        "all_down_delta_bn": -8.917424690103843,
+        "all_up_delta_bn": 11.706278472986188,
+        "quadrature_down_delta_bn": -6.648205374959338,
+        "quadrature_up_delta_bn": 5.542003107869401,
+        "all_down_headline_bn": 330.63459313942303,
+        "all_up_headline_bn": 351.25829630251303,
+        "quadrature_down_headline_bn": 332.9038124545675,
+        "quadrature_up_headline_bn": 345.09402093739624
+      }
+    },
+    "high": {
+      "union": {
+        "all_down_delta_bn": -4.858546431503341,
+        "all_up_delta_bn": 8.135473426256043,
+        "quadrature_down_delta_bn": -3.5239466315151233,
+        "quadrature_up_delta_bn": 3.6520984395379794
+      },
+      "lineage": {
+        "all_down_delta_bn": -4.648128992002736,
+        "all_up_delta_bn": 8.619226201754483,
+        "quadrature_down_delta_bn": -3.239326642607823,
+        "quadrature_up_delta_bn": 3.8621367322998186,
+        "all_down_headline_bn": 419.0011317085041,
+        "all_up_headline_bn": 432.2684869022613,
+        "quadrature_down_headline_bn": 420.409934057899,
+        "quadrature_up_headline_bn": 427.51139743280663
+      }
+    }
+  },
+  "joint_selected_components": {
+    "low_union": [
+      {
+        "family": "K1_legal_form",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.7918332564345576,
+        "up_arm": "K1_industry_size"
+      },
+      {
+        "family": "K2_foreign_source",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 3.4274162464846327,
+        "up_arm": "K2_foreign_source_removed"
+      },
+      {
+        "family": "K3_documentary",
+        "down_bn": -0.8372404509383246,
+        "down_arm": "K3_documentary_only",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K4_finer_detail",
+        "down_bn": -0.21147022528424486,
+        "down_arm": "K4_strict_conly",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K5_subsidies",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 2.606472659584405,
+        "up_arm": "ag1_624included_oreincluded"
+      },
+      {
+        "family": "K6_mining_refill",
+        "down_bn": -1.0930710028870578,
+        "down_arm": "K6_mining_refill_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "agriculture0_with_refill",
+        "down_bn": -0.13691848979739518,
+        "down_arm": "K6_agriculture0_refill_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K7_nontradable_reallocation",
+        "down_bn": -7.246830290867834,
+        "down_arm": "K7_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "network",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.6395061995615237,
+        "up_arm": "network_response_0_7"
+      },
+      {
+        "family": "land",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.501623565053464,
+        "up_arm": "commercial_land_response_0"
+      }
+    ],
+    "low_lineage": [
+      {
+        "family": "K1_legal_form",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.8135430599192277,
+        "up_arm": "K1_industry_size"
+      },
+      {
+        "family": "K2_foreign_source",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 3.774625862175276,
+        "up_arm": "K2_foreign_source_removed"
+      },
+      {
+        "family": "K3_documentary",
+        "down_bn": -0.9118953221958881,
+        "down_arm": "K3_documentary_only",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K4_finer_detail",
+        "down_bn": -0.21780512291641738,
+        "down_arm": "K4_strict_conly",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K5_subsidies",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 2.7144407030012982,
+        "up_arm": "ag1_624included_oreincluded"
+      },
+      {
+        "family": "K6_mining_refill",
+        "down_bn": -1.1701410414939488,
+        "down_arm": "K6_mining_refill_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "agriculture0_with_refill",
+        "down_bn": -0.1422312618190773,
+        "down_arm": "K6_agriculture0_refill_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K7_nontradable_reallocation",
+        "down_bn": -6.475351941678511,
+        "down_arm": "K7_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "network",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.7923619746978119,
+        "up_arm": "network_response_0_7"
+      },
+      {
+        "family": "land",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.611306873192575,
+        "up_arm": "commercial_land_response_0"
+      }
+    ],
+    "high_union": [
+      {
+        "family": "K1_legal_form",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 0.6629783048807864,
+        "up_arm": "K1_industry_size"
+      },
+      {
+        "family": "K2_foreign_source",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.268144011199314,
+        "up_arm": "K2_foreign_source_removed"
+      },
+      {
+        "family": "K3_documentary",
+        "down_bn": -0.8372404509383246,
+        "down_arm": "K3_documentary_only",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K4_finer_detail",
+        "down_bn": -0.0782439833551706,
+        "down_arm": "K4_strict_conly",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K5_subsidies",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 2.606472659584405,
+        "up_arm": "ag1_624included_oreincluded"
+      },
+      {
+        "family": "K6_mining_refill",
+        "down_bn": -0.5684563015150204,
+        "down_arm": "K6_mining_refill_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "agriculture0_with_refill",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 0.8991673519116787,
+        "up_arm": "K6_agriculture0_refill_broad_national"
+      },
+      {
+        "family": "K7_nontradable_reallocation",
+        "down_bn": -3.374605695694825,
+        "down_arm": "K7_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "network",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.1970875336264015,
+        "up_arm": "network_response_0_7"
+      },
+      {
+        "family": "land",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.5016235650534568,
+        "up_arm": "commercial_land_response_0"
+      }
+    ],
+    "high_lineage": [
+      {
+        "family": "K1_legal_form",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 0.6710109321701143,
+        "up_arm": "K1_industry_size"
+      },
+      {
+        "family": "K2_foreign_source",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.3966115690048522,
+        "up_arm": "K2_foreign_source_removed"
+      },
+      {
+        "family": "K3_documentary",
+        "down_bn": -0.9118953221958881,
+        "down_arm": "K3_documentary_only",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K4_finer_detail",
+        "down_bn": -0.08058789547907444,
+        "down_arm": "K4_strict_conly",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "K5_subsidies",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 2.7144407030012982,
+        "up_arm": "ag1_624included_oreincluded"
+      },
+      {
+        "family": "K6_mining_refill",
+        "down_bn": -0.6085369083451084,
+        "down_arm": "K6_mining_refill_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "agriculture0_with_refill",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 0.9210887019598815,
+        "up_arm": "K6_agriculture0_refill_broad_national"
+      },
+      {
+        "family": "K7_nontradable_reallocation",
+        "down_bn": -3.047108865982665,
+        "down_arm": "K7_broad_national",
+        "up_bn": 0.0,
+        "up_arm": "central"
+      },
+      {
+        "family": "network",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.304767422425762,
+        "up_arm": "network_response_0_7"
+      },
+      {
+        "family": "land",
+        "down_bn": 0.0,
+        "down_arm": "central",
+        "up_bn": 1.611306873192575,
+        "up_arm": "commercial_land_response_0"
+      }
+    ]
+  },
+  "outer_convention": "decision-2026-09-27: sum same-direction point-arm components and root-sum-squares. Arithmetic envelopes, not confidence intervals or proof of independent uncertainty; excludes K1 unidentified legal-form selection envelope. Broad tradables fixed for all joint refill terms. Shared tax-vector and response interactions only in exact stack, not component-envelope convention.",
+  "recommendations": {
+    "K1": "arm: conditional legal-payroll model, no observed C-only employment",
+    "K2": "adopt as source-measurement correction, retaining TY2021 proxy warning",
+    "K3": "documentary arm; reject additive special assessment because owner measure includes it",
+    "K4": "arm; retain summary key",
+    "K5": "cell-based arms; withhold central pending programme/nonprofit/enterprise reconciliation",
+    "K6": "mining/agriculture refill arms; reject support-equipment departure as measured correction",
+    "K7": "two-block reallocation arm, not identified GE; broad low-side move crosses review bar",
+    "network": "arm; 0.7 unmeasured",
+    "land": "arm; zero price response unmeasured",
+    "stack": "K2-only is measured scope correction. K1+K2 preserved conditional candidate. Exact two-block and full network/land/subsidy stacks are conditional stress candidates, not automatic adoption."
+  },
+  "gates": [
+    {
+      "name": "upstream round1 gates pass",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream reallocation gates pass",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "upstream subsidy_cells gates pass",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "union subsidy jobs-key control 1e-9",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "narrow resource subsidy kept out",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "broad resource subsidy kept out",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "lineage subsidy jobs-key control 1e-9",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "narrow resource subsidy kept out",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "broad resource subsidy kept out",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "union subsidy jobs-key control 1e-9",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "narrow resource subsidy kept out",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "broad resource subsidy kept out",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "lineage subsidy jobs-key control 1e-9",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "narrow resource subsidy kept out",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "broad resource subsidy kept out",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "low union envelopes ordered",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "low lineage envelopes ordered",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "high union envelopes ordered",
+      "passed": true,
+      "value": null
+    },
+    {
+      "name": "high lineage envelopes ordered",
+      "passed": true,
+      "value": null
+    }
+  ]
+}

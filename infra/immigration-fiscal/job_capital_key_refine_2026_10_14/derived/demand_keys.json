@@ -1,0 +1,13 @@
+{
+  "union_live": 0.08188016967467436,
+  "lineage_live": 0.08955414688281325,
+  "added_demand_share": 0.0076739772081388935,
+  "carrier": "personal_current_transfers",
+  "rule": "general consumption carrier, not selective/general sales tax-specific adjustments",
+  "gates": [
+    {
+      "name": "finite demand and positive added share",
+      "passed": true
+    }
+  ]
+}
